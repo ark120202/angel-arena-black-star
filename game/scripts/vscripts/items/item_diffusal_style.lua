@@ -1,0 +1,84 @@
+function item_diffusal_style_on_spell_start(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+
+	local manta_particle = ParticleManager:CreateParticle("particles/items2_fx/manta_phase.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	Timers:CreateTimer(keys.InvulnerabilityDuration, function() ParticleManager:DestroyParticle(manta_particle, false) end)
+	caster:EmitSound("DOTA_Item.Manta.Activate")
+	caster:Purge(false, true, false, false, false)
+	ProjectileManager:ProjectileDodge(caster)
+	
+	ability:CreateVisibilityNode(caster:GetAbsOrigin(), keys.VisionRadius, keys.InvulnerabilityDuration)
+	caster:AddNoDraw()
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_item_diffusal_style_invulnerability", nil)
+
+	if caster.MantaIllusions then
+		for _,v in ipairs(caster.MantaIllusions) do
+			if v and not v:IsNull() and v:IsAlive() then
+				v:ForceKill(false)
+			end
+		end
+	end
+end
+
+function modifier_item_diffusal_style_invulnerability_on_destroy(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	local caster_origin = caster:GetAbsOrigin()
+	FindClearSpaceForUnit(caster, caster_origin + RandomVector(100), true)
+	caster.MantaIllusions = {}
+	for i = 1, ability:GetLevelSpecialValueFor("images_count", ability:GetLevel()-1) do
+		local illusion = CreateIllusion(caster, ability, caster_origin + RandomVector(100), ability:GetLevelSpecialValueFor("illusion_damage_percent_incoming", ability:GetLevel()-1), ability:GetLevelSpecialValueFor("illusion_damage_percent_outgoing", ability:GetLevel()-1), ability:GetLevelSpecialValueFor("illusion_duration", ability:GetLevel()-1))
+		illusion:SetForwardVector(caster:GetForwardVector())
+		FindClearSpaceForUnit(illusion, illusion:GetAbsOrigin(), true)
+		illusion:SetHealth(caster:GetHealth())
+		illusion:SetMana(caster:GetMana())
+		table.insert(caster.MantaIllusions, illusion)
+	end
+
+	caster:RemoveNoDraw()
+end
+
+function OnAttackLanded(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local ability = keys.ability
+	if not target:IsMagicImmune() and not target:IsInvulnerable() then
+		local manaburn = keys.feedback_mana_burn
+		local manadrain = manaburn * keys.feedback_mana_drain_pct * 0.01
+		local om = target:GetMana()
+		target:SpendMana(manaburn, ability)
+		local diff = om - target:GetMana()
+		SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_LOSS, target, diff, nil)
+		caster:GiveMana(manadrain)
+		SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_ADD, caster, manadrain, nil)
+		ApplyDamage({
+			victim = target,
+			attacker = caster,
+			damage = diff * keys.damage_per_burn_pct * 0.01,
+			damage_type = ability:GetAbilityDamageType(),
+			ability = ability
+		})
+		ParticleManager:CreateParticle("particles/generic_gameplay/generic_manaburn.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+		ParticleManager:CreateParticle("particles/arena/generic_gameplay/generic_manasteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	end
+	
+	if RollPercentage(ability:GetLevelSpecialValueFor("purge_chance_pct", ability:GetLevel() - 1)) then
+		ParticleManager:CreateParticle("particles/generic_gameplay/generic_purge.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+		caster:EmitSound("DOTA_Item.DiffusalBlade.Activate")
+		if target:IsSummoned() then
+			target:EmitSound("DOTA_Item.DiffusalBlade.Kill")
+		else
+			target:EmitSound("DOTA_Item.DiffusalBlade.Target")
+		end
+		if target:IsSummoned() then
+			TrueKill(caster, ability, target)
+		else
+			target:Purge(true, false, false, false, false)
+			if not target:IsMagicImmune() and not target:IsInvulnerable() then
+				ability:ApplyDataDrivenModifier(caster, target, keys.modifier_root, {})
+				ability:ApplyDataDrivenModifier(caster, target, keys.modifier_slow, {})
+			end
+		end
+	end
+end

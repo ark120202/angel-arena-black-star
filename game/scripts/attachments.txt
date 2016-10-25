@@ -1,0 +1,139 @@
+"Attachments"
+{
+	"models/heroes/lina/lina.vmdl"
+	{
+		"attach_head"
+		{
+			"models/items/alchemist/caustic_hair/caustic_hair.vmdl"
+			{
+				"scale"		"1.2000000476837"
+				"pitch"		"0"
+				"roll"		"10"
+				"ZPos"		"-238"
+				"YPos"		"0"
+				"yaw"		"-90"
+				"XPos"		"-8"
+			}
+		}
+	}
+	"models/heroes/omniknight/omniknight.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/items/abaddon/sword_iceshard/sword_iceshard.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"90"
+				"YPos"		"2"
+				"ZPos"		"0"
+				"XPos"		"-60"
+			}
+		}
+	}
+	"models/heroes/crystal_maiden/crystal_maiden.vmdl"
+	{
+		"attach_head"
+		{
+			"models/items/alchemist/caustic_hair/caustic_hair.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"5"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-234"
+				"XPos"		"-10"
+			}
+			"models/items/magnataur/defender_horn/defender_horn.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"1"
+				"roll"		"0"
+				"ZPos"		"-152"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"-47"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/alchemist/prison_ballchain.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"-37"
+				"ZPos"		"5"
+				"YPos"		"-37"
+				"yaw"		"90"
+				"XPos"		"13"
+			}
+		}
+	}
+	"Particles"
+	{
+		"models/items/dragon_knight/helmet_01/helmet_01.vmdl"
+		{
+			"particles/econ/items/rubick/rubick_force_gold_ambient/rubick_telekinesis_force_debuff_b_gold.vpcf"
+			{
+			}
+		}
+	}
+	"models/heroes/spectre/spectre.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/items/dragon_knight/helmet_01/helmet_01.vmdl"
+			{
+				"scale"		"1.7000000476837"
+				"pitch"		"-90"
+				"roll"		"0"
+				"ZPos"		"-163"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"4"
+			}
+		}
+	}
+	"models/props_gameplay/chicken.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/heroes/earthshaker/totem.vmdl"
+			{
+				"scale"		"0.5"
+				"pitch"		"-20"
+				"roll"		"0"
+				"ZPos"		"-100"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+		}
+		"Head_plc0"
+		{
+			"models/items/tidehunter/diving_helmet/tidehunter_diving_helmet.vmdl"
+			{
+				"scale"		"0.30000001192093"
+				"pitch"		"-100"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-170"
+				"XPos"		"-58"
+			}
+			"models/heroes/items/hat_test/hat_test.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"-100"
+				"roll"		"30"
+				"ZPos"		"-145"
+				"YPos"		"0"
+				"yaw"		"-45"
+				"XPos"		"-8"
+			}
+		}
+	}
+	"ExtraKeys"		"Can Be Added Wherever"
+}

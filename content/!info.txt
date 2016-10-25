@@ -1,0 +1,65 @@
+
+--todo
+-съесть гемы
+-Урасе лапки как на роше
+-вижон купить на дуэль
+-пуржбл наркота
+-арк вард статы
+-ГУЛЯ 2 СКИЛ БОССЫ
+-голда за босасово всем
+скади с боссов
+доделать панели selection (хп, картинки)
+переделать инвайт на 1х1 дуэли
+--------------------------------------сделать воёду купол на себя<<<<<<<<<<<
+
+убирать связку виспа на дуэли
+крипам модели и скиллы
+//"slark_shadow_dance"
+//"scepter_cooldown"	"20"
+
+
+<<+===========================================================================================================
+-change team
+-bloodstone
+===============================================
+[url=https://vk.com/wall-122685850_1344] ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ [/url]
+
+Angel Arena Black Star - Версия 1.2.0c:
+
+Общее:
+	
+Баланс:
+	
+Исправления:
+	
+==================================================================================================================================
+
+Angel Arena Black Star - Version 1.2.0с:
+
+General:
+	
+Balance:
+	
+Fixes:
+	
+Doom - Devour now is not rearmable
+Fixed desolator attack projectiles
+==================================================================================================================================
+More info about gameplay you can get in in-game manual whith can be found in right top corner.
+rhasta,
+lycan,
+lone_druid,
+visage,
+enigma,
+undd,
+furion,
+phoenix,
+venom
+pugna ward
+
+[	]*\/\/ Text Example[0-9.A-z\- ,\/\\]*\n
+
+Please make note of these MongoDB credentials:
+  RockMongo User: admin
+  RockMongo Password: qDNrbAvNXTQf
+URL: https://d2cgstats-ark120202.rhcloud.com/rockmongo/

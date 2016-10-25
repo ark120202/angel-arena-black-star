@@ -1,0 +1,188 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game_info.css" />
+		<include src="file://{resources}/styles/global_styles.css" />
+	</styles>
+	<script>
+		var CurrentPage = -1
+		var PAGE_COUNT = 6
+		var IsLoaded = false
+		function ToggleGameInfoOpenState()
+		{
+			if ($("#InfoPanel").visible) {
+				$("#InfoPanel").visible = false
+			} else {
+				$("#InfoPanel").visible = true
+			}
+		}
+
+		function OpenPage(number)
+		{
+			if (number <= PAGE_COUNT && CurrentPage != number && number > 0) {
+				for (i = 1; i <= PAGE_COUNT; i++) {
+					$("#Page_content_" + i + "_left").visible = false
+					$("#Page_content_" + i + "_right").visible = false
+				}
+				$("#Page_content_" + number + "_left").visible = true
+				$("#Page_content_" + number + "_right").visible = true
+				CurrentPage = number
+				$("#Page_change_previous").visible = true
+				$("#Page_change_next").visible = true
+				if (number == PAGE_COUNT) {
+					$("#Page_change_next").visible = false
+				} else if (number == 1) {
+					$("#Page_change_previous").visible = false
+				}
+				if (IsLoaded) {
+					Game.EmitSound("Arena.GUI.BookPageTurn")
+				} else {
+					IsLoaded = true
+				}
+			}
+		}
+
+		function OpenPagePrevious()
+		{
+			OpenPage(CurrentPage - 1)
+		}
+
+		function OpenPageNext()
+		{
+			OpenPage(CurrentPage + 1)
+		}
+
+		(function() {
+			GameEvents.Subscribe("show_custom_game_info", ToggleGameInfoOpenState)
+			OpenPage(1)
+			ToggleGameInfoOpenState()
+		})()
+	</script>
+	<Panel class="base" hittest="false">
+		<Panel id="InfoPanel" hittest="true">
+			<Panel id="Page_left">
+				<Panel id="Page_left_content">
+					<Panel class="Page_content" id="Page_content_1_left">
+						<Label style="font-size: 54px; align: center top; color: black;" text="#addon_game_name_p1" />
+						<Label style="font-size: 44px; align: center top; color: black;" text="#addon_game_name_p2" />
+						<Label style="margin-top: 20px; font-size: 50px; align: center top; color: black;" text="#custom_game_info_content_1_introduction" />
+						<Panel class="PlainText">
+							<Label class="PlainText" text="#custom_game_info_content_1_text" />
+						</Panel>
+					</Panel>
+
+					<Panel class="Page_content" id="Page_content_2_left">
+						<Label class="Page_title" text="#custom_game_info_content_2_title" />
+						<Image class="AlignedImage" style="width:240px;height:240px;border: 4px solid darkcyan;" src="file://{resources}/images/custom_game/custom_game_info/content_image_1.png" />
+						<Label class="PlainText" text="#custom_game_info_content_2_text" />
+					</Panel>
+
+					<Panel class="Page_content" id="Page_content_3_left">
+						<Label style="font-size: 60px; align: center center;" text="#custom_game_info_content_wip" />
+					</Panel>
+
+					<Panel class="Page_content" id="Page_content_4_left">
+						<Label style="font-size: 60px; align: center center;" text="#custom_game_info_content_wip" />
+					</Panel>
+
+					<Panel class="Page_content" id="Page_content_5_left">
+						<Label style="font-size: 60px; align: center center;" text="#custom_game_info_content_wip" />
+					</Panel>
+
+					<Panel class="Page_content" id="Page_content_6_left">
+						<Label class="Page_title" text="#custom_game_info_content_7_contacts" />
+						<Panel style="flow-children: down;">
+							<Panel style="flow-children: right; margin-left: 5px; margin-top: 5px; margin-bottom: 5px;">
+								<Image style="width: 64px; height: 64px;" src="file://{resources}/images/custom_game/custom_game_info/logo_vk.png" />
+								<Label style="vertical-align: center; margin-left: 10px; color: blue; font-size: 28px;" text="vk.com/angelarenablackstar"/>
+							</Panel>
+							<Label style="align: right center; margin-left: 128px; color: blue; font-size: 28px;" text="goo.gl/9znFRd"/>
+							<Panel style="flow-children: right; margin-left: 5px; margin-top: 5px; margin-bottom: 5px;">
+								<Image style="width: 64px; height: 64px;" src="file://{resources}/images/custom_game/custom_game_info/logo_email.png" />
+								<Label style="vertical-align: center; margin-left: 10px; color: blue; font-size: 24px;" text="angelarenablackstar@gmail.com"/>
+							</Panel>
+						</Panel>
+					</Panel>
+
+
+				</Panel>
+				<Button id="Page_change_previous" onactivate="OpenPagePrevious()"/>
+			</Panel>
+			<Panel id="Page_right">
+				<Panel id="Page_right_content">
+					<Panel class="Page_content" id="Page_content_1_right">
+						<Label class="Page_title" text="#custom_game_info_content_1_book_content" />
+						<Panel style="margin-top: 10px; margin-bottom: 4px; margin-left: 16px; margin-right: 4px; border: 2px solid grey; width: 100%; height: 100%; flow-children: down;">
+							<Panel class="Page_content_1_right_content_page" onactivate="OpenPage(2)">
+								<Image src="file://{resources}/images/custom_game/custom_game_info/content_tile_farm.png" />
+								<Label class="Page_content_1_right_content_page_label" text="#custom_game_info_content_1_book_content_tile_farm"/>
+							</Panel>
+							<Panel class="Page_content_1_right_content_page" onactivate="OpenPage(3)">
+								<Image src="file://{resources}/images/custom_game/custom_game_info/content_tile_items.png" />
+								<Label class="Page_content_1_right_content_page_label" text="#custom_game_info_content_1_book_content_tile_items"/>
+							</Panel>
+							<Panel class="Page_content_1_right_content_page" onactivate="OpenPage(4)">
+								<Image src="file://{resources}/images/custom_game/custom_game_info/content_tile_abilities.png" />
+								<Label class="Page_content_1_right_content_page_label" text="#custom_game_info_content_1_book_content_tile_abilities"/>
+							</Panel>
+							<Panel class="Page_content_1_right_content_page" onactivate="OpenPage(5)">
+								<Image src="file://{resources}/images/custom_game/custom_game_info/content_tile_bosses.png" />
+								<Label class="Page_content_1_right_content_page_label" text="#custom_game_info_content_1_book_content_tile_bosses"/>
+							</Panel>
+							<Panel class="Page_content_1_right_content_page" onactivate="OpenPage(6)">
+								<Image src="file://{resources}/images/custom_game/custom_game_info/content_tile_info.png" />
+								<Label class="Page_content_1_right_content_page_label" text="#custom_game_info_content_1_book_content_tile_info"/>
+							</Panel>
+						</Panel>
+					</Panel>
+
+					<Panel class="Page_content" id="Page_content_2_right">
+						<Panel class="Page_content_2_right_creep_panel" style="margin-top: 70px;">
+							<Image class="Page_content_2_right_creep_img" src="file://{resources}/images/custom_game/custom_game_info/content_image_2.png" />
+							<Label class="Page_content_2_right_creep_label" text="#custom_game_info_content_2_creep_easy" />
+						</Panel>
+						<Panel class="Page_content_2_right_creep_panel" >
+							<Image class="Page_content_2_right_creep_img" src="file://{resources}/images/custom_game/custom_game_info/content_image_3.png" />
+							<Label class="Page_content_2_right_creep_label" text="#custom_game_info_content_2_creep_medium" />
+						</Panel>
+						<Panel class="Page_content_2_right_creep_panel" >
+							<Image class="Page_content_2_right_creep_img" src="file://{resources}/images/custom_game/custom_game_info/content_image_4.png" />
+							<Label class="Page_content_2_right_creep_label" text="#custom_game_info_content_2_creep_hard" />
+						</Panel>
+					</Panel>
+
+					<Panel class="Page_content" id="Page_content_3_right">
+						<Label style="font-size: 60px; align: center center;" text="#custom_game_info_content_wip" />
+					</Panel>
+
+					<Panel class="Page_content" id="Page_content_4_right">
+						<Label style="font-size: 60px; align: center center;" text="#custom_game_info_content_wip" />
+					</Panel>
+
+					<Panel class="Page_content" id="Page_content_5_right">
+						<Label style="font-size: 60px; align: center center;" text="#custom_game_info_content_wip" />
+					</Panel>
+
+					<Panel class="Page_content" id="Page_content_6_right">
+						<Label class="Page_title"  style="font-size: 36px;" text="#custom_game_info_content_7_authors" />
+						<Panel style="margin-top: 10px; margin-bottom: 4px; margin-left: 16px; margin-right: 4px; width: 100%; height: 100%; flow-children: down;">
+							<Panel class="Page_content_7_right_person">
+								<DOTAAvatarImage style="align: left center; margin-left: 5px; width: 82px; height: 82px;" steamid="76561198070058334" />
+								<DOTAUserName class="Page_content_7_right_person_label" steamid="76561198070058334" />
+								<Label class="Page_content_7_right_person_underlabel" text="#custom_game_info_content_7_role_creator"/>
+							</Panel>
+							<Panel class="Page_content_7_right_person">
+								<DOTAAvatarImage style="align: left center; margin-left: 5px; width: 82px; height: 82px;" steamid="76561198314416717" />
+								<DOTAUserName class="Page_content_7_right_person_label" steamid="76561198314416717" />
+								<Label class="Page_content_7_right_person_underlabel" text="#custom_game_info_content_7_role_balance"/>
+							</Panel>
+						</Panel>
+					</Panel>
+
+
+				</Panel>
+				<Button id="Page_change_next" onactivate="OpenPageNext()"/>
+			</Panel>
+			<Image id="Home_button" src="file://{resources}/images/custom_game/custom_game_info/home.png" onactivate="OpenPage(1)"/>
+		</Panel>
+	</Panel>
+</root>

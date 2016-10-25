@@ -1,0 +1,20 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/global_styles.css" />
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/player_profiles.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/player_profiles.js" />
+	</scripts>
+	<Panel hittest="false" class="base">
+		<Panel id="PlayerProfileBase">
+			<Panel id="BasicStatusPanel">
+				<DOTAAvatarImage id="Avatar" steamid="local" />
+				
+			</Panel>
+			<Button class="CloseButton" id="CloseButton" hittest="true" />
+		</Panel>
+	</Panel>
+</root>

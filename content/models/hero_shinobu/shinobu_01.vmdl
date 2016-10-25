@@ -1,0 +1,889 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	m_meshList = 
+	{
+		m_meshList = 
+		[
+			{
+				m_meshName = "shinobu_01"
+				m_meshFile = "models/hero_shinobu/shinobu_01.fbx"
+				m_materialSearchPath = ""
+				m_bSkinParentedObjects = true
+				m_bLegacySkinParentedTransforms = false
+				m_bExpensiveTangents = false
+				m_bHighPrecisionTexCoords = false
+				m_bPerVertexCurvature = false
+				m_bIgnoreCloth = false
+				m_bGetSkinningFromLod0 = false
+				m_pMorphInfo = null
+			},
+		]
+	}
+	m_clothProxyMeshList = 
+	{
+		_class = "CVClothProxyMeshList"
+		m_flClothEnableThreshold = 0.05
+		m_bCreateStaticBone = false
+		m_nMaxBonesPerVertex = 4
+		m_bRemoveUnusedBonesEnabled = false
+		m_bDriveMeshesWithBacksolvedJointsOnly = true
+		m_flMatchProxiesToMeshes = 1.0
+		m_flReservedFloat = 0.0
+		m_nReservedInt = 0
+		m_bReservedBool1 = false
+		m_bReservedBool2 = false
+		m_bReservedBool3 = false
+		m_bReservedBool4 = false
+		m_clothProxyMeshList = [  ]
+	}
+	m_physicsMeshList = 
+	{
+		m_meshList = [  ]
+	}
+	m_pModelInfo = null
+	m_pBoneFlagList = 
+	{
+		m_pObject = null
+	}
+	m_pHitBoxSetLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "bone_torso"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_torso"
+								m_vMinBounds = [ -13.93726, -9.468781, -0.353554 ]
+								m_vMaxBounds = [ 17.396418, 11.778809, 37.106743 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_head"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_head"
+								m_vMinBounds = [ -23.848698, -17.332886, -2.746017 ]
+								m_vMaxBounds = [ 23.648323, 20.300133, 37.494186 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_pelvis"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_pelvis"
+								m_vMinBounds = [ -16.572147, -9.671873, -14.637451 ]
+								m_vMaxBounds = [ 16.4492, 11.439833, 4.993843 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_new36"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_new36"
+								m_vMinBounds = [ -0.671009, -1.666207, -0.049484 ]
+								m_vMaxBounds = [ 0.671009, 1.666206, 0.049484 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_new40"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_new40"
+								m_vMinBounds = [ -0.739379, -1.636402, -0.065887 ]
+								m_vMaxBounds = [ 0.73938, 1.636402, 0.065933 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_right arm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_right arm"
+								m_vMinBounds = [ -22.878672, -4.875423, -4.717804 ]
+								m_vMaxBounds = [ -6.831909, 4.484282, 3.506516 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_skirt front1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_skirt front1"
+								m_vMinBounds = [ -8.054308, -0.597454, -0.373871 ]
+								m_vMaxBounds = [ 8.044497, 0.481275, 0.268326 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_leftskirt1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_leftskirt1"
+								m_vMinBounds = [ -3.268761, -3.663952, -0.196213 ]
+								m_vMaxBounds = [ 0.34484, 10.469385, 0.373825 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_right skirt1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_right skirt1"
+								m_vMinBounds = [ -1.439075, -7.180354, -0.30899 ]
+								m_vMaxBounds = [ 1.865104, 7.071372, 0.208359 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_backskirt1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_backskirt1"
+								m_vMinBounds = [ -5.309381, -0.419543, -0.098419 ]
+								m_vMaxBounds = [ 5.323947, 0.597878, 0.102951 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_new37"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_new37"
+								m_vMinBounds = [ -0.689428, -1.40667, -0.050949 ]
+								m_vMaxBounds = [ 0.689427, 1.406669, 0.050964 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_new41"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_new41"
+								m_vMinBounds = [ -0.748792, -1.376476, -0.03418 ]
+								m_vMaxBounds = [ 0.748793, 1.376476, 0.034225 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_left arm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_left arm"
+								m_vMinBounds = [ 6.345922, -4.617887, -5.088394 ]
+								m_vMaxBounds = [ 17.871716, 4.033126, 3.126572 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_right elbow"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_right elbow"
+								m_vMinBounds = [ -33.551559, -8.623144, -2.922165 ]
+								m_vMaxBounds = [ 0.119114, 4.3335, 6.283035 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_ribbon1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_ribbon1"
+								m_vMinBounds = [ -1.031343, -0.02188, -0.021042 ]
+								m_vMaxBounds = [ 1.031167, 0.02217, 0.005417 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_left leg"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_left leg"
+								m_vMinBounds = [ -8.153217, -9.127312, -37.366386 ]
+								m_vMaxBounds = [ 7.3646, 7.66815, 2.229248 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_right leg"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_right leg"
+								m_vMinBounds = [ -7.529401, -9.756839, -33.105881 ]
+								m_vMaxBounds = [ 7.971728, 7.246675, 2.304886 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_skirt front2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_skirt front2"
+								m_vMinBounds = [ -8.917301, -0.290207, -0.137161 ]
+								m_vMaxBounds = [ 8.904648, 0.474134, 0.212372 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_leftskirt2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_leftskirt2"
+								m_vMinBounds = [ -3.355179, -4.811889, -0.348717 ]
+								m_vMaxBounds = [ 1.003885, 13.421791, 0.792717 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_right skirt2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_right skirt2"
+								m_vMinBounds = [ -2.125986, -9.282673, -0.610695 ]
+								m_vMaxBounds = [ 1.811447, 9.048609, 0.48494 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_backskirt2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_backskirt2"
+								m_vMinBounds = [ -7.6303, -0.522861, -0.144058 ]
+								m_vMaxBounds = [ 7.658908, 0.734166, 0.135017 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_new38"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_new38"
+								m_vMinBounds = [ -0.712211, -1.171021, -0.047455 ]
+								m_vMaxBounds = [ 0.712211, 1.17102, 0.047501 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_new42"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_new42"
+								m_vMinBounds = [ -0.761535, -1.140062, -0.033051 ]
+								m_vMaxBounds = [ 0.761536, 1.140062, 0.033096 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_left elbow"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_left elbow"
+								m_vMinBounds = [ -0.106709, -8.243796, -2.917572 ]
+								m_vMaxBounds = [ 33.602337, 4.398258, 6.326782 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_right hand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_right hand"
+								m_vMinBounds = [ -10.132462, -7.71078, -3.154541 ]
+								m_vMaxBounds = [ 0.129951, 2.818529, 3.492111 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_ribbon2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_ribbon2"
+								m_vMinBounds = [ -3.019569, -0.248799, -0.059067 ]
+								m_vMaxBounds = [ 3.008226, 0.289577, 0.067474 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_left knee"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_left knee"
+								m_vMinBounds = [ -5.070747, -6.146505, -51.545734 ]
+								m_vMaxBounds = [ 7.336919, 9.470083, -0.119431 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_right knee"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_right knee"
+								m_vMinBounds = [ -8.182675, -7.305745, -51.083378 ]
+								m_vMaxBounds = [ 5.601889, 8.14466, 0.53067 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_skirt front3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_skirt front3"
+								m_vMinBounds = [ -10.83412, -0.531599, -0.448326 ]
+								m_vMaxBounds = [ 10.816854, 0.763008, 0.537781 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_leftskirt3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_leftskirt3"
+								m_vMinBounds = [ -1.914507, -11.717823, -1.195427 ]
+								m_vMaxBounds = [ 2.603209, 11.408028, 0.898811 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_right skirt3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_right skirt3"
+								m_vMinBounds = [ -2.610434, -11.671165, -1.197334 ]
+								m_vMaxBounds = [ 1.338858, 11.494366, 0.852226 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_backsirt3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_backsirt3"
+								m_vMinBounds = [ -10.517166, -0.962315, -0.186562 ]
+								m_vMaxBounds = [ 10.612131, 1.503654, 0.173103 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_new39"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_new39"
+								m_vMinBounds = [ -1.035292, -1.20886, -7.524216 ]
+								m_vMaxBounds = [ 0.782462, 1.508944, 0.210693 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_new43"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_new43"
+								m_vMinBounds = [ -0.828635, -1.174853, -7.540421 ]
+								m_vMaxBounds = [ 0.94967, 1.470534, 0.225983 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_hair"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_hair"
+								m_vMinBounds = [ -43.259953, -4.814022, -34.606934 ]
+								m_vMaxBounds = [ 42.247013, 44.364193, 2.079391 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_left hand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_left hand"
+								m_vMinBounds = [ -0.162636, -11.856567, -5.225494 ]
+								m_vMaxBounds = [ 17.191422, 2.741657, 2.572311 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_sword"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_sword"
+								m_vMinBounds = [ -7.505157, -7.180371, -18.780094 ]
+								m_vMaxBounds = [ 7.435287, 6.634239, 142.612976 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_ribbon3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_ribbon3"
+								m_vMinBounds = [ -5.685294, -2.041859, -10.78978 ]
+								m_vMaxBounds = [ 5.67208, 0.206821, 0.101059 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_left foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_left foot"
+								m_vMinBounds = [ -5.844012, -20.101728, -7.841438 ]
+								m_vMaxBounds = [ 4.929749, 7.846041, 1.617378 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_right foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_right foot"
+								m_vMinBounds = [ -4.679809, -20.814342, -7.817571 ]
+								m_vMaxBounds = [ 6.441634, 6.926542, 1.699916 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_skirt front4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_skirt front4"
+								m_vMinBounds = [ -17.51899, -6.135847, -17.73616 ]
+								m_vMaxBounds = [ 16.459869, 1.150139, 0.364395 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_leftskirt4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_leftskirt4"
+								m_vMinBounds = [ -1.763365, -16.308027, -18.44516 ]
+								m_vMaxBounds = [ 11.453064, 19.398241, 0.768799 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_right skirt4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_right skirt4"
+								m_vMinBounds = [ -11.804482, -16.569962, -18.336609 ]
+								m_vMaxBounds = [ 2.435015, 19.062157, 0.723991 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_backskirt4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_backskirt4"
+								m_vMinBounds = [ -16.968884, -1.081007, -14.109177 ]
+								m_vMaxBounds = [ 16.514927, 10.149549, 0.130814 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
+	m_pAttachmentLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_name = ""
+				m_attachments = 
+				[
+					{
+						m_name = "attach_attack1"
+						m_influences = 
+						[
+							{
+								m_influenceName = "bone_sword"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_head"
+						m_influences = 
+						[
+							{
+								m_influenceName = "bone_head"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_hitloc"
+						m_influences = 
+						[
+							{
+								m_influenceName = "bone_torso"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+				]
+			}
+		},
+	]
+	m_pAnimGroup = 
+	{
+		m_pObject = 
+		{
+			m_Name = ""
+			m_pReferenceSkeleton = 
+			{
+				m_pObject = null
+			}
+			m_pBoneFlagList = 
+			{
+				m_pObject = null
+			}
+			m_pSeqGroup = 
+			{
+				m_pObject = null
+			}
+			m_pAnimGroups = 
+			[
+				{
+					m_pObject = 
+					{
+						m_Name = "AnimationGroup_0"
+						m_pReferenceSkeleton = 
+						{
+							m_pObject = null
+						}
+						m_pBoneFlagList = 
+						{
+							m_pObject = null
+						}
+						m_pSeqGroup = 
+						{
+							m_pObject = null
+						}
+						m_pAnimGroups = [  ]
+						m_Vanim = 
+						[
+							{
+								m_Animationname = "shinobu_idle"
+								m_Filepath = "models/hero_shinobu/shinobu_01_anim.fbx"
+								m_nStartframe = 3
+								m_nEndframe = 46
+								m_flFps = 30.0
+								m_Loop = 
+								{
+									m_bLoop = true
+									m_bSmoothLoop = true
+									m_nSmoothLoopStart = 3
+									m_nSmoothLoopEnd = 3
+									m_StartLoop = 
+									{
+										_class = "CVAnimCmdStartLoop"
+										m_bEnabled = false
+										m_nLoopRestart = 0
+									}
+								}
+								m_bHidden = false
+								m_bDisable = false
+								m_Activities = 
+								[
+									{
+										m_Name = "ACT_DOTA_IDLE"
+										m_nWeight = 1
+									},
+								]
+								m_AnimationEvents = [  ]
+								m_MotionFrames = [  ]
+								m_pIkRules = [  ]
+								m_pAlignAnimation = null
+								m_adjustAnimation = 
+								{
+									m_translation = [ 0.0, 0.0, 0.0 ]
+									m_rotation = [ 0.0, 0.0, 0.0 ]
+								}
+								m_Keywords = [  ]
+								m_sequenceParams = 
+								{
+									m_flFadeInTime = 0.2
+									m_flFadeOutTime = 0.2
+								}
+								m_folderName = ""
+								m_MotionFramesRootBone = ""
+							},
+							{
+								m_Animationname = "shinobu_run"
+								m_Filepath = "models/hero_shinobu/shinobu_01_anim.fbx"
+								m_nStartframe = 318
+								m_nEndframe = 350
+								m_flFps = 30.0
+								m_Loop = 
+								{
+									m_bLoop = true
+									m_bSmoothLoop = true
+									m_nSmoothLoopStart = 3
+									m_nSmoothLoopEnd = 3
+									m_StartLoop = 
+									{
+										_class = "CVAnimCmdStartLoop"
+										m_bEnabled = false
+										m_nLoopRestart = 0
+									}
+								}
+								m_bHidden = false
+								m_bDisable = false
+								m_Activities = 
+								[
+									{
+										m_Name = "ACT_DOTA_RUN"
+										m_nWeight = 1
+									},
+								]
+								m_AnimationEvents = [  ]
+								m_MotionFrames = [  ]
+								m_pIkRules = [  ]
+								m_pAlignAnimation = null
+								m_adjustAnimation = 
+								{
+									m_translation = [ 0.0, 0.0, 0.0 ]
+									m_rotation = [ 0.0, 0.0, 0.0 ]
+								}
+								m_Keywords = [  ]
+								m_sequenceParams = 
+								{
+									m_flFadeInTime = 0.2
+									m_flFadeOutTime = 0.2
+								}
+								m_folderName = ""
+								m_MotionFramesRootBone = ""
+							},
+							{
+								m_Animationname = "shinobu_attack1"
+								m_Filepath = "models/hero_shinobu/shinobu_01_anim.fbx"
+								m_nStartframe = 125
+								m_nEndframe = 156
+								m_flFps = 30.0
+								m_Loop = 
+								{
+									m_bLoop = false
+									m_bSmoothLoop = false
+									m_nSmoothLoopStart = 0
+									m_nSmoothLoopEnd = 0
+									m_StartLoop = 
+									{
+										_class = "CVAnimCmdStartLoop"
+										m_bEnabled = false
+										m_nLoopRestart = 0
+									}
+								}
+								m_bHidden = false
+								m_bDisable = false
+								m_Activities = 
+								[
+									{
+										m_Name = "ACT_DOTA_ATTACK"
+										m_nWeight = 1
+									},
+								]
+								m_AnimationEvents = [  ]
+								m_MotionFrames = [  ]
+								m_pIkRules = [  ]
+								m_pAlignAnimation = null
+								m_adjustAnimation = 
+								{
+									m_translation = [ 0.0, 0.0, 0.0 ]
+									m_rotation = [ 0.0, 0.0, 0.0 ]
+								}
+								m_Keywords = [  ]
+								m_sequenceParams = 
+								{
+									m_flFadeInTime = 0.2
+									m_flFadeOutTime = 0.2
+								}
+								m_folderName = ""
+								m_MotionFramesRootBone = ""
+							},
+							{
+								m_Animationname = "shinobu_attack2"
+								m_Filepath = "models/hero_shinobu/shinobu_01_anim.fbx"
+								m_nStartframe = 187
+								m_nEndframe = 219
+								m_flFps = 30.0
+								m_Loop = 
+								{
+									m_bLoop = false
+									m_bSmoothLoop = false
+									m_nSmoothLoopStart = 0
+									m_nSmoothLoopEnd = 0
+									m_StartLoop = 
+									{
+										_class = "CVAnimCmdStartLoop"
+										m_bEnabled = false
+										m_nLoopRestart = 0
+									}
+								}
+								m_bHidden = false
+								m_bDisable = false
+								m_Activities = 
+								[
+									{
+										m_Name = "ACT_DOTA_ATTACK2"
+										m_nWeight = 1
+									},
+								]
+								m_AnimationEvents = [  ]
+								m_MotionFrames = [  ]
+								m_pIkRules = [  ]
+								m_pAlignAnimation = null
+								m_adjustAnimation = 
+								{
+									m_translation = [ 0.0, 0.0, 0.0 ]
+									m_rotation = [ 0.0, 0.0, 0.0 ]
+								}
+								m_Keywords = [  ]
+								m_sequenceParams = 
+								{
+									m_flFadeInTime = 0.2
+									m_flFadeOutTime = 0.2
+								}
+								m_folderName = ""
+								m_MotionFramesRootBone = ""
+							},
+							{
+								m_Animationname = "shinobu_die"
+								m_Filepath = "models/hero_shinobu/shinobu_01_anim.fbx"
+								m_nStartframe = 407
+								m_nEndframe = 469
+								m_flFps = 30.0
+								m_Loop = 
+								{
+									m_bLoop = false
+									m_bSmoothLoop = false
+									m_nSmoothLoopStart = 0
+									m_nSmoothLoopEnd = 0
+									m_StartLoop = 
+									{
+										_class = "CVAnimCmdStartLoop"
+										m_bEnabled = false
+										m_nLoopRestart = 0
+									}
+								}
+								m_bHidden = false
+								m_bDisable = false
+								m_Activities = 
+								[
+									{
+										m_Name = "ACT_DOTA_DIE"
+										m_nWeight = 1
+									},
+								]
+								m_AnimationEvents = [  ]
+								m_MotionFrames = [  ]
+								m_pIkRules = [  ]
+								m_pAlignAnimation = null
+								m_adjustAnimation = 
+								{
+									m_translation = [ 0.0, 0.0, 0.0 ]
+									m_rotation = [ 0.0, 0.0, 0.0 ]
+								}
+								m_Keywords = [  ]
+								m_sequenceParams = 
+								{
+									m_flFadeInTime = 0.2
+									m_flFadeOutTime = 0.2
+								}
+								m_folderName = ""
+								m_MotionFramesRootBone = ""
+							},
+						]
+						m_sScripts = [  ]
+						m_folderNames = [  ]
+					}
+				},
+			]
+			m_Vanim = [  ]
+			m_sScripts = [  ]
+			m_folderNames = [  ]
+		}
+	}
+	m_pMaterialGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pMeshGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pLodGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pPropBreakableList = 
+	{
+		m_pObject = null
+	}
+	m_pPropDataList = 
+	{
+		m_pObject = null
+	}
+	m_pConstraintLists = [  ]
+	m_collision = ""
+	m_softbody = ""
+	m_sMDLFilename = ""
+	m_sOffsetHitboxSets = [  ]
+	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
+	m_scriptFiles = [  ]
+	m_pMaterialRemapList = 
+	{
+		m_vMaterialRemapList = 
+		[
+			{
+				m_sSearchMaterial = "*"
+				m_sReplaceMaterial = "materials/models/hero_shinobu/shinobu_01.vmat"
+			},
+		]
+	}
+	m_flFbxScale = 1.0
+	m_flQCScale = 1.0
+	m_vOrigin = [ 0.0, 0.0, 0.0 ]
+	m_nLoadDmxAnimVersion = 0
+	m_pPsfList = null
+	m_keyValueText = ""
+	m_bStaticProp = false
+	m_bEnableClothProcessing = true
+	m_flClothEnableThreshold = 0.05
+	m_nMaxClothVertsPerMesh = 2048
+	m_bBuildClothBoneHierarchy = false
+	m_nNavType = "AUTH_NAV_MESH"
+	m_bMakeUniqueVMeshes = false
+	m_bMakeImplicitBindPoseSequence = false
+	m_bAdjustSkeletonFromBoneFlags = false
+	m_pAnimGroups = [  ]
+}

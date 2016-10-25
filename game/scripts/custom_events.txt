@@ -1,0 +1,11 @@
+"CustomEvents"
+{
+	"panorama_shop_show_item"
+	{
+		"itemName"		"string"
+	}
+	"player_profiles_show_info"
+	{
+		"playerId"		"short"
+	}
+}

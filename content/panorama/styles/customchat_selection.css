@@ -1,0 +1,82 @@
+#SelectionChatBox
+{
+	width: 100%;
+	height: 60%;
+}
+
+#SelectionChat
+{
+	width: 100%;
+	height: 100%;
+	margin: 4px;
+}
+
+#SelectionChatMessagesPanel
+{
+	width: 100%;
+	vertical-align: bottom;
+	margin-bottom: 14%;
+}
+
+#SelectionChatMessages
+{
+	flow-children: down;
+    transform: rotateX(180deg);
+}
+
+#SelectionChatEntryPanel
+{
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	width: 100%;
+	height: 12%;
+	vertical-align: bottom;
+	border-top: 1px solid grey;
+}
+
+#SelectionChatEntry
+{
+	width: 100%;
+	height: 36px;
+	vertical-align: center;
+	background-color: none;
+	border-width: 0px;
+}
+
+.CustomChatLine
+{
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	flow-children: right;
+	min-height: 32px;
+    transform: rotateX(-180deg);
+}
+	
+.CustomChatLineText
+{
+	margin-left: 0px;
+	margin-right: 4px;
+	color: white;
+	vertical-align: center;
+}
+
+.CustomChatNicknameText
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	font-weight: bold;
+	align: center center;
+	border-radius: 5px;
+	padding: 2px;
+}
+
+.CustomChatTeamScopeLabel
+{
+	font-weight: bold;
+	align: center center;
+	padding-top: 2px;
+	margin-left: 2px;
+	margin-right: 2px;
+}

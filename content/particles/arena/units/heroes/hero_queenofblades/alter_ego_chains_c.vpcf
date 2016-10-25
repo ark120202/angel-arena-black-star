@@ -1,0 +1,60 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 6
+	m_flConstantLifespan = 0.1
+	m_nGroupID = 1
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_SetChildControlPoints"
+			m_nNumControlPoints = 6
+			m_bSetOrientation = true
+		},
+		{
+			_class = "C_OP_MoveToHitbox"
+			m_flLifeTimeLerpEnd = 0.1
+		},
+		{
+			_class = "C_OP_LockToBone"
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_flDecayTime = 0.1
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RingWave"
+			m_nOverrideCP = 1
+			m_flParticlesPerOrbit = 5.0
+			m_bEvenDistribution = true
+			m_flInitialRadius = 1.0
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 64.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 64.0 ]
+		},
+		{
+			_class = "C_INIT_SetHitboxToClosest"
+			m_flHitBoxScale = 1.1
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 6
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_queenofblades/alter_ego_chains_bulk_b.vpcf"
+		},
+	]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
+}

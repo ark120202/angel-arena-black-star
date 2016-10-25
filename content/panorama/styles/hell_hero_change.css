@@ -1,0 +1,15 @@
+#HeroListPanel
+{
+	flow-children: right;
+}
+
+
+.base #MainBox
+{
+	background-size: 100% 100%;
+}
+
+.base #SelectedHeroLabel
+{
+	color: white;
+}

@@ -1,0 +1,30 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/global_styles.css" />
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/duel1x1call.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/duel1x1call.js" /> 
+	</scripts>
+	<Panel hittest="false" class="base">
+		<Panel hittest="true" id="ElementBox">
+			<Panel class="CallSettings">
+				<Panel class="LabelElementPanel" id="DuelOpponents" />
+				<Panel class="LabelElementPanel">
+					<Label class="SettingElementLabel" text="#duel1x1call_entergold"/>
+					<TextEntry class="CallSettingsElement" placeholder="1000" id="GameGoldCost"/>
+				</Panel>
+				<Panel class="LabelElementPanel">
+					<Label class="SettingElementLabel" text="#duel1x1call_entermessage"/>
+					<TextEntry class="CallSettingsElement" id="GameMessage"/>
+				</Panel>
+			</Panel>
+			<Panel id="ButtonCallBox">
+				<Button id="call_duel_button" enabled="false" onactivate="CallForDuel()" >
+					<Label id="ButtonCallLabel" text="#duel1x1call_call"/>
+				</Button>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

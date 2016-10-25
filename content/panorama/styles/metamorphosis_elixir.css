@@ -1,0 +1,48 @@
+.MetamorphosisElixirBase
+{
+	vertical-align: center;
+	horizontal-align: center;
+	width: 90%;
+	height: 92%;
+}
+
+.AspectRatio4x3 .MetamorphosisElixirBase
+{
+	vertical-align: center;
+	horizontal-align: center;
+	width: 96%;
+	height: 92%;
+}
+
+#MainBox
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("file://{images}/custom_game/hero_selection/background_metamorphosis.png");
+	background-size: 100% 100%;
+	flow-children: right;
+}
+#HeroListBasePanel
+{
+	height: 100%;
+	width: 100%;
+	vertical-align: bottom;
+	background-color: rgba(0,0,0,240);
+	flow-children: down;
+}
+
+.HeroListElement
+{
+	width: 102.4px;
+	height: 57.6px;
+}
+
+#ExitButton:hover
+{
+	wash-color: #ccc;
+}
+
+#ExitButton:active
+{
+	wash-color: #fff;
+}

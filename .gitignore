@@ -1,0 +1,16 @@
+*.bin
+
+*.vpcf_c
+*.vtex_c
+*.vsndevts_c
+*.vmat_c
+*.vjs_c
+*.vxml_c
+*.vcss_c
+
+*.cfg
+
+!game/panorama/images/*.vtex_c
+!game/panorama/images/custom_game/*.vtex_c
+
+*.vpk

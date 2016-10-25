@@ -1,0 +1,640 @@
+"Arena.Hero_Arthas.Vsolyanova.Impact"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/arthas/vsolyanova_1.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"3.500000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Arthas.Vsolyanova.Transformate"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/arthas/vsolyanova_transformate.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"5.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Arthas.RageOfArthas"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/arthas/rage_of_arthas_1.vsnd"
+							"value1"	"sounds/arena/weapons/hero/arthas/rage_of_arthas_2.vsnd"
+							"value2"	"sounds/arena/weapons/hero/arthas/rage_of_arthas_3.vsnd"
+							"value3"	"sounds/arena/weapons/hero/arthas/rage_of_arthas_4.vsnd"
+							"value4"	"sounds/arena/weapons/hero/arthas/rage_of_arthas_5.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"3.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Stargazer.GammaRay.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/stargazer/gamma_ray.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"3.500000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Stargazer.CosmicCountdown.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/stargazer/cosmic_countdown.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"5.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Warlock.Upheaval"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/weapons/hero/warlock/warlock_upheaval.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"1.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Items.SteamFootgear.Activate"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/items/steam_footgear.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"1.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Crystal.GlacierTranqulity"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/crystal_maiden/glacier_tranqulity.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"1.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.GUI.BookPageTurn"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/book_page_turn.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"3.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Cherub.ExplosiveSpore.Plant"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/cherub/explosive_spore_plant.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"5.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Cherub.ExplosiveSpore.Explode"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/cherub/explosive_spore_explode.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"5.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Cherub.Synthesis.Working"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/cherub/synthesis_working.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"50.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1200.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Cherub.SleepCloud.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/cherub/sleep_cloud.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"5.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Items.EssentialOrbFire.Activate"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/items/essential_orb_fire.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"1.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Items.CheatEssence.Activate"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/addons/conquest/capture_point_timer_hallow.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"1.500000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_QueenOfBlades.DarknessAura.Critical"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/queenofblades/darkness_aura.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"5.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Kadash.AssasinsSkills.Critical"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/kadash/crit.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"50.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Items.CoffeeBean.Activate"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/items/coffee_bean.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"5.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_ZenGehraz.VowOfSilence"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/zen_gehraz/vow_of_silence.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"40.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_ZenGehraz.MysticTwister"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/zen_gehraz/mystic_twister.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"10.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_ZenGehraz.Superposition"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/zen_gehraz/superposition.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"75.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}

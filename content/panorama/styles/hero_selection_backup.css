@@ -1,0 +1,758 @@
+.base
+{
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: 1.5s;
+	transition-delay: 4s;
+}
+
+#HeroSelectionBox
+{
+	height: 100%;
+	width: 100%;
+}
+@keyframes 'HeroSelectionBackgroundScroll'
+{
+	0%
+	{
+		transform: translateX(0%);
+	}
+    50%
+    {
+		transform: translateX(100%);
+    }
+    100%
+    {
+		transform: translateX(0%);
+    }
+}
+
+#HeroSelectionBackground
+{
+	width: 200%;
+	height: 100%;
+	background-image: url("file://{images}/custom_game/hero_selection/background.jpg");
+	background-size: 100% 100%;
+	margin-left: -100%;
+	animation-name: HeroSelectionBackgroundScroll;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-duration: 400s;
+}
+
+#SelectedHeroPanel
+{
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 100%;
+	width: 20%;
+	flow-children: down;
+}
+
+.AspectRatio4x3 #SelectedHeroPanel
+{
+	width: 24%;
+}
+
+.AspectRatio5x4 #SelectedHeroPanel
+{
+	width: 25.5%;
+}
+
+.AspectRatio16x10 #SelectedHeroPanel
+{
+	width: 23.8%;
+}
+
+#SelectedHeroLabelPanel
+{
+	width: 100%;
+	height: 4.5%;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+#SelectedHeroLabel
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: white;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+/*#SelectedHeroImagePanel
+{
+	width: 100%;
+	height: 15.4%;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+#SelectedHeroImage
+{
+	vertical-align: center;
+	horizontal-align: center;
+	width: 70%;
+	height: 100%;
+	border: 10px solid darkred;
+}
+*/
+#SelectedHeroScene
+{
+	horizontal-align: center;
+	height: 100%;
+	width: 80%;
+	opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
+}
+#SelectedHeroAbilitiesPanel
+{
+	width: 100%;
+	height: 9.8%;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+#SelectedHeroAbilitiesPanelInner
+{
+	horizontal-align: center;
+	vertical-align: center;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	flow-children: right;
+}
+
+#HeroListBasePanel
+{
+	margin-left: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 100%;
+	width: 55.6%;
+}
+
+.AspectRatio4x3 #HeroListBasePanel
+{
+	width: 50.86%;
+}
+
+.AspectRatio5x4 #HeroListBasePanel
+{
+	width: 49%;
+}
+
+.AspectRatio16x10 #HeroListBasePanel
+{
+	width: 53.5%;
+}
+
+#HeroListTabsPanel
+{
+	margin-left: 6px;
+	margin-right: 6px;
+	height: 5%;
+	width: 100%;
+	horizontal-align: center;
+	flow-children: right;
+}
+
+#HeroListPanel
+{
+	margin-top: -1px;
+	margin-left: 6px;
+	margin-right: 6px;
+	height: 87.5%;
+	width: 100%;
+}
+
+#HeroListBasePanelHost
+{
+	height: 100%;
+	width: 100%;
+	flow-children: down;
+}
+#HeroListBasePanelBg
+{
+	height: 100%;
+	width: 100%;
+	background-color: #b3ffff;
+	opacity: 0.4;
+	box-shadow: #b3ffff -5px -5px 10px 10px ;
+}
+
+.HeroListElement
+{
+	margin-top: 8px;
+	margin-bottom: 2px;
+	margin-left: 6px;
+	margin-right: 4px;
+	opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
+}
+.AspectRatio4x3 .HeroListElement
+{
+	margin-top: 0px;
+	margin-bottom: -2px;
+	margin-left: 0px;
+	margin-right: 0px;
+	pre-transform-scale2d: 0.92;
+}
+
+.AspectRatio5x4 .HeroListElement
+{
+	margin-top: -4px;
+	margin-bottom: -6px;
+	margin-left: -4px;
+	margin-right: -4px;
+	pre-transform-scale2d: 0.88;
+}
+.AspectRatio16x10 .HeroListElement
+{
+	margin-top: 4px;
+	margin-bottom: 1px;
+	margin-left: 3px;
+	margin-right: 2px;
+}
+.HeroListElement:hover
+{
+	pre-transform-scale2d: 1.05;
+}
+.HeroPanelSelected
+{
+	pre-transform-scale2d: 1.08;
+	box-shadow: 0 0 20px darkred;
+}
+
+.HeroTabButton
+{
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	height: 100%;
+	background-color: #1a8cff;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.HeroTabButton:hover
+{
+	margin-bottom: 8px;
+}
+
+.HeroTabButtonSelected
+{
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+.HeroTabButtonSelected:hover
+{
+	margin-bottom: 0;
+}
+
+.HeroTabButtonLabel
+{
+	vertical-align: center;
+	horizontal-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: white;
+	font-weight: bold;
+	font-size: 32px;
+}
+
+#SelectionStatusPanel
+{
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 100%;
+	width: 100%;
+	flow-children: down;
+}
+
+#GameModeInfoPanel
+{
+	height: 70px;
+	width: 100%;
+	margin: 4px;
+	flow-children: right;
+}
+
+#GameModeInfoGamemodeLabel
+{
+	margin-left: 8px;
+	margin-top: 7%;
+	vertical-align: center;
+	font-size: 50px;
+	color: white;
+}
+
+#TimerPanel
+{
+	width: 70px;
+	height: 70px;
+	horizontal-align: right;
+}
+
+#TimerBg
+{
+	transition-property: opacity;
+	transition-delay: 0.2s;
+	wash-color: #222;
+}
+
+#HeroSelectionTimer
+{
+	vertical-align: center;
+	horizontal-align: center;
+	font-size: 48px;
+	color: #CCCCCC;
+}
+
+#TeamSelectionStatusPanel
+{
+	margin: 4px;
+	width: 100%;
+	height: 70%;
+	flow-children: down;
+}
+
+.TeamSelectionPanel
+{
+	margin: 4px;
+	width: 100%;
+	flow-children: down;
+	background-color: rgba(0, 0, 0, 175);
+	border: 1px solid rgba(0, 0, 0, 125);
+	box-shadow: -5px -5px 10px 10px black;
+}
+
+.PlayerInTeamPanel
+{
+	margin: 4px;
+	width: 100%;
+}
+
+.TeamLabelPanel
+{
+	width: 100%;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: -3px;
+	margin-bottom: -15px;
+}
+
+.TeamLabel
+{
+	vertical-align: center;
+	horizontal-align: center;
+	font-size: 50px;
+	color: black;
+	text-shadow: 0 0 1px rgba(192, 192, 192, 200);
+}
+
+.PlayerInTeamNickname
+{
+	width: 75%;
+	margin: 4px;
+	vertical-align: center;
+	font-size: 28px;
+	color: black;
+	text-shadow: 0 0 1px rgba(150, 150, 150, 255);
+}
+
+.PlayerInTeamHeroImagePanel
+{
+	width: 96px;
+	height: 48px;
+	align: right center;
+	background-color: grey;
+}
+
+.PlayerInTeamHeroImageHover
+{
+	opacity: 0.7;
+}
+
+#SelectedHeroDescriptionPanel
+{
+	width: 100%;
+	height: 40%;
+	margin: 4px;
+	background-color: Beige;
+	border-radius: 20px;
+}
+
+#SelectedHeroDescriptionText
+{
+	margin: 10px;
+	color: black;
+	font-size: 20px;
+	height: 100%;
+	width: 100%;
+	overflow: squish scroll;
+}
+#SelectedHeroSelectPanel
+{
+	width: 100%;
+	height: 10%;
+	margin: 4px;
+	background-color: black;
+	border-radius: 100px;
+}
+#SelectedHeroSelectButton
+{
+	width: 100%;
+	height: 100%;
+	background-color: #0099FF;
+	border-radius: 100px;
+}
+#SelectedHeroSelectButton:hover
+{
+	border: 1px solid lightblue;
+}
+#SelectedHeroSelectButton:active
+{
+	pre-transform-scale2d: 0.99;
+	border: 3px solid lightblue;
+}
+#SelectedHeroSelectButton:disabled
+{
+	opacity: 0.2;
+}
+#SelectedHeroSelectLabel
+{
+	vertical-align: center;
+	horizontal-align: center;
+	font-size: 50px;
+	color: white;
+}
+
+.HeroListElementPickedBySomeone
+{
+	opacity: 0.8;
+}
+
+.SelectedHeroAbility
+{
+	border: 1px solid aquamarine;
+	height: 92px;
+	border-radius: 20%;
+}
+
+.SelectedHeroAbilityx5
+{
+	height: 73px;
+}
+
+.SelectedHeroAbilityx6
+{
+	height: 61px;
+}
+
+.AspectRatio4x3 .SelectedHeroAbility
+{
+	height: 82px;
+}
+
+.AspectRatio4x3 .SelectedHeroAbilityx5
+{
+	height: 66px;
+}
+
+.AspectRatio4x3 .SelectedHeroAbilityx6
+{
+	height: 54px;
+}
+
+.AspectRatio5x4 .SelectedHeroAbility
+{
+	height: 82px;
+}
+
+.AspectRatio5x4 .SelectedHeroAbilityx5
+{
+	height: 66px;
+}
+
+.AspectRatio5x4 .SelectedHeroAbilityx6
+{
+	height: 54px;
+}
+
+#ExitButton
+{
+	transform: rotatez(180deg);
+	background-image: url("file://{images}/control_icons/return_to_game.png");
+	width: 31px;
+	height: 29px;
+	background-size: 27px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	wash-color: #444a55;
+}
+.ChangedHeroPanel
+{
+	margin-top: 1px; //8
+	margin-bottom: -5px; //2
+	margin-left: -1px; //6
+	margin-right: -3px; //4
+	border: 7px solid red;
+}
+
+.AspectRatio4x3 .ChangedHeroPanel
+{
+	margin-top: -7px; //0
+	margin-bottom: -9px;//-2
+	margin-left: -7px;//0
+	margin-right: -7px;//0
+}
+.AspectRatio16x10 .ChangedHeroPanel
+{
+	margin-top: -3px;//4
+	margin-bottom: -6px;//1
+	margin-left: -4px;//3
+	margin-right: -5px;//2
+}
+
+.AspectRatio5x4 .ChangedHeroPanel
+{
+	margin-top: -11px; //-4
+	margin-bottom: -13px;//-6
+	margin-left: -11px;//-4
+	margin-right: -11px;//-4
+}
+#HeroListSubControls
+{
+	width: 100%;
+	vertical-align: bottom;
+	height: 8%;
+	margin: 4px;
+}
+
+#HeroRandomButtonPanel
+{
+	width: 40%;
+	height: 100%;
+	margin: 4px;
+	background-color: black;
+	border-radius: 100px;
+	horizontal-align: right;
+}
+#HeroRandomButton
+{
+	width: 100%;
+	height: 100%;
+	background-color: gray;
+	border-radius: 100px;
+}
+#HeroRandomButton:hover
+{
+	border: 1px solid lightblue;
+}
+#HeroRandomButton:active
+{
+	pre-transform-scale2d: 0.99;
+	border: 3px solid lightblue;
+}
+#HeroRandomButton:disabled
+{
+	opacity: 0.2;
+}
+#HeroRandomButtonLabel
+{
+	align: center center;
+	font-size: 50px;
+	font-weight: bold;
+	color: white;
+}
+#HeroRandomButtonSubLabel
+{
+	align: right bottom;
+	font-size: 18px;
+	color: gold;
+	font-weight: bold;
+	margin-bottom: 5px;
+	margin-right: 12px;
+}
+
+#HeroSearchPanel
+{
+	width: 40%;
+	height: 100%;
+	margin: 4px;
+	border-radius: 10px;
+	horizontal-align: left;
+}
+#HeroSearchTextEntry
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	font-size: 50px;
+	color: white;
+	align: center center;
+}
+
+#SelectionChatBox
+{
+	margin-left: 5px;
+}
+
+#SelectedHeroAttributesPanel
+{
+	width: 100%;
+	height: 100%;
+}
+
+#SelectedHeroPreview
+{
+	height: 35%;
+	width: 100%;
+}
+
+.SelectedHeroAttributesColumn
+{
+	width: 125px;
+	flow-children: down;
+}
+
+.SelectedHeroAttributesElement,
+.SelectedHeroAttributesElementSmall
+{
+	background-color: rgba(0, 0, 0, 150);
+	border-radius: 15px;
+	flow-children: right;
+	height: 42px;
+}
+
+.SelectedHeroAttributesElement
+{
+	width: 100%;
+}
+
+#DotaAttributePic_1
+{
+	vertical-align: center;
+	width: 24px;
+	height: 24px;
+	margin-left: 5px;
+	border: 2px solid red;
+	border-radius: 5px;
+}
+
+#DotaAttributePic_2
+{
+	vertical-align: center;
+	width: 24px;
+	height: 24px;
+	margin-left: 5px;
+	color: lime;
+	font-size: 24px;
+	text-align: center;
+}
+
+#DotaAttributePic_3
+{
+	vertical-align: center;
+	width: 24px;
+	height: 24px;
+	margin-left: 5px;
+	border: 4px solid DodgerBlue;
+	border-radius: -1px;
+}
+
+.PrimaryAttribute
+{
+	box-shadow: -2px -2px 4px 4px white;
+}
+
+#DotaAttributePic_2.PrimaryAttribute
+{
+	box-shadow: none;
+	text-shadow: 0 0 4px white; 
+}
+
+.AttributeValueText
+{
+	color: white;
+	align: center center;
+	margin-right: 15px;
+	font-size: 22px;
+	horizontal-align: right;
+}
+
+#HeroSelectionPrecacheBase
+{
+	height: 100%;
+	width: 100%;
+	flow-children: down;
+}
+
+#PrecacheLoadingMessageLabel
+{
+	horizontal-align: center;
+	font-size: 100px;
+	color: white;
+}
+
+#PrecacheLoadingMessagePanel
+{
+	horizontal-align: center;
+	margin-top: 40px;
+}
+
+#PrecacheTeamContainer
+{
+	horizontal-align: center;
+	margin-top: 40px;
+	width: 80%;
+	height: 70%;
+	flow-children: down;
+}
+
+.PrecacheTeamEntry
+{
+	margin: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	horizontal-align: center;
+	height: 44.65%;
+	flow-children: right;
+}
+
+.PrecacheTeamPlayerPanel
+{
+	height: 100%;
+	width: 250px;
+	margin: 5px;
+	background-color: rgba(0, 0, 0, 175);
+	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 175);
+}
+
+.PrecachePlayerInTeamNickname
+{
+	margin-top: 4px;
+	align: center top;
+	font-size: 28px;
+	color: black;
+}
+
+.PrecacheHeroLabel
+{
+	align: center bottom;
+	font-size: 24px;
+	color: white;
+}

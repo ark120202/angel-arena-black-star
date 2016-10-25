@@ -1,0 +1,201 @@
+.base 
+{
+	align: center center;
+	width: 1000px;
+	height: 800px;
+}
+
+#InfoPanel
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("file://{resources}/images/custom_game/custom_game_info/brown-book.png");
+	background-size: 100% 100%;
+}
+
+#Page_left
+{
+	horizontal-align: left;
+	margin-left: 4.25%;
+	margin-top: 4%;
+	width: 45%;
+	height: 82.5%;
+	//background-color: green;
+}
+
+
+#Page_right
+{
+	horizontal-align: right;
+	margin-right: 4.25%;
+	margin-top: 4%;
+	width: 45%;
+	height: 82.5%;
+	//background-color: green;
+}
+
+#Page_change_previous
+{
+	height: 64px;
+	width: 64px;
+	align: left top;
+	background-image: url("file://{resources}/images/custom_game/custom_game_info/back.png");
+	background-size: 100% 100%;
+}
+#Page_change_previous:hover
+{
+	pre-transform-scale2d: 1.05;
+}
+#Page_change_previous:active
+{
+	pre-transform-scale2d: 0.95;
+}
+
+#Page_change_next
+{
+	height: 64px;
+	width: 64px;
+	align: right top;
+	background-image: url("file://{resources}/images/custom_game/custom_game_info/forward.png");
+	background-size: 100% 100%;
+}
+#Page_change_next:hover
+{
+	pre-transform-scale2d: 1.05;
+}
+#Page_change_next:active
+{
+	pre-transform-scale2d: 0.95;
+}
+
+#Page_left_content
+{
+	width: 100%;
+	height: 100%;
+}
+
+#Page_right_content
+{
+	width: 100%;
+	height: 100%;
+}
+
+.Page_content
+{
+	width: 100%;
+	height: 100%;
+    flow-children: down;
+}
+
+.Page_content_1_right_content_page
+{
+	width: 100%;
+	height: 84px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	border: 2px solid green;
+    flow-children: right;
+}
+
+.Page_content_1_right_content_page_label
+{
+	align: left center;
+	margin-left: 20px;
+	color: black;
+	font-size: 36px;
+}
+
+.Page_content_1_right_content_page:hover
+{
+	background-color: AntiqueWhite;
+}
+
+.Page_content_1_right_content_page:active
+{
+	pre-transform-scale2d: 0.975;
+}
+
+#Home_button
+{
+	height: 48px;
+	width: 48px;
+	align: center bottom;
+	margin-left: 220px;
+	margin-bottom: 45px;
+}
+
+.Page_content_7_right_person
+{
+	width: 100%;
+	height: 100px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	border: 4px solid LightSteelBlue;
+    flow-children: right;
+}
+
+.Page_content_7_right_person_label
+{
+	align: left center;
+	margin-left: 20px;
+	color: blue;
+	font-size: 36px;
+}
+
+.Page_content_7_right_person_underlabel
+{
+	align: right bottom;
+	font-size: 20px;
+	color: black;
+	margin-left: -1000px;
+	margin-bottom: 2px;
+	margin-right: 3px;
+}
+
+.Page_title
+{
+	margin-top: 20px;
+	font-size: 48px;
+	align: center top;
+	color: black;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.AlignedImage
+{
+	align: center top;
+}
+
+.PlainText
+{
+	color: black;
+	margin: 8px;
+	font-size: 24px;
+}
+
+.Page_content_2_right_creep_panel
+{
+	border: 2px solid black;
+	width: 100%;
+	margin: 5px;
+    flow-children: right;
+}
+
+.Page_content_2_right_creep_img
+{
+	width: 175px;
+	height: 175px;
+}
+
+.Page_content_2_right_creep_label
+{
+	margin: 4px;
+	color: black;
+	font-size:  24px;
+	height: 100%;
+}

@@ -1,0 +1,49 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/panorama_shop.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/panorama_shop.js" />
+	</scripts>
+	<snippets>
+		<snippet name="SmallItem">
+			<Panel class="SmallItemPanel" draggable="true">
+				<Button id="SmallItemButton">
+					<DOTAItemImage hittest="false" id="SmallItemImage" />
+					<Label hittest="false" id="SmallItemStock"/>
+					<Panel hittest="false" id="SmallItemDropTargetHighlight" />
+				</Button>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="base">
+		<Panel hittest="true" id="ShopBase" class="ShopBase_Out">
+			<Panel id="ShopItemList">
+				<Panel id="ShopSearch">
+					<TextEntry id="ShopSearchEntry" maxchars="64" oninputsubmit="SearchItems()" placeholder="#panorama_shop_search_placeholder"/>
+				</Panel>
+				<Panel id="ShopTabs" />
+				<Panel id="ShopItems">
+					<Panel id="ShopItemsBase" />
+					<Panel id="ShopSearchOverlay" />
+				</Panel>
+			</Panel>
+			<Panel id="ItemRecipeBox">
+				<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow1" />
+				<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow2" />
+				<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow3" />
+			</Panel>
+		</Panel>
+		<Button hittest="true" id="ShopBtnPanel" onactivate="OpenCloseShop()">
+			<Label id="ShopBtnLabel" hittest="false" text="#panorama_shop_shop_label"/>
+		</Button>
+		<Panel hittest="true" id="QuickBuyPanel">
+			<Panel class="DropDownValidTarget" hittest="false" />
+			<Panel id="QuickBuyPanelItems" />
+			<Label id="QuickBuyClearButtonPanel" text="X" onactivate="ClearQuickbuyItems()"/>
+			<Panel id="QuickBuyStickyButtonPanel" />
+		</Panel>
+	</Panel>
+</root>

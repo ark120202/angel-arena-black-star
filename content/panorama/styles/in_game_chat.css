@@ -1,0 +1,139 @@
+.base
+{
+	align: center bottom;
+	width: 35%;
+	height: 21%;
+	margin-bottom: 25%;
+}
+
+#SelectionChat
+{
+	width: 100%;
+	height: 100%;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	flow-children: down;
+}
+
+#SelectionChatMessagesPanel
+{
+	width: 100%;
+	height: 84.3%;
+}
+
+#SelectionChatMessages
+{
+	flow-children: down;
+	height: 100%;
+    transform: rotateX(180deg);
+}
+
+#SelectionChatEntryPanel
+{
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 0px;
+	margin-bottom: 4px;
+	width: 100%;
+	height: 32px;
+	flow-children: right;
+	visibility: collapse;
+}
+
+#MessageScope
+{
+	width: 32px;
+	height: 32px;
+}
+#MessageScopeLabel
+{
+	width: 100%;
+	height: 100%;
+	text-align: center center;
+	padding-top: 4px;
+	font-size: 18px;
+}
+
+#SelectionChatEntry
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: right;
+}
+
+.CustomChatLine
+{
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	flow-children: right;
+	opacity: 0;
+	min-height: 32px;
+    transform: rotateX(-180deg);
+}
+
+#ChatBg
+{
+	width: 100%;
+	height: 100%;
+	box-shadow: -5px -5px 10px 10px black;
+	visibility: collapse;
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 190);
+}
+
+.CustomChatLineNew
+{
+	opacity: 1;
+    transition-property: opacity;
+    transition-duration: 1s;
+}
+
+.Shown .CustomChatLine
+{
+	opacity: 1;
+}
+
+.Shown #SelectionChatEntryPanel
+{
+	visibility: visible;
+}
+
+.Shown #ChatBg
+{
+	visibility: visible;
+}
+
+.Shown .CustomChatNicknameText
+{
+	background-color: none;
+}
+
+.CustomChatNicknameText
+{
+	margin-left: 4px;
+	margin-right: 4px;
+	font-weight: bold;
+	align: center center;
+	background-color: rgba(0, 0, 0, 190);
+	border-radius: 5px;
+	padding: 3px;
+}
+
+.CustomChatTeamScopeLabel
+{
+	font-weight: bold;
+	align: center center;
+	padding-top: 3px;
+	margin-left: 2px;
+}
+	
+.CustomChatLineText
+{
+	margin-left: 4px;
+	margin-right: 4px;
+	color: white;
+	vertical-align: center;
+}

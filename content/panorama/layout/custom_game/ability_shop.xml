@@ -1,0 +1,69 @@
+<root>
+	<styles>
+ 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/ability_shop.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" /> 
+		<include src="file://{resources}/scripts/ability_shop.js" /> 
+	</scripts>
+	<snippets>
+		<snippet name="Ability">
+			<Panel class="Ability">
+				<DOTAAbilityImage id="AbilityImage" />
+				<Label id="PointCost" hittest="false" text="1" />
+				<Label id="GoldCost" hittest="false" />
+				<Image id="RemoveOverlay" src="file://{images}/custom_game/ability_shop/remove.png" hittest="false" />
+				<Image id="BannedOverlay" src="file://{images}/custom_game/ability_shop/banned.png" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="HeroesPanel">
+			<Panel class="HeroesPanelPage">
+				<Panel class="HeroesPanelElement">
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementGood" id="HeroesByAttributes_0_good" />
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementBad" id="HeroesByAttributes_0_bad" />
+				</Panel>
+				<Panel class="HeroesPanelElement">
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementGood" id="HeroesByAttributes_1_good" />
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementBad" id="HeroesByAttributes_1_bad" />
+				</Panel>
+				<Panel class="HeroesPanelElement">
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementGood" id="HeroesByAttributes_2_good" />
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementBad" id="HeroesByAttributes_2_bad" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="base MainHidden" hittest="false">
+		<Panel id="AbilityShopBase" hittest="false">
+			<Button id="InfoContainer" onactivate="$.GetContextPanel().ToggleClass('MainHidden');">
+				<Label id="InfoContainerMainLabel" hittest="false" text="Ability Shop"/>
+				<Label id="InfoContainerPointsLabel" hittest="false" text="1"/>
+			</Button>
+			<Panel id="MainContainer">
+				<Panel id="InfoToolbar">
+					<TextEntry id="SearchBar" placeholder="#ability_shop_search_placeholder"/>
+					<ToggleButton id="PurchasedAbilitiesToggle" text="#ability_shop_purchased_only" />
+					<Label id="ShiftStateLabel" text="#ability_shop_shift_no" />
+					<Button class="CloseButton" id="CloseButton" onactivate="$.GetContextPanel().AddClass('MainHidden');"/>
+				</Panel>
+				<Panel id="MainRoot">
+					<Panel id="MainHeroesRoot">
+						<Panel id="MainHeroesList" />
+						<Panel id="HeroesToolbar">
+							<Button class="SmallTextButton" id="SwitchTabButton" onactivate="SwitchTab();">
+								<Panel class="SmallTextButtonContainer">
+									<Image hittest="false" src="file://{resources}/images/custom_game/hero_selection/hero_swich.png" />
+									<Label id="SwitchTabButtonLabel" hittest="false" text="#hero_selection_button_switch" />
+								</Panel>
+							</Button>
+							<Panel id="HeroAbilitiesRoot" />
+							<Panel id="AttributeBonusSlot" />
+						</Panel>
+					</Panel>
+					<Panel id="MainSearchRoot" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

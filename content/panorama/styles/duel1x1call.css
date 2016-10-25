@@ -1,0 +1,118 @@
+.base
+{
+	margin-bottom: 100px;
+	vertical-align: center;
+	horizontal-align: center;
+	width: 600px;
+	height: 300px;
+}
+#ElementBox
+{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	box-shadow: black -5px -5px 10px 10px;
+	flow-children: down;
+}
+#ButtonCallBox
+{
+	height: 45px;
+	width: 100%;
+	box-shadow: black -2px -2px 4px 4px;
+}
+#ButtonCallLabel
+{
+	vertical-align: center;
+	horizontal-align: center;
+	font-size: 36px;
+	color: black;
+	font-weight: bold;
+}
+#call_duel_button
+{
+	background-color: #00ecff;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	horizontal-align: center;
+	width: 90%;
+	height: 90%;
+	box-shadow: red -2px -2px 4px 4px;
+}
+#call_duel_button:hover
+{
+	background-color: #00cedf;
+	horizontal-align: center;
+}
+#call_duel_button:active
+{	
+	border: 2px solid blue;
+}
+#call_duel_button:disabled
+{	
+	opacity: 0.2;
+}
+.CallSettings
+{
+	height: 255px;
+	width: 100%;
+	flow-children: down;
+}
+.CallSettingsElement
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.SettingElementLabel
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	vertical-align: center;
+	horizontal-align: left;
+	font-size: 24px;
+	color: black;
+	font-weight: bold;
+}
+.LabelElementPanel
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	flow-children: right;
+}
+#DuelOpponents
+{
+	flow-children: right-wrap;
+	height: 100px;
+}
+
+.EnemySelectionIcon
+{
+	margin-top: 2px;
+	margin-left: -6px;
+	margin-right: -12px;
+	border: 1px solid red;
+	pre-transform-scale2d: 0.8;
+}
+
+.EnemySelectionIcon:hover
+{
+	margin-left: -7px;
+	margin-right: -13px;
+	border: 2px solid red;
+	pre-transform-scale2d: 0.825;
+}
+
+.EnemySelectionIconSelected
+{
+	margin-left: -9px;
+	margin-right: -15px;
+	border: 4px solid red;
+	pre-transform-scale2d: 0.845;
+}
+
+.RedOutlineForGoldNaN
+{
+	border: 2px solid red;
+}

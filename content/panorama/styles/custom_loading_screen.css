@@ -1,0 +1,150 @@
+.AddonLoadingRoot
+{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	background-image: url("file://{resources}/images/custom_game/loading_screen/background.png");
+	background-position: 100% 100%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	overflow: clip;
+}
+
+#movie_base
+{
+	width: 59%;
+	height: 100%;
+}
+
+#loading_base
+{
+	width: 100%;
+	height: 100%;
+}
+
+#loading_Logo_aa
+{
+	width: 698px;
+	height: 97px;
+	align: center center;
+	margin-bottom: 200px;
+}
+
+#loading_Logo_jesus
+{
+	width: 198.5px;
+	height: 320px;
+	align: left center;
+	margin-left: 425px;
+	margin-bottom: 200px;
+}
+
+#loading_Logo_satan
+{
+	width: 270px;
+	height: 318px;
+	align: right center;
+	margin-top: 200px;
+	margin-right: 350px;
+}
+
+#loading_Label_black_panel
+{
+	align: center center;
+}
+
+#loading_Label_black
+{
+	font-family: Courier;
+	font-weight: bold;
+	font-size: 96px;
+	color: black;
+}
+
+#loading_StarsBox
+{
+	align: center center;
+	margin-top: 275px;
+}
+
+#loading_Label_star
+{
+	color: black;
+	font-size: 132px;
+	font-family: Courier;
+	font-weight: bold;
+	margin-top: 70px;
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+#loading_star1
+{
+	align: left bottom;
+	margin-bottom: 50px;
+}
+
+#loading_star2
+{
+	align: left center;
+	margin-left: 60px;
+	margin-bottom: 85px;
+}
+
+#loading_star3
+{
+	align: center top;
+	margin-top: 5px;
+}
+
+#loading_star4
+{
+	align: right center;
+	margin-right: 60px;
+	margin-bottom: 85px;
+}
+
+#loading_star5
+{
+	align: right bottom;
+	margin-bottom: 50px;
+}
+
+.loading_star
+{
+	background-image: url("file://{images}/custom_game/loading_screen/star.png");
+	height: 68px; 
+	width: 70px;
+    background-size: 68px 70px;
+    background-repeat: no-repeat;
+}
+
+#loading_Enigma
+{
+	margin-left: -50px;
+	vertical-align: center;
+	width: 601px;
+	height: 467px;
+	transition-property: transform;
+	transition-duration: 3s;
+	transition-timing-function: ease-in;
+}
+
+#loading_Lina
+{
+	margin-left: -50px;
+	align: right center;
+	width: 300px;
+	height: 533px;
+	transition-property: transform;
+	transition-duration: 3s;
+	transition-timing-function: ease-in;
+}
+
+#loading_loading_bar
+{
+	width: 680px;
+	height: 60px;
+	align: center bottom;
+	margin-bottom: 150px;
+}

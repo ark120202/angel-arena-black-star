@@ -1,0 +1,149 @@
+<!-- Modified: Snippets Conversation -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/containers/container.css" />
+		<include src="file://{resources}/styles/containers/container_skins.css" />
+
+		<include src="s2r://panorama/styles/hero_splash.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/containers/container_base.js" /> 
+		<include src="file://{resources}/scripts/containers/container_events.js" /> 
+		<include src="file://{resources}/scripts/containers/dota_inventory.js" /> 
+
+
+		<include src="file://{resources}/scripts/containers/container.js" /> 
+		<include src="file://{resources}/scripts/containers/inventory_item.js" />
+		<include src="file://{resources}/scripts/containers/inventory_context_menu.js" />
+		<include src="file://{resources}/scripts/containers/dota_inventory_item.js" />
+		<include src="file://{resources}/scripts/containers/dota_inventory_context_menu.js" />
+	</scripts>
+	<snippets>
+		<snippet name="dota_inventory_context_menu">
+			<Panel class="ItemMenu">
+				<Button class="ItemMenuButton" id="ShowInShop" onmouseactivate="OnShowInShop()">
+					<Label text="#containers_inventory_context_show_in_shop" />
+				</Button>
+				<Button class="ItemMenuButton" id="Sell" onactivate="OnSell()">
+					<Label text="#containers_inventory_context_sell" />
+				</Button>
+				<Button class="ItemMenuButton" id="Disassemble" onactivate="OnDisassemble()">
+					<Label text="#containers_inventory_context_disassemble" />
+				</Button>
+				<Button class="ItemMenuButton" id="DropFromStash" onactivate="OnDropFromStash()">
+					<Label text="#containers_inventory_context_drop_from_stash" />
+				</Button>
+				<Button class="ItemMenuButton" id="Alert" onactivate="OnAlert()">
+					<Label text="#containers_inventory_context_alert" />
+				</Button>
+				<Button class="ItemMenuButton" id="MoveToStash" onactivate="OnMoveToStash()">
+					<Label text="#containers_inventory_context_move_to_stash" />
+				</Button>
+			</Panel>
+		</snippet>
+		<snippet name="dota_inventory_item">
+			<Panel class="ItemPanel" draggable="true">
+				<Button id="ItemButton"
+						onmouseover="ItemShowTooltip()"
+						onmouseout="ItemHideTooltip()"
+						onactivate="ActivateItem()"
+						ondblclick="DoubleClickItem()"
+						oncontextmenu="RightClickItem()"
+						>
+					<DOTAItemImage hittest="false" id="ItemImage" />
+					<Panel hittest="false" id="Cooldown">
+						<Panel hittest="false" id="CooldownOverlay" />
+						<Label hittest="false" id="CooldownTimer" />
+					</Panel>
+					<Label hittest="false" class="" id="Stock"/>
+					<Label hittest="false" class="Charges" id="ChargeCount" />
+					<Label hittest="false" class="Charges" id="AltChargeCount" />
+					<Label hittest="false" class="" id="ManaCost"/>
+					<Label hittest="false" class="" id="Price"/>
+					<Panel hittest="false" id="DropTargetHighlight" />
+				</Button>
+				<Panel hittest="false" id="Hotkey">
+					<Panel hittest="false" id="HotkeyBlock" />
+					<Label hittest="false" id="HotkeyText" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="inventory_context_menu">
+			<Panel class="ItemMenu">
+				<Button class="ItemMenuButton" id="ShowInShop" onmouseactivate="OnShowInShop()">
+					<Label text="#containers_inventory_context_show_in_shop" />
+				</Button>
+				<Button class="ItemMenuButton" id="Sell" onactivate="OnSell()">
+					<Label text="#containers_inventory_context_sell" />
+				</Button>
+				<Button class="ItemMenuButton" id="Disassemble" onactivate="OnDisassemble()">
+					<Label text="#containers_inventory_context_disassemble" />
+				</Button>
+				<Button class="ItemMenuButton" id="DropFromStash" onactivate="OnDropFromStash()">
+					<Label text="#containers_inventory_context_drop_from_stash" />
+				</Button>
+				<Button class="ItemMenuButton" id="Alert" onactivate="OnAlert()">
+					<Label text="#containers_inventory_context_alert" />
+				</Button>
+				<Button class="ItemMenuButton" id="MoveToStash" onactivate="OnMoveToStash()">
+					<Label text="#containers_inventory_context_move_to_stash" />
+				</Button>
+			</Panel>
+		</snippet>
+		<snippet name="inventory_item">
+			<Panel class="ItemPanel" draggable="true">
+				<Button id="ItemButton"
+						onmouseover="OnMouseOver()"
+						onmouseout="OnMouseOut()"
+						onactivate="ActivateItem()"
+						ondblclick="DoubleClickItem()"
+						oncontextmenu="RightClickItem()"
+						>
+					<DOTAItemImage hittest="false" id="ItemImage" />
+					<Panel hittest="false" id="Cooldown">
+						<Panel hittest="false" id="CooldownOverlay" />
+						<Label hittest="false" id="CooldownTimer" />
+					</Panel>
+					<Label hittest="false" class="" id="Stock"/>
+					<Label hittest="false" class="Charges" id="ChargeCount" />
+					<Label hittest="false" class="Charges" id="AltChargeCount" />
+					<Label hittest="false" class="" id="ManaCost"/>
+					<Label hittest="false" class="" id="Price"/>
+					<Panel hittest="false" id="DropTargetHighlight" />
+				</Button>
+				<Panel hittest="false" id="Hotkey">
+					<Label hittest="false" id="HotkeyText" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="container">
+			<Panel draggable="true" class="Outer">
+				<Panel id="Header">
+					<Label hittest="false" id="HeaderLabel" text="Container Header"/>
+					<Button class="CloseButton" draggable="true" id="CloseButton" onactivate="CloseClicked()"/>
+				</Panel>
+
+				<Panel id="Inner" draggable="true">
+
+				</Panel>
+
+				<Panel id="Footer">
+
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="ContainersBase">
+
+		<Panel hittest="false" style="width:100%; height:100%;" id="PanoramaInventory">
+			<Panel id="stash_row" />
+			<Panel id="inventory_items">
+				<Panel id="inventory_row_1" />
+				<Panel id="inventory_row_2" />
+			</Panel>
+		</Panel>
+
+	</Panel>
+</root>
+ 

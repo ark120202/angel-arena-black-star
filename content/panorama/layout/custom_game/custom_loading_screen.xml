@@ -1,0 +1,93 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_loading_screen.css" />
+		<include src="file://{resources}/styles/custom_loading_screen_movie.css" />
+	</styles>
+	<script>
+		function CheckStartable() {
+			var player = Game.GetLocalPlayerInfo()
+			if (player == null) {
+				$.Schedule(0.2, CheckStartable)
+			} else {
+				$("#loading_base").RemoveAndDeleteChildren()
+				$("#movie_base").BLoadLayout("file://{resources}/layout/custom_game/custom_loading_screen_movie.xml", true, true)
+			}
+		}
+		(function() {
+			$.Schedule(0.2, CheckStartable)
+		})()
+	</script>
+	<Panel class="AddonLoadingRoot">
+		<!-- Precache -->
+		<Panel hittest="false" style="visibility: collapse;">
+			<Image src="file://{resources}/images/heroes/selection/npc_dota_hero_shadow_demon.png" />
+			<Image src="file://{images}/custom_game/kills/action_0.png" />
+			<Image src="file://{images}/custom_game/kills/action_1.png" />
+			<Image src="file://{images}/custom_game/kills/action_2.png" />
+			<Image src="file://{images}/custom_game/kills/action_3.png" />
+
+			<Image src="file://{images}/heroes/alternative_npc_dota_hero_skeleton_king.png" />
+			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_skeleton_king.png" />
+			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_skeleton_king.png" />
+			<Image src="file://{images}/heroes/alternative_npc_dota_hero_spectre.png" />
+			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_spectre.png" />
+			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_spectre.png" />
+			<Image src="file://{images}/heroes/alternative_npc_dota_hero_enchantress.png" />
+			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_enchantress.png" />
+			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_enchantress.png" />
+			<Image src="file://{images}/heroes/alternative_npc_dota_hero_queenofpain.png" />
+			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_queenofpain.png" />
+			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_queenofpain.png" />
+			<Image src="file://{images}/heroes/alternative_npc_dota_hero_chaos_knight.png" />
+			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_chaos_knight.png" />
+			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_chaos_knight.png" />
+			<Image src="file://{images}/heroes/alternative_npc_dota_hero_legion_commander.png" />
+			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_legion_commander.png" />
+			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_legion_commander.png" />
+			<Image src="file://{images}/heroes/alternative_npc_dota_hero_juggernaut.png" />
+			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_juggernaut.png" />
+			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_juggernaut.png" />
+			<Image src="file://{images}/heroes/alternative_npc_dota_hero_dark_seer.png" />
+			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_dark_seer.png" />
+			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_dark_seer.png" />
+			<Image src="file://{images}/heroes/alternative_npc_dota_hero_life_stealer.png" />
+			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_life_stealer.png" />
+			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_life_stealer.png" />
+
+
+			<Image src="file://{images}/custom_game/units/portraits/npc_dota_beastmaster_boar_base.png" />
+			<Image src="file://{images}/custom_game/units/portraits/npc_dota_beastmaster_hawk_base.png" />
+			<Image src="file://{images}/custom_game/units/portraits/npc_dota_courier_team2.png" />
+			<Image src="file://{images}/custom_game/units/portraits/npc_dota_courier_team3.png" />
+			<Image src="file://{images}/custom_game/units/portraits/npc_dota_neutral_easy_variant1.png" />
+			<Image src="file://{images}/custom_game/units/portraits/npc_dota_neutral_hard_variant1.png" />
+			<Image src="file://{images}/custom_game/units/portraits/npc_dota_neutral_medium_variant1.png" />
+			<Image src="file://{images}/custom_game/units/portraits/npc_dota_warlock_golem_base.png" />
+			<Image src="file://{images}/custom_game/units/portraits/npc_dota_warlock_golem_scepter_base.png" />
+			<Image src="file://{images}/custom_game/units/portraits/npc_dota_warlock_minigolem.png" />
+			<Image src="file://{images}/custom_game/units/portraits/npc_queenofblades_army_unit.png" />
+		</Panel>
+		<!--  -->
+		<Panel id="loading_base">
+			<Image id="loading_Logo_aa" src="file://{images}/custom_game/loading_screen/logo_aa.png" />
+			<Image id="loading_Logo_jesus" src="file://{images}/custom_game/loading_screen/logo_jesus.png" />
+			<Image id="loading_Logo_satan" src="file://{images}/custom_game/loading_screen/logo_satan.png" />
+			<Panel id="loading_Label_black_panel">
+				<Label id="loading_Label_black" text="BLACK" />
+			</Panel>
+			<Panel id="loading_StarsBox">
+				<Label id="loading_Label_star" text="STAR" />
+				<Image id="loading_star1" class="loading_star" />
+				<Image id="loading_star2" class="loading_star" />
+				<Image id="loading_star3" class="loading_star" />
+				<Image id="loading_star4" class="loading_star" />
+				<Image id="loading_star5" class="loading_star" />
+			</Panel>
+			<Image id="loading_Enigma" src="file://{images}/custom_game/loading_screen/enigma.png" />
+			<Image id="loading_Lina" src="file://{images}/custom_game/loading_screen/lina.png" />
+			<Image id="loading_loading_bar" src="file://{images}/custom_game/loading_screen/loading_bar.png" />
+
+		</Panel>
+		<Panel id="movie_base" hittest="true" />
+	</Panel>
+</root>

@@ -1,0 +1,10 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/kills.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/kills.js" /> 
+	</scripts>
+	<Panel class="base" hittest="false" />
+</root>

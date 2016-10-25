@@ -1,0 +1,143 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 32
+	m_ConstantColor = [ 65, 105, 225, 255 ]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderRopes"
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_bAdditive = true
+			m_flOverbrightFactor = 15.0
+			m_hTexture = resource:"materials/particle/bendibeam2.vtex"
+			m_flRadiusScale = 0.5
+			m_flFinalTextureScaleU = -1.0
+			m_flFinalTextureOffsetU = 1.0
+			m_flTextureVWorldSize = 211.685013
+			m_flTextureVScrollRate = 2116.850098
+			m_nMaxTesselation = 5
+			m_nMinTesselation = 5
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.4
+		},
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 0.1
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flBias = 0.15
+			m_flEndScale = 1.4
+			m_nOpEndCapState = 0
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_nField = 16
+			m_RateMin = -3.0
+			m_RateMax = -5.0
+			m_FrequencyMin = 3.0
+			m_FrequencyMax = 16.0
+		},
+		{
+			_class = "C_OP_DampenToCP"
+			m_flRange = 8.0
+		},
+		{
+			_class = "C_OP_DampenToCP"
+			m_flRange = 22.0
+			m_nControlPointNumber = 3
+		},
+		{
+			_class = "C_OP_PercentageBetweenCPs"
+			m_flOutputMin = 2.0
+			m_bScaleInitialRange = true
+			m_nEndCP = 3
+		},
+		{
+			_class = "C_OP_LockToSavedSequentialPath"
+			m_PathParams = 
+			{
+				m_flMidPoint = 0.95
+				m_flBulge = 0.048
+				m_nEndControlPointNumber = 3
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.45
+			m_fLifetimeMax = 0.45
+		},
+		{
+			_class = "C_INIT_CreationNoise"
+			m_flNoiseScale = 0.5
+			m_flNoiseScaleLoc = 0.1
+			m_flOutputMin = 15.0
+			m_flOutputMax = 25.0
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_CreateSequentialPath"
+			m_flNumToAssign = 32.0
+			m_bSaveOffset = true
+			m_PathParams = 
+			{
+				m_flMidPoint = 0.25
+				m_flBulge = 20.080002
+				m_nEndControlPointNumber = 3
+			}
+		},
+		{
+			_class = "C_INIT_CreateInEpitrochoid"
+			m_nComponent1 = 2
+			m_flRadius1 = 10.0
+			m_flRadius2 = -3.0
+			m_flParticleDensity = 0.4
+			m_bUseCount = true
+			m_bOffsetExistingPos = true
+		},
+		{
+			_class = "C_INIT_PositionWarp"
+			m_bUseCount = true
+			m_flWarpTime = 2.0
+			m_vecWarpMin = [ 0.001, 0.001, 0.001 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 32
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_zen_gehraz/divine_intervention_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_zen_gehraz/divine_intervention_c.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_zen_gehraz/divine_intervention_light.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_zen_gehraz/divine_intervention_body_points.vpcf"
+		},
+	]
+}

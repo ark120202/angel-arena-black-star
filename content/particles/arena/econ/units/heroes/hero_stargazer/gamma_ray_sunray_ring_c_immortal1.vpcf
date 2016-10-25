@@ -1,0 +1,104 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 32
+	m_flConstantRadius = 64.0
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderRopes"
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_bAdditive = true
+			m_hTexture = resource:"materials/particle/beam_edge_05.vtex"
+			m_nScaleCP2 = 1
+			m_nScaleCP1 = 0
+			m_flRadiusScale = 0.5
+			m_flFinalTextureScaleU = -1.0
+			m_flFinalTextureOffsetU = 1.0
+			m_flTextureVWorldSize = 1000000000.0
+			m_flTextureVOffset = 976562.5
+			m_flTextureVScrollRate = -100000000.0
+			m_nMaxTesselation = 2
+			m_nMinTesselation = 2
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.3
+			m_Gravity = [ 0.0, 0.0, 1500.0 ]
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 1.0
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flBias = 0.75
+			m_flEndScale = 4.0
+			m_flStartScale = 0.0
+		},
+		{
+			_class = "C_OP_RemapDirectionToCPToVector"
+			m_bNormalize = true
+			m_nFieldOutput = 21
+			m_nCP = 1
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_nControlPointNumber = 1
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 0.55
+			m_fLifetimeMin = 0.55
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 160
+			m_nAlphaMax = 180
+		},
+		{
+			_class = "C_INIT_RingWave"
+			m_flInitialSpeedMax = 2200.0
+			m_flInitialSpeedMin = 2200.0
+			m_flParticlesPerOrbit = 30.0
+			m_bEvenDistribution = true
+			m_flInitialRadius = 1.0
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_bActiveRange = true
+			m_bScaleInitialRange = true
+			m_nFieldOutput = 7
+			m_nInputMax = 1
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_bActiveRange = true
+			m_bScaleInitialRange = true
+			m_flOutputMax = 0.0
+			m_flOutputMin = 1.0
+			m_nFieldOutput = 7
+			m_nInputMax = 31
+			m_nInputMin = 30
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 32
+		},
+	]
+	m_ConstantColor = [ 255, 204, 0, 255 ]
+}

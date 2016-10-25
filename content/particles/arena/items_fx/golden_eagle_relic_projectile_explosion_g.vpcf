@@ -1,0 +1,121 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 64
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_flStartFadeSize = 0.2
+			m_flEndFadeSize = 0.25
+			m_bDisableZBuffering = true
+			m_flAddSelfAmount = 1.0
+			m_bSaturateColorPreAlphaBlend = false
+			m_hTexture = resource:"materials/particle/smoke/maya_wispy/wispy_v2.vtex"
+			m_flAnimationRate = 0.45
+			m_flAnimationRate2 = 0.5
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, -100.0 ]
+			m_fDrag = 0.2
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 10.0
+			m_flBias = 0.7
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_flFadeEndTime = 0.7
+			m_ColorFade = [ 179, 149, 0, 255 ]
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin = [ -64.0, -64.0, -64.0 ]
+			m_RateMax = [ 64.0, 64.0, 64.0 ]
+			m_FrequencyMin = [ 0.25, 0.25, 0.25 ]
+			m_FrequencyMax = [ 2.0, 2.0, 2.0 ]
+			m_flStartTime_min = 1.0
+			m_flStartTime_max = 1.0
+			m_bOffset = true
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.5
+		},
+		{
+			_class = "C_OP_RampScalarSpline"
+			m_nField = 4
+			m_RateMin = -0.5
+			m_RateMax = 0.5
+			m_bEaseOut = true
+			m_flBias = 0.75
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 2.0
+			m_fLifetimeMin = 1.0
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 22.0
+			m_flRadiusMin = 10.0
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax = [ 255, 255, 0, 255 ]
+			m_ColorMin = [ 255, 215, 0, 255 ]
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 10
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomYawFlip"
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 30
+			m_nAlphaMax = 80
+		},
+		{
+			_class = "C_INIT_RingWave"
+			m_bXYVelocityOnly = false
+			m_nControlPointNumber = 3
+			m_flInitialRadius = 2.0
+			m_flInitialSpeedMin = 28.0
+			m_flInitialSpeedMax = 192.0
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 32
+		},
+	]
+	m_ForceGenerators = 
+	[
+		{
+			_class = "C_OP_AttractToControlPoint"
+			m_fForceAmount = -700.0
+			m_fFalloffPower = 0.2
+			m_vecComponentScale = [ 1.0, 1.0, 0.0 ]
+		},
+	]
+}

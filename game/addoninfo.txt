@@ -1,0 +1,56 @@
+"AddonInfo"
+{
+    //5v5_abilityshop
+    "maps"          "5v5 5v5_romg 5v5_abilityshop"
+	"5v5"
+	{
+		"MaxPlayers"		"10"
+	}
+    "5v5_romg"
+    {
+        "MaxPlayers"        "10"
+    }
+    "5v5_abilityshop"
+    {
+        "MaxPlayers"        "10"
+    }
+    "TeamCount"     "2"
+
+    "Default_Keys"
+    {
+        "01"
+        {
+            "Key" "ENTER"
+            "Command" "+EnterPressed"
+            "Name" "Chat"
+        }
+
+        "02"
+        {
+            "Key" "KP_ENTER"
+            "Command" "+EnterPressed"
+            "Name" "Chat"
+        }
+
+        "03"
+        {
+            "Key" "F4"
+            "Command" "+F4Pressed"
+            "Name" "Toggle Shop"
+        }
+
+        "04"
+        {
+            "Key" "F5"
+            "Command" "+F5Pressed"
+            "Name" "Quickbuy"
+        }
+
+        "05"
+        {
+            "Key" "F8"
+            "Command" "+F8Pressed"
+            "Name" "Buy sticky item"
+        }
+    }
+}

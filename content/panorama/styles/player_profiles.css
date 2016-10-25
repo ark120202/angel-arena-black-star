@@ -1,0 +1,35 @@
+.base
+{
+	width: 900px;
+	height: 600px;
+	align: center center;
+}
+
+#PlayerProfileBase
+{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,240);
+	border-radius: 24px;
+	box-shadow: -4px -4px 8px 8px black;
+	visibility: collapse;
+}
+
+.PanelOpened #PlayerProfileBase
+{
+	visibility: visible;
+}
+
+#Avatar
+{
+	width: 128px;
+	height: 128px;
+	margin: 20px;
+	border-radius: 20px;
+}
+
+#CloseButton
+{
+	align: right top;
+	margin: 10px;
+}

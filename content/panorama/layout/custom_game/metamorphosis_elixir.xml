@@ -1,0 +1,110 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/global_styles.css" />
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/hero_selection.css" />
+		<include src="file://{resources}/styles/metamorphosis_elixir.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/shared_hero_selection_script.js" />
+		<include src="file://{resources}/scripts/metamorphosis_elixir.js" /> 
+	</scripts>
+	<snippets>
+		<snippet name="HeroesPanel">
+			<Panel class="HeroesPanelPage">
+				<Panel class="HeroesPanelElement">
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementGood" id="HeroesByAttributes_0_good" />
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementBad" id="HeroesByAttributes_0_bad" />
+				</Panel>
+				<Panel class="HeroesPanelElement">
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementGood" id="HeroesByAttributes_1_good" />
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementBad" id="HeroesByAttributes_1_bad" />
+				</Panel>
+				<Panel class="HeroesPanelElement">
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementGood" id="HeroesByAttributes_2_good" />
+					<Panel class="HeroesPanelElementTeam HeroesPanelElementBad" id="HeroesByAttributes_2_bad" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="MetamorphosisElixirBase">
+		<Panel hittest="false" id="MainBox">
+			<Panel id="HeroListBasePanel">
+				<Panel id="HeroListControls">
+					<Panel id="HeroListControlsGroup1" class="HeroListControlsGroup">
+						<Button class="SmallTextButton" id="SwitchTabButton" onactivate="SwitchTab();">
+							<Panel class="SmallTextButtonContainer">
+								<Image hittest="false" src="file://{resources}/images/custom_game/hero_selection/hero_swich.png" />
+								<Label id="SwitchTabButtonLabel" hittest="false" text="#hero_selection_button_switch" />
+							</Panel>
+						</Button>
+					</Panel>
+					<Panel id="HeroListControlsGroup2" class="HeroListControlsGroup">
+						<Button id="SelectedHeroSelectButton" onactivate="SelectHero();">
+							<Label id="SelectedHeroSelectLabel" hittest="false" text="#hero_selection_button_select_hero" />
+							<Label id="SelectedHeroSelectHeroName" hittest="false" text="#npc_dota_hero_abaddon" />
+						</Button>
+					</Panel>
+					<Panel id="HeroListControlsGroup3" class="HeroListControlsGroup">
+						<Panel id="SelectedHeroAttributesPanel">
+							<Panel class="SelectedHeroAttributesElement" style="flow-children: down; height: fit-children; width: fit-children; vertical-align: center; margin-right: 12px;">
+								<Image src="file://{resources}/images/custom_game/hud/damage.png" style="horizontal-align: center;"/>
+								<Label id="HeroAttributes_damage" class="AttributeValueText" style="horizontal-align: center;" text="0 - 0" />
+							</Panel>
+							<Panel style="height: 100%; flow-children: down;">
+								<Panel class="SelectedHeroAttributesElement">
+									<Image src="file://{resources}/images/custom_game/hud/movespeed.png" style="vertical-align: center; padding-left: 6px; margin-right: 5px;"/>
+									<Label id="HeroAttributes_speed" class="AttributeValueText" text="0" />
+								</Panel>
+								<Panel class="SelectedHeroAttributesElement">
+									<Label style="color: white; align: center center; margin-left: 5px; font-size: 22px; horizontal-align: left;" text="BAT: " />
+									<Label id="HeroAttributes_bat" class="AttributeValueText" text="0" />
+								</Panel>
+								<Panel class="SelectedHeroAttributesElement">
+									<Image src="file://{resources}/images/custom_game/hud/armor.png" style="vertical-align: center; padding-left: 4px;"/>
+									<Label id="HeroAttributes_armor" style="margin-left: 5px;" class="AttributeValueText" text="0" />
+								</Panel>
+							</Panel>
+							<Panel style="width: 128px; height: 100%; flow-children: down;">
+								<Panel class="SelectedHeroAttributesElement">
+									<Panel class="DotaAttributePic" id="DotaAttributePic_1" />
+									<Label id="HeroAttributes_1" class="AttributeValueText" text="0 + 0.0" />
+								</Panel>
+								<Panel class="SelectedHeroAttributesElement">
+									<Label class="DotaAttributePic" id="DotaAttributePic_2" text="△" />
+									<Label id="HeroAttributes_2" class="AttributeValueText" text="0 + 0.0" />
+								</Panel>
+								<Panel class="SelectedHeroAttributesElement">
+									<Panel class="DotaAttributePic" id="DotaAttributePic_3" />
+									<Label id="HeroAttributes_3" class="AttributeValueText" text="0 + 0.0" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Button id="ExitButton" onactivate="CloseMenu();" />
+						<!-- <Button class="SmallTextButton" onactivate="RandomHero();">
+							<Panel class="SmallTextButtonContainer">
+								<Image hittest="false" src="file://{resources}/images/custom_game/hero_selection/random.png" />
+								<Label id="HeroRandomButtonLabel" hittest="false" text="#hero_selection_button_random" />
+							</Panel>
+						</Button> -->
+						<!-- <Button id="HeroRandomButton" onactivate="RandomHero();">
+							<Label id="HeroRandomButtonLabel" hittest="false" text="#hero_selection_button_random" />
+						</Button> -->
+					</Panel>
+				</Panel>
+				<Panel id="AbilitiesPanel">
+					<Panel class="AbilitiesLineSplitter" />
+					<Panel class="AbilitiesLineSplitter" style="horizontal-align: right;" />
+					<TextEntry id="HeroSearchTextEntry" oninputsubmit="SearchHero();" placeholder="#hero_selection_button_search"/>
+					<Panel id="SelectedHeroAbilitiesPanelInner" />
+				</Panel>
+				<Panel id="HeroListBasePanelHost">
+					<Panel id="HeroListPanel">
+						<!-- Список героев -->
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

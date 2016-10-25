@@ -1,0 +1,19 @@
+modifier_meat_hook_followthrough_lua = class({})
+
+function modifier_meat_hook_followthrough_lua:IsHidden()
+	return true
+end
+
+
+
+function modifier_meat_hook_followthrough_lua:CheckState()
+	local state = {
+	[MODIFIER_STATE_STUNNED] = true,
+	}
+
+	return state
+end
+
+function modifier_meat_hook_followthrough_lua:IsPurgable()
+	return false
+end

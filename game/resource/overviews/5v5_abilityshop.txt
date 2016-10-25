@@ -1,0 +1,8 @@
+5v5_abilityshop
+{
+	material materials/overviews/5v5_abilityshop.vmat
+	pos_x -8224
+	pos_y 7296
+	scale 15.063
+}
+

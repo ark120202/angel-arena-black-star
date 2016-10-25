@@ -1,0 +1,68 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/global_styles.css" />
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/tabless_hero_change.css" />
+		<include src="file://{resources}/styles/hell_hero_change.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/shared_hero_selection_script.js" />
+		<include src="file://{resources}/scripts/tabless_hero_change.js" /> 
+	</scripts>
+	<Panel hittest="false" class="base HellBase">
+		<Panel hittest="false" id="MainBox">
+			<Panel id="HeroListPanelOuter">
+				<Panel id="HeroListPanel" />
+			</Panel>
+			<Panel id="SceneAndAttributesPanel" hittest="false">
+				<Panel style="height: 100%; horizontal-align: center;" hittest="false">
+					<Panel id="SelectedHeroScene">
+						<DOTAScenePanel style="width: 100%; height: 100%;" unit="npc_dota_hero_abaddon"/>
+					</Panel>
+					<Panel id="AttributesContainer" hittest="false">
+						<Panel class="SelectedHeroAttributesElement">
+							<Panel id="DotaAttributePic_1" class="DotaAttributePic" />
+							<Label id="HeroAttributes_1" class="AttributeValueText" text="0 + 0.0" />
+						</Panel>
+						<Panel class="SelectedHeroAttributesElement">
+							<Label id="DotaAttributePic_2" text="△" class="DotaAttributePic" />
+							<Label id="HeroAttributes_2" class="AttributeValueText" text="0 + 0.0" />
+						</Panel>
+						<Panel class="SelectedHeroAttributesElement">
+							<Panel id="DotaAttributePic_3" class="DotaAttributePic" />
+							<Label id="HeroAttributes_3" class="AttributeValueText" text="0 + 0.0" />
+						</Panel>
+						<Panel class="SelectedHeroAttributesElement">
+							<Image src="file://{images}/custom_game/hud/movespeed.png" class="DotaAttributePic" />
+							<Label id="HeroAttributes_speed" class="AttributeValueText" text="0" />
+						</Panel>
+						<Panel class="SelectedHeroAttributesElement">
+							<Label style="color: white; align: center center; margin-left: 5px; font-size: 22px; horizontal-align: left;" text="BAT:" />
+							<Label id="HeroAttributes_bat" class="AttributeValueText" text="0" />
+						</Panel>
+						<Panel class="SelectedHeroAttributesElement">
+							<Image src="file://{images}/custom_game/hud/armor.png" class="DotaAttributePic" />
+							<Label id="HeroAttributes_armor" style="margin-left: 5px;" class="AttributeValueText" text="0" />
+						</Panel>
+						<Panel class="SelectedHeroAttributesElement">
+							<Image src="file://{images}/custom_game/hud/damage.png" class="DotaAttributePic"/>
+							<Label id="HeroAttributes_damage" class="AttributeValueText" text="0 - 0" />
+						</Panel>
+					</Panel>
+					<Panel id="SelectedHeroDescriptionPanel">
+						<Label id="SelectedHeroDescriptionText" text="" />
+					</Panel>
+					<Panel id="SelectedHeroAbilitiesPanelInner" />
+				</Panel>
+			</Panel>
+			<Panel id="SelectedHeroSelectPanel">
+				<Button id="SelectedHeroSelectButton" onactivate="SelectHero();">
+					<Label id="SelectedHeroSelectLabel" hittest="false" text="#hero_selection_button_select_hero" />
+					<Label id="SelectedHeroSelectHeroName" hittest="false" text="#npc_dota_hero_abaddon" />
+				</Button>
+				<Button id="CloseButton" onactivate="CloseMenu();" class="CloseButton" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>
