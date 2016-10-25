@@ -12,5 +12,6 @@
 
 !game/panorama/images/*.vtex_c
 !game/panorama/images/custom_game/*.vtex_c
+!content/panorama/images/custom_game/loading_screen/uvao_head.png
 
 *.vpk
