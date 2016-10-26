@@ -62,6 +62,7 @@ ABILITY_SHOP_DATA = {
 	["omniknight_select_allies"] = { cost = 4, },
 	["dark_seer_ion_shell"] = { cost = 5, },
 	["warlock_fatal_bonds_arena"] = { cost = 2, },
+	["spectre_dispersion"] = { cost = 3, },
 	
 }
 

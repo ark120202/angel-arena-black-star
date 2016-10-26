@@ -7896,6 +7896,7 @@
 	"spectre_dispersion"
 	{
 		"MaxLevel"	"7"
+		"LevelsBetweenUpgrades" "3"﻿
 		"AbilitySpecial"
 		{
 			"01"
