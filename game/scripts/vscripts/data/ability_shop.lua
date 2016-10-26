@@ -113,6 +113,9 @@ ABILITY_SHOP_DATA = {
 	["keeper_of_the_light_illuminate"] = { cost = 2, },
 	["magnataur_empower"] = { cost = 2, },
 	["ursa_enrage"] = { cost = 2, },
+	["razor_plasma_field"] = { cost = 2 },
+	["doom_bringer_devour"] = { cost = 3 },
+	
 }
 
 ABILITY_SHOP_SKIP_HEROES = {
