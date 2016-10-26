@@ -1845,7 +1845,7 @@
 	"lion_mana_drain"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"16 12 8 4 3 2 1"
+		"AbilityCooldown"	"8"
 		"AbilityManaCost"	"10 10 10 10 10 10 0"
 		"AbilitySpecial"
 		{
@@ -10152,7 +10152,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"850 850 850 850 850 850 850"
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.4 0.4"
-		"AbilityCooldown"	"8 7 6 5 4 3 2"
+		"AbilityCooldown"	"20 18 16 14 12 10 8"
 		"AbilitySpecial"
 		{
 			"02"
@@ -10588,7 +10588,7 @@
 	"treant_natures_guise"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"10.0 8.0 7.0 6.0 5.0 4.0 2.0"
+		"AbilityCooldown"	"30 25 20 15 10 10 10"
 		"AbilityManaCost"	"60 70 80 90 100 110 120"
 		"AbilitySpecial"
 		{
@@ -11349,7 +11349,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"600 600 600 600 600 600 600"
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.4 0.4"
-		"AbilityCooldown"	"30.0 28.0 20.0 15.0 12.0 4.0 2.0"
+		"AbilityCooldown"	"30 25 20 18 15 10 8"
 		"AbilitySpecial"
 		{
 			"01"
@@ -13253,7 +13253,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"int_multiplier"	"1.0 2.0 3.0 4.0 5.0 6.0 7.0"
+				"int_multiplier"	"2.0"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 
@@ -13321,7 +13321,7 @@
 		"AbilityCastRange"	"1200"
 		"AbilityCastPoint"	"0.1 0.1 0.1 0.1 0.1 0.1 0.1"
 		"AbilityCooldown"	"70.0 60.0 50.0 40.0 30.0 20.0 10.0"
-		"AbilityManaCost"	"350 575 800"
+		"AbilityManaCost"	"400 600 800 1000 1200 1400 1800"
 		"AbilitySpecial"
 		{
 			"03"
