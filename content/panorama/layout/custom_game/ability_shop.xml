@@ -12,8 +12,9 @@
 			<Panel class="Ability">
 				<DOTAAbilityImage id="AbilityImage" />
 				<Label id="PointCost" hittest="false" text="1" />
-				<Label id="GoldCost" hittest="false" />
-				<Image id="RemoveOverlay" src="file://{images}/custom_game/ability_shop/remove.png" hittest="false" />
+				<Label id="AbilityLevel" hittest="false" text="x1" />
+				<Label id="SellReturn" hittest="false" text="+1" />
+				<Label id="SellCost" hittest="false" text="-100" />
 				<Image id="BannedOverlay" src="file://{images}/custom_game/ability_shop/banned.png" hittest="false" />
 			</Panel>
 		</snippet>

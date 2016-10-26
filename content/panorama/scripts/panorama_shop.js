@@ -122,6 +122,13 @@ function SnippetCreate_SmallItem(panel, itemName) {
 		if (panel.BHasClass("CanBuy")) {
 			var ItemCounter = {}
 			SendItemBuyOrder(itemName, ItemCounter)
+		} else {
+			GameEvents.SendEventClientSide("dota_hud_error_message", {
+				"splitscreenplayer": 0,
+				"reason": 80,
+				"message": "#dota_hud_error_not_enough_gold"
+			});
+			Game.EmitSound("General.NoGold")
 		}
 	})
 	panel.SetPanelEvent("onmouseover", function() {
@@ -438,6 +445,13 @@ function AutoUpdateQuickbuy() {
 					var ItemCounter = {}
 					SendItemBuyOrder(child.itemName, ItemCounter)
 					return false
+				} else {
+					GameEvents.SendEventClientSide("dota_hud_error_message", {
+						"splitscreenplayer": 0,
+						"reason": 80,
+						"message": "#dota_hud_error_not_enough_gold"
+					});
+					Game.EmitSound("General.NoGold")
 				}
 			}
 		})

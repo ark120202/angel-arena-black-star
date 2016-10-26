@@ -5,6 +5,7 @@ end
 function AbilityShop:PostAbilityData()
 	CustomGameEventManager:RegisterListener("ability_shop_buy", Dynamic_Wrap(AbilityShop, "OnAbilityBuy"))
 	CustomGameEventManager:RegisterListener("ability_shop_sell", Dynamic_Wrap(AbilityShop, "OnAbilitySell"))
+	CustomGameEventManager:RegisterListener("ability_shop_downgrade", Dynamic_Wrap(AbilityShop, "OnAbilityDowngrade"))
 	local data = {{}, {}}
 	local Heroes_all = {}
 	table.merge(Heroes_all, ENABLED_HEROES.Selection)
@@ -65,7 +66,6 @@ end
 
 function AbilityShop:OnAbilityBuy(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-	print(data.ability, "buy", not hero:HasAbility(data.ability))
 	local abilityInfo = AbilityShop:GetAbilityListInfo(data.ability)
 	if not abilityInfo then
 		abilityInfo = { cost = 1, banned_with = {}}
@@ -133,8 +133,6 @@ end
 
 function AbilityShop:OnAbilitySell(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-	print(data.ability, "sell", hero:HasAbility(data.ability))
-
 	if hero and hero:HasAbility(data.ability) and not hero:IsChanneling() then
 		local listDataInfo = AbilityShop:GetAbilityListInfo(data.ability)
 		local cost = 1
@@ -142,26 +140,66 @@ function AbilityShop:OnAbilitySell(data)
 			cost = listDataInfo.cost
 		end
 		local abilityh = hero:FindAbilityByName(data.ability)
-		for _,v in ipairs(hero:FindAllModifiers()) do
-			if v:GetAbility() == abilityh then
-				v:Destroy()
-			end
-		end
+
+		local gold = AbilityShop:CalculateDowngradeCost(data.ability, cost)
 		if data.ability == "attribute_bonus_arena" then
-			hero:SetAbilityPoints(hero:GetAbilityPoints() + cost*(abilityh:GetLevel()-1))
+			gold = gold * (abilityh:GetLevel() - 1)
 		else
-			hero:SetAbilityPoints(hero:GetAbilityPoints() + cost*abilityh:GetLevel())
+			gold = gold * abilityh:GetLevel()
 		end
-		hero:RemoveAbility(data.ability)
-		local link = LINKED_ABILITIES[data.ability]
-		if link then
-			for _,v in ipairs(link) do
-				hero:RemoveAbility(v)
+		if Gold:GetGold(data.PlayerID) >= gold then
+			Gold:RemoveGold(data.PlayerID, gold)
+			for _,v in ipairs(hero:FindAllModifiers()) do
+				if v:GetAbility() == abilityh then
+					v:Destroy()
+				end
 			end
-		end
-		if data.ability ~= "attribute_bonus_arena" then
-			hero:AddAbility("ability_empty")
+			if data.ability == "attribute_bonus_arena" then
+				hero:SetAbilityPoints(hero:GetAbilityPoints() + cost*(abilityh:GetLevel()-1))
+			else
+				hero:SetAbilityPoints(hero:GetAbilityPoints() + cost*abilityh:GetLevel())
+			end
+			hero:RemoveAbility(data.ability)
+			local link = LINKED_ABILITIES[data.ability]
+			if link then
+				for _,v in ipairs(link) do
+					hero:RemoveAbility(v)
+				end
+			end
+			if data.ability ~= "attribute_bonus_arena" then
+				hero:AddAbility("ability_empty")
+			end
 		end
 	end
 	CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(data.PlayerID), "dota_ability_changed", {})
+end
+
+function AbilityShop:OnAbilityDowngrade(data)
+	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
+	print(data.ability, "downgrade", hero:HasAbility(data.ability))
+
+	if hero and hero:HasAbility(data.ability) then
+		local listDataInfo = AbilityShop:GetAbilityListInfo(data.ability)
+		local cost = 1
+		if listDataInfo then
+			cost = listDataInfo.cost
+		end
+		local abilityh = hero:FindAbilityByName(data.ability)
+		if (data.ability ~= "attribute_bonus_arena" and abilityh:GetLevel() <= 1) or (data.ability == "attribute_bonus_arena" and  abilityh:GetLevel() <= 2) then
+			AbilityShop:OnAbilitySell(data)
+		else
+			local gold = AbilityShop:CalculateDowngradeCost(data.ability, cost)
+			if Gold:GetGold(data.PlayerID) >= gold then
+				Gold:RemoveGold(data.PlayerID, gold)
+				abilityh:SetLevel(abilityh:GetLevel() - 1)
+				hero:SetAbilityPoints(hero:GetAbilityPoints() + cost)
+			end
+		end
+
+	end
+	CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(data.PlayerID), "dota_ability_changed", {})
+end
+
+function AbilityShop:CalculateDowngradeCost(abilityname, upgradecost)
+	return (upgradecost*60) + (upgradecost*10*GetDOTATimeInMinutesFull())
 end

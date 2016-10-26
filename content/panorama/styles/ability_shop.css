@@ -165,14 +165,10 @@
 	saturation: 0.1;
 }
 
-#RemoveOverlay
+.CanDelete #AbilityImage
 {
-	visibility: collapse;
-}
-
-.CanDelete #RemoveOverlay
-{
-	visibility: visible;
+	saturation: 0.1;
+	wash-color: red;
 }
 
 #BannedOverlay
@@ -185,7 +181,7 @@
 	visibility: visible;
 }
 
-#PointCost
+#PointCost, #SellReturn
 {
 	align: left bottom;
 	margin-bottom: -1px;
@@ -194,6 +190,50 @@
 	font-size: 22px;
 	font-weight: bold;
 	background-color: rgba(0,0,0,240);
+}
+#SellReturn
+{
+	color: lime;
+	visibility: collapse;
+}
+
+.CanDelete #PointCost
+{
+	visibility: collapse;
+}
+
+#SellCost
+{
+	align: left top;
+	margin-top: 2px;
+	margin-left: 2px;
+	color: gold;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: rgba(0,0,0,240);
+	visibility: collapse;
+}
+
+#AbilityLevel
+{
+	align: right top;
+	margin-top: 2px;
+	margin-right: 1px;
+	color: cyan;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: rgba(0,0,0,240);
+	visibility: collapse;
+}
+.Purchased #AbilityLevel
+{
+	visibility: visible;
+}
+
+.CanDelete #SellReturn,
+.CanDelete #SellCost
+{
+	visibility: visible;
 }
 
 .HeroListElement

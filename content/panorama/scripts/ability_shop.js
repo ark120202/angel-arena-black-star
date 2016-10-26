@@ -15,8 +15,11 @@ function GetLocalAbilityNamesInfo() {
 	for (var i = 0; i < Entities.GetAbilityCount(hero); ++i) {
 		var ability = Entities.GetAbility(hero, i);
 		if (ability != -1) {
+			var levels = Abilities.GetLevel(ability)
+			if (Abilities.GetAbilityName(ability) == "attribute_bonus_arena")
+				levels--;
 			ab[Abilities.GetAbilityName(ability)] = {
-				level: Abilities.GetLevel(ability),
+				level: levels,
 				maxLevel: Abilities.GetMaxLevel(ability)
 			};
 		}
@@ -49,8 +52,8 @@ function CreateSnippet_Ability(panel, abilityname, heroname, cost) {
 	panel.SetPanelEvent("onmouseout", function() {
 		$.DispatchEvent("DOTAHideAbilityTooltip", panel)
 	})
-	var ActivateAbility = function() {
-		if (panel.BHasClass("CanDelete")) {
+	panel.SetPanelEvent("onactivate", function() {
+		if (GameUI.IsShiftDown()) {
 			GameEvents.SendCustomGameEventToServer("ability_shop_sell", {
 				ability: abilityname
 			});
@@ -58,9 +61,17 @@ function CreateSnippet_Ability(panel, abilityname, heroname, cost) {
 			GameEvents.SendCustomGameEventToServer("ability_shop_buy", {
 				ability: abilityname
 			});
-	}
-	panel.SetPanelEvent("onactivate", ActivateAbility)
-	panel.SetPanelEvent("oncontextmenu", ActivateAbility)
+	})
+	panel.SetPanelEvent("oncontextmenu", function() {
+		if (GameUI.IsShiftDown()) {
+			GameEvents.SendCustomGameEventToServer("ability_shop_downgrade", {
+				ability: abilityname
+			});
+		} else if (!panel.BHasClass("MaxUpgraded"))
+			GameEvents.SendCustomGameEventToServer("ability_shop_buy", {
+				ability: abilityname
+			});
+	})
 	return panel
 }
 
@@ -109,6 +120,10 @@ function Search() {
 	}
 }
 
+function CalculateDowngradeCost(abilityname, upgradecost) {
+	return (upgradecost * 60) + (upgradecost * 10 * Math.floor(Game.GetDOTATime(false, false) / 60))
+}
+
 function UpdateAbilities() {
 	Search();
 	var shifttext = GameUI.IsShiftDown() ? "#ability_shop_shift_yes" : "#ability_shop_shift_no"
@@ -125,12 +140,23 @@ function UpdateAbilities() {
 		panel.SetHasClass("Purchased", purchasedInfo != null)
 		if (purchasedInfo != null) {
 			panel.SetHasClass("MaxUpgraded", purchasedInfo.level == purchasedInfo.maxLevel);
-			panel.SetHasClass("", false);
-		} else {
+			panel.FindChildTraverse("AbilityLevel").text = "x" + purchasedInfo.level
+		} else
 			panel.RemoveClass("MaxUpgraded")
-		}
 
-		panel.SetHasClass("CanDelete", panel.BHasClass("Purchased") && GameUI.IsShiftDown());
+		if (panel.BHasClass("Purchased") && GameUI.IsShiftDown()) {
+			panel.AddClass("CanDelete");
+			panel.FindChildTraverse("SellReturn").text = "+" + cost * purchasedInfo.level
+			panel.FindChildTraverse("SellCost").text = "-" + CalculateDowngradeCost(abilityname, cost)
+
+			/*GameEvents.SendEventClientSide("dota_hud_error_message", {
+				"splitscreenplayer": 0,
+				"reason": 80,
+				"message": "#dota_hud_error_not_enough_gold"
+			});
+			Game.EmitSound("General.NoGold")*/
+		} else
+			panel.RemoveClass("CanDelete");
 		panel.SetHasClass("Banned", banned_with.indexOf(abilityname) !== -1);
 	})
 	$.Schedule(0.1, UpdateAbilities)

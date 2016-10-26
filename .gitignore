@@ -1,5 +1,3 @@
-*.bin
-
 *.vpcf_c
 *.vtex_c
 *.vsndevts_c
@@ -7,11 +5,16 @@
 *.vjs_c
 *.vxml_c
 *.vcss_c
+*.vpk
 
+*.bin
 *.cfg
 
 !game/panorama/images/*.vtex_c
 !game/panorama/images/custom_game/*.vtex_c
-!content/panorama/images/custom_game/loading_screen/uvao_head.png
 
-*.vpk
+content/panorama/images/custom_game/loading_screen/uvao_head.png
+*.sublime-workspace
+*.sublime-project
+content/tooltips_*.txt
+content/addon_*_utf8.txt
