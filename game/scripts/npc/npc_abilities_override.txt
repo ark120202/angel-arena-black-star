@@ -14735,7 +14735,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"666"
-		"AbilityCooldown"	"30"
+		"AbilityCooldown"	"60"
 		"AbilityManaCost"	"0"
 		"AbilitySpecial"
 		{

@@ -1,11 +1,30 @@
-earthshaker_aftershock /=/ pugna_life_drain , bristleback_viscous_nasal_goo , "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram" , 
+earthshaker_aftershock /=/ pugna_life_drain , zuus_arc_lightning,  bristleback_viscous_nasal_goo , "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram" , 
 obsidian_destroyer_essence_aura /=/ "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land",
-Zeus /=/  "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land",
+zuus_static_field /=/  "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land",
 storm_spirit_overload /=/ "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land",
-["warlock_fatal_bonds_arena"] = { cost = 2, },
-["spectre_dispersion"] = { cost = 3, },
-["rocket_barrage_arena"] = { cost = 3, },
-["keeper_of_the_light_illuminate"] = { cost = 2, },
+pudge_meat_hook_lua  /=/  bloodseeker_thirst , antimage_blink", "queenofpain_blink" , 
+shadow_demon_shadow_poison"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
+hadow_demon_shadow_poison_release"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
+nyx_assassin_unburrow"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
+nyx_assassin_burrow"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
+spectre_dispersion /=/ batrider_sticky_napalm
+warlock_fatal_bonds_arena"] = { cost = 2, },
+spectre_dispersion"] = { cost = 3, },
+rocket_barrage_arena"] = { cost = 3, },
+keeper_of_the_light_illuminate"] = { cost = 2, },
+ursa_enrage"] = { cost = 2, },
+troll_warlord_berserkers_rage"] = { banned_with = {"troll_warlord_berserkers_rage", }, },
+troll_warlord_berserkers_rage"] = { banned_with = {"slardar_bash", }, },
+troll_warlord_berserkers_rage"] = { banned_with = {"spirit_breaker_greater_bash", }, },
+slardar_bash"] = { banned_with = {"slardar_bash", }, },
+slardar_bash"] = { banned_with = {"troll_warlord_berserkers_rage", }, },
+slardar_bash"] = { banned_with = {"spirit_breaker_greater_bash", }, },
+spirit_breaker_greater_bash"] = { banned_with = {"slardar_bash", }, },
+spirit_breaker_greater_bash"] = { banned_with = {"troll_warlord_berserkers_rage", }, },
+spirit_breaker_greater_bash"] = { banned_with = {"spirit_breaker_greater_bash", }, },
+faceless_void_time_lock_arena"] = { banned_with = {"slardar_bash", }, },
+faceless_void_time_lock_arena"] = { banned_with = {"troll_warlord_berserkers_rage", }, },
+faceless_void_time_lock_arena"] = { banned_with = {"spirit_breaker_greater_bash", }, },
 
 =====
 spectre_dispersion
@@ -28,3 +47,8 @@ brewmaster_drunken_haze
 =====
 skywrath_mage_mystic_flare
 "AbilityManaCost"	"350 575 800" >> 400 600 800 1000 1200 1400 1800
+=====
+"techies_suicide"
+"AbilityCooldown"	"30"  >> 60
+=====
+
