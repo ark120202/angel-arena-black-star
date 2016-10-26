@@ -61,6 +61,8 @@ ABILITY_SHOP_DATA = {
 	["flak_cannon_arena"] = { cost = 4, },
 	["omniknight_select_allies"] = { cost = 4, },
 	["dark_seer_ion_shell"] = { cost = 5, },
+	["warlock_fatal_bonds_arena"] = { cost = 2, },
+	
 }
 
 ABILITY_SHOP_SKIP_HEROES = {
