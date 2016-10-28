@@ -57,6 +57,9 @@ function Precache( context )
 		"models/heroes/items/hat_test/hat_test.vmdl",
 		"models/items/tidehunter/diving_helmet/tidehunter_diving_helmet.vmdl",
 		"models/heroes/earthshaker/totem.vmdl",
+		--Wearables
+		"models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl",
+		"models/items/furion/treant_stump.vmdl"
 	}
 
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts", context)

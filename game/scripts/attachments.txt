@@ -1,18 +1,57 @@
 "Attachments"
 {
-	"models/heroes/lina/lina.vmdl"
+	"models/props_gameplay/chicken.vmdl"
 	{
-		"attach_head"
+		"attach_hitloc"
 		{
-			"models/items/alchemist/caustic_hair/caustic_hair.vmdl"
+			"models/heroes/earthshaker/totem.vmdl"
 			{
-				"scale"		"1.2000000476837"
-				"pitch"		"0"
-				"roll"		"10"
-				"ZPos"		"-238"
+				"scale"		"0.5"
+				"pitch"		"-20"
+				"roll"		"0"
+				"yaw"		"0"
 				"YPos"		"0"
-				"yaw"		"-90"
+				"ZPos"		"-100"
+				"XPos"		"0"
+			}
+		}
+		"Head_plc0"
+		{
+			"models/items/tidehunter/diving_helmet/tidehunter_diving_helmet.vmdl"
+			{
+				"scale"		"0.30000001192093"
+				"pitch"		"-100"
+				"roll"		"0"
+				"ZPos"		"-170"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"-58"
+			}
+			"models/heroes/items/hat_test/hat_test.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"-100"
+				"roll"		"30"
+				"yaw"		"-45"
+				"YPos"		"0"
+				"ZPos"		"-145"
 				"XPos"		"-8"
+			}
+		}
+	}
+	"models/items/furion/treant_stump.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/items/sven/heavenly_sword.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-67"
+				"roll"		"49"
+				"ZPos"		"15"
+				"YPos"		"7"
+				"yaw"		"0"
+				"XPos"		"1"
 			}
 		}
 	}
@@ -25,58 +64,10 @@
 				"scale"		"1"
 				"pitch"		"0"
 				"roll"		"90"
-				"yaw"		"90"
-				"YPos"		"2"
 				"ZPos"		"0"
-				"XPos"		"-60"
-			}
-		}
-	}
-	"models/heroes/crystal_maiden/crystal_maiden.vmdl"
-	{
-		"attach_head"
-		{
-			"models/items/alchemist/caustic_hair/caustic_hair.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"5"
-				"roll"		"0"
-				"yaw"		"0"
-				"YPos"		"0"
-				"ZPos"		"-234"
-				"XPos"		"-10"
-			}
-			"models/items/magnataur/defender_horn/defender_horn.vmdl"
-			{
-				"scale"		"0.80000001192093"
-				"pitch"		"1"
-				"roll"		"0"
-				"ZPos"		"-152"
-				"YPos"		"0"
-				"yaw"		"0"
-				"XPos"		"-47"
-			}
-		}
-		"attach_attack1"
-		{
-			"models/items/alchemist/prison_ballchain.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"0"
-				"roll"		"-37"
-				"ZPos"		"5"
-				"YPos"		"-37"
+				"YPos"		"2"
 				"yaw"		"90"
-				"XPos"		"13"
-			}
-		}
-	}
-	"Particles"
-	{
-		"models/items/dragon_knight/helmet_01/helmet_01.vmdl"
-		{
-			"particles/econ/items/rubick/rubick_force_gold_ambient/rubick_telekinesis_force_debuff_b_gold.vpcf"
-			{
+				"XPos"		"-60"
 			}
 		}
 	}
@@ -89,49 +80,74 @@
 				"scale"		"1.7000000476837"
 				"pitch"		"-90"
 				"roll"		"0"
-				"ZPos"		"-163"
-				"YPos"		"0"
 				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-163"
 				"XPos"		"4"
 			}
 		}
 	}
-	"models/props_gameplay/chicken.vmdl"
+	"Particles"
 	{
-		"attach_hitloc"
+		"models/items/dragon_knight/helmet_01/helmet_01.vmdl"
 		{
-			"models/heroes/earthshaker/totem.vmdl"
+			"particles/econ/items/rubick/rubick_force_gold_ambient/rubick_telekinesis_force_debuff_b_gold.vpcf"
 			{
-				"scale"		"0.5"
-				"pitch"		"-20"
-				"roll"		"0"
-				"ZPos"		"-100"
-				"YPos"		"0"
-				"yaw"		"0"
-				"XPos"		"0"
 			}
 		}
-		"Head_plc0"
+	}
+	"models/heroes/lina/lina.vmdl"
+	{
+		"attach_head"
 		{
-			"models/items/tidehunter/diving_helmet/tidehunter_diving_helmet.vmdl"
+			"models/items/alchemist/caustic_hair/caustic_hair.vmdl"
 			{
-				"scale"		"0.30000001192093"
-				"pitch"		"-100"
+				"scale"		"1.2000000476837"
+				"pitch"		"0"
+				"roll"		"10"
+				"yaw"		"-90"
+				"YPos"		"0"
+				"ZPos"		"-238"
+				"XPos"		"-8"
+			}
+		}
+	}
+	"models/heroes/crystal_maiden/crystal_maiden.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/items/alchemist/prison_ballchain.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"-37"
+				"yaw"		"90"
+				"YPos"		"-37"
+				"ZPos"		"5"
+				"XPos"		"13"
+			}
+		}
+		"attach_head"
+		{
+			"models/items/alchemist/caustic_hair/caustic_hair.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"5"
+				"roll"		"0"
+				"ZPos"		"-234"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"-10"
+			}
+			"models/items/magnataur/defender_horn/defender_horn.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"1"
 				"roll"		"0"
 				"yaw"		"0"
 				"YPos"		"0"
-				"ZPos"		"-170"
-				"XPos"		"-58"
-			}
-			"models/heroes/items/hat_test/hat_test.vmdl"
-			{
-				"scale"		"0.80000001192093"
-				"pitch"		"-100"
-				"roll"		"30"
-				"ZPos"		"-145"
-				"YPos"		"0"
-				"yaw"		"-45"
-				"XPos"		"-8"
+				"ZPos"		"-152"
+				"XPos"		"-47"
 			}
 		}
 	}

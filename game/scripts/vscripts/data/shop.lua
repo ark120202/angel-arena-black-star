@@ -14,6 +14,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_ward_sentry",
 			"item_tome_of_knowledge",
 			"item_bottle",
+			"item_team_changer",
 		},
 
 		[2] = {
@@ -220,7 +221,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_steam_footgear",
 			"item_aegis_arena",
 			"item_blink_staff",
-			"item_team_changer",
+			"item_angel_wings",
 		},
 		{
 			"item_ray_of_fate",

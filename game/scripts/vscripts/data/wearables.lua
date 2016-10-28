@@ -1,12 +1,8 @@
 CUSTOM_WEARABLES_PLAYER_ITEMS = {
 	[109792606] = {
-		["alternative_npc_dota_hero_spectre"] = {
-			"item_hero_stargazer_helmet_of_the_sunray",
-		},
-		["npc_dota_hero_omniknight"] = {
-			"item_hero_omniknight_frozen_sword",
-		},
-		
+		"item_hero_stargazer_helmet_of_the_sunray",
+		"item_hero_omniknight_frozen_sword",
+		--"item_common_model_tree"
 	},
 }
 
@@ -39,4 +35,15 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 		},
 		hidden_slots = { "weapon" }
 	},
+	["item_common_model_tree"] = {
+		base_model = "models/items/furion/treant_stump.vmdl",
+		base_model_scale = 1.35,
+		models = {
+			{
+				model = "models/items/sven/heavenly_sword.vmdl",
+				attachPoint = "attach_attack1",
+			},
+		},
+		hide_wearables = true,
+	}
 }

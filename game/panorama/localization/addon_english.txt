@@ -208,8 +208,8 @@
 
 		"minimalistic_hud_kda"									"K/D/A/LH"
 
-		"ability_shop_shift_no"									"You're in ability purchasing mode. Hold SHIFT to enter selling mode."
-		"ability_shop_shift_yes"								"You're in ability selling mode. SHIFT is pressed."
+		"ability_shop_shift_no"									"LMB/RMB - Buy Ability. Hold SHIFT to enter selling mode."
+		"ability_shop_shift_yes"								"LMB - Sell ability, RMB - Downgrade ability. Release SHIFT to enter purchase mode."
 		"ability_shop_purchased_only"							"Show purchased abilities"
 		"ability_shop_search_placeholder"						"Ability or hero name..."
 

@@ -96,7 +96,9 @@ REFRESH_LIST_IGNORE_REARM = {
 	"stargazer_cosmic_countdown",
 	"zen_gehraz_superposition",
 	"furion_force_of_nature",
-	"doom_bringer_devour"
+	"doom_bringer_devour",
+	"omniknight_select_enemies",
+	"omniknight_select_allies",
 }
 
 REFRESH_LIST_IGNORE_REFRESHER = {
@@ -182,7 +184,7 @@ LINKED_ABILITIES = {
 }
 
 ON_DAMAGE_MODIFIER_PROCS = {
-	["modifier_item_octarine_core_arena"] = function(attacker, victim, inflictor, damage, damagetype_const) if inflictor then
+	["modifier_item_octarine_core_arena"] = function(attacker, victim, inflictor, damage, damagetype_const) if inflictor and attacker:GetTeam() ~= victim:GetTeam() then
 		local heal
 		if victim:IsHero() then
 			heal = damage * GetAbilitySpecial("item_octarine_core_arena", "hero_lifesteal") * 0.01
@@ -202,7 +204,7 @@ ON_DAMAGE_MODIFIER_PROCS = {
 			item:ApplyDataDrivenModifier(attacker, attacker, "modifier_octarine_bash_cooldown", {})
 		end
 	end end,
-	["modifier_item_refresher_core"] = function(attacker, victim, inflictor, damage, damagetype_const) if inflictor then
+	["modifier_item_refresher_core"] = function(attacker, victim, inflictor, damage, damagetype_const) if inflictor and attacker:GetTeam() ~= victim:GetTeam() then
 		local heal
 		if victim:IsHero() then
 			heal = damage * GetAbilitySpecial("item_refresher_core", "hero_lifesteal") * 0.01

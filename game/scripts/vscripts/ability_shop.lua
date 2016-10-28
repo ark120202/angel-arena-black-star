@@ -176,7 +176,6 @@ end
 
 function AbilityShop:OnAbilityDowngrade(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-	print(data.ability, "downgrade", hero:HasAbility(data.ability))
 
 	if hero and hero:HasAbility(data.ability) then
 		local listDataInfo = AbilityShop:GetAbilityListInfo(data.ability)

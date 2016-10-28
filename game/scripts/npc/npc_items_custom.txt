@@ -7833,7 +7833,7 @@
 		"ItemShopTags"					"stats;move_speed;hard_to_tag"
 		"ItemQuality"					"common"
 		"ItemAliases"					"boots;steam footgear"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"AbilitySpecial"
 		{
@@ -19092,6 +19092,321 @@
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"				"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
 					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"			"%spell_amp_pct"
+				}
+			}
+		}
+	}
+
+	"item_recipe_angel_wings"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10257"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5930"	
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_angel_wings"
+		"ItemRequirements"
+		{
+			"01"						"item_steam_footgear;item_aether_lens;item_glimmer_cape;item_ultimate_orb"
+		}
+	}
+
+	"item_angel_wings"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10258"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"item_angel_wings"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemShopTags"					"stats;move_speed;hard_to_tag"
+		"ItemQuality"					"common"
+		"ItemAliases"					"boots;steam footgear;angel wings"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speed"		"80"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"56"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all"					"28"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"50"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"500"
+			} //Handled with base modifier
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_hp_regen"			"18"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_magical_armor"		"20"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_bonus"			"300"
+			} //Handled with base modifier
+
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spell_amp_pct"				"15"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"active_radius"				"450"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"active_magical_armor"		"45"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_delay"				"0.35"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"7"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"			"CASTER"
+				"ModifierName"		"modifier_item_angel_wings_active"
+			}
+			
+			"FireSound"
+			{
+				"EffectName"		"Arena.Items.SteamFootgear.Activate"
+				"Target"			"CASTER"
+			}
+			
+			"FireSound"
+			{
+				"EffectName"		"Item.GlimmerCape.Activate"
+				"Target"			"CASTER"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/items3_fx/glimmer_cape_burst.vpcf"
+				"EffectAttachType"  "follow_overhead"
+				"Target"            "CASTER"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_angel_wings"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"		"%bonus_movement_speed"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_hp_regen"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_armor"
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp_pct"
+				}
+				
+				"States"
+				{
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"					"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_item_aether_lens"
+						"Target" 		"CASTER"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_item_aether_lens"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+
+			"modifier_item_angel_wings_active"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"Duration"			"%duration"
+
+				"Aura"          	"modifier_item_angel_wings_aura_effect"
+				"Aura_Radius"   	"%active_radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_ApplyToCaster" "1"
+			}
+
+			"modifier_item_angel_wings_aura_effect"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+
+				"EffectName"		"particles/items3_fx/glimmer_cape_initial.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_item_angel_wings_fade"
+						"Target" 		"TARGET"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_item_angel_wings_fade"
+						"Target" 		"TARGET"
+					}
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_item_angel_wings_invis"
+						"Target" 		"TARGET"
+					}
+				}
+			}
+
+			"modifier_item_angel_wings_invis"
+			{
+				"IsPurgable"		"0"
+
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_invisible"
+						"Target" 		"TARGET"
+					}
+				}
+
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_item_angel_wings_fade"
+						"Target" 		"ATTACKER"
+					}
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_item_angel_wings_invis"
+						"Target" 		"ATTACKER"
+					}
+				}
+
+				"OnAbilityExecuted"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_item_angel_wings_fade"
+						"Target" 		"TARGET"
+					}
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_item_angel_wings_invis"
+						"Target" 		"TARGET"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_invisible"
+						"Target" 		"TARGET"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%active_magical_armor"
+				}
+			}
+
+			"modifier_item_angel_wings_fade"
+			{
+				"IsPurgable"		"0"
+				"Duration"			"%fade_delay"
+
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_item_angel_wings_invis"
+						"Target" 		"TARGET"
+					}
+				}
+
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_item_angel_wings_fade"
+						"Target" 		"ATTACKER"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%active_magical_armor"
 				}
 			}
 		}

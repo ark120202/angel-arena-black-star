@@ -11,7 +11,7 @@ ABILITY_SHOP_DATA = {
 	["weaver_the_swarm"] = { banned_with = {"batrider_sticky_napalm", }, },
 	["dark_seer_ion_shell"] = { banned_with = {"batrider_sticky_napalm", }, },
 	["warlock_fatal_bonds_arena"] = { banned_with = {"batrider_sticky_napalm", }, },
-	["zuus_static_field"] = { banned_with = {"obsidian_destroyer_arcane_orb", "storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", }, },
+	["zuus_static_field"] = { banned_with = {"obsidian_destroyer_arcane_orb", "storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "bristleback_viscous_nasal_goo", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", }, },
 	["sandking_sand_storm"] = { banned_with = {"batrider_sticky_napalm", }, },
 	["obsidian_destroyer_arcane_orb"] = { banned_with = {"zuus_static_field", "earthshaker_aftershock", "bristleback_quill_spray", }, },
 	["bristleback_quill_spray"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", }, },
@@ -45,6 +45,19 @@ ABILITY_SHOP_DATA = {
 	["skywrath_mage_arcane_bolt"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
 	["rubick_telekinesis_land"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
 	["rubick_telekinesis"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
+
+
+
+
+
+
+
+
+
+
+
+
+	----??????????????????????????????<<<<<<<< <ALASTOR FIX IT>!!!!!!!!!!!!!!!
 	["spectre_dispersion"] = { banned_with = {"batrider_sticky_napalm", }, },
 	["queenofpain_blink"] = { banned_with = {"antimage_blink", }, },
 	["antimage_blink"] = { banned_with = {"queenofpain_blink", }, },
@@ -68,16 +81,6 @@ ABILITY_SHOP_DATA = {
 	["shadow_demon_shadow_poison_release"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
 	["nyx_assassin_unburrow"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
 	["nyx_assassin_burrow"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
-	[""] = { banned_with = {"", }, },
-	[""] = { banned_with = {"", }, },
-	[""] = { banned_with = {"", }, },
-	[""] = { banned_with = {"", }, },
-	[""] = { banned_with = {"", }, },
-	[""] = { banned_with = {"", }, },
-	[""] = { banned_with = {"", }, },
-	[""] = { banned_with = {"", }, },
-	[""] = { banned_with = {"", }, },
-	[""] = { banned_with = {"", }, },
 	
 
 	["puck_ethereal_jaunt"] = { cost = 0, },
@@ -140,4 +143,5 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"phoenix_sun_ray",
 	"phoenix_sun_ray_toggle_move_empty",
 	"ogre_magi_unrefined_fireblast",
+	"keeper_of_the_light_spirit_form",
 }

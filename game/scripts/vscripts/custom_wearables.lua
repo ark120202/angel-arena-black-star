@@ -16,6 +16,10 @@ function CustomWearables:EquipWearables(unit, herokey)
 	elseif type(herokey) == "table" and herokey:entindex() then
 		herokey = GetFullHeroName(herokey)
 	end
+	local wearables = CustomWearables:GetPlayerHeroWearables(unit, herokey)
+	for _,v in ipairs(wearables) do
+		CustomWearables:EquipWearable(unit, v)
+	end
 	if unit.WearablesRemoved then
 		for _,v in pairs(unit:GetChildren()) do
 			if v:GetClassname() == "dota_item_wearable" then
@@ -25,14 +29,17 @@ function CustomWearables:EquipWearables(unit, herokey)
 			end
 		end
 	end
-	local wearables = CustomWearables:GetPlayerHeroWearables(unit, herokey)
-	for _,v in ipairs(wearables) do
-		CustomWearables:EquipWearable(unit, v)
-	end
 end
 
 function CustomWearables:EquipWearable(unit, handle)
 	CustomWearables:Unit(unit)
+	if handle.base_model and type(handle.base_model) == "string" then
+		unit:SetModel(handle.base_model)
+		unit:SetOriginalModel(handle.base_model)
+	end
+	if handle.base_model_scale and type(handle.base_model_scale) == "number" then
+		unit:SetModelScale(handle.base_model_scale)
+	end
 	if handle.models and type(handle.models) == "table" and #handle.models > 0 then
 		for _,v in ipairs(handle.models) do
 			CustomWearables:EquipWearableModel(unit, v)
@@ -51,10 +58,12 @@ function CustomWearables:EquipWearable(unit, handle)
 			if CosmeticLib:_Identify( unit ) then
 				CosmeticLib:RemoveFromSlot( unit, v )
 				unit._cosmeticlib_wearables_slots[v].handle:AddEffects(EF_NODRAW)
-				for k,_ in pairs(unit._cosmeticlib_wearables_slots) do print(k) end
 			end
 			--Attachments:Attachment_HideCosmetic({index = unit:GetEntityIndex(), PlayerID = unit:GetPlayerID(), model = GetModelName()})
 		end
+	end
+	if handle.hide_wearables then
+		unit.WearablesRemoved = true
 	end
 	return
 	--[[TODO
@@ -102,10 +111,10 @@ function CustomWearables:GetPlayerHeroWearables(unitvar, herokey)
 	local playerID = UnitVarToPlayerID(unitvar)
 	if playerID and playerID > -1 then
 		local steamid = PlayerResource:GetSteamAccountID(playerID)
-		if CUSTOM_WEARABLES_PLAYER_ITEMS[steamid] and CUSTOM_WEARABLES_PLAYER_ITEMS[steamid][herokey] then
-			for _,v in ipairs(CUSTOM_WEARABLES_PLAYER_ITEMS[steamid][herokey]) do
+		if CUSTOM_WEARABLES_PLAYER_ITEMS[steamid] then
+			for _,v in ipairs(CUSTOM_WEARABLES_PLAYER_ITEMS[steamid]) do
 				local h = CustomWearables:WearableNameToHandle(v)
-				if h then
+				if h and h.hero == herokey or not h.hero then
 					table.insert(wearables, h)
 				end
 			end
