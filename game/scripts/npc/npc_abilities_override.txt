@@ -12618,13 +12618,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"return_damage"	"16 18 20 22 24 26 30"
+				"return_damage"	"20 60 120 180 200 300 350"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"strength_pct"	"30 45 50 60 65 75 80"
+				"strength_pct"	"3 6 9 12 15 18 25"
 				"CalculateSpellDamageTooltip"		"1"
 			}
 
@@ -12635,7 +12635,7 @@
 	"centaur_stampede"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"90.0 75.0 60.0 50.0 40.0 30.0 25.0"
+		"AbilityCooldown"	"100 90 80 70 60 50 40"
 		"AbilityManaCost"	"100 100 100 100 100 100 100"
 		"AbilitySpecial"
 		{

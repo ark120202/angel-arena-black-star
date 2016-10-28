@@ -55,6 +55,8 @@ REFRESH_LIST_IGNORE_REARM = {
 	"item_titanium_bar",
 
 	"earthshaker_echo_slam",
+	"earthshaker_echo_slam",
+	"earthshaker_echo_slam",
 	"juggernaut_omni_slash",
 	"warlock_rain_of_chaos_arena",
 	"skeleton_king_reincarnation_arena",

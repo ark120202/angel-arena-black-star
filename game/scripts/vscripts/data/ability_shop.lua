@@ -1,5 +1,11 @@
 ABILITY_SHOP_BANNED = {
-	["obsidian_destroyer_arcane_orb"] = { "zuus_static_field", "earthshaker_aftershock", "bristleback_quill_spray", },
+	["obsidian_destroyer_essence_aura"] = {"storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "shadow_demon_shadow_poison", },
+	["batrider_sticky_napalm"] = { "sandking_sand_storm", "shadow_shaman_shackles", "doom_bringer_scorched_earth", "venomancer_venomous_gale", "venomancer_poison_nova", "ember_spirit_flame_guard", "weaver_the_swarm", "dark_seer_ion_shell", "warlock_fatal_bonds_arena", "spectre_dispersion", "shadow_demon_shadow_poison", },
+	["earthshaker_aftershock"] = { "obsidian_destroyer_arcane_orb", "storm_spirit_ball_lightning", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "zuus_arc_lightning", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "bristleback_quill_spray", "bristleback_viscous_nasal_goo", "shadow_demon_shadow_poison", },
+	["zuus_static_field"] = { "storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "bristleback_viscous_nasal_goo", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "shadow_demon_shadow_poison", },
+	["storm_spirit_overload"] = {"troll_warlord_berserkers_rage", "wisp_spirits_out_aghanims", "wisp_spirits_in_aghanims", "wisp_overcharge_aghanims", "rocket_barrage_arena", "cherub_synthesis", "pudge_rot_arena", "pudge_rot", "skeleton_king_vampiric_aura", "witch_doctor_voodoo_restoration", "leshrac_pulse_nova", "wisp_overcharge", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "bristleback_viscous_nasal_goo", "shadow_demon_shadow_poison", },
+	["pudge_meat_hook_lua"] = {"furion_teleportation", "kunkka_x_marks_the_spot", "ogre_magi_multicast_arena",  "bloodseeker_thirst", "antimage_blink", "queenofpain_blink", },
+	
 }
 
 ABILITY_SHOP_BANNED_GROUPS = {
@@ -9,80 +15,18 @@ ABILITY_SHOP_BANNED_GROUPS = {
 		"spirit_breaker_greater_bash",
 		"faceless_void_time_lock_arena",
 	},
+	{
+		"antimage_blink",
+		"queenofpain_blink"
+	}
 }
 
 ABILITY_SHOP_DATA = {
---[[
-
-	["obsidian_destroyer_essence_aura"] = { banned_with = {"storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", }, },
-	["batrider_sticky_napalm"] = { banned_with = {"sandking_sand_storm", "shadow_shaman_shackles", "doom_bringer_scorched_earth", "venomancer_venomous_gale", "venomancer_poison_nova", "ember_spirit_flame_guard", "weaver_the_swarm", "dark_seer_ion_shell", "sandking_sand_storm", "warlock_fatal_bonds_arena", }, },
-	["doom_bringer_scorched_earth"] = { banned_with = {"batrider_sticky_napalm", }, },
-	["storm_spirit_ball_lightning"] = { banned_with = {"earthshaker_aftershock", "obsidian_destroyer_essence_aura", "zuus_static_field", }, },
-	["earthshaker_aftershock"] = { banned_with = {"obsidian_destroyer_arcane_orb", "storm_spirit_ball_lightning", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "zuus_arc_lightning", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", }, },
-	["shadow_shaman_shackles"] = { banned_with = {"batrider_sticky_napalm", }, },
-	["venomancer_venomous_gale"] = { banned_with = {"batrider_sticky_napalm", }, },
-	["venomancer_poison_nova"] = { banned_with = {"batrider_sticky_napalm", }, },
-	["ember_spirit_flame_guard"] = { banned_with = {"batrider_sticky_napalm", }, },
-	["weaver_the_swarm"] = { banned_with = {"batrider_sticky_napalm", }, },
-	["dark_seer_ion_shell"] = { banned_with = {"batrider_sticky_napalm", }, },
-	["warlock_fatal_bonds_arena"] = { banned_with = {"batrider_sticky_napalm", }, },
-	["zuus_static_field"] = { banned_with = {"obsidian_destroyer_arcane_orb", "storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "bristleback_viscous_nasal_goo", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", }, },
-	["sandking_sand_storm"] = { banned_with = {"batrider_sticky_napalm", }, },
-	["obsidian_destroyer_arcane_orb"] = { banned_with = {"zuus_static_field", "earthshaker_aftershock", "bristleback_quill_spray", }, },
-	["bristleback_quill_spray"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", }, },
-	["storm_spirit_overload"] = { banned_with = {"troll_warlord_berserkers_rage", "wisp_spirits_out_aghanims", "wisp_spirits_in_aghanims", "wisp_overcharge_aghanims", "rocket_barrage_arena", "cherub_synthesis", "pudge_rot_arena", "pudge_rot", "skeleton_king_vampiric_aura", "witch_doctor_voodoo_restoration", "leshrac_pulse_nova", "wisp_overcharge", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", }, },
-	["troll_warlord_berserkers_rage"] = { banned_with = {"storm_spirit_overload", }, },
-	["wisp_spirits_out_aghanims"] = { banned_with = {"storm_spirit_overload", }, },
-	["wisp_spirits_in_aghanims"] = { banned_with = {"storm_spirit_overload", }, },
-	["wisp_overcharge_aghanims"] = { banned_with = {"storm_spirit_overload", }, },
-	["rocket_barrage_arena"] = { banned_with = {"storm_spirit_overload", }, },
-	["cherub_synthesis"] = { banned_with = {"storm_spirit_overload", }, },
-	["pudge_rot_arena"] = { banned_with = {"storm_spirit_overload", }, },
-	["pudge_rot"] = { banned_with = {"storm_spirit_overload", }, },
-	["skeleton_king_vampiric_aura"] = { banned_with = {"storm_spirit_overload", }, },
-	["witch_doctor_voodoo_restoration"] = { banned_with = {"storm_spirit_overload", }, },
-	["leshrac_pulse_nova"] = { banned_with = {"storm_spirit_overload", }, },
-	["wisp_overcharge"] = { banned_with = {"storm_spirit_overload", }, },
-	["pudge_meat_hook_lua"] = { banned_with = {"furion_teleportation", "kunkka_x_marks_the_spot", "ogre_magi_multicast_arena",  "bloodseeker_thirst", "antimage_blink", "queenofpain_blink", }, },
-	["furion_teleportation"] = { banned_with = {"pudge_meat_hook_lua", }, },
-	["kunkka_x_marks_the_spot"] = { banned_with = {"pudge_meat_hook_lua", }, },
-	["ogre_magi_multicast_arena"] = { banned_with = {"pudge_meat_hook_lua", }, },
-	["pugna_life_drain"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["bristleback_viscous_nasal_goo"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["shredder_chakram_2"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["shredder_return_chakram_2"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["shredder_chakram"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["shredder_return_chakram"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["techies_focused_detonate"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["spectre_reality"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["oracle_purifying_flames"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["templar_assassin_trap"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["skywrath_mage_arcane_bolt"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["rubick_telekinesis_land"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-	["rubick_telekinesis"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
-
-	["spectre_dispersion"] = { banned_with = {"batrider_sticky_napalm", }, },
-	["queenofpain_blink"] = { banned_with = {"antimage_blink", }, },
-	["antimage_blink"] = { banned_with = {"queenofpain_blink", }, },
-	["zuus_arc_lightning"] = { banned_with = {"earthshaker_aftershock", }, },
-	["bloodseeker_thirst"] = { banned_with = {"pudge_meat_hook_lua", }, },
-	["queenofpain_blink"] = { banned_with = {"pudge_meat_hook_lua", }, },
-	["antimage_blink"] = { banned_with = {"pudge_meat_hook_lua", }, },
-	["shadow_demon_shadow_poison"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
-	["shadow_demon_shadow_poison_release"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
-	["nyx_assassin_unburrow"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
-	["nyx_assassin_burrow"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
-	
-
-]]
-
-
 	["puck_ethereal_jaunt"] = { cost = 0, },
 	["shadow_demon_shadow_poison_release"] = { cost = 0, },
 	["spectre_reality"] = { cost = 0, },
 	["templar_assassin_trap"] = { cost = 0, },
 	["techies_focused_detonate"] = { cost = 0, },
-
 	["tinker_rearm_arena"] = { cost = 16, },
 	["ogre_magi_multicast_arena"] = { cost = 10, },
 	["alchemist_goblins_greed"] = { cost = 4, },
@@ -109,10 +53,9 @@ ABILITY_SHOP_DATA = {
 	["rocket_barrage_arena"] = { cost = 2, },
 	["keeper_of_the_light_illuminate"] = { cost = 2, },
 	["magnataur_empower"] = { cost = 2, },
-	["ursa_enrage"] = { cost = 2, },
+	["ursa_enrage"] = { cost = 8, },
 	["razor_plasma_field"] = { cost = 2 },
 	["doom_bringer_devour"] = { cost = 3 },
-	
 }
 
 ABILITY_SHOP_SKIP_HEROES = {

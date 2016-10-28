@@ -323,7 +323,7 @@
 		"Ability2"	"phantom_lancer_doppelwalk"
 		"Ability3"	"phantom_lancer_phantom_edge"
 		"Ability4"	"phantom_lancer_juxtapose"
-		"AttackRate"				"1.4"
+		"AttackRate"				"1.2"
 	}
 
 	"npc_dota_hero_puck"
