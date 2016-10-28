@@ -14,6 +14,39 @@ function AbilityShop:PostAbilityData()
 	for _,v in ipairs(ABILITY_SHOP_SKIP_HEROES) do
 		Heroes_all[v] = nil
 	end
+	for a,vs in pairs(ABILITY_SHOP_BANNED) do
+		if not ABILITY_SHOP_DATA[a] then
+			ABILITY_SHOP_DATA[a] = {}
+		end
+		if not ABILITY_SHOP_DATA[a].banned_with then
+			ABILITY_SHOP_DATA[a].banned_with = {}
+		end
+		for _,suba in ipairs(vs) do
+			if not table.contains(ABILITY_SHOP_DATA[a].banned_with, suba) then table.insert(ABILITY_SHOP_DATA[a].banned_with, suba) end
+			if not ABILITY_SHOP_DATA[suba] then
+				ABILITY_SHOP_DATA[suba] = {}
+			end
+			if not ABILITY_SHOP_DATA[suba].banned_with then
+				ABILITY_SHOP_DATA[suba].banned_with = {}
+			end
+			if not table.contains(ABILITY_SHOP_DATA[suba].banned_with, a) then table.insert(ABILITY_SHOP_DATA[suba].banned_with, a) end
+		end
+	end
+	for _,group in pairs(ABILITY_SHOP_BANNED_GROUPS) do
+		for _,a in ipairs(group) do
+			if not ABILITY_SHOP_DATA[a] then
+				ABILITY_SHOP_DATA[a] = {}
+			end
+			if not ABILITY_SHOP_DATA[a].banned_with then
+				ABILITY_SHOP_DATA[a].banned_with = {}
+			end
+			for _,suba in ipairs(group) do
+				if suba ~= a and not table.contains(ABILITY_SHOP_DATA[a].banned_with, suba) then
+					table.insert(ABILITY_SHOP_DATA[a].banned_with, suba)
+				end
+			end
+		end
+	end
 
 	for name,enabled in pairsByKeys(Heroes_all) do
 		if enabled == 1 then
@@ -72,18 +105,6 @@ function AbilityShop:OnAbilityBuy(data)
 	end
 	local cost = abilityInfo.cost
 	local banned_with =  abilityInfo.banned_with
-	for i = 0, hero:GetAbilityCount() - 1 do
-		local a = hero:GetAbilityByIndex(i)
-		local listDataInfo = AbilityShop:GetAbilityListInfo(data.ability)
-		if listDataInfo then
-			local abanned_with = listDataInfo.banned_with
-			if abanned_with then
-				if table.contains(abanned_with, data.ability) then
-					return
-				end
-			end
-		end
-	end
 	for _,v in ipairs(banned_with) do
 		if hero:HasAbility(v) then
 			return

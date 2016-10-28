@@ -4,8 +4,8 @@
 	[
 		"containers_lua",
 		"selection",
+		
 		"hero_selection",
 		"CAD",
-		"abilities"
 	]
 }

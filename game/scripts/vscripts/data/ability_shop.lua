@@ -1,4 +1,19 @@
+ABILITY_SHOP_BANNED = {
+	["obsidian_destroyer_arcane_orb"] = { "zuus_static_field", "earthshaker_aftershock", "bristleback_quill_spray", },
+}
+
+ABILITY_SHOP_BANNED_GROUPS = {
+	{
+		"troll_warlord_berserkers_rage",
+		"slardar_bash",
+		"spirit_breaker_greater_bash",
+		"faceless_void_time_lock_arena",
+	},
+}
+
 ABILITY_SHOP_DATA = {
+--[[
+
 	["obsidian_destroyer_essence_aura"] = { banned_with = {"storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", }, },
 	["batrider_sticky_napalm"] = { banned_with = {"sandking_sand_storm", "shadow_shaman_shackles", "doom_bringer_scorched_earth", "venomancer_venomous_gale", "venomancer_poison_nova", "ember_spirit_flame_guard", "weaver_the_swarm", "dark_seer_ion_shell", "sandking_sand_storm", "warlock_fatal_bonds_arena", }, },
 	["doom_bringer_scorched_earth"] = { banned_with = {"batrider_sticky_napalm", }, },
@@ -46,34 +61,10 @@ ABILITY_SHOP_DATA = {
 	["rubick_telekinesis_land"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
 	["rubick_telekinesis"] = { banned_with = {"earthshaker_aftershock", "zuus_static_field", "storm_spirit_overload", "obsidian_destroyer_essence_aura", }, },
 
-
-
-
-
-
-
-
-
-
-
-
-	----??????????????????????????????<<<<<<<< <ALASTOR FIX IT>!!!!!!!!!!!!!!!
 	["spectre_dispersion"] = { banned_with = {"batrider_sticky_napalm", }, },
 	["queenofpain_blink"] = { banned_with = {"antimage_blink", }, },
 	["antimage_blink"] = { banned_with = {"queenofpain_blink", }, },
 	["zuus_arc_lightning"] = { banned_with = {"earthshaker_aftershock", }, },
-	["troll_warlord_berserkers_rage"] = { banned_with = {"troll_warlord_berserkers_rage", }, },
-	["troll_warlord_berserkers_rage"] = { banned_with = {"slardar_bash", }, },
-	["troll_warlord_berserkers_rage"] = { banned_with = {"spirit_breaker_greater_bash", }, },
-	["slardar_bash"] = { banned_with = {"slardar_bash", }, },
-	["slardar_bash"] = { banned_with = {"troll_warlord_berserkers_rage", }, },
-	["slardar_bash"] = { banned_with = {"spirit_breaker_greater_bash", }, },
-	["spirit_breaker_greater_bash"] = { banned_with = {"slardar_bash", }, },
-	["spirit_breaker_greater_bash"] = { banned_with = {"troll_warlord_berserkers_rage", }, },
-	["spirit_breaker_greater_bash"] = { banned_with = {"spirit_breaker_greater_bash", }, },
-	["faceless_void_time_lock_arena"] = { banned_with = {"slardar_bash", }, },
-	["faceless_void_time_lock_arena"] = { banned_with = {"troll_warlord_berserkers_rage", }, },
-	["faceless_void_time_lock_arena"] = { banned_with = {"spirit_breaker_greater_bash", }, },
 	["bloodseeker_thirst"] = { banned_with = {"pudge_meat_hook_lua", }, },
 	["queenofpain_blink"] = { banned_with = {"pudge_meat_hook_lua", }, },
 	["antimage_blink"] = { banned_with = {"pudge_meat_hook_lua", }, },
@@ -82,6 +73,9 @@ ABILITY_SHOP_DATA = {
 	["nyx_assassin_unburrow"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
 	["nyx_assassin_burrow"] = { banned_with = {"obsidian_destroyer_essence_aura", "zuus_static_field", "storm_spirit_overload", "earthshaker_aftershock", }, },
 	
+
+]]
+
 
 	["puck_ethereal_jaunt"] = { cost = 0, },
 	["shadow_demon_shadow_poison_release"] = { cost = 0, },

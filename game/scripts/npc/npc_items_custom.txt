@@ -19127,6 +19127,7 @@
 		"ID"							"10258"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_angel_wings"
+		"AbilityCooldown"				"24"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -19410,5 +19411,16 @@
 				}
 			}
 		}
+	}
+
+	"item_soul_gem"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ID"							"10198"
+		"AbilityTextureName"			"item_soul_gem"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ScriptFile"					"items/soul_gems/item_soul_gem"
 	}
 }
