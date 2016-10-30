@@ -9,36 +9,40 @@ TODO LIST:
 
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_1347]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-Angel Arena Black Star - Версия 1.2.1b:
+Angel Arena Black Star - Версия 1.2.2:
 
 Общее:
+	Tango переработан
+	Добавлен новый предмет: Blade of Discord
+	Добавлен новый предмет: Piercing Blade
+	Добавлен новый предмет: Dark Blade
+	Добавлен новый предмет: Fallhammer
 	
 Баланс:
-	
-Исправления:
-	
-==================================================================================================================================
-Angel Arena Black Star - Version 1.2.1b:
-
-General:
-	Tango reworked
-	Added new item: Blade of Discord
-	Added new item: Piercing Blade
-	Added new item: Dark Blade
-	Added new item: Fallhammer
-
-Balance:
-	Angel Wings: Cooldown: 0 => 24
-	Phantom Lancer - BAT: 1.4 => 1.2
+	Angel Wings: Длительность перезарядки: 0 => 24
+	Phantom Lancer: BAT: 1.4 => 1.2
 	Centaur:
 	-Return:
-	--Base Damage: 16 18 20 22 24 26 30 => 20 60 120 180 200 300 350
-	--Strength Based Damage: 30 45 50 60 65 75 80 => 3 6 9 12 15 18 25 %
-	-Stampede: Cooldown: 90 75 60 50 40 30 25 => 100 90 80 70 60 50 40
+	--Базовый урон: 16 18 20 22 24 26 30 => 20 60 120 180 200 300 350
+	--Слиа в урон: 30 45 50 60 65 75 80 => 3 6 9 12 15 18 25 %
+	-Stampede: Длительность перезарядки: 90 75 60 50 40 30 25 => 100 90 80 70 60 50 40
 	Ability Shop:
-		Ursa - Enrage: Cost: 2 => 8
+		Ursa - Enrage: Цена: 2 => 8
+Исправления:
+	Ability Shop теперь показывает полную цену продажи, а не цену понижения на 1 уровень
+==================================================================================================================================
+Angel Arena Black Star - Version 1.2.2:
+
+General:
+	
+
+Balance:
+	
 Fixes:
-	Ability Shop now shows full sell cost, not downgrade cost
+
+Ability Shop:
+Razor - Plasma Field: Cost: 2 => 5
+Techies - Suicide: Cost: 1 => 6
 ==================================================================================================================================
 rhasta,
 lycan,
