@@ -9,7 +9,7 @@ TODO LIST:
 
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_1347]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-Angel Arena Black Star - Версия 1.2.2:
+Angel Arena Black Star - Версия 1.2.1b:
 
 Общее:
 	
@@ -18,12 +18,14 @@ Angel Arena Black Star - Версия 1.2.2:
 Исправления:
 	
 ==================================================================================================================================
-Angel Arena Black Star - Version 1.2.2:
+Angel Arena Black Star - Version 1.2.1b:
 
 General:
 	Tango reworked
 	Added new item: Blade of Discord
 	Added new item: Piercing Blade
+	Added new item: Dark Blade
+	Added new item: Fallhammer
 
 Balance:
 	Angel Wings: Cooldown: 0 => 24
@@ -36,7 +38,7 @@ Balance:
 	Ability Shop:
 		Ursa - Enrage: Cost: 2 => 8
 Fixes:
-	
+	Ability Shop now shows full sell cost, not downgrade cost
 ==================================================================================================================================
 rhasta,
 lycan,

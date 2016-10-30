@@ -1309,7 +1309,9 @@
 			"modifier_arthas_rage_of_arthas_stun"
 			{
 				"IsDebuff"			"1"
+				"IsStunDebuff"		"1"
 				"Duration"			"%stun_duration"
+				
 				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
 				"EffectAttachType"	"follow_overhead"

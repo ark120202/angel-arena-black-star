@@ -147,7 +147,7 @@ function UpdateAbilities() {
 		if (panel.BHasClass("Purchased") && GameUI.IsShiftDown()) {
 			panel.AddClass("CanDelete");
 			panel.FindChildTraverse("SellReturn").text = "+" + cost * purchasedInfo.level
-			panel.FindChildTraverse("SellCost").text = "-" + CalculateDowngradeCost(abilityname, cost)
+			panel.FindChildTraverse("SellCost").text = "-" + CalculateDowngradeCost(abilityname, cost) * purchasedInfo.level
 
 			/*GameEvents.SendEventClientSide("dota_hud_error_message", {
 				"splitscreenplayer": 0,

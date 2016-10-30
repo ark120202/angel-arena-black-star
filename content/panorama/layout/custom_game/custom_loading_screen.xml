@@ -86,7 +86,6 @@
 			<Image id="loading_Enigma" src="file://{images}/custom_game/loading_screen/enigma.png" />
 			<Image id="loading_Lina" src="file://{images}/custom_game/loading_screen/lina.png" />
 			<Image id="loading_loading_bar" src="file://{images}/custom_game/loading_screen/loading_bar.png" />
-
 		</Panel>
 		<Panel id="movie_base" hittest="true" />
 	</Panel>
