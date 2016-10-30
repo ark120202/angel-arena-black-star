@@ -6567,7 +6567,6 @@
 					"MODIFIER_STATE_NO_TEAM_MOVE_TO"		"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_TEAM_SELECT"			"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}
@@ -19413,14 +19412,430 @@
 		}
 	}
 
-	"item_soul_gem"
+	// "item_soul_gem"
+	// {
+	// 	// General
+	// 	//-------------------------------------------------------------------------------------------------------------
+	// 	"BaseClass"						"item_lua"
+	// 	"ID"							"10198"
+	// 	"AbilityTextureName"			"item_soul_gem"
+	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	// 	"ScriptFile"					"items/soul_gems/item_soul_gem"
+	// 	"ItemPurchasable"				"0"
+	// }
+
+	"item_radio_car"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_lua"
-		"ID"							"10198"
-		"AbilityTextureName"			"item_soul_gem"
+		"BaseClass"						"item_datadriven"
+		"ID"							"10259"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"item_radio_car"
+		"ItemPurchasable"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"SummonUnit"
+				"max_units"		"1"
+				"summon_random_radius"	"100"
+				"summoned"				"npc_arena_radio_car"
+				"modifiers_datadriven"	"modifier_item_radio_car"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_radio_car"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"item_recipe_blade_of_discord"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10260"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"8760"	
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_blade_of_discord"
+		"ItemRequirements"
+		{
+			"01"						"item_veil_of_discord;item_ethereal_blade;item_relic"
+		}
+	}
+
+	"item_blade_of_discord"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10261"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+		"AbilityTextureName"			"item_blade_of_discord"
+		"AbilitySharedCooldown"			"ethereal"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+
+		"AbilityCooldown"				"20"
+		"AbilityCastRange"				"1000"
+		"AbilityManaCost"				"75"
+		"AOEradius"						"%debuff_radius"
+
+		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"legendary"
+		"ItemAliases"					"vod;veil of discord;eb;ethereal blade;blade of discord"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"14"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"62"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_str"				"24"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_int"				"35"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"85"
+			}
+
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_resist"			"-80"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_radius"			"600"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"7.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_movement_slow"	"-90"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_stats_multiplier"	"1.5"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_damage_base"	"215"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.EtherealBlade.Activate"
+				"Target"				"CASTER"
+			}
+			
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.VeilofDiscord.Activate"
+				"Target"				"CASTER"
+			}
+
+			"FireEffect"
+			{
+				"TargetPoint"			"POINT"
+				"EffectName"			"particles/arena/items_fx/blade_of_discord_cast.vpcf"
+				"EffectAttachType"		"world_origin"
+				"ControlPoints"
+				{
+					"01"				"%debuff_radius %debuff_radius %debuff_radius"
+				}
+			}
+
+			"ActOnTargets"
+			{
+				"Target"
+	            {
+					"Center"			"POINT"
+	                "Radius"			"%debuff_radius"
+	                "Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+	                "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	            }
+
+	            "Action"
+	            {
+					"FireSound"
+					{
+						"EffectName"			"DOTA_Item.EtherealBlade.Target"
+						"Target"				"TARGET"
+					}
+
+	            	"ApplyModifier"
+					{
+						"Target"			"TARGET"
+						"ModifierName"		"modifier_item_blade_of_discord_magic_weakness"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_blade_of_discord.lua"
+						"Function"		"Damage"
+						"debuff_stats_multiplier"	"%debuff_stats_multiplier"
+						"debuff_damage_base"		"%debuff_damage_base"
+					}
+	            }
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_blade_of_discord"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%bonus_str"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%bonus_int"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"			"%bonus_health_regen"
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"			"%bonus_damage"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%bonus_armor"
+				}
+			}
+			"modifier_item_blade_of_discord_magic_weakness"
+			{
+				"Duration"			"%debuff_duration"
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+
+				"StatusEffectName" 			"particles/status_fx/status_effect_ghost.vpcf"
+				"StatusEffectPriority" 		"20"
+				
+				"EffectName"				"particles/arena/items_fx/blade_of_discord_debuff.vpcf"
+				"EffectAttachType"			"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"		"1"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE"		"%debuff_resist"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%debuff_movement_slow"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_ATTACK_IMMUNE" 			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"				"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"item_tango_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"item_datadriven"
+		"AbilityTextureName"			"item_tango"
+		"ID"							"10262"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"Model"							"models/props_gameplay/tango.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_tango.vpcf"
+	//	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+	//	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+		"AbilityCastRange"				"250"
+		"AbilityCastPoint"				"0.0"
+		
+		"ItemCost"						"125"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"2"
+		"AOERadius"						"%aoe"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hp_regen_per_stack"	"5.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed_per_stack"	"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"180"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"16.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stacks_per_ward"		"2"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/item_tango.lua"
+				"Function"		"EatTrees"
+				"Target"		"POINT"
+				"aoe"			"%aoe"
+				"stacks_per_ward"	"%stacks_per_ward"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/arena/items_fx/tango_arena_cast.vpcf"
+				"EffectAttachType"  "world_origin"
+				"TargetPoint"		"POINT"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_tango_arena"
+			{
+				"IsPurgable"		"0"
+				"Duration"			"%buff_duration"
+				"TextureName"		"item_tango"
+		
+				"EffectName"		"particles/items_fx/healing_tango.vpcf"
+				"EffectAttachType"	"follow_origin"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%hp_regen_per_stack"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%movespeed_per_stack"
+				}
+			}
+		}
+	}
+
+	"item_recipe_piercing_blade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10263"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1980"	
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_piercing_blade"
+		"ItemRequirements"
+		{
+			"01"						"item_javelin;item_rapier;item_broadsword;item_claymore;item_blades_of_attack"
+		}
+	}
+
+	"item_piercing_blade"
+	{
+		"BaseClass"             		"item_datadriven"
+		"ID"							"10264"
+		"AbilityTextureName"			"item_piercing_blade"
+
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ScriptFile"					"items/soul_gems/item_soul_gem"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"			"400"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_damage_to_pure_pct"	"30"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_piercing_blade"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			}
+		}
 	}
 }

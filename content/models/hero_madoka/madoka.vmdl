@@ -1,0 +1,1215 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	m_meshList = 
+	{
+		m_meshList = 
+		[
+			{
+				m_meshName = "madoka"
+				m_meshFile = "models/hero_madoka/madoka.fbx"
+				m_materialSearchPath = ""
+				m_bSkinParentedObjects = true
+				m_bLegacySkinParentedTransforms = false
+				m_bExpensiveTangents = false
+				m_bHighPrecisionTexCoords = false
+				m_bPerVertexCurvature = false
+				m_bIgnoreCloth = false
+				m_bGetSkinningFromLod0 = false
+				m_pMorphInfo = null
+			},
+		]
+	}
+	m_clothProxyMeshList = 
+	{
+		_class = "CVClothProxyMeshList"
+		m_flClothEnableThreshold = 0.05
+		m_bCreateStaticBone = false
+		m_nMaxBonesPerVertex = 4
+		m_bRemoveUnusedBonesEnabled = false
+		m_bDriveMeshesWithBacksolvedJointsOnly = true
+		m_flMatchProxiesToMeshes = 1.0
+		m_flReservedFloat = 0.0
+		m_nReservedInt = 0
+		m_bReservedBool1 = false
+		m_bReservedBool2 = false
+		m_bReservedBool3 = false
+		m_bReservedBool4 = false
+		m_clothProxyMeshList = [  ]
+	}
+	m_physicsMeshList = 
+	{
+		m_meshList = [  ]
+	}
+	m_pModelInfo = null
+	m_pBoneFlagList = 
+	{
+		m_pObject = null
+	}
+	m_pHitBoxSetLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "Bone01"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone01"
+								m_vMinBounds = [ -10.993032, -7.737283, 14.536331 ]
+								m_vMaxBounds = [ 11.444465, 7.731464, 19.036331 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone02"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone02"
+								m_vMinBounds = [ -8.430532, -5.784911, -0.436752 ]
+								m_vMaxBounds = [ 8.881965, 7.386962, 12.063248 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone03"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone03"
+								m_vMinBounds = [ -10.555532, -7.427541, -1.004395 ]
+								m_vMaxBounds = [ 11.006965, 11.197455, 22.495605 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone38"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone38"
+								m_vMinBounds = [ -0.434912, -7.602807, -15.318924 ]
+								m_vMaxBounds = [ 21.502586, 6.11594, 4.181076 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone10"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone10"
+								m_vMinBounds = [ -21.511944, -7.602807, -15.318924 ]
+								m_vMaxBounds = [ 0.488052, 6.11594, 4.181076 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone39"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone39"
+								m_vMinBounds = [ -1.457357, -3.975012, -12.063843 ]
+								m_vMaxBounds = [ 16.667639, 4.056237, 1.936157 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone11"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone11"
+								m_vMinBounds = [ -16.676994, -3.975017, -12.063843 ]
+								m_vMaxBounds = [ 1.448002, 4.056232, 1.936157 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone40"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone40"
+								m_vMinBounds = [ -0.784157, -4.378517, -5.039017 ]
+								m_vMaxBounds = [ 8.215843, 3.433981, 0.960983 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone12"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone12"
+								m_vMinBounds = [ -8.225193, -4.378527, -5.039017 ]
+								m_vMaxBounds = [ 0.774807, 3.433972, 0.960983 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone37"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone37"
+								m_vMinBounds = [ -4.629776, -6.204589, -28.146076 ]
+								m_vMaxBounds = [ 7.096784, 6.732909, 1.853928 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone06"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone06"
+								m_vMinBounds = [ -7.353028, -6.20459, -28.146076 ]
+								m_vMaxBounds = [ 4.369626, 6.732909, 1.853928 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone04"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone04"
+								m_vMinBounds = [ -10.805532, -11.772455, -2.312881 ]
+								m_vMaxBounds = [ 11.319465, 13.977541, 23.687126 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone41"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone41"
+								m_vMinBounds = [ -0.398712, -0.707032, -2.194702 ]
+								m_vMaxBounds = [ 2.601288, 0.742187, 0.305298 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone44"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone44"
+								m_vMinBounds = [ -0.915588, -2.139656, -2.086243 ]
+								m_vMaxBounds = [ 3.084412, 1.911125, 0.413757 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone13"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone13"
+								m_vMinBounds = [ -2.610638, -0.707032, -2.194702 ]
+								m_vMaxBounds = [ 0.389362, 0.742187, 0.305298 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone18"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone18"
+								m_vMinBounds = [ -3.093761, -2.139666, -2.086243 ]
+								m_vMaxBounds = [ 0.906239, 1.911115, 0.413757 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone36"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone36"
+								m_vMinBounds = [ -5.789927, -5.006325, -32.99136 ]
+								m_vMaxBounds = [ 7.72179, 9.274925, 0.696144 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone07"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone07"
+								m_vMinBounds = [ -7.978024, -5.006318, -32.99136 ]
+								m_vMaxBounds = [ 5.529787, 9.274932, 0.696144 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point01"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point01"
+								m_vMinBounds = [ -4.540561, -6.84104, -6.077408 ]
+								m_vMaxBounds = [ 12.691613, 1.658958, -0.077408 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point06"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point06"
+								m_vMinBounds = [ -3.825379, -8.196831, -5.431168 ]
+								m_vMaxBounds = [ 10.299618, 10.928167, 6.068832 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point09"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point09"
+								m_vMinBounds = [ -4.747868, -3.125985, -5.086807 ]
+								m_vMaxBounds = [ 12.609306, 10.874014, -0.086807 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point43"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point43"
+								m_vMinBounds = [ -10.674936, -8.196831, -5.431168 ]
+								m_vMaxBounds = [ 3.481311, 10.928167, 6.068832 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point51"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point51"
+								m_vMinBounds = [ -12.609627, -3.125984, -5.086807 ]
+								m_vMaxBounds = [ 4.783192, 10.874014, -0.086807 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point54"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point54"
+								m_vMinBounds = [ -12.566933, -6.841041, -6.077408 ]
+								m_vMaxBounds = [ 4.575886, 1.658957, -0.077408 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point62"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point62"
+								m_vMinBounds = [ -2.693457, -2.777839, -7.812698 ]
+								m_vMaxBounds = [ 1.306542, 3.019035, -0.812683 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point55"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point55"
+								m_vMinBounds = [ -0.77011, -7.560922, -15.726143 ]
+								m_vMaxBounds = [ 11.167388, 7.915637, 4.273865 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point65"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point65"
+								m_vMinBounds = [ -1.27835, -4.246589, -7.812698 ]
+								m_vMaxBounds = [ 3.471649, 3.019035, 0.187317 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point58"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point58"
+								m_vMinBounds = [ -11.179611, -7.560921, -15.726143 ]
+								m_vMaxBounds = [ 0.820387, 7.915638, 4.273865 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone42"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone42"
+								m_vMinBounds = [ -0.37635, -0.584401, -1.846329 ]
+								m_vMaxBounds = [ 1.87365, 0.56013, 0.153671 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone43"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone43"
+								m_vMinBounds = [ -0.4384, -1.044073, -2.07663 ]
+								m_vMaxBounds = [ 2.3116, 0.93249, 0.42337 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone45"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone45"
+								m_vMinBounds = [ -0.887695, -1.959969, -1.690247 ]
+								m_vMaxBounds = [ 2.612305, 1.692374, 0.309753 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point66"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point66"
+								m_vMinBounds = [ -17.047512, -0.558262, -70.077492 ]
+								m_vMaxBounds = [ 15.95248, 21.371422, 74.67643 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone14"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone14"
+								m_vMinBounds = [ -1.8829, -0.587423, -1.846268 ]
+								m_vMaxBounds = [ 0.3671, 0.557108, 0.153732 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone19"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone19"
+								m_vMinBounds = [ -2.621655, -1.95998, -1.690247 ]
+								m_vMaxBounds = [ 0.878345, 1.692364, 0.309753 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone34"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone34"
+								m_vMinBounds = [ -5.418323, -8.83314, -11.510197 ]
+								m_vMaxBounds = [ 4.526988, 5.698108, 1.522519 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone08"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone08"
+								m_vMinBounds = [ -4.783209, -8.833125, -11.510197 ]
+								m_vMaxBounds = [ 5.01757, 5.698123, 1.522519 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point03"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point03"
+								m_vMinBounds = [ -9.004592, -6.582995, -8.104401 ]
+								m_vMaxBounds = [ 14.368405, 4.854502, 0.395599 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point05"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point05"
+								m_vMinBounds = [ -3.832514, -11.051237, -7.725235 ]
+								m_vMaxBounds = [ 7.542486, 14.386259, -0.225235 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point08"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point08"
+								m_vMinBounds = [ -9.404915, -6.62164, -6.398811 ]
+								m_vMaxBounds = [ 14.343082, 8.909608, -0.398804 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point37"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point37"
+								m_vMinBounds = [ -7.542803, -11.051262, -7.725235 ]
+								m_vMaxBounds = [ 3.957197, 14.386234, -0.225235 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point50"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point50"
+								m_vMinBounds = [ -14.343407, -6.621643, -6.398811 ]
+								m_vMaxBounds = [ 9.424412, 8.909605, -0.398804 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point41"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point41"
+								m_vMinBounds = [ -14.243711, -6.583007, -8.104385 ]
+								m_vMaxBounds = [ 9.024107, 4.85449, 0.395615 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point63"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point63"
+								m_vMinBounds = [ -3.986807, -4.090338, -8.894646 ]
+								m_vMaxBounds = [ 3.263192, 2.222161, 1.605362 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point56"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point56"
+								m_vMinBounds = [ -4.174252, -5.779675, -12.177818 ]
+								m_vMaxBounds = [ 5.700747, 5.314075, 0.822174 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point61"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point61"
+								m_vMinBounds = [ -3.148212, -2.423141, -10.278229 ]
+								m_vMaxBounds = [ 3.429911, 3.889358, -0.278229 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point59"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point59"
+								m_vMinBounds = [ -2.584315, -0.854884, -9.033997 ]
+								m_vMaxBounds = [ 4.696934, 1.082615, -0.033997 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point60"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point60"
+								m_vMinBounds = [ -2.676879, -2.338144, -8.956909 ]
+								m_vMaxBounds = [ 2.82312, 2.599355, 0.043091 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point64"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point64"
+								m_vMinBounds = [ -3.235, -5.621589, -8.894646 ]
+								m_vMaxBounds = [ 4.014999, 2.22216, 1.605362 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point57"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point57"
+								m_vMinBounds = [ -5.712967, -5.779672, -12.177818 ]
+								m_vMaxBounds = [ 4.162031, 5.314077, 0.822174 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone46"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone46"
+								m_vMinBounds = [ -0.162949, -0.469825, -1.368744 ]
+								m_vMaxBounds = [ 1.837051, 0.500878, 0.131256 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone47"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone47"
+								m_vMinBounds = [ -0.656807, -0.676856, -1.758636 ]
+								m_vMaxBounds = [ 1.593193, 0.784081, 0.241364 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone48"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone48"
+								m_vMinBounds = [ -0.818184, -1.831062, -1.175552 ]
+								m_vMaxBounds = [ 2.431816, 1.598625, -0.175552 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point67"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point67"
+								m_vMinBounds = [ -0.29752, -0.048574, -0.823593 ]
+								m_vMaxBounds = [ 0.20248, 0.388926, 0.176407 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone15"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone15"
+								m_vMinBounds = [ -1.846233, -0.475021, -1.368668 ]
+								m_vMaxBounds = [ 0.153767, 0.495682, 0.131332 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone20"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone20"
+								m_vMinBounds = [ -2.441166, -1.831073, -1.175552 ]
+								m_vMaxBounds = [ 0.808834, 1.598614, -0.175552 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone21"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone21"
+								m_vMinBounds = [ -3.32095, -1.044085, -3.07663 ]
+								m_vMaxBounds = [ 0.67905, 0.932478, 0.42337 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Object32"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Object32"
+								m_vMinBounds = [ 12.010292, -38.400352, 3.206932 ]
+								m_vMaxBounds = [ 15.510292, 68.34964, 4.20694 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone35"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone35"
+								m_vMinBounds = [ -4.079141, -6.762246, -1.646246 ]
+								m_vMaxBounds = [ 3.561483, 1.394004, 3.658259 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone09"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone09"
+								m_vMinBounds = [ -3.817701, -6.762228, -1.646248 ]
+								m_vMaxBounds = [ 3.822923, 1.394022, 3.658257 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point02"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point02"
+								m_vMinBounds = [ -12.497637, -4.75803, -16.19677 ]
+								m_vMaxBounds = [ 15.00036, 7.554468, 1.053238 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point04"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point04"
+								m_vMinBounds = [ -6.01058, -13.047523, -15.674412 ]
+								m_vMaxBounds = [ 3.86442, 16.639973, 0.325592 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point07"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point07"
+								m_vMinBounds = [ -12.497644, -8.242414, -15.036438 ]
+								m_vMaxBounds = [ 15.125353, 7.570086, -0.286438 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point36"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point36"
+								m_vMinBounds = [ -3.739748, -13.047571, -15.674412 ]
+								m_vMaxBounds = [ 6.010252, 16.639927, 0.325592 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point42"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point42"
+								m_vMinBounds = [ -15.125678, -8.242423, -15.036438 ]
+								m_vMaxBounds = [ 12.51714, 7.570076, -0.286438 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Point39"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Point39"
+								m_vMinBounds = [ -15.000658, -4.758051, -16.196754 ]
+								m_vMaxBounds = [ 12.51716, 7.554447, 1.053253 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
+	m_pAttachmentLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_name = ""
+				m_attachments = 
+				[
+					{
+						m_name = "attach_attack1"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone47"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_hitloc"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone03"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_head"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone04"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+				]
+			}
+		},
+	]
+	m_pAnimGroup = 
+	{
+		m_pObject = 
+		{
+			m_Name = ""
+			m_pReferenceSkeleton = 
+			{
+				m_pObject = null
+			}
+			m_pBoneFlagList = 
+			{
+				m_pObject = null
+			}
+			m_pSeqGroup = 
+			{
+				m_pObject = null
+			}
+			m_pAnimGroups = [  ]
+			m_Vanim = 
+			[
+				{
+					m_Animationname = "madoka_idle"
+					m_Filepath = "models/hero_madoka/madoka.fbx"
+					m_nStartframe = 10
+					m_nEndframe = 62
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = true
+						m_nSmoothLoopStart = 3
+						m_nSmoothLoopEnd = 3
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_IDLE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "madoka_attack"
+					m_Filepath = "models/hero_madoka/madoka.fbx"
+					m_nStartframe = 215
+					m_nEndframe = 245
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_ATTACK"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "madoka_run"
+					m_Filepath = "models/hero_madoka/madoka.fbx"
+					m_nStartframe = 134
+					m_nEndframe = 160
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = true
+						m_nSmoothLoopStart = 10
+						m_nSmoothLoopEnd = 10
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_RUN"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "madoka_s"
+					m_Filepath = "models/hero_madoka/madoka.fbx"
+					m_nStartframe = 72
+					m_nEndframe = 125
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = [  ]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "madoka_s2"
+					m_Filepath = "models/hero_madoka/madoka.fbx"
+					m_nStartframe = 253
+					m_nEndframe = 288
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = [  ]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "madoka"
+					m_Filepath = "models/hero_madoka/madoka.fbx"
+					m_nStartframe = 292
+					m_nEndframe = 614
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = [  ]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "madoka_die"
+					m_Filepath = "models/hero_madoka/madoka.fbx"
+					m_nStartframe = 500
+					m_nEndframe = 534
+					m_flFps = 20.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_DIE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "madoka_spawn"
+					m_Filepath = "models/hero_madoka/madoka.fbx"
+					m_nStartframe = 615
+					m_nEndframe = 636
+					m_flFps = 25.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_SPAWN"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+			]
+			m_sScripts = [  ]
+			m_folderNames = [  ]
+		}
+	}
+	m_pMaterialGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pMeshGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pLodGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pPropBreakableList = 
+	{
+		m_pObject = null
+	}
+	m_pPropDataList = 
+	{
+		m_pObject = null
+	}
+	m_pConstraintLists = [  ]
+	m_collision = ""
+	m_softbody = ""
+	m_sMDLFilename = ""
+	m_sOffsetHitboxSets = [  ]
+	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
+	m_scriptFiles = [  ]
+	m_pMaterialRemapList = 
+	{
+		m_vMaterialRemapList = 
+		[
+			{
+				m_sSearchMaterial = "01_-_default.vmat"
+				m_sReplaceMaterial = "materials/models/hero_madoka/madoka_hair.vmat"
+			},
+			{
+				m_sSearchMaterial = "03_-_default.vmat"
+				m_sReplaceMaterial = "materials/models/hero_madoka/madoka_legs.vmat"
+			},
+			{
+				m_sSearchMaterial = "05_-_default.vmat"
+				m_sReplaceMaterial = "materials/models/hero_madoka/madoka_face.vmat"
+			},
+			{
+				m_sSearchMaterial = "06_-_default.vmat"
+				m_sReplaceMaterial = "materials/models/hero_madoka/madoka_arrow.vmat"
+			},
+			{
+				m_sSearchMaterial = "07_-_default.vmat"
+				m_sReplaceMaterial = "materials/models/hero_madoka/madoka_weapon.vmat"
+			},
+			{
+				m_sSearchMaterial = "08_-_default.vmat"
+				m_sReplaceMaterial = "materials/models/hero_madoka/madoka_body.vmat"
+			},
+		]
+	}
+	m_flFbxScale = 1.0
+	m_flQCScale = 1.0
+	m_vOrigin = [ 0.0, 0.0, 0.0 ]
+	m_nLoadDmxAnimVersion = 0
+	m_pPsfList = null
+	m_keyValueText = ""
+	m_bStaticProp = false
+	m_bEnableClothProcessing = true
+	m_flClothEnableThreshold = 0.05
+	m_nMaxClothVertsPerMesh = 2048
+	m_bBuildClothBoneHierarchy = false
+	m_nNavType = "AUTH_NAV_MESH"
+	m_bMakeUniqueVMeshes = false
+	m_bMakeImplicitBindPoseSequence = false
+	m_bAdjustSkeletonFromBoneFlags = false
+	m_pAnimGroups = [  ]
+}

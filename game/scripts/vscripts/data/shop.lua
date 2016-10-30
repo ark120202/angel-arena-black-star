@@ -5,7 +5,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_clarity",
 			"item_faerie_fire",
 			"item_enchanted_mango",
-			"item_tango",
+			"item_tango_arena",
 			"item_flask",
 			"item_smoke_of_deceit",
 			"item_tpscroll",
@@ -215,6 +215,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_boss_control",
 		},
 		{
+			"item_soul_of_titan",
 			"item_titanium_fruit",
 			"item_coffee_bean",
 			"item_homemade_cheese",
@@ -234,13 +235,12 @@ PANORAMA_SHOP_ITEMS = {
 			"item_essential_orb_fire_6",
 		},
 		{
-			"item_soul_of_titan",
 			"item_dark_flow",
 			"item_butterfly_of_sins",
 			"item_edge_of_vyse",
 			"item_demon_king_bar",
-			"item_diffusal_style",
 			"item_rapier_of_pain",
+			"item_diffusal_style",
 			"item_desolator4",
 			"item_desolator5",
 			"item_desolating_skadi",
@@ -271,12 +271,6 @@ PANORAMA_SHOP_ITEMS = {
 	}
 }
 
---
---[[
-
-
-
-]]
 SHOP_IGNORED_ITEMS = {
 	"item_halloween_candy_corn",
 	"item_winter_coco",

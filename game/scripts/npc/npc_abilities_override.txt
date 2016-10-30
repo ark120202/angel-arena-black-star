@@ -57,6 +57,9 @@
 	"item_echo_sabre"				"REMOVE"
 	"item_recipe_butterfly"			"REMOVE"
 	"item_butterfly"				"REMOVE"
+	"item_tango"					"REMOVE"
+	"item_tango_single"				"REMOVE"
+
 	"item_dust"
 	{
 		"SecretShop"					"0"

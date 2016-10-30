@@ -1,0 +1,6 @@
+"Layer0"
+{
+	"Shader"	"ui.vfx"
+	"F_TRANSLUCENT"	"0"
+	"Texture"	"materials/overviews/new_5v5.tga"
+}

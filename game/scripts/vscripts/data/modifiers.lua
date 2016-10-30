@@ -53,9 +53,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	"item_black_king_bar_5",
 	"item_black_king_bar_6",
 	"item_titanium_bar",
-
-	"earthshaker_echo_slam",
-	"earthshaker_echo_slam",
+	
 	"earthshaker_echo_slam",
 	"juggernaut_omni_slash",
 	"warlock_rain_of_chaos_arena",
@@ -267,7 +265,22 @@ OUTGOING_DAMAGE_MODIFIERS = {
 				return 0
 			end
 		end
-		
+	},
+	["modifier_item_piercing_blade"] = {
+		condition = function(_, _, inflictor)
+			return not inflictor
+		end,
+		multiplier = function(attacker, victim, _, damage)
+			local pct = GetAbilitySpecial("item_piercing_blade", "attack_damage_to_pure_pct") * 0.01
+			ApplyDamage({
+				victim = victim,
+				attacker = attacker,
+				damage = damage * pct,
+				damage_type = _G[GetKeyValue("item_piercing_blade", "AbilityUnitDamageType")],
+				ability = FindItemInInventoryByName(attacker, "item_piercing_blade", false)
+			})
+			return 1 - pct
+		end
 	}
 }
 
@@ -279,19 +292,18 @@ INCOMING_DAMAGE_MODIFIERS = {
 				local absorption_percent = medusa_mana_shield_arena:GetAbilitySpecial("absorption_tooltip") * 0.01
 				local ndamage = damage * absorption_percent
 				local mana_needed = ndamage / medusa_mana_shield_arena:GetAbilitySpecial("damage_per_mana")
-
-				victim:EmitSound("Hero_Medusa.ManaShield.Proc")
-
-				if RollPercentage(medusa_mana_shield_arena:GetAbilitySpecial("reflect_chance")) then
-					ApplyDamage({
-						attacker = victim,
-						victim = attacker,
-						ability = medusa_mana_shield_arena,
-						damage = ndamage,
-						damage_type = medusa_mana_shield_arena:GetAbilityDamageType(),
-					})
-				end
 				if mana_needed <= victim:GetMana() then
+					victim:EmitSound("Hero_Medusa.ManaShield.Proc")
+
+					if RollPercentage(medusa_mana_shield_arena:GetAbilitySpecial("reflect_chance")) then
+						ApplyDamage({
+							attacker = victim,
+							victim = attacker,
+							ability = medusa_mana_shield_arena,
+							damage = ndamage,
+							damage_type = medusa_mana_shield_arena:GetAbilityDamageType(),
+						})
+					end
 					victim:SpendMana(mana_needed, medusa_mana_shield_arena)					
 					local particleName = "particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
 					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)

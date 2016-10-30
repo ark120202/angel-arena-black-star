@@ -2,8 +2,13 @@ CUSTOM_WEARABLES_PLAYER_ITEMS = {
 	[109792606] = {
 		"item_hero_stargazer_helmet_of_the_sunray",
 		"item_hero_omniknight_frozen_sword",
+		"item_common_radio_car",
+		"_______item_test"
 		--"item_common_model_tree"
 	},
+	[82292900] = {
+		"item_common_radio_car",
+	}
 }
 
 CUSTOM_WEARABLES_ITEM_HANDLES = {
@@ -45,5 +50,15 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 			},
 		},
 		hide_wearables = true,
-	}
+	},
+	["item_common_radio_car"] = {
+		on_first_equip = function(self, unit)
+			unit:AddItem(CreateItem("item_radio_car", unit, unit))
+		end
+	},
+	["_______item_test"] = {
+		base_model = "models/hero_madoka/madoka.vmdl",
+		base_model_scale = 1.25,
+		hide_wearables = true,
+	},
 }

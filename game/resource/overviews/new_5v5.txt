@@ -1,0 +1,8 @@
+new_5v5
+{
+	material materials/overviews/new_5v5.vmat
+	pos_x -8192
+	pos_y 8192
+	scale 16.000
+}
+

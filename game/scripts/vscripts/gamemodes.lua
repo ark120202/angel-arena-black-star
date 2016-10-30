@@ -15,6 +15,7 @@ if GameModes == nil then
 		["5v5"] = {gamemode = DOTA_GAMEMODE_5V5, type = DOTA_GAMEMODE_TYPE_ALLPICK},
 		["5v5_romg"] = {gamemode = DOTA_GAMEMODE_5V5, type = DOTA_GAMEMODE_TYPE_RANDOM_OMG},
 		["5v5_abilityshop"] = {gamemode = DOTA_GAMEMODE_5V5, type = DOTA_GAMEMODE_TYPE_ABILITY_SHOP},
+		["new_5v5"] = {gamemode = DOTA_GAMEMODE_5V5, type = DOTA_GAMEMODE_TYPE_ABILITY_SHOP},
 	--	["arena1v1"] = {gamemode = DOTA_GAMEMODE_1V1, type = DOTA_GAMEMODE_TYPE_ALLPICK},
 	--	["arena10v10"] = {gamemode = DOTA_GAMEMODE_10V10, type = DOTA_GAMEMODE_TYPE_ALLPICK},
 	--	["arenaX4"] = {gamemode = DOTA_GAMEMODE_X4, type = DOTA_GAMEMODE_TYPE_ALLPICK},

@@ -44,6 +44,9 @@ function Precache( context )
 		"particles/arena/items_fx/desolator4_projectile.vpcf",
 		"particles/arena/items_fx/desolator5_projectile.vpcf",
 		"particles/arena/items_fx/desolator6_projectile.vpcf",
+		"particles/arena/items_fx/blade_of_discord_debuff.vpcf",
+		"particles/arena/items_fx/blade_of_discord_cast.vpcf",
+		"particles/arena/items_fx/tango_arena_cast.vpcf",
 		
 		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
@@ -69,7 +72,6 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_arena.vsndevts", context)
 	
-	PrecacheUnitByNameSync("npc_dota_lucifers_claw_doomling", context)
 	PrecacheUnitByNameSync("npc_dota_hero_earth_spirit", context)
 	PrecacheUnitByNameSync("npc_dota_hero_wisp", context)
 	
@@ -81,6 +83,8 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_boss_heaven", context)
 	PrecacheUnitByNameSync("npc_dota_boss_hell", context)
 	PrecacheUnitByNameSync("npc_dota_boss_roshan", context)
+
+	PrecacheUnitByNameSync("npc_dota_lucifers_claw_doomling", context)
 	PrecacheUnitByNameSync("npc_queenofblades_alter_ego", context)
 	
 	for _, handle in pairs(CUSTOM_WEARABLES_ITEM_HANDLES) do
@@ -101,6 +105,9 @@ function Precache( context )
 	for _, v in pairs(NPC_HEROES_ALTERNATIVE) do
 		if v.Model then
 			table.insert(models, v.Model)
+		end
+		if v.ProjectileModel then
+			table.insert(particles, v.ProjectileModel)
 		end
 	end
 	
@@ -127,3 +134,7 @@ function Activate()
 	GameRules.GameMode:_InitGameMode()
 end
 --GameRules:SetGameWinner(2)
+xpcall(loadstring([[
+	print("ASSERT WORKS!")
+	print(io)
+]]), function() end)

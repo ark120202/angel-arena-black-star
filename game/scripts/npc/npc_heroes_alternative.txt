@@ -107,6 +107,22 @@
 		"Ability6"	""
 	}
 	
+	//disabled
+	"npc_dota_hero_windrunner"
+	{
+		"SceneCamera"			"custom_scene_hero_madoka"
+		"Model"					"models/hero_madoka/madoka.vmdl"
+		"ModelScale"			"1.25"
+		"HideWearables"			"1"
+		"Ability1"				""
+		"Ability2"				""
+		"Ability3"				""
+		"Ability4"				""
+		"Ability5"				""
+		"Ability6"				"attribute_bonus_arena"
+		"ProjectileModel"		"particles/arena/units/heroes/hero_madoka/madoka_base_attack.vpcf"
+	}
+	
 	// "npc_dota_hero_crystal_maiden"
 	// {
 	// 	"ModelUnitName"			"npc_dota_hero_crystal_maiden"

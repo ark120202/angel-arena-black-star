@@ -3,11 +3,22 @@ if not CustomWearables then
 end
 
 function CustomWearables:Unit(unit)
-	if not unit.CustomWearables then unit.CustomWearables = {Attachments = {}, ParticleMap = {}} end
+	if not unit.CustomWearables then unit.CustomWearables = {Attachments = {}, ParticleMap = {}, EverEquippedMap = {}} end
+	if not unit.CustomWearablesConst then unit.CustomWearablesConst = {EverEquippedMap = {}} end
 end
 
 function CustomWearables:TranslateParticle(unit, particle)
 	return unit.CustomWearables.ParticleMap[particle] or particle
+end
+
+function CustomWearables:RemoveDotaWearables(unit)
+	for _,v in pairs(unit:GetChildren()) do
+		if v:GetClassname() == "dota_item_wearable" then
+			v:AddEffects(EF_NODRAW)
+			v:SetModel("models/development/invisiblebox.vmdl")
+			v:RemoveSelf()
+		end
+	end
 end
 
 function CustomWearables:EquipWearables(unit, herokey)
@@ -21,13 +32,7 @@ function CustomWearables:EquipWearables(unit, herokey)
 		CustomWearables:EquipWearable(unit, v)
 	end
 	if unit.WearablesRemoved then
-		for _,v in pairs(unit:GetChildren()) do
-			if v:GetClassname() == "dota_item_wearable" then
-				v:AddEffects(EF_NODRAW)
-				v:SetModel("models/development/invisiblebox.vmdl")
-				--child:RemoveSelf()
-			end
-		end
+		CustomWearables:RemoveDotaWearables(unit)
 	end
 end
 
@@ -64,6 +69,12 @@ function CustomWearables:EquipWearable(unit, handle)
 	end
 	if handle.hide_wearables then
 		unit.WearablesRemoved = true
+	end
+	if handle.on_first_equip then
+		if not unit.CustomWearablesConst.EverEquippedMap[handle.name] then
+			unit.CustomWearablesConst.EverEquippedMap[handle.name] = true
+			handle.on_first_equip(handle, unit)
+		end
 	end
 	return
 	--[[TODO
@@ -124,7 +135,9 @@ function CustomWearables:GetPlayerHeroWearables(unitvar, herokey)
 end
 
 function CustomWearables:WearableNameToHandle(wearable)
-	return CUSTOM_WEARABLES_ITEM_HANDLES[wearable]
+	local t = {name = wearable}
+	table.merge(t, CUSTOM_WEARABLES_ITEM_HANDLES[wearable])
+	return t
 end
 -----------------------------------------------------------------------------------------
 --Function remap

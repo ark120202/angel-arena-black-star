@@ -1390,3 +1390,7 @@ function PurgeTruesightModifiers(unit)
 		unit:RemoveModifierByName(v)
 	end
 end
+
+function RandomPositionAroundPoint(pos, radius)
+	return RotatePosition(pos, QAngle(0, RandomInt(0,359), 0), pos + Vector(1, 1, 0) * RandomInt(0, radius))
+end

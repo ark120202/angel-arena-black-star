@@ -109,6 +109,7 @@
 		"alternative_npc_dota_hero_juggernaut"			"1"
 		"alternative_npc_dota_hero_dark_seer"			"1"
 		"alternative_npc_dota_hero_life_stealer"		"1"
+	//	"alternative_npc_dota_hero_windrunner"			"1"
 
 		//"alternative_npc_dota_hero_crystal_maiden"		"1"
 		

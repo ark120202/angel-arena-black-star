@@ -637,12 +637,7 @@ function TransformUnitClass(unit, classTable)
 			end
 		elseif key == "HideWearables" and value == 1 then
 			unit.WearablesRemoved = true
-			for _,v in pairs(unit:GetChildren()) do
-				if v:GetClassname() == "dota_item_wearable" then
-					v:SetModel("models/development/invisiblebox.vmdl")
-					--child:RemoveSelf()
-				end
-			end
+			CustomWearables:RemoveDotaWearables(unit)
 		end
 	end
 end

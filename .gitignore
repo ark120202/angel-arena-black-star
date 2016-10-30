@@ -7,6 +7,11 @@
 *.vcss_c
 *.vpk
 
+*.vanim_c
+*.vmesh_c
+*.vagrp_c
+*.vmdl_c
+
 *.bin
 *.cfg
 
