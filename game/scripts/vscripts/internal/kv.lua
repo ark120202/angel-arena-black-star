@@ -163,3 +163,17 @@ function SummonUnit(keys)
 		end
 	end
 end
+
+function IncreaseStacks(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local ability = keys.ability
+	local modifier = keys.modifier
+	local max_stacks = keys.max_stacks
+
+	if max_stacks and target:GetModifierStackCount(modifier, ability) >= max_stacks then
+		ability:ApplyDataDrivenModifier(caster, target, modifier, {})
+	else
+		ModifyStacks(ability, caster, target, modifier, keys.stacks or 1, true)
+	end
+end

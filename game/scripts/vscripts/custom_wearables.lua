@@ -3,7 +3,7 @@ if not CustomWearables then
 end
 
 function CustomWearables:Unit(unit)
-	if not unit.CustomWearables then unit.CustomWearables = {Attachments = {}, ParticleMap = {}, EverEquippedMap = {}} end
+	if not unit.CustomWearables then unit.CustomWearables = {Attachments = {}, ParticleMap = {}, PlayerKeys = {}} end
 	if not unit.CustomWearablesConst then unit.CustomWearablesConst = {EverEquippedMap = {}} end
 end
 
@@ -75,6 +75,10 @@ function CustomWearables:EquipWearable(unit, handle)
 			unit.CustomWearablesConst.EverEquippedMap[handle.name] = true
 			handle.on_first_equip(handle, unit)
 		end
+	end
+	if handle.PlayerKeys then
+		if not unit.CustomWearables.PlayerKeys then unit.CustomWearables.PlayerKeys = {} end
+		table.merge(unit.CustomWearables.PlayerKeys, handle.PlayerKeys)
 	end
 	return
 	--[[TODO

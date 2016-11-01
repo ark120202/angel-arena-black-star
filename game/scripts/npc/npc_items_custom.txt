@@ -50,6 +50,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 		
 				"Properties"
 				{
@@ -92,6 +93,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 		
 				"Properties"
 				{
@@ -139,6 +141,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 		
 				"Properties"
 				{
@@ -192,6 +195,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 		
 				"Properties"
 				{
@@ -265,6 +269,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 		
 				"Properties"
 				{
@@ -308,10 +313,60 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 		
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			}
+		}
+	}
+
+	"item_phantom_bone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"100125307"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_winter_greevil_chewy"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"16000"
+		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasableFilter"			"0"
+			
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_armor"		"64"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_hp_regen_pct" "2"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_phantom_bone"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"		"%bonus_hp_regen_pct"
 				}
 			}
 		}
@@ -4823,7 +4878,7 @@
 		"ItemResult"					"item_homemade_cheese"
 		"ItemRequirements"
 		{
-			"01"						"item_bottle;item_enchanted_mango;item_tango;item_faerie_fire"
+			"01"						"item_bottle;item_enchanted_mango;item_tango_arena;item_faerie_fire"
 		}
 	}
 
@@ -5594,6 +5649,7 @@
 				{
 					"MODIFIER_STATE_INVISIBLE"					"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_UNIT_COLLISION"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_CANNOT_MISS"			"MODIFIER_STATE_VALUE_ENABLED"
 				}
 
 				"OnAttack"
@@ -14163,10 +14219,10 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
-				    "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
-				    "MODIFIER_PROPERTY_EXTRA_MANA_BONUS"			"%bonus_mana"
-				    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-				    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_pct"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
+					"MODIFIER_PROPERTY_EXTRA_MANA_BONUS"			"%bonus_mana"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_pct"
 				}
 			}
 			
@@ -14334,10 +14390,10 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
-				    "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
-				    "MODIFIER_PROPERTY_EXTRA_MANA_BONUS"			"%bonus_mana"
-				    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-				    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_pct"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
+					"MODIFIER_PROPERTY_EXTRA_MANA_BONUS"			"%bonus_mana"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_pct"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 			}
@@ -15726,8 +15782,8 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%dust_mana_regen_pct"
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%dust_move_speed"
-				    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dust_damage"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%dust_move_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dust_damage"
 				}
 			}
 		}
@@ -15846,6 +15902,18 @@
 		"Modifiers"
 		{
 			"modifier_item_dark_flow"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+				}
+			}
+
+			"modifier_item_dark_flow_unique"
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
@@ -15972,7 +16040,7 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen" 
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen" 
 				}
 			}
 
@@ -16105,7 +16173,7 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen" 
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen" 
 				}
 			}
 
@@ -17190,7 +17258,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"250"	
+		"ItemCost"						"20250"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -17199,7 +17267,7 @@
 		"ItemResult"					"item_desolator4"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator3;item_essence_earth"
+			"01"						"item_desolator3"
 		}
 	}
 
@@ -17801,8 +17869,8 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_strength"
-				    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
-				    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
 				}
 			}
 			"modifier_item_thunder_musket_unique"
@@ -19647,22 +19715,22 @@
 			"ActOnTargets"
 			{
 				"Target"
-	            {
+				{
 					"Center"			"POINT"
-	                "Radius"			"%debuff_radius"
-	                "Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY" 
-	                "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	            }
+					"Radius"			"%debuff_radius"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
 
-	            "Action"
-	            {
+				"Action"
+				{
 					"FireSound"
 					{
 						"EffectName"			"DOTA_Item.EtherealBlade.Target"
 						"Target"				"TARGET"
 					}
 
-	            	"ApplyModifier"
+					"ApplyModifier"
 					{
 						"Target"			"TARGET"
 						"ModifierName"		"modifier_item_blade_of_discord_magic_weakness"
@@ -19675,7 +19743,7 @@
 						"debuff_stats_multiplier"	"%debuff_stats_multiplier"
 						"debuff_damage_base"		"%debuff_damage_base"
 					}
-	            }
+				}
 			}
 		}
 		
@@ -19819,7 +19887,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%hp_regen_per_stack"
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%movespeed_per_stack"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%movespeed_per_stack"
 				}
 			}
 		}
@@ -19858,12 +19926,12 @@
 
 		"AbilitySpecial"
 		{
-			"02"
+			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_damage"			"400"
 			}
-			"01"
+			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"attack_damage_to_pure_pct"	"30"
@@ -19885,52 +19953,249 @@
 		}
 	}
 
-	// "item_recipe_haganemushi"
-	// {
-	// 	// General
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"BaseClass"						"item_datadriven"
-	// 	"ID"							"10265"
-	// 	"Model"							"models/props_gameplay/recipe.mdl"
-	// 	"ItemPurchasable"				"0"
+	"item_recipe_haganemushi"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10267755"
+		"Model"							"models/props_gameplay/recipe.mdl"
 		
-	// 	// Item Info
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"ItemCost"						"79999"	//todo
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"47300"	//100270 - Requirements Cost
 		
-	// 	// Recipe
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"ItemRecipe"					"1"
-	// 	"ItemResult"					"item_haganemushi"
-	// 	"ItemRequirements"
-	// 	{
-	// 		"01"						"item_dark_flow;item_dark_blade;item_essence_earth"
-	// 	}
-	// }
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_haganemushi"
+		"ItemRequirements"
+		{
+			"01"						"item_invis_sword;item_dark_flow;item_piercing_blade;item_dark_blade;item_essence_earth"
+		}
+	}
 
-	// "item_haganemushi"
-	// {
-	// 	"BaseClass"             		"item_datadriven"
-	// 	"ID"							"10266"
-	// 	"AbilityTextureName"			"item_haganemushi"
-	// 	"ItemPurchasable"				"0"
+	"item_haganemushi"
+	{
+		"BaseClass"             		"item_datadriven"
+		"ID"							"102463266"
+		"AbilityTextureName"			"item_haganemushi"
 
-	// 	"AbilitySpecial"
-	// 	{
-			
-	// 	}
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilitySharedCooldown"			"shadow_blade"
 
-	// 	"Modifiers"
-	// 	{
-	// 		"modifier_item_haganemushi"
-	// 		{
-	// 			"Passive"			"1"
-	// 			"IsHidden"			"1"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"80"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"120"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_hit"	"-6"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"armor_per_hit"		"-0.8"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_damage_to_pure_pct"	"40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"windwalk_duration"		"17"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"windwalk_movement_speed_pct"	"25"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"windwalk_fade_time"	"0.2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"windwalk_bonus_damage"	"600"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"DOTA_Item.InvisibilitySword.Activate"
+				"Target" 		"CASTER"
+			}
 
-	// 		}
-	// 	}
-	// }
+			"DelayedAction"
+			{
+				"Delay"     "%windwalk_fade_time"
+				"Action"    
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_item_haganemushi_active"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_haganemushi"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+				}
+			}
+
+			"modifier_item_haganemushi_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"IncreaseStacks"
+						"modifier"		"modifier_item_haganemushi_stack"
+					}
+
+					"FireEffect"
+					{
+						"EffectName"        "particles/arena/items_fx/dark_flow_explosion.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+			}
+
+			"modifier_item_haganemushi_stack"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%damage_per_hit"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_per_hit"
+				}
+			}
+
+			"modifier_item_haganemushi_active"
+			{
+				"IsBuff"			"1"
+				"Duration"			"%windwalk_duration"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%windwalk_movement_speed_pct"
+				}
+				
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_CANNOT_MISS"				"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"OnAttack"
+				{
+					"RemoveModifier"
+					{
+						"Target"			"CASTER"
+						"ModifierName"		"modifier_item_haganemushi_active"
+					}
+					"ApplyModifier"
+					{
+						"ModifierName"		"modifier_item_haganemushi_attack"
+						"Target" 			"CASTER"
+					}
+				}
+				
+				"OnAbilityExecuted"
+				{
+					"RemoveModifier"
+					{
+						"Target"				"CASTER"
+						"ModifierName"			"modifier_item_haganemushi_active"
+					}
+				}
+
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_invisible"
+						"Target" 		"CASTER"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_invisible"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		
+			"modifier_item_haganemushi_attack"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_CANNOT_MISS"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"OnAttackLanded"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_PURE"
+						"Damage"		"%windwalk_bonus_damage"
+					}
+
+					"RemoveModifier"
+					{
+						"Target"			"CASTER"
+						"ModifierName"		"modifier_item_haganemushi_attack"
+					}
+				}
+			}
+		}
+	}
 
 	"item_recipe_fallhammer"
 	{
@@ -20071,8 +20336,8 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
-				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
 				}
 			}
 
@@ -20138,6 +20403,333 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%valor_armor_reduction"
+				}
+			}
+		}
+	}
+
+	"item_recipe_heavens_halberd_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10034638"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heavens_halberd_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_sange_arena;item_talisman_of_evasion"
+		}
+	}
+
+	"item_heavens_halberd_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"102167039"
+		"AbilityTextureName"			"item_heavens_halberd"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityCooldown"				"30"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"80"
+
+		"ItemShopTags"					"str;damage;evasion"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"heaven's halberd"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+				
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_evasion"			"28"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"32"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_chance"			"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_movement_speed"	"-8"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_attack_speed"		"-7"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"maim_duration"			"4.5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_max_stacks"		"8"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"disarm_duration"		"5.5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_item_heavens_halberd_arena_disarm"
+				"Target" 		"TARGET"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_heavens_halberd_arena"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"							"%bonus_evasion"
+				}
+			}
+
+			"modifier_item_heavens_halberd_arena_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"AllowIllusionDuplicate"     "0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_heavens_halberd_arena_unique"
+					}
+				}
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%maim_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"sange_lesser_maim_stacks"
+								"modifier"				"modifier_item_heavens_halberd_arena_lesser_maim"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_item_heavens_halberd_arena_lesser_maim"
+			{
+				"Duration"				"%maim_duration"
+				"IsDebuff"				"1"
+				"IsPurgable"			"1"
+				
+				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
+				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_movement_speed"
+				}
+			}
+
+			"modifier_item_heavens_halberd_arena_disarm"
+			{
+				"IsDebuff"				"1"
+				"IsPurgable"			"0"
+				"Duration"				"%disarm_duration"
+
+				"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+				"EffectAttachType"      "follow_origin"
+				
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/generic_gameplay/generic_disarm.vpcf"
+						"EffectAttachType"	"follow_overhead"
+					}
+				}
+				
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"item_summoned_unit"
+	{
+		"BaseClass"             		"item_datadriven"
+		"ID"							"102123167039"
+		"AbilityTextureName"			"item_summoned_unit"
+		"DisplayAdditionalHeroes"		"1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		"AbilityCooldown"				"200"
+		"AbilityManaCost"				"400"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"health"						"4500"		
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"health_regen"					"16"		
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"300"		
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"mana_pool_tooltip"				"300"		
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"armor"							"12"		
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"item_slots"					"3"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+
+				"ScriptFile"	"items/item_summoned_unit.lua"
+				"Function"		"DoSummon"
+				"max_units"		"1"
+				"item_slots"	"%item_slots"
+				"health"		"%health"
+				"health_regen"	"%health_regen"
+				"damage"		"%damage"
+				"armor"			"%armor"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"Hero_LoneDruid.SpiritBear.Cast"
+				"Target" 		"CASTER"
+			}
+		}
+	}
+
+	"item_slot_locked"
+	{
+		"BaseClass"             		"item_datadriven"
+		"ID"							"10212316705339"
+		"AbilityTextureName"			"item_slot_locked"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemKillable"            		"0"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemDroppable"					"0"
+	}
+
+	"item_phantom_cuirass"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10012425307"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_phantom_cuirass"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"16000"
+		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasableFilter"			"0"
+			
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_armor"		"64"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_hp_regen_pct" "2"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_phantom_bone"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"		"%bonus_hp_regen_pct"
 				}
 			}
 		}

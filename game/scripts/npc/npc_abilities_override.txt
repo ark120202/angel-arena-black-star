@@ -59,21 +59,14 @@
 	"item_butterfly"				"REMOVE"
 	"item_tango"					"REMOVE"
 	"item_tango_single"				"REMOVE"
+	"item_recipe_heavens_halberd"	"REMOVE"
+	"item_heavens_halberd"			"REMOVE"
 
 	"item_dust"
 	{
 		"SecretShop"					"0"
 		"ItemCost"						"90"
 		"ItemInitialCharges"			"1"	
-	}
-
-	"item_recipe_heavens_halberd"
-	{
-		"SecretShop"					"0"
-		"ItemRequirements"
-		{
-			"01"						"item_sange_arena;item_talisman_of_evasion"
-		}
 	}
 	
 	"item_courier"
@@ -351,14 +344,6 @@
 		"SecretShop"					"0"
 	}
 	"item_ward_sentry"
-	{
-		"SecretShop"					"0"
-	}
-	"item_tango"
-	{
-		"SecretShop"					"0"
-	}
-	"item_tango_single"
 	{
 		"SecretShop"					"0"
 	}
@@ -839,10 +824,6 @@
 		"SecretShop"					"0"
 	}
 	"item_abyssal_blade"
-	{
-		"SecretShop"					"0"
-	}
-	"item_heavens_halberd"
 	{
 		"SecretShop"					"0"
 	}

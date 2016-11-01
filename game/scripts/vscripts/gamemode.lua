@@ -476,14 +476,12 @@ function GameMode:DamageFilter(filterTable)
 			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictor:GetName()] and IsBossEntity(victim) then
 				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictor:GetName()] * 0.01
 			end
-
-			if inflictor:GetName() == "templar_assassin_psi_blades" and victim.SpawnerType and victim.SSpawner and victim.SLevel then
+			if inflictor:GetName() == "templar_assassin_psi_blades" and victim:IsRealCreep() then
 				filterTable.damage = damage * 0.5
 			end
 		end
 
-		if (attacker.HasModifier and (attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff")))
-				or (victim.HasModifier and (victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) then
+		if (attacker.HasModifier and (attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) or (victim.HasModifier and (victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) then
 			filterTable.damage = 0
 			return false
 		end

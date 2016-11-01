@@ -711,10 +711,7 @@ function table.merge(input1, input2)
 end
 
 function IsHeroSelected(heroName)
-	if PlayerResource:IsHeroSelected(heroName) or HeroSelection:IsHeroSelected(heroName) then
-		return true
-	end
-	return false
+	return PlayerResource:IsHeroSelected(heroName) or HeroSelection:IsHeroSelected(heroName)
 end
 
 function GetFullHeroName(unit)
@@ -1393,4 +1390,11 @@ end
 
 function RandomPositionAroundPoint(pos, radius)
 	return RotatePosition(pos, QAngle(0, RandomInt(0,359), 0), pos + Vector(1, 1, 0) * RandomInt(0, radius))
+end
+
+function EvalString(str)
+	local status, nextCall = xpcall(loadstring(str), function(msg) return msg..'\n'..debug.traceback()..'\n' end)
+	if not status then
+		print(nextCall)
+	end
 end

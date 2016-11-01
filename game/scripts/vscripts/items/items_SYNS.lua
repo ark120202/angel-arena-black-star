@@ -70,6 +70,7 @@ function sange_lesser_maim_stacks(keys)
 		"modifier_item_sange_arena_unique",
 		"modifier_item_sange_and_yasha_unique",
 		"modifier_item_nightshadow_and_sange",
+		"modifier_item_heavens_halberd_arena_unique",
 		"modifier_item_splitshot_str_unique",
 		"modifier_item_three_spirits_blades_unique",
 		"modifier_item_splitshot_ultimate_unique",

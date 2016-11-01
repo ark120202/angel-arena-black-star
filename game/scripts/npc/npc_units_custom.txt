@@ -2491,4 +2491,61 @@
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
 	}
+
+	"npc_arena_item_summoned_unit"
+	{
+		"BaseClass"	"npc_dota_lone_druid_bear"
+		"Model"	"models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_red.vmdl"
+
+		"IsSummoned"				"1"
+		"HasInventory"				"1"
+		"Ability1"					"summoned_unit_return"
+
+		"SoundSet"					""
+		"Level"						"50"
+		"ModelScale" 				".65"
+		"ConsideredHero"			"1"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"1"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1"		// Damage range min.
+		"AttackDamageMax"			"1"		// Damage range max.	
+		"AttackRate"				"1.00"		// Speed of attack.
+		"AttackAnimationPoint"		"0.40"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"200"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"300"		// Experience earn.
+		"BountyGoldMin"				"300"		// Gold earned min.
+		"BountyGoldMax"				"300"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"320"		// Speed.
+		"MovementTurnRate"			"0.6"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"300"		// Base mana.
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+	}
 }

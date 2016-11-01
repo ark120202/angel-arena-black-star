@@ -3,7 +3,8 @@ CUSTOM_WEARABLES_PLAYER_ITEMS = {
 		"item_hero_stargazer_helmet_of_the_sunray",
 		"item_hero_omniknight_frozen_sword",
 		"item_common_radio_car",
-		"_______item_test"
+		"item_item_summoned_unit_kyuubey",
+		"_______item_test",
 		--"item_common_model_tree"
 	},
 	[82292900] = {
@@ -58,7 +59,15 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 	},
 	["_______item_test"] = {
 		base_model = "models/hero_madoka/madoka.vmdl",
-		base_model_scale = 1.25,
+		base_model_scale = 1.2,
 		hide_wearables = true,
+	},
+	["item_item_summoned_unit_kyuubey"] = {
+		PlayerKeys = {
+			item_summoned_unit = {
+				model = "models/custom/kyuubey.vmdl",
+				model_scale = 4
+			}
+		}
 	},
 }

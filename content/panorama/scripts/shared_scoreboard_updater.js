@@ -61,7 +61,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel(scoreboardConfig, playersContainer
 			}
 		}
 
-		if (playerInfo.player_selected_hero_id == -1) {
+		if (playerInfo.player_selected_hero_id == -1 || HeroName.length == 0) {
 			_ScoreboardUpdater_SetTextSafe(playerPanel, "HeroName", $.Localize("#DOTA_Scoreboard_Picking_Hero"))
 		} else {
 			_ScoreboardUpdater_SetTextSafe(playerPanel, "HeroName", $.Localize("#" + HeroName))
@@ -69,7 +69,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel(scoreboardConfig, playersContainer
 
 		var heroNameAndDescription = playerPanel.FindChildInLayoutFile("HeroNameAndDescription");
 		if (heroNameAndDescription) {
-			if (playerInfo.player_selected_hero_id == -1) {
+			if (playerInfo.player_selected_hero_id == -1 || HeroName.length == 0) {
 				heroNameAndDescription.SetDialogVariable("hero_name", $.Localize("#DOTA_Scoreboard_Picking_Hero"));
 			} else {
 				heroNameAndDescription.SetDialogVariable("hero_name", $.Localize("#" + HeroName));

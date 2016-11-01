@@ -47,6 +47,10 @@ function Precache( context )
 		"particles/arena/items_fx/blade_of_discord_debuff.vpcf",
 		"particles/arena/items_fx/blade_of_discord_cast.vpcf",
 		"particles/arena/items_fx/tango_arena_cast.vpcf",
+		"particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf",
+		"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf",
+		"particles/items_fx/blink_dagger_end.vpcf",
+		"particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf",
 		
 		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
@@ -70,10 +74,10 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_arena.vsndevts", context)
 	
 	PrecacheUnitByNameSync("npc_dota_hero_earth_spirit", context)
-	PrecacheUnitByNameSync("npc_dota_hero_wisp", context)
 	
 	PrecacheUnitByNameSync("npc_dota_boss_fire", context)
 	PrecacheUnitByNameSync("npc_dota_boss_water", context)
@@ -133,8 +137,3 @@ function Activate()
 	GameRules.GameMode = GameMode()
 	GameRules.GameMode:_InitGameMode()
 end
---GameRules:SetGameWinner(2)
-xpcall(loadstring([[
-	print("ASSERT WORKS!")
-	print(io)
-]]), function() end)

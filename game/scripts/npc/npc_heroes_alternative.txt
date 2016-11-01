@@ -112,7 +112,7 @@
 	{
 		"SceneCamera"			"custom_scene_hero_madoka"
 		"Model"					"models/hero_madoka/madoka.vmdl"
-		"ModelScale"			"1.25"
+		"ModelScale"			"1.2"
 		"HideWearables"			"1"
 		"Ability1"				""
 		"Ability2"				""

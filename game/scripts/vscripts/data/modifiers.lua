@@ -281,6 +281,22 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			})
 			return 1 - pct
 		end
+	},
+	["modifier_item_haganemushi"] = {
+		condition = function(_, _, inflictor)
+			return not inflictor
+		end,
+		multiplier = function(attacker, victim, _, damage)
+			local pct = GetAbilitySpecial("item_haganemushi", "attack_damage_to_pure_pct") * 0.01
+			ApplyDamage({
+				victim = victim,
+				attacker = attacker,
+				damage = damage * pct,
+				damage_type = _G[GetKeyValue("item_haganemushi", "AbilityUnitDamageType")],
+				ability = FindItemInInventoryByName(attacker, "item_haganemushi", false)
+			})
+			return 1 - pct
+		end
 	}
 }
 
