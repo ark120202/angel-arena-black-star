@@ -8,7 +8,10 @@ CUSTOM_WEARABLES_PLAYER_ITEMS = {
 		--"item_common_model_tree"
 	},
 	[82292900] = {
+		"item_hero_stargazer_helmet_of_the_sunray",
+		"item_hero_omniknight_frozen_sword",
 		"item_common_radio_car",
+		"item_item_summoned_unit_kyuubey",
 	}
 }
 

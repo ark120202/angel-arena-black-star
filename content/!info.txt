@@ -9,29 +9,27 @@ TODO LIST:
 
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_1347]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-Angel Arena Black Star - Версия 1.2.2:
+Angel Arena Black Star - Версия 1.2.3:
 
 Общее:
-	Tango переработан
-	Добавлен новый предмет: Blade of Discord
-	Добавлен новый предмет: Piercing Blade
-	Добавлен новый предмет: Dark Blade
-	Добавлен новый предмет: Fallhammer
+	Переработан Heaven's Halberd
+	Добавлен новый предмет: Haganemushi
+	Добавлен новый предмет: Phantom Bone
+	Добавлен новый предмет: Phantom Cuirass
+	Добавлен новый предмет: Demonic Cuirass
+	Добавлен новый предмет: Spirital Scepter
 	
 Баланс:
-	Angel Wings: Длительность перезарядки: 0 => 24
-	Phantom Lancer: BAT: 1.4 => 1.2
-	Centaur:
-	-Return:
-	--Базовый урон: 16 18 20 22 24 26 30 => 20 60 120 180 200 300 350
-	--Слиа в урон: 30 45 50 60 65 75 80 => 3 6 9 12 15 18 25 %
-	-Stampede: Длительность перезарядки: 90 75 60 50 40 30 25 => 100 90 80 70 60 50 40
-	Ability Shop:
-		Ursa - Enrage: Цена: 2 => 8
+	Venomus Desolator:
+	-В рецепте теперь не используется Earth Essence
+	-Цена рецепта: 250 => 20250
+	Soul of Titan:
+	-Снижение брони: 10 => 40
+	-Цена: 0 => 3000
 Исправления:
-	Ability Shop теперь показывает полную цену продажи, а не цену понижения на 1 уровень
+	В блоке рецептов магазина теперь корректо отображаются строчки, содержащие более 6 предметов
 ==================================================================================================================================
-Angel Arena Black Star - Version 1.2.2:
+Angel Arena Black Star - Version 1.2.3:
 
 General:
 	Reworked Heaven's Halberd
@@ -48,7 +46,7 @@ Balance:
 	-Armor Decrease: 10 => 40
 	-Cost: 0 => 3000
 Fixes:
-
+	Fixed Shop recipe-box couldn't show more than 7 items in one row (for example you couldn't see all items that can be made using Perseverance)
 
 ==================================================================================================================================
 rhasta,
