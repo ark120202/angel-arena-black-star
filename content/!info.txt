@@ -36,12 +36,17 @@ Angel Arena Black Star - Version 1.2.2:
 General:
 	Reworked Heaven's Halberd
 	Added new item: Haganemushi
-	item_summoned_unit
-	item_wraithbone
+	Added new item: Phantom Bone
+	Added new item: Phantom Cuirass
+	Added new item: Demonic Cuirass
+	Added new item: Spirital Scepter
 Balance:
 	Venomus Desolator:
 	-Now not requires Earth Essence
 	-Recipe Cost: 250 => 20250
+	Soul of Titan:
+	-Armor Decrease: 10 => 40
+	-Cost: 0 => 3000
 Fixes:
 
 

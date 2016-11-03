@@ -177,3 +177,10 @@ function IncreaseStacks(keys)
 		ModifyStacks(ability, caster, target, modifier, keys.stacks or 1, true)
 	end
 end
+
+function ApplyModifierWithoutRefresh(keys)
+	local target = keys.target or keys.caster
+	if ((keys.HeroOnly == 1 and target:IsHero()) or (keys.HeroOnly ~= 1 and not target:IsHero())) and not target:HasModifier(keys.modifier) then
+		keys.ability:ApplyDataDrivenModifier(keys.caster, target, keys.modifier, nil)
+	end
+end

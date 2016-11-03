@@ -216,6 +216,8 @@ PANORAMA_SHOP_ITEMS = {
 		},
 		{
 			"item_soul_of_titan",
+			"item_dark_blade",
+			"item_phantom_bone",
 			"item_titanium_fruit",
 			"item_coffee_bean",
 			"item_homemade_cheese",
@@ -223,6 +225,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_aegis_arena",
 			"item_blink_staff",
 			"item_angel_wings",
+			"item_summoned_unit",
 		},
 		{
 			"item_ray_of_fate",
@@ -232,11 +235,10 @@ PANORAMA_SHOP_ITEMS = {
 			"item_refresher_core",
 			"item_book_of_the_keeper",
 			"item_blade_of_discord",
-			"item_auto_sheepstick",
 			"item_essential_orb_fire_6",
+			"item_auto_sheepstick",
 		},
 		{
-			"item_dark_blade",
 			"item_dark_flow",
 			"item_butterfly_of_sins",
 			"item_piercing_blade",
@@ -256,6 +258,8 @@ PANORAMA_SHOP_ITEMS = {
 			"item_heart_cyclone",
 			"item_vermillion_robe",
 			"item_heavy_war_axe_of_rage_damage",
+			"item_phantom_cuirass",
+			"item_demonic_cuirass",
 			"item_titanium_bar",
 		},
 		{

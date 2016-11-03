@@ -194,31 +194,37 @@ function ShowItemRecipe(itemName) {
 			SmallItems.splice(index, 1);
 		}
 	})
-	$("#ItemRecipeBoxRow1").RemoveAndDeleteChildren()
-	$("#ItemRecipeBoxRow2").RemoveAndDeleteChildren()
-	$("#ItemRecipeBoxRow3").RemoveAndDeleteChildren()
+	$("#ItemRecipeBoxRow1").RemoveAndDeleteChildren();
+	$("#ItemRecipeBoxRow2").RemoveAndDeleteChildren();
+	$("#ItemRecipeBoxRow3").RemoveAndDeleteChildren();
 
-	var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow2"), "ItemRecipeBoxRow2_item_" + itemName)
-	SnippetCreate_SmallItem(itemPanel, itemName)
-	itemPanel.style.align = "center center"
+	var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow2"), "ItemRecipeBoxRow2_item_" + itemName);
+	SnippetCreate_SmallItem(itemPanel, itemName);
+	itemPanel.style.align = "center center";
 	if (RecipeData != null && RecipeData.items != null) {
 		$.Each(RecipeData.items[1], function(childName) {
 			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow3"), "ItemRecipeBoxRow3_item_" + childName)
-			SnippetCreate_SmallItem(itemPanel, childName)
-			itemPanel.style.align = "center center"
-		})
+			SnippetCreate_SmallItem(itemPanel, childName);
+			itemPanel.style.align = "center center";
+		});
+		var len = Object.keys(RecipeData.items).length;
 		if (RecipeData.visible && RecipeData.recipeItemName != null) {
-			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow3"), "ItemRecipeBoxRow3_item_" + RecipeData.recipeItemName)
-			SnippetCreate_SmallItem(itemPanel, RecipeData.recipeItemName)
-			itemPanel.style.align = "center center"
+			len++;
+			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow3"), "ItemRecipeBoxRow3_item_" + RecipeData.recipeItemName);
+			SnippetCreate_SmallItem(itemPanel, RecipeData.recipeItemName);
+			itemPanel.style.align = "center center";
 		}
+		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength7", len >= 7);
+		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength8", len >= 8);
 	}
 	if (BuildsIntoData != null) {
 		$.Each(BuildsIntoData, function(childName) {
-			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow1"), "ItemRecipeBoxRow1_item_" + childName)
-			SnippetCreate_SmallItem(itemPanel, childName)
-			itemPanel.style.align = "center center"
-		})
+			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow1"), "ItemRecipeBoxRow1_item_" + childName);
+			SnippetCreate_SmallItem(itemPanel, childName);
+			itemPanel.style.align = "center center";
+		});
+		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength7", Object.keys(BuildsIntoData).length >= 7);
+		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength8", Object.keys(BuildsIntoData).length >= 8);
 	}
 }
 

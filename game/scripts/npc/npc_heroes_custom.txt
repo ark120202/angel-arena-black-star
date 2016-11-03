@@ -98,7 +98,7 @@
 		"Ability2"				"tinker_heat_seeking_missile"
 		"Ability3"				"tinker_march_of_the_machines"
 		"Ability4"				"tinker_rearm_arena"
-		"Changed"					"1"
+		"Changed"				"1"
 		"AttackRate"			"1.1"
 	}
 	

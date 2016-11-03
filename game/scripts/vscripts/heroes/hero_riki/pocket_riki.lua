@@ -2,7 +2,6 @@ function GoToThePocket(keys)
 	local ability = keys.ability
 	local caster = keys.caster
 	local target = keys.target
-	--not target:HasModifier("modifier_vengefulspirit_hybrid_special")
 	
 	if target ~= caster and HasFreeSlot(target) and target:IsRealHero() and target == PlayerResource:GetSelectedHeroEntity(target:GetPlayerOwnerID()) then
 		local item = CreateItem("item_pocket_riki", target, target)

@@ -1398,3 +1398,13 @@ function EvalString(str)
 		print(nextCall)
 	end
 end
+
+function GetPlayersInTeam(team)
+	local players = {}
+	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
+		if PlayerResource:IsValidPlayerID(playerID) and (not team or PlayerResource:GetTeam(playerID) == team) and not PLAYER_DATA[playerID].IsAbandoned then
+			table.insert(players, playerID)
+		end
+	end
+	return players
+end

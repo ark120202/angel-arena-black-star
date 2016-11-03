@@ -358,3 +358,18 @@
 	background-image: url("file://{images}/custom_game/shop/tab_selected.png");
 	transform: translateY(0);
 }
+
+
+.ItemRecipeBoxRow.ItemRecipeBoxRowLength7 .SmallItemPanel
+{
+	width: 49.5px;
+	height: 36px;
+	margin: 1px;
+}
+
+.ItemRecipeBoxRow.ItemRecipeBoxRowLength8 .SmallItemPanel
+{
+	width: 44.55px;
+	height: 32.4px;
+	border-radius: 5px;
+}

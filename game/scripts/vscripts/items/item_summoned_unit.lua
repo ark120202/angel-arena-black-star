@@ -2,6 +2,11 @@ function DoSummon(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local max_units = keys.max_units
+	if not caster:IsRealHero() then
+		ability:EndCooldown()
+		ability:RefundManaCost()
+		return
+	end
 	local unit
 	if caster["custom_summoned_unit_ability_" .. ability:GetAbilityName()] then
 		unit = caster["custom_summoned_unit_ability_" .. ability:GetAbilityName()]
