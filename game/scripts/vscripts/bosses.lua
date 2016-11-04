@@ -166,8 +166,7 @@ function Bosses:MakeBossAI(unit, name)
 		local boss_primal_sunstorm = unit:FindAbilityByName("boss_primal_sunstorm")
 
 		aiTable["abilityCastCallback"] = function(self)
-			local heroesInBossesArea = FindUnitsInBox(DOTA_TEAM_NEUTRALS, Entities:FindByName(nil, "target_mark_bosses_area_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_bosses_area_2"):GetAbsOrigin(),
-				nil, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES)
+			local heroesInBossesArea = FindUnitsInBox(DOTA_TEAM_NEUTRALS, Entities:FindByName(nil, "target_mark_bosses_area_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_bosses_area_2"):GetAbsOrigin(), nil, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES)
 			if #heroesInBossesArea >= 2 and self.unit:GetHealthPercent() < 80 then
 				self:UseAbility(boss_primal_sunstorm, self.unit)
 			end

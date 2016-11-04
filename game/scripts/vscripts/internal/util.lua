@@ -614,28 +614,6 @@ function FindItemInInventoryByName(unit, itemname, searchStash)
 	return nil
 end
 
-function GetMemberUserGroup(steamid)
-	local group = GetUserGroupByName("user")
-	if UserGroups.ForcedMembers[steamid .. ""] then
-		group = GetUserGroupByName(UserGroups.ForcedMembers[steamid .. ""])
-	else
-		group = GetUserGroupByName("user")
-	end
-	return group
-end
-
-function GetUserGroupByUnit(unit)
-	return GetMemberUserGroup(PlayerResource:GetSteamAccountID(unit:GetPlayerID()))
-end
-
-function GetUserGroupByName(name)
-	for _,v in ipairs(UserGroups.Groups) do
-		if v.name == name then
-			return v
-		end
-	end
-end
-
 function RemoveDeathPreventingModifiers(unit)
 	for _,v in ipairs(MODIFIERS_DEATH_PREVENTING) do
 		unit:RemoveModifierByName(v)
@@ -679,15 +657,17 @@ function GetAlternativeHeroTable(name)
 	return output
 end
 
-function pairsByKeys (t, f)
+function pairsByKeys(t, f)
 	local a = {}
 	for n in pairs(t) do table.insert(a, n) end
 	table.sort(a, f)
-	local i = 0      -- iterator variable
-	local iter = function ()   -- iterator function
+	local i = 0
+	local iter = function()
 		i = i + 1
-		if a[i] == nil then return nil
-		else return a[i], t[a[i]]
+		if a[i] == nil then
+			return nil
+		else
+			return a[i], t[a[i]]
 		end
 	end
 	return iter

@@ -383,6 +383,43 @@ function SetMinimalisticUIEnabled(value) {
 	}
 }
 
+function OnKill() {
+	$("#KDA_Value_KDAHL").text = Players.GetKills(Game.GetLocalPlayerID()) + "/" + Players.GetDeaths(Game.GetLocalPlayerID()) + "/" + Players.GetAssists(Game.GetLocalPlayerID()) + "/" + Players.GetLastHits(Game.GetLocalPlayerID())
+}
+
+function UpdateStats() {
+	var unit = Players.GetLocalPlayerPortraitUnit()
+	var heroName = GetHeroName(unit)
+	if (CustomHudEnabled) {
+		var ServersideAttributes = PlayerTables.GetTableValue("entity_attributes", unit)
+		if (ServersideAttributes != null) {
+			$("#AttributePanelStackAttributes").style.opacity = 1
+			$("#DotaAttributeValue_spell_amplify").GetParent().style.opacity = 1
+			$("#DotaAttributeValue_1").text = ServersideAttributes.str.toFixed(0)
+			$("#DotaAttributeValue_2").text = ServersideAttributes.agi.toFixed(0)
+			$("#DotaAttributeValue_3").text = ServersideAttributes.int.toFixed(0)
+			$("#DotaAttributeValue_1_gain").text = " +(" + ServersideAttributes.str_gain.toFixed(1) + ")"
+			$("#DotaAttributeValue_2_gain").text = " +(" + ServersideAttributes.agi_gain.toFixed(1) + ")"
+			$("#DotaAttributeValue_3_gain").text = " +(" + ServersideAttributes.int_gain.toFixed(1) + ")"
+			for (var i = 1; i <= 3; i++) {
+				$("#DotaAttributePic_" + i).SetHasClass("PrimaryAttribute", i - 1 == ServersideAttributes.attribute_primary)
+			}
+			$("#DotaAttributeValue_spell_amplify").text = ServersideAttributes.spell_amplify.toFixed(2) + "%"
+		} else {
+			$("#AttributePanelStackAttributes").style.opacity = 0
+			$("#DotaAttributeValue_spell_amplify").GetParent().style.opacity = 0
+		}
+		$("#HeroAvatarImage").SetImage(TransformTextureToPath(heroName))
+		$("#HeroName").text = $.Localize(heroName)
+	}
+	$("#DefaultInterfaceHeroName").text = $.Localize(heroName)
+}
+
+function UpdateLevels() {
+	if (CustomHudEnabled)
+		$("#HeroLevelLabel").text = Entities.GetLevel(Players.GetLocalPlayerPortraitUnit())
+}
+
 function UpdateSelection() {
 	$.Schedule(0.03, function() {
 		var unit = Players.GetLocalPlayerPortraitUnit()
@@ -446,42 +483,8 @@ function UpdateSelection() {
 	GameEvents.Subscribe("dota_ability_changed", UpdateAbilities)
 	GameEvents.Subscribe("dota_portrait_ability_layout_changed", UpdateAbilities)
 	GameEvents.Subscribe("dota_hero_ability_points_changed", UpdateAbilities)
-	var OnKill = function() {
-		$("#KDA_Value_KDAHL").text = Players.GetKills(Game.GetLocalPlayerID()) + "/" + Players.GetDeaths(Game.GetLocalPlayerID()) + "/" + Players.GetAssists(Game.GetLocalPlayerID()) + "/" + Players.GetLastHits(Game.GetLocalPlayerID())
-	}
 	GameEvents.Subscribe("entity_killed", OnKill)
-	var UpdateStats = function() {
-		var unit = Players.GetLocalPlayerPortraitUnit()
-		var heroName = GetHeroName(unit)
-		if (CustomHudEnabled) {
-			var ServersideAttributes = PlayerTables.GetTableValue("entity_attributes", unit)
-			if (ServersideAttributes != null) {
-				$("#AttributePanelStackAttributes").style.opacity = 1
-				$("#DotaAttributeValue_spell_amplify").GetParent().style.opacity = 1
-				$("#DotaAttributeValue_1").text = ServersideAttributes.str.toFixed(0)
-				$("#DotaAttributeValue_2").text = ServersideAttributes.agi.toFixed(0)
-				$("#DotaAttributeValue_3").text = ServersideAttributes.int.toFixed(0)
-				$("#DotaAttributeValue_1_gain").text = " +(" + ServersideAttributes.str_gain.toFixed(1) + ")"
-				$("#DotaAttributeValue_2_gain").text = " +(" + ServersideAttributes.agi_gain.toFixed(1) + ")"
-				$("#DotaAttributeValue_3_gain").text = " +(" + ServersideAttributes.int_gain.toFixed(1) + ")"
-				for (var i = 1; i <= 3; i++) {
-					$("#DotaAttributePic_" + i).SetHasClass("PrimaryAttribute", i - 1 == ServersideAttributes.attribute_primary)
-				}
-				$("#DotaAttributeValue_spell_amplify").text = ServersideAttributes.spell_amplify.toFixed(2) + "%"
-			} else {
-				$("#AttributePanelStackAttributes").style.opacity = 0
-				$("#DotaAttributeValue_spell_amplify").GetParent().style.opacity = 0
-			}
-			$("#HeroAvatarImage").SetImage(TransformTextureToPath(heroName))
-			$("#HeroName").text = $.Localize(heroName)
-		}
-		$("#DefaultInterfaceHeroName").text = $.Localize(heroName)
-	}
 	PlayerTables.SubscribeNetTableListener("entity_attributes", UpdateStats)
-	var UpdateLevels = function() {
-		if (CustomHudEnabled)
-			$("#HeroLevelLabel").text = Entities.GetLevel(Players.GetLocalPlayerPortraitUnit())
-	}
 	GameEvents.Subscribe("dota_player_gained_level", UpdateLevels)
 	GameEvents.Subscribe("dota_player_update_hero_selection", UpdateSelection)
 	GameEvents.Subscribe("dota_player_update_selected_unit", UpdateSelection)

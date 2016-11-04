@@ -26,11 +26,7 @@ Balance:
 	
 Fixes:
 	
-	Improved perfomance in default interface mode;
-	Ursa - Fury Swipes: Cost: 1 => 2;
-	Ember Spirit - Sleight of Fist: Cost: 10 => 8;
-	Magnataur - Reverse Polarity now can't be refreshed using rearm;
-	Slightly changed ability shop background;
+Now after successful activation of Boss Keeper Key you'll be teleported to your team's boss portals
 ==================================================================================================================================
 rhasta,
 lycan,
