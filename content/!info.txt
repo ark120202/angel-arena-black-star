@@ -8,46 +8,29 @@ TODO LIST:
 -сделать войду купол на себя
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_1347]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://vk.com/wall-122685850_1350]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
 Angel Arena Black Star - Версия 1.2.3:
 
 Общее:
-	Переработан Heaven's Halberd
-	Добавлен новый предмет: Haganemushi
-	Добавлен новый предмет: Phantom Bone
-	Добавлен новый предмет: Phantom Cuirass
-	Добавлен новый предмет: Demonic Cuirass
-	Добавлен новый предмет: Spirital Scepter
 	
 Баланс:
-	Venomus Desolator:
-	-В рецепте теперь не используется Earth Essence
-	-Цена рецепта: 250 => 20250
-	Soul of Titan:
-	-Снижение брони: 10 => 40
-	-Цена: 0 => 3000
+	
 Исправления:
-	В блоке рецептов магазина теперь корректо отображаются строчки, содержащие более 6 предметов
+	
 ==================================================================================================================================
 Angel Arena Black Star - Version 1.2.3:
 
 General:
-	Reworked Heaven's Halberd
-	Added new item: Haganemushi
-	Added new item: Phantom Bone
-	Added new item: Phantom Cuirass
-	Added new item: Demonic Cuirass
-	Added new item: Spirital Scepter
+	
 Balance:
-	Venomus Desolator:
-	-Now not requires Earth Essence
-	-Recipe Cost: 250 => 20250
-	Soul of Titan:
-	-Armor Decrease: 10 => 40
-	-Cost: 0 => 3000
+	
 Fixes:
-	Fixed Shop recipe-box couldn't show more than 7 items in one row (for example you couldn't see all items that can be made using Perseverance)
-
+	
+	Improved perfomance in default interface mode;
+	Ursa - Fury Swipes: Cost: 1 => 2;
+	Ember Spirit - Sleight of Fist: Cost: 10 => 8;
+	Magnataur - Reverse Polarity now can't be refreshed using rearm;
+	Slightly changed ability shop background;
 ==================================================================================================================================
 rhasta,
 lycan,

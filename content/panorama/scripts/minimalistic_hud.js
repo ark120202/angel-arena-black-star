@@ -3,6 +3,7 @@ var PlayerTables = GameUI.CustomUIConfig().PlayerTables
 var m_AbilityPanels = []
 var m_BuffPanels = []
 var DOTA_ACTIVE_GAMEMODE_TYPE = null
+var CustomHudEnabled = false;
 
 function OnLevelUpClicked() {
 	if (Game.IsInAbilityLearnMode()) {
@@ -14,45 +15,79 @@ function OnLevelUpClicked() {
 
 function UpdatePanels() {
 	var unit = Players.GetLocalPlayerPortraitUnit()
-	$("#HPBar_LabelConst").text = Entities.GetHealth(unit) + "/" + Entities.GetMaxHealth(unit)
-	$("#HPBar_LabelRegen").text = " + " + Entities.GetHealthThinkRegen(unit).toFixed(1)
-	$("#HPBar_Progress").value = Entities.GetHealthPercent(unit)
-	$("#ManaBar_LabelConst").text = Entities.GetMana(unit) + "/" + Entities.GetMaxMana(unit)
-	$("#ManaBar_LabelRegen").text = " + " + Entities.GetManaThinkRegen(unit).toFixed(1)
-	var XpTable = PlayerTables.GetTableValue("arena", "gamemode_settings")["xp_table"]
-	var xpOverflow = 0
-	if (XpTable != null && XpTable[Entities.GetLevel(unit)] != null)
-		xpOverflow = XpTable[Entities.GetLevel(unit)]
-	if (Entities.GetNeededXPToLevel(unit) > 0) {
-		var current = Entities.GetCurrentXP(unit) - xpOverflow
-		var need = Entities.GetNeededXPToLevel(unit) - xpOverflow
-		$("#HeroNextLevelLabel").text = current + "/" + need
-		$("#HeroNextLevel").value = current / need * 100
-	} else {
-		$("#HeroNextLevelLabel").text = ""
-		$("#HeroNextLevel").value = $("#HeroNextLevel").max
+	if (CustomHudEnabled) {
+		$("#HPBar_LabelConst").text = Entities.GetHealth(unit) + "/" + Entities.GetMaxHealth(unit)
+		$("#HPBar_LabelRegen").text = " + " + Entities.GetHealthThinkRegen(unit).toFixed(1)
+		$("#HPBar_Progress").value = Entities.GetHealthPercent(unit)
+		$("#ManaBar_LabelConst").text = Entities.GetMana(unit) + "/" + Entities.GetMaxMana(unit)
+		$("#ManaBar_LabelRegen").text = " + " + Entities.GetManaThinkRegen(unit).toFixed(1)
+		var XpTable = PlayerTables.GetTableValue("arena", "gamemode_settings")["xp_table"]
+		var xpOverflow = 0
+		if (XpTable != null && XpTable[Entities.GetLevel(unit)] != null)
+			xpOverflow = XpTable[Entities.GetLevel(unit)]
+		if (Entities.GetNeededXPToLevel(unit) > 0) {
+			var current = Entities.GetCurrentXP(unit) - xpOverflow
+			var need = Entities.GetNeededXPToLevel(unit) - xpOverflow
+			$("#HeroNextLevelLabel").text = current + "/" + need
+			$("#HeroNextLevel").value = current / need * 100
+		} else {
+			$("#HeroNextLevelLabel").text = ""
+			$("#HeroNextLevel").value = $("#HeroNextLevel").max
+		}
+		if (Entities.GetMana(unit) >= Entities.GetMaxMana(unit))
+			$("#ManaBar_Progress").value = $("#ManaBar_Progress").max
+		else
+			$("#ManaBar_Progress").value = (Entities.GetMana(unit) / Entities.GetMaxMana(unit)) * 100
+
+		$("#DotaAttributeValue_damage").text = (Entities.GetDamageMin(unit) + ((Entities.GetDamageMax(unit) - Entities.GetDamageMin(unit)) / 2)).toFixed(0)
+		if (Entities.GetDamageBonus(unit) > 0) {
+			$("#DotaAttributeValue_damage_bonus").style.visibility = "visible"
+			$("#DotaAttributeValue_damage_bonus").text = Entities.GetDamageBonus(unit)
+			$("#DotaAttributeValue_damage").text = $("#DotaAttributeValue_damage").text + " + "
+		} else {
+			$("#DotaAttributeValue_damage_bonus").style.visibility = "collapse"
+		}
+
+		$("#DotaAttributeValue_movespeed").text = Entities.GetMoveSpeedModifier(unit, Entities.GetBaseMoveSpeed(unit)).toFixed(0)
+		$("#DotaAttributeValue_armor").text = Entities.GetArmorForDamageType(unit, DAMAGE_TYPES.DAMAGE_TYPE_PHYSICAL).toFixed(0) + " (" + Math.floor(Entities.GetArmorReductionForDamageType(unit, DAMAGE_TYPES.DAMAGE_TYPE_PHYSICAL) * 100) + "%)"
+		$("#DotaAttributeValue_magic_resist").text = (Entities.GetArmorReductionForDamageType(unit, DAMAGE_TYPES.DAMAGE_TYPE_MAGICAL) * 100).toFixed(0) + "%"
+		$("#DotaAttributeValue_attackspeed").text = Entities.GetSecondsPerAttack(unit).toFixed(2) + " (" + (Entities.GetIncreasedAttackSpeed(unit) * 100).toFixed(0) + ")"
+		$("#DotaAttributeValue_range").text = Entities.GetAttackRange(unit)
+
+		$.GetContextPanel().SetHasClass("HeroDead", !Entities.IsAlive(Players.GetLocalPlayerPortraitUnit()))
+
+		var attribute_bonus_arena = Entities.GetAbilityByName(unit, "attribute_bonus_arena")
+		$("#AttributePanelStackAttributes").hittest = Entities.GetAbilityPoints(unit) > 0 && (Game.IsInAbilityLearnMode() || GameUI.IsControlDown())
+		$("#AttributePanelStackAttributes").SetHasClass("LearnableAttributes", Entities.GetAbilityPoints(unit) > 0)
+
+		var nBuffs = Entities.GetNumBuffs(unit);
+		var nUsedPanels = 0;
+		for (var i = 0; i < nBuffs; ++i) {
+			var buffSerial = Entities.GetBuff(unit, i);
+			if (buffSerial != -1 && !Buffs.IsHidden(unit, buffSerial)) {
+				if (nUsedPanels >= m_BuffPanels.length) {
+					var buffPanel = CreateSnippet_Buff($.CreatePanel("Panel", $("#BuffsPanel"), ""))
+					m_BuffPanels.push(buffPanel);
+				}
+				var buffPanel = m_BuffPanels[nUsedPanels];
+				buffPanel.SetBuff(buffSerial, unit);
+				nUsedPanels++;
+			}
+		}
+		for (var i = nUsedPanels; i < m_BuffPanels.length; ++i) {
+			var buffPanel = m_BuffPanels[i];
+			buffPanel.SetBuff(-1, -1);
+		}
+		var courier = FindCourier(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()))
+		if (courier != null) {
+			var courier_burst = Entities.GetAbilityByName(courier, "courier_burst")
+			var in_cooldown = !Abilities.IsCooldownReady(courier_burst)
+			$("#CourierBurstCooldownPanel").SetHasClass("in_cooldown", in_cooldown);
+			if (in_cooldown)
+				$("#CourierBurstCooldownLabel").text = Abilities.GetCooldownTimeRemaining(courier_burst).toFixed(0)
+		}
+		$.GetContextPanel().SetHasClass("is_enemy", Entities.IsEnemy(unit))
 	}
-	if (Entities.GetMana(unit) >= Entities.GetMaxMana(unit))
-		$("#ManaBar_Progress").value = $("#ManaBar_Progress").max
-	else
-		$("#ManaBar_Progress").value = (Entities.GetMana(unit) / Entities.GetMaxMana(unit)) * 100
-
-	$("#DotaAttributeValue_damage").text = (Entities.GetDamageMin(unit) + ((Entities.GetDamageMax(unit) - Entities.GetDamageMin(unit)) / 2)).toFixed(0)
-	if (Entities.GetDamageBonus(unit) > 0) {
-		$("#DotaAttributeValue_damage_bonus").style.visibility = "visible"
-		$("#DotaAttributeValue_damage_bonus").text = Entities.GetDamageBonus(unit)
-		$("#DotaAttributeValue_damage").text = $("#DotaAttributeValue_damage").text + " + "
-	} else {
-		$("#DotaAttributeValue_damage_bonus").style.visibility = "collapse"
-	}
-
-	$("#DotaAttributeValue_movespeed").text = Entities.GetMoveSpeedModifier(unit, Entities.GetBaseMoveSpeed(unit)).toFixed(0)
-	$("#DotaAttributeValue_armor").text = Entities.GetArmorForDamageType(unit, DAMAGE_TYPES.DAMAGE_TYPE_PHYSICAL).toFixed(0) + " (" + Math.floor(Entities.GetArmorReductionForDamageType(unit, DAMAGE_TYPES.DAMAGE_TYPE_PHYSICAL) * 100) + "%)"
-	$("#DotaAttributeValue_magic_resist").text = (Entities.GetArmorReductionForDamageType(unit, DAMAGE_TYPES.DAMAGE_TYPE_MAGICAL) * 100).toFixed(0) + "%"
-	$("#DotaAttributeValue_attackspeed").text = Entities.GetSecondsPerAttack(unit).toFixed(2) + " (" + (Entities.GetIncreasedAttackSpeed(unit) * 100).toFixed(0) + ")"
-	$("#DotaAttributeValue_range").text = Entities.GetAttackRange(unit)
-
-	$.GetContextPanel().SetHasClass("HeroDead", !Entities.IsAlive(Players.GetLocalPlayerPortraitUnit()))
 
 	if (Game.IsInAbilityLearnMode()) {
 		if (Entities.GetAbilityPoints(unit) <= 0) {
@@ -60,10 +95,6 @@ function UpdatePanels() {
 			UpdateAbilities()
 		}
 	}
-
-	var attribute_bonus_arena = Entities.GetAbilityByName(unit, "attribute_bonus_arena")
-	$("#AttributePanelStackAttributes").hittest = Entities.GetAbilityPoints(unit) > 0 && (Game.IsInAbilityLearnMode() || GameUI.IsControlDown())
-	$("#AttributePanelStackAttributes").SetHasClass("LearnableAttributes", Entities.GetAbilityPoints(unit) > 0)
 	$("#GoldLabel").text = ""
 	goldCheck:
 		if (Players.GetTeam(Game.GetLocalPlayerID()) == Entities.GetTeamNumber(unit)) {
@@ -79,33 +110,6 @@ function UpdatePanels() {
 		}
 
 
-	var nBuffs = Entities.GetNumBuffs(unit);
-	var nUsedPanels = 0;
-	for (var i = 0; i < nBuffs; ++i) {
-		var buffSerial = Entities.GetBuff(unit, i);
-		if (buffSerial != -1 && !Buffs.IsHidden(unit, buffSerial)) {
-			if (nUsedPanels >= m_BuffPanels.length) {
-				var buffPanel = CreateSnippet_Buff($.CreatePanel("Panel", $("#BuffsPanel"), ""))
-				m_BuffPanels.push(buffPanel);
-			}
-			var buffPanel = m_BuffPanels[nUsedPanels];
-			buffPanel.SetBuff(buffSerial, unit);
-			nUsedPanels++;
-		}
-	}
-	for (var i = nUsedPanels; i < m_BuffPanels.length; ++i) {
-		var buffPanel = m_BuffPanels[i];
-		buffPanel.SetBuff(-1, -1);
-	}
-	var courier = FindCourier(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()))
-	if (courier != null) {
-		var courier_burst = Entities.GetAbilityByName(courier, "courier_burst")
-		var in_cooldown = !Abilities.IsCooldownReady(courier_burst)
-		$("#CourierBurstCooldownPanel").SetHasClass("in_cooldown", in_cooldown);
-		if (in_cooldown)
-			$("#CourierBurstCooldownLabel").text = Abilities.GetCooldownTimeRemaining(courier_burst).toFixed(0)
-	}
-	$.GetContextPanel().SetHasClass("is_enemy", Entities.IsEnemy(unit))
 }
 
 function UpgradeAttributeBonus() {
@@ -368,67 +372,24 @@ function SelectPortraitUnit() {
 }
 
 function SetMinimalisticUIEnabled(value) {
+	CustomHudEnabled = value
 	value = !value
 	GetDotaHud().SetHasClass("MinimalisticHudDisabled", value)
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_PANEL, value)
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_PANEL, value)
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_COURIER, value)
+	if (CustomHudEnabled) {
+		UpdateSelection()
+	}
 }
 
-(function() {
-	GameUI.SetRenderTopInsetOverride(0)
-	GameUI.SetRenderBottomInsetOverride(0)
-	try {
-		AutoUpdatePanels()
-	} catch (err) {}
-	try {
-		UpdateAbilities()
-	} catch (err) {}
-
-	GameEvents.Subscribe("dota_ability_changed", UpdateAbilities)
-	GameEvents.Subscribe("dota_portrait_ability_layout_changed", UpdateAbilities)
-	GameEvents.Subscribe("dota_hero_ability_points_changed", UpdateAbilities)
-	var OnKill = function() {
-		$("#KDA_Value_KDAHL").text = Players.GetKills(Game.GetLocalPlayerID()) + "/" + Players.GetDeaths(Game.GetLocalPlayerID()) + "/" + Players.GetAssists(Game.GetLocalPlayerID()) + "/" + Players.GetLastHits(Game.GetLocalPlayerID())
-	}
-	GameEvents.Subscribe("entity_killed", OnKill)
-	var UpdateStats = function() {
+function UpdateSelection() {
+	$.Schedule(0.03, function() {
 		var unit = Players.GetLocalPlayerPortraitUnit()
-		var ServersideAttributes = PlayerTables.GetTableValue("entity_attributes", unit)
-		if (ServersideAttributes != null) {
-			$("#AttributePanelStackAttributes").style.opacity = 1
-			$("#DotaAttributeValue_spell_amplify").GetParent().style.opacity = 1
-			$("#DotaAttributeValue_1").text = ServersideAttributes.str.toFixed(0)
-			$("#DotaAttributeValue_2").text = ServersideAttributes.agi.toFixed(0)
-			$("#DotaAttributeValue_3").text = ServersideAttributes.int.toFixed(0)
-			$("#DotaAttributeValue_1_gain").text = " +(" + ServersideAttributes.str_gain.toFixed(1) + ")"
-			$("#DotaAttributeValue_2_gain").text = " +(" + ServersideAttributes.agi_gain.toFixed(1) + ")"
-			$("#DotaAttributeValue_3_gain").text = " +(" + ServersideAttributes.int_gain.toFixed(1) + ")"
-			for (var i = 1; i <= 3; i++) {
-				$("#DotaAttributePic_" + i).SetHasClass("PrimaryAttribute", i - 1 == ServersideAttributes.attribute_primary)
-			}
-			$("#DotaAttributeValue_spell_amplify").text = ServersideAttributes.spell_amplify.toFixed(2) + "%"
-		} else {
-			$("#AttributePanelStackAttributes").style.opacity = 0
-			$("#DotaAttributeValue_spell_amplify").GetParent().style.opacity = 0
-		}
-
-		var heroName = GetHeroName(unit)
-		$("#HeroAvatarImage").SetImage(TransformTextureToPath(heroName))
-		$("#HeroName").text = $.Localize(heroName)
-		$("#DefaultInterfaceHeroName").text = $.Localize(heroName)
-	}
-	PlayerTables.SubscribeNetTableListener("entity_attributes", UpdateStats)
-	var UpdateLevels = function() {
-		$("#HeroLevelLabel").text = Entities.GetLevel(Players.GetLocalPlayerPortraitUnit())
-	}
-	GameEvents.Subscribe("dota_player_gained_level", UpdateLevels)
-	var UpdateSelection = function() {
-		$.Schedule(0.03, function() {
-			var unit = Players.GetLocalPlayerPortraitUnit()
+		UpdateAbilities()
+		if (CustomHudEnabled) {
 			UpdateStats()
 			UpdateLevels()
-			UpdateAbilities()
 			var SelectedEntities = Players.GetSelectedEntities(Game.GetLocalPlayerID())
 			if (SelectedEntities.length > 1) {
 				$("#SelectedEntitiesPanel").style.visibility = "visible"
@@ -456,7 +417,6 @@ function SetMinimalisticUIEnabled(value) {
 						})
 						if (Entities.IsIllusion(SelectedEntities[key]))
 							panel.style.washColor = "rgba(95,215,255, 220)";
-						$.Msg(Entities.IsAlive(SelectedEntities[key]))
 						if (!Entities.IsAlive(SelectedEntities[key]))
 							panel.style.washColor = "rgba(60,60,60, 220)";
 						if (Entities.GetUnitName(SelectedEntities[key]).lastIndexOf("npc_dota_hero_", 0) != 0) {
@@ -469,8 +429,60 @@ function SetMinimalisticUIEnabled(value) {
 				$("#SelectedEntitiesPanel").style.visibility = "collapse"
 				$("#AttributesPanelStacks").style.opacity = 1
 			}
-		})
+		}
+	});
+}
+
+(function() {
+	GameUI.SetRenderTopInsetOverride(0)
+	GameUI.SetRenderBottomInsetOverride(0)
+	try {
+		AutoUpdatePanels()
+	} catch (err) {}
+	try {
+		UpdateAbilities()
+	} catch (err) {}
+
+	GameEvents.Subscribe("dota_ability_changed", UpdateAbilities)
+	GameEvents.Subscribe("dota_portrait_ability_layout_changed", UpdateAbilities)
+	GameEvents.Subscribe("dota_hero_ability_points_changed", UpdateAbilities)
+	var OnKill = function() {
+		$("#KDA_Value_KDAHL").text = Players.GetKills(Game.GetLocalPlayerID()) + "/" + Players.GetDeaths(Game.GetLocalPlayerID()) + "/" + Players.GetAssists(Game.GetLocalPlayerID()) + "/" + Players.GetLastHits(Game.GetLocalPlayerID())
 	}
+	GameEvents.Subscribe("entity_killed", OnKill)
+	var UpdateStats = function() {
+		var unit = Players.GetLocalPlayerPortraitUnit()
+		var heroName = GetHeroName(unit)
+		if (CustomHudEnabled) {
+			var ServersideAttributes = PlayerTables.GetTableValue("entity_attributes", unit)
+			if (ServersideAttributes != null) {
+				$("#AttributePanelStackAttributes").style.opacity = 1
+				$("#DotaAttributeValue_spell_amplify").GetParent().style.opacity = 1
+				$("#DotaAttributeValue_1").text = ServersideAttributes.str.toFixed(0)
+				$("#DotaAttributeValue_2").text = ServersideAttributes.agi.toFixed(0)
+				$("#DotaAttributeValue_3").text = ServersideAttributes.int.toFixed(0)
+				$("#DotaAttributeValue_1_gain").text = " +(" + ServersideAttributes.str_gain.toFixed(1) + ")"
+				$("#DotaAttributeValue_2_gain").text = " +(" + ServersideAttributes.agi_gain.toFixed(1) + ")"
+				$("#DotaAttributeValue_3_gain").text = " +(" + ServersideAttributes.int_gain.toFixed(1) + ")"
+				for (var i = 1; i <= 3; i++) {
+					$("#DotaAttributePic_" + i).SetHasClass("PrimaryAttribute", i - 1 == ServersideAttributes.attribute_primary)
+				}
+				$("#DotaAttributeValue_spell_amplify").text = ServersideAttributes.spell_amplify.toFixed(2) + "%"
+			} else {
+				$("#AttributePanelStackAttributes").style.opacity = 0
+				$("#DotaAttributeValue_spell_amplify").GetParent().style.opacity = 0
+			}
+			$("#HeroAvatarImage").SetImage(TransformTextureToPath(heroName))
+			$("#HeroName").text = $.Localize(heroName)
+		}
+		$("#DefaultInterfaceHeroName").text = $.Localize(heroName)
+	}
+	PlayerTables.SubscribeNetTableListener("entity_attributes", UpdateStats)
+	var UpdateLevels = function() {
+		if (CustomHudEnabled)
+			$("#HeroLevelLabel").text = Entities.GetLevel(Players.GetLocalPlayerPortraitUnit())
+	}
+	GameEvents.Subscribe("dota_player_gained_level", UpdateLevels)
 	GameEvents.Subscribe("dota_player_update_hero_selection", UpdateSelection)
 	GameEvents.Subscribe("dota_player_update_selected_unit", UpdateSelection)
 	GameEvents.Subscribe("dota_player_update_query_unit", UpdateSelection)
@@ -484,5 +496,5 @@ function SetMinimalisticUIEnabled(value) {
 		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null)
 			DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
 	})
-	SetMinimalisticUIEnabled(false)
+	SetMinimalisticUIEnabled(CustomHudEnabled)
 })()

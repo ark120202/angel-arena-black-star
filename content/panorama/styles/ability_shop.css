@@ -49,9 +49,8 @@
 	align: center center;
 	width: 1550px;
 	height: 800px;
-	background-color: rgba(0,0,0,250);
+	background-image: url("file://{images}/custom_game/ability_shop/background.png");
 	flow-children: down;
-	border: 5px solid rgb(90,90,90);
 	border-radius: 12px;
 	transition-property: opacity;
 	transition-duration: 0.15s;
@@ -66,7 +65,7 @@
 {
 	height: 40px;
 	width: 100%;
-	background-color: rgb(90,90,90);
+	background-color: rgb(40,40,40);
 	flow-children: right;
 }
 
@@ -98,13 +97,17 @@
 {
 	width: 100%;
 	height: 20%;
-	background-color: #333;
+	margin: 7px;
+	margin-top: 0;
 }
 
 #MainSearchRoot
 {
 	width: 100%;
 	height: 100%;
+	margin: 6px;
+	margin-left: 32px;
+	margin-right: 12px;
 	visibility: collapse;
 	flow-children: right-wrap;
 	overflow: squish scroll;
