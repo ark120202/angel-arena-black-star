@@ -58,6 +58,7 @@ ABILITY_SHOP_DATA = {
 	["razor_plasma_field"] = { cost = 5 },
 	["doom_bringer_devour"] = { cost = 3 },
 	["techies_suicide"] = { cost = 6 },
+	["zen_gehraz_mystic_twister"] = { cost = 3 },
 
 }
 

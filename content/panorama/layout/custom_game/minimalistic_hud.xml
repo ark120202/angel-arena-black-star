@@ -180,7 +180,7 @@
 		</Panel>
 
 		<Panel id="PlayerControls" hittest="false">
-			<Label class="PlayerControlsButton" text="1x1" onactivate="GameEvents.SendCustomGameEventToServer('hud_buttons_show_duel1x1call', {playerid: Game.GetLocalPlayerID()})"/>
+			<Label id="PlayerControls_1x1" class="PlayerControlsButton" text="1x1" onactivate="GameEvents.SendCustomGameEventToServer('hud_buttons_show_duel1x1call', {playerid: Game.GetLocalPlayerID()})"/>
 			<Label class="PlayerControlsButton" text="?" onactivate="GameEvents.SendCustomGameEventToServer('hud_buttons_show_custom_game_info', {playerid: Game.GetLocalPlayerID()})"/>
 			<Label class="PlayerControlsButton" text="I" onactivate="SetMinimalisticUIEnabled(GetDotaHud().BHasClass('MinimalisticHudDisabled'))"/>
 		</Panel>

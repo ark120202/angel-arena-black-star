@@ -94,9 +94,23 @@ function PanoramaShop:InitializeItemTable()
 			end
 		end
 	end
+	local allItembuilds = {}
+	table.merge(allItembuilds, VALVE_ITEMBUILDS)
+
+	local itembuilds = {}
+	for _,v in ipairs(allItembuilds) do
+		if not itembuilds[v.hero] then itembuilds[v.hero] = {} end
+		table.insert(itembuilds[v.hero], {
+			title = v.title,
+			author = v.author,
+			patch = v.patch,
+			description = v.description,
+			items = v.items,
+		})
+	end
 	PanoramaShop._ItemData = Items
 	CustomGameEventManager:RegisterListener("panorama_shop_item_buy", Dynamic_Wrap(PanoramaShop, "OnItemBuy"))
-	PlayerTables:CreateTable("panorama_shop_data", {ItemData = PanoramaShop.FormattedData, ShopList = Items}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+	PlayerTables:CreateTable("panorama_shop_data", {ItemData = PanoramaShop.FormattedData, ShopList = Items, Itembuilds = itembuilds}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 end
 
 --[[function PanoramaShop:OnItemBuy(data)

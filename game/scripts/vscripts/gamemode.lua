@@ -41,6 +41,7 @@ local requirements = {
 	"data/settings",
 	"data/wearables",
 	"data/shop",
+	"data/itembuilds",
 	--------------------------------------------------
 	"internal/gamemode",
 	"internal/events",
@@ -72,9 +73,9 @@ GameModes:Preload()
 
 GameRules.CreateProjectile = Projectiles.CreateProjectile
 
-LinkLuaModifier( "modifier_state_hidden", "modifiers/modifier_state_hidden", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_banned", "modifiers/modifier_banned", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_item_shard_attackspeed_stack", "items/lua/modifiers/modifier_item_shard_attackspeed_stack", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_state_hidden", "modifiers/modifier_state_hidden", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_banned", "modifiers/modifier_banned", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_shard_attackspeed_stack", "items/lua/modifiers/modifier_item_shard_attackspeed_stack", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_apocalypse_apocalypse", "heroes/hero_apocalypse/modifier_apocalypse_apocalypse.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_custom_attack_range_melee", "modifiers/modifier_custom_attack_range_melee.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_charges", "libraries/modifiers/modifier_charges.lua", LUA_MODIFIER_MOTION_NONE)
@@ -90,9 +91,16 @@ function GameMode:OnFirstPlayerLoaded()
 	Containers:UsePanoramaInventory(true)
 	HeroSelection:PrepareTables()
 	PanoramaShop:InitializeItemTable()
-	CreateLoopedPortal(Entities:FindByName(nil, "target_mark_teleport_river_team2"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_teleport_river_team3"):GetAbsOrigin(), 80, "particles/customgames/capturepoints/cp_wood.vpcf", "", true)
+	local portal2 = Entities:FindByName(nil, "target_mark_teleport_river_team2")
+	local portal3 = Entities:FindByName(nil, "target_mark_teleport_river_team3")
+	if portal2 and portal3 then
+		CreateLoopedPortal(portal2:GetAbsOrigin(), portal3:GetAbsOrigin(), 80, "particles/customgames/capturepoints/cp_wood.vpcf", "", true)
+	end
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
 		AbilityShop:PostAbilityData()
+	end
+	if DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_HOLDOUT_5 then
+		Holdout:Init()
 	end
 	if SERVER_LOGGING then
 		InitLogFile("log/arena_log.txt", "\n\n\n\nAngel Arena Black Star Gamemode Log:\n")
@@ -168,31 +176,35 @@ function GameMode:OnGameInProgress()
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[3] = true
-	Bosses:InitAllBosses()
-	Bosses.BossKeeperEntity = Entities:FindByName(nil, "npc_dota_boss_keeper")
-	Duel:CreateGlobalTimer()
-	ContainersHelper:CreateShops()
-	Spawner:RegisterTimers()
-	Scepters:SetGlobalScepterThink()
+	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
+		Bosses.BossKeeperEntity = Entities:FindByName(nil, "npc_dota_boss_keeper")
+		Bosses:InitAllBosses()
+		Duel:CreateGlobalTimer()
+		ContainersHelper:CreateShops()
+		Spawner:RegisterTimers()
 
-	local sum = 0
-	local count = 0
-	for _,v in pairs(PLAYER_DATA) do
-		if v.GameModeVote then
-			count = count + 1
-			sum = sum + v.GameModeVote
+		local sum = 0
+		local count = 0
+		for _,v in pairs(PLAYER_DATA) do
+			if v.GameModeVote then
+				sum = sum + v.GameModeVote
+				count = count + 1
+			end
 		end
-	end
-	local result
-	if count >= 1 then
-		result = math.floor(sum / count)
+		local result
+		if count >= 1 then
+			result = math.floor(sum / count)
+		else
+			result = DOTA_KILL_GOAL_VOTE_STANDART
+		end
+		GameRules:SetKillGoal(result)
 	else
-		result = DOTA_KILL_GOAL_VOTE_STANDART
+		Holdout:Start()
 	end
-	GameRules:SetKillGoal(result)
+	Scepters:SetGlobalScepterThink()
 	Timers:CreateTimer(GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
 end
---MakePlayerAbandoned(0)
+
 -- This function initializes the game mode and is called before anyone loads into the game
 -- It can be used to pre-initialize any values/tables that will be needed later
 function GameMode:InitGameMode()
@@ -211,6 +223,7 @@ function GameMode:InitGameMode()
 			kill_goal_vote_min = DOTA_KILL_GOAL_VOTE_MIN,
 			kill_goal_vote_max = DOTA_KILL_GOAL_VOTE_MAX,
 			xp_table = XP_PER_LEVEL_TABLE,
+			gamemode = DOTA_ACTIVE_GAMEMODE,
 			gamemode_type = DOTA_ACTIVE_GAMEMODE_TYPE,
 		},
 		players_abandoned = {},

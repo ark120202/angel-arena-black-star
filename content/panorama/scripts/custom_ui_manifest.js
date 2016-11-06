@@ -109,10 +109,11 @@ GameUI.SetMouseCallback(function(eventName, arg) {
 	}*/
 	return result;
 });
-RegisterKeybind("EnterPressed")
-RegisterKeybind("F4Pressed")
-RegisterKeybind("F5Pressed")
-RegisterKeybind("F8Pressed")
+RegisterKeybind("EnterPressed");
+RegisterKeybind("F4Pressed");
+RegisterKeybind("F5Pressed");
+RegisterKeybind("F8Pressed");
+
 GameUI.CustomUIConfig().IsContains = (function(array, element) {
 	for (var key in array) {
 		if (array[key] == element) {
@@ -120,4 +121,6 @@ GameUI.CustomUIConfig().IsContains = (function(array, element) {
 		}
 	}
 	return false
-})
+});
+/*var a = new Date();
+$.Msg(a.getDate() + "   " + (a.getMonth() + 1))*/

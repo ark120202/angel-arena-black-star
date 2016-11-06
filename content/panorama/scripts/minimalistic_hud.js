@@ -1,8 +1,7 @@
 "use strict";
-var PlayerTables = GameUI.CustomUIConfig().PlayerTables
-var m_AbilityPanels = []
-var m_BuffPanels = []
-var DOTA_ACTIVE_GAMEMODE_TYPE = null
+var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
+var m_AbilityPanels = [];
+var m_BuffPanels = [];
 var CustomHudEnabled = false;
 
 function OnLevelUpClicked() {
@@ -216,7 +215,7 @@ function CreateSnippet_Ability(panel) {
 			}
 
 			var canUpgrade = (Abilities.CanAbilityBeUpgraded(panel.ability) == AbilityLearnResult_t.ABILITY_CAN_BE_UPGRADED)
-			panel.SetHasClass("learnable_ability", Game.IsInAbilityLearnMode() && canUpgrade && DOTA_ACTIVE_GAMEMODE_TYPE != DOTA_GAMEMODE_TYPE_ABILITY_SHOP)
+			panel.SetHasClass("learnable_ability", Game.IsInAbilityLearnMode() && canUpgrade && GameUI.CustomUIConfig().DOTA_ACTIVE_GAMEMODE_TYPE != DOTA_GAMEMODE_TYPE_ABILITY_SHOP)
 		}
 	}
 	panel.AutoUpdate = function() {
@@ -390,6 +389,7 @@ function OnKill() {
 function UpdateStats() {
 	var unit = Players.GetLocalPlayerPortraitUnit()
 	var heroName = GetHeroName(unit)
+	$("#DefaultInterfaceHeroName").text = $.Localize(heroName)
 	if (CustomHudEnabled) {
 		var ServersideAttributes = PlayerTables.GetTableValue("entity_attributes", unit)
 		if (ServersideAttributes != null) {
@@ -412,7 +412,6 @@ function UpdateStats() {
 		$("#HeroAvatarImage").SetImage(TransformTextureToPath(heroName))
 		$("#HeroName").text = $.Localize(heroName)
 	}
-	$("#DefaultInterfaceHeroName").text = $.Localize(heroName)
 }
 
 function UpdateLevels() {
@@ -424,9 +423,9 @@ function UpdateSelection() {
 	$.Schedule(0.03, function() {
 		var unit = Players.GetLocalPlayerPortraitUnit()
 		UpdateAbilities()
+		UpdateStats()
+		UpdateLevels()
 		if (CustomHudEnabled) {
-			UpdateStats()
-			UpdateLevels()
 			var SelectedEntities = Players.GetSelectedEntities(Game.GetLocalPlayerID())
 			if (SelectedEntities.length > 1) {
 				$("#SelectedEntitiesPanel").style.visibility = "visible"
@@ -496,8 +495,16 @@ function UpdateSelection() {
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		if (changesObject["courier_owner" + Players.GetTeam(Game.GetLocalPlayerID())] != null)
 			SetCourierTartget(changesObject["courier_owner" + Players.GetTeam(Game.GetLocalPlayerID())])
-		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null)
-			DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
+		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
+			$("#PlayerControls_1x1").visible = changesObject["gamemode_settings"]["gamemode"] != DOTA_GAMEMODE_HOLDOUT_5
+		}
 	})
 	SetMinimalisticUIEnabled(CustomHudEnabled)
+
+	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
+		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
+			GameUI.CustomUIConfig().DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
+			GameUI.CustomUIConfig().DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
+		}
+	})
 })()

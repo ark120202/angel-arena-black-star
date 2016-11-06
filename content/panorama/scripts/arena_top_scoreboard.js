@@ -24,8 +24,7 @@ function UpdateScoreboard() {
 	} else if ($("#timerImageMask1").darknessEndTime == null || ($("#timerImageMask1").darknessEndTime < Game.GetDOTATime(false, false) && $("#timerImageMask1").visible)) {
 		$("#timerImageMask1").visible = false
 	}
-	var duelTimer = PlayerTables.GetTableValue("arena", "duel_timer")
-	_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "duelTimerLabel", secondsToHms(duelTimer))
+	//g_ScoreboardHandle.scoreboardPanel.FindChildInLayoutFile("duelTimerLabel");
 
 	$.Schedule(0.2, UpdateScoreboard);
 }
@@ -66,45 +65,62 @@ function ShowScoreboardVisible() {
 	$("#TopBarScoreboard").visible = true
 }
 
-function UpdateKillGoal(tableName, changesObject, deletionsObject) {
-	if (changesObject["kill_goal"]) {
-		$("#KillGoalLabel").text = changesObject["kill_goal"]
-	}
-}
-
-(function() {
-	GameEvents.Subscribe("time_hide", HideScoreboardVisible)
-	GameEvents.Subscribe("time_show", ShowScoreboardVisible)
-	PlayerTables.SubscribeNetTableListener("arena", UpdateKillGoal)
-	var current_goal = PlayerTables.GetTableValue("arena", "kill_goal")
-	if (current_goal != null) {
-		$("#KillGoalLabel").text = current_goal
-	}
-	ShowScoreboard()
-	if (!Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME)) {
-		HideScoreboardVisible()
-	}
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false)
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, false)
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND, false)
-
-})();
-
 function secondsToHms(seconds) {
-	var sec_num = parseInt(seconds, 10); // don't forget the second param
+	var sec_num = parseInt(seconds, 10);
 	var hours = Math.floor(sec_num / 3600);
 	var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
 	var seconds = sec_num - (hours * 3600) - (minutes * 60);
 
-	if (hours < 10) {
+	if (hours < 10)
 		hours = "0" + hours;
-	}
-	if (minutes < 10) {
+	if (minutes < 10)
 		minutes = "0" + minutes;
-	}
-	if (seconds < 10) {
+	if (seconds < 10)
 		seconds = "0" + seconds;
-	}
-	var time = hours + ':' + minutes + ':' + seconds;
-	return time;
+	return hours + ':' + minutes + ':' + seconds;
 }
+
+function secondsToMS(seconds) {
+	var sec_num = parseInt(seconds, 10);
+	var minutes = Math.floor(sec_num / 60);
+	var seconds = Math.floor(sec_num - minutes * 60);
+
+	if (minutes < 10)
+		minutes = "0" + minutes;
+	if (seconds < 10)
+		seconds = "0" + seconds;
+	return minutes + ':' + seconds;
+}
+
+(function() {
+	GameEvents.Subscribe("time_hide", HideScoreboardVisible);
+	GameEvents.Subscribe("time_show", ShowScoreboardVisible);
+	ShowScoreboard();
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false);
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, false);
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND, false);
+	if (!Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME)) {
+		HideScoreboardVisible();
+	}
+
+	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
+		var current_goal = changesObject["kill_goal"];
+		if (current_goal != null) {
+			$("#KillGoalLabel").text = current_goal;
+		}
+		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
+			if (changesObject["gamemode_settings"]["gamemode"] == DOTA_GAMEMODE_HOLDOUT_5) {
+				$("#KillGoalPanel").visible = false;
+				$("#duelTimerLabel_base").text = "1" + $.Localize("holdout_timer_label");
+			}
+		}
+		if (changesObject["duel_timer"] != null)
+			_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "duelTimerLabel", secondsToMS(Number(changesObject["duel_timer"])));
+		if (changesObject["holdout_wave_num"] != null)
+			_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "duelTimerLabel_base", changesObject["holdout_wave_num"] + $.Localize("holdout_timer_label"));
+		if (changesObject["holdout_timer"] != null)
+			_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "duelTimerLabel", secondsToMS(changesObject["holdout_timer"]));
+		if (changesObject["holdout_killed_units"] != null)
+			_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "duelTimerLabel", changesObject["holdout_killed_units"]);
+	})
+})();

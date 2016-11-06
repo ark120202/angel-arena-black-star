@@ -203,6 +203,8 @@
 		"panorama_shop_shop_tab_3"								"NEW ITEMS"
 		"panorama_shop_search_placeholder"						"Search..."
 		"panorama_shop_shop_label"								"SHOP"
+		"panorama_shop_itembuild_author"						"Author:"
+		"panorama_shop_itembuild_patch"							"Map Version:"
 
 		"custom_end_screen_legend_lasthits"						"LH"
 
@@ -213,5 +215,6 @@
 		"ability_shop_purchased_only"							"Show purchased abilities"
 		"ability_shop_search_placeholder"						"Ability or hero name..."
 
+		"holdout_timer_label"									" wave:"
 	}
 }

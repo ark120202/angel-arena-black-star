@@ -412,7 +412,8 @@
 {
 	color: white;
 	font-weight: bold;
-	vertical-align: center;
+	align: right center;
+	margin-right: 25px;
 }
 
 

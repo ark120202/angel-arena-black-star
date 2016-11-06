@@ -1310,9 +1310,9 @@ function FindNearestEntity(vec3, units)
 	local unit
 	local range
 	for _,v in ipairs(units) do
-		if not range or (v-vec3):Length2D() < range then
+		if not range or (v:GetAbsOrigin()-vec3):Length2D() < range then
 			unit = v
-			range = (v-vec3):Length2D()
+			range = (v:GetAbsOrigin()-vec3):Length2D()
 		end
 	end
 	return unit
@@ -1387,4 +1387,8 @@ function GetPlayersInTeam(team)
 		end
 	end
 	return players
+end
+
+function CDOTA_BaseNPC:IsHoldoutUnit()
+	return self.HoldoutSpawner and self.HoldoutWave
 end

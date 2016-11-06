@@ -18,7 +18,7 @@
 			<Panel hittest="false" id="MultiteamScoreboard">
 				<Panel id="duelTimerPanel">
 					<Label id="duelTimerLabel_base" text="#duel_timer_label" />
-					<Label id="duelTimerLabel" text="00:00:00" />
+					<Label id="duelTimerLabel" text="00:00" />
 				</Panel>
 				<Panel id="timerPanel">
 					<Panel id="timerImgPanel" >

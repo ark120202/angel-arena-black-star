@@ -1,13 +1,16 @@
 function GameMode:RegisterCustomListeners()
-	CustomGameEventManager:RegisterListener("hud_buttons_show_duel1x1call", Dynamic_Wrap(GameMode, "ButtonsShowDuel1x1Menu"))
-	CustomGameEventManager:RegisterListener("duel1x1call_send_call", Dynamic_Wrap(GameMode, "SendDuel1x1Call"))
 	CustomGameEventManager:RegisterListener("custom_chat_send_message", Dynamic_Wrap(GameMode, "CustomChatSendMessage"))
 	CustomGameEventManager:RegisterListener("metamorphosis_elixir_cast", Dynamic_Wrap(GameMode, "MetamorphosisElixirCast"))
 	CustomGameEventManager:RegisterListener("hell_hero_change_cast", Dynamic_Wrap(GameMode, "HellHeroChangeCast"))
 	CustomGameEventManager:RegisterListener("heaven_hero_change_cast", Dynamic_Wrap(GameMode, "HeavenHeroChangeCast"))
 	CustomGameEventManager:RegisterListener("hud_buttons_show_custom_game_info", Dynamic_Wrap(GameMode, "ButtonsShowInfo"))
-	CustomGameEventManager:RegisterListener("submit_gamemode_vote", Dynamic_Wrap(GameMode, "SubmitGamemodeVote"))
 	CustomGameEventManager:RegisterListener("hud_courier_burst", Dynamic_Wrap(GameMode, "BurstCourier"))
+
+	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
+		CustomGameEventManager:RegisterListener("hud_buttons_show_duel1x1call", Dynamic_Wrap(GameMode, "ButtonsShowDuel1x1Menu"))
+		CustomGameEventManager:RegisterListener("duel1x1call_send_call", Dynamic_Wrap(GameMode, "SendDuel1x1Call"))
+		CustomGameEventManager:RegisterListener("submit_gamemode_vote", Dynamic_Wrap(GameMode, "SubmitGamemodeVote"))
+	end
 end
 
 function GameMode:MetamorphosisElixirCast(data)

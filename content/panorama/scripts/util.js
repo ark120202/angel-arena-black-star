@@ -1,6 +1,7 @@
 "use strict";
 
 var DOTA_GAMEMODE_5V5 = 0
+var DOTA_GAMEMODE_HOLDOUT_5 = 1
 var DOTA_GAMEMODE_TYPE_ALLPICK = 10
 var DOTA_GAMEMODE_TYPE_RANDOM_OMG = 11
 var DOTA_GAMEMODE_TYPE_ABILITY_SHOP = 12
@@ -133,12 +134,13 @@ function FindCourier(unit) {
 }
 
 function DynamicSubscribePTListener(table, callback) {
-	var tableData = PlayerTables.GetAllTableValues(table)
-	if (tableData != null) {
-		callback(table, tableData, {})
+	if (PlayerTables.IsConnected()) {
+		var tableData = PlayerTables.GetAllTableValues(table)
+		if (tableData != null)
+			callback(table, tableData, {})
 		PlayerTables.SubscribeNetTableListener(table, callback)
 	} else {
-		$.Schedule(0.03, function() {
+		$.Schedule(1 / 30, function() {
 			DynamicSubscribePTListener(table, callback)
 		})
 	}

@@ -2,11 +2,13 @@
 var PlayerTables = GameUI.CustomUIConfig().PlayerTables
 var ItemList = {}
 var ItemData = {}
+var Itembuilds = {}
 var SmallItems = []
 var SearchingFor = null
 var TabIndex = null
 var QuickBuyTarget = null
 var QuickBuyTargetAmount = 0
+var LastHero = null
 
 
 function OpenCloseShop() {
@@ -58,6 +60,7 @@ function PushItemsToList() {
 	for (var shopName in ItemList) {
 		var TabButton = $.CreatePanel('Button', $("#ShopTabs"), "shop_tab_" + shopName)
 		TabButton.AddClass("ShopTabButton")
+		TabButton.style.width = (100 / Object.keys(ItemList).length) + "%";
 		var TabButtonLabel = $.CreatePanel('Label', TabButton, "")
 		TabButtonLabel.text = $.Localize("panorama_shop_shop_tab_" + shopName)
 		TabButtonLabel.AddClass("ShopTabButtonLabel")
@@ -68,8 +71,8 @@ function PushItemsToList() {
 		})(shopName)
 		TabButton.SetPanelEvent('onactivate', SelectShopTabAction)
 		var TabShopItemlistPanel = $.CreatePanel('Panel', $("#ShopItemsBase"), "shop_panels_tab_" + shopName)
-		TabShopItemlistPanel.style.height = "100%;"
-		TabShopItemlistPanel.style.horizontalAlign = "center"
+		TabShopItemlistPanel.style.height = "100%";
+		TabShopItemlistPanel.style.horizontalAlign = "center";
 
 		TabShopItemlistPanel.style.flowChildren = "right-wrap"
 		FillShopTable(TabShopItemlistPanel, ItemList[shopName])
@@ -270,6 +273,7 @@ function ItemHideTooltip(panel) {
 function LoadItemsFromTable(panorama_shop_data) {
 	ItemList = panorama_shop_data.ShopList
 	ItemData = panorama_shop_data.ItemData
+	Itembuilds = panorama_shop_data.Itembuilds
 	PushItemsToList()
 }
 
@@ -284,7 +288,14 @@ function UpdatePanoramaState() {
 }
 
 function UpdateSmallItem(panel) {
-	panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) < PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()])
+	try {
+		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) < PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()])
+	} catch (err) {
+		var index = SmallItems.indexOf(panel);
+		if (index > -1) {
+			SmallItems.splice(index, 1);
+		}
+	}
 }
 
 function GetRemainingPrice(itemName, ItemCounter, baseItem) {
@@ -426,6 +437,7 @@ function UpdateShop() {
 	$.Each(SmallItems, function(panel) {
 		UpdateSmallItem(panel)
 	})
+	UpdateItembuildsForHero();
 }
 
 function AutoUpdateShop() {
@@ -440,8 +452,59 @@ function AutoUpdateQuickbuy() {
 	$.Schedule(0.15, AutoUpdateQuickbuy)
 }
 
+function UpdateItembuildsForHero() {
+	var heroName = GetPlayerHeroName(Game.GetLocalPlayerID())
+	if (LastHero != heroName) {
+		LastHero = heroName;
+		var DropRoot = $("#Itembuild_select");
+		var content = "";
+		var SelectedTable;
+		if (Itembuilds[heroName]) {
+			$.Each(Itembuilds[heroName], function(build, i) {
+				content = content + "<Label text='" + build.title + "' id='" + i + "' onactivate='SelectItembuild(" + JSON.stringify(build) + ")'/>";
+				if (SelectedTable == null)
+					SelectedTable = build;
+			});
+		}
+		DropRoot.BLoadLayoutFromString("<root><Panel><DropDown id='Itembuild_select'> " + content + " </DropDown></Panel></root>", true, true);
+		SelectItembuild(SelectedTable);
+	}
+}
+
+function SelectItembuild(t) {
+	var groupsRoot = $("#ItembuildPanelsRoot")
+	groupsRoot.RemoveAndDeleteChildren();
+	if (t != null) {
+		$("#Itembuild_author").text = t.author || "?";
+		$("#Itembuild_patch").text = t.patch || "?";
+		//$("#ItembuildPanelsRoot")
+		$.Each(t.items, function(groupData) {
+			var groupRoot = $.CreatePanel("Panel", groupsRoot, "");
+			groupRoot.AddClass("ItembuildItemGroup");
+			var groupTitle = $.CreatePanel("Label", groupRoot, "");
+			groupTitle.AddClass("ItembuildItemGroupTitle");
+			groupTitle.text = $.Localize(groupData.title);
+			var itemsRoot = $.CreatePanel("Panel", groupRoot, "");
+			itemsRoot.AddClass("ItembuildItemGroupItemRoot");
+
+			$.Each(groupData.content, function(itemName) {
+				var itemPanel = $.CreatePanel("Panel", itemsRoot, "")
+				SnippetCreate_SmallItem(itemPanel, itemName)
+				itemPanel.AddClass("BigItemPanel")
+			})
+		})
+	} else {
+		$("#Itembuild_author").text = "";
+		$("#Itembuild_patch").text = "";
+	}
+}
 
 (function() {
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP, false)
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_GOLD, false)
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, false)
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY, false)
+
 	Game.Events.F4Pressed.push(OpenCloseShop)
 	Game.Events.F5Pressed.push(function() {
 		$.Each($("#QuickBuyPanelItems").Children(), function(child) {
@@ -469,16 +532,12 @@ function AutoUpdateQuickbuy() {
 	Game.MouseEvents.OnLeftPressed.push(function() {
 		$("#ShopBase").AddClass("ShopBase_Out")
 	})
+
 	GameEvents.Subscribe("panorama_shop_show_item", ShowItemInShop)
 	UpdatePanoramaState()
 	AutoUpdateShop()
 	AutoUpdateQuickbuy()
 
-	//Crashes game, TODO: Settings loading and binding actions to keys dynamically
-	/*$.RegisterKeyBind("", "key_o", function() {
-		$.Msg("press")
-		$.DispatchEvent("DOTAShowBPSpring2016TreeGamePage");
-	})*/
 	$.RegisterEventHandler('DragDrop', $("#QuickBuyStickyButtonPanel"), function(panelId, draggedPanel) {
 		if (draggedPanel.itemname != null) {
 			SetQuickbuyStickyItem(draggedPanel.itemname)
@@ -492,9 +551,4 @@ function AutoUpdateQuickbuy() {
 		}
 		draggedPanel.DeleteAsync(0);
 	});
-
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP, false)
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_GOLD, false)
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, false)
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY, false)
 })()

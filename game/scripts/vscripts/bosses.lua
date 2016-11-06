@@ -130,7 +130,7 @@ end
 function Bosses:MakeBossAI(unit, name)
 	unit:SetIdleAcquire(false) -- Отключаем ai доты
 	local aiTable = {
-		leashRange = 600,
+		leashRange = 1600,
 	}
 	if name == "roshan" then
 		local boss_roshan_spikes = unit:FindAbilityByName("boss_roshan_spikes")

@@ -357,6 +357,10 @@ function GameMode:OnEntityKilled( keys )
 			end
 		end
 
+		if killedUnit:IsHoldoutUnit() then
+			Holdout:RegisterKilledUnit(killedUnit)
+		end
+
 		if killedUnit:IsHero() then
 			CustomWearables:UnequipAllWearables(killedUnit)
 		end

@@ -11,17 +11,87 @@
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in;
 	transition-property: transform, opacity;
-	background-color: rgba(0,0,0,235);
 	box-shadow: rgba(0,0,0,235) -10px -10px 20px 20px;
 	margin-bottom: 16%;
 	margin-right: 0px;
+	flow-children: right;
+}
+
+#ShopItemBasePanel
+{
 	height: 830px;
 	width: 380px;
 }
 
+#ItembuildsPanel
+{
+	width: 300px;
+	height: 100%;
+	//background-color: rgba(0,0,0,252);
+	background-image: url("file://{images}/custom_game/shop/itembuilds_panel.png");
+	background-position: -18px -12px;
+	background-size: 112% 106%;
+	flow-children: down;
+}
+
+.SimpleRow
+{
+	flow-children: right;
+	width: 100%;
+	margin: 6px 8px;
+}
+
+.SimpleRowValue
+{
+	align: right center;
+	color: white;
+	font-weight: bold;
+}
+
+#ItembuildPanelsRoot
+{
+	width: 100%;
+	flow-children: down;
+	overflow: squish scroll;
+}
+.ItembuildItemGroup
+{
+	width: 100%;
+	flow-children: down;
+}
+
+.ItembuildItemGroupTitle
+{
+	border-width: 0 0 1px 0;
+	border-color: white;
+	border-style: solid;
+	padding-left: 16px;
+	margin-left: 8px;
+	margin-right: 4px;
+	width: 100%;
+}
+
+.ItembuildItemGroupItemRoot
+{
+	margin-top: 6px;
+	margin-left: 5px;
+	width: 100%;
+	flow-children: right-wrap;
+}
+
+DropDownMenu.DropDownMenuVisible
+{
+	width: 300px;
+}
+DropDown Label,
+DropDownMenu Label
+{
+	font-size: 17px;
+}
+
 .ShopBase_Out
 {
-	transform: translateX(380px);
+	transform: translateX(680px);
 }
 
 #ShopBtnLabel
@@ -356,7 +426,8 @@
 .ShopTabButtonSelected
 {
 	background-image: url("file://{images}/custom_game/shop/tab_selected.png");
-	transform: translateY(0);
+	transform: translateY(-0.5px);
+	wash-color: PaleTurquoise;
 }
 
 
@@ -372,4 +443,13 @@
 	width: 44.55px;
 	height: 32.4px;
 	border-radius: 5px;
+}
+
+.BigItemPanel
+{
+	width: 70.4px;
+	height: 51.2px;
+	border-width: 2px;
+	margin: 5px;
+	border-radius: 0;
 }

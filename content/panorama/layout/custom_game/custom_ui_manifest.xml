@@ -1,7 +1,8 @@
 <root>
 	<scripts>
-		<include src="file://{resources}/scripts/custom_ui_manifest.js" />
 		<include src="file://{resources}/scripts/playertables/playertables_base.js" />
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/custom_ui_manifest.js" />
 	</scripts>
 	<Panel>
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/statcollection.xml" />
@@ -17,6 +18,7 @@
 		<CustomUIElement type="HudTopBar" layoutfile="file://{resources}/layout/custom_game/arena_top_scoreboard.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_game_info.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/kills.xml" />
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/holdout.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/panorama_shop.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/ability_shop.xml" />
 		

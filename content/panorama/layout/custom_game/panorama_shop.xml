@@ -20,20 +20,34 @@
 	</snippets>
 	<Panel hittest="false" class="base">
 		<Panel hittest="true" id="ShopBase" class="ShopBase_Out">
-			<Panel id="ShopItemList">
-				<Panel id="ShopSearch">
-					<TextEntry id="ShopSearchEntry" maxchars="64" oninputsubmit="SearchItems()" placeholder="#panorama_shop_search_placeholder"/>
+			<Panel id="ItembuildsPanel">
+				<Panel id="Itembuild_select" />
+				<Panel class="SimpleRow">
+					<Label text="#panorama_shop_itembuild_author"/>
+					<Label class="SimpleRowValue" id="Itembuild_author" />
 				</Panel>
-				<Panel id="ShopTabs" />
-				<Panel id="ShopItems">
-					<Panel id="ShopItemsBase" />
-					<Panel id="ShopSearchOverlay" />
+				<Panel class="SimpleRow">
+					<Label text="#panorama_shop_itembuild_patch"/>
+					<Label class="SimpleRowValue" id="Itembuild_patch" />
 				</Panel>
+				<Panel id="ItembuildPanelsRoot" />
 			</Panel>
-			<Panel id="ItemRecipeBox">
-				<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow1" />
-				<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow2" />
-				<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow3" />
+			<Panel id="ShopItemBasePanel">
+				<Panel id="ShopItemList">
+					<Panel id="ShopSearch">
+						<TextEntry id="ShopSearchEntry" maxchars="64" oninputsubmit="SearchItems()" placeholder="#panorama_shop_search_placeholder"/>
+					</Panel>
+					<Panel id="ShopTabs" />
+					<Panel id="ShopItems">
+						<Panel id="ShopItemsBase" />
+						<Panel id="ShopSearchOverlay" />
+					</Panel>
+				</Panel>
+				<Panel id="ItemRecipeBox">
+					<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow1" />
+					<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow2" />
+					<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow3" />
+				</Panel>
 			</Panel>
 		</Panel>
 		<Button hittest="true" id="ShopBtnPanel" onactivate="OpenCloseShop()">

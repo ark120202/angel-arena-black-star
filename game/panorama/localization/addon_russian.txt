@@ -196,6 +196,8 @@
 		"panorama_shop_shop_tab_3"								"НОВЫЕ"
 		"panorama_shop_search_placeholder"						"Поиск..."
 		"panorama_shop_shop_label"								"ЛАВКА"
+		"panorama_shop_itembuild_author"						"Автор:"
+		"panorama_shop_itembuild_patch"							"Версия карты:"
 
 		"custom_end_screen_legend_lasthits"						"КРП"
 
@@ -205,5 +207,7 @@
 		"ability_shop_shift_yes"								"ЛКМ - Продать способность, ПКМ - Понизить уровень способности. Для покупки отпустите SHIFT."
 		"ability_shop_purchased_only"							"Только приобретенные способности"
 		"ability_shop_search_placeholder"						"Название способности или героя..."
+
+		"holdout_timer_label"									" волна:"
 	}
 }
