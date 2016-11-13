@@ -2,7 +2,7 @@ item_boss_control = class({})
 
 if IsClient() then
 	function IsBossEntity(unit)
-		return string.find(unit:GetUnitName(), "npc_dota_boss_")
+		return string.find(unit:GetUnitName(), "npc_arena_boss_")
 	end
 end
 

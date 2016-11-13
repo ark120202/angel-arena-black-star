@@ -9,6 +9,10 @@ function Bosses:InitAllBosses()
 		Bosses:CreateBossPortal("earth", i)
 		Bosses:CreateBossPortal("wind", i)
 		Bosses:CreateBossPortal("primal", i)]]
+		Bosses:SpawnStaticBoss("l1_v1", i)
+		Bosses:SpawnStaticBoss("l1_v2", i)
+		Bosses:SpawnStaticBoss("l2_v1", i)
+		Bosses:SpawnStaticBoss("l2_v2", i)
 	end
 	Bosses:SpawnStaticBoss("heaven")
 	Bosses:SpawnStaticBoss("hell")
@@ -16,11 +20,15 @@ function Bosses:InitAllBosses()
 end
 
 function IsBossEntity(unit)
-	return string.find(unit:GetUnitName(), "npc_dota_boss_")
+	return string.find(unit:GetUnitName(), "npc_arena_boss_")
 end
 
-function Bosses:SpawnStaticBoss(name)
-	Bosses:MakeBossAI(CreateUnitByName("npc_dota_boss_" .. name, Entities:FindByName(nil, "target_mark_bosses_" .. name):GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS), name)
+function Bosses:SpawnStaticBoss(name, team)
+	local nm = "target_mark_bosses_" .. name
+	if team then
+		nm = nm .. "_team" .. team
+	end
+	Bosses:MakeBossAI(CreateUnitByName("npc_arena_boss_" .. name, Entities:FindByName(nil, nm):GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS), name)
 end
 
 function Bosses:RegisterKilledBoss(unitname, team)

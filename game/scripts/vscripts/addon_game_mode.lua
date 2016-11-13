@@ -79,8 +79,8 @@ function Precache( context )
 	
 	PrecacheUnitByNameSync("npc_dota_hero_earth_spirit", context)
 	
-	PrecacheUnitByNameSync("npc_dota_boss_heaven", context)
-	PrecacheUnitByNameSync("npc_dota_boss_hell", context)
+	PrecacheUnitByNameSync("npc_arena_boss_heaven", context)
+	PrecacheUnitByNameSync("npc_arena_boss_hell", context)
 
 	PrecacheUnitByNameSync("npc_dota_lucifers_claw_doomling", context)
 	PrecacheUnitByNameSync("npc_queenofblades_alter_ego", context)

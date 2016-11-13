@@ -8,53 +8,53 @@ ShopsData = {
 }
 
 DROP_TABLE = {
-	--[[["npc_dota_boss_fire"] = {
+	--[[["npc_arena_boss_fire"] = {
 		{ Item = "item_soul_of_titan", DropChance = 35, },
 		{ Item = "item_dark_blade", DropChance = 40, },
 		{ Item = "item_phantom_bone", DropChance = 6, },
 	},
-	["npc_dota_boss_water"] = {
+	["npc_arena_boss_water"] = {
 		{ Item = "item_soul_of_titan", DropChance = 35, },
 		{ Item = "item_dark_blade", DropChance = 30, },
 		{ Item = "item_phantom_bone", DropChance = 6, },
 	},
-	["npc_dota_boss_earth"] = {
+	["npc_arena_boss_earth"] = {
 		{ Item = "item_soul_of_titan", DropChance = 35, },
 		{ Item = "item_dark_blade", DropChance = 30, },
 		{ Item = "item_phantom_bone", DropChance = 50, },
 	},
-	["npc_dota_boss_wind"] = {
+	["npc_arena_boss_wind"] = {
 		{ Item = "item_soul_of_titan", DropChance = 35, },
 		{ Item = "item_dark_blade", DropChance = 30, },
 		{ Item = "item_phantom_bone", DropChance = 50, },
 	},
-	["npc_dota_boss_primal"] = {
+	["npc_arena_boss_primal"] = {
 		{ Item = "item_soul_of_titan", DropChance = 100, },
 		{ Item = "item_dark_blade", DropChance = 100, },
 		{ Item = "item_phantom_bone", DropChance = 100, },
 	},]]
-	["npc_dota_boss_1_dire"] = {
+	["npc_arena_boss_1_dire"] = {
 		{ Item = "item_hell_hero_change", DropChance = 100, },
 		{ Item = "item_sacrificial_dagger", DropChance = 100, },
 		{ Item = "item_soul_of_titan", DropChance = 35, },
 		{ Item = "item_dark_blade", DropChance = 10, },
 		{ Item = "item_phantom_bone", DropChance = 8, },
 	},
-	["npc_dota_boss_heaven"] = {
+	["npc_arena_boss_heaven"] = {
 		{ Item = "item_heaven_hero_change", DropChance = 100, },
 		{ Item = "item_consecrated_sword", DropChance = 100, },
 		{ Item = "item_soul_of_titan", DropChance = 35, },
 		{ Item = "item_dark_blade", DropChance = 10, },
 		{ Item = "item_phantom_bone", DropChance = 8, },
 	},
-	["npc_dota_boss_hell"] = {
+	["npc_arena_boss_hell"] = {
 		{ Item = "item_hell_hero_change", DropChance = 100, },
 		{ Item = "item_sacrificial_dagger", DropChance = 100, },
 		{ Item = "item_soul_of_titan", DropChance = 35, },
 		{ Item = "item_dark_blade", DropChance = 10, },
 		{ Item = "item_phantom_bone", DropChance = 8, },
 	},
-	--[[["npc_dota_boss_roshan"] = {
+	--[[["npc_arena_boss_roshan"] = {
 		{ Item = "item_essence_aegis", DropChance = 100, },
 		{ Item = "item_soul_of_titan", DropChance = 35, },
 		{ Item = "item_dark_blade", DropChance = 5, },

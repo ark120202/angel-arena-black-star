@@ -70,6 +70,7 @@ Ideas:
 		Кнопку скрыть гайды
 		Дополнить гайды
 		Сделать карту в меню пика
+		globals.lua/GLOBAL_VISIBLE_ENTITY
 
 
 
@@ -80,3 +81,61 @@ Map reworked;
 All bosses reworked;
 All essences removed;
 item_metamorphosis_elixir - purchasable.
+
+
+
+	"npc_arena_boss_l1_v1"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/ember_spirit/ember_spirit.vmdl"
+		"ModelScale"				"4"
+		"Level"						"50"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_any_passive"
+		"Ability2"					"boss_armor"
+
+		"ArmorPhysical"				"5"
+		"MagicalResistance"			"50"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+		"AttackDamageMin"			"500"
+		"AttackDamageMax"			"600"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"450"
+		"AttackRange"				"256"
+
+		"BountyXP"					"5000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"422"
+
+		"StatusHealth"				"100000"
+		"StatusHealthRegen"			"10"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}

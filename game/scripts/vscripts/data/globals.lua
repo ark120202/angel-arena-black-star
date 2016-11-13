@@ -12,7 +12,7 @@ if not Globals_Initialized then
 	CourierTimer = {}
 	--GameMode._AsyncFunctionHandler = {}
 	Timers:CreateTimer(0.03, function()
-		GLOBAL_VISIBLE_ENTITY = Entities:FindByName(nil, "npc_dota_boss_keeper")
+		GLOBAL_VISIBLE_ENTITY = Entities:FindByName(nil, "npc_arena_boss_keeper")
 		GLOBAL_DUMMY = CreateUnitByName("npc_dummy_unit", Vector(0, 0, 0), false, nil, nil, DOTA_TEAM_NEUTRALS)
 		DRUG_DUMMY = CreateUnitByName("npc_dummy_unit", Vector(0, 0, 0), false, nil, nil, DOTA_TEAM_NEUTRALS)
 	end)

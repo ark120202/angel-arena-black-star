@@ -373,81 +373,6 @@
 		"VisionNighttimeRange"		"1500"
 	}
 
-	"npc_dota_boss_fire"
-	{
-		// General
-		//
-		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/heroes/ember_spirit/ember_spirit.vmdl"
-		"ModelScale"				"4"
-		"Level"						"50"
-		"IsAncient"					"1"
-		"HasInventory"				"1"
-		"CanBeDominated"			"0"
-		"ConsideredHero"			"1"
-
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"boss_any_passive"
-		"Ability2"					"boss_armor"
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"
-		"MagicalResistance"			"50"
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"500"
-		"AttackDamageMax"			"600"
-		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.2"			// Speed of attack.
-		"AttackAnimationPoint"		"0.2"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"450"		// Range within a target can be acquired.
-		"AttackRange"				"256"		// Range within a target can be attacked.
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"5000"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"			"400"
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"422"		// Speed
-		"MovementTurnRate"			"1.0"		// Turning rate.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"100000"		// Base health.
-		"StatusHealthRegen"			"10"		// Health regeneration rate.
-		"StatusMana"				"0"		// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1400"
-		"VisionNighttimeRange"		"1400"
-
-		// Inventory
-		//----------------------------------------------------------------
-		"Creature"
-		{
-			"DisableResistance"            "50"
-		}
-	}
-
 	"npc_dota_casino_slotmachine"
 	{
 		// General
@@ -706,7 +631,7 @@
 		}
 	}
 
-	"npc_dota_boss_heaven"
+	"npc_arena_boss_heaven"
 	{
 		// General
 		//
@@ -765,7 +690,6 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -794,7 +718,7 @@
 		}
 	}
 
-	"npc_dota_boss_hell"
+	"npc_arena_boss_hell"
 	{
 		// General
 		//
@@ -853,7 +777,6 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -878,99 +801,6 @@
 				"Wearable4" { "ItemDef" "8101" } // Visage of Incandescent Liturgy
 			}
 		}
-	}
-
-	"npc_dota_boss_roshan"
-	{
-		// General
-		//
-		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/creeps/roshan/roshan.vmdl"
-		"ModelScale"				"1.5"
-		"Level"						"100"
-		"IsAncient"					"1"
-
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"boss_roshan_spikes"
-		"Ability2"					""
-		"Ability3"					""
-		"Ability4"					""
-		"Ability5"					""
-		"Ability6"					""
-		"Ability7"					"boss_roshan_passive"
-		"Ability8"					"boss_armor"
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"50"
-		"MagicalResistance"			"35"									// Magical protection (percentage).
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"500"
-		"AttackDamageMax"			"800"
-		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.3"			// Speed of attack.
-		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-		"AttackRange"				"225"		// Range within a target can be attacked.
-
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"20000"
-		"BountyGoldMin"				"20000"
-		"BountyGoldMax"				"40000"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"			"400"
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"522"		// Speed
-		"MovementTurnRate"			"5"		// Turning rate.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"100000"		// Base health.
-		"StatusHealthRegen"			"10"		// Health regeneration rate.
-		"StatusMana"				"50000"		// Base mana.
-		"StatusManaRegen"			"100"		// Mana regeneration rate.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"2400"
-		"VisionNighttimeRange"		"2400"
-
-		// Inventory
-		//----------------------------------------------------------------
-		"HasInventory"				"1"
-
-		"CanBeDominated"               "0"
-
-		"ConsideredHero"        "1"
-		"Creature"
-		{
-			"DisableResistance"            "50"
-		}
-		//"Creature"
-		//{
-		//	"AttachWearables"
-		//	{
-		//		"Wearable1" { "ItemDef" "" }
-		//	}
-		//}
 	}
 
 	"npc_dota_beastmaster_boar_base"
@@ -1885,5 +1715,115 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1900"		// Range of vision during day light.
 		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
+	}
+
+	"npc_arena_boss_l1_v1"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/items/terrorblade/marauders_demon/marauders_demon.vmdl"
+		"ModelScale"				"4"
+		"Level"						"50"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_any_passive"
+		"Ability2"					"boss_armor"
+
+		"ArmorPhysical"				"5"
+		"MagicalResistance"			"50"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+		"ProjectileSpeed"			"900"
+		"AttackDamageMin"			"500"
+		"AttackDamageMax"			"600"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"900"
+
+		"BountyXP"					"5000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"422"
+
+		"StatusHealth"				"100000"
+		"StatusHealthRegen"			"10"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+
+	"npc_arena_boss_l1_v2"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/warlock/warlock_demon.vmdl"
+		"ModelScale"				"4"
+		"Level"						"50"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_any_passive"
+		"Ability2"					"boss_armor"
+
+		"ArmorPhysical"				"5"
+		"MagicalResistance"			"50"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"500"
+		"AttackDamageMax"			"600"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"450"
+		"AttackRange"				"250"
+
+		"BountyXP"					"5000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"522"
+
+		"StatusHealth"				"100000"
+		"StatusHealthRegen"			"10"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
 	}
 }

@@ -177,7 +177,6 @@ function GameMode:OnGameInProgress()
 	end
 	GAMEMODE_INITIALIZATION_STATUS[3] = true
 	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
-		Bosses.BossKeeperEntity = Entities:FindByName(nil, "npc_dota_boss_keeper")
 		Bosses:InitAllBosses()
 		Duel:CreateGlobalTimer()
 		ContainersHelper:CreateShops()
