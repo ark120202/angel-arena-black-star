@@ -15,6 +15,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_tome_of_knowledge",
 			"item_bottle",
 			"item_team_changer",
+			"item_metamorphosis_elixir",
 		},
 
 		[2] = {
@@ -201,15 +202,8 @@ PANORAMA_SHOP_ITEMS = {
 		{
 			"item_consecrated_sword",
 			"item_sacrificial_dagger",
-			"item_metamorphosis_elixir",
 			"item_heaven_hero_change",
 			"item_hell_hero_change",
-			"item_essence_aegis",
-			"item_essence_fire",
-			"item_essence_water",
-			"item_essence_earth",
-			"item_essence_wind",
-			"item_essence_null",
 			"item_essence_cheat",
 			"item_essence_eternal",
 			"item_boss_control",

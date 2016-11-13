@@ -101,7 +101,7 @@ function ActivateItem() {
 	lastClick = 0;
 	if (m_Item == -1)
 		return;
-
+	$.Msg("Show!");
 	// Items are abilities - just execute the ability
 	Abilities.ExecuteAbility(m_Item, m_QueryUnit, false);
 }

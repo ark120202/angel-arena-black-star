@@ -48,6 +48,9 @@
 					<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow2" />
 					<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow3" />
 				</Panel>
+				<Button id="ShowHideItemguidesPanel" onactivate="ShowHideItembuides()">
+					<Label id="ShowHideItemguidesLabel" hittest="false" text="&lt;&lt;&lt;" />
+				</Button>
 			</Panel>
 		</Panel>
 		<Button hittest="true" id="ShopBtnPanel" onactivate="OpenCloseShop()">

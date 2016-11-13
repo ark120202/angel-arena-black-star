@@ -65,48 +65,6 @@ _G.SPAWNER_SETTINGS = {
 					[0] = "models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl",
 				}
 			},
-			--[[[5] ={
-				{
-					[-1] = "npc_dota_neutral_medium_variant1",
-					[0] = "models/creeps/neutral_creeps/n_creep_satyr_a/n_creep_satyr_a.vmdl",
-				}
-			},
-			[6] ={
-				{
-					[-1] = "npc_dota_neutral_medium_variant1",
-					[0] = "models/heroes/furion/treant.vmdl",
-				}
-			},
-			[7] ={
-				{
-					[-1] = "npc_dota_neutral_medium_variant1",
-					[0] = "models/heroes/brewmaster/brewmaster_earthspirit.vmdl",
-				}
-			},
-			[8] ={
-				{
-					[-1] = "npc_dota_neutral_medium_variant1",
-					[0] = "models/heroes/brewmaster/brewmaster_firespirit.vmdl",
-				}
-			},
-			[9] ={
-				{
-					[-1] = "npc_dota_neutral_medium_variant1",
-					[0] = "models/heroes/brewmaster/brewmaster_windspirit.vmdl",
-				}
-			},
-			[10] ={
-				{
-					[-1] = "npc_dota_neutral_medium_variant1",
-					[0] = "models/creeps/neutral_creeps/n_creep_satyr_c/n_creep_satyr_c.vmdl",
-				}
-			},
-			[11] ={
-				{
-					[-1] = "npc_dota_neutral_medium_variant1",
-					[0] = "models/creeps/neutral_creeps/n_creep_golem_b/n_creep_golem_b.vmdl",
-				}
-			},]]
 		},
 	},
 	hard = {
@@ -131,42 +89,15 @@ _G.SPAWNER_SETTINGS = {
 	},
 }
 
-_G.BOSSES_SETTINGS = {
-	fire = {
-		ParticleEnabled = "particles/customgames/capturepoints/cp_fire.vpcf",
-		ParticleDisabled = "particles/customgames/capturepoints/cp_fire_captured.vpcf"
-	},
-	water = {
-		ParticleEnabled = "particles/customgames/capturepoints/cp_metal.vpcf",
-		ParticleDisabled = "particles/customgames/capturepoints/cp_metal_captured.vpcf"
-	},
-	earth = {
-		ParticleEnabled = "particles/customgames/capturepoints/cp_earth.vpcf",
-		ParticleDisabled = "particles/customgames/capturepoints/cp_earth_captured.vpcf"
-	},
-	wind = {
-		ParticleEnabled = "particles/customgames/capturepoints/cp_wind.vpcf",
-		ParticleDisabled = "particles/customgames/capturepoints/cp_wind_captured.vpcf"
-	},
-	primal = {
-		ParticleEnabled = "particles/customgames/capturepoints/cp_neutral_3.vpcf",
-		ParticleDisabled = ""
-	},
+BOSSES_SETTINGS = {
 	heaven = {
 		RespawnTime = 600,
+		gold_overall = 50000,
 	},
 	hell = {
 		RespawnTime = 600,
+		gold_overall = 50000,
 	},
-	roshan = {
-		RespawnTime = 300,
-	},
-	BOSS_KEEPER_RESPAWN_TIME = 300
-}
-
-_G.STORAGE_SETTINGS = {
-	PushCooldown = 180,
-	API_KEY = "4c3bbf175d5a2ebe8149487458e4f98a302f1943"
 }
 
 _G.Trigger_arena = {
@@ -219,7 +150,6 @@ TEAM_NAMES2[DOTA_TEAM_CUSTOM_8] = "#DOTA_Custom8_2"
 
 GOLD_FOR_RANDOM_HERO = 375
 
-HERO_ASSIST_RANGE = 1300
 
 DOTA_PLAYER_AUTOABANDON_TIME = 60*8
 
@@ -229,7 +159,7 @@ DOTA_KILL_GOAL_VOTE_STANDART = 75
 
 CUSTOM_HERO_SELECTION_TIME = 80
 
-
+HERO_ASSIST_RANGE = 1300
 DEFAULT_HP_PER_STR = 20
 DEFAULT_HP_REGEN_PER_STR = 0.03
 DEFAULT_MANA_PER_INT = 12

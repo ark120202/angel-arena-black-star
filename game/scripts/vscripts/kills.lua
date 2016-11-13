@@ -52,12 +52,6 @@ end
 
 function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 	if not killedPlayer then
-		print("[Kills.OnEntityKilled:40] Kills system caught expansion. Please report it to mod author with log traceback. Log Traceback:")
-		xpcall(function()
-			print(killedPlayer:GetAssignedHero())
-		end, function (msg)
-			return msg..'\n'..debug.traceback()..'\n'
-		end)
 		return
 	end
 	local killedUnit = killedPlayer:GetAssignedHero()

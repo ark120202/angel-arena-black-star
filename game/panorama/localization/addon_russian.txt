@@ -62,26 +62,11 @@
 		"game_player_abandoned_game"					" покинул игру."
 
 		//Alt+255
-		"item_boss_keeper_key_equip_notify_p1"			" получил "
-		"item_boss_keeper_key_equip_notify_p2"			"."
-		"item_boss_keeper_key_equip_notify_p3"			" забрал "
-		"item_boss_keeper_key_equip_notify_p4"			" от "
-		"bossses_entered"								"Кто-то прошел в портал! Все остальные порталы были закрыты."
 		"notifications_gold"							" золота"
-
-		"developer_not_developer"						"Это версия только для разработчиков. НЕ для тебя. Извините :("
-		"developer_is_developer"						"Вы - разработчик. Вы можете использовать эту версию."
 		
-		"bosses_essential_killed"						"Босс был убит! У вас есть 60 секунд чтобы забрать предметы и уйти"
-		"bosses_keeper_reactivated_p1"					"Хранитель Боссов ждёт! "
-		"bosses_keeper_reactivated_p2"					" теперь может быть получен."
-		"bosses_keeper_activated_p1"					"Хранитель Боссов был активирован для "
-		"bosses_heaven_killed"							"Защитник Небес был убит!"
-		"bosses_hell_killed"							"Защитник Ада был убит!"
-		"bosses_roshan_killed"							"Рошан был убит!"
-		"bosses_heaven_respawn"							"Защитник Небес возродился"
-		"bosses_hell_respawn"							"Защитник Ада возродился"
-		"bosses_roshan_respawn"							"Рошан возродился"
+		"bosses_killed_p1"								" был убит! Все герои "
+		"bosses_killed_p2"								" получили "
+		"bosses_respawn"								" возродился!"
 
 		"duel_over_winner_none"							"Дуэль окончена. В этот раз победителя нет."
 		"duel_over_winner_p1"							"Дуэль окончена. "

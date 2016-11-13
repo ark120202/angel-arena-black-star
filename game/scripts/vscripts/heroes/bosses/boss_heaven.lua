@@ -8,11 +8,3 @@ function Initialize(keys)
 		ZPos = -200
 	})
 end
-
-function OnDeath(keys)
-	Notifications:TopToAll({text="#bosses_heaven_killed"})
-	Timers:CreateTimer(BOSSES_SETTINGS.heaven.RespawnTime, function()
-		Notifications:TopToAll({text="#bosses_heaven_respawn"})
-		Bosses:SpawnStaticBoss("heaven")
-	end)
-end

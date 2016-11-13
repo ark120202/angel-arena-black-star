@@ -45,7 +45,6 @@ function SimpleAI:new( unit, profile, params )
 		ai.state = AI_STATE_HOLDOUT_PUSH
 		ai.spawnPos = params.spawnPos or unit:GetAbsOrigin()
 		ai.aggroRange = params.aggroRange or unit:GetAcquisitionRange()
-		print(params.leashRange)
 		ai.leashRange = params.leashRange or 600
 		--push / normal / kill / none
 		ai.MainTask = params.MainTask or "normal"
@@ -94,7 +93,6 @@ end
 
 	function SimpleAI:AggressiveThink()
 		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > self.leashRange or not self.aggroTarget or self.aggroTarget:IsNull() or not self.aggroTarget:IsAlive() or self.aggroTarget:IsInvisible() or self.aggroTarget:IsInvulnerable() or self.aggroTarget:IsAttackImmune() then
-			print("return")
 			self:SwitchState(AI_STATE_RETURNING)
 			return
 		else
@@ -162,7 +160,6 @@ end
 
 --Utils
 function SimpleAI:OnTakeDamage(attacker)
-	print(self.state, (attacker:GetAbsOrigin() - self.unit:GetAbsOrigin()):Length2D(), self.leashRange)
 	if (self.state == AI_STATE_IDLE or self.state == AI_STATE_RETURNING) and (self.spawnPos - attacker:GetAbsOrigin()):Length2D() < self.leashRange then
 		self.unit:MoveToTargetToAttack( attacker )
 		self.aggroTarget = attacker

@@ -12,268 +12,6 @@
 		"ItemSellable"					"0"
 	}
 
-	"item_essence_fire"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10001"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_essence_fire"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5000"
-		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemPurchasableFilter"			"0"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"40"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_essence_fire"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			}
-		}
-	}
-
-	"item_essence_water"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10002"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_essence_water"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"12000"
-		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemPurchasableFilter"			"0"
-			
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_health_regen"		"25"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_essence_water"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-				}
-			}
-		}
-	}
-
-	"item_essence_earth"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10003"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_essence_earth"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"20000"
-		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemPurchasableFilter"			"0"
-			
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_health"		"250"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"12"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_essence_earth"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_health"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
-				}
-			}
-		}
-	}
-
-	"item_essence_wind"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10004"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_essence_wind"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"40000"
-		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemPurchasableFilter"			"0"
-			
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_movement_speed"		"40"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed"		"60"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_evasion"		"20"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_essence_wind"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%bonus_movement_speed"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion"
-				}
-			}
-		}
-	}
-
-	"item_essence_null"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10005"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_essence_null"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"60000"
-		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemPurchasableFilter"			"0"
-			
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			
-		}
-	}
-
-	"item_essence_aegis"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10006"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_essence_aegis"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4000"
-		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemPurchasableFilter"			"0"
-			
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_health_regen"		"8"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"16"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_essence_aegis"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			}
-		}
-	}
-
 	"item_dark_blade"
 	{
 		// General
@@ -1209,7 +947,7 @@
 		"ItemResult"					"item_shard_ultimate_scepter"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_scepter;item_essence_aegis"
+			"01"						"item_ultimate_scepter"
 		}
 	}
 
@@ -1806,208 +1544,6 @@
 						"Function"		"DrugEffectRandomParticlesKV"
 						"duration"		"%random_particles_duration"
 					}
-				}
-			}
-		}
-	}
-
-//===========================================================================================================================================================
-
-	"item_boss_keeper_key"
-	{
-		"ID"							"10033"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"BaseClass"             		"item_datadriven"
-		"AbilityTextureName"			"item_boss_keeper_key"
-		"AbilityCastRange"        		"128"
-		"AbilityCastAnimation"      	"ACT_DOTA_DISABLED"
-		"AbilityCastPoint"        		"0"
-		"AbilityManaCost"       		"800"
-		"ItemPurchasable"				"0"
-		"ItemSellable"          		"0"
-		"ItemDroppable"					"0"
-		"AbilityChannelTime"			"15.0"
-		"ItemShareability"        		"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"Model"							"models/props_debris/merchant_debris_key001.vmdl"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_duration"		"15.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"debuff_attack_speed"	"-30"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"debuff_movement_speed"		"-10"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"debuff_damage_percent"		"-30"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"big_debuff_attack_speed"	"-100"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"big_debuff_movement_speed"		"-50"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"big_debuff_damage_percent"		"-70"
-			}
-		}
-
-		"precache"
-		{
-			"particle"  "particles/items_fx/aura_endurance.vpcf"
-			"model"		"models/props_debris/merchant_debris_key001.vmdl"
-		}
-
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_item_boss_keeper_key_casting"
-				"Target" 		"CASTER"
-				"Duration"		"%cast_duration"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"items/item_boss_keeper_key.lua"
-				"Function"		"OnSpellStart"
-			}
-		}
-
-		"OnChannelInterrupted"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_item_boss_keeper_key_casting"
-				"Target" 		"CASTER"
-			}
-
-			"RunScript"
-			{
-				"ScriptFile"	"items/item_boss_keeper_key.lua"
-				"Function"		"OnChannelInterrupted"
-			}
-		}
-
-		"OnChannelSucceeded"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_item_boss_keeper_key_casting"
-				"Target" 		"CASTER"
-			}
-
-			"RunScript"
-			{
-				"ScriptFile"	"items/item_boss_keeper_key.lua"
-				"Function"		"OnChannelSucceeded"
-			}
-		}
-
-		"OnEquip"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/item_boss_keeper_key.lua"
-				"Function"		"OnEquip"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_boss_keeper_key_debuff"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"internal/kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_boss_keeper_key_debuff"
-					}
-				}
-		
-				"EffectName"		"particles/items_fx/aura_endurance.vpcf"
-				"EffectAttachType"	"follow_origin"
-		
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%debuff_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%debuff_movement_speed"
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%debuff_damage_percent"
-				}
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"internal/kv.lua"
-						"Function"		"DropItem"
-					}
-				}
-			}
-
-			"modifier_item_boss_keeper_key_casting"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-				"IsPurgable"		"0"
-			
-				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
-				"EffectAttachType"	"follow_overhead"
-
-				"ThinkInterval"  "1.0"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_boss_keeper_key.lua"
-						"Function"		"OnIntervalThink"
-						"Target"		"TARGET"
-					}
-				}
-			}
-
-			"modifier_item_boss_keeper_key_broken"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-				"IsPurgable"		"0"
-			
-				"EffectName"		"particles/hw_fx/cursed_rapier.vpcf"
-				"EffectAttachType"	"follow_origin"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%big_debuff_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%big_debuff_movement_speed"
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%big_debuff_damage_percent"
 				}
 			}
 		}
@@ -4039,7 +3575,7 @@
 		"ItemResult"					"item_splitshot_ultimate"
 		"ItemRequirements"
 		{
-			"01"						"item_essence_earth;item_bfury;item_splitshot_str;item_splitshot_agi;item_splitshot_int"
+			"01"						"item_bfury;item_splitshot_str;item_splitshot_agi;item_splitshot_int"
 		}
 	}
 
@@ -4964,10 +4500,9 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"7500"
+		"ItemCost"						"16000"
 		"ItemQuality"					"epic"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemPurchasableFilter"			"0"
 		
 		"AbilitySpecial"
 		{
@@ -6123,7 +5658,7 @@
 		"ItemResult"					"item_essence_cheat"
 		"ItemRequirements"
 		{
-			"01"						"item_essence_wind"
+			"01"						"item_rapier"
 		}
 	}
 
@@ -6516,7 +6051,7 @@
 		"ItemChargeAmount"				"1"
 		"ItemRequirements"
 		{
-			"01"						"item_essence_aegis;item_homemade_cheese"
+			"01"						"item_homemade_cheese"
 		}
 	}
 
@@ -8258,7 +7793,7 @@
 		"ItemResult"					"item_diffusal_style"
 		"ItemRequirements"
 		{
-			"01"						"item_manta_arena;item_diffusal_blade_arena_5;item_essence_water"
+			"01"						"item_manta_arena;item_diffusal_blade_arena_5"
 		}
 	}
 
@@ -8947,7 +8482,7 @@
 		"ItemResult"					"item_sunray_dagon_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_enchanted_dagon_5_arena;item_essence_aegis"
+			"01"						"item_enchanted_dagon_5_arena"
 		}
 	}
 
@@ -13276,7 +12811,7 @@
 		"ItemResult"					"item_essential_orb_fire_1"
 		"ItemRequirements"
 		{
-			"01"						"item_essence_fire"
+			"01"						"item_rapier"
 		}
 	}
 
@@ -14435,7 +13970,7 @@
 		"ItemResult"					"item_essence_eternal"
 		"ItemRequirements"
 		{
-			"01"						"item_essence_fire;item_essence_water;item_essence_earth;item_essence_wind;item_essence_null"
+			"01"						"item_rapier"
 		}
 	}
 
@@ -15487,7 +15022,7 @@
 		"ItemResult"					"item_titanium_bar"
 		"ItemRequirements"
 		{
-			"01"						"item_black_king_bar_6;item_ghost;item_titanium_fruit;item_essence_fire"
+			"01"						"item_black_king_bar_6;item_ghost;item_titanium_fruit"
 		}
 	}
 
@@ -17156,7 +16691,7 @@
 		"ItemResult"					"item_desolator3"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator2;item_rapier;item_essence_aegis"
+			"01"						"item_desolator2;item_rapier"
 		}
 	}
 
@@ -17402,7 +16937,7 @@
 		"ItemResult"					"item_desolator5"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator4;item_skadi_4;item_essence_water"
+			"01"						"item_desolator4;item_skadi_4"
 		}
 	}
 
@@ -17574,7 +17109,7 @@
 		"ItemResult"					"item_desolator6"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator5;item_essence_wind"
+			"01"						"item_desolator5"
 		}
 	}
 
@@ -19970,7 +19505,7 @@
 		"ItemResult"					"item_haganemushi"
 		"ItemRequirements"
 		{
-			"01"						"item_invis_sword;item_dark_flow;item_piercing_blade;item_dark_blade;item_essence_earth"
+			"01"						"item_invis_sword;item_dark_flow;item_piercing_blade;item_dark_blade"
 		}
 	}
 
@@ -20623,7 +20158,7 @@
 		"ItemResult"					"item_summoned_unit"
 		"ItemRequirements"
 		{
-			"01"						"item_staff_of_wizardry;item_staff_of_wizardry;item_staff_of_wizardry;item_staff_of_wizardry;item_essence_fire"
+			"01"						"item_staff_of_wizardry;item_staff_of_wizardry;item_staff_of_wizardry;item_staff_of_wizardry"
 		}
 	}
 

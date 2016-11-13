@@ -74,26 +74,11 @@
 		"game_player_abandoned_game"					" has abandoned the game."
 
 		//Alt+255
-		"item_boss_keeper_key_equip_notify_p1"			" has got the "
-		"item_boss_keeper_key_equip_notify_p2"			"."
-		"item_boss_keeper_key_equip_notify_p3"			" has captured the "
-		"item_boss_keeper_key_equip_notify_p4"			" from "
-		"bossses_entered"								"Someone entered the portal! All other portals have been closed."
 		"notifications_gold"							" gold"
-
-		"developer_not_developer"						"It's version for developers only. Not for you. Sorry :("
-		"developer_is_developer"						"You're developer! You can play this version!"
 		
-		"bosses_essential_killed"						"Boss has been killed! You have 60 seconds to take items and get out"
-		"bosses_keeper_reactivated_p1"					"Boss Keeper is waiting! "
-		"bosses_keeper_reactivated_p2"					" can now be found."
-		"bosses_keeper_activated_p1"					"Boss Keeper has been activated to the "
-		"bosses_heaven_killed"							"Heaven Guardian has been killed!"
-		"bosses_hell_killed"							"Hell Guardian has been killed!"
-		"bosses_roshan_killed"							"Roshan has been killed!"
-		"bosses_heaven_respawn"							"Heaven Guardian was resurrected"
-		"bosses_hell_respawn"							"Hell Guardian was resurrected"
-		"bosses_roshan_respawn"							"Roshan was resurrected"
+		"bosses_killed_p1"								" has been killed! All "
+		"bosses_killed_p2"								" heroes received "
+		"bosses_respawn"								" was resurrected!"
 
 		"duel_over_winner_none"							"The duel is over. At this time there is no winner."
 		"duel_over_winner_p1"							"The duel is over. "

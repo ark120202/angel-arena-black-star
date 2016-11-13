@@ -507,23 +507,26 @@ function SelectItembuild(t) {
 
 	Game.Events.F4Pressed.push(OpenCloseShop)
 	Game.Events.F5Pressed.push(function() {
+		var bought = false;
 		$.Each($("#QuickBuyPanelItems").Children(), function(child) {
 			if (!child.BHasClass("DropDownValidTarget")) {
 				UpdateSmallItem(child)
 				if (child.BHasClass("CanBuy")) {
 					var ItemCounter = {}
 					SendItemBuyOrder(child.itemName, ItemCounter)
+					bought = true;
 					return false
-				} else {
-					GameEvents.SendEventClientSide("dota_hud_error_message", {
-						"splitscreenplayer": 0,
-						"reason": 80,
-						"message": "#dota_hud_error_not_enough_gold"
-					});
-					Game.EmitSound("General.NoGold")
 				}
 			}
 		})
+		if (!bought) {
+			GameEvents.SendEventClientSide("dota_hud_error_message", {
+				"splitscreenplayer": 0,
+				"reason": 80,
+				"message": "#dota_hud_error_not_enough_gold"
+			});
+			Game.EmitSound("General.NoGold")
+		}
 	})
 	Game.Events.F8Pressed.push(function() {
 		var ItemCounter = {}

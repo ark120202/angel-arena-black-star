@@ -265,19 +265,6 @@ function GameMode:OnRuneActivated(keys)
 			break
 		end
 	end
-	--[[ Rune Can be one of the following types
-	DOTA_RUNE_DOUBLEDAMAGE
-	DOTA_RUNE_HASTE
-	DOTA_RUNE_HAUNTED
-	DOTA_RUNE_ILLUSION
-	DOTA_RUNE_INVISIBILITY
-	DOTA_RUNE_BOUNTY
-	DOTA_RUNE_MYSTERY
-	DOTA_RUNE_RAPIER
-	DOTA_RUNE_REGENERATION
-	DOTA_RUNE_SPOOKY
-	DOTA_RUNE_TURBO
-	]]
 end
 
 -- A player took damage from a tower
@@ -330,39 +317,30 @@ function GameMode:OnEntityKilled( keys )
 	end]]
 	
 	if killedUnit then
-		if killedUnit:IsRealCreep() then
-			Spawner.Creeps[killedUnit.SSpawner] = Spawner.Creeps[killedUnit.SSpawner] - 1
-			if (killedUnit.SpawnerType == "hard" and killedUnit.SLevel >= 20) then
-				if RollPercentage(5) and Bosses.KeyDroppableFromCreeps then
-					local abs = killedUnit:GetAbsOrigin()
-					CreateItemOnPositionSync(abs, CreateItem("item_boss_keeper_key", nil, nil))
+		if killedUnit:IsHero() then
+			if killedUnit:IsRealHero() then
+				if killedUnit.InArena and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
+					killedUnit.InArena = false
+					if Duel:GetWinner() ~= nil then
+						Duel.TimeUntilDuelEnd = 0
+					end
 				end
-			end
-		elseif killedUnit:IsRealHero() then
-			if killedUnit.InArena and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
-				killedUnit.InArena = false
-				if Duel:GetWinner() ~= nil then
-					Duel.TimeUntilDuelEnd = 0
-				end
-			end
 
-			if Duel.DuelStatus == DOTA_DUEL_STATUS_1X1_IN_PROGRESS and killedUnit.Duel1x1Opponent then
-				Duel:End1X1(killedUnit.Duel1x1Opponent:GetPlayerOwner():GetAssignedHero(), killedUnit)
+				if Duel.DuelStatus == DOTA_DUEL_STATUS_1X1_IN_PROGRESS and killedUnit.Duel1x1Opponent then
+					Duel:End1X1(killedUnit.Duel1x1Opponent:GetPlayerOwner():GetAssignedHero(), killedUnit)
+				end
+				if not killerEntity or not killerEntity:IsControllableByAnyPlayer() then
+					Kills:OnEntityKilled(killedUnit:GetPlayerOwner(), nil)
+				elseif killerEntity == killedUnit then
+					local player = killedUnit:GetPlayerOwner()
+					Kills:OnEntityKilled(player, player)
+				end
 			end
-			if not killerEntity or not killerEntity:IsControllableByAnyPlayer() then
-				Kills:OnEntityKilled(killedUnit:GetPlayerOwner(), nil)
-			elseif killerEntity == killedUnit then
-				local player = killedUnit:GetPlayerOwner()
-				Kills:OnEntityKilled(player, player)
-			end
+			CustomWearables:UnequipAllWearables(killedUnit)
 		end
 
 		if killedUnit:IsHoldoutUnit() then
 			Holdout:RegisterKilledUnit(killedUnit)
-		end
-
-		if killedUnit:IsHero() then
-			CustomWearables:UnequipAllWearables(killedUnit)
 		end
 
 		if killerEntity and killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then

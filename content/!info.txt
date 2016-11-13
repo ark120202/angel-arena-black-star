@@ -8,7 +8,7 @@ TODO LIST:
 -сделать войду купол на себя
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_1350]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://vk.com/wall-122685850_1356]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
 Angel Arena Black Star - Версия 1.2.3:
 
 Общее:
@@ -26,9 +26,6 @@ Balance:
 	
 Fixes:
 	
-Added itembuilds panel. Now it includes only Valve's itembuilds, but it will be updated;
-Minor Shop changes;
-Zen Gehraz - Mystic Twister: Cost: 1 => 3
 ==================================================================================================================================
 rhasta,
 lycan,

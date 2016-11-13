@@ -91,8 +91,7 @@ function Duel:StartDuel()
 	local heroes_to_fight_n = math.min(unpack(heroes_in_teams))
 	Duel.TimeUntilDuelEnd = ARENA_SETTINGS.DurationBase + ARENA_SETTINGS.DurationForPlayer * heroes_to_fight_n
 	if heroes_to_fight_n > 0 and table.allEqual(has_heroes, true) and table.count(Duel.heroes_teams_for_duel) > 1 then
-		local statues = Entities:FindAllByName("npc_dota_arena_statue")
-		for _,v in ipairs(statues) do
+		for _,v in ipairs(Entities:FindAllByName("npc_dota_arena_statue")) do
 			local particle1 = ParticleManager:CreateParticle("particles/arena/units/arena_statue/statue_eye.vpcf", PATTACH_ABSORIGIN, v)
 			local particle2 = ParticleManager:CreateParticle("particles/arena/units/arena_statue/statue_eye.vpcf", PATTACH_ABSORIGIN, v)
 			ParticleManager:SetParticleControlEnt(particle1, 0, v, PATTACH_POINT_FOLLOW, "attach_eye_l", v:GetAbsOrigin(), true)
@@ -160,7 +159,7 @@ function Duel:EndDuel()
 	local winner = Duel:GetWinner()
 	if winner then
 		Notifications:TopToAll({text="#duel_over_winner_p1", duration=9.0})
-		Notifications:TopToAll(CreateTeamNotificationSettings(winner, 9.0, false))
+		Notifications:TopToAll(CreateTeamNotificationSettings(winner, false))
 		Notifications:TopToAll({text="#duel_over_winner_p2", continue=true})
 		local goldAmount = GetFilteredGold(ARENA_SETTINGS.GoldForWin)
 		local g1,g2 = CreateGoldNotificationSettings(goldAmount)

@@ -260,13 +260,13 @@ function CreateHeroNameNotificationSettings(hHero, flDuration)
 	end
 end
 
-function CreateTeamNotificationSettings(iTeam, flDuration, bSecVar)
+function CreateTeamNotificationSettings(iTeam, bSecVar)
 	local textColor = ColorTableToCss(TEAM_COLORS[iTeam])
 	local text = TEAM_NAMES[iTeam]
 	if bSecVar then
 		text = TEAM_NAMES2[iTeam]
 	end
-	local output = {text=text, duration=flDuration, continue=true, style={color=textColor}}
+	local output = {text=text, continue=true, style={color=textColor}}
 	return output
 end
 
@@ -768,8 +768,10 @@ function GetAbilityCooldown(unit, ability)
 	local level = ability:GetLevel() - 1
 	if level < 0 then level = 0 end
 	local cd = ability:GetCooldown(level)
+	local vs = {}
 	for k,v in pairs(COOLDOWN_REDUCTION_ABILITIES) do
-		if unit:HasItemInInventory(k) then
+		if unit:HasItemInInventory(k) and not vs[v.reductionGroup] then
+			vs[v.reductionGroup] = true
 			if v.reductionType == "percent" then
 				cd = cd * (100 - v.reduction) * 0.01
 			elseif v.reductionType == "constant" then

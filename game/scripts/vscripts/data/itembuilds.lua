@@ -1,32 +1,7 @@
-__VALVE_ITEMBUILDS = {
-	{
-		hero = "npc_dota_hero_abaddon",
-		title = "Imba sborka izi mmr",
-		author = "Valve",
-		patch = "1.0.0",
-		description = [[Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]],
-		items = {
-			{
-				titile = "Nachalo",
-				content = {
-					"item_rapier",
-					"item_desolator6",
-					"item_tango_arena",
-				}
-			}
-		}
-	}
-}
-
 VALVE_ITEMBUILDS = {
 	{
 		hero = "npc_dota_hero_abaddon",
-		title = "Recommended items for Abaddon",
+		title = "Default Abaddon",
 		author = "Valve",
 		items = {
 			{
@@ -81,7 +56,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_abyssal_underlord",
-		title = "Recommended items for Abyssal Underlord",
+		title = "Default Abyssal Underlord",
 		author = "Valve",
 		items = {
 			{
@@ -131,7 +106,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_alchemist",
-		title = "Recommended items for Alchemist",
+		title = "Default Alchemist",
 		author = "Valve",
 		items = {
 			{
@@ -186,7 +161,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_ancient_apparition",
-		title = "Recommended items for Ancient Apparition",
+		title = "Default Ancient Apparition",
 		author = "Valve",
 		items = {
 			{
@@ -235,7 +210,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_antimage",
-		title = "Recommended items for Anti-Mage",
+		title = "Default Anti-Mage",
 		author = "Valve",
 		items = {
 			{
@@ -280,7 +255,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_arc_warden",
-		title = "Recommended items for Arc Warden",
+		title = "Default Arc Warden",
 		author = "Valve",
 		items = {
 			{
@@ -331,7 +306,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_axe",
-		title = "Recommended items for Axe",
+		title = "Default Axe",
 		author = "Valve",
 		items = {
 			{
@@ -378,7 +353,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_bane",
-		title = "Recommended items for Bane",
+		title = "Default Bane",
 		author = "Valve",
 		items = {
 			{
@@ -427,7 +402,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_batrider",
-		title = "Recommended items for Batrider",
+		title = "Default Batrider",
 		author = "Valve",
 		items = {
 			{
@@ -475,7 +450,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_beastmaster",
-		title = "Recommended items for Beastmaster",
+		title = "Default Beastmaster",
 		author = "Valve",
 		items = {
 			{
@@ -524,7 +499,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_bloodseeker",
-		title = "Recommended items for Bloodseeker",
+		title = "Default Bloodseeker",
 		author = "Valve",
 		items = {
 			{
@@ -569,7 +544,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_bounty_hunter",
-		title = "Recommended items for Bounty Hunter",
+		title = "Default Bounty Hunter",
 		author = "Valve",
 		items = {
 			{
@@ -616,7 +591,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_brewmaster",
-		title = "Recommended items for Brewmaster",
+		title = "Default Brewmaster",
 		author = "Valve",
 		items = {
 			{
@@ -665,7 +640,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_bristleback",
-		title = "Recommended items for Bristleback",
+		title = "Default Bristleback",
 		author = "Valve",
 		items = {
 			{
@@ -717,7 +692,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_broodmother",
-		title = "Recommended items for Broodmother",
+		title = "Default Broodmother",
 		author = "Valve",
 		items = {
 			{
@@ -764,7 +739,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_centaur",
-		title = "Recommended items for Centaur Warchief",
+		title = "Default Centaur Warchief",
 		author = "Valve",
 		items = {
 			{
@@ -810,7 +785,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_chaos_knight",
-		title = "Recommended items for Chaos Knight",
+		title = "Default Chaos Knight",
 		author = "Valve",
 		items = {
 			{
@@ -859,7 +834,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_chen",
-		title = "Recommended items for Chen",
+		title = "Default Chen",
 		author = "Valve",
 		items = {
 			{
@@ -905,7 +880,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_clinkz",
-		title = "Recommended items for Clinkz",
+		title = "Default Clinkz",
 		author = "Valve",
 		items = {
 			{
@@ -951,7 +926,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_crystal_maiden",
-		title = "Recommended items for Crystal Maiden",
+		title = "Default Crystal Maiden",
 		author = "Valve",
 		items = {
 			{
@@ -998,7 +973,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_dark_seer",
-		title = "Recommended items for Dark Seer",
+		title = "Default Dark Seer",
 		author = "Valve",
 		items = {
 			{
@@ -1047,7 +1022,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_dazzle",
-		title = "Recommended items for Dazzle",
+		title = "Default Dazzle",
 		author = "Valve",
 		items = {
 			{
@@ -1097,7 +1072,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_death_prophet",
-		title = "Recommended items for Death Prophet",
+		title = "Default Death Prophet",
 		author = "Valve",
 		items = {
 			{
@@ -1149,7 +1124,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_disruptor",
-		title = "Recommended items for Disruptor",
+		title = "Default Disruptor",
 		author = "Valve",
 		items = {
 			{
@@ -1198,7 +1173,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_doom_bringer",
-		title = "Recommended items for Doom",
+		title = "Default Doom",
 		author = "Valve",
 		items = {
 			{
@@ -1247,7 +1222,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_dragon_knight",
-		title = "Recommended items for Dragon Knight",
+		title = "Default Dragon Knight",
 		author = "Valve",
 		items = {
 			{
@@ -1298,7 +1273,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_drow_ranger",
-		title = "Recommended items for Drow Ranger",
+		title = "Default Drow Ranger",
 		author = "Valve",
 		items = {
 			{
@@ -1343,7 +1318,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_earthshaker",
-		title = "Recommended Items for Earthshaker",
+		title = "Default Earthshaker",
 		author = "Valve",
 		items = {
 			{
@@ -1391,7 +1366,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_earth_spirit",
-		title = "Recommended items for Earth Spirit",
+		title = "Default Earth Spirit",
 		author = "Valve",
 		items = {
 			{
@@ -1441,7 +1416,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_elder_titan",
-		title = "Recommended items for Elder Titan.",
+		title = "Default Elder Titan.",
 		author = "Valve",
 		items = {
 			{
@@ -1491,7 +1466,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_ember_spirit",
-		title = "Recommended items for Ember Spirit",
+		title = "Default Ember Spirit",
 		author = "Valve",
 		items = {
 			{
@@ -1539,7 +1514,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_enchantress",
-		title = "Recommended items for Enchantress",
+		title = "Default Enchantress",
 		author = "Valve",
 		items = {
 			{
@@ -1589,7 +1564,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_enigma",
-		title = "Recommended items for Enigma",
+		title = "Default Enigma",
 		author = "Valve",
 		items = {
 			{
@@ -1639,7 +1614,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_faceless_void",
-		title = "Recommended items for Faceless Void",
+		title = "Default Faceless Void",
 		author = "Valve",
 		items = {
 			{
@@ -1684,7 +1659,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_furion",
-		title = "Recommended items for Nature's Prophet",
+		title = "Default Nature's Prophet",
 		author = "Valve",
 		items = {
 			{
@@ -1780,7 +1755,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_gyrocopter",
-		title = "Recommended items for Gyrocopter",
+		title = "Default Gyrocopter",
 		author = "Valve",
 		items = {
 			{
@@ -1827,7 +1802,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_huskar",
-		title = "Recommended items for Huskar",
+		title = "Default Huskar",
 		author = "Valve",
 		items = {
 			{
@@ -1876,7 +1851,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_invoker",
-		title = "Recommended items for Invoker",
+		title = "Default Invoker",
 		author = "Valve",
 		items = {
 			{
@@ -1922,7 +1897,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_jakiro",
-		title = "Recommended items for Jakiro",
+		title = "Default Jakiro",
 		author = "Valve",
 		items = {
 			{
@@ -1973,7 +1948,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_juggernaut",
-		title = "Recommended items for Juggernaut",
+		title = "Default Juggernaut",
 		author = "Valve",
 		items = {
 			{
@@ -2021,7 +1996,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_keeper_of_the_light",
-		title = "Recommended items for Keeper of the Light",
+		title = "Default Keeper of the Light",
 		author = "Valve",
 		items = {
 			{
@@ -2070,7 +2045,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_kunkka",
-		title = "Recommended Items for Kunkka",
+		title = "Default Kunkka",
 		author = "Valve",
 		items = {
 			{
@@ -2117,7 +2092,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_legion_commander",
-		title = "Recommended Items for Legion Commander",
+		title = "Default Legion Commander",
 		author = "Valve",
 		items = {
 			{
@@ -2167,7 +2142,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_leshrac",
-		title = "Recommended Items for Leshrac",
+		title = "Default Leshrac",
 		author = "Valve",
 		items = {
 			{
@@ -2217,7 +2192,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_lich",
-		title = "Recommended items for Lich",
+		title = "Default Lich",
 		author = "Valve",
 		items = {
 			{
@@ -2262,7 +2237,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_life_stealer",
-		title = "Recommended items for Lifestealer",
+		title = "Default Lifestealer",
 		author = "Valve",
 		items = {
 			{
@@ -2312,7 +2287,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_lina",
-		title = "Recommended items for Lina",
+		title = "Default Lina",
 		author = "Valve",
 		items = {
 			{
@@ -2321,7 +2296,7 @@ VALVE_ITEMBUILDS = {
 					"item_tango_arena",
 					"item_flask",
 					"item_clarity",
-					"item_gauntlet",
+					"item_gauntlets",
 				}
 			},
 			{
@@ -2359,7 +2334,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_lion",
-		title = "Recommended items for Lion",
+		title = "Default Lion",
 		author = "Valve",
 		items = {
 			{
@@ -2404,7 +2379,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_lone_druid",
-		title = "Recommended items for Lone Druid",
+		title = "Default Lone Druid",
 		author = "Valve",
 		items = {
 			{
@@ -2472,7 +2447,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_luna",
-		title = "Recommended items for Luna",
+		title = "Default Luna",
 		author = "Valve",
 		items = {
 			{
@@ -2519,7 +2494,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_lycan",
-		title = "Recommended items for Lycan",
+		title = "Default Lycan",
 		author = "Valve",
 		items = {
 			{
@@ -2565,7 +2540,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_magnataur",
-		title = "Recommended items for Magnus",
+		title = "Default Magnus",
 		author = "Valve",
 		items = {
 			{
@@ -2611,7 +2586,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_medusa",
-		title = "Recommended items for Medusa",
+		title = "Default Medusa",
 		author = "Valve",
 		items = {
 			{
@@ -2660,7 +2635,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_meepo",
-		title = "Recommended items for Meepo",
+		title = "Default Meepo",
 		author = "Valve",
 		items = {
 			{
@@ -2705,7 +2680,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_mirana",
-		title = "Recommended items for Mirana",
+		title = "Default Mirana",
 		author = "Valve",
 		items = {
 			{
@@ -2752,7 +2727,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_morphling",
-		title = "Recommended items for Morphling",
+		title = "Default Morphling",
 		author = "Valve",
 		items = {
 			{
@@ -2798,7 +2773,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_naga_siren",
-		title = "Recommended items for Naga Siren",
+		title = "Default Naga Siren",
 		author = "Valve",
 		items = {
 			{
@@ -2847,7 +2822,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_necrolyte",
-		title = "Recommended items for Necrolyte",
+		title = "Default Necrolyte",
 		author = "Valve",
 		items = {
 			{
@@ -2899,7 +2874,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_nevermore",
-		title = "Recommended items for Nevermore",
+		title = "Default Nevermore",
 		author = "Valve",
 		items = {
 			{
@@ -2945,7 +2920,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_night_stalker",
-		title = "Recommended items for Night Stalker",
+		title = "Default Night Stalker",
 		author = "Valve",
 		items = {
 			{
@@ -2994,7 +2969,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_nyx_assassin",
-		title = "Recommended items for Nyx Assassin",
+		title = "Default Nyx Assassin",
 		author = "Valve",
 		items = {
 			{
@@ -3039,7 +3014,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_obsidian_destroyer",
-		title = "Recommended Items for Outworld Destroyer",
+		title = "Default Outworld Destroyer",
 		author = "Valve",
 		items = {
 			{
@@ -3088,7 +3063,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_ogre_magi",
-		title = "Recommended items for Ogre Magi",
+		title = "Default Ogre Magi",
 		author = "Valve",
 		items = {
 			{
@@ -3139,7 +3114,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_omniknight",
-		title = "Recommended items for Omniknight",
+		title = "Default Omniknight",
 		author = "Valve",
 		items = {
 			{
@@ -3193,7 +3168,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_oracle",
-		title = "Recommended items for Oracle",
+		title = "Default Oracle",
 		author = "Valve",
 		items = {
 			{
@@ -3238,7 +3213,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_phantom_assassin",
-		title = "Recommended items for Phantom Assassin",
+		title = "Default Phantom Assassin",
 		author = "Valve",
 		items = {
 			{
@@ -3285,7 +3260,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_phantom_lancer",
-		title = "Recommended items for Phantom Lancer",
+		title = "Default Phantom Lancer",
 		author = "Valve",
 		items = {
 			{
@@ -3331,7 +3306,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_phoenix",
-		title = "Recommended items for Phoenix",
+		title = "Default Phoenix",
 		author = "Valve",
 		items = {
 			{
@@ -3379,7 +3354,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_puck",
-		title = "Recommended items for Puck",
+		title = "Default Puck",
 		author = "Valve",
 		items = {
 			{
@@ -3426,7 +3401,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_pudge",
-		title = "Recommended items for Pudge",
+		title = "Default Pudge",
 		author = "Valve",
 		items = {
 			{
@@ -3474,7 +3449,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_pugna",
-		title = "Recommended items for Pugna",
+		title = "Default Pugna",
 		author = "Valve",
 		items = {
 			{
@@ -3520,7 +3495,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_queenofpain",
-		title = "Recommended items for Queen of Pain",
+		title = "Default Queen of Pain",
 		author = "Valve",
 		items = {
 			{
@@ -3569,7 +3544,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_rattletrap",
-		title = "Recommended items for Clockwerk",
+		title = "Default Clockwerk",
 		author = "Valve",
 		items = {
 			{
@@ -3614,7 +3589,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_razor",
-		title = "Recommended items for Razor",
+		title = "Default Razor",
 		author = "Valve",
 		items = {
 			{
@@ -3660,7 +3635,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_riki",
-		title = "Recommended items for Riki",
+		title = "Default Riki",
 		author = "Valve",
 		items = {
 			{
@@ -3705,7 +3680,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_rubick",
-		title = "Recommended items for Rubick",
+		title = "Default Rubick",
 		author = "Valve",
 		items = {
 			{
@@ -3758,7 +3733,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_sand_king",
-		title = "Recommended items for Sand King",
+		title = "Default Sand King",
 		author = "Valve",
 		items = {
 			{
@@ -3804,7 +3779,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_shadow_demon",
-		title = "Recommended items for Shadow Demon",
+		title = "Default Shadow Demon",
 		author = "Valve",
 		items = {
 			{
@@ -3853,7 +3828,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_shadow_shaman",
-		title = "Recommended items for Shadow Shaman",
+		title = "Default Shadow Shaman",
 		author = "Valve",
 		items = {
 			{
@@ -3899,7 +3874,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_shredder",
-		title = "Recommended items for Timbersaw",
+		title = "Default Timbersaw",
 		author = "Valve",
 		items = {
 			{
@@ -3944,7 +3919,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_silencer",
-		title = "Recommended items for Silencer",
+		title = "Default Silencer",
 		author = "Valve",
 		items = {
 			{
@@ -3991,7 +3966,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_skeleton_king",
-		title = "Recommended items for Skeleton King",
+		title = "Default Skeleton King",
 		author = "Valve",
 		items = {
 			{
@@ -4042,7 +4017,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_skywrath_mage",
-		title = "Recommended items for Skywrath Mage",
+		title = "Default Skywrath Mage",
 		author = "Valve",
 		items = {
 			{
@@ -4094,7 +4069,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_slardar",
-		title = "Recommended items for Slardar",
+		title = "Default Slardar",
 		author = "Valve",
 		items = {
 			{
@@ -4142,7 +4117,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_slark",
-		title = "Recommended items for Slark",
+		title = "Default Slark",
 		author = "Valve",
 		items = {
 			{
@@ -4191,7 +4166,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_sniper",
-		title = "Recommended items for Sniper",
+		title = "Default Sniper",
 		author = "Valve",
 		items = {
 			{
@@ -4270,7 +4245,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_spectre",
-		title = "Recommended items for Spectre",
+		title = "Default Spectre",
 		author = "Valve",
 		items = {
 			{
@@ -4317,7 +4292,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_spirit_breaker",
-		title = "Recommended items for Spiritbreaker",
+		title = "Default Spiritbreaker",
 		author = "Valve",
 		items = {
 			{
@@ -4368,7 +4343,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_storm_spirit",
-		title = "Recommended items for Storm Spirit",
+		title = "Default Storm Spirit",
 		author = "Valve",
 		items = {
 			{
@@ -4416,7 +4391,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_sven",
-		title = "Recommended items for Sven",
+		title = "Default Sven",
 		author = "Valve",
 		items = {
 			{
@@ -4464,7 +4439,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_techies",
-		title = "Recommended items for Techies",
+		title = "Default Techies",
 		author = "Valve",
 		items = {
 			{
@@ -4507,7 +4482,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_templar_assassin",
-		title = "Recommended items for Templar Assassin",
+		title = "Default Templar Assassin",
 		author = "Valve",
 		items = {
 			{
@@ -4555,7 +4530,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_terrorblade",
-		title = "Recommended items for Terrorblade",
+		title = "Default Terrorblade",
 		author = "Valve",
 		items = {
 			{
@@ -4602,7 +4577,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_tidehunter",
-		title = "Recommended items for Tidehunter",
+		title = "Default Tidehunter",
 		author = "Valve",
 		items = {
 			{
@@ -4651,7 +4626,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_tinker",
-		title = "Recommended items for Tinker",
+		title = "Default Tinker",
 		author = "Valve",
 		items = {
 			{
@@ -4702,7 +4677,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_tiny",
-		title = "Recommended items for Tiny",
+		title = "Default Tiny",
 		author = "Valve",
 		items = {
 			{
@@ -4750,7 +4725,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_treant",
-		title = "Recommended items for Treant Protector",
+		title = "Default Treant Protector",
 		author = "Valve",
 		items = {
 			{
@@ -4801,7 +4776,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_troll_warlord",
-		title = "Recommended Items for Troll Warlord",
+		title = "Default Troll Warlord",
 		author = "Valve",
 		items = {
 			{
@@ -4849,7 +4824,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_tusk",
-		title = "Recommended items for Tusk",
+		title = "Default Tusk",
 		author = "Valve",
 		items = {
 			{
@@ -4900,7 +4875,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_undying",
-		title = "Recommended items for Undying",
+		title = "Default Undying",
 		author = "Valve",
 		items = {
 			{
@@ -4951,7 +4926,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_ursa",
-		title = "Recommended items for Ursa",
+		title = "Default Ursa",
 		author = "Valve",
 		items = {
 			{
@@ -5001,7 +4976,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_vengefulspirit",
-		title = "Recommended items for Vengeful Spirit",
+		title = "Default Vengeful Spirit",
 		author = "Valve",
 		items = {
 			{
@@ -5050,7 +5025,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_venomancer",
-		title = "Recommended items for Venomancer",
+		title = "Default Venomancer",
 		author = "Valve",
 		items = {
 			{
@@ -5098,7 +5073,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_viper",
-		title = "Recommended items for Viper",
+		title = "Default Viper",
 		author = "Valve",
 		items = {
 			{
@@ -5146,7 +5121,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_visage",
-		title = "Recommended items for Visage",
+		title = "Default Visage",
 		author = "Valve",
 		items = {
 			{
@@ -5196,7 +5171,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_warlock",
-		title = "Recommended items for warlock",
+		title = "Default warlock",
 		author = "Valve",
 		items = {
 			{
@@ -5246,7 +5221,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_weaver",
-		title = "Recommended items for Weaver",
+		title = "Default Weaver",
 		author = "Valve",
 		items = {
 			{
@@ -5292,7 +5267,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_windrunner",
-		title = "Recommended items for Windrunner",
+		title = "Default Windrunner",
 		author = "Valve",
 		items = {
 			{
@@ -5342,7 +5317,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_winter_wyvern",
-		title = "Recommended items for Winter Wyvern",
+		title = "Default Winter Wyvern",
 		author = "Valve",
 		items = {
 			{
@@ -5390,7 +5365,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_wisp",
-		title = "Recommended items for Wisp",
+		title = "Default Wisp",
 		author = "Valve",
 		items = {
 			{
@@ -5437,7 +5412,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_witch_doctor",
-		title = "Recommended items for Witch Doctor",
+		title = "Default Witch Doctor",
 		author = "Valve",
 		items = {
 			{
@@ -5485,7 +5460,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_zuus",
-		title = "Recommended items for Zuus",
+		title = "Default Zuus",
 		author = "Valve",
 		items = {
 			{

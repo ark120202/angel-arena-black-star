@@ -11,7 +11,7 @@ function ContainersHelper:CreateShops()
 	_G.craftingEnt = Entities:FindByName(nil, "target_mark_crafting_station")
 	craftingEnt = CreateItemOnPositionSync(craftingEnt:GetAbsOrigin(), nil)
 	craftingEnt:SetModel("models/props_structures/bad_base_shop002.vmdl")
-	craftingEnt:SetForwardVector(Vector(-1, -3, 0))
+	craftingEnt:SetForwardVector(Vector(-1, 0, 0))
 
 	crafting = Containers:CreateContainer({
 		layout =      {3,3,3},
