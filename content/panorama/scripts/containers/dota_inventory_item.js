@@ -101,7 +101,9 @@ function ActivateItem() {
 	lastClick = 0;
 	if (m_Item == -1)
 		return;
-	$.Msg("Show!");
+	GameEvents.SendEventClientSide("panorama_shop_show_item", {
+		"itemName": Abilities.GetAbilityName(m_Item)
+	});
 	// Items are abilities - just execute the ability
 	Abilities.ExecuteAbility(m_Item, m_QueryUnit, false);
 }

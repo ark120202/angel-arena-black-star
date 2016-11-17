@@ -12,6 +12,77 @@
 		"ItemSellable"					"0"
 	}
 
+	"item_containers_lua_pack"
+	{
+		"BaseClass"						"item_lua"
+		"ID"							"10009"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_present"
+		"ScriptFile"					"libraries/abilities/item_containers_lua_pack.lua"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"					"0"
+		"ItemSellable"					"0"
+		"ItemCanChangeContainer"		"0"
+	}
+
+	"item_soul_of_titan"
+	{
+		"BaseClass"             		"item_datadriven"
+		"ID"							"10217"
+		"AbilityTextureName"			"item_soul_of_titan"
+		"ItemPurchasableFilter"			"0"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"ItemCost"						"3000"
+
+		"AbilityCastRange"				"800"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_reduction"			"-40"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"800"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_soul_of_titan"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+		
+				"Aura"          	"modifier_item_soul_of_titan_effect"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+			}
+
+			"modifier_item_soul_of_titan_effect"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsPurgable"		"0"
+				"IsDebuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_reduction"
+				}
+			}
+		}
+	}
+
 	"item_dark_blade"
 	{
 		// General
@@ -104,35 +175,209 @@
 		}
 	}
 
-	"item_containers_lua_pack"
+	"item_moon_dust"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"ID"							"10009"
-		"BaseClass"         "item_lua"
-		"AbilityTextureName"        "item_present"
-		"ScriptFile"          "libraries/abilities/item_containers_lua_pack.lua"
-		"MaxLevel"            "1"
-
-		"ItemCost"            "0"
-		"ItemPurchasable"          "0"
-		"ItemKillable"             "0"
-		"ItemDroppable"            "0"
-		"ItemSellable"             "0"
-		"ItemCanChangeContainer"   "0"
-
-		// Casting
+		"BaseClass"						"item_datadriven"
+		"ID"							"100023468"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_moon_dust"
+		
+		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"        "0"
+		"ItemCost"						"9000"
+		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasableFilter"			"0"
+	}
 
-		// Time   
+	"item_cursed_eye"
+	{
+		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"       "0"
+		"BaseClass"						"item_datadriven"
+		"ID"							"100021233468"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_cursed_eye"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"10000"
+		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasableFilter"			"0"
 
-		// Cost
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_day_vision"			"-500"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_night_vision"		"1500"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_cursed_eye"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"%bonus_day_vision"
+					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%bonus_night_vision" 
+				}
+			}
+		}
+	}
+
+	"item_fallen_star"
+	{
+		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"       "0 0 0 0"
+		"BaseClass"						"item_datadriven"
+		"ID"							"1000224363468"
+		"AbilityTextureName"			"item_fallen_star"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"24000"
+		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasableFilter"			"0"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityDamage"					"4000"
+		"AbilityManaCost"				"175"
+		"AbilityCooldown"				"60"
+		"AbilityCastPoint"				"0.2"
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+			"particle"			"particles/units/heroes/hero_mirana/mirana_starfall_attack.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intellect"			"50"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spell_amp_pct"				"30"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_delay"		"0.57"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Ability.Starfall"
+				"Target"		"CASTER"
+			}
+		
+			"FireEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_mirana/mirana_starfall_attack.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"		"TARGET"
+			}
+
+			"DelayedAction"
+			{
+				"Delay"		"%damage_delay"
+
+				"Action"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Ability.StarfallImpact"
+						"Target"		"TARGET"
+					}
+
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%AbilityDamage"
+					}
+				}
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_fallen_star"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp_pct"
+				}
+			}
+		}
+	}
+
+	"item_demonic_paw"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2351231245123562356"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_demonic_paw"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"12000"
+		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasableFilter"			"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_range"	"120"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_demonic_paw"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%bonus_attack_range"
+				}
+			}
+		}
 	}
 
 //===========================================================================================================================================================
@@ -15317,63 +15562,6 @@
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%dust_mana_regen_pct"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%dust_move_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dust_damage"
-				}
-			}
-		}
-	}
-
-	"item_soul_of_titan"
-	{
-		"BaseClass"             		"item_datadriven"
-		"ID"							"10217"
-		"AbilityTextureName"			"item_soul_of_titan"
-		"ItemPurchasableFilter"			"0"
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"ItemCost"						"3000"
-
-		"AbilityCastRange"				"800"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_reduction"			"-40"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"800"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_soul_of_titan"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-		
-				"Aura"          	"modifier_item_soul_of_titan_effect"
-				"Aura_Radius"   	"%radius"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
-			}
-
-			"modifier_item_soul_of_titan_effect"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsPurgable"		"0"
-				"IsDebuff"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_reduction"
 				}
 			}
 		}

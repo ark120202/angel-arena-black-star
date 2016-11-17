@@ -1,6 +1,8 @@
 -- This is the entry-point to your game mode and should be used primarily to precache models/particles/sounds/etc
 
 require('internal/util')
+--print(PlayerResource:GetSelectedHeroEntity(0):GetAbsOrigin())
+--do return end
 require('gamemode')
 
 function Precache( context )
@@ -81,6 +83,8 @@ function Precache( context )
 	
 	PrecacheUnitByNameSync("npc_arena_boss_heaven", context)
 	PrecacheUnitByNameSync("npc_arena_boss_hell", context)
+	PrecacheUnitByNameSync("npc_arena_boss_l1_v1", context)
+	PrecacheUnitByNameSync("npc_arena_boss_l1_v2", context)
 
 	PrecacheUnitByNameSync("npc_dota_lucifers_claw_doomling", context)
 	PrecacheUnitByNameSync("npc_queenofblades_alter_ego", context)

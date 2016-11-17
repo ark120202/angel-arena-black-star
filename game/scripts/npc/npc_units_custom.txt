@@ -1723,7 +1723,7 @@
 		//
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/items/terrorblade/marauders_demon/marauders_demon.vmdl"
-		"ModelScale"				"4"
+		"ModelScale"				"2.1"
 		"Level"						"50"
 
 		// Abilities
@@ -1756,7 +1756,6 @@
 		"StatusMana"				"0"
 		"StatusManaRegen"			"0"
 
-
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
 		"HasInventory"				"1"
@@ -1779,7 +1778,7 @@
 		//
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/heroes/warlock/warlock_demon.vmdl"
-		"ModelScale"				"4"
+		"ModelScale"				"1.5"
 		"Level"						"50"
 
 		// Abilities
@@ -1809,7 +1808,6 @@
 		"StatusHealthRegen"			"10"
 		"StatusMana"				"0"
 		"StatusManaRegen"			"0"
-
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"

@@ -34,6 +34,10 @@ Ideas:
 		item_soul_of_titan
 		item_dark_blade
 		item_phantom_bone
+		item_moon_dust
+		item_cursed_eye
+		item_fallen_star
+		item_demonic_paw
 		////
 		Moon Dust:
 			Drop Chance: 50% - l2, 30% - l1
@@ -71,6 +75,7 @@ Ideas:
 		Дополнить гайды
 		Сделать карту в меню пика
 		globals.lua/GLOBAL_VISIBLE_ENTITY
+		check apocalypse_agnis_touch + sell
 
 
 

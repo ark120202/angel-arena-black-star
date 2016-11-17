@@ -2,6 +2,7 @@ if AbilityShop == nil then
 	_G.AbilityShop = class({})
 	AbilityShop.AbilityInfo = {}
 end
+
 function AbilityShop:PostAbilityData()
 	CustomGameEventManager:RegisterListener("ability_shop_buy", Dynamic_Wrap(AbilityShop, "OnAbilityBuy"))
 	CustomGameEventManager:RegisterListener("ability_shop_sell", Dynamic_Wrap(AbilityShop, "OnAbilitySell"))

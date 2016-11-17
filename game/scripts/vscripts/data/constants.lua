@@ -98,6 +98,14 @@ BOSSES_SETTINGS = {
 		RespawnTime = 600,
 		gold_overall = 50000,
 	},
+	l1_v1 = {
+		RespawnTime = 600,
+		gold_overall = 50000,
+	},
+	l1_v2 = {
+		RespawnTime = 600,
+		gold_overall = 50000,
+	},
 }
 
 _G.Trigger_arena = {

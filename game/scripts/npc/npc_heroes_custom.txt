@@ -21,7 +21,7 @@
 		"Ability3"				"riki_permanent_invisibility"
 		"Ability4"				"riki_tricks_of_the_trade"
 		"Ability5"				"attribute_bonus_arena"
-		"Changed"					"1"
+		"Changed"				"1"
 		"AttackRate"			"1.2"
 	}
 	"npc_dota_hero_wisp"

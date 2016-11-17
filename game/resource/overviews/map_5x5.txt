@@ -1,0 +1,8 @@
+map_5x5
+{
+	material materials/overviews/map_5x5.vmat
+	pos_x -8192
+	pos_y 8192
+	scale 16.000
+}
+

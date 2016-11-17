@@ -6,7 +6,7 @@
 
 	"1"
     {
-        "File"      "HideAbilities"
+        "File"      "CustomUI"
         "Depth"     "51"
     }
 	

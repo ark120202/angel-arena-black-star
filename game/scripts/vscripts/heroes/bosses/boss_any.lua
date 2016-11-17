@@ -3,6 +3,6 @@ function OnBossDeath(keys)
 	local attacker = keys.attacker
 
 	if attacker and not caster.IsDominatedBoss then
-		Bosses:RegisterKilledBoss(caster:GetUnitName(), attacker:GetTeam())
+		Bosses:RegisterKilledBoss(caster, attacker:GetTeam())
 	end
 end
