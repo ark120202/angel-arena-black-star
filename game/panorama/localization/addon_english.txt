@@ -128,6 +128,7 @@
 		"containers_inventory_context_drop_from_stash"			"Drop From Stash"
 		"containers_inventory_context_alert"					"Alert"
 		"containers_inventory_context_move_to_stash"			"Move To Stash"
+		"containers_inventory_stash_takeall"					"GRAB ALL"
 
 		"arthas_vsolyanova_notifiaction"						"NAAAAAAAAAAAAAAAA ✓✓✓✓"
 

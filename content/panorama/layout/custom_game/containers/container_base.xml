@@ -14,7 +14,13 @@
   <Panel hittest="false" class="ContainersBase">
 
     <Panel hittest="false" style="width:100%; height:100%;" id="PanoramaInventory">
-      <Panel id="stash_row" />
+      
+      <Panel id="stash_row_host">
+        <Panel id="stash_row" />
+        <Button id="stash_row_takeall_btn" onactivate="StashGrabAll()">
+          <Label id="stash_row_takeall_btn_label" text="#containers_inventory_stash_takeall" hittest="false"/>
+        </Button>
+      </Panel>
       <Panel id="inventory_items">
         <Panel id="inventory_row_1" />
         <Panel id="inventory_row_2" />

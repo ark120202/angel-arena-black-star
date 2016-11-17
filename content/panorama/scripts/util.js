@@ -191,3 +191,17 @@ function GetDotaHud() {
 			p = p.GetParent()
 	}
 }
+
+function SetPannelDraggedChild(displayPanel, checker) {
+	var dragcheck = function() {
+		if (displayPanel != null) {
+			try {
+				if (checker())
+					displayPanel.DeleteAsync(0)
+				else
+					$.Schedule(0.2, dragcheck);
+			} catch (e) {}
+		}
+	}
+	dragcheck();
+}

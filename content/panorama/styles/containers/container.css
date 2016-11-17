@@ -144,21 +144,57 @@
   margin-bottom: 235px;
 }
 
-#stash_row.Flipped
+#stash_row_host.Flipped
 {
   horizontal-align: left;
   transform-origin: 0% 50%;
 } 
 
-#stash_row
+#stash_row_host
 {
   transform-origin: 100% 50%;
   transform: scale3d(.8, .8, 1);
+  horizontal-align: right;
+  vertical-align: bottom;
+  flow-children: down;
+}
+
+#stash_row_takeall_btn
+{
+  horizontal-align: center;
+  margin-top: 3px;
+  opacity: 0;
+  background-image: url("file://{images}/custom_game/shop/takeall.png");
+  background-size: 100% 100%;
+}
+#stash_row_takeall_btn_label
+{
+  align: center center;
+  margin: 3px 16px;
+  font-size: 22px;
+  color: white;
+}
+
+#stash_row_takeall_btn:hover
+{
+  pre-transform-scale2d: 1.02;
+}
+
+#stash_row_takeall_btn:active
+{
+  pre-transform-scale2d: 0.98;
+}
+
+.InRangeOfShop #stash_row_takeall_btn
+{
+  opacity: 1;
+}
+
+#stash_row
+{
   flow-children: right;
   background-color: #222222;
   border: 2px solid black; 
-  horizontal-align: right;
-  vertical-align: bottom;
 }
 
 #inventory_row_1
@@ -549,7 +585,7 @@
 
 #inventory_items #Hotkey
 {
-  margin-top: -3px;
+  margin-top: -2px;
   margin-left: -1px;
 }
 
@@ -566,7 +602,7 @@
 .MinimalisticHudDisabled #inventory_items #Hotkey
 {
   margin-top: 0px;
-  margin-left: -3px;
+  margin-left: -1px;
 }
  
 .MinimalisticHudDisabled #inventory_items .ItemPanel
@@ -577,23 +613,23 @@
 //Different Aspect Ratio support
 
 
-.AspectRatio5x4 #stash_row
+.AspectRatio5x4 #stash_row_host
 {
   margin-bottom: 235px;
   transform: scale3d(.75, .75, 1);
 }
 
-.AspectRatio4x3 #stash_row
+.AspectRatio4x3 #stash_row_host
 {
   margin-bottom: 255px;
 }
 
-.AspectRatio16x9 #stash_row
+.AspectRatio16x9 #stash_row_host
 {
   margin-bottom: 160px;
 }
 
-.AspectRatio16x10 #stash_row
+.AspectRatio16x10 #stash_row_host
 {
   margin-bottom: 160px;
 }
@@ -634,17 +670,17 @@
   margin-right: 215px;
 }
 
-.MinimalisticHudDisabled #stash_row
+.MinimalisticHudDisabled #stash_row_host
 {
   margin-bottom: 237px;
 }
 
-.AspectRatio4x3.MinimalisticHudDisabled #stash_row
+.AspectRatio4x3.MinimalisticHudDisabled #stash_row_host
 {
   margin-bottom: 253px;
 }
 
-.AspectRatio16x10.MinimalisticHudDisabled #stash_row
+.AspectRatio16x10.MinimalisticHudDisabled #stash_row_host
 {
   margin-bottom: 218px;
 }

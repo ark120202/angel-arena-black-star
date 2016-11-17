@@ -5,6 +5,7 @@
 		<include src="file://{resources}/styles/containers/container_skins.css" />
 	</styles>
 	<scripts>
+		<include src="file://{resources}/scripts/util.js" /> 
 		<include src="file://{resources}/scripts/containers/dota_inventory_item.js" />
 	</scripts>
 	<Panel class="ItemPanel" draggable="true">

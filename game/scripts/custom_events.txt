@@ -4,6 +4,10 @@
 	{
 		"itemName"		"string"
 	}
+	"panorama_shop_show_item_if_open"
+	{
+		"itemName"		"string"
+	}
 	"player_profiles_show_info"
 	{
 		"playerId"		"short"

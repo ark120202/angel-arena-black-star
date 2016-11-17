@@ -152,7 +152,6 @@ function SmallItemOnDragStart(panelId, dragCallbacks) {
 	$.GetContextPanel().AddClass("DropDownMode")
 	var panel = $("#" + panelId)
 	var itemName = panel.itemName
-
 	ItemHideTooltip(panel);
 
 	var displayPanel = $.CreatePanel("DOTAItemImage", panel, "dragImage");
@@ -163,6 +162,9 @@ function SmallItemOnDragStart(panelId, dragCallbacks) {
 	dragCallbacks.displayPanel = displayPanel;
 	dragCallbacks.offsetX = 0;
 	dragCallbacks.offsetY = 0;
+	SetPannelDraggedChild(displayPanel, function() {
+		return !$.GetContextPanel().BHasClass("DropDownMode");
+	});
 	return true;
 }
 
@@ -438,6 +440,7 @@ function UpdateShop() {
 		UpdateSmallItem(panel)
 	})
 	UpdateItembuildsForHero();
+	//$.GetContextPanel().SetHasClass("InRangeOfShop", Entities.IsInRangeOfShop(m_QueryUnit, 0, true))
 }
 
 function AutoUpdateShop() {
@@ -488,7 +491,7 @@ function SelectItembuild(t) {
 			itemsRoot.AddClass("ItembuildItemGroupItemRoot");
 
 			$.Each(groupData.content, function(itemName) {
-				var itemPanel = $.CreatePanel("Panel", itemsRoot, "")
+				var itemPanel = $.CreatePanel("Panel", itemsRoot, "shop_itembuild_items_" + itemName)
 				SnippetCreate_SmallItem(itemPanel, itemName)
 				itemPanel.AddClass("BigItemPanel")
 			})
@@ -497,6 +500,11 @@ function SelectItembuild(t) {
 		$("#Itembuild_author").text = "";
 		$("#Itembuild_patch").text = "";
 	}
+}
+
+function ShowHideItembuilds() {
+	$.GetContextPanel().ToggleClass("ItembuildsHidden");
+	$("#ShowHideItemguidesLabel").text = $.GetContextPanel().BHasClass("ItembuildsHidden") ? "<" : ">";
 }
 
 (function() {
@@ -537,6 +545,10 @@ function SelectItembuild(t) {
 	})
 
 	GameEvents.Subscribe("panorama_shop_show_item", ShowItemInShop)
+	GameEvents.Subscribe("panorama_shop_show_item_if_open", function(data) {
+		if (!$("#ShopBase").BHasClass("ShopBase_Out"))
+			ShowItemInShop(data)
+	})
 	UpdatePanoramaState()
 	AutoUpdateShop()
 	AutoUpdateQuickbuy()

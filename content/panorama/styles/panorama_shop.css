@@ -27,11 +27,15 @@
 {
 	width: 270px;
 	height: 100%;
-	//background-color: rgba(0,0,0,252);
 	background-image: url("file://{images}/custom_game/shop/itembuilds_panel.png");
 	background-position: -18px -12px;
 	background-size: 112% 106%;
 	flow-children: down;
+}
+
+.ItembuildsHidden #ItembuildsPanel
+{
+	visibility: collapse;
 }
 
 .SimpleRow
@@ -457,9 +461,9 @@ DropDownMenu Label
 #ShowHideItemguidesPanel
 {
 	align: left bottom;
-	margin: 5px;
+	margin-left: 0;
 	height: 36px;
-	width: 64px;
+	width: 36px;
 	background-color: rgba(0,0,0,240);
 	border-radius: 7px;
 }
@@ -471,5 +475,4 @@ DropDownMenu Label
 	font-size: 24px;
 	align: center center;
 	text-shadow: 0px 0px 1px gold;
-	text-transform: uppercase;
 }

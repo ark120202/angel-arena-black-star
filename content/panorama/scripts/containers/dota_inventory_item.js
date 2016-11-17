@@ -28,7 +28,7 @@ function UpdateItem() {
 				break;
 			}
 		}
-
+		panel.GetParent().SetHasClass("InRangeOfShop", Entities.IsInRangeOfShop(m_QueryUnit, 0, true) && show)
 		panel.visible = show;
 	}
 
@@ -101,7 +101,7 @@ function ActivateItem() {
 	lastClick = 0;
 	if (m_Item == -1)
 		return;
-	GameEvents.SendEventClientSide("panorama_shop_show_item", {
+	GameEvents.SendEventClientSide("panorama_shop_show_item_if_open", {
 		"itemName": Abilities.GetAbilityName(m_Item)
 	});
 	// Items are abilities - just execute the ability
@@ -241,6 +241,9 @@ function OnDragStart(panelId, dragCallbacks) {
 
 	// grey out the source panel while dragging
 	$.GetContextPanel().AddClass("dragging_from");
+	SetPannelDraggedChild(displayPanel, function() {
+		return !$.GetContextPanel().BHasClass("dragging_from");
+	});
 	return true;
 }
 
@@ -293,10 +296,20 @@ function GetSlot() {
 	return m_ItemSlot;
 }
 
+function GetItem() {
+	return m_Item;
+}
+
+function GetUnit() {
+	return m_QueryUnit;
+}
+
 (function() {
 	$.GetContextPanel().SetItem = SetItem;
 	$.GetContextPanel().SetItemSlot = SetItemSlot;
 	$.GetContextPanel().GetSlot = GetSlot;
+	$.GetContextPanel().GetItem = GetItem;
+	$.GetContextPanel().GetUnit = GetUnit;
 
 	// Drag and drop handlers ( also requires 'draggable="true"' in your XML, or calling panel.SetDraggable(true) )
 	$.RegisterEventHandler('DragEnter', $.GetContextPanel(), OnDragEnter);

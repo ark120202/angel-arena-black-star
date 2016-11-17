@@ -117,6 +117,7 @@
 		"containers_inventory_context_drop_from_stash"			"Убрать из тайника"
 		"containers_inventory_context_alert"					"Alert"
 		"containers_inventory_context_move_to_stash"			"Переместить в тайник"
+		"containers_inventory_stash_takeall"					"ВЗЯТЬ ВСЕ"
 
 		"arthas_vsolyanova_notifiaction"						"НЫЫЫЫЫЫЫЫАААААААААААААААААААААААА ✓✓✓✓"
 

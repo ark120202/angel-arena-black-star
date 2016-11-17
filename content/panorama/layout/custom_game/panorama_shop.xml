@@ -48,8 +48,8 @@
 					<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow2" />
 					<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow3" />
 				</Panel>
-				<Button id="ShowHideItemguidesPanel" onactivate="ShowHideItembuides()">
-					<Label id="ShowHideItemguidesLabel" hittest="false" text="&lt;&lt;&lt;" />
+				<Button id="ShowHideItemguidesPanel" hittest="true" onactivate="ShowHideItembuilds()">
+					<Label id="ShowHideItemguidesLabel" hittest="false" text="&gt;" />
 				</Button>
 			</Panel>
 		</Panel>

@@ -2734,7 +2734,7 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Starting_Items",
 				content = {
 					"item_slippers",
-					"item_circlet_of_nobility",
+					"item_circlet",
 					"item_tango_arena",
 					"item_flask",
 					"item_clarity",
