@@ -37,7 +37,7 @@
 		"Ability8"				"attribute_bonus_arena"
 		"Ability9"				"wisp_spirits_in"
 		"Ability10"				"wisp_spirits_out"
-		"Changed"					"1"
+		"Changed"				"1"
 		"AttackRate"			"1.1"
 	}
 	"npc_dota_hero_ogre_magi"
@@ -219,6 +219,7 @@
 		"Ability15"	""
 		"Ability16"	""
 		"Ability17"	""
+		"Changed"					"1"
 		"AttackRate"				"1.1"
 	}
 

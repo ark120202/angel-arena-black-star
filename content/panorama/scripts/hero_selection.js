@@ -563,17 +563,13 @@ function HeroSelectionEnd() {
 	$.GetContextPanel().style.opacity = 0
 	$.Schedule(5.6, function() {
 		MainPanel.visible = false
-		if (HideEvent != null) {
+		if (HideEvent != null)
 			GameEvents.Unsubscribe(HideEvent)
-		}
-
-		if (ShowPrecacheEvent != null) {
+		if (ShowPrecacheEvent != null)
 			GameEvents.Unsubscribe(ShowPrecacheEvent)
-		}
-
-		if (PTID != null) {
+		if (PTID != null)
 			PlayerTables.UnsubscribeNetTableListener(PTID)
-		}
+
 		$.GetContextPanel().DeleteAsync(0)
 	})
 }

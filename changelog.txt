@@ -38,7 +38,7 @@ General:
 	All bosses reworked
 	All essences removed
 	Rubick reworked
-	Added new hero: M
+	Added new hero: Mirratie
 	Added new items:
 		-Moon Dust
 		-Cursed Eye
@@ -53,8 +53,10 @@ General:
 	Kill Limit: 25/75 => 75/150
 Balance:
 	Ability Shop:
-		-These abilities now are disabled in : Faceless Void -  Time Freeze, Rubick - Personality Steal
+		-These abilities now are disabled in : Faceless Void -  Time Freeze, Rubick - Personality Steal, Omniknight - Select Allies
 		-Disruptor - Thunder Strike: Cost: 1 => 4
+		omniknight_repel_lua"
+		"AbilityCooldown"				"6.0 7.0 8.0 9.0 10.0 11.0 12.0" >>> 20
 Fixes:
 	
 <<+===========================================================================================================

@@ -201,7 +201,6 @@ function HeroSelection:PreformGameStart()
 	if HeroSelection.SelectionEnd then
 		return
 	end
-	print("PREFORMING GAME START!")
 	HeroSelection.SelectionEnd = true
 	Timers:RemoveTimer(HeroSelection.GameStartTimer)
 	HeroSelection:PreformRandomForNotPickedUnits()
@@ -218,7 +217,6 @@ function HeroSelection:PreformGameStart()
 		end
 	end
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled( DISABLE_ANNOUNCER )
-	
 	PauseGame(true)
 	CustomGameEventManager:Send_ServerToAllClients("hero_selection_show_precache", {})
 	Timers:CreateTimer({
@@ -333,7 +331,16 @@ function HeroSelection:SelectHero(playerId, heroName, bAlternative, callback, bS
 						local oldhero = PlayerResource:GetSelectedHeroEntity(playerId)
 						local hero
 						if oldhero then
-							hero = PlayerResource:ReplaceHeroWith(playerId, heroName, 0, 0)
+							if oldhero:GetUnitName() == heroName then
+								local temp = PlayerResource:ReplaceHeroWith(playerId, FORCE_PICKED_HERO, 0, 0)
+								temp:AddNoDraw()
+								hero = PlayerResource:ReplaceHeroWith(playerId, heroName, 0, 0)
+								Timers:CreateTimer(0.03, function()
+									UTIL_Remove(temp)
+								end)
+							else
+								hero = PlayerResource:ReplaceHeroWith(playerId, heroName, 0, 0)
+							end
 						else
 							hero = CreateHeroForPlayer(heroName, PlayerResource:GetPlayer(playerId))
 						end
@@ -467,7 +474,7 @@ function HeroSelection:CollectPD()
 	end
 end
 
-function HeroSelection:ChangeHero(playerId, newHeroName, keepGold, keepExp, duration, item, transformationModifierName)
+function HeroSelection:ChangeHero(playerId, newHeroName, keepGold, keepExp, duration, item)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	if hero.PocketItem then
 		hero.PocketHostEntity = nil
@@ -477,7 +484,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepGold, keepExp, dura
 	for _,v in ipairs(hero:FindAllModifiers()) do
 		v:Destroy()
 	end
-	item:ApplyDataDrivenModifier(hero, hero, transformationModifierName, {})
+	hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
 	local gold = hero:GetGold()
 	local xp = hero:GetCurrentXP()
 	local fountatin = FindFountain(PlayerResource:GetTeam(playerId))
@@ -505,7 +512,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepGold, keepExp, dura
 	HeroSelection:RemoveAllOwnedUnits(playerId)
 	local startTime = GameRules:GetDOTATime(true, true)
 	HeroSelection:OnSelectHero(playerId, newHeroName, function(newHero)
-		item:ApplyDataDrivenModifier(newHero, newHero, transformationModifierName, {})
+		newHero:AddNewModifier(newHero, nil, "modifier_hero_selection_transformation", nil)
 		if keepGold then
 			newHero:SetGold(gold, true)
 		end
@@ -532,7 +539,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepGold, keepExp, dura
 			end
 		end
 		Timers:CreateTimer(duration - (GameRules:GetDOTATime(true, true) - startTime), function()
-			newHero:RemoveModifierByName(transformationModifierName)
+			newHero:RemoveModifierByName("modifier_hero_selection_transformation")
 		end)
 	end)
 end

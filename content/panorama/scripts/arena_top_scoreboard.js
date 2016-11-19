@@ -31,19 +31,6 @@ function UpdateScoreboard() {
 
 function ShowScoreboard() {
 	var shouldSort = false;
-	if (GameUI.CustomUIConfig().multiteam_top_scoreboard) {
-		var cfg = GameUI.CustomUIConfig().multiteam_top_scoreboard;
-		if (cfg.LeftInjectXMLFile) {
-			$("#LeftInjectXMLFile").BLoadLayout(cfg.LeftInjectXMLFile, false, false);
-		}
-		if (cfg.RightInjectXMLFile) {
-			$("#RightInjectXMLFile").BLoadLayout(cfg.RightInjectXMLFile, false, false);
-		}
-
-		if (typeof(cfg.shouldSort) !== 'undefined') {
-			shouldSort = cfg.shouldSort;
-		}
-	}
 	var scoreboardConfig = {
 		"teamXmlName": "file://{resources}/layout/custom_game/arena_top_scoreboard_team.xml",
 		"playerXmlName": "file://{resources}/layout/custom_game/arena_top_scoreboard_player.xml",

@@ -208,7 +208,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_antimage",
-		title = "Default Anti-Mage",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1410,7 +1410,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_elder_titan",
-		title = "Default Elder Titan.",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1652,7 +1652,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_furion",
-		title = "Default Nature's Prophet",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{

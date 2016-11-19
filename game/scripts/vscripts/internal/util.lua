@@ -690,10 +690,6 @@ function table.merge(input1, input2)
 	end
 end
 
-function IsHeroSelected(heroName)
-	return PlayerResource:IsHeroSelected(heroName) or HeroSelection:IsHeroSelected(heroName)
-end
-
 function GetFullHeroName(unit)
 	if unit.IsAlternative then
 		return "alternative_" .. unit:GetName()
@@ -1402,4 +1398,17 @@ function RemoveAbilityWithModifiers(unit, ability)
 		end
 	end
 	unit:RemoveAbility(ability:GetAbilityName())
+end
+
+function CreateGlobalParticle(name, callback, pattach)
+	local ps = {}
+	for team = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
+		local f = FindFountain(team)
+		if f then
+			local p = ParticleManager:CreateParticleForTeam(name, pattach or PATTACH_WORLDORIGIN, f, team)
+			callback(p)
+			table.insert(ps, p)
+		end
+	end
+	return ps
 end

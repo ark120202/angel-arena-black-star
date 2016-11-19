@@ -78,7 +78,7 @@ LinkLuaModifier("modifier_item_shard_attackspeed_stack", "items/lua/modifiers/mo
 LinkLuaModifier("modifier_apocalypse_apocalypse", "heroes/hero_apocalypse/modifier_apocalypse_apocalypse.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_set_attack_range", "modifiers/modifier_set_attack_range.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_charges", "libraries/modifiers/modifier_charges.lua", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_hero_selection_transformation", "modifiers/modifier_hero_selection_transformation.lua", LUA_MODIFIER_MOTION_NONE)
 
 function GameMode:PostLoadPrecache()
 	DebugPrint("[BAREBONES] Performing Post-Load precache")

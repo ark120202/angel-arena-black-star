@@ -46,7 +46,9 @@ function ExplodeSpore(keys)
 	local caster = keys.caster
 	local spore = keys.unit
 	local ability = keys.ability
-	ParticleManager:SetParticleControl(ParticleManager:CreateParticle("particles/arena/units/heroes/hero_cherub/explosive_spore_explode.vpcf", PATTACH_WORLDORIGIN, GLOBAL_VISIBLE_ENTITY), 0, spore:GetAbsOrigin())
+	CreateGlobalParticle("particles/arena/units/heroes/hero_cherub/explosive_spore_explode.vpcf", function(particle)
+		ParticleManager:SetParticleControl(particle, 0, spore:GetAbsOrigin())
+	end)
 	spore:EmitSound("Arena.Hero_Cherub.ExplosiveSpore.Explode")
 	spore:StopSound("Arena.Hero_Cherub.ExplosiveSpore.Plant")
 	spore:AddNoDraw()

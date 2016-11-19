@@ -22,9 +22,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"	"0"
-		"BountyGoldMin"	"0"
-		"BountyGoldMax"	"0"
+		"BountyXP"	""
+		"BountyGoldMin"	""
+		"BountyGoldMax"	""
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -66,21 +66,21 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"	"0"
-		"MagicalResistance"	"0"
+		"ArmorPhysical"	"30"
+		"MagicalResistance"	"60"
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
-		"AttackDamageMin"	"0"
-		"AttackDamageMax"	"0"
+		"AttackDamageMin"	""
+		"AttackDamageMax"	""
 		"AttackDamageType"	"DAMAGE_TYPE_ArmorPhysical"
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"	"0"
-		"BountyGoldMin"	"0"
-		"BountyGoldMax"	"0"
+		"BountyXP"	""
+		"BountyGoldMin"	""
+		"BountyGoldMax"	""
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -124,9 +124,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"	"0"
-		"BountyGoldMin"	"0"
-		"BountyGoldMax"	"0"
+		"BountyXP"	""
+		"BountyGoldMin"	""
+		"BountyGoldMax"	""
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -1551,7 +1551,7 @@
 	"npc_arena_boss_heaven"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"10000"
+		"Bosses_GoldToAll"			"30000"
 		"Bosses_RespawnDuration"	"600"
 		
 		// General
@@ -1570,8 +1570,8 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"150"
-		"MagicalResistance"			"45"									// Magical protection (percentage).
+		"ArmorPhysical"				"45"
+		"MagicalResistance"			"70"									// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
@@ -1602,8 +1602,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"200000"		// Base health.
-		"StatusHealthRegen"			"40"		// Health regeneration rate.
+		"StatusHealth"				"100000"		// Base health.
+		"StatusHealthRegen"			"20"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"100"		// Mana regeneration rate.
 
@@ -1640,7 +1640,7 @@
 	"npc_arena_boss_hell"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"10000"
+		"Bosses_GoldToAll"			"30000"
 		"Bosses_RespawnDuration"	"600"
 		
 		// General
@@ -1659,8 +1659,8 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"150"
-		"MagicalResistance"			"45"									// Magical protection (percentage).
+		"ArmorPhysical"				"45"
+		"MagicalResistance"			"70"									// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
@@ -1691,8 +1691,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"200000"		// Base health.
-		"StatusHealthRegen"			"40"		// Health regeneration rate.
+		"StatusHealth"				"100000"		// Base health.
+		"StatusHealthRegen"			"20"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"100"		// Mana regeneration rate.
 
@@ -1729,7 +1729,7 @@
 	"npc_arena_boss_l1_v1"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"10000"
+		"Bosses_GoldToAll"			"15000"
 		"Bosses_RespawnDuration"	"600"
 
 		// General
@@ -1744,30 +1744,30 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"5"
+		"ArmorPhysical"				"30"
 		"MagicalResistance"			"50"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
 		"ProjectileSpeed"			"900"
-		"AttackDamageMin"			"500"
-		"AttackDamageMax"			"600"
+		"AttackDamageMin"			"2500"
+		"AttackDamageMax"			"3000"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.2"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"900"
 
-		"BountyXP"					"5000"
+		"BountyXP"					"15000"
 
 		"HealthBarOffset"			"400"
 
 		"MovementSpeed"				"422"
 
-		"StatusHealth"				"100000"
-		"StatusHealthRegen"			"10"
-		"StatusMana"				"0"
-		"StatusManaRegen"			"0"
+		"StatusHealth"				"200000"
+		"StatusHealthRegen"			"30"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
@@ -1788,7 +1788,7 @@
 	"npc_arena_boss_l1_v2"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"10000"
+		"Bosses_GoldToAll"			"15000"
 		"Bosses_RespawnDuration"	"600"
 		
 		// General
@@ -1803,28 +1803,28 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"5"
+		"ArmorPhysical"				"25"
 		"MagicalResistance"			"50"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"500"
-		"AttackDamageMax"			"600"
+		"AttackDamageMin"			"2500"
+		"AttackDamageMax"			"2800"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.2"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"250"
 
-		"BountyXP"					"5000"
+		"BountyXP"					"18000"
 
 		"HealthBarOffset"			"400"
 
 		"MovementSpeed"				"522"
 
-		"StatusHealth"				"100000"
+		"StatusHealth"				"200000"
 		"StatusHealthRegen"			"10"
-		"StatusMana"				"0"
-		"StatusManaRegen"			"0"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
@@ -1845,7 +1845,7 @@
 	"npc_arena_boss_l2_v1"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"10000"
+		"Bosses_GoldToAll"			"20000"
 		"Bosses_RespawnDuration"	"600"
 		
 		// General
@@ -1860,30 +1860,30 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"5"
+		"ArmorPhysical"				"45"
 		"MagicalResistance"			"50"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
 		"ProjectileSpeed"			"900"
-		"AttackDamageMin"			"500"
-		"AttackDamageMax"			"600"
+		"AttackDamageMin"			"3500"
+		"AttackDamageMax"			"4000"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.2"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"900"
 
-		"BountyXP"					"5000"
+		"BountyXP"					"25000"
 
 		"HealthBarOffset"			"400"
 
 		"MovementSpeed"				"422"
 
-		"StatusHealth"				"100000"
+		"StatusHealth"				"300000"
 		"StatusHealthRegen"			"10"
-		"StatusMana"				"0"
-		"StatusManaRegen"			"0"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
@@ -1904,7 +1904,7 @@
 	"npc_arena_boss_l2_v2"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"10000"
+		"Bosses_GoldToAll"			"25000"
 		"Bosses_RespawnDuration"	"600"
 		
 		// General
@@ -1919,23 +1919,83 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"5"
+		"ArmorPhysical"				"45"
 		"MagicalResistance"			"50"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"500"
-		"AttackDamageMax"			"600"
+		"AttackDamageMin"			"3500"
+		"AttackDamageMax"			"4500"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.2"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"250"
 
-		"BountyXP"					"5000"
+		"BountyXP"					"25000"
 
 		"HealthBarOffset"			"400"
 
 		"MovementSpeed"				"522"
+
+		"StatusHealth"				"600000"
+		"StatusHealthRegen"			"10"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+	
+	"npc_arena_boss_central"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"10000"
+		"Bosses_RespawnDuration"	"600"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/viper/viper.vmdl"
+		"ModelScale"				"2"
+		"Level"						"200"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_any_passive"
+		"Ability2"					"boss_armor"
+		"Ability3"					"boss_central_passive"
+
+		"ArmorPhysical"				"5"
+		"MagicalResistance"			"50"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"ProjectileModel"			"particles/units/heroes/hero_viper/viper_poison_attack.vpcf"
+		"ProjectileSpeed"			"1000"
+		"AttackDamageMin"			"500"
+		"AttackDamageMax"			"600"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"900"
+
+		"BountyXP"					"5000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"422"
 
 		"StatusHealth"				"100000"
 		"StatusHealthRegen"			"10"

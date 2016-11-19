@@ -8,16 +8,19 @@ function Chronosphere( keys )
 
 	caster:AddNewModifier(caster, ability, "modifier_chronosphere_speed_lua", {duration = duration})
 	for _,v in ipairs(HeroList:GetAllHeroes()) do
-		if v:IsAlive() and v ~= caster and not (HasScepter(caster) and v:GetTeamNumber() == caster:GetTeamNumber()) then
+		if v:IsAlive() and not (HasScepter(caster) and v:GetTeamNumber() == caster:GetTeamNumber()) then
 			local dummy = CreateUnitByName("npc_dummy_blank", v:GetAbsOrigin(), false, nil, nil, caster:GetTeamNumber())
 			ability:ApplyDataDrivenModifier(caster, dummy, "modifier_faceless_void_time_freeze_aura", {duration = duration})
-			local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf", PATTACH_WORLDORIGIN, GLOBAL_VISIBLE_ENTITY)
 			local radius_pfx = ability:GetLevelSpecialValueFor("radius_pfx", ability:GetLevel() - 1)
-			ParticleManager:SetParticleControl(pfx, 0, v:GetAbsOrigin())
-			ParticleManager:SetParticleControl(pfx, 1, Vector(radius_pfx, radius_pfx, 0))
+			CreateGlobalParticle("particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf", function(particle)
+				ParticleManager:SetParticleControl(particle, 0, v:GetAbsOrigin())
+				ParticleManager:SetParticleControl(particle, 1, Vector(radius_pfx, radius_pfx, 0))
+				Timers:CreateTimer(duration, function()
+					ParticleManager:DestroyParticle(particle, false)
+				end)
+			end)
 			AddFOWViewer(caster:GetTeamNumber(), v:GetAbsOrigin(), radius_pfx, duration, false)
 			Timers:CreateTimer(duration, function()
-				ParticleManager:DestroyParticle(pfx, false)
 				UTIL_Remove(dummy)
 			end)
 		end

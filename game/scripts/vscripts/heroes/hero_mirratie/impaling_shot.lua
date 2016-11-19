@@ -28,10 +28,12 @@ end
 if IsServer() then
 	function mirratie_impaling_shot:OnSpellStart()
 		self.ChannelTarget = self:GetCursorTarget()
+		self:GetCaster():EmitSound("Ability.AssassinateLoad")
 	end
 
 	function mirratie_impaling_shot:OnChannelFinish(bInterrupted)
 		if not bInterrupted then
+			self:GetCaster():EmitSound("Hero_Sniper.AssassinateProjectile")
 			local hTarget = self.ChannelTarget
 			if hTarget then
 				ProjectileManager:CreateTrackingProjectile({
@@ -49,7 +51,7 @@ if IsServer() then
 
 	function mirratie_impaling_shot:OnProjectileHit(hTarget, vLocation)
 		if hTarget and not hTarget:IsInvulnerable() and (not hTarget:IsMagicImmune() or self:GetCaster():HasScepter()) and not hTarget:TriggerSpellAbsorb(self) then
-			--EmitSoundOn( "Hero_VengefulSpirit.MagicMissileImpact", hTarget )
+			hTarget:EmitSound("Hero_Sniper.AssassinateDamage")
 			local stun_duration = self:GetSpecialValueFor("stun_duration")
 			local damage = self:GetAbilityDamage()
 
@@ -77,7 +79,7 @@ if IsServer() then
 			ParticleManager:SetParticleControl(pfx, 1, loc1)
 			self:CreateVisibilityNode(loc1, 10, 1)
 			for _,v in ipairs(FindUnitsInLine(self:GetCaster():GetTeamNumber(), loc1, loc2, nil, self:GetSpecialValueFor("impale_width"), self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags())) do
-				if not v:IsMagicImmune() or self:GetCaster():HasScepter() then
+				if v~= hTarget and (not v:IsMagicImmune() or self:GetCaster():HasScepter()) then
 					damage_table.victim = v
 					ApplyDamage(damage_table)
 					v:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = stun_duration * impale_effect_pct * 0.01})

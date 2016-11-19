@@ -43,7 +43,7 @@ function GameMode:OnNPCSpawned(keys)
 		HeroVoice:OnNPCSpawned(npc)
 
 		Timers:CreateTimer(function()
-			if npc and not npc:IsNull() and npc:IsAlive() and npc:IsHero() then
+			if npc and not npc:IsNull() and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
 				local base_hero = npc:GetPlayerOwner():GetAssignedHero()
 				if base_hero and base_hero ~= npc and npc:GetModelName() == base_hero:GetModelName() and base_hero.WearablesRemoved then
 					npc.WearablesRemoved = true

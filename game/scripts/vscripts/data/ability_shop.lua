@@ -47,7 +47,6 @@ ABILITY_SHOP_DATA = {
 	["shinobu_vampire_blood"] = { cost = 7, },
 	["ember_spirit_sleight_of_fist"] = { cost = 8, },
 	["flak_cannon_arena"] = { cost = 4, },
-	["omniknight_select_allies"] = { cost = 4, },
 	["dark_seer_ion_shell"] = { cost = 5, },
 	["warlock_fatal_bonds_arena"] = { cost = 2, },
 	["spectre_dispersion"] = { cost = 3, },
@@ -87,4 +86,5 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"keeper_of_the_light_spirit_form",
 	"faceless_void_time_freeze",
 	"mirratie_sixth_sense",
+	"omniknight_select_allies"
 }
