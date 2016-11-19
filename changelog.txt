@@ -1,0 +1,72 @@
+TODO LIST:
+	съесть гемы
+	вижон купить на дуэль
+	доделать панели selection (хп, картинки)
+	переделать инвайт на 1х1 дуэли
+	сделать войду купол на себя
+
+	Добавить дроп с боссов в магазин
+	Дополнить гайды
+	Сделать карту в меню пика
+	globals.lua/GLOBAL_VISIBLE_ENTITY
+	check apocalypse_agnis_touch + sell
+	забалансить боссов
+	Пофиксить репик с альт героями - копия предметов<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Идеи для предметов:
+	Star Blade:
+		Из Fallen Star + Dark Blade + ???
+		При ударе противника с шансом x% на него падает звезда, наносящая 1000 маг урона;
+
+	??:
+		Из вангварда + Fallen Star + blademail
+
+<<+===========================================================================================================
+[url=https://vk.com/wall-122685850_1356]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+Angel Arena Black Star - Версия 1.3:
+
+Общее:
+	
+Баланс:
+	
+Исправления:
+	
+========
+Angel Arena Black Star - Version 1.3:
+
+General:
+	Map reworked
+	All bosses reworked
+	All essences removed
+	Rubick reworked
+	Added new hero: M
+	Added new items:
+		-Moon Dust
+		-Cursed Eye
+		-Fallen Star
+		-Demons Paw
+		-Awakened Cursed Eye
+	Most of items, that used essences in their recipes were rebalanced
+	Golden Eagle Relic reworked
+	Metamorphosis Elixir now is purchasable.
+	Itembuilds now can be hidden using a button.
+	When you click on an item in inventory it will be shown in shop, if it's opened.
+	Kill Limit: 25/75 => 75/150
+Balance:
+	Ability Shop:
+		-These abilities now are disabled in : Faceless Void -  Time Freeze, Rubick - Personality Steal
+		-Disruptor - Thunder Strike: Cost: 1 => 4
+Fixes:
+	
+<<+===========================================================================================================
+rhasta,
+lycan,
+lone_druid,
+visage,
+enigma,
+undd,
+furion,
+phoenix,
+venom
+pugna ward
+
+[	]*\/\/ Text Example[0-9.A-z\- ,\/\\]*\n

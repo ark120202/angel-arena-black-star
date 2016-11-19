@@ -59,18 +59,18 @@ ABILITY_SHOP_DATA = {
 	["doom_bringer_devour"] = { cost = 3 },
 	["techies_suicide"] = { cost = 6 },
 	["zen_gehraz_mystic_twister"] = { cost = 3 },
-
+	["abyssal_underlord_firestorm"] = { cost = 2 },
+	["disruptor_thunder_strike"] = { cost = 4 },
+	["mirratie_impaling_shot"] = { cost = 12 },
 }
 
 ABILITY_SHOP_SKIP_HEROES = {
 	"npc_dota_hero_invoker",
 	"npc_dota_hero_earth_spirit",
+	"npc_dota_hero_rubick"
 }
 
 ABILITY_SHOP_SKIP_ABILITIES = {
-	"rubick_spell_steal",
-	"rubick_empty1",
-	"rubick_empty2",
 	"broodmother_spin_web",
 	"morphling_morph",
 	"morphling_morph_agi",
@@ -85,4 +85,6 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"phoenix_sun_ray_toggle_move_empty",
 	"ogre_magi_unrefined_fireblast",
 	"keeper_of_the_light_spirit_form",
+	"faceless_void_time_freeze",
+	"mirratie_sixth_sense",
 }

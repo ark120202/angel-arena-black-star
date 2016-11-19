@@ -33,15 +33,15 @@ local requirements = {
 	"data/globals",
 	"data/constants",
 	"data/projectiles_table",
-	"data/casino_colortable",
 	"data/containers",
 	"data/kv_data",
-	"data/UserGroups",
 	"data/modifiers",
 	"data/settings",
 	"data/wearables",
 	"data/shop",
 	"data/itembuilds",
+	"data/abilities",
+	"data/ability_functions",
 	--------------------------------------------------
 	"internal/gamemode",
 	"internal/events",
@@ -74,10 +74,9 @@ GameModes:Preload()
 GameRules.CreateProjectile = Projectiles.CreateProjectile
 
 LinkLuaModifier("modifier_state_hidden", "modifiers/modifier_state_hidden", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_banned", "modifiers/modifier_banned", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_shard_attackspeed_stack", "items/lua/modifiers/modifier_item_shard_attackspeed_stack", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_apocalypse_apocalypse", "heroes/hero_apocalypse/modifier_apocalypse_apocalypse.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_custom_attack_range_melee", "modifiers/modifier_custom_attack_range_melee.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_set_attack_range", "modifiers/modifier_set_attack_range.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_charges", "libraries/modifiers/modifier_charges.lua", LUA_MODIFIER_MOTION_NONE)
 
 

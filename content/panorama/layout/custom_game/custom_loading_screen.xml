@@ -25,6 +25,7 @@
 			<Image src="file://{images}/custom_game/kills/action_1.png" />
 			<Image src="file://{images}/custom_game/kills/action_2.png" />
 			<Image src="file://{images}/custom_game/kills/action_3.png" />
+			<Image src="file://{images}/custom_game/scoreboard/scoreboard_if4.png" />
 
 			<Image src="file://{images}/heroes/alternative_npc_dota_hero_skeleton_king.png" />
 			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_skeleton_king.png" />
@@ -53,7 +54,9 @@
 			<Image src="file://{images}/heroes/alternative_npc_dota_hero_life_stealer.png" />
 			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_life_stealer.png" />
 			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_life_stealer.png" />
-
+			<Image src="file://{images}/heroes/alternative_npc_dota_hero_templar_assassin.png" />
+			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_templar_assassin.png" />
+			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_templar_assassin.png" />
 
 			<Image src="file://{images}/custom_game/units/portraits/npc_dota_beastmaster_boar_base.png" />
 			<Image src="file://{images}/custom_game/units/portraits/npc_dota_beastmaster_hawk_base.png" />

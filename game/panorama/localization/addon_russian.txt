@@ -195,5 +195,8 @@
 		"ability_shop_search_placeholder"						"Название способности или героя..."
 
 		"holdout_timer_label"									" волна:"
+
+		"DOTA_Item_Build_Title_Valve"							"Рекомендуемые предметы"
+		"DOTA_Item_Build_Title_Arena"							"Предметы из AABS"
 	}
 }

@@ -5,6 +5,7 @@ function GameMode:RegisterCustomListeners()
 	CustomGameEventManager:RegisterListener("heaven_hero_change_cast", Dynamic_Wrap(GameMode, "HeavenHeroChangeCast"))
 	CustomGameEventManager:RegisterListener("hud_buttons_show_custom_game_info", Dynamic_Wrap(GameMode, "ButtonsShowInfo"))
 	CustomGameEventManager:RegisterListener("hud_courier_burst", Dynamic_Wrap(GameMode, "BurstCourier"))
+	CustomGameEventManager:RegisterListener("modifier_clicked_purge", Dynamic_Wrap(GameMode, "ModifierClickedPurge"))
 
 	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
 		CustomGameEventManager:RegisterListener("hud_buttons_show_duel1x1call", Dynamic_Wrap(GameMode, "ButtonsShowDuel1x1Menu"))
@@ -132,5 +133,14 @@ function GameMode:BurstCourier(data)
 	if data.playerId then
 		local courier = FindCourier(PlayerResource:GetTeam(tonumber(data.playerId)))
 		courier:CastAbilityNoTarget(courier:FindAbilityByName("courier_burst"), tonumber(data.playerId))
+	end
+end
+
+function GameMode:ModifierClickedPurge(data)
+	if data.PlayerID and data.unit and data.modifier then
+		local ent = EntIndexToHScript(data.unit)
+		if ent and ent.entindex and ent:GetOwner() == PlayerResource:GetPlayer(data.PlayerID) and table.contains(ONCLICK_PURGABLE_MODIFIERS, data.modifier) then
+			ent:RemoveModifierByName(data.modifier)
+		end
 	end
 end

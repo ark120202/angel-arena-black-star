@@ -21,6 +21,16 @@ function GiveKillBonusGold(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
+	local modifiers = {
+		"modifier_item_skull_of_midas_unique",
+		"modifier_item_golden_eagle_relic_unique",
+	}
+	local ind = table.findIndex(modifiers, keys.modifier)[1]
+	for i,v in ipairs(modifiers) do
+		if caster:HasModifier(v) and ind and i > ind then
+			return
+		end
+	end
 	Gold:ModifyGold(caster, keys.KillGold, true)
 	caster:AddExperience(keys.KillXp, false, false)
 	local particle = ParticleManager:CreateParticleForPlayer("particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf", PATTACH_ABSORIGIN, caster, caster:GetPlayerOwner())

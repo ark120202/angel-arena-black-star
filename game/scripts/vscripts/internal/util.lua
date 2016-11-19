@@ -1394,3 +1394,12 @@ end
 function CDOTA_BaseNPC:IsHoldoutUnit()
 	return self.HoldoutSpawner and self.HoldoutWave
 end
+
+function RemoveAbilityWithModifiers(unit, ability)
+	for _,v in ipairs(unit:FindAllModifiers()) do
+		if v:GetAbility() == ability then
+			v:Destroy()
+		end
+	end
+	unit:RemoveAbility(ability:GetAbilityName())
+end

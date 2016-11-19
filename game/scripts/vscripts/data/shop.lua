@@ -1,7 +1,7 @@
 --First level - tab,  second level - category (column),  third level - item name
 PANORAMA_SHOP_ITEMS = {
-	[1] = {
-		[1] = {
+	{
+		{
 			"item_clarity",
 			"item_faerie_fire",
 			"item_enchanted_mango",
@@ -17,8 +17,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_team_changer",
 			"item_metamorphosis_elixir",
 		},
-
-		[2] = {
+		{
 			"item_branches",
 			"item_gauntlets",
 			"item_slippers",
@@ -34,8 +33,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_shard_primal_medium", 
 			"item_shard_primal_large",
 		},
-
-		[3] = {
+		{
 			"item_ring_of_protection",
 			"item_stout_shield",
 			"item_quelling_blade",
@@ -51,8 +49,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_javelin",
 			"item_mithril_hammer",
 		},
-
-		[4] = {
+		{
 			"item_wind_lace",
 			"item_magic_stick",
 			"item_sobi_mask",
@@ -68,8 +65,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_ghost",
 			"item_blink_arena",
 		},
-
-		[5] = {
+		{
 			"item_energy_booster",
 			"item_vitality_booster",
 			"item_point_booster",
@@ -83,8 +79,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_eagle",
 			"item_relic",
 		},
-
-		[6] = {
+		{
 			"item_shard_str_small",
 			"item_shard_str_medium",
 			"item_shard_str_large",
@@ -101,8 +96,8 @@ PANORAMA_SHOP_ITEMS = {
 			"item_shard_level",
 		},
 	},
-	[2] = {
-		[1] = {
+	{
+		{
 			"item_magic_wand",
 			"item_null_talisman",
 			"item_wraith_band",
@@ -116,8 +111,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_travel_boots",
 			"item_hand_of_midas_3_arena",
 		},
-
-		[2] = {
+		{
 			"item_ring_of_basilius",
 			"item_iron_talon",
 			"item_headdress",
@@ -133,7 +127,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_pipe",
 			"item_guardian_greaves",
 		},
-		[3] = {
+		{
 			"item_glimmer_cape",
 			"item_force_staff",
 			"item_veil_of_discord",
@@ -149,7 +143,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_octarine_core_arena",
 			"item_sunray_dagon_5_arena",
 		},
-		[4] = {
+		{
 			"item_hood_of_defiance",
 			"item_vanguard",
 			"item_blade_mail",
@@ -165,7 +159,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_heart_arena",
 			"item_black_king_bar_6",
 		},
-		[5] = {
+		{
 			"item_lesser_crit",
 			"item_armlet",
 			"item_invis_sword",
@@ -182,7 +176,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_radiance_3",
 		},
 
-		[6] = {
+		{
 			"item_mask_of_madness",
 			"item_helm_of_the_dominator",
 			"item_dragon_lance",
@@ -197,21 +191,22 @@ PANORAMA_SHOP_ITEMS = {
 			"item_desolator6",
 		},
 	},
-
-	[3] = {
+	{
 		{
 			"item_consecrated_sword",
 			"item_sacrificial_dagger",
 			"item_heaven_hero_change",
 			"item_hell_hero_change",
-			"item_essence_cheat",
-			"item_essence_eternal",
-			"item_boss_control",
+
+			"item_moon_dust",
+			"item_dark_blade",
+			"item_cursed_eye",
+			"item_soul_of_titan",
+			"item_demons_paw",
+			"item_phantom_bone",
+			"item_fallen_star",
 		},
 		{
-			"item_soul_of_titan",
-			"item_dark_blade",
-			"item_phantom_bone",
 			"item_titanium_fruit",
 			"item_coffee_bean",
 			"item_homemade_cheese",
@@ -231,6 +226,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_blade_of_discord",
 			"item_essential_orb_fire_6",
 			"item_auto_sheepstick",
+			"item_awakened_cursed_eye",
 		},
 		{
 			"item_dark_flow",
@@ -241,8 +237,8 @@ PANORAMA_SHOP_ITEMS = {
 			"item_rapier_of_pain",
 			"item_diffusal_style",
 			"item_fallhammer",
-			"item_desolating_skadi",
 			"item_haganemushi",
+			"item_desolating_skadi",
 			"item_radiance_frozen",
 		},
 		{

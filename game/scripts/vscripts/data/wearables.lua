@@ -5,7 +5,6 @@ CUSTOM_WEARABLES_PLAYER_ITEMS = {
 		"item_common_radio_car",
 		"item_item_summoned_unit_kyuubey",
 		"_______item_test",
-		--"item_common_model_tree"
 	},
 	[82292900] = {
 		"item_hero_stargazer_helmet_of_the_sunray",
@@ -61,9 +60,7 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 		end
 	},
 	["_______item_test"] = {
-		base_model = "models/hero_madoka/madoka.vmdl",
-		base_model_scale = 1.2,
-		hide_wearables = true,
+	
 	},
 	["item_item_summoned_unit_kyuubey"] = {
 		PlayerKeys = {

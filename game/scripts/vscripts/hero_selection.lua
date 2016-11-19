@@ -632,9 +632,7 @@ function TransformUnitClass(unit, classTable)
 			--TODO Check
 			unit:SetHasInventory(toboolean(value))
 		elseif key == "AttackRange" then
-			if value == 150 then
-				unit:AddNewModifier(unit, nil, "modifier_custom_attack_range_melee", nil)
-			end
+			unit:AddNewModifier(unit, nil, "modifier_set_attack_range", {AttackRange = value})
 		elseif key == "HideWearables" and value == 1 then
 			unit.WearablesRemoved = true
 			CustomWearables:RemoveDotaWearables(unit)

@@ -56,6 +56,8 @@
 		"alternative_npc_dota_hero_dark_seer_bio"	        ""
 		"alternative_npc_dota_hero_life_stealer"			"Stegius"
 		"alternative_npc_dota_hero_life_stealer_bio"		""
+		"alternative_npc_dota_hero_templar_assassin"		"Mirratie"
+
 		// "npc_dota_hero_riki_notes"						"Added Aghanim's Scepter upgrade."
 		// "npc_dota_hero_wisp_notes"						"Added Aghanim's Scepter upgrade."
 		// "npc_dota_hero_ogre_magi_notes"					"Added new Aghanim's Scepter upgrade."
@@ -202,5 +204,8 @@
 		"ability_shop_search_placeholder"						"Ability or hero name..."
 
 		"holdout_timer_label"									" wave:"
+
+		"DOTA_Item_Build_Title_Valve"							"Recommended items"
+		"DOTA_Item_Build_Title_Arena"							"AABS Default"
 	}
 }

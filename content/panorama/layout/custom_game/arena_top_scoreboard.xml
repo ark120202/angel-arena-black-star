@@ -31,7 +31,7 @@
 				</Panel>
 				<Panel id="KillGoalPanel">
 					<Label id="KillGoalLabel_base" text="#kill_goal_tooltip" />
-					<Label id="KillGoalLabel" text="200" />
+					<Label id="KillGoalLabel" text="" />
 				</Panel>
 			</Panel>
 			<Panel hittest="false" id="RightInjectXMLFile" />

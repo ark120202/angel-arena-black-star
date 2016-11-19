@@ -6,6 +6,7 @@
 *.vxml_c
 *.vcss_c
 *.vpk
+*.vsnd_c
 
 *.vanim_c
 *.vmesh_c

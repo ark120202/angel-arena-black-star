@@ -3,6 +3,7 @@ var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
 var m_AbilityPanels = [];
 var m_BuffPanels = [];
 var CustomHudEnabled = false;
+var m_BuffPanelsClickPurgable = [];
 
 function OnLevelUpClicked() {
 	if (Game.IsInAbilityLearnMode()) {
@@ -14,7 +15,44 @@ function OnLevelUpClicked() {
 
 function UpdatePanels() {
 	var unit = Players.GetLocalPlayerPortraitUnit()
+
+	var nBuffs = Entities.GetNumBuffs(unit);
+	var nUsedPanels = 0;
+	var nUsedPanelsClickPurgable = 0;
+	for (var i = 0; i < nBuffs; ++i) {
+		var buffSerial = Entities.GetBuff(unit, i);
+		if (buffSerial != -1) {
+			if (!Buffs.IsHidden(unit, buffSerial)) {
+				if (CustomHudEnabled) {
+					if (nUsedPanels >= m_BuffPanels.length) {
+						var buffPanel = CreateSnippet_Buff($.CreatePanel("Panel", $("#BuffsPanel"), ""))
+						m_BuffPanels.push(buffPanel);
+					}
+					var buffPanel = m_BuffPanels[nUsedPanels];
+					buffPanel.SetBuff(buffSerial, unit);
+					nUsedPanels++;
+				}
+			} else if (Buffs.GetName(unit, buffSerial) == "modifier_rubick_personality_steal") {
+				if (nUsedPanelsClickPurgable >= m_BuffPanelsClickPurgable.length) {
+					var buffPanel = CreateSnippet_Buff($.CreatePanel("Panel", $("#ClickPurgableModifiersOverlay"), ""))
+					m_BuffPanelsClickPurgable.push(buffPanel);
+				}
+				var buffPanel = m_BuffPanelsClickPurgable[nUsedPanelsClickPurgable];
+				buffPanel.SetBuff(buffSerial, unit);
+				nUsedPanelsClickPurgable++;
+			}
+		}
+	}
+	for (var i = nUsedPanelsClickPurgable; i < m_BuffPanelsClickPurgable.length; ++i) {
+		var buffPanel = m_BuffPanelsClickPurgable[i];
+		buffPanel.SetBuff(-1, -1);
+	}
+
 	if (CustomHudEnabled) {
+		for (var i = nUsedPanels; i < m_BuffPanels.length; ++i) {
+			var buffPanel = m_BuffPanels[i];
+			buffPanel.SetBuff(-1, -1);
+		}
 		$("#HPBar_LabelConst").text = Entities.GetHealth(unit) + "/" + Entities.GetMaxHealth(unit)
 		$("#HPBar_LabelRegen").text = " + " + Entities.GetHealthThinkRegen(unit).toFixed(1)
 		$("#HPBar_Progress").value = Entities.GetHealthPercent(unit)
@@ -59,24 +97,6 @@ function UpdatePanels() {
 		$("#AttributePanelStackAttributes").hittest = Entities.GetAbilityPoints(unit) > 0 && (Game.IsInAbilityLearnMode() || GameUI.IsControlDown())
 		$("#AttributePanelStackAttributes").SetHasClass("LearnableAttributes", Entities.GetAbilityPoints(unit) > 0)
 
-		var nBuffs = Entities.GetNumBuffs(unit);
-		var nUsedPanels = 0;
-		for (var i = 0; i < nBuffs; ++i) {
-			var buffSerial = Entities.GetBuff(unit, i);
-			if (buffSerial != -1 && !Buffs.IsHidden(unit, buffSerial)) {
-				if (nUsedPanels >= m_BuffPanels.length) {
-					var buffPanel = CreateSnippet_Buff($.CreatePanel("Panel", $("#BuffsPanel"), ""))
-					m_BuffPanels.push(buffPanel);
-				}
-				var buffPanel = m_BuffPanels[nUsedPanels];
-				buffPanel.SetBuff(buffSerial, unit);
-				nUsedPanels++;
-			}
-		}
-		for (var i = nUsedPanels; i < m_BuffPanels.length; ++i) {
-			var buffPanel = m_BuffPanels[i];
-			buffPanel.SetBuff(-1, -1);
-		}
 		var courier = FindCourier(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()))
 		if (courier != null) {
 			var courier_burst = Entities.GetAbilityByName(courier, "courier_burst")
@@ -298,8 +318,13 @@ function CreateSnippet_Buff(panel) {
 	}
 	panel.FindChildTraverse("BuffFrame").SetPanelEvent("onactivate", function() {
 		//var alertBuff = GameUI.IsAltDown();
-		if (panel.BuffSerial > -1)
+		if (panel.BuffSerial > -1 && Entities.IsControllableByPlayer(panel.queryUnit, Game.GetLocalPlayerID())) {
 			Players.BuffClicked(panel.queryUnit, panel.BuffSerial, false);
+			GameEvents.SendCustomGameEventToServer("modifier_clicked_purge", {
+				unit: panel.queryUnit,
+				modifier: Buffs.GetName(panel.queryUnit, panel.BuffSerial)
+			});
+		}
 	})
 	panel.FindChildTraverse("BuffFrame").SetPanelEvent("onmouseover", function() {
 		if (panel.BuffSerial > -1)
@@ -472,12 +497,6 @@ function UpdateSelection() {
 (function() {
 	GameUI.SetRenderTopInsetOverride(0)
 	GameUI.SetRenderBottomInsetOverride(0)
-	try {
-		AutoUpdatePanels()
-	} catch (err) {}
-	try {
-		UpdateAbilities()
-	} catch (err) {}
 
 	GameEvents.Subscribe("dota_ability_changed", UpdateAbilities)
 	GameEvents.Subscribe("dota_portrait_ability_layout_changed", UpdateAbilities)
@@ -507,4 +526,6 @@ function UpdateSelection() {
 			GameUI.CustomUIConfig().DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
 		}
 	})
+	UpdateAbilities()
+	AutoUpdatePanels()
 })()

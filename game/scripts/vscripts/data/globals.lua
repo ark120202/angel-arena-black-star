@@ -10,6 +10,7 @@ if not Globals_Initialized then
 	TEAMS_COURIERS = {}
 	RANDOM_OMG_PRECACHED_HEROES = {}
 	CourierTimer = {}
+	DemonKingBarTimers = {}
 	--GameMode._AsyncFunctionHandler = {}
 	Timers:CreateTimer(0.03, function()
 		GLOBAL_VISIBLE_ENTITY = Entities:FindByName(nil, "npc_arena_boss_keeper")

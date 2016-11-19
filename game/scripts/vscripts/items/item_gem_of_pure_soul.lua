@@ -13,7 +13,6 @@ end
 
 function RemoveCooldownsWorldpanel(keys)
 	local target = keys.target
-	print("destroy")
 	if target.GemOfPureSoulCooldownsWorldpanel then
 		target.GemOfPureSoulCooldownsWorldpanel:Delete()
 		target.GemOfPureSoulCooldownsWorldpanel = nil

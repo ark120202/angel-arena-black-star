@@ -117,7 +117,6 @@ function GameMode:OnPlayerReconnect(keys)
 	DebugPrint( '[BAREBONES] OnPlayerReconnect' )
 	DebugPrintTable(keys)
 	DeepPrintTable(keys)
-	--TODO modifier_banned
 end
 
 -- An item was purchased by a player

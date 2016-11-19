@@ -184,5 +184,7 @@
 			<Label class="PlayerControlsButton" text="?" onactivate="GameEvents.SendCustomGameEventToServer('hud_buttons_show_custom_game_info', {playerid: Game.GetLocalPlayerID()})"/>
 			<Label class="PlayerControlsButton" text="I" onactivate="SetMinimalisticUIEnabled(GetDotaHud().BHasClass('MinimalisticHudDisabled'))"/>
 		</Panel>
+
+		<Panel id="ClickPurgableModifiersOverlay" />
 	</Panel>
 </root>

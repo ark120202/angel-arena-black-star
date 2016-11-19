@@ -11,8 +11,8 @@ function Bosses:InitAllBosses()
 		Bosses:CreateBossPortal("primal", i)]]
 		Bosses:SpawnStaticBoss("l1_v1", i)
 		Bosses:SpawnStaticBoss("l1_v2", i)
-		--Bosses:SpawnStaticBoss("l2_v1", i)
-		--Bosses:SpawnStaticBoss("l2_v2", i)
+		Bosses:SpawnStaticBoss("l2_v1", i)
+		Bosses:SpawnStaticBoss("l2_v2", i)
 	end
 	Bosses:SpawnStaticBoss("heaven")
 	Bosses:SpawnStaticBoss("hell")
@@ -34,11 +34,12 @@ function Bosses:SpawnStaticBoss(name, team)
 end
 
 function Bosses:RegisterKilledBoss(unit, team)
-	local bossname = string.gsub(unit:GetUnitName(), "npc_arena_boss_", "")
-	local amount = BOSSES_SETTINGS[bossname].gold_overall
+	local unitname = unit:GetUnitName()
+	local bossname = string.gsub(unitname, "npc_arena_boss_", "")
+	local amount = unit:GetKeyValue("Bosses_GoldToAll")
 	local p1, p2 = CreateGoldNotificationSettings(amount)
 	
-	Notifications:TopToAll({text="#" .. unit:GetUnitName()})
+	Notifications:TopToAll({text="#" .. unitname})
 	Notifications:TopToAll({text="#bosses_killed_p1", continue=true})
 	Notifications:TopToAll(CreateTeamNotificationSettings(team, true))
 	Notifications:TopToAll({text="#bosses_killed_p2", continue=true})
@@ -47,7 +48,7 @@ function Bosses:RegisterKilledBoss(unit, team)
 	for _,v in ipairs(GetPlayersInTeam(team)) do
 		Gold:ModifyGold(v, amount)
 	end
-	Timers:CreateTimer(BOSSES_SETTINGS[bossname].RespawnTime, function()
+	Timers:CreateTimer(unit:GetKeyValue("Bosses_RespawnDuration"), function()
 		Bosses:SpawnStaticBoss(bossname, unit.OriginalTeam)
 	end)
 end

@@ -855,6 +855,12 @@
 	visibility: collapse;
 }
 
+#ClickPurgableModifiersOverlay
+{
+	align: left bottom;
+	margin: 300px 300px;
+}
+
 .MinimalisticHudDisabled #Background,
 .MinimalisticHudDisabled #DotaHeroStatus,
 .MinimalisticHudDisabled #AttributesPanel,
@@ -890,6 +896,12 @@
 .MinimalisticHudDisabled #GoldPanel
 {
 	transform: translateY(-40px);
+}
+
+.MinimalisticHudDisabled #ClickPurgableModifiersOverlay
+{
+	align: left bottom;
+	margin: 220px 650px;
 }
 //16x10
 .AspectRatio16x10 #DotaHeroStatus
@@ -927,6 +939,12 @@
 {
 	pre-transform-scale2d: 0.88;
 	margin-left: 329px;
+}
+
+.AspectRatio16x10.MinimalisticHudDisabled #ClickPurgableModifiersOverlay
+{
+	align: left bottom;
+	margin: 220px 545px;
 }
 //4x3
 .AspectRatio4x3 #DotaHeroStatus
@@ -968,6 +986,12 @@
 {
 	pre-transform-scale2d: 0.86;
 	margin-left: 322px;
+}
+
+.AspectRatio4x3.MinimalisticHudDisabled #ClickPurgableModifiersOverlay
+{
+	align: left bottom;
+	margin: 220px 478px;
 }
 
 //5x4
@@ -1015,6 +1039,12 @@
 {
 	pre-transform-scale2d: 0.8;
 	margin-left: 303px;
+}
+
+.AspectRatio5x4.MinimalisticHudDisabled #ClickPurgableModifiersOverlay
+{
+	align: left bottom;
+	margin: 210px 447px;
 }
 
 

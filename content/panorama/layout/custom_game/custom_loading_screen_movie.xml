@@ -32,9 +32,9 @@
 		<Panel id="GoalVotePanel">
 			<Label id="GoalVoteLabel" text="#kill_goal_tooltip_vote_title"/>
 			<Panel id="GoalVotePanelTextEntry">
-				<TextEntry id="GoalVoteTextEntry" maxchars="3" tabindex="auto" />
-				<Label id="GoalVoteMinValue" text="25.." />
-				<Label id="GoalVoteMaxValue" text="..100" />
+				<TextEntry id="GoalVoteTextEntry" maxchars="3" />
+				<Label id="GoalVoteMinValue" text=".." />
+				<Label id="GoalVoteMaxValue" text=".." />
 			</Panel>
 			<Button id="GoalVoteButton" onactivate="SendKillGoalVote()">
 				<Label id="GoalVoteButtonLabel" hittest="false" text="#kill_goal_tooltip_vote_submit"/>

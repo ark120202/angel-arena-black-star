@@ -199,6 +199,29 @@
 		"AttributeIntelligenceGain"	"1.9"
 	}
 
+	"npc_dota_hero_rubick"
+	{
+		"override_hero"	"npc_dota_hero_rubick"
+		"Ability1"	"rubick_personality_steal"
+		"Ability2"	""
+		"Ability3"	""
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+		"Ability17"	""
+		"AttackRate"				"1.1"
+	}
+
 	//UNDONE
 
 	"npc_dota_hero_antimage"
@@ -1019,23 +1042,6 @@
 		"AttributeAgilityGain"		"2.1"
 		"MovementSpeed"				"300"
 		"AttributeIntelligenceGain"	"2.0"			
-	}
-
-	"npc_dota_hero_rubick"
-	{
-		"override_hero"	"npc_dota_hero_rubick"
-		"Ability1"	"rubick_telekinesis"
-		"Ability2"	"rubick_telekinesis_land"
-		"Ability3"	"rubick_fade_bolt"
-		"Ability4"	"rubick_null_field"
-		"Ability5"	"rubick_empty1"
-		"Ability6"	"rubick_empty2"
-		"Ability7"	"rubick_spell_steal"
-		"Ability8"	"attribute_bonus_arena"
-		"Ability9"	"rubick_hidden1"
-		"Ability10"	"rubick_hidden2"
-		"Ability11"	"rubick_hidden3"
-		"AttackRate"				"1.1"
 	}
 
 	"npc_dota_hero_disruptor"

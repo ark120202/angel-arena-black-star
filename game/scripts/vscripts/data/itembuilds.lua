@@ -1,7 +1,7 @@
 VALVE_ITEMBUILDS = {
 	{
 		hero = "npc_dota_hero_abaddon",
-		title = "Default Abaddon",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -46,7 +46,6 @@ VALVE_ITEMBUILDS = {
 					"item_ultimate_scepter",
 					"item_heart_arena",
 					"item_sheep",
-					"item_flying_courier",
 					"item_guardian_greaves",
 					"item_glimmer_cape",
 					"item_solar_crest",
@@ -56,7 +55,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_abyssal_underlord",
-		title = "Default Abyssal Underlord",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -106,7 +105,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_alchemist",
-		title = "Default Alchemist",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -161,7 +160,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_ancient_apparition",
-		title = "Default Ancient Apparition",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -202,7 +201,6 @@ VALVE_ITEMBUILDS = {
 					"item_force_staff",
 					"item_sphere",
 					"item_shivas_guard",
-					"item_flying_courier",
 					"item_guardian_greaves",
 				}
 			},
@@ -255,7 +253,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_arc_warden",
-		title = "Default Arc Warden",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -306,7 +304,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_axe",
-		title = "Default Axe",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -353,7 +351,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_bane",
-		title = "Default Bane",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -394,7 +392,6 @@ VALVE_ITEMBUILDS = {
 					"item_travel_boots",
 					"item_ghost",
 					"item_blink_arena",
-					"item_flying_courier",
 					"item_glimmer_cape",
 				}
 			},
@@ -402,7 +399,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_batrider",
-		title = "Default Batrider",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -450,7 +447,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_beastmaster",
-		title = "Default Beastmaster",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -499,7 +496,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_bloodseeker",
-		title = "Default Bloodseeker",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -544,7 +541,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_bounty_hunter",
-		title = "Default Bounty Hunter",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -591,7 +588,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_brewmaster",
-		title = "Default Brewmaster",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -640,7 +637,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_bristleback",
-		title = "Default Bristleback",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -692,7 +689,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_broodmother",
-		title = "Default Broodmother",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -739,7 +736,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_centaur",
-		title = "Default Centaur Warchief",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -785,7 +782,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_chaos_knight",
-		title = "Default Chaos Knight",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -834,7 +831,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_chen",
-		title = "Default Chen",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -873,14 +870,13 @@ VALVE_ITEMBUILDS = {
 					"item_ancient_janggo",
 					"item_ghost",
 					"item_ward_observer",
-					"item_flying_courier",
 				}
 			},
 		}
 	},
 	{
 		hero = "npc_dota_hero_clinkz",
-		title = "Default Clinkz",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -926,7 +922,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_crystal_maiden",
-		title = "Default Crystal Maiden",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -973,7 +969,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_dark_seer",
-		title = "Default Dark Seer",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1022,7 +1018,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_dazzle",
-		title = "Default Dazzle",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1064,7 +1060,6 @@ VALVE_ITEMBUILDS = {
 					"item_pipe",
 					"item_cyclone",
 					"item_ancient_janggo",
-					"item_flying_courier",
 					"item_guardian_greaves",
 				}
 			},
@@ -1072,7 +1067,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_death_prophet",
-		title = "Default Death Prophet",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1124,7 +1119,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_disruptor",
-		title = "Default Disruptor",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1166,14 +1161,13 @@ VALVE_ITEMBUILDS = {
 					"item_pipe",
 					"item_necronomicon_3",
 					"item_veil_of_discord",
-					"item_flying_courier",
 				}
 			},
 		}
 	},
 	{
 		hero = "npc_dota_hero_doom_bringer",
-		title = "Default Doom",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1222,7 +1216,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_dragon_knight",
-		title = "Default Dragon Knight",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1273,7 +1267,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_drow_ranger",
-		title = "Default Drow Ranger",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1318,7 +1312,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_earthshaker",
-		title = "Default Earthshaker",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1366,7 +1360,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_earth_spirit",
-		title = "Default Earth Spirit",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1466,7 +1460,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_ember_spirit",
-		title = "Default Ember Spirit",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1514,7 +1508,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_enchantress",
-		title = "Default Enchantress",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1564,7 +1558,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_enigma",
-		title = "Default Enigma",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1606,7 +1600,6 @@ VALVE_ITEMBUILDS = {
 					"item_sheepstick",
 					"item_shivas_guard",
 					"item_radiance_3",
-					"item_flying_courier",
 					"item_guardian_greaves",
 				}
 			},
@@ -1614,7 +1607,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_faceless_void",
-		title = "Default Faceless Void",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1708,7 +1701,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "",
-		title = "Generic Item Build",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1755,7 +1748,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_gyrocopter",
-		title = "Default Gyrocopter",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1802,7 +1795,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_huskar",
-		title = "Default Huskar",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1851,7 +1844,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_invoker",
-		title = "Default Invoker",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1897,7 +1890,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_jakiro",
-		title = "Default Jakiro",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1948,7 +1941,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_juggernaut",
-		title = "Default Juggernaut",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -1996,7 +1989,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_keeper_of_the_light",
-		title = "Default Keeper of the Light",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2045,7 +2038,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_kunkka",
-		title = "Default Kunkka",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2092,7 +2085,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_legion_commander",
-		title = "Default Legion Commander",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2142,7 +2135,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_leshrac",
-		title = "Default Leshrac",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2182,7 +2175,6 @@ VALVE_ITEMBUILDS = {
 					"item_blink_arena",
 					"item_shivas_guard",
 					"item_rod_of_atos",
-					"item_flying_courier",
 					"item_octarine_core_arena",
 					"item_glimmer_cape",
 					"item_guardian_greaves",
@@ -2192,7 +2184,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_lich",
-		title = "Default Lich",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2237,7 +2229,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_life_stealer",
-		title = "Default Lifestealer",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2287,7 +2279,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_lina",
-		title = "Default Lina",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2326,7 +2318,6 @@ VALVE_ITEMBUILDS = {
 					"item_bloodstone_arena",
 					"item_shivas_guard",
 					"item_rod_of_atos",
-					"item_flying_courier",
 					"item_octarine_core_arena",
 				}
 			},
@@ -2334,7 +2325,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_lion",
-		title = "Default Lion",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2372,14 +2363,13 @@ VALVE_ITEMBUILDS = {
 					"item_sheepstick",
 					"item_sunray_dagon_5_arena",
 					"item_ultimate_scepter",
-					"item_flying_courier",
 				}
 			},
 		}
 	},
 	{
 		hero = "npc_dota_hero_lone_druid",
-		title = "Default Lone Druid",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2447,7 +2437,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_luna",
-		title = "Default Luna",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2494,7 +2484,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_lycan",
-		title = "Default Lycan",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2540,7 +2530,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_magnataur",
-		title = "Default Magnus",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2586,7 +2576,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_medusa",
-		title = "Default Medusa",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2635,7 +2625,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_meepo",
-		title = "Default Meepo",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2680,7 +2670,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_mirana",
-		title = "Default Mirana",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2727,7 +2717,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_morphling",
-		title = "Default Morphling",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2773,7 +2763,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_naga_siren",
-		title = "Default Naga Siren",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2822,7 +2812,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_necrolyte",
-		title = "Default Necrolyte",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2874,7 +2864,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_nevermore",
-		title = "Default Nevermore",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2920,7 +2910,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_night_stalker",
-		title = "Default Night Stalker",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -2969,7 +2959,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_nyx_assassin",
-		title = "Default Nyx Assassin",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3014,7 +3004,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_obsidian_destroyer",
-		title = "Default Outworld Destroyer",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3063,7 +3053,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_ogre_magi",
-		title = "Default Ogre Magi",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3107,14 +3097,13 @@ VALVE_ITEMBUILDS = {
 					"item_cyclone",
 					"item_force_staff",
 					"item_pipe",
-					"item_flying_courier",
 				}
 			},
 		}
 	},
 	{
 		hero = "npc_dota_hero_omniknight",
-		title = "Default Omniknight",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3168,7 +3157,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_oracle",
-		title = "Default Oracle",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3205,7 +3194,6 @@ VALVE_ITEMBUILDS = {
 					"item_travel_boots",
 					"item_sheepstick",
 					"item_sunray_dagon_5_arena",
-					"item_flying_courier",
 					"item_guardian_greaves",
 				}
 			},
@@ -3213,7 +3201,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_phantom_assassin",
-		title = "Default Phantom Assassin",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3260,7 +3248,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_phantom_lancer",
-		title = "Default Phantom Lancer",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3306,7 +3294,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_phoenix",
-		title = "Default Phoenix",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3354,7 +3342,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_puck",
-		title = "Default Puck",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3401,7 +3389,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_pudge",
-		title = "Default Pudge",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3449,7 +3437,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_pugna",
-		title = "Default Pugna",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3495,7 +3483,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_queenofpain",
-		title = "Default Queen of Pain",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3544,7 +3532,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_rattletrap",
-		title = "Default Clockwerk",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3589,7 +3577,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_razor",
-		title = "Default Razor",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3635,7 +3623,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_riki",
-		title = "Default Riki",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3680,7 +3668,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_rubick",
-		title = "Default Rubick",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3726,14 +3714,13 @@ VALVE_ITEMBUILDS = {
 					"item_cyclone",
 					"item_force_staff",
 					"item_bloodstone_arena",
-					"item_flying_courier",
 				}
 			},
 		}
 	},
 	{
 		hero = "npc_dota_hero_sand_king",
-		title = "Default Sand King",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3779,7 +3766,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_shadow_demon",
-		title = "Default Shadow Demon",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3821,14 +3808,13 @@ VALVE_ITEMBUILDS = {
 					"item_mekansm",
 					"item_cyclone",
 					"item_sheepstick",
-					"item_flying_courier",
 				}
 			},
 		}
 	},
 	{
 		hero = "npc_dota_hero_shadow_shaman",
-		title = "Default Shadow Shaman",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3867,14 +3853,13 @@ VALVE_ITEMBUILDS = {
 					"item_bloodstone_arena",
 					"item_shivas_guard",
 					"item_necronomicon_3",
-					"item_flying_courier",
 				}
 			},
 		}
 	},
 	{
 		hero = "npc_dota_hero_shredder",
-		title = "Default Timbersaw",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3919,7 +3904,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_silencer",
-		title = "Default Silencer",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -3966,7 +3951,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_skeleton_king",
-		title = "Default Skeleton King",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4017,7 +4002,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_skywrath_mage",
-		title = "Default Skywrath Mage",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4069,7 +4054,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_slardar",
-		title = "Default Slardar",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4117,7 +4102,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_slark",
-		title = "Default Slark",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4166,7 +4151,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_sniper",
-		title = "Default Sniper",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4213,7 +4198,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_sniper",
-		title = "Tutorial items for Sniper",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4245,7 +4230,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_spectre",
-		title = "Default Spectre",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4292,7 +4277,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_spirit_breaker",
-		title = "Default Spiritbreaker",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4343,7 +4328,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_storm_spirit",
-		title = "Default Storm Spirit",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4391,7 +4376,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_sven",
-		title = "Default Sven",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4439,7 +4424,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_techies",
-		title = "Default Techies",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4482,7 +4467,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_templar_assassin",
-		title = "Default Templar Assassin",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4530,7 +4515,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_terrorblade",
-		title = "Default Terrorblade",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4577,7 +4562,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_tidehunter",
-		title = "Default Tidehunter",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4626,7 +4611,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_tinker",
-		title = "Default Tinker",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4677,7 +4662,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_tiny",
-		title = "Default Tiny",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4725,7 +4710,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_treant",
-		title = "Default Treant Protector",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4776,7 +4761,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_troll_warlord",
-		title = "Default Troll Warlord",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4824,7 +4809,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_tusk",
-		title = "Default Tusk",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4875,7 +4860,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_undying",
-		title = "Default Undying",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4926,7 +4911,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_ursa",
-		title = "Default Ursa",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -4969,14 +4954,14 @@ VALVE_ITEMBUILDS = {
 					"item_three_spirits_blades",
 					"item_abyssal_blade",
 					"item_sheepstick",
-					"item_desolater",
+					"item_desolator",
 				}
 			},
 		}
 	},
 	{
 		hero = "npc_dota_hero_vengefulspirit",
-		title = "Default Vengeful Spirit",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -5025,7 +5010,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_venomancer",
-		title = "Default Venomancer",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -5065,7 +5050,6 @@ VALVE_ITEMBUILDS = {
 					"item_orchid",
 					"item_manta_arena",
 					"item_ancient_janggo",
-					"item_flying_courier",
 					"item_octarine_core_arena",
 				}
 			},
@@ -5073,7 +5057,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_viper",
-		title = "Default Viper",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -5121,7 +5105,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_visage",
-		title = "Default Visage",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -5171,7 +5155,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_warlock",
-		title = "Default warlock",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -5221,7 +5205,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_weaver",
-		title = "Default Weaver",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -5267,7 +5251,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_windrunner",
-		title = "Default Windrunner",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -5317,7 +5301,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_winter_wyvern",
-		title = "Default Winter Wyvern",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -5365,7 +5349,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_wisp",
-		title = "Default Wisp",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -5412,7 +5396,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_witch_doctor",
-		title = "Default Witch Doctor",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{
@@ -5452,7 +5436,6 @@ VALVE_ITEMBUILDS = {
 					"item_bloodstone_arena",
 					"item_sunray_dagon_5_arena",
 					"item_sphere",
-					"item_flying_courier",
 					"item_glimmer_cape",
 				}
 			},
@@ -5460,7 +5443,7 @@ VALVE_ITEMBUILDS = {
 	},
 	{
 		hero = "npc_dota_hero_zuus",
-		title = "Default Zuus",
+		title = "#DOTA_Item_Build_Title_Valve",
 		author = "Valve",
 		items = {
 			{

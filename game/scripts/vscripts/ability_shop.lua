@@ -62,7 +62,7 @@ function AbilityShop:PostAbilityData()
 				isChanged = heroTable.Changed == 1
 			end
 			local abilityTbl = {}
-			for i = 1, 16 do
+			for i = 1, 17 do
 				local at = heroTable["Ability" .. i]
 				if at and at ~= "" and at ~= "attribute_bonus_arena" and not AbilityHasBehaviorByName(at, DOTA_ABILITY_BEHAVIOR_HIDDEN) and not table.contains(ABILITY_SHOP_SKIP_ABILITIES, at) then
 					local cost = 1
@@ -171,17 +171,12 @@ function AbilityShop:OnAbilitySell(data)
 		end
 		if Gold:GetGold(data.PlayerID) >= gold then
 			Gold:RemoveGold(data.PlayerID, gold)
-			for _,v in ipairs(hero:FindAllModifiers()) do
-				if v:GetAbility() == abilityh then
-					v:Destroy()
-				end
-			end
 			if data.ability == "attribute_bonus_arena" then
 				hero:SetAbilityPoints(hero:GetAbilityPoints() + cost*(abilityh:GetLevel()-1))
 			else
 				hero:SetAbilityPoints(hero:GetAbilityPoints() + cost*abilityh:GetLevel())
 			end
-			hero:RemoveAbility(data.ability)
+			RemoveAbilityWithModifiers(hero, abilityh)
 			local link = LINKED_ABILITIES[data.ability]
 			if link then
 				for _,v in ipairs(link) do
