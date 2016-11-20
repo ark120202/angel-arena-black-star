@@ -342,6 +342,10 @@ function GameMode:OnEntityKilled( keys )
 			Holdout:RegisterKilledUnit(killedUnit)
 		end
 
+		if killedUnit:IsRealCreep() then
+			Spawner.Creeps[killedUnit.SSpawner] = Spawner.Creeps[killedUnit.SSpawner] - 1
+		end
+
 		if killerEntity and killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then
 			local plId
 			if killerEntity.GetPlayerID then
