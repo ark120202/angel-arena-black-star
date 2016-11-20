@@ -321,14 +321,6 @@ DropDownMenu Label
 	opacity: 0.25;
 }
 
-.QuickbuyItemPanel
-{
-	width: 37.5px;
-	height: 27px;
-	border-radius: 5px;
-	margin: 2px;
-}
-
 
 
 
@@ -433,6 +425,14 @@ DropDownMenu Label
 	margin: 4px;
 	margin-top: 2px;
 	margin-bottom: 2px;
+}
+
+.QuickbuyItemPanel
+{
+	width: 37.5px;
+	height: 27px;
+	border-radius: 5px;
+	margin: 2px;
 }
 
 .ItemRecipeBoxRow.ItemRecipeBoxRowLength7 .SmallItemPanel
