@@ -59,12 +59,12 @@ SPAWNER_SETTINGS = {
 					[0] = "models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl",
 				}
 			},
-			[4] ={
+			--[[[4] ={
 				{
 					[-1] = "npc_dota_neutral_medium_variant1",
 					[0] = "models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl",
 				}
-			},
+			},]]
 		},
 	},
 	hard = {
@@ -78,13 +78,15 @@ SPAWNER_SETTINGS = {
 				}
 
 			},
-			--[[[1] ={
+			[1] ={
 				{
-					[-1] = "npc_dota_neutral_hard_variant1",
-					[0] = "models/heroes/invoker/forge_spirit.vmdl",
+					[-1] = "npc_dota_neutral_hard_variant2",
+					[0] = "models/creeps/neutral_creeps/n_creep_centaur_med/n_creep_centaur_med.vmdl",
+					[30] = "models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl",
+					[60] = "models/heroes/centaur/centaur.vmdl",
 				}
 
-			},]]
+			},
 		},
 	},
 }

@@ -13,6 +13,7 @@ if Duel == nil then
 	Duel.EntIndexer = {}
 	Duel.Particles = {}
 	Duel.Duel1x1Bet = 0
+	Duel.DuelCounter = 0
 end
 
 function Duel:CreateGlobalTimer()
@@ -153,6 +154,7 @@ function Duel:StartDuel()
 end
 
 function Duel:EndDuel()
+	Duel.DuelCounter = Duel.DuelCounter + 1
 	for _,v in ipairs(Duel.Particles) do
 		ParticleManager:DestroyParticle(v, false)
 	end
@@ -161,7 +163,7 @@ function Duel:EndDuel()
 		Notifications:TopToAll({text="#duel_over_winner_p1", duration=9.0})
 		Notifications:TopToAll(CreateTeamNotificationSettings(winner, false))
 		Notifications:TopToAll({text="#duel_over_winner_p2", continue=true})
-		local goldAmount = GetFilteredGold(ARENA_SETTINGS.GoldForWin)
+		local goldAmount = GetFilteredGold(ARENA_SETTINGS.WinGold_Base + (ARENA_SETTINGS.WinGold_PerDuel * Duel.DuelCounter))
 		local g1,g2 = CreateGoldNotificationSettings(goldAmount)
 		Notifications:TopToAll(g1)
 		Notifications:TopToAll(g2)

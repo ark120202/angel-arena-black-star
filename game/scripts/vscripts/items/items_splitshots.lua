@@ -19,7 +19,6 @@ function SplitShotLaunch( keys )
 	end
 end
 
--- Apply the auto attack damage to the hit unit
 function SplitShotDamage( keys )
 	local caster = keys.caster
 	local target = keys.target

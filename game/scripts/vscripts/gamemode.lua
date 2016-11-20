@@ -79,6 +79,7 @@ LinkLuaModifier("modifier_apocalypse_apocalypse", "heroes/hero_apocalypse/modifi
 LinkLuaModifier("modifier_set_attack_range", "modifiers/modifier_set_attack_range.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_charges", "libraries/modifiers/modifier_charges.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_hero_selection_transformation", "modifiers/modifier_hero_selection_transformation.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_fountain_aura_arena", "modifiers/modifier_fountain_aura_arena.lua", LUA_MODIFIER_MOTION_NONE)
 
 function GameMode:PostLoadPrecache()
 	DebugPrint("[BAREBONES] Performing Post-Load precache")
@@ -90,11 +91,11 @@ function GameMode:OnFirstPlayerLoaded()
 	Containers:UsePanoramaInventory(true)
 	HeroSelection:PrepareTables()
 	PanoramaShop:InitializeItemTable()
-	local portal2 = Entities:FindByName(nil, "target_mark_teleport_river_team2")
+	--[[local portal2 = Entities:FindByName(nil, "target_mark_teleport_river_team2")
 	local portal3 = Entities:FindByName(nil, "target_mark_teleport_river_team3")
 	if portal2 and portal3 then
 		CreateLoopedPortal(portal2:GetAbsOrigin(), portal3:GetAbsOrigin(), 80, "particles/customgames/capturepoints/cp_wood.vpcf", "", true)
-	end
+	end]]
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
 		AbilityShop:PostAbilityData()
 	end
@@ -388,6 +389,10 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			return false
 		end
 		if order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM and filterTable.entindex_ability and GetKeyValue(GetItemNameById(filterTable.entindex_ability), "ItemPurchasableFilter") == 0 then
+			return false
+		end
+		if order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM and Duel:IsDuelOngoing() then
+			Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_cant_purchase_duel_ongoing")
 			return false
 		end
 		if unit:IsRealHero() then

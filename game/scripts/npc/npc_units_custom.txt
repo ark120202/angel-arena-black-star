@@ -20,12 +20,6 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
 		"AttackDamageType"	"DAMAGE_TYPE_ArmorPhysical"
 
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"	""
-		"BountyGoldMin"	""
-		"BountyGoldMax"	""
-
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
@@ -76,12 +70,6 @@
 		"AttackDamageMax"	""
 		"AttackDamageType"	"DAMAGE_TYPE_ArmorPhysical"
 
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"	""
-		"BountyGoldMin"	""
-		"BountyGoldMax"	""
-
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
@@ -122,12 +110,6 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
 		"AttackDamageType"	"DAMAGE_TYPE_ArmorPhysical"
 
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"	""
-		"BountyGoldMin"	""
-		"BountyGoldMax"	""
-
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
@@ -154,7 +136,7 @@
 	//Creeps
 	"npc_dota_neutral_easy_variant1"
 	{
-		"Model"	"models/creeps/neutral_creeps/n_creep_kobold/kobold_c/n_creep_kobold_c.vmdl"
+		"Model"	"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
 		"BaseClass"	"npc_dota_creature"
 		"SoundSet"	"n_creep_Melee"
 		"Level"	"1"
@@ -196,7 +178,7 @@
 
 	"npc_dota_neutral_medium_variant1"
 	{
-		"Model"	"models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
+		"Model"	"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
 		"BaseClass"	"npc_dota_creature"
 		"SoundSet"	"n_creep_Melee"
 		"Level"	"1"
@@ -238,7 +220,7 @@
 
 	"npc_dota_neutral_hard_variant1"
 	{
-		"Model"	"models/creeps/neutral_creeps/n_creep_black_dragon/n_creep_black_dragon.vmdl"
+		"Model"	"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
 		"BaseClass"	"npc_dota_creature"
 		"SoundSet"	"n_creep_Ranged"
 		"Level"	"1"
@@ -279,6 +261,47 @@
 		"UseNeutralCreepBehavior"   "1"
 	}
 
+	"npc_dota_neutral_hard_variant2"
+	{
+		"Model"	"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"BaseClass"	"npc_dota_creature"
+		"SoundSet"	"n_creep_Ranged"
+		"Level"	"1"
+		"IsAncient"	"1"
+		"MagicalResistance"			"90"
+		"ModelScale"	"1"
+		"IsNeutralUnitType"	"1"
+		"Ability1"	""
+		"Ability2"	""
+		"Ability3"	""
+		"Ability4"	""
+		"ArmorPhysical"	"3"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"	"48"
+		"AttackDamageMax"	"81"
+		"AttackRate"	"1.5"
+		"AttackAnimationPoint"	"0.94"
+		"AttackAcquisitionRange"	"450"
+		"AttackRange"	"150"
+		"RingRadius"	"70"
+		"HealthBarOffset"	"300"
+		"BountyXP"	"50"
+		"BountyGoldMin"	"100"
+		"BountyGoldMax"	"150"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"	"300"
+		"StatusHealth"	"1000"
+		"StatusHealthRegen"	"2"
+		"StatusMana"	"500"
+		"StatusManaRegen"	"0"
+		"VisionDaytimeRange"	"800"
+		"VisionNighttimeRange"	"800"
+		"TeamName"	"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"	"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"UnitRelationshipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"UseNeutralCreepBehavior"   "1"
+	}
+
 	//fountains
 	"npc_dota_a_fountain_team2"
 	{
@@ -287,14 +310,6 @@
 		"BaseClass"	"npc_dota_building"
 		"Model"	"models/buildings/building_racks_ranged_reference.vmdl"
 		"Level"	"1000"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		
-		"Ability1"	"fountain_aura"
-		"Ability2"	"fountain_passive"
-		"Ability3"	""
-		"Ability4"	""
 
 		// Attack
 		//----------------------------------------------------------------
@@ -335,14 +350,6 @@
 		"BaseClass"	"npc_dota_building"
 		"Model"	"models/buildings/building_racks_melee_reference.vmdl"
 		"Level"	"1000"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		
-		"Ability1"	"fountain_aura"
-		"Ability2"	"fountain_passive"
-		"Ability3"	""
-		"Ability4"	""
 
 		// Attack
 		//----------------------------------------------------------------
@@ -511,38 +518,6 @@
 		"StatusHealthRegen"	"0"	// Health regeneration rate.
 		"StatusMana"	"0"	// Base mana.
 		"StatusManaRegen"	"0"	// Mana regeneration rate.
-	}
-
-	"containers_shop_secret"
-	{
-		// General
-		//
-		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/heroes/nightstalker/nightstalker_night.vmdl"
-		"ModelScale"				"2"
-		"Level"						"50"
-		"IsAncient"					"1"
-				
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					""
-		"Ability2"					""
-		"Ability3"					""
-		"Ability4"					""
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"0"		// Speed
-		"MovementTurnRate"			"0"		// Turning rate.
 	}
 
 	"npc_dota_lucifers_claw_doomling"
@@ -1845,14 +1820,14 @@
 	"npc_arena_boss_l2_v1"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"20000"
+		"Bosses_GoldToAll"			"25000"
 		"Bosses_RespawnDuration"	"600"
 		
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/heroes/visage/visage_familiar.vmdl"
-		"ModelScale"				"3.2"
+		"ModelScale"				"3"
 		"Level"						"100"
 
 		// Abilities
@@ -1880,7 +1855,7 @@
 
 		"MovementSpeed"				"422"
 
-		"StatusHealth"				"300000"
+		"StatusHealth"				"500000"
 		"StatusHealthRegen"			"10"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"50"
@@ -1911,7 +1886,7 @@
 		//
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/creeps/nian/nian_creep.vmdl"
-		"ModelScale"				"0.85"
+		"ModelScale"				"0.9"
 		"Level"						"100"
 
 		// Abilities
@@ -1961,7 +1936,7 @@
 	"npc_arena_boss_central"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"10000"
+		"Bosses_GoldToAll"			"100000"
 		"Bosses_RespawnDuration"	"600"
 		
 		// General
@@ -1977,30 +1952,30 @@
 		"Ability2"					"boss_armor"
 		"Ability3"					"boss_central_passive"
 
-		"ArmorPhysical"				"5"
-		"MagicalResistance"			"50"
+		"ArmorPhysical"				"125"
+		"MagicalResistance"			"70"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"ProjectileModel"			"particles/units/heroes/hero_viper/viper_poison_attack.vpcf"
 		"ProjectileSpeed"			"1000"
-		"AttackDamageMin"			"500"
-		"AttackDamageMax"			"600"
+		"AttackDamageMin"			"1000"
+		"AttackDamageMax"			"1500"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.2"
-		"AttackAnimationPoint"		"0.2"
+		"AttackRate"				"0.15"
+		"AttackAnimationPoint"		"0.15"
 		"AttackAcquisitionRange"	"600"
-		"AttackRange"				"900"
+		"AttackRange"				"950"
 
-		"BountyXP"					"5000"
+		"BountyXP"					"30000"
 
 		"HealthBarOffset"			"400"
 
-		"MovementSpeed"				"422"
+		"MovementSpeed"				"0"
 
-		"StatusHealth"				"100000"
-		"StatusHealthRegen"			"10"
-		"StatusMana"				"0"
-		"StatusManaRegen"			"0"
+		"StatusHealth"				"1000000"
+		"StatusHealthRegen"			"250"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"100"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
@@ -2014,7 +1989,7 @@
 		"VisionNighttimeRange"		"1800"
 		"Creature"
 		{
-			"DisableResistance"            "50"
+			"DisableResistance"            "70"
 		}
 	}
 }

@@ -411,6 +411,7 @@
 		"ItemCost"						"2000"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"uncommon"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -458,6 +459,7 @@
 		"ItemCost"						"10000"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -505,6 +507,7 @@
 		"ItemCost"						"20000"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -552,6 +555,7 @@
 		"ItemCost"						"40000"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -599,6 +603,7 @@
 		"ItemCost"						"2000"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"uncommon"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -646,6 +651,7 @@
 		"ItemCost"						"10000"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -693,6 +699,7 @@
 		"ItemCost"						"20000"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -740,6 +747,7 @@
 		"ItemCost"						"40000"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -787,6 +795,7 @@
 		"ItemCost"						"2000"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"uncommon"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -834,6 +843,7 @@
 		"ItemCost"						"10000"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -881,6 +891,7 @@
 		"ItemCost"						"20000"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -928,6 +939,7 @@
 		"ItemCost"						"40000"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -975,6 +987,7 @@
 		"ItemCost"						"6000"
 		"ItemShopTags"					"stats;stat;shard"
 		"ItemQuality"					"uncommon"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -1024,6 +1037,7 @@
 		"ItemCost"						"30000"
 		"ItemShopTags"					"stats;stat;shard"
 		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"
@@ -1073,6 +1087,7 @@
 		"ItemCost"						"60000"
 		"ItemShopTags"					"stats;stat;shard"
 		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"ItemStackable"					"1"

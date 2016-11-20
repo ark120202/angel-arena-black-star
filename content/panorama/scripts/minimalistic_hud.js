@@ -495,6 +495,7 @@ function UpdateSelection() {
 }
 
 (function() {
+	//GameUI.SetCameraDistance(-1)
 	GameUI.SetRenderTopInsetOverride(0)
 	GameUI.SetRenderBottomInsetOverride(0)
 

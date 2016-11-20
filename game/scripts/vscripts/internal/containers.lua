@@ -4,11 +4,17 @@ if ContainersHelper == nil then
 end
 
 function ContainersHelper:CreateShops()
-	for _,v in ipairs(Entities:FindAllByName("containers_shop_secret")) do
+	--[[for _,v in ipairs(Entities:FindAllByName("containers_shop_secret")) do
 		v:AddNewModifier(v, nil, "modifier_shopkeeper", {})
-		ContainersHelper:CreateShop(v, ShopsData.Shards, "#containers_shop_secret_name", 300)
-	end
-	_G.craftingEnt = Entities:FindByName(nil, "target_mark_crafting_station")
+		ContainersHelper:CreateShop(v, ShopsData.Secret, "#containers_shop_secret_name", 256)
+	end]]
+	local DuelShop = CreateItemOnPositionSync(Entities:FindByName(nil, "target_mark_containers_shop_duel"):GetAbsOrigin(), nil) 
+	DuelShop:SetModel("models/courier/greevil/gold_greevil.vmdl")
+	DuelShop:SetForwardVector(Vector(0, 1, 0.2))
+	DuelShop:SetModelScale(1.75)
+	ContainersHelper:CreateShop(DuelShop, ShopsData.Duel, "#containers_shop_duel_name", 256, {3})
+
+	local craftingEnt = Entities:FindByName(nil, "target_mark_crafting_station")
 	craftingEnt = CreateItemOnPositionSync(craftingEnt:GetAbsOrigin(), nil)
 	craftingEnt:SetModel("models/props_structures/bad_base_shop002.vmdl")
 	craftingEnt:SetForwardVector(Vector(-1, 0, 0))
@@ -54,7 +60,6 @@ function ContainersHelper:CreateShops()
 									end
 								end
 							end
-							print(#container:GetAllItems(), itemcount)
 							if #container:GetAllItems() == itemcount then
 								for itemName,count in pairs(allRecipeItems) do
 									local itemsByName = container:GetItemsByName(itemName)
@@ -100,11 +105,11 @@ function ContainersHelper:CreateShops()
 	})
 end
 --ContainersHelper:CreateShops()
-function ContainersHelper:CreateShop(baseUnit, itemTable, shopName, radius)
+function ContainersHelper:CreateShop(baseUnit, itemTable, shopName, radius, customItemGrid)
 	local sItems,prices,stocks = ContainersHelper:CreateShopTable(itemTable)
 
 	itemShop = Containers:CreateShop({
-		layout =      ContainersHelper:CreateItemGrid(#itemTable),
+		layout =      customItemGrid or ContainersHelper:CreateItemGrid(#itemTable),
 		skins =       {},
 		headerText =  shopName,
 		pids =        {},
@@ -185,7 +190,7 @@ function ContainersHelper:CreateLootBox(entity, items)
 			if button == 1 then
 				local items = container:GetAllItems()
 				for _,item in ipairs(items) do
-					if unit:HasRoomForItem(item:GetName(), false, false) then
+					if unit:HasRoomForItem(item:GetName(), false, false) ~= 4 then
 						container:RemoveItem(item)
 						Containers:AddItemToUnit(unit,item)
 					end

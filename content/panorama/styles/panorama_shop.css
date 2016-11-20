@@ -222,16 +222,6 @@ DropDownMenu Label
 	flow-children: down;
 }
 
-.SmallItemPanel
-{
-	width: 49.5px;
-	height: 36px;
-	border-radius: 7px;
-	margin: 4px;
-	margin-top: 2px;
-	margin-bottom: 2px;
-}
-
 .CanBuy
 {
 	border: 1px solid orange;
@@ -435,6 +425,16 @@ DropDownMenu Label
 }
 
 
+.SmallItemPanel
+{
+	width: 49.5px;
+	height: 36px;
+	border-radius: 7px;
+	margin: 4px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
 .ItemRecipeBoxRow.ItemRecipeBoxRowLength7 .SmallItemPanel
 {
 	width: 49.5px;
@@ -447,6 +447,15 @@ DropDownMenu Label
 	width: 44.55px;
 	height: 32.4px;
 	border-radius: 5px;
+}
+
+.ItemRecipeBoxRow.ItemRecipeBoxRowLength9 .SmallItemPanel
+{
+	width: 40.59px;
+	height: 27px;
+	margin: 0.5px;
+	border-radius: 3px;
+	border-width: 0.8px;
 }
 
 .BigItemPanel

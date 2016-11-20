@@ -27,16 +27,16 @@ end
 
 if IsServer() then
 	function modifier_hero_selection_transformation:OnCreated()
-		local caster = self:GetCaster()
-		if caster then
-			caster:AddNoDraw()
+		local target = self:GetParent()
+		if target then
+			target:AddNoDraw()
 		end
 	end
 
 	function modifier_hero_selection_transformation:OnDestroy()
-		local caster = self:GetCaster()
-		if caster then
-			caster:RemoveNoDraw()
+		local target = self:GetParent()
+		if target then
+			target:RemoveNoDraw()
 		end
 	end
 end

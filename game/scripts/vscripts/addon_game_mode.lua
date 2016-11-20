@@ -53,6 +53,7 @@ function Precache( context )
 		"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf",
 		"particles/items_fx/blink_dagger_end.vpcf",
 		"particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf",
+		"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf",
 		
 		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
@@ -66,9 +67,11 @@ function Precache( context )
 		"models/heroes/items/hat_test/hat_test.vmdl",
 		"models/items/tidehunter/diving_helmet/tidehunter_diving_helmet.vmdl",
 		"models/heroes/earthshaker/totem.vmdl",
+		--Neutrals
+		"models/heroes/centaur/centaur.vmdl",
 		--Wearables
 		"models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl",
-		"models/items/furion/treant_stump.vmdl"
+		"models/items/furion/treant_stump.vmdl",
 	}
 
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts", context)
@@ -77,17 +80,23 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_arena.vsndevts", context)
 	
 	PrecacheUnitByNameSync("npc_dota_hero_earth_spirit", context)
 	
 	PrecacheUnitByNameSync("npc_arena_boss_heaven", context)
 	PrecacheUnitByNameSync("npc_arena_boss_hell", context)
+	PrecacheUnitByNameSync("npc_arena_boss_central", context)
 	PrecacheUnitByNameSync("npc_arena_boss_l1_v1", context)
 	PrecacheUnitByNameSync("npc_arena_boss_l1_v2", context)
+	PrecacheUnitByNameSync("npc_arena_boss_l2_v1", context)
+	PrecacheUnitByNameSync("npc_arena_boss_l2_v2", context)
 
 	PrecacheUnitByNameSync("npc_dota_lucifers_claw_doomling", context)
 	PrecacheUnitByNameSync("npc_queenofblades_alter_ego", context)
+
+
 	
 	for _, handle in pairs(CUSTOM_WEARABLES_ITEM_HANDLES) do
 		if handle.particles and type(handle.particles) == "table" and table.count(handle.particles) > 0 then

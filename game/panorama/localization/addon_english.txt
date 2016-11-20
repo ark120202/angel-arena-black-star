@@ -121,6 +121,7 @@
 		"casino_slotmachine_roll_result_streak_no"				"You didn't win anything this time"
 
 		"containers_shop_secret_name"							"Casino Shop"
+		"containers_shop_duel_name"								"Duel Shop"
 		"containers_loot_boxes_take_all"						"TAKE ALL"
 		"containers_loot_boxes_box_name"						"Loot Box"
 

@@ -10,6 +10,7 @@ function HeroSelection:Initialize()
 		CustomGameEventManager:RegisterListener("hero_selection_player_hover", Dynamic_Wrap(HeroSelection, "OnHeroHover"))
 		CustomGameEventManager:RegisterListener("hero_selection_player_select", Dynamic_Wrap(HeroSelection, "OnHeroSelectHero"))
 		CustomGameEventManager:RegisterListener("hero_selection_player_random", Dynamic_Wrap(HeroSelection, "OnHeroRandomHero"))
+		CustomGameEventManager:RegisterListener("hero_selection_minimap_set_spawnbox", Dynamic_Wrap(HeroSelection, "OnMinimapSetSpawnbox"))
 	end
 end
 
@@ -277,10 +278,9 @@ function HeroSelection:PreformPlayerRandom(playerId)
 
 		if not HeroSelection:IsHeroSelected(heroData.heroKey) then
 			local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(playerId))
-			tableData[playerId] = {
-				hero=heroData.heroKey,
-				status="picked", 
-			}
+			if not tableData[playerId] then tableData[playerId] = {} end
+			tableData[playerId].hero = heroData.heroKey
+			tableData[playerId].status = "picked"
 			PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(playerId), tableData)
 			Gold:ModifyGold(playerId, GOLD_FOR_RANDOM_HERO, true)
 			break
@@ -395,10 +395,9 @@ end
 function HeroSelection:OnHeroHover(data)
 	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.playerId))
 	if not HeroSelection.SelectionEnd and tableData[data.playerId].status ~= "picked" then
-		tableData[data.playerId] = {
-			hero=data.hero,
-			status="hover"
-		}
+		if not tableData[data.playerId] then tableData[data.playerId] = {} end
+		tableData[data.playerId].hero = data.hero
+		tableData[data.playerId].status = "hover"
 	end
 	PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.playerId), tableData)
 end
@@ -428,10 +427,9 @@ function HeroSelection:OnHeroSelectHero(data)
 	local team = PlayerResource:GetTeam(data.playerId)
 	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.playerId))
 	if not HeroSelection.SelectionEnd and not HeroSelection:IsHeroSelected(tostring(data.hero)) and tableData and tableData[data.playerId] and tableData[data.playerId].status and tableData[data.playerId].status ~= "picked" then
-		tableData[data.playerId] = {
-			hero=data.hero,
-			status="picked"
-		}
+		if not tableData[data.playerId] then tableData[data.playerId] = {} end
+		tableData[data.playerId].hero = data.hero
+		tableData[data.playerId].status = "picked"
 		PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.playerId), tableData)
 		local newHeroName = data.hero
 		if string.starts(data.hero, "alternative_") then
@@ -544,10 +542,32 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepGold, keepExp, dura
 	end)
 end
 
+function HeroSelection:OnMinimapSetSpawnbox(data)
+	local team = PlayerResource:GetTeam(data.PlayerID)
+
+	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID))
+	if not HeroSelection.SelectionEnd then
+		local SpawnBoxes = tableData[data.PlayerID].SpawnBoxes or {}
+		local nd = (data.team or 2) .. "_" .. (data.level or 1) .. "_" .. (data.index or 0)
+		if not table.contains(SpawnBoxes, nd) then
+			if #SpawnBoxes >= MAX_SPAWNBOXES_SELECTED then
+				table.remove(SpawnBoxes, 1)
+			end
+			table.insert(SpawnBoxes, nd)
+		else
+			table.removeByValue(SpawnBoxes, nd)
+		end
+		tableData[data.PlayerID].SpawnBoxes = SpawnBoxes
+	end
+	PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID), tableData)
+end
+
+
+
+
 --[[
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackAnimationPoint"		"0.750000"
-		"AttackRange"		"600"
 		"ProjectileSpeed"		"900"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"MovementTurnRate"		"0.500000"			

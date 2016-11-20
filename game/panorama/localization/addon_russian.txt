@@ -108,6 +108,7 @@
 		"casino_slotmachine_roll_result_streak_no"				"В этот раз вы ничего не выиграли"
 
 		"containers_shop_secret_name"							"Магазин в Казино"
+		"containers_shop_duel_name"								"Дуэльный Магазин"
 		"containers_loot_boxes_take_all"						"ЗАБРАТЬ ВСЁ"
 		"containers_loot_boxes_box_name"						"Ящик с лутом"
 

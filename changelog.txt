@@ -1,17 +1,11 @@
 TODO LIST:
-	съесть гемы
-	вижон купить на дуэль
 	доделать панели selection (хп, картинки)
 	переделать инвайт на 1х1 дуэли
-	сделать войду купол на себя
-
-	Добавить дроп с боссов в магазин
 	Дополнить гайды
-	Сделать карту в меню пика
-	globals.lua/GLOBAL_VISIBLE_ENTITY
 	check apocalypse_agnis_touch + sell
-	забалансить боссов
-	Пофиксить репик с альт героями - копия предметов<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	обезьяны
+	казино
+	
 Идеи для предметов:
 	Star Blade:
 		Из Fallen Star + Dark Blade + ???
@@ -20,16 +14,52 @@ TODO LIST:
 	??:
 		Из вангварда + Fallen Star + blademail
 
+Идеи для боссов: 
+	Roshan (remake):
+		Появляется после 30 минуты. Потом - респавн 8-15 минут.
+		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
+
+	God (l2):
+		Висп. У даир - красный. Все атаки аое. Может спавнить что будет делиться на 2, виспов, у которых будет скилл обычного виспа. Скиллы - блекхол, ульта зевса.
+	Ancient Structure (l2):
+		Выглядит как база (даир и редиант - разные модели). Нет регена, не атакует. Может спавнить рабочих, которые будут её хилить, танки и самолеты (из д2с или варика),
+
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_1356]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://vk.com/wall-122685850_1360]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
 Angel Arena Black Star - Версия 1.3:
 
 Общее:
-	
+	Карта полностью изменена
+	Все боссы изменены
+	Все эссенции удалены
+	Rubick переработан
+	Добавлен  новый герой: Mirratie
+	Добавлены новые предметы:
+		-Moon Dust
+		-Cursed Eye
+		-Fallen Star
+		-Demons Paw
+		-Awakened Cursed Eye
+	Теперь в меню выбора героев вы можете показать союзникам, какие точки вы планируете фармить
+	Теперь во время дуэли вы не можете покупать предметы
+	Добавлен Дуэльный Магазин, где вы можете покупать предметы во время дуэли
+	Большенство предметов, в рецептах которых были эссенции, были изменены
+	Metamorphosis Elixir теперь можно купить.
+	Golden Eagle Relic переработан
+	Врмя между рунами: 60 => 120 (Но на карте теперь 2 руны, а не 1)
+	Лимит убийств: 25/75 => 75/150
+	Золото за победу на дуэли: 1500 => 500 + (2000 * Duel Index)
+	Сборки предметов теперь можно скрыть.
+	При нажатии на предмет в инвентаре при открытом магазине, теперь он будет там показан.
+	Фонтан при убийстве теперь имеет эффекты Laguna Blade
 Баланс:
-	
+	Omniknight - Repel: Длительность перезарядки: 6 7 8 9 10 11 12 => 20
+	Ability Shop:
+		-Эти способности теперь недоступны: Faceless Void -  Time Freeze, Rubick - Personality Steal, Omniknight - Select Allies
+		-Disruptor - Thunder Strike: Cost: 1 => 4
 Исправления:
-	
+	Исправлен баг, позволяющий копировать предметы при помощи Metamorphosis Elixir.
+	Исправлены некоторые ошибки в сборках на героев от Valve
 ========
 Angel Arena Black Star - Version 1.3:
 
@@ -45,20 +75,26 @@ General:
 		-Fallen Star
 		-Demons Paw
 		-Awakened Cursed Eye
+	Now in Hero Selection Menu you can mark spots, that you are planning to farm
+	Now you can't purchase items in normal shop, while duel is ongoing
+	Added Duel Shop, where you can buy items on Duel.
 	Most of items, that used essences in their recipes were rebalanced
-	Golden Eagle Relic reworked
 	Metamorphosis Elixir now is purchasable.
+	Golden Eagle Relic reworked
+	Rune spawn time: 60 => 120 (But now there are 2 runes, instead of 1)
+	Kill Limit: 25/75 => 75/150
+	Duel gold: 1500 => 500 + (2000 * Duel Index)
 	Itembuilds now can be hidden using a button.
 	When you click on an item in inventory it will be shown in shop, if it's opened.
-	Kill Limit: 25/75 => 75/150
+	Fountains now has Laguna Blade effect, when they kills enemy units
 Balance:
+	Omniknight - Repel: Cooldown: 6 7 8 9 10 11 12 => 20
 	Ability Shop:
-		-These abilities now are disabled in : Faceless Void -  Time Freeze, Rubick - Personality Steal, Omniknight - Select Allies
+		-These abilities now are disabled: Faceless Void -  Time Freeze, Rubick - Personality Steal, Omniknight - Select Allies
 		-Disruptor - Thunder Strike: Cost: 1 => 4
-		omniknight_repel_lua"
-		"AbilityCooldown"				"6.0 7.0 8.0 9.0 10.0 11.0 12.0" >>> 20
 Fixes:
-	
+	Fixed item copying with Metamorphosis Elixir.
+	Fixed some bugs in Valve's itembuilds
 <<+===========================================================================================================
 rhasta,
 lycan,

@@ -522,10 +522,10 @@
 	height: 200px;
 	margin-top: -210px;
 	margin-right: 20px;
-	background-color: black;
-	border: 5px solid white;
+	background-color: rgba(0,0,0,253);
+	border: 2px solid white;
 	flow-children: down;
-	border-radius: 15px;
+	border-radius: 2px;
 	transition-property: transform;
 	transition-duration: 1s;
 	transition-timing-function: better-ease-in; 

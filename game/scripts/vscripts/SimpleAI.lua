@@ -19,6 +19,7 @@ function SimpleAI:new( unit, profile, params )
 	ai.unit = unit
 	ai.ThinkEnabled = true
 	ai.state = AI_STATE_IDLE
+	ai.profile = profile
 
 	if profile == "boss" then
 		ai.stateThinks = {
@@ -32,6 +33,20 @@ function SimpleAI:new( unit, profile, params )
 		ai.spawnPos = params.spawnPos or unit:GetAbsOrigin()
 		ai.aggroRange = params.aggroRange or unit:GetAcquisitionRange()
 		ai.leashRange = params.leashRange or 1600
+		ai.abilityCastCallback = params.abilityCastCallback
+	end
+
+	if profile == "tower" then
+		ai.stateThinks = {
+			[AI_STATE_IDLE] = 'IdleThink',
+			[AI_STATE_AGGRESSIVE] = 'AggressiveThink',
+			[AI_STATE_CASTING] = 'CastingThink',
+			[AI_STATE_ORDER] = 'OrderThink',
+		}
+
+		ai.spawnPos = params.spawnPos or unit:GetAbsOrigin()
+		ai.aggroRange = unit:GetAttackRange()
+		ai.leashRange = ai.aggroRange 
 		ai.abilityCastCallback = params.abilityCastCallback
 	end
 
@@ -60,9 +75,13 @@ function SimpleAI:new( unit, profile, params )
 end
 
 function SimpleAI:SwitchState(newState)
-	self.state = newState
-	if newState == AI_STATE_RETURNING then
-		self.unit:MoveToPosition( self.spawnPos )
+	if self.stateThinks[newState] then
+		self.state = newState
+		if newState == AI_STATE_RETURNING then
+			self.unit:MoveToPosition( self.spawnPos )
+		end
+	else
+		self:SwitchState(AI_STATE_IDLE)
 	end
 end
 
@@ -92,7 +111,7 @@ end
 	end
 
 	function SimpleAI:AggressiveThink()
-		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > self.leashRange or not self.aggroTarget or self.aggroTarget:IsNull() or not self.aggroTarget:IsAlive() or self.aggroTarget:IsInvisible() or self.aggroTarget:IsInvulnerable() or self.aggroTarget:IsAttackImmune() then
+		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > self.leashRange or not self.aggroTarget or self.aggroTarget:IsNull() or not self.aggroTarget:IsAlive() or self.aggroTarget:IsInvisible() or self.aggroTarget:IsInvulnerable() or self.aggroTarget:IsAttackImmune() or (self.profile == "tower" and (self.spawnPos - self.aggroTarget:GetAbsOrigin()):Length2D() > self.leashRange) then
 			self:SwitchState(AI_STATE_RETURNING)
 			return
 		else

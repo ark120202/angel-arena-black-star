@@ -14,6 +14,7 @@ function Bosses:InitAllBosses()
 		Bosses:SpawnStaticBoss("l2_v1", i)
 		Bosses:SpawnStaticBoss("l2_v2", i)
 	end
+	Bosses:SpawnStaticBoss("central")
 	Bosses:SpawnStaticBoss("heaven")
 	Bosses:SpawnStaticBoss("hell")
 	--Bosses:SpawnStaticBoss("roshan")
@@ -58,6 +59,7 @@ function Bosses:MakeBossAI(unit, name)
 	local aiTable = {
 		leashRange = 1600,
 	}
+	local profile = "boss"
 	--[[if name == "roshan" then
 		local boss_roshan_spikes = unit:FindAbilityByName("boss_roshan_spikes")
 		aiTable["abilityCastCallback"] = function(self)
@@ -78,5 +80,9 @@ function Bosses:MakeBossAI(unit, name)
 			end
 		end
 	end]]
-	local ai = SimpleAI:new(unit, "boss", aiTable)
+	if name == "central" then
+		profile = "tower"
+	end
+
+	local ai = SimpleAI:new(unit, profile, aiTable)
 end

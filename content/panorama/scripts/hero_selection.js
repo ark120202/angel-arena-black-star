@@ -12,6 +12,7 @@ var ShowPrecacheEvent = null
 var PTID = null
 var HeroesPanels = []
 var tabsData = {}
+var PlayerSpawnBoxes = {}
 var bgs = [
 	"3_heroes_loadingscreen",
 	"acolyte_vengeance_loading_screen",
@@ -508,7 +509,6 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 			var color = GameUI.CustomUIConfig().team_colors[teamNumber]
 			color = color.substring(0, color.length - 1)
 			TeamSelectionPanel.style.backgroundColor = "gradient( linear, 250% -500%, 0% 100%, from( " + color + " ), to( transparent ) )"
-
 		}
 		var TeamSelectionPanel = $("#team_selection_panels_team" + teamNumber)
 		for (var playerIdInTeam in changesObject[teamNumber]) {
@@ -553,6 +553,42 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 				}
 				HeroImage.SetImage(TransformTextureToPath(playerData.hero, "portrait"))
 				HeroImage.RemoveClass("PlayerInTeamHeroImageHover")
+			}
+			if (teamNumber == Players.GetTeam(Game.GetLocalPlayerID())) {
+				if (playerData.SpawnBoxes != null) {
+					if (PlayerSpawnBoxes[playerIdInTeam] == null)
+						PlayerSpawnBoxes[playerIdInTeam] = [];
+					var PlayerSPBoxesTable = PlayerSpawnBoxes[playerIdInTeam];
+					var checkedPanels = [];
+					for (var index in playerData.SpawnBoxes) {
+						var SPBoxInfoGroup = playerData.SpawnBoxes[index]
+						var SPBoxID = "MinimapSpawnBoxPlayerIcon_" + SPBoxInfoGroup + "_" + playerIdInTeam;
+						var SpawnBoxUnitPanel = $("#" + SPBoxID);
+						var RootPanel = $("#MinimapSpawnBox_" + SPBoxInfoGroup)
+						if (SpawnBoxUnitPanel == null) {
+							SpawnBoxUnitPanel = $.CreatePanel("Image", RootPanel, SPBoxID)
+							SpawnBoxUnitPanel.AddClass("SpawnBoxUnitPanel")
+						}
+						SpawnBoxUnitPanel.SetImage(TransformTextureToPath(playerData.hero, "icon"))
+						SpawnBoxUnitPanel.SetHasClass("hero_selection_hover", playerData.status == "hover")
+						checkedPanels.push(SpawnBoxUnitPanel);
+						if (PlayerSPBoxesTable.indexOf(SpawnBoxUnitPanel) == -1)
+							PlayerSPBoxesTable.push(SpawnBoxUnitPanel);
+					}
+					for (var index in PlayerSPBoxesTable) {
+						var panel = PlayerSPBoxesTable[index]
+						if (checkedPanels.indexOf(panel) == -1) {
+							panel.DeleteAsync(0);
+							PlayerSPBoxesTable.splice(index, 1);
+						}
+					}
+					$.Each($("#MinimapImage").Children(), function(child) {
+						var childrencount = child.GetChildCount()
+						child.SetHasClass("SpawnBoxUnitPanelChildren2", childrencount >= 2)
+						child.SetHasClass("SpawnBoxUnitPanelChildren3", childrencount >= 3)
+						child.SetHasClass("SpawnBoxUnitPanelChildren5", childrencount >= 5)
+					})
+				}
 			}
 		}
 	}
@@ -639,6 +675,14 @@ function ShowPrecache() {
 			HeroLabel.text = $.Localize("#" + SelectedPlayerHeroData.hero);
 		}
 	}
+}
+
+function OnMinimapClickSpawnBox(team, level, index) {
+	GameEvents.SendCustomGameEventToServer("hero_selection_minimap_set_spawnbox", {
+		team: team,
+		level: level,
+		index: index,
+	});
 }
 
 

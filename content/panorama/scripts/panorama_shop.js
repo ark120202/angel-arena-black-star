@@ -221,6 +221,7 @@ function ShowItemRecipe(itemName) {
 		}
 		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength7", len >= 7);
 		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength8", len >= 8);
+		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength9", len >= 9);
 	}
 	if (BuildsIntoData != null) {
 		$.Each(BuildsIntoData, function(childName) {
@@ -230,6 +231,7 @@ function ShowItemRecipe(itemName) {
 		});
 		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength7", Object.keys(BuildsIntoData).length >= 7);
 		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength8", Object.keys(BuildsIntoData).length >= 8);
+		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength9", Object.keys(BuildsIntoData).length >= 9);
 	}
 }
 

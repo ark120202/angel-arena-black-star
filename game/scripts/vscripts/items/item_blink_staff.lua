@@ -72,7 +72,6 @@ end
 
 function modifier_item_blink_staff_damage_cooldown(keys)
 	local attacker = keys.attacker
-	print(attacker)
 	if attacker then
 		local attacker_name = attacker:GetUnitName()
 		if keys.Damage > keys.blink_damage_to_cooldown and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or IsBossEntity(attacker)) then

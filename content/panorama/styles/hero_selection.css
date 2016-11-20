@@ -439,20 +439,6 @@
 	flow-children: down;
 }
 
-#MinimapPanel
-{
-	width: 350px;
-	height: 350px;
-	margin-top: 50px;
-	horizontal-align: center;
-}
-
-.MinimapImage
-{
-	blur: gaussian(10);
-	wash-color: rgba(0,0,0,220);
-}
-
 #SelectionChatBox
 {
 	vertical-align: bottom;
@@ -614,4 +600,60 @@
 .player_connection_disconnected .DisconnectionIndicator
 {
 	opacity: 1;
+}
+
+#MinimapPanel
+{
+	width: 350px;
+	height: 350px;
+	margin-top: 50px;
+	horizontal-align: center;
+}
+
+#MinimapImage
+{
+
+}
+
+.MinimapSpawnBox
+{
+	width: 32px;
+	height: 32px;
+	flow-children: right-wrap;
+}
+.SpawnBoxUnitPanel
+{
+	width: 32px;
+	height: 32px;
+}
+
+.SpawnBoxUnitPanel.hero_selection_hover
+{
+	saturation: 0;
+}
+
+.MinimapSpawnBox.SpawnBoxUnitPanelChildren2
+{
+	width: 64px;
+	transform: translateX(-16px);
+}
+
+.MinimapSpawnBox.SpawnBoxUnitPanelChildren3
+{
+	width: 50px;
+	height: 50px;
+	transform: translateX(-9px) translateY(-9px);
+}
+
+.SpawnBoxUnitPanelChildren3 .SpawnBoxUnitPanel
+{
+	width: 25px;
+	height: 25px;
+}
+
+.MinimapSpawnBox.SpawnBoxUnitPanelChildren5
+{
+	width: 50px;
+	height: 75px;
+	transform: translateX(-9px) translateY(-21.5px);
 }

@@ -213,103 +213,6 @@
 		}
 	}
 
-	"fountain_passive"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"MaxLevel" 						"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"OnCreated"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SetMaxLevel"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_fountain_passive"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-		
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
-	"fountain_aura"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"MaxLevel" 						"1"
-		"AbilityTextureName"			"fountain_heal"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1400"
-			}
-		}
-
-		"OnCreated"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SetMaxLevel"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_fountain_aura_enemy"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"ThinkInterval"  	".1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/structures/fountain.lua"
-						"Function"		"KillEnemies"
-					}
-				}
-				
-				"Aura"          	"modifier_fountain_aura_ally_effect"
-				"Aura_Radius"   	"%radius"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_ALL"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-				"Aura_ApplyToCaster" "0"
-			}
-
-			"modifier_fountain_aura_ally_effect"
-			{
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL" "1"
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL" "1" 
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE" "1"
-					"MODIFIER_PROPERTY_MIN_HEALTH" "1" 
-				}
-			}
-		}
-	}
-
 	"boss_any_passive"
 	{
 		"BaseClass"             		"ability_datadriven"
@@ -2503,6 +2406,7 @@
 				"States"
 				{
 					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_CANNOT_MISS"							"MODIFIER_STATE_VALUE_ENABLED"
 				}
 
 				"ThinkInterval"  "0.1"
@@ -13601,6 +13505,63 @@
 			"particle"  "particles/arena/units/heroes/hero_mirratie/impaling_shot.vpcf"
 			"particle"  "particles/arena/units/heroes/hero_mirratie/impaling_shot_impale.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+		}
+	}
+
+	"boss_central_passive"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityTextureName"			"windrunner_focusfire"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			
+			"FireSound"
+			{
+				"EffectName"	"Hero_Medusa.AttackSplit"
+				"Target" 		"TARGET"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/bosses/boss_central.lua"
+				"Function"		"SplitShotDamage"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_boss_central_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+		
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/bosses/boss_central.lua"
+						"Function"		"SplitShotLaunch"
+					}
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/bosses/boss_central.lua"
+						"Function"		"CheckPosition"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
 		}
 	}
 }
