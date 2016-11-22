@@ -15,7 +15,7 @@
 	"item_containers_lua_pack"
 	{
 		"BaseClass"						"item_lua"
-		"ID"							"10009"
+		"ID"							"10001"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_present"
 		"ScriptFile"					"libraries/abilities/item_containers_lua_pack.lua"
@@ -29,7 +29,7 @@
 	"item_slot_locked"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10275"
+		"ID"							"10002"
 		"AbilityTextureName"			"item_slot_locked"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemKillable"            		"0"
@@ -42,7 +42,7 @@
 	"item_soul_of_titan"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10217"
+		"ID"							"10003"
 		"AbilityTextureName"			"item_soul_of_titan"
 		"ItemPurchasableFilter"			"0"
 
@@ -101,7 +101,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10007"
+		"ID"							"10004"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_dark_blade"
 		
@@ -144,7 +144,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10008"
+		"ID"							"10005"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_winter_greevil_chewy"
 		
@@ -193,7 +193,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"100023468"
+		"ID"							"10006"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_moon_dust"
 		
@@ -210,7 +210,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"100021233468"
+		"ID"							"10007"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_cursed_eye"
 		
@@ -256,7 +256,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"1000224363468"
+		"ID"							"10008"
 		"AbilityTextureName"			"item_fallen_star"
 		
 		// Item Info
@@ -360,7 +360,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"2351231245123562356"
+		"ID"							"10009"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_demons_paw"
 		
@@ -1829,7 +1829,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10034"
+		"ID"							"10033"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityTextureName"			"item_blink"
 		"FightRecapLevel"				"1"
@@ -1911,7 +1911,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10035"
+		"ID"							"10034"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -1934,7 +1934,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10036"
+		"ID"							"10035"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_heart"
 		
@@ -2040,7 +2040,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10037"
+		"ID"							"10036"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -2063,7 +2063,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10038"
+		"ID"							"10037"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_yasha"
 		
@@ -2180,7 +2180,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10039"
+		"ID"							"10038"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -2203,7 +2203,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10040"
+		"ID"							"10039"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_sange"
 		
@@ -2329,7 +2329,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10041"
+		"ID"							"10040"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -2352,7 +2352,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10042"
+		"ID"							"10041"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_sange_and_yasha"
 		
@@ -2544,7 +2544,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10043"
+		"ID"							"10042"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -2570,7 +2570,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10044"
+		"ID"							"10043"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "item_nightshadow"
 
@@ -2652,7 +2652,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10045"
+		"ID"							"10044"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -2678,7 +2678,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10046"
+		"ID"							"10045"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "item_nightshadow_and_sange"
 
@@ -2830,7 +2830,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10047"
+		"ID"							"10046"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -2856,7 +2856,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10048"
+		"ID"							"10047"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "item_nightshadow_and_yasha"
 
@@ -3004,7 +3004,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10049"
+		"ID"							"10048"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -3033,7 +3033,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10050"
+		"ID"							"10049"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "item_three_spirits_blades"
 
@@ -3243,7 +3243,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10051"
+		"ID"							"10050"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -3266,7 +3266,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10052"
+		"ID"							"10051"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_splitshot_str"
 			
@@ -3460,7 +3460,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10053"
+		"ID"							"10052"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -3483,7 +3483,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10054"
+		"ID"							"10053"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_splitshot_agi"
 			
@@ -3667,7 +3667,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10055"
+		"ID"							"10054"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -3690,7 +3690,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10056"
+		"ID"							"10055"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_splitshot_int"
 			
@@ -3836,7 +3836,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10057"
+		"ID"							"10056"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -3859,7 +3859,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10058"
+		"ID"							"10057"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_splitshot_ultimate"
 			
@@ -4137,7 +4137,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10059"
+		"ID"							"10058"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -4160,7 +4160,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10060"
+		"ID"							"10059"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CREEP"
@@ -4320,7 +4320,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10061"
+		"ID"							"10060"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_pocket_riki"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
@@ -4491,7 +4491,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10062"
+		"ID"							"10061"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_pocket_riki"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
@@ -4669,7 +4669,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10063"
+		"ID"							"10062"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -4692,7 +4692,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10064"
+		"ID"							"10063"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -4768,7 +4768,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10065"
+		"ID"							"10064"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_metamorphosis_elixir"
 		"AbilityCastPoint"        		"0.9"
@@ -4803,7 +4803,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10066"
+		"ID"							"10065"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -4826,7 +4826,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10067"
+		"ID"							"10066"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -5108,7 +5108,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10068"
+		"ID"							"10067"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -5131,7 +5131,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10069"
+		"ID"							"10068"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_desolating_skadi"
 		
@@ -5254,7 +5254,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10070"
+		"ID"							"10069"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -5277,7 +5277,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10071"
+		"ID"							"10070"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_edge_of_vyse"
 		"FightRecapLevel"				"1"
@@ -5544,7 +5544,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10072"
+		"ID"							"10071"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/items/meepo/diggers_divining_rod/diggers_divining_rod_gem_saphire.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_gem.vpcf"
@@ -5634,7 +5634,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10073"
+		"ID"							"10072"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/items/meepo/diggers_divining_rod/diggers_divining_rod_gem_saphire.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_gem.vpcf"
@@ -5724,7 +5724,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10074"
+		"ID"							"10073"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -5747,7 +5747,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10075"
+		"ID"							"10074"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -5896,7 +5896,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10078"
+		"ID"							"10075"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_hell_hero_change"
 		"AbilityCastPoint"        		"0.9"
@@ -5933,7 +5933,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10079"
+		"ID"							"10076"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_heaven_hero_change"
 		"AbilityCastPoint"        		"0.9"
@@ -5970,7 +5970,7 @@
 		"AbilityTextureName"			"item_banana"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10080"
+		"ID"							"10077"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"Model"							"models/props_gameplay/banana_prop_closed.vmdl"
 		"AbilityCastPoint"				"0"
@@ -6127,7 +6127,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10081"
+		"ID"							"10078"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -6150,7 +6150,7 @@
 	"item_aegis_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10082"
+		"ID"							"10079"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/aegis.vmdl"
 		"AbilityTextureName"			"item_aegis_arena"
@@ -6300,7 +6300,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10083"
+		"ID"							"10080"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -6322,7 +6322,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10084"
+		"ID"							"10081"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_refresher_arena"
 		"AbilitySharedCooldown"			"item_refresher"
@@ -6405,7 +6405,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10085"
+		"ID"							"10082"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -6427,7 +6427,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10086"
+		"ID"							"10083"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityTextureName"			"item_manta_arena"
 		"AbilitySharedCooldown"			"manta"
@@ -6638,7 +6638,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10087"
+		"ID"							"10084"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -6660,7 +6660,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10088"
+		"ID"							"10085"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -6682,7 +6682,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10089"
+		"ID"							"10086"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -6704,7 +6704,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10090"
+		"ID"							"10087"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -6726,7 +6726,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10091"
+		"ID"							"10088"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -6746,7 +6746,7 @@
 	"item_diffusal_blade_arena"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10092"
+		"ID"							"10089"
 		"AbilityTextureName"			"item_diffusal_blade_arena"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -6900,7 +6900,7 @@
 	"item_diffusal_blade_arena_2"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10093"
+		"ID"							"10090"
 		"AbilityTextureName"			"item_diffusal_blade_arena_2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -7054,7 +7054,7 @@
 	"item_diffusal_blade_arena_3"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10094"
+		"ID"							"10091"
 		"AbilityTextureName"			"item_diffusal_blade_arena_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -7208,7 +7208,7 @@
 	"item_diffusal_blade_arena_4"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10095"
+		"ID"							"10092"
 		"AbilityTextureName"			"item_diffusal_blade_arena_4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -7362,7 +7362,7 @@
 	"item_diffusal_blade_arena_5"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10096"
+		"ID"							"10093"
 		"AbilityTextureName"			"item_diffusal_blade_arena_5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -7518,7 +7518,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10097"
+		"ID"							"10094"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -7540,7 +7540,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10098"
+		"ID"							"10095"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_steam_footgear"
 		
@@ -7654,7 +7654,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10099"
+		"ID"							"10096"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -7678,7 +7678,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10100"
+		"ID"							"10097"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_eye_of_the_prophet"
 		
@@ -7729,7 +7729,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10101"
+		"ID"							"10098"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -7753,7 +7753,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10102"
+		"ID"							"10099"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_ray_of_fate"
 		
@@ -7802,7 +7802,7 @@
 	"item_titanium_fruit"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10103"
+		"ID"							"10100"
 		"AbilityTextureName"			"item_titanium_fruit"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCooldown"				"300"
@@ -7872,7 +7872,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10104"
+		"ID"							"10101"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -7894,7 +7894,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10105"
+		"ID"							"10102"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityTextureName"			"item_diffusal_style"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -8184,7 +8184,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10106"
+		"ID"							"10103"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -8208,7 +8208,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10107"
+		"ID"							"10104"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -8345,7 +8345,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10108"
+		"ID"							"10105"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8368,7 +8368,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10109"
+		"ID"							"10106"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8391,7 +8391,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10110"
+		"ID"							"10107"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8414,7 +8414,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10111"
+		"ID"							"10108"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8437,7 +8437,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10112"
+		"ID"							"10109"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8460,7 +8460,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10113"
+		"ID"							"10110"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8483,7 +8483,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10114"
+		"ID"							"10111"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8506,7 +8506,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10115"
+		"ID"							"10112"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8529,7 +8529,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10116"
+		"ID"							"10113"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8552,7 +8552,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10117"
+		"ID"							"10114"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8575,7 +8575,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10118"
+		"ID"							"10115"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8598,7 +8598,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10119"
+		"ID"							"10116"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8621,7 +8621,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10120"
+		"ID"							"10117"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8644,7 +8644,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10121"
+		"ID"							"10118"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8667,7 +8667,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10122"
+		"ID"							"10119"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -8690,7 +8690,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10123"
+		"ID"							"10120"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -8782,7 +8782,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10124"
+		"ID"							"10121"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -8874,7 +8874,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10125"
+		"ID"							"10122"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -8966,7 +8966,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10126"
+		"ID"							"10123"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -9058,7 +9058,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10127"
+		"ID"							"10124"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -9147,7 +9147,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10128"
+		"ID"							"10125"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -9245,7 +9245,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10129"
+		"ID"							"10126"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -9343,7 +9343,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10130"
+		"ID"							"10127"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -9441,7 +9441,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10131"
+		"ID"							"10128"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -9539,7 +9539,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10132"
+		"ID"							"10129"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -9634,7 +9634,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10133"
+		"ID"							"10130"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -9758,7 +9758,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10134"
+		"ID"							"10131"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -9882,7 +9882,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10135"
+		"ID"							"10132"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -10006,7 +10006,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10136"
+		"ID"							"10133"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -10130,7 +10130,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10137"
+		"ID"							"10134"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -10251,7 +10251,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10138"
+		"ID"							"10135"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -10273,7 +10273,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10139"
+		"ID"							"10136"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
@@ -10349,7 +10349,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10140"
+		"ID"							"10137"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -10371,7 +10371,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10141"
+		"ID"							"10138"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_skull_of_midas"
 
@@ -10436,7 +10436,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10142"
+		"ID"							"10139"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -10458,7 +10458,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10143"
+		"ID"							"10140"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_chest_of_midas"
 
@@ -10522,7 +10522,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10144"
+		"ID"							"10141"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -10544,7 +10544,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10145"
+		"ID"							"10142"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_blood_of_midas"
 
@@ -10592,7 +10592,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10146"
+		"ID"							"10143"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -10612,7 +10612,7 @@
 	"item_rune_keeper"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10147"
+		"ID"							"10144"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_rune_keeper"
 
@@ -10688,7 +10688,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10148"
+		"ID"							"10145"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -10711,7 +10711,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10149"
+		"ID"							"10146"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"			"item_bloodstone_arena"
 		"FightRecapLevel"				"2"
@@ -10960,7 +10960,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10150"
+		"ID"							"10147"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -10982,7 +10982,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10151"
+		"ID"							"10148"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
@@ -11058,7 +11058,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10152"
+		"ID"							"10149"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -11080,7 +11080,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10153"
+		"ID"							"10150"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
@@ -11154,7 +11154,7 @@
 	"item_team_changer"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10154"
+		"ID"							"10151"
 		"ItemCost"						"5000"
 		"AbilityTextureName"			"item_team_changer"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -11204,7 +11204,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10155"
+		"ID"							"10152"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -11226,7 +11226,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10156"
+		"ID"							"10153"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -11248,7 +11248,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10157"
+		"ID"							"10154"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -11270,7 +11270,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10158"
+		"ID"							"10155"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -11292,7 +11292,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10159"
+		"ID"							"10156"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -11314,7 +11314,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10160"
+		"ID"							"10157"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -11336,7 +11336,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10161"
+		"ID"							"10158"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -11358,7 +11358,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10162"
+		"ID"							"10159"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_arena"
 		
@@ -11492,7 +11492,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10163"
+		"ID"							"10160"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_arena_inactive"
 		
@@ -11572,7 +11572,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10164"
+		"ID"							"10161"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_2"
 		
@@ -11706,7 +11706,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10165"
+		"ID"							"10162"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_2_inactive"
 		
@@ -11786,7 +11786,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10166"
+		"ID"							"10163"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_3"
 		
@@ -11919,7 +11919,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10167"
+		"ID"							"10164"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_3_inactive"
 		
@@ -11999,7 +11999,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10168"
+		"ID"							"10165"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_frozen"
 		
@@ -12185,7 +12185,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10169"
+		"ID"							"10166"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_frozen_inactive"
 		
@@ -12320,7 +12320,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10170"
+		"ID"							"10167"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -12342,7 +12342,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10171"
+		"ID"							"10168"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -12364,7 +12364,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10172"
+		"ID"							"10169"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -12387,7 +12387,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10173"
+		"ID"							"10170"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
@@ -12410,7 +12410,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10174"
+		"ID"							"10171"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_skadi_arena"
 		
@@ -12518,7 +12518,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10175"
+		"ID"							"10172"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_skadi_2"
 		
@@ -12626,7 +12626,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10176"
+		"ID"							"10173"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_skadi_4"
 		
@@ -12734,7 +12734,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10177"
+		"ID"							"10174"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_skadi_8"
 		
@@ -12842,7 +12842,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10178"
+		"ID"							"10175"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityTextureName"			"item_sacrificial_dagger"
@@ -12887,7 +12887,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10179"
+		"ID"							"10176"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_consecrated_sword"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -12931,7 +12931,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10180"
+		"ID"							"10177"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -12953,7 +12953,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10181"
+		"ID"							"10178"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -12975,7 +12975,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10182"
+		"ID"							"10179"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -12997,7 +12997,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10183"
+		"ID"							"10180"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -13019,7 +13019,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10184"
+		"ID"							"10181"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -13041,7 +13041,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10185"
+		"ID"							"10182"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -13061,7 +13061,7 @@
 	"item_essential_orb_fire_1"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10186"
+		"ID"							"10183"
 		"AbilityTextureName"			"item_essential_orb_fire_1"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
@@ -13181,7 +13181,7 @@
 	"item_essential_orb_fire_2"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10187"
+		"ID"							"10184"
 		"AbilityTextureName"			"item_essential_orb_fire_2"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
@@ -13301,7 +13301,7 @@
 	"item_essential_orb_fire_3"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10188"
+		"ID"							"10185"
 		"AbilityTextureName"			"item_essential_orb_fire_3"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
@@ -13421,7 +13421,7 @@
 	"item_essential_orb_fire_4"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10189"
+		"ID"							"10186"
 		"AbilityTextureName"			"item_essential_orb_fire_4"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
@@ -13541,7 +13541,7 @@
 	"item_essential_orb_fire_5"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10190"
+		"ID"							"10187"
 		"AbilityTextureName"			"item_essential_orb_fire_5"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
@@ -13661,7 +13661,7 @@
 	"item_essential_orb_fire_6"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10191"
+		"ID"							"10188"
 		"AbilityTextureName"			"item_essential_orb_fire_6"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
@@ -13783,7 +13783,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10192"
+		"ID"							"10189"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -13806,7 +13806,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10193"
+		"ID"							"10190"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_octarine_core_arena"
 
@@ -13923,7 +13923,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10194"
+		"ID"							"10191"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -13946,7 +13946,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10195"
+		"ID"							"10192"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_refresher_core"
 		"AbilitySharedCooldown"			"item_refresher"
@@ -14094,7 +14094,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10201"
+		"ID"							"10193"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -14116,7 +14116,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10202"
+		"ID"							"10194"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -14138,7 +14138,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10203"
+		"ID"							"10195"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -14160,7 +14160,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10204"
+		"ID"							"10196"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -14182,7 +14182,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10205"
+		"ID"							"10197"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -14204,7 +14204,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10206"
+		"ID"							"10198"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -14226,7 +14226,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10207"
+		"ID"							"10199"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_black_king_bar_arena"
 		"FightRecapLevel"				"2"
@@ -14365,7 +14365,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10208"
+		"ID"							"10200"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_black_king_bar_2"
 		"FightRecapLevel"				"2"
@@ -14504,7 +14504,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10209"
+		"ID"							"10201"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_black_king_bar_3"
 		"FightRecapLevel"				"2"
@@ -14643,7 +14643,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10210"
+		"ID"							"10202"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_black_king_bar_4"
 		"FightRecapLevel"				"2"
@@ -14782,7 +14782,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10211"
+		"ID"							"10203"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_black_king_bar_5"
 		"FightRecapLevel"				"2"
@@ -14921,7 +14921,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10212"
+		"ID"							"10204"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_black_king_bar_6"
 		"FightRecapLevel"				"2"
@@ -15060,7 +15060,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10213"
+		"ID"							"10205"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -15082,7 +15082,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10214"
+		"ID"							"10206"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_titanium_bar"
 		"FightRecapLevel"				"2"
@@ -15230,7 +15230,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10215"
+		"ID"							"10207"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -15250,7 +15250,7 @@
 	"item_vermillion_robe"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10216"
+		"ID"							"10208"
 		"AbilityTextureName"			"item_vermillion_robe"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -15378,7 +15378,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10218"
+		"ID"							"10209"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -15398,7 +15398,7 @@
 	"item_dark_flow"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10219"
+		"ID"							"10210"
 		"AbilityTextureName"			"item_dark_flow"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -15481,7 +15481,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10220"
+		"ID"							"10211"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -15501,7 +15501,7 @@
 	"item_echo_sabre_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10221"
+		"ID"							"10212"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_echo_sabre_arena"
 
@@ -15608,7 +15608,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10222"
+		"ID"							"10213"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -15628,7 +15628,7 @@
 	"item_echo_sabre_2"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10223"
+		"ID"							"10214"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_echo_sabre_2"
 
@@ -15739,7 +15739,7 @@
 	"item_coffee_bean"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10224"
+		"ID"							"10215"
 		"ItemCost"						"500"
 		"AbilityTextureName"			"item_coffee_bean"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -15805,7 +15805,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10225"
+		"ID"							"10216"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -15827,7 +15827,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10226"
+		"ID"							"10217"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -16013,7 +16013,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10227"
+		"ID"							"10218"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -16035,7 +16035,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10228"
+		"ID"							"10219"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -16219,7 +16219,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10229"
+		"ID"							"10220"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -16241,7 +16241,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10230"
+		"ID"							"10221"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_butterfly"
 
@@ -16340,7 +16340,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10231"
+		"ID"							"10222"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -16362,7 +16362,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10232"
+		"ID"							"10223"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_horn_of_the_underworld"
 		
@@ -16561,7 +16561,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10233"
+		"ID"							"10224"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
 
@@ -16584,7 +16584,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10234"
+		"ID"							"10225"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "item_desolator2"
@@ -16671,7 +16671,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10235"
+		"ID"							"10226"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
 
@@ -16694,7 +16694,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10236"
+		"ID"							"10227"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "item_desolator3"
@@ -16781,7 +16781,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10237"
+		"ID"							"10228"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
 
@@ -16804,7 +16804,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10238"
+		"ID"							"10229"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "item_desolator4"
@@ -16917,7 +16917,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10239"
+		"ID"							"10230"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
 
@@ -16940,7 +16940,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10240"
+		"ID"							"10231"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "item_desolator5"
@@ -17089,7 +17089,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10241"
+		"ID"							"10232"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
 
@@ -17112,7 +17112,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10242"
+		"ID"							"10233"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "item_desolator6"
@@ -17323,7 +17323,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10243"
+		"ID"							"10234"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -17346,7 +17346,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10244"
+		"ID"							"10235"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_thunder_musket"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -17539,7 +17539,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10245"
+		"ID"							"10236"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -17562,7 +17562,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10246"
+		"ID"							"10237"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_golden_eagle_relic"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -17694,7 +17694,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10247"
+		"ID"							"10238"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_golden_eagle_relic"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -17863,7 +17863,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10248"
+		"ID"							"10239"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -17885,7 +17885,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10249"
+		"ID"							"10240"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_butterfly_of_sins"
 
@@ -18055,7 +18055,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10250"
+		"ID"							"10241"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -18077,7 +18077,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10251"
+		"ID"							"10242"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_rapier_of_pain"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -18335,7 +18335,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10252"
+		"ID"							"10243"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -18358,7 +18358,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10253"
+		"ID"							"10244"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_heavy_war_axe_of_rage_damage"
 		
@@ -18480,7 +18480,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10254"
+		"ID"							"10245"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_heavy_war_axe_of_rage_health"
 		"ItemPurchasable"				"0"
@@ -18613,7 +18613,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10255"
+		"ID"							"10246"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -18635,7 +18635,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10256"
+		"ID"							"10247"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_holy_knight_shield"
 		"AbilityCooldown"				"6"
@@ -18726,7 +18726,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10257"
+		"ID"							"10248"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -18748,7 +18748,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10258"
+		"ID"							"10249"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_book_of_the_keeper"
 		
@@ -18814,7 +18814,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10259"
+		"ID"							"10250"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -18836,7 +18836,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10260"
+		"ID"							"10251"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_angel_wings"
 		"AbilityCooldown"				"24"
@@ -19142,7 +19142,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10261"
+		"ID"							"10252"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radio_car"
 		"ItemPurchasable"				"0"
@@ -19182,7 +19182,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10262"
+		"ID"							"10253"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -19204,7 +19204,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10263"
+		"ID"							"10254"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"AbilityTextureName"			"item_blade_of_discord"
 		"AbilitySharedCooldown"			"ethereal"
@@ -19401,7 +19401,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"item_datadriven"
 		"AbilityTextureName"			"item_tango"
-		"ID"							"10264"
+		"ID"							"10255"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"Model"							"models/props_gameplay/tango.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_tango.vpcf"
@@ -19497,7 +19497,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10265"
+		"ID"							"10256"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -19517,7 +19517,7 @@
 	"item_piercing_blade"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10266"
+		"ID"							"10257"
 		"AbilityTextureName"			"item_piercing_blade"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -19557,7 +19557,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10267"
+		"ID"							"10258"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -19577,7 +19577,7 @@
 	"item_haganemushi"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10268"
+		"ID"							"10259"
 		"AbilityTextureName"			"item_haganemushi"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
@@ -19801,7 +19801,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10269"
+		"ID"							"10260"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -19821,7 +19821,7 @@
 	"item_fallhammer"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10270"
+		"ID"							"10261"
 		"AbilityTextureName"			"item_fallhammer"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -20012,7 +20012,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10271"
+		"ID"							"10262"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -20035,7 +20035,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10272"
+		"ID"							"10263"
 		"AbilityTextureName"			"item_heavens_halberd"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -20209,7 +20209,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10273"
+		"ID"							"10264"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -20230,7 +20230,7 @@
 	"item_summoned_unit"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10274"
+		"ID"							"10265"
 		"AbilityTextureName"			"item_summoned_unit"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -20319,7 +20319,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10276"
+		"ID"							"10266"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -20342,7 +20342,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10277"
+		"ID"							"10267"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_phantom_cuirass"
 		
@@ -20456,7 +20456,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10278"
+		"ID"							"10268"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -20479,7 +20479,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"10279"
+		"ID"							"10269"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_demonic_cuirass"
 		
@@ -20769,7 +20769,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"400672"
+		"ID"							"10270"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -20792,7 +20792,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"100022341233468"
+		"ID"							"10271"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_awakened_cursed_eye"
 		

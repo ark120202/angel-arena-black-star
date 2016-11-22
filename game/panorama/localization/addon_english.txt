@@ -208,5 +208,8 @@
 
 		"DOTA_Item_Build_Title_Valve"							"Recommended items"
 		"DOTA_Item_Build_Title_Arena"							"AABS Default"
+
+		"notification_item_demon_king_bar_curse_p1"				"You just received Demon King Bar's Curse effect. You'll die in "
+		"notification_item_demon_king_bar_curse_p2"				" seconds."
 	}
 }

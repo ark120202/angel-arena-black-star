@@ -42,7 +42,9 @@ General:
 Balance:
 	
 Fixes:
-	Golden Eagle Relic - Swift Strike effect is visible now
+	Fixed some items weren't purchasable
+	Ursa - Fury Swipes now not works on bosses
+	Added notification for Demon King Bar's Curse
 <<+===========================================================================================================
 rhasta,
 lycan,

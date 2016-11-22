@@ -199,5 +199,8 @@
 
 		"DOTA_Item_Build_Title_Valve"							"Рекомендуемые предметы"
 		"DOTA_Item_Build_Title_Arena"							"Предметы из AABS"
+
+		"notification_item_demon_king_bar_curse_p1"				"Вы получили проклятье от Demon King Bar. Вы погибнете через "
+		"notification_item_demon_king_bar_curse_p2"				" секунд."
 	}
 }
