@@ -141,30 +141,31 @@
 			</Panel>
 
 			<Panel id="ChatAndMapPanel">
-				<Panel id="MinimapPanel">
+				<!-- class="Debug" -->
+				<Panel id="MinimapPanel" class="">
 					<Image id="MinimapImage" src="file://{images}/custom_game/hero_selection/minimap_5v5.png">
 						<!-- Radiant -->
 							<!-- easy -->
-								<Panel id="MinimapSpawnBox_2_1_0" onactivate="OnMinimapClickSpawnBox(2, 1, 0)" class="MinimapSpawnBox" style="position: 92px 156px 0;"/>
+								<Panel id="MinimapSpawnBox_2_1_0" onactivate="OnMinimapClickSpawnBox(2, 1, 0)" class="MinimapSpawnBox" style="position: 88px 182px 0;"/>
 							<!-- medium -->
-								<Panel id="MinimapSpawnBox_2_2_0" onactivate="OnMinimapClickSpawnBox(2, 2, 0)" class="MinimapSpawnBox" style="position: 5px 196px 0;"/>
-								<Panel id="MinimapSpawnBox_2_2_1" onactivate="OnMinimapClickSpawnBox(2, 2, 1)" class="MinimapSpawnBox" style="position: 48px 196px 0;"/>
-								<Panel id="MinimapSpawnBox_2_2_2" onactivate="OnMinimapClickSpawnBox(2, 2, 2)" class="MinimapSpawnBox" style="position: 45px 56px 0;"/>
-								<Panel id="MinimapSpawnBox_2_2_3" onactivate="OnMinimapClickSpawnBox(2, 2, 3)" class="MinimapSpawnBox" style="position: 47px 115px 0;"/>
+								<Panel id="MinimapSpawnBox_2_2_0" onactivate="OnMinimapClickSpawnBox(2, 2, 0)" class="MinimapSpawnBox" style="position: 18px 224px 0;"/>
+								<Panel id="MinimapSpawnBox_2_2_1" onactivate="OnMinimapClickSpawnBox(2, 2, 1)" class="MinimapSpawnBox" style="position: 53px 224px 0;"/>
+								<Panel id="MinimapSpawnBox_2_2_2" onactivate="OnMinimapClickSpawnBox(2, 2, 2)" class="MinimapSpawnBox" style="position: 55px 61px 0;"/>
+								<Panel id="MinimapSpawnBox_2_2_3" onactivate="OnMinimapClickSpawnBox(2, 2, 3)" class="MinimapSpawnBox" style="position: 53px 141px 0;"/>
 							<!-- hard -->
-								<Panel id="MinimapSpawnBox_2_3_0" onactivate="OnMinimapClickSpawnBox(2, 3, 0)" class="MinimapSpawnBox" style="position: 94px 250px 0;"/>
-								<Panel id="MinimapSpawnBox_2_3_1" onactivate="OnMinimapClickSpawnBox(2, 3, 1)" class="MinimapSpawnBox" style="position: 88px 56px 0;"/>
+								<Panel id="MinimapSpawnBox_2_3_0" onactivate="OnMinimapClickSpawnBox(2, 3, 0)" class="MinimapSpawnBox" style="position: 101px 250px 0;"/>
+								<Panel id="MinimapSpawnBox_2_3_1" onactivate="OnMinimapClickSpawnBox(2, 3, 1)" class="MinimapSpawnBox" style="position: 120px 59px 0;"/>
 						<!-- Dire -->
 							<!-- easy -->
-								<Panel id="MinimapSpawnBox_3_1_0" onactivate="OnMinimapClickSpawnBox(3, 1, 0)" class="MinimapSpawnBox" style="position: 231px 156px 0;"/>
+								<Panel id="MinimapSpawnBox_3_1_0" onactivate="OnMinimapClickSpawnBox(3, 1, 0)" class="MinimapSpawnBox" style="position: 239px 182px 0;"/>
 							<!-- medium -->
-								<Panel id="MinimapSpawnBox_3_2_0" onactivate="OnMinimapClickSpawnBox(3, 2, 0)" class="MinimapSpawnBox" style="position: 316px 196px 0;"/>
-								<Panel id="MinimapSpawnBox_3_2_1" onactivate="OnMinimapClickSpawnBox(3, 2, 1)" class="MinimapSpawnBox" style="position: 275px 196px 0;"/>
-								<Panel id="MinimapSpawnBox_3_2_2" onactivate="OnMinimapClickSpawnBox(3, 2, 2)" class="MinimapSpawnBox" style="position: 272px 112px 0;"/>
-								<Panel id="MinimapSpawnBox_3_2_3" onactivate="OnMinimapClickSpawnBox(3, 2, 3)" class="MinimapSpawnBox" style="position: 267px 47px 0;"/>
+								<Panel id="MinimapSpawnBox_3_2_0" onactivate="OnMinimapClickSpawnBox(3, 2, 0)" class="MinimapSpawnBox" style="position: 316px 216px 0;"/>
+								<Panel id="MinimapSpawnBox_3_2_1" onactivate="OnMinimapClickSpawnBox(3, 2, 1)" class="MinimapSpawnBox" style="position: 280px 216px 0;"/>
+								<Panel id="MinimapSpawnBox_3_2_2" onactivate="OnMinimapClickSpawnBox(3, 2, 2)" class="MinimapSpawnBox" style="position: 280px 136px 0;"/>
+								<Panel id="MinimapSpawnBox_3_2_3" onactivate="OnMinimapClickSpawnBox(3, 2, 3)" class="MinimapSpawnBox" style="position: 280px 53px 0;"/>
 							<!-- hard -->
-								<Panel id="MinimapSpawnBox_3_3_0" onactivate="OnMinimapClickSpawnBox(3, 3, 0)" class="MinimapSpawnBox" style="position: 224px 250px 0;"/>
-								<Panel id="MinimapSpawnBox_3_3_1" onactivate="OnMinimapClickSpawnBox(3, 3, 1)" class="MinimapSpawnBox" style="position: 220px 65px 0;"/>
+								<Panel id="MinimapSpawnBox_3_3_0" onactivate="OnMinimapClickSpawnBox(3, 3, 0)" class="MinimapSpawnBox" style="position: 240px 252px 0;"/>
+								<Panel id="MinimapSpawnBox_3_3_1" onactivate="OnMinimapClickSpawnBox(3, 3, 1)" class="MinimapSpawnBox" style="position: 230px 57px 0;"/>
 
 					</Image>
 				</Panel>

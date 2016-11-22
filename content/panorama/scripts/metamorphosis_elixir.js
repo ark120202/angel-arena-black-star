@@ -51,7 +51,6 @@ function ChooseHeroPanelHero() {
 
 function SelectHero() {
 	GameEvents.SendCustomGameEventToServer("metamorphosis_elixir_cast", {
-		playerId: Game.GetLocalPlayerID(),
 		hero: SelectedHeroData.heroKey
 	})
 	CloseMenu()

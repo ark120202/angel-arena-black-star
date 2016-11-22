@@ -98,6 +98,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	"omniknight_select_enemies",
 	"omniknight_select_allies",
 	"magnataur_reverse_polarity",
+	"queenofblades_alter_ego",
 }
 
 REFRESH_LIST_IGNORE_REFRESHER = {

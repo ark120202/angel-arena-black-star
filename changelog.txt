@@ -25,76 +25,24 @@ TODO LIST:
 		Выглядит как база (даир и редиант - разные модели). Нет регена, не атакует. Может спавнить рабочих, которые будут её хилить, танки и самолеты (из д2с или варика),
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_1360]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-Angel Arena Black Star - Версия 1.3:
+[url=https://vk.com/wall-122685850_1378]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+Angel Arena Black Star - Версия 1.3.1:
 
 Общее:
-	Карта полностью изменена
-	Все боссы изменены
-	Все эссенции удалены
-	Rubick переработан
-	Добавлен  новый герой: Mirratie
-	Добавлены новые предметы:
-		-Moon Dust
-		-Cursed Eye
-		-Fallen Star
-		-Demons Paw
-		-Awakened Cursed Eye
-	Теперь в меню выбора героев вы можете показать союзникам, какие точки вы планируете фармить
-	Теперь во время дуэли вы не можете покупать предметы
-	Добавлен Дуэльный Магазин, где вы можете покупать предметы во время дуэли
-	Большенство предметов, в рецептах которых были эссенции, были изменены
-	Metamorphosis Elixir теперь можно купить.
-	Golden Eagle Relic переработан
-	Врмя между рунами: 60 => 120 (Но на карте теперь 2 руны, а не 1)
-	Лимит убийств: 25/75 => 75/150
-	Золото за победу на дуэли: 1500 => 500 + (2000 * Duel Index)
-	Сборки предметов теперь можно скрыть.
-	При нажатии на предмет в инвентаре при открытом магазине, теперь он будет там показан.
-	Фонтан при убийстве теперь имеет эффекты Laguna Blade
+	
 Баланс:
-	Omniknight - Repel: Длительность перезарядки: 6 7 8 9 10 11 12 => 20
-	Ability Shop:
-		-Эти способности теперь недоступны: Faceless Void -  Time Freeze, Rubick - Personality Steal, Omniknight - Select Allies
-		-Disruptor - Thunder Strike: Cost: 1 => 4
+	
 Исправления:
-	Исправлен баг, позволяющий копировать предметы при помощи Metamorphosis Elixir.
-	Исправлены некоторые ошибки в сборках на героев от Valve
+	
 ========
-Angel Arena Black Star - Version 1.3:
+Angel Arena Black Star - Version 1.3.1:
 
 General:
-	Map reworked
-	All bosses reworked
-	All essences removed
-	Rubick reworked
-	Added new hero: Mirratie
-	Added new items:
-		-Moon Dust
-		-Cursed Eye
-		-Fallen Star
-		-Demons Paw
-		-Awakened Cursed Eye
-	Now in Hero Selection Menu you can mark spots, that you are planning to farm
-	Now you can't purchase items in normal shop, while duel is ongoing
-	Added Duel Shop, where you can buy items on Duel.
-	Most of items, that used essences in their recipes were rebalanced
-	Metamorphosis Elixir now is purchasable.
-	Golden Eagle Relic reworked
-	Rune spawn time: 60 => 120 (But now there are 2 runes, instead of 1)
-	Kill Limit: 25/75 => 75/150
-	Duel gold: 1500 => 500 + (2000 * Duel Index)
-	Itembuilds now can be hidden using a button.
-	When you click on an item in inventory it will be shown in shop, if it's opened.
-	Fountains now has Laguna Blade effect, when they kills enemy units
+	
 Balance:
-	Omniknight - Repel: Cooldown: 6 7 8 9 10 11 12 => 20
-	Ability Shop:
-		-These abilities now are disabled: Faceless Void -  Time Freeze, Rubick - Personality Steal, Omniknight - Select Allies
-		-Disruptor - Thunder Strike: Cost: 1 => 4
+	
 Fixes:
-	Fixed item copying with Metamorphosis Elixir.
-	Fixed some bugs in Valve's itembuilds
+	Golden Eagle Relic - Swift Strike effect is visible now
 <<+===========================================================================================================
 rhasta,
 lycan,

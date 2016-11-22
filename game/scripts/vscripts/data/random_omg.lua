@@ -274,8 +274,6 @@ RANDOM_OMG_SETTINGS = {
 			{ability = "undying_decay", hero = "npc_dota_hero_undying"},
 			{ability = "undying_soul_rip", hero = "npc_dota_hero_undying"},
 			{ability = "undying_tombstone", hero = "npc_dota_hero_undying"},
-			{ability = "rubick_fade_bolt", hero = "npc_dota_hero_rubick"},
-			{ability = "rubick_null_field", hero = "npc_dota_hero_rubick"},
 			{ability = "disruptor_thunder_strike", hero = "npc_dota_hero_disruptor"},
 			{ability = "disruptor_glimpse", hero = "npc_dota_hero_disruptor"},
 			{ability = "disruptor_kinetic_field", hero = "npc_dota_hero_disruptor"},
@@ -384,6 +382,10 @@ RANDOM_OMG_SETTINGS = {
 			{ability = "stegius_desolus_wave", hero = "npc_dota_hero_life_stealer"},
 			{ability = "stegius_rage_of_desolus", hero = "npc_dota_hero_life_stealer"},
 			{ability = "stegius_brightness_of_desolate", hero = "npc_dota_hero_life_stealer"},
+			{ability = "mirratie_snagshot", hero = "npc_dota_hero_templar_assassin"},
+			{ability = "mirratie_smoke_out", hero = "npc_dota_hero_templar_assassin"},
+			{ability = "mirratie_sixth_sense", hero = "npc_dota_hero_templar_assassin"},
+			{ability = "mirratie_impaling_shot", hero = "npc_dota_hero_templar_assassin"},
 		},
 
 		Ultimates = {

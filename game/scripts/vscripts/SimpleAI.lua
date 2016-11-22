@@ -32,7 +32,7 @@ function SimpleAI:new( unit, profile, params )
 
 		ai.spawnPos = params.spawnPos or unit:GetAbsOrigin()
 		ai.aggroRange = params.aggroRange or unit:GetAcquisitionRange()
-		ai.leashRange = params.leashRange or 1600
+		ai.leashRange = params.leashRange or 1000
 		ai.abilityCastCallback = params.abilityCastCallback
 	end
 

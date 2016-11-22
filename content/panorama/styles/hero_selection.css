@@ -621,6 +621,12 @@
 	height: 32px;
 	flow-children: right-wrap;
 }
+
+.Debug .MinimapSpawnBox
+{
+	border: 1px solid red;
+}
+
 .SpawnBoxUnitPanel
 {
 	width: 32px;

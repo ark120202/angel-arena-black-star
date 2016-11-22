@@ -77,7 +77,7 @@
 	{
 		"SceneCamera"				"custom_scene_hero_shinobu"
 		"Model"						"models/hero_shinobu/shinobu_01.vmdl"
-		"HideWearables"	"1"
+		"HideWearables"				"1"
 		"Ability1"					"shinobu_vampire_blood"
 		"Ability2"					"shinobu_eat_oddity"
 		"Ability3"					"shinobu_kokorowatari"

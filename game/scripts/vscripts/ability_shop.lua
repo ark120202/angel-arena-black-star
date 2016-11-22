@@ -102,7 +102,7 @@ function AbilityShop:OnAbilityBuy(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local abilityInfo = AbilityShop:GetAbilityListInfo(data.ability)
 	if not abilityInfo then
-		abilityInfo = { cost = 1, banned_with = {}}
+		return
 	end
 	local cost = abilityInfo.cost
 	local banned_with =  abilityInfo.banned_with

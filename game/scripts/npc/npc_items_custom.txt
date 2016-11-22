@@ -17824,7 +17824,6 @@
 			"modifier_item_golden_eagle_relic_enabled"
 			{
 				"Passive"			"1"
-				"IsHidden"			"1"
 
 				"EffectName"		"particles/arena/items_fx/golden_eagle_relic_buff.vpcf"
 				"EffectAttachType"	"follow_origin"

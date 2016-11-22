@@ -1,8 +1,8 @@
-5v5_romg
+5v5
 {
-	material materials/overviews/5v5_romg.vmat
-	pos_x -7680
-	pos_y 7424
-	scale 15.063
+	material materials/overviews/5v5.vmat
+	pos_x -6816
+	pos_y 7040
+	scale 12.313
 }
 

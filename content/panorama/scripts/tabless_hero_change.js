@@ -23,8 +23,6 @@ function ChooseHeroPanelHero() {
 
 function SelectHero() {
 	var data = {
-		playerId: Game.GetLocalPlayerID(),
-		//heroImage: SelectedHeroData.heroImage,
 		hero: SelectedHeroData.heroKey
 	}
 	var hero_selection_available_heroes = null
