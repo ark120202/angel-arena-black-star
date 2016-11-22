@@ -38,20 +38,6 @@ function Scepters:GiveScepterAbility(hero)
 		hero:SwapAbilities("riki_tricks_of_the_trade", "riki_pocket_riki", true, true)
 		hero:SwapAbilities("riki_tricks_of_the_trade", "attribute_bonus_arena", true, true)
 		hero.ScepterAbilityUpgraded = true
-	elseif heroName == "npc_dota_hero_wisp" then
-		hero:RemoveModifierByName("modifier_wisp_tether")
-		hero:RemoveModifierByName("modifier_wisp_overcharge")
-		hero:RemoveModifierByName("modifier_wisp_spirits")
-		ReplaceAbilities(hero, "wisp_tether_break", "wisp_tether_break_aghanims", true, true):SetLevel(1)
-		ReplaceAbilities(hero, "wisp_spirits_in", "wisp_spirits_in_aghanims", true, true)
-		ReplaceAbilities(hero, "wisp_spirits_out", "wisp_spirits_out_aghanims", true, true)
-		Timers:CreateTimer(0.03, function()
-			ReplaceAbilities(hero, "wisp_overcharge", "wisp_overcharge_aghanims", true, true)
-			ReplaceAbilities(hero, "wisp_relocate", "wisp_relocate_aghanims", true, true)
-			ReplaceAbilities(hero, "wisp_tether", "wisp_tether_aghanims", true, true)
-			ReplaceAbilities(hero, "wisp_spirits", "wisp_spirits_aghanims", true, true)
-		end)
-		hero.ScepterAbilityUpgraded = true
 	end
 end
 
@@ -73,20 +59,6 @@ function Scepters:RemoveScepterAbility(hero)
 		hero:SwapAbilities("attribute_bonus_arena", "riki_tricks_of_the_trade", true, true)
 		hero:SwapAbilities("riki_tricks_of_the_trade", "riki_pocket_riki", true, true)
 		hero:RemoveAbility("riki_pocket_riki")
-		hero.ScepterAbilityUpgraded = false
-	elseif heroName == "npc_dota_hero_wisp" then
-		hero:RemoveModifierByName("modifier_tether_caster_aghanims")
-		local overcharge = hero:FindAbilityByName("wisp_overcharge_aghanims")
-		if overcharge:GetToggleState() then
-			overcharge:ToggleAbility()
-		end
-		ReplaceAbilities(hero, "wisp_tether_break_aghanims", "wisp_tether_break", true, true)
-		ReplaceAbilities(hero, "wisp_spirits_in_aghanims", "wisp_spirits_in", true, true)
-		ReplaceAbilities(hero, "wisp_spirits_out_aghanims", "wisp_spirits_out", true, true)
-		ReplaceAbilities(hero, "wisp_overcharge_aghanims", "wisp_overcharge", true, true)
-		ReplaceAbilities(hero, "wisp_relocate_aghanims", "wisp_relocate", true, true)
-		ReplaceAbilities(hero, "wisp_tether_aghanims", "wisp_tether", true, true)
-		ReplaceAbilities(hero, "wisp_spirits_aghanims", "wisp_spirits", true, true)
 		hero.ScepterAbilityUpgraded = false
 	end
 end

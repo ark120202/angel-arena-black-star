@@ -184,3 +184,7 @@ function ApplyModifierWithoutRefresh(keys)
 		keys.ability:ApplyDataDrivenModifier(keys.caster, target, keys.modifier, nil)
 	end
 end
+
+function SetAbilityActivated(keys)
+	keys.ability:SetActivated(keys.Activated == 1)
+end

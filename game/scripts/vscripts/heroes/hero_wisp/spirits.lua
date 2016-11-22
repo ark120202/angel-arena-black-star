@@ -10,6 +10,7 @@ function CastSpirits( event )
 
 	
 	if not caster:FindAbilityByName("wisp_tether_aghanims") or not caster:FindAbilityByName("wisp_tether_aghanims").tether_allies or #caster:FindAbilityByName("wisp_tether_aghanims").tether_allies <= 0 then
+		Containers:DisplayError(caster:GetPlayerID(), "#dota_hud_error_spirits_no_tether")
 		ability:EndCooldown()
 		ability:RefundManaCost()
 	else
@@ -22,8 +23,14 @@ function CastSpirits( event )
 		EmitSoundOn("Hero_Wisp.Spirits.Cast", caster)
 		caster:RemoveModifierByName("modifier_spirits_caster_aghanims")
 		ability:ApplyDataDrivenModifier(caster, caster, "modifier_spirits_caster_aghanims", {})
-		caster:SwapAbilities( event.empty1_ability, event.spirits_in_ability, false, true )
-		caster:SwapAbilities( event.empty2_ability, event.spirits_out_ability, false, true )
+		local wisp_spirits_in_aghanims = caster:FindAbilityByName("wisp_spirits_in_aghanims")
+		if wisp_spirits_in_aghanims then
+			wisp_spirits_in_aghanims:SetActivated(true)
+		end
+		local wisp_spirits_out_aghanims = caster:FindAbilityByName("wisp_spirits_out_aghanims")
+		if wisp_spirits_out_aghanims then
+			wisp_spirits_out_aghanims:SetActivated(true)
+		end
 	end
 end
 
@@ -39,7 +46,7 @@ function ThinkSpirits( event )
 	if not caster:FindAbilityByName("wisp_tether_aghanims").tether_allies then
 		return
 	end
-	local numSpiritsMax	= ability:GetLevelSpecialValueFor("revolution_time_scepter", ability:GetLevel() - 1)
+	local numSpiritsMax	= ability:GetLevelSpecialValueFor("revolution_time", ability:GetLevel() - 1)
 
 	local casterOrigin	= caster:GetAbsOrigin()
 
@@ -115,7 +122,7 @@ function ThinkSpirits( event )
 idealNumSpiritsSpawned = elapsedTime / event.spirit_summon_interval
 	idealNumSpiritsSpawned = math.min( idealNumSpiritsSpawned, numSpiritsMax )
 
-	if ability.spirits_numSpirits == numSpiritsMax and numSpiritsAlive == 0 and elapsedTime > ability:GetLevelSpecialValueFor("revolution_time_scepter", ability:GetLevel() - 1) then
+	if ability.spirits_numSpirits == numSpiritsMax and numSpiritsAlive == 0 and elapsedTime > ability:GetLevelSpecialValueFor("revolution_time", ability:GetLevel() - 1) then
 		-- All spirits have been exploded.
 		caster:RemoveModifierByName( event.caster_modifier )
 		return
@@ -138,25 +145,28 @@ end
 	Destroy all spirits and swap the abilities back to the original states.
 ]]
 function EndSpirits( event )
-	
-	local caster	= event.caster
-	local ability	= event.ability
+	local caster = event.caster
+	local ability = event.ability
+	local spiritModifier = event.spirit_modifier
 
-	local spiritModifier	= event.spirit_modifier
-
-	-- Destroy all spirits
-	for k,v in pairs( ability.spirits_spiritsSpawned ) do
-		v:RemoveModifierByName( spiritModifier )
+	for k,v in pairs(ability.spirits_spiritsSpawned) do
+		v:RemoveModifierByName(spiritModifier)
 	end
 
-	-- Disable the toggle abilities
-	caster:SwapAbilities( event.empty1_ability, event.spirits_in_ability, true, false )
-	caster:SwapAbilities( event.empty2_ability, event.spirits_out_ability, true, false )
-
-	-- Reset the toggle states.
-	ResetToggleState( caster, event.spirits_in_ability )
-	ResetToggleState( caster, event.spirits_out_ability )
-
+	local wisp_spirits_in_aghanims = caster:FindAbilityByName("wisp_spirits_in_aghanims")
+	if wisp_spirits_in_aghanims then
+		wisp_spirits_in_aghanims:SetActivated(false)
+		if wisp_spirits_in_aghanims:GetToggleState() then
+			wisp_spirits_in_aghanims:ToggleAbility()
+		end
+	end
+	local wisp_spirits_out_aghanims = caster:FindAbilityByName("wisp_spirits_out_aghanims")
+	if wisp_spirits_out_aghanims then
+		wisp_spirits_out_aghanims:SetActivated(false)
+		if wisp_spirits_out_aghanims:GetToggleState() then
+			wisp_spirits_out_aghanims:ToggleAbility()
+		end
+	end
 end
 
 --[[
@@ -183,11 +193,6 @@ function ToggleOff( event )
 	event.caster.spirits_movementFactor = 0
 end
 
---[[
-	Author: Ractidous
-	Date: 09.02.2015.
-	Reset the toggle state.
-]]
 function ResetToggleState( caster, abilityName )
 	local ability = caster:FindAbilityByName( abilityName )
 	if ability:GetToggleState() then
@@ -218,7 +223,7 @@ end
 function ExplodeSpirit( event )
 	local spirit	= event.target
 	local ability	= event.ability
-	local enemies = FindUnitsInRadius(spirit:GetTeam(), spirit:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("hero_hit_radius_scepter", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+	local enemies = FindUnitsInRadius(spirit:GetTeam(), spirit:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("hero_hit_radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 	if #enemies >= 1 then
 
 		-- Remove from the list of spirits
@@ -228,10 +233,10 @@ function ExplodeSpirit( event )
 		ParticleManager:CreateParticle("particles/units/heroes/hero_wisp/wisp_guardian_explosion.vpcf", PATTACH_ABSORIGIN, spirit)
 		EmitSoundOn("Hero_Wisp.Spirits.Destroy", spirit)
 
-		ability:CreateVisibilityNode( spirit:GetAbsOrigin(), ability:GetLevelSpecialValueFor("explode_radius_scepter", ability:GetLevel() - 1), ability:GetLevelSpecialValueFor("vision_duration_scepter", ability:GetLevel() - 1) )
+		ability:CreateVisibilityNode( spirit:GetAbsOrigin(), ability:GetLevelSpecialValueFor("explode_radius", ability:GetLevel() - 1), ability:GetLevelSpecialValueFor("vision_duration", ability:GetLevel() - 1) )
 		local damage = spirit:GetHealth()
 		spirit:ForceKill( true )
-		for _,v in ipairs(FindUnitsInRadius(spirit:GetTeam(), spirit:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("explode_radius_scepter", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)) do
+		for _,v in ipairs(FindUnitsInRadius(spirit:GetTeam(), spirit:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("explode_radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)) do
 			ApplyDamage({victim = v, attacker = spirit, damage = damage, damage_type = ability:GetAbilityDamageType(), ability = ability})
 		end
 

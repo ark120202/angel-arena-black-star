@@ -72,6 +72,9 @@ ABILITY_SHOP_DATA = {
 	["luna_lunar_blessing"] = { cost = 2, },
 	["luna_moon_glaive"] = { cost = 2, },
 	["terrorblade_metamorphosis"] = { cost = 2, },
+	["wisp_tether_aghanims"] = { cost = 6, },
+	["wisp_spirits_aghanims"] = { cost = 6, },
+	["wisp_relocate_aghanims"] = { cost = 10, },
 }
 
 ABILITY_SHOP_SKIP_HEROES = {
@@ -87,8 +90,6 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"morphling_morph_str",
 	"keeper_of_the_light_recall",
 	"keeper_of_the_light_blinding_light",
-	"wisp_empty1",
-	"wisp_empty2",
 	"doom_bringer_empty1",
 	"doom_bringer_empty2",
 	"phoenix_sun_ray",
@@ -97,5 +98,8 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"keeper_of_the_light_spirit_form",
 	"faceless_void_time_freeze",
 	"mirratie_sixth_sense",
-	"omniknight_select_allies"
+	"omniknight_select_allies",
+	"wisp_spirits_in_aghanims",
+	"wisp_spirits_out_aghanims",
+	"wisp_tether_break_aghanims",
 }

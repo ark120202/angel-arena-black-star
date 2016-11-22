@@ -6,30 +6,31 @@
 ]]
 function CastTether( event )
 	-- Variables
-	local caster	= event.caster
-	local ability	= event.ability
+	local caster = event.caster
+	local ability = event.ability
+	local target = event.target
 
-	local targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("radius_scepter", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false)
+	local targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false)
 
-	-- Store current Health/Mana to detect gained value
-	TrackCurrentHealth( event )
-	TrackCurrentMana( event )
-
-	ability.tether_allies = {}
-
-	for _,v in ipairs(targets) do
-		--print(UnitFilter(v, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_CHECK_DISABLE_HELP, caster:GetTeam()))
-		print(PlayerResource:IsDisableHelpSetForPlayerID(caster:GetPlayerID(), v:GetPlayerID()))
-		if not v:IsIllusion() and v:IsRealHero() and v ~= caster and UnitFilter(v, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_CHECK_DISABLE_HELP, caster:GetTeam()) == UF_SUCCESS then
-			ability:ApplyDataDrivenModifier(caster, v, "modifier_tether_ally_aghanims", {})
-			table.insert(ability.tether_allies, v)
+	TrackCurrentHealth(event)
+	TrackCurrentMana(event)
+	local checkAndApply = function(unit)
+		if not unit:IsIllusion() and unit:IsRealHero() and unit ~= caster and UnitFilter(unit, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_CHECK_DISABLE_HELP, caster:GetTeam()) == UF_SUCCESS then
+			ability:ApplyDataDrivenModifier(caster, unit, "modifier_tether_ally_aghanims", {})
+			table.insert(ability.tether_allies, unit)
 		end
 	end
+	ability.tether_allies = {}
+	if caster:HasScepter() then
+		for _,v in ipairs(targets) do
+			checkAndApply(v)
+		end
+	else
+		checkAndApply(target)
+	end
 
-	-- Clear the slowed units list
 	ability.tether_slowedUnits = {}
 
-	-- Swap sub ability
 	local mainAbilityName	= ability:GetAbilityName()
 	local subAbilityName	= event.sub_ability_name
 	caster:SwapAbilities( mainAbilityName, subAbilityName, false, true )

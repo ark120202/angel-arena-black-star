@@ -8,6 +8,7 @@ LINKED_ABILITIES = {
 	phoenix_icarus_dive = {"phoenix_icarus_dive_stop"},
 	phoenix_fire_spirits = {"phoenix_launch_fire_spirit"},
 	ancient_apparition_ice_blast = {"ancient_apparition_ice_blast_release"},
+	wisp_tether_aghanims = {"wisp_tether_break_aghanims"},
 }
 
 NOT_MULTICASTABLE_ABILITIES = {

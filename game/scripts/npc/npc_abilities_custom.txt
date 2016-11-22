@@ -1040,7 +1040,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"wisp_tether"
 		"CastFilterRejectCaster" 		"1"
-		"MaxLevel"	"7"
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"7"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -1066,48 +1067,48 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius_scepter"					"1000 1450 1600 1850 2100 2350 2600"
+				"radius"					"1000 1450 1600 1850 2100 2350 2600"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movespeed_scepter"					"14 15 16 17 18 19 20"
+				"movespeed"					"14 15 16 17 18 19 20"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"tether_duration_scepter"			"12 14 16 18 20 22 24"
+				"tether_duration"			"12 14 16 18 20 22 24"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"tether_heal_amp_scepter"			"1.5"
+				"tether_heal_amp"			"1.5"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_scepter"			"-100"
+				"slow"			"-100"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attackslow_tooltip_scepter"			"-100"
+				"attackslow_tooltip"			"-100"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration_scepter"				"0.75 1.25 1.75 2.25 2.75 3.25 3.75"
+				"stun_duration"				"0.75 1.25 1.75 2.25 2.75 3.25 3.75"
 			}
 			// Extra variables
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tether_line_radius_scepter"		"32"
+				"tether_line_radius"		"32"
 			}
 			"11"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"tether_line_tick_interval_scepter"	"0.03"
+				"tether_line_tick_interval"	"0.03"
 			}
 		}
 		
@@ -1157,12 +1158,12 @@
 		{
 			"modifier_tether_caster_aghanims"
 			{
-				"IsBuff"	"1"
-				"Duration"	"%tether_duration_scepter"
+				"IsPurgable"		"0"
+				"Duration"	"%tether_duration"
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_scepter"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed"
 				}
 				
 				"OnCreated"
@@ -1214,7 +1215,7 @@
 					{
 						"ScriptFile"	"heroes/hero_wisp/tether.lua"
 						"Function"		"HealAlly"
-						"tether_heal_amp"	"%tether_heal_amp_scepter"
+						"tether_heal_amp"	"%tether_heal_amp"
 					}
 					
 					"RunScript"
@@ -1230,7 +1231,7 @@
 					{
 						"ScriptFile"	"heroes/hero_wisp/tether.lua"
 						"Function"		"HealAlly"
-						"tether_heal_amp"	"%tether_heal_amp_scepter"
+						"tether_heal_amp"	"%tether_heal_amp"
 					}
 					
 					"RunScript"
@@ -1246,7 +1247,7 @@
 					{
 						"ScriptFile"	"heroes/hero_wisp/tether.lua"
 						"Function"		"GiveManaToAlly"
-						"tether_heal_amp"	"%tether_heal_amp_scepter"
+						"tether_heal_amp"	"%tether_heal_amp"
 					}
 					"RunScript"
 					{
@@ -1261,7 +1262,7 @@
 					{
 						"ScriptFile"	"heroes/hero_wisp/tether.lua"
 						"Function"		"GiveManaToAlly"
-						"tether_heal_amp"	"%tether_heal_amp_scepter"
+						"tether_heal_amp"	"%tether_heal_amp"
 					}
 				
 					"RunScript"
@@ -1289,7 +1290,7 @@
 						"ScriptFile"	"heroes/hero_wisp/tether.lua"
 						"Function"		"CheckDistance"
 						
-						"radius"			"%radius_scepter"
+						"radius"			"%radius"
 						"caster_modifier"	"modifier_tether_caster_aghanims"
 					}
 				}
@@ -1297,12 +1298,13 @@
 			
 			"modifier_tether_ally_aghanims"
 			{
-				"IsBuff"	"1"
-				"Duration"	"%tether_duration_scepter"
+				"IsPurgable"		"0"
+				"IsHidden"			"1"
+				"Duration"	"%tether_duration"
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_scepter"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed"
 				}
 				
 				"OnCreated"
@@ -1337,7 +1339,7 @@
 					}
 				}
 				
-				"ThinkInterval"			"%tether_line_tick_interval_scepter"
+				"ThinkInterval"			"%tether_line_tick_interval"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -1346,8 +1348,8 @@
 						"Function"			"FireTetherProjectile"
 						"Target"			"TARGET"
 						
-						"tether_line_radius"	"%tether_line_radius_scepter"
-						"tick_interval"			"%tether_line_tick_interval_scepter"
+						"tether_line_radius"	"%tether_line_radius"
+						"tick_interval"			"%tether_line_tick_interval"
 					}
 				}
 			}
@@ -1356,14 +1358,14 @@
 			{
 				"IsDebuff"	"1"
 			
-				"Duration"	"%stun_duration_scepter"
+				"Duration"	"%stun_duration"
 				
 				"EffectName"		"particles/units/heroes/hero_wisp/wisp_tether_slow.vpcf"
 				"EffectAttachType"	"follow_origin"
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_scepter"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
 				}
 				
 				"OnCreated"
@@ -1448,78 +1450,78 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"creep_damage_scepter"				"10 20 30 40 50 60 100"
+				"creep_damage"				"10 20 30 40 50 60 100"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"revolution_time_scepter"			"5.0 5.0 5.0 5.0 5.0 5.0 5.0"
+				"revolution_time"			"5.0 5.0 5.0 5.0 5.0 5.0 5.0"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"min_range_scepter"					"100 100 100 100 100 100 100"
+				"min_range"					"100 100 100 100 100 100 100"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_range_scepter"					"1000 1000 1000 1000 1000 1000 1000"
+				"max_range"					"1000 1000 1000 1000 1000 1000 1000"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hero_hit_radius_scepter"			"70 70 70 70 70 70 70"
+				"hero_hit_radius"			"70 70 70 70 70 70 70"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"explode_radius_scepter"			"300 300 300 300 300 300 300"
+				"explode_radius"			"300 300 300 300 300 300 300"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hit_radius_scepter"				"150 150 150 150 150 150 150"
+				"hit_radius"				"150 150 150 150 150 150 150"
 			}
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"default_radius_scepter"			"150"
+				"default_radius"			"150"
 			}
 			"11"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"spirit_movement_rate_scepter"		"250 250 250 250 250 250 250"
+				"spirit_movement_rate"		"250 250 250 250 250 250 250"
 			}
 			"12"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"spirit_duration_scepter"			"19.0 19.0 19.0 19.0 19.0 19.0 19.0"
+				"spirit_duration"			"19.0 19.0 19.0 19.0 19.0 19.0 19.0"
 			}
 			// Extra variables
 			"13"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"spirit_summon_interval_scepter"	"1.0"
+				"spirit_summon_interval"	"1.0"
 			}
 			"14"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"spirit_turn_rate_scepter"			"150"
+				"spirit_turn_rate"			"150"
 			}
 			"15"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"vision_duration_scepter"			"3.0"
+				"vision_duration"			"3.0"
 			}
 			"16"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"think_interval_scepter"			"0.03"
+				"think_interval"			"0.03"
 			}
 			"17"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"creep_damage_interval_scepter"		"0.48"		// == 360 / %spirit_turn_rate / %num_spirits
+				"creep_damage_interval"		"0.48"		// == 360 / %spirit_turn_rate / %num_spirits
 			}
 		}
 		
@@ -1539,29 +1541,7 @@
 			{
 				"ScriptFile"		"heroes/hero_wisp/spirits.lua"
 				"Function"			"CastSpirits"
-				
-				"default_radius"	"%default_radius_scepter"
-				
-				"empty1_ability"		"wisp_empty1"
-				"empty2_ability"		"wisp_empty2"
-				"spirits_in_ability"	"wisp_spirits_in_aghanims"
-				"spirits_out_ability"	"wisp_spirits_out_aghanims"
-			}
-		}
-		
-		"OnUpgrade"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_wisp/spirits.lua"
-				"Function"		"LevelUpAbility"
-				"ability_name"	"wisp_spirits_in_aghanims"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_wisp/spirits.lua"
-				"Function"		"LevelUpAbility"
-				"ability_name"	"wisp_spirits_out_aghanims"
+				"default_radius"	"%default_radius"
 			}
 		}
 		
@@ -1569,7 +1549,7 @@
 		{
 			"modifier_spirits_caster_aghanims"
 			{
-				"Duration"		"%spirit_duration_scepter"
+				"Duration"		"%spirit_duration"
 			
 				"OnCreated"
 				{
@@ -1580,7 +1560,7 @@
 					}
 				}
 				
-				"ThinkInterval"		"%think_interval_scepter"
+				"ThinkInterval"		"%think_interval"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -1588,14 +1568,14 @@
 						"ScriptFile"		"heroes/hero_wisp/spirits.lua"
 						"Function"			"ThinkSpirits"
 						
-						"think_interval"			"%think_interval_scepter"
+						"think_interval"			"%think_interval"
 						
-						"spirit_summon_interval"	"%spirit_summon_interval_scepter"
-						"spirit_turn_rate"			"%spirit_turn_rate_scepter"
+						"spirit_summon_interval"	"%spirit_summon_interval"
+						"spirit_turn_rate"			"%spirit_turn_rate"
 						
-						"min_range"					"%min_range_scepter"
-						"max_range"					"%max_range_scepter"
-						"spirit_movement_rate"		"%spirit_movement_rate_scepter"
+						"min_range"					"%min_range"
+						"max_range"					"%max_range"
+						"spirit_movement_rate"		"%spirit_movement_rate"
 						
 						"caster_modifier"			"modifier_spirits_caster_aghanims"
 						
@@ -1612,11 +1592,6 @@
 						"Function"			"EndSpirits"
 						
 						"spirit_modifier"	"modifier_spirits_spirit_aghanims"
-						
-						"empty1_ability"		"wisp_empty1"
-						"empty2_ability"		"wisp_empty2"
-						"spirits_in_ability"	"wisp_spirits_in_aghanims"
-						"spirits_out_ability"	"wisp_spirits_out_aghanims"
 					}
 					
 					"RunScript"
@@ -1631,7 +1606,7 @@
 			"modifier_spirits_spirit_aghanims"
 			{
 				"Aura"			"modifier_spirits_creep_damage_aghanims"
-				"Aura_Radius"	"%hit_radius_scepter"
+				"Aura_Radius"	"%hit_radius"
 				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"	"DOTA_UNIT_TARGET_BASIC"
 				
@@ -1687,11 +1662,11 @@
 					{
 						"Target"		"TARGET"
 						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%creep_damage_scepter"
+						"Damage"		"%creep_damage"
 					}
 				}
 				
-				"ThinkInterval"		"%creep_damage_interval_scepter"
+				"ThinkInterval"		"%creep_damage_interval"
 				"OnIntervalThink"
 				{
 					"FireSound"
@@ -1711,7 +1686,7 @@
 					{
 						"Target"		"TARGET"
 						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%creep_damage_scepter"
+						"Damage"		"%creep_damage"
 					}
 				}
 			}
@@ -1723,7 +1698,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"wisp_spirits_in"
 
@@ -1753,6 +1728,21 @@
 				"Function"		"ToggleOff"
 			}
 		}
+		
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"SetMaxLevel"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"SetAbilityActivated"
+				"Activated"		"0"
+			}
+		}
 	}
 
 	"wisp_spirits_out_aghanims"
@@ -1760,7 +1750,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"wisp_spirits_out"
 
@@ -1790,6 +1780,21 @@
 				"Function"		"ToggleOff"
 			}
 		}
+		
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"SetMaxLevel"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"SetAbilityActivated"
+				"Activated"		"0"
+			}
+		}
 	}
 
 	"wisp_overcharge_aghanims"
@@ -1816,27 +1821,27 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed_scepter"		"50 60 70 80 90 100 110"
+				"bonus_attack_speed"		"50 60 70 80 90 100 110"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_pct_scepter"			"-5 -10 -15 -20 -25 -30 -40"
+				"bonus_damage_pct"			"-5 -10 -15 -20 -25 -30 -40"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"drain_interval_scepter"			"0.2 0.2 0.2 0.2 0.2 0.2 0.2"
+				"drain_interval"			"0.2 0.2 0.2 0.2 0.2 0.2 0.2"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"drain_pct_scepter"					"0.045"
+				"drain_pct"					"0.045"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"drain_pct_tooltip_scepter"			"4.5 4.5 4.5 4.5 4.5 4.5 4.5"
+				"drain_pct_tooltip"			"4.5 4.5 4.5 4.5 4.5 4.5 4.5"
 			}
 		}
 		
@@ -1915,7 +1920,7 @@
 					}
 				}
 				
-				"ThinkInterval"		"%drain_interval_scepter"
+				"ThinkInterval"		"%drain_interval"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -1923,8 +1928,8 @@
 						"ScriptFile"		"heroes/hero_wisp/overcharge.lua"
 						"Function"			"TickDrain"
 						
-						"drain_interval"	"%drain_interval_scepter"
-						"drain_pct"			"%drain_pct_scepter"
+						"drain_interval"	"%drain_interval"
+						"drain_pct"			"%drain_pct"
 					}
 				}
 			}
@@ -2000,8 +2005,8 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed_scepter"
-					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%bonus_damage_pct_scepter"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%bonus_damage_pct"
 				}
 			}
 		}
@@ -2037,28 +2042,28 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cast_delay_scepter"				"2.5 2.25 2.0 1.75 1.5 1.25 1.0"
+				"cast_delay"				"2.5 2.25 2.0 1.75 1.5 1.25 1.0"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"return_time_scepter"				"12.0 12.0 12.0 12.0 12.0 12.0 12.0"
+				"return_time"				"12.0 12.0 12.0 12.0 12.0 12.0 12.0"
 			}
 			// Extra variables
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"destroy_tree_radius_scepter"		"300"
+				"destroy_tree_radius"		"300"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"vision_radius_scepter"				"64"
+				"vision_radius"				"64"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"extra_tether_duration_scepter"		"2.0"
+				"extra_tether_duration"		"2.0"
 			}
 		}
 		
@@ -2105,7 +2110,7 @@
 		{
 			"modifier_relocate_channel_aghanims"
 			{
-				"Duration"	"%cast_delay_scepter"
+				"Duration"	"%cast_delay"
 				
 				"OnCreated"
 				{
@@ -2128,8 +2133,8 @@
 						
 						"endpoint_particle"		"particles/units/heroes/hero_wisp/wisp_relocate_marker_endpoint.vpcf"
 						
-						"vision_radius"			"%vision_radius_scepter"
-						"vision_duration"		"%cast_delay_scepter"
+						"vision_radius"			"%vision_radius"
+						"vision_duration"		"%cast_delay"
 					}
 				}
 				
@@ -2170,7 +2175,7 @@
 			"modifier_relocate_timer_aghanims"
 			{
 				"IsHidden"	"1"
-				"Duration"	"%return_time_scepter"		// Timer should be hidden
+				"Duration"	"%return_time"		// Timer should be hidden
 				
 				"OnCreated"
 				{
@@ -2189,7 +2194,7 @@
 						"tether_modifier"				"modifier_tether_caster_aghanims"
 						"tether_ally_property_name"		"tether_allies"
 						"tether_ally_modifier"			"modifier_tether_ally_aghanims"
-						"tether_duration"				"%return_time_scepter + %extra_tether_duration_scepter"
+						"tether_duration"				"%return_time + %extra_tether_duration"
 						
 						"teleport_particle"		"particles/units/heroes/hero_wisp/wisp_relocate_teleport.vpcf"
 					}
@@ -2197,7 +2202,7 @@
 					"DestroyTrees"
 					{
 						"Target"		"CASTER"
-						"Radius"		"%destroy_tree_radius_scepter"
+						"Radius"		"%destroy_tree_radius"
 					}
 					
 					"RunScript"
@@ -2205,7 +2210,7 @@
 						"ScriptFile"	"heroes/hero_wisp/relocate.lua"
 						"Function"		"Teleportation_PostDestroyTree"
 						
-						"return_time"		"%return_time_scepter"
+						"return_time"		"%return_time"
 						
 						"marker_particle"	"particles/units/heroes/hero_wisp/wisp_relocate_marker.vpcf"
 						"timer_particle"	"particles/units/heroes/hero_wisp/wisp_relocate_timer.vpcf"
@@ -2273,7 +2278,7 @@
 					"DestroyTrees"
 					{
 						"Target"		"CASTER"
-						"Radius"		"%destroy_tree_radius_scepter"
+						"Radius"		"%destroy_tree_radius"
 					}
 					
 					"RunScript"

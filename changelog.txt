@@ -42,9 +42,10 @@ General:
 Balance:
 	
 Fixes:
-	Fixed some items weren't purchasable
-	Ursa - Fury Swipes now not works on bosses
-	Added notification for Demon King Bar's Curse
+	Wisp:
+	-Wisp now has scepter ablities by default, but without scepter it can tether only one unit
+	-You now can purge Tether by clicking to an icon in the modifiers buff
+	-Wisp abilities added to ability shop
 <<+===========================================================================================================
 rhasta,
 lycan,

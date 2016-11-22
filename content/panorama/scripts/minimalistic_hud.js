@@ -4,6 +4,10 @@ var m_AbilityPanels = [];
 var m_BuffPanels = [];
 var CustomHudEnabled = false;
 var m_BuffPanelsClickPurgable = [];
+var ONCLICK_PURGABLE_MODIFIERS = [
+	"modifier_rubick_personality_steal",
+	"modifier_tether_ally_aghanims"
+];
 
 function OnLevelUpClicked() {
 	if (Game.IsInAbilityLearnMode()) {
@@ -22,6 +26,7 @@ function UpdatePanels() {
 	for (var i = 0; i < nBuffs; ++i) {
 		var buffSerial = Entities.GetBuff(unit, i);
 		if (buffSerial != -1) {
+			var buffName = Buffs.GetName(unit, buffSerial)
 			if (!Buffs.IsHidden(unit, buffSerial)) {
 				if (CustomHudEnabled) {
 					if (nUsedPanels >= m_BuffPanels.length) {
@@ -32,7 +37,7 @@ function UpdatePanels() {
 					buffPanel.SetBuff(buffSerial, unit);
 					nUsedPanels++;
 				}
-			} else if (Buffs.GetName(unit, buffSerial) == "modifier_rubick_personality_steal") {
+			} else if (ONCLICK_PURGABLE_MODIFIERS.indexOf(buffName) != -1) {
 				if (nUsedPanelsClickPurgable >= m_BuffPanelsClickPurgable.length) {
 					var buffPanel = CreateSnippet_Buff($.CreatePanel("Panel", $("#ClickPurgableModifiersOverlay"), ""))
 					m_BuffPanelsClickPurgable.push(buffPanel);
