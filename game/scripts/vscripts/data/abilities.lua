@@ -27,6 +27,7 @@ NOT_MULTICASTABLE_ABILITIES = {
 	"riki_pocket_riki",
 	"elder_titan_ancestral_spirit",
 	"elder_titan_return_spirit",
+	"ember_spirit_sleight_of_fist",
 }
 
 REFRESH_LIST_IGNORE_REARM = {

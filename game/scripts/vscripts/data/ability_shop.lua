@@ -1,9 +1,9 @@
 ABILITY_SHOP_BANNED = {
 	["obsidian_destroyer_essence_aura"] = {"storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "shadow_demon_shadow_poison", },
 	["batrider_sticky_napalm"] = { "sandking_sand_storm", "shadow_shaman_shackles", "doom_bringer_scorched_earth", "venomancer_venomous_gale", "venomancer_poison_nova", "ember_spirit_flame_guard", "weaver_the_swarm", "dark_seer_ion_shell", "warlock_fatal_bonds_arena", "spectre_dispersion", "shadow_demon_shadow_poison", },
-	["earthshaker_aftershock"] = { "obsidian_destroyer_arcane_orb", "storm_spirit_ball_lightning", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "zuus_arc_lightning", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "bristleback_quill_spray", "bristleback_viscous_nasal_goo", "shadow_demon_shadow_poison", },
-	["zuus_static_field"] = { "storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "bristleback_viscous_nasal_goo", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "shadow_demon_shadow_poison", },
-	["storm_spirit_overload"] = {"troll_warlord_berserkers_rage", "wisp_spirits_out_aghanims", "wisp_spirits_in_aghanims", "wisp_overcharge_aghanims", "rocket_barrage_arena", "cherub_synthesis", "pudge_rot_arena", "pudge_rot", "skeleton_king_vampiric_aura", "witch_doctor_voodoo_restoration", "leshrac_pulse_nova", "wisp_overcharge", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "bristleback_viscous_nasal_goo", "shadow_demon_shadow_poison", },
+	["earthshaker_aftershock"] = { "obsidian_destroyer_arcane_orb", "storm_spirit_ball_lightning", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "zuus_arc_lightning", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "bristleback_quill_spray", "bristleback_viscous_nasal_goo", "shadow_demon_shadow_poison", "jakiro_dual_breath", },
+	["zuus_static_field"] = { "storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "bristleback_viscous_nasal_goo", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "shadow_demon_shadow_poison", "jakiro_dual_breath", },
+	["storm_spirit_overload"] = { "troll_warlord_berserkers_rage", "wisp_spirits_out_aghanims", "wisp_spirits_in_aghanims", "wisp_overcharge_aghanims", "rocket_barrage_arena", "cherub_synthesis", "pudge_rot_arena", "pudge_rot", "skeleton_king_vampiric_aura", "witch_doctor_voodoo_restoration", "leshrac_pulse_nova", "wisp_overcharge", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "bristleback_viscous_nasal_goo", "shadow_demon_shadow_poison", "jakiro_dual_breath", },
 	["pudge_meat_hook_lua"] = { "furion_teleportation", "kunkka_x_marks_the_spot", "ogre_magi_multicast_arena",  "bloodseeker_thirst", "antimage_blink", "queenofpain_blink", },
 	
 }
@@ -79,6 +79,12 @@ ABILITY_SHOP_DATA = {
 	["templar_assassin_psi_blades"] = { cost = 2, },
 	["cherub_flower_garden"] = { cost = 4, },
 	["wisp_spirits_aghanims"] = { cost = 294, },
+	["weaver_the_swarm"] = { cost = 2, },
+	["sven_storm_bolt"] = { cost = 2, },
+	["zuus_thundergods_wrath"] = { cost = 2, },
+	["kadash_immortality"] = { cost = 15, },
+	["elder_titan_natural_order"] = { cost = 3, },
+	
 }
 
 ABILITY_SHOP_SKIP_HEROES = {
@@ -106,5 +112,4 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"wisp_spirits_in_aghanims",
 	"wisp_spirits_out_aghanims",
 	"wisp_tether_break_aghanims",
-	"kadash_immortality",
 }

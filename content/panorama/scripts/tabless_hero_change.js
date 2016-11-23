@@ -22,14 +22,14 @@ function ChooseHeroPanelHero() {
 }
 
 function SelectHero() {
-	var data = {
-		hero: SelectedHeroData.heroKey
-	}
-	var hero_selection_available_heroes = null
 	if ($.GetContextPanel().BHasClass("HellBase")) {
-		GameEvents.SendCustomGameEventToServer("hell_hero_change_cast", data)
+		GameEvents.SendCustomGameEventToServer("hell_hero_change_cast", {
+		hero: SelectedHeroData.heroKey
+	})
 	} else if ($.GetContextPanel().BHasClass("HeavenBase")) {
-		GameEvents.SendCustomGameEventToServer("heaven_hero_change_cast", data)
+		GameEvents.SendCustomGameEventToServer("heaven_hero_change_cast", {
+		hero: SelectedHeroData.heroKey
+	})
 	}
 
 	CloseMenu()

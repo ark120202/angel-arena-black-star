@@ -65,7 +65,6 @@ function CallForDuel() {
 	} else {
 		$("#GameGoldCost").RemoveClass("RedOutlineForGoldNaN")
 		var data = {
-			sender: Game.GetLocalPlayerID(),
 			selectedEnemyID: selectedEnemyID,
 			gold: $("#GameGoldCost").text,
 			message: $("#GameMessage").text

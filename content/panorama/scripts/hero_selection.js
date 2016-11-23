@@ -451,7 +451,6 @@ function ChooseHeroPanelHero() {
 	ChooseHeroUpdatePanels()
 	if (!localHeroPicked) {
 		GameEvents.SendCustomGameEventToServer("hero_selection_player_hover", {
-			playerId: Game.GetLocalPlayerID(),
 			hero: SelectedHeroData.heroKey
 		})
 	}
@@ -461,7 +460,6 @@ function SelectHero() {
 	if (!localHeroPicked) {
 		localHeroPicked = true
 		GameEvents.SendCustomGameEventToServer("hero_selection_player_select", {
-			playerId: Game.GetLocalPlayerID(),
 			hero: SelectedHeroData.heroKey
 		})
 		Game.EmitSound("HeroPicker.Selected")
@@ -471,9 +469,7 @@ function SelectHero() {
 function RandomHero() {
 	if (!localHeroPicked) {
 		localHeroPicked = true
-		GameEvents.SendCustomGameEventToServer("hero_selection_player_random", {
-			playerId: Game.GetLocalPlayerID()
-		})
+		GameEvents.SendCustomGameEventToServer("hero_selection_player_random", {})
 		Game.EmitSound("HeroPicker.Selected")
 	}
 }

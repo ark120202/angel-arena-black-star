@@ -38,8 +38,6 @@ end
 
 function HeroSelection:PrepareTables()
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK then
-		local originalAbilitiesTable = {}
-		local alternativeAbilitiesTable = {}
 		local data = {
 			GameModeType = "all_pick",
 			SelectionTime = CUSTOM_HERO_SELECTION_TIME,
@@ -54,30 +52,6 @@ function HeroSelection:PrepareTables()
 				}
 			}
 		}
-		for name,enabled in pairsByKeys(HEROLIST) do
-			if enabled == 1 then
-				local heroTable = GetOriginalHeroTable(name)
-				local abilities = {}
-				for i = 1, 16 do
-					local ability = heroTable["Ability" .. i]
-					if ability and ability ~= "" and ability ~= "attribute_bonus" and ability ~= "attribute_bonus_arena" and not AbilityHasBehaviorByName(ability, DOTA_ABILITY_BEHAVIOR_HIDDEN) then
-						table.insert(abilities, ability)
-					end
-				end
-				originalAbilitiesTable[name] = abilities
-			end
-		end
-		for name,_ in pairs(NPC_HEROES_ALTERNATIVE) do
-			local heroTable = GetAlternativeHeroTable(name)
-			local abilities = {}
-			for i = 1, 16 do
-				local ability = heroTable["Ability" .. i]
-				if ability and ability ~= "" and ability ~= "attribute_bonus" and ability ~= "attribute_bonus_arena" and not AbilityHasBehaviorByName(ability, DOTA_ABILITY_BEHAVIOR_HIDDEN) then
-					table.insert(abilities, ability)
-				end
-			end
-			alternativeAbilitiesTable[name] = abilities
-		end
 		local players = GetAllPlayers(false)
 		local teamsPlayers = {}
 		for _,v in ipairs(players) do
@@ -96,13 +70,11 @@ function HeroSelection:PrepareTables()
 				if enabled == 1 then
 					local heroTable
 					local baseName = name
-					local abilityTbl = originalAbilitiesTable
 					local tabIndex = 1
 					local isChanged = false
 					if string.starts(baseName, "alternative_") then
 						baseName = string.sub(baseName, 13)
 						heroTable = GetAlternativeHeroTable(baseName)
-						abilityTbl = alternativeAbilitiesTable
 						tabIndex = 2
 					else
 						heroTable = GetOriginalHeroTable(name)
@@ -113,7 +85,7 @@ function HeroSelection:PrepareTables()
 						model = heroTable.ModelUnitName or name,
 						custom_scene_camera = heroTable.SceneCamera,
 						custom_scene_image = heroTable.SceneImage,
-						abilities = abilityTbl[baseName],
+						abilities = HeroSelection:ParseAbilitiesFromTable(heroTable),
 						isChanged = isChanged,
 						attributes = HeroSelection:ExtractHeroStats(heroTable),
 					}
@@ -131,8 +103,6 @@ function HeroSelection:PrepareTables()
 		PlayerTables:CreateTable("hero_selection_available_heroes_hell", HeroesHell, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 		HeroSelection.ModeData = data
 	elseif DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG or DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
-		local originalAbilitiesTable = {}
-		local alternativeAbilitiesTable = {}
 		local data = {
 			GameModeType = "random_omg",
 			SelectionTime = CUSTOM_HERO_SELECTION_TIME,
@@ -181,6 +151,28 @@ function HeroSelection:PrepareTables()
 		PlayerTables:CreateTable("hero_selection_available_heroes_hell", {disabled = true}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 		HeroSelection.ModeData = data
 	end
+end
+
+function HeroSelection:VerifyHeroGroup(hero, group)
+	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG or DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
+		return ENABLED_HEROES.NoAbilities[hero] == 1
+	else
+		local herolist = ENABLED_HEROES[group]
+		if herolist then
+			return herolist[hero] == 1
+		end
+	end
+end
+
+function HeroSelection:ParseAbilitiesFromTable(t)
+	local abilities = {}
+	for i = 1, 16 do
+		local ability = t["Ability" .. i]
+		if ability and ability ~= "" and ability ~= "attribute_bonus" and ability ~= "attribute_bonus_arena" and not AbilityHasBehaviorByName(ability, DOTA_ABILITY_BEHAVIOR_HIDDEN) then
+			table.insert(abilities, ability)
+		end
+	end
+	return abilities
 end
 
 function HeroSelection:HeroSelectionStart()
@@ -393,20 +385,20 @@ function HeroSelection:RemoveAllOwnedUnits(playerId)
 end
 
 function HeroSelection:OnHeroHover(data)
-	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.playerId))
-	if not HeroSelection.SelectionEnd and tableData[data.playerId].status ~= "picked" then
-		if not tableData[data.playerId] then tableData[data.playerId] = {} end
-		tableData[data.playerId].hero = data.hero
-		tableData[data.playerId].status = "hover"
+	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID))
+	if not HeroSelection.SelectionEnd and tableData[data.PlayerID].status ~= "picked" then
+		if not tableData[data.PlayerID] then tableData[data.PlayerID] = {} end
+		tableData[data.PlayerID].hero = data.hero
+		tableData[data.PlayerID].status = "hover"
 	end
-	PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.playerId), tableData)
+	PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID), tableData)
 end
 
 function HeroSelection:OnHeroRandomHero(data)
-	local team = PlayerResource:GetTeam(data.playerId)
-	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.playerId))
-	if not HeroSelection.SelectionEnd and tableData and tableData[data.playerId] and tableData[data.playerId].status and tableData[data.playerId].status ~= "picked" then
-		HeroSelection:PreformPlayerRandom(data.playerId)
+	local team = PlayerResource:GetTeam(data.PlayerID)
+	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID))
+	if not HeroSelection.SelectionEnd and tableData and tableData[data.PlayerID] and tableData[data.PlayerID].status and tableData[data.PlayerID].status ~= "picked" then
+		HeroSelection:PreformPlayerRandom(data.PlayerID)
 	end
 
 	local canEnd = not HeroSelection.SelectionEnd
@@ -424,18 +416,18 @@ function HeroSelection:OnHeroRandomHero(data)
 end
 
 function HeroSelection:OnHeroSelectHero(data)
-	local team = PlayerResource:GetTeam(data.playerId)
-	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.playerId))
-	if not HeroSelection.SelectionEnd and not HeroSelection:IsHeroSelected(tostring(data.hero)) and tableData and tableData[data.playerId] and tableData[data.playerId].status and tableData[data.playerId].status ~= "picked" then
-		if not tableData[data.playerId] then tableData[data.playerId] = {} end
-		tableData[data.playerId].hero = data.hero
-		tableData[data.playerId].status = "picked"
-		PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.playerId), tableData)
+	local team = PlayerResource:GetTeam(data.PlayerID)
+	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID))
+	if not HeroSelection.SelectionEnd and not HeroSelection:IsHeroSelected(tostring(data.hero)) and tableData and tableData[data.PlayerID] and tableData[data.PlayerID].status and tableData[data.PlayerID].status ~= "picked" then
+		if not tableData[data.PlayerID] then tableData[data.PlayerID] = {} end
+		tableData[data.PlayerID].hero = data.hero
+		tableData[data.PlayerID].status = "picked"
+		PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID), tableData)
 		local newHeroName = data.hero
 		if string.starts(data.hero, "alternative_") then
 			newHeroName = string.sub(data.hero, 13)
 		end
-		PrecacheUnitByNameAsync(newHeroName, function() end, data.playerId)
+		PrecacheUnitByNameAsync(newHeroName, function() end, data.PlayerID)
 	end
 
 	local canEnd = not HeroSelection.SelectionEnd

@@ -17,7 +17,7 @@ end
 function GameMode:MetamorphosisElixirCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local elixirItem = FindItemInInventoryByName(hero, "item_metamorphosis_elixir", false)
-	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") then
+	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(data.hero, "Selection") then
 		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
 	end
 end
@@ -25,7 +25,7 @@ end
 function GameMode:HellHeroChangeCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local elixirItem = FindItemInInventoryByName(hero, "item_hell_hero_change", false)
-	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") then
+	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(data.hero, "Hell") then
 		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
 	end
 end
@@ -33,7 +33,7 @@ end
 function GameMode:HeavenHeroChangeCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local elixirItem = FindItemInInventoryByName(hero, "item_heaven_hero_change", false)
-	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") then
+	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(data.hero, "Heaven") then
 		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
 	end
 end
@@ -132,9 +132,9 @@ function GameMode:SubmitGamemodeVote(data)
 end
 
 function GameMode:BurstCourier(data)
-	if data.playerId then
-		local courier = FindCourier(PlayerResource:GetTeam(tonumber(data.playerId)))
-		courier:CastAbilityNoTarget(courier:FindAbilityByName("courier_burst"), tonumber(data.playerId))
+	local courier = FindCourier(PlayerResource:GetTeam(tonumber(data.PlayerID)))
+	if courier then
+		courier:CastAbilityNoTarget(courier:FindAbilityByName("courier_burst"), tonumber(data.PlayerID))
 	end
 end
 

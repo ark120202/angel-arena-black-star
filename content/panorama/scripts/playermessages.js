@@ -73,11 +73,9 @@ function AddFields(field, panel, panelIndex) {
 }
 
 function OnButtonClickEvent(panel) {
-	var sentData = {
-		playerID: Game.GetLocalPlayerID(),
+	GameEvents.SendCustomGameEventToServer("playermessages_response", {
 		panelIndex: panel.id,
-	}
-	GameEvents.SendCustomGameEventToServer("playermessages_response", sentData);
+	});
 }
 
 (function() {

@@ -377,9 +377,7 @@ function SetCourierTartget(playerId) {
 }
 
 function CourierBurst() {
-	GameEvents.SendCustomGameEventToServer("hud_courier_burst", {
-		playerId: Game.GetLocalPlayerID()
-	})
+	GameEvents.SendCustomGameEventToServer("hud_courier_burst", {})
 }
 
 function CourierTakeAndTransferItems() {

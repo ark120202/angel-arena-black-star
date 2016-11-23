@@ -10,6 +10,7 @@ MODIFIERS_DEATH_PREVENTING = {
 	"modifier_item_aegis_arena",
 	"modifier_item_titanium_bar_active",
 	"modifier_fountain_aura_ally_effect",
+	"modifier_mana_shield_arena",
 }
 
 DUEL_PURGED_MODIFIERS = {

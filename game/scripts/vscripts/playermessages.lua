@@ -34,7 +34,7 @@ function PlayerMessages:SendMessage(playerID, data)
 end
 
 function PlayerMessages:_RecieveMessageResponse(data)
-	local playerID = tonumber(data.playerID)
+	local playerID = tonumber(data.PlayerID)
 	local _ids = string.gsub(string.gsub(string.gsub(data.panelIndex, "invitebox_", ""), "subfield", ""), "field", "")
 	local Indexes = {}
 	for i in string.gmatch(_ids, "([^_]+)") do
