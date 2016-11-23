@@ -1,11 +1,3 @@
-for i,v in pairs(DROP_TABLE) do
-	for i2,v2 in ipairs(v) do
-		if v2.Item == "item_heaven_hero_change" or v2.Item == "item_hell_hero_change" then
-			table.remove(DROP_TABLE[i], i2)
-		end
-	end
-end
-
 RANDOM_OMG_SETTINGS = {
 	Total_Abilities = 6,
 	Ultimate_Count = 2,

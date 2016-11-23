@@ -71,8 +71,6 @@ end
 
 GameModes:Preload()
 
-GameRules.CreateProjectile = Projectiles.CreateProjectile
-
 LinkLuaModifier("modifier_state_hidden", "modifiers/modifier_state_hidden", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_shard_attackspeed_stack", "items/lua/modifiers/modifier_item_shard_attackspeed_stack", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_apocalypse_apocalypse", "heroes/hero_apocalypse/modifier_apocalypse_apocalypse.lua", LUA_MODIFIER_MOTION_NONE)
@@ -80,6 +78,7 @@ LinkLuaModifier("modifier_set_attack_range", "modifiers/modifier_set_attack_rang
 LinkLuaModifier("modifier_charges", "libraries/modifiers/modifier_charges.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_hero_selection_transformation", "modifiers/modifier_hero_selection_transformation.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_fountain_aura_arena", "modifiers/modifier_fountain_aura_arena.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_max_attack_range", "modifiers/modifier_max_attack_range.lua", LUA_MODIFIER_MOTION_NONE)
 
 function GameMode:PostLoadPrecache()
 	DebugPrint("[BAREBONES] Performing Post-Load precache")
@@ -96,8 +95,18 @@ function GameMode:OnFirstPlayerLoaded()
 	if portal2 and portal3 then
 		CreateLoopedPortal(portal2:GetAbsOrigin(), portal3:GetAbsOrigin(), 80, "particles/customgames/capturepoints/cp_wood.vpcf", "", true)
 	end]]
-	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
-		AbilityShop:PostAbilityData()
+
+	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP or DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG then
+		for i,v in pairs(DROP_TABLE) do
+			for i2,v2 in ipairs(v) do
+				if v2.Item == "item_heaven_hero_change" or v2.Item == "item_hell_hero_change" then
+					table.remove(DROP_TABLE[i], i2)
+				end
+			end
+		end
+		if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
+			AbilityShop:PostAbilityData()
+		end
 	end
 	if DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_HOLDOUT_5 then
 		Holdout:Init()
@@ -144,8 +153,6 @@ function GameMode:OnHeroInGame(hero)
 	DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 	Timers:CreateTimer(function()
 		if HeroSelection.SelectionEnd and not hero:HasModifier("modifier_arc_warden_tempest_double") and hero:IsRealHero() then
-
-			_G.ANY_HERO_IN_GAME = true
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
 				local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
 				TEAMS_COURIERS[hero:GetTeamNumber()] = true

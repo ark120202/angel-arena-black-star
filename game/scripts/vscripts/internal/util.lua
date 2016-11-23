@@ -198,20 +198,6 @@ function string.ends(String,End)
 	return End=='' or string.sub(String,-string.len(End))==End
 end
 
-function GetMaximumHeroLevelOrDefault(iDefault)
-	if not iDefault then iDefault = 1 end
-	local output = iDefault
-	if ANY_HERO_IN_GAME then
-		output = GetMaximumHeroLevel()
-	end
-	return output
-end
-
-function GetMaximumHeroLevel()
-	local table = GetAllHeroLevels()
-	return math.max(unpack(table))
-end
-
 function GetAllPlayers(bOnlyWithHeroes)
 	local Players = {}
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
@@ -223,33 +209,6 @@ function GetAllPlayers(bOnlyWithHeroes)
 		end
 	end
 	return Players
-end
-
-function GetAllHeroLevels()
-	local Levels = {}
-	for _,v in ipairs(GetAllPlayers(true)) do
-		table.insert(Levels, v:GetAssignedHero():GetLevel())
-	end
-	return Levels
-end
-
-function GetAverageHeroLevelOrDefault(iDefault)
-	if not iDefault then iDefault = 1 end
-	local output = iDefault
-	if ANY_HERO_IN_GAME then
-		output = GetAverageHeroLevel()
-	end
-	return output
-end
-
-function GetAverageHeroLevel()
-	local table = GetAllHeroLevels()
-	local int = 0
-	for _,v in pairs(table) do
-		int = int + v
-	end
-	int = int / #table
-	return int
 end
 
 function CreateHeroNameNotificationSettings(hHero, flDuration)

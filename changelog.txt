@@ -2,10 +2,10 @@ TODO LIST:
 	доделать панели selection (хп, картинки)
 	переделать инвайт на 1х1 дуэли
 	Дополнить гайды
-	check apocalypse_agnis_touch + sell
 	обезьяны
 	казино
-	
+	attack range > boss attack range fix..
+	duel leave creash
 Идеи для предметов:
 	Star Blade:
 		Из Fallen Star + Dark Blade + ???
@@ -42,10 +42,17 @@ General:
 Balance:
 	
 Fixes:
-	Wisp:
-	-Wisp now has scepter ablities by default, but without scepter it can tether only one unit
-	-You now can purge Tether by clicking to an icon in the modifiers buff
-	-Wisp abilities added to ability shop
+	Fixed Demon King Bar notification was shown to all, now it'll be shown only for DKB target
+	Apocalypse - Agni's Touch now not works on bosses and illusions.
+	When boss recieves damage, it limits attacker's attack range to 900 for 3 seconds
+	Ability Shop:
+	-Kadash - Immortality disabled
+	-Apocalypse - Agni's Touch: Cost: 1 => 4
+	-Life Stealer - Feast: Cost: 1 => 8
+	-Templar Assassin - Psi Blades: Cost: 1 => 2
+	-Cherub - Flower Garden: Cost: 8 => 4
+	-Wisp - Spirits added to ability shop
+	-Wisp - Spirits: Cost: 6 => 299
 <<+===========================================================================================================
 rhasta,
 lycan,

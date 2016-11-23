@@ -73,8 +73,12 @@ ABILITY_SHOP_DATA = {
 	["luna_moon_glaive"] = { cost = 2, },
 	["terrorblade_metamorphosis"] = { cost = 2, },
 	["wisp_tether_aghanims"] = { cost = 6, },
-	["wisp_spirits_aghanims"] = { cost = 6, },
 	["wisp_relocate_aghanims"] = { cost = 10, },
+	["apocalypse_agnis_touch"] = { cost = 4, },
+	["life_stealer_feast"] = { cost = 8, },
+	["templar_assassin_psi_blades"] = { cost = 2, },
+	["cherub_flower_garden"] = { cost = 4, },
+	["wisp_spirits_aghanims"] = { cost = 294, },
 }
 
 ABILITY_SHOP_SKIP_HEROES = {
@@ -102,4 +106,5 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"wisp_spirits_in_aghanims",
 	"wisp_spirits_out_aghanims",
 	"wisp_tether_break_aghanims",
+	"kadash_immortality",
 }

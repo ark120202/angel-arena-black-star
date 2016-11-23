@@ -51,15 +51,17 @@ function GameMode:ButtonsShowInfo(data)
 end
 
 function GameMode:SendDuel1x1Call(data)
-	if data then
+	local sender = tonumber(data.PlayerID)
+	local targetPlayer = tonumber(data.selectedEnemyID)
+	if data and sender and targetPlayer and PlayerResource:IsValidPlayerID(sender) and PlayerResource:IsValidPlayerID(targetPlayer) then
 		if not Duel:IsDuelOngoing() then
-			--data.selectedEnemyID = data.sender
+			--targetPlayer = sender
 			local messageTable = {messageFields = {
 					{field = "Text", class = "FieldTextTitle", fieldData = {text = "#duel1x1_message_title"}},
 					{field = "PanelCollection", fieldData = {
 						{field = "Text", fieldData = {text = "#duel1x1_message_sender_p1"}},
-						{field = "HeroImage", fieldData = {heroname = PlayerResource:GetSelectedHeroName(data.sender), heroimagestyle="icon"}},
-						{field = "Text", class = "FieldTextBlank", fieldData = {text = PlayerResource:GetPlayerName(data.sender)}},
+						{field = "HeroImage", fieldData = {heroname = PlayerResource:GetSelectedHeroName(sender), heroimagestyle="icon"}},
+						{field = "Text", class = "FieldTextBlank", fieldData = {text = PlayerResource:GetPlayerName(sender)}},
 					}},
 
 					{field = "PanelCollection", fieldData = {
@@ -71,27 +73,27 @@ function GameMode:SendDuel1x1Call(data)
 						{field = "Button", class = "FieldButtonDecline", fieldData = {
 							{field = "Text", class = "FieldTextButtonDecline", fieldData = {text = "#duel1x1_message_answer_decline"}},
 						}, onactivate = function()
-							Notifications:Bottom(data.sender, {text="#duel1x1_message_error_duel_declined", duration=10, style={color="red"}})
+							Notifications:Bottom(sender, {text="#duel1x1_message_error_duel_declined", duration=10, style={color="red"}})
 							return true
 						end},
 						{field = "Button", class = "FieldButtonAccept", fieldData = {
 							{field = "Text", class = "FieldTextButtonAccept", fieldData = {text = "#duel1x1_message_answer_accept"}},
 						}, onactivate = function()
 							if not Duel:IsDuelOngoing() then
-								if Gold:GetGold(data.selectedEnemyID) >= tonumber(data.gold) then
-									if PlayerResource:GetSelectedHeroEntity(data.selectedEnemyID):IsAlive() and PlayerResource:GetSelectedHeroEntity(data.sender):IsAlive() then
-										Duel:Start1X1(data.sender, data.selectedEnemyID, tonumber(data.gold))
+								if Gold:GetGold(targetPlayer) >= tonumber(data.gold) then
+									if PlayerResource:GetSelectedHeroEntity(targetPlayer):IsAlive() and PlayerResource:GetSelectedHeroEntity(sender):IsAlive() then
+										Duel:Start1X1(sender, targetPlayer, tonumber(data.gold))
 									else
-										Notifications:Bottom(data.sender, {text="#duel1x1_message_error_duel_not_alive", duration=10, style={color="red"}})
-										Notifications:Bottom(data.selectedEnemyID, {text="#duel1x1_message_error_duel_not_alive", duration=10, style={color="red"}})
+										Notifications:Bottom(sender, {text="#duel1x1_message_error_duel_not_alive", duration=10, style={color="red"}})
+										Notifications:Bottom(targetPlayer, {text="#duel1x1_message_error_duel_not_alive", duration=10, style={color="red"}})
 									end
 								else
-									Notifications:Bottom(data.sender, {text="#duel1x1_message_error_duel_declined", duration=10, style={color="red"}})
-									Notifications:Bottom(data.selectedEnemyID, {text="#duel1x1_message_error_not_enough_gold", duration=10, style={color="red"}})
+									Notifications:Bottom(sender, {text="#duel1x1_message_error_duel_declined", duration=10, style={color="red"}})
+									Notifications:Bottom(targetPlayer, {text="#duel1x1_message_error_not_enough_gold", duration=10, style={color="red"}})
 								end
 							else
-								Notifications:Bottom(data.sender, {text="#duel1x1_message_error_duel_is_running", duration=10, style={color="red"}})
-								Notifications:Bottom(data.selectedEnemyID, {text="#duel1x1_message_error_duel_is_running", duration=10, style={color="red"}})
+								Notifications:Bottom(sender, {text="#duel1x1_message_error_duel_is_running", duration=10, style={color="red"}})
+								Notifications:Bottom(targetPlayer, {text="#duel1x1_message_error_duel_is_running", duration=10, style={color="red"}})
 							end
 							return true
 						end}
@@ -104,28 +106,28 @@ function GameMode:SendDuel1x1Call(data)
 					{field = "Text", class = "FieldTextBlank", fieldData = {text = data.message}}
 				}})
 			end
-			PlayerMessages:SendMessage(data.selectedEnemyID, messageTable)
+			PlayerMessages:SendMessage(targetPlayer, messageTable)
 		else
-			Notifications:Bottom(data.sender, {text="#duel1x1_message_error_duel_is_running", duration=10, style={color="red"}})
+			Notifications:Bottom(sender, {text="#duel1x1_message_error_duel_is_running", duration=10, style={color="red"}})
 		end
 	end
 end
 
 function GameMode:CustomChatSendMessage(data)
-	if data and data.playerId and data.text and type(data.text) == "string" then
+	if data and data.text and type(data.text) == "string" then
 		local teamonly = data.teamOnly == 1
-		CustomChatSay(tonumber(data.playerId), tostring(data.text), teamonly)
+		CustomChatSay(tonumber(data.PlayerID), tostring(data.text), teamonly)
 	end
 end
 
 function GameMode:SubmitGamemodeVote(data)
-	if data and data.playerId and data.vote and type(data.vote) == "string" then
+	if data and data.vote and type(data.vote) == "string" then
 		local vote = tonumber(data.vote)
 		if not vote then vote = DOTA_KILL_GOAL_VOTE_STANDART end
 		vote = math.min(vote, DOTA_KILL_GOAL_VOTE_MAX)
 		vote = math.max(vote, DOTA_KILL_GOAL_VOTE_MIN)
 
-		PLAYER_DATA[data.playerId].GameModeVote = vote
+		PLAYER_DATA[tonumber(data.PlayerID)].GameModeVote = vote
 	end
 end
 

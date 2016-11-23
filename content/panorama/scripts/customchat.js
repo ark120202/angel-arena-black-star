@@ -22,7 +22,6 @@ function ChatSendMessage() {
 				teamOnly = true
 			}
 			GameEvents.SendCustomGameEventToServer("custom_chat_send_message", {
-				playerId: Game.GetLocalPlayerID(),
 				text: $("#SelectionChatEntry").text,
 				teamOnly: teamOnly
 			})

@@ -9,11 +9,9 @@ function SendKillGoalVote() {
 		$("#GoalVoteTextEntry").AddClass("RedOutlineForNaN")
 	} else {
 		$("#GoalVoteTextEntry").RemoveClass("RedOutlineForNaN")
-		var data = {
-			playerId: Game.GetLocalPlayerID(),
-			vote: input,
-		}
-		GameEvents.SendCustomGameEventToServer("submit_gamemode_vote", data);
+		GameEvents.SendCustomGameEventToServer("submit_gamemode_vote", {
+			vote: input
+		});
 		$("#GoalVotePanel").RemoveClass("GoalVotePanel_In")
 			//HideCallMenu()
 	}
@@ -44,8 +42,8 @@ function ShowStar(id) {
 
 (function() {
 	$("#GoalVotePanel").AddClass("GoalVotePanel_In")
-	$.Schedule(0.03, function() {
-		var gamemode_settings = PlayerTables.GetTableValue("arena", "gamemode_settings")
+	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
+		var gamemode_settings = changesObject["gamemode_settings"]
 		if (gamemode_settings != null && gamemode_settings.kill_goal_vote_min != null && gamemode_settings.kill_goal_vote_max != null) {
 			minVote = gamemode_settings.kill_goal_vote_min
 			maxVote = gamemode_settings.kill_goal_vote_max

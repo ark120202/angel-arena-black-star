@@ -2391,6 +2391,15 @@
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_range_limit" "900"
+			}
+		}
+
 		"OnCreated"
 		{
 			"RunScript"
@@ -11023,7 +11032,7 @@
 					}
 				}
 
-				"OnDeath"
+				"OnDestroy"
 				{
 					"RunScript"
 					{

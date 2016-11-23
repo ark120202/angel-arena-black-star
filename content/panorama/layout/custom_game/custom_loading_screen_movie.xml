@@ -3,6 +3,7 @@
 		<include src="file://{resources}/styles/custom_loading_screen_movie.css" />
 	</styles>
 	<scripts>
+        <include src="file://{resources}/scripts/util.js" />
 		<include src="file://{resources}/scripts/custom_loading_screen_movie.js" />
 	</scripts>
 	<Panel class="base">

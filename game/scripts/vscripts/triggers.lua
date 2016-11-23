@@ -29,7 +29,6 @@ function FountainOnStartTouch(trigger, team)
 			ParticleManager:SetParticleControl(pfx, 0, fountain:GetAbsOrigin() + Vector(0,0,224))
 			ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
 		end
-
 		TrueKill(nil, nil, unit)
 	end
 end

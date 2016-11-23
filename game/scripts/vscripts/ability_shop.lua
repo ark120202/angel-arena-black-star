@@ -1,6 +1,8 @@
 if AbilityShop == nil then
 	_G.AbilityShop = class({})
-	AbilityShop.AbilityInfo = {}
+	AbilityShop.AbilityInfo = {
+		["attribute_bonus_arena"] = {cost = 1, banned_with = {}}
+	}
 end
 
 function AbilityShop:PostAbilityData()
@@ -48,7 +50,6 @@ function AbilityShop:PostAbilityData()
 			end
 		end
 	end
-
 	for name,enabled in pairsByKeys(Heroes_all) do
 		if enabled == 1 then
 			local heroTable
@@ -155,12 +156,9 @@ end
 
 function AbilityShop:OnAbilitySell(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-	if hero and hero:HasAbility(data.ability) and not hero:IsChanneling() then
-		local listDataInfo = AbilityShop:GetAbilityListInfo(data.ability)
-		local cost = 1
-		if listDataInfo then
-			cost = listDataInfo.cost
-		end
+	local listDataInfo = AbilityShop:GetAbilityListInfo(data.ability)
+	if hero and hero:HasAbility(data.ability) and not hero:IsChanneling() and listDataInfo then
+		local cost = listDataInfo.cost
 		local abilityh = hero:FindAbilityByName(data.ability)
 
 		local gold = AbilityShop:CalculateDowngradeCost(data.ability, cost)
@@ -193,13 +191,9 @@ end
 
 function AbilityShop:OnAbilityDowngrade(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-
-	if hero and hero:HasAbility(data.ability) then
-		local listDataInfo = AbilityShop:GetAbilityListInfo(data.ability)
-		local cost = 1
-		if listDataInfo then
-			cost = listDataInfo.cost
-		end
+	local listDataInfo = AbilityShop:GetAbilityListInfo(data.ability)
+	if hero and hero:HasAbility(data.ability) and listDataInfo then
+		local cost = listDataInfo.cost
 		local abilityh = hero:FindAbilityByName(data.ability)
 		if (data.ability ~= "attribute_bonus_arena" and abilityh:GetLevel() <= 1) or (data.ability == "attribute_bonus_arena" and  abilityh:GetLevel() <= 2) then
 			AbilityShop:OnAbilitySell(data)

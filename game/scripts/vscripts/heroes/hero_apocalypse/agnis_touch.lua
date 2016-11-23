@@ -2,7 +2,8 @@ function StealArmor(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	if target:IsConsideredHero() then
+
+	if target:IsConsideredHero() and not target:IsIllusion() and not IsBossEntity(target) then
 		ModifyStacks(ability, caster, caster, "modifier_apocalypse_agnis_touch_armor", ability:GetAbilitySpecial("armor_per_attack"), false)
 		ModifyStacks(ability, caster, target, "modifier_apocalypse_agnis_touch_disarmor", ability:GetAbilitySpecial("armor_per_attack"), false)
 		if not ability.damaged_units then
