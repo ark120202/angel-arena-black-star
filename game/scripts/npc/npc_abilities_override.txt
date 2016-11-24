@@ -5211,7 +5211,7 @@
 
 	}
 
-	""
+	"pugna_decrepify"
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"700 700 700 700"

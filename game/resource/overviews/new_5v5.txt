@@ -1,8 +1,0 @@
-new_5v5
-{
-	material materials/overviews/new_5v5.vmat
-	pos_x -7488
-	pos_y 7456
-	scale 14.625
-}
-

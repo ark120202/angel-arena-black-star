@@ -1,3 +1,7 @@
+ALASTOR_ITEMBUILDS = {
+	
+}
+
 VALVE_ITEMBUILDS = {
 	{
 		hero = "npc_dota_hero_abaddon",
