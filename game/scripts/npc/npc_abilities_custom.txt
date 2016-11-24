@@ -12780,7 +12780,9 @@
 
 			"modifier_stegius_brightness_of_desolate_effect"
 			{
+				"IsPurgable"		"0"
 				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 
 				"OnDestroy"
 				{

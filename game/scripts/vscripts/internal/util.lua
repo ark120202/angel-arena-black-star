@@ -1371,3 +1371,9 @@ function CreateGlobalParticle(name, callback, pattach)
 	end
 	return ps
 end
+
+function table.add(input1, input2)
+	for _,v in ipairs(input2) do
+		table.insert(input1, v)
+	end
+end

@@ -238,6 +238,14 @@
 	"item_slippers"
 	{
 		"SecretShop"					"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"4"
+			}
+		}
 	}
 	"item_mantle"
 	{
@@ -342,6 +350,10 @@
 	"item_ward_observer"
 	{
 		"SecretShop"					"0"
+		"ItemStockMax"					"10"
+		"ItemStockInitial"				"3"
+		"ItemStockTime"					"50"
+		"ItemCost"						"150"
 	}
 	"item_ward_sentry"
 	{
@@ -442,6 +454,34 @@
 	"item_poor_mans_shield"
 	{
 		"SecretShop"					"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"9"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_block_melee"	"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_block_ranged"	"38"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_chance"			"40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_chance_hero"		"60"
+			}
+		}
 	}
 	"item_recipe_bracer"
 	{
@@ -754,6 +794,34 @@
 	"item_mask_of_madness"
 	{
 		"SecretShop"					"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_percent"		"18"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"berserk_bonus_attack_speed"	"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"berserk_bonus_movement_speed"	"25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"berserk_extra_damage"	"15"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"berserk_duration"		"6"
+			}
+		}
 	}
 	"item_recipe_ethereal_blade"
 	{
@@ -934,6 +1002,41 @@
 	"item_iron_talon"
 	{
 		"SecretShop"					"0"
+		"AbilityCastRange"				"500"
+		"AbilityCooldown"				"20.0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_bonus"			"170"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_bonus_ranged"	"130"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_range_tooltip"			"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_ward"			"500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_damage_pct"			"80"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"3"
+			}
+		}
 	}
 	//6.87
 	"item_recipe_bloodthorn"
@@ -959,6 +1062,9 @@
 	"item_tome_of_knowledge"
 	{
 		"SecretShop"					"0"
+		"ItemStockMax"					"20"
+		"ItemStockTime"					"40"			  
+		"ItemInitialStockTime"			"180"
 	}
 	"item_recipe_hurricane_pike"
 	{
@@ -13193,7 +13299,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"crit_multiplier"	" 600 700 800 900 1000 1200 1300"
+				"crit_multiplier"	"600 700 800 900 1000 1200 1300"
 			}
 			
 			"03"

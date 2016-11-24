@@ -26,50 +26,86 @@ TODO LIST:
 
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_1380]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-Angel Arena Black Star - Версия 1.3.2:
-
+[url=https://goo.gl/KvRbHf]FULL UPDATE[/url]
+[url=https://goo.gl/KvRbHf]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://goo.gl/KvRbHf
+============================================================
+	
+Angel Arena Black Star - Версия 1.3.2b:
+	Некоторые стандартные предметы были изменены
+	Ослаблены следующие способности в Ability Shop: Kadash - Survival Skills, Stegius - Brightness Of Desolate, Queen of Blades - Army, Viper - Corrosive Skin
+	Некоторые критические ошибки были исправлены
 Общее:
-	Карта изменена
+	
 Баланс:
-	Zen Gehraz - Divine Intervention:
-	-Время перезарядки: 20 17 14 11 8 7 6 => 30 26 22 18 14 10 6
-	-Мана: 50 100 150 200 250 300 350 => 100 200 300 400 500 600 700
-	-Длительность применения: 1 1 2 2 3 3 4 =>  6
-	-Дальность применения: 500 =>  800
-	-Уровней между улучшениями: 1 => 3
-	Ability Shop:
-		Zen Gehraz - Divine Intervention: Цена: 1 => 3
-		Bristleback - Quill Spray: Цена: 1 => 2
-		Batrider - Sticky Bapalm: Цена: 1 => 4
-		Sandking - Sand Storm: Цена: 1 => 2
-		Sniper - Shrapnel: Цена: 1 => 3
-		Zuus - Thundergods Wrath: Цена: 1 => 6
-		Life Stealer - Feast: Цена: 1 => 50
 	
 Исправления:
 	
 ========
-Angel Arena Black Star - Version 1.3.2:
-
-General:
-	Map Changed
+Angel Arena Black Star - Version 1.3.2b:
+	Some dota items were changed
+	Ability Shop nerfs: Kadash - Survival Skills, Stegius - Brightness Of Desolate, Queen of Blades - Army, Viper - Corrosive Skin
+	Some critical bugs were fixed
 Balance:
-	Zen Gehraz - Divine Intervention:
-	-Cooldown: 20 17 14 11 8 7 6 => 30 26 22 18 14 10 6
-	-Mana Cost: 50 100 150 200 250 300 350 => 100 200 300 400 500 600 700
-	-Channel Time: 1 1 2 2 3 3 4 =>  6
-	-Cast Range: 500 =>  800
-	-Levels Between Upgrades: 1 => 3﻿
 	Ability Shop:
-		Zen Gehraz - Divine Intervention: Cost: 1 => 3
-		Bristleback - Quill Spray: Cost: 1 => 2
-		Batrider - Sticky Bapalm: Cost: 1 => 4
-		Sandking - Sand Storm: Cost: 1 => 2
-		Sniper - Shrapnel: Cost: 1 => 3
-		Zuus - Thundergods Wrath: Cost: 1 => 6
-		Life Stealer - Feast: Cost: 1 => 50
+		Tinker - Rearm Arena now can't be purchased with Earthshaker - Aftershock, Zuus - Static Field
+		Kadash - Survival Skills: Cost: 1 => 2
+		Stegius - Brightness Of Desolate: Cost: 1 => 3
+		Queen of Blades - Army: Cost: 1 => 3
+		Viper - Corrosive Skin: Cost: 1 => 2
+
+	Items:
+		Observer Ward:
+			Max Stock: 4 => 10
+			Initial Stock: 2 => 3
+			Stock Time: 150 => 50
+			Cost: 65 => 150
+
+		Tome of Knowledge:
+			Max Stock: 3 => 20
+			Stock Time: 600 => 40
+			Initial Stock Time: 690 => 180
+
+		Slippers of Agility:
+			Bonus Agility: 3 => 4
+
+		Poor Man's Shield: 
+			Bonus Agility: 6 => 9
+			Block Chance 53 => 40 %
+			Hero Damage Block Chance: 100 => 60
+			Damage Block on Ranged: 10 => 38
+			Damage Block on Melee: 20  => 40
+
+		Iron Talon:
+			Cast Range: 350 => 500
+			Creep Damage: 40 => 80 %
+			Bonus Armor: 2 => 3
+			Damage Bonus on Ranged Heroes: 115 => 130 %
+			Damage Bonus on Melee Heroes: 140 => 170 %
+			Cooldown: 14.0 => 20
+
+		Mask of Madness:
+			Berserk Duration: 12 => 6
+			Berserk Extra Damage: 25 => 15 %
+			Berserk Movement Speed: 17 => 25 %
+			Berserk Attack Speed: 100 => 150
+			Lifesteal: 20 => 18 %
+
+		Golden Eagle Relic:
+			Lifesteal: 23 => 28 %
+			Swift Strike Attack Speed: 120 => 180
+			Swift Strike Movement Speed: 25 => 35 %
+
+		Lucifer's Claw:
+			Cast Range: 450 => 600
+			Bonus Drmor: 7 => 10
+			Bonus All Stats: 7 => 12
+			Damage Bonus on Ranged Heroes: 115 => 140 %
+			Damage Bonus on Melee Heroes: 140 => 180 %
 Fixes:
-	
+	Fixed Traitor's Flag didn't changed your position and hasn't completely changed your team
+	Fixed Apocalypse - Armor Tear reduces your armor x100 times bigger, than it should've
+	Stegius - Brightness of Desolate now works better if multiple heroes has that ability
 <<+===========================================================================================================
 rhasta,
 lycan,

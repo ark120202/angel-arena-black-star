@@ -2,8 +2,8 @@ function StartTimer(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	local playerID = target:GetPlayerID()
-	if target:IsRealHero() then
+	if target:IsRealHero() and target.GetPlayerID then
+		local playerID = target:GetPlayerID()
 		Notifications:Bottom(playerID, {text="#notification_item_demon_king_bar_curse_p1", duration=9.0})
 		Notifications:Bottom(playerID, {text=ability:GetAbilitySpecial("curse_duration"), continue = true})
 		Notifications:Bottom(playerID, {text="#notification_item_demon_king_bar_curse_p2", continue = true})

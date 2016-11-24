@@ -95,10 +95,12 @@ function PanoramaShop:InitializeItemTable()
 		end
 	end
 	local allItembuilds = {}
-	table.merge(allItembuilds, VALVE_ITEMBUILDS)
+--	PrintTable(ARENA_ITEMBUILDS)
+	table.add(allItembuilds, ARENA_ITEMBUILDS)
+	table.add(allItembuilds, VALVE_ITEMBUILDS)
 
 	local itembuilds = {}
-	for _,v in ipairs(allItembuilds) do
+	for k,v in ipairs(allItembuilds) do
 		if not itembuilds[v.hero] then itembuilds[v.hero] = {} end
 		table.insert(itembuilds[v.hero], {
 			title = v.title,

@@ -466,7 +466,7 @@ function UpdateItembuildsForHero() {
 		var SelectedTable;
 		if (Itembuilds[heroName]) {
 			$.Each(Itembuilds[heroName], function(build, i) {
-				content = content + "<Label text='" + build.title + "' id='" + i + "' onactivate='SelectItembuild(" + JSON.stringify(build) + ")'/>";
+				content = content + "<Label text='" + build.title + "' id='Itembuild_select_element_" + heroName + "_index_" + i + "' onactivate='SelectItembuild(" + JSON.stringify(build) + ")'/>";
 				if (SelectedTable == null)
 					SelectedTable = build;
 			});

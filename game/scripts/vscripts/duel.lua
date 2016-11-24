@@ -148,7 +148,7 @@ function Duel:StartDuel()
 			end
 		end
 	else
-		Duel:EndDuelLogic(false)
+		Duel:EndDuelLogic(false, true)
 		Notifications:TopToAll({text="#duel_no_heroes", duration=9.0})
 	end
 end
@@ -173,7 +173,7 @@ function Duel:EndDuel()
 	else
 		Notifications:TopToAll({text="#duel_over_winner_none", duration=9.0})
 	end
-	Duel:EndDuelLogic(true)
+	Duel:EndDuelLogic(true, true)
 end
 
 function Duel:GetWinner()
@@ -240,7 +240,12 @@ function Duel:EndDuelForUnit(unit)
 	unit:Stop()
 	PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), unit)
 	FindClearSpaceForUnit(unit, location, true)
-	Timers:CreateTimer(0.1, function() PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), nil); unit:Stop() end)
+	Timers:CreateTimer(0.1, function()
+			PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), nil)
+			if unit then
+				unit:Stop()
+			end
+		end)
 	unit.InArena = nil
 	unit.ArenaBeforeTpLocation = nil
 	unit.Duel1x1Opponent = nil
@@ -294,13 +299,12 @@ function Duel:End1X1(herowin, herolose)
 	else
 		Notifications:TopToAll({text="#duel1x1_over_winner_none", duration=9.0})
 	end
-	Duel:EndDuelLogic(true)
+	Duel:EndDuelLogic(true, false)
 end
 
-function Duel:EndDuelLogic(bEndForUnits)
+function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 	Duel.EntIndexer = {}
 	Duel.DuelStatus = DOTA_DUEL_STATUS_WATING
-	Duel.TimeUntilDuel = ARENA_SETTINGS.DelayFromLast
 	Duel.heroes_teams_for_duel = {}
 	Duel.Duel1x1Bet = 0
 	if bEndForUnits then
@@ -312,6 +316,9 @@ function Duel:EndDuelLogic(bEndForUnits)
 				end
 			end
 		end
+	end
+	if timeUpdate then
+		Duel.TimeUntilDuel = ARENA_SETTINGS.DelayFromLast
 	end
 end
 

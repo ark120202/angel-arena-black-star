@@ -4167,7 +4167,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"AbilityTextureName"			"item_lucifers_claw"
 
-		"AbilityCastRange"				"450"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"45.0"
 		
@@ -4192,12 +4192,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"7"
+				"bonus_armor"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"			"7"
+				"bonus_all_stats"		"12"
 			}
 			"04"
 			{
@@ -4207,22 +4207,22 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_percent"			"15"
+				"lifesteal_percent"		"15"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"140"
+				"damage_bonus"			"180"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"115"
+				"damage_bonus_ranged"	"140"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_range_tooltip"			"450"
+				"quelling_range_tooltip" "600"
 			}
 			"09"
 			{
@@ -4232,7 +4232,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"doomling_health"	"1500"
+				"doomling_health"		"1500"
 			}
 			"11"
 			{
@@ -4242,7 +4242,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"doomling_mana"	"350"
+				"doomling_mana"			"350"
 			}
 			"13"
 			{
@@ -17592,7 +17592,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_pct"			"23"
+				"lifesteal_pct"			"28"
 			}
 			"06"
 			{
@@ -17602,12 +17602,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_bonus_attackspeed" "120"
+				"active_bonus_attackspeed" "180"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_bonus_movespeed_pct" "25"
+				"active_bonus_movespeed_pct" "35"
 			}
 			"09"
 			{

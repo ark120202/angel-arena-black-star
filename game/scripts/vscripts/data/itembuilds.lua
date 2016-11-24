@@ -1,5 +1,64 @@
-ALASTOR_ITEMBUILDS = {
-	
+ARENA_ITEMBUILDS = {
+	{
+		hero = "npc_dota_hero_abaddon",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "Alastor",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"item_gloves",
+					"item_tango_arena",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"item_iron_talon",
+					"item_tango_arena",
+				}
+			},			
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"item_bfury",
+					"item_staff_of_wizardry",
+					"item_splitshot_str",
+					"item_splitshot_agi",
+					"item_splitshot_int",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"item_titanium_bar",
+					"item_splitshot_ultimate",
+					"item_radiance_frozen",
+					"item_desolator6",
+					"item_staff_of_wizardry",
+					"item_shard_primal_small",
+					"item_shard_primal_medium", 
+					"item_shard_primal_large",	
+					"item_butterfly_of_sins",
+					"item_demon_king_bar",
+					"item_black_king_bar_6",		
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"item_staff_of_wizardry",
+					"item_shard_primal_small",
+					"item_shard_primal_medium", 
+					"item_shard_primal_large",	
+					"item_hand_of_midas_3_arena",
+					"item_metamorphosis_elixir",
+					"item_shard_level",
+				}
+			},
+		}
+	},
 }
 
 VALVE_ITEMBUILDS = {
@@ -1699,53 +1758,6 @@ VALVE_ITEMBUILDS = {
 					"item_greater_crit",
 					"item_mekansm",
 					"item_silver_edge",
-				}
-			},
-		}
-	},
-	{
-		hero = "",
-		title = "#DOTA_Item_Build_Title_Valve",
-		author = "Valve",
-		items = {
-			{
-				title = "#DOTA_Item_Build_Starting_Items",
-				content = {
-					"item_tango_arena",
-					"item_flask",
-					"item_clarity",
-					"item_branches",
-				}
-			},
-			{
-				title = "#DOTA_Item_Build_Early_Game",
-				content = {
-					"item_boots",
-					"item_magic_stick",
-					"item_ring_of_basilius",
-				}
-			},
-			{
-				title = "#DOTA_Item_Build_Core_Items",
-				content = {
-					"item_magic_wand",
-					"item_vanguard",
-					"item_power_treads",
-					"item_blink_arena",
-					"item_tpscroll",
-				}
-			},
-			{
-				title = "#DOTA_Item_Build_Luxury",
-				content = {
-					"item_heart_arena",
-					"item_blade_mail",
-					"item_shivas_guard",
-					"item_ultimate_scepter",
-					"item_sheepstick",
-					"item_assault",
-					"item_black_king_bar_6",
-					"item_pipe",
 				}
 			},
 		}
