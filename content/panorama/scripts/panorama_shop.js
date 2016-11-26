@@ -291,9 +291,9 @@ function UpdatePanoramaState() {
 	}
 }
 
-function UpdateSmallItem(panel) {
+function UpdateSmallItem(panel, gold) {
 	try {
-		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) < PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()])
+		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) < (gold || PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]))
 	} catch (err) {
 		var index = SmallItems.indexOf(panel);
 		if (index > -1) {
@@ -438,8 +438,9 @@ function ShowItemInShop(data) {
 
 function UpdateShop() {
 	SearchItems()
+	var gold = PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]
 	$.Each(SmallItems, function(panel) {
-		UpdateSmallItem(panel)
+		UpdateSmallItem(panel, gold)
 	})
 	UpdateItembuildsForHero();
 	//$.GetContextPanel().SetHasClass("InRangeOfShop", Entities.IsInRangeOfShop(m_QueryUnit, 0, true))
@@ -466,12 +467,18 @@ function UpdateItembuildsForHero() {
 		var SelectedTable;
 		if (Itembuilds[heroName]) {
 			$.Each(Itembuilds[heroName], function(build, i) {
-				content = content + "<Label text='" + build.title + "' id='Itembuild_select_element_" + heroName + "_index_" + i + "' onactivate='SelectItembuild(" + JSON.stringify(build) + ")'/>";
+				content = content + "<Label text='" + build.title + "' id='Itembuild_select_element_index_" + i + "'/>";
 				if (SelectedTable == null)
 					SelectedTable = build;
 			});
 		}
-		DropRoot.BLoadLayoutFromString("<root><Panel><DropDown id='Itembuild_select'> " + content + " </DropDown></Panel></root>", true, true);
+		DropRoot.BLoadLayoutFromString("<root><Panel><DropDown id='Itembuild_select'> " + content + " /></DropDown></Panel></root>", true, true);
+		DropRoot.FindChildTraverse("Itembuild_select").SetPanelEvent("oninputsubmit", function() {
+			var index = Number(DropRoot.FindChildTraverse("Itembuild_select").GetSelected().id.replace("Itembuild_select_element_index_", ""))
+			if (Itembuilds[heroName] != null && Itembuilds[heroName][index] != null) {
+				SelectItembuild(Itembuilds[heroName][index])
+			}
+		})
 		SelectItembuild(SelectedTable);
 	}
 }
@@ -482,7 +489,6 @@ function SelectItembuild(t) {
 	if (t != null) {
 		$("#Itembuild_author").text = t.author || "?";
 		$("#Itembuild_patch").text = t.patch || "?";
-		//$("#ItembuildPanelsRoot")
 		$.Each(t.items, function(groupData) {
 			var groupRoot = $.CreatePanel("Panel", groupsRoot, "");
 			groupRoot.AddClass("ItembuildItemGroup");

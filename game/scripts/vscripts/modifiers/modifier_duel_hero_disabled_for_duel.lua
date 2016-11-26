@@ -30,3 +30,7 @@ function modifier_duel_hero_disabled_for_duel:CheckState()
 
 	return state
 end
+
+function modifier_duel_hero_disabled_for_duel:IsPurgable()
+	return false
+end

@@ -681,21 +681,9 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 				end
 			end
 		end
-		if cmd[1] == "a_sp1" then
+		if cmd[1] == "a_sn" then
 			local unit = CreateUnitByName("npc_dota_neutral_easy_variant1", hero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
 			unit.SpawnerType = "Easy"
-			unit.SLevel = tonumber(cmd[2])
-			Spawner:UpgradeCreep(unit, unit.SpawnerType, unit.SLevel)
-		end
-		if cmd[1] == "a_sp2" then
-			local unit = CreateUnitByName("npc_dota_neutral_medium_variant1", hero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
-			unit.SpawnerType = "Medium"
-			unit.SLevel = tonumber(cmd[2])
-			Spawner:UpgradeCreep(unit, unit.SpawnerType, unit.SLevel)
-		end
-		if cmd[1] == "a_sp3" then
-			local unit = CreateUnitByName("npc_dota_neutral_hard_variant1", hero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
-			unit.SpawnerType = "Hard"
 			unit.SLevel = tonumber(cmd[2])
 			Spawner:UpgradeCreep(unit, unit.SpawnerType, unit.SLevel)
 		end

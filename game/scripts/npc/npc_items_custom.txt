@@ -18995,6 +18995,7 @@
 			"modifier_item_angel_wings_active"
 			{
 				"Passive"			"0"
+				"IsPurgable"		"0"
 				"IsHidden"			"0"
 				"Duration"			"%duration"
 

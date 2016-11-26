@@ -17,6 +17,7 @@ function ArenaZoneOnEndTouch(trigger)
 end
 
 function FountainOnStartTouch(trigger, team)
+	print("asd")
 	local unit = trigger.activator
 	if unit and unit:GetTeam() == team then
 		unit:AddNewModifier(unit, nil, "modifier_fountain_aura_arena", nil)

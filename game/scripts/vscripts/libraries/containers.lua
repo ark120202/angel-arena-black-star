@@ -1,6 +1,7 @@
 --[[
 MODIFIED:
 -Все манипуляции с золотом используют библиотеку Gold
+строка 575 - добавлена проверка на IsNull()
 -В эвент Containers_OnDragWorld добавлена проверка на IsIllusion и модифиуатор "modifier_arc_warden_tempest_double"
 -В Containers:Containers_OnDragFrom - IsRealHero
 -В js Проверки на предмет в контекстном меню, проверка на владение юнитом при дропе предмета
@@ -572,7 +573,7 @@ function Containers:start()
     for id,action in pairs(Containers.rangeActions) do
       local unit = action.unit
       if unit then
-        if action.entity and not IsValidEntity(action.entity) then
+        if (action.entity and not IsValidEntity(action.entity)) or unit:IsNull() then
           Containers.rangeActions[id] = nil  
         else
           local range = action.range

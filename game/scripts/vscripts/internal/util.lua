@@ -902,8 +902,11 @@ function RefreshItems(unit, tExceptions)
 	end
 end
 
+--illusion_incoming_damage = tooltip - 100
+--illusion_outgoing_damage = tooltip - 100
 function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage, illusion_outgoing_damage, illusion_duration)
 	local illusion = CreateUnitByName(unit:GetUnitName(), illusion_origin, true, unit, unit:GetPlayerOwner(), unit:GetTeamNumber())
+	FindClearSpaceForUnit(illusion, illusion_origin, true)
 	illusion:SetModel(unit:GetModelName())
 	illusion:SetOriginalModel(unit:GetModelName())
 	illusion:SetControllableByPlayer(unit:GetPlayerID(), true)
@@ -916,26 +919,25 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	illusion:SetAbilityPoints(0)
 	for ability_slot = 0, unit:GetAbilityCount()-1 do
 		local i_ability = illusion:GetAbilityByIndex(ability_slot)
-		if i_ability and i_ability.GetName then
-			illusion:RemoveAbility(i_ability:GetName())
+		if i_ability then
+			illusion:RemoveAbility(i_ability:GetAbilityName())
 		end
 
 		local individual_ability = unit:GetAbilityByIndex(ability_slot)
-		if individual_ability ~= nil then 
+		if individual_ability then 
 			local illusion_ability = illusion:AddAbility(individual_ability:GetName())
-			if illusion_ability ~= nil and illusion_ability:GetLevel() < individual_ability:GetLevel() then
-				illusion_ability:SetLevel(individual_ability:GetLevel())
-			end
+			illusion_ability:SetLevel(individual_ability:GetLevel())
 		end
 	end
 	for item_slot = 0, 5 do
 		local item = unit:GetItemInSlot(item_slot)
-		if item ~= nil then
+		if item then
 			local illusion_item = illusion:AddItem(CreateItem(item:GetName(), illusion, illusion))
 			illusion_item:SetCurrentCharges(item:GetCurrentCharges())
 		end
 	end
 	illusion:SetHealth(unit:GetHealth())
+	illusion:SetMana(unit:GetMana())
 	illusion:AddNewModifier(unit, ability, "modifier_illusion", {duration = illusion_duration, outgoing_damage = illusion_outgoing_damage, incoming_damage = illusion_incoming_damage})
 	illusion:MakeIllusion()
 	if unit.Additional_str then

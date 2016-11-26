@@ -7,16 +7,16 @@ SPAWNER_SETTINGS = {
 			[0] ={
 				{
 					[-1] = "npc_dota_neutral_easy_variant1",
-					[0] = "models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl",
+					[0] = "models/creeps/item_creeps/i_creep_necro_warrior/necro_warrior.vmdl",
 				}
 			},
+			--[[
 			[1] ={
 				{
 					[-1] = "npc_dota_neutral_easy_variant1",
 					[0] = "models/creeps/item_creeps/i_creep_necro_warrior/necro_warrior.vmdl",
 				}
 			},
-			--[[
 			[2] ={
 				{
 					[-1] = "npc_dota_neutral_easy_variant1",
@@ -38,25 +38,35 @@ SPAWNER_SETTINGS = {
 			[0] ={
 				{
 					[-1] = "npc_dota_neutral_medium_variant1",
-					[0] = "models/creeps/neutral_creeps/n_creep_ogre_lrg/n_creep_ogre_lrg.vmdl",
+					[0] = "models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl",
+					[30] = "models/creeps/lane_creeps/creep_bad_ranged_diretide/creep_bad_ranged_diretide.vmd",
+					[60] = "models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl",					
 				}
 			},
 			[1] ={
 				{
 					[-1] = "npc_dota_neutral_medium_variant1",
-					[0] = "models/heroes/lone_druid/spirit_bear.vmdl",
+					[0] = "models/creeps/neutral_creeps/n_creep_beast/n_creep_beast.vmdl",
+					[30] = "models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmd",
+					[60] = "models/heroes/ursa/ursa.vmdl",					
 				}
 			},
 			[2] ={
 				{
 					[-1] = "npc_dota_neutral_medium_variant1",
-					[0] = "models/creeps/neutral_creeps/n_creep_vulture_a/n_creep_vulture_a.vmdl",
+					[0] = "models/heroes/lone_druid/spirit_bear.vmdl",
+					[30] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
+					[60] = "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl",						
 				}
 			},
 			[3] ={
 				{
 					[-1] = "npc_dota_neutral_medium_variant1",
-					[0] = "models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl",
+					[0] = "models/items/beastmaster/boar/fotw_wolf/fotw_wolf.vmdl",
+					[25] = "models/heroes/lycan/summon_wolves.vmdl",
+					[40] = "models/heroes/lycan/lycan_wolf.vmdl",
+					[60] = "models/items/lycan/ultimate/thegreatcalamityti4/thegreatcalamityti4.vmdl",
+
 				}
 			},
 			--[[[4] ={

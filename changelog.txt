@@ -4,8 +4,20 @@ TODO LIST:
 	Дополнить гайды
 	обезьяны
 	казино
-	attack range > boss attack range fix..
 	duel leave creash
+	мега линка контрящая автохекс
+	фикс краш рубик + висп
+	$.DispatchEvent("DOTAShowDashboard");
+	Посмотреть Edge of Vyse
+	Abandoning: npc_dota_hero_spectre
+	scripts/vscripts/libraries/containers.lua:585: This object has been deleted from C++ and no longer exists. (Use :IsNull() to detect this.)
+	stack traceback:
+		scripts/vscripts/libraries/timers.lua:137: in function <scripts/vscripts/libraries/timers.lua:136>
+		[C]: in function 'GetAbsOrigin'
+		scripts/vscripts/libraries/containers.lua:585: in function <scripts/vscripts/libraries/containers.lua:571>
+		[C]: in function 'xpcall'
+		scripts/vscripts/libraries/timers.lua:136: in function <scripts/vscripts/libraries/timers.lua:94>
+
 Идеи для предметов:
 	Star Blade:
 		Из Fallen Star + Dark Blade + ???
@@ -32,9 +44,7 @@ TODO LIST:
 ============================================================
 	
 Angel Arena Black Star - Версия 1.3.2b:
-	Некоторые стандартные предметы были изменены
-	Ослаблены следующие способности в Ability Shop: Kadash - Survival Skills, Stegius - Brightness Of Desolate, Queen of Blades - Army, Viper - Corrosive Skin
-	Некоторые критические ошибки были исправлены
+	
 Общее:
 	
 Баланс:
@@ -43,69 +53,14 @@ Angel Arena Black Star - Версия 1.3.2b:
 	
 ========
 Angel Arena Black Star - Version 1.3.2b:
-	Some dota items were changed
-	Ability Shop nerfs: Kadash - Survival Skills, Stegius - Brightness Of Desolate, Queen of Blades - Army, Viper - Corrosive Skin
-	Some critical bugs were fixed
+
+General:
+
 Balance:
-	Ability Shop:
-		Tinker - Rearm Arena now can't be purchased with Earthshaker - Aftershock, Zuus - Static Field
-		Kadash - Survival Skills: Cost: 1 => 2
-		Stegius - Brightness Of Desolate: Cost: 1 => 3
-		Queen of Blades - Army: Cost: 1 => 3
-		Viper - Corrosive Skin: Cost: 1 => 2
-
-	Items:
-		Observer Ward:
-			Max Stock: 4 => 10
-			Initial Stock: 2 => 3
-			Stock Time: 150 => 50
-			Cost: 65 => 150
-
-		Tome of Knowledge:
-			Max Stock: 3 => 20
-			Stock Time: 600 => 40
-			Initial Stock Time: 690 => 180
-
-		Slippers of Agility:
-			Bonus Agility: 3 => 4
-
-		Poor Man's Shield: 
-			Bonus Agility: 6 => 9
-			Block Chance 53 => 40 %
-			Hero Damage Block Chance: 100 => 60
-			Damage Block on Ranged: 10 => 38
-			Damage Block on Melee: 20  => 40
-
-		Iron Talon:
-			Cast Range: 350 => 500
-			Creep Damage: 40 => 80 %
-			Bonus Armor: 2 => 3
-			Damage Bonus on Ranged Heroes: 115 => 130 %
-			Damage Bonus on Melee Heroes: 140 => 170 %
-			Cooldown: 14.0 => 20
-
-		Mask of Madness:
-			Berserk Duration: 12 => 6
-			Berserk Extra Damage: 25 => 15 %
-			Berserk Movement Speed: 17 => 25 %
-			Berserk Attack Speed: 100 => 150
-			Lifesteal: 20 => 18 %
-
-		Golden Eagle Relic:
-			Lifesteal: 23 => 28 %
-			Swift Strike Attack Speed: 120 => 180
-			Swift Strike Movement Speed: 25 => 35 %
-
-		Lucifer's Claw:
-			Cast Range: 450 => 600
-			Bonus Drmor: 7 => 10
-			Bonus All Stats: 7 => 12
-			Damage Bonus on Ranged Heroes: 115 => 140 %
-			Damage Bonus on Melee Heroes: 140 => 180 %
+	Medium & Easy Spot Creeps Magical Resistance: 35 => 15 %
+	Hard Spot Centaur's Magical Resistance: 90 => 40 %
 Fixes:
-	Fixed Traitor's Flag didn't changed your position and hasn't completely changed your team
-	Fixed Apocalypse - Armor Tear reduces your armor x100 times bigger, than it should've
-	Stegius - Brightness of Desolate now works better if multiple heroes has that ability
+	
 <<+===========================================================================================================
 rhasta,
 lycan,
@@ -119,3 +74,121 @@ venom
 pugna ward
 
 [	]*\/\/ Text Example[0-9.A-z\- ,\/\\]*\n
+
+
+
+
+
+
+
+
+
+item_tome_of_knowledge:
+ItemStockTime: 40 => 60
+ItemInitialStockTime: 180 => 240
+
+rattletrap_hookshot:
+AbilityCooldown: 70.0 60.0 50.0 40.0 30.0 20.0 10.0 => 70.0 60.0 50.0 40.0 30.0 20.0 12.0
+cooldown_scepter: 10.0 => 8
+LevelsBetweenUpgrades: 6 => 8
+
+zuus_thundergods_wrath:
+damage: 350 650 950 1200 1500 1800 2100 => 200 400 800 1400 2000 2600 3100
+damage_scepter: 650 950 1200 1500 1800 2100 2500 => 300 600 900 1600 2100 2800 3500
+LevelsBetweenUpgrades: 6 => 15
+
+witch_doctor_paralyzing_cask:
+AbilityManaCost: 110 120 130 140 150 160 170 => 100 120 150 170 200 210 230
+AbilityDamage: 75 100 125 150 175 200 225 250 => 120 240 360 480 600 720 800
+hero_duration: 1.0 1.0 1.0 1.0 1.0 1.0 1.0 => 1.75
+bounces: 3 5 7 9 11 13 15 => 4 6 8 10 12 14 16
+bounces_tooltip: 2 4 6 8 10 12 14 => 3 5 7 9 11 13 15
+speed: 1000 => 1330
+
+witch_doctor_voodoo_restoration:
+AbilityManaCost: 20 30 40 50 60 70 80 => 10 20 30 40 50 60 70
+mana_per_second: 8 12 16 20 50 75 100 => 4 6 8 10 25 40 50
+radius: 500 => 300 400 500 600 700 800 900
+
+witch_doctor_maledict:
+AbilityCooldown: 20.0 => 30
+AbilityDamage: 5 10 15 20 => 30 60 90 120 150 180 210
+AbilityManaCost: 105 110 115 120 125 130 135 => 100 140 180 210 250 300 350
+bonus_damage: 16 24 32 40 50 75 90 => 30 60 90 120 150 180 210
+radius: 180 => 120 140 160 180 200 220 240
+
+witch_doctor_death_ward:
+bounces: 1 2 3 4 5 6 7 => 1
+AbilityCooldown: 100.0 95.0 90.0 80.0 75.0 60.0 50.0 => 90 80 70 60 50 40 30
+AbilityManaCost: 200 200 200 => 150 200 250 300 350 400 450
+damage: 60 105 150 200 250 300 350 => 100 200 300 400 500 600 700
+LevelsBetweenUpgrades: 6 => 18 
+
+enigma_midnight_pulse:
+damage_percent: 3 3.75 4.5 5.25 5.5 6.25 7.0 => 1 1.25 1.75 2.0 2.25 2.75 3.0
+
+sniper_shrapnel:
+LevelsBetweenUpgrades:: 1 => 6
+max_charges: 3 4 5 6 7 8 9 => 3
+
+sniper_take_aim:
+LevelsBetweenUpgrades: 1 => 12
+
+sniper_assassinate:
+AbilityManaCost: 175 275 375 475 575 675 775 => 75 150 275 350 400 450 500
+AbilityCooldown: 35.0 30.0 25.0 20.0 15.0 10.0 5.0 => 20 17 14 11 9 7 3
+
+necrolyte_reapers_scythe:
+damage_per_health: 0.1 0.2 0.3 0.4 0.5 0.6 0.7 => 0.1 0.1 0.2 0.2 0.3 0.3 0.4
+damage_per_health_scepter: 0.3 0.4 0.5 0.6 0.7 0.8 0.9 => 0.1 0.2 0.2 0.3 0.4 0.5 0.6
+
+slark_essence_shift:
+duration: 30 60 120 150 180 210 228 => 30 60 120 150 180 210 230
+
+venomancer_poison_nova:
+duration: 10 14 18 24 28 32 36 => 20 18 15 13 12 11 10
+damage: 50 100 150 200 250 300 350 => 100 400 500 600 700 800 1000
+duration_scepter: 25 => 10
+damage_scepter: 50 100 150 200 250 300 350 => 130 500 600 700 800 900 1110
+LevelsBetweenUpgrades: 6 => 10
+
+jakiro_dual_breath:
+burn_damage: 40 60 80 100 120 140 160 => 50 80 110 140 170 200 230
+slow_movement_speed_pct: -28 -32 -36 -40 -46 -52 28 => -10 -20 -30 -40 -50 -60 -70
+slow_attack_speed_pct: -28 -32 -36 -40 -44 -48 -52 => -15 -30 -45 -60 -75 -90 -110
+
+jakiro_ice_path:
+duration: 1.0 1.4 1.8 2.2 2.6 3.0 3.4 => 0.3 0.6 0.9 1.2 1.8 2.1 2.5
+damage: 25 50 75 100 125 150 175 => 50 90 150 200 240 290 350
+AbilityCooldown: 12.0 11.0 10.0 9.0 8.0 7.0 6.0 => 14.0 13.0 12.0 11.0 10.0 9.0 8.0
+
+jakiro_macropyre:
+duration: 5 10 15 20 25 30 35 => 3 6 9 12 15 18 21
+
+furion_wrath_of_nature:
+damage_scepter: 155 330 450 610 750 1500 3000 => 100 200 400 500 700 800 1000
+damage: 140 180 225 330 450 610 750 => 75 150 225 300 375 425 500
+jump_delay: 0.18 0.15 0.12 0.10 0.8 0.5 0.3 => 0.20 0.18 0.12 0.8 0.6 0.4 0.2
+
+life_stealer_feast:
+RequiredLevel: 10 => 50
+
+furion_sprout:
+AbilityCooldown: 11 10 9 8 8 8 8 => 18 17 16 15 14 13 12 11
+duration: 3 4 5 6 7 8 9 => 2 2 2 3 4 5 6
+
+techies_suicide:
+AbilityCastRange: 666=> 500
+big_radius: 999 => 700
+damage: 666 777 888 999 1200 1800 2500 => 600 675 850 925 1500 2100 2900
+partial_damage: 666 777 888 999 1200 1800 2500 => 500 575 750 825 1100 1800 2400.
+
+leshrac_diabolic_edict:
+AbilityDamage: 9 18 27 36 72 144 288 => 20 40 60 80 100 140 180
+
+shadow_shaman_voodoo:
+duration: 1.25 2.0 2.75 3.5 3.7 4.0 5.0 => 0.5 0.9 1.2 1.5 1.8 2.1 2.5
+
+shadow_shaman_shackles:
+AbilityCooldown: 15 => 20
+channel_time: 2.75 3.5 4.25 5.0 5.5 6.0 7.0 => 0.9 1.4 1.9 2.3 2.7 3.1 3.5:
