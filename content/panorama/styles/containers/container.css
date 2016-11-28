@@ -82,55 +82,6 @@
   flow-children: down;
 }
 
-.AspectRatio5x4 #inventory_items.Flipped
-{
-  margin-right: 0px;
-  margin-left: 80px;
-}
-
-.AspectRatio5x4 #inventory_items
-{
-  margin-bottom: 26px;
-  margin-right: 80px;
-}
-
-.AspectRatio4x3 #inventory_items.Flipped
-{
-  margin-right: 0px;
-  margin-left: 100px;
-}
-
-.AspectRatio4x3 #inventory_items
-{
-  margin-bottom: 30px;
-  margin-right: 100px;
-}
-
-.AspectRatio16x9 #inventory_items.Flipped
-{
-  margin-right: 0px;
-  margin-left: 230px;
-}
-
-.AspectRatio16x9 #inventory_items
-{
-  margin-bottom: 31px;
-  margin-right: 232px;
-}
-
-.AspectRatio16x10 #inventory_items.Flipped
-{
-  margin-right: 0px;
-  margin-left: 230px;
-}
-
-.AspectRatio16x10 #inventory_items
-{
-  margin-bottom: 30px;
-  margin-right: 230px;
-}
-
-
 #inventory_items.Flipped
 {
   horizontal-align: left;
@@ -567,6 +518,13 @@
 
 #inventory_items .ItemPanel
 {
+  //x1.075
+  //width: 66px;
+  //height: 48px;
+  width: 70.95px;
+  height: 51.6px;
+  margin-left: 3px;
+  margin-right: 3px;
   box-shadow: none;
   border-color: rgba(80, 80, 80, 255);
   border-style: solid;
@@ -608,7 +566,7 @@
 .MinimalisticHudDisabled #inventory_items .ItemPanel
 {
   box-shadow: #000000ff 1px 1px 2px 2px;
-  border-width: 1px !important;
+  border-width: 0px !important;
 }
 //Different Aspect Ratio support
 
@@ -634,6 +592,18 @@
   margin-bottom: 160px;
 }
 
+.AspectRatio16x9 #inventory_items.Flipped
+{
+  margin-right: 0px;
+  margin-left: 230px;
+}
+
+.AspectRatio16x9 #inventory_items
+{
+  margin-bottom: 23px;
+  margin-right: 229px;
+}
+
 .AspectRatio5x4 #inventory_items.Flipped
 {
   margin-right: 0px;
@@ -642,32 +612,32 @@
 
 .AspectRatio5x4 #inventory_items
 {
-  margin-bottom: 26px;
+  margin-bottom: 18px;
   margin-right: 80px;
 }
 
 .AspectRatio4x3 #inventory_items.Flipped
 {
   margin-right: 0px;
-  margin-left: 100px;
+  margin-left: 97px;
 }
 
 .AspectRatio4x3 #inventory_items
 {
-  margin-bottom: 30px;
-  margin-right: 100px;
+  margin-bottom: 24px;
+  margin-right: 97px;
 }
 
 .AspectRatio16x10 #inventory_items.Flipped
 {
   margin-right: 0px;
-  margin-left: 215px;
+  margin-left: 229px;
 }
 
 .AspectRatio16x10 #inventory_items
 {
-  margin-bottom: 30px;
-  margin-right: 215px;
+  margin-bottom: 24px;
+  margin-right: 229px;
 }
 
 .MinimalisticHudDisabled #stash_row_host

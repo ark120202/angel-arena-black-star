@@ -64,6 +64,8 @@ local requirements = {
 	"developer",
 	"custom_wearables",
 	"SimpleAI",
+	"dynamic_minimap",
+	"custom_runes"
 }
 for i = 1, #requirements do
 	require(requirements[i])
@@ -79,6 +81,7 @@ LinkLuaModifier("modifier_charges", "libraries/modifiers/modifier_charges.lua", 
 LinkLuaModifier("modifier_hero_selection_transformation", "modifiers/modifier_hero_selection_transformation.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_fountain_aura_arena", "modifiers/modifier_fountain_aura_arena.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_max_attack_range", "modifiers/modifier_max_attack_range.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_lotus_sphere_passive", "items/lua/modifiers/modifier_item_lotus_sphere_passive.lua", LUA_MODIFIER_MOTION_NONE)
 
 function GameMode:PostLoadPrecache()
 	DebugPrint("[BAREBONES] Performing Post-Load precache")
@@ -123,6 +126,10 @@ function GameMode:OnAllPlayersLoaded()
 	end
 	GAMEMODE_INITIALIZATION_STATUS[4] = true
 	HeroSelection:CollectPD()
+	DynamicMinimap:Init()
+	Spawner:PreloadSpawners()
+	Bosses:InitAllBosses()
+	CustomRunes:Init()
 	--Colors setup
 	Timers:CreateTimer(0.03, function()
 		local Counters = {}
@@ -184,7 +191,6 @@ function GameMode:OnGameInProgress()
 	end
 	GAMEMODE_INITIALIZATION_STATUS[3] = true
 	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
-		Bosses:InitAllBosses()
 		Duel:CreateGlobalTimer()
 		ContainersHelper:CreateShops()
 		Spawner:RegisterTimers()
@@ -220,6 +226,8 @@ function GameMode:InitGameMode()
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[2] = true
+
+
 	GameMode:InitFilters()
 	HeroSelection:Initialize()
 	GameMode:RegisterCustomListeners()
@@ -268,7 +276,6 @@ function GameMode:InitGameMode()
 		end,
 		OnDragTo           = function(playerID, container, unit, item, fromSlot, toContainer, toSlot)
 			Containers:print('Containers:OnDragTo', playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			print(item:GetName(), "to")
 			if  playerID + 1 ~= toSlot then
 				return false
 			end 
@@ -300,7 +307,7 @@ function GameMode:InitGameMode()
 				toContainer:AddItem(item2, toSlot, nil, true)
 			end
 			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "spellcrafting_update_slot_cad", {id = item:GetEntityIndex()})
-			return false 
+			return false
 		end,
 		OnLeftClick        = false,
 		OnRightClick       = false,
@@ -514,8 +521,8 @@ end
 
 function GameMode:BountyRunePickupFilter(filterTable)
 	local hero = PlayerResource:GetSelectedHeroEntity(filterTable.player_id_const)
-	filterTable.gold_bounty = 50 + (2 * GetDOTATimeInMinutesFull())
-	filterTable.xp_bounty = 50 + (5 * GetDOTATimeInMinutesFull())
+	filterTable.gold_bounty = 300 + (20 * GetDOTATimeInMinutesFull())
+	filterTable.xp_bounty = 150 + (10 * GetDOTATimeInMinutesFull())
 	local gold_multiplier = filterTable.bounty_special_multiplier or 1
 	local xp_multiplier = 1
 

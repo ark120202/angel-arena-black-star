@@ -138,3 +138,8 @@ BOSS_BANNED_ABILITIES = {
 	"death_prophet_spirit_siphon",
 	"rubick_personality_steal",
 }
+
+PERSONALITY_STEAL_BANNED_HEROES = {
+	["npc_dota_hero_wisp"] = true,
+	["npc_dota_hero_invoker"] = true,
+}

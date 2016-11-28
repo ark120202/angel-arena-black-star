@@ -1,5 +1,4 @@
 "use strict";
-var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
 var m_AbilityPanels = [];
 var m_BuffPanels = [];
 var CustomHudEnabled = false;
@@ -532,4 +531,7 @@ function UpdateSelection() {
 	})
 	UpdateAbilities()
 	AutoUpdatePanels()
+	var RadarButton = GetDotaHud().FindChildTraverse("RadarButton")
+	if (RadarButton != null)
+		RadarButton.DeleteAsync(0);
 })()

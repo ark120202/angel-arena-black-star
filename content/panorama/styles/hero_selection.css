@@ -663,3 +663,25 @@
 	height: 75px;
 	transform: translateX(-9px) translateY(-21.5px);
 }
+
+#ExitButton:hover
+{
+	wash-color: #ccc;
+}
+
+#ExitButton:active
+{
+	wash-color: #fff;
+}
+
+.MinimapSpawnBoxes
+{
+	width: 100%;
+	height: 100%;
+}
+
+.MinimapDynamicIcons
+{
+	width: 100%;
+	height: 100%;
+}

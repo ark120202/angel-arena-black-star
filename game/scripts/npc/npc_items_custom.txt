@@ -164,7 +164,7 @@
 				"var_type"			"FIELD_INTEGER"
 				"bonus_armor"		"64"
 			}
-			"01"
+			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"bonus_hp_regen_pct" "2"
@@ -1263,7 +1263,7 @@
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
-				"AllowIllusionDuplicate"     "1"
+				"AllowIllusionDuplicate"	"1"
 				"TextureName"		"item_shard_ultimate_scepter"
 		
 				"ThinkInterval"  "0.1"
@@ -5831,19 +5831,6 @@
 				"hex_duration"		"%sheep_duration"
 				"sheep_movement_speed"	"%sheep_movement_speed"
 			}
-
-			"FireSound"
-			{
-				"EffectName"	"Ability.StarfallImpact"
-				"Target"		"TARGET"
-			}
-
-			"Damage"
-			{
-				"Target"	"TARGET"
-				"Type"		"DAMAGE_TYPE_MAGICAL"
-				"Damage"	"%AbilityDamage"
-			}
 		}
 		
 		"Modifiers"
@@ -7859,9 +7846,15 @@
 		
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"		"1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"		"1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE"			"1"
+					"MODIFIER_PROPERTY_MIN_HEALTH"						"1"
 				}
 			}
 		}
@@ -15215,11 +15208,15 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%active_bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%active_bonus_attackspeed"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"		"1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"		"1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE"			"1"
+					"MODIFIER_PROPERTY_MIN_HEALTH"						"1"
 				}
-
+		
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}
@@ -18978,7 +18975,11 @@
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_item_aether_lens"
-						"Target" 		"CASTER"
+						"Target"
+						{
+							"Center"	"CASTER"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 				}
 
@@ -18987,7 +18988,11 @@
 					"RemoveModifier"
 					{
 						"ModifierName"	"modifier_item_aether_lens"
-						"Target" 		"CASTER"
+						"Target"
+						{
+							"Center"	"CASTER"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 				}
 			}
@@ -19020,7 +19025,11 @@
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_item_angel_wings_fade"
-						"Target" 		"TARGET"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 				}
 
@@ -19029,12 +19038,20 @@
 					"RemoveModifier"
 					{
 						"ModifierName"	"modifier_item_angel_wings_fade"
-						"Target" 		"TARGET"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 					"RemoveModifier"
 					{
 						"ModifierName"	"modifier_item_angel_wings_invis"
-						"Target" 		"TARGET"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 				}
 			}
@@ -19048,7 +19065,11 @@
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_invisible"
-						"Target" 		"TARGET"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 				}
 
@@ -19057,12 +19078,20 @@
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_item_angel_wings_fade"
-						"Target" 		"ATTACKER"
+						"Target"
+						{
+							"Center"	"ATTACKER"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 					"RemoveModifier"
 					{
 						"ModifierName"	"modifier_item_angel_wings_invis"
-						"Target" 		"ATTACKER"
+						"Target"
+						{
+							"Center"	"ATTACKER"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 				}
 
@@ -19071,12 +19100,20 @@
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_item_angel_wings_fade"
-						"Target" 		"TARGET"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 					"RemoveModifier"
 					{
 						"ModifierName"	"modifier_item_angel_wings_invis"
-						"Target" 		"TARGET"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 				}
 
@@ -19085,7 +19122,11 @@
 					"RemoveModifier"
 					{
 						"ModifierName"	"modifier_invisible"
-						"Target" 		"TARGET"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 				}
 
@@ -19105,7 +19146,11 @@
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_item_angel_wings_invis"
-						"Target" 		"TARGET"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 				}
 
@@ -19114,7 +19159,11 @@
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_item_angel_wings_fade"
-						"Target" 		"ATTACKER"
+						"Target"
+						{
+							"Center"	"ATTACKER"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
 					}
 				}
 
@@ -20834,6 +20883,11 @@
 					"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"%bonus_day_vision"
 					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%bonus_night_vision" 
 				}
+			}
+			"modifier_item_cursed_eye_aura1"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
 
 				"Aura"          	"modifier_truesight_reveal"
 				"Aura_Radius"   	"%radius"
@@ -20841,6 +20895,7 @@
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 			}
+
 			"modifier_item_cursed_eye_aura2"
 			{
 				"Passive"			"1"
@@ -20919,5 +20974,443 @@
 				}
 			}
 		}
+	}
+
+	"item_recipe_shard_of_true_sight"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10272"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"7000"	
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_shard_of_true_sight"
+		"ItemRequirements"
+		{
+			"01"						"item_gem"
+		}
+	}
+
+	"item_shard_of_true_sight"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10273"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_shard_of_true_sight"
+			
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemShopTags"					"stats;stat;shard"
+		"ItemQuality"					"uncommon"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"700"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shard_of_true_sight"
+				"Target" 		"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_shard_of_true_sight"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"AllowIllusionDuplicate"	"1"
+				"TextureName"		"item_shard_of_true_sight"
+
+				"Aura"          	"modifier_truesight_reveal"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+
+			"modifier_truesight_reveal"
+			{
+				"IsHidden"			"1"
+				"Duration"			"0.5"
+				"Priority"			"MODIFIER_PRIORITY_HIGH"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_DISABLED"
+				}
+			}
+		}
+	}
+
+	"item_recipe_urn_of_demons"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10274"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3600"	
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_urn_of_demons"
+		"ItemRequirements"
+		{
+			"01"						"item_urn_of_shadows;item_urn_of_souls;item_blade_of_alacrity;item_ultimate_orb"
+		}
+	}
+
+	"item_urn_of_demons"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10275"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"item_urn_of_demons"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"25"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemShopTags"					"regen_mana;int;boost_mana"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"urn of souls"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"0"	
+			
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all"				"28"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen_percent"	"200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_radius"			"1800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_initial_charge"	"2"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_additional_charges"	"1"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_hp_total_pct" 	"22"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_mana_total_pct" 	"25"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"soul_effect_duration"	"10"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"soul_effect_interval"	"0.2"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items/item_urn_of_demons.lua"
+				"Function"			"item_urn_of_demons_on_spell_start"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_urn_of_demons"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen_percent"
+				}
+			}
+			"modifier_item_urn_of_demons_aura_emitter"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				
+				"Aura" 					"modifier_item_urn_of_demons_aura"
+				"Aura_Radius" 			"%soul_radius"
+				"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 			"DOTA_UNIT_TARGET_HERO"
+				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+			"modifier_item_urn_of_demons_aura"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"items/item_urn_of_demons.lua"
+						"Function"			"modifier_item_urn_of_demons_aura_on_death"
+					}
+				}
+			}
+			"modifier_item_urn_of_demons_ally"
+			{
+				"Duration"			"%soul_effect_duration"
+				"IsBuff"			"1"
+				
+				"EffectName"			"particles/arena/items_fx/urn_of_demons_heal.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"ThinkInterval" 		"%soul_effect_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"items/item_urn_of_demons.lua"
+						"Function"			"modifier_item_urn_of_demons_heal_on_interval_think"
+						"TotalHealthPct"	"%soul_hp_total_pct"
+						"TotalManaPct"		"%soul_mana_total_pct"
+						"TotalDuration"		"%soul_effect_duration"
+						"Interval"			"%soul_effect_interval"
+					}
+				}
+			}
+			"modifier_item_urn_of_demons_enemy"
+			{
+				"Duration"			"%soul_effect_duration"
+				"IsDebuff"			"1"
+				
+				"EffectName"			"particles/arena/items_fx/urn_of_demons_damage.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"ThinkInterval" 		"%soul_effect_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"items/item_urn_of_demons.lua"
+						"Function"			"modifier_item_urn_of_demons_damage_on_interval_think"
+						"TotalHealthPct"	"%soul_hp_total_pct"
+						"TotalManaPct"		"%soul_mana_total_pct"
+						"TotalDuration"		"%soul_effect_duration"
+						"Interval"			"%soul_effect_interval"
+					}
+				}
+			}
+		}
+	}
+
+	"item_recipe_lotus_sphere"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10276"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4500"	
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_lotus_sphere"
+		"ItemRequirements"
+		{
+			"01"						"item_sphere;item_lotus_orb;item_cursed_eye;item_phantom_bone"
+		}
+	}
+
+	"item_lotus_sphere"
+	{
+		"BaseClass"             		"item_datadriven"
+		"ID"							"10277"
+		"AbilityTextureName"			"item_lotus_sphere"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"7.5"
+		"AbilityManaCost"				"125"
+
+		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
+		"ItemAliases"					"ls;linken's sphere;lotus orb;lotus sphere;linken's orb"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemQuality"					"legendary"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"80"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_hp_regen_pct"	"3"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen_pct"	"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"250"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_day_vision"		"200"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_night_vision"	"1500"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_lotus_sphere"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%bonus_mana_regen_pct"
+					"MODIFIER_PROPERTY_MANA_BONUS"				"%bonus_mana"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"%bonus_hp_regen_pct"
+				}
+			}
+			"modifier_item_lotus_sphere_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_item_lotus_sphere_passive"
+						"Target" 		"CASTER"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_item_lotus_sphere_passive"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+			"modifier_item_cursed_eye"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"%bonus_day_vision"
+					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%bonus_night_vision" 
+				}
+			}
+
+
+		}
+
+
+
+		//		"Properties"
+		//		{
+		//			"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"%bonus_day_vision"
+		//			"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%bonus_night_vision" 
+		//		}
 	}
 }

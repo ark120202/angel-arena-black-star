@@ -196,13 +196,13 @@ var lastClick = 1; // 1 right, 0 left
 
 function ActivateItem(bypass) {
 	lastClick = 0;
+	var pid = Game.GetLocalPlayerID();
+	var unit = Players.GetLocalPlayerPortraitUnit()
+	unit = Entities.IsControllableByPlayer(unit, pid) ? unit : Players.GetPlayerHeroEntityIndex(pid);
 
 	if (!bypass) {
 		var jsAction = PlayerTables.GetTableValue(m_contString, "OnLeftClickJS");
 
-		var pid = Game.GetLocalPlayerID();
-		var unit = Players.GetLocalPlayerPortraitUnit()
-		unit = Entities.IsControllableByPlayer(unit, pid) ? unit : Players.GetPlayerHeroEntityIndex(pid);
 		var handler = Containers.eventHandlers[jsAction]
 		if (handler) {
 			var ret = false;

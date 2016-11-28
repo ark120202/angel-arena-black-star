@@ -1,7 +1,9 @@
 "use strict";
 
 function DismissMenu() {
-	$.DispatchEvent("DismissAllContextMenus")
+	$.Schedule(0.05, function() {
+		$.DispatchEvent("DismissAllContextMenus")
+	})
 }
 
 function OnSell() {

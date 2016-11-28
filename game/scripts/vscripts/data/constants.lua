@@ -7,28 +7,15 @@ SPAWNER_SETTINGS = {
 			[0] ={
 				{
 					[-1] = "npc_dota_neutral_easy_variant1",
-					[0] = "models/creeps/item_creeps/i_creep_necro_warrior/necro_warrior.vmdl",
+					[0] = "models/items/broodmother/spiderling/virulent_matriarchs_spiderling/virulent_matriarchs_spiderling.vmdl",
+					[10] = "models/heroes/broodmother/spiderling.vmdl",
+					[20] = "models/items/broodmother/spiderling/amber_queen_spiderling_2/amber_queen_spiderling_2.vmdl",
+					[30] = "models/items/broodmother/spiderling/araknarok_broodmother_araknarok_spiderling/araknarok_broodmother_araknarok_spiderling.vmdl",
+					[40] = "models/items/broodmother/spiderling/spiderling_dlotus_red/spiderling_dlotus_red.vmdl",
+					[50] = "models/items/broodmother/spiderling/thistle_crawler/thistle_crawler.vmdl",
+					[60] = "models/items/broodmother/spiderling/perceptive_spiderling/perceptive_spiderling.vmdl",
 				}
 			},
-			--[[
-			[1] ={
-				{
-					[-1] = "npc_dota_neutral_easy_variant1",
-					[0] = "models/creeps/item_creeps/i_creep_necro_warrior/necro_warrior.vmdl",
-				}
-			},
-			[2] ={
-				{
-					[-1] = "npc_dota_neutral_easy_variant1",
-					[0] = "models/creeps/neutral_creeps/n_creep_satyr_b/n_creep_satyr_b.vmdl",
-				}
-			},
-			[3] ={
-				{
-					[-1] = "npc_dota_neutral_easy_variant1",
-					[0] = "models/creeps/neutral_creeps/n_creep_worg_large/n_creep_worg_large.vmdl",
-				}
-			},]]	
 		},
 	},
 	medium = {
@@ -85,6 +72,12 @@ SPAWNER_SETTINGS = {
 				{
 					[-1] = "npc_dota_neutral_hard_variant1",
 					[0] = "models/creeps/neutral_creeps/n_creep_jungle_stalker/n_creep_gargoyle_jungle_stalker.vmdl",
+					[10] = "models/creeps/neutral_creeps/n_creep_black_drake/n_creep_black_drake.vmdl",
+					[20] = "models/creeps/neutral_creeps/n_creep_black_dragon/n_creep_black_dragon.vmdl",
+					[30] = "models/items/dragon_knight/dragon_immortal_1/dragon_immortal_1.vmdl",
+					[40] = "models/items/dragon_knight/fireborn_dragon/fireborn_dragon.vmdl",
+					[50] = "models/heroes/dragon_knight/dragon_knight_dragon.vmdl",
+					[60] = "models/heroes/twin_headed_dragon/twin_headed_dragon.vmdl",
 				}
 
 			},

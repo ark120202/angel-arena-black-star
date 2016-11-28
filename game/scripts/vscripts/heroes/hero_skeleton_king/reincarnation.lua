@@ -73,17 +73,6 @@ function OnModDestroy(keys)
 	end
 end
 
-function ThinkScepter(keys)
-	local caster = keys.caster
-	local ability = keys.ability
-	local modifier = "modifier_skeleton_king_reincarnation_aura"
-	if HasScepter(caster) and not caster:HasModifier(modifier) then
-		ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
-	elseif not HasScepter(caster) and caster:HasModifier(modifier) then
-		caster:RemoveModifierByName(modifier)
-	end
-end
-
 function CheckAllyForCdModifier(keys)
 	local caster = keys.caster
 	local ability = keys.ability

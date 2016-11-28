@@ -1,10 +1,10 @@
 function ChangeTeam(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	if not caster:IsRealHero() or PLAYER_DATA[caster:GetPlayerID()].ChangedTeam or Duel:IsDuelOngoing() then
+	local playerID = caster:GetPlayerID()
+	if not caster:IsRealHero() or PLAYER_DATA[playerID].ChangedTeam or Duel:IsDuelOngoing() then
 		return
 	end
-	local playerID = caster:GetPlayerID()
 	--TODO Меню для смены в мультитим режиме
 	local targetTeam = DOTA_TEAM_BADGUYS
 	if caster:GetTeamNumber() == targetTeam then
@@ -14,6 +14,7 @@ function ChangeTeam(keys)
 	if GetTeamPlayerCount(targetTeam) >= GetTeamPlayerCount(caster:GetTeamNumber()) then
 		return
 	end
+	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. caster:GetTeamNumber(), playerID)
 
 	PLAYER_DATA[playerID].ChangedTeam = true
 	local gold = caster:GetGold()
@@ -51,6 +52,7 @@ function ChangeTeam(keys)
 			end
 		end
 	end
+	PlayerTables:AddPlayerSubscription("dynamic_minimap_points_" .. targetTeam, playerID)
 	SpendCharge(ability, 1)
 end
 

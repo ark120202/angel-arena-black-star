@@ -4,15 +4,16 @@ if ContainersHelper == nil then
 end
 
 function ContainersHelper:CreateShops()
-	--[[for _,v in ipairs(Entities:FindAllByName("containers_shop_secret")) do
-		v:AddNewModifier(v, nil, "modifier_shopkeeper", {})
-		ContainersHelper:CreateShop(v, ShopsData.Secret, "#containers_shop_secret_name", 256)
-	end]]
+	local SecretShop = CreateItemOnPositionSync(Entities:FindByName(nil, "target_mark_containers_shop_secret"):GetAbsOrigin(), nil) 
+	SecretShop:SetModel("models/courier/smeevil_magic_carpet/smeevil_magic_carpet.vmdl")
+	SecretShop:SetForwardVector(Vector(0, -1, 0))
+	SecretShop:SetModelScale(2)
+	ContainersHelper:CreateShop(SecretShop, ShopsData.Secret, "#containers_shop_secret_name", 192)
 	local DuelShop = CreateItemOnPositionSync(Entities:FindByName(nil, "target_mark_containers_shop_duel"):GetAbsOrigin(), nil) 
 	DuelShop:SetModel("models/courier/greevil/gold_greevil.vmdl")
 	DuelShop:SetForwardVector(Vector(0, 1, 0.2))
 	DuelShop:SetModelScale(1.75)
-	ContainersHelper:CreateShop(DuelShop, ShopsData.Duel, "#containers_shop_duel_name", 256, {3})
+	ContainersHelper:CreateShop(DuelShop, ShopsData.Duel, "#containers_shop_duel_name", 192, {3})
 
 	local craftingEnt = Entities:FindByName(nil, "target_mark_crafting_station")
 	craftingEnt = CreateItemOnPositionSync(craftingEnt:GetAbsOrigin(), nil)
@@ -169,7 +170,7 @@ function ContainersHelper:CreateLootBox(entity, items)
 		layout =      ContainersHelper:CreateItemGrid(#items),
 		headerText =  "containers_loot_boxes_box_name",
 		buttons =     {"#containers_loot_boxes_take_all"},
-		position =    "entity",
+		position =    "75% 60%",
 		OnClose = function(playerID, container)
 			if next(container:GetAllOpen()) == nil and #container:GetAllItems() == 0 then
 				container:GetEntity():RemoveSelf()
@@ -198,60 +199,15 @@ function ContainersHelper:CreateLootBox(entity, items)
 
 				container:Close(playerID)
 			end
+		end,
+		OnLeftClick = function(playerID, container, unit, item, slot)
+			local forceActivatable = SHARED_CONTAINERS_USABLE_ITEMS[item:GetAbilityName()]
+
+			if forceActivatable then -- or (not item:IsPassive() and item:GetShareability() == ITEM_FULLY_SHAREABLE and forceActivatable ~= false)) then
+				item:SetOwner(unit)
+				container:ActivateItem(unit, item, playerID)
+			end
 		end
 	})
 	return cont
 end
---[[function ContainersHelper:CreateMiddleLootBox(loc, lootboxTable)
-	local tempTable = {}
-	local min = math.floor(GetDOTATimeInMinutesFull() / 10) + 1
-	local boxindex = math.min(min, 10)
-	table.merge(tempTable, lootboxTable[boxindex].Items)
-	local phys = CreateItemOnPositionSync(loc:GetAbsOrigin(), nil)
-	phys:SetForwardVector(Vector(0,-1,0))
-	phys:SetModelScale(1.5)
-
-	local items = {}
-	local slots = {1,2,3,4}
-	for i=1,RandomInt(1,3) do
-		items[table.remove(slots, RandomInt(1,#slots))] = CreateItem(table.remove(tempTable, RandomInt(1, #tempTable)), nil, nil)
-	end
-	local cont = Containers:CreateContainer({
-		layout =      ContainersHelper:CreateItemGrid(#items),
-		headerText =  "Loot Box",
-		buttons =     {"Take All"},
-		position =    "entity", --"mouse",--"900px 200px 0px",
-		OnClose = function(playerID, container)
-			if next(container:GetAllOpen()) == nil and #container:GetAllItems() == 0 then
-				container:GetEntity():RemoveSelf()
-				container:Delete()
-				loc.container = nil
-
-				Timers:CreateTimer(lootboxTable[boxindex].Delay, function()
-					ContainersHelper:CreateMiddleLootBox(loc, lootboxTable)
-				end)
-			end
-		end,
-		closeOnOrder= true,
-		items = items,
-		entity = phys,
-		range = 128,
-		OnButtonPressed = function(playerID, container, unit, button, buttonName)
-			if button == 1 then
-				local items = container:GetAllItems()
-				for _,item in ipairs(items) do
-					container:RemoveItem(item)
-					Containers:AddItemToUnit(unit,item)
-				end
-
-				container:Close(playerID)
-			end
-		end,
-		OnEntityOrder = function(playerID, container, unit, target)
-			container:Open(playerID)
-			unit:Stop()
-		end
-	})
-	loc.container = cont
-	loc.phys = phys
-end]]

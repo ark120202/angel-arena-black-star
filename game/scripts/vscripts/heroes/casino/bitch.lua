@@ -13,7 +13,5 @@ end
 
 function Attach(keys)
 	local caster = keys.caster
-	if caster:GetName() == "npc_dota_casino_lina" then
-		CosmeticLib:EquipSet( caster, "npc_dota_hero_lina", 20769 )
-	end
+	CosmeticLib:EquipSet( caster, "npc_dota_hero_lina", 20769 )
 end

@@ -28,8 +28,6 @@ end
 function modifier_item_bloodstone_arena_aura_on_death(keys)
 	local ability = keys.ability
 	local caster = keys.caster
-	 --Search for a Bloodstone in the aura creator's inventory.  If there are multiple Bloodstones in the player's inventory,
-	 --the one in the highest inventory slot gains a charge.
 	if caster:IsIllusion() then
 		caster = PlayerResource:GetSelectedHeroEntity(caster:GetPlayerID())
 	end
@@ -44,7 +42,7 @@ function modifier_item_bloodstone_arena_aura_on_death(keys)
 		end
 	end
 
-	if bloodstone_in_highest_slot ~= nil then
+	if bloodstone_in_highest_slot then
 		bloodstone_in_highest_slot:SetCurrentCharges(bloodstone_in_highest_slot:GetCurrentCharges() + 1)
 	end
 	item_bloodstone_arena_recalculate_charge_bonuses(keys)
@@ -83,7 +81,9 @@ function item_bloodstone_arena_recalculate_charge_bonuses(keys)
 				if modifier then
 					modifier:SetStackCount(total_charge_count)
 				end
-				caster:CalculateStatBonus()
+				if caster.CalculateStatBonus then
+					caster:CalculateStatBonus()
+				end
 			end)
 		else
 			modifier:SetStackCount(total_charge_count)
@@ -91,7 +91,9 @@ function item_bloodstone_arena_recalculate_charge_bonuses(keys)
 	elseif modifier then
 		modifier:Destroy()
 	end
-	caster:CalculateStatBonus()
+	if caster.CalculateStatBonus then
+		caster:CalculateStatBonus()
+	end
 end
 
 
@@ -111,8 +113,7 @@ end
 ================================================================================================================= ]]
 function modifier_item_bloodstone_arena_aura_emitter_on_death(keys)
 	local caster = keys.caster
-	if not caster:IsIllusion() then
-		--Reduce the hero's time spent dead for each charge on all Bloodstones in the player's inventory.
+	if caster:IsRealHero() then
 		local total_charge_count = 0
 		for i=0, 5, 1 do
 			local current_item = caster:GetItemInSlot(i)

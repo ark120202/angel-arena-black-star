@@ -1,4 +1,5 @@
 "use strict";
+var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
 
 var DOTA_GAMEMODE_5V5 = 0
 var DOTA_GAMEMODE_HOLDOUT_5 = 1
@@ -204,4 +205,24 @@ function SetPannelDraggedChild(displayPanel, checker) {
 		}
 	}
 	dragcheck();
+}
+
+function _DynamicMinimapSubscribe(minimapPanel) {
+	$.Each(Game.GetAllTeamIDs(), function(team) {
+		DynamicSubscribePTListener("dynamic_minimap_points_" + team, function(tableName, changesObject, deletionsObject) {
+			for (var index in changesObject) {
+				var panel = $("#minimap_point_id_" + index);
+				if (panel == null) {
+					panel = $.CreatePanel("Panel", minimapPanel, "minimap_point_id_" + index);
+					panel.hittest = false;
+					panel.AddClass("icon");
+				}
+				$.Each(changesObject[index].styleClasses.split(" "), function(ss) {
+					panel.AddClass(ss);
+				});
+				panel.style.position = changesObject[index].position + " 0";
+				panel.visible = changesObject[index].visible == 1
+			}
+		});
+	});
 }

@@ -1,6 +1,3 @@
---[[Author: YOLOSPAGHETTI
-	Date: February 16, 2016
-	Draws all unit models, places them in random positions in the aoe, and creates the doppelganger illusions]]
 function DoppelgangerEnd( event )
 	local caster = event.caster
 	local target = event.target
@@ -26,9 +23,6 @@ function DoppelgangerStart( keys )
 	target:AddNoDraw()
 end
 
---[[Author: YOLOSPAGHETTI
-	Date: February 16, 2016
-	Applies the banish to the caster and all of his illusions in the area]]
 function CheckUnits(keys)
 	local caster = keys.caster
 	local target = keys.target

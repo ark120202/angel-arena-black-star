@@ -11,6 +11,7 @@
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_worldpanels.xml" />
 		
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/minimalistic_hud.xml" />
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/dynamic_minimap.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/containers/container_base.xml" />
 		
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/duel1x1call.xml" />

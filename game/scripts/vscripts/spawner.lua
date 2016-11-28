@@ -1,9 +1,10 @@
---Спавн крипов на точках. Всё сделано динамически, при добавлении нового стака просто нужно добавить настройки в константы.
 LinkLuaModifier( "modifier_neutral_upgrade_attackspeed", "modifiers/modifier_neutral_upgrade_attackspeed", LUA_MODIFIER_MOTION_NONE )
 
 if Spawner == nil then
 	Spawner = class({})
+	Spawner.SpawnerEntities = {}
 	Spawner.Creeps = {}
+	Spawner.MinimapPoints = {}
 end
 
 function Spawner:GetSpawners()
@@ -16,31 +17,31 @@ function Spawner:GetSpawners()
 	return spawners
 end
 
-function Spawner:GetSpawnerEntities()
+function Spawner:PreloadSpawners()
 	local targets = Entities:FindAllByClassname("info_target")
-	local entities = {}
 	for _,v in ipairs(targets) do
-		if string.find(v:GetName(), "target_mark_spawner_") then
-			table.insert(entities, v)
+		local entname = v:GetName()
+		if string.find(entname, "target_mark_spawner_") then
+			Spawner.MinimapPoints[v] = DynamicMinimap:CreateMinimapPoint(v:GetAbsOrigin(), "icon_spawner icon_spawner_" .. string.gsub(string.gsub(entname, "target_mark_spawner_", ""), "_type%d+", ""))
+			table.insert(Spawner.SpawnerEntities, v)
 		end
 	end
-	return entities
 end
 
 function Spawner:RegisterTimers()
-	local spawners = Spawner:GetSpawnerEntities()
 	Timers:CreateTimer(function()
 		Spawner.NextCreepsSpawnTime = Spawner.NextCreepsSpawnTime or 0
 		if GameRules:GetDOTATime(false, false) >= Spawner.NextCreepsSpawnTime then
 			Spawner.NextCreepsSpawnTime = Spawner.NextCreepsSpawnTime + SPAWNER_SETTINGS.Cooldown
-			Spawner:SpawnStacks(spawners)
+			Spawner:SpawnStacks(Spawner.SpawnerEntities)
 		end
 		return 0.5
 	end)
 end
 
 function Spawner:SpawnStacks(EntityTable)
-	for _,entity in pairs(EntityTable) do
+	for _,entity in ipairs(EntityTable) do
+		DynamicMinimap:SetVisibleGlobal(Spawner.MinimapPoints[entity], true)
 		local entname = entity:GetName()
 		local sName = string.gsub(string.gsub(entname, "target_mark_spawner_", ""), "_type%d+", "")
 		local SpawnerType = tonumber(string.sub(entname, string.find(entname, "_type") + 5))
@@ -64,11 +65,7 @@ end
 
 function Spawner:CanSpawnUnits(sName, id)
 	Spawner:InitializeStack(id)
-	if Spawner.Creeps[id] + SPAWNER_SETTINGS[sName].SpawnedPerSpawn <= SPAWNER_SETTINGS[sName].MaxUnits then
-		return true
-	else
-		return false
-	end
+	return Spawner.Creeps[id] + SPAWNER_SETTINGS[sName].SpawnedPerSpawn <= SPAWNER_SETTINGS[sName].MaxUnits
 end
 
 function Spawner:InitializeStack(id)

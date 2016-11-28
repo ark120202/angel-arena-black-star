@@ -19,6 +19,11 @@ function CastHex(keys)
 		ability:StartCooldown(ability:GetLevelSpecialValueFor("cooldown_illusion", ability:GetLevel() - 1))
 		target:Kill(ability, caster)
 	else
-		target:AddNewModifier(caster, ability, "modifier_sheepstick_debuff", {duration = keys.hex_duration, sheep_movement_speed = keys.sheep_movement_speed})
+		if not target:TriggerSpellAbsorb(ability) then
+			target:TriggerSpellReflect(ability)
+			target:EmitSound("Ability.StarfallImpact")
+			ApplyDamage({victim = target, attacker = caster, damage = ability:GetAbilityDamage(), damage_type = ability:GetAbilityDamageType(), ability = ability})
+			target:AddNewModifier(caster, ability, "modifier_sheepstick_debuff", {duration = keys.hex_duration, sheep_movement_speed = keys.sheep_movement_speed})
+		end
 	end
 end

@@ -1580,7 +1580,7 @@ function Containers:OnDragWorld(playerID, container, unit, item, slot, position,
         unit:Stop()
       end,
     }
-  else
+  elseif not unit:IsStunned() then
     local pos = unitpos
     if dist > 150 *.9 then
       pos = position + diff:Normalized() * 150 * .9
@@ -1728,6 +1728,7 @@ function Containers:CreateShop(cont)
     local gold = PlayerResource:GetGold(playerID)
     if gold >= cost and (stock == nil or stock > 0) then
       local newItem = CreateItem(item:GetAbilityName(), owner, owner)
+      
       newItem:SetLevel(item:GetLevel())
       newItem:SetCurrentCharges(item:GetCurrentCharges())
 

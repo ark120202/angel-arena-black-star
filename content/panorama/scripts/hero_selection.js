@@ -6,7 +6,6 @@ var SelectedTabIndex = null
 var SelectionTimerDuration = null
 var SelectionTimerStartTime = null
 var localHeroPicked = false
-var PlayerTables = GameUI.CustomUIConfig().PlayerTables
 var HideEvent = null
 var ShowPrecacheEvent = null
 var PTID = null
@@ -578,12 +577,14 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 							PlayerSPBoxesTable.splice(index, 1);
 						}
 					}
-					$.Each($("#MinimapImage").Children(), function(child) {
-						var childrencount = child.GetChildCount()
-						child.SetHasClass("SpawnBoxUnitPanelChildren2", childrencount >= 2)
-						child.SetHasClass("SpawnBoxUnitPanelChildren3", childrencount >= 3)
-						child.SetHasClass("SpawnBoxUnitPanelChildren5", childrencount >= 5)
-					})
+					$.Schedule(1, function() {
+						$.Each($("#MinimapImage").GetChild(1).Children(), function(child) {
+							var childrencount = child.GetChildCount()
+							child.SetHasClass("SpawnBoxUnitPanelChildren2", childrencount >= 2)
+							child.SetHasClass("SpawnBoxUnitPanelChildren3", childrencount >= 3)
+							child.SetHasClass("SpawnBoxUnitPanelChildren5", childrencount >= 5)
+						});
+					});
 				}
 			}
 		}
@@ -704,5 +705,6 @@ function OnMinimapClickSpawnBox(team, level, index) {
 			}
 		})
 	}
-	f()
+	f();
+	_DynamicMinimapSubscribe($("#MinimapImage").GetChild(0));
 })();

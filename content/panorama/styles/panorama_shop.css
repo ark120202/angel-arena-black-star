@@ -288,17 +288,8 @@ DropDownMenu Label
 	align: right top;
 	width: 37.125px;
 	height: 27px;
-	margin: 2px;
-}
-
-.QuickBuyStickyItem
-{
-	width: 80%;
-	height: 80%;
-	align: center center;
-	box-shadow: -0.5px -0.5px 1px 1px white;
-	border-radius: 5px;
 	margin: 0px;
+	margin-top: 3px;
 }
 
 #QuickBuyPanelItems
@@ -306,6 +297,8 @@ DropDownMenu Label
 	align: left center;
 	height: 100%;
 	width: 172px;
+	margin-left: 2px;
+	margin-top: 2px;
 	flow-children: right-wrap;
 }
 
@@ -349,7 +342,8 @@ DropDownMenu Label
 }
 #QuickBuyPanel
 {
-	background-color: rgba(0,0,0,200);
+	background-image: url("file://{images}/custom_game/shop/quickbuy.png");
+	//background-color: rgba(0,0,0,200);
 	align: right bottom;
 	margin-bottom:  50px;
 	margin-right: 7px;
@@ -425,6 +419,16 @@ DropDownMenu Label
 	margin: 4px;
 	margin-top: 2px;
 	margin-bottom: 2px;
+}
+
+.QuickBuyStickyItem
+{
+	width: 80%;
+	height: 80%;
+	align: center center;
+	box-shadow: -0.5px -0.5px 1px 1px white;
+	border-radius: 5px;
+	margin: 0px;
 }
 
 .QuickbuyItemPanel

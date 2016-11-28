@@ -2,14 +2,11 @@ CUSTOM_WEARABLES_PLAYER_ITEMS = {
 	[109792606] = {
 		"item_hero_stargazer_helmet_of_the_sunray",
 		"item_hero_omniknight_frozen_sword",
-		"item_common_radio_car",
 		"item_item_summoned_unit_kyuubey",
-		"_______item_test",
 	},
 	[82292900] = {
 		"item_hero_stargazer_helmet_of_the_sunray",
 		"item_hero_omniknight_frozen_sword",
-		"item_common_radio_car",
 		"item_item_summoned_unit_kyuubey",
 	}
 }
@@ -58,9 +55,6 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 		on_first_equip = function(self, unit)
 			unit:AddItem(CreateItem("item_radio_car", unit, unit))
 		end
-	},
-	["_______item_test"] = {
-	
 	},
 	["item_item_summoned_unit_kyuubey"] = {
 		PlayerKeys = {

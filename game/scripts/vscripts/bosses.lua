@@ -1,37 +1,35 @@
 if Bosses == nil then
 	Bosses = class({})
+	Bosses.MinimapPoints = {}
 end
 
 function Bosses:InitAllBosses()
-	for i = 2,3 do
-		--[[Bosses:CreateBossPortal("fire", i)
-		Bosses:CreateBossPortal("water", i)
-		Bosses:CreateBossPortal("earth", i)
-		Bosses:CreateBossPortal("wind", i)
-		Bosses:CreateBossPortal("primal", i)]]
-		Bosses:SpawnStaticBoss("l1_v1", i)
-		Bosses:SpawnStaticBoss("l1_v2", i)
-		Bosses:SpawnStaticBoss("l2_v1", i)
-		Bosses:SpawnStaticBoss("l2_v2", i)
-	end
+	Bosses:SpawnStaticBoss("l1_v1")
+	Bosses:SpawnStaticBoss("l1_v2")
+	Bosses:SpawnStaticBoss("l2_v1")
+	Bosses:SpawnStaticBoss("l2_v2")
 	Bosses:SpawnStaticBoss("central")
 	Bosses:SpawnStaticBoss("heaven")
 	Bosses:SpawnStaticBoss("hell")
-	--Bosses:SpawnStaticBoss("roshan")
 end
 
 function IsBossEntity(unit)
 	return string.find(unit:GetUnitName(), "npc_arena_boss_")
 end
 
-function Bosses:SpawnStaticBoss(name, team)
-	local nm = "target_mark_bosses_" .. name
-	if team then
-		nm = nm .. "_team" .. team
+function Bosses:SpawnStaticBoss(name)
+	for _,v in ipairs(Entities:FindAllByName("target_mark_bosses_" .. name)) do
+		Bosses.MinimapPoints[v] = DynamicMinimap:CreateMinimapPoint(v:GetAbsOrigin(), "icon_boss_" .. name)
+		Bosses:SpawnBossUnit(name, v)
 	end
-	local boss = CreateUnitByName("npc_arena_boss_" .. name, Entities:FindByName(nil, nm):GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
-	boss.OriginalTeam = team
+end
+
+function Bosses:SpawnBossUnit(name, spawner)
+	DynamicMinimap:SetVisibleGlobal(Bosses.MinimapPoints[spawner], true)
+	local boss = CreateUnitByName("npc_arena_boss_" .. name, spawner:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+	boss.SpawnerEntity = spawner
 	Bosses:MakeBossAI(boss, name)
+	return boss
 end
 
 function Bosses:RegisterKilledBoss(unit, team)
@@ -39,6 +37,7 @@ function Bosses:RegisterKilledBoss(unit, team)
 	local bossname = string.gsub(unitname, "npc_arena_boss_", "")
 	local amount = unit:GetKeyValue("Bosses_GoldToAll")
 	local p1, p2 = CreateGoldNotificationSettings(amount)
+	DynamicMinimap:SetVisibleGlobal(Bosses.MinimapPoints[unit.SpawnerEntity], false)
 	
 	Notifications:TopToAll({text="#" .. unitname})
 	Notifications:TopToAll({text="#bosses_killed_p1", continue=true})
@@ -50,14 +49,14 @@ function Bosses:RegisterKilledBoss(unit, team)
 		Gold:ModifyGold(v, amount)
 	end
 	Timers:CreateTimer(unit:GetKeyValue("Bosses_RespawnDuration"), function()
-		Bosses:SpawnStaticBoss(bossname, unit.OriginalTeam)
+		Bosses:SpawnBossUnit(bossname, unit.SpawnerEntity)
 	end)
 end
 
 function Bosses:MakeBossAI(unit, name)
 	unit:SetIdleAcquire(false)
 	local aiTable = {
-		leashRange = 1600,
+		leashRange = 1000,
 	}
 	local profile = "boss"
 	--[[if name == "roshan" then

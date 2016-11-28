@@ -78,6 +78,8 @@ PANORAMA_SHOP_ITEMS = {
 			"item_reaver",
 			"item_eagle",
 			"item_relic",
+			"item_shard_of_true_sight",
+			"item_shard_ultimate_scepter",
 		},
 		{
 			"item_shard_str_small",
@@ -209,9 +211,11 @@ PANORAMA_SHOP_ITEMS = {
 		{
 			"item_titanium_fruit",
 			"item_coffee_bean",
+			"item_urn_of_souls",
 			"item_homemade_cheese",
 			"item_steam_footgear",
 			"item_blink_staff",
+			"item_urn_of_demons",
 			"item_aegis_arena",
 			"item_angel_wings",
 			"item_summoned_unit",
@@ -224,8 +228,9 @@ PANORAMA_SHOP_ITEMS = {
 			"item_refresher_core",
 			"item_book_of_the_keeper",
 			"item_blade_of_discord",
-			"item_essential_orb_fire_6",
 			"item_auto_sheepstick",
+			"item_lotus_sphere",
+			"item_essential_orb_fire_6",
 			"item_awakened_cursed_eye",
 		},
 		{
@@ -242,7 +247,6 @@ PANORAMA_SHOP_ITEMS = {
 			"item_radiance_frozen",
 		},
 		{
-			"item_urn_of_souls",
 			"item_lucifers_claw",
 			"item_holy_knight_shield",
 			"item_heart_cyclone",

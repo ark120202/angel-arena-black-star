@@ -5352,19 +5352,16 @@
 		"AbilityManaCost"	"60"
 		"AbilitySpecial"
 		{
-
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_spell_damage_pct"	"-30 -40 -50 -60 -80 -100 -120"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_movement_speed"	"-30 -40 -50 -60 -70 -80 -90"
 			}
-
 		}
 
 	}
@@ -5377,27 +5374,22 @@
 		"AbilityManaCost"	"80"
 		"AbilitySpecial"
 		{
-
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"mana_multiplier"	"1.00 1.50 2.0 2.50"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"mana_regen"	"-1.5 -4.5 -9.0 -30.0"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"attacks_to_destroy_tooltip"	"4 4 4 4"
 			}
-
 		}
-
 	}
 
 	"pugna_life_drain"
@@ -5414,27 +5406,22 @@
 				"health_drain"	"150 200 250 300 350 450 500"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"cast_range_tooltip"	"900 1050 1200 1350 1500 1650 1800"
 			}
-
-
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"health_drain_scepter"	"200 250 300 350 450 500 650"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"scepter_cooldown"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+				"scepter_cooldown"	"0"
 			}
-
 		}
 
 	}
@@ -5452,38 +5439,31 @@
 				"var_type"	"FIELD_INTEGER"
 				"move_slow"	"-50 -50 -50 -50 -50 -50 -50"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"dagger_speed"	"1000 1100 1200 1300 1400 1500 1600"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"duration"	"1 2 3 4 5 6 7"
 			}
-			
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"base_damage"			"50 100 150 200 250 300 350"
 			}
-			
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"attack_factor"			"-75 -60 -45 -30 -5 10 25"
 			}
-			
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"attack_factor_tooltip"	"25 40 55 70 95 110 125"
-			}			
-			
-
+			}
 		}
 
 	}
@@ -10863,7 +10843,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"scepter_mana"	"1.0"
+				"scepter_mana"	"0.33"
 			}
 
 		}

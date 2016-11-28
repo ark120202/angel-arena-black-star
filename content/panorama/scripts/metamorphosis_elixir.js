@@ -4,7 +4,6 @@ var SelectedHeroData = null
 var SelectedHeroPanel = null
 var SelectedTabIndex = null
 var HeroesPanels = []
-var PlayerTables = GameUI.CustomUIConfig().PlayerTables
 var DOTA_ACTIVE_GAMEMODE_TYPE = null;
 
 function OpenMenu(data) {

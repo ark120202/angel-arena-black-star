@@ -2,6 +2,7 @@
 	<styles>
 		<include src="file://{resources}/styles/global_styles.css" />
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/dynamic_minimap.css" />
 		<include src="file://{resources}/styles/hero_selection.css" />
 		<include src="file://{resources}/styles/customchat_selection.css" />
 	</styles>
@@ -31,7 +32,7 @@
 	</snippets>
 	<Panel hittest="false" class="base Shown">
 		<Image id="HeroSelectionBackground" hittest="false" />
-		<!-- <DOTAScenePanel id="HeroSelectionBackground" map="maps/backgrounds/dashboard_parallax_ti6_initial.vmap" hittest="false" /> -->
+		<!-- <DOTAScenePanel id="HeroSelectionBackground" map="maps/backgrounds/dashboard_parallax_spring2016.vmap" hittest="false" /> -->
 		<Panel hittest="false" id="HeroSelectionBox">
 			<!-- <Panel id="SelectedHeroPanel" hittest="false">
 				<Panel id="SelectedHeroPreview">
@@ -121,21 +122,16 @@
 					<Panel id="SelectedHeroAbilitiesPanelInner" />
 				</Panel>
 				<Panel id="HeroListBasePanelHost">
-					<Panel id="HeroListPanel">
-						<!-- Список героев -->
-					</Panel>
-					<Panel id="HeroListScenes">
-						
-					</Panel>
+					<Panel id="HeroListPanel" />
+					<Panel id="HeroListScenes" />
 				</Panel>
 			</Panel>
 
-			<Panel id="SelectionStatusPanel" hittest="false">
-
-				<Panel id="GameModeInfoPanel" hittest="false">
-					<Panel id="ExitButton" hittest="false"/>
-					<Label id="HeroSelectionTimer" text="0" hittest="false"/>
-					<Label id="GameModeInfoGamemodeLabel" text="#hero_selection_mode_all_pick" hittest="false" />
+			<Panel id="SelectionStatusPanel" >
+				<Panel id="GameModeInfoPanel" >
+					<Panel id="ExitButton" onactivate="$.DispatchEvent('DOTAShowDashboard')"/>
+					<Label id="HeroSelectionTimer" text="0" />
+					<Label id="GameModeInfoGamemodeLabel" text="#hero_selection_mode_all_pick" />
 				</Panel>
 				<Panel id="TeamSelectionStatusPanel" />
 			</Panel>
@@ -143,30 +139,32 @@
 			<Panel id="ChatAndMapPanel">
 				<!-- class="Debug" -->
 				<Panel id="MinimapPanel" class="">
-					<Image id="MinimapImage" src="file://{images}/custom_game/hero_selection/minimap_5v5.png">
-						<!-- Radiant -->
-							<!-- easy -->
-								<Panel id="MinimapSpawnBox_2_1_0" onactivate="OnMinimapClickSpawnBox(2, 1, 0)" class="MinimapSpawnBox" style="position: 96px 160px 0;"/>
-							<!-- medium -->
-								<Panel id="MinimapSpawnBox_2_2_0" onactivate="OnMinimapClickSpawnBox(2, 2, 0)" class="MinimapSpawnBox" style="position: 15px 198px 0;"/>
-								<Panel id="MinimapSpawnBox_2_2_1" onactivate="OnMinimapClickSpawnBox(2, 2, 1)" class="MinimapSpawnBox" style="position: 50px 198px 0;"/>
-								<Panel id="MinimapSpawnBox_2_2_2" onactivate="OnMinimapClickSpawnBox(2, 2, 2)" class="MinimapSpawnBox" style="position: 53px 74px 0;"/>
-								<Panel id="MinimapSpawnBox_2_2_3" onactivate="OnMinimapClickSpawnBox(2, 2, 3)" class="MinimapSpawnBox" style="position: 53px 123px 0;"/>
-							<!-- hard -->
-								<Panel id="MinimapSpawnBox_2_3_0" onactivate="OnMinimapClickSpawnBox(2, 3, 0)" class="MinimapSpawnBox" style="position: 94px 224px 0;"/>
-								<Panel id="MinimapSpawnBox_2_3_1" onactivate="OnMinimapClickSpawnBox(2, 3, 1)" class="MinimapSpawnBox" style="position: 100px 71px 0;"/>
-						<!-- Dire -->
-							<!-- easy -->
-								<Panel id="MinimapSpawnBox_3_1_0" onactivate="OnMinimapClickSpawnBox(3, 1, 0)" class="MinimapSpawnBox" style="position: 228px 160px 0;"/>
-							<!-- medium -->
-								<Panel id="MinimapSpawnBox_3_2_0" onactivate="OnMinimapClickSpawnBox(3, 2, 0)" class="MinimapSpawnBox" style="position: 306px 202px 0;"/>
-								<Panel id="MinimapSpawnBox_3_2_1" onactivate="OnMinimapClickSpawnBox(3, 2, 1)" class="MinimapSpawnBox" style="position: 272px 202px 0;"/>
-								<Panel id="MinimapSpawnBox_3_2_2" onactivate="OnMinimapClickSpawnBox(3, 2, 2)" class="MinimapSpawnBox" style="position: 268px 116px 0;"/>
-								<Panel id="MinimapSpawnBox_3_2_3" onactivate="OnMinimapClickSpawnBox(3, 2, 3)" class="MinimapSpawnBox" style="position: 268px 75px 0;"/>
-							<!-- hard -->
-								<Panel id="MinimapSpawnBox_3_3_0" onactivate="OnMinimapClickSpawnBox(3, 3, 0)" class="MinimapSpawnBox" style="position: 225px 224px 0;"/>
-								<Panel id="MinimapSpawnBox_3_3_1" onactivate="OnMinimapClickSpawnBox(3, 3, 1)" class="MinimapSpawnBox" style="position: 220px 71px 0;"/>
-
+					<Image id="MinimapImage" src="file://{images}/custom_game/hero_selection/5v5.tga">
+						<Panel class="MinimapDynamicIcons" />
+						<Panel class="MinimapSpawnBoxes">
+							<!-- Radiant -->
+								<!-- easy -->
+									<Panel id="MinimapSpawnBox_2_1_0" onactivate="OnMinimapClickSpawnBox(2, 1, 0)" class="MinimapSpawnBox" style="position: 96px 160px 0;"/>
+								<!-- medium -->
+									<Panel id="MinimapSpawnBox_2_2_0" onactivate="OnMinimapClickSpawnBox(2, 2, 0)" class="MinimapSpawnBox" style="position: 15px 198px 0;"/>
+									<Panel id="MinimapSpawnBox_2_2_1" onactivate="OnMinimapClickSpawnBox(2, 2, 1)" class="MinimapSpawnBox" style="position: 50px 198px 0;"/>
+									<Panel id="MinimapSpawnBox_2_2_2" onactivate="OnMinimapClickSpawnBox(2, 2, 2)" class="MinimapSpawnBox" style="position: 53px 74px 0;"/>
+									<Panel id="MinimapSpawnBox_2_2_3" onactivate="OnMinimapClickSpawnBox(2, 2, 3)" class="MinimapSpawnBox" style="position: 53px 123px 0;"/>
+								<!-- hard -->
+									<Panel id="MinimapSpawnBox_2_3_0" onactivate="OnMinimapClickSpawnBox(2, 3, 0)" class="MinimapSpawnBox" style="position: 94px 224px 0;"/>
+									<Panel id="MinimapSpawnBox_2_3_1" onactivate="OnMinimapClickSpawnBox(2, 3, 1)" class="MinimapSpawnBox" style="position: 100px 89px 0;"/>
+							<!-- Dire -->
+								<!-- easy -->
+									<Panel id="MinimapSpawnBox_3_1_0" onactivate="OnMinimapClickSpawnBox(3, 1, 0)" class="MinimapSpawnBox" style="position: 220px 160px 0;"/>
+								<!-- medium -->
+									<Panel id="MinimapSpawnBox_3_2_0" onactivate="OnMinimapClickSpawnBox(3, 2, 0)" class="MinimapSpawnBox" style="position: 306px 202px 0;"/>
+									<Panel id="MinimapSpawnBox_3_2_1" onactivate="OnMinimapClickSpawnBox(3, 2, 1)" class="MinimapSpawnBox" style="position: 272px 202px 0;"/>
+									<Panel id="MinimapSpawnBox_3_2_2" onactivate="OnMinimapClickSpawnBox(3, 2, 2)" class="MinimapSpawnBox" style="position: 268px 116px 0;"/>
+									<Panel id="MinimapSpawnBox_3_2_3" onactivate="OnMinimapClickSpawnBox(3, 2, 3)" class="MinimapSpawnBox" style="position: 268px 75px 0;"/>
+								<!-- hard -->
+									<Panel id="MinimapSpawnBox_3_3_0" onactivate="OnMinimapClickSpawnBox(3, 3, 0)" class="MinimapSpawnBox" style="position: 225px 224px 0;"/>
+									<Panel id="MinimapSpawnBox_3_3_1" onactivate="OnMinimapClickSpawnBox(3, 3, 1)" class="MinimapSpawnBox" style="position: 220px 89px 0;"/>
+						</Panel>
 					</Image>
 				</Panel>
 				<Panel id="SelectionChatBox">

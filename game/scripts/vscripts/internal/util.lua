@@ -472,10 +472,7 @@ end
 
 function BShowBubble(unit)
 	if not unit.HasSpeechBubble and not unit.Inactive then
-		local text = "#bitch_bubble_text"
-		if unit:GetName() == "npc_dota_casino_lina" then
-			text = "#bitch_lina_bubble_text"
-		end
+		local text = "#bitch_lina_bubble_text"
 		unit:AddSpeechBubble(1, text, 9999999, 10, -35)
 		unit.HasSpeechBubble = true
 	end
@@ -1378,4 +1375,18 @@ function table.add(input1, input2)
 	for _,v in ipairs(input2) do
 		table.insert(input1, v)
 	end
+end
+
+function table.addExclusive(input1, input2)
+	for _,v in ipairs(input2) do
+		if not table.contains(input1, v) then
+			table.insert(input1, v)
+		end
+	end
+end
+
+function WorldPosToMinimap(vec)
+	local pct1 = ((vec.x + MAP_LENGTH) / (MAP_LENGTH * 2))
+	local pct2 = ((MAP_LENGTH - vec.y) / (MAP_LENGTH * 2))
+	return pct1*100 .. "% " .. pct2*100 .. "%"
 end

@@ -418,7 +418,7 @@ end
 function HeroSelection:OnHeroSelectHero(data)
 	local team = PlayerResource:GetTeam(data.PlayerID)
 	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID))
-	if not HeroSelection.SelectionEnd and not HeroSelection:IsHeroSelected(tostring(data.hero)) and tableData and tableData[data.PlayerID] and tableData[data.PlayerID].status and tableData[data.PlayerID].status ~= "picked" then
+	if not HeroSelection.SelectionEnd and not HeroSelection:IsHeroSelected(tostring(data.hero)) and tableData and tableData[data.PlayerID] and tableData[data.PlayerID].status and tableData[data.PlayerID].status ~= "picked" and HeroSelection:VerifyHeroGroup(tostring(data.hero), "Selection") then
 		if not tableData[data.PlayerID] then tableData[data.PlayerID] = {} end
 		tableData[data.PlayerID].hero = data.hero
 		tableData[data.PlayerID].status = "picked"

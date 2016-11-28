@@ -29,9 +29,24 @@ ShopsData = {
 	item_shard_int_large
 	item_shard_int_extreme
 
-	
 	item_shard_level
 ]]
+SHARED_CONTAINERS_USABLE_ITEMS = {
+	--["item_shard_level"] = false,
+	--["item_heaven_hero_change"] = false,
+	--["item_hell_hero_change"] = false,
+
+	["item_shard_primal_medium"] = true,
+	["item_shard_primal_large"] = true,
+	["item_shard_str_large"] = true,
+	["item_shard_str_extreme"] = true,
+	["item_shard_agi_large"] = true,
+	["item_shard_agi_extreme"] = true,
+	["item_shard_int_large"] = true,
+	["item_shard_int_extreme"] = true,
+	["item_shard_level"] = true,
+}
+
 DROP_TABLE = {
 	["npc_arena_boss_heaven"] = {
 		{ Item = "item_heaven_hero_change", DropChance = 100, },

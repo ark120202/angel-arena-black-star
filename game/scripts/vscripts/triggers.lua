@@ -17,18 +17,19 @@ function ArenaZoneOnEndTouch(trigger)
 end
 
 function FountainOnStartTouch(trigger, team)
-	print("asd")
 	local unit = trigger.activator
 	if unit and unit:GetTeam() == team then
 		unit:AddNewModifier(unit, nil, "modifier_fountain_aura_arena", nil)
 	elseif not IsBossEntity(unit) then
 		local fountain = FindFountain(team)
 		if fountain then
-			fountain:EmitSound("Ability.LagunaBlade")
-			unit:EmitSound("Ability.LagunaBladeImpact")
-			local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_ABSORIGIN, fountain)
-			ParticleManager:SetParticleControl(pfx, 0, fountain:GetAbsOrigin() + Vector(0,0,224))
-			ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
+			Timers:CreateTimer(0.1, function()
+				fountain:EmitSound("Ability.LagunaBlade")
+				unit:EmitSound("Ability.LagunaBladeImpact")
+				local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_ABSORIGIN, fountain)
+				ParticleManager:SetParticleControl(pfx, 0, fountain:GetAbsOrigin() + Vector(0,0,224))
+				ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
+			end)
 		end
 		TrueKill(nil, nil, unit)
 	end

@@ -1,5 +1,5 @@
 modifier_fatal_bonds_lua = class({})
---lua модификатор чтобы они стакались без лишних таблиц
+
 function modifier_fatal_bonds_lua:GetEffectName()
 	return "particles/units/heroes/hero_warlock/warlock_fatal_bonds_icon.vpcf"
 end

@@ -1,7 +1,6 @@
 "use strict";
-var PlayerTables = GameUI.CustomUIConfig().PlayerTables
-var minVote = 25
-var maxVote = 100
+var minVote = 0
+var maxVote = 0
 
 function SendKillGoalVote() {
 	var input = $("#GoalVoteTextEntry").text

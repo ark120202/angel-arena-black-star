@@ -4,7 +4,6 @@ var SelectedHeroData = null
 var SelectedHeroPanel = null
 var SelectedTabIndex = null
 var HeroesPanels = []
-var PlayerTables = GameUI.CustomUIConfig().PlayerTables
 var PTID = null
 
 function OpenMenu(data) {
@@ -24,12 +23,12 @@ function ChooseHeroPanelHero() {
 function SelectHero() {
 	if ($.GetContextPanel().BHasClass("HellBase")) {
 		GameEvents.SendCustomGameEventToServer("hell_hero_change_cast", {
-		hero: SelectedHeroData.heroKey
-	})
+			hero: SelectedHeroData.heroKey
+		})
 	} else if ($.GetContextPanel().BHasClass("HeavenBase")) {
 		GameEvents.SendCustomGameEventToServer("heaven_hero_change_cast", {
-		hero: SelectedHeroData.heroKey
-	})
+			hero: SelectedHeroData.heroKey
+		})
 	}
 
 	CloseMenu()

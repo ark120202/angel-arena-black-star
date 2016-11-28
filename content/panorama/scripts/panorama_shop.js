@@ -1,5 +1,4 @@
 "use strict";
-var PlayerTables = GameUI.CustomUIConfig().PlayerTables
 var ItemList = {}
 var ItemData = {}
 var Itembuilds = {}

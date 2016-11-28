@@ -4,7 +4,7 @@ function CasinoCoinSlotMachine(keys)
 	local target = keys.target
 	local playerID = caster:GetPlayerID()
 	local Random = {RandomInt(0, 7), RandomInt(0, 7), RandomInt(0, 7)}
-	if target:GetName() == "npc_dota_casino_slotmachine" then
+	if target:GetUnitName() == "npc_dota_casino_slotmachine" then
 		ability:ApplyDataDrivenModifier(caster, target, "modifier_slotmachine_in_work", {})
 		Timers:CreateTimer(1, function()
 			Notifications:Bottom(playerID, {text="#casino_slotmachine_roll_start", style={color="limegreen"}, duration=10})
@@ -88,7 +88,7 @@ function CasinoCoinSlotMachine(keys)
 				end
 			end)
 		end)
-	elseif target:GetName() == "npc_dota_casino_lina" and ability:GetCurrentCharges() >= 2 then
+	elseif target:GetUnitName() == "npc_dota_casino_lina" and ability:GetCurrentCharges() >= 2 then
 		ability:SetCurrentCharges(ability:GetCurrentCharges() - 1)
 		target.Inactive = true
 		target:DestroyAllSpeechBubbles()

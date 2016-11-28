@@ -33,13 +33,6 @@ function GameMode:OnNPCSpawned(keys)
 			UTIL_Remove(npc)
 			return
 		end
-		if npc and npc.GetPlayerID then
-			local plid = PlayerResource:GetSteamAccountID(npc:GetPlayerID())
-			if plid == 82292900 then
-				LinkLuaModifier("modifier_murzik", "modifiers/modifier_murzik", LUA_MODIFIER_MOTION_NONE)
-				npc:AddNewModifier(npc,nil,"modifier_murzik",{})
-			end
-		end
 		HeroVoice:OnNPCSpawned(npc)
 
 		Timers:CreateTimer(function()
@@ -73,26 +66,6 @@ function GameMode:OnNPCSpawned(keys)
 		end)
 	end
 end
-
---DISABLED
--- An entity somewhere has been hurt.	This event fires very often with many units so don't do too many expensive
--- operations here
---[[function GameMode:OnEntityHurt(keys)
-	DebugPrint("[BAREBONES] Entity Hurt")
-	DebugPrintTable(keys)
-	
-	--local damagebits = keys.damagebits
-	if keys.entindex_attacker ~= nil and keys.entindex_killed ~= nil then
-		local entCause = EntIndexToHScript(keys.entindex_attacker)
-		local entVictim = EntIndexToHScript(keys.entindex_killed)
-		local damagingAbility = nil
-		if keys.entindex_inflictor ~= nil then
-			damagingAbility = EntIndexToHScript( keys.entindex_inflictor )
-		end
-
-		HeroVoice:OnEntityHurt(entVictim, entCause, damagingAbility)
-	end
-end]]
 
 -- An item was picked up off the ground
 function GameMode:OnItemPickedUp(keys)
@@ -390,7 +363,7 @@ function GameMode:OnEntityKilled( keys )
 				end
 			end
 			if #items > 0 then
-				local phys = CreateItemOnPositionSync(killedUnit:GetAbsOrigin(), nil)
+				local phys = CreateItemOnPositionSync(killedUnit:GetAbsOrigin() + RandomVector(100), nil)
 				phys:SetForwardVector(Vector(0,-1,0))
 				phys:SetModelScale(1.5)
 				ContainersHelper:CreateLootBox(phys, items)

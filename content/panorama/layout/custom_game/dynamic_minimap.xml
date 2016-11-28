@@ -1,0 +1,13 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/dynamic_minimap.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+	</scripts>
+	<script>
+		_DynamicMinimapSubscribe($.GetContextPanel());
+	</script>
+	<Panel class="DynamicMinimapRoot" hittest="false" />
+</root>
