@@ -4807,21 +4807,18 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"projectile_speed"	"100 2500 3000 3500 4000 4500 5000"
+				"projectile_speed"	"600 2500 3000 3500 4000 4500 5000"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"tooltip_range"	"2000 2500 3000 3500 4000 4500 5000"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"total_cast_time_tooltip"	"0.5"
 			}
-
 		}
 
 	}

@@ -18,6 +18,11 @@ function ConjureImage( event )
 				original_ability.illusions = original_ability.illusions + 1
 				local illusion = CreateIllusion(caster, original_ability, event.target:GetAbsOrigin() + RandomVector(100), ability:GetLevelSpecialValueFor("illusion_incoming_damage", ability:GetLevel()-1) - 100, ability:GetLevelSpecialValueFor("illusion_outgoing_damage", ability:GetLevel()-1) - 100, ability:GetLevelSpecialValueFor("illusion_duration", ability:GetLevel()-1))
 				ability:ApplyDataDrivenModifier(illusion, illusion, "modifier_phantom_lancer_juxtapose_arena_illusion_count", {duration = duration})
+				ExecuteOrderFromTable({
+					UnitIndex = illusion:GetEntityIndex(), 
+					OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+					Position = illusion:GetAbsOrigin(),
+				})
 			end
 		end
 	end

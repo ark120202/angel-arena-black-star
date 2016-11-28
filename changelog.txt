@@ -266,3 +266,5 @@ venom
 pugna ward
 
 [	]*\/\/ Text Example[0-9.A-z\- ,\/\\]*\n
+Sniper - Take Aim:
+	Bonus attack range: 100 200 300 400 500 600 700 => 200 400 600 800 1000 1200 1400
