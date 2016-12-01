@@ -3,13 +3,11 @@ function GameMode:RegisterCustomListeners()
 	CustomGameEventManager:RegisterListener("metamorphosis_elixir_cast", Dynamic_Wrap(GameMode, "MetamorphosisElixirCast"))
 	CustomGameEventManager:RegisterListener("hell_hero_change_cast", Dynamic_Wrap(GameMode, "HellHeroChangeCast"))
 	CustomGameEventManager:RegisterListener("heaven_hero_change_cast", Dynamic_Wrap(GameMode, "HeavenHeroChangeCast"))
-	CustomGameEventManager:RegisterListener("hud_buttons_show_custom_game_info", Dynamic_Wrap(GameMode, "ButtonsShowInfo"))
 	CustomGameEventManager:RegisterListener("hud_courier_burst", Dynamic_Wrap(GameMode, "BurstCourier"))
 	CustomGameEventManager:RegisterListener("modifier_clicked_purge", Dynamic_Wrap(GameMode, "ModifierClickedPurge"))
 
 	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
-		CustomGameEventManager:RegisterListener("hud_buttons_show_duel1x1call", Dynamic_Wrap(GameMode, "ButtonsShowDuel1x1Menu"))
-		CustomGameEventManager:RegisterListener("duel1x1call_send_call", Dynamic_Wrap(GameMode, "SendDuel1x1Call"))
+		--CustomGameEventManager:RegisterListener("duel1x1call_send_call", Dynamic_Wrap(GameMode, "SendDuel1x1Call"))
 		CustomGameEventManager:RegisterListener("submit_gamemode_vote", Dynamic_Wrap(GameMode, "SubmitGamemodeVote"))
 	end
 end
@@ -35,18 +33,6 @@ function GameMode:HeavenHeroChangeCast(data)
 	local elixirItem = FindItemInInventoryByName(hero, "item_heaven_hero_change", false)
 	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(data.hero, "Heaven") then
 		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
-	end
-end
-
-function GameMode:ButtonsShowDuel1x1Menu(data)
-	if data and data.playerid then
-		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(data.playerid), "duel1x1call_call", {})
-	end
-end
-
-function GameMode:ButtonsShowInfo(data)
-	if data and data.playerid then
-		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(data.playerid), "show_custom_game_info", {})
 	end
 end
 

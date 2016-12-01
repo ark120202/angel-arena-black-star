@@ -211,9 +211,6 @@ end
 
 function Duel:EndDuelForUnit(unit)
 	unit:RemoveModifierByName("modifier_duel_hero_disabled_for_duel")
-	local fountatin = FindFountain(unit:GetTeamNumber())
-	local location = unit.ArenaBeforeTpLocation
-	if fountatin then location = location or fountatin:GetAbsOrigin() end
 	Timers:CreateTimer(0.1, function()
 		if unit:IsAlive() and unit.StatusBeforeArena then
 			if unit.StatusBeforeArena.Health then unit:SetHealth(unit.StatusBeforeArena.Health) end
@@ -239,7 +236,7 @@ function Duel:EndDuelForUnit(unit)
 	end)
 	unit:Stop()
 	PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), unit)
-	FindClearSpaceForUnit(unit, location, true)
+	FindClearSpaceForUnit(unit, unit.ArenaBeforeTpLocation or FindFountain(unit:GetTeamNumber()):GetAbsOrigin(), true)
 	Timers:CreateTimer(0.1, function()
 			PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), nil)
 			if unit then

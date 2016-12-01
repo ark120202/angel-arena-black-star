@@ -213,6 +213,7 @@ function GameMode:OnGameInProgress()
 	else
 		Holdout:Start()
 	end
+	PlayerResource:RefreshSelection()
 	Scepters:SetGlobalScepterThink()
 	Timers:CreateTimer(GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
 end
@@ -423,7 +424,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 					end
 				end
 			elseif order_type == DOTA_UNIT_ORDER_SELL_ITEM then
-				if ability:GetName() == "item_pocket_riki" then
+				if ability and ability.GetAbilityName and ability:GetAbilityName() == "item_pocket_riki" then
 					local gold = Kills:GetGoldForKill(ability.RikiContainer)
 					Gold:ModifyGold(unit, gold, true)
 					SendOverheadEventMessage(unit:GetPlayerOwner(), OVERHEAD_ALERT_GOLD, unit, gold, unit:GetPlayerOwner())

@@ -134,12 +134,15 @@ function FindCourier(unit) {
 	})[0]
 }
 
-function DynamicSubscribePTListener(table, callback) {
+function DynamicSubscribePTListener(table, callback, OnConnectedCallback) {
 	if (PlayerTables.IsConnected()) {
 		var tableData = PlayerTables.GetAllTableValues(table)
 		if (tableData != null)
 			callback(table, tableData, {})
-		PlayerTables.SubscribeNetTableListener(table, callback)
+		var ptid = PlayerTables.SubscribeNetTableListener(table, callback)
+		if (OnConnectedCallback != null) {
+			OnConnectedCallback(ptid)
+		}
 	} else {
 		$.Schedule(1 / 30, function() {
 			DynamicSubscribePTListener(table, callback)
@@ -207,7 +210,7 @@ function SetPannelDraggedChild(displayPanel, checker) {
 	dragcheck();
 }
 
-function _DynamicMinimapSubscribe(minimapPanel) {
+function _DynamicMinimapSubscribe(minimapPanel, OnConnectedCallback) {
 	$.Each(Game.GetAllTeamIDs(), function(team) {
 		DynamicSubscribePTListener("dynamic_minimap_points_" + team, function(tableName, changesObject, deletionsObject) {
 			for (var index in changesObject) {
@@ -223,6 +226,6 @@ function _DynamicMinimapSubscribe(minimapPanel) {
 				panel.style.position = changesObject[index].position + " 0";
 				panel.visible = changesObject[index].visible == 1
 			}
-		});
+		}, OnConnectedCallback);
 	});
 }

@@ -437,11 +437,16 @@ function ShowItemInShop(data) {
 
 function UpdateShop() {
 	SearchItems()
-	var gold = PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]
-	$.Each(SmallItems, function(panel) {
-		UpdateSmallItem(panel, gold)
-	})
 	UpdateItembuildsForHero();
+	var pt = PlayerTables.GetTableValue("arena", "gold")
+	if (pt != null) {
+		var gold = pt[Game.GetLocalPlayerID()]
+		if (gold != null) {
+			$.Each(SmallItems, function(panel) {
+				UpdateSmallItem(panel, gold)
+			})
+		}
+	}
 	//$.GetContextPanel().SetHasClass("InRangeOfShop", Entities.IsInRangeOfShop(m_QueryUnit, 0, true))
 }
 

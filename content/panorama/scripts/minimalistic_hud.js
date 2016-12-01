@@ -517,7 +517,7 @@ function UpdateSelection() {
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		if (changesObject["courier_owner" + Players.GetTeam(Game.GetLocalPlayerID())] != null)
 			SetCourierTartget(changesObject["courier_owner" + Players.GetTeam(Game.GetLocalPlayerID())])
-		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
+		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null && $("#PlayerControls_1x1") != null) {
 			$("#PlayerControls_1x1").visible = changesObject["gamemode_settings"]["gamemode"] != DOTA_GAMEMODE_HOLDOUT_5
 		}
 	})

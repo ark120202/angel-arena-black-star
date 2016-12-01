@@ -10555,12 +10555,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"10"
+				"xp_multiplier"			"6"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"gold_multiplier"		"25"
+				"gold_multiplier"		"12"
 			}
 		}
 		

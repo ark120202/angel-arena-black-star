@@ -8,16 +8,12 @@ function OnAttackLanded(keys)
 			manaburn = manaburn * keys.feedback_mana_burn_illusion_pct * 0.01
 		end
 		local manadrain = manaburn * keys.feedback_mana_drain_pct * 0.01
-		local om = target:GetMana()
 		target:SpendMana(manaburn, ability)
-		local diff = om - target:GetMana()
-		SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_LOSS, target, diff, nil)
 		caster:GiveMana(manadrain)
-		SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_ADD, caster, manadrain, nil)
 		ApplyDamage({
 			victim = target,
 			attacker = caster,
-			damage = diff * keys.damage_per_burn_pct * 0.01,
+			damage = manaburn * keys.damage_per_burn_pct * 0.01,
 			damage_type = ability:GetAbilityDamageType(),
 			ability = ability
 		})

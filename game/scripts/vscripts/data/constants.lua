@@ -26,7 +26,7 @@ SPAWNER_SETTINGS = {
 				{
 					[-1] = "npc_dota_neutral_medium_variant1",
 					[0] = "models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl",
-					[30] = "models/creeps/lane_creeps/creep_bad_ranged_diretide/creep_bad_ranged_diretide.vmd",
+					[30] = "models/creeps/neutral_creeps/n_creep_ghost_a/n_creep_ghost_a.vmdl",
 					[60] = "models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl",					
 				}
 			},
@@ -34,7 +34,7 @@ SPAWNER_SETTINGS = {
 				{
 					[-1] = "npc_dota_neutral_medium_variant1",
 					[0] = "models/creeps/neutral_creeps/n_creep_beast/n_creep_beast.vmdl",
-					[30] = "models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmd",
+					[30] = "n_creep_forest_troll_berserker_idle",
 					[60] = "models/heroes/ursa/ursa.vmdl",					
 				}
 			},
@@ -42,7 +42,7 @@ SPAWNER_SETTINGS = {
 				{
 					[-1] = "npc_dota_neutral_medium_variant1",
 					[0] = "models/heroes/lone_druid/spirit_bear.vmdl",
-					[30] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
+					[30] = "n_creep_vulture_a_idle_headshake",
 					[60] = "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl",						
 				}
 			},

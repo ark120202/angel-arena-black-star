@@ -9,6 +9,7 @@ var localHeroPicked = false
 var HideEvent = null
 var ShowPrecacheEvent = null
 var PTID = null
+var MinimapPTIDs = [];
 var HeroesPanels = []
 var tabsData = {}
 var PlayerSpawnBoxes = {}
@@ -602,7 +603,10 @@ function HeroSelectionEnd() {
 			GameEvents.Unsubscribe(ShowPrecacheEvent)
 		if (PTID != null)
 			PlayerTables.UnsubscribeNetTableListener(PTID)
-
+		if (MinimapPTIDs.length > 0)
+			$.Each(MinimapPTIDs, function(ptid) {
+				PlayerTables.UnsubscribeNetTableListener(ptid)
+			})
 		$.GetContextPanel().DeleteAsync(0)
 	})
 }
@@ -706,5 +710,7 @@ function OnMinimapClickSpawnBox(team, level, index) {
 		})
 	}
 	f();
-	_DynamicMinimapSubscribe($("#MinimapImage").GetChild(0));
+	_DynamicMinimapSubscribe($("#MinimapImage").GetChild(0), function(ptid) {
+		MinimapPTIDs.push(ptid)
+	});
 })();

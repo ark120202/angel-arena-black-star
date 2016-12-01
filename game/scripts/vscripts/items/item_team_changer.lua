@@ -2,28 +2,28 @@ function ChangeTeam(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local playerID = caster:GetPlayerID()
-	if not caster:IsRealHero() or PLAYER_DATA[playerID].ChangedTeam or Duel:IsDuelOngoing() then
+	if not caster:IsRealHero() or Duel:IsDuelOngoing() then
 		return
 	end
 	--TODO Меню для смены в мультитим режиме
 	local targetTeam = DOTA_TEAM_BADGUYS
-	if caster:GetTeamNumber() == targetTeam then
+	local oldTeam = caster:GetTeamNumber()
+	if oldTeam == targetTeam then
 		targetTeam = DOTA_TEAM_GOODGUYS
 	end
 
-	if GetTeamPlayerCount(targetTeam) >= GetTeamPlayerCount(caster:GetTeamNumber()) then
+	if GetTeamPlayerCount(targetTeam) >= GetTeamPlayerCount(oldTeam) then
 		return
 	end
-	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. caster:GetTeamNumber(), playerID)
+	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
 
-	PLAYER_DATA[playerID].ChangedTeam = true
 	local gold = caster:GetGold()
-	local playerPickData
-	local tableData = PlayerTables:GetTableValue("hero_selection", caster:GetTeamNumber())
+	local playerPickData = {}
+	local tableData = PlayerTables:GetTableValue("hero_selection", oldTeam)
 	if tableData and tableData[playerID] then
-		playerPickData = tableData[playerID]
+		table.merge(playerPickData, tableData[playerID])
 		tableData[playerID] = nil
-		PlayerTables:SetTableValue("hero_selection", caster:GetTeamNumber(), tableData)
+		PlayerTables:SetTableValue("hero_selection", oldTeam, tableData)
 	end
 
 	for _,v in ipairs(FindAllOwnedUnits(caster:GetPlayerOwner())) do
@@ -36,10 +36,10 @@ function ChangeTeam(keys)
 	local fountain = FindFountain(targetTeam)
 	FindClearSpaceForUnit(caster, fountain:GetAbsOrigin(), true)
 
-
 	local newTableData = PlayerTables:GetTableValue("hero_selection", targetTeam)
-	if newTableData and newTableData[playerID] then
+	if newTableData and playerPickData then
 		newTableData[playerID] = playerPickData
+		PrintTable(newTableData)
 		PlayerTables:SetTableValue("hero_selection", targetTeam, newTableData)
 	end
 	Gold:SetGold(caster, gold)
@@ -52,7 +52,10 @@ function ChangeTeam(keys)
 			end
 		end
 	end
+	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
 	PlayerTables:AddPlayerSubscription("dynamic_minimap_points_" .. targetTeam, playerID)
+	PlayerResource:RefreshSelection()
+	
 	SpendCharge(ability, 1)
 end
 

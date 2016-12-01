@@ -156,11 +156,11 @@ function TableFullUpdate(msg) {
   }
 
   for (var k in listeners) {
-    try {
-      listeners[k](msg.name, changes, dels);
-    } catch (err) {
-      $.Msg("PlayerTables.TableFullUpdate callback error for '", msg.name, " -- ", newTable, "': ", err.stack);
-    };
+    // try {
+    listeners[k](msg.name, changes, dels);
+    /* } catch (err) {
+        $.Msg("PlayerTables.TableFullUpdate callback error for '", msg.name, " -- ", newTable, "': ", err.stack);
+      };*/
   }
 };
 
@@ -189,11 +189,11 @@ function UpdateTable(msg) {
   var listeners = PT.tableListeners[msg.name] || {};
   for (var k in listeners) {
     if (listeners[k]) {
-      try {
-        listeners[k](msg.name, t, {});
-      } catch (err) {
+      //try {
+      listeners[k](msg.name, t, {});
+      /*} catch (err) {
         $.Msg("PlayerTables.UpdateTable callback error for '", msg.name, " -- ", t, "': ", err.stack);
-      }
+      }*/
     }
   }
 }
@@ -217,11 +217,11 @@ function DeleteTableKeys(msg) {
   var listeners = PT.tableListeners[msg.name] || {};
   for (var k in listeners) {
     if (listeners[k]) {
-      try {
-        listeners[k](msg.name, {}, msg.keys);
-      } catch (err) {
+      //try {
+      listeners[k](msg.name, {}, msg.keys);
+      /*} catch (err) {
         $.Msg("PlayerTables.DeleteTableKeys callback error for '", msg.name, " -- ", msg.keys, "': ", err.stack);
-      }
+      }*/
     }
   }
 }

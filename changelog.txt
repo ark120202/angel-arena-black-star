@@ -3,11 +3,10 @@ TODO LIST:
 	переделать инвайт на 1х1 дуэли
 	Дополнить гайды
 	обезьяны
-	казино
-	мега линка контрящая автохекс
 	Бладстоун, который за стаки увелич маг урон
-	фикс краш рубик + висп
 	очищать абандонутых героев из селекшона
+	автохекс не дамажит
+	перекомпилировать карты с ФОНТАНАМИ
 	[[
 		caster:TriggerSpellReflect(ability)
 		caster:TriggerSpellAbsorb(ability)
@@ -39,220 +38,85 @@ TODO LIST:
 [url=https://goo.gl/KvRbHf]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://goo.gl/KvRbHf
 ============================================================
-	
 Angel Arena Black Star - Версия 1.3.3:
-Контейнеры теперь выглядят и работают лучше
-Много изменений баланса
-Переработан Phantom Lancer
-Изменения на карте
-Новые предметы: Shard of True Sight, Urn of Demons, Lotus Sphere
-Казино вернулось
-Руны богатства теперь дают больше золота
-========
 
-Containers now looks better
-Lots of balance
-Reworked Phantom Lancer
-Map Changes
-New items: Shard of True Sight, Urn of Demons, Lotus Sphere
-Casino is back
-Bounty rune now grants more gold
-
+============================================================
 Angel Arena Black Star - Version 1.3.3:
+
+============================================================
+Angel Arena Black Star - Version 1.3.3:
+
 General:
-	Inventory now looks and works better
-	Map slightly changed
-	All lootboxes containers now are shown in bottom right corner, nearby your inventory
-	Bosses on minimap now are shown dynamically, so there will be icon on the minimap only when the boss is alive
-	Now you can use shards directly from loot box
-	Phantom Lancer reworked
-	Titanium Fruit & Titanium Bar now not makes your hero invulnerable, instead it makes you magic immune and gives you immunity to all damage types
-	Added new item: Shard of True Sight
-	Added new item: Urn of Demons
-	Added new item: Lotus Sphere
-	Auto Scythe of Vyse now triggers Linken's Sphere & Lotus Orb
-	Casino is back!
+	
 Balance:
-	Medium & Easy Spot Creeps Magical Resistance: 35 => 15 %
-	Hard Spot Centaur's Magical Resistance: 90 => 30 %
-	Bounty Rune:
-		Gold: 50 + 2*Minute => 300 + 20*Minute
-		XP: 50 + 5*Minute => 150 + 10*Minute
+	Phantom Lancer - Juxtapose:
+		Illusion Trigger chance: 8 10 15 20 25 25 25 => 6 7 8 9 10 11 12 %
+		Hero Trigger Chance: 40 50 60 60 60 60 60 => 30 30 30 40 40 50 50 %
+		Max Illusions: 4 6 8 10 12 14 16 => 1 2 4 5 7 8 9
+		Scepter illusion immortality randius: 250 => 200
+		Illusion from illusion duration: 12 => 6
+		Illusion incoming damage: 500 => 500 475 450 425 400 375 350 %
+		Illusion outgoing damage: 25 => 20 22.5 25 27.5 30 32.5 35 %
+	Removed overhead messages from Diffusal Blade & Diffusal Style
 
-	Tome of Knowledge:
-		Stock Time: 0:40 => 1:00
-		Initial Stock Time: 3:00 => 4:00
 
-	Bosses:
-		The Netherdrake:
-			Magical Resistance: 70 => 50 %
-			Gold to all players in team: 100000 => 50000
-			Respawn Duration: 600 => 300
-			Armor: 125 => 230
-			BAT: 0.15 => 0.10
-			Max Health: 1000000 => 700000
-			Damage Min: 1000 => 10000
-			Damage Max: 1500 => 12000
+	item_mask_of_madness
 
-		Ancient Beast:
-			Gold to all players in team: 25000 => 15000
-			Respawn Duration: 600 => 300
-			Magical Resistance: 50 => 40 %
-			Armor: 45 => 90
-			Damage Min: 3500 => 4200
-			Damage Max: 4500 => 5800
-			Max Health: 600000 => 500000
-			Health Regeneration: 10 => 150
-			Damage Min: 4200 => 4600
-			Damage Max: 5800 => 6000
+	berserk_bonus_movement_speed: 25 => 50
+	berserk_duration: 6 => 9
+	berserk_bonus_attack_speed: 150 => 200
+	AbilityManaCost: 25 => 0
+	AbilityCooldown: 25 => 12
 
-		Stone Statue:
-			Respawn Duration: 600 => 300
-			Armor: 45 => 120
-			Damage Min: 4600 => 4100
-			Damage Max: 6000" => 5600
-			Max Health: 500000 => 450000
-			Health Regeneration: 10 => 80
+	kunkka_ghostship:
+	AbilityDamage: 300 600 900 1200 1500 1800 2100 => 1000 2000 3000 4000 5000 6000 7000
 
-		Fire Golem:
-			Respawn Duration: 600 => 300
-			Magical Resistance: 50 => 40 %
-			Armor: 25 => 50
-			Damage Min: 2500 => 3500
-			Damage Max: 2800 => 4500
-			Max Health: 200000 => 400000
-			Health Regeneration: 10 => 50
+	kunkka_torrent:
+	AbilityDamage: 120 180 240 300 400 500 600 => 200 400 600 800 1000 1200 1400
 
-		Cursed Demon:
-			Respawn Duration: 600 => 300
-			Max Health: 200000 => 400000
-			Health Regeneration: 30 => 50
-			Damage Min: 2500 => 3200
-			Damage Max: 3000 => 4300
+	morphling_waveform:
+	AbilityDamage: 100 175 250 325 400 475 550 => 100 200 300 400 500 600 700
 
-		Heaven Guardian & Hell Guardian:
-			Respawn Duration: 600 => 500
-			Max Health: 100000 => 300000
-			Health Regeneration: 20 => 40
-			Gold to all players in team: 30000 => 10000
-			Damage Min: 800 => 1200
-			Damage Max: 1500 => 2000
-	Heroes:
-		Clockwerk - Hookshot:
-			Cooldown: 70.0 60.0 50.0 40.0 30.0 20.0 10.0 => 70.0 60.0 50.0 40.0 30.0 20.0 12.0
-			Cooldown with Scepter: 10.0 => 8
-			Levels Between Upgrades: 6 => 8
+	nevermore_dark_lord:
+	presence_armor_reduction: -3 -4 -5 -6 -10 -15 -20 => -6 -8 -10 -12 -14 -16 -18
 
-		Zuus - Thundergods Wrath:
-			Damage: 350 650 950 1200 1500 1800 2100 => 200 400 800 1400 2000 2600 3100
-			Damage with Scepter: 650 950 1200 1500 1800 2100 2500 => 300 600 900 1600 2100 2800 3500
-			Levels Between Upgrades: 6 => 15
+	chaos_knight_chaos_strike:
+	armor_reduction: -5 -6 -7 -9 -11 -13 -14 => -8 -16 -24 -36 -48 -54 -60
+	crit_damage: 125 175 225 275 300 325 350 => 120 160 200 240 280 320 360
 
-		Witch Doctor:
-			Paralyzing Cask:
-				Mana Cost: 110 120 130 140 150 160 170 => 100 120 150 170 200 210 230
-				Damage: 75 100 125 150 175 200 225 250 => 120 240 360 480 600 720 800
-				Stun Duration: 1.0 1.0 1.0 1.0 1.0 1.0 1.0 => 1.75
-				Bounces: 2 4 6 8 10 12 14 => 3 5 7 9 11 13 15
+	undying_decay
+	AbilityCooldown: 12.0 10.0 8.0 6.0 4.0 2.0 => 15 13 11 9 7 5 3
+	decay_damage: 20 60 100 140 180 220 260 => 50 150 250 350 450 550 650
+	str_steal: 2 4 5 7 8 10 11 => 10 20 30 40 50 60 70
+	str_steal_scepter: 10 11 13 14 16 17 19 => 15 30 40 50 65 70 80
 
-			Voodoo Restoration:
-				Mana Cost: 20 30 40 50 60 70 80 => 10 20 30 40 50 60 70
-				Mana Cost per Second: 8 12 16 20 50 75 100 => 4 6 8 10 25 40 50
-				Radius: 500 => 300 400 500 600 700 800 900
+	undying_soul_rip
+	radius:3500 => 9000
 
-			Maledict:
-				Cooldown: 20.0 => 30
-				Damage: 5 10 15 20 => 30 60 90 120 150 180 210
-				Mana Cost: 105 110 115 120 125 130 135 => 100 140 180 210 250 300 350
-				Damage for each damage recieved: 16 24 32 40 50 75 90 => 30 60 90 120 150 180 210 %
-				Radius: 180 => 120 140 160 180 200 220 240
+	alchemist_acid_spray
+	LevelsBetweenUpgrades 3 => 8
+	damage:15 20 25 30 40 50 60 => 30 60 90 110 140 180 210
 
-			Death Ward:
-				Bounces: 1 2 3 4 5 6 7 => 1
-				Cooldown: 100.0 95.0 90.0 80.0 75.0 60.0 50.0 => 90 80 70 60 50 40 30
-				Mana Cost: 200 200 200 => 150 200 250 300 350 400 450
-				Damage: 60 105 150 200 250 300 350 => 100 200 300 400 500 600 700
-				Levels Between Upgrades: 6 => 18 
+	alchemist_goblins_greed
+	LevelsBetweenUpgrades 10 => 15
+	RequiredLevel: => 4
 
-		Enigma - Midnight Pulse:
-			Damage: 3 3.75 4.5 5.25 5.5 6.25 7.0 => 1 1.25 1.75 2.0 2.25 2.75 3.0 %
+	item_blood_of_midas
+	xp_multiplier: 10 => 6
+	gold_multiplier: 25 => 12
 
-		Sniper:
-			Shrapnel:
-				Levels Between Upgrades:: 1 => 6
-				Max Charges: 3 4 5 6 7 8 9 => 3
+	mirratie_sixth_sense
+	radius: 2500 => 500 700 900 1100 1300 1500 1700
+	LevelsBetweenUpgrades: 1 => 5
 
-			Take Aim:
-				Levels Between Upgrades: 1 => 12
-			Assassinate:
-				Mana Cost: 175 275 375 475 575 675 775 => 75 150 275 350 400 450 500
-				Cooldown: 35 30 25 20 15 10 5 => 20 17 14 11 9 7 3
-
-		Necrolyte - Reapers Scythe:
-			Damage per Missing health point: 0.1 0.2 0.3 0.4 0.5 0.6 0.7 => 0.1 0.1 0.2 0.2 0.3 0.3 0.4
-			Damage per Missing health point with Scepter: 0.3 0.4 0.5 0.6 0.7 0.8 0.9 => 0.1 0.2 0.2 0.3 0.4 0.5 0.6
-
-		Slark - Essence Shift:
-			Duration: 30 60 120 150 180 210 228 => 30 60 120 150 180 210 230
-
-		Venomancer - Poison Nova:
-			Duration: 10 14 18 24 28 32 36 => 20 18 15 13 12 11 10
-			Damage: 50 100 150 200 250 300 350 => 100 400 500 600 700 800 1000
-			Duration with Scepter: 25 => 10
-			Damage with Scepter: 50 100 150 200 250 300 350 => 130 500 600 700 800 900 1110
-			Levels Between Upgrades: 6 => 10
-
-		Jakiro:
-			Dual Breath:
-				Damage: 40 60 80 100 120 140 160 => 50 80 110 140 170 200 230
-				Slow Movement Speed: -28 -32 -36 -40 -46 -52 28 => -10 -20 -30 -40 -50 -60 -70 %
-				Slow Attack Speed: -28 -32 -36 -40 -44 -48 -52 => -15 -30 -45 -60 -75 -90 -110 %
-
-			Ice Path:
-				Duration: 1.0 1.4 1.8 2.2 2.6 3.0 3.4 => 0.3 0.6 0.9 1.2 1.8 2.1 2.5
-				Damage: 25 50 75 100 125 150 175 => 50 90 150 200 240 290 350
-				Cooldown: 12.0 11.0 10.0 9.0 8.0 7.0 6.0 => 14.0 13.0 12.0 11.0 10.0 9.0 8.0
-
-			Macropyre:
-				Duration: 5 10 15 20 25 30 35 => 3 6 9 12 15 18 21
-
-		Furion:
-			Sprout:
-				Cooldown: 11 10 9 8 8 8 8 => 18 17 16 15 14 13 12 11
-				Duration: 3 4 5 6 7 8 9 => 2 2 2 3 4 5 6
-			Wrath of Nature:
-				Damage: 140 180 225 330 450 610 750 => 75 150 225 300 375 425 500
-				Damage with Scepter: 155 330 450 610 750 1500 3000 => 100 200 400 500 700 800 1000
-
-		Life Stealer - Feast:
-			Minimal level: 10 => 50
-
-		Techies - Suicide:
-			Cast Range: 666=> 500
-			Big Radius: 999 => 700
-			Damage: 666 777 888 999 1200 1800 2500 => 600 675 850 925 1500 2100 2900
-			Damage in big radius: 666 777 888 999 1200 1800 2500 => 500 575 750 825 1100 1800 2400.
-
-		Leshrac - Diabolic Edict:
-			Damage: 9 18 27 36 72 144 288 => 20 40 60 80 100 140 180
-		Shadow Shaman:
-			Shackles:
-				Cooldown: 15 => 20
-				Channel Duration: 2.75 3.5 4.25 5.0 5.5 6.0 7.0 => 0.9 1.4 1.9 2.3 2.7 3.1 3.5
-
-			Hex:
-				Duration: 1.25 2.0 2.75 3.5 3.7 4.0 5.0 => 0.5 0.9 1.2 1.5 1.8 2.1 2.5
-
-		Stegius - Brightness of Desolate:
-			Levels Between Upgrades: 1 => 6
-
-		Ogre Magi - Unrefined Fireblast:
-			Mana Cost: 100 => 33 %
-
+	kunkka_ghostship: Cost => 12
+		kunkka_torrent: Cost => 4
+		nevermore_dark_lord: Cost => 2
+		chaos_knight_chaos_strike: Cost => 4
+		undying_decay: Cost => 13
 Fixes:
-	Fixed very rare bug with containers, that stopped you from dropping items and opening loot boxes
-	Probably fixed a bug caused Angel Wings invisibility to stay on your hero after main effect end
-	Fixed stunned items could drop items with containers inventory
+	Fixed bugs with all events, that used fountains. Also, now you again can use any teleports on your fountain
+	Fixed hero selection and minimap bugs on 5:4 aspect ratio
 <<+===========================================================================================================
 rhasta,
 lycan,
@@ -266,5 +130,3 @@ venom
 pugna ward
 
 [	]*\/\/ Text Example[0-9.A-z\- ,\/\\]*\n
-Sniper - Take Aim:
-	Bonus attack range: 100 200 300 400 500 600 700 => 200 400 600 800 1000 1200 1400

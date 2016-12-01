@@ -96,6 +96,19 @@ ABILITY_SHOP_DATA = {
 	["stegius_brightness_of_desolate"] = { cost = 3, },
 	["queenofblades_army"] = { cost = 3, },
 	["viper_corrosive_skin"] = { cost = 2, },
+	["sniper_assassinate"] = { cost = 6, },
+	["sniper_take_aim"] = { cost = 9, },
+	["kunkka_ghostship"] = { cost = 12, },
+	["kunkka_torrent"] = { cost = 4, },
+	["nevermore_dark_lord"] = { cost = 2, },
+	["chaos_knight_chaos_strike"] = { cost = 4, },
+	["undying_decay"] = { cost = 13, },
+	[""] = { cost = 10, },
+	[""] = { cost = 10, },
+	[""] = { cost = 10, },
+	[""] = { cost = 10, },
+	[""] = { cost = 10, },
+	[""] = { cost = 10, },
 }
 
 ABILITY_SHOP_SKIP_HEROES = {

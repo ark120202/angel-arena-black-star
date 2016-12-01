@@ -593,7 +593,7 @@ function table.count(inputTable)
 end
 
 function FindFountain(team)
-	return Entities:FindByName(nil, "npc_dota_a_fountain_team" .. team)
+	return Entities:FindByName(nil, "npc_arena_fountain_" .. team)
 end
 
 function GetOriginalHeroTable(name)

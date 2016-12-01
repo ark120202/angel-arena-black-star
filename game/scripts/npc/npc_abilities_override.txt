@@ -794,6 +794,8 @@
 	"item_mask_of_madness"
 	{
 		"SecretShop"					"0"
+		"AbilityManaCost"				"0"
+		"AbilityCooldown"				"12"
 		"AbilitySpecial"
 		{
 			"01"
@@ -804,12 +806,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"berserk_bonus_attack_speed"	"150"
+				"berserk_bonus_attack_speed"	"200"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"berserk_bonus_movement_speed"	"25"
+				"berserk_bonus_movement_speed"	"50"
 			}
 			"04"
 			{
@@ -819,7 +821,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"berserk_duration"		"6"
+				"berserk_duration"		"9"
 			}
 		}
 	}
@@ -1721,8 +1723,8 @@
 		"AbilityCastRange"	"1500"
 		"AbilityCastPoint"	"0.1"
 		"AbilityCooldown"	"10"
-		"AbilityDamage"	"120 180 240 300 400 500 600"
-		"AbilityManaCost"	"120 120 120 120 120 120 120"
+		"AbilityDamage"		"200 400 600 800 1000 1200 1400"
+		"AbilityManaCost"	"120"
 		"AbilitySpecial"
 		{
 			"01"
@@ -1796,7 +1798,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"60.0 50.0 40.0 30.0 30.0 30.0"
-		"AbilityDamage"	"300 600 900 1200 1500 1800 2100"
+		"AbilityDamage"		"1000 2000 3000 4000 5000 6000 7000"
 		"AbilityManaCost"	"125 175 225 250 300 350 400"
 		"AbilitySpecial"
 		{
@@ -2135,7 +2137,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"20.0 18.0 15.0 14.0 12. 10.0 8.0"
-		"AbilityDamage"	"100 175 250 325 400 475 550"
+		"AbilityDamage"		"100 200 300 400 500 600 700"
 		"AbilityManaCost"	"150 175 200 250 300 350 400"
 
 	}
@@ -2428,7 +2430,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"presence_armor_reduction"	"-3 -4 -5 -6 -10 -15 -20"
+				"presence_armor_reduction"	"-6 -8 -10 -12 -14 -16 -18"
 			}
 
 		}
@@ -8830,7 +8832,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"15 20 25 30 40 50 60"
+				"damage"	"30 60 90 110 140 180 210"
 			}
 
 			"04"
@@ -8855,38 +8857,32 @@
 				"var_type"	"FIELD_FLOAT"
 				"brew_time"	"1.0 2.0 3.0 4.0 5.0 6.0 7.0"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"brew_explosion"	"5.5 6.0 6.5 7.0 7.5 8.0 8.5"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"min_stun"	"0.50 1.0 1.5 2.0 2.5 3.0 3.5"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"max_stun"	"1.75 2.5 3.25 4.0 5.0 6.0 7.0"
 			}
-
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"min_damage"	"100 200 300 400 500 600 700"
 			}
-
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"max_damage"	"300 400 500 600 700 800 900"
 			}
 		}
-
 	}
 
 	"alchemist_unstable_concoction_throw"
@@ -8899,74 +8895,62 @@
 				"var_type"	"FIELD_FLOAT"
 				"brew_time"	"5.0 5.5 6.0 6.5 7.0 7.5 8.0"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"min_stun"	"0.50 1.0 1.5 2.0 2.5 3.0 3.5"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"max_stun"	"1.75 2.5 3.25 4.0 5.0 6.0 7.0"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"min_damage"	"100 200 300 400 500 600 700"
 			}
-
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"max_damage"	"300 400 500 600 700 800 900"
 			}
-
 			"09"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"brew_explosion"	"1.0 2.0 3.0 4.0 5.0 6.0 7.0"
 			}
-
 		}
-
 	}
 
 	"alchemist_goblins_greed"
 	{
 		"MaxLevel"	"7"
-		"LevelsBetweenUpgrades" "10"
+		"LevelsBetweenUpgrades" "15"
+		"RequiredLevel"   "4"
 		"AbilitySpecial"
 		{
-
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_gold"	"3 10 15 20 25 30 35"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_bonus_gold"	"3 5 7 9 11 13 15"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_gold_cap"	"6 20 28 36 72 92 110"
 			}
-
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bounty_multiplier_tooltip"	"5 10 15 20 25 30 35"
 			}
-
 		}
-
 	}
 
 	"alchemist_chemical_rage"
@@ -8977,39 +8961,32 @@
 		"AbilityManaCost"	"50 100 150 200 250 300 350"
 		"AbilitySpecial"
 		{
-
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"base_attack_time"	"1.6 1.5 1.4 1.3 1.2 1.1 1.0"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_health"	"500 1000 1500 2000 2500 3000 3500"
 			}
-
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_health_regen"	"20 40 60 80 100 120 140"
 			}
-
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"bonus_mana_regen"	"3.0 7.5 12.0 15.0 20.0 25.0 30.0"
 			}
-
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_movespeed"	"30 40 60 70 80 90 100"
 			}
-
 		}
-
 	}
 
 	"invoker_quas"
@@ -9357,7 +9334,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"travel_distance"	"465 615 780 930 1095 1245 1410 1575 1700"
+				"travel_distance"	"615 780 930 1095 1245 1410 1575 1700"
 				"levelkey"	"wexlevel"
 			}
 
@@ -9389,7 +9366,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"main_damage"	"100 200 300 400 600 700 800 900"
+				"main_damage"	"200 300 400 600 700 800 900"
 				"levelkey"	"exortlevel"
 			}
 
@@ -9463,28 +9440,28 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"spirit_damage"	"40 80 120 160 200 240 280"
+				"spirit_damage"	"40 80 120 160 200 240 280 300"
 				"levelkey"	"exortlevel"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"spirit_mana"	"100 150 200 250 300 350 400 450 500"
+				"spirit_mana"	"150 200 250 300 350 400 450 500"
 				"levelkey"	"exortlevel"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"spirit_armor"	"6 9 12 15 18 21 25"
+				"spirit_armor"	"6 9 12 15 18 21 25 28"
 				"levelkey"	"exortlevel"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"spirit_attack_range"	"300 365 430 495 560 625 690 755 800"
+				"spirit_attack_range"	"365 430 495 560 625 690 755 800"
 				"levelkey"	"quaslevel"
 			}
 
@@ -9542,14 +9519,14 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"3.0 4.5 6.0 7.5 9.0 10.5 12.0 13.5 14.0"
+				"duration"	"4.5 6.0 7.5 9.0 10.5 12.0 13.5 14.0"
 				"levelkey"	"quaslevel"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"slow"	"-20 -40 -60 -80 -100 -120 -140 -160 -180"
+				"slow"	"-40 -60 -80 -100 -120 -140 -160 -180"
 				"levelkey"	"quaslevel"
 			}
 
@@ -9642,14 +9619,14 @@
 			"07"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"knockback_duration"	"0.25 0.5 0.75 1.0 1.25 1.5 1.75 2.0 2.25"
+				"knockback_duration"	"0.5 0.75 1.0 1.25 1.5 1.75 2.0 2.25"
 				"levelkey"	"quaslevel"
 			}
 
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"disarm_duration"	"1.25 2.0 2.75 3.5 4.25 5.0 5.75 6.5 7.0"
+				"disarm_duration"	"2.0 2.75 3.5 4.25 5.0 5.75 6.5 7.0"
 				"levelkey"	"wexlevel"
 			}
 
@@ -10579,13 +10556,13 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"crit_damage"	"125 175 225 275 300 325 350"
+				"crit_damage"	"120 160 200 240 280 320 360"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"armor_reduction"	"-5 -6 -7 -9 -11 -13 -14"
+				"armor_reduction"	"-8 -16 -24 -36 -48 -54 -60"
 			}
 		}
 
@@ -10990,25 +10967,25 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.45 0.45 0.45 0.45 0.45 0.45 0.45"
-		"AbilityCooldown"	"12.0 10.0 8.0 6.0 4.0 2.0"
+		"AbilityCooldown"	"15 13 11 9 7 5 3"
 		"AbilityManaCost"	"70 90 110 130 150 170 190"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"decay_damage"	"20 60 100 140 180 220 260"
+				"decay_damage"	"50 150 250 350 450 550 650"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"str_steal"	"2 4 5 7 8 10 11"
+				"str_steal"	"10 20 30 40 50 60 70"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"str_steal_scepter"				"10 11 13 14 16 17 19"
+				"str_steal_scepter"				"15 30 40 50 65 70 80"
 			}
 		}
 
@@ -11038,7 +11015,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"3500"
+				"radius"	"9000"
 			}
 
 			"04"
@@ -11617,7 +11594,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0 0 0 0 0 0 0"
 		"AbilityManaCost"	"80 90 100 110 120 130 150"
-		"AbilityDamage"	"100 150 200 250 300 350 400"
+		"AbilityDamage"		"100 150 200 250 300 350 400"
 		"AbilitySpecial"
 		{
 			"01"

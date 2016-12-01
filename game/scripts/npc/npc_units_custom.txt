@@ -303,82 +303,29 @@
 	}
 
 	//fountains
-	"npc_dota_a_fountain_team2"
+	"npc_arena_fountain"
 	{
 		// General
 		//
 		"BaseClass"	"npc_dota_building"
-		"Model"	"models/buildings/building_racks_ranged_reference.vmdl"
+		"Model"	"models/development/invisiblebox.vmdl"
 		"Level"	"1000"
-
-		// Attack
-		//----------------------------------------------------------------
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
 
-		// Bounds
-		//----------------------------------------------------------------
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
 		"MovementSpeed"	"0"	// Speed
 		"MovementTurnRate"	"0"	// Turning rate.
-		"FollowRange"	"0"	// Distance to keep when following
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"	"100000"	// Base health.
+		"StatusHealth"	"1"	// Base health.
 		"StatusHealthRegen"	"0"	// Health regeneration rate.
 		"StatusMana"	"0"	// Base mana.
 		"StatusManaRegen"	"0"	// Mana regeneration rate.
 
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"	"DOTA_TEAM_GOODGUYS"	// Team name.
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1500"
-		"VisionNighttimeRange"		"1500"
-	}
-
-	"npc_dota_a_fountain_team3"
-	{
-		// General
-		//
-		"BaseClass"	"npc_dota_building"
-		"Model"	"models/buildings/building_racks_melee_reference.vmdl"
-		"Level"	"1000"
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"	"0"	// Speed
-		"MovementTurnRate"	"0"	// Turning rate.
-		"FollowRange"	"0"	// Distance to keep when following
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"	"100000"	// Base health.
-		"StatusHealthRegen"	"0"	// Health regeneration rate.
-		"StatusMana"	"0"	// Base mana.
-		"StatusManaRegen"	"0"	// Mana regeneration rate.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"	"DOTA_TEAM_BADGUYS"	// Team name.
-		
-		// Vision
-		//----------------------------------------------------------------
+		"TeamName"	"DOTA_TEAM_NEUTRALS"
 		"VisionDaytimeRange"		"1500"
 		"VisionNighttimeRange"		"1500"
 	}
