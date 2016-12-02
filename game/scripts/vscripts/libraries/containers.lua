@@ -1982,7 +1982,7 @@ function Containers:CreateContainer(cont)
 		pt.Duration_SpawnTime = GameRules:GetGameTime()
 		pt.Duration_Remaining = cont.RemainingDuration
 		Timers:CreateTimer(cont.RemainingDuration, function()
-			if c then
+			if IsValidContainer(c) then
 				c:GetEntity():RemoveSelf()
 				c:Delete(true)
 			end
