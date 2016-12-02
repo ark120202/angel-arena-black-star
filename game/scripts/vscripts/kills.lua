@@ -110,7 +110,7 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 				if player and player:GetAssignedHero() then
 					SendOverheadEventMessage(player, OVERHEAD_ALERT_GOLD, player:GetAssignedHero(), assistGold, player)
 				end
-				Gold:ModifyGold(playerID, assistGold, true)
+				Gold:ModifyGold(playerID, assistGold)
 			end
 		end
 		Kills:_CreateKillTooltip(nil, KILLS_TOOLTIP_ACTION_KILL, killedUnit, goldChange)
@@ -125,7 +125,7 @@ function Kills:_GiveKillGold(killerEntity, killedUnit, goldChange)
 		plId = killerEntity:GetPlayerOwnerID()
 	end
 	if plId then
-		Gold:ModifyGold(plId, goldChange, true)
+		Gold:ModifyGold(plId, goldChange)
 		SendOverheadEventMessage(killerEntity:GetPlayerOwner(), OVERHEAD_ALERT_GOLD, killedUnit, goldChange, killerEntity:GetPlayerOwner())
 	end
 end

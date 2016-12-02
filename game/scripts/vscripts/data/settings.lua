@@ -10,8 +10,8 @@ PRE_GAME_TIME = 99999                   -- How long after people select their he
 POST_GAME_TIME = 60.0                   -- How long should we let people look at the scoreboard before closing the server automatically?
 TREE_REGROW_TIME = 60.0                 -- How long should it take individual trees to respawn after being cut down/destroyed?
 
-GOLD_PER_TICK = 4                       -- How much gold should players get per tick?
-GOLD_TICK_TIME = 0.6                    -- How long should we wait in seconds between gold ticks?
+GOLD_PER_TICK = 0                       -- How much gold should players get per tick?
+GOLD_TICK_TIME = 0                      -- How long should we wait in seconds between gold ticks?
 
 RECOMMENDED_BUILDS_DISABLED = false     -- Should we disable the recommened builds for heroes
 CAMERA_DISTANCE_OVERRIDE = -1           -- How far out should we allow the camera to go?  Use -1 for the default (1134) while still allowing for panorama camera distance changes
@@ -76,7 +76,7 @@ MINIMUM_ATTACK_SPEED = 20               -- What should we use for the minimum at
 
 GAME_END_DELAY = -1                     -- How long should we wait after the game winner is set to display the victory banner and End Screen?  Use -1 to keep the default (about 10 seconds)
 VICTORY_MESSAGE_DURATION = 3            -- How long should we wait after the victory message displays to show the End Screen?  Use 
-STARTING_GOLD = 625                     -- How much starting gold should we give to each player?
+STARTING_GOLD = 0                       -- How much starting gold should we give to each player?
 DISABLE_DAY_NIGHT_CYCLE = false         -- Should we disable the day night cycle from naturally occurring? (Manual adjustment still possible)
 DISABLE_KILLING_SPREE_ANNOUNCER = false -- Shuold we disable the killing spree announcer?
 DISABLE_STICKY_ITEM = true              -- Should we disable the sticky item button in the quick buy area?
@@ -149,7 +149,6 @@ DOTA_KILL_GOAL_VOTE_MIN = 75
 DOTA_KILL_GOAL_VOTE_MAX = 150
 DOTA_KILL_GOAL_VOTE_STANDART = 112
 DOTA_PLAYER_AUTOABANDON_TIME = 60*8
-GOLD_FOR_RANDOM_HERO = 375
 MAX_SPAWNBOXES_SELECTED = 3
 
 ARENA_SETTINGS = {
@@ -161,3 +160,7 @@ ARENA_SETTINGS = {
 	WinGold_Base = 500,
 	WinGold_PerDuel = 2000,
 }
+CUSTOM_STARTING_GOLD = 625
+CUSTOM_GOLD_FOR_RANDOM_TOTAL = 1000
+CUSTOM_GOLD_PER_TICK = 4   
+CUSTOM_GOLD_TICK_TIME = 0.6

@@ -215,7 +215,7 @@ function GameMode:OnGameInProgress()
 	end
 	PlayerResource:RefreshSelection()
 	Scepters:SetGlobalScepterThink()
-	Timers:CreateTimer(GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
+	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
 end
 
 -- This function initializes the game mode and is called before anyone loads into the game
@@ -344,6 +344,9 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			table.insert(units, u)
 		end
 	end
+	if order_type == DOTA_UNIT_ORDER_SELL_ITEM or order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
+		return false
+	end
 	for _,unit in ipairs(units) do
 		if unit:GetUnitName() == "npc_dota_courier" then
 			local palyerTeam = PlayerResource:GetTeam(issuer_player_id_const)
@@ -403,13 +406,6 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_ability_inactive")
 			return false
 		end
-		if order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM and filterTable.entindex_ability and GetKeyValue(GetItemNameById(filterTable.entindex_ability), "ItemPurchasableFilter") == 0 then
-			return false
-		end
-		if order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM and Duel:IsDuelOngoing() then
-			Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_cant_purchase_duel_ongoing")
-			return false
-		end
 		if unit:IsRealHero() then
 			if order_type == DOTA_UNIT_ORDER_CAST_TARGET then
 				if ability then
@@ -422,19 +418,6 @@ function GameMode:ExecuteOrderFilter(filterTable)
 						filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
 						return true
 					end
-				end
-			elseif order_type == DOTA_UNIT_ORDER_SELL_ITEM then
-				if ability and ability.GetAbilityName and ability:GetAbilityName() == "item_pocket_riki" then
-					local gold = Kills:GetGoldForKill(ability.RikiContainer)
-					Gold:ModifyGold(unit, gold, true)
-					SendOverheadEventMessage(unit:GetPlayerOwner(), OVERHEAD_ALERT_GOLD, unit, gold, unit:GetPlayerOwner())
-					TrueKill(unit, ability, ability.RikiContainer)
-					Kills:ClearStreak(ability.RikiContainer:GetPlayerID())
-					unit:RemoveItem(ability)
-					unit:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
-					unit:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
-					unit:RemoveModifierByName("modifier_invisible")
-					GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber()) 
 				end
 			end
 			if filterTable.position_x ~= 0 and filterTable.position_y ~= 0 then
@@ -521,6 +504,7 @@ function GameMode:DamageFilter(filterTable)
 end
 
 function GameMode:BountyRunePickupFilter(filterTable)
+	local palyer = PlayerResource:GetPlayer(filterTable.player_id_const)
 	local hero = PlayerResource:GetSelectedHeroEntity(filterTable.player_id_const)
 	filterTable.gold_bounty = 300 + (20 * GetDOTATimeInMinutesFull())
 	filterTable.xp_bounty = 150 + (10 * GetDOTATimeInMinutesFull())
@@ -541,7 +525,10 @@ function GameMode:BountyRunePickupFilter(filterTable)
 		gold_multiplier = gold_multiplier + item_blood_of_midas:GetLevelSpecialValueFor("gold_multiplier", item_blood_of_midas:GetLevel() - 1)
 		xp_multiplier = xp_multiplier + item_blood_of_midas:GetLevelSpecialValueFor("xp_multiplier", item_blood_of_midas:GetLevel() - 1)
 	end
-	filterTable.gold_bounty = filterTable.gold_bounty * gold_multiplier
+	local totalGold = filterTable.gold_bounty * gold_multiplier
+	Gold:AddGoldWithMessage(hero, totalGold)
+
+	filterTable.gold_bounty = 0
 	filterTable.xp_bounty = filterTable.xp_bounty * xp_multiplier
 	return true
 end
@@ -551,10 +538,13 @@ function GameMode:ModifyGoldFilter(filterTable)
 	local playerID = filterTable["player_id_const"]
 	local reason = filterTable["reason_const"]
 	local reliable = filterTable["reliable"] == 1]]
-	if filterTable.reason_const == DOTA_ModifyGold_HeroKill then
+	if filterTable.reason_const >= 12 and filterTable.reason_const <= 14 then
 		filterTable["gold"] = 0
 		return false
 	end
+	filterTable["gold"] = 0
+	print("[GameMode:ModifyGoldFilter]: Attempt to call default dota gold modify func... FIX IT - Reason: " .. filterTable.reason_const .."  --  Amount: " .. filterTable["gold"])
+	return false
 end
 
 function CDOTAGamerules:SetKillGoal(iGoal)
@@ -623,17 +613,9 @@ function GameMode:PrecacheUnitQueueed(name)
 end
 
 function GameMode:GameModeThink()
-	--if false then return end
-
 	for _,v in ipairs(HeroList:GetAllHeroes()) do
 		if v and not v:IsNull() then
 			PlayerTables:SetTableValue("entity_attributes", v:GetEntityIndex(), {
-				--[[str_base = v:GetBaseStrength(),
-				agi_base = v:GetBaseAgility(),
-				int_base = v:GetBaseIntellect(),
-				str_add = v:GetStrength() - v:GetBaseStrength(),
-				agi_add = v:GetAgility() - v:GetBaseAgility(),
-				int_add = v:GetIntellect() - v:GetBaseIntellect(),]]
 				str = v:GetStrength(),
 				agi = v:GetAgility(),
 				int = v:GetIntellect(),
@@ -652,10 +634,33 @@ function GameMode:GameModeThink()
 			if PlayerResource:GetSelectedHeroEntity(i) then
 				PlayerTables:SetTableValue("player_hero_entities", i, PlayerResource:GetSelectedHeroEntity(i):GetEntityIndex())
 			end
-			if not PLAYER_DATA[i].IsAbandoned and PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
-				PLAYER_DATA[i].AutoAbandonGameTime = nil
-				Gold:UpdatePlayerGold(i)
-			elseif PLAYER_DATA[i].IsAbandoned then
+			Gold:AddGold(i, CUSTOM_GOLD_PER_TICK)
+			if not IsPlayerAbandoned(i) then
+				if PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
+					PLAYER_DATA[i].AutoAbandonGameTime = nil
+				else
+					if PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
+						if not PLAYER_DATA[i].AutoAbandonGameTime then
+							PLAYER_DATA[i].AutoAbandonGameTime = Time() + DOTA_PLAYER_AUTOABANDON_TIME
+							GameRules:SendCustomMessage("#DOTA_Chat_DisconnectWaitForReconnect", i, -1)
+						end
+						local timeLeft = PLAYER_DATA[i].AutoAbandonGameTime - Time()
+						if not PLAYER_DATA[i].LastLeftNotify or timeLeft < PLAYER_DATA[i].LastLeftNotify - 60 then
+							PLAYER_DATA[i].LastLeftNotify = timeLeft
+							GameRules:SendCustomMessage("#DOTA_Chat_DisconnectTimeRemainingPlural", i, math.round(timeLeft/60))
+						end
+						if PlayerResource:GetConnectionState(i) ~= DOTA_CONNECTION_STATE_CONNECTED then
+							if timeLeft <= 0 then
+								GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandonedDisconnectedTooLong", i, -1)
+								MakePlayerAbandoned(i)
+							end
+						end
+					elseif PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
+						GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandoned", i, -1)
+						MakePlayerAbandoned(i)
+					end
+				end
+			else
 				local gold = Gold:GetGold(i)
 				local allyCount = GetTeamPlayerCount(PlayerResource:GetTeam(i))
 				local goldPerAlly = math.floor(gold/allyCount)
@@ -668,34 +673,11 @@ function GameMode:GameModeThink()
 						end
 					end
 				end
-			elseif not PLAYER_DATA[i].IsAbandoned then
-				if PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
-					if not PLAYER_DATA[i].AutoAbandonGameTime then
-						PLAYER_DATA[i].AutoAbandonGameTime = Time() + DOTA_PLAYER_AUTOABANDON_TIME
-						GameRules:SendCustomMessage("#DOTA_Chat_DisconnectWaitForReconnect", i, -1)
-					end
-					local timeLeft = PLAYER_DATA[i].AutoAbandonGameTime - Time()
-					if not PLAYER_DATA[i].LastLeftNotify or timeLeft < PLAYER_DATA[i].LastLeftNotify - 60 then
-						PLAYER_DATA[i].LastLeftNotify = timeLeft
-						GameRules:SendCustomMessage("#DOTA_Chat_DisconnectTimeRemainingPlural", i, math.round(timeLeft/60))
-					end
-
-					if PlayerResource:GetConnectionState(i) ~= DOTA_CONNECTION_STATE_CONNECTED then
-						if timeLeft <= 0 then
-							GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandonedDisconnectedTooLong", i, -1)
-							MakePlayerAbandoned(i)
-						end
-					end
-				elseif PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
-					GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandoned", i, -1)
-					MakePlayerAbandoned(i)
-				end
 			end
-
 		end
 	end
 	
-	return GOLD_TICK_TIME
+	return CUSTOM_GOLD_TICK_TIME
 end
 -- GameRules:Playtesting_UpdateAddOnKeyValues()
 -- dota_create_fake_clients

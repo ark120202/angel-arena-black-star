@@ -251,14 +251,13 @@ function HeroSelection:PreformPlayerRandom(playerId)
 
 	while true do
 		local heroData = heroes[RandomInt(1, #heroes)]
-
 		if not HeroSelection:IsHeroSelected(heroData.heroKey) then
 			local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(playerId))
 			if not tableData[playerId] then tableData[playerId] = {} end
 			tableData[playerId].hero = heroData.heroKey
 			tableData[playerId].status = "picked"
 			PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(playerId), tableData)
-			Gold:ModifyGold(playerId, GOLD_FOR_RANDOM_HERO, true)
+			Gold:ModifyGold(playerId, CUSTOM_GOLD_FOR_RANDOM_TOTAL, true)
 			break
 		end
 	end
@@ -406,6 +405,7 @@ function HeroSelection:OnHeroSelectHero(data)
 			newHeroName = string.sub(data.hero, 13)
 		end
 		PrecacheUnitByNameAsync(newHeroName, function() end, data.PlayerID)
+		Gold:ModifyGold(data.PlayerID, CUSTOM_STARTING_GOLD, true)
 	end
 
 	local canEnd = not HeroSelection.SelectionEnd

@@ -127,7 +127,7 @@ end
 function GameMode:ModifierClickedPurge(data)
 	if data.PlayerID and data.unit and data.modifier then
 		local ent = EntIndexToHScript(data.unit)
-		if ent and ent.entindex and ent:GetOwner() == PlayerResource:GetPlayer(data.PlayerID) and table.contains(ONCLICK_PURGABLE_MODIFIERS, data.modifier) then
+		if ent and ent.entindex and ent:GetPlayerOwner() == PlayerResource:GetPlayer(data.PlayerID) and table.contains(ONCLICK_PURGABLE_MODIFIERS, data.modifier) then
 			ent:RemoveModifierByName(data.modifier)
 		end
 	end

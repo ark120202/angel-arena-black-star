@@ -521,27 +521,6 @@ function GetDotaAbilityLayout(unit)
 	end
 end
 
-function FillSlotsWithDummy(unit)
-	for i=0, 11 do
-		local current_item = unit:GetItemInSlot(i)
-		if current_item == nil then
-			unit:AddItem(CreateItem("item_dummy", unit, unit))
-		end
-	end
-end
-
-function ClearSlotsFromDummy(unit)
-	for i=0, 11 do
-		local current_item = unit:GetItemInSlot(i)
-		if current_item ~= nil then
-			if current_item:GetName() == "item_dummy" then
-				unit:RemoveItem(current_item)
-				UTIL_Remove(current_item)
-			end
-		end
-	end
-end
-
 function swap_to_item(unit, srcItem, newItem)
 	FillSlotsWithDummy(unit)
 	if unit:HasItemInInventory(srcItem:GetName()) then
@@ -553,21 +532,16 @@ function swap_to_item(unit, srcItem, newItem)
 end
 
 function FindItemInInventoryByName(unit, itemname, searchStash)
-	if not unit:HasItemInInventory( itemname ) then
-		return nil
-	end
 	local lastSlot = 5
 	if searchStash then
 		lastSlot = 11
 	end
-	for slot= 0, lastSlot, 1 do
-		local item = unit:GetItemInSlot( slot )
+	for slot = 0, lastSlot do
+		local item = unit:GetItemInSlot(slot)
 		if item and item:GetAbilityName() == itemname then
 			return item
 		end
 	end
-	
-	return nil
 end
 
 function RemoveDeathPreventingModifiers(unit)
@@ -1387,4 +1361,53 @@ function GetHeroTableByName(name)
 		table.merge(output, custom)
 	end
 	return output
+end
+
+function SetAllItemSlotsLocked(unit, locked, bNoStash)
+	for i = 0, bNoStash and 5 or 11 do
+		local current_item = unit:GetItemInSlot(i)
+		if current_item then
+			ExecuteOrderFromTable({
+				UnitIndex = unit:GetEntityIndex(), 
+				OrderType = DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK,
+				AbilityIndex = current_item:GetEntityIndex(),
+				TargetIndex = locked and 1 or 0,
+				Queue = false
+			})
+		end
+	end
+end
+
+function FillSlotsWithDummy(unit, bNoStash)
+	for i = 0, bNoStash and 5 or 11 do
+		local current_item = unit:GetItemInSlot(i)
+		if not current_item then
+			unit:AddItem(CreateItem("item_dummy", unit, unit))
+		end
+	end
+end
+
+function ClearSlotsFromDummy(unit, bNoStash)
+	for i = 0, bNoStash and 5 or 11 do
+		local current_item = unit:GetItemInSlot(i)
+		if current_item and current_item:GetAbilityName() == "item_dummy" then
+			unit:RemoveItem(current_item)
+			UTIL_Remove(current_item)
+		end
+	end
+end
+
+function GetAllItemsByNameInInventory(unit, itemname, searchStash)
+	local lastSlot = 5
+	if searchStash then
+		lastSlot = 11
+	end
+	local items = {}
+	for slot = 0, lastSlot do
+		local item = unit:GetItemInSlot( slot )
+		if item and item:GetAbilityName() == itemname then
+			table.insert(items, item)
+		end
+	end
+	return items
 end

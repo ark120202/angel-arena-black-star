@@ -123,8 +123,7 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush) {
 	})
 	panel.SetPanelEvent("oncontextmenu", function() {
 		if (panel.BHasClass("CanBuy")) {
-			var ItemCounter = {}
-			SendItemBuyOrder(itemName, ItemCounter)
+			SendItemBuyOrder(itemName)
 		} else {
 			GameEvents.SendEventClientSide("dota_hud_error_message", {
 				"splitscreenplayer": 0,
@@ -236,35 +235,14 @@ function ShowItemRecipe(itemName) {
 	}
 }
 
-function SendItemBuyOrder(itemName, ItemCounter, baseItem) {
-	if (ItemCounter[itemName] == null) {
-		ItemCounter[itemName] = 0
-		UpdateShop()
-	}
-	ItemCounter[itemName] = ItemCounter[itemName] + 1
-	var itemCount = GetItemCountInInventory(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), itemName, true)
-	if (itemCount < ItemCounter[itemName] || !baseItem) {
-		if (!baseItem)
-			Game.EmitSound("General.Buy")
-		var unit = Players.GetLocalPlayerPortraitUnit()
-		if (!Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID()) || !Entities.IsInventoryEnabled(unit))
-			unit = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID())
-		var RecipeData = ItemData[itemName].Recipe
-		if (RecipeData != null && RecipeData.items != null) {
-			$.Each(RecipeData.items[1], function(childName) {
-				SendItemBuyOrder(childName, ItemCounter, baseItem || itemName)
-			})
-			if (RecipeData.visible && RecipeData.recipeItemName != null) {
-				SendItemBuyOrder(RecipeData.recipeItemName, ItemCounter, baseItem || itemName)
-			}
-		} else {
-			Game.PrepareUnitOrders({
-				OrderType: dotaunitorder_t.DOTA_UNIT_ORDER_PURCHASE_ITEM,
-				AbilityIndex: ItemData[itemName].id,
-				Queue: false
-			})
-		}
-	}
+function SendItemBuyOrder(itemName) {
+	var pid = Game.GetLocalPlayerID();
+	var unit = Players.GetLocalPlayerPortraitUnit()
+	unit = Entities.IsControllableByPlayer(unit, pid) ? unit : Players.GetPlayerHeroEntityIndex(pid);
+	GameEvents.SendCustomGameEventToServer("panorama_shop_item_buy", {
+		"itemName": itemName,
+		"unit": unit,
+	});
 }
 
 function ItemShowTooltip(panel) {
@@ -544,8 +522,7 @@ function ShowHideItembuilds() {
 			if (!child.BHasClass("DropDownValidTarget")) {
 				UpdateSmallItem(child)
 				if (child.BHasClass("CanBuy")) {
-					var ItemCounter = {}
-					SendItemBuyOrder(child.itemName, ItemCounter)
+					SendItemBuyOrder(child.itemName)
 					bought = true;
 					return false
 				}
@@ -561,8 +538,7 @@ function ShowHideItembuilds() {
 		}
 	})
 	Game.Events.F8Pressed.push(function() {
-		var ItemCounter = {}
-		SendItemBuyOrder($("#QuickBuyStickyButtonPanel").GetChild(0).itemName, ItemCounter)
+		SendItemBuyOrder($("#QuickBuyStickyButtonPanel").GetChild(0).itemName)
 	})
 	Game.MouseEvents.OnLeftPressed.push(function() {
 		$("#ShopBase").AddClass("ShopBase_Out")

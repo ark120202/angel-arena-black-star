@@ -95,7 +95,6 @@ function PanoramaShop:InitializeItemTable()
 		end
 	end
 	local allItembuilds = {}
---	PrintTable(ARENA_ITEMBUILDS)
 	table.add(allItembuilds, ARENA_ITEMBUILDS)
 	table.add(allItembuilds, VALVE_ITEMBUILDS)
 
@@ -112,5 +111,198 @@ function PanoramaShop:InitializeItemTable()
 	end
 	PanoramaShop._ItemData = Items
 	CustomGameEventManager:RegisterListener("panorama_shop_item_buy", Dynamic_Wrap(PanoramaShop, "OnItemBuy"))
+	CustomGameEventManager:RegisterListener("panorama_shop_sell_item", Dynamic_Wrap(PanoramaShop, "OnItemSell"))
 	PlayerTables:CreateTable("panorama_shop_data", {ItemData = PanoramaShop.FormattedData, ShopList = Items, Itembuilds = itembuilds}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+end
+
+function PanoramaShop:OnItemSell(data)
+	if data and data.itemIndex and data.unit then
+		local player = PlayerResource:GetPlayer(data.PlayerID)
+		local itemEnt = EntIndexToHScript(tonumber(data.itemIndex))
+		local ent = EntIndexToHScript(data.unit)
+
+		if GetKeyValue(data.itemIndex, "ItemPurchasableFilter") ~= 0 and ent and ent.entindex and ent:GetPlayerOwner() == player and itemEnt and itemEnt:GetOwner():GetPlayerOwner() == player then
+			local cost = GetTrueItemCost(itemEnt:GetAbilityName())
+			if GameRules:GetGameTime() - itemEnt:GetPurchaseTime() > 10 then
+				cost = cost / 2
+			end
+			if itemEnt:GetAbilityName() == "item_pocket_riki" then
+				gold = Kills:GetGoldForKill(ability.RikiContainer)
+				TrueKill(unit, ability, ability.RikiContainer)
+				Kills:ClearStreak(ability.RikiContainer:GetPlayerID())
+				unit:RemoveItem(ability)
+				unit:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
+				unit:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
+				unit:RemoveModifierByName("modifier_invisible")
+				GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber()) 
+			end
+			UTIL_Remove(itemEnt)
+			Gold:AddGoldWithMessage(ent, cost)
+		end
+	end
+end
+
+function PanoramaShop:OnItemBuy(data)
+	if data and data.itemName and data.unit then
+		local ent = EntIndexToHScript(data.unit)
+		if ent and ent.entindex and ent:GetPlayerOwner() == PlayerResource:GetPlayer(data.PlayerID) then
+			PanoramaShop:BuyItem(data.PlayerID, ent, data.itemName)
+		end
+	end
+end
+
+function PanoramaShop:BuyItem(playerID, unit, itemName)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+	local itemCounter = {}
+	if Duel:IsDuelOngoing() then
+		Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_cant_purchase_duel_ongoing")
+		return
+	end
+	local function GetPrimaryRecipeItems(childItemName)
+		local primary_items = {}
+		local itemData = PanoramaShop.FormattedData[childItemName]
+		if itemData.Recipe and itemData.Recipe then
+			for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
+				table.add(primary_items, GetPrimaryRecipeItems(newchilditem))
+			end
+			if itemData.Recipe.cost > 0 then
+				table.insert(primary_items, itemData.Recipe.recipeItemName)
+			end
+		else
+			table.insert(primary_items, childItemName)
+		end
+		return primary_items
+	end
+	local function GetAllPrimaryRecipeItems(childItemName)
+		local primary_items = {}
+		local itemData = PanoramaShop.FormattedData[childItemName]
+		if itemData.Recipe and itemData.Recipe then
+			for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
+				table.add(primary_items, GetAllPrimaryRecipeItems(newchilditem))
+			end
+			if itemData.Recipe.cost > 0 then
+				table.insert(primary_items, itemData.Recipe.recipeItemName)
+			end
+		end
+		table.insert(primary_items, childItemName)
+		return primary_items
+	end
+	local function HasAnyOfItemChildren(childItemName)
+		local primary_items = GetAllPrimaryRecipeItems(childItemName)
+		for _,v in ipairs(primary_items) do
+			if FindItemInInventoryByName(unit, v, true) then
+				return true
+			end
+		end
+		return false
+	end
+	local function IsItemChildrenPurchasable(childItemName)
+		local primary_items = GetAllPrimaryRecipeItems(childItemName)
+		table.insert(primary_items, childItemName)
+		for _,v in ipairs(primary_items) do
+			if GetKeyValue(v, "ItemPurchasableFilter") == 0 or GetKeyValue(v, "ItemPurchasable") == 0 then
+				return false
+			end
+		end
+		return true
+	end
+	local function GetItemCostRemaining(childItemName, _tempItemCounter, _cost)
+		if not _tempItemCounter then
+			_tempItemCounter = {}
+		end
+		if not _cost then
+			_cost = 0
+		end
+		local itemData = PanoramaShop.FormattedData[childItemName]
+		local itemcount = #GetAllItemsByNameInInventory(unit, childItemName, true)
+		if (itemcount <= (_tempItemCounter[childItemName] or 0) or childItemName == itemName) and GetKeyValue(childItemName, "ItemPurchasableFilter") ~= 0 and GetKeyValue(childItemName, "ItemPurchasable") ~= 0 then
+			if itemData.Recipe and HasAnyOfItemChildren(childItemName) then
+				for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
+					_cost = _cost + GetItemCostRemaining(newchilditem, _tempItemCounter)
+				end
+				if itemData.Recipe.cost > 0 then
+					_cost = _cost + itemData.Recipe.cost
+				end
+			else
+				_cost = _cost + GetTrueItemCost(childItemName)
+			end
+		end
+		_tempItemCounter[childItemName] = (_tempItemCounter[childItemName] or 0) + 1
+		return _cost
+	end
+	local function DirectPurchaseItem(childItemName)
+		Gold:ModifyGold(playerID, -GetTrueItemCost(childItemName))
+		local item = CreateItem(childItemName, hero, hero)
+		item:SetPurchaseTime(GameRules:GetGameTime())
+		item:SetPurchaser(hero)
+
+		local itemPushed = false
+		local isInShop = unit:HasModifier("modifier_fountain_aura_arena")
+		if isInShop then
+			if unit:HasRoomForItem(itemName, true, true) ~= 4 then
+				unit:AddItem(item)
+				itemPushed = true
+			end
+		end
+		if not itemPushed then
+			if not isInShop then SetAllItemSlotsLocked(unit, true, true) end
+			FillSlotsWithDummy(unit, false)
+			for i = 6, 11 do
+				local current_item = unit:GetItemInSlot(i)
+				if current_item and current_item:GetAbilityName() == "item_dummy" then
+					UTIL_Remove(current_item)
+					unit:AddItem(item)
+					itemPushed = true
+					break
+				end
+			end
+			ClearSlotsFromDummy(unit, false)
+			if not isInShop then SetAllItemSlotsLocked(unit, false, true) end
+		end
+		if not itemPushed then
+			local spawnPointName = "info_courier_spawn"
+			local teamCared = true
+			if PlayerResource:GetTeam(playerID) == DOTA_TEAM_GOODGUYS then
+				spawnPointName = "info_courier_spawn_radiant"
+				teamCared = false
+			elseif PlayerResource:GetTeam(playerID) == DOTA_TEAM_BADGUYS then
+				spawnPointName = "info_courier_spawn_dire"
+				teamCared = false
+			end
+			local ent
+			while true do
+				ent = Entities:FindByClassname(ent, spawnPointName)
+				if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerID))) then
+					local spawnPointAbs = ent:GetAbsOrigin()
+					CreateItemOnPositionSync(spawnPointAbs, item)
+					break
+				end
+			end
+		end
+	end
+	local function purchaseItemPart(childItemName)
+		local itemData = PanoramaShop.FormattedData[childItemName]
+		local itemcount = #GetAllItemsByNameInInventory(unit, childItemName, true)
+		if (itemcount <= (itemCounter[childItemName] or 0) or childItemName == itemName) and Gold:GetGold(playerID) >= GetItemCostRemaining(childItemName) then
+			if itemData.Recipe and HasAnyOfItemChildren(childItemName) then
+				for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
+					purchaseItemPart(newchilditem)
+				end
+				if itemData.Recipe.cost > 0 then
+					purchaseItemPart(itemData.Recipe.recipeItemName)
+				end
+			else
+				DirectPurchaseItem(childItemName)
+			end
+		end
+		itemCounter[childItemName] = (itemCounter[childItemName] or 0) + 1
+	end
+	if Gold:GetGold(playerID) >= GetItemCostRemaining(itemName) then
+		if IsItemChildrenPurchasable(itemName) then
+			purchaseItemPart(itemName)
+			Containers:EmitSoundOnClient(playerID, "General.Buy")
+		else
+			Containers:DisplayError(playerID, "dota_hud_error_item_from_bosses")
+		end
+	end
 end

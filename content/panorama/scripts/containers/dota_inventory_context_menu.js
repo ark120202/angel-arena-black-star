@@ -7,8 +7,13 @@ function DismissMenu() {
 }
 
 function OnSell() {
-	if (VerifyItem())
-		Items.LocalPlayerSellItem($.GetContextPanel().Item);
+	var pid = Game.GetLocalPlayerID();
+	var unit = $.GetContextPanel().Unit
+	unit = Entities.IsControllableByPlayer(unit, pid) ? unit : Players.GetPlayerHeroEntityIndex(pid);
+	GameEvents.SendCustomGameEventToServer("panorama_shop_sell_item", {
+		"itemIndex": $.GetContextPanel().Item,
+		"unit": unit,
+	});
 	DismissMenu();
 }
 
