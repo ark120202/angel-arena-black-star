@@ -538,7 +538,7 @@ function GameMode:ModifyGoldFilter(filterTable)
 	local playerID = filterTable["player_id_const"]
 	local reason = filterTable["reason_const"]
 	local reliable = filterTable["reliable"] == 1]]
-	if filterTable.reason_const >= 12 and filterTable.reason_const <= 14 then
+	if filterTable.reason_const >= DOTA_ModifyGold_HeroKill and filterTable.reason_const <= DOTA_ModifyGold_CourierKill then
 		filterTable["gold"] = 0
 		return false
 	end

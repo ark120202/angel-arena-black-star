@@ -22,6 +22,7 @@ function modifier_multicast_lua:OnAbilityExecuted(keys)
 		if ability_cast and not ability_cast:IsItem() and not ability_cast:IsToggle() then
 			if table.contains(ogre_abilities, ability_cast:GetName()) then
 				local mc = caster:AddAbility("ogre_magi_multicast")
+				mc:SetHidden(true)
 				mc:SetLevel(ability:GetLevel())
 				Timers:CreateTimer(0.01, function()
 					caster:RemoveAbility("ogre_magi_multicast")

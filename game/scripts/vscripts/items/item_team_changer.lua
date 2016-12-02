@@ -1,10 +1,10 @@
 function ChangeTeam(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	local playerID = caster:GetPlayerID()
 	if not caster:IsRealHero() or Duel:IsDuelOngoing() then
 		return
 	end
+	local playerID = caster:GetPlayerID()
 	--TODO Меню для смены в мультитим режиме
 	local targetTeam = DOTA_TEAM_BADGUYS
 	local oldTeam = caster:GetTeamNumber()

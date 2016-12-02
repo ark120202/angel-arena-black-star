@@ -127,7 +127,6 @@
 	"npc_arena_hero_zen_gehraz"
 	{
 		"override_hero"				"npc_dota_hero_dark_seer"
-		"ModelUnitName"				"npc_dota_hero_dark_seer"
 		"Ability1"					"zen_gehraz_divine_intervention"
 		"Ability2"					"zen_gehraz_mystic_twister"
 		"Ability3"					"zen_gehraz_vow_of_silence"
@@ -138,7 +137,6 @@
 	"npc_arena_hero_stegius"
 	{
 		"override_hero"				"npc_dota_hero_life_stealer"
-		"ModelUnitName"				"npc_dota_hero_life_stealer"
 		"Ability1"					"stegius_desolus_wave"
 		"Ability2"					"stegius_rage_of_desolus"
 		"Ability3"					"stegius_brightness_of_desolate"
@@ -150,7 +148,6 @@
 	"npc_arena_hero_mirratie"
 	{
 		"override_hero"				"npc_dota_hero_templar_assassin"
-		"ModelUnitName"				"npc_dota_hero_templar_assassin"
 		"Ability1"					"mirratie_snagshot"
 		"Ability2"					"mirratie_smoke_out"
 		"Ability3"					"mirratie_sixth_sense"

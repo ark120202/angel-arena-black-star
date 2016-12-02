@@ -75,7 +75,7 @@ function HeroSelection:PrepareTables()
 					end
 					local heroData = {
 						heroKey = name,
-						model = heroTable.override_hero or name,
+						model = heroTable.override_hero,
 						custom_scene_camera = heroTable.SceneCamera,
 						custom_scene_image = heroTable.SceneImage,
 						abilities = HeroSelection:ParseAbilitiesFromTable(heroTable),

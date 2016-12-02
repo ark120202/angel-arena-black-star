@@ -1397,17 +1397,38 @@ function ClearSlotsFromDummy(unit, bNoStash)
 	end
 end
 
-function GetAllItemsByNameInInventory(unit, itemname, searchStash)
+function GetAllItemsByNameInInventory(unit, itemname, searchStash, bFromSnapshot)
 	local lastSlot = 5
 	if searchStash then
 		lastSlot = 11
 	end
 	local items = {}
 	for slot = 0, lastSlot do
-		local item = unit:GetItemInSlot( slot )
-		if item and item:GetAbilityName() == itemname then
-			table.insert(items, item)
+		if bFromSnapshot and unit.InventorySnapshot then
+			local item = unit.InventorySnapshot[slot]
+			if item and item.name == itemname then
+				table.insert(items, item.name)
+			end
+		else
+			item = unit:GetItemInSlot(slot)
+			if item and item:GetAbilityName() == itemname then
+				table.insert(items, item)
+			end
 		end
 	end
 	return items
+end
+
+function CDOTA_BaseNPC:UnitHasSlotForItem(itemname, bStash)
+	if self.HasRoomForItem then
+		return self:HasRoomForItem(itemName, bStash, true) ~= 4
+	else
+		for i = 0, bStash and 11 or 5 do
+			local item = self:GetItemInSlot(i)
+			if not item or (not item:IsNull() and item:GetAbilityName() == itemname and item:IsStackable()) then
+				return true
+			end
+		end
+		return false
+	end
 end

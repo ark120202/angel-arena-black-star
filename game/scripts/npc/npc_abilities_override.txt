@@ -1067,6 +1067,7 @@
 		"ItemStockMax"					"20"
 		"ItemStockTime"					"60"			  
 		"ItemInitialStockTime"			"240"
+		"ItemCost"						"500"
 	}
 	"item_recipe_hurricane_pike"
 	{
@@ -4710,7 +4711,7 @@
 	{
 		"MaxLevel"	"7"
 		"LevelsBetweenUpgrades" "6"
-		"AbilityDamage"	"50 100 150 200 250 300 350"
+		"AbilityDamage"	"25 75 150 200 250 300 350"
 		"AbilityManaCost"	"50"
 		"AbilitySpecial"
 		{
@@ -12881,6 +12882,12 @@
 		"AbilityManaCost"	"50 100 150 200 250 300 350"
 		"AbilitySpecial"
 		{
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stat_loss_pct"				"10 15 20 25 30 35 40"
+			}
+
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
@@ -12979,13 +12986,13 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"pass_damage"	"100 150 200 250 300 350 400"
+				"pass_damage"	"150 250 350 450 550 650 750"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_second"	"50 75 100 150 175 200 225"
+				"damage_per_second"	"50 100 140 180 250 300 340"
 			}
 
 			"06"
@@ -12997,7 +13004,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"mana_per_second"	"20.0 25.0 30.0 35.0 40.0 45.0 50.0"
+				"mana_per_second"	"15 25 50 75 120 180 250"
 			}
 
 		}
@@ -13017,19 +13024,19 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"pass_damage"	"100 150 200 250 300 350 400"
+				"pass_damage"	"150 250 350 450 550 650 750"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_second"	"50 75 100 150 175 200 225"
+				"damage_per_second"	"50 100 140 180 250 300 340"
 			}
 
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"mana_per_second"	"20.0 25.0 30.0 35.0 40.0 45.0 50.0"
+				"mana_per_second"	"15 25 50 75 120 180 250"
 			}
 
 		}
