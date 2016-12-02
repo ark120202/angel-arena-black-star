@@ -82,6 +82,8 @@ PANORAMA_SHOP_ITEMS = {
 			"item_shard_ultimate_scepter",
 		},
 		{
+			"item_shard_level",
+			"item_shard_attackspeed",
 			"item_shard_str_small",
 			"item_shard_str_medium",
 			"item_shard_str_large",
@@ -94,8 +96,6 @@ PANORAMA_SHOP_ITEMS = {
 			"item_shard_int_medium",
 			"item_shard_int_large",
 			"item_shard_int_extreme",
-			"item_shard_attackspeed",
-			"item_shard_level",
 		},
 	},
 	{

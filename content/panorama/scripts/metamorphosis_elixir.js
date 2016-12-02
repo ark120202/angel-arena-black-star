@@ -1,15 +1,17 @@
 "use strict";
 var MainPanel = $("#MainBox")
-var SelectedHeroData = null
-var SelectedHeroPanel = null
-var SelectedTabIndex = null
-var HeroesPanels = []
-var DOTA_ACTIVE_GAMEMODE_TYPE = null;
+var SelectedHeroData;
+var SelectedHeroPanel;
+var SelectedTabIndex;
+var HeroesPanels = [];
+var DOTA_ACTIVE_GAMEMODE_TYPE;
+var AutoSearchHeroThinker;
 
-function OpenMenu(data) {
+function OpenMenu() {
 	MainPanel.visible = true
 	SelectHeroTab(1)
 	SelectFirstHeroPanel()
+	AutoSearchHero()
 }
 
 function CreateMenu(data) {
@@ -36,10 +38,8 @@ function SelectHeroTab(tabIndex) {
 	if (SelectedTabIndex != tabIndex) {
 		if (SelectedTabIndex != null) {
 			$("#HeroListPanel_tabPanels_" + SelectedTabIndex).visible = false
-				//$("#HeroListTabsPanel_tabButtons_" + SelectedTabIndex).RemoveClass("HeroTabButtonSelected")
 		}
 		$("#HeroListPanel_tabPanels_" + tabIndex).visible = true
-			//$("#HeroListTabsPanel_tabButtons_" + tabIndex).AddClass("HeroTabButtonSelected")
 		SelectedTabIndex = tabIndex
 	}
 }
@@ -66,6 +66,8 @@ function UpdateSelectionButton() {
 
 function CloseMenu() {
 	MainPanel.visible = false
+	if (AutoSearchHeroThinker != null)
+		$.CancelScheduled(AutoSearchHeroThinker)
 }
 
 function UpdateHeroList() {
@@ -87,6 +89,11 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	UpdateSelectionButton()
 }
 
+function AutoSearchHero() {
+	SearchHero()
+	AutoSearchHeroThinker = $.Schedule(0.3, AutoSearchHero)
+}
+
 (function() {
 	GameEvents.Subscribe("metamorphosis_elixir_show_menu", OpenMenu)
 	MainPanel.visible = false
@@ -96,10 +103,5 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null)
 			$("#SwitchTabButton").visible = changesObject["gamemode_settings"]["gamemode_type"] != DOTA_GAMEMODE_TYPE_RANDOM_OMG && changesObject["gamemode_settings"]["gamemode_type"] != DOTA_GAMEMODE_TYPE_ABILITY_SHOP
-	})
-	var f = function() {
-		SearchHero()
-		$.Schedule(0.2, f)
-	}
-	f();
+	});
 })()

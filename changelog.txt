@@ -6,7 +6,6 @@ TODO LIST:
 	Бладстоун, который за стаки увелич маг урон
 	очищать абандонутых героев из селекшона
 	автохекс не дамажит
-	перекомпилировать карты с ФОНТАНАМИ
 	[[
 		caster:TriggerSpellReflect(ability)
 		caster:TriggerSpellAbsorb(ability)
@@ -27,96 +26,104 @@ TODO LIST:
 		Появляется после 30 минуты. Потом - респавн 8-15 минут.
 		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
 
-	God (l2):
-		Висп. У даир - красный. Все атаки аое. Может спавнить что будет делиться на 2, виспов, у которых будет скилл обычного виспа. Скиллы - блекхол, ульта зевса.
-	Ancient Structure (l2):
-		Выглядит как база (даир и редиант - разные модели). Нет регена, не атакует. Может спавнить рабочих, которые будут её хилить, танки и самолеты (из д2с или варика),
-
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_1380]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://goo.gl/KvRbHf]FULL UPDATE[/url]
-[url=https://goo.gl/KvRbHf]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://goo.gl/KvRbHf
+[url=https://gist.github.com/ark120202/15ebd6bfc1e590485a893c6b56bb9f83]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/15ebd6bfc1e590485a893c6b56bb9f83]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/15ebd6bfc1e590485a893c6b56bb9f83
 ============================================================
-Angel Arena Black Star - Версия 1.3.3:
-
+Angel Arena Black Star - Версия 1.3.3b:
+Все контейнеры для предметов, выпадающих с боссов теперь существуют только 60 секунд
+Усилены: Mask of Madness, Undying - Soul Rip, Undying - Decay, Chaos Knight - Chaos Strike, Morphling - Waveform, Kunkka - Torrent, Kunkka - Ghostship
+Ослаблены: Blood of Midas, Mirratie - Sixth Sense, Alchemist - Goblins Greed, Nevermore - Dark Lord, Medusa - Stone Gaze, Stegius - Desolus Wave, Stegius - Brightness of Desolate, Apocalypse - Armor Tear, Queen of Blades - Queen of Blades Army
+Изменены: Traitor's Flag, Alchemist - Acid Spray, Phantom Lancer - Juxtapose
+Исправлены некоторые критические ошибки
 ============================================================
-Angel Arena Black Star - Version 1.3.3:
-
+Angel Arena Black Star - Version 1.3.3b:
+All Loot Boxes now last 60 seconds
+Buffed: Mask of Madness, Undying - Soul Rip, Undying - Decay, Chaos Knight - Chaos Strike, Morphling - Waveform, Kunkka - Torrent, Kunkka - Ghostship
+Nerfed: Blood of Midas, Mirratie - Sixth Sense, Alchemist - Goblins Greed, Nevermore - Dark Lord, Medusa - Stone Gaze, Stegius - Desolus Wave, Stegius - Brightness of Desolate, Apocalypse - Armor Tear, Queen of Blades - Queen of Blades Army
+Rebalanced: Traitor's Flag, Alchemist - Acid Spray, Phantom Lancer - Juxtapose
+Fixed some critical bugs
 ============================================================
-Angel Arena Black Star - Version 1.3.3:
+Angel Arena Black Star - Version 1.3.3b:
 
 General:
-	
+	All Loot Boxes now last 60 seconds
 Balance:
-	Phantom Lancer - Juxtapose:
-		Illusion Trigger chance: 8 10 15 20 25 25 25 => 6 7 8 9 10 11 12 %
-		Hero Trigger Chance: 40 50 60 60 60 60 60 => 30 30 30 40 40 50 50 %
-		Max Illusions: 4 6 8 10 12 14 16 => 1 2 4 5 7 8 9
-		Scepter illusion immortality randius: 250 => 200
-		Illusion from illusion duration: 12 => 6
-		Illusion incoming damage: 500 => 500 475 450 425 400 375 350 %
-		Illusion outgoing damage: 25 => 20 22.5 25 27.5 30 32.5 35 %
-	Removed overhead messages from Diffusal Blade & Diffusal Style
+	Items:
+		Removed overhead messages from Diffusal Blade & Diffusal Style
+		Traitor's Flag now can be used more than one per game, but now it can be used only if enemies has less kills than your team
+		Mask of Madness:
+			Berserk Movement Speed: 25 => 50 %
+			Berserk Duration: 6 => 9
+			Berserk Attack Speed: 150 => 200
+			Mana Cost: 25 => 0
+			Cooldown: 25 => 12
+		Blood of Midas:
+			XP Multiplier: 10 => 6
+			Gold Multiplier: 25 => 12
 
+	Abilities:
+		Ability Shop:
+			Kunkka - Ghostship: Cost 8 => 12
+			Kunkka - Torrent: Cost 1 => 4
+			Nevermore - Dark Lord: Cost 1 => 2
+			Chaos Knight - Chaos Strike: Cost 1 => 4
+			Undying - Decay: Cost 1 => 13
 
-	item_mask_of_madness
-
-	berserk_bonus_movement_speed: 25 => 50
-	berserk_duration: 6 => 9
-	berserk_bonus_attack_speed: 150 => 200
-	AbilityManaCost: 25 => 0
-	AbilityCooldown: 25 => 12
-
-	kunkka_ghostship:
-	AbilityDamage: 300 600 900 1200 1500 1800 2100 => 1000 2000 3000 4000 5000 6000 7000
-
-	kunkka_torrent:
-	AbilityDamage: 120 180 240 300 400 500 600 => 200 400 600 800 1000 1200 1400
-
-	morphling_waveform:
-	AbilityDamage: 100 175 250 325 400 475 550 => 100 200 300 400 500 600 700
-
-	nevermore_dark_lord:
-	presence_armor_reduction: -3 -4 -5 -6 -10 -15 -20 => -6 -8 -10 -12 -14 -16 -18
-
-	chaos_knight_chaos_strike:
-	armor_reduction: -5 -6 -7 -9 -11 -13 -14 => -8 -16 -24 -36 -48 -54 -60
-	crit_damage: 125 175 225 275 300 325 350 => 120 160 200 240 280 320 360
-
-	undying_decay
-	AbilityCooldown: 12.0 10.0 8.0 6.0 4.0 2.0 => 15 13 11 9 7 5 3
-	decay_damage: 20 60 100 140 180 220 260 => 50 150 250 350 450 550 650
-	str_steal: 2 4 5 7 8 10 11 => 10 20 30 40 50 60 70
-	str_steal_scepter: 10 11 13 14 16 17 19 => 15 30 40 50 65 70 80
-
-	undying_soul_rip
-	radius:3500 => 9000
-
-	alchemist_acid_spray
-	LevelsBetweenUpgrades 3 => 8
-	damage:15 20 25 30 40 50 60 => 30 60 90 110 140 180 210
-
-	alchemist_goblins_greed
-	LevelsBetweenUpgrades 10 => 15
-	RequiredLevel: => 4
-
-	item_blood_of_midas
-	xp_multiplier: 10 => 6
-	gold_multiplier: 25 => 12
-
-	mirratie_sixth_sense
-	radius: 2500 => 500 700 900 1100 1300 1500 1700
-	LevelsBetweenUpgrades: 1 => 5
-
-	kunkka_ghostship: Cost => 12
-		kunkka_torrent: Cost => 4
-		nevermore_dark_lord: Cost => 2
-		chaos_knight_chaos_strike: Cost => 4
-		undying_decay: Cost => 13
+		Phantom Lancer - Juxtapose:
+			Illusion Trigger chance: 8 10 15 20 25 25 25 => 6 7 8 9 10 11 12 %
+			Hero Trigger Chance: 40 50 60 60 60 60 60 => 30 30 30 40 40 50 50 %
+			Max Illusions: 4 6 8 10 12 14 16 => 1 2 4 5 7 8 9
+			Scepter illusion immortality randius: 250 => 200
+			Illusion from illusion duration: 12 => 6
+			Illusion incoming damage: 500 => 500 475 450 425 400 375 350 %
+			Illusion outgoing damage: 25 => 20 22.5 25 27.5 30 32.5 35 %
+		Kunkka - Ghostship:
+			Damage: 300 600 900 1200 1500 1800 2100 => 1000 2000 3000 4000 5000 6000 7000
+		Kunkka - Torrent:
+			Damage: 120 180 240 300 400 500 600 => 200 400 600 800 1000 1200 1400
+		Morphling - Waveform:
+			Damage: 100 175 250 325 400 475 550 => 100 200 300 400 500 600 700
+		Nevermore - Dark Lord:
+			Armor Reduction: -3 -4 -5 -6 -10 -15 -20 => -6 -8 -10 -12 -14 -16 -18
+		Chaos Knight - Chaos Strike:
+			Armor Reduction: -5 -6 -7 -9 -11 -13 -14 => -8 -16 -24 -36 -48 -54 -60
+			Critical Strike: 125 175 225 275 300 325 350 => 120 160 200 240 280 320 360
+		Undying - Decay:
+			Cooldown: 12.0 10.0 8.0 6.0 4.0 2.0 => 15 13 11 9 7 5 3
+			Damage: 20 60 100 140 180 220 260 => 50 150 250 350 450 550 650
+			Strength Steal: 2 4 5 7 8 10 11 => 10 20 30 40 50 60 70
+			Strength Steal with Scepter: 10 11 13 14 16 17 19 => 15 30 40 50 65 70 80
+		Undying - Soul Rip:
+			Radius: 3500 => 9000
+		Alchemist - Acid Spray
+			Levels Between Upgrades 3 => 8
+			Damage: 15 20 25 30 40 50 60 => 30 60 90 110 140 180 210
+		Alchemist - Goblins Greed:
+			Levels Between Upgrades 10 => 15
+			RequiredLevel: => 4
+		Mirratie - Sixth Sense:
+			Radius: 2500 => 500 700 900 1100 1300 1500 1700
+			Levels Between Upgrades: 1 => 5
+		Medusa - Stone Gaze:
+			Trigger Chance: 6 6.5 7 7.5 8 8.5 9 => 3.5 4 4.5 5 6 7 8 %
+		Stegius - Desolus Wave:
+			Levels Between Upgrades: 1 => 4
+		Stegius - Brightness of Desolate:
+			Damage per Hero: 60 120 200 320 560 760 900 => 60 120 180 240 300 500 700
+		Apocalypse - Armor Tear:
+			Armor Reduction: 15 30 40 55 70 80 100 => 10 20 30 40 50 60 80 %
+		Queen of Blades - Queen of Blades Army:
+			Units Duration: 2 4 6 8 9 10 12 => 15
+			Units Amount: 2 4 6 8 9 10 12 => 1 2 3 4 6 7 8
+			Cooldown: 30 25 20 19 18 17 16 => 30
 Fixes:
 	Fixed bugs with all events, that used fountains. Also, now you again can use any teleports on your fountain
 	Fixed hero selection and minimap bugs on 5:4 aspect ratio
+	Fixed game freeze if you try to give yourself big amount of golud using "-gold" chat command
+	Added vision on fountains
 <<+===========================================================================================================
 rhasta,
 lycan,

@@ -5751,6 +5751,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityTextureName"			"item_auto_sheepstick"
 		"FightRecapLevel"				"2"
 
@@ -17599,12 +17600,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_bonus_attackspeed" "180"
+				"active_bonus_attackspeed" "225"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_bonus_movespeed_pct" "35"
+				"active_bonus_movespeed_pct" "50"
 			}
 			"09"
 			{
@@ -17723,7 +17724,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_pct"			"23"
+				"lifesteal_pct"			"28"
 			}
 			"06"
 			{
@@ -17733,12 +17734,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_bonus_attackspeed" "120"
+				"active_bonus_attackspeed" "225"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_bonus_movespeed_pct" "25"
+				"active_bonus_movespeed_pct" "50"
 			}
 			"09"
 			{

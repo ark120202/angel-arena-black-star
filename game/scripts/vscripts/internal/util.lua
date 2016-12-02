@@ -596,23 +596,6 @@ function FindFountain(team)
 	return Entities:FindByName(nil, "npc_arena_fountain_" .. team)
 end
 
-function GetOriginalHeroTable(name)
-	local output = {}
-	table.merge(output, NPC_HEROES[name])
-	if NPC_HEROES_CUSTOM[name] then
-		table.merge(output, NPC_HEROES_CUSTOM[name])
-	end
-	return output
-end
-
-function GetAlternativeHeroTable(name)
-	local output = GetOriginalHeroTable(name)
-	if NPC_HEROES_ALTERNATIVE[name] then
-		table.merge(output, NPC_HEROES_ALTERNATIVE[name])
-	end
-	return output
-end
-
 function pairsByKeys(t, f)
 	local a = {}
 	for n in pairs(t) do table.insert(a, n) end
@@ -643,14 +626,6 @@ end
 function table.merge(input1, input2)
 	for i,v in pairs(input2) do
 		input1[i] = v
-	end
-end
-
-function GetFullHeroName(unit)
-	if unit.IsAlternative then
-		return "alternative_" .. unit:GetName()
-	else
-		return unit:GetName()
 	end
 end
 
@@ -956,7 +931,7 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 			mod:SetStackCount(unit.Additional_attackspeed)
 		end
 	end
-	illusion.IsAlternative = unit.IsAlternative
+	illusion.UnitName = unit.UnitName
 	--PlayerResource:AddToSelection(unit:GetPlayerID(), illusion)
 	return illusion
 end
@@ -1389,4 +1364,27 @@ function WorldPosToMinimap(vec)
 	local pct1 = ((vec.x + MAP_LENGTH) / (MAP_LENGTH * 2))
 	local pct2 = ((MAP_LENGTH - vec.y) / (MAP_LENGTH * 2))
 	return pct1*100 .. "% " .. pct2*100 .. "%"
+end
+
+function GetFullHeroName(unit)
+	return unit.UnitName or unit:GetUnitName()
+end
+
+function GetHeroTableByName(name)
+	local output = {}
+	local default = NPC_HEROES[name]
+	local custom = NPC_HEROES_CUSTOM[name]
+	if not custom then
+		print("[GetHeroTableByName] Missing hero: " .. name)
+		return
+	end
+	if not default then
+		table.merge(output, NPC_HEROES[custom.override_hero])
+		table.merge(output, NPC_HEROES_CUSTOM[custom.override_hero])
+		table.merge(output, custom)
+	else
+		table.merge(output, default)
+		table.merge(output, custom)
+	end
+	return output
 end

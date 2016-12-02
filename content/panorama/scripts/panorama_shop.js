@@ -3,18 +3,19 @@ var ItemList = {}
 var ItemData = {}
 var Itembuilds = {}
 var SmallItems = []
+var SmallItemsAlwaysUpdated = []
 var SearchingFor = null
 var TabIndex = null
 var QuickBuyTarget = null
 var QuickBuyTargetAmount = 0
 var LastHero = null
 
-
 function OpenCloseShop() {
 	$("#ShopBase").ToggleClass("ShopBase_Out")
-	if ($("#ShopBase").BHasClass("ShopBase_Out"))
-		Game.EmitSound("Shop.PanelUp")
-	else
+	if ($("#ShopBase").BHasClass("ShopBase_Out")) {
+		Game.EmitSound("Shop.PanelUp");
+		UpdateShop();
+	} else
 		Game.EmitSound("Shop.PanelDown")
 }
 
@@ -109,7 +110,7 @@ function FillShopTable(panel, shopData) {
 	}
 }
 
-function SnippetCreate_SmallItem(panel, itemName) {
+function SnippetCreate_SmallItem(panel, itemName, skipPush) {
 	panel.BLoadLayoutSnippet("SmallItem")
 	panel.itemName = itemName
 	panel.FindChildTraverse("SmallItemImage").itemname = itemName;
@@ -144,7 +145,8 @@ function SnippetCreate_SmallItem(panel, itemName) {
 		$.RegisterEventHandler('DragEnd', panel, SmallItemOnDragEnd);
 	}
 	UpdateSmallItem(panel)
-	SmallItems.push(panel)
+	if (!skipPush)
+		SmallItems.push(panel)
 }
 
 function SmallItemOnDragStart(panelId, dragCallbacks) {
@@ -295,8 +297,12 @@ function UpdateSmallItem(panel, gold) {
 		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) < (gold || PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]))
 	} catch (err) {
 		var index = SmallItems.indexOf(panel);
-		if (index > -1) {
+		if (index > -1)
 			SmallItems.splice(index, 1);
+		else {
+			index = SmallItemsAlwaysUpdated.indexOf(panel);
+			if (index > -1)
+				SmallItemsAlwaysUpdated.splice(index, 1);
 		}
 	}
 }
@@ -326,16 +332,17 @@ function GetRemainingPrice(itemName, ItemCounter, baseItem) {
 
 function SetQuickbuyStickyItem(itemName) {
 	$.Each($("#QuickBuyStickyButtonPanel").Children(), function(child) {
-		var index = SmallItems.indexOf(child);
+		var index = SmallItemsAlwaysUpdated.indexOf(child);
 		if (index > -1) {
 			child.visible = false
-			SmallItems.splice(index, 1);
+			SmallItemsAlwaysUpdated.splice(index, 1);
 		}
 		child.DeleteAsync(0)
 	})
 	var itemPanel = $.CreatePanel("Panel", $("#QuickBuyStickyButtonPanel"), "QuickBuyStickyButtonPanel_item_" + itemName)
-	SnippetCreate_SmallItem(itemPanel, itemName)
+	SnippetCreate_SmallItem(itemPanel, itemName, true)
 	itemPanel.AddClass("QuickBuyStickyItem")
+	SmallItemsAlwaysUpdated.push(itemPanel);
 }
 
 function ClearQuickbuyItems() {
@@ -343,10 +350,10 @@ function ClearQuickbuyItems() {
 	QuickBuyTargetAmount = null
 	$.Each($("#QuickBuyPanelItems").Children(), function(child) {
 		if (!child.BHasClass("DropDownValidTarget")) {
-			var index = SmallItems.indexOf(child);
+			var index = SmallItemsAlwaysUpdated.indexOf(child);
 			if (index > -1) {
 				child.visible = false
-				SmallItems.splice(index, 1);
+				SmallItemsAlwaysUpdated.splice(index, 1);
 			}
 			child.DeleteAsync(0)
 		} else {
@@ -383,6 +390,7 @@ function MakeQuickbuyCheckItem(itemName, ItemCounter, ItemIndexer, sourceExpecte
 			itemPanel.IsInQuickbuy = true
 			SnippetCreate_SmallItem(itemPanel, itemName)
 			itemPanel.AddClass("QuickbuyItemPanel")
+			SmallItemsAlwaysUpdated.push(itemPanel);
 		}
 	} else {
 		if (itemName == QuickBuyTarget) {
@@ -411,10 +419,10 @@ function RemoveQuickbuyItemChildren(itemName, ItemIndexer, bIncrease) {
 function RemoveQuckbuyPanel(itemName, index) {
 	var panel = $("#QuickBuyPanelItems").FindChildTraverse("QuickBuyPanelItems_item_" + itemName + "_id_" + index)
 	if (panel != null) {
-		var id = SmallItems.indexOf(panel);
+		var id = SmallItemsAlwaysUpdated.indexOf(panel);
 		if (id > -1) {
 			panel.visible = false
-			SmallItems.splice(id, 1);
+			SmallItemsAlwaysUpdated.splice(id, 1);
 		}
 		panel.DeleteAsync(0)
 	}
@@ -442,9 +450,13 @@ function UpdateShop() {
 	if (pt != null) {
 		var gold = pt[Game.GetLocalPlayerID()]
 		if (gold != null) {
-			$.Each(SmallItems, function(panel) {
+			$.Each(SmallItemsAlwaysUpdated, function(panel) {
 				UpdateSmallItem(panel, gold)
-			})
+			});
+			if (!$("#ShopBase").BHasClass("ShopBase_Out"))
+				$.Each(SmallItems, function(panel) {
+					UpdateSmallItem(panel, gold)
+				});
 		}
 	}
 	//$.GetContextPanel().SetHasClass("InRangeOfShop", Entities.IsInRangeOfShop(m_QueryUnit, 0, true))

@@ -302,7 +302,6 @@
 		"UseNeutralCreepBehavior"   "1"
 	}
 
-	//fountains
 	"npc_arena_fountain"
 	{
 		// General

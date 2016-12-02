@@ -39,10 +39,7 @@ function Gold:ClearGold(unitvar)
 	local playerID = UnitVarToPlayerID(unitvar)
 	PlayerResource:SetGold(playerID, 0, true)
 	PlayerResource:SetGold(playerID, 0, false)
-	local pd = PLAYER_DATA[playerID]
-	if pd then
-		PLAYER_DATA[playerID].SavedGold = 0
-	end
+	PLAYER_DATA[playerID].SavedGold = 0
 end
 
 function Gold:SetGold(unitvar, gold)
@@ -61,44 +58,17 @@ end
 
 function Gold:RemoveGold(unitvar, gold, iReason)
 	local playerID = UnitVarToPlayerID(unitvar)
-	repeat
-		if gold >= 25000 then
-			PlayerResource:SpendGold(playerID, 25000, iReason or 0)
-			gold = gold - 25000
-			Gold:UpdatePlayerGold(playerID)
-		else
-			PlayerResource:SpendGold(playerID, gold, iReason or 0)
-			gold = gold - 25000
-			Gold:UpdatePlayerGold(playerID)
-		end
-	until gold <= 0
+	PLAYER_DATA[playerID].SavedGold = (PLAYER_DATA[playerID].SavedGold or 0) - gold
+	Gold:UpdatePlayerGold(playerID)
 end
 
 function Gold:AddGold(unitvar, gold, bReliable, iReason)
 	local playerID = UnitVarToPlayerID(unitvar)
-	repeat
-		if gold >= 25000 then
-			Gold:UpdatePlayerGold(playerID)
-			PlayerResource:ModifyGold(playerID, 25000, bReliable or false, iReason or 0)
-			gold = gold - 25000
-			Gold:UpdatePlayerGold(playerID)
-		else
-			PlayerResource:ModifyGold(playerID, gold, bReliable or false, iReason or 0)
-			gold = gold - 25000
-			Gold:UpdatePlayerGold(playerID)
-		end
-	until gold <= 0
+	PLAYER_DATA[playerID].SavedGold = (PLAYER_DATA[playerID].SavedGold or 0) + gold
+	Gold:UpdatePlayerGold(playerID)
 end
 
 function Gold:GetGold(unitvar)
 	local playerID = UnitVarToPlayerID(unitvar)
-	local gold = PlayerResource:GetGold(playerID)
-	local pd = PLAYER_DATA[playerID]
-	local saved_gold
-	if pd and pd.SavedGold then
-		saved_gold = pd.SavedGold
-	else
-		saved_gold = 0
-	end
-	return gold + saved_gold
+	return PlayerResource:GetGold(playerID) + (PLAYER_DATA[playerID].SavedGold or 0)
 end

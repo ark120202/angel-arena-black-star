@@ -11,13 +11,12 @@ function ChangeTeam(keys)
 	if oldTeam == targetTeam then
 		targetTeam = DOTA_TEAM_GOODGUYS
 	end
-
-	if GetTeamPlayerCount(targetTeam) >= GetTeamPlayerCount(oldTeam) then
+	if GetTeamPlayerCount(targetTeam) >= GetTeamPlayerCount(oldTeam) or GetTeamHeroKills(targetTeam) >= GetTeamHeroKills(oldTeam) then
 		return
 	end
 	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
 
-	local gold = caster:GetGold()
+	local gold = Gold:GetGold(caster)
 	local playerPickData = {}
 	local tableData = PlayerTables:GetTableValue("hero_selection", oldTeam)
 	if tableData and tableData[playerID] then
@@ -39,7 +38,6 @@ function ChangeTeam(keys)
 	local newTableData = PlayerTables:GetTableValue("hero_selection", targetTeam)
 	if newTableData and playerPickData then
 		newTableData[playerID] = playerPickData
-		PrintTable(newTableData)
 		PlayerTables:SetTableValue("hero_selection", targetTeam, newTableData)
 	end
 	Gold:SetGold(caster, gold)

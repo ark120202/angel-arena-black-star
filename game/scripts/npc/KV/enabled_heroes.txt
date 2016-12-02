@@ -100,20 +100,17 @@
 		"npc_dota_hero_arc_warden"						"1"
 		"npc_dota_hero_abyssal_underlord"				"1"
 		"npc_dota_hero_magnataur"						"1"
-		"alternative_npc_dota_hero_skeleton_king"		"1"
-		"alternative_npc_dota_hero_spectre"				"1"
-		"alternative_npc_dota_hero_enchantress"			"1"
-		"alternative_npc_dota_hero_queenofpain"			"1"
-		"alternative_npc_dota_hero_chaos_knight"		"1"
-		"alternative_npc_dota_hero_legion_commander"	"1"
-		"alternative_npc_dota_hero_juggernaut"			"1"
-		"alternative_npc_dota_hero_dark_seer"			"1"
-		"alternative_npc_dota_hero_life_stealer"		"1"
-		"alternative_npc_dota_hero_templar_assassin"	"1"
-	//	"alternative_npc_dota_hero_windrunner"			"1"
 
-		//"alternative_npc_dota_hero_crystal_maiden"		"1"
-		
+		"npc_arena_hero_arthas"							"1"
+		"npc_arena_hero_stargazer"						"1"
+		"npc_arena_hero_cherub"							"1"
+		"npc_arena_hero_queenofblades"					"1"
+		"npc_arena_hero_kadash"							"1"
+		"npc_arena_hero_apocalypse"						"1"
+		"npc_arena_hero_shinobu"						"1"
+		"npc_arena_hero_zen_gehraz"						"1"
+		"npc_arena_hero_stegius"						"1"
+		"npc_arena_hero_mirratie"						"1"
 	}
 	"Heaven"
 	{
@@ -249,6 +246,6 @@
 		"npc_dota_hero_chaos_knight"					"1"
 		"npc_dota_hero_undying"							"1"
 		"npc_dota_hero_razor"							"1"
-		"alternative_npc_dota_hero_juggernaut"			"1"
+		"npc_arena_hero_shinobu"						"1"
 	}
 }

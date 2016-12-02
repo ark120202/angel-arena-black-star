@@ -412,7 +412,7 @@
 	width: 250px;
 	margin: 5px;
 	background-color: rgba(0, 0, 0, 240);
-	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 240);
+	box-shadow: -10px -10px 20px 20px black;
 }
 
 .PrecachePlayerInTeamNickname
@@ -684,4 +684,43 @@
 {
 	width: 100%;
 	height: 100%;
+}
+
+#GamePausedOverlay
+{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 40, 100, 245);
+	visibility: collapse;
+}
+
+.GamePaused #GamePausedOverlay
+{
+	visibility: visible;
+}
+
+#GamePausedTitle
+{
+	horizontal-align: center;
+	font-size: 72px;
+	font-weight: bold;
+	color: white;
+}
+
+#GamePausedDescription
+{
+	horizontal-align: center;
+	font-size: 48px;
+}
+
+.ShowBGMode #ChatAndMapPanel,
+.ShowBGMode #SelectionStatusPanel,
+{
+	//252
+	background-color: rgba(0,0,0,170);
+}
+.ShowBGMode #HeroListBasePanel
+{
+	//240
+	background-color: rgba(0,0,0,130);
 }

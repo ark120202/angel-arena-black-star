@@ -13,7 +13,7 @@ var TeamCaredUnits = [
 ]
 
 function TransformTextureToPath(texture, optPanelHeroimagestyle, optTeamNumber) {
-	if (texture.lastIndexOf("npc_dota_hero_") == 0 || texture.lastIndexOf("alternative_npc_dota_hero_") == 0) {
+	if (texture.lastIndexOf("npc_dota_hero_") == 0 || texture.lastIndexOf("npc_arena_hero_") == 0) {
 		if (optPanelHeroimagestyle == "portrait")
 			return "file://{images}/heroes/selection/" + texture + ".png"
 		else if (optPanelHeroimagestyle == "icon")
@@ -208,6 +208,19 @@ function SetPannelDraggedChild(displayPanel, checker) {
 		}
 	}
 	dragcheck();
+}
+
+function GetSteamID(pid, type) {
+	var playerInfo = Game.GetPlayerInfo(pid);
+	var steamID64 = playerInfo.player_steamid,
+		steamIDPart = Number(steamID64.substring(3)),
+		steamID32 = String(steamIDPart - 61197960265728);
+	switch (type) {
+		case 64:
+			return steamID64;
+		case 32:
+			return steamID32;
+	}
 }
 
 function _DynamicMinimapSubscribe(minimapPanel, OnConnectedCallback) {

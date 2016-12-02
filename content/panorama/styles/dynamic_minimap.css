@@ -14,19 +14,19 @@
 
 .icon
 {
-	width: 12px;
-	height: 12px;
-	transform: translateX(-6px) translateY(-6px);
+	width: 10px;
+	height: 10px;
+	transform: translateX(-5px) translateY(-5px);
 	border: 1px solid black;
 }
 
 .icon_boss_l1_v1, .icon_boss_l1_v2
 {
-	background-color: cyan;
+	background-color: #8FFFF2;
 }
 .icon_boss_l2_v1, .icon_boss_l2_v2
 {
-	background-color: blue;
+	background-color: #9C5EFF;
 }
 .icon_boss_central
 {
@@ -43,9 +43,9 @@
 
 .icon_spawner
 {
-	width: 10px;
-	height: 10px;
-	transform: translateX(-5px) translateY(-5px);
+	width: 8px;
+	height: 8px;
+	transform: translateX(-4px) translateY(-4px);
 	border-width: 0;
 	background-size: 100% 100%;
 	background-image: url("file://{images}/custom_game/simple_triangle.png");
@@ -63,14 +63,17 @@
 
 .icon_spawner_hard
 {
+	width: 9px;
+	height: 9px;
+	transform: translateX(-4.5px) translateY(-4.5px);
 	wash-color: red;
 }
 
 .icon_rune
 {
-	width: 10px;
-	height: 10px;
-	transform: translateX(-5px) translateY(-5px);
+	width: 8px;
+	height: 8px;
+	transform: translateX(-4px) translateY(-4px);
 	border-radius: -1px;
 	background-color: gold;
 }

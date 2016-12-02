@@ -52,15 +52,10 @@ function AbilityShop:PostAbilityData()
 	end
 	for name,enabled in pairsByKeys(Heroes_all) do
 		if enabled == 1 then
-			local heroTable
+			local heroTable = GetHeroTableByName(name)
 			local tabIndex = 1
-			local isChanged = false
-			if string.starts(name, "alternative_") then
-				heroTable = GetAlternativeHeroTable(string.sub(name, 13))
+			if not NPC_HEROES[name] then
 				tabIndex = 2
-			else
-				heroTable = GetOriginalHeroTable(name)
-				isChanged = heroTable.Changed == 1
 			end
 			local abilityTbl = {}
 			for i = 1, 17 do
@@ -83,7 +78,7 @@ function AbilityShop:PostAbilityData()
 			local heroData = {
 				heroKey = name,
 				abilities = abilityTbl,
-				isChanged = isChanged,
+				isChanged = heroTable.Changed == 1 and tabIndex == 1,
 				attribute_primary = _G[heroTable.AttributePrimary],
 				team = heroTable.Team
 			}

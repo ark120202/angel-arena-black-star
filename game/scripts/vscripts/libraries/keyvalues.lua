@@ -1,6 +1,5 @@
 --[[
 MODIFIED:
--LoadGameKeyValues - Добавлена поддержка alternative героев
 -CDOTA_BaseNPC:GetKeyValue - Поддержка alternative 
 GetItemNameById - добавлена функция поиска предмета по id
 split заменена на string.split и перенесена в util.lua
@@ -79,9 +78,12 @@ function LoadGameKeyValues()
 	local files = { AbilityKV = {base="npc_abilities",custom="npc_abilities_custom"},
 					ItemKV = {base="items",custom="npc_items_custom"},
 					UnitKV = {base="npc_units",custom="npc_units_custom"},
-					HeroKV = {base="npc_heroes",custom="npc_heroes_custom",alternative="npc_heroes_alternative"}
+					HeroKV = {base="npc_heroes",custom="npc_heroes_custom"}
 				  }
-
+	if not override then
+		print("[KeyValues] Critical Error on "..override..".txt")
+		return
+	end
 	-- Load and validate the files
 	for k,v in pairs(files) do
 		local file = {}
@@ -99,36 +101,33 @@ function LoadGameKeyValues()
 				end
 			end
 		end
-
 		local custom_file = LoadKeyValues(scriptPath..v.custom..".txt")
 		if custom_file then
-			for k2,v2 in pairs(custom_file) do
-				file[k2] = file[k2] or {}
-				for k3,v3 in pairs(v2) do
-					file[k2][k3] = v3
+			if k == "HeroKV" then
+				for k2,v2 in pairs(custom_file) do
+					if not file[k2] then
+						file[k2] = {}
+						table.merge(file[k2], file[v2.override_hero])
+						table.merge(file[k2], custom_file[v2.override_hero])
+						table.merge(file[k2], v2)
+					else
+						for k3,v3 in pairs(v2) do
+							file[k2][k3] = v3
+						end
+					end
+				end
+			else
+				for k2,v2 in pairs(custom_file) do
+					file[k2] = file[k2] or {}
+					for k3,v3 in pairs(v2) do
+						file[k2][k3] = v3
+					end
 				end
 			end
 		else
 			print("[KeyValues] Critical Error on "..v.custom..".txt")
 			return
 		end
-		--
-		if v.alternative then
-			local alternative_file = LoadKeyValues(scriptPath..v.alternative..".txt")
-			if alternative_file then
-				for k2,v2 in pairs(alternative_file) do
-					file["alternative_" .. k2] = {}
-					table.merge(file["alternative_" .. k2], file[k2])
-					for k3,v3 in pairs(v2) do
-						file["alternative_" .. k2][k3] = v3
-					end
-				end
-			else
-				print("[KeyValues] Critical Error on "..v.alternative..".txt")
-				return
-			end
-		end
-		--
 		
 		GameRules[k] = file --backwards compatibility
 		KeyValues[k] = file
@@ -159,7 +158,7 @@ end
 -- Works for heroes and units on the same table due to merging both tables on game init
 function CDOTA_BaseNPC:GetKeyValue(key, level, bNotAlternative)
 	local unitname = self:GetUnitName()
-	if self.IsAlternative and not bNotAlternative then unitname = GetFullHeroName(self) end
+	if not bNotAlternative then unitname = GetFullHeroName(self) end
 	if level then return GetUnitKV(unitname, key, level)
 	else return GetUnitKV(unitname, key) end
 end

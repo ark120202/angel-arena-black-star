@@ -68,25 +68,18 @@ function HeroSelection:PrepareTables()
 		for category,contents in pairsByKeys(ENABLED_HEROES) do
 			for name,enabled in pairsByKeys(contents) do
 				if enabled == 1 then
-					local heroTable
-					local baseName = name
+					local heroTable = GetHeroTableByName(name)
 					local tabIndex = 1
-					local isChanged = false
-					if string.starts(baseName, "alternative_") then
-						baseName = string.sub(baseName, 13)
-						heroTable = GetAlternativeHeroTable(baseName)
+					if not NPC_HEROES[name] then
 						tabIndex = 2
-					else
-						heroTable = GetOriginalHeroTable(name)
-						isChanged = heroTable.Changed == 1
 					end
 					local heroData = {
 						heroKey = name,
-						model = heroTable.ModelUnitName or name,
+						model = heroTable.override_hero or name,
 						custom_scene_camera = heroTable.SceneCamera,
 						custom_scene_image = heroTable.SceneImage,
 						abilities = HeroSelection:ParseAbilitiesFromTable(heroTable),
-						isChanged = isChanged,
+						isChanged = heroTable.Changed == 1 and tabIndex == 1,
 						attributes = HeroSelection:ExtractHeroStats(heroTable),
 					}
 					if category == "Selection" then
@@ -130,15 +123,10 @@ function HeroSelection:PrepareTables()
 		if ENABLED_HEROES.NoAbilities then
 			for name,enabled in pairsByKeys(ENABLED_HEROES.NoAbilities) do
 				if enabled == 1 then
-					local heroTable
-					if string.starts(name, "alternative_") then
-						heroTable = GetAlternativeHeroTable(string.sub(name, 13))
-					else
-						heroTable = GetOriginalHeroTable(name)
-					end
+					local heroTable = GetHeroTableByName(name)
 					local heroData = {
 						heroKey = name,
-						model = heroTable.ModelUnitName or name,
+						model = heroTable.override_hero or name,
 						custom_scene_camera = heroTable.SceneCamera,
 						custom_scene_image = heroTable.SceneImage,
 						attributes = HeroSelection:ExtractHeroStats(heroTable),
@@ -200,13 +188,9 @@ function HeroSelection:PreformGameStart()
 	local toPrecache = {}
 	for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
 		for plyId,v in pairs(_v) do
-			local heroNameTransformed = v.hero
-			if string.starts(heroNameTransformed, "alternative_") then
-				heroNameTransformed = string.sub(heroNameTransformed, 13)
-			end
+			local heroNameTransformed = GetKeyValue(v.hero, "override_hero")
 			toPrecache[heroNameTransformed] = false
 			PrecacheUnitByNameAsync(heroNameTransformed, function() toPrecache[heroNameTransformed] = true end, plyId)
-			--HeroSelection:OnSelectHero(plyId, tostring(v.hero))
 		end
 	end
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled( DISABLE_ANNOUNCER )
@@ -292,13 +276,7 @@ function HeroSelection:IsHeroSelected(heroName)
 end
 
 function HeroSelection:OnSelectHero(playerId, heroKey, callback, bSkipPrecache)
-	local newHeroName = heroKey
-	local alternative = false
-	if string.starts(newHeroName, "alternative_") then
-		alternative = true
-		newHeroName = string.sub(newHeroName, 13)
-	end
-	HeroSelection:SelectHero(playerId, newHeroName, alternative, callback, bSkipPrecache)
+	HeroSelection:SelectHero(playerId, heroKey, callback, bSkipPrecache)
 
 	local team = PlayerResource:GetTeam(playerId)
 	local tableData = PlayerTables:GetTableValue("hero_selection", team)
@@ -311,37 +289,37 @@ function HeroSelection:OnSelectHero(playerId, heroKey, callback, bSkipPrecache)
 	end
 end
 
-function HeroSelection:SelectHero(playerId, heroName, bAlternative, callback, bSkipPrecache)
+function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 	Timers:CreateTimer(function()
 		local connectionState = PlayerResource:GetConnectionState(playerId)
 		if connectionState == DOTA_CONNECTION_STATE_CONNECTED then
-
 			local function SpawnHero()
 				Timers:CreateTimer(function()
 					connectionState = PlayerResource:GetConnectionState(playerId)
 					if connectionState == DOTA_CONNECTION_STATE_CONNECTED then
+--Start block
+						local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
 						local oldhero = PlayerResource:GetSelectedHeroEntity(playerId)
 						local hero
 						if oldhero then
-							if oldhero:GetUnitName() == heroName then
+							if oldhero:GetUnitName() == heroTableCustom.override_hero then -- Base unit equals, ReplaceHeroWith won't do anything
 								local temp = PlayerResource:ReplaceHeroWith(playerId, FORCE_PICKED_HERO, 0, 0)
 								temp:AddNoDraw()
-								hero = PlayerResource:ReplaceHeroWith(playerId, heroName, 0, 0)
+								hero = PlayerResource:ReplaceHeroWith(playerId, heroTableCustom.override_hero, 0, 0)
 								Timers:CreateTimer(0.03, function()
 									UTIL_Remove(temp)
 								end)
 							else
-								hero = PlayerResource:ReplaceHeroWith(playerId, heroName, 0, 0)
+								hero = PlayerResource:ReplaceHeroWith(playerId, heroTableCustom.override_hero, 0, 0)
 							end
 						else
-							hero = CreateHeroForPlayer(heroName, PlayerResource:GetPlayer(playerId))
+							hero = CreateHeroForPlayer(heroTableCustom.override_hero, PlayerResource:GetPlayer(playerId))
 						end
-					--	hero:RespawnHero(false, true, false)
-						local heroTableAlternative = NPC_HEROES_ALTERNATIVE[heroName]
-						if bAlternative and heroTableAlternative and heroTableAlternative["Enabled"] ~= 0 then
-							TransformUnitClass(hero, heroTableAlternative)
-							hero.IsAlternative = true
+						if not NPC_HEROES[heroName] then
+							TransformUnitClass(hero, heroTableCustom)
+							hero.UnitName = heroName
 						end
+--End block
 						if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
 							for i = 0, hero:GetAbilityCount() - 1 do
 								if hero:GetAbilityByIndex(i) then

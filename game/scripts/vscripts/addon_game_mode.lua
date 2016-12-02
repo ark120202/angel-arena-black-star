@@ -114,7 +114,7 @@ function Precache( context )
 		end
 	end
 	
-	for _, v in pairs(NPC_HEROES_ALTERNATIVE) do
+	for _, v in pairs(NPC_HEROES_CUSTOM) do
 		if v.Model then
 			table.insert(models, v.Model)
 		end

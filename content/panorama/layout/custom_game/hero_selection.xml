@@ -189,5 +189,11 @@
 				<Panel id="PrecacheTeamEntryTeam3" class="PrecacheTeamEntry" />
 			</Panel>
 		</Panel>
+		<Panel id="GamePausedOverlay" hittest="true">
+			<Panel style="align:center center;flow-children:down;">
+				<Label text="#hero_selection_paused_label" id="GamePausedTitle" />
+				<Label text="#hero_selection_paused_description" id="GamePausedDescription" />
+			</Panel>
+		</Panel>
 	</Panel>
 </root>

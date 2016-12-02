@@ -167,6 +167,8 @@ end
 
 function ContainersHelper:CreateLootBox(entity, items)
 	local cont = Containers:CreateContainer({
+		layoutFile = "file://{resources}/layout/custom_game/containers/alt_container_with_timer.xml",
+		RemainingDuration = 60,
 		layout =      ContainersHelper:CreateItemGrid(#items),
 		headerText =  "containers_loot_boxes_box_name",
 		buttons =     {"#containers_loot_boxes_take_all"},

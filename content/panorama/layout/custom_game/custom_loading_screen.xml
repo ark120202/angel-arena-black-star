@@ -19,44 +19,52 @@
 	</script>
 	<Panel class="AddonLoadingRoot">
 		<!-- Precache -->
-		<Panel hittest="false" style="visibility: collapse;">
-			<Image src="file://{resources}/images/heroes/selection/npc_dota_hero_shadow_demon.png" />
+		<Panel hittest="false" style="visibility: collapse;">>
 			<Image src="file://{images}/custom_game/kills/action_0.png" />
 			<Image src="file://{images}/custom_game/kills/action_1.png" />
 			<Image src="file://{images}/custom_game/kills/action_2.png" />
 			<Image src="file://{images}/custom_game/kills/action_3.png" />
 			<Image src="file://{images}/custom_game/scoreboard/scoreboard_if4.png" />
 
-			<Image src="file://{images}/heroes/alternative_npc_dota_hero_skeleton_king.png" />
-			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_skeleton_king.png" />
-			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_skeleton_king.png" />
-			<Image src="file://{images}/heroes/alternative_npc_dota_hero_spectre.png" />
-			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_spectre.png" />
-			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_spectre.png" />
-			<Image src="file://{images}/heroes/alternative_npc_dota_hero_enchantress.png" />
-			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_enchantress.png" />
-			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_enchantress.png" />
-			<Image src="file://{images}/heroes/alternative_npc_dota_hero_queenofpain.png" />
-			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_queenofpain.png" />
-			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_queenofpain.png" />
-			<Image src="file://{images}/heroes/alternative_npc_dota_hero_chaos_knight.png" />
-			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_chaos_knight.png" />
-			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_chaos_knight.png" />
-			<Image src="file://{images}/heroes/alternative_npc_dota_hero_legion_commander.png" />
-			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_legion_commander.png" />
-			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_legion_commander.png" />
-			<Image src="file://{images}/heroes/alternative_npc_dota_hero_juggernaut.png" />
-			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_juggernaut.png" />
-			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_juggernaut.png" />
-			<Image src="file://{images}/heroes/alternative_npc_dota_hero_dark_seer.png" />
-			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_dark_seer.png" />
-			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_dark_seer.png" />
-			<Image src="file://{images}/heroes/alternative_npc_dota_hero_life_stealer.png" />
-			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_life_stealer.png" />
-			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_life_stealer.png" />
-			<Image src="file://{images}/heroes/alternative_npc_dota_hero_templar_assassin.png" />
-			<Image src="file://{images}/heroes/selection/alternative_npc_dota_hero_templar_assassin.png" />
-			<Image src="file://{images}/heroes/icons/alternative_npc_dota_hero_templar_assassin.png" />
+			<Image src="file://{images}/heroes/npc_arena_hero_arthas.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_arthas.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_arthas.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_stargazer.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_stargazer.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_stargazer.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_queenofblades.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_queenofblades.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_queenofblades.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_cherub.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_cherub.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_cherub.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_kadash.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_kadash.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_kadash.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_apocalypse.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_apocalypse.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_apocalypse.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_shinobu.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_shinobu.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_shinobu.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_zen_gehraz.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_zen_gehraz.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_zen_gehraz.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_stegius.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_stegius.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_stegius.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_mirratie.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_mirratie.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_mirratie.png" />
 
 			<Image src="file://{images}/custom_game/units/portraits/npc_dota_beastmaster_boar_base.png" />
 			<Image src="file://{images}/custom_game/units/portraits/npc_dota_beastmaster_hawk_base.png" />

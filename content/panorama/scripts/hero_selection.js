@@ -13,6 +13,20 @@ var MinimapPTIDs = [];
 var HeroesPanels = []
 var tabsData = {}
 var PlayerSpawnBoxes = {}
+var SteamIDSpecialBGs = {
+	//ark120202
+	109792606: [
+		"https://pp.vk.me/c638727/v638727976/1134a/d1RxLF8mWkE.jpg",
+	],
+	//Murzik
+	82292900: [
+		"https://wallpaperscraft.ru/image/kot_morda_pushistyj_polosatyj_97082_1920x1080.jpg",
+		"http://file.mobilmusic.ru/b2/19/29/836852.jpg",
+		"https://wallpaperscraft.ru/image/koshka_kot_seryy_poroda_russkaya_golubaya_glaza_zelenye_vzglyad_chernyy_fon_81774_1920x1080.jpg",
+		"http://anywalls.com/pic/201304/1920x1080/anywalls.com-64496.jpg",
+		"http://file.mobilmusic.ru/8f/8e/b8/768273.jpg",
+	],
+}
 var bgs = [
 	"3_heroes_loadingscreen",
 	"acolyte_vengeance_loading_screen",
@@ -410,7 +424,7 @@ function HeroSelectionStart(data) {
 	MainPanel.visible = true
 	SelectionTimerDuration = data.SelectionTime
 	SelectionTimerStartTime = Game.GetGameTime();
-	$.Schedule(0.25, UpdateTimer)
+	UpdateTimer();
 	$("#GameModeInfoGamemodeLabel").text = $.Localize("#hero_selection_mode_" + data.GameModeType)
 	if (data.GameModeType != "all_pick") {
 		$("#SwitchTabButton").visible = false
@@ -432,9 +446,7 @@ function SelectHeroTab(tabIndex) {
 	if (SelectedTabIndex != tabIndex) {
 		if (SelectedTabIndex != null) {
 			$("#HeroListPanel_tabPanels_" + SelectedTabIndex).visible = false
-				//$("#HeroListTabsPanel_tabButtons_" + SelectedTabIndex).RemoveClass("HeroTabButtonSelected")
 		}
-		//$("#HeroListTabsPanel_tabButtons_" + tabIndex).AddClass("HeroTabButtonSelected")
 		$("#HeroListPanel_tabPanels_" + tabIndex).visible = true
 		SelectedTabIndex = tabIndex
 	}
@@ -487,9 +499,20 @@ function UpdateSelectionButton() {
 function UpdateTimer() {
 	var SelectionTimerCurrentTime = Game.GetGameTime();
 	var SelectionTimerRemainingTime = SelectionTimerDuration - (SelectionTimerCurrentTime - SelectionTimerStartTime)
-	$.Schedule(0.25, UpdateTimer)
 	if (SelectionTimerRemainingTime > 0) {
-		$("#HeroSelectionTimer").text = Math.ceil(SelectionTimerRemainingTime)
+		$.Schedule(0.2, UpdateTimer);
+		$("#HeroSelectionTimer").text = Math.ceil(SelectionTimerRemainingTime);
+		SearchHero();
+		$.GetContextPanel().SetHasClass("GamePaused", Game.IsGamePaused() && !$("#HeroSelectionPrecacheBase").visible);
+		$.Each(Game.GetAllPlayerIDs(), function(id) {
+			var p = $("#playerpickpanelhost_player" + id)
+			if (p != null) {
+				var playerInfo = Game.GetPlayerInfo(id);
+				p.SetHasClass("player_connection_abandoned", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_ABANDONED);
+				p.SetHasClass("player_connection_failed", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_FAILED);
+				p.SetHasClass("player_connection_disconnected", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_DISCONNECTED);
+			}
+		});
 	} else {
 		$.Schedule(0.03, function() {
 			$("#HeroSelectionTimer").text = 0
@@ -694,22 +717,16 @@ function OnMinimapClickSpawnBox(team, level, index) {
 	ShowPrecacheEvent = GameEvents.Subscribe("hero_selection_show_precache", ShowPrecache);
 	PTID = PlayerTables.SubscribeNetTableListener("hero_selection", UpdateHeroesSelected);
 	UpdateHeroesSelected("hero_selection", PlayerTables.GetAllTableValues("hero_selection"));
-	var BGName = bgs[Math.floor(Math.random() * bgs.length)];
-	$("#HeroSelectionBackground").SetImage("file://{images}/loadingscreens/" + BGName + "/loadingscreen.tga");
-	var f = function() {
-		$.Schedule(0.2, f)
-		SearchHero()
-		$.Each(Game.GetAllPlayerIDs(), function(id) {
-			var p = $("#playerpickpanelhost_player" + id)
-			if (p != null) {
-				var playerInfo = Game.GetPlayerInfo(id);
-				p.SetHasClass("player_connection_abandoned", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_ABANDONED);
-				p.SetHasClass("player_connection_failed", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_FAILED);
-				p.SetHasClass("player_connection_disconnected", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_DISCONNECTED);
-			}
-		})
+	var BGName
+	var steamid = GetSteamID(Game.GetLocalPlayerID(), 32)
+	if (SteamIDSpecialBGs[steamid]) {
+		var bglist = SteamIDSpecialBGs[steamid];
+		BGName = bglist[Math.floor(Math.random() * bglist.length)];
+		$.GetContextPanel().AddClass("ShowBGMode")
+	} else {
+		BGName = "file://{images}/loadingscreens/" + bgs[Math.floor(Math.random() * bgs.length)] + "/loadingscreen.tga"
 	}
-	f();
+	$("#HeroSelectionBackground").SetImage(BGName);
 	_DynamicMinimapSubscribe($("#MinimapImage").GetChild(0), function(ptid) {
 		MinimapPTIDs.push(ptid)
 	});
