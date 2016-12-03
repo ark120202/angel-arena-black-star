@@ -70,15 +70,6 @@ function CloseMenu() {
 		$.CancelScheduled(AutoSearchHeroThinker)
 }
 
-function UpdateHeroList() {
-	var hero_selection_available_heroes = PlayerTables.GetAllTableValues("hero_selection_available_heroes")
-	if (hero_selection_available_heroes != null) {
-		CreateMenu(hero_selection_available_heroes)
-	} else {
-		$.Schedule(0.03, UpdateHeroList)
-	}
-}
-
 function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	for (var k in HeroesPanels) {
 		var heroPanel = HeroesPanels[k]
@@ -99,7 +90,11 @@ function AutoSearchHero() {
 	MainPanel.visible = false
 	PlayerTables.SubscribeNetTableListener("hero_selection", UpdateHeroesSelected)
 	UpdateHeroesSelected("hero_selection", PlayerTables.GetAllTableValues("hero_selection"))
-	UpdateHeroList()
+	DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {
+		if (changesObject.HeroTabs != null) {
+			CreateMenu(changesObject);
+		};
+	});
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null)
 			$("#SwitchTabButton").visible = changesObject["gamemode_settings"]["gamemode_type"] != DOTA_GAMEMODE_TYPE_RANDOM_OMG && changesObject["gamemode_settings"]["gamemode_type"] != DOTA_GAMEMODE_TYPE_ABILITY_SHOP

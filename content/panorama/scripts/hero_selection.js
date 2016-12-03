@@ -1,18 +1,19 @@
 "use strict";
 var MainPanel = $("#HeroSelectionBox")
-var SelectedHeroData = null
-var SelectedHeroPanel = null
-var SelectedTabIndex = null
-var SelectionTimerDuration = null
-var SelectionTimerStartTime = null
+var SelectedHeroData,
+	SelectedHeroPanel,
+	SelectedTabIndex,
+	SelectionTimerDuration,
+	SelectionTimerStartTime,
+	HideEvent,
+	ShowPrecacheEvent,
+	PTID;
 var localHeroPicked = false
-var HideEvent = null
-var ShowPrecacheEvent = null
-var PTID = null
 var MinimapPTIDs = [];
-var HeroesPanels = []
-var tabsData = {}
-var PlayerSpawnBoxes = {}
+var HeroesPanels = [];
+var tabsData = {};
+var PlayerSpawnBoxes = {};
+
 var SteamIDSpecialBGs = {
 	//ark120202
 	109792606: [
@@ -420,19 +421,19 @@ var bgs = [
 	"zodiac_sigils",
 ]
 
-function HeroSelectionStart(data) {
-	MainPanel.visible = true
-	SelectionTimerDuration = data.SelectionTime
-	SelectionTimerStartTime = Game.GetGameTime();
+function HeroSelectionStart(HeroesServerData) {
+	MainPanel.visible = true;
+	SelectionTimerDuration = HeroesServerData.SelectionTime;
+	SelectionTimerStartTime = HeroesServerData.SelectionStartTime;
 	UpdateTimer();
-	$("#GameModeInfoGamemodeLabel").text = $.Localize("#hero_selection_mode_" + data.GameModeType)
-	if (data.GameModeType != "all_pick") {
+	$("#GameModeInfoGamemodeLabel").text = $.Localize("#hero_selection_mode_" + HeroesServerData.GameModeType)
+	if (HeroesServerData.GameModeType != "all_pick") {
 		$("#SwitchTabButton").visible = false
 	}
-	tabsData = data.HeroTabs
-	for (var tabKey in data.HeroTabs) {
-		var tabTitle = data.HeroTabs[tabKey].title
-		var heroesInTab = data.HeroTabs[tabKey].Heroes
+	tabsData = HeroesServerData.HeroTabs
+	for (var tabKey in tabsData) {
+		var tabTitle = tabsData[tabKey].title
+		var heroesInTab = tabsData[tabKey].Heroes
 		var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey)
 		TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel")
 		FillHeroesTable(heroesInTab, TabHeroesPanel)
@@ -634,23 +635,6 @@ function HeroSelectionEnd() {
 	})
 }
 
-function Initialize() {
-	if (Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME)) {
-		HeroSelectionEnd()
-	} else {
-		UpdatePanoramaState()
-	}
-}
-
-function UpdatePanoramaState() {
-	var hero_selection_available_heroes = PlayerTables.GetAllTableValues("hero_selection_available_heroes")
-	if (hero_selection_available_heroes != null && typeof hero_selection_available_heroes == "object" && hero_selection_available_heroes.HeroTabs != null) {
-		HeroSelectionStart(hero_selection_available_heroes)
-	} else {
-		$.Schedule(0.03, UpdatePanoramaState)
-	}
-}
-
 function ShowPrecache() {
 	$("#HeroSelectionBox").visible = false
 	$("#HeroSelectionPrecacheBase").visible = true
@@ -709,25 +693,34 @@ function OnMinimapClickSpawnBox(team, level, index) {
 	});
 }
 
-
 (function() {
 	$("#HeroSelectionPrecacheBase").visible = false;
-	Initialize();
-	HideEvent = GameEvents.Subscribe("hero_selection_hide", HeroSelectionEnd);
-	ShowPrecacheEvent = GameEvents.Subscribe("hero_selection_show_precache", ShowPrecache);
-	PTID = PlayerTables.SubscribeNetTableListener("hero_selection", UpdateHeroesSelected);
-	UpdateHeroesSelected("hero_selection", PlayerTables.GetAllTableValues("hero_selection"));
-	var BGName
-	var steamid = GetSteamID(Game.GetLocalPlayerID(), 32)
-	if (SteamIDSpecialBGs[steamid]) {
-		var bglist = SteamIDSpecialBGs[steamid];
-		BGName = bglist[Math.floor(Math.random() * bglist.length)];
-		$.GetContextPanel().AddClass("ShowBGMode")
+	if (Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME)) {
+		HeroSelectionEnd()
 	} else {
-		BGName = "file://{images}/loadingscreens/" + bgs[Math.floor(Math.random() * bgs.length)] + "/loadingscreen.tga"
+		DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {
+			if (changesObject.HeroTabs != null) {
+				HeroSelectionStart(changesObject);
+			};
+		});
+
+		HideEvent = GameEvents.Subscribe("hero_selection_hide", HeroSelectionEnd);
+		ShowPrecacheEvent = GameEvents.Subscribe("hero_selection_show_precache", ShowPrecache);
+		PTID = PlayerTables.SubscribeNetTableListener("hero_selection", UpdateHeroesSelected);
+		UpdateHeroesSelected("hero_selection", PlayerTables.GetAllTableValues("hero_selection"));
+
+		var BGName
+		var steamid = GetSteamID(Game.GetLocalPlayerID(), 32)
+		if (SteamIDSpecialBGs[steamid]) {
+			var bglist = SteamIDSpecialBGs[steamid];
+			BGName = bglist[Math.floor(Math.random() * bglist.length)];
+			$.GetContextPanel().AddClass("ShowBGMode")
+		} else {
+			BGName = "file://{images}/loadingscreens/" + bgs[Math.floor(Math.random() * bgs.length)] + "/loadingscreen.tga"
+		}
+		$("#HeroSelectionBackground").SetImage(BGName);
+		_DynamicMinimapSubscribe($("#MinimapImage").GetChild(0), function(ptid) {
+			MinimapPTIDs.push(ptid)
+		});
 	}
-	$("#HeroSelectionBackground").SetImage(BGName);
-	_DynamicMinimapSubscribe($("#MinimapImage").GetChild(0), function(ptid) {
-		MinimapPTIDs.push(ptid)
-	});
 })();

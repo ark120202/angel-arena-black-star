@@ -1007,7 +1007,7 @@ function PreformRunePickup(unit, runeType, settings)
 			bounty_special_multiplier = runeSettings[DOTA_RUNE_BOUNTY].bounty_special_multiplier
 		}
 		GameMode:BountyRunePickupFilter(bountyTable)
-		Gold:ModifyGold(caster, bountyTable.gold_bounty, true)
+		Gold:ModifyGold(caster, bountyTable.gold_bounty)
 		SendOverheadEventMessage(nil, OVERHEAD_ALERT_GOLD, unit, bountyTable.gold_bounty, nil)
 		caster:AddExperience(bountyTable.xp_bounty, 0, false, false)
 	elseif runeType == DOTA_RUNE_ARCANE then

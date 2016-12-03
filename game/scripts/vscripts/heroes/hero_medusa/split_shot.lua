@@ -17,7 +17,7 @@ function SplitShotLaunch( keys )
 
 			--Mystic Snake code part
 			local medusa_mystic_snake_arena = caster:FindAbilityByName("medusa_mystic_snake_arena")
-			if medusa_mystic_snake_arena and medusa_mystic_snake_arena:GetLevel() > 0 then
+			if medusa_mystic_snake_arena and medusa_mystic_snake_arena:GetLevel() > 0 and medusa_mystic_snake_arena:IsCooldownReady() and not caster:PassivesDisabled() then
 				caster:EmitSound("Hero_Medusa.MysticSnake.Cast")
 				ParticleManager:CreateParticle("particles/units/heroes/hero_medusa/medusa_mystic_snake_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 				ProjectileManager:CreateTrackingProjectile({
@@ -35,6 +35,7 @@ function SplitShotLaunch( keys )
 					iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1
 				})
 			end
+
 			local medusa_stone_gaze_arena = caster:FindAbilityByName("medusa_stone_gaze_arena")
 			if medusa_stone_gaze_arena and medusa_stone_gaze_arena:GetLevel() > 0 then
 				if RollPercentage(medusa_stone_gaze_arena:GetAbilitySpecial("stone_chance_pct")) then

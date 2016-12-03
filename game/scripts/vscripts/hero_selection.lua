@@ -37,19 +37,19 @@ function HeroSelection:ExtractHeroStats(heroTable)
 end
 
 function HeroSelection:PrepareTables()
+	local data = {
+		SelectionTime = CUSTOM_HERO_SELECTION_TIME,
+		SelectionStartTime = GameRules:GetGameTime()
+	}
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK then
-		local data = {
-			GameModeType = "all_pick",
-			SelectionTime = CUSTOM_HERO_SELECTION_TIME,
-			HeroTabs = {
-				{
-					title = "#hero_selection_tab_heroes_normal",
-					Heroes = {}
-				},
-				{
-					title = "#hero_selection_tab_heroes_alternative",
-					Heroes = {}
-				}
+		data.GameModeType = "all_pick"
+		data.HeroTabs = {{
+				title = "#hero_selection_tab_heroes_normal",
+				Heroes = {}
+			},
+			{
+				title = "#hero_selection_tab_heroes_alternative",
+				Heroes = {}
 			}
 		}
 		local players = GetAllPlayers(false)
@@ -96,19 +96,13 @@ function HeroSelection:PrepareTables()
 		PlayerTables:CreateTable("hero_selection_available_heroes_hell", HeroesHell, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 		HeroSelection.ModeData = data
 	elseif DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG or DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
-		local data = {
-			GameModeType = "random_omg",
-			SelectionTime = CUSTOM_HERO_SELECTION_TIME,
-			HeroTabs = {
-				{
-					title = "#hero_selection_tab_heroes_normal",
-					Heroes = {}
-				}
+		data.GameModeType = DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP and "ability_shop" or "random_omg"
+		data.HeroTabs = {
+			{
+				title = "#hero_selection_tab_heroes_normal",
+				Heroes = {}
 			}
 		}
-		if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
-			data.GameModeType = "ability_shop"
-		end
 		local players = GetAllPlayers(false)
 		local teamsPlayers = {}
 		for _,v in ipairs(players) do
@@ -139,6 +133,7 @@ function HeroSelection:PrepareTables()
 		PlayerTables:CreateTable("hero_selection_available_heroes_hell", {disabled = true}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 		HeroSelection.ModeData = data
 	end
+	PlayerTables:CreateTable("hero_selection_available_heroes", HeroSelection.ModeData, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 end
 
 function HeroSelection:VerifyHeroGroup(hero, group)
@@ -165,17 +160,11 @@ end
 
 function HeroSelection:HeroSelectionStart()
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled(true)
-	HeroSelection._TimerCounter = CUSTOM_HERO_SELECTION_TIME
-	HeroSelection.GameStartTimer = Timers:CreateTimer(1, function()
-		if HeroSelection._TimerCounter > 0 then
-			HeroSelection._TimerCounter = HeroSelection._TimerCounter - 1
-			PlayerTables:SetTableValue("hero_selection_available_heroes", "SelectionTime", HeroSelection._TimerCounter)
-			return 1
-		elseif not HeroSelection.SelectionEnd then
+	HeroSelection.GameStartTimer = Timers:CreateTimer(CUSTOM_HERO_SELECTION_TIME, function()
+		if not HeroSelection.SelectionEnd then
 			HeroSelection:PreformGameStart()
 		end
 	end)
-	PlayerTables:CreateTable("hero_selection_available_heroes", HeroSelection.ModeData, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 end
 
 function HeroSelection:PreformGameStart()
@@ -257,7 +246,7 @@ function HeroSelection:PreformPlayerRandom(playerId)
 			tableData[playerId].hero = heroData.heroKey
 			tableData[playerId].status = "picked"
 			PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(playerId), tableData)
-			Gold:ModifyGold(playerId, CUSTOM_GOLD_FOR_RANDOM_TOTAL, true)
+			Gold:ModifyGold(playerId, CUSTOM_GOLD_FOR_RANDOM_TOTAL)
 			break
 		end
 	end
@@ -405,7 +394,7 @@ function HeroSelection:OnHeroSelectHero(data)
 			newHeroName = string.sub(data.hero, 13)
 		end
 		PrecacheUnitByNameAsync(newHeroName, function() end, data.PlayerID)
-		Gold:ModifyGold(data.PlayerID, CUSTOM_STARTING_GOLD, true)
+		Gold:ModifyGold(data.PlayerID, CUSTOM_STARTING_GOLD)
 	end
 
 	local canEnd = not HeroSelection.SelectionEnd

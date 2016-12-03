@@ -70,7 +70,7 @@ function UpdateItem() {
 		price = PlayerTables.GetTableValue(m_contString, "price" + m_Item) || Items.GetCost(m_Item);
 	}
 
-	var gold = Players.GetGold(Players.GetLocalPlayer());
+	var gold = GetPlayerGold(Game.GetLocalPlayerID());
 
 	$.GetContextPanel().SetHasClass("show_stock", stock >= 0);
 	$.GetContextPanel().SetHasClass("out_of_stock", stock === 0);

@@ -2,7 +2,7 @@ function MidasCreep(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	Gold:ModifyGold(caster, keys.BonusGold, true)
+	Gold:ModifyGold(caster, keys.BonusGold)
 	if caster.AddExperience then
 		caster:AddExperience(target:GetDeathXP() * keys.XPMultiplier, false, false)
 	end
@@ -31,7 +31,7 @@ function GiveKillBonusGold(keys)
 			return
 		end
 	end
-	Gold:ModifyGold(caster, keys.KillGold, true)
+	Gold:ModifyGold(caster, keys.KillGold)
 	caster:AddExperience(keys.KillXp, false, false)
 	local particle = ParticleManager:CreateParticleForPlayer("particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf", PATTACH_ABSORIGIN, caster, caster:GetPlayerOwner())
 	ParticleManager:SetParticleControl(particle, 1, Vector(0, keys.KillGold, 0))
@@ -44,7 +44,7 @@ function GiveOnAttackedGold(keys)
 	local target = keys.target
 	local ability = keys.ability
 	if keys.attacker:IsConsideredHero() then
-		Gold:ModifyGold(caster, keys.Gold, true)
+		Gold:ModifyGold(caster, keys.Gold)
 		caster:AddExperience(keys.Xp, false, false)
 		local particle = ParticleManager:CreateParticleForPlayer("particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf", PATTACH_ABSORIGIN, caster, caster:GetPlayerOwner())
 		ParticleManager:SetParticleControl(particle, 1, Vector(0, keys.Gold, 0))

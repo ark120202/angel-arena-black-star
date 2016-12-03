@@ -120,23 +120,33 @@ function PanoramaShop:OnItemSell(data)
 		local player = PlayerResource:GetPlayer(data.PlayerID)
 		local itemEnt = EntIndexToHScript(tonumber(data.itemIndex))
 		local ent = EntIndexToHScript(data.unit)
-		if itemEnt and GetKeyValue(itemEnt:GetAbilityName(), "ItemSellable") ~= 0 and ent and ent.entindex and ent:HasModifier("modifier_fountain_aura_arena") and ent:GetPlayerOwner() == player and itemEnt:GetOwner():GetPlayerOwner() == player then
-			local cost = GetTrueItemCost(itemEnt:GetAbilityName())
-			if GameRules:GetGameTime() - itemEnt:GetPurchaseTime() > 10 then
-				cost = cost / 2
+		if itemEnt and GetKeyValue(itemEnt:GetAbilityName(), "ItemSellable") ~= 0 and ent and ent.entindex and ent:GetPlayerOwner() == player and itemEnt:GetOwner():GetPlayerOwner() == player then
+			local itemSlot = -1
+			for i = 6, 11 do
+				local item = ent:GetItemInSlot(i)
+				if item and item == itemEnt then
+					itemSlot = i
+					break
+				end
 			end
-			if itemEnt:GetAbilityName() == "item_pocket_riki" then
-				gold = Kills:GetGoldForKill(ability.RikiContainer)
-				TrueKill(unit, ability, ability.RikiContainer)
-				Kills:ClearStreak(ability.RikiContainer:GetPlayerID())
-				unit:RemoveItem(ability)
-				unit:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
-				unit:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
-				unit:RemoveModifierByName("modifier_invisible")
-				GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber()) 
+			if ent:HasModifier("modifier_fountain_aura_arena") or (itemSlot >= 6 and itemSlot <= 11) then
+				local cost = GetTrueItemCost(itemEnt:GetAbilityName())
+				if GameRules:GetGameTime() - itemEnt:GetPurchaseTime() > 10 then
+					cost = cost / 2
+				end
+				if itemEnt:GetAbilityName() == "item_pocket_riki" then
+					cost = Kills:GetGoldForKill(itemEnt.RikiContainer)
+					TrueKill(ent, itemEnt, itemEnt.RikiContainer)
+					Kills:ClearStreak(itemEnt.RikiContainer:GetPlayerID())
+					ent:RemoveItem(itemEnt)
+					ent:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
+					ent:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
+					ent:RemoveModifierByName("modifier_invisible")
+					GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, ent:GetTeamNumber()) 
+				end
+				UTIL_Remove(itemEnt)
+				Gold:AddGoldWithMessage(ent, cost)
 			end
-			UTIL_Remove(itemEnt)
-			Gold:AddGoldWithMessage(ent, cost)
 		end
 	end
 end
@@ -224,7 +234,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 		return _cost
 	end
 	local function DirectPurchaseItem(childItemName)
-		Gold:ModifyGold(playerID, -GetTrueItemCost(childItemName))
+		Gold:RemoveGold(playerID, GetTrueItemCost(childItemName))
 		local item = CreateItem(childItemName, hero, hero)
 		item:SetPurchaseTime(GameRules:GetGameTime())
 		item:SetPurchaser(hero)

@@ -851,7 +851,7 @@ function Containers:OrderFilter(order)
 				CreateItemOnPositionSync(unit:GetAbsOrigin() + RandomVector(10), item)
 			end
 
-			PlayerResource:SpendGold(ownerID, cost, DOTA_ModifyGold_PurchaseItem)
+			Gold:RemoveGold(ownerID, cost)
 			return false
 		elseif Containers.disableItemLimit then
 			if not unit:HasInventory() then
@@ -1014,7 +1014,7 @@ function Containers:OrderFilter(order)
 				--drop:RemoveSelf()
 			end
 
-			PlayerResource:SpendGold(ownerID, cost, DOTA_ModifyGold_PurchaseItem)
+			Gold:RemoveGold(ownerID, cost)
 
 			return false
 		end
@@ -1121,7 +1121,7 @@ function Containers:Containers_OnSell(args)
 
 	container:RemoveItem(item)
 	item:RemoveSelf()
-	Gold:ModifyGold(playerID, cost, false, DOTA_ModifyGold_SellItem)
+	Gold:ModifyGold(playerID, cost)
 
 	if player then
 		SendOverheadEventMessage(player, OVERHEAD_ALERT_GOLD, unit, cost, player)
@@ -1565,7 +1565,7 @@ function Containers:OnDragWorld(playerID, container, unit, item, slot, position,
 
 					container:RemoveItem(item)
 					item:RemoveSelf()
-					Gold:ModifyGold(playerID, cost, false, DOTA_ModifyGold_SellItem)
+					Gold:ModifyGold(playerID, cost)
 
 					local player = PlayerResource:GetPlayer(playerID)
 
@@ -1723,14 +1723,14 @@ function Containers:CreateShop(cont)
 		local cost = self:GetPrice(item)
 		local stock = self:GetStock(item)
 		local owner = PlayerResource:GetSelectedHeroEntity(playerID)
-		local gold = PlayerResource:GetGold(playerID)
+		local gold = Gold:GetGold(playerID)
 		if gold >= cost and (stock == nil or stock > 0) then
 			local newItem = CreateItem(item:GetAbilityName(), owner, owner)
 			
 			newItem:SetLevel(item:GetLevel())
 			newItem:SetCurrentCharges(item:GetCurrentCharges())
 
-			PlayerResource:SpendGold(playerID, cost, DOTA_ModifyGold_PurchaseItem)
+			Gold:RemoveGold(playerID, cost)
 
 			if stock then
 				self:SetStock(item, stock-1)

@@ -10,7 +10,7 @@ function SpellCheck(keys)
 		caster:EmitSound("Hero_Rubick.SpellSteal.Cast")
 		target:EmitSound("Hero_Rubick.SpellSteal.Target")
 		ability.new_steal_target = target
-		ProjectileManager:CreateTrackingProjectile( {
+		ProjectileManager:CreateTrackingProjectile({
 			Target = caster,
 			Source = target,
 			Ability = ability,
@@ -19,7 +19,7 @@ function SpellCheck(keys)
 			bProvidesVision = false,
 			iMoveSpeed = ability:GetAbilitySpecial("projectile_speed"),
 			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
-		} )
+		})
 	end
 end
 
@@ -49,20 +49,14 @@ function SpellSteal(keys)
 	caster:SetOriginalModel(model)
 	caster:SetModelScale(target:GetModelScale())
 	Timers:CreateTimer(0.03, function()
-		local precacheArray = {}
 		for i = 0, target:GetAbilityCount() - 1 do
 			local a = target:GetAbilityByIndex(i)
 			if a and a:GetAbilityName() ~= "rubick_personality_steal" then
-				local name = a:GetAbilityName()
-				precacheArray[name] = false
-				PrecacheItemByNameAsync(name, function()
-					precacheArray[name] = true
-					caster:AddAbility(name)
-					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(caster:GetPlayerID()), "dota_ability_changed", {})
-				end)
+				caster:AddAbility(a:GetAbilityName())
 			end
 		end
 		caster:CalculateStatBonus()
+		PlayerResource:RefreshSelection()
 	end)
 	caster:SetAbilityPoints(caster:GetLevel())
 end
@@ -74,17 +68,14 @@ function RemoveSpell(keys)
 		if a then
 			RemoveAbilityWithModifiers(caster, a)
 		end
-		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(caster:GetPlayerID()), "dota_ability_changed", {})
 	end
+	PlayerResource:RefreshSelection()
 	local newlevel = caster.rubick_spell_steal.level
-	Timers:CreateTimer(0.1, function()
+	Timers:CreateTimer(0, function()
 		PrecacheItemByNameAsync("rubick_personality_steal", function()
 			local rubick_personality_steal = caster:AddAbility("rubick_personality_steal")
 			rubick_personality_steal:SetLevel(newlevel)
-			Timers:CreateTimer(0.2, function()
-				caster:CalculateStatBonus()
-				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(caster:GetPlayerID()), "dota_ability_changed", {})
-			end)
+			PlayerResource:RefreshSelection()
 		end)
 	end)
 	caster:SetModel(caster.rubick_spell_steal.model)

@@ -5,18 +5,14 @@ TODO LIST:
 	обезьяны
 	Бладстоун, который за стаки увелич маг урон
 	очищать абандонутых героев из селекшона
-	иллюзии могут покупать предметы
 	контейнер магазы не работают
-	кура неуяз
 	кура стэш
-	фикс только с о
 	фикс хагане с боссов
 	[[
 		caster:TriggerSpellReflect(ability)
 		caster:TriggerSpellAbsorb(ability)
 		для всех абилок
 	]]
-	//Посмотреть Edge of Vyse
 
 Идеи для предметов:
 	Star Blade:
@@ -46,26 +42,37 @@ Angel Arena Black Star - Version 1.3.3b:
 Angel Arena Black Star - Version 1.3.3b:
 
 General:
-	
 Balance:
 	Items:
+		Courier:
+			Now is invulnerable
+			Base movement speed increased to 800
+			Burst ability removed
 		Tome of Knowledge:
 			Cost: 150 => 500
+		Haganemushi:
+			Now not works on bosses
 	Abilities:
+		Medusa - Mystic Snake:
+			Cooldown: 0 => 1 second
+			Damage: 25 50 75 100 115 130 145 => 60 120 180 240 300 360 420
+		Stegius - Desolating Touch:
+			On bosses now reduces less armor: -1 -2 -3 -4 -5 -6 -7 => -1 -1 -1 -2 -2 -2 -2
 		Timbersaw - Whirling Death:
 			Stat Loss: 15 => 10 15 20 25 30 35 40 %
-
 		Timbersaw - Chakram:
 			Damage: 100 150 200 250 300 350 400 => 150 250 350 450 550 650 750
 			Damage per Second: 50 75 100 150 175 200 225 => 50 100 140 180 250 300 340
 			Mana per Second: 20.0 25.0 30.0 35.0 40.0 45.0 50.0 => 15 25 50 75 120 180 250
-
 		Sniper - Shrapnel:
 			Damage: 50 100 150 200 250 300 350 => 25 75 150 200 250 300 350
 Fixes:
 	Fixed Casino only items were purchasable
-	Fixed items could be solid in any point of the map
+	Fixed items could be sold in any point of the map
 	Fixed shop wasted gold, but didn't give item when you tried to buy somenthing with a summoned unit
+	Fixed Pocket Riki selling
+	Now you'll get hero list with game loading. This probably will fix most of hero selection stage crashes.
+	Fixed containers shops didn't work
 <<+===========================================================================================================
 rhasta,
 lycan,
@@ -79,3 +86,196 @@ venom
 pugna ward
 
 [	]*\/\/ Text Example[0-9.A-z\- ,\/\\]*\n
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"boss_roshan_spikes"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"nyx_assassin_impale"
+	"MaxLevel" 						"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityCooldown"				"9.66"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityDamage"					"4000"
+	"AbilityCastPoint"				"0.3"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"width"				"100"
+		}
+		"02"
+		{	
+			"var_type"			"FIELD_FLOAT"
+			"duration"			"1.5"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"length"			"1200"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"speed"				"1200"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"air_time"			"0.52"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+		"particle"				"particles/units/heroes/hero_nyx_assassin/nyx_assassin_impale.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"			"CASTER"
+			"EffectName"		"Hero_NyxAssassin.Impale"
+		}
+	
+		"LinearProjectile"
+		{
+			"Target"			"POINT"
+			"EffectName"		"particles/units/heroes/hero_nyx_assassin/nyx_assassin_impale.vpcf"
+			"StartRadius"		"%width"
+			"EndRadius"			"%width"
+			"MoveSpeed"			"%speed"
+			"TargetTeams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"TargetTypes"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"FixedDistance"		"%length"
+			"ProvidesVision"	"0"
+			"HasFrontalCone"	"0"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"			"0"
+	
+		"FireSound"
+		{
+			"Target"			"TARGET"
+			"EffectName"		"Hero_NyxAssassin.Impale.Target" 
+		}
+	
+		"RemoveModifier"
+		{
+			"Target"			"TARGET"
+			"ModifierName"		"modifier_knockback"
+		}
+		
+		"Knockback"
+		{
+			"Target"			"TARGET"
+			"Center"			"CASTER"
+			"Distance"			"0"
+			"Duration"			"%air_time"
+			"Height"			"200"
+			"IsFixedDistance"	"1"
+		}
+		
+		"Stun"
+		{
+			"Target"			"TARGET"
+			"Duration"			"%duration"
+		}
+		
+		"DelayedAction"
+		{
+			"Delay"				"%air_time"
+			"Action"
+			{
+				"FireSound"
+				{
+					"Target"			"TARGET"
+					"EffectName"		"Hero_NyxAssassin.Impale.TargetLand" 
+				}
+			
+				"Damage"
+				{
+					"Target"			"TARGET"
+					"Damage"			"%AbilityDamage"
+					"Type"				"DAMAGE_TYPE_MAGICAL"
+				}
+			}
+		}
+	}
+}

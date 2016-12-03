@@ -62,7 +62,7 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 	end
 	if not Kills.BountyStorage[killedUnit:GetPlayerID()] then Kills.BountyStorage[killedUnit:GetPlayerID()] = 0 end
 	local goldChange = Kills:GetGoldForKill(killedUnit)
-	Gold:ModifyGold(killedUnit, -goldChange, 0)
+	Gold:ModifyGold(killedUnit, -goldChange)
 	Kills:ClearStreak(killedUnit:GetPlayerID())
 	if killerEntity and killerEntity:IsControllableByAnyPlayer() then
 		local isDeny = false

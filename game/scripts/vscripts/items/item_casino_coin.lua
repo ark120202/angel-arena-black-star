@@ -28,7 +28,7 @@ function CasinoCoinSlotMachine(keys)
 						Notifications:Top(playerID, g2)
 						local enemies = GetEnemiesIds(caster:GetTeamNumber())
 						for _,id in ipairs(enemies) do
-							Gold:ModifyGold(id, addgold, true)
+							Gold:ModifyGold(id, addgold)
 							Notifications:Top(id, {text="#casino_slotmachine_roll_result_streak322_enemies_p1", style={color="red"}, duration = 10})
 							local g1,g2 = CreateGoldNotificationSettings(addgold)
 							Notifications:Top(id, g1)
@@ -51,14 +51,14 @@ function CasinoCoinSlotMachine(keys)
 									end
 								elseif i == 7 then --777
 									Notifications:Top(playerID, {text="#casino_slotmachine_roll_result_streak777", style={color=color}, duration = 10})
-									Gold:ModifyGold(caster, GetFilteredGold(250000), true)
-									Gold:ModifyGold(caster, GetFilteredGold(250000), true)
+									Gold:ModifyGold(caster, GetFilteredGold(250000))
+									Gold:ModifyGold(caster, GetFilteredGold(250000))
 								else --***
 									Notifications:Top(playerID, {text="#casino_slotmachine_roll_result_streakxxx", style={color=color}, duration = 10})
 									local g1,g2 = CreateGoldNotificationSettings(GetFilteredGold(i*11111))
 									Notifications:Top(playerID, g1)
 									Notifications:Top(playerID, g2)
-									Gold:ModifyGold(caster, GetFilteredGold(i*11111), true)
+									Gold:ModifyGold(caster, GetFilteredGold(i*11111))
 								end
 								won = true
 								break
@@ -68,13 +68,13 @@ function CasinoCoinSlotMachine(keys)
 									local g1,g2 = CreateGoldNotificationSettings(GetFilteredGold(10000))
 									Notifications:Top(playerID, g1)
 									Notifications:Top(playerID, g2)
-									Gold:ModifyGold(caster, GetFilteredGold(-10000), true)
+									Gold:ModifyGold(caster, GetFilteredGold(-10000))
 								else --xx*
 									Notifications:Top(playerID, {text="#casino_slotmachine_roll_result_streakxx", style={color=color}, duration = 10})
 									local g1,g2 = CreateGoldNotificationSettings(GetFilteredGold(i*1000))
 									Notifications:Top(playerID, g1)
 									Notifications:Top(playerID, g2)
-									Gold:ModifyGold(caster, GetFilteredGold(i*1000), true)
+									Gold:ModifyGold(caster, GetFilteredGold(i*1000))
 								end
 								won = true
 								break

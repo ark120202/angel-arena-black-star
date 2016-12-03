@@ -1,6 +1,6 @@
 function ReduceArmor(keys)
-	local caster = keys.caster
 	local unit = keys.target
 	local ability = keys.ability
-	ModifyStacks(ability, caster, unit, "modifier_stegius_desolating_touch_debuff", -ability:GetAbilitySpecial("armor_per_hit"), true)
+	local stacks = IsBossEntity(unit) and ability:GetAbilitySpecial("armor_per_hit_bosses") or ability:GetAbilitySpecial("armor_per_hit")
+	ModifyStacks(ability, keys.caster, unit, "modifier_stegius_desolating_touch_debuff", -stacks, true)
 end

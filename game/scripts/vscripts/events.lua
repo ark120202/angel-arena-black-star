@@ -328,7 +328,7 @@ function GameMode:OnEntityKilled( keys )
 			end
 			if plId > -1 then
 				local gold = RandomInt(killedUnit:GetMinimumGoldBounty(), killedUnit:GetMaximumGoldBounty())
-				Gold:ModifyGold(plId, gold, true)
+				Gold:ModifyGold(plId, gold)
 				SendOverheadEventMessage(killerEntity:GetPlayerOwner(), OVERHEAD_ALERT_GOLD, killedUnit, gold, killerEntity:GetPlayerOwner())
 			end
 		end
@@ -610,7 +610,7 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 		end
 		if cmd[1] == "a_gm" then
 			hero:AddExperience(1000000000.0, 0, false, true)
-			Gold:ModifyGold(hero, 999999, true)
+			Gold:ModifyGold(hero, 999999)
 			hero:ModifyAgility(100000)
 			hero:ModifyStrength(100000)
 			hero:ModifyIntellect(100000)

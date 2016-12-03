@@ -19735,6 +19735,7 @@
 						"ScriptFile"	"internal/kv.lua"
 						"Function"		"IncreaseStacks"
 						"modifier"		"modifier_item_haganemushi_stack"
+						"NoBosses"		"1"
 					}
 
 					"FireEffect"

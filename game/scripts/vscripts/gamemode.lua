@@ -82,6 +82,7 @@ LinkLuaModifier("modifier_hero_selection_transformation", "modifiers/modifier_he
 LinkLuaModifier("modifier_fountain_aura_arena", "modifiers/modifier_fountain_aura_arena.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_max_attack_range", "modifiers/modifier_max_attack_range.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_lotus_sphere_passive", "items/lua/modifiers/modifier_item_lotus_sphere_passive.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_arena_courier", "modifiers/modifier_arena_courier.lua", LUA_MODIFIER_MOTION_NONE)
 
 function GameMode:PostLoadPrecache()
 	DebugPrint("[BAREBONES] Performing Post-Load precache")
@@ -168,6 +169,7 @@ function GameMode:OnHeroInGame(hero)
 					for _,courier in pairs(couriers) do
 						if courier:GetOwner():GetPlayerID() == hero:GetPlayerID() then
 							courier:UpgradeToFlyingCourier()
+							courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
 							TEAMS_COURIERS[hero:GetTeamNumber()] = courier
 						end
 					end
@@ -665,7 +667,7 @@ function GameMode:GameModeThink()
 				local allyCount = GetTeamPlayerCount(PlayerResource:GetTeam(i))
 				local goldPerAlly = math.floor(gold/allyCount)
 				local goldCanBeWasted = goldPerAlly * allyCount
-				Gold:ModifyGold(i, -goldCanBeWasted)
+				Gold:RemoveGold(i, goldCanBeWasted)
 				for ally = 0, 23 do
 					if PlayerResource:IsValidPlayerID(ally) and not IsPlayerAbandoned(ally) then
 						if PlayerResource:GetTeam(ally) == PlayerResource:GetTeam(i) then

@@ -79,7 +79,7 @@ function GetPlayerHeroName(playerId) {
 
 function GetPlayerGold(iPlayerID) {
 	var goldTable = PlayerTables.GetTableValue("arena", "gold")
-	if (goldTable && goldTable[iPlayerID])
+	if (goldTable != null)
 		return goldTable[iPlayerID]
 	else
 		return Players.GetGold(iPlayerID)
@@ -144,7 +144,7 @@ function DynamicSubscribePTListener(table, callback, OnConnectedCallback) {
 			OnConnectedCallback(ptid)
 		}
 	} else {
-		$.Schedule(1 / 30, function() {
+		$.Schedule(0.1, function() {
 			DynamicSubscribePTListener(table, callback)
 		})
 	}

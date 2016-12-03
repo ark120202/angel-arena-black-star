@@ -88,7 +88,6 @@
 	"courier_go_to_secretshop"
 	{
 		"BaseClass"             		"courier_go_to_secretshop"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 
@@ -101,9 +100,7 @@
 				"var_type"	"FIELD_INTEGER"
 				"handoff_distance"	"200"
 			}
-
 		}
-
 	}
 
 	"courier_take_stash_items"
@@ -115,9 +112,7 @@
 				"var_type"	"FIELD_INTEGER"
 				"stash_pickup_distance"	"250"
 			}
-
 		}
-
 	}
 
 	"courier_take_stash_and_transfer_items"
@@ -129,36 +124,13 @@
 				"var_type"	"FIELD_INTEGER"
 				"handoff_distance"	"200"
 			}
-
 		}
-
 	}
 
 	"courier_burst"
 	{
-		"AbilityCooldown"	"90.0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"4.0"
-			}
-
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"movement_speed"	"800"
-			}
-
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"damage_absorb"	"250"
-			}
-
-		}
-
+		"AbilityCooldown"				"0"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 
 	//"item_halloween_candy_corn"	"REMOVE"

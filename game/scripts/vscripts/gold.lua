@@ -24,19 +24,19 @@ end
 
 function Gold:ModifyGold(unitvar, gold, bReliable, iReason)
 	if gold > 0 then
-		Gold:AddGold(unitvar, gold, bReliable, iReason)
+		Gold:AddGold(unitvar, gold)
 	elseif gold < 0 then
-		Gold:RemoveGold(unitvar, -gold, iReason)
+		Gold:RemoveGold(unitvar, -gold)
 	end
 end
 
-function Gold:RemoveGold(unitvar, gold, iReason)
+function Gold:RemoveGold(unitvar, gold)
 	local playerID = UnitVarToPlayerID(unitvar)
 	PLAYER_DATA[playerID].SavedGold = math.max((PLAYER_DATA[playerID].SavedGold or 0) - math.ceil(gold), 0)
 	Gold:UpdatePlayerGold(playerID)
 end
 
-function Gold:AddGold(unitvar, gold, bReliable, iReason)
+function Gold:AddGold(unitvar, gold)
 	local playerID = UnitVarToPlayerID(unitvar)
 	PLAYER_DATA[playerID].SavedGold = (PLAYER_DATA[playerID].SavedGold or 0) + math.floor(gold)
 	Gold:UpdatePlayerGold(playerID)

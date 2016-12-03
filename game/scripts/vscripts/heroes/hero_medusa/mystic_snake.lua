@@ -1,6 +1,3 @@
---[[Author: Pizzalol
-	Date: 07.03.2015.
-	Handles all the targeting and other actions logic]]
 function MysticSnake( keys )
 	local caster = keys.caster
 	local target = keys.target
@@ -11,7 +8,6 @@ function MysticSnake( keys )
 	if not caster:IsIllusion() then
 		local ability = keys.ability
 		local base_mana = ability:GetAbilitySpecial("snake_mana_steal")
-
 		if target:GetMaxMana() > 0 then
 			target:ReduceMana(base_mana)
 			caster:GiveMana(base_mana)
@@ -30,20 +26,25 @@ function CreateProjectiles(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	caster:EmitSound("Hero_Medusa.MysticSnake.Cast")
-	ParticleManager:CreateParticle("particles/units/heroes/hero_medusa/medusa_mystic_snake_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-	ProjectileManager:CreateTrackingProjectile({
-		EffectName = "particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf",
-		Ability = ability,
-		vSpawnOrigin = caster:GetAbsOrigin(),
-		Target = target,
-		Source = caster,
-		bHasFrontalCone = false,
-		iMoveSpeed = ability:GetAbilitySpecial("initial_speed"),
-		bReplaceExisting = false,
-		bProvidesVision = true,
-		iVisionRadius = ability:GetAbilitySpecial("vision_radius"),
-		iVisionTeamNumber = caster:GetTeam(),
-		iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1
-	})
+	if ability:IsCooldownReady() and not caster:PassivesDisabled() then
+		caster:EmitSound("Hero_Medusa.MysticSnake.Cast")
+		ParticleManager:CreateParticle("particles/units/heroes/hero_medusa/medusa_mystic_snake_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+		ProjectileManager:CreateTrackingProjectile({
+			EffectName = "particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf",
+			Ability = ability,
+			vSpawnOrigin = caster:GetAbsOrigin(),
+			Target = target,
+			Source = caster,
+			bHasFrontalCone = false,
+			iMoveSpeed = ability:GetAbilitySpecial("initial_speed"),
+			bReplaceExisting = false,
+			bProvidesVision = true,
+			iVisionRadius = ability:GetAbilitySpecial("vision_radius"),
+			iVisionTeamNumber = caster:GetTeam(),
+			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1
+		})
+		Timers:CreateTimer(0.03, function()
+			ability:StartCooldown(GetAbilityCooldown(caster, ability))
+		end)
+	end
 end
