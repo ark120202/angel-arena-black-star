@@ -13,7 +13,8 @@
 				<Button id="SmallItemButton">
 					<DOTAItemImage hittest="false" id="SmallItemImage" />
 					<Label hittest="false" id="SmallItemStock"/>
-					<Panel hittest="false" id="SmallItemDropTargetHighlight" />
+					<Label hittest="false" id="StockTimer" />
+					<Panel hittest="false" id="StockOverlay" />
 				</Button>
 			</Panel>
 		</snippet>

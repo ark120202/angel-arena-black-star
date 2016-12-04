@@ -1039,7 +1039,6 @@
 		"ItemStockMax"					"20"
 		"ItemStockTime"					"60"			  
 		"ItemInitialStockTime"			"240"
-		"ItemCost"						"500"
 	}
 	"item_recipe_hurricane_pike"
 	{

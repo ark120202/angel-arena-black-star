@@ -9,6 +9,7 @@ var TabIndex = null
 var QuickBuyTarget = null
 var QuickBuyTargetAmount = 0
 var LastHero = null
+var ItemStocks = [];
 
 function OpenCloseShop() {
 	$("#ShopBase").ToggleClass("ShopBase_Out")
@@ -25,11 +26,7 @@ function SearchItems() {
 		SearchingFor = searchStr
 		var ShopSearchOverlay = $("#ShopSearchOverlay")
 		$.Each(ShopSearchOverlay.Children(), function(child) {
-			var index = SmallItems.indexOf(child);
-			if (index > -1) {
-				child.visible = false
-				SmallItems.splice(index, 1);
-			}
+			child.DestroyItemPanel()
 		})
 		$.GetContextPanel().SetHasClass("InSearchMode", searchStr.length > 0)
 		if (searchStr.length > 0) {
@@ -139,6 +136,17 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush) {
 	panel.SetPanelEvent("onmouseout", function() {
 		ItemHideTooltip(panel)
 	})
+	panel.DestroyItemPanel = function() {
+		var id1 = SmallItemsAlwaysUpdated.indexOf(panel);
+		if (id1 > -1) {
+			SmallItemsAlwaysUpdated.splice(id1, 1);
+		}
+		var id2 = SmallItems.indexOf(panel);
+		if (id2 > -1)
+			SmallItems.splice(id2, 1);
+		panel.visible = false
+		panel.DeleteAsync(0)
+	}
 	if (!panel.IsInQuickbuy) {
 		$.RegisterEventHandler('DragStart', panel, SmallItemOnDragStart);
 		$.RegisterEventHandler('DragEnd', panel, SmallItemOnDragEnd);
@@ -179,25 +187,13 @@ function ShowItemRecipe(itemName) {
 	var RecipeData = currentItemData.Recipe
 	var BuildsIntoData = currentItemData.BuildsInto
 	$.Each($("#ItemRecipeBoxRow1").Children(), function(child) {
-		var index = SmallItems.indexOf(child);
-		if (index > -1) {
-			child.visible = false
-			SmallItems.splice(index, 1);
-		}
+		child.DestroyItemPanel()
 	})
 	$.Each($("#ItemRecipeBoxRow2").Children(), function(child) {
-		var index = SmallItems.indexOf(child);
-		if (index > -1) {
-			child.visible = false
-			SmallItems.splice(index, 1);
-		}
+		child.DestroyItemPanel()
 	})
 	$.Each($("#ItemRecipeBoxRow3").Children(), function(child) {
-		var index = SmallItems.indexOf(child);
-		if (index > -1) {
-			child.visible = false
-			SmallItems.splice(index, 1);
-		}
+		child.DestroyItemPanel()
 	})
 	$("#ItemRecipeBoxRow1").RemoveAndDeleteChildren();
 	$("#ItemRecipeBoxRow2").RemoveAndDeleteChildren();
@@ -260,19 +256,22 @@ function LoadItemsFromTable(panorama_shop_data) {
 	PushItemsToList()
 }
 
-function UpdatePanoramaState() {
-	var panorama_shop_data = PlayerTables.GetAllTableValues("panorama_shop_data")
-	if (panorama_shop_data != null) {
-		LoadItemsFromTable(panorama_shop_data)
-		SetQuickbuyStickyItem("item_tpscroll")
-	} else {
-		$.Schedule(0.1, UpdatePanoramaState)
-	}
-}
-
 function UpdateSmallItem(panel, gold) {
 	try {
 		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) < (gold || PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]))
+		if (ItemStocks[panel.itemName] != null) {
+			var CurrentTime = Game.GetGameTime();
+			var RemainingTime = ItemStocks[panel.itemName].current_cooldown - (CurrentTime - ItemStocks[panel.itemName].current_last_purchased_time)
+			var stock = ItemStocks[panel.itemName].current_stock;
+			panel.FindChildTraverse("SmallItemStock").text = stock
+			if (stock == 0 && RemainingTime > 0) {
+				panel.FindChildTraverse("StockTimer").text = Math.round(RemainingTime);
+				panel.FindChildTraverse("StockOverlay").style.width = (RemainingTime / ItemStocks[panel.itemName].current_cooldown * 100) + "%";
+			} else {
+				panel.FindChildTraverse("StockTimer").text = "";
+				panel.FindChildTraverse("StockOverlay").style.width = 0;
+			}
+		}
 	} catch (err) {
 		var index = SmallItems.indexOf(panel);
 		if (index > -1)
@@ -310,12 +309,7 @@ function GetRemainingPrice(itemName, ItemCounter, baseItem) {
 
 function SetQuickbuyStickyItem(itemName) {
 	$.Each($("#QuickBuyStickyButtonPanel").Children(), function(child) {
-		var index = SmallItemsAlwaysUpdated.indexOf(child);
-		if (index > -1) {
-			child.visible = false
-			SmallItemsAlwaysUpdated.splice(index, 1);
-		}
-		child.DeleteAsync(0)
+		child.DestroyItemPanel()
 	})
 	var itemPanel = $.CreatePanel("Panel", $("#QuickBuyStickyButtonPanel"), "QuickBuyStickyButtonPanel_item_" + itemName)
 	SnippetCreate_SmallItem(itemPanel, itemName, true)
@@ -328,12 +322,7 @@ function ClearQuickbuyItems() {
 	QuickBuyTargetAmount = null
 	$.Each($("#QuickBuyPanelItems").Children(), function(child) {
 		if (!child.BHasClass("DropDownValidTarget")) {
-			var index = SmallItemsAlwaysUpdated.indexOf(child);
-			if (index > -1) {
-				child.visible = false
-				SmallItemsAlwaysUpdated.splice(index, 1);
-			}
-			child.DeleteAsync(0)
+			child.DestroyItemPanel()
 		} else {
 			//child.visible = false
 		}
@@ -341,9 +330,7 @@ function ClearQuickbuyItems() {
 }
 
 function RefreshQuickbuyItem(itemName) {
-	var a = {}
-	var b = {}
-	MakeQuickbuyCheckItem(itemName, a, b, QuickBuyTargetAmount)
+	MakeQuickbuyCheckItem(itemName, {}, {}, QuickBuyTargetAmount)
 }
 
 function MakeQuickbuyCheckItem(itemName, ItemCounter, ItemIndexer, sourceExpectedCount) {
@@ -397,12 +384,7 @@ function RemoveQuickbuyItemChildren(itemName, ItemIndexer, bIncrease) {
 function RemoveQuckbuyPanel(itemName, index) {
 	var panel = $("#QuickBuyPanelItems").FindChildTraverse("QuickBuyPanelItems_item_" + itemName + "_id_" + index)
 	if (panel != null) {
-		var id = SmallItemsAlwaysUpdated.indexOf(panel);
-		if (id > -1) {
-			panel.visible = false
-			SmallItemsAlwaysUpdated.splice(id, 1);
-		}
-		panel.DeleteAsync(0)
+		panel.DestroyItemPanel()
 	}
 }
 
@@ -424,19 +406,14 @@ function ShowItemInShop(data) {
 function UpdateShop() {
 	SearchItems()
 	UpdateItembuildsForHero();
-	var pt = PlayerTables.GetTableValue("arena", "gold")
-	if (pt != null) {
-		var gold = pt[Game.GetLocalPlayerID()]
-		if (gold != null) {
-			$.Each(SmallItemsAlwaysUpdated, function(panel) {
-				UpdateSmallItem(panel, gold)
-			});
-			if (!$("#ShopBase").BHasClass("ShopBase_Out"))
-				$.Each(SmallItems, function(panel) {
-					UpdateSmallItem(panel, gold)
-				});
-		}
-	}
+	var gold = GetPlayerGold(Game.GetLocalPlayerID())
+	$.Each(SmallItemsAlwaysUpdated, function(panel) {
+		UpdateSmallItem(panel, gold)
+	});
+	if (!$("#ShopBase").BHasClass("ShopBase_Out"))
+		$.Each(SmallItems, function(panel) {
+			UpdateSmallItem(panel, gold)
+		});
 	//$.GetContextPanel().SetHasClass("InRangeOfShop", Entities.IsInRangeOfShop(m_QueryUnit, 0, true))
 }
 
@@ -509,6 +486,10 @@ function ShowHideItembuilds() {
 	$("#ShowHideItemguidesLabel").text = $.GetContextPanel().BHasClass("ItembuildsHidden") ? "<" : ">";
 }
 
+function SetItemStock(item, ItemStock) {
+	ItemStocks[item] = ItemStock;
+}
+
 (function() {
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP, false)
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_GOLD, false)
@@ -549,7 +530,20 @@ function ShowHideItembuilds() {
 		if (!$("#ShopBase").BHasClass("ShopBase_Out"))
 			ShowItemInShop(data)
 	})
-	UpdatePanoramaState()
+
+	DynamicSubscribePTListener("panorama_shop_data", function(tableName, changesObject, deletionsObject) {
+		if (changesObject.ShopList != null) {
+			LoadItemsFromTable(changesObject);
+			SetQuickbuyStickyItem("item_tpscroll");
+		};
+		if (changesObject.ItemStocks != null) {
+			for (var item in changesObject.ItemStocks) {
+				var ItemStock = changesObject.ItemStocks[item];
+				SetItemStock(item, ItemStock);
+			}
+		};
+	});
+
 	AutoUpdateShop()
 	AutoUpdateQuickbuy()
 

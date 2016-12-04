@@ -33,23 +33,28 @@ TODO LIST:
 [url=https://gist.github.com/ark120202/15ebd6bfc1e590485a893c6b56bb9f83]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/15ebd6bfc1e590485a893c6b56bb9f83
 ============================================================
-Angel Arena Black Star - Версия 1.3.3b:
-
+Angel Arena Black Star - Версия 1.3.3c:
+Усилены: Courier, Timbersaw - Whirling Death, Timbersaw - Chakram
+Ослаблены: Haganemushi, Stegius - Desolating Touch
+Изменены: Medusa - Mystic Snake, Sniper - Shrapnel
+Добавлена система покупки предметов с перезарядкой
+Исправлены ошибки с системой золота, магазина и инвентаря
 ============================================================
-Angel Arena Black Star - Version 1.3.3b:
-
+Angel Arena Black Star - Version 1.3.3c:
+Buffed: Courier, Timbersaw - Whirling Death, Timbersaw - Chakram
+Nerfed: Haganemushi, Stegius - Desolating Touch
+Changed: Medusa - Mystic Snake, Sniper - Shrapnel
+Added items stock system
+Fixed bugs with gold, shop and inventory
 ============================================================
-Angel Arena Black Star - Version 1.3.3b:
+Angel Arena Black Star - Version 1.3.3c:
 
-General:
 Balance:
 	Items:
 		Courier:
 			Now is invulnerable
 			Base movement speed increased to 800
 			Burst ability removed
-		Tome of Knowledge:
-			Cost: 150 => 500
 		Haganemushi:
 			Now not works on bosses
 	Abilities:
@@ -67,12 +72,13 @@ Balance:
 		Sniper - Shrapnel:
 			Damage: 50 100 150 200 250 300 350 => 25 75 150 200 250 300 350
 Fixes:
-	Fixed Casino only items were purchasable
+	Fixed Casino only items were purchasable in shop
 	Fixed items could be sold in any point of the map
 	Fixed shop wasted gold, but didn't give item when you tried to buy somenthing with a summoned unit
 	Fixed Pocket Riki selling
-	Now you'll get hero list with game loading. This probably will fix most of hero selection stage crashes.
+	Now clients will load hero list with game loading. This probably will fix most of hero selection stage crashes.
 	Fixed containers shops didn't work
+	Fixed stockable items could've purchased infinite times. Now stock system should work normal
 <<+===========================================================================================================
 rhasta,
 lycan,

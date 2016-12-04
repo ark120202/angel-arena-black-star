@@ -28,7 +28,6 @@ local requirements = {
 	"libraries/worldpanels",
 	"libraries/CosmeticLib",
 	"libraries/PopupNumbers",
-	"libraries/json",
 	--------------------------------------------------
 	"data/globals",
 	"data/constants",
@@ -65,12 +64,13 @@ local requirements = {
 	"custom_wearables",
 	"SimpleAI",
 	"dynamic_minimap",
-	"custom_runes"
+	"custom_runes",
+	"stats_client"
 }
 for i = 1, #requirements do
 	require(requirements[i])
 end
-
+JSON = require("libraries/json")
 GameModes:Preload()
 
 LinkLuaModifier("modifier_state_hidden", "modifiers/modifier_state_hidden", LUA_MODIFIER_MOTION_NONE)
@@ -215,9 +215,12 @@ function GameMode:OnGameInProgress()
 	else
 		Holdout:Start()
 	end
-	PlayerResource:RefreshSelection()
+	StatsClient:OnGameBegin()
 	Scepters:SetGlobalScepterThink()
 	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
+	Timers:CreateTimer(0.3, function()
+		PlayerResource:RefreshSelection()
+	end)
 end
 
 -- This function initializes the game mode and is called before anyone loads into the game

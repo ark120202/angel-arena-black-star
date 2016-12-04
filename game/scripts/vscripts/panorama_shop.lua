@@ -3,6 +3,53 @@ if PanoramaShop == nil then
 	PanoramaShop._RawItemData = {}
 	PanoramaShop._ItemData = {}
 	PanoramaShop.FormattedData = {}
+	PanoramaShop.StocksTable = {}
+end
+
+function PanoramaShop:PushStockInfoToAllClients()
+	local ItemStocks = PlayerTables:GetTableValue("panorama_shop_data", "ItemStocks") or {}
+	for item,v in pairs(PanoramaShop.StocksTable) do
+		ItemStocks[item] = {
+			current_stock = v.current_stock,
+			current_cooldown = v.current_cooldown,
+			current_last_purchased_time = v.current_last_purchased_time,
+		}
+	end
+	PlayerTables:SetTableValue("panorama_shop_data", "ItemStocks", ItemStocks)
+end
+
+function PanoramaShop:GetItemStockCount(item)
+	local t = PanoramaShop.StocksTable[item]
+	return t ~= nil and t.current_stock
+end
+
+function PanoramaShop:IncreaseItemStock(item)
+	local t = PanoramaShop.StocksTable[item]
+	if t and t.current_stock < t.ItemStockMax then
+		t.current_stock = t.current_stock + 1
+		if t.current_stock < t.ItemStockMax then
+			PanoramaShop:StackStockableCooldown(item, t.ItemStockTime)
+		end
+		PanoramaShop:PushStockInfoToAllClients()
+	end
+end
+
+function PanoramaShop:DecreaseItemStock(item)
+	local t = PanoramaShop.StocksTable[item]
+	if t and t.current_stock > 0 then
+		t.current_stock = t.current_stock - 1
+		PanoramaShop:StackStockableCooldown(item, t.ItemStockTime)
+		PanoramaShop:PushStockInfoToAllClients()
+	end
+end
+
+function PanoramaShop:StackStockableCooldown(item, time)
+	local t = PanoramaShop.StocksTable[item]
+	t.current_cooldown = time
+	t.current_last_purchased_time = GameRules:GetGameTime()
+	Timers:CreateTimer(time, function()
+		PanoramaShop:IncreaseItemStock(item)
+	end)
 end
 
 function PanoramaShop:InitializeItemTable()
@@ -25,7 +72,6 @@ function PanoramaShop:InitializeItemTable()
 			hidden = ((kv.ItemPurchasable or 1) == 0) or ((kv.ItemHidden or 0) == 1),
 			cost = GetTrueItemCost(name),
 			names = {name:lower()},
-			Recipe = nil,
 		}
 		if kv.ItemAliases then
 			for _,v in ipairs(string.split(kv.ItemAliases, ";")) do
@@ -50,7 +96,6 @@ function PanoramaShop:InitializeItemTable()
 			local recipedata = {
 				visible = GetTrueItemCost(RecipesToCheck[name]) > 0,
 				items = {},
-				customLayout = false,
 				cost = GetTrueItemCost(RecipesToCheck[name]),
 				recipeItemName = RecipesToCheck[name],
 			}
@@ -71,6 +116,24 @@ function PanoramaShop:InitializeItemTable()
 				end
 			end
 			itemdata.Recipe = recipedata
+		else
+			--itemdata.Recipe = {}
+			--TODO: Boss drops
+		end
+		if kv.ItemStockMax or kv.ItemStockTime or kv.ItemInitialStockTime or kv.ItemStockInitial then
+			local stocks = {
+				ItemStockMax = kv.ItemStockMax or 0,
+				ItemStockTime = kv.ItemStockTime or 0,
+				current_stock = kv.ItemStockInitial or 0,
+				current_cooldown = kv.ItemInitialStockTime or 0,
+				current_last_purchased_time = GameRules:GetGameTime(),
+			}
+			PanoramaShop.StocksTable[name] = stocks
+			if stocks.current_cooldown > 0 then
+				PanoramaShop:StackStockableCooldown(name, stocks.current_cooldown)
+			elseif stocks.current_stock < stocks.ItemStockMax then
+				PanoramaShop:StackStockableCooldown(name, stocks.ItemStockTime)
+			end
 		end
 		PanoramaShop.FormattedData[name] = itemdata
 	end
@@ -113,6 +176,7 @@ function PanoramaShop:InitializeItemTable()
 	CustomGameEventManager:RegisterListener("panorama_shop_item_buy", Dynamic_Wrap(PanoramaShop, "OnItemBuy"))
 	CustomGameEventManager:RegisterListener("panorama_shop_sell_item", Dynamic_Wrap(PanoramaShop, "OnItemSell"))
 	PlayerTables:CreateTable("panorama_shop_data", {ItemData = PanoramaShop.FormattedData, ShopList = Items, Itembuilds = itembuilds}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+	PanoramaShop:PushStockInfoToAllClients()
 end
 
 function PanoramaShop:OnItemSell(data)
@@ -188,7 +252,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 	local function HasAnyOfItemChildren(childItemName)
 		local primary_items = GetAllPrimaryRecipeItems(childItemName)
 		for _,v in ipairs(primary_items) do
-			if FindItemInInventoryByName(unit, v, true) then
+			if FindItemInInventoryByName(unit, v, true) or PanoramaShop.StocksTable[v] then
 				return true
 			end
 		end
@@ -204,6 +268,23 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 			_tempItemCounter[v] = (_tempItemCounter[v] or 0) + 1
 			local itemcount = #GetAllItemsByNameInInventory(unit, v, true, true)
 			if (GetKeyValue(v, "ItemPurchasableFilter") == 0 or GetKeyValue(v, "ItemPurchasable") == 0) and itemcount < _tempItemCounter[v] then
+				return false
+			end
+		end
+		return true
+	end
+	local function IsItemChildrenStockEnough(childItemName)
+		local stocks = PanoramaShop:GetItemStockCount(childItemName)
+		if stocks and stocks < 1 then
+			return false
+		end
+		local primary_items = GetAllPrimaryRecipeItems(childItemName)
+		local _tempItemCounter = {}
+		for _,v in ipairs(primary_items) do
+			_tempItemCounter[v] = (_tempItemCounter[v] or 0) + 1
+			local itemcount = #GetAllItemsByNameInInventory(unit, v, true, true)
+			local stocks = PanoramaShop:GetItemStockCount(v)
+			if stocks and (stocks < _tempItemCounter[v] and itemcount < _tempItemCounter[v]) then
 				return false
 			end
 		end
@@ -234,6 +315,9 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 		return _cost
 	end
 	local function DirectPurchaseItem(childItemName)
+		if PanoramaShop.StocksTable[childItemName] then
+			PanoramaShop:DecreaseItemStock(childItemName)
+		end
 		Gold:RemoveGold(playerID, GetTrueItemCost(childItemName))
 		local item = CreateItem(childItemName, hero, hero)
 		item:SetPurchaseTime(GameRules:GetGameTime())
@@ -302,8 +386,13 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 	end
 	if Gold:GetGold(playerID) >= GetItemCostRemaining(itemName) then
 		if IsItemChildrenPurchasable(itemName) then
-			purchaseItemPart(itemName)
-			Containers:EmitSoundOnClient(playerID, "General.Buy")
+			if IsItemChildrenStockEnough(itemName) then
+				purchaseItemPart(itemName)
+				Containers:EmitSoundOnClient(playerID, "General.Buy")
+			else
+				Containers:DisplayError(playerID, "dota_hud_error_item_out_of_stock")
+				--sound
+			end
 		else
 			Containers:DisplayError(playerID, "dota_hud_error_item_from_bosses")
 		end

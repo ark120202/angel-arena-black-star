@@ -82,7 +82,7 @@ function GetPlayerGold(iPlayerID) {
 	if (goldTable != null)
 		return goldTable[iPlayerID]
 	else
-		return Players.GetGold(iPlayerID)
+		return 0
 }
 
 function dynamicSort(property) {

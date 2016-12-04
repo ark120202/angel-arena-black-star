@@ -89,7 +89,6 @@ end
 function GameMode:OnPlayerReconnect(keys)
 	DebugPrint( '[BAREBONES] OnPlayerReconnect' )
 	DebugPrintTable(keys)
-	DeepPrintTable(keys)
 end
 
 -- An item was purchased by a player
@@ -239,26 +238,6 @@ function GameMode:OnRuneActivated(keys)
 	end
 end
 
--- A player took damage from a tower
-function GameMode:OnPlayerTakeTowerDamage(keys)
-	--[[DebugPrint('[BAREBONES] OnPlayerTakeTowerDamage')
-	DebugPrintTable(keys)
-
-	local player = PlayerResource:GetPlayer(keys.PlayerID)
-	local damage = keys.damage]]
-end
-
--- A player picked a hero
-function GameMode:OnPlayerPickHero(keys)
-	--[[DebugPrint('[BAREBONES] OnPlayerPickHero')
-	DebugPrintTable(keys)
-
-	local heroClass = keys.hero
-	local heroEntity = EntIndexToHScript(keys.heroindex)
-	local player = EntIndexToHScript(keys.player)
-	--TODO работает с новым пиком?????]]
-end
-
 -- A player killed another player in a multi-team context
 function GameMode:OnTeamKillCredit(keys)
 	DebugPrint('[BAREBONES] OnTeamKillCredit')
@@ -406,14 +385,6 @@ function GameMode:OnConnectFull(keys)
 	
 	-- The Player ID of the joining player
 	local playerID = ply:GetPlayerID()
-end
-
--- This function is called whenever illusions are created and tells you which was/is the original entity
-function GameMode:OnIllusionsCreated(keys)
-	DebugPrint('[BAREBONES] OnIllusionsCreated')
-	DebugPrintTable(keys)
-
-	local originalEntity = EntIndexToHScript(keys.original_entindex)
 end
 
 -- This function is called whenever an item is combined to create a new item
