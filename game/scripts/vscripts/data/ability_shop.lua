@@ -103,12 +103,6 @@ ABILITY_SHOP_DATA = {
 	["nevermore_dark_lord"] = { cost = 2, },
 	["chaos_knight_chaos_strike"] = { cost = 4, },
 	["undying_decay"] = { cost = 13, },
-	[""] = { cost = 10, },
-	[""] = { cost = 10, },
-	[""] = { cost = 10, },
-	[""] = { cost = 10, },
-	[""] = { cost = 10, },
-	[""] = { cost = 10, },
 }
 
 ABILITY_SHOP_SKIP_HEROES = {

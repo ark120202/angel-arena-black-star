@@ -150,6 +150,16 @@ function DynamicSubscribePTListener(table, callback, OnConnectedCallback) {
 	}
 }
 
+function DynamicSubscribeNTListener(table, callback, OnConnectedCallback) {
+	var tableData = CustomNetTables.GetAllTableValues(table)
+	if (tableData != null)
+		callback(table, tableData, {})
+	var ptid = CustomNetTables.SubscribeNetTableListener(table, callback)
+	if (OnConnectedCallback != null) {
+		OnConnectedCallback(ptid)
+	}
+}
+
 function GetBaseHudPanel() {
 	var panel = $.GetContextPanel()
 	while (true) {
@@ -241,4 +251,10 @@ function _DynamicMinimapSubscribe(minimapPanel, OnConnectedCallback) {
 			}
 		}, OnConnectedCallback);
 	});
+}
+
+function IsCursorOnPanel(panel) {
+	var panelCoords = panel.GetPositionWithinWindow()
+	var cursorPos = GameUI.GetCursorPosition()
+	return cursorPos[0] > panelCoords.x && cursorPos[1] > panelCoords.y && cursorPos[0] < panelCoords.x + panel.actuallayoutwidth && cursorPos[1] < panelCoords.y + panel.actuallayoutheight
 }

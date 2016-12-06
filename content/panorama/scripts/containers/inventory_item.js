@@ -95,6 +95,9 @@ function UpdateItem() {
 	$("#ItemImage").contextEntityIndex = m_Item;
 	$("#ChargeCount").text = chargeCount;
 	$("#AltChargeCount").text = altChargeCount;
+	var custom_ability_icons_data = CustomNetTables.GetTableValue("custom_ability_icons", String(m_Item));
+	if (custom_ability_icons_data != null)
+		$("#ItemImage").SetImage(TransformTextureToPath(custom_ability_icons_data["1"]));
 
 	$("#Price").text = price;
 	$("#Stock").text = "x" + stock;
@@ -424,6 +427,9 @@ function OnDragStart(panelId, dragCallbacks) {
 	displayPanel.m_DragCompleted = false; // whether the drag was successful
 	displayPanel.m_OriginalPanel = $.GetContextPanel();
 	displayPanel.m_QueryUnit = m_QueryUnit;
+	var custom_ability_icons_data = CustomNetTables.GetTableValue("custom_ability_icons", String(m_Item));
+	if (custom_ability_icons_data != null)
+		displayPanel.SetImage(TransformTextureToPath(custom_ability_icons_data["1"]));
 
 	// hook up the display panel, and specify the panel offset from the cursor
 	dragCallbacks.displayPanel = displayPanel;

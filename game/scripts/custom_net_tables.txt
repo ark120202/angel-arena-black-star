@@ -4,8 +4,7 @@
 	[
 		"containers_lua",
 		"selection",
-		
-		"hero_selection",
-		"CAD",
+		"entity_tooltips",
+		"custom_ability_icons",
 	]
 }

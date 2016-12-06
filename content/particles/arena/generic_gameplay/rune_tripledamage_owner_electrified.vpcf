@@ -1,0 +1,129 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 32
+	m_flConstantRadius = 2.0
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_bAdditive = true
+			m_flOverbrightFactor = 3.0
+			m_hTexture = resource:"materials/particle/electrical_arc/electrical_arc02.vtex"
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_flEndTime = 99999.0
+			m_Rate = -10.0
+			m_nField = 16
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_LockToBone"
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_RampScalarSpline"
+			m_nField = 12
+			m_RateMin = -24.0
+			m_RateMax = 24.0
+		},
+		{
+			_class = "C_OP_RampScalarSpline"
+			m_RateMax = 24.0
+			m_RateMin = -24.0
+			m_nField = 4
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_bProportional = false
+			m_FrequencyMax = 9.0
+			m_RateMax = 800.0
+			m_RateMin = -800.0
+			m_nField = 16
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.1
+			m_Gravity = [ 0.0, 0.0, -100.0 ]
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_flOscAdd = 0.75
+			m_FrequencyMax = [ 4.0, 4.0, 4.0 ]
+			m_FrequencyMin = [ 0.25, 0.25, 0.25 ]
+			m_RateMax = [ 5.0, 5.0, 5.0 ]
+			m_RateMin = [ -5.0, -5.0, -5.0 ]
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_nField = 3
+			m_RateMin = -300.0
+			m_RateMax = 300.0
+			m_FrequencyMin = 0.5
+			m_FrequencyMax = 9.0
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 0.250003
+			m_fLifetimeMin = 0.05
+			m_fLifetimeRandExponent = 1.25
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 0
+			m_nAlphaMax = 220
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 3
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 12.0
+			m_flRadiusRandExponent = 0.5
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecOutputMax = [ 128.0, 128.0, 128.0 ]
+			m_vecOutputMin = [ -128.0, -128.0, -128.0 ]
+			m_flNoiseScaleLoc = 1.0
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/arena/generic_gameplay/rune_tripledamage_owner_electrified_beam_a.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/generic_gameplay/rune_tripledamage_owner_electrified_beam_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/generic_gameplay/rune_tripledamage_owner_electrified_arc_b.vpcf"
+		},
+	]
+	m_ConstantColor = [ 255, 195, 0, 255 ]
+}

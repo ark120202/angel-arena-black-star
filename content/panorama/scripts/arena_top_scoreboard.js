@@ -11,7 +11,7 @@ function UpdateScoreboard() {
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	var current_Time = Game.GetDOTATime(false, false)
 
-	_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "timerLabel", secondsToHms(current_Time))
+	_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "timerLabel", secondsToMS(current_Time, true))
 	var timerImageDeg = ((current_Time - (Math.floor(current_Time / 480) * 480)) / 480) * 360
 	g_ScoreboardHandle.scoreboardPanel.FindChildInLayoutFile("timerImage").style.transform = "rotateZ(" + timerImageDeg + "deg)"
 	if (timerImageDeg >= 0 && timerImageDeg < 180) {
@@ -52,27 +52,12 @@ function ShowScoreboardVisible() {
 	$("#TopBarScoreboard").visible = true
 }
 
-function secondsToHms(seconds) {
-	var sec_num = parseInt(seconds, 10);
-	var hours = Math.floor(sec_num / 3600);
-	var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-	var seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-	if (hours < 10)
-		hours = "0" + hours;
-	if (minutes < 10)
-		minutes = "0" + minutes;
-	if (seconds < 10)
-		seconds = "0" + seconds;
-	return hours + ':' + minutes + ':' + seconds;
-}
-
-function secondsToMS(seconds) {
+function secondsToMS(seconds, bTwoChars) {
 	var sec_num = parseInt(seconds, 10);
 	var minutes = Math.floor(sec_num / 60);
 	var seconds = Math.floor(sec_num - minutes * 60);
 
-	if (minutes < 10)
+	if (bTwoChars && minutes < 10)
 		minutes = "0" + minutes;
 	if (seconds < 10)
 		seconds = "0" + seconds;

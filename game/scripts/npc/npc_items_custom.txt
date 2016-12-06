@@ -1,6 +1,5 @@
 "DOTAAbilities"
 {
-
 	"item_dummy"
 	{
 		"ID"							"10000"
@@ -4683,7 +4682,7 @@
 		"ItemResult"					"item_homemade_cheese"
 		"ItemRequirements"
 		{
-			"01"						"item_bottle;item_enchanted_mango;item_tango_arena;item_faerie_fire"
+			"01"						"item_bottle_arena;item_enchanted_mango;item_tango_arena;item_faerie_fire"
 		}
 	}
 
@@ -10591,7 +10590,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"300"	
+		"ItemCost"						"6600"	
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -10599,7 +10598,7 @@
 		"ItemResult"					"item_rune_keeper"
 		"ItemRequirements"
 		{
-			"01"						"item_bottle;item_ultimate_orb;item_ultimate_orb;item_wind_lace"
+			"01"						"item_bottle_arena;item_ultimate_orb;item_ultimate_orb;item_wind_lace"
 		}
 	}
 
@@ -10620,17 +10619,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"50"
+				"bonus_all_stats"		"75"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"35"
+				"bonus_movement_speed"	"45"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"rune_multiplier"		"4"
+				"rune_multiplier"		"2.5"
 			}
 			"04"
 			{
@@ -10645,7 +10644,6 @@
 			{
 				"ScriptFile"	"items/item_rune_keeper.lua"
 				"Function"		"UseRune"
-				"rune_multiplier"	"%rune_multiplier"
 			}
 		}
 
@@ -18837,14 +18835,14 @@
 		"ID"							"10251"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_angel_wings"
-		"AbilityCooldown"				"24"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemShopTags"					"stats;move_speed;hard_to_tag"
 		"ItemQuality"					"common"
-		"ItemAliases"					"boots;steam footgear;angel wings"
+		"ItemAliases"					"boots;angel wings"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityManaCost"				"40"
 		
 		"AbilitySpecial"
 		{
@@ -18888,7 +18886,6 @@
 				"var_type"					"FIELD_INTEGER"
 				"cast_range_bonus"			"300"
 			} //Handled with base modifier
-
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
@@ -18897,33 +18894,27 @@
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"active_radius"				"450"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"active_magical_armor"		"45"
 			}
-			"12"
+			"11"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"fade_delay"				"0.35"
 			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_per_second"			"80"
+			}
 			"13"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"7"
+				"mana_per_second_think"		"0.1"
 			}
 		}
 		
 		"OnSpellStart"
 		{
-			"ApplyModifier"
-			{
-				"Target"			"CASTER"
-				"ModifierName"		"modifier_item_angel_wings_active"
-			}
-			
 			"FireSound"
 			{
 				"EffectName"		"Arena.Items.SteamFootgear.Activate"
@@ -18935,12 +18926,11 @@
 				"EffectName"		"Item.GlimmerCape.Activate"
 				"Target"			"CASTER"
 			}
-
-			"FireEffect"
+			"RunScript"
 			{
-				"EffectName"        "particles/items3_fx/glimmer_cape_burst.vpcf"
-				"EffectAttachType"  "follow_overhead"
-				"Target"            "CASTER"
+				"ScriptFile"			"internal/kv.lua"
+				"Function"				"SwapToItem"
+				"itemName"				"item_angel_wings_enabled"
 			}
 		}
 		
@@ -18964,11 +18954,152 @@
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_armor"
 					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp_pct"
 				}
-				
-				"States"
+
+				"OnCreated"
 				{
-					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_UNIT_COLLISION"					"MODIFIER_STATE_VALUE_ENABLED"
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_item_aether_lens"
+						"Target"
+						{
+							"Center"	"CASTER"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_item_aether_lens"
+						"Target"
+						{
+							"Center"	"CASTER"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
+					}
+				}
+			}
+		}
+	}
+
+	"item_angel_wings_enabled"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"1025155555"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"item_angel_wings"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemShopTags"					"stats;move_speed;hard_to_tag"
+		"ItemQuality"					"common"
+		"ItemAliases"					"boots;steam footgear;angel wings"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speed"		"80"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"56"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all"					"28"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"50"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"500"
+			} //Handled with base modifier
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_hp_regen"			"18"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_magical_armor"		"20"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_bonus"			"300"
+			} //Handled with base modifier
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spell_amp_pct"				"15"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"active_magical_armor"		"45"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_delay"				"0.35"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_per_second"			"80"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"mana_per_second_think"		"0.1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"internal/kv.lua"
+				"Function"				"SwapToItem"
+				"itemName"				"item_angel_wings"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_angel_wings"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"		"%bonus_movement_speed"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_hp_regen"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_armor"
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp_pct"
 				}
 
 				"OnCreated"
@@ -19000,35 +19131,39 @@
 
 			"modifier_item_angel_wings_active"
 			{
-				"Passive"			"0"
+				"Passive"			"1"
 				"IsPurgable"		"0"
-				"IsHidden"			"0"
-				"Duration"			"%duration"
-
-				"Aura"          	"modifier_item_angel_wings_aura_effect"
-				"Aura_Radius"   	"%active_radius"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-				"Aura_ApplyToCaster" "1"
-			}
-
-			"modifier_item_angel_wings_aura_effect"
-			{
 				"IsHidden"			"1"
-				"IsPurgable"		"0"
 
 				"EffectName"		"particles/items3_fx/glimmer_cape_initial.vpcf"
 				"EffectAttachType"	"follow_origin"
 
+				"ThinkInterval"		"%mana_per_second_think"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_angel_wings.lua"
+						"Function"		"ChackAndSpendMana"
+						"Mana"			"%mana_per_second * %mana_per_second_think"
+					}
+				}
+				
+				
 				"OnCreated"
 				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_angel_wings.lua"
+						"Function"		"ChackAndSpendMana"
+						"Mana"			"%mana_per_second * %mana_per_second_think"
+					}
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_item_angel_wings_fade"
 						"Target"
 						{
-							"Center"	"TARGET"
+							"Center"	"CASTER"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 						}
 					}
@@ -19041,7 +19176,7 @@
 						"ModifierName"	"modifier_item_angel_wings_fade"
 						"Target"
 						{
-							"Center"	"TARGET"
+							"Center"	"CASTER"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 						}
 					}
@@ -19050,10 +19185,21 @@
 						"ModifierName"	"modifier_item_angel_wings_invis"
 						"Target"
 						{
-							"Center"	"TARGET"
+							"Center"	"CASTER"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 						}
 					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%active_magical_armor"
+				}
+				
+				"States"
+				{
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"					"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 
@@ -19068,7 +19214,7 @@
 						"ModifierName"	"modifier_invisible"
 						"Target"
 						{
-							"Center"	"TARGET"
+							"Center"	"CASTER"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 						}
 					}
@@ -19103,7 +19249,7 @@
 						"ModifierName"	"modifier_item_angel_wings_fade"
 						"Target"
 						{
-							"Center"	"TARGET"
+							"Center"	"CASTER"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 						}
 					}
@@ -19112,7 +19258,7 @@
 						"ModifierName"	"modifier_item_angel_wings_invis"
 						"Target"
 						{
-							"Center"	"TARGET"
+							"Center"	"CASTER"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 						}
 					}
@@ -19125,15 +19271,10 @@
 						"ModifierName"	"modifier_invisible"
 						"Target"
 						{
-							"Center"	"TARGET"
+							"Center"	"CASTER"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 						}
 					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%active_magical_armor"
 				}
 			}
 
@@ -19149,7 +19290,7 @@
 						"ModifierName"	"modifier_item_angel_wings_invis"
 						"Target"
 						{
-							"Center"	"TARGET"
+							"Center"	"CASTER"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 						}
 					}
@@ -19166,11 +19307,6 @@
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 						}
 					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%active_magical_armor"
 				}
 			}
 		}
@@ -20852,7 +20988,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemPurchasableFilter"			"0"
 
 		"AbilitySpecial"
 		{
@@ -21403,16 +21538,57 @@
 					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%bonus_night_vision" 
 				}
 			}
-
-
 		}
+	}
 
+	"item_bottle_arena"
+	{
+		"BaseClass"						"item_lua"
+		"ID"							"10278"
+		"ScriptFile"					"items/lua/item_bottle_arena.lua"
+		"AbilityTextureName"			"item_bottle_3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"Model"							"models/props_gameplay/bottle_blue.vmdl"
 
+		"AbilityCooldown"				"0.5"
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.0"
+		"ItemCost"						"900"
 
-		//		"Properties"
-		//		{
-		//			"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"%bonus_day_vision"
-		//			"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%bonus_night_vision" 
-		//		}
+		"ItemStockTime"					"60"
+		"ItemInitialStockTime"			"150.0"
+		"ItemStockMax"					"3"
+
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"bottle"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"3"
+		"ItemDisplayCharges"			"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_restore"		"150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restore"			"125"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"restore_time"			"2.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rune_multiplier"		"1.5"
+			}
+		}
 	}
 }

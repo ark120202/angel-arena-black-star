@@ -26,3 +26,4 @@
 "item_butterfly", "item_butterfly_arena"
 "item_tango", "item_tango_arena"
 "item_heavens_halberd", "item_heavens_halberd_arena"
+"item_bottle", "item_bottle_arena"

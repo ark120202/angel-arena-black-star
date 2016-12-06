@@ -1,20 +1,4 @@
 "use strict";
-var minVote = 0
-var maxVote = 0
-
-function SendKillGoalVote() {
-	var input = $("#GoalVoteTextEntry").text
-	if (isNaN(input) || Number(input) > maxVote || Number(input) < minVote) {
-		$("#GoalVoteTextEntry").AddClass("RedOutlineForNaN")
-	} else {
-		$("#GoalVoteTextEntry").RemoveClass("RedOutlineForNaN")
-		GameEvents.SendCustomGameEventToServer("submit_gamemode_vote", {
-			vote: input
-		});
-		$("#GoalVotePanel").RemoveClass("GoalVotePanel_In")
-			//HideCallMenu()
-	}
-}
 
 function RandomizeStar() {
 	var pnlid = Math.floor((Math.random() * 5) + 1)
@@ -41,17 +25,38 @@ function ShowStar(id) {
 
 (function() {
 	$("#GoalVotePanel").AddClass("GoalVotePanel_In")
+	var KillGoalRowPanel;
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		var gamemode_settings = changesObject["gamemode_settings"]
-		if (gamemode_settings != null && gamemode_settings.kill_goal_vote_min != null && gamemode_settings.kill_goal_vote_max != null) {
-			minVote = gamemode_settings.kill_goal_vote_min
-			maxVote = gamemode_settings.kill_goal_vote_max
-			$("#GoalVoteMinValue").text = minVote + ".."
-			$("#GoalVoteMaxValue").text = ".." + maxVote
+		if (gamemode_settings != null && gamemode_settings.kill_goals != null) {
+			$.Each(gamemode_settings.kill_goals, function(killGoal, tIndex) {
+				var rootPanel = KillGoalRowPanel
+				if (rootPanel == null) {
+					rootPanel = $.CreatePanel("Panel", $("#GoalVotePanel"), "");
+					rootPanel.AddClass("GoalVotePanelRow")
+					KillGoalRowPanel = rootPanel;
+				} else {
+					KillGoalRowPanel = null;
+				}
+				var button = $.CreatePanel("Button", rootPanel, "kill_goal_vote_panel");
+				button.AddClass("ButtonBevel")
+				var label = $.CreatePanel("Label", button, "");
+				label.hittest = false;
+				label.text = killGoal;
+				button.SetPanelEvent("onactivate", function() {
+					GameEvents.SendCustomGameEventToServer("submit_gamemode_vote", {
+						voteIndex: tIndex
+					});
+					$.Each($("#GoalVotePanel").Children(), function(temppanel) {
+						$.Each(temppanel.Children(), function(thisPanel) {
+							thisPanel.enabled = false;
+						});
+					});
+					$("#GoalVotePanel").RemoveClass("GoalVotePanel_In")
+				})
+			})
 		}
-	})
-
-	//GameEvents.Subscribe("game_rules_state_change", CheckGoalVote);
+	});
 	$("#StarsBox").visible = false
 	$("#star1").visible = false
 	$("#star2").visible = false

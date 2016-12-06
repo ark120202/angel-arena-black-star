@@ -21,10 +21,9 @@ function modifier_item_shard_attackspeed_stack:GetAttributes()
 end
 
 function modifier_item_shard_attackspeed_stack:DeclareFunctions()
-	local funcs = {
+    return {
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
 	}
-    return funcs
 end
 
 function modifier_item_shard_attackspeed_stack:GetModifierAttackSpeedBonus_Constant()

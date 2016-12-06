@@ -1,5 +1,5 @@
 ARENA_ITEMBUILDS = {
-	{
+	--[[{
 		hero = "npc_dota_hero_abaddon",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "Alastor",
@@ -58,7 +58,7 @@ ARENA_ITEMBUILDS = {
 				}
 			},
 		}
-	},
+	},]]
 }
 
 VALVE_ITEMBUILDS = {
@@ -334,7 +334,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_boots",
 					"item_magic_wand",
-					"item_bottle",
+					"item_bottle_arena",
 				}
 			},
 			{
@@ -670,7 +670,7 @@ VALVE_ITEMBUILDS = {
 					"item_boots",
 					"item_magic_stick",
 					"item_bracer",
-					"item_bottle",
+					"item_bottle_arena",
 				}
 			},
 			{
@@ -1441,7 +1441,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_boots",
 					"item_magic_stick",
-					"item_bottle",
+					"item_bottle_arena",
 				}
 			},
 			{
@@ -1541,7 +1541,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_boots",
 					"item_bracer",
-					"item_bottle",
+					"item_bottle_arena",
 				}
 			},
 			{
@@ -2565,7 +2565,7 @@ VALVE_ITEMBUILDS = {
 					"item_boots",
 					"item_magic_wand",
 					"item_bracer",
-					"item_bottle",
+					"item_bottle_arena",
 				}
 			},
 			{
@@ -3377,7 +3377,7 @@ VALVE_ITEMBUILDS = {
 					"item_magic_stick",
 					"item_boots",
 					"item_bracer",
-					"item_bottle",
+					"item_bottle_arena",
 				}
 			},
 			{
@@ -3423,7 +3423,7 @@ VALVE_ITEMBUILDS = {
 					"item_magic_stick",
 					"item_boots",
 					"item_bracer",
-					"item_bottle",
+					"item_bottle_arena",
 				}
 			},
 			{
@@ -3516,7 +3516,7 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Early_Game",
 				content = {
 					"item_boots",
-					"item_bottle",
+					"item_bottle_arena",
 					"item_magic_stick",
 					"item_null_talisman",
 				}
@@ -3566,7 +3566,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_boots",
 					"item_bracer",
-					"item_bottle",
+					"item_bottle_arena",
 				}
 			},
 			{
@@ -4372,7 +4372,7 @@ VALVE_ITEMBUILDS = {
 					"item_magic_wand",
 					"item_power_treads",
 					"item_orchid",
-					"item_bottle",
+					"item_bottle_arena",
 					"item_tpscroll",
 				}
 			},
@@ -4502,7 +4502,7 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Early_Game",
 				content = {
 					"item_boots",
-					"item_bottle",
+					"item_bottle_arena",
 					"item_magic_stick",
 				}
 			},
@@ -4647,7 +4647,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_boots",
 					"item_bracer",
-					"item_bottle",
+					"item_bottle_arena",
 				}
 			},
 			{
@@ -4698,7 +4698,7 @@ VALVE_ITEMBUILDS = {
 					"item_magic_stick",
 					"item_boots",
 					"item_bracer",
-					"item_bottle",
+					"item_bottle_arena",
 				}
 			},
 			{
@@ -4845,7 +4845,7 @@ VALVE_ITEMBUILDS = {
 					"item_boots",
 					"item_magic_wand",
 					"item_bracer",
-					"item_bottle",
+					"item_bottle_arena",
 				}
 			},
 			{
@@ -5477,7 +5477,7 @@ VALVE_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Early_Game",
 				content = {
-					"item_bottle",
+					"item_bottle_arena",
 					"item_boots",
 					"item_null_talisman",
 				}

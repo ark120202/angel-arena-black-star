@@ -48,9 +48,19 @@ end
 if IsServer() then
 	function modifier_fountain_aura_arena:OnCreated()
 		self:GetParent():AddNewModifier(self:GetCaster(), nil, "modifier_fountain_aura_buff", nil)
+		self:StartIntervalThink(0.25)
 	end
 
 	function modifier_fountain_aura_arena:OnDestroy()
 		self:GetParent():RemoveModifierByName("modifier_fountain_aura_buff")
+	end
+
+	function modifier_fountain_aura_arena:OnIntervalThink()
+		for i = 0, 11 do
+			local item = self:GetParent():GetItemInSlot(i)
+			if item and item:GetAbilityName() == "item_bottle_arena" then
+				item:SetCurrentCharges(3)
+			end
+		end
 	end
 end

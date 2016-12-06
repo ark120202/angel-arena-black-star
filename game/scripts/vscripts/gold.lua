@@ -42,10 +42,10 @@ function Gold:AddGold(unitvar, gold)
 	Gold:UpdatePlayerGold(playerID)
 end
 
-function Gold:AddGoldWithMessage(unit, gold)
-	local player = PlayerResource:GetPlayer(UnitVarToPlayerID(unit))
+function Gold:AddGoldWithMessage(unit, gold, optPlayerID)
+	local player = optPlayerID and PlayerResource:GetPlayer(optPlayerID) or PlayerResource:GetPlayer(UnitVarToPlayerID(unit))
 	SendOverheadEventMessage(player, OVERHEAD_ALERT_GOLD, unit, math.floor(gold), player)
-	Gold:AddGold(unit, gold)
+	Gold:AddGold(optPlayerID or unit, gold)
 end
 
 function Gold:GetGold(unitvar)

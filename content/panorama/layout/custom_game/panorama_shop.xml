@@ -36,7 +36,7 @@
 			<Panel id="ShopItemBasePanel">
 				<Panel id="ShopItemList">
 					<Panel id="ShopSearch">
-						<TextEntry id="ShopSearchEntry" maxchars="64" oninputsubmit="SearchItems()" placeholder="#panorama_shop_search_placeholder"/>
+						<TextEntry id="ShopSearchEntry" oninputsubmit="SearchItems()" placeholder="#panorama_shop_search_placeholder"/>
 					</Panel>
 					<Panel id="ShopTabs" />
 					<Panel id="ShopItems">
@@ -45,9 +45,20 @@
 					</Panel>
 				</Panel>
 				<Panel id="ItemRecipeBox">
-					<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow1" />
-					<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow2" />
-					<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow3" />
+					<Panel id="ItemRecipeBoxRows">
+						<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow1" />
+						<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow2" />
+						<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow3" />
+					</Panel>
+					<Panel hittest="false" id="ItemRecipeBoxDrops">
+						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_central" src="file://{images}/custom_game/units/npc_arena_boss_central.png" style="position: 161.2px 120px 0;"/>
+						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_heaven" src="file://{images}/custom_game/units/npc_arena_boss_heaven.png" style="position: 95px 65px 0;"/>
+						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_hell" src="file://{images}/custom_game/units/npc_arena_boss_hell.png" style="position: 218px 65px 0;"/>
+						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_l1_v1" src="file://{images}/custom_game/units/npc_arena_boss_l1_v1.png" style="position: 30px 120px 0;"/>
+						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_l1_v2" src="file://{images}/custom_game/units/npc_arena_boss_l1_v2.png" style="position: 95px 120px 0;"/>
+						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_l2_v1" src="file://{images}/custom_game/units/npc_arena_boss_l2_v1.png" style="position: 225px 120px 0;"/>
+						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_l2_v2" src="file://{images}/custom_game/units/npc_arena_boss_l2_v2.png" style="position: 290px 120px 0;"/>
+					</Panel>	
 				</Panel>
 				<Button id="ShowHideItemguidesPanel" hittest="true" onactivate="ShowHideItembuilds()">
 					<Label id="ShowHideItemguidesLabel" hittest="false" text="&gt;" />

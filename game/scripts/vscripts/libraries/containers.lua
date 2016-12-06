@@ -806,7 +806,6 @@ function Containers:OrderFilter(order)
 			order.position_x = pos.x
 			order.position_y = pos.y
 			order.position_z = pos.z
-
 			Containers.rangeActions[order.units["0"]] = {
 				unit = unit,
 				position = physItem:GetAbsOrigin(),
@@ -1019,7 +1018,9 @@ function Containers:OrderFilter(order)
 			return false
 		end
 	end
-
+	
+	CustomRunes:ExecuteOrderFilter(order)
+	
 	return ret
 end
 

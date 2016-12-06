@@ -58,7 +58,6 @@
 		"duel_over_winner_p1"							"Дуэль окончена. "
 		"duel_over_winner_p2"							" победили. Все их герои получили "
 		"duel_no_heroes"								"В одной из команд недостаточно героев для дуэли."
-		"duel_timer_label"								"Дуэль: "
 
 		"duel1x1call_call"								"Вызвать!"
 		"duel1x1call_entergold"							"Ставка: "
@@ -127,18 +126,9 @@
 
 		"item_rune_keeper_no_runes_left"						"Rune Keeper теперь пуст."
 		"item_rune_keeper_contains"								"Rune Keeper содержит руны: "
-		"item_rune_keeper_rune_used"							"Rune Keeper - использована руна: "
 
 		"item_rune_keeper_rune_picked_up"						"Поднята руна: "
 		"item_rune_keeper_rune_picked_up_cont"					", Rune Keeper сейчас содержит: "
-
-		"item_rune_keeper_rune_0"								"Двойной урон "
-		"item_rune_keeper_rune_1"								"Ускорение "
-		"item_rune_keeper_rune_2"								"Иллюзии "
-		"item_rune_keeper_rune_3"								"Невидимость "
-		"item_rune_keeper_rune_4"								"Регенерация "
-		"item_rune_keeper_rune_5"								"Богатство  "
-		"item_rune_keeper_rune_6"								"Волшебство "
 
 		"custom_game_info_content_1_introduction"				"Вступление"
 		"custom_game_info_content_1_book_content"				"Содержание"
@@ -161,8 +151,7 @@
 		"custom_game_info_content_2_creep_hard"					"Тяжелый тип могут фармить далеко не все герои, и уж точно не с первой минуты, обозначаются красным."
 
 		"kill_goal_tooltip"										"Цель:"
-		"kill_goal_tooltip_vote_title"							"Голосование за цель:"
-		"kill_goal_tooltip_vote_submit"							"ПРОГОЛОСОВАТЬ"
+		"kill_goal_tooltip_vote_title"							"Желаемое макс. число убийств:"
 
 		"panorama_shop_shop_tab_1"								"ОСНОВНЫЕ"
 		"panorama_shop_shop_tab_2"								"УЛУЧШЕНИЯ"
@@ -188,5 +177,26 @@
 
 		"notification_item_demon_king_bar_curse_p1"				"Вы получили проклятье от Demon King Bar. Вы погибнете через "
 		"notification_item_demon_king_bar_curse_p2"				" секунд."
+
+		"custom_runes_rune_0_title"								"Богатство"
+		"custom_runes_rune_0_text"								"Дает дополнительные золото и опыт"
+		"custom_runes_rune_1_title"								"Тройной урон"
+		"custom_runes_rune_1_text"								"Увеличивает базовый урон на 200%"
+		"custom_runes_rune_2_title"								"Ускорение"
+		"custom_runes_rune_2_text"								"Увеличивает скорость передвижения до 750"
+		"custom_runes_rune_3_title"								"Иллюзия"
+		"custom_runes_rune_3_text"								"Создает 2 иллюзии вашего героя, наносящие 35% урона и получающие 200% урона. Иллюзии пропадут через 75 секунд"
+		"custom_runes_rune_4_title"								"Невидимость"
+		"custom_runes_rune_4_text"								"Вы станете невидимым на 60 секунд. Руна прекращает свое действие при атаке или при использовании умения или предмета"
+		"custom_runes_rune_5_title"								"Регенерация"
+		"custom_runes_rune_5_text"								"Мгновенно полностью восстанавливает здоровье и ману"
+		"custom_runes_rune_6_title"								"Волшебство"
+		"custom_runes_rune_6_text"								"Уменьшает время перезарядки способностей на 30% и урон от них на 50%"
+		"custom_runes_rune_7_title"								"Пылание"
+		"custom_runes_rune_7_text"								"Наносит 80 урона в секунду в радиусе 350 в течение 30 секунд"
+		"custom_runes_rune_8_title"								"Учащение"
+		"custom_runes_rune_8_text"								"Увеличивает скорость атаки на 90 и увеличивает опыт с крипов в 2 раза"
+		"custom_runes_rune_9_title"								"Колебание"
+		"custom_runes_rune_9_text"								"Отталкивает всех противников в радиусе 350 от вас"
 	}
 }

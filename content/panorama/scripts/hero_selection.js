@@ -4,7 +4,7 @@ var SelectedHeroData,
 	SelectedHeroPanel,
 	SelectedTabIndex,
 	SelectionTimerDuration,
-	SelectionTimerStartTime,
+	SelectionTimerStartTime = 0,
 	HideEvent,
 	ShowPrecacheEvent,
 	PTID;
@@ -424,7 +424,6 @@ var bgs = [
 function HeroSelectionStart(HeroesServerData) {
 	MainPanel.visible = true;
 	SelectionTimerDuration = HeroesServerData.SelectionTime;
-	SelectionTimerStartTime = HeroesServerData.SelectionStartTime;
 	UpdateTimer();
 	$("#GameModeInfoGamemodeLabel").text = $.Localize("#hero_selection_mode_" + HeroesServerData.GameModeType)
 	if (HeroesServerData.GameModeType != "all_pick") {
@@ -701,6 +700,9 @@ function OnMinimapClickSpawnBox(team, level, index) {
 		DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {
 			if (changesObject.HeroTabs != null) {
 				HeroSelectionStart(changesObject);
+			};
+			if (changesObject.SelectionStartTime != null) {
+				SelectionTimerStartTime = changesObject.SelectionStartTime;
 			};
 		});
 

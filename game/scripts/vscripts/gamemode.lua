@@ -64,25 +64,33 @@ local requirements = {
 	"custom_wearables",
 	"SimpleAI",
 	"dynamic_minimap",
-	"custom_runes",
-	"stats_client"
+	"custom_runes/custom_runes",
+	"stats_client",
+	"filters",
 }
+local modifiers = {
+	["modifier_state_hidden"] = "modifiers/modifier_state_hidden",
+	["modifier_item_shard_attackspeed_stack"] = "items/lua/modifiers/modifier_item_shard_attackspeed_stack",
+	["modifier_apocalypse_apocalypse"] = "heroes/hero_apocalypse/modifier_apocalypse_apocalypse.lua",
+	["modifier_set_attack_range"] = "modifiers/modifier_set_attack_range.lua",
+	["modifier_charges"] = "libraries/modifiers/modifier_charges.lua",
+	["modifier_hero_selection_transformation"] = "modifiers/modifier_hero_selection_transformation.lua",
+	["modifier_fountain_aura_arena"] = "modifiers/modifier_fountain_aura_arena.lua",
+	["modifier_max_attack_range"] = "modifiers/modifier_max_attack_range.lua",
+	["modifier_item_lotus_sphere_passive"] = "items/lua/modifiers/modifier_item_lotus_sphere_passive.lua",
+	["modifier_arena_courier"] = "modifiers/modifier_arena_courier.lua",
+	["modifier_arena_hero"] = "modifiers/modifier_arena_hero.lua",
+}
+
 for i = 1, #requirements do
 	require(requirements[i])
+end
+for k,v in pairs(modifiers) do
+	LinkLuaModifier(k, v, LUA_MODIFIER_MOTION_NONE)
 end
 JSON = require("libraries/json")
 GameModes:Preload()
 
-LinkLuaModifier("modifier_state_hidden", "modifiers/modifier_state_hidden", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_shard_attackspeed_stack", "items/lua/modifiers/modifier_item_shard_attackspeed_stack", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_apocalypse_apocalypse", "heroes/hero_apocalypse/modifier_apocalypse_apocalypse.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_set_attack_range", "modifiers/modifier_set_attack_range.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_charges", "libraries/modifiers/modifier_charges.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_hero_selection_transformation", "modifiers/modifier_hero_selection_transformation.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_fountain_aura_arena", "modifiers/modifier_fountain_aura_arena.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_max_attack_range", "modifiers/modifier_max_attack_range.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_lotus_sphere_passive", "items/lua/modifiers/modifier_item_lotus_sphere_passive.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_arena_courier", "modifiers/modifier_arena_courier.lua", LUA_MODIFIER_MOTION_NONE)
 
 function GameMode:PostLoadPrecache()
 	DebugPrint("[BAREBONES] Performing Post-Load precache")
@@ -207,7 +215,7 @@ function GameMode:OnGameInProgress()
 		end
 		local result
 		if count >= 1 then
-			result = math.floor(sum / count)
+			result = table.nearest(POSSIBLE_KILL_GOALS, math.floor(sum / count))
 		else
 			result = DOTA_KILL_GOAL_VOTE_STANDART
 		end
@@ -218,6 +226,10 @@ function GameMode:OnGameInProgress()
 	StatsClient:OnGameBegin()
 	Scepters:SetGlobalScepterThink()
 	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
+	Timers:CreateTimer(function()
+		CustomRunes:SpawnRunes()
+		return CUSTOM_RUNE_SPAWN_TIME
+	end)
 	Timers:CreateTimer(0.3, function()
 		PlayerResource:RefreshSelection()
 	end)
@@ -240,8 +252,7 @@ function GameMode:InitGameMode()
 	PlayerTables:CreateTable("arena", {
 		gold = {},
 		gamemode_settings = {
-			kill_goal_vote_min = DOTA_KILL_GOAL_VOTE_MIN,
-			kill_goal_vote_max = DOTA_KILL_GOAL_VOTE_MAX,
+			kill_goals = POSSIBLE_KILL_GOALS,
 			xp_table = XP_PER_LEVEL_TABLE,
 			gamemode = DOTA_ACTIVE_GAMEMODE,
 			gamemode_type = DOTA_ACTIVE_GAMEMODE_TYPE,
@@ -322,234 +333,6 @@ function GameMode:InitGameMode()
 		end,
     })
 	DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
-end
-
-function GameMode:InitFilters()
-	GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap(GameMode, 'ExecuteOrderFilter'), self)
-	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, 'DamageFilter'), self)
-	GameRules:GetGameModeEntity():SetBountyRunePickupFilter(Dynamic_Wrap(GameMode, 'BountyRunePickupFilter'), self)
-	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, 'ModifyGoldFilter'), self)
-end
-
-function GameMode:ExecuteOrderFilter(filterTable)
---	PrintTable(filterTable)
-	local issuer_player_id_const = filterTable.issuer_player_id_const
-	local target = 			EntIndexToHScript(filterTable.entindex_target)
-	local order_type = 		filterTable.order_type
-	local ability = EntIndexToHScript(filterTable.entindex_ability)
-	local abilityname
-	if ability and ability.GetName then
-		abilityname = ability:GetName()
-	end
-	local entindexes_units = filterTable.units
-	local units = {}
-	for _, v in pairs(entindexes_units) do
-		local u = EntIndexToHScript(v)
-		if u then
-			table.insert(units, u)
-		end
-	end
-	if order_type == DOTA_UNIT_ORDER_SELL_ITEM or order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
-		return false
-	end
-	for _,unit in ipairs(units) do
-		if unit:GetUnitName() == "npc_dota_courier" then
-			local palyerTeam = PlayerResource:GetTeam(issuer_player_id_const)
-			if order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION then
-				PlayerTables:SetTableValue("arena", "courier_owner" .. palyerTeam, issuer_player_id_const)
-				local point = Vector(filterTable.position_x, filterTable.position_y, 0)
-				if CourierTimer[palyerTeam] then
-					Timers:RemoveTimer(CourierTimer[palyerTeam])
-				end
-				CourierTimer[palyerTeam] = Timers:CreateTimer(function()
-					if (unit:GetAbsOrigin() - point):Length2D() < 10 then
-						PlayerTables:SetTableValue("arena", "courier_owner" .. palyerTeam, -1)
-					else
-						return 0.03
-					end
-				end)
-			elseif order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET and (abilityname == "courier_transfer_items" or abilityname == "courier_take_stash_and_transfer_items") then
-				local hero = PlayerResource:GetSelectedHeroEntity(issuer_player_id_const)
-				local can_continue = false
-				if abilityname == "courier_take_stash_and_transfer_items" then
-					for i = 6, 11 do
-						local item = hero:GetItemInSlot(i)
-						if item and item:GetOwner() == hero then
-							can_continue = true
-						end
-					end
-				end
-				if not can_continue then
-					for i = 0, 5 do
-						local item = unit:GetItemInSlot(i)
-						if item and item:GetPurchaser() == hero then
-							can_continue = true
-						end
-					end
-				end
-				if can_continue then
-					PlayerTables:SetTableValue("arena", "courier_owner" .. palyerTeam, issuer_player_id_const)
-					if CourierTimer[palyerTeam] then
-						Timers:RemoveTimer(CourierTimer[palyerTeam])
-					end
-					CourierTimer[palyerTeam] = Timers:CreateTimer(function()
-						if (unit:GetAbsOrigin() - hero:GetAbsOrigin()):Length2D() < 225 then
-							PlayerTables:SetTableValue("arena", "courier_owner" .. palyerTeam, -1)
-						else
-							return 0.03
-						end
-					end)
-				end
-			elseif abilityname ~= "courier_burst" then
-				PlayerTables:SetTableValue("arena", "courier_owner" .. palyerTeam, -1)
-			end
-		end
-		if unit:IsHero() or unit:IsConsideredHero() then
-			GameMode:TrackInventory(unit)
-		end
-		if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
-			Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_ability_inactive")
-			return false
-		end
-		if unit:IsRealHero() then
-			if order_type == DOTA_UNIT_ORDER_CAST_TARGET then
-				if ability then
-					local abilityname = ability:GetName()
-					if IsBossEntity(target) and table.contains(BOSS_BANNED_ABILITIES, abilityname) then
-						filterTable.order_type = DOTA_UNIT_ORDER_ATTACK_TARGET
-					end
-
-					if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then
-						filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
-						return true
-					end
-				end
-			end
-			if filterTable.position_x ~= 0 and filterTable.position_y ~= 0 then
-				if (RandomInt(0, 1) == 1 and (unit:HasModifier("modifier_item_casino_drug_pill3_debuff") or unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 8)) or unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 16 then
-					local heroVector = unit:GetAbsOrigin()
-					local orderVector = Vector(filterTable.position_x, filterTable.position_y, 0)
-					local diff = orderVector - heroVector
-					local newVector = heroVector + (diff * -1)
-					filterTable.position_x = newVector.x
-					filterTable.position_y = newVector.y
-				end
-			end
-		end
-	end
-	return true
-end
-
-function GameMode:DamageFilter(filterTable)
-	local damagetype_const = 	filterTable.damagetype_const
-	local damage = 				filterTable.damage
-	local inflictor
-	if filterTable.entindex_inflictor_const then
-		inflictor = EntIndexToHScript(filterTable.entindex_inflictor_const)
-	end
-	local attacker
-	if filterTable.entindex_attacker_const then 
-		attacker = 				EntIndexToHScript(filterTable.entindex_attacker_const)
-	end
-	local victim = 				EntIndexToHScript(filterTable.entindex_victim_const)
-	if attacker then
-		for k,v in pairs(ON_DAMAGE_MODIFIER_PROCS) do
-			if attacker.HasModifier and attacker:HasModifier(k) then
-				v(attacker, victim, inflictor, damage, damagetype_const)
-			end
-		end
-		for k,v in pairs(ON_DAMAGE_MODIFIER_PROCS_VICTIM) do
-			if victim.HasModifier and victim:HasModifier(k) then
-				v(attacker, victim, inflictor, damage, damagetype_const)
-			end
-		end
-		for k,v in pairs(OUTGOING_DAMAGE_MODIFIERS) do
-			if attacker.HasModifier and attacker:HasModifier(k) and	(not v.condition or (v.condition and v.condition(attacker, victim, inflictor, damage, damagetype_const))) then
-				if v.multiplier then
-					if type(v.multiplier) == "number" then
-						filterTable.damage = filterTable.damage * v.multiplier
-					elseif type(v.multiplier) == "function" then
-						local multiplier = v.multiplier(attacker, victim, inflictor, damage, damagetype_const)
-						if multiplier then
-							filterTable.damage = filterTable.damage * multiplier
-						end
-					end
-				end
-			end
-		end
-		for k,v in pairs(INCOMING_DAMAGE_MODIFIERS) do
-			if victim.HasModifier and victim:HasModifier(k) and	(not v.condition or (v.condition and v.condition(attacker, victim, inflictor, damage, damagetype_const))) then
-				if v.multiplier then
-					if type(v.multiplier) == "number" then
-						filterTable.damage = filterTable.damage * v.multiplier
-					elseif type(v.multiplier) == "function" then
-						local multiplier = v.multiplier(attacker, victim, inflictor, damage, damagetype_const)
-						if multiplier then
-							filterTable.damage = filterTable.damage * multiplier
-						end
-					end
-				end
-			end
-		end
-		if inflictor then
-			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictor:GetName()] and IsBossEntity(victim) then
-				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictor:GetName()] * 0.01
-			end
-			if inflictor:GetName() == "templar_assassin_psi_blades" and victim:IsRealCreep() then
-				filterTable.damage = damage * 0.5
-			end
-		end
-
-		if (attacker.HasModifier and (attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) or (victim.HasModifier and (victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) then
-			filterTable.damage = 0
-			return false
-		end
-	end
-	return true
-end
-
-function GameMode:BountyRunePickupFilter(filterTable)
-	local palyer = PlayerResource:GetPlayer(filterTable.player_id_const)
-	local hero = PlayerResource:GetSelectedHeroEntity(filterTable.player_id_const)
-	filterTable.gold_bounty = 300 + (20 * GetDOTATimeInMinutesFull())
-	filterTable.xp_bounty = 150 + (10 * GetDOTATimeInMinutesFull())
-	local gold_multiplier = filterTable.bounty_special_multiplier or 1
-	local xp_multiplier = 1
-
-	local ability_plus_morality = hero:FindAbilityByName("arthas_plus_morality")
-	if ability_plus_morality and ability_plus_morality:GetLevel() > 0 then
-		gold_multiplier = gold_multiplier + ability_plus_morality:GetAbilitySpecial("bounty_multiplier")
-		ModifyStacks(ability_plus_morality, hero, hero, "modifier_arthas_plus_morality_buff", 1, false)
-	end
-	local ability_goblins_greed = hero:FindAbilityByName("alchemist_goblins_greed")
-	if ability_goblins_greed and ability_goblins_greed:GetLevel() > 0 then
-		gold_multiplier = gold_multiplier + ability_goblins_greed:GetAbilitySpecial("bounty_multiplier_tooltip")
-	end
-	local item_blood_of_midas = FindItemInInventoryByName(hero, "item_blood_of_midas", false)
-	if item_blood_of_midas then
-		gold_multiplier = gold_multiplier + item_blood_of_midas:GetLevelSpecialValueFor("gold_multiplier", item_blood_of_midas:GetLevel() - 1)
-		xp_multiplier = xp_multiplier + item_blood_of_midas:GetLevelSpecialValueFor("xp_multiplier", item_blood_of_midas:GetLevel() - 1)
-	end
-	local totalGold = filterTable.gold_bounty * gold_multiplier
-	Gold:AddGoldWithMessage(hero, totalGold)
-
-	filterTable.gold_bounty = 0
-	filterTable.xp_bounty = filterTable.xp_bounty * xp_multiplier
-	return true
-end
-
-function GameMode:ModifyGoldFilter(filterTable)
-	--[[local gold = filterTable["gold"]
-	local playerID = filterTable["player_id_const"]
-	local reason = filterTable["reason_const"]
-	local reliable = filterTable["reliable"] == 1]]
-	if filterTable.reason_const >= DOTA_ModifyGold_HeroKill and filterTable.reason_const <= DOTA_ModifyGold_CourierKill then
-		filterTable["gold"] = 0
-		return false
-	end
-	filterTable["gold"] = 0
-	print("[GameMode:ModifyGoldFilter]: Attempt to call default dota gold modify func... FIX IT - Reason: " .. filterTable.reason_const .."  --  Amount: " .. filterTable["gold"])
-	return false
 end
 
 function CDOTAGamerules:SetKillGoal(iGoal)

@@ -1,7 +1,6 @@
 <root>
 	<styles>
 		<include src="file://{resources}/styles/custom_game_info.css" />
-		<include src="file://{resources}/styles/global_styles.css" />
 	</styles>
 	<script>
 		var CurrentPage = -1

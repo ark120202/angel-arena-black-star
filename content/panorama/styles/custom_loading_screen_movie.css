@@ -519,13 +519,12 @@
 {
 	align: right top;
 	width: 375px;
-	height: 200px;
-	margin-top: -210px;
+	margin-top: -207px;
 	margin-right: 20px;
-	background-color: rgba(0,0,0,253);
-	border: 2px solid white;
+	background-color: rgba(0,0,0,200);
+	border: 2px solid cyan;
 	flow-children: down;
-	border-radius: 2px;
+
 	transition-property: transform;
 	transition-duration: 1s;
 	transition-timing-function: better-ease-in; 
@@ -552,73 +551,31 @@
 	align: center top;
 	color: white;
 	font-size: 24px;
+	margin-bottom: 6px;
 }
 
-#GoalVotePanelTextEntry
+.GoalVotePanelRow
 {
-	align: center top;
-	margin: 10px;
 	width: 100%;
-	height: 77px;
+	flow-children: right;
 }
 
-#GoalVoteTextEntry
+.GoalVotePanelRow Button
 {
-	align: center center;
-	background-color: #323232;
-	width: 184px;
-	height: 77px;
-	color: lightblue;
-	font-size: 72px;
+	width: 46.8%;
+	margin: 2px 6px;
+	margin-bottom: 6px;
 }
 
-#GoalVoteButton
-{
-	background-color: #d6d6d6;
-	align: center center;
-	width: 100%;
-	height: 100%;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-
-#GoalVoteButtonLabel
+.GoalVoteButton Label 
 {
 	align: center center;
-	color: black;
+	color: lightcyan;
 	font-weight: bold;
 	font-size:  28px;
-}
-
-#GoalVoteButton:active
-{
-	pre-transform-scale2d: 0.98;
-}
-
-.RedOutlineForNaN
-{
-	border: 2px solid red;
 }
 
 .GoalVotePanel_In
 {
 	transform: translateY(210px);
-}
-
-#GoalVoteMinValue
-{
-	color: white;
-	align: left center;
-	font-size: 32px;
-	margin-left: 5px;
-}
-
-#GoalVoteMaxValue
-{
-	color: white;
-	align: right center;
-	font-size: 32px;
-	margin-right: 5px;
 }

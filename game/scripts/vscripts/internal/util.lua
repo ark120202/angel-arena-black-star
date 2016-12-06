@@ -948,73 +948,6 @@ function UniqueRandomInts(min, max, count)
 	return output
 end
 
-function PreformRunePickup(unit, runeType, settings)
-	local duration_multiplier = 1.0 or settings.duration_multiplier
-	local ability = nil or settings.ability
-	local caster = unit or settings.caster
-	local emitSound = true or settings.emitSound
-
-	local runeSettings = {
-		[DOTA_RUNE_DOUBLEDAMAGE] = {
-			duration = settings.runeSettings[DOTA_RUNE_DOUBLEDAMAGE]["duration"] or (45 * settings.runeSettings[DOTA_RUNE_DOUBLEDAMAGE]["multiplier_duration"] or 1),
-		},
-		[DOTA_RUNE_HASTE] = {
-			duration = settings.runeSettings[DOTA_RUNE_HASTE]["duration"] or (25 * settings.runeSettings[DOTA_RUNE_HASTE]["multiplier_duration"] or 1),
-		},
-		[DOTA_RUNE_ILLUSION] = {
-			duration = settings.runeSettings[DOTA_RUNE_ILLUSION]["duration"] or (75 * settings.runeSettings[DOTA_RUNE_ILLUSION]["multiplier_duration"] or 1),
-			illusion_count = settings.runeSettings[DOTA_RUNE_ILLUSION]["illusion_count"] or 2,
-			illusion_outgoing_damage = settings.runeSettings[DOTA_RUNE_ILLUSION]["illusion_outgoing_damage"] or 35,
-			illusion_incoming_damage_ranged = settings.runeSettings[DOTA_RUNE_ILLUSION]["illusion_incoming_damage_ranged"] or 200,
-			illusion_incoming_damage_melee = settings.runeSettings[DOTA_RUNE_ILLUSION]["illusion_incoming_damage_melee"] or 100,
-		},
-		[DOTA_RUNE_INVISIBILITY] = {
-			duration = settings.runeSettings[DOTA_RUNE_INVISIBILITY]["duration"] or (45 * settings.runeSettings[DOTA_RUNE_INVISIBILITY]["multiplier_duration"] or 1),
-		},
-		[DOTA_RUNE_REGENERATION] = {
-			duration = settings.runeSettings[DOTA_RUNE_REGENERATION]["duration"] or (30 * settings.runeSettings[DOTA_RUNE_REGENERATION]["multiplier_duration"] or 1),
-		},
-		[DOTA_RUNE_BOUNTY] = {
-			bounty_special_multiplier = settings.runeSettings[DOTA_RUNE_BOUNTY]["bounty_special_multiplier"] or 1,
-		},
-		[DOTA_RUNE_ARCANE] = {
-			duration = settings.runeSettings[DOTA_RUNE_ARCANE]["duration"] or (50 * settings.runeSettings[DOTA_RUNE_ARCANE]["multiplier_duration"] or 1),
-		},
-	}
-	local doubledamage_duration = 45 * duration_multiplier or settings.doubledamage_duration
-	if runeType == DOTA_RUNE_DOUBLEDAMAGE then
-		unit:AddNewModifier(caster, ability, "modifier_rune_doubledamage", {duration = runeSettings[DOTA_RUNE_DOUBLEDAMAGE].duration})
-	elseif runeType == DOTA_RUNE_HASTE then
-		unit:AddNewModifier(caster, ability, "modifier_rune_haste", {duration = runeSettings[DOTA_RUNE_HASTE].duration})
-	elseif runeType == DOTA_RUNE_ILLUSION then
-		for i = 1, runeSettings[DOTA_RUNE_ILLUSION].illusion_count do
-			local illusion_incoming_damage
-			if unit:IsRangedAttacker() then
-				illusion_incoming_damage = runeSettings[DOTA_RUNE_ILLUSION].illusion_incoming_damage_ranged
-			else
-				illusion_incoming_damage = runeSettings[DOTA_RUNE_ILLUSION].illusion_incoming_damage_melee
-			end
-			local illusion = CreateIllusion(unit, ability, unit:GetAbsOrigin() + RandomVector(100), illusion_incoming_damage - 100, 100 - runeSettings[DOTA_RUNE_ILLUSION].illusion_outgoing_damage, runeSettings[DOTA_RUNE_ILLUSION].duration)
-		end
-		FindClearSpaceForUnit(unit, unit:GetAbsOrigin() + RandomVector(100), true)
-	elseif runeType == DOTA_RUNE_INVISIBILITY then
-		unit:AddNewModifier(caster, ability, "modifier_rune_invis", {duration = runeSettings[DOTA_RUNE_INVISIBILITY].duration})
-	elseif runeType == DOTA_RUNE_REGENERATION then
-		unit:AddNewModifier(caster, ability, "modifier_rune_regen", {duration = runeSettings[DOTA_RUNE_REGENERATION].duration})
-	elseif runeType == DOTA_RUNE_BOUNTY then
-		local bountyTable = {
-			player_id_const = unit:GetPlayerID(),
-			bounty_special_multiplier = runeSettings[DOTA_RUNE_BOUNTY].bounty_special_multiplier
-		}
-		GameMode:BountyRunePickupFilter(bountyTable)
-		Gold:ModifyGold(caster, bountyTable.gold_bounty)
-		SendOverheadEventMessage(nil, OVERHEAD_ALERT_GOLD, unit, bountyTable.gold_bounty, nil)
-		caster:AddExperience(bountyTable.xp_bounty, 0, false, false)
-	elseif runeType == DOTA_RUNE_ARCANE then
-		unit:AddNewModifier(caster, ability, "modifier_rune_arcane", {duration = runeSettings[DOTA_RUNE_ARCANE].duration})
-	end
-end
-
 function ColorTableToCss(color)
 	return "rgb(" .. color[1] .. ',' .. color[2] .. ',' .. color[3] .. ')'
 end
@@ -1421,7 +1354,7 @@ end
 
 function CDOTA_BaseNPC:UnitHasSlotForItem(itemname, bStash)
 	if self.HasRoomForItem then
-		return self:HasRoomForItem(itemName, bStash, true) ~= 4
+		return self:HasRoomForItem(itemname, bStash, true) ~= 4
 	else
 		for i = 0, bStash and 11 or 5 do
 			local item = self:GetItemInSlot(i)
@@ -1430,5 +1363,35 @@ function CDOTA_BaseNPC:UnitHasSlotForItem(itemname, bStash)
 			end
 		end
 		return false
+	end
+end
+
+function table.nearest(table, number)
+    local smallestSoFar, smallestIndex
+    for i, y in ipairs(table) do
+        if not smallestSoFar or (math.abs(number-y) < smallestSoFar) then
+            smallestSoFar = math.abs(number-y)
+            smallestIndex = i
+        end
+    end
+    return table[smallestIndex], smallestIndex
+end
+
+function CreateExplosion(position, minRadius, fullRdius, minForce, fullForce, teamNumber, teamFilter, typeFilter, flagFilter)
+	for _,v in ipairs(FindUnitsInRadius(teamNumber, position, nil, fullRdius, teamFilter, typeFilter, flagFilter, FIND_CLOSEST, false)) do
+		if IsPhysicsUnit(v) then
+			local force = 0
+			local len = (position - v:GetAbsOrigin()):Length2D()
+			if len < minRadius then
+				force = fullForce
+			elseif len <= fullRdius then
+				local forceNotFullLen = fullRdius - minRadius
+				local forceMid = fullForce - minForce
+				local forceLevel = (fullRdius - len)/forceNotFullLen
+				force = minForce + (forceMid*forceLevel)
+			end
+			local velocity = (v:GetAbsOrigin() - position):Normalized() * force
+			v:AddPhysicsVelocity(velocity)
+		end
 	end
 end

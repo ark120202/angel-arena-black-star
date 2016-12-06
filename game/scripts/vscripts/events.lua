@@ -45,6 +45,7 @@ function GameMode:OnNPCSpawned(keys)
 		    	npc:SetAutoUnstuck(true)
 				CustomWearables:EquipWearables(npc)
 				if npc:IsRealHero() and not npc:HasModifier("modifier_arc_warden_tempest_double") then
+					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG then
 						GameMode:RandomOMGRollAbilities(npc)
 					end
@@ -210,32 +211,6 @@ end
 function GameMode:CreateTreeDrop(location, item)
 	local item = CreateItemOnPositionSync(location, CreateItem(item, nil, nil))
 	item:SetAbsOrigin(GetGroundPosition(location, item)) 
-end
-
--- A rune was activated by a player
-function GameMode:OnRuneActivated(keys)
-	DebugPrint('[BAREBONES] OnRuneActivated')
-	DebugPrintTable(keys)
-
-	local player = PlayerResource:GetPlayer(keys.PlayerID)
-	local rune = keys.rune
-	local hero = player:GetAssignedHero()
-	HeroVoice:OnRuneActivated(player, rune)
-
-	for i = 0, 5 do
-		local item = hero:GetItemInSlot(i)
-		if item and item.GetName and item:GetName() == "item_rune_keeper" then
-			if not item.RuneContainer then item.RuneContainer = {} end
-			table.insert(item.RuneContainer, {rune=rune, expireGameTime = Time() + item:GetLevelSpecialValueFor("store_duration",item:GetLevel() - 1)})
-			Notifications:Bottom(hero:GetPlayerID(), {text="#item_rune_keeper_rune_picked_up", duration = 8})
-			Notifications:Bottom(hero:GetPlayerID(), {text="#item_rune_keeper_rune_" .. rune, continue=true})
-			Notifications:Bottom(hero:GetPlayerID(), {text="#item_rune_keeper_rune_picked_up_cont", continue=true})
-			for i,v in ipairs(item.RuneContainer) do
-				Notifications:Bottom(hero:GetPlayerID(), {text="#item_rune_keeper_rune_" .. v.rune, continue=true})
-			end
-			break
-		end
-	end
 end
 
 -- A player killed another player in a multi-team context
@@ -501,9 +476,6 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 			end
 			SendToServerConsole(servercom)
 		end
-		if cmd[1] == "gold" then
-			Gold:ModifyGold(hero, tonumber(cmd[2]))
-		end
 		if cmd[1] == "item" then
 			local servercom = "dota_create_item "
 			if cmd[2] then
@@ -538,9 +510,6 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 			end
 			SendToServerConsole(servercom)
 		end
-		if cmd[1] == "spawnrune" then
-			SendToServerConsole("dota_spawn_rune")
-		end
 		if cmd[1] == "killwards" then
 			InvokeCheatCommand("dota_dev killwards")
 		end
@@ -560,6 +529,12 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 			SendToServerConsole("dota_treerespawn")
 		end
 			--------------------------------------------------------------
+		end
+		if cmd[1] == "gold" then
+			Gold:ModifyGold(hero, tonumber(cmd[2]))
+		end
+		if cmd[1] == "spawnrune" then
+			CustomRunes:SpawnRunes()
 		end
 		if cmd[1] == "a_sn" then
 			Spawner:SpawnStacks(Spawner:GetSpawnerEntities())
@@ -702,6 +677,11 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 				planet2:SetPhysicsFriction(0)
 				planet3:SetPhysicsFriction(0)
 			end)
+		end
+		if cmd[1] == "runetest" then
+			for i = ARENA_RUNE_FIRST, ARENA_RUNE_LAST do
+				CustomRunes:CreateRune(hero:GetAbsOrigin() + RandomVector(RandomInt(90, 300)), i)
+			end
 		end
 	end
 end

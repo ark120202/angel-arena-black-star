@@ -351,21 +351,31 @@
 	margin-top: -64px;
 }
 
-#timerLabel
-{
-	margin-top: 40px;
-	color: white;
-	font-weight: bold;
-	vertical-align: center;
-	horizontal-align: center;
-}
-
 #timerImage
 {
 	width: 120px;
 	height: 120px;
 	vertical-align: center;
 	horizontal-align: center;
+}
+
+#timerLabel
+{
+	margin-top: 32px;
+	text-shadow: 0px 0px 5px 5 black;
+	color: white;
+	font-weight: bold;
+	align: center center;
+}
+
+#duelTimerLabel
+{
+	margin-top: 62px;
+	font-size: 15px;
+	text-shadow: 0px 0px 3px 3 black;
+	color: rgb(255, 220, 220);
+	font-weight: bold;
+	align: center center;
 }
 
 #timerImageMask1
@@ -390,30 +400,6 @@
 	height: 32px;
 	vertical-align: bottom;
 	horizontal-align: center;
-}
-
-#duelTimerPanel
-{
-	width: 176px;
-	height: 50px;
-	flow-children: right;
-	background-image: url("file://{resources}/images/custom_game/scoreboard/custom_timer_bg.png");
-}
-
-#duelTimerLabel_base
-{
-	color: white;
-	font-weight: bold;
-	vertical-align: center;
-	margin-left: 25px;
-}
-
-#duelTimerLabel
-{
-	color: white;
-	font-weight: bold;
-	align: right center;
-	margin-right: 25px;
 }
 
 

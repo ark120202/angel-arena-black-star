@@ -38,8 +38,7 @@ end
 
 function HeroSelection:PrepareTables()
 	local data = {
-		SelectionTime = CUSTOM_HERO_SELECTION_TIME,
-		SelectionStartTime = GameRules:GetGameTime()
+		SelectionTime = CUSTOM_HERO_SELECTION_TIME
 	}
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK then
 		data.GameModeType = "all_pick"
@@ -160,6 +159,7 @@ end
 
 function HeroSelection:HeroSelectionStart()
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled(true)
+	PlayerTables:SetTableValue("hero_selection_available_heroes", "SelectionStartTime", GameRules:GetGameTime())
 	HeroSelection.GameStartTimer = Timers:CreateTimer(CUSTOM_HERO_SELECTION_TIME, function()
 		if not HeroSelection.SelectionEnd then
 			HeroSelection:PreformGameStart()
@@ -431,7 +431,7 @@ function HeroSelection:CollectPD()
 	end
 end
 
-function HeroSelection:ChangeHero(playerId, newHeroName, keepGold, keepExp, duration, item)
+function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	if hero.PocketItem then
 		hero.PocketHostEntity = nil
@@ -442,7 +442,6 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepGold, keepExp, dura
 		v:Destroy()
 	end
 	hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
-	local gold = hero:GetGold()
 	local xp = hero:GetCurrentXP()
 	local fountatin = FindFountain(PlayerResource:GetTeam(playerId))
 	local location = hero:GetAbsOrigin()
@@ -470,9 +469,6 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepGold, keepExp, dura
 	local startTime = GameRules:GetDOTATime(true, true)
 	HeroSelection:OnSelectHero(playerId, newHeroName, function(newHero)
 		newHero:AddNewModifier(newHero, nil, "modifier_hero_selection_transformation", nil)
-		if keepGold then
-			newHero:SetGold(gold, true)
-		end
 		FindClearSpaceForUnit(newHero, location, true)
 		if keepExp then
 			newHero:AddExperience(xp, 0, true, true)

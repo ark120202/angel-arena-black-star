@@ -25,9 +25,9 @@ end
 
 function PanoramaShop:IncreaseItemStock(item)
 	local t = PanoramaShop.StocksTable[item]
-	if t and t.current_stock < t.ItemStockMax then
+	if t and (t.ItemStockMax == -1 or t.current_stock < t.ItemStockMax) then
 		t.current_stock = t.current_stock + 1
-		if t.current_stock < t.ItemStockMax then
+		if (t.ItemStockMax == -1 or t.current_stock < t.ItemStockMax) then
 			PanoramaShop:StackStockableCooldown(item, t.ItemStockTime)
 		end
 		PanoramaShop:PushStockInfoToAllClients()
@@ -56,7 +56,7 @@ function PanoramaShop:InitializeItemTable()
 	local RecipesToCheck = {}
 	--загрузка всех предметов, разделение на предмет/рецепт
 	for name, kv in pairs(KeyValues.ItemKV) do
-		if not table.contains(SHOP_IGNORED_ITEMS, name) and kv and type(kv) == "table" then
+		if type(kv) == "table" and (kv.ItemPurchasable or 1) == 1 then
 			if kv.ItemRecipe == 1 then
 				RecipesToCheck[kv.ItemResult] = name
 			end
@@ -68,8 +68,7 @@ function PanoramaShop:InitializeItemTable()
 	for name, kv in pairs(PanoramaShop._RawItemData) do
 		local itemdata = {
 			id = kv.ID or -1,
-			purchasable = (kv.ItemPurchasable or 1) == 1 and (kv.ItemPurchasableFilter or 1) == 0,
-			hidden = ((kv.ItemPurchasable or 1) == 0) or ((kv.ItemHidden or 0) == 1),
+			purchasable = (kv.ItemPurchasable or 1) == 1 and (kv.ItemPurchasableFilter or 1) == 1,
 			cost = GetTrueItemCost(name),
 			names = {name:lower()},
 		}
@@ -116,26 +115,47 @@ function PanoramaShop:InitializeItemTable()
 				end
 			end
 			itemdata.Recipe = recipedata
-		else
-			--itemdata.Recipe = {}
-			--TODO: Boss drops
 		end
 		if kv.ItemStockMax or kv.ItemStockTime or kv.ItemInitialStockTime or kv.ItemStockInitial then
 			local stocks = {
-				ItemStockMax = kv.ItemStockMax or 0,
+				ItemStockMax = kv.ItemStockMax or -1,
 				ItemStockTime = kv.ItemStockTime or 0,
-				current_stock = kv.ItemStockInitial or 0,
+				current_stock = kv.ItemStockInitial,
 				current_cooldown = kv.ItemInitialStockTime or 0,
 				current_last_purchased_time = GameRules:GetGameTime(),
 			}
+			if not stocks.current_stock then
+				if stocks.current_cooldown == 0 then
+					stocks.current_stock = kv.ItemStockInitial or kv.ItemStockMax or 0
+				else
+					stocks.current_stock = 0
+				end
+			end
 			PanoramaShop.StocksTable[name] = stocks
 			if stocks.current_cooldown > 0 then
 				PanoramaShop:StackStockableCooldown(name, stocks.current_cooldown)
-			elseif stocks.current_stock < stocks.ItemStockMax then
+			elseif stocks.ItemStockMax == -1 or stocks.current_stock < stocks.ItemStockMax then
 				PanoramaShop:StackStockableCooldown(name, stocks.ItemStockTime)
 			end
 		end
 		PanoramaShop.FormattedData[name] = itemdata
+	end
+	for unit,itemlist in pairs(DROP_TABLE) do
+		for _,v in ipairs(itemlist) do
+			local iteminfo = PanoramaShop.FormattedData[v.Item]
+			if iteminfo.Recipe then
+				print("[PanoramaShop] Item that has recipe is defined in unit drop table", itemName)
+			else
+				if not iteminfo.DropListData then
+					iteminfo.DropListData = {}
+				end
+				if not iteminfo.DropListData[unit] then
+					iteminfo.DropListData[unit] = {}
+				end
+
+				table.insert(iteminfo.DropListData[unit], v.DropChance)
+			end
+		end
 	end
 	for name,items in pairs(itemsBuldsInto) do
 		if PanoramaShop.FormattedData[name] then
@@ -184,7 +204,10 @@ function PanoramaShop:OnItemSell(data)
 		local player = PlayerResource:GetPlayer(data.PlayerID)
 		local itemEnt = EntIndexToHScript(tonumber(data.itemIndex))
 		local ent = EntIndexToHScript(data.unit)
-		if itemEnt and GetKeyValue(itemEnt:GetAbilityName(), "ItemSellable") ~= 0 and ent and ent.entindex and ent:GetPlayerOwner() == player and itemEnt:GetOwner():GetPlayerOwner() == player then
+		local function CheckOwner(entity)
+			return entity:GetPlayerOwner() == player or entity == FindCourier(PlayerResource:GetTeam(data.PlayerID))
+		end
+		if itemEnt and GetKeyValue(itemEnt:GetAbilityName(), "ItemSellable") ~= 0 and ent and ent.entindex and CheckOwner(ent) and CheckOwner(itemEnt:GetOwner()) then
 			local itemSlot = -1
 			for i = 6, 11 do
 				local item = ent:GetItemInSlot(i)
@@ -209,7 +232,7 @@ function PanoramaShop:OnItemSell(data)
 					GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, ent:GetTeamNumber()) 
 				end
 				UTIL_Remove(itemEnt)
-				Gold:AddGoldWithMessage(ent, cost)
+				Gold:AddGoldWithMessage(ent, cost, data.PlayerID)
 			end
 		end
 	end
@@ -326,7 +349,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 		local itemPushed = false
 		local isInShop = unit:HasModifier("modifier_fountain_aura_arena")
 		if isInShop then
-			if unit:UnitHasSlotForItem(item, true) then
+			if unit:UnitHasSlotForItem(childItemName, true) then
 				unit:AddItem(item)
 				itemPushed = true
 			end

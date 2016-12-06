@@ -32,7 +32,7 @@ function SearchItems() {
 		if (searchStr.length > 0) {
 			var FoundItems = []
 			for (var itemName in ItemData) {
-				if (!ItemData[itemName].hidden && itemName.lastIndexOf("item_recipe_")) {
+				if (itemName.lastIndexOf("item_recipe_")) {
 					for (var key in ItemData[itemName].names) {
 						if (ItemData[itemName].names[key].search(new RegExp(searchStr, "i")) > -1) {
 							FoundItems.push({
@@ -184,17 +184,30 @@ function SmallItemOnDragEnd(panelId, draggedPanel) {
 
 function ShowItemRecipe(itemName) {
 	var currentItemData = ItemData[itemName]
+	if (currentItemData == null)
+		return;
 	var RecipeData = currentItemData.Recipe
 	var BuildsIntoData = currentItemData.BuildsInto
+	var DropListData = currentItemData.DropListData
 	$.Each($("#ItemRecipeBoxRow1").Children(), function(child) {
-		child.DestroyItemPanel()
+		if (child.DestroyItemPanel != null)
+			child.DestroyItemPanel();
+		else
+			child.DeleteAsync(0);
 	})
 	$.Each($("#ItemRecipeBoxRow2").Children(), function(child) {
-		child.DestroyItemPanel()
+		if (child.DestroyItemPanel != null)
+			child.DestroyItemPanel();
+		else
+			child.DeleteAsync(0);
 	})
 	$.Each($("#ItemRecipeBoxRow3").Children(), function(child) {
-		child.DestroyItemPanel()
+		if (child.DestroyItemPanel != null)
+			child.DestroyItemPanel();
+		else
+			child.DeleteAsync(0);
 	})
+
 	$("#ItemRecipeBoxRow1").RemoveAndDeleteChildren();
 	$("#ItemRecipeBoxRow2").RemoveAndDeleteChildren();
 	$("#ItemRecipeBoxRow3").RemoveAndDeleteChildren();
@@ -202,23 +215,39 @@ function ShowItemRecipe(itemName) {
 	var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow2"), "ItemRecipeBoxRow2_item_" + itemName);
 	SnippetCreate_SmallItem(itemPanel, itemName);
 	itemPanel.style.align = "center center";
+	var len = 0;
+	$("#ItemRecipeBoxDrops").visible = false;
 	if (RecipeData != null && RecipeData.items != null) {
 		$.Each(RecipeData.items[1], function(childName) {
 			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow3"), "ItemRecipeBoxRow3_item_" + childName)
 			SnippetCreate_SmallItem(itemPanel, childName);
 			itemPanel.style.align = "center center";
 		});
-		var len = Object.keys(RecipeData.items).length;
+		len = Object.keys(RecipeData.items).length;
 		if (RecipeData.visible && RecipeData.recipeItemName != null) {
 			len++;
 			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow3"), "ItemRecipeBoxRow3_item_" + RecipeData.recipeItemName);
 			SnippetCreate_SmallItem(itemPanel, RecipeData.recipeItemName);
 			itemPanel.style.align = "center center";
 		}
-		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength7", len >= 7);
-		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength8", len >= 8);
-		$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength9", len >= 9);
+	} else if (DropListData != null) {
+		$("#ItemRecipeBoxDrops").visible = true;
+		len = Object.keys(DropListData).length;
+		$.Each($("#ItemRecipeBoxDrops").Children(), function(pan) {
+			var unit = pan.id.replace("ItemRecipeBoxDrops_", "")
+			pan.enabled = DropListData[unit] != null;
+			pan.RemoveAndDeleteChildren()
+			if (DropListData[unit] != null)
+				$.Each(DropListData[unit], function(chance) {
+					var chancePanel = $.CreatePanel("Label", pan, "");
+					chancePanel.AddClass("UnitItemlikeRecipePanelChance");
+					chancePanel.text = chance + "%";
+				})
+		})
 	}
+	$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength7", len >= 7);
+	$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength8", len >= 8);
+	$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength9", len >= 9);
 	if (BuildsIntoData != null) {
 		$.Each(BuildsIntoData, function(childName) {
 			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow1"), "ItemRecipeBoxRow1_item_" + childName);
@@ -258,7 +287,8 @@ function LoadItemsFromTable(panorama_shop_data) {
 
 function UpdateSmallItem(panel, gold) {
 	try {
-		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) < (gold || PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]))
+		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) < (gold || PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]) && ItemData[panel.itemName].purchasable);
+		panel.SetHasClass("NotPurchasableItem", !ItemData[panel.itemName].purchasable);
 		if (ItemStocks[panel.itemName] != null) {
 			var CurrentTime = Game.GetGameTime();
 			var RemainingTime = ItemStocks[panel.itemName].current_cooldown - (CurrentTime - ItemStocks[panel.itemName].current_last_purchased_time)
@@ -521,8 +551,9 @@ function SetItemStock(item, ItemStock) {
 	Game.Events.F8Pressed.push(function() {
 		SendItemBuyOrder($("#QuickBuyStickyButtonPanel").GetChild(0).itemName)
 	})
-	Game.MouseEvents.OnLeftPressed.push(function() {
-		$("#ShopBase").AddClass("ShopBase_Out")
+	Game.MouseEvents.OnLeftPressed.push(function(ClickBehaviors, eventName, arg) {
+		if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE)
+			$("#ShopBase").AddClass("ShopBase_Out")
 	})
 
 	GameEvents.Subscribe("panorama_shop_show_item", ShowItemInShop)

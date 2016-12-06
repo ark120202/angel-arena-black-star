@@ -81,6 +81,12 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
+	["modifier_arena_rune_arcane"] = {
+		condition = function(_, _, inflictor)
+			return inflictor
+		end,
+		multiplier = 1.5
+	},
 	["modifier_kadash_strike_from_shadows"] = {
 		condition = function(_, _, inflictor)
 			return not inflictor

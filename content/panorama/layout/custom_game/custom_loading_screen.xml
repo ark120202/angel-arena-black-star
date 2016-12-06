@@ -1,5 +1,6 @@
 <root>
 	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/custom_loading_screen.css" />
 		<include src="file://{resources}/styles/custom_loading_screen_movie.css" />
 	</styles>
@@ -19,7 +20,7 @@
 	</script>
 	<Panel class="AddonLoadingRoot">
 		<!-- Precache -->
-		<Panel hittest="false" style="visibility: collapse;">>
+		<Panel hittest="false" style="visibility: collapse;">
 			<Image src="file://{images}/custom_game/kills/action_0.png" />
 			<Image src="file://{images}/custom_game/kills/action_1.png" />
 			<Image src="file://{images}/custom_game/kills/action_2.png" />
@@ -77,6 +78,13 @@
 			<Image src="file://{images}/custom_game/units/portraits/npc_dota_warlock_golem_scepter_base.png" />
 			<Image src="file://{images}/custom_game/units/portraits/npc_dota_warlock_minigolem.png" />
 			<Image src="file://{images}/custom_game/units/portraits/npc_queenofblades_army_unit.png" />
+			<Image src="file://{images}/custom_game/units/npc_arena_boss_central.png" />
+			<Image src="file://{images}/custom_game/units/npc_arena_boss_heaven.png" />
+			<Image src="file://{images}/custom_game/units/npc_arena_boss_hell.png" />
+			<Image src="file://{images}/custom_game/units/npc_arena_boss_l1_v1.png" />
+			<Image src="file://{images}/custom_game/units/npc_arena_boss_l1_v2.png" />
+			<Image src="file://{images}/custom_game/units/npc_arena_boss_l2_v1.png" />
+			<Image src="file://{images}/custom_game/units/npc_arena_boss_l2_v2.png" />
 		</Panel>
 		<!--  -->
 		<Panel id="loading_base">

@@ -16,7 +16,7 @@ function GameMode:MetamorphosisElixirCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local elixirItem = FindItemInInventoryByName(hero, "item_metamorphosis_elixir", false)
 	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(data.hero, "Selection") then
-		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
+		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
 	end
 end
 
@@ -24,7 +24,7 @@ function GameMode:HellHeroChangeCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local elixirItem = FindItemInInventoryByName(hero, "item_hell_hero_change", false)
 	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(data.hero, "Hell") then
-		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
+		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
 	end
 end
 
@@ -32,7 +32,7 @@ function GameMode:HeavenHeroChangeCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local elixirItem = FindItemInInventoryByName(hero, "item_heaven_hero_change", false)
 	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(data.hero, "Heaven") then
-		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
+		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
 	end
 end
 
@@ -107,12 +107,11 @@ function GameMode:CustomChatSendMessage(data)
 end
 
 function GameMode:SubmitGamemodeVote(data)
-	if data and data.vote and type(data.vote) == "string" then
-		local vote = tonumber(data.vote)
-		if not vote then vote = DOTA_KILL_GOAL_VOTE_STANDART end
-		vote = math.min(vote, DOTA_KILL_GOAL_VOTE_MAX)
-		vote = math.max(vote, DOTA_KILL_GOAL_VOTE_MIN)
-
+	if data and data.voteIndex then
+		local vote = POSSIBLE_KILL_GOALS[tonumber(data.voteIndex)]
+		if not vote then
+			vote = DOTA_KILL_GOAL_VOTE_STANDART
+		end
 		PLAYER_DATA[tonumber(data.PlayerID)].GameModeVote = vote
 	end
 end

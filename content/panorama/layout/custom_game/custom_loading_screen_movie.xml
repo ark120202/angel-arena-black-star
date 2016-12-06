@@ -1,7 +1,4 @@
 <root>
-	<styles>
-		<include src="file://{resources}/styles/custom_loading_screen_movie.css" />
-	</styles>
 	<scripts>
         <include src="file://{resources}/scripts/util.js" />
 		<include src="file://{resources}/scripts/custom_loading_screen_movie.js" />
@@ -32,14 +29,6 @@
 		<Image id="loading_bar" src="file://{images}/custom_game/loading_screen/loading_bar_full.png" />
 		<Panel id="GoalVotePanel">
 			<Label id="GoalVoteLabel" text="#kill_goal_tooltip_vote_title"/>
-			<Panel id="GoalVotePanelTextEntry">
-				<TextEntry id="GoalVoteTextEntry" maxchars="3" />
-				<Label id="GoalVoteMinValue" text=".." />
-				<Label id="GoalVoteMaxValue" text=".." />
-			</Panel>
-			<Button id="GoalVoteButton" onactivate="SendKillGoalVote()">
-				<Label id="GoalVoteButtonLabel" hittest="false" text="#kill_goal_tooltip_vote_submit"/>
-			</Button>
 		</Panel>
 	</Panel>
 </root>

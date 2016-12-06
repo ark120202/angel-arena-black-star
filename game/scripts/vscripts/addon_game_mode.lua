@@ -55,6 +55,13 @@ function Precache( context )
 		"particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf",
 		"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf",
 		"particles/arena/items_fx/lotus_sphere_buff.vpcf",
+
+		"particles/arena/generic_gameplay/rune_tripledamage.vpcf",
+		"particles/arena/generic_gameplay/rune_tripledamage_owner.vpcf",
+		"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf",
+		"particles/arena/generic_gameplay/rune_vibration.vpcf",
+		"particles/arena/generic_gameplay/rune_vibration_owner_wave.vpcf",
+		"particles/arena/generic_gameplay/rune_acceleration.vpcf",
 		
 		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",

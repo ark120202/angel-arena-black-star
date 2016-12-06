@@ -6,6 +6,7 @@
 	<scripts>
 		<include src="file://{resources}/scripts/util.js" />
 		<include src="file://{resources}/scripts/minimalistic_hud.js" />
+		<include src="file://{resources}/scripts/entity_tooltips.js" />
 	</scripts>
 	<snippets>
 		<snippet name="Ability">

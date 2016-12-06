@@ -55,22 +55,27 @@ Game.Events = {};
 Game.MouseEvents = {
 	OnLeftPressed: []
 };
+Game.DisableWheelPanels = [];
 GameUI.SetMouseCallback(function(eventName, arg) {
 	var result = false;
-	if (GameUI.GetClickBehaviors() === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE) {
-		if (eventName == "pressed") {
-			if (arg === 0) {
-				if (Game.MouseEvents.OnLeftPressed.length > 0) {
-					for (var k in Game.MouseEvents.OnLeftPressed) {
-						var r = Game.MouseEvents.OnLeftPressed[k](eventName, arg);
-						if (r === true) {
-							result = r;
-						}
+	var ClickBehaviors = GameUI.GetClickBehaviors()
+	if (eventName == "pressed") {
+		if (arg === 0) {
+			if (Game.MouseEvents.OnLeftPressed.length > 0) {
+				for (var k in Game.MouseEvents.OnLeftPressed) {
+					var r = Game.MouseEvents.OnLeftPressed[k](ClickBehaviors, eventName, arg);
+					if (r === true) {
+						result = r;
 					}
 				}
 			}
-		}
-	}
+		} else if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE && (arg === 5 || arg === 6)) {
+			$.Each(Game.DisableWheelPanels, function(panel) {
+				if (IsCursorOnPanel(panel))
+					return true;
+			})
+		};
+	};
 
 	/*if (eventName == "pressed") {
 		// Left-click is move to position

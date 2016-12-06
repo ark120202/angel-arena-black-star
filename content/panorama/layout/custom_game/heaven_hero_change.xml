@@ -1,6 +1,5 @@
 <root>
 	<styles>
-		<include src="file://{resources}/styles/global_styles.css" />
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/tabless_hero_change.css" />
 		<include src="file://{resources}/styles/heaven_hero_change.css" />
