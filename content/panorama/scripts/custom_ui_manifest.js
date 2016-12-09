@@ -70,10 +70,11 @@ GameUI.SetMouseCallback(function(eventName, arg) {
 				}
 			}
 		} else if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE && (arg === 5 || arg === 6)) {
-			$.Each(Game.DisableWheelPanels, function(panel) {
-				if (IsCursorOnPanel(panel))
+			for (var index in Game.DisableWheelPanels) {
+				if (IsCursorOnPanel(Game.DisableWheelPanels[index])) {
 					return true;
-			})
+				}
+			}
 		};
 	};
 
@@ -118,6 +119,11 @@ RegisterKeybind("EnterPressed");
 RegisterKeybind("F4Pressed");
 RegisterKeybind("F5Pressed");
 RegisterKeybind("F8Pressed");
+
+GameUI.CustomUIConfig().custom_entity_values = {};
+DynamicSubscribeNTListener("custom_entity_values", function(tableName, key, value) {
+	GameUI.CustomUIConfig().custom_entity_values[key] = value;
+});
 
 GameUI.CustomUIConfig().IsContains = (function(array, element) {
 	for (var key in array) {

@@ -5,9 +5,15 @@ TODO LIST:
 	обезьяны
 	Бладстоун, который за стаки увелич маг урон
 	очищать абандонутых героев из селекшона
-	контейнер магазы не работают
 	кура стэш
-	фикс хагане с боссов
+	убирать руны из таблицы после поднятия
+	убирать кастом иконки из таблицы после продажи
+	сделать кастом табицы под тултипы и иконки в одну
+	-кнопка ускорения куры из скейлформа
+	сделать пцт реген из фантом боны уникальным (1к регена с 20к хп)
+	активация руны говорит всеи
+	естьЖ дезоль зеленый + мун даст... = нет дезоля
+	сделать нормальную покупку предмета т.е. 1 клик - 1 предмет, если они есть в нужном инвентаре
 	[[
 		caster:TriggerSpellReflect(ability)
 		caster:TriggerSpellAbsorb(ability)
@@ -28,95 +34,34 @@ TODO LIST:
 		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_1380]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/bb9280ea75c8ca1f1e2ef1691ace20e4]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/bb9280ea75c8ca1f1e2ef1691ace20e4]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/bb9280ea75c8ca1f1e2ef1691ace20e4
+[url=https://vk.com/wall-122685850_1434]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://gist.github.com/ark120202/429b51fe6ecd80457f281082c946e816]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/429b51fe6ecd80457f281082c946e816]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/429b51fe6ecd80457f281082c946e816
 ============================================================
-Angel Arena Black Star - Версия 1.3.4:
-К большинству способностей добавлен урон, зависящий от текущего здоровья противников
-Переработаны все руны, добавлены новые: Пылание, Учащение, Колебание
-Bottle переработан, Rune Keeper получил важные изменения
-Изменения в интерфейсе игры
-Изменен Angel Wings
-Исправлены ошибки с магазином
+Angel Arena Black Star - Версия 1.3.4b:
+
 ============================================================
-Angel Arena Black Star - Version 1.3.4:
-Most of abilities recieved bonus damage, based on current enemies health
-All runes reworked, added new runes: Flame, Acceleration, Vibration
-Bottle reworked, Rune Keeper had important changes
-Some UI Changes
-Changed Angel Wings
-Fixed bugs with shop
+Angel Arena Black Star - Version 1.3.4b:
+
 ============================================================
-Angel Arena Black Star - Version 1.3.4:
+Angel Arena Black Star - Version 1.3.4b:
 
 General:
-	Rune system rewritten, reworked all DOTA runes, added new runes:
-		Flame
-		Acceleration
-		Vibration
-	Added item drop chances to shop for boss dropped items
-	Redesigned Kill Goal vote panel
-	Small top bar changes
+	
 
 Balance:
+	Units:
+		
 	Items:
-		Bottle reworked
-		Angel Wings:
-			Now it's togglable item, in toggle state it gives you flight, invisibility and magic resistance, but spends 80 mana per second
-			Toggle it to active state now costs 40 mana
-			Now gives effects only to owner
-		Rune Keeper:
-			Now not creastes copy of the rune, now it storages it like bottle
-			Now multiplies most of rune variables (for example Triple Damage will increase your base damage by 500%, instead of 200%). This bonus doesn't increases Haste movement speed.
-			Rune Multiplier: 4 => 2.5
-			Recipe Cost: 300 => 6600
-			Movement Speed: 35 => 45
-			+50 => +75 to all attributes
-
+		
 	Abilities:
-		Most of abilities recieved bonus damage, based on current enemies health 
-		Alchemist - Greevil's Greed:
-			Bounty rune multiplier: 5 10 15 20 25 30 35 => 3 8 12 18 24 28 32
-		Alchemist - Acid Spray:
-			Levels Between Upgrades 3 => 6
-		Arthas - Plus Morality:
-			Bounty rune multiplier: 1.5 2 2.5 3 3.5 4 4.5 => 2 5 8 12 15 18 20
-			Levels Between Upgrades 1 => 11
-		Sven - Gods Strength:
-			Bonus Damage: 100 130 160 190 210 230 250 => 100 300 500 700 900 1100 1300 %
-			Bonus Damage for Allies with Scepter: 75 100 125 150 175 180 200 => 100 200 300 400 500 500 600
-			Duration 25 =>: 30 25 20 15 10 10 10
-		Enigma - Malefice:
-			Time between Stuns: 2.0 => 0.5
-		Queen of Pain - Shadow Strike:
-			Duration 15 =>: 10 
-		Clockwerk - Hookshot:
-			Cooldown with Scepter: 8.0 => 12
-			Cooldown: 70.0 60.0 50.0 40.0 30.0 20.0 12.0 => 70.0 60.0 50.0 40.0 30.0 20.0 15.0
-		Ancient Apparition - Chilling Touch:
-			Damage: 50 60 70 80 90 100 110 => 50 100 150 200 250 300 350
-		Ogre Magi - Fireblast:
-			Cooldown: 10 => 18
-		Ogre Magi - Unrefined Fireblast:
-			Cooldown: 5 => 10
-		Earth Spirit - Rolling Boulder:
-			Cooldown: 20.0 16.0 12.0 10.0 8.0 4.0 2.0 => 25 21 17 14 10 8 6
-			Mana Cost: 80 => 120 150 180 240 280 300
-			Speed: 800 => 1000
-			Speed with Stone: 1600 => 1800
-			Range: 800.0 => 1000
-			Range with Stone: 1600.0 => 1800
-			Slow Duration: 1.4 1.6 1.8 2.0 => 1 1.2 1.4 1.6 1.8 2.0 2.2
-		Outworld Devourer - Arcane Orb:
-			Intellect Steal: 1 1 2 2 3 3 4 => 2 4 6 8 10 12 14
-		Terrorblade - Metamorphosis:
-			Levels Between Upgrades 8 => 4
+		
 Fixes:
-	Fixed game crash with item purchasing
-	Fixed selling items from courier didn't work
-	Fixed Hero Selection time was shown less then it should've
+	Shop was rewritten agian, so most of bugs with stash were fixed
+	Fixed item slots could've corrupted after someones bottle purchasing
+	Fixed still some entities could have rune tooltips
+	Fixed Shard of True Shight effect stayed forever on your hero
 <<+===========================================================================================================
 rhasta,
 lycan,

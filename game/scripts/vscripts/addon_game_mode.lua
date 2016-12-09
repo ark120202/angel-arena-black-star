@@ -100,6 +100,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_arena_boss_l1_v2", context)
 	PrecacheUnitByNameSync("npc_arena_boss_l2_v1", context)
 	PrecacheUnitByNameSync("npc_arena_boss_l2_v2", context)
+	PrecacheUnitByNameSync("npc_arena_boss_freya", context)
 
 	PrecacheUnitByNameSync("npc_dota_lucifers_claw_doomling", context)
 	PrecacheUnitByNameSync("npc_queenofblades_alter_ego", context)

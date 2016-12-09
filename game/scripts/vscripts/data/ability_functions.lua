@@ -17,6 +17,16 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	centaur_return = 0,
 	enigma_midnight_pulse = 0,
 	enigma_black_hole = 0,
+	techies_suicide = 25,
+	lina_laguna_blade = 50,
+	lion_finger_of_death = 50,
+	shredder_chakram_2 = 40,
+	shredder_chakram = 40,
+}
+
+SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
+	["warlock_fatal_bonds_arena"] = true,
+	["item_heart_cyclone"] = true,
 }
 
 ON_DAMAGE_MODIFIER_PROCS = {
@@ -176,7 +186,6 @@ INCOMING_DAMAGE_MODIFIERS = {
 		multiplier = function(_, victim)
 			local mirratie_sixth_sense = victim:FindAbilityByName("mirratie_sixth_sense")
 			if mirratie_sixth_sense and victim:IsAlive() and RollPercentage(mirratie_sixth_sense:GetAbilitySpecial("dodge_chance_pct")) then
-				print("dodge!")
 				ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
 				return 0
 			end

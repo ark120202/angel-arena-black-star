@@ -1523,14 +1523,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"45"
+		"ArmorPhysical"				"90"
 		"MagicalResistance"			"70"									// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"1200"
-		"AttackDamageMax"			"2000"
+		"AttackDamageMin"			"1500"
+		"AttackDamageMax"			"2300"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.3"			// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
@@ -1556,7 +1556,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"300000"		// Base health.
-		"StatusHealthRegen"			"40"		// Health regeneration rate.
+		"StatusHealthRegen"			"120"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"100"		// Mana regeneration rate.
 
@@ -1612,14 +1612,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"45"
+		"ArmorPhysical"				"90"
 		"MagicalResistance"			"70"									// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"1200"
-		"AttackDamageMax"			"2000"
+		"AttackDamageMin"			"1500"
+		"AttackDamageMax"			"2300"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.3"			// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
@@ -1645,7 +1645,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"300000"		// Base health.
-		"StatusHealthRegen"			"40"		// Health regeneration rate.
+		"StatusHealthRegen"			"120"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"100"		// Mana regeneration rate.
 
@@ -1697,14 +1697,14 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"30"
+		"ArmorPhysical"				"60"
 		"MagicalResistance"			"50"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
 		"ProjectileSpeed"			"900"
-		"AttackDamageMin"			"3200"
-		"AttackDamageMax"			"4300"
+		"AttackDamageMin"			"4000"
+		"AttackDamageMax"			"5000"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.2"
 		"AttackAnimationPoint"		"0.2"
@@ -1717,8 +1717,8 @@
 
 		"MovementSpeed"				"422"
 
-		"StatusHealth"				"400000"
-		"StatusHealthRegen"			"50"
+		"StatusHealth"				"450000"
+		"StatusHealthRegen"			"500"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"50"
 
@@ -1756,12 +1756,12 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"50"
+		"ArmorPhysical"				"100"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"3500"
-		"AttackDamageMax"			"4500"
+		"AttackDamageMin"			"4500"
+		"AttackDamageMax"			"5500"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.2"
 		"AttackAnimationPoint"		"0.2"
@@ -1774,8 +1774,8 @@
 
 		"MovementSpeed"				"522"
 
-		"StatusHealth"				"400000"
-		"StatusHealthRegen"			"50"
+		"StatusHealth"				"550000"
+		"StatusHealthRegen"			"500"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"50"
 
@@ -1813,14 +1813,14 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"120"
+		"ArmorPhysical"				"200"
 		"MagicalResistance"			"50"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
 		"ProjectileSpeed"			"900"
-		"AttackDamageMin"			"4100"
-		"AttackDamageMax"			"5600"
+		"AttackDamageMin"			"5000"
+		"AttackDamageMax"			"6600"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.2"
 		"AttackAnimationPoint"		"0.2"
@@ -1833,8 +1833,8 @@
 
 		"MovementSpeed"				"422"
 
-		"StatusHealth"				"450000"
-		"StatusHealthRegen"			"80"
+		"StatusHealth"				"650000"
+		"StatusHealthRegen"			"800"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"50"
 
@@ -1872,12 +1872,12 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"90"
+		"ArmorPhysical"				"180"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"4600"
-		"AttackDamageMax"			"6000"
+		"AttackDamageMin"			"5200"
+		"AttackDamageMax"			"6600"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.2"
 		"AttackAnimationPoint"		"0.2"
@@ -1890,8 +1890,8 @@
 
 		"MovementSpeed"				"522"
 
-		"StatusHealth"				"500000"
-		"StatusHealthRegen"			"150"
+		"StatusHealth"				"750000"
+		"StatusHealthRegen"			"800"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"50"
 
@@ -1930,7 +1930,7 @@
 		"Ability2"					"boss_armor"
 		"Ability3"					"boss_central_passive"
 
-		"ArmorPhysical"				"125"
+		"ArmorPhysical"				"250"
 		"MagicalResistance"			"50"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -1951,7 +1951,7 @@
 		"MovementSpeed"				"0"
 
 		"StatusHealth"				"1000000"
-		"StatusHealthRegen"			"250"
+		"StatusHealthRegen"			"999"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"100"
 
@@ -1968,6 +1968,63 @@
 		"Creature"
 		{
 			"DisableResistance"            "70"
+		}
+	}
+
+	"npc_arena_boss_freya"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"15000"
+		"Bosses_RespawnDuration"	"300"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/units/freya/freya.vmdl"
+		"ModelScale"				"2.5"
+		"Level"						"100"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_any_passive"
+		"Ability2"					"boss_armor"
+
+		"ArmorPhysical"				"180"
+		"MagicalResistance"			"40"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"5200"
+		"AttackDamageMax"			"6600"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"450"
+		"AttackRange"				"250"
+
+		"BountyXP"					"25000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"522"
+
+		"StatusHealth"				"750000"
+		"StatusHealthRegen"			"800"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
 		}
 	}
 }

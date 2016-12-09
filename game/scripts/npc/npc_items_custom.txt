@@ -18843,6 +18843,7 @@
 		"ItemAliases"					"boots;angel wings"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityManaCost"				"40"
+		"AbilityCooldown"				"5"
 		
 		"AbilitySpecial"
 		{
@@ -18931,6 +18932,7 @@
 				"ScriptFile"			"internal/kv.lua"
 				"Function"				"SwapToItem"
 				"itemName"				"item_angel_wings_enabled"
+				"ShareCoolodwn"			"1"
 			}
 		}
 		
@@ -19001,6 +19003,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
+		"AbilityCooldown"				"5"
 
 		"AbilitySpecial"
 		{
@@ -19078,6 +19081,7 @@
 				"ScriptFile"			"internal/kv.lua"
 				"Function"				"SwapToItem"
 				"itemName"				"item_angel_wings"
+				"ShareCoolodwn"			"1"
 			}
 		}
 		

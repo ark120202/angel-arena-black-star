@@ -1,7 +1,7 @@
 "use strict";
 
 function DismissMenu() {
-	$.Schedule(0.05, function() {
+	$.Schedule(0.1, function() {
 		$.DispatchEvent("DismissAllContextMenus")
 	});
 }

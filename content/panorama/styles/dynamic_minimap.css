@@ -22,23 +22,23 @@
 
 .icon_boss_l1_v1, .icon_boss_l1_v2
 {
-	background-color: #8FFFF2;
+	background-color: #0079A8;
 }
 .icon_boss_l2_v1, .icon_boss_l2_v2
 {
-	background-color: #9C5EFF;
+	background-color: #470C4A;
 }
 .icon_boss_central
 {
-	background-color: green;
+	background-color: #218500;
 }
 .icon_boss_heaven
 {
-	background-color: white;
+	background-color: #D6D6D6;
 }
 .icon_boss_hell
 {
-	background-color: red;
+	background-color: #A30000;
 }
 
 .icon_spawner
@@ -53,12 +53,12 @@
 
 .icon_spawner_easy
 {
-	wash-color: lime;
+	wash-color: #87DE8A;
 }
 
 .icon_spawner_medium
 {
-	wash-color: yellow;
+	wash-color: #E3DE5D;
 }
 
 .icon_spawner_hard
@@ -66,7 +66,7 @@
 	width: 9px;
 	height: 9px;
 	transform: translateX(-4.5px) translateY(-4.5px);
-	wash-color: red;
+	wash-color: #CC2B2B;
 }
 
 .icon_rune
@@ -75,5 +75,5 @@
 	height: 8px;
 	transform: translateX(-4px) translateY(-4px);
 	border-radius: -1px;
-	background-color: gold;
+	background-color: #EBBD07;
 }

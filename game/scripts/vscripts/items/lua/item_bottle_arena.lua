@@ -13,7 +13,7 @@ if IsServer() then
 		else
 			texture = "item_bottle_" .. charges
 		end
-		CustomNetTables:SetTableValue("custom_ability_icons", tostring(self:GetEntityIndex()), {texture})
+		self:SetNetworkableEntityInfo("ability_texture", texture)
 		return self.BaseClass.SetCurrentCharges(self, charges)
 	end
 

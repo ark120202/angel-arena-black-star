@@ -60,7 +60,7 @@ function AbilityShop:PostAbilityData()
 			local abilityTbl = {}
 			for i = 1, 17 do
 				local at = heroTable["Ability" .. i]
-				if at and at ~= "" and at ~= "attribute_bonus_arena" and not AbilityHasBehaviorByName(at, DOTA_ABILITY_BEHAVIOR_HIDDEN) and not table.contains(ABILITY_SHOP_SKIP_ABILITIES, at) then
+				if at and at ~= "" and at ~= "attribute_bonus_arena" and not AbilityHasBehaviorByName(at, "DOTA_ABILITY_BEHAVIOR_HIDDEN") and not table.contains(ABILITY_SHOP_SKIP_ABILITIES, at) then
 					local cost = 1
 					local banned_with = {}
 					if IsUltimateAbilityKV(at) then

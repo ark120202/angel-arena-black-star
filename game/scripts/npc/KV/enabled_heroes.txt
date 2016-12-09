@@ -111,6 +111,7 @@
 		"npc_arena_hero_zen_gehraz"						"1"
 		"npc_arena_hero_stegius"						"1"
 		"npc_arena_hero_mirratie"						"1"
+		//"npc_dota_hero_freya"							"1"
 	}
 	"Heaven"
 	{

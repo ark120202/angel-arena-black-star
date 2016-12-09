@@ -68,6 +68,9 @@ function SwapToItem(keys)
 		newItem:SetPurchaseTime(ability:GetPurchaseTime())
 		newItem:SetPurchaser(ability:GetPurchaser())
 		newItem:SetOwner(ability:GetOwner())
+		if keys.ShareCoolodwn == 1 then
+			newItem:StartCooldown(ability:GetCooldownTimeRemaining())
+		end
 		swap_to_item(caster, ability, newItem)
 	end
 end

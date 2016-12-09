@@ -11,7 +11,7 @@ function ChangeTeam(keys)
 	if oldTeam == targetTeam then
 		targetTeam = DOTA_TEAM_GOODGUYS
 	end
-	if GetTeamPlayerCount(targetTeam) >= GetTeamPlayerCount(oldTeam) or GetTeamHeroKills(targetTeam) >= GetTeamHeroKills(oldTeam) then
+	if (GetTeamPlayerCount(targetTeam) >= GetTeamPlayerCount(oldTeam) or GetTeamHeroKills(targetTeam) >= GetTeamHeroKills(oldTeam)) and not IsInToolsMode() then
 		return
 	end
 	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
@@ -41,17 +41,12 @@ function ChangeTeam(keys)
 		PlayerTables:SetTableValue("hero_selection", targetTeam, newTableData)
 	end
 	Gold:SetGold(caster, gold)
-
-	local couriers = Entities:FindAllByName("npc_dota_courier") 
-	if couriers then
-		for i, v in ipairs(couriers) do
-			if v and v:GetTeamNumber() == targetTeam then
-				v:SetControllableByPlayer(playerID, true)
-			end
-		end
+	for _, v in ipairs(Entities:FindAllByClassname("npc_dota_courier") ) do
+		v:SetControllableByPlayer(playerID, v:GetTeamNumber() == targetTeam)
 	end
 	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
 	PlayerTables:AddPlayerSubscription("dynamic_minimap_points_" .. targetTeam, playerID)
+	CustomGameEventManager:Send_ServerToPlayer(caster:GetPlayerOwner(), "arena_team_changed_update", {})
 	PlayerResource:RefreshSelection()
 	
 	SpendCharge(ability, 1)

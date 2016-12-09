@@ -52,7 +52,7 @@ function SpellSteal(keys)
 		for i = 0, target:GetAbilityCount() - 1 do
 			local a = target:GetAbilityByIndex(i)
 			if a and a:GetAbilityName() ~= "rubick_personality_steal" then
-				caster:AddAbility(a:GetAbilityName())
+				ClearFalseInnateModifiers(caster, caster:AddAbility(a:GetAbilityName()))
 			end
 		end
 		caster:CalculateStatBonus()

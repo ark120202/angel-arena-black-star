@@ -261,4 +261,6 @@ function Fill(heroesData, panel) {
 			//AllAbilityPanels[abilityName] = CreateSnippet_Ability($.CreatePanel("Panel", RootPanel, ""), abilityName, hero, abilityInfo.point_cost);
 	});
 	AllAbilityPanels.push(CreateSnippet_Ability($("#AttributeBonusSlot"), "attribute_bonus_arena", null, 1));
+	Game.DisableWheelPanels.push($("#MainContainer"));
+
 })();

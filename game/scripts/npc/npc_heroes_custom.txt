@@ -39,7 +39,8 @@
 	
 	"npc_arena_hero_arthas"
 	{
-		"override_hero"				"npc_dota_hero_skeleton_king"
+		"override_hero"				"npc_dota_hero_base"
+		"base_hero"					"npc_dota_hero_skeleton_king"
 		"Ability1"					"arthas_rage_of_arthas"
 		"Ability2"					"arthas_plus_morality"
 		"Ability3"					"arthas_vikared"
@@ -48,7 +49,8 @@
 	}
 	"npc_arena_hero_stargazer"
 	{
-		"override_hero"				"npc_dota_hero_spectre"
+		"override_hero"				"npc_dota_hero_base"
+		"base_hero"					"npc_dota_hero_spectre"
 		"Ability1"					"stargazer_gamma_ray"
 		"Ability2"					"stargazer_warp"
 		"Ability3"					"stargazer_inverse_field"
@@ -65,7 +67,8 @@
 	}
 	"npc_arena_hero_cherub"
 	{
-		"override_hero"				"npc_dota_hero_enchantress"
+		"override_hero"				"npc_dota_hero_base"
+		"base_hero"					"npc_dota_hero_enchantress"
 		"Ability1"					"cherub_sleep_cloud"
 		"Ability2"					"cherub_synthesis"
 		"Ability3"					"cherub_explosive_spore"
@@ -74,7 +77,8 @@
 	}
 	"npc_arena_hero_queenofblades"
 	{
-		"override_hero"				"npc_dota_hero_queenofpain"
+		"override_hero"				"npc_dota_hero_base"
+		"base_hero"					"npc_dota_hero_queenofpain"
 		"Ability1"					"queenofblades_army"
 		"Ability2"					"queenofblades_darkness_aura"
 		"Ability3"					"queenofblades_harbinger_of_death"
@@ -86,7 +90,8 @@
 
 	"npc_arena_hero_kadash"
 	{
-		"override_hero"				"npc_dota_hero_chaos_knight"
+		"override_hero"				"npc_dota_hero_base"
+		"base_hero"					"npc_dota_hero_chaos_knight"
 		"Ability1"					"kadash_assasins_skills"
 		"Ability2"					"kadash_survival_skills"
 		"Ability3"					"kadash_strike_from_shadows"
@@ -99,7 +104,8 @@
 
 	"npc_arena_hero_apocalypse"
 	{
-		"override_hero"				"npc_dota_hero_legion_commander"
+		"override_hero"				"npc_dota_hero_base"
+		"base_hero"					"npc_dota_hero_legion_commander"
 		"Ability1"					"apocalypse_agnis_touch"
 		"Ability2"					"apocalypse_king_slayer"
 		"Ability3"					"apocalypse_weapon_break"
@@ -112,7 +118,8 @@
 
 	"npc_arena_hero_shinobu"
 	{
-		"override_hero"				"npc_dota_hero_juggernaut"
+		"override_hero"				"npc_dota_hero_base"
+		"base_hero"					"npc_dota_hero_juggernaut"
 		"SceneCamera"				"custom_scene_hero_shinobu"
 		"Model"						"models/hero_shinobu/shinobu_01.vmdl"
 		"HideWearables"				"1"
@@ -126,7 +133,8 @@
 
 	"npc_arena_hero_zen_gehraz"
 	{
-		"override_hero"				"npc_dota_hero_dark_seer"
+		"override_hero"				"npc_dota_hero_base"
+		"base_hero"					"npc_dota_hero_dark_seer"
 		"Ability1"					"zen_gehraz_divine_intervention"
 		"Ability2"					"zen_gehraz_mystic_twister"
 		"Ability3"					"zen_gehraz_vow_of_silence"
@@ -136,7 +144,8 @@
 
 	"npc_arena_hero_stegius"
 	{
-		"override_hero"				"npc_dota_hero_life_stealer"
+		"override_hero"				"npc_dota_hero_base"
+		"base_hero"					"npc_dota_hero_life_stealer"
 		"Ability1"					"stegius_desolus_wave"
 		"Ability2"					"stegius_rage_of_desolus"
 		"Ability3"					"stegius_brightness_of_desolate"
@@ -147,7 +156,8 @@
 
 	"npc_arena_hero_mirratie"
 	{
-		"override_hero"				"npc_dota_hero_templar_assassin"
+		"override_hero"				"npc_dota_hero_base"
+		"base_hero"					"npc_dota_hero_templar_assassin"
 		"Ability1"					"mirratie_snagshot"
 		"Ability2"					"mirratie_smoke_out"
 		"Ability3"					"mirratie_sixth_sense"
@@ -155,6 +165,15 @@
 		"Ability5"					"attribute_bonus_arena"
 		"Ability6"					""
 		"AttackRange"				"900"
+	}
+
+	"npc_dota_hero_freya"
+	{
+		"override_hero"				"npc_dota_hero_base"
+		"base_hero"					"npc_dota_hero_abaddon"
+		"Model"						"models/units/freya/freya.vmdl"
+		"ModelScale"				"1.5"
+		"HideWearables"				"1"
 	}
 
 	//Changed

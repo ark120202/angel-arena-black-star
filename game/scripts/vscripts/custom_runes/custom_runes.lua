@@ -72,7 +72,7 @@ RUNE_SETTINGS = {
 			local ability_plus_morality = unit:FindAbilityByName("arthas_plus_morality")
 			if ability_plus_morality and ability_plus_morality:GetLevel() > 0 then
 				gold_multiplier = gold_multiplier + ability_plus_morality:GetAbilitySpecial("bounty_multiplier") - 1
-				ModifyStacks(ability_plus_morality, hero, hero, "modifier_arthas_plus_morality_buff", 1, false)
+				ModifyStacks(ability_plus_morality, unit, unit, "modifier_arthas_plus_morality_buff", 1, false)
 			end
 			local ability_goblins_greed = unit:FindAbilityByName("alchemist_goblins_greed")
 			if ability_goblins_greed and ability_goblins_greed:GetLevel() > 0 then
@@ -145,7 +145,6 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 		local gold, xp = settings.GetValues(unit)
 		Gold:AddGoldWithMessage(unit, gold * settings.special_value_multiplier)
 		unit:AddExperience(xp * settings.special_value_multiplier, DOTA_ModifyXP_Unspecified, false, true)
-		
 	elseif runeType == ARENA_RUNE_TRIPLEDAMAGE then
 		unit:AddNewModifier(unit, nil, "modifier_arena_rune_tripledamage", {duration = settings.duration}):SetStackCount(settings.damage_pct)
 	elseif runeType == ARENA_RUNE_HASTE then
@@ -175,7 +174,6 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 			interval = settings.interval,
 		})
 	end
-	--unit:EmitSound("General.RunePickUp")
 	unit:EmitSound(settings.sound)
 end
 
@@ -194,7 +192,7 @@ function CustomRunes:CreateRune(position, runeType)
 	if settings.oncreated then
 		settings.oncreated(entity)
 	end
-	CustomNetTables:SetTableValue("entity_tooltips", tostring(entity:GetEntityIndex()), {
+	entity:SetNetworkableEntityInfo("custom_tooltip", {
 		title = "#custom_runes_rune_" .. runeType .. "_title",
 		text = "#custom_runes_rune_" .. runeType .. "_text"
 	})
@@ -212,6 +210,7 @@ function CustomRunes:SpawnRunes()
 	local bountySpawner = RandomInt(1, #spawners)
 	for k,v in ipairs(spawners) do
 		if IsValidEntity(v.RuneEntity) and v.RuneEntity:IsAlive() then
+			v.RuneEntity:ClearNetworkableEntityInfo()
 			UTIL_Remove(v.RuneEntity)
 		end
 		v.RuneEntity = CustomRunes:CreateRune(v:GetAbsOrigin(), k == bountySpawner and ARENA_RUNE_BOUNTY or RandomInt(ARENA_RUNE_FIRST, ARENA_RUNE_LAST))
@@ -238,6 +237,7 @@ function CustomRunes:ExecuteOrderFilter(order)
 					action = function()
 						if IsValidEntity(unit) and IsValidEntity(rune) then
 							local runeType = rune.RuneType
+							rune:ClearNetworkableEntityInfo()
 							UTIL_Remove(rune)
 							unit:Stop()
 
@@ -276,8 +276,8 @@ function CustomRunes:ExecuteOrderFilter(order)
 	end
 end
 
-function CDOTA_BaseNPC:IsCustomRune()
-	return self:GetUnitName() == "npc_arena_rune"
+function CEntityInstance:IsCustomRune()
+	return self.GetUnitName and self:GetUnitName() == "npc_arena_rune"
 end
 if not PlayerResource or true then return end
 local entity = CreateUnitByName("npc_arena_rune", PlayerResource:GetSelectedHeroEntity(0):GetAbsOrigin() + RandomVector(200), true, nil, nil, DOTA_TEAM_NEUTRALS)

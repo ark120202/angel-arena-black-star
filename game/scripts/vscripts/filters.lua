@@ -126,6 +126,24 @@ function GameMode:DamageFilter(filterTable)
 	end
 	local victim = 				EntIndexToHScript(filterTable.entindex_victim_const)
 	if attacker then
+		if inflictor and inflictor.GetAbilityName then
+			local inflictorname = inflictor:GetAbilityName()
+
+			if SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS[inflictorname] then
+				filterTable.damage = GetNotScaledDamage(filterTable.damage, attacker)
+			end
+			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and IsBossEntity(victim) then
+				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
+			end
+			local damage_from_current_health_pct = inflictor:GetAbilitySpecial("damage_from_current_health_pct")
+			if victim and damage_from_current_health_pct then
+				filterTable.damage = filterTable.damage + (victim:GetHealth() * damage_from_current_health_pct * 0.01)
+			end
+			if inflictorname == "templar_assassin_psi_blades" and victim:IsRealCreep() then
+				filterTable.damage = damage * 0.5
+			end
+		end
+		
 		for k,v in pairs(ON_DAMAGE_MODIFIER_PROCS) do
 			if attacker.HasModifier and attacker:HasModifier(k) then
 				v(attacker, victim, inflictor, damage, damagetype_const)
@@ -162,19 +180,6 @@ function GameMode:DamageFilter(filterTable)
 						end
 					end
 				end
-			end
-		end
-		if inflictor and inflictor.GetAbilityName then
-			local inflictorname = inflictor:GetAbilityName()
-			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and IsBossEntity(victim) then
-				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
-			end
-			local damage_from_current_health_pct = inflictor:GetAbilitySpecial("damage_from_current_health_pct")
-			if victim and damage_from_current_health_pct then
-				filterTable.damage = filterTable.damage + (victim:GetHealth() * damage_from_current_health_pct * 0.01)
-			end
-			if inflictorname == "templar_assassin_psi_blades" and victim:IsRealCreep() then
-				filterTable.damage = damage * 0.5
 			end
 		end
 

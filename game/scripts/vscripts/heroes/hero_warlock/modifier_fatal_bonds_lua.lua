@@ -28,7 +28,7 @@ function modifier_fatal_bonds_lua:OnTakeDamage(keys)
 		if IsValidEntity(target) and target:IsAlive() then
 			target:EmitSound("Hero_Warlock.FatalBondsDamage")
 			local hp = target:GetHealth()
-			local dmg = GetNotScaledDamage(keys.damage * ability:GetLevelSpecialValueFor("damage_share_percentage", ability:GetLevel() - 1) * 0.01, self:GetCaster())
+			local dmg = keys.damage * ability:GetLevelSpecialValueFor("damage_share_percentage", ability:GetLevel() - 1) * 0.01
 			for _,subv in ipairs(self.FatalBondsBoundUnits) do
 				if subv and not subv:IsNull() and subv ~= target and not subv:IsInvulnerable() then  --and not subv:IsMagicImmune() 
 					local p = ParticleManager:CreateParticle(ability.hit_pfx, PATTACH_ABSORIGIN_FOLLOW, target)

@@ -1,5 +1,5 @@
 ARENA_ITEMBUILDS = {
-	--[[{
+	{
 		hero = "npc_dota_hero_abaddon",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "Alastor",
@@ -17,7 +17,7 @@ ARENA_ITEMBUILDS = {
 					"item_iron_talon",
 					"item_tango_arena",
 				}
-			},			
+			},
 			{
 				title = "#DOTA_Item_Build_Early_Game",
 				content = {
@@ -58,7 +58,7 @@ ARENA_ITEMBUILDS = {
 				}
 			},
 		}
-	},]]
+	},
 }
 
 VALVE_ITEMBUILDS = {

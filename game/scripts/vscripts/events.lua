@@ -244,6 +244,7 @@ function GameMode:OnEntityKilled( keys )
 	
 	if killedUnit then
 		if killedUnit:IsHero() then
+			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
 			if killedUnit:IsRealHero() then
 				if killedUnit.InArena and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
 					killedUnit.InArena = false

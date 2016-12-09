@@ -561,19 +561,27 @@ function SetItemStock(item, ItemStock) {
 		if (!$("#ShopBase").BHasClass("ShopBase_Out"))
 			ShowItemInShop(data)
 	})
-
 	DynamicSubscribePTListener("panorama_shop_data", function(tableName, changesObject, deletionsObject) {
 		if (changesObject.ShopList != null) {
 			LoadItemsFromTable(changesObject);
 			SetQuickbuyStickyItem("item_tpscroll");
 		};
-		if (changesObject.ItemStocks != null) {
-			for (var item in changesObject.ItemStocks) {
-				var ItemStock = changesObject.ItemStocks[item];
+		var stocksChanges = changesObject["ItemStocks_team" + Players.GetTeam(Game.GetLocalPlayerID())];
+		if (stocksChanges != null) {
+			for (var item in stocksChanges) {
+				var ItemStock = stocksChanges[item];
 				SetItemStock(item, ItemStock);
 			}
 		};
 	});
+
+	GameEvents.Subscribe("arena_team_changed_update", function() {
+		var stockdata = PlayerTables.GetTableValue("panorama_shop_data", "ItemStocks_team" + Players.GetTeam(Game.GetLocalPlayerID()))
+		for (var item in stockdata) {
+			var ItemStock = stockdata[item];
+			SetItemStock(item, ItemStock);
+		}
+	})
 
 	AutoUpdateShop()
 	AutoUpdateQuickbuy()

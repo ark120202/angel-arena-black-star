@@ -8,12 +8,6 @@ function modifier_arena_courier:IsPurgable()
 	return false
 end
 
-function modifier_arena_courier:CheckState() 
-	return {
-		[MODIFIER_STATE_INVULNERABLE] = true
-	}
-end
-
 function modifier_arena_courier:DeclareFunctions() 
 	return {
 		MODIFIER_PROPERTY_MOVESPEED_MAX,
@@ -30,4 +24,8 @@ function modifier_arena_courier:GetModifierMoveSpeed_Limit()
 end
 function modifier_arena_courier:GetModifierMoveSpeed_Absolute()
 	return 800
+end
+
+function modifier_arena_courier:RemoveOnDeath()
+	return false
 end

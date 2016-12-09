@@ -360,7 +360,6 @@ function table.allEqual(table, value)
 end
 
 function table.areAllEqual(table)
-	local value
 	for _,v in pairs(table) do
 		if value == nil then
 			value = v
@@ -531,12 +530,12 @@ function swap_to_item(unit, srcItem, newItem)
 	ClearSlotsFromDummy(unit)
 end
 
-function FindItemInInventoryByName(unit, itemname, searchStash)
+function FindItemInInventoryByName(unit, itemname, searchStash, onlyStash)
 	local lastSlot = 5
-	if searchStash then
-		lastSlot = 11
-	end
-	for slot = 0, lastSlot do
+	local startSlot = 0
+	if searchStash then lastSlot = 11 end
+	if onlyStash then startSlot = 5 end
+	for slot = startSlot, lastSlot do
 		local item = unit:GetItemInSlot(slot)
 		if item and item:GetAbilityName() == itemname then
 			return item
@@ -586,11 +585,13 @@ function pairsByKeys(t, f)
 	return iter
 end
 
-function AbilityHasBehaviorByName(ability_name, behavior)
-	local ability = GLOBAL_DUMMY:AddAbility(ability_name)
-	local value = bit.band( ability:GetBehavior(), behavior) == behavior
-	GLOBAL_DUMMY:RemoveAbility(ability_name)
-	return value
+function AbilityHasBehaviorByName(ability_name, behaviorString)
+	local AbilityBehavior = GetKeyValue(ability_name, "AbilityBehavior")
+	if AbilityBehavior then
+		local AbilityBehaviors = string.split(AbilityBehavior, " | ")
+		return table.contains(AbilityBehaviors, behaviorString)
+	end
+	return false
 end
 
 function AbilityHasBehavior(ability, behavior)
@@ -952,10 +953,6 @@ function ColorTableToCss(color)
 	return "rgb(" .. color[1] .. ',' .. color[2] .. ',' .. color[3] .. ')'
 end
 
-function GetNotScaledDamage(damage, unit)
-	return damage/(1+((unit:GetIntellect()/16)/100))
-end
-
 function IsPlayerAbandoned( playerID )
 	return PLAYER_DATA[playerID].IsAbandoned
 end
@@ -1038,15 +1035,19 @@ function MakePlayerAbandoned(iPlayerID)
 	end
 end
 
-function AddNewAbility(unit, ability_name, skipLinked)
-	local hAbility = unit:AddAbility(ability_name)
-	if GetKeyValue(ability_name, "HasInnateModifiers") ~= 1 then
+function ClearFalseInnateModifiers(unit, ability)
+	if ability:GetKeyValue("HasInnateModifiers") ~= 1 then
 		for _,v in ipairs(unit:FindAllModifiers()) do
-			if v:GetAbility() and v:GetAbility() == hAbility then
+			if v:GetAbility() and v:GetAbility() == ability then
 				v:Destroy()
 			end
 		end
 	end
+end
+
+function AddNewAbility(unit, ability_name, skipLinked)
+	local hAbility = unit:AddAbility(ability_name)
+	ClearFalseInnateModifiers(unit, hAbility)
 	local linked
 	local link = LINKED_ABILITIES[ability_name]
 	if link and not skipLinked then
@@ -1157,11 +1158,13 @@ function FindNearestEntity(vec3, units)
 end
 
 function FindCourier(team) 
-	for _,v in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
-		if v:GetTeamNumber() == team then
-			return v
-		end
-	end
+	return TEAMS_COURIERS[team]
+end
+
+function GetNotScaledDamage(damage, unit)
+	local amplify = unit:GetSpellDamageAmplify() * 0.01
+	print(damage, amplify, damage-(damage*(amplify)))
+	return damage-(damage*(1-amplify))
 end
 
 function GetSpellDamageAmplify(unit)
@@ -1285,9 +1288,9 @@ function GetHeroTableByName(name)
 		print("[GetHeroTableByName] Missing hero: " .. name)
 		return
 	end
-	if not default then
-		table.merge(output, NPC_HEROES[custom.override_hero])
-		table.merge(output, NPC_HEROES_CUSTOM[custom.override_hero])
+	if custom.base_hero then
+		table.merge(output, NPC_HEROES[custom.base_hero])
+		table.merge(output, NPC_HEROES_CUSTOM[custom.base_hero])
 		table.merge(output, custom)
 	else
 		table.merge(output, default)
@@ -1330,7 +1333,7 @@ function ClearSlotsFromDummy(unit, bNoStash)
 	end
 end
 
-function GetAllItemsByNameInInventory(unit, itemname, searchStash, bFromSnapshot)
+function GetAllItemsByNameInInventory(unit, itemname, searchStash)
 	local lastSlot = 5
 	if searchStash then
 		lastSlot = 11
@@ -1394,4 +1397,14 @@ function CreateExplosion(position, minRadius, fullRdius, minForce, fullForce, te
 			v:AddPhysicsVelocity(velocity)
 		end
 	end
+end
+
+function CEntityInstance:SetNetworkableEntityInfo(key, value)
+	local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
+	t[key] = value
+	CustomNetTables:SetTableValue("custom_entity_values", tostring(self:GetEntityIndex()), t)
+end
+
+function CEntityInstance:ClearNetworkableEntityInfo()
+	CustomNetTables:SetTableValue("custom_entity_values", tostring(self:GetEntityIndex()), nil)
 end

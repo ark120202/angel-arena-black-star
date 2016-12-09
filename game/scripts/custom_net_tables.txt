@@ -4,7 +4,6 @@
 	[
 		"containers_lua",
 		"selection",
-		"entity_tooltips",
-		"custom_ability_icons",
+		"custom_entity_values"
 	]
 }

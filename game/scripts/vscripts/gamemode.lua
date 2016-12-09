@@ -67,6 +67,7 @@ local requirements = {
 	"custom_runes/custom_runes",
 	"stats_client",
 	"filters",
+	--"dyanmic_wearables"
 }
 local modifiers = {
 	["modifier_state_hidden"] = "modifiers/modifier_state_hidden",
@@ -98,10 +99,6 @@ end
 
 function GameMode:OnFirstPlayerLoaded()
 	DebugPrint("[BAREBONES] First Player has loaded")
-	Containers:SetItemLimit(50)
-	Containers:UsePanoramaInventory(true)
-	HeroSelection:PrepareTables()
-	PanoramaShop:InitializeItemTable()
 	--[[local portal2 = Entities:FindByName(nil, "target_mark_teleport_river_team2")
 	local portal3 = Entities:FindByName(nil, "target_mark_teleport_river_team3")
 	if portal2 and portal3 then
@@ -173,12 +170,21 @@ function GameMode:OnHeroInGame(hero)
 				local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
 				TEAMS_COURIERS[hero:GetTeamNumber()] = true
 				Timers:CreateTimer(0.03, function()
-					local couriers = Entities:FindAllByClassname("npc_dota_courier")
-					for _,courier in pairs(couriers) do
-						if courier:GetOwner():GetPlayerID() == hero:GetPlayerID() then
+					for _,courier in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
+						local owner = courier:GetOwner()
+						if owner and owner:GetPlayerID() == hero:GetPlayerID() then
 							courier:UpgradeToFlyingCourier()
+							courier:SetOwner(nil)
 							courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
 							TEAMS_COURIERS[hero:GetTeamNumber()] = courier
+							courier:SetBaseMaxHealth(200)
+							courier:SetMaxHealth(200)
+							courier:SetHealth(200)
+							Timers:CreateTimer(60, function()
+								courier:SetBaseMaxHealth(courier:GetBaseMaxHealth() + 200)
+								courier:SetMaxHealth(courier:GetMaxHealth() + 200)
+								return 60
+							end)
 						end
 					end
 				end)
@@ -226,6 +232,7 @@ function GameMode:OnGameInProgress()
 	StatsClient:OnGameBegin()
 	Scepters:SetGlobalScepterThink()
 	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
+	PanoramaShop:StartItemStocks()
 	Timers:CreateTimer(function()
 		CustomRunes:SpawnRunes()
 		return CUSTOM_RUNE_SPAWN_TIME
@@ -332,6 +339,10 @@ function GameMode:InitGameMode()
 			return item:GetAbilityName() == "item_cad"
 		end,
     })
+	Containers:SetItemLimit(50)
+	Containers:UsePanoramaInventory(true)
+	HeroSelection:PrepareTables()
+	PanoramaShop:InitializeItemTable()
 	DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
 end
 
