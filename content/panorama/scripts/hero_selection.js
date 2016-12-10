@@ -425,7 +425,6 @@ function HeroSelectionStart(HeroesServerData) {
 	MainPanel.visible = true;
 	SelectionTimerDuration = HeroesServerData.SelectionTime;
 	UpdateTimer();
-	$("#GameModeInfoGamemodeLabel").text = $.Localize("#hero_selection_mode_" + HeroesServerData.GameModeType)
 	if (HeroesServerData.GameModeType != "all_pick") {
 		$("#SwitchTabButton").visible = false
 	}
@@ -705,6 +704,16 @@ function OnMinimapClickSpawnBox(team, level, index) {
 				SelectionTimerStartTime = changesObject.SelectionStartTime;
 			};
 		});
+		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
+			/*var DOTA_ACTIVE_GAMEMODE, DOTA_ACTIVE_GAMEMODE_TYPE
+			if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
+				DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
+			}*/
+			if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
+				var DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
+				$("#GameModeInfoGamemodeLabel").text = $.Localize("#arena_game_mode_type_" + DOTA_ACTIVE_GAMEMODE_TYPE)
+			}
+		})
 
 		HideEvent = GameEvents.Subscribe("hero_selection_hide", HeroSelectionEnd);
 		ShowPrecacheEvent = GameEvents.Subscribe("hero_selection_show_precache", ShowPrecache);

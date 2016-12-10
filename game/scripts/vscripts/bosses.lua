@@ -59,9 +59,16 @@ function Bosses:MakeBossAI(unit, name)
 		leashRange = 1000,
 	}
 	local profile = "boss"
-	--[[if name == "roshan" then
-		local boss_roshan_spikes = unit:FindAbilityByName("boss_roshan_spikes")
+	if name == "freya" then
+		local boss_freya_sharp_ice_shards = unit:FindAbilityByName("boss_freya_sharp_ice_shards")
 		aiTable["abilityCastCallback"] = function(self)
+			local unitsInRange = self:FindUnitsNearby(boss_freya_sharp_ice_shards:GetCastRange(unit:GetAbsOrigin(), nil) - 100, false, true, DOTA_UNIT_TARGET_HERO)
+			print(#unitsInRange)
+			if #unitsInRange > 0 then
+				self:UseAbility(boss_freya_sharp_ice_shards)
+			end
+		end
+		--[[aiTable["abilityCastCallback"] = function(self)
 			local unitsInRange = self:FindUnitsNearby(boss_roshan_spikes:GetAbilitySpecial("length") - 200, false, true, DOTA_UNIT_TARGET_HERO)
 			if #unitsInRange > 0 then
 				local spikesTarget
@@ -77,8 +84,8 @@ function Bosses:MakeBossAI(unit, name)
 					self:UseAbility(boss_roshan_spikes, spikesTarget:GetAbsOrigin())
 				end
 			end
-		end
-	end]]
+		end]]
+	end
 	if name == "central" then
 		profile = "tower"
 	end
@@ -86,3 +93,5 @@ function Bosses:MakeBossAI(unit, name)
 	local ai = SimpleAI:new(unit, profile, aiTable)
 end
 
+local boss = CreateUnitByName("npc_arena_boss_" .. "freya", Vector(0), true, nil, nil, DOTA_TEAM_NEUTRALS)
+Bosses:MakeBossAI(boss, "freya")

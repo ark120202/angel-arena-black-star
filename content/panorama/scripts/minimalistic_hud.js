@@ -7,6 +7,8 @@ var ONCLICK_PURGABLE_MODIFIERS = [
 	"modifier_rubick_personality_steal",
 	"modifier_tether_ally_aghanims"
 ];
+var DOTA_ACTIVE_GAMEMODE = -1,
+	DOTA_ACTIVE_GAMEMODE_TYPE = -1
 
 function OnLevelUpClicked() {
 	if (Game.IsInAbilityLearnMode()) {
@@ -230,7 +232,7 @@ function CreateSnippet_Ability(panel) {
 			}
 
 			var canUpgrade = (Abilities.CanAbilityBeUpgraded(panel.ability) == AbilityLearnResult_t.ABILITY_CAN_BE_UPGRADED)
-			panel.SetHasClass("learnable_ability", Game.IsInAbilityLearnMode() && canUpgrade && GameUI.CustomUIConfig().DOTA_ACTIVE_GAMEMODE_TYPE != DOTA_GAMEMODE_TYPE_ABILITY_SHOP)
+			panel.SetHasClass("learnable_ability", Game.IsInAbilityLearnMode() && canUpgrade && DOTA_ACTIVE_GAMEMODE_TYPE != DOTA_GAMEMODE_TYPE_ABILITY_SHOP)
 		}
 	}
 	panel.AutoUpdate = function() {
@@ -504,18 +506,16 @@ function UpdateSelection() {
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		if (changesObject["courier_owner" + Players.GetTeam(Game.GetLocalPlayerID())] != null)
 			SetCourierTartget(changesObject["courier_owner" + Players.GetTeam(Game.GetLocalPlayerID())])
-		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null && $("#PlayerControls_1x1") != null) {
-			$("#PlayerControls_1x1").visible = changesObject["gamemode_settings"]["gamemode"] != DOTA_GAMEMODE_HOLDOUT_5
+		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
+			DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
+		}
+		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
+			DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
+			if ($("#PlayerControls_1x1") != null)
+				$("#PlayerControls_1x1").visible = DOTA_ACTIVE_GAMEMODE != DOTA_GAMEMODE_HOLDOUT_5
 		}
 	})
 	SetMinimalisticUIEnabled(CustomHudEnabled)
-
-	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
-		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
-			GameUI.CustomUIConfig().DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
-			GameUI.CustomUIConfig().DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
-		}
-	})
 	UpdateAbilities()
 	AutoUpdatePanels()
 	var RadarButton = GetDotaHud().FindChildTraverse("RadarButton")

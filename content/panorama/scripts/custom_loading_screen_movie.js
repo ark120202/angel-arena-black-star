@@ -23,6 +23,15 @@ function ShowStar(id) {
 	}
 }
 
+function VoteMap(parentindex, gmtype) {
+	GameEvents.SendCustomGameEventToServer("submit_gamemode_map", {
+		GMType: gmtype
+	});
+	$.Each($("#GoalVotePanelCustomSettings_GM" + parentindex).Children(), function(temppanel) {
+		temppanel.enabled = false;
+	});
+}
+
 (function() {
 	$("#GoalVotePanel").AddClass("GoalVotePanel_In")
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
@@ -40,18 +49,14 @@ function ShowStar(id) {
 						GameEvents.SendCustomGameEventToServer("submit_gamemode_vote", {
 							voteIndex: tIndex
 						});
-						$.Each($("#GoalVotePanel").Children(), function(temppanel) {
-							$.Each(temppanel.Children(), function(thisPanel) {
-								thisPanel.enabled = false;
-							});
+						$.Each($("#GoalVotePanelKLValues").Children(), function(temppanel) {
+							temppanel.enabled = false;
 						});
-						$("#GoalVotePanel").RemoveClass("GoalVotePanel_In")
+						//$("#GoalVotePanel").RemoveClass("GoalVotePanel_In")
 					})
 				})
 			}
-			if (gamemode_settings.gamemode_map != null) {
-
-			}
+			$("#GoalVotePanelCustomSettingsRoot").visible = Number(gamemode_settings.gamemode_map) == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES
 		}
 	});
 	$("#StarsBox").visible = false

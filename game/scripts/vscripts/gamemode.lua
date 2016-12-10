@@ -230,7 +230,6 @@ function GameMode:InitGameMode()
 	end
 	GAMEMODE_INITIALIZATION_STATUS[2] = true
 
-
 	GameMode:InitFilters()
 	HeroSelection:Initialize()
 	GameMode:RegisterCustomListeners()

@@ -41,7 +41,6 @@ function HeroSelection:PrepareTables()
 		SelectionTime = CUSTOM_HERO_SELECTION_TIME
 	}
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK then
-		data.GameModeType = "all_pick"
 		data.HeroTabs = {{
 				Heroes = {}
 			},
@@ -83,7 +82,6 @@ function HeroSelection:PrepareTables()
 		end
 		HeroSelection.ModeData = data
 	elseif ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
-		data.GameModeType = DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP and "ability_shop" or "random_omg"
 		data.HeroTabs = {
 			{
 				Heroes = {}

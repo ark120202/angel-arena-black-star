@@ -11,10 +11,13 @@
 		"NoTeam"          								"No Team"
 		
 		"addonname"										"Angel Arena Black Star"
-        "game_mode_15"            					    "Angel Arena Black Star"
         "addon_game_name"         						"Angel Arena Black Star"
         "addon_game_name_p1"         					"Angel Arena"
         "addon_game_name_p2"         					"Black Star"
+
+        "arena_game_mode_type_100"						"All Pick"
+        "arena_game_mode_type_101"						"Random OMG"
+        "arena_game_mode_type_102"						"Ability Shop"
 
 		"DOTA_GoodGuys"   								"Radiant"
 		"DOTA_BadGuys"    								"Dire"
@@ -136,9 +139,6 @@
 		"hero_selection_button_search"							"Search Hero..."
 		"hero_selection_button_switch"							"Switch Heroes"
 		"hero_selection_loading_message"						"Loading..."
-		"hero_selection_mode_all_pick"							"All Pick"
-		"hero_selection_mode_random_omg"						"Random OMG"
-		"hero_selection_mode_ability_shop"						"Ability Shop"
 		"hero_selection_paused_label"							"Game is Paused"
 		"hero_selection_paused_description"						"Open console and write \'dota_pause\'"
 

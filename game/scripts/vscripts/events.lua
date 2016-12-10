@@ -17,38 +17,7 @@ function GameMode:OnGameRulesStateChange(keys)
 
 	local newState = GameRules:State_Get()
 	if newState == DOTA_GAMERULES_STATE_PRE_GAME then
-
-		--KL Config
-		local kl_sum = 0
-		local kl_count = 0
-		local GMTypeVotes = {}
-		for _,v in ipairs(PLAYER_DATA) do
-			if v.GameModeVote then
-				kl_sum = kl_sum + v.GameModeVote
-				kl_count = kl_count + 1
-			end
-			if v.GameModeTypeVote then
-				GMTypeVotes[v.GameModeTypeVote] = (GMTypeVotes[v.GameModeTypeVote] or 0) + 1
-			end
-		end
-		local kl_result
-		if kl_count >= 1 then
-			GameRules:SetKillGoal(table.nearest(POSSIBLE_KILL_GOALS, math.floor(kl_sum / kl_count)))
-		else
-			GameRules:SetKillGoal(DOTA_KILL_GOAL_VOTE_STANDART)
-		end
-		if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
-			local key = next(GMTypeVotes)
-			local max = GMTypeVotes[key]
-			for k, v in pairs(GMTypeVotes) do
-			    if GMTypeVotes[k] > max then
-			        key, max = k, v
-			    end
-			end
-			DOTA_ACTIVE_GAMEMODE_TYPE = key
-			
-			print("Gamemode " .. key .. " was selected because of " .. max .. " votes")
-		end
+		GameModes:OnAllVotesSubmitted()
 		HeroSelection:HeroSelectionStart()
 	end
 end
@@ -57,16 +26,13 @@ end
 function GameMode:OnNPCSpawned(keys)
 	DebugPrint("[BAREBONES] NPC Spawned")
 	DebugPrintTable(keys)
-
 	local npc = EntIndexToHScript(keys.entindex)
-	
 	if npc:IsHero() then
 		if not HeroSelection.SelectionEnd then
 			UTIL_Remove(npc)
 			return
 		end
 		HeroVoice:OnNPCSpawned(npc)
-
 		Timers:CreateTimer(function()
 			if npc and not npc:IsNull() and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
 				local base_hero = npc:GetPlayerOwner():GetAssignedHero()
@@ -78,7 +44,7 @@ function GameMode:OnNPCSpawned(keys)
 				CustomWearables:EquipWearables(npc)
 				if npc:IsRealHero() and not npc:HasModifier("modifier_arc_warden_tempest_double") then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
-					GameMode:RandomOMGRollAbilities(npc)
+					AbilityShop:RandomOMGRollAbilities(npc)
 					if npc.BloodstoneDummies then
 						for _,v in ipairs(npc.BloodstoneDummies) do
 							UTIL_Remove(v)
@@ -638,12 +604,9 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 			Spawner:UpgradeCreep(unit, unit.SpawnerType, unit.SLevel)
 		end
 		if cmd[1] == "a_ts" then
-			Convars:SetInt("sv_cheats", 1)
-			Timers:CreateTimer(0.5, function()
-				Convars:SetFloat("host_timescale", 0.1)
-				Timers:CreateTimer(0.5, function()
-					Convars:SetInt("sv_cheats", 0)
-				end)
+			SendToServerConsole("host_timescale 0.1")
+			Timers:CreateTimer(2, function()
+				SendToServerConsole("host_timescale 1")
 			end)
 		end
 		if cmd[1] == "a_col" then

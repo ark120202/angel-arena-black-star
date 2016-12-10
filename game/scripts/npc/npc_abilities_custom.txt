@@ -8721,6 +8721,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"medusa_split_shot"
 		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"3"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -8907,7 +8908,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reflect_chance"		"20"
+				"reflect_chance"		"8 10 12 14 16 18 20"
 			}
 		}
 
@@ -13773,6 +13774,7 @@
 			"modifier_boss_freya_sharp_ice_shards_stack"
 			{
 				"IsDebuff"			"1"
+				"Duration"			"%stack_duration"
 			}
 		}
 	}

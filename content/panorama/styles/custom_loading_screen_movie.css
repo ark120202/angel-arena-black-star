@@ -561,7 +561,7 @@
 	margin-left: 3px;
 }
 
-.VoteKillGoalButton
+.VoteKillGoalButton, .GoalVoteSettingsButton
 {
 	min-width: 0;
 	width: 48%;
@@ -571,4 +571,10 @@
 .GoalVotePanel_In
 {
 	transform: translateY(210px);
+}
+#GoalVotePanelCustomSettingsRoot
+{
+	width: 100%;
+	margin-left: 3px;
+	visibility: collapse;
 }

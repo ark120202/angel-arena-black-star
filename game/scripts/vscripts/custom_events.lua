@@ -99,10 +99,9 @@ function GameMode:SubmitGamemodeVote(data)
 end
 
 function GameMode:SubmitGamemodeMap(data)
-	if data and data.KVs then
-		local KVs = data.KVs
+	if data and data.GMType then
+		local GMType = tonumber(data.GMType)
 		if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
-			local GMType = KVs.GMType
 			if GMType and GMType == DOTA_GAMEMODE_TYPE_RANDOM_OMG or GMType == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
 				PLAYER_DATA[tonumber(data.PlayerID)].GameModeTypeVote = GMType
 			end

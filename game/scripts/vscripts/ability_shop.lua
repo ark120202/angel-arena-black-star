@@ -3,17 +3,16 @@ if AbilityShop == nil then
 	AbilityShop.AbilityInfo = {
 		["attribute_bonus_arena"] = {cost = 1, banned_with = {}}
 	}
+	AbilityShop.ClientData = {{}, {}}
+	AbilityShop.RandomOMG = {
+		Ultimates = {},
+		Abilities = {},
+	}
 end
 
-function AbilityShop:PostAbilityData()
-	CustomGameEventManager:RegisterListener("ability_shop_buy", Dynamic_Wrap(AbilityShop, "OnAbilityBuy"))
-	CustomGameEventManager:RegisterListener("ability_shop_sell", Dynamic_Wrap(AbilityShop, "OnAbilitySell"))
-	CustomGameEventManager:RegisterListener("ability_shop_downgrade", Dynamic_Wrap(AbilityShop, "OnAbilityDowngrade"))
-	local data = {{}, {}}
+function AbilityShop:PrepareData()
 	local Heroes_all = {}
 	table.merge(Heroes_all, ENABLED_HEROES.Selection)
-	table.merge(Heroes_all, ENABLED_HEROES.Heaven)
-	table.merge(Heroes_all, ENABLED_HEROES.Hell)
 	for _,v in ipairs(ABILITY_SHOP_SKIP_HEROES) do
 		Heroes_all[v] = nil
 	end
@@ -63,7 +62,8 @@ function AbilityShop:PostAbilityData()
 				if at and at ~= "" and at ~= "attribute_bonus_arena" and not AbilityHasBehaviorByName(at, "DOTA_ABILITY_BEHAVIOR_HIDDEN") and not table.contains(ABILITY_SHOP_SKIP_ABILITIES, at) then
 					local cost = 1
 					local banned_with = {}
-					if IsUltimateAbilityKV(at) then
+					local is_ultimate = IsUltimateAbilityKV(at)
+					if is_ultimate then
 						cost = 8
 					end
 					local abitb = ABILITY_SHOP_DATA[at]
@@ -73,6 +73,7 @@ function AbilityShop:PostAbilityData()
 					end
 					table.insert(abilityTbl, {ability = at, cost = cost, banned_with = banned_with})
 					AbilityShop.AbilityInfo[at] = {cost = cost, banned_with = banned_with, hero = name}
+					table.insert(AbilityShop.RandomOMG[is_ultimate and "Ultimates" or "Abilities"], {ability = at, hero = name})
 				end
 			end
 			local heroData = {
@@ -82,10 +83,16 @@ function AbilityShop:PostAbilityData()
 				attribute_primary = _G[heroTable.AttributePrimary],
 				team = heroTable.Team
 			}
-			table.insert(data[tabIndex], heroData)
+			table.insert(AbilityShop.ClientData[tabIndex], heroData)
 		end
 	end
-	PlayerTables:CreateTable("ability_shop_data", data, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+end
+
+function AbilityShop:PostAbilityData()
+	CustomGameEventManager:RegisterListener("ability_shop_buy", Dynamic_Wrap(AbilityShop, "OnAbilityBuy"))
+	CustomGameEventManager:RegisterListener("ability_shop_sell", Dynamic_Wrap(AbilityShop, "OnAbilitySell"))
+	CustomGameEventManager:RegisterListener("ability_shop_downgrade", Dynamic_Wrap(AbilityShop, "OnAbilityDowngrade"))
+	PlayerTables:CreateTable("ability_shop_data", AbilityShop.ClientData, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 end
 --AbilityShop:PostAbilityData()
 function AbilityShop:GetAbilityListInfo(abilityname)
@@ -228,7 +235,7 @@ function AbilityShop:RandomOMGRollAbilities(unit)
 		
 		local has_abilities = 0
 		while has_abilities < ability_count - ultimate_count do
-			local abilityTable = RANDOM_OMG_SETTINGS.Abilities.Abilities[RandomInt(1, #RANDOM_OMG_SETTINGS.Abilities.Abilities)]
+			local abilityTable = AbilityShop.RandomOMG.Abilities[RandomInt(1, #AbilityShop.RandomOMG.Abilities)]
 			local ability = abilityTable.ability
 			if ability and not unit:HasAbility(ability) then
 				PrecacheItemByNameAsync(ability, function() end)
@@ -239,7 +246,7 @@ function AbilityShop:RandomOMGRollAbilities(unit)
 		end
 		local has_ultimates = 0
 		while has_ultimates < ultimate_count do
-			local abilityTable = RANDOM_OMG_SETTINGS.Abilities.Ultimates[RandomInt(1, #RANDOM_OMG_SETTINGS.Abilities.Ultimates)]
+			local abilityTable = AbilityShop.RandomOMG.Ultimates[RandomInt(1, #AbilityShop.RandomOMG.Ultimates)]
 			local ability = abilityTable.ability
 			if ability and not unit:HasAbility(ability) then
 				PrecacheItemByNameAsync(ability, function() end)

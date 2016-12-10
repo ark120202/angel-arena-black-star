@@ -1,16 +1,12 @@
 "AddonInfo"
 {
     //5v5_abilityshop
-    "maps"          "5v5 5v5_romg 5v5_abilityshop"
+    "maps"          "5v5 5v5_custom_abilities"
 	"5v5"
 	{
 		"MaxPlayers"		"10"
 	}
-    "5v5_romg"
-    {
-        "MaxPlayers"        "10"
-    }
-    "5v5_abilityshop"
+    "5v5_custom_abilities"
     {
         "MaxPlayers"        "10"
     }

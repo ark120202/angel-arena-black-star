@@ -11,11 +11,10 @@
 		"NoTeam"          								"No Team"
 		
 		"addonname"										"Angel Arena Black Star"
-        "game_mode_15"            					    "Angel Arena Black Star"
         "addon_game_name"         						"Angel Arena Black Star"
         "addon_game_name_p1"         					"Angel Arena"
         "addon_game_name_p2"         					"Black Star"
-
+        
 		"DOTA_GoodGuys"   								"Силы Света"
 		"DOTA_BadGuys"    								"Силы Тьмы"
 		"DOTA_Custom1"    								"Pink Dragon"
@@ -116,9 +115,6 @@
 		"hero_selection_button_search"							"Поиск среди героев..."
 		"hero_selection_button_switch"							"Сменить героев"
 		"hero_selection_loading_message"						"Загрузка..."
-		"hero_selection_mode_all_pick"							"All Pick"
-		"hero_selection_mode_random_omg"						"Random OMG"
-		"hero_selection_mode_ability_shop"						"Ability Shop"
 		"hero_selection_paused_label"							"Игра приостановлена"
 		"hero_selection_paused_description"						"Откройте консоль и выполните команду \'dota_pause\'"
 

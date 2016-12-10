@@ -1,8 +1,6 @@
 DOTA_GAMEMODE_5V5 = 0
 DOTA_GAMEMODE_HOLDOUT_5 = 1
---[[DOTA_GAMEMODE_10V10 = 1
-DOTA_GAMEMODE_1V1 = 2
-DOTA_GAMEMODE_X4 = 3]]
+--DOTA_GAMEMODE_X4 = 2
 
 DOTA_GAMEMODE_TYPE_ALLPICK = 100
 DOTA_GAMEMODE_TYPE_RANDOM_OMG = 101
@@ -19,9 +17,9 @@ if GameModes == nil then
 	_G.GameModes = class({})
 
 	GameModes.MapNamesToGamemode = {
-		["5v5"] = {gamemode = DOTA_GAMEMODE_5V5, type = DOTA_GAMEMODE_TYPE_ALLPICK},
+		["5v5"] = {gamemode = DOTA_GAMEMODE_5V5, type = DOTA_GAMEMODE_TYPE_ALLPICK, map = ARENA_GAMEMODE_MAP_NONE},
 		--DOTA_GAMEMODE_TYPE_RANDOM_OMG || DOTA_GAMEMODE_TYPE_ABILITY_SHOP
-		["5v5_romg"] = {gamemode = DOTA_GAMEMODE_5V5, type = nil, map = ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES},
+		["5v5_custom_abilities"] = {gamemode = DOTA_GAMEMODE_5V5, type = nil, map = ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES},
 		--["arena_holdout"] = {gamemode = DOTA_GAMEMODE_HOLDOUT_5, type = DOTA_GAMEMODE_TYPE_ALLPICK},
 	}
 
@@ -54,5 +52,45 @@ function GameModes:PreloadGamemodeSettingsFromTable(t)
 		for _,v in ipairs(t.requirements) do
 			require(v)
 		end
+	end
+end
+
+function GameModes:OnAllVotesSubmitted()
+	local kl_sum = 0
+	local kl_count = 0
+	local GMTypeVotes = {
+		[DOTA_GAMEMODE_TYPE_ABILITY_SHOP] = 0
+	}
+	for _,v in pairs(PLAYER_DATA) do
+		if v.GameModeVote then
+			kl_sum = kl_sum + v.GameModeVote
+			kl_count = kl_count + 1
+		end
+		if v.GameModeTypeVote then
+			GMTypeVotes[v.GameModeTypeVote] = (GMTypeVotes[v.GameModeTypeVote] or 0) + 1
+		end
+	end
+	local kl_result
+	if kl_count >= 1 then
+		GameRules:SetKillGoal(table.nearest(POSSIBLE_KILL_GOALS, math.floor(kl_sum / kl_count)))
+	else
+		GameRules:SetKillGoal(DOTA_KILL_GOAL_VOTE_STANDART)
+	end
+	if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
+		local key = next(GMTypeVotes)
+		local max = GMTypeVotes[key]
+		for k, v in pairs(GMTypeVotes) do
+		    if GMTypeVotes[k] > max then
+		        key, max = k, v
+		    end
+		end
+		DOTA_ACTIVE_GAMEMODE_TYPE = key
+		local tt = PlayerTables:GetTableValue("arena", "gamemode_settings")
+		tt.gamemode_type = DOTA_ACTIVE_GAMEMODE_TYPE
+		PlayerTables:SetTableValue("arena", "gamemode_settings", tt)
+		if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
+			AbilityShop:PostAbilityData()
+		end
+		print("Gamemode " .. key .. " was selected because of " .. max .. " votes")
 	end
 end

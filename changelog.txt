@@ -48,7 +48,11 @@ Angel Arena Black Star - Version 1.3.4b:
 Angel Arena Black Star - Version 1.3.4b:
 
 General:
-	
+	Added new bosses, that will drop an item, that will transform you to that boss hero.
+	Removed all old bosses
+	Removed Gods transformations
+	All god heroes were rebalanced to be not stronger than all normal heroes
+	Ability Shop & Random OMG were merged into one map "5v5_custom_abilities", you can vote for mode in game configuration stage
 
 Balance:
 	Units:
