@@ -16,7 +16,7 @@ function CustomWearables:RemoveDotaWearables(unit)
 		if v:GetClassname() == "dota_item_wearable" then
 			v:AddEffects(EF_NODRAW)
 			v:SetModel("models/development/invisiblebox.vmdl")
-			v:RemoveSelf()
+			--v:RemoveSelf()
 		end
 	end
 end

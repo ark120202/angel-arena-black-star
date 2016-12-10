@@ -100,15 +100,6 @@ function UpdatePanels() {
 		var attribute_bonus_arena = Entities.GetAbilityByName(unit, "attribute_bonus_arena")
 		$("#AttributePanelStackAttributes").hittest = Entities.GetAbilityPoints(unit) > 0 && (Game.IsInAbilityLearnMode() || GameUI.IsControlDown())
 		$("#AttributePanelStackAttributes").SetHasClass("LearnableAttributes", Entities.GetAbilityPoints(unit) > 0)
-
-		var courier = FindCourier(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()))
-		if (courier != null) {
-			var courier_burst = Entities.GetAbilityByName(courier, "courier_burst")
-			var in_cooldown = !Abilities.IsCooldownReady(courier_burst)
-			$("#CourierBurstCooldownPanel").SetHasClass("in_cooldown", in_cooldown);
-			if (in_cooldown)
-				$("#CourierBurstCooldownLabel").text = Abilities.GetCooldownTimeRemaining(courier_burst).toFixed(0)
-		}
 		$.GetContextPanel().SetHasClass("is_enemy", Entities.IsEnemy(unit))
 	}
 
@@ -373,10 +364,6 @@ function SetCourierTartget(playerId) {
 		$("#CourierDeadTime").text = playerId.value
 	}
 
-}
-
-function CourierBurst() {
-	GameEvents.SendCustomGameEventToServer("hud_courier_burst", {})
 }
 
 function CourierTakeAndTransferItems() {

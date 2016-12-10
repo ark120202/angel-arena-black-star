@@ -25,36 +25,33 @@ function ShowStar(id) {
 
 (function() {
 	$("#GoalVotePanel").AddClass("GoalVotePanel_In")
-	var KillGoalRowPanel;
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		var gamemode_settings = changesObject["gamemode_settings"]
-		if (gamemode_settings != null && gamemode_settings.kill_goals != null) {
-			$.Each(gamemode_settings.kill_goals, function(killGoal, tIndex) {
-				var rootPanel = KillGoalRowPanel
-				if (rootPanel == null) {
-					rootPanel = $.CreatePanel("Panel", $("#GoalVotePanel"), "");
-					rootPanel.AddClass("GoalVotePanelRow")
-					KillGoalRowPanel = rootPanel;
-				} else {
-					KillGoalRowPanel = null;
-				}
-				var button = $.CreatePanel("Button", rootPanel, "kill_goal_vote_panel");
-				button.AddClass("ButtonBevel")
-				var label = $.CreatePanel("Label", button, "");
-				label.hittest = false;
-				label.text = killGoal;
-				button.SetPanelEvent("onactivate", function() {
-					GameEvents.SendCustomGameEventToServer("submit_gamemode_vote", {
-						voteIndex: tIndex
-					});
-					$.Each($("#GoalVotePanel").Children(), function(temppanel) {
-						$.Each(temppanel.Children(), function(thisPanel) {
-							thisPanel.enabled = false;
+		if (gamemode_settings != null) {
+			if (gamemode_settings.kill_goals != null) {
+				$.Each(gamemode_settings.kill_goals, function(killGoal, tIndex) {
+					var button = $.CreatePanel("Button", $("#GoalVotePanelKLValues"), "");
+					button.AddClass("ButtonBevel")
+					button.AddClass("VoteKillGoalButton")
+					var label = $.CreatePanel("Label", button, "");
+					label.hittest = false;
+					label.text = killGoal;
+					button.SetPanelEvent("onactivate", function() {
+						GameEvents.SendCustomGameEventToServer("submit_gamemode_vote", {
+							voteIndex: tIndex
 						});
-					});
-					$("#GoalVotePanel").RemoveClass("GoalVotePanel_In")
+						$.Each($("#GoalVotePanel").Children(), function(temppanel) {
+							$.Each(temppanel.Children(), function(thisPanel) {
+								thisPanel.enabled = false;
+							});
+						});
+						$("#GoalVotePanel").RemoveClass("GoalVotePanel_In")
+					})
 				})
-			})
+			}
+			if (gamemode_settings.gamemode_map != null) {
+
+			}
 		}
 	});
 	$("#StarsBox").visible = false
@@ -71,10 +68,7 @@ function ShowStar(id) {
 		$.Schedule(3.0, function() { //Hooked to class Enigma
 			$("#EnigmasBlackhole").style.visibility = "visible"
 			$("#EnigmasBlackhole").AddClass("EnigmasBlackhole_In")
-			var bhid = Game.EmitSound("Hero_Enigma.Black_Hole")
 			$.Schedule(5.0, function() { //Hooked to class EnigmasBlackhole_In
-				Game.StopSound(bhid)
-				Game.EmitSound("Hero_Enigma.Black_Hole.Stop")
 				$("#Enigma").RemoveClass("Enigma_In")
 				$("#Arthas").AddClass("Fade_Out")
 				$("#EnigmasBlackhole").RemoveClass("EnigmasBlackhole_In")
@@ -103,9 +97,6 @@ function ShowStar(id) {
 										$.Schedule(1, function() {
 											ShowStar(1)
 											RandomizeStar()
-										})
-										$.Schedule(5, function() {
-											//TODO Afterload actions
 										})
 									})
 								})

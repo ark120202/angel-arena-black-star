@@ -1,6 +1,5 @@
 --http://customgames.ru/forum/index.php?topic=259.0
 PROJECTILES_TABLE = {
-
 	['npc_dota_a_tower_goodguys'] = {
 		model = "particles/base_attacks/ranged_tower_good.vpcf",
 		speed = 750,

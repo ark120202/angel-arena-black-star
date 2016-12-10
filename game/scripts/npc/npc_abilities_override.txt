@@ -129,12 +129,6 @@
 		}
 	}
 
-	"courier_burst"
-	{
-		"AbilityCooldown"				"0"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	}
-
 	//"item_halloween_candy_corn"	"REMOVE"
 	//"item_mystery_hook"	"REMOVE"
 	//"item_mystery_arrow"	"REMOVE"

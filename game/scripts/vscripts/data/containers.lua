@@ -49,8 +49,7 @@ SHARED_CONTAINERS_USABLE_ITEMS = {
 
 DROP_TABLE = {
 	["npc_arena_boss_heaven"] = {
-		{ Item = "item_heaven_hero_change", DropChance = 100, },
-		{ Item = "item_consecrated_sword", DropChance = 100, },
+		--{ Item = "item_consecrated_sword", DropChance = 100, },
 
 		{ Item = "item_soul_of_titan", DropChance = 10, },
 		{ Item = "item_dark_blade", DropChance = 20, },
@@ -66,8 +65,7 @@ DROP_TABLE = {
 		{ Item = "item_shard_int_large", DropChance = 22, },
 	},
 	["npc_arena_boss_hell"] = {
-		{ Item = "item_hell_hero_change", DropChance = 100, },
-		{ Item = "item_sacrificial_dagger", DropChance = 100, },
+		--{ Item = "item_sacrificial_dagger", DropChance = 100, },
 
 		{ Item = "item_soul_of_titan", DropChance = 10, },
 		{ Item = "item_dark_blade", DropChance = 20, },

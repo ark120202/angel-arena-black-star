@@ -43,11 +43,9 @@ function HeroSelection:PrepareTables()
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK then
 		data.GameModeType = "all_pick"
 		data.HeroTabs = {{
-				title = "#hero_selection_tab_heroes_normal",
 				Heroes = {}
 			},
 			{
-				title = "#hero_selection_tab_heroes_alternative",
 				Heroes = {}
 			}
 		}
@@ -62,11 +60,9 @@ function HeroSelection:PrepareTables()
 				status="hover",
 			}
 		end
-		local HeroesHeaven = {}
-		local HeroesHell = {}
 		for category,contents in pairsByKeys(ENABLED_HEROES) do
 			for name,enabled in pairsByKeys(contents) do
-				if enabled == 1 then
+				if enabled == 1 and category == "Selection" then
 					local heroTable = GetHeroTableByName(name)
 					local tabIndex = 1
 					if not NPC_HEROES[name] then
@@ -81,24 +77,15 @@ function HeroSelection:PrepareTables()
 						isChanged = heroTable.Changed == 1 and tabIndex == 1,
 						attributes = HeroSelection:ExtractHeroStats(heroTable),
 					}
-					if category == "Selection" then
-						table.insert(data.HeroTabs[tabIndex].Heroes, heroData)
-					elseif category == "Heaven" then
-						table.insert(HeroesHeaven, heroData)
-					elseif category == "Hell" then
-						table.insert(HeroesHell, heroData)
-					end
+					table.insert(data.HeroTabs[tabIndex].Heroes, heroData)
 				end
 			end
 		end
-		PlayerTables:CreateTable("hero_selection_available_heroes_heaven", HeroesHeaven, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
-		PlayerTables:CreateTable("hero_selection_available_heroes_hell", HeroesHell, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 		HeroSelection.ModeData = data
-	elseif DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG or DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
+	elseif ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
 		data.GameModeType = DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP and "ability_shop" or "random_omg"
 		data.HeroTabs = {
 			{
-				title = "#hero_selection_tab_heroes_normal",
 				Heroes = {}
 			}
 		}
@@ -128,15 +115,13 @@ function HeroSelection:PrepareTables()
 				end
 			end
 		end
-		PlayerTables:CreateTable("hero_selection_available_heroes_heaven", {disabled = true}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
-		PlayerTables:CreateTable("hero_selection_available_heroes_hell", {disabled = true}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 		HeroSelection.ModeData = data
 	end
 	PlayerTables:CreateTable("hero_selection_available_heroes", HeroSelection.ModeData, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 end
 
 function HeroSelection:VerifyHeroGroup(hero, group)
-	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG or DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
+	if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
 		return ENABLED_HEROES.NoAbilities[hero] == 1
 	else
 		local herolist = ENABLED_HEROES[group]
@@ -535,7 +520,7 @@ function TransformUnitClass(unit, classTable)
 			unit:RemoveAbility(unit:GetAbilityByIndex(i):GetName())
 		end
 	end
-	if DOTA_ACTIVE_GAMEMODE_TYPE ~= DOTA_GAMEMODE_TYPE_RANDOM_OMG and DOTA_ACTIVE_GAMEMODE_TYPE ~= DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
+	if ARENA_ACTIVE_GAMEMODE_MAP ~= ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
 		for i = 1, 16 do
 			if classTable["Ability" .. i] and classTable["Ability" .. i] ~= "" then
 				PrecacheItemByNameAsync(classTable["Ability" .. i], function() end)

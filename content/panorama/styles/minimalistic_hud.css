@@ -667,42 +667,6 @@
 	margin-left: 2px;
 }
 
-
-#CourierBurstPanel
-{
-	align: right center;
-	width: 24px;
-	height: 24px;
-	border-radius: 4px;
-}
-
-#CourierBurstImage
-{
-	width: 100%;
-	height: 100%;
-}
-
-#CourierBurstCooldownPanel
-{
-	width: 100%;
-	height: 100%;
-	background-color: black;
-	opacity: 0;
-}
-
-#CourierBurstCooldownPanel.in_cooldown
-{
-	opacity: 1;
-}
-
-#CourierBurstCooldownLabel
-{
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	color: white;
-}
-
 #CourierStatusPanel
 {
 	align: left center;

@@ -12,7 +12,7 @@ function CustomWearables:RemoveAndParseDotaWearables(unit)
 			table.insert(wearableModels, v:GetModelName())
 			v:AddEffects(EF_NODRAW)
 			v:SetModel("models/development/invisiblebox.vmdl")
-			v:RemoveSelf()
+			--v:RemoveSelf()
 		end
 	end
 	PrintTable(wearableModels)

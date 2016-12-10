@@ -62,6 +62,8 @@ Fixes:
 	Fixed item slots could've corrupted after someones bottle purchasing
 	Fixed still some entities could have rune tooltips
 	Fixed Shard of True Shight effect stayed forever on your hero
+	Removed Courier - Burst button from HUD
+	Removed Consecrated Sword & Sacrificial Dagger because them were uselses
 <<+===========================================================================================================
 rhasta,
 lycan,

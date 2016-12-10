@@ -164,13 +164,6 @@
 		<Panel id="CourierControls" hittest="true">
 			<Panel id="CourierStatusPanel">
 				<Image id="CourierImage" src="file://{resources}/images/custom_game/hud/courier.png" onactivate="SelectCourier()" hittest="true"/>
-				<Panel id="CourierBurstPanel">
-					<Image id="CourierBurstImage" src="file://{resources}/images/custom_game/hud/courier_speed.png" onactivate="CourierBurst()" hittest="true">
-						<Panel id="CourierBurstCooldownPanel">
-							<Label id="CourierBurstCooldownLabel" text="0" />
-						</Panel>
-					</Image>
-				</Panel>
 			</Panel>
 			<Panel id="CourierTargetPanel">
 				<Image id="CourierStatusTarget" onactivate="CourierTakeAndTransferItems()" src="file://{resources}/images/custom_game/hud/courier_empty.png" hittest="true"/>

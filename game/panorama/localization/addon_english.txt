@@ -131,8 +131,6 @@
 
 		"hero_selection_select_hero"							"Select Hero"
 		"hero_selection_notes_npc_dota_hero_base"				"This hero hasn't any important changes."
-		"hero_selection_tab_heroes_normal"						"Normal Heroes"
-		"hero_selection_tab_heroes_alternative"					"New Heroes"
 		"hero_selection_button_select_hero"						"SELECT"
 		"hero_selection_button_random"							"RANDOM"
 		"hero_selection_button_search"							"Search Hero..."

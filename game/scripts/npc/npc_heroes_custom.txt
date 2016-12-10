@@ -171,6 +171,7 @@
 	{
 		"override_hero"				"npc_dota_hero_base"
 		"base_hero"					"npc_dota_hero_abaddon"
+		"Ability1"					"boss_freya_sharp_ice_shards"
 		"Model"						"models/units/freya/freya.vmdl"
 		"ModelScale"				"1.5"
 		"HideWearables"				"1"

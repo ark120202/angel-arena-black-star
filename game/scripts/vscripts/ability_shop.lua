@@ -208,3 +208,47 @@ end
 function AbilityShop:CalculateDowngradeCost(abilityname, upgradecost)
 	return (upgradecost*60) + (upgradecost*10*GetDOTATimeInMinutesFull())
 end
+
+function AbilityShop:RandomOMGRollAbilities(unit)
+	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG then
+		local ability_count = 6
+		local ultimate_count = 2
+		unit:RemoveModifierByName("modifier_attribute_bonus_arena")
+		for i = 0, unit:GetAbilityCount() - 1 do
+			local ability = unit:GetAbilityByIndex(i)
+			if ability then
+				for _,v in ipairs(unit:FindAllModifiers()) do
+					if v:GetAbility() and v:GetAbility() == ability then
+						v:Destroy()
+					end
+				end
+				unit:RemoveAbility(ability:GetName())
+			end
+		end
+		
+		local has_abilities = 0
+		while has_abilities < ability_count - ultimate_count do
+			local abilityTable = RANDOM_OMG_SETTINGS.Abilities.Abilities[RandomInt(1, #RANDOM_OMG_SETTINGS.Abilities.Abilities)]
+			local ability = abilityTable.ability
+			if ability and not unit:HasAbility(ability) then
+				PrecacheItemByNameAsync(ability, function() end)
+				GameMode:PrecacheUnitQueueed(abilityTable.hero)
+				AddNewAbility(unit, ability)
+				has_abilities = has_abilities + 1
+			end
+		end
+		local has_ultimates = 0
+		while has_ultimates < ultimate_count do
+			local abilityTable = RANDOM_OMG_SETTINGS.Abilities.Ultimates[RandomInt(1, #RANDOM_OMG_SETTINGS.Abilities.Ultimates)]
+			local ability = abilityTable.ability
+			if ability and not unit:HasAbility(ability) then
+				PrecacheItemByNameAsync(ability, function() end)
+				GameMode:PrecacheUnitQueueed(abilityTable.hero)
+				AddNewAbility(unit, ability)
+				has_ultimates = has_ultimates + 1
+			end
+		end
+		unit:AddAbility("attribute_bonus_arena")
+		unit:SetAbilityPoints(unit:GetLevel())
+	end
+end

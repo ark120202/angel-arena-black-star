@@ -195,10 +195,8 @@ PANORAMA_SHOP_ITEMS = {
 	},
 	{
 		{
-			"item_consecrated_sword",
-			"item_sacrificial_dagger",
-			"item_heaven_hero_change",
-			"item_hell_hero_change",
+			--"item_consecrated_sword",
+			--"item_sacrificial_dagger",
 
 			"item_moon_dust",
 			"item_dark_blade",

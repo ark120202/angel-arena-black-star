@@ -970,7 +970,7 @@
 					m_Animationname = "atk02"
 					m_Filepath = "models/units/freya/anim/atk02.FBX"
 					m_nStartframe = 0
-					m_nEndframe = 61
+					m_nEndframe = 60
 					m_flFps = 60.0
 					m_Loop = 
 					{
@@ -1141,9 +1141,9 @@
 				{
 					m_Animationname = "magicnotarget"
 					m_Filepath = "models/units/freya/anim/magicnotarget.FBX"
-					m_nStartframe = 0
+					m_nStartframe = 4
 					m_nEndframe = 61
-					m_flFps = 30.0
+					m_flFps = 45.0
 					m_Loop = 
 					{
 						m_bLoop = false
@@ -1159,7 +1159,13 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities = [  ]
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAST_ABILITY_1"
+							m_nWeight = 1
+						},
+					]
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]

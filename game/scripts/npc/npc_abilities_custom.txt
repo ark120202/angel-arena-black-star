@@ -13704,4 +13704,76 @@
 			}
 		}
 	}
+
+	"boss_freya_sharp_ice_shards"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCooldown"				"8"
+		"AbilityCastPoint"				"0.75"
+		"AbilityCastRange"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmage_pct"				"16"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_dmage_pct"		"8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stack_duration"		"16"
+			}
+		}
+
+		"precache"
+		{
+			"particle"					"particles/arena/units/bosses/freya/sharp_ice_shards_cast.vpcf"
+		}
+
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"SetMaxLevel"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/bosses/boss_freya.lua"
+				"Function"		"ApplyShards"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/arena/units/bosses/freya/sharp_ice_shards_cast.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_boss_freya_sharp_ice_shards_stack"
+			{
+				"IsDebuff"			"1"
+			}
+		}
+	}
 }

@@ -1,14 +1,12 @@
 function GameMode:RegisterCustomListeners()
 	CustomGameEventManager:RegisterListener("custom_chat_send_message", Dynamic_Wrap(GameMode, "CustomChatSendMessage"))
 	CustomGameEventManager:RegisterListener("metamorphosis_elixir_cast", Dynamic_Wrap(GameMode, "MetamorphosisElixirCast"))
-	CustomGameEventManager:RegisterListener("hell_hero_change_cast", Dynamic_Wrap(GameMode, "HellHeroChangeCast"))
-	CustomGameEventManager:RegisterListener("heaven_hero_change_cast", Dynamic_Wrap(GameMode, "HeavenHeroChangeCast"))
-	CustomGameEventManager:RegisterListener("hud_courier_burst", Dynamic_Wrap(GameMode, "BurstCourier"))
 	CustomGameEventManager:RegisterListener("modifier_clicked_purge", Dynamic_Wrap(GameMode, "ModifierClickedPurge"))
 
 	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
 		--CustomGameEventManager:RegisterListener("duel1x1call_send_call", Dynamic_Wrap(GameMode, "SendDuel1x1Call"))
 		CustomGameEventManager:RegisterListener("submit_gamemode_vote", Dynamic_Wrap(GameMode, "SubmitGamemodeVote"))
+		CustomGameEventManager:RegisterListener("submit_gamemode_map", Dynamic_Wrap(GameMode, "SubmitGamemodeMap"))
 	end
 end
 
@@ -16,22 +14,6 @@ function GameMode:MetamorphosisElixirCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local elixirItem = FindItemInInventoryByName(hero, "item_metamorphosis_elixir", false)
 	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(data.hero, "Selection") then
-		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
-	end
-end
-
-function GameMode:HellHeroChangeCast(data)
-	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-	local elixirItem = FindItemInInventoryByName(hero, "item_hell_hero_change", false)
-	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(data.hero, "Hell") then
-		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
-	end
-end
-
-function GameMode:HeavenHeroChangeCast(data)
-	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-	local elixirItem = FindItemInInventoryByName(hero, "item_heaven_hero_change", false)
-	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(data.hero, "Heaven") then
 		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
 	end
 end
@@ -54,7 +36,7 @@ function GameMode:SendDuel1x1Call(data)
 						{field = "Text", fieldData = {text = "#duel1x1_message_cost_p1"}},
 						{field = "Text", class = "FieldTextBlank", fieldData = {text = data.gold}},
 					}},
-					--data.message
+					
 					{field = "PanelCollection", fieldData = {
 						{field = "Button", class = "FieldButtonDecline", fieldData = {
 							{field = "Text", class = "FieldTextButtonDecline", fieldData = {text = "#duel1x1_message_answer_decline"}},
@@ -116,10 +98,15 @@ function GameMode:SubmitGamemodeVote(data)
 	end
 end
 
-function GameMode:BurstCourier(data)
-	local courier = FindCourier(PlayerResource:GetTeam(tonumber(data.PlayerID)))
-	if courier then
-		courier:CastAbilityNoTarget(courier:FindAbilityByName("courier_burst"), tonumber(data.PlayerID))
+function GameMode:SubmitGamemodeMap(data)
+	if data and data.KVs then
+		local KVs = data.KVs
+		if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
+			local GMType = KVs.GMType
+			if GMType and GMType == DOTA_GAMEMODE_TYPE_RANDOM_OMG or GMType == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
+				PLAYER_DATA[tonumber(data.PlayerID)].GameModeTypeVote = GMType
+			end
+		end
 	end
 end
 

@@ -85,3 +85,4 @@ function Bosses:MakeBossAI(unit, name)
 
 	local ai = SimpleAI:new(unit, profile, aiTable)
 end
+

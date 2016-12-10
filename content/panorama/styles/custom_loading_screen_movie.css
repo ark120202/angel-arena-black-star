@@ -554,25 +554,18 @@
 	margin-bottom: 6px;
 }
 
-.GoalVotePanelRow
+#GoalVotePanelKLValues
 {
 	width: 100%;
-	flow-children: right;
+	flow-children: right-wrap;
+	margin-left: 3px;
 }
 
-.GoalVotePanelRow Button
+.VoteKillGoalButton
 {
-	width: 46.8%;
-	margin: 2px 6px;
-	margin-bottom: 6px;
-}
-
-.GoalVoteButton Label 
-{
-	align: center center;
-	color: lightcyan;
-	font-weight: bold;
-	font-size:  28px;
+	min-width: 0;
+	width: 48%;
+	margin: 3px 2px;
 }
 
 .GoalVotePanel_In

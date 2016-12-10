@@ -1986,8 +1986,9 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"boss_any_passive"
-		"Ability2"					"boss_armor"
+		"Ability1"					"boss_freya_sharp_ice_shards"
+		"Ability5"					"boss_any_passive"
+		"Ability6"					"boss_armor"
 
 		"ArmorPhysical"				"180"
 		"MagicalResistance"			"40"

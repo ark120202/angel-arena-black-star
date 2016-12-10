@@ -200,7 +200,7 @@ function SimpleAI:FindUnitsNearby(radius, bAllies, bEnemies, type, flags)
 end
 
 function SimpleAI:UseAbility(ability, target)
-	if self.state ~= AI_STATE_CASTING and ability:IsCooldownReady() and ability:IsOwnersManaEnough() then
+	if self.state ~= AI_STATE_CASTING and ability:IsFullyCastable() then
 		self:SwitchState(AI_STATE_CASTING)
 		if AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) then
 			self.unit:CastAbilityNoTarget(ability, -1)

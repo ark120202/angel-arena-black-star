@@ -41,6 +41,7 @@ local requirements = {
 	"data/itembuilds",
 	"data/abilities",
 	"data/ability_functions",
+	"data/ability_shop",
 	--------------------------------------------------
 	"internal/gamemode",
 	"internal/events",
@@ -67,6 +68,7 @@ local requirements = {
 	"custom_runes/custom_runes",
 	"stats_client",
 	"filters",
+	"ability_shop"
 	--"dyanmic_wearables"
 }
 local modifiers = {
@@ -105,17 +107,8 @@ function GameMode:OnFirstPlayerLoaded()
 		CreateLoopedPortal(portal2:GetAbsOrigin(), portal3:GetAbsOrigin(), 80, "particles/customgames/capturepoints/cp_wood.vpcf", "", true)
 	end]]
 
-	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP or DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG then
-		for i,v in pairs(DROP_TABLE) do
-			for i2,v2 in ipairs(v) do
-				if v2.Item == "item_heaven_hero_change" or v2.Item == "item_hell_hero_change" then
-					table.remove(DROP_TABLE[i], i2)
-				end
-			end
-		end
-		if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
-			AbilityShop:PostAbilityData()
-		end
+	if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
+		AbilityShop:PrepareData()
 	end
 	if DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_HOLDOUT_5 then
 		Holdout:Init()
@@ -176,6 +169,7 @@ function GameMode:OnHeroInGame(hero)
 							courier:UpgradeToFlyingCourier()
 							courier:SetOwner(nil)
 							courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
+							courier:RemoveAbility("courier_burst")
 							TEAMS_COURIERS[hero:GetTeamNumber()] = courier
 							courier:SetBaseMaxHealth(200)
 							courier:SetMaxHealth(200)
@@ -210,22 +204,6 @@ function GameMode:OnGameInProgress()
 		Duel:CreateGlobalTimer()
 		ContainersHelper:CreateShops()
 		Spawner:RegisterTimers()
-
-		local sum = 0
-		local count = 0
-		for _,v in pairs(PLAYER_DATA) do
-			if v.GameModeVote then
-				sum = sum + v.GameModeVote
-				count = count + 1
-			end
-		end
-		local result
-		if count >= 1 then
-			result = table.nearest(POSSIBLE_KILL_GOALS, math.floor(sum / count))
-		else
-			result = DOTA_KILL_GOAL_VOTE_STANDART
-		end
-		GameRules:SetKillGoal(result)
 	else
 		Holdout:Start()
 	end
@@ -263,6 +241,7 @@ function GameMode:InitGameMode()
 			xp_table = XP_PER_LEVEL_TABLE,
 			gamemode = DOTA_ACTIVE_GAMEMODE,
 			gamemode_type = DOTA_ACTIVE_GAMEMODE_TYPE,
+			gamemode_map = ARENA_ACTIVE_GAMEMODE_MAP,
 		},
 		players_abandoned = {},
 		courier_owner2 = -1,
@@ -277,7 +256,7 @@ function GameMode:InitGameMode()
 	}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 	PlayerTables:CreateTable("entity_attributes", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 	PlayerTables:CreateTable("player_hero_entities", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
-	Containers:CreateContainer({
+	--[[Containers:CreateContainer({
 		layout             = {24},
 		range              = -1,
 		closeOnOrder       = false,
@@ -338,7 +317,7 @@ function GameMode:InitGameMode()
 		AddItemFilter      = function(container, item, slot)
 			return item:GetAbilityName() == "item_cad"
 		end,
-    })
+    })]]
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(true)
 	HeroSelection:PrepareTables()
@@ -353,46 +332,6 @@ end
 
 function CDOTAGamerules:GetKillGoal()
 	return KILLS_TO_END_GAME_FOR_TEAM
-end
-
-function GameMode:RandomOMGRollAbilities(unit)
-	unit:RemoveModifierByName("modifier_attribute_bonus_arena")
-	for i = 0, unit:GetAbilityCount() - 1 do
-		local ability = unit:GetAbilityByIndex(i)
-		if ability then
-			for _,v in ipairs(unit:FindAllModifiers()) do
-				if v:GetAbility() and v:GetAbility() == ability then
-					v:Destroy()
-				end
-			end
-			unit:RemoveAbility(ability:GetName())
-		end
-	end
-	
-	local has_abilities = 0
-	while has_abilities < RANDOM_OMG_SETTINGS.Total_Abilities - RANDOM_OMG_SETTINGS.Ultimate_Count do
-		local abilityTable = RANDOM_OMG_SETTINGS.Abilities.Abilities[RandomInt(1, #RANDOM_OMG_SETTINGS.Abilities.Abilities)]
-		local ability = abilityTable.ability
-		if ability and not unit:HasAbility(ability) then
-			PrecacheItemByNameAsync(ability, function() end)
-			GameMode:PrecacheUnitQueueed(abilityTable.hero)
-			AddNewAbility(unit, ability)
-			has_abilities = has_abilities + 1
-		end
-	end
-	local has_ultimates = 0
-	while has_ultimates < RANDOM_OMG_SETTINGS.Ultimate_Count do
-		local abilityTable = RANDOM_OMG_SETTINGS.Abilities.Ultimates[RandomInt(1, #RANDOM_OMG_SETTINGS.Abilities.Ultimates)]
-		local ability = abilityTable.ability
-		if ability and not unit:HasAbility(ability) then
-			PrecacheItemByNameAsync(ability, function() end)
-			GameMode:PrecacheUnitQueueed(abilityTable.hero)
-			AddNewAbility(unit, ability)
-			has_ultimates = has_ultimates + 1
-		end
-	end
-	unit:AddAbility("attribute_bonus_arena")
-	unit:SetAbilityPoints(unit:GetLevel())
 end
 
 function GameMode:PrecacheUnitQueueed(name)
