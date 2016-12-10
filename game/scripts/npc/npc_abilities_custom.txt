@@ -8801,7 +8801,7 @@
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"medusa_mystic_snake"
 		"MaxLevel"						"7"
-		"AbilityCooldown"				"1 2 3 4 5 6 7"
+		"AbilityCooldown"				"7 6 5 4 3 2 1"
 		"LevelsBetweenUpgrades"			"4"
 
 		// Precache
