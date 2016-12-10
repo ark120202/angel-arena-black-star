@@ -26,7 +26,7 @@
 	// 	"Ability4"				""
 	// 	"Ability5"				""
 	// 	"Ability6"				"attribute_bonus_arena"
-	// 	"AttackRate"			"1.1"
+	// 	"AttackRate"				"1.3"
 	// 	"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 	// 	"AttackDamageMin"		"40"
 	// 	"AttackDamageMax"		"50"
@@ -60,7 +60,7 @@
 		"AttributeBaseStrength"		"10"
 		"AttributeBaseIntelligence"	"10"
 		"AttributeBaseAgility"		"10"
-		"AttackRate"				"1.7"
+		"AttackRate"				"1.4"
 		"MovementTurnRate"			"0.7"
 		"MagicalResistance"			"20"
 		"AttackDamageMin"			"17"
@@ -74,6 +74,7 @@
 		"Ability3"					"cherub_explosive_spore"
 		"Ability4"					"cherub_flower_garden"
 		"Ability5"					"attribute_bonus_arena"
+		"AttackRate"				"1.3"
 	}
 	"npc_arena_hero_queenofblades"
 	{
@@ -84,7 +85,7 @@
 		"Ability3"					"queenofblades_harbinger_of_death"
 		"Ability4"					"queenofblades_alter_ego"
 		"Ability5"					"attribute_bonus_arena"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 	}
 
@@ -114,6 +115,8 @@
 		"Ability6"					"attribute_bonus_arena"
 		"ArmorPhysical"				"-1"
 		"MovementSpeed"				"285"
+		"AttackRate"				"1.3"
+
 	}
 
 	"npc_arena_hero_shinobu"
@@ -129,6 +132,7 @@
 		"Ability4"					"shinobu_yumewatari_lua"
 		"Ability5"					"shinobu_hide_in_shadows"
 		"Ability6"					"attribute_bonus_arena"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_arena_hero_zen_gehraz"
@@ -140,6 +144,7 @@
 		"Ability3"					"zen_gehraz_vow_of_silence"
 		"Ability4"					"zen_gehraz_superposition"
 		"Ability5"					"attribute_bonus_arena"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_arena_hero_stegius"
@@ -152,6 +157,7 @@
 		"Ability4"					"stegius_desolating_touch"
 		"Ability5"					"attribute_bonus_arena"
 		"Ability6"					""
+		"AttackRange"				"1.3"
 	}
 
 	"npc_arena_hero_mirratie"
@@ -165,6 +171,7 @@
 		"Ability5"					"attribute_bonus_arena"
 		"Ability6"					""
 		"AttackRange"				"900"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_freya"
@@ -175,6 +182,7 @@
 		"Model"						"models/units/freya/freya.vmdl"
 		"ModelScale"				"1.5"
 		"HideWearables"				"1"
+		"AttackRange"				"1.3"
 	}
 
 	//Changed
@@ -200,7 +208,7 @@
 		"Ability4"				"riki_tricks_of_the_trade"
 		"Ability5"				"attribute_bonus_arena"
 		"Changed"				"1"
-		"AttackRate"			"1.2"
+		"AttackRate"			"1.3"
 	}
 	"npc_dota_hero_wisp"
 	{
@@ -216,7 +224,7 @@
 		"Ability9"				""
 		"Ability10"				""
 		"Changed"				"1"
-		"AttackRate"			"1.1"
+		"AttackRate"			"1.3"
 	}
 	"npc_dota_hero_ogre_magi"
 	{
@@ -228,12 +236,12 @@
 		"Ability5"				"ogre_magi_multicast_arena"
 		"Ability6"				"attribute_bonus_arena"
 		"Changed"					"1"
-		"AttackRate"				"0.9"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"4"
-		"AttributeStrengthGain"		"3.6"
-		"AttributeAgilityGain"		"2.7"
+		"AttributeStrengthGain"		"2.5"
+		"AttributeAgilityGain"		"2.5"
 		"MovementSpeed"				"305"
-		"AttributeIntelligenceGain"	"5.0"
+		"AttributeIntelligenceGain"	"2.5"
 	}
 	"npc_dota_hero_beastmaster"
 	{
@@ -245,6 +253,7 @@
 		"Ability5"				"beastmaster_primal_roar"
 		"Ability6"				"attribute_bonus_arena"
 		"Changed"				"1"
+		"AttackRate"			"1.3"
 	}
 
 	"npc_dota_hero_warlock"
@@ -255,7 +264,7 @@
 		"Ability3"				"warlock_upheaval_arena"
 		"Ability4"				"warlock_rain_of_chaos_arena"
 		"Changed"				"1"
-		"AttackRate"			"1.1"
+		"AttackRate"			"1.3"
 	}
 
 	"npc_dota_hero_skeleton_king"
@@ -277,7 +286,7 @@
 		"Ability3"				"tinker_march_of_the_machines"
 		"Ability4"				"tinker_rearm_arena"
 		"Changed"				"1"
-		"AttackRate"			"1.1"
+		"AttackRate"			"1.3"
 	}
 	
 	"npc_dota_hero_crystal_maiden"
@@ -290,7 +299,7 @@
 		"Ability5"				"crystal_maiden_freezing_field_arena"
 		"Ability6"				"attribute_bonus_arena"
 		"Changed"				"1"
-		"AttackRate"			"1.0"
+		"AttackRate"			"1.3"
 	}
 
 	"npc_dota_hero_dragon_knight"
@@ -346,7 +355,7 @@
 			"SwappedAbility"	"omniknight_select_allies"
 			"SwapWithAttributeBonus"	"1"
 		}
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_pudge"
@@ -357,7 +366,7 @@
 		"Ability3"				"pudge_flesh_heap_arena"
 		"Ability4"				"pudge_dismember_arena"
 		"Changed"				"1"
-		"AttackRate"			"1.1"
+		"AttackRate"			"1.3"
 	}
 
 	"npc_dota_hero_medusa"
@@ -369,7 +378,7 @@
 		"Ability4"				"medusa_stone_gaze_arena"
 		"Ability5"				"attribute_bonus_arena"
 		"Changed"					"1"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 		"ArmorPhysical"				"2"
 		"AttributeStrengthGain"		"2.2"
 		"AttributeAgilityGain"		"2.91"
@@ -398,7 +407,7 @@
 		"Ability16"				""
 		"Ability17"				""
 		"Changed"				"1"
-		"AttackRate"			"1.1"
+		"AttackRate"			"1.3"
 	}
 
 	"npc_dota_hero_phantom_lancer"
@@ -408,7 +417,7 @@
 		"Ability2"				"phantom_lancer_doppelganger_arena"
 		"Ability3"				"phantom_lancer_phantom_swap"
 		"Ability4"				"phantom_lancer_juxtapose_arena"
-		"AttackRate"			"1.2"
+		"AttackRate"			"1.3"
 		"Changed"				"1"
 	}
 
@@ -442,7 +451,7 @@
 		"Ability4"	"bane_fiends_grip"
 		"Ability5"	"attribute_bonus_arena"
 		"Ability6"	"bane_nightmare_end"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_bloodseeker"
@@ -492,7 +501,7 @@
 		"Ability2"	"mirana_arrow"
 		"Ability3"	"mirana_leap"
 		"Ability4"	"mirana_invis"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_nevermore"
@@ -505,7 +514,7 @@
 		"Ability5"	"nevermore_dark_lord"
 		"Ability6"	"nevermore_requiem"
 		"Ability7"	"attribute_bonus_arena"
-		"AttackRate"				"0.9"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"4"
 		"AttributeStrengthGain"		"2.5"
 		"AttributeAgilityGain"		"3.1"
@@ -537,7 +546,7 @@
 		"Ability4"	"puck_ethereal_jaunt"
 		"Ability5"	"puck_dream_coil"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_razor"
@@ -547,7 +556,7 @@
 		"Ability2"	"razor_static_link"
 		"Ability3"	"razor_unstable_current"
 		"Ability4"	"razor_eye_of_the_storm"
-		"AttackRate"				"0.9"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"4"
 		"AttributeStrengthGain"		"2.6"
 		"AttributeAgilityGain"		"3.0"
@@ -562,7 +571,7 @@
 		"Ability2"	"sandking_sand_storm"
 		"Ability3"	"sandking_caustic_finale"
 		"Ability4"	"sandking_epicenter"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_storm_spirit"
@@ -572,7 +581,7 @@
 		"Ability2"	"storm_spirit_electric_vortex"
 		"Ability3"	"storm_spirit_overload"
 		"Ability4"	"storm_spirit_ball_lightning"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_sven"
@@ -582,7 +591,7 @@
 		"Ability2"	"sven_great_cleave"
 		"Ability3"	"sven_warcry"
 		"Ability4"	"sven_gods_strength"
-		"AttackRate"				"0.95"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"4"
 		"AttributeStrengthGain"		"3.2"
 		"AttributeAgilityGain"		"2.1"
@@ -597,7 +606,7 @@
 		"Ability2"	"tiny_toss"
 		"Ability3"	"tiny_craggy_exterior"
 		"Ability4"	"tiny_grow"
-		"AttackRate"				"0.9"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"4"
 		"AttributeStrengthGain"		"3.1"
 		"AttributeAgilityGain"		"2.1"
@@ -612,7 +621,7 @@
 		"Ability2"	"vengefulspirit_wave_of_terror"
 		"Ability3"	"vengefulspirit_command_aura"
 		"Ability4"	"vengefulspirit_nether_swap"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_windrunner"
@@ -622,7 +631,7 @@
 		"Ability2"	"windrunner_powershot"
 		"Ability3"	"windrunner_windrun"
 		"Ability4"	"windrunner_focusfire"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_zuus"
@@ -632,7 +641,7 @@
 		"Ability2"	"zuus_lightning_bolt"
 		"Ability3"	"zuus_static_field"
 		"Ability4"	"zuus_thundergods_wrath"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_kunkka"
@@ -643,7 +652,7 @@
 		"Ability3"	"kunkka_x_marks_the_spot"
 		"Ability4"	"kunkka_ghostship"
 		"Ability6"	"kunkka_return"
-		"AttackRate"				"0.9"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"4"
 		"AttributeStrengthGain"		"3.3"
 		"AttributeAgilityGain"		"2.1"
@@ -658,7 +667,7 @@
 		"Ability2"	"lina_light_strike_array"
 		"Ability3"	"lina_fiery_soul"
 		"Ability4"	"lina_laguna_blade"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_lich"
@@ -678,7 +687,7 @@
 		"Ability2"	"lion_voodoo"
 		"Ability3"	"lion_mana_drain"
 		"Ability4"	"lion_finger_of_death"
-		"AttackRate"				"1.0"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_shadow_shaman"
@@ -688,7 +697,7 @@
 		"Ability2"	"shadow_shaman_voodoo"
 		"Ability3"	"shadow_shaman_shackles"
 		"Ability4"	"shadow_shaman_mass_serpent_ward"
-		"AttackRate"				"1.0"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_slardar"
@@ -708,7 +717,7 @@
 		"Ability2"	"tidehunter_kraken_shell"
 		"Ability3"	"tidehunter_anchor_smash"
 		"Ability4"	"tidehunter_ravage"
-		"AttackRate"			"1.2"
+		"AttackRate"			"1.3"
 	}
 
 	"npc_dota_hero_witch_doctor"
@@ -718,7 +727,7 @@
 		"Ability2"	"witch_doctor_voodoo_restoration"
 		"Ability3"	"witch_doctor_maledict"
 		"Ability4"	"witch_doctor_death_ward"
-		"AttackRate"				"1.0"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_enigma"
@@ -728,7 +737,7 @@
 		"Ability2"	"enigma_demonic_conversion"
 		"Ability3"	"enigma_midnight_pulse"
 		"Ability4"	"enigma_black_hole"
-		"AttackRate"				"1.0"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_sniper"
@@ -738,7 +747,7 @@
 		"Ability2"	"sniper_headshot"
 		"Ability3"	"sniper_assassinate"
 		"Ability4"	"sniper_take_aim"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_necrolyte"
@@ -758,7 +767,7 @@
 		"Ability2"	"queenofpain_blink"
 		"Ability3"	"queenofpain_scream_of_pain"
 		"Ability4"	"queenofpain_sonic_wave"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_venomancer"
@@ -768,7 +777,7 @@
 		"Ability2"	"venomancer_poison_sting"
 		"Ability3"	"venomancer_plague_ward"
 		"Ability4"	"venomancer_poison_nova"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_death_prophet"
@@ -778,7 +787,7 @@
 		"Ability2"	"death_prophet_silence"
 		"Ability3"	"death_prophet_spirit_siphon"
 		"Ability4"	"death_prophet_exorcism"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_phantom_assassin"
@@ -788,7 +797,7 @@
 		"Ability2"	"phantom_assassin_phantom_strike"
 		"Ability3"	"phantom_assassin_blur"
 		"Ability4"	"phantom_assassin_coup_de_grace"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_pugna"
@@ -798,7 +807,7 @@
 		"Ability2"	"pugna_decrepify"
 		"Ability3"	"pugna_nether_ward"
 		"Ability4"	"pugna_life_drain"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_templar_assassin"
@@ -810,7 +819,7 @@
 		"Ability4"	"templar_assassin_trap"
 		"Ability5"	"templar_assassin_psionic_trap"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_viper"
@@ -820,7 +829,7 @@
 		"Ability2"	"viper_nethertoxin"
 		"Ability3"	"viper_corrosive_skin"
 		"Ability4"	"viper_viper_strike"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_luna"
@@ -830,7 +839,7 @@
 		"Ability2"	"luna_moon_glaive"
 		"Ability3"	"luna_lunar_blessing"
 		"Ability4"	"luna_eclipse"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_dazzle"
@@ -850,7 +859,7 @@
 		"Ability2"	"rattletrap_power_cogs"
 		"Ability3"	"rattletrap_rocket_flare"
 		"Ability4"	"rattletrap_hookshot"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_leshrac"
@@ -860,7 +869,7 @@
 		"Ability2"	"leshrac_diabolic_edict"
 		"Ability3"	"leshrac_lightning_storm"
 		"Ability4"	"leshrac_pulse_nova"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_furion"
@@ -870,7 +879,7 @@
 		"Ability2"	"furion_teleportation"
 		"Ability3"	"furion_force_of_nature"
 		"Ability4"	"furion_wrath_of_nature"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_life_stealer"
@@ -895,7 +904,7 @@
 		"Ability2"	"dark_seer_ion_shell"
 		"Ability3"	"dark_seer_surge"
 		"Ability4"	"dark_seer_wall_of_replica"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_clinkz"
@@ -905,7 +914,7 @@
 		"Ability2"	"clinkz_searing_arrows"
 		"Ability3"	"clinkz_wind_walk"
 		"Ability4"	"clinkz_death_pact"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_enchantress"
@@ -915,7 +924,7 @@
 		"Ability2"	"enchantress_enchant"
 		"Ability3"	"enchantress_natures_attendants"
 		"Ability4"	"enchantress_impetus"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_huskar"
@@ -935,7 +944,7 @@
 		"Ability2"	"night_stalker_crippling_fear"
 		"Ability3"	"night_stalker_hunter_in_the_night"
 		"Ability4"	"night_stalker_darkness"
-		"AttackRate"				"1.0"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_broodmother"
@@ -955,7 +964,7 @@
 		"Ability2"	"bounty_hunter_jinada"
 		"Ability3"	"bounty_hunter_wind_walk"
 		"Ability4"	"bounty_hunter_track"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_weaver"
@@ -965,7 +974,7 @@
 		"Ability2"	"weaver_shukuchi"
 		"Ability3"	"weaver_geminate_attack"
 		"Ability4"	"weaver_time_lapse"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_jakiro"
@@ -975,7 +984,7 @@
 		"Ability2"	"jakiro_ice_path"
 		"Ability3"	"jakiro_liquid_fire"
 		"Ability4"	"jakiro_macropyre"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_batrider"
@@ -985,7 +994,7 @@
 		"Ability2"	"batrider_flamebreak"
 		"Ability3"	"batrider_firefly"
 		"Ability4"	"batrider_flaming_lasso"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_chen"
@@ -997,7 +1006,7 @@
 		"Ability4"	"chen_holy_persuasion"
 		"Ability5"	"chen_hand_of_god"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRate"				"1.0"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_spectre"
@@ -1022,7 +1031,7 @@
 		"Ability5"	"doom_bringer_empty2"
 		"Ability6"	"doom_bringer_doom"
 		"Ability7"	"attribute_bonus_arena"
-		"AttackRate"				"0.9"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"3"
 		"AttributeStrengthGain"		"3.5"
 		"AttributeAgilityGain"		"2.4"
@@ -1039,7 +1048,7 @@
 		"Ability4"	"ancient_apparition_ice_blast"
 		"Ability5"	"ancient_apparition_ice_blast_release"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_ursa"
@@ -1051,7 +1060,7 @@
 		"Ability4"	"ursa_enrage"
 		"Ability5"	"attribute_bonus_arena"
 		"Ability6"	""
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_spirit_breaker"
@@ -1062,7 +1071,7 @@
 		"Ability3"	"spirit_breaker_greater_bash"
 		"Ability4"	"spirit_breaker_nether_strike"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_alchemist"
@@ -1097,7 +1106,7 @@
 		"Ability15"	"invoker_ice_wall"
 		"Ability16"	"invoker_deafening_blast"
 		"Ability17"	"attribute_bonus_arena"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_silencer"
@@ -1108,7 +1117,7 @@
 		"Ability3"	"silencer_last_word"
 		"Ability4"	"silencer_global_silence"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_obsidian_destroyer"
@@ -1119,7 +1128,7 @@
 		"Ability3"	"obsidian_destroyer_essence_aura"
 		"Ability4"	"obsidian_destroyer_sanity_eclipse"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_lycan"
@@ -1153,7 +1162,7 @@
 		"Ability4"	"shadow_demon_shadow_poison_release"
 		"Ability5"	"shadow_demon_demonic_purge"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRate"				"1.0"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_lone_druid"
@@ -1177,7 +1186,7 @@
 		"Ability3"	"chaos_knight_chaos_strike"
 		"Ability4"	"chaos_knight_phantasm"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRate"				"1.0"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"4"
 		"AttributeStrengthGain"		"3.3"
 		"AttributeAgilityGain"		"2.4"
@@ -1192,7 +1201,7 @@
 		"Ability3"	"meepo_geostrike"
 		"Ability4"	"meepo_divided_we_stand"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_treant"
@@ -1204,7 +1213,7 @@
 		"Ability4"	"treant_eyes_in_the_forest"
 		"Ability5"	"treant_overgrowth"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_undying"
@@ -1215,7 +1224,7 @@
 		"Ability3"	"undying_tombstone"
 		"Ability4"	"undying_flesh_golem"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRate"				"0.8"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"4"
 		"AttributeStrengthGain"		"3.5"
 		"AttributeAgilityGain"		"2.1"
@@ -1231,7 +1240,7 @@
 		"Ability3"	"disruptor_kinetic_field"
 		"Ability4"	"disruptor_static_storm"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRate"				"1.0"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_nyx_assassin"
@@ -1244,7 +1253,7 @@
 		"Ability5"	"nyx_assassin_unburrow"
 		"Ability6"	"nyx_assassin_vendetta"
 		"Ability7"	"attribute_bonus_arena"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_naga_siren"
@@ -1256,7 +1265,7 @@
 		"Ability4"	"naga_siren_song_of_the_siren"
 		"Ability5"	"naga_siren_song_of_the_siren_cancel"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRate"				"0.9"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"4"
 		"AttributeStrengthGain"		"2.5"
 		"AttributeAgilityGain"		"3.1"
@@ -1277,7 +1286,7 @@
 		"Ability8"	"keeper_of_the_light_spirit_form_illuminate"
 		"Ability9"	"keeper_of_the_light_spirit_form_illuminate_end"
 		"Ability10"	"attribute_bonus_arena"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_visage"
@@ -1288,7 +1297,7 @@
 		"Ability3"	"visage_gravekeepers_cloak"
 		"Ability4"	"visage_summon_familiars"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_slark"
@@ -1311,7 +1320,7 @@
 		"Ability4"	"troll_warlord_fervor"
 		"Ability5"	"troll_warlord_battle_trance"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRate"			"1.1"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_centaur"
@@ -1381,7 +1390,7 @@
 		"Ability2"	"skywrath_mage_concussive_shot"
 		"Ability3"	"skywrath_mage_ancient_seal"
 		"Ability4"	"skywrath_mage_mystic_flare"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_abaddon"
@@ -1404,7 +1413,7 @@
 		"Ability4"	"elder_titan_return_spirit"
 		"Ability5"	"elder_titan_earth_splitter"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_legion_commander"
@@ -1427,7 +1436,7 @@
 		"Ability4"	"ember_spirit_activate_fire_remnant"
 		"Ability5"	"ember_spirit_fire_remnant"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRate"				"0.9"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"4"
 		"AttributeStrengthGain"		"2.5"
 		"AttributeAgilityGain"		"3.1"
@@ -1445,7 +1454,7 @@
 		"Ability5"	"earth_spirit_petrify"
 		"Ability6"	"earth_spirit_magnetize"
 		"Ability7"	"attribute_bonus_arena"
-		"AttackRate"				"1.1"
+		"AttackRange"				"1.3"
 	}
 
 	"npc_dota_hero_terrorblade"
@@ -1455,7 +1464,7 @@
 		"Ability2"	"terrorblade_conjure_image"
 		"Ability3"	"terrorblade_metamorphosis"
 		"Ability4"	"terrorblade_sunder"
-		"AttackRate"			"1.4"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_phoenix"
@@ -1471,7 +1480,7 @@
 		"Ability8"	"phoenix_sun_ray_stop"
 		"Ability9"	"phoenix_sun_ray_toggle_move"
 		"Ability10"	"attribute_bonus_arena"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_oracle"
@@ -1482,7 +1491,7 @@
 		"Ability3"	"oracle_purifying_flames"
 		"Ability4"	"oracle_false_promise"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRate"				"1.0"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_techies"
@@ -1495,7 +1504,7 @@
 		"Ability5"	"techies_minefield_sign"
 		"Ability6"	"techies_remote_mines"
 		"Ability7"	"attribute_bonus_arena"
-		"AttackRate"				"1.0"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_winter_wyvern"
@@ -1506,7 +1515,7 @@
 		"Ability3"	"winter_wyvern_cold_embrace"
 		"Ability4"	"winter_wyvern_winters_curse"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRate"				"1.2"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_arc_warden"
@@ -1528,5 +1537,6 @@
 		"Ability4"		"abyssal_underlord_dark_rift"
 		"Ability5"		"abyssal_underlord_cancel_dark_rift"
 		"Ability6"		"attribute_bonus_arena"
+		"AttackRate"				"1.3"
 	}
 }
