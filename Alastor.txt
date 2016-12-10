@@ -1,0 +1,126 @@
+Обнова
+
+Sven Storm Bolt:
+LevelsBetweenUpgrades: 1 => 2 
+
+Sven Great Cleave:
+great_cleave_damage: 30 35 40 45 50 55 60 => 10 15 20 25 30 35 40
+
+Sven Warcry:
+LevelsBetweenUpgrades: 1 => 5 
+
+Sven Gods Strength:
+AbilityDuration: 30 25 20 15 10 10 10
+gods_strength_damage: 100 300 500 700 900 1100 1300 => 100 200 300 400 500 600 700
+gods_strength_damage_scepter: 100 200 300 400 500 500 600 => 50 100 150 200 250 300 350
+LevelsBetweenUpgrades: 1 => 20
+
+Doom Bringer Devour:
+LevelsBetweenUpgrades: 3 => 6
+RequiredLevel: 1 => 2
+
+Doom Bringer Scorched Earth:
+LevelsBetweenUpgrades: 1 => 8
+damage_per_second: 50 100 150 200 250 300 350 => 25 50 75 100 200 250 300
+
+Nevermore Shadowraze 1:
+damage_from_current_health_pct: 5 => 3
+LevelsBetweenUpgrades: 1 => 2
+
+Nevermore Shadowraze 2:
+damage_from_current_health_pct:5 => 3
+LevelsBetweenUpgrades 1 => 2
+
+Nevermore Shadowraze 3:
+damage_from_current_health_pct: 5 => 3
+LevelsBetweenUpgrades: 1 => 2
+
+Nevermore Dark Lord:
+LevelsBetweenUpgrades: 1 => 2
+
+Undying Decay:
+str_steal:10 20 30 40 50 60 70 => 3 6 9 12 15 18 21
+str_steal_scepter:15 30 40 50 65 70 80 => 5 10 15 20 25 30 35
+LevelsBetweenUpgrades: 1 => 4
+
+Naga Siren Mirror Image:
+outgoing_damage_tooltip: 10 15 30 45 50 65 70 => -90 -85 -70 -65 -50 -45 -30
+tooltip_incoming_damage_total_pct: 500 400 300 200 150 125 80 => 600 550 500 400 350 300 200
+
+Naga_siren_rip_tide:
+LevelsBetweenUpgrades =>:3
+
+Chaos Knight Chaos Strike:
+crit_damage:120 160 200 240 280 320 360 => 100 120 160 200 240 280 320
+armor_reduction:-8 -16 -24 -36 -48 -54 -60 => -4 -8 -16 -24 -36 -48 -54
+LevelsBetweenUpgrades 1 => 8
+
+Juggernaut Blade Dance:
+blade_dance_crit_mult: 150 175 200 225 250 275 300 => 100 125 175 200 225 250 275
+
+Juggernaut Omni Slash:
+omni_slash_damage:500 1000 1500 2000 2500 3000 3500 => 300 1000 1500 2000 2500 3000 3500
+omni_slash_cooldown_scepter:200 170 150 130 100 70 60 => 60
+omni_slash_jumps: 1 2 3 4 5 6 7 => 3 2 3 4 5 6 7
+omni_slash_jumps_scepter: 2 3 4 5 6 7 8 => 3 3 4 5 6 7 8
+ 
+Kunkka Torrent:
+LevelsBetweenUpgrades: 1 =>:2
+
+Kunkka Tidebringer:
+LevelsBetweenUpgrades: 1 =>:6
+
+Kunkka Ghostship:
+AbilityDamage: 1000 2000 3000 4000 5000 6000 7000 => 300 800 1500 2000 2400 2800 3500
+
+Skeleton King Mortal Strike:
+crit_mult: 150 200 250 300 350 400 450 => 100 130 160 190 210 240 270
+crit_mult_creeps: 300 400 500 600 700 800 900 => 200 260 320 380 420 480 540
+
+Bounty Hunter Jinada:
+LevelsBetweenUpgrades: 1 =>:3
+
+Ember Spirit Searing Chains:
+LevelsBetweenUpgrades: 1 => 5
+
+Ember Spirit Sleight Of Fist:
+RequiredLevel: 1 => 25
+
+Tiny Avalanche:
+AbilityDamage:250 500 750 1000 1250 1500 1750 => 100 200 300 400 500 600 700
+
+Tiny Toss:
+toss_damage:250 500 750 1000 1250 1500 1750 => 100 200 300 400 500 600 700
+
+Tiny Craggy_exterior:
+LevelsBetweenUpgrades: 1 => 5
+
+Tiny Grow:
+LevelsBetweenUpgrades: 5 => 20
+
+Razor Plasma Field:
+damage_min: 200 400 600 800 1000 1200 1400 => 100 150 200 250 300 350 400
+damage_max: 800 1200 1600 2000 2400 2800 3200 => 200 250 300 350 400 450 500
+
+Razor Static Link:
+LevelsBetweenUpgrades: 1 => 5
+
+Razor Unstable Current:
+AbilityDamage: 150 300 600 900 1400 1800 => 100 200 300 400 500 600 700
+
+Medusa Split Shot Arena:
+LevelsBetweenUpgrades: 1 => 3 
+
+Medusa Mystic Snake Arena:
+LevelsBetweenUpgrades:1 => 4
+AbilityCooldown: 1 => 1 2 3 4 5 6 7
+
+Medusa Mana Shield Arena:
+damage_per_mana: 1.6 1.9 2.2 2.5 2.9 3.3 3.7 => 0.4 0.8 1.2 1.6 2.0 2.4 2.8
+reflect_chance: 20 => 8 10 12 14 16 18 20
+
+npc_dota_hero_ogre_magi:
+AttributeStrengthGain: 3.6 => 2.9
+AttributeAgilityGain: 2.7 => 2.5
+AttributeIntelligenceGain: 5.0 => 2.5
+

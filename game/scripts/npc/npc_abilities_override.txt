@@ -1680,7 +1680,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"blade_dance_crit_mult"	"150 175 200 225 250 275 300"
+				"blade_dance_crit_mult"	"100 125 175 200 225 250 275"
 			}
 
 			"02"
@@ -1706,25 +1706,25 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"omni_slash_damage"	"500 1000 1500 2000 2500 3000 3500"
+				"omni_slash_damage"	"300 1000 1500 2000 2500 3000 3500"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"omni_slash_jumps"	"1 2 3 4 5 6 7"
+				"omni_slash_jumps"	"3 2 3 4 5 6 7"
 			}
 
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"omni_slash_jumps_scepter"	"2 3 4 5 6 7 8"
+				"omni_slash_jumps_scepter"	"3 3 4 5 6 7 8"
 			}
 
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"omni_slash_cooldown_scepter"	"200 170 150 130 100 70 60"
+				"omni_slash_cooldown_scepter"	"60"
 			}
 			"99"
 			{
@@ -1744,6 +1744,7 @@
 		"AbilityCooldown"	"10"
 		"AbilityDamage"		"200 400 600 800 1000 1200 1400"
 		"AbilityManaCost"	"120"
+		"LevelsBetweenUpgrades"	"2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -1766,6 +1767,7 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"13.0 10.0 7.0 4.0 2.0 1.0 0.8"
 		"AbilityCastRange"	"128"
+		"LevelsBetweenUpgrades"	"6"
 		"AbilitySpecial"
 		{
 			"01"
@@ -1822,7 +1824,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"60.0 50.0 40.0 30.0 30.0 30.0"
-		"AbilityDamage"		"1000 2000 3000 4000 5000 6000 7000"
+		"AbilityDamage"		"300 800 1500 2000 2400 2800 3500"
 		"AbilityManaCost"	"125 175 225 250 300 350 400"
 		"AbilitySpecial"
 		{
@@ -2479,12 +2481,13 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown" "10.0 10.0 10.0 10.0 10.0 10.0 10.0"
 		"AbilityDamage"	"100 150 200 250 300 400 500"
+		"LevelsBetweenUpgrades"	"2"
 		"AbilitySpecial"
 		{
 			"99"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_from_current_health_pct"	"5"
+				"damage_from_current_health_pct"	"3"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}	
@@ -2495,12 +2498,13 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"10.0 10.0 10.0 10.0 10.0 10.0 10.0"
 		"AbilityDamage"	"100 150 200 250 300 400 500"
+		"LevelsBetweenUpgrades"	"2"
 		"AbilitySpecial"
 		{
 			"99"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_from_current_health_pct"	"5"
+				"damage_from_current_health_pct"	"3"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}			
@@ -2512,12 +2516,13 @@
 		"AbilityCooldown"	"10.0 10.0 10.0 10.0 10.0 10.0 10.0"
 		"AbilityDamage"	"100 150 200 250 300 400 500"
 		"AbilityManaCost"	"90"
+		"LevelsBetweenUpgrades"	"2"
 		"AbilitySpecial"
 		{
 			"99"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_from_current_health_pct"	"5"
+				"damage_from_current_health_pct"	"3"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}	
@@ -2527,6 +2532,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilitySpecial"
+		"LevelsBetweenUpgrades"	"4"
 		{
 			"01"
 			{
@@ -2560,6 +2566,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"900"
+		"LevelsBetweenUpgrades"	"2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -2955,13 +2962,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_min"	"200 400 600 800 1000 1200 1400"
+				"damage_min"	"100 150 200 250 300 350 400"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_max"	"800 1200 1600 2000 2400 2800 3200"
+				"damage_max"	"200 250 300 350 400 450 500"
 			}
 
 			"03"
@@ -2990,6 +2997,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"800"
 		"AbilityCooldown"	"32 30 28 26 23 20 15"
+		"LevelsBetweenUpgrades"	"5"
 		"AbilitySpecial"
 		{
 			"03"
@@ -3003,7 +3011,7 @@
 	"razor_unstable_current"
 	{
 		"MaxLevel"	"7"
-		"AbilityDamage"	"150 300 600 900 1400 1800"
+		"AbilityDamage"	"100 200 300 400 500 600 700"
 		"AbilitySpecial"
 		{
 			"01"
@@ -3153,13 +3161,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"crit_mult"	"150 200 250 300 350 400 450"
+				"crit_mult"	"100 130 160 190 210 240 270"
 			}
 			
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_mult_creeps"			"300 400 500 600 700 800 900"
+				"crit_mult_creeps"			"200 260 320 380 420 480 540"
 			}			
 
 			"03"
@@ -3310,6 +3318,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityDamage"	"100 175 250 325 400 500 800"
+		"LevelsBetweenUpgrades"	"2"
 		"AbilitySpecial"
 		{
 			"99"
@@ -3330,7 +3339,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"great_cleave_damage"	"30 35 40 45 50 55 60"
+				"great_cleave_damage"	"10 15 20 25 30 35 40"
 			}
 
 		}
@@ -3342,6 +3351,8 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"32.0 26.0 20.0 14.0 12.0 10.0 8.0"
 		"AbilityManaCost"	"25 25 25 25 25 25 25"
+		"LevelsBetweenUpgrades"	"5"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -3365,6 +3376,7 @@
 		"MaxLevel"	"7"
 		"AbilityManaCost"	"100 150 200 250 300 350 400"
 		"AbilityDuration"	"30 25 20 15 10 10 10"
+		"LevelsBetweenUpgrades"	"20"
 		"AbilitySpecial"
 		{
 			"01"
@@ -3617,7 +3629,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"20 18 16 14 12 10 8"
-		"AbilityDamage"	"250 500 750 1000 1250 1500 1750"
+		"AbilityDamage"	"100 200 300 400 500 600 700"
 		"AbilityManaCost"	"120 120 120 120 120 120 120"
 		"AbilitySpecial"
 		{
@@ -3660,7 +3672,7 @@
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"toss_damage"	"250 500 750 1000 1250 1500 1750"
+				"toss_damage"	"100 200 300 400 500 600 700"
 			}
 			"99"
 			{
@@ -3676,6 +3688,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityDamage"	"100 200 300 400 500 600 700"
+		"LevelsBetweenUpgrades"	"5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -3704,7 +3717,7 @@
 	"tiny_grow"
 	{
 		"MaxLevel"	"3"
-		"LevelsBetweenUpgrades" "5"
+		"LevelsBetweenUpgrades" "20"
 		"AbilitySpecial"
 		{
 			"01"
@@ -7541,6 +7554,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"15.0 13.0 11.0 9.0 7.0 5.0 2.0"
+		"LevelsBetweenUpgrades"	"3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -8454,7 +8468,8 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"300 300 300 300 300 300 300"
-		"LevelsBetweenUpgrades" "3"
+		"LevelsBetweenUpgrades" "6"
+		"RequiredLevel"	"3"
 		"AbilityCooldown"	"90.0 80.0 70.0 60.0 50.0 40.0 30.0"
 		"AbilitySpecial"
 		{
@@ -8479,12 +8494,13 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"600 600 600 600 600 600 600"
 		"AbilityManaCost"	"60 70 75 80 90 100 110"
+		"LevelsBetweenUpgrades" "8"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_second"	"50 100 150 200 250 300 350"
+				"damage_per_second"	"25 50 75 100 200 250 300"
 			}
 
 			"02"
@@ -8555,7 +8571,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"550 550 550"
 		"AbilityCooldown"	"145.0 135.0 125.0 115.0 105.0 95.0 85.0"
-		"AbilityManaCost"	"150 200 250"
+		"AbilityManaCost"	"150 200 250 300 350 400 450"
 		"AbilitySpecial"
 		{
 			"01"
@@ -10989,6 +11005,7 @@
 	"chaos_knight_chaos_strike"
 	{
 		"MaxLevel"	"7"
+		"LevelsBetweenUpgrades" "8"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11000,13 +11017,13 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"crit_damage"	"120 160 200 240 280 320 360"
+				"crit_damage"	"100 120 160 200 240 280 320"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"armor_reduction"	"-8 -16 -24 -36 -48 -54 -60"
+				"armor_reduction"	"-4 -8 -16 -24 -36 -48 -54"
 			}
 		}
 
@@ -11438,6 +11455,7 @@
 		"AbilityCastPoint"	"0.45 0.45 0.45 0.45 0.45 0.45 0.45"
 		"AbilityCooldown"	"15 13 11 9 7 5 3"
 		"AbilityManaCost"	"70 90 110 130 150 170 190"
+		"LevelsBetweenUpgrades"	"4"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11449,12 +11467,12 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"str_steal"	"10 20 30 40 50 60 70"
+				"str_steal"	"3 6 9 12 15 18 21"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"str_steal_scepter"				"15 30 40 50 65 70 80"
+				"str_steal_scepter"				"5 10 15 20 25 30 35"
 			}
 			"99"
 			{
@@ -12024,25 +12042,25 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"outgoing_damage"	"-80 -75 -70 -50 -25 0 20"
+				"outgoing_damage"	"-90 -85 -70 -65 -50 -45 -30"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"outgoing_damage_tooltip"	"20 25 30 50 75 100 120"
+				"outgoing_damage_tooltip"	"10 15 30 45 50 65 70"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"incoming_damage"	"400 300 200 100 50 25 -20"
+				"incoming_damage"	"500 450 400 300 250 200 100"
 			}
 
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tooltip_incoming_damage_total_pct"	"500 400 300 200 150 125 80"
+				"tooltip_incoming_damage_total_pct"	"600 550 500 400 350 300 200"
 			}
 
 			"06"
@@ -12090,6 +12108,7 @@
 		"AbilityCastPoint"	"0 0 0 0 0 0 0"
 		"AbilityManaCost"	"80 90 100 110 120 130 150"
 		"AbilityDamage"		"100 150 200 250 300 350 400"
+		"LevelsBetweenUpgrades"	"3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -14297,6 +14316,7 @@
 		"AbilityCastRange"	"666"
 		"AbilityCooldown"	"14.0 13.0 12.0 11.0 10.0 9.0 8.0"
 		"AbilityManaCost"	"110 130 150 170 190 210 230"
+		"LevelsBetweenUpgrades"	"5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -14331,6 +14351,7 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"30.0 22.0 14.0 10.0 6.0 4.0 3.0"
 		"AbilityManaCost"	"50 75 100 125 150 175 200"
+		"RequiredLevel"	"25"
 		"AbilitySpecial"
 		{
 			"01"
