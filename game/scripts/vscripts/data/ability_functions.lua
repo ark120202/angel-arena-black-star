@@ -24,62 +24,63 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	shredder_chakram = 40,
 }
 
-SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
-	["warlock_fatal_bonds_arena"] = true,
-	["item_heart_cyclone"] = true,
-}
+local function OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
+	if inflictor and attacker:GetTeam() ~= victim:GetTeam() and not OCTARINE_NOT_LIFESTALABLE_ABILITIES[inflictor:GetAbilityName()] then
+		local heal
+		if victim:IsHero() then
+			heal = damage * GetAbilitySpecial(itemname, "hero_lifesteal") * 0.01
+			SafeHeal(attacker, heal, attacker)
+		else
+			heal = damage * GetAbilitySpecial(itemname, "creep_lifesteal") * 0.01
+			SafeHeal(attacker, heal, attacker)
+		end
+		if heal then
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, attacker, heal, nil)
+			ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
+		end
 
+		local item = FindItemInInventoryByName(attacker, itemname, false)
+		if item and RollPercentage(GetAbilitySpecial(itemname, "bash_chance")) and not attacker:HasModifier(cooldownModifierName) then
+			victim:AddNewModifier(attacker, item, "modifier_stunned", {duration = GetAbilitySpecial(itemname, "bash_duration")})
+			item:ApplyDataDrivenModifier(attacker, attacker, cooldownModifierName, {})
+		end
+	end
+end
 ON_DAMAGE_MODIFIER_PROCS = {
-	["modifier_item_octarine_core_arena"] = function(attacker, victim, inflictor, damage, damagetype_const) if inflictor and attacker:GetTeam() ~= victim:GetTeam() then
-		local heal
-		if victim:IsHero() then
-			heal = damage * GetAbilitySpecial("item_octarine_core_arena", "hero_lifesteal") * 0.01
-			SafeHeal(attacker, heal, attacker)
-		else
-			heal = damage * GetAbilitySpecial("item_octarine_core_arena", "creep_lifesteal") * 0.01
-			SafeHeal(attacker, heal, attacker)
-		end
-		if heal then
-			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, attacker, heal, nil)
-			ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
-		end
-
-		local item = FindItemInInventoryByName(attacker, "item_octarine_core_arena", false)
-		if item and RollPercentage(GetAbilitySpecial("item_octarine_core_arena", "bash_chance")) and not attacker:HasModifier("modifier_octarine_bash_cooldown") and victim:GetTeam() ~= attacker:GetTeam() then
-			victim:AddNewModifier(attacker, item, "modifier_stunned", {duration = GetAbilitySpecial("item_octarine_core_arena", "bash_duration")})
-			item:ApplyDataDrivenModifier(attacker, attacker, "modifier_octarine_bash_cooldown", {})
-		end
-	end end,
-	["modifier_item_refresher_core"] = function(attacker, victim, inflictor, damage, damagetype_const) if inflictor and attacker:GetTeam() ~= victim:GetTeam() then
-		local heal
-		if victim:IsHero() then
-			heal = damage * GetAbilitySpecial("item_refresher_core", "hero_lifesteal") * 0.01
-		else
-			heal = damage * GetAbilitySpecial("item_refresher_core", "creep_lifesteal") * 0.01
-		end
-		SafeHeal(attacker, heal, attacker)
-		if heal then
-			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, attacker, heal, nil)
-			ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
-		end
-
-		local item = FindItemInInventoryByName(attacker, "item_refresher_core", false)
-		if item and RollPercentage(GetAbilitySpecial("item_refresher_core", "bash_chance")) and not attacker:HasModifier("modifier_octarine_bash_cooldown") and victim:GetTeam() ~= attacker:GetTeam() then
-			victim:AddNewModifier(attacker, item, "modifier_stunned", {duration = GetAbilitySpecial("item_refresher_core", "bash_duration")})
-			item:ApplyDataDrivenModifier(attacker, attacker, "modifier_octarine_bash_cooldown", {})
-		end
-	end end,
+	["modifier_item_octarine_core_arena"] = function(attacker, victim, inflictor, damage, damagetype_const)
+		OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, "item_octarine_core_arena", "modifier_octarine_bash_cooldown")
+	end,
+	["modifier_item_refresher_core"] = function(attacker, victim, inflictor, damage, damagetype_const)
+		OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, "item_refresher_core", "modifier_octarine_bash_cooldown")
+	end,
 }
 
 ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
-	["modifier_item_holy_knight_shield"] = function(attacker, victim, inflictor, damage, damagetype_const) if inflictor then
+	["modifier_item_holy_knight_shield"] = function(attacker, victim, inflictor, damage) if inflictor then
 		local item = FindItemInInventoryByName(victim, "item_holy_knight_shield", false)
 		if item and RollPercentage(GetAbilitySpecial("item_holy_knight_shield", "buff_chance")) and victim:GetTeam() ~= attacker:GetTeam() then
 			if PreformAbilityPrecastActions(victim, item) then
 				item:ApplyDataDrivenModifier(victim, victim, "modifier_item_holy_knight_shield_buff", {})
 			end
 		end
-	end end
+	end end,
+	["modifier_freya_pain_reflection"] = function(attacker, victim, inflictor, damage, damagetype_const)
+		local freya_pain_reflection = victim:FindAbilityByName("freya_pain_reflection")
+		local returnedDmg = damage * freya_pain_reflection:GetAbilitySpecial("damage_return_pct") * 0.01
+		ApplyDamage({
+			victim = attacker,
+			attacker = victim,
+			damage = returnedDmg,
+			damage_type = freya_pain_reflection:GetAbilityDamageType(),
+			ability = freya_pain_reflection
+		})
+		local heal = returnedDmg * freya_pain_reflection:GetAbilitySpecial("returned_to_heal_pct") * 0.01
+		SafeHeal(victim, heal, victim)
+		if heal then
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, victim, heal, nil)
+			ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
+		end
+	end
 }
 
 OUTGOING_DAMAGE_MODIFIERS = {

@@ -143,3 +143,12 @@ PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_dota_hero_wisp"] = true,
 	["npc_dota_hero_invoker"] = true,
 }
+
+SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
+	["warlock_fatal_bonds_arena"] = true,
+	["item_heart_cyclone"] = true,
+}
+
+OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
+	["freya_pain_reflection"] = true,
+}

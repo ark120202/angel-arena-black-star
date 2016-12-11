@@ -2531,8 +2531,8 @@
 	"nevermore_necromastery"
 	{
 		"MaxLevel"	"7"
-		"AbilitySpecial"
 		"LevelsBetweenUpgrades"	"4"
+		"AbilitySpecial"
 		{
 			"01"
 			{
