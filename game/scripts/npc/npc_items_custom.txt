@@ -10486,7 +10486,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"gold_multiplier"		"12"
+				"gold_multiplier"		"5"
 			}
 		}
 		
@@ -18307,17 +18307,17 @@
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_strength"					"120"
+				"bonus_strength"					"100"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_health"						"1200"
+				"bonus_health"						"1000"
 			}
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_damage_pct"			"150"
+				"bonus_toggle_damage_pct"			"120"
 			}
 			"05"
 			{
@@ -18430,17 +18430,17 @@
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_strength"					"120"
+				"bonus_strength"					"100"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_health"						"1200"
+				"bonus_health"						"1000"
 			}
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_damage_pct"			"150"
+				"bonus_toggle_damage_pct"			"120"
 			}
 			"05"
 			{
@@ -18831,7 +18831,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"mana_per_second"			"80"
+				"mana_per_second_pct"		"6"
 			}
 			"13"
 			{
@@ -18991,7 +18991,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"mana_per_second"			"80"
+				"mana_per_second_pct"		"6"
 			}
 			"13"
 			{
@@ -19075,7 +19075,7 @@
 					{
 						"ScriptFile"	"items/item_angel_wings.lua"
 						"Function"		"ChackAndSpendMana"
-						"Mana"			"%mana_per_second * %mana_per_second_think"
+						"Mana"			"%mana_per_second_pct * %mana_per_second_think"
 					}
 				}
 				
@@ -19086,7 +19086,7 @@
 					{
 						"ScriptFile"	"items/item_angel_wings.lua"
 						"Function"		"ChackAndSpendMana"
-						"Mana"			"%mana_per_second * %mana_per_second_think"
+						"Mana"			"%mana_per_second_pct * %mana_per_second_think"
 					}
 					"ApplyModifier"
 					{
@@ -19394,7 +19394,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"debuff_stats_multiplier"	"1.5"
+				"debuff_stats_multiplier"	"1.0"
 			}
 			"12"
 			{

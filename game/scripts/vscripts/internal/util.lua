@@ -1291,6 +1291,9 @@ function GetHeroTableByName(name)
 	if custom.base_hero then
 		table.merge(output, NPC_HEROES[custom.base_hero])
 		table.merge(output, NPC_HEROES_CUSTOM[custom.base_hero])
+		for i = 1, 17 do
+			output["Ability" .. i] = nil
+		end
 		table.merge(output, custom)
 	else
 		table.merge(output, default)

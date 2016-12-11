@@ -425,9 +425,6 @@ function HeroSelectionStart(HeroesServerData) {
 	MainPanel.visible = true;
 	SelectionTimerDuration = HeroesServerData.SelectionTime;
 	UpdateTimer();
-	if (HeroesServerData.GameModeType != "all_pick") {
-		$("#SwitchTabButton").visible = false
-	}
 	tabsData = HeroesServerData.HeroTabs
 	for (var tabKey in tabsData) {
 		var tabTitle = tabsData[tabKey].title
@@ -437,6 +434,7 @@ function HeroSelectionStart(HeroesServerData) {
 		FillHeroesTable(heroesInTab, TabHeroesPanel)
 		TabHeroesPanel.visible = false
 	}
+	$("#SwitchTabButton").visible = tabsData[2] != null;
 	SelectHeroTab(1)
 	SelectFirstHeroPanel();
 }

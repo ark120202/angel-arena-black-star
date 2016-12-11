@@ -16,6 +16,9 @@ MODIFIERS_DEATH_PREVENTING = {
 DUEL_PURGED_MODIFIERS = {
 	"modifier_life_stealer_infest",
 	"modifier_pocket_riki_hide",
+	"modifier_tether_ally_aghanims",
+	"modifier_life_stealer_assimilate",
+	"modifier_life_stealer_assimilate_effect",
 }
 
 ABILITY_INVULNERABLE_UNITS = {

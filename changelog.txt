@@ -58,7 +58,8 @@ Balance:
 	Units:
 		
 	Items:
-		
+		Angel Wings:
+			Mana Cost: 80 => 6%
 	Abilities:
 		
 Fixes:
@@ -68,6 +69,7 @@ Fixes:
 	Fixed Shard of True Shight effect stayed forever on your hero
 	Removed Courier - Burst button from HUD
 	Removed Consecrated Sword & Sacrificial Dagger because them were uselses
+	Fixed Lifestealer - Assimilate + Duel bugs
 <<+===========================================================================================================
 rhasta,
 lycan,

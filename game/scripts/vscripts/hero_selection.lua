@@ -64,7 +64,7 @@ function HeroSelection:PrepareTables()
 				if enabled == 1 and category == "Selection" then
 					local heroTable = GetHeroTableByName(name)
 					local tabIndex = 1
-					if not NPC_HEROES[name] then
+					if heroTable.base_hero then
 						tabIndex = 2
 					end
 					local heroData = {

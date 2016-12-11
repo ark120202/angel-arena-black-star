@@ -125,17 +125,17 @@ function Duel:StartDuel()
 		end
 		for team,tab in pairs(Duel.heroes_teams_for_duel) do
 			for _,unit in pairs(tab) do
-				unit:RemoveModifierByName("modifier_tether_ally_aghanims")
+				for _,v in ipairs(DUEL_PURGED_MODIFIERS) do
+					if unit:HasModifier(v) then
+						unit:RemoveModifierByName(v)
+					end
+				end
+				if unit.PocketItem then
+					UTIL_Remove(unit.PocketItem)
+				end
+				
 				if unit.InArena then
-					for _,v in ipairs(DUEL_PURGED_MODIFIERS) do
-						if unit:HasModifier(v) then
-							unit:RemoveModifierByName(v)
-						end
-					end
-
-					if unit.PocketItem then
-						UTIL_Remove(unit.PocketItem)
-					end
+					
 					unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 					unit:Stop()
 					PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), unit)

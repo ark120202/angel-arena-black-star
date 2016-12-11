@@ -63,7 +63,6 @@ function Bosses:MakeBossAI(unit, name)
 		local boss_freya_sharp_ice_shards = unit:FindAbilityByName("boss_freya_sharp_ice_shards")
 		aiTable["abilityCastCallback"] = function(self)
 			local unitsInRange = self:FindUnitsNearby(boss_freya_sharp_ice_shards:GetCastRange(unit:GetAbsOrigin(), nil) - 100, false, true, DOTA_UNIT_TARGET_HERO)
-			print(#unitsInRange)
 			if #unitsInRange > 0 then
 				self:UseAbility(boss_freya_sharp_ice_shards)
 			end
@@ -93,5 +92,5 @@ function Bosses:MakeBossAI(unit, name)
 	local ai = SimpleAI:new(unit, profile, aiTable)
 end
 
-local boss = CreateUnitByName("npc_arena_boss_" .. "freya", Vector(0), true, nil, nil, DOTA_TEAM_NEUTRALS)
-Bosses:MakeBossAI(boss, "freya")
+--[[local boss = CreateUnitByName("npc_arena_boss_" .. "freya", Vector(0), true, nil, nil, DOTA_TEAM_NEUTRALS)
+Bosses:MakeBossAI(boss, "freya")]]

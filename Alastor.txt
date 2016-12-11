@@ -124,3 +124,39 @@ AttributeStrengthGain: 3.6 => 2.9
 AttributeAgilityGain: 2.7 => 2.5
 AttributeIntelligenceGain: 5.0 => 2.5
 
+Shinobu Vampire Blood:
+lifesteal_pct_lvl1: 10 20 30 40 50 => 5 10 15 20 25
+lifesteal_pct_lvl2: 20 30 40 50 60 => 10 15 20 25 30
+lifesteal_pct_lvl3: 20 25 30 35 40 => 15 20 25 30 35
+lifesteal_pct_lvl4: 40 45 50 55 60 => 20 25 30 35 40
+bonus_move_speed_lvl4 100 => 80
+
+Shinobu Yumewatari:
+LevelsBetweenUpgrades: 2 => 7
+bonus_damage: 20 40 80 160 320 640 1100 => 150 550 750 850 1200 1600 2000
+
+item_blood_of_midas:
+gold_multiplier: 12 => 5
+
+item_recipe_skull_of_midas:
+ItemCost: 1650 => 1000
+
+alchemist_acid_spray:
+damage: 30 60 90 110 140 180 210 => 15 30 45 60 75 120 140
+
+item_angel_wings:
+mana_per_second_think: 0.1 => 4.5 %
+
+item_blade_of_discord:
+debuff_stats_multiplier: 1.5 => 1.0 %
+
+item_heavy_war_axe_of_rage_damage:
+bonus_health: 1200 => 1000
+bonus_toggle_damage_pct: 150 => 120 %
+bonus_strength: 120 => 100 
+
+item_heavy_war_axe_of_rage_health:
+bonus_health: 1200 => 1000
+bonus_toggle_damage_pct: 150 => 120 %
+bonus_strength: 120 => 100 
+

@@ -1078,24 +1078,7 @@
 	m_nLoadDmxAnimVersion = 0
 	m_pPsfList = 
 	{
-		m_vPsfList = 
-		[
-			{
-				m_sFxModel = "models/custom/car_01.fbx"
-				m_sSkinnedModel = "models/custom/car_01.vmdl"
-				m_sOutputFileName = ""
-				m_sWeightedBone = "Dummy16"
-				m_sLocalSpaceBone = "Dummy19"
-				m_bVertexNormals = false
-				m_bVertexColors = false
-				m_bVertexSortByBone = false
-				m_bVertexSortByColor = false
-				m_bSkinToBones = false
-				m_bCullUnSkinnedVerts = true
-				m_flSkinThreshold = 0.75
-				m_bVerbose = false
-			},
-		]
+		m_vPsfList = [  ]
 	}
 	m_keyValueText = ""
 	m_bStaticProp = false

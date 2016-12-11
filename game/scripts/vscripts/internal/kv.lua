@@ -203,3 +203,13 @@ function ScepterOnlyPassiveModifierThink(keys)
 		caster:RemoveModifierByName(modifier)
 	end
 end
+
+function PercentDamage(keys)
+	local ability = keys.ability
+	local target = keys.target
+	local damage = keys.Damage or 0
+	if keys.MaxHealthPercent then damage = damage + (keys.MaxHealthPercent*0.01*target:GetMaxHealth()) end
+	if keys.CurrnetHealthPercent then damage = damage + (keys.CurrnetHealthPercent*0.01*target:GetHealth()) end
+	print(keys.MaxHealthPercent)
+	ApplyDamage({victim = target, attacker = keys.caster, damage = damage, damage_type = ability:GetAbilityDamageType(), ability = ability})
+end

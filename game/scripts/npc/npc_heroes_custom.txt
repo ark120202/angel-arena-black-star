@@ -144,7 +144,7 @@
 		"Ability3"					"zen_gehraz_vow_of_silence"
 		"Ability4"					"zen_gehraz_superposition"
 		"Ability5"					"attribute_bonus_arena"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_arena_hero_stegius"
@@ -157,7 +157,7 @@
 		"Ability4"					"stegius_desolating_touch"
 		"Ability5"					"attribute_bonus_arena"
 		"Ability6"					""
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_arena_hero_mirratie"
@@ -171,18 +171,20 @@
 		"Ability5"					"attribute_bonus_arena"
 		"Ability6"					""
 		"AttackRange"				"900"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_freya"
 	{
 		"override_hero"				"npc_dota_hero_base"
 		"base_hero"					"npc_dota_hero_abaddon"
-		"Ability1"					"boss_freya_sharp_ice_shards"
+		"Ability1"					"freya_strike_the_ice"
+		"Ability2"					"freya_frozen_strike"
+		"Ability2"					"freya_ice_cage"
 		"Model"						"models/units/freya/freya.vmdl"
 		"ModelScale"				"1.5"
 		"HideWearables"				"1"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	//Changed
@@ -355,7 +357,7 @@
 			"SwappedAbility"	"omniknight_select_allies"
 			"SwapWithAttributeBonus"	"1"
 		}
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_pudge"
@@ -378,7 +380,7 @@
 		"Ability4"				"medusa_stone_gaze_arena"
 		"Ability5"				"attribute_bonus_arena"
 		"Changed"					"1"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 		"ArmorPhysical"				"2"
 		"AttributeStrengthGain"		"2.2"
 		"AttributeAgilityGain"		"2.91"
@@ -451,7 +453,7 @@
 		"Ability4"	"bane_fiends_grip"
 		"Ability5"	"attribute_bonus_arena"
 		"Ability6"	"bane_nightmare_end"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_bloodseeker"
@@ -571,7 +573,7 @@
 		"Ability2"	"sandking_sand_storm"
 		"Ability3"	"sandking_caustic_finale"
 		"Ability4"	"sandking_epicenter"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_storm_spirit"
@@ -621,7 +623,7 @@
 		"Ability2"	"vengefulspirit_wave_of_terror"
 		"Ability3"	"vengefulspirit_command_aura"
 		"Ability4"	"vengefulspirit_nether_swap"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_windrunner"
@@ -641,7 +643,7 @@
 		"Ability2"	"zuus_lightning_bolt"
 		"Ability3"	"zuus_static_field"
 		"Ability4"	"zuus_thundergods_wrath"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_kunkka"
@@ -777,7 +779,7 @@
 		"Ability2"	"venomancer_poison_sting"
 		"Ability3"	"venomancer_plague_ward"
 		"Ability4"	"venomancer_poison_nova"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_death_prophet"
@@ -787,7 +789,7 @@
 		"Ability2"	"death_prophet_silence"
 		"Ability3"	"death_prophet_spirit_siphon"
 		"Ability4"	"death_prophet_exorcism"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_phantom_assassin"
@@ -807,7 +809,7 @@
 		"Ability2"	"pugna_decrepify"
 		"Ability3"	"pugna_nether_ward"
 		"Ability4"	"pugna_life_drain"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_templar_assassin"
@@ -859,7 +861,7 @@
 		"Ability2"	"rattletrap_power_cogs"
 		"Ability3"	"rattletrap_rocket_flare"
 		"Ability4"	"rattletrap_hookshot"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_leshrac"
@@ -869,7 +871,7 @@
 		"Ability2"	"leshrac_diabolic_edict"
 		"Ability3"	"leshrac_lightning_storm"
 		"Ability4"	"leshrac_pulse_nova"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_furion"
@@ -904,7 +906,7 @@
 		"Ability2"	"dark_seer_ion_shell"
 		"Ability3"	"dark_seer_surge"
 		"Ability4"	"dark_seer_wall_of_replica"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_clinkz"
@@ -984,7 +986,7 @@
 		"Ability2"	"jakiro_ice_path"
 		"Ability3"	"jakiro_liquid_fire"
 		"Ability4"	"jakiro_macropyre"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_batrider"
@@ -994,7 +996,7 @@
 		"Ability2"	"batrider_flamebreak"
 		"Ability3"	"batrider_firefly"
 		"Ability4"	"batrider_flaming_lasso"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_chen"
@@ -1048,7 +1050,7 @@
 		"Ability4"	"ancient_apparition_ice_blast"
 		"Ability5"	"ancient_apparition_ice_blast_release"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_ursa"
@@ -1071,7 +1073,7 @@
 		"Ability3"	"spirit_breaker_greater_bash"
 		"Ability4"	"spirit_breaker_nether_strike"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_alchemist"
@@ -1106,7 +1108,7 @@
 		"Ability15"	"invoker_ice_wall"
 		"Ability16"	"invoker_deafening_blast"
 		"Ability17"	"attribute_bonus_arena"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_silencer"
@@ -1201,7 +1203,7 @@
 		"Ability3"	"meepo_geostrike"
 		"Ability4"	"meepo_divided_we_stand"
 		"Ability5"	"attribute_bonus_arena"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_treant"
@@ -1213,7 +1215,7 @@
 		"Ability4"	"treant_eyes_in_the_forest"
 		"Ability5"	"treant_overgrowth"
 		"Ability6"	"attribute_bonus_arena"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_undying"
@@ -1390,7 +1392,7 @@
 		"Ability2"	"skywrath_mage_concussive_shot"
 		"Ability3"	"skywrath_mage_ancient_seal"
 		"Ability4"	"skywrath_mage_mystic_flare"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_abaddon"
@@ -1454,7 +1456,7 @@
 		"Ability5"	"earth_spirit_petrify"
 		"Ability6"	"earth_spirit_magnetize"
 		"Ability7"	"attribute_bonus_arena"
-		"AttackRange"				"1.3"
+		"AttackRate"				"1.3"
 	}
 
 	"npc_dota_hero_terrorblade"

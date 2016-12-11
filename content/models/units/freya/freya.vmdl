@@ -850,6 +850,19 @@
 							},
 						]
 					},
+					{
+						m_name = "attach_attack2"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bip01 L Hand"
+								m_vTranslationOffset = [ 5.034664, 0.0, 0.000004 ]
+								m_vRotationOffset = [ 0.000003, 0.000008, 0.000002 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
 				]
 			}
 		},
