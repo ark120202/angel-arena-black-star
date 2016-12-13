@@ -7,8 +7,9 @@
 		"ItemPurchasable"				"0"
 		"ItemCost"						"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"					"0"
 		"ItemSellable"					"0"
+		"AllowedInBackpack"				"1"
+		"IsTempestDoubleClonable"		"0"
 	}
 
 	"item_containers_lua_pack"
@@ -36,6 +37,7 @@
 		"ItemSellable"					"0"
 		"ItemDroppable"					"0"
 		"ItemCanChangeContainer"		"0"
+		"AllowedInBackpack"				"0"
 	}
 
 	"item_soul_of_titan"

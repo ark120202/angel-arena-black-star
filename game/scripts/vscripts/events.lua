@@ -29,7 +29,8 @@ function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	if npc:IsHero() then
 		if not HeroSelection.SelectionEnd then
-			UTIL_Remove(npc)
+			npc:AddNoDraw()
+			--UTIL_Remove(npc)
 			return
 		end
 		HeroVoice:OnNPCSpawned(npc)
@@ -310,29 +311,12 @@ function GameMode:OnEntityKilled( keys )
 			local items = {}
 			for _,dropTable in ipairs(dropTables) do
 				if RollPercentage(dropTable.DropChance) then
-					table.insert(items, CreateItem(dropTable.Item, nil, nil))
+					table.insert(items, dropTable.Item)
 				end
 			end
 			if #items > 0 then
-				local phys = CreateItemOnPositionSync(killedUnit:GetAbsOrigin() + RandomVector(100), nil)
-				phys:SetForwardVector(Vector(0,-1,0))
-				phys:SetModelScale(1.5)
-				ContainersHelper:CreateLootBox(phys, items)
+				ContainersHelper:CreateLootBox(killedUnit:GetAbsOrigin() + RandomVector(100), items)
 			end
-		end
-
-		if killedUnit:IsCourier() then
-			local startTime = GameRules:GetDOTATime(false, false)
-			local team = killedUnit:GetTeamNumber()
-			PlayerTables:SetTableValue("arena", "courier_owner" .. team, {status = "killed", value = startTime})
-			Timers:CreateTimer(0.03, function()
-				if killedUnit:IsAlive() then
-					PlayerTables:SetTableValue("arena", "courier_owner" .. team, -1)
-				else
-					PlayerTables:SetTableValue("arena", "courier_owner" .. team, {status = "killed", value = COURIER_RESPAWN_TIME - (math.floor(GameRules:GetDOTATime(false, false) - startTime))})
-					return 0.03
-				end
-			end)
 		end
 	end
 end
@@ -448,7 +432,7 @@ function GameMode:OnPlayerChat(keys)
 end
 
 function GameMode:OnPlayerSentCommand(playerID, text)
-	cmd = {}
+	local cmd = {}
 	for v in string.gmatch(string.lower(string.sub(text, 2)), "%S+") do table.insert(cmd, v) end
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	if GameRules:IsCheatMode() then
@@ -682,7 +666,7 @@ end
 
 function GameMode:TrackInventory(unit)
 	unit.InventorySnapshot = {}
-	for i = 0, 11 do
+	for i = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
 		local item = unit:GetItemInSlot(i)
 		if item then
 			unit.InventorySnapshot[i] = {

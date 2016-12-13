@@ -1,5 +1,6 @@
 "CustomEvents"
 {
+	"panorama_shop_open_close"	{}
 	"panorama_shop_show_item"
 	{
 		"itemName"		"string"

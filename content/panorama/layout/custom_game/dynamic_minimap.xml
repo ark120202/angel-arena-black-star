@@ -7,7 +7,11 @@
 		<include src="file://{resources}/scripts/util.js" />
 	</scripts>
 	<script>
+		var hud = GetDotaHud();
+		var minimap = hud.FindChildTraverse("minimap_block");
+		$.GetContextPanel().style.height = (minimap.desiredlayoutheight + 8) + "px";
+		$.GetContextPanel().style.width = (minimap.desiredlayoutwidth + 8) + "px";
 		_DynamicMinimapSubscribe($.GetContextPanel());
 	</script>
-	<Panel class="DynamicMinimapRoot" hittest="false" />
+	<Panel class="DynamicMinimapRoot" hittest="true" />
 </root>

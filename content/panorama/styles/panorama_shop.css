@@ -11,7 +11,7 @@
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in;
 	transition-property: transform, opacity;
-	box-shadow: rgba(0,0,0,235) -10px -10px 20px 20px;
+	box-shadow: rgba(0,0,0,0.92) -10px -10px 20px 20px;
 	margin-bottom: 16%;
 	margin-right: 0px;
 	flow-children: right;
@@ -113,7 +113,7 @@ DropDownMenu Label
 	width: 100%;
 	horizontal-align: right;
 	height: 78.5%;
-	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 100);
+	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 0.4);
 	flow-children: down;
 }
 
@@ -267,10 +267,10 @@ DropDownMenu Label
 	align: right bottom;
 	height: 30px;
 	width: 30px;
-	border-radius: -1px;
-	border: 2px solid red;
+	border-radius: 2px;
+	border: 2px solid darkred;
 	margin: 2px;
-	color: red;
+	color: darkred;
 	text-align: center;
 	font-size: 22px;
 }
@@ -288,7 +288,7 @@ DropDownMenu Label
 {
 	align: left center;
 	height: 100%;
-	width: 172px;
+	width: 232px;
 	margin-left: 2px;
 	margin-top: 2px;
 	flow-children: right-wrap;
@@ -323,6 +323,7 @@ DropDownMenu Label
 	border-width: 2px;
 	border-style: solid;
 	border-radius: 7px;
+	transform: translateY(-40px);
 }
 #ShopBtnPanel:hover
 {
@@ -334,65 +335,14 @@ DropDownMenu Label
 }
 #QuickBuyPanel
 {
-	background-image: url("file://{images}/custom_game/shop/quickbuy.png");
-	//background-color: rgba(0,0,0,200);
+	background-image: url("s2r://panorama/images/hud/reborn/quickbuy_bg_psd.vtex");
+	//background-color: rgba(0,0,0,0.8);
 	align: right bottom;
-	margin-bottom:  50px;
-	margin-right: 7px;
+	margin-bottom: 20px;
+	margin-right: 0px;
 	height: 65px;
-	width: 206px;
-	box-shadow: -6px -6px 12px 12px rgba(0,0,0,200);
-}
-
-//4x3
-.AspectRatio4x3 #ShopBtnPanel
-{
-	margin-bottom: 100px;
-	margin-right: 4px;
-}
-
-.AspectRatio4x3 #QuickBuyPanel
-{
-	margin-bottom:  150px;
-	margin-right: 7px;
-	height: 65px;
-	width: 206px;
-}
-
-//5x4
-.AspectRatio5x4 #ShopBtnPanel
-{
-	margin-bottom: 100px;
-	margin-right: -8px;
-}
-
-.AspectRatio5x4 #QuickBuyPanel
-{
-	margin-bottom:  150px;
-	margin-right: 7px;
-	height: 65px;
-	width: 206px;
-}
-
-.MinimalisticHudDisabled #ShopBtnPanel,
-.MinimalisticHudDisabled #QuickBuyPanel
-{
+	width: 262px;
 	transform: translateY(-40px);
-}
-
-.AspectRatio4x3.MinimalisticHudDisabled #ShopBtnPanel
-{
-	transform: translateY(50px) translateX(7px);
-}
-.AspectRatio5x4.MinimalisticHudDisabled #ShopBtnPanel
-{
-	transform: translateY(50px);
-}
-
-.AspectRatio4x3.MinimalisticHudDisabled #QuickBuyPanel,
-.AspectRatio5x4.MinimalisticHudDisabled #QuickBuyPanel
-{
-	transform: translateY(-5px);
 }
 
 .ShopTabButtonSelected
@@ -469,7 +419,7 @@ DropDownMenu Label
 	margin-left: 0;
 	height: 36px;
 	width: 36px;
-	background-color: rgba(0,0,0,240);
+	background-color: rgba(0,0,0,0.95);
 	border-radius: 7px;
 }
 

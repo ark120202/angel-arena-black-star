@@ -1,9 +1,27 @@
 "use strict";
-GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_PROTECT, false)
-GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_HERO_SELECTION_TEAMS, false)
-GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_HERO_SELECTION_GAME_NAME, false)
-GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_HERO_SELECTION_CLOCK, false)
-
+GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_PROTECT, false);
+/*
+DOTA_DEFAULT_UI_TOP_TIMEOFDAY
+DOTA_DEFAULT_UI_TOP_HEROES
+DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD
+DOTA_DEFAULT_UI_ACTION_PANEL
+DOTA_DEFAULT_UI_ACTION_MINIMAP
+DOTA_DEFAULT_UI_INVENTORY_PANEL
+DOTA_DEFAULT_UI_INVENTORY_SHOP
+DOTA_DEFAULT_UI_INVENTORY_ITEMS
+DOTA_DEFAULT_UI_INVENTORY_QUICKBUY
+DOTA_DEFAULT_UI_INVENTORY_COURIER
+DOTA_DEFAULT_UI_INVENTORY_PROTECT
+DOTA_DEFAULT_UI_INVENTORY_GOLD
+DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS
+DOTA_DEFAULT_UI_HERO_SELECTION_TEAMS
+DOTA_DEFAULT_UI_HERO_SELECTION_GAME_NAME
+DOTA_DEFAULT_UI_HERO_SELECTION_CLOCK
+DOTA_DEFAULT_UI_TOP_MENU_BUTTONS
+DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND
+DOTA_DEFAULT_UI_ENDGAME
+DOTA_DEFAULT_UI_ENDGAME_CHAT
+*/
 // These lines set up the panorama colors used by each team (for game select/setup, etc)
 GameUI.CustomUIConfig().team_colors = {}
 GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_GOODGUYS] = "#008000;";
@@ -77,42 +95,6 @@ GameUI.SetMouseCallback(function(eventName, arg) {
 			}
 		};
 	};
-
-	/*if (eventName == "pressed") {
-		// Left-click is move to position
-		if (arg === 0) {
-			var order = {};
-			order.OrderType = dotaunitorder_t.DOTA_UNIT_ORDER_MOVE_TO_POSITION;
-			order.Position = GameUI.GetScreenWorldPosition(GameUI.GetCursorPosition());
-			order.Queue = false;
-			order.ShowEffects = false;
-			Game.PrepareUnitOrders(order);
-			return true;
-		}
-
-		// Disable right-click
-		if (arg === 1) {
-			return true;
-		}
-	} else if (eventName === "wheeled") {
-		if (arg < 0) {
-			var order = {};
-			order.OrderType = dotaunitorder_t.DOTA_UNIT_ORDER_MOVE_TO_POSITION;
-			order.Position = GameUI.GetScreenWorldPosition(GameUI.GetCursorPosition());
-			order.Queue = false;
-			order.ShowEffects = false;
-			Game.PrepareUnitOrders(order);
-			return true;
-		} else if (arg > 0) {
-			var order = {};
-			order.OrderType = dotaunitorder_t.DOTA_UNIT_ORDER_ATTACK_MOVE;
-			order.Position = GameUI.GetScreenWorldPosition(GameUI.GetCursorPosition());
-			order.Queue = false;
-			order.ShowEffects = false;
-			Game.PrepareUnitOrders(order);
-			return true;
-		}
-	}*/
 	return result;
 });
 RegisterKeybind("EnterPressed");

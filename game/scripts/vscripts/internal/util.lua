@@ -533,8 +533,8 @@ end
 function FindItemInInventoryByName(unit, itemname, searchStash, onlyStash)
 	local lastSlot = 5
 	local startSlot = 0
-	if searchStash then lastSlot = 11 end
-	if onlyStash then startSlot = 5 end
+	if searchStash then lastSlot = DOTA_STASH_SLOT_6 end
+	if onlyStash then startSlot = DOTA_STASH_SLOT_1 end
 	for slot = startSlot, lastSlot do
 		local item = unit:GetItemInSlot(slot)
 		if item and item:GetAbilityName() == itemname then
@@ -1006,7 +1006,7 @@ function MakePlayerAbandoned(iPlayerID)
 			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
 			print("Abandoning: " .. hero:GetName())
 			hero:Stop()
-			for i = 0, 11 do
+			for i = 0, DOTA_STASH_SLOT_6 do
 				local citem = hero:GetItemInSlot(i)
 				if citem then
 					hero:SellItem(citem)
@@ -1291,7 +1291,7 @@ function GetHeroTableByName(name)
 	if custom.base_hero then
 		table.merge(output, NPC_HEROES[custom.base_hero])
 		table.merge(output, NPC_HEROES_CUSTOM[custom.base_hero])
-		for i = 1, 17 do
+		for i = 1, 24 do
 			output["Ability" .. i] = nil
 		end
 		table.merge(output, custom)
@@ -1303,7 +1303,7 @@ function GetHeroTableByName(name)
 end
 
 function SetAllItemSlotsLocked(unit, locked, bNoStash)
-	for i = 0, bNoStash and 5 or 11 do
+	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if current_item then
 			ExecuteOrderFromTable({
@@ -1318,7 +1318,7 @@ function SetAllItemSlotsLocked(unit, locked, bNoStash)
 end
 
 function FillSlotsWithDummy(unit, bNoStash)
-	for i = 0, bNoStash and 5 or 11 do
+	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if not current_item then
 			unit:AddItem(CreateItem("item_dummy", unit, unit))
@@ -1327,7 +1327,7 @@ function FillSlotsWithDummy(unit, bNoStash)
 end
 
 function ClearSlotsFromDummy(unit, bNoStash)
-	for i = 0, bNoStash and 5 or 11 do
+	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if current_item and current_item:GetAbilityName() == "item_dummy" then
 			unit:RemoveItem(current_item)
@@ -1337,9 +1337,9 @@ function ClearSlotsFromDummy(unit, bNoStash)
 end
 
 function GetAllItemsByNameInInventory(unit, itemname, searchStash)
-	local lastSlot = 5
+	local lastSlot = DOTA_ITEM_SLOT_9
 	if searchStash then
-		lastSlot = 11
+		lastSlot = DOTA_STASH_SLOT_6
 	end
 	local items = {}
 	for slot = 0, lastSlot do
@@ -1362,7 +1362,7 @@ function CDOTA_BaseNPC:UnitHasSlotForItem(itemname, bStash)
 	if self.HasRoomForItem then
 		return self:HasRoomForItem(itemname, bStash, true) ~= 4
 	else
-		for i = 0, bStash and 11 or 5 do
+		for i = 0, bStash and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
 			local item = self:GetItemInSlot(i)
 			if not item or (not item:IsNull() and item:GetAbilityName() == itemname and item:IsStackable()) then
 				return true

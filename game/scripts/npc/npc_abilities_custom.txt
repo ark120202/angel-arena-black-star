@@ -146,6 +146,7 @@
 		"AbilityType"               "DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"MaxLevel"					"10000"
 		"LevelsBetweenUpgrades" 	"0"
+		"RequiredLevel"				"0"
 		"HasInnateModifiers"		"1"
 
 		"AbilitySpecial"

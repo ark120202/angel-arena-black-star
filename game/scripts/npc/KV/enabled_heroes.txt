@@ -100,6 +100,7 @@
 		"npc_dota_hero_arc_warden"						"1"
 		"npc_dota_hero_abyssal_underlord"				"1"
 		"npc_dota_hero_magnataur"						"1"
+		"npc_dota_hero_monkey_king"						"1"
 
 		"npc_dota_hero_kunkka"							"1"
 		"npc_dota_hero_ogre_magi"						"1"
@@ -127,7 +128,7 @@
 		"npc_arena_hero_zen_gehraz"						"1"
 		"npc_arena_hero_stegius"						"1"
 		"npc_arena_hero_mirratie"						"1"
-		"npc_dota_hero_freya"							"1"
+		//"npc_dota_hero_freya"							"1"
 	}
 	"NoAbilities"
 	{
@@ -229,6 +230,7 @@
 		"npc_dota_hero_arc_warden"						"1"
 		"npc_dota_hero_abyssal_underlord"				"1"
 		"npc_dota_hero_magnataur"						"1"
+		"npc_dota_hero_monkey_king"						"1"
 
 		"npc_dota_hero_kunkka"							"1"
 		"npc_dota_hero_ogre_magi"						"1"
@@ -247,6 +249,6 @@
 		"npc_dota_hero_razor"							"1"
 		
 		"npc_arena_hero_shinobu"						"1"
-		"npc_dota_hero_freya"							"1"
+		//"npc_dota_hero_freya"							"1"
 	}
 }

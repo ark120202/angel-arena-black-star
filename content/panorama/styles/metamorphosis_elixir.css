@@ -27,7 +27,7 @@
 	height: 100%;
 	width: 100%;
 	vertical-align: bottom;
-	background-color: rgba(0,0,0,240);
+	background-color: rgba(0,0,0,0.95);
 	flow-children: down;
 }
 

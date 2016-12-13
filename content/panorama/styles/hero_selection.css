@@ -81,7 +81,7 @@
 	height: 940px;
 	width: 80%;
 	vertical-align: bottom;
-	background-color: rgba(0,0,0,240);
+	background-color: rgba(0,0,0,0.95);
 	flow-children: down;
 }
 
@@ -141,7 +141,7 @@
 	height: 140px;
 	width: 80%;
 	flow-children: right;
-	background-color: rgba(0,0,0,252);
+	background-color: rgba(0,0,0,0.99);
 }
 
 #GameModeInfoPanel
@@ -411,7 +411,7 @@
 	height: 100%;
 	width: 250px;
 	margin: 5px;
-	background-color: rgba(0, 0, 0, 240);
+	background-color: rgba(0, 0, 0, 0.95);
 	box-shadow: -10px -10px 20px 20px black;
 }
 
@@ -435,7 +435,7 @@
 	height: 100%;
 	width: 20%;
 	horizontal-align: right;
-	background-color: rgba(0,0,0,252);
+	background-color: rgba(0,0,0,0.99);
 	flow-children: down;
 }
 
@@ -532,8 +532,8 @@
 {
 	align: center center;
 	flow-children: right;
-	background-color: rgba(0,0,0,220);
-	box-shadow: -10px -10px 20px 20px rgba(0,0,0,220);
+	background-color: rgba(0,0,0,0.86);
+	box-shadow: -10px -10px 20px 20px rgba(0,0,0,0.86);
 }
 .AbilitiesLineSplitter
 {
@@ -690,7 +690,7 @@
 {
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 40, 100, 245);
+	background-color: rgba(0, 40, 100, 0.96);
 	visibility: collapse;
 }
 
@@ -717,10 +717,10 @@
 .ShowBGMode #SelectionStatusPanel,
 {
 	//252
-	background-color: rgba(0,0,0,170);
+	background-color: rgba(0,0,0,0.666666);
 }
 .ShowBGMode #HeroListBasePanel
 {
 	//240
-	background-color: rgba(0,0,0,130);
+	background-color: rgba(0,0,0,0.5);
 }

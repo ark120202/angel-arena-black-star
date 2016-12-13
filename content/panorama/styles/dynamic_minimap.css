@@ -1,15 +1,8 @@
 .DynamicMinimapRoot
 {
-	width: 280px;
-	height: 280px;
 	align: left bottom;
-	margin-left: 8px;
-}
-
-.AspectRatio5x4 .DynamicMinimapRoot
-{
-	width: 260px;
-	height: 260px;
+	margin-left: -4px;
+	margin-bottom: -4px;
 }
 
 .icon

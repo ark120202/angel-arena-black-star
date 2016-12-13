@@ -102,9 +102,9 @@ function dynamicSort(property) {
 
 function GetItemCountInInventory(nEntityIndex, itemName, bStash) {
 	var counter = 0
-	var endPoint = 5
+	var endPoint = 8
 	if (bStash)
-		endPoint = 11
+		endPoint = 14
 	for (var i = endPoint; i >= 0; i--) {
 		var item = Entities.GetItemInSlot(nEntityIndex, i)
 		if (Abilities.GetAbilityName(item) == itemName)
@@ -118,9 +118,9 @@ function GetItemCountInCourier(nEntityIndex, itemName, bStash) {
 	if (courier == null)
 		return 0
 	var counter = 0
-	var endPoint = 5
+	var endPoint = 8
 	if (bStash)
-		endPoint = 11
+		endPoint = 14
 	for (var i = endPoint; i >= 0; i--) {
 		var item = Entities.GetItemInSlot(courier, i)
 		if (Abilities.GetAbilityName(item) == itemName && Items.GetPurchaser(item) == nEntityIndex)

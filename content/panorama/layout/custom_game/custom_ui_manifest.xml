@@ -18,7 +18,6 @@
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/playermessages.xml" />
 		<CustomUIElement type="HudTopBar" layoutfile="file://{resources}/layout/custom_game/arena_top_scoreboard.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_game_info.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/kills.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/holdout.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/panorama_shop.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/ability_shop.xml" />
@@ -31,10 +30,8 @@
 
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hero_selection.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/metamorphosis_elixir.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hell_hero_change.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/heaven_hero_change.xml" />
 
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/player_profiles.xml" />
+		<!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/player_profiles.xml" /> -->
 
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/modmaker/modmaker.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_attachments.xml" /> 

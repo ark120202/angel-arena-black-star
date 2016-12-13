@@ -66,18 +66,7 @@
 			<Image src="file://{images}/heroes/npc_arena_hero_mirratie.png" />
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_mirratie.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_mirratie.png" />
-
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_beastmaster_boar_base.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_beastmaster_hawk_base.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_courier_team2.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_courier_team3.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_neutral_easy_variant1.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_neutral_hard_variant1.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_neutral_medium_variant1.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_warlock_golem_base.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_warlock_golem_scepter_base.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_warlock_minigolem.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_queenofblades_army_unit.png" />
+			
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_central.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_heaven.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_hell.png" />

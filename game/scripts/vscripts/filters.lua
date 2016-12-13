@@ -8,7 +8,7 @@ end
 function GameMode:ExecuteOrderFilter(filterTable)
 	local order_type = filterTable.order_type
 	local issuer_player_id_const = filterTable.issuer_player_id_const
-	if order_type == DOTA_UNIT_ORDER_SELL_ITEM or order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
+	if order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
 		return false
 	end
 	if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
@@ -29,58 +29,22 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			table.insert(units, u)
 		end
 	end
-	for _,unit in ipairs(units) do
-		if unit:GetUnitName() == "npc_dota_courier" then
-			local palyerTeam = PlayerResource:GetTeam(issuer_player_id_const)
-			if order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION then
-				PlayerTables:SetTableValue("arena", "courier_owner" .. palyerTeam, issuer_player_id_const)
-				local point = Vector(filterTable.position_x, filterTable.position_y, 0)
-				if CourierTimer[palyerTeam] then
-					Timers:RemoveTimer(CourierTimer[palyerTeam])
-				end
-				CourierTimer[palyerTeam] = Timers:CreateTimer(function()
-					if (unit:GetAbsOrigin() - point):Length2D() < 10 then
-						PlayerTables:SetTableValue("arena", "courier_owner" .. palyerTeam, -1)
-					else
-						return 0.03
-					end
-				end)
-			elseif order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET and (abilityname == "courier_transfer_items" or abilityname == "courier_take_stash_and_transfer_items") then
-				local hero = PlayerResource:GetSelectedHeroEntity(issuer_player_id_const)
-				local can_continue = false
-				if abilityname == "courier_take_stash_and_transfer_items" then
-					for i = 6, 11 do
-						local item = hero:GetItemInSlot(i)
-						if item and item:GetOwner() == hero then
-							can_continue = true
-						end
-					end
-				end
-				if not can_continue then
-					for i = 0, 5 do
-						local item = unit:GetItemInSlot(i)
-						if item and item:GetPurchaser() == hero then
-							can_continue = true
-						end
-					end
-				end
-				if can_continue then
-					PlayerTables:SetTableValue("arena", "courier_owner" .. palyerTeam, issuer_player_id_const)
-					if CourierTimer[palyerTeam] then
-						Timers:RemoveTimer(CourierTimer[palyerTeam])
-					end
-					CourierTimer[palyerTeam] = Timers:CreateTimer(function()
-						if (unit:GetAbsOrigin() - hero:GetAbsOrigin()):Length2D() < 225 then
-							PlayerTables:SetTableValue("arena", "courier_owner" .. palyerTeam, -1)
-						else
-							return 0.03
-						end
-					end)
-				end
-			elseif abilityname ~= "courier_burst" then
-				PlayerTables:SetTableValue("arena", "courier_owner" .. palyerTeam, -1)
-			end
+	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability then
+		if ability:GetAbilityName() == "item_pocket_riki" then
+			local cost = Kills:GetGoldForKill(ability.RikiContainer)
+			TrueKill(units[1], ability, ability.RikiContainer)
+			Kills:ClearStreak(ability.RikiContainer:GetPlayerID())
+			units[1]:RemoveItem(ability)
+			units[1]:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
+			units[1]:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
+			units[1]:RemoveModifierByName("modifier_invisible")
+			GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, units[1]:GetTeamNumber()) 
+			UTIL_Remove(ability)
+			Gold:AddGoldWithMessage(units[1], cost, issuer_player_id_const)
 		end
+		return false
+	end
+	for _,unit in ipairs(units) do
 		if unit:IsHero() or unit:IsConsideredHero() then
 			GameMode:TrackInventory(unit)
 			if unit:IsRealHero() then

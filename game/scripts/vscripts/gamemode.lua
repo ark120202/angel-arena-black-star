@@ -158,7 +158,7 @@ end
 function GameMode:OnHeroInGame(hero)
 	DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 	Timers:CreateTimer(function()
-		if HeroSelection.SelectionEnd and not hero:HasModifier("modifier_arc_warden_tempest_double") and hero:IsRealHero() then
+		if not hero:HasModifier("modifier_arc_warden_tempest_double") and hero:IsRealHero() then
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
 				local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
 				TEAMS_COURIERS[hero:GetTeamNumber()] = true
@@ -202,7 +202,7 @@ function GameMode:OnGameInProgress()
 	GAMEMODE_INITIALIZATION_STATUS[3] = true
 	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
 		Duel:CreateGlobalTimer()
-		ContainersHelper:CreateShops()
+		--ContainersHelper:CreateShops()
 		Spawner:RegisterTimers()
 	else
 		Holdout:Start()
@@ -237,7 +237,6 @@ function GameMode:InitGameMode()
 		gold = {},
 		gamemode_settings = {
 			kill_goals = POSSIBLE_KILL_GOALS,
-			xp_table = XP_PER_LEVEL_TABLE,
 			gamemode = DOTA_ACTIVE_GAMEMODE,
 			gamemode_type = DOTA_ACTIVE_GAMEMODE_TYPE,
 			gamemode_map = ARENA_ACTIVE_GAMEMODE_MAP,
@@ -318,7 +317,7 @@ function GameMode:InitGameMode()
 		end,
     })]]
 	Containers:SetItemLimit(50)
-	Containers:UsePanoramaInventory(true)
+	Containers:UsePanoramaInventory(false)
 	HeroSelection:PrepareTables()
 	PanoramaShop:InitializeItemTable()
 	DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')

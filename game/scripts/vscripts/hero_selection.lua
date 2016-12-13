@@ -519,7 +519,7 @@ function TransformUnitClass(unit, classTable)
 		end
 	end
 	if ARENA_ACTIVE_GAMEMODE_MAP ~= ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
-		for i = 1, 16 do
+		for i = 1, 24 do
 			if classTable["Ability" .. i] and classTable["Ability" .. i] ~= "" then
 				PrecacheItemByNameAsync(classTable["Ability" .. i], function() end)
 				AddNewAbility(unit, classTable["Ability" .. i])

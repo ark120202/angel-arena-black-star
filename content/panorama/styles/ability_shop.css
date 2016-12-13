@@ -15,7 +15,7 @@
 	height: 35px;
 	margin-top: 5px;
 	margin-left: 210px;
-	background-color: rgba(0,0,0,250);
+	background-color: rgba(0,0,0,0.98);
 	border: 2px solid white;
 	border-radius: 6px;
 }
@@ -192,7 +192,7 @@
 	color: gold;
 	font-size: 22px;
 	font-weight: bold;
-	background-color: rgba(0,0,0,240);
+	background-color: rgba(0,0,0,0.95);
 }
 #SellReturn
 {
@@ -213,7 +213,7 @@
 	color: gold;
 	font-size: 20px;
 	font-weight: bold;
-	background-color: rgba(0,0,0,240);
+	background-color: rgba(0,0,0,0.95);
 	visibility: collapse;
 }
 
@@ -225,7 +225,7 @@
 	color: cyan;
 	font-size: 20px;
 	font-weight: bold;
-	background-color: rgba(0,0,0,240);
+	background-color: rgba(0,0,0,0.95);
 	visibility: collapse;
 }
 .Purchased #AbilityLevel
@@ -342,7 +342,7 @@
 #HeroAbilitiesRoot
 {
 	align: center center;
-	background-color: rgba(0,0,0,200);
+	background-color: rgba(0,0,0,0.8);
 	flow-children: right;
 }
 

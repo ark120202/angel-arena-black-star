@@ -3,7 +3,7 @@ if ContainersHelper == nil then
 	ContainersHelper._OpenedContainers = {}
 end
 
-function ContainersHelper:CreateShops()
+--[[function ContainersHelper:CreateShops()
 	local SecretShop = CreateItemOnPositionSync(Entities:FindByName(nil, "target_mark_containers_shop_secret"):GetAbsOrigin(), nil) 
 	SecretShop:SetModel("models/courier/smeevil_magic_carpet/smeevil_magic_carpet.vmdl")
 	SecretShop:SetForwardVector(Vector(0, -1, 0))
@@ -204,7 +204,7 @@ function ContainersHelper:CreateLootBox(entity, items)
 		end,
 		OnLeftClick = function(playerID, container, unit, item, slot)
 			local forceActivatable = SHARED_CONTAINERS_USABLE_ITEMS[item:GetAbilityName()]
-
+				
 			if forceActivatable then -- or (not item:IsPassive() and item:GetShareability() == ITEM_FULLY_SHAREABLE and forceActivatable ~= false)) then
 				item:SetOwner(unit)
 				container:ActivateItem(unit, item, playerID)
@@ -212,4 +212,58 @@ function ContainersHelper:CreateLootBox(entity, items)
 		end
 	})
 	return cont
+end]]
+
+function ContainersHelper:CreateLootBox(position, items)
+	for i,v in ipairs(items) do
+		local item = CreateItem(v, nil, nil)
+		CreateItemOnPositionSync(position, item)
+		item:LaunchLoot(false, 300, 0.6, position + RotatePosition(Vector(0,0,0),QAngle(0,i*(360/#items),0),Vector(80,80)))
+	end
+	--[[local cont = Containers:CreateContainer({
+		layoutFile = "file://{resources}/layout/custom_game/containers/alt_container_with_timer.xml",
+		RemainingDuration = 60,
+		layout =      ContainersHelper:CreateItemGrid(#items),
+		headerText =  "containers_loot_boxes_box_name",
+		buttons =     {"#containers_loot_boxes_take_all"},
+		position =    "75% 60%",
+		OnClose = function(playerID, container)
+			if next(container:GetAllOpen()) == nil and #container:GetAllItems() == 0 then
+				container:GetEntity():RemoveSelf()
+				container:Delete()
+			end
+		end,
+		closeOnOrder= true,
+		items = items,
+		entity = entity,
+		range = 150,
+		OnEntityOrder = function(playerID, container, unit, target)
+			if unit and unit:IsAlive() and unit:IsRealHero() and not unit:HasModifier("modifier_arc_warden_tempest_double") then
+				container:Open(playerID)
+				unit:Stop()
+			end
+		end,
+		OnButtonPressed = function(playerID, container, unit, button, buttonName)
+			if button == 1 then
+				local items = container:GetAllItems()
+				for _,item in ipairs(items) do
+					if unit:HasRoomForItem(item:GetName(), false, false) ~= 4 then
+						container:RemoveItem(item)
+						Containers:AddItemToUnit(unit,item)
+					end
+				end
+
+				container:Close(playerID)
+			end
+		end,
+		OnLeftClick = function(playerID, container, unit, item, slot)
+			local forceActivatable = SHARED_CONTAINERS_USABLE_ITEMS[item:GetAbilityName()]
+
+			if forceActivatable then -- or (not item:IsPassive() and item:GetShareability() == ITEM_FULLY_SHAREABLE and forceActivatable ~= false)) then
+				item:SetOwner(unit)
+				container:ActivateItem(unit, item, playerID)
+			end
+		end
+	})
+	return cont]]
 end

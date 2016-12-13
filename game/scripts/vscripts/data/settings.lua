@@ -5,8 +5,8 @@ ENABLE_HERO_RESPAWN = true              -- Should the heroes automatically respa
 UNIVERSAL_SHOP_MODE = false             -- Should the main shop contain Secret Shop items as well as regular items
 ALLOW_SAME_HERO_SELECTION = true        -- Should we let people select the same hero as each other
 
-HERO_SELECTION_TIME = 0                 -- How long should we let people select their hero?
-PRE_GAME_TIME = 99999                   -- How long after people select their heroes should the horn blow and the game start?
+HERO_SELECTION_TIME = -1                -- How long should we let people select their hero?
+PRE_GAME_TIME = 999999                      -- How long after people select their heroes should the horn blow and the game start?
 POST_GAME_TIME = 60.0                   -- How long should we let people look at the scoreboard before closing the server automatically?
 TREE_REGROW_TIME = 60.0                 -- How long should it take individual trees to respawn after being cut down/destroyed?
 
@@ -43,13 +43,6 @@ XP_PER_LEVEL_TABLE[1] = 0
 for i=2, 300 do
   	XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i-1] + i*100
 end
-
-XP_PER_LEVEL_TABLE[7] = XP_PER_LEVEL_TABLE[6] + 600 
-XP_PER_LEVEL_TABLE[8] = XP_PER_LEVEL_TABLE[7] + 600 
-XP_PER_LEVEL_TABLE[9] = XP_PER_LEVEL_TABLE[8] + 1200
-XP_PER_LEVEL_TABLE[11] = XP_PER_LEVEL_TABLE[10] + 600 
-XP_PER_LEVEL_TABLE[12] = XP_PER_LEVEL_TABLE[11] + 2200
-XP_PER_LEVEL_TABLE[13] = XP_PER_LEVEL_TABLE[12] + 800
 
 ENABLE_FIRST_BLOOD = false              -- Should we enable first blood for the first kill in this game?
 HIDE_KILL_BANNERS = true                -- Should we hide the kill banners that show when a player is killed?

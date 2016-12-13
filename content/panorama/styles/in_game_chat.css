@@ -81,7 +81,7 @@
 	box-shadow: -5px -5px 10px 10px black;
 	visibility: collapse;
 	border-radius: 20px;
-	background-color: rgba(0, 0, 0, 190);
+	background-color: rgba(0, 0, 0, 0.75);
 }
 
 .CustomChatLineNew
@@ -117,7 +117,7 @@
 	margin-right: 4px;
 	font-weight: bold;
 	align: center center;
-	background-color: rgba(0, 0, 0, 190);
+	background-color: rgba(0, 0, 0, 0.75);
 	border-radius: 5px;
 	padding: 3px;
 }

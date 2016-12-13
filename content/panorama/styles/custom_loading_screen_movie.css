@@ -521,7 +521,7 @@
 	width: 375px;
 	margin-top: -207px;
 	margin-right: 20px;
-	background-color: rgba(0,0,0,200);
+	background-color: rgba(0,0,0,0.8);
 	border: 2px solid cyan;
 	flow-children: down;
 

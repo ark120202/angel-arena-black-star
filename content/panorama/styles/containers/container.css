@@ -513,84 +513,7 @@
 
 
 
-
-
-
-#inventory_items .ItemPanel
-{
-  //x1.075
-  //width: 66px;
-  //height: 48px;
-  width: 70.95px;
-  height: 51.6px;
-  margin-left: 3px;
-  margin-right: 3px;
-  box-shadow: none;
-  border-color: rgba(80, 80, 80, 255);
-  border-style: solid;
-  border-width: 2px 3px;
-}
-
-#inventory_items .no_item
-{
-  background-color: rgba(10,20,25,230);
-}
-
-#inventory_items .no_item #ItemImage
-{
-  opacity: 0;
-}
-
-#inventory_items #Hotkey
-{
-  margin-top: -2px;
-  margin-left: -1px;
-}
-
-.MinimalisticHudDisabled #inventory_items .no_item
-{
-  background-color: none;
-}
-
-.MinimalisticHudDisabled #inventory_items .no_item #ItemImage
-{
-  opacity: 1;
-}
-
-.MinimalisticHudDisabled #inventory_items #Hotkey
-{
-  margin-top: 0px;
-  margin-left: -1px;
-}
- 
-.MinimalisticHudDisabled #inventory_items .ItemPanel
-{
-  box-shadow: #000000ff 1px 1px 2px 2px;
-  border-width: 0px !important;
-}
 //Different Aspect Ratio support
-
-
-.AspectRatio5x4 #stash_row_host
-{
-  margin-bottom: 235px;
-  transform: scale3d(.75, .75, 1);
-}
-
-.AspectRatio4x3 #stash_row_host
-{
-  margin-bottom: 255px;
-}
-
-.AspectRatio16x9 #stash_row_host
-{
-  margin-bottom: 160px;
-}
-
-.AspectRatio16x10 #stash_row_host
-{
-  margin-bottom: 160px;
-}
 
 .AspectRatio16x9 #inventory_items.Flipped
 {
@@ -640,17 +563,17 @@
   margin-right: 229px;
 }
 
-.MinimalisticHudDisabled #stash_row_host
+#stash_row_host
 {
   margin-bottom: 237px;
 }
 
-.AspectRatio4x3.MinimalisticHudDisabled #stash_row_host
+.AspectRatio4x3 #stash_row_host
 {
   margin-bottom: 253px;
 }
 
-.AspectRatio16x10.MinimalisticHudDisabled #stash_row_host
+.AspectRatio16x10 #stash_row_host
 {
   margin-bottom: 218px;
 }
