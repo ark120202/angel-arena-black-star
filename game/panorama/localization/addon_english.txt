@@ -217,5 +217,9 @@
 		"custom_runes_rune_8_text"								"Increases attack speed by 90 and makes creeps give x2 experience"
 		"custom_runes_rune_9_title"								"Vibration"
 		"custom_runes_rune_9_text"								"Pushes all enemies from you in 350 radius"
+
+		
+		"DOTA_HUD_PlayerDeniedSelf"			"{s:victim_name} {s:denied_icon} Denied"
+		"DOTA_HUD_PlayerDenied"		"{s:killer_name} {s:denied_icon} Denied {s:victim_name}"
 	}
 }

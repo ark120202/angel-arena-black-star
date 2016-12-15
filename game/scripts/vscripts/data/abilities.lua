@@ -152,3 +152,9 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
 	["freya_pain_reflection"] = true,
 }
+
+ARENA_NOT_CASTABLE_ABILITIES = {
+	["techies_land_mines"] = GetAbilitySpecial("techies_land_mines", "radius"),
+	["techies_stasis_trap"] = GetAbilitySpecial("techies_stasis_trap", "activation_radius"),
+	["techies_remote_mines"] = GetAbilitySpecial("techies_land_mines", "radius"),
+}

@@ -7,24 +7,32 @@ var DOTA_ACTIVE_GAMEMODE = -1,
 	DOTA_ACTIVE_GAMEMODE_TYPE = -1,
 	hud = GetDotaHud();
 
-function DisableDotaPanoramaElement(id) {
-	var element = hud.FindChildTraverse(id)
-	if (element != null)
-		element.DeleteAsync(0);
-}
-
 function UpdatePanoramaHUD() {
 	var unit = Players.GetLocalPlayerPortraitUnit()
-	hud.FindChildTraverse("UnitNameLabel").text = $.Localize(GetHeroName(unit));
+	hud.FindChildTraverse("UnitNameLabel").text = $.Localize(GetHeroName(unit)).toUpperCase();
 	var inventory_items = hud.FindChildTraverse("inventory_items")
 	for (var i = 0; i <= 14; i++) {
 		var item = Entities.GetItemInSlot(unit, i)
 		var custom_entity_value = GameUI.CustomUIConfig().custom_entity_values[item];
-		if (item > -1 && custom_entity_value != null && custom_entity_value.ability_texture != null)
-			inventory_items.FindChildTraverse("inventory_slot_" + i).FindChildTraverse("ItemImage").SetImage(TransformTextureToPath(custom_entity_value.ability_texture));
+		if (item > -1) {
+			if (custom_entity_value != null && custom_entity_value.ability_texture != null) {
+				var itemPanel = inventory_items.FindChildTraverse("inventory_slot_" + i)
+				if (itemPanel != null)
+					itemPanel.FindChildTraverse("ItemImage").SetImage(TransformTextureToPath(custom_entity_value.ability_texture));
+			}
+		}
 	}
-
-	hud.FindChildTraverse("HUDSkinAbilityContainerBG").style.width = (hud.FindChildTraverse("abilities").actuallayoutwidth + 16) + "px";
+	$("#rubick_personality_steal_hud").visible = false;
+	for (var i = 0; i < Entities.GetNumBuffs(unit); ++i) {
+		var buffSerial = Entities.GetBuff(unit, i);
+		if (buffSerial != -1) {
+			var buffName = Buffs.GetName(unit, buffSerial)
+			if (ONCLICK_PURGABLE_MODIFIERS.indexOf(buffName) != -1) {
+				$("#rubick_personality_steal_hud").visible = true;
+				$("#rubick_personality_steal_hud").buffSerial = buffSerial;
+			}
+		}
+	}
 
 	var attribute_bonus_arena = Entities.GetAbilityByName(unit, "attribute_bonus_arena")
 	hud.FindChildTraverse("level_stats_frame").visible = attribute_bonus_arena != -1 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID()) && Entities.GetAbilityPoints(unit) > 0;
@@ -43,14 +51,28 @@ function UpdatePanoramaHUD() {
 				}
 			}
 		}
+
+	hud.FindChildTraverse("HUDSkinAbilityContainerBG").style.width = (hud.FindChildTraverse("abilities").actuallayoutwidth + 16) + "px";
+	hud.FindChildTraverse("StatDrawerTopRight").style.marginLeft = (hud.FindChildTraverse("abilities").actuallayoutwidth + 146) + "px";
+
+	var minimap = hud.FindChildTraverse("minimap_block");
+	$("#DynamicMinimapRoot").style.height = (minimap.desiredlayoutheight + 8) + "px";
+	$("#DynamicMinimapRoot").style.width = (minimap.desiredlayoutwidth + 8) + "px";
+
+	var pcs = hud.FindChildTraverse("PortraitContainer").GetPositionWithinWindow()
+	if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
+		$("#rubick_personality_steal_hud").style.position = pcs.x + "px " + pcs.y + "px 0"
 }
 
 function AutoUpdatePanoramaHUD() {
-	$.Schedule(0.1, AutoUpdatePanoramaHUD)
+	$.Schedule(0.2, AutoUpdatePanoramaHUD)
 	UpdatePanoramaHUD();
 }
 
 function HookPanoramaPanels() {
+	hud.FindChildTraverse("QuickBuyRows").visible = false;
+	hud.FindChildTraverse("shop").visible = false;
+	hud.FindChildTraverse("RadarButton").visible = false;
 	var shopbtn = hud.FindChildTraverse("ShopButton")
 	shopbtn.FindChildTraverse("BuybackHeader").visible = false;
 	shopbtn.ClearPanelEvent("onactivate")
@@ -68,22 +90,103 @@ function HookPanoramaPanels() {
 	hud.FindChildTraverse("StatBranch").ClearPanelEvent("onmouseout")
 	hud.FindChildTraverse("StatBranch").hittestchildren = false;
 	//hud.FindChildTraverse("StatBranchGraphics").hittestchildren = false;
-	hud.FindChildTraverse("QuickBuyRows").visible = false;
 
-	hud.FindChildTraverse("LevelUpTab").ClearPanelEvent("onactivate")
-	hud.FindChildTraverse("LevelUpTab").SetPanelEvent("onactivate", function() {
+	var level_stats_frame = hud.FindChildTraverse("level_stats_frame")
+	level_stats_frame.ClearPanelEvent("onmouseover")
+	var StatsLevelUpTab = level_stats_frame.FindChildTraverse("LevelUpTab")
+	StatsLevelUpTab.ClearPanelEvent("onmouseover")
+	StatsLevelUpTab.ClearPanelEvent("onmouseout")
+	StatsLevelUpTab.ClearPanelEvent("onactivate")
+	StatsLevelUpTab.SetPanelEvent("onactivate", function() {
 		var unit = Players.GetLocalPlayerPortraitUnit()
 		var attribute_bonus_arena = Entities.GetAbilityByName(unit, "attribute_bonus_arena")
-
-		if (Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID())) {
+		if (Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID()))
 			Abilities.AttemptToUpgrade(attribute_bonus_arena);
-		}
 	})
+	hud.FindChildTraverse("combat_events").FindChildTraverse("ToastManager").visible = true;
+	hud.FindChildTraverse("HudChat").FindChildTraverse("ChatLinesContainer").visible = false;
 }
 
+String.prototype.encodeHTML = function() {
+	return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+};
+
+function CreateCustomToast(data) {
+	var lastLine = $("#CustomToastManager").GetChild(0);
+	var row = $.CreatePanel("Panel", $("#CustomToastManager"), "");
+	row.BLoadLayoutSnippet("ToastPanel")
+	row.AddClass("ToastPanel")
+	var rowText = "";
+	var CreateHeroElements = function(id) {
+		var playerColor = Players.GetPlayerColor(id).toString(16)
+		if (playerColor != null) {
+			playerColor = "#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2)
+		} else {
+			playerColor = "#000000";
+		}
+		return "<img src='" + TransformTextureToPath(GetPlayerHeroName(id), "icon") + "' class='CombatEventHeroIcon'/> <font color='" + playerColor + "'>" + Players.GetPlayerName(id).encodeHTML() + "</font>"
+	}
+
+	if (data.type == "kill") {
+		var byNeutrals = data.killerPlayer == null
+		var isSelfKill = data.victimPlayer == data.killerPlayer
+		var isAllyKill = !byNeutrals && Players.GetTeam(data.victimPlayer) == Players.GetTeam(data.killerPlayer)
+		var isVictim = data.victimPlayer == Game.GetLocalPlayerID()
+		var isKiller = data.killerPlayer == Game.GetLocalPlayerID()
+		var teamVictim = byNeutrals || Players.GetTeam(data.victimPlayer) == Players.GetTeam(Game.GetLocalPlayerID())
+		var teamKiller = !byNeutrals && Players.GetTeam(data.killerPlayer) == Players.GetTeam(Game.GetLocalPlayerID())
+		row.SetHasClass("AllyEvent", teamKiller)
+		row.SetHasClass("EnemyEvent", teamVictim)
+		row.SetHasClass("LocalPlayerInvolved", isVictim || isKiller)
+		row.SetHasClass("LocalPlayerKiller", isKiller)
+		row.SetHasClass("LocalPlayerVictim", isVictim)
+		if (isKiller)
+			Game.EmitSound("notification.self.kill")
+		else if (isVictim)
+			Game.EmitSound("notification.self.death")
+		else if (teamKiller)
+			Game.EmitSound("notification.teammate.kill")
+		else if (teamVictim)
+			Game.EmitSound("notification.teammate.death")
+		if (isSelfKill) {
+			Game.EmitSound("notification.self.kill")
+			rowText = $.Localize("#DOTA_HUD_PlayerDeniedSelf")
+		} else if (isAllyKill) {
+			rowText = $.Localize("#DOTA_HUD_PlayerDenied")
+		} else {
+			if (byNeutrals) {
+				rowText = $.Localize("#npc_dota_neutral_creep")
+			} else {
+				rowText = "{s:killer_name}"
+			}
+			rowText = rowText + " {s:killed_icon} {s:victim_name} {s:gold}";
+		}
+	} else if (data.type == "rune_") {
+
+		/*if (lastLine != null) {
+			$("#CustomToastManager").MoveChildBefore(row, lastLine);
+		}*/
+	}
+
+	rowText = rowText.replace("{s:denied_icon}", "<img class='DeniedIcon'/>").replace("{s:killed_icon}", "<img class='CombatEventKillIcon'/>");
+	if (data.victimPlayer != null)
+		rowText = rowText.replace("{s:victim_name}", CreateHeroElements(data.victimPlayer))
+	if (data.killerPlayer != null)
+		rowText = rowText.replace("{s:killer_name}", CreateHeroElements(data.killerPlayer))
+	if (data.killerPlayer != null)
+	rowText = rowText.replace("{s:killer_name}", CreateHeroElements(data.killerPlayer))
+	if (data.gold != null)
+		rowText = rowText.replace("{s:gold}", "<font color='gold'>" + data.gold + "</font> <img class='CombatEventGoldIcon' />")
+
+	row.FindChildTraverse("ToastLabel").text = rowText
+	$.Schedule(10, function() {
+		row.AddClass("Collapsed");
+		row.DeleteAsync(2)
+	})
+};
+
 (function() {
-	//GameUI.SetCameraDistance(-1)
-	HookPanoramaPanels()
+	HookPanoramaPanels();
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
 			DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
@@ -94,8 +197,8 @@ function HookPanoramaPanels() {
 			DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
 		}
 	})
+	_DynamicMinimapSubscribe($("#DynamicMinimapRoot"));
 
-	DisableDotaPanoramaElement("RadarButton")
-	AutoUpdatePanoramaHUD()
-		//GameEvents.Subscribe("create_toast", js_value funcVal)
+	AutoUpdatePanoramaHUD();
+	GameEvents.Subscribe("create_custom_toast", CreateCustomToast);
 })()

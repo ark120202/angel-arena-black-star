@@ -18,8 +18,8 @@ function GameMode:ExecuteOrderFilter(filterTable)
 	local target = EntIndexToHScript(filterTable.entindex_target)
 	local ability = EntIndexToHScript(filterTable.entindex_ability)
 	local abilityname
-	if ability and ability.GetName then
-		abilityname = ability:GetName()
+	if ability and ability.GetAbilityName then
+		abilityname = ability:GetAbilityName()
 	end
 	local entindexes_units = filterTable.units
 	local units = {}
@@ -30,27 +30,44 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		end
 	end
 	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability then
-		if ability:GetAbilityName() == "item_pocket_riki" then
-			local cost = Kills:GetGoldForKill(ability.RikiContainer)
+		local cost = ability:GetCost()
+		if GameRules:GetGameTime() - ability:GetPurchaseTime() > 10 then
+			cost = cost / 2
+		end
+		if abilityname == "item_pocket_riki" then
+			cost = Kills:GetGoldForKill(ability.RikiContainer)
 			TrueKill(units[1], ability, ability.RikiContainer)
 			Kills:ClearStreak(ability.RikiContainer:GetPlayerID())
 			units[1]:RemoveItem(ability)
 			units[1]:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
 			units[1]:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
 			units[1]:RemoveModifierByName("modifier_invisible")
-			GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, units[1]:GetTeamNumber()) 
-			UTIL_Remove(ability)
-			Gold:AddGoldWithMessage(units[1], cost, issuer_player_id_const)
+			GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, units[1]:GetTeamNumber())
 		end
+		UTIL_Remove(ability)
+		Gold:AddGoldWithMessage(units[1], cost, issuer_player_id_const)
 		return false
 	end
 	for _,unit in ipairs(units) do
 		if unit:IsHero() or unit:IsConsideredHero() then
 			GameMode:TrackInventory(unit)
 			if unit:IsRealHero() then
-				if order_type == DOTA_UNIT_ORDER_CAST_TARGET then
-					if ability then
-						local abilityname = ability:GetName()
+				if ability then
+					if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
+						if not Duel:IsDuelOngoing() and ARENA_NOT_CASTABLE_ABILITIES[abilityname] then
+							local orderVector = Vector(filterTable.position_x, filterTable.position_y, 0)
+							if type(ARENA_NOT_CASTABLE_ABILITIES[abilityname]) == "number" then
+								local ent1len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team2"):GetAbsOrigin()):Length2D()
+								local ent2len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team3"):GetAbsOrigin()):Length2D()
+								if ent1len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 or ent2len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 then
+									return false
+								end
+							end
+							if IsInBox(orderVector, Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()) then
+								return false
+							end
+						end
+					elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET then
 						if IsBossEntity(target) and table.contains(BOSS_BANNED_ABILITIES, abilityname) then
 							filterTable.order_type = DOTA_UNIT_ORDER_ATTACK_TARGET
 						end

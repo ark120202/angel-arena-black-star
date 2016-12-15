@@ -131,7 +131,13 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 	local settings = {}
 	table.merge(settings, RUNE_SETTINGS[runeType])
 	if unit.GetPlayerID then
-		GameRules:SendCustomMessageToTeam("custom_runes_rune_" .. runeType .. "_activated", unit:GetTeam(), unit:GetPlayerID(), -1)
+		CustomGameEventManager:Send_ServerToTeam(unit:GetTeam(), "create_custom_toast", {
+			type = "rune_pickup",
+			player = killer,
+			rune = runeType
+		})
+
+		--GameRules:SendCustomMessageToTeam("custom_runes_rune_" .. runeType .. "_activated", unit:GetTeam(), unit:GetPlayerID(), -1)
 		HeroVoice:OnRuneActivated(unit:GetPlayerID(), runeType)
 	end
 	if rune_multiplier then

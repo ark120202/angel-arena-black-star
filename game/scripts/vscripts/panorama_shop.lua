@@ -272,11 +272,13 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 	end
 	function HasAnyOfItemChildren(childItemName)
 		if not PanoramaShop.FormattedData[childItemName].Recipe then return false end
+		--if PanoramaShop:GetItemStockCount(team, childItemName) then return true end
 		local primary_items = GetAllPrimaryRecipeItems(childItemName)
 		table.removeByValue(primary_items, childItemName)
-		local stocks = PanoramaShop:GetItemStockCount(team, name)
+
 		for _,v in ipairs(primary_items) do
-			if FindItemInInventoryByName(unit, v, true) or GetKeyValue(v, "ItemPurchasableFilter") == 0 or GetKeyValue(v, "ItemPurchasable") == 0 or (stocks and stocks < 1) then
+			local stocks = PanoramaShop:GetItemStockCount(team, v)
+			if FindItemInInventoryByName(unit, v, true) or GetKeyValue(v, "ItemPurchasableFilter") == 0 or GetKeyValue(v, "ItemPurchasable") == 0 or stocks then
 				return true
 			end
 		end

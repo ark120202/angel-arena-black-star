@@ -48,17 +48,6 @@ function HeroSelection:PrepareTables()
 				Heroes = {}
 			}
 		}
-		local players = GetAllPlayers(false)
-		local teamsPlayers = {}
-		for _,v in ipairs(players) do
-			local playerId = v:GetPlayerID()
-			local team = PlayerResource:GetTeam(playerId)
-			if not teamsPlayers[team] then teamsPlayers[team] = {} end
-			teamsPlayers[team][playerId] = {
-				hero="npc_dota_hero_abaddon",
-				status="hover",
-			}
-		end
 		for category,contents in pairsByKeys(ENABLED_HEROES) do
 			for name,enabled in pairsByKeys(contents) do
 				if enabled == 1 and category == "Selection" then
@@ -87,17 +76,6 @@ function HeroSelection:PrepareTables()
 				Heroes = {}
 			}
 		}
-		local players = GetAllPlayers(false)
-		local teamsPlayers = {}
-		for _,v in ipairs(players) do
-			local playerId = v:GetPlayerID()
-			local team = PlayerResource:GetTeam(playerId)
-			if not teamsPlayers[team] then teamsPlayers[team] = {} end
-			teamsPlayers[team][playerId] = {
-				hero="npc_dota_hero_abaddon",
-				status="hover",
-			}
-		end
 		if ENABLED_HEROES.NoAbilities then
 			for name,enabled in pairsByKeys(ENABLED_HEROES.NoAbilities) do
 				if enabled == 1 then
@@ -315,7 +293,7 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 			if bSkipPrecache then
 				SpawnHero()
 			else
-				PrecacheUnitByNameAsync(heroName, SpawnHero, playerId)
+				PrecacheUnitByNameAsync(GetKeyValue(heroName, "base_hero") or heroName, SpawnHero, playerId)
 			end
 		else
 			return 0.1

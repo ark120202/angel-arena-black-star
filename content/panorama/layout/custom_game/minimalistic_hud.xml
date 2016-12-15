@@ -2,18 +2,33 @@
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/minimalistic_hud.css" />
+		<include src="file://{resources}/styles/dynamic_minimap.css" />
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/util.js" />
 		<include src="file://{resources}/scripts/minimalistic_hud.js" />
 		<include src="file://{resources}/scripts/entity_tooltips.js" />
 	</scripts>
-
+	<snippets>
+		<snippet name="ToastPanel">
+			<Panel class="ToastPanel">
+				<Panel id="SlashContainer" hittest="false" hittestchildren="false">
+					<Panel id="TeamColorBar" />
+				</Panel>
+				<Panel id="ToastElements" >
+					<Label id="ToastLabel" html="true" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
 	<Panel hittest="false" class="base">
 		<Panel id="PlayerControls" hittest="false">
 			<!-- <Label id="PlayerControls_1x1" class="PlayerControlsButton" text="1x1" onactivate="GameEvents.SendCustomGameEventToServer('hud_buttons_show_duel1x1call', {})"/> -->
 			<!-- <Label class="PlayerControlsButton" text="?" onactivate="GameEvents.SendCustomGameEventToServer('hud_buttons_show_custom_game_info', {playerid: Game.GetLocalPlayerID()})"/> -->
 		</Panel>
-		<Panel id="ClickPurgableModifiersOverlay" />
+		<!-- <Panel id="ClickPurgableModifiersOverlay" /> -->
+		<Panel id="DynamicMinimapRoot" hittest="false" hittestchildren="false" />
+		<Panel id="CustomToastManager" hittest="false" hittestchildren="false" />
+		<DOTAAbilityImage id="rubick_personality_steal_hud" abilityname="rubick_personality_steal" onactivate="GameEvents.SendCustomGameEventToServer('modifier_clicked_purge', {unit: Players.GetLocalPlayerPortraitUnit(), modifier: 'modifier_rubick_personality_steal'});" onmouseover="$.DispatchEvent('DOTAShowBuffTooltip', $('#rubick_personality_steal_hud'), Players.GetLocalPlayerPortraitUnit(), $('#rubick_personality_steal_hud').buffSerial, Entities.IsEnemy(Players.GetLocalPlayerPortraitUnit()));" onmouseout="$.DispatchEvent('DOTAHideBuffTooltip', $('#rubick_personality_steal_hud'));"/>
 	</Panel>
 </root>

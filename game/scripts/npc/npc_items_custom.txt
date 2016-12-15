@@ -2127,7 +2127,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"							"%bonus_agility"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%movement_speed_percent_bonus"
 				}
 			}
@@ -2454,7 +2454,7 @@
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"							"%bonus_agility"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%movement_speed_percent_bonus"
 				}
 			}
@@ -2934,14 +2934,10 @@
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"							"%bonus_agility"
-					
-					//Attack speed from Yasha-derived items affect your illusions.
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"		"%bonus_attack_speed"
-					
-					//Movement speed from Yasha-derived items does not stack with itself but does stack with other percentage-based movement speed bonuses.
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%movement_speed_percent_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intellect"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"					"%bonus_agility"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%movement_speed_percent_bonus"
 				}
 			}
 
@@ -3146,12 +3142,12 @@
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"							"%bonus_agility"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"		"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%movement_speed_percent_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"					"%bonus_intellect"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"					"%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"					"%bonus_strength"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"						"%bonus_agility"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"		"%movement_speed_percent_bonus"
 				}
 			}
 
@@ -3388,7 +3384,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%movement_speed_percent_bonus"
 				}
 			}
@@ -3605,7 +3601,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%movement_speed_percent_bonus"
 				}
 			}
@@ -3797,7 +3793,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%movement_speed_percent_bonus"
 				}
 			}
@@ -4021,7 +4017,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%movement_speed_percent_bonus"
 				}
 			}
@@ -5842,6 +5838,17 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"AllowIllusionDuplicate"     "0"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_auto_sheepstick"
+					}
+				}
 				
 				"Properties"
 				{
@@ -5879,59 +5886,59 @@
 		}
 	}
 
-	"item_tree_banana"
-	{
-		"BaseClass"             		"item_banana"
-		"AbilityTextureName"			"item_banana"
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"10077"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"Model"							"models/props_gameplay/banana_prop_closed.vmdl"
-		"AbilityCastPoint"				"0"
-		//"AbilityCastRange"				"800"
-		"AbilityCooldown"				"1.0"
+	// "item_tree_banana"
+	// {
+	// 	"BaseClass"             		"item_datadriven"
+	// 	"AbilityTextureName"			"item_banana"
+	// 	// General
+	// 	//-------------------------------------------------------------------------------------------------------------
+	// 	"ID"							"10077"
+	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	// 	"Model"							"models/props_gameplay/banana_prop_closed.vmdl"
+	// 	"AbilityCastPoint"				"0"
+	// 	//"AbilityCastRange"				"800"
+	// 	"AbilityCooldown"				"1.0"
 
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"25"
-		"ItemQuality"					"component"
-		"ItemAliases"					"banana"
-		"SideShop"						"0"
-		"ItemStackable"					"1"
-		"ItemPurchasable"				"0"
-		"ItemPermanent"					"0"
-		"ItemInitialCharges"			"1"
-		"ItemDisplayCharges"			"1"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	// 	// Item Info
+	// 	//-------------------------------------------------------------------------------------------------------------
+	// 	"ItemCost"						"25"
+	// 	"ItemQuality"					"component"
+	// 	"ItemAliases"					"banana"
+	// 	"SideShop"						"0"
+	// 	"ItemStackable"					"1"
+	// 	"ItemPurchasable"				"0"
+	// 	"ItemPermanent"					"0"
+	// 	"ItemInitialCharges"			"1"
+	// 	"ItemDisplayCharges"			"1"
+	// 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
-		// Sounden
-		//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpRingShop"
-		"UIDropSound"					"Item.DropRingShop"
-		"WorldDropSound"				"Item.DropRingWorld"
+	// 	// Sounden
+	// 	//-------------------------------------------------------------------------------------------------------------			
+	// 	"UIPickupSound"					"Item.PickUpRingShop"
+	// 	"UIDropSound"					"Item.DropRingShop"
+	// 	"WorldDropSound"				"Item.DropRingWorld"
 
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slide_distance"		"400"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slide_duration"		"1.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"100"
-			}
-		}
-	}
+	// 	// Special	
+	// 	//-------------------------------------------------------------------------------------------------------------
+	// 	"AbilitySpecial"
+	// 	{
+	// 		"01"
+	// 		{
+	// 			"var_type"			"FIELD_INTEGER"
+	// 			"slide_distance"		"400"
+	// 		}
+	// 		"02"
+	// 		{
+	// 			"var_type"			"FIELD_FLOAT"
+	// 			"slide_duration"		"1.0"
+	// 		}
+	// 		"03"
+	// 		{
+	// 			"var_type"			"FIELD_INTEGER"
+	// 			"radius"			"100"
+	// 		}
+	// 	}
+	// }
 
 //TODO
 //	"item_tree_grapefruit"
@@ -6472,11 +6479,11 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"							"%bonus_agility"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"						"%bonus_intelligence"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"		"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%bonus_movement_speed_percentage"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%bonus_strength"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"					"%bonus_agility"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intelligence"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%bonus_movement_speed_percentage"
 				}
 			}
 
@@ -7989,7 +7996,7 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"							"%bonus_agility"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"						"%bonus_intelligence"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%bonus_movement_speed_percentage"
 				}
 			}
@@ -19077,7 +19084,8 @@
 					{
 						"ScriptFile"	"items/item_angel_wings.lua"
 						"Function"		"ChackAndSpendMana"
-						"Mana"			"%mana_per_second_pct * %mana_per_second_think"
+						"mana_per_second_pct"	"%mana_per_second_pct"
+						"mana_per_second_think"	"%mana_per_second_think"
 					}
 				}
 				
@@ -19088,7 +19096,8 @@
 					{
 						"ScriptFile"	"items/item_angel_wings.lua"
 						"Function"		"ChackAndSpendMana"
-						"Mana"			"%mana_per_second_pct * %mana_per_second_think"
+						"mana_per_second_pct"	"%mana_per_second_pct"
+						"mana_per_second_think"	"%mana_per_second_think"
 					}
 					"ApplyModifier"
 					{

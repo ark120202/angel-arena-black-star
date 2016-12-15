@@ -1338,7 +1338,7 @@
 			"modifier_tether_ally_aghanims"
 			{
 				"IsPurgable"		"0"
-				"IsHidden"			"1"
+				"IsHidden"			"0"
 				"Duration"	"%tether_duration"
 				
 				"Properties"
@@ -8452,8 +8452,13 @@
 			}
 			"08"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"				"FIELD_FLOAT"
 				"stack_growth_interval"	"1"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stack_duration"		"1.5"
 			}
 		}
 
@@ -8532,7 +8537,7 @@
 			"modifier_omniknight_degen_aura_arena_stack"
 			{
 				"IsDebuff"			"1"
-				"Duration"			"%stack_growth_interval + 0.5"
+				"Duration"			"%stack_duration"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%speed_bonus_per_stack_pct"
@@ -8576,8 +8581,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"heroes/hero_omniknight/select_units.lua"
-				"Function"		"SyncLevels"
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"LinkedAbilitiesSync"
 				"linked_ability" "omniknight_select_enemies"
 			}
 		}
@@ -8586,8 +8591,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"heroes/hero_omniknight/select_units.lua"
-				"Function"		"SyncLevels"
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"LinkedAbilitiesSync"
 				"linked_ability" "omniknight_select_enemies"
 			}
 		}

@@ -202,7 +202,7 @@ function GameMode:OnGameInProgress()
 	GAMEMODE_INITIALIZATION_STATUS[3] = true
 	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
 		Duel:CreateGlobalTimer()
-		--ContainersHelper:CreateShops()
+		ContainersHelper:CreateShops()
 		Spawner:RegisterTimers()
 	else
 		Holdout:Start()

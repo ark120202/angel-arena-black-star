@@ -10,6 +10,7 @@ var QuickBuyTarget = null
 var QuickBuyTargetAmount = 0
 var LastHero = null
 var ItemStocks = [];
+var hud = GetDotaHud();
 
 function OpenCloseShop() {
 	$("#ShopBase").ToggleClass("ShopBase_Out")
@@ -68,12 +69,8 @@ function PushItemsToList() {
 		})(shopName)
 		TabButton.SetPanelEvent('onactivate', SelectShopTabAction)
 		var TabShopItemlistPanel = $.CreatePanel('Panel', $("#ShopItemsBase"), "shop_panels_tab_" + shopName)
-		TabShopItemlistPanel.style.height = "100%";
-		TabShopItemlistPanel.style.horizontalAlign = "center";
-
-		TabShopItemlistPanel.style.flowChildren = "right-wrap"
+		TabShopItemlistPanel.AddClass("ItemsPageInnerContainer")
 		FillShopTable(TabShopItemlistPanel, ItemList[shopName])
-		TabShopItemlistPanel.visible = false
 
 		if (!isTabSelected) {
 			SelectShopTab(shopName)
@@ -86,10 +83,10 @@ function PushItemsToList() {
 function SelectShopTab(tabIndex) {
 	if (TabIndex != tabIndex) {
 		if (TabIndex != null) {
-			$("#shop_panels_tab_" + TabIndex).visible = false
+			$("#shop_panels_tab_" + TabIndex).RemoveClass("SelectedPage")
 			$("#shop_tab_" + TabIndex).RemoveClass("ShopTabButtonSelected")
 		}
-		$("#shop_panels_tab_" + tabIndex).visible = true
+		$("#shop_panels_tab_" + tabIndex).AddClass("SelectedPage")
 		$("#shop_tab_" + tabIndex).AddClass("ShopTabButtonSelected")
 		TabIndex = tabIndex
 	}
@@ -551,11 +548,18 @@ function SetItemStock(item, ItemStock) {
 		SendItemBuyOrder($("#QuickBuyStickyButtonPanel").GetChild(0).itemName)
 	})
 	Game.MouseEvents.OnLeftPressed.push(function(ClickBehaviors, eventName, arg) {
-		if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE)
+		if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE) {
 			$("#ShopBase").AddClass("ShopBase_Out")
+		}
 	})
 
 	GameEvents.Subscribe("panorama_shop_show_item", ShowItemInShop)
+	GameEvents.Subscribe("dota_link_clicked", function(data) {
+		if (data != null && data.link != null && data.link.lastIndexOf("dota.item.", 0) === 0) {
+			$("#ShopBase").RemoveClass("ShopBase_Out")
+			ShowItemRecipe(data.link.replace("dota.item.", ""))
+		}
+	})
 	GameEvents.Subscribe("panorama_shop_show_item_if_open", function(data) {
 		if (!$("#ShopBase").BHasClass("ShopBase_Out"))
 			ShowItemInShop(data)

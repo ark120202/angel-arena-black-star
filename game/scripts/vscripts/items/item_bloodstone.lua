@@ -148,9 +148,8 @@ function modifier_item_bloodstone_arena_aura_emitter_on_death(keys)
 		if not caster.BloodstoneDummies then caster.BloodstoneDummies = {} end
 		table.insert(caster.BloodstoneDummies, modelDummy)
 
-		
-		local new_time_until_respawn = caster:GetRespawnTime() - (total_charge_count * keys.RespawnTimeReductionPerCharge)
-		if new_time_until_respawn < 0 then
+		caster.RespawnTimeModifier = -(total_charge_count * keys.RespawnTimeReductionPerCharge)
+		if caster:CalculateRespawnTime() <= 0 then
 			caster:SetTimeUntilRespawn(0)
 			local abs = caster:GetAbsOrigin()
 			if not caster.InArena then
@@ -158,8 +157,6 @@ function modifier_item_bloodstone_arena_aura_emitter_on_death(keys)
 					FindClearSpaceForUnit(caster, abs, true)
 				end)
 			end
-		else
-			caster:SetTimeUntilRespawn(new_time_until_respawn)
 		end
 		item_bloodstone_arena_recalculate_charge_bonuses(keys)
 	end

@@ -115,11 +115,10 @@
 {
 	margin-left: 4px;
 	margin-right: 4px;
-	font-weight: bold;
 	align: center center;
-	background-color: rgba(0, 0, 0, 0.75);
-	border-radius: 5px;
 	padding: 3px;
+	text-shadow: 1px 1.5px 1px 2 #000000;
+	font-weight: bold;
 }
 
 .CustomChatTeamScopeLabel
@@ -128,6 +127,7 @@
 	align: center center;
 	padding-top: 3px;
 	margin-left: 2px;
+	font-weight: bold;
 }
 	
 .CustomChatLineText
@@ -136,4 +136,6 @@
 	margin-right: 4px;
 	color: white;
 	vertical-align: center;
+	text-shadow: 1px 1.5px 1px 2 #000000;
+	font-weight: bold;
 }

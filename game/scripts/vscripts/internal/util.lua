@@ -297,21 +297,6 @@ function CreateLoopedPortal(point1, point2, iRadius, sParticle, sDisabledParticl
 	return unit
 end
 
-function IsInZone(position_x, position_y, startPosition_x, startPosition_y, size_x, size_y)
-	local size_x = size_x/2
-	local size_y = size_y/2
-	if position_x > startPosition_x - size_x and position_x < startPosition_x + size_x and position_y > startPosition_y - size_y and position_y < startPosition_y + size_y then
-		return true
-	else
-		return false
-	end
-end
-
-function IsInZoneEntity(hEntity, startPosition_x, startPosition_y, size_x, size_y)
-	local abs = hEntity:GetAbsOrigin()
-	return IsInZone(abs.x, abs.y, startPosition_x, startPosition_y, size_x, size_y)
-end
-
 function table.swap(array, index1, index2)
 	array[index1], array[index2] = array[index2], array[index1]
 end
@@ -531,7 +516,7 @@ function swap_to_item(unit, srcItem, newItem)
 end
 
 function FindItemInInventoryByName(unit, itemname, searchStash, onlyStash)
-	local lastSlot = 5
+	local lastSlot = DOTA_ITEM_SLOT_9
 	local startSlot = 0
 	if searchStash then lastSlot = DOTA_STASH_SLOT_6 end
 	if onlyStash then startSlot = DOTA_STASH_SLOT_1 end
@@ -1410,4 +1395,12 @@ end
 
 function CEntityInstance:ClearNetworkableEntityInfo()
 	CustomNetTables:SetTableValue("custom_entity_values", tostring(self:GetEntityIndex()), nil)
+end
+
+function IsInBox(point, point1, point2)
+	return point.x > point1.x and point.y > point1.y and point.x < point2.x and point.y < point2.y
+end
+
+function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
+	return (5 + self:GetLevel() * 0.25) + (self.RespawnTimeModifier or 0)
 end

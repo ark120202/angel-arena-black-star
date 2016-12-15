@@ -11,8 +11,8 @@
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in;
 	transition-property: transform, opacity;
-	box-shadow: rgba(0,0,0,0.92) -10px -10px 20px 20px;
-	margin-bottom: 16%;
+	box-shadow: rgba(0,0,0,0.4) -4px -4px 8px 8px;
+	margin-bottom: 13.4%;
 	margin-right: 0px;
 	flow-children: right;
 }
@@ -20,7 +20,7 @@
 #ShopItemBasePanel
 {
 	height: 830px;
-	width: 380px;
+	width: 310px;
 }
 
 #ItembuildsPanel
@@ -122,8 +122,7 @@ DropDownMenu Label
 	width: 100%;
 	align: right bottom;
 	height: 21.5%;
-	background-image: url("file://{images}/custom_game/shop/item_recipe_panel.png");
-	background-size: 100% 100%;
+	background-color: #1c262f;
 }
 
 #ItemRecipeBoxRows
@@ -155,8 +154,7 @@ DropDownMenu Label
 {
 	margin: 2px;
 	height: 100%;
-	background-image: url("file://{images}/custom_game/shop/tab.png");
-	background-size: 100% 100%;
+	background-color: black;
 	transform: translateY(-2px);
 }
 
@@ -165,7 +163,8 @@ DropDownMenu Label
 	margin: 4px;
 	align: center center;
 	font-size: 16px;
-	color: white;
+	color: #5b6872;
+	font-weight: bold;
 }
 
 #ShopSearch
@@ -187,8 +186,7 @@ DropDownMenu Label
 {
 	height: 100%;
 	width: 100%;
-	background-image: url("file://{images}/custom_game/shop/base_panel.png");
-	background-size: 100% 100%;
+	background-color: #181818;
 }
 
 #ShopItemsBase
@@ -222,7 +220,6 @@ DropDownMenu Label
 .ShopItemGroup
 {
 	height: 100%;
-	width: 58px;
 	flow-children: down;
 }
 
@@ -345,22 +342,21 @@ DropDownMenu Label
 	transform: translateY(-40px);
 }
 
-.ShopTabButtonSelected
+.HUDFlipped #QuickBuyPanel
 {
-	background-image: url("file://{images}/custom_game/shop/tab_selected.png");
-	transform: translateY(-0.5px);
-	wash-color: PaleTurquoise;
+	horizontal-align: left;
 }
 
+.ShopTabButtonSelected .ShopTabButtonLabel
+{
+	color: white;
+}
 
 .SmallItemPanel
 {
-	width: 49.5px;
-	height: 36px;
-	border-radius: 7px;
-	margin: 4px;
-	margin-top: 2px;
-	margin-bottom: 2px;
+	width: 46px;
+	height: width-percentage( 72.7% );
+	margin: 2px;
 }
 
 .QuickBuyStickyItem
@@ -377,37 +373,31 @@ DropDownMenu Label
 {
 	width: 37.5px;
 	height: 27px;
-	border-radius: 5px;
 	margin: 2px;
 }
 
 .ItemRecipeBoxRow.ItemRecipeBoxRowLength7 .SmallItemPanel
 {
-	width: 49.5px;
-	height: 36px;
 	margin: 1px;
 }
 
 .ItemRecipeBoxRow.ItemRecipeBoxRowLength8 .SmallItemPanel
 {
-	width: 44.55px;
-	height: 32.4px;
-	border-radius: 5px;
+	width: 40px;
+	margin-left: -4px;
 }
 
 .ItemRecipeBoxRow.ItemRecipeBoxRowLength9 .SmallItemPanel
 {
-	width: 40.59px;
-	height: 27px;
-	margin: 0.5px;
-	border-radius: 3px;
-	border-width: 0.8px;
+	width: 39px;
+	margin-left: -3px;
+	margin-right: -3px;
 }
 
 .BigItemPanel
 {
 	width: 70.4px;
-	height: 51.2px;
+	height: width-percentage( 72.7% );
 	border-width: 2px;
 	margin: 5px;
 	border-radius: 0;
@@ -449,11 +439,10 @@ DropDownMenu Label
 
 .UnitItemlikeRecipePanel
 {
-	height: 35px;
+	height: width-percentage( 60.8% );
 	width: 57.6px;
-	margin: 4px;
 	flow-children: down;
-	border-radius: 7px;
+	border-radius: 2px;
 }
 
 .UnitItemlikeRecipePanel:disabled
@@ -470,7 +459,8 @@ DropDownMenu Label
 	color: white;
 	margin-top: -2px;
 	font-size: 16px;
-	text-shadow: 0px 0px 3px 3 black;
+	font-weight: bold;
+	text-shadow: 0px 0px 6px 6 black;
 }
 
 #ItemRecipeBoxDrops
@@ -478,4 +468,19 @@ DropDownMenu Label
 	width: 100%;
 	height: 100%;
 	visibility: collapse;
+}
+
+.ItemsPageInnerContainer
+{
+	height: 100%;
+	horizontal-align: center;
+	flow-children: right-wrap;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.15s;
+}
+
+.ItemsPageInnerContainer.SelectedPage
+{
+	opacity: 1;
 }

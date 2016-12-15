@@ -116,7 +116,6 @@ function GameMode:OnAbilityUsed(keys)
 		if not ability then ability = FindItemInInventoryByName(hero, abilityname, true) end
 		if abilityname == "night_stalker_darkness" and ability then
 			CustomGameEventManager:Send_ServerToAllClients("time_nightstalker_darkness", {duration = ability:GetLevelSpecialValueFor("duration", ability:GetLevel()-1)})
-			--Ульта луны тоже должна делать ночь, но с оригинальными часами это тоже не работает
 		end
 		
 		HeroVoice:OnAbilityUsed(hero, ability)
@@ -200,9 +199,9 @@ function GameMode:OnTreeCut(keys)
 
 	local treeX = keys.tree_x
 	local treeY = keys.tree_y
-	if RollPercentage(10) then
+	--[[if RollPercentage(10) then
 		GameMode:CreateTreeDrop(Vector(treeX, treeY, 0), "item_tree_banana")
-	end
+	end]]
 end
 
 function GameMode:CreateTreeDrop(location, item)
@@ -234,10 +233,12 @@ function GameMode:OnEntityKilled( keys )
 	if keys.entindex_attacker ~= nil then
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
-	--[[local killerAbility = nil
+	--[[
+	local killerAbility = nil
 	if keys.entindex_inflictor ~= nil then
 		killerAbility = EntIndexToHScript( keys.entindex_inflictor )
-	end]]
+	end
+	]]
 	
 	if killedUnit then
 		if killedUnit:IsHero() then
@@ -259,6 +260,7 @@ function GameMode:OnEntityKilled( keys )
 					local player = killedUnit:GetPlayerOwner()
 					Kills:OnEntityKilled(player, player)
 				end
+				killedUnit:SetTimeUntilRespawn(killedUnit:CalculateRespawnTime())
 			end
 			CustomWearables:UnequipAllWearables(killedUnit)
 		end
@@ -269,20 +271,6 @@ function GameMode:OnEntityKilled( keys )
 
 		if killedUnit:IsRealCreep() then
 			Spawner.Creeps[killedUnit.SSpawner] = Spawner.Creeps[killedUnit.SSpawner] - 1
-		end
-
-		if killerEntity and killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then
-			local plId
-			if killerEntity.GetPlayerID then
-				plId = killerEntity:GetPlayerID()
-			else
-				plId = killerEntity:GetPlayerOwnerID()
-			end
-			if plId > -1 then
-				local gold = RandomInt(killedUnit:GetMinimumGoldBounty(), killedUnit:GetMaximumGoldBounty())
-				Gold:ModifyGold(plId, gold)
-				SendOverheadEventMessage(killerEntity:GetPlayerOwner(), OVERHEAD_ALERT_GOLD, killedUnit, gold, killerEntity:GetPlayerOwner())
-			end
 		end
 
 		if killerEntity then
@@ -304,6 +292,20 @@ function GameMode:OnEntityKilled( keys )
 					end
 				end
 			end
+
+			if killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then
+				local plId
+				if killerEntity.GetPlayerID then
+					plId = killerEntity:GetPlayerID()
+				else
+					plId = killerEntity:GetPlayerOwnerID()
+				end
+				if plId > -1 then
+					local gold = RandomInt(killedUnit:GetMinimumGoldBounty(), killedUnit:GetMaximumGoldBounty())
+					Gold:ModifyGold(plId, gold)
+					SendOverheadEventMessage(killerEntity:GetPlayerOwner(), OVERHEAD_ALERT_GOLD, killedUnit, gold, killerEntity:GetPlayerOwner())
+				end
+			end
 		end
 
 		local dropTables = DROP_TABLE[killedUnit:GetUnitName()]
@@ -320,8 +322,6 @@ function GameMode:OnEntityKilled( keys )
 		end
 	end
 end
-
-
 
 -- This function is called 1 to 2 times as the player connects initially but before they 
 -- have completely connected
@@ -574,13 +574,6 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 				end
 			end
 		end
-		if cmd[1] == "a_oh" then
-			for k,v in pairs(_G) do
-				if type(k) == "string" and string.starts(k, "OVERHEAD_ALERT") then
-					print(k,v)
-				end
-			end
-		end
 		if cmd[1] == "a_sn" then
 			local unit = CreateUnitByName("npc_dota_neutral_easy_variant1", hero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
 			unit.SpawnerType = "Easy"
@@ -592,21 +585,6 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 			Timers:CreateTimer(2, function()
 				SendToServerConsole("host_timescale 1")
 			end)
-		end
-		if cmd[1] == "a_col" then
-			
-			
-
-			--[[collider = hero:AddColliderFromProfile("blocker")
-
-			collider.radius = 400
-			collider.draw = {color = Vector(200,50,50), alpha = 0}
-			collider.test = function(self, collider, collided)
-				if true then
-					Physics:Unit(collided)
-					return IsPhysicsUnit(collided)
-				end
-			end]]
 		end
 		if cmd[1] == "en" then
 			enigma = CreateUnitByName('npc_dummy_unit', Vector(0,0,200), true, hero, hero, hero:GetTeamNumber())
