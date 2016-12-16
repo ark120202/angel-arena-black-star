@@ -21,10 +21,7 @@
 	<Panel class="AddonLoadingRoot">
 		<!-- Precache -->
 		<Panel hittest="false" style="visibility: collapse;">
-			<Image src="file://{images}/custom_game/kills/action_0.png" />
-			<Image src="file://{images}/custom_game/kills/action_1.png" />
-			<Image src="file://{images}/custom_game/kills/action_2.png" />
-			<Image src="file://{images}/custom_game/kills/action_3.png" />
+			<Image src="file://{images}/custom_game/scoreboard/scoreboard_ifd.png" />
 			<Image src="file://{images}/custom_game/scoreboard/scoreboard_if4.png" />
 
 			<Image src="file://{images}/heroes/npc_arena_hero_arthas.png" />

@@ -15,9 +15,9 @@ function UpdateScoreboard() {
 	var timerImageDeg = ((current_Time - (Math.floor(current_Time / 480) * 480)) / 480) * 360
 	g_ScoreboardHandle.scoreboardPanel.FindChildInLayoutFile("timerImage").style.transform = "rotateZ(" + timerImageDeg + "deg)"
 	if (timerImageDeg >= 0 && timerImageDeg < 180) {
-		g_ScoreboardHandle.scoreboardPanel.FindChildInLayoutFile("timerImageMask3").SetImage("file://{resources}/images/custom_game/scoreboard/scoreboard_ifd.png")
+		g_ScoreboardHandle.scoreboardPanel.FindChildInLayoutFile("timerImageMask3").SetImage("file://{images}/custom_game/scoreboard/scoreboard_ifd.png")
 	} else {
-		g_ScoreboardHandle.scoreboardPanel.FindChildInLayoutFile("timerImageMask3").SetImage("file://{resources}/images/custom_game/scoreboard/scoreboard_if4.png")
+		g_ScoreboardHandle.scoreboardPanel.FindChildInLayoutFile("timerImageMask3").SetImage("file://{images}/custom_game/scoreboard/scoreboard_if4.png")
 	}
 	if (($("#timerImageMask1").darknessEndTime != null && $("#timerImageMask1").darknessEndTime >= Game.GetDOTATime(false, false)) && !$("#timerImageMask1").visible) {
 		$("#timerImageMask1").visible = true
@@ -50,18 +50,6 @@ function HideScoreboardVisible() {
 
 function ShowScoreboardVisible() {
 	$("#TopBarScoreboard").visible = true
-}
-
-function secondsToMS(seconds, bTwoChars) {
-	var sec_num = parseInt(seconds, 10);
-	var minutes = Math.floor(sec_num / 60);
-	var seconds = Math.floor(sec_num - minutes * 60);
-
-	if (bTwoChars && minutes < 10)
-		minutes = "0" + minutes;
-	if (seconds < 10)
-		seconds = "0" + seconds;
-	return minutes + ':' + seconds;
 }
 
 (function() {

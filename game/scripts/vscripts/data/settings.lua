@@ -36,8 +36,6 @@ KILLS_TO_END_GAME_FOR_TEAM = 200        -- How many kills for a team should sign
 
 USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom levels?
 USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
-
--- Fill this table up with the required XP per level if you want to change it
 XP_PER_LEVEL_TABLE = {}
 XP_PER_LEVEL_TABLE[1] = 0
 for i = 2, 300 do
@@ -64,10 +62,10 @@ STARTING_GOLD = 0                       -- How much starting gold should we give
 DISABLE_DAY_NIGHT_CYCLE = false         -- Should we disable the day night cycle from naturally occurring? (Manual adjustment still possible)
 DISABLE_KILLING_SPREE_ANNOUNCER = false -- Shuold we disable the killing spree announcer?
 DISABLE_STICKY_ITEM = true              -- Should we disable the sticky item button in the quick buy area?
-SKIP_TEAM_SETUP = false--IsInToolsMode()       -- Should we skip the team setup entirely?
+SKIP_TEAM_SETUP = false                 -- Should we skip the team setup entirely?
 ENABLE_AUTO_LAUNCH = true               -- Should we automatically have the game complete team setup after AUTO_LAUNCH_DELAY seconds?
 AUTO_LAUNCH_DELAY = 15                  -- How long should the default team selection launch timer be?  The default for custom games is 30.  Setting to 0 will skip team selection.
-LOCK_TEAM_SETUP = false                 -- Should we lock the teams initially?  Note that the host can still unlock the teams 
+LOCK_TEAM_SETUP = IsInToolsMode()       -- Should we lock the teams initially?  Note that the host can still unlock the teams 
 
 
 MAX_NUMBER_OF_TEAMS = 2                -- How many potential teams can be in this game mode?
@@ -116,6 +114,20 @@ PLAYERS_COLORS[DOTA_TEAM_BADGUYS] = {
 	{0, 131, 33},
 	{164, 105, 0}
 }
+PLAYERS_COLORS[DOTA_TEAM_CUSTOM_1] = {
+	{178, 121, 90},
+	{147, 255, 120},
+	{255, 91, 0},
+	{26, 20, 204},
+	{130, 129, 178}
+}
+PLAYERS_COLORS[DOTA_TEAM_CUSTOM_2] = {
+	{71, 204, 131},
+	{255, 255, 255},
+	{255, 241, 96},
+	{195, 86, 255},
+	{204, 139, 85}
+}
 
 POSSIBLE_KILL_GOALS = {
 	75,
@@ -125,7 +137,7 @@ POSSIBLE_KILL_GOALS = {
 }
 DOTA_KILL_GOAL_VOTE_STANDART = 125
 
-CUSTOM_HERO_SELECTION_TIME = 80
+CUSTOM_HERO_SELECTION_TIME = IsInToolsMode() and math.pow(10, 10000) or 80
 DOTA_PLAYER_AUTOABANDON_TIME = 60*8
 MAX_SPAWNBOXES_SELECTED = 3
 

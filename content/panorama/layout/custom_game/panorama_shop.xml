@@ -19,8 +19,8 @@
 			</Panel>
 		</snippet>
 	</snippets>
-	<Panel hittest="false" class="base"><!-- ShopBase_Out -->
-		<Panel hittest="true" id="ShopBase" class="">
+	<Panel hittest="false" class="base">
+		<Panel hittest="true" id="ShopBase" class="ShopBase_Out">
 			<Panel id="ItembuildsPanel">
 				<Panel id="Itembuild_select" />
 				<Panel class="SimpleRow">

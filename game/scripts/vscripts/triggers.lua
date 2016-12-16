@@ -18,6 +18,7 @@ end
 
 function FountainOnStartTouch(trigger, team)
 	local unit = trigger.activator
+	print(unit:GetTeam(), team)
 	if unit and unit:GetTeam() == team then
 		unit:AddNewModifier(unit, nil, "modifier_fountain_aura_arena", nil)
 	elseif not IsBossEntity(unit) then
@@ -40,17 +41,26 @@ end
 function Fountain3OnStartTouch(trigger)
 	FountainOnStartTouch(trigger, DOTA_TEAM_BADGUYS)
 end
+function Fountain6OnStartTouch(trigger)
+	FountainOnStartTouch(trigger, DOTA_TEAM_CUSTOM_1)
+end
+function Fountain7OnStartTouch(trigger)
+	FountainOnStartTouch(trigger, DOTA_TEAM_CUSTOM_2)
+end
 
 function Fountain2OnEndTouch(trigger)
 	local unit = trigger.activator
-	if unit and unit:GetTeam() == DOTA_TEAM_GOODGUYS then
-		unit:RemoveModifierByName("modifier_fountain_aura_arena")
-	end
+	if unit and unit:GetTeam() == DOTA_TEAM_GOODGUYS then unit:RemoveModifierByName("modifier_fountain_aura_arena") end
 end
-
 function Fountain3OnEndTouch(trigger)
 	local unit = trigger.activator
-	if unit and unit:GetTeam() == DOTA_TEAM_BADGUYS then
-		unit:RemoveModifierByName("modifier_fountain_aura_arena")
-	end
+	if unit and unit:GetTeam() == DOTA_TEAM_BADGUYS then unit:RemoveModifierByName("modifier_fountain_aura_arena") end
+end
+function Fountain6OnEndTouch(trigger)
+	local unit = trigger.activator
+	if unit and unit:GetTeam() == DOTA_TEAM_CUSTOM_1 then unit:RemoveModifierByName("modifier_fountain_aura_arena") end
+end
+function Fountain7OnEndTouch(trigger)
+	local unit = trigger.activator
+	if unit and unit:GetTeam() == DOTA_TEAM_CUSTOM_2 then unit:RemoveModifierByName("modifier_fountain_aura_arena") end
 end

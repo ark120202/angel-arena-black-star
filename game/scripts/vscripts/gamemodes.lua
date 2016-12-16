@@ -1,6 +1,6 @@
 DOTA_GAMEMODE_5V5 = 0
 DOTA_GAMEMODE_HOLDOUT_5 = 1
---DOTA_GAMEMODE_X4 = 2
+DOTA_GAMEMODE_4V4V4V4 = 2
 
 DOTA_GAMEMODE_TYPE_ALLPICK = 100
 DOTA_GAMEMODE_TYPE_RANDOM_OMG = 101
@@ -11,15 +11,16 @@ ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES = 201
 
 DOTA_ACTIVE_GAMEMODE = DOTA_GAMEMODE_5V5
 DOTA_ACTIVE_GAMEMODE_TYPE = DOTA_GAMEMODE_TYPE_ALLPICK
-ARENA_ACTIVE_GAMEMODE_MAP = ARENA_GAMEMODE_MAP_NONE--ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES
+ARENA_ACTIVE_GAMEMODE_MAP = ARENA_GAMEMODE_MAP_NONE
 
 if GameModes == nil then
 	_G.GameModes = class({})
 
 	GameModes.MapNamesToGamemode = {
 		["5v5"] = {gamemode = DOTA_GAMEMODE_5V5, type = DOTA_GAMEMODE_TYPE_ALLPICK, map = ARENA_GAMEMODE_MAP_NONE},
-		--DOTA_GAMEMODE_TYPE_RANDOM_OMG || DOTA_GAMEMODE_TYPE_ABILITY_SHOP
+		["4v4v4v4"] = {gamemode = DOTA_GAMEMODE_4V4V4V4, type = DOTA_GAMEMODE_TYPE_ALLPICK, map = ARENA_GAMEMODE_MAP_NONE},
 		["5v5_custom_abilities"] = {gamemode = DOTA_GAMEMODE_5V5, type = nil, map = ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES},
+		["4v4v4v4_custom_abilities"] = {gamemode = DOTA_GAMEMODE_4V4V4V4, type = nil, map = ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES},
 		--["arena_holdout"] = {gamemode = DOTA_GAMEMODE_HOLDOUT_5, type = DOTA_GAMEMODE_TYPE_ALLPICK},
 	}
 
@@ -29,6 +30,18 @@ if GameModes == nil then
 				"data/holdout_data",
 				"holdout",
 			},
+		},
+		[DOTA_GAMEMODE_4V4V4V4] = {
+			onPreload = function()
+				MAP_LENGTH = 9216
+				USE_AUTOMATIC_PLAYERS_PER_TEAM = false
+				MAX_NUMBER_OF_TEAMS = 4
+				CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 4
+				CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS] = 4
+				CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_1] = 4
+				CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_2] = 4
+				USE_CUSTOM_TEAM_COLORS = true
+			end,
 		},
 	}
 end
@@ -52,6 +65,9 @@ function GameModes:PreloadGamemodeSettingsFromTable(t)
 		for _,v in ipairs(t.requirements) do
 			require(v)
 		end
+	end
+	if t.onPreload then
+		t.onPreload()
 	end
 end
 

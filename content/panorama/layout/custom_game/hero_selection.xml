@@ -45,7 +45,6 @@
 					<Label id="SelectedHeroDescriptionText" text="" />
 				</Panel>
 			</Panel> -->
-
 			<Panel id="HeroListBasePanel">
 				<Panel id="HeroListControls">
 					<Panel id="HeroListControlsGroup1" class="HeroListControlsGroup">
@@ -103,15 +102,6 @@
 								</Panel>
 							</Panel>
 						</Panel>
-						<!-- <Button class="SmallTextButton" onactivate="RandomHero();">
-							<Panel class="SmallTextButtonContainer">
-								<Image hittest="false" src="file://{resources}/images/custom_game/hero_selection/random.png" />
-								<Label id="HeroRandomButtonLabel" hittest="false" text="#hero_selection_button_random" />
-							</Panel>
-						</Button> -->
-						<!-- <Button id="HeroRandomButton" onactivate="RandomHero();">
-							<Label id="HeroRandomButtonLabel" hittest="false" text="#hero_selection_button_random" />
-						</Button> -->
 					</Panel>
 				</Panel>
 				<Panel id="AbilitiesPanel">
@@ -165,6 +155,55 @@
 									<Panel id="MinimapSpawnBox_3_3_1" onactivate="OnMinimapClickSpawnBox(3, 3, 1)" class="MinimapSpawnBox" style="position: 220px 89px 0;"/>
 						</Panel>
 					</Image>
+					<Image id="MinimapImage4v4v4v4" src="file://{images}/custom_game/hero_selection/4v4v4v4.tga">
+						<Panel class="MinimapDynamicIcons" />
+						<Panel class="MinimapSpawnBoxes">
+							<!-- Radiant -->
+								<!-- easy -->
+									<Panel id="MinimapSpawnBox_2_1_0" onactivate="OnMinimapClickSpawnBox(2, 1, 0)" class="MinimapSpawnBox" style="position: 251px 160px 0;"/>
+								<!-- medium -->
+									<Panel id="MinimapSpawnBox_2_2_0" onactivate="OnMinimapClickSpawnBox(2, 2, 0)" class="MinimapSpawnBox" style="position: 317px 189px 0;"/>
+									<Panel id="MinimapSpawnBox_2_2_1" onactivate="OnMinimapClickSpawnBox(2, 2, 1)" class="MinimapSpawnBox" style="position: 285px 189px 0;"/>
+									<Panel id="MinimapSpawnBox_2_2_2" onactivate="OnMinimapClickSpawnBox(2, 2, 2)" class="MinimapSpawnBox" style="position: 317px 130px 0;"/>
+									<Panel id="MinimapSpawnBox_2_2_3" onactivate="OnMinimapClickSpawnBox(2, 2, 3)" class="MinimapSpawnBox" style="position: 285px 130px 0;"/>
+								<!-- hard -->
+									<Panel id="MinimapSpawnBox_2_3_0" onactivate="OnMinimapClickSpawnBox(2, 3, 0)" class="MinimapSpawnBox" style="position: 251px 206px 0;"/>
+									<Panel id="MinimapSpawnBox_2_3_1" onactivate="OnMinimapClickSpawnBox(2, 3, 1)" class="MinimapSpawnBox" style="position: 251px 114px 0;"/>
+							<!-- Dire -->
+								<!-- easy -->
+									<Panel id="MinimapSpawnBox_3_1_0" onactivate="OnMinimapClickSpawnBox(3, 1, 0)" class="MinimapSpawnBox" style="position: 68px 160px 0;"/>
+								<!-- medium -->
+									<Panel id="MinimapSpawnBox_3_2_0" onactivate="OnMinimapClickSpawnBox(3, 2, 0)" class="MinimapSpawnBox" style="position: 3px 193px 0;"/>
+									<Panel id="MinimapSpawnBox_3_2_1" onactivate="OnMinimapClickSpawnBox(3, 2, 1)" class="MinimapSpawnBox" style="position: 33px 193px 0;"/>
+									<Panel id="MinimapSpawnBox_3_2_2" onactivate="OnMinimapClickSpawnBox(3, 2, 2)" class="MinimapSpawnBox" style="position: 3px 130px 0;"/>
+									<Panel id="MinimapSpawnBox_3_2_3" onactivate="OnMinimapClickSpawnBox(3, 2, 3)" class="MinimapSpawnBox" style="position: 33px 130px 0;"/>
+								<!-- hard -->
+									<Panel id="MinimapSpawnBox_3_3_0" onactivate="OnMinimapClickSpawnBox(3, 3, 0)" class="MinimapSpawnBox" style="position: 68px 203px 0;"/>
+									<Panel id="MinimapSpawnBox_3_3_1" onactivate="OnMinimapClickSpawnBox(3, 3, 1)" class="MinimapSpawnBox" style="position: 68px 114px 0;"/>
+							<!-- Custom 1 (6) -->
+								<!-- easy -->
+									<Panel id="MinimapSpawnBox_6_1_0" onactivate="OnMinimapClickSpawnBox(6, 1, 0)" class="MinimapSpawnBox" style="position: 160px 240px 0;"/>
+								<!-- medium -->
+									<Panel id="MinimapSpawnBox_6_2_0" onactivate="OnMinimapClickSpawnBox(6, 2, 0)" class="MinimapSpawnBox" style="position: 125px 310px 0;"/>
+									<Panel id="MinimapSpawnBox_6_2_1" onactivate="OnMinimapClickSpawnBox(6, 2, 1)" class="MinimapSpawnBox" style="position: 125px 277px 0;"/>
+									<Panel id="MinimapSpawnBox_6_2_2" onactivate="OnMinimapClickSpawnBox(6, 2, 2)" class="MinimapSpawnBox" style="position: 192px 310px 0;"/>
+									<Panel id="MinimapSpawnBox_6_2_3" onactivate="OnMinimapClickSpawnBox(6, 2, 3)" class="MinimapSpawnBox" style="position: 192px 277px 0;"/>
+								<!-- hard -->
+									<Panel id="MinimapSpawnBox_6_3_0" onactivate="OnMinimapClickSpawnBox(6, 3, 0)" class="MinimapSpawnBox" style="position: 117px 239px 0;"/>
+									<Panel id="MinimapSpawnBox_6_3_1" onactivate="OnMinimapClickSpawnBox(6, 3, 1)" class="MinimapSpawnBox" style="position: 203px 239px 0;"/>
+							<!-- Custom 2 (7) -->
+								<!-- easy -->
+									<Panel id="MinimapSpawnBox_7_1_0" onactivate="OnMinimapClickSpawnBox(7, 1, 0)" class="MinimapSpawnBox" style="position: 159px 68px 0;"/>
+								<!-- medium -->
+									<Panel id="MinimapSpawnBox_7_2_0" onactivate="OnMinimapClickSpawnBox(7, 2, 0)" class="MinimapSpawnBox" style="position: 125px 34px 0;"/>
+									<Panel id="MinimapSpawnBox_7_2_1" onactivate="OnMinimapClickSpawnBox(7, 2, 1)" class="MinimapSpawnBox" style="position: 125px 2px 0;"/>
+									<Panel id="MinimapSpawnBox_7_2_2" onactivate="OnMinimapClickSpawnBox(7, 2, 2)" class="MinimapSpawnBox" style="position: 189px 34px 0;"/>
+									<Panel id="MinimapSpawnBox_7_2_3" onactivate="OnMinimapClickSpawnBox(7, 2, 3)" class="MinimapSpawnBox" style="position: 189px 2px 0;"/>
+								<!-- hard -->
+									<Panel id="MinimapSpawnBox_7_3_0" onactivate="OnMinimapClickSpawnBox(7, 3, 0)" class="MinimapSpawnBox" style="position: 117px 68px 0;"/>
+									<Panel id="MinimapSpawnBox_7_3_1" onactivate="OnMinimapClickSpawnBox(7, 3, 1)" class="MinimapSpawnBox" style="position: 203px 68px 0;"/>
+						</Panel>
+					</Image>
 				</Panel>
 				<Panel id="SelectionChatBox">
 					<Panel id="SelectionChat">
@@ -186,6 +225,8 @@
 			<Panel id="PrecacheTeamContainer">
 				<Panel id="PrecacheTeamEntryTeam2" class="PrecacheTeamEntry" />
 				<Panel id="PrecacheTeamEntryTeam3" class="PrecacheTeamEntry" />
+				<Panel id="PrecacheTeamEntryTeam6" class="PrecacheTeamEntry TeamEntryCount4" />
+				<Panel id="PrecacheTeamEntryTeam7" class="PrecacheTeamEntry TeamEntryCount4" />
 			</Panel>
 		</Panel>
 		<Panel id="GamePausedOverlay" hittest="true">

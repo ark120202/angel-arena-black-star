@@ -49,7 +49,6 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 	if not Kills.BountyStorage[killedUnit:GetPlayerID()] then Kills.BountyStorage[killedUnit:GetPlayerID()] = 0 end
 	local goldChange = Kills:GetGoldForKill(killedUnit)
 	Gold:ModifyGold(killedUnit, -goldChange)
-	Kills:ClearStreak(killedUnit:GetPlayerID())
 	if killerEntity and killerEntity:IsControllableByAnyPlayer() then
 		local isDeny = false
 		if killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID then
@@ -95,6 +94,7 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 		end
 		Kills:CreateKillTooltip(nil, killedPlayerID, goldChange)
 	end
+	Kills:ClearStreak(killedPlayerID)
 end
 
 function Kills:_GiveKillGold(killerEntity, killedUnit, goldChange)
@@ -118,6 +118,13 @@ function Kills:CreateKillTooltip(killer, killed, gold)
 		victimPlayer = killed,
 		gold = gold,
 	})
+	if (Kills.BountyStorage[killed] > 1) then
+		CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+			type = "kill_streak_ended",
+			victimPlayer = killed,
+			kill_streak = Kills.BountyStorage[killed]
+		})
+	end
 end
 
 function Kills:ClearStreak(playerID)

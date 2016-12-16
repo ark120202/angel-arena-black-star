@@ -197,6 +197,8 @@
 	text-align: center;
 	font-size: 18px;
 	color: rgb(150,150,150);
+	height: 22px;
+	margin-bottom: -6px;
 }
 
 .PlayerInTeamHeroImageHost
@@ -205,14 +207,14 @@
 	border-width: 2px;
 	border-style: solid;
 	border-color: red;
-	border-radius: 100%;
+	border-radius: 10px;
 }
 
 .PlayerInTeamHeroImage
 {
 	width: 80px;
-	height: 80px;
-	border-radius: 100%;
+	height: 92px;
+	border-radius: 10px;
 }
 
 .PlayerInTeamHeroImageHover
@@ -379,6 +381,7 @@
 	horizontal-align: center;
 	font-size: 100px;
 	color: white;
+	text-shadow: 0 0 20px black; 
 }
 
 #PrecacheLoadingMessagePanel
@@ -402,13 +405,12 @@
 	margin-top: 20px;
 	margin-bottom: 20px;
 	horizontal-align: center;
-	height: 44.65%;
 	flow-children: right;
 }
 
 .PrecacheTeamPlayerPanel
 {
-	height: 100%;
+	height: 350px;
 	width: 250px;
 	margin: 5px;
 	background-color: rgba(0, 0, 0, 0.95);
@@ -420,7 +422,9 @@
 	margin-top: 4px;
 	align: center top;
 	font-size: 28px;
+	height: 32px;
 	color: black;
+	text-shadow: 0 0 6px black; 
 }
 
 .PrecacheHeroLabel
@@ -610,11 +614,6 @@
 	horizontal-align: center;
 }
 
-#MinimapImage
-{
-
-}
-
 .MinimapSpawnBox
 {
 	width: 32px;
@@ -723,4 +722,23 @@
 {
 	//240
 	background-color: rgba(0,0,0,0.5);
+}
+
+#MinimapImage4v4v4v4, .Gamemode_4V4V4V4 #MinimapImage
+{
+	visibility: collapse;
+}
+
+.Gamemode_4V4V4V4 #MinimapImage4v4v4v4
+{
+	visibility: visible;
+}
+
+.Gamemode_4V4V4V4 #PrecacheTeamContainer
+{
+	horizontal-align: center;
+	margin-top: 40px;
+	width: 80%;
+	height: 70%;
+	flow-children: down;
 }

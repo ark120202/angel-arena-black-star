@@ -195,7 +195,11 @@
 		"custom_runes_rune_9_title"								"Колебание"
 		"custom_runes_rune_9_text"								"Отталкивает всех противников в радиусе 350 от вас"
 		
-		"DOTA_HUD_PlayerDeniedSelf"	"{s:victim_name} {s:denied_icon} не отдается врагу"
-		"DOTA_HUD_PlayerDenied"	"{s:killer_name} {s:denied_icon} не отдает врагу {s:victim_name}"
+		"custom_toast_PlayerDeniedSelf"	"{victim_name} {denied_icon} не отдается врагу"
+		"custom_toast_PlayerDenied"	"{killer_name} {denied_icon} не отдает врагу {victim_name}"
+		"custom_toast_KillStreak_Ended"	"{victim_name} Серия из {kill_streak} убийств прервана"
+		"custom_toast_ActivatedRune"	"{player_name} использовал руну {rune_name}"
+		"custom_toast_BottledRune"	"{player_name} помещает в бутыль {rune_name}"
+		"custom_toast_DuelStarted"	"{time_dota}: {duel_index}ая общая дуэль началась!"
 	}
 }

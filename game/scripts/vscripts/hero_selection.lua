@@ -260,10 +260,18 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 									UTIL_Remove(temp)
 								end)
 							else
+								if oldhero:GetUnitName() == FORCE_PICKED_HERO then
+									Timers:CreateTimer(0.03, function()
+										UTIL_Remove(oldhero)
+									end)
+								end
 								hero = PlayerResource:ReplaceHeroWith(playerId, baseNewHero, 0, 0)
 							end
 						else
-							hero = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerId))
+							print("[HeroSelection] For some reason player " .. playerId .. " has no hero. This player can't get a hero due to 7.00 patch. Returning")
+							return
+							--Not works in 7.00
+							--hero = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerId))
 						end
 						if heroTableCustom.base_hero then
 							TransformUnitClass(hero, heroTableCustom)
@@ -304,8 +312,9 @@ end
 function HeroSelection:RemoveAllOwnedUnits(playerId)
 	local player = PlayerResource:GetPlayer(playerId)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+	local courier = FindCourier(player:GetTeam())
 	for _,v in ipairs(FindAllOwnedUnits(player)) do
-		if v ~= hero then
+		if v ~= hero and v ~= courier then
 			v:ForceKill(false)
 			UTIL_Remove(v)
 		end

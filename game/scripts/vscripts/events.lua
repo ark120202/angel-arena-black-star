@@ -17,6 +17,19 @@ function GameMode:OnGameRulesStateChange(keys)
 
 	local newState = GameRules:State_Get()
 	if newState == DOTA_GAMERULES_STATE_PRE_GAME then
+		local Counters = {}
+		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+			if PlayerResource:IsValidPlayerID(i) then
+				local team = PlayerResource:GetTeam(i)
+				if PLAYERS_COLORS[team] then
+					Counters[team] = (Counters[team] or 0) + 1
+					local color = PLAYERS_COLORS[team][Counters[team]]
+					PLAYER_DATA[i].Color = color
+					PlayerResource:SetCustomPlayerColor(i, color[1], color[2], color[3])
+				end
+			end
+		end
+		
 		GameModes:OnAllVotesSubmitted()
 		HeroSelection:HeroSelectionStart()
 	end
@@ -28,11 +41,6 @@ function GameMode:OnNPCSpawned(keys)
 	DebugPrintTable(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	if npc:IsHero() then
-		if not HeroSelection.SelectionEnd then
-			npc:AddNoDraw()
-			--UTIL_Remove(npc)
-			return
-		end
 		HeroVoice:OnNPCSpawned(npc)
 		Timers:CreateTimer(function()
 			if npc and not npc:IsNull() and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then

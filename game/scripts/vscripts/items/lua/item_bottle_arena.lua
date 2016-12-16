@@ -35,7 +35,12 @@ if IsServer() then
 	function item_bottle_arena:SetStorageRune(type)
 		self:GetCaster():EmitSound("Bottle.Cork")
 		if self:GetCaster().GetPlayerID then
-			GameRules:SendCustomMessageToTeam("custom_runes_rune_" .. type .. "_bottle", self:GetCaster():GetTeam(), self:GetCaster():GetPlayerID(), -1)
+			CustomGameEventManager:Send_ServerToTeam(self:GetCaster():GetTeam(), "create_custom_toast", {
+				type = "generic",
+				text = "#custom_toast_BottledRune",
+				player = self:GetCaster():GetPlayerID(),
+				runeType = type
+			})
 		end
 		self.RuneStorage = type
 		self:SetCurrentCharges(3)

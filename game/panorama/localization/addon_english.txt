@@ -218,8 +218,10 @@
 		"custom_runes_rune_9_title"								"Vibration"
 		"custom_runes_rune_9_text"								"Pushes all enemies from you in 350 radius"
 
-		
-		"DOTA_HUD_PlayerDeniedSelf"			"{s:victim_name} {s:denied_icon} Denied"
-		"DOTA_HUD_PlayerDenied"		"{s:killer_name} {s:denied_icon} Denied {s:victim_name}"
+		"custom_toast_PlayerDeniedSelf"			"{victim_name} {denied_icon} Denied"
+		"custom_toast_PlayerDenied"		"{killer_name} {denied_icon} Denied {victim_name}"
+		"custom_toast_KillStreak_Ended"	"{victim_name} {kill_streak}x Kill Streak ended"
+		"custom_toast_ActivatedRune"		"{player_name} has activated {rune_name}"
+		"custom_toast_BottledRune"			"{player_name} bottled {rune_name}"
 	}
 }
