@@ -60,7 +60,7 @@ function modifier_apocalypse_apocalypse:OnAttackLanded(k)
 		if ability then
 			radius = ability:GetAbilitySpecial("cleave_radius")
 		end
-		DoCleaveAttack(k.attacker, k.target, self, k.damage, self.cleave_radius, "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf")
+		DoCleaveAttack(k.attacker, k.target, self, k.damage, self.cleave_radius, self.cleave_radius, self.cleave_radius "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf")
 	end
 end
 

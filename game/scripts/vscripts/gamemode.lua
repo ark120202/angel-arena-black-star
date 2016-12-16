@@ -129,23 +129,6 @@ function GameMode:OnAllPlayersLoaded()
 	Spawner:PreloadSpawners()
 	Bosses:InitAllBosses()
 	CustomRunes:Init()
-	--Colors setup
-	Timers:CreateTimer(0.03, function()
-		local Counters = {}
-		Counters[DOTA_TEAM_GOODGUYS] = 1
-		Counters[DOTA_TEAM_BADGUYS]	= 1
-		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-			if PlayerResource:IsValidPlayerID(i) then
-				local team = PlayerResource:GetTeam(i)
-				if PLAYERS_COLORS[team] and Counters[team] then
-					local color = PLAYERS_COLORS[team][Counters[team]]
-					PLAYER_DATA[i].Color = color
-					PlayerResource:SetCustomPlayerColor(i, color[1], color[2], color[3])
-					Counters[team] = Counters[team] + 1
-				end
-			end
-		end
-	end)
 end
 
 --[[

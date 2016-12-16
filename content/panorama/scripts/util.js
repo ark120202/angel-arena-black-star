@@ -3,6 +3,7 @@ var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
 
 var DOTA_GAMEMODE_5V5 = 0
 var DOTA_GAMEMODE_HOLDOUT_5 = 1
+var DOTA_GAMEMODE_4V4V4V4 = 2
 
 var DOTA_GAMEMODE_TYPE_ALLPICK = 100
 var DOTA_GAMEMODE_TYPE_RANDOM_OMG = 101
@@ -11,9 +12,18 @@ var DOTA_GAMEMODE_TYPE_ABILITY_SHOP = 102
 var ARENA_GAMEMODE_MAP_NONE = 200
 var ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES = 201
 
-var TeamCaredUnits = [
-	"npc_dota_courier",
-]
+var RUNES_COLOR_MAP = {
+	0: "FF7800",
+	1: "FFEC5E",
+	2: "F62817",
+	3: "FFD700",
+	4: "8B008B",
+	5: "7FFF00",
+	6: "FD3AFB",
+	7: "FF4D00",
+	8: "0D0080",
+	9: "C800FF",
+}
 
 function TransformTextureToPath(texture, optPanelHeroimagestyle, optTeamNumber) {
 	if (texture.lastIndexOf("npc_dota_hero_") == 0 || texture.lastIndexOf("npc_arena_hero_") == 0) {
@@ -25,21 +35,9 @@ function TransformTextureToPath(texture, optPanelHeroimagestyle, optTeamNumber) 
 			return "file://{images}/heroes/" + texture + ".png"
 	} else if (texture.lastIndexOf("npc_") == 0) {
 		if (optPanelHeroimagestyle == "portrait") {
-			if (TeamCaredUnits.indexOf(texture) > -1) {
-				if (optTeamNumber != null)
-					return "file://{images}/custom_game/units/portraits/" + texture + "_team" + optTeamNumber + ".png"
-				else
-					return "file://{images}/custom_game/units/portraits/" + texture + "_team2.png"
-			} else
-				return "file://{images}/custom_game/units/portraits/" + texture + ".png"
+			return "file://{images}/custom_game/units/portraits/" + texture + ".png"
 		} else {
-			if (TeamCaredUnits.indexOf(texture) > -1) {
-				if (optTeamNumber != null)
-					return "file://{images}/custom_game/units/" + texture + "_team" + optTeamNumber + ".png"
-				else
-					return "file://{images}/custom_game/units/" + texture + "_team2.png"
-			} else
-				return "file://{images}/custom_game/units/" + texture + ".png"
+			return "file://{images}/custom_game/units/" + texture + ".png"
 		}
 	} else {
 		if (texture.lastIndexOf("item_") == -1)
@@ -224,16 +222,9 @@ function SetPannelDraggedChild(displayPanel, checker) {
 }
 
 function GetSteamID(pid, type) {
-	var playerInfo = Game.GetPlayerInfo(pid);
-	var steamID64 = playerInfo.player_steamid,
-		steamIDPart = Number(steamID64.substring(3)),
-		steamID32 = String(steamIDPart - 61197960265728);
-	switch (type) {
-		case 64:
-			return steamID64;
-		case 32:
-			return steamID32;
-	}
+	var steamID64 = Game.GetPlayerInfo(pid).player_steamid,
+		steamID32 = String(Number(steamID64.substring(3)) - 61197960265728);
+	return type == 64 ? steamID64 : steamID32;
 }
 
 function _DynamicMinimapSubscribe(minimapPanel, OnConnectedCallback) {
@@ -260,4 +251,16 @@ function IsCursorOnPanel(panel) {
 	var panelCoords = panel.GetPositionWithinWindow()
 	var cursorPos = GameUI.GetCursorPosition()
 	return cursorPos[0] > panelCoords.x && cursorPos[1] > panelCoords.y && cursorPos[0] < panelCoords.x + panel.actuallayoutwidth && cursorPos[1] < panelCoords.y + panel.actuallayoutheight
+}
+
+function secondsToMS(seconds, bTwoChars) {
+	var sec_num = parseInt(seconds, 10);
+	var minutes = Math.floor(sec_num / 60);
+	var seconds = Math.floor(sec_num - minutes * 60);
+
+	if (bTwoChars && minutes < 10)
+		minutes = "0" + minutes;
+	if (seconds < 10)
+		seconds = "0" + seconds;
+	return minutes + ':' + seconds;
 }

@@ -7,7 +7,8 @@ var SelectedHeroData,
 	SelectionTimerStartTime = 0,
 	HideEvent,
 	ShowPrecacheEvent,
-	PTID;
+	PTID,
+	DOTA_ACTIVE_GAMEMODE;
 var localHeroPicked = false
 var MinimapPTIDs = [];
 var HeroesPanels = [];
@@ -523,8 +524,8 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 			var TeamSelectionPanel = $.CreatePanel('Panel', $("#TeamSelectionStatusPanel"), "team_selection_panels_team" + teamNumber)
 			TeamSelectionPanel.AddClass("TeamSelectionPanel")
 			var color = GameUI.CustomUIConfig().team_colors[teamNumber]
-			color = color.substring(0, color.length - 1)
-			TeamSelectionPanel.style.backgroundColor = "gradient( linear, 250% -500%, 0% 100%, from( " + color + " ), to( transparent ) )"
+			color = color.substring(0, color.length - 1) + "4c"
+			TeamSelectionPanel.style.backgroundColor = "gradient(linear, 100% 100%, 0% 100%, from( " + color + " ), to( transparent ))"
 		}
 		var TeamSelectionPanel = $("#team_selection_panels_team" + teamNumber)
 		for (var playerIdInTeam in changesObject[teamNumber]) {
@@ -580,7 +581,7 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 						var SPBoxInfoGroup = playerData.SpawnBoxes[index]
 						var SPBoxID = "MinimapSpawnBoxPlayerIcon_" + SPBoxInfoGroup + "_" + playerIdInTeam;
 						var SpawnBoxUnitPanel = $("#" + SPBoxID);
-						var RootPanel = $("#MinimapSpawnBox_" + SPBoxInfoGroup)
+						var RootPanel = $(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").FindChildTraverse("MinimapSpawnBox_" + SPBoxInfoGroup);
 						if (SpawnBoxUnitPanel == null) {
 							SpawnBoxUnitPanel = $.CreatePanel("Image", RootPanel, SPBoxID)
 							SpawnBoxUnitPanel.AddClass("SpawnBoxUnitPanel")
@@ -594,12 +595,15 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 					for (var index in PlayerSPBoxesTable) {
 						var panel = PlayerSPBoxesTable[index]
 						if (checkedPanels.indexOf(panel) == -1) {
-							panel.DeleteAsync(0);
-							PlayerSPBoxesTable.splice(index, 1);
+							try {
+								panel.DeleteAsync(0);
+							} catch (e) {} finally {
+								PlayerSPBoxesTable.splice(index, 1);
+							}
 						}
 					}
 					$.Schedule(1, function() {
-						$.Each($("#MinimapImage").GetChild(1).Children(), function(child) {
+						$.Each($(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").GetChild(1).Children(), function(child) {
 							var childrencount = child.GetChildCount()
 							child.SetHasClass("SpawnBoxUnitPanelChildren2", childrencount >= 2)
 							child.SetHasClass("SpawnBoxUnitPanelChildren3", childrencount >= 3)
@@ -610,7 +614,6 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 			}
 		}
 	}
-
 }
 
 function HeroSelectionEnd() {
@@ -703,10 +706,14 @@ function OnMinimapClickSpawnBox(team, level, index) {
 			};
 		});
 		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
-			/*var DOTA_ACTIVE_GAMEMODE, DOTA_ACTIVE_GAMEMODE_TYPE
 			if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
 				DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
-			}*/
+				if (DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4)
+					$.GetContextPanel().AddClass("Gamemode_4V4V4V4")
+				_DynamicMinimapSubscribe($(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").GetChild(0), function(ptid) {
+					MinimapPTIDs.push(ptid)
+				});
+			}
 			if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
 				var DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
 				$("#GameModeInfoGamemodeLabel").text = $.Localize("#arena_game_mode_type_" + DOTA_ACTIVE_GAMEMODE_TYPE)
@@ -724,12 +731,8 @@ function OnMinimapClickSpawnBox(team, level, index) {
 			var bglist = SteamIDSpecialBGs[steamid];
 			BGName = bglist[Math.floor(Math.random() * bglist.length)];
 			$.GetContextPanel().AddClass("ShowBGMode")
-		} else {
+		} else
 			BGName = "file://{images}/loadingscreens/" + bgs[Math.floor(Math.random() * bgs.length)] + "/loadingscreen.tga"
-		}
 		$("#HeroSelectionBackground").SetImage(BGName);
-		_DynamicMinimapSubscribe($("#MinimapImage").GetChild(0), function(ptid) {
-			MinimapPTIDs.push(ptid)
-		});
 	}
 })();

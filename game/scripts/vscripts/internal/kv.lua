@@ -210,6 +210,6 @@ function PercentDamage(keys)
 	local damage = keys.Damage or 0
 	if keys.MaxHealthPercent then damage = damage + (keys.MaxHealthPercent*0.01*target:GetMaxHealth()) end
 	if keys.CurrnetHealthPercent then damage = damage + (keys.CurrnetHealthPercent*0.01*target:GetHealth()) end
-	print(keys.MaxHealthPercent)
+	if keys.multiplier then damage = damage * keys.multiplier end
 	ApplyDamage({victim = target, attacker = keys.caster, damage = damage, damage_type = ability:GetAbilityDamageType(), ability = ability})
 end

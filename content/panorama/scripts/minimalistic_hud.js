@@ -103,7 +103,7 @@ function HookPanoramaPanels() {
 		if (Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID()))
 			Abilities.AttemptToUpgrade(attribute_bonus_arena);
 	})
-	hud.FindChildTraverse("combat_events").FindChildTraverse("ToastManager").visible = true;
+	hud.FindChildTraverse("combat_events").FindChildTraverse("ToastManager").visible = false;
 	hud.FindChildTraverse("HudChat").FindChildTraverse("ChatLinesContainer").visible = false;
 }
 
@@ -130,13 +130,13 @@ function CreateCustomToast(data) {
 	if (data.type == "kill") {
 		var byNeutrals = data.killerPlayer == null
 		var isSelfKill = data.victimPlayer == data.killerPlayer
-		var isAllyKill = !byNeutrals && Players.GetTeam(data.victimPlayer) == Players.GetTeam(data.killerPlayer)
+		var isAllyKill = !byNeutrals && data.victimPlayer != null && Players.GetTeam(data.victimPlayer) == Players.GetTeam(data.killerPlayer)
 		var isVictim = data.victimPlayer == Game.GetLocalPlayerID()
 		var isKiller = data.killerPlayer == Game.GetLocalPlayerID()
 		var teamVictim = byNeutrals || Players.GetTeam(data.victimPlayer) == Players.GetTeam(Game.GetLocalPlayerID())
 		var teamKiller = !byNeutrals && Players.GetTeam(data.killerPlayer) == Players.GetTeam(Game.GetLocalPlayerID())
 		row.SetHasClass("AllyEvent", teamKiller)
-		row.SetHasClass("EnemyEvent", teamVictim)
+		row.SetHasClass("EnemyEvent", !teamKiller && teamVictim)
 		row.SetHasClass("LocalPlayerInvolved", isVictim || isKiller)
 		row.SetHasClass("LocalPlayerKiller", isKiller)
 		row.SetHasClass("LocalPlayerVictim", isVictim)
@@ -150,39 +150,54 @@ function CreateCustomToast(data) {
 			Game.EmitSound("notification.teammate.death")
 		if (isSelfKill) {
 			Game.EmitSound("notification.self.kill")
-			rowText = $.Localize("#DOTA_HUD_PlayerDeniedSelf")
+			rowText = $.Localize("custom_toast_PlayerDeniedSelf")
 		} else if (isAllyKill) {
-			rowText = $.Localize("#DOTA_HUD_PlayerDenied")
+			rowText = $.Localize("#custom_toast_PlayerDenied")
 		} else {
 			if (byNeutrals) {
 				rowText = $.Localize("#npc_dota_neutral_creep")
 			} else {
-				rowText = "{s:killer_name}"
+				rowText = "{killer_name}"
 			}
-			rowText = rowText + " {s:killed_icon} {s:victim_name} {s:gold}";
+			rowText = rowText + " {killed_icon} {victim_name} {gold}";
 		}
-	} else if (data.type == "rune_") {
-
-		/*if (lastLine != null) {
-			$("#CustomToastManager").MoveChildBefore(row, lastLine);
-		}*/
+	} else if (data.type == "kill_streak_ended") {
+		var isVictim = data.victimPlayer == Game.GetLocalPlayerID()
+		var teamVictim = Players.GetTeam(data.victimPlayer) == Players.GetTeam(Game.GetLocalPlayerID())
+		row.SetHasClass("AllyEvent", teamVictim)
+		row.SetHasClass("EnemyEvent", !teamVictim)
+		row.SetHasClass("LocalPlayerInvolved", isVictim)
+		row.SetHasClass("LocalPlayerVictim", isVictim)
+		rowText = $.Localize("#custom_toast_KillStreak_Ended")
+	} else if (data.type == "generic") {
+		row.AddClass("AllyEvent")
+		rowText = $.Localize(data.text)
 	}
 
-	rowText = rowText.replace("{s:denied_icon}", "<img class='DeniedIcon'/>").replace("{s:killed_icon}", "<img class='CombatEventKillIcon'/>");
+	rowText = rowText.replace("{denied_icon}", "<img class='DeniedIcon'/>").replace("{killed_icon}", "<img class='CombatEventKillIcon'/>").replace("{time_dota}", "<font color='lime'>" + secondsToMS(Game.GetDOTATime(false, false), true) + "</font>");
+	if (data.player != null)
+		rowText = rowText.replace("{player_name}", CreateHeroElements(data.player))
 	if (data.victimPlayer != null)
-		rowText = rowText.replace("{s:victim_name}", CreateHeroElements(data.victimPlayer))
+		rowText = rowText.replace("{victim_name}", CreateHeroElements(data.victimPlayer))
 	if (data.killerPlayer != null)
-		rowText = rowText.replace("{s:killer_name}", CreateHeroElements(data.killerPlayer))
-	if (data.killerPlayer != null)
-	rowText = rowText.replace("{s:killer_name}", CreateHeroElements(data.killerPlayer))
+		rowText = rowText.replace("{killer_name}", CreateHeroElements(data.killerPlayer))
 	if (data.gold != null)
-		rowText = rowText.replace("{s:gold}", "<font color='gold'>" + data.gold + "</font> <img class='CombatEventGoldIcon' />")
-
+		rowText = rowText.replace("{gold}", "<font color='gold'>" + data.gold + "</font> <img class='CombatEventGoldIcon' />")
+	if (data.kill_streak != null)
+		rowText = rowText.replace("{kill_streak}", data.kill_streak)
+	if (data.runeType != null)
+		rowText = rowText.replace("{rune_name}", "<font color='#" + RUNES_COLOR_MAP[data.runeType] + "'>" + $.Localize("custom_runes_rune_" + data.runeType + "_title") + "</font>")
+	if (data.variables != null)
+		for (var k in data.variables) {
+			rowText = rowText.replace(k, data.variables[k])
+		}
+	if (rowText.indexOf("<img") == -1)
+		row.AddClass("SimpleText")
 	row.FindChildTraverse("ToastLabel").text = rowText
 	$.Schedule(10, function() {
 		row.AddClass("Collapsed");
-		row.DeleteAsync(2)
 	})
+	row.DeleteAsync(10.3)
 };
 
 (function() {

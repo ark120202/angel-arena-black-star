@@ -6,6 +6,8 @@ if PanoramaShop == nil then
 	PanoramaShop.StocksTable = {
 		[DOTA_TEAM_GOODGUYS] = {},
 		[DOTA_TEAM_BADGUYS] = {},
+		[DOTA_TEAM_CUSTOM_1] = {},
+		[DOTA_TEAM_CUSTOM_2] = {},
 	}
 end
 

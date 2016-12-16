@@ -6601,7 +6601,8 @@
 					{
 						"ScriptFile"	"heroes/hero_gyrocopter/rocket_barrage.lua"
 						"Function"		"RocketBarrage"
-						"mana"			"%mana_per_second * %interval"
+						"mana"			"%mana_per_second"
+						"interval"		"%interval"
 					}
 				}	
 			}
@@ -11961,9 +11962,10 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"heroes/hero_zen_gehraz/mystic_twister.lua"
-						"Function"		"DoDamage"
-						"Damage"		"%damage_per_second * %damage_interval"
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"PercentDamage"
+						"Damage"		"%damage_per_second"
+						"multiplier"	"%damage_interval"
 					}
 				}
 	

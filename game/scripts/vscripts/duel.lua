@@ -135,7 +135,6 @@ function Duel:StartDuel()
 				end
 				
 				if unit.InArena then
-					
 					unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 					unit:Stop()
 					PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), unit)
@@ -147,6 +146,13 @@ function Duel:StartDuel()
 				--TODO Meepo
 			end
 		end
+		CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+			type = "generic",
+			text = "#custom_toast_DuelStarted",
+			variables = {
+				["{duel_index}"] = Duel.DuelCounter + 1
+			}
+		})
 	else
 		Duel:EndDuelLogic(false, true)
 		Notifications:TopToAll({text="#duel_no_heroes", duration=9.0})

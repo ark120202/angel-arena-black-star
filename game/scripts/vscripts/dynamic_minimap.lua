@@ -3,7 +3,7 @@ if not DynamicMinimap then
 	DynamicMinimap.MinimapPoints = {}
 	DynamicMinimap.NextID = 0
 end
-MAP_LENGTH = 8192
+
 function DynamicMinimap:Init()
 	for team = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
 		PlayerTables:CreateTable("dynamic_minimap_points_" .. team, {}, GetPlayersInTeam(team))

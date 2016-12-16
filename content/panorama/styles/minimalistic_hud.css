@@ -63,10 +63,9 @@
 
 #CustomToastManager
 {
-	flow-children: up;
-	margin-top: 20%;
+	flow-children: down;
+	margin-top: 40%;
 	height: 400px;
-	width: 500px;
     overflow: noclip;
 }
 
@@ -303,4 +302,9 @@
 	vertical-align: center;
 	width: 25px;
 	height: 25px;
+}
+
+.SimpleText #ToastLabel
+{
+	padding-top: 0px;
 }

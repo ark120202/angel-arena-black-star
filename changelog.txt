@@ -34,41 +34,25 @@ TODO LIST:
 		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_1434]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/abfb921c8044bc77d4f0a6a31b78d975]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/abfb921c8044bc77d4f0a6a31b78d975]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/abfb921c8044bc77d4f0a6a31b78d975
+[url=https://vk.com/wall-122685850_1649]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://gist.github.com/ark120202/2ec3e53391f200c09e9957adbc73506e]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/2ec3e53391f200c09e9957adbc73506e]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/2ec3e53391f200c09e9957adbc73506e
 ============================================================
-Angel Arena Black Star - Версия 1.3.5:
+Angel Arena Black Star - Версия 1.3.6:
 
 ============================================================
-Angel Arena Black Star - Version 1.3.5:
+Angel Arena Black Star - Version 1.3.6:
 
 ============================================================
-Angel Arena Black Star - Version 1.3.5:
+Angel Arena Black Star - Version 1.3.6:
 General:
-	Small shop redesign
-	Techies now can't place mines near duel location
+	
 Balance:
-	Items:
-		
 	Abilities:
-		All abilities were rebalanced to match 7.00 update
+		
 Fixes:
-	Fixed item selling didn't worked
-	Fixed Show in Shop button shown item in DOTA shop, instead of custom
-	Minimap icons now works
-	Fixed items in backpack weren't consumed when you purchased item in shop
-	Removed Bananas, because Valve removed item_banana calss, so it caused game to crash
-	Fixed Autohex worked on illusions
-	Fixed Omniknight - Degen Aura didn't work
-	Fixed Omniknight - Select Allies & Select Enemies sometimes were out of level sync
-	Fixed respawn time
-	Fixed kill notifications
-	Fixed chat
-	Fixed Rubick - Personality Steal HUD
-	Fixed custom shops didn't work
-	P.S. Looks like custom scoreboards won't work now, so enabled normal dota scoreboard
+	
 <<+===========================================================================================================
 rhasta,
 lycan,
