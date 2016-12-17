@@ -3111,12 +3111,13 @@
 	"nevermore_necromastery"
 	{
 		"MaxLevel"	"7"
+		"LevelsBetweenUpgrades"	"5"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"necromastery_damage_per_soul"	"2"
+				"necromastery_damage_per_soul"	"2 2 2 2 2 2 3"
 				"LinkedSpecialBonus"	"special_bonus_unique_nevermore_1"
 			}
 
@@ -7678,7 +7679,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"17.0"
-		"AbilityManaCost"	"100 125 150 175 200 228"
+		"AbilityManaCost"	"100 125 150 175 200 228 240"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11924,6 +11925,7 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"0"
 		"AbilityManaCost"	"0"
+		"LevelsBetweenUpgrades"	"15"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11941,6 +11943,7 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"0"
 		"AbilityManaCost"	"0"
+		"LevelsBetweenUpgrades"	"15"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11964,6 +11967,7 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"0"
 		"AbilityManaCost"	"0"
+		"LevelsBetweenUpgrades"	"15"
 		"AbilitySpecial"
 		{
 			"01"
@@ -17589,7 +17593,7 @@
 	"abaddon_borrowed_time"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"0.0 55.0 50.0 45.0 40.0 35.0 30.0"
+		"AbilityCooldown"	"60.0"
 		"AbilityManaCost"	"0 0 0"
 		"AbilitySpecial"
 		{
@@ -19564,7 +19568,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
 		"AbilityCooldown"	"7 6 5 4 3 2 1"
-		"AbilityManaCost"	"100 200 300 400 500 600 700"
+		"AbilityManaCost"	"10"
 		"AbilitySpecial"
 		{
 			"01"
@@ -19597,8 +19601,8 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"1000"
 		"AbilityCastPoint"	"0.2"
-		"AbilityCooldown"	"7.0 6.0 5.0 4.0 3.0 2.0 1.0"
-		"AbilityManaCost"	"50 100 150 200 250 300 350"
+		"AbilityCooldown"	"1.0"
+		"AbilityManaCost"	"30"
 	}
 
 	"monkey_king_primal_spring"
@@ -19606,8 +19610,8 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.0"
 		"AbilityCastRange"	"0"
-		"AbilityCooldown"	"16"
-		"AbilityManaCost"	"100 110 120 130"
+		"AbilityCooldown"	"10"
+		"AbilityManaCost"	"100 110 120 130 140 150 160"
 		"AbilitySpecial"
 		{
 			"01"
@@ -19739,7 +19743,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"required_hits"	"4 5 6 7 8 9 10"
+				"required_hits"	"3 3 3 3 3 3 1"
 			}
 
 			"02"
@@ -19751,7 +19755,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"charges"	"4"
+				"charges"	"6"
 			}
 
 			"04"
