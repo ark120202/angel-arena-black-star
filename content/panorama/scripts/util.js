@@ -58,9 +58,9 @@ function SendAlert(type) {
 
 function GetHeroName(unit) {
 	if (unit > -1) {
-		var ServersideData = PlayerTables.GetTableValue("entity_attributes", unit)
-		if (ServersideData != null)
-			return ServersideData.hero_name
+		var data = GameUI.CustomUIConfig().custom_entity_values[unit]
+		if (data != null && data.unit_name != null)
+			return data.unit_name
 		else
 			return Entities.GetUnitName(unit)
 	} else

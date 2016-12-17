@@ -524,8 +524,9 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 			var TeamSelectionPanel = $.CreatePanel('Panel', $("#TeamSelectionStatusPanel"), "team_selection_panels_team" + teamNumber)
 			TeamSelectionPanel.AddClass("TeamSelectionPanel")
 			var color = GameUI.CustomUIConfig().team_colors[teamNumber]
-			color = color.substring(0, color.length - 1) + "4c"
-			TeamSelectionPanel.style.backgroundColor = "gradient(linear, 100% 100%, 0% 100%, from( " + color + " ), to( transparent ))"
+			color = color.substring(0, color.length - 1)
+			TeamSelectionPanel.style.backgroundColor = "gradient(linear, 100% 100%, 0% 100%, from( " + color + "4D" + " ), to( transparent ))"
+			TeamSelectionPanel.style.borderColor = color + "99";
 		}
 		var TeamSelectionPanel = $("#team_selection_panels_team" + teamNumber)
 		for (var playerIdInTeam in changesObject[teamNumber]) {
@@ -539,11 +540,10 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 				PlayerInTeamNickname.AddClass("PlayerInTeamNickname")
 				PlayerInTeamNickname.text = Players.GetPlayerName(Number(playerIdInTeam))
 				var playerColor = Players.GetPlayerColor(Number(playerIdInTeam)).toString(16)
-				if (playerColor != null) {
+				if (playerColor != null)
 					playerColor = "#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2)
-				} else {
+				else
 					playerColor = "#000000";
-				}
 				var HeroImageHost = $.CreatePanel("Panel", PlayerInTeamPanel, "playerpickpanelhost_player" + playerIdInTeam)
 				HeroImageHost.AddClass("PlayerInTeamHeroImageHost")
 				HeroImageHost.style.borderColor = playerColor
@@ -638,6 +638,7 @@ function ShowPrecache() {
 	$("#HeroSelectionBox").visible = false
 	$("#HeroSelectionPrecacheBase").visible = true
 	var PlayerPickData = PlayerTables.GetAllTableValues("hero_selection")
+
 	for (var teamNumber in PlayerPickData) {
 		/*if ($("#team_selection_panels_team" + teamNumber) == null) {
 			var TeamPanel = $.CreatePanel('Panel', $("#TeamSelectionStatusPanel"), "team_selection_panels_team" + teamNumber)
@@ -645,6 +646,9 @@ function ShowPrecache() {
 		}*/
 
 		var TeamPanel = $("#PrecacheTeamEntryTeam" + teamNumber)
+		var color = GameUI.CustomUIConfig().team_colors[teamNumber]
+		color = color.substring(0, color.length - 1) + "4c"
+		TeamPanel.style.backgroundColor = "gradient(linear, 100% 100%, 0% 100%, from( " + color + " ), to( transparent ))"
 		for (var playerIdInTeam in PlayerPickData[teamNumber]) {
 			var SelectedPlayerHeroData = PlayerPickData[teamNumber][playerIdInTeam]
 			var PlayerInTeamPanel = $.CreatePanel('Panel', TeamPanel, "")
@@ -653,13 +657,11 @@ function ShowPrecache() {
 			var PlayerInTeamNickname = $.CreatePanel('Label', PlayerInTeamPanel, "")
 			PlayerInTeamNickname.AddClass("PrecachePlayerInTeamNickname")
 			PlayerInTeamNickname.text = Players.GetPlayerName(Number(playerIdInTeam))
-			var playerColor = Players.GetPlayerColor(Number(playerIdInTeam))
 			var playerColor = Players.GetPlayerColor(Number(playerIdInTeam)).toString(16)
-			if (playerColor != null) {
+			if (playerColor != null)
 				playerColor = "#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2)
-			} else {
+			else
 				playerColor = "#000000";
-			}
 			PlayerInTeamNickname.style.color = playerColor
 			hero_tabs_iter:
 				for (var tabkey in tabsData) {

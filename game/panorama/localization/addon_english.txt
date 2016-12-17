@@ -3,8 +3,6 @@
     "Language"      "English"
 	"Tokens"
 	{
-		"DOTA_Tooltip_ability_item_boss_keeper_key"											"Boss Keeper Key"
-		
 		"Unassigned"      								"Unassigned Team"
 		"Spectator"       								"Spectator Team"
 		"Neutrals"        								"Neutral Team"
@@ -21,8 +19,8 @@
 
 		"DOTA_GoodGuys"   								"Radiant"
 		"DOTA_BadGuys"    								"Dire"
-		"DOTA_Custom1"    								"Pink Dragon"
-		"DOTA_Custom2"    								"Orange Dog"
+		"DOTA_Custom1"    								"Murlocs"
+		"DOTA_Custom2"    								"Orcs"
 		"DOTA_Custom3"    								"Blue Rooster"
 		"DOTA_Custom4"    								"Green Ram"
 		"DOTA_Custom5"    								"Brown Rat"
@@ -32,8 +30,8 @@
 
 		"DOTA_GoodGuys_2"   							"Radiant"
 		"DOTA_BadGuys_2"    							"Dire"
-		"DOTA_Custom1_2"    							"Pink Dragon"
-		"DOTA_Custom2_2"    							"Orange Dog"
+		"DOTA_Custom1_2"    							"Murlocs"
+		"DOTA_Custom2_2"    							"Orcs"
 		"DOTA_Custom3_2"    							"Blue Rooster"
 		"DOTA_Custom4_2"    							"Green Ram"
 		"DOTA_Custom5_2"    							"Brown Rat"

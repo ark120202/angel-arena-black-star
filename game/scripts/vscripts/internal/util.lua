@@ -985,6 +985,7 @@ end
 function MakePlayerAbandoned(iPlayerID)
 	if not PLAYER_DATA[iPlayerID].IsAbandoned then
 		local hero = PlayerResource:GetSelectedHeroEntity(iPlayerID)
+		hero:ClearNetworkableEntityInfo()
 		if hero then
 			Notifications:TopToAll({hero=hero:GetName(), duration=10.0})
 			Notifications:TopToAll(CreateHeroNameNotificationSettings(hero))
@@ -1006,16 +1007,22 @@ function MakePlayerAbandoned(iPlayerID)
 		table.insert(ptd, iPlayerID)
 		PlayerTables:SetTableValue("arena", "players_abandoned", ptd)
 		PLAYER_DATA[iPlayerID].IsAbandoned = true
-		local player_team = PlayerResource:GetTeam(iPlayerID)
-		local player_count = GetTeamPlayerCount(player_team)
-		if player_count <= 0 and not GameRules:IsCheatMode() then
-			local winners = 2
-			if player_team == 2 then
-				winners = 3
+		if not GameRules:IsCheatMode() then
+			local teamLeft
+			for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
+				local count = GetTeamPlayerCount(i)
+				if count > 0 then
+					if teamLeft then
+						return
+					else
+						teamLeft = i
+					end
+				end
 			end
-			GameRules:SetSafeToLeave(true)
-			GameRules:SetGameWinner(winners)
-			return
+			if teamLeft then
+				GameRules:SetSafeToLeave(true)
+				GameRules:SetGameWinner(teamLeft)
+			end
 		end
 	end
 end
@@ -1148,7 +1155,6 @@ end
 
 function GetNotScaledDamage(damage, unit)
 	local amplify = unit:GetSpellDamageAmplify() * 0.01
-	print(damage, amplify, damage-(damage*(amplify)))
 	return damage-(damage*(1-amplify))
 end
 

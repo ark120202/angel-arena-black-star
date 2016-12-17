@@ -51,7 +51,6 @@ function Duel:CreateGlobalTimer()
 	end)
 
 	Physics:RemoveCollider("collider_box_blocker_arena")
-	--Physics:CreateBox(a, b, width, center)
 	local a1 = Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin()
 	local a2 = Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()
 	local collider = Physics:AddCollider("collider_box_blocker_arena", Physics:ColliderFromProfile("boxblocker"))
@@ -69,37 +68,34 @@ function Duel:StartDuel()
 	Duel.heroes_teams_for_duel = {}
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
 		if PlayerResource:IsValidPlayerID(playerID) then
-			local player = PlayerResource:GetPlayer(playerID)
-			if player and player:GetAssignedHero() then
-				if Duel.heroes_teams_for_duel[player:GetTeamNumber()] == nil then Duel.heroes_teams_for_duel[player:GetTeamNumber()] = {} end
-				table.insert(Duel.heroes_teams_for_duel[player:GetTeamNumber()], player:GetAssignedHero())
+			local team = PlayerResource:GetTeam(playerID)
+			local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+			if hero then
+				Duel.heroes_teams_for_duel[team] = Duel.heroes_teams_for_duel[team] or {}
+				table.insert(Duel.heroes_teams_for_duel[team], hero)
 			end
 		end
 	end
 	local heroes_in_teams = {}
-	local has_heroes = {}
 	for i,v in pairs(Duel.heroes_teams_for_duel) do
-		if heroes_in_teams[i] == nil then heroes_in_teams[i] = 0 end
-		if has_heroes[i] == nil then has_heroes[i] = false end
+		if not heroes_in_teams[i] then heroes_in_teams[i] = 0 end
 		for _,vi in pairs(v) do
 			if vi:IsAlive() then
 				heroes_in_teams[i] = heroes_in_teams[i] + 1
-				has_heroes[i] = true
 			end
 		end
 	end
-	heroes_in_teams = table.iterate(heroes_in_teams)
-	local heroes_to_fight_n = math.min(unpack(heroes_in_teams))
+	local heroes_to_fight_n = math.min(unpack(table.iterate(heroes_in_teams)))
 	Duel.TimeUntilDuelEnd = ARENA_SETTINGS.DurationBase + ARENA_SETTINGS.DurationForPlayer * heroes_to_fight_n
-	if heroes_to_fight_n > 0 and table.allEqual(has_heroes, true) and table.count(Duel.heroes_teams_for_duel) > 1 then
-		for _,v in ipairs(Entities:FindAllByName("npc_dota_arena_statue")) do
+	if heroes_to_fight_n > 0 and table.count(Duel.heroes_teams_for_duel) > 1 then
+		--[[for _,v in ipairs(Entities:FindAllByName("npc_dota_arena_statue")) do
 			local particle1 = ParticleManager:CreateParticle("particles/arena/units/arena_statue/statue_eye.vpcf", PATTACH_ABSORIGIN, v)
 			local particle2 = ParticleManager:CreateParticle("particles/arena/units/arena_statue/statue_eye.vpcf", PATTACH_ABSORIGIN, v)
 			ParticleManager:SetParticleControlEnt(particle1, 0, v, PATTACH_POINT_FOLLOW, "attach_eye_l", v:GetAbsOrigin(), true)
 			ParticleManager:SetParticleControlEnt(particle2, 0, v, PATTACH_POINT_FOLLOW, "attach_eye_r", v:GetAbsOrigin(), true)
 			table.insert(Duel.Particles, particle1)
 			table.insert(Duel.Particles, particle2)
-		end
+		end]]
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
 		local rndtbl = {}
 		table.merge(rndtbl, Duel.heroes_teams_for_duel)

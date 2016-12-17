@@ -257,11 +257,13 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 								temp:AddNoDraw()
 								hero = PlayerResource:ReplaceHeroWith(playerId, baseNewHero, 0, 0)
 								Timers:CreateTimer(0.03, function()
+									temp:ClearNetworkableEntityInfo()
 									UTIL_Remove(temp)
 								end)
 							else
 								if oldhero:GetUnitName() == FORCE_PICKED_HERO then
 									Timers:CreateTimer(0.03, function()
+										oldhero:ClearNetworkableEntityInfo()
 										UTIL_Remove(oldhero)
 									end)
 								end
@@ -315,6 +317,7 @@ function HeroSelection:RemoveAllOwnedUnits(playerId)
 	local courier = FindCourier(player:GetTeam())
 	for _,v in ipairs(FindAllOwnedUnits(player)) do
 		if v ~= hero and v ~= courier then
+			v:ClearNetworkableEntityInfo()
 			v:ForceKill(false)
 			UTIL_Remove(v)
 		end

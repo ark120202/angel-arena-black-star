@@ -64,8 +64,8 @@ DISABLE_KILLING_SPREE_ANNOUNCER = false -- Shuold we disable the killing spree a
 DISABLE_STICKY_ITEM = true              -- Should we disable the sticky item button in the quick buy area?
 SKIP_TEAM_SETUP = false                 -- Should we skip the team setup entirely?
 ENABLE_AUTO_LAUNCH = true               -- Should we automatically have the game complete team setup after AUTO_LAUNCH_DELAY seconds?
-AUTO_LAUNCH_DELAY = 15                  -- How long should the default team selection launch timer be?  The default for custom games is 30.  Setting to 0 will skip team selection.
-LOCK_TEAM_SETUP = IsInToolsMode()       -- Should we lock the teams initially?  Note that the host can still unlock the teams 
+AUTO_LAUNCH_DELAY = IsInToolsMode() and 3 or 15                  -- How long should the default team selection launch timer be?  The default for custom games is 30.  Setting to 0 will skip team selection.
+LOCK_TEAM_SETUP = false                 -- Should we lock the teams initially?  Note that the host can still unlock the teams 
 
 
 MAX_NUMBER_OF_TEAMS = 2                -- How many potential teams can be in this game mode?
@@ -137,7 +137,7 @@ POSSIBLE_KILL_GOALS = {
 }
 DOTA_KILL_GOAL_VOTE_STANDART = 125
 
-CUSTOM_HERO_SELECTION_TIME = IsInToolsMode() and math.pow(10, 10000) or 80
+CUSTOM_HERO_SELECTION_TIME = IsInToolsMode() and math.pow(10, 5) or 80
 DOTA_PLAYER_AUTOABANDON_TIME = 60*8
 MAX_SPAWNBOXES_SELECTED = 3
 

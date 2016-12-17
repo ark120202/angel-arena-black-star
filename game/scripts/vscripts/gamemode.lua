@@ -88,10 +88,10 @@ local modifiers = {
 for i = 1, #requirements do
 	require(requirements[i])
 end
+JSON = require("libraries/json")
 for k,v in pairs(modifiers) do
 	LinkLuaModifier(k, v, LUA_MODIFIER_MOTION_NONE)
 end
-JSON = require("libraries/json")
 GameModes:Preload()
 
 
@@ -235,7 +235,6 @@ function GameMode:InitGameMode()
 		courier_owner9 = -1,
 		courier_owner10 = -1,
 	}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
-	PlayerTables:CreateTable("entity_attributes", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 	PlayerTables:CreateTable("player_hero_entities", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 	--[[Containers:CreateContainer({
 		layout             = {24},
@@ -332,26 +331,12 @@ function GameMode:PrecacheUnitQueueed(name)
 end
 
 function GameMode:GameModeThink()
-	for _,v in ipairs(HeroList:GetAllHeroes()) do
-		if v and not v:IsNull() then
-			PlayerTables:SetTableValue("entity_attributes", v:GetEntityIndex(), {
-				str = v:GetStrength(),
-				agi = v:GetAgility(),
-				int = v:GetIntellect(),
-				str_gain = v:GetStrengthGain(),
-				agi_gain = v:GetAgilityGain(),
-				int_gain = v:GetIntellectGain(),
-				attribute_primary = v:GetPrimaryAttribute(),
-				spell_amplify = v:GetSpellDamageAmplify(),
-				hero_name = GetFullHeroName(v),
-			})
-		end
-	end
-
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
-			if PlayerResource:GetSelectedHeroEntity(i) then
-				PlayerTables:SetTableValue("player_hero_entities", i, PlayerResource:GetSelectedHeroEntity(i):GetEntityIndex())
+			local hero = PlayerResource:GetSelectedHeroEntity(i)
+			if hero then
+				PlayerTables:SetTableValue("player_hero_entities", i, hero:GetEntityIndex())
+				hero:SetNetworkableEntityInfo("unit_name", GetFullHeroName(hero))
 			end
 			Gold:AddGold(i, CUSTOM_GOLD_PER_TICK)
 			if not IsPlayerAbandoned(i) then
@@ -398,5 +383,3 @@ function GameMode:GameModeThink()
 	
 	return CUSTOM_GOLD_TICK_TIME
 end
--- GameRules:Playtesting_UpdateAddOnKeyValues()
--- dota_create_fake_clients

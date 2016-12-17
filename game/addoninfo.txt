@@ -1,7 +1,6 @@
 "AddonInfo"
 {
-	//4v4v4v4 4v4v4v4_custom_abilities
-	"maps"          "5v5 5v5_custom_abilities"
+	"maps"          "5v5 4v4v4v4 5v5_custom_abilities 4v4v4v4_custom_abilities"
 	"5v5"
 	{
 		"MaxPlayers"		"10"
@@ -12,16 +11,16 @@
 		"MaxPlayers"		"10"
 		"TeamCount"			"2"
 	}
-	// "4v4v4v4"
-	// {
-	// 	"MaxPlayers"		"16"
-	// 	"TeamCount"			"4"
-	// }
-	// "4v4v4v4_custom_abilities"
-	// {
-	// 	"MaxPlayers"		"16"
-	// 	"TeamCount"			"4"
-	// }
+	"4v4v4v4"
+	{
+		"MaxPlayers"		"16"
+		"TeamCount"			"4"
+	}
+	"4v4v4v4_custom_abilities"
+	{
+		"MaxPlayers"		"16"
+		"TeamCount"			"4"
+	}
 
 	"Default_Keys"
 	{

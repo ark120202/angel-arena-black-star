@@ -53,7 +53,6 @@ function UpdatePanoramaHUD() {
 		}
 
 	hud.FindChildTraverse("HUDSkinAbilityContainerBG").style.width = (hud.FindChildTraverse("abilities").actuallayoutwidth + 16) + "px";
-	hud.FindChildTraverse("StatDrawerTopRight").style.marginLeft = (hud.FindChildTraverse("abilities").actuallayoutwidth + 146) + "px";
 
 	var minimap = hud.FindChildTraverse("minimap_block");
 	$("#DynamicMinimapRoot").style.height = (minimap.desiredlayoutheight + 8) + "px";
@@ -61,7 +60,7 @@ function UpdatePanoramaHUD() {
 
 	var pcs = hud.FindChildTraverse("PortraitContainer").GetPositionWithinWindow()
 	if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
-		$("#rubick_personality_steal_hud").style.position = pcs.x + "px " + pcs.y + "px 0"
+		$("#rubick_personality_steal_hud").style.position = (pcs.x / Game.GetScreenWidth() * 100) + "% " + ((pcs.y + 12) / Game.GetScreenHeight() * 100) + "% 0"
 }
 
 function AutoUpdatePanoramaHUD() {

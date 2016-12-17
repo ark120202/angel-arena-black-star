@@ -3,6 +3,7 @@ CUSTOM_WEARABLES_PLAYER_ITEMS = {
 		"item_hero_stargazer_helmet_of_the_sunray",
 		"item_hero_omniknight_frozen_sword",
 		"item_item_summoned_unit_kyuubey",
+		"item_hero_shinobu_umbrella",
 	},
 	[82292900] = {
 		"item_hero_stargazer_helmet_of_the_sunray",
@@ -64,4 +65,7 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 			}
 		}
 	},
+	["item_hero_shinobu_umbrella"] = {
+		
+	}
 }

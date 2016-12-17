@@ -18,7 +18,6 @@ end
 
 function FountainOnStartTouch(trigger, team)
 	local unit = trigger.activator
-	print(unit:GetTeam(), team)
 	if unit and unit:GetTeam() == team then
 		unit:AddNewModifier(unit, nil, "modifier_fountain_aura_arena", nil)
 	elseif not IsBossEntity(unit) then

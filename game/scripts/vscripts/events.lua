@@ -41,6 +41,9 @@ function GameMode:OnNPCSpawned(keys)
 	DebugPrintTable(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	if npc:IsHero() then
+		if not HeroSelection.SelectionEnd then
+			return
+		end
 		HeroVoice:OnNPCSpawned(npc)
 		Timers:CreateTimer(function()
 			if npc and not npc:IsNull() and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
@@ -51,8 +54,8 @@ function GameMode:OnNPCSpawned(keys)
 				Physics:Unit(npc)
 		    	npc:SetAutoUnstuck(true)
 				CustomWearables:EquipWearables(npc)
+				npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 				if npc:IsRealHero() and not npc:HasModifier("modifier_arc_warden_tempest_double") then
-					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					AbilityShop:RandomOMGRollAbilities(npc)
 					if npc.BloodstoneDummies then
 						for _,v in ipairs(npc.BloodstoneDummies) do
@@ -88,6 +91,11 @@ function GameMode:OnItemPickedUp(keys)
 	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 	local itemname = keys.itemname
+	if itemEntity.CanOverrideOwner and unitEntity and (unitEntity:IsHero() or unitEntity:IsConsideredHero()) then
+		itemEntity:SetOwner(PlayerResource:GetSelectedHeroEntity(keys.PlayerID))
+		itemEntity:SetPurchaser(PlayerResource:GetSelectedHeroEntity(keys.PlayerID))
+		itemEntity.CanOverrideOwner = nil
+	end
 end
 
 -- A player has reconnected to the game.	This function can be used to repaint Player-based particles or change

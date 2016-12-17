@@ -223,10 +223,14 @@
 				<Label id="PrecacheLoadingMessageLabel" text="#hero_selection_loading_message"/>
 			</Panel>
 			<Panel id="PrecacheTeamContainer">
-				<Panel id="PrecacheTeamEntryTeam2" class="PrecacheTeamEntry" />
-				<Panel id="PrecacheTeamEntryTeam3" class="PrecacheTeamEntry" />
-				<Panel id="PrecacheTeamEntryTeam6" class="PrecacheTeamEntry TeamEntryCount4" />
-				<Panel id="PrecacheTeamEntryTeam7" class="PrecacheTeamEntry TeamEntryCount4" />
+				<Panel class="PrecacheRow">
+					<Panel id="PrecacheTeamEntryTeam2" class="PrecacheTeamEntry" />
+					<Panel id="PrecacheTeamEntryTeam6" class="PrecacheTeamEntry" />
+				</Panel>
+				<Panel class="PrecacheRow">
+					<Panel id="PrecacheTeamEntryTeam3" class="PrecacheTeamEntry" />
+					<Panel id="PrecacheTeamEntryTeam7" class="PrecacheTeamEntry" />
+				</Panel>
 			</Panel>
 		</Panel>
 		<Panel id="GamePausedOverlay" hittest="true">

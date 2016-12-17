@@ -181,24 +181,28 @@
 	margin: 4px;
 	height: 100%;
 	flow-children: right;
+	border: 2px solid white;
+	border-radius: 12px;
 }
 
 .PlayerInTeamPanel
 {
-	margin: 8px;
+	margin: 2px;
 	height: 100%;
+	width: 140px;
 }
 
 .PlayerInTeamNickname
 {
-	margin: 4px;
-	width: 92px;
+	margin: 4px 0px;
+	width: 100%;
 	align: center bottom;
 	text-align: center;
 	font-size: 18px;
-	color: rgb(150,150,150);
+	color: white;
 	height: 22px;
-	margin-bottom: -6px;
+	margin-bottom: -2px;
+	text-shadow: 0 0 6px black;
 }
 
 .PlayerInTeamHeroImageHost
@@ -207,14 +211,15 @@
 	border-width: 2px;
 	border-style: solid;
 	border-color: red;
-	border-radius: 10px;
+	border-radius: 6px;
 }
 
 .PlayerInTeamHeroImage
 {
-	width: 80px;
-	height: 92px;
-	border-radius: 10px;
+	width: height-percentage(75.5%);
+	height: 97px;
+	border-radius: 6px;
+	background-color: #282E30;
 }
 
 .PlayerInTeamHeroImageHover
@@ -394,18 +399,15 @@
 {
 	horizontal-align: center;
 	margin-top: 40px;
-	width: 80%;
 	height: 70%;
 	flow-children: down;
 }
 
 .PrecacheTeamEntry
 {
-	margin: 5px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	horizontal-align: center;
 	flow-children: right;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .PrecacheTeamPlayerPanel
@@ -413,7 +415,7 @@
 	height: 350px;
 	width: 250px;
 	margin: 5px;
-	background-color: rgba(0, 0, 0, 0.95);
+	background-color: rgba(0, 0, 0, 0.80);
 	box-shadow: -10px -10px 20px 20px black;
 }
 
@@ -734,11 +736,37 @@
 	visibility: visible;
 }
 
-.Gamemode_4V4V4V4 #PrecacheTeamContainer
+.Gamemode_4V4V4V4 .PrecacheTeamPlayerPanel
 {
+	height: 350px;
+	width: 220px;
+	margin: 2px;
+	box-shadow: -3px -3px 6px 6px black;
+}
+
+.PrecacheRow
+{
+	margin: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	horizontal-align: center;
-	margin-top: 40px;
-	width: 80%;
-	height: 70%;
-	flow-children: down;
+	flow-children: right;
+}
+
+.Gamemode_4V4V4V4 .PlayerInTeamHeroImage
+{
+	height: 83px;
+}
+
+.Gamemode_4V4V4V4 .PlayerInTeamPanel
+{
+	margin: 2px;
+	width: 77px;
+}
+
+.Gamemode_4V4V4V4 .PlayerInTeamNickname
+{
+	font-size: 16px;
+	height: 44px;
+	margin-bottom: -6px;
 }

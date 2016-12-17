@@ -139,29 +139,57 @@ function SummonUnit(keys)
 	local ability = keys.ability
 	local team = (keys.team or caster):GetTeamNumber()
 	local max_units = keys.max_units
-	local pos = (keys.position or caster):GetAbsOrigin()
-	if keys.summon_random_radius then
-		pos = RandomPositionAroundPoint(pos, keys.summon_random_radius)
-	end
-	local unit = CreateUnitByName(keys.summoned, pos, true, caster, nil, team)
-	unit:SetControllableByPlayer(caster:GetPlayerID(), true)
-	unit:SetOwner(caster)
-	if keys.modifiers_datadriven then
-		for _,v in ipairs(string.split(keys.modifiers_datadriven)) do
-			ability:ApplyDataDrivenModifier(caster, unit, v, nil)
+	for i = 1, keys.amount or 1 do
+		local pos = (keys.position or caster):GetAbsOrigin()
+		if keys.summon_random_radius then
+			pos = RandomPositionAroundPoint(pos, keys.summon_random_radius)
 		end
-	end
-	local units_summoned = caster["custom_summoned_unit_ability_" .. ability:GetAbilityName()]
-	if max_units and max_units >= 1 then
-		if not units_summoned then
-			caster["custom_summoned_unit_ability_" .. ability:GetAbilityName()] = {}
-			units_summoned = caster["custom_summoned_unit_ability_" .. ability:GetAbilityName()]
+		local unit = CreateUnitByName(keys.summoned, pos, true, caster, nil, team)
+		unit:SetControllableByPlayer(caster:GetPlayerID(), true)
+		unit:SetOwner(caster)
+		if keys.modifiers_datadriven then
+			for _,v in ipairs(string.split(keys.modifiers_datadriven)) do
+				ability:ApplyDataDrivenModifier(caster, unit, v, nil)
+			end
 		end
-		table.insert(units_summoned, unit)
-		if #units_summoned - 1 >= max_units then
-			local u = table.remove(units_summoned, 1)
-			if u and not u:IsNull() and u:IsAlive() then
-				u:ForceKill(false)
+		if keys.health then
+			unit:SetBaseMaxHealth(keys.health)
+			unit:SetMaxHealth(keys.health)
+			unit:SetHealth(keys.health)
+		end
+		if keys.damage then
+			unit:SetBaseDamageMin(keys.damage)
+			unit:SetBaseDamageMax(keys.damage)
+		end
+		if keys.base_attack_time then
+			unit:SetBaseAttackTime(keys.base_attack_time)
+		end
+		if keys.health_regeneration then
+			unit:SetBaseHealthRegen(keys.health_regeneration)
+		end
+		if keys.armor then
+			unit:SetPhysicalArmorBaseValue(keys.armor)
+		end
+		if keys.gold then
+			unit:SetMinimumGoldBounty(keys.gold)
+			unit:SetMaximumGoldBounty(keys.gold)
+		end
+		if keys.duration then
+			unit:AddNewModifier(caster, ability, "modifier_kill", {duration = keys.duration})
+		end
+		
+		local units_summoned = caster["custom_summoned_unit_ability_" .. ability:GetAbilityName()]
+		if max_units and max_units >= 1 then
+			if not units_summoned then
+				caster["custom_summoned_unit_ability_" .. ability:GetAbilityName()] = {}
+				units_summoned = caster["custom_summoned_unit_ability_" .. ability:GetAbilityName()]
+			end
+			table.insert(units_summoned, unit)
+			if #units_summoned - 1 >= max_units then
+				local u = table.remove(units_summoned, 1)
+				if u and not u:IsNull() and u:IsAlive() then
+					u:ForceKill(false)
+				end
 			end
 		end
 	end
