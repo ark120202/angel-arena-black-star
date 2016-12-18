@@ -9,6 +9,7 @@ ABILITY_SHOP_BANNED = {
 	["bounty_hunter_jinada"] = { "tiny_grow", "earthshaker_enchant_totem", "drow_ranger_marksmanship", },
 	["phantom_lancer_doppelganger_arena"] = { "stegius_desolating_touch", "arthas_vsolyanova", },
 	["phantom_lancer_juxtapose_arena"] = { "stegius_desolating_touch", "arthas_vsolyanova", },
+	["obsidian_destroyer_arcane_orb"] = { "troll_warlord_berserkers_rage", "wisp_spirits_out_aghanims", "wisp_spirits_in_aghanims", "wisp_overcharge_aghanims", "rocket_barrage_arena", "cherub_synthesis", "pudge_rot_arena", "pudge_rot", "skeleton_king_vampiric_aura", "witch_doctor_voodoo_restoration", "leshrac_pulse_nova", "wisp_overcharge", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "rubick_telekinesis", "rubick_telekinesis_land", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "bristleback_viscous_nasal_goo", "shadow_demon_shadow_poison", "jakiro_dual_breath", }
 }
 
 ABILITY_SHOP_BANNED_GROUPS = {
