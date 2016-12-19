@@ -13796,14 +13796,14 @@
 		"MaxLevel"						"7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
-		"AbilityCastRange"				"100000"
+		"AbilityCastRange"				"1100"
 		"AbilityCastPoint"				"0.3"
 		
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"40"
 
-		"AbilityDamage"					"10000"
+		"AbilityDamage"					"600 1200 1800 2400 3000 3600 4500"
 
-		"AbilityManaCost"				"1"
+		"AbilityManaCost"				"100 200 300 400 500 600 700"
 		"AOERadius"						"%radius"
 
 		"AbilitySpecial"
@@ -13811,12 +13811,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"250"
+				"radius"				"300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_missile_stun"	"1.0000001"
+				"magic_missile_stun"	"2 4 6 8 10 12 14"
 			}
 			"03"
 			{
@@ -13931,7 +13931,7 @@
 		"AbilityCastRange"				"525"
 		"AbilityCastPoint"				"0.3"
 		
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"30"
 
 		"AbilityManaCost"				"115 125 140 150 160 170 180"
 
@@ -13948,7 +13948,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_second_pct"		"8"
+				"damage_per_second_pct"		"2.5"
 			}
 			"03"
 			{
@@ -14060,8 +14060,8 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-		"AbilityCooldown"				"8.0"
-		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"14.0"
+		"AbilityManaCost"				"100 140 180 220 260 300 340"
 
 		"AbilitySpecial"
 		{
@@ -14078,7 +14078,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"12"
+				"duration"			"5"
 			}
 		}
 
@@ -14120,13 +14120,15 @@
 		"MaxLevel"						"7"
 		"AbilityCastPoint"				"0.6"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"60.0 50.0 40.0 30.0 20.0 18.0 16.0"
+		"AbilityManaCost"				"80 100 120 140 160 180 200"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"base_crit_pct"		"200"
+				"base_crit_pct"		"350"
 			}
 			"02"
 			{
@@ -14252,12 +14254,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"4 4.5 5 5.5 6 6.5 7"
+				"duration"			"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_helath_damage_pct"	"3 5 7 9 11 13 15"
+				"max_helath_damage_pct"	"1 2 3 4 5 6 7"
 			}
 		}
 
@@ -14462,8 +14464,8 @@
 		"AbilityTextureName"			"ability_name"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"				"999"
-		"AbilityManaCost"				"1"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"100 200 300 400 500 600 700"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilitySpecial"
@@ -14471,37 +14473,37 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"sailors_amount"			"2 3 4 5 6 7 8"
+				"sailors_amount"			"1 2 3 4 5 6 7"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"sailor_duration"			"555"
+				"sailor_duration"			"20"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"sailor_health"				"99999"
+				"sailor_health"				"10000 20000 30000 40000 50000 60000 70000"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"sailor_damage"				"99999"
+				"sailor_damage"				"200 400 600 800 1200 1400 1600"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"sailor_armor"				"99999"
+				"sailor_armor"				"20 40 60 80 100 120 140"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"sailor_health_regen"		"99999"
+				"sailor_health_regen"		"50 100 150 200 250 300 350"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"sailor_bounty"				"99999"
+				"sailor_bounty"				"600 1200 1800 2400 3200 3600 4000"
 			}
 		}
 
@@ -14546,12 +14548,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"8 10 12 14 16 18 20"
+				"duration"			"4 6 8 10 12 16 20"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"incoming_damage_reduction"	"-10 -15 -20 -25 -30 -35 -40"
+				"incoming_damage_reduction"	"-5 -8 -10 -12 -15 -20 -25"
 			}
 			"03"
 			{
