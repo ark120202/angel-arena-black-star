@@ -985,8 +985,8 @@ end
 function MakePlayerAbandoned(iPlayerID)
 	if not PLAYER_DATA[iPlayerID].IsAbandoned then
 		local hero = PlayerResource:GetSelectedHeroEntity(iPlayerID)
-		hero:ClearNetworkableEntityInfo()
 		if hero then
+			hero:ClearNetworkableEntityInfo()
 			Notifications:TopToAll({hero=hero:GetName(), duration=10.0})
 			Notifications:TopToAll(CreateHeroNameNotificationSettings(hero))
 			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})

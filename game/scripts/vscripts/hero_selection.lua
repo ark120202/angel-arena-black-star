@@ -325,13 +325,13 @@ function HeroSelection:RemoveAllOwnedUnits(playerId)
 end
 
 function HeroSelection:OnHeroHover(data)
-	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID))
-	if not HeroSelection.SelectionEnd and tableData[data.PlayerID].status ~= "picked" then
+	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID)) or {}
+	if not HeroSelection.SelectionEnd and (not tableData[data.PlayerID] or tableData[data.PlayerID].status ~= "picked") then
 		if not tableData[data.PlayerID] then tableData[data.PlayerID] = {} end
 		tableData[data.PlayerID].hero = data.hero
 		tableData[data.PlayerID].status = "hover"
+		PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID), tableData)
 	end
-	PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID), tableData)
 end
 
 function HeroSelection:OnHeroRandomHero(data)
@@ -387,6 +387,7 @@ end
 
 function HeroSelection:CollectPD()
 	PlayerTables:CreateTable("hero_selection", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+	print("Started collecting PD")
 	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:IsValidPlayerID(i) and PlayerResource:IsValidTeamPlayer(i) then
 			local team = PlayerResource:GetTeam(i)

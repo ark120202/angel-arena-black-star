@@ -29,7 +29,7 @@ function GameMode:OnGameRulesStateChange(keys)
 				end
 			end
 		end
-		
+		HeroSelection:CollectPD()
 		GameModes:OnAllVotesSubmitted()
 		HeroSelection:HeroSelectionStart()
 	end

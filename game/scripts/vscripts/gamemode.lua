@@ -124,7 +124,6 @@ function GameMode:OnAllPlayersLoaded()
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[4] = true
-	HeroSelection:CollectPD()
 	DynamicMinimap:Init()
 	Spawner:PreloadSpawners()
 	Bosses:InitAllBosses()

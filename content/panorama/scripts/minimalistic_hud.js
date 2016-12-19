@@ -38,7 +38,7 @@ function UpdatePanoramaHUD() {
 	hud.FindChildTraverse("level_stats_frame").visible = attribute_bonus_arena != -1 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID()) && Entities.GetAbilityPoints(unit) > 0;
 
 	var GoldLabel = hud.FindChildTraverse("ShopButton").FindChildTraverse("GoldLabel")
-	GoldLabel.text = "";
+	GoldLabel.text = 0;
 	goldCheck:
 		if (Players.GetTeam(Game.GetLocalPlayerID()) == Entities.GetTeamNumber(unit)) {
 			var goldTable = PlayerTables.GetTableValue("arena", "gold")
@@ -55,8 +55,8 @@ function UpdatePanoramaHUD() {
 	hud.FindChildTraverse("HUDSkinAbilityContainerBG").style.width = (hud.FindChildTraverse("abilities").actuallayoutwidth + 16) + "px";
 
 	var minimap = hud.FindChildTraverse("minimap_block");
-	$("#DynamicMinimapRoot").style.height = (minimap.desiredlayoutheight + 8) + "px";
-	$("#DynamicMinimapRoot").style.width = (minimap.desiredlayoutwidth + 8) + "px";
+	$("#DynamicMinimapRoot").style.height = (minimap.actuallayoutheight + 8) + "px";
+	$("#DynamicMinimapRoot").style.width = (minimap.actuallayoutwidth + 8) + "px";
 
 	var pcs = hud.FindChildTraverse("PortraitContainer").GetPositionWithinWindow()
 	if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
@@ -81,7 +81,7 @@ function HookPanoramaPanels() {
 		GameEvents.SendEventClientSide("panorama_shop_open_close", {})
 	})
 	hud.FindChildTraverse("LevelLabel").style.width = "100%"
-	hud.FindChildTraverse("stash").style.marginBottom = "97px"
+	hud.FindChildTraverse("stash").style.marginBottom = "47px"
 
 	//hud.FindChildTraverse("StatBranchChannel").visible = false;
 	hud.FindChildTraverse("StatBranch").ClearPanelEvent("onactivate")

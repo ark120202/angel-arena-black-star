@@ -2,7 +2,6 @@ function CheckDeath(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local target = keys.unit or keys.caster
-	print(target:GetHealth() > 1, target.is_reincarnating, target:IsIllusion(), target:HasModifier("modifier_skeleton_king_reincarnation_cooldown"), target:IsIllusion())
 	if target:GetHealth() > 1 or target.is_reincarnating or target:IsIllusion() or target:HasModifier("modifier_skeleton_king_reincarnation_cooldown") or target:IsIllusion() then
 		target:RemoveModifierByName("modifier_skeleton_king_reincarnation_life_saver")
 		return

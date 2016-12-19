@@ -47,10 +47,9 @@ Balance:
 Fixes:
 	
 <<+===========================================================================================================
-Fixed duel in 4v4v4v4
-Fixed game end on one team full abandon in 4v4v4v4
-Changed Hero Selection to look better with 16 players
-Fixed courier couldn't return boss dropped items to stash even if it was in hero's inventory
+Fixed abandoned heroes weren't removed and gold stopped ticked after that
+Fixed small bug with hero selection
+
 rhasta,
 lycan,
 lone_druid,

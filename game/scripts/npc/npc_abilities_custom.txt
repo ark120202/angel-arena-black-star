@@ -14036,7 +14036,8 @@
 					{
 						"ScriptFile"	"internal/kv.lua"
 						"Function"		"PercentDamage"
-						"MaxHealthPercent"	"%damage_per_second_pct * %damage_interval"
+						"MaxHealthPercent"	"%damage_per_second_pct"
+						"multiplier"		"%damage_interval"
 					}
 				}
 			
@@ -14053,7 +14054,7 @@
 	"freya_pain_reflection"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"ability_name"
+		"AbilityTextureName"			"freya_pain_reflection"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -14226,6 +14227,89 @@
 		}
 	}
 
+	"zaken_stitching_strikes"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"zaken_stitching_strikes"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCastRange"				"225"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityChannelTime"			"%duration"
+		"AbilityDamage"					"100 200 300 400 500 600 700"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_interval"	"0.4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"4 4.5 5 5.5 6 6.5 7"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_helath_damage_pct"	"3 5 7 9 11 13 15"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_zaken_stitching_strikes"
+				"Target" 		"TARGET"
+			}
+		}
+
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_zaken_stitching_strikes"
+				"Target" 		"TARGET"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_zaken_stitching_strikes"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"EffectName"		"particles/arena/units/heroes/hero_zaken/stitching_strikes.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+		
+				"ThinkInterval"  "%damage_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"PercentDamage"
+						"Damage"			"%AbilityDamage"
+						"MaxHealthPercent"	"%max_helath_damage_pct"
+						"multiplier"		"%damage_interval"
+					}
+				}
+			}
+		}
+	}
+
 	"zaken_last_chance"
 	{
 		"BaseClass"             		"ability_datadriven"
@@ -14274,7 +14358,7 @@
 			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"root_health_pct"	"15 20 25 30 35 40 45"
+				"root_health_pct"	"30"
 			}
 			"09"
 			{
@@ -14289,7 +14373,7 @@
 			"11"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"silence_health_pct"	"30 40 50 60 60 60 60"
+				"silence_health_pct"	"40"
 			}
 			"12"
 			{
@@ -14518,6 +14602,38 @@
 					}
 				}
 			}
+		}
+	}
+
+	"anakim_wisps"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"anakim_wisps"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"pure_damage_pct"	"33"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"magic_damage_pct"	"33"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"physical_damage_pct"	"33"
+			}
+		}
+
+		"OnCreated"
+		{
+			[ACTIONS]
 		}
 	}
 }

@@ -24,7 +24,6 @@ function Precache( context )
 		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf",
 		"particles/econ/events/ti4/dagon_ti4.vpcf",
 		"particles/econ/events/ti5/dagon_lvl2_ti5.vpcf",
-		"particles/arena/aoe_range_ring.vpcf",
 		"particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf",
 		"particles/econ/items/enchantress/enchantress_virgas/ench_impetus_virgas.vpcf",
 		"particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf",

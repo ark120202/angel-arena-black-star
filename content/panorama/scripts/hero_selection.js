@@ -437,7 +437,6 @@ function HeroSelectionStart(HeroesServerData) {
 	}
 	$("#SwitchTabButton").visible = tabsData[2] != null;
 	SelectHeroTab(1)
-	SelectFirstHeroPanel();
 }
 
 function SelectHeroTab(tabIndex) {
@@ -705,6 +704,7 @@ function OnMinimapClickSpawnBox(team, level, index) {
 			};
 			if (changesObject.SelectionStartTime != null) {
 				SelectionTimerStartTime = changesObject.SelectionStartTime;
+				SelectFirstHeroPanel();
 			};
 		});
 		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {

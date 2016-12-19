@@ -174,7 +174,7 @@
 		"AttackRate"	"1.3"
 	}
 
-	"npc_dota_hero_freya"
+	"npc_arena_hero_freya"
 	{
 		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_abaddon"
@@ -189,14 +189,27 @@
 		"AttackRate"	"1.3"
 	}
 
-	"npc_dota_hero_zaken"
+	"npc_arena_hero_zaken"
 	{
 		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_kunkka"
 		"Model"	"models/units/zaken/zaken.vmdl"
+		"Ability1"		"zaken_stitching_strikes"
 		"Ability2"		"zaken_last_chance"
 		"Ability3"		"zaken_summon_sailors"
 		"Ability4"		"zaken_sword_control"
+		"HideWearables"	"1"
+	}
+
+	"npc_arena_hero_anakim"
+	{
+		"override_hero"	"npc_dota_hero_base"
+		"base_hero"		"npc_dota_hero_phantom_assassin"
+		"Model"			"models/units/anakim/anakim.vmdl"
+		"Ability1"		"anakim_wisps"
+		"Ability2"		""
+		"Ability3"		""
+		"Ability4"		""
 		"HideWearables"	"1"
 	}
 

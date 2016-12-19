@@ -2006,11 +2006,69 @@
 
 		"HealthBarOffset"			"400"
 
-		"MovementSpeed"				"522"
+		"MovementSpeed"				"550"
 
 		"StatusHealth"				"750000"
 		"StatusHealthRegen"			"800"
 		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+
+	"npc_arena_boss_anakim"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"100000"
+		"Bosses_RespawnDuration"	"600"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/units/anakim/anakim.vmdl"
+		"ModelScale"				"2"
+		"Level"						"94"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_freya_sharp_ice_shards"
+		"Ability5"					"boss_any_passive"
+		"Ability6"					"boss_armor"
+
+		"ArmorPhysical"				"1874"
+		"MagicalResistance"			"60"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"10404"
+		"AttackDamageMax"			"15367"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"450"
+		"AttackRange"				"600"
+
+		"BountyXP"					"91296"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"550"
+
+		"StatusHealth"				"1639146"
+		"StatusHealthRegen"			"800"
+		"StatusMana"				"43380"
 		"StatusManaRegen"			"50"
 
 		"MovementTurnRate"			"1.0"
@@ -2036,7 +2094,7 @@
 		"Model"						"models/heroes/kunkka/kunkka.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"Level"						"1"
-		"ModelScale"				"0.4"
+		"ModelScale"				"0.65"
 		"IsSummoned"				"1"
 
 		// Attack
@@ -2044,8 +2102,8 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"0"
 		"AttackDamageMax"			"0"
-		"AttackRate"				"0.8"
-		"AttackAnimationPoint"		"0.8"
+		"AttackRate"				"0.4"
+		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 
