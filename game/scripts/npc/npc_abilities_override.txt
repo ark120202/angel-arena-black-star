@@ -1194,6 +1194,12 @@
 				"damage_per_second"	"16 24 32 40 48 56 64 72"
 				"LinkedSpecialBonus"	"special_bonus_unique_axe"
 			}
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 
 		}
 
@@ -1339,6 +1345,12 @@
 				"tooltip_brain_sap_heal_amt"	"90 160 230 300 370 430 520"
 				"LinkedSpecialBonus"	"special_bonus_unique_bane_2"
 			}
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 
 		}
 
@@ -1439,6 +1451,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"cast_range_tooltip"	"500 550 600 650 700 750 800"
 			}
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 
 		}
 
@@ -1523,6 +1541,12 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"delay_plus_castpoint_tooltip"	"3.0"
+			}
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
 			}
 
 		}
@@ -1624,7 +1648,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"charge_restore_time_scepter"	"30"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -1807,7 +1836,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"stun_duration"	"1.0 1.25 1.5 1.75 2.0 2.25 2.5"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -1875,7 +1909,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"tooltip_duration"	"0.6 0.9 1.1 1.2 1.5 1.7 1.9"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -1911,7 +1950,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"echo_slam_echo_damage"	"30 60 90 120 150 180 210"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.3 0.5 0.7 0.9 1.1 1.3 1.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -1932,7 +1976,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"blade_dance_crit_chance"	"10 15 20 25 30 35 40"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -2096,7 +2145,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"delay"	"1.6"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.3 0.6 0.9 1.2 1.5 1.7 1.9"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -2263,7 +2317,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"ghostship_absorb"	"50"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "2 3 4 5 7 9 10"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -2302,7 +2361,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"dragon_slave_distance"	"1075"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -2335,7 +2399,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"light_strike_array_stun_duration"	"2.5"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -2400,7 +2469,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"damage_delay"	"0.20"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -2438,7 +2512,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"speed"	"1600"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "1 2 4 5 6 7 10"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -2548,7 +2627,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"splash_radius_scepter"	"450"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "1 2 4 5 6 7 10"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -2611,7 +2695,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"arrow_vision"	"500"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -2716,7 +2805,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"interval_scepter"	"10.0"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -2742,7 +2836,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"width"	"250"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -2809,7 +2908,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"projectile_speed"	"1150"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -3041,7 +3145,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"shadowraze_cooldown"	"3"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.3 0.6 0.9 1.2 1.5 1.8 2.1"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -3072,7 +3181,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"shadowraze_cooldown"	"3"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.3 0.6 0.9 1.2 1.5 1.8 2.1"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -3103,7 +3217,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"shadowraze_cooldown"	"3"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.3 0.6 0.9 1.2 1.5 1.8 2.1"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -3310,7 +3429,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"vision_duration"	"3.34"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -3341,7 +3465,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"silence_duration"	"0.75 1.25 1.5 2.25 3.0 3.3 3.5"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -3431,7 +3560,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"coil_stun_duration_scepter"	"1.5 2.0 2.5 3 4.5 5.0"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -3475,7 +3609,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"damage"	"140 200 260 320 380 440 520"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -3605,7 +3744,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"speed"	"700"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -3709,7 +3853,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"slow_amount"	"-100"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -3807,7 +3956,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"blast_dot_damage"	"20 40 60 80 100 120 140"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -3977,7 +4131,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"speed"	"1100"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -4227,7 +4386,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"vision_radius"	"225"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -4364,7 +4528,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"static_remnant_damage"	"140 180 220 260 300 340 400"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -4571,7 +4740,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"burrow_speed_scepter"	"3500"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -4603,7 +4777,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"AbilityDuration"	"20.0 40.0 60.0 80.0 100.0 120.0 140.0"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -4759,7 +4938,12 @@
 				"avalanche_damage"	"100 180 260 300 340 380 450"
 				"LinkedSpecialBonus"	"special_bonus_unique_tiny"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -4769,7 +4953,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"1300"
 		"AbilityCooldown"	"8"
-		"AbilityManaCost"	"120 1140 160 180 200 220 240"
+		"AbilityManaCost"	"120 140 160 180 200 220 240"
 		"AbilitySpecial"
 		{
 			"01"
@@ -4813,7 +4997,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"toss_damage"	"75 150 225 300 375 425 500"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -4955,7 +5144,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"jump_delay"	"0.15"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.2 0.4 0.6 0.8 1.0 1.2 1.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -4999,7 +5193,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"spread_aoe"	"325"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -5106,7 +5305,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"damage_scepter"	"500 800 1110 1400 1700 2100 2500"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -5180,7 +5384,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"stun_duration"	"1.6 1.7 1.9 2.2 2.5 2.7 2.9"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -5297,7 +5506,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"cast_range_scepter"	"1800"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -5356,7 +5570,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"375"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.2 0.4 0.6 0.8 1.0 1.2 1.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -5387,7 +5606,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"duration"	"2.0 2.4 2.8 3.2 3.6 4.2 4.5"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -5419,7 +5643,12 @@
 				"magic_missile_damage"	"100 175 250 325 400 475 525"
 				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_1"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -5634,7 +5863,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"vision_duration"	"3.34"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -5758,7 +5992,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"aoe_damage"	"75 150 228 300 375 425 500"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -5906,7 +6145,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"slow_attack_speed_scepter"		"-30 -50 -70 -90 -110 -130 -150"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.4 0.8 1.2 1.6 2.0 2.4 2.8"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -5969,7 +6213,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"bounces_tooltip"	"2 4 6 8 10 12 14 16"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -6155,7 +6404,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"bonus_damage"	"20 40 60 80 100 120 140"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -6473,7 +6727,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"cast_range_scepter"	"650"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.4 0.8 1.2 1.6 2.0 2.4 2.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -6509,7 +6768,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"targets_scepter"	"5"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.4 0.8 1.2 1.6 2.0 2.4 2.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -6641,7 +6905,12 @@
 			 "damage_from_current_health_pct" "3"
 			 "CalculateSpellDamageTooltip" "0"
 			}
-			
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.2 0.4 0.6 0.8 1.0 1.2 1.4"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -6669,7 +6938,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"slow"	"-100"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -6730,7 +7004,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"scepter_crit_bonus"	"280"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.3 0.6 0.9 1.2 1.5 1.8 2.1"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -6784,7 +7063,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"hero_multiplier"	"10"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.3 0.6 0.9 2.1 2.4 2.7 3.0"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -6928,7 +7212,12 @@
 				"axe_damage"	"70 100 130 160 250 350 500"
 				"LinkedSpecialBonus"	"special_bonus_unique_beastmaster"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -7125,7 +7414,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"projectile_speed"	"900"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -7180,7 +7474,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"damage_scepter"	"500 800 1110 1300 1500 2000 2500"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" " 1 2 3 5 7 8 10"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -7402,7 +7701,12 @@
 				"blast_damage"	"100 175 250 325 400 500 600"
 				"LinkedSpecialBonus"	"special_bonus_unique_pugna_2"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -8074,7 +8378,12 @@
 				"beam_damage"	"75 150 225 300 350 400 450"
 				"LinkedSpecialBonus"	"special_bonus_unique_luna_1"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -8333,7 +8642,12 @@
 				"damage"	"80 100 120 140 160 320 640"
 				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_2"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}
@@ -8517,7 +8831,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"vision_radius"	"600"
 			}
-
+			"99"
+			{
+			   "var_type" "FIELD_FLOAT"
+			   "damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			   "CalculateSpellDamageTooltip" "0"
+			}
 		}
 
 	}

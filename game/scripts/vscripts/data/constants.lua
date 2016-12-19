@@ -34,7 +34,7 @@ SPAWNER_SETTINGS = {
 				{
 					[-1] = "npc_dota_neutral_medium_variant1",
 					[0] = "models/creeps/neutral_creeps/n_creep_beast/n_creep_beast.vmdl",
-					[30] = "models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl",
+					[30] = "models/heroes/brewmaster/brewmaster_earthspirit.vmdl",
 					[60] = "models/heroes/ursa/ursa.vmdl",					
 				}
 			},

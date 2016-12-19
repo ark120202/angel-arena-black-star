@@ -1,11 +1,51 @@
-Скилы закена:
-
-1 - скил - Колящие удары ( Закен множествами ударами наносит (100 150 250 300 350 400 450) и замедляет на (10 15 20 25 30 35 40 %) (стоимость маны 50 100 150 200 250 300 350) ( кд 40 35 30 25 20 15 10 )
-
-2 - скил - Последний Шанс ( Закен наносит последний удар (Если у закена 0 - 15 % ХР то есть шанс нанести сокрушающий удар с 10% шансом который нанесет ХЗ дамага) ) ( стоимость маны 100 125 150 175 200 225 250 ) ( Кд 90 80 70 60 50 40 30 )
-
-3 - скил - Призыв работяг которые имею скил  ( ножик в спину заставляю остановиться героя ( RUT ) ) ( стоимость маны 200 250 300 350 400 450 500 )  ( Кд 35 сек )
-
-4 - Ульта - Получает на 30% меньше физ мадага и на 20 маг дамага дополнительно в радиусе 550  наносит всем урон в разме от 80% от своего основного урона и замедляет на ( 10 15 20 25 30 35 40 % ) кд 90 с
-
-
+% урон
+"rattletrap_rocket_flare"
+"dazzle_shadow_wave"
+"luna_lucent_beam"
+pugna_nether_blast
+queenofpain_sonic_wave
+beastmaster_wild_axes
+necrolyte_death_pulse
+sniper_assassinate
+sniper_headshot
+sniper_shrapnel
+tinker_heat_seeking_missile
+tinker_laser
+riki_blink_strike
+witch_doctor_paralyzing_cask
+lich_chain_frost
+windrunner_powershot
+vengefulspirit_magic_missile
+tidehunter_ravage
+tidehunter_anchor_smash
+tidehunter_gush
+slardar_slithereen_crush
+zuus_thundergods_wrath
+zuus_lightning_bolt
+zuus_arc_lightning
+sven_storm_bolt
+skeleton_king_reincarnation
+death_prophet_carrion_swarm
+razor_plasma_field
+shadow_shaman_ether_shock
+puck_dream_coil
+puck_waning_rift
+puck_illusory_orb
+morphling_adaptive_strike
+mirana_starfall
+mirana_arrow
+lion_impale
+lina_laguna_blade
+lina_light_strike_array
+lina_dragon_slave
+kunkka_ghostship
+kunkka_torrent
+juggernaut_blade_dance
+earthshaker_echo_slam
+earthshaker_aftershock
+earthshaker_fissure
+bloodseeker_rupture
+bloodseeker_blood_bath
+bane_nightmare
+bane_brain_sap
+axe_battle_hunger
