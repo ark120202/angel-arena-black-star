@@ -523,6 +523,7 @@ function TransformUnitClass(unit, classTable)
 		if key == "Level" then
 			unit:SetLevel(value)
 		elseif key == "Model" then
+			unit.ModelOverride = value
 			unit:SetModel(value)
 			unit:SetOriginalModel(value)
 		elseif key == "ModelScale" then

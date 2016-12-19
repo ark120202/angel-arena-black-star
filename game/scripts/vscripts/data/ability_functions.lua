@@ -150,7 +150,32 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			})
 			return 1 - pct
 		end
-	}
+	},
+	["modifier_anakim_wisps"] = {
+		condition = function(_, _, inflictor)
+			return not inflictor
+		end,
+		multiplier = function(attacker, victim, _, damage)
+			local anakim_wisps = attacker:FindAbilityByName("anakim_wisps")
+			if anakim_wisps then
+				local dt = {
+					victim = victim,
+					attacker = attacker,
+					ability = anakim_wisps
+				}
+				dt.damage_type = DAMAGE_TYPE_PURE
+				dt.damage = damage * anakim_wisps:GetAbilitySpecial("pure_damage_pct") * 0.01
+				ApplyDamage(dt)
+				dt.damage_type = DAMAGE_TYPE_MAGICAL
+				dt.damage = damage * anakim_wisps:GetAbilitySpecial("magic_damage_pct") * 0.01
+				ApplyDamage(dt)
+				dt.damage_type = DAMAGE_TYPE_PHYSICAL
+				dt.damage = damage * anakim_wisps:GetAbilitySpecial("physical_damage_pct") * 0.01
+				ApplyDamage(dt)
+				return 0
+			end
+		end
+	},
 }
 
 INCOMING_DAMAGE_MODIFIERS = {

@@ -69,7 +69,8 @@ function GameMode:ExecuteOrderFilter(filterTable)
 						end
 					elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET then
 						if IsBossEntity(target) and table.contains(BOSS_BANNED_ABILITIES, abilityname) then
-							filterTable.order_type = DOTA_UNIT_ORDER_ATTACK_TARGET
+							Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_ability_cant_target_boss")
+							return false
 						end
 
 						if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then

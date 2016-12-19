@@ -14611,6 +14611,7 @@
 		"AbilityTextureName"			"anakim_wisps"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"HasInnateModifiers"			"1"
 
 		"AbilitySpecial"
 		{
@@ -14631,9 +14632,36 @@
 			}
 		}
 
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_anakim/attack_wisp.vpcf"
+		}
+
 		"OnCreated"
 		{
-			[ACTIONS]
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"SetMaxLevel"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_anakim_wisps"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_anakim/wisps.lua"
+						"Function"		"CreateParticles"
+					}
+				}
+			}
 		}
 	}
 }

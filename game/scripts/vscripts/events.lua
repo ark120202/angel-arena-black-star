@@ -51,6 +51,10 @@ function GameMode:OnNPCSpawned(keys)
 				if base_hero and base_hero ~= npc and npc:GetModelName() == base_hero:GetModelName() and base_hero.WearablesRemoved then
 					npc.WearablesRemoved = true
 				end
+				if npc.ModelOverride then
+					npc:SetModel(npc.ModelOverride)
+					npc:SetOriginalModel(npc.ModelOverride)
+				end
 				Physics:Unit(npc)
 		    	npc:SetAutoUnstuck(true)
 				CustomWearables:EquipWearables(npc)

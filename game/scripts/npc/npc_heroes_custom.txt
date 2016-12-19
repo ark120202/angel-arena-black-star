@@ -211,6 +211,7 @@
 		"Ability3"		""
 		"Ability4"		""
 		"HideWearables"	"1"
+		"AttackRange"	"400"
 	}
 
 //Changed heroes

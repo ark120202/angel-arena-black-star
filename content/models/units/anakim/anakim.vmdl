@@ -61,8 +61,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 Pelvis"
-								m_vMinBounds = [ -2.128082, -1.797606, -2.791614 ]
-								m_vMaxBounds = [ 3.004944, 1.630627, 2.791473 ]
+								m_vMinBounds = [ -8.937912, -7.549944, -11.724781 ]
+								m_vMaxBounds = [ 12.620773, 6.848635, 11.72419 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -71,8 +71,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 Spine"
-								m_vMinBounds = [ -1.672997, -2.683305, -2.791527 ]
-								m_vMaxBounds = [ 7.219692, 1.505468, 2.79156 ]
+								m_vMinBounds = [ -7.026581, -11.269882, -11.724415 ]
+								m_vMaxBounds = [ 30.322708, 6.322962, 11.724556 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -81,8 +81,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 Spine1"
-								m_vMinBounds = [ -1.202908, -2.43792, -2.508475 ]
-								m_vMaxBounds = [ 5.880291, 1.700452, 2.508383 ]
+								m_vMinBounds = [ -5.05217, -10.239264, -10.535596 ]
+								m_vMaxBounds = [ 24.69725, 7.141898, 10.535211 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -91,8 +91,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "bip01 spine2"
-								m_vMinBounds = [ -3.15432, -1.889111, -3.348133 ]
-								m_vMaxBounds = [ 6.551823, 1.958858, 3.348279 ]
+								m_vMinBounds = [ -13.248138, -7.934261, -14.06216 ]
+								m_vMaxBounds = [ 27.517685, 8.227207, 14.062771 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -101,38 +101,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 Neck"
-								m_vMinBounds = [ -0.130547, -1.03706, -1.195767 ]
-								m_vMaxBounds = [ 2.008839, 0.815723, 1.158616 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Bip01 L Thigh"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bip01 L Thigh"
-								m_vMinBounds = [ -1.101856, -2.3888, -2.683697 ]
-								m_vMaxBounds = [ 10.569395, 2.136369, 2.117112 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Bip01 R Thigh"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bip01 R Thigh"
-								m_vMinBounds = [ -1.10186, -2.388981, -2.117064 ]
-								m_vMaxBounds = [ 10.569387, 2.136522, 2.683987 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Bip01 L Clavicle"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bip01 L Clavicle"
-								m_vMinBounds = [ 0.061271, -1.523872, -1.799911 ]
-								m_vMaxBounds = [ 3.218142, 0.906983, 0.744934 ]
+								m_vMinBounds = [ -0.548294, -4.355663, -5.022226 ]
+								m_vMaxBounds = [ 8.437119, 3.426027, 4.866186 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -141,48 +111,38 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Clavicle"
-								m_vMinBounds = [ 0.061355, -1.523861, -0.744999 ]
-								m_vMaxBounds = [ 3.218032, 0.906939, 1.799885 ]
+								m_vMinBounds = [ 0.25771, -6.400196, -3.128937 ]
+								m_vMaxBounds = [ 13.515751, 3.809162, 7.559555 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
-								m_name = "Bip01 L Calf"
+								m_name = "Bip01 L Thigh"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
-								m_sBoneName = "Bip01 L Calf"
-								m_vMinBounds = [ -1.448597, -1.723391, -1.651432 ]
-								m_vMaxBounds = [ 12.352413, 2.081398, 1.260548 ]
+								m_sBoneName = "Bip01 L Thigh"
+								m_vMinBounds = [ -4.627792, -10.032961, -11.271526 ]
+								m_vMaxBounds = [ 44.391464, 8.972748, 8.891872 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
-								m_name = "Bip01 R Calf"
+								m_name = "Bip01 R Thigh"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
-								m_sBoneName = "Bip01 R Calf"
-								m_vMinBounds = [ -1.448597, -1.7234, -1.260477 ]
-								m_vMaxBounds = [ 13.179533, 2.081396, 1.651541 ]
+								m_sBoneName = "Bip01 R Thigh"
+								m_vMinBounds = [ -4.627808, -10.033724, -8.891668 ]
+								m_vMaxBounds = [ 44.391434, 8.973391, 11.272749 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
-								m_name = "Bone04"
+								m_name = "Bip01 L Clavicle"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
-								m_sBoneName = "Bone04"
-								m_vMinBounds = [ -4.053562, -3.446368, -5.376262 ]
-								m_vMaxBounds = [ 12.802498, 3.80257, 5.376262 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Bip01 L UpperArm"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bip01 L UpperArm"
-								m_vMinBounds = [ -1.175556, -1.983756, -1.023394 ]
-								m_vMaxBounds = [ 5.875929, 0.683704, 0.769087 ]
+								m_sBoneName = "Bip01 L Clavicle"
+								m_vMinBounds = [ 0.257355, -6.400242, -7.559692 ]
+								m_vMaxBounds = [ 13.516212, 3.809357, 3.128677 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -191,118 +151,48 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R UpperArm"
-								m_vMinBounds = [ -1.17556, -1.983737, -0.76874 ]
-								m_vMaxBounds = [ 5.875963, 0.683622, 1.02331 ]
+								m_vMinBounds = [ -4.937302, -8.331688, -3.228691 ]
+								m_vMaxBounds = [ 24.679092, 2.871215, 4.29792 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
-								m_name = "Bip01 L Foot"
+								m_name = "Bip01 L Calf"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
-								m_sBoneName = "Bip01 L Foot"
-								m_vMinBounds = [ -1.37362, -2.319642, -1.228207 ]
-								m_vMaxBounds = [ 2.267726, 3.300905, 1.082215 ]
+								m_sBoneName = "Bip01 L Calf"
+								m_vMinBounds = [ -6.084099, -7.238248, -6.936014 ]
+								m_vMaxBounds = [ 51.880142, 8.74187, 5.294306 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
-								m_name = "Bip01 R Foot"
+								m_name = "Bip01 R Calf"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
-								m_sBoneName = "Bip01 R Foot"
-								m_vMinBounds = [ -1.373615, -2.319642, -1.08213 ]
-								m_vMaxBounds = [ 2.267732, 3.300903, 1.228291 ]
+								m_sBoneName = "Bip01 R Calf"
+								m_vMinBounds = [ -6.084152, -7.238288, -5.294003 ]
+								m_vMaxBounds = [ 55.354012, 8.741858, 6.936474 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
-								m_name = "Bone02"
+								m_name = "Bone04"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
-								m_sBoneName = "Bone02"
-								m_vMinBounds = [ -1.1511, -2.358975, -7.88452 ]
-								m_vMaxBounds = [ 39.684685, 2.373232, 7.884482 ]
+								m_sBoneName = "Bone04"
+								m_vMinBounds = [ -17.024948, -14.474747, -22.580299 ]
+								m_vMaxBounds = [ 53.770493, 15.970787, 22.580292 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
-								m_name = "Bone09"
+								m_name = "Bip01 L UpperArm"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
-								m_sBoneName = "Bone09"
-								m_vMinBounds = [ -2.883816, -8.967556, -1.584705 ]
-								m_vMaxBounds = [ 37.294121, 3.00913, 1.561691 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Bone07"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bone07"
-								m_vMinBounds = [ -3.158432, -9.794361, -1.732239 ]
-								m_vMaxBounds = [ 41.134956, 3.312817, 1.758476 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Bone05"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bone05"
-								m_vMinBounds = [ -3.48951, -10.959755, -1.870693 ]
-								m_vMaxBounds = [ 44.352577, 3.509644, 1.876271 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Bone19"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bone19"
-								m_vMinBounds = [ -3.48951, -10.959717, -1.87628 ]
-								m_vMaxBounds = [ 44.352589, 3.509647, 1.870687 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Bone20"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bone20"
-								m_vMinBounds = [ -3.158424, -9.79435, -1.758476 ]
-								m_vMaxBounds = [ 41.134964, 3.31282, 1.732235 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Bone21"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bone21"
-								m_vMinBounds = [ -2.883816, -8.967546, -1.561697 ]
-								m_vMaxBounds = [ 37.294109, 3.009136, 1.584702 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Bip01 head"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bip01 head"
-								m_vMinBounds = [ -1.447899, -2.441359, -1.856013 ]
-								m_vMaxBounds = [ 4.031258, 2.381308, 1.856016 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Bip01 L Forearm"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bip01 L Forearm"
-								m_vMinBounds = [ -1.276852, -2.152813, -1.677704 ]
-								m_vMaxBounds = [ 29.925886, 1.741407, 2.065178 ]
+								m_sBoneName = "Bip01 L UpperArm"
+								m_vMinBounds = [ -4.937317, -8.331787, -4.298294 ]
+								m_vMaxBounds = [ 24.678925, 2.871548, 3.230133 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -311,8 +201,128 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Forearm"
-								m_vMinBounds = [ -1.278706, -2.151567, -2.072414 ]
-								m_vMaxBounds = [ 29.924084, 1.740412, 1.668316 ]
+								m_vMinBounds = [ -5.370533, -9.036573, -8.704132 ]
+								m_vMaxBounds = [ 125.681168, 7.309733, 7.00692 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Foot"
+								m_vMinBounds = [ -5.769234, -9.742542, -5.158466 ]
+								m_vMaxBounds = [ 9.524422, 13.863758, 4.545303 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Foot"
+								m_vMinBounds = [ -5.769211, -9.74255, -4.544948 ]
+								m_vMaxBounds = [ 9.524448, 13.863758, 5.158826 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone02"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone02"
+								m_vMinBounds = [ -4.83461, -9.907722, -33.114975 ]
+								m_vMaxBounds = [ 166.675674, 9.967571, 33.114822 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone09"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone09"
+								m_vMinBounds = [ -12.112015, -37.663727, -6.655754 ]
+								m_vMaxBounds = [ 156.635269, 12.638336, 6.55912 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone07"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone07"
+								m_vMinBounds = [ -13.265411, -41.136246, -7.275421 ]
+								m_vMaxBounds = [ 172.766754, 13.913849, 7.385574 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone05"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone05"
+								m_vMinBounds = [ -14.655991, -46.030823, -7.856865 ]
+								m_vMaxBounds = [ 186.280807, 14.740479, 7.88039 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone19"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone19"
+								m_vMinBounds = [ -14.655945, -46.030792, -7.880409 ]
+								m_vMaxBounds = [ 186.280869, 14.740463, 7.856857 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone20"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone20"
+								m_vMinBounds = [ -13.265381, -41.136246, -7.385582 ]
+								m_vMaxBounds = [ 172.766815, 13.913849, 7.275406 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone21"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone21"
+								m_vMinBounds = [ -12.11203, -37.663692, -6.559128 ]
+								m_vMaxBounds = [ 156.635254, 12.638382, 6.655754 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 head"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 head"
+								m_vMinBounds = [ -6.081146, -10.253708, -7.79526 ]
+								m_vMaxBounds = [ 16.93132, 10.001492, 7.795264 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Forearm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Forearm"
+								m_vMinBounds = [ -5.36282, -9.041817, -7.046394 ]
+								m_vMaxBounds = [ 125.688721, 7.31391, 8.673721 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Hand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Hand"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -321,8 +331,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Toe0"
-								m_vMinBounds = [ -0.225226, -0.026962, -0.856491 ]
-								m_vMaxBounds = [ 1.601792, 0.883028, 0.778979 ]
+								m_vMinBounds = [ -0.945988, -0.113213, -3.597265 ]
+								m_vMaxBounds = [ 6.727489, 3.708748, 3.27171 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -331,8 +341,88 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Toe0"
-								m_vMinBounds = [ -0.22523, -0.026963, -0.778888 ]
-								m_vMaxBounds = [ 1.601788, 0.883027, 0.856583 ]
+								m_vMinBounds = [ -0.945988, -0.113216, -3.271333 ]
+								m_vMaxBounds = [ 6.727489, 3.708738, 3.597645 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Dummy14"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Dummy14"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Dummy15"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Dummy15"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Dummy13"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Dummy13"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Dummy12"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Dummy12"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Dummy19"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Dummy19"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Dummy18"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Dummy18"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Dummy17"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Dummy17"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Dummy16"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Dummy16"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -521,9 +611,9 @@
 				{
 					m_Animationname = "atk01"
 					m_Filepath = "models/units/anakim/anim/atk01.FBX"
-					m_nStartframe = 0
+					m_nStartframe = 12
 					m_nEndframe = 55
-					m_flFps = 30.0
+					m_flFps = 45.0
 					m_Loop = 
 					{
 						m_bLoop = false
@@ -585,13 +675,7 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities = 
-					[
-						{
-							m_Name = "ACT_DOTA_ATTACK2"
-							m_nWeight = 1
-						},
-					]
+					m_Activities = [  ]
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]

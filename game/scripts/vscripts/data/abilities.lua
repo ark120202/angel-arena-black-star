@@ -137,6 +137,7 @@ BOSS_BANNED_ABILITIES = {
 	"necrolyte_reapers_scythe",
 	"death_prophet_spirit_siphon",
 	"rubick_personality_steal",
+	"item_urn_of_demons",
 }
 
 PERSONALITY_STEAL_BANNED_HEROES = {
