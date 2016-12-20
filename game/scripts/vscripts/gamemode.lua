@@ -140,7 +140,7 @@ end
 function GameMode:OnHeroInGame(hero)
 	DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 	Timers:CreateTimer(function()
-		if not hero:HasModifier("modifier_arc_warden_tempest_double") and hero:IsRealHero() then
+		if hero and not hero:IsNull() and not hero:HasModifier("modifier_arc_warden_tempest_double") and hero:IsRealHero() then
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
 				local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
 				TEAMS_COURIERS[hero:GetTeamNumber()] = true

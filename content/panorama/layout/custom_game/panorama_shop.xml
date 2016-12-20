@@ -51,8 +51,8 @@
 						<Panel class="ItemRecipeBoxRow" id="ItemRecipeBoxRow3" />
 					</Panel>
 					<Panel hittest="false" id="ItemRecipeBoxDrops">
-						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_heaven" src="file://{images}/custom_game/units/npc_arena_boss_heaven.png" style="position: 59px 66px 0;"/>
-						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_hell" src="file://{images}/custom_game/units/npc_arena_boss_hell.png" style="position: 194px 66px 0;"/>
+						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_freya" src="file://{images}/heroes/npc_arena_hero_freya.png" style="position: 59px 66px 0;"/>
+						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_zaken" src="file://{images}/heroes/npc_arena_hero_zaken.png" style="position: 194px 66px 0;"/>
 						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_l1_v1" src="file://{images}/custom_game/units/npc_arena_boss_l1_v1.png" style="position: 1px 120px 0;"/>
 						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_l1_v2" src="file://{images}/custom_game/units/npc_arena_boss_l1_v2.png" style="position: 64px 120px 0;"/>
 						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_central" src="file://{images}/custom_game/units/npc_arena_boss_central.png" style="position: 128px 120px 0;"/>

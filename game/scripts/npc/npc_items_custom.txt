@@ -21532,4 +21532,60 @@
 			}
 		}
 	}
+
+	"item_god_transform_freya"
+	{
+		"BaseClass"             		"item_datadriven"
+		"AbilityTextureName"			"item_god_transform_freya"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime"			"4"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_god_transforms.lua"
+				"Function"		"Check"
+				"heroname"		"npc_arena_hero_freya"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_god_transforms.lua"
+				"Function"		"GodTransform"
+				"heroname"		"npc_arena_hero_freya"
+			}
+		}
+	}
+
+	"item_god_transform_zaken"
+	{
+		"BaseClass"             		"item_datadriven"
+		"AbilityTextureName"			"item_god_transform_zaken"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime"			"4"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_god_transforms.lua"
+				"Function"		"Check"
+				"heroname"		"npc_arena_hero_zaken"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_god_transforms.lua"
+				"Function"		"GodTransform"
+				"heroname"		"npc_arena_hero_zaken"
+			}
+		}
+	}
 }

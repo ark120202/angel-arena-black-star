@@ -9,8 +9,8 @@ function Bosses:InitAllBosses()
 	Bosses:SpawnStaticBoss("l2_v1")
 	Bosses:SpawnStaticBoss("l2_v2")
 	Bosses:SpawnStaticBoss("central")
-	Bosses:SpawnStaticBoss("heaven")
-	Bosses:SpawnStaticBoss("hell")
+	Bosses:SpawnStaticBoss("freya")
+	Bosses:SpawnStaticBoss("zaken")
 end
 
 function IsBossEntity(unit)

@@ -251,29 +251,23 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 						local oldhero = PlayerResource:GetSelectedHeroEntity(playerId)
 						local hero
 						local baseNewHero = heroTableCustom.base_hero or heroName
+						
 						if oldhero then
+							Timers:CreateTimer(0.03, function()
+								oldhero:ClearNetworkableEntityInfo()
+								UTIL_Remove(oldhero)
+							end)
 							if oldhero:GetUnitName() == baseNewHero then -- Base unit equals, ReplaceHeroWith won't do anything
 								local temp = PlayerResource:ReplaceHeroWith(playerId, FORCE_PICKED_HERO, 0, 0)
-								temp:AddNoDraw()
-								hero = PlayerResource:ReplaceHeroWith(playerId, baseNewHero, 0, 0)
 								Timers:CreateTimer(0.03, function()
 									temp:ClearNetworkableEntityInfo()
 									UTIL_Remove(temp)
 								end)
-							else
-								if oldhero:GetUnitName() == FORCE_PICKED_HERO then
-									Timers:CreateTimer(0.03, function()
-										oldhero:ClearNetworkableEntityInfo()
-										UTIL_Remove(oldhero)
-									end)
-								end
-								hero = PlayerResource:ReplaceHeroWith(playerId, baseNewHero, 0, 0)
 							end
+							hero = PlayerResource:ReplaceHeroWith(playerId, baseNewHero, 0, 0)
 						else
 							print("[HeroSelection] For some reason player " .. playerId .. " has no hero. This player can't get a hero due to 7.00 patch. Returning")
 							return
-							--Not works in 7.00
-							--hero = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerId))
 						end
 						if heroTableCustom.base_hero then
 							TransformUnitClass(hero, heroTableCustom)
@@ -387,7 +381,6 @@ end
 
 function HeroSelection:CollectPD()
 	PlayerTables:CreateTable("hero_selection", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
-	print("Started collecting PD")
 	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:IsValidPlayerID(i) and PlayerResource:IsValidTeamPlayer(i) then
 			local team = PlayerResource:GetTeam(i)

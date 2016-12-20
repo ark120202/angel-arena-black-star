@@ -267,9 +267,8 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 				table.insert(primary_items, itemData.Recipe.recipeItemName)
 				_tempItemCounter[itemData.Recipe.recipeItemName] = (_tempItemCounter[itemData.Recipe.recipeItemName] or 0) + 1
 			end
-		else
-			table.insert(primary_items, childItemName)
 		end
+		table.insert(primary_items, childItemName)
 		return primary_items, _tempItemCounter
 	end
 	function HasAnyOfItemChildren(childItemName)

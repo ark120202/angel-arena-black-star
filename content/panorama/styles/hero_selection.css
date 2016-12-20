@@ -189,7 +189,7 @@
 {
 	margin: 2px;
 	height: 100%;
-	width: 140px;
+	width: 110px;
 }
 
 .PlayerInTeamNickname
@@ -203,6 +203,7 @@
 	height: 22px;
 	margin-bottom: -2px;
 	text-shadow: 0 0 6px black;
+	text-overflow: shrink;
 }
 
 .PlayerInTeamHeroImageHost
@@ -426,7 +427,8 @@
 	font-size: 28px;
 	height: 32px;
 	color: black;
-	text-shadow: 0 0 6px black; 
+	text-shadow: 0 0 6px black;
+	text-overflow: shrink;
 }
 
 .PrecacheHeroLabel

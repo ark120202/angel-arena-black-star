@@ -841,6 +841,7 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	FindClearSpaceForUnit(illusion, illusion_origin, true)
 	illusion:SetModel(unit:GetModelName())
 	illusion:SetOriginalModel(unit:GetModelName())
+	illusion:SetModelScale(unit:GetModelScale())
 	illusion:SetControllableByPlayer(unit:GetPlayerID(), true)
 
 	local caster_level = unit:GetLevel()
@@ -1082,7 +1083,7 @@ end
 function UnitVarToPlayerID(unitvar)
 	if type(unitvar) == "number" then
 		return unitvar
-	elseif type(unitvar) == "table" and unitvar:entindex() then
+	elseif type(unitvar) == "table" and unitvar.entindex and unitvar:entindex() then
 		if unitvar.GetPlayerID and unitvar:GetPlayerID() > -1 then
 			return unitvar:GetPlayerID()
 		elseif unitvar.GetPlayerOwnerID then

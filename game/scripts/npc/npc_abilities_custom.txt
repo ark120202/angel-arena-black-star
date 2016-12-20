@@ -14461,7 +14461,7 @@
 	"zaken_summon_sailors"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"ability_name"
+		"AbilityTextureName"			"zaken_summon_sailors"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"30"

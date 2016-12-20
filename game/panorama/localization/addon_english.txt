@@ -49,6 +49,11 @@
 		"npc_arena_hero_zen_gehraz"						"Zen Gehraz"
 		"npc_arena_hero_stegius"						"Stegius"
 		"npc_arena_hero_mirratie"						"Mirratie"
+		"npc_arena_hero_freya"							"Freya"
+		"npc_arena_hero_zaken"							"Zaken"
+		"npc_arena_hero_anakim"							"Anakim"
+
+		"npc_arena_zaken_sailor"                        "Sailor"
 		
 		"npc_arena_hero_arthas_bio"						"It was in '20 after Dota 2 has enslaved the whole world, Gabe Newell became president. Arthas was disappointed in the world and for some time didn't play DotA. Then Gabe found him in the Vinnytsia, Ukraine and put into DotA as a hero. To get out he should gain 7000 MMR and revenge him..."
 		"npc_arena_hero_stargazer_bio"					"Where there is war, there is always appears he - the ghost of retribution, Stargazer never miss the opportunity to get knowledge, which he receives from the battlefield, every second of his power is growing. Moving into the heat of battle Stargazer instantly slipping out of sight in one place and appear in another."
@@ -139,6 +144,7 @@
 		"hero_selection_loading_message"						"Loading..."
 		"hero_selection_paused_label"							"Game is Paused"
 		"hero_selection_paused_description"						"Open console and write \'dota_pause\'"
+		"hero_selection_change_hero_selected"					"This hero is already selected"
 
 		"chat_placeholder_send_message"							"Type your message here..."
 

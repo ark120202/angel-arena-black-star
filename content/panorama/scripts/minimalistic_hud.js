@@ -38,13 +38,13 @@ function UpdatePanoramaHUD() {
 	hud.FindChildTraverse("level_stats_frame").visible = attribute_bonus_arena != -1 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID()) && Entities.GetAbilityPoints(unit) > 0;
 
 	var GoldLabel = hud.FindChildTraverse("ShopButton").FindChildTraverse("GoldLabel")
-	GoldLabel.text = 0;
+	GoldLabel.text = "";
 	goldCheck:
 		if (Players.GetTeam(Game.GetLocalPlayerID()) == Entities.GetTeamNumber(unit)) {
 			var goldTable = PlayerTables.GetTableValue("arena", "gold")
 			for (var i = 0; i < 23; i++) {
 				if (Players.GetPlayerHeroEntityIndex(i) == unit) {
-					if (goldTable && goldTable[i]) {
+					if (goldTable && goldTable[i] != null) {
 						GoldLabel.text = goldTable[i]
 						break goldCheck
 					}

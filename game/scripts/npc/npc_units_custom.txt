@@ -2029,6 +2029,64 @@
 		}
 	}
 
+	"npc_arena_boss_zaken"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"15000"
+		"Bosses_RespawnDuration"	"300"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/units/zaken/zaken.vmdl"
+		"ModelScale"				"2.5"
+		"Level"						"100"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""//"boss_zaken_"
+		"Ability5"					"boss_any_passive"
+		"Ability6"					"boss_armor"
+
+		"ArmorPhysical"				"180"
+		"MagicalResistance"			"40"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"5200"
+		"AttackDamageMax"			"6600"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"450"
+		"AttackRange"				"250"
+
+		"BountyXP"					"25000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"550"
+
+		"StatusHealth"				"750000"
+		"StatusHealthRegen"			"800"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+
 	"npc_arena_boss_anakim"
 	{
 		//Bosses
