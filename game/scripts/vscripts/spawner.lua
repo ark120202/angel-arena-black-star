@@ -88,9 +88,9 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 	end
 	if spawnerType == "easy" then
 		if minutelevel <= 10 then
-			goldbounty = 2.0 * minutelevel
-			hp = 16 * minutelevel
-			damage = 2.8 * minutelevel
+			goldbounty = 1.9 * minutelevel
+			hp = 18 * minutelevel
+			damage = 2.6 * minutelevel
 			attackspeed = 0.30 * minutelevel
 			movespeed = 0.30 * minutelevel
 			armor = 0.30 * minutelevel
@@ -131,8 +131,8 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 	end
 	if spawnerType == "medium" then
 		if minutelevel <= 10 then
-			goldbounty = 2.3 * minutelevel
-			hp = 20 * minutelevel
+			goldbounty = 2.2 * minutelevel
+			hp = 22 * minutelevel
 			damage = 2.8 * minutelevel
 			attackspeed = 0.70 * minutelevel
 			movespeed = 0.70 * minutelevel
