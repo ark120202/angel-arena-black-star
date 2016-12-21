@@ -1,6 +1,11 @@
 Обнова
 
+"zaken_stitching_strikes"
+"AbilityCooldown"		 0 =>		"30 26 24 20 16 15 12"
 
+"shinobu_yumewatari_lua"
+"RequiredLevel"			 1 => 		"5"
 
-obsidian_destroyer_arcane_orb: \=/ troll_warlord_berserkers_rage, wisp_spirits_out_aghanims, wisp_spirits_in_aghanims, wisp_overcharge_aghanims, rocket_barrage_arena, cherub_synthesis, pudge_rot_arena, pudge_rot, skeleton_king_vampiric_aura, witch_doctor_voodoo_restoration, leshrac_pulse_nova, wisp_overcharge, pugna_life_drain, shredder_chakram_2, shredder_return_chakram_2, shredder_chakram, shredder_return_chakram, techies_focused_detonate, spectre_reality, oracle_purifying_flames, templar_assassin_trap, skywrath_mage_arcane_bolt, rubick_telekinesis, rubick_telekinesis_land, shadow_demon_shadow_poison_release, nyx_assassin_unburrow, nyx_assassin_burrow, bristleback_viscous_nasal_goo, shadow_demon_shadow_poison, jakiro_dual_breath,
-
+"lycan_howl"
+"RequiredLevel"	 1 =>	"3"
+"LevelsBetweenUpgrades"	1 =>  "10"

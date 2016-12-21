@@ -11496,7 +11496,7 @@
 		"ScriptFile"					"heroes/hero_shinobu/yumewatari.lua"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"7"
-		"RequiredLevelel"				"5"
+		"RequiredLevel"					"5"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK2"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -14243,6 +14243,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityChannelTime"			"%duration"
 		"AbilityDamage"					"100 200 300 400 500 600 700"
+		"AbilityCooldown"				"30 26 24 20 16 15 12"
 
 		"AbilitySpecial"
 		{
