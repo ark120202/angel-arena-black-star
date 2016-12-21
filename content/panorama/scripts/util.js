@@ -36,10 +36,8 @@ function TransformTextureToPath(texture, optPanelHeroimagestyle, optTeamNumber) 
 	} else if (texture.lastIndexOf("npc_") == 0) {
 		if (optPanelHeroimagestyle == "portrait") {
 			return "file://{images}/custom_game/units/portraits/" + texture + ".png"
-		} else {
-			$.Msg("file://{images}/custom_game/units/" + texture + ".png")
+		} else
 			return "file://{images}/custom_game/units/" + texture + ".png"
-		}
 	} else {
 		if (texture.lastIndexOf("item_") == -1)
 			return "raw://resource/flash3/images/spellicons/" + texture + ".png"

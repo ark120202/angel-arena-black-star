@@ -6784,54 +6784,11 @@
 		"LevelsBetweenUpgrades"	"5"
 		"AbilitySpecial"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"900"
-			}
-
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"collision_radius"	"50"
-			}
-
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"splash_radius"	"1500"
-			}
-
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"6.0"
-			}
-
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"speed"	"400"
+				"speed"	"500 600 700 800 900 1000 1100"
 			}
-
-			"06"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"machines_per_sec"	"24"
-			}
-
-			"07"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"distance"	"1800"
-			}
-
-			"08"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"distance_scepter"	"1800"
-			}
-
 		}
 
 	}

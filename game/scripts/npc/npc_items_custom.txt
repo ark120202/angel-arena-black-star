@@ -21539,6 +21539,7 @@
 		"AbilityTextureName"			"item_god_transform_freya"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityChannelTime"			"4"
+		"ItemPurchasableFilter"			"0"
 
 		"OnSpellStart"
 		{
@@ -21567,6 +21568,7 @@
 		"AbilityTextureName"			"item_god_transform_zaken"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityChannelTime"			"4"
+		"ItemPurchasableFilter"			"0"
 
 		"OnSpellStart"
 		{
