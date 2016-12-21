@@ -1,11 +1,21 @@
 Обнова
 
-"zaken_stitching_strikes"
-"AbilityCooldown"		 0 =>		"30 26 24 20 16 15 12"
+Zaken - Stitching Strikes
+AbilityCooldown 0 => 30 26 24 20 16 15 12
 
-"shinobu_yumewatari_lua"
-"RequiredLevel"			 1 => 		"5"
+Shinobu Yumewatari
+RequiredLevel 1 =>  5
 
-"lycan_howl"
-"RequiredLevel"	 1 =>	"3"
-"LevelsBetweenUpgrades"	1 =>  "10"
+Lycan - Howl
+RequiredLevel1 => 3
+LevelsBetweenUpgrades 1 =>  10
+
+(процентрный урон по боссам)
+Abyssal - underlord firestorm = 40
+Bristleback - Quill Spray = 40
+Сentaur - Hoof Stomp = 40
+Сentaur - Double Edge = 40
+Kunkka - Ghostship = 40
+Slark - Dark Pact = 40
+
+obsidian_destroyer_arcane_orb = earthshaker_aftershock zuus_static_field obsidian_destroyer_essence_aura

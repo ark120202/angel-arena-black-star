@@ -22,6 +22,15 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	lion_finger_of_death = 50,
 	shredder_chakram_2 = 40,
 	shredder_chakram = 40,
+	sniper_shrapnel = 40,
+	abaddon_death_coil = 40,
+	abyssal_underlord_firestorm = 40,
+	bristleback_quill_spray = 40,
+	centaur_hoof_stomp = 40,
+	centaur_double_edge = 40,
+	kunkka_ghostship = 40,
+	slark_dark_pact = 40,
+	
 }
 
 local function OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
