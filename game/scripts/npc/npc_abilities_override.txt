@@ -6017,33 +6017,28 @@
 				"var_type"	"FIELD_INTEGER"
 				"armor_bonus"	"3 5 7 9 15 20 25"
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"slow_movement_speed"	"-30 -30 -30 -30 -30 -30 -30"
+				"var_type"								"FIELD_INTEGER"
+				"building_armor_bonus_tooltip"			"3 5 7 9 15 20 25"
+				"LinkedSpecialBonus"					"special_bonus_unique_lich_1"
 			}
-
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"slow_attack_speed"	"-20 -20 -20 -20 -25 -30 -35"
+				"var_type"	"FIELD_FLOAT"
+				"slow_duration"	"2"
 			}
-
 			"04"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"slow_duration"	"2.0 2.0 2.0 2.0 2.0 2.0 2.0"
+				"var_type"	"FIELD_INTEGER"
+				"slow_movement_speed"	"-30"
 			}
-
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"slow_attack_speed"	"-15 -20 -25 -30 -35 -40 -50"
+				"slow_attack_speed"	"-20 -25 -30 -35 -40 -45 -50"
 			}
-
 		}
-
 	}
 
 	"lich_dark_ritual"

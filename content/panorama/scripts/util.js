@@ -37,6 +37,7 @@ function TransformTextureToPath(texture, optPanelHeroimagestyle, optTeamNumber) 
 		if (optPanelHeroimagestyle == "portrait") {
 			return "file://{images}/custom_game/units/portraits/" + texture + ".png"
 		} else {
+			$.Msg("file://{images}/custom_game/units/" + texture + ".png")
 			return "file://{images}/custom_game/units/" + texture + ".png"
 		}
 	} else {

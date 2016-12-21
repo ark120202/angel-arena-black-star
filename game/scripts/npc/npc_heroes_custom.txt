@@ -184,6 +184,7 @@
 		"Ability4"	"freya_frozen_strike"
 		"Ability5"	"attribute_bonus_arena"
 		"Model"	"models/units/freya/freya.vmdl"
+		"SceneCamera"	"custom_scene_hero_freya"
 		"ModelScale"	"1.5"
 		"HideWearables"	"1"
 		"AttackRate"	"1.3"
@@ -194,6 +195,7 @@
 		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_kunkka"
 		"Model"	"models/units/zaken/zaken.vmdl"
+		"SceneCamera"	"custom_scene_hero_zaken"
 		"Ability1"		"zaken_stitching_strikes"
 		"Ability2"		"zaken_last_chance"
 		"Ability3"		"zaken_summon_sailors"
@@ -212,6 +214,7 @@
 		"Ability4"		""
 		"HideWearables"	"1"
 		"AttackRange"	"400"
+		"Enabled"		"0"
 	}
 
 //Changed heroes

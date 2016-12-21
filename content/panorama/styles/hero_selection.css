@@ -17,7 +17,21 @@
 {
 	width: 100%;
 	height: 100%;
+	background-color: #1c262f;
+}
+#HeroSelectionCustomBackground
+{
+	width: 100%;
+	height: 100%;
 	background-size: 100% 100%;
+}
+.CustomSelectionBackground #HeroSelectionBackground, #HeroSelectionCustomBackground
+{
+	visibility: collapse;
+}
+.CustomSelectionBackground #HeroSelectionCustomBackground
+{
+	visibility: visible;
 }
 
 #SelectedHeroPanel
@@ -49,26 +63,6 @@
 	font-weight: bold;
 	font-size: 40px;
 }
-
-/*#SelectedHeroImagePanel
-{
-	width: 100%;
-	height: 15.4%;
-	margin-left: 4px;
-	margin-right: 4px;
-	margin-top: 4px;
-	margin-bottom: 4px;
-}
-
-#SelectedHeroImage
-{
-	vertical-align: center;
-	horizontal-align: center;
-	width: 70%;
-	height: 100%;
-	border: 10px solid darkred;
-}
-*/
 #SelectedHeroScene
 {
 	horizontal-align: center;
@@ -78,10 +72,9 @@
 }
 #HeroListBasePanel
 {
-	height: 940px;
+	height: 980px;
 	width: 80%;
 	vertical-align: bottom;
-	background-color: rgba(0,0,0,0.95);
 	flow-children: down;
 }
 
@@ -113,35 +106,35 @@
 
 .HeroListElement
 {
-	margin-top: 10px;
+	margin-top: 6px;
 	margin-bottom: 0px;
 	margin-left: 18px;
 	margin-right: -8px;
-	width: 96px;
-	height: 54px;
+	width: height-percentage(72%); //75.5319149%
+	height: 90px;
 	transition-duration: 0.1s;
 	transition-property: pre-transform-scale2d;
 }
 .HeroListElement:hover
 {
-	pre-transform-scale2d: 1.2;
+	pre-transform-scale2d: 1.15;
 }
 .ChangedHeroPanel
 {
-	border: 2px solid red;
+	border: 1px solid red;
 }
 .HeroPanelSelected
 {
 	border: 4px solid #b2da25;
-	pre-transform-scale2d: 0.95;
+	pre-transform-scale2d: 1.1;
 }
 
 #SelectionStatusPanel
 {
-	height: 140px;
+	height: 100px;
 	width: 80%;
 	flow-children: right;
-	background-color: rgba(0,0,0,0.99);
+	background-color: rgba(0,0,0,0.2);
 }
 
 #GameModeInfoPanel
@@ -149,13 +142,13 @@
 	width: 135px;
 	margin: 4px;
 	vertical-align: center;
-	flow-children: down;
+	height: 100%;
 }
 
 #GameModeInfoGamemodeLabel
 {
-	horizontal-align: center;
-	margin: 10px;
+	align: center bottom;
+	margin-bottom: 4px;
 	font-size: 20px;
 	color: #CCCCCC;
 }
@@ -165,6 +158,7 @@
 	horizontal-align: center;
 	font-size: 28px;
 	color: white;
+	align: center center;
 }
 
 #TeamSelectionStatusPanel
@@ -211,15 +205,12 @@
 	align: center top;
 	border-width: 2px;
 	border-style: solid;
-	border-color: red;
-	border-radius: 6px;
 }
 
 .PlayerInTeamHeroImage
 {
-	width: height-percentage(75.5%);
-	height: 97px;
-	border-radius: 6px;
+	width: 100px;
+	height: width-percentage(56.25%);
 	background-color: #282E30;
 }
 
@@ -232,15 +223,22 @@
 	width: 95%;
 	height: 70%;
 	align: center center;
-	border: 4px solid #b2da25;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404D65dd ), to( #2B3445dd ) );
+	border-top: 1px solid #6F819B;
+	border-left: 1px solid #6F819B22;
+	border-right: 1px solid #6F819B11;
+	border-bottom: 1px solid #3F414B33;
+	box-shadow: #0000008f -6px -6px 12px 12px;
+	transition-property: opacity, background-color;
+	transition-duration: 0.18s;
 }
 #SelectedHeroSelectButton:hover
 {
-	pre-transform-scale2d: 1.02;
+	brightness: 1.2;
 }
 #SelectedHeroSelectButton:active
 {
-	pre-transform-scale2d: 0.98;
+	brightness: 1.5;
 }
 #SelectedHeroSelectButton:disabled
 {
@@ -443,7 +441,7 @@
 	height: 100%;
 	width: 20%;
 	horizontal-align: right;
-	background-color: rgba(0,0,0,0.99);
+	background-color: rgba(0,0,0,0.2);
 	flow-children: down;
 }
 
@@ -468,33 +466,9 @@
 {
 	width: 100%;
 	height: 33.3%;
-	padding-left: 20px;
-}
-
-.HeroesPanelElementTeam
-{
-	width: 50%;
-	height: 100%;
 	flow-children: right-wrap;
 }
 
-.HeroesPanelElementGood
-{
-	horizontal-align: left;
-	transform: scaleX(-1);
-	margin-left: -5px;
-}
-
-.HeroesPanelElementGood Image
-{
-	transform: scaleX(-1);
-}
-
-.HeroesPanelElementBad
-{
-	horizontal-align: right;
-	margin-right: -5px;
-}
 .SmallTextButton
 {
 	width: 170px;
@@ -540,12 +514,10 @@
 {
 	align: center center;
 	flow-children: right;
-	background-color: rgba(0,0,0,0.86);
-	box-shadow: -10px -10px 20px 20px rgba(0,0,0,0.86);
 }
 .AbilitiesLineSplitter
 {
-	width: 40%;
+	width: 42%;
 	height: 2px;
 	background-color: #ccc;
 	vertical-align: center;
@@ -554,9 +526,9 @@
 .SelectedHeroAbility
 {
 	height: 50px;
-	margin-left: 10px;
-	margin-right: 10px;
-	border-radius: 4px;
+	margin-left: 4px;
+	margin-right: 4px;
+	border-radius: 2px;
 }
 
 #HeroListControlsGroup1
@@ -688,46 +660,6 @@
 	width: 100%;
 	height: 100%;
 }
-
-#GamePausedOverlay
-{
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 40, 100, 0.96);
-	visibility: collapse;
-}
-
-.GamePaused #GamePausedOverlay
-{
-	visibility: visible;
-}
-
-#GamePausedTitle
-{
-	horizontal-align: center;
-	font-size: 72px;
-	font-weight: bold;
-	color: white;
-}
-
-#GamePausedDescription
-{
-	horizontal-align: center;
-	font-size: 48px;
-}
-
-.ShowBGMode #ChatAndMapPanel,
-.ShowBGMode #SelectionStatusPanel,
-{
-	//252
-	background-color: rgba(0,0,0,0.666666);
-}
-.ShowBGMode #HeroListBasePanel
-{
-	//240
-	background-color: rgba(0,0,0,0.5);
-}
-
 #MinimapImage4v4v4v4, .Gamemode_4V4V4V4 #MinimapImage
 {
 	visibility: collapse;
@@ -771,4 +703,25 @@
 	font-size: 16px;
 	height: 44px;
 	margin-bottom: -6px;
+}
+
+.AspectRatio4x3 .HeroListElement
+{
+	margin-left: 15px;
+	margin-right: -5px;
+	height: 80px;
+}
+
+.AspectRatio5x4 .HeroListElement
+{
+	margin-left: 15px;
+	margin-right: -5px;
+	height: 82px;
+}
+
+.AspectRatio16x10 .HeroListElement
+{
+	margin-left: 15px;
+	margin-right: -8px;
+	height: 84px;
 }

@@ -12,18 +12,9 @@
 	<snippets>
 		<snippet name="HeroesPanel">
 			<Panel class="HeroesPanelPage">
-				<Panel class="HeroesPanelElement">
-					<Panel class="HeroesPanelElementTeam HeroesPanelElementGood" id="HeroesByAttributes_0_good" />
-					<Panel class="HeroesPanelElementTeam HeroesPanelElementBad" id="HeroesByAttributes_0_bad" />
-				</Panel>
-				<Panel class="HeroesPanelElement">
-					<Panel class="HeroesPanelElementTeam HeroesPanelElementGood" id="HeroesByAttributes_1_good" />
-					<Panel class="HeroesPanelElementTeam HeroesPanelElementBad" id="HeroesByAttributes_1_bad" />
-				</Panel>
-				<Panel class="HeroesPanelElement">
-					<Panel class="HeroesPanelElementTeam HeroesPanelElementGood" id="HeroesByAttributes_2_good" />
-					<Panel class="HeroesPanelElementTeam HeroesPanelElementBad" id="HeroesByAttributes_2_bad" />
-				</Panel>
+				<Panel class="HeroesPanelElement" id="HeroesByAttributes_0" />
+				<Panel class="HeroesPanelElement" id="HeroesByAttributes_1" />
+				<Panel class="HeroesPanelElement" id="HeroesByAttributes_2" />
 			</Panel>
 		</snippet>
 	</snippets>

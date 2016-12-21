@@ -1,54 +1,6 @@
 Обнова
 
-Treant - Natures Guise:
-fade_time: 7 6 5 4 3 2 => 12 11 10 9 8 7 6
-bash_duration: 1 1.4 1.8 2.2 2.3 2.4 2.6 => 0.3 0.6 0.9 1.2 1.5 2.0 2.3
 
-Tinker - March Of The Machines:
-LevelsBetweenUpgrades 1 => 6
-
-Keeper Of The Light - Chakra Magic:
-AbilityCooldown: 17 16 15 14 13 12 11 => 60
-cooldown_reduction: 3 4 5 6 7 8 9 => 4 8 12 14 16 18 20
 
 obsidian_destroyer_arcane_orb: \=/ troll_warlord_berserkers_rage, wisp_spirits_out_aghanims, wisp_spirits_in_aghanims, wisp_overcharge_aghanims, rocket_barrage_arena, cherub_synthesis, pudge_rot_arena, pudge_rot, skeleton_king_vampiric_aura, witch_doctor_voodoo_restoration, leshrac_pulse_nova, wisp_overcharge, pugna_life_drain, shredder_chakram_2, shredder_return_chakram_2, shredder_chakram, shredder_return_chakram, techies_focused_detonate, spectre_reality, oracle_purifying_flames, templar_assassin_trap, skywrath_mage_arcane_bolt, rubick_telekinesis, rubick_telekinesis_land, shadow_demon_shadow_poison_release, nyx_assassin_unburrow, nyx_assassin_burrow, bristleback_viscous_nasal_goo, shadow_demon_shadow_poison, jakiro_dual_breath,
 
-item_iron_talon:
-AbilityCooldown: 20.0 => 16
-damage_bonus: 170 => 140
-damage_bonus_ranged: 130 => 110
-
-tinker - March Of The Machines:
-LevelsBetweenUpgrades: 1 =>: 5
-
-Tinker - Rearm:
-AbilityManaCost: 125 225 400 600 800 1100 1500 => 300 600 900 1200 1500 1800 2100
-
-Medusa - Split Shot:
-LevelsBetweenUpgrades: 3 => 5
-
-Shinobu -Yumewatari:
-LevelsBetweenUpgrades: 7 => 10
-RequiredLevelel: 1 =>: 5
-
-Medusa -Mystic Snake:
-snake_damage: 60 120 180 240 300 360 420 => 30 60 90 120 150 190 210
-
-Medusa - Mana Shield:
-damage_per_mana: 1.6 1.9 2.2 2.5 2.9 3.3 3.7 => 0.8 1.0 1.1 1.3 1.5 1.7 1.9
-
-Pudge - Meat Hook:
-cooldown_scepter: 3.75 => 6.0
-hook_distance: 1000 1100 1200 1300 1500 1600 1700 => 800 900 1000 1100 1200 1300 1400
-LevelsBetweenUpgrades: 1 =>: 3
-
-Lycan - Howl:
-hero_bonus_hp: 50 100 150 200 => 150 200 250 300 350 2000 10000
-unit_bonus_hp: 25 50 75 100 => 300 600 900 1500 2000 2500 3500
-
-Tiny - Toss:
-AbilityManaCost: 120 1140 160 180 200 220 240 => 120 140 160 180 200 220 240
-
-item_blood_of_midas
-gold_multiplier: 5 => 3
-xp_multiplier: 6 => 4 

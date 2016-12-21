@@ -142,8 +142,6 @@
 		"hero_selection_button_search"							"Search Hero..."
 		"hero_selection_button_switch"							"Switch Heroes"
 		"hero_selection_loading_message"						"Loading..."
-		"hero_selection_paused_label"							"Game is Paused"
-		"hero_selection_paused_description"						"Open console and write \'dota_pause\'"
 		"hero_selection_change_hero_selected"					"This hero is already selected"
 
 		"chat_placeholder_send_message"							"Type your message here..."

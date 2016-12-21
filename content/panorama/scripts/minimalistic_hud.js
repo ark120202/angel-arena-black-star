@@ -51,16 +51,18 @@ function UpdatePanoramaHUD() {
 				}
 			}
 		}
-
-	hud.FindChildTraverse("HUDSkinAbilityContainerBG").style.width = (hud.FindChildTraverse("abilities").actuallayoutwidth + 16) + "px";
-
+	var apw = hud.FindChildTraverse("abilities").GetParent().actuallayoutwidth;
+	if (!isNaN(apw) && apw > 0)
+		hud.FindChildTraverse("HUDSkinAbilityContainerBG").style.width = ((hud.FindChildTraverse("abilities").actuallayoutwidth + 16) / apw * 100) + "%";
+	var sw = Game.GetScreenWidth()
+	var sh = Game.GetScreenHeight()
 	var minimap = hud.FindChildTraverse("minimap_block");
-	$("#DynamicMinimapRoot").style.height = (minimap.actuallayoutheight + 8) + "px";
-	$("#DynamicMinimapRoot").style.width = (minimap.actuallayoutwidth + 8) + "px";
+	$("#DynamicMinimapRoot").style.height = ((minimap.actuallayoutheight + 8) / sh * 100) + "%";
+	$("#DynamicMinimapRoot").style.width = ((minimap.actuallayoutwidth + 8) / sw * 100) + "%";
 
 	var pcs = hud.FindChildTraverse("PortraitContainer").GetPositionWithinWindow()
 	if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
-		$("#rubick_personality_steal_hud").style.position = (pcs.x / Game.GetScreenWidth() * 100) + "% " + ((pcs.y + 12) / Game.GetScreenHeight() * 100) + "% 0"
+		$("#rubick_personality_steal_hud").style.position = (pcs.x / sw * 100) + "% " + ((pcs.y + 12) / sh * 100) + "% 0"
 }
 
 function AutoUpdatePanoramaHUD() {

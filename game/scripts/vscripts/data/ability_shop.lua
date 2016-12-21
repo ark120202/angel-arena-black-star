@@ -114,9 +114,10 @@ ABILITY_SHOP_DATA = {
 }
 
 ABILITY_SHOP_SKIP_HEROES = {
+	"npc_dota_hero_base",
 	"npc_dota_hero_invoker",
 	"npc_dota_hero_earth_spirit",
-	"npc_dota_hero_rubick"
+	"npc_dota_hero_rubick",
 }
 
 ABILITY_SHOP_SKIP_ABILITIES = {

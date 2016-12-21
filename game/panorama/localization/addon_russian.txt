@@ -113,8 +113,6 @@
 		"hero_selection_button_search"							"Поиск среди героев..."
 		"hero_selection_button_switch"							"Сменить героев"
 		"hero_selection_loading_message"						"Загрузка..."
-		"hero_selection_paused_label"							"Игра приостановлена"
-		"hero_selection_paused_description"						"Откройте консоль и выполните команду \'dota_pause\'"
 		"hero_selection_change_hero_selected"					"Этот герой уже есть в игре"
 
 		"chat_placeholder_send_message"							"Введите своё сообщение..."

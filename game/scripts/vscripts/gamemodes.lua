@@ -31,6 +31,17 @@ if GameModes == nil then
 				"holdout",
 			},
 		},
+		[ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES] = {
+			onPreload = function()
+				for k,t in pairs(DROP_TABLE) do
+					for i,info in ipairs(t) do
+						if string.starts(info.Item, "item_god_transform_") then
+							table.remove(DROP_TABLE[k], i)
+						end
+					end
+				end
+			end,
+		},
 		[DOTA_GAMEMODE_4V4V4V4] = {
 			onPreload = function()
 				MAP_LENGTH = 9216

@@ -29,7 +29,8 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			table.insert(units, u)
 		end
 	end
-	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability then
+
+	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability and not units[1]:IsIllusion() and not units[1]:HasModifier("modifier_arc_warden_tempest_double") then
 		local cost = ability:GetCost()
 		if GameRules:GetGameTime() - ability:GetPurchaseTime() > 10 then
 			cost = cost / 2

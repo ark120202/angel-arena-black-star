@@ -337,37 +337,28 @@ function ScoreboardUpdater_InitializeScoreboard(scoreboardConfig, scoreboardPane
 //=============================================================================
 //=============================================================================
 function ScoreboardUpdater_SetScoreboardActive(scoreboardHandle, isActive) {
-	if (scoreboardHandle.scoreboardConfig === null || scoreboardHandle.scoreboardPanel === null) {
-		return;
-	}
-
-	if (isActive) {
+	if (scoreboardHandle.scoreboardConfig != null && scoreboardHandle.scoreboardPanel != null && isActive)
 		_ScoreboardUpdater_UpdateAllTeamsAndPlayers(scoreboardHandle.scoreboardConfig, scoreboardHandle.scoreboardPanel);
-	}
 }
 
 //=============================================================================
 //=============================================================================
 function ScoreboardUpdater_GetTeamPanel(scoreboardHandle, teamId) {
-	if (scoreboardHandle.scoreboardPanel === null) {
-		return;
+	if (scoreboardHandle.scoreboardPanel != null) {
+		var teamPanelName = "_dynamic_team_" + teamId;
+		return scoreboardHandle.scoreboardPanel.FindChild(teamPanelName);
 	}
-
-	var teamPanelName = "_dynamic_team_" + teamId;
-	return scoreboardHandle.scoreboardPanel.FindChild(teamPanelName);
 }
 
 //=============================================================================
 //=============================================================================
 function ScoreboardUpdater_GetSortedTeamInfoList(scoreboardHandle) {
 	var teamsList = [];
-	for (var teamId of Game.GetAllTeamIDs()) {
+	for (var teamId of Game.GetAllTeamIDs())
 		teamsList.push(Game.GetTeamDetails(teamId));
-	}
 
-	if (teamsList.length > 1) {
+	if (teamsList.length > 1)
 		teamsList.sort(stableCompareFunc);
-	}
 
 	return teamsList;
 }

@@ -26,29 +26,73 @@ TODO LIST:
 		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_1649]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/0c0a645822de4cb3da7ca367e9bc6d2c]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/0c0a645822de4cb3da7ca367e9bc6d2c]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/0c0a645822de4cb3da7ca367e9bc6d2c
+[url=https://vk.com/wall-122685850_1788]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://gist.github.com/ark120202/808a8b4fb35b8bb30e23fd040554b9fa]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/808a8b4fb35b8bb30e23fd040554b9fa]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/808a8b4fb35b8bb30e23fd040554b9fa
 ============================================================
-Angel Arena Black Star - Версия 1.3.6b:
-
+Angel Arena Black Star - Версия 1.3.7:
+Добавлено два новых босса и героя-бога: Freya, Zaken
+Изменен интерфейс в меню выбора героев
+Исправлены ошибки с March Of The Machines, таблицей счета и продажей предметов иллюзиями
+Усилены: Lycan - Howl, Keeper Of The Light - Chakra Magic
+Ослаблены: Pudge - Meat Hook, Medusa - Mana Shield, Medusa - Mystic Snake, Medusa - Split Shot, Shinobu - Yumewatari, Tinker - Rearm, Tinker - March Of The Machines, Treant Protector - Natures Guise, Blood of Midas, Iron Talon
 ============================================================
-Angel Arena Black Star - Version 1.3.6b:
-
+Angel Arena Black Star - Version 1.3.7:
+Added two new bosses and god heroes: Freya, Zaken
+Changed hero selection interface
+Fixed bugs with March Of The Machines, scoreboard and illusions
+Up: Lycan - Howl, Keeper Of The Light - Chakra Magic
+Nerf: Pudge - Meat Hook, Medusa - Mana Shield, Medusa - Mystic Snake, Medusa - Split Shot, Shinobu - Yumewatari, Tinker - Rearm, Tinker - March Of The Machines, Treant Protector - Natures Guise, Blood of Midas, Iron Talon
 ============================================================
-Angel Arena Black Star - Version 1.3.6b:
+Angel Arena Black Star - Version 1.3.7:
 General:
-	
+	Added two new bosses and god heroes: Freya, Zaken
+	Changed hero selection interface
 Balance:
 	Urn of Shadows now can't be used on bosses
+	Iron Talon:
+		Cooldown: 20.0 => 16
+		Bonus damage to Creeps (Melee): 170 => 140
+		Bonus damage to Creeps (Ranged): 130 => 110
+	Blood of Midas
+		Gold Multiplier: 5 => 3
+		Xp Multiplier: 6 => 4 
 	Abilities:
-		
+		Treant Protector - Natures Guise:
+			Fade Time: 7 6 5 4 3 2 => 12 11 10 9 8 7 6
+			Bash Duration: 1 1.4 1.8 2.2 2.3 2.4 2.6 => 0.3 0.6 0.9 1.2 1.5 2.0 2.3
+		Tinker - March Of The Machines:
+			Levels Between Upgrades: 1 => 5
+		Tinker - Rearm:
+			Mana Cost: 125 225 400 600 800 1100 1500 => 300 600 900 1200 1500 1800 2100
+		Keeper Of The Light - Chakra Magic:
+			Cooldown: 17 16 15 14 13 12 11 => 60
+			Cooldown Reduction: 3 4 5 6 7 8 9 => 4 8 12 14 16 18 20
+		Shinobu - Yumewatari:
+			Levels Between Upgrades: 7 => 10
+			Required Level: 1 => 5
+		Medusa - Split Shot:
+			Levels Between Upgrades: 3 => 5
+		Medusa - Mystic Snake:
+			Damage: 60 120 180 240 300 360 420 => 30 60 90 120 150 190 210
+		Medusa - Mana Shield:
+			Damage per Mana Point: 1.6 1.9 2.2 2.5 2.9 3.3 3.7 => 0.8 1.0 1.1 1.3 1.5 1.7 1.9
+		Pudge - Meat Hook:
+			Cooldown with Scepter: 3.75 => 6.0
+			Hook Distance: 1000 1100 1200 1300 1500 1600 1700 => 800 900 1000 1100 1200 1300 1400
+			Levels Between Upgrades: 1 => 3
+		Lycan - Howl:
+			Bonus HP to Heroes: 50 100 150 200 => 150 200 250 300 350 2000 10000
+			Bonus HP to Units: 25 50 75 100 => 300 600 900 1500 2000 2500 3500
+		Tiny - Toss:
+			Mana Cost: 120 1140 160 180 200 220 240 => 120 140 160 180 200 220 240
 Fixes:
-	
+	Fixed illusions could sell items
+	Custom scoreboard now works again
+	Fixed Tinker - March Of The Machines spawned more machines, than it should've
 <<+===========================================================================================================
-Fixed abandoned heroes weren't removed and gold stopped ticked after that
-Fixed small bug with hero selection
+
 
 rhasta,
 lycan,

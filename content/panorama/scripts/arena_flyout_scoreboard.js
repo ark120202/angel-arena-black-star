@@ -4,11 +4,7 @@ var g_ScoreboardHandle = null;
 
 function SetFlyoutScoreboardVisible(bVisible) {
 	$.GetContextPanel().SetHasClass("flyout_scoreboard_visible", bVisible);
-	if (bVisible) {
-		ScoreboardUpdater_SetScoreboardActive(g_ScoreboardHandle, true);
-	} else {
-		ScoreboardUpdater_SetScoreboardActive(g_ScoreboardHandle, false);
-	}
+	ScoreboardUpdater_SetScoreboardActive(g_ScoreboardHandle, bVisible);
 }
 
 (function() {
@@ -23,7 +19,12 @@ function SetFlyoutScoreboardVisible(bVisible) {
 	g_ScoreboardHandle = ScoreboardUpdater_InitializeScoreboard(scoreboardConfig, $("#TeamsContainer"));
 
 	SetFlyoutScoreboardVisible(false);
-
-	$.RegisterEventHandler("DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible);
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, true)
+	var scoreboard = GetDotaHud().FindChildTraverse("scoreboard");
+	var UpdateScoreVisible = function() {
+		SetFlyoutScoreboardVisible(!scoreboard.BHasClass("ScoreboardClosed"))
+		$.Schedule(0.2, UpdateScoreVisible);
+	}
+	UpdateScoreVisible();
+	//$.RegisterEventHandler("DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible);
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, false)
 })();

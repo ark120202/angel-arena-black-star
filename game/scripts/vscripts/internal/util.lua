@@ -1081,14 +1081,18 @@ function InvokeCheatCommand(s)
 end
 
 function UnitVarToPlayerID(unitvar)
-	if type(unitvar) == "number" then
-		return unitvar
-	elseif type(unitvar) == "table" and unitvar.entindex and unitvar:entindex() then
-		if unitvar.GetPlayerID and unitvar:GetPlayerID() > -1 then
-			return unitvar:GetPlayerID()
-		elseif unitvar.GetPlayerOwnerID then
-			return unitvar:GetPlayerOwnerID()
+	if unitvar then
+		if type(unitvar) == "number" then
+			return unitvar
+		elseif type(unitvar) == "table" and unitvar.entindex and unitvar:entindex() then
+			if unitvar.GetPlayerID and unitvar:GetPlayerID() > -1 then
+				return unitvar:GetPlayerID()
+			elseif unitvar.GetPlayerOwnerID then
+				return unitvar:GetPlayerOwnerID()
+			end
 		end
+	else
+		return -1
 	end
 end
 

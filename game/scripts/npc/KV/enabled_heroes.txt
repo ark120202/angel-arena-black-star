@@ -128,9 +128,7 @@
 		"npc_arena_hero_zen_gehraz"						"1"
 		"npc_arena_hero_stegius"						"1"
 		"npc_arena_hero_mirratie"						"1"
-		"npc_arena_hero_freya"							"1"
-		"npc_arena_hero_zaken"							"1"
-		"npc_arena_hero_anakim"							"1"
+		"npc_arena_hero_anakim"							"0"
 	}
 	"NoAbilities"
 	{
@@ -251,7 +249,7 @@
 		"npc_dota_hero_razor"							"1"
 		
 		"npc_arena_hero_shinobu"						"1"
-		"npc_arena_hero_freya"							"0"
-		"npc_arena_hero_zaken"							"0"
+		"npc_arena_hero_freya"							"1"
+		"npc_arena_hero_zaken"							"1"
 	}
 }

@@ -12,7 +12,8 @@ end
 
 function AbilityShop:PrepareData()
 	local Heroes_all = {}
-	table.merge(Heroes_all, ENABLED_HEROES.Selection)
+	table.merge(Heroes_all, NPC_HEROES_CUSTOM)
+--	table.merge(Heroes_all, ENABLED_HEROES.Gods)
 	for _,v in ipairs(ABILITY_SHOP_SKIP_HEROES) do
 		Heroes_all[v] = nil
 	end
@@ -49,15 +50,15 @@ function AbilityShop:PrepareData()
 			end
 		end
 	end
-	for name,enabled in pairsByKeys(Heroes_all) do
-		if enabled == 1 then
+	for name,baseData in pairsByKeys(Heroes_all) do
+		if baseData and baseData.Enabled ~= 0 then
 			local heroTable = GetHeroTableByName(name)
 			local tabIndex = 1
 			if not NPC_HEROES[name] then
 				tabIndex = 2
 			end
 			local abilityTbl = {}
-			for i = 1, 17 do
+			for i = 1, 24 do
 				local at = heroTable["Ability" .. i]
 				if at and at ~= "" and at ~= "attribute_bonus_arena" and not AbilityHasBehaviorByName(at, "DOTA_ABILITY_BEHAVIOR_HIDDEN") and not table.contains(ABILITY_SHOP_SKIP_ABILITIES, at) then
 					local cost = 1
@@ -94,11 +95,9 @@ function AbilityShop:PostAbilityData()
 	CustomGameEventManager:RegisterListener("ability_shop_downgrade", Dynamic_Wrap(AbilityShop, "OnAbilityDowngrade"))
 	PlayerTables:CreateTable("ability_shop_data", AbilityShop.ClientData, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 end
---AbilityShop:PostAbilityData()
+
 function AbilityShop:GetAbilityListInfo(abilityname)
-	if AbilityShop.AbilityInfo[abilityname] then
-		return AbilityShop.AbilityInfo[abilityname]
-	end
+	return AbilityShop.AbilityInfo[abilityname]
 end
 
 function AbilityShop:OnAbilityBuy(data)
