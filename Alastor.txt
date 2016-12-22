@@ -68,9 +68,14 @@ LevelsBetweenUpgrades: 1 => 8
 Ember Spirit - Flame guard
 урон по боссам снижен на 70%
 
-sandking_sand_storm
+sandking - Sand - Storm
 урон по боссам снижен на 60%
 
 Lycan - Howl
 LevelsBetweenUpgrades: 10 => 16
 
+Ember Spirit Searing Chains:
+damage_from_current_health_pct: 0.3 0.6 0.9 1.2 1.5 1.8 2.1 => 0.1 0.2 0.3 0.4 0.5 0.6 0.8
+
+dark_seer_wall_of_replica"
+"duration"	"150 150 150 250 350 450 550" => 30

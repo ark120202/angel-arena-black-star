@@ -9465,7 +9465,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"150 150 150 250 350 450 550"
+				"duration"	"30"
 			}
 
 			"02"
@@ -18559,7 +18559,7 @@
 			"99"
 			{
 			   "var_type" "FIELD_FLOAT"
-			   "damage_from_current_health_pct" "0.3 0.6 0.9 1.2 1.5 1.8 2.1"
+			   "damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.8"
 			   "CalculateSpellDamageTooltip" "0"
 			}
 		}
