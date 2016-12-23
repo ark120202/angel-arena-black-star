@@ -689,7 +689,7 @@
 
 .Gamemode_4V4V4V4 .PlayerInTeamHeroImage
 {
-	height: 83px;
+	width: 69px;
 }
 
 .Gamemode_4V4V4V4 .PlayerInTeamPanel
@@ -700,9 +700,7 @@
 
 .Gamemode_4V4V4V4 .PlayerInTeamNickname
 {
-	font-size: 16px;
-	height: 44px;
-	margin-bottom: -6px;
+	font-size: 17px;
 }
 
 .AspectRatio4x3 .HeroListElement

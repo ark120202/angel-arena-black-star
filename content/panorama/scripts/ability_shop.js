@@ -259,7 +259,5 @@ function Fill(heroesData, panel) {
 		}
 		SelectHeroTab(1)
 	});
-	AllAbilityPanels.push(CreateSnippet_Ability($("#AttributeBonusSlot"), "attribute_bonus_arena", null, 1));
 	Game.DisableWheelPanels.push($("#MainContainer"));
-
 })();

@@ -27,51 +27,28 @@ TODO LIST:
 
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_1788]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/808a8b4fb35b8bb30e23fd040554b9fa]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/808a8b4fb35b8bb30e23fd040554b9fa]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/808a8b4fb35b8bb30e23fd040554b9fa
+[url=https://gist.github.com/ark120202/f9acdaac39d79e0a0bffc747e811bd7e]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/f9acdaac39d79e0a0bffc747e811bd7e]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/f9acdaac39d79e0a0bffc747e811bd7e
 ============================================================
-Angel Arena Black Star - Версия 1.3.7b:
-Баланс:
-	Zaken - Stitching Strikes:
-		Длительность перезарядки: 0 => 30 26 24 20 16 15 12
-	Lycan - Howl:
-		Минимальный уровень: 1 => 3
-		Уровней между улучшениями 1 =>  10
-	Урон по боссам: 
-		Abyssal - Underlord Firestorm: 100% => 40%
-		Bristleback - Quill Spray: 100% => 40%
-		Сentaur - Hoof Stomp: 100% => 40%
-		Сentaur - Double Edge: 100% => 40%
-		Kunkka - Ghostship: 100% => 40%
-		Slark - Dark Pact: 100% => 40%
-Исправления:
-	Исправлены изменения из предыдущего обновления: Thinker - March of the Machines, Shinobu - Yumewatari
-	Исправлена возможность покупки предметов для смены героя в богов
-============================================================
-Angel Arena Black Star - Version 1.3.7:
+Angel Arena Black Star - Версия 1.3.7c:
 
 ============================================================
-Angel Arena Black Star - Version 1.3.7b:
+Angel Arena Black Star - Version 1.3.7c:
+
+============================================================
+Angel Arena Black Star - Version 1.3.7c:
 General:
 	
 Balance:
-	Zaken - Stitching Strikes:
-		Cooldown: 0 => 30 26 24 20 16 15 12
-	Lycan - Howl:
-		Required Level: 1 => 3
-		Levels Between Upgrades 1 =>  10
-	Damage to Bosses: 
-		Abyssal - Underlord Firestorm: 100% => 40%
-		Bristleback - Quill Spray: 100% => 40%
-		Сentaur - Hoof Stomp: 100% => 40%
-		Сentaur - Double Edge: 100% => 40%
-		Kunkka - Ghostship: 100% => 40%
-		Slark - Dark Pact: 100% => 40%
+	Items:
+		
+	Heroes:
+		
+	Abilities:
+		
 Fixes:
-	Fixed last update fixes didn't work: Thinker - March of the Machines, Shinobu - Yumewatari
-	Fixed god change items were purchasable
-
+	
 <<+===========================================================================================================
 
 

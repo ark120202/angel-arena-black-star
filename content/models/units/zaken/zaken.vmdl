@@ -61,8 +61,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 Pelvis"
-								m_vMinBounds = [ -1.911257, -3.835615, -4.860585 ]
-								m_vMaxBounds = [ 9.596207, 4.492811, 4.860587 ]
+								m_vMinBounds = [ -6.689407, -13.424658, -17.012051 ]
+								m_vMaxBounds = [ 33.586716, 15.72484, 17.012058 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -71,8 +71,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 Spine1"
-								m_vMinBounds = [ -2.053001, -4.854248, -4.826454 ]
-								m_vMaxBounds = [ 9.036503, 4.367685, 4.826452 ]
+								m_vMinBounds = [ -7.185493, -16.989925, -16.892612 ]
+								m_vMaxBounds = [ 31.627762, 15.286873, 16.892563 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -81,8 +81,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "bip01 spine2"
-								m_vMinBounds = [ -2.251286, -4.062073, -6.102786 ]
-								m_vMaxBounds = [ 10.798573, 4.266826, 6.727299 ]
+								m_vMinBounds = [ -7.879517, -14.217339, -21.359818 ]
+								m_vMaxBounds = [ 37.794983, 14.933838, 23.545479 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -91,8 +91,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 Neck"
-								m_vMinBounds = [ -0.55537, -1.297815, -1.434761 ]
-								m_vMaxBounds = [ 2.228825, 2.566169, 1.434763 ]
+								m_vMinBounds = [ -1.943817, -4.542423, -5.021747 ]
+								m_vMaxBounds = [ 7.800858, 8.981533, 5.021592 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -101,8 +101,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Clavicle"
-								m_vMinBounds = [ 1.280264, -2.081857, -2.801891 ]
-								m_vMaxBounds = [ 7.772031, 4.045833, 2.903526 ]
+								m_vMinBounds = [ 4.480843, -7.286423, -9.806625 ]
+								m_vMaxBounds = [ 27.202049, 14.160488, 10.162338 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -111,8 +111,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Clavicle"
-								m_vMinBounds = [ 1.280266, -2.081767, -2.903522 ]
-								m_vMaxBounds = [ 7.771992, 4.045754, 2.801857 ]
+								m_vMinBounds = [ 4.480995, -7.286129, -10.162338 ]
+								m_vMaxBounds = [ 27.202049, 14.160206, 9.806503 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -121,8 +121,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L UpperArm"
-								m_vMinBounds = [ -2.567493, -2.539842, -1.954702 ]
-								m_vMaxBounds = [ 8.969845, 3.705417, 2.704374 ]
+								m_vMinBounds = [ -8.986221, -8.889397, -6.841499 ]
+								m_vMaxBounds = [ 31.394447, 12.969006, 9.465263 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -131,8 +131,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R UpperArm"
-								m_vMinBounds = [ -2.567554, -2.539755, -2.70434 ]
-								m_vMaxBounds = [ 8.969849, 3.70534, 1.954693 ]
+								m_vMinBounds = [ -8.986374, -8.889093, -9.465248 ]
+								m_vMaxBounds = [ 31.394554, 12.968737, 6.841385 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -141,8 +141,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Forearm"
-								m_vMinBounds = [ -0.729494, -3.818287, -3.468513 ]
-								m_vMaxBounds = [ 9.646112, 3.890193, 3.91585 ]
+								m_vMinBounds = [ -2.553223, -13.363997, -12.139755 ]
+								m_vMaxBounds = [ 33.761368, 13.615685, 13.705498 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -151,8 +151,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Forearm"
-								m_vMinBounds = [ -0.729494, -3.818058, -3.915655 ]
-								m_vMaxBounds = [ 9.64612, 3.890033, 3.468336 ]
+								m_vMinBounds = [ -2.553177, -13.363191, -13.704788 ]
+								m_vMaxBounds = [ 33.761482, 13.615125, 12.139206 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -161,8 +161,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Hand"
-								m_vMinBounds = [ -1.80677, -0.978315, -2.14495 ]
-								m_vMaxBounds = [ 3.603199, 1.797163, 1.590935 ]
+								m_vMinBounds = [ -6.323708, -3.424179, -7.507361 ]
+								m_vMaxBounds = [ 12.611191, 6.290001, 5.568261 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -171,8 +171,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Hand"
-								m_vMinBounds = [ -1.806759, -0.978325, -1.590979 ]
-								m_vMaxBounds = [ 3.603214, 1.797136, 2.144908 ]
+								m_vMinBounds = [ -6.323654, -3.424118, -5.568423 ]
+								m_vMaxBounds = [ 12.611275, 6.289993, 7.507192 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -181,8 +181,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone08"
-								m_vMinBounds = [ -1.12557, -6.06745, -5.19103 ]
-								m_vMaxBounds = [ 4.411957, 6.067448, 3.949948 ]
+								m_vMinBounds = [ -3.939484, -21.236067, -18.168613 ]
+								m_vMaxBounds = [ 15.441849, 21.236082, 13.824808 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -191,8 +191,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bow Bone01"
-								m_vMinBounds = [ -5.545544, -4.699962, -2.434116 ]
-								m_vMaxBounds = [ 4.615984, 2.849081, 2.764801 ]
+								m_vMinBounds = [ -19.409393, -16.449827, -8.519508 ]
+								m_vMaxBounds = [ 16.155972, 9.971817, 9.676697 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -201,8 +201,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Sword Bone01"
-								m_vMinBounds = [ -5.545543, -4.699984, -2.764791 ]
-								m_vMaxBounds = [ 4.61599, 2.849084, 2.434139 ]
+								m_vMinBounds = [ -19.409359, -16.449932, -9.676788 ]
+								m_vMaxBounds = [ 16.156002, 9.971798, 8.51947 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -211,8 +211,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone01"
-								m_vMinBounds = [ 0.145981, -0.949308, -1.277371 ]
-								m_vMaxBounds = [ 8.206757, 1.070723, 2.315501 ]
+								m_vMinBounds = [ 0.510887, -3.322575, -4.470779 ]
+								m_vMaxBounds = [ 28.723625, 3.747547, 8.104274 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -221,8 +221,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone05"
-								m_vMinBounds = [ -0.325081, -2.287877, -1.62871 ]
-								m_vMaxBounds = [ 7.794748, 1.259395, 4.033185 ]
+								m_vMinBounds = [ -1.137817, -8.007557, -5.700489 ]
+								m_vMaxBounds = [ 27.281593, 4.407879, 14.116131 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -231,8 +231,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone14"
-								m_vMinBounds = [ -0.608826, -1.161471, -3.167006 ]
-								m_vMaxBounds = [ 7.696175, 1.033563, 3.167 ]
+								m_vMinBounds = [ -2.13089, -4.065144, -11.084538 ]
+								m_vMaxBounds = [ 26.936623, 3.617466, 11.084482 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -241,8 +241,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone49"
-								m_vMinBounds = [ 0.523281, 0.573662, -1.498399 ]
-								m_vMaxBounds = [ 7.794752, 1.259396, 1.628705 ]
+								m_vMinBounds = [ 1.831497, 2.007786, -5.244384 ]
+								m_vMaxBounds = [ 27.281631, 4.40789, 5.700467 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -251,8 +251,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone43"
-								m_vMinBounds = [ 0.145973, -0.949297, -2.315502 ]
-								m_vMaxBounds = [ 8.206755, 1.070734, 1.277371 ]
+								m_vMinBounds = [ 0.510933, -3.322544, -8.104283 ]
+								m_vMaxBounds = [ 28.723694, 3.74754, 4.470769 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -261,8 +261,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bow Bone02"
-								m_vMinBounds = [ 9.503023, -0.584568, -0.544762 ]
-								m_vMaxBounds = [ 9.821035, 0.637885, 0.362638 ]
+								m_vMinBounds = [ 33.26059, -2.045895, -1.906815 ]
+								m_vMaxBounds = [ 34.37365, 2.232693, 1.269089 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -271,8 +271,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Sword Bone02"
-								m_vMinBounds = [ 9.503031, -0.584575, -0.362614 ]
-								m_vMaxBounds = [ 9.821045, 0.637879, 0.544788 ]
+								m_vMinBounds = [ 33.260643, -2.045933, -1.26918 ]
+								m_vMaxBounds = [ 34.373695, 2.232655, 1.906723 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -281,8 +281,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Thigh"
-								m_vMinBounds = [ -1.474314, -4.141199, -3.568945 ]
-								m_vMaxBounds = [ 14.830971, 4.161304, 3.061259 ]
+								m_vMinBounds = [ -5.160103, -14.494176, -12.491337 ]
+								m_vMaxBounds = [ 51.908405, 14.564591, 10.714378 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -291,8 +291,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Thigh"
-								m_vMinBounds = [ -1.474312, -4.141193, -3.061241 ]
-								m_vMaxBounds = [ 14.830976, 4.16128, 3.568933 ]
+								m_vMinBounds = [ -5.160057, -14.49416, -10.714382 ]
+								m_vMaxBounds = [ 51.908421, 14.564507, 12.49123 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -301,8 +301,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone02"
-								m_vMinBounds = [ -0.70219, -0.518324, -1.431592 ]
-								m_vMaxBounds = [ 8.5287, 1.309648, 2.806076 ]
+								m_vMinBounds = [ -2.457741, -1.81411, -5.010518 ]
+								m_vMaxBounds = [ 29.85041, 4.583836, 9.821319 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -311,8 +311,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone11"
-								m_vMinBounds = [ -0.200888, 0.267875, -1.962089 ]
-								m_vMaxBounds = [ 7.822672, 0.720193, 1.723078 ]
+								m_vMinBounds = [ -0.703087, 0.937538, -6.867238 ]
+								m_vMaxBounds = [ 27.379349, 2.520676, 6.030845 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -321,8 +321,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone19"
-								m_vMinBounds = [ -0.119919, 0.458741, 0.000002 ]
-								m_vMaxBounds = [ 7.868963, 0.546248, 0.000002 ]
+								m_vMinBounds = [ -0.419693, 1.605564, 0.000019 ]
+								m_vMaxBounds = [ 27.541382, 1.911804, 0.000057 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -331,8 +331,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone50"
-								m_vMinBounds = [ -0.200895, 0.267873, -1.723079 ]
-								m_vMaxBounds = [ 7.82267, 0.720192, 1.962087 ]
+								m_vMinBounds = [ -0.703041, 0.937473, -6.030752 ]
+								m_vMaxBounds = [ 27.379425, 2.520641, 6.867326 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -341,8 +341,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone44"
-								m_vMinBounds = [ -0.702198, -0.518324, -2.806073 ]
-								m_vMaxBounds = [ 8.528692, 1.30965, 1.43159 ]
+								m_vMinBounds = [ -2.457672, -1.814144, -9.82131 ]
+								m_vMaxBounds = [ 29.850475, 4.58371, 5.010505 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -351,8 +351,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 head"
-								m_vMinBounds = [ -1.964508, -12.301964, -8.215196 ]
-								m_vMaxBounds = [ 12.274673, 2.970354, 8.215178 ]
+								m_vMinBounds = [ -6.875824, -43.056957, -28.753296 ]
+								m_vMaxBounds = [ 42.961334, 10.396152, 28.753029 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -361,8 +361,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bow Bone03"
-								m_vMinBounds = [ 0.85905, -0.584571, -0.544762 ]
-								m_vMaxBounds = [ 10.846542, 0.637882, 0.362637 ]
+								m_vMinBounds = [ 3.006695, -2.045883, -1.906822 ]
+								m_vMaxBounds = [ 37.962929, 2.232704, 1.269081 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -371,8 +371,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Sword Bone03"
-								m_vMinBounds = [ 0.859059, -0.584577, -0.362612 ]
-								m_vMaxBounds = [ 10.846555, 0.637877, 0.544788 ]
+								m_vMinBounds = [ 3.006741, -2.045937, -1.26918 ]
+								m_vMaxBounds = [ 37.962978, 2.232647, 1.906708 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -381,8 +381,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Calf"
-								m_vMinBounds = [ -0.822451, -5.081469, -5.133672 ]
-								m_vMaxBounds = [ 16.730051, 4.512609, 3.413928 ]
+								m_vMinBounds = [ -2.878632, -17.785048, -17.967941 ]
+								m_vMaxBounds = [ 58.555138, 15.794222, 11.94865 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -391,8 +391,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Calf"
-								m_vMinBounds = [ -0.822453, -5.081537, -3.41396 ]
-								m_vMaxBounds = [ 16.730049, 4.512622, 5.133711 ]
+								m_vMinBounds = [ -2.878593, -17.785282, -11.948965 ]
+								m_vMaxBounds = [ 58.555168, 15.794276, 17.967899 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -401,8 +401,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone18"
-								m_vMinBounds = [ -0.89366, -0.504505, -1.431592 ]
-								m_vMaxBounds = [ 8.743952, 1.441998, 3.609796 ]
+								m_vMinBounds = [ -3.127914, -1.765671, -5.010518 ]
+								m_vMaxBounds = [ 30.603756, 5.047092, 12.634385 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -411,8 +411,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone06"
-								m_vMinBounds = [ -0.2537, -0.043373, -2.22686 ]
-								m_vMaxBounds = [ 8.059039, 0.702127, 2.141824 ]
+								m_vMinBounds = [ -0.887947, -0.15184, -7.793887 ]
+								m_vMaxBounds = [ 28.206619, 2.457428, 7.496505 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -421,8 +421,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone20"
-								m_vMinBounds = [ -0.200994, 0.201166, 0.000004 ]
-								m_vMaxBounds = [ 7.924495, 0.549319, 0.000004 ]
+								m_vMinBounds = [ -0.703461, 0.703979, 0.000065 ]
+								m_vMaxBounds = [ 27.735752, 1.922562, 0.000107 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -431,8 +431,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone51"
-								m_vMinBounds = [ -0.253714, -0.043369, -2.141821 ]
-								m_vMaxBounds = [ 8.059034, 0.702131, 2.226856 ]
+								m_vMinBounds = [ -0.887901, -0.151936, -7.496338 ]
+								m_vMaxBounds = [ 28.206711, 2.457333, 7.794022 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -441,8 +441,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone45"
-								m_vMinBounds = [ -0.893671, -0.504498, -3.609796 ]
-								m_vMaxBounds = [ 8.743942, 1.442001, 1.431591 ]
+								m_vMinBounds = [ -3.127846, -1.76585, -12.634384 ]
+								m_vMaxBounds = [ 30.603832, 5.046898, 5.010508 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -451,8 +451,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone15"
-								m_vMinBounds = [ -1.332542, -1.620939, -0.344814 ]
-								m_vMaxBounds = [ 4.144238, 0.707841, 0.561572 ]
+								m_vMinBounds = [ -4.663879, -5.673214, -1.20699 ]
+								m_vMaxBounds = [ 14.504868, 2.477514, 1.965397 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -461,8 +461,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone29"
-								m_vMinBounds = [ -1.33255, -1.623261, -0.56238 ]
-								m_vMaxBounds = [ 4.144238, 0.713369, 0.345309 ]
+								m_vMinBounds = [ -4.663895, -5.681284, -1.968389 ]
+								m_vMaxBounds = [ 14.504837, 2.496916, 1.208499 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -471,8 +471,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Finger0"
-								m_vMinBounds = [ -0.146519, -0.324594, -0.598303 ]
-								m_vMaxBounds = [ 1.327183, 1.05399, 0.616657 ]
+								m_vMinBounds = [ -0.512825, -1.136118, -2.093987 ]
+								m_vMaxBounds = [ 4.645134, 3.688938, 2.158371 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -481,8 +481,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Finger1"
-								m_vMinBounds = [ -0.56736, -0.442688, -1.682811 ]
-								m_vMaxBounds = [ 1.483416, 0.842194, 1.359358 ]
+								m_vMinBounds = [ -1.985794, -1.549484, -5.889869 ]
+								m_vMaxBounds = [ 5.191902, 2.947605, 4.757721 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -491,8 +491,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bow Bone04"
-								m_vMinBounds = [ 0.219076, -0.548346, -0.448271 ]
-								m_vMaxBounds = [ 9.869106, 0.345757, 0.308666 ]
+								m_vMinBounds = [ 0.766777, -1.919071, -1.569206 ]
+								m_vMaxBounds = [ 34.541893, 1.210281, 1.080109 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -501,8 +501,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Finger0"
-								m_vMinBounds = [ -0.146513, -0.324568, -0.616665 ]
-								m_vMaxBounds = [ 1.327192, 1.05401, 0.598274 ]
+								m_vMinBounds = [ -0.512749, -1.136011, -2.15831 ]
+								m_vMaxBounds = [ 4.64521, 3.689018, 2.093979 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -511,8 +511,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Finger1"
-								m_vMinBounds = [ -0.567354, -0.442703, -1.35939 ]
-								m_vMaxBounds = [ 1.483418, 0.842165, 1.68276 ]
+								m_vMinBounds = [ -1.98568, -1.549461, -4.757845 ]
+								m_vMaxBounds = [ 5.192001, 2.947578, 5.889682 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -521,8 +521,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Sword Bone04"
-								m_vMinBounds = [ 0.219091, -0.548354, -0.308632 ]
-								m_vMaxBounds = [ 9.869122, 0.345747, 0.448311 ]
+								m_vMinBounds = [ 0.766811, -1.919098, -1.080292 ]
+								m_vMaxBounds = [ 34.54192, 1.210251, 1.568985 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -531,8 +531,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Foot"
-								m_vMinBounds = [ -0.821364, -1.735727, -2.471813 ]
-								m_vMaxBounds = [ 4.342157, 4.898832, 1.764534 ]
+								m_vMinBounds = [ -2.874809, -6.074892, -8.651484 ]
+								m_vMaxBounds = [ 15.197498, 17.146059, 6.17573 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -541,8 +541,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Foot"
-								m_vMinBounds = [ -0.821365, -1.735748, -1.764818 ]
-								m_vMaxBounds = [ 4.342171, 4.898823, 2.472215 ]
+								m_vMinBounds = [ -2.874734, -6.074968, -6.177021 ]
+								m_vMaxBounds = [ 15.197603, 17.146025, 8.652596 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -551,8 +551,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone03"
-								m_vMinBounds = [ -0.857294, -0.853334, -1.501207 ]
-								m_vMaxBounds = [ 7.716934, 1.438935, 3.905356 ]
+								m_vMinBounds = [ -3.000656, -2.986534, -5.254097 ]
+								m_vMaxBounds = [ 27.009178, 5.036381, 13.66888 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -561,8 +561,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone07"
-								m_vMinBounds = [ -0.179203, -0.047715, -2.463334 ]
-								m_vMaxBounds = [ 6.906625, 0.702184, 2.380179 ]
+								m_vMinBounds = [ -0.627197, -0.167049, -8.6215 ]
+								m_vMaxBounds = [ 24.17318, 2.457623, 8.330801 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -571,8 +571,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone21"
-								m_vMinBounds = [ -0.193825, 0.194165, 0.000006 ]
-								m_vMaxBounds = [ 6.732856, 0.285333, 0.000007 ]
+								m_vMinBounds = [ -0.678349, 0.679478, 0.000112 ]
+								m_vMaxBounds = [ 23.565033, 0.998524, 0.000144 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -581,8 +581,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone52"
-								m_vMinBounds = [ -0.17922, -0.047719, -2.38018 ]
-								m_vMaxBounds = [ 6.906613, 0.702181, 2.463335 ]
+								m_vMinBounds = [ -0.627148, -0.167198, -8.330584 ]
+								m_vMaxBounds = [ 24.173269, 2.45752, 8.62171 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -591,8 +591,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone46"
-								m_vMinBounds = [ -0.857322, -0.85333, -3.905368 ]
-								m_vMaxBounds = [ 7.716912, 1.438935, 1.501213 ]
+								m_vMinBounds = [ -3.000599, -2.986786, -13.668903 ]
+								m_vMaxBounds = [ 27.009251, 5.036182, 5.254119 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -601,8 +601,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Object18"
-								m_vMinBounds = [ -2.881325, -2.787499, -44.917618 ]
-								m_vMaxBounds = [ 2.527306, 5.101962, 5.279175 ]
+								m_vMinBounds = [ -10.084633, -9.75625, -157.21167 ]
+								m_vMaxBounds = [ 8.845604, 17.856865, 18.477081 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -611,8 +611,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Object21"
-								m_vMinBounds = [ -2.527321, -5.101966, -5.279175 ]
-								m_vMaxBounds = [ 2.881317, 2.787497, 44.91758 ]
+								m_vMinBounds = [ -8.845596, -17.856884, -18.477066 ]
+								m_vMaxBounds = [ 10.084641, 9.756239, 157.211594 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -621,8 +621,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Object24"
-								m_vMinBounds = [ -2.527321, -5.101959, -5.279163 ]
-								m_vMaxBounds = [ 2.881313, 2.787497, 44.917591 ]
+								m_vMinBounds = [ -8.845581, -17.856861, -18.477066 ]
+								m_vMaxBounds = [ 10.084641, 9.756243, 157.211578 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -631,8 +631,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Object19"
-								m_vMinBounds = [ -2.881306, -2.787508, -44.91761 ]
-								m_vMaxBounds = [ 2.527328, 5.10195, 5.279163 ]
+								m_vMinBounds = [ -10.084641, -9.756252, -157.211624 ]
+								m_vMaxBounds = [ 8.845581, 17.856853, 18.477051 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -641,8 +641,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Object17"
-								m_vMinBounds = [ -2.881316, -2.787497, -44.917618 ]
-								m_vMaxBounds = [ 2.527317, 5.101963, 5.27916 ]
+								m_vMinBounds = [ -10.084604, -9.756235, -157.211578 ]
+								m_vMaxBounds = [ 8.84561, 17.856869, 18.477081 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -651,8 +651,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone16"
-								m_vMinBounds = [ -1.678844, -1.592571, 0.004696 ]
-								m_vMaxBounds = [ 4.709332, 0.074553, 0.561573 ]
+								m_vMinBounds = [ -5.875946, -5.573936, 0.016314 ]
+								m_vMaxBounds = [ 16.482681, 0.261002, 1.965397 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -661,8 +661,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone30"
-								m_vMinBounds = [ -1.680195, -1.599098, -0.562377 ]
-								m_vMaxBounds = [ 4.709332, 0.075546, -0.004716 ]
+								m_vMinBounds = [ -5.880722, -5.596741, -1.968385 ]
+								m_vMaxBounds = [ 16.482651, 0.264519, -0.016577 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -671,8 +671,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Finger01"
-								m_vMinBounds = [ -0.221518, -0.339271, -0.39875 ]
-								m_vMaxBounds = [ 0.98946, 0.363261, 0.535614 ]
+								m_vMinBounds = [ -0.775322, -1.187495, -1.395576 ]
+								m_vMaxBounds = [ 3.463104, 1.271376, 1.874695 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -681,8 +681,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Finger11"
-								m_vMinBounds = [ -0.446712, -0.420305, -1.483351 ]
-								m_vMaxBounds = [ 1.670406, 0.555046, 1.305262 ]
+								m_vMinBounds = [ -1.563553, -1.471096, -5.191769 ]
+								m_vMaxBounds = [ 5.846367, 1.942638, 4.568379 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -691,8 +691,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bow Bone05"
-								m_vMinBounds = [ 0.569687, -0.375484, -0.448275 ]
-								m_vMaxBounds = [ 12.395861, 0.130488, 0.03824 ]
+								m_vMinBounds = [ 1.993942, -1.314003, -1.569199 ]
+								m_vMaxBounds = [ 43.385559, 0.456902, 0.133614 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -701,8 +701,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Finger01"
-								m_vMinBounds = [ -0.22151, -0.339253, -0.535633 ]
-								m_vMaxBounds = [ 0.989466, 0.363302, 0.398733 ]
+								m_vMinBounds = [ -0.775253, -1.187415, -1.874664 ]
+								m_vMaxBounds = [ 3.463165, 1.271532, 1.395615 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -711,8 +711,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Finger11"
-								m_vMinBounds = [ -0.446714, -0.420311, -1.305282 ]
-								m_vMaxBounds = [ 1.670403, 0.555018, 1.483285 ]
+								m_vMinBounds = [ -1.563438, -1.471119, -4.568457 ]
+								m_vMaxBounds = [ 5.846474, 1.942524, 5.191527 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -721,8 +721,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Sword Bone05"
-								m_vMinBounds = [ 0.569715, -0.375493, -0.0382 ]
-								m_vMaxBounds = [ 12.395889, 0.130479, 0.448313 ]
+								m_vMinBounds = [ 1.993996, -1.314049, -0.133797 ]
+								m_vMaxBounds = [ 43.385612, 0.456852, 1.569008 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -731,8 +731,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 L Toe0"
-								m_vMinBounds = [ -0.33352, -0.112666, -2.468502 ]
-								m_vMaxBounds = [ 2.717086, 2.668612, 1.770344 ]
+								m_vMinBounds = [ -1.167179, -0.394288, -8.639919 ]
+								m_vMaxBounds = [ 9.509953, 9.3402, 6.196047 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -741,8 +741,18 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bip01 R Toe0"
-								m_vMinBounds = [ -0.333538, -0.112675, -1.770626 ]
-								m_vMaxBounds = [ 2.717065, 2.669042, 2.468908 ]
+								m_vMinBounds = [ -1.167243, -0.394376, -6.197357 ]
+								m_vMaxBounds = [ 9.509877, 9.341649, 8.641006 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone09"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone09"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -751,8 +761,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone42"
-								m_vMinBounds = [ -1.080317, -1.195231, -1.550009 ]
-								m_vMaxBounds = [ 6.291677, 1.447721, 4.80845 ]
+								m_vMinBounds = [ -3.781229, -4.183121, -5.424868 ]
+								m_vMaxBounds = [ 22.02076, 5.067204, 16.829744 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -761,8 +771,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone13"
-								m_vMinBounds = [ -0.368079, -0.047714, -2.546359 ]
-								m_vMaxBounds = [ 6.536631, 0.560833, 2.557536 ]
+								m_vMinBounds = [ -1.288242, -0.167046, -8.912037 ]
+								m_vMaxBounds = [ 22.878242, 1.962879, 8.951582 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -771,8 +781,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone22"
-								m_vMinBounds = [ -0.150869, 0.2885, 0.000007 ]
-								m_vMaxBounds = [ 7.305634, 0.305982, 0.000009 ]
+								m_vMinBounds = [ -0.528015, 1.009621, 0.00015 ]
+								m_vMaxBounds = [ 25.569742, 1.070763, 0.000193 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -781,8 +791,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone53"
-								m_vMinBounds = [ -0.368091, -0.047718, -2.557539 ]
-								m_vMaxBounds = [ 6.536623, 0.560841, 2.546365 ]
+								m_vMinBounds = [ -1.288202, -0.167206, -8.951332 ]
+								m_vMaxBounds = [ 22.878283, 1.962761, 8.912329 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -791,8 +801,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone47"
-								m_vMinBounds = [ -1.080343, -1.195221, -4.808463 ]
-								m_vMaxBounds = [ 6.291649, 1.447733, 1.550012 ]
+								m_vMinBounds = [ -3.781197, -4.183449, -16.829777 ]
+								m_vMaxBounds = [ 22.020775, 5.066879, 5.424889 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},

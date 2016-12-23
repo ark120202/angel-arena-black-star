@@ -111,7 +111,7 @@ function HeroSelection:ParseAbilitiesFromTable(t)
 	local abilities = {}
 	for i = 1, 24 do
 		local ability = t["Ability" .. i]
-		if ability and ability ~= "" and ability ~= "attribute_bonus" and ability ~= "attribute_bonus_arena" and not AbilityHasBehaviorByName(ability, "DOTA_ABILITY_BEHAVIOR_HIDDEN") then
+		if ability and ability ~= "" and ability ~= "attribute_bonus" and not AbilityHasBehaviorByName(ability, "DOTA_ABILITY_BEHAVIOR_HIDDEN") then
 			table.insert(abilities, ability)
 		end
 	end

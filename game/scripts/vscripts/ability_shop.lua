@@ -1,8 +1,6 @@
 if AbilityShop == nil then
 	_G.AbilityShop = class({})
-	AbilityShop.AbilityInfo = {
-		["attribute_bonus_arena"] = {cost = 1, banned_with = {}}
-	}
+	AbilityShop.AbilityInfo = {}
 	AbilityShop.ClientData = {{}, {}}
 	AbilityShop.RandomOMG = {
 		Ultimates = {},
@@ -60,7 +58,7 @@ function AbilityShop:PrepareData()
 			local abilityTbl = {}
 			for i = 1, 24 do
 				local at = heroTable["Ability" .. i]
-				if at and at ~= "" and at ~= "attribute_bonus_arena" and not AbilityHasBehaviorByName(at, "DOTA_ABILITY_BEHAVIOR_HIDDEN") and not table.contains(ABILITY_SHOP_SKIP_ABILITIES, at) then
+				if at and at ~= "" and not AbilityHasBehaviorByName(at, "DOTA_ABILITY_BEHAVIOR_HIDDEN") and not table.contains(ABILITY_SHOP_SKIP_ABILITIES, at) then
 					local cost = 1
 					local banned_with = {}
 					local is_ultimate = IsUltimateAbilityKV(at)
@@ -114,44 +112,34 @@ function AbilityShop:OnAbilityBuy(data)
 		end
 	end
 	if hero and cost and hero:GetAbilityPoints() >= cost then
-		if data.ability == "attribute_bonus_arena" then
-			hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
-			local abilityh = hero:FindAbilityByName("attribute_bonus_arena")
-			if not abilityh then
-				abilityh = AddNewAbility(hero, "attribute_bonus_arena")
-				abilityh:SetLevel(1)
-			end
-			abilityh:SetLevel(abilityh:GetLevel() + 1)
-		else
-			PrecacheItemByNameAsync(data.ability, function()
-				if hero:GetAbilityPoints() >= cost then
-					if hero:HasAbility(data.ability) then
-						local abilityh = hero:FindAbilityByName(data.ability)
-						if abilityh then
-							if abilityh:GetLevel() < abilityh:GetMaxLevel() then
-								hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
-								abilityh:SetLevel(abilityh:GetLevel() + 1)
-							end
+		PrecacheItemByNameAsync(data.ability, function()
+			if hero:GetAbilityPoints() >= cost then
+				if hero:HasAbility(data.ability) then
+					local abilityh = hero:FindAbilityByName(data.ability)
+					if abilityh then
+						if abilityh:GetLevel() < abilityh:GetMaxLevel() then
+							hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
+							abilityh:SetLevel(abilityh:GetLevel() + 1)
 						end
-					elseif hero:HasAbility("ability_empty") then
-						hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
-						hero:RemoveAbility("ability_empty")
-						GameMode:PrecacheUnitQueueed(abilityInfo.hero)
-						local a, linked = AddNewAbility(hero, data.ability)
-						a:SetLevel(1)
-						if linked then
-							for _,v in ipairs(linked) do
-								if v:GetAbilityName() == "phoenix_launch_fire_spirit" then
-									v:SetLevel(1)
-								end
-							end
-						end
-						hero:CalculateStatBonus()
-						CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(data.PlayerID), "dota_ability_changed", {})
 					end
+				elseif hero:HasAbility("ability_empty") then
+					hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
+					hero:RemoveAbility("ability_empty")
+					GameMode:PrecacheUnitQueueed(abilityInfo.hero)
+					local a, linked = AddNewAbility(hero, data.ability)
+					a:SetLevel(1)
+					if linked then
+						for _,v in ipairs(linked) do
+							if v:GetAbilityName() == "phoenix_launch_fire_spirit" then
+								v:SetLevel(1)
+							end
+						end
+					end
+					hero:CalculateStatBonus()
+					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(data.PlayerID), "dota_ability_changed", {})
 				end
-			end)
-		end
+			end
+		end)
 	end
 end
 
@@ -162,19 +150,10 @@ function AbilityShop:OnAbilitySell(data)
 		local cost = listDataInfo.cost
 		local abilityh = hero:FindAbilityByName(data.ability)
 
-		local gold = AbilityShop:CalculateDowngradeCost(data.ability, cost)
-		if data.ability == "attribute_bonus_arena" then
-			gold = gold * (abilityh:GetLevel() - 1)
-		else
-			gold = gold * abilityh:GetLevel()
-		end
+		local gold = AbilityShop:CalculateDowngradeCost(data.ability, cost) * abilityh:GetLevel()
 		if Gold:GetGold(data.PlayerID) >= gold then
 			Gold:RemoveGold(data.PlayerID, gold)
-			if data.ability == "attribute_bonus_arena" then
-				hero:SetAbilityPoints(hero:GetAbilityPoints() + cost*(abilityh:GetLevel()-1))
-			else
-				hero:SetAbilityPoints(hero:GetAbilityPoints() + cost*abilityh:GetLevel())
-			end
+			hero:SetAbilityPoints(hero:GetAbilityPoints() + cost*abilityh:GetLevel())
 			RemoveAbilityWithModifiers(hero, abilityh)
 			local link = LINKED_ABILITIES[data.ability]
 			if link then
@@ -182,9 +161,7 @@ function AbilityShop:OnAbilitySell(data)
 					hero:RemoveAbility(v)
 				end
 			end
-			if data.ability ~= "attribute_bonus_arena" then
-				hero:AddAbility("ability_empty")
-			end
+			hero:AddAbility("ability_empty")
 		end
 	end
 	CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(data.PlayerID), "dota_ability_changed", {})
@@ -196,7 +173,7 @@ function AbilityShop:OnAbilityDowngrade(data)
 	if hero and hero:HasAbility(data.ability) and listDataInfo then
 		local cost = listDataInfo.cost
 		local abilityh = hero:FindAbilityByName(data.ability)
-		if (data.ability ~= "attribute_bonus_arena" and abilityh:GetLevel() <= 1) or (data.ability == "attribute_bonus_arena" and  abilityh:GetLevel() <= 2) then
+		if abilityh:GetLevel() <= 1 then
 			AbilityShop:OnAbilitySell(data)
 		else
 			local gold = AbilityShop:CalculateDowngradeCost(data.ability, cost)
@@ -219,7 +196,6 @@ function AbilityShop:RandomOMGRollAbilities(unit)
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG then
 		local ability_count = 6
 		local ultimate_count = 2
-		unit:RemoveModifierByName("modifier_attribute_bonus_arena")
 		for i = 0, unit:GetAbilityCount() - 1 do
 			local ability = unit:GetAbilityByIndex(i)
 			if ability then
@@ -254,7 +230,6 @@ function AbilityShop:RandomOMGRollAbilities(unit)
 				has_ultimates = has_ultimates + 1
 			end
 		end
-		unit:AddAbility("attribute_bonus_arena")
 		unit:SetAbilityPoints(unit:GetLevel())
 	end
 end

@@ -8,7 +8,7 @@ function TimeLock(keys)
 		if target:IsRealHero() or IsBossEntity(target) then
 			for i = 0, target:GetAbilityCount() - 1 do
 				local skill = target:GetAbilityByIndex(i)
-				if skill and not skill:IsHidden() and skill:GetName() ~= "attribute_bonus_arena" then
+				if skill and not skill:IsHidden() then
 					table.insert(skills, skill)
 				end
 			end

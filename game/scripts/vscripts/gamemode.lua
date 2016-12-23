@@ -68,7 +68,7 @@ local requirements = {
 	"custom_runes/custom_runes",
 	"stats_client",
 	"filters",
-	"ability_shop"
+	"ability_shop",
 	--"dyanmic_wearables"
 }
 local modifiers = {

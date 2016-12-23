@@ -33,9 +33,7 @@ function UpdatePanoramaHUD() {
 			}
 		}
 	}
-
-	var attribute_bonus_arena = Entities.GetAbilityByName(unit, "attribute_bonus_arena")
-	hud.FindChildTraverse("level_stats_frame").visible = attribute_bonus_arena != -1 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID()) && Entities.GetAbilityPoints(unit) > 0;
+	hud.FindChildTraverse("level_stats_frame").visible = false && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
 
 	var GoldLabel = hud.FindChildTraverse("ShopButton").FindChildTraverse("GoldLabel")
 	GoldLabel.text = "";
@@ -59,10 +57,16 @@ function UpdatePanoramaHUD() {
 	var minimap = hud.FindChildTraverse("minimap_block");
 	$("#DynamicMinimapRoot").style.height = ((minimap.actuallayoutheight + 8) / sh * 100) + "%";
 	$("#DynamicMinimapRoot").style.width = ((minimap.actuallayoutwidth + 8) / sw * 100) + "%";
-
+	var glyphpos = hud.FindChildTraverse("glyph").GetPositionWithinWindow()
+	if (glyphpos != null && !isNaN(glyphpos.x) && !isNaN(glyphpos.y))
+		$("#SwitchDynamicMinimapButton").style.position = ((glyphpos.x - 4) / sw * 100) + "% " + (glyphpos.y / sh * 100) + "% 0"
 	var pcs = hud.FindChildTraverse("PortraitContainer").GetPositionWithinWindow()
 	if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
 		$("#rubick_personality_steal_hud").style.position = (pcs.x / sw * 100) + "% " + ((pcs.y + 12) / sh * 100) + "% 0"
+}
+
+function SetDynamicMinimapVisible(status) {
+	$("#DynamicMinimapRoot").visible = status || !$("#DynamicMinimapRoot").visible
 }
 
 function AutoUpdatePanoramaHUD() {
@@ -74,36 +78,34 @@ function HookPanoramaPanels() {
 	hud.FindChildTraverse("QuickBuyRows").visible = false;
 	hud.FindChildTraverse("shop").visible = false;
 	hud.FindChildTraverse("RadarButton").visible = false;
-	var shopbtn = hud.FindChildTraverse("ShopButton")
+	var shopbtn = hud.FindChildTraverse("ShopButton");
 	shopbtn.FindChildTraverse("BuybackHeader").visible = false;
-	shopbtn.ClearPanelEvent("onactivate")
-	shopbtn.ClearPanelEvent("onmouseover")
-	shopbtn.ClearPanelEvent("onmouseout")
+	shopbtn.ClearPanelEvent("onactivate");
+	shopbtn.ClearPanelEvent("onmouseover");
+	shopbtn.ClearPanelEvent("onmouseout");
 	shopbtn.SetPanelEvent("onactivate", function() {
-		GameEvents.SendEventClientSide("panorama_shop_open_close", {})
+		GameEvents.SendEventClientSide("panorama_shop_open_close", {});
 	})
-	hud.FindChildTraverse("LevelLabel").style.width = "100%"
-	hud.FindChildTraverse("stash").style.marginBottom = "47px"
+	hud.FindChildTraverse("LevelLabel").style.width = "100%";
+	hud.FindChildTraverse("stash").style.marginBottom = "47px";
 
 	//hud.FindChildTraverse("StatBranchChannel").visible = false;
-	hud.FindChildTraverse("StatBranch").ClearPanelEvent("onactivate")
-	hud.FindChildTraverse("StatBranch").ClearPanelEvent("onmouseover")
-	hud.FindChildTraverse("StatBranch").ClearPanelEvent("onmouseout")
+	hud.FindChildTraverse("StatBranch").ClearPanelEvent("onactivate");
+	hud.FindChildTraverse("StatBranch").ClearPanelEvent("onmouseover");
+	hud.FindChildTraverse("StatBranch").ClearPanelEvent("onmouseout");
 	hud.FindChildTraverse("StatBranch").hittestchildren = false;
 	//hud.FindChildTraverse("StatBranchGraphics").hittestchildren = false;
 
-	var level_stats_frame = hud.FindChildTraverse("level_stats_frame")
-	level_stats_frame.ClearPanelEvent("onmouseover")
-	var StatsLevelUpTab = level_stats_frame.FindChildTraverse("LevelUpTab")
-	StatsLevelUpTab.ClearPanelEvent("onmouseover")
-	StatsLevelUpTab.ClearPanelEvent("onmouseout")
-	StatsLevelUpTab.ClearPanelEvent("onactivate")
-	StatsLevelUpTab.SetPanelEvent("onactivate", function() {
-		var unit = Players.GetLocalPlayerPortraitUnit()
-		var attribute_bonus_arena = Entities.GetAbilityByName(unit, "attribute_bonus_arena")
-		if (Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID()))
-			Abilities.AttemptToUpgrade(attribute_bonus_arena);
-	})
+	var level_stats_frame = hud.FindChildTraverse("level_stats_frame");
+	level_stats_frame.ClearPanelEvent("onmouseover");
+	var StatsLevelUpTab = level_stats_frame.FindChildTraverse("LevelUpTab");
+	StatsLevelUpTab.ClearPanelEvent("onmouseover");
+	StatsLevelUpTab.ClearPanelEvent("onmouseout");
+	StatsLevelUpTab.ClearPanelEvent("onactivate");
+	/*StatsLevelUpTab.SetPanelEvent("onactivate", function() {
+		var unit = Players.GetLocalPlayerPortraitUnit();
+		//TODO: TalentTree
+	})*/
 	hud.FindChildTraverse("combat_events").FindChildTraverse("ToastManager").visible = false;
 	hud.FindChildTraverse("HudChat").FindChildTraverse("ChatLinesContainer").visible = false;
 }

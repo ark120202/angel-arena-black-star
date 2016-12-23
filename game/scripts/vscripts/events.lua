@@ -585,7 +585,7 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 		if cmd[1] == "a_hr" then
 			for i = 0, hero:GetAbilityCount() - 1 do
 				local ability = hero:GetAbilityByIndex(i)
-				if ability and ability:GetName() ~= "attribute_bonus_arena" then
+				if ability then
 					local n = ability:GetName()
 					local l = ability:GetLevel()
 					hero:RemoveAbility(n)
@@ -658,6 +658,19 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 			for i = ARENA_RUNE_FIRST, ARENA_RUNE_LAST do
 				CustomRunes:CreateRune(hero:GetAbsOrigin() + RandomVector(RandomInt(90, 300)), i)
 			end
+		end
+		if cmd[1] == "createcreep" then
+			local sName = tostring(cmd[2]) or "medium"
+			local SpawnerType = tonumber(cmd[3]) or 0
+			local time = tonumber(cmd[4]) or 0
+			local unitRootTable = SPAWNER_SETTINGS[sName].SpawnTypes[SpawnerType]
+			PrintTable(SPAWNER_SETTINGS[sName])
+			local unit = CreateUnitByName(unitRootTable[1][-1], hero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+			unit.SpawnerIndex = SpawnerType
+			unit.SpawnerType = sName
+			unit.SSpawner = -1
+			unit.SLevel = time
+			Spawner:UpgradeCreep(unit, unit.SpawnerType, unit.SLevel, unit.SpawnerIndex)
 		end
 	end
 end

@@ -108,15 +108,14 @@ ABILITY_SHOP_DATA = {
 	["nevermore_shadowraze1"] = { cost = 2, },
 	["nevermore_shadowraze2"] = { cost = 2, },
 	["nevermore_shadowraze3"] = { cost = 2, },
-	["freya_strike_the_ice"] = { cost = 30, },
-	["freya_ice_cage"] = { cost = 30, },
-	["freya_pain_reflection"] = { cost = 30, },
-	["freya_frozen_strike"] = { cost = 30, },
-	["zaken_stitching_strikes"] = { cost = 30, },
-	["zaken_last_chance"] = { cost = 30, },
-	["zaken_summon_sailors"] = { cost = 30, },
-	["zaken_sword_control"] = { cost = 40, },
-	[""] = { cost = 30, },
+	["freya_strike_the_ice"] = { cost = 7, },
+	["freya_ice_cage"] = { cost = 8, },
+	["freya_pain_reflection"] = { cost = 24, },
+	["freya_frozen_strike"] = { cost = 12, },
+	["zaken_stitching_strikes"] = { cost = 12, },
+	["zaken_last_chance"] = { cost = 8, },
+	["zaken_summon_sailors"] = { cost = 8, },
+	["zaken_sword_control"] = { cost = 32, },
 }
 
 ABILITY_SHOP_SKIP_HEROES = {

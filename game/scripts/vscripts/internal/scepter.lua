@@ -36,7 +36,6 @@ function Scepters:GiveScepterAbility(hero)
 	if heroName == "npc_dota_hero_riki" then
 		hero:AddAbility("riki_pocket_riki")
 		hero:SwapAbilities("riki_tricks_of_the_trade", "riki_pocket_riki", true, true)
-		hero:SwapAbilities("riki_tricks_of_the_trade", "attribute_bonus_arena", true, true)
 		hero.ScepterAbilityUpgraded = true
 	end
 end
@@ -48,15 +47,11 @@ function Scepters:RemoveScepterAbility(hero)
 		if scepterHeroData.SwappedAbility then
 			hero:SwapAbilities(scepterHeroData.SwappedAbility, scepterHeroData.AbilityName, true, true)
 		end
-		if scepterHeroData.SwapWithAttributeBonus == 1 then
-			hero:SwapAbilities(scepterHeroData.AbilityName, "attribute_bonus_arena", true, true)
-		end
 		hero:RemoveAbility(scepterHeroData.AbilityName)
 		hero.ScepterAbilityUpgraded = false
 	end
 	
 	if heroName == "npc_dota_hero_riki" then
-		hero:SwapAbilities("attribute_bonus_arena", "riki_tricks_of_the_trade", true, true)
 		hero:SwapAbilities("riki_tricks_of_the_trade", "riki_pocket_riki", true, true)
 		hero:RemoveAbility("riki_pocket_riki")
 		hero.ScepterAbilityUpgraded = false

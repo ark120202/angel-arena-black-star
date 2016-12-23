@@ -59,7 +59,6 @@
 								</Panel>
 							</Button>
 							<Panel id="HeroAbilitiesRoot" />
-							<Panel id="AttributeBonusSlot" />
 						</Panel>
 					</Panel>
 					<Panel id="MainSearchRoot" />
