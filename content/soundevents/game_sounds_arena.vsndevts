@@ -752,7 +752,7 @@
 						}
 					}
 					
-					"volume"			{ "value"	"75.000000" }
+					"volume"			{ "value"	"0.010000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
 					"soundlevel_min"	{ "value"	"100.000000" }
@@ -783,7 +783,7 @@
 						}
 					}
 					
-					"volume"			{ "value"	"75.000000" }
+					"volume"			{ "value"	"50.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
 					"soundlevel_min"	{ "value"	"100.000000" }
@@ -876,7 +876,7 @@
 						}
 					}
 					
-					"volume"			{ "value"	"75.000000" }
+					"volume"			{ "value"	"15.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
 					"soundlevel_min"	{ "value"	"100.000000" }
@@ -907,7 +907,7 @@
 						}
 					}
 					
-					"volume"			{ "value"	"75.000000" }
+					"volume"			{ "value"	"10.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
 					"soundlevel_min"	{ "value"	"100.000000" }

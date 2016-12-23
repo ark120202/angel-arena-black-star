@@ -42,7 +42,8 @@ General:
 	
 Balance:
 	Items:
-		Angel Wings now also wastes your per-second mana regen
+		Angel Wings:
+			Now is not togglable, now it's simple activatable item with 60 seconds cooldown and 6.5 duration
 	Heroes:
 		
 	Abilities:

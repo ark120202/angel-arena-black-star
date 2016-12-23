@@ -59,7 +59,7 @@ function UpdatePanoramaHUD() {
 	$("#DynamicMinimapRoot").style.width = ((minimap.actuallayoutwidth + 8) / sw * 100) + "%";
 	var glyphpos = hud.FindChildTraverse("glyph").GetPositionWithinWindow()
 	if (glyphpos != null && !isNaN(glyphpos.x) && !isNaN(glyphpos.y))
-		$("#SwitchDynamicMinimapButton").style.position = ((glyphpos.x - 4) / sw * 100) + "% " + (glyphpos.y / sh * 100) + "% 0"
+		$("#SwitchDynamicMinimapButton").style.position = (glyphpos.x / sw * 100) + "% " + (glyphpos.y / sh * 100) + "% 0"
 	var pcs = hud.FindChildTraverse("PortraitContainer").GetPositionWithinWindow()
 	if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
 		$("#rubick_personality_steal_hud").style.position = (pcs.x / sw * 100) + "% " + ((pcs.y + 12) / sh * 100) + "% 0"

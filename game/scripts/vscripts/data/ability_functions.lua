@@ -32,7 +32,6 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	slark_dark_pact = 40,
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,
-	
 }
 
 local function OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)

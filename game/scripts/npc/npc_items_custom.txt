@@ -18777,8 +18777,8 @@
 		"ItemQuality"					"common"
 		"ItemAliases"					"boots;angel wings"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilityManaCost"				"40"
-		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"240"
+		"AbilityCooldown"				"60"
 		
 		"AbilitySpecial"
 		{
@@ -18829,23 +18829,18 @@
 			}
 			"10"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"active_magical_armor"		"45"
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"6.5"
 			}
 			"11"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_delay"				"0.35"
+				"var_type"					"FIELD_INTEGER"
+				"active_magical_armor"		"45"
 			}
 			"12"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"mana_per_second_pct"		"6"
-			}
-			"13"
-			{
 				"var_type"					"FIELD_FLOAT"
-				"mana_per_second_think"		"0.1"
+				"fade_delay"				"0.35"
 			}
 		}
 		
@@ -18862,161 +18857,11 @@
 				"EffectName"		"Item.GlimmerCape.Activate"
 				"Target"			"CASTER"
 			}
-			"RunScript"
+			"ApplyModifier"
 			{
-				"ScriptFile"			"internal/kv.lua"
-				"Function"				"SwapToItem"
-				"itemName"				"item_angel_wings_enabled"
-				"ShareCoolodwn"			"1"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_item_angel_wings"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"		"%bonus_movement_speed"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_hp_regen"
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_armor"
-					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp_pct"
-				}
-
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_item_aether_lens"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_item_aether_lens"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-				}
-			}
-		}
-	}
-
-	"item_angel_wings_enabled"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"1025155555"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_angel_wings"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemShopTags"					"stats;move_speed;hard_to_tag"
-		"ItemQuality"					"common"
-		"ItemAliases"					"boots;steam footgear;angel wings"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemPurchasable"				"0"
-		"ItemSellable"					"0"
-		"AbilityCooldown"				"5"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"80"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"56"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_all"					"28"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"50"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"500"
-			} //Handled with base modifier
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_hp_regen"			"18"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_magical_armor"		"20"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_bonus"			"300"
-			} //Handled with base modifier
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"spell_amp_pct"				"15"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"active_magical_armor"		"45"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_delay"				"0.35"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"mana_per_second_pct"		"6"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"mana_per_second_think"		"0.1"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"internal/kv.lua"
-				"Function"				"SwapToItem"
-				"itemName"				"item_angel_wings"
-				"ShareCoolodwn"			"1"
+				"ModifierName"		"modifier_item_angel_wings_active"
+				"Target" 			"CASTER"
+				"Duration"			"%duration"
 			}
 		}
 		
@@ -19070,35 +18915,13 @@
 
 			"modifier_item_angel_wings_active"
 			{
-				"Passive"			"1"
 				"IsPurgable"		"0"
-				"IsHidden"			"1"
 
 				"EffectName"		"particles/items3_fx/glimmer_cape_initial.vpcf"
 				"EffectAttachType"	"follow_origin"
 
-				"ThinkInterval"		"%mana_per_second_think"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_angel_wings.lua"
-						"Function"		"ChackAndSpendMana"
-						"mana_per_second_pct"	"%mana_per_second_pct"
-						"mana_per_second_think"	"%mana_per_second_think"
-					}
-				}
-				
-				
 				"OnCreated"
 				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_angel_wings.lua"
-						"Function"		"ChackAndSpendMana"
-						"mana_per_second_pct"	"%mana_per_second_pct"
-						"mana_per_second_think"	"%mana_per_second_think"
-					}
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_item_angel_wings_fade"
@@ -19147,6 +18970,7 @@
 			"modifier_item_angel_wings_invis"
 			{
 				"IsPurgable"		"0"
+				"IsHidden"			"1"
 
 				"OnCreated"
 				{
