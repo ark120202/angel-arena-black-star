@@ -167,7 +167,6 @@ function GameMode:OnHeroInGame(hero)
 			end
 			HeroVoice:OnHeroInGame(hero)
 		end
-
 	end)
 end
 

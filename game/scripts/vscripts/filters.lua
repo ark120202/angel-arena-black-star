@@ -115,12 +115,15 @@ function GameMode:DamageFilter(filterTable)
 			if SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS[inflictorname] then
 				filterTable.damage = GetNotScaledDamage(filterTable.damage, attacker)
 			end
-			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and IsBossEntity(victim) then
-				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
-			end
 			local damage_from_current_health_pct = inflictor:GetAbilitySpecial("damage_from_current_health_pct")
 			if victim and damage_from_current_health_pct then
+				if PERCENT_DAMAGE_MODIFIERS[inflictorname] then
+					damage_from_current_health_pct = damage_from_current_health_pct * PERCENT_DAMAGE_MODIFIERS[inflictorname]
+				end
 				filterTable.damage = filterTable.damage + (victim:GetHealth() * damage_from_current_health_pct * 0.01)
+			end
+			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and IsBossEntity(victim) then
+				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
 			end
 			if inflictorname == "templar_assassin_psi_blades" and victim:IsRealCreep() then
 				filterTable.damage = damage * 0.5

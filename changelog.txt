@@ -42,22 +42,14 @@ General:
 	
 Balance:
 	Items:
-		
+		Angel Wings now also wastes your per-second mana regen
 	Heroes:
 		
 	Abilities:
-		Gyrocopter - Flak Cannon:
-			Mana Cost: 100 80 70 60 40 30 20 => 100 200 300 400 500 600 700
-			Attack Count: 3 6 9 12 15 18 21 => 2 3 4 6 8 10 12
-		Gyrocopter - Call Down:
-			Cooldown: 45 40 35 30 25 20 15 => 45 45 40 40 35 35 30
-			First Stun Duration: 2 => 0.1
-			Second Stun Duration: 4 => 2
-			First Damage: 700 900 1100 1300 1500 1700 1900 => 300 500 700 900 1100 1300 1500
-			Second Damage: 100 300 500 700 900 1000 1200 => 100 200 300 500 700 900 1100
-			Second Damage with Scepter: 1000 1300 1600 1900 2100 2400 2700 => 400 700 1000 1300 1600 1900 2200
+		Ember Spirit - Searing Chains:
+			Damage based on current Victim's HP: 0.1 0.2 0.3 0.4 0.5 0.6 0.8 => 0.2 0.4 0.6 0.8 1 1.2 1.4 1.6
 Fixes:
-	
+	Fixed Ember Spirit - Searing Chains and Ember Spirit - Flame Guard dealt percent damage each tick instead of each second
 <<+===========================================================================================================
 
 

@@ -2,7 +2,7 @@ function ChackAndSpendMana(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	local mana = keys.mana_per_second_pct*keys.mana_per_second_think*caster:GetMaxMana()*0.01
+	local mana = (keys.mana_per_second_pct*keys.mana_per_second_think*caster:GetMaxMana()*0.01) + (caster:GetStatsBasedManaRegen() + caster:GetConstantBasedManaRegen()) * caster:GetPercentageBasedManaRegen() * keys.mana_per_second_think
 	if caster:GetMana() >= mana then
 		caster:SpendMana(mana, ability)
 	else

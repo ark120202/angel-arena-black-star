@@ -18526,40 +18526,30 @@
 				"duration"	"1.0 2.0 2.0 3.0 3.0 4.0 5.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_ember_spirit_2"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"400"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"chains_damage"	"50 100 150 200 250 300 350"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"total_damage_tooltip"	"250 500 750 1000 1250 1500 1750"
 			}
-
 			"05"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"tick_interval"	"1.0"
-			}
-
-			"06"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"unit_count"	"2"
+				"var_type"						"FIELD_FLOAT"
+				"tick_interval"					"0.5"
 			}
 			"99"
 			{
 			   "var_type" "FIELD_FLOAT"
-			   "damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.8"
+			   "damage_from_current_health_pct" "0.2 0.4 0.6 0.8 1 1.2 1.4 1.6"
 			   "CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -18582,27 +18572,24 @@
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"250 350 450 550 650 750 850"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_hero_damage"	"100 200 300 400 500 600 700"
+				"CalculateSpellDamageTooltip"	"0"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"attack_interval"	"0.1"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"creep_damage_penalty"	"0"
+				"CalculateSpellDamageTooltip"	"0"
 			}
-
 		}
-
 	}
 
 	"ember_spirit_flame_guard"
@@ -18620,26 +18607,22 @@
 				"var_type"	"FIELD_FLOAT"
 				"duration"	"8.0 12.0 16.0 20.0 24.0 28.0 30.0"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"400"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"absorb_amount"	"500 1000 1500 1750 2000 2250 2500"
 				"LinkedSpecialBonus"	"special_bonus_unique_ember_spirit_1"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"tick_interval"	"0.1"
 			}
-
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
@@ -18647,12 +18630,11 @@
 			}
 			"99"
 			{
-			   "var_type" "FIELD_FLOAT"
-			   "damage_from_current_health_pct" "0.2 0.4 0.6 0.8 1.0 1.2 1.4"
-			   "CalculateSpellDamageTooltip" "0"
+				"var_type" "FIELD_FLOAT"
+				"damage_from_current_health_pct" "0.2 0.4 0.6 0.8 1.0 1.2 1.4"
+				"CalculateSpellDamageTooltip" "0"
 			}
 		}
-
 	}
 
 	"ember_spirit_fire_remnant"
