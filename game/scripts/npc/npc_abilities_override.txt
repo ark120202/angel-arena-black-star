@@ -20021,6 +20021,20 @@
 		"AbilityCastPoint"	"0.2"
 		"AbilityCooldown"	"1.0"
 		"AbilityManaCost"	"30"
+
+		"AbilitySpecial"
+		{
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"impact_damage_tooltip"		"100 180 260 340 400 460 520"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"impact_movement_slow_tooltip"	"40 50 60 70 80 90 100"
+			}
+		}
 	}
 
 	"monkey_king_primal_spring"

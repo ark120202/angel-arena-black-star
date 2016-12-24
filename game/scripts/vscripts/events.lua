@@ -58,21 +58,23 @@ function GameMode:OnNPCSpawned(keys)
 				Physics:Unit(npc)
 		    	npc:SetAutoUnstuck(true)
 				CustomWearables:EquipWearables(npc)
-				npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
-				if npc:IsRealHero() and not npc:HasModifier("modifier_arc_warden_tempest_double") then
-					AbilityShop:RandomOMGRollAbilities(npc)
-					if npc.BloodstoneDummies then
-						for _,v in ipairs(npc.BloodstoneDummies) do
-							UTIL_Remove(v)
+				if not npc:IsWukongsSummon() then
+					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
+					if npc:IsRealHero() and not npc:HasModifier("modifier_arc_warden_tempest_double") then
+						AbilityShop:RandomOMGRollAbilities(npc)
+						if npc.BloodstoneDummies then
+							for _,v in ipairs(npc.BloodstoneDummies) do
+								UTIL_Remove(v)
+							end
 						end
-					end
-					if npc.PocketHostEntity ~= nil then
-						UTIL_Remove(npc.PocketItem)
-						npc.PocketItem = nil
-						npc.PocketHostEntity = nil
-					end
-					if Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
-						Duel:SetUpVisitor(npc)
+						if npc.PocketHostEntity ~= nil then
+							UTIL_Remove(npc.PocketItem)
+							npc.PocketItem = nil
+							npc.PocketHostEntity = nil
+						end
+						if Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
+							Duel:SetUpVisitor(npc)
+						end
 					end
 				end
 			end

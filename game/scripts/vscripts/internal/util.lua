@@ -1415,3 +1415,7 @@ end
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	return (5 + self:GetLevel() * 0.25) + (self.RespawnTimeModifier or 0)
 end
+
+function CDOTA_BaseNPC_Hero:IsWukongsSummon()
+	return self:HasModifier("modifier_monkey_king_fur_army_soldier") or self:HasModifier("modifier_monkey_king_fur_army_soldier_inactive") or self:HasModifier("modifier_monkey_king_fur_army_soldier_hidden")
+end

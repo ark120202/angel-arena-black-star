@@ -6,7 +6,7 @@ end
 
 function ArenaZoneOnEndTouch(trigger)
 	table.removeByValue(Heroes_In_Arena_Zone, trigger.activator)
-	if trigger.activator and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
+	if trigger.activator and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS and (not trigger.activator.IsWukongsSummon or not trigger.activator:IsWukongsSummon()) then
 		Timers:CreateTimer(function()
 			if not table.contains(Heroes_In_Arena_Zone, trigger.activator) and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
 				trigger.activator:InterruptMotionControllers(true)

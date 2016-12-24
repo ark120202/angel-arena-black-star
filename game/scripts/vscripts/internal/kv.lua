@@ -77,8 +77,9 @@ end
 
 function IllusionModifierCleaner(keys)
 	Timers:CreateTimer(0.03, function()
-		if keys.modifier and keys.caster:IsIllusion() then
-			keys.caster:RemoveModifierByName(keys.modifier)
+		local caster = keys.caster
+		if keys.modifier and caster and (caster:IsIllusion() or (caster.IsWukongsSummon and caster:IsWukongsSummon())) then
+			caster:RemoveModifierByName(keys.modifier)
 		end
 	end)
 end
