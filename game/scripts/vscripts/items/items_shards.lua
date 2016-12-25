@@ -38,10 +38,18 @@ end
 
 function AddLevel(keys)
 	local caster = keys.caster
-	if caster:HasModifier("modifier_arc_warden_tempest_double") then
-		return
+	local level = caster:GetLevel()
+	local levels = 1
+	for _,v in ipairs(caster:FindAllModifiersByName("modifier_arena_rune_acceleration")) do
+		if v.xp_multiplier then
+			levels = levels * v.xp_multiplier
+		end
 	end
-	local ability = keys.ability
-	local xp_to_lvlup = XP_PER_LEVEL_TABLE[caster:GetLevel() + 1] - XP_PER_LEVEL_TABLE[caster:GetLevel()]
-	caster:AddExperience(xp_to_lvlup, 0, false, false)
+	for i = 1, levels do
+		if caster:HasModifier("modifier_arc_warden_tempest_double") or not XP_PER_LEVEL_TABLE[level + 1] then
+			return
+		end
+		local ability = keys.ability
+		caster:AddExperience(XP_PER_LEVEL_TABLE[level + 1] - XP_PER_LEVEL_TABLE[level], 0, false, false)
+	end
 end

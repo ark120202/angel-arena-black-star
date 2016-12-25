@@ -41,6 +41,14 @@ Angel Arena Black Star - Version 1.3.7c:
 General:
 	
 Balance:
+	Runes:
+		Acceleration:
+			Now multiplies all incoming experience (include experience from LEVEL UP SHARD)
+			XP Multiplier: 2 => 3
+		Flame:
+			Now burns a bercent of enemies max health (4%)
+			Now is multipliable using Rune Keeper or Bottle
+			Now not deals damage to bosses
 	Items:
 		Angel Wings:
 			Now is not togglable, now it's simple activatable item with 60 seconds cooldown and 6.5 duration

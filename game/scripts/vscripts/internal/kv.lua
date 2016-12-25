@@ -202,7 +202,7 @@ function IncreaseStacks(keys)
 	local ability = keys.ability
 	local modifier = keys.modifier
 	local max_stacks = keys.max_stacks
-	if (keys.NoBosses ~= 1 or not IsBossEntity(target)) then
+	if (keys.NoBosses ~= 1 or not target:IsBoss()) then
 		if max_stacks and target:GetModifierStackCount(modifier, ability) >= max_stacks then
 			ability:ApplyDataDrivenModifier(caster, target, modifier, {})
 		else

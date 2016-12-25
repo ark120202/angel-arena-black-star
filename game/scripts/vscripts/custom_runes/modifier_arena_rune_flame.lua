@@ -17,20 +17,24 @@ function modifier_arena_rune_flame:GetTexture()
 end
 
 if IsServer() then
-	function modifier_arena_rune_flame:OnCreated()
+	function modifier_arena_rune_flame:OnCreated(kv)
+		--self:SetStackCount(kv.damage_per_second_max_hp_pct)
+		self.damage_per_second_max_hp_pct = kv.damage_per_second_max_hp_pct
 		self:StartIntervalThink(0.1)
 	end
 
 	function modifier_arena_rune_flame:OnIntervalThink()
 		local parent = self:GetParent()
 		for _,v in ipairs(FindUnitsInRadius(parent:GetTeam(), parent:GetAbsOrigin(), nil, 350, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
-			ApplyDamage({
-				attacker = parent,
-				victim = v,
-				damage_type = DAMAGE_TYPE_MAGICAL,
-				damage = 80 * 0.1,
-				ability = self:GetAbility()
-			})
+			if not v:IsBoss() then
+				ApplyDamage({
+					attacker = parent,
+					victim = v,
+					damage_type = DAMAGE_TYPE_MAGICAL,
+					damage = self.damage_per_second_max_hp_pct * v:GetMaxHealth() * 0.01 * 0.1,
+					ability = self:GetAbility()
+				})
+			end
 		end
 	end
 end

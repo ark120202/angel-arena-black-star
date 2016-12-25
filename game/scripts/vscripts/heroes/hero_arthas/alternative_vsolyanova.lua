@@ -31,7 +31,7 @@ function InstantKill(keys)
 	local target = keys.target
 	local duration = ability:GetLevelSpecialValueFor("roar_duration", ability:GetLevel() - 1)
 	if (not caster:IsIllusion() and RollPercentage(ability:GetAbilitySpecial("nia_chance"))) or (caster:IsIllusion() and RollPercentage(ability:GetAbilitySpecial("nia_chance_illusions"))) then
-		if not IsBossEntity(target) then
+		if not target:IsBoss() then
 			target:EmitSound("Hero_SkeletonKing.CriticalStrike")
 			local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_CUSTOMORIGIN, caster)
 			ParticleManager:SetParticleControlEnt(pfx, 1, target, PATTACH_POINT_FOLLOW, "follow_origin", target:GetAbsOrigin(), true)

@@ -3,7 +3,7 @@ function modifier_item_heart_cyclone_regen_on_take_damage(keys)
 	local ability = keys.ability
 	local caster = keys.caster
 	if attacker then
-		if keys.Damage > 0 and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or IsBossEntity(attacker)) then
+		if keys.Damage > 0 and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or attacker:IsBoss()) then
 			if caster:IsRangedAttacker() then
 				ability:ApplyDataDrivenModifier(caster, caster, "modifier_item_heart_cyclone_regen_cooldown", {duration=keys.CooldownRanged})
 			else

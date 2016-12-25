@@ -69,7 +69,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 							end
 						end
 					elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET then
-						if IsBossEntity(target) and table.contains(BOSS_BANNED_ABILITIES, abilityname) then
+						if target:IsBoss() and table.contains(BOSS_BANNED_ABILITIES, abilityname) then
 							Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_ability_cant_target_boss")
 							return false
 						end
@@ -122,7 +122,7 @@ function GameMode:DamageFilter(filterTable)
 				end
 				filterTable.damage = filterTable.damage + (victim:GetHealth() * damage_from_current_health_pct * 0.01)
 			end
-			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and IsBossEntity(victim) then
+			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and victim:IsBoss() then
 				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
 			end
 			if inflictorname == "templar_assassin_psi_blades" and victim:IsRealCreep() then
@@ -190,10 +190,11 @@ end
 
 function GameMode:ModifyExperienceFilter(filterTable)
 	local hero = PlayerResource:GetSelectedHeroEntity(filterTable.player_id_const)
-	if hero and filterTable.reason_const == DOTA_ModifyXP_CreepKill then
+	if hero then
 		for _,v in ipairs(hero:FindAllModifiersByName("modifier_arena_rune_acceleration")) do
-			if v.creep_xp_multiplier then
-				filterTable.experience = filterTable.experience * v.creep_xp_multiplier
+			if v.xp_multiplier then
+				print(filterTable.experience .. " => " .. (filterTable.experience * v.xp_multiplier))
+				filterTable.experience = filterTable.experience * v.xp_multiplier
 			end
 		end
 	end

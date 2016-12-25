@@ -101,7 +101,7 @@ RUNE_SETTINGS = {
 		sound = "General.RunePickUp",
 		color = {255, 30, 0},
 		duration = 30,
-		damage_per_second = 80, --Tooltip
+		damage_per_second_max_hp_pct = 4,
 		radius = 350, --Tooltip
 	},
 	[ARENA_RUNE_ACCELERATION] = {
@@ -111,7 +111,7 @@ RUNE_SETTINGS = {
 		color = {20, 20, 255},
 		duration = 35,
 		attackspeed = 90, --Tooltip
-		creep_xp_multiplier = 2,
+		xp_multiplier = 3,
 	},
 	[ARENA_RUNE_VIBRATION] = {
 		model = "models/props_gameplay/rune_invisibility01.vmdl",
@@ -166,9 +166,9 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 	elseif runeType == ARENA_RUNE_ARCANE then
 		unit:AddNewModifier(unit, nil, "modifier_arena_rune_arcane", {duration = settings.duration})
 	elseif runeType == ARENA_RUNE_FLAME then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_flame", {duration = settings.duration})
+		unit:AddNewModifier(unit, nil, "modifier_arena_rune_flame", {duration = settings.duration, damage_per_second_max_hp_pct = settings.damage_per_second_max_hp_pct})
 	elseif runeType == ARENA_RUNE_ACCELERATION then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_acceleration", {duration = settings.duration, creep_xp_multiplier = settings.creep_xp_multiplier})
+		unit:AddNewModifier(unit, nil, "modifier_arena_rune_acceleration", {duration = settings.duration, xp_multiplier = settings.xp_multiplier})
 	elseif runeType == ARENA_RUNE_VIBRATION then
 		unit:AddNewModifier(unit, nil, "modifier_arena_rune_vibration", {
 			duration = settings.duration,

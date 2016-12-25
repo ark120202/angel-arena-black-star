@@ -28,6 +28,6 @@ end
 
 if IsServer() then
 	function modifier_arena_rune_acceleration:OnCreated(keys)
-		self.creep_xp_multiplier = keys.creep_xp_multiplier
+		self.xp_multiplier = keys.xp_multiplier
 	end
 end

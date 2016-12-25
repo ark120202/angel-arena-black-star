@@ -3,6 +3,10 @@ if Bosses == nil then
 	Bosses.MinimapPoints = {}
 end
 
+function CDOTA_BaseNPC:IsBoss()
+	return self.GetUnitName ~= nil and string.find(self:GetUnitName(), "npc_arena_boss_") ~= nil
+end
+
 function Bosses:InitAllBosses()
 	Bosses:SpawnStaticBoss("l1_v1")
 	Bosses:SpawnStaticBoss("l1_v2")
@@ -11,10 +15,6 @@ function Bosses:InitAllBosses()
 	Bosses:SpawnStaticBoss("central")
 	Bosses:SpawnStaticBoss("freya")
 	Bosses:SpawnStaticBoss("zaken")
-end
-
-function IsBossEntity(unit)
-	return string.find(unit:GetUnitName(), "npc_arena_boss_")
 end
 
 function Bosses:SpawnStaticBoss(name)

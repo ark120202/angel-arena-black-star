@@ -214,9 +214,9 @@
 		"custom_runes_rune_6_title"								"Arcane"
 		"custom_runes_rune_6_text"								"Reduces cooldowns by 30% and increases ability damage by 50%"
 		"custom_runes_rune_7_title"								"Flame"
-		"custom_runes_rune_7_text"								"Deals 80 damage per second in 350 radius for 30 seconds"
+		"custom_runes_rune_7_text"								"Deals 4% of unit's max helath as damage each second in 350 radius for 30 seconds"
 		"custom_runes_rune_8_title"								"Acceleration"
-		"custom_runes_rune_8_text"								"Increases attack speed by 90 and makes creeps give x2 experience"
+		"custom_runes_rune_8_text"								"Increases attack speed by 90 and multiplies all incoming experience by 3"
 		"custom_runes_rune_9_title"								"Vibration"
 		"custom_runes_rune_9_text"								"Pushes all enemies from you in 350 radius"
 
