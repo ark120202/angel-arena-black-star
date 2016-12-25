@@ -12118,7 +12118,7 @@
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"stegius_desolus_wave"
 		"MaxLevel" 						"7"
-		"LevelsBetweenUpgrades"	 "4"
+		"LevelsBetweenUpgrades"			"4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -12128,6 +12128,8 @@
 		"AbilityCooldown"				"8"
 		"AbilityDamage"					"100 150 200 250 300 350 400"
 		"AbilityManaCost"				"110 120 130 140 150 160 170"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
 		"precache"
 		{
@@ -12240,7 +12242,7 @@
 		"AbilityManaCost"				"80"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.2"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
 		"precache"
 		{

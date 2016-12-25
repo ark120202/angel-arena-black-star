@@ -438,9 +438,6 @@ function OnDragStart(panelId, dragCallbacks) {
 
 	// grey out the source panel while dragging
 	$.GetContextPanel().AddClass("dragging_from");
-	SetPannelDraggedChild(displayPanel, function() {
-		return !$.GetContextPanel().BHasClass("dragging_from");
-	});
 	return true;
 }
 

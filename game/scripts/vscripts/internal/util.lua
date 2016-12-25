@@ -1419,3 +1419,12 @@ end
 function CDOTA_BaseNPC_Hero:IsWukongsSummon()
 	return self:HasModifier("modifier_monkey_king_fur_army_soldier") or self:HasModifier("modifier_monkey_king_fur_army_soldier_inactive") or self:HasModifier("modifier_monkey_king_fur_army_soldier_hidden")
 end
+
+function CDOTA_BaseNPC_Hero:GetTotalHealthReduction()
+	local pct = self:GetModifierStackCount("modifier_kadash_immortality_health_penalty", self)
+	local mod = self:FindModifierByName("modifier_stegius_brightness_of_desolate_effect")
+	if mod then
+		pct = pct + mod:GetAbility():GetAbilitySpecial("health_decrease_pct")
+	end
+	return pct
+end

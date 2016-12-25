@@ -120,9 +120,13 @@ function Kills:CreateKillTooltip(killer, killed, gold)
 	})
 	if (Kills.BountyStorage[killed] > 1) then
 		CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
-			type = "kill_streak_ended",
+			type = "generic",
+			text = "#custom_toast_KillStreak_Ended",
 			victimPlayer = killed,
-			kill_streak = Kills.BountyStorage[killed]
+			teamPlayer = killed,
+			variables = {
+				["{kill_streak}"] = Kills.BountyStorage[killed]
+			}
 		})
 	end
 end

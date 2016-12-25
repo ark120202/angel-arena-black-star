@@ -46,9 +46,6 @@
 
 		//Alt+255
 		"notifications_gold"							" золота"
-		
-		"bosses_killed_p1"								" был убит! Все герои "
-		"bosses_killed_p2"								" получили "
 		"bosses_respawn"								" возродился!"
 
 		"duel_over_winner_none"							"Дуэль окончена. В этот раз победителя нет."

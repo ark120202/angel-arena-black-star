@@ -78,9 +78,6 @@
 
 		//Alt+255
 		"notifications_gold"							" gold"
-		
-		"bosses_killed_p1"								" has been killed! All "
-		"bosses_killed_p2"								" heroes received "
 		"bosses_respawn"								" was resurrected!"
 
 		"duel_over_winner_none"							"The duel is over. At this time there is no winner."
@@ -220,10 +217,12 @@
 		"custom_runes_rune_9_title"								"Vibration"
 		"custom_runes_rune_9_text"								"Pushes all enemies from you in 350 radius"
 
-		"custom_toast_PlayerDeniedSelf"			"{victim_name} {denied_icon} Denied"
-		"custom_toast_PlayerDenied"		"{killer_name} {denied_icon} Denied {victim_name}"
-		"custom_toast_KillStreak_Ended"	"{victim_name} {kill_streak}x Kill Streak ended"
-		"custom_toast_ActivatedRune"		"{player_name} has activated {rune_name}"
-		"custom_toast_BottledRune"			"{player_name} bottled {rune_name}"
+		"custom_toast_PlayerDeniedSelf"							"{victim_name} {denied_icon} Denied"
+		"custom_toast_PlayerDenied"								"{killer_name} {denied_icon} Denied {victim_name}"
+		"custom_toast_KillStreak_Ended"							"{victim_name} {kill_streak}x Kill Streak ended"
+		"custom_toast_ActivatedRune"							"{player_name} has activated {rune_name}"
+		"custom_toast_BottledRune"								"{player_name} bottled {rune_name}"
+		"custom_toast_DuelStarted"								"{time_dota}: {duel_index}th duel has started!"
+		"custom_toast_BossKilled"								"{team_name} {killed_icon} {victim_name} {gold}"
 	}
 }

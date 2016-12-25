@@ -124,7 +124,6 @@ function Precache( context )
 	for _, v in pairs(NPC_HEROES_CUSTOM) do
 		if v.Model then
 			table.insert(models, v.Model)
-			print(v.Model)
 		end
 		if v.ProjectileModel then
 			table.insert(particles, v.ProjectileModel)

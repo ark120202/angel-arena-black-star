@@ -249,6 +249,7 @@
 		"npc_dota_hero_razor"							"1"
 		
 		"npc_arena_hero_shinobu"						"1"
+		"npc_arena_hero_stegius"						"1"
 		"npc_arena_hero_freya"							"1"
 		"npc_arena_hero_zaken"							"1"
 	}

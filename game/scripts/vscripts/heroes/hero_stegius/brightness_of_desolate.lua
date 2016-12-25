@@ -8,8 +8,12 @@ function ThinkPenalty(keys)
 	local target = keys.target
 	if target:IsHero() then
 		target:CalculateStatBonus()
-		local pct = keys.ability:GetAbilitySpecial("health_decrease_pct") + target:GetModifierStackCount("modifier_kadash_immortality_health_penalty", target)
-		target:SetMaxHealth(target:GetMaxHealth() - pct * (target:GetMaxHealth()/100))
+		local pct = target:GetTotalHealthReduction()
+		if pct >= 100 then
+			target:SetMaxHealth(1)
+		else
+			target:SetMaxHealth(target:GetMaxHealth() - pct * (target:GetMaxHealth()/100))
+		end
 	end
 end
 

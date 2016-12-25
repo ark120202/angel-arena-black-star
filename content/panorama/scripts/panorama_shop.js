@@ -135,10 +135,9 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush) {
 	})
 	panel.DestroyItemPanel = function() {
 		var id1 = SmallItemsAlwaysUpdated.indexOf(panel);
-		if (id1 > -1) {
-			SmallItemsAlwaysUpdated.splice(id1, 1);
-		}
 		var id2 = SmallItems.indexOf(panel);
+		if (id1 > -1)
+			SmallItemsAlwaysUpdated.splice(id1, 1);
 		if (id2 > -1)
 			SmallItems.splice(id2, 1);
 		panel.visible = false
@@ -167,9 +166,6 @@ function SmallItemOnDragStart(panelId, dragCallbacks) {
 	dragCallbacks.displayPanel = displayPanel;
 	dragCallbacks.offsetX = 0;
 	dragCallbacks.offsetY = 0;
-	SetPannelDraggedChild(displayPanel, function() {
-		return !$.GetContextPanel().BHasClass("DropDownMode");
-	});
 	return true;
 }
 
@@ -229,7 +225,6 @@ function ShowItemRecipe(itemName) {
 		}
 	} else if (DropListData != null) {
 		$("#ItemRecipeBoxDrops").visible = true;
-		len = Object.keys(DropListData).length;
 		$.Each($("#ItemRecipeBoxDrops").Children(), function(pan) {
 			var unit = pan.id.replace("ItemRecipeBoxDrops_", "")
 			pan.enabled = DropListData[unit] != null;
@@ -242,9 +237,9 @@ function ShowItemRecipe(itemName) {
 				})
 		})
 	}
-	$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength7", len >= 7);
-	$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength8", len >= 8);
-	$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength9", len >= 9);
+	$("#ItemRecipeBoxRow3").SetHasClass("ItemRecipeBoxRowLength7", len >= 7);
+	$("#ItemRecipeBoxRow3").SetHasClass("ItemRecipeBoxRowLength8", len >= 8);
+	$("#ItemRecipeBoxRow3").SetHasClass("ItemRecipeBoxRowLength9", len >= 9);
 	if (BuildsIntoData != null) {
 		$.Each(BuildsIntoData, function(childName) {
 			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow1"), "ItemRecipeBoxRow1_item_" + childName);

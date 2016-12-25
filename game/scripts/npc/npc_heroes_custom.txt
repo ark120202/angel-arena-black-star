@@ -149,6 +149,10 @@
 		"Ability2"	"stegius_rage_of_desolus"
 		"Ability3"	"stegius_brightness_of_desolate"
 		"Ability4"	"stegius_desolating_touch"
+		"Model"		"models/units/stegius/stegius.vmdl"
+		"ModelScale"	"1.1"
+		"HideWearables"	"1"
+		"SceneCamera"	"custom_scene_hero_stegius"
 		"AttackRate"	"1.3"
 	}
 

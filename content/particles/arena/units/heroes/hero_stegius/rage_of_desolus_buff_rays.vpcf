@@ -59,7 +59,7 @@
 		{
 			_class = "C_INIT_RandomColor"
 			m_ColorMin = [ 179, 72, 97, 255 ]
-			m_ColorMax = [ 231, 167, 116, 255 ]
+			m_ColorMax = [ 255, 63, 0, 255 ]
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"

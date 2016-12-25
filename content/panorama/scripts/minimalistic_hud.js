@@ -78,6 +78,7 @@ function HookPanoramaPanels() {
 	hud.FindChildTraverse("QuickBuyRows").visible = false;
 	hud.FindChildTraverse("shop").visible = false;
 	hud.FindChildTraverse("RadarButton").visible = false;
+	hud.FindChildTraverse("HUDSkinMinimap").visible = false;
 	var shopbtn = hud.FindChildTraverse("ShopButton");
 	shopbtn.FindChildTraverse("BuybackHeader").visible = false;
 	shopbtn.ClearPanelEvent("onactivate");
@@ -164,16 +165,14 @@ function CreateCustomToast(data) {
 			}
 			rowText = rowText + " {killed_icon} {victim_name} {gold}";
 		}
-	} else if (data.type == "kill_streak_ended") {
-		var isVictim = data.victimPlayer == Game.GetLocalPlayerID()
-		var teamVictim = Players.GetTeam(data.victimPlayer) == Players.GetTeam(Game.GetLocalPlayerID())
-		row.SetHasClass("AllyEvent", teamVictim)
-		row.SetHasClass("EnemyEvent", !teamVictim)
-		row.SetHasClass("LocalPlayerInvolved", isVictim)
-		row.SetHasClass("LocalPlayerVictim", isVictim)
-		rowText = $.Localize("#custom_toast_KillStreak_Ended")
 	} else if (data.type == "generic") {
-		row.AddClass("AllyEvent")
+		if (data.teamPlayer != null || data.teamColor != null) {
+			var team = data.teamPlayer == null ? data.teamColor : Players.GetTeam(data.teamPlayer);
+			var teamVictim = team == Players.GetTeam(Game.GetLocalPlayerID())
+			row.SetHasClass("AllyEvent", teamVictim)
+			row.SetHasClass("EnemyEvent", !teamVictim)
+		} else
+			row.AddClass("AllyEvent")
 		rowText = $.Localize(data.text)
 	}
 
@@ -184,10 +183,12 @@ function CreateCustomToast(data) {
 		rowText = rowText.replace("{victim_name}", CreateHeroElements(data.victimPlayer))
 	if (data.killerPlayer != null)
 		rowText = rowText.replace("{killer_name}", CreateHeroElements(data.killerPlayer))
+	if (data.victimUnitName != null)
+		rowText = rowText.replace("{victim_name}", "<font color='red'>" + $.Localize(data.victimUnitName) + "</font>")
+	if (data.team != null)
+		rowText = rowText.replace("{team_name}", "<font color='" + GameUI.CustomUIConfig().team_colors[data.team] + "'>" + GameUI.CustomUIConfig().team_names[data.team] + "</font>")
 	if (data.gold != null)
 		rowText = rowText.replace("{gold}", "<font color='gold'>" + data.gold + "</font> <img class='CombatEventGoldIcon' />")
-	if (data.kill_streak != null)
-		rowText = rowText.replace("{kill_streak}", data.kill_streak)
 	if (data.runeType != null)
 		rowText = rowText.replace("{rune_name}", "<font color='#" + RUNES_COLOR_MAP[data.runeType] + "'>" + $.Localize("custom_runes_rune_" + data.runeType + "_title") + "</font>")
 	if (data.variables != null)

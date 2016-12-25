@@ -36,15 +36,15 @@ function Bosses:RegisterKilledBoss(unit, team)
 	local unitname = unit:GetUnitName()
 	local bossname = string.gsub(unitname, "npc_arena_boss_", "")
 	local amount = unit:GetKeyValue("Bosses_GoldToAll")
-	local p1, p2 = CreateGoldNotificationSettings(amount)
 	DynamicMinimap:SetVisibleGlobal(Bosses.MinimapPoints[unit.SpawnerEntity], false)
-	
-	Notifications:TopToAll({text="#" .. unitname})
-	Notifications:TopToAll({text="#bosses_killed_p1", continue=true})
-	Notifications:TopToAll(CreateTeamNotificationSettings(team, true))
-	Notifications:TopToAll({text="#bosses_killed_p2", continue=true})
-	Notifications:TopToAll(p1)
-	Notifications:TopToAll(p2)
+	CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+		type = "generic",
+		text = "#custom_toast_BossKilled",
+		victimUnitName = unitname,
+		teamColor = team,
+		team = team,
+		gold = amount
+	})
 	for _,v in ipairs(GetPlayersInTeam(team)) do
 		Gold:ModifyGold(v, amount)
 	end

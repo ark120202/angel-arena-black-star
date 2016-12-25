@@ -10,7 +10,7 @@
 	overflow: clip;
 }
 
-#movie_base
+#afterload_panel
 {
 	width: 59%;
 	height: 100%;
@@ -22,129 +22,66 @@
 	height: 100%;
 }
 
-#loading_Logo_aa
+#GoalVotePanel
 {
-	width: 698px;
-	height: 97px;
-	align: center center;
-	margin-bottom: 200px;
+	align: right top;
+	width: 375px;
+	margin-top: -207px;
+	margin-right: 20px;
+	background-color: rgba(0,0,0,0.8);
+	border: 2px solid cyan;
+	flow-children: down;
+
+	transition-property: transform;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0, 0, 0.75, 0.15); 
 }
 
-#loading_Logo_jesus
+.AspectRatio4x3 #GoalVotePanel
 {
-	width: 198.5px;
-	height: 320px;
-	align: left center;
-	margin-left: 425px;
-	margin-bottom: 200px;
+	margin-right: 225px;
 }
 
-#loading_Logo_satan
+.AspectRatio16x10 #GoalVotePanel
 {
-	width: 270px;
-	height: 318px;
-	align: right center;
-	margin-top: 200px;
-	margin-right: 350px;
+	margin-right: 150px;
 }
 
-#loading_Label_black_panel
+.AspectRatio5x4 #GoalVotePanel
 {
-	align: center center;
+	margin-right: 250px;
 }
 
-#loading_Label_black
+#GoalVoteLabel
 {
-	font-family: Courier;
-	font-weight: bold;
-	font-size: 96px;
-	color: black;
-}
-
-#loading_StarsBox
-{
-	align: center center;
-	margin-top: 275px;
-}
-
-#loading_Label_star
-{
-	color: black;
-	font-size: 132px;
-	font-family: Courier;
-	font-weight: bold;
-	margin-top: 70px;
-	margin-left: 60px;
-	margin-right: 60px;
-}
-
-#loading_star1
-{
-	align: left bottom;
-	margin-bottom: 50px;
-}
-
-#loading_star2
-{
-	align: left center;
-	margin-left: 60px;
-	margin-bottom: 85px;
-}
-
-#loading_star3
-{
+	margin: 2px;
 	align: center top;
-	margin-top: 5px;
+	color: white;
+	font-size: 24px;
+	margin-bottom: 6px;
 }
 
-#loading_star4
+#GoalVotePanelKLValues
 {
-	align: right center;
-	margin-right: 60px;
-	margin-bottom: 85px;
+	width: 100%;
+	flow-children: right-wrap;
+	margin-left: 3px;
 }
 
-#loading_star5
+.VoteKillGoalButton, .GoalVoteSettingsButton
 {
-	align: right bottom;
-	margin-bottom: 50px;
+	min-width: 0;
+	width: 48%;
+	margin: 3px 2px;
 }
 
-.loading_star
+.GoalVotePanel_In
 {
-	background-image: url("file://{images}/custom_game/loading_screen/star.png");
-	height: 68px; 
-	width: 70px;
-    background-size: 68px 70px;
-    background-repeat: no-repeat;
+	transform: translateY(210px);
 }
-
-#loading_Enigma
+#GoalVotePanelCustomSettingsRoot
 {
-	margin-left: -50px;
-	vertical-align: center;
-	width: 601px;
-	height: 467px;
-	transition-property: transform;
-	transition-duration: 3s;
-	transition-timing-function: ease-in;
-}
-
-#loading_Lina
-{
-	margin-left: -50px;
-	align: right center;
-	width: 300px;
-	height: 533px;
-	transition-property: transform;
-	transition-duration: 3s;
-	transition-timing-function: ease-in;
-}
-
-#loading_loading_bar
-{
-	width: 680px;
-	height: 60px;
-	align: center bottom;
-	margin-bottom: 150px;
+	width: 100%;
+	margin-left: 3px;
+	visibility: collapse;
 }

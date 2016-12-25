@@ -20,40 +20,65 @@ TODO LIST:
 	??:
 		Из вангварда + Fallen Star + blademail
 
+	Varanium:
+		Дропается с боссов. Ничего не даёт, материал. Когда находится в инветаре медленно тратит хп. В бэкпаке тратит в 2 раза быстрее
+
+	Black Eye:
+		Ап Cursed Eye. Когда включен тратит много маны и немного хп, но убирает каст тайм со всех скиллов и даёт вижон через хг
+
+	Black Shield:
+		Ап апнутого ВГ, отталкивает всех врагов
+
+	Black Sword:
+		Dark Blade + Armlet + Varanium + Рецепт за 400 000. Когда активирован увеличивает всеь наносимый урон в 3 раза, а получаемый в 2
+
+	Light Spear:
+		Раз в 12 секунд позволяет атакавать юнита в любой точке карты. Если атакован юнит в радиусе атаки, то вешает на него дебаффы: стан, ослепление на 2 сек. Делается из апнутого форса.
+
 Идеи для боссов: 
 	Roshan (remake):
 		Появляется после 30 минуты. Потом - респавн 8-15 минут.
 		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_1788]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/f9acdaac39d79e0a0bffc747e811bd7e]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/f9acdaac39d79e0a0bffc747e811bd7e]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/f9acdaac39d79e0a0bffc747e811bd7e
+[url=https://vk.com/wall-122685850_1902]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://gist.github.com/ark120202/db06ea6c884b12c72951d1c519b1b921]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/db06ea6c884b12c72951d1c519b1b921]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/db06ea6c884b12c72951d1c519b1b921
 ============================================================
-Angel Arena Black Star - Версия 1.3.7c:
+Angel Arena Black Star - Версия 1.3.7d:
 
+Изменен загрузочный экран
+Stegius теперь имеет свою модель
+Усилены руны Ускорения и Пылания
+Ослаблен Angel Wings
+Исправлены ошибки с Monkey King, Ember Spirit и Kadash - Immortality + Stegius - Brightness of Desolate
 ============================================================
-Angel Arena Black Star - Version 1.3.7c:
+Angel Arena Black Star - Version 1.3.7d:
 
+Changed Loading Screen
+Added custom model for Stegius
+Buffed Acceleration and Flame runes
+Nerfed Angel Wings
+Fixed bugs with: Monkey King, Ember Spirit, Kadash - Immortality + Stegius - Brightness of Desolate
 ============================================================
-Angel Arena Black Star - Version 1.3.7c:
+Angel Arena Black Star - Version 1.3.7d:
 General:
-	
+	Changed boss kill notification
+	Added custom model for Stegius
+	Changed Loading Screen
 Balance:
 	Runes:
 		Acceleration:
 			Now multiplies all incoming experience (include experience from LEVEL UP SHARD)
 			XP Multiplier: 2 => 3
 		Flame:
-			Now burns a bercent of enemies max health (4%)
+			Now burns a percent of enemies max health (4%)
 			Now is multipliable using Rune Keeper or Bottle
 			Now not deals damage to bosses
 	Items:
 		Angel Wings:
 			Now is not togglable, now it's simple activatable item with 60 seconds cooldown and 6.5 duration
-	Heroes:
-		
 	Abilities:
 		Ember Spirit - Searing Chains:
 			Damage based on current Victim's HP: 0.1 0.2 0.3 0.4 0.5 0.6 0.8 => 0.2 0.4 0.6 0.8 1 1.2 1.4 1.6
@@ -61,6 +86,7 @@ Fixes:
 	Fixed Ember Spirit - Searing Chains and Ember Spirit - Flame Guard dealt percent damage each tick instead of each second
 	Fixed Radiance's worked on Monkey King's ultimate summons
 	Fixed Monkey King's ultimate summons couldn't get out of duel area
+	Fixed Kadash - Immortality and Stegius - Brightness of Desolate caused Kadash to have 0 health, so it became out of game unit
 <<+===========================================================================================================
 
 

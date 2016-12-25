@@ -674,6 +674,22 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 			unit.SLevel = time
 			Spawner:UpgradeCreep(unit, unit.SpawnerType, unit.SLevel, unit.SpawnerIndex)
 		end
+		if cmd[1] == "a_ch" then
+			local heroName = cmd[2]
+			local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
+			local baseNewHero = heroTableCustom.base_hero or heroName
+			local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
+			h:SetTeam(PlayerResource:GetTeam(playerID) == 2 and 3 or 2)
+			h:SetAbsOrigin(hero:GetAbsOrigin())
+			h:SetControllableByPlayer(playerID, true)
+			for i = 1, 300 do
+				h:HeroLevelUp(false)
+			end
+			if heroTableCustom.base_hero then
+				TransformUnitClass(h, heroTableCustom)
+				h.UnitName = heroName
+			end
+		end
 	end
 end
 
