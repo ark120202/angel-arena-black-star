@@ -5162,7 +5162,7 @@
 		"AbilityCastRange"	"700"
 		"AbilityCastPoint"	"0.4"
 		"AbilityDamage"		"100 175 275 350 450 550 650"
-		"AbilityCooldown"	"0.8"
+		"AbilityCooldown"	"8"
 		"AbilityManaCost"	"75 95 115 135 150 200 250"
 		"AbilitySpecial"
 		{
@@ -5207,10 +5207,10 @@
 
 	"zuus_cloud"
 	{
-		"MaxLevel"	"7"
+		"MaxLevel"	"1"
 		"AbilityCastPoint"	"0.2"
 		"AbilityCooldown"	"60"
-		"AbilityManaCost"	"275 325 400 475 525 600 675"
+		"AbilityManaCost"	"450"
 		"AbilitySpecial"
 		{
 			"01"
@@ -5222,7 +5222,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"cloud_bolt_interval"	"2.5 2.0 1.5 1.0 0.8 0.6 0.4"
+				"cloud_bolt_interval"	"1.7"
 			}
 
 			"03"
@@ -5404,7 +5404,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"chance"	"10 15 18 20 25 27 29"
+				"chance"	"10 13 15 18 21 24 27"
 				"LinkedSpecialBonus"	"special_bonus_unique_slardar"
 			}
 
@@ -5423,7 +5423,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration_creep"	"4.0"
+				"duration_creep"	"1.5"
 			}
 
 		}
@@ -11729,7 +11729,7 @@
 	"spirit_breaker_greater_bash"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"1.5"
+		"AbilityCooldown"	"3"
 		"AbilitySpecial"
 		{
 			"01"
