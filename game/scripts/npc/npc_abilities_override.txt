@@ -970,12 +970,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"140"
+				"damage_bonus"			"50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"110"
+				"damage_bonus_ranged"	"40"
 			}
 			"03"
 			{
@@ -990,7 +990,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"creep_damage_pct"			"80"
+				"creep_damage_pct"			"60"
 			}
 			"06"
 			{
