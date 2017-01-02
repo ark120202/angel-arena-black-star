@@ -113,6 +113,9 @@
 		"ArmorPhysical"	"-1"
 		"MovementSpeed"	"285"
 		"AttackRate"	"1.3"
+		"SceneCamera"	"custom_scene_hero_apocalypse"
+		"Model"	"models/units/apocalypse/apocalypse.vmdl"
+		"HideWearables"	"1"
 	}
 
 	"npc_arena_hero_shinobu"
@@ -2853,6 +2856,7 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
+		"Enabled"		"0"
 	}
 
 	"npc_dota_hero_treant"

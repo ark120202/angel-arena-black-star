@@ -22,18 +22,46 @@ function UpdatePanoramaHUD() {
 			}
 		}
 	}
-	$("#rubick_personality_steal_hud").visible = false;
+	var CustomModifiersList = $("#CustomModifiersList")
+	var VisibleModifiers = [];
 	for (var i = 0; i < Entities.GetNumBuffs(unit); ++i) {
 		var buffSerial = Entities.GetBuff(unit, i);
 		if (buffSerial != -1) {
 			var buffName = Buffs.GetName(unit, buffSerial)
+			VisibleModifiers.push(buffName);
 			if (ONCLICK_PURGABLE_MODIFIERS.indexOf(buffName) != -1) {
-				$("#rubick_personality_steal_hud").visible = true;
-				$("#rubick_personality_steal_hud").buffSerial = buffSerial;
+				if (CustomModifiersList.FindChildTraverse(buffName) == null) {
+					var panel = $.CreatePanel("DOTAAbilityImage", CustomModifiersList, buffName)
+					panel.abilityname = Buffs.GetTexture(unit, buffSerial);
+					panel.SetPanelEvent("onactivate", (function(_buffName) {
+						return function() {
+							GameEvents.SendCustomGameEventToServer("modifier_clicked_purge", {
+								unit: unit,
+								modifier: _buffName
+							});
+						};
+					})(buffName));
+					panel.SetPanelEvent("onmouseover", (function(_panel, _buffName) {
+						return function() {
+							$.DispatchEvent("DOTAShowTitleTextTooltip", _panel, $.Localize("DOTA_Tooltip_" + _buffName), $.Localize("hud_modifier_click_to_remove"));
+						};
+					})(panel, buffName))
+					panel.SetPanelEvent("onmouseout", (function(_panel) {
+						return function() {
+							$.DispatchEvent("DOTAHideTitleTextTooltip", _panel);
+						};
+					})(panel))
+				}
 			}
 		}
 	}
-	hud.FindChildTraverse("level_stats_frame").visible = false && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
+
+	$.Each(CustomModifiersList.Children(), function(child) {
+		if (VisibleModifiers.indexOf(child.id) == -1)
+			child.DeleteAsync(0);
+	})
+
+	hud.FindChildTraverse("level_stats_frame").visible = Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
 
 	var GoldLabel = hud.FindChildTraverse("ShopButton").FindChildTraverse("GoldLabel")
 	GoldLabel.text = "";
@@ -62,11 +90,18 @@ function UpdatePanoramaHUD() {
 		$("#SwitchDynamicMinimapButton").style.position = (glyphpos.x / sw * 100) + "% " + (glyphpos.y / sh * 100) + "% 0"
 	var pcs = hud.FindChildTraverse("PortraitContainer").GetPositionWithinWindow()
 	if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
-		$("#rubick_personality_steal_hud").style.position = (pcs.x / sw * 100) + "% " + ((pcs.y + 12) / sh * 100) + "% 0"
+		CustomModifiersList.style.position = (pcs.x / sw * 100) + "% " + ((pcs.y + 12) / sh * 100) + "% 0"
 }
 
 function SetDynamicMinimapVisible(status) {
-	$("#DynamicMinimapRoot").visible = status || !$("#DynamicMinimapRoot").visible
+	if (GetSteamID(Game.GetLocalPlayerID(), 32) == 82292900) {
+		$("#DynamicMinimapRoot").visible = true
+		if ($("#DynamicMinimapRoot").alastor == null)
+			$("#DynamicMinimapRoot").alastor = false
+		$("#DynamicMinimapRoot").alastor = status || !$("#DynamicMinimapRoot").alastor
+		$("#DynamicMinimapRoot").SetHasClass("NewYearAlastorMinimap", status || !$("#DynamicMinimapRoot").alastor)
+	} else
+		$("#DynamicMinimapRoot").visible = status || !$("#DynamicMinimapRoot").visible
 }
 
 function AutoUpdatePanoramaHUD() {
@@ -103,11 +138,10 @@ function HookPanoramaPanels() {
 	StatsLevelUpTab.ClearPanelEvent("onmouseover");
 	StatsLevelUpTab.ClearPanelEvent("onmouseout");
 	StatsLevelUpTab.ClearPanelEvent("onactivate");
-	/*StatsLevelUpTab.SetPanelEvent("onactivate", function() {
-		var unit = Players.GetLocalPlayerPortraitUnit();
-		//TODO: TalentTree
-	})*/
-	hud.FindChildTraverse("combat_events").FindChildTraverse("ToastManager").visible = false;
+	StatsLevelUpTab.SetPanelEvent("onactivate", function() {
+		GameEvents.SendEventClientSide("custom_talents_toggle_tree", {})
+	})
+	hud.FindChildTraverse("combat_events").visible = false;
 	hud.FindChildTraverse("HudChat").FindChildTraverse("ChatLinesContainer").visible = false;
 }
 
@@ -206,6 +240,9 @@ function CreateCustomToast(data) {
 
 (function() {
 	HookPanoramaPanels();
+	if (GetSteamID(Game.GetLocalPlayerID(), 32) != 82292900) {
+		_DynamicMinimapSubscribe($("#DynamicMinimapRoot"));
+	}
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
 			DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
@@ -216,7 +253,6 @@ function CreateCustomToast(data) {
 			DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
 		}
 	})
-	_DynamicMinimapSubscribe($("#DynamicMinimapRoot"));
 
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe("create_custom_toast", CreateCustomToast);

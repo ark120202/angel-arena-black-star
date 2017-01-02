@@ -253,8 +253,8 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 		local _tempItemCounter = {}
 		_tempItemCounter[childItemName] = (_tempItemCounter[childItemName] or 0) + 1
 
-		local itemcount_all = #GetAllItemsByNameInInventory(unit, childItemName, true)
-		local itemcount = isInShop and itemcount_all or itemcount_all - #GetAllItemsByNameInInventory(unit, childItemName, false)
+		--local itemcount_all = #GetAllItemsByNameInInventory(unit, childItemName, true)
+		local itemcount = #GetAllItemsByNameInInventory(unit, childItemName, true) --isInShop and itemcount_all or itemcount_all - #GetAllItemsByNameInInventory(unit, childItemName, false)
 		if (childItemName == itemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
 			for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
 				local subitems, newCounter = GetAllPrimaryRecipeItems(newchilditem)
@@ -273,7 +273,6 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 	end
 	function HasAnyOfItemChildren(childItemName)
 		if not PanoramaShop.FormattedData[childItemName].Recipe then return false end
-		--if PanoramaShop:GetItemStockCount(team, childItemName) then return true end
 		local primary_items = GetAllPrimaryRecipeItems(childItemName)
 		table.removeByValue(primary_items, childItemName)
 
@@ -287,6 +286,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 	end
 	function DefineItemState(name)
 		local has = HasAnyOfItemChildren(name)
+		--print(name, has)
 		if has then
 			InsertItemChildrenToCheck(name)
 		else
@@ -395,10 +395,10 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 		end
 	end
 	if Gold:GetGold(playerID) >= wastedGold then
-		--If player has all items in stash
-		PrintTable(ItemsToBuy)
+		Containers:EmitSoundOnClient(playerID, "General.Buy")
+		Gold:RemoveGold(playerID, wastedGold)
+
 		if isInShop then
-			print("Hero on the base, clear and push item to stash")
 			for _,v in ipairs(ItemsInStash) do
 				local removedItem = FindItemInInventoryByName(unit, v, true, not isInShop)
 				if not removedItem then removedItem = FindItemInInventoryByName(unit, v, false) end
@@ -411,21 +411,14 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 			end
 			PushItem(itemName, isTrueOnlyStashRecipe)
 		elseif #ItemsInInventory == 0 and #ItemsInStash > 0 then
-			print("Hero is not on the base, but has required items in stash, clear and push item to stash")
 			for _,v in ipairs(ItemsInStash) do
 				unit:RemoveItem(FindItemInInventoryByName(unit, v, true, false))
 			end
 			PushItem(itemName, true)
 		else
-			print("Hero is outside the base and hasn't all required items in stash, so pushing all requirements to stash")
 			for _,v in ipairs(ItemsToBuy) do
 				PushItem(v)
 			end
 		end
-		Containers:EmitSoundOnClient(playerID, "General.Buy")
-
-
-		--All required gold for item completition was wasted, everything blow should simply give an item to hero
-		Gold:RemoveGold(playerID, wastedGold)
 	end
 end

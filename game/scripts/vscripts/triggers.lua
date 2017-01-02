@@ -8,7 +8,7 @@ function ArenaZoneOnEndTouch(trigger)
 	table.removeByValue(Heroes_In_Arena_Zone, trigger.activator)
 	if trigger.activator and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS and (not trigger.activator.IsWukongsSummon or not trigger.activator:IsWukongsSummon()) then
 		Timers:CreateTimer(function()
-			if not table.contains(Heroes_In_Arena_Zone, trigger.activator) and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
+			if trigger.activator and not trigger.activator:IsNull() and not table.contains(Heroes_In_Arena_Zone, trigger.activator) and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
 				trigger.activator:InterruptMotionControllers(true)
 				FindClearSpaceForUnit(trigger.activator, Entities:FindByName(nil, "target_mark_arena_team" .. trigger.activator:GetTeamNumber()):GetAbsOrigin(), false)
 			end
@@ -25,10 +25,12 @@ function FountainOnStartTouch(trigger, team)
 		if fountain then
 			Timers:CreateTimer(0.1, function()
 				fountain:EmitSound("Ability.LagunaBlade")
-				unit:EmitSound("Ability.LagunaBladeImpact")
-				local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_ABSORIGIN, fountain)
-				ParticleManager:SetParticleControl(pfx, 0, fountain:GetAbsOrigin() + Vector(0,0,224))
-				ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
+				if unit and not unit:IsNull() then
+					unit:EmitSound("Ability.LagunaBladeImpact")
+					local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_ABSORIGIN, fountain)
+					ParticleManager:SetParticleControl(pfx, 0, fountain:GetAbsOrigin() + Vector(0,0,224))
+					ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
+				end
 			end)
 		end
 		TrueKill(nil, nil, unit)

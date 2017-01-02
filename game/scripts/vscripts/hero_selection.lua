@@ -149,6 +149,7 @@ function HeroSelection:PreformGameStart()
 	Timers:CreateTimer({
 		useGameTime = false,
 		callback = function()
+			PauseGame(true)
 			local canEnd = true
 			for k,v in pairs(toPrecache) do
 				if not v then

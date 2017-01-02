@@ -539,12 +539,6 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 		if cmd[1] == "spawnrune" then
 			CustomRunes:SpawnRunes()
 		end
-		if cmd[1] == "a_sn" then
-			Spawner:SpawnStacks(Spawner:GetSpawnerEntities())
-		end
-		if cmd[1] == "a_gk" then
-			hero:AddItem(CreateItem("item_boss_keeper_key", hero, hero))
-		end
 		if cmd[1] == "a_t" then
 			for i = 2, 50 do
 				if XP_PER_LEVEL_TABLE[hero:GetLevel()] and XP_PER_LEVEL_TABLE[hero:GetLevel() + 1] then
@@ -569,9 +563,6 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 			hero:ModifyStrength(-50000)
 			hero:ModifyIntellect(-50000)
 		end
-		if cmd[1] == "a_op" then
-			Bosses:OpenPortals(hero:GetTeamNumber())
-		end
 		if cmd[1] == "a_sd" then
 			Duel.TimeUntilDuel = 0
 		end
@@ -595,66 +586,6 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 					hero:SetAbilityPoints(hero:GetAbilityPoints() + l)
 				end
 			end
-		end
-		if cmd[1] == "a_sn" then
-			local unit = CreateUnitByName("npc_dota_neutral_easy_variant1", hero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
-			unit.SpawnerType = "Easy"
-			unit.SLevel = tonumber(cmd[2])
-			Spawner:UpgradeCreep(unit, unit.SpawnerType, unit.SLevel)
-		end
-		if cmd[1] == "a_ts" then
-			SendToServerConsole("host_timescale 0.1")
-			Timers:CreateTimer(2, function()
-				SendToServerConsole("host_timescale 1")
-			end)
-		end
-		if cmd[1] == "en" then
-			enigma = CreateUnitByName('npc_dummy_unit', Vector(0,0,200), true, hero, hero, hero:GetTeamNumber())
-			enigma:SetModel('models/heroes/enigma/enigma.vmdl')
-			enigma:SetOriginalModel('models/heroes/enigma/enigma.vmdl')
-
-			Physics:Unit(enigma)
-
-			planet1 = CreateUnitByName('npc_dummy_unit', Vector(0,0,0), true, hero, hero, hero:GetTeamNumber())
-			planet1:SetModel('models/props_gameplay/rune_doubledamage01.vmdl')
-			planet1:SetOriginalModel('models/props_gameplay/rune_doubledamage01.vmdl')
-			Physics:Unit(planet1)
-
-
-			planet2 = CreateUnitByName('npc_dummy_unit', Vector(0,0,0), true, hero, hero, hero:GetTeamNumber())
-			planet2:SetModel('models/props_gameplay/rune_haste01.vmdl')
-			planet2:SetOriginalModel('models/props_gameplay/rune_haste01.vmdl')
-			Physics:Unit(planet2)
-
-			planet3 = CreateUnitByName('npc_dummy_unit', Vector(0,0,0), true, hero, hero, hero:GetTeamNumber())
-			planet3:SetModel('models/props_gameplay/rune_illusion01.vmdl')
-			planet3:SetOriginalModel('models/props_gameplay/rune_illusion01.vmdl')
-			Physics:Unit(planet3)
-
-			Timers:CreateTimer(function()
-				enigma:SetAbsOrigin(Vector(0,0,400))
-
-				enigma:RemoveCollider()
-				collider = enigma:AddColliderFromProfile("gravity")
-				collider.radius = 1000
-				collider.fullRadius = 0
-				collider.force = 5000
-				collider.linear = false
-				collider.test = function(self, collider, collided)
-				  return IsPhysicsUnit(collided) and collided.GetUnitName and collided:GetUnitName() == "npc_dummy_unit"
-				end
-
-				planet1:SetAbsOrigin(Vector(-500,0,400))
-				planet2:SetAbsOrigin(Vector(300,0,400))
-				planet3:SetAbsOrigin(Vector(0,100,400))
-
-				planet1:SetPhysicsVelocity(Vector(0,600,0))
-				planet2:SetPhysicsVelocity(Vector(0,0,1000))
-				planet3:SetPhysicsVelocity(Vector(1,0,1):Normalized() * 1200)
-				planet1:SetPhysicsFriction(0)
-				planet2:SetPhysicsFriction(0)
-				planet3:SetPhysicsFriction(0)
-			end)
 		end
 		if cmd[1] == "runetest" then
 			for i = ARENA_RUNE_FIRST, ARENA_RUNE_LAST do
@@ -689,6 +620,14 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 				TransformUnitClass(h, heroTableCustom)
 				h.UnitName = heroName
 			end
+		end
+		if cmd[1] == "talents_clear" then
+			hero:ClearTalents()
+		end
+		if cmd[1] == "uptal" then
+			local talent = tostring(cmd[2])
+			hero:SetAbilityPoints(hero:GetAbilityPoints() + CustomTalents:Talent_GetCost(talent))
+			hero:UpgradeTalent(talent)
 		end
 	end
 end

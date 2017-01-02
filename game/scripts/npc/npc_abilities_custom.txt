@@ -6190,9 +6190,8 @@
 		
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.35 0.35 0.35"
-		"AbilityCooldown"				"120.0 130.0 120.0 100.0 90.0 80.0 70.0"
+		"AbilityCooldown"				"140 130 120 115 110 105 100"
 		"AbilityManaCost"				"150 225 300 400 500 600 700"
-		"AbilityModifierSupportBonus"	"50"
 		"HasScepterUpgrade"				"1"
 
 		"AbilitySpecial"
@@ -6200,7 +6199,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
+				"duration"				"2 2.3 2.6 2.9 3.2 3.5 3.8"
 			}
 			"02"
 			{
@@ -8951,7 +8950,7 @@
 		"HasScepterUpgrade"				"1"
 		"AbilityCooldown"				"16 15 14 13 12 11 10"
 		"AbilityManaCost"				"120 150 180 220 240 280"
-		"AbilityDamage"					"120 240 360 480 600 720 840"
+		"AbilityDamage"					"100 160 220 280 340 400 460"
 		"LevelsBetweenUpgrades"			"3"
 
 		// Precache
@@ -8979,7 +8978,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hook_distance"			"800 900 1000 1100 1200 1300 1400"
+				"hook_distance"			"800 850 900 950 1000 1050 1100"
 			}
 			"04"
 			{
@@ -8989,7 +8988,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_scepter"		"480 600 720 840 960 1100 1200"
+				"damage_scepter"		"460 560 660 760 860 960 1060"
 			}
 			"06"
 			{
@@ -10706,7 +10705,6 @@
 	"apocalypse_king_slayer"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"ScriptFile"					"heroes/hero_apocalypse/king_slayer.lua"
 		"AbilityTextureName"			"apocalypse_king_slayer"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -10717,6 +10715,7 @@
 		"AbilityManaCost"				"50 75 100 125 150 175 200"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityCastRange"				"150"
+		"AbilityCastPoint"				"0.3"
 
 		"AbilitySpecial"
 		{
@@ -10805,7 +10804,8 @@
 		"AbilityManaCost"				"50 75 100 150 200 250 325"
 		"AbilityDamage"					"55 120 185 250 330 410 500"
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -10877,7 +10877,8 @@
 		"AbilityManaCost"				"50 75 100 150 200 250 325"
 		"AbilityDamage"					"40 100 165 230 300 375 450"
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilitySpecial"
 		{
 			"01"

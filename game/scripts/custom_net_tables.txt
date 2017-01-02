@@ -4,6 +4,7 @@
 	[
 		"containers_lua",
 		"selection",
-		"custom_entity_values"
+		"custom_entity_values",
+		"custom_talents_modifiers",
 	]
 }

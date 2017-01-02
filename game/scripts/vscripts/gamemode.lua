@@ -42,6 +42,7 @@ local requirements = {
 	"data/abilities",
 	"data/ability_functions",
 	"data/ability_shop",
+	"data/custom_talents",
 	--------------------------------------------------
 	"internal/gamemode",
 	"internal/events",
@@ -69,6 +70,7 @@ local requirements = {
 	"stats_client",
 	"filters",
 	"ability_shop",
+	"custom_talents/custom_talents",
 	--"dyanmic_wearables"
 }
 local modifiers = {
@@ -128,6 +130,7 @@ function GameMode:OnAllPlayersLoaded()
 	Spawner:PreloadSpawners()
 	Bosses:InitAllBosses()
 	CustomRunes:Init()
+	CustomTalents:Init()
 end
 
 --[[

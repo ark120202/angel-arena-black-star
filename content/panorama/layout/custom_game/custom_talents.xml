@@ -1,0 +1,30 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/custom_talents.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/custom_talents.js" />
+	</scripts>
+	<snippets>
+		<snippet name="TalentColumn">
+			<Panel class="TalentColumn">
+				<Label id="TalentColumnHeader" hittest="false" text="0"/>
+				<Panel id="TalentColumnInner" />
+			</Panel>
+		</snippet>
+		<snippet name="TalentIcon">
+			<Panel class="TalentIcon" />
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="base HideRequirementErrors">
+		<Panel id="TalentsBase">
+			<Panel id="TopBar">
+				<ToggleButton id="ToggleHideRequirementErrors" onactivate="$.GetContextPanel().SetHasClass('HideRequirementErrors', $('#ToggleHideRequirementErrors').checked)" text="Hide Requirement Errors"/>
+				<Button class="CloseButton" id="CloseButton" onactivate="$.GetContextPanel().RemoveClass('PanelOpened');" />
+			</Panel>
+			<Panel id="TalentListContainer" />
+		</Panel>
+	</Panel>
+</root>

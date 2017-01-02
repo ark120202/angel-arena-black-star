@@ -44,10 +44,9 @@
 	margin-right: -4px;
 }
 
-#rubick_personality_steal_hud
+#CustomModifiersList
 {
-	width: 32px;
-	visibility: collapse;
+	height: 32px;
 }
 
 #SwitchDynamicMinimapButton

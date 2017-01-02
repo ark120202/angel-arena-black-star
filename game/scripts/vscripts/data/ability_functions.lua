@@ -36,15 +36,11 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 
 local function OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
 	if inflictor and attacker:GetTeam() ~= victim:GetTeam() and not OCTARINE_NOT_LIFESTALABLE_ABILITIES[inflictor:GetAbilityName()] then
-		local heal
-		if victim:IsHero() then
-			heal = damage * GetAbilitySpecial(itemname, "hero_lifesteal") * 0.01
-			SafeHeal(attacker, heal, attacker)
-		else
-			heal = damage * GetAbilitySpecial(itemname, "creep_lifesteal") * 0.01
-			SafeHeal(attacker, heal, attacker)
-		end
-		if heal then
+		local heal = math.floor(damage * GetAbilitySpecial(itemname, victim:IsHero() and "hero_lifesteal" or "creep_lifesteal") * 0.01)
+		if heal >= 1 then
+			if not victim:IsIllusion() then
+				SafeHeal(attacker, heal, attacker)
+			end
 			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, attacker, heal, nil)
 			ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
 		end

@@ -11284,7 +11284,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10159"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_arena"
@@ -11330,85 +11331,6 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"aura_radius"				"700 750 800"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"internal/kv.lua"
-				"Function"				"SwapToItem"
-				"itemName"				"item_radiance_arena_inactive"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_item_radiance_arena"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			}
-			"modifier_item_radiance_arena_aura_emitter"
-			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"EffectName"			"particles/items2_fx/radiance_owner.vpcf"
-				"EffectAttachType"		"follow_origin"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"internal/kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_radiance_arena_aura_emitter"
-					}
-				}
-				
-				"Aura" 					"modifier_item_radiance_arena_aura"
-				"Aura_Radius" 			"%aura_radius"
-				"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-				"Aura_ApplyToCaster" 	"0"
-			}
-			"modifier_item_radiance_arena_aura"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"0"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"EffectName"		"particles/items2_fx/radiance.vpcf"
-				"EffectAttachType"	"follow_origin"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_slow"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_speed_slow_pct"
-					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 			"%blind_pct"
-				}
-				
-				"ThinkInterval" 		"1.0"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%aura_damage_per_second"
-					}
-				}
 			}
 		}
 	}
@@ -11498,7 +11420,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10161"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_2"
@@ -11544,85 +11467,6 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"aura_radius"				"700 750 800"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"internal/kv.lua"
-				"Function"				"SwapToItem"
-				"itemName"				"item_radiance_2_inactive"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_item_radiance_2"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			}
-			"modifier_item_radiance_2_aura_emitter"
-			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"EffectName"			"particles/items2_fx/radiance_owner.vpcf"
-				"EffectAttachType"		"follow_origin"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"internal/kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_radiance_2_aura_emitter"
-					}
-				}
-				
-				"Aura" 					"modifier_item_radiance_2_aura"
-				"Aura_Radius" 			"%aura_radius"
-				"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-				"Aura_ApplyToCaster" 	"0"
-			}
-			"modifier_item_radiance_2_aura"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"0"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"EffectName"		"particles/items2_fx/radiance.vpcf"
-				"EffectAttachType"	"follow_origin"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_slow"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_speed_slow_pct"
-					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 			"%blind_pct"
-				}
-				
-				"ThinkInterval" 		"1.0"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%aura_damage_per_second"
-					}
-				}
 			}
 		}
 	}
@@ -11712,7 +11556,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10163"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_3"
@@ -11758,85 +11603,6 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"aura_radius"				"700 750 800"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"internal/kv.lua"
-				"Function"				"SwapToItem"
-				"itemName"				"item_radiance_3_inactive"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_item_radiance_3"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			}
-			"modifier_item_radiance_3_aura_emitter"
-			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"EffectName"			"particles/items2_fx/radiance_owner.vpcf"
-				"EffectAttachType"		"follow_origin"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"internal/kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_radiance_3_aura_emitter"
-					}
-				}
-				
-				"Aura" 					"modifier_item_radiance_3_aura"
-				"Aura_Radius" 			"%aura_radius"
-				"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-				"Aura_ApplyToCaster" 	"0"
-			}
-			"modifier_item_radiance_3_aura"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"0"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"EffectName"		"particles/items2_fx/radiance.vpcf"
-				"EffectAttachType"	"follow_origin"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_slow"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_speed_slow_pct"
-					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 			"%blind_pct"
-				}
-				
-				"ThinkInterval" 		"1.0"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%aura_damage_per_second"
-					}
-				}
 			}
 		}
 	}
@@ -11925,7 +11691,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10165"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_radiance_frozen"
@@ -11988,120 +11755,6 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"aura_duration"			"8"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"internal/kv.lua"
-				"Function"				"SwapToItem"
-				"itemName"				"item_radiance_frozen_inactive"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_item_radiance_frozen"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
-					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
-				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					"Label"					"DOTA_ORB_LABEL_SKADI"
-					"ProjectileName"		"particles/items2_fx/skadi_projectile.vpcf"
-					"CastAttack"			"0"
-				}
-
-				"OnOrbImpact"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_item_skadi_arena_cold_attack"
-						"Target" 		"TARGET"
-						"Duration"				"%aura_duration"
-					}
-				}
-			}
-			"modifier_item_radiance_frozen_aura_emitter"
-			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"EffectName"			"particles/items2_fx/radiance_owner.vpcf"
-				"EffectAttachType"		"follow_origin"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"internal/kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_radiance_frozen_aura_emitter"
-					}
-				}
-				
-				"Aura" 					"modifier_item_radiance_frozen_aura"
-				"Aura_Radius" 			"%aura_radius"
-				"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-				"Aura_ApplyToCaster" 	"0"
-			}
-			"modifier_item_radiance_frozen_aura"
-			{
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"0"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"EffectName"		"particles/items2_fx/radiance.vpcf"
-				"EffectAttachType"	"follow_origin"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%cold_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%cold_movement_speed_pct"
-					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 			"%blind_pct"
-				}
-				
-				"ThinkInterval" 		"1.0"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%aura_damage_per_second"
-					}
-				}
-			}
-			"modifier_item_skadi_arena_cold_attack"
-			{
-				"IsDebuff"			"1"
-				"IsPurgable"		"0"
-				
-				"StatusEffectName"     "particles/status_fx/status_effect_frost_lich.vpcf"
-				"StatusEffectPriority" "10"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%cold_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%cold_movement_speed_pct"
-				}
 			}
 		}
 	}

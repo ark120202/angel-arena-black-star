@@ -562,7 +562,7 @@ function SetItemStock(item, ItemStock) {
 	DynamicSubscribePTListener("panorama_shop_data", function(tableName, changesObject, deletionsObject) {
 		if (changesObject.ShopList != null) {
 			LoadItemsFromTable(changesObject);
-			SetQuickbuyStickyItem("item_tpscroll");
+			SetQuickbuyStickyItem("item_shard_level");
 		};
 		var stocksChanges = changesObject["ItemStocks_team" + Players.GetTeam(Game.GetLocalPlayerID())];
 		if (stocksChanges != null) {

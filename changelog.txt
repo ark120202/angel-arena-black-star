@@ -11,6 +11,9 @@ TODO LIST:
 		caster:TriggerSpellAbsorb(ability)
 		для всех абилок
 	]]
+	убрать мипо из ромг/ас
+	kadash возраждается на фонтане
+	
 
 Идеи для предметов:
 	Star Blade:
@@ -41,52 +44,60 @@ TODO LIST:
 		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_1902]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/db06ea6c884b12c72951d1c519b1b921]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/db06ea6c884b12c72951d1c519b1b921]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/db06ea6c884b12c72951d1c519b1b921
+[url=https://vk.com/wall-122685850_1932]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f
 ============================================================
-Angel Arena Black Star - Версия 1.3.7d:
-
-Изменен загрузочный экран
-Stegius теперь имеет свою модель
-Усилены руны Ускорения и Пылания
-Ослаблен Angel Wings
-Исправлены ошибки с Monkey King, Ember Spirit и Kadash - Immortality + Stegius - Brightness of Desolate
+Angel Arena Black Star - Версия 1.3.8:
+Карта изменена на зимнюю версию
+У Apocalypse теперь другая модель
+Radiances теперь не работает на боссах
+Ослаблены: Faceless Void - Time Freeze, Pudge - Meat Hook, Zuus - Lightning Bolt, Zuus - Cloud, Slardar - Bash, Spirit Breaker - Greater Bash, Stegius - Desolating Touch, Iron Talon
 ============================================================
-Angel Arena Black Star - Version 1.3.7d:
-
-Changed Loading Screen
-Added custom model for Stegius
-Buffed Acceleration and Flame runes
-Nerfed Angel Wings
-Fixed bugs with: Monkey King, Ember Spirit, Kadash - Immortality + Stegius - Brightness of Desolate
+Angel Arena Black Star - Version 1.3.8:
+Changed map to winter version
+Apocalypse now has custom model
+Radiances now not works on bosses
+Nerf: Faceless Void - Time Freeze, Pudge - Meat Hook, Zuus - Lightning Bolt, Zuus - Cloud, Slardar - Bash, Spirit Breaker - Greater Bash, Stegius - Desolating Touch, Iron Talon
 ============================================================
-Angel Arena Black Star - Version 1.3.7d:
+Angel Arena Black Star - Version 1.3.8:
 General:
-	Changed boss kill notification
-	Added custom model for Stegius
-	Changed Loading Screen
+	Changed map to winter version
+	Apocalypse now has custom model
+	Wisp - Tether now is purgable
 Balance:
-	Runes:
-		Acceleration:
-			Now multiplies all incoming experience (include experience from LEVEL UP SHARD)
-			XP Multiplier: 2 => 3
-		Flame:
-			Now burns a percent of enemies max health (4%)
-			Now is multipliable using Rune Keeper or Bottle
-			Now not deals damage to bosses
+	Octarine Core & Refresher Core now not heals when damage dealt to illusions (it's still creates particles and overhead message)
+	Small creep rebalance
 	Items:
-		Angel Wings:
-			Now is not togglable, now it's simple activatable item with 60 seconds cooldown and 6.5 duration
+		Radiance now not works on bosses
+		Iron Talon:
+			Bonus Damage (Rnaged): 110 => 50
+			Bonus Damage (Melee): 140 => 40
+			Health reducted to Creeps: 80 => 60 %
 	Abilities:
-		Ember Spirit - Searing Chains:
-			Damage based on current Victim's HP: 0.1 0.2 0.3 0.4 0.5 0.6 0.8 => 0.2 0.4 0.6 0.8 1 1.2 1.4 1.6
+		Faceless Void - Time Freeze:
+			Duration: 3.0 3.5 4.0 4.5 5.0 5.5 6.0 => 2 2.3 2.6 2.9 3.2 3.5 3.8
+			Cooldown: 120.0 130.0 120.0 100.0 90.0 80.0 70.0 => 140 130 120 115 110 105 100
+		Pudge - Meat Hook:
+			Damage: 120 240 360 480 600 720 840 => 100 160 220 280 340 400 460
+			Damage with Scepter: 480 600 720 840 960 1100 1200 => 460 560 660 760 860 960 1060
+			Range: 800 900 1000 1100 1200 1300 1400 => 800 850 900 950 1000 1050 1100
+		Zuus - Lightning Bolt:
+			Cooldown: 0.8 => 8
+		Zuus - Cloud:
+			Mana Cost: 275 325 400 475 525 600 675 => 450
+			Max Level: 7 => 1
+			Interval: 2.5 2.0 1.5 1.0 0.8 0.6 0.4 => 1.7
+		Slardar - Bash:
+			Duration on Creeps and Bosses: 4.0 => 1.5
+			Chance: 10 15 18 20 25 27 29 => 10 13 15 18 21 24 27 %
+		Spirit Breaker - Greater Bash:
+			Cooldown: 1.5 => 3
+		Stegius - Desolating Touch:
+			Armor reduction on Bosses: -1 -1 -1 -2 -2 -2 -2 => 0 0 -1 -1 -2 -2 -2
 Fixes:
-	Fixed Ember Spirit - Searing Chains and Ember Spirit - Flame Guard dealt percent damage each tick instead of each second
-	Fixed Radiance's worked on Monkey King's ultimate summons
-	Fixed Monkey King's ultimate summons couldn't get out of duel area
-	Fixed Kadash - Immortality and Stegius - Brightness of Desolate caused Kadash to have 0 health, so it became out of game unit
+	Fixed Apocalypse - Apocalypse didn't cleave
 <<+===========================================================================================================
 
 

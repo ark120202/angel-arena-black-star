@@ -25,8 +25,12 @@ var RUNES_COLOR_MAP = {
 	9: "C800FF",
 }
 
+function IsHeroName(str) {
+	return str.lastIndexOf("npc_dota_hero_") == 0 || str.lastIndexOf("npc_arena_hero_") == 0
+}
+
 function TransformTextureToPath(texture, optPanelHeroimagestyle, optTeamNumber) {
-	if (texture.lastIndexOf("npc_dota_hero_") == 0 || texture.lastIndexOf("npc_arena_hero_") == 0) {
+	if (IsHeroName(texture)) {
 		if (optPanelHeroimagestyle == "portrait")
 			return "file://{images}/heroes/selection/" + texture + ".png"
 		else if (optPanelHeroimagestyle == "icon")

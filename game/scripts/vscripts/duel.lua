@@ -170,7 +170,9 @@ function Duel:EndDuel()
 		Notifications:TopToAll(g1)
 		Notifications:TopToAll(g2)
 		for _,v in ipairs(Duel.heroes_teams_for_duel[winner]) do
-			Gold:ModifyGold(v, goldAmount)
+			if v and not v:IsNull() then
+				Gold:ModifyGold(v, goldAmount)
+			end
 		end
 	else
 		Notifications:TopToAll({text="#duel_over_winner_none", duration=9.0})

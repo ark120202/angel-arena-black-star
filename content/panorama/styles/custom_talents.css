@@ -1,0 +1,101 @@
+.base
+{
+	width: 900px;
+	height: 500px;
+	align: center center;
+}
+
+#TalentsBase
+{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.99);
+	border-radius: 6px;
+	box-shadow: -4px -4px 8px 8px black;
+	transition-duration: 0.2s;
+	transition-property: opacity;
+	opacity: 0;
+	flow-children: down;
+}
+
+.PanelOpened #TalentsBase
+{
+	opacity: 1;
+}
+
+#CloseButton
+{
+	align: right center;
+	margin-right: 10px;
+}
+
+#TopBar
+{
+	width: 100%;
+	height: 32px;
+	background-color: rgba(100,100,100,0.1);
+}
+
+#TalentListContainer
+{
+	width: 100%;
+	height: 100%;
+	overflow: scroll squish;
+	flow-children: right;
+	margin: 5px;
+}
+
+.TalentColumn
+{
+	height: 100%;
+	background-color: rgba(50,50,50,0.3);
+	margin-right: 12px;
+	flow-children: down;
+}
+
+#TalentColumnInner
+{
+	vertical-align: center;
+	flow-children: down;
+}
+
+.TalentColumn.EnabledColumn
+{
+	background-color: rgba(100,100,100,0.3);
+}
+
+.TalentIcon
+{
+	width: 32px;
+	height: 32px;
+	margin: 3px 0;
+	border-radius: 100%;
+	background-color: red;
+}
+
+#TalentColumnHeader
+{
+	width: 100%;
+	text-align: center;
+	margin-top: 2px;
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+	text-overflow: shrink;
+	text-shadow: 0px 0px 6px 3 black;
+}
+
+.CanLearn
+{
+	background-color: gold;
+}
+
+.Learnt
+{
+	background-color: black;
+}
+
+.HideRequirementErrors .Error_Requirement
+{
+	visibility: collapse;
+}

@@ -1084,16 +1084,15 @@ function UnitVarToPlayerID(unitvar)
 	if unitvar then
 		if type(unitvar) == "number" then
 			return unitvar
-		elseif type(unitvar) == "table" and unitvar.entindex and unitvar:entindex() then
+		elseif type(unitvar) == "table" and not unitvar:IsNull() and unitvar.entindex and unitvar:entindex() then
 			if unitvar.GetPlayerID and unitvar:GetPlayerID() > -1 then
 				return unitvar:GetPlayerID()
 			elseif unitvar.GetPlayerOwnerID then
 				return unitvar:GetPlayerOwnerID()
 			end
 		end
-	else
-		return -1
 	end
+	return -1
 end
 
 function CreateSimpleBox(point1, point2)
@@ -1332,23 +1331,12 @@ function ClearSlotsFromDummy(unit, bNoStash)
 	end
 end
 
-function GetAllItemsByNameInInventory(unit, itemname, searchStash)
-	local lastSlot = DOTA_ITEM_SLOT_9
-	if searchStash then
-		lastSlot = DOTA_STASH_SLOT_6
-	end
+function GetAllItemsByNameInInventory(unit, itemname, bStash)
 	local items = {}
-	for slot = 0, lastSlot do
-		if bFromSnapshot and unit.InventorySnapshot then
-			local item = unit.InventorySnapshot[slot]
-			if item and item.name == itemname then
-				table.insert(items, item.name)
-			end
-		else
-			item = unit:GetItemInSlot(slot)
-			if item and item:GetAbilityName() == itemname then
-				table.insert(items, item)
-			end
+	for slot = 0, bStash and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
+		local item = unit:GetItemInSlot(slot)
+		if item and item:GetAbilityName() == itemname then
+			table.insert(items, item)
 		end
 	end
 	return items
@@ -1402,6 +1390,11 @@ function CEntityInstance:SetNetworkableEntityInfo(key, value)
 	local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
 	t[key] = value
 	CustomNetTables:SetTableValue("custom_entity_values", tostring(self:GetEntityIndex()), t)
+end
+
+function CEntityInstance:GetNetworkableEntityInfo(key)
+	local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
+	return t[key]
 end
 
 function CEntityInstance:ClearNetworkableEntityInfo()

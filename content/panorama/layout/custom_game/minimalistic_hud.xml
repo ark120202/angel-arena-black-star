@@ -30,6 +30,6 @@
 		<Panel id="DynamicMinimapRoot" hittest="false" hittestchildren="false" />
 		<Button id="SwitchDynamicMinimapButton" onactivate="SetDynamicMinimapVisible()"/>
 		<Panel id="CustomToastManager" hittest="false" hittestchildren="false" />
-		<DOTAAbilityImage id="rubick_personality_steal_hud" abilityname="rubick_personality_steal" onactivate="GameEvents.SendCustomGameEventToServer('modifier_clicked_purge', {unit: Players.GetLocalPlayerPortraitUnit(), modifier: 'modifier_rubick_personality_steal'});" onmouseover="$.DispatchEvent('DOTAShowBuffTooltip', $('#rubick_personality_steal_hud'), Players.GetLocalPlayerPortraitUnit(), $('#rubick_personality_steal_hud').buffSerial, Entities.IsEnemy(Players.GetLocalPlayerPortraitUnit()));" onmouseout="$.DispatchEvent('DOTAHideBuffTooltip', $('#rubick_personality_steal_hud'));"/>
+		<Panel id="CustomModifiersList" />
 	</Panel>
 </root>

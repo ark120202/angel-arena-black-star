@@ -55,18 +55,13 @@ function pudge_meat_hook_lua:OnSpellStart()
 	end
 
 	local vDirection = self:GetCursorPosition() - self:GetCaster():GetOrigin()
-	vDirection.z = 0.0
-
-	local vDirection = ( vDirection:Normalized() ) * hook_distance
-	self.vTargetPosition = self:GetCaster():GetOrigin() + vDirection
+	vDirection.z = 0
 
 	if not self:GetCaster():HasScepter() then
 		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_meat_hook_followthrough_lua", { duration = hook_distance / hook_speed * hook_followthrough_constant } )
 	end
 
 	local vHookOffset = Vector( 0, 0, 96 )
-	local vHookTarget = self.vTargetPosition + vHookOffset
-	local vKillswitch = Vector( ( ( hook_distance / hook_speed ) * 2 ), 0, 0 )
 
 	local hook_chain_pfx = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_meathook_chain.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
 	ParticleManager:SetParticleAlwaysSimulate( hook_chain_pfx )

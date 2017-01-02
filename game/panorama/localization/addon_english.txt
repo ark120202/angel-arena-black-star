@@ -178,7 +178,7 @@
 
 		"custom_end_screen_legend_lasthits"						"LH"
 
-		"minimalistic_hud_kda"									"K/D/A/LH"
+		"hud_modifier_click_to_remove"							"Click to remove"
 
 		"ability_shop_shift_no"									"LMB/RMB - Buy Ability. Hold SHIFT to enter selling mode."
 		"ability_shop_shift_yes"								"LMB - Sell ability, RMB - Downgrade ability. Release SHIFT to enter purchase mode."
@@ -224,5 +224,8 @@
 		"custom_toast_BottledRune"								"{player_name} bottled {rune_name}"
 		"custom_toast_DuelStarted"								"{time_dota}: {duel_index}th duel has started!"
 		"custom_toast_BossKilled"								"{team_name} {killed_icon} {victim_name} {gold}"
+
+		"custom_talents_cost"									"Cost:"
+		"custom_talents_requirements"							"Requirements:"
 	}
 }

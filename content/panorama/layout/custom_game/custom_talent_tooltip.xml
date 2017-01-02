@@ -1,0 +1,36 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/custom_talent_tooltip.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+	</scripts>
+	<script>
+		function setTooltip() {
+			$("#TitleLabel").text = $.GetContextPanel().GetAttributeString("title", "Error");
+			$("#DescriptionLabel").text = $.GetContextPanel().GetAttributeString("description", "Error");
+			$("#CostValue").text = $.GetContextPanel().GetAttributeString("cost", "Error");
+			var requirements = $.GetContextPanel().GetAttributeString("requirements", "Error")
+			$("#RequirementsPanel").visible = requirements != "undefined"
+			if (requirements != "undefined") {
+				if (IsHeroName(requirements))
+					$("#RequirementsImage").SetImage(TransformTextureToPath(requirements, "icon"));
+				else
+					$("#RequirementsImage").abilityname = requirements;
+			}
+		}
+	</script>
+	<Panel hittest="false" hittestchildren="false" ontooltiploaded="setTooltip()" class="TooltipRoot">
+		<Label id="TitleLabel" />
+		<Label html="true" id="DescriptionLabel" />
+		<Panel id="CostPanel">
+			<Label id="CostTitle" text="#custom_talents_cost" />
+			<Label id="CostValue" text="0" />
+		</Panel>
+		<Panel id="RequirementsPanel">
+			<Label id="RequirementsTitle" text="#custom_talents_requirements" />
+			<DOTAAbilityImage id="RequirementsImage" />
+		</Panel>
+	</Panel>
+</root>

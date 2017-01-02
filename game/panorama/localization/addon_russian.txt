@@ -153,7 +153,7 @@
 
 		"custom_end_screen_legend_lasthits"						"КРП"
 
-		"minimalistic_hud_kda"									"У/С/П/КРП"
+		"hud_modifier_click_to_remove"							"Нажмите чтобы снять"
 
 		"ability_shop_shift_no"									"ЛКМ/ПКМ - Купить способность. Для перехода в режим продажи удерживайте SHIFT."
 		"ability_shop_shift_yes"								"ЛКМ - Продать способность, ПКМ - Понизить уровень способности. Для покупки отпустите SHIFT."
@@ -195,5 +195,9 @@
 		"custom_toast_ActivatedRune"	"{player_name} использовал руну {rune_name}"
 		"custom_toast_BottledRune"	"{player_name} помещает в бутыль {rune_name}"
 		"custom_toast_DuelStarted"	"{time_dota}: {duel_index}ая общая дуэль началась!"
+
+		"custom_talents_cost"									"Цена:"
+		"custom_talents_requirements"							"Условие:"
+		
 	}
 }

@@ -76,6 +76,9 @@ function CustomWearables:EquipWearable(unit, handle)
 			handle.on_first_equip(handle, unit)
 		end
 	end
+	if handle.on_equip then
+		handle.on_equip(handle, unit)
+	end
 	if handle.PlayerKeys then
 		if not unit.CustomWearables.PlayerKeys then unit.CustomWearables.PlayerKeys = {} end
 		table.merge(unit.CustomWearables.PlayerKeys, handle.PlayerKeys)
