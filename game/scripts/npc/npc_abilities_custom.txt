@@ -8637,6 +8637,7 @@
 		"AbilityTextureName"			"medusa_split_shot"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
+		"RequiredLevel"					"3"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -8795,6 +8796,7 @@
 		"AbilityTextureName"			"medusa_mana_shield"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"4"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -11413,7 +11415,7 @@
 		"AbilityTextureName"			"shinobu_yumewatari_lua"
 		"ScriptFile"					"heroes/hero_shinobu/yumewatari.lua"
 		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"7"
+		"LevelsBetweenUpgrades"			"10"
 		"RequiredLevel"					"5"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK2"
 
@@ -13988,7 +13990,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_return_pct"	"70 90 110 120 130 140 150"
+				"damage_return_pct"	"20"
 			}
 			"02"
 			{
