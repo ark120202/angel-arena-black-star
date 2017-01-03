@@ -708,63 +708,67 @@ end
 function CastMulticastedSpell(caster, ability, target, multicasts, delay)
 	if multicasts >= 1 then
 		Timers:CreateTimer(delay, function()
-			local skill = ability
-			local unit = caster
-			local channelled = false
-			if AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) then
-				local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
-				--TODO сделать чтобы дамаг от скилла умножался от инты.
-				for i=0, 5 do
-					local citem = caster:GetItemInSlot(i)
-					if citem then
-						dummy:AddItem(CopyItem(citem))
-					end
-				end
-				if HasScepter(caster) then dummy:AddNewModifier(caster, nil, "modifier_item_ultimate_scepter", {}) end
-				dummy:SetControllableByPlayer(caster:GetPlayerID(), true)
-				dummy:SetOwner(caster)
-				dummy:SetAbsOrigin(caster:GetAbsOrigin())
-				dummy.GetStrength = function()
-					return caster:GetStrength()
-				end
-				dummy.GetAgility = function()
-					return caster:GetAgility()
-				end
-				dummy.GetIntellect = function()
-					return caster:GetIntellect()
-				end
-				skill = dummy:AddAbility(ability:GetName())
-				unit = dummy
-				skill:SetLevel(ability:GetLevel())
-				channelled = true
-			end
+			CastAdditionalAbility(caster, ability, target)
 			caster:EmitSound('Hero_OgreMagi.Fireblast.x'.. multicasts)
-			if AbilityHasBehavior(skill, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then
-				if target and type(target) == "table" then
-					unit:SetCursorCastTarget(target)
-				end
-			elseif AbilityHasBehavior(skill, DOTA_ABILITY_BEHAVIOR_POINT) then
-				if target and target.x and target.y and target.z then
-					unit:SetCursorPosition(target)
-				end
-			end
-			skill:OnSpellStart()
-			if channelled then
-				Timers:CreateTimer(0.03, function()
-					if not caster:IsChanneling() then
-						skill:EndChannel(true)
-						skill:OnChannelFinish(true)
-						Timers:CreateTimer(0.03, function()
-							if skill then UTIL_Remove(skill) end
-							if unit then UTIL_Remove(unit) end
-						end)
-					else
-						return 0.03
-					end
-				end)
-			end
 			if multicasts >= 2 then
 				CastMulticastedSpell(caster, ability, target, multicasts - 1, delay)
+			end
+		end)
+	end
+end
+
+function CastAdditionalAbility(caster, ability, target)
+	local skill = ability
+	local unit = caster
+	local channelled = false
+	if AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) then
+		local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+		--TODO сделать чтобы дамаг от скилла умножался от инты.
+		for i=0, 5 do
+			local citem = caster:GetItemInSlot(i)
+			if citem then
+				dummy:AddItem(CopyItem(citem))
+			end
+		end
+		if HasScepter(caster) then dummy:AddNewModifier(caster, nil, "modifier_item_ultimate_scepter", {}) end
+		dummy:SetControllableByPlayer(caster:GetPlayerID(), true)
+		dummy:SetOwner(caster)
+		dummy:SetAbsOrigin(caster:GetAbsOrigin())
+		dummy.GetStrength = function()
+			return caster:GetStrength()
+		end
+		dummy.GetAgility = function()
+			return caster:GetAgility()
+		end
+		dummy.GetIntellect = function()
+			return caster:GetIntellect()
+		end
+		skill = dummy:AddAbility(ability:GetName())
+		unit = dummy
+		skill:SetLevel(ability:GetLevel())
+		channelled = true
+	end
+	if AbilityHasBehavior(skill, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then
+		if target and type(target) == "table" then
+			unit:SetCursorCastTarget(target)
+		end
+	elseif AbilityHasBehavior(skill, DOTA_ABILITY_BEHAVIOR_POINT) then
+		if target and target.x and target.y and target.z then
+			unit:SetCursorPosition(target)
+		end
+	end
+	skill:OnSpellStart()
+	if channelled then
+		Timers:CreateTimer(0.03, function()
+			if not caster:IsChanneling() then
+				skill:EndChannel(true)
+				skill:OnChannelFinish(true)
+				Timers:CreateTimer(0.03, function()
+					if skill then UTIL_Remove(skill) end
+					if unit then UTIL_Remove(unit) end
+				end)
+			else
+				return 0.03
 			end
 		end)
 	end
@@ -893,6 +897,7 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 		end
 	end
 	illusion.UnitName = unit.UnitName
+	illusion:SetNetworkableEntityInfo("unit_name", GetFullHeroName(illusion))
 	--PlayerResource:AddToSelection(unit:GetPlayerID(), illusion)
 	return illusion
 end
@@ -916,10 +921,8 @@ end
 
 function SafePerformAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, AttackFuncs)
 	--bNoSplashesMelee, bNoSplashesRanged, bNoDoubleAttackMelee, bNoDoubleAttackRanged
-	if AttackFuncs and unit.AttackFuncs then
-		table.merge(AttackFuncs, unit.AttackFuncs)
-	end
-	unit.AttackFuncs = AttackFuncs
+	if not unit.AttackFuncs then unit.AttackFuncs = {} end
+	table.merge(unit.AttackFuncs, AttackFuncs)
 	unit:PerformAttack(hTarget,bUseCastAttackOrb,bProcessProcs,bSkipCooldown,bIgnoreInvis,bUseProjectile)
 	unit.AttackFuncs = nil
 end
@@ -1406,7 +1409,11 @@ function IsInBox(point, point1, point2)
 end
 
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
-	return (5 + self:GetLevel() * 0.25) + (self.RespawnTimeModifier or 0)
+	local time = (5 + self:GetLevel() * 0.2) + (self.RespawnTimeModifier or 0)
+	if self.talent_keys and self.talent_keys.respawn_time_reduction then
+		time = time + self.talent_keys.respawn_time_reduction
+	end
+	return math.max(time, 0.1)
 end
 
 function CDOTA_BaseNPC_Hero:IsWukongsSummon()

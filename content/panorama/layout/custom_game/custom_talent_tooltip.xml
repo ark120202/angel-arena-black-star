@@ -11,6 +11,7 @@
 			$("#TitleLabel").text = $.GetContextPanel().GetAttributeString("title", "Error");
 			$("#DescriptionLabel").text = $.GetContextPanel().GetAttributeString("description", "Error");
 			$("#CostValue").text = $.GetContextPanel().GetAttributeString("cost", "Error");
+			$("#LevelLabel").text = $.GetContextPanel().GetAttributeString("levelText", "Level: 0\/0");
 			var requirements = $.GetContextPanel().GetAttributeString("requirements", "Error")
 			$("#RequirementsPanel").visible = requirements != "undefined"
 			if (requirements != "undefined") {
@@ -22,7 +23,10 @@
 		}
 	</script>
 	<Panel hittest="false" hittestchildren="false" ontooltiploaded="setTooltip()" class="TooltipRoot">
-		<Label id="TitleLabel" />
+		<Panel id="TopInfoPanel">
+			<Label id="TitleLabel" />
+			<Label id="LevelLabel" />
+		</Panel>
 		<Label html="true" id="DescriptionLabel" />
 		<Panel id="CostPanel">
 			<Label id="CostTitle" text="#custom_talents_cost" />

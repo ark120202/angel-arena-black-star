@@ -71,7 +71,7 @@
 		<Panel hittest="true" id="QuickBuyPanel">
 			<Panel class="DropDownValidTarget" hittest="false" />
 			<Panel id="QuickBuyPanelItems" />
-			<Label id="QuickBuyClearButtonPanel" text="X" onactivate="ClearQuickbuyItems()"/>
+			<Image id="QuickBuyClearButtonPanel" onactivate="ClearQuickbuyItems()"/>
 			<Panel id="QuickBuyStickyButtonPanel" />
 		</Panel>
 	</Panel>

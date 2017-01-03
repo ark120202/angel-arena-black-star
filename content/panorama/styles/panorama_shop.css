@@ -260,14 +260,25 @@ DropDownMenu Label
 
 #QuickBuyClearButtonPanel
 {
-
+	background-image: url("file://{images}/control_icons/x_close.png");
+	background-size: cover;
+	background-position: 50% 50%;
 	align: right bottom;
 	height: 20px;
 	width: 16px;
 	margin: 2px;
-	color: red;
-	font-weight: bold;
-	font-size: 22px;
+	brightness: 0.4;
+	transition-property: brightness;
+	transition-duration: 0.15s;
+}
+#QuickBuyClearButtonPanel:hover
+{
+	brightness: 1.0;
+}
+
+#QuickBuyClearButtonPanel:active
+{
+	brightness: 0.6;
 }
 
 #QuickBuyStickyButtonPanel
@@ -291,12 +302,10 @@ DropDownMenu Label
 {
 	width: 100%;
 	height: 100%;
-	background-color: gradient( radial, 50% -20%, 0% 0%, 80% 80%, from( blue ), to( white ) );
-	opacity: 0;
 }
 .DropDownMode .DropDownValidTarget
 {
-	opacity: 0.25;
+	box-shadow: inset #0B93BE44 6px 6px 12px 12px;
 }
 
 
@@ -329,7 +338,6 @@ DropDownMenu Label
 #QuickBuyPanel
 {
 	background-image: url("s2r://panorama/images/hud/reborn/quickbuy_bg_psd.vtex");
-	//background-color: rgba(0,0,0,0.8);
 	align: right bottom;
 	margin-bottom: 20px;
 	margin-right: 0px;

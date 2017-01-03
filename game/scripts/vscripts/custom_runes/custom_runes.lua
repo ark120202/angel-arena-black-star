@@ -1,5 +1,6 @@
 if not CustomRunes then
 	CustomRunes = class({})
+	CustomRunes.ModifierApplier = CreateItem("item_dummy", nil, nil)
 end
 LinkLuaModifier("modifier_arena_rune_tripledamage", "custom_runes/modifier_arena_rune_tripledamage.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_arena_rune_haste", "custom_runes/modifier_arena_rune_haste.lua", LUA_MODIFIER_MOTION_NONE)
@@ -151,26 +152,26 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 		Gold:AddGoldWithMessage(unit, gold * settings.special_value_multiplier)
 		unit:AddExperience(xp * settings.special_value_multiplier, DOTA_ModifyXP_Unspecified, false, true)
 	elseif runeType == ARENA_RUNE_TRIPLEDAMAGE then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_tripledamage", {duration = settings.duration}):SetStackCount(settings.damage_pct)
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_tripledamage", {duration = settings.duration}):SetStackCount(settings.damage_pct)
 	elseif runeType == ARENA_RUNE_HASTE then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_haste", {duration = settings.duration}):SetStackCount(settings.movespeed)
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_haste", {duration = settings.duration}):SetStackCount(settings.movespeed)
 	elseif runeType == ARENA_RUNE_ILLUSION then
 		for i = 1, settings.illusion_count do
-			CreateIllusion(unit, nil, unit:GetAbsOrigin() + RandomVector(100), settings.illusion_incoming_damage - 100, settings.illusion_outgoing_damage - 100, settings.duration):SetForwardVector(unit:GetForwardVector())
+			CreateIllusion(unit, CustomRunes.ModifierApplier, unit:GetAbsOrigin() + RandomVector(100), settings.illusion_incoming_damage - 100, settings.illusion_outgoing_damage - 100, settings.duration):SetForwardVector(unit:GetForwardVector())
 		end
 	elseif runeType == ARENA_RUNE_INVISIBILITY then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_invisibility", {duration = settings.duration})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_invisibility", {duration = settings.duration})
 	elseif runeType == ARENA_RUNE_REGENERATION then
 		unit:SetHealth(unit:GetMaxHealth())
 		unit:SetMana(unit:GetMaxMana())
 	elseif runeType == ARENA_RUNE_ARCANE then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_arcane", {duration = settings.duration})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_arcane", {duration = settings.duration})
 	elseif runeType == ARENA_RUNE_FLAME then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_flame", {duration = settings.duration, damage_per_second_max_hp_pct = settings.damage_per_second_max_hp_pct})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_flame", {duration = settings.duration, damage_per_second_max_hp_pct = settings.damage_per_second_max_hp_pct})
 	elseif runeType == ARENA_RUNE_ACCELERATION then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_acceleration", {duration = settings.duration, xp_multiplier = settings.xp_multiplier})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_acceleration", {duration = settings.duration, xp_multiplier = settings.xp_multiplier})
 	elseif runeType == ARENA_RUNE_VIBRATION then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_vibration", {
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_vibration", {
 			duration = settings.duration,
 			minRadius = settings.minRadius,
 			fullRdius = settings.fullRdius,

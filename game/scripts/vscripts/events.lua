@@ -130,8 +130,7 @@ function GameMode:OnAbilityUsed(keys)
 
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 
-	local hero
-	if player then hero = player:GetAssignedHero() end
+	local hero = PlayerResource:GetSelectedHeroEntity(keys.PlayerID)
 	local abilityname = keys.abilityname
 	if hero then
 		local ability = hero:FindAbilityByName(abilityname)
@@ -139,13 +138,7 @@ function GameMode:OnAbilityUsed(keys)
 		if abilityname == "night_stalker_darkness" and ability then
 			CustomGameEventManager:Send_ServerToAllClients("time_nightstalker_darkness", {duration = ability:GetLevelSpecialValueFor("duration", ability:GetLevel()-1)})
 		end
-		
-		HeroVoice:OnAbilityUsed(hero, ability)
-		if abilityname == "item_tree_banana" then
-			hero:ModifyStrength(4)
-			hero:ModifyAgility(2)
-			hero:ModifyIntellect(6)
-		end
+		--HeroVoice:OnAbilityUsed(hero, ability)
 		if hero:HasModifier("modifier_item_pocket_riki_permanent_invisibility") or hero:HasModifier("modifier_item_pocket_riki_consumed_permanent_invisibility") then
 			local item = FindItemInInventoryByName(hero, "item_pocket_riki", false)
 			if not item then

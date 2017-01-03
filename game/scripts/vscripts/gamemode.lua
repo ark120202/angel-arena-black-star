@@ -335,11 +335,15 @@ function GameMode:GameModeThink()
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
 			local hero = PlayerResource:GetSelectedHeroEntity(i)
+			local gold_per_tick = CUSTOM_GOLD_PER_TICK
 			if hero then
 				PlayerTables:SetTableValue("player_hero_entities", i, hero:GetEntityIndex())
 				hero:SetNetworkableEntityInfo("unit_name", GetFullHeroName(hero))
+				if hero.talent_keys and hero.talent_keys.bonus_gold_per_minute then
+					gold_per_tick = gold_per_tick + hero.talent_keys.bonus_gold_per_minute / 60 * CUSTOM_GOLD_TICK_TIME
+				end
 			end
-			Gold:AddGold(i, CUSTOM_GOLD_PER_TICK)
+			Gold:AddGold(i, gold_per_tick)
 			if not IsPlayerAbandoned(i) then
 				if PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
 					PLAYER_DATA[i].AutoAbandonGameTime = nil

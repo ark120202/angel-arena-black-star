@@ -49,55 +49,23 @@ TODO LIST:
 [url=https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f
 ============================================================
-Angel Arena Black Star - Версия 1.3.8:
-Карта изменена на зимнюю версию
-У Apocalypse теперь другая модель
-Radiances теперь не работает на боссах
-Ослаблены: Faceless Void - Time Freeze, Pudge - Meat Hook, Zuus - Lightning Bolt, Zuus - Cloud, Slardar - Bash, Spirit Breaker - Greater Bash, Stegius - Desolating Touch, Iron Talon
+Angel Arena Black Star - Версия 1.3.9:
+Добавлена система талантов
+Иаксимальный уровень повышен до 600
 ============================================================
-Angel Arena Black Star - Version 1.3.8:
-Changed map to winter version
-Apocalypse now has custom model
-Radiances now not works on bosses
-Nerf: Faceless Void - Time Freeze, Pudge - Meat Hook, Zuus - Lightning Bolt, Zuus - Cloud, Slardar - Bash, Spirit Breaker - Greater Bash, Stegius - Desolating Touch, Iron Talon
+Angel Arena Black Star - Version 1.3.9:
+Added custom talents system
+Max level is 600 now
 ============================================================
 Angel Arena Black Star - Version 1.3.8:
 General:
-	Changed map to winter version
-	Apocalypse now has custom model
-	Wisp - Tether now is purgable
+	Added Custom Talents system
+	
+	Changed Default sticky item from Town Portal Scroll to Level Up Shard
 Balance:
-	Octarine Core & Refresher Core now not heals when damage dealt to illusions (it's still creates particles and overhead message)
-	Small creep rebalance
-	Items:
-		Radiance now not works on bosses
-		Iron Talon:
-			Bonus Damage (Rnaged): 110 => 50
-			Bonus Damage (Melee): 140 => 40
-			Health reducted to Creeps: 80 => 60 %
-	Abilities:
-		Faceless Void - Time Freeze:
-			Duration: 3.0 3.5 4.0 4.5 5.0 5.5 6.0 => 2 2.3 2.6 2.9 3.2 3.5 3.8
-			Cooldown: 120.0 130.0 120.0 100.0 90.0 80.0 70.0 => 140 130 120 115 110 105 100
-		Pudge - Meat Hook:
-			Damage: 120 240 360 480 600 720 840 => 100 160 220 280 340 400 460
-			Damage with Scepter: 480 600 720 840 960 1100 1200 => 460 560 660 760 860 960 1060
-			Range: 800 900 1000 1100 1200 1300 1400 => 800 850 900 950 1000 1050 1100
-		Zuus - Lightning Bolt:
-			Cooldown: 0.8 => 8
-		Zuus - Cloud:
-			Mana Cost: 275 325 400 475 525 600 675 => 450
-			Max Level: 7 => 1
-			Interval: 2.5 2.0 1.5 1.0 0.8 0.6 0.4 => 1.7
-		Slardar - Bash:
-			Duration on Creeps and Bosses: 4.0 => 1.5
-			Chance: 10 15 18 20 25 27 29 => 10 13 15 18 21 24 27 %
-		Spirit Breaker - Greater Bash:
-			Cooldown: 1.5 => 3
-		Stegius - Desolating Touch:
-			Armor reduction on Bosses: -1 -1 -1 -2 -2 -2 -2 => 0 0 -1 -1 -2 -2 -2
+	
 Fixes:
-	Fixed Apocalypse - Apocalypse didn't cleave
+	
 <<+===========================================================================================================
 
 

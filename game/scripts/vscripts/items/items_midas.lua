@@ -33,7 +33,7 @@ function GiveKillBonusGold(keys)
 	end
 	Gold:ModifyGold(caster, keys.KillGold)
 	caster:AddExperience(keys.KillXp, false, false)
-	local particle = ParticleManager:CreateParticleForPlayer("particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf", PATTACH_ABSORIGIN, caster, caster:GetPlayerOwner())
+	local particle = ParticleManager:CreateParticleForPlayer("particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf", PATTACH_ABSORIGIN, keys.unit, caster:GetPlayerOwner())
 	ParticleManager:SetParticleControl(particle, 1, Vector(0, keys.KillGold, 0))
 	ParticleManager:SetParticleControl(particle, 2, Vector(2, string.len(keys.KillGold) + 1, 0))
 	ParticleManager:SetParticleControl(particle, 3, Vector(255, 200, 33))

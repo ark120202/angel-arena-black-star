@@ -60,6 +60,8 @@ if IsServer() then
 	end
 
 	function modifier_apocalypse_apocalypse:OnDestroy() 
-		TrueKill(self:GetCaster(), self, self:GetParent())
+		if not self:GetParent():HasTalent("talent_hero_apocalypse_apocalypse_no_death") then
+			TrueKill(self:GetCaster(), self, self:GetParent())
+		end
 	end
 end

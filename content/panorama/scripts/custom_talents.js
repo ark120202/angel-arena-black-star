@@ -1,6 +1,4 @@
 var groupLevelMap = [];
-var actualGroupIndex = 0;
-var LearntTalents = {};
 var TalentsInfo = {};
 
 function LoadTalentTable(table) {
@@ -15,32 +13,46 @@ function LoadTalentTable(table) {
 	})
 }
 
-function SpecialValuesArrayToString(values, level) {
-	if (typeof values != "object")
-		return "<font color='gold'>" + values + "</font>"
-	else {
+function SpecialValuesArrayToString(values, level, percent) {
+	if (typeof values != "object") {
+		if (level == 0)
+			return percent ? values + "%" : values
+		else
+			return "<font color='gold'>" + (percent ? values + "%" : values) + "</font>"
+	} else {
 		var text = "";
 		$.Each(values, function(value, index) {
 			if (index++ == level)
-				value = "<font color='gold'>" + value + "</font>"
-			text = text + value + "\/"
+				text = text + "<font color='gold'>" + (percent ? value + "%" : value) + "</font>" + "\/"
+			else
+				text = text + (percent ? value + "%" : value) + "\/"
+
 		})
 		text = text.slice(0, -1);
 		return text
 	}
-
 }
 
 function CreateTalent(talent, root) {
-	var panel = $.CreatePanel("Panel", root, "talent_icon_" + talent.name);
-	panel.BLoadLayoutSnippet("TalentIcon");
-	panel.SetPanelEvent("onmouseover", function() {
-		var description = "+{damage}" //$.Localize("custom_talents_talent_" + talent.name + "_description");
-		$.Each(talent.special_values, function(values, key) {
-			description = description.replace("{" + key + "}", SpecialValuesArrayToString(values, LearntTalents[talent.name] == null ? -1 : LearntTalents[talent.name].level))
-		});
-		$.DispatchEvent("UIShowCustomLayoutParametersTooltip", panel, "TalentTooltip", "file://{resources}/layout/custom_game/custom_talent_tooltip.xml", "title=" + $.Localize("custom_talents_talent_" + talent.name) + "&description=" + description + "&cost=" + talent.cost + "&requirements=" + talent.requirement);
-	});
+	var panel = $.CreatePanel("Image", root, "talent_icon_" + talent.name);
+	panel.AddClass("TalentIcon")
+	panel.SetImage("file://{images}/custom_game/talents/" + talent.icon + ".png");
+	var CreateTooltip = function() {
+		var description = $.Localize("custom_talents_" + talent.name + "_description");
+		if (talent.special_values != null)
+			$.Each(talent.special_values, function(values, key) {
+				description = description.replace("{" + key + "}", SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name)))
+				description = description.replace("{%" + key + "%}", SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name), true))
+			});
+		$.DispatchEvent("UIShowCustomLayoutParametersTooltip", panel, "TalentTooltip", "file://{resources}/layout/custom_game/custom_talent_tooltip.xml",
+			"title=" + $.Localize("custom_talents_" + talent.name) +
+			"&description=" + description.replace("+", "%2B") +
+			"&cost=" + talent.cost +
+			"&requirements=" + talent.requirement +
+			"&levelText=" + $.Localize("custom_talents_level") + GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name) + "\/" + (talent.max_level || 1)
+		);
+	}
+	panel.SetPanelEvent("onmouseover", CreateTooltip);
 	panel.SetPanelEvent("onmouseout", function() {
 		$.DispatchEvent("UIHideCustomLayoutTooltip", panel, "TalentTooltip");
 	});
@@ -49,35 +61,60 @@ function CreateTalent(talent, root) {
 			GameEvents.SendCustomGameEventToServer("custom_talents_upgrade", {
 				talent: talent.name
 			});
+
 			$.DispatchEvent("UIHideCustomLayoutTooltip", panel, "TalentTooltip");
+			$.Schedule(0.1, CreateTooltip)
 		}
 	});
 	TalentsInfo[talent.name] = talent;
 }
 
+function GetTalentLevel(unit, talent) {
+	var t = GameUI.CustomUIConfig().custom_entity_values[unit]
+	if (t != null && t.LearntTalents != null && t.LearntTalents[talent] != null)
+		return t.LearntTalents[talent].level
+	return 0
+}
+
+function GetActualTalentGroup(unit) {
+	var t = GameUI.CustomUIConfig().custom_entity_values[unit]
+	var highest = 0;
+	if (t != null && t.LearntTalents != null && TalentsInfo != null) {
+		for (var k in t.LearntTalents) {
+			var level = t.LearntTalents[k].level
+			var group = TalentsInfo[k].group
+			highest = group > highest ? group : highest
+		}
+	}
+	return highest
+}
+
 function Update() {
+	$.Schedule(0.2, Update)
 	var unit = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID())
 	var points = Entities.GetAbilityPoints(unit)
+	$("#AbilityPointsLabel").text = points;
 	$.Each($("#TalentListContainer").Children(), function(group, group_index) {
 		var CompletedGroup = true;
-		var GroupAvaliable = Entities.GetLevel(unit) >= group.RequiredLevel && group_index <= actualGroupIndex
+		var GroupAvaliable = Entities.GetLevel(unit) >= group.RequiredLevel && group_index <= GetActualTalentGroup(unit)
 		$.Each(group.FindChildTraverse("TalentColumnInner").Children(), function(icon) {
-			var tn = icon.id.replace("talent_icon_", "")
-			var requirement = TalentsInfo[tn].requirement
-			var Error_Requirement = requirement != null && ((IsHeroName(requirement) && GetHeroName(unit) != requirement) || Entities.GetAbilityByName(unit, requirement) == -1)
-			var Error_Points = points < TalentsInfo[tn].cost
-			icon.SetHasClass("Error_Requirement", Error_Requirement)
-			icon.SetHasClass("Error_Points", Error_Points)
-			icon.SetHasClass("CanLearn", !Error_Requirement && !Error_Points && GroupAvaliable);
-
-			icon.SetHasClass("Learnt", LearntTalents[tn] != null && LearntTalents[tn].level == (TalentsInfo[tn].max_level || 1))
-			if (!icon.BHasClass("Learnt"))
+			var tn = icon.id.replace("talent_icon_", "");
+			var requirement = TalentsInfo[tn].requirement;
+			var Error_Requirement = requirement != null && ((IsHeroName(requirement) && GetHeroName(unit) != requirement) || Entities.GetAbilityByName(unit, requirement) == -1);
+			var Error_Points = points < TalentsInfo[tn].cost;
+			var level = GetTalentLevel(unit, tn);
+			var Learnt = level == (TalentsInfo[tn].max_level || 1);
+			icon.SetHasClass("Error_Requirement", Error_Requirement);
+			icon.SetHasClass("Error_Points", Error_Points);
+			icon.SetHasClass("Learnt", Learnt);
+			icon.SetHasClass("CanLearn", !Learnt && !Error_Requirement && !Error_Points && GroupAvaliable);
+			icon.SetHasClass("Selected", level > 0);
+			if (icon.visible && !icon.BHasClass("Learnt"))
 				CompletedGroup = false;
-		})
-		group.SetHasClass("CompletedColumn", CompletedGroup)
-		group.SetHasClass("EnabledColumn", !CompletedGroup && GroupAvaliable)
+		});
+		group.SetHasClass("CompletedColumn", CompletedGroup);
+		group.SetHasClass("EnabledColumn", !CompletedGroup && GroupAvaliable);
 	})
-	$.Schedule(0.1, Update)
 }
 
 (function() {
@@ -87,13 +124,6 @@ function Update() {
 	DynamicSubscribePTListener("custom_talents_data", function(tableName, changesObject, deletionsObject) {
 		groupLevelMap = changesObject.groupLevelMap
 		LoadTalentTable(changesObject.talentList)
-	});
-	DynamicSubscribePTListener("custom_talents_selected", function(tableName, changesObject, deletionsObject) {
-		var info = changesObject[Game.GetLocalPlayerID()]
-		if (info != null) {
-			actualGroupIndex = info.actualGroup
-			LearntTalents = info.talents || {}
-		}
 	});
 	$('#ToggleHideRequirementErrors').checked = true;
 	Update();

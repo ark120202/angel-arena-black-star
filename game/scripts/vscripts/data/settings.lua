@@ -38,7 +38,7 @@ USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom
 USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
 XP_PER_LEVEL_TABLE = {}
 XP_PER_LEVEL_TABLE[1] = 0
-for i = 2, 300 do
+for i = 2, 600 do
   	XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i-1] + i*100
 end
 

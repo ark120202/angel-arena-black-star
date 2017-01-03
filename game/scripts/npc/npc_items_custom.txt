@@ -12,6 +12,28 @@
 		"IsTempestDoubleClonable"		"0"
 	}
 
+	"item_talent_modifier_applier"
+	{
+		"BaseClass"                     "item_datadriven"
+		"ItemPurchasable"				"0"
+		"ItemCost"						"0"
+
+		"Modifiers"
+		{
+			"modifier_talent_spell_amplify"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "1"
+				}
+			}
+		}
+	}
+
 	"item_containers_lua_pack"
 	{
 		"BaseClass"						"item_lua"

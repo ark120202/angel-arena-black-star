@@ -9,13 +9,13 @@ function modifier_arena_rune_haste:DeclareFunctions()
 end
 
 function modifier_arena_rune_haste:GetModifierMoveSpeed_Max()
-	return 1 * self:GetStackCount()
+	return self:GetStackCount()
 end
 function modifier_arena_rune_haste:GetModifierMoveSpeed_Limit()
-	return 1 * self:GetStackCount()
+	return self:GetStackCount()
 end
 function modifier_arena_rune_haste:GetModifierMoveSpeed_Absolute()
-	return 1 * self:GetStackCount()
+	return self:GetStackCount()
 end
 
 function modifier_arena_rune_haste:GetEffectName()

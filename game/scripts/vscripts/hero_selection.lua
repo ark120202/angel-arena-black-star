@@ -1,7 +1,6 @@
 if HeroSelection == nil then
 	_G.HeroSelection = class({})
 	HeroSelection.SelectionEnd = false
-	HeroSelection.HeroesData = {}
 end
 
 function HeroSelection:Initialize()

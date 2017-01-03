@@ -14,14 +14,12 @@
 				<Panel id="TalentColumnInner" />
 			</Panel>
 		</snippet>
-		<snippet name="TalentIcon">
-			<Panel class="TalentIcon" />
-		</snippet>
 	</snippets>
 	<Panel hittest="false" class="base HideRequirementErrors">
 		<Panel id="TalentsBase">
 			<Panel id="TopBar">
-				<ToggleButton id="ToggleHideRequirementErrors" onactivate="$.GetContextPanel().SetHasClass('HideRequirementErrors', $('#ToggleHideRequirementErrors').checked)" text="Hide Requirement Errors"/>
+				<Label id="AbilityPointsLabel" />
+				<ToggleButton id="ToggleHideRequirementErrors" onactivate="$.GetContextPanel().SetHasClass('HideRequirementErrors', $('#ToggleHideRequirementErrors').checked)" text="#custom_talents_hide_requirement_errors"/>
 				<Button class="CloseButton" id="CloseButton" onactivate="$.GetContextPanel().RemoveClass('PanelOpened');" />
 			</Panel>
 			<Panel id="TalentListContainer" />

@@ -3988,7 +3988,6 @@
 			"modifier_skeleton_king_reincarnation_slow"
 			{
 				"IsDebuff"	"1"
-				"Duration"	"%slow_duration"
 
 				"EffectName"		"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_slow_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -4005,7 +4004,6 @@
 				"IsPurgable"	"0"
 				"IsHidden"			"1"
 				"AllowIllusionDuplicate"     "0"
-				"Duration"					"%reincarnate_time"
 				"Attributes"				"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 
 				"OnCreated"

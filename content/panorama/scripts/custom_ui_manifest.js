@@ -82,9 +82,8 @@ GameUI.SetMouseCallback(function(eventName, arg) {
 			if (Game.MouseEvents.OnLeftPressed.length > 0) {
 				for (var k in Game.MouseEvents.OnLeftPressed) {
 					var r = Game.MouseEvents.OnLeftPressed[k](ClickBehaviors, eventName, arg);
-					if (r === true) {
+					if (r === true)
 						result = r;
-					}
 				}
 			}
 		} else if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE && (arg === 5 || arg === 6)) {

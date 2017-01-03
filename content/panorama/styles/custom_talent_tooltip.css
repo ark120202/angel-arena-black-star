@@ -1,6 +1,7 @@
 .TooltipRoot
 {
 	flow-children:down;
+	max-width: 500px;
 }
 
 #RequirementsPanel
@@ -47,9 +48,24 @@
 	vertical-align: center;
 }
 
+#TopInfoPanel
+{
+	width: 100%;
+}
+
 #TitleLabel
 {
+	text-overflow: shrink;
+
 	color: white;
 	font-size: 24px;
 	font-weight: bold;
+	margin-top: 6px;
+}
+
+#LevelLabel
+{
+	horizontal-align: right;
+	margin-top: -10px;
+	margin-right: -10px;
 }

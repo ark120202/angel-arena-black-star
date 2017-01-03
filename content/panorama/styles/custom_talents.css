@@ -1,6 +1,6 @@
 .base
 {
-	width: 900px;
+	width: 600px;
 	height: 500px;
 	align: center center;
 }
@@ -34,6 +34,7 @@
 	width: 100%;
 	height: 32px;
 	background-color: rgba(100,100,100,0.1);
+	flow-children: right;
 }
 
 #TalentListContainer
@@ -64,15 +65,6 @@
 	background-color: rgba(100,100,100,0.3);
 }
 
-.TalentIcon
-{
-	width: 32px;
-	height: 32px;
-	margin: 3px 0;
-	border-radius: 100%;
-	background-color: red;
-}
-
 #TalentColumnHeader
 {
 	width: 100%;
@@ -85,17 +77,37 @@
 	text-shadow: 0px 0px 6px 3 black;
 }
 
-.CanLearn
+.TalentIcon
 {
-	background-color: gold;
+	width: 32px;
+	height: 32px;
+	margin: 3px 0;
+	border-radius: 100%;
+	background-color: #363D40;
+	padding: 1px;
 }
-
-.Learnt
-{
-	background-color: black;
-}
-
+.Selected { border: 1px solid lightblue; }
+.CanLearn { border: 1px solid gold; }
+.Selected.CanLearn { box-shadow: -1.5px -1.5px 3px 3px blue; }
+.Learnt { background-color: #292D2E; }
 .HideRequirementErrors .Error_Requirement
 {
 	visibility: collapse;
+}
+
+#AbilityPointsLabel
+{
+	width: 48px;
+	vertical-align: center;
+	margin-left: 6px;
+	margin-right: 16px;
+	margin-top: 1px;
+	color: gold;
+	font-size: 24px;
+	text-shadow: 0 0 0.1px white;
+}
+
+#ToggleHideRequirementErrors
+{
+	vertical-align: center;
 }

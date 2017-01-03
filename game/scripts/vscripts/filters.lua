@@ -193,9 +193,11 @@ function GameMode:ModifyExperienceFilter(filterTable)
 	if hero then
 		for _,v in ipairs(hero:FindAllModifiersByName("modifier_arena_rune_acceleration")) do
 			if v.xp_multiplier then
-				print(filterTable.experience .. " => " .. (filterTable.experience * v.xp_multiplier))
 				filterTable.experience = filterTable.experience * v.xp_multiplier
 			end
+		end
+		if hero.talent_keys and hero.talent_keys.bonus_experience_percentage then
+			filterTable.experience = filterTable.experience * (1 + hero.talent_keys.bonus_experience_percentage * 0.01)
 		end
 	end
 	return true

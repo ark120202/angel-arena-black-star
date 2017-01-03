@@ -10,12 +10,12 @@ function CheckDeath(keys)
 		if PreformAbilityPrecastActions(caster, ability) then
 			ability:ApplyDataDrivenModifier(caster, target, "modifier_skeleton_king_reincarnation_life_saver", {})
 			caster:SetHealth(1)
-			ability:ApplyDataDrivenModifier(caster, target, "modifier_skeleton_king_reincarnation_reincarnation", {})
+			ability:ApplyDataDrivenModifier(caster, target, "modifier_skeleton_king_reincarnation_reincarnation", {duration = caster:HasTalent("talent_hero_skeleton_king_reincarnation_notime_stun") and 0.1 or ability:GetLevelSpecialValueFor("reincarnate_time", ability:GetLevel() - 1)})
 		else
 			target:RemoveModifierByName("modifier_skeleton_king_reincarnation_life_saver")
 		end
 	else
-		ability:ApplyDataDrivenModifier(caster, target, "modifier_skeleton_king_reincarnation_reincarnation", {})
+		ability:ApplyDataDrivenModifier(caster, target, "modifier_skeleton_king_reincarnation_reincarnation", {duration = caster:HasTalent("talent_hero_skeleton_king_reincarnation_notime_stun") and 0.1 or ability:GetLevelSpecialValueFor("reincarnate_time", ability:GetLevel() - 1)})
 	end
 	if keys.aftercast_modifier then
 		ability:ApplyDataDrivenModifier(caster, target, keys.aftercast_modifier, {})
@@ -66,10 +66,8 @@ function OnModDestroy(keys)
 	ParticleManager:DestroyParticle(ability.pfx_reincarnation_respawn_timer[target:GetEntityIndex()], false)
 	ability.npc_reincarnation_tombstone[target:GetEntityIndex()]:RemoveSelf()
 
-	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("slow_radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-		
-	for _,unit in pairs(enemies) do
-		ability:ApplyDataDrivenModifier(caster, unit, "modifier_skeleton_king_reincarnation_slow", nil)
+	for _,unit in ipairs(FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("slow_radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
+		ability:ApplyDataDrivenModifier(caster, unit, caster:HasTalent("talent_hero_skeleton_king_reincarnation_notime_stun") and "modifier_stunned" or "modifier_skeleton_king_reincarnation_slow", {duration = ability:GetLevelSpecialValueFor("slow_duration", ability:GetLevel() - 1)})
 	end
 end
 
