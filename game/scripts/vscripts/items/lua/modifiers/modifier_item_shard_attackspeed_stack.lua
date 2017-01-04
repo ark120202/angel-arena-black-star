@@ -1,7 +1,7 @@
 modifier_item_shard_attackspeed_stack = class({})
 
 function modifier_item_shard_attackspeed_stack:GetTexture()
-	return "item_shard_attackspeed"
+	return "arena/shard_attackspeed"
 end
 
 function modifier_item_shard_attackspeed_stack:IsHidden()

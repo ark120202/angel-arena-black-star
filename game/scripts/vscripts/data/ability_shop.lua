@@ -118,8 +118,6 @@ ABILITY_SHOP_DATA = {
 	["zaken_sword_control"] = { cost = 32, },
 	["shinobu_yumewatari_lua"] = { cost = 9, },
 	["arthas_plus_morality"] = { cost = 6, },
-	[] = { cost = , },
-	[] = { cost = , },
 }
 
 ABILITY_SHOP_SKIP_HEROES = {

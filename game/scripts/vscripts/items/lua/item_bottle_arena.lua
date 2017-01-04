@@ -9,9 +9,9 @@ if IsServer() then
 	function item_bottle_arena:SetCurrentCharges(charges)
 		local texture
 		if self.RuneStorage then
-			texture = "item_bottle_rune_" .. self.RuneStorage
+			texture = "arena/bottle_rune_" .. self.RuneStorage
 		else
-			texture = "item_bottle_" .. charges
+			texture = "arena/bottle_" .. charges
 		end
 		self:SetNetworkableEntityInfo("ability_texture", texture)
 		return self.BaseClass.SetCurrentCharges(self, charges)

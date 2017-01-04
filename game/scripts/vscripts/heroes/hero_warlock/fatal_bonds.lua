@@ -9,7 +9,6 @@ function OnSpellStart(keys)
 	ability.hit_pfx = keys.hit_pfx
 	local targets = {target}
 	local counter = ability:GetLevelSpecialValueFor("count", level) - 1
-	--основная цель сразу в таблице, чтобы она 100% попала
 	for _,v in ipairs(FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, search_aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_CLOSEST, false)) do
 		if counter >= 1 and not table.contains(targets, v) then
 			counter = counter - 1

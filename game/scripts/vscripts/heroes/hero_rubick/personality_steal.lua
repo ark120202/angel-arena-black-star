@@ -58,7 +58,7 @@ function SpellSteal(keys)
 		caster:CalculateStatBonus()
 		PlayerResource:RefreshSelection()
 	end)
-	caster:SetAbilityPoints(caster:GetLevel())
+	caster:ResetAbilityPoints()
 end
 
 function RemoveSpell(keys)
@@ -82,5 +82,5 @@ function RemoveSpell(keys)
 	caster:SetOriginalModel(caster.rubick_spell_steal.model)
 	caster:SetModelScale(caster.rubick_spell_steal.model_scale)
 	caster.rubick_spell_steal = nil
-	caster:SetAbilityPoints(caster:GetLevel())
+	caster:ResetAbilityPoints()
 end

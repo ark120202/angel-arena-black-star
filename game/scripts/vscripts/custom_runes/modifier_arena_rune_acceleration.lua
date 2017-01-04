@@ -15,7 +15,7 @@ function modifier_arena_rune_acceleration:IsPurgable()
 end
 
 function modifier_arena_rune_acceleration:GetTexture()
-	return "arena_rune_acceleration"
+	return "arena/arena_rune_acceleration"
 end
 
 function modifier_arena_rune_acceleration:GetEffectName()

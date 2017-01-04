@@ -20,17 +20,22 @@ if IsServer() then
 	function modifier_item_lotus_sphere_passive:GetReflectSpell(keys)
 		local ability = self:GetAbility()
 		if ability:IsCooldownReady() then
-			if self.stored then
+			--[[if self.stored then
 				self.stored:RemoveSelf()
-			end
+			end]]
 			local hCaster = self:GetParent()
 			local hAbility = hCaster:AddAbility(keys.ability:GetAbilityName())
-			hAbility:SetStolen(true)
-			hAbility:SetHidden(true)
-			hAbility:SetLevel(keys.ability:GetLevel())
-			hCaster:SetCursorCastTarget(keys.ability:GetCaster())
-			hAbility:OnSpellStart()
-			self.stored = hAbility
+			if hAbility then
+				hAbility:SetStolen(true)
+				hAbility:SetHidden(true)
+				hAbility:SetLevel(keys.ability:GetLevel())
+				hCaster:SetCursorCastTarget(keys.ability:GetCaster())
+				hAbility:OnSpellStart()
+			end
+			hAbility:RemoveSelf()
+			--[[self.stored = hAbility
+			hAbility:SetLevel(0)
+			hAbility:Set]]
 		end
 	end
 

@@ -535,11 +535,13 @@ function RemoveDeathPreventingModifiers(unit)
 end
 
 function TrueKill(killer, ability, target)
+	target.IsMarkedForTrueKill = true
 	target:Kill(ability, killer)
 	if not target:IsNull() and target:IsAlive() then
 		RemoveDeathPreventingModifiers(target)
 		target:Kill(ability, killer)
 	end
+	target.IsMarkedForTrueKill = false
 end
 
 function table.count(inputTable)
@@ -1427,4 +1429,8 @@ function CDOTA_BaseNPC_Hero:GetTotalHealthReduction()
 		pct = pct + mod:GetAbility():GetAbilitySpecial("health_decrease_pct")
 	end
 	return pct
+end
+
+function CDOTA_BaseNPC_Hero:ResetAbilityPoints()
+	self:SetAbilityPoints(self:GetLevel() - self:GetAbilityPointsWastedAllOnTalents())
 end

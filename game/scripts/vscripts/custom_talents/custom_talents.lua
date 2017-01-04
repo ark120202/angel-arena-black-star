@@ -1,3 +1,4 @@
+require("custom_talents/data")
 if not CustomTalents then
 	CustomTalents = class({})
 	CustomTalents.ModifierApplier = CreateItem("item_talent_modifier_applier", nil, nil)
@@ -69,6 +70,16 @@ end
 
 function CustomTalents:Talent_GetSpecialValue(name, property)
 	return CUSTOM_TALENTS_DATA[name].special_values[property]
+end
+
+function CDOTA_BaseNPC:GetAbilityPointsWastedAllOnTalents()
+	local value = 0
+	if self.talents then
+		for k,v in pairs(self.talents) do
+			value = value + v.level * CustomTalents:Talent_GetCost(k)
+		end
+	end
+	return value
 end
 
 function CDOTA_BaseNPC:GetTalentLevel(name)

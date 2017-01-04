@@ -7,7 +7,7 @@ function CheckDeath(keys)
 		ability.health_per_reincarnation_pct = ability:GetAbilitySpecial("health_per_reincarnation_pct_scepter")
 	end
 	local pct = caster:GetTotalHealthReduction()
-	if caster:GetHealth() > 1 or caster.is_reincarnating or caster:IsIllusion() or pct + ability.health_per_reincarnation_pct >= 100 then
+	if caster.IsMarkedForTrueKill or caster:GetHealth() > 1 or caster.is_reincarnating or caster:IsIllusion() or pct + ability.health_per_reincarnation_pct >= 100 then
 		caster:RemoveModifierByName("modifier_kadash_immortality_life_saver")
 	else
 		ability:ApplyDataDrivenModifier(caster, caster, "modifier_kadash_immortality_life_saver", {})

@@ -298,7 +298,7 @@
 		"BaseClass"             		"ability_datadriven"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"casino_bitch_passive"
+		"AbilityTextureName"			"arena/casino_bitch_passive"
 
 		"AbilitySpecial"
 		{
@@ -426,7 +426,7 @@
 	"riki_pocket_riki"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"riki_pocket_riki"
+		"AbilityTextureName"			"arena/riki_pocket_riki"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -529,7 +529,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"arthas_rage_of_arthas"
+		"AbilityTextureName"			"arena/arthas_rage_of_arthas"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -698,7 +698,7 @@
 		"LevelsBetweenUpgrades" "11"
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"arthas_plus_morality"
+		"AbilityTextureName"			"arena/arthas_plus_morality"
 		
 		"AbilitySpecial"
 		{
@@ -758,7 +758,7 @@
 		"MaxLevel"				"7"
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK "
-		"AbilityTextureName"			"arthas_vikared"
+		"AbilityTextureName"			"arena/arthas_vikared"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -861,7 +861,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"				"7"
 		"BaseClass"				"ability_datadriven"
-		"AbilityTextureName"			"arthas_vsolyanova"
+		"AbilityTextureName"			"arena/arthas_vsolyanova"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2345,7 +2345,7 @@
 	"boss_armor"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"boss_armor"
+		"AbilityTextureName"			"arena/boss_armor"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -2373,7 +2373,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-				"TextureName"		"boss_armor"
+				"TextureName"		"arena/boss_armor"
 
 				"States"
 				{
@@ -2406,7 +2406,7 @@
 	"stargazer_gamma_ray"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"stargazer_gamma_ray"
+		"AbilityTextureName"			"arena/stargazer_gamma_ray"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange"				"500"
@@ -2469,7 +2469,7 @@
 	"stargazer_warp"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"stargazer_warp"
+		"AbilityTextureName"			"arena/stargazer_warp"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityCooldown"				"32 28 24 20 16 12 10"
 		"AbilityManaCost"				"135 110 85 60 35 10 0"
@@ -2526,7 +2526,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityTextureName"			"stargazer_inverse_field"
+		"AbilityTextureName"			"arena/stargazer_inverse_field"
 		"MaxLevel"						"7"
 		
 		// Special
@@ -2576,7 +2576,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown"				"90 85 80 75 70 65 60"
-		"AbilityTextureName"			"stargazer_cosmic_countdown"
+		"AbilityTextureName"			"arena/stargazer_cosmic_countdown"
 		"MaxLevel"						"7"
 
 		"AbilitySpecial"
@@ -4116,7 +4116,7 @@
 	"crystal_maiden_glacier_tranqulity"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"crystal_maiden_glacier_tranqulity"
+		"AbilityTextureName"			"arena/crystal_maiden_glacier_tranqulity"
 		"MaxLevel" 						"7"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -6176,7 +6176,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
-		"AbilityTextureName"			"faceless_void_time_freeze"
+		"AbilityTextureName"			"arena/faceless_void_time_freeze"
 		"MaxLevel"	"7"
 
 		"precache"
@@ -7115,7 +7115,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityTextureName"			"cherub_sleep_cloud"
+		"AbilityTextureName"			"arena/cherub_sleep_cloud"
 		"MaxLevel" 						"7"
 
 		"AbilityCastPoint"				"0.4"
@@ -7272,7 +7272,7 @@
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityTextureName"			"cherub_synthesis"
+		"AbilityTextureName"			"arena/cherub_synthesis"
 		"MaxLevel" 						"7"
 
 		"AbilitySpecial"
@@ -7399,7 +7399,7 @@
 	"cherub_explosive_spore"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_explosive_spore"
+		"AbilityTextureName"			"arena/cherub_explosive_spore"
 		"MaxLevel" 						"7"
 		"LevelsBetweenUpgrades"			"0"
 
@@ -7551,7 +7551,7 @@
 	"cherub_flower_garden"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_garden"
+		"AbilityTextureName"			"arena/cherub_flower_garden"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -7620,7 +7620,7 @@
 	"cherub_flower_white_rose"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_white_rose"
+		"AbilityTextureName"			"arena/cherub_flower_white_rose"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
@@ -7661,7 +7661,7 @@
 	"cherub_flower_white_rose_enabled"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_white_rose"
+		"AbilityTextureName"			"arena/cherub_flower_white_rose"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -7708,7 +7708,7 @@
 	"cherub_flower_red_rose"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_red_rose"
+		"AbilityTextureName"			"arena/cherub_flower_red_rose"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
@@ -7749,7 +7749,7 @@
 	"cherub_flower_red_rose_enabled"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_red_rose"
+		"AbilityTextureName"			"arena/cherub_flower_red_rose"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -7796,7 +7796,7 @@
 	"cherub_flower_pink_blossom"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_pink_blossom"
+		"AbilityTextureName"			"arena/cherub_flower_pink_blossom"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
@@ -7842,7 +7842,7 @@
 	"cherub_flower_pink_blossom_enabled"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_pink_blossom"
+		"AbilityTextureName"			"arena/cherub_flower_pink_blossom"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -7898,7 +7898,7 @@
 	"cherub_flower_blue_blossom"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_blue_blossom"
+		"AbilityTextureName"			"arena/cherub_flower_blue_blossom"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
@@ -7939,7 +7939,7 @@
 	"cherub_flower_blue_blossom_enabled"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_blue_blossom"
+		"AbilityTextureName"			"arena/cherub_flower_blue_blossom"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -7990,7 +7990,7 @@
 	"cherub_flower_yellow_daisy"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_yellow_daisy"
+		"AbilityTextureName"			"arena/cherub_flower_yellow_daisy"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
@@ -8026,7 +8026,7 @@
 	"cherub_flower_yellow_daisy_enabled"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_yellow_daisy"
+		"AbilityTextureName"			"arena/cherub_flower_yellow_daisy"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -8080,7 +8080,7 @@
 	"cherub_flower_purple_lotus"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_purple_lotus"
+		"AbilityTextureName"			"arena/cherub_flower_purple_lotus"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
@@ -8116,7 +8116,7 @@
 	"cherub_flower_purple_lotus_enabled"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cherub_flower_purple_lotus"
+		"AbilityTextureName"			"arena/cherub_flower_purple_lotus"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -8469,7 +8469,7 @@
 	"omniknight_select_allies"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"omniknight_select_allies"
+		"AbilityTextureName"			"arena/omniknight_select_allies"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -8548,7 +8548,7 @@
 	"omniknight_select_enemies"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"omniknight_select_enemies"
+		"AbilityTextureName"			"arena/omniknight_select_enemies"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -9441,7 +9441,7 @@
 	"queenofblades_army"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"queenofblades_army"
+		"AbilityTextureName"			"arena/queenofblades_army"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"MaxLevel" 						"7"
 		"LevelsBetweenUpgrades"			"4"
@@ -9532,7 +9532,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityTextureName"			"queenofblades_darkness_aura"
+		"AbilityTextureName"			"arena/queenofblades_darkness_aura"
 		"MaxLevel"						"7"
 
 		// Special
@@ -9662,7 +9662,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"queenofblades_harbinger_of_death"
+		"AbilityTextureName"			"arena/queenofblades_harbinger_of_death"
 		"MaxLevel"						"7"
 		"AbilityDamage"					"100 200 300 400 500 600 700"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
@@ -9768,7 +9768,7 @@
 	"queenofblades_alter_ego"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"queenofblades_alter_ego"
+		"AbilityTextureName"			"arena/queenofblades_alter_ego"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"180 160 140 120 100 80 60"
@@ -9860,7 +9860,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"queenofblades_alter_ego_chains"
+		"AbilityTextureName"			"arena/queenofblades_alter_ego_chains"
 
 		"AbilityCastPoint"				"0.65"
 		"AbilityCooldown"				"18"
@@ -9950,7 +9950,7 @@
 	"queenofblades_alter_ego_discharge"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"queenofblades_alter_ego_discharge"
+		"AbilityTextureName"			"arena/queenofblades_alter_ego_discharge"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -10030,7 +10030,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"queenofblades_alter_ego_soul_breaker"
+		"AbilityTextureName"			"arena/queenofblades_alter_ego_soul_breaker"
 		"MaxLevel" 						"7"
 
 		"precache"
@@ -10100,7 +10100,7 @@
 	"kadash_assasins_skills"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"kadash_assasins_skills"
+		"AbilityTextureName"			"arena/kadash_assasins_skills"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel" 						"7"
 		"LevelsBetweenUpgrades" 		"4"
@@ -10195,7 +10195,7 @@
 	"kadash_strike_from_shadows"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"kadash_strike_from_shadows"
+		"AbilityTextureName"			"arena/kadash_strike_from_shadows"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -10347,7 +10347,7 @@
 	"kadash_survival_skills"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"kadash_survival_skills"
+		"AbilityTextureName"			"arena/kadash_survival_skills"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"LevelsBetweenUpgrades" 		"4"
@@ -10400,7 +10400,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"FightRecapLevel"				"2"
-		"AbilityTextureName"			"kadash_immortality"
+		"AbilityTextureName"			"arena/kadash_immortality"
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 		"LevelsBetweenUpgrades" 		"15"
@@ -10565,7 +10565,7 @@
 	"apocalypse_agnis_touch"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"apocalypse_agnis_touch"
+		"AbilityTextureName"			"arena/apocalypse_agnis_touch"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -10705,7 +10705,7 @@
 	"apocalypse_king_slayer"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"apocalypse_king_slayer"
+		"AbilityTextureName"			"arena/apocalypse_king_slayer"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -10793,7 +10793,7 @@
 	"apocalypse_weapon_break"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"apocalypse_weapon_break"
+		"AbilityTextureName"			"arena/apocalypse_weapon_break"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -10866,7 +10866,7 @@
 	"apocalypse_armor_tear"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"apocalypse_armor_tear"
+		"AbilityTextureName"			"arena/apocalypse_armor_tear"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -10949,7 +10949,7 @@
 	"apocalypse_apocalypse"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"apocalypse_apocalypse"
+		"AbilityTextureName"			"arena/apocalypse_apocalypse"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCastPoint"				"0.5"
@@ -11007,7 +11007,7 @@
 	"shinobu_vampire_blood"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"shinobu_vampire_blood"
+		"AbilityTextureName"			"arena/shinobu_vampire_blood"
 		"MaxLevel" 						"5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"HasInnateModifiers"			"1"
@@ -11259,7 +11259,7 @@
 	"shinobu_eat_oddity"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"shinobu_eat_oddity"
+		"AbilityTextureName"			"arena/shinobu_eat_oddity"
 		"MaxLevel" 						"7"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -11316,7 +11316,7 @@
 	"shinobu_kokorowatari"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"shinobu_kokorowatari"
+		"AbilityTextureName"			"arena/shinobu_kokorowatari"
 		"MaxLevel" 						"7"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -11412,7 +11412,7 @@
 	"shinobu_yumewatari_lua"
 	{
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"shinobu_yumewatari_lua"
+		"AbilityTextureName"			"arena/shinobu_yumewatari_lua"
 		"ScriptFile"					"heroes/hero_shinobu/yumewatari.lua"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"10"
@@ -11442,7 +11442,7 @@
 	"shinobu_hide_in_shadows"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"shinobu_hide_in_shadows"
+		"AbilityTextureName"			"arena/shinobu_hide_in_shadows"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -11649,7 +11649,7 @@
 	"zen_gehraz_divine_intervention"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"zen_gehraz_divine_intervention"
+		"AbilityTextureName"			"arena/zen_gehraz_divine_intervention"
 		"LevelsBetweenUpgrades"			"3"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -11778,7 +11778,7 @@
 	"zen_gehraz_mystic_twister"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"zen_gehraz_mystic_twister"
+		"AbilityTextureName"			"arena/zen_gehraz_mystic_twister"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"8"
 		"RequiredLevel"					"3"
@@ -11902,7 +11902,7 @@
 	"zen_gehraz_vow_of_silence"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"zen_gehraz_vow_of_silence"
+		"AbilityTextureName"			"arena/zen_gehraz_vow_of_silence"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -12034,7 +12034,7 @@
 	"zen_gehraz_superposition"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"zen_gehraz_superposition"
+		"AbilityTextureName"			"arena/zen_gehraz_superposition"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -12117,7 +12117,7 @@
 	"stegius_desolus_wave"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"stegius_desolus_wave"
+		"AbilityTextureName"			"arena/stegius_desolus_wave"
 		"MaxLevel" 						"7"
 		"LevelsBetweenUpgrades"			"4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -12234,7 +12234,7 @@
 	"stegius_rage_of_desolus"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"stegius_rage_of_desolus"
+		"AbilityTextureName"			"arena/stegius_rage_of_desolus"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -12308,7 +12308,7 @@
 	{
 		"BaseClass"             		"ability_datadriven"
 		"LevelsBetweenUpgrades" "6"
-		"AbilityTextureName"			"stegius_brightness_of_desolate"
+		"AbilityTextureName"			"arena/stegius_brightness_of_desolate"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -12441,7 +12441,7 @@
 	"stegius_desolating_touch"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"stegius_desolating_touch"
+		"AbilityTextureName"			"arena/stegius_desolating_touch"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -12801,7 +12801,7 @@
 	{
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityTextureName"			"mirratie_smoke_out"
+		"AbilityTextureName"			"arena/mirratie_smoke_out"
 
 		"AbilityCastPoint"				"0.4"
 		"AbilityCastRange"				"500 600 700 800 900 900 900"
@@ -12907,7 +12907,7 @@
 	"mirratie_sixth_sense"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"mirratie_sixth_sense"
+		"AbilityTextureName"			"arena/mirratie_sixth_sense"
 		"MaxLevel" 						"8"
 		"LevelsBetweenUpgrades" 		"5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -12987,7 +12987,7 @@
 	{
 		"MaxLevel"						"7"
 		"BaseClass"						"meepo_earthbind"
-		"AbilityTextureName"			"mirratie_snagshot"
+		"AbilityTextureName"			"arena/mirratie_snagshot"
 		"AbilityCastRange"				"500 750 1000 1250 1500 1750 2000"
 		"AbilityCooldown"				"10"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -13031,7 +13031,7 @@
 	"mirratie_impaling_shot"
 	{
 		"BaseClass"						"ability_lua"
-		"AbilityTextureName"			"mirratie_impaling_shot"
+		"AbilityTextureName"			"arena/mirratie_impaling_shot"
 		"ScriptFile"					"heroes/hero_mirratie/impaling_shot.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -13714,7 +13714,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"freya_strike_the_ice"
+		"AbilityTextureName"			"arena/freya_strike_the_ice"
 		"MaxLevel"						"7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
@@ -13846,7 +13846,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"freya_ice_cage"
+		"AbilityTextureName"			"arena/freya_ice_cage"
 		"MaxLevel"						"7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
@@ -13976,7 +13976,7 @@
 	"freya_pain_reflection"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"freya_pain_reflection"
+		"AbilityTextureName"			"arena/freya_pain_reflection"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -14038,7 +14038,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"freya_frozen_strike"
+		"AbilityTextureName"			"arena/freya_frozen_strike"
 		"MaxLevel"						"7"
 		"AbilityCastPoint"				"0.6"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
@@ -14154,7 +14154,7 @@
 	"zaken_stitching_strikes"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"zaken_stitching_strikes"
+		"AbilityTextureName"			"arena/zaken_stitching_strikes"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -14253,7 +14253,7 @@
 	"zaken_last_chance"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"zaken_last_chance"
+		"AbilityTextureName"			"arena/zaken_last_chance"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityCooldown"				"2.4"
@@ -14399,7 +14399,7 @@
 	"zaken_summon_sailors"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"zaken_summon_sailors"
+		"AbilityTextureName"			"arena/zaken_summon_sailors"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"30"
@@ -14473,7 +14473,7 @@
 	"zaken_sword_control"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"zaken_sword_control"
+		"AbilityTextureName"			"arena/zaken_sword_control"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"

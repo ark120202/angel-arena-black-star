@@ -13,7 +13,7 @@ function modifier_arena_rune_flame:IsPurgable()
 end
 
 function modifier_arena_rune_flame:GetTexture()
-	return "arena_rune_flame"
+	return "arena/arena_rune_flame"
 end
 
 if IsServer() then

@@ -8,8 +8,7 @@ function CheckDeath(keys)
 	local ability = keys.ability
 	if not caster:IsIllusion() then
 		Timers:CreateTimer(0.03, function()
-			--Чтобы ульта вк была в приоритете
-			if caster:GetHealth() <= 1 and not caster.is_reincarnating and ability then
+			if IsValidEntity(caster) and IsValidEntity(ability) and not caster.IsMarkedForTrueKill and caster:GetHealth() <= 1 and not caster.is_reincarnating then
 				ability:ApplyDataDrivenModifier(caster, caster, "modifier_item_aegis_arena_reincarnation", {})
 			end
 		end)

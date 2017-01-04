@@ -1,7 +1,7 @@
 modifier_cherub_flower_garden_tracker = class({})
 
 function modifier_cherub_flower_garden_tracker:GetTexture()
-	return "cherub_flower_garden"
+	return "arena/cherub_flower_garden"
 end
 
 function modifier_cherub_flower_garden_tracker:IsHidden()

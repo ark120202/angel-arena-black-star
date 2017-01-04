@@ -1,7 +1,7 @@
 modifier_cherub_flower_garden_barrier = class({})
 
 function modifier_cherub_flower_garden_barrier:GetTexture()
-	return "cherub_flower_garden"
+	return "arena/cherub_flower_garden"
 end
 
 function modifier_cherub_flower_garden_barrier:IsPurgable()

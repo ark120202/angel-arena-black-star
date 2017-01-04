@@ -17,25 +17,28 @@
 	// 	"ProjectileModel"			"particles/arena/units/heroes/hero_madoka/madoka_base_attack.vpcf"
 	// }
 	
-	// "npc_dota_hero_crystal_maiden"
-	// {
-	// 	"ModelUnitName"			"npc_dota_hero_crystal_maiden"
-	// 	"Ability1"				""
-	// 	"Ability2"				""
-	// 	"Ability3"				""
-	// 	"Ability4"				""
-	// 	"Ability5"				""
-	// 	"Ability6"				""
-	// 	"AttackRate"				"1.3"
-	// 	"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
-	// 	"AttackDamageMin"		"40"
-	// 	"AttackDamageMax"		"50"
-	// 	"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-	// 	"AttackRange"			"150"
-	// 	"ProjectileModel"		""
-	// 	"ModelScale"			"1.1"
-	// 	"Model"					"models/heroes/crystal_maiden/crystal_maiden.vmdl"
-	// }
+	"npc_arena_hero_rem"
+	{
+		"override_hero"			"npc_dota_hero_base"
+		"base_hero"				"npc_dota_hero_crystal_maiden"
+		"Ability1"				""
+		"Ability2"				""
+		"Ability3"				""
+		"Ability4"				""
+		"Ability5"				""
+		"Ability6"				""
+		"AttackRate"			"1.3"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"40"
+		"AttackDamageMax"		"50"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttackRange"			"150"
+		"ProjectileModel"		""
+		"Model"					"models/units/rem_ram/rem.vmdl"
+		"SceneCamera"			"custom_scene_hero_rem"
+		"ModelScale"			"1.5"
+		"HideWearables"			"1"
+	}
 //Arena heroes
 	"npc_arena_hero_arthas"
 	{

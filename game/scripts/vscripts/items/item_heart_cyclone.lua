@@ -38,6 +38,6 @@ function modifier_item_heart_cyclone_active_damage_on_interval_think(keys)
 		damage = target:GetMaxHealth()*keys.damage*0.001,
 		damage_type = DAMAGE_TYPE_PURE,
 		ability = ability,
-		damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY
+		damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
 	})
 end

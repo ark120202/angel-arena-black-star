@@ -11,10 +11,11 @@ TODO LIST:
 		caster:TriggerSpellAbsorb(ability)
 		для всех абилок
 	]]
-	убрать мипо из ромг/ас
 	kadash возраждается на фонтане
-	
-
+	думу и алхимику на новую голду
+	лансер беск иллюзии
+	цм ульт не работает
+	абилки с аганимиом 7 левелов
 Идеи для предметов:
 	Star Blade:
 		Из Fallen Star + Dark Blade + ???
@@ -44,28 +45,35 @@ TODO LIST:
 		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_1932]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://vk.com/wall-122685850_1989]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
 [url=https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f]FULL UPDATE[/url]
 [url=https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f
 ============================================================
 Angel Arena Black Star - Версия 1.3.9:
-Добавлена система талантов
-Иаксимальный уровень повышен до 600
+
 ============================================================
 Angel Arena Black Star - Version 1.3.9:
-Added custom talents system
-Max level is 600 now
+
 ============================================================
-Angel Arena Black Star - Version 1.3.8:
+Angel Arena Black Star - Version 1.3.9:
 General:
-	Added Custom Talents system
-	
-	Changed Default sticky item from Town Portal Scroll to Level Up Shard
+
 Balance:
-	
+	Blade of Discord now is not spell amplifiable
+	Angel Wings:
+		Now not requires glimmer cape, but not gives you invisiblity and magic resistance
+		When active now increases attack range by 325
+		Cooldown: 60 => 22
+		Duration: 6.5 => 7
+	Book of the Keeper:
+		Spell Damge Amplify: 30 => 15 %
 Fixes:
-	
+	Fixed icons disappearing
+	Fixed Lotus Sphere sometimes gave permanent abilities
+	Fixed Rubick - Personality Steal on removing abilities gave you more ability points, than it should've
+	Fixed in Random OMG on respawn heroes recieved all ability points, even if it was wasted on talents
+	Fixed Kadash - Immortality respawned you under enemy fountain
 <<+===========================================================================================================
 
 

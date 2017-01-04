@@ -230,6 +230,6 @@ function AbilityShop:RandomOMGRollAbilities(unit)
 				has_ultimates = has_ultimates + 1
 			end
 		end
-		unit:SetAbilityPoints(unit:GetLevel())
+		unit:ResetAbilityPoints()
 	end
 end

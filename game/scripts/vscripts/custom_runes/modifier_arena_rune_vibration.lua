@@ -1,7 +1,7 @@
 modifier_arena_rune_vibration = class({})
 
 function modifier_arena_rune_vibration:GetTexture()
-	return "arena_rune_vibration"
+	return "arena/arena_rune_vibration"
 end
 
 function modifier_arena_rune_vibration:GetEffectName()

@@ -1,7 +1,7 @@
 modifier_meat_hook_bloodstained_lua = class({})
 
 function modifier_meat_hook_bloodstained_lua:GetTexture()
-	return "modifier_meat_hook_bloodstained_lua"
+	return "arena/modifier_meat_hook_bloodstained_lua"
 end
 
 function modifier_meat_hook_bloodstained_lua:IsPurgable()

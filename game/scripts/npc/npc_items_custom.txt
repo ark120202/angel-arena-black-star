@@ -52,7 +52,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10002"
-		"AbilityTextureName"			"item_slot_locked"
+		"AbilityTextureName"			"arena/slot_locked"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemKillable"            		"0"
 		"ItemPurchasable"				"0"
@@ -66,7 +66,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10003"
-		"AbilityTextureName"			"item_soul_of_titan"
+		"AbilityTextureName"			"arena/soul_of_titan"
 		"ItemPurchasableFilter"			"0"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
@@ -126,7 +126,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10004"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_dark_blade"
+		"AbilityTextureName"			"arena/dark_blade"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -218,7 +218,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10006"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_moon_dust"
+		"AbilityTextureName"			"arena/moon_dust"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -235,7 +235,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10007"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_cursed_eye"
+		"AbilityTextureName"			"arena/cursed_eye"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -280,7 +280,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10008"
-		"AbilityTextureName"			"item_fallen_star"
+		"AbilityTextureName"			"arena/fallen_star"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -385,7 +385,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10009"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_demons_paw"
+		"AbilityTextureName"			"arena/demons_paw"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -427,7 +427,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10010"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_str_small"
+		"AbilityTextureName"			"arena/shard_str_small"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -475,7 +475,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10011"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_str_medium"
+		"AbilityTextureName"			"arena/shard_str_medium"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -523,7 +523,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10012"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_str_large"
+		"AbilityTextureName"			"arena/shard_str_large"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -571,7 +571,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10013"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_str_extreme"
+		"AbilityTextureName"			"arena/shard_str_extreme"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -619,7 +619,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10014"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_agi_small"
+		"AbilityTextureName"			"arena/shard_agi_small"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -667,7 +667,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10015"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_agi_medium"
+		"AbilityTextureName"			"arena/shard_agi_medium"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -715,7 +715,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10016"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_agi_large"
+		"AbilityTextureName"			"arena/shard_agi_large"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -763,7 +763,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10017"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_agi_extreme"
+		"AbilityTextureName"			"arena/shard_agi_extreme"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -811,7 +811,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10018"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_int_small"
+		"AbilityTextureName"			"arena/shard_int_small"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -859,7 +859,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10019"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_int_medium"
+		"AbilityTextureName"			"arena/shard_int_medium"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -907,7 +907,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10020"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_int_large"
+		"AbilityTextureName"			"arena/shard_int_large"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -955,7 +955,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10021"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_int_extreme"
+		"AbilityTextureName"			"arena/shard_int_extreme"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1003,7 +1003,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10022"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_primal_small"
+		"AbilityTextureName"			"arena/shard_primal_small"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1053,7 +1053,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10023"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_primal_medium"
+		"AbilityTextureName"			"arena/shard_primal_medium"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1103,7 +1103,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10024"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_primal_large"
+		"AbilityTextureName"			"arena/shard_primal_large"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1153,7 +1153,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10025"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_level"
+		"AbilityTextureName"			"arena/shard_level"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1188,7 +1188,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10026"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_attackspeed"
+		"AbilityTextureName"			"arena/shard_attackspeed"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1256,7 +1256,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10028"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_ultimate_scepter"
+		"AbilityTextureName"			"arena/shard_ultimate_scepter"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1287,7 +1287,7 @@
 				"IsBuff"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 				"AllowIllusionDuplicate"	"1"
-				"TextureName"		"item_shard_ultimate_scepter"
+				"TextureName"		"arena/shard_ultimate_scepter"
 		
 				"ThinkInterval"  "0.1"
 				"OnIntervalThink"
@@ -1322,7 +1322,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityTextureName"			"item_casino_coin"
+		"AbilityTextureName"			"arena/casino_coin"
 		"AbilityCastPoint"        		"0.6"
 		"AbilityCooldown"				"20.0"
 		"AbilityManaCost"				"100"
@@ -1378,7 +1378,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10030"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_casino_drug_pill1"
+		"AbilityTextureName"			"arena/casino_drug_pill1"
 		"AbilityCastPoint"        		"0.6"
 		"AbilityCastAnimation"			"ACT_DOTA_DISABLED"
 
@@ -1479,7 +1479,7 @@
 				"Duration"			"%duration"
 				"StatusEffectName"	"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone.vpcf"
 				"StatusEffectPriority"	"7"
-				"TextureName"		"item_casino_drug_pill1"
+				"TextureName"		"arena/casino_drug_pill1"
 
 				"Properties"
 				{
@@ -1495,7 +1495,7 @@
 				"IsHidden"			"0"
 				"IsPurgable"		"0"
 				"IsDebuff"			"1"
-				"TextureName"		"item_casino_drug_pill1"
+				"TextureName"		"arena/casino_drug_pill1"
 
 				"ThinkInterval"  "%think_interval"
 				"OnIntervalThink"
@@ -1518,7 +1518,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10031"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_casino_drug_pill2"
+		"AbilityTextureName"			"arena/casino_drug_pill2"
 		"AbilityCastPoint"        		"0.6"
 		"AbilityCastAnimation"			"ACT_DOTA_DISABLED"
 
@@ -1632,7 +1632,7 @@
 				"Duration"			"%duration"
 				"StatusEffectName"	"particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
 				"StatusEffectPriority"	"8"
-				"TextureName"		"item_casino_drug_pill2"
+				"TextureName"		"arena/casino_drug_pill2"
 
 				"Properties"
 				{
@@ -1650,7 +1650,7 @@
 				"IsHidden"			"0"
 				"IsPurgable"		"0"
 				"IsDebuff"			"1"
-				"TextureName"		"item_casino_drug_pill2"
+				"TextureName"		"arena/casino_drug_pill2"
 
 				"ThinkInterval"  "%think_interval"
 				"OnIntervalThink"
@@ -1680,7 +1680,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10032"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_casino_drug_pill3"
+		"AbilityTextureName"			"arena/casino_drug_pill3"
 		"AbilityCastPoint"        		"0.6"
 		"AbilityCastAnimation"			"ACT_DOTA_DISABLED"
 
@@ -1804,7 +1804,7 @@
 				"Duration"			"%duration"
 				"StatusEffectName"	"particles/econ/items/effigies/status_fx_effigies/status_effect_statue_compendium_2014_dire.vpcf"
 				"StatusEffectPriority"	"9"
-				"TextureName"		"item_casino_drug_pill3"
+				"TextureName"		"arena/casino_drug_pill3"
 
 				"Properties"
 				{
@@ -1824,7 +1824,7 @@
 				"IsHidden"			"0"
 				"IsPurgable"		"0"
 				"IsDebuff"			"1"
-				"TextureName"		"item_casino_drug_pill3"
+				"TextureName"		"arena/casino_drug_pill3"
 
 				"ThinkInterval"  "%think_interval"
 				"OnIntervalThink"
@@ -3054,7 +3054,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10049"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "item_three_spirits_blades"
+		"AbilityTextureName"            "arena/three_spirits_blades"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3287,7 +3287,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10051"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_splitshot_str"
+		"AbilityTextureName"			"arena/splitshot_str"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3504,7 +3504,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10053"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_splitshot_agi"
+		"AbilityTextureName"			"arena/splitshot_agi"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3711,7 +3711,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10055"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_splitshot_int"
+		"AbilityTextureName"			"arena/splitshot_int"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3880,7 +3880,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10057"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_splitshot_ultimate"
+		"AbilityTextureName"			"arena/splitshot_ultimate"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4184,7 +4184,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
-		"AbilityTextureName"			"item_lucifers_claw"
+		"AbilityTextureName"			"arena/lucifers_claw"
 
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.0"
@@ -4341,7 +4341,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10060"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_pocket_riki"
+		"AbilityTextureName"			"arena/pocket_riki"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 
 		"ItemPurchasable"				"0"
@@ -4512,7 +4512,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10061"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_pocket_riki"
+		"AbilityTextureName"			"arena/pocket_riki"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		
 		// Item Info
@@ -4717,7 +4717,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"Model"							"models/props_gameplay/cheese.mdl"
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"			"item_homemade_cheese"
+		"AbilityTextureName"			"arena/homemade_cheese"
 		"FightRecapLevel"				"2"
 		
 		// Stats		
@@ -4789,7 +4789,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10064"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_metamorphosis_elixir"
+		"AbilityTextureName"			"arena/metamorphosis_elixir"
 		"AbilityCastPoint"        		"0.9"
 		
 		// Item Info
@@ -4849,7 +4849,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_heart_cyclone"
+		"AbilityTextureName"			"arena/heart_cyclone"
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -5152,7 +5152,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10068"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_desolating_skadi"
+		"AbilityTextureName"			"arena/desolating_skadi"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5298,7 +5298,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10070"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_edge_of_vyse"
+		"AbilityTextureName"			"arena/edge_of_vyse"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -5567,7 +5567,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/items/meepo/diggers_divining_rod/diggers_divining_rod_gem_saphire.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_gem.vpcf"
-		"AbilityTextureName"			"item_gem_of_clear_mind"
+		"AbilityTextureName"			"arena/gem_of_clear_mind"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5657,7 +5657,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/items/meepo/diggers_divining_rod/diggers_divining_rod_gem_saphire.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_gem.vpcf"
-		"AbilityTextureName"			"item_gem_of_pure_soul"
+		"AbilityTextureName"			"arena/gem_of_pure_soul"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5771,7 +5771,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilityTextureName"			"item_auto_sheepstick"
+		"AbilityTextureName"			"arena/auto_sheepstick"
 		"FightRecapLevel"				"2"
 
 		// Stats
@@ -5911,7 +5911,7 @@
 	// "item_tree_banana"
 	// {
 	// 	"BaseClass"             		"item_datadriven"
-	// 	"AbilityTextureName"			"item_banana"
+	// 	"AbilityTextureName"			"arena/banana"
 	// 	// General
 	// 	//-------------------------------------------------------------------------------------------------------------
 	// 	"ID"							"10077"
@@ -5966,7 +5966,7 @@
 //	"item_tree_grapefruit"
 //	{
 //		"BaseClass"             		"item_datadriven"
-//		"AbilityTextureName"			"item_tree_grapefruit"
+//		"AbilityTextureName"			"arena/tree_grapefruit"
 //		// General
 //		//-------------------------------------------------------------------------------------------------------------
 //		"ID"							"10050"								// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
@@ -6097,7 +6097,7 @@
 		"ID"							"10079"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/aegis.vmdl"
-		"AbilityTextureName"			"item_aegis_arena"
+		"AbilityTextureName"			"arena/aegis_arena"
 		"FightRecapLevel"				"2"
 
 		"ItemQuality"					"artifact"
@@ -6268,7 +6268,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10081"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_refresher_arena"
+		"AbilityTextureName"			"arena/refresher_arena"
 		"AbilitySharedCooldown"			"item_refresher"
 		
 		// Stats		
@@ -6373,7 +6373,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10083"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityTextureName"			"item_manta_arena"
+		"AbilityTextureName"			"arena/manta_arena"
 		"AbilitySharedCooldown"			"manta"
 		
 		// Stats		
@@ -6691,7 +6691,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10089"
-		"AbilityTextureName"			"item_diffusal_blade_arena"
+		"AbilityTextureName"			"arena/diffusal_blade_arena"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -6845,7 +6845,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10090"
-		"AbilityTextureName"			"item_diffusal_blade_arena_2"
+		"AbilityTextureName"			"arena/diffusal_blade_arena_2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -6999,7 +6999,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10091"
-		"AbilityTextureName"			"item_diffusal_blade_arena_3"
+		"AbilityTextureName"			"arena/diffusal_blade_arena_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -7153,7 +7153,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10092"
-		"AbilityTextureName"			"item_diffusal_blade_arena_4"
+		"AbilityTextureName"			"arena/diffusal_blade_arena_4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -7307,7 +7307,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10093"
-		"AbilityTextureName"			"item_diffusal_blade_arena_5"
+		"AbilityTextureName"			"arena/diffusal_blade_arena_5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -7486,7 +7486,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10095"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_steam_footgear"
+		"AbilityTextureName"			"arena/steam_footgear"
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -7624,7 +7624,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10097"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_eye_of_the_prophet"
+		"AbilityTextureName"			"arena/eye_of_the_prophet"
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -7699,7 +7699,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10099"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_ray_of_fate"
+		"AbilityTextureName"			"arena/ray_of_fate"
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -7747,7 +7747,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10100"
-		"AbilityTextureName"			"item_titanium_fruit"
+		"AbilityTextureName"			"arena/titanium_fruit"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCooldown"				"300"
 		"ItemStockTime"					"300"
@@ -7789,7 +7789,7 @@
 				"Passive"			"0"
 				"IsHidden"			"0"
 				"IsBuff"			"1"
-				"TextureName"		"item_titanium_fruit"
+				"TextureName"		"arena/titanium_fruit"
 
 				"OnCreated"
 				{
@@ -7846,7 +7846,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10102"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityTextureName"			"item_diffusal_style"
+		"AbilityTextureName"			"arena/diffusal_style"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilitySharedCooldown"			"diffusal;manta"
 		
@@ -8162,7 +8162,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_blink_staff"
+		"AbilityTextureName"			"arena/blink_staff"
 		"FightRecapLevel"				"1"
 
 		"AbilityCastPoint"				"0.0"
@@ -8644,7 +8644,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_dagon_arena"
+		"AbilityTextureName"			"arena/dagon_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -8736,7 +8736,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_dagon_2_arena"
+		"AbilityTextureName"			"arena/dagon_2_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -8828,7 +8828,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_dagon_3_arena"
+		"AbilityTextureName"			"arena/dagon_3_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -8920,7 +8920,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_dagon_4_arena"
+		"AbilityTextureName"			"arena/dagon_4_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -9012,7 +9012,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_dagon_5_arena"
+		"AbilityTextureName"			"arena/dagon_5_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -9101,7 +9101,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_enchanted_dagon_arena"
+		"AbilityTextureName"			"arena/enchanted_dagon_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -9199,7 +9199,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_enchanted_dagon_2_arena"
+		"AbilityTextureName"			"arena/enchanted_dagon_2_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -9297,7 +9297,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_enchanted_dagon_3_arena"
+		"AbilityTextureName"			"arena/enchanted_dagon_3_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -9395,7 +9395,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_enchanted_dagon_4_arena"
+		"AbilityTextureName"			"arena/enchanted_dagon_4_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -9493,7 +9493,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_enchanted_dagon_5_arena"
+		"AbilityTextureName"			"arena/enchanted_dagon_5_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -9588,7 +9588,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_sunray_dagon_arena"
+		"AbilityTextureName"			"arena/sunray_dagon_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -9712,7 +9712,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_sunray_dagon_2_arena"
+		"AbilityTextureName"			"arena/sunray_dagon_2_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -9836,7 +9836,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_sunray_dagon_3_arena"
+		"AbilityTextureName"			"arena/sunray_dagon_3_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -9960,7 +9960,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_sunray_dagon_4_arena"
+		"AbilityTextureName"			"arena/sunray_dagon_4_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -10084,7 +10084,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_sunray_dagon_5_arena"
+		"AbilityTextureName"			"arena/sunray_dagon_5_arena"
 		"FightRecapLevel"				"1"
 		
 		// Stats		
@@ -10228,7 +10228,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityTextureName"			"item_hand_of_midas_arena"
+		"AbilityTextureName"			"arena/hand_of_midas_arena"
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -10323,7 +10323,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10138"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_skull_of_midas"
+		"AbilityTextureName"			"arena/skull_of_midas"
 
 		"ItemQuality"					"common"
 		"ItemAliases"					"skull of midas"
@@ -10410,7 +10410,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10140"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_chest_of_midas"
+		"AbilityTextureName"			"arena/chest_of_midas"
 
 		"ItemQuality"					"common"
 		"ItemAliases"					"chest of midas"
@@ -10496,7 +10496,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10142"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_blood_of_midas"
+		"AbilityTextureName"			"arena/blood_of_midas"
 
 		"ItemQuality"					"common"
 		"ItemAliases"					"blood of midas"
@@ -10564,7 +10564,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10144"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_rune_keeper"
+		"AbilityTextureName"			"arena/rune_keeper"
 
 		"ItemQuality"					"common"
 		"ItemAliases"					"rune keeper"
@@ -10662,7 +10662,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10146"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityTextureName"			"item_bloodstone_arena"
+		"AbilityTextureName"			"arena/bloodstone_arena"
 		"FightRecapLevel"				"2"
 		
 		// Stats		
@@ -10936,7 +10936,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityTextureName"			"item_hand_of_midas_2_arena"
+		"AbilityTextureName"			"arena/hand_of_midas_2_arena"
 		"AbilitySharedCooldown"			"midas"
 		
 		// Stats		
@@ -11034,7 +11034,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityTextureName"			"item_hand_of_midas_3_arena"
+		"AbilityTextureName"			"arena/hand_of_midas_3_arena"
 		"AbilitySharedCooldown"			"midas"
 		
 		// Stats		
@@ -11105,7 +11105,7 @@
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10151"
 		"ItemCost"						"5000"
-		"AbilityTextureName"			"item_team_changer"
+		"AbilityTextureName"			"arena/team_changer"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityCastPoint"				"0.25"
@@ -11310,7 +11310,7 @@
 		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10159"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_radiance_arena"
+		"AbilityTextureName"			"arena/radiance_arena"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -11365,7 +11365,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10160"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_radiance_arena_inactive"
+		"AbilityTextureName"			"arena/radiance_arena_inactive"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -11446,7 +11446,7 @@
 		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10161"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_radiance_2"
+		"AbilityTextureName"			"arena/radiance_2"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -11501,7 +11501,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10162"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_radiance_2_inactive"
+		"AbilityTextureName"			"arena/radiance_2_inactive"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -11582,7 +11582,7 @@
 		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10163"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_radiance_3"
+		"AbilityTextureName"			"arena/radiance_3"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -11636,7 +11636,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10164"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_radiance_3_inactive"
+		"AbilityTextureName"			"arena/radiance_3_inactive"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -11717,7 +11717,7 @@
 		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10165"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_radiance_frozen"
+		"AbilityTextureName"			"arena/radiance_frozen"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -11789,7 +11789,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10166"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_radiance_frozen_inactive"
+		"AbilityTextureName"			"arena/radiance_frozen_inactive"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -12014,7 +12014,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10171"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_skadi_arena"
+		"AbilityTextureName"			"arena/skadi_arena"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -12122,7 +12122,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10172"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_skadi_2"
+		"AbilityTextureName"			"arena/skadi_2"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -12230,7 +12230,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10173"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_skadi_4"
+		"AbilityTextureName"			"arena/skadi_4"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -12338,7 +12338,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10174"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_skadi_8"
+		"AbilityTextureName"			"arena/skadi_8"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -12447,7 +12447,7 @@
 		"ID"							"10175"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilityTextureName"			"item_sacrificial_dagger"
+		"AbilityTextureName"			"arena/sacrificial_dagger"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasableFilter"			"0"
 
@@ -12491,7 +12491,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10176"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_consecrated_sword"
+		"AbilityTextureName"			"arena/consecrated_sword"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasableFilter"			"0"
 
@@ -12664,7 +12664,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10183"
-		"AbilityTextureName"			"item_essential_orb_fire_1"
+		"AbilityTextureName"			"arena/essential_orb_fire_1"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -12784,7 +12784,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10184"
-		"AbilityTextureName"			"item_essential_orb_fire_2"
+		"AbilityTextureName"			"arena/essential_orb_fire_2"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -12904,7 +12904,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10185"
-		"AbilityTextureName"			"item_essential_orb_fire_3"
+		"AbilityTextureName"			"arena/essential_orb_fire_3"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -13024,7 +13024,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10186"
-		"AbilityTextureName"			"item_essential_orb_fire_4"
+		"AbilityTextureName"			"arena/essential_orb_fire_4"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -13144,7 +13144,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10187"
-		"AbilityTextureName"			"item_essential_orb_fire_5"
+		"AbilityTextureName"			"arena/essential_orb_fire_5"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -13264,7 +13264,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10188"
-		"AbilityTextureName"			"item_essential_orb_fire_6"
+		"AbilityTextureName"			"arena/essential_orb_fire_6"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -13410,7 +13410,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10190"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_octarine_core_arena"
+		"AbilityTextureName"			"arena/octarine_core_arena"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -13550,7 +13550,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10192"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_refresher_core"
+		"AbilityTextureName"			"arena/refresher_core"
 		"AbilitySharedCooldown"			"item_refresher"
 
 		// Item Info
@@ -13830,7 +13830,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10199"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_black_king_bar_arena"
+		"AbilityTextureName"			"arena/black_king_bar_arena"
 		"FightRecapLevel"				"2"
 		
 		// Stats		
@@ -13870,14 +13870,9 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"percentage_over_model_scale"	"15 20 25 30 35 40"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
 				"active_bonus_strength"			"15 20 25 30 35 40"
 			}
-			"06"
+			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"active_bonus_attackspeed"		"40 60 80 100 120 140"
@@ -13930,23 +13925,6 @@
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
 				"EffectAttachType"      	"PATTACH_ABSORIGIN"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"IncreaseScale"
-						"PercentageOverModelScale"		"%percentage_over_model_scale"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"DecreaseScale"
-					}
-				}
 				
 				"Properties"
 				{
@@ -13969,7 +13947,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10200"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_black_king_bar_2"
+		"AbilityTextureName"			"arena/black_king_bar_2"
 		"FightRecapLevel"				"2"
 		
 		// Stats		
@@ -14009,14 +13987,9 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"percentage_over_model_scale"	"15 20 25 30 35 40"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
 				"active_bonus_strength"			"15 20 25 30 35 40"
 			}
-			"06"
+			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"active_bonus_attackspeed"		"40 60 80 100 120 140"
@@ -14069,23 +14042,6 @@
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
 				"EffectAttachType"      	"PATTACH_ABSORIGIN"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"IncreaseScale"
-						"PercentageOverModelScale"		"%percentage_over_model_scale"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"DecreaseScale"
-					}
-				}
 				
 				"Properties"
 				{
@@ -14108,7 +14064,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10201"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_black_king_bar_3"
+		"AbilityTextureName"			"arena/black_king_bar_3"
 		"FightRecapLevel"				"2"
 		
 		// Stats		
@@ -14148,14 +14104,9 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"percentage_over_model_scale"	"15 20 25 30 35 40"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
 				"active_bonus_strength"			"15 20 25 30 35 40"
 			}
-			"06"
+			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"active_bonus_attackspeed"		"40 60 80 100 120 140"
@@ -14208,23 +14159,6 @@
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
 				"EffectAttachType"      	"PATTACH_ABSORIGIN"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"IncreaseScale"
-						"PercentageOverModelScale"		"%percentage_over_model_scale"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"DecreaseScale"
-					}
-				}
 				
 				"Properties"
 				{
@@ -14247,7 +14181,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10202"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_black_king_bar_4"
+		"AbilityTextureName"			"arena/black_king_bar_4"
 		"FightRecapLevel"				"2"
 		
 		// Stats		
@@ -14287,14 +14221,9 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"percentage_over_model_scale"	"15 20 25 30 35 40"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
 				"active_bonus_strength"			"15 20 25 30 35 40"
 			}
-			"06"
+			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"active_bonus_attackspeed"		"40 60 80 100 120 140"
@@ -14347,23 +14276,6 @@
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
 				"EffectAttachType"      	"PATTACH_ABSORIGIN"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"IncreaseScale"
-						"PercentageOverModelScale"		"%percentage_over_model_scale"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"DecreaseScale"
-					}
-				}
 				
 				"Properties"
 				{
@@ -14386,7 +14298,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10203"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_black_king_bar_5"
+		"AbilityTextureName"			"arena/black_king_bar_5"
 		"FightRecapLevel"				"2"
 		
 		// Stats		
@@ -14426,14 +14338,9 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"percentage_over_model_scale"	"15 20 25 30 35 40"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
 				"active_bonus_strength"			"15 20 25 30 35 40"
 			}
-			"06"
+			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"active_bonus_attackspeed"		"40 60 80 100 120 140"
@@ -14486,23 +14393,6 @@
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
 				"EffectAttachType"      	"PATTACH_ABSORIGIN"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"IncreaseScale"
-						"PercentageOverModelScale"		"%percentage_over_model_scale"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"DecreaseScale"
-					}
-				}
 				
 				"Properties"
 				{
@@ -14525,7 +14415,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10204"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_black_king_bar_6"
+		"AbilityTextureName"			"arena/black_king_bar_6"
 		"FightRecapLevel"				"2"
 		
 		// Stats		
@@ -14565,14 +14455,9 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"percentage_over_model_scale"	"15 20 25 30 35 40"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
 				"active_bonus_strength"			"15 20 25 30 35 40"
 			}
-			"06"
+			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"active_bonus_attackspeed"		"40 60 80 100 120 140"
@@ -14625,23 +14510,6 @@
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
 				"EffectAttachType"      	"PATTACH_ABSORIGIN"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"IncreaseScale"
-						"PercentageOverModelScale"		"%percentage_over_model_scale"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/items_black_king_bar.lua"
-						"Function"						"DecreaseScale"
-					}
-				}
 				
 				"Properties"
 				{
@@ -14686,7 +14554,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10206"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_titanium_bar"
+		"AbilityTextureName"			"arena/titanium_bar"
 		"FightRecapLevel"				"2"
 		
 		// Stats		
@@ -14733,14 +14601,9 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"percentage_over_model_scale"	"50"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_INTEGER"
 				"active_bonus_strength"			"50"
 			}
-			"08"
+			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"active_bonus_attackspeed"		"150"
@@ -14795,23 +14658,6 @@
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/arena/items_fx/titanium_bar.vpcf"
 				"EffectAttachType"      	"PATTACH_ABSORIGIN"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/item_titanium_bar.lua"
-						"Function"						"IncreaseScale"
-						"PercentageOverModelScale"		"%percentage_over_model_scale"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/item_titanium_bar.lua"
-						"Function"						"DecreaseScale"
-					}
-				}
 				
 				"Properties"
 				{
@@ -14857,7 +14703,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10208"
-		"AbilityTextureName"			"item_vermillion_robe"
+		"AbilityTextureName"			"arena/vermillion_robe"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -15005,7 +14851,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10210"
-		"AbilityTextureName"			"item_dark_flow"
+		"AbilityTextureName"			"arena/dark_flow"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -15109,7 +14955,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10212"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_echo_sabre_arena"
+		"AbilityTextureName"			"arena/echo_sabre_arena"
 
 		"AbilityCooldown"				"4.0 2.5"
 		"ItemQuality"					"rare"
@@ -15236,7 +15082,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10214"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_echo_sabre_2"
+		"AbilityTextureName"			"arena/echo_sabre_2"
 
 		"AbilityCooldown"				"4.0 2.5"
 		"ItemQuality"					"rare"
@@ -15347,7 +15193,7 @@
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10215"
 		"ItemCost"						"500"
-		"AbilityTextureName"			"item_coffee_bean"
+		"AbilityTextureName"			"arena/coffee_bean"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		
 		"ItemStackable"					"1"
@@ -15389,7 +15235,7 @@
 			"modifier_item_coffee_bean"
 			{
 				"IsPurgable"		"0"
-				"TextureName"		"item_coffee_bean"
+				"TextureName"		"arena/coffee_bean"
 				"EffectName"        "particles/units/heroes/hero_doom_bringer/doom_bringer_scorched_earth_buff.vpcf"
 				"EffectAttachType"  "follow_origin"
 				"Duration"			"%duration"
@@ -15437,7 +15283,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityTextureName"			"item_urn_of_souls"
+		"AbilityTextureName"			"arena/urn_of_souls"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -15645,7 +15491,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityTextureName"			"item_demon_king_bar"
+		"AbilityTextureName"			"arena/demon_king_bar"
 
 		"AbilityCooldown"				"180"
 		"AbilityManaCost"				"400"
@@ -15970,7 +15816,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10223"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_horn_of_the_underworld"
+		"AbilityTextureName"			"arena/horn_of_the_underworld"
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -16721,7 +16567,7 @@
 		"ID"							"10233"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
-		"AbilityTextureName"            "item_desolator6"
+		"AbilityTextureName"            "arena/desolator6"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -16954,7 +16800,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10235"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_thunder_musket"
+		"AbilityTextureName"			"arena/thunder_musket"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCooldown"				"6"
@@ -17170,7 +17016,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10237"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_golden_eagle_relic"
+		"AbilityTextureName"			"arena/golden_eagle_relic"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		
 		"AbilitySpecial"
@@ -17302,7 +17148,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10238"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_golden_eagle_relic"
+		"AbilityTextureName"			"arena/golden_eagle_relic"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
@@ -17493,7 +17339,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10240"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_butterfly_of_sins"
+		"AbilityTextureName"			"arena/butterfly_of_sins"
 
 		"AbilityCooldown"				"30"
 		
@@ -17685,7 +17531,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10242"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_rapier_of_pain"
+		"AbilityTextureName"			"arena/rapier_of_pain"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityCooldown"				"25"
 		
@@ -17966,7 +17812,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10244"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_heavy_war_axe_of_rage_damage"
+		"AbilityTextureName"			"arena/heavy_war_axe_of_rage_damage"
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -18088,7 +17934,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10245"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_heavy_war_axe_of_rage_health"
+		"AbilityTextureName"			"arena/heavy_war_axe_of_rage_health"
 		"ItemPurchasable"				"0"
 		
 		// Stats		
@@ -18243,7 +18089,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10247"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_holy_knight_shield"
+		"AbilityTextureName"			"arena/holy_knight_shield"
 		"AbilityCooldown"				"6"
 		
 		// Item Info
@@ -18356,7 +18202,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10249"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_book_of_the_keeper"
+		"AbilityTextureName"			"arena/book_of_the_keeper"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -18391,7 +18237,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"				"30"
+				"spell_amp_pct"			"15"
 			}
 		}
 		
@@ -18433,7 +18279,7 @@
 		"ItemResult"					"item_angel_wings"
 		"ItemRequirements"
 		{
-			"01"						"item_steam_footgear;item_aether_lens;item_glimmer_cape;item_ultimate_orb"
+			"01"						"item_steam_footgear;item_aether_lens;item_ultimate_orb"
 		}
 	}
 
@@ -18444,7 +18290,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10251"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_angel_wings"
+		"AbilityTextureName"			"arena/angel_wings"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -18453,7 +18299,7 @@
 		"ItemAliases"					"boots;angel wings"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityManaCost"				"240"
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"22"
 		
 		"AbilitySpecial"
 		{
@@ -18490,32 +18336,22 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_magical_armor"		"20"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"cast_range_bonus"			"300"
 			} //Handled with base modifier
-			"09"
+			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"spell_amp_pct"				"15"
 			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"7"
+			}
 			"10"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"6.5"
-			}
-			"11"
-			{
 				"var_type"					"FIELD_INTEGER"
-				"active_magical_armor"		"45"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_delay"				"0.35"
+				"bonus_attack_range"		"325"
 			}
 		}
 		
@@ -18595,158 +18431,15 @@
 				"EffectName"		"particles/items3_fx/glimmer_cape_initial.vpcf"
 				"EffectAttachType"	"follow_origin"
 
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_item_angel_wings_fade"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_item_angel_wings_fade"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_item_angel_wings_invis"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-				}
-
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%active_magical_armor"
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_attack_range"
 				}
 				
 				"States"
 				{
-					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING"								"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_UNIT_COLLISION"					"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-
-			"modifier_item_angel_wings_invis"
-			{
-				"IsPurgable"		"0"
-				"IsHidden"			"1"
-
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_item_angel_wings_fade"
-						"Target"
-						{
-							"Center"	"ATTACKER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_item_angel_wings_invis"
-						"Target"
-						{
-							"Center"	"ATTACKER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-				}
-
-				"OnAbilityExecuted"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_item_angel_wings_fade"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_item_angel_wings_invis"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-				}
-			}
-
-			"modifier_item_angel_wings_fade"
-			{
-				"IsPurgable"		"0"
-				"Duration"			"%fade_delay"
-
-				"OnDestroy"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_item_angel_wings_invis"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_item_angel_wings_fade"
-						"Target"
-						{
-							"Center"	"ATTACKER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
 				}
 			}
 		}
@@ -18758,7 +18451,7 @@
 	// 	//-------------------------------------------------------------------------------------------------------------
 	// 	"BaseClass"						"item_lua"
 	// 	"ID"							"10198"
-	// 	"AbilityTextureName"			"item_soul_gem"
+	// 	"AbilityTextureName"			"arena/soul_gem"
 	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	// 	"ScriptFile"					"items/soul_gems/item_soul_gem"
 	// 	"ItemPurchasable"				"0"
@@ -18771,7 +18464,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10252"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_radio_car"
+		"AbilityTextureName"			"arena/radio_car"
 		"ItemPurchasable"				"0"
 
 		"OnSpellStart"
@@ -18833,7 +18526,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10254"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
-		"AbilityTextureName"			"item_blade_of_discord"
+		"AbilityTextureName"			"arena/blade_of_discord"
 		"AbilitySharedCooldown"			"ethereal"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -19145,7 +18838,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10257"
-		"AbilityTextureName"			"item_piercing_blade"
+		"AbilityTextureName"			"arena/piercing_blade"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -19205,7 +18898,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10259"
-		"AbilityTextureName"			"item_haganemushi"
+		"AbilityTextureName"			"arena/haganemushi"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -19450,7 +19143,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"ID"							"10261"
-		"AbilityTextureName"			"item_fallhammer"
+		"AbilityTextureName"			"arena/fallhammer"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -19859,7 +19552,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10265"
-		"AbilityTextureName"			"item_summoned_unit"
+		"AbilityTextureName"			"arena/summoned_unit"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
@@ -19972,7 +19665,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10267"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_phantom_cuirass"
+		"AbilityTextureName"			"arena/phantom_cuirass"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -20109,7 +19802,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10269"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_demonic_cuirass"
+		"AbilityTextureName"			"arena/demonic_cuirass"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -20422,7 +20115,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10271"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_awakened_cursed_eye"
+		"AbilityTextureName"			"arena/awakened_cursed_eye"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -20582,7 +20275,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10273"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_shard_of_true_sight"
+		"AbilityTextureName"			"arena/shard_of_true_sight"
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -20620,7 +20313,7 @@
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
 				"AllowIllusionDuplicate"	"1"
-				"TextureName"		"item_shard_of_true_sight"
+				"TextureName"		"arena/shard_of_true_sight"
 
 				"Aura"          	"modifier_truesight_reveal"
 				"Aura_Radius"   	"%radius"
@@ -20673,7 +20366,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityTextureName"			"item_urn_of_demons"
+		"AbilityTextureName"			"arena/urn_of_demons"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		
 		// Stats
@@ -20868,7 +20561,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10277"
-		"AbilityTextureName"			"item_lotus_sphere"
+		"AbilityTextureName"			"arena/lotus_sphere"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilityCastRange"				"1000"
@@ -20986,7 +20679,7 @@
 		"BaseClass"						"item_lua"
 		"ID"							"10278"
 		"ScriptFile"					"items/lua/item_bottle_arena.lua"
-		"AbilityTextureName"			"item_bottle_3"
+		"AbilityTextureName"			"arena/bottle_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"Model"							"models/props_gameplay/bottle_blue.vmdl"
 
@@ -21035,7 +20728,7 @@
 	"item_god_transform_freya"
 	{
 		"BaseClass"             		"item_datadriven"
-		"AbilityTextureName"			"item_god_transform_freya"
+		"AbilityTextureName"			"arena/god_transform_freya"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityChannelTime"			"4"
 		"ItemPurchasableFilter"			"0"
@@ -21064,7 +20757,7 @@
 	"item_god_transform_zaken"
 	{
 		"BaseClass"             		"item_datadriven"
-		"AbilityTextureName"			"item_god_transform_zaken"
+		"AbilityTextureName"			"arena/god_transform_zaken"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityChannelTime"			"4"
 		"ItemPurchasableFilter"			"0"

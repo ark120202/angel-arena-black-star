@@ -42,7 +42,6 @@ local requirements = {
 	"data/abilities",
 	"data/ability_functions",
 	"data/ability_shop",
-	"data/custom_talents",
 	--------------------------------------------------
 	"internal/gamemode",
 	"internal/events",
@@ -237,68 +236,6 @@ function GameMode:InitGameMode()
 		courier_owner10 = -1,
 	}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 	PlayerTables:CreateTable("player_hero_entities", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
-	--[[Containers:CreateContainer({
-		layout             = {24},
-		range              = -1,
-		closeOnOrder       = false,
-		pids               = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23},
-		OnDragFrom         = function(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			Containers:print('Containers:OnDragFrom', playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			print(item:GetName(), "from")
-			local canChange = Containers.itemKV[item:GetAbilityName()].ItemCanChangeContainer
-			if toContainer._OnDragTo == false or canChange == 0 or playerID + 1 ~= fromSlot then return end
-			local fun = nil
-			if type(toContainer._OnDragTo) == "function" then
-				fun = toContainer._OnDragTo
-			end
-			if fun then
-				fun(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			else
-				Containers:OnDragTo(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			end
-			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "spellcrafting_update_slot_cad", {id = -1})
-		end,
-		OnDragTo           = function(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			Containers:print('Containers:OnDragTo', playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			if  playerID + 1 ~= toSlot then
-				return false
-			end 
-			local item2 = toContainer:GetItemInSlot(toSlot)
-			local addItem = nil
-			if item2 and IsValidEntity(item2) and (item2:GetAbilityName() ~= item:GetAbilityName() or not item2:IsStackable() or not item:IsStackable()) then
-				if Containers.itemKV[item2:GetAbilityName()].ItemCanChangeContainer == 0 then
-					return false
-				end
-				toContainer:RemoveItem(item2)
-				addItem = item2
-			end
-			if toContainer:AddItem(item, toSlot) then
-				container:ClearSlot(fromSlot)
-				if addItem then
-					if container:AddItem(addItem, fromSlot) then
-						CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "spellcrafting_update_slot_cad", {id = item:GetEntityIndex()})
-						return true
-					else
-						toContainer:RemoveItem(item)
-						toContainer:AddItem(item2, toSlot, nil, true)
-						container:AddItem(item, fromSlot, nil, true)
-						return false
-					end
-				end
-				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "spellcrafting_update_slot_cad", {id = item:GetEntityIndex()})
-				return true
-			elseif addItem then
-				toContainer:AddItem(item2, toSlot, nil, true)
-			end
-			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "spellcrafting_update_slot_cad", {id = item:GetEntityIndex()})
-			return false
-		end,
-		OnLeftClick        = false,
-		OnRightClick       = false,
-		AddItemFilter      = function(container, item, slot)
-			return item:GetAbilityName() == "item_cad"
-		end,
-    })]]
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
 	HeroSelection:PrepareTables()
