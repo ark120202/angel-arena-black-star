@@ -3,15 +3,24 @@
 Нерф крипов
 
 
-"shinobu_yumewatari_lua"
-"LevelsBetweenUpgrades"			"7" => 10
+Shinobu Yumewatari
+LevelsBetweenUpgrades: 7 => 10
 
-"medusa_split_shot_arena"
-"RequiredLevel"				 1 =>	"3"
+Medusa Split Shot
+RequiredLevel: 1 => 3
 
-"medusa_mana_shield_arena"
-"LevelsBetweenUpgrades"		 1 =>	"4"
+Medusa_mana Shield
+LevelsBetweenUpgrades: 1 => 4
 
-"freya_pain_reflection"
-"damage_return_pct"	"70 90 110 120 130 140 150" => 20
+Freya_pain_reflection
+damage_return_pct: 70 90 110 120 130 140 150 => 20
 
+BOSS_DAMAGE_ABILITY_MODIFIERS
+abyssal_underlord_firestorm: 40 => 20
+
+item_gem
+ItemStockTime: 600.0 => 300
+ItemStockMax: 1 => 3
+
+Shinobu Yumewatari: cost =1 => cost = 9
+Arthas Plus Morality: cost =1 => cost = 6

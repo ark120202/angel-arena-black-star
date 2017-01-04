@@ -34,7 +34,7 @@ ABILITY_SHOP_DATA = {
 
 	["tinker_rearm_arena"] = { cost = 16, },
 	["ogre_magi_multicast_arena"] = { cost = 10, },
-	["alchemist_goblins_greed"] = { cost = 4, },
+	["alchemist_goblins_greed"] = { cost = 6, },
 	["kunkka_tidebringer"] = { cost = 3, },
 	["earthshaker_enchant_totem"] = { cost = 2, },
 	["medusa_split_shot_arena"] = { cost = 3, },
@@ -116,6 +116,10 @@ ABILITY_SHOP_DATA = {
 	["zaken_last_chance"] = { cost = 8, },
 	["zaken_summon_sailors"] = { cost = 8, },
 	["zaken_sword_control"] = { cost = 32, },
+	["shinobu_yumewatari_lua"] = { cost = 9, },
+	["arthas_plus_morality"] = { cost = 6, },
+	[] = { cost = , },
+	[] = { cost = , },
 }
 
 ABILITY_SHOP_SKIP_HEROES = {

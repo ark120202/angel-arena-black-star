@@ -278,6 +278,8 @@
 	"item_gem"
 	{
 		"SecretShop"					"0"
+		"ItemStockTime"					"300.0"
+		"ItemStockMax"					"3"
 	}
 	"item_cloak"
 	{
