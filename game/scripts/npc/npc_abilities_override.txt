@@ -9646,6 +9646,7 @@
 	"enchantress_untouchable"
 	{
 		"MaxLevel"	"7"
+		"LevelsBetweenUpgrades"	"6"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9701,7 +9702,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.3"
 		"AbilityCooldown"	"30"
-		"AbilityDuration"	"125 140 155 170 190 230 300"
+		"AbilityDuration"	"15"
 		"AbilityManaCost"	"125 140 155 170 190 220 250"
 		"AbilitySpecial"
 		{
@@ -9725,7 +9726,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"wisp_count"	"6 8 10 12 14 16 18"
+				"wisp_count"	"10 14 18 22 26 32 36"
 				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_2"
 			}
 
@@ -9744,7 +9745,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"distance_damage_pct"	"15.0 20.0 25.0 30.0 35.0 40.0 45.0"
+				"distance_damage_pct"	"30 60 90 120 150 180 210"
 			}
 
 			"02"
@@ -9756,7 +9757,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_attack_range_scepter"	"100 125 150 200 225 250 300"
+				"bonus_attack_range_scepter"	"50 75 100 125 150 175 200"
 			}
 
 		}
