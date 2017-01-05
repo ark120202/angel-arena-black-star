@@ -269,6 +269,11 @@
 		"custom_talents_talent_hero_apocalypse_apocalypse_no_death_description"				"Apocalypse will not die when ultimate effect ends"
 		"custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun"				"Reincarnation"
 		"custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun_description"	"Removes respawn delay. When Skeleton King ressurects he stuns enemies, instead of slowing them"
-
+		"custom_talents_talent_movespeed_pct"												"Movement speed"
+		"custom_talents_talent_movespeed_pct_description"									"+{%movespeed_pct%} movement speed"
+		"custom_talents_talent_talent_passive_experience_income"							"Experience Income"
+		"custom_talents_talent_talent_passive_experience_income_description"				"+{xp_per_minute} experience per minute"
+		"custom_talents_talent_true_strike"													"True Strike"
+		"custom_talents_talent_true_strike_description"										"Prevents your attacks from missing"
 	}
 }

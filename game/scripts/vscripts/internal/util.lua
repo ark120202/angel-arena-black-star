@@ -7,9 +7,6 @@ function DebugPrint(...)
 	if spew == 1 then
 		print(...)
 	end
-	if SERVER_LOGGING then
-		LogPrint(...)
-	end
 end
 
 function DebugPrintTable(...)
@@ -20,9 +17,6 @@ function DebugPrintTable(...)
 
 	if spew == 1 then
 		PrintTable(...)
-	end
-	if SERVER_LOGGING then
-		LogPrintTable(...)
 	end
 end
 
@@ -60,46 +54,6 @@ function PrintTable(t, indent, done)
 					print(string.rep ("\t", indent)..tostring(t.FDesc[v]))
 				else
 					print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
-				end
-			end
-		end
-	end
-end
-
-function LogPrint(text)
-	AppendToLogFile("log/arena_log.txt", text .. "\n")
-end
-
-function LogPrintTable(t, indent, done)
-	if type(t) ~= "table" then return end
-
-	done = done or {}
-	done[t] = true
-	indent = indent or 0
-
-	local l = {}
-	for k, v in pairs(t) do
-		table.insert(l, k)
-	end
-
-	table.sort(l)
-	for k, v in ipairs(l) do
-		-- Ignore FDesc
-		if v ~= 'FDesc' then
-			local value = t[v]
-			if type(value) == "table" and not done[value] then
-				done [value] = true
-				AppendToLogFile("log/arena_log.txt", string.rep ("\t", indent)..tostring(v)..":" .. "\n")
-				PrintTable (value, indent + 2, done)
-			elseif type(value) == "userdata" and not done[value] then
-				done [value] = true
-				AppendToLogFile("log/arena_log.txt", string.rep ("\t", indent)..tostring(v)..": "..tostring(value) .. "\n")
-				PrintTable ((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
-			else
-				if t.FDesc and t.FDesc[v] then
-					AppendToLogFile("log/arena_log.txt", string.rep ("\t", indent)..tostring(t.FDesc[v]) .. "\n")
-				else
-					AppendToLogFile("log/arena_log.txt", string.rep ("\t", indent)..tostring(v)..": "..tostring(value) .. "\n")
 				end
 			end
 		end
@@ -464,45 +418,21 @@ end
 
 function GenerateAttackProjectile(unit, optAbility)
 	local projectile_info = {}
-	if unit then
-		local projectile = PROJECTILES_TABLE[unit:GetName()]
-		if not projectile then projectile = PROJECTILES_TABLE["npc_dota_hero_base"] end
-		local projectile_speed = projectile.speed
-		local attack_projectile = projectile.model
-		projectile_info = {
-			EffectName = attack_projectile,
-			Ability = optAbility,
-			vSpawnOrigin = unit:GetAbsOrigin(),
-			Source = unit,
-			bHasFrontalCone = false,
-			iMoveSpeed = projectile_speed,
-			bReplaceExisting = false,
-			bProvidesVision = false
-		}
-	end
+	projectile_info = {
+		EffectName = unit:GetKeyValue("ProjectileModel"),
+		Ability = optAbility,
+		vSpawnOrigin = unit:GetAbsOrigin(),
+		Source = unit,
+		bHasFrontalCone = false,
+		iMoveSpeed = unit:GetKeyValue("ProjectileSpeed"),
+		bReplaceExisting = false,
+		bProvidesVision = false
+	}
 	return projectile_info
 end
 
 function IsRangedUnit(unit)
-	if unit:IsRangedAttacker() or unit:HasModifier("modifier_terrorblade_metamorphosis_transform_aura_applier") then
-		return true
-	else
-		return false
-	end
-end
-
-function GetDotaAbilityLayout(unit)
-	local unitName = unit:GetName()
-	if unit.OverriddenAbilityLayout then
-		return unit.OverriddenAbilityLayout
-	end
-	if NPC_HEROES_CUSTOM[unitName] and NPC_HEROES_CUSTOM[unitName]["AbilityLayout"] then
-		return NPC_HEROES_CUSTOM[unitName]["AbilityLayout"]
-	elseif NPC_HEROES[unitName] and NPC_HEROES[unitName]["AbilityLayout"] then
-		return NPC_HEROES[unitName]["AbilityLayout"]
-	else
-		return 4
-	end
+	return unit:IsRangedAttacker() or unit:HasModifier("modifier_terrorblade_metamorphosis_transform_aura_applier")
 end
 
 function swap_to_item(unit, srcItem, newItem)
@@ -923,8 +853,10 @@ end
 
 function SafePerformAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, AttackFuncs)
 	--bNoSplashesMelee, bNoSplashesRanged, bNoDoubleAttackMelee, bNoDoubleAttackRanged
-	if not unit.AttackFuncs then unit.AttackFuncs = {} end
-	table.merge(unit.AttackFuncs, AttackFuncs)
+	if AttackFuncs then
+		if not unit.AttackFuncs then unit.AttackFuncs = {} end
+		table.merge(unit.AttackFuncs, AttackFuncs)
+	end
 	unit:PerformAttack(hTarget,bUseCastAttackOrb,bProcessProcs,bSkipCooldown,bIgnoreInvis,bUseProjectile)
 	unit.AttackFuncs = nil
 end

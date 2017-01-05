@@ -50,30 +50,87 @@ TODO LIST:
 [url=https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f
 ============================================================
-Angel Arena Black Star - Версия 1.3.9:
+Angel Arena Black Star - Версия 1.3.10:
 
 ============================================================
-Angel Arena Black Star - Version 1.3.9:
+Angel Arena Black Star - Version 1.3.10:
 
 ============================================================
-Angel Arena Black Star - Version 1.3.9:
+Angel Arena Black Star - Version 1.3.10:
 General:
-
+	Small shop changes
+	New Talents:
+		Movement speed
+		Experience Income
+		True Strike
+	In Ability Shop now you can upgrade your abilities whthin dota hud
+	Reworked Doom - Devour
 Balance:
-	Blade of Discord now is not spell amplifiable
-	Angel Wings:
-		Now not requires glimmer cape, but not gives you invisiblity and magic resistance
-		When active now increases attack range by 325
-		Cooldown: 60 => 22
-		Duration: 6.5 => 7
-	Book of the Keeper:
-		Spell Damge Amplify: 30 => 15 %
+	Small Creeps Rebalance
+	Talents:
+		Damage:
+			Cost: 2 => 5
+		Respawn Time Reduction:
+			Cost: 12 => 7
+		Spell Damage Amplify:
+			Spell Damage Amplify: 15 30 45 60 75 90 105 => 15 25 35 45 55 65 75 %
+	Items:
+		Blade of Discord now is not spell amplifiable
+		Angel Wings:
+			Now not requires glimmer cape, but not gives you invisiblity and magic resistance
+			When active now increases attack range by 325
+			Cooldown: 60 => 22
+			Duration: 6.5 => 7
+		Book of the Keeper:
+			Spell Damge Amplify: 30 => 15 %
+		Gem of True Sight
+			Stock Cooldown: 600.0 => 300
+			Max Stock Amount: 1 => 3
+		Gem of Clear Mind:
+			Stock Cooldown: 600.0 => 200
+			Max Stock Amount: 1 => 3
+		Gem of Pure Soul:
+			Stock Cooldown: 600.0 => 200
+			Max Stock Amount: 1 => 3
+	Abilities:
+		Rubick - Personality Steal:
+			Now also copies attack range and attack projectile
+		Stegius - Brightness of Desolate:
+			Hero Health Reduction: 20 25 30 33 35 40 44 => 8 12 15 18 21 24 27 %
+		Enchantress - Untouchable
+			Levels Between Upgrades: 1 => 6
+		Enchantress - Natures Attendants
+			AbilityDuration: 125 140 155 170 190 230 300 => 15
+			Wisp Amount: 6 8 10 12 14 16 18 => 10 14 18 22 26 32 36
+		Enchantress - Impetus
+			Distance to Damage: 15.0 20.0 25.0 30.0 35.0 40.0 45.0 => 30 60 90 120 150 180 210 %
+			Bonus attack range with Scepter: 100 125 150 200 225 250 300 => 50 75 100 125 150 175 200
+		Shinobu - Yumewatari
+			Levels Between Upgrades: 7 => 10
+			Ability Shop Cost: 1 => 9
+		Arthas - Plus Morality:
+			Ability Shop Cost: 1 => 6
+		Medusa - Split Shot
+			Required Level: 1 => 3
+		Medusa - Mana Shield
+			Levels Between Upgrades: 1 => 4
+		Freya - Pain Reflection:
+			Returned damage now is not spell amplifiable
+		Underlord - Firestorm:
+			Damage to Bosses: 40 => 20 %
+		Stargazer - Gamma Ray:
+			Now is not spell amplifiable
+			Max Damage: 20000 => 30000
+			Base Radius: 50 100 150 200 225 250 300 => 150 175 200 225 250 275 300
 Fixes:
-	Fixed icons disappearing
+	Fixed disappearing item and ability icons bug
 	Fixed Lotus Sphere sometimes gave permanent abilities
 	Fixed Rubick - Personality Steal on removing abilities gave you more ability points, than it should've
 	Fixed in Random OMG on respawn heroes recieved all ability points, even if it was wasted on talents
 	Fixed Kadash - Immortality respawned you under enemy fountain
+	Fixed Crystal Maiden - Freezing Field didn't work
+	Fixed some scepter-granted abilities had 7 levels
+	Fixed Zaken - <ultimate> didn't worked
 <<+===========================================================================================================
 
 

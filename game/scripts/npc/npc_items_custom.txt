@@ -2595,7 +2595,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10043"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "item_nightshadow"
+		"AbilityTextureName"            "arena/nightshadow"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2703,7 +2703,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10045"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "item_nightshadow_and_sange"
+		"AbilityTextureName"            "arena/nightshadow_and_sange"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2881,7 +2881,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10047"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "item_nightshadow_and_yasha"
+		"AbilityTextureName"            "arena/nightshadow_and_yasha"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4788,9 +4788,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10064"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityTextureName"			"arena/metamorphosis_elixir"
-		"AbilityCastPoint"        		"0.9"
+		"AbilityCastPoint"        		"0.6"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5578,8 +5578,8 @@
 		"ItemSellable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemStockMax"					"1"
-		"ItemStockTime"					"600.0"
+		"ItemStockMax"					"3"
+		"ItemStockTime"					"200"
 		"ItemSupport"					"1"
 		"ItemKillable"					"0"
 		"ItemContributesToNetWorthWhenDropped"	"0"
@@ -5668,8 +5668,8 @@
 		"ItemSellable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemStockMax"					"1"
-		"ItemStockTime"					"600.0"
+		"ItemStockMax"					"3"
+		"ItemStockTime"					"200"
 		"ItemSupport"					"1"
 		"ItemKillable"					"0"
 		"ItemContributesToNetWorthWhenDropped"	"0"
@@ -16039,7 +16039,7 @@
 		"ID"							"10225"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
-		"AbilityTextureName"            "item_desolator2"
+		"AbilityTextureName"            "arena/desolator2"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -16149,7 +16149,7 @@
 		"ID"							"10227"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
-		"AbilityTextureName"            "item_desolator3"
+		"AbilityTextureName"            "arena/desolator3"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -16259,7 +16259,7 @@
 		"ID"							"10229"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
-		"AbilityTextureName"            "item_desolator4"
+		"AbilityTextureName"            "arena/desolator4"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -16395,7 +16395,7 @@
 		"ID"							"10231"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
-		"AbilityTextureName"            "item_desolator5"
+		"AbilityTextureName"            "arena/desolator5"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------

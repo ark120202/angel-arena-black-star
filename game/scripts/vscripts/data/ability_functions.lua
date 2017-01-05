@@ -78,6 +78,7 @@ ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
 			attacker = victim,
 			damage = returnedDmg,
 			damage_type = freya_pain_reflection:GetAbilityDamageType(),
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 			ability = freya_pain_reflection
 		})
 		local heal = returnedDmg * freya_pain_reflection:GetAbilitySpecial("returned_to_heal_pct") * 0.01

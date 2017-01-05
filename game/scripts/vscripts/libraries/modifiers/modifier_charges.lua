@@ -23,11 +23,9 @@ if IsServer() then
     end
 
     function modifier_charges:DeclareFunctions()
-        local funcs = {
+        return {
             MODIFIER_EVENT_ON_ABILITY_EXECUTED
         }
-
-        return funcs
     end
 
     function modifier_charges:OnAbilityExecuted(params)
@@ -39,8 +37,6 @@ if IsServer() then
                 self:Update()
             end
         end
-
-        return 0
     end
 
     function modifier_charges:OnIntervalThink()
@@ -81,4 +77,8 @@ end
 
 function modifier_charges:IsPurgable()
     return false
+end
+
+function modifier_charges:GetAttributes()
+    return MODIFIER_ATTRIBUTE_MULTIPLE
 end

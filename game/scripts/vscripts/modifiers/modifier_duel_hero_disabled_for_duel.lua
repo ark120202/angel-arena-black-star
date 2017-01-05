@@ -13,7 +13,7 @@ function modifier_duel_hero_disabled_for_duel:IsHidden()
 end
 
 function modifier_duel_hero_disabled_for_duel:CheckState() 
-	local state = {
+	return {
 		[MODIFIER_STATE_FROZEN] = true,
 		[MODIFIER_STATE_STUNNED] = true,
 		[MODIFIER_STATE_UNSELECTABLE] = true,
@@ -27,8 +27,6 @@ function modifier_duel_hero_disabled_for_duel:CheckState()
 		[MODIFIER_STATE_LOW_ATTACK_PRIORITY] = true,
 		[MODIFIER_STATE_HEXED] = true,
 	}
-
-	return state
 end
 
 function modifier_duel_hero_disabled_for_duel:IsPurgable()

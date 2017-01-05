@@ -47,7 +47,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 4,
 		max_level = 7,
 		special_values = {
-			spell_amplify = {15, 30, 45, 60, 75, 90, 105}
+			spell_amplify = {15, 25, 35, 45, 55, 65, 75}
 		},
 		effect = {
 			use_modifier_applier = true,
@@ -58,7 +58,7 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_respawn_time_reduction = {
 		icon = "respawn_time_reduction",
-		cost = 12,
+		cost = 7,
 		group = 5,
 		max_level = 7,
 		special_values = {
@@ -72,7 +72,7 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_attack_damage = {
 		icon = "damage",
-		cost = 2,
+		cost = 5,
 		group = 4,
 		max_level = 7,
 		special_values = {
@@ -98,7 +98,6 @@ CUSTOM_TALENTS_DATA = {
 			},
 		}
 	},
-	--Needs Balance
 	talent_movespeed_limit = {
 		icon = "movespeed",
 		cost = 27,
@@ -224,6 +223,44 @@ CUSTOM_TALENTS_DATA = {
 			unit_keys = {
 				bonus_gold_per_minute = "gold_per_minute",
 			}
+		}
+	},
+	talent_movespeed_pct = {
+		icon = "movespeed",
+		cost = 2,
+		group = 3,
+		max_level = 11,
+		special_values = {
+			movespeed_pct = {6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36}
+		},
+		effect = {
+			modifiers = {
+				modifier_talent_movespeed_pct = "movespeed_pct",
+			},
+		}
+	},
+	talent_passive_experience_income = {
+		icon = "experience",
+		cost = 10,
+		group = 5,
+		max_level = 6,
+		special_values = {
+			xp_per_minute = {200, 500, 800, 1100, 1400, 1700}
+		},
+		effect = {
+			unit_keys = {
+				bonus_xp_per_minute = "xp_per_minute",
+			}
+		}
+	},
+	talent_true_strike = {
+		icon = "true_strike",
+		cost = 40,
+		group = 7,
+		effect = {
+			modifiers = {
+				"modifier_talent_true_strike"
+			},
 		}
 	},
 

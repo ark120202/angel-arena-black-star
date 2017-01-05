@@ -214,8 +214,8 @@ PANORAMA_SHOP_ITEMS = {
 			"item_steam_footgear",
 			"item_blink_staff",
 			"item_urn_of_demons",
-			"item_aegis_arena",
 			"item_angel_wings",
+			"item_aegis_arena",
 			"item_summoned_unit",
 		},
 		{

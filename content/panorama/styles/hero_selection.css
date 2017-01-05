@@ -110,6 +110,7 @@
 	margin-bottom: 0px;
 	margin-left: 18px;
 	margin-right: -8px;
+	border-radius: 2px;
 	width: height-percentage(72%); //75.5319149%
 	height: 90px;
 	transition-duration: 0.1s;

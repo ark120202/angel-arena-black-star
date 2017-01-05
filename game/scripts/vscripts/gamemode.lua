@@ -6,7 +6,6 @@ BAREBONES_VERSION = "1.00"
 BAREBONES_DEBUG_SPEW = false 
 GAMEMODE_INITIALIZATION_STATUS = {}
 
-SERVER_LOGGING = false
 if GameMode == nil then
 	DebugPrint( '[BAREBONES] creating barebones game mode' )
 	_G.GameMode = class({})
@@ -31,7 +30,6 @@ local requirements = {
 	--------------------------------------------------
 	"data/globals",
 	"data/constants",
-	"data/projectiles_table",
 	"data/containers",
 	"data/kv_data",
 	"data/modifiers",
@@ -113,9 +111,6 @@ function GameMode:OnFirstPlayerLoaded()
 	end
 	if DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_HOLDOUT_5 then
 		Holdout:Init()
-	end
-	if SERVER_LOGGING then
-		InitLogFile("log/arena_log.txt", "\n\n\n\nAngel Arena Black Star Gamemode Log:\n")
 	end
 end
 
@@ -278,6 +273,9 @@ function GameMode:GameModeThink()
 				hero:SetNetworkableEntityInfo("unit_name", GetFullHeroName(hero))
 				if hero.talent_keys and hero.talent_keys.bonus_gold_per_minute then
 					gold_per_tick = gold_per_tick + hero.talent_keys.bonus_gold_per_minute / 60 * CUSTOM_GOLD_TICK_TIME
+				end
+				if hero.talent_keys and hero.talent_keys.bonus_xp_per_minute then
+					hero:AddExperience(hero.talent_keys.bonus_xp_per_minute / 60 * CUSTOM_GOLD_TICK_TIME, 0, false, false)  
 				end
 			end
 			Gold:AddGold(i, gold_per_tick)

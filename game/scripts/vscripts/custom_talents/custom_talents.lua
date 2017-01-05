@@ -11,7 +11,6 @@ local modifiers = {
 	"lifesteal",
 	"creep_gold",
 	"movespeed_limit",
-	
 	"health",
 	"health_regen",
 	"armor",
@@ -19,6 +18,7 @@ local modifiers = {
 	"vision_day",
 	"vision_night",
 	"cooldown_reduction_pct",
+	"true_strike",
 	--rune multiplier
 }
 for _,v in pairs(modifiers) do

@@ -11,10 +11,6 @@ function GameMode:ExecuteOrderFilter(filterTable)
 	if order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
 		return false
 	end
-	if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
-		Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_ability_inactive")
-		return false
-	end
 	local target = EntIndexToHScript(filterTable.entindex_target)
 	local ability = EntIndexToHScript(filterTable.entindex_ability)
 	local abilityname
@@ -28,6 +24,10 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		if u then
 			table.insert(units, u)
 		end
+	end
+	if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
+		AbilityShop:OnAbilityBuy(issuer_player_id_const, abilityname)
+		return false
 	end
 
 	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability and not units[1]:IsIllusion() and not units[1]:HasModifier("modifier_arc_warden_tempest_double") then

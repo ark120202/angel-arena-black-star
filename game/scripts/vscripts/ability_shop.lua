@@ -88,7 +88,9 @@ function AbilityShop:PrepareData()
 end
 
 function AbilityShop:PostAbilityData()
-	CustomGameEventManager:RegisterListener("ability_shop_buy", Dynamic_Wrap(AbilityShop, "OnAbilityBuy"))
+	CustomGameEventManager:RegisterListener("ability_shop_buy", function(_, data)
+		AbilityShop:OnAbilityBuy(data.PlayerID, data.ability)
+	end)
 	CustomGameEventManager:RegisterListener("ability_shop_sell", Dynamic_Wrap(AbilityShop, "OnAbilitySell"))
 	CustomGameEventManager:RegisterListener("ability_shop_downgrade", Dynamic_Wrap(AbilityShop, "OnAbilityDowngrade"))
 	PlayerTables:CreateTable("ability_shop_data", AbilityShop.ClientData, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
@@ -98,9 +100,9 @@ function AbilityShop:GetAbilityListInfo(abilityname)
 	return AbilityShop.AbilityInfo[abilityname]
 end
 
-function AbilityShop:OnAbilityBuy(data)
-	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-	local abilityInfo = AbilityShop:GetAbilityListInfo(data.ability)
+function AbilityShop:OnAbilityBuy(PlayerID, abilityname)
+	local hero = PlayerResource:GetSelectedHeroEntity(PlayerID)
+	local abilityInfo = AbilityShop:GetAbilityListInfo(abilityname)
 	if not abilityInfo then
 		return
 	end
@@ -112,10 +114,10 @@ function AbilityShop:OnAbilityBuy(data)
 		end
 	end
 	if hero and cost and hero:GetAbilityPoints() >= cost then
-		PrecacheItemByNameAsync(data.ability, function()
+		PrecacheItemByNameAsync(abilityname, function()
 			if hero:GetAbilityPoints() >= cost then
-				if hero:HasAbility(data.ability) then
-					local abilityh = hero:FindAbilityByName(data.ability)
+				if hero:HasAbility(abilityname) then
+					local abilityh = hero:FindAbilityByName(abilityname)
 					if abilityh then
 						if abilityh:GetLevel() < abilityh:GetMaxLevel() then
 							hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
@@ -126,7 +128,7 @@ function AbilityShop:OnAbilityBuy(data)
 					hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
 					hero:RemoveAbility("ability_empty")
 					GameMode:PrecacheUnitQueueed(abilityInfo.hero)
-					local a, linked = AddNewAbility(hero, data.ability)
+					local a, linked = AddNewAbility(hero, abilityname)
 					a:SetLevel(1)
 					if linked then
 						for _,v in ipairs(linked) do
@@ -136,7 +138,7 @@ function AbilityShop:OnAbilityBuy(data)
 						end
 					end
 					hero:CalculateStatBonus()
-					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(data.PlayerID), "dota_ability_changed", {})
+					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(PlayerID), "dota_ability_changed", {})
 				end
 			end
 		end)

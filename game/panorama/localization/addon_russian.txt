@@ -228,7 +228,7 @@
 		"custom_talents_talent_vision_night_description"									"+{vision_night} к радиусу обзора ночью"
 		"custom_talents_talent_cooldown_reduction_pct"										"Уменьшение перезарядки"
 		"custom_talents_talent_cooldown_reduction_pct_description"							"Уменьшает время перезарядки всех способностей и предметов на {%cooldown_reduction_pct%}"
-		"custom_talents_talent_passive_gold_income"											"Gold Income"
+		"custom_talents_talent_passive_gold_income"											"Прирост золота"
 		"custom_talents_talent_passive_gold_income_description"								"+{gold_per_minute} золота в минуту"
 		"custom_talents_talent_hero_pudge_hook_splitter"									"Hook Splitter"
 		"custom_talents_talent_hero_pudge_hook_splitter_description"						"Pudge бросает {hook_amount} крюков, а не 1"
@@ -240,6 +240,12 @@
 		"custom_talents_talent_hero_apocalypse_apocalypse_no_death_description"				"Apocalypse не погибнет, когда закончится время действия ультимативной способности"
 		"custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun"				"Reincarnation"
 		"custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun_description"	"Убирает задержку перед возрождением. При воскрешении оглушает противников, вместо замедления"
+		"custom_talents_talent_movespeed_pct"												"Скорость передвижения"
+		"custom_talents_talent_movespeed_pct_description"									"+{%movespeed_pct%} к скорости передвижения"
+		"custom_talents_talent_talent_passive_experience_income"							"Прирост опыта"
+		"custom_talents_talent_talent_passive_experience_income_description"				"+{xp_per_minute} опыта в минуту"
+		"custom_talents_talent_true_strike"													"True Strike"
+		"custom_talents_talent_true_strike_description"										"Исключает шанс промаха при атаке"
 		
 	}
 }

@@ -35,7 +35,8 @@ function SpellSteal(keys)
 	caster.rubick_spell_steal = {
 		level = ability:GetLevel(),
 		model = caster:GetModelName(),
-		model_scale = caster:GetModelScale()
+		model_scale = caster:GetModelScale(),
+		attack_capability = caster:GetAttackCapability()
 	}
 	UTIL_Remove(ability)
 	for i = 0, caster:GetAbilityCount() - 1 do
@@ -48,7 +49,13 @@ function SpellSteal(keys)
 	caster:SetModel(model)
 	caster:SetOriginalModel(model)
 	caster:SetModelScale(target:GetModelScale())
-	Timers:CreateTimer(0.03, function()
+
+	caster:SetAttackCapability(target:GetAttackCapability())
+	caster:SetRangedProjectileName(target:GetKeyValue("ProjectileModel"))
+	caster:AddNewModifier(caster, ability, "modifier_set_attack_range", {AttackRange = target:GetAttackRange()})
+
+	caster:CalculateStatBonus()
+	Timers:CreateTimer(0.1, function()
 		for i = 0, target:GetAbilityCount() - 1 do
 			local a = target:GetAbilityByIndex(i)
 			if a and a:GetAbilityName() ~= "rubick_personality_steal" then
@@ -56,8 +63,8 @@ function SpellSteal(keys)
 			end
 		end
 		caster:CalculateStatBonus()
-		PlayerResource:RefreshSelection()
 	end)
+	
 	caster:ResetAbilityPoints()
 end
 
@@ -69,18 +76,17 @@ function RemoveSpell(keys)
 			RemoveAbilityWithModifiers(caster, a)
 		end
 	end
-	PlayerResource:RefreshSelection()
 	local newlevel = caster.rubick_spell_steal.level
-	Timers:CreateTimer(0, function()
-		PrecacheItemByNameAsync("rubick_personality_steal", function()
-			local rubick_personality_steal = caster:AddAbility("rubick_personality_steal")
-			rubick_personality_steal:SetLevel(newlevel)
-			PlayerResource:RefreshSelection()
-		end)
+	Timers:CreateTimer(0.1, function()
+		caster:AddAbility("rubick_personality_steal"):SetLevel(newlevel)
+		caster:CalculateStatBonus()
 	end)
 	caster:SetModel(caster.rubick_spell_steal.model)
 	caster:SetOriginalModel(caster.rubick_spell_steal.model)
 	caster:SetModelScale(caster.rubick_spell_steal.model_scale)
+	caster:SetAttackCapability(caster.rubick_spell_steal.attack_capability)
+	caster:SetRangedProjectileName(caster:GetKeyValue("ProjectileModel"))
+	caster:RemoveModifierByNameAndCaster("modifier_set_attack_range", caster)
 	caster.rubick_spell_steal = nil
 	caster:ResetAbilityPoints()
 end

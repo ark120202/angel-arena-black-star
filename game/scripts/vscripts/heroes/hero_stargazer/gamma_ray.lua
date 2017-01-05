@@ -11,6 +11,7 @@ function OnSpellStart(keys)
 			attacker = caster,
 			damage = math.min(ability:GetLevelSpecialValueFor("base_damage", level) + (caster:GetIntellect() * (ability:GetLevelSpecialValueFor("int_to_dmg_pct", level) * 0.01)), ability:GetAbilitySpecial("max_damage")),
 			damage_type = ability:GetAbilityDamageType(),
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 			ability = ability
 		})
 	end

@@ -27,15 +27,19 @@
 {
 	width: 270px;
 	height: 100%;
-	background-image: url("file://{images}/custom_game/shop/itembuilds_panel.png");
+	background-color: #000000ee;
 	background-position: -18px -12px;
 	background-size: 112% 106%;
 	flow-children: down;
+	transition-property: opacity, width;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
 }
 
 .ItembuildsHidden #ItembuildsPanel
 {
-	visibility: collapse;
+	width: 0;
+	opacity: 0;
 }
 
 .SimpleRow
@@ -199,12 +203,13 @@ DropDownMenu Label
 
 #ShopSearchOverlay
 {
-	margin-top: 16px;
-	margin-left: 15px;
+	margin-top: 1px;
+	margin-left: 2px;
 	height: 100%;
 	width: 100%;
 	visibility: collapse;
 	flow-children: right-wrap;
+	overflow: squish scroll;
 }
 
 .InSearchMode #ShopItemsBase
@@ -281,13 +286,6 @@ DropDownMenu Label
 	brightness: 0.6;
 }
 
-#QuickBuyStickyButtonPanel
-{
-	align: right top;
-	margin: 2px;
-	margin-top: 3px;
-}
-
 #QuickBuyPanelItems
 {
 	align: left center;
@@ -305,7 +303,7 @@ DropDownMenu Label
 }
 .DropDownMode .DropDownValidTarget
 {
-	box-shadow: inset #0B93BE44 6px 6px 12px 12px;
+	box-shadow: inset #0B93BEBF 20px 20px 40px 40px;
 }
 
 
@@ -361,20 +359,29 @@ DropDownMenu Label
 	width: 46px;
 	height: width-percentage( 72.7% );
 	margin: 2px;
+	border-radius: 3px;
+}
+
+#QuickBuyStickyButtonPanel
+{
+	align: right top;
+	margin: 2px;
+	margin-top: 4px;
 }
 
 .QuickBuyStickyItem
 {
 	align: center center;
 	margin: 0px;
+	width: 47px;
 	border-width: 2px;
 }
 
 .QuickbuyItemPanel
 {
-	width: 37.5px;
-	height: 27px;
-	margin: 2px;
+	width: 40px;
+	margin: 1px;
+	border-radius: 1px;
 }
 
 .ItemRecipeBoxRow.ItemRecipeBoxRowLength7 .SmallItemPanel
