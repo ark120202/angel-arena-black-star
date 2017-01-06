@@ -3,12 +3,12 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/dynamic_minimap.css" />
 		<include src="file://{resources}/styles/hero_selection.css" />
-		<include src="file://{resources}/styles/customchat_selection.css" />
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/util.js" />
 		<include src="file://{resources}/scripts/shared_hero_selection_script.js" />
 		<include src="file://{resources}/scripts/hero_selection.js" />
+		<include src="file://{resources}/scripts/chat_smiles.js" />
 		<include src="file://{resources}/scripts/customchat.js" />
 	</scripts>
 	<snippets>

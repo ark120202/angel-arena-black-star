@@ -253,3 +253,26 @@ function secondsToMS(seconds, bTwoChars) {
 		seconds = "0" + seconds;
 	return minutes + ':' + seconds;
 }
+
+function escapeRegExp(string) {
+	return String(string).replace(/[()]/g, function(s) {
+		return "\\" + s
+	})
+}
+
+function AddStyle(panel, table) {
+	for (var k in table) {
+		panel.style[k] = table[k]
+	}
+}
+
+function AddJSClass(panel, classname) {
+	if (JSStyleMap[classname] != null)
+		AddStyle(panel, JSStyleMap[classname])
+	else
+		$.Msg("[AddJSClass] Critical error - style map has no " + classname + " class");
+}
+
+String.prototype.encodeHTML = function() {
+	return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+};

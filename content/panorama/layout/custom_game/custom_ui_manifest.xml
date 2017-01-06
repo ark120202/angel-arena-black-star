@@ -22,9 +22,6 @@
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/panorama_shop.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_talents.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/ability_shop.xml" />
-		
-		<!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/spellcrafting_table.xml" /> -->
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/in_game_chat.xml" />
 
 		<CustomUIElement type="FlyoutScoreboard"    layoutfile="file://{resources}/layout/custom_game/arena_flyout_scoreboard.xml" />
 		<CustomUIElement type="EndScreen"           layoutfile="file://{resources}/layout/custom_game/arena_end_screen.xml" />

@@ -6,11 +6,8 @@ var g_ScoreboardHandle = null;
 function UpdateScoreboard() {
 	ScoreboardUpdater_SetScoreboardActive(g_ScoreboardHandle, true);
 
-	//////////////////////////////////////////////////////////////////////////////////////////////
 	//Arena: Update game time
-	//////////////////////////////////////////////////////////////////////////////////////////////
-	var current_Time = Game.GetDOTATime(false, false)
-
+	var current_Time = Math.abs(Game.GetDOTATime(false, true))
 	_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "timerLabel", secondsToMS(current_Time, true))
 	var timerImageDeg = ((current_Time - (Math.floor(current_Time / 480) * 480)) / 480) * 360
 	g_ScoreboardHandle.scoreboardPanel.FindChildInLayoutFile("timerImage").style.transform = "rotateZ(" + timerImageDeg + "deg)"

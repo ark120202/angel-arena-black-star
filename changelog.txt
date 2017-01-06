@@ -1,5 +1,4 @@
 TODO LIST:
-	доделать панели selection (хп, картинки)
 	переделать инвайт на 1х1 дуэли
 	Дополнить гайды
 	обезьяны
@@ -11,11 +10,8 @@ TODO LIST:
 		caster:TriggerSpellAbsorb(ability)
 		для всех абилок
 	]]
-	kadash возраждается на фонтане
-	думу и алхимику на новую голду
+	алхимику на новую голду
 	лансер беск иллюзии
-	цм ульт не работает
-	абилки с аганимиом 7 левелов
 Идеи для предметов:
 	Star Blade:
 		Из Fallen Star + Dark Blade + ???
@@ -45,26 +41,40 @@ TODO LIST:
 		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_1989]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/dd5f7ded797e679b6eba00f949d3968f
+[url=https://vk.com/wall-122685850_2043]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://gist.github.com/ark120202/2ad6552a1509ddaefe550833f8623675]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/2ad6552a1509ddaefe550833f8623675]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/2ad6552a1509ddaefe550833f8623675
 ============================================================
-Angel Arena Black Star - Версия 1.3.10:
-
+Angel Arena Black Star - Версия 1.4:
+Добавлена 60 секундная задержка перед началом игры
+Изменен чат
+Новые таланты: Скорость передвижения, Прирост опыта, True Strike
+Усилены: Gem of True Sight, Gem of Clear Mind, Gem of Pure Soul, Enchantress - Natures Attendants, Enchantress - Impetus
+Ослаблены: Damage, Respawn Time Reduction, Spell Damage Amplify, Blade of Discord, Book of the Keeper, Stegius - Brightness of Desolate, Enchantress - Untouchable, Shinobu - Yumewatari, Medusa - Split Shot, Medusa - Mana Shield, Freya - Pain Reflection, Underlord - Firestorm, Stargazer - Gamma Ray
+Изменены: Doom - Devour, Angel Wings, Rubick - Personality Steal, Enchantress - Natures Attendants
+Исправлены ошибки с пропадающими иконками, Lotus Sphere, Rubick - Personality Steal, Kadash - Immortality, Crystal Maiden - Freezing Field, Zaken - Sword Control
 ============================================================
-Angel Arena Black Star - Version 1.3.10:
-
+Angel Arena Black Star - Version 1.4:
+Added pre-game 60 second delay
+Chat was modified
+New Talents: Movement speed, Experience Income, True Strike
+Buffed: Gem of True Sight, Gem of Clear Mind, Gem of Pure Soul, Enchantress - Natures Attendants, Enchantress - Impetus
+Nerfed: Damage, Respawn Time Reduction, Spell Damage Amplify, Blade of Discord, Book of the Keeper, Stegius - Brightness of Desolate, Enchantress - Untouchable, Shinobu - Yumewatari, Medusa - Split Shot, Medusa - Mana Shield, Freya - Pain Reflection, Underlord - Firestorm, Stargazer - Gamma Ray
+Changed: Doom - Devour, Angel Wings, Rubick - Personality Steal, Enchantress - Natures Attendants
+Fixed bugs with disappearing items and ability icons, Lotus Sphere, Rubick - Personality Steal, Kadash - Immortality, Crystal Maiden - Freezing Field, Zaken - Sword Control
 ============================================================
-Angel Arena Black Star - Version 1.3.10:
+Angel Arena Black Star - Version 1.4:
 General:
-	Small shop changes
+	Added pre-game 60 second delay (Hero Selection now not ends if everyone selected heroes)
+	Reworked Doom - Devour
+	Custom Chat was merged with Dota chat
 	New Talents:
 		Movement speed
 		Experience Income
 		True Strike
 	In Ability Shop now you can upgrade your abilities whthin dota hud
-	Reworked Doom - Devour
+	Small shop changes
 Balance:
 	Small Creeps Rebalance
 	Talents:
@@ -83,7 +93,7 @@ Balance:
 			Duration: 6.5 => 7
 		Book of the Keeper:
 			Spell Damge Amplify: 30 => 15 %
-		Gem of True Sight
+		Gem of True Sight:
 			Stock Cooldown: 600.0 => 300
 			Max Stock Amount: 1 => 3
 		Gem of Clear Mind:
@@ -99,20 +109,20 @@ Balance:
 			Hero Health Reduction: 20 25 30 33 35 40 44 => 8 12 15 18 21 24 27 %
 		Enchantress - Untouchable
 			Levels Between Upgrades: 1 => 6
-		Enchantress - Natures Attendants
-			AbilityDuration: 125 140 155 170 190 230 300 => 15
+		Enchantress - Natures Attendants:
+			Duration: 125 140 155 170 190 230 300 => 15
 			Wisp Amount: 6 8 10 12 14 16 18 => 10 14 18 22 26 32 36
-		Enchantress - Impetus
+		Enchantress - Impetus:
 			Distance to Damage: 15.0 20.0 25.0 30.0 35.0 40.0 45.0 => 30 60 90 120 150 180 210 %
 			Bonus attack range with Scepter: 100 125 150 200 225 250 300 => 50 75 100 125 150 175 200
-		Shinobu - Yumewatari
+		Shinobu - Yumewatari:
 			Levels Between Upgrades: 7 => 10
 			Ability Shop Cost: 1 => 9
 		Arthas - Plus Morality:
 			Ability Shop Cost: 1 => 6
-		Medusa - Split Shot
+		Medusa - Split Shot:
 			Required Level: 1 => 3
-		Medusa - Mana Shield
+		Medusa - Mana Shield:
 			Levels Between Upgrades: 1 => 4
 		Freya - Pain Reflection:
 			Returned damage now is not spell amplifiable
@@ -130,7 +140,7 @@ Fixes:
 	Fixed Kadash - Immortality respawned you under enemy fountain
 	Fixed Crystal Maiden - Freezing Field didn't work
 	Fixed some scepter-granted abilities had 7 levels
-	Fixed Zaken - <ultimate> didn't worked
+	Fixed Zaken - Sword Control didn't worked
 <<+===========================================================================================================
 
 

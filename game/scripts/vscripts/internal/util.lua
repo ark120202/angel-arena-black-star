@@ -1107,22 +1107,6 @@ function CDOTA_BaseNPC:GetSpellDamageAmplify()
 	return GetSpellDamageAmplify(self)
 end
 
-function CustomChatSay(playerId, text, teamonly)
-	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
-	local heroName
-	if hero then
-		heroName = GetFullHeroName(hero)
-	end
-	if teamonly then
-		CustomGameEventManager:Send_ServerToTeam(PlayerResource:GetTeam(playerId), "custom_chat_recieve_message", {text=text, playerId=playerId, teamonly=teamonly, hero=heroName})
-	else
-		CustomGameEventManager:Send_ServerToAllClients("custom_chat_recieve_message", {text=text, playerId=playerId, teamonly=teamonly, hero=heroName})
-	end
-	if string.starts(text, "-") then
-		GameMode:OnPlayerSentCommand(playerId, text)
-	end
-end
-
 function IsUltimateAbility(ability)
 	return bit.band(ability:GetAbilityType(), 1) == 1
 end
@@ -1206,10 +1190,6 @@ function WorldPosToMinimap(vec)
 	local pct1 = ((vec.x + MAP_LENGTH) / (MAP_LENGTH * 2))
 	local pct2 = ((MAP_LENGTH - vec.y) / (MAP_LENGTH * 2))
 	return pct1*100 .. "% " .. pct2*100 .. "%"
-end
-
-function GetFullHeroName(unit)
-	return unit.UnitName or unit:GetUnitName()
 end
 
 function GetHeroTableByName(name)
@@ -1365,4 +1345,12 @@ end
 
 function CDOTA_BaseNPC_Hero:ResetAbilityPoints()
 	self:SetAbilityPoints(self:GetLevel() - self:GetAbilityPointsWastedAllOnTalents())
+end
+
+function GetFullHeroName(unit)
+	return unit.UnitName or unit:GetUnitName()
+end
+
+function CDOTA_BaseNPC_Hero:GetFullName()
+	return self.UnitName or (self.GetUnitName and self:GetUnitName()) or self:GetName()
 end

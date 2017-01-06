@@ -5,7 +5,8 @@ var ONCLICK_PURGABLE_MODIFIERS = [
 ];
 var DOTA_ACTIVE_GAMEMODE = -1,
 	DOTA_ACTIVE_GAMEMODE_TYPE = -1,
-	hud = GetDotaHud();
+	hud = GetDotaHud(),
+	CustomChatLinesPanel;
 
 function UpdatePanoramaHUD() {
 	var unit = Players.GetLocalPlayerPortraitUnit()
@@ -142,12 +143,35 @@ function HookPanoramaPanels() {
 		GameEvents.SendEventClientSide("custom_talents_toggle_tree", {})
 	})
 	hud.FindChildTraverse("combat_events").visible = false;
-	hud.FindChildTraverse("HudChat").FindChildTraverse("ChatLinesContainer").visible = false;
+	var chat = hud.FindChildTraverse("ChatLinesWrapper")
+	chat.FindChildTraverse("ChatLinesPanel").visible = false;
+	if (chat.FindChildTraverse("SelectionChatMessages"))
+		chat.FindChildTraverse("SelectionChatMessages").DeleteAsync(0)
+	CustomChatLinesPanel = $.CreatePanel("Panel", chat, "SelectionChatMessages");
+	CustomChatLinesPanel.hittest = false
+	CustomChatLinesPanel.hittestchildren = false
+	AddStyle(CustomChatLinesPanel, {
+		"width": "100%",
+		"flow-children": "down",
+		"vertical-align": "top",
+		"overflow": "squish noclip",
+		"padding-right": "14px",
+		"background-color": "gradient( linear, 0% 0%, 100% 0%, from( #0000 ), color-stop( 0.01, #0000 ), color-stop( 0.1, #0000 ), to( #0000 ) )",
+		"transition-property": "background-color",
+		"transition-duration": "0.23s",
+		"transition-timing-function": "ease-in-out"
+	})
 }
 
-String.prototype.encodeHTML = function() {
-	return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
-};
+function CreateHeroElements(id) {
+	var playerColor = Players.GetPlayerColor(id).toString(16)
+	if (playerColor != null) {
+		playerColor = "#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2)
+	} else {
+		playerColor = "#000000";
+	}
+	return "<img src='" + TransformTextureToPath(GetPlayerHeroName(id), "icon") + "' class='CombatEventHeroIcon'/> <font color='" + playerColor + "'>" + Players.GetPlayerName(id).encodeHTML() + "</font>"
+}
 
 function CreateCustomToast(data) {
 	var lastLine = $("#CustomToastManager").GetChild(0);
@@ -155,15 +179,6 @@ function CreateCustomToast(data) {
 	row.BLoadLayoutSnippet("ToastPanel")
 	row.AddClass("ToastPanel")
 	var rowText = "";
-	var CreateHeroElements = function(id) {
-		var playerColor = Players.GetPlayerColor(id).toString(16)
-		if (playerColor != null) {
-			playerColor = "#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2)
-		} else {
-			playerColor = "#000000";
-		}
-		return "<img src='" + TransformTextureToPath(GetPlayerHeroName(id), "icon") + "' class='CombatEventHeroIcon'/> <font color='" + playerColor + "'>" + Players.GetPlayerName(id).encodeHTML() + "</font>"
-	}
 
 	if (data.type == "kill") {
 		var byNeutrals = data.killerPlayer == null

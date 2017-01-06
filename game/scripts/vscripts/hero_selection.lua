@@ -2,6 +2,7 @@ if HeroSelection == nil then
 	_G.HeroSelection = class({})
 	HeroSelection.SelectionEnd = false
 end
+local bStartGameOnAllPlayersSelected = IsInToolsMode()
 
 function HeroSelection:Initialize()
 	if not HeroSelection._initialized then
@@ -37,7 +38,7 @@ end
 
 function HeroSelection:PrepareTables()
 	local data = {
-		SelectionTime = CUSTOM_HERO_SELECTION_TIME
+		SelectionTime = HERO_SELECTION_TIME
 	}
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK then
 		data.HeroTabs = {{
@@ -120,7 +121,7 @@ end
 function HeroSelection:HeroSelectionStart()
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled(true)
 	PlayerTables:SetTableValue("hero_selection_available_heroes", "SelectionStartTime", GameRules:GetGameTime())
-	HeroSelection.GameStartTimer = Timers:CreateTimer(CUSTOM_HERO_SELECTION_TIME, function()
+	HeroSelection.GameStartTimer = Timers:CreateTimer(HERO_SELECTION_TIME, function()
 		if not HeroSelection.SelectionEnd then
 			HeroSelection:PreformGameStart()
 		end
@@ -166,8 +167,9 @@ function HeroSelection:PreformGameStart()
 								HeroSelection:OnSelectHero(plyId, tostring(v.hero), nil, true)
 							end
 						end
-						Tutorial:ForceGameStart()
+						--Tutorial:ForceGameStart()
 						PauseGame(false)
+						GameMode:OnHeroSelectionEnd()
 						Timers:CreateTimer(4 - 3.75, function()
 							CustomGameEventManager:Send_ServerToAllClients("time_show", {})
 						end)
@@ -335,7 +337,7 @@ function HeroSelection:OnHeroRandomHero(data)
 		HeroSelection:PreformPlayerRandom(data.PlayerID)
 	end
 
-	local canEnd = not HeroSelection.SelectionEnd
+	local canEnd = not HeroSelection.SelectionEnd and bStartGameOnAllPlayersSelected
 	for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
 		for plyId,v in pairs(_v) do
 			if v.status ~= "picked" then
@@ -365,7 +367,7 @@ function HeroSelection:OnHeroSelectHero(data)
 		Gold:ModifyGold(data.PlayerID, CUSTOM_STARTING_GOLD)
 	end
 
-	local canEnd = not HeroSelection.SelectionEnd
+	local canEnd = not HeroSelection.SelectionEnd and bStartGameOnAllPlayersSelected
 	for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
 		for plyId,v in pairs(_v) do
 			if v.status ~= "picked" then

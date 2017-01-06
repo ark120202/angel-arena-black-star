@@ -1,19 +1,20 @@
 CUSTOM_WEARABLES_PLAYER_ITEMS = {
 	[109792606] = {
-		"item_hero_stargazer_helmet_of_the_sunray",
-		"item_hero_omniknight_frozen_sword",
-		"item_item_summoned_unit_kyuubey",
-		"item_hero_shinobu_umbrella",
+		"wearable_hero_stargazer_helmet_of_the_sunray",
+		"wearable_hero_omniknight_frozen_sword",
+		"wearable_item_summoned_unit_kyuubey",
+		"wearable_hero_shinobu_umbrella",
+		"wearable_developer"
 	},
 	[82292900] = {
-		"item_hero_stargazer_helmet_of_the_sunray",
-		"item_hero_omniknight_frozen_sword",
-		"item_item_summoned_unit_kyuubey"
+		"wearable_hero_stargazer_helmet_of_the_sunray",
+		"wearable_hero_omniknight_frozen_sword",
+		"wearable_item_summoned_unit_kyuubey"
 	}
 }
 
 CUSTOM_WEARABLES_ITEM_HANDLES = {
-	["item_hero_stargazer_helmet_of_the_sunray"] = {
+	["wearable_hero_stargazer_helmet_of_the_sunray"] = {
 		hero = "alternative_npc_dota_hero_spectre",
 		models = {
 			{
@@ -28,7 +29,7 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 		},
 		hidden_slots = { "head" }
 	},
-	["item_hero_omniknight_frozen_sword"] = {
+	["wearable_hero_omniknight_frozen_sword"] = {
 		hero = "npc_dota_hero_omniknight",
 		models = {
 			{
@@ -41,7 +42,7 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 		},
 		hidden_slots = { "weapon" }
 	},
-	["item_common_model_tree"] = {
+	["wearable_common_model_tree"] = {
 		base_model = "models/items/furion/treant_stump.vmdl",
 		base_model_scale = 1.35,
 		models = {
@@ -52,12 +53,12 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 		},
 		hide_wearables = true,
 	},
-	["item_common_radio_car"] = {
+	["wearable_common_radio_car"] = {
 		on_first_equip = function(self, unit)
 			unit:AddItem(CreateItem("item_radio_car", unit, unit))
 		end
 	},
-	["item_item_summoned_unit_kyuubey"] = {
+	["wearable_item_summoned_unit_kyuubey"] = {
 		PlayerKeys = {
 			item_summoned_unit = {
 				model = "models/custom/kyuubey.vmdl",
@@ -65,7 +66,10 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 			}
 		}
 	},
-	["item_hero_shinobu_umbrella"] = {
+	["wearable_hero_shinobu_umbrella"] = {
+		
+	},
+	["wearable_developer"] = {
 		
 	}
 }

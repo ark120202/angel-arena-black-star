@@ -54,6 +54,9 @@ end
 
 function PanoramaShop:StackStockableCooldown(team, item, time)
 	local t = PanoramaShop.StocksTable[team][item]
+	if GameRules:State_Get() < DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		time = time - GameRules:GetDOTATime(false, true)
+	end
 	t.current_cooldown = time
 	t.current_last_purchased_time = GameRules:GetGameTime()
 	Timers:CreateTimer(time, function()
@@ -131,7 +134,7 @@ function PanoramaShop:InitializeItemTable()
 				ItemStockTime = kv.ItemStockTime or 0,
 				current_stock = kv.ItemStockInitial,
 				current_cooldown = kv.ItemInitialStockTime or 0,
-				current_last_purchased_time = GameRules:GetGameTime(),
+				current_last_purchased_time = -1,
 			}
 			if not stocks.current_stock then
 				if stocks.current_cooldown == 0 then

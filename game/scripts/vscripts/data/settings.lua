@@ -1,20 +1,16 @@
 -- In this file you can set up all the properties and settings for your game mode.
 
 
-ENABLE_HERO_RESPAWN = true              -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
-UNIVERSAL_SHOP_MODE = false             -- Should the main shop contain Secret Shop items as well as regular items
-ALLOW_SAME_HERO_SELECTION = true        -- Should we let people select the same hero as each other
+ENABLE_HERO_RESPAWN = true
+UNIVERSAL_SHOP_MODE = false
+ALLOW_SAME_HERO_SELECTION = true
 
-HERO_SELECTION_TIME = -1                -- How long should we let people select their hero?
-PRE_GAME_TIME = 999999                      -- How long after people select their heroes should the horn blow and the game start?
-POST_GAME_TIME = 60.0                   -- How long should we let people look at the scoreboard before closing the server automatically?
-TREE_REGROW_TIME = 60.0                 -- How long should it take individual trees to respawn after being cut down/destroyed?
-
-CAMERA_DISTANCE_OVERRIDE = -1           -- How far out should we allow the camera to go?  Use -1 for the default (1134) while still allowing for panorama camera distance changes
+HERO_SELECTION_TIME = 80--IsInToolsMode() and math.pow(10, 5) or 80
+POST_GAME_TIME = 60
+TREE_REGROW_TIME = 60
 
 MINIMAP_ICON_SIZE = 1                   -- What icon size should we use for our heroes?
 MINIMAP_CREEP_ICON_SIZE = 1             -- What icon size should we use for creeps?
-MINIMAP_RUNE_ICON_SIZE = 1              -- What icon size should we use for runes?
 
 BUYBACK_ENABLED = false                 -- Should we allow people to buyback when they die?
 
@@ -137,7 +133,6 @@ POSSIBLE_KILL_GOALS = {
 }
 DOTA_KILL_GOAL_VOTE_STANDART = 125
 
-CUSTOM_HERO_SELECTION_TIME = IsInToolsMode() and math.pow(10, 5) or 80
 DOTA_PLAYER_AUTOABANDON_TIME = 60*8
 MAX_SPAWNBOXES_SELECTED = 3
 
@@ -156,3 +151,4 @@ CUSTOM_GOLD_PER_TICK = 4
 CUSTOM_GOLD_TICK_TIME = 0.6
 
 CUSTOM_RUNE_SPAWN_TIME = 120
+PRE_GAME_TIME = 60

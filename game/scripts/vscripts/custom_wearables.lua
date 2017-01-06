@@ -11,6 +11,14 @@ function CustomWearables:TranslateParticle(unit, particle)
 	return unit.CustomWearables.ParticleMap[particle] or particle
 end
 
+function CustomWearables:HasWearable(pID, name)
+	local steamid = PlayerResource:GetSteamAccountID(pID)
+	if CUSTOM_WEARABLES_PLAYER_ITEMS[steamid] then
+		return table.contains(CUSTOM_WEARABLES_PLAYER_ITEMS[steamid], name)
+	end
+	return false
+end
+
 function CustomWearables:RemoveDotaWearables(unit)
 	for _,v in pairs(unit:GetChildren()) do
 		if v:GetClassname() == "dota_item_wearable" then

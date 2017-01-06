@@ -81,6 +81,7 @@
 			<Image src="file://{images}/custom_game/talents/night.png" />
 			<Image src="file://{images}/custom_game/talents/respawn_time_reduction.png" />
 			<Image src="file://{images}/custom_game/talents/spell_amplify.png" />
+			<Image src="file://{images}/custom_game/talents/true_strike.png" />
 			
 			<Image src="file://{images}/custom_game/talents/hero_apocalypse_apocalypse_no_death.png" />
 			<Image src="file://{images}/custom_game/talents/hero_arc_warden_double_spark.png" />

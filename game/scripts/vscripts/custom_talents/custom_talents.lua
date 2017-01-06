@@ -132,7 +132,10 @@ function CDOTA_BaseNPC:ClearTalents()
 			RemoveAbilityWithModifiers(self, v2)
 		end
 	end
-	self.talents = {}
+	self.talent_keys = nil
+	self.talents_ability_multicast = nil
+	self.talents = nil
+	self:SetNetworkableEntityInfo("LearntTalents", nil)
 end
 
 function CDOTA_BaseNPC:UpgradeTalent(name)

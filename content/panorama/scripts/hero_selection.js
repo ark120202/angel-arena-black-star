@@ -8,12 +8,13 @@ var SelectedHeroData,
 	HideEvent,
 	ShowPrecacheEvent,
 	PTID,
-	DOTA_ACTIVE_GAMEMODE;
-var localHeroPicked = false
-var MinimapPTIDs = [];
-var HeroesPanels = [];
-var tabsData = {};
-var PlayerSpawnBoxes = {};
+	DOTA_ACTIVE_GAMEMODE,
+	CustomChatLinesPanel,
+	localHeroPicked = false,
+	MinimapPTIDs = [],
+	HeroesPanels = [],
+	tabsData = {},
+	PlayerSpawnBoxes = {};
 
 var SteamIDSpecialBGs = {
 	//ark120202

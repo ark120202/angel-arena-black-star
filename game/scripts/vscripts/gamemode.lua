@@ -185,17 +185,16 @@ function GameMode:OnGameInProgress()
 	else
 		Holdout:Start()
 	end
-	StatsClient:OnGameBegin()
-	Scepters:SetGlobalScepterThink()
-	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
-	PanoramaShop:StartItemStocks()
 	Timers:CreateTimer(function()
 		CustomRunes:SpawnRunes()
 		return CUSTOM_RUNE_SPAWN_TIME
 	end)
-	Timers:CreateTimer(0.3, function()
-		PlayerResource:RefreshSelection()
-	end)
+end
+
+function GameMode:OnHeroSelectionEnd()
+	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
+	PanoramaShop:StartItemStocks()
+	StatsClient:OnGameBegin()
 end
 
 -- This function initializes the game mode and is called before anyone loads into the game
@@ -235,6 +234,7 @@ function GameMode:InitGameMode()
 	Containers:UsePanoramaInventory(false)
 	HeroSelection:PrepareTables()
 	PanoramaShop:InitializeItemTable()
+	Scepters:SetGlobalScepterThink()
 	DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
 end
 
@@ -267,18 +267,22 @@ function GameMode:GameModeThink()
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
 			local hero = PlayerResource:GetSelectedHeroEntity(i)
-			local gold_per_tick = CUSTOM_GOLD_PER_TICK
 			if hero then
 				PlayerTables:SetTableValue("player_hero_entities", i, hero:GetEntityIndex())
 				hero:SetNetworkableEntityInfo("unit_name", GetFullHeroName(hero))
-				if hero.talent_keys and hero.talent_keys.bonus_gold_per_minute then
-					gold_per_tick = gold_per_tick + hero.talent_keys.bonus_gold_per_minute / 60 * CUSTOM_GOLD_TICK_TIME
-				end
-				if hero.talent_keys and hero.talent_keys.bonus_xp_per_minute then
-					hero:AddExperience(hero.talent_keys.bonus_xp_per_minute / 60 * CUSTOM_GOLD_TICK_TIME, 0, false, false)  
-				end
 			end
-			Gold:AddGold(i, gold_per_tick)
+			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+				local gold_per_tick = CUSTOM_GOLD_PER_TICK
+				if hero then
+					if hero.talent_keys and hero.talent_keys.bonus_gold_per_minute then
+						gold_per_tick = gold_per_tick + hero.talent_keys.bonus_gold_per_minute / 60 * CUSTOM_GOLD_TICK_TIME
+					end
+					if hero.talent_keys and hero.talent_keys.bonus_xp_per_minute then
+						hero:AddExperience(hero.talent_keys.bonus_xp_per_minute / 60 * CUSTOM_GOLD_TICK_TIME, 0, false, false)  
+					end
+				end
+				Gold:AddGold(i, gold_per_tick)
+			end
 			if not IsPlayerAbandoned(i) then
 				if PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
 					PLAYER_DATA[i].AutoAbandonGameTime = nil
