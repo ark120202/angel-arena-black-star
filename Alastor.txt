@@ -1,0 +1,21 @@
+Tiny - Grow
+LevelsBetweenUpgrades: 13 => 16
+
+Silencer - Last Word
+damage: 150 200 250 300 350 400 4500 => 150 200 250 300 350 400 450
+
+bristleback - Quill Spray
+LevelsBetweenUpgrades: 1 => 2
+
+Tiny - Craggy Exterior
+stun_chance: 12 14 16 18 20 22 24 => 2 4 6 8 10 12 14
+
+Medusa - Split Shot
+RequiredLevel: 3 => 6
+
+Medusa - Mana Shield
+damage_per_mana: 0.8 1.0 1.1 1.3 1.5 1.7 1.9 => 0.4 0.5 0.6 0.7 0.8 0.9 1.2
+
+Antimage - Mana Break
+nomana_stun_duration: 3 3.5 4 4.5 5 5.5 6 1.0 1.2 1.6 2.0 2.4 2.8 3.0
+nomana_stun_cooldown: 10 => 6

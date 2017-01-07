@@ -8552,7 +8552,7 @@
 		"AbilityTextureName"			"medusa_split_shot"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
-		"RequiredLevel"					"3"
+		"RequiredLevel"					"6"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -8731,7 +8731,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_mana"		"0.8 1.0 1.1 1.3 1.5 1.7 1.9"
+				"damage_per_mana"		"0.4 0.5 0.6 0.7 0.8 0.9 1.2"
 			}
 			"02"
 			{
@@ -14689,12 +14689,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"nomana_stun_duration"	"3 3.5 4 4.5 5 5.5 6"
+				"nomana_stun_duration"	"1.0 1.2 1.6 2.0 2.4 2.8 3.0"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"nomana_stun_cooldown"	"10"
+				"nomana_stun_cooldown"	"6"
 			}
 			"08"
 			{
