@@ -54,7 +54,7 @@ function freezing_field_explode( keys )
 		attackPoint = Vector( casterLocation.x - dx, casterLocation.y + dy, casterLocation.z )
 	elseif ability.SectionCounter == 1 then	--NE
 		attackPoint = Vector( casterLocation.x + dx, casterLocation.y + dy, casterLocation.z )
-	elseif ability.SectionCounter == 2 then	 -SE
+	elseif ability.SectionCounter == 2 then	 --SE
 		attackPoint = Vector( casterLocation.x + dx, casterLocation.y - dy, casterLocation.z )
 	else --SW
 		attackPoint = Vector( casterLocation.x - dx, casterLocation.y - dy, casterLocation.z )

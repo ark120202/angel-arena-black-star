@@ -79,7 +79,6 @@ local modifiers = {
 	["modifier_hero_selection_transformation"] = "modifiers/modifier_hero_selection_transformation.lua",
 	["modifier_fountain_aura_arena"] = "modifiers/modifier_fountain_aura_arena.lua",
 	["modifier_max_attack_range"] = "modifiers/modifier_max_attack_range.lua",
-	["modifier_item_lotus_sphere_passive"] = "items/lua/modifiers/modifier_item_lotus_sphere_passive.lua",
 	["modifier_arena_courier"] = "modifiers/modifier_arena_courier.lua",
 	["modifier_arena_hero"] = "modifiers/modifier_arena_hero.lua",
 }

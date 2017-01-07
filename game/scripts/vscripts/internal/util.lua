@@ -445,8 +445,8 @@ function swap_to_item(unit, srcItem, newItem)
 	ClearSlotsFromDummy(unit)
 end
 
-function FindItemInInventoryByName(unit, itemname, searchStash, onlyStash)
-	local lastSlot = DOTA_ITEM_SLOT_9
+function FindItemInInventoryByName(unit, itemname, searchStash, onlyStash, ignoreBackpack)
+	local lastSlot = ignoreBackpack and DOTA_ITEM_SLOT_6 or DOTA_ITEM_SLOT_9
 	local startSlot = 0
 	if searchStash then lastSlot = DOTA_STASH_SLOT_6 end
 	if onlyStash then startSlot = DOTA_STASH_SLOT_1 end
@@ -1353,4 +1353,26 @@ end
 
 function CDOTA_BaseNPC_Hero:GetFullName()
 	return self.UnitName or (self.GetUnitName and self:GetUnitName()) or self:GetName()
+end
+
+function table.nearestKey(t, key)
+	if not t then return end
+	local selectedKey
+	for k,v in pairs(t) do
+		if not selectedKey or math.abs(k - key) < math.abs(selectedKey - key) then
+			selectedKey = k
+		end
+	end
+	return t[selectedKey]
+end
+
+function table.nearestOrLowerKey(t, key)
+	if not t then return end
+	local selectedKey
+	for k,v in pairs(t) do
+		if k <= key and (not selectedKey or math.abs(k - key) < math.abs(selectedKey - key)) then
+			selectedKey = k
+		end
+	end
+	return t[selectedKey]
 end

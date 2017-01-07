@@ -69,7 +69,5 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 	["wearable_hero_shinobu_umbrella"] = {
 		
 	},
-	["wearable_developer"] = {
-		
-	}
+	["wearable_developer"] = {}
 }

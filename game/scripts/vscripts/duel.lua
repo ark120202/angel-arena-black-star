@@ -319,7 +319,7 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 		end
 	end
 	if timeUpdate then
-		Duel.TimeUntilDuel = ARENA_SETTINGS.DelayFromLast
+		Duel.TimeUntilDuel = table.nearestOrLowerKey(ARENA_SETTINGS.DelaysFromLast, GetDOTATimeInMinutesFull()) 
 	end
 end
 

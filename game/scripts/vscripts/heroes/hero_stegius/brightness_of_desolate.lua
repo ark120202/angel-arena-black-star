@@ -30,7 +30,7 @@ function IncreaseDamage(keys)
 	end
 	ModifyStacks(ability, caster, caster, "modifier_stegius_brightness_of_desolate_damage", damage, true)
 	Timers:CreateTimer(ability:GetAbilitySpecial("bonus_damage_duration"), function()
-		if caster and not caster:IsNull() then
+		if IsValidEntity(caster) then
 			ModifyStacks(ability, caster, caster, "modifier_stegius_brightness_of_desolate_damage", -damage)
 		end
 	end)

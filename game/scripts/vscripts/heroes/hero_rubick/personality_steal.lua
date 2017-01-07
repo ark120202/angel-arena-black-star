@@ -30,18 +30,18 @@ function SpellSteal(keys)
 	if caster:HasModifier("modifier_rubick_personality_steal") then
 		ability:EndCooldown()
 		ability:RefundManaCost()
+		return
 	end
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_rubick_personality_steal", {})
 	caster.rubick_spell_steal = {
-		level = ability:GetLevel(),
 		model = caster:GetModelName(),
 		model_scale = caster:GetModelScale(),
 		attack_capability = caster:GetAttackCapability()
 	}
-	UTIL_Remove(ability)
+	ability:SetHidden(true)
 	for i = 0, caster:GetAbilityCount() - 1 do
 		local a = caster:GetAbilityByIndex(i)
-		if a then
+		if a and a ~= ability then
 			UTIL_Remove(a)
 		end
 	end
@@ -55,11 +55,11 @@ function SpellSteal(keys)
 	caster:AddNewModifier(caster, ability, "modifier_set_attack_range", {AttackRange = target:GetAttackRange()})
 
 	caster:CalculateStatBonus()
-	Timers:CreateTimer(0.1, function()
-		for i = 0, target:GetAbilityCount() - 1 do
+	Timers:CreateTimer(0.03, function()
+		for i = 0, 5 do
 			local a = target:GetAbilityByIndex(i)
-			if a and a:GetAbilityName() ~= "rubick_personality_steal" then
-				ClearFalseInnateModifiers(caster, caster:AddAbility(a:GetAbilityName()))
+			if a and a:GetAbilityName() ~= "rubick_personality_steal" and not a:IsHidden() then
+				AddNewAbility(caster, a:GetAbilityName())
 			end
 		end
 		caster:CalculateStatBonus()
@@ -70,17 +70,14 @@ end
 
 function RemoveSpell(keys)
 	local caster = keys.caster
+	local ability = keys.ability
 	for i = 0, caster:GetAbilityCount() - 1 do
 		local a = caster:GetAbilityByIndex(i)
-		if a then
+		if a and a ~= ability then
 			RemoveAbilityWithModifiers(caster, a)
 		end
 	end
-	local newlevel = caster.rubick_spell_steal.level
-	Timers:CreateTimer(0.1, function()
-		caster:AddAbility("rubick_personality_steal"):SetLevel(newlevel)
-		caster:CalculateStatBonus()
-	end)
+	ability:SetHidden(false)
 	caster:SetModel(caster.rubick_spell_steal.model)
 	caster:SetOriginalModel(caster.rubick_spell_steal.model)
 	caster:SetModelScale(caster.rubick_spell_steal.model_scale)

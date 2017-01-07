@@ -513,7 +513,6 @@ function TransformUnitClass(unit, classTable)
 		end
 	end
 
-	--TODO Make sure that it works
 	for key, value in pairs(classTable) do
 		if key == "Level" then
 			unit:SetLevel(value)

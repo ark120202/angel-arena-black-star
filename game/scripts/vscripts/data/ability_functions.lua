@@ -225,3 +225,23 @@ INCOMING_DAMAGE_MODIFIERS = {
 		end
 	}
 }
+
+--[[CUSTOM_ATTACK_MODIFIERS_PROJECTILE_PRIORITY = {
+	"modifier_item_desolator2_arena",
+	"modifier_item_desolator3_arena",
+	"modifier_item_desolator4_arena",
+	"modifier_item_desolator5_arena",
+	"modifier_item_desolator6_arena"
+}
+
+CUSTOM_ATTACK_MODIFIERS = {
+	["modifier_item_desolator2_arena"] = {
+		projectile = "",
+		--[[onfire = function(attacker, victim)
+			
+		end,
+		onimpact = function(attacker, victim, inflictor)
+			
+		end
+	}
+}]]

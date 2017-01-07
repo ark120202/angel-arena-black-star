@@ -21,9 +21,9 @@ function FountainOnStartTouch(trigger, team)
 	if unit and unit:GetTeam() == team then
 		unit:AddNewModifier(unit, nil, "modifier_fountain_aura_arena", nil)
 	elseif not unit:IsBoss() then
-		local fountain = FindFountain(team)
-		if fountain then
+		if unit:GetUnitName() ~= "" then
 			Timers:CreateTimer(0.1, function()
+				local fountain = FindFountain(team)
 				fountain:EmitSound("Ability.LagunaBlade")
 				if unit and not unit:IsNull() then
 					unit:EmitSound("Ability.LagunaBladeImpact")

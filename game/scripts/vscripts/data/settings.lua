@@ -138,7 +138,11 @@ MAX_SPAWNBOXES_SELECTED = 3
 
 ARENA_SETTINGS = {
 	DelayFromGameStart = 600,
-	DelayFromLast = 300,
+	DelaysFromLast = {
+		[0] = 300,
+		[30] = 240,
+		[60] = 180,
+	},
 	DurationBase = 60,
 	DurationForPlayer = 20,
 	Duel1x1Duration = 90,
@@ -151,4 +155,4 @@ CUSTOM_GOLD_PER_TICK = 4
 CUSTOM_GOLD_TICK_TIME = 0.6
 
 CUSTOM_RUNE_SPAWN_TIME = 120
-PRE_GAME_TIME = 60
+PRE_GAME_TIME = IsInToolsMode() and 0 or 60

@@ -232,13 +232,7 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 		modifier:SetStackCount(attackspeed)
 	end
 	unit:SetModelScale(modelScale)
-	local model
-	for i = minutelevel, 0, -1 do
-		if SPAWNER_SETTINGS[spawnerType].SpawnTypes[spawnerIndex][1][i] then
-			model = SPAWNER_SETTINGS[spawnerType].SpawnTypes[spawnerIndex][1][i]
-			break
-		end
-	end
+	local model = table.nearestOrLowerKey(SPAWNER_SETTINGS[spawnerType].SpawnTypes[spawnerIndex][1], minutelevel)
 	if model then
 		unit:SetModel(model)
 		unit:SetOriginalModel(model)
