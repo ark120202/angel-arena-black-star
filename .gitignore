@@ -8,10 +8,10 @@
 *.vpk
 *.vsnd_c
 
-*.vanim_c
-*.vmesh_c
-*.vagrp_c
-*.vmdl_c
+# *.vanim_c
+# *.vmesh_c
+# *.vagrp_c
+# *.vmdl_c
 
 *.bin
 *.cfg
