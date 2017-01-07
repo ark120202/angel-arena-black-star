@@ -424,7 +424,7 @@ function GenerateAttackProjectile(unit, optAbility)
 		vSpawnOrigin = unit:GetAbsOrigin(),
 		Source = unit,
 		bHasFrontalCone = false,
-		iMoveSpeed = unit:GetKeyValue("ProjectileSpeed"),
+		iMoveSpeed = unit:GetKeyValue("ProjectileSpeed") or 99999,
 		bReplaceExisting = false,
 		bProvidesVision = false
 	}

@@ -14815,6 +14815,17 @@
 				"EffectAttachType"	"follow_origin"
 			}
 
+			"AttachEffect"
+			{
+				"EffectName"	"particles/arena/units/heroes/hero_antimage/blink_silence.vpcf"
+				"Target"		"CASTER"
+				"EffectAttachType"	"follow_origin"
+				"ControlPoints"
+				{
+					"01"	"%silence_radius 0 0"
+				}
+			}
+
 			"ActOnTargets"
 			{
 				"Target"

@@ -9,6 +9,7 @@ function SplitShotLaunch( keys )
 		for _,v in ipairs(split_shot_targets) do
 			if v ~= attack_target and not v:IsAttackImmune() then
 				local projectile_info = GenerateAttackProjectile(caster, ability)
+				print("Create?")
 				projectile_info["Target"] = v
 				if keys.force_attack_projectile then
 					projectile_info["EffectName"] = keys.force_attack_projectile

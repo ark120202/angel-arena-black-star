@@ -87,6 +87,7 @@ Balance:
 Fixes:
 	Fixed Crystal Maiden - Freezing Field didn't work (again)
 	Fixed Rubick - Personality Steal disappearing
+
 <<+===========================================================================================================
 
 
