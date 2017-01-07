@@ -56,10 +56,9 @@ function SpellSteal(keys)
 
 	caster:CalculateStatBonus()
 	Timers:CreateTimer(0.03, function()
-		for i = 0, 5 do
-			local a = target:GetAbilityByIndex(i)
-			if a and a:GetAbilityName() ~= "rubick_personality_steal" and not a:IsHidden() then
-				AddNewAbility(caster, a:GetAbilityName())
+		for k,v in pairsByKeys(NPC_HEROES_CUSTOM[target:GetFullName()]) do
+			if string.starts(k, "Ability") and v ~= "" then
+				AddNewAbility(caster, v, true)
 			end
 		end
 		caster:CalculateStatBonus()

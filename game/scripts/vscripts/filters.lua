@@ -129,6 +129,9 @@ function GameMode:DamageFilter(filterTable)
 				filterTable.damage = damage * 0.5
 			end
 		end
+		if victim:IsBoss() and (attacker:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() > 950 then
+			filterTable.damage = filterTable.damage / 2
+		end
 		
 		for k,v in pairs(ON_DAMAGE_MODIFIER_PROCS) do
 			if attacker.HasModifier and attacker:HasModifier(k) then

@@ -9,6 +9,7 @@ LINKED_ABILITIES = {
 	phoenix_fire_spirits = {"phoenix_launch_fire_spirit"},
 	ancient_apparition_ice_blast = {"ancient_apparition_ice_blast_release"},
 	wisp_tether_aghanims = {"wisp_tether_break_aghanims"},
+	alchemist_unstable_concoction = {"alchemist_unstable_concoction_throw"},
 }
 
 NOT_MULTICASTABLE_ABILITIES = {
