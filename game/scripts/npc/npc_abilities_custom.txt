@@ -409,6 +409,8 @@
 				"IsPurgable"		"1"
 				"IsBuff"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"TextureName"		"arena/casino_bitch_passive"
 			
 				"EffectName"		"particles/econ/items/lina/lina_head_headflame/lina_flame_hand_headflame.vpcf"
 				"EffectAttachType"	"follow_overhead"
