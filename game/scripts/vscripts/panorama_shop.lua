@@ -230,6 +230,60 @@ function PanoramaShop:OnItemBuy(data)
 	end
 end
 
+function PanoramaShop:PushItem(playerID, unit, name, bOnlyStash)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+	local team = PlayerResource:GetTeam(playerID)
+	local item = CreateItem(name, hero, hero)
+	local isInShop = unit:HasModifier("modifier_fountain_aura_arena")
+	item:SetPurchaseTime(GameRules:GetGameTime())
+	item:SetPurchaser(hero)
+
+	local itemPushed = false
+	--If unit has slot for that item
+	if isInShop and not bOnlyStash then
+		if unit:UnitHasSlotForItem(name, true) then
+			unit:AddItem(item)
+			itemPushed = true
+		end
+	end
+	--Try to add item to hero's stash
+	if not itemPushed then
+		if not isInShop then SetAllItemSlotsLocked(hero, true, true) end
+		FillSlotsWithDummy(hero, false)
+		for i = DOTA_STASH_SLOT_1 , DOTA_STASH_SLOT_6 do
+			local current_item = unit:GetItemInSlot(i)
+			if current_item and current_item:GetAbilityName() == "item_dummy" then
+				UTIL_Remove(current_item)
+				unit:AddItem(item)
+				itemPushed = true
+				break
+			end
+		end
+		ClearSlotsFromDummy(hero, false)
+		if not isInShop then SetAllItemSlotsLocked(hero, false, true) end
+	end
+	--At last drop an item on fountain
+	if not itemPushed then
+		local spawnPointName = "info_courier_spawn"
+		local teamCared = true
+		if PlayerResource:GetTeam(playerID) == DOTA_TEAM_GOODGUYS then
+			spawnPointName = "info_courier_spawn_radiant"
+			teamCared = false
+		elseif PlayerResource:GetTeam(playerID) == DOTA_TEAM_BADGUYS then
+			spawnPointName = "info_courier_spawn_dire"
+			teamCared = false
+		end
+		local ent
+		while true do
+			ent = Entities:FindByClassname(ent, spawnPointName)
+			if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerID))) then
+				CreateItemOnPositionSync(ent:GetAbsOrigin() + RandomVector(RandomInt(0, 300)), item)
+				break
+			end
+		end
+	end
+end
+
 SHOP_LIST_STATUS_IN_INVENTORY = 0
 SHOP_LIST_STATUS_IN_STASH = 1
 SHOP_LIST_STATUS_TO_BUY = 2
@@ -321,59 +375,6 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 			end
 		end
 	end
-	function PushItem(name, bOnlyStash)
-		if PanoramaShop.StocksTable[team][name] then
-			PanoramaShop:DecreaseItemStock(team, name)
-		end
-		local item = CreateItem(name, hero, hero)
-		item:SetPurchaseTime(GameRules:GetGameTime())
-		item:SetPurchaser(hero)
-
-		local itemPushed = false
-		--If unit has slot for that item
-		if isInShop and not bOnlyStash then
-			if unit:UnitHasSlotForItem(name, true) then
-				unit:AddItem(item)
-				itemPushed = true
-			end
-		end
-		--Try to add item to hero's stash
-		if not itemPushed then
-			if not isInShop then SetAllItemSlotsLocked(hero, true, true) end
-			FillSlotsWithDummy(hero, false)
-			for i = DOTA_STASH_SLOT_1 , DOTA_STASH_SLOT_6 do
-				local current_item = unit:GetItemInSlot(i)
-				if current_item and current_item:GetAbilityName() == "item_dummy" then
-					UTIL_Remove(current_item)
-					unit:AddItem(item)
-					itemPushed = true
-					break
-				end
-			end
-			ClearSlotsFromDummy(hero, false)
-			if not isInShop then SetAllItemSlotsLocked(hero, false, true) end
-		end
-		--At last drop an item on fountain
-		if not itemPushed then
-			local spawnPointName = "info_courier_spawn"
-			local teamCared = true
-			if PlayerResource:GetTeam(playerID) == DOTA_TEAM_GOODGUYS then
-				spawnPointName = "info_courier_spawn_radiant"
-				teamCared = false
-			elseif PlayerResource:GetTeam(playerID) == DOTA_TEAM_BADGUYS then
-				spawnPointName = "info_courier_spawn_dire"
-				teamCared = false
-			end
-			local ent
-			while true do
-				ent = Entities:FindByClassname(ent, spawnPointName)
-				if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerID))) then
-					CreateItemOnPositionSync(ent:GetAbsOrigin() + RandomVector(RandomInt(0, 300)), item)
-					break
-				end
-			end
-		end
-	end
 	DefineItemState(itemName)
 	
 	local ItemsInInventory = {}
@@ -412,15 +413,24 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 				if not removedItem then removedItem = FindItemInInventoryByName(unit, v, true, true) end
 				unit:RemoveItem(removedItem)
 			end
-			PushItem(itemName, isTrueOnlyStashRecipe)
+			PanoramaShop:PushItem(playerID, unit, itemName)
+			if PanoramaShop.StocksTable[team][itemName] then
+				PanoramaShop:DecreaseItemStock(team, itemName)
+			end
 		elseif #ItemsInInventory == 0 and #ItemsInStash > 0 then
 			for _,v in ipairs(ItemsInStash) do
 				unit:RemoveItem(FindItemInInventoryByName(unit, v, true, false))
 			end
-			PushItem(itemName, true)
+			PanoramaShop:PushItem(playerID, unit, itemName, true)
+			if PanoramaShop.StocksTable[team][itemName] then
+				PanoramaShop:DecreaseItemStock(team, itemName)
+			end
 		else
 			for _,v in ipairs(ItemsToBuy) do
-				PushItem(v)
+				PanoramaShop:PushItem(playerID, unit, v)
+				if PanoramaShop.StocksTable[team][v] then
+					PanoramaShop:DecreaseItemStock(team, v)
+				end
 			end
 		end
 	end

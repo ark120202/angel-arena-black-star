@@ -2,7 +2,8 @@ if HeroSelection == nil then
 	_G.HeroSelection = class({})
 	HeroSelection.SelectionEnd = false
 end
-local bStartGameOnAllPlayersSelected = IsInToolsMode()
+local bStartGameOnAllPlayersSelected = GameRules:IsCheatMode()
+local bDebugPrecacheScreen = false
 
 function HeroSelection:Initialize()
 	if not HeroSelection._initialized then
@@ -140,9 +141,13 @@ function HeroSelection:PreformGameStart()
 		for plyId,v in pairs(_v) do
 			local heroNameTransformed = GetKeyValue(v.hero, "base_hero") or v.hero
 			toPrecache[heroNameTransformed] = false
-			PrecacheUnitByNameAsync(heroNameTransformed, function() toPrecache[heroNameTransformed] = true end, plyId)
+			PrecacheUnitByNameAsync(heroNameTransformed, function()
+				toPrecache[heroNameTransformed] = true
+				CustomGameEventManager:Send_ServerToAllClients("hero_selection_update_precache_progress", toPrecache)
+			end, plyId)
 		end
 	end
+	CustomGameEventManager:Send_ServerToAllClients("hero_selection_update_precache_progress", toPrecache)
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled( DISABLE_ANNOUNCER )
 	PauseGame(true)
 	CustomGameEventManager:Send_ServerToAllClients("hero_selection_show_precache", {})
@@ -150,7 +155,7 @@ function HeroSelection:PreformGameStart()
 		useGameTime = false,
 		callback = function()
 			PauseGame(true)
-			local canEnd = true
+			local canEnd = not bDebugPrecacheScreen
 			for k,v in pairs(toPrecache) do
 				if not v then
 					canEnd = false
@@ -518,8 +523,7 @@ function TransformUnitClass(unit, classTable)
 			unit:SetLevel(value)
 		elseif key == "Model" then
 			unit.ModelOverride = value
-			unit:SetModel(value)
-			unit:SetOriginalModel(value)
+			unit:AddNewModifier(unit, nil, "modifier_hero_selection_model_change", nil)
 		elseif key == "ModelScale" then
 			unit:SetModelScale(value)
 		elseif key == "ArmorPhysical" then

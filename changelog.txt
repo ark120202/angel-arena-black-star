@@ -47,46 +47,27 @@ TODO LIST:
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/6f5037594d8370eb4451d82683184120
 ============================================================
 Angel Arena Black Star - Версия 1.4.1:
-Anti-Mage переработан
-Уменьшена задержка между дуэлями после 30/60 минуты
-Ослаблены: Stegius, Shinubu, Stegius - Brightness of Desolate, Stegius - Desolating Touch
-Исправлен Rubick - Personality Steal
-Исправлен Crystal Maiden - Freezing Field
+
 ============================================================
 Angel Arena Black Star - Version 1.4.1:
-Anti-Mage reworked
-Reduced duel delay after 30/60 minute
-Nerfed: Stegius, Shinubu, Stegius - Brightness of Desolate, Stegius - Desolating Touch
-Fixed Rubick - Personality Steal
-Fixed Crystal Maiden - Freezing Field
+
 ============================================================
 Angel Arena Black Star - Version 1.4.1:
 General:
-	Anti-Mage reworked
-	Since 30 minute delay between duels will be decreased to 4 minutes
-	Since 60 minute delay between duels will be decreased to 3 minutes
-	Fountain now creates particles and sound only when it kills real unit
+	Added Russian translation for Zaken, Freya, Anti-Mage and Doom
+	Added progress bar for Hero Selection loading menu
+	//Maelstorm reworked
+	//Saber mdl
 Balance:
+	Black King Bar's & Titanium Bar now applies strong dispel on activate
+	//Echo Sabre's now don't applies disarm and root to magic immune units
 	Heroes:
-		Stegius:
-			BAT: 1.3 => 1.7
-			Attack Range: 150 => 190
-		Shinubu:
-			BAT: 1.3 => 1.5
-			Base Strength: 20 => 14
-			Base Agility: 26 => 24
-			Base Intelligence: 14 => 16
+		
 	Abilities:
-		Stegius - Brightness of Desolate:
-			Damage from hero: 60 120 180 240 300 500 700 => 30 60 120 180 240 300 360
-		Stegius - Desolating Touch:
-			Each stack now has unique duration
-			Levels Between Upgrades: 5 => 12
-			Armor Reduction on Bosses: 0 0 -1 -1 -2 -2 -2 => 0 0 0 -1 -1 -1 -2
-			Duration: 15 => 12
+		
 Fixes:
-	Fixed Crystal Maiden - Freezing Field didn't work (again)
-	Fixed Rubick - Personality Steal disappearing
+	Fixed wearables weren't hidden on heroes with custom models
+	//Fixed missing icons on modifier images
 
 
 <<+===========================================================================================================

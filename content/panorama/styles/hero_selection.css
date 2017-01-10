@@ -796,3 +796,15 @@
 	transform: translateY( 2px );
 	border: 1px solid black;
 }
+
+#PrecacheProgressBar
+{
+	vertical-align: bottom;
+	width: 800px;
+	margin-bottom: -10px;
+}
+
+#PrecacheProgressBar_Left
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #69B4FF ), to( #31A6E0 ) );
+}

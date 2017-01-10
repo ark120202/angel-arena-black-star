@@ -2,9 +2,6 @@
 
 -- Cleanup a player when they leave
 function GameMode:OnDisconnect(keys)
-	DebugPrint('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
-	DebugPrintTable(keys)
-
 	local name = keys.name
 	local networkid = keys.networkid
 	local reason = keys.reason
@@ -12,9 +9,6 @@ function GameMode:OnDisconnect(keys)
 end
 -- The overall game state has changed
 function GameMode:OnGameRulesStateChange(keys)
-	DebugPrint("[BAREBONES] GameRules State Changed")
-	DebugPrintTable(keys)
-
 	local newState = GameRules:State_Get()
 	if newState == DOTA_GAMERULES_STATE_PRE_GAME then
 		local Counters = {}
@@ -37,8 +31,6 @@ end
 
 -- An NPC has spawned somewhere in game.	This includes heroes
 function GameMode:OnNPCSpawned(keys)
-	DebugPrint("[BAREBONES] NPC Spawned")
-	DebugPrintTable(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	if npc:IsHero() then
 		if not HeroSelection.SelectionEnd then
@@ -50,10 +42,6 @@ function GameMode:OnNPCSpawned(keys)
 				local base_hero = npc:GetPlayerOwner():GetAssignedHero()
 				if base_hero and base_hero ~= npc and npc:GetModelName() == base_hero:GetModelName() and base_hero.WearablesRemoved then
 					npc.WearablesRemoved = true
-				end
-				if npc.ModelOverride then
-					npc:SetModel(npc.ModelOverride)
-					npc:SetOriginalModel(npc.ModelOverride)
 				end
 				Physics:Unit(npc)
 		    	npc:SetAutoUnstuck(true)
@@ -84,9 +72,6 @@ end
 
 -- An item was picked up off the ground
 function GameMode:OnItemPickedUp(keys)
-	DebugPrint( '[BAREBONES] OnItemPickedUp' )
-	DebugPrintTable(keys)
-
 	local unitEntity = nil
 	if keys.UnitEntitIndex then
 		unitEntity = EntIndexToHScript(keys.UnitEntitIndex)
@@ -107,27 +92,11 @@ end
 -- A player has reconnected to the game.	This function can be used to repaint Player-based particles or change
 -- state as necessary
 function GameMode:OnPlayerReconnect(keys)
-	DebugPrint( '[BAREBONES] OnPlayerReconnect' )
-	DebugPrintTable(keys)
-end
 
--- An item was purchased by a player
-function GameMode:OnItemPurchased( keys )
-	DebugPrint( '[BAREBONES] OnItemPurchased' )
-	DebugPrintTable(keys)
-
-	local plyID = keys.PlayerID
-	if not plyID then return end
-	local itemName = keys.itemname
-	local itemcost = keys.itemcost
-	HeroVoice:OnItemPurchased(plyID, itemName, itemcost)
 end
 
 -- An ability was used by a player
 function GameMode:OnAbilityUsed(keys)
-	DebugPrint('[BAREBONES] AbilityUsed')
-	DebugPrintTable(keys)
-
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 
 	local hero = PlayerResource:GetSelectedHeroEntity(keys.PlayerID)
@@ -153,68 +122,47 @@ end
 
 -- A non-player entity (necro-book, chen creep, etc) used an ability
 function GameMode:OnNonPlayerUsedAbility(keys)
-	DebugPrint('[BAREBONES] OnNonPlayerUsedAbility')
-	DebugPrintTable(keys)
-
-	local abilityname = keys.abilityname
+	--local abilityname = keys.abilityname
 end
 
 -- A player changed their name
 function GameMode:OnPlayerChangedName(keys)
-	DebugPrint('[BAREBONES] OnPlayerChangedName')
-	DebugPrintTable(keys)
-
-	local newName = keys.newname
-	local oldName = keys.oldName
+	--local newName = keys.newname
+	--local oldName = keys.oldName
 end
 
 -- A player leveled up an ability
 function GameMode:OnPlayerLearnedAbility( keys)
-	DebugPrint('[BAREBONES] OnPlayerLearnedAbility')
-	DebugPrintTable(keys)
-
-	local player = EntIndexToHScript(keys.player)
-	local abilityname = keys.abilityname
+	--local player = EntIndexToHScript(keys.player)
+	--local abilityname = keys.abilityname
 end
 
 -- A channelled ability finished by either completing or being interrupted
 function GameMode:OnAbilityChannelFinished(keys)
-	DebugPrint('[BAREBONES] OnAbilityChannelFinished')
-	DebugPrintTable(keys)
-
-	local abilityname = keys.abilityname
-	local interrupted = keys.interrupted == 1
+	--local abilityname = keys.abilityname
+	--local interrupted = keys.interrupted == 1
 end
 
 -- A player leveled up
 function GameMode:OnPlayerLevelUp(keys)
-	DebugPrint('[BAREBONES] OnPlayerLevelUp')
-	DebugPrintTable(keys)
-
-	local player = EntIndexToHScript(keys.player)
-	local level = keys.level
+	--[[local player = EntIndexToHScript(keys.player)
+	local level = keys.level]]
 end
 
 -- A player last hit a creep, a tower, or a hero
 function GameMode:OnLastHit(keys)
-	DebugPrint('[BAREBONES] OnLastHit')
-	DebugPrintTable(keys)
-
-	local isFirstBlood = keys.FirstBlood == 1
+	--[[local isFirstBlood = keys.FirstBlood == 1
 	local isHeroKill = keys.HeroKill == 1
 	local isTowerKill = keys.TowerKill == 1
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
-	local killedEnt = EntIndexToHScript(keys.EntKilled)
+	local killedEnt = EntIndexToHScript(keys.EntKilled)]]
 end
 
 -- A tree was cut down by tango, quelling blade, etc
 function GameMode:OnTreeCut(keys)
-	DebugPrint('[BAREBONES] OnTreeCut')
-	DebugPrintTable(keys)
-
-	local treeX = keys.tree_x
+	--[[local treeX = keys.tree_x
 	local treeY = keys.tree_y
-	--[[if RollPercentage(10) then
+	if RollPercentage(10) then
 		GameMode:CreateTreeDrop(Vector(treeX, treeY, 0), "item_tree_banana")
 	end]]
 end
@@ -226,9 +174,6 @@ end
 
 -- A player killed another player in a multi-team context
 function GameMode:OnTeamKillCredit(keys)
-	DebugPrint('[BAREBONES] OnTeamKillCredit')
-	DebugPrintTable(keys)
-
 	local killerPlayer = PlayerResource:GetPlayer(keys.killer_userid)
 	local victimPlayer = PlayerResource:GetPlayer(keys.victim_userid)
 	--local numKills = keys.herokills
@@ -239,10 +184,7 @@ function GameMode:OnTeamKillCredit(keys)
 end
 
 -- An entity died
-function GameMode:OnEntityKilled( keys )
-	DebugPrint( '[BAREBONES] OnEntityKilled Called' )
-	DebugPrintTable( keys )
-
+function GameMode:OnEntityKilled(keys)
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
 	local killerEntity = nil
 	if keys.entindex_attacker ~= nil then
@@ -323,7 +265,7 @@ function GameMode:OnEntityKilled( keys )
 			end
 		end
 
-		local dropTables = DROP_TABLE[killedUnit:GetUnitName()]
+		--[[local dropTables = DROP_TABLE[killedUnit:GetUnitName()]
 		if dropTables and not killedUnit.IsDominatedBoss then
 			local items = {}
 			for _,dropTable in ipairs(dropTables) do
@@ -334,49 +276,34 @@ function GameMode:OnEntityKilled( keys )
 			if #items > 0 then
 				ContainersHelper:CreateLootBox(killedUnit:GetAbsOrigin() + RandomVector(100), items)
 			end
-		end
+		end]]
 	end
 end
 
 -- This function is called 1 to 2 times as the player connects initially but before they 
 -- have completely connected
 function GameMode:PlayerConnect(keys)
-	DebugPrint('[BAREBONES] PlayerConnect')
-	DebugPrintTable(keys)
+
 end
 
 -- This function is called once when the player fully connects and becomes "Ready" during Loading
 function GameMode:OnConnectFull(keys)
-	DebugPrint('[BAREBONES] OnConnectFull')
-	DebugPrintTable(keys)
-	
-	local entIndex = keys.index+1
-	-- The Player entity of the joining user
+	--[[local entIndex = keys.index+1
 	local ply = EntIndexToHScript(entIndex)
-	
-	-- The Player ID of the joining player
-	local playerID = ply:GetPlayerID()
+	local playerID = ply:GetPlayerID()]]
 end
 
 -- This function is called whenever an item is combined to create a new item
 function GameMode:OnItemCombined(keys)
-	DebugPrint('[BAREBONES] OnItemCombined')
-	DebugPrintTable(keys)
-
-	-- The playerID of the hero who is buying something
 	local plyID = keys.PlayerID
 	if not plyID then return end
 	local player = PlayerResource:GetPlayer(plyID)
-
-	-- The name of the item purchased
 	local itemName = keys.itemname 
 	local hero = player:GetAssignedHero()
-
-	-- The cost of the item purchased
 	local itemcost = keys.itemcost
 
 	local recipe = "item_recipe_" .. string.gsub(itemName, "item_", "")
-	if recipe and GetKeyValue(recipe) and GetKeyValue(recipe, "ItemUseCharges") then
+	if GetKeyValue(recipe) and GetKeyValue(recipe, "ItemUseCharges") then
 		for i = 0, 11 do
 			local item = hero.InventorySnapshot[i]
 			if item and item.name == GetKeyValue(recipe, "ItemUseCharges") and item.charges >= GetKeyValue(recipe, "ItemChargeAmount") then
@@ -402,38 +329,19 @@ end
 
 -- This function is called whenever an ability begins its PhaseStart phase (but before it is actually cast)
 function GameMode:OnAbilityCastBegins(keys)
-	DebugPrint('[BAREBONES] OnAbilityCastBegins')
-	DebugPrintTable(keys)
-
-	local player = PlayerResource:GetPlayer(keys.PlayerID)
-	local abilityName = keys.abilityname
-end
-
--- This function is called whenever a tower is killed
-function GameMode:OnTowerKill(keys)
-	DebugPrint('[BAREBONES] OnTowerKill')
-	DebugPrintTable(keys)
-
-	local gold = keys.gold
-	local killerPlayer = PlayerResource:GetPlayer(keys.killer_userid)
-	local team = keys.teamnumber
+	--local player = PlayerResource:GetPlayer(keys.PlayerID)
+	--local abilityName = keys.abilityname
 end
 
 -- This function is called whenever a player changes there custom team selection during Game Setup 
 function GameMode:OnPlayerSelectedCustomTeam(keys)
-	--[[DebugPrint('[BAREBONES] OnPlayerSelectedCustomTeam')
-	DebugPrintTable(keys)
-
-	local player = PlayerResource:GetPlayer(keys.player_id)
+	--[[local player = PlayerResource:GetPlayer(keys.player_id)
 	local success = (keys.success == 1)
 	local team = keys.team_id]]
 end
 
 -- This function is called whenever an NPC reaches its goal position/target
 function GameMode:OnNPCGoalReached(keys)
-	DebugPrint('[BAREBONES] OnNPCGoalReached')
-	DebugPrintTable(keys)
-
 	local goalEntity = EntIndexToHScript(keys.goal_entindex)
 	local nextGoalEntity = EntIndexToHScript(keys.next_goal_entindex)
 	local npc = EntIndexToHScript(keys.npc_entindex)
@@ -459,128 +367,6 @@ function CustomChatSay(playerId, text, teamonly)
 			CustomGameEventManager:Send_ServerToAllClients("custom_chat_recieve_message", {text=text, playerId=playerId, teamonly=teamonly, hero=heroName})
 		end
 	end
-end
-
-function GameMode:CustomChatFilter(playerID, text, teamonly)
-	if string.starts(text, "-") then
-		local cmd = {}
-		for v in string.gmatch(string.lower(string.sub(text, 2)), "%S+") do table.insert(cmd, v) end
-		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-		if CustomWearables:HasWearable(playerID, "wearable_developer") then
-			if cmd[1] == "debugallcalls" then
-				DebugAllCalls()
-			end
-			if cmd[1] == "printplayers" then
-				local playerinfo = {}
-				for pID = 0, DOTA_MAX_TEAM_PLAYERS - 1  do
-					if PlayerResource:IsValidPlayerID(pID) then
-						playerinfo[pID] = {
-							nick = PlayerResource:GetPlayerName(pID),
-							hero = PlayerResource:GetSelectedHeroEntity(pID):GetFullName(),
-							team = PlayerResource:GetTeam(pID),
-							steamID32 = PlayerResource:GetSteamAccountID(playerID)
-						}
-					end
-				end
-				PrintTable(playerinfo)
-			end
-		end
-		if GameRules:IsCheatMode() then
-			if cmd[1] == "gold" then
-				Gold:ModifyGold(hero, tonumber(cmd[2]))
-			end
-			if cmd[1] == "spawnrune" then
-				CustomRunes:SpawnRunes()
-			end
-			if cmd[1] == "t" then
-				for i = 2, 50 do
-					if XP_PER_LEVEL_TABLE[hero:GetLevel()] and XP_PER_LEVEL_TABLE[hero:GetLevel() + 1] then
-						hero:AddExperience(XP_PER_LEVEL_TABLE[hero:GetLevel() + 1] - XP_PER_LEVEL_TABLE[hero:GetLevel()], 0, false, false)
-					else
-						break
-					end
-				end
-				hero:AddItem(CreateItem("item_rapier", hero, hero))
-				hero:AddItem(CreateItem("item_blink_arena", hero, hero))
-				SendToServerConsole("dota_ability_debug 1")
-			end
-			if cmd[1] == "godmode" then
-				hero:AddExperience(1000000000, 0, false, true)
-				Gold:ModifyGold(playerID, 999999)
-				hero:ModifyAgility(1000000)
-				hero:ModifyStrength(1000000)
-				hero:ModifyIntellect(1000000)
-			end
-			if cmd[1] == "disablegodmode" then
-				Gold:ModifyGold(playerID, -999999)
-				hero:ModifyAgility(-1000000)
-				hero:ModifyStrength(-1000000)
-				hero:ModifyIntellect(-1000000)
-			end
-			if cmd[1] == "startduel" then
-				Duel.TimeUntilDuel = 0
-			end
-			if cmd[1] == "endduel" then
-				Duel.TimeUntilDuelEnd = 1
-			end
-			if cmd[1] == "killcreeps" then
-				local units = FindUnitsInRadius(hero:GetTeamNumber(), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
-				for _,v in ipairs(units) do
-					v:ForceKill(true)
-				end
-			end
-			if cmd[1] == "reset" then
-				for i = 0, hero:GetAbilityCount() - 1 do
-					local ability = hero:GetAbilityByIndex(i)
-					if ability then
-						local n = ability:GetAbilityName()
-						hero:SetAbilityPoints(hero:GetAbilityPoints() + ability:GetLevel())
-						hero:RemoveAbility(n)
-						hero:AddAbility(n)
-					end
-				end
-			end
-			if cmd[1] == "runetest" then
-				for i = ARENA_RUNE_FIRST, ARENA_RUNE_LAST do
-					CustomRunes:CreateRune(hero:GetAbsOrigin() + RandomVector(RandomInt(90, 300)), i)
-				end
-			end
-			if cmd[1] == "createcreep" then
-				local sName = tostring(cmd[2]) or "medium"
-				local SpawnerType = tonumber(cmd[3]) or 0
-				local time = tonumber(cmd[4]) or 0
-				local unitRootTable = SPAWNER_SETTINGS[sName].SpawnTypes[SpawnerType]
-				PrintTable(SPAWNER_SETTINGS[sName])
-				local unit = CreateUnitByName(unitRootTable[1][-1], hero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
-				unit.SpawnerIndex = SpawnerType
-				unit.SpawnerType = sName
-				unit.SSpawner = -1
-				unit.SLevel = time
-				Spawner:UpgradeCreep(unit, unit.SpawnerType, unit.SLevel, unit.SpawnerIndex)
-			end
-			if cmd[1] == "a_createhero" then
-				local heroName = cmd[2]
-				local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
-				local baseNewHero = heroTableCustom.base_hero or heroName
-				local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
-				h:SetTeam(PlayerResource:GetTeam(playerID) == 2 and 3 or 2)
-				h:SetAbsOrigin(hero:GetAbsOrigin())
-				h:SetControllableByPlayer(playerID, true)
-				for i = 1, 300 do
-					h:HeroLevelUp(false)
-				end
-				if heroTableCustom.base_hero then
-					TransformUnitClass(h, heroTableCustom)
-					h.UnitName = heroName
-				end
-			end
-			if cmd[1] == "talents_clear" then
-				hero:ClearTalents()
-			end
-		end
-		return false
-	end
-	return true
 end
 
 function GameMode:TrackInventory(unit)

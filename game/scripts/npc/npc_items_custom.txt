@@ -13437,6 +13437,14 @@
 		
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"KVPurge"
+				"RemoveDebuffs"	"1"
+				"RemoveStuns"	"1"
+			}
+
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_item_black_king_bar_arena_active"
@@ -13554,6 +13562,14 @@
 		
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"KVPurge"
+				"RemoveDebuffs"	"1"
+				"RemoveStuns"	"1"
+			}
+
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_item_black_king_bar_arena_active"
@@ -13671,6 +13687,14 @@
 		
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"KVPurge"
+				"RemoveDebuffs"	"1"
+				"RemoveStuns"	"1"
+			}
+
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_item_black_king_bar_arena_active"
@@ -13788,6 +13812,14 @@
 		
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"KVPurge"
+				"RemoveDebuffs"	"1"
+				"RemoveStuns"	"1"
+			}
+
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_item_black_king_bar_arena_active"
@@ -13905,6 +13937,14 @@
 		
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"KVPurge"
+				"RemoveDebuffs"	"1"
+				"RemoveStuns"	"1"
+			}
+
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_item_black_king_bar_arena_active"
@@ -14049,6 +14089,14 @@
 		
 		"Modifiers"
 		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"KVPurge"
+				"RemoveDebuffs"	"1"
+				"RemoveStuns"	"1"
+			}
+
 			"modifier_item_black_king_bar_6"
 			{
 				"Passive"			"1"
@@ -14168,6 +14216,14 @@
 		
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"KVPurge"
+				"RemoveDebuffs"	"1"
+				"RemoveStuns"	"1"
+			}
+
 			"FireSound"
 			{
 				"EffectName"	"DOTA_Item.BlackKingBar.Activate"
@@ -20312,6 +20368,81 @@
 				"ScriptFile"	"items/items_god_transforms.lua"
 				"Function"		"GodTransform"
 				"heroname"		"npc_arena_hero_zaken"
+			}
+		}
+	}
+
+	"item_maelstrom_arena"
+	{
+		// General
+		"BaseClass"             		"item_datadriven"
+		"AbilityTextureName"			"item_maelstrom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+
+		"ItemShopTags"					"damage;attack_speed;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"maelstrom"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"24"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chain_chance"			"25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chain_damage"			"120"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chain_strikes"			"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chain_radius"			"900"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_delay"			"0.25"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_maelstrom_arena"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_maelstrom.lua"
+						"Function"		"ChainLightning"
+					}
+				}
 			}
 		}
 	}

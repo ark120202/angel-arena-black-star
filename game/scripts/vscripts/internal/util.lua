@@ -1,3 +1,7 @@
+function CPrint( ... )
+	--CustomGameEventManager:Send_ServerToPlayer(Entity Player,string EventName,table EventData)
+end
+
 function DebugPrint(...)
 	local spew = Convars:GetInt('barebones_spew') or -1
 	if spew == -1 and BAREBONES_DEBUG_SPEW then
@@ -100,56 +104,14 @@ function DebugAllCalls()
 	end
 end
 
-function DebugToLogAllCalls()
-	if not GameRules.DebugCalls then
-		LogPrint("Starting DebugCalls")
-		GameRules.DebugCalls = true
-
-		debug.sethook(function(...)
-			local info = debug.getinfo(2)
-			local src = tostring(info.short_src)
-			local name = tostring(info.name)
-			if name ~= "__index" then
-				LogPrint("Call: ".. src .. " -- " .. name .. " -- " .. info.currentline)
-			end
-		end, "c")
-	else
-		LogPrint("Stopped DebugCalls")
-		GameRules.DebugCalls = false
-		debug.sethook(nil, "c")
-	end
-end
-
---[[Author: Noya
-	Date: 09.08.2015.
-	Hides all dem hats
-]]
-function HideWearables( unit )
-	unit.hiddenWearables = unit.hiddenWearables or {}
-	local model = unit:FirstMoveChild()
-	while model ~= nil do
-		if model:GetClassname() == "dota_item_wearable" then
-			model:AddEffects(EF_NODRAW) -- Set model hidden
-			table.insert(unit.hiddenWearables, model)
-		end
-		model = model:NextMovePeer()
-	end
-end
-
-function ShowWearables( unit )
-	for i,v in ipairs(unit.hiddenWearables) do
-		v:RemoveEffects(EF_NODRAW)
-	end
-end
-
 -----------------------------------------------------------------------------------------------
 
-function string.starts(String,Start)
-	return string.sub(String,1,string.len(Start))==Start
+function string.starts(s, start)
+	return string.sub(s, 1, string.len(start)) == start
 end
 
-function string.ends(String,End)
-	return End=='' or string.sub(String,-string.len(End))==End
+function string.ends(s, e)
+	return e == "" or string.sub(s, -string.len(e)) == e
 end
 
 function GetAllPlayers(bOnlyWithHeroes)
@@ -563,26 +525,6 @@ function SpendCharge(item, amount)
 	end
 end
 
-function SwapModel(unit, newModel, priority, bHideWearables)
-	if unit.caster_model == nil then 
-		unit.caster_model = unit:GetModelName()
-	end
-	--TODO
-	--if not unit.ModelHistory then unit.ModelHistory = {} end
-	unit:SetOriginalModel(newModel)
-	if bHideWearables then
-		HideWearables( unit )
-	end
-end
-
-function SwapModelBack(unit, bShowWearables)
-	unit:SetModel(unit.caster_model)
-	unit:SetOriginalModel(unit.caster_model)
-	if bShowWearables then
-		ShowWearables( unit )
-	end
-end
-
 function GetAbilityCooldown(unit, ability)
 	local level = ability:GetLevel() - 1
 	if level < 0 then level = 0 end
@@ -830,7 +772,10 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	end
 	illusion.UnitName = unit.UnitName
 	illusion:SetNetworkableEntityInfo("unit_name", GetFullHeroName(illusion))
-	--PlayerResource:AddToSelection(unit:GetPlayerID(), illusion)
+	if unit.ModelOverride then
+		illusion.ModelOverride = unit.ModelOverride
+		illusion:AddNewModifier(illusion, nil, "modifier_hero_selection_model_change", nil)
+	end
 	return illusion
 end
 
@@ -1307,11 +1252,6 @@ function CEntityInstance:SetNetworkableEntityInfo(key, value)
 	local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
 	t[key] = value
 	CustomNetTables:SetTableValue("custom_entity_values", tostring(self:GetEntityIndex()), t)
-end
-
-function CEntityInstance:GetNetworkableEntityInfo(key)
-	local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
-	return t[key]
 end
 
 function CEntityInstance:ClearNetworkableEntityInfo()

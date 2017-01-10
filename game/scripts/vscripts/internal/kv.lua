@@ -244,3 +244,7 @@ function PercentDamage(keys)
 		ApplyDamage({victim = target, attacker = keys.caster, damage = damage, damage_type = ability:GetAbilityDamageType(), ability = ability})
 	end
 end
+
+function KVPurge(keys)
+	(keys.target or keys.caster):Purge(keys.RemovePositiveBuffs == 1, keys.RemoveDebuffs == 1, false, keys.RemoveStuns == 1, false)
+end

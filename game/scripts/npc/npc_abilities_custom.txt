@@ -911,15 +911,6 @@
 			"model"		"models/heroes/terrorblade/demon.vmdl"
 		}
 
-		"OnUpgrade"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_arthas_vsolyanova_active"
-				"Target" 		"CASTER"
-			}
-		}
-
 		"Modifiers"
 		{
 			"modifier_arthas_vsolyanova"
@@ -931,59 +922,9 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"heroes/hero_arthas/alternative_vsolyanova.lua"
+						"ScriptFile"	"heroes/hero_arthas/vsolyanova.lua"
 						"Function"		"CheckEnemies"
-						"modifier"		"modifier_arthas_vsolyanova_active"
 					}
-				}
-			}
-			"modifier_arthas_vsolyanova_active"
-			{
-				"IsHidden"		"1"
-				"EffectName" 		"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis.vpcf"
-				"EffectAttachType"  "follow_origin"
-
-				"AllowsIllusionDuplicate"	"0"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"heroes/hero_arthas/alternative_vsolyanova.lua"
-						"Function"				"ModelSwapStart"
-						"model"					"models/heroes/terrorblade/demon.vmdl"
-						"projectile_model"		"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
-					}
-
-					"AttachEffect"
-					{
-						"EffectName" 		"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_ambient.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_arthas/alternative_vsolyanova.lua"
-						"Function"		"ModelSwapEnd"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_arthas/alternative_vsolyanova.lua"
-						"Function"		"InstantKill"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%bonus_damage"		
-					"MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT" 	"%base_attack_time"				
 				}
 			}
 		}

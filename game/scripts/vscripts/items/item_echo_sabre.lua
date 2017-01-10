@@ -20,11 +20,13 @@ function DoubleAttack(keys)
 			if not IsRangedUnit(caster) and caster.AttackFuncs and caster.AttackFuncs.bNoDoubleAttackMelee ~= nil then
 				can = not caster.AttackFuncs.bNoDoubleAttackMelee
 			end
-			if can then
+			if can and IsValidEntity(target) then
 				if not IsRangedUnit(caster) then
 					PerformGlobalAttack(caster, target, true, true, true, true, true, {bNoDoubleAttackMelee = true})
 				end
-				ability:ApplyDataDrivenModifier(caster, target, keys.modifier, nil)
+				if not target:IsMagicImmune() then
+					ability:ApplyDataDrivenModifier(caster, target, keys.modifier, nil)
+				end
 				if keys.Damage then
 					ApplyDamage({
 						victim = target,

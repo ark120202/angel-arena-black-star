@@ -35,6 +35,7 @@ end
 function Bosses:RegisterKilledBoss(unit, team)
 	local unitname = unit:GetUnitName()
 	local bossname = string.gsub(unitname, "npc_arena_boss_", "")
+	Bosses:CreateBossLoot(unit, team)
 	local amount = unit:GetKeyValue("Bosses_GoldToAll")
 	DynamicMinimap:SetVisibleGlobal(Bosses.MinimapPoints[unit.SpawnerEntity], false)
 	CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
@@ -51,6 +52,46 @@ function Bosses:RegisterKilledBoss(unit, team)
 	Timers:CreateTimer(unit:GetKeyValue("Bosses_RespawnDuration"), function()
 		Bosses:SpawnBossUnit(bossname, unit.SpawnerEntity)
 	end)
+end
+
+function Bosses:CreateBossLoot(unit, team)
+	local dropTables = PlayerTables:copy(DROP_TABLE[unit:GetUnitName()])
+	local items = {}
+	local itemcount = RandomInt(5, 7)
+	while #items < itemcount do
+		table.shuffle(dropTables)
+		for k,dropTable in ipairs(dropTables) do
+			if RollPercentage(dropTable.DropChance) then
+				table.insert(items, dropTable.Item)
+				table.remove(dropTables, k)
+				if #items >= itemcount then
+					break
+				end
+			end
+		end
+	end
+	local totalDamage = 0
+	local damageByPlayers = {}
+	for unit, damage in pairs(victim.DamageReceived) do
+		if team == unit:GetTeamNumber() then
+			damageByPlayers[unit:GetPlayerOwnerID()] = (damageByPlayers[unit:GetPlayerOwnerID()] or 0) + damage
+		end
+		totalDamage = totalDamage + damage
+	end
+	local damagePcts = {}
+	for pid, damage in pairs(damageByPlayers) do
+		damagePcts[pid] = damage/totalDamage
+	end
+	CustomGameEventManager:Send_ServerToTeam(team, "boss_loot_drop", {time = 60, items = items, damageByPlayers = damageByPlayers, totalDamage = totalDamage, damagePcts = damagePcts})
+	Timers:CreateTimer(60, function()
+		for item,votes in pairs(voted) do
+			local selectedPlayer
+
+			PanoramaShop:PushItem(selectedPlayer, PlayerResource:GetSelectedHeroEntity(selectedPlayer), item, true)
+			print("selectedPlayer just rolled", item)
+		end
+	end)
+	ContainersHelper:CreateLootBox(unit:GetAbsOrigin() + RandomVector(100), items)
 end
 
 function Bosses:MakeBossAI(unit, name)

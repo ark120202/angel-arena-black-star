@@ -81,6 +81,7 @@ local modifiers = {
 	["modifier_max_attack_range"] = "modifiers/modifier_max_attack_range.lua",
 	["modifier_arena_courier"] = "modifiers/modifier_arena_courier.lua",
 	["modifier_arena_hero"] = "modifiers/modifier_arena_hero.lua",
+	["modifier_hero_selection_model_change"] = "modifiers/modifier_hero_selection_model_change.lua",
 }
 
 for i = 1, #requirements do

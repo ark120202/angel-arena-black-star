@@ -131,6 +131,7 @@
 		"npc_arena_hero_anakim"							"0"
 		"npc_arena_hero_rem"							"0"
 		"npc_arena_hero_madoka"							"0"
+		"npc_arena_hero_saber"							"1"
 	}
 	"NoAbilities"
 	{

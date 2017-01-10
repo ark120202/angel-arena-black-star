@@ -176,6 +176,14 @@ function GameMode:DamageFilter(filterTable)
 			filterTable.damage = 0
 			return false
 		end
+
+
+
+
+		if victim:IsBoss() then
+			victim.DamageReceived = victim.DamageReceived or {}
+			victim.DamageReceived[attacker] = (victim.DamageReceived[attacker] or 0) + filterTable.damage
+		end
 	end
 	return true
 end
@@ -202,6 +210,128 @@ function GameMode:ModifyExperienceFilter(filterTable)
 		if hero.talent_keys and hero.talent_keys.bonus_experience_percentage then
 			filterTable.experience = filterTable.experience * (1 + hero.talent_keys.bonus_experience_percentage * 0.01)
 		end
+	end
+	return true
+end
+
+function GameMode:CustomChatFilter(playerID, text, teamonly)
+	if string.starts(text, "-") then
+		local cmd = {}
+		for v in string.gmatch(string.lower(string.sub(text, 2)), "%S+") do table.insert(cmd, v) end
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+		if CustomWearables:HasWearable(playerID, "wearable_developer") then
+			if cmd[1] == "debugallcalls" then
+				DebugAllCalls()
+			end
+			if cmd[1] == "printplayers" then
+				local playerinfo = {}
+				for pID = 0, DOTA_MAX_TEAM_PLAYERS - 1  do
+					if PlayerResource:IsValidPlayerID(pID) then
+						playerinfo[pID] = {
+							nick = PlayerResource:GetPlayerName(pID),
+							hero = PlayerResource:GetSelectedHeroEntity(pID):GetFullName(),
+							team = PlayerResource:GetTeam(pID),
+							steamID32 = PlayerResource:GetSteamAccountID(playerID)
+						}
+					end
+				end
+				PrintTable(playerinfo)
+			end
+		end
+		if GameRules:IsCheatMode() then
+			if cmd[1] == "gold" then
+				Gold:ModifyGold(hero, tonumber(cmd[2]))
+			end
+			if cmd[1] == "spawnrune" then
+				CustomRunes:SpawnRunes()
+			end
+			if cmd[1] == "t" then
+				for i = 2, 50 do
+					if XP_PER_LEVEL_TABLE[hero:GetLevel()] and XP_PER_LEVEL_TABLE[hero:GetLevel() + 1] then
+						hero:AddExperience(XP_PER_LEVEL_TABLE[hero:GetLevel() + 1] - XP_PER_LEVEL_TABLE[hero:GetLevel()], 0, false, false)
+					else
+						break
+					end
+				end
+				hero:AddItem(CreateItem("item_rapier", hero, hero))
+				hero:AddItem(CreateItem("item_blink_arena", hero, hero))
+				SendToServerConsole("dota_ability_debug 1")
+			end
+			if cmd[1] == "godmode" then
+				hero:AddExperience(1000000000, 0, false, true)
+				Gold:ModifyGold(playerID, 999999)
+				hero:ModifyAgility(1000000)
+				hero:ModifyStrength(1000000)
+				hero:ModifyIntellect(1000000)
+			end
+			if cmd[1] == "disablegodmode" then
+				Gold:ModifyGold(playerID, -999999)
+				hero:ModifyAgility(-1000000)
+				hero:ModifyStrength(-1000000)
+				hero:ModifyIntellect(-1000000)
+			end
+			if cmd[1] == "startduel" then
+				Duel.TimeUntilDuel = 0
+			end
+			if cmd[1] == "endduel" then
+				Duel.TimeUntilDuelEnd = 1
+			end
+			if cmd[1] == "killcreeps" then
+				local units = FindUnitsInRadius(hero:GetTeamNumber(), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+				for _,v in ipairs(units) do
+					v:ForceKill(true)
+				end
+			end
+			if cmd[1] == "reset" then
+				for i = 0, hero:GetAbilityCount() - 1 do
+					local ability = hero:GetAbilityByIndex(i)
+					if ability then
+						local n = ability:GetAbilityName()
+						hero:SetAbilityPoints(hero:GetAbilityPoints() + ability:GetLevel())
+						hero:RemoveAbility(n)
+						hero:AddAbility(n)
+					end
+				end
+			end
+			if cmd[1] == "runetest" then
+				for i = ARENA_RUNE_FIRST, ARENA_RUNE_LAST do
+					CustomRunes:CreateRune(hero:GetAbsOrigin() + RandomVector(RandomInt(90, 300)), i)
+				end
+			end
+			if cmd[1] == "createcreep" then
+				local sName = tostring(cmd[2]) or "medium"
+				local SpawnerType = tonumber(cmd[3]) or 0
+				local time = tonumber(cmd[4]) or 0
+				local unitRootTable = SPAWNER_SETTINGS[sName].SpawnTypes[SpawnerType]
+				PrintTable(SPAWNER_SETTINGS[sName])
+				local unit = CreateUnitByName(unitRootTable[1][-1], hero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+				unit.SpawnerIndex = SpawnerType
+				unit.SpawnerType = sName
+				unit.SSpawner = -1
+				unit.SLevel = time
+				Spawner:UpgradeCreep(unit, unit.SpawnerType, unit.SLevel, unit.SpawnerIndex)
+			end
+			if cmd[1] == "a_createhero" then
+				local heroName = cmd[2]
+				local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
+				local baseNewHero = heroTableCustom.base_hero or heroName
+				local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
+				h:SetTeam(PlayerResource:GetTeam(playerID) == 2 and 3 or 2)
+				h:SetAbsOrigin(hero:GetAbsOrigin())
+				h:SetControllableByPlayer(playerID, true)
+				for i = 1, 300 do
+					h:HeroLevelUp(false)
+				end
+				if heroTableCustom.base_hero then
+					TransformUnitClass(h, heroTableCustom)
+					h.UnitName = heroName
+				end
+			end
+			if cmd[1] == "talents_clear" then
+				hero:ClearTalents()
+			end
+		end
+		return false
 	end
 	return true
 end

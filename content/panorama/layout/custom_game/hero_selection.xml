@@ -213,6 +213,7 @@
 		<Panel id="HeroSelectionPrecacheBase">
 			<Panel id="PrecacheLoadingMessagePanel">
 				<Label id="PrecacheLoadingMessageLabel" text="#hero_selection_loading_message"/>
+				<ProgressBar id="PrecacheProgressBar" />
 			</Panel>
 			<Panel id="PrecacheTeamContainer">
 				<Panel class="PrecacheRow">

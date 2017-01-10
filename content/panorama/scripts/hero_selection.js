@@ -7,6 +7,7 @@ var SelectedHeroData,
 	SelectionTimerStartTime = 0,
 	HideEvent,
 	ShowPrecacheEvent,
+	UpdatePrecacheProgressEvent,
 	PTID,
 	DOTA_ACTIVE_GAMEMODE,
 	CustomChatLinesPanel,
@@ -231,6 +232,8 @@ function HeroSelectionEnd() {
 			GameEvents.Unsubscribe(HideEvent)
 		if (ShowPrecacheEvent != null)
 			GameEvents.Unsubscribe(ShowPrecacheEvent)
+		if (UpdatePrecacheProgressEvent != null)
+			GameEvents.Unsubscribe(UpdatePrecacheProgressEvent)
 		if (PTID != null)
 			PlayerTables.UnsubscribeNetTableListener(PTID)
 		if (MinimapPTIDs.length > 0)
@@ -301,6 +304,16 @@ function OnMinimapClickSpawnBox(team, level, index) {
 	});
 }
 
+function UpdatePrecacheProgress(t) {
+	var progress = 0;
+	$.Each(t, function(status, hero) {
+		if (status == 1)
+			progress++;
+	})
+	$("#PrecacheProgressBar").value = progress;
+	$("#PrecacheProgressBar").max = Object.keys(t).length;
+}
+
 (function() {
 	$("#HeroSelectionPrecacheBase").visible = false;
 	if (Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME)) {
@@ -332,6 +345,7 @@ function OnMinimapClickSpawnBox(team, level, index) {
 
 		HideEvent = GameEvents.Subscribe("hero_selection_hide", HeroSelectionEnd);
 		ShowPrecacheEvent = GameEvents.Subscribe("hero_selection_show_precache", ShowPrecache);
+		UpdatePrecacheProgressEvent = GameEvents.Subscribe("hero_selection_update_precache_progress", UpdatePrecacheProgress);
 		PTID = PlayerTables.SubscribeNetTableListener("hero_selection", UpdateHeroesSelected);
 		UpdateHeroesSelected("hero_selection", PlayerTables.GetAllTableValues("hero_selection"));
 
