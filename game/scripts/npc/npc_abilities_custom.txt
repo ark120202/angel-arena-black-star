@@ -678,6 +678,8 @@
 				"IsDebuff"			"1"
 				"IsStunDebuff"		"1"
 				"Duration"			"%stun_duration"
+
+				"TextureName"		"arena/arthas_rage_of_arthas"
 				
 				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
@@ -4374,8 +4376,9 @@
 		"AbilityTextureName"	"dragon_knight_dragon_blood"
 		"MaxLevel"	"7"
 		"HasScepterUpgrade"		"1"
+		"LevelsBetweenUpgrades"	"5"
 
-		"AbilityCooldown"				"3.0"
+		"AbilityCooldown"				"5.0"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -9968,17 +9971,17 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"all_damage_bonus_pct"	"3 5 10 15 20 25 30"
+				"all_damage_bonus_pct"	"3 5 7 9 12 15 17"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance"		"10 14 18 22 26 30 34"
+				"crit_chance"		"8 12 16 20 24 28 32"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_mult"			"100 150 200 250 300 350 400"
+				"crit_mult"			"30 60 90 120 150 180 210"
 			}
 		}
 
@@ -14041,7 +14044,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_helath_damage_pct"	"1 2 3 4 5 6 7"
+				"max_helath_damage_pct"	"0.5 1.0 1.5 2.0 2.5 3.0 3.5"
 			}
 		}
 

@@ -10421,17 +10421,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"16"
+				"bonus_armor"			"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"xp"					"30"
+				"xp"					"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold"					"25"
+				"gold"					"10"
 			}
 		}
 		
@@ -18199,7 +18199,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"debuff_duration"		"7.0"
+				"debuff_duration"		"3.0"
 			}
 			"10"
 			{
