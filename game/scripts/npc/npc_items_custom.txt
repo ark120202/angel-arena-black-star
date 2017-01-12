@@ -111,6 +111,8 @@
 				"IsPurgable"		"0"
 				"IsDebuff"			"1"
 
+				"TextureName"		"arena/soul_of_titan"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_reduction"

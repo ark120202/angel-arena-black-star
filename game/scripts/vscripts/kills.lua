@@ -25,7 +25,7 @@ function Kills:GetGoldForKill(killedUnit)
 	if not Kills.BountyStorage[killedUnit:GetPlayerID()] then Kills.BountyStorage[killedUnit:GetPlayerID()] = 0 end
 	local streak = Kills.BountyStorage[killedUnit:GetPlayerID()]
 	local streakGold = Kills.GoldForStreaks[streak]
-	local gold = 400 + streakGold + (killedUnit:GetLevel() * 30) --100 + streakGold + (killedUnit:GetLevel() * 9.9)
+	local gold = 200 + streakGold + (killedUnit:GetLevel() * 30) --100 + streakGold + (killedUnit:GetLevel() * 9.9)
 	return gold
 end
 

@@ -1,0 +1,6 @@
+Diffuse=T_GOD_Poseidon_DIFF
+Normal=T_GOD_Poseidon_NRM
+SpecPower=T_GOD_Poseidon_SPEC
+Other[0]=T_GOD_Poseidon_EMS
+Other[1]=T_GOD_Poseidon_PowerMask_RGB
+Other[2]=T_GOD_Poseidon_gloss
