@@ -1676,7 +1676,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"marksmanship_agility_bonus"	"200 400 600 800 1000 1200 1400"
+				"marksmanship_agility_bonus"	"100 400 600 800 1000 1200 1400"
 				"LinkedSpecialBonus"	"special_bonus_unique_drow_ranger_3"
 			}
 
@@ -1689,7 +1689,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"split_count_scepter"	"2"
+				"split_count_scepter"	"0 0 0 1 1 1 2"
 			}
 
 			"04"
@@ -1916,7 +1916,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"blade_fury_damage"	"50 100 150 200 250 300 350"
+				"blade_fury_damage"	"100 200 300 400 500 600 700"
 				"LinkedSpecialBonus"	"special_bonus_unique_juggernaut"
 			}
 
@@ -3177,12 +3177,14 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"900"
+		"LevelsBetweenUpgrades"	"8"
+		"RequiredLevel"	"3"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"presence_armor_reduction"	"-2 -4 -6 -8 -10 -12 -14"
+				"presence_armor_reduction"	"-8 -12 -16 -20 -24 -28 -32"
 			}
 
 			"02"
@@ -5315,13 +5317,13 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_damage"	"60 80 100 120 240 260 280"
+				"bonus_damage"	"100 200 250 300 350 400 450"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"1.0"
+				"duration"	"0.4"
 			}
 
 			"04"
@@ -5425,6 +5427,7 @@
 	"tidehunter_kraken_shell"
 	{
 		"MaxLevel"	"7"
+		"LevelsBetweenUpgrades"	"3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -7238,7 +7241,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.3"
-		"AbilityCooldown"	"15.0 18.0 15.0 12.0 9.0 6.0 3.0"
+		"AbilityCooldown"	"22.0 20.0 18.0 16.0 14.0 12.0 10.0"
 		"AbilityManaCost"	"60 60 60 60 60 60 60"
 		"AbilitySpecial"
 		{
@@ -7409,7 +7412,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"5 10 15 20 25 30 35"
+				"duration"	"5"
 			}
 
 			"02"
@@ -7500,7 +7503,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"100 400 500 600 700 800 1000"
+				"damage"	"100 200 300 400 500 600 700"
 			}
 
 			"05"
@@ -7518,7 +7521,7 @@
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_scepter"	"130 500 600 700 800 900 1110"
+				"damage_scepter"	"130 250 350 450 650 750 850"
 			}
 
 			"08"
@@ -9796,7 +9799,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tooltip_health_damage"	"35"
+				"tooltip_health_damage"	"10"
 			}
 
 			"06"
@@ -9821,7 +9824,7 @@
 			"09"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tooltip_health_damage_scepter"	"65"
+				"tooltip_health_damage_scepter"	"20"
 			}
 
 			"10"
@@ -10168,7 +10171,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_damage"	"60 90 120 150 180 210 240"
+				"bonus_damage"	"100 250 350 400 500 600 700"
 			}
 
 			"02"
@@ -11204,7 +11207,7 @@
 	"doom_bringer_scorched_earth"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"55 100 155 200 255 300 355"
+		"AbilityCooldown"	"60 50 40 35 30 25 20"
 		"AbilityCastRange"	"600"
 		"AbilityManaCost"	"60 70 75 80 90 100 110"
 		"LevelsBetweenUpgrades" "8"
@@ -11882,6 +11885,7 @@
 		"AbilityCastPoint"	"0.0"
 		"AbilityCooldown"	"16.0"
 		"AbilityManaCost"	"120"
+		"LevelsBetweenUpgrades"	"2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11912,7 +11916,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_damage"	"300 400 500 600 700 800 900"
+				"max_damage"	"200 400 500 600 700 800 900"
 			}
 
 			"07"
@@ -11955,7 +11959,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_damage"	"300 400 500 600 700 800 900"
+				"max_damage"	"200 400 500 600 700 800 900"
 			}
 
 			"06"
@@ -12200,7 +12204,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"3.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5 7.0"
+				"duration"	"3.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5"
 				"levelkey"	"quaslevel"
 			}
 
@@ -12213,7 +12217,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"freeze_cooldown"	"0.77 0.74 0.71 0.69 0.66 0.63 0.60 0.57 0.5"
+				"freeze_cooldown"	"0.77 0.74 0.71 0.69 0.66 0.63 0.60 0.57"
 				"levelkey"	"quaslevel"
 			}
 
@@ -14002,13 +14006,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"cast_range"	"550 600 650 700"
+				"cast_range"	"500 550 600 650 700 750 800"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"armor_reduction"	"-3 -4 -5 -6"
+				"armor_reduction"	"-6 -12 -18 -24 -30 -36 -42"
 			}
 
 			"03"
@@ -14968,7 +14972,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"700"
 		"AbilityCastPoint"	"0.4"
-		"AbilityCooldown"	"13.0"
+		"AbilityCooldown"	"20.0"
 		"AbilityManaCost"	"95 115 135 155 175 200 225"
 		"AbilityDamage"		"80 140 200 260 350 400 450"
 		"AbilitySpecial"
@@ -15047,7 +15051,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"stun_duration"	"0.6 1.2 1.8 2.4 3.0 3.6 4.2"
+				"stun_duration"	"1.45"
 			}
 
 			"03"
@@ -15059,13 +15063,13 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_armor"	"0"
+				"bonus_armor"	"5 10 15 20 25 30 35"
 			}
 
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_intellect"	"0"
+				"bonus_intellect"	"30 60 90 120 150 180 210"
 			}
 
 			"06"
@@ -15077,7 +15081,7 @@
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_reflect_pct_tooltip"	"40"
+				"damage_reflect_pct_tooltip"	"40 80 120 180 220 260 300"
 				"LinkedSpecialBonus"	"special_bonus_unique_nyx"
 			}
 
@@ -15107,7 +15111,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"movement_speed"	"16 18 20 22 24 26 28"
+				"movement_speed"	"750"
 			}
 
 			"04"
@@ -15140,7 +15144,7 @@
 
 	"nyx_assassin_burrow"
 	{
-		"AbilityCastPoint"	"1.5"
+		"AbilityCastPoint"	"0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -15197,7 +15201,7 @@
 
 	"nyx_assassin_unburrow"
 	{
-		"MaxLevel"	"7"
+		"MaxLevel"	"1"
 		"AbilityCastPoint"	"0.0"
 		"AbilityCooldown"	"0.0"
 		"AbilityManaCost"	"0"
@@ -15302,7 +15306,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"armor_reduction"	"-10 -20 -30 -40 -50 -60 -70"
+				"armor_reduction"	"-5 -10 -15 -20 -25 -30 -35"
 			}
 
 			"02"
@@ -15338,13 +15342,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"1250"
+				"radius"	"1000 1100 1200 1300 1400 1500 1550 1600"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"7.0"
+				"duration"	"5.0"
 			}
 
 			"03"
@@ -15356,19 +15360,19 @@
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"regen_rate"	"10.0"
+				"regen_rate"	"10 12 14 16 18 20 22"
 			}
 
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"regen_rate_self"	"10.0"
+				"regen_rate_self"	"10 12 14 16 18 20 22"
 			}
 
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"regen_rate_tooltip_scepter"	"10"
+				"regen_rate_tooltip_scepter"	"10 12 14 16 18 20 22"
 			}
 
 		}
@@ -15835,6 +15839,7 @@
 	"visage_gravekeepers_cloak"
 	{
 		"MaxLevel"	"7"
+		"LevelsBetweenUpgrades"	"5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -16803,7 +16808,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"stat_loss_pct"	"10 15 20 25 30 35 40"
+				"stat_loss_pct"	"5 10 15 18 20 25 30"
 				"LinkedSpecialBonus"	"special_bonus_unique_timbersaw"
 			}
 
@@ -17429,7 +17434,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"sigil_radius"	"600"
+				"sigil_radius"	"800"
 			}
 
 			"02"
@@ -17441,13 +17446,13 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"move_slow"	"10 15 20 25 30 35 40"
+				"move_slow"	"20 40 60 80 100 120 140"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_slow"	"30 40 50 60 70 80 90"
+				"attack_slow"	"40 80 120 160 200 240 280"
 			}
 
 		}

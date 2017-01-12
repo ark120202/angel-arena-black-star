@@ -18,7 +18,7 @@ Abyssal - Underlord Firestorm:
 burn damage: 1 1.5 2 2.5 3 3.5 4 => 0.5 1.0 1.5 2.0 2.5 3.0 3.5
 wave damage: 50 100 150 200 250 300 350 => 25 50 75 100 125 150 175
 
-Dragon - Knight Dragon Blood Arena:
+Dragon - Knight Dragon Blood:
 LevelsBetweenUpgrades: 1 => 5
 AbilityCooldown: 3.0 => 5
 
@@ -41,8 +41,8 @@ damage: 250 500 1000 1500 2000 2500 3000 3500 => 200 500 1000 1500 2000 2500 300
 все скилы инвокера исправлены с MaxLevel: 7 => 1
 
 Weaver - The Swarm:
-damage: 5 10 15 20 25 30 35  => 10 30 50 70 90 110 130
-armor reduction: 1 1 1 1 1 1  => 1 2 3 4 5 6 7
+damage: 5 10 15 20 25 30 35 => 10 30 50 70 90 110 130
+armor reduction: 1 1 1 1 1 1 => 1 2 3 4 5 6 7
 speed: 600 600 600 600 600 600 600 => 800
 
 Weaver - Shukuchi:
@@ -69,3 +69,101 @@ burn damage pct: 4 => 8
 
 Doom - Bringer Devour
 RequiredLevel: 1 => 3
+
+Naga - Siren Song Of The Siren
+radius: 1250 => 1000 1100 1200 1300 1400 1500 1550 1600
+regen rate: 10.0 => 10 12 14 16 18 20 22
+regen rate self: 10.0 => 10 12 14 16 18 20 22
+regen rate tooltip scepter: 10 => 10 12 14 16 18 20 22
+duration: 7.0 => 5
+
+Nevermore - Dark Lord
+presence armor reduction: -2 -4 -6 -8 -10 -12 -14 => -8 -12 -16 -20 -24 -28 -32
+LevelsBetweenUpgrades: 1 => 8
+RequiredLevel: 1 => 3
+
+Shredder - Whirling Death
+stat loss pct: 10 15 20 25 30 35 40 => 5 10 15 18 20 25 30
+
+Naga - Siren Rip tide
+armor reduction: -10 -20 -30 -40 -50 -60 -70 => -5 -10 -15 -20 -25 -30 -35
+
+Tidehunter - kraken Shell
+LevelsBetweenUpgrades: 1 => 3
+
+Chaos - Knight Reality rift
+cast range: 550 600 650 700 => 500 550 600 650 700 750 800
+armor reduction: -3 -4 -5 -6 => -6 -12 -18 -24 -30 -36 -42
+
+Drow - Ranger Marksmanship
+marksmanship agility bonus: 200 400 600 800 1000 1200 1400 => 100 400 600 800 1000 1200 1400
+split count scepter: 2 => 0 0 0 1 1 1 2
+
+Juggernaut - Blade Fury
+blade fury damage: 50 100 150 200 250 300 350 => 100 200 300 400 500 600 700
+
+Slardar - Bash
+duration: 1.0 => 0.4
+bonus damage: 60 80 100 120 240 260 280 => 100 200 250 300 350 400 450
+
+Alchemist - Unstable Concoction
+max damage: 300 400 500 600 700 800 900 => 200 400 500 600 700 800 900
+LevelsBetweenUpgrades: 1 =>2
+
+Visage - Gravekeepers Cloak
+LevelsBetweenUpgrades: 1 => 5
+
+Warlock - Rain Of Chaos
+golem hp tooltip: 600 900 1200 1500 1800 2100 2500 => 800 1600 2400 3000 3800 4500 6500
+golem dmg tooltip: 50 100 125 150 200 250 300 => 150 250 450 650 850 1000 1200
+golem armor tooltip: 6 9 12 15 20 25 30 => 8 16 35 45 70 90 150
+golem regen tooltip: 50 75 125 150 180 240 322 => 50 100 200 400 600 800 999
+bounty: 100 150 200 250 300 350 400 => 100 300 500 900 1200 1500 3500
+golem dmg tooltip scepter: 100 150 200 250 300 350 400 => 150 350 550 1000 1400 1600 4500
+LevelsBetweenUpgrades 11 => 20
+
+Doom - Bringer Scorched Earth
+AbilityCooldown: 55 100 155 200 255 300 355 => 60 50 40 35 30 25 20
+
+Venomancer - Poison Nova
+damage scepter: 130 500 600 700 800 900 1110 => 130 250 350 450 650 750 850
+damage: 100 400 500 600 700 800 1000 => 100 200 300 400 500 600 700
+
+Venomancer - Poison Sting
+duration: 5 10 15 20 25 30 35 => 5
+
+Tusk - Frozen Sigil
+move slow: 10 15 20 25 30 35 40 => 20 40 60 80 100 120 140
+attack slow: 30 40 50 60 70 80 90 => 40 80 120 160 200 240 280
+sigil radius: 600 => 800
+
+Broodmother - Insatiable hunger
+bonus damage: 60 90 120 150 180 210 240 => 100 250 350 400 500 600 700
+
+Queenofpain - Blink
+AbilityCooldown: 15.0 18.0 15.0 12.0 9.0 6.0 3.0 => 22.0 20.0 18.0 16.0 14.0 12.0 10.0
+
+Nyx - Assassin Impale
+AbilityCooldown: 13.0 => 20
+
+Nyx - Assassin Spiked Carapace
+stun duration: 0.6 1.2 1.8 2.4 3.0 3.6 4.2 => 1.45
+bonus armor: 0 => 5 10 15 20 25 30 35
+bonus intellect: 0 => 30 60 90 120 150 180 210
+damage reflect pct tooltip: 40 => 40 80 120 180 220 260 300
+
+Nyx - assassin unburrow
+MaxLevel: 7 => 1
+
+Nyx - Assassin Burrow
+AbilityCastPoint: 1.5 => 0.5
+
+Nyx - Assassin Vendetta
+movement speed: 16 18 20 22 24 26 28 => 750
+
+Zen - Gehraz Mystic Twister
+channel time: 10 => 2 3 4 5 6 7 10
+
+Huskar - Life Break:
+tooltip health damage: 35 => 10
+tooltip health damage scepter: 65 => 20

@@ -1,8 +1,979 @@
 ARENA_ITEMBUILDS = {
 	{
-		hero = "Герой",
+		hero = "npc_dota_hero_abaddon",
 		title = "#DOTA_Item_Build_Title_Arena",
-		author = "Alastor",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"item_iron_talon",
+					"item_tango_arena",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"item_poor_mans_shield",
+					"item_tango_arena",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"item_bfury",
+					"item_steam_footgear",
+					"item_octarine_core_arena",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"item_titanium_bar",
+					"item_golden_eagle_relic",
+					"item_angel_wings",
+					"item_demonic_cuirass",
+					"item_lotus_sphere",
+					"item_refresher_core",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"item_diffusal_blade_arena_5",
+					"item_desolator6",
+					"item_fallhammer",	
+					"item_blade_of_discord",
+					"item_radiance_frozen",
+					"item_shard_of_true_sight",
+					"item_shard_ultimate_scepter",
+				}
+			},
+		}
+	},
+	{
+		hero = "npc_dota_hero_abyssal_underlord",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"item_iron_talon",
+					"item_tango_arena",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"item_poor_mans_shield",
+					"item_tango_arena",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"item_hand_of_midas_3_arena",
+					"item_refresher_core",
+					"item_steam_footgear",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"item_titanium_bar",
+					"item_golden_eagle_relic",
+					"item_angel_wings",
+					"item_demonic_cuirass",
+					"item_lotus_sphere",
+					"item_refresher_core",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"item_diffusal_blade_arena_5",
+					"item_desolator6",
+					"item_fallhammer",	
+					"item_blade_of_discord",
+					"item_radiance_frozen",
+					"item_shard_of_true_sight",
+				}
+			},
+		}
+	},
+	{
+		hero = "npc_dota_hero_alchemist",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+				"item_iron_talon",
+				"item_tango_arena",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"item_tango_arena",
+					"item_boots",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"item_blood_of_midas",
+					"item_rune_keeper",
+					"item_steam_footgear",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"item_titanium_bar",
+					"item_golden_eagle_relic",
+					"item_angel_wings",
+					"item_demonic_cuirass",
+					"item_lotus_sphere",
+					"item_fallhammer",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"item_desolator6",
+					"item_shard_of_true_sight",	
+					"item_blade_of_discord",
+					"item_radiance_frozen",
+					"item_diffusal_blade_arena_5",	
+					"item_refresher_core",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_ancient_apparition",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+				"item_iron_talon",
+				"item_tango_arena",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"item_tango_arena",
+					"item_boots",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"item_blood_of_midas",
+					"item_steam_footgear",
+					"item_hand_of_midas_3_arena",
+					"item_refresher_core",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"item_shard_ultimate_scepter",
+					"item_blade_of_discord",
+					"item_angel_wings",
+					"item_lotus_sphere",
+					"item_auto_sheepstick",
+					"item_diffusal_blade_arena_5",
+					"item_titanium_bar",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"item_shard_of_true_sight",
+					"item_blink_staff",
+					"item_sunray_dagon_5_arena",	
+					"item_refresher_core",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_antimage",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+				"item_iron_talon",
+				"item_tango_arena",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"item_poor_mans_shield",
+					"item_tango_arena",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"item_ultimate_scepter",
+					"item_octarine_core_arena",
+					"item_angel_wings",
+					"item_bfury",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"item_shard_ultimate_scepter",
+					"item_diffusal_style",
+					"item_fallhammer",
+					"item_demonic_cuirass",
+					"item_titanium_bar",
+					"item_refresher_core",
+					"item_angel_wings",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"item_lotus_sphere",
+					"item_diffusal_blade_arena_5",
+					"item_auto_sheepstick",	
+					"item_shard_of_true_sight",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_arc_warden",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"item_iron_talon",
+					"item_tango_arena",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"item_tango_arena",
+					"item_poor_mans_shield",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"item_hand_of_midas_3_arena",
+					"item_refresher_core",
+					"item_splitshot_agi",
+					"",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"item_splitshot_ultimate",
+					"item_titanium_bar",
+					"item_diffusal_style",
+					"item_fallhammer",
+					"item_refresher_core",
+					"item_desolator6",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"item_shard_of_true_sight",
+					"item_auto_sheepstick",
+					"item_lotus_sphere",	
+					"item_angel_wings",
+					"item_golden_eagle_relic",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_axe",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"item_poor_mans_shield",
+					"item_tango_arena",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"item_iron_talon",
+					"item_tango_arena",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"item_octarine_core_arena",
+					"item_ultimate_scepter",
+					"item_steam_footgear",
+					"",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"item_titanium_bar",
+					"item_demonic_cuirass",
+					"item_refresher_core",
+					"item_lotus_sphere",
+					"item_haganemushi",
+					"item_fallhammer",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"item_shard_of_true_sight",
+					"item_auto_sheepstick",
+					"item_diffusal_blade_arena_5",	
+					"item_golden_eagle_relic",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_bane",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"item_poor_mans_shield",
+					"item_tango_arena",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"item_tango_arena",
+					"item_boots",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"item_blood_of_midas",
+					"item_hand_of_midas_3_arena",
+					"item_blink_staff",
+					"item_angel_wings",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"item_lotus_sphere",
+					"item_edge_of_vyse",
+					"item_refresher_core",
+					"item_titanium_bar",
+					"item_shard_ultimate_scepter",
+					"item_blade_of_discord",
+					"item_heart_cyclone",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"item_shard_of_true_sight",
+					"item_diffusal_blade_arena_5",
+					"item_golden_eagle_relic",	
+					"item_auto_sheepstick",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_batrider",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"item_tango_arena",
+					"item_boots",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"item_poor_mans_shield",
+					"item_tango_arena",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"item_angel_wings",
+					"item_hand_of_midas_3_arena",
+					"item_blood_of_midas",
+					"item_refresher_core",
+					"item_blink_staff",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"item_radiance_frozen",
+					"item_titanium_bar",
+					"item_shard_ultimate_scepter",
+					"item_blade_of_discord",
+					"item_lotus_sphere",
+					"item_heart_cyclone",
+					"item_refresher_core",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"item_diffusal_blade_arena_5",
+					"item_shard_of_true_sight",
+					"item_angel_wings",	
+					"item_blink_staff",
+					"item_edge_of_vyse",
+					"item_auto_sheepstick",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_beastmaster",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"item_poor_mans_shield",
+					"item_tango_arena",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"item_tango_arena",
+					"item_iron_talon",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"item_hand_of_midas_3_arena",
+					"item_blood_of_midas",
+					"item_refresher_core",
+					"item_ultimate_scepter",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"item_refresher_core",
+					"item_fallhammer",
+					"item_demonic_cuirass",
+					"item_splitshot_ultimate",
+					"item_shard_ultimate_scepter",
+					"item_desolator6",
+					"item_diffusal_blade_arena_5",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"item_shard_of_true_sight",
+					"item_angel_wings",
+					"item_haganemushi",	
+					"item_edge_of_vyse",
+					"item_auto_sheepstick",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_abaddon",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+				"",
+				"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"",
+					"",
+					"",
+					"",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"",
+					"",
+					"",	
+					"",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_abaddon",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"",
+					"",
+					"",
+					"",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"",
+					"",
+					"",	
+					"",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_abaddon",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"",
+					"",
+					"",
+					"",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"",
+					"",
+					"",	
+					"",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_abaddon",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"",
+					"",
+					"",
+					"",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"",
+					"",
+					"",	
+					"",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_abaddon",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"",
+					"",
+					"",
+					"",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"",
+					"",
+					"",	
+					"",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_abaddon",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"",
+					"",
+					"",
+					"",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"",
+					"",
+					"",	
+					"",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_abaddon",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"",
+					"",
+					"",
+					"",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"",
+					"",
+					"",	
+					"",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_abaddon",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
+		items = {
+			{
+				title = "#DOTA_Item_Build_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Altenative_Starting_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Early_Game",
+				content = {
+					"",
+					"",
+					"",
+					"",
+
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Core_Items",
+				content = {
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+				}
+			},
+			{
+				title = "#DOTA_Item_Build_Luxury",
+				content = {
+					"",
+					"",
+					"",	
+					"",
+					"",
+				}
+			},
+		}
+	},
+		{
+		hero = "npc_dota_hero_abaddon",
+		title = "#DOTA_Item_Build_Title_Arena",
+		author = "PSmist",
 		items = {
 			{
 				title = "#DOTA_Item_Build_Starting_Items",

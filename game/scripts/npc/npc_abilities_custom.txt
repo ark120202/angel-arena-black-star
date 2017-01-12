@@ -744,6 +744,8 @@
 			{
 				"IsBuff"	"1"
 
+				"TextureName"		"arena/arthas_plus_morality"
+
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 
 				"Properties"
@@ -3010,7 +3012,7 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"LevelsBetweenUpgrades" "11"
+		"LevelsBetweenUpgrades" "20"
 		"AbilitySpecial"
 		{
 			"01"
@@ -3031,27 +3033,27 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"golem_hp_tooltip"			"600 900 1200 1500 1800 2100 2500"
+				"golem_hp_tooltip"			"800 1600 2400 3000 3800 4500 6500"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"golem_dmg_tooltip"			"50 100 125 150 200 250 300"
+				"golem_dmg_tooltip"			"150 250 450 650 850 1000 1200"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"golem_armor_tooltip"		"6 9 12 15 20 25 30"
+				"golem_armor_tooltip"		"8 16 35 45 70 90 150"
 			}
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"golem_regen_tooltip"	"50 75 125 150 180 240 322"
+				"golem_regen_tooltip"	"50 100 200 400 600 800 999"
 			}
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bounty"					"100 150 200 250 300 350 400"
+				"bounty"					"100 300 500 900 1200 1500 3500"
 			}
 			"09"
 			{
@@ -3066,7 +3068,7 @@
 			"11"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"golem_dmg_tooltip_scepter"	"100 150 200 250 300 350 400"
+				"golem_dmg_tooltip_scepter"	"150 350 550 1000 1400 1600 4500"
 			}
 			"12"
 			{
@@ -11660,7 +11662,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"10"
+				"channel_time"		"2 3 4 5 6 7 10"
 			}
 			"02"
 			{
