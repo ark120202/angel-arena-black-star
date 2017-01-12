@@ -23,6 +23,20 @@
 				</Panel>
 			</Panel>
 		</snippet>
+		<snippet name="BossDropItemVoteItemPanel">
+			<Panel class="BossDropItemVoteItemPanel">
+				<DOTAItemImage id="BossDropItemIcon" />
+				<Panel id="BossDropPlayersRow" />
+			</Panel>
+		</snippet>
+		<snippet name="BossDropItemVote">
+			<Panel class="BossDropItemVote">
+				<Label id="BossName" />
+				<Label id="DamageAll" />
+				<Label id="DamagedDealt" />
+				<Panel id="BossItemList" />
+			</Panel>
+		</snippet>
 	</snippets>
 	<Panel hittest="false" class="base">
 		<Panel id="PlayerControls" hittest="false">
@@ -34,5 +48,7 @@
 		<Button id="SwitchDynamicMinimapButton" onactivate="SetDynamicMinimapVisible()"/>
 		<Panel id="CustomToastManager" hittest="false" hittestchildren="false" />
 		<Panel id="CustomModifiersList" />
+		<Panel id="BossDropItemVotes" hittest="true" hittestchildren="true" />
+		<!-- <Panel id="BossDropItemVotes" hittest="false" hittestchildren="false" /> -->
 	</Panel>
 </root>

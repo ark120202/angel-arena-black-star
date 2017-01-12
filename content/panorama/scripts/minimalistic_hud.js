@@ -6,7 +6,8 @@ var ONCLICK_PURGABLE_MODIFIERS = [
 var DOTA_ACTIVE_GAMEMODE = -1,
 	DOTA_ACTIVE_GAMEMODE_TYPE = -1,
 	hud = GetDotaHud(),
-	CustomChatLinesPanel;
+	CustomChatLinesPanel,
+	BossDropVoteTimers = [];
 
 function UpdatePanoramaHUD() {
 	var unit = Players.GetLocalPlayerPortraitUnit()
@@ -19,7 +20,7 @@ function UpdatePanoramaHUD() {
 			if (custom_entity_value != null && custom_entity_value.ability_texture != null) {
 				var itemPanel = inventory_items.FindChildTraverse("inventory_slot_" + i)
 				if (itemPanel != null)
-					itemPanel.FindChildTraverse("ItemImage").SetImage(TransformTextureToPath(custom_entity_value.ability_texture));
+					itemPanel.FindChildTraverse("ItemImage").SetImage(TransformTextureToPath(custom_entity_value.ability_texture, "item"));
 			}
 		}
 	}
@@ -174,7 +175,6 @@ function CreateHeroElements(id) {
 }
 
 function CreateCustomToast(data) {
-	var lastLine = $("#CustomToastManager").GetChild(0);
 	var row = $.CreatePanel("Panel", $("#CustomToastManager"), "");
 	row.BLoadLayoutSnippet("ToastPanel")
 	row.AddClass("ToastPanel")
@@ -253,6 +253,56 @@ function CreateCustomToast(data) {
 	row.DeleteAsync(10.3)
 };
 
+function CreateBossItemVote(id, data) {
+	var row = $.CreatePanel("Panel", $("#BossDropItemVotes"), "boss_item_vote_id_" + id);
+	var f = function() {
+		var diff = Game.GetGameTime() - data.killtime
+		if (diff <= data.time) {
+			$.Schedule(0.1, f)
+		} else {
+
+		}
+	}
+	f();
+	row.BLoadLayoutSnippet("BossDropItemVote")
+	row.FindChildTraverse("DamageAll").text = "All Damage: " + (data.totalDamage || 0).toFixed()
+	row.FindChildTraverse("DamagedDealt").text = "Dealt Damage: " + (data.damageByPlayers[Game.GetLocalPlayerID()] || 0).toFixed() + " (" + (data.damagePcts[Game.GetLocalPlayerID()] || 0).toFixed() + "%)"
+	$.Each(data.votes, function(vote, itemid) {
+		var itemRow = $.CreatePanel("Panel", row.FindChildTraverse("BossItemList"), "boss_item_vote_id_" + id + "_item_" + itemid);
+		itemRow.itemid = itemid
+		itemRow.BLoadLayoutSnippet("BossDropItemVoteItemPanel")
+		itemRow.FindChildTraverse("BossDropItemIcon").itemname = vote.item
+		itemRow.SetPanelEvent("onactivate", function() {
+			GameEvents.SendCustomGameEventToServer("bosses_vote_for_item", {
+				voteid: id,
+				itemid: itemid
+			})
+		})
+	})
+}
+
+function UpdateBossItemVote(id, data) {
+	if ($("#boss_item_vote_id_" + id) == null)
+		CreateBossItemVote(id, data)
+	var panel = $("#boss_item_vote_id_" + id)
+	$.Each(data.votes, function(vote, itemid) {
+		var itempanel = panel.FindChildTraverse("boss_item_vote_id_" + id + "_item_" + itemid)
+		itempanel.FindChildTraverse("BossDropPlayersRow").RemoveAndDeleteChildren()
+		$.Each(vote.votes, function(voteval, pid) {
+			if (voteval == 1) {
+				var img = $.CreatePanel("Image", itempanel.FindChildTraverse("BossDropPlayersRow"), "")
+				img.SetImage(TransformTextureToPath(GetPlayerHeroName(pid), "icon"))
+				img.SetPanelEvent("onmouseover", function() {
+					$.DispatchEvent("DOTAShowTextTooltip", img, Players.GetPlayerName(pid));
+				})
+				img.SetPanelEvent("onmouseout", function() {
+					$.DispatchEvent("DOTAHideTextTooltip");
+				})
+			}
+		})
+	})
+}
+
 (function() {
 	HookPanoramaPanels();
 	if (GetSteamID(Game.GetLocalPlayerID(), 32) != 82292900) {
@@ -268,6 +318,14 @@ function CreateCustomToast(data) {
 			DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
 		}
 	})
+	DynamicSubscribePTListener("bosses_loot_drop_votes", function(tableName, changesObject, deletionsObject) {
+		for (var id in changesObject) {
+			UpdateBossItemVote(id, changesObject[id])
+		}
+		for (var id in deletionsObject) {
+			$("#boss_item_vote_id_" + id).DeleteAsync(0)
+		}
+	});
 
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe("create_custom_toast", CreateCustomToast);

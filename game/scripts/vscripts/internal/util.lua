@@ -289,9 +289,15 @@ end
 function table.iterate(inputTable)
 	local toutput = {}
 	for _,v in pairs(inputTable) do
-		if v ~= nil then
-			table.insert(toutput, v)
-		end
+		table.insert(toutput, v)
+	end
+	return toutput
+end
+
+function table.iterateKeys(inputTable)
+	local toutput = {}
+	for k,_ in pairs(inputTable) do
+		table.insert(toutput, k)
 	end
 	return toutput
 end
@@ -873,7 +879,6 @@ function MakePlayerAbandoned(iPlayerID)
 			Notifications:TopToAll({hero=hero:GetName(), duration=10.0})
 			Notifications:TopToAll(CreateHeroNameNotificationSettings(hero))
 			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
-			print("Abandoning: " .. hero:GetName())
 			hero:Stop()
 			for i = 0, DOTA_STASH_SLOT_6 do
 				local citem = hero:GetItemInSlot(i)
@@ -882,6 +887,7 @@ function MakePlayerAbandoned(iPlayerID)
 					Gold:UpdatePlayerGold(iPlayerID)
 				end
 			end
+			hero:DestroyAllModifiers()
 			Timers:CreateTimer(function()
 				UTIL_Remove(hero)
 			end)
@@ -1315,4 +1321,10 @@ function table.nearestOrLowerKey(t, key)
 		end
 	end
 	return t[selectedKey]
+end
+
+function CDOTA_BaseNPC:DestroyAllModifiers()
+	for _,v in ipairs(self:FindAllModifiers()) do
+		v:Destroy()
+	end
 end

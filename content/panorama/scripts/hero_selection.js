@@ -316,7 +316,9 @@ function UpdatePrecacheProgress(t) {
 
 (function() {
 	$("#HeroSelectionPrecacheBase").visible = false;
+	$.Msg(Game.GetState())
 	if (Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME)) {
+		MainPanel.visible = false
 		HeroSelectionEnd()
 	} else {
 		DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {

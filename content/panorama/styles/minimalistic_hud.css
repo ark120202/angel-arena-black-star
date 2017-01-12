@@ -81,8 +81,9 @@
 
 #CustomToastManager
 {
-	flow-children: down;
-	margin-top: 40%;
+	flow-children: up;
+	margin-bottom: 27%;
+	vertical-align: bottom;
 	height: 400px;
     overflow: noclip;
 }
@@ -326,3 +327,64 @@
 {
 	padding-top: 0px;
 }
+
+#BossDropItemVotes
+{
+	align: right top;
+	margin-top: 120px;
+	margin-right: 16px;
+	width: 320px;
+	flow-children: down;
+}
+
+.BossDropItemVote
+{
+	background-color: #61B8C2CC;
+	width: 100%;
+	margin-bottom: 30px;
+	flow-children: down;
+}
+
+.BossDropItemVote Label
+{
+	color: #363636;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.BossDropItemVoteItemPanel
+{
+	flow-children: right;
+	width: 100%;
+	margin: 3px;
+}
+
+#BossItemList
+{
+	flow-children: down;
+	width: 100%;
+}
+
+#BossDropPlayersRow
+{
+	flow-children: right;
+	width: 100%;
+	vertical-align: center;
+	margin: 3px;
+}
+
+#BossDropItemIcon
+{
+	width: 78px;
+	height: width-percentage(72.727272%);
+}
+
+//.Border
+//{
+//	opacity: .25;
+//	width: 100%;
+//	height: 100%;
+//	texture-sampling: alpha-only;
+//	z-index: 0;
+//	pre-transform-scale2d: 1.1;
+//}

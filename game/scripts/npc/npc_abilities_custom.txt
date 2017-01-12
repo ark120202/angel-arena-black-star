@@ -11319,6 +11319,7 @@
 				{
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_FLYING"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 
@@ -15000,6 +15001,7 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"mana_void_damage_per_mana"		"0.6 0.8 1 1.2 1.4 1.6 1.65"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{

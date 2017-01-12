@@ -18468,6 +18468,7 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"attack_damage_to_pure_pct"	"30"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 
@@ -18547,6 +18548,7 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"attack_damage_to_pure_pct"	"40"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
 			{

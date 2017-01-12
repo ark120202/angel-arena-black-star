@@ -12,6 +12,7 @@ TODO LIST:
 	]]
 	алхимику на новую голду
 	лансер беск иллюзии
+	2 виспа оверчарж
 Идеи для предметов:
 	Star Blade:
 		Из Fallen Star + Dark Blade + ???
@@ -60,15 +61,22 @@ General:
 	//Saber mdl
 Balance:
 	Black King Bar's & Titanium Bar now applies strong dispel on activate
-	//Echo Sabre's now don't applies disarm and root to magic immune units
+	Echo Sabre's now not applies disarm and root to magic immune units
+	Items:
+		Soul Piercing from Piercing Blade and Haganemushi now is not spell amplifiable
+
 	Heroes:
 		
 	Abilities:
-		
+		Anti-Mage - Mana Void:
+			Now is not spell amplifiable
+			Damage to Bosses: 100% => 35%
 Fixes:
 	Fixed wearables weren't hidden on heroes with custom models
+	Fixed modifiers stayed on abandoned hero
+	Fixed Shinobu - Kokorowatari Souls were visible for both teams
 	//Fixed missing icons on modifier images
-
+	//TODO: Fixed Hero Selection screen stayed on screen after reconnect
 
 <<+===========================================================================================================
 

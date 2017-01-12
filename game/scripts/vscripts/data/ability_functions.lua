@@ -32,6 +32,7 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	slark_dark_pact = 40,
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,
+	antimage_mana_void_arena = 35,
 }
 
 local function OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
@@ -127,8 +128,8 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		end
 	},
 	["modifier_item_piercing_blade"] = {
-		condition = function(_, _, inflictor)
-			return not inflictor
+		condition = function(attacker, _, inflictor)
+			return not inflictor and not attacker:HasModifier("modifier_item_haganemushi")
 		end,
 		multiplier = function(attacker, victim, _, damage)
 			local pct = GetAbilitySpecial("item_piercing_blade", "attack_damage_to_pure_pct") * 0.01
@@ -137,6 +138,7 @@ OUTGOING_DAMAGE_MODIFIERS = {
 				attacker = attacker,
 				damage = damage * pct,
 				damage_type = _G[GetKeyValue("item_piercing_blade", "AbilityUnitDamageType")],
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 				ability = FindItemInInventoryByName(attacker, "item_piercing_blade", false)
 			})
 			return 1 - pct
@@ -153,6 +155,7 @@ OUTGOING_DAMAGE_MODIFIERS = {
 				attacker = attacker,
 				damage = damage * pct,
 				damage_type = _G[GetKeyValue("item_haganemushi", "AbilityUnitDamageType")],
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 				ability = FindItemInInventoryByName(attacker, "item_haganemushi", false)
 			})
 			return 1 - pct
@@ -168,7 +171,8 @@ OUTGOING_DAMAGE_MODIFIERS = {
 				local dt = {
 					victim = victim,
 					attacker = attacker,
-					ability = anakim_wisps
+					ability = anakim_wisps,
+					damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 				}
 				dt.damage_type = DAMAGE_TYPE_PURE
 				dt.damage = damage * anakim_wisps:GetAbilitySpecial("pure_damage_pct") * 0.01

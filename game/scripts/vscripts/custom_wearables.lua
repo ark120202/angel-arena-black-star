@@ -19,16 +19,6 @@ function CustomWearables:HasWearable(pID, name)
 	return false
 end
 
-function CustomWearables:RemoveDotaWearables(unit)
-	for _,v in pairs(unit:GetChildren()) do
-		if v:GetClassname() == "dota_item_wearable" then
-			v:AddEffects(EF_NODRAW)
-			v:SetModel("models/development/invisiblebox.vmdl")
-			--v:RemoveSelf()
-		end
-	end
-end
-
 function CustomWearables:EquipWearables(unit, herokey)
 	if not herokey then
 		herokey = GetFullHeroName(unit) or unit:GetUnitName()
@@ -38,9 +28,6 @@ function CustomWearables:EquipWearables(unit, herokey)
 	local wearables = CustomWearables:GetPlayerHeroWearables(unit, herokey)
 	for _,v in ipairs(wearables) do
 		CustomWearables:EquipWearable(unit, v)
-	end
-	if unit.WearablesRemoved then
-		CustomWearables:RemoveDotaWearables(unit)
 	end
 end
 

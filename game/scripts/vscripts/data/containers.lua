@@ -51,7 +51,7 @@ DROP_TABLE = {
 	["npc_arena_boss_freya"] = {
 		--{ Item = "item_consecrated_sword", DropChance = 100, },
 		{ Item = "item_god_transform_freya", DropChance = 100, },
-		{ Item = "item_soul_of_titan", DropChance = 30, },
+		{ Item = "item_soul_of_titan", DropChance = 30, DamageWeightPct = 10, },
 		{ Item = "item_dark_blade", DropChance = 50, },
 		{ Item = "item_dark_blade", DropChance = 30, },
 		{ Item = "item_dark_blade", DropChance = 10, },

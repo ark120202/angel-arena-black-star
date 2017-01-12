@@ -29,28 +29,27 @@ function IsHeroName(str) {
 	return str.lastIndexOf("npc_dota_hero_") == 0 || str.lastIndexOf("npc_arena_hero_") == 0
 }
 
-function TransformTextureToPath(texture, optPanelHeroimagestyle, optTeamNumber) {
+function TransformTextureToPath(texture, optPanelImageStyle, optTeamNumber) {
 	if (IsHeroName(texture)) {
-		if (optPanelHeroimagestyle == "portrait")
+		if (optPanelImageStyle == "portrait")
 			return "file://{images}/heroes/selection/" + texture + ".png"
-		else if (optPanelHeroimagestyle == "icon")
+		else if (optPanelImageStyle == "icon")
 			return "file://{images}/heroes/icons/" + texture + ".png"
 		else
 			return "file://{images}/heroes/" + texture + ".png"
 	} else if (texture.lastIndexOf("npc_") == 0) {
-		if (optPanelHeroimagestyle == "portrait") {
+		if (optPanelImageStyle == "portrait") {
 			return "file://{images}/custom_game/units/portraits/" + texture + ".png"
 		} else
 			return "file://{images}/custom_game/units/" + texture + ".png"
 	} else {
-		if (texture.lastIndexOf("item_") == -1)
-			return "raw://resource/flash3/images/spellicons/" + texture + ".png"
-		else {
-			if (texture.lastIndexOf("item_recipe", 0) == 0)
+		if (optPanelImageStyle == "item") {
+			/*if (texture.lastIndexOf("item_recipe", 0) == 0)
 				return "raw://resource/flash3/images/items/recipe.png"
-			else
-				return "raw://resource/flash3/images/items/" + texture.substring(5) + ".png"
-		}
+			else*/
+			return "raw://resource/flash3/images/items/" + texture + ".png"
+		} else
+			return "raw://resource/flash3/images/spellicons/" + texture + ".png"
 	}
 }
 

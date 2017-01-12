@@ -1,6 +1,7 @@
 if Bosses == nil then
 	Bosses = class({})
 	Bosses.MinimapPoints = {}
+	Bosses.NextVoteID = 0
 end
 
 function CDOTA_BaseNPC:IsBoss()
@@ -8,6 +9,8 @@ function CDOTA_BaseNPC:IsBoss()
 end
 
 function Bosses:InitAllBosses()
+	CustomGameEventManager:RegisterListener("bosses_vote_for_item", Dynamic_Wrap(Bosses, "VoteForItem"))
+	PlayerTables:CreateTable("bosses_loot_drop_votes", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 	Bosses:SpawnStaticBoss("l1_v1")
 	Bosses:SpawnStaticBoss("l1_v2")
 	Bosses:SpawnStaticBoss("l2_v1")
@@ -55,24 +58,13 @@ function Bosses:RegisterKilledBoss(unit, team)
 end
 
 function Bosses:CreateBossLoot(unit, team)
+	local id = Bosses.NextVoteID
+	Bosses.NextVoteID = Bosses.NextVoteID + 1
 	local dropTables = PlayerTables:copy(DROP_TABLE[unit:GetUnitName()])
-	local items = {}
-	local itemcount = RandomInt(5, 7)
-	while #items < itemcount do
-		table.shuffle(dropTables)
-		for k,dropTable in ipairs(dropTables) do
-			if RollPercentage(dropTable.DropChance) then
-				table.insert(items, dropTable.Item)
-				table.remove(dropTables, k)
-				if #items >= itemcount then
-					break
-				end
-			end
-		end
-	end
+
 	local totalDamage = 0
 	local damageByPlayers = {}
-	for unit, damage in pairs(victim.DamageReceived) do
+	for unit, damage in pairs(unit.DamageReceived) do
 		if team == unit:GetTeamNumber() then
 			damageByPlayers[unit:GetPlayerOwnerID()] = (damageByPlayers[unit:GetPlayerOwnerID()] or 0) + damage
 		end
@@ -80,18 +72,71 @@ function Bosses:CreateBossLoot(unit, team)
 	end
 	local damagePcts = {}
 	for pid, damage in pairs(damageByPlayers) do
-		damagePcts[pid] = damage/totalDamage
+		damagePcts[pid] = damage/totalDamage*100
 	end
-	CustomGameEventManager:Send_ServerToTeam(team, "boss_loot_drop", {time = 60, items = items, damageByPlayers = damageByPlayers, totalDamage = totalDamage, damagePcts = damagePcts})
-	Timers:CreateTimer(60, function()
-		for item,votes in pairs(voted) do
-			local selectedPlayer
 
-			PanoramaShop:PushItem(selectedPlayer, PlayerResource:GetSelectedHeroEntity(selectedPlayer), item, true)
-			print("selectedPlayer just rolled", item)
+	local t = {
+		killtime = GameRules:GetGameTime(),
+		time = 60,
+		damageByPlayers = damageByPlayers,
+		totalDamage = totalDamage,
+		damagePcts = damagePcts,
+		votes = {}
+	}
+	local itemcount = RandomInt(math.min(5, #dropTables), math.min(7, #dropTables))
+	while #t.votes < itemcount do
+		table.shuffle(dropTables)
+		for k,dropTable in ipairs(dropTables) do
+			if RollPercentage(dropTable.DropChance) then
+				table.insert(t.votes, {
+					item = dropTable.Item,
+					weight = dropTable.DamageWeightPct or 10,
+					votes = {}
+				})
+				table.remove(dropTables, k)
+				if #t.votes >= itemcount then
+					break
+				end
+			end
 		end
+	end
+	PlayerTables:SetTableValue("bosses_loot_drop_votes", id, t)
+	Timers:CreateTimer(60, function()
+		t = PlayerTables:GetTableValue("bosses_loot_drop_votes", id)
+		for _, group in pairs(t.votes) do
+			local selectedPlayer
+			local bestPctLeft
+			if #group.votes == 0 then
+				local allPids = table.iterateKeys(damagePcts)
+				selectedPlayer = allPids[RandomInt(1, #allPids)]
+				damagePcts[selectedPlayer] = damagePcts[selectedPlayer] - group.weight
+			else
+				for pid, s in ipairs(group.votes) do
+					if s and (not selectedPlayer or (damagePcts[pid] + (PLAYER_DATA[pid].BossDamagePoints or 0) - group.weight) > bestPctLeft) then
+						selectedPlayer = pid
+						damagePcts[pid] = damagePcts[pid] - group.weight
+						bestPctLeft = damagePcts[pid] + (PLAYER_DATA[pid].BossDamagePoints or 0)
+					end
+				end
+			end
+			print(selectedPlayer, "just rolled", group.item)
+			PanoramaShop:PushItem(selectedPlayer, PlayerResource:GetSelectedHeroEntity(selectedPlayer), group.item, true)
+		end
+		for pid, pct in pairs(damagePcts) do
+			PLAYER_DATA[pid].BossDamagePoints = (PLAYER_DATA[pid].BossDamagePoints or 0) + pct / 2
+		end
+		PlayerTables:SetTableValue("bosses_loot_drop_votes", id, nil)
 	end)
-	ContainersHelper:CreateLootBox(unit:GetAbsOrigin() + RandomVector(100), items)
+--	ContainersHelper:CreateLootBox(unit:GetAbsOrigin() + RandomVector(100), items)
+end
+
+function Bosses:VoteForItem(data)
+	local t = PlayerTables:GetTableValue("bosses_loot_drop_votes", tonumber(data.voteid))
+	if t and t.votes and t.votes[tonumber(data.itemid)] then
+		t.votes[tonumber(data.itemid)].votes[data.PlayerID] = not t.votes[tonumber(data.itemid)].votes[data.PlayerID]
+		PrintTable(t.votes[tonumber(data.itemid)])
+		PlayerTables:SetTableValue("bosses_loot_drop_votes", tonumber(data.voteid), t)
+	end
 end
 
 function Bosses:MakeBossAI(unit, name)

@@ -111,7 +111,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel(scoreboardConfig, playersContainer
 				}
 				var itemInfo = playerItems.inventory[i];
 				if (itemInfo) {
-					itemPanel.SetImage(TransformTextureToPath(itemInfo.item_name));
+					itemPanel.SetImage(TransformTextureToPath(itemInfo.item_name, "item"));
 				} else {
 					itemPanel.SetImage("");
 				}

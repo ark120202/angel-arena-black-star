@@ -12,6 +12,7 @@ function ManaVoid(keys)
 		attacker = caster,
 		ability = ability,
 		damage_type = ability:GetAbilityDamageType(),
+		damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 		damage = (target:GetMaxMana() - target:GetMana()) * mana_void_damage_per_mana,
 	}
 

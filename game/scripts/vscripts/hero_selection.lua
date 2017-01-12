@@ -413,9 +413,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 		UTIL_Remove(hero.PocketItem)
 		hero.PocketItem = nil
 	end
-	for _,v in ipairs(hero:FindAllModifiers()) do
-		v:Destroy()
-	end
+	hero:DestroyAllModifiers()
 	hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
 	local xp = hero:GetCurrentXP()
 	local fountatin = FindFountain(PlayerResource:GetTeam(playerId))
@@ -589,9 +587,6 @@ function TransformUnitClass(unit, classTable)
 			unit:SetHasInventory(toboolean(value))
 		elseif key == "AttackRange" then
 			unit:AddNewModifier(unit, nil, "modifier_set_attack_range", {AttackRange = value})
-		elseif key == "HideWearables" and value == 1 then
-			unit.WearablesRemoved = true
-			CustomWearables:RemoveDotaWearables(unit)
 		end
 	end
 end

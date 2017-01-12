@@ -45,7 +45,7 @@ end
  
 function shinobu_yumewatari_lua:GetCustomCastErrorTarget(hTarget)
 	local max_ghost_level = self:GetSpecialValueFor("max_ghost_level")
-	if hTarget:GetUnitName() == "npc_shinobu_soul" and hTarget:GetTeamNumber() == DOTA_TEAM_NOTEAM then
+	if hTarget:GetUnitName() == "npc_shinobu_soul" and hTarget:GetTeamNumber() == DOTA_TEAM_NEUTRALS then
 		if hTarget:GetLevel() <= max_ghost_level or max_ghost_level == 0 then
 			return "#dota_hud_error_cant_cast_creep_level"
 		else

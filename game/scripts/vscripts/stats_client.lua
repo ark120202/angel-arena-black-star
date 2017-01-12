@@ -3,7 +3,7 @@ if StatsClient == nil then
 end
 
 StatsClient.ServerAddress = "http://127.0.0.1:3228/AABSServer/"
-
+--StatsClient:OnGameBegin()
 function StatsClient:OnGameBegin()
 	local data = {
 		matchid = tostring(GameRules:GetMatchID()),
