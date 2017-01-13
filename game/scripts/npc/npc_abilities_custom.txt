@@ -11493,7 +11493,7 @@
 				"IsPurgable"		"0"
 				"Priority"			"MODIFIER_PRIORITY_ULTRA"
 
-				"TextureName"		"arena/shinobu_hide_in_shadows
+				"TextureName"		"arena/shinobu_hide_in_shadows"
 
 				"OnAbilityExecuted"
 				{

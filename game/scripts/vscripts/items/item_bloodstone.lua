@@ -33,12 +33,10 @@ function modifier_item_bloodstone_arena_aura_on_death(keys)
 	end
 
 	local bloodstone_in_highest_slot = nil
-	for i=0, 5, 1 do
+	for i = 0, 5 do
 		local current_item = caster:GetItemInSlot(i)
-		if current_item then			
-			if current_item:GetName() == ability:GetName() then
-				bloodstone_in_highest_slot = current_item
-			end
+		if current_item and current_item:GetAbilityName() == ability:GetAbilityName() then
+			bloodstone_in_highest_slot = current_item
 		end
 	end
 
@@ -65,9 +63,9 @@ function item_bloodstone_arena_recalculate_charge_bonuses(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local total_charge_count = 0
-	for i=0, 5, 1 do
+	for i = 0, 5 do
 		local current_item = caster:GetItemInSlot(i)
-		if current_item ~= nil and current_item:GetName() == "item_bloodstone_arena" then
+		if current_item ~= nil and current_item:GetAbilityName() == "item_bloodstone_arena" then
 			total_charge_count = total_charge_count + current_item:GetCurrentCharges()
 		end
 	end
@@ -115,9 +113,9 @@ function modifier_item_bloodstone_arena_aura_emitter_on_death(keys)
 	local caster = keys.caster
 	if caster:IsRealHero() then
 		local total_charge_count = 0
-		for i=0, 5, 1 do
+		for i = 0, 5 do
 			local current_item = caster:GetItemInSlot(i)
-			if current_item ~= nil and current_item:GetName() == "item_bloodstone_arena" then
+			if current_item ~= nil and current_item:GetAbilityName() == "item_bloodstone_arena" then
 				local current_charges = current_item:GetCurrentCharges()
 				total_charge_count = total_charge_count + current_charges
 				

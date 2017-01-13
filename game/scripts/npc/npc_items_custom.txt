@@ -11269,6 +11269,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"aura_damage_per_second"	"50 120 225"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
@@ -11324,6 +11325,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"aura_damage_per_second"	"50 120 225"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
@@ -11379,6 +11381,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"aura_damage_per_second"	"50 120 225"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
@@ -11446,6 +11449,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"aura_damage_per_second"	"500"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
 			{
@@ -17169,6 +17173,7 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"bonus_damage"					"155"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
@@ -19778,7 +19783,7 @@
 				"Aura"          	"modifier_truesight_reveal"
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_ALL"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 			}
 
@@ -19934,7 +19939,7 @@
 				"Aura"          	"modifier_truesight_reveal"
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_ALL"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 			}
 
@@ -20037,6 +20042,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"soul_hp_total_pct" 	"22"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"08"
 			{

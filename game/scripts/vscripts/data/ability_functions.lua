@@ -72,21 +72,23 @@ ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
 		end
 	end end,
 	["modifier_freya_pain_reflection"] = function(attacker, victim, inflictor, damage, damagetype_const)
-		local freya_pain_reflection = victim:FindAbilityByName("freya_pain_reflection")
-		local returnedDmg = damage * freya_pain_reflection:GetAbilitySpecial("damage_return_pct") * 0.01
-		ApplyDamage({
-			victim = attacker,
-			attacker = victim,
-			damage = returnedDmg,
-			damage_type = freya_pain_reflection:GetAbilityDamageType(),
-			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-			ability = freya_pain_reflection
-		})
-		local heal = returnedDmg * freya_pain_reflection:GetAbilitySpecial("returned_to_heal_pct") * 0.01
-		SafeHeal(victim, heal, victim)
-		if heal then
-			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, victim, heal, nil)
-			ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
+		if not IsValidEntity(inflictor) or not NOT_DAMAGE_REFRLECTABLE_ABILITIES[inflictor:GetAbilityName()] then
+			local freya_pain_reflection = victim:FindAbilityByName("freya_pain_reflection")
+			local returnedDmg = damage * freya_pain_reflection:GetAbilitySpecial("damage_return_pct") * 0.01
+			ApplyDamage({
+				victim = attacker,
+				attacker = victim,
+				damage = returnedDmg,
+				damage_type = freya_pain_reflection:GetAbilityDamageType(),
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+				ability = freya_pain_reflection
+			})
+			local heal = returnedDmg * freya_pain_reflection:GetAbilitySpecial("returned_to_heal_pct") * 0.01
+			SafeHeal(victim, heal, victim)
+			if heal then
+				SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, victim, heal, nil)
+				ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
+			end
 		end
 	end
 }

@@ -11265,7 +11265,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"burn_duration"	"4.0 4.0 4.0 4.0 4.0 4.0 4.0"
+				"burn_duration"	"4.0"
 			}
 
 			"04"

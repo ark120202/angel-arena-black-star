@@ -7,13 +7,16 @@ function modifier_item_radiance_lua_effect:DeclareFunctions()
 	}
 end
 function modifier_item_radiance_lua_effect:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("attack_speed_slow")
+	local ability = self:GetAbility()
+	return ability:GetSpecialValueFor(ability:GetName() == "item_radiance_frozen" and "cold_attack_speed" or "attack_speed_slow")
 end
 function modifier_item_radiance_lua_effect:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor("move_speed_slow_pct")
+	local ability = self:GetAbility()
+	return ability:GetSpecialValueFor(ability:GetName() == "item_radiance_frozen" and "cold_movement_speed_pct" or "move_speed_slow_pct")
 end
 function modifier_item_radiance_lua_effect:GetModifierMiss_Percentage()
-	return self:GetAbility():GetSpecialValueFor("blind_pct")
+	local ability = self:GetAbility()
+	return ability:GetSpecialValueFor("blind_pct")
 end
 function modifier_item_radiance_lua_effect:IsPurgable()
 	return false
@@ -29,7 +32,12 @@ if IsServer() then
 	end
 
 	function modifier_item_radiance_lua_effect:OnIntervalThink()
-		ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster(), damage = self:GetAbility():GetSpecialValueFor("aura_damage_per_second") * self.interval_think, damage_type = DAMAGE_TYPE_MAGICAL, ability = ability})
+		ApplyDamage({victim = self:GetParent(),
+			attacker = self:GetCaster(),
+			damage = self:GetAbility():GetSpecialValueFor("aura_damage_per_second") * self.interval_think,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+			ability = ability})
 	end
 else
 	function modifier_item_radiance_lua_effect:GetDuration()

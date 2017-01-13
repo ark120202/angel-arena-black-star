@@ -355,12 +355,9 @@ function AddStacksLua(ability, caster, unit, modifier, stack_amount, refresh, da
 end
 
 function HasFreeSlot(unit)
-	if unit then
-		for i = 0, 5 do
-			local item  = unit:GetItemInSlot(i)
-			if item == nil then
-				return true
-			end
+	for i = 0, 5 do
+		if not unit:GetItemInSlot(i) then
+			return true
 		end
 	end
 	return false

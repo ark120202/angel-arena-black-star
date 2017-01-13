@@ -18,7 +18,7 @@ function ContainersHelper:CreateShops()
 		DuelShop:SetModelScale(1.75)
 		ContainersHelper:CreateShop(DuelShop, ShopsData.Duel, "#containers_shop_duel_name", 192, {3})
 	end
-	for _,v in ipairs(Entities:FindAllByName("target_mark_crafting_station")) do
+	--[[for _,v in ipairs(Entities:FindAllByName("target_mark_crafting_station")) do
 		local craftingEnt = CreateItemOnPositionSync(v:GetAbsOrigin(), nil)
 		craftingEnt:SetModel("models/props_structures/bad_base_shop002.vmdl")
 		craftingEnt:SetForwardVector(Vector(-1, 0, 0))
@@ -107,7 +107,7 @@ function ContainersHelper:CreateShops()
 				end
 			end,
 		})
-	end
+	end]]
 end
 
 function ContainersHelper:CreateShop(baseUnit, itemTable, shopName, radius, customItemGrid)

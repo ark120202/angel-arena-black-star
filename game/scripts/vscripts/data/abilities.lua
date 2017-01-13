@@ -12,6 +12,13 @@ LINKED_ABILITIES = {
 	alchemist_unstable_concoction = {"alchemist_unstable_concoction_throw"},
 }
 
+NOT_DAMAGE_REFRLECTABLE_ABILITIES = {
+	freya_pain_reflection = true,
+	item_blade_mail = true,
+	centaur_return = true,
+	stargazer_inverse_field = true,
+}
+
 NOT_MULTICASTABLE_ABILITIES = {
 	"ogre_magi_bloodlust",
 	"ogre_magi_fireblast",
@@ -119,16 +126,6 @@ REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
 
 	"omniknight_select_allies",
 	"omniknight_select_enemies",
-}
-
-ATTRIBUTE_IGNORED_ABILITIES = {
-	"nyx_assassin_burrow",
-	"nyx_assassin_unburrow",
-	"morphling_hybrid",
-	"life_stealer_assimilate",
-	"treant_eyes_in_the_forest",
-	"ogre_magi_unrefined_fireblast",
-	"earth_spirit_petrify",
 }
 
 BOSS_BANNED_ABILITIES = {

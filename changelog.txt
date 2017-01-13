@@ -57,14 +57,16 @@ Angel Arena Black Star - Version 1.4.1:
 General:
 	Added Russian translation for Zaken, Freya, Anti-Mage and Doom
 	Added progress bar for Hero Selection loading menu
+	Added itembuilds for most of Dota Heroes
 	//Maelstorm reworked
 	//Saber mdl
+	//Arcueid mdl
 Balance:
 	Black King Bar's & Titanium Bar now applies strong dispel on activate
 	Echo Sabre's now not applies disarm and root to magic immune units
 	Items:
 		Soul Piercing from Piercing Blade and Haganemushi now is not spell amplifiable
-
+		Radiance damage now is not spell amplifiable
 	Heroes:
 		
 	Abilities:
@@ -75,6 +77,10 @@ Fixes:
 	Fixed wearables weren't hidden on heroes with custom models
 	Fixed modifiers stayed on abandoned hero
 	Fixed Shinobu - Kokorowatari Souls were visible for both teams
+	Fixed Shard of True Sight didn't revaled wards
+	Fixed Manta Style illusion creation with player-controllable creep-heroes
+	Fixed instant kill bug with Freya - Pain Reflection and Blade Mail
+	Fixed Frozen Radiance not applied slow
 	//Fixed missing icons on modifier images
 	//TODO: Fixed Hero Selection screen stayed on screen after reconnect
 
