@@ -4,6 +4,9 @@ Layer0
 {
 	shader "hero.vfx"
 
+	//---- Translucency ----
+	F_ALPHA_TEST 1
+
 	//---- Blend To Full ----
 	g_flEnvMapBlendToFull "0.000"
 	g_flMetalnessBlendToFull "0.000"
@@ -48,4 +51,8 @@ Layer0
 	g_flSpecularExponent "32.000"
 	g_flSpecularScale "1.000"
 	g_vSpecularColor "[1.000000 1.000000 1.000000 0.000000]"
+
+	//---- Translucency ----
+	g_flAlphaTestReference "0.796"
+	TextureTranslucency "materials/models/units/arcueid/hair_color_trans.png"
 }

@@ -45,7 +45,16 @@
 	{
 		m_pObject = null
 	}
-	m_pHitBoxSetLists = [  ]
+	m_pHitBoxSetLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_HitBoxSets = [  ]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
 	m_pAttachmentLists = [  ]
 	m_pAnimGroup = 
 	{
@@ -69,16 +78,16 @@
 			[
 				{
 					m_Animationname = "arcueid_anim"
-					m_Filepath = "models/units/arcueid/arcueid_anim.smd"
-					m_nStartframe = 350
-					m_nEndframe = 379
+					m_Filepath = "models/units/arcueid/arcueid_anim.FBX"
+					m_nStartframe = 0
+					m_nEndframe = 459
 					m_flFps = 30.0
 					m_Loop = 
 					{
-						m_bLoop = true
-						m_bSmoothLoop = true
-						m_nSmoothLoopStart = 3
-						m_nSmoothLoopEnd = 3
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
 						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
@@ -145,32 +154,32 @@
 		m_vMaterialRemapList = 
 		[
 			{
-				m_sSearchMaterial = "body.vmat"
-				m_sReplaceMaterial = "materials/models/units/arcueid/body.vmat"
+				m_sSearchMaterial = "skirt.vmat"
+				m_sReplaceMaterial = "materials/models/units/arcueid/skirt.vmat"
 			},
 			{
 				m_sSearchMaterial = "hair.vmat"
 				m_sReplaceMaterial = "materials/models/units/arcueid/hair.vmat"
 			},
 			{
+				m_sSearchMaterial = "body.vmat"
+				m_sReplaceMaterial = "materials/models/units/arcueid/body.vmat"
+			},
+			{
+				m_sSearchMaterial = "eyes.vmat"
+				m_sReplaceMaterial = "materials/models/units/arcueid/eyes.vmat"
+			},
+			{
 				m_sSearchMaterial = "face.vmat"
 				m_sReplaceMaterial = "materials/models/units/arcueid/face.vmat"
 			},
 			{
-				m_sSearchMaterial = "hands.vmat"
-				m_sReplaceMaterial = "materials/models/units/arcueid/hands.vmat"
-			},
-			{
-				m_sSearchMaterial = "eyes2.vmat"
-				m_sReplaceMaterial = "materials/models/units/arcueid/eyes2.vmat"
-			},
-			{
-				m_sSearchMaterial = "eyes1.vmat"
-				m_sReplaceMaterial = "materials/models/units/arcueid/eyes1.vmat"
-			},
-			{
 				m_sSearchMaterial = "spell1.vmat"
 				m_sReplaceMaterial = "materials/models/units/arcueid/spell1.vmat"
+			},
+			{
+				m_sSearchMaterial = "undefined.vmat"
+				m_sReplaceMaterial = "materials/models/effects/glow_00.vmat"
 			},
 		]
 	}
