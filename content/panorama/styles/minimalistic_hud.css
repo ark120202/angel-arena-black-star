@@ -333,16 +333,25 @@
 	align: right top;
 	margin-top: 120px;
 	margin-right: 16px;
-	width: 320px;
-	flow-children: down;
+	flow-children: left;
 }
 
 .BossDropItemVote
 {
 	background-color: #A6E9FF40;
-	width: 100%;
-	margin-bottom: 30px;
+	width: 320px;
 	flow-children: down;
+}
+
+#BossDropAdditionalInfo
+{
+	flow-children: down;
+	width: 100%;
+}
+
+.CollapseBossDropInfo #BossDropAdditionalInfo
+{
+	visibility: collapse;
 }
 
 .BossDropItemVote Label
@@ -358,17 +367,16 @@
 {
 	flow-children: right;
 	width: 100%;
-	margin: 3px;
+	margin: 1px 3px;
 	border: 0px solid #363636;
-	border-bottom-width: 1.5px;
+	border-bottom-width: 1px;
 }
 
 #BossItemList
 {
 	flow-children: down;
 	width: 100%;
-	border: 1px solid #363636;
-	margin: 3px;
+	margin: 2px;
 }
 
 #BossDropPlayersRow
@@ -381,7 +389,7 @@
 
 #BossDropItemIcon
 {
-	width: 78px;
+	width: 65px;
 	height: width-percentage(72.727272%);
 }
 
@@ -395,6 +403,21 @@
 #BossTakeLootTime_Left
 {
 	background-color: gradient(linear, 0% 0%, 100% 0%, from(#4375E8), to(#72ADCC));
+}
+
+#BossDropFirstRow
+{
+	width: 100%;
+}
+
+#BossDropHideShowInfo
+{
+	align: right top;
+}
+
+#BossDropHideShowInfo Label
+{
+	text-decoration: underline;
 }
 
 //.Border

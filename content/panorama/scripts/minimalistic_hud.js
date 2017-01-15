@@ -266,6 +266,14 @@ function CreateBossItemVote(id, data) {
 		}
 	}
 	f();
+
+	row.FindChildTraverse("BossDropHideShowInfo").SetPanelEvent("onactivate", (function(_row) {
+		return function() {
+			var BossDropHideShowInfo = _row.FindChildTraverse("BossDropHideShowInfo")
+			BossDropHideShowInfo.text = BossDropHideShowInfo.text == "Hide" ? "Show" : "Hide"
+			_row.ToggleClass("CollapseBossDropInfo")
+		}
+	})(row))
 	row.FindChildTraverse("BossName").text = $.Localize(data.boss) + "<br>was killed!"
 	row.FindChildTraverse("DamageAll").text = "Total Damage: " + (data.totalDamage || 0).toFixed()
 	row.FindChildTraverse("DamagedDealt").text = "Dealt Damage: " + (data.damageByPlayers[Game.GetLocalPlayerID()] || 0).toFixed() + " (" + (data.damagePcts[Game.GetLocalPlayerID()] || 0).toFixed() + "%)"
@@ -322,10 +330,12 @@ function UpdateBossItemVote(id, data) {
 	})
 	DynamicSubscribePTListener("bosses_loot_drop_votes", function(tableName, changesObject, deletionsObject) {
 		for (var id in changesObject) {
-			UpdateBossItemVote(id, changesObject[id])
+			if (Number(id.split("_")[0]) == Players.GetTeam(Game.GetLocalPlayerID()))
+				UpdateBossItemVote(id, changesObject[id])
 		}
 		for (var id in deletionsObject) {
-			$("#boss_item_vote_id_" + id).DeleteAsync(0)
+			if ($("#boss_item_vote_id_" + id) != null)
+				$("#boss_item_vote_id_" + id).DeleteAsync(0)
 		}
 	});
 

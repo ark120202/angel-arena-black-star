@@ -30,13 +30,18 @@
 			</Panel>
 		</snippet>
 		<snippet name="BossDropItemVote">
-			<Panel class="BossDropItemVote">
-				<Label id="BossName" html="true" />
-				<ProgressBar id="BossTakeLootTime" min="0"/>
-				<Label id="DamageAll" />
-				<Label id="DamagedDealt" />
-				<Label id="BossDropLabel" text="Boss Drop:" />
-				<Panel id="BossItemList" />
+			<Panel class="BossDropItemVote" hittest="false">
+				<Panel id="BossDropFirstRow" hittest="false" >
+					<Label id="BossName" html="true" hittest="false" />
+					<TextButton id="BossDropHideShowInfo" text="Hide" hittest="true" />
+				</Panel>
+				<Panel id="BossDropAdditionalInfo" hittest="false" >
+					<ProgressBar id="BossTakeLootTime" min="0" hittest="false" />
+					<Label id="DamageAll" hittest="false" />
+					<Label id="DamagedDealt" hittest="false" />
+					<Label id="BossDropLabel" text="Boss Drop:" hittest="false" />
+					<Panel id="BossItemList" hittest="false" />
+				</Panel>
 			</Panel>
 		</snippet>
 	</snippets>

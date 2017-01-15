@@ -15417,8 +15417,8 @@
 		"AOERadius"						"%aoe_radius"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 
-		"AbilityCooldown"				"8.0"
-		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"120 110 100 90 80 70 60"
+		"AbilityManaCost"				"400 600 800 1000 1200 1400 1600"
 		"AbilityCastPoint"				"0.4"
 
 		"precache"
