@@ -44,9 +44,6 @@ function TransformTextureToPath(texture, optPanelImageStyle, optTeamNumber) {
 			return "file://{images}/custom_game/units/" + texture + ".png"
 	} else {
 		if (optPanelImageStyle == "item") {
-			/*if (texture.lastIndexOf("item_recipe", 0) == 0)
-				return "raw://resource/flash3/images/items/recipe.png"
-			else*/
 			return "raw://resource/flash3/images/items/" + texture + ".png"
 		} else
 			return "raw://resource/flash3/images/spellicons/" + texture + ".png"

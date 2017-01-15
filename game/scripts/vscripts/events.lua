@@ -25,6 +25,7 @@ function GameMode:OnGameRulesStateChange(keys)
 		end
 		HeroSelection:CollectPD()
 		GameModes:OnAllVotesSubmitted()
+		StatsClient:OnGameBegin()
 		HeroSelection:HeroSelectionStart()
 	end
 end
@@ -211,7 +212,7 @@ function GameMode:OnEntityKilled(keys)
 				if Duel.DuelStatus == DOTA_DUEL_STATUS_1X1_IN_PROGRESS and killedUnit.Duel1x1Opponent then
 					Duel:End1X1(killedUnit.Duel1x1Opponent:GetPlayerOwner():GetAssignedHero(), killedUnit)
 				end
-				if not killerEntity or not killerEntity:IsControllableByAnyPlayer() then
+				if not killerEntity or not killerEntity:GetPlayerOwner() then
 					Kills:OnEntityKilled(killedUnit:GetPlayerOwner(), nil)
 				elseif killerEntity == killedUnit then
 					local player = killedUnit:GetPlayerOwner()
@@ -222,9 +223,9 @@ function GameMode:OnEntityKilled(keys)
 			CustomWearables:UnequipAllWearables(killedUnit)
 		end
 
-		if killedUnit:IsHoldoutUnit() then
+		--[[if killedUnit:IsHoldoutUnit() then
 			Holdout:RegisterKilledUnit(killedUnit)
-		end
+		end]]
 
 		if killedUnit:IsRealCreep() then
 			Spawner.Creeps[killedUnit.SSpawner] = Spawner.Creeps[killedUnit.SSpawner] - 1
@@ -232,15 +233,6 @@ function GameMode:OnEntityKilled(keys)
 
 		if killerEntity then
 			for _, individual_hero in ipairs(HeroList:GetAllHeroes()) do
-				if individual_hero:HasItemInInventory("item_bloodstone_arena") and not individual_hero:IsAlive() then
-					if individual_hero:GetTeam() ~= killedUnit:GetTeam() and individual_hero:GetRangeToUnit(killedUnit) <= 1200 then
-						if killedUnit:GetTeam() ~= killerEntity:GetTeam()then
-							individual_hero:AddExperience(killedUnit:GetDeathXP(), false, false)
-						elseif not killedUnit:IsHero() then
-							individual_hero:AddExperience(killedUnit:GetDeathXP() * 0.5, false, false)  --Denied creeps grant 50% experience.  Change this value if this mechanic is ever changed.
-						end
-					end
-				end
 				if individual_hero:IsAlive() and individual_hero:HasModifier("modifier_shinobu_hide_in_shadows_invisibility") then
 					local shinobu_hide_in_shadows = individual_hero:FindAbilityByName("shinobu_hide_in_shadows")
 					if individual_hero:GetTeam() == killedUnit:GetTeam() and individual_hero:GetRangeToUnit(killedUnit) <= shinobu_hide_in_shadows:GetAbilitySpecial("ally_radius") then
@@ -251,12 +243,7 @@ function GameMode:OnEntityKilled(keys)
 			end
 
 			if killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then
-				local plId
-				if killerEntity.GetPlayerID then
-					plId = killerEntity:GetPlayerID()
-				else
-					plId = killerEntity:GetPlayerOwnerID()
-				end
+				local plId = killerEntity.GetPlayerID ~= nil and killerEntity:GetPlayerID() or killerEntity:GetPlayerOwnerID()
 				if plId > -1 then
 					local gold = RandomInt(killedUnit:GetMinimumGoldBounty(), killedUnit:GetMaximumGoldBounty())
 					Gold:ModifyGold(plId, gold)
@@ -264,19 +251,6 @@ function GameMode:OnEntityKilled(keys)
 				end
 			end
 		end
-
-		--[[local dropTables = DROP_TABLE[killedUnit:GetUnitName()]
-		if dropTables and not killedUnit.IsDominatedBoss then
-			local items = {}
-			for _,dropTable in ipairs(dropTables) do
-				if RollPercentage(dropTable.DropChance) then
-					table.insert(items, dropTable.Item)
-				end
-			end
-			if #items > 0 then
-				ContainersHelper:CreateLootBox(killedUnit:GetAbsOrigin() + RandomVector(100), items)
-			end
-		end]]
 	end
 end
 

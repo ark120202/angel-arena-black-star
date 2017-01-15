@@ -339,7 +339,7 @@
 
 .BossDropItemVote
 {
-	background-color: #61B8C2CC;
+	background-color: #A6E9FF40;
 	width: 100%;
 	margin-bottom: 30px;
 	flow-children: down;
@@ -347,7 +347,9 @@
 
 .BossDropItemVote Label
 {
-	color: #363636;
+	margin: 0 4px;
+	color: white;
+	text-shadow: 2px 1px 5px 2 black;
 	font-size: 22px;
 	font-weight: bold;
 }
@@ -357,12 +359,16 @@
 	flow-children: right;
 	width: 100%;
 	margin: 3px;
+	border: 0px solid #363636;
+	border-bottom-width: 1.5px;
 }
 
 #BossItemList
 {
 	flow-children: down;
 	width: 100%;
+	border: 1px solid #363636;
+	margin: 3px;
 }
 
 #BossDropPlayersRow
@@ -377,6 +383,18 @@
 {
 	width: 78px;
 	height: width-percentage(72.727272%);
+}
+
+#BossDropLabel,
+#BossName
+{
+	horizontal-align: center;
+	text-align: center;
+}
+
+#BossTakeLootTime_Left
+{
+	background-color: gradient(linear, 0% 0%, 100% 0%, from(#4375E8), to(#72ADCC));
 }
 
 //.Border

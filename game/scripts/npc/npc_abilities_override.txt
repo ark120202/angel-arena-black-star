@@ -12515,7 +12515,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"delay"	"0.5"
+				"delay"	"1.5"
 			}
 
 			"02"
@@ -19842,6 +19842,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"strike_crit_mult"	"100 130 160 190 210 240 270"
+				"LinkedSpecialBonus"		"special_bonus_unique_monkey_king"
 			}
 
 			"03"
@@ -20051,7 +20052,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"required_hits"	"3 3 3 3 3 3 1"
+				"required_hits"	"3"
 			}
 
 			"02"

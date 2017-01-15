@@ -189,7 +189,7 @@ function CreateCustomToast(data) {
 		var teamVictim = byNeutrals || Players.GetTeam(data.victimPlayer) == Players.GetTeam(Game.GetLocalPlayerID())
 		var teamKiller = !byNeutrals && Players.GetTeam(data.killerPlayer) == Players.GetTeam(Game.GetLocalPlayerID())
 		row.SetHasClass("AllyEvent", teamKiller)
-		row.SetHasClass("EnemyEvent", !teamKiller && teamVictim)
+		row.SetHasClass("EnemyEvent", byNeutrals || !teamKiller)
 		row.SetHasClass("LocalPlayerInvolved", isVictim || isKiller)
 		row.SetHasClass("LocalPlayerKiller", isKiller)
 		row.SetHasClass("LocalPlayerVictim", isVictim)
@@ -255,17 +255,19 @@ function CreateCustomToast(data) {
 
 function CreateBossItemVote(id, data) {
 	var row = $.CreatePanel("Panel", $("#BossDropItemVotes"), "boss_item_vote_id_" + id);
+	row.BLoadLayoutSnippet("BossDropItemVote")
+	var BossTakeLootTime = row.FindChildTraverse("BossTakeLootTime")
+	BossTakeLootTime.max = data.time
 	var f = function() {
 		var diff = Game.GetGameTime() - data.killtime
 		if (diff <= data.time) {
+			BossTakeLootTime.value = BossTakeLootTime.max - diff
 			$.Schedule(0.1, f)
-		} else {
-
 		}
 	}
 	f();
-	row.BLoadLayoutSnippet("BossDropItemVote")
-	row.FindChildTraverse("DamageAll").text = "All Damage: " + (data.totalDamage || 0).toFixed()
+	row.FindChildTraverse("BossName").text = $.Localize(data.boss) + "<br>was killed!"
+	row.FindChildTraverse("DamageAll").text = "Total Damage: " + (data.totalDamage || 0).toFixed()
 	row.FindChildTraverse("DamagedDealt").text = "Dealt Damage: " + (data.damageByPlayers[Game.GetLocalPlayerID()] || 0).toFixed() + " (" + (data.damagePcts[Game.GetLocalPlayerID()] || 0).toFixed() + "%)"
 	$.Each(data.votes, function(vote, itemid) {
 		var itemRow = $.CreatePanel("Panel", row.FindChildTraverse("BossItemList"), "boss_item_vote_id_" + id + "_item_" + itemid);

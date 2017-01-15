@@ -31,9 +31,11 @@
 		</snippet>
 		<snippet name="BossDropItemVote">
 			<Panel class="BossDropItemVote">
-				<Label id="BossName" />
+				<Label id="BossName" html="true" />
+				<ProgressBar id="BossTakeLootTime" min="0"/>
 				<Label id="DamageAll" />
 				<Label id="DamagedDealt" />
+				<Label id="BossDropLabel" text="Boss Drop:" />
 				<Panel id="BossItemList" />
 			</Panel>
 		</snippet>

@@ -7,7 +7,7 @@ if IsServer() then
 	end
 	function item_radiance_baseclass:OnSpellStart()
 		self.disabled = not self.disabled
-		self:SetNetworkableEntityInfo("ability_texture", self.disabled and "arena/" .. self:GetAbilityName() .. "_inactive" or "arena/" .. self:GetAbilityName())
+		self:SetNetworkableEntityInfo("ability_texture", self.disabled and "arena/" .. string.gsub(self:GetAbilityName(), "item_", "") .. "_inactive" or "arena/" .. string.gsub(self:GetAbilityName(), "item_", ""))
 		self:GetCaster():CalculateStatBonus()
 	end
 end

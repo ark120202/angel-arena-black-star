@@ -43,6 +43,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	"item_refresher_arena",
 	"item_aegis_arena",
 	"item_refresher_core",
+	"item_titanium_bar",
 	
 	"item_pipe",
 	"item_arcane_boots",
@@ -60,7 +61,6 @@ REFRESH_LIST_IGNORE_REARM = {
 	"item_black_king_bar_4",
 	"item_black_king_bar_5",
 	"item_black_king_bar_6",
-	"item_titanium_bar",
 	
 	"earthshaker_echo_slam",
 	"juggernaut_omni_slash",
@@ -116,6 +116,7 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	"item_refresher_arena",
 	"item_aegis_arena",
 	"item_refresher_core",
+	"item_titanium_bar",
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
@@ -123,6 +124,7 @@ REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
 	"item_refresher_arena",
 	"item_aegis_arena",
 	"item_refresher_core",
+	"item_titanium_bar",
 
 	"omniknight_select_allies",
 	"omniknight_select_enemies",
@@ -153,6 +155,7 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 	["techies_land_mines"] = GetAbilitySpecial("techies_land_mines", "radius"),
 	["techies_stasis_trap"] = GetAbilitySpecial("techies_stasis_trap", "activation_radius"),
 	["techies_remote_mines"] = GetAbilitySpecial("techies_land_mines", "radius"),
+	["invoker_chaos_meteor"] = 1100,
 }
 
 PERCENT_DAMAGE_MODIFIERS = {

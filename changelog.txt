@@ -42,45 +42,190 @@ TODO LIST:
 		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_2043]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/6f5037594d8370eb4451d82683184120]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/6f5037594d8370eb4451d82683184120]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/6f5037594d8370eb4451d82683184120
+[url=https://vk.com/wall-122685850_2151]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://gist.github.com/ark120202/ee270eaa75d0fa7a217a67362a702333]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/ee270eaa75d0fa7a217a67362a702333]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/ee270eaa75d0fa7a217a67362a702333
 ============================================================
-Angel Arena Black Star - Версия 1.4.1:
-
+Angel Arena Black Star - Версия 1.4.2:
+Добавлен новый герой: Poseidon
+Изменён способ выпадения вещей с боссов
+Добавлена дуэль в начале игры
+Обновлен русский перевод для Zaken, Freya, Anti-Mage и Doom
+Множесто изменений баланса
+Исправлены баги с: моделями новых героев, Shinobu - Kokorowatari, Shard of True Sight, Manta Style, Freya - Pain Reflection, Radiance, Monkey King - Jingu Mastery, Monkey King - Boundless Strike, Phantom Lancer - Juxtapose, Spectre - Haunt, Pudge - Meat Hook + Rubick
 ============================================================
-Angel Arena Black Star - Version 1.4.1:
-
+Angel Arena Black Star - Version 1.4.2:
+Added New Hero: Poseidon
+Changed boss drop rolling system
+Added duel at game beginning
+Lots of balance changes
+Fixed bugs with: Custom Hero Models, Shinobu - Kokorowatari, Shard of True Sight, Manta Style, Freya - Pain Reflection, Radiance, Monkey King - Jingu Mastery, Monkey King - Boundless Strike, Phantom Lancer - Juxtapose, Spectre - Haunt, Pudge - Meat Hook + Rubick
 ============================================================
-Angel Arena Black Star - Version 1.4.1:
+Angel Arena Black Star - Version 1.4.2:
 General:
+	Added New Hero: Poseidon
+	Changed boss drop rolling system; Added custom interface panel for boss drop selection
+	Added duel at game beginning. Kills made on that duel will not give any gold and will give 10% of experience.
+	Creeps now spawns on first minute (to make it spawn after duel)
+	Added itembuilds for most of Dota Heroes
 	Added Russian translation for Zaken, Freya, Anti-Mage and Doom
 	Added progress bar for Hero Selection loading menu
-	Added itembuilds for most of Dota Heroes
+	Combat log messages now flows up, like in Dota
 	//Maelstorm reworked
 	//Saber mdl
 	//Arcueid mdl
 Balance:
 	Black King Bar's & Titanium Bar now applies strong dispel on activate
+	Titanium Bar now is not refreshable with Refresher Orb
 	Echo Sabre's now not applies disarm and root to magic immune units
+	Base gold for kill reduced from 400 to 200
 	Items:
 		Soul Piercing from Piercing Blade and Haganemushi now is not spell amplifiable
 		Radiance damage now is not spell amplifiable
+		Blade of Discord:
+			Duration: 7.0 => 3
+		Chest of Midas:
+			Armor: 16 => 10
+			XP: 30 => 10
+			Gold: 25 => 10
+		Poor Man's Shield:
+			Block Chance (Hero): 60 => 40 %
 	Heroes:
-		
+		Shinobu - Hide in Shadows:
+			Fade time: 2.5 2.25 2 1.75 1.5 1.25 1 => 6 5.5 5.25 5 4.75 4.5 4.25
+			Now not works on invisible allies
 	Abilities:
 		Anti-Mage - Mana Void:
 			Now is not spell amplifiable
 			Damage to Bosses: 100% => 35%
+		Invoker - Chaos Meteor:
+			Now can't be used on duel area
+		Kadash - Assasins skills:
+			Damage Bonus: 3 5 10 15 20 25 30 => 3 5 7 9 12 15 17 %
+			Critical Chance: 10 14 18 22 26 30 34 => 8 12 16 20 24 28 32 %
+			Critical Damage: 100 150 200 250 300 350 400 => 30 60 90 120 150 180 210
+		Beastmaster - Wild Axes:
+			Damage: 70 100 130 160 250 350 500 => 120 240 360 480 600 720 840
+		Abyssal Underlord - Firestorm:
+			Burn Damage: 1 1.5 2 2.5 3 3.5 4 => 0.5 1.0 1.5 2.0 2.5 3.0 3.5 %
+			Wave Damage: 50 100 150 200 250 300 350 => 25 50 75 100 125 150 175
+		Dragon Knight - Dragon Blood:
+			Levels Between Upgrades: 1 => 5
+			Cooldown: 3.0 => 5
+		Weaver - Shukuchi:
+			Cooldown: 14.0 12.0 10.0 8.0 6.0 5.0 => 14 13 12 11 10 9 8
+		Zaken - Stitching Strikes:
+			Max Health Damage: 1 2 3 4 5 6 7 => 1 1.0 1.5 2.0 2.5 3.0 3.5 %
+		Invoker - Exort:
+			Damage per Sphere: 20 40 60 80 70 90 110 120 => 15 40 60 80 70 90 110 120
+		Invoker - Tornado:
+			Damage: 200 400 600 800 1000 1200 1400 1600 => 100 400 600 800 1000 1200 1400 1600
+		Invoker - Chaos Meteor:
+			Damage on Land: 200 300 400 600 700 800 900 => 150 350 400 600 700 800 900
+		Invoker - Sun Strike:
+			Delay: 1 => 1.5
+			Damage: 250 500 1000 1500 2000 2500 3000 3500 => 200 500 1000 1500 2000 2500 3000 3500
+		Weaver - The Swarm:
+			Damage: 5 10 15 20 25 30 35 => 10 30 50 70 90 110 130
+			Armor Reduction: 1 1 1 1 1 1 => 1 2 3 4 5 6 7
+			Speed: 600 => 800
+		Centaur - Double Edge:
+			Cast Point: 0.4 => 0.1
+		Centaur - Hoof Stomp:
+			Cast Point: 0.5 => 0.3
+		Ogre - Magi Fireblast:
+			Cooldown: 12 => 15
+		Templar - Asassin Blades:
+			Levels Between Upgrades: 1 => 2
+		Doom Bringer - Infernal Blade:
+			Cooldown: 0 16 14 12 10 8 6 => 0 16 14 12 10 8 6
+			Damage: 4 => 8 %
+		Doom Bringer - Devour:
+			Required Level: 1 => 3
+		Naga Siren - Song of the Siren:
+			radius: 1250 => 1000 1100 1200 1300 1400 1500 1550 1600
+			Health Regeneration with Scepter: 10 => 10 12 14 16 18 20 22 %
+			Duration: 7.0 => 5
+		Nevermore - Dark Lord:
+			Armor Reduction: -2 -4 -6 -8 -10 -12 -14 => -8 -12 -16 -20 -24 -28 -32
+			Levels Between Upgrades: 1 => 8
+			Required Level: 1 => 3
+		Shredder - Whirling Death:
+			Attribute Lost: 10 15 20 25 30 35 40 => 5 10 15 18 20 25 30 %
+		Naga Siren - Rip Tide:
+			Armor Reduction: -10 -20 -30 -40 -50 -60 -70 => -5 -10 -15 -20 -25 -30 -35
+		Tidehunter - Kraken Shell:
+			Levels Between Upgrades: 1 => 3
+		Chaos Knight - Reality Rift:
+			Cast Range: 550 600 650 700 => 500 550 600 650 700 750 800
+			Armor Reduction: -3 -4 -5 -6 => -6 -12 -18 -24 -30 -36 -42
+		Drow Ranger - Marksmanship:
+			Agility Bonus: 200 400 600 800 1000 1200 1400 => 100 400 600 800 1000 1200 1400
+			Additional Arrows with Scepter: 2 => 0 0 0 1 1 1 2
+		Juggernaut - Blade Fury:
+			Damage: 50 100 150 200 250 300 350 => 100 200 300 400 500 600 700
+		Slardar - Bash:
+			Duration: 1.0 => 0.4
+			Damage: 60 80 100 120 240 260 280 => 100 200 250 300 350 400 450
+		Alchemist - Unstable Concoction:
+			Max Damage: 300 400 500 600 700 800 900 => 200 400 500 600 700 800 900
+			Levels Between Upgrades: 1 => 2
+		Visage - Gravekeepers Cloak:
+			Levels Between Upgrades: 1 => 5
+		Warlock - Rain Of Chaos:
+			Golem Health: 600 900 1200 1500 1800 2100 2500 => 800 1600 2400 3000 3800 4500 6500
+			Golem Damage: 50 100 125 150 200 250 300 => 150 250 450 650 850 1000 1200
+			Golem Armor: 6 9 12 15 20 25 30 => 8 16 35 45 70 90 150
+			Golem Health Regeneration: 50 75 125 150 180 240 322 => 50 100 200 400 600 800 999
+			Gold Bounty: 100 150 200 250 300 350 400 => 100 300 500 900 1200 1500 3500
+			Golem Damage with Scepter: 100 150 200 250 300 350 400 => 150 350 550 1000 1400 1600 4500
+			Levels Between Upgrades: 11 => 20
+		Doom Bringer - Scorched Earth:
+			Cooldown: 55 100 155 200 255 300 355 => 60 50 40 35 30 25 20
+		Venomancer - Poison Nova:
+			Damage: 100 400 500 600 700 800 1000 => 100 200 300 400 500 600 700
+			Damage with Scepter: 130 500 600 700 800 900 1110 => 130 250 350 450 650 750 850
+		Venomancer - Poison Sting:
+			Duration: 5 10 15 20 25 30 35 => 5
+		Tusk - Frozen Sigil:
+			Movement Speed Slow: 10 15 20 25 30 35 40 => 20 40 60 80 100 120 140
+			Attack Slow: 30 40 50 60 70 80 90 => 40 80 120 160 200 240 280
+			Radius: 600 => 800
+		Broodmother - Insatiable hunger:
+			Damage: 60 90 120 150 180 210 240 => 100 250 350 400 500 600 700
+		Queenofpain - Blink:
+			Cooldown: 15.0 18.0 15.0 12.0 9.0 6.0 3.0 => 22.0 20.0 18.0 16.0 14.0 12.0 10.0
+		Nyx - Assassin Impale:
+			Cooldown: 13.0 => 20
+		Nyx Assassin - Spiked Carapace:
+			Duration: 0.6 1.2 1.8 2.4 3.0 3.6 4.2 => 1.45
+			Armor: 0 => 5 10 15 20 25 30 35
+			Bonus Intellect: 0 => 30 60 90 120 150 180 210
+			Damage Reflection: 40 => 40 80 120 180 220 260 300 %
+		Nyx Assassin - Burrow:
+			Cast Point: 1.5 => 0.5
+		Nyx Assassin - Vendetta:
+			Movement Speed: 16 18 20 22 24 26 28 => 750
+		Zen Gehraz - Mystic Twister:
+			Channel Time: 10 => 2 3 4 5 6 7 10
+		Huskar - Life Break:
+			Damage: 35 => 10 %
+			Damage with Scepter: 65 => 20 %
 Fixes:
-	Fixed wearables weren't hidden on heroes with custom models
+	Fixed wearables bug on deidcated servers
 	Fixed modifiers stayed on abandoned hero
 	Fixed Shinobu - Kokorowatari Souls were visible for both teams
 	Fixed Shard of True Sight didn't revaled wards
 	Fixed Manta Style illusion creation with player-controllable creep-heroes
 	Fixed instant kill bug with Freya - Pain Reflection and Blade Mail
 	Fixed Frozen Radiance not applied slow
+	Fixed Radiance's icons
+	Fixed Monkey King - Jingu Mastery tooltip
+	Fixed Monkey King - Boundless Strike
+	Fixed Phantom Lancer - Juxtapose illusion amount limit not worked
+	Fixed Spectre - Haunt illusion kills were also counted as neutral kill
+	Fixed Pudge - Meat Hook wasn't correctly removed if it was stolen by Rubick
 	//Fixed missing icons on modifier images
 	//TODO: Fixed Hero Selection screen stayed on screen after reconnect
 

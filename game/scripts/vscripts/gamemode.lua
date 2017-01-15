@@ -194,7 +194,6 @@ end
 function GameMode:OnHeroSelectionEnd()
 	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
 	PanoramaShop:StartItemStocks()
-	StatsClient:OnGameBegin()
 end
 
 -- This function initializes the game mode and is called before anyone loads into the game

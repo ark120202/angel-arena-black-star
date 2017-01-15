@@ -137,7 +137,7 @@ DOTA_PLAYER_AUTOABANDON_TIME = 60*8
 MAX_SPAWNBOXES_SELECTED = 3
 
 ARENA_SETTINGS = {
-	DelayFromGameStart = 600,
+	DelayFromGameStart = 0,
 	DelaysFromLast = {
 		[0] = 300,
 		[30] = 240,
@@ -146,7 +146,7 @@ ARENA_SETTINGS = {
 	DurationBase = 60,
 	DurationForPlayer = 20,
 	Duel1x1Duration = 90,
-	WinGold_Base = 500,
+	WinGold_Base = 300,
 	WinGold_PerDuel = 2000,
 }
 CUSTOM_STARTING_GOLD = 625

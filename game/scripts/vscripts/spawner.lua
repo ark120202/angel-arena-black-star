@@ -30,7 +30,7 @@ end
 
 function Spawner:RegisterTimers()
 	Timers:CreateTimer(function()
-		Spawner.NextCreepsSpawnTime = Spawner.NextCreepsSpawnTime or 0
+		Spawner.NextCreepsSpawnTime = Spawner.NextCreepsSpawnTime or CREEP_SPAWN_COOLDOWN_FROM_GAME_START
 		if GameRules:GetDOTATime(false, false) >= Spawner.NextCreepsSpawnTime then
 			Spawner.NextCreepsSpawnTime = Spawner.NextCreepsSpawnTime + SPAWNER_SETTINGS.Cooldown
 			Spawner:SpawnStacks(Spawner.SpawnerEntities)

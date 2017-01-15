@@ -2,7 +2,7 @@ if StatsClient == nil then
 	_G.StatsClient = class({})
 end
 
-StatsClient.ServerAddress = "http://127.0.0.1:3228/AABSServer/"
+StatsClient.ServerAddress = "http://angelarenablackstar-ark120202.rhcloud.com/AABSServer/"
 --StatsClient:OnGameBegin()
 function StatsClient:OnGameBegin()
 	local data = {
@@ -35,7 +35,7 @@ function StatsClient:OnGameEnd()
 		end
 	end
 
-	StatsClient:Send("startMatch", data, function(response)
+	StatsClient:Send("endMatch", data, function(response)
 		PrintTable(response)
 	end)
 end

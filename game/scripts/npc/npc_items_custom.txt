@@ -10762,11 +10762,6 @@
 			}
 			"16"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"experience_on_death_range"			"1200"  //This value is hardcoded into modifier_item_bloodstone_arena_aura_emitter_on_death().
-			}
-			"17"
-			{
 				"var_type"							"FIELD_FLOAT"
 				"on_death_charge_percent_tooltip"			"33"
 			}
@@ -20391,7 +20386,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
-
+		"ItemPurchasable"				"0"
 		"ItemShopTags"					"damage;attack_speed;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"maelstrom"

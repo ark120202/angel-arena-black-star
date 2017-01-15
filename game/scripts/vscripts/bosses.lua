@@ -76,6 +76,7 @@ function Bosses:CreateBossLoot(unit, team)
 	end
 
 	local t = {
+		boss = unit:GetUnitName(),
 		killtime = GameRules:GetGameTime(),
 		time = 60,
 		damageByPlayers = damageByPlayers,

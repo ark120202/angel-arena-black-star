@@ -211,6 +211,9 @@ function GameMode:ModifyExperienceFilter(filterTable)
 			filterTable.experience = filterTable.experience * (1 + hero.talent_keys.bonus_experience_percentage * 0.01)
 		end
 	end
+	if Duel.IsFirstDuel and Duel:IsDuelOngoing() then
+		filterTable.experience = filterTable.experience * 0.1
+	end
 	return true
 end
 

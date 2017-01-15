@@ -1,0 +1,83 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 4
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_FadeAndKill"
+		},
+		{
+			_class = "C_OP_SetParentControlPointsToChildCP"
+			m_nChildControlPoint = 5
+			m_nNumControlPoints = 5
+			m_bDisableOperator = true
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.3
+			m_fLifetimeMax = 0.5
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_LocalCoordinateSystemSpeedMax = [ 0.0, 0.0, 1255.0 ]
+			m_LocalCoordinateSystemSpeedMin = [ 0.0, 0.0, 1255.0 ]
+			m_fRadiusMax = 28.0
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_pool.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_wave.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_water8.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_water.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_tail.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_water4.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_water3b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_water3.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_water5.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_water6.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_water7.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_water9.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_water11.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_poseidon/dark_whale_water9b.vpcf"
+		},
+	]
+}

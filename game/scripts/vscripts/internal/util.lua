@@ -720,8 +720,6 @@ end
 function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage, illusion_outgoing_damage, illusion_duration)
 	local illusion = CreateUnitByName(unit:GetUnitName(), illusion_origin, true, unit, unit:GetPlayerOwner(), unit:GetTeamNumber())
 	FindClearSpaceForUnit(illusion, illusion_origin, true)
-	illusion:SetModel(unit:GetModelName())
-	illusion:SetOriginalModel(unit:GetModelName())
 	illusion:SetModelScale(unit:GetModelScale())
 	illusion:SetControllableByPlayer(unit:GetPlayerID(), true)
 
@@ -775,10 +773,11 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	end
 	illusion.UnitName = unit.UnitName
 	illusion:SetNetworkableEntityInfo("unit_name", GetFullHeroName(illusion))
-	if unit.ModelOverride then
-		illusion.ModelOverride = unit.ModelOverride
+	if unit:GetModelName() ~= illusion:GetModelName() then
+		illusion.ModelOverride = unit:GetModelName()
 		illusion:AddNewModifier(illusion, nil, "modifier_hero_selection_model_change", nil)
 	end
+	
 	return illusion
 end
 
@@ -1103,6 +1102,9 @@ function RemoveAbilityWithModifiers(unit, ability)
 		if v:GetAbility() == ability then
 			v:Destroy()
 		end
+	end
+	if ability:GetAbilityName() == "pudge_meat_hook_lua" then
+		ability:DestroyHookParticles()
 	end
 	unit:RemoveAbility(ability:GetAbilityName())
 end

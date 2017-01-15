@@ -19,7 +19,7 @@ end
 function Duel:CreateGlobalTimer()
 	Duel.DuelStatus = DOTA_DUEL_STATUS_WATING
 	PlayerTables:SetTableValue("arena", "duel_timer", Duel.TimeUntilDuel)
-	Duel.GlobalTimer = Timers:CreateTimer(1, function()
+	Duel.GlobalTimer = Timers:CreateTimer(function()
 		if Duel.DuelStatus == DOTA_DUEL_STATUS_WATING then
 			Duel.TimeUntilDuel = Duel.TimeUntilDuel - 1
 			if Duel.TimeUntilDuel <= 0 then
@@ -88,6 +88,7 @@ function Duel:StartDuel()
 	local heroes_to_fight_n = math.min(unpack(table.iterate(heroes_in_teams)))
 	Duel.TimeUntilDuelEnd = ARENA_SETTINGS.DurationBase + ARENA_SETTINGS.DurationForPlayer * heroes_to_fight_n
 	if heroes_to_fight_n > 0 and table.count(Duel.heroes_teams_for_duel) > 1 then
+		Duel.IsFirstDuel = Duel.DuelCounter == 0
 		--[[for _,v in ipairs(Entities:FindAllByName("npc_dota_arena_statue")) do
 			local particle1 = ParticleManager:CreateParticle("particles/arena/units/arena_statue/statue_eye.vpcf", PATTACH_ABSORIGIN, v)
 			local particle2 = ParticleManager:CreateParticle("particles/arena/units/arena_statue/statue_eye.vpcf", PATTACH_ABSORIGIN, v)
@@ -156,7 +157,6 @@ function Duel:StartDuel()
 end
 
 function Duel:EndDuel()
-	Duel.DuelCounter = Duel.DuelCounter + 1
 	for _,v in ipairs(Duel.Particles) do
 		ParticleManager:DestroyParticle(v, false)
 	end
@@ -177,6 +177,7 @@ function Duel:EndDuel()
 	else
 		Notifications:TopToAll({text="#duel_over_winner_none", duration=9.0})
 	end
+	Duel.DuelCounter = Duel.DuelCounter + 1
 	Duel:EndDuelLogic(true, true)
 end
 

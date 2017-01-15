@@ -31,15 +31,30 @@ function pudge_meat_hook_lua:OnAbilityPhaseStart()
 	return true
 end
 
-
 function pudge_meat_hook_lua:OnAbilityPhaseInterrupted()
 	self:GetCaster():RemoveGesture( ACT_DOTA_OVERRIDE_ABILITY_1 )
 end
 
+function pudge_meat_hook_lua:DestroyHookParticles()
+	self:GetCaster():RemoveGesture( ACT_DOTA_OVERRIDE_ABILITY_1 )
+	if self:GetCaster() and self:GetCaster():IsHero() then
+		local hHook = self:GetCaster():GetTogglableWearable(DOTA_LOADOUT_TYPE_WEAPON)
+		if hHook ~= nil then
+			hHook:RemoveEffects(EF_NODRAW)
+		end
+	end
+	EmitSoundOn("Hero_Pudge.AttackHookRetractStop", self:GetCaster())
+	if self.projectiles then
+		for k,v in ipairs(self.projectiles) do
+			print(k)
+			v:OnFinish()
+			v:Destroy()
+		end
+	end
+end
 
 function pudge_meat_hook_lua:OnSpellStart()
 	local hookCount = self:GetCaster():GetTalentSpecial("talent_hero_pudge_hook_splitter", "hook_amount") or 1
-	print(hookCount)
 	local hook_damage = self:GetAbilityDamage()
 	local hook_speed = self:GetSpecialValueFor( "hook_speed" )
 	local hook_width = self:GetSpecialValueFor( "hook_width" )
@@ -63,7 +78,7 @@ function pudge_meat_hook_lua:OnSpellStart()
 		local vDirection = self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()
 		vDirection.z = 0
 		if hookCount > 1 then
-			vDirection = RotatePosition(vDirection, QAngle(0, 360/hookCount*i, 0), self:GetCaster():GetAbsOrigin())
+			vDirection = RotatePosition(vDirection, QAngle(0, 360/hookCount*(i-1), 0), self:GetCaster():GetAbsOrigin())
 		end
 		local vHookOffset = Vector( 0, 0, 96 )
 
@@ -103,72 +118,108 @@ function pudge_meat_hook_lua:OnSpellStart()
 			vSpawnOrigin = self:GetCaster():GetOrigin(),
 			vVelocity = vDirection:Normalized() * hook_speed,
 			OnFinish = function(proj, pos)
-				local vHookPos = pos
-				local flPad = self:GetCaster():GetPaddedCollisionRadius()
-				vVelocity = self:GetCaster():GetAbsOrigin() - vHookPos
-				vVelocity.z = 0.0
-				local flDistance = vVelocity:Length2D() - flPad
-				vVelocity = vVelocity:Normalized() * hook_speed
+				if IsValidEntity(self) and IsValidEntity(self:GetCaster()) then
+					table.removeByValue(self.projectiles, proj)
+					if pos then
+						local vHookPos = pos
+						local flPad = self:GetCaster():GetPaddedCollisionRadius()
+						vVelocity = self:GetCaster():GetAbsOrigin() - vHookPos
+						vVelocity.z = 0
+						vVelocity = vVelocity:Normalized() * hook_speed
 
-				EmitSoundOn( "Hero_Pudge.AttackHookRetract", hTarget )
-				if self:GetCaster():IsAlive() then
-					self:GetCaster():RemoveGesture( ACT_DOTA_OVERRIDE_ABILITY_1 );
-					self:GetCaster():StartGesture( ACT_DOTA_CHANNEL_ABILITY_1 );
-				end
-				Timers:RemoveTimer(proj.Thinker)
-				Timers:CreateTimer(0.03, function()
-					local newProjTable = {
-						vSpawnOrigin = vHookPos,
-						vVelocity = vVelocity,
-						fDistance = 99999,
-						fExpireTime = 99999,
-						OnFinish = function(proj, pos)
-							if self:GetCaster() and self:GetCaster():IsHero() then
-								local hHook = self:GetCaster():GetTogglableWearable( DOTA_LOADOUT_TYPE_WEAPON )
-								if hHook ~= nil then
-									hHook:RemoveEffects( EF_NODRAW )
-								end
-							end
+						EmitSoundOn( "Hero_Pudge.AttackHookRetract", hTarget )
+						if self:GetCaster():IsAlive() then
+							self:GetCaster():RemoveGesture( ACT_DOTA_OVERRIDE_ABILITY_1 );
+							self:GetCaster():StartGesture( ACT_DOTA_CHANNEL_ABILITY_1 );
+						end
+						Timers:RemoveTimer(proj.Thinker)
+						Timers:CreateTimer(0.03, function()
+							local newProjTable = {
+								vSpawnOrigin = vHookPos,
+								vVelocity = vVelocity,
+								fDistance = 99999,
+								fExpireTime = 99999,
+								OnFinish = function(proj, pos)
+									local is_valid = IsValidEntity(self) and IsValidEntity(self:GetCaster())
+									if is_valid then
+										table.removeByValue(self.projectiles, proj)
+										if self:GetCaster() and self:GetCaster():IsHero() then
+											local hHook = self:GetCaster():GetTogglableWearable(DOTA_LOADOUT_TYPE_WEAPON)
+											if hHook ~= nil then
+												hHook:RemoveEffects(EF_NODRAW)
+											end
+										end
+										EmitSoundOn("Hero_Pudge.AttackHookRetractStop", self:GetCaster())
+									end
 
-							if proj.hVictim and #proj.hVictim > 0 then
-								for _,v in ipairs(proj.hVictim) do
-									if not v:IsNull() and v:IsAlive() then
-										v:InterruptMotionControllers( true )
-										v:RemoveModifierByName( "modifier_meat_hook_lua" )
-
-										local vVictimPosCheck = v:GetOrigin() - pos 
-										local flPad = self:GetCaster():GetPaddedCollisionRadius() + v:GetPaddedCollisionRadius()
-										if vVictimPosCheck:Length2D() > flPad then
-											FindClearSpaceForUnit( v, self:GetCaster():GetAbsOrigin(), false )
+									if proj.hVictim and #proj.hVictim > 0 then
+										for _,v in ipairs(proj.hVictim) do
+											if not v:IsNull() and v:IsAlive() then
+												v:InterruptMotionControllers( true )
+												v:RemoveModifierByName( "modifier_meat_hook_lua" )
+												if is_valid and pos then
+													local vVictimPosCheck = v:GetOrigin() - pos 
+													local flPad = self:GetCaster():GetPaddedCollisionRadius() + v:GetPaddedCollisionRadius()
+													if vVictimPosCheck:Length2D() > flPad then
+														FindClearSpaceForUnit( v, self:GetCaster():GetAbsOrigin(), false )
+													end
+												end
+											end
 										end
 									end
+									Timers:RemoveTimer(proj.Thinker)
+									proj.hVictim = nil
+									ParticleManager:DestroyParticle( hook_chain_pfx, true )
+								end,
+								hVictim = proj.hVictim,
+							}
+							table.merge(newProjTable, projbase)
+							local newProjectile = Projectiles:CreateProjectile(newProjTable)
+							table.insert(self.projectiles, newProjectile)
+							proj.newProjectile = newProjectile
+							newProjectile.Thinker = Timers:CreateTimer(function()
+								if IsValidEntity(self) and IsValidEntity(self:GetCaster()) then
+									ParticleManager:SetParticleControl( hook_chain_pfx, 6, newProjectile:GetPosition() + vHookOffset )
+									vVelocity = self:GetCaster():GetAbsOrigin() - newProjectile:GetPosition()
+									vVelocity.z = 0
+									vVelocity = vVelocity:Normalized() * hook_speed
+									if (self:GetCaster():GetAbsOrigin() - newProjectile:GetPosition()):Length2D() < 128 then
+										newProjectile.OnFinish(newProjectile, newProjectile:GetPosition())
+										newProjectile:Destroy()
+									end
+									newProjectile.spawnTime = Time()
+									newProjectile.distanceTraveled = 0
+									newProjectile.vel = vVelocity / 30
+									return 0.03
+								end
+							end)
+						end)
+					else
+						if proj.hVictim then
+							for _,v in ipairs(proj.hVictim) do
+								if not v:IsNull() and v:IsAlive() then
+									v:InterruptMotionControllers( true )
+									v:RemoveModifierByName( "modifier_meat_hook_lua" )
 								end
 							end
-							Timers:RemoveTimer(proj.Thinker)
-							proj.hVictim = nil
-							ParticleManager:DestroyParticle( hook_chain_pfx, true )
-							EmitSoundOn( "Hero_Pudge.AttackHookRetractStop", self:GetCaster() )
-						end,
-						hVictim = proj.hVictim,
-					}
-					table.merge(newProjTable, projbase)
-					local newProjectile = Projectiles:CreateProjectile(newProjTable)
-					proj.newProjectile = newProjectile
-					newProjectile.Thinker = Timers:CreateTimer(function()
-						ParticleManager:SetParticleControl( hook_chain_pfx, 6, newProjectile:GetPosition() + vHookOffset )
-						vVelocity = self:GetCaster():GetAbsOrigin() - newProjectile:GetPosition()
-						vVelocity.z = 0.0
-						vVelocity = vVelocity:Normalized() * hook_speed
-						if (self:GetCaster():GetAbsOrigin() - newProjectile:GetPosition()):Length2D() < 128 then
-							newProjectile.OnFinish(newProjectile, newProjectile:GetPosition())
-							newProjectile:Destroy()
 						end
-						newProjectile.spawnTime = Time()
-						newProjectile.distanceTraveled = 0
-						newProjectile.vel = vVelocity / 30
-						return 0.03
-					end)
-				end)
+						Timers:RemoveTimer(proj.Thinker)
+						proj.hVictim = nil
+						ParticleManager:DestroyParticle( hook_chain_pfx, true )
+					end
+				else
+					if proj.hVictim then
+						for _,v in ipairs(proj.hVictim) do
+							if not v:IsNull() and v:IsAlive() then
+								v:InterruptMotionControllers( true )
+								v:RemoveModifierByName( "modifier_meat_hook_lua" )
+							end
+						end
+					end
+					Timers:RemoveTimer(proj.Thinker)
+					proj.hVictim = nil
+					ParticleManager:DestroyParticle( hook_chain_pfx, true )
+				end
 			end,
 		}
 		table.merge(projectileTable, projbase)
@@ -179,6 +230,8 @@ function pudge_meat_hook_lua:OnSpellStart()
 			return 0.03
 		end)
 		projectile.hVictim = {}
+		self.projectiles = self.projectiles or {}
+		table.insert(self.projectiles, projectile)
 	end
 end
 
