@@ -15088,7 +15088,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
-		"AbilityCooldown"				"18 17 16 15 14 13 12"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"90 140 190 240 290 340 390"
 		"LevelsBetweenUpgrades"			"2"
 		"AbilityDamage"					"100 220 340 460 580 700 940"
@@ -15417,7 +15417,7 @@
 		"AOERadius"						"%aoe_radius"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 
-		"AbilityCooldown"				"120 110 100 90 80 70 60"
+		"AbilityCooldown"				"120 110 100 90 85 80 75"
 		"AbilityManaCost"				"400 600 800 1000 1200 1400 1600"
 		"AbilityCastPoint"				"0.4"
 

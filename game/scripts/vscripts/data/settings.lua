@@ -39,7 +39,7 @@ for i = 2, 600 do
 end
 
 ENABLE_FIRST_BLOOD = false              -- Should we enable first blood for the first kill in this game?
-HIDE_KILL_BANNERS = true                -- Should we hide the kill banners that show when a player is killed?
+HIDE_KILL_BANNERS = false               -- Should we hide the kill banners that show when a player is killed?
 SHOW_ONLY_PLAYER_INVENTORY = false      -- Should we only allow players to see their own inventory even when selecting other units?
 DISABLE_STASH_PURCHASING = false        -- Should we prevent players from being able to buy items into their stash when not at a shop?
 DISABLE_ANNOUNCER = false               -- Should we disable the announcer from working in the game?

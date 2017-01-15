@@ -229,10 +229,11 @@ Fixes:
 	//Fixed missing icons on modifier images
 	//TODO: Fixed Hero Selection screen stayed on screen after reconnect
 
-Fixed boss drop ui was shown to both teams and it breaked after enemy team selected one of items; Also added a button to hide most of panel's content
+Enabled kill streak banners
+Poseidon - Wave:
+	Cooldown: 18 17 16 15 14 13 12 => 20
 Poseidon - Dark Whale:
-	Cooldown: 8 => 120 110 100 90 80 70 60
-	Mana Cost: 100 => 400 600 800 1000 1200 1400 1600
+	Cooldown: 120 110 100 90 80 70 60 => 120 110 100 90 85 80 75
 <<+===========================================================================================================
 
 
