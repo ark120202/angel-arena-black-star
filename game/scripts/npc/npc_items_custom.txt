@@ -132,7 +132,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"8000"
+		"ItemCost"						"4000"
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasableFilter"			"0"
@@ -175,7 +175,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"16000"
+		"ItemCost"						"8000"
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasableFilter"			"0"
@@ -224,7 +224,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"7500"
+		"ItemCost"						"3000"
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasableFilter"			"0"
@@ -286,7 +286,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"24000"
+		"ItemCost"						"10000"
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasableFilter"			"0"
@@ -391,7 +391,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"12000"
+		"ItemCost"						"6000"
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasableFilter"			"0"
@@ -10393,7 +10393,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1600"	
+		"ItemCost"						"550"	
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------

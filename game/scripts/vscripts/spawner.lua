@@ -92,25 +92,25 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 			hp = 23 * minutelevel
 			damage = 2.6 * minutelevel
 			attackspeed = 0.40 * minutelevel
-			movespeed = 0.35 * minutelevel
+			movespeed = 1 * minutelevel
 			armor = 0.6 * minutelevel
-			xpbounty = 18 * minutelevel
+			xpbounty = 25 * minutelevel
 		elseif minutelevel <= 20 then
 			goldbounty = 4 * minutelevel
 			hp = 33 * minutelevel
 			damage = 6 * minutelevel
 			attackspeed = 0.35 * minutelevel
-			movespeed = 0.35 * minutelevel
+			movespeed = 1.5 * minutelevel
 			armor = 0.8 * minutelevel
-			xpbounty = 45 * minutelevel
+			xpbounty = 150 * minutelevel
 		elseif minutelevel <= 30 then
 			goldbounty = 3 * minutelevel
 			hp = 30 * minutelevel
 			damage = 13 * minutelevel
 			attackspeed = 0.40 * minutelevel
-			movespeed = 0.40 * minutelevel
+			movespeed = 2.0 * minutelevel
 			armor = 1 * minutelevel
-			xpbounty = 100 * minutelevel
+			xpbounty = 200 * minutelevel
 		elseif minutelevel <= 60 then
 			goldbounty = 2 * minutelevel
 			hp = 35 * minutelevel
@@ -118,7 +118,7 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 			attackspeed = 0.45 * minutelevel
 			movespeed = 0.45 * minutelevel
 			armor = 0.45 * minutelevel
-			xpbounty = 150 * minutelevel
+			xpbounty = 450 * minutelevel
 		else
 			goldbounty = 3 * minutelevel
 			hp = 56.5 * minutelevel
@@ -126,7 +126,7 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 			attackspeed = 0.50 * minutelevel
 			movespeed = 0.50 * minutelevel
 			armor = 0.50 * minutelevel
-			xpbounty = 250 * minutelevel
+			xpbounty = 600 * minutelevel
 		end
 	end
 	if spawnerType == "medium" then
@@ -135,7 +135,7 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 			hp = 42 * minutelevel
 			damage = 2.6 * minutelevel
 			attackspeed = 0.70 * minutelevel
-			movespeed = 0.70 * minutelevel
+			movespeed = 1.2 * minutelevel
 			armor = 0.9 * minutelevel
 			xpbounty = 1.3 * minutelevel
 		elseif minutelevel <= 20 then
@@ -143,7 +143,7 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 			hp = 120 * minutelevel
 			damage = 9 * minutelevel
 			attackspeed = 0.75 * minutelevel
-			movespeed =0.75  * minutelevel
+			movespeed = 1.8  * minutelevel
 			armor = 1.1 * minutelevel
 			xpbounty = 18 * minutelevel
 		elseif minutelevel <= 30 then
@@ -174,19 +174,19 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 	end
 	if spawnerType == "hard" then
 		if minutelevel <= 10 then
-			goldbounty = 1.2 * minutelevel
-			hp = 35 * minutelevel
+			goldbounty = 1.1 * minutelevel
+			hp = 39 * minutelevel
 			damage = 4 * minutelevel
-			attackspeed = 1 * minutelevel
-			movespeed = 1 * minutelevel
-			armor = 1 * minutelevel
+			attackspeed = 2 * minutelevel
+			movespeed = 10 * minutelevel
+			armor = 1.8 * minutelevel
 			xpbounty = 2.5 * minutelevel
 		elseif minutelevel <= 20 then
 			goldbounty = 13 * minutelevel
 			hp = 100 * minutelevel
-			damage = 20 * minutelevel
+			damage = 13 * minutelevel
 			attackspeed = 1 * minutelevel
-			movespeed = 1 * minutelevel
+			movespeed = 10 * minutelevel
 			armor = 2 * minutelevel
 			xpbounty = 20 * minutelevel
 		elseif minutelevel <= 30 then
@@ -194,24 +194,24 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 			hp = 280 * minutelevel
 			damage = 30 * minutelevel
 			attackspeed = 1 * minutelevel
-			movespeed = 1 * minutelevel
-			armor = 3 * minutelevel
+			movespeed = 10 * minutelevel
+			armor = 4 * minutelevel
 			xpbounty = 40 * minutelevel
 		elseif minutelevel <= 60 then
 			goldbounty = 110 * minutelevel
 			hp = 750 * minutelevel
 			damage = 25 * minutelevel
 			attackspeed = 1 * minutelevel
-			movespeed = 1 * minutelevel
-			armor = 1 * minutelevel
+			movespeed = 10 * minutelevel
+			armor = 2 * minutelevel
 			xpbounty = 150 * minutelevel
 		else
 			goldbounty = 180 * minutelevel
 			hp = 1500 * minutelevel
 			damage = 50 * minutelevel
 			attackspeed = 2 * minutelevel
-			movespeed = 2 * minutelevel
-			armor = 2 * minutelevel
+			movespeed = 10 * minutelevel
+			armor = 6 * minutelevel
 			xpbounty = 250 * minutelevel
 		end
 	end

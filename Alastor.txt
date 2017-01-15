@@ -1,0 +1,83 @@
+Poseidon - trident:
+duration: 3.5 => 10 20 30 40 50 60 70
+AbilityDamage: 40 60 100 140 200 250 320 => 50 100 150 250 350 450 550
+LevelsBetweenUpgrades: 1 => 10
+cleave damage pct: 30 35 37.5 40 42.5 45 50 => 5 10 15 20 25 30 35
+
+Poseidon - wave:
+AbilityDamage: 100 220 340 460 580 700 940 => 100 200 300 400 500 600 700
+
+Poseidon dark whale:
+AbilityManaCost: 400 600 800 1000 1200 1400 1600 => 200 300 400 500 600 700 800
+
+Luna Lunar Blessing:
+LevelsBetweenUpgrades: 1 => 5
+
+Batrider - Sticky Napalm:
+LevelsBetweenUpgrades: 1 => 4
+
+Alchemist - Unstable Concoction:
+AbilityCooldown: 16.0 => 24
+
+Talent - Bonus Creep Gold:
+gold for creep = 5 8 12 14 16 18 20 => 8 18 30 60 70 90 120
+cost = 5 => 4
+
+Talent - Health:
+health = 80 160 240 320 400 480 560 640 720 800 880 960 => 150 300 500 800 900 1100 1300 1500 1800 2100 2300 2500
+cost = 1 => 2
+
+Gyrocopter - Flak cannon:
+Fire rate scepter: 0.5 => 1.5 1.4 1.3 1.2 1.1 1.0 0.9
+
+Warlock - rain of chaos:
+golem hp tooltip scepter: 600 900 1200 1500 1800 2100 2500 2800 => 900 1800 2900 3700 4600 5000 7000
+
+Alchemist chemical rage:
+bonus health regen: 20 40 60 80 100 120 140 => 30 60 90 120 150 180 210
+base attack time: 1.6 1.5 1.4 1.3 1.2 1.1 1.0 => 1.3 1.2 1.1 1.0 0.9 0.8 0.7
+transformation time: 0.35 => 0.1
+LevelsBetweenUpgrades 10 => 20
+
+Alchemist goblins greed:
+bounty multiplier tooltip: 3 8 12 18 24 28 32 => 2 4 8 12 16 18 20
+
+Earth - Spirit Boulder Smash
+AbilityCooldown: 22.0 18.0 16.0 14.0 10.0 8.0 6.0 => 25 23 20 17 15 12 10
+
+Brewmaster Drunken Brawler
+crit multiplier: 228 => 160 180 200 220 240 260 280
+
+Lina - Light Strike Array
+AbilityDamage: 80 120 160 200 => 120 190 270 375 425 500 675
+AbilityManaCost: 100 110 120 130 => 100 120 140 160 180 200 220
+
+Elder - Titan Earth Splitter
+damage pct: 20 25 35 40 50 55 65 => 3 6 9 12 15 18 21
+
+Item -  Recipe Chest Of Midas:
+Item Cost: 1600 => 550
+xp: 10 => 5
+gold: 10 => 8
+
+Item -  Soul Of Titan:
+Cost: 11000 => 5500
+
+Item - Phantom Bone:
+Cost: 16000 => 8000
+
+Item - Demons Paw:
+Cost: 12000 => 6000
+
+Item - Fallen Star:
+Cost: 24000 => 10000
+
+Item - Moon Dust:
+Cost: 7500 => 3000
+
+Item - Dark Blade:
+Cost: 8000 => 4000
+
+Item - Cursed Eye:
+Cost: 10000 => 5000
+

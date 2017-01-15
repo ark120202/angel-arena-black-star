@@ -3065,7 +3065,7 @@
 			"10"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"golem_hp_tooltip_scepter"	"600 900 1200 1500 1800 2100 2500 2800"
+				"golem_hp_tooltip_scepter"	"900 1800 2900 3700 4600 5000 7000"
 			}
 			"11"
 			{
@@ -6631,7 +6631,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"fire_rate_scepter"						"0.5"
+				"fire_rate_scepter"						"1.5 1.4 1.3 1.2 1.1 1.0 0.9"
 			}
 			"06"
 			{
@@ -15091,7 +15091,7 @@
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"90 140 190 240 290 340 390"
 		"LevelsBetweenUpgrades"			"2"
-		"AbilityDamage"					"100 220 340 460 580 700 940"
+		"AbilityDamage"					"100 200 300 400 500 600 700"
 
 		"AbilityCastRange"				"%range"
 		"AbilityCastPoint"				"0.3"
@@ -15177,14 +15177,15 @@
 
 		"AbilityCooldown"				"20 19 18 17 16 15 14"
 		"AbilityManaCost"				"80 120 200 300 400 500 600"
-		"AbilityDamage"					"40 60 100 140 200 250 320"
+		"AbilityDamage"					"50 100 150 250 350 450 550"
+		"LevelsBetweenUpgrades"			"10"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"3.5"
+				"duration"			"10 20 30 40 50 60 70"
 			}
 			"02"
 			{
@@ -15194,7 +15195,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"cleave_damage_pct"	"30 35 37.5 40 42.5 45 50"
+				"cleave_damage_pct"	"5 10 15 20 25 30 35"
 			}
 			"04"
 			{
@@ -15418,7 +15419,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 
 		"AbilityCooldown"				"120 110 100 90 85 80 75"
-		"AbilityManaCost"				"400 600 800 1000 1200 1400 1600"
+		"AbilityManaCost"				"200 300 400 500 600 700 800"
 		"AbilityCastPoint"				"0.4"
 
 		"precache"

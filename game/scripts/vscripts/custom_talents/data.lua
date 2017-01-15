@@ -15,11 +15,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_bonus_creep_gold = {
 		icon = "gold",
-		cost = 5,
+		cost = 4,
 		group = 1,
 		max_level = 7,
 		special_values = {
-			gold_for_creep = {5, 8, 12, 14, 16, 18, 20}
+			gold_for_creep = {8, 18, 30, 60, 70, 90, 120}
 		},
 		effect = {
 			modifiers = {
@@ -27,20 +27,6 @@ CUSTOM_TALENTS_DATA = {
 			},
 		}
 	},
-	--[[talent_HUD = {
-		icon = "wtf",
-		cost = 3,
-		group = 2,
-		max_level = 7,
-		special_values = {
-			Dop HUD = {3, 6, 9, 12, 15, 18, 21}
-		},
-		effect = {
-			modifiers = {
-				modifier_talent_damage = "Dop HUD",
-			},
-		}
-	},]]
 	talent_spell_amplify = {
 		icon = "spell_amplify",
 		cost = 7,
@@ -114,11 +100,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_health = {
 		icon = "health",
-		cost = 1,
+		cost = 2,
 		group = 1,
 		max_level = 12,
 		special_values = {
-			health = {80, 160, 240, 320, 400, 480, 560, 640, 720, 800, 880, 960}
+			health = {150, 300, 500, 800, 900, 1100, 1300, 1500, 1800, 2100, 2300, 2500}
 		},
 		effect = {
 			calculate_stat_bonus = true,
