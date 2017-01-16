@@ -14633,7 +14633,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stolen_health_pct"		"50 60 70 80 90 100 110"
+				"stolen_health_pct"		"10 15 20 25 30 35 40"
 			}
 			"05"
 			{
@@ -15175,7 +15175,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
-		"AbilityCooldown"				"20 19 18 17 16 15 14"
+		"AbilityCooldown"				"120 110 100 90 80 70 60"
 		"AbilityManaCost"				"80 120 200 300 400 500 600"
 		"AbilityDamage"					"50 100 150 250 350 450 550"
 		"LevelsBetweenUpgrades"			"10"
@@ -15185,7 +15185,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"10 20 30 40 50 60 70"
+				"duration"			"10 15 20 25 30 35 40"
 			}
 			"02"
 			{
@@ -15195,7 +15195,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"cleave_damage_pct"	"5 10 15 20 25 30 35"
+				"cleave_damage_pct"	"10 10 15 20 25 30 35"
 			}
 			"04"
 			{

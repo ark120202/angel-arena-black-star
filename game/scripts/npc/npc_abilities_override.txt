@@ -6708,7 +6708,7 @@
 		"AbilityCastRange"	"1800"
 		"AbilityCastPoint"	"0.3"
 		"AbilityManaCost"	"50 100 150 200 250 300 350"
-		"LevelsBetweenUpgrades"	"3"
+		"LevelsBetweenUpgrades"	"8"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11201,7 +11201,7 @@
 
 	"spectre_reality"
 	{
-		"MaxLevel"	"7"
+		"MaxLevel"	"1"
 		"AbilityCastPoint"	"0"
 		"AbilityCooldown"	"0"
 	}
@@ -17765,19 +17765,19 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"self_damage"	"100 150 200 250 300 350 400"
+				"self_damage"	"100 200 250 300 400 500 600"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"target_damage"	"100 150 200 250 300 350 400"
+				"target_damage"	"100 200 250 300 400 500 600"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"heal_amount"	"100 150 200 250 300 350 400"
+				"heal_amount"	"100 200 250 300 400 500 600"
 			}
 
 			"04"
@@ -17813,7 +17813,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_absorb"	"110.0 150.0 170.0 200.0 250.0 300.0 350.0"
+				"damage_absorb"	"150 300 450 500 650 700 750"
 				"LinkedSpecialBonus"	"special_bonus_unique_abaddon"
 			}
 
