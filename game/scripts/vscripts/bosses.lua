@@ -64,9 +64,9 @@ function Bosses:CreateBossLoot(unit, team)
 
 	local totalDamage = 0
 	local damageByPlayers = {}
-	for attacker, damage in pairs(unit.DamageReceived) do
-		if IsValidEntity(attacker) and team == attacker:GetTeamNumber() then
-			damageByPlayers[attacker:GetPlayerOwnerID()] = (damageByPlayers[attacker:GetPlayerOwnerID()] or 0) + damage
+	for pid, damage in pairs(unit.DamageReceived) do
+		if PlayerResource:IsValidPlayerID(pid) and not IsPlayerAbandoned(pid) and team == PlayerResource:GetTeam(pid) then
+			damageByPlayers[pid] = (damageByPlayers[pid] or 0) + damage
 		end
 		totalDamage = totalDamage + damage
 	end
@@ -108,23 +108,34 @@ function Bosses:CreateBossLoot(unit, team)
 		for _, group in pairs(t.votes) do
 			local selectedPlayer
 			local bestPctLeft
-			if #group.votes == 0 then
+			if table.count(group.votes) == 0 then
+				for i = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+					if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) and team == PlayerResource:GetTeam(i) and not damagePcts[i] then
+						damagePcts[i] = 0
+					end
+				end
 				local allPids = table.iterateKeys(damagePcts)
 				selectedPlayer = allPids[RandomInt(1, #allPids)]
 				damagePcts[selectedPlayer] = damagePcts[selectedPlayer] - group.weight
 			else
-				for pid, s in ipairs(group.votes) do
-					if s and damagePcts[pid] and (not selectedPlayer or (damagePcts[pid] + (PLAYER_DATA[pid].BossDamagePoints or 0) - group.weight) > bestPctLeft) then
+				PrintTable(group.votes)
+				for pid, s in pairs(group.votes) do
+					damagePcts[pid] = damagePcts[pid] or 0
+					print(pid .. " dealt " .. damagePcts[pid])
+					if s and (not selectedPlayer or (damagePcts[pid] + (PLAYER_DATA[pid].BossDamagePoints or 0) - group.weight) > bestPctLeft) then
+						print("Set pid " .. pid)
 						selectedPlayer = pid
 						damagePcts[pid] = damagePcts[pid] - group.weight
 						bestPctLeft = damagePcts[pid] + (PLAYER_DATA[pid].BossDamagePoints or 0)
 					end
 				end
 			end
-			print(selectedPlayer, "just rolled", group.item)
-			local hero = PlayerResource:GetSelectedHeroEntity(selectedPlayer)
-			if hero then
-				PanoramaShop:PushItem(selectedPlayer, hero, group.item, true)
+			if selectedPlayer then
+				print(selectedPlayer, "just rolled", group.item)
+				local hero = PlayerResource:GetSelectedHeroEntity(selectedPlayer)
+				if hero then
+					PanoramaShop:PushItem(selectedPlayer, hero, group.item, true)
+				end
 			end
 		end
 		for pid, pct in pairs(damagePcts) do

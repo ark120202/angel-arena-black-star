@@ -191,9 +191,3 @@ CRAFT_RECIPES = {
 		IsShapeless = true,
 	}]]
 }
-
-BOSS_DROP_TABLE = {
-	["npc_arena_boss_freya"] = {
-		["item_dark_blade"] = {}
-	}DamageWeightPct = 25, 
-}

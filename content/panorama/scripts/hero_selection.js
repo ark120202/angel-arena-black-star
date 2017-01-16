@@ -35,7 +35,6 @@ var SteamIDSpecialBGs = {
 function HeroSelectionStart(HeroesServerData) {
 	MainPanel.visible = true;
 	SelectionTimerDuration = HeroesServerData.SelectionTime;
-	UpdateTimer();
 	tabsData = HeroesServerData.HeroTabs
 	for (var tabKey in tabsData) {
 		var tabTitle = tabsData[tabKey].title
@@ -327,6 +326,7 @@ function UpdatePrecacheProgress(t) {
 			};
 			if (changesObject.SelectionStartTime != null) {
 				SelectionTimerStartTime = changesObject.SelectionStartTime;
+				UpdateTimer();
 				SelectFirstHeroPanel();
 			};
 		});

@@ -989,7 +989,7 @@ function CreateSimpleBox(point1, point2)
 end
 
 function CDOTA_BaseNPC:IsRealCreep()
-	return self.SSpawner and self.SpawnerType
+	return self.SSpawner ~= nil and self.SpawnerType ~= nil
 end
 
 function FindUnitsInBox(teamNumber, vStartPos, vEndPos, cacheUnit, teamFilter, typeFilter, flagFilter)

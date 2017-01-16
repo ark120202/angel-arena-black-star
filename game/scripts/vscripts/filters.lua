@@ -179,10 +179,12 @@ function GameMode:DamageFilter(filterTable)
 
 
 
-
 		if victim:IsBoss() then
-			victim.DamageReceived = victim.DamageReceived or {}
-			victim.DamageReceived[attacker] = (victim.DamageReceived[attacker] or 0) + filterTable.damage
+			local attackerpid = attacker:GetPlayerOwnerID()
+			if attackerpid and attackerpid > -1 then
+				victim.DamageReceived = victim.DamageReceived or {}
+				victim.DamageReceived[attackerpid] = (victim.DamageReceived[attackerpid] or 0) + filterTable.damage
+			end
 		end
 	end
 	return true
