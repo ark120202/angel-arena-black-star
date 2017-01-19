@@ -68,7 +68,7 @@ local requirements = {
 	"filters",
 	"ability_shop",
 	"custom_talents/custom_talents",
-	--"dyanmic_wearables"
+	"dynamic_wearables/dynamic_wearables"
 }
 local modifiers = {
 	["modifier_state_hidden"] = "modifiers/modifier_state_hidden",
@@ -81,7 +81,6 @@ local modifiers = {
 	["modifier_max_attack_range"] = "modifiers/modifier_max_attack_range.lua",
 	["modifier_arena_courier"] = "modifiers/modifier_arena_courier.lua",
 	["modifier_arena_hero"] = "modifiers/modifier_arena_hero.lua",
-	["modifier_hero_selection_model_change"] = "modifiers/modifier_hero_selection_model_change.lua",
 }
 
 for i = 1, #requirements do
@@ -193,6 +192,7 @@ end
 
 function GameMode:OnHeroSelectionEnd()
 	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
+	--Timers:CreateTimer(1/30, Dynamic_Wrap(GameMode, "QuickGameModeThink"))
 	PanoramaShop:StartItemStocks()
 end
 
@@ -209,6 +209,7 @@ function GameMode:InitGameMode()
 	GameMode:InitFilters()
 	HeroSelection:Initialize()
 	GameMode:RegisterCustomListeners()
+	DynamicWearables:Init()
 	PlayerTables:CreateTable("arena", {
 		gold = {},
 		gamemode_settings = {
@@ -326,3 +327,22 @@ function GameMode:GameModeThink()
 	
 	return CUSTOM_GOLD_TICK_TIME
 end
+
+--[[function GameMode:GameModeThink()
+	for i = 0, 23 do
+		
+
+		if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) then
+			local hero = PlayerResource:GetSelectedHeroEntity(i)
+			if hero then
+				local transp = 0
+				if 
+				for _,v in pairs(self.EquippedWearables) do
+
+				end
+			end
+		end
+	end
+	
+	return 1/30
+end]]

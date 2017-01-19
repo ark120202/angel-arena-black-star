@@ -156,11 +156,8 @@ function LoadGameKeyValues()
 end
 
 -- Works for heroes and units on the same table due to merging both tables on game init
-function CDOTA_BaseNPC:GetKeyValue(key, level, bNotAlternative)
-	local unitname = self:GetUnitName()
-	if not bNotAlternative then unitname = GetFullHeroName(self) end
-	if level then return GetUnitKV(unitname, key, level)
-	else return GetUnitKV(unitname, key) end
+function CDOTA_BaseNPC:GetKeyValue(key, level, bOriginalHero)
+	return GetUnitKV(bOriginalHero and self:GetUnitName() or GetFullHeroName(self), key, level)
 end
 
 -- Dynamic version of CDOTABaseAbility:GetAbilityKeyValues()

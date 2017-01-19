@@ -227,9 +227,11 @@ function table.shuffle(array)
 end
 
 function table.contains(table, element)
-	for _, value in pairs(table) do
-		if value == element then
-			return true
+	if table then
+		for _, value in pairs(table) do
+			if value == element then
+				return true
+			end
 		end
 	end
 	return false
@@ -548,8 +550,9 @@ end
 
 function PreformAbilityPrecastActions(unit, ability)
 	if ability:IsCooldownReady() and ability:IsOwnersManaEnough() then
-		ability:PayManaCost()
-		ability:StartCooldown(GetAbilityCooldown(unit, ability))
+		--ability:PayManaCost()
+		--ability:StartCooldown(GetAbilityCooldown(unit, ability))
+		ability:UseResources(true, false, true)
 		return true
 	end
 	return false
@@ -601,13 +604,13 @@ function CastAdditionalAbility(caster, ability, target)
 	if AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) then
 		local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
 		--TODO сделать чтобы дамаг от скилла умножался от инты.
-		for i=0, 5 do
+		for i = 0, DOTA_ITEM_SLOT_9 do
 			local citem = caster:GetItemInSlot(i)
 			if citem then
 				dummy:AddItem(CopyItem(citem))
 			end
 		end
-		if HasScepter(caster) then dummy:AddNewModifier(caster, nil, "modifier_item_ultimate_scepter", {}) end
+		if caster:HasScepter() then dummy:AddNewModifier(caster, nil, "modifier_item_ultimate_scepter", {}) end
 		dummy:SetControllableByPlayer(caster:GetPlayerID(), true)
 		dummy:SetOwner(caster)
 		dummy:SetAbsOrigin(caster:GetAbsOrigin())
@@ -718,6 +721,7 @@ end
 --illusion_incoming_damage = tooltip - 100
 --illusion_outgoing_damage = tooltip - 100
 function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage, illusion_outgoing_damage, illusion_duration)
+	local unitname = GetFullHeroName(unit)
 	local illusion = CreateUnitByName(unit:GetUnitName(), illusion_origin, true, unit, unit:GetPlayerOwner(), unit:GetTeamNumber())
 	FindClearSpaceForUnit(illusion, illusion_origin, true)
 	illusion:SetModelScale(unit:GetModelScale())
@@ -762,7 +766,6 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 		illusion:ModifyIntellect(unit.Additional_int)
 	end
 	if unit.Additional_attackspeed then
-		--TODO
 		if not illusion:HasModifier("modifier_item_shard_attackspeed_stack") then
 			illusion:AddNewModifier(caster, nil, "modifier_item_shard_attackspeed_stack", {})
 		end
@@ -773,9 +776,19 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	end
 	illusion.UnitName = unit.UnitName
 	illusion:SetNetworkableEntityInfo("unit_name", GetFullHeroName(illusion))
+	if NPC_HEROES_CUSTOM[unitname] then
+		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[unitname], true)
+	end
+	--[[illusion.CustomGain_Strength = unit.CustomGain_Strength
+	illusion.CustomGain_Intelligence = unit.CustomGain_Intelligence
+	illusion.CustomGain_Agility = unit.CustomGain_Agility
+	illusion:SetNetworkableEntityInfo("AttributeStrengthGain", unit.CustomGain_Strength)
+	illusion:SetNetworkableEntityInfo("AttributeIntelligenceGain", unit.CustomGain_Intelligence)
+	illusion:SetNetworkableEntityInfo("AttributeAgilityGain", unit.CustomGain_Agility)]]
 	if unit:GetModelName() ~= illusion:GetModelName() then
 		illusion.ModelOverride = unit:GetModelName()
-		illusion:AddNewModifier(illusion, nil, "modifier_hero_selection_model_change", nil)
+		illusion:SetModel(illusion.ModelOverride)
+		illusion:SetOriginalModel(illusion.ModelOverride)
 	end
 	
 	return illusion
@@ -1003,11 +1016,9 @@ function FindUnitsInBox(teamNumber, vStartPos, vEndPos, cacheUnit, teamFilter, t
 end
 
 function string.split(inputstr, sep)
-	if sep == nil then sep = "%s" end
-	local t={} ; i=1
-	for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-		t[i] = str
-		i = i + 1
+	local t = {}
+	for str in string.gmatch(inputstr, "([^" .. (sep or "%s") .. "]+)") do
+		table.insert(t, str)
 	end
 	return t
 end
@@ -1224,14 +1235,14 @@ function CDOTA_BaseNPC:UnitHasSlotForItem(itemname, bStash)
 end
 
 function table.nearest(table, number)
-    local smallestSoFar, smallestIndex
-    for i, y in ipairs(table) do
-        if not smallestSoFar or (math.abs(number-y) < smallestSoFar) then
-            smallestSoFar = math.abs(number-y)
-            smallestIndex = i
-        end
-    end
-    return table[smallestIndex], smallestIndex
+	local smallestSoFar, smallestIndex
+	for i, y in ipairs(table) do
+		if not smallestSoFar or (math.abs(number-y) < smallestSoFar) then
+			smallestSoFar = math.abs(number-y)
+			smallestIndex = i
+		end
+	end
+	return table[smallestIndex], smallestIndex
 end
 
 function CreateExplosion(position, minRadius, fullRdius, minForce, fullForce, teamNumber, teamFilter, typeFilter, flagFilter)
@@ -1326,4 +1337,18 @@ function CDOTA_BaseNPC:DestroyAllModifiers()
 	for _,v in ipairs(self:FindAllModifiers()) do
 		v:Destroy()
 	end
+end
+
+function CDOTA_BaseNPC:HasModelChanged()
+	if self:HasModifier("modifier_terrorblade_metamorphosis") or self:HasModifier("modifier_monkey_king_transform") or self:HasModifier("modifier_lone_druid_true_form") then
+		return true
+	end
+	for _, modifier in ipairs(self:FindAllModifiers()) do
+		if modifier.DeclareFunctions and table.contains(modifier:DeclareFunctions(), MODIFIER_PROPERTY_MODEL_CHANGE) then
+			if modifier.GetModifierModelChange and modifier:GetModifierModelChange() then
+				return true
+			end
+		end
+	end
+	return false
 end

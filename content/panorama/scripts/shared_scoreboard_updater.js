@@ -26,7 +26,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel(scoreboardConfig, playersContainer
 		playerPanel.BLoadLayout(scoreboardConfig.playerXmlName, false, false);
 	}
 
-	playerPanel.SetHasClass("is_local_player", (playerId == Game.GetLocalPlayerID()));
+	playerPanel.SetHasClass("is_local_player", playerId == Game.GetLocalPlayerID());
 
 	var ultStateOrTime = PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_HIDDEN; // values > 0 mean on cooldown for that many seconds
 	var goldValue = -1;

@@ -26,6 +26,30 @@ function modifier_arena_hero:GetAttributes()
 end
 
 if IsServer() then
+	modifier_arena_hero.HeroLevel = 1
+	function modifier_arena_hero:OnCreated()
+		self:StartIntervalThink(0.3)
+	end
+
+	function modifier_arena_hero:OnIntervalThink()
+		local parent = self:GetParent()
+		local hl = parent:GetLevel()
+		if hl > self.HeroLevel  then
+			local diff = hl - self.HeroLevel
+			self.HeroLevel = hl
+			--print("Adding str, agi, int, times: ", parent.CustomGain_Strength, parent.CustomGain_Agility, parent.CustomGain_Intelligence, diff)
+			if parent.CustomGain_Strength then
+				parent:ModifyStrength((parent.CustomGain_Strength - parent:GetKeyValue("AttributeStrengthGain", nil, true)) * diff)
+			end
+			if parent.CustomGain_Intelligence then
+				parent:ModifyIntellect((parent.CustomGain_Intelligence - parent:GetKeyValue("AttributeIntelligenceGain", nil, true)) * diff)
+			end
+			if parent.CustomGain_Agility then
+				parent:ModifyAgility((parent.CustomGain_Agility - parent:GetKeyValue("AttributeAgilityGain", nil, true)) * diff)
+			end
+		end
+	end
+
 	function modifier_arena_hero:OnAttackStart(keys)
 		local parent = self:GetParent()
 		if keys.attacker == parent and keys.target:IsCustomRune() then

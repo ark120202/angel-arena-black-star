@@ -247,6 +247,11 @@ function GameMode:CustomChatFilter(playerID, text, teamonly)
 			if cmd[1] == "gold" then
 				Gold:ModifyGold(hero, tonumber(cmd[2]))
 			end
+			if cmd[1] == "ban" then
+				if PlayerResource:IsValidPlayerID(tonumber(cmd[2])) then
+					MakePlayerAbandoned(tonumber(cmd[2]))
+				end
+			end
 			if cmd[1] == "spawnrune" then
 				CustomRunes:SpawnRunes()
 			end
@@ -334,6 +339,13 @@ function GameMode:CustomChatFilter(playerID, text, teamonly)
 			end
 			if cmd[1] == "talents_clear" then
 				hero:ClearTalents()
+			end
+			if cmd[1] == "equip" then
+				hero:EquipWearable(tonumber(cmd[2]))
+			end
+			if cmd[1] == "reattach" then
+				hero:RemoveAllWearables()
+				hero:EquipItemsFromPlayerSelectionOrDefault()
 			end
 		end
 		return false

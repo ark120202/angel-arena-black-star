@@ -12,6 +12,10 @@ var DOTA_GAMEMODE_TYPE_ABILITY_SHOP = 102
 var ARENA_GAMEMODE_MAP_NONE = 200
 var ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES = 201
 
+var HERO_SELECTION_STATE_NOT_STARTED = 0
+var HERO_SELECTION_STATE_ALLPICK = 1
+var HERO_SELECTION_STATE_END = 2
+
 var RUNES_COLOR_MAP = {
 	0: "FF7800",
 	1: "FFEC5E",
@@ -75,6 +79,15 @@ function GetPlayerHeroName(playerId) {
 			return GetHeroName(Players.GetPlayerHeroEntityIndex(playerId))
 	} else
 		return ""
+}
+
+Entities.GetHeroPlayerOwner = function(unit) {
+	for (var i = 0; i < 24; i++) {
+		var ServersideData = PlayerTables.GetTableValue("player_hero_entities", i)
+		if ((ServersideData && Number(ServersideData) == unit) || Players.GetPlayerHeroEntityIndex(i) == unit)
+			return i
+	}
+	return -1
 }
 
 function GetPlayerGold(iPlayerID) {
@@ -160,17 +173,6 @@ function DynamicSubscribeNTListener(table, callback, OnConnectedCallback) {
 	}
 }
 
-function GetBaseHudPanel() {
-	var panel = $.GetContextPanel()
-	while (true) {
-		var parent = panel.GetParent()
-		if (parent != null)
-			panel = parent
-		else
-			return panel
-	}
-}
-
 function GetArrayLength(array) {
 	var counter = 0
 	for (var arrKey in array) {
@@ -198,12 +200,14 @@ function getRandomInt(min, max) {
 
 function GetDotaHud() {
 	var p = $.GetContextPanel()
-	while (true) {
-		if (p.id === "Hud")
-			return p
-		else
-			p = p.GetParent()
-	}
+	try {
+		while (true) {
+			if (p.id === "Hud")
+				return p
+			else
+				p = p.GetParent()
+		}
+	} catch (e) {}
 }
 
 function GetSteamID(pid, type) {
@@ -272,3 +276,10 @@ function AddJSClass(panel, classname) {
 String.prototype.encodeHTML = function() {
 	return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 };
+
+function FindDotaHudElement(id) {
+	return hud.FindChildTraverse(id)
+}
+
+
+var hud = GetDotaHud();

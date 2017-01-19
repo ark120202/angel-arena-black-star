@@ -140,11 +140,19 @@ function Precache( context )
     	end
     end
 
+    --[[local RawItemsKV = LoadKeyValues( "scripts/items/items_game.txt" )
+    for k,wearableData in pairs(RawItemsKV.items) do
+    	if wearableData.prefab == "default_item" then
+	    	local mdl = wearableData.model_player
+	    	table.insert(models, mdl)
+	    end
+    end]]
+    DynamicWearables:PrecacheAllWearablesForHero(context, "npc_dota_hero_wisp")
 	for _,v in ipairs(particles) do
 		PrecacheResource("particle", v, context)
 	end
 	for _,v in ipairs(models) do
-		PrecacheResource("model", v, context)
+		PrecacheModel(v, context)
 	end
 end
 

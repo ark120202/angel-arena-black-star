@@ -9,9 +9,9 @@ var Check = function() {
 			CurrentEntityHoveredIndex = ent;
 			CurrentEntityHoveredPanel = $.CreatePanel("Panel", $.GetContextPanel(), "");
 			var abs = Entities.GetAbsOrigin(ent);
-
 			CurrentEntityHoveredPanel.style.position = ((Game.WorldToScreenX(abs[0], abs[1], abs[2]) / Game.GetScreenWidth()) * 100) + "% " + ((Game.WorldToScreenY(abs[0], abs[1], abs[2]) / Game.GetScreenHeight()) * 100) + "% 0";
-			CurrentEntityHoveredPanel.style.transform = "translateX(14px) translateY(-36px)";
+			CurrentEntityHoveredPanel.style.tooltipPosition = "bottom"
+				//CurrentEntityHoveredPanel.style.tooltipBodyPosition = "50%"
 			$.DispatchEvent("DOTAShowTitleTextTooltip", CurrentEntityHoveredPanel, entTooltipInfo.custom_tooltip.title, entTooltipInfo.custom_tooltip.text);
 			return false;
 		}

@@ -41,12 +41,16 @@ function GameMode:OnNPCSpawned(keys)
 		Timers:CreateTimer(function()
 			if npc and not npc:IsNull() and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
 				local base_hero = npc:GetPlayerOwner():GetAssignedHero()
-				if base_hero and base_hero ~= npc and npc:GetModelName() == base_hero:GetModelName() and base_hero.WearablesRemoved then
-					npc.WearablesRemoved = true
-				end
 				Physics:Unit(npc)
 		    	npc:SetAutoUnstuck(true)
-				CustomWearables:EquipWearables(npc)
+		    	if GetFullHeroName(npc) == "npc_dota_hero_wisp" then
+		    		print("equip")
+					npc:EquipItemsFromPlayerSelectionOrDefault()
+				end
+				if npc.ModelOverride then
+					npc:SetModel(npc.ModelOverride)
+					npc:SetOriginalModel(npc.ModelOverride)
+				end
 				if not npc:IsWukongsSummon() then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if npc:IsRealHero() and not npc:HasModifier("modifier_arc_warden_tempest_double") then
@@ -93,7 +97,7 @@ end
 -- A player has reconnected to the game.	This function can be used to repaint Player-based particles or change
 -- state as necessary
 function GameMode:OnPlayerReconnect(keys)
-
+	
 end
 
 -- An ability was used by a player

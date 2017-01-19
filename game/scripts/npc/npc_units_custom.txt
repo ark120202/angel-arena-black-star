@@ -2202,4 +2202,9 @@
 			}
 		}
 	}
+
+	"npc_arena_wearable"
+	{
+		"BaseClass"     "npc_dota_creature"
+	}
 }

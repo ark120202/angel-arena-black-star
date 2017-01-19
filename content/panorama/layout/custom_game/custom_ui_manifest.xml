@@ -11,7 +11,6 @@
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_worldpanels.xml" />
 		
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/minimalistic_hud.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/dynamic_minimap.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/containers/container_base.xml" />
 		
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/duel1x1call.xml" />
@@ -22,6 +21,7 @@
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/panorama_shop.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_talents.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/ability_shop.xml" />
+		<!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/dynamic_wearables.xml" /> -->
 
 		<CustomUIElement type="FlyoutScoreboard"    layoutfile="file://{resources}/layout/custom_game/arena_flyout_scoreboard.xml" />
 		<CustomUIElement type="EndScreen"           layoutfile="file://{resources}/layout/custom_game/arena_end_screen.xml" />

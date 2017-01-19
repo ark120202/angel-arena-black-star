@@ -4,6 +4,9 @@ if HeroSelection == nil then
 end
 local bStartGameOnAllPlayersSelected = GameRules:IsCheatMode()
 local bDebugPrecacheScreen = false
+HERO_SELECTION_STATE_NOT_STARTED = 0
+HERO_SELECTION_STATE_ALLPICK = 1
+HERO_SELECTION_STATE_END = 2
 
 function HeroSelection:Initialize()
 	if not HeroSelection._initialized then
@@ -39,13 +42,13 @@ end
 
 function HeroSelection:PrepareTables()
 	local data = {
-		SelectionTime = HERO_SELECTION_TIME
+		SelectionTime = HERO_SELECTION_TIME,
+		HeroSelectionState = HERO_SELECTION_STATE_ALLPICK,
 	}
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK then
 		data.HeroTabs = {{
 				Heroes = {}
-			},
-			{
+			}, {
 				Heroes = {}
 			}
 		}
@@ -162,7 +165,8 @@ function HeroSelection:PreformGameStart()
 				end
 			end
 			if canEnd then
-				CustomGameEventManager:Send_ServerToAllClients("hero_selection_hide", {})
+				--CustomGameEventManager:Send_ServerToAllClients("hero_selection_hide", {})
+				PlayerTables:SetTableValue("hero_selection_available_heroes", "HeroSelectionState", HERO_SELECTION_STATE_END)
 				Timers:CreateTimer({
 					useGameTime = false,
 					endTime = 3.75,
@@ -501,17 +505,19 @@ end
 		"MovementTurnRate"		"0.500000"			
 		"HealthBarOffset"		"-1"
 ]]
-function TransformUnitClass(unit, classTable)
-	for i = 0, unit:GetAbilityCount() - 1 do
-		if unit:GetAbilityByIndex(i) then
-			unit:RemoveAbility(unit:GetAbilityByIndex(i):GetName())
+function TransformUnitClass(unit, classTable, skipAbilityRemap)
+	if not skipAbilityRemap then
+		for i = 0, unit:GetAbilityCount() - 1 do
+			if unit:GetAbilityByIndex(i) then
+				unit:RemoveAbility(unit:GetAbilityByIndex(i):GetName())
+			end
 		end
-	end
-	if ARENA_ACTIVE_GAMEMODE_MAP ~= ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
-		for i = 1, 24 do
-			if classTable["Ability" .. i] and classTable["Ability" .. i] ~= "" then
-				PrecacheItemByNameAsync(classTable["Ability" .. i], function() end)
-				AddNewAbility(unit, classTable["Ability" .. i])
+		if ARENA_ACTIVE_GAMEMODE_MAP ~= ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
+			for i = 1, 24 do
+				if classTable["Ability" .. i] and classTable["Ability" .. i] ~= "" then
+					PrecacheItemByNameAsync(classTable["Ability" .. i], function() end)
+					AddNewAbility(unit, classTable["Ability" .. i])
+				end
 			end
 		end
 	end
@@ -521,7 +527,8 @@ function TransformUnitClass(unit, classTable)
 			unit:SetLevel(value)
 		elseif key == "Model" then
 			unit.ModelOverride = value
-			unit:AddNewModifier(unit, nil, "modifier_hero_selection_model_change", nil)
+			unit:SetModel(value)
+			unit:SetOriginalModel(value)
 		elseif key == "ModelScale" then
 			unit:SetModelScale(value)
 		elseif key == "ArmorPhysical" then
@@ -547,16 +554,18 @@ function TransformUnitClass(unit, classTable)
 		elseif key == "AttributeBaseStrength" then
 			unit:SetBaseStrength(value)
 		elseif key == "AttributeStrengthGain" then
-			--TODO
-			--unit:(value)
+			unit.CustomGain_Strength = value
+			unit:SetNetworkableEntityInfo("AttributeStrengthGain", value)
 		elseif key == "AttributeBaseIntelligence" then
 			unit:SetBaseIntellect(value)
 		elseif key == "AttributeIntelligenceGain" then
-			--unit:(value)
+			unit.CustomGain_Intelligence = value
+			unit:SetNetworkableEntityInfo("AttributeIntelligenceGain", value)
 		elseif key == "AttributeBaseAgility" then
 			unit:SetBaseAgility(value)
 		elseif key == "AttributeAgilityGain" then
-			--unit:(value)
+			unit.CustomGain_Agility = value
+			unit:SetNetworkableEntityInfo("AttributeAgilityGain", value)
 		elseif key == "BountyXP" then
 			unit:SetDeathXP(value)
 		elseif key == "BountyGoldMin" then

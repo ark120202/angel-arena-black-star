@@ -13,6 +13,7 @@ TODO LIST:
 	алхимику на новую голду
 	лансер беск иллюзии
 	2 виспа оверчарж
+	кастомная система предмтеов на героев, снимать старе через кв, новые вешать через setparent (чекнуть циа). Менять предметы можно будет в меню загрузки, вместь прешэна 45 секундная задержка.
 Идеи для предметов:
 	Star Blade:
 		Из Fallen Star + Dark Blade + ???
@@ -48,87 +49,29 @@ TODO LIST:
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/f076879598870c3318bba8954408e570
 ============================================================
 Angel Arena Black Star - Версия 1.4.2b:
-Усиленны: Bonus Creep Gold, Poseidon - Trident, Poseidon - Dark Whale, Gyrocopter - Flak Cannon, Warlock - Rain of Chaos, Brewmaster - Drunken Brawler, Lina - Light Strike Array
-Ослаблены: Poseidon - Wave, Luna - Lunar Blessing, Batrider - Sticky Napalm, Alchemist - Unstable Concoction, Alchemist - Goblins Greed, Earth Spirit - Boulder Smash, Elder Titan - Earth Splitter
-Изменены: Chest Of Midas, Health, Alchemist - Chemical Rage
-Все предметы с боссов теперь стоят в 2 раза меньге золота
-Исправлены баги с меню выбора предметов с боссов
+
 ============================================================
 Angel Arena Black Star - Version 1.4.2b:
-Buffed: Bonus Creep Gold, Poseidon - Trident, Poseidon - Dark Whale, Gyrocopter - Flak Cannon, Warlock - Rain of Chaos, Brewmaster - Drunken Brawler, Lina - Light Strike Array
-Nerfed: Poseidon - Wave, Luna - Lunar Blessing, Batrider - Sticky Napalm, Alchemist - Unstable Concoction, Alchemist - Goblins Greed, Earth Spirit - Boulder Smash, Elder Titan - Earth Splitter
-Rebalanced: Chest Of Midas, Health, Alchemist - Chemical Rage
-All boss drops now cost twice less
-Finally fixed most of bugs with boss drop
+
 ============================================================
 Angel Arena Black Star - Version 1.4.2b:
 General:
 	
 Balance:
+	Runes:
+		Acceleration:
+			Now not multiplies experience from Level Up Shards
+			
 	Items:
-		Chest Of Midas:
-			Recipe Cost: 1600 => 550
-			XP: 10 => 5
-			Gold: 10 => 8
-		Soul Of Titan:
-			Cost: 11000 => 5500
-		Phantom Bone:
-			Cost: 16000 => 8000
-		Demons Paw:
-			Cost: 12000 => 6000
-		Fallen Star:
-			Cost: 24000 => 10000
-		Moon Dust:
-			Cost: 7500 => 3000
-		Dark Blade:
-			Cost: 8000 => 4000
-		Cursed Eye:
-			Cost: 10000 => 5000
+		
 	Talens:
-		Bonus Creep Gold:
-			Gold for Creep: 5 8 12 14 16 18 20 => 8 18 30 60 70 90 120
-			Cost: 5 => 4
-		Health:
-			Bonus Health: 80 160 240 320 400 480 560 640 720 800 880 960 => 150 300 500 800 900 1100 1300 1500 1800 2100 2300 2500
-			Cost: 1 => 2
+		
 	Abilities:
-		Poseidon - Trident:
-			Duration: 3.5 => 10 20 30 40 50 60 70
-			Bonus Damage: 40 60 100 140 200 250 320 => 50 100 150 250 350 450 550
-			Levels Between Upgrades: 1 => 10
-			Cleave Damage: 30 35 37.5 40 42.5 45 50 => 5 10 15 20 25 30 35 %
-		Poseidon - Wave:
-			Damage: 100 220 340 460 580 700 940 => 100 200 300 400 500 600 700
-		Poseidon - Dark Whale:
-			Mana Cost: 400 600 800 1000 1200 1400 1600 => 200 300 400 500 600 700 800
-		Luna - Lunar Blessing:
-			Levels Between Upgrades: 1 => 5
-		Batrider - Sticky Napalm:
-			Levels Between Upgrades: 1 => 4
-		Alchemist - Unstable Concoction:
-			Cooldown: 16.0 => 24
-		Gyrocopter - Flak Cannon:
-			Fire rate with Scepter: 0.5 => 1.5 1.4 1.3 1.2 1.1 1.0 0.9
-		Warlock - Rain of Chaos:
-			Health with Scepter: 600 900 1200 1500 1800 2100 2500 2800 => 900 1800 2900 3700 4600 5000 7000
-		Alchemist - Chemical Rage:
-			Bonus Health Regen: 20 40 60 80 100 120 140 => 30 60 90 120 150 180 210
-			BAT: 1.6 1.5 1.4 1.3 1.2 1.1 1.0 => 1.3 1.2 1.1 1.0 0.9 0.8 0.7
-			Transformation Time: 0.35 => 0.1
-			Levels Between Upgrades 10 => 20
-		Alchemist - Goblins Greed:
-			Bounty Multiplier: 3 8 12 18 24 28 32 => 2 4 8 12 16 18 20
-		Earth Spirit - Boulder Smash
-			Cooldown: 22.0 18.0 16.0 14.0 10.0 8.0 6.0 => 25 23 20 17 15 12 10
-		Brewmaster - Drunken Brawler:
-			Critical Damage: 228 => 160 180 200 220 240 260 280
-		Lina - Light Strike Array:
-			Damage: 80 120 160 200 => 120 190 270 375 425 500 675
-			Mana Cost: 100 110 120 130 => 100 120 140 160 180 200 220
-		Elder Titan - Earth Splitter:
-			Damage: 20 25 35 40 50 55 65 => 3 6 9 12 15 18 21 %
+		
 Fixes:
-	Finally fixed all bugs with boss drop
+	All new heroes with custom models now are based on wisp, now they don't have any sounds
+	//Fixed hero selection screen issues with reconnect during pre game time => needs test
+	
 
 <<+===========================================================================================================
 

@@ -6,8 +6,6 @@ var SelectedHeroData,
 	SelectionTimerDuration,
 	SelectionTimerStartTime = 0,
 	HideEvent,
-	ShowPrecacheEvent,
-	UpdatePrecacheProgressEvent,
 	PTID,
 	DOTA_ACTIVE_GAMEMODE,
 	CustomChatLinesPanel,
@@ -15,7 +13,8 @@ var SelectedHeroData,
 	MinimapPTIDs = [],
 	HeroesPanels = [],
 	tabsData = {},
-	PlayerSpawnBoxes = {};
+	PlayerSpawnBoxes = {},
+	HeroSelectionState = -1;
 
 var SteamIDSpecialBGs = {
 	//ark120202
@@ -223,16 +222,13 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	}
 }
 
-function HeroSelectionEnd() {
+function HeroSelectionEnd(bImmidate) {
 	$.GetContextPanel().style.opacity = 0
-	$.Schedule(5.6, function() {
+	$.Schedule(bImmidate ? 0 : 5.6, function() {
 		MainPanel.visible = false
+		FindDotaHudElement("PausedInfo").style.opacity = 1;
 		if (HideEvent != null)
 			GameEvents.Unsubscribe(HideEvent)
-		if (ShowPrecacheEvent != null)
-			GameEvents.Unsubscribe(ShowPrecacheEvent)
-		if (UpdatePrecacheProgressEvent != null)
-			GameEvents.Unsubscribe(UpdatePrecacheProgressEvent)
 		if (PTID != null)
 			PlayerTables.UnsubscribeNetTableListener(PTID)
 		if (MinimapPTIDs.length > 0)
@@ -247,7 +243,7 @@ function ShowPrecache() {
 	$("#HeroSelectionBox").visible = false
 	$("#HeroSelectionPrecacheBase").visible = true
 	var PlayerPickData = PlayerTables.GetAllTableValues("hero_selection")
-
+	FindDotaHudElement("PausedInfo").style.opacity = 0;
 	for (var teamNumber in PlayerPickData) {
 		/*if ($("#team_selection_panels_team" + teamNumber) == null) {
 			var TeamPanel = $.CreatePanel('Panel', $("#TeamSelectionStatusPanel"), "team_selection_panels_team" + teamNumber)
@@ -312,49 +308,48 @@ function UpdatePrecacheProgress(t) {
 	$("#PrecacheProgressBar").value = progress;
 	$("#PrecacheProgressBar").max = Object.keys(t).length;
 }
-
 (function() {
-	$("#HeroSelectionPrecacheBase").visible = false;
-	$.Msg(Game.GetState())
-	if (Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME)) {
-		MainPanel.visible = false
-		HeroSelectionEnd()
-	} else {
-		DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {
-			if (changesObject.HeroTabs != null) {
-				HeroSelectionStart(changesObject);
-			};
-			if (changesObject.SelectionStartTime != null) {
-				SelectionTimerStartTime = changesObject.SelectionStartTime;
-				UpdateTimer();
-				SelectFirstHeroPanel();
-			};
-		});
-		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
-			if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
-				DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
-				if (DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4)
-					$.GetContextPanel().AddClass("Gamemode_4V4V4V4")
-				_DynamicMinimapSubscribe($(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").GetChild(0), function(ptid) {
-					MinimapPTIDs.push(ptid)
-				});
+	DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {
+		if (changesObject.HeroTabs != null)
+			HeroSelectionStart(changesObject);
+		if (changesObject.HeroSelectionState != null) {
+			switch (changesObject.HeroSelectionState) {
+				case HERO_SELECTION_STATE_END:
+					HeroSelectionEnd(HeroSelectionState == -1)
+					break
 			}
-			if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
-				var DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
-				$("#GameModeInfoGamemodeLabel").text = $.Localize("#arena_game_mode_type_" + DOTA_ACTIVE_GAMEMODE_TYPE)
-			}
-		})
+			HeroSelectionState = changesObject.HeroSelectionState
+		}
 
-		HideEvent = GameEvents.Subscribe("hero_selection_hide", HeroSelectionEnd);
-		ShowPrecacheEvent = GameEvents.Subscribe("hero_selection_show_precache", ShowPrecache);
-		UpdatePrecacheProgressEvent = GameEvents.Subscribe("hero_selection_update_precache_progress", UpdatePrecacheProgress);
-		PTID = PlayerTables.SubscribeNetTableListener("hero_selection", UpdateHeroesSelected);
-		UpdateHeroesSelected("hero_selection", PlayerTables.GetAllTableValues("hero_selection"));
+		if (HeroSelectionState != HERO_SELECTION_STATE_END && changesObject.SelectionStartTime != null) {
+			SelectionTimerStartTime = changesObject.SelectionStartTime;
+			UpdateTimer();
+			SelectFirstHeroPanel();
+		};
+	});
+	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
+		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
+			DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
+			if (DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4)
+				$.GetContextPanel().AddClass("Gamemode_4V4V4V4")
+			_DynamicMinimapSubscribe($(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").GetChild(0), function(ptid) {
+				MinimapPTIDs.push(ptid)
+			});
+		}
+		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
+			var DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
+			$("#GameModeInfoGamemodeLabel").text = $.Localize("#arena_game_mode_type_" + DOTA_ACTIVE_GAMEMODE_TYPE)
+		}
+	})
+	GameEvents.Subscribe("hero_selection_show_precache", ShowPrecache);
+	GameEvents.Subscribe("hero_selection_update_precache_progress", UpdatePrecacheProgress);
+	DynamicSubscribePTListener("hero_selection", UpdateHeroesSelected, function(ptid) {
+		PTID = ptid
+	})
 
-		var steamid = GetSteamID(Game.GetLocalPlayerID(), 32)
-		var bglist = SteamIDSpecialBGs[steamid];
-		$.GetContextPanel().SetHasClass("CustomSelectionBackground", bglist != null)
-		if (bglist)
-			$("#HeroSelectionCustomBackground").SetImage(bglist[Math.floor(Math.random() * bglist.length)]);
-	}
+	var steamid = GetSteamID(Game.GetLocalPlayerID(), 32)
+	var bglist = SteamIDSpecialBGs[steamid];
+	$.GetContextPanel().SetHasClass("CustomSelectionBackground", bglist != null)
+	if (bglist)
+		$("#HeroSelectionCustomBackground").SetImage(bglist[Math.floor(Math.random() * bglist.length)]);
 })();
