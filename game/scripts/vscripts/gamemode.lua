@@ -284,9 +284,9 @@ function GameMode:GameModeThink()
 				Gold:AddGold(i, gold_per_tick)
 			end
 			if not IsPlayerAbandoned(i) then
-				if PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
+				if GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
 					PLAYER_DATA[i].AutoAbandonGameTime = nil
-				elseif PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
+				elseif GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
 					if not PLAYER_DATA[i].AutoAbandonGameTime then
 						PLAYER_DATA[i].AutoAbandonGameTime = GameRules:GetGameTime() + DOTA_PLAYER_AUTOABANDON_TIME
 						--GameRules:SendCustomMessage("#DOTA_Chat_DisconnectWaitForReconnect", i, -1)
@@ -300,7 +300,7 @@ function GameMode:GameModeThink()
 						--GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandonedDisconnectedTooLong", i, -1)
 						MakePlayerAbandoned(i)
 					end
-				elseif PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
+				elseif GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
 					--GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandoned", i, -1)
 					MakePlayerAbandoned(i)
 				end

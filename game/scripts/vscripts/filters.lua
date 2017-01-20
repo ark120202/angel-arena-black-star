@@ -240,7 +240,13 @@ function GameMode:CustomChatFilter(playerID, text, teamonly)
 						}
 					end
 				end
-				PrintTable(playerinfo)
+				CPrintTable(playerinfo)
+			end
+			if cmd[1] == "dcs" then
+				_G.DebugConnectionStates = not DebugConnectionStates
+			end
+			if cmd[1] == "cprint" then
+				_G.SendDebugInfoToClient = not SendDebugInfoToClient
 			end
 		end
 		if GameRules:IsCheatMode() then

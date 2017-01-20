@@ -26,7 +26,7 @@ function modifier_item_radiance_lua_effect:IsDebuff()
 end
 
 if IsServer() then
-	modifier_item_radiance_lua_effect.interval_think = 0.1
+	modifier_item_radiance_lua_effect.interval_think = 0.5
 	function modifier_item_radiance_lua_effect:OnCreated()
 		self:StartIntervalThink(self.interval_think)
 	end
@@ -37,7 +37,8 @@ if IsServer() then
 			damage = self:GetAbility():GetSpecialValueFor("aura_damage_per_second") * self.interval_think,
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-			ability = ability})
+			ability = ability
+		})
 	end
 else
 	function modifier_item_radiance_lua_effect:GetDuration()

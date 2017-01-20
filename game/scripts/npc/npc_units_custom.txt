@@ -95,7 +95,7 @@
 		// General
 		//
 		"BaseClass"		"npc_dota_base_additive"
-		"Model"			"models/development/invisiblebox.vmdl" //models/props_gameplay/rune_doubledamage01.vmdl
+		"Model"			"models/development/invisiblebox.vmdl"
 		
 		// Abilities
 		//----------------------------------------------------------------

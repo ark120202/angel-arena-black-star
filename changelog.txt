@@ -48,36 +48,62 @@ TODO LIST:
 [url=https://gist.github.com/ark120202/f076879598870c3318bba8954408e570]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/f076879598870c3318bba8954408e570
 ============================================================
-Angel Arena Black Star - Версия 1.4.2b:
+Angel Arena Black Star - Версия 1.4.3:
 
 ============================================================
-Angel Arena Black Star - Version 1.4.2b:
+Angel Arena Black Star - Version 1.4.3:
 
 ============================================================
-Angel Arena Black Star - Version 1.4.2b:
+Angel Arena Black Star - Version 1.4.3:
 General:
 	Not selected boss drop now won't be rolled
 	Boss drop selection time reduced by 50%
+	Added localization for boss drop selection menu
 Balance:
+	Base gold for kill: 200 => 150
 	Runes:
 		Runes now are breakable
 		Acceleration:
 			Now not multiplies experience from Level Up Shards
 	Items:
-		
+		Radiance:
+			Tick time: 0.1 => 0.5 (DPS is still same)
+			Removed UAM from description of Frozen Radiance
+		Edge of Vyse:
+			Duration: 5 => 3
+			Cooldown: 25 => 40
 	Talens:
 		
 	Abilities:
 		Winter Wyvern - Winter's Curse:
-			Duration: 0.25 4 4.75 5.0 5.25 5.5 5.75 => 3 3.5 4 4.5 5 5.5 6
+			Duration: 0.25 4 4.75 5 5.25 5.5 5.75 => 3 3.5 4 4.5 5 5.5 6
 			Damage Reduction: 100 => 40 %
 		Stegius - Desolating Touch:
 			Now has a chance to trigger on bosses
 			Armor reduction on bosses now is same as on heroes
+		Stegius - Brightness of Desolate:
+			Required Level: 1 => 2
+		Zen Gehraz - Mystic Twister:
+			Damage from different sources now stacks
+		Sniper - Shrapnel:
+			Levels Between Upgrades: 3 => 7
+		Abaddon - Death Coil:
+			Self Damage: 100 150 200 250 300 350 400 => 100 200 250 300 400 500 600
+			Damage: 100 150 200 250 300 350 400 => 100 200 250 300 400 500 600
+		Abaddon - Aphotic Shield:
+			Damage Absorb: 110 150 170 200 250 300 350 => 150 300 450 500 650 700 750
+		Poseidon - Trident:
+			Coolodwn: 20 19 18 17 16 15 14 => 120 110 100 90 80 70 60
+			Duration: 10 20 30 40 50 60 70 => 10 15 20 25 30 35 40
+			Cleave Damage: 5 10 15 20 25 30 35 => 10 12 15 20 25 30 35 %
+			Levels Between Upgrades: 10 => 6
+		Doom - Devour:
+			Stolen Health: 50 60 70 80 90 100 110 => 10 15 20 25 30 35 40 %
 Fixes:
 	All new heroes with custom models now are based on wisp, now they don't have any sounds
 	Game Paused overlay now is hidden in Hero Selection loading menu
 	Probably fixed a bug with disconnected players on duel
+	Heroes with custom models now render status effects as they should
 	//Fixed hero selection screen issues with reconnect during pre game time => needs test
 	
 

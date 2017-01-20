@@ -226,6 +226,12 @@
 		"custom_toast_DuelStarted"								"{time_dota}: {duel_index}th duel has started!"
 		"custom_toast_BossKilled"								"{team_name} {killed_icon} {victim_name} {gold}"
 
+		"boss_loot_vote_dropped"								"Items Dropped:"
+		"boss_loot_vote_killed"									"was killed!"
+		"boss_loot_vote_damage"									"Damage: "
+		"boss_loot_vote_hide"									"Hide"
+		"boss_loot_vote_show"									"Show"
+
 		"custom_talents_cost"									"Cost:"
 		"custom_talents_requirements"							"Requirements:"
 		"custom_talents_level"									"Level: "

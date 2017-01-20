@@ -54,7 +54,6 @@ end
 
 function Duel:StartDuel()
 	Duel.heroes_teams_for_duel = {}
-	local heroes_in_teams_count = {}
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1  do
 		if PlayerResource:IsValidPlayerID(playerID) and not IsPlayerAbandoned(playerID) then
 			local team = PlayerResource:GetTeam(playerID)
@@ -65,10 +64,13 @@ function Duel:StartDuel()
 			end
 		end
 	end
+	local heroes_in_teams = {}
 	for i,v in pairs(Duel.heroes_teams_for_duel) do
 		if not heroes_in_teams[i] then heroes_in_teams[i] = 0 end
-		for _,vi in pairs(v) do
-			if vi:IsAlive() and PlayerResource:GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
+		for _,unit in pairs(v) do
+			local pid = unit:GetPlayerOwnerID()
+			print(pid, GetConnectionState(pid))
+			if unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 				heroes_in_teams[i] = heroes_in_teams[i] + 1
 			end
 		end
@@ -86,7 +88,8 @@ function Duel:StartDuel()
 			table.insert(Duel.Particles, particle2)
 		end]]
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
-		local rndtbl = PlayerTables:copy(Duel.heroes_teams_for_duel)
+		local rndtbl = {}
+		table.merge(rndtbl, Duel.heroes_teams_for_duel)
 		for i,v in pairs(rndtbl) do
 			if #v > 0 then
 				table.shuffle(v)
@@ -95,7 +98,7 @@ function Duel:StartDuel()
 					local unit = v[1]
 					if IsValidEntity(unit) then
 						local pid = unit:GetPlayerOwnerID()
-						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and PlayerResource:GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
+						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 							unit.InArena = true
 							Duel:FillPreduelUnitData(unit)
 							unit:SetHealth(unit:GetMaxHealth())
@@ -119,6 +122,7 @@ function Duel:StartDuel()
 					UTIL_Remove(unit.PocketItem)
 				end
 				
+				print(unit.InArena)
 				if unit.InArena then
 					unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 					unit:Stop()

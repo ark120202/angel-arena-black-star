@@ -11744,6 +11744,7 @@
 				"IsPurgable"		"0"
 				"Duration"			"0.1"
 				"Priority"			"MODIFIER_PRIORITY_HIGH"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			
 				"ThinkInterval"  "%damage_interval"
 				"OnIntervalThink"
@@ -12180,6 +12181,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"RequiredLevel"					"2"
 
 		"AbilitySpecial"
 		{
@@ -15066,7 +15068,7 @@
 		"AbilityCooldown"				"120 110 100 90 80 70 60"
 		"AbilityManaCost"				"80 120 200 300 400 500 600"
 		"AbilityDamage"					"50 100 150 250 350 450 550"
-		"LevelsBetweenUpgrades"			"10"
+		"LevelsBetweenUpgrades"			"6"
 
 		"AbilitySpecial"
 		{
@@ -15083,7 +15085,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"cleave_damage_pct"	"10 10 15 20 25 30 35"
+				"cleave_damage_pct"	"10 12 15 20 25 30 35"
 			}
 			"04"
 			{
@@ -15111,7 +15113,9 @@
 		{
 			"modifier_poseidon_trident"
 			{
-				"Duration"			"%duration"				"EffectName"		"particles/units/heroes/hero_abaddon/abaddon_ambient_glow.vpcf"
+				"Duration"			"%duration"
+
+				"EffectName"		"particles/units/heroes/hero_abaddon/abaddon_ambient_glow.vpcf"
 				"EffectAttachType"	"follow_origin"
 
 				"Properties"

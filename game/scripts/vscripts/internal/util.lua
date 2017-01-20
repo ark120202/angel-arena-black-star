@@ -1,5 +1,19 @@
 function CPrint( ... )
-	--CustomGameEventManager:Send_ServerToPlayer(Entity Player,string EventName,table EventData)
+	if SendDebugInfoToClient then
+		local player
+		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+			if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) and CustomWearables:HasWearable(i, "wearable_developer") then
+				player = PlayerResource:GetPlayer(i)
+			end
+		end
+		if player then
+			local printResult = ""
+			for _,v in ipairs({...}) do
+				printResult = printResult .. tostring(v) .. "\t"
+			end
+			CustomGameEventManager:Send_ServerToPlayer(player, "debug_cprint", {text = printResult})
+		end
+	end
 end
 
 function DebugPrint(...)
@@ -21,6 +35,47 @@ function DebugPrintTable(...)
 
 	if spew == 1 then
 		PrintTable(...)
+	end
+end
+
+
+function CPrintTable(t, indent, done)
+	--print ( string.format ('PrintTable type %s', type(keys)) )
+	if type(t) ~= "table" then return end
+
+	done = done or {}
+	done[t] = true
+	if not indent then
+		CPrint("Printing table")
+	end
+	indent = indent or 1
+
+	local l = {}
+	for k, v in pairs(t) do
+		table.insert(l, k)
+	end
+
+	table.sort(l)
+	for k, v in ipairs(l) do
+		-- Ignore FDesc
+		if v ~= 'FDesc' then
+			local value = t[v]
+			if type(value) == "table" and not done[value] then
+				done [value] = true
+				CPrint(string.rep ("\t", indent)..tostring(v)..":")
+				CPrintTable(value, indent + 2, done)
+			elseif type(value) == "userdata" and not done[value] then
+				done [value] = true
+				CPrint(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+				CPrintTable((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
+			else
+				if t.FDesc and t.FDesc[v] then
+					CPrint(string.rep ("\t", indent)..tostring(t.FDesc[v]))
+				else
+					CPrint(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+				end
+			end
+		end
 	end
 end
 
@@ -1351,4 +1406,31 @@ function CDOTA_BaseNPC:HasModelChanged()
 		end
 	end
 	return false
+end
+
+--[[
+
+	
+	
+	
+	
+	
+	
+	
+
+]]
+function GetConnectionState(pid)
+	if DebugConnectionStates then
+		local map = {
+			[3] = "DOTA_CONNECTION_STATE_DISCONNECTED",
+			[6] = "DOTA_CONNECTION_STATE_FAILED",
+			[0] = "DOTA_CONNECTION_STATE_UNKNOWN",
+			[1] = "DOTA_CONNECTION_STATE_NOT_YET_CONNECTED",
+			[4] = "DOTA_CONNECTION_STATE_ABANDONED",
+			[2] = "DOTA_CONNECTION_STATE_CONNECTED",
+			[5] = "DOTA_CONNECTION_STATE_LOADING",
+		}
+		CPrint(pid, map[PlayerResource:GetConnectionState(pid)])
+	end
+	return IsInToolsMode() and 2 or PlayerResource:GetConnectionState(pid)
 end

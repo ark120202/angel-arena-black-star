@@ -196,6 +196,12 @@
 		"custom_toast_BottledRune"	"{player_name} помещает в бутыль {rune_name}"
 		"custom_toast_DuelStarted"	"{time_dota}: {duel_index}ая общая дуэль началась!"
 
+		"boss_loot_vote_dropped"								"Выпавшие предметы:"
+		"boss_loot_vote_killed"									"был убит!"
+		"boss_loot_vote_damage"									"Урон: "
+		"boss_loot_vote_hide"									"Скрыть"
+		"boss_loot_vote_show"									"Показать"
+
 		"custom_talents_cost"									"Цена:"
 		"custom_talents_requirements"							"Условие:"
 		"custom_talents_level"									"Уровень: "

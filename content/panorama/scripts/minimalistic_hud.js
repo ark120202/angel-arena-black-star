@@ -22,15 +22,6 @@ function UpdatePanoramaHUD() {
 		}
 	}
 
-	// var custom_entity_value = GameUI.CustomUIConfig().custom_entity_values[unit];
-	// if (custom_entity_value != null && (custom_entity_value.AttributeStrengthGain != null || custom_entity_value.AttributeIntelligenceGain != null || custom_entity_value.AttributeAgilityGain != null)) {
-	// 	var DOTAHUDDamageArmorTooltip = FindDotaHudElement("DOTAHUDDamageArmorTooltip")
-	// 	if (DOTAHUDDamageArmorTooltip != null) {
-	// 		DOTAHUDDamageArmorTooltip.SetDialogVariable("strength_per_level", custom_entity_value.AttributeStrengthGain)
-	// 		DOTAHUDDamageArmorTooltip.SetDialogVariable("agility_per_level", custom_entity_value.AttributeAgilityGain)
-	// 		DOTAHUDDamageArmorTooltip.SetDialogVariable("intelligence_per_level", custom_entity_value.AttributeIntelligenceGain)
-	// 	}
-	// }
 	var CustomModifiersList = $("#CustomModifiersList")
 	var VisibleModifiers = [];
 	for (var i = 0; i < Entities.GetNumBuffs(unit); ++i) {
@@ -179,13 +170,14 @@ function HookPanoramaPanels() {
 		$.DispatchEvent("DOTAHUDShowDamageArmorTooltip", stats_region)
 		var _unit = Players.GetLocalPlayerPortraitUnit()
 		var custom_entity_value = GameUI.CustomUIConfig().custom_entity_values[_unit];
-		if (custom_entity_value != null && (custom_entity_value.AttributeStrengthGain != null || custom_entity_value.AttributeIntelligenceGain != null || custom_entity_value.AttributeAgilityGain != null)) {
-			var DOTAHUDDamageArmorTooltip = FindDotaHudElement("DOTAHUDDamageArmorTooltip")
-			if (DOTAHUDDamageArmorTooltip != null) {
+		var DOTAHUDDamageArmorTooltip = FindDotaHudElement("DOTAHUDDamageArmorTooltip")
+		if (DOTAHUDDamageArmorTooltip != null && custom_entity_value != null) {
+			if (custom_entity_value.AttributeStrengthGain != null)
 				DOTAHUDDamageArmorTooltip.SetDialogVariable("strength_per_level", custom_entity_value.AttributeStrengthGain)
+			if (custom_entity_value.AttributeAgilityGain != null)
 				DOTAHUDDamageArmorTooltip.SetDialogVariable("agility_per_level", custom_entity_value.AttributeAgilityGain)
+			if (custom_entity_value.AttributeIntelligenceGain != null)
 				DOTAHUDDamageArmorTooltip.SetDialogVariable("intelligence_per_level", custom_entity_value.AttributeIntelligenceGain)
-			}
 		}
 	})
 	stats_region.SetPanelEvent("onmouseout", function() {
@@ -297,16 +289,15 @@ function CreateBossItemVote(id, data) {
 	}
 	f();
 
-	row.FindChildTraverse("BossDropHideShowInfo").SetPanelEvent("onactivate", (function(_row) {
+	var BossDropHideShowInfo = row.FindChildTraverse("BossDropHideShowInfo")
+	row.FindChildTraverse("BossDropHideShowInfo").SetPanelEvent("onactivate", (function(_row, _BossDropHideShowInfo) {
 		return function() {
-			var BossDropHideShowInfo = _row.FindChildTraverse("BossDropHideShowInfo")
-			BossDropHideShowInfo.text = BossDropHideShowInfo.text == "Hide" ? "Show" : "Hide"
+			_BossDropHideShowInfo.text = $.Localize(_BossDropHideShowInfo.text == $.Localize("boss_loot_vote_hide") ? "boss_loot_vote_show" : "boss_loot_vote_hide")
 			_row.ToggleClass("CollapseBossDropInfo")
 		}
-	})(row))
-	row.FindChildTraverse("BossName").text = $.Localize(data.boss) + "<br>was killed!"
-	row.FindChildTraverse("DamageAll").text = "Total Damage: " + (data.totalDamage || 0).toFixed()
-	row.FindChildTraverse("DamagedDealt").text = "Dealt Damage: " + (data.damageByPlayers[Game.GetLocalPlayerID()] || 0).toFixed() + " (" + (data.damagePcts[Game.GetLocalPlayerID()] || 0).toFixed() + "%)"
+	})(row, BossDropHideShowInfo))
+	row.FindChildTraverse("BossName").text = $.Localize(data.boss) + "<br>" + $.Localize("boss_loot_vote_killed")
+	row.FindChildTraverse("DamagedDealt").text = $.Localize("boss_loot_vote_damage") + (data.damageByPlayers[Game.GetLocalPlayerID()] || 0).toFixed() + "/" + (data.totalDamage || 0).toFixed() + " (" + (data.damagePcts[Game.GetLocalPlayerID()] || 0).toFixed() + "%)"
 	$.Each(data.votes, function(vote, itemid) {
 		var itemRow = $.CreatePanel("Panel", row.FindChildTraverse("BossItemList"), "boss_item_vote_id_" + id + "_item_" + itemid);
 		itemRow.itemid = itemid

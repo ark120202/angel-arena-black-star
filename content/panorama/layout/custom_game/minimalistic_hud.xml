@@ -33,13 +33,12 @@
 			<Panel class="BossDropItemVote" hittest="false">
 				<Panel id="BossDropFirstRow" hittest="false" >
 					<Label id="BossName" html="true" hittest="false" />
-					<TextButton id="BossDropHideShowInfo" text="Hide" hittest="true" />
+					<TextButton id="BossDropHideShowInfo" text="#boss_loot_vote_hide" hittest="true" />
 				</Panel>
 				<Panel id="BossDropAdditionalInfo" hittest="false" >
 					<ProgressBar id="BossTakeLootTime" min="0" hittest="false" />
-					<Label id="DamageAll" hittest="false" />
 					<Label id="DamagedDealt" hittest="false" />
-					<Label id="BossDropLabel" text="Boss Drop:" hittest="false" />
+					<Label id="BossDropLabel" text="#boss_loot_vote_dropped" hittest="false" />
 					<Panel id="BossItemList" hittest="false" />
 				</Panel>
 			</Panel>
