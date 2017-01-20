@@ -240,7 +240,7 @@
 		"custom_talents_talent_respawn_time_reduction_description"							"Respawn time decreased by {respawn_time_reduction}"
 		"custom_talents_talent_attack_damage"												"Damage"
 		"custom_talents_talent_attack_damage_description"									"+{damage} damage"
-		"custom_talents_talent_evasion"														"Evastion"
+		"custom_talents_talent_evasion"														"Evasion"
 		"custom_talents_talent_evasion_description"											"+{%evasion%} evasion"
 		"custom_talents_talent_movespeed_limit"												"Movement Speed Limit"
 		"custom_talents_talent_movespeed_limit_description"									"Increases maximum movement speed to {movespeed_limit}"

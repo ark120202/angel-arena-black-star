@@ -3,6 +3,7 @@ function GameMode:InitFilters()
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, 'DamageFilter'), self)
 	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, 'ModifyGoldFilter'), self)
 	GameRules:GetGameModeEntity():SetModifyExperienceFilter(Dynamic_Wrap(GameMode, 'ModifyExperienceFilter'), self)
+	GameRules:GetGameModeEntity():SetItemAddedToInventoryFilter(Dynamic_Wrap(GameMode, 'ItemAddedToInventoryFilter'), self)
 end
 
 function GameMode:ExecuteOrderFilter(filterTable)
@@ -351,4 +352,13 @@ function GameMode:CustomChatFilter(playerID, text, teamonly)
 		return false
 	end
 	return true
+end
+
+function GameMode:ItemAddedToInventoryFilter(filterTable)
+	local unit = EntIndexToHScript(filterTable.inventory_parent_entindex_const)
+	local item = EntIndexToHScript(filterTable.item_entindex_const)
+	--local item_parent = EntIndexToHScript(filterTable.item_parent_entindex_const)
+	local slot = filterTable.suggested_slot
+	
+	return CustomRunes:ItemAddedToInventoryFilter(unit, item)
 end

@@ -35,6 +35,7 @@ function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	if npc:IsHero() then
 		if not HeroSelection.SelectionEnd then
+			--npc:AddNoDraw()
 			return
 		end
 		HeroVoice:OnNPCSpawned(npc)
@@ -44,7 +45,7 @@ function GameMode:OnNPCSpawned(keys)
 				Physics:Unit(npc)
 		    	npc:SetAutoUnstuck(true)
 		    	if GetFullHeroName(npc) == "npc_dota_hero_wisp" then
-		    		print("equip")
+		    		--print("equip")
 					npc:EquipItemsFromPlayerSelectionOrDefault()
 				end
 				if npc.ModelOverride then
@@ -65,7 +66,8 @@ function GameMode:OnNPCSpawned(keys)
 							npc.PocketItem = nil
 							npc.PocketHostEntity = nil
 						end
-						if Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
+						if Duel:IsDuelOngoing() then
+							table.insert(Duel.heroes_teams_for_duel[npc:GetTeam()], npc)
 							Duel:SetUpVisitor(npc)
 						end
 					end

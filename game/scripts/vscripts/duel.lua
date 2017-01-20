@@ -1,18 +1,15 @@
 _G.DOTA_DUEL_STATUS_NONE = 0
 _G.DOTA_DUEL_STATUS_WATING = 1
 _G.DOTA_DUEL_STATUS_IN_PROGRESS = 2
-_G.DOTA_DUEL_STATUS_1X1_IN_PROGRESS = 3
 LinkLuaModifier("modifier_duel_hero_disabled_for_duel", "modifiers/modifier_duel_hero_disabled_for_duel.lua", LUA_MODIFIER_MOTION_NONE)
 if Duel == nil then
 	_G.Duel = class({})
 	Duel.TimeUntilDuel = ARENA_SETTINGS.DelayFromGameStart
 	Duel.TimeUntilDuelEnd = 0
-	Duel.TimeUntilDuel1x1End = 0
 	Duel.GlobalTimer = nil
 	Duel.DuelStatus = DOTA_DUEL_STATUS_NONE
 	Duel.EntIndexer = {}
 	Duel.Particles = {}
-	Duel.Duel1x1Bet = 0
 	Duel.DuelCounter = 0
 end
 
@@ -38,15 +35,6 @@ function Duel:CreateGlobalTimer()
 				PlayerTables:SetTableValue("arena", "duel_timer", Duel.TimeUntilDuelEnd)
 			end
 		end
-		if Duel.DuelStatus == DOTA_DUEL_STATUS_1X1_IN_PROGRESS then
-			Duel.TimeUntilDuel1x1End = Duel.TimeUntilDuel1x1End - 1
-			if Duel.TimeUntilDuel1x1End <= 0 then
-				Duel:End1X1()
-				PlayerTables:SetTableValue("arena", "duel_timer", 0)
-			else
-				PlayerTables:SetTableValue("arena", "duel_timer", Duel.TimeUntilDuel1x1End)
-			end
-		end
 		return 1
 	end)
 
@@ -66,11 +54,11 @@ end
 
 function Duel:StartDuel()
 	Duel.heroes_teams_for_duel = {}
-	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
-		if PlayerResource:IsValidPlayerID(playerID) then
+	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1  do
+		if PlayerResource:IsValidPlayerID(playerID) and not IsPlayerAbandoned(i) then
 			local team = PlayerResource:GetTeam(playerID)
 			local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-			if hero then
+			if IsValidEntity(hero) and hero:IsAlive() then
 				Duel.heroes_teams_for_duel[team] = Duel.heroes_teams_for_duel[team] or {}
 				table.insert(Duel.heroes_teams_for_duel[team], hero)
 			end
@@ -98,16 +86,16 @@ function Duel:StartDuel()
 			table.insert(Duel.Particles, particle2)
 		end]]
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
-		local rndtbl = {}
-		table.merge(rndtbl, Duel.heroes_teams_for_duel)
+		local rndtbl = PlayerTables:copy(Duel.heroes_teams_for_duel)
 		for i,v in pairs(rndtbl) do
 			if #v > 0 then
 				table.shuffle(v)
 				local count = 0
 				repeat
 					local unit = v[1]
-					if unit and not unit:IsNull() then
-						if unit:IsAlive() and not unit.DuelChecked then
+					if IsValidEntity(unit) then
+						local pid = unit:GetPlayerOwnerID()
+						if not unit.DuelChecked and PlayerResource:IsValidPlayerID(pid) and PlayerResource:GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 							unit.InArena = true
 							Duel:FillPreduelUnitData(unit)
 							unit:SetHealth(unit:GetMaxHealth())
@@ -192,26 +180,19 @@ function Duel:GetWinner()
 			end
 		end
 	end
-	if #teams == 1 then
-		local winner = teams[1]
-		return winner
-	else
-		return nil
-	end
+	return #teams == 1 and teams[1] or nil
 end
 
 function Duel:SetUpVisitor(unit)
-	if unit:IsAlive() then
-		unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
-		Duel:FillPreduelUnitData(unit)
-		local team = unit:GetTeamNumber()
-		Duel.EntIndexer[team] = Entities:FindByName(Duel.EntIndexer[team], "target_mark_arena_viewers_team" .. team)
-		unit:Stop()
-		PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), unit)
-		FindClearSpaceForUnit(unit, Duel.EntIndexer[team]:GetAbsOrigin(), true)
-		Timers:CreateTimer(0.1, function() PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), nil); unit:Stop() end)
-		unit:AddNewModifier(unit, nil, "modifier_duel_hero_disabled_for_duel", {})
-	end
+	unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
+	Duel:FillPreduelUnitData(unit)
+	local team = unit:GetTeamNumber()
+	Duel.EntIndexer[team] = Entities:FindByName(Duel.EntIndexer[team], "target_mark_arena_viewers_team" .. team)
+	unit:Stop()
+	PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), unit)
+	FindClearSpaceForUnit(unit, Duel.EntIndexer[team]:GetAbsOrigin(), true)
+	Timers:CreateTimer(0.1, function() PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), nil); unit:Stop() end)
+	unit:AddNewModifier(unit, nil, "modifier_duel_hero_disabled_for_duel", {})
 end
 
 function Duel:EndDuelForUnit(unit)
@@ -250,65 +231,13 @@ function Duel:EndDuelForUnit(unit)
 		end)
 	unit.InArena = nil
 	unit.ArenaBeforeTpLocation = nil
-	unit.Duel1x1Opponent = nil
 	unit.DuelChecked = nil
-end
-
-function Duel:Start1X1(player1, player2, gold)
-	Duel.DuelStatus = DOTA_DUEL_STATUS_1X1_IN_PROGRESS
-	Duel.TimeUntilDuel1x1End = ARENA_SETTINGS.Duel1x1Duration
-	for _,player in ipairs(GetAllPlayers(true)) do
-		local hero = PlayerResource:GetSelectedHeroEntity(player:GetPlayerID())
-		if player1 ~= player:GetPlayerID() and player2 ~= player:GetPlayerID() then
-			Duel:SetUpVisitor(hero)
-		end
-	end
-	local hero1 = PlayerResource:GetSelectedHeroEntity(player1)
-	local hero2 = PlayerResource:GetSelectedHeroEntity(player2)
-	hero1.Duel1x1Opponent = hero2
-	hero2.Duel1x1Opponent = hero1
-	Gold:RemoveGold(player1, gold)
-	Gold:RemoveGold(player2, gold)
-	Duel.Duel1x1Bet = gold
-	hero1.ArenaBeforeTpLocation = hero1:GetAbsOrigin()
-	hero2.ArenaBeforeTpLocation = hero2:GetAbsOrigin()
-	PlayerResource:SetCameraTarget(hero1:GetPlayerOwnerID(), hero1)
-	FindClearSpaceForUnit(hero1, Entities:FindByName(nil, "target_mark_arena_team" .. hero1:GetTeamNumber()):GetAbsOrigin(), true)
-	Timers:CreateTimer(0.1, function() PlayerResource:SetCameraTarget(hero1:GetPlayerOwnerID(), nil); hero1:Stop() end)
-	PlayerResource:SetCameraTarget(hero2:GetPlayerOwnerID(), hero2)
-	FindClearSpaceForUnit(hero2, Entities:FindByName(nil, "target_mark_arena_team" .. hero2:GetTeamNumber()):GetAbsOrigin(), true)
-	Timers:CreateTimer(0.1, function() PlayerResource:SetCameraTarget(hero2:GetPlayerOwnerID(), nil); hero2:Stop() end)
-end
-
-function Duel:End1X1(herowin, herolose)
-	if herowin and herolose then
-		Notifications:TopToAll({text="#duel1x1_over_winner_is_p1", duration=9.0})
-		Notifications:TopToAll({hero=herowin:GetName(), continue=true})
-		if herowin.GetPlayerID and herowin.GetPlayerOwnerID then
-			local plId
-			if herowin.GetPlayerID then
-				plId = herowin:GetPlayerID()
-			else
-				plId = herowin:GetPlayerOwnerID()
-			end
-			Notifications:TopToAll({text=PlayerResource:GetPlayerName(plId), continue=true, style={color=ColorTableToCss(PLAYER_DATA[plId].Color)}})
-			Notifications:TopToAll({text="#duel1x1_over_winner_is_p2", continue=true})
-			local g1,g2 = CreateGoldNotificationSettings(Duel.Duel1x1Bet * 2)
-			Notifications:TopToAll(g1)
-			Notifications:TopToAll(g2)
-		end
-		Gold:ModifyGold(herowin, Duel.Duel1x1Bet * 2)
-	else
-		Notifications:TopToAll({text="#duel1x1_over_winner_none", duration=9.0})
-	end
-	Duel:EndDuelLogic(true, false)
 end
 
 function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 	Duel.EntIndexer = {}
 	Duel.DuelStatus = DOTA_DUEL_STATUS_WATING
 	Duel.heroes_teams_for_duel = {}
-	Duel.Duel1x1Bet = 0
 	if bEndForUnits then
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
 			if PlayerResource:IsValidPlayerID(playerID) then
@@ -348,5 +277,5 @@ function Duel:FillPreduelUnitData(unit)
 end
 
 function Duel:IsDuelOngoing()
-	return Duel.DuelStatus >= DOTA_DUEL_STATUS_IN_PROGRESS and Duel.DuelStatus <= DOTA_DUEL_STATUS_1X1_IN_PROGRESS
+	return Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS
 end

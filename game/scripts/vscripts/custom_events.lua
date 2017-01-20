@@ -18,69 +18,6 @@ function GameMode:MetamorphosisElixirCast(data)
 	end
 end
 
-function GameMode:SendDuel1x1Call(data)
-	local sender = tonumber(data.PlayerID)
-	local targetPlayer = tonumber(data.selectedEnemyID)
-	if data and sender and targetPlayer and PlayerResource:IsValidPlayerID(sender) and PlayerResource:IsValidPlayerID(targetPlayer) then
-		if not Duel:IsDuelOngoing() then
-			--targetPlayer = sender
-			local messageTable = {messageFields = {
-					{field = "Text", class = "FieldTextTitle", fieldData = {text = "#duel1x1_message_title"}},
-					{field = "PanelCollection", fieldData = {
-						{field = "Text", fieldData = {text = "#duel1x1_message_sender_p1"}},
-						{field = "HeroImage", fieldData = {heroname = PlayerResource:GetSelectedHeroName(sender), heroimagestyle="icon"}},
-						{field = "Text", class = "FieldTextBlank", fieldData = {text = PlayerResource:GetPlayerName(sender)}},
-					}},
-
-					{field = "PanelCollection", fieldData = {
-						{field = "Text", fieldData = {text = "#duel1x1_message_cost_p1"}},
-						{field = "Text", class = "FieldTextBlank", fieldData = {text = data.gold}},
-					}},
-					
-					{field = "PanelCollection", fieldData = {
-						{field = "Button", class = "FieldButtonDecline", fieldData = {
-							{field = "Text", class = "FieldTextButtonDecline", fieldData = {text = "#duel1x1_message_answer_decline"}},
-						}, onactivate = function()
-							Notifications:Bottom(sender, {text="#duel1x1_message_error_duel_declined", duration=10, style={color="red"}})
-							return true
-						end},
-						{field = "Button", class = "FieldButtonAccept", fieldData = {
-							{field = "Text", class = "FieldTextButtonAccept", fieldData = {text = "#duel1x1_message_answer_accept"}},
-						}, onactivate = function()
-							if not Duel:IsDuelOngoing() then
-								if Gold:GetGold(targetPlayer) >= tonumber(data.gold) then
-									if PlayerResource:GetSelectedHeroEntity(targetPlayer):IsAlive() and PlayerResource:GetSelectedHeroEntity(sender):IsAlive() then
-										Duel:Start1X1(sender, targetPlayer, tonumber(data.gold))
-									else
-										Notifications:Bottom(sender, {text="#duel1x1_message_error_duel_not_alive", duration=10, style={color="red"}})
-										Notifications:Bottom(targetPlayer, {text="#duel1x1_message_error_duel_not_alive", duration=10, style={color="red"}})
-									end
-								else
-									Notifications:Bottom(sender, {text="#duel1x1_message_error_duel_declined", duration=10, style={color="red"}})
-									Notifications:Bottom(targetPlayer, {text="#duel1x1_message_error_not_enough_gold", duration=10, style={color="red"}})
-								end
-							else
-								Notifications:Bottom(sender, {text="#duel1x1_message_error_duel_is_running", duration=10, style={color="red"}})
-								Notifications:Bottom(targetPlayer, {text="#duel1x1_message_error_duel_is_running", duration=10, style={color="red"}})
-							end
-							return true
-						end}
-					}}
-				}
-			}
-			if data.message and data.message ~= "" then
-				table.insert(messageTable.messageFields, 4, {field = "PanelCollection", fieldData = {
-					{field = "Text", fieldData = {text = "#duel1x1_message_usermessage_p1"}},
-					{field = "Text", class = "FieldTextBlank", fieldData = {text = data.message}}
-				}})
-			end
-			PlayerMessages:SendMessage(targetPlayer, messageTable)
-		else
-			Notifications:Bottom(sender, {text="#duel1x1_message_error_duel_is_running", duration=10, style={color="red"}})
-		end
-	end
-end
-
 function GameMode:CustomChatSendMessage(data)
 	if data and data.text and type(data.text) == "string" then
 		local teamonly = data.teamOnly == 1

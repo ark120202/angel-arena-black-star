@@ -20452,4 +20452,245 @@
 			}
 		}
 	}
+
+	"item_rune_tripledamage"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_doubledamage01.vmdl"
+		"Effect"						"particles/arena/generic_gameplay/rune_tripledamage.vpcf"
+		"ItemPurchasable"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_pct"		"200"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"45"
+			}
+		}
+	}
+
+	"item_rune_haste"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_haste01.vmdl"
+		"Effect"						"particles/generic_gameplay/rune_haste.vpcf"
+		"ItemPurchasable"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed"			"750"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"25"
+			}
+		}
+	}
+
+	"item_rune_illusion"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_illusion01.vmdl"
+		"Effect"						"particles/generic_gameplay/rune_illusion.vpcf"
+		"ItemPurchasable"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"illusion_count"	"2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"illusion_outgoing_damage"	"35"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"illusion_incoming_damage"	"200"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"75"
+			}
+		}
+	}
+
+	"item_rune_invisibility"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_invisibility01.vmdl"
+		"Effect"						"particles/generic_gameplay/rune_invisibility.vpcf"
+		"ItemPurchasable"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"60"
+			}
+		}
+	}
+
+	"item_rune_regeneration"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_regeneration01.vmdl"
+		"Effect"						"particles/generic_gameplay/rune_regeneration.vpcf"
+		"ItemPurchasable"				"0"
+	}
+
+	"item_rune_bounty"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_goldxp.vmdl"
+		"Effect"						"particles/generic_gameplay/rune_bounty.vpcf"
+		"ItemPurchasable"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"special_value_multiplier"			"1"
+			}
+		}
+	}
+
+	"item_rune_arcane"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_arcane.vmdl"
+		"Effect"						"particles/generic_gameplay/rune_arcane.vpcf"
+		"ItemPurchasable"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spell_amplify"			"50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cooldown_reduction"	"30"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"50"
+			}
+		}
+	}
+
+	"item_rune_flame"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_illusion01.vmdl"
+		"Effect"						"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+		"ItemPurchasable"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_second_max_hp_pct"	"4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"350"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"30"
+			}
+		}
+	}
+
+	"item_rune_acceleration"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_goldxp.vmdl"
+		"Effect"						"particles/arena/generic_gameplay/rune_acceleration.vpcf"
+		"ItemPurchasable"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"xp_multiplier"		"3"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attackspeed"		"90"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"35"
+			}
+		}
+	}
+
+	"item_rune_vibration"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_invisibility01.vmdl"
+		"Effect"						"particles/arena/generic_gameplay/rune_vibration.vpcf"
+		"ItemPurchasable"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"minRadius"			"150"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"fullRadius"		"350"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"minForce"			"375"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"fullForce"			"700"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"			"0.8"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"25"
+			}
+		}
+	}
 }

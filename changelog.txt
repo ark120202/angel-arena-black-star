@@ -56,12 +56,13 @@ Angel Arena Black Star - Version 1.4.2b:
 ============================================================
 Angel Arena Black Star - Version 1.4.2b:
 General:
-	
+	Not selected boss drop now won't be rolled
+	Boss drop selection time reduced by 50%
 Balance:
 	Runes:
+		Runes now are breakable
 		Acceleration:
 			Now not multiplies experience from Level Up Shards
-			
 	Items:
 		
 	Talens:
@@ -70,6 +71,8 @@ Balance:
 		
 Fixes:
 	All new heroes with custom models now are based on wisp, now they don't have any sounds
+	Game Paused overlay now is hidden in Hero Selection loading menu
+	Probably fixed a bug with disconnected players on duel
 	//Fixed hero selection screen issues with reconnect during pre game time => needs test
 	
 

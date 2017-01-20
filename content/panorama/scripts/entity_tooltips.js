@@ -23,9 +23,14 @@ var Check = function() {
 		CurrentEntityHoveredPanel = null;
 		CurrentEntityHoveredIndex = null;
 	}
-	$.Schedule(0.1, Check);
+	$.Schedule(0, Check);
 }
 Check();
+new Promise(function(res, re) {
+	res("test")
+}).then(function(val) {
+	$.Msg(val)
+});
 //attackable runes?
 /*Game.MouseEvents.OnLeftPressed.push(function(ClickBehaviors, eventName, arg) {
 	if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_ATTACK) {

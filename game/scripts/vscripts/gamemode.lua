@@ -286,34 +286,29 @@ function GameMode:GameModeThink()
 			if not IsPlayerAbandoned(i) then
 				if PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
 					PLAYER_DATA[i].AutoAbandonGameTime = nil
-				else
-					if PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
-						if not PLAYER_DATA[i].AutoAbandonGameTime then
-							PLAYER_DATA[i].AutoAbandonGameTime = Time() + DOTA_PLAYER_AUTOABANDON_TIME
-							GameRules:SendCustomMessage("#DOTA_Chat_DisconnectWaitForReconnect", i, -1)
-						end
-						local timeLeft = PLAYER_DATA[i].AutoAbandonGameTime - Time()
-						if not PLAYER_DATA[i].LastLeftNotify or timeLeft < PLAYER_DATA[i].LastLeftNotify - 60 then
-							PLAYER_DATA[i].LastLeftNotify = timeLeft
-							GameRules:SendCustomMessage("#DOTA_Chat_DisconnectTimeRemainingPlural", i, math.round(timeLeft/60))
-						end
-						if PlayerResource:GetConnectionState(i) ~= DOTA_CONNECTION_STATE_CONNECTED then
-							if timeLeft <= 0 then
-								GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandonedDisconnectedTooLong", i, -1)
-								MakePlayerAbandoned(i)
-							end
-						end
-					elseif PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
-						GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandoned", i, -1)
+				elseif PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
+					if not PLAYER_DATA[i].AutoAbandonGameTime then
+						PLAYER_DATA[i].AutoAbandonGameTime = GameRules:GetGameTime() + DOTA_PLAYER_AUTOABANDON_TIME
+						--GameRules:SendCustomMessage("#DOTA_Chat_DisconnectWaitForReconnect", i, -1)
+					end
+					local timeLeft = PLAYER_DATA[i].AutoAbandonGameTime - GameRules:GetGameTime()
+					if not PLAYER_DATA[i].LastLeftNotify or timeLeft < PLAYER_DATA[i].LastLeftNotify - 60 then
+						PLAYER_DATA[i].LastLeftNotify = timeLeft
+						--GameRules:SendCustomMessage("#DOTA_Chat_DisconnectTimeRemainingPlural", i, math.round(timeLeft/60))
+					end
+					if timeLeft <= 0 then
+						--GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandonedDisconnectedTooLong", i, -1)
 						MakePlayerAbandoned(i)
 					end
+				elseif PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
+					--GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandoned", i, -1)
+					MakePlayerAbandoned(i)
 				end
 			else
 				local gold = Gold:GetGold(i)
 				local allyCount = GetTeamPlayerCount(PlayerResource:GetTeam(i))
 				local goldPerAlly = math.floor(gold/allyCount)
-				local goldCanBeWasted = goldPerAlly * allyCount
-				Gold:RemoveGold(i, goldCanBeWasted)
+				Gold:RemoveGold(i, goldPerAlly * allyCount)
 				for ally = 0, 23 do
 					if PlayerResource:IsValidPlayerID(ally) and not IsPlayerAbandoned(ally) then
 						if PlayerResource:GetTeam(ally) == PlayerResource:GetTeam(i) then

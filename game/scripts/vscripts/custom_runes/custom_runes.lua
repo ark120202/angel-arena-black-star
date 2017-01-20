@@ -26,43 +26,29 @@ ARENA_RUNE_LAST = ARENA_RUNE_VIBRATION
 
 RUNE_SETTINGS = {
 	[ARENA_RUNE_TRIPLEDAMAGE] = {
-		model = "models/props_gameplay/rune_doubledamage01.vmdl",
-		particle = "particles/arena/generic_gameplay/rune_tripledamage.vpcf",
+		item = "item_rune_tripledamage",
 		sound = "Rune.DD",
 		color = {255,125,0},
-		duration = 45,
-		damage_pct = 200,
 	},
 	[ARENA_RUNE_HASTE] = {
-		model = "models/props_gameplay/rune_haste01.vmdl",
-		particle = "particles/generic_gameplay/rune_haste.vpcf",
+		item = "item_rune_haste",
 		sound = "Rune.Haste",
-		duration = 25,
-		movespeed = 750,
 	},
 	[ARENA_RUNE_ILLUSION] = {
-		model = "models/props_gameplay/rune_illusion01.vmdl",
-		particle = "particles/generic_gameplay/rune_illusion.vpcf",
+		item = "item_rune_illusion",
 		sound = "Rune.Illusion",
-		duration = 75,
-		illusion_count = 2,
-		illusion_outgoing_damage = 35,
-		illusion_incoming_damage = 200,
 	},
 	[ARENA_RUNE_INVISIBILITY] = {
-		model = "models/props_gameplay/rune_invisibility01.vmdl",
-		particle = "particles/generic_gameplay/rune_invisibility.vpcf",
+		item = "item_rune_invisibility",
 		sound = "Rune.Invis",
 		duration = 60
 	},
 	[ARENA_RUNE_REGENERATION] = {
-		model = "models/props_gameplay/rune_regeneration01.vmdl",
-		particle = "particles/generic_gameplay/rune_regeneration.vpcf",
+		item = "item_rune_regeneration",
 		sound = "Rune.Regen"
 	},
 	[ARENA_RUNE_BOUNTY] = {
-		model = "models/props_gameplay/rune_goldxp.vmdl",
-		particle = "particles/generic_gameplay/rune_bounty.vpcf",
+		item = "item_rune_bounty",
 		sound = "Rune.Bounty",
 		GetValues = function(unit)
 			local gold = 300 + (20 * GetDOTATimeInMinutesFull())
@@ -89,48 +75,43 @@ RUNE_SETTINGS = {
 		special_value_multiplier = 1,
 	},
 	[ARENA_RUNE_ARCANE] = {
-		model = "models/props_gameplay/rune_arcane.vmdl",
-		particle = "particles/generic_gameplay/rune_arcane.vpcf",
+		item = "item_rune_arcane",
 		sound = "Rune.Arcane",
-		duration = 50,
-		cooldown_reduction = 30, --Tooltip
-		spell_amplify = 50, --Tooltip
 	},
 	[ARENA_RUNE_FLAME] = {
-		model = "models/props_gameplay/rune_illusion01.vmdl",
-		particle = "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf",
+		item = "item_rune_flame",
 		sound = "General.RunePickUp",
 		color = {255, 30, 0},
-		duration = 30,
-		damage_per_second_max_hp_pct = 4,
-		radius = 350, --Tooltip
 	},
 	[ARENA_RUNE_ACCELERATION] = {
-		model = "models/props_gameplay/rune_goldxp.vmdl",
-		particle = "particles/arena/generic_gameplay/rune_acceleration.vpcf",
+		item = "item_rune_acceleration",
 		sound = "General.RunePickUp",
 		color = {20, 20, 255},
-		duration = 35,
-		attackspeed = 90, --Tooltip
-		xp_multiplier = 3,
 	},
 	[ARENA_RUNE_VIBRATION] = {
-		model = "models/props_gameplay/rune_invisibility01.vmdl",
-		particle = "particles/arena/generic_gameplay/rune_vibration.vpcf",
+		item = "item_rune_vibration",
 		sound = "General.RunePickUp",
 		color = {0, 0, 255},
-		duration = 25,
-		interval = 0.8,
-		minRadius = 150,
-		fullRdius = 350,
-		minForce = 375,
-		fullForce = 700,
 	}
 }
 
+function CustomRunes:GetRuneSettings(runeType)
+	local values = {}
+	local kv = GetKeyValue(RUNE_SETTINGS[runeType].item, "AbilitySpecial")
+	if kv then
+		for _,v in pairs(kv) do
+			for key, value in pairs(v) do
+				if key ~= var_type and key ~= CalculateSpellDamageTooltip then
+					values[key] = value
+				end
+			end
+		end
+	end
+	return values
+end
+
 function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
-	local settings = {}
-	table.merge(settings, RUNE_SETTINGS[runeType])
+	local rune_settings = RUNE_SETTINGS[runeType]
 	if unit.GetPlayerID then
 		CustomGameEventManager:Send_ServerToTeam(unit:GetTeam(), "create_custom_toast", {
 			type = "generic",
@@ -140,58 +121,56 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 		})
 		HeroVoice:OnRuneActivated(unit:GetPlayerID(), runeType)
 	end
+	local rune_values = CustomRunes:GetRuneSettings(runeType)
 	if rune_multiplier then
-		for k, v in pairs(settings) do
+		for k, v in pairs(rune_values) do
 			if type(v) == "number" and k ~= "interval" and k ~= "illusion_incoming_damage" and k ~= "movespeed" then
-				settings[k] = v * rune_multiplier
+				rune_values[k] = v * rune_multiplier
 			end
 		end
 	end
 	if runeType == ARENA_RUNE_BOUNTY then
-		local gold, xp = settings.GetValues(unit)
-		Gold:AddGoldWithMessage(unit, gold * settings.special_value_multiplier)
-		unit:AddExperience(xp * settings.special_value_multiplier, DOTA_ModifyXP_Unspecified, false, true)
+		local gold, xp = rune_settings.GetValues(unit)
+		Gold:AddGoldWithMessage(unit, gold * rune_values.special_value_multiplier)
+		unit:AddExperience(xp * rune_values.special_value_multiplier, DOTA_ModifyXP_Unspecified, false, true)
 	elseif runeType == ARENA_RUNE_TRIPLEDAMAGE then
-		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_tripledamage", {duration = settings.duration}):SetStackCount(settings.damage_pct)
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_tripledamage", {duration = rune_values.duration}):SetStackCount(rune_values.damage_pct)
 	elseif runeType == ARENA_RUNE_HASTE then
-		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_haste", {duration = settings.duration}):SetStackCount(settings.movespeed)
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_haste", {duration = rune_values.duration}):SetStackCount(rune_values.movespeed)
 	elseif runeType == ARENA_RUNE_ILLUSION then
-		for i = 1, settings.illusion_count do
-			CreateIllusion(unit, CustomRunes.ModifierApplier, unit:GetAbsOrigin() + RandomVector(100), settings.illusion_incoming_damage - 100, settings.illusion_outgoing_damage - 100, settings.duration):SetForwardVector(unit:GetForwardVector())
+		for i = 1, rune_values.illusion_count do
+			CreateIllusion(unit, CustomRunes.ModifierApplier, unit:GetAbsOrigin() + RandomVector(100), rune_values.illusion_incoming_damage - 100, rune_values.illusion_outgoing_damage - 100, rune_values.duration):SetForwardVector(unit:GetForwardVector())
 		end
 	elseif runeType == ARENA_RUNE_INVISIBILITY then
-		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_invisibility", {duration = settings.duration})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_invisibility", {duration = rune_values.duration})
 	elseif runeType == ARENA_RUNE_REGENERATION then
 		unit:SetHealth(unit:GetMaxHealth())
 		unit:SetMana(unit:GetMaxMana())
 	elseif runeType == ARENA_RUNE_ARCANE then
-		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_arcane", {duration = settings.duration})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_arcane", {duration = rune_values.duration})
 	elseif runeType == ARENA_RUNE_FLAME then
-		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_flame", {duration = settings.duration, damage_per_second_max_hp_pct = settings.damage_per_second_max_hp_pct})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_flame", {duration = rune_values.duration, damage_per_second_max_hp_pct = rune_values.damage_per_second_max_hp_pct})
 	elseif runeType == ARENA_RUNE_ACCELERATION then
-		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_acceleration", {duration = settings.duration, xp_multiplier = settings.xp_multiplier})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_acceleration", {duration = rune_values.duration, xp_multiplier = rune_values.xp_multiplier})
 	elseif runeType == ARENA_RUNE_VIBRATION then
 		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_vibration", {
-			duration = settings.duration,
-			minRadius = settings.minRadius,
-			fullRdius = settings.fullRdius,
-			minForce = settings.minForce,
-			fullForce = settings.fullForce,
-			interval = settings.interval,
+			duration = rune_values.duration,
+			minRadius = rune_values.minRadius,
+			fullRadius = rune_values.fullRadius,
+			minForce = rune_values.minForce,
+			fullForce = rune_values.fullForce,
+			interval = rune_values.interval,
 		})
 	end
-	unit:EmitSound(settings.sound)
+	unit:EmitSound(rune_settings.sound)
 end
 
 function CustomRunes:CreateRune(position, runeType)
 	local settings = RUNE_SETTINGS[runeType]
 
-	local entity = CreateUnitByName("npc_arena_rune", position, false, nil, nil, DOTA_TEAM_NEUTRALS)
-	entity.RuneType = runeType
-	entity:SetModel(settings.model)
-	entity:SetOriginalModel(settings.model)
-	StartAnimation(entity, {duration=-1, activity=ACT_DOTA_IDLE})
-	local pfx = ParticleManager:CreateParticle(settings.particle, PATTACH_ABSORIGIN_FOLLOW, entity)
+	local item = CreateItem(settings.item, nil, nil)
+	item.RuneType = runeType
+	local entity = CreateItemOnPositionSync(position, item) --CreateUnitByName("npc_arena_rune", position, false, nil, nil, DOTA_TEAM_NEUTRALS)
 	if settings.color then
 		entity:SetRenderColor(unpack(settings.color))
 	end
@@ -215,74 +194,61 @@ function CustomRunes:SpawnRunes()
 	local spawners = Entities:FindAllByName("target_mark_rune_spawner")
 	local bountySpawner = RandomInt(1, #spawners)
 	for k,v in ipairs(spawners) do
-		if IsValidEntity(v.RuneEntity) and v.RuneEntity:IsAlive() then
-			v.RuneEntity:ClearNetworkableEntityInfo()
+		if IsValidEntity(v.RuneEntity) then
 			UTIL_Remove(v.RuneEntity)
 		end
 		v.RuneEntity = CustomRunes:CreateRune(v:GetAbsOrigin(), k == bountySpawner and ARENA_RUNE_BOUNTY or RandomInt(ARENA_RUNE_FIRST, ARENA_RUNE_LAST))
 	end
 end
 
-function CustomRunes:ExecuteOrderFilter(order)
-	if order.units["0"] and (order.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET or order.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET) then
-		local unit = EntIndexToHScript(order.units["0"])
-		local rune = EntIndexToHScript(order.entindex_target)
-		if rune and unit and rune:IsCustomRune() then
-			local pos = rune:GetAbsOrigin()
-			order.order_type = DOTA_UNIT_ORDER_MOVE_TO_POSITION
-			order.position_x = pos.x
-			order.position_y = pos.y
-			order.position_z = pos.z
-			if unit:IsRealHero() then
-				local issuerID = order.issuer_player_id_const
-				Containers.rangeActions[order.units["0"]] = {
-					unit = unit,
-					position = rune:GetAbsOrigin(),
-					range = 100,
-					playerID = issuerID,
-					action = function()
-						if IsValidEntity(unit) and IsValidEntity(rune) then
-							local runeType = rune.RuneType
-							rune:ClearNetworkableEntityInfo()
-							UTIL_Remove(rune)
-							unit:Stop()
-
-							local bottle
-							local runeKeeper
-							for i = 0, 5 do
-								local item = unit:GetItemInSlot(i)
-								if item then
-									if not runeKeeper and item:GetAbilityName() == "item_rune_keeper" then
-										runeKeeper = item
-									elseif not bottle and item:GetAbilityName() == "item_bottle_arena" and not item.RuneStorage then
-										bottle = item
-									end
-								end
-							end
-							
-							if runeKeeper and runeKeeper.RuneContainer then
-								table.insert(runeKeeper.RuneContainer, {rune=runeType, expireGameTime = GameRules:GetGameTime() + runeKeeper:GetAbilitySpecial("store_duration")})
-								Notifications:Bottom(issuerID, {text="#item_rune_keeper_rune_picked_up", duration = 8})
-								Notifications:Bottom(issuerID, {text="#custom_runes_rune_" .. runeType .. "_title", continue=true})
-								Notifications:Bottom(issuerID, {text="#item_rune_keeper_rune_picked_up_cont", continue=true})
-								for i,v in ipairs(runeKeeper.RuneContainer) do
-									Notifications:Bottom(issuerID, {text="#custom_runes_rune_" .. v.rune .. "_title", continue=true})
-									Notifications:Bottom(issuerID, {text=" ,", continue=true})
-								end
-							elseif bottle then
-								bottle:SetStorageRune(runeType)
-							else
-								CustomRunes:ActivateRune(unit, runeType)
-							end
-						end
-					end,
-				}
-			end
+function CustomRunes:ItemNameToRuneType(item)
+	for id, set in pairs(RUNE_SETTINGS) do
+		if set.item == item then
+			return id
 		end
 	end
 end
 
-function CEntityInstance:IsCustomRune()
+function CustomRunes:ItemAddedToInventoryFilter(unit, item)
+	if IsValidEntity(unit) and IsValidEntity(item) and item.RuneType then
+		local runeType = item.RuneType
+		UTIL_Remove(item)
+		local PlayerID = unit:GetPlayerOwnerID()
+		local bottle
+		local runeKeeper
+		for i = 0, 5 do
+			local item = unit:GetItemInSlot(i)
+			if item then
+				if not runeKeeper and item:GetAbilityName() == "item_rune_keeper" then
+					runeKeeper = item
+				elseif not bottle and item:GetAbilityName() == "item_bottle_arena" and not item.RuneStorage then
+					bottle = item
+				end
+			end
+		end
+		
+		if runeKeeper and runeKeeper.RuneContainer then
+			table.insert(runeKeeper.RuneContainer, {rune=runeType, expireGameTime = GameRules:GetGameTime() + runeKeeper:GetAbilitySpecial("store_duration")})
+			if PlayerID > -1 then
+				Notifications:Bottom(PlayerID, {text="#item_rune_keeper_rune_picked_up", duration = 8})
+				Notifications:Bottom(PlayerID, {text="#custom_runes_rune_" .. runeType .. "_title", continue=true})
+				Notifications:Bottom(PlayerID, {text="#item_rune_keeper_rune_picked_up_cont", continue=true})
+				for i,v in ipairs(runeKeeper.RuneContainer) do
+					Notifications:Bottom(PlayerID, {text="#custom_runes_rune_" .. v.rune .. "_title", continue=true})
+					Notifications:Bottom(PlayerID, {text=" ,", continue=true})
+				end
+			end
+		elseif bottle then
+			bottle:SetStorageRune(runeType)
+		else
+			CustomRunes:ActivateRune(unit, runeType)
+		end
+		return false
+	end
+	return true
+end
+
+--[[function CEntityInstance:IsCustomRune()
 	return self.GetUnitName and self:GetUnitName() == "npc_arena_rune"
 end
 if not PlayerResource or true then return end
@@ -290,4 +256,4 @@ local entity = CreateUnitByName("npc_arena_rune", PlayerResource:GetSelectedHero
 entity:SetModel("models/props_gameplay/rune_goldxp.vmdl")
 entity:SetOriginalModel("models/props_gameplay/rune_goldxp.vmdl")
 StartAnimation(entity, {duration=-1, activity=ACT_DOTA_IDLE})
-entity:SetRenderColor(unpack({20,20,255}))
+entity:SetRenderColor(unpack({20,20,255}))]]

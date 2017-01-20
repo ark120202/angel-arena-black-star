@@ -15116,7 +15116,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"projectile_width"	"60"
+				"projectile_width"	"100"
 			}
 		}
 
