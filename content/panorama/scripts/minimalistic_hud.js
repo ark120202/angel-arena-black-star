@@ -112,6 +112,11 @@ function HookPanoramaPanels() {
 	FindDotaHudElement("combat_events").visible = false;
 	FindDotaHudElement("ChatEmoticonButton").visible = false;
 
+	FindDotaHudElement("CourierHasteButton").visible = false;
+	FindDotaHudElement("CourierUpgradeButton").visible = false;
+	FindDotaHudElement("DeliverItemsButton").style.horizontalAlign = "right"
+
+
 	FindDotaHudElement("LevelLabel").style.width = "100%";
 	FindDotaHudElement("stash").style.marginBottom = "47px";
 

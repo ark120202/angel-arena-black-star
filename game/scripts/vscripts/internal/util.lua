@@ -1434,3 +1434,12 @@ function GetConnectionState(pid)
 	end
 	return IsInToolsMode() and 2 or PlayerResource:GetConnectionState(pid)
 end
+
+function DebugCallFunction(fun)
+	local status, nextCall = xpcall(function() return fun() end, function (msg)
+		return msg..'\n'..debug.traceback()..'\n'
+	end)
+	if not status then
+		Timers:HandleEventError(nil, nil, nextCall)
+	end
+end

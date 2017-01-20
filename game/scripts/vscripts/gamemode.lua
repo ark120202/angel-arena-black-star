@@ -319,7 +319,6 @@ function GameMode:GameModeThink()
 			end
 		end
 	end
-	
 	return CUSTOM_GOLD_TICK_TIME
 end
 

@@ -2,7 +2,7 @@ if StatsClient == nil then
 	_G.StatsClient = class({})
 end
 
-StatsClient.ServerAddress = "http://angelarenablackstar-ark120202.rhcloud.com/AABSServer/"
+StatsClient.ServerAddress = "https://angelarenablackstar-ark120202.rhcloud.com/AABSServer/"
 --StatsClient:OnGameBegin()
 function StatsClient:OnGameBegin()
 	local data = {
@@ -40,10 +40,15 @@ function StatsClient:OnGameEnd()
 	end)
 end
 
+function StatsClient:HandleError(err)
+	if err and type(err) == "string" then
+		StatsClient:Send("HandleError", { text = err })
+	end
+end
+
 function StatsClient:Send(path, data, callback, retryCount, _currentRetry)
 	local request = CreateHTTPRequest('POST', self.ServerAddress .. path)
-	local s = JSON:encode(data)
-	request:SetHTTPRequestGetOrPostParameter('body', s)
+	request:SetHTTPRequestGetOrPostParameter("data", JSON:encode(data))
 	request:Send(function(response)
 		if response.StatusCode ~= 200 or not response.Body then
 			print("error, status == " .. response.StatusCode)

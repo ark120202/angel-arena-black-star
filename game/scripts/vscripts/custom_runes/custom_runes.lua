@@ -79,10 +79,9 @@ RUNE_SETTINGS = {
 			if ability_goblins_greed and ability_goblins_greed:GetLevel() > 0 then
 				gold_multiplier = gold_multiplier + ability_goblins_greed:GetAbilitySpecial("bounty_multiplier_tooltip") - 1
 			end
-			local item_blood_of_midas = FindItemInInventoryByName(unit, "item_blood_of_midas", false)
-			if item_blood_of_midas then
-				gold_multiplier = gold_multiplier + item_blood_of_midas:GetLevelSpecialValueFor("gold_multiplier", item_blood_of_midas:GetLevel() - 1) - 1
-				xp_multiplier = xp_multiplier + item_blood_of_midas:GetLevelSpecialValueFor("xp_multiplier", item_blood_of_midas:GetLevel() - 1) - 1
+			if unit:HasModifier("modifier_item_blood_of_midas") then
+				gold_multiplier = gold_multiplier + GetAbilitySpecial("item_blood_of_midas", "gold_multiplier") - 1
+				xp_multiplier = xp_multiplier + GetAbilitySpecial("item_blood_of_midas", "xp_multiplier") - 1
 			end
 			return gold * gold_multiplier, xp * xp_multiplier
 		end,
