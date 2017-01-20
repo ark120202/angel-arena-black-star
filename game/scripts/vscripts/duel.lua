@@ -54,21 +54,21 @@ end
 
 function Duel:StartDuel()
 	Duel.heroes_teams_for_duel = {}
+	local heroes_in_teams_count = {}
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1  do
-		if PlayerResource:IsValidPlayerID(playerID) and not IsPlayerAbandoned(i) then
+		if PlayerResource:IsValidPlayerID(playerID) and not IsPlayerAbandoned(playerID) then
 			local team = PlayerResource:GetTeam(playerID)
 			local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-			if IsValidEntity(hero) and hero:IsAlive() then
+			if IsValidEntity(hero) then
 				Duel.heroes_teams_for_duel[team] = Duel.heroes_teams_for_duel[team] or {}
 				table.insert(Duel.heroes_teams_for_duel[team], hero)
 			end
 		end
 	end
-	local heroes_in_teams = {}
 	for i,v in pairs(Duel.heroes_teams_for_duel) do
 		if not heroes_in_teams[i] then heroes_in_teams[i] = 0 end
 		for _,vi in pairs(v) do
-			if vi:IsAlive() then
+			if vi:IsAlive() and PlayerResource:GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 				heroes_in_teams[i] = heroes_in_teams[i] + 1
 			end
 		end
@@ -95,7 +95,7 @@ function Duel:StartDuel()
 					local unit = v[1]
 					if IsValidEntity(unit) then
 						local pid = unit:GetPlayerOwnerID()
-						if not unit.DuelChecked and PlayerResource:IsValidPlayerID(pid) and PlayerResource:GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
+						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and PlayerResource:GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 							unit.InArena = true
 							Duel:FillPreduelUnitData(unit)
 							unit:SetHealth(unit:GetMaxHealth())
@@ -125,7 +125,7 @@ function Duel:StartDuel()
 					PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), unit)
 					FindClearSpaceForUnit(unit, Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin(), true)
 					Timers:CreateTimer(0.1, function() PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), nil); unit:Stop() end)
-				else
+				elseif unit:IsAlive() then
 					Duel:SetUpVisitor(unit)
 				end
 				--TODO Meepo

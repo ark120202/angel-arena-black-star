@@ -67,7 +67,6 @@ function GameMode:OnNPCSpawned(keys)
 							npc.PocketHostEntity = nil
 						end
 						if Duel:IsDuelOngoing() then
-							table.insert(Duel.heroes_teams_for_duel[npc:GetTeam()], npc)
 							Duel:SetUpVisitor(npc)
 						end
 					end

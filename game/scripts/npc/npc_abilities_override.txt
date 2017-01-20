@@ -20575,7 +20575,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_reduction"	"100"
+				"damage_reduction"	"40"
 			}
 
 			"03"
@@ -20593,7 +20593,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"0.25 4 4.75 5.0 5.25 5.5 5.75"
+				"duration"	"3 3.5 4 4.5 5 5.5 6"
 			}
 
 		}

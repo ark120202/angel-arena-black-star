@@ -125,6 +125,7 @@
 					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_LOW_ATTACK_PRIORITY""MODIFIER_STATE_VALUE_ENABLED"
 				}
 
 				"Properties"
@@ -409,9 +410,7 @@
 				"IsPurgable"		"1"
 				"IsBuff"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"TextureName"		"arena/casino_bitch_passive"
-			
+							
 				"EffectName"		"particles/econ/items/lina/lina_head_headflame/lina_flame_hand_headflame.vpcf"
 				"EffectAttachType"	"follow_overhead"
 			
@@ -678,8 +677,6 @@
 				"IsDebuff"			"1"
 				"IsStunDebuff"		"1"
 				"Duration"			"%stun_duration"
-
-				"TextureName"		"arena/arthas_rage_of_arthas"
 				
 				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
@@ -743,8 +740,6 @@
 			"modifier_arthas_plus_morality_buff"
 			{
 				"IsBuff"	"1"
-
-				"TextureName"		"arena/arthas_plus_morality"
 
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 
@@ -815,8 +810,6 @@
 			"modifier_arthas_vikared"
 			{
 				"Duration"		"%duration"
-
-				"TextureName"		"arena/arthas_vikared"
 				
 				//"EffectName"		"particles/econ/items/ursa/ursa_fierce_heart/ursa_fierce_heart_warp_r.vpcf"
 				//"EffectAttachType"	"attach_origin"
@@ -2322,8 +2315,6 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-				"TextureName"		"arena/boss_armor"
-
 				"States"
 				{
 					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -4129,8 +4120,6 @@
 				"IsHidden"			"0"
 				"IsBuff"			"1"
 				"Duration"			"%duration"
-
-				"TextureName"		"arena/crystal_maiden_glacier_tranqulity"
 		
 				"EffectName"		"particles/arena/units/heroes/hero_crystal_maiden/tranqulity_buff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -4142,8 +4131,6 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 				"Duration"			"%duration"
-
-				"TextureName"		"arena/crystal_maiden_glacier_tranqulity"
 		
 				"EffectName"		"particles/arena/units/heroes/hero_crystal_maiden/tranqulity_buff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -6108,8 +6095,6 @@
 				"IsDebuff"		"1"
 				"IsPurgable"	"0"
 
-				"TextureName"		"arena/faceless_void_time_freeze"
-
 			}
 
 			"modifier_faceless_void_time_freeze_aura"
@@ -7078,8 +7063,6 @@
 			{
 				"IsDebuff"		"1"
 
-				"TextureName"		"arena/cherub_sleep_cloud"
-
 				"ThinkInterval"  "%think_interval"
 				"OnIntervalThink"
 				{
@@ -7113,8 +7096,6 @@
 				"IsDebuff"		"1"
 				"EffectName"	"particles/generic_gameplay/generic_sleep.vpcf"
 				"EffectAttachType"	"follow_overhead"
-
-				"TextureName"		"arena/cherub_sleep_cloud"
 
 				"OnCreated"
 				{
@@ -7944,8 +7925,6 @@
 			{
 				"IsBuff"			"1"
 				"IsPurgable"		"0"
-
-				"TextureName"		"arena/cherub_flower_yellow_daisy"
 			
 				"Properties"
 				{
@@ -8035,8 +8014,6 @@
 			{
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
-
-				"TextureName"		"arena/cherub_flower_purple_lotus"
 			
 				"Properties"
 				{
@@ -8419,8 +8396,6 @@
 				"IsBuff"			"1"
 				"Duration"			"%duration"
 
-				"TextureName"		"arena/omniknight_select_allies"
-
 				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf"
 				"EffectAttachType"	"follow_overhead"
 			}
@@ -8498,8 +8473,6 @@
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
 				"Duration"			"%duration"
-
-				"TextureName"		"arena/omniknight_select_enemies"
 
 				"EffectName"		"particles/arena/units/heroes/hero_omniknight/omniknight_select_halo_inverse_buff.vpcf"
 				"EffectAttachType"	"follow_overhead"
@@ -9525,8 +9498,6 @@
 			{
 				"IsDebuff"			"1"
 				"Duration"			"%debuff_duration"
-
-				"TextureName"		"arena/queenofblades_darkness_aura"
 			
 				"Properties"
 				{
@@ -9819,8 +9790,6 @@
 				"IsDebuff"		"1"
 				"IsPurgable"	"0"
 
-				"TextureName"		"arena/queenofblades_alter_ego_chains"
-
 				"EffectName"			"particles/arena/units/heroes/hero_queenofblades/alter_ego_chains.vpcf"
 				"EffectAttachType"		"follow_origin"
 
@@ -9886,8 +9855,6 @@
 			{
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
-
-				"TextureName"		"arena/queenofblades_alter_ego_discharge"
 		
 				"Aura"          	"modifier_queenofblades_alter_ego_discharge_effect"
 				"Aura_Radius"   	"%radius"
@@ -9901,8 +9868,6 @@
 			{
 				"EffectName"		"particles/arena/units/heroes/hero_queenofblades/alter_ego_discharge.vpcf"
 				"EffectAttachType"	"follow_origin"
-
-				"TextureName"		"arena/queenofblades_alter_ego_discharge"
 
 				"Properties"
 				{
@@ -10167,8 +10132,6 @@
 				"EffectName"	"particles/generic_hero_status/status_invisibility_start.vpcf"
 				"EffectAttachType"	"follow_origin"
 
-				"TextureName"		"arena/kadash_strike_from_shadows"
-
 				"OnDestroy"
 				{
 					"ApplyModifier"
@@ -10187,8 +10150,6 @@
 			{
 				"Duration"	"%duration"
 				"IsBuff"	"1"
-
-				"TextureName"		"arena/kadash_strike_from_shadows"
 
 				"OnAbilityExecuted"
 				{
@@ -10231,8 +10192,6 @@
 			{
 				"IsDebuff"			"1"
 				"Duration"			"%armor_reduction_duration"
-
-				"TextureName"		"arena/kadash_strike_from_shadows"
 
 				"Properties"
 				{
@@ -10375,15 +10334,11 @@
 			{
 				"IsPurgable"		"0"
 
-				"TextureName"		"arena/kadash_immortality"
-
 			}
 			"modifier_kadash_immortality_ghostform"
 			{
 				"IsPurgable"		"0"
 				"Duration"			"%ghostform_duration_scepter"
-
-				"TextureName"		"arena/kadash_immortality"
 
 				"IsBuff"					"1"
 				"IsDebuff"					"0"
@@ -10546,8 +10501,6 @@
 				"IsBuff"			"1"
 				"IsPurgable"		"0"
 
-				"TextureName"		"arena/apocalypse_agnis_touch"
-
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"1"
@@ -10560,8 +10513,6 @@
 				"IsPurgable"		"0"
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 
-				"TextureName"		"arena/apocalypse_agnis_touch"
-
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"-1"
@@ -10571,8 +10522,6 @@
 			"modifier_apocalypse_agnis_touch_ablaze"
 			{
 				"IsPurgable"		"0"
-
-				"TextureName"		"arena/apocalypse_agnis_touch"
 
 				"OnCreated"
 				{
@@ -10692,8 +10641,6 @@
 				"EffectName"		"particles/econ/events/ti6/force_staff_ti6.vpcf"
 				"EffectAttachType"	"follow_origin"
 
-				"TextureName"		"arena/apocalypse_king_slayer"
-
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "-1"
@@ -10763,8 +10710,6 @@
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
 				"Duration"			"%duration"
-
-				"TextureName"		"arena/apocalypse_weapon_break"
 		
 				"EffectName"            "particles/generic_gameplay/generic_disarm.vpcf"
 				"EffectAttachType"      "follow_overhead"
@@ -10848,8 +10793,6 @@
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
 				"Duration"			"%duration"
-
-				"TextureName"		"arena/apocalypse_armor_tear"
 		
 				"EffectName"            "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_1.vpcf"
 				"EffectAttachType"      "follow_origin"
@@ -11105,8 +11048,6 @@
 				"IsHidden"			"0"
 				"IsPurgable"		"0"
 
-				"TextureName"		"arena/shinobu_vampire_blood"
-
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed_lvl1"
@@ -11118,8 +11059,6 @@
 			{
 				"IsHidden"			"0"
 				"IsPurgable"		"0"
-
-				"TextureName"		"arena/shinobu_vampire_blood"
 
 				"EffectName"		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -11136,8 +11075,6 @@
 				"IsHidden"			"0"
 				"IsPurgable"		"0"
 
-				"TextureName"		"arena/shinobu_vampire_blood"
-
 				"EffectName"		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf"
 				"EffectAttachType"	"follow_origin"
 
@@ -11152,8 +11089,6 @@
 			{
 				"IsHidden"			"0"
 				"IsPurgable"		"0"
-
-				"TextureName"		"arena/shinobu_vampire_blood"
 
 				"OnCreated"
 				{
@@ -11228,8 +11163,6 @@
 			"modifier_shinobu_eat_oddity_buff"
 			{
 				"IsPurgable"		"0"
-
-				"TextureName"		"arena/shinobu_eat_oddity"
 
 				"Properties"
 				{
@@ -11467,8 +11400,6 @@
 				"IsPurgable"		"0"
 				"Duration"			"%fade_time"
 
-				"TextureName"		"arena/shinobu_hide_in_shadows"
-
 				"OnDestroy"
 				{
 					"ApplyModifier"
@@ -11498,8 +11429,6 @@
 			{
 				"IsPurgable"		"0"
 				"Priority"			"MODIFIER_PRIORITY_ULTRA"
-
-				"TextureName"		"arena/shinobu_hide_in_shadows"
 
 				"OnAbilityExecuted"
 				{
@@ -11564,8 +11493,6 @@
 			{
 				"IsPurgable"		"0"
 				"Duration"			"%rage_duration"
-
-				"TextureName"		"arena/shinobu_hide_in_shadows"
 
 				"EffectName"		"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -11656,8 +11583,6 @@
 			{
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
-
-				"TextureName"		"arena/zen_gehraz_divine_intervention"
 	
 				"States"
 				{
@@ -11960,8 +11885,6 @@
 				"IsDebuff"			"1"
 				"Duration"			"0.1"
 
-				"TextureName"		"arena/zen_gehraz_vow_of_silence"
-
 			
 				"OnAbilityExecuted"
 				{
@@ -12167,8 +12090,6 @@
 				"EffectName"	"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_1.vpcf"
 				"EffectAttachType"	"follow_origin"
 
-				"TextureName"		"arena/stegius_desolus_wave"
-
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_reduction"
@@ -12237,8 +12158,6 @@
 			{
 				"Duration"			"%duration"
 				"IsHidden"			"0"
-
-				"TextureName"		"arena/stegius_rage_of_desolus"
 		
 				"EffectName"		"particles/arena/units/heroes/hero_stegius/rage_of_desolus_buff.vpcf"
 				"EffectAttachType"	"follow_overhead"
@@ -12326,8 +12245,6 @@
 				"IsDebuff"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 
-				"TextureName"		"arena/stegius_brightness_of_desolate"
-
 				"OnDestroy"
 				{
 					"RunScript"
@@ -12367,8 +12284,6 @@
 				"IsPurgable"		"0"
 				"Duration"			"%bonus_damage_duration"
 
-				"TextureName"		"arena/stegius_brightness_of_desolate"
-
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"1"
@@ -12379,8 +12294,6 @@
 			{
 				"IsPurgable"		"0"
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-
-				"TextureName"		"arena/stegius_brightness_of_desolate"
 
 				"Properties"
 				{
@@ -12413,7 +12326,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_per_hit_bosses"		"0 0 0 -1 -1 -1 -2"
+				"boss_armor_reduction_chance_pct"	"40 35 30 25 20 15 10"
 			}
 			"03"
 			{
@@ -12436,12 +12349,6 @@
 						"ScriptFile"	"heroes/hero_stegius/desolating_touch.lua"
 						"Function"		"ReduceArmor"
 					}
-
-					"FireSound"
-					{
-						"EffectName"	"Item_Desolator.Target"
-						"Target" 		"TARGET"
-					}
 				}
 			}
 
@@ -12450,8 +12357,6 @@
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
 				"Duration"			"%duration"
-
-				"TextureName"		"arena/stegius_desolating_touch"
 
 				"Properties"
 				{
@@ -12739,9 +12644,7 @@
 			"modifier_rubick_personality_steal"
 			{
 				"IsHidden"			"1"
-				"IsPurgable"		"0"
-				"TextureName"		"rubick_spell_steal"
-				
+				"IsPurgable"		"0"				
 				"OnDestroy"
 				{
 					"RunScript"
@@ -12847,8 +12750,6 @@
 			{
 				"IsDebuff"		"1"
 				"Duration"			"0.5"
-
-				"TextureName"		"arena/mirratie_smoke_out"
 				
 				"Properties"
 				{
@@ -13766,8 +13667,6 @@
 				"IsPurgable"		"0"
 				"IsDebuff"			"1"
 				"IsStunDebuff"		"1"
-
-				"TextureName"		"arena/freya_strike_the_ice"
 				
 				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
@@ -13873,8 +13772,6 @@
 				"Duration"		"%duration"
 				"IsPurgable"	"1"
 				"IsDebuff"		"1"
-
-				"TextureName"		"arena/freya_ice_cage"
 			
 				"EffectName"		"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff_glow.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -13901,8 +13798,6 @@
 			{
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
-
-				"TextureName"		"arena/freya_ice_cage"
 			
 				"EffectName"		"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff_model.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -13977,8 +13872,6 @@
 				"Passive"			"0"
 				"IsPurgable"		"0"
 				"Duration"			"%duration"
-
-				"TextureName"		"arena/freya_pain_reflection"
 
 				"EffectName"		"particles/arena/units/heroes/hero_freya/pain_reflection.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -14055,8 +13948,6 @@
 				"IsPurgable"		"0"
 				"EffectName"		"particles/units/heroes/hero_tusk/tusk_rubickpunch_status.vpcf"
 				"EffectAttachType"	"follow_origin"
-
-				"TextureName"		"arena/freya_frozen_strike"
 
 				"Properties"
 				{
@@ -14179,8 +14070,6 @@
 				"Duration"			"%duration"
 				"EffectName"		"particles/arena/units/heroes/hero_zaken/stitching_strikes.vpcf"
 				"EffectAttachType"	"follow_origin"
-
-				"TextureName"		"arena/zaken_stitching_strikes"
 
 				"States"
 				{
@@ -14460,6 +14349,7 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"incoming_damage_reduction"	"-5 -8 -10 -12 -15 -20 -25"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
@@ -14494,8 +14384,6 @@
 				"IsPurgable"			"0"
 				"Duration"				"%duration"
 				"OverrideAnimation"     "ACT_DOTA_CHANNEL_ABILITY_4"
-
-				"TextureName"		"arena/zaken_sword_control"
 
 				"States"
 				{
@@ -15223,9 +15111,7 @@
 		{
 			"modifier_poseidon_trident"
 			{
-				"Duration"			"%duration"
-				"TextureName"		"arena/poseidon_trident"
-				"EffectName"		"particles/units/heroes/hero_abaddon/abaddon_ambient_glow.vpcf"
+				"Duration"			"%duration"				"EffectName"		"particles/units/heroes/hero_abaddon/abaddon_ambient_glow.vpcf"
 				"EffectAttachType"	"follow_origin"
 
 				"Properties"
@@ -15381,9 +15267,7 @@
 			{
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"IsPurgable"		"0"
-				"TextureName"		"arena/poseidon_sea_hole"
-				"States"
+				"IsPurgable"		"0"				"States"
 				{
 					"MODIFIER_STATE_MUTED"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
@@ -15394,9 +15278,7 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
-				"Duration"			"0.25"
-				"TextureName"		"arena/poseidon_sea_hole"
-			
+				"Duration"			"0.25"			
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-1"
