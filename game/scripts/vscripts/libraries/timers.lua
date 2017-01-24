@@ -170,12 +170,10 @@ end
 function Timers:HandleEventError(name, event, err)
 	if IsInToolsMode() then
 		print(err)
-	end
-	--else
+	else
 		StatsClient:HandleError(err)
-		--CustomGameEventManager:Send_ServerToAllClients("debug_cprint", {text = err})
 		CPrint(err)
-	--end
+	end
 
 	-- Ensure we have data
 	name = tostring(name or 'unknown')

@@ -27,3 +27,4 @@
 "item_tango", "item_tango_arena"
 "item_heavens_halberd", "item_heavens_halberd_arena"
 "item_bottle", "item_bottle_arena"
+"item_blade_mail", "item_blade_mail_3"

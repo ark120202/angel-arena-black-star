@@ -186,8 +186,6 @@
 		"ability_shop_purchased_only"							"Show purchased abilities"
 		"ability_shop_search_placeholder"						"Ability or hero name..."
 
-		"holdout_timer_label"									" wave:"
-
 		"notification_item_demon_king_bar_curse_p1"				"You just received Demon King Bar's Curse effect. You'll die in "
 		"notification_item_demon_king_bar_curse_p2"				" seconds."
 		

@@ -16,7 +16,6 @@ function ChangeTeam(keys)
 	end
 	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
 
-	local gold = Gold:GetGold(caster)
 	local playerPickData = {}
 	local tableData = PlayerTables:GetTableValue("hero_selection", oldTeam)
 	if tableData and tableData[playerID] then
@@ -40,10 +39,11 @@ function ChangeTeam(keys)
 		newTableData[playerID] = playerPickData
 		PlayerTables:SetTableValue("hero_selection", targetTeam, newTableData)
 	end
-	Gold:SetGold(caster, gold)
 	--[[for _, v in ipairs(Entities:FindAllByClassname("npc_dota_courier") ) do
 		v:SetControllableByPlayer(playerID, v:GetTeamNumber() == targetTeam)
 	end]]
+	FindCourier(oldTeam):SetControllableByPlayer(playerID, false)
+	FindCourier(targetTeam):SetControllableByPlayer(playerID, true)
 	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
 	PlayerTables:AddPlayerSubscription("dynamic_minimap_points_" .. targetTeam, playerID)
 	CustomGameEventManager:Send_ServerToPlayer(caster:GetPlayerOwner(), "arena_team_changed_update", {})

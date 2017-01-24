@@ -4826,7 +4826,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12.0 12.0 12.0 12.0"
+		"AbilityCooldown"				"12"
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -4868,7 +4868,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"block_duration"	"0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"block_duration"	"3 3.5 4 4.5 5.5 6 6.5"
 			}
 			"07"
 			{
@@ -5015,7 +5015,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"creep_duration"	"10.0"
+				"creep_duration"	"10"
 			}
 			"04"
 			{
@@ -5126,22 +5126,24 @@
 				
 				"OnCreated"
 				{
-					"Damage"
+					"RunScript"
 					{
-						"Target"	"TARGET"
-						"Damage"	"%damage_per_second_tooltip * %damage_interval"
-						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"PercentDamage"
+						"Damage"		"%damage_per_second_tooltip"
+						"multiplier"	"%damage_interval"
 					}
 				}
 				
 				"ThinkInterval"		"%damage_interval"
 				"OnIntervalThink"
 				{
-					"Damage"
+					"RunScript"
 					{
-						"Target"	"TARGET"
-						"Damage"	"%damage_per_second_tooltip * %damage_interval"
-						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"PercentDamage"
+						"Damage"		"%damage_per_second_tooltip"
+						"multiplier"	"%damage_interval"
 					}
 				}
 			}
@@ -12774,14 +12776,14 @@
 		"LevelsBetweenUpgrades" 		"5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"HasInnateModifiers"			"1"
-		"AbilityCastRange"				"500 700 900 1100 1300 1500 1700"
+		"AbilityCastRange"				"1200"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"500 700 900 1100 1300 1500 1700"
+				"radius"			"1200"
 			}
 			"02"
 			{
@@ -15159,6 +15161,7 @@
 
 		"AbilityCooldown"				"40 37.5 35 32.5 30 27.5 25"
 		"AbilityManaCost"				"80 120 160 200 240 280 320"
+		"AbilityCastRange"				"1500"
 
 		"precache"
 		{
@@ -15271,7 +15274,9 @@
 			{
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"IsPurgable"		"0"				"States"
+				"IsPurgable"		"0"	
+
+				"States"
 				{
 					"MODIFIER_STATE_MUTED"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
@@ -15307,6 +15312,7 @@
 		"AbilityCooldown"				"120 110 100 90 85 80 75"
 		"AbilityManaCost"				"200 300 400 500 600 700 800"
 		"AbilityCastPoint"				"0.4"
+		"AbilityCastRange"				"3000"
 
 		"precache"
 		{

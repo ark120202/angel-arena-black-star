@@ -136,19 +136,21 @@ end
 function GameMode:OnHeroInGame(hero)
 	DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 	Timers:CreateTimer(function()
-		if hero and not hero:IsNull() and not hero:HasModifier("modifier_arc_warden_tempest_double") and hero:IsRealHero() then
+		if IsValidEntity(hero) and not hero:HasModifier("modifier_arc_warden_tempest_double") and hero:IsRealHero() then
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
+				local pid = hero:GetPlayerID()
+				local tn = hero:GetTeamNumber()
 				local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
 				TEAMS_COURIERS[hero:GetTeamNumber()] = true
 				Timers:CreateTimer(0.03, function()
 					for _,courier in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
 						local owner = courier:GetOwner()
-						if owner and owner:GetPlayerID() == hero:GetPlayerID() then
+						if IsValidEntity(owner) and owner:GetPlayerID() == pid then
 							courier:UpgradeToFlyingCourier()
 							courier:SetOwner(nil)
 							courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
 							courier:RemoveAbility("courier_burst")
-							TEAMS_COURIERS[hero:GetTeamNumber()] = courier
+							TEAMS_COURIERS[tn] = courier
 							courier:SetBaseMaxHealth(200)
 							courier:SetMaxHealth(200)
 							courier:SetHealth(200)

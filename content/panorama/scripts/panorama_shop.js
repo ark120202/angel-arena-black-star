@@ -10,7 +10,6 @@ var QuickBuyTarget = null
 var QuickBuyTargetAmount = 0
 var LastHero = null
 var ItemStocks = [];
-var hud = GetDotaHud();
 
 function OpenCloseShop() {
 	$("#ShopBase").ToggleClass("ShopBase_Out")
@@ -279,7 +278,7 @@ function LoadItemsFromTable(panorama_shop_data) {
 
 function UpdateSmallItem(panel, gold) {
 	try {
-		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) < (gold || PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]) && ItemData[panel.itemName].purchasable);
+		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) <= (gold || PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]) && ItemData[panel.itemName].purchasable);
 		panel.SetHasClass("NotPurchasableItem", !ItemData[panel.itemName].purchasable);
 		if (ItemStocks[panel.itemName] != null) {
 			var CurrentTime = Game.GetGameTime();
@@ -494,7 +493,6 @@ function SelectItembuild(t) {
 			$.Each(groupData.content, function(itemName) {
 				var itemPanel = $.CreatePanel("Panel", itemsRoot, "shop_itembuild_items_" + itemName)
 				SnippetCreate_SmallItem(itemPanel, itemName)
-				itemPanel.AddClass("BigItemPanel")
 			})
 		})
 	} else {

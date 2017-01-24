@@ -74,11 +74,14 @@ function pudge_meat_hook_lua:OnSpellStart()
 	if not self:GetCaster():HasScepter() then
 		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_meat_hook_followthrough_lua", { duration = hook_distance / hook_speed * hook_followthrough_constant } )
 	end
-	for i = 1, hookCount do
-		local vDirection = self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()
-		vDirection.z = 0
+	local base_direction = (self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()):Normalized()
+	base_direction.z = 0
+	for i = 0, hookCount-1 do
+		local vDirection = base_direction
 		if hookCount > 1 then
-			vDirection = RotatePosition(vDirection, QAngle(0, 360/hookCount*(i-1), 0), self:GetCaster():GetAbsOrigin())
+			local fullAngle = 60
+			local factor = fullAngle/(hookCount-1)
+			vDirection = RotatePosition(Vector(0,0,0), QAngle(0, fullAngle/2-factor*i, 0), base_direction)
 		end
 		local vHookOffset = Vector( 0, 0, 96 )
 
@@ -89,7 +92,6 @@ function pudge_meat_hook_lua:OnSpellStart()
 		ParticleManager:SetParticleControl( hook_chain_pfx, 2, Vector( hook_speed, hook_distance, hook_width ) )
 		ParticleManager:SetParticleControl( hook_chain_pfx, 6, self:GetCaster():GetOrigin() + vHookOffset )
 		ParticleManager:SetParticleControlEnt(hook_chain_pfx, 7, self:GetCaster(), PATTACH_CUSTOMORIGIN, nil, self:GetCaster():GetOrigin(), true)
-
 		EmitSoundOn( "Hero_Pudge.AttackHookExtend", self:GetCaster() )
 		local projbase = {
 			fStartRadius = hook_width,

@@ -229,6 +229,14 @@ INCOMING_DAMAGE_MODIFIERS = {
 				return 0
 			end
 		end
+	},
+	["modifier_item_blade_mail_arena_active"] = {
+		multiplier = function(_, victim)
+			local item_blade_mail_arena = FindItemInInventoryByName(victim, "item_blade_mail_arena", false, false, true)
+			if IsValidEntity(item_blade_mail_arena) then
+				return 1 - item_blade_mail_arena:GetAbilitySpecial("reduced_damage_pct") * 0.01
+			end
+		end
 	}
 }
 

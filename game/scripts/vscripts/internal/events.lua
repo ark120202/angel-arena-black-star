@@ -66,18 +66,17 @@ function GameMode:_OnEntityKilled( keys )
 	if killedUnit:IsRealHero() then 
 		if killerEntity then
 			DebugPrint("KILLED, KILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
-			if END_GAME_ON_KILLS and GetTeamHeroKills(killerEntity:GetTeam()) >= KILLS_TO_END_GAME_FOR_TEAM then
-				GameRules:SetSafeToLeave( true )
-				GameRules:SetGameWinner( killerEntity:GetTeam() )
-				print("SetGameWinner " .. killerEntity:GetTeam())
+			local team = killerEntity:GetTeam()
+			if END_GAME_ON_KILLS and GetTeamHeroKills(team) >= KILLS_TO_END_GAME_FOR_TEAM then
+				self:OnKillGoalReached(team)
 			end
 		end
 		
 		if SHOW_KILLS_ON_TOPBAR then
-			GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_BADGUYS, GetTeamHeroKills(DOTA_TEAM_BADGUYS) )
-			GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_GOODGUYS, GetTeamHeroKills(DOTA_TEAM_GOODGUYS) )
-			GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_CUSTOM_1, GetTeamHeroKills(DOTA_TEAM_CUSTOM_1) )
-			GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_CUSTOM_2, GetTeamHeroKills(DOTA_TEAM_CUSTOM_2) )
+			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_BADGUYS, GetTeamHeroKills(DOTA_TEAM_BADGUYS))
+			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_GOODGUYS, GetTeamHeroKills(DOTA_TEAM_GOODGUYS))
+			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_CUSTOM_1, GetTeamHeroKills(DOTA_TEAM_CUSTOM_1))
+			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_CUSTOM_2, GetTeamHeroKills(DOTA_TEAM_CUSTOM_2))
 		end
 	end
 

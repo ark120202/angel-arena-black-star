@@ -104,7 +104,7 @@
 				<Label id="GoalVoteLabel" text="#kill_goal_tooltip_vote_title"/>
 				<Panel id="GoalVotePanelKLValues" />
 				<Panel id="GoalVotePanelCustomSettingsRoot">
-					<Panel class="LeftRightFlow FullWidth" id="GoalVotePanelCustomSettings_GM201"> <!-- ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES = 201 -->
+					<Panel class="LeftRightFlow FullWidth" id="GoalVotePanelCustomSettings_GM201"> <!-- ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES -->
 						<Button class="ButtonBevel Green GoalVoteSettingsButton" id="GoalVoteSettings_AbilityShop" onactivate="VoteMap(201, 102);">
 							<Label text="Ability Shop"/>
 						</Button>
@@ -114,6 +114,8 @@
 					</Panel>
 				</Panel>
 			</Panel>
+			<!-- <Movie class="VideoPanel" style="width: 640px; height: 360px;" src="file://{resources}/videos/promo/mk_arcana.webm" controls="none" repeat="true" autoplay="onload" />
+			<DOTAHTMLPanel id="InlineVideoPanel" style="width: 640px; height: 360px; align: right bottom;" url="https://www.youtube.com/embed/YXPiKP497lk"/> -->
 		</Panel>
 	</Panel>
 </root>

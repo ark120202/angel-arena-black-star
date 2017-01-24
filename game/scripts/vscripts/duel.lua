@@ -9,7 +9,7 @@ if Duel == nil then
 	Duel.GlobalTimer = nil
 	Duel.DuelStatus = DOTA_DUEL_STATUS_NONE
 	Duel.EntIndexer = {}
-	Duel.Particles = {}
+	--Duel.Particles = {}
 	Duel.DuelCounter = 0
 end
 
@@ -149,9 +149,9 @@ function Duel:StartDuel()
 end
 
 function Duel:EndDuel()
-	for _,v in ipairs(Duel.Particles) do
+	--[[for _,v in ipairs(Duel.Particles) do
 		ParticleManager:DestroyParticle(v, false)
-	end
+	end]]
 	local winner = Duel:GetWinner()
 	if winner then
 		Notifications:TopToAll({text="#duel_over_winner_p1", duration=9.0})
@@ -162,7 +162,7 @@ function Duel:EndDuel()
 		Notifications:TopToAll(g1)
 		Notifications:TopToAll(g2)
 		for _,v in ipairs(Duel.heroes_teams_for_duel[winner]) do
-			if v and not v:IsNull() then
+			if IsValidEntity(v) then
 				Gold:ModifyGold(v, goldAmount)
 			end
 		end

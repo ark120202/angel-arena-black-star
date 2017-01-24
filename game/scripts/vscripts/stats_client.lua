@@ -12,14 +12,14 @@ function StatsClient:OnGameBegin()
 	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) then
 			data.players[i] = {
-				Steamid = tostring(PlayerResource:GetSteamID(i)),
+				steam_id = tostring(PlayerResource:GetSteamID(i)),
 			}
 		end
 	end
 
-	StatsClient:Send("startMatch", data, function(response)
+	--[[StatsClient:Send("startMatch", data, function(response)
 		PrintTable(response)
-	end)
+	end)]]
 end
 
 function StatsClient:OnGameEnd()
@@ -29,9 +29,23 @@ function StatsClient:OnGameEnd()
 	}
 	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:IsValidPlayerID(i) then
+			local hero = PlayerResource:GetSelectedHeroEntity(i)
 			players[i] = {
-				abandoned = IsPlayerAbandoned(i)
+				abandoned = IsPlayerAbandoned(i),
+				hero_stats = PLAYER_DATA[i].HeroStats or {},
+				items = {}
 			}
+			if IsValidEntity(hero) then
+				for item_slot = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_9 do
+					local item = hero:GetItemInSlot(item_slot)
+					if item then
+						items[item_slot] = {
+							name = item:GetAbilityName(),
+							stacks = item:GetStackCount()
+						}
+					end
+				end
+			end
 		end
 	end
 

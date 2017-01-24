@@ -363,3 +363,10 @@ function GameMode:TrackInventory(unit)
 		end
 	end
 end
+
+function GameMode:OnKillGoalReached(team)
+	--Duel:EndDuel()
+	--PlayerTables:SetTableValue("arena", "duel_timer", 0)
+	GameRules:SetSafeToLeave(true)
+	GameRules:SetGameWinner(team)
+end

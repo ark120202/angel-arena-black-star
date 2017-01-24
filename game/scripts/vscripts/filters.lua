@@ -112,7 +112,7 @@ function GameMode:DamageFilter(filterTable)
 		if inflictor and inflictor.GetAbilityName then
 			local inflictorname = inflictor:GetAbilityName()
 
-			if SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS[inflictorname] then
+			if SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS[inflictorname] and attacker:IsHero() then
 				filterTable.damage = GetNotScaledDamage(filterTable.damage, attacker)
 			end
 			local damage_from_current_health_pct = inflictor:GetAbilitySpecial("damage_from_current_health_pct")
@@ -142,6 +142,7 @@ function GameMode:DamageFilter(filterTable)
 			if victim.HasModifier and victim:HasModifier(k) then
 				v(attacker, victim, inflictor, damage, damagetype_const)
 			end
+
 		end
 		for k,v in pairs(OUTGOING_DAMAGE_MODIFIERS) do
 			if attacker.HasModifier and attacker:HasModifier(k) and	(not v.condition or (v.condition and v.condition(attacker, victim, inflictor, damage, damagetype_const))) then
@@ -165,6 +166,7 @@ function GameMode:DamageFilter(filterTable)
 					elseif type(v.multiplier) == "function" then
 						local multiplier = v.multiplier(attacker, victim, inflictor, damage, damagetype_const)
 						if multiplier then
+							--print("Raw damage: " .. filterTable.damage .. ", after " .. k .. ": " .. filterTable.damage * multiplier .. " (multiplier: " .. multiplier .. ")")
 							filterTable.damage = filterTable.damage * multiplier
 						end
 					end

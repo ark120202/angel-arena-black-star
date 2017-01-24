@@ -185,30 +185,16 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_cooldown_reduction_pct = {
 		icon = "cooldown_reduction",
-		cost = 8,
-		group = 3,
-		max_level = 11,
+		cost = 10,
+		group = 4,
+		max_level = 7,
 		special_values = {
-			cooldown_reduction_pct = {4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24}
+			cooldown_reduction_pct = {6, 10, 14, 18, 22, 26, 30}
 		},
 		effect = {
 			modifiers = {
 				modifier_talent_cooldown_reduction_pct = "cooldown_reduction_pct",
 			},
-		}
-	},
-	talent_passive_gold_income = {
-		icon = "gold",
-		cost = 10,
-		group = 5,
-		max_level = 6,
-		special_values = {
-			gold_per_minute = {120, 240, 360, 480, 600, 720}
-		},
-		effect = {
-			unit_keys = {
-				bonus_gold_per_minute = "gold_per_minute",
-			}
 		}
 	},
 	talent_movespeed_pct = {
@@ -225,13 +211,27 @@ CUSTOM_TALENTS_DATA = {
 			},
 		}
 	},
+	talent_passive_gold_income = {
+		icon = "gold",
+		cost = 10,
+		group = 2,
+		max_level = 6,
+		special_values = {
+			gold_per_minute = {400, 800, 1200, 1600, 2000, 2400}
+		},
+		effect = {
+			unit_keys = {
+				bonus_gold_per_minute = "gold_per_minute",
+			}
+		}
+	},
 	talent_passive_experience_income = {
 		icon = "experience",
 		cost = 10,
-		group = 5,
+		group = 2,
 		max_level = 6,
 		special_values = {
-			xp_per_minute = {200, 500, 800, 1100, 1400, 1700}
+			xp_per_minute = {400, 700, 1200, 1600, 2000, 2400}
 		},
 		effect = {
 			unit_keys = {
@@ -257,7 +257,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 5,
 		requirement = "pudge_meat_hook_lua",
 		special_values = {
-			hook_amount = 10
+			hook_amount = 6
 		}
 	},
 	talent_hero_arthas_vsolyanova_bunus_chance = {
@@ -293,6 +293,8 @@ CUSTOM_TALENTS_DATA = {
 		group = 6,
 		requirement = "skeleton_king_reincarnation_arena",
 	},
+	--Tinker - Rearm = Purge
+	
 }
 
 TALENT_GROUP_TO_LEVEL = {

@@ -14,9 +14,12 @@ LINKED_ABILITIES = {
 
 NOT_DAMAGE_REFRLECTABLE_ABILITIES = {
 	freya_pain_reflection = true,
-	item_blade_mail = true,
 	centaur_return = true,
 	stargazer_inverse_field = true,
+	item_blade_mail_arena = true,
+	item_blade_mail_2 = true,
+	item_blade_mail_3 = true,
+	item_sacred_blade_mail = true,
 }
 
 NOT_MULTICASTABLE_ABILITIES = {
@@ -145,7 +148,10 @@ PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_dota_hero_invoker"] = true,
 }
 
-SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {}
+SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
+	["zuus_static_field"] = true,
+	["enigma_midnight_pulse"] = true,
+}
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
 	["freya_pain_reflection"] = true,

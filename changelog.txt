@@ -1,5 +1,4 @@
 TODO LIST:
-	переделать инвайт на 1х1 дуэли
 	Дополнить гайды
 	обезьяны
 	Бладстоун, который за стаки увелич маг урон
@@ -11,9 +10,7 @@ TODO LIST:
 		для всех абилок
 	]]
 	алхимику на новую голду
-	лансер беск иллюзии
 	2 виспа оверчарж
-	кастомная система предмтеов на героев, снимать старе через кв, новые вешать через setparent (чекнуть циа). Менять предметы можно будет в меню загрузки, вместь прешэна 45 секундная задержка.
 Идеи для предметов:
 	Star Blade:
 		Из Fallen Star + Dark Blade + ???
@@ -56,15 +53,22 @@ Angel Arena Black Star - Version 1.4.3:
 ============================================================
 Angel Arena Black Star - Version 1.4.3:
 General:
-	Not selected boss drop now won't be rolled
-	Boss drop selection time reduced by 50%
-	Changed Boss Drop redistribution system (earlier you sometimes could'nt recieve item, even with 100% damage)
-	Added localization for boss drop selection menu
-	Added error log collection service. Now most of script errors will be sent to my server and fixed soon
+	Added error logs collection service. Now most of script errors will be sent to my server and fixed soon
+	Added new items:
+		Blade Mail (I - III)
+		Sacred Blade Mail
+	Small shop changes
+	Boss Drop Voting:
+		Not selected items now won't be rolled
+		Boss drop selection time reduced by 50%
+		Changed item redistribution system (earlier you sometimes could'nt recieve item, even with 100% damage)
+		Added russian localization
 Balance:
 	Base gold for kill: 200 => 150
+	Most of new heroes now has their own attribute values
+	Poseidon:
+		Primary Attribute: Agility => Intelligence
 	Runes:
-		Runes now are breakable
 		Acceleration:
 			Now not multiplies experience from Level Up Shards
 	Items:
@@ -78,9 +82,33 @@ Balance:
 			Spell Damage Amplify: 15 => 12 %
 		Book of the Keeper:
 			Spell Damage Amplify: 15 => 20 %
-	Talens:
-		
+		Titan Fruit & Titanium Bar:
+			Now makes caster attack immune
+		Octarine Core:
+			Cooldown Reduction: 30 => 20 %
+		Refresher Core:
+			Cooldown Reduction: 30 => 25 %
+	Talents:
+		Cooldown Reduction:
+			Reduction: 4 6 8 10 12 14 16 18 20 22 24 => 6 10 14 18 22 26 30 %
+			Cost: 8 => 10
+			Required Level: 15 => 20
+		Hook Splitter:
+			Now throws hooks in front of Pudge (60 degrees)
+			Hook Amount: 10 => 6
+		Gold Income:
+			Required Level: 30 => 15
+			GPM: 120 240 360 480 600 720 => 400 800 1200 1600 2000 2400
+		Experience Income:
+			Required Level: 30 => 15
+			XPM: 200 500 800 1100 1400 1700 => 400 700 1200 1600 2000 2400
 	Abilities:
+		Mirratie - Sixth Sense:
+			Radius: 500 700 900 1100 1300 1500 1700 => 1200
+		Crystal Maiden - Crystal Nova:
+			Ice Wall Duration: 0.5 1.0 1.5 2.0 2.5 3.0 3.5 => 3 3.5 4 4.5 5.5 6 6.5
+		Witch Doctor - Maledict:
+			Now not works no bosses
 		Winter Wyvern - Winter's Curse:
 			Duration: 0.25 4 4.75 5 5.25 5.5 5.75 => 3 3.5 4 4.5 5 5.5 6
 			Damage Reduction: 100 => 40 %
@@ -98,19 +126,32 @@ Balance:
 			Damage: 100 150 200 250 300 350 400 => 100 200 250 300 400 500 600
 		Abaddon - Aphotic Shield:
 			Damage Absorb: 110 150 170 200 250 300 350 => 150 300 450 500 650 700 750
+		Doom - Devour:
+			Stolen Health: 50 60 70 80 90 100 110 => 10 15 20 25 30 35 40 %
 		Poseidon - Trident:
 			Coolodwn: 20 19 18 17 16 15 14 => 120 110 100 90 80 70 60
 			Duration: 10 20 30 40 50 60 70 => 10 15 20 25 30 35 40
 			Cleave Damage: 5 10 15 20 25 30 35 => 10 12 15 20 25 30 35 %
 			Levels Between Upgrades: 10 => 6
-		Doom - Devour:
-			Stolen Health: 50 60 70 80 90 100 110 => 10 15 20 25 30 35 40 %
+		Poseidon - Sea Hole:
+			Cast Range: Global => 1500
+		Poseidon - Dark Whale:
+			Cast Range: Global => 3000
+		Zuus - Static Field:
+			Now is not spell damage amplifiable
+		Enigma - Midnight Pulse:
+			Now is not spell damage amplifiable
 Fixes:
-	All new heroes with custom models now are based on wisp, now they don't have any sounds
+	All new heroes with custom models now are based on Wisp, now they don't have any sounds
 	Game Paused overlay now is hidden in Hero Selection loading menu
-	Probably fixed a bug with disconnected players on duel
 	Heroes with custom models now render status effects as they should
 	Fixed Blood of Midas worked from backpack
+	Fixed modifier icons from items weren't visible
+	Fixed Crystal Maiden - Frostbite not dealt damage
+	Fixed Shinobu - Yumewatari wasn't usable on souls
+	Fixed item purchasing required 1 more gold, than real item cost
+	//Fixed a bug with disconnected players on duel
+	//Fixed courier wasn't controllable after changing team <<<<<<<<
 	//Fixed hero selection screen issues with reconnect during pre game time => needs test
 	
 

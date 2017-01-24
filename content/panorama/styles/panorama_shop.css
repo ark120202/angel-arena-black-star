@@ -25,7 +25,7 @@
 
 #ItembuildsPanel
 {
-	width: 270px;
+	width: 208px;
 	height: 100%;
 	background-color: #000000ee;
 	background-position: -18px -12px;
@@ -77,6 +77,7 @@
 	margin-left: 8px;
 	margin-right: 4px;
 	width: 100%;
+	//text-overflow: shrink;
 }
 
 .ItembuildItemGroupItemRoot
@@ -89,12 +90,12 @@
 
 DropDownMenu.DropDownMenuVisible
 {
-	width: 270px;
+	width: 208px;
 }
 DropDown Label,
 DropDownMenu Label
 {
-	font-size: 17px;
+	font-size: 14px;
 }
 
 .ShopBase_Out
@@ -400,15 +401,6 @@ DropDownMenu Label
 	width: 39px;
 	margin-left: -3px;
 	margin-right: -3px;
-}
-
-.BigItemPanel
-{
-	width: 70.4px;
-	height: width-percentage( 72.7% );
-	border-width: 2px;
-	margin: 5px;
-	border-radius: 0;
 }
 
 #ShowHideItemguidesPanel

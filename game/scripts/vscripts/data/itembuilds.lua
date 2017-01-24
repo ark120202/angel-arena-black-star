@@ -3,6 +3,7 @@ ARENA_ITEMBUILDS = {
 		hero = "npc_dota_hero_abaddon",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "PSmist",
+		patch = "1.4.2",
 		items = {
 			{
 				title = "#DOTA_Item_Build_Starting_Items",
@@ -56,6 +57,7 @@ ARENA_ITEMBUILDS = {
 		hero = "npc_dota_hero_abyssal_underlord",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "PSmist",
+		patch = "1.4.2",
 		items = {
 			{
 				title = "#DOTA_Item_Build_Starting_Items",
@@ -107,6 +109,7 @@ ARENA_ITEMBUILDS = {
 		hero = "npc_dota_hero_alchemist",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "PSmist",
+		patch = "1.4.2",
 		items = {
 			{
 				title = "#DOTA_Item_Build_Starting_Items",
@@ -158,6 +161,7 @@ ARENA_ITEMBUILDS = {
 		hero = "npc_dota_hero_ancient_apparition",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "PSmist",
+		patch = "1.4.2",
 		items = {
 			{
 				title = "#DOTA_Item_Build_Starting_Items",
@@ -209,6 +213,7 @@ ARENA_ITEMBUILDS = {
 		hero = "npc_dota_hero_antimage",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "PSmist",
+		patch = "1.4.2",
 		items = {
 			{
 				title = "#DOTA_Item_Build_Starting_Items",
@@ -261,6 +266,7 @@ ARENA_ITEMBUILDS = {
 		hero = "npc_dota_hero_arc_warden",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "PSmist",
+		patch = "1.4.2",
 		items = {
 			{
 				title = "#DOTA_Item_Build_Starting_Items",
@@ -311,6 +317,7 @@ ARENA_ITEMBUILDS = {
 		hero = "npc_dota_hero_axe",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "PSmist",
+		patch = "1.4.2",
 		items = {
 			{
 				title = "#DOTA_Item_Build_Starting_Items",
@@ -360,6 +367,7 @@ ARENA_ITEMBUILDS = {
 		hero = "npc_dota_hero_bane",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "PSmist",
+		patch = "1.4.2",
 		items = {
 			{
 				title = "#DOTA_Item_Build_Starting_Items",
@@ -412,6 +420,7 @@ ARENA_ITEMBUILDS = {
 		hero = "npc_dota_hero_batrider",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "PSmist",
+		patch = "1.4.2",
 		items = {
 			{
 				title = "#DOTA_Item_Build_Starting_Items",
@@ -467,6 +476,7 @@ ARENA_ITEMBUILDS = {
 		hero = "npc_dota_hero_beastmaster",
 		title = "#DOTA_Item_Build_Title_Arena",
 		author = "PSmist",
+		patch = "1.4.2",
 		items = {
 			{
 				title = "#DOTA_Item_Build_Starting_Items",
@@ -612,7 +622,7 @@ VALVE_ITEMBUILDS = {
 					"item_guardian_greaves",
 					"item_shivas_guard",
 					"item_assault",
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_radiance_3",
 					"item_sheepstick",
 					"item_crimson_guard",
@@ -661,7 +671,7 @@ VALVE_ITEMBUILDS = {
 					"item_radiance_3",
 					"item_assault",
 					"item_vladmir",
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_mjollnir",
 					"item_abyssal_blade",
 					"item_heavens_halberd_arena",
@@ -810,7 +820,7 @@ VALVE_ITEMBUILDS = {
 					"item_sunray_dagon_5_arena",
 					"item_manta_arena",
 					"item_black_king_bar_6",
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_butterfly_arena",
 					"item_greater_crit",
 					"item_monkey_king_bar",
@@ -855,7 +865,7 @@ VALVE_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_heart_arena",
 					"item_pipe",
 					"item_shivas_guard",
@@ -1190,7 +1200,7 @@ VALVE_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_crimson_guard",
 					"item_heavens_halberd_arena",
 					"item_assault",
@@ -1288,7 +1298,7 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
 					"item_pipe",
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_heart_arena",
 					"item_assault_cuirass",
 					"item_heavens_halberd_arena",
@@ -1919,7 +1929,7 @@ VALVE_ITEMBUILDS = {
 					"item_pipe",
 					"item_heart_arena",
 					"item_sheepstick",
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_shivas_guard",
 					"item_blink_arena",
 					"item_mekansm",
@@ -1969,7 +1979,7 @@ VALVE_ITEMBUILDS = {
 					"item_heavens_halberd_arena",
 					"item_assault",
 					"item_shivas_guard",
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_sheepstick",
 					"item_refresher_arena",
 					"item_black_king_bar_6",
@@ -4031,7 +4041,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_phase_boots",
 					"item_magic_wand",
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_tpscroll",
 				}
 			},
@@ -4228,7 +4238,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_ultimate_scepter",
 					"item_veil_of_discord",
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_shivas_guard",
 					"item_black_king_bar_6",
 					"item_heart_arena",
@@ -4367,7 +4377,7 @@ VALVE_ITEMBUILDS = {
 					"item_pipe",
 					"item_sheepstick",
 					"item_heart_arena",
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_heavens_halberd_arena",
 					"item_ultimate_scepter",
 					"item_octarine_core_arena",
@@ -5375,7 +5385,7 @@ VALVE_ITEMBUILDS = {
 					"item_necronomicon_3",
 					"item_assault",
 					"item_veil_of_discord",
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_crimson_guard",
 					"item_solar_crest",
 				}
@@ -5423,7 +5433,7 @@ VALVE_ITEMBUILDS = {
 					"item_invis_sword",
 					"item_heart_arena",
 					"item_sphere",
-					"item_blade_mail",
+					"item_blade_mail_3",
 					"item_three_spirits_blades",
 					"item_abyssal_blade",
 					"item_sheepstick",

@@ -148,7 +148,6 @@ PANORAMA_SHOP_ITEMS = {
 		{
 			"item_hood_of_defiance",
 			"item_vanguard",
-			"item_blade_mail",
 			"item_soul_booster",
 			"item_crimson_guard",
 			"item_lotus_orb",
@@ -159,6 +158,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_hurricane_pike",
 			"item_assault",
 			"item_heart_arena",
+			"item_blade_mail_3",
 			"item_black_king_bar_6",
 		},
 		{
@@ -252,6 +252,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_heavy_war_axe_of_rage_damage",
 			"item_phantom_cuirass",
 			"item_titanium_bar",
+			"item_sacred_blade_mail",
 			"item_demonic_cuirass",
 		},
 		{

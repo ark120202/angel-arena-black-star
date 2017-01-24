@@ -62,6 +62,8 @@
 	"item_recipe_heavens_halberd"	"REMOVE"
 	"item_heavens_halberd"			"REMOVE"
 	"item_bottle"					"REMOVE"
+	"item_recipe_blade_mail"		"REMOVE"
+	"item_blade_mail"				"REMOVE"
 
 
 	"item_dust"
@@ -622,14 +624,6 @@
 		"SecretShop"					"0"
 	}
 	"item_vanguard"
-	{
-		"SecretShop"					"0"
-	}
-	"item_recipe_blade_mail"
-	{
-		"SecretShop"					"0"
-	}
-	"item_blade_mail"
 	{
 		"SecretShop"					"0"
 	}
@@ -5158,6 +5152,7 @@
 				"var_type"	"FIELD_INTEGER"
 				"damage_health_pct"	"4 6 8 10 12 14 16"
 				"LinkedSpecialBonus"	"special_bonus_unique_zeus"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 		}
@@ -6495,6 +6490,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"damage_percent"	"1 1.25 1.75 2.0 2.25 2.75 3.0"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"03"
@@ -11201,7 +11197,6 @@
 
 	"spectre_reality"
 	{
-		"MaxLevel"	"1"
 		"AbilityCastPoint"	"0"
 		"AbilityCooldown"	"0"
 	}

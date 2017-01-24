@@ -274,11 +274,11 @@ function ShowPrecache() {
 						var heroData = tabsData[tabkey].Heroes[herokey]
 						if (heroData.heroKey == SelectedPlayerHeroData.hero) {
 							if (heroData.custom_scene_camera != null)
-								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel style=\"width: 100%; height: 100%; opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');\" map=\"custom_scenes_map\" camera=\"" + heroData.custom_scene_camera + "\"/>");
+								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel antialias='true' light='global_light' renderdeferred='false' style='width: 100%; height: 100%; opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' map='custom_scenes_map' camera='" + heroData.custom_scene_camera + "'/>");
 							else if (heroData.custom_scene_image != null)
-								PlayerInTeamPanel.BCreateChildren("<Image style=\"opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');\" src=\"" + heroData.custom_scene_image + "\"/>");
+								PlayerInTeamPanel.BCreateChildren("<Image style='opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' src='" + heroData.custom_scene_image + "'/>");
 							else
-								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel style=\"width: 100%; height: 100%; opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');\" unit=\"" + heroData.model + "\"/>");
+								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel antialias='true' light='global_light' renderdeferred='false' style='width: 100%; height: 100%; opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' unit='" + heroData.model + "'/>");
 							break hero_tabs_iter
 						}
 					}

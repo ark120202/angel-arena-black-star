@@ -35,7 +35,6 @@ if IsServer() then
 			local ability = self:GetAbility()
 			if IsValidEntity(target) and target:IsAlive() then
 				target:EmitSound("Hero_Warlock.FatalBondsDamage")
-				local hp = target:GetHealth()
 				local dmg = keys.damage * ability:GetLevelSpecialValueFor("damage_share_percentage", ability:GetLevel() - 1) * 0.01
 				for _,subv in ipairs(self.FatalBondsBoundUnits) do
 					if subv and not subv:IsNull() and subv ~= target and not subv:IsInvulnerable() then
@@ -47,7 +46,7 @@ if IsServer() then
 							damage = dmg,
 							damage_type = DAMAGE_TYPE_PURE,
 							damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-							ability = self:GetAbility()
+							ability = ability
 						})
 					end
 				end

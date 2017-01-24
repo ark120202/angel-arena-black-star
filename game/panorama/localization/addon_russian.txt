@@ -160,7 +160,7 @@
 		"ability_shop_purchased_only"							"Только приобретенные способности"
 		"ability_shop_search_placeholder"						"Название способности или героя..."
 
-		"holdout_timer_label"									" волна:"
+		"DOTA_Item_Build_Altenative_Starting_Items"				"Альт. нач. предметы"
 
 		"DOTA_Item_Build_Title_Valve"							"Рекомендуемые предметы"
 		"DOTA_Item_Build_Title_Arena"							"Предметы из AABS"

@@ -72,9 +72,9 @@ function UpdatePanoramaHUD() {
 			GoldLabel.text = goldTable[playerowner]
 		}
 	}
-	var apw = FindDotaHudElement("abilities").GetParent().actuallayoutwidth;
+	/*var apw = FindDotaHudElement("AbilitiesAndStatBranch").GetParent().actuallayoutwidth;
 	if (!isNaN(apw) && apw > 0)
-		FindDotaHudElement("HUDSkinAbilityContainerBG").style.width = ((FindDotaHudElement("abilities").actuallayoutwidth + 16) / apw * 100) + "%";
+		FindDotaHudElement("HUDSkinAbilityContainerBG").style.width = ((FindDotaHudElement("AbilitiesAndStatBranch").actuallayoutwidth + 16) / apw * 100) + "%";*/
 	var sw = Game.GetScreenWidth()
 	var sh = Game.GetScreenHeight()
 	var minimap = FindDotaHudElement("minimap_block");
@@ -111,11 +111,10 @@ function HookPanoramaPanels() {
 	FindDotaHudElement("HUDSkinMinimap").visible = false;
 	FindDotaHudElement("combat_events").visible = false;
 	FindDotaHudElement("ChatEmoticonButton").visible = false;
-
+	FindDotaHudElement("StatBranchDrawer").visible = false;
 	FindDotaHudElement("CourierHasteButton").visible = false;
 	FindDotaHudElement("CourierUpgradeButton").visible = false;
 	FindDotaHudElement("DeliverItemsButton").style.horizontalAlign = "right"
-
 
 	FindDotaHudElement("LevelLabel").style.width = "100%";
 	FindDotaHudElement("stash").style.marginBottom = "47px";
@@ -170,7 +169,7 @@ function HookPanoramaPanels() {
 		"transition-timing-function": "ease-in-out"
 	})
 
-	var stats_region = FindDotaHudElement("stats")
+	var stats_region = FindDotaHudElement("stats_tooltip_region")
 	stats_region.SetPanelEvent("onmouseover", function() {
 		$.DispatchEvent("DOTAHUDShowDamageArmorTooltip", stats_region)
 		var _unit = Players.GetLocalPlayerPortraitUnit()
@@ -178,11 +177,11 @@ function HookPanoramaPanels() {
 		var DOTAHUDDamageArmorTooltip = FindDotaHudElement("DOTAHUDDamageArmorTooltip")
 		if (DOTAHUDDamageArmorTooltip != null && custom_entity_value != null) {
 			if (custom_entity_value.AttributeStrengthGain != null)
-				DOTAHUDDamageArmorTooltip.SetDialogVariable("strength_per_level", custom_entity_value.AttributeStrengthGain)
+				DOTAHUDDamageArmorTooltip.SetDialogVariable("strength_per_level", custom_entity_value.AttributeStrengthGain.toFixed(1))
 			if (custom_entity_value.AttributeAgilityGain != null)
-				DOTAHUDDamageArmorTooltip.SetDialogVariable("agility_per_level", custom_entity_value.AttributeAgilityGain)
+				DOTAHUDDamageArmorTooltip.SetDialogVariable("agility_per_level", custom_entity_value.AttributeAgilityGain.toFixed(1))
 			if (custom_entity_value.AttributeIntelligenceGain != null)
-				DOTAHUDDamageArmorTooltip.SetDialogVariable("intelligence_per_level", custom_entity_value.AttributeIntelligenceGain)
+				DOTAHUDDamageArmorTooltip.SetDialogVariable("intelligence_per_level", custom_entity_value.AttributeIntelligenceGain.toFixed(1))
 		}
 	})
 	stats_region.SetPanelEvent("onmouseout", function() {

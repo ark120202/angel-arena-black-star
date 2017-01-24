@@ -304,9 +304,3 @@ function DynamicWearables:Init()
 		end
 	end)
 end
-
-
-if IsInToolsMode() and PlayerResource then
-	local testHero = PlayerResource:GetSelectedHeroEntity(0)
-	testHero:EquipItemsFromPlayerSelectionOrDefault()
-end

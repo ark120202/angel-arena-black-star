@@ -1108,8 +1108,7 @@ function FindCourier(team)
 end
 
 function GetNotScaledDamage(damage, unit)
-	local amplify = unit:GetSpellDamageAmplify() * 0.01
-	return damage-(damage*(1-amplify))
+	return math.floor(damage/(1 + (unit:GetIntellect() / 16) / 100) + 0.5)
 end
 
 function GetSpellDamageAmplify(unit)
