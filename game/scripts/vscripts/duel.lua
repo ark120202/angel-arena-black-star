@@ -188,7 +188,7 @@ function Duel:GetWinner()
 end
 
 function Duel:SetUpVisitor(unit)
-	unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
+	unit.ArenaBeforeTpLocation = unit.ArenaBeforeTpLocation or (unit:GetUnitName() == FORCE_PICKED_HERO and FindFountain(unit:GetTeamNumber()):GetAbsOrigin() or unit:GetAbsOrigin())
 	Duel:FillPreduelUnitData(unit)
 	local team = unit:GetTeamNumber()
 	Duel.EntIndexer[team] = Entities:FindByName(Duel.EntIndexer[team], "target_mark_arena_viewers_team" .. team)

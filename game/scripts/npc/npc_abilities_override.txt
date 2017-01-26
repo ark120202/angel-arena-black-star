@@ -6183,7 +6183,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_damage"	"30 60 90 120 150 180 210"
+				"bonus_damage"	"30 50 70 90 110 130 150"
 			}
 
 			"04"
@@ -10686,7 +10686,7 @@
 		"AbilityCastRange"	"700"
 		"AbilityCastPoint"	"0.2"
 		"AbilityCooldown"	"3.0"
-		"AbilityManaCost"	"20 20 20 20 20 20 20"
+		"AbilityManaCost"	"20"
 		"LevelsBetweenUpgrades"	"4"
 		"AbilitySpecial"
 		{

@@ -1210,7 +1210,7 @@
 				"IsBuff"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 				"AllowIllusionDuplicate"	"1"
-				"TextureName"		"arena/shard_ultimate_scepter"
+				"TextureName"		"item_arena/shard_ultimate_scepter"
 		
 				"ThinkInterval"  "0.1"
 				"OnIntervalThink"
@@ -1396,7 +1396,7 @@
 				"Duration"			"%duration"
 				"StatusEffectName"	"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone.vpcf"
 				"StatusEffectPriority"	"7"
-				"TextureName"		"arena/casino_drug_pill1"
+				"TextureName"		"item_arena/casino_drug_pill1"
 
 				"Properties"
 				{
@@ -1412,7 +1412,7 @@
 				"IsHidden"			"0"
 				"IsPurgable"		"0"
 				"IsDebuff"			"1"
-				"TextureName"		"arena/casino_drug_pill1"
+				"TextureName"		"item_arena/casino_drug_pill1"
 
 				"ThinkInterval"  "%think_interval"
 				"OnIntervalThink"
@@ -1546,7 +1546,7 @@
 				"Duration"			"%duration"
 				"StatusEffectName"	"particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
 				"StatusEffectPriority"	"8"
-				"TextureName"		"arena/casino_drug_pill2"
+				"TextureName"		"item_arena/casino_drug_pill2"
 
 				"Properties"
 				{
@@ -1564,7 +1564,7 @@
 				"IsHidden"			"0"
 				"IsPurgable"		"0"
 				"IsDebuff"			"1"
-				"TextureName"		"arena/casino_drug_pill2"
+				"TextureName"		"item_arena/casino_drug_pill2"
 
 				"ThinkInterval"  "%think_interval"
 				"OnIntervalThink"
@@ -1715,7 +1715,7 @@
 				"Duration"			"%duration"
 				"StatusEffectName"	"particles/econ/items/effigies/status_fx_effigies/status_effect_statue_compendium_2014_dire.vpcf"
 				"StatusEffectPriority"	"9"
-				"TextureName"		"arena/casino_drug_pill3"
+				"TextureName"		"item_arena/casino_drug_pill3"
 
 				"Properties"
 				{
@@ -1735,7 +1735,7 @@
 				"IsHidden"			"0"
 				"IsPurgable"		"0"
 				"IsDebuff"			"1"
-				"TextureName"		"arena/casino_drug_pill3"
+				"TextureName"		"item_arena/casino_drug_pill3"
 
 				"ThinkInterval"  "%think_interval"
 				"OnIntervalThink"
@@ -5066,7 +5066,7 @@
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40.0"
+		"AbilityCooldown"				"32"
 		"AbilityManaCost"				"75"
 		"AbilityCastPoint"              "0"
 		"AbilitySharedCooldown"			"item_sheepstick;item_auto_sheepstick;item_silver_edge"
@@ -7466,7 +7466,7 @@
 				"Passive"			"0"
 				"IsHidden"			"0"
 				"IsBuff"			"1"
-				"TextureName"		"arena/titanium_fruit"
+				"TextureName"		"item_arena/titanium_fruit"
 
 				"OnCreated"
 				{

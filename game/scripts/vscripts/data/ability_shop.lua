@@ -9,7 +9,8 @@ ABILITY_SHOP_BANNED = {
 	["bounty_hunter_jinada"] = { "tiny_grow", "earthshaker_enchant_totem", "drow_ranger_marksmanship", },
 	["phantom_lancer_doppelganger_arena"] = { "stegius_desolating_touch", "arthas_vsolyanova", },
 	["phantom_lancer_juxtapose_arena"] = { "stegius_desolating_touch", "arthas_vsolyanova", },
-	["obsidian_destroyer_arcane_orb"] = { "earthshaker_aftershock", "zuus_static_field", "obsidian_destroyer_essence_aura", }
+	["obsidian_destroyer_arcane_orb"] = { "earthshaker_aftershock", "zuus_static_field", "obsidian_destroyer_essence_aura", },
+	["lina_fiery_soul"] = { "spectre_reality", },
 }
 
 ABILITY_SHOP_BANNED_GROUPS = {

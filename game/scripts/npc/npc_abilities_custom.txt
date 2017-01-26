@@ -15358,4 +15358,186 @@
 			}
 		}
 	}
+
+	"saber_mana_burst"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"arena/saber_mana_burst"
+		"ScriptFile"					"heroes/hero_saber/mana_burst.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"2 1.75 1.5 1.25 1 0.75 0.5"
+		"MaxLevel" 						"7"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_wasted_pct"	"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_mana"	"0.2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"armor_per_mana"	"0.1"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"8 8.5 9 9.5 10 10.5 11"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"weakness_mana_pct"	"10"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"weakness_disarmor"	"-60 -50 -40 -30 -25 -20 -15"
+			}
+		}
+	}
+
+	"saber_instinct"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"arena/saber_instinct"
+		"ScriptFile"					"heroes/hero_saber/instinct.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel" 						"7"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ranged_evasion_pct"	"20 25 30 35 40 45 50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"melee_block_chance"	"100"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"melee_damage_pct"	"20 25 30 35 40 45 50"
+			}
+		}
+	}
+
+	"saber_invisible_air"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"arena/saber_invisible_air"
+		"ScriptFile"					"heroes/hero_saber/invisible_air.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"MaxLevel" 						"7"
+		"AOERadius"						"%aoe_radius"
+		"AbilityCastRange"				"200"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"100 200 300 450 600 800 1000"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_second"	"5 15 30 50 70 100 120"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_max"		"12000"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aoe_radius"		"300"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"2 2.5 3 3.5 4 4.5 5"
+			}
+		}
+	}
+
+	"saber_excalibur"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"arena/saber_excalibur"
+		"ScriptFile"					"heroes/hero_saber/excalibur.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"MaxLevel" 						"7"
+		"AOERadius"						"%aoe_radius"
+		"AbilityCastRange"				"%length"
+		"AbilityCastPoint"				"0.2"
+		"AbilityChannelTime"			"%channel_time"
+		"AbilityCooldown"				"300 290 280 270 260 250 240"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_pct"			"50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_mana"	"11"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"channel_time"		"0.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"300"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"length"			"1000"
+			}
+		}
+	}
+
+	"saber_avalon"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"arena/saber_avalon"
+		"ScriptFile"					"heroes/hero_saber/avalon.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel" 						"7"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"100 90 85 80 75 70 65"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_health_regen_max"	"10 16 24 32 48 96 148"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_health_regen_min"	"0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"3 3.25 3.5 3.75 4 4.25 4.5"
+			}
+		}
+	}
 }

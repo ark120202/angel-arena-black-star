@@ -41,15 +41,29 @@ TODO LIST:
 
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_2151]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/f076879598870c3318bba8954408e570]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/f076879598870c3318bba8954408e570]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/f076879598870c3318bba8954408e570
+[url=https://gist.github.com/ark120202/ca0a60e516c0ae6729f3ac9c0d15834f]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/ca0a60e516c0ae6729f3ac9c0d15834f]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/ca0a60e516c0ae6729f3ac9c0d15834f
 ============================================================
 Angel Arena Black Star - Версия 1.4.3:
-
+Добавлены новые предметы: Blade Mail (I - III), Sacred Blade Mail
+Некоторые изменения в системе голосования за предметы с боссов
+Все герои с новыми моделями теперь основанны на Wisp, но пока у них нет звуков. Все они также теперь имеют другие значения аттрибутов
+Усилены: Book of the Keeper, Titan Fruit, Titanium Bar, Mirratie - Sixth Sense, Crystal Maiden - Crystal Nova, Winter Wyvern - Winter's Curse, Zen Gehraz - Mystic Twister, Abaddon - Death Coil, Abaddon - Aphotic Shield
+Ослаблены: Acceleration, Edge of Vyse, Angel Wings, Octarine Core, Refresher Core, Witch Doctor - Maledict, Stegius - Desolating Touch, Stegius - Brightness of Desolate, Sniper - Shrapnel, Doom - Devour, Poseidon - Sea Hole, Poseidon - Dark Whale, Zuus - Static Field, Enigma - Midnight Pulse
+Изменены: Radiance, Poseidon - Trident
+Исправлен баг с появлением отключенных игроков на дуэлях и некоторые другие ошибки
+Добавлена система сбора ошибок кода игры. Теперь при возникновении таких ошибок они будут отправлены на мой сервер и вскоре исправлены
 ============================================================
 Angel Arena Black Star - Version 1.4.3:
-
+Added new items: Blade Mail (I - III), Sacred Blade Mail
+Changes in Boss Drop Voting
+All heroes with custom models now are based on Wisp, but now they don't have any sounds; Also all of them now has custom attribute values
+Buffed: Book of the Keeper, Titan Fruit, Titanium Bar, Mirratie - Sixth Sense, Crystal Maiden - Crystal Nova, Winter Wyvern - Winter's Curse, Zen Gehraz - Mystic Twister, Abaddon - Death Coil, Abaddon - Aphotic Shield
+Nerfed: Acceleration, Edge of Vyse, Angel Wings, Octarine Core, Refresher Core, Witch Doctor - Maledict, Stegius - Desolating Touch, Stegius - Brightness of Desolate, Sniper - Shrapnel, Doom - Devour, Poseidon - Sea Hole, Poseidon - Dark Whale, Zuus - Static Field, Enigma - Midnight Pulse
+Changed: Radiance, Poseidon - Trident
+Fixed a bug with disconnected players on duel and some other bugs
+Added script errors collection system. All script errors now will be sent to my server and fixed soon
 ============================================================
 Angel Arena Black Star - Version 1.4.3:
 General:
@@ -77,7 +91,7 @@ Balance:
 			Removed UAM from description of Frozen Radiance
 		Edge of Vyse:
 			Duration: 5 => 3
-			Cooldown: 25 => 40
+			Cooldown: 25 => 32
 		Angel Wings:
 			Spell Damage Amplify: 15 => 12 %
 		Book of the Keeper:
@@ -103,12 +117,14 @@ Balance:
 			Required Level: 30 => 15
 			XPM: 200 500 800 1100 1400 1700 => 400 700 1200 1600 2000 2400
 	Abilities:
+		Ability Shop: Lina - Fiery Soul now can't be purchased with Spectre - Reality
 		Mirratie - Sixth Sense:
 			Radius: 500 700 900 1100 1300 1500 1700 => 1200
 		Crystal Maiden - Crystal Nova:
 			Ice Wall Duration: 0.5 1.0 1.5 2.0 2.5 3.0 3.5 => 3 3.5 4 4.5 5.5 6 6.5
 		Witch Doctor - Maledict:
 			Now not works no bosses
+			Bonus Damage: 30 60 90 120 150 180 210 => 30 50 70 90 110 130 150 %
 		Winter Wyvern - Winter's Curse:
 			Duration: 0.25 4 4.75 5 5.25 5.5 5.75 => 3 3.5 4 4.5 5 5.5 6
 			Damage Reduction: 100 => 40 %
@@ -142,7 +158,7 @@ Balance:
 		Enigma - Midnight Pulse:
 			Now is not spell damage amplifiable
 Fixes:
-	All new heroes with custom models now are based on Wisp, now they don't have any sounds
+	All new heroes with custom models now are based on Wisp, but now they don't have any sounds
 	Game Paused overlay now is hidden in Hero Selection loading menu
 	Heroes with custom models now render status effects as they should
 	Fixed Blood of Midas worked from backpack
@@ -150,9 +166,9 @@ Fixes:
 	Fixed Crystal Maiden - Frostbite not dealt damage
 	Fixed Shinobu - Yumewatari wasn't usable on souls
 	Fixed item purchasing required 1 more gold, than real item cost
-	//Fixed a bug with disconnected players on duel
-	//Fixed courier wasn't controllable after changing team <<<<<<<<
-	//Fixed hero selection screen issues with reconnect during pre game time => needs test
+	Fixed a bug with disconnected players on duel (but now bots can't be taken for duel)
+	Fixed courier wasn't controllable after changing team
+	Fixed hero selection screen issues with reconnect during pre game time
 	
 
 <<+===========================================================================================================

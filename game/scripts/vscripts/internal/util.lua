@@ -1442,3 +1442,9 @@ function DebugCallFunction(fun)
 		Timers:HandleEventError(nil, nil, nextCall)
 	end
 end
+
+--TODO
+--[[function CDota_BaseNPC:AddNewModifierShared(hCaster, hAbility, pszScriptName, hModifierTable)
+	CustomNetTables:SetTableValue("shared_modifiers", self:GetEntityIndex() .. "_" .. pszScriptName, hModifierTable)
+	return self:AddNewModifier(hCaster, hAbility, pszScriptName, hModifierTable)
+end]]
