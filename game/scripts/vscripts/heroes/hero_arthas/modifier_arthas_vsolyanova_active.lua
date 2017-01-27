@@ -50,7 +50,7 @@ if IsServer() then
 				target:EmitSound("Hero_SkeletonKing.CriticalStrike")
 				local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_CUSTOMORIGIN, attacker)
 				ParticleManager:SetParticleControlEnt(pfx, 1, target, PATTACH_POINT_FOLLOW, "follow_origin", target:GetAbsOrigin(), true)
-				TrueKill(attacker, attacker, target)
+				target:TrueKill(ability, attacker)
 				if target:IsRealHero() then
 					CreateGlobalParticle("particles/arena/units/heroes/hero_skeletonking/alternative_vsolyanova_screen.vpcf", function(particle)
 						Timers:CreateTimer(duration, function()

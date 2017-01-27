@@ -36,7 +36,8 @@ function SpellSteal(keys)
 	caster.rubick_spell_steal = {
 		model = caster:GetModelName(),
 		model_scale = caster:GetModelScale(),
-		attack_capability = caster:GetAttackCapability()
+		attack_capability = caster:GetAttackCapability(),
+		primary_attribute = caster:GetPrimaryAttribute(),
 	}
 	ability:SetHidden(true)
 	for i = 0, caster:GetAbilityCount() - 1 do
@@ -49,10 +50,10 @@ function SpellSteal(keys)
 	caster:SetModel(model)
 	caster:SetOriginalModel(model)
 	caster:SetModelScale(target:GetModelScale())
-
 	caster:SetAttackCapability(target:GetAttackCapability())
 	caster:SetRangedProjectileName(target:GetKeyValue("ProjectileModel"))
 	caster:AddNewModifier(caster, ability, "modifier_set_attack_range", {AttackRange = target:GetAttackRange()})
+	caster:SetPrimaryAttribute(target:GetPrimaryAttribute())
 
 	caster:CalculateStatBonus()
 	Timers:CreateTimer(0.03, function()
@@ -83,6 +84,7 @@ function RemoveSpell(keys)
 	caster:SetAttackCapability(caster.rubick_spell_steal.attack_capability)
 	caster:SetRangedProjectileName(caster:GetKeyValue("ProjectileModel"))
 	caster:RemoveModifierByNameAndCaster("modifier_set_attack_range", caster)
+	caster:SetPrimaryAttribute(caster.rubick_spell_steal.primary_attribute)
 	caster.rubick_spell_steal = nil
 	caster:ResetAbilityPoints()
 end

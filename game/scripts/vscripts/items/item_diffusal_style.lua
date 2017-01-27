@@ -66,7 +66,7 @@ function OnAttackLanded(keys)
 			target:EmitSound("DOTA_Item.DiffusalBlade.Target")
 		end
 		if target:IsSummoned() then
-			TrueKill(caster, ability, target)
+			target:TrueKill(ability, caster)
 		else
 			target:Purge(true, false, false, false, false)
 			if not target:IsMagicImmune() and not target:IsInvulnerable() then

@@ -46,7 +46,6 @@ if IsServer() then
 	function modifier_item_blade_mail_arena_active:OnTakeDamage(keys)
 		local unit = self:GetParent()
 		local inflictor = keys.inflictor
-		PrintTable(keys)
 		if unit == keys.unit and unit:IsAlive() and (not IsValidEntity(inflictor) or not NOT_DAMAGE_REFRLECTABLE_ABILITIES[inflictor:GetAbilityName()]) then
 			local ability = self:GetAbility()
 			keys.attacker:EmitSound("DOTA_Item.BladeMail.Damage")

@@ -14,30 +14,32 @@ function DoubleAttack(keys)
 			end
 		end
 	end
-	if PreformAbilityPrecastActions(caster, ability) then
+	if PreformAbilityPrecastActions(caster, ability) and (not IsRangedUnit(caster) or not (caster.AttackFuncs ~= nil and caster.AttackFuncs.bNoDoubleAttackMelee)) then
 		Timers:CreateTimer(ability:GetAbilitySpecial("attack_delay"), function()
-			local can = true
-			if not IsRangedUnit(caster) and caster.AttackFuncs and caster.AttackFuncs.bNoDoubleAttackMelee ~= nil then
-				can = not caster.AttackFuncs.bNoDoubleAttackMelee
-			end
-			if can and IsValidEntity(target) then
-				if not IsRangedUnit(caster) then
-					PerformGlobalAttack(caster, target, true, true, true, true, true, {bNoDoubleAttackMelee = true})
+			if IsValidEntity(caster) then
+				local can = true
+				if not IsRangedUnit(caster) and caster.AttackFuncs and caster.AttackFuncs.bNoDoubleAttackMelee ~= nil then
+					can = not caster.AttackFuncs.bNoDoubleAttackMelee
 				end
-				if not target:IsMagicImmune() then
-					ability:ApplyDataDrivenModifier(caster, target, keys.modifier, nil)
-				end
-				if keys.Damage then
-					ApplyDamage({
-						victim = target,
-						attacker = caster,
-						damage = keys.Damage,
-						damage_type = ability:GetAbilityDamageType(),
-						ability = ability
-					})
-				end
-				if keys.TargetSound then
-					target:EmitSound(keys.TargetSound)
+				if can and IsValidEntity(target) then
+					if not IsRangedUnit(caster) then
+						PerformGlobalAttack(caster, target, true, true, true, true, true, false, true, {bNoDoubleAttackMelee = true})
+					end
+					if not target:IsMagicImmune() then
+						ability:ApplyDataDrivenModifier(caster, target, keys.modifier, nil)
+					end
+					if keys.Damage then
+						ApplyDamage({
+							victim = target,
+							attacker = caster,
+							damage = keys.Damage,
+							damage_type = ability:GetAbilityDamageType(),
+							ability = ability
+						})
+					end
+					if keys.TargetSound then
+						target:EmitSound(keys.TargetSound)
+					end
 				end
 			end
 		end)

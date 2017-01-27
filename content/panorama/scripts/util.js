@@ -200,14 +200,21 @@ function getRandomInt(min, max) {
 
 function GetDotaHud() {
 	var p = $.GetContextPanel()
-	try {
+	while (true) {
+		var parent = p.GetParent()
+		if (parent == null)
+			return p
+		else
+			p = parent
+	}
+	/*try {
 		while (true) {
 			if (p.id === "Hud")
 				return p
 			else
 				p = p.GetParent()
 		}
-	} catch (e) {}
+	} catch (e) {}*/
 }
 
 function GetSteamID(pid, type) {
@@ -280,6 +287,5 @@ String.prototype.encodeHTML = function() {
 function FindDotaHudElement(id) {
 	return hud.FindChildTraverse(id)
 }
-
 
 var hud = GetDotaHud();

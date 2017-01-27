@@ -36,9 +36,10 @@ function ManaBreak(keys)
 						attacker = caster,
 						victim = target,
 						damage_type = DAMAGE_TYPE_PURE,
+						damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 						ability = ability,
 					})
-					if not target:HasModifier("modifier_antimage_mana_break_arena_stun_cooldown") then
+					if not caster:IsIllusion() and not target:HasModifier("modifier_antimage_mana_break_arena_stun_cooldown") then
 						target:AddNewModifier(caster, ability, "modifier_stunned", {duration = ability:GetLevelSpecialValueFor("nomana_stun_duration", level)})
 						ability:ApplyDataDrivenModifier(caster, target, "modifier_antimage_mana_break_arena_stun_cooldown", nil)
 					end

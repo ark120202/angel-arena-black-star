@@ -46,7 +46,16 @@ function modifier_item_radiance_lua:IsHidden()
 end
 
 if IsServer() then
+	function modifier_item_radiance_lua:OnDestroy()
+		local ability = self:GetAbility()
+		if IsValidEntity(ability) and ability.pfx then
+			ParticleManager:DestroyParticle(ability.pfx, false)
+			ability.pfx = nil
+		end
+	end
 	function modifier_item_radiance_lua:OnCreated()
+		local ability = self:GetAbility()
+		ability.pfx = ParticleManager:CreateParticle(ability.particle_owner, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		self:StartIntervalThink(0.1)
 	end
 

@@ -55,7 +55,7 @@ function ThinkScepter(keys)
 		local target = keys.target
 		local units = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("scepter_radius_scepter", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
 		if #units > 0 then
-			PerformGlobalAttack(caster, units[RandomInt(1, #units)], true, true, true, false, true)
+			PerformGlobalAttack(caster, units[RandomInt(1, #units)], true, true, true, false, true, false, false)
 		end
 	end
 end

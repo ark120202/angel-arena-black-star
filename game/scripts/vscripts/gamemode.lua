@@ -136,7 +136,7 @@ end
 function GameMode:OnHeroInGame(hero)
 	DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 	Timers:CreateTimer(function()
-		if IsValidEntity(hero) and not hero:HasModifier("modifier_arc_warden_tempest_double") and hero:IsRealHero() then
+		if IsValidEntity(hero) and hero:IsTrueHero() then
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
 				local pid = hero:GetPlayerID()
 				local tn = hero:GetTeamNumber()

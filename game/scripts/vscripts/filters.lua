@@ -30,14 +30,14 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		return false
 	end
 
-	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability and not units[1]:IsIllusion() and not units[1]:HasModifier("modifier_arc_warden_tempest_double") then
+	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability and not units[1]:IsIllusion() and not units[1]:IsTempestDouble() then
 		local cost = ability:GetCost()
 		if GameRules:GetGameTime() - ability:GetPurchaseTime() > 10 then
 			cost = cost / 2
 		end
 		if abilityname == "item_pocket_riki" then
 			cost = Kills:GetGoldForKill(ability.RikiContainer)
-			TrueKill(units[1], ability, ability.RikiContainer)
+			ability.RikiContainer:TrueKill(ability, units[1])
 			Kills:ClearStreak(ability.RikiContainer:GetPlayerID())
 			units[1]:RemoveItem(ability)
 			units[1]:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")

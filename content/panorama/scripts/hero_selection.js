@@ -352,4 +352,6 @@ function UpdatePrecacheProgress(t) {
 	$.GetContextPanel().SetHasClass("CustomSelectionBackground", bglist != null)
 	if (bglist)
 		$("#HeroSelectionCustomBackground").SetImage(bglist[Math.floor(Math.random() * bglist.length)]);
+	var lang = $.Language()
+		//$("#AdsBanner").visible = lang == "russian" || lang == "ukrainian"
 })();

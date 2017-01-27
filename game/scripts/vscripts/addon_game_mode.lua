@@ -55,6 +55,8 @@ function Precache( context )
 		"particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf",
 		"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf",
 		"particles/arena/items_fx/lotus_sphere_buff.vpcf",
+		"particles/econ/events/ti6/radiance_owner_ti6.vpcf",
+		"particles/arena/items_fx/radiance_frozen_owner.vpcf",
 
 		"particles/arena/generic_gameplay/rune_tripledamage.vpcf",
 		"particles/arena/generic_gameplay/rune_tripledamage_owner.vpcf",

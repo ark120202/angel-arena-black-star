@@ -496,6 +496,10 @@ function TrueKill(killer, ability, target)
 	target.IsMarkedForTrueKill = false
 end
 
+function CDOTA_BaseNPC:TrueKill(ability, killer)
+	TrueKill(killer, ability, self)
+end
+
 function table.count(inputTable)
 	local counter = 0
 	for _,_ in pairs(inputTable) do
@@ -605,9 +609,9 @@ end
 
 function PreformAbilityPrecastActions(unit, ability)
 	if ability:IsCooldownReady() and ability:IsOwnersManaEnough() then
-		--ability:PayManaCost()
-		--ability:StartCooldown(GetAbilityCooldown(unit, ability))
-		ability:UseResources(true, false, true)
+		ability:PayManaCost()
+		ability:StartCooldown(GetAbilityCooldown(unit, ability))
+		--ability:UseResources(true, true, true) -- not works with items?
 		return true
 	end
 	return false
@@ -859,20 +863,20 @@ function table.findIndex(t, value)
 	return values
 end
 
-function PerformGlobalAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, AttackFuncs)
+function PerformGlobalAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, bFakeAttack, bNeverMiss, AttackFuncs)
 	local abs = unit:GetAbsOrigin()
 	unit:SetAbsOrigin(hTarget:GetAbsOrigin())
-	SafePerformAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, AttackFuncs)
+	SafePerformAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, bFakeAttack, bNeverMiss, AttackFuncs)
 	unit:SetAbsOrigin(abs)
 end
 
-function SafePerformAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, AttackFuncs)
+function SafePerformAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, bFakeAttack, bNeverMiss, AttackFuncs)
 	--bNoSplashesMelee, bNoSplashesRanged, bNoDoubleAttackMelee, bNoDoubleAttackRanged
 	if AttackFuncs then
 		if not unit.AttackFuncs then unit.AttackFuncs = {} end
 		table.merge(unit.AttackFuncs, AttackFuncs)
 	end
-	unit:PerformAttack(hTarget,bUseCastAttackOrb,bProcessProcs,bSkipCooldown,bIgnoreInvis,bUseProjectile)
+	unit:PerformAttack(hTarget,bUseCastAttackOrb,bProcessProcs,bSkipCooldown,bIgnoreInvis,bUseProjectile,bFakeAttack,bNeverMiss)
 	unit.AttackFuncs = nil
 end
 
@@ -1333,7 +1337,7 @@ function IsInBox(point, point1, point2)
 end
 
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
-	local time = (5 + self:GetLevel() * 0.2) + (self.RespawnTimeModifier or 0)
+	local time = (5 + self:GetLevel() * 0.1) + (self.RespawnTimeModifier or 0)
 	if self.talent_keys and self.talent_keys.respawn_time_reduction then
 		time = time + self.talent_keys.respawn_time_reduction
 	end
@@ -1407,17 +1411,6 @@ function CDOTA_BaseNPC:HasModelChanged()
 	return false
 end
 
---[[
-
-	
-	
-	
-	
-	
-	
-	
-
-]]
 function GetConnectionState(pid)
 	if DebugConnectionStates then
 		local map = {
@@ -1431,7 +1424,7 @@ function GetConnectionState(pid)
 		}
 		CPrint(pid, map[PlayerResource:GetConnectionState(pid)])
 	end
-	return IsInToolsMode() and 2 or PlayerResource:GetConnectionState(pid)
+	return PlayerResource:IsFakeClient(pid) and DOTA_CONNECTION_STATE_CONNECTED or PlayerResource:GetConnectionState(pid)
 end
 
 function DebugCallFunction(fun)
@@ -1442,9 +1435,24 @@ function DebugCallFunction(fun)
 		Timers:HandleEventError(nil, nil, nextCall)
 	end
 end
+function CDOTA_BaseNPC:FindClearSpaceForUnitAndSetCamera(position)
+	self:Stop()
+	PlayerResource:SetCameraTarget(self:GetPlayerOwnerID(), self)
+	FindClearSpaceForUnit(self, position, true)
+	Timers:CreateTimer(0.1, function()
+		if IsValidEntity(self) then
+			PlayerResource:SetCameraTarget(self:GetPlayerOwnerID(), nil)
+			self:Stop()
+		end
+	end)
+end
+
+function CDOTA_BaseNPC:IsTrueHero()
+	return self:IsRealHero() and not self:IsTempestDouble() and not self:IsWukongsSummon()
+end
 
 --TODO
---[[function CDota_BaseNPC:AddNewModifierShared(hCaster, hAbility, pszScriptName, hModifierTable)
+--[[function CDOTA_BaseNPC:AddNewModifierShared(hCaster, hAbility, pszScriptName, hModifierTable)
 	CustomNetTables:SetTableValue("shared_modifiers", self:GetEntityIndex() .. "_" .. pszScriptName, hModifierTable)
 	return self:AddNewModifier(hCaster, hAbility, pszScriptName, hModifierTable)
 end]]

@@ -10,7 +10,7 @@ function item_bloodstone_arena_on_spell_start(keys)
 		caster:SetHealth(1)
 		ApplyDamage({victim = caster, attacker = caster, damage = 99999, damage_type = DAMAGE_TYPE_PURE, ability = ability, damage_flags = DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR + DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR + DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_BYPASSES_BLOCK + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DIRECTOR_EVENT + DOTA_DAMAGE_FLAG_USE_COMBAT_PROFICIENCY + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS})
 		if caster:IsAlive() then
-			TrueKill(caster, ability, caster)
+			caster:TrueKill(ability, caster)
 		end
 	else
 		ability:RefundManaCost()

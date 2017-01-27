@@ -1,5 +1,9 @@
+if IsClient() then require('internal/sharedutil') end
 item_bottle_arena = class({})
 LinkLuaModifier("modifier_item_bottle_arena_heal", "items/lua/modifiers/modifier_item_bottle_arena_heal.lua", LUA_MODIFIER_MOTION_NONE)
+function item_bottle_arena:GetAbilityTextureName()
+	return self:GetNetworkableEntityInfo("ability_texture")
+end
 
 if IsServer() then
 	function item_bottle_arena:OnCreated()
@@ -7,12 +11,7 @@ if IsServer() then
 	end
 
 	function item_bottle_arena:SetCurrentCharges(charges)
-		local texture
-		if self.RuneStorage then
-			texture = "arena/bottle_rune_" .. self.RuneStorage
-		else
-			texture = "arena/bottle_" .. charges
-		end
+		local texture = self.RuneStorage ~= nil and "item_arena/bottle_rune_" .. self.RuneStorage or "item_arena/bottle_" .. charges
 		self:SetNetworkableEntityInfo("ability_texture", texture)
 		return self.BaseClass.SetCurrentCharges(self, charges)
 	end

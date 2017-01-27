@@ -78,99 +78,27 @@ General:
 		Changed item redistribution system (earlier you sometimes could'nt recieve item, even with 100% damage)
 		Added russian localization
 Balance:
-	Base gold for kill: 200 => 150
-	Most of new heroes now has their own attribute values
-	Poseidon:
-		Primary Attribute: Agility => Intelligence
 	Runes:
-		Acceleration:
-			Now not multiplies experience from Level Up Shards
+		
 	Items:
-		Radiance:
-			Tick time: 0.1 => 0.5 (DPS is still same)
-			Removed UAM from description of Frozen Radiance
-		Edge of Vyse:
-			Duration: 5 => 3
-			Cooldown: 25 => 32
-		Angel Wings:
-			Spell Damage Amplify: 15 => 12 %
-		Book of the Keeper:
-			Spell Damage Amplify: 15 => 20 %
-		Titan Fruit & Titanium Bar:
-			Now makes caster attack immune
-		Octarine Core:
-			Cooldown Reduction: 30 => 20 %
-		Refresher Core:
-			Cooldown Reduction: 30 => 25 %
+		
 	Talents:
-		Cooldown Reduction:
-			Reduction: 4 6 8 10 12 14 16 18 20 22 24 => 6 10 14 18 22 26 30 %
-			Cost: 8 => 10
-			Required Level: 15 => 20
-		Hook Splitter:
-			Now throws hooks in front of Pudge (60 degrees)
-			Hook Amount: 10 => 6
-		Gold Income:
-			Required Level: 30 => 15
-			GPM: 120 240 360 480 600 720 => 400 800 1200 1600 2000 2400
-		Experience Income:
-			Required Level: 30 => 15
-			XPM: 200 500 800 1100 1400 1700 => 400 700 1200 1600 2000 2400
+		
 	Abilities:
-		Ability Shop: Lina - Fiery Soul now can't be purchased with Spectre - Reality
-		Mirratie - Sixth Sense:
-			Radius: 500 700 900 1100 1300 1500 1700 => 1200
-		Crystal Maiden - Crystal Nova:
-			Ice Wall Duration: 0.5 1.0 1.5 2.0 2.5 3.0 3.5 => 3 3.5 4 4.5 5.5 6 6.5
-		Witch Doctor - Maledict:
-			Now not works no bosses
-			Bonus Damage: 30 60 90 120 150 180 210 => 30 50 70 90 110 130 150 %
-		Winter Wyvern - Winter's Curse:
-			Duration: 0.25 4 4.75 5 5.25 5.5 5.75 => 3 3.5 4 4.5 5 5.5 6
-			Damage Reduction: 100 => 40 %
-		Stegius - Desolating Touch:
-			Now has a chance to trigger on bosses
-			Armor reduction on bosses now is same as on heroes
-		Stegius - Brightness of Desolate:
-			Required Level: 1 => 2
-		Zen Gehraz - Mystic Twister:
-			Damage from different sources now stacks
-		Sniper - Shrapnel:
-			Levels Between Upgrades: 3 => 7
-		Abaddon - Death Coil:
-			Self Damage: 100 150 200 250 300 350 400 => 100 200 250 300 400 500 600
-			Damage: 100 150 200 250 300 350 400 => 100 200 250 300 400 500 600
-		Abaddon - Aphotic Shield:
-			Damage Absorb: 110 150 170 200 250 300 350 => 150 300 450 500 650 700 750
-		Doom - Devour:
-			Stolen Health: 50 60 70 80 90 100 110 => 10 15 20 25 30 35 40 %
-		Poseidon - Trident:
-			Coolodwn: 20 19 18 17 16 15 14 => 120 110 100 90 80 70 60
-			Duration: 10 20 30 40 50 60 70 => 10 15 20 25 30 35 40
-			Cleave Damage: 5 10 15 20 25 30 35 => 10 12 15 20 25 30 35 %
-			Levels Between Upgrades: 10 => 6
-		Poseidon - Sea Hole:
-			Cast Range: Global => 1500
-		Poseidon - Dark Whale:
-			Cast Range: Global => 3000
-		Zuus - Static Field:
-			Now is not spell damage amplifiable
-		Enigma - Midnight Pulse:
-			Now is not spell damage amplifiable
+		
 Fixes:
-	All new heroes with custom models now are based on Wisp, but now they don't have any sounds
-	Game Paused overlay now is hidden in Hero Selection loading menu
-	Heroes with custom models now render status effects as they should
-	Fixed Blood of Midas worked from backpack
-	Fixed modifier icons from items weren't visible
-	Fixed Crystal Maiden - Frostbite not dealt damage
-	Fixed Shinobu - Yumewatari wasn't usable on souls
-	Fixed item purchasing required 1 more gold, than real item cost
-	Fixed a bug with disconnected players on duel (but now bots can't be taken for duel)
-	Fixed courier wasn't controllable after changing team
-	Fixed hero selection screen issues with reconnect during pre game time
 	
 
+Fixed some Dark Moon Update bugs
+Respawn Time Calculation formula: 5 + Level * 0.2 => 5 + Level * 0.1
+Radiances now has particles
+Haganemushi now not works on illusions
+First Duel now not gives kill streak
+Kill Streaks now can grow more than 15 (gold for streak is still limited to 60000)
+Antimage - Mana Break:
+	Bonus Pure Damage now is not spell damage amplifiable
+	Illusions now can't stun
+Temporary loading screen fix (normal way was broken in Dark Moon Update)
 <<+===========================================================================================================
 
 

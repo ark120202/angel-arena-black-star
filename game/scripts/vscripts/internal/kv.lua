@@ -31,7 +31,7 @@ end
 
 function DropItem(keys)
 	local caster = keys.caster
-	if not caster:IsIllusion() and not caster:HasModifier("modifier_arc_warden_tempest_double") then
+	if not caster:IsIllusion() and not caster:IsTempestDouble() then
 		caster:DropItemAtPositionImmediate(keys.ability, caster:GetAbsOrigin())
 	end
 end
@@ -107,7 +107,7 @@ end
 
 function KillTarget(keys)
 	if keys.target:IsAlive() then
-		TrueKill(keys.caster, keys.ability, keys.target)
+		keys.target:TrueKill(keys.ability, keys.caster)
 	end
 end
 

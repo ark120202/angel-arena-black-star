@@ -69,7 +69,6 @@ function Duel:StartDuel()
 		if not heroes_in_teams[i] then heroes_in_teams[i] = 0 end
 		for _,unit in pairs(v) do
 			local pid = unit:GetPlayerOwnerID()
-			print(pid, GetConnectionState(pid))
 			if unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 				heroes_in_teams[i] = heroes_in_teams[i] + 1
 			end
@@ -121,14 +120,9 @@ function Duel:StartDuel()
 				if unit.PocketItem then
 					UTIL_Remove(unit.PocketItem)
 				end
-				
-				print(unit.InArena)
 				if unit.InArena then
 					unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
-					unit:Stop()
-					PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), unit)
-					FindClearSpaceForUnit(unit, Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin(), true)
-					Timers:CreateTimer(0.1, function() PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), nil); unit:Stop() end)
+					unit:FindClearSpaceForUnitAndSetCamera(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
 				elseif unit:IsAlive() then
 					Duel:SetUpVisitor(unit)
 				end
@@ -192,10 +186,7 @@ function Duel:SetUpVisitor(unit)
 	Duel:FillPreduelUnitData(unit)
 	local team = unit:GetTeamNumber()
 	Duel.EntIndexer[team] = Entities:FindByName(Duel.EntIndexer[team], "target_mark_arena_viewers_team" .. team)
-	unit:Stop()
-	PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), unit)
-	FindClearSpaceForUnit(unit, Duel.EntIndexer[team]:GetAbsOrigin(), true)
-	Timers:CreateTimer(0.1, function() PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), nil); unit:Stop() end)
+	unit:FindClearSpaceForUnitAndSetCamera(Duel.EntIndexer[team]:GetAbsOrigin())
 	unit:AddNewModifier(unit, nil, "modifier_duel_hero_disabled_for_duel", {})
 end
 
@@ -224,15 +215,7 @@ function Duel:EndDuelForUnit(unit)
 			unit.StatusBeforeArena = nil
 		end
 	end)
-	unit:Stop()
-	PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), unit)
-	FindClearSpaceForUnit(unit, unit.ArenaBeforeTpLocation or FindFountain(unit:GetTeamNumber()):GetAbsOrigin(), true)
-	Timers:CreateTimer(0.1, function()
-			PlayerResource:SetCameraTarget(unit:GetPlayerOwnerID(), nil)
-			if unit then
-				unit:Stop()
-			end
-		end)
+	unit:FindClearSpaceForUnitAndSetCamera(unit.ArenaBeforeTpLocation or FindFountain(unit:GetTeamNumber()):GetAbsOrigin())
 	unit.InArena = nil
 	unit.ArenaBeforeTpLocation = nil
 	unit.DuelChecked = nil

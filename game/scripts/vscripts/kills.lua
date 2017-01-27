@@ -1,12 +1,11 @@
 if not Kills then
 	_G.Kills = class({})
-	Kills.BountyStorage = {}
 	Kills.GoldForStreaks = {
 		[0] = 0,
-		[1] = 300,
-		[2] = 450,
-		[3] = 900,
-		[4] = 1350,
+		[1] = 100,
+		[2] = 220,
+		[3] = 450,
+		[4] = 750,
 		[5] = 3000,
 		[6] = 4500,
 		[7] = 7500,
@@ -17,19 +16,36 @@ if not Kills then
 		[12] = 33000,
 		[13] = 39000,
 		[14] = 48000,
-		[15] = 60000,
+		[15] = 60000
 	}
 end
 
 function Kills:GetGoldForKill(killedUnit)
-	if not Kills.BountyStorage[killedUnit:GetPlayerID()] then Kills.BountyStorage[killedUnit:GetPlayerID()] = 0 end
-	local streak = Kills.BountyStorage[killedUnit:GetPlayerID()]
-	local streakGold = Kills.GoldForStreaks[streak]
-	local gold = 150 + streakGold + (killedUnit:GetLevel() * 30) --100 + streakGold + (killedUnit:GetLevel() * 9.9)
+	local gold = 150 + Kills:GetKillStreakGold(killedUnit:GetPlayerID()) + (killedUnit:GetLevel() * 30) --100 + streakGold + (killedUnit:GetLevel() * 9.9)
 	if Duel.IsFirstDuel and Duel:IsDuelOngoing() then
 		gold = 0
 	end
 	return gold
+end
+
+function Kills:SetKillStreak(player, ks)
+	PLAYER_DATA[player].KillStreak = ks
+end
+
+function Kills:GetKillStreak(player)
+	return PLAYER_DATA[player].KillStreak or 0
+end
+
+function Kills:GetKillStreakGold(player)
+	return Kills.GoldForStreaks[Kills:GetKillStreak(player)] or Kills.GoldForStreaks[#Kills.GoldForStreaks]
+end
+
+function Kills:IncreaseKillStreak(player)
+	Kills:SetKillStreak(player, Kills:GetKillStreak(player) + 1)
+end
+
+function Kills:ClearKillStreak(player)
+	Kills:SetKillStreak(player, 0)
 end
 
 function Kills:OnEntityKilled(killedPlayer, killerPlayer)
@@ -49,13 +65,11 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 			killerPlayerID = killerEntity:GetPlayerOwnerID()
 		end
 	end
-	if not Kills.BountyStorage[killedUnit:GetPlayerID()] then Kills.BountyStorage[killedUnit:GetPlayerID()] = 0 end
 	local goldChange = Kills:GetGoldForKill(killedUnit)
 	Gold:ModifyGold(killedUnit, -goldChange)
 	if killerEntity and killerEntity:IsControllableByAnyPlayer() then
 		local isDeny = false
 		if killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID then
-			if not Kills.BountyStorage[killerPlayerID] then Kills.BountyStorage[killerPlayerID] = 0 end
 			if killerEntity == killedUnit then
 				Kills:CreateKillTooltip(killedPlayerID, killedPlayerID)
 				isDeny = true
@@ -63,8 +77,10 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 				Kills:CreateKillTooltip(killerPlayerID, killedPlayerID)
 				isDeny = true
 			else
-				Kills.BountyStorage[killerPlayerID] = Kills.BountyStorage[killerPlayerID] + 1
-				if Kills.BountyStorage[killerPlayerID] > 15 then Kills.BountyStorage[killerPlayerID] = 15 end
+				if not Duel.IsFirstDuel or not Duel:IsDuelOngoing() then
+					Kills:IncreaseKillStreak(killerPlayerID)
+				end
+				
 				Kills:CreateKillTooltip(killerPlayerID, killedPlayerID, goldChange)
 				Kills:_GiveKillGold(killerEntity, killedUnit, goldChange)
 			end
@@ -97,7 +113,7 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 		end
 		Kills:CreateKillTooltip(nil, killedPlayerID, goldChange)
 	end
-	Kills:ClearStreak(killedPlayerID)
+	Kills:ClearKillStreak(killedPlayerID)
 end
 
 function Kills:_GiveKillGold(killerEntity, killedUnit, goldChange)
@@ -121,19 +137,16 @@ function Kills:CreateKillTooltip(killer, killed, gold)
 		victimPlayer = killed,
 		gold = gold,
 	})
-	if (Kills.BountyStorage[killed] > 1) then
+	if (Kills:GetKillStreak(killed) > 1) then
 		CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
 			type = "generic",
 			text = "#custom_toast_KillStreak_Ended",
 			victimPlayer = killed,
 			teamPlayer = killed,
+			teamInverted = true,
 			variables = {
-				["{kill_streak}"] = Kills.BountyStorage[killed]
+				["{kill_streak}"] = Kills:GetKillStreak(killed)
 			}
 		})
 	end
-end
-
-function Kills:ClearStreak(playerID)
-	Kills.BountyStorage[playerID] = 0
 end

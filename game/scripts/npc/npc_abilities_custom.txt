@@ -11672,7 +11672,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_per_second"	"100 250 400 550 700 850 1000"
+				"damage_per_second"	"60 120 180 240 300 360 420"
 			}
 			"03"
 			{
@@ -14627,6 +14627,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"nomana_bonus_pure_damage_pct"	"8 12 16 20 24 28 32"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
 			{
@@ -14666,7 +14667,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"scripts/vscripts/heroes/hero_antimage/mana_break.lua"
+						"ScriptFile"	"heroes/hero_antimage/mana_break.lua"
 						"Function"		"ManaBreak"
 						"Damage"		"%attack_damage"
 						"Target"

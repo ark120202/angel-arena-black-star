@@ -33,7 +33,7 @@ function FountainOnStartTouch(trigger, team)
 				end
 			end)
 		end
-		TrueKill(nil, nil, unit)
+		unit:TrueKill()
 	end
 end
 function Fountain2OnStartTouch(trigger)

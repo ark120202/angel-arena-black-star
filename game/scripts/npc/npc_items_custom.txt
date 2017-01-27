@@ -17646,7 +17646,7 @@
 		"ID"							"10258"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"56300"	//100270 - Requirements Cost
+		"ItemCost"						"60300"	//100270 - Requirements Cost
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_haganemushi"
 		"ItemRequirements"
@@ -17758,6 +17758,16 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				"AllowIllusionDuplicate"		"0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_haganemushi_unique"
+					}
+				}
 
 				"OnAttackLanded"
 				{
@@ -19028,6 +19038,7 @@
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
 				"AllowIllusionDuplicate"	"1"
+				"TextureName"		"item_arena/shard_of_true_sight"
 
 				"Aura"          	"modifier_truesight_reveal"
 				"Aura_Radius"   	"%radius"
@@ -19789,45 +19800,50 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_strength"		"35"
 			}
-			"02"
+			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"			"120"
 			}
-			"01"
+			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_magical_armor"	"20"
 			}
-			"02"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"bonus_hp_regen_pct" 	"2.4"
 			}
-			"04"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"reflected_damage_pct"	"175"
 			}
-			"05"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"reduced_damage_pct"	"35"
 			}
-			"06"
+			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"7.5"
 			}
-			"03"
+			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"buff_chance"			"25"
 			}
-			"04"
+			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"buff_duration"			"3.2"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_cooldown"			"7"
 			}
 		}
 	}

@@ -19,12 +19,12 @@ function SetFlyoutScoreboardVisible(bVisible) {
 	g_ScoreboardHandle = ScoreboardUpdater_InitializeScoreboard(scoreboardConfig, $("#TeamsContainer"));
 
 	SetFlyoutScoreboardVisible(false);
-	var scoreboard = GetDotaHud().FindChildTraverse("scoreboard");
+	/*var scoreboard = GetDotaHud().FindChildTraverse("scoreboard");
 	var UpdateScoreVisible = function() {
 		SetFlyoutScoreboardVisible(!scoreboard.BHasClass("ScoreboardClosed"))
 		$.Schedule(0.2, UpdateScoreVisible);
 	}
-	UpdateScoreVisible();
-	//$.RegisterEventHandler("DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible);
+	UpdateScoreVisible();*/
+	$.RegisterEventHandler("DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible);
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, false)
 })();

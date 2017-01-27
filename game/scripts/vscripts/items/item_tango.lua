@@ -12,7 +12,7 @@ function EatTrees(keys)
 	for _,v in ipairs(wards) do
 		local n = v:GetUnitName()
 		if n == "npc_dota_sentry_wards" or n == "npc_dota_observer_wards" then
-			TrueKill(caster, ability, v)
+			v:TrueKill(ability, caster)
 			trees = trees + keys.stacks_per_ward
 		end
 	end

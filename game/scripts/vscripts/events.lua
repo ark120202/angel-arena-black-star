@@ -54,7 +54,7 @@ function GameMode:OnNPCSpawned(keys)
 				end
 				if not npc:IsWukongsSummon() then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
-					if npc:IsRealHero() and not npc:HasModifier("modifier_arc_warden_tempest_double") then
+					if npc:IsTrueHero() then
 						AbilityShop:RandomOMGRollAbilities(npc)
 						if npc.BloodstoneDummies then
 							for _,v in ipairs(npc.BloodstoneDummies) do
@@ -209,13 +209,10 @@ function GameMode:OnEntityKilled(keys)
 			if killedUnit:IsRealHero() then
 				if killedUnit.InArena and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
 					killedUnit.InArena = false
+					killedUnit.ArenaBeforeTpLocation = nil
 					if Duel:GetWinner() ~= nil then
 						Duel.TimeUntilDuelEnd = 0
 					end
-				end
-
-				if Duel.DuelStatus == DOTA_DUEL_STATUS_1X1_IN_PROGRESS and killedUnit.Duel1x1Opponent then
-					Duel:End1X1(killedUnit.Duel1x1Opponent:GetPlayerOwner():GetAssignedHero(), killedUnit)
 				end
 				if not killerEntity or not killerEntity:GetPlayerOwner() then
 					Kills:OnEntityKilled(killedUnit:GetPlayerOwner(), nil)

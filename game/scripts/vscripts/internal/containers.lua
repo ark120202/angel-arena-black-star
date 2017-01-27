@@ -33,7 +33,7 @@ function ContainersHelper:CreateShops()
 			range =       200,
 			buttons =     {"Craft"},
 			OnEntityOrder=function(playerID, container, unit, target)
-				if unit and unit:IsAlive() and unit:IsRealHero() and not unit:HasModifier("modifier_arc_warden_tempest_double") then
+				if unit and unit:IsAlive() and unit:IsTrueHero() then
 					container:Open(playerID)
 					unit:Stop()
 				end
@@ -126,7 +126,7 @@ function ContainersHelper:CreateShop(baseUnit, itemTable, shopName, radius, cust
 		closeOnOrder= true,
 		range =       radius,
 		OnEntityOrder=function(playerID, container, unit, target)
-			if unit and unit:IsAlive() and unit:IsRealHero() and not unit:HasModifier("modifier_arc_warden_tempest_double") then
+			if unit and unit:IsAlive() and unit:IsTrueHero() then
 				container:Open(playerID)
 				unit:Stop()
 			end
@@ -196,7 +196,7 @@ function ContainersHelper:CreateLootBox(position, items)
 		entity = entity,
 		range = 150,
 		OnEntityOrder = function(playerID, container, unit, target)
-			if unit and unit:IsAlive() and unit:IsRealHero() and not unit:HasModifier("modifier_arc_warden_tempest_double") then
+			if unit and unit:IsAlive() and unit:IsTrueHero() then
 				container:Open(playerID)
 				unit:Stop()
 			end

@@ -5,12 +5,9 @@ function ChangeTeam(keys)
 		return
 	end
 	local playerID = caster:GetPlayerID()
-	--TODO Меню для смены в мультитим режиме
-	local targetTeam = DOTA_TEAM_BADGUYS
+	--TODO Меню для смены в 4v4v4v4
 	local oldTeam = caster:GetTeamNumber()
-	if oldTeam == targetTeam then
-		targetTeam = DOTA_TEAM_GOODGUYS
-	end
+	local targetTeam = oldTeam == DOTA_TEAM_BADGUYS and DOTA_TEAM_GOODGUYS or DOTA_TEAM_BADGUYS
 	if GetTeamPlayerCount(targetTeam) >= GetTeamPlayerCount(oldTeam) and not IsInToolsMode() then
 		return
 	end
@@ -42,7 +39,7 @@ function ChangeTeam(keys)
 	--[[for _, v in ipairs(Entities:FindAllByClassname("npc_dota_courier") ) do
 		v:SetControllableByPlayer(playerID, v:GetTeamNumber() == targetTeam)
 	end]]
-	FindCourier(oldTeam):SetControllableByPlayer(playerID, false)
+	--FindCourier(oldTeam):SetControllableByPlayer(playerID, false)
 	FindCourier(targetTeam):SetControllableByPlayer(playerID, true)
 	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
 	PlayerTables:AddPlayerSubscription("dynamic_minimap_points_" .. targetTeam, playerID)
