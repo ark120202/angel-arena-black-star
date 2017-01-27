@@ -350,8 +350,6 @@ function UpdateBossItemVote(id, data) {
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
 			DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
-			if ($("#PlayerControls_1x1") != null)
-				$("#PlayerControls_1x1").visible = DOTA_ACTIVE_GAMEMODE != DOTA_GAMEMODE_HOLDOUT_5
 		}
 		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
 			DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]

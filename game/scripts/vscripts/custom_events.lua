@@ -2,12 +2,8 @@ function GameMode:RegisterCustomListeners()
 	CustomGameEventManager:RegisterListener("custom_chat_send_message", Dynamic_Wrap(GameMode, "CustomChatSendMessage"))
 	CustomGameEventManager:RegisterListener("metamorphosis_elixir_cast", Dynamic_Wrap(GameMode, "MetamorphosisElixirCast"))
 	CustomGameEventManager:RegisterListener("modifier_clicked_purge", Dynamic_Wrap(GameMode, "ModifierClickedPurge"))
-
-	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
-		--CustomGameEventManager:RegisterListener("duel1x1call_send_call", Dynamic_Wrap(GameMode, "SendDuel1x1Call"))
-		CustomGameEventManager:RegisterListener("submit_gamemode_vote", Dynamic_Wrap(GameMode, "SubmitGamemodeVote"))
-		CustomGameEventManager:RegisterListener("submit_gamemode_map", Dynamic_Wrap(GameMode, "SubmitGamemodeMap"))
-	end
+	CustomGameEventManager:RegisterListener("submit_gamemode_vote", Dynamic_Wrap(GameMode, "SubmitGamemodeVote"))
+	CustomGameEventManager:RegisterListener("submit_gamemode_map", Dynamic_Wrap(GameMode, "SubmitGamemodeMap"))
 end
 
 function GameMode:MetamorphosisElixirCast(data)

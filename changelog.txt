@@ -46,37 +46,14 @@ TODO LIST:
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/ca0a60e516c0ae6729f3ac9c0d15834f
 ============================================================
 Angel Arena Black Star - Версия 1.4.3:
-Добавлены новые предметы: Blade Mail (I - III), Sacred Blade Mail
-Некоторые изменения в системе голосования за предметы с боссов
-Все герои с новыми моделями теперь основанны на Wisp, но пока у них нет звуков. Все они также теперь имеют другие значения аттрибутов
-Усилены: Book of the Keeper, Titan Fruit, Titanium Bar, Mirratie - Sixth Sense, Crystal Maiden - Crystal Nova, Winter Wyvern - Winter's Curse, Zen Gehraz - Mystic Twister, Abaddon - Death Coil, Abaddon - Aphotic Shield
-Ослаблены: Acceleration, Edge of Vyse, Angel Wings, Octarine Core, Refresher Core, Witch Doctor - Maledict, Stegius - Desolating Touch, Stegius - Brightness of Desolate, Sniper - Shrapnel, Doom - Devour, Poseidon - Sea Hole, Poseidon - Dark Whale, Zuus - Static Field, Enigma - Midnight Pulse
-Изменены: Radiance, Poseidon - Trident
-Исправлен баг с появлением отключенных игроков на дуэлях и некоторые другие ошибки
-Добавлена система сбора ошибок кода игры. Теперь при возникновении таких ошибок они будут отправлены на мой сервер и вскоре исправлены
+
 ============================================================
 Angel Arena Black Star - Version 1.4.3:
-Added new items: Blade Mail (I - III), Sacred Blade Mail
-Changes in Boss Drop Voting
-All heroes with custom models now are based on Wisp, but now they don't have any sounds; Also all of them now has custom attribute values
-Buffed: Book of the Keeper, Titan Fruit, Titanium Bar, Mirratie - Sixth Sense, Crystal Maiden - Crystal Nova, Winter Wyvern - Winter's Curse, Zen Gehraz - Mystic Twister, Abaddon - Death Coil, Abaddon - Aphotic Shield
-Nerfed: Acceleration, Edge of Vyse, Angel Wings, Octarine Core, Refresher Core, Witch Doctor - Maledict, Stegius - Desolating Touch, Stegius - Brightness of Desolate, Sniper - Shrapnel, Doom - Devour, Poseidon - Sea Hole, Poseidon - Dark Whale, Zuus - Static Field, Enigma - Midnight Pulse
-Changed: Radiance, Poseidon - Trident
-Fixed a bug with disconnected players on duel and some other bugs
-Added script errors collection system. All script errors now will be sent to my server and fixed soon
+
 ============================================================
 Angel Arena Black Star - Version 1.4.3:
 General:
-	Added error logs collection service. Now most of script errors will be sent to my server and fixed soon
-	Added new items:
-		Blade Mail (I - III)
-		Sacred Blade Mail
-	Small shop changes
-	Boss Drop Voting:
-		Not selected items now won't be rolled
-		Boss drop selection time reduced by 50%
-		Changed item redistribution system (earlier you sometimes could'nt recieve item, even with 100% damage)
-		Added russian localization
+	
 Balance:
 	Runes:
 		
@@ -89,16 +66,7 @@ Balance:
 Fixes:
 	
 
-Fixed some Dark Moon Update bugs
-Respawn Time Calculation formula: 5 + Level * 0.2 => 5 + Level * 0.1
-Radiances now has particles
-Haganemushi now not works on illusions
-First Duel now not gives kill streak
-Kill Streaks now can grow more than 15 (gold for streak is still limited to 60000)
-Antimage - Mana Break:
-	Bonus Pure Damage now is not spell damage amplifiable
-	Illusions now can't stun
-Temporary loading screen fix (normal way was broken in Dark Moon Update)
+
 <<+===========================================================================================================
 
 

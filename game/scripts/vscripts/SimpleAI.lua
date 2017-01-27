@@ -5,7 +5,6 @@ AI_STATE_AGGRESSIVE = 1
 AI_STATE_RETURNING = 2
 AI_STATE_CASTING = 3
 AI_STATE_ORDER = 4
-AI_STATE_HOLDOUT_PUSH = 5
 
 LinkLuaModifier("modifier_simple_ai", "modifiers/modifier_simple_ai", LUA_MODIFIER_MOTION_NONE)
 
@@ -49,22 +48,7 @@ function SimpleAI:new( unit, profile, params )
 		ai.leashRange = ai.aggroRange 
 		ai.abilityCastCallback = params.abilityCastCallback
 	end
-
-	if profile == "holdout_unit" then
-		ai.stateThinks = {
-			[AI_STATE_HOLDOUT_PUSH] = 'HoldoutPushThink',
-			[AI_STATE_AGGRESSIVE] = 'HoldoutAggressiveThink',
-			[AI_STATE_CASTING] = 'HoldoutCastingThink'
-			--[AI_STATE_ORDER] = 'HoldoutOrderThink',
-		}
-		ai.state = AI_STATE_HOLDOUT_PUSH
-		ai.spawnPos = params.spawnPos or unit:GetAbsOrigin()
-		ai.aggroRange = params.aggroRange or unit:GetAcquisitionRange()
-		ai.leashRange = params.leashRange or 600
-		--push / normal / kill / none
-		ai.MainTask = params.MainTask or "normal"
-		ai.abilityCastCallback = params.abilityCastCallback
-	end
+	
 	unit:AddNewModifier(unit, nil, "modifier_simple_ai", {})
 	Timers:CreateTimer( ai.GlobalThink, ai )
 	if unit.ai then
@@ -111,7 +95,8 @@ end
 	end
 
 	function SimpleAI:AggressiveThink()
-		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > self.leashRange or not self.aggroTarget or self.aggroTarget:IsNull() or not self.aggroTarget:IsAlive() or self.aggroTarget:IsInvisible() or self.aggroTarget:IsInvulnerable() or self.aggroTarget:IsAttackImmune() or (self.profile == "tower" and (self.spawnPos - self.aggroTarget:GetAbsOrigin()):Length2D() > self.leashRange) then
+		local aggroTarget = self.aggroTarget
+		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > self.leashRange or not IsValidEntity(aggroTarget) or not aggroTarget:IsAlive() or (aggroTarget.IsInvisible and aggroTarget:IsInvisible()) or aggroTarget:IsInvulnerable() or aggroTarget:IsAttackImmune() or (self.profile == "tower" and (self.spawnPos - aggroTarget:GetAbsOrigin()):Length2D() > self.leashRange) then
 			self:SwitchState(AI_STATE_RETURNING)
 			return
 		else
@@ -141,40 +126,6 @@ end
 			self.ExecutingOrder = nil
 			self:SwitchState(AI_STATE_RETURNING)
 		end
-	end
-
---Holdout Thinkers
-	function SimpleAI:HoldoutPushThink()
-		--local units = Dynamic_Wrap(SimpleAI, "FindUnitsNearby")(self, self.aggroRange, false, true)
-		local units = self:FindUnitsNearby(self.aggroRange, false, true, nil, DOTA_UNIT_TARGET_FLAG_NO_INVIS)
-		if #units > 0 then
-			self.unit:MoveToTargetToAttack( units[1] )
-			self.aggroTarget = units[1]
-			self:SwitchState(AI_STATE_AGGRESSIVE)
-			return
-		else
-			local PushTarget
-			local towers = Entities:FindAllByName("npc_arena_holdout_tower_ally")
-			if #towers > 0 then
-				PushTarget = FindNearestEntity(self.spawnPos, towers)
-			else
-				PushTarget = Entities:FindByName(nil, "npc_arena_holdout_fort")
-			end
-			self.unit:MoveToTargetToAttack(PushTarget)
-		end
-	end
-
-	function SimpleAI:HoldoutAggressiveThink()
-		if (self.aggroTarget:GetAbsOrigin() - self.unit:GetAbsOrigin()):Length2D() > self.leashRange or not self.aggroTarget or self.aggroTarget:IsNull() or not self.aggroTarget:IsAlive() or self.aggroTarget:IsInvisible() or self.aggroTarget:IsInvulnerable() or self.aggroTarget:IsAttackImmune() then
-			self:SwitchState(AI_STATE_HOLDOUT_PUSH)
-			return
-		else
-			self.unit:MoveToTargetToAttack(self.aggroTarget)
-		end
-	end
-
-	function SimpleAI:HoldoutCastingThink()
-		
 	end
 
 --Utils

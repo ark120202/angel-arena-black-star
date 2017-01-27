@@ -11,7 +11,11 @@ function StartTimer(keys)
 	local timerIndex = caster:GetEntityIndex() .. "_" .. target:GetEntityIndex()
 	DemonKingBarTimers[timerIndex] = Timers:CreateTimer(ability:GetAbilitySpecial("curse_duration") - 0.1, function()
 		if IsValidEntity(target) and target:IsAlive() then
-			target:TrueKill(IsValidEntity(ability) and ability or nil, IsValidEntity(caster) and caster or nil)
+			local a
+			local c
+			if IsValidEntity(ability) then a = ability end
+			if IsValidEntity(caster) then c = caster end
+			target:TrueKill(a, c)
 			target:EmitSound("Hero_VengefulSpirit.MagicMissileImpact")
 		end
 		DemonKingBarTimers[timerIndex] = nil

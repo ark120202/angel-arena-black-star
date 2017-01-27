@@ -1,6 +1,5 @@
 DOTA_GAMEMODE_5V5 = 0
-DOTA_GAMEMODE_HOLDOUT_5 = 1
-DOTA_GAMEMODE_4V4V4V4 = 2
+DOTA_GAMEMODE_4V4V4V4 = 1
 
 DOTA_GAMEMODE_TYPE_ALLPICK = 100
 DOTA_GAMEMODE_TYPE_RANDOM_OMG = 101
@@ -21,16 +20,9 @@ if GameModes == nil then
 		["4v4v4v4"] = {gamemode = DOTA_GAMEMODE_4V4V4V4, type = DOTA_GAMEMODE_TYPE_ALLPICK, map = ARENA_GAMEMODE_MAP_NONE},
 		["5v5_custom_abilities"] = {gamemode = DOTA_GAMEMODE_5V5, type = nil, map = ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES},
 		["4v4v4v4_custom_abilities"] = {gamemode = DOTA_GAMEMODE_4V4V4V4, type = nil, map = ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES},
-		--["arena_holdout"] = {gamemode = DOTA_GAMEMODE_HOLDOUT_5, type = DOTA_GAMEMODE_TYPE_ALLPICK},
 	}
 
 	GameModes.Settings = {
-		[DOTA_GAMEMODE_HOLDOUT_5] = {
-			requirements = {
-				"data/holdout_data",
-				"holdout",
-			},
-		},
 		[ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES] = {
 			onPreload = function()
 				for k,t in pairs(DROP_TABLE) do

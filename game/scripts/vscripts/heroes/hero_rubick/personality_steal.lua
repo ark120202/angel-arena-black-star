@@ -56,10 +56,14 @@ function SpellSteal(keys)
 	caster:SetPrimaryAttribute(target:GetPrimaryAttribute())
 
 	caster:CalculateStatBonus()
+	local targetname = target:GetFullName()
 	Timers:CreateTimer(0.03, function()
-		for k,v in pairsByKeys(NPC_HEROES_CUSTOM[target:GetFullName()]) do
-			if string.starts(k, "Ability") and v ~= "" then
-				AddNewAbility(caster, v, true)
+		local hc = NPC_HEROES_CUSTOM[targetname]
+		if hc then
+			for k,v in pairsByKeys(hc) do
+				if string.starts(k, "Ability") and v ~= "" then
+					AddNewAbility(caster, v, true)
+				end
 			end
 		end
 		caster:CalculateStatBonus()

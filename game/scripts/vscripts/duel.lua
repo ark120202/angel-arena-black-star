@@ -186,6 +186,9 @@ function Duel:SetUpVisitor(unit)
 	Duel:FillPreduelUnitData(unit)
 	local team = unit:GetTeamNumber()
 	Duel.EntIndexer[team] = Entities:FindByName(Duel.EntIndexer[team], "target_mark_arena_viewers_team" .. team)
+	if not Duel.EntIndexer[team] then
+		Duel.EntIndexer[team] = Entities:FindByName(nil, "target_mark_arena_viewers_team" .. team)
+	end
 	unit:FindClearSpaceForUnitAndSetCamera(Duel.EntIndexer[team]:GetAbsOrigin())
 	unit:AddNewModifier(unit, nil, "modifier_duel_hero_disabled_for_duel", {})
 end

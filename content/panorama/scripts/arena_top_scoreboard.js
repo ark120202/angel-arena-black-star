@@ -65,19 +65,7 @@ function ShowScoreboardVisible() {
 		if (current_goal != null) {
 			$("#KillGoalLabel").text = current_goal;
 		}
-		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
-			if (changesObject["gamemode_settings"]["gamemode"] == DOTA_GAMEMODE_HOLDOUT_5) {
-				$("#KillGoalPanel").visible = false;
-				$("#duelTimerLabel_base").text = "1" + $.Localize("holdout_timer_label");
-			}
-		}
 		if (changesObject["duel_timer"] != null)
 			_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "duelTimerLabel", secondsToMS(Number(changesObject["duel_timer"])));
-		if (changesObject["holdout_wave_num"] != null)
-			_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "duelTimerLabel_base", changesObject["holdout_wave_num"] + $.Localize("holdout_timer_label"));
-		if (changesObject["holdout_timer"] != null)
-			_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "duelTimerLabel", secondsToMS(changesObject["holdout_timer"]));
-		if (changesObject["holdout_killed_units"] != null)
-			_ScoreboardUpdater_SetTextSafe(g_ScoreboardHandle.scoreboardPanel, "duelTimerLabel", changesObject["holdout_killed_units"]);
 	})
 })();

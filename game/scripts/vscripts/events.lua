@@ -214,7 +214,7 @@ function GameMode:OnEntityKilled(keys)
 						Duel.TimeUntilDuelEnd = 0
 					end
 				end
-				if not killerEntity or not killerEntity:GetPlayerOwner() then
+				if not IsValidEntity(killerEntity) or not killerEntity.GetPlayerOwner or not IsValidEntity(killerEntity:GetPlayerOwner()) then
 					Kills:OnEntityKilled(killedUnit:GetPlayerOwner(), nil)
 				elseif killerEntity == killedUnit then
 					local player = killedUnit:GetPlayerOwner()
@@ -224,10 +224,6 @@ function GameMode:OnEntityKilled(keys)
 			end
 			CustomWearables:UnequipAllWearables(killedUnit)
 		end
-
-		--[[if killedUnit:IsHoldoutUnit() then
-			Holdout:RegisterKilledUnit(killedUnit)
-		end]]
 
 		if killedUnit:IsRealCreep() then
 			Spawner.Creeps[killedUnit.SSpawner] = Spawner.Creeps[killedUnit.SSpawner] - 1

@@ -108,9 +108,6 @@ function GameMode:OnFirstPlayerLoaded()
 	if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
 		AbilityShop:PrepareData()
 	end
-	if DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_HOLDOUT_5 then
-		Holdout:Init()
-	end
 end
 
 function GameMode:OnAllPlayersLoaded()
@@ -179,13 +176,9 @@ function GameMode:OnGameInProgress()
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[3] = true
-	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
-		Duel:CreateGlobalTimer()
-		ContainersHelper:CreateShops()
-		Spawner:RegisterTimers()
-	else
-		Holdout:Start()
-	end
+	Duel:CreateGlobalTimer()
+	ContainersHelper:CreateShops()
+	Spawner:RegisterTimers()
 	Timers:CreateTimer(function()
 		CustomRunes:SpawnRunes()
 		return CUSTOM_RUNE_SPAWN_TIME
