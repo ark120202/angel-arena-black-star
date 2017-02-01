@@ -9,6 +9,7 @@ if Duel == nil then
 	Duel.GlobalTimer = nil
 	Duel.DuelStatus = DOTA_DUEL_STATUS_NONE
 	Duel.EntIndexer = {}
+	Duel.TimesTeamWins = {}
 	--Duel.Particles = {}
 	Duel.DuelCounter = 0
 end
@@ -155,11 +156,20 @@ function Duel:EndDuel()
 		local g1,g2 = CreateGoldNotificationSettings(goldAmount)
 		Notifications:TopToAll(g1)
 		Notifications:TopToAll(g2)
+		for _,t in pairs(Duel.heroes_teams_for_duel) do
+			for _,v in ipairs(t) do
+				if IsValidEntity(v) then
+					v:ModifyPlayerStat("Duels_Played", 1)
+				end
+			end
+		end
 		for _,v in ipairs(Duel.heroes_teams_for_duel[winner]) do
 			if IsValidEntity(v) then
 				Gold:ModifyGold(v, goldAmount)
+				v:ModifyPlayerStat("Duels_Won", 1)
 			end
 		end
+		Duel.TimesTeamWins[winner] = (Duel.TimesTeamWins[winner] or 0) + 1
 	else
 		Notifications:TopToAll({text="#duel_over_winner_none", duration=9.0})
 	end
@@ -196,7 +206,7 @@ end
 function Duel:EndDuelForUnit(unit)
 	unit:RemoveModifierByName("modifier_duel_hero_disabled_for_duel")
 	Timers:CreateTimer(0.1, function()
-		if unit:IsAlive() and unit.StatusBeforeArena then
+		if IsValidEntity(unit) and unit:IsAlive() and unit.StatusBeforeArena then
 			if unit.StatusBeforeArena.Health then unit:SetHealth(unit.StatusBeforeArena.Health) end
 			if unit.StatusBeforeArena.Mana then unit:SetMana(unit.StatusBeforeArena.Mana) end
 			if unit.StatusBeforeArena.AbilityCooldowns and type(unit.StatusBeforeArena.AbilityCooldowns) == "table" then
@@ -232,7 +242,7 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
 			if PlayerResource:IsValidPlayerID(playerID) then
 				local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-				if hero then
+				if IsValidEntity(hero) then
 					Duel:EndDuelForUnit(hero)
 				end
 			end

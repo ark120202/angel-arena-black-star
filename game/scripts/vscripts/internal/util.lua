@@ -489,7 +489,7 @@ end
 function TrueKill(killer, ability, target)
 	target.IsMarkedForTrueKill = true
 	target:Kill(ability, killer)
-	if not target:IsNull() and target:IsAlive() then
+	if IsValidEntity(target) and target:IsAlive() then
 		RemoveDeathPreventingModifiers(target)
 		target:Kill(ability, killer)
 	end
@@ -615,6 +615,10 @@ function PreformAbilityPrecastActions(unit, ability)
 		return true
 	end
 	return false
+end
+
+function CDOTABaseAbility:PreformPrecastActions(unit)
+	return PreformAbilityPrecastActions(unit, self)
 end
 
 function ReplaceAbilities(unit, oldAbility, newAbility, keepLevel, keepCooldown)
@@ -896,7 +900,7 @@ function ColorTableToCss(color)
 end
 
 function IsPlayerAbandoned( playerID )
-	return PLAYER_DATA[playerID].IsAbandoned
+	return PLAYER_DATA[playerID].IsAbandoned == true
 end
 
 function FindAllOwnedUnits(player)
@@ -931,20 +935,13 @@ function GetTeamPlayerCount(iTeam)
 	return counter
 end
 
-function GetAllPlayerCount(iTeam)
-	local counter = 0
-	for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
-		counter = counter + GetTeamPlayerCount(i)
-	end
-	return counter
-end
-
 function MakePlayerAbandoned(iPlayerID)
 	if not PLAYER_DATA[iPlayerID].IsAbandoned then
 		local hero = PlayerResource:GetSelectedHeroEntity(iPlayerID)
-		if hero then
+		if IsValidEntity(hero) then
+			PLAYER_DATA[iPlayerID].LevelBeforeAbandon = hero:GetLevel()
 			hero:ClearNetworkableEntityInfo()
-			Notifications:TopToAll({hero=hero:GetName(), duration=10.0})
+			Notifications:TopToAll({hero=hero:GetName(), duration=10})
 			Notifications:TopToAll(CreateHeroNameNotificationSettings(hero))
 			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
 			hero:Stop()
@@ -960,28 +957,37 @@ function MakePlayerAbandoned(iPlayerID)
 				UTIL_Remove(hero)
 			end)
 		end
+		PLAYER_DATA[iPlayerID].IsAbandoned = true
 		local ptd = PlayerTables:GetTableValue("arena", "players_abandoned")
 		table.insert(ptd, iPlayerID)
 		PlayerTables:SetTableValue("arena", "players_abandoned", ptd)
-		PLAYER_DATA[iPlayerID].IsAbandoned = true
-		if not GameRules:IsCheatMode() then
-			local teamLeft
-			for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
-				local count = GetTeamPlayerCount(i)
-				if count > 0 then
-					if teamLeft then
-						return
-					else
-						teamLeft = i
-					end
-				end
-			end
+		if not GameRules:IsCheatMode() or true then
+			local teamLeft = GetOneRemainingTeam()
 			if teamLeft then
-				GameRules:SetSafeToLeave(true)
-				GameRules:SetGameWinner(teamLeft)
+				Timers:CreateTimer(30, function()
+					local teamLeft = GetOneRemainingTeam()
+					if teamLeft then
+						GameMode:OnOneTeamLeft(teamLeft)
+					end
+				end)
 			end
 		end
 	end
+end
+
+function GetOneRemainingTeam()
+	local teamLeft
+	for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
+		local count = GetTeamPlayerCount(i)
+		if count > 0 then
+			if teamLeft then
+				return
+			else
+				teamLeft = i
+			end
+		end
+	end
+	return teamLeft
 end
 
 function ClearFalseInnateModifiers(unit, ability)
@@ -1443,8 +1449,47 @@ function CDOTA_BaseNPC:FindClearSpaceForUnitAndSetCamera(position)
 	end)
 end
 
+function CDOTA_BaseNPC:SetPlayerStat(key, value)
+	if self.GetPlayerOwnerID and self:GetPlayerOwnerID() > -1 then
+		PlayerResource:SetPlayerStat(self:GetPlayerOwnerID(), key, value)
+	end
+end
+function CDOTA_BaseNPC:GetPlayerStat(key)
+	if self.GetPlayerOwnerID and self:GetPlayerOwnerID() > -1 then
+		return PlayerResource:GetPlayerStat(self:GetPlayerOwnerID(), key)
+	end
+end
+function CDOTA_BaseNPC:ModifyPlayerStat(key, value)
+	if self.GetPlayerOwnerID and self:GetPlayerOwnerID() > -1 then
+		return PlayerResource:ModifyPlayerStat(self:GetPlayerOwnerID(), key, value)
+	end
+end
 function CDOTA_BaseNPC:IsTrueHero()
 	return self:IsRealHero() and not self:IsTempestDouble() and not self:IsWukongsSummon()
+end
+function CDOTA_PlayerResource:SetPlayerStat(PlayerID, key, value)
+	local pd = PLAYER_DATA[PlayerID]
+	if not pd.HeroStats then pd.HeroStats = {} end
+	pd.HeroStats[key] = value
+end
+function CDOTA_PlayerResource:GetPlayerStat(PlayerID, key)
+	local pd = PLAYER_DATA[PlayerID]
+	return pd.HeroStats == nil and 0 or (pd.HeroStats[key] or 0)
+end
+function CDOTA_PlayerResource:ModifyPlayerStat(PlayerID, key, value)
+	local v = self:GetPlayerStat(PlayerID, key) + value
+	self:SetPlayerStat(PlayerID, key, v)
+	return v
+end
+
+function GetInGamePlayerCount()
+	local counter = 0
+	for i = 0, 23 do
+		if PlayerResource:IsValidPlayerID(i) then
+			counter = counter + 1
+		end
+	end
+	return counter
 end
 
 --TODO

@@ -1,8 +1,7 @@
--- This is the primary barebones gamemode script and should be used to assist in initializing your game mode
+ARENA_VERSION = "1.4.3"
+
 BAREBONES_VERSION = "1.00"
 
--- Set this to true if you want to see a complete debug output of all events/processes done by barebones
--- You can also change the cvar 'barebones_spew' at any time to 1 or 0 for output/no output
 BAREBONES_DEBUG_SPEW = false 
 GAMEMODE_INITIALIZATION_STATUS = {}
 
@@ -92,107 +91,6 @@ for k,v in pairs(modifiers) do
 end
 GameModes:Preload()
 
-
-function GameMode:PostLoadPrecache()
-	DebugPrint("[BAREBONES] Performing Post-Load precache")
-end
-
-function GameMode:OnFirstPlayerLoaded()
-	DebugPrint("[BAREBONES] First Player has loaded")
-	--[[local portal2 = Entities:FindByName(nil, "target_mark_teleport_river_team2")
-	local portal3 = Entities:FindByName(nil, "target_mark_teleport_river_team3")
-	if portal2 and portal3 then
-		CreateLoopedPortal(portal2:GetAbsOrigin(), portal3:GetAbsOrigin(), 80, "particles/customgames/capturepoints/cp_wood.vpcf", "", true)
-	end]]
-
-	if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
-		AbilityShop:PrepareData()
-	end
-end
-
-function GameMode:OnAllPlayersLoaded()
-	DebugPrint("[BAREBONES] All Players have loaded into the game")
-	if GAMEMODE_INITIALIZATION_STATUS[4] then
-		return
-	end
-	GAMEMODE_INITIALIZATION_STATUS[4] = true
-	DynamicMinimap:Init()
-	Spawner:PreloadSpawners()
-	Bosses:InitAllBosses()
-	CustomRunes:Init()
-	CustomTalents:Init()
-end
-
---[[
-	This function is called once and only once for every player when they spawn into the game for the first time.	It is also called
-	if the player's hero is replaced with a new hero for any reason.	This function is useful for initializing heroes, such as adding
-	levels, changing the starting gold, removing/adding abilities, adding physics, etc.
-
-	The hero parameter is the hero entity that just spawned in
-]]
-function GameMode:OnHeroInGame(hero)
-	DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
-	Timers:CreateTimer(function()
-		if IsValidEntity(hero) and hero:IsTrueHero() then
-			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
-				local pid = hero:GetPlayerID()
-				local tn = hero:GetTeamNumber()
-				local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
-				TEAMS_COURIERS[hero:GetTeamNumber()] = true
-				Timers:CreateTimer(0.03, function()
-					for _,courier in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
-						local owner = courier:GetOwner()
-						if IsValidEntity(owner) and owner:GetPlayerID() == pid then
-							courier:UpgradeToFlyingCourier()
-							courier:SetOwner(nil)
-							courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
-							courier:RemoveAbility("courier_burst")
-							TEAMS_COURIERS[tn] = courier
-							courier:SetBaseMaxHealth(200)
-							courier:SetMaxHealth(200)
-							courier:SetHealth(200)
-							Timers:CreateTimer(60, function()
-								courier:SetBaseMaxHealth(courier:GetBaseMaxHealth() + 200)
-								courier:SetMaxHealth(courier:GetMaxHealth() + 200)
-								return 60
-							end)
-						end
-					end
-				end)
-			end
-			HeroVoice:OnHeroInGame(hero)
-		end
-	end)
-end
-
---[[
-	This function is called once and only once when the game completely begins (about 0:00 on the clock).	At this point,
-	gold will begin to go up in ticks if configured, creeps will spawn, towers will become damageable etc.	This function
-	is useful for starting any game logic timers/thinkers, beginning the first round, etc.
-]]
-function GameMode:OnGameInProgress()
-	DebugPrint("[BAREBONES] The game has officially begun")
-	if GAMEMODE_INITIALIZATION_STATUS[3] then
-		return
-	end
-	GAMEMODE_INITIALIZATION_STATUS[3] = true
-	Duel:CreateGlobalTimer()
-	ContainersHelper:CreateShops()
-	Spawner:RegisterTimers()
-	Timers:CreateTimer(function()
-		CustomRunes:SpawnRunes()
-		return CUSTOM_RUNE_SPAWN_TIME
-	end)
-end
-
-function GameMode:OnHeroSelectionEnd()
-	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
-	--Timers:CreateTimer(1/30, Dynamic_Wrap(GameMode, "QuickGameModeThink"))
-	PanoramaShop:StartItemStocks()
-end
-
--- This function initializes the game mode and is called before anyone loads into the game
--- It can be used to pre-initialize any values/tables that will be needed later
 function GameMode:InitGameMode()
 	GameMode = self
 	DebugPrint('[BAREBONES] Starting to load Barebones gamemode...')
@@ -231,6 +129,92 @@ function GameMode:InitGameMode()
 	PanoramaShop:InitializeItemTable()
 	Scepters:SetGlobalScepterThink()
 	DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
+end
+
+function GameMode:PostLoadPrecache()
+	DebugPrint("[BAREBONES] Performing Post-Load precache")
+end
+
+function GameMode:OnFirstPlayerLoaded()
+	DebugPrint("[BAREBONES] First Player has loaded")
+	--[[local portal2 = Entities:FindByName(nil, "target_mark_teleport_river_team2")
+	local portal3 = Entities:FindByName(nil, "target_mark_teleport_river_team3")
+	if portal2 and portal3 then
+		CreateLoopedPortal(portal2:GetAbsOrigin(), portal3:GetAbsOrigin(), 80, "particles/customgames/capturepoints/cp_wood.vpcf", "", true)
+	end]]
+
+	if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
+		AbilityShop:PrepareData()
+	end
+end
+
+function GameMode:OnAllPlayersLoaded()
+	DebugPrint("[BAREBONES] All Players have loaded into the game")
+	if GAMEMODE_INITIALIZATION_STATUS[4] then
+		return
+	end
+	GAMEMODE_INITIALIZATION_STATUS[4] = true
+	DynamicMinimap:Init()
+	Spawner:PreloadSpawners()
+	Bosses:InitAllBosses()
+	CustomRunes:Init()
+	CustomTalents:Init()
+end
+
+function GameMode:OnHeroSelectionEnd()
+	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
+	--Timers:CreateTimer(1/30, Dynamic_Wrap(GameMode, "QuickGameModeThink"))
+	PanoramaShop:StartItemStocks()
+end
+
+function GameMode:OnHeroInGame(hero)
+	DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
+	Timers:CreateTimer(function()
+		if IsValidEntity(hero) and hero:IsTrueHero() then
+			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
+				local pid = hero:GetPlayerID()
+				local tn = hero:GetTeamNumber()
+				local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
+				TEAMS_COURIERS[hero:GetTeamNumber()] = true
+				Timers:CreateTimer(0.03, function()
+					for _,courier in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
+						local owner = courier:GetOwner()
+						if IsValidEntity(owner) and owner:GetPlayerID() == pid then
+							courier:UpgradeToFlyingCourier()
+							courier:SetOwner(nil)
+							courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
+							courier:RemoveAbility("courier_burst")
+							TEAMS_COURIERS[tn] = courier
+							courier:SetBaseMaxHealth(200)
+							courier:SetMaxHealth(200)
+							courier:SetHealth(200)
+							Timers:CreateTimer(60, function()
+								courier:SetBaseMaxHealth(courier:GetBaseMaxHealth() + 200)
+								courier:SetMaxHealth(courier:GetMaxHealth() + 200)
+								return 60
+							end)
+						end
+					end
+				end)
+			end
+			HeroVoice:OnHeroInGame(hero)
+		end
+	end)
+end
+
+function GameMode:OnGameInProgress()
+	DebugPrint("[BAREBONES] The game has officially begun")
+	if GAMEMODE_INITIALIZATION_STATUS[3] then
+		return
+	end
+	GAMEMODE_INITIALIZATION_STATUS[3] = true
+	Duel:CreateGlobalTimer()
+	ContainersHelper:CreateShops()
+	Spawner:RegisterTimers()
+	Timers:CreateTimer(function()
+		CustomRunes:SpawnRunes()
+		return CUSTOM_RUNE_SPAWN_TIME
+	end)
 end
 
 function CDOTAGamerules:SetKillGoal(iGoal)
@@ -316,22 +300,3 @@ function GameMode:GameModeThink()
 	end
 	return CUSTOM_GOLD_TICK_TIME
 end
-
---[[function GameMode:GameModeThink()
-	for i = 0, 23 do
-		
-
-		if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) then
-			local hero = PlayerResource:GetSelectedHeroEntity(i)
-			if hero then
-				local transp = 0
-				if 
-				for _,v in pairs(self.EquippedWearables) do
-
-				end
-			end
-		end
-	end
-	
-	return 1/30
-end]]

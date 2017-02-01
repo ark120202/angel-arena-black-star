@@ -56,8 +56,10 @@ if IsServer() then
 	end
 
 	function modifier_fountain_aura_arena:OnIntervalThink()
+		local parent = self:GetParent()
+		parent:RemoveModifierByName("modifier_saber_mana_burst_active")
 		for i = 0, 11 do
-			local item = self:GetParent():GetItemInSlot(i)
+			local item = parent:GetItemInSlot(i)
 			if item and item:GetAbilityName() == "item_bottle_arena" then
 				item:SetCurrentCharges(3)
 			end

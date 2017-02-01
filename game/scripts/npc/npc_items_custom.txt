@@ -13387,6 +13387,14 @@
 		
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"KVPurge"
+				"RemoveDebuffs"	"1"
+				"RemoveStuns"	"1"
+			}
+			
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_item_black_king_bar_arena_active"
@@ -13414,14 +13422,6 @@
 		
 		"Modifiers"
 		{
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"KVPurge"
-				"RemoveDebuffs"	"1"
-				"RemoveStuns"	"1"
-			}
-
 			"modifier_item_black_king_bar_6"
 			{
 				"Passive"			"1"

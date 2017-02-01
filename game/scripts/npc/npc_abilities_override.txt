@@ -13565,7 +13565,7 @@
 	"brewmaster_primal_split"
 	{
 		"MaxLevel"	"3"
-		"AbilityCooldown"	"1407060"
+		"AbilityCooldown"	"30"
 		"AbilityCastPoint"	"0.2"
 		"AbilityManaCost"	"125 250 275"
 		"AbilitySpecial"

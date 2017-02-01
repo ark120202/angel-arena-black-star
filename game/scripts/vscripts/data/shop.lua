@@ -213,6 +213,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_homemade_cheese",
 			"item_steam_footgear",
 			"item_blink_staff",
+			"item_horn_of_the_underworld",
 			"item_urn_of_demons",
 			"item_angel_wings",
 			"item_aegis_arena",

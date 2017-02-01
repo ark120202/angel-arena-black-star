@@ -2,7 +2,7 @@ if IsClient() then require('internal/sharedutil') end
 item_bottle_arena = class({})
 LinkLuaModifier("modifier_item_bottle_arena_heal", "items/lua/modifiers/modifier_item_bottle_arena_heal.lua", LUA_MODIFIER_MOTION_NONE)
 function item_bottle_arena:GetAbilityTextureName()
-	return self:GetNetworkableEntityInfo("ability_texture")
+	return self:GetNetworkableEntityInfo("ability_texture") or "item_arena/bottle_3"
 end
 
 if IsServer() then

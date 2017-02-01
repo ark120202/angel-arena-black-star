@@ -44,7 +44,9 @@ function CreateProjectiles(keys)
 			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1
 		})
 		Timers:CreateTimer(0.03, function()
-			ability:StartCooldown(GetAbilityCooldown(caster, ability))
+			if IsValidEntity(caster) and IsValidEntity(ability) then
+				ability:StartCooldown(GetAbilityCooldown(caster, ability))
+			end
 		end)
 	end
 end

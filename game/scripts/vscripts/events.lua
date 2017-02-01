@@ -362,4 +362,13 @@ function GameMode:OnKillGoalReached(team)
 	--PlayerTables:SetTableValue("arena", "duel_timer", 0)
 	GameRules:SetSafeToLeave(true)
 	GameRules:SetGameWinner(team)
+	StatsClient:OnGameEnd(team)
+end
+
+function GameMode:OnOneTeamLeft(team)
+	--Duel:EndDuel()
+	--PlayerTables:SetTableValue("arena", "duel_timer", 0)
+	GameRules:SetSafeToLeave(true)
+	GameRules:SetGameWinner(team)
+	StatsClient:OnGameEnd(team)
 end

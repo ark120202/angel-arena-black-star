@@ -33,6 +33,7 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,
 	antimage_mana_void_arena = 35,
+	ancient_apparition_ice_blast = 0
 }
 
 local function OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
@@ -232,12 +233,18 @@ INCOMING_DAMAGE_MODIFIERS = {
 	},
 	["modifier_item_blade_mail_arena_active"] = {
 		multiplier = function(_, victim)
-			local item_blade_mail_arena = FindItemInInventoryByName(victim, "item_blade_mail_arena", false, false, true)
-			if IsValidEntity(item_blade_mail_arena) then
-				return 1 - item_blade_mail_arena:GetAbilitySpecial("reduced_damage_pct") * 0.01
+			local modifier = victim:FindModifierByNameAndCaster("modifier_item_blade_mail_arena_active", victim)
+			if modifier and IsValidEntity(modifier:GetAbility()) then
+				return 1 - modifier:GetAbility():GetAbilitySpecial("reduced_damage_pct") * 0.01
 			end
 		end
-	}
+	},
+	["modifier_item_sacred_blade_mail_active"] = {
+		multiplier = function()
+			return 1 - GetAbilitySpecial("item_sacred_blade_mail", "reduced_damage_pct") * 0.01
+		end
+	},
+
 }
 
 --[[CUSTOM_ATTACK_MODIFIERS_PROJECTILE_PRIORITY = {

@@ -8992,7 +8992,7 @@
 				"IsDebuff"				"1"
 				"IsPurgable"			"0"
 
-				"Duration"				"%rot_tick + 0.1"
+				"Duration"				"0.3" //%rot_tick + 0.1
 
 				"Properties"
 				{
@@ -9123,7 +9123,7 @@
 				}
 			}
 
-			"modifier_modifier_pudge_flesh_heap_arena_stack"
+			"modifier_pudge_flesh_heap_arena_stack"
 			{
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
@@ -13235,8 +13235,9 @@
 		"Modifiers"
 		{
 			"modifier_phantom_lancer_doppelganger_arena"
-			{			
-				"IsHidden"	"0"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
 
 				"States"
 				{
@@ -15331,7 +15332,7 @@
 		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"arena/saber_mana_burst"
 		"ScriptFile"					"heroes/hero_saber/mana_burst.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityCooldown"				"2 1.75 1.5 1.25 1 0.75 0.5"
 		"MaxLevel" 						"7"
 		"AbilitySpecial"
@@ -15344,12 +15345,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_mana"	"0.2"
+				"damage_per_mana"	"0.08 0.1 0.12 0.14 0.16 0.18 0.2"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"armor_per_mana"	"0.1"
+				"armor_per_mana"	"0.01 0.01 0.02 0.02 0.02 0.03 0.035"
 			}
 			"03"
 			{
@@ -15359,12 +15360,12 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"weakness_mana_pct"	"10"
+				"weakness_mana_pct"	"10 10 10 11 11 11 12"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"weakness_disarmor"	"-60 -50 -40 -30 -25 -20 -15"
+				"weakness_disarmor"	"-60"
 			}
 		}
 	}
@@ -15435,11 +15436,44 @@
 		}
 	}
 
+	"saber_avalon"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"arena/saber_avalon"
+		"ScriptFile"					"heroes/hero_saber/avalon.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"RequiredLevel"					"6"
+		"LevelsBetweenUpgrades"			"7"
+		"MaxLevel" 						"7"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"100 90 85 80 75 70 65"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_health_regen_max"	"10 16 24 32 48 96 148"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_health_regen_min"	"0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"3 3.25 3.5 3.75 4 4.25 4.5"
+			}
+		}
+	}
+
 	"saber_excalibur"
 	{
 		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"arena/saber_excalibur"
 		"ScriptFile"					"heroes/hero_saber/excalibur.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"LevelsBetweenUpgrades"			"16"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -15475,35 +15509,6 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"length"			"1000"
-			}
-		}
-	}
-
-	"saber_avalon"
-	{
-		"BaseClass"						"ability_lua"
-		"AbilityTextureName"			"arena/saber_avalon"
-		"ScriptFile"					"heroes/hero_saber/avalon.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"MaxLevel" 						"7"
-		"AbilityCastPoint"				"0.2"
-		"AbilityCooldown"				"100 90 85 80 75 70 65"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_health_regen_max"	"10 16 24 32 48 96 148"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_health_regen_min"	"0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"3 3.25 3.5 3.75 4 4.25 4.5"
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 modifier_item_bottle_arena_heal = class({})
 
 function modifier_item_bottle_arena_heal:GetTexture()
-	return "items/arena/bottle_3"
+	return "item_arena/bottle_3"
 end
 
 function modifier_item_bottle_arena_heal:IsPurgable()

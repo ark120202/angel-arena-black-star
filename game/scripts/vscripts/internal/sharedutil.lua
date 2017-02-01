@@ -3,7 +3,6 @@ function CEntityInstance:GetNetworkableEntityInfo(key)
 	return t[key]
 end
 
---[[function CDota_Buff:GetSharedKey(key)
-	local parent = self:GetParent()
-	return CustomNetTables:GetTableValue("shared_modifiers", parent:GetEntityIndex() .. "_" .. self:GetName())
-end]]
+function CDOTA_Buff:GetSharedKey(key)
+	return CustomNetTables:GetTableValue("shared_modifiers", self:GetParent():GetEntityIndex() .. "_" .. self:GetName())
+end

@@ -622,7 +622,8 @@ function Containers:AddItemToUnit(unit, item)
 			local iname = item:GetAbilityName()
 			local exists = false
 			local full = true
-			for i=0,5 do
+
+			for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_9 do
 				local it = unit:GetItemInSlot(i)
 				if not it then
 					full = false

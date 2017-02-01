@@ -494,6 +494,15 @@ function HeroSelection:OnMinimapSetSpawnbox(data)
 	PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID), tableData)
 end
 
+function HeroSelection:GetSelectedHeroName(playerID)
+	for _,v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
+		local t = v[playerID]
+		if t and type(t) == "table" and t.status == "picked" then
+			return t.hero
+		end
+	end
+end
+
 
 
 

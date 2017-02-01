@@ -97,19 +97,20 @@ function GameMode:ExecuteOrderFilter(filterTable)
 end
 
 function GameMode:DamageFilter(filterTable)
-	local damagetype_const = 	filterTable.damagetype_const
-	local damage = 				filterTable.damage
+	local damagetype_const = filterTable.damagetype_const
+	local damage = filterTable.damage
 	local inflictor
 	if filterTable.entindex_inflictor_const then
 		inflictor = EntIndexToHScript(filterTable.entindex_inflictor_const)
 	end
 	local attacker
 	if filterTable.entindex_attacker_const then 
-		attacker = 				EntIndexToHScript(filterTable.entindex_attacker_const)
+		attacker = EntIndexToHScript(filterTable.entindex_attacker_const)
 	end
-	local victim = 				EntIndexToHScript(filterTable.entindex_victim_const)
-	if attacker then
-		if inflictor and inflictor.GetAbilityName then
+	local victim = EntIndexToHScript(filterTable.entindex_victim_const)
+
+	if IsValidEntity(attacker) then
+		if IsValidEntity(inflictor) and inflictor.GetAbilityName then
 			local inflictorname = inflictor:GetAbilityName()
 
 			if SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS[inflictorname] and attacker:IsHero() then
@@ -179,13 +180,16 @@ function GameMode:DamageFilter(filterTable)
 			return false
 		end
 
-
-
-		if victim:IsBoss() then
+		if attacker.GetPlayerOwnerID then
 			local attackerpid = attacker:GetPlayerOwnerID()
-			if attackerpid and attackerpid > -1 then
-				victim.DamageReceived = victim.DamageReceived or {}
-				victim.DamageReceived[attackerpid] = (victim.DamageReceived[attackerpid] or 0) + filterTable.damage
+			if attackerpid > -1 then
+				if victim:IsRealHero() then
+					attacker:ModifyPlayerStat("DamageToEnemyHeroes", filterTable.damage)
+				end
+				if victim:IsBoss() then
+					victim.DamageReceived = victim.DamageReceived or {}
+					victim.DamageReceived[attackerpid] = (victim.DamageReceived[attackerpid] or 0) + filterTable.damage
+				end
 			end
 		end
 	end
@@ -249,6 +253,10 @@ function GameMode:CustomChatFilter(playerID, text, teamonly)
 			end
 			if cmd[1] == "cprint" then
 				_G.SendDebugInfoToClient = not SendDebugInfoToClient
+			end
+			if cmd[1] == "model" then
+				hero:SetModel(cmd[2])
+				hero:SetOriginalModel(cmd[2])
 			end
 		end
 		if GameRules:IsCheatMode() then

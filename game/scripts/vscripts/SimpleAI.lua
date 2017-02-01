@@ -96,7 +96,13 @@ end
 
 	function SimpleAI:AggressiveThink()
 		local aggroTarget = self.aggroTarget
-		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > self.leashRange or not IsValidEntity(aggroTarget) or not aggroTarget:IsAlive() or (aggroTarget.IsInvisible and aggroTarget:IsInvisible()) or aggroTarget:IsInvulnerable() or aggroTarget:IsAttackImmune() or (self.profile == "tower" and (self.spawnPos - aggroTarget:GetAbsOrigin()):Length2D() > self.leashRange) then
+		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > self.leashRange
+											or not IsValidEntity(aggroTarget)
+											or not aggroTarget:IsAlive()
+											or (aggroTarget.IsInvisible and aggroTarget:IsInvisible())
+											or (aggroTarget.IsInvulnerable and aggroTarget:IsInvulnerable())
+											or (aggroTarget.IsAttackImmune and aggroTarget:IsAttackImmune())
+											or (self.profile == "tower" and (self.spawnPos - aggroTarget:GetAbsOrigin()):Length2D() > self.leashRange) then
 			self:SwitchState(AI_STATE_RETURNING)
 			return
 		else
