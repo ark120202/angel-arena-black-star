@@ -13881,7 +13881,6 @@
 
 	"shadow_demon_shadow_poison_release"
 	{
-		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.3"
 		"AbilityCooldown"	"1.0"
 	}

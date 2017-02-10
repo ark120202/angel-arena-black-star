@@ -19,8 +19,6 @@ end
 
 function GiveKillBonusGold(keys)
 	local caster = keys.caster
-	local target = keys.target
-	local ability = keys.ability
 	local modifiers = {
 		"modifier_item_skull_of_midas_unique",
 		"modifier_item_golden_eagle_relic_unique",
@@ -41,8 +39,6 @@ end
 
 function GiveOnAttackedGold(keys)
 	local caster = keys.caster
-	local target = keys.target
-	local ability = keys.ability
 	if keys.attacker:IsConsideredHero() then
 		Gold:ModifyGold(caster, keys.Gold)
 		caster:AddExperience(keys.Xp, false, false)

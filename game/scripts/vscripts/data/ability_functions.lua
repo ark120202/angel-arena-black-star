@@ -32,7 +32,7 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	slark_dark_pact = 40,
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,
-	antimage_mana_void_arena = 35,
+	antimage_mana_void_arena = 0,
 	ancient_apparition_ice_blast = 0
 }
 
@@ -60,7 +60,7 @@ ON_DAMAGE_MODIFIER_PROCS = {
 	end,
 	["modifier_item_refresher_core"] = function(attacker, victim, inflictor, damage, damagetype_const)
 		OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, "item_refresher_core", "modifier_octarine_bash_cooldown")
-	end,
+	end
 }
 
 ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
@@ -190,13 +190,27 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
+	["modifier_item_golden_eagle_relic_unique"] = function(_, _, inflictor)
+		if not IsValidEntity(inflictor) then
+			return {
+				LifestealPercentage = GetAbilitySpecial("item_golden_eagle_relic", "lifesteal_pct")
+			}
+		end
+	end,
+	["modifier_item_lucifers_claw_unique"] = function(_, _, inflictor)
+		if not IsValidEntity(inflictor) then
+			return {
+				LifestealPercentage = GetAbilitySpecial("item_lucifers_claw", "lifesteal_percent")
+			}
+		end
+	end
 }
 
 INCOMING_DAMAGE_MODIFIERS = {
 	["modifier_mana_shield_arena"] = {
 		multiplier = function(attacker, victim, _, damage)
 			local medusa_mana_shield_arena = victim:FindAbilityByName("medusa_mana_shield_arena")
-			if medusa_mana_shield_arena and not victim:IsIllusion() and victim:IsAlive() then
+			if medusa_mana_shield_arena and not victim:IsIllusion() and victim:IsAlive() and not victim:PassivesDisabled() then
 				local absorption_percent = medusa_mana_shield_arena:GetAbilitySpecial("absorption_tooltip") * 0.01
 				local ndamage = damage * absorption_percent
 				local mana_needed = ndamage / medusa_mana_shield_arena:GetAbilitySpecial("damage_per_mana")
@@ -225,7 +239,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 	["modifier_mirratie_sixth_sense"] = {
 		multiplier = function(_, victim)
 			local mirratie_sixth_sense = victim:FindAbilityByName("mirratie_sixth_sense")
-			if mirratie_sixth_sense and victim:IsAlive() and RollPercentage(mirratie_sixth_sense:GetAbilitySpecial("dodge_chance_pct")) then
+			if mirratie_sixth_sense and victim:IsAlive() and RollPercentage(mirratie_sixth_sense:GetAbilitySpecial("dodge_chance_pct")) and not victim:PassivesDisabled() then
 				ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
 				return 0
 			end
@@ -244,25 +258,25 @@ INCOMING_DAMAGE_MODIFIERS = {
 			return 1 - GetAbilitySpecial("item_sacred_blade_mail", "reduced_damage_pct") * 0.01
 		end
 	},
-
-}
-
---[[CUSTOM_ATTACK_MODIFIERS_PROJECTILE_PRIORITY = {
-	"modifier_item_desolator2_arena",
-	"modifier_item_desolator3_arena",
-	"modifier_item_desolator4_arena",
-	"modifier_item_desolator5_arena",
-	"modifier_item_desolator6_arena"
-}
-
-CUSTOM_ATTACK_MODIFIERS = {
-	["modifier_item_desolator2_arena"] = {
-		projectile = "",
-		--[[onfire = function(attacker, victim)
-			
-		end,
-		onimpact = function(attacker, victim, inflictor)
-			
+	["modifier_saber_instinct"] = {
+		multiplier = function(attacker, victim, _, damage)
+			local saber_instinct = victim:FindAbilityByName("saber_instinct")
+			if saber_instinct and victim:IsAlive() and not victim:PassivesDisabled() then
+				if IsRangedUnit(attacker) then
+					if RollPercentage(saber_instinct:GetAbilitySpecial("ranged_evasion_pct")) then
+						PopupEvadeMiss(victim, attacker)
+						ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
+						return false
+					end
+				else
+					if RollPercentage(saber_instinct:GetAbilitySpecial("melee_block_chance")) then
+						local blockPct = saber_instinct:GetAbilitySpecial("melee_damage_pct") * 0.01
+						return {
+							BlockedDamage = blockPct * damage,
+						}
+					end
+				end
+			end
 		end
 	}
-}]]
+}

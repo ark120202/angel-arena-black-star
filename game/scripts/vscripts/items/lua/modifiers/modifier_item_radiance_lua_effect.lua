@@ -37,7 +37,7 @@ if IsServer() then
 			damage = self:GetAbility():GetSpecialValueFor("aura_damage_per_second") * self.interval_think,
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-			ability = ability
+			ability = self:GetAbility()
 		})
 	end
 else

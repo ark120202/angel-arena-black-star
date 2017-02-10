@@ -278,7 +278,7 @@ function ShowPrecache() {
 							else if (heroData.custom_scene_image != null)
 								PlayerInTeamPanel.BCreateChildren("<Image style='opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' src='" + heroData.custom_scene_image + "'/>");
 							else
-								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel antialias='true' light='global_light' renderdeferred='false' style='width: 100%; height: 100%; opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' unit='" + heroData.model + "'/>");
+								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel antialias='true' light='global_light' renderdeferred='false' always-cache-composition-layer='true' style='width: 100%; height: 100%; opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' unit='" + heroData.model + "'/>");
 							break hero_tabs_iter
 						}
 					}

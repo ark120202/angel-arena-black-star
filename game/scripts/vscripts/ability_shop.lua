@@ -11,7 +11,6 @@ end
 function AbilityShop:PrepareData()
 	local Heroes_all = {}
 	table.merge(Heroes_all, NPC_HEROES_CUSTOM)
---	table.merge(Heroes_all, ENABLED_HEROES.Gods)
 	for _,v in ipairs(ABILITY_SHOP_SKIP_HEROES) do
 		Heroes_all[v] = nil
 	end
@@ -114,8 +113,8 @@ function AbilityShop:OnAbilityBuy(PlayerID, abilityname)
 		end
 	end
 	if hero and cost and hero:GetAbilityPoints() >= cost then
-		PrecacheItemByNameAsync(abilityname, function()
-			if hero:GetAbilityPoints() >= cost then
+		local function Buy()
+			if IsValidEntity(hero) and hero:GetAbilityPoints() >= cost then
 				if hero:HasAbility(abilityname) then
 					local abilityh = hero:FindAbilityByName(abilityname)
 					if abilityh then
@@ -141,7 +140,12 @@ function AbilityShop:OnAbilityBuy(PlayerID, abilityname)
 					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(PlayerID), "dota_ability_changed", {})
 				end
 			end
-		end)
+		end
+		if hero:HasAbility(abilityname) then
+			Buy()
+		else
+			PrecacheItemByNameAsync(abilityname, Buy)
+		end
 	end
 end
 

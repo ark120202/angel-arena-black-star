@@ -16,7 +16,7 @@ WEARABLES_ATTACH_METHOD_DOTA = 0
 WEARABLES_ATTACH_METHOD_ATTACHMENTS = 1
 
 function DynamicWearables:GetWearableDataById(wearableId)
-	return DynamicWearables.DotaWearablesByIds[tonumber(wearableId)]
+	return DynamicWearables.DotaWearablesByIds[wearableId]
 end
 
 function CDOTA_BaseNPC:GetWearableInSlot(slot)
@@ -123,6 +123,8 @@ function CDOTA_BaseNPC:EquipWearable(wearableId)
 			if control_point.vector then
 				ParticleManager:SetParticleControl(pfx, control_point.index, control_point.vector)
 			else
+				--print(control_point.index, control_point.attachment)
+				--print(particleUnit:GetUnitName())
 				ParticleManager:SetParticleControlEnt(pfx, control_point.index, particleUnit, control_point.attach, control_point.attachment or "attach_hitloc", particleUnit:GetAbsOrigin(), false)
 			end
 		end
@@ -168,9 +170,9 @@ function DynamicWearables:ParseData()
 				particle_map = {},
 				particles = {},
 				additional_attached_models = {},
-				panorama_name = wearableData.item_name or "",
-				panorama_description = wearableData.item_description or "",
-				panorama_type_name = wearableData.item_type_name or "",
+			--	panorama_name = wearableData.item_name or "",
+			--	panorama_description = wearableData.item_description or "",
+			--	panorama_type_name = wearableData.item_type_name or "",
 			}
 			if wearableData.used_by_heroes then
 				for hero, enabled in pairs(wearableData.used_by_heroes) do
@@ -227,10 +229,32 @@ function DynamicWearables:ParseData()
 			DynamicWearables.DotaWearablesByIds[wearableId] = newWearable
 		end
 	end
+
+	for wearableName, wearableData in pairs(CUSTOM_WEARABLES) do
+		wearableData = {
+			slot = wearableData.slot or "weapon",
+			model = wearableData.model or "models/development/invisiblebox.vmdl",
+			attach_method = wearableData.attach_method or WEARABLES_ATTACH_METHOD_DOTA,
+			particle_map = wearableData.particle_map or {},
+			particles = wearableData.particles or {},
+			additional_attached_models = wearableData.additional_attached_models or {},
+			used_by_heroes = wearableData.used_by_heroes or {},
+			IsDefault = wearableData or false
+		}
+		if wearableData.IsDefault and wearableData.used_by_heroes then
+			for _,hero in ipairs(wearableData.used_by_heroes) do
+				DynamicWearables.DefaultWearables[hero] = DynamicWearables.DefaultWearables[hero] or {}
+				DynamicWearables.DefaultWearables[hero][wearableData.slot] = wearableName
+				DynamicWearables.DotaWearablesByHeroes[hero] = DynamicWearables.DotaWearablesByHeroes[hero] or {}
+				table.insert(DynamicWearables.DotaWearablesByHeroes[hero], wearableName)
+			end
+		end
+		DynamicWearables.DotaWearablesByIds[wearableName] = wearableData
+	end
 	--PrintTable(DynamicWearables.DotaWearablesByIds)
 end
 
-function DynamicWearables:GetPanoramaWearableById(wearableId)
+--[[function DynamicWearables:GetPanoramaWearableById(wearableId)
 	local data = DynamicWearables:GetWearableDataById(wearableId)
 	return {
 		id = wearableId,
@@ -254,7 +278,6 @@ function DynamicWearables:PanoramaGetEquipped(data)
 			allEquipped[slot] = DynamicWearables:GetPanoramaWearableById(wearable)
 		end
 	end
-
 end
 
 function DynamicWearables:PanoramaGetAvaliable(data)
@@ -275,7 +298,7 @@ function DynamicWearables:PanoramaGetAvaliable(data)
 		end
 		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(PlayerID), "dynamic_wearables_set_avaliable", avaliable)
 	end
-end
+end]]
 
 function DynamicWearables:PrecacheAllWearablesForHero(context, hero)
 	local t = DynamicWearables.DotaWearablesByHeroes[hero]
@@ -296,11 +319,16 @@ end
 
 function DynamicWearables:Init()
 	DynamicWearables:ParseData()
-	CustomGameEventManager:RegisterListener("dynamic_wearables_get_equipped", Dynamic_Wrap(self, "PanoramaGetEquipped"))
-	CustomGameEventManager:RegisterListener("dynamic_wearables_get_avaliable", Dynamic_Wrap(self, "PanoramaGetAvaliable"))
-	CustomGameEventManager:RegisterListener("dynamic_wearables_equip", function(_, data)
+	--CustomGameEventManager:RegisterListener("dynamic_wearables_get_equipped", Dynamic_Wrap(self, "PanoramaGetEquipped"))
+	--CustomGameEventManager:RegisterListener("dynamic_wearables_get_avaliable", Dynamic_Wrap(self, "PanoramaGetAvaliable"))
+	--[[CustomGameEventManager:RegisterListener("dynamic_wearables_equip", function(_, data)
 		if data.wearableId then
 			self:EquipWearableOnPlayer(tonumber(data.PlayerID), data.wearableId)
 		end
-	end)
+	end)]]
+end
+if false then
+	DynamicWearables:ParseData()
+	PlayerResource:GetSelectedHeroEntity(0):RemoveAllWearables()
+	PlayerResource:GetSelectedHeroEntity(0):EquipItemsFromPlayerSelectionOrDefault()
 end

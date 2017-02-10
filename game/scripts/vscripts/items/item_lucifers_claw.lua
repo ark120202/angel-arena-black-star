@@ -51,7 +51,7 @@ end
 function ModifyCreepDamage(keys)
 	local caster = keys.caster
 	local target = keys.target
-	if target:IsCreep() then
+	if target:IsRealCreep() then
 		local ability = keys.ability
 		local damage = keys.damage
 		local damage_bonus = keys.damage_bonus

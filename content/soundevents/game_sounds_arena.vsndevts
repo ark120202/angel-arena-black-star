@@ -1010,3 +1010,128 @@
 		}
 	}
 }
+
+"Arena.Hero_Saber.Excalibur.Ex"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/saber/excalibur_ex.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"100.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Saber.Excalibur.Calibur"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/saber/excalibur_calibur.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"100.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Saber.ManaBurst"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/saber/mana_burst_1.vsnd"
+							"value1"	"sounds/arena/weapons/hero/saber/mana_burst_2.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"100.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Saber.InvisibleAir"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/saber/invisible_air.vsnd"
+						}
+					}
+					
+					"volume"			{ "value"	"100.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}

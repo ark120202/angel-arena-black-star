@@ -22,7 +22,8 @@ function StatsClient:OnGameBegin()
 end
 --StatsClient:OnGameBegin()
 function StatsClient:OnGameEnd(winner)
-	if not IsInToolsMode() and (GameRules:IsCheatMode() or GetInGamePlayerCount() < 8) then
+	local time = GameRules:GetDOTATime(false, true)
+	if not IsInToolsMode() and (GameRules:IsCheatMode() or GetInGamePlayerCount() < 8 or time < 0) then
 		return
 	end
 	local data = {
@@ -30,8 +31,20 @@ function StatsClient:OnGameEnd(winner)
 		matchid = tostring(GameRules:GetMatchID()),
 		WinnerTeam = winner,
 		players = {},
-		DuelsTimesTeamWins = Duel.TimesTeamWins,
+		KillGoal = KILLS_TO_END_GAME_FOR_TEAM,
+		TeamsInfo = {},
+		version = ARENA_VERSION,
+		duration = math.floor(time),
 	}
+	for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
+		if GetTeamAllPlayerCount(i) > 0 then
+			data.TeamsInfo[i] = {
+				Duels_Won = (Duel.TimesTeamWins[i] or 0),
+				IsGameWinner = i == winner,
+				Kills = GetTeamHeroKills(i),
+			}
+		end
+	end
 	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:IsValidPlayerID(i) then
 			local hero = PlayerResource:GetSelectedHeroEntity(i)
@@ -41,8 +54,8 @@ function StatsClient:OnGameEnd(winner)
 				stats = PLAYER_DATA[i].HeroStats or {},
 				hero_name = HeroSelection:GetSelectedHeroName(i),
 				team = tonumber(PlayerResource:GetTeam(i)),
-				level = PLAYER_DATA[i].LevelBeforeAbandon or 0,
-				items = {}
+				level = PLAYER_DATA[i].BeforeAbandon_Level or 0,
+				items = PLAYER_DATA[i].BeforeAbandon_HeroInventorySnapshot or {}
 			}
 			table.merge(playerInfo.stats, {
 				Kills = PlayerResource:GetKills(i),
@@ -56,9 +69,13 @@ function StatsClient:OnGameEnd(winner)
 					local item = hero:GetItemInSlot(item_slot)
 					if item then
 						local charges = item:GetCurrentCharges()
+						local toWriteCharges
+						if item:GetInitialCharges() ~= charges then
+							toWriteCharges = charges
+						end
 						playerInfo.items[item_slot] = {
 							name = item:GetAbilityName(),
-							stacks = item:GetInitialCharges() ~= charges and charges or nil
+							stacks = toWriteCharges
 						}
 					end
 				end

@@ -13,7 +13,103 @@ CUSTOM_WEARABLES_PLAYER_ITEMS = {
 	}
 }
 
-CUSTOM_WEARABLES_ITEM_HANDLES = {
+CUSTOM_WEARABLES = {
+	saber_excalibur = {
+		particles = {
+			--[[{
+				name = "particles/arena/units/heroes/hero_saber/sword_glow.vpcf",
+				attach = PATTACH_ABSORIGIN_FOLLOW,
+				bAttachToUnit = true,
+				control_points = {
+					{
+						index = 0,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_sword1"
+					},
+					{
+						index = 1,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_sword2"
+					},
+				}
+			},]]
+			{
+				name = "particles/arena/units/heroes/hero_saber/sword_glow2.vpcf",
+				attach = PATTACH_ABSORIGIN_FOLLOW,
+				bAttachToUnit = true,
+				control_points = {
+					{
+						index = 0,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_sword1"
+					},
+					{
+						index = 1,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_sword2"
+					},
+				}
+			}
+		},
+		used_by_heroes = {"npc_arena_hero_saber"},
+		IsDefault = true
+	},
+	anakim_wisps = {
+		particles = {
+			{
+				name = "particles/arena/units/heroes/hero_anakim/attack_wisps.vpcf",
+				attach = PATTACH_ABSORIGIN_FOLLOW,
+				bAttachToUnit = true,
+				control_points = {
+					{
+						index = 0,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit1"
+					},
+					{
+						index = 1,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit2"
+					},
+					{
+						index = 2,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit3"
+					},
+					{
+						index = 3,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit4"
+					},
+					{
+						index = 4,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit5"
+					},
+					{
+						index = 5,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit6"
+					},
+					{
+						index = 6,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit7"
+					},
+					{
+						index = 7,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit8"
+					},
+				}
+			}
+		},
+		used_by_heroes = {"npc_arena_hero_anakim"},
+		IsDefault = true
+	}
+}
+
+--[[CUSTOM_WEARABLES_ITEM_HANDLES = {
 	["wearable_hero_stargazer_helmet_of_the_sunray"] = {
 		hero = "alternative_npc_dota_hero_spectre",
 		models = {
@@ -70,4 +166,4 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 		
 	},
 	["wearable_developer"] = {}
-}
+}]]

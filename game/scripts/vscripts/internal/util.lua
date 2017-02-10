@@ -38,55 +38,132 @@ function DebugPrintTable(...)
 	end
 end
 
-
 function CPrintTable(t, indent, done)
-	--print ( string.format ('PrintTable type %s', type(keys)) )
-	if type(t) ~= "table" then return end
-
-	done = done or {}
-	done[t] = true
-	if not indent then
-		CPrint("Printing table")
-	end
-	indent = indent or 1
-
-	local l = {}
-	for k, v in pairs(t) do
-		table.insert(l, k)
-	end
-
-	table.sort(l)
-	for k, v in ipairs(l) do
-		-- Ignore FDesc
-		if v ~= 'FDesc' then
-			local value = t[v]
-			if type(value) == "table" and not done[value] then
-				done [value] = true
-				CPrint(string.rep ("\t", indent)..tostring(v)..":")
-				CPrintTable(value, indent + 2, done)
-			elseif type(value) == "userdata" and not done[value] then
-				done [value] = true
-				CPrint(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
-				CPrintTable((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
-			else
-				if t.FDesc and t.FDesc[v] then
-					CPrint(string.rep ("\t", indent)..tostring(t.FDesc[v]))
-				else
-					CPrint(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
-				end
-			end
-		end
-	end
+	PrintTableCall(t, CPrint, indent, done)
 end
 
 function PrintTable(t, indent, done)
-	--print ( string.format ('PrintTable type %s', type(keys)) )
+	PrintTableCall(t, print, indent, done)
+end
+
+local PhysicsUnitFDesc = {
+	StopPhysicsSimulation = true,
+	StartPhysicsSimulation = true,
+	SetPhysicsVelocity = true,
+	AddPhysicsVelocity = true,
+	SetPhysicsVelocityMax = true,
+	GetPhysicsVelocityMax = true,
+	SetPhysicsAcceleration = true,
+	AddPhysicsAcceleration = true,
+	SetPhysicsFriction = true,
+	GetPhysicsVelocity = true,
+	GetPhysicsAcceleration = true,
+	GetPhysicsFriction = true,
+	FollowNavMesh = true,
+	IsFollowNavMesh = true,
+	SetGroundBehavior = true,
+	GetGroundBehavior = true,
+	SetSlideMultiplier = true,
+	GetSlideMultiplier = true,
+	Slide = true,
+	IsSlide = true,
+	PreventDI = true,
+	IsPreventDI = true,
+	SetNavCollisionType = true,
+	GetNavCollisionType = true,
+	OnPhysicsFrame = true,
+	SetVelocityClamp = true,
+	GetVelocityClamp = true,
+	Hibernate = true,
+	IsHibernate = true,
+	DoHibernate = true,
+	OnHibernate = true,
+	OnPreBounce = true,
+	OnBounce = true,
+	OnPreSlide = true,
+	OnSlide = true,
+	AdaptiveNavGridLookahead = true,
+	IsAdaptiveNavGridLookahead = true,
+	SetNavGridLookahead = true,
+	GetNavGridLookahead = true,
+	SkipSlide = true,
+	SetRebounceFrames = true,
+	GetRebounceFrames = true,
+	GetLastGoodPosition = true,
+	SetStuckTimeout = true,
+	GetStuckTimeout = true,
+	SetAutoUnstuck = true,
+	GetAutoUnstuck = true,
+	SetBounceMultiplier = true,
+	GetBounceMultiplier = true,
+	GetTotalVelocity = true,
+	GetColliders = true,
+	RemoveCollider = true,
+	AddCollider = true,
+	AddColliderFromProfile = true,
+	GetMass = true,
+	SetMass = true,
+	GetNavGroundAngle = true,
+	SetNavGroundAngle = true,
+	CutTrees = true,
+	IsCutTrees = true,
+	IsInSimulation = true,
+	SetBoundOverride = true,
+	GetBoundOverride = true,
+	ClearStaticVelocity = true,
+	SetStaticVelocity = true,
+	GetStaticVelocity = true,
+	AddStaticVelocity = true,
+	SetPhysicsFlatFriction = true,
+	GetPhysicsFlatFriction = true,
+	PhysicsLastPosition = true,
+	PhysicsLastTime = true,
+	PhysicsTimer = true,
+	PhysicsTimerName = true,
+	bAdaptiveNavGridLookahead = true,
+	bAutoUnstuck = true,
+	bCutTrees = true,
+	bFollowNavMesh = true,
+	bHibernate = true,
+	bHibernating = true,
+	bPreventDI = true,
+	bSlide = true,
+	bStarted = true,
+	fBounceMultiplier = true,
+	fFlatFriction = true,
+	fFriction = true,
+	fMass = true,
+	fNavGroundAngle = true,
+	fSlideMultiplier = true,
+	fVelocityClamp = true,
+	lastGoodGround = true,
+	nLockToGround = true,
+	nMaxRebounce = true,
+	nNavCollision = true,
+	nNavGridLookahead = true,
+	nRebounceFrames = true,
+	nSkipSlide = true,
+	nStuckFrames = true,
+	nStuckTimeout = true,
+	nVelocityMax = true,
+	oColliders = true,
+	staticForces = true,
+	staticSum = true,
+	vAcceleration = true,
+	vLastGoodPosition = true,
+	vLastVelocity = true,
+	vSlideVelocity = true,
+	vTotalVelocity = true,
+	vVelocity = true,
+}
+function PrintTableCall(t, printFunc, indent, done)
+	--printFunc ( string.format ('PrintTable type %s', type(keys)) )
 	if type(t) ~= "table" then return end
 
 	done = done or {}
 	done[t] = true
 	if not indent then
-		print("Printing table")
+		printFunc("Printing table")
 	end
 	indent = indent or 1
 
@@ -98,21 +175,21 @@ function PrintTable(t, indent, done)
 	table.sort(l)
 	for k, v in ipairs(l) do
 		-- Ignore FDesc
-		if v ~= 'FDesc' then
+		if v ~= 'FDesc' and PhysicsUnitFDesc[v] == nil then
 			local value = t[v]
 			if type(value) == "table" and not done[value] then
-				done [value] = true
-				print(string.rep ("\t", indent)..tostring(v)..":")
-				PrintTable (value, indent + 2, done)
+				done[value] = true
+				printFunc(string.rep ("\t", indent)..tostring(v)..":")
+				PrintTableCall(value, printFunc, indent + 2, done)
 			elseif type(value) == "userdata" and not done[value] then
-				done [value] = true
-				print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
-				PrintTable ((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
+				done[value] = true
+				printFunc(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+				PrintTableCall((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), printFunc, indent + 2, done)
 			else
 				if t.FDesc and t.FDesc[v] then
-					print(string.rep ("\t", indent)..tostring(t.FDesc[v]))
+					printFunc(string.rep ("\t", indent)..tostring(t.FDesc[v]))
 				else
-					print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+					printFunc(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
 				end
 			end
 		end
@@ -937,21 +1014,32 @@ end
 
 function MakePlayerAbandoned(iPlayerID)
 	if not PLAYER_DATA[iPlayerID].IsAbandoned then
+		HeroSelection:RemoveAllOwnedUnits(iPlayerID)
 		local hero = PlayerResource:GetSelectedHeroEntity(iPlayerID)
 		if IsValidEntity(hero) then
-			PLAYER_DATA[iPlayerID].LevelBeforeAbandon = hero:GetLevel()
+			PLAYER_DATA[iPlayerID].BeforeAbandon_Level = hero:GetLevel()
+			PLAYER_DATA[iPlayerID].BeforeAbandon_HeroInventorySnapshot = {}
 			hero:ClearNetworkableEntityInfo()
+			hero:Stop()
+			for i = 0, DOTA_STASH_SLOT_6 do
+				local item = hero:GetItemInSlot(i)
+				if item then
+					local charges = item:GetCurrentCharges()
+					local toWriteCharges
+					if item:GetInitialCharges() ~= charges then
+						toWriteCharges = charges
+					end
+					playerInfo.items[i] = {
+						name = item:GetAbilityName(),
+						stacks = toWriteCharges
+					}
+					hero:SellItem(item)
+				end
+			end
 			Notifications:TopToAll({hero=hero:GetName(), duration=10})
 			Notifications:TopToAll(CreateHeroNameNotificationSettings(hero))
 			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
-			hero:Stop()
-			for i = 0, DOTA_STASH_SLOT_6 do
-				local citem = hero:GetItemInSlot(i)
-				if citem then
-					hero:SellItem(citem)
-					Gold:UpdatePlayerGold(iPlayerID)
-				end
-			end
+			
 			hero:DestroyAllModifiers()
 			Timers:CreateTimer(function()
 				UTIL_Remove(hero)
@@ -1490,6 +1578,51 @@ function GetInGamePlayerCount()
 		end
 	end
 	return counter
+end
+
+function GetTeamAllPlayerCount(iTeam)
+	local counter = 0
+	for i = 0, 23 do
+		if PlayerResource:IsValidPlayerID(i) then
+			if PlayerResource:GetTeam(i) == iTeam then
+				counter = counter + 1
+			end
+		end
+	end
+	return counter
+end
+
+function CDOTA_BaseNPC:UpdateAttackProjectile()
+	local projectile
+	for i = #ATTACK_MODIFIERS, 1, -1 do
+		local attack_modifier = ATTACK_MODIFIERS[i]
+		local apply = true
+		if attack_modifier.modifiers then
+			for _,v in ipairs(attack_modifier.modifiers) do
+				if not self:HasModifier(v) then
+					apply = false
+					break
+				end
+			end
+		end
+		if apply and attack_modifier.modifier then
+			apply = self:HasModifier(attack_modifier.modifier)
+		end
+		if apply then
+			projectile = attack_modifier.projectile
+			break
+		end
+	end
+	projectile = projectile or self:GetKeyValue("ProjectileModel")
+	self:SetRangedProjectileName(projectile)
+	return projectile
+end
+
+function Lifesteal(ability, unit, target, damage)
+	local target = keys.target
+	local lifesteal = keys.damage * keys.percent * 0.01
+	SafeHeal(caster, lifesteal, keys.ability)
+	SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, v, lifesteal, nil)
 end
 
 --TODO

@@ -53,6 +53,7 @@
 		"npc_arena_hero_zaken"							"Zaken"
 		"npc_arena_hero_anakim"							"Anakim"
 		"npc_arena_hero_poseidon"						"Poseidon"
+		"npc_arena_hero_saber"							"Saber"
 
 		"npc_arena_zaken_sailor"                        "Sailor"
 		
@@ -102,8 +103,6 @@
 		"duel1x1_message_error_duel_not_alive"			"Some of heroes to duel are not alive."
 		"duel1x1_over_winner_none"						"The 1x1 duel is over. At this time there is no winner."
 		"duel1x1_over_winner_is"						"The 1x1 duel is over. Winner: "
-
-		"dragon_burned_river"							"Dragon flyed over the river..."
 
 		"casino_slotmachine_roll_start"					"Hero rolled the slot machine. Numbers: "
 
@@ -215,6 +214,10 @@
 		"custom_runes_rune_8_text"								"Increases attack speed by 90 and multiplies all incoming experience by 3"
 		"custom_runes_rune_9_title"								"Vibration"
 		"custom_runes_rune_9_text"								"Pushes all enemies from you in 350 radius"
+		"custom_runes_rune_10_title"							"Soul Steal"
+		"custom_runes_rune_10_text"								"Heals you for 8% of damage recieved by any ally within 500 range for 32 seconds"
+		"custom_runes_rune_11_title"							"Spikes"
+		"custom_runes_rune_11_text"								"Reflects 75% of incoming damage to attacker for 15 seconds"
 
 		"custom_toast_PlayerDeniedSelf"							"{victim_name} {denied_icon} Denied"
 		"custom_toast_PlayerDenied"								"{killer_name} {denied_icon} Denied {victim_name}"

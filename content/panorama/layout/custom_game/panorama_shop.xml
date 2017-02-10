@@ -20,7 +20,7 @@
 		</snippet>
 	</snippets>
 	<Panel hittest="false" class="base">
-		<Panel hittest="true" id="ShopBase" class="ShopBase_Out">
+		<Panel hittest="true" onmouseactivate="" id="ShopBase" class="ShopBase_Out">
 			<Panel id="ItembuildsPanel">
 				<Panel id="Itembuild_select" />
 				<Panel class="SimpleRow">
@@ -68,7 +68,7 @@
 		<!-- <Button hittest="true" id="ShopBtnPanel" onactivate="OpenCloseShop()">
 			<Label id="ShopBtnLabel" hittest="false" text="#panorama_shop_shop_label"/>
 		</Button> -->
-		<Panel hittest="true" id="QuickBuyPanel">
+		<Panel hittest="true" onmouseactivate="" id="QuickBuyPanel">
 			<Panel class="DropDownValidTarget" hittest="false" />
 			<Panel id="QuickBuyPanelItems" />
 			<Image id="QuickBuyClearButtonPanel" onactivate="ClearQuickbuyItems()"/>

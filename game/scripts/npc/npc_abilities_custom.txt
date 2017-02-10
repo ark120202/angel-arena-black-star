@@ -125,7 +125,7 @@
 					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_LOW_ATTACK_PRIORITY""MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_LOW_ATTACK_PRIORITY"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
 
 				"Properties"
@@ -8060,7 +8060,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal"					"150 300 450 700 950 1200 1500"
+				"heal"					"120 200 280 360 440 520 600"
 			}
 			"02"
 			{
@@ -9240,6 +9240,7 @@
 				"IsPurgable"		"0"
 				"IsDebuff"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Duration"			"%duration"
 
 				"OverrideAnimation"     "ACT_DOTA_DISABLED"
 
@@ -15332,7 +15333,7 @@
 		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"arena/saber_mana_burst"
 		"ScriptFile"					"heroes/hero_saber/mana_burst.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityCooldown"				"2 1.75 1.5 1.25 1 0.75 0.5"
 		"MaxLevel" 						"7"
 		"AbilitySpecial"
@@ -15352,21 +15353,37 @@
 				"var_type"			"FIELD_FLOAT"
 				"armor_per_mana"	"0.01 0.01 0.02 0.02 0.02 0.03 0.035"
 			}
-			"03"
+			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"duration"			"8 8.5 9 9.5 10 10.5 11"
 			}
-			"04"
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"purge_health_pct"	"40"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"purge_stun_health_pct"	"10"
+			}
+			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"weakness_mana_pct"	"10 10 10 11 11 11 12"
 			}
-			"05"
+			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"weakness_disarmor"	"-60"
 			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_prison_end_mana_flash.vpcf"
+			"particle"  "particles/arena/units/heroes/hero_saber/mana_burst_stack.vpcf"
 		}
 	}
 
@@ -15402,15 +15419,15 @@
 		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"arena/saber_invisible_air"
 		"ScriptFile"					"heroes/hero_saber/invisible_air.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"MaxLevel" 						"7"
-		"AOERadius"						"%aoe_radius"
-		"AbilityCastRange"				"200"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"%forward_offset"
+		"AbilityCastPoint"				"0.45"
 		"AbilityCooldown"				"5"
-		"AbilityManaCost"				"100 200 300 450 600 800 1000"
+		"AbilityManaCost"				"100 200 300 350 400 450 500"
 		"AbilitySpecial"
 		{
 			"01"
@@ -15421,18 +15438,28 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_max"		"12000"
+				"damage_max"		"200 500 800 1100 1800 2600 3500"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aoe_radius"		"300"
+				"aoe_radius"		"400"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"2 2.5 3 3.5 4 4.5 5"
+				"var_type"			"FIELD_INTEGER"
+				"push_velocity"		"600"
 			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"forward_offset"	"100"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_saber/invisible_air.vpcf"
 		}
 	}
 
@@ -15441,12 +15468,14 @@
 		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"arena/saber_avalon"
 		"ScriptFile"					"heroes/hero_saber/avalon.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"RequiredLevel"					"6"
-		"LevelsBetweenUpgrades"			"7"
+		"LevelsBetweenUpgrades"			"6"
 		"MaxLevel" 						"7"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"100 90 85 80 75 70 65"
+		"AbilityChannelTime"			"5 6 7 7.5 8 8.5 9"
+		"AbilityManaCost"				"250 400 550 700 850 1000 1150"
 		"AbilitySpecial"
 		{
 			"01"
@@ -15457,12 +15486,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_health_regen_min"	"0"
+				"bonus_health_regen_min"	"2 5 8 12 16 18 22"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"3 3.25 3.5 3.75 4 4.25 4.5"
+				"duration"			"5 6 7 7.5 8 8.5 9"
 			}
 		}
 	}
@@ -15473,16 +15502,17 @@
 		"AbilityTextureName"			"arena/saber_excalibur"
 		"ScriptFile"					"heroes/hero_saber/excalibur.lua"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"RequiredLevel"					"18"
 		"LevelsBetweenUpgrades"			"16"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"MaxLevel" 						"7"
-		"AOERadius"						"%aoe_radius"
-		"AbilityCastRange"				"%length"
 		"AbilityCastPoint"				"0.2"
-		"AbilityChannelTime"			"%channel_time"
+		"AbilityChannelTime"			"0.8"
 		"AbilityCooldown"				"300 290 280 270 260 250 240"
+		"HasScepterUpgrade"				"1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -15492,24 +15522,40 @@
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_per_mana"	"11"
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_mana"	"4 5 6 7 8 9 10"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"0.5"
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"1000"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"width"				"300"
+				"cast_range_scepter"	"2000"
 			}
 			"05"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"length"			"1000"
+				"var_type"			"FIELD_FLOAT"
+				"channel_time"		"0.8"
 			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"200"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.5"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_saber/excalibur.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
 		}
 	}
 }

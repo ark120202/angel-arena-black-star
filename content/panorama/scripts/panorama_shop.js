@@ -278,8 +278,9 @@ function LoadItemsFromTable(panorama_shop_data) {
 
 function UpdateSmallItem(panel, gold) {
 	try {
-		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) <= (gold || PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]) && ItemData[panel.itemName].purchasable);
-		panel.SetHasClass("NotPurchasableItem", !ItemData[panel.itemName].purchasable);
+		var notpurchasable = !ItemData[panel.itemName].purchasable
+		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) <= (gold || PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]) || notpurchasable);
+		panel.SetHasClass("NotPurchasableItem", notpurchasable);
 		if (ItemStocks[panel.itemName] != null) {
 			var CurrentTime = Game.GetGameTime();
 			var RemainingTime = ItemStocks[panel.itemName].current_cooldown - (CurrentTime - ItemStocks[panel.itemName].current_last_purchased_time)

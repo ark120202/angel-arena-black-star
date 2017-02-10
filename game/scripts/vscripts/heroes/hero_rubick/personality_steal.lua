@@ -78,6 +78,14 @@ function RemoveSpell(keys)
 	for i = 0, caster:GetAbilityCount() - 1 do
 		local a = caster:GetAbilityByIndex(i)
 		if a and a ~= ability then
+			if a:GetAbilityName() == "broodmother_spin_web" then
+				local player = caster:GetPlayerOwner()
+				for _,v in ipairs(Entities:FindAllByName("npc_dota_broodmother_web")) do
+					if v:GetPlayerOwner() == player then
+						UTIL_Remove(v)
+					end
+				end
+			end
 			RemoveAbilityWithModifiers(caster, a)
 		end
 	end

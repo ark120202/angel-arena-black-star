@@ -133,51 +133,84 @@ function GameMode:DamageFilter(filterTable)
 		if victim:IsBoss() and (attacker:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() > 950 then
 			filterTable.damage = filterTable.damage / 2
 		end
-		
-		for k,v in pairs(ON_DAMAGE_MODIFIER_PROCS) do
-			if attacker.HasModifier and attacker:HasModifier(k) then
-				v(attacker, victim, inflictor, damage, damagetype_const)
-			end
-		end
-		for k,v in pairs(ON_DAMAGE_MODIFIER_PROCS_VICTIM) do
-			if victim.HasModifier and victim:HasModifier(k) then
-				v(attacker, victim, inflictor, damage, damagetype_const)
-			end
-
-		end
-		for k,v in pairs(OUTGOING_DAMAGE_MODIFIERS) do
-			if attacker.HasModifier and attacker:HasModifier(k) and	(not v.condition or (v.condition and v.condition(attacker, victim, inflictor, damage, damagetype_const))) then
-				if v.multiplier then
-					if type(v.multiplier) == "number" then
-						filterTable.damage = filterTable.damage * v.multiplier
-					elseif type(v.multiplier) == "function" then
-						local multiplier = v.multiplier(attacker, victim, inflictor, damage, damagetype_const)
-						if multiplier then
-							filterTable.damage = filterTable.damage * multiplier
-						end
-					end
-				end
-			end
-		end
-		for k,v in pairs(INCOMING_DAMAGE_MODIFIERS) do
-			if victim.HasModifier and victim:HasModifier(k) and	(not v.condition or (v.condition and v.condition(attacker, victim, inflictor, damage, damagetype_const))) then
-				if v.multiplier then
-					if type(v.multiplier) == "number" then
-						filterTable.damage = filterTable.damage * v.multiplier
-					elseif type(v.multiplier) == "function" then
-						local multiplier = v.multiplier(attacker, victim, inflictor, damage, damagetype_const)
-						if multiplier then
-							--print("Raw damage: " .. filterTable.damage .. ", after " .. k .. ": " .. filterTable.damage * multiplier .. " (multiplier: " .. multiplier .. ")")
-							filterTable.damage = filterTable.damage * multiplier
-						end
-					end
-				end
-			end
-		end
-
 		if (attacker.HasModifier and (attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) or (victim.HasModifier and (victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) then
 			filterTable.damage = 0
 			return false
+		end
+
+		local BlockedDamage = 0
+		local LifestealPercentage = 0
+		--local CriticalStrike = 0
+		local function ProcessDamageModifier(v)
+			local multiplier
+			if type(v) == "function" then
+				multiplier = v(attacker, victim, inflictor, damage, damagetype_const)
+			elseif type(v) == "table" then
+				if v.multiplier then
+					if type(v.multiplier) == "function" then
+						multiplier = v.multiplier(attacker, victim, inflictor, damage, damagetype_const)
+					else
+						multiplier = v.multiplier
+					end
+				end
+			end
+			if multiplier ~= nil then
+				if type(multiplier) == "table" then
+					if type(multiplier.reject) == "boolean" and not multiplier.reject then
+						filterTable.damage = 0
+						return false
+					end
+					if multiplier.BlockedDamage then
+						BlockedDamage = math.max(BlockedDamage, multiplier.BlockedDamage)
+					end
+					if multiplier.multiplier then
+						multiplier = multiplier.multiplier
+					end
+				end
+				--print("Raw damage: " .. filterTable.damage .. ", after " .. k .. ": " .. filterTable.damage * multiplier .. " (multiplier: " .. multiplier .. ")")
+				if type(multiplier) == "boolean" and not multiplier then
+					filterTable.damage = 0
+					return false
+				elseif type(multiplier) == "number" then
+					filterTable.damage = filterTable.damage * multiplier
+				end
+			end
+		end
+
+		if victim.HasModifier then
+			for k,v in pairs(ON_DAMAGE_MODIFIER_PROCS_VICTIM) do
+				if victim:HasModifier(k) then
+					ProcessDamageModifier(v)
+				end
+			end
+			for k,v in pairs(INCOMING_DAMAGE_MODIFIERS) do
+				if victim:HasModifier(k) and (not v.condition or (v.condition and v.condition(attacker, victim, inflictor, damage, damagetype_const))) then
+					ProcessDamageModifier(v)
+				end
+			end
+		end
+		if attacker.HasModifier then
+			for k,v in pairs(ON_DAMAGE_MODIFIER_PROCS) do
+				if attacker:HasModifier(k) then
+					ProcessDamageModifier(v)
+				end
+			end
+			for k,v in pairs(OUTGOING_DAMAGE_MODIFIERS) do
+				if attacker:HasModifier(k) and (not v.condition or (v.condition and v.condition(attacker, victim, inflictor, damage, damagetype_const))) then
+					ProcessDamageModifier(v)
+				end
+			end
+		end
+		if BlockedDamage > 0 then
+			PopupDamageBlock(victim, math.round(BlockedDamage))
+			--print("Raw damage: " .. filterTable.damage .. ", after blocking: " .. filterTable.damage - BlockedDamage .. " (blocked: " .. BlockedDamage .. ")")
+			filterTable.damage = filterTable.damage - BlockedDamage
+		end
+		if LifestealPercentage > 0 then
+			local lifesteal = filterTable.damage * LifestealPercentage * 0.01
+			SafeHeal(attacker, lifesteal)
+			SendOverheadEventMessage(attacker:GetPlayerOwner(), OVERHEAD_ALERT_HEAL, attacker, lifesteal, attacker:GetPlayerOwner())
+			print("Lifestealing " .. lifesteal .. " health from " .. filterTable.damage .. " damage points (" .. LifestealPercentage .. "% lifesteal)")
 		end
 
 		if attacker.GetPlayerOwnerID then
@@ -201,8 +234,8 @@ function GameMode:ModifyGoldFilter(filterTable)
 		filterTable["gold"] = 0
 		return false
 	end
-	filterTable["gold"] = 0
 	print("[GameMode:ModifyGoldFilter]: Attempt to call default dota gold modify func... FIX IT - Reason: " .. filterTable.reason_const .."  --  Amount: " .. filterTable["gold"])
+	filterTable["gold"] = 0
 	return false
 end
 

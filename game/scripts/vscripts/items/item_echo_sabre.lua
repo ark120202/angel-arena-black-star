@@ -14,11 +14,11 @@ function DoubleAttack(keys)
 			end
 		end
 	end
-	if PreformAbilityPrecastActions(caster, ability) and (not IsRangedUnit(caster) or not (caster.AttackFuncs ~= nil and caster.AttackFuncs.bNoDoubleAttackMelee)) then
+	if PreformAbilityPrecastActions(caster, ability) and not caster:IsIllusion() and (not IsRangedUnit(caster) or not (caster.AttackFuncs ~= nil and caster.AttackFuncs.bNoDoubleAttackMelee)) then
 		Timers:CreateTimer(ability:GetAbilitySpecial("attack_delay"), function()
 			if IsValidEntity(caster) and IsValidEntity(ability) then
 				local can = true
-				if not IsRangedUnit(caster) and caster.AttackFuncs and caster.AttackFuncs.bNoDoubleAttackMelee ~= nil then
+				if can and not IsRangedUnit(caster) and caster.AttackFuncs and caster.AttackFuncs.bNoDoubleAttackMelee ~= nil then
 					can = not caster.AttackFuncs.bNoDoubleAttackMelee
 				end
 				if can and IsValidEntity(target) then

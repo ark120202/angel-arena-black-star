@@ -10,6 +10,14 @@ end
 if IsServer() then
 	function saber_mana_burst:OnSpellStart()
 		local caster = self:GetCaster()
+		caster:EmitSound("Arena.Hero_Saber.ManaBurst")
 		caster:AddNewModifier(caster, self, "modifier_saber_mana_burst_active", {duration = self:GetSpecialValueFor("duration")}):SetStackCount(self:GetManaCost())
+		ParticleManager:CreateParticle("particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_prison_end_mana_flash.vpcf", PATTACH_ABSORIGIN, caster)
+		local pct = caster:GetHealthPercent()
+		if pct <= self:GetSpecialValueFor("purge_health_pct") then
+			local purgeStuns = pct <= self:GetSpecialValueFor("purge_stun_health_pct")
+			print(purgeStuns)
+			caster:Purge(false, true, false, purgeStuns, false)
+		end
 	end
 end

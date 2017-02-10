@@ -71,8 +71,6 @@
 		"duel1x1_over_winner_is_p1"						"Дуэль 1x1 окончена. Победитель: "
 		"duel1x1_over_winner_is_p2"						", получил "
 
-		"dragon_burned_river"							"Дракон пролетел над рекой..."
-
 		"casino_slotmachine_roll_start"					"Вы использовали Слот машину. Числа: "
 
 		"casino_slotmachine_roll_result_streak000"				"Вы проиграли. Проиграли всё."

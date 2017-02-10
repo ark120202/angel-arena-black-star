@@ -320,8 +320,11 @@ function HeroSelection:RemoveAllOwnedUnits(playerId)
 	local player = PlayerResource:GetPlayer(playerId)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	local courier = FindCourier(player:GetTeam())
+	--print("Begun destroying all units for ".. playerId)
 	for _,v in ipairs(FindAllOwnedUnits(player)) do
+		--print("Checking " .. v:GetName())
 		if v ~= hero and v ~= courier then
+			--print("Removing " .. v:GetName())
 			v:ClearNetworkableEntityInfo()
 			v:ForceKill(false)
 			UTIL_Remove(v)
@@ -469,7 +472,9 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			end
 		end
 		Timers:CreateTimer(duration - (GameRules:GetDOTATime(true, true) - startTime), function()
-			newHero:RemoveModifierByName("modifier_hero_selection_transformation")
+			if IsValidEntity(newHero) then
+				newHero:RemoveModifierByName("modifier_hero_selection_transformation")
+			end
 		end)
 	end)
 end

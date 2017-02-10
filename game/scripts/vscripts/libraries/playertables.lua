@@ -154,7 +154,7 @@ function PlayerTables:PlayerTables_Connected(args)
   for k,v in pairs(PlayerTables.subscriptions) do
     if v[pid] then
       if player then  
-        CustomGameEventManager:Send_ServerToPlayer(player, "pt_fu", {name=k, table=PlayerTables.tables[k]} )
+        CustomGameEventManager:Send_ServerToPlayer(player, "pt_fu", {name=k, table=PlayerTables.tables[k], inputlength=table.count(PlayerTables.subscriptions)} )
       end
     end
   end

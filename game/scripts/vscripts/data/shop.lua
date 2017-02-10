@@ -242,7 +242,6 @@ PANORAMA_SHOP_ITEMS = {
 			"item_rapier_of_pain",
 			"item_fallhammer",
 			"item_haganemushi",
-			"item_desolating_skadi",
 			"item_radiance_frozen",
 		},
 		{

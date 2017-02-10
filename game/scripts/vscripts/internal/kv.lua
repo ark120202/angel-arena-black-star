@@ -248,3 +248,7 @@ end
 function KVPurge(keys)
 	(keys.target or keys.caster):Purge(keys.RemovePositiveBuffs == 1, keys.RemoveDebuffs == 1, false, keys.RemoveStuns == 1, false)
 end
+
+function UpdateAttackProjectile(keys)
+	keys.caster:UpdateAttackProjectile()
+end

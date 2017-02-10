@@ -15,9 +15,8 @@
 	height: 35px;
 	margin-top: 5px;
 	margin-left: 210px;
-	background-color: rgba(0,0,0,0.98);
+	background-color: rgba(50,50,70,0.94);
 	border: 2px solid white;
-	border-radius: 6px;
 }
 #InfoContainer:hover
 {
@@ -51,7 +50,6 @@
 	height: 800px;
 	background-image: url("file://{images}/custom_game/ability_shop/background.png");
 	flow-children: down;
-	border-radius: 12px;
 	transition-property: opacity;
 	transition-duration: 0.15s;
 	opacity: 1;

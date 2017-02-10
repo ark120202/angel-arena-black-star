@@ -143,11 +143,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_magic_resistance_pct = {
 		icon = "magic_resistance",
-		cost = 2,
-		group = 1,
-		max_level = 14,
+		cost = 10,
+		group = 6,
+		max_level = 8,
 		special_values = {
-			magic_resistance_pct = {6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45}
+			magic_resistance_pct = {8, 12, 16, 20, 24, 28, 32, 36}
 		},
 		effect = {
 			modifiers = {

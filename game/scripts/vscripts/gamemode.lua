@@ -1,4 +1,4 @@
-ARENA_VERSION = "1.4.3"
+ARENA_VERSION = "1.4.4"
 
 BAREBONES_VERSION = "1.00"
 
@@ -32,7 +32,6 @@ local requirements = {
 	"data/containers",
 	"data/kv_data",
 	"data/modifiers",
-	"data/settings",
 	"data/wearables",
 	"data/shop",
 	"data/itembuilds",
@@ -58,7 +57,6 @@ local requirements = {
 	"panorama_shop",
 	"gamemodes",
 	"statcollection/init",
-	"developer",
 	"custom_wearables",
 	"SimpleAI",
 	"dynamic_minimap",

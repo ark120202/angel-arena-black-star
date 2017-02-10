@@ -80,9 +80,10 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 				if not Duel.IsFirstDuel or not Duel:IsDuelOngoing() then
 					Kills:IncreaseKillStreak(killerPlayerID)
 				end
-				
 				Kills:CreateKillTooltip(killerPlayerID, killedPlayerID, goldChange)
-				Kills:_GiveKillGold(killerEntity, killedUnit, goldChange)
+				if not (killerEntity.HasModifier and killerEntity:HasModifier("modifier_item_golden_eagle_relic_enabled")) then
+					Kills:_GiveKillGold(killerEntity, killedUnit, goldChange)
+				end
 			end
 		else
 			Kills:CreateKillTooltip(nil, killedPlayerID, goldChange)

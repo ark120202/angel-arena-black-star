@@ -40,32 +40,58 @@ TODO LIST:
 		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
 
 <<+===========================================================================================================
-[url=https://vk.com/wall-122685850_2151]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/ca0a60e516c0ae6729f3ac9c0d15834f]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/ca0a60e516c0ae6729f3ac9c0d15834f]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/ca0a60e516c0ae6729f3ac9c0d15834f
+[url=https://vk.com/wall-122685850_2628]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
+[url=https://gist.github.com/ark120202/9c55c5fd658d08c95de3695f1bc14ade]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/9c55c5fd658d08c95de3695f1bc14ade]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/9c55c5fd658d08c95de3695f1bc14ade
 ============================================================
-Angel Arena Black Star - Версия 1.4.3:
+Angel Arena Black Star - Версия 1.4.4:
 
 ============================================================
-Angel Arena Black Star - Version 1.4.3:
+Angel Arena Black Star - Version 1.4.4:
 
 ============================================================
-Angel Arena Black Star - Version 1.4.3:
+Angel Arena Black Star - Version 1.4.4:
 General:
-	
+	Added new hero: Saber
 Balance:
 	Runes:
-		
+		Added new runes:
+			Soul Steal
+			Spikes
 	Items:
-		
+		All custom items now are not unique attack modifiers
+		Removed Desolating Skadi
+		Golden Eagle Relic & Lucifer's Claw now lifesteals based on actual damage, after all reductions
+		Echo Sabre and it's upgrades now not works on illusions
+		Golden Eagle Relic:
+			When activated now hero won't get gold for kills
+			Now not deals additional damage to bosses
+			Minimal Gold per Second: 0 => 10
+			Gold per Second: 0.25% => 1%
+		Auto Scythe of Vyse:
+			Damage: 3000 => 500
+			Mana Cost: 100 => 600
 	Talents:
-		
+		Magic Resistance:
+			Required Level: 5 => 50
+			Cost: 2 => 10
+			Bonus Resistance: 6 9 12 15 18 21 24 27 30 33 36 39 42 45 => 8 12 16 20 24 28 32 36 %
 	Abilities:
-		
+		Mirratie - Sixth Sence & Medusa - Mana Shield now are disabled with Silver Edge
+		Templar Assassin - Trap & Shadow Demon - Shadow Poison Release in Ability Shop now can't be purchased with Lina - Fiery Soul
+		Omniknight - Purification:
+			Damage/Heal: 150 300 450 700 950 1200 1500 => 120 200 280 360 440 520 600
+		Anti-Mage - Mana Void:
+			Damage to Bosses: 35 => 0 %
 Fixes:
-	//Check echo sabre for ...items/item_echo_sabre.lua:29: This object has been deleted from C++ and no longer exists. (Use :IsNull() to detect this.)
+	Fixed most of heroes had 75% magic damage resistance
 	Fixed some script errors
+	Fixed Pudge - Dismember effect stayed on target forever after using Shadow Blade
+	Shop hittest fixed
+	Fixed Lone Druid crashed server on abandon
+	Fixed Rubick - Personality Steal & Broodmother - Spin Web interaction
+	//Fixed player tables sometimes breaked after reconnection - Check
 <<+===========================================================================================================
 
 

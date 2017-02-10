@@ -4109,7 +4109,7 @@
 			}
 
 
-			"modifier_item_lucifers_claw_lifesteal"
+			"modifier_item_lucifers_claw_unique"
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
@@ -4122,12 +4122,6 @@
 						"damage"		"%attack_damage"
 						"damage_bonus"	"%damage_bonus"
 						"damage_bonus_ranged"	"%damage_bonus_ranged"
-					}
-
-					"Lifesteal"
-					{
-						"Target"			"ATTACKER"
-						"LifestealPercent"	"%lifesteal_percent"
 					}
 				}
 			}
@@ -4898,144 +4892,6 @@
 		}
 	}
 
-	"item_recipe_desolating_skadi"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10067"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2400"	
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_desolating_skadi"
-		"ItemRequirements"
-		{
-			"01"						"item_skadi_8;item_desolator4"
-		}
-	}
-
-	"item_desolating_skadi"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10068"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_arena/desolating_skadi"
-		"ItemShopTags"					"agi;str;int;hard_to_tag;mana_pool;health_pool;unique"
-		"ItemQuality"					"artifact"
-		"ItemAliases"					"eos;eye of skadi; desolator; skadi desolator; desolator skadi; desolating skadi"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-			
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"1200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"225"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"2250"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"2450"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-175"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed"	"-60"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-80"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"debuff_duration"		"8.0"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_item_desolating_skadi"
-			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				"Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
-					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-
-				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					//"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
-					"ProjectileName"		"particles/arena/items_fx/desolating_skadi_projectile.vpcf"
-					"CastAttack"			"0"
-				}
-
-				"OnOrbImpact"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_desolating_skadi.lua"
-						"Function"		"ApplyDesolatingSkadiModifier"
-					}
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
-					}
-				}
-			}
-			"modifier_item_desolating_skadi_debuff"
-			{
-				"Passive"				"0"
-				"IsHidden"				"0"
-				"IsDebuff"				"1"
-				"Duration"				"%debuff_duration"
-				
-				"StatusEffectName"     "particles/status_fx/status_effect_frost_lich.vpcf"
-				"StatusEffectPriority" "10"
-					
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%corruption_armor"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%cold_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%cold_movement_speed"
-				}
-			}
-		}
-	}
-
 	"item_recipe_edge_of_vyse"
 	{
 		// General
@@ -5531,8 +5387,8 @@
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"18.5"
-		"AbilityDamage"					"3000"
-		"AbilityManaCost"				"100"
+		"AbilityDamage"					"500"
+		"AbilityManaCost"				"600"
 		"ItemShopTags"					"int;regen_mana;agi;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"hex;sheepstick;scythe of vyse"
@@ -11053,6 +10909,23 @@
 				"Passive"				"1"
 				"IsHidden"				"1"
 				"Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
 				
 				"Properties"
 				{
@@ -11062,16 +10935,8 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
 				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					"Label"					"DOTA_ORB_LABEL_SKADI"
-					"ProjectileName"		"particles/items2_fx/skadi_projectile.vpcf"
-					"CastAttack"			"0"
-				}
 
-				"OnOrbImpact"
+				"OnAttackLanded"
 				{
 					"ApplyModifier"
 					{
@@ -11158,6 +11023,23 @@
 				"Passive"				"1"
 				"IsHidden"				"1"
 				"Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
 				
 				"Properties"
 				{
@@ -11167,16 +11049,8 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
 				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					"Label"					"DOTA_ORB_LABEL_SKADI"
-					"ProjectileName"		"particles/items2_fx/skadi_projectile.vpcf"
-					"CastAttack"			"0"
-				}
 
-				"OnOrbImpact"
+				"OnAttackLanded"
 				{
 					"ApplyModifier"
 					{
@@ -11263,6 +11137,23 @@
 				"Passive"				"1"
 				"IsHidden"				"1"
 				"Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
 				
 				"Properties"
 				{
@@ -11272,16 +11163,8 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
 				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					"Label"					"DOTA_ORB_LABEL_SKADI"
-					"ProjectileName"		"particles/items2_fx/skadi_projectile.vpcf"
-					"CastAttack"			"0"
-				}
 
-				"OnOrbImpact"
+				"OnAttackLanded"
 				{
 					"ApplyModifier"
 					{
@@ -11368,6 +11251,23 @@
 				"Passive"				"1"
 				"IsHidden"				"1"
 				"Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
 				
 				"Properties"
 				{
@@ -11377,16 +11277,8 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
 				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					"Label"					"DOTA_ORB_LABEL_SKADI"
-					"ProjectileName"		"particles/items2_fx/skadi_projectile.vpcf"
-					"CastAttack"			"0"
-				}
 
-				"OnOrbImpact"
+				"OnAttackLanded"
 				{
 					"ApplyModifier"
 					{
@@ -14947,20 +14839,30 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
 				
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
 				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					"ProjectileName"		"particles/arena/items_fx/desolator2_projectile.vpcf"
-					"CastAttack"			"0"
-				}
 
-				"OnOrbImpact"
+				"OnAttackLanded"
 				{
 					"ApplyModifier"
 					{
@@ -15048,20 +14950,30 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
 				
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
 				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					"ProjectileName"		"particles/arena/items_fx/desolator2_projectile.vpcf"
-					"CastAttack"			"0"
-				}
 
-				"OnOrbImpact"
+				"OnAttackLanded"
 				{
 					"ApplyModifier"
 					{
@@ -15159,20 +15071,30 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
 				
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
 				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					"ProjectileName"		"particles/arena/items_fx/desolator4_projectile.vpcf"
-					"CastAttack"			"0"
-				}
 
-				"OnOrbImpact"
+				"OnAttackLanded"
 				{
 					"ApplyModifier"
 					{
@@ -15311,6 +15233,23 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
 				
 				"Properties"
 				{
@@ -15321,15 +15260,8 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
 				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					"ProjectileName"		"particles/arena/items_fx/desolator5_projectile.vpcf"
-					"CastAttack"			"0"
-				}
 
-				"OnOrbImpact"
+				"OnAttackLanded"
 				{
 					"ApplyModifier"
 					{
@@ -15479,6 +15411,23 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"UpdateAttackProjectile"
+					}
+				}
 				
 				"Properties"
 				{
@@ -15489,15 +15438,8 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
 				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					"ProjectileName"		"particles/arena/items_fx/desolator6_projectile.vpcf"
-					"CastAttack"			"0"
-				}
 
-				"OnOrbImpact"
+				"OnAttackLanded"
 				{
 					"ApplyModifier"
 					{
@@ -15838,7 +15780,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/lua/item_golden_eagle_relic.lua"
 		"ID"							"10237"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_arena/golden_eagle_relic"
@@ -15889,248 +15832,12 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_gold_lost_per_sec_pct" "0.25"
+				"active_gold_lost_per_sec_pct" "1"
 			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"internal/kv.lua"
-				"Function"				"SwapToItem"
-				"itemName"				"item_golden_eagle_relic_enabled"
-			}
-			
-			"FireSound"
-			{
-				"EffectName"				"DOTA_Item.MaskOfMadness.Activate"
-				"Target"					"CASTER"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_golden_eagle_relic"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attackspeed"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			}
-
-			"modifier_item_golden_eagle_relic_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				
-				"OnKill"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/items_midas.lua"
-						"Function"				"GiveKillBonusGold"
-						"KillGold"				"%kill_gold"
-						"KillXp"				"%kill_xp"
-						"modifier"				"modifier_item_golden_eagle_relic_unique"
-					}
-				}
-
-				"Orb"
-				{
-					"Priority"			"DOTA_ORB_PRIORITY_ITEM"
-					"ProjectileName"    "particles/arena/items_fx/golden_eagle_relic_projectile.vpcf"
-					"CastAttack"		"0"
-				}
-				
-				"OnOrbImpact"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_golden_eagle_relic.lua"
-						"Function"		"DealBonusDamage"
-					}
-
-					"Lifesteal"
-					{
-						"Target"			"ATTACKER"
-						"LifestealPercent"	"%lifesteal_pct"
-					}
-				}
-			}
-		}
-	}
-
-	"item_golden_eagle_relic_enabled"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10238"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_arena/golden_eagle_relic"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"ItemPurchasable"				"0"
-		"ItemSellable"					"0"
-		
-		"AbilitySpecial"
-		{
-			"01"
+			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"60"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attackspeed"		"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"kill_xp"				"8"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"20"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lifesteal_pct"			"28"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"gold_as_damage_pct"	"0.75"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"active_bonus_attackspeed" "225"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"active_bonus_movespeed_pct" "50"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"active_gold_lost_per_sec_pct" "0.25"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"internal/kv.lua"
-				"Function"				"SwapToItem"
-				"itemName"				"item_golden_eagle_relic"
-			}
-			
-			"FireSound"
-			{
-				"EffectName"				"DOTA_Item.Armlet.DeActivate"
-				"Target"					"CASTER"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_golden_eagle_relic"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attackspeed"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			}
-
-			"modifier_item_golden_eagle_relic_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				
-				"OnKill"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/items_midas.lua"
-						"Function"				"GiveKillBonusGold"
-						"KillGold"				"%kill_gold"
-						"KillXp"				"%kill_xp"
-						"modifier"				"modifier_item_golden_eagle_relic_unique"
-					}
-				}
-				
-				"Orb"
-				{
-					"Priority"			"DOTA_ORB_PRIORITY_ITEM"
-					"ProjectileName"    "particles/arena/items_fx/golden_eagle_relic_projectile.vpcf"
-					"CastAttack"		"0"
-				}
-				
-				"OnOrbImpact"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_golden_eagle_relic.lua"
-						"Function"		"DealBonusDamage"
-					}
-
-					"Lifesteal"
-					{
-						"Target"			"ATTACKER"
-						"LifestealPercent"	"%lifesteal_pct"
-					}
-				}
-			}
-
-			"modifier_item_golden_eagle_relic_enabled"
-			{
-				"Passive"			"1"
-
-				"EffectName"		"particles/arena/items_fx/golden_eagle_relic_buff.vpcf"
-				"EffectAttachType"	"follow_origin"
-		
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%active_bonus_attackspeed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%active_bonus_movespeed_pct"
-				}
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_golden_eagle_relic.lua"
-						"Function"		"WasteGoldInterval"
-						"interval"		"1"
-					}
-				}
-
-				"ThinkInterval"  "0.5"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_golden_eagle_relic.lua"
-						"Function"		"WasteGoldInterval"
-						"interval"		"0.5"
-					}
-				}
+				"active_gold_lost_per_sec_min" "10"
 			}
 		}
 	}
