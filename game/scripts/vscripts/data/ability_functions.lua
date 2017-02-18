@@ -36,7 +36,7 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	ancient_apparition_ice_blast = 0
 }
 
-local function OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
+local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
 	if inflictor and attacker:GetTeam() ~= victim:GetTeam() and not OCTARINE_NOT_LIFESTALABLE_ABILITIES[inflictor:GetAbilityName()] then
 		local heal = math.floor(damage * GetAbilitySpecial(itemname, victim:IsHero() and "hero_lifesteal" or "creep_lifesteal") * 0.01)
 		if heal >= 1 then
@@ -56,11 +56,18 @@ local function OctarineLifestel(attacker, victim, inflictor, damage, damagetype_
 end
 ON_DAMAGE_MODIFIER_PROCS = {
 	["modifier_item_octarine_core_arena"] = function(attacker, victim, inflictor, damage, damagetype_const)
-		OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, "item_octarine_core_arena", "modifier_octarine_bash_cooldown")
+		OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, "item_octarine_core_arena", "modifier_octarine_bash_cooldown")
 	end,
 	["modifier_item_refresher_core"] = function(attacker, victim, inflictor, damage, damagetype_const)
-		OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, "item_refresher_core", "modifier_octarine_bash_cooldown")
-	end
+		OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, "item_refresher_core", "modifier_octarine_bash_cooldown")
+	end,
+	["modifier_sara_evolution"] = function(attacker, victim, _, damage)
+		local ability = attacker:FindAbilityByName("sara_evolution")
+		print(damage * ability:GetSpecialValueFor("damage_to_energy_pct") * 0.01)
+		if ability and attacker.ModifyEnergy then
+			attacker:ModifyEnergy(damage * ability:GetSpecialValueFor("damage_to_energy_pct") * 0.01, true)
+		end
+	end,
 }
 
 ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
@@ -134,12 +141,12 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		condition = function(attacker, _, inflictor)
 			return not inflictor and not attacker:HasModifier("modifier_item_haganemushi")
 		end,
-		multiplier = function(attacker, victim, _, damage)
+		multiplier = function(attacker, victim, _, damage, damagetype)
 			local pct = GetAbilitySpecial("item_piercing_blade", "attack_damage_to_pure_pct") * 0.01
 			ApplyDamage({
 				victim = victim,
 				attacker = attacker,
-				damage = damage * pct,
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
 				damage_type = _G[GetKeyValue("item_piercing_blade", "AbilityUnitDamageType")],
 				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 				ability = FindItemInInventoryByName(attacker, "item_piercing_blade", false)
@@ -151,12 +158,12 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
-		multiplier = function(attacker, victim, _, damage)
+		multiplier = function(attacker, victim, _, damage, damagetype)
 			local pct = GetAbilitySpecial("item_haganemushi", "attack_damage_to_pure_pct") * 0.01
 			ApplyDamage({
 				victim = victim,
 				attacker = attacker,
-				damage = damage * pct,
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
 				damage_type = _G[GetKeyValue("item_haganemushi", "AbilityUnitDamageType")],
 				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 				ability = FindItemInInventoryByName(attacker, "item_haganemushi", false)
@@ -278,5 +285,41 @@ INCOMING_DAMAGE_MODIFIERS = {
 				end
 			end
 		end
-	}
+	},
+	["modifier_sara_fragment_of_armor_arena"] = {
+		multiplier = function(attacker, victim, _, damage)
+			local sara_fragment_of_armor = victim:FindAbilityByName("sara_fragment_of_armor")
+			if sara_fragment_of_armor and not victim:IsIllusion() and victim:IsAlive() and not victim:PassivesDisabled() and victim.GetEnergy and sara_fragment_of_armor:GetToggleState() then
+				local blocked_damage_pct = sara_fragment_of_armor:GetAbilitySpecial("blocked_damage_pct") * 0.01
+				local ndamage = damage * blocked_damage_pct
+				local mana_needed = ndamage / sara_fragment_of_armor:GetAbilitySpecial("damage_per_energy")
+				if victim:GetEnergy() >= mana_needed then
+					victim:EmitSound("Hero_Medusa.ManaShield.Proc")
+					victim:ModifyEnergy(-mana_needed)					
+					local particleName = "particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
+					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
+					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
+					ParticleManager:SetParticleControl(particle, 1, Vector(mana_needed,0,0))
+					return 1 - blocked_damage_pct
+				end
+			end
+		end
+	},
+}
+
+CREEP_BONUSES_MODIFIERS = {
+	["modifier_item_golden_eagle_relic_unique"] = {gold = GetAbilitySpecial("item_golden_eagle_relic", "kill_gold"), xp = GetAbilitySpecial("item_golden_eagle_relic", "kill_xp")},
+	["modifier_say_demonic_power"] = function(self)
+		local ability = self:FindAbilityByName("say_demonic_power")
+		if abiltiy then
+			return {gold = ability:GetLevelSpecialValueFor("bonus_creep_gold", ability:GetLevel() - 1)}
+		end
+	end,
+	["modifier_item_skull_of_midas"] = {gold = GetAbilitySpecial("item_skull_of_midas", "kill_gold"), xp = GetAbilitySpecial("item_skull_of_midas", "kill_xp")},
+	["modifier_talent_creep_gold"] = function(self)
+		local modifier = self:FindModifierByName("modifier_talent_creep_gold")
+		if modifier then
+			return {gold = modifier:GetStackCount()}
+		end
+	end
 }

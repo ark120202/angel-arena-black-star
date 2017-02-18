@@ -179,9 +179,6 @@ function HeroSelection:PreformGameStart()
 						--Tutorial:ForceGameStart()
 						PauseGame(false)
 						GameMode:OnHeroSelectionEnd()
-						Timers:CreateTimer(4 - 3.75, function()
-							CustomGameEventManager:Send_ServerToAllClients("time_show", {})
-						end)
 					end
 				})
 			else
@@ -280,6 +277,7 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 							print("[HeroSelection] For some reason player " .. playerId .. " has no hero. This player can't get a hero due to 7.00 patch. Returning")
 							return
 						end
+						HeroSelection:InitializeHeroClass(hero, heroTableCustom)
 						if heroTableCustom.base_hero then
 							TransformUnitClass(hero, heroTableCustom)
 							hero.UnitName = heroName
@@ -319,9 +317,9 @@ end
 function HeroSelection:RemoveAllOwnedUnits(playerId)
 	local player = PlayerResource:GetPlayer(playerId)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
-	local courier = FindCourier(player:GetTeam())
+	local courier = FindCourier(PlayerResource:GetTeam(playerId))
 	--print("Begun destroying all units for ".. playerId)
-	for _,v in ipairs(FindAllOwnedUnits(player)) do
+	for _,v in ipairs(FindAllOwnedUnits(player or playerId)) do
 		--print("Checking " .. v:GetName())
 		if v ~= hero and v ~= courier then
 			--print("Removing " .. v:GetName())
@@ -610,6 +608,16 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			unit:SetHasInventory(toboolean(value))
 		elseif key == "AttackRange" then
 			unit:AddNewModifier(unit, nil, "modifier_set_attack_range", {AttackRange = value})
+		end
+	end
+end
+
+function HeroSelection:InitializeHeroClass(unit, classTable)
+	for key, value in pairs(classTable) do
+		if key == "Modifiers" then
+			for _,v in ipairs(string.split(value)) do
+				unit:AddNewModifier(unit, nil, v, nil)
+			end
 		end
 	end
 end

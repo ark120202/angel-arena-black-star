@@ -65,13 +65,17 @@ function CDOTA_BaseNPC:EquipItemsFromPlayerSelectionOrDefault()
 				local InvisibilityLevel = self:IsInvisible() and 1 or 0
 				local modelChanged = self:HasModelChanged()
 				for slot, wearable in pairs(self.EquippedWearables or {}) do
-					local itemLevel = InvisibilityLevel
-					if modelChanged or wearable.entity.WearableVisible == false then
-						itemLevel = itemLevel + 1.01
-					end
-					local modifier = wearable.entity:FindModifierByName("modifier_arena_wearable")
-					if modifier then
-						modifier:SetStackCount(itemLevel * 100)
+					if IsValidEntity(wearable.entity) then
+						local itemLevel = InvisibilityLevel
+						if modelChanged or wearable.entity.WearableVisible == false then
+							itemLevel = itemLevel + 1.01
+						end
+						local modifier = wearable.entity:FindModifierByName("modifier_arena_wearable")
+						if modifier then
+							modifier:SetStackCount(itemLevel * 100)
+						end
+					else
+						self.EquippedWearables[slot] = nil
 					end
 				end
 				return 0.03

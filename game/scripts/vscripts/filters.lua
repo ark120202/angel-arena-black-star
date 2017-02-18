@@ -166,6 +166,9 @@ function GameMode:DamageFilter(filterTable)
 					if multiplier.multiplier then
 						multiplier = multiplier.multiplier
 					end
+					if multiplier.LifestealPercentage then
+						LifestealPercentage = math.max(LifestealPercentage, multiplier.LifestealPercentage)
+					end
 				end
 				--print("Raw damage: " .. filterTable.damage .. ", after " .. k .. ": " .. filterTable.damage * multiplier .. " (multiplier: " .. multiplier .. ")")
 				if type(multiplier) == "boolean" and not multiplier then
@@ -184,7 +187,7 @@ function GameMode:DamageFilter(filterTable)
 				end
 			end
 			for k,v in pairs(INCOMING_DAMAGE_MODIFIERS) do
-				if victim:HasModifier(k) and (not v.condition or (v.condition and v.condition(attacker, victim, inflictor, damage, damagetype_const))) then
+				if victim:HasModifier(k) and (type(v) ~= "table" or not v.condition or (v.condition and v.condition(attacker, victim, inflictor, damage, damagetype_const))) then
 					ProcessDamageModifier(v)
 				end
 			end
@@ -196,7 +199,7 @@ function GameMode:DamageFilter(filterTable)
 				end
 			end
 			for k,v in pairs(OUTGOING_DAMAGE_MODIFIERS) do
-				if attacker:HasModifier(k) and (not v.condition or (v.condition and v.condition(attacker, victim, inflictor, damage, damagetype_const))) then
+				if attacker:HasModifier(k) and (type(v) ~= "table" or not v.condition or (v.condition and v.condition(attacker, victim, inflictor, damage, damagetype_const))) then
 					ProcessDamageModifier(v)
 				end
 			end
@@ -210,7 +213,8 @@ function GameMode:DamageFilter(filterTable)
 			local lifesteal = filterTable.damage * LifestealPercentage * 0.01
 			SafeHeal(attacker, lifesteal)
 			SendOverheadEventMessage(attacker:GetPlayerOwner(), OVERHEAD_ALERT_HEAL, attacker, lifesteal, attacker:GetPlayerOwner())
-			print("Lifestealing " .. lifesteal .. " health from " .. filterTable.damage .. " damage points (" .. LifestealPercentage .. "% lifesteal)")
+			ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
+			--print("Lifestealing " .. lifesteal .. " health from " .. filterTable.damage .. " damage points (" .. LifestealPercentage .. "% lifesteal)")
 		end
 
 		if attacker.GetPlayerOwnerID then
@@ -261,7 +265,7 @@ end
 function GameMode:CustomChatFilter(playerID, text, teamonly)
 	if string.starts(text, "-") then
 		local cmd = {}
-		for v in string.gmatch(string.lower(string.sub(text, 2)), "%S+") do table.insert(cmd, v) end
+		for v in string.gmatch(string.sub(text, 2), "%S+") do table.insert(cmd, v) end
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 		if CustomWearables:HasWearable(playerID, "wearable_developer") then
 			if cmd[1] == "debugallcalls" then
@@ -290,6 +294,13 @@ function GameMode:CustomChatFilter(playerID, text, teamonly)
 			if cmd[1] == "model" then
 				hero:SetModel(cmd[2])
 				hero:SetOriginalModel(cmd[2])
+			end
+			if cmd[1] == "lua" then
+				local str = ""
+				for i = 2, #cmd do
+					str = str .. cmd[i] .. " "
+				end
+				EvalString(str)
 			end
 		end
 		if GameRules:IsCheatMode() then

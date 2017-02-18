@@ -30,9 +30,10 @@ var SteamIDSpecialBGs = {
 		"http://file.mobilmusic.ru/8f/8e/b8/768273.jpg",
 	],
 }
+$.GetContextPanel().visible = false;
 
 function HeroSelectionStart(HeroesServerData) {
-	MainPanel.visible = true;
+	$.GetContextPanel().visible = true;
 	SelectionTimerDuration = HeroesServerData.SelectionTime;
 	tabsData = HeroesServerData.HeroTabs
 	for (var tabKey in tabsData) {
@@ -45,6 +46,23 @@ function HeroSelectionStart(HeroesServerData) {
 	}
 	$("#SwitchTabButton").visible = tabsData[2] != null;
 	SelectHeroTab(1)
+}
+
+function HeroSelectionEnd(bImmidate) {
+	$.GetContextPanel().style.opacity = 0
+	$.Schedule(bImmidate ? 0 : 5.6, function() {
+		MainPanel.visible = false
+		FindDotaHudElement("PausedInfo").style.opacity = 1;
+		if (HideEvent != null)
+			GameEvents.Unsubscribe(HideEvent)
+		if (PTID != null)
+			PlayerTables.UnsubscribeNetTableListener(PTID)
+		if (MinimapPTIDs.length > 0)
+			$.Each(MinimapPTIDs, function(ptid) {
+				PlayerTables.UnsubscribeNetTableListener(ptid)
+			})
+		$.GetContextPanel().DeleteAsync(0)
+	})
 }
 
 function SelectHeroTab(tabIndex) {
@@ -222,23 +240,6 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	}
 }
 
-function HeroSelectionEnd(bImmidate) {
-	$.GetContextPanel().style.opacity = 0
-	$.Schedule(bImmidate ? 0 : 5.6, function() {
-		MainPanel.visible = false
-		FindDotaHudElement("PausedInfo").style.opacity = 1;
-		if (HideEvent != null)
-			GameEvents.Unsubscribe(HideEvent)
-		if (PTID != null)
-			PlayerTables.UnsubscribeNetTableListener(PTID)
-		if (MinimapPTIDs.length > 0)
-			$.Each(MinimapPTIDs, function(ptid) {
-				PlayerTables.UnsubscribeNetTableListener(ptid)
-			})
-		$.GetContextPanel().DeleteAsync(0)
-	})
-}
-
 function ShowPrecache() {
 	$("#HeroSelectionBox").visible = false
 	$("#HeroSelectionPrecacheBase").visible = true
@@ -310,22 +311,23 @@ function UpdatePrecacheProgress(t) {
 }
 (function() {
 	DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {
-		if (changesObject.HeroTabs != null)
-			HeroSelectionStart(changesObject);
 		if (changesObject.HeroSelectionState != null) {
 			switch (changesObject.HeroSelectionState) {
 				case HERO_SELECTION_STATE_END:
-					HeroSelectionEnd(HeroSelectionState == -1)
-					break
+					HeroSelectionEnd(HeroSelectionState == -1);
+					break;
 			}
-			HeroSelectionState = changesObject.HeroSelectionState
+			HeroSelectionState = changesObject.HeroSelectionState;
 		}
-
-		if (HeroSelectionState != HERO_SELECTION_STATE_END && changesObject.SelectionStartTime != null) {
-			SelectionTimerStartTime = changesObject.SelectionStartTime;
-			UpdateTimer();
-			SelectFirstHeroPanel();
-		};
+		if (HeroSelectionState != HERO_SELECTION_STATE_END) {
+			if (changesObject.HeroTabs != null)
+				HeroSelectionStart(changesObject);
+			if (changesObject.SelectionStartTime != null) {
+				SelectionTimerStartTime = changesObject.SelectionStartTime;
+				UpdateTimer();
+				SelectFirstHeroPanel();
+			};
+		}
 	});
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {

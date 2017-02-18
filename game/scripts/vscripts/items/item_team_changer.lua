@@ -40,9 +40,23 @@ function ChangeTeam(keys)
 		v:SetControllableByPlayer(playerID, v:GetTeamNumber() == targetTeam)
 	end]]
 	--FindCourier(oldTeam):SetControllableByPlayer(playerID, false)
-	FindCourier(targetTeam):SetControllableByPlayer(playerID, true)
+	local targetCour = FindCourier(targetTeam)
+	if IsValidEntity(targetCour) then
+		targetCour:SetControllableByPlayer(playerID, true)
+	end
 	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
 	PlayerTables:AddPlayerSubscription("dynamic_minimap_points_" .. targetTeam, playerID)
+
+	for i = 0, caster:GetAbilityCount() - 1 do
+		local skill = caster:GetAbilityByIndex(i)
+		if skill then
+			--print(skill.GetIntrinsicModifierName and skill:GetIntrinsicModifierName())
+			if skill.GetIntrinsicModifierName and skill:GetIntrinsicModifierName() then
+				RecreateAbility(caster, skill)
+			end
+		end
+	end
+
 	CustomGameEventManager:Send_ServerToPlayer(caster:GetPlayerOwner(), "arena_team_changed_update", {})
 	PlayerResource:RefreshSelection()
 	

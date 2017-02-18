@@ -35,8 +35,7 @@ function modifier_item_golden_eagle_relic_unique:IsHidden()
 end
 function modifier_item_golden_eagle_relic_unique:DeclareFunctions()
 	return {
-		MODIFIER_EVENT_ON_ATTACK_LANDED,
-		MODIFIER_EVENT_ON_DEATH
+		MODIFIER_EVENT_ON_ATTACK_LANDED
 	}
 end
 if IsServer() then
@@ -57,19 +56,6 @@ if IsServer() then
 				SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, target, dmg, nil)
 			end
 			
-		end
-	end
-	require("items/items_midas")
-	function modifier_item_golden_eagle_relic_unique:OnDeath(keys)
-		local attacker = keys.attacker
-		if attacker == self:GetParent() then
-			local ability = self:GetAbility()
-			GiveKillBonusGold({
-				caster = attacker,
-				KillGold = ability:GetSpecialValueFor("kill_gold"),
-				KillXp = ability:GetSpecialValueFor("kill_xp"),
-				modifier = "modifier_item_golden_eagle_relic_unique",
-			})
 		end
 	end
 	function modifier_item_golden_eagle_relic_unique:OnCreated()

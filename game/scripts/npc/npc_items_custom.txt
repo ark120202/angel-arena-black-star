@@ -4108,7 +4108,6 @@
 				}
 			}
 
-
 			"modifier_item_lucifers_claw_unique"
 			{
 				"Passive"			"1"
@@ -9746,23 +9745,6 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			}
-
-			"modifier_item_skull_of_midas_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"OnKill"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/items_midas.lua"
-						"Function"				"GiveKillBonusGold"
-						"KillGold"				"%kill_gold"
-						"KillXp"				"%kill_xp"
-						"modifier"				"modifier_item_skull_of_midas_unique"
-					}
 				}
 			}
 		}
@@ -19188,7 +19170,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
 		"ItemPurchasable"				"0"
 		"ItemShopTags"					"damage;attack_speed;unique"
 		"ItemQuality"					"artifact"

@@ -148,6 +148,7 @@ function FindCourier(unit) {
 
 function DynamicSubscribePTListener(table, callback, OnConnectedCallback) {
 	if (PlayerTables.IsConnected()) {
+		//$.Msg("Update " + table + " / PT connected")
 		var tableData = PlayerTables.GetAllTableValues(table)
 		if (tableData != null)
 			callback(table, tableData, {})
@@ -156,16 +157,20 @@ function DynamicSubscribePTListener(table, callback, OnConnectedCallback) {
 			OnConnectedCallback(ptid)
 		}
 	} else {
+		//$.Msg("Update " + table + " / PT not connected, repeat")
 		$.Schedule(0.1, function() {
-			DynamicSubscribePTListener(table, callback)
+			DynamicSubscribePTListener(table, callback, OnConnectedCallback)
 		})
 	}
 }
 
 function DynamicSubscribeNTListener(table, callback, OnConnectedCallback) {
 	var tableData = CustomNetTables.GetAllTableValues(table)
-	if (tableData != null)
-		callback(table, tableData, {})
+	if (tableData != null) {
+		$.Each(tableData, function(ent) {
+			callback(table, ent.key, ent.value)
+		})
+	}
 	var ptid = CustomNetTables.SubscribeNetTableListener(table, callback)
 	if (OnConnectedCallback != null) {
 		OnConnectedCallback(ptid)

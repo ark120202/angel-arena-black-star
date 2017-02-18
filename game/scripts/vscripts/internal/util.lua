@@ -982,10 +982,13 @@ end
 
 function FindAllOwnedUnits(player)
 	local summons = {}
-	local units = FindUnitsInRadius(PlayerResource:GetTeam(player:GetPlayerID()), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED, FIND_ANY_ORDER, false)
+	local pid = type(player) == "number" and player or player:GetPlayerID()
+	local units = FindUnitsInRadius(PlayerResource:GetTeam(pid), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED, FIND_ANY_ORDER, false)
 	for _,v in ipairs(units) do
-		if v:GetPlayerOwner() == player and not (v:HasModifier("modifier_dummy_unit") or v:HasModifier("modifier_containers_shopkeeper_unit") or v:HasModifier("modifier_teleport_passive")) and v ~= hero then
-			table.insert(summons, v)
+		if type(player) == "number" and ((v.GetPlayerID ~= nil and v:GetPlayerID() or v:GetPlayerOwnerID()) == pid) or v:GetPlayerOwner() == player then
+			if not (v:HasModifier("modifier_dummy_unit") or v:HasModifier("modifier_containers_shopkeeper_unit") or v:HasModifier("modifier_teleport_passive")) and v ~= hero then
+				table.insert(summons, v)
+			end
 		end
 	end
 	return summons
@@ -1029,7 +1032,7 @@ function MakePlayerAbandoned(iPlayerID)
 					if item:GetInitialCharges() ~= charges then
 						toWriteCharges = charges
 					end
-					playerInfo.items[i] = {
+					PLAYER_DATA[iPlayerID].BeforeAbandon_HeroInventorySnapshot[i] = {
 						name = item:GetAbilityName(),
 						stacks = toWriteCharges
 					}
@@ -1049,7 +1052,7 @@ function MakePlayerAbandoned(iPlayerID)
 		local ptd = PlayerTables:GetTableValue("arena", "players_abandoned")
 		table.insert(ptd, iPlayerID)
 		PlayerTables:SetTableValue("arena", "players_abandoned", ptd)
-		if not GameRules:IsCheatMode() or true then
+		if not GameRules:IsCheatMode() then
 			local teamLeft = GetOneRemainingTeam()
 			if teamLeft then
 				Timers:CreateTimer(30, function()
@@ -1202,7 +1205,9 @@ function FindNearestEntity(vec3, units)
 end
 
 function FindCourier(team) 
-	return TEAMS_COURIERS[team]
+	if type(TEAMS_COURIERS[team]) == "table" then
+		return TEAMS_COURIERS[team]
+	end
 end
 
 function GetNotScaledDamage(damage, unit)
@@ -1240,10 +1245,7 @@ function RandomPositionAroundPoint(pos, radius)
 end
 
 function EvalString(str)
-	local status, nextCall = xpcall(loadstring(str), function(msg) return msg..'\n'..debug.traceback()..'\n' end)
-	if not status then
-		print(nextCall)
-	end
+	return DebugCallFunction(loadstring(str))
 end
 
 function GetPlayersInTeam(team)
@@ -1444,7 +1446,19 @@ function CDOTA_BaseNPC_Hero:GetTotalHealthReduction()
 	if mod then
 		pct = pct + mod:GetAbility():GetAbilitySpecial("health_decrease_pct")
 	end
+	------------
+	local sara_evolution = self:FindAbilityByName("sara_evolution")
+	if sara_evolution then
+		local dec = sara_evolution:GetSpecialValueFor("health_reduction_pct")
+		return dec + ((100-dec) * pct * 0.01)
+	end
 	return pct
+end
+
+function CDOTA_BaseNPC_Hero:CalculateHealthReduction()
+	self:CalculateStatBonus()
+	local pct = self:GetTotalHealthReduction()
+	self:SetMaxHealth(pct >= 100 and 1 or self:GetMaxHealth() - pct * (self:GetMaxHealth()/100))
 end
 
 function CDOTA_BaseNPC_Hero:ResetAbilityPoints()
@@ -1518,7 +1532,7 @@ function GetConnectionState(pid)
 end
 
 function DebugCallFunction(fun)
-	local status, nextCall = xpcall(function() return fun() end, function (msg)
+	local status, nextCall = xpcall(fun, function (msg)
 		return msg..'\n'..debug.traceback()..'\n'
 	end)
 	if not status then
@@ -1623,6 +1637,40 @@ function Lifesteal(ability, unit, target, damage)
 	local lifesteal = keys.damage * keys.percent * 0.01
 	SafeHeal(caster, lifesteal, keys.ability)
 	SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, v, lifesteal, nil)
+end
+
+function RecreateAbility(unit, ability)
+	local name = ability:GetAbilityName()
+	local level = ability:GetLevel()
+	RemoveAbilityWithModifiers(unit, ability)
+	ability = AddNewAbility(unit, name, true)
+	if ability then
+		ability:SetLevel(level)
+	end
+end
+
+function CDOTA_Buff:SetSharedKey(key, value)
+	local t = CustomNetTables:GetTableValue("shared_modifiers", self:GetParent():GetEntityIndex() .. "_" .. self:GetName()) or {}
+	t[key] = value
+	CustomNetTables:SetTableValue("shared_modifiers", self:GetParent():GetEntityIndex() .. "_" .. self:GetName(), t)
+end
+
+--from DotaCraft
+function GetPreMitigationDamage(value, victim, attacker, damagetype)
+	print(damagetype)
+	if damagetype == DAMAGE_TYPE_PHYSICAL then
+		local armor = victim:GetPhysicalArmorValue()
+		local reduction = ((armor)*0.06) / (1+0.06*(armor))
+		local damage = value / (1 - reduction)
+		return damage,reduction
+	elseif damagetype == DAMAGE_TYPE_MAGICAL then
+		local reduction = victim:GetMagicalArmorValue()*0.01
+		local damage = value / (1 - reduction)
+
+		return damage,reduction
+	else
+		return value,0
+	end
 end
 
 --TODO

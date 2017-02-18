@@ -1,0 +1,651 @@
+"DOTAAbilities"
+{
+	"shinobu_vampire_blood"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/shinobu_vampire_blood"
+		"MaxLevel" 						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"HasInnateModifiers"			"1"
+		"LevelsBetweenUpgrades"			"10"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lifesteal_pct_lvl1"		"5 10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed_lvl1" "-20 -30 -40 -50 -60"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_move_speed_lvl1" "-15"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_mark_pct_lvl2"	"25"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lifesteal_pct_lvl2"		"10 15 20 25 30"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed_lvl2" "0"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_move_speed_lvl2" "10"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_mark_pct_lvl3"	"50"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lifesteal_pct_lvl3"		"15 20 25 30 35"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed_lvl3" "90 100 110 120 125"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_move_speed_lvl3" "50"
+			}
+			"12"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_mark_pct_lvl4"	"80"
+			}
+			"13"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lifesteal_pct_lvl4"		"20 25 30 35 40"
+			}
+			"14"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed_lvl4" "160 170 180 190 200"
+			}
+			"15"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_move_speed_lvl4" "80"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_shinobu/lifesteal_lvl1.vpcf"
+			"particle"  "particles/arena/units/heroes/hero_shinobu/lifesteal_lvl2.vpcf"
+			"particle"  "particles/arena/units/heroes/hero_shinobu/lifesteal_lvl3.vpcf"
+			"particle"  "particles/arena/units/heroes/hero_shinobu/lifesteal_lvl4.vpcf"
+			"particle"  "particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
+			"particle"  "particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf"
+			"particle"  "particles/econ/items/legion/legion_fallen/legion_fallen_press.vpcf"
+		}
+
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"internal/kv.lua"
+				"Function"		"SetFirstLevel"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_shinobu/vampire_blood.lua"
+				"Function"		"RespawnHealth"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_shinobu_vampire_blood"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"OnRespawn"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shinobu/vampire_blood.lua"
+						"Function"		"RespawnHealth"
+					}
+				}
+
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shinobu/vampire_blood.lua"
+						"Function"		"StealHealth"
+						"damage"		"%attack_damage"
+					}
+				}
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shinobu/vampire_blood.lua"
+						"Function"		"UpdateStateLevel"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shinobu_vampire_blood_buff_lvl1"
+						"Target" 		"CASTER"
+					}
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shinobu_vampire_blood_buff_lvl2"
+						"Target" 		"CASTER"
+					}
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shinobu_vampire_blood_buff_lvl3"
+						"Target" 		"CASTER"
+					}
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shinobu_vampire_blood_buff_lvl4"
+						"Target" 		"CASTER"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DISABLE_HEALING" "1" 
+				}
+			}
+
+			"modifier_shinobu_vampire_blood_buff_lvl1"
+			{
+				"IsHidden"			"0"
+				"IsPurgable"		"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed_lvl1"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_move_speed_lvl1"
+				}
+			}
+
+			"modifier_shinobu_vampire_blood_buff_lvl2"
+			{
+				"IsHidden"			"0"
+				"IsPurgable"		"0"
+
+				"EffectName"		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed_lvl2"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_move_speed_lvl2"
+				}
+			}
+
+			"modifier_shinobu_vampire_blood_buff_lvl3"
+			{
+				"IsHidden"			"0"
+				"IsPurgable"		"0"
+
+				"EffectName"		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed_lvl3"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_move_speed_lvl3"
+				}
+			}
+
+			"modifier_shinobu_vampire_blood_buff_lvl4"
+			{
+				"IsHidden"			"0"
+				"IsPurgable"		"0"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/econ/items/legion/legion_fallen/legion_fallen_press.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "CASTER"
+
+						"ControlPointEntities"
+						{
+							"CASTER"	"follow_origin"
+							"CASTER"	"follow_origin"
+						}
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed_lvl4"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_move_speed_lvl4"
+				}
+			}
+		}
+	}
+
+	"shinobu_eat_oddity"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/shinobu_eat_oddity"
+		"MaxLevel" 						"7"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"400 450 500 550 600 650 675"
+		"AbilityCooldown"				"80 75 70 65 60 55 50"
+		"AbilityManaCost"				"120"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold_pct"		"50 100 150 200 250 300 350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"12.5 15 17.5 20 22.5 25 30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_health_pct"		"30 35 40 45 50 55 60"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_shinobu/eat_oddity.lua"
+				"Function"		"Eat"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_shinobu_eat_oddity_buff"
+			{
+				"IsPurgable"		"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"		"1"
+				}
+			}
+		}
+	}
+
+	"shinobu_kokorowatari"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/shinobu_kokorowatari"
+		"MaxLevel" 						"7"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_range" "32 64 96 128 160 192 224"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"chance_to_kill"	"5 7 9 11 13 15 17"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"soul_duration"		"15 20 25 30 30 30 30"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_shinobu_kokorowatari"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+		
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shinobu/kokorowatari.lua"
+						"Function"		"CreateSoul"
+					}
+				}
+
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shinobu/kokorowatari.lua"
+						"Function"		"ChanceToKill"
+					}
+				}
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%bonus_attack_range"
+				}
+			}
+		}
+	}
+
+	"shinobu_soul_unit"
+	{
+		"AbilityBehavior"		 	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"					"ability_datadriven"
+		"MaxLevel"					"1"
+		
+		"Modifiers"
+		{
+			"modifier_shinobu_soul_unit"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"StatusEffectName" 		"particles/status_fx/status_effect_phantom_lancer_illusion.vpcf" 	   
+				"StatusEffectPriority"  "999999"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shinobu/kokorowatari.lua"
+						"Function"		"UpdateHealthTimer"
+					}
+				}
+			}
+		}
+	}
+
+	"shinobu_yumewatari_lua"
+	{
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"arena/shinobu_yumewatari_lua"
+		"ScriptFile"					"heroes/hero_shinobu/yumewatari.lua"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"10"
+		"RequiredLevel"					"5"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK2"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCooldown"				"50"
+		"AbilityManaCost"				"130"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"150 550 750 850 1200 1600 2000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_ghost_level"	"3 5 8 12 16 20 0"
+			}
+		}
+	}
+
+	"shinobu_hide_in_shadows"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/shinobu_hide_in_shadows"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ally_radius"		"300 400 500 550 600 650 700"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"fade_time"			"6 5.5 5.25 5 4.75 4.5 4.25"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"rage_duration"		"8 10 12 14 16 18 20"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"rage_bonus_damage"	"80 150 230 400 600 1000 1800"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"rage_bonus_speed_const" "522"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"rage_bonus_evasion_chance" "40"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+		}
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_shinobu/hide_in_shadows.lua"
+				"Function"		"UpgradeCleanup"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_shinobu_hide_in_shadows"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shinobu/hide_in_shadows.lua"
+						"Function"		"CheckInvis"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shinobu_hide_in_shadows_fade"
+						"Target" 		"CASTER"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shinobu_hide_in_shadows_invisibility"
+						"Target" 		"CASTER"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shinobu/hide_in_shadows.lua"
+						"Function"		"UpgradeCleanup"
+					}
+				}
+			}
+
+			"modifier_shinobu_hide_in_shadows_fade"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%fade_time"
+
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_invisible"
+					}
+
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_shinobu_hide_in_shadows_invisibility"
+						"Target" 		"CASTER"
+					}
+				}
+
+				"OnAttack"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_shinobu_hide_in_shadows_fade"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+
+			"modifier_shinobu_hide_in_shadows_invisibility"
+			{
+				"IsPurgable"		"0"
+				"Priority"			"MODIFIER_PRIORITY_ULTRA"
+
+				"OnAbilityExecuted"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_invisible"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"Target"
+						{
+							"Center"	"CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						"ModifierName"	"modifier_invisible"
+					}
+				}
+
+				"OnAttack"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shinobu_hide_in_shadows_invisibility"
+						"Target" 		"CASTER"
+					}
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_shinobu_hide_in_shadows_fade"
+						"Target" 		"CASTER"
+					}
+				}
+
+				"ThinkInterval"  "0.03"
+				"OnIntervalThink"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_invisible"
+						"Target"	"CASTER"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shinobu/hide_in_shadows.lua"
+						"Function"		"PurgeAllTruesightModifiers"
+					}
+				}
+		
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_TRUESIGHT_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_shinobu_hide_in_shadows_rage"
+			{
+				"IsPurgable"		"0"
+				"Duration"			"%rage_duration"
+
+				"EffectName"		"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%rage_bonus_damage"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%rage_bonus_speed_const"
+				    "MODIFIER_PROPERTY_EVASION_CONSTANT"			"%rage_bonus_evasion_chance"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+}

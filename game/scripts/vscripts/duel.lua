@@ -67,17 +67,17 @@ function Duel:StartDuel()
 	end
 	local heroes_in_teams = {}
 	for i,v in pairs(Duel.heroes_teams_for_duel) do
-		if not heroes_in_teams[i] then heroes_in_teams[i] = 0 end
 		for _,unit in pairs(v) do
 			local pid = unit:GetPlayerOwnerID()
 			if unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
-				heroes_in_teams[i] = heroes_in_teams[i] + 1
+				heroes_in_teams[i] = (heroes_in_teams[i] or 0) + 1
 			end
 		end
+
 	end
 	local heroes_to_fight_n = math.min(unpack(table.iterate(heroes_in_teams)))
 	Duel.TimeUntilDuelEnd = ARENA_SETTINGS.DurationBase + ARENA_SETTINGS.DurationForPlayer * heroes_to_fight_n
-	if heroes_to_fight_n > 0 and table.count(Duel.heroes_teams_for_duel) > 1 then
+	if heroes_to_fight_n > 0 and table.count(heroes_in_teams) > 1 then
 		Duel.IsFirstDuel = Duel.DuelCounter == 0
 		--[[for _,v in ipairs(Entities:FindAllByName("npc_dota_arena_statue")) do
 			local particle1 = ParticleManager:CreateParticle("particles/arena/units/arena_statue/statue_eye.vpcf", PATTACH_ABSORIGIN, v)
@@ -228,7 +228,9 @@ function Duel:EndDuelForUnit(unit)
 			unit.StatusBeforeArena = nil
 		end
 	end)
-	unit:FindClearSpaceForUnitAndSetCamera(unit.ArenaBeforeTpLocation or FindFountain(unit:GetTeamNumber()):GetAbsOrigin())
+	if unit.FindClearSpaceForUnitAndSetCamera then
+		unit:FindClearSpaceForUnitAndSetCamera(unit.ArenaBeforeTpLocation or FindFountain(unit:GetTeamNumber()):GetAbsOrigin())
+	end
 	unit.InArena = nil
 	unit.ArenaBeforeTpLocation = nil
 	unit.DuelChecked = nil

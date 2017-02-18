@@ -104,6 +104,7 @@ function HookPanoramaPanels() {
 	FindDotaHudElement("topbar").visible = false;
 	FindDotaHudElement("DeliverItemsButton").style.horizontalAlign = "right"
 
+
 	FindDotaHudElement("LevelLabel").style.width = "100%";
 	FindDotaHudElement("stash").style.marginBottom = "47px";
 
@@ -355,7 +356,6 @@ function UpdateBossItemVote(id, data) {
 				$("#boss_item_vote_id_" + id).DeleteAsync(0)
 		}
 	});
-
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe("create_custom_toast", CreateCustomToast);
 })()

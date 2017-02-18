@@ -55,6 +55,7 @@ if IsServer() then
 									attacker = caster,
 									damage = damage,
 									damage_type = self:GetAbilityDamageType(),
+									damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 									ability = self
 								})
 							end

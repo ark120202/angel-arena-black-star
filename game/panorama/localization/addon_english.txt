@@ -54,6 +54,7 @@
 		"npc_arena_hero_anakim"							"Anakim"
 		"npc_arena_hero_poseidon"						"Poseidon"
 		"npc_arena_hero_saber"							"Saber"
+		"npc_arena_hero_sara"							"Sara"
 
 		"npc_arena_zaken_sailor"                        "Sailor"
 		

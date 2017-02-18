@@ -63,13 +63,5 @@ function OnModDestroy(keys)
 end
 
 function ThinkPenalty(keys)
-	local caster = keys.caster
-	local ability = keys.ability
-	caster:CalculateStatBonus()
-	local pct = caster:GetTotalHealthReduction()
-	if pct >= 100 then
-		caster:SetMaxHealth(1)
-	else
-		caster:SetMaxHealth(caster:GetMaxHealth() - pct * (caster:GetMaxHealth()/100))
-	end
+	keys.caster:CalculateHealthReduction()
 end

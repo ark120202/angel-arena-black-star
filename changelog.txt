@@ -11,6 +11,7 @@ TODO LIST:
 	]]
 	алхимику на новую голду
 	2 виспа оверчарж
+	понерфить ама, апокалипсиса (боссы), инвокера
 Идеи для предметов:
 	Star Blade:
 		Из Fallen Star + Dark Blade + ???
@@ -53,45 +54,23 @@ Angel Arena Black Star - Version 1.4.4:
 ============================================================
 Angel Arena Black Star - Version 1.4.4:
 General:
-	Added new hero: Saber
+	
 Balance:
+	Creeps now will spawn on first minute, but instead it won't spawn on second minute
 	Runes:
-		Added new runes:
-			Soul Steal
-			Spikes
+		
 	Items:
-		All custom items now are not unique attack modifiers
-		Removed Desolating Skadi
-		Golden Eagle Relic & Lucifer's Claw now lifesteals based on actual damage, after all reductions
-		Echo Sabre and it's upgrades now not works on illusions
-		Golden Eagle Relic:
-			When activated now hero won't get gold for kills
-			Now not deals additional damage to bosses
-			Minimal Gold per Second: 0 => 10
-			Gold per Second: 0.25% => 1%
-		Auto Scythe of Vyse:
-			Damage: 3000 => 500
-			Mana Cost: 100 => 600
+		Fixed Soul Piercing dealt additional damage after armor reductions (so it was useless)
 	Talents:
-		Magic Resistance:
-			Required Level: 5 => 50
-			Cost: 2 => 10
-			Bonus Resistance: 6 9 12 15 18 21 24 27 30 33 36 39 42 45 => 8 12 16 20 24 28 32 36 %
+		
 	Abilities:
-		Mirratie - Sixth Sence & Medusa - Mana Shield now are disabled with Silver Edge
-		Templar Assassin - Trap & Shadow Demon - Shadow Poison Release in Ability Shop now can't be purchased with Lina - Fiery Soul
-		Omniknight - Purification:
-			Damage/Heal: 150 300 450 700 950 1200 1500 => 120 200 280 360 440 520 600
-		Anti-Mage - Mana Void:
-			Damage to Bosses: 35 => 0 %
+		Saber - Excalibur:
+			Damage now not increases with spell damage amplify
+		Saber - Invisible Air:
+			Damage now not increases with spell damage amplify
+			Damage per Second: 5 15 30 50 70 100 120 => 5 10 15 25 35 45 60
 Fixes:
-	Fixed most of heroes had 75% magic damage resistance
-	Fixed some script errors
-	Fixed Pudge - Dismember effect stayed on target forever after using Shadow Blade
-	Shop hittest fixed
-	Fixed Lone Druid crashed server on abandon
-	Fixed Rubick - Personality Steal & Broodmother - Spin Web interaction
-	//Fixed player tables sometimes breaked after reconnection - Check
+	//Fixed duels not worked on 4v4v4v4 map if one of teams fully abandoned the game
 <<+===========================================================================================================
 
 
@@ -107,4 +86,4 @@ phoenix,
 venom
 pugna ward
 
-[	]*\/\/ Text Example[0-9.A-z\- ,\/\\]*\n
+[	]*\/\/ Text Example[0-9.A-z\- ,\/\\]*\n++++++++++++++++++++

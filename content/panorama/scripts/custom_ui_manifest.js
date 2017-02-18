@@ -96,12 +96,12 @@ GameUI.SetMouseCallback(function(eventName, arg) {
 	};
 	return result;
 });
-RegisterKeybind("EnterPressed");
 RegisterKeybind("F4Pressed");
 RegisterKeybind("F5Pressed");
 RegisterKeybind("F8Pressed");
 
-GameUI.CustomUIConfig().custom_entity_values = {};
+
+GameUI.CustomUIConfig().custom_entity_values = GameUI.CustomUIConfig().custom_entity_values || {};
 DynamicSubscribeNTListener("custom_entity_values", function(tableName, key, value) {
 	GameUI.CustomUIConfig().custom_entity_values[key] = value;
 });

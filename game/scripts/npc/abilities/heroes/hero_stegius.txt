@@ -1,0 +1,388 @@
+"DOTAAbilities"
+{
+	"stegius_desolus_wave"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/stegius_desolus_wave"
+		"MaxLevel" 						"7"
+		"LevelsBetweenUpgrades"			"4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"8"
+		"AbilityDamage"					"100 150 200 250 300 350 400"
+		"AbilityManaCost"				"110 120 130 140 150 160 170"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		"precache"
+		{
+			"particle"		"particles/arena/units/heroes/hero_stegius/desolus_wave.vpcf"
+			"particle"		"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_1.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"175"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"225"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"900"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"		"-2 -5 -8 -14 -24 -35 -50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"8"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"LinearProjectile"
+			{
+				"Target" "POINT"
+				"EffectName" "particles/arena/units/heroes/hero_stegius/desolus_wave.vpcf"
+				"MoveSpeed" "%speed"
+				"StartRadius" "%start_radius"
+				"EndRadius" "%end_radius"
+				"FixedDistance" "%range"
+				"StartPosition" "attach_origin"
+				"TargetTeams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"HasFrontalCone" "1"
+				"ProvidesVision" "0"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Invoker.DeafeningBlast"
+				"Target" 		"CASTER"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "0"
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_stegius_desolus_wave"
+				"Target" 		"TARGET"
+			}
+
+			"Damage"
+			{
+				"Target" "TARGET"
+				"Type" "DAMAGE_TYPE_MAGICAL"
+				"Damage" "%AbilityDamage"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_stegius_desolus_wave"
+			{
+				"Duration"	"%duration"
+				"IsDebuff"	"1"
+				"EffectName"	"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_1.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_reduction"
+				}
+			}
+		}
+	}
+
+	"stegius_rage_of_desolus"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/stegius_rage_of_desolus"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"80"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_stegius/rage_of_desolus_buff.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"40"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed"	"30 45 60 75 100 125 150"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_movement_speed_pct"	"20 25 30 35 40 45 50"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Invoker.Alacrity"
+				"Target" 		"TARGET"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_stegius_rage_of_desolus"
+				"Target" 		"TARGET"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_stegius_rage_of_desolus"
+			{
+				"Duration"			"%duration"
+				"IsHidden"			"0"
+		
+				"EffectName"		"particles/arena/units/heroes/hero_stegius/rage_of_desolus_buff.vpcf"
+				"EffectAttachType"	"follow_overhead"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movement_speed_pct" 
+				}
+			}
+		}
+	}
+
+	"stegius_brightness_of_desolate"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"LevelsBetweenUpgrades"			"6"
+		"AbilityTextureName"			"arena/stegius_brightness_of_desolate"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"RequiredLevel"					"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"1000"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"health_decrease_pct"			 "8 12 15 18 21 24 27"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"armor_decrease"				"-2 -5 -8 -14 -24 -35 -50"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage_from_creep"		"6"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage_from_hero"		"30 60 120 180 240 300 360"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage_duration"			"40"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"stolen_attack_speed"			"20"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"stolen_armor"					"2 3 5 6 8 9 11"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_stegius_brightness_of_desolate"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Aura"          	"modifier_stegius_brightness_of_desolate_effect"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+			}
+
+			"modifier_stegius_brightness_of_desolate_effect"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_stegius/brightness_of_desolate.lua"
+						"Function"		"OnBuffDestroy"
+					}
+				}
+
+				"ThinkInterval"		"0.03"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_stegius/brightness_of_desolate.lua"
+						"Function"		"ThinkPenalty"
+					}
+				}
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_stegius/brightness_of_desolate.lua"
+						"Function"		"IncreaseDamage"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_decrease"
+				}
+			}
+
+			"modifier_stegius_brightness_of_desolate_damage"
+			{
+				"IsPurgable"		"0"
+				"Duration"			"%bonus_damage_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"1"
+				}
+			}
+
+			"modifier_stegius_brightness_of_desolate_steal_buff"
+			{
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%stolen_attack_speed"
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%stolen_armor" 
+				}
+			}
+		}
+		
+	}
+
+	"stegius_desolating_touch"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/stegius_desolating_touch"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"LevelsBetweenUpgrades"			"12"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_per_hit"		"-1 -2 -3 -4 -5 -6 -7"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"boss_armor_reduction_chance_pct"	"40 35 30 25 20 15 10"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"12"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_stegius_desolating_touch"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+		
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_stegius/desolating_touch.lua"
+						"Function"		"ReduceArmor"
+					}
+				}
+			}
+
+			"modifier_stegius_desolating_touch_debuff"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"-1"
+				}
+			}
+		}
+	}
+}

@@ -6,6 +6,7 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_EVENT_ON_ABILITY_EXECUTED,
 		MODIFIER_PROPERTY_REFLECT_SPELL,
 		MODIFIER_PROPERTY_ABSORB_SPELL,
+		MODIFIER_EVENT_ON_DEATH,
 	}
 end
 
@@ -46,6 +47,33 @@ if IsServer() then
 			end
 			if parent.CustomGain_Agility then
 				parent:ModifyAgility((parent.CustomGain_Agility - parent:GetKeyValue("AttributeAgilityGain", nil, true)) * diff)
+			end
+		end
+	end
+
+	function modifier_arena_hero:OnDeath(k)
+		local parent = k.attacker
+		if parent == self:GetParent() and k.unit:IsCreep() then
+			local gold = 0
+			local xp = 0
+			for k,v in pairs(CREEP_BONUSES_MODIFIERS) do
+				if parent:HasModifier(k) then
+					local gxp = type(v) == "function" and v(parent) or v
+					if gxp then
+						gold = math.max(gold, gxp.gold or 0)
+						xp = math.max(xp, gxp.xp or 0)
+					end
+				end
+			end
+			if gold > 0 then
+				Gold:ModifyGold(parent, gold)
+				local particle = ParticleManager:CreateParticleForPlayer("particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf", PATTACH_ABSORIGIN, k.unit, parent:GetPlayerOwner())
+				ParticleManager:SetParticleControl(particle, 1, Vector(0, gold, 0))
+				ParticleManager:SetParticleControl(particle, 2, Vector(2, string.len(gold) + 1, 0))
+				ParticleManager:SetParticleControl(particle, 3, Vector(255, 200, 33))
+			end
+			if xp > 0 then
+				parent:AddExperience(xp, false, false)
 			end
 		end
 	end

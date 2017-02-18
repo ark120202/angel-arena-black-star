@@ -50,15 +50,17 @@ function ShowScoreboardVisible() {
 }
 
 (function() {
-	GameEvents.Subscribe("time_hide", HideScoreboardVisible);
-	GameEvents.Subscribe("time_show", ShowScoreboardVisible);
 	ShowScoreboard();
+	HideScoreboardVisible();
+	DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {
+		if (changesObject.HeroSelectionState != null && changesObject.HeroSelectionState >= HERO_SELECTION_STATE_END) {
+			ShowScoreboardVisible()
+		}
+	});
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false);
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, false);
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND, false);
-	if (!Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME)) {
-		HideScoreboardVisible();
-	}
+
 
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		var current_goal = changesObject["kill_goal"];

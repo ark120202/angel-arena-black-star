@@ -5,6 +5,7 @@ if Spawner == nil then
 	Spawner.SpawnerEntities = {}
 	Spawner.Creeps = {}
 	Spawner.MinimapPoints = {}
+	Spawner.NextCreepsSpawnTime = 0
 end
 
 function Spawner:GetSpawners()
@@ -30,17 +31,16 @@ end
 
 function Spawner:RegisterTimers()
 	Timers:CreateTimer(function()
-		Spawner.NextCreepsSpawnTime = Spawner.NextCreepsSpawnTime or CREEP_SPAWN_COOLDOWN_FROM_GAME_START
 		if GameRules:GetDOTATime(false, false) >= Spawner.NextCreepsSpawnTime then
-			Spawner.NextCreepsSpawnTime = Spawner.NextCreepsSpawnTime + SPAWNER_SETTINGS.Cooldown
-			Spawner:SpawnStacks(Spawner.SpawnerEntities)
+			Spawner.NextCreepsSpawnTime = Spawner.NextCreepsSpawnTime + SPAWNER_SETTINGS.Cooldown * (Spawner.NextCreepsSpawnTime == 0 and 2 or 1)
+			Spawner:SpawnStacks()
 		end
 		return 0.5
 	end)
 end
 
-function Spawner:SpawnStacks(EntityTable)
-	for _,entity in ipairs(EntityTable) do
+function Spawner:SpawnStacks()
+	for _,entity in ipairs(Spawner.SpawnerEntities) do
 		DynamicMinimap:SetVisibleGlobal(Spawner.MinimapPoints[entity], true)
 		local entname = entity:GetName()
 		local sName = string.gsub(string.gsub(entname, "target_mark_spawner_", ""), "_type%d+", "")

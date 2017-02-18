@@ -9,6 +9,7 @@ require('gamemode')
 function Precache( context )
 	DebugPrint("[BAREBONES] Performing pre-load precache")
 	local particles = {
+		--items
 		"particles/arena/items_fx/gem_of_clear_mind_illusion.vpcf",
 		"particles/prototype_fx/item_linkens_buff_explosion_wave.vpcf",
 		"particles/arena/units/arena_statue/statue_eye.vpcf",
@@ -56,7 +57,11 @@ function Precache( context )
 		"particles/arena/items_fx/lotus_sphere_buff.vpcf",
 		"particles/econ/events/ti6/radiance_owner_ti6.vpcf",
 		"particles/arena/items_fx/radiance_frozen_owner.vpcf",
-
+		--Heroes
+		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
+		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
+		"particles/econ/items/legion/legion_fallen/legion_fallen_press.vpcf",
+		--Runes
 		"particles/arena/generic_gameplay/rune_tripledamage.vpcf",
 		"particles/arena/generic_gameplay/rune_tripledamage_owner.vpcf",
 		"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf",
@@ -65,10 +70,7 @@ function Precache( context )
 		"particles/arena/generic_gameplay/rune_acceleration.vpcf",
 		"particles/arena/generic_gameplay/rune_soul_steal_owner_effect.vpcf",
 		"particles/neutral_fx/prowler_shaman_stomp_debuff_glow.vpcf",
-		
-		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
-		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
-		"particles/econ/items/legion/legion_fallen/legion_fallen_press.vpcf",
+		"particles/items_fx/blademail.vpcf",
 	}
 	local models = {
 		"models/items/meepo/diggers_divining_rod/diggers_divining_rod_gem_saphire.vmdl",

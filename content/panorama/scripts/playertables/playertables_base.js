@@ -1,4 +1,3 @@
-var reload = true;
 var count = 0;
 var PT = {
 	listeners: {},

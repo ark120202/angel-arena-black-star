@@ -75,12 +75,14 @@ function item_bloodstone_arena_recalculate_charge_bonuses(keys)
 		if not modifier then
 			ability:ApplyDataDrivenModifier(caster, caster, "modifier_item_bloodstone_arena_charge", {})
 			Timers:CreateTimer(function()
-				modifier = caster:FindModifierByName("modifier_item_bloodstone_arena_charge")
-				if modifier then
-					modifier:SetStackCount(total_charge_count)
-				end
-				if caster.CalculateStatBonus then
-					caster:CalculateStatBonus()
+				if IsValidEntity(caster) then
+					modifier = caster:FindModifierByName("modifier_item_bloodstone_arena_charge")
+					if modifier then
+						modifier:SetStackCount(total_charge_count)
+					end
+					if caster.CalculateStatBonus then
+						caster:CalculateStatBonus()
+					end
 				end
 			end)
 		else
