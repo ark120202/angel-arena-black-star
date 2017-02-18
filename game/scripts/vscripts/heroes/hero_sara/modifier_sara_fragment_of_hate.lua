@@ -1,5 +1,9 @@
 modifier_sara_fragment_of_hate = class({})
 
+function modifier_sara_fragment_of_hate:IsHidden()
+	return true
+end
+
 function modifier_sara_fragment_of_hate:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
@@ -7,9 +11,19 @@ function modifier_sara_fragment_of_hate:DeclareFunctions()
 	}
 end
 
-function modifier_sara_fragment_of_hate:GetModifierPreAttack_CriticalStrike()
+function modifier_sara_fragment_of_hate:GetModifierPreAttack_CriticalStrike(keys)
 	local ability = self:GetAbility()
 	if RollPercentage(ability:GetSpecialValueFor("crit_chance_pct")) then
+		print("Crit!")
+		if keys.attacker:HasScepter() then
+			ApplyDamage({
+				attacker = keys.attacker,
+				victim = keys.target,
+				damage_type = DAMAGE_TYPE_PURE,
+				damage = damage,
+				ability = ability
+			})
+		end
 		return self:GetParent():GetMana() * ability:GetSpecialValueFor("energy_to_crit_pct")
 	end
 end

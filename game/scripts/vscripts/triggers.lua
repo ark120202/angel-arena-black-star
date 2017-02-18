@@ -6,11 +6,15 @@ end
 
 function ArenaZoneOnEndTouch(trigger)
 	table.removeByValue(Heroes_In_Arena_Zone, trigger.activator)
-	if trigger.activator and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS and (not trigger.activator.IsWukongsSummon or not trigger.activator:IsWukongsSummon()) then
+	local activator = trigger.activator
+	if activator and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS and (not activator.IsWukongsSummon or not activator:IsWukongsSummon()) then
 		Timers:CreateTimer(function()
-			if trigger.activator and not trigger.activator:IsNull() and not table.contains(Heroes_In_Arena_Zone, trigger.activator) and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
-				trigger.activator:InterruptMotionControllers(true)
-				FindClearSpaceForUnit(trigger.activator, Entities:FindByName(nil, "target_mark_arena_team" .. trigger.activator:GetTeamNumber()):GetAbsOrigin(), false)
+			if IsValidEntity(activator) and not table.contains(Heroes_In_Arena_Zone, activator) and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
+				activator:InterruptMotionControllers(true)
+				FindClearSpaceForUnit(activator, Entities:FindByName(nil, "target_mark_arena_team" .. activator:GetTeamNumber()):GetAbsOrigin(), false)
+				if activator:HasModifier("modifier_spirits_spirit_aghanims") then
+					return 1/30
+				end
 			end
 		end)
 	end
@@ -25,7 +29,7 @@ function FountainOnStartTouch(trigger, team)
 			Timers:CreateTimer(0.1, function()
 				local fountain = FindFountain(team)
 				fountain:EmitSound("Ability.LagunaBlade")
-				if unit and not unit:IsNull() then
+				if IsValidEntity(unit) then
 					unit:EmitSound("Ability.LagunaBladeImpact")
 					local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_ABSORIGIN, fountain)
 					ParticleManager:SetParticleControl(pfx, 0, fountain:GetAbsOrigin() + Vector(0,0,224))

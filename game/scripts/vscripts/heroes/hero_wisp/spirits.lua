@@ -104,26 +104,21 @@ function ThinkSpirits( event )
 		if v:IsAlive() then
 			numSpiritsAlive = numSpiritsAlive + 1
 
-			-- Rotate
 			local rotationAngle = currentRotationAngle - rotationAngleOffset * ( k - 1 )
 			local relPos = Vector( 0, currentRadius, 0 )
 			relPos = RotatePosition( Vector(0,0,0), QAngle( 0, -rotationAngle, 0 ), relPos )
 
 			local absPos = GetGroundPosition( relPos + casterOrigin, v )
+			--if not Duel:IsDuelOngoing() or IsInBox(absPos, Duel.DuelBox1, Duel.DuelBox2) then
+			v:SetAbsOrigin(absPos)
+			--end
 
-			v:SetAbsOrigin( absPos )
-
-			-- Update particle
 			ParticleManager:SetParticleControl( v.spirit_pfx, 1, Vector( currentRadius, 0, 0 ) )
-		else
-			
 		end
 	end
-idealNumSpiritsSpawned = elapsedTime / event.spirit_summon_interval
+	idealNumSpiritsSpawned = elapsedTime / event.spirit_summon_interval
 	idealNumSpiritsSpawned = math.min( idealNumSpiritsSpawned, numSpiritsMax )
-
 	if ability.spirits_numSpirits == numSpiritsMax and numSpiritsAlive == 0 and elapsedTime > ability:GetLevelSpecialValueFor("revolution_time", ability:GetLevel() - 1) then
-		-- All spirits have been exploded.
 		caster:RemoveModifierByName( event.caster_modifier )
 		return
 	end
@@ -155,17 +150,17 @@ function EndSpirits( event )
 
 	local wisp_spirits_in_aghanims = caster:FindAbilityByName("wisp_spirits_in_aghanims")
 	if wisp_spirits_in_aghanims then
-		wisp_spirits_in_aghanims:SetActivated(false)
 		if wisp_spirits_in_aghanims:GetToggleState() then
 			wisp_spirits_in_aghanims:ToggleAbility()
 		end
+		wisp_spirits_in_aghanims:SetActivated(false)
 	end
 	local wisp_spirits_out_aghanims = caster:FindAbilityByName("wisp_spirits_out_aghanims")
 	if wisp_spirits_out_aghanims then
-		wisp_spirits_out_aghanims:SetActivated(false)
 		if wisp_spirits_out_aghanims:GetToggleState() then
 			wisp_spirits_out_aghanims:ToggleAbility()
 		end
+		wisp_spirits_out_aghanims:SetActivated(false)
 	end
 end
 

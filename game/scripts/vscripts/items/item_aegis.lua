@@ -7,11 +7,15 @@ function CheckDeath(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	if not caster:IsIllusion() then
-		Timers:CreateTimer(0.03, function()
-			if IsValidEntity(caster) and IsValidEntity(ability) and not caster.IsMarkedForTrueKill and caster:GetHealth() <= 1 and not caster.is_reincarnating then
+	--	Timers:CreateTimer(0.03, function()
+			if caster.IsMarkedForTrueKill or caster:GetHealth() > 1 or caster.is_reincarnating then
+				caster:RemoveModifierByName("modifier_item_aegis_arena_life_saver")
+			else
+				ability:ApplyDataDrivenModifier(caster, caster, "modifier_item_aegis_arena_life_saver", {})
+				caster:SetHealth(1)
 				ability:ApplyDataDrivenModifier(caster, caster, "modifier_item_aegis_arena_reincarnation", {})
 			end
-		end)
+	--	end)
 	end
 end
 

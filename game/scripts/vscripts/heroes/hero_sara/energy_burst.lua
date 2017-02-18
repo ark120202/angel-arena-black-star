@@ -10,7 +10,7 @@ if IsServer() then
 			self.damageMap = self.damageMap or {}
 			self.damageMap[target] = self.damageMap[target] or {}
 			table.insert(self.damageMap[target], wasted * self:GetSpecialValueFor("damage_per_energy_point"))
-
+			print("inserted " .. wasted * self:GetSpecialValueFor("damage_per_energy_point"))
 			ProjectileManager:CreateTrackingProjectile({
 				EffectName = "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf",
 				Ability = self,
@@ -28,14 +28,18 @@ if IsServer() then
 		local damageMap = self.damageMap
 		if hTarget and hTarget ~= self:GetCaster() and damageMap and damageMap[hTarget] and #damageMap[hTarget] > 0 then
 			local t = damageMap[hTarget]
+			print("Found T: ")
+			PrintTable(t)
+			local damage = table.remove(t, #t)
+			print("apply: " .. damage)
 			ApplyDamage({
 				attacker = self:GetCaster(),
 				victim = hTarget,
 				damage_type = self:GetAbilityDamageType(),
-				damage = table.remove(t, #t),
+				damage = damage,
 				ability = self
 			})
-			if #t == 0 then self.damageMap[hTarget] = nil end
+			--if #t == 0 then self.damageMap[hTarget] = nil end
 		end
 	end
 else

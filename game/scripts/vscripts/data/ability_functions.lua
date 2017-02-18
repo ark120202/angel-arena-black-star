@@ -63,7 +63,6 @@ ON_DAMAGE_MODIFIER_PROCS = {
 	end,
 	["modifier_sara_evolution"] = function(attacker, victim, _, damage)
 		local ability = attacker:FindAbilityByName("sara_evolution")
-		print(damage * ability:GetSpecialValueFor("damage_to_energy_pct") * 0.01)
 		if ability and attacker.ModifyEnergy then
 			attacker:ModifyEnergy(damage * ability:GetSpecialValueFor("damage_to_energy_pct") * 0.01, true)
 		end
@@ -266,9 +265,9 @@ INCOMING_DAMAGE_MODIFIERS = {
 		end
 	},
 	["modifier_saber_instinct"] = {
-		multiplier = function(attacker, victim, _, damage)
+		multiplier = function(attacker, victim, inflictor, damage)
 			local saber_instinct = victim:FindAbilityByName("saber_instinct")
-			if saber_instinct and victim:IsAlive() and not victim:PassivesDisabled() then
+			if not IsValidEntity(inflictor) and saber_instinct and victim:IsAlive() and not victim:PassivesDisabled() then
 				if IsRangedUnit(attacker) then
 					if RollPercentage(saber_instinct:GetAbilitySpecial("ranged_evasion_pct")) then
 						PopupEvadeMiss(victim, attacker)
@@ -286,7 +285,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
-	["modifier_sara_fragment_of_armor_arena"] = {
+	["modifier_sara_fragment_of_armor"] = {
 		multiplier = function(attacker, victim, _, damage)
 			local sara_fragment_of_armor = victim:FindAbilityByName("sara_fragment_of_armor")
 			if sara_fragment_of_armor and not victim:IsIllusion() and victim:IsAlive() and not victim:PassivesDisabled() and victim.GetEnergy and sara_fragment_of_armor:GetToggleState() then

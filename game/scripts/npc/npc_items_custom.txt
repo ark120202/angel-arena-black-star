@@ -5776,6 +5776,14 @@
 						"Function"			"CheckDeath"
 					}
 				}
+			}
+
+			"modifier_item_aegis_arena_life_saver"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"IsPurgable"		"0"
+				"AllowIllusionDuplicate"     "0"
 				
 				"Properties"
 				{

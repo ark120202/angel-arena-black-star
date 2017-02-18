@@ -137,7 +137,7 @@ function FireTetherProjectile( event )
 	local targetOrigin	= target:GetAbsOrigin()
 
 	local velocity = targetOrigin - casterOrigin
-
+	velocity.z = 0
 	-- Create a projectile
 	ProjectileManager:CreateLinearProjectile( {
 		Ability				= ability,
@@ -152,6 +152,7 @@ function FireTetherProjectile( event )
 		fExpireTime			= GameRules:GetGameTime() + tickInterval + 0.03,
 		bDeleteOnHit		= false,
 		vVelocity			= velocity / tickInterval,
+		EffectName = "particles/arena/invisiblebox.vpcf",
 	} )
 end
 

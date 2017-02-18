@@ -69,8 +69,17 @@ Balance:
 		Saber - Invisible Air:
 			Damage now not increases with spell damage amplify
 			Damage per Second: 5 15 30 50 70 100 120 => 5 10 15 25 35 45 60
+		Apocalypse - King Slayer:
+			Now can't be casted on bosses
+			Now is not spell damage amplifiable
+		Apocalypse - Armor Tear:
+			Now can't be casted on bosses
 Fixes:
 	//Fixed duels not worked on 4v4v4v4 map if one of teams fully abandoned the game
+	Fixed Apocalypse - King Slayer was missing damage tooltip
+	Fixed Saber - Instinct evaded and bloacked damage from abilities and items
+	Fixed Wisp using Spirits could place units out of arena while duel is ongoing
+	Fixed heroes weren't killed under fountain with two Aegises of the Immortal
 <<+===========================================================================================================
 
 

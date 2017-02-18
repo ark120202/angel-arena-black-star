@@ -1,7 +1,6 @@
 function CheckDeath(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	local target = keys.caster
 	ability.health_per_reincarnation_pct = ability:GetAbilitySpecial("health_per_reincarnation_pct")
 	if caster:HasScepter() then
 		ability.health_per_reincarnation_pct = ability:GetAbilitySpecial("health_per_reincarnation_pct_scepter")

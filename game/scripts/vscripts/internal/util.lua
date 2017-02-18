@@ -1151,10 +1151,9 @@ end
 function CreateSimpleBox(point1, point2)
 	local hlen = point2.y-point1.y
 	local cen = point1.y+hlen/2
-	point1.y = cen
-	point2.y = cen
-	point1.z = 0
-	return Physics:CreateBox(point2, point1, hlen, true)
+	local new1 = Vector(point1.x, cen, 0)
+	local new2 = Vector(point2.x, cen, point2.y)
+	return Physics:CreateBox(new2, new1, hlen, true)
 end
 
 function CDOTA_BaseNPC:IsRealCreep()
@@ -1425,6 +1424,7 @@ function CEntityInstance:ClearNetworkableEntityInfo()
 end
 
 function IsInBox(point, point1, point2)
+	print(point, point.x > point1.x, point.y > point1.y, point.x < point2.x, point.y < point2.y)
 	return point.x > point1.x and point.y > point1.y and point.x < point2.x and point.y < point2.y
 end
 

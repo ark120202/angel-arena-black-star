@@ -1,0 +1,705 @@
+"DOTAAbilities"
+{
+	"rocket_barrage_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"gyrocopter_rocket_barrage"
+		"MaxLevel"	"7"
+		"LevelsBetweenUpgrades"			"6"
+		
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_rocket_barrage.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+		}
+		"AbilityCastRange"				"400"
+		"AbilityCooldown"				"0.5"
+		"AbilityDamage"					"10 50 80 120 150 200 230"
+		"AbilityManaCost"				"1 2 3 4 5 6 7" // %mana_per_second * %interval
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"400"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"mana_per_second"			"10 20 30 40 50 60 70"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rockets_per_second"		"10"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"interval"					"0.1"
+			}
+		}
+
+		"OnToggleOn"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_rocket_barrage_arena"
+				"Target"		"CASTER"
+			}
+			
+			"FireSound"
+			{
+				"EffectName"	"Hero_Gyrocopter.Rocket_Barrage"
+				"Target"		"CASTER"
+			}
+		}
+
+		"OnToggleOff"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_rocket_barrage_arena"
+				"Target"
+				{
+					"Center"			"CASTER"
+					"Flags" 			"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}
+			}
+			
+			"FireSound"
+			{
+				"EffectName"	"Hero_Gyrocopter.Rocket_Barrage"
+				"Target"		"CASTER"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"Damage"
+			{
+				"Target"  "TARGET"
+				"Type"    "DAMAGE_TYPE_MAGICAL"
+				"Damage"  "%AbilityDamage"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Gyrocopter.Rocket_Barrage.Impact"
+				"Target" 		"TARGET"
+			}
+		}
+			
+		"Modifiers"
+		{
+			"modifier_rocket_barrage_arena"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+				"ThinkInterval"		"%interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_gyrocopter/rocket_barrage.lua"
+						"Function"		"RocketBarrage"
+						"mana"			"%mana_per_second"
+						"interval"		"%interval"
+					}
+				}	
+			}
+		}	
+	}
+
+	"homing_missile_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"gyrocopter_homing_missile"
+		"MaxLevel"	"7"
+		
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_target.vpcf"
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_death.vpcf"
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_homing_missile_fuse.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1050"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20 17 14 11 11 11 11"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"120 130 140 150 160 170 180"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"125 250 375 500 600 700 900"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hits_to_kill_tooltip"		"3 3 4 5 6 7 8"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tower_hits_to_kill_tooltip"		"6 6 8 10 12 14 16"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"0.5 1.0 1.5 2.0 2.0 2.5 2.8"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_damage"				"75"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_distance"				"1500"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"pre_flight_time"			"3"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"starting_distance"			"150"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"speed"						"340"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"acceleration"				"20"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"vision_time"				"3.5"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"vision_radius"				"400"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"explosion_radius"			"350"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_gyrocopter/homing_missile.lua"
+				"Function"		"CreateMissile"
+				"particle"		"particles/units/heroes/hero_gyrocopter/gyro_homing_missile_fuse.vpcf"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_homing_missile_target"
+				"Target"		"TARGET"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_homing_missile_arena"
+			{
+				"IsHidden"				"1"
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Gyrocopter.HomingMissile"
+						"Target"		"TARGET"
+					}
+				}
+			
+				"ThinkInterval"		"0.02"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_gyrocopter/homing_missile.lua"
+						"Function"		"MoveMissile"
+					}
+				}
+				
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_gyrocopter/homing_missile.lua"
+						"Function"		"MissileAttacked"
+						"sound"			"Hero_Gyrocopter.HomingMissile"
+						"sound2"		"Hero_Gyrocopter.HomingMissile.Enemy"
+						"sound3"		"Hero_Gyrocopter.HomingMissile.Target"
+						"sound4"		"Hero_Gyrocopter.HomingMissile.Destroy"
+						"particle"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_death.vpcf"
+						"particle2"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+					}
+				}
+			}
+			
+			"modifier_homing_missile_target"
+			{
+				"IsPurgable"		"0"
+				"IsHidden"			"1"
+				"IsDebuff" "1"
+				
+				"EffectName"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_target.vpcf"
+				"EffectAttachType"	"follow_overhead"
+			}
+		}
+	}
+
+	"flak_cannon_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"gyrocopter_flak_cannon"
+		"MaxLevel"	"7"
+		"HasScepterUpgrade"				"1"
+		"LevelsBetweenUpgrades" 		"5"
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_techies/techies_suicide_base.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0 0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 200 300 400 500 600 700"
+						
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"1000"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_attacks"					"2 3 4 6 8 10 12"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"projectile_speed"				"800"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"postattack_magic_damage"		"50 100 150 200 250 300 350"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"fire_rate_scepter"						"1.5 1.4 1.3 1.2 1.1 1.0 0.9"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"scepter_radius_scepter"				"700"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_gyrocopter/flak_cannon.lua"
+				"Function"		"ApplyModifier"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_gyrocopter/flak_cannon.lua"
+				"Function"		"DealDamage"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_flak_cannon_arena"
+			{
+				"OnAttack"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Gyrocopter.FlackCannon"
+						"Target"		"TARGET"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_gyrocopter/flak_cannon.lua"
+						"Function"		"CreateProjectiles"
+					}
+				
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  				"CASTER"
+							"Radius" 				"%radius"
+							"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+
+						"Action"
+						{
+							"TrackingProjectile"
+							{
+								"Target"           	"TARGET"
+								"EffectName"       	"particles/units/heroes/hero_gyrocopter/gyro_base_attack.vpcf"
+								"Dodgeable"        	"1"
+								"ProvidesVision"   	"0"
+								"MoveSpeed"        	"%projectile_speed"
+								"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+								"TargetTypes"    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_flak_cannon_scepter"
+			{
+				"IsHidden"			"1"
+				"Passive"			"1"
+				"ThinkInterval"		"%fire_rate_scepter"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_gyrocopter/flak_cannon.lua"
+						"Function"		"ThinkScepter"
+					}
+				}
+			}
+		}
+	}
+
+	"call_down_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AoERadius"						"600 625 650 675 700 725 750"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"gyrocopter_call_down"
+		"MaxLevel"	"7"
+		"HasScepterUpgrade"				"1"
+		
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_calldown_marker.vpcf"
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_call_down_explosion_impact_b.vpcf"
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_calldown_explosion_flash_c.vpcf"
+			"particle"		"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_first.vpcf"
+			"particle"		"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_second.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45 45 40 40 35 35 30"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration_first"		"0.1"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration_second"		"2"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_first"				"300 500 700 900 1100 1300 1500"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_second"				"100 200 300 500 700 900 1100"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"600 625 650 675 700 725 750"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_second_scepter"		"400 700 1000 1300 1600 1900 2200"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"missile_delay"				"2.0"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"vision_radius"				"600 625 650 675 700 725 750"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"vision_duration"			"4.0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Gyrocopter.CallDown.Fire"
+				"Target"		"CASTER"
+			}
+		
+			"CreateThinker"
+			{
+				"ModifierName"	"modifier_call_down_marker_first"
+				"Target"		"POINT"	
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_gyrocopter/call_down.lua"
+				"Function"		"GiveVision"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_call_down_marker_first"
+			{
+				"IsHidden"				"1"
+				"Duration"	"%missile_delay"
+			
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_gyrocopter/gyro_calldown_marker.vpcf"
+						"EffectAttachType"	"attach_origin"
+						"Target"			"TARGET"
+						"ControlPoints"
+						{
+							"00" "0 0 0"
+							"01" "%radius %radius %radius"
+						}
+					}
+					
+					"TrackingProjectile"
+					{
+						"Target"           	"TARGET"
+						"EffectName"       	"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_first.vpcf"
+						"Dodgeable"        	"1"
+						"ProvidesVision"   	"0"
+						"MoveSpeed"        	"100"
+						"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+						"TargetTypes"    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+							
+					"TrackingProjectile"
+					{
+						"Target"           	"TARGET"
+						"EffectName"       	"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_second.vpcf"
+						"Dodgeable"        	"1"
+						"ProvidesVision"   	"0"
+						"MoveSpeed"        	"100"
+						"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+						"TargetTypes"    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Gyrocopter.CallDown.Damage"
+						"Target"		"TARGET"
+					}
+				
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  				"TARGET"
+							"Radius" 				"%radius"
+							"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+		
+						"Action"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_stunned"
+								"Target" 		"TARGET"
+								"Duration"		"%slow_duration_first"
+							}
+
+							"RunScript"
+							{
+								"ScriptFile"	"heroes/hero_gyrocopter/call_down.lua"
+								"Function"		"SendMissiles"
+								"Damage"  		"%damage_first"
+							}
+						}
+					}
+					
+					"CreateThinker"
+					{
+						"ModifierName"	"modifier_call_down_marker_second"
+						"Target"		"TARGET"	
+					}
+				}
+			}
+		
+			"modifier_call_down_marker_second"
+			{
+				"IsHidden"				"1"
+				"Duration"	"%missile_delay"
+			
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_gyrocopter/gyro_calldown_marker.vpcf"
+						"EffectAttachType"	"attach_origin"
+						"Target"			"TARGET"
+						"ControlPoints"
+						{
+							"00" "0 0 0"
+							"01" "%radius %radius %radius"
+						}
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Gyrocopter.CallDown.Damage"
+						"Target"		"TARGET"
+					}
+				
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  				"TARGET"
+							"Radius" 				"%radius"
+							"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+		
+						"Action"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_stunned"
+								"Target" 		"TARGET"
+								"Duration"		"%slow_duration_second"
+							}
+
+							"RunScript"
+							{
+								"ScriptFile"	"heroes/hero_gyrocopter/call_down.lua"
+								"Function"		"SendMissiles"
+								"Damage"		"%damage_second"
+								"DamageScepter"	"%damage_second_scepter"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

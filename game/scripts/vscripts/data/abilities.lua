@@ -141,11 +141,14 @@ BOSS_BANNED_ABILITIES = {
 	"death_prophet_spirit_siphon",
 	"rubick_personality_steal",
 	"item_urn_of_demons",
+	"apocalypse_king_slayer",
+	"apocalypse_armor_tear",
 }
 
 PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_dota_hero_wisp"] = true,
 	["npc_dota_hero_invoker"] = true,
+	["npc_arena_hero_sara"] = true,
 }
 
 SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {

@@ -4,7 +4,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_sara/evolution.lua"
-		"AbilityTextureName"			"sara_evolution"
+		"AbilityTextureName"			"arena/sara_evolution"
 		"MaxLevel" 						"4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"HasInnateModifiers"			"1"
@@ -72,6 +72,52 @@
 				"var_type"			"FIELD_INTEGER"
 				"bonus_health"		"625 1250 1875 2500"
 			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"per_sec_multiplier_scepter"	"2"
+			}
+		}
+	}
+
+	"sara_space_dissection"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_sara/space_dissection.lua"
+		"AbilityTextureName"			"arena/sara_space_dissection"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCooldown"				"25 20 17.5 15 12.5 10 7.5"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"creep_energy_multiplier"	"2"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"creep_energy_multiplier_scepter"	"4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"energy_to_disarmor_pct"	"1 1.75 2.5 3.25 4 4.75 5.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarmor_duration"	"15"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"energy_pct"		"20"
+			}
 		}
 	}
 
@@ -79,14 +125,15 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_sara/energy_burst.lua"
-		"AbilityTextureName"			"sara_energy_burst"
+		"AbilityTextureName"			"arena/sara_energy_burst"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCooldown"				"100 90 80 70 60 50 40"
-		"AbilityDamage"					"75 130 200"
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -116,7 +163,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_sara/fragment_of_hate.lua"
-		"AbilityTextureName"			"sara_fragment_of_hate"
+		"AbilityTextureName"			"arena/sara_fragment_of_hate"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -137,6 +184,11 @@
 				"var_type"			"FIELD_INTEGER"
 				"energy_to_damage_pct" "8 11 14 17 20 23 26"
 			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_bonus_pure_damage_pct_scepter" "8"
+			}
 		}
 	}
 
@@ -144,7 +196,7 @@
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityTextureName"			"sara_fragment_of_armor"
+		"AbilityTextureName"			"arena/sara_fragment_of_armor"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"MaxLevel"						"7"
 
@@ -175,7 +227,7 @@
 		{
 			"ApplyModifier"
 			{
-				"ModifierName"	"modifier_sara_fragment_of_armor_arena"
+				"ModifierName"	"modifier_sara_fragment_of_armor"
 				"Target" 		"CASTER"
 			}
 		}
@@ -184,17 +236,16 @@
 		{
 			"RemoveModifier"
 			{
-				"ModifierName"	"modifier_sara_fragment_of_armor_arena"
+				"ModifierName"	"modifier_sara_fragment_of_armor"
 				"Target" 		"CASTER"
 			}
 		}
 
 		"Modifiers"
 		{
-			"modifier_sara_fragment_of_armor_arena"
+			"modifier_sara_fragment_of_armor"
 			{
 				"IsPurgable"		"0"
-				"IsHidden"			"1"
 		
 				"OnCreated"
 				{
@@ -202,6 +253,7 @@
 					{
 						"EffectName"		"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
 						"EffectAttachType"	"follow_origin"
+						"Target"            "CASTER"
 					}
 				}
 			}
@@ -211,8 +263,8 @@
 	"sara_fragment_of_logic"
 	{
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/hero_sara/sara_fragment_of_logic.lua"
-		"AbilityTextureName"			"sara_fragment_of_logic"
+		"ScriptFile"					"heroes/hero_sara/fragment_of_logic.lua"
+		"AbilityTextureName"			"arena/sara_fragment_of_logic"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"

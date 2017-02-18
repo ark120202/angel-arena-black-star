@@ -12,6 +12,8 @@ if Duel == nil then
 	Duel.TimesTeamWins = {}
 	--Duel.Particles = {}
 	Duel.DuelCounter = 0
+	Duel.DuelBox1 = Vector(0,0,0)
+	Duel.DuelBox2 = Vector(0,0,0)
 end
 
 function Duel:CreateGlobalTimer()
@@ -40,10 +42,10 @@ function Duel:CreateGlobalTimer()
 	end)
 
 	Physics:RemoveCollider("collider_box_blocker_arena")
-	local a1 = Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin()
-	local a2 = Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()
+	Duel.DuelBox1 = Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin()
+	Duel.DuelBox2 = Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()
 	local collider = Physics:AddCollider("collider_box_blocker_arena", Physics:ColliderFromProfile("boxblocker"))
-	collider.box = CreateSimpleBox(a1, a2)
+	collider.box = CreateSimpleBox(Duel.DuelBox1, Duel.DuelBox2)
 	collider.findClearSpace = true
 	collider.test = function(self, unit)
 		if not IsPhysicsUnit(unit) and unit.IsConsideredHero and unit:IsConsideredHero() then

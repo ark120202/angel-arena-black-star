@@ -7,6 +7,6 @@ end
 
 if IsClient() then
 	function sara_fragment_of_logic:GetManaCost()
-		return self:GetSpecialValueFor("energy_const") + self:GetCaster():GetMana() * self:GetSpecialValueFor("energy_pct") * 0.01
+		return self:GetSpecialValueFor("energy_const") + self:GetCaster():GetMaxMana() * self:GetSpecialValueFor("energy_pct") * 0.01
 	end
 end

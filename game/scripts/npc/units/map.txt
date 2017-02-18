@@ -1,0 +1,166 @@
+"DOTAUnits"
+{
+	"npc_arena_fountain"
+	{
+		// General
+		//
+		"BaseClass"	"npc_dota_building"
+		"Model"	"models/development/invisiblebox.vmdl"
+		"Level"	"1000"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
+
+		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
+
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"	"0"	// Speed
+		"MovementTurnRate"	"0"	// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"	"1"	// Base health.
+		"StatusHealthRegen"	"0"	// Health regeneration rate.
+		"StatusMana"	"0"	// Base mana.
+		"StatusManaRegen"	"0"	// Mana regeneration rate.
+
+		"TeamName"	"DOTA_TEAM_NEUTRALS"
+		"VisionDaytimeRange"		"1500"
+		"VisionNighttimeRange"		"1500"
+	}
+
+	"npc_dota_casino_slotmachine"
+	{
+		// General
+		//
+		"BaseClass"	"npc_dota_creature"
+		"Model"	"models/items/earthshaker/totem_dragon_wall/fissure_head.vmdl"
+		"ModelScale"			"1.0"
+		"Level"	"1000"
+		"IsAncient"					"1"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"	"slotmachine_passive"
+		"Ability2"	""
+		"Ability3"	""
+		"Ability4"	""
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"	"0"	// Speed
+		"MovementTurnRate"	"0"	// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"	"100000"	// Base health.
+		"StatusHealthRegen"	"0"	// Health regeneration rate.
+		"StatusMana"	"0"	// Base mana.
+		"StatusManaRegen"	"0"	// Mana regeneration rate.
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "459" }
+			}
+		}
+	}
+
+	"npc_dota_casino_lina"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/lina/lina.vmdl"
+		"ModelScale"				"1.2"
+		"Level"						"50"
+		"IsAncient"					"1"
+				
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"casino_bitch_passive"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"0"		// Speed
+		"MovementTurnRate"			"0"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"	"100000"	// Base health.
+		"StatusHealthRegen"	"0"	// Health regeneration rate.
+		"StatusMana"	"0"	// Base mana.
+		"StatusManaRegen"	"0"	// Mana regeneration rate.
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "318" }
+				"Wearable2" { "ItemDef" "319" }
+				"Wearable3" { "ItemDef" "320" }
+				"Wearable4" { "ItemDef" "321" }
+			}
+		}
+	}
+	
+	"npc_dota_arena_statue"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_building"
+		"Model"						"models/items/courier/mok/mok.vmdl"
+		"ModelScale"				"2"
+		"Level"						"50"
+		"IsAncient"					"1"
+				
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"arena_statue"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"0"		// Speed
+		"MovementTurnRate"			"0"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"	"100000"	// Base health.
+		"StatusHealthRegen"	"0"	// Health regeneration rate.
+		"StatusMana"	"0"	// Base mana.
+		"StatusManaRegen"	"0"	// Mana regeneration rate.
+	}
+}

@@ -72,9 +72,14 @@ if IsServer() then
 		end
 	end
 	function modifier_sara_evolution:OnDeath(keys)
-		if keys.attacker == self:GetParent() and keys.unit:IsCreep() then
+		if keys.attacker == self:GetParent() and keys.unit:IsRealCreep() then
 			local ability = self:GetAbility()
-			keys.attacker:ModifyMaxEnergy(ability:GetSpecialValueFor("max_per_creep") + ability:GetSpecialValueFor("max_per_creep_pct") * keys.attacker:GetMaxEnergy())
+			local energy = ability:GetSpecialValueFor("max_per_creep") + ability:GetSpecialValueFor("max_per_creep_pct") * keys.attacker:GetMaxEnergy() * 0.01
+			if keys.unit.SpaceDissectionMultiplier then
+				energy = energy * keys.unit.SpaceDissectionMultiplier
+			end
+			print("Max energy (creep): PCT: ".. ability:GetSpecialValueFor("max_per_creep_pct") .. ", CONST: " .. ability:GetSpecialValueFor("max_per_creep"))
+			keys.attacker:ModifyMaxEnergy(energy)
 		end
 	end
 	function modifier_sara_evolution:OnIntervalThink()
@@ -84,7 +89,11 @@ if IsServer() then
 			self:GetParent():ModifyMaxEnergy(ability:GetSpecialValueFor("max_per_minute") + ability:GetSpecialValueFor("max_per_minute_pct") * parent:GetMaxEnergy())
 			self:SetDuration(60, true)
 		end
-		parent:ModifyEnergy((ability:GetSpecialValueFor("per_sec_pct") * parent:GetMaxEnergy() * 0.01 + ability:GetSpecialValueFor("per_sec")) * self.think_interval)
+		local energyPS = (ability:GetSpecialValueFor("per_sec_pct") * parent:GetMaxEnergy() * 0.01 + ability:GetSpecialValueFor("per_sec"))
+		if parent:HasScepter() then
+			energyPS = energyPS * ability:GetSpecialValueFor("per_sec_multiplier_scepter")
+		end
+		parent:ModifyEnergy(energyPS * self.think_interval)
 		parent:SetMana(self.Energy)
 		local maxMana = parent:GetMaxMana() - (self.ManaModifier or 0)
 		local previous = self.ManaModifier
