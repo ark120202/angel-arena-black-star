@@ -440,14 +440,6 @@
 	{
 		"SecretShop"					"0"
 	}
-	"item_recipe_ultimate_scepter"
-	{
-		"SecretShop"					"0"
-	}
-	"item_ultimate_scepter"
-	{
-		"SecretShop"					"0"
-	}
 	"item_recipe_assault"
 	{
 		"SecretShop"					"0"
@@ -786,14 +778,6 @@
 		"SecretShop"					"0"
 	}
 	"item_faerie_fire"
-	{
-		"SecretShop"					"0"
-	}
-	"item_recipe_aether_lens"
-	{
-		"SecretShop"					"0"
-	}
-	"item_aether_lens"
 	{
 		"SecretShop"					"0"
 	}

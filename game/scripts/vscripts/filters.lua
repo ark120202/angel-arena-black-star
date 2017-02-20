@@ -407,6 +407,9 @@ function GameMode:CustomChatFilter(playerID, text, teamonly)
 				hero:RemoveAllWearables()
 				hero:EquipItemsFromPlayerSelectionOrDefault()
 			end
+			if cmd[1] == "maxenergy" then
+				hero:ModifyMaxEnergy(cmd[2] - hero:GetMaxEnergy())
+			end
 		end
 		return false
 	end

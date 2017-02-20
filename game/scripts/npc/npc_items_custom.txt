@@ -1,67 +1,7 @@
+#base "items/thinkers.txt"
+#base "items/shards.txt"
 "DOTAAbilities"
 {
-	"item_dummy"
-	{
-		"ID"							"10000"
-		"BaseClass"                     "item_datadriven"
-		"ItemPurchasable"				"0"
-		"ItemCost"						"0"
-		"ItemKillable"					"0"
-		"ItemSellable"					"0"
-		"AllowedInBackpack"				"1"
-		"IsTempestDoubleClonable"		"0"
-	}
-
-	"item_talent_modifier_applier"
-	{
-		"BaseClass"                     "item_datadriven"
-		"ItemPurchasable"				"0"
-		"ItemCost"						"0"
-
-		"Modifiers"
-		{
-			"modifier_talent_spell_amplify"
-			{
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "1"
-				}
-			}
-		}
-	}
-
-	"item_containers_lua_pack"
-	{
-		"BaseClass"						"item_lua"
-		"ID"							"10001"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_present"
-		"ScriptFile"					"libraries/abilities/item_containers_lua_pack.lua"
-		"ItemPurchasable"				"0"
-		"ItemKillable"					"0"
-		"ItemDroppable"					"0"
-		"ItemSellable"					"0"
-		"ItemCanChangeContainer"		"0"
-	}
-
-	"item_slot_locked"
-	{
-		"BaseClass"             		"item_datadriven"
-		"ID"							"10002"
-		"AbilityTextureName"			"item_arena/slot_locked"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ItemKillable"            		"0"
-		"ItemPurchasable"				"0"
-		"ItemSellable"					"0"
-		"ItemDroppable"					"0"
-		"ItemCanChangeContainer"		"0"
-		"AllowedInBackpack"				"0"
-	}
-
 	"item_soul_of_titan"
 	{
 		"BaseClass"             		"item_datadriven"
@@ -121,8 +61,6 @@
 
 	"item_dark_blade"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10004"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -161,8 +99,6 @@
 
 	"item_phantom_bone"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10005"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -207,8 +143,6 @@
 
 	"item_moon_dust"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10006"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -221,8 +155,6 @@
 
 	"item_cursed_eye"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10007"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -264,8 +196,6 @@
 
 	"item_fallen_star"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10008"
 		"AbilityTextureName"			"item_arena/fallen_star"
@@ -365,8 +295,6 @@
 
 	"item_demons_paw"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10009"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -400,845 +328,8 @@
 		}
 	}
 
-//===========================================================================================================================================================
-
-	"item_shard_str_small"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10010"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_str_small"
-		"ItemCost"						"2000"
-		"ItemShopTags"					"str;stat;shard"
-		"ItemQuality"					"uncommon"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_str"							"5"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"str"			"%bonus_str"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_str_medium"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10011"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_str_medium"
-		"ItemCost"						"10000"
-		"ItemShopTags"					"str;stat;shard"
-		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_str"							"25"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"str"			"%bonus_str"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_str_large"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10012"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_str_large"
-		"ItemCost"						"20000"
-		"ItemShopTags"					"str;stat;shard"
-		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_str"							"50"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"str"			"%bonus_str"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_str_extreme"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10013"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_str_extreme"
-		"ItemCost"						"40000"
-		"ItemShopTags"					"str;stat;shard"
-		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_str"							"100"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"str"			"%bonus_str"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_agi_small"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10014"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_agi_small"
-		"ItemCost"						"2000"
-		"ItemShopTags"					"agi;stat;shard"
-		"ItemQuality"					"uncommon"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_agi"							"5"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"agi"			"%bonus_agi"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_agi_medium"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10015"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_agi_medium"
-		"ItemCost"						"10000"
-		"ItemShopTags"					"agi;stat;shard"
-		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_agi"							"25"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"agi"			"%bonus_agi"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_agi_large"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10016"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_agi_large"
-		"ItemCost"						"20000"
-		"ItemShopTags"					"agi;stat;shard"
-		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_agi"							"50"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"agi"			"%bonus_agi"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_agi_extreme"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10017"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_agi_extreme"
-		"ItemCost"						"40000"
-		"ItemShopTags"					"agi;stat;shard"
-		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_agi"							"100"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"agi"			"%bonus_agi"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_int_small"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10018"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_int_small"
-		"ItemCost"						"2000"
-		"ItemShopTags"					"int;stat;shard"
-		"ItemQuality"					"uncommon"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_int"							"5"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"int"			"%bonus_int"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_int_medium"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10019"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_int_medium"
-		"ItemCost"						"10000"
-		"ItemShopTags"					"int;stat;shard"
-		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_int"							"25"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"int"			"%bonus_int"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_int_large"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10020"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_int_large"
-		"ItemCost"						"20000"
-		"ItemShopTags"					"int;stat;shard"
-		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_int"							"50"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"int"			"%bonus_int"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_int_extreme"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10021"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_int_extreme"
-		"ItemCost"						"40000"
-		"ItemShopTags"					"int;stat;shard"
-		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_int"							"100"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"int"			"%bonus_int"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_primal_small"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10022"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_primal_small"
-		"ItemCost"						"6000"
-		"ItemShopTags"					"stats;stat;shard"
-		"ItemQuality"					"uncommon"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_stats"							"5"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"str"			"%bonus_stats"
-				"agi"			"%bonus_stats"
-				"int"			"%bonus_stats"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_primal_medium"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10023"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_primal_medium"
-		"ItemCost"						"30000"
-		"ItemShopTags"					"stats;stat;shard"
-		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_stats"							"25"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"str"			"%bonus_stats"
-				"agi"			"%bonus_stats"
-				"int"			"%bonus_stats"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_primal_large"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10024"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_primal_large"
-		"ItemCost"						"60000"
-		"ItemShopTags"					"stats;stat;shard"
-		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_stats"							"50"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddStat"
-				"str"			"%bonus_stats"
-				"agi"			"%bonus_stats"
-				"int"			"%bonus_stats"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_level"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10025"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_level"
-		"ItemCost"						"1250"
-		"ItemShopTags"					"experience;level;shard"
-		"ItemQuality"					"rare"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddLevel"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_shard_attackspeed"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10026"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_attackspeed"
-		"ItemCost"						"2000"
-		"ItemShopTags"					"as;attackspeed;shard"
-		"ItemQuality"					"rare"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_attackspeed"							"50"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddAttackspeedModifier"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-	}
-
-	"item_recipe_shard_ultimate_scepter"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10027"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"30000"	
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_shard_ultimate_scepter"
-		"ItemRequirements"
-		{
-			"01"						"item_ultimate_scepter"
-		}
-	}
-
-	"item_shard_ultimate_scepter"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10028"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/shard_ultimate_scepter"
-		"ItemShopTags"					"stats;stat;shard"
-		"ItemQuality"					"uncommon"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shard_ultimate_scepter"
-				"Target" 		"CASTER"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"internal/kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_shard_ultimate_scepter"
-			{
-				"IsHidden"			"0"
-				"IsPurgable"		"0"
-				"IsBuff"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
-				"AllowIllusionDuplicate"	"1"
-				"TextureName"		"item_arena/shard_ultimate_scepter"
-		
-				"ThinkInterval"  "0.1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_shard_ultimate_scepter.lua"
-						"Function"		"ApplyScepter"
-					}
-				}
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_shard_ultimate_scepter.lua"
-						"Function"		"ApplyScepter"
-					}
-				}
-			}
-		}
-	}
-
-//===========================================================================================================================================================
-
 	"item_casino_coin"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10029"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -1293,8 +384,6 @@
 
 	"item_casino_drug_pill1"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10030"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -1430,8 +519,6 @@
 
 	"item_casino_drug_pill2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10031"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -1589,8 +676,6 @@
 
 	"item_casino_drug_pill3"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10032"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -1760,8 +845,6 @@
 
 	"item_blink_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10033"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -1839,8 +922,6 @@
 
 	"item_recipe_heart_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10034"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -1857,8 +938,6 @@
 
 	"item_heart_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10035"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1960,8 +1039,6 @@
 
 	"item_recipe_yasha_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10036"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -1978,8 +1055,6 @@
 
 	"item_yasha_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10037"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2092,8 +1167,6 @@
 
 	"item_recipe_sange_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10038"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -2110,8 +1183,6 @@
 
 	"item_sange_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10039"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2233,8 +1304,6 @@
 
 	"item_recipe_sange_and_yasha_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10040"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -2251,8 +1320,6 @@
 
 	"item_sange_and_yasha_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10041"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2440,8 +1507,6 @@
 	//=================================================================================================================
 	"item_recipe_nightshadow"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10042"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -2460,8 +1525,6 @@
 	//=================================================================================================================
 	"item_nightshadow"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10043"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2539,8 +1602,6 @@
 	//=================================================================================================================
 	"item_recipe_nightshadow_and_sange"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10044"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -2559,8 +1620,6 @@
 	//=================================================================================================================
 	"item_nightshadow_and_sange"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10045"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2708,8 +1767,6 @@
 	//=================================================================================================================
 	"item_recipe_nightshadow_and_yasha"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10046"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -2728,8 +1785,6 @@
 	//=================================================================================================================
 	"item_nightshadow_and_yasha"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10047"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2869,8 +1924,6 @@
 	//=================================================================================================================
 	"item_recipe_three_spirits_blades"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10048"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -2892,8 +1945,6 @@
 	//=================================================================================================================
 	"item_three_spirits_blades"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10049"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3099,8 +2150,6 @@
 
 	"item_recipe_splitshot_str"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10050"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -3117,8 +2166,6 @@
 
 	"item_splitshot_str"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10051"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3308,8 +2355,6 @@
 
 	"item_recipe_splitshot_agi"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10052"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -3326,8 +2371,6 @@
 
 	"item_splitshot_agi"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10053"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3507,8 +2550,6 @@
 
 	"item_recipe_splitshot_int"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10054"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -3525,8 +2566,6 @@
 
 	"item_splitshot_int"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10055"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3668,8 +2707,6 @@
 
 	"item_recipe_splitshot_ultimate"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10056"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -3686,8 +2723,6 @@
 
 	"item_splitshot_ultimate"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10057"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3961,8 +2996,6 @@
 
 	"item_recipe_lucifers_claw"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10058"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -3979,8 +3012,6 @@
 
 	"item_lucifers_claw"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10059"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -4129,8 +3160,6 @@
 
 	"item_pocket_riki"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10060"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -4297,8 +3326,6 @@
 
 	"item_pocket_riki_consumed"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10061"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4472,8 +3499,6 @@
 
 	"item_recipe_homemade_cheese"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10062"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -4490,8 +3515,6 @@
 
 	"item_homemade_cheese"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10063"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -4563,8 +3586,6 @@
 	//id 10031 reserved for recipe
 	"item_metamorphosis_elixir"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10064"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -4595,8 +3616,6 @@
 
 	"item_recipe_heart_cyclone"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10065"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -4613,8 +3632,6 @@
 
 	"item_heart_cyclone"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10066"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -4893,8 +3910,6 @@
 
 	"item_recipe_edge_of_vyse"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10069"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -4911,8 +3926,6 @@
 
 	"item_edge_of_vyse"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10070"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
@@ -5175,8 +4188,6 @@
 	
 	"item_gem_of_clear_mind"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10071"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5262,8 +4273,6 @@
 	
 	"item_gem_of_pure_soul"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10072"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5349,8 +4358,6 @@
 
 	"item_recipe_auto_sheepstick"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10073"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -5367,8 +4374,6 @@
 
 	"item_auto_sheepstick"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10074"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -5669,8 +4674,6 @@
 
 	"item_recipe_aegis_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10078"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -5845,8 +4848,6 @@
 
 	"item_recipe_refresher_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10080"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -5862,8 +4863,6 @@
 
 	"item_refresher_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10081"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -5942,8 +4941,6 @@
 
 	"item_recipe_manta_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10082"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -5959,8 +4956,6 @@
 
 	"item_manta_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10083"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -6167,8 +5162,6 @@
 
 	"item_recipe_diffusal_blade_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10084"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -6183,8 +5176,6 @@
 
 	"item_recipe_diffusal_blade_arena_2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10085"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -6199,8 +5190,6 @@
 
 	"item_recipe_diffusal_blade_arena_3"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10086"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -6215,8 +5204,6 @@
 
 	"item_recipe_diffusal_blade_arena_4"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10087"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -6231,8 +5218,6 @@
 
 	"item_recipe_diffusal_blade_arena_5"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10088"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -7017,8 +6002,6 @@
 
 	"item_recipe_steam_footgear"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10094"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7034,8 +6017,6 @@
 
 	"item_steam_footgear"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10095"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
@@ -7145,8 +6126,6 @@
 
 	"item_recipe_eye_of_the_prophet"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10096"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7164,8 +6143,6 @@
 
 	"item_eye_of_the_prophet"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10097"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -7215,8 +6192,6 @@
 
 	"item_recipe_ray_of_fate"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10098"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7234,8 +6209,6 @@
 
 	"item_ray_of_fate"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10099"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -7360,8 +6333,6 @@
 
 	"item_recipe_diffusal_style"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10101"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7377,8 +6348,6 @@
 
 	"item_diffusal_style"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10102"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -7664,8 +6633,6 @@
 
 	"item_recipe_blink_staff"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10103"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -7682,8 +6649,6 @@
 
 	"item_blink_staff"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10104"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -7819,8 +6784,6 @@
 
 	"item_recipe_dagon_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10105"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7837,8 +6800,6 @@
 
 	"item_recipe_dagon_2_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10106"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7855,8 +6816,6 @@
 
 	"item_recipe_dagon_3_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10107"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7873,8 +6832,6 @@
 
 	"item_recipe_dagon_4_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10108"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7891,8 +6848,6 @@
 
 	"item_recipe_dagon_5_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10109"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7909,8 +6864,6 @@
 
 	"item_recipe_enchanted_dagon_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10110"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7927,8 +6880,6 @@
 
 	"item_recipe_enchanted_dagon_2_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10111"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7945,8 +6896,6 @@
 
 	"item_recipe_enchanted_dagon_3_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10112"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7963,8 +6912,6 @@
 
 	"item_recipe_enchanted_dagon_4_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10113"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7981,8 +6928,6 @@
 
 	"item_recipe_enchanted_dagon_5_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10114"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -7999,8 +6944,6 @@
 
 	"item_recipe_sunray_dagon_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10115"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -8017,8 +6960,6 @@
 
 	"item_recipe_sunray_dagon_2_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10116"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -8035,8 +6976,6 @@
 
 	"item_recipe_sunray_dagon_3_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10117"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -8053,8 +6992,6 @@
 
 	"item_recipe_sunray_dagon_4_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10118"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -8071,8 +7008,6 @@
 
 	"item_recipe_sunray_dagon_5_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10119"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -8089,8 +7024,6 @@
 
 	"item_dagon_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10120"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -8178,8 +7111,6 @@
 
 	"item_dagon_2_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10121"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -8267,8 +7198,6 @@
 
 	"item_dagon_3_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10122"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -8356,8 +7285,6 @@
 
 	"item_dagon_4_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10123"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -8445,8 +7372,6 @@
 
 	"item_dagon_5_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10124"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -8531,8 +7456,6 @@
 
 	"item_enchanted_dagon_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10125"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -8626,8 +7549,6 @@
 
 	"item_enchanted_dagon_2_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10126"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -8721,8 +7642,6 @@
 
 	"item_enchanted_dagon_3_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10127"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -8816,8 +7735,6 @@
 
 	"item_enchanted_dagon_4_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10128"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -8911,8 +7828,6 @@
 
 	"item_enchanted_dagon_5_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10129"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -9003,8 +7918,6 @@
 
 	"item_sunray_dagon_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10130"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -9124,8 +8037,6 @@
 
 	"item_sunray_dagon_2_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10131"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -9245,8 +8156,6 @@
 
 	"item_sunray_dagon_3_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10132"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -9366,8 +8275,6 @@
 
 	"item_sunray_dagon_4_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10133"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -9487,8 +8394,6 @@
 
 	"item_sunray_dagon_5_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10134"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -9605,8 +8510,6 @@
 
 	"item_recipe_hand_of_midas_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10135"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -9622,8 +8525,6 @@
 
 	"item_hand_of_midas_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10136"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -9695,8 +8596,6 @@
 
 	"item_recipe_skull_of_midas"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10137"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -9712,8 +8611,6 @@
 
 	"item_skull_of_midas"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10138"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -9760,8 +8657,6 @@
 
 	"item_recipe_chest_of_midas"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10139"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -9777,8 +8672,6 @@
 
 	"item_chest_of_midas"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10140"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -9841,8 +8734,6 @@
 
 	"item_recipe_blood_of_midas"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10141"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -9858,8 +8749,6 @@
 
 	"item_blood_of_midas"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10142"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -9906,8 +8795,6 @@
 
 	"item_recipe_rune_keeper"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10143"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -9996,8 +8883,6 @@
 
 	"item_recipe_bloodstone_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10145"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -10014,8 +8899,6 @@
 
 	"item_bloodstone_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10146"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
@@ -10255,8 +9138,6 @@
 
 	"item_recipe_hand_of_midas_2_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10147"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -10272,8 +9153,6 @@
 
 	"item_hand_of_midas_2_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10148"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -10345,8 +9224,6 @@
 
 	"item_recipe_hand_of_midas_3_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10149"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -10362,8 +9239,6 @@
 
 	"item_hand_of_midas_3_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10150"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -10483,8 +9358,6 @@
 
 	"item_recipe_radiance_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10152"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -10499,8 +9372,6 @@
 
 	"item_recipe_radiance_2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10153"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -10515,8 +9386,6 @@
 
 	"item_recipe_radiance_3"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10154"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -10531,8 +9400,6 @@
 
 	"item_recipe_radiance_frozen"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10155"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -10547,8 +9414,6 @@
 
 	"item_radiance_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10159"
@@ -10600,8 +9465,6 @@
 
 	"item_radiance_2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10161"
@@ -10653,8 +9516,6 @@
 
 	"item_radiance_3"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10163"
@@ -10706,8 +9567,6 @@
 
 	"item_radiance_frozen"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/lua/item_radiance_lua.lua"
 		"ID"							"10165"
@@ -10776,8 +9635,6 @@
 
 	"item_recipe_skadi_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10167"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -10792,8 +9649,6 @@
 
 	"item_recipe_skadi_2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10168"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -10808,8 +9663,6 @@
 
 	"item_recipe_skadi_4"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10169"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -10825,8 +9678,6 @@
 
 	"item_recipe_skadi_8"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10170"
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -10842,8 +9693,6 @@
 
 	"item_skadi_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10171"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -10956,8 +9805,6 @@
 
 	"item_skadi_2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10172"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -11070,8 +9917,6 @@
 
 	"item_skadi_4"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10173"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -11184,8 +10029,6 @@
 
 	"item_skadi_8"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10174"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -11298,8 +10141,6 @@
 
 	"item_sacrificial_dagger"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10175"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -11343,8 +10184,6 @@
 
 	"item_consecrated_sword"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10176"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -11387,8 +10226,6 @@
 
 	"item_recipe_essential_orb_fire_1"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10177"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -11404,8 +10241,6 @@
 
 	"item_recipe_essential_orb_fire_2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10178"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -11421,8 +10256,6 @@
 
 	"item_recipe_essential_orb_fire_3"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10179"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -11438,8 +10271,6 @@
 
 	"item_recipe_essential_orb_fire_4"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10180"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -11455,8 +10286,6 @@
 
 	"item_recipe_essential_orb_fire_5"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10181"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -11472,8 +10301,6 @@
 
 	"item_recipe_essential_orb_fire_6"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10182"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -12209,8 +11036,6 @@
 
 	"item_recipe_octarine_core_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10189"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -12227,8 +11052,6 @@
 	
 	"item_octarine_core_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10190"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -12341,8 +11164,6 @@
 
 	"item_recipe_refresher_core"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10191"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -12359,8 +11180,6 @@
 	
 	"item_refresher_core"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10192"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -12504,8 +11323,6 @@
 
 	"item_recipe_black_king_bar_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10193"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -12521,8 +11338,6 @@
 
 	"item_recipe_black_king_bar_2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10194"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -12538,8 +11353,6 @@
 
 	"item_recipe_black_king_bar_3"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10195"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -12555,8 +11368,6 @@
 
 	"item_recipe_black_king_bar_4"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10196"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -12572,8 +11383,6 @@
 
 	"item_recipe_black_king_bar_5"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10197"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -12589,8 +11398,6 @@
 
 	"item_recipe_black_king_bar_6"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10198"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -12606,8 +11413,6 @@
 
 	"item_black_king_bar_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10199"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -12728,8 +11533,6 @@
 
 	"item_black_king_bar_2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10200"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -12850,8 +11653,6 @@
 
 	"item_black_king_bar_3"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10201"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -12972,8 +11773,6 @@
 
 	"item_black_king_bar_4"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10202"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -13094,8 +11893,6 @@
 
 	"item_black_king_bar_5"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10203"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -13216,8 +12013,6 @@
 
 	"item_black_king_bar_6"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10204"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -13338,8 +12133,6 @@
 
 	"item_recipe_titanium_bar"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10205"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -13355,8 +12148,6 @@
 
 	"item_titanium_bar"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10206"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -13491,8 +12282,6 @@
 
 	"item_recipe_vermillion_robe"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10207"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -13634,8 +12423,6 @@
 
 	"item_recipe_dark_flow"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10209"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -13732,8 +12519,6 @@
 
 	"item_recipe_echo_sabre_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10211"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -13854,8 +12639,6 @@
 
 	"item_recipe_echo_sabre_2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10213"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -14045,8 +12828,6 @@
 
 	"item_recipe_urn_of_souls"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10216"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -14062,8 +12843,6 @@
 
 	"item_urn_of_souls"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10217"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -14245,8 +13024,6 @@
 
 	"item_recipe_demon_king_bar"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10218"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -14262,8 +13039,6 @@
 
 	"item_demon_king_bar"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10219"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -14446,8 +13221,6 @@
 
 	"item_recipe_butterfly_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10220"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -14463,8 +13236,6 @@
 
 	"item_butterfly_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10221"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -14559,8 +13330,6 @@
 
 	"item_recipe_horn_of_the_underworld"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10222"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -14576,8 +13345,6 @@
 
 	"item_horn_of_the_underworld"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10223"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -14773,8 +13540,6 @@
 
 	"item_recipe_desolator2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10224"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
@@ -14790,8 +13555,6 @@
 
 	"item_desolator2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10225"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
@@ -14884,8 +13647,6 @@
 
 	"item_recipe_desolator3"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10226"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
@@ -14901,8 +13662,6 @@
 
 	"item_desolator3"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10227"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
@@ -14995,8 +13754,6 @@
 
 	"item_recipe_desolator4"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10228"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
@@ -15012,8 +13769,6 @@
 
 	"item_desolator4"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10229"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
@@ -15132,8 +13887,6 @@
 
 	"item_recipe_desolator5"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10230"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
@@ -15149,8 +13902,6 @@
 
 	"item_desolator5"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10231"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
@@ -15305,8 +14056,6 @@
 
 	"item_recipe_desolator6"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10232"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
@@ -15322,8 +14071,6 @@
 
 	"item_desolator6"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10233"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
@@ -15539,8 +14286,6 @@
 
 	"item_recipe_thunder_musket"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10234"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -15557,8 +14302,6 @@
 
 	"item_thunder_musket"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10235"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -15750,8 +14493,6 @@
 
 	"item_recipe_golden_eagle_relic"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10236"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -15768,8 +14509,6 @@
 
 	"item_golden_eagle_relic"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/lua/item_golden_eagle_relic.lua"
 		"ID"							"10237"
@@ -15834,8 +14573,6 @@
 
 	"item_recipe_butterfly_of_sins"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10239"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -15851,8 +14588,6 @@
 
 	"item_butterfly_of_sins"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10240"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -16018,8 +14753,6 @@
 
 	"item_recipe_rapier_of_pain"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10241"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -16035,8 +14768,6 @@
 
 	"item_rapier_of_pain"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10242"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -16291,8 +15022,6 @@
 
 	"item_recipe_heavy_war_axe_of_rage_damage"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10243"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -16309,8 +15038,6 @@
 
 	"item_heavy_war_axe_of_rage_damage"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10244"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -16428,8 +15155,6 @@
 
 	"item_heavy_war_axe_of_rage_health"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10245"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -16558,8 +15283,6 @@
 
 	"item_recipe_holy_knight_shield"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10246"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -16575,8 +15298,6 @@
 
 	"item_holy_knight_shield"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10247"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -16663,8 +15384,6 @@
 
 	"item_recipe_book_of_the_keeper"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10248"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -16680,8 +15399,6 @@
 
 	"item_book_of_the_keeper"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10249"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -16741,182 +15458,6 @@
 		}
 	}
 
-	"item_recipe_angel_wings"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10250"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"5930"	
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_angel_wings"
-		"ItemRequirements"
-		{
-			"01"						"item_steam_footgear;item_aether_lens;item_ultimate_orb"
-		}
-	}
-
-	"item_angel_wings"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"10251"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_arena/angel_wings"
-		"ItemShopTags"					"stats;move_speed;hard_to_tag"
-		"ItemQuality"					"common"
-		"ItemAliases"					"boots;angel wings"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilityManaCost"				"240"
-		"AbilityCooldown"				"22"
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"80"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"56"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_all"					"28"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"50"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"500"
-			} //Handled with base modifier
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_hp_regen"			"18"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_bonus"			"300"
-			} //Handled with base modifier
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"spell_amp_pct"				"12"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"7"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_range"		"325"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"EffectName"		"Arena.Items.SteamFootgear.Activate"
-				"Target"			"CASTER"
-			}
-			
-			"FireSound"
-			{
-				"EffectName"		"Item.GlimmerCape.Activate"
-				"Target"			"CASTER"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"		"modifier_item_angel_wings_active"
-				"Target" 			"CASTER"
-				"Duration"			"%duration"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_item_angel_wings"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"		"%bonus_movement_speed"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_hp_regen"
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_armor"
-					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp_pct"
-				}
-
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_item_aether_lens"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_item_aether_lens"
-						"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						}
-					}
-				}
-			}
-
-			"modifier_item_angel_wings_active"
-			{
-				"IsPurgable"		"0"
-
-				"EffectName"		"particles/items3_fx/glimmer_cape_initial.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_attack_range"
-				}
-				
-				"States"
-				{
-					"MODIFIER_STATE_FLYING"								"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_UNIT_COLLISION"					"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
 	// "item_soul_gem"
 	// {
 	// 	// General
@@ -16931,8 +15472,6 @@
 
 	"item_radio_car"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10252"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
@@ -16971,8 +15510,6 @@
 
 	"item_recipe_blade_of_discord"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10253"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -16988,8 +15525,6 @@
 
 	"item_blade_of_discord"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10254"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
@@ -17184,8 +15719,6 @@
 
 	"item_tango_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"item_datadriven"
 		"AbilityTextureName"			"item_tango"
 		"ID"							"10255"
@@ -17281,8 +15814,6 @@
 
 	"item_recipe_piercing_blade"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10256"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -17337,8 +15868,6 @@
 
 	"item_recipe_haganemushi"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10258"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -17588,8 +16117,6 @@
 
 	"item_recipe_fallhammer"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10260"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -17794,8 +16321,6 @@
 
 	"item_recipe_heavens_halberd_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10262"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -17812,8 +16337,6 @@
 
 	"item_heavens_halberd_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10263"
 		"AbilityTextureName"			"item_heavens_halberd"
@@ -17986,8 +16509,6 @@
 
 	"item_recipe_summoned_unit"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10264"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -18091,8 +16612,6 @@
 
 	"item_recipe_phantom_cuirass"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10266"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -18109,8 +16628,6 @@
 
 	"item_phantom_cuirass"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10267"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -18220,8 +16737,6 @@
 
 	"item_recipe_demonic_cuirass"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10268"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -18238,8 +16753,6 @@
 
 	"item_demonic_cuirass"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10269"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -18525,8 +17038,6 @@
 
 	"item_recipe_awakened_cursed_eye"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10270"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -18543,8 +17054,6 @@
 
 	"item_awakened_cursed_eye"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10271"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -18678,8 +17187,6 @@
 
 	"item_recipe_shard_of_true_sight"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10272"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -18695,8 +17202,6 @@
 
 	"item_shard_of_true_sight"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10273"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -18759,8 +17264,6 @@
 
 	"item_recipe_urn_of_demons"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10274"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -18776,8 +17279,6 @@
 
 	"item_urn_of_demons"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10275"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -18952,8 +17453,6 @@
 
 	"item_recipe_lotus_sphere"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10276"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -19247,8 +17746,6 @@
 
 	"item_recipe_blade_mail_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10000000008"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -19264,8 +17761,6 @@
 
 	"item_recipe_blade_mail_2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10000000008"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -19281,8 +17776,6 @@
 
 	"item_recipe_blade_mail_3"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"10000000008"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -19451,8 +17944,6 @@
 
 	"item_recipe_sacred_blade_mail"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"1000000009"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -19541,6 +18032,551 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"buff_cooldown"			"7"
+			}
+		}
+	}
+
+	"item_recipe_orb_of_essences"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"3600"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_orb_of_essences"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_orb;item_reaver;item_eagle;item_mystic_staff;item_moon_dust"
+		}
+	}
+
+	"item_orb_of_essences"
+	{
+		"BaseClass"             		"item_datadriven"
+		"ID"							"-1"
+		"AbilityTextureName"			"item_arena/orb_of_essences"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_all"				"80"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_orb_of_essences"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all"
+				}
+			}
+		}
+	}
+
+	"item_recipe_aether_lens_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"500"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aether_lens_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_energy_booster;item_ring_of_health"
+		}
+	}
+
+	"item_recipe_aether_lens_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1000"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aether_lens_2"
+		"ItemRequirements"
+		{
+			"01"						"item_aether_lens_arena"
+		}
+	}
+
+	"item_recipe_aether_lens_3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1500"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aether_lens_3"
+		"ItemRequirements"
+		{
+			"01"						"item_aether_lens_2"
+		}
+	}
+
+	"item_recipe_aether_lens_4"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"2000"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aether_lens_4"
+		"ItemRequirements"
+		{
+			"01"						"item_aether_lens_3"
+		}
+	}
+
+	"item_recipe_aether_lens_5"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"2500"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aether_lens_5"
+		"ItemRequirements"
+		{
+			"01"						"item_aether_lens_4"
+		}
+	}
+
+	"item_aether_lens_arena"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aether_lens"
+		"AbilityTextureName"			"item_aether_lens"
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemAliases"					"aether lens"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"250 500 750 1000 1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"8 12 16 20 24"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"175 200 215 230 245"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"6 8 10 11 12"
+			}
+		}
+	}
+
+	"item_aether_lens_2"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aether_lens"
+		"AbilityTextureName"			"arena/aether_lens_2"
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemAliases"					"aether lens 2"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"250 500 750 1000 1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"8 12 16 20 24"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"175 200 215 230 245"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"6 8 10 11 12"
+			}
+		}
+	}
+
+	"item_aether_lens_3"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aether_lens"
+		"AbilityTextureName"			"arena/aether_lens_3"
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemAliases"					"aether lens 3"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"3"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"250 500 750 1000 1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"8 12 16 20 24"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"175 200 215 230 245"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"6 8 10 11 12"
+			}
+		}
+	}
+
+	"item_aether_lens_4"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aether_lens"
+		"AbilityTextureName"			"arena/aether_lens_4"
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemAliases"					"aether lens 4"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"4"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"250 500 750 1000 1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"8 12 16 20 24"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"175 200 215 230 245"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"6 8 10 11 12"
+			}
+		}
+	}
+
+	"item_aether_lens_5"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aether_lens"
+		"AbilityTextureName"			"arena/aether_lens_5"
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemAliases"					"aether lens 5"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"5"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"250 500 750 1000 1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"8 12 16 20 24"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"175 200 215 230 245"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"6 8 10 11 12"
+			}
+		}
+	}
+
+	"item_recipe_ultimate_scepter_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"22500"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ultimate_scepter_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_orb_of_essences;item_aether_lens_5"
+		}
+	}
+
+	"item_ultimate_scepter_arena"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_ultimate_scepter.lua"
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ultimate_scepter"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_all"				"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"1800"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"350"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"16"
+			}
+		}
+	}
+
+	"item_recipe_angel_wings"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"5930"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_angel_wings"
+		"ItemRequirements"
+		{
+			"01"						"item_steam_footgear;item_aether_lens_5;item_ultimate_orb"
+		}
+	}
+
+	"item_angel_wings"
+	{
+		"BaseClass"						"item_datadriven" //TODO: Rewrite to item_lua
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"item_arena/angel_wings"
+		"ItemShopTags"					"stats;move_speed;hard_to_tag"
+		"ItemQuality"					"common"
+		"ItemAliases"					"boots;angel wings"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityManaCost"				"240"
+		"AbilityCooldown"				"22"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speed"		"80"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"56"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all"					"95"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"50"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"1500"
+			} //Handled with base modifier
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_hp_regen"			"32"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_bonus"			"300"
+			} //Handled with base modifier
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spell_amp_pct"				"14"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"7"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_range"		"325"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Arena.Items.SteamFootgear.Activate"
+				"Target"			"CASTER"
+			}
+			
+			"FireSound"
+			{
+				"EffectName"		"Item.GlimmerCape.Activate"
+				"Target"			"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_item_angel_wings_active"
+				"Target" 			"CASTER"
+				"Duration"			"%duration"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_angel_wings"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"		"%bonus_movement_speed"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_hp_regen"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_armor"
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp_pct"
+				}
+
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_item_aether_lens"
+						"Target"
+						{
+							"Center"	"CASTER"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_item_aether_lens"
+						"Target"
+						{
+							"Center"	"CASTER"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						}
+					}
+				}
+			}
+
+			"modifier_item_angel_wings_active"
+			{
+				"IsPurgable"		"0"
+
+				"EffectName"		"particles/items3_fx/glimmer_cape_initial.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_attack_range"
+				}
+				
+				"States"
+				{
+					"MODIFIER_STATE_FLYING"								"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"					"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 		}
 	}

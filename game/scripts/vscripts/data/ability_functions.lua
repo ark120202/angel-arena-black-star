@@ -233,7 +233,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 						})
 					end
 					victim:SpendMana(mana_needed, medusa_mana_shield_arena)					
-					local particleName = "particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
+					local particleName = "particles/arena/units/heroes/hero_sara/fragment_of_armor_impact.vpcf"
 					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
 					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
 					ParticleManager:SetParticleControl(particle, 1, Vector(mana_needed,0,0))
@@ -286,7 +286,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 		end
 	},
 	["modifier_sara_fragment_of_armor"] = {
-		multiplier = function(attacker, victim, _, damage)
+		multiplier = function(attacker, victim, inflictor, damage)
 			local sara_fragment_of_armor = victim:FindAbilityByName("sara_fragment_of_armor")
 			if sara_fragment_of_armor and not victim:IsIllusion() and victim:IsAlive() and not victim:PassivesDisabled() and victim.GetEnergy and sara_fragment_of_armor:GetToggleState() then
 				local blocked_damage_pct = sara_fragment_of_armor:GetAbilitySpecial("blocked_damage_pct") * 0.01
@@ -299,6 +299,16 @@ INCOMING_DAMAGE_MODIFIERS = {
 					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
 					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
 					ParticleManager:SetParticleControl(particle, 1, Vector(mana_needed,0,0))
+					if victim:HasScepter() and (not IsValidEntity(inflictor) or not NOT_DAMAGE_REFRLECTABLE_ABILITIES[inflictor:GetAbilityName()]) then
+						ApplyDamage({
+							victim = attacker,
+							attacker = victim,
+							damage = damage * sara_fragment_of_armor:GetSpecialValueFor("reflected_damage_pct_scepter") * 0.01,
+							damage_type = sara_fragment_of_armor:GetAbilityDamageType(),
+							damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+							ability = sara_fragment_of_armor
+						})
+					end
 					return 1 - blocked_damage_pct
 				end
 			end

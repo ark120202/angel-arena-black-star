@@ -198,7 +198,7 @@
 					</Image>
 				</Panel>
 				<!--  ExternalBrowserGoToURL  BrowserGoToURL = DOTADisplayURL -->
-				<!-- <Image id="AdsBanner" src="http://dota2.sgm-luck.ru/Images/logotype.png" onactivate="ExternalBrowserGoToURL('http://dota2.sgm-luck.ru/')"/> -->
+				<Image id="AdsBanner" src="http://dota2.sgm-luck.ru/Images/logotype.png" onactivate="OnAdsClicked()"/>
 				<Panel id="SelectionChatBox">
 					<Panel id="SelectionChat">
 						<Panel id="SelectionChatMessagesPanel">

@@ -809,7 +809,23 @@
 
 #AdsBanner
 {
+	margin-top: 5px;
 	width: 100%; //384
-	height: width-percentage(45.3125%); //174
-	visibility: collapse;
+	height: width-percentage(17%); //45.3125% 174
+	visibility: visible;
+	transition-property: pre-transform-scale2d, brightness;
+	transition-duration: 0.15s;
+	brightness: 0.8;
+}
+
+#AdsBanner:hover
+{
+	pre-transform-scale2d: 0.98;
+	brightness: 1;
+}
+
+#AdsBanner:active
+{
+	pre-transform-scale2d: 1.04;
+	brightness: 1.2;
 }

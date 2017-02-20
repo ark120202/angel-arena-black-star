@@ -14,24 +14,37 @@ if IsServer() then
 
 	function modifier_sara_fragment_of_logic:OnTakeDamage(keys)
 		local parent = keys.unit
-		if parent == self:GetParent() and parent:GetHealth() <= 0 and parent.GetEnergy then
+		if parent == self:GetParent() and parent:GetHealth() <= 1 and parent.GetEnergy then
 			local ability = self:GetAbility()
 			local toWaste = ability:GetSpecialValueFor("energy_const") + parent:GetMaxEnergy() * ability:GetSpecialValueFor("energy_pct") * 0.01
-			if parent:GetEnergy() >= toWaste then
+			if ability:IsCooldownReady() and parent:GetEnergy() >= toWaste then
+				ability:StartCooldown(GetAbilityCooldown(parent, ability))
+				parent:AddNewModifier(parent, ability, "modifier_sara_fragment_of_logic_debuff", {duration = ability:GetSpecialValueFor("debuff_duration")})
 				parent:ModifyEnergy(-toWaste)
 				parent:SetHealth(parent:GetMaxHealth())
-				ParticleManager:CreateParticle("particles/units/heroes/hero_chen/chen_hand_of_god.vpcf", PATTACH_ABSORIGIN, parent)
+				ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sara/fragment_of_logic.vpcf", PATTACH_ABSORIGIN, parent)
+				parent:EmitSound("Hero_Chen.HandOfGodHealHero")
 			end
 		end
 	end
 
-	function modifier_sara_fragment_of_logic:GetMinHealth(target)
+	function modifier_sara_fragment_of_logic:GetMinHealth(keys)
 		local parent = self:GetParent()
-		if target == parent and parent.GetEnergy then
+		if parent.GetEnergy then
 			local ability = self:GetAbility()
-			if parent:GetEnergy() >= ability:GetSpecialValueFor("energy_const") + parent:GetMaxEnergy() * ability:GetSpecialValueFor("energy_pct") * 0.01 then
+			if ability:IsCooldownReady() and parent:GetEnergy() >= ability:GetSpecialValueFor("energy_const") + parent:GetMaxEnergy() * ability:GetSpecialValueFor("energy_pct") * 0.01 then
 				return 1
 			end
 		end
 	end
+end
+
+modifier_sara_fragment_of_logic_debuff = class({})
+
+function modifier_sara_fragment_of_logic_debuff:IsPurgable()
+	return false
+end
+
+function modifier_sara_fragment_of_logic_debuff:IsDebuff()
+	return true
 end

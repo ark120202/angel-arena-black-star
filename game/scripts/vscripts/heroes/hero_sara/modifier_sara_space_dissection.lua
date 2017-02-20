@@ -17,6 +17,11 @@ if IsServer() then
 			local ability = self:GetAbility()
 			local unit = keys.target
 			if PreformAbilityPrecastActions(parent, ability) then
+				local pfx = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sara/space_dissection.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+				ParticleManager:SetParticleControlEnt(pfx, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetOrigin(), true)
+				ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true)
+				ParticleManager:SetParticleControlEnt(pfx, 5, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true)
+				unit:EmitSound("Hero_Centaur.DoubleEdge")
 				if (unit:IsConsideredHero() or unit:IsBoss()) and not unit:IsIllusion() then
 					local energy = parent:GetEnergy()
 					local cost = parent:GetMaxEnergy() * ability:GetSpecialValueFor("energy_pct") * 0.01
@@ -29,16 +34,13 @@ if IsServer() then
 							Timers:CreateTimer(duration, function()
 								if modifier and not modifier:IsNull() then
 									modifier:SetStackCount(modifier:GetStackCount() - stacks)
-									--[[if modifier:GetStackCount() <= 0 then
-										modifier:Destroy()
-									end]]
 								end
 							end)
 						end
 						parent:ModifyEnergy(cost)
 					end
 				elseif unit:IsRealCreep() then
-					unit.SpaceDissectionMultiplier = ability:GetSpecialValueFor("creep_energy_multiplier")
+					unit.SpaceDissectionMultiplier = ability:GetSpecialValueFor(parent:HasScepter() and "creep_energy_multiplier_scepter" or "creep_energy_multiplier")
 					if not parent:HasScepter() then
 						unit:SetDeathXP(0)
 						unit:SetMinimumGoldBounty(0)

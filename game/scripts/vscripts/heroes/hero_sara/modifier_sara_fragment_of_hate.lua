@@ -24,7 +24,7 @@ function modifier_sara_fragment_of_hate:GetModifierPreAttack_CriticalStrike(keys
 				ability = ability
 			})
 		end
-		return self:GetParent():GetMana() * ability:GetSpecialValueFor("energy_to_crit_pct")
+		return self:GetParent():GetMana() * ability:GetSpecialValueFor("energy_to_crit_pct") * 0.01
 	end
 end
 

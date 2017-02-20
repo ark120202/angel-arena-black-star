@@ -62,6 +62,10 @@
 	"item_bottle"					"REMOVE"
 	"item_recipe_blade_mail"		"REMOVE"
 	"item_blade_mail"				"REMOVE"
+	"item_recipe_aether_lens"		"REMOVE"
+	"item_aether_lens"				"REMOVE"
+	"item_recipe_ultimate_scepter"	"REMOVE"
+	"item_ultimate_scepter"			"REMOVE"
 
 	//"item_halloween_candy_corn"	"REMOVE"
 	//"item_mystery_hook"	"REMOVE"

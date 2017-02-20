@@ -23,3 +23,5 @@
 *.sublime-project
 content/tooltips_*.txt
 content/addon_*_utf8.txt
+
+CGJsToolkit

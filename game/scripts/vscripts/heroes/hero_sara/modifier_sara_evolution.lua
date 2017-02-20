@@ -7,7 +7,8 @@ function modifier_sara_evolution:DeclareFunctions()
 		MODIFIER_EVENT_ON_DEATH,
 		MODIFIER_PROPERTY_MANA_BONUS,
 		MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS,
-		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_TOOLTIP
 	}
 end
 
@@ -21,6 +22,11 @@ end
 
 function modifier_sara_evolution:GetModifierManaBonus()
 	return self.ManaModifier or self:GetSharedKey("ManaModifier") or 0
+end
+
+function modifier_sara_evolution:OnTooltip()
+	local ability = self:GetAbility()
+	return ability:GetSpecialValueFor("max_per_minute") + ability:GetSpecialValueFor("max_per_minute_pct") * self:GetParent():GetMaxMana() * 0.01
 end
 
 function modifier_sara_evolution:GetModifierExtraHealthBonus()
@@ -46,6 +52,9 @@ if IsServer() then
 		parent:SetNetworkableEntityInfo("Energy", self.Energy)
 		parent:SetNetworkableEntityInfo("MaxEnergy", self.MaxEnergy)
 		parent.ModifyEnergy = function(_, value, bShowMessage)
+			if value > 0 and parent:HasModifier("modifier_sara_fragment_of_logic_debuff") then
+				return self.Energy
+			end
 			if bShowMessage then
 				--print("Call: modify mana by " .. value  .. ", result: old mana: " .. self.Energy .. " new mana: " .. math.min(math.max(self.Energy + value, 0), self.MaxEnergy))
 				SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_ADD, parent, value, nil)
@@ -78,7 +87,6 @@ if IsServer() then
 			if keys.unit.SpaceDissectionMultiplier then
 				energy = energy * keys.unit.SpaceDissectionMultiplier
 			end
-			print("Max energy (creep): PCT: ".. ability:GetSpecialValueFor("max_per_creep_pct") .. ", CONST: " .. ability:GetSpecialValueFor("max_per_creep"))
 			keys.attacker:ModifyMaxEnergy(energy)
 		end
 	end
@@ -86,7 +94,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		if self:GetRemainingTime() <= 0 then
-			self:GetParent():ModifyMaxEnergy(ability:GetSpecialValueFor("max_per_minute") + ability:GetSpecialValueFor("max_per_minute_pct") * parent:GetMaxEnergy())
+			self:GetParent():ModifyMaxEnergy(ability:GetSpecialValueFor("max_per_minute") + ability:GetSpecialValueFor("max_per_minute_pct") * parent:GetMaxEnergy() * 0.01)
 			self:SetDuration(60, true)
 		end
 		local energyPS = (ability:GetSpecialValueFor("per_sec_pct") * parent:GetMaxEnergy() * 0.01 + ability:GetSpecialValueFor("per_sec"))

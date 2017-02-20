@@ -1433,7 +1433,7 @@ function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	if self.talent_keys and self.talent_keys.respawn_time_reduction then
 		time = time + self.talent_keys.respawn_time_reduction
 	end
-	return math.max(time, 0.1)
+	return math.max(time, 3)
 end
 
 function CDOTA_BaseNPC_Hero:IsWukongsSummon()
@@ -1657,7 +1657,6 @@ end
 
 --from DotaCraft
 function GetPreMitigationDamage(value, victim, attacker, damagetype)
-	print(damagetype)
 	if damagetype == DAMAGE_TYPE_PHYSICAL then
 		local armor = victim:GetPhysicalArmorValue()
 		local reduction = ((armor)*0.06) / (1+0.06*(armor))
@@ -1671,6 +1670,21 @@ function GetPreMitigationDamage(value, victim, attacker, damagetype)
 	else
 		return value,0
 	end
+end
+
+function table.deepmerge(t1, t2)
+    for k,v in pairs(t2) do
+        if type(v) == "table" then
+            if type(t1[k] or false) == "table" then
+                tableMerge(t1[k] or {}, t2[k] or {})
+            else
+                t1[k] = v
+            end
+        else
+            t1[k] = v
+        end
+    end
+    return t1
 end
 
 --TODO

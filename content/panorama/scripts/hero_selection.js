@@ -18,9 +18,9 @@ var SelectedHeroData,
 
 var SteamIDSpecialBGs = {
 	//ark120202
-	109792606: [
+	/*109792606: [
 		"https://pp.vk.me/c638727/v638727976/1134a/d1RxLF8mWkE.jpg",
-	],
+	],*/
 	//Murzik
 	82292900: [
 		"https://wallpaperscraft.ru/image/kot_morda_pushistyj_polosatyj_97082_1920x1080.jpg",
@@ -309,6 +309,16 @@ function UpdatePrecacheProgress(t) {
 	$("#PrecacheProgressBar").value = progress;
 	$("#PrecacheProgressBar").max = Object.keys(t).length;
 }
+
+var adsurl = "http://dota2.sgm-luck.ru/";
+
+function OnAdsClicked() {
+	//if (GameUI.IsControlDown()) {
+	$.DispatchEvent("ExternalBrowserGoToURL", adsurl)
+		//} else
+		//	$.DispatchEvent("DOTADisplayURL", adsurl)
+}
+
 (function() {
 	DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {
 		if (changesObject.HeroSelectionState != null) {

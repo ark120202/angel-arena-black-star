@@ -20,6 +20,7 @@ NOT_DAMAGE_REFRLECTABLE_ABILITIES = {
 	item_blade_mail_2 = true,
 	item_blade_mail_3 = true,
 	item_sacred_blade_mail = true,
+	sara_fragment_of_armor = true,
 }
 
 NOT_MULTICASTABLE_ABILITIES = {

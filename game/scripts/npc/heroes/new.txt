@@ -440,6 +440,7 @@
 		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"SceneCamera"	"custom_scene_hero_say"
+		"Enabled"		"0"
 		"Model"	"models/units/say/say.vmdl"
 		"ModelScale"	"1.3"
 		"Ability1"	""

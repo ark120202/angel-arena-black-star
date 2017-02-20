@@ -54,9 +54,12 @@ Angel Arena Black Star - Version 1.4.4:
 ============================================================
 Angel Arena Black Star - Version 1.4.4:
 General:
-	
+	Reworked/Added Aether Lens I - V
+	Reworked Ultimate Scepter
+	Removed Aghanim's Shard
 Balance:
 	Creeps now will spawn on first minute, but instead it won't spawn on second minute
+	Minimal respawn time: 0.1 => 3
 	Runes:
 		
 	Items:
