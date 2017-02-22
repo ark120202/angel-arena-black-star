@@ -9,6 +9,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"LevelsBetweenUpgrades" 		"4"
+		"RequiredLevel"					"2"
 
 		"AbilitySpecial"
 		{
@@ -407,7 +408,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_per_second_pct" "3"
+				"damage_per_second_pct" "3 5 7 9 11 13 15"
 			}
 			"03"
 			{

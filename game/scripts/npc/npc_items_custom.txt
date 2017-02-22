@@ -16805,7 +16805,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1050"
+				"aura_radius"			"750"
 			}
 			"09"
 			{
@@ -16825,7 +16825,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_bonus_hp_regen_pct" "4"
+				"aura_bonus_hp_regen_pct" "2"
 			}
 			"13"
 			{
