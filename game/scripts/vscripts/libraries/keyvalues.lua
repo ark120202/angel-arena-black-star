@@ -85,10 +85,10 @@ function LoadGameKeyValues()
 		return
 	end
 	-- Load and validate the files
-	for k,v in pairs(files) do
+	for KVType,KVFilePaths in pairs(files) do
 		local file = {}
 		if LOAD_BASE_FILES then
-			file = LoadKeyValues(scriptPath..v.base..".txt")
+			file = LoadKeyValues(scriptPath..KVFilePaths.base..".txt")
 		end
 
 		-- Replace main game keys by any match on the override file
@@ -101,14 +101,20 @@ function LoadGameKeyValues()
 				end
 			end
 		end
-		local custom_file = LoadKeyValues(scriptPath..v.custom..".txt")
+		local custom_file = LoadKeyValues(scriptPath..KVFilePaths.custom..".txt")
+		--TODO: use deepmerge
 		if custom_file then
-			if k == "HeroKV" then
+			if KVType == "HeroKV" then
 				for k2,v2 in pairs(custom_file) do
 					if not file[k2] then
 						file[k2] = {}
-						table.merge(file[k2], file[v2.override_hero])
-						table.merge(file[k2], custom_file[v2.override_hero])
+						local override_hero = v2.override_hero
+						if file[override_hero] then
+							table.merge(file[k2], file[override_hero])
+						end
+						if custom_file[override_hero] then
+							table.merge(file[k2], custom_file[override_hero])
+						end
 						table.merge(file[k2], v2)
 					else
 						for k3,v3 in pairs(v2) do
@@ -125,12 +131,12 @@ function LoadGameKeyValues()
 				end
 			end
 		else
-			print("[KeyValues] Critical Error on "..v.custom..".txt")
+			print("[KeyValues] Critical Error on "..KVFilePaths.custom..".txt")
 			return
 		end
 		
-		GameRules[k] = file --backwards compatibility
-		KeyValues[k] = file
+		GameRules[KVType] = file --backwards compatibility
+		KeyValues[KVType] = file
 	end   
 
 	-- Merge All KVs

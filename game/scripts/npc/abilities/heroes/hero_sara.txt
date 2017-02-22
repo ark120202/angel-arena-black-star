@@ -176,7 +176,6 @@
 		"ScriptFile"					"heroes/hero_sara/fragment_of_hate.lua"
 		"AbilityTextureName"			"arena/sara_fragment_of_hate"
 		"MaxLevel" 						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"RequiredLevel"					"6"
 		"LevelsBetweenUpgrades"			"10"
 
@@ -200,7 +199,12 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_bonus_pure_damage_pct_scepter" "8"
+				"damage_pct_scepter" "130 160 190 220 250 280 310"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"buff_duration_scepter" "3 3.5 4 4.5 5 5.5 6"
 			}
 		}
 	}
@@ -250,7 +254,6 @@
 		"ScriptFile"					"heroes/hero_sara/fragment_of_logic.lua"
 		"AbilityTextureName"			"arena/sara_fragment_of_logic"
 		"MaxLevel" 						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown"				"5"
 		"LevelsBetweenUpgrades"			"10"
@@ -271,6 +274,16 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"debuff_duration"	"10"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"int_to_energy_mult_scepter"	"2 2.25 2.5 2.75 3 3.25 3.5"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration_scepter"	"5"
 			}
 		}
 

@@ -69,6 +69,9 @@ function PanoramaShop:InitializeItemTable()
 	--загрузка всех предметов, разделение на предмет/рецепт
 	for name, kv in pairs(KeyValues.ItemKV) do
 		if type(kv) == "table" and (kv.ItemPurchasable or 1) == 1 then
+			if name == "item_blink" then
+				PrintTable(kv)
+			end
 			if kv.ItemRecipe == 1 then
 				RecipesToCheck[kv.ItemResult] = name
 			end

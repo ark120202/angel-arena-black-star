@@ -387,7 +387,7 @@ DropDownMenu Label
 
 .ItemRecipeBoxRow.ItemRecipeBoxRowLength7 .SmallItemPanel
 {
-	margin: 1px;
+	margin: -1px;
 }
 
 .ItemRecipeBoxRow.ItemRecipeBoxRowLength8 .SmallItemPanel

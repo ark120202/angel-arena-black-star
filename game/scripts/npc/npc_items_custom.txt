@@ -18378,6 +18378,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_ultimate_scepter"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAliases"					"aghanim's scepter;aghanims scepter;ultimate scepter;aghs"
 
 		"AbilitySpecial"
 		{
@@ -18577,6 +18578,49 @@
 					"MODIFIER_STATE_FLYING"								"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_UNIT_COLLISION"					"MODIFIER_STATE_VALUE_ENABLED"
 				}
+			}
+		}
+	}
+
+	"item_recipe_wand_of_midas"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1200"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_wand_of_midas"
+		"ItemRequirements"
+		{
+			"01"						"item_magic_wand;item_circlet;item_circlet;item_circlet"
+		}
+	}
+
+	"item_wand_of_midas"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/item_wand_of_midas.lua"
+		"ID"							"-1"
+		"AbilityTextureName"			"item_arena/wand_of_midas"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_all"			"12"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold"				"30"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1200"
 			}
 		}
 	}

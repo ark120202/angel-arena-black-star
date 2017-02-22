@@ -274,7 +274,7 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 							end
 							hero = PlayerResource:ReplaceHeroWith(playerId, baseNewHero, 0, 0)
 						else
-							print("[HeroSelection] For some reason player " .. playerId .. " has no hero. This player can't get a hero due to 7.00 patch. Returning")
+							print("[HeroSelection] For some reason player " .. playerId .. " has no hero. This player can't get a hero. Returning")
 							return
 						end
 						HeroSelection:InitializeHeroClass(hero, heroTableCustom)

@@ -2,14 +2,13 @@ function MidasCreep(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	Gold:ModifyGold(caster, keys.BonusGold)
+	Gold:AddGoldWithMessage(caster, keys.BonusGold)
 	if caster.AddExperience then
 		caster:AddExperience(target:GetDeathXP() * keys.XPMultiplier, false, false)
 	end
 	target:EmitSound("DOTA_Item.Hand_Of_Midas")
 	local midas_particle = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)	
 	ParticleManager:SetParticleControlEnt(midas_particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
-	SendOverheadEventMessage(nil, OVERHEAD_ALERT_GOLD, caster, keys.BonusGold, nil)
 
 	target:SetDeathXP(0)
 	target:SetMinimumGoldBounty(0)

@@ -337,7 +337,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%flesh_heap_magic_resist_stack_pct"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%flesh_heap_strength_buff_amount" 
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%flesh_heap_strength_buff_amount"
 				}
 			}
 		}

@@ -14,7 +14,7 @@ if IsServer() then
 			if caster:GetMana() >= mana then
 				caster:SpendMana(mana, self)
 				local width = self:GetSpecialValueFor("width")
-				local damage = mana * self:GetSpecialValueFor("damage_per_mana")
+				local damage = mana * self:GetSpecialValueFor(caster:HasScepter() and "damage_per_mana_scepter" or "damage_per_mana")
 				local startpoint = caster:GetAbsOrigin()
 				local attach_attack_glow = caster:ScriptLookupAttachment("attach_sword_glow")
 				if attach_attack_glow ~= 0 then

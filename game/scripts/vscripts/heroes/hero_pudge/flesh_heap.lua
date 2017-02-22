@@ -12,6 +12,7 @@ function OnKill(keys)
 	local unit = keys.unit
 	local ability = keys.ability
 	if unit:IsRealCreep() then
+
 		ability.KilledCreeps = (ability.KilledCreeps or 0) + 1
 		local creeps_killed_to_stack = ability:GetAbilitySpecial("creeps_killed_to_stack")
 		if ability.KilledCreeps >= creeps_killed_to_stack then

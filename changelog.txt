@@ -12,6 +12,7 @@ TODO LIST:
 	алхимику на новую голду
 	2 виспа оверчарж
 	понерфить ама, апокалипсиса (боссы), инвокера
+	I found a bug in custom abilities using Pudge flesh heap + apocalypse can result in infinite size which would cause the hero unable to attack - ability_lua + MODIFIER_PROPERTY_MODEL_SCALE
 Идеи для предметов:
 	Star Blade:
 		Из Fallen Star + Dark Blade + ???
@@ -54,12 +55,14 @@ Angel Arena Black Star - Version 1.4.4:
 ============================================================
 Angel Arena Black Star - Version 1.4.4:
 General:
-	Reworked/Added Aether Lens I - V
+	Added new hero: Sara
+	Added new item: Wand of Midas
+	Reworked Aether Lens (I - V)
 	Reworked Ultimate Scepter
 	Removed Aghanim's Shard
 Balance:
 	Creeps now will spawn on first minute, but instead it won't spawn on second minute
-	Minimal respawn time: 0.1 => 3
+	Minimal respawn time: 0.1 => 3 (it should solve some immediate respawn bugs)
 	Runes:
 		
 	Items:
@@ -68,7 +71,10 @@ Balance:
 		
 	Abilities:
 		Saber - Excalibur:
+			Damage per mana point: 4 5 6 7 8 9 10 = > 2 2.5 3 3.5 4 4.5 5
+			Scepter now also increases damage to per mana point to 3 3.75 4.5 5.25 6 6.75 7.5
 			Damage now not increases with spell damage amplify
+			Now is not rearmable
 		Saber - Invisible Air:
 			Damage now not increases with spell damage amplify
 			Damage per Second: 5 15 30 50 70 100 120 => 5 10 15 25 35 45 60
@@ -83,6 +89,8 @@ Fixes:
 	Fixed Saber - Instinct evaded and bloacked damage from abilities and items
 	Fixed Wisp using Spirits could place units out of arena while duel is ongoing
 	Fixed heroes weren't killed under fountain with two Aegises of the Immortal
+	Saber - Mana Burst now has more detaled description
+	Saber abilities were localized to russian
 <<+===========================================================================================================
 
 

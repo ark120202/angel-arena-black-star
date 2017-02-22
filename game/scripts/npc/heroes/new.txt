@@ -2,7 +2,6 @@
 {
 	"npc_arena_hero_arthas"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_skeleton_king"
 		"Ability1"	"arthas_rage_of_arthas"
 		"Ability2"	"arthas_plus_morality"
@@ -12,7 +11,6 @@
 
 	"npc_arena_hero_stargazer"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_spectre"
 		"Ability1"	"stargazer_gamma_ray"
 		"Ability2"	"stargazer_warp"
@@ -33,7 +31,6 @@
 
 	"npc_arena_hero_cherub"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_enchantress"
 		"Ability1"	"cherub_sleep_cloud"
 		"Ability2"	"cherub_synthesis"
@@ -44,7 +41,6 @@
 
 	"npc_arena_hero_queenofblades"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_queenofpain"
 		"Ability1"	"queenofblades_army"
 		"Ability2"	"queenofblades_darkness_aura"
@@ -56,7 +52,6 @@
 
 	"npc_arena_hero_kadash"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_chaos_knight"
 		"Ability1"	"kadash_assasins_skills"
 		"Ability2"	"kadash_survival_skills"
@@ -69,7 +64,6 @@
 
 	"npc_arena_hero_zen_gehraz"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_dark_seer"
 		"Ability1"	"zen_gehraz_divine_intervention"
 		"Ability2"	"zen_gehraz_mystic_twister"
@@ -81,7 +75,6 @@
 
 	"npc_arena_hero_mirratie"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_templar_assassin"
 		"Ability1"	"mirratie_snagshot"
 		"Ability2"	"mirratie_smoke_out"
@@ -91,52 +84,8 @@
 		"AttackRate"	"1.3"
 	}
 
-	//Also base for all custom heroes with custom models
-	"npc_dota_hero_wisp"
-	{
-		"override_hero"	"npc_dota_hero_wisp"
-		"Ability1"	"wisp_tether_aghanims"
-		"Ability2"	"wisp_spirits_aghanims"
-		"Ability3"	"wisp_overcharge_aghanims"
-		"Ability4"	"wisp_spirits_in_aghanims"
-		"Ability5"	"wisp_spirits_out_aghanims"
-		"Ability6"	"wisp_relocate_aghanims"
-		"Ability7"	""
-		"Ability8"	"wisp_tether_break_aghanims"
-		"Ability9"	""
-		"Ability10"	""
-		"Changed"	"1"
-		"AttackRate"	"1.3"
-		"Ability11"	""
-		"Ability12"	""
-		"Ability13"	""
-		"Ability14"	""
-		"Ability15"	""
-		"Ability16"	""
-		"Ability17"	""
-		"Ability18"	""
-		"Ability19"	""
-		"Ability20"	""
-		"Ability21"	""
-		"Ability22"	""
-		"Ability23"	""
-		"Ability24"	""
-
-		"PrecacheAllWearables"	"1"
-		"EquipDynamicWearables"	"1"
-		"DisableWearables"	"1"
-		"ModelScale"		"1"
-		"AbilityLayout"		"4"
-		"SoundSet"			""
-		"IdleSoundLoop"		""
-		"GameSoundsFile"	""
-		"VoiceFile"			""
-		"AttackAnimationPoint"	"0.35"
-	}
-
 	"npc_arena_hero_apocalypse"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"Ability1"	"apocalypse_agnis_touch"
 		"Ability2"	"apocalypse_king_slayer"
@@ -162,7 +111,6 @@
 
 	"npc_arena_hero_shinobu"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"SceneCamera"	"custom_scene_hero_shinobu"
 		"Model"	"models/hero_shinobu/shinobu_01.vmdl"
@@ -197,7 +145,6 @@
 
 	"npc_arena_hero_stegius"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"Ability1"	"stegius_desolus_wave"
 		"Ability2"	"stegius_rage_of_desolus"
@@ -221,7 +168,6 @@
 
 	"npc_arena_hero_freya"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"Ability1"	"freya_strike_the_ice"
 		"Ability2"	"freya_ice_cage"
@@ -245,7 +191,6 @@
 
 	"npc_arena_hero_zaken"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"Model"	"models/units/zaken/zaken.vmdl"
 		"SceneCamera"	"custom_scene_hero_zaken"
@@ -268,7 +213,6 @@
 
 	"npc_arena_hero_poseidon"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"SceneCamera"	"custom_scene_hero_poseidon"
 		"Model"	"models/units/poseidon/poseidon.vmdl"
@@ -295,7 +239,6 @@
 
 	"npc_arena_hero_anakim"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"		"npc_dota_hero_wisp"
 		"Model"			"models/units/anakim/anakim.vmdl"
 		"Ability1"		"anakim_wisps"
@@ -309,7 +252,6 @@
 
 	"npc_arena_hero_arcueid"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"SceneCamera"	""
 		"Model"	"models/units/arcueid/arcueid.vmdl"
@@ -327,7 +269,6 @@
 
 	"npc_arena_hero_saber"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"SceneCamera"	"custom_scene_hero_saber"
 		"Model"	"models/units/saber/saber.vmdl"
@@ -356,7 +297,6 @@
 
 	"npc_arena_hero_rin"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"SceneCamera"	""
 		"Model"	"models/units/rin/rin.vmdl"
@@ -374,7 +314,6 @@
 
 	"npc_arena_hero_rider"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"SceneCamera"	""
 		"Model"	"models/units/rider/rider.vmdl"
@@ -411,7 +350,6 @@
 
 	"npc_arena_hero_sara"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"SceneCamera"	"custom_scene_hero_sara"
 		"Model"	"models/units/sara/sara.vmdl"
@@ -437,7 +375,6 @@
 
 	"npc_arena_hero_say"
 	{
-		"override_hero"	"npc_dota_hero_base"
 		"base_hero"	"npc_dota_hero_wisp"
 		"SceneCamera"	"custom_scene_hero_say"
 		"Enabled"		"0"

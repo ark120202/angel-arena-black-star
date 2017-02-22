@@ -256,8 +256,9 @@ PANORAMA_SHOP_ITEMS = {
 			"item_demonic_cuirass",
 		},
 		{
-			"item_skull_of_midas",
 			"item_chest_of_midas",
+			"item_skull_of_midas",
+			"item_wand_of_midas",
 			"item_blood_of_midas",
 			"item_thunder_musket",
 			"item_splitshot_str",

@@ -113,6 +113,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	"omniknight_select_allies",
 	"magnataur_reverse_polarity",
 	"queenofblades_alter_ego",
+	"saber_excalibur",
 }
 
 REFRESH_LIST_IGNORE_REFRESHER = {

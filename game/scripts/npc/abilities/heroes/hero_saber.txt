@@ -197,30 +197,36 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_mana"	"4 5 6 7 8 9 10"
+				"damage_per_mana"	"2 2.5 3 3.5 4 4.5 5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"cast_range"		"1000"
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_mana_scepter"	"3 3.75 4.5 5.25 6 6.75 7.5"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"cast_range_scepter"	"2000"
+				"cast_range"		"1000"
 			}
 			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range_scepter"	"2000"
+			}
+			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"channel_time"		"0.8"
 			}
-			"06"
+			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"width"				"200"
 			}
-			"07"
+			"08"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"delay"				"0.5"

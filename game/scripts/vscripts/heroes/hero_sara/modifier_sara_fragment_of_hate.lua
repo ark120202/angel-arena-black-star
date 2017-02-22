@@ -11,19 +11,9 @@ function modifier_sara_fragment_of_hate:DeclareFunctions()
 	}
 end
 
-function modifier_sara_fragment_of_hate:GetModifierPreAttack_CriticalStrike(keys)
+function modifier_sara_fragment_of_hate:GetModifierPreAttack_CriticalStrike()
 	local ability = self:GetAbility()
 	if RollPercentage(ability:GetSpecialValueFor("crit_chance_pct")) then
-		print("Crit!")
-		if keys.attacker:HasScepter() then
-			ApplyDamage({
-				attacker = keys.attacker,
-				victim = keys.target,
-				damage_type = DAMAGE_TYPE_PURE,
-				damage = damage,
-				ability = ability
-			})
-		end
 		return self:GetParent():GetMana() * ability:GetSpecialValueFor("energy_to_crit_pct") * 0.01
 	end
 end
@@ -32,11 +22,40 @@ if IsServer() then
 	function modifier_sara_fragment_of_hate:GetModifierPreAttack_BonusDamage()
 		local parent = self:GetParent()
 		if parent.GetEnergy then
-			return parent:GetEnergy() * self:GetAbility():GetSpecialValueFor("energy_to_damage_pct") * 0.01
+			local ability = self:GetAbility()
+			local damage = parent:GetEnergy() * ability:GetSpecialValueFor("energy_to_damage_pct") * 0.01
+			if parent:HasModifier("modifier_sara_fragment_of_hate_buff_scepter") then
+				damage = damage * ability:GetSpecialValueFor("damage_pct_scepter") * 0.01
+			end
+			return damage
 		end
 	end
 else
 	function modifier_sara_fragment_of_hate:GetModifierPreAttack_BonusDamage()
-		return self:GetParent():GetMana() * self:GetAbility():GetSpecialValueFor("energy_to_damage_pct") * 0.01
+		local parent = self:GetParent()
+		local ability = self:GetAbility()
+		local damage = parent:GetMana() * ability:GetSpecialValueFor("energy_to_damage_pct") * 0.01
+		if parent:HasModifier("modifier_sara_fragment_of_hate_buff_scepter") then
+			damage = damage * ability:GetSpecialValueFor("damage_pct_scepter") * 0.01
+		end
+		return damage
 	end
+end
+
+modifier_sara_fragment_of_hate_buff_scepter = class({})
+
+function modifier_sara_fragment_of_hate_buff_scepter:IsPurgable()
+	return false
+end
+
+function modifier_sara_fragment_of_hate_buff_scepter:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
+function modifier_sara_fragment_of_hate_buff_scepter:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+
+function modifier_sara_fragment_of_hate_buff_scepter:OnTooltip()
+	return self:GetStackCount()
 end

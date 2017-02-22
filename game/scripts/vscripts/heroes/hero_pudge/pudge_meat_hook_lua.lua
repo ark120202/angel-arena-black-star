@@ -159,13 +159,6 @@ function pudge_meat_hook_lua:OnSpellStart()
 											if not v:IsNull() and v:IsAlive() then
 												v:InterruptMotionControllers( true )
 												v:RemoveModifierByName( "modifier_meat_hook_lua" )
-												if is_valid and pos then
-													local vVictimPosCheck = v:GetOrigin() - pos 
-													local flPad = self:GetCaster():GetPaddedCollisionRadius() + v:GetPaddedCollisionRadius()
-													if vVictimPosCheck:Length2D() > flPad then
-														FindClearSpaceForUnit( v, self:GetCaster():GetAbsOrigin(), false )
-													end
-												end
 											end
 										end
 									end
