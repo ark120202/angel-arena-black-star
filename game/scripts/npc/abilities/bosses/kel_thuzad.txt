@@ -1,0 +1,81 @@
+"DOTAAbilities"
+{
+	"boss_kel_thuzad_immortality"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/bosses/kel_thuzad/immortality.lua"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"initial_stack_count"	"20"
+			}
+		}
+	}
+
+	"boss_kel_thuzad_presence_of_death"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel" 						"1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	}
+
+	"boss_kel_thuzad_invulnerability"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/bosses/kel_thuzad/invulnerability.lua"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"normal_cooldown"	"5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"reduced_cooldown"	"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reduced_stacks"	"10"
+			}
+		}
+	}
+
+	"boss_kel_thuzad_shadows"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/bosses/kel_thuzad/shadows.lua"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel" 						"1"
+		"AbilityCooldown"				"30"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastRange"				"1100"
+		"AbilityCastPoint"				"0.25"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"normal_cooldown"	"5"
+			}
+		}
+	}
+}

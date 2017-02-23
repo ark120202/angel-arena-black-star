@@ -1043,8 +1043,18 @@ function MakePlayerAbandoned(iPlayerID)
 			Notifications:TopToAll(CreateHeroNameNotificationSettings(hero))
 			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
 			
+			--Saving hero for 20 seconds to make sure most of debuffs were already removed
 			hero:DestroyAllModifiers()
-			Timers:CreateTimer(function()
+			for i = 0, hero:GetAbilityCount() - 1 do
+				local ability = hero:GetAbilityByIndex(i)
+				if ability then
+					ability:SetLevel(0)
+					ability:SetActivated(false)
+					--UTIL_Remove(ability)
+				end
+			end
+			hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
+			Timers:CreateTimer(20, function()
 				UTIL_Remove(hero)
 			end)
 		end
@@ -1647,6 +1657,7 @@ function RecreateAbility(unit, ability)
 	if ability then
 		ability:SetLevel(level)
 	end
+	return ability
 end
 
 function CDOTA_Buff:SetSharedKey(key, value)

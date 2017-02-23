@@ -17239,8 +17239,17 @@
 			{
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
-				"AllowIllusionDuplicate"	"1"
 				"TextureName"		"item_arena/shard_of_true_sight"
+				"AllowIllusionDuplicate"	"0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_sange_arena_unique"
+					}
+				}
 
 				"Aura"          	"modifier_truesight_reveal"
 				"Aura_Radius"   	"%radius"
@@ -17801,6 +17810,7 @@
 		"ItemQuality"					"epic"
 		"ItemAliases"					"blade mail;blademail"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySharedCooldown"			"blademail"
 
 		"MaxUpgradeLevel"				"3"
 		"ItemBaseLevel"					"1"
@@ -17852,6 +17862,7 @@
 		"ItemQuality"					"epic"
 		"ItemAliases"					"blade mail;blademail"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySharedCooldown"			"blademail"
 
 		"MaxUpgradeLevel"				"3"
 		"ItemBaseLevel"					"2"
@@ -17903,6 +17914,7 @@
 		"ItemQuality"					"epic"
 		"ItemAliases"					"blade mail;blademail"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySharedCooldown"			"blademail"
 
 		"MaxUpgradeLevel"				"3"
 		"ItemBaseLevel"					"3"
@@ -17970,6 +17982,7 @@
 		"ItemQuality"					"epic"
 		"ItemAliases"					"sacred blade mail;sacred blademail"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySharedCooldown"			"blademail"
 
 		"AbilitySpecial"
 		{

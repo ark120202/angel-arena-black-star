@@ -10,10 +10,13 @@ function sara_fragment_of_hate:GetBehavior()
 	return self:GetCaster():HasScepter() and DOTA_ABILITY_BEHAVIOR_NO_TARGET or DOTA_ABILITY_BEHAVIOR_PASSIVE
 end
 
+function sara_fragment_of_hate:GetCooldown(level)
+	return self:GetCaster():HasScepter() and self.BaseClass.GetCooldown(self, level) or 0
+end
+
 if IsServer() then
 	function sara_fragment_of_hate:OnSpellStart()
 		local caster = self:GetCaster()
 		caster:AddNewModifier(caster, self, "modifier_sara_fragment_of_hate_buff_scepter", {duration = self:GetSpecialValueFor("buff_duration_scepter")})
-		
 	end
 end

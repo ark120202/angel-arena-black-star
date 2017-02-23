@@ -51,7 +51,12 @@ Angel Arena Black Star - Версия 1.4.4:
 
 ============================================================
 Angel Arena Black Star - Version 1.4.4:
-
+Added new hero: Sara
+Added new item: Wand of Midas
+Reworked Aether Lens (I - V)
+Reworked Ultimate Scepter; Removed Aghanim's Shard
+Fixed Soul Piercing dealt additional damage after armor reductions
+Nerfed: Saber - Excalibur, Saber - Invisible Air, Apocalypse - King Slayer, Apocalypse - Armor Tear
 ============================================================
 Angel Arena Black Star - Version 1.4.4:
 General:
@@ -91,6 +96,9 @@ Fixes:
 	Fixed heroes weren't killed under fountain with two Aegises of the Immortal
 	Saber - Mana Burst now has more detaled description
 	Saber abilities were localized to russian
+	Text chat now not displays messages of muted allies
+	Fixed Spectre + Shard of True Sight crash
+	Fixed Huskar could crash game while abandoning game with someone has Burning Spear modifier
 <<+===========================================================================================================
 
 

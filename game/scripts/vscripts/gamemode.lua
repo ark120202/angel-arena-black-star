@@ -38,6 +38,7 @@ local requirements = {
 	"data/abilities",
 	"data/ability_functions",
 	"data/ability_shop",
+	"data/commands",
 	--------------------------------------------------
 	"internal/gamemode",
 	"internal/events",

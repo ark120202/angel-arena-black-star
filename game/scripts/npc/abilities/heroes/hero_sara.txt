@@ -8,7 +8,7 @@
 		"MaxLevel" 						"4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"HasInnateModifiers"			"1"
-		"LevelsBetweenUpgrades"			"3"
+		"LevelsBetweenUpgrades"			"4"
 		"HasScepterUpgrade"				"1"
 
 		"AbilitySpecial"
@@ -21,7 +21,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"max_per_minute_pct" "0 0 0 1"
+				"max_per_minute_pct" "0 0 0 0.8"
 			}
 			"03"
 			{
@@ -61,7 +61,7 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_health"		"625 1250 1875 2500"
+				"bonus_health"		"400 900 1500 2100"
 			}
 			"11"
 			{
@@ -178,6 +178,8 @@
 		"MaxLevel" 						"7"
 		"RequiredLevel"					"6"
 		"LevelsBetweenUpgrades"			"10"
+		"AbilityCooldown"				"40"
+		"HasScepterUpgrade"				"1"
 
 		"AbilitySpecial"
 		{
@@ -227,16 +229,19 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"damage_per_energy"		"2"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"blocked_damage_pct"	"20 30 40 50 60 70 80"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"reflected_damage_pct_scepter"	"10 12 14 16 18 20 22"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 
@@ -252,6 +257,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_sara/fragment_of_logic.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"arena/sara_fragment_of_logic"
 		"MaxLevel" 						"7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -274,16 +280,6 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"debuff_duration"	"10"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"int_to_energy_mult_scepter"	"2 2.25 2.5 2.75 3 3.25 3.5"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration_scepter"	"5"
 			}
 		}
 

@@ -11,17 +11,18 @@ function ChatSendMessage() {
 }
 
 function RecieveMessage(data) {
-	if (data != null && data.text != null && data.playerId != null) {
+	var playerID = data.playerId
+	if (data != null && data.text != null && playerID != null && !Game.IsPlayerMuted(playerID)) {
 		var rootPanel = CustomChatLinesPanel || $("#SelectionChatMessages")
-		var playerColor = Players.GetPlayerColor(data.playerId).toString(16)
+		var playerColor = Players.GetPlayerColor(playerID).toString(16)
 		if (playerColor != null)
 			playerColor = "#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2)
 		else
 			playerColor = "#000000";
 		var text = ""
-		if (GetPlayerHeroName(data.playerId) != "npc_dota_hero_target_dummy")
-			text = "<img src='" + TransformTextureToPath(GetPlayerHeroName(data.playerId)) + "' class='HeroIcon' style='vertical-align: top;'/> "
-		text += (data.teamonly == 1 ? "<font color='lime'>[T]</font>" : "<font color='darkred'>[A]</font>") + " <font color='" + playerColor + "'>" + Players.GetPlayerName(data.playerId).encodeHTML() + "</font>: " + AddSmiles(String(data.text).encodeHTML())
+		if (GetPlayerHeroName(playerID) != "npc_dota_hero_target_dummy")
+			text = "<img src='" + TransformTextureToPath(GetPlayerHeroName(playerID)) + "' class='HeroIcon' style='vertical-align: top;'/> "
+		text += (data.teamonly == 1 ? "<font color='lime'>[T]</font>" : "<font color='darkred'>[A]</font>") + " <font color='" + playerColor + "'>" + Players.GetPlayerName(playerID).encodeHTML() + "</font>: " + AddSmiles(String(data.text).encodeHTML())
 		var lastLine = rootPanel.GetChild(0);
 		var msgBox = $.CreatePanel("Label", rootPanel, "")
 		msgBox.AddClass("ChatLine")

@@ -14,7 +14,7 @@ end
 function modifier_sara_fragment_of_hate:GetModifierPreAttack_CriticalStrike()
 	local ability = self:GetAbility()
 	if RollPercentage(ability:GetSpecialValueFor("crit_chance_pct")) then
-		return self:GetParent():GetMana() * ability:GetSpecialValueFor("energy_to_crit_pct") * 0.01
+		return 100 + self:GetParent():GetMana() * ability:GetSpecialValueFor("energy_to_crit_pct") * 0.01
 	end
 end
 
@@ -48,14 +48,10 @@ function modifier_sara_fragment_of_hate_buff_scepter:IsPurgable()
 	return false
 end
 
-function modifier_sara_fragment_of_hate_buff_scepter:GetAttributes()
-	return MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
 function modifier_sara_fragment_of_hate_buff_scepter:DeclareFunctions()
 	return {MODIFIER_PROPERTY_TOOLTIP}
 end
 
 function modifier_sara_fragment_of_hate_buff_scepter:OnTooltip()
-	return self:GetStackCount()
+	return self:GetAbility():GetSpecialValueFor("damage_pct_scepter")
 end

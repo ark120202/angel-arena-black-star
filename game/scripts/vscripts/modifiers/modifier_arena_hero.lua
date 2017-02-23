@@ -113,31 +113,34 @@ if IsServer() then
 	end
 	function modifier_arena_hero:GetReflectSpell(keys)
 		local parent = self:GetParent()
-		self.absorb_without_check = false
-		local item_lotus_sphere = FindItemInInventoryByName(parent, "item_lotus_sphere", false, false, true)
-		if not self.absorb_without_check and parent:HasModifier("modifier_antimage_spell_shield_arena_reflect") then
-			parent:EmitSound("Hero_Antimage.SpellShield.Reflect")
-			self.absorb_without_check = true
-		end
-		if not self.absorb_without_check and item_lotus_sphere and parent:HasModifier("modifier_item_lotus_sphere") and PreformAbilityPrecastActions(parent, item_lotus_sphere) then
-			ParticleManager:SetParticleControlEnt(ParticleManager:CreateParticle("particles/arena/items_fx/lotus_sphere.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent), 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
-			parent:EmitSound("Item.LotusOrb.Activate")
-			self.absorb_without_check = true 
-		end
-		if self.absorb_without_check then
-			if IsValidEntity(self.reflect_stolen_ability) then
-				self.reflect_stolen_ability:RemoveSelf()
+		local originalAbility = keys.ability
+		if originalAbility:GetCaster():GetTeam() ~= parent:GetTeam() then
+			self.absorb_without_check = false
+			local item_lotus_sphere = FindItemInInventoryByName(parent, "item_lotus_sphere", false, false, true)
+			if not self.absorb_without_check and parent:HasModifier("modifier_antimage_spell_shield_arena_reflect") then
+				parent:EmitSound("Hero_Antimage.SpellShield.Reflect")
+				self.absorb_without_check = true
 			end
-			local hCaster = self:GetParent()
-			local hAbility = hCaster:AddAbility(keys.ability:GetAbilityName())
-			if hAbility then
-				hAbility:SetStolen(true)
-				hAbility:SetHidden(true)
-				hAbility:SetLevel(keys.ability:GetLevel())
-				hCaster:SetCursorCastTarget(keys.ability:GetCaster())
-				hAbility:OnSpellStart()
-				hAbility:SetActivated(false)
-				self.reflect_stolen_ability = hAbility
+			if not self.absorb_without_check and item_lotus_sphere and parent:HasModifier("modifier_item_lotus_sphere") and PreformAbilityPrecastActions(parent, item_lotus_sphere) then
+				ParticleManager:SetParticleControlEnt(ParticleManager:CreateParticle("particles/arena/items_fx/lotus_sphere.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent), 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
+				parent:EmitSound("Item.LotusOrb.Activate")
+				self.absorb_without_check = true 
+			end
+			if self.absorb_without_check then
+				if IsValidEntity(self.reflect_stolen_ability) then
+					self.reflect_stolen_ability:RemoveSelf()
+				end
+				local hCaster = self:GetParent()
+				local hAbility = hCaster:AddAbility(originalAbility:GetAbilityName())
+				if hAbility then
+					hAbility:SetStolen(true)
+					hAbility:SetHidden(true)
+					hAbility:SetLevel(originalAbility:GetLevel())
+					hCaster:SetCursorCastTarget(originalAbility:GetCaster())
+					hAbility:OnSpellStart()
+					hAbility:SetActivated(false)
+					self.reflect_stolen_ability = hAbility
+				end
 			end
 		end
 	end

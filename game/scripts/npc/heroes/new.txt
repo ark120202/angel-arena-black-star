@@ -331,7 +331,6 @@
 
 	"npc_arena_hero_madoka"
 	{
-		"override_hero"				"npc_dota_hero_base"
 		"base_hero"					"npc_dota_hero_wisp"
 		"SceneCamera"				"custom_scene_hero_madoka"
 		"Model"						"models/units/madoka/madoka.vmdl"
@@ -398,5 +397,17 @@
 		"AttributeAgilityGain"	"2.2"
 		"AttackDamageMin"		"25"
 		"AttackDamageMax"		"25"
+	}
+
+	"npc_arena_hero_debug"
+	{
+		"base_hero"	"npc_dota_hero_sven"
+		"Enabled"	"0"
+		"Ability1"	"boss_kel_thuzad_immortality"
+		"Ability2"	"boss_kel_thuzad_presence_of_death"
+		"Ability3"	"boss_kel_thuzad_invulnerability"
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
 	}
 }

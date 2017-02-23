@@ -1,10 +1,13 @@
 sara_energy_burst = class({})
 
 function sara_energy_burst:CastFilterResultTarget(hTarget)
-	if hTarget and hTarget:IsMagicImmune() and not self:GetCaster():HasScepter() then
-		return UF_FAIL_MAGIC_IMMUNE_ENEMY
+	if IsServer() then
+		if hTarget and hTarget:IsMagicImmune() and not self:GetCaster():HasScepter() then
+			return UF_FAIL_MAGIC_IMMUNE_ENEMY
+		end
+		return UnitFilter(hTarget, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(), self:GetCaster():GetTeamNumber())
 	end
-	return UL_SUCCESS
+	return UF_SUCCESS
 end
 
 if IsServer() then
@@ -16,7 +19,7 @@ if IsServer() then
 				caster:ModifyEnergy(-wasted)
 				local target = self:GetCursorTarget()
 				local pfx = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sara/energy_burst.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-				ParticleManager:SetParticleControlEnt(pfx, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetOrigin(), true)
+				ParticleManager:SetParticleControlEnt(pfx, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack2", caster:GetOrigin(), true)
 				ParticleManager:SetParticleControlEnt(pfx, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true)
 				Timers:CreateTimer(0.2, function()
 					if IsValidEntity(caster) and IsValidEntity(self) and IsValidEntity(target) then

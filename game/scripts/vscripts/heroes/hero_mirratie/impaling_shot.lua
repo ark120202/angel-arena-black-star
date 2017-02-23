@@ -12,8 +12,7 @@ function mirratie_impaling_shot:CastFilterResultTarget( hTarget )
 		if hTarget and hTarget:IsMagicImmune() and not self:GetCaster():HasScepter() then
 			return UF_FAIL_MAGIC_IMMUNE_ENEMY
 		end
-		local nResult = UnitFilter(hTarget, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(), self:GetCaster():GetTeamNumber())
-		return nResult
+		return UnitFilter(hTarget, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(), self:GetCaster():GetTeamNumber())
 	end
 	return UF_SUCCESS
 end

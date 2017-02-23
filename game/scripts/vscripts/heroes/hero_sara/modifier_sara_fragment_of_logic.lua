@@ -48,21 +48,3 @@ end
 function modifier_sara_fragment_of_logic_debuff:IsDebuff()
 	return true
 end
-
-modifier_sara_fragment_of_logic_buff_scepter = class({})
-
-function modifier_sara_fragment_of_logic_buff_scepter:IsPurgable()
-	return false
-end
-
-function modifier_sara_fragment_of_logic_buff_scepter:GetAttributes()
-	return MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
-function modifier_sara_fragment_of_logic_buff_scepter:DeclareFunctions()
-	return {MODIFIER_PROPERTY_TOOLTIP}
-end
-
-function modifier_sara_fragment_of_logic_buff_scepter:OnTooltip()
-	return self:GetStackCount()
-end
