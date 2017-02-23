@@ -56,7 +56,15 @@ Added new item: Wand of Midas
 Reworked Aether Lens (I - V)
 Reworked Ultimate Scepter; Removed Aghanim's Shard
 Fixed Soul Piercing dealt additional damage after armor reductions
-Nerfed: Saber - Excalibur, Saber - Invisible Air, Apocalypse - King Slayer, Apocalypse - Armor Tear
+Nerfed:
+Saber - Excalibur, Saber - Invisible Air, Apocalypse - King Slayer, Apocalypse - Armor Tear
+Phantom Cuirass
+Demonic Cuirass
+Apocalypse - Agni's Touch
+
+Upped:
+Apocalypse - Apocalypse
+Axe - Culling Blade
 ============================================================
 Angel Arena Black Star - Version 1.4.4:
 General:
@@ -72,6 +80,10 @@ Balance:
 		
 	Items:
 		Fixed Soul Piercing dealt additional damage after armor reductions (so it was useless)
+		Phantom Cuirass:
+			Bonus Health Regen: 3.5 => 2.5 %
+		Demonic Cuirass:
+			Bonus Health Regen: 4 => 3 %
 	Talents:
 		
 	Abilities:
@@ -88,6 +100,13 @@ Balance:
 			Now is not spell damage amplifiable
 		Apocalypse - Armor Tear:
 			Now can't be casted on bosses
+		Apocalypse - Agni's Touch:
+			Required Level: 1 => 2
+		Apocalypse - Apocalypse:
+			Damage per Second Increase: 3 => 3 5 7 9 11 13 15
+		Axe - Culling Blade:
+			Kill Threshold with Scepter: 350 550 800 1200 1600 2000 2600 => 1000 2500 4500 6500 8500 10000 12000
+			Cooldown with Scepter: 6 => 3
 Fixes:
 	//Fixed duels not worked on 4v4v4v4 map if one of teams fully abandoned the game
 	Fixed Apocalypse - King Slayer was missing damage tooltip

@@ -16805,7 +16805,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"750"
+				"aura_radius"			"1050"
 			}
 			"09"
 			{
