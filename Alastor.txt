@@ -27,6 +27,44 @@ AbilityCooldown"	"70.0 60.0 50.0 40.0 30.0 20.0 15.0 => 120.0 110.0 100.0 90.0 8
 "apocalypse_agnis_touch"
 "RequiredLevel"				1 => 	"2"
 
+axe_culling_blade
+"kill_threshold_scepter"	"350 550 800 1200 1600 2000 2600" =>    1000 2500 4500 6500 8500 10000 12000
+"cooldown_scepter"	"6.0" => 3
+
+"abaddon_borrowed_time"
+"duration_scepter"	"5.0 5.0 5.0 6.0 6.0 6.0 8.0" =>  5.0 6.0 7.0 8.0 9.0 9.5 10.0
+
+bane_fiends_grip
+"fiend_grip_mana_drain_scepter"	"10 15 20 25 30 35 40" => 30 50 70 90 110 130 150
+"fiend_grip_damage_scepter"	"155 215 270 325 400 475 535" => 300 600 900 1500 1900 2400 3000
+
+"batrider_flaming_lasso"
+"damage_scepter"	"50 100 150 200 250 300 350" => 300 600 900 1200 1500 1800 2100
+"grab_radius_scepter"	"400" => 750
+
+"beastmaster_primal_roar"
+"cooldown_scepter"	"45.0 45.0 45.0 45.0 45.0 45.0 45.0" => 30
+"AbilityManaCost"	"150 175 200  =>  225 250 275 300" 
+
+"broodmother_spawn_spiderlings"
+"AbilityManaCost"	"120 240 360 480 500 620 740" => 60 100 140 180 220 260 300
+
+"disruptor_static_storm"
+"duration_scepter"	"7.0" => 5.0 6.0 7.0 8.0 9.0 10.0 11.0
+"pulses_scepter"	"28" => 40
+"damage_max"	"200 250 300 350 400 450 500" => 300 600 900 1500 1800 2200 2700
+
+lion_finger_of_death"
+"cooldown_scepter"	"100.0 90.0 80.0 70.0 60.0 20.0 15.0" => 100.0 90.0 80.0 70.0 60.0 30.0 10.0
+"splash_radius_scepter"	"450" => 800
+"damage_scepter"	"850 1200 1500 1800 2300 2600 2900" => 1500 3000 4500 6000 7500 9000 10500
+
+"queenofpain_sonic_wave"
+"damage"	"200 500 800 1110 1300 1500 2000"  => 1000 2000 3000 4000 5000 6000 7000
+
+
+
+
 item_phantom_cuirass
 bonus_hp_regen_pct" "3.5" => 2.5
 
