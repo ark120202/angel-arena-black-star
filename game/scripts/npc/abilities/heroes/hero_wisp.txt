@@ -384,7 +384,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SetMaxLevel"
 			}
 		}
@@ -704,12 +704,12 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SetMaxLevel"
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SetAbilityActivated"
 				"Activated"		"0"
 			}
@@ -756,12 +756,12 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SetMaxLevel"
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SetAbilityActivated"
 				"Activated"		"0"
 			}

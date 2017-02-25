@@ -216,7 +216,6 @@ function GameMode:DamageFilter(filterTable)
 			ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
 			--print("Lifestealing " .. lifesteal .. " health from " .. filterTable.damage .. " damage points (" .. LifestealPercentage .. "% lifesteal)")
 		end
-
 		if attacker.GetPlayerOwnerID then
 			local attackerpid = attacker:GetPlayerOwnerID()
 			if attackerpid > -1 then

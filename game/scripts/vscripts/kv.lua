@@ -146,6 +146,7 @@ function SummonUnit(keys)
 			pos = RandomPositionAroundPoint(pos, keys.summon_random_radius)
 		end
 		local unit = CreateUnitByName(keys.summoned, pos, true, caster, nil, team)
+		FindClearSpaceForUnit(unit, pos, true)
 		unit:SetControllableByPlayer(caster:GetPlayerID(), true)
 		unit:SetOwner(caster)
 		if keys.modifiers_datadriven then
@@ -175,15 +176,18 @@ function SummonUnit(keys)
 			unit:SetMinimumGoldBounty(keys.gold)
 			unit:SetMaximumGoldBounty(keys.gold)
 		end
+		if keys.movespeed then
+			unit:SetBaseMoveSpeed(keys.movespeed)
+		end
 		if keys.duration then
 			unit:AddNewModifier(caster, ability, "modifier_kill", {duration = keys.duration})
 		end
-		
-		local units_summoned = caster["custom_summoned_unit_ability_" .. ability:GetAbilityName()]
+		local ability_name = ability:GetAbilityName()
+		local units_summoned = caster["custom_summoned_unit_ability_" .. ability_name]
 		if max_units and max_units >= 1 then
 			if not units_summoned then
-				caster["custom_summoned_unit_ability_" .. ability:GetAbilityName()] = {}
-				units_summoned = caster["custom_summoned_unit_ability_" .. ability:GetAbilityName()]
+				caster["custom_summoned_unit_ability_" .. ability_name] = {}
+				units_summoned = caster["custom_summoned_unit_ability_" .. ability_name]
 			end
 			table.insert(units_summoned, unit)
 			if #units_summoned - 1 >= max_units then
@@ -242,6 +246,19 @@ function PercentDamage(keys)
 		if keys.CurrnetHealthPercent then damage = damage + (keys.CurrnetHealthPercent*0.01*target:GetHealth()) end
 		if keys.multiplier then damage = damage * keys.multiplier end
 		ApplyDamage({victim = target, attacker = keys.caster, damage = damage, damage_type = ability:GetAbilityDamageType(), ability = ability})
+	end
+end
+
+function PercentHeal(keys)
+	local ability = keys.ability
+	local target = keys.target
+	local heal = keys.Heal or 0
+	if ability then
+		if keys.MaxHealthPercent then heal = heal + (keys.MaxHealthPercent*0.01*target:GetMaxHealth()) end
+		if keys.CurrnetHealthPercent then heal = heal + (keys.CurrnetHealthPercent*0.01*target:GetHealth()) end
+		if keys.multiplier then heal = heal * keys.multiplier end
+		if keys.multiplier2 then heal = heal * keys.multiplier2 end
+		SafeHeal(target, heal, ability, true)
 	end
 end
 

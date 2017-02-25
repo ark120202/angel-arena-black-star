@@ -114,7 +114,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"StopEndableSound"
 						"sound"			"Hero_ShadowShaman.Shackles"
 					}
@@ -239,7 +239,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"PercentDamage"
 						"Damage"		"%damage_per_second"
 						"multiplier"	"%damage_interval"
@@ -354,7 +354,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"StopEndableSound"
 						"sound"			"Arena.Hero_ZenGehraz.VowOfSilence"
 					}
@@ -459,7 +459,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpgradeChargeBasedAbility"
 						"max_charges"	"%max_charges"
 						"max_charges_scepter"	"%max_charges_scepter"

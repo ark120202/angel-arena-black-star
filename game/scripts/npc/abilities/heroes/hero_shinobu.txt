@@ -103,7 +103,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SetFirstLevel"
 			}
 

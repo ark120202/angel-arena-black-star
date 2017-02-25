@@ -332,7 +332,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"LinkedAbilitiesSync"
 				"linked_ability" "omniknight_select_enemies"
 			}
@@ -342,7 +342,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"LinkedAbilitiesSync"
 				"linked_ability" "omniknight_select_enemies"
 			}
@@ -410,7 +410,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"LinkedAbilitiesSync"
 				"linked_ability" "omniknight_select_allies"
 			}
@@ -420,7 +420,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"LinkedAbilitiesSync"
 				"linked_ability" "omniknight_select_allies"
 			}

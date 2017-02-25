@@ -406,8 +406,8 @@
 		"Ability1"	"boss_kel_thuzad_immortality"
 		"Ability2"	"boss_kel_thuzad_presence_of_death"
 		"Ability3"	"boss_kel_thuzad_invulnerability"
-		"Ability4"	""
-		"Ability5"	""
-		"Ability6"	""
+		"Ability4"	"boss_kel_thuzad_shadows"
+		"Ability5"	"boss_kel_thuzad_summon_undead"
+		"Ability6"	"boss_kel_thuzad_erebus"
 	}
 }

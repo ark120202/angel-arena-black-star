@@ -39,7 +39,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -84,7 +84,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -129,7 +129,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -174,7 +174,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -219,7 +219,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -264,7 +264,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -309,7 +309,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -354,7 +354,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -399,7 +399,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -444,7 +444,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -489,7 +489,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -534,7 +534,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -581,7 +581,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -628,7 +628,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -675,7 +675,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -707,7 +707,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -750,7 +750,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}

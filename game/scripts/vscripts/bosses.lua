@@ -175,8 +175,43 @@ function Bosses:MakeBossAI(unit, name)
 				end
 			end
 		end]]
-	end
-	if name == "central" then
+	elseif name == "kel_thuzad" then
+		local boss_kel_thuzad_presence_of_death = unit:FindAbilityByName("boss_kel_thuzad_presence_of_death")
+		local boss_kel_thuzad_invulnerability = unit:FindAbilityByName("boss_kel_thuzad_invulnerability")
+		local boss_kel_thuzad_shadows = unit:FindAbilityByName("boss_kel_thuzad_shadows")
+		local boss_kel_thuzad_summon_undead = unit:FindAbilityByName("boss_kel_thuzad_summon_undead")
+		local boss_kel_thuzad_erebus = unit:FindAbilityByName("boss_kel_thuzad_erebus")
+		aiTable["abilityCastCallback"] = function(self)
+			if boss_kel_thuzad_invulnerability:IsFullyCastable() then
+				--self:UseAbility(boss_kel_thuzad_invulnerability)
+			end
+			if boss_kel_thuzad_erebus:IsFullyCastable() then
+				local unitsInRange = self:FindUnitsNearbyForAbility(boss_kel_thuzad_erebus)
+				local stacks = self.unit:GetModifierStackCount("modifier_boss_kel_thuzad_immortality", self.unit)
+				if #unitsInRange > 0 and stacks < 20 then
+					self:UseAbility(boss_kel_thuzad_erebus)
+				end
+			end
+			if boss_kel_thuzad_shadows:IsFullyCastable() then
+				local unitsInRange = self:FindUnitsNearbyForAbility(boss_kel_thuzad_shadows)
+				if #unitsInRange > 0 then
+					self:UseAbility(boss_kel_thuzad_shadows)
+				end
+			end
+			if boss_kel_thuzad_summon_undead:IsFullyCastable() then
+				local unitsInRange = self:FindUnitsNearbyForAbility(boss_kel_thuzad_summon_undead)
+				if #unitsInRange > 0 then
+					self:UseAbility(boss_kel_thuzad_summon_undead)
+				end
+			end
+			if boss_kel_thuzad_presence_of_death:IsFullyCastable() then
+				local unitsInRange = self:FindUnitsNearbyForAbility(boss_kel_thuzad_presence_of_death)
+				if #unitsInRange > 0 then
+					self:UseAbility(boss_kel_thuzad_presence_of_death)
+				end
+			end
+		end
+	elseif name == "central" then
 		profile = "tower"
 	end
 
@@ -185,3 +220,5 @@ end
 
 --[[local boss = CreateUnitByName("npc_arena_boss_" .. "freya", Vector(0), true, nil, nil, DOTA_TEAM_NEUTRALS)
 Bosses:MakeBossAI(boss, "freya")]]
+--local boss = CreateUnitByName("npc_arena_boss_kel_thuzad", Vector(0), true, nil, nil, DOTA_TEAM_NEUTRALS)
+--Bosses:MakeBossAI(boss, "kel_thuzad")

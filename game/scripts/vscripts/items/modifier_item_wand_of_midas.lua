@@ -32,6 +32,10 @@ if IsServer() then
 		local ability = self:GetAbility()
 		if parent:IsAlive() and parent:GetRangeToUnit(unit) <= ability:GetSpecialValueFor("radius") and unit:GetTeamNumber() ~= parent:GetTeamNumber() and keys.ability:ProcsMagicStick() then
 			Gold:AddGoldWithMessage(parent, ability:GetSpecialValueFor("gold"))
+			local charges = ability:GetCurrentCharges()
+			if charges < ability:GetSpecialValueFor("max_charges") then
+				ability:SetCurrentCharges(charges + 1)
+			end
 		end
 	end
 end

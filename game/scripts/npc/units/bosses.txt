@@ -465,4 +465,101 @@
 			"DisableResistance"            "50"
 		}
 	}
+
+	"npc_arena_boss_kel_thuzad"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"100000"
+		"Bosses_RespawnDuration"	"600"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/items/undying/flesh_golem/corrupted_scourge_corpse_hive/corrupted_scourge_corpse_hive.vmdl"
+		"ModelScale"				"1.5"
+		"Level"						"100"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"	"boss_kel_thuzad_immortality"
+		"Ability2"	"boss_kel_thuzad_presence_of_death"
+		"Ability3"	"boss_kel_thuzad_invulnerability"
+		"Ability4"	"boss_kel_thuzad_shadows"
+		"Ability5"	"boss_kel_thuzad_summon_undead"
+		"Ability6"	"boss_kel_thuzad_erebus"
+
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+
+		"BountyXP"					"1000000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"550"
+
+		"StatusHealth"				"1000000"
+		"StatusHealthRegen"			"800"
+		"StatusMana"				"43380"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+
+	"npc_arena_boss_kel_thuzad_ghost"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_frost.vmdl"
+		"ModelScale"				"1.8"
+		"Level"						"1"
+
+		"Ability1"					""
+
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"150"
+
+		"BountyXP"					"0"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"0"
+
+		"StatusHealth"				"1"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"VisionDaytimeRange"		"1000"
+		"VisionNighttimeRange"		"1000"
+	}
 }

@@ -278,7 +278,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"StopEndableSound"
 						"sound"			"Arena.Hero_Poseidon.SeaHole"
 					}

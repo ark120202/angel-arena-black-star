@@ -68,7 +68,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SetMaxLevel"
 			}
 		}
@@ -318,7 +318,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"LinkedAbilitiesSync"
 				"linked_ability"	"call_of_the_wild_hawk_arena"
 			}
@@ -328,7 +328,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"LinkedAbilitiesSync"
 				"linked_ability"	"call_of_the_wild_hawk_arena"
 			}
@@ -469,7 +469,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"LinkedAbilitiesSync"
 				"linked_ability"	"call_of_the_wild_boar_arena"
 			}
@@ -479,7 +479,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"LinkedAbilitiesSync"
 				"linked_ability"	"call_of_the_wild_boar_arena"
 			}
@@ -654,7 +654,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"		"internal/kv.lua"
+						"ScriptFile"		"kv.lua"
 						"Function"			"ScepterOnlyPassiveModifierThink"
 						"modifier"			"modifier_skeleton_king_reincarnation_aura"
 					}
@@ -976,7 +976,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SetMaxLevel"
 			}
 		}
@@ -1075,7 +1075,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"HideTarget"
 					}
 
@@ -1090,7 +1090,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"ShowTarget"
 					}
 
@@ -1162,7 +1162,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SetMaxLevel"
 			}
 		}
@@ -1246,7 +1246,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SetMaxLevel"
 			}
 		}

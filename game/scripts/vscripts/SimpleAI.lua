@@ -17,6 +17,7 @@ function SimpleAI:new( unit, profile, params )
 
 	ai.unit = unit
 	ai.ThinkEnabled = true
+	ai.Thinkers = {}
 	ai.state = AI_STATE_IDLE
 	ai.profile = profile
 
@@ -77,6 +78,11 @@ function SimpleAI:GlobalThink()
 		Dynamic_Wrap(SimpleAI, self.stateThinks[ self.state ])(self)
 		if self.abilityCastCallback and self.state ~= AI_STATE_CASTING then
 			self.abilityCastCallback(self)
+		end
+	end
+	for k,_ in pairs(self.Thinkers) do
+		if not k() then
+			self.Thinkers[k] = nil
 		end
 	end
 	return AI_THINK_INTERVAL
@@ -143,8 +149,12 @@ function SimpleAI:OnTakeDamage(attacker)
 	end
 end
 
+function SimpleAI:AddThink(func)
+	self.Thinkers[func] = true
+end
 
-function SimpleAI:FindUnitsNearby(radius, bAllies, bEnemies, type, flags)
+--Legacy
+function SimpleAI:FindUnitsNearby(radius, bAllies, bEnemies, targettype, flags)
 	local teamfilter = DOTA_UNIT_TARGET_TEAM_NONE
 	if bAllies then
 		teamfilter = teamfilter + DOTA_UNIT_TARGET_TEAM_FRIENDLY
@@ -152,8 +162,13 @@ function SimpleAI:FindUnitsNearby(radius, bAllies, bEnemies, type, flags)
 	if bEnemies then
 		teamfilter = teamfilter + DOTA_UNIT_TARGET_TEAM_ENEMY
 	end
-	local units = FindUnitsInRadius(self.unit:GetTeam(), self.unit:GetAbsOrigin(), nil, radius, teamfilter or DOTA_UNIT_TARGET_TEAM_ENEMY, type or DOTA_UNIT_TARGET_ALL, flags or DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+	local units = FindUnitsInRadius(self.unit:GetTeam(), self.unit:GetAbsOrigin(), nil, radius, teamfilter or DOTA_UNIT_TARGET_TEAM_ENEMY, targettype or DOTA_UNIT_TARGET_ALL, flags or DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 	return units
+end
+
+function SimpleAI:FindUnitsNearbyForAbility(ability)
+	local selfAbs = self.unit:GetAbsOrigin()
+	return FindUnitsInRadius(self.unit:GetTeam(), selfAbs, nil, ability:GetCastRange(selfAbs, nil), ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_CLOSEST, false)
 end
 
 function SimpleAI:UseAbility(ability, target)
@@ -166,9 +181,18 @@ function SimpleAI:UseAbility(ability, target)
 		elseif AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_POINT) then
 			self.unit:CastAbilityOnPosition(target, ability, -1)
 		end
-		Timers:CreateTimer(ability:GetCastPoint() + 0.1, function()
-			self:SwitchState(AI_STATE_RETURNING)
+		local endtime = GameRules:GetGameTime() + ability:GetCastPoint() + 0.1
+		self:AddThink(function()
+			--print(GameRules:GetGameTime(), endtime, self.unit:IsChanneling())
+			if GameRules:GetGameTime() >= endtime and not self.unit:IsChanneling() then
+				self:SwitchState(AI_STATE_RETURNING)
+				return false
+			end
+			return true
 		end)
+		--[[Timers:CreateTimer(ability:GetCastPoint() + 0.1 + ability:GetChannelTime(), function()
+			
+		end)]]
 	end
 end
 

@@ -232,7 +232,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"StopEndableSound"
 						"sound"			"Arena.Hero_Freya.IceCage"
 					}
@@ -252,7 +252,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"PercentDamage"
 						"MaxHealthPercent"	"%damage_per_second_pct"
 						"multiplier"		"%damage_interval"

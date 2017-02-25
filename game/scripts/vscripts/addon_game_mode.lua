@@ -1,13 +1,10 @@
--- This is the entry-point to your game mode and should be used primarily to precache models/particles/sounds/etc
-
 require('internal/util')
 require('internal/sharedutil')
 --print(PlayerResource:GetSelectedHeroEntity(0):GetAbsOrigin())
 --do return end
 require('gamemode')
 
-function Precache( context )
-	DebugPrint("[BAREBONES] Performing pre-load precache")
+function Precache(context)
 	local particles = {
 		--items
 		"particles/arena/items_fx/gem_of_clear_mind_illusion.vpcf",
@@ -57,6 +54,7 @@ function Precache( context )
 		"particles/arena/items_fx/lotus_sphere_buff.vpcf",
 		"particles/econ/events/ti6/radiance_owner_ti6.vpcf",
 		"particles/arena/items_fx/radiance_frozen_owner.vpcf",
+		"particles/arena/items_fx/wand_of_midas.vpcf",
 		--Heroes
 		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
@@ -78,30 +76,31 @@ function Precache( context )
 		--Neutrals
 		"models/heroes/centaur/centaur.vmdl",
 	}
+	local units = {
+		"npc_arena_boss_heaven",
+		"npc_arena_boss_hell",
+		"npc_arena_boss_central",
+		"npc_arena_boss_l1_v1",
+		"npc_arena_boss_l1_v2",
+		"npc_arena_boss_l2_v1",
+		"npc_arena_boss_l2_v2",
+		"npc_arena_boss_freya",
 
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_arena.vsndevts", context)
-	
-	PrecacheUnitByNameSync("npc_dota_hero_earth_spirit", context)
-	
-	PrecacheUnitByNameSync("npc_arena_boss_heaven", context)
-	PrecacheUnitByNameSync("npc_arena_boss_hell", context)
-	PrecacheUnitByNameSync("npc_arena_boss_central", context)
-	PrecacheUnitByNameSync("npc_arena_boss_l1_v1", context)
-	PrecacheUnitByNameSync("npc_arena_boss_l1_v2", context)
-	PrecacheUnitByNameSync("npc_arena_boss_l2_v1", context)
-	PrecacheUnitByNameSync("npc_arena_boss_l2_v2", context)
-	PrecacheUnitByNameSync("npc_arena_boss_freya", context)
+		"npc_arena_boss_kel_thuzad_ghost",
 
-	PrecacheUnitByNameSync("npc_dota_lucifers_claw_doomling", context)
-	PrecacheUnitByNameSync("npc_queenofblades_alter_ego", context)
+		"npc_dota_lucifers_claw_doomling",
+		"npc_queenofblades_alter_ego",
+	}
 
-
+	local soundevents = {
+		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts",
+		"soundevents/game_sounds_arena.vsndevts",
+	}
 	
 	for _, handle in pairs(CUSTOM_WEARABLES) do
 		if handle.particles then
@@ -130,28 +129,26 @@ function Precache( context )
 		end
 	end
 	
-    local db = LoadKeyValues("scripts/attachments.txt")
-    if db['Particles'] then
-    	for _,v in pairs(db['Particles']) do
-    		for pfx,_ in pairs(v) do
+	local db = LoadKeyValues("scripts/attachments.txt")
+	if db['Particles'] then
+		for _,v in pairs(db['Particles']) do
+			for pfx,_ in pairs(v) do
 				table.insert(particles, pfx)
-    		end
-    	end
-    end
-
-    --[[local RawItemsKV = LoadKeyValues( "scripts/items/items_game.txt" )
-    for k,wearableData in pairs(RawItemsKV.items) do
-    	if wearableData.prefab == "default_item" then
-	    	local mdl = wearableData.model_player
-	    	table.insert(models, mdl)
-	    end
-    end]]
+			end
+		end
+	end
 
 	for _,v in ipairs(particles) do
 		PrecacheResource("particle", v, context)
 	end
 	for _,v in ipairs(models) do
 		PrecacheModel(v, context)
+	end
+	for _,v in ipairs(units) do
+		PrecacheUnitByNameSync(v, context)
+	end
+	for _,v in ipairs(soundevents) do
+		PrecacheResource("soundfile", v, context)
 	end
 end
 

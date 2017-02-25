@@ -361,7 +361,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -462,7 +462,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"SpendChargeRight"
 					}
 				}
@@ -612,7 +612,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -779,7 +779,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -1130,7 +1130,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_yasha_arena_unique"
 					}
@@ -1257,7 +1257,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_sange_arena_unique"
 					}
@@ -1433,7 +1433,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_sange_and_yasha_unique"
 					}
@@ -1576,7 +1576,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_nightshadow_unique"
 					}
@@ -1709,7 +1709,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_nightshadow_and_sange"
 					}
@@ -1876,7 +1876,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_nightshadow_and_yasha_unique"
 					}
@@ -2073,7 +2073,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_three_spirits_blades_unique"
 					}
@@ -2299,7 +2299,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_splitshot_str_unique"
 					}
@@ -2504,7 +2504,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_splitshot_agi_unique"
 					}
@@ -2896,7 +2896,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_splitshot_ultimate_unique"
 					}
@@ -3535,11 +3535,6 @@
 		"ItemPermanent"								"1"
 		"ItemInitialCharges"						"1"
 
-		"precache"
-		{
-			"soundfile" "soundevents/game_sounds_items.vsndevts"
-		}
-
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -3577,23 +3572,26 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
 	}
 
-	//id 10031 reserved for recipe
 	"item_metamorphosis_elixir"
 	{
 		"BaseClass"						"item_datadriven"
 		"ID"							"10064"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityTextureName"			"item_arena/metamorphosis_elixir"
-		"AbilityCastPoint"        		"0.6"
-		"ItemCost"						"16000"
+		"AbilityCastPoint"        		"0.2"
+		"ItemCost"						"100"
 		"ItemQuality"					"epic"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemStockTime"					"300"
+		"ItemInitialStockTime"			"600"
+		"ItemStockMax"					"2"
+		"ItemStockInitial"				"0"
 		
 		"AbilitySpecial"
 		{
@@ -3774,7 +3772,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_heart_cyclone_regen_cooldown"
 					}
@@ -3808,7 +3806,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_heart_cyclone_regen"
 					}
@@ -3832,7 +3830,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"HideTarget"
 					}
 				}
@@ -3841,7 +3839,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"ShowTarget"
 					}
 				}
@@ -3872,7 +3870,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"HideTarget"
 					}
 				}
@@ -3881,7 +3879,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"ShowTarget"
 					}
 				}
@@ -4235,7 +4233,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"DropItem"
 					}
 				}
@@ -4320,7 +4318,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"DropItem"
 					}
 				}
@@ -4472,7 +4470,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_auto_sheepstick"
 					}
@@ -4751,7 +4749,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_aegis_arena"
 					}
@@ -5125,7 +5123,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_manta_arena_unique"
 					}
@@ -6184,7 +6182,7 @@
 
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -6250,7 +6248,7 @@
 
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -6290,7 +6288,7 @@
 
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -9753,7 +9751,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -9761,7 +9759,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -9865,7 +9863,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -9873,7 +9871,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -9977,7 +9975,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -9985,7 +9983,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -10089,7 +10087,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -10097,7 +10095,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -11466,7 +11464,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"KVPurge"
 				"RemoveDebuffs"	"1"
 				"RemoveStuns"	"1"
@@ -11586,7 +11584,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"KVPurge"
 				"RemoveDebuffs"	"1"
 				"RemoveStuns"	"1"
@@ -11706,7 +11704,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"KVPurge"
 				"RemoveDebuffs"	"1"
 				"RemoveStuns"	"1"
@@ -11826,7 +11824,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"KVPurge"
 				"RemoveDebuffs"	"1"
 				"RemoveStuns"	"1"
@@ -11946,7 +11944,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"KVPurge"
 				"RemoveDebuffs"	"1"
 				"RemoveStuns"	"1"
@@ -12066,7 +12064,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"KVPurge"
 				"RemoveDebuffs"	"1"
 				"RemoveStuns"	"1"
@@ -12208,7 +12206,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"KVPurge"
 				"RemoveDebuffs"	"1"
 				"RemoveStuns"	"1"
@@ -12800,7 +12798,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -13095,7 +13093,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"ApplyModifierWithoutRefresh"
 				"modifier"		"modifier_item_demon_king_bar_curse_mark"
 			}
@@ -13136,7 +13134,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_demon_king_bar_bashes"
 					}
@@ -13597,7 +13595,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -13605,7 +13603,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -13704,7 +13702,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -13712,7 +13710,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -13821,7 +13819,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -13829,7 +13827,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -13979,7 +13977,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -13987,7 +13985,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -14153,7 +14151,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -14161,7 +14159,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"UpdateAttackProjectile"
 					}
 				}
@@ -15096,7 +15094,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"internal/kv.lua"
+				"ScriptFile"			"kv.lua"
 				"Function"				"SwapToItem"
 				"itemName"				"item_heavy_war_axe_of_rage_health"
 			}
@@ -15214,7 +15212,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"internal/kv.lua"
+				"ScriptFile"			"kv.lua"
 				"Function"				"SwapToItem"
 				"itemName"				"item_heavy_war_axe_of_rage_damage"
 			}
@@ -15482,7 +15480,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SummonUnit"
 				"max_units"		"1"
 				"summon_random_radius"	"100"
@@ -15787,7 +15785,7 @@
 
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -15989,7 +15987,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_haganemushi_unique"
 					}
@@ -15999,7 +15997,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IncreaseStacks"
 						"modifier"		"modifier_item_haganemushi_stack"
 						"NoBosses"		"1"
@@ -16440,7 +16438,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_heavens_halberd_arena_unique"
 					}
@@ -16872,7 +16870,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_demonic_cuirass_bashes"
 					}
@@ -16982,7 +16980,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"ApplyModifierWithoutRefresh"
 						"HeroOnly"		"1"
 						"modifier"		"modifier_item_demon_king_bar_curse_mark"
@@ -17228,7 +17226,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"internal/kv.lua"
+				"ScriptFile"	"kv.lua"
 				"Function"		"SpendChargeRight"
 			}
 		}
@@ -17245,7 +17243,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_item_sange_arena_unique"
 					}
@@ -18616,7 +18614,8 @@
 		"ScriptFile"					"items/item_wand_of_midas.lua"
 		"ID"							"-1"
 		"AbilityTextureName"			"item_arena/wand_of_midas"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemDisplayCharges"			"1"
 
 		"AbilitySpecial"
 		{
@@ -18631,6 +18630,16 @@
 				"gold"				"30"
 			}
 			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"restore_per_charge"	"15"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_charges"		"50"
+			}
+			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"radius"			"1200"

@@ -302,7 +302,7 @@
 					}
 					"RunScript"
 					{
-						"ScriptFile"		"internal/kv.lua"
+						"ScriptFile"		"kv.lua"
 						"Function"			"HideCaster"
 					}
 				}
@@ -311,7 +311,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"		"internal/kv.lua"
+						"ScriptFile"		"kv.lua"
 						"Function"			"ShowCaster"
 					}
 				}

@@ -322,7 +322,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"PercentDamage"
 						"Damage"		"%damage_per_second_tooltip"
 						"multiplier"	"%damage_interval"
@@ -334,7 +334,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"PercentDamage"
 						"Damage"		"%damage_per_second_tooltip"
 						"multiplier"	"%damage_interval"
@@ -764,7 +764,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"		"internal/kv.lua"
+						"ScriptFile"		"kv.lua"
 						"Function"			"HideCaster"
 					}
 				}
@@ -773,7 +773,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"		"internal/kv.lua"
+						"ScriptFile"		"kv.lua"
 						"Function"			"ShowCaster"
 					}
 				}

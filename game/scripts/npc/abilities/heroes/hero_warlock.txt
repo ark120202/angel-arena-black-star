@@ -399,10 +399,13 @@
 				"ThinkInterval"  "%tick_interval"
 				"OnIntervalThink"
 				{
-					"Heal"
+					"RunScript"
 					{
-						"Target"        "TARGET"
-						"HealAmount"	"%AbilityDamage / 2"
+						"ScriptFile"	"kv.lua"
+						"Function"		"PercentHeal"
+						"Heal"			"%AbilityDamage"
+						"multiplier"	"%tick_interval"
+						"multiplier2"	"0.5"
 					}
 				}
 
@@ -419,7 +422,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"StopEndableSound"
 						"Target"
 						{
@@ -446,10 +449,13 @@
 				"ThinkInterval"  "%tick_interval"
 				"OnIntervalThink"
 				{
-					"Heal"
+					"RunScript"
 					{
-						"Target"        "TARGET"
-						"HealAmount"	"%AbilityDamage * 2"
+						"ScriptFile"	"kv.lua"
+						"Function"		"PercentHeal"
+						"Heal"			"%AbilityDamage"
+						"multiplier"	"%tick_interval"
+						"multiplier2"	"2"
 					}
 				}
 
@@ -466,7 +472,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"StopEndableSound"
 						"Target"
 						{
@@ -493,10 +499,12 @@
 				"ThinkInterval"  "%tick_interval"
 				"OnIntervalThink"
 				{
-					"Heal"
+					"RunScript"
 					{
-						"Target"        "TARGET"
-						"HealAmount"	"%AbilityDamage"
+						"ScriptFile"	"kv.lua"
+						"Function"		"PercentHeal"
+						"Heal"			"%AbilityDamage"
+						"multiplier"	"%tick_interval"
 					}
 				}
 
@@ -513,7 +521,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"StopEndableSound"
 						"Target"
 						{
@@ -540,11 +548,12 @@
 				"ThinkInterval"  "%tick_interval"
 				"OnIntervalThink"
 				{
-					"Damage"
+					"RunScript"
 					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"ScriptFile"	"kv.lua"
+						"Function"		"PercentDamage"
 						"Damage"		"%AbilityDamage"
+						"multiplier"	"%tick_interval"
 					}
 					"Random"
 					{
@@ -573,7 +582,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"StopEndableSound"
 						"Target"
 						{

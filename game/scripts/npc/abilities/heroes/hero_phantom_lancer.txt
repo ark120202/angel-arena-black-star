@@ -381,7 +381,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"internal/kv.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_phantom_lancer_juxtapose_arena_scepter_think"
 					}
@@ -392,7 +392,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"		"internal/kv.lua"
+						"ScriptFile"		"kv.lua"
 						"Function"			"ScepterOnlyPassiveModifierThink"
 						"modifier"			"modifier_phantom_lancer_juxtapose_arena_scepter"
 					}

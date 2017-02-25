@@ -1132,9 +1132,12 @@ function math.round(x)
 	return x-0.5
 end
 
-function SafeHeal(unit, flAmount, hInflictor)
+function SafeHeal(unit, flAmount, hInflictor, overhead)
 	if unit:IsAlive() then
 		unit:Heal(flAmount, hInflictor)
+		if overhead then
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, unit, flAmount, nil)
+		end
 	end
 end
 
@@ -1196,6 +1199,7 @@ function GetTrueItemCost(name)
 			print("[GetTrueItemCost] Warning: " .. name)
 		else
 			cost = tempItem:GetCost()
+			UTIL_Remove(tempItem)
 		end
 	end
 	return cost
@@ -1645,8 +1649,7 @@ end
 function Lifesteal(ability, unit, target, damage)
 	local target = keys.target
 	local lifesteal = keys.damage * keys.percent * 0.01
-	SafeHeal(caster, lifesteal, keys.ability)
-	SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, v, lifesteal, nil)
+	SafeHeal(caster, lifesteal, keys.ability, true)
 end
 
 function RecreateAbility(unit, ability)
