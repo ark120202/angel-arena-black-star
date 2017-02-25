@@ -1,0 +1,68 @@
+"DOTAAbilities"
+{
+	"Queen_of_Pain_Sonic_Wave_lua"
+	{
+		// General
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"?"
+		"AbilityBehavior"				"?"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"ScriptFile"					"?"
+		"MaxLevel"						"7"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"120 240 360 480 600 720 840"
+		"AbilityDamage"					"500 800 1110 1300 1500 2000 2500"
+		"HasScepterUpgrade"				"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+					???
+					???
+					???
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_scepter"		"1000 2000 3000 4000 5000 6000 7000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown_scepter"		"15.0"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"500 800 1110 1300 1500 2000 2500"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"starting_aoe"	"150"
+			}
+
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"distance"	"1000"
+			}
+
+			"07"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"final_aoe"	"550"
+			}
+		}
+	}
