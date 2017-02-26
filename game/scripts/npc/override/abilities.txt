@@ -17404,7 +17404,7 @@
 		"AbilityCastPoint"	"0"
 		"AbilityCooldown"	"30.0 22.0 14.0 10.0 6.0 4.0 3.0"
 		"AbilityManaCost"	"50 75 100 125 150 175 200"
-		"RequiredLevel"	"25"
+		"RequiredLevel"	"15"
 		"LevelsBetweenUpgrades"		"5"
 		"AbilitySpecial"
 		{
@@ -17422,7 +17422,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"attack_interval"	"0.1"
+				"attack_interval"	"0.05"
 			}
 			"04"
 			{
@@ -17490,7 +17490,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"speed_multiplier"	"300"
+				"speed_multiplier"	"550"
 			}
 
 			"02"
@@ -17508,7 +17508,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"100 150 200 250 300 350 400"
+				"damage"	"150 300 450 700 950 1100 1500"
 			}
 
 			"05"
@@ -17539,7 +17539,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"speed_multiplier"	"450"
+				"speed_multiplier"	"550"
 			}
 
 			"02"
@@ -17557,7 +17557,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"100 150 200 250 300 350 400"
+				"damage"	"150 300 450 700 950 1100 1500"
 			}
 
 			"05"
@@ -17569,7 +17569,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"speed"	"1300"
+				"speed"	"1500"
 			}
 
 		}
