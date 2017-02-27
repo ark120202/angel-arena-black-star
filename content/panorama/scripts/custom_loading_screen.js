@@ -14,8 +14,8 @@ function CheckStartable() {
 	if (player == null)
 		$.Schedule(0.2, CheckStartable)
 	else {
-		FindDotaHudElement("CustomLoadingScreenContainer").visible = true //temporary dark moon upadte fix
-		$("#GoalVotePanel").AddClass("GoalVotePanel_In")
+		//FindDotaHudElement("CustomLoadingScreenContainer").visible = true //temporary dark moon upadte fix
+		//$("#GoalVotePanel").AddClass("GoalVotePanel_In")
 		PlayerTables = GameUI.CustomUIConfig().PlayerTables;
 		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 			var gamemode_settings = changesObject["gamemode_settings"]

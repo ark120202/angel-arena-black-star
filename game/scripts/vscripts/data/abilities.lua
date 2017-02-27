@@ -10,6 +10,8 @@ LINKED_ABILITIES = {
 	ancient_apparition_ice_blast = {"ancient_apparition_ice_blast_release"},
 	wisp_tether_aghanims = {"wisp_tether_break_aghanims"},
 	alchemist_unstable_concoction = {"alchemist_unstable_concoction_throw"},
+	monkey_king_mischief = {"monkey_king_untransform"},
+	monkey_king_primal_spring = {"monkey_king_primal_spring_early"},
 }
 
 NOT_DAMAGE_REFRLECTABLE_ABILITIES = {

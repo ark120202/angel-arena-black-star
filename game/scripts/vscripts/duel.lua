@@ -4,9 +4,8 @@ _G.DOTA_DUEL_STATUS_IN_PROGRESS = 2
 LinkLuaModifier("modifier_duel_hero_disabled_for_duel", "modifiers/modifier_duel_hero_disabled_for_duel.lua", LUA_MODIFIER_MOTION_NONE)
 if Duel == nil then
 	_G.Duel = class({})
-	Duel.TimeUntilDuel = ARENA_SETTINGS.DelayFromGameStart
-	Duel.TimeUntilDuelEnd = 0
-	Duel.GlobalTimer = nil
+	Duel.TimeUntilDuel = 0
+	Duel.DuelTimerEndTime = 0
 	Duel.DuelStatus = DOTA_DUEL_STATUS_NONE
 	Duel.EntIndexer = {}
 	Duel.TimesTeamWins = {}
@@ -16,43 +15,40 @@ if Duel == nil then
 	Duel.DuelBox2 = Vector(0,0,0)
 end
 
+function Duel:SetDuelTimer(duration)
+	Duel.DuelTimerEndTime = GameRules:GetGameTime() + duration
+	PlayerTables:SetTableValue("arena", "duel_end_time", Duel.DuelTimerEndTime)
+end
+
 function Duel:CreateGlobalTimer()
 	Duel.DuelStatus = DOTA_DUEL_STATUS_WATING
-	PlayerTables:SetTableValue("arena", "duel_timer", Duel.TimeUntilDuel)
-	Duel.GlobalTimer = Timers:CreateTimer(function()
-		if Duel.DuelStatus == DOTA_DUEL_STATUS_WATING then
-			Duel.TimeUntilDuel = Duel.TimeUntilDuel - 1
-			if Duel.TimeUntilDuel <= 0 then
-				Duel:StartDuel()
-				PlayerTables:SetTableValue("arena", "duel_timer", 0)
-			else
-				PlayerTables:SetTableValue("arena", "duel_timer", Duel.TimeUntilDuel)
-			end
-		end
-		if Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
-			Duel.TimeUntilDuelEnd = Duel.TimeUntilDuelEnd - 1
-			if Duel.TimeUntilDuelEnd <= 0 then
-				Duel:EndDuel()
-				PlayerTables:SetTableValue("arena", "duel_timer", 0)
-			else
-				PlayerTables:SetTableValue("arena", "duel_timer", Duel.TimeUntilDuelEnd)
-			end
-		end
-		return 1
-	end)
+	Duel:SetDuelTimer(-GameRules:GetDOTATime(false, true))
+	Timers:CreateTimer(Dynamic_Wrap(Duel, 'GlobalThink'))
 
 	Physics:RemoveCollider("collider_box_blocker_arena")
 	Duel.DuelBox1 = Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin()
 	Duel.DuelBox2 = Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()
 	local collider = Physics:AddCollider("collider_box_blocker_arena", Physics:ColliderFromProfile("boxblocker"))
-	collider.box = CreateSimpleBox(Duel.DuelBox1, Duel.DuelBox2)
+	collider.box = CreateSimpleBox(Duel.DuelBox2, Duel.DuelBox1)
 	collider.findClearSpace = true
+	--collider.draw = true
 	collider.test = function(self, unit)
 		if not IsPhysicsUnit(unit) and unit.IsConsideredHero and unit:IsConsideredHero() then
 			Physics:Unit(unit)
 		end
 		return IsPhysicsUnit(unit) and Duel.DuelStatus == DOTA_DUEL_STATUS_WATING and not unit.InArena
 	end
+end
+
+function Duel:GlobalThink()
+	if GameRules:GetGameTime() >= Duel.DuelTimerEndTime then
+		if Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
+			Duel:EndDuel()
+		elseif Duel.DuelStatus == DOTA_DUEL_STATUS_WATING then
+			Duel:StartDuel()
+		end
+	end
+	return 0.2
 end
 
 function Duel:StartDuel()
@@ -78,7 +74,6 @@ function Duel:StartDuel()
 
 	end
 	local heroes_to_fight_n = math.min(unpack(table.iterate(heroes_in_teams)))
-	Duel.TimeUntilDuelEnd = ARENA_SETTINGS.DurationBase + ARENA_SETTINGS.DurationForPlayer * heroes_to_fight_n
 	if heroes_to_fight_n > 0 and table.count(heroes_in_teams) > 1 then
 		Duel.IsFirstDuel = Duel.DuelCounter == 0
 		--[[for _,v in ipairs(Entities:FindAllByName("npc_dota_arena_statue")) do
@@ -89,6 +84,7 @@ function Duel:StartDuel()
 			table.insert(Duel.Particles, particle1)
 			table.insert(Duel.Particles, particle2)
 		end]]
+		Duel:SetDuelTimer(ARENA_SETTINGS.DurationBase + ARENA_SETTINGS.DurationForPlayer * heroes_to_fight_n)
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
 		local rndtbl = {}
 		table.merge(rndtbl, Duel.heroes_teams_for_duel)
@@ -253,7 +249,7 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 		end
 	end
 	if timeUpdate then
-		Duel.TimeUntilDuel = table.nearestOrLowerKey(ARENA_SETTINGS.DelaysFromLast, GetDOTATimeInMinutesFull()) 
+		Duel:SetDuelTimer(table.nearestOrLowerKey(ARENA_SETTINGS.DelaysFromLast, GetDOTATimeInMinutesFull()))
 	end
 end
 

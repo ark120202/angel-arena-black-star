@@ -45,16 +45,10 @@ CHAT_COMMANDS = {
 			hero:ModifyIntellect(i)
 		end
 	},
-	["startduel"] = {
+	["duel"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
 		f = function()
-			Duel.TimeUntilDuel = 0
-		end
-	},
-	["endduel"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
-		f = function()
-			Duel.TimeUntilDuelEnd = 1
+			Duel:SetDuelTimer(0)
 		end
 	},
 	["killcreeps"] = {

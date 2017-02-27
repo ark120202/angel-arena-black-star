@@ -2,25 +2,23 @@
 {
 	vertical-align: top;
 	horizontal-align: center;
-	height: 80px;
-	width: 940px;
+	height: 132px;
+	width: 1700px;
 
-	transform: translateY(-78px);
+	transform: translateY(0px);
 	transition-property: transform;
 	transition-duration: 1s;
 	transition-delay: 2s;
 	transition-timing-function: ease-in-out;
 }
-
-
-.TopBarVisible
+.AspectRatio16x10 .base
 {
-	transform: translateY(0px);
+	margin-left: 100px;
 }
 
-DOTATopBar.TournamentGame
+DOTAHud.IsBeforeGameplay .base
 {
-	width: 1072px;
+	transform: translateY(-78px);
 }
 
 #HeroImage
@@ -28,20 +26,6 @@ DOTATopBar.TournamentGame
 	transition-property: wash-color, saturation, brightness, contrast;
 	transition-duration: 0.4s;
 	z-index: 3;
-}
-
-DOTAUGCImage
-{
-	height: 40px;
-	width: 66px;
-	horizontal-align: center;
-	background-color: #131517;
-	visibility: collapse;
-}
-
-.TournamentGame DOTAUGCImage
-{
-	visibility: visible;
 }
 
 #TopBarLeftFlare,
@@ -72,14 +56,8 @@ DOTAUGCImage
 #TopBarLeftTeams,
 #TopBarRightTeams
 {
-	width: 380px;
-	height: 100%; //TODO
-}
-
-.TournamentGame #TopBarLeftTeams,
-.TournamentGame #TopBarRightTeams
-{
-	width: 460px;
+	width: 760px;
+	height: 100%;
 }
 
 #TopBarLeftTeams
@@ -94,20 +72,27 @@ DOTAUGCImage
 
 #TopBarRightTeams
 {
-	horizontal-align: right;
-	margin-right: 52px;
+	//horizontal-align: right;
+	//margin-right: 52px;
+	horizontal-align: center;
+	margin-left: 838px; //760+78
 }
 
 #TopBarRightPlayers
 {
 	horizontal-align: right;
+	flow-children: right;
+}
+
+#TopBarLeftPlayers
+{
+	flow-children: left;
 }
 
 .PlayerContainer
 {
 	width: 100%;
 	height: 100%;
-	flow-children: down;
 }
 
 
@@ -195,6 +180,10 @@ DOTAUGCImage
 	horizontal-align: right;
 }
 
+#TopBarRightTeams .TopBarBackground
+{
+}
+
 .TopBarPlayerSlot
 {
 	height: 66px;
@@ -231,23 +220,40 @@ DOTAUGCImage
 .RightAlignedTeam #TopBarScore
 {
 	horizontal-align: right;
-	margin-right: 4px;
+	margin-right: 8px; //why?
 }
-
+.TeamScorePlayers
+{
+	//height: 100%;
+	height: 66px;
+	width: 380px;
+}
+#TeamScorePlayersMainFlow
+{
+	height: 100%;
+	width: 100%;
+}
+.RightAlignedTeam #TeamScorePlayersMainFlow
+{
+	flow-children: left;
+}
+.LeftAlignedTeam #TeamScorePlayersMainFlow
+{
+	flow-children: right;
+	overflow: noclip;
+}
 .TeamScorePlayers.RightAlignedTeam
 {
-	horizontal-align: right;
-	flow-children: left;
-	height: 100%;
+	//horizontal-align: right;
+	//margin-left: 39px;
 }
 .TeamScorePlayers.LeftAlignedTeam
 {
-	height: 100%;
-	flow-children: right;
-	overflow: noclip;
-	width: 100%;
 }
-
+.RightAlignedTeam #TopBarPlayersContainer
+{
+	flow-children: left;
+}
 
 .TopBarHealthBar .ProgressBarLeft
 {
@@ -311,22 +317,22 @@ DOTAUGCImage
 	visibility: visible;
 }
 
-.UltLearned
+.UltLearned #TopBarUltIndicator
 {
 	opacity: 1;
 }
 
-.UltReady
+.UltReady #TopBarUltIndicator
 {
 	background-image: url("s2r://panorama/images/hud/reborn/ult_ready_psd.vtex");
 }
 
-.UltReadyNoMana
+.UltReadyNoMana #TopBarUltIndicator
 {
 	background-image: url("s2r://panorama/images/hud/reborn/ult_no_mana_psd.vtex");
 }
 
-.UltOnCooldown
+.UltOnCooldown #TopBarUltIndicator
 {
 	background-image: url("s2r://panorama/images/hud/reborn/ult_cooldown_psd.vtex");
 }
@@ -334,7 +340,7 @@ DOTAUGCImage
 #TimeOfDay
 {
 	width: 80px;
-	height: 50px;
+	height: 82px; //46+36
 	horizontal-align: center;
 	vertical-align: top;
 	z-index: 2;
@@ -416,9 +422,9 @@ DOTAUGCImage
 #GameTime
 {
 	color: white;
-	vertical-align: bottom;
+	vertical-align: top;
 	horizontal-align: center;
-	margin-bottom: 9px;
+	margin-top: 23px;
 	letter-spacing: 1px;
 	font-family: RadianceM;
 	font-size: 14px;
@@ -530,7 +536,7 @@ DOTAUGCImage
 	opacity: 1;
 }
 
-.Dead #RespawnTimer
+.TeamScorePlayers .Dead #RespawnTimer
 {
 	z-index: 5;
 	opacity: 1;
@@ -753,14 +759,13 @@ DOTAUGCImage
 #TimeUntil
 {
 	color: white;
-	vertical-align: bottom;
-	horizontal-align: center;
+	align: center top;
+	margin-top: 84px;
 	letter-spacing: 1px;
 	font-family: RadianceM, Radiance;
 	font-size: 14px;
 	font-weight: bold;
 	opacity: 0;
-	margin-bottom: 14px;
 	text-shadow: 1px 1px 0px 2.0 #00000044;
 
 	transition-property: transform, opacity;
@@ -775,7 +780,7 @@ DOTAUGCImage
 }
 
 
-#TimeUntil.ShowTimeUntil,
+.ShowTimeUntil #TimeUntil,
 .AltPressed #TimeUntil
 {
 	opacity: 1;
@@ -785,4 +790,121 @@ DOTAUGCImage
 .Reborn.CustomHUDSkin .TopBarBackground
 {
 	opacity: 0;
+}
+
+
+
+
+
+.AspectRatio5x4 #TopBarRightPlayers,
+.AspectRatio5x4 #TopBarLeftPlayers
+{
+	flow-children: down;
+}
+
+.AspectRatio5x4 #TopBarLeftTeams,
+.AspectRatio5x4 #TopBarRightTeams
+{
+	width: 380px;
+	height: 100%;
+}
+.AspectRatio5x4 #TopBarLeftTeams
+{
+	horizontal-align: center;
+	margin-right: 506px;
+}
+
+.AspectRatio5x4 #TopBarRightTeams
+{
+	//margin-left: 838px; //760+78
+	margin-left: 458px;
+}
+
+.AspectRatio4x3 #TopBarRightPlayers,
+.AspectRatio4x3 #TopBarLeftPlayers
+{
+	flow-children: down;
+}
+
+.AspectRatio4x3 #TopBarLeftTeams,
+.AspectRatio4x3 #TopBarRightTeams
+{
+	width: 380px;
+	height: 100%;
+}
+.AspectRatio4x3 #TopBarLeftTeams
+{
+	horizontal-align: center;
+	margin-right: 506px;
+}
+
+.AspectRatio4x3 #TopBarRightTeams
+{
+	//margin-left: 838px; //760+78
+	margin-left: 458px;
+}
+
+#GamemodeVariablePanel
+{
+	background-image: url("s2r://panorama/images/hud/reborn/bg_timer_psd.vtex");
+	background-size: 100%;
+	height: 30px;
+	width: height-percentage(195.7%);
+	margin-top: 44px;
+	align: center top;
+	flow-children: down;
+	transition-property: height;
+	transition-duration: 0.18s;
+	transition-timing-function: ease-in-out;
+}
+
+#KillGoal
+{
+	color: rgb(255, 65, 65);
+	align: center top;
+	letter-spacing: 1px;
+	font-family: RadianceM;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	opacity: 0;
+	transition-property: transform, opacity;
+	transition-duration: 0.18s;
+	transition-timing-function: ease-in-out;
+	transform: translateY(-4px);
+}
+
+.ShowTimeUntil #KillGoal,
+.AltPressed #KillGoal
+{
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+.ShowTimeUntil #GamemodeVariablePanel,
+.AltPressed #GamemodeVariablePanel
+{
+	height: 36px;
+}
+
+#DuelTimer
+{
+	color: white;
+	align: center top;
+	letter-spacing: 0.8px;
+	font-family: RadianceM;
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+	margin-top: -4px;
+	transform: translateY(-10px);
+	transition-property: transform;
+	transition-duration: 0.18s;
+	transition-timing-function: ease-in-out;
+}
+
+.ShowTimeUntil #DuelTimer,
+.AltPressed #DuelTimer
+{
+	transform: translateY(0px);
 }

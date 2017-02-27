@@ -1,5 +1,11 @@
 LinkLuaModifier( "modifier_neutral_upgrade_attackspeed", "modifiers/modifier_neutral_upgrade_attackspeed", LUA_MODIFIER_MOTION_NONE )
 
+SPAWNER_CHAMPION_LEVELS = {
+	[3] = 5,
+	[8] = 2.5,
+	[15] = 1,
+	[30] = 0.5,
+}
 if Spawner == nil then
 	Spawner = class({})
 	Spawner.SpawnerEntities = {}
@@ -74,8 +80,20 @@ function Spawner:InitializeStack(id)
 	end	
 end
 
+function Spawner:RollChampion()
+	local champLevel = 0
+	for level, chance in pairs(SPAWNER_CHAMPION_LEVELS) do
+		if RollPercentage(chance) then
+			champLevel = math.max(champLevel, level)
+		end
+	end
+	if champLevel > 0 then
+		return champLevel
+	end
+end
+
 function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
-	local modelScale = 1 + (0.01 * minutelevel)
+	local modelScale = 1 + (0.005 * minutelevel)
 	local goldbounty = 0
 	local hp = 0
 	local damage = 0
@@ -215,16 +233,24 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 			xpbounty = 250 * minutelevel
 		end
 	end
-	unit:SetDeathXP(unit:GetDeathXP() + xpbounty)
-	unit:SetMinimumGoldBounty(unit:GetMinimumGoldBounty() + goldbounty)
-	unit:SetMaximumGoldBounty(unit:GetMaximumGoldBounty() + goldbounty)
-	unit:SetMaxHealth(unit:GetMaxHealth() + hp)
-	unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() + hp)
-	unit:SetHealth(unit:GetMaxHealth() + hp)
-	unit:SetBaseDamageMin(unit:GetBaseDamageMin() + damage)
-	unit:SetBaseDamageMax(unit:GetBaseDamageMax() + damage)
-	unit:SetBaseMoveSpeed(unit:GetBaseMoveSpeed() + movespeed)
-	unit:SetPhysicalArmorBaseValue(unit:GetPhysicalArmorBaseValue() + armor)
+	local champLevel = Spawner:RollChampion()
+	if champLevel then
+		print("Spawn champion with level " .. champLevel)
+		modelScale = modelScale + (champLevel / 30)
+		unit:SetRenderColor(RandomInt(0, 255), RandomInt(0, 255), RandomInt(0, 255))
+	else
+		champLevel = 1
+	end
+	unit:SetDeathXP((unit:GetDeathXP() + xpbounty) * champLevel)
+	unit:SetMinimumGoldBounty((unit:GetMinimumGoldBounty() + goldbounty) * champLevel)
+	unit:SetMaximumGoldBounty((unit:GetMaximumGoldBounty() + goldbounty) * champLevel)
+	unit:SetMaxHealth((unit:GetMaxHealth() + hp) * champLevel)
+	unit:SetBaseMaxHealth((unit:GetBaseMaxHealth() + hp) * champLevel)
+	unit:SetHealth((unit:GetMaxHealth() + hp) * champLevel)
+	unit:SetBaseDamageMin((unit:GetBaseDamageMin() + damage) * champLevel)
+	unit:SetBaseDamageMax((unit:GetBaseDamageMax() + damage) * champLevel)
+	unit:SetBaseMoveSpeed((unit:GetBaseMoveSpeed() + movespeed) * champLevel)
+	unit:SetPhysicalArmorBaseValue((unit:GetPhysicalArmorBaseValue() + armor) * champLevel)
 	
 	unit:AddNewModifier(unit, nil, "modifier_neutral_upgrade_attackspeed", {})
 	local modifier = unit:FindModifierByNameAndCaster("modifier_neutral_upgrade_attackspeed", unit)

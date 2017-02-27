@@ -3,7 +3,7 @@ CUSTOM_WEARABLES_PLAYER_ITEMS = {
 		"wearable_hero_stargazer_helmet_of_the_sunray",
 		"wearable_hero_omniknight_frozen_sword",
 		"wearable_item_summoned_unit_kyuubey",
-		"wearable_hero_shinobu_umbrella",
+		"shinobu_umbrella",
 		"wearable_developer"
 	},
 	[82292900] = {
@@ -106,7 +106,15 @@ CUSTOM_WEARABLES = {
 		},
 		used_by_heroes = {"npc_arena_hero_anakim"},
 		IsDefault = true
+	},
+	shinobu_umbrella = {
+		model = "models/custom/umbrella_rainbow.vmdl",
+		used_by_heroes = {"npc_arena_hero_shinobu"},
+		attach_method = WEARABLES_ATTACH_METHOD_ATTACHMENTS,
+		attachment = "attach_hitloc",
+		scale = 1.5
 	}
+
 }
 
 --[[CUSTOM_WEARABLES_ITEM_HANDLES = {

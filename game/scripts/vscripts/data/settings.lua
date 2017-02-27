@@ -140,7 +140,6 @@ DOTA_PLAYER_AUTOABANDON_TIME = 60*8
 MAX_SPAWNBOXES_SELECTED = 3
 
 ARENA_SETTINGS = {
-	DelayFromGameStart = 0,
 	DelaysFromLast = {
 		[0] = 300,
 		[30] = 240,

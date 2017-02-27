@@ -56,7 +56,7 @@
 			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_reduction_pct"	"-50 -40 -30 -20"
+				"armor_reduction_pct"	"-50"
 			}
 			"10"
 			{
@@ -186,7 +186,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance_pct"	"4 8 12 16 20 22 24"
+				"crit_chance_pct"	"4 5 6 7 8 9 10"
 			}
 			"02"
 			{

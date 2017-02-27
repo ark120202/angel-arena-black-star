@@ -116,8 +116,9 @@ function CDOTA_BaseNPC:EquipWearable(wearableId)
 		wearableEntity:FollowEntity(self, true)
 	elseif wearable.attach_method == WEARABLES_ATTACH_METHOD_ATTACHMENTS then
 		if wearableEntity then
-			wearableEntity:FollowEntity(nil, false)
+			UTIL_Remove(wearableEntity)
 		end
+		wearableEntity = Attachments:AttachProp(self, wearable.attachment or "attach_hitloc", wearable.model or "models/development/invisiblebox.vmdl", wearable.scale or 1.0, wearable.properties)
 	end
 	local particles = {}
 	for _, particle in ipairs(wearable.particles) do
@@ -148,7 +149,7 @@ function DynamicWearables:CanPlayerEquipWearable(PlayerID, wearableId)
 	if hero then
 		local heroname = GetFullHeroName(hero)
 		local DotaHeroWearables = self.DotaWearablesByHeroes[heroname]
-		if DotaHeroWearables[tonumber(wearableId)] then
+		if DotaHeroWearables[wearableId] then
 			return true
 		end
 	end

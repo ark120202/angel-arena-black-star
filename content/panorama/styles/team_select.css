@@ -1,0 +1,112 @@
+.TeamSelect
+{
+	width: 100%;
+	height: 100%;
+	flow-children: right;
+}
+
+#GCColumn
+{
+	height: 100%;
+	width: 20%;
+	background-color: rgba(0,0,1,0.8);
+}
+
+#TeamSelectionColumn
+{
+	height: 100%;
+	width: 60%;
+	flow-children: down;
+}
+
+#SettingsColumn
+{
+	height: 100%;
+	width: 20%;
+}
+
+#KillGoalVote
+{
+	width: 100%;
+	vertical-align: bottom;
+	margin: 4px;
+	background-color: rgba(0,0,0,0.5);
+	flow-children: down;
+	padding: 4px;
+}
+
+#KillGoalVoteVartiantList
+{
+	width: 100%;
+	flow-children: down;
+	margin-bottom: 7px;
+}
+
+.KillGoalVariant
+{
+	width: 100%;
+	margin-bottom: 3px;
+	border-bottom: 1px solid grey;
+}
+
+#KillGoalVoteSubmit
+{
+	width: 100%;
+	margin: 3px;
+}
+
+#TeamList
+{
+	width: 100%;
+	height: 50%;
+	margin-top: 50px;
+	border: 1px solid red;
+	flow-children: right-wrap;
+}
+
+#UnassignedPlayersContainer
+{
+	width: 100%;
+	background-color: rgba(0,0,0,0.66);
+	height: 100%;
+}
+
+
+.TeamSelectTeam
+{
+	width: 49%;
+	margin: 1px;
+}
+#TeamBackgroundGradient,
+#TeamBackgroundGradientHighlight
+{
+	width: 100%;
+	height: 100%;
+}
+#TeamGroup
+{
+	flow-children: down;
+	width: 100%;
+}
+#TeamHeader
+{
+	flow-children: right;
+	width: 100%;
+}
+#PlayerList
+{
+	flow-children: down;
+	width: 100%;
+}
+.player_slot
+{
+	width: 100%;
+}
+
+
+
+.PlayerSlot
+{
+	width: 100%;
+	height: 22px;
+}

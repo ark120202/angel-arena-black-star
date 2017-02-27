@@ -65,9 +65,6 @@
 				</Button>
 			</Panel>
 		</Panel>
-		<!-- <Button hittest="true" id="ShopBtnPanel" onactivate="OpenCloseShop()">
-			<Label id="ShopBtnLabel" hittest="false" text="#panorama_shop_shop_label"/>
-		</Button> -->
 		<Panel hittest="true" onmouseactivate="" id="QuickBuyPanel">
 			<Panel class="DropDownValidTarget" hittest="false" />
 			<Panel id="QuickBuyPanelItems" />

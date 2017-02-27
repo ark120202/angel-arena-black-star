@@ -12,13 +12,15 @@
 	<snippets>
 		<snippet name="DotaTeamBar">
 			<Panel hittest="false" class="TeamScorePlayers">
-				<DOTAUGCImage id="TournamentTeamImage" hittest="true" />
-				<Panel id="TopBarPlayersContainer" class="LeftRightFlow" />
-				<Label id="TopBarScore" text="{d:team_score}" hittest="true" />
+				<Panel class="TopBarBackground" />
+				<Panel id="TeamScorePlayersMainFlow">
+					<Panel id="TopBarPlayersContainer" class="LeftRightFlow" />
+					<Label id="TopBarScore" text="{d:team_score}" hittest="true" />
+				</Panel>
 			</Panel>
 		</snippet>
 		<snippet name="TopBarPlayerSlot">
-			<Panel class="TopBarPlayerSlot" hittest="false">
+			<Panel class="TopBarPlayerSlot" hittest="true">
 				<Panel id="SlantedContainerPanel" class="SlantedContainer" >
 					<Panel id="PlayerColor"/>
 					<Image id="DeadLayer" src="s2r://panorama/images/hud/reborn/top_bar_dead_overlay_png.vtex"/>
@@ -29,14 +31,15 @@
 
 				<ProgressBar id="HealthBar" class="TopBarHealthBar"/>
 				<ProgressBar id="ManaBar" class="TopBarManaBar"/>
-				<Panel id="BuybackIcon" hittest="false" />		
+				<!-- <Panel id="BuybackIcon" hittest="false" /> -->
 				<Panel id="TopBarUltIndicator" />
-				<Panel id="AbilityDraftHitBox" onmouseover="DOTAShowAbilityDraftTooltip()" onmouseout="DOTAHideAbilityDraftTooltip()" />
+				<!-- TODO: Replace with Custom Abilities mode container -->
+				<!-- <Panel id="AbilityDraftHitBox" onmouseover="DOTAShowAbilityDraftTooltip()" onmouseout="DOTAHideAbilityDraftTooltip()" /> -->
 				<Panel id="RespawnTimer" hittest="false" >
 					<Label id="RespawnTimerLabel" text="{d:respawn_seconds}" hittest="false" />
-					<Panel id="TopBarBuybackStatus"/>
+					<!-- <Panel id="TopBarBuybackStatus"/> -->
 				</Panel>
-				<Panel id="GoldIcon" hittest="false" />
+				<!-- <Panel id="GoldIcon" hittest="false" /> -->
 			</Panel>
 		</snippet>
 	</snippets>
@@ -44,24 +47,27 @@
 	<Panel class="base">
 		<Panel id="TopBarLeftFlare" />
 		<Panel id="TopBarLeftTeams" hittest="false">
-			<Panel class="TopBarBackground" />
-			<Panel id="TopBarLeftPlayers" hittest="false" hittestchildren="false" class="PlayerContainer" />
+			<Panel id="TopBarLeftPlayers" hittest="false" class="PlayerContainer" />
 		</Panel>
 
 		<Panel id="TimeOfDayBG"/>
-		<Panel id="TimeOfDay" onmouseover="ToggleStyle( TimeUntil, ShowTimeUntil ) " onmouseout="ToggleStyle( TimeUntil, ShowTimeUntil ) ">
+
+		<Panel id="TimeOfDay" onmouseover="$.GetContextPanel().AddClass('ShowTimeUntil')" onmouseout="$.GetContextPanel().RemoveClass('ShowTimeUntil')">
 			<Panel id="DayTime" class="TimeOfDayIcon DayIcon"/>
 			<Panel id="NightTime" class="TimeOfDayIcon NightIcon"/>
 			<DOTAHeroImage id="NightstalkerNight" class="TimeOfDayIcon" heroname="npc_dota_hero_night_stalker" heroimagestyle="icon"/>
 			<Label id="GameTime" text="{s:time_of_day}" hittest="false"/>
+			<Panel id="GamemodeVariablePanel">
+				<Label id="KillGoal" text="{d:kill_goal}" />
+				<Label id="DuelTimer" text="{s:duel_timer}" />
+			</Panel>
 		</Panel>
 		<Panel id="DayGlow" hittest="false"/>
 		<Panel id="NightGlow" hittest="false"/>
 		<Label id="TimeUntil" text="#DOTA_HUD_TimeUntil" hittest="false"/>
 
 		<Panel id="TopBarRightTeams" hittest="false">
-			<Panel class="TopBarBackground" />
-			<Panel id="TopBarRightPlayers" hittest="false" hittestchildren="false" class="PlayerContainer" />
+			<Panel id="TopBarRightPlayers" hittest="false" class="PlayerContainer" />
 		</Panel>
 		<Panel id="TopBarRightFlare" />
 	</Panel>

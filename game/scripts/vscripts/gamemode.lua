@@ -164,6 +164,7 @@ function GameMode:OnHeroSelectionEnd()
 	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
 	--Timers:CreateTimer(1/30, Dynamic_Wrap(GameMode, "QuickGameModeThink"))
 	PanoramaShop:StartItemStocks()
+	Duel:CreateGlobalTimer()
 end
 
 function GameMode:OnHeroInGame(hero)
@@ -207,7 +208,6 @@ function GameMode:OnGameInProgress()
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[3] = true
-	Duel:CreateGlobalTimer()
 	ContainersHelper:CreateShops()
 	Spawner:RegisterTimers()
 	Timers:CreateTimer(function()

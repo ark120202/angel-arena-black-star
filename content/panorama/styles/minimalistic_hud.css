@@ -35,6 +35,17 @@
 	align: left bottom;
 	margin-left: -4px;
 	margin-bottom: -4px;
+	
+	transition-property: transform;
+	transition-duration: 0s;
+	transition-delay: 0s;
+	transition-timing-function: ease-in-out;
+}
+DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
+{
+	transform: translateY(230px);
+	transition-duration: 1s;
+	transition-delay: 2s;	
 }
 
 .HUDFlipped #DynamicMinimapRoot

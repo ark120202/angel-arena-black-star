@@ -39,7 +39,7 @@
 		<Panel id="AbilityShopBase" hittest="false">
 			<Button id="InfoContainer" onactivate="$.GetContextPanel().ToggleClass('MainHidden');">
 				<Label id="InfoContainerMainLabel" hittest="false" text="Ability Shop"/>
-				<Label id="InfoContainerPointsLabel" hittest="false" text="1"/>
+				<Label id="InfoContainerPointsLabel" hittest="false" text="+1"/>
 			</Button>
 			<Panel id="MainContainer">
 				<Panel id="InfoToolbar">

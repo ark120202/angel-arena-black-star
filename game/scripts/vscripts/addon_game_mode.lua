@@ -75,6 +75,7 @@ function Precache(context)
 		"models/heroes/earthshaker/totem.vmdl",
 		--Neutrals
 		"models/heroes/centaur/centaur.vmdl",
+		"models/custom/umbrella_rainbow.vmdl",
 	}
 	local units = {
 		"npc_arena_boss_heaven",

@@ -103,16 +103,6 @@ DropDownMenu Label
 	transform: translateX(650px);
 }
 
-#ShopBtnLabel
-{
-	color: rgb(240,240,240);
-	font-weight: bold;
-	font-size: 24px;
-	align: center center;
-	text-shadow: 0px 0px 1px gold;
-	text-transform: uppercase;
-}
-
 #ShopItemList
 {
 	width: 100%;
@@ -312,37 +302,25 @@ DropDownMenu Label
 
 
 //Standart, 16x9
-#ShopBtnPanel
-{
-	align: right bottom;
-	margin-bottom: 122px;
-	margin-right: 120px;
-	height: 32px;
-	width: 96px;
-	background-color: black;
-	border-color: white;
-	border-width: 2px;
-	border-style: solid;
-	border-radius: 7px;
-	transform: translateY(-40px);
-}
-#ShopBtnPanel:hover
-{
-	pre-transform-scale2d: 1.03;
-}
-#ShopBtnPanel:active
-{
-	pre-transform-scale2d: 1.01;
-}
 #QuickBuyPanel
 {
 	background-image: url("s2r://panorama/images/hud/reborn/quickbuy_bg_psd.vtex");
 	align: right bottom;
-	margin-bottom: 20px;
+	margin-bottom: 60px;
 	margin-right: 0px;
 	height: 65px;
 	width: 262px;
-	transform: translateY(-40px);
+	
+	transition-property: transform;
+	transition-duration: 0s;
+	transition-delay: 0s;
+	transition-timing-function: ease-in-out;
+}
+DOTAHud.IsBeforeGameplay #QuickBuyPanel
+{
+	transform: translateY(230px);
+	transition-duration: 1s;
+	transition-delay: 2s;	
 }
 
 .HUDFlipped #QuickBuyPanel

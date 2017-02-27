@@ -22,18 +22,20 @@ if IsServer() then
 	end
 	function modifier_saber_mana_burst:OnIntervalThink()
 		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		local manacost = ability:GetManaCost()
-		local isWeak = (parent:GetMana() / parent:GetMaxMana()) * 100 < ability:GetSpecialValueFor("weakness_mana_pct")
-		self:SetStackCount(isWeak and 1 or 0)
-		if isWeak and not self.pfx then
-			self.pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_disarm.vpcf", PATTACH_OVERHEAD_FOLLOW, parent)
-		elseif not isWeak and self.pfx then
-			ParticleManager:DestroyParticle(self.pfx, false)
-			self.pfx = nil
-		end
-		if ability:GetAutoCastState() and manacost * 2 < parent:GetMana() and ability:PreformPrecastActions(parent) then
-			ability:OnSpellStart()
+		if parent:IsAlive() then
+			local ability = self:GetAbility()
+			local manacost = ability:GetManaCost()
+			local isWeak = (parent:GetMana() / parent:GetMaxMana()) * 100 < ability:GetSpecialValueFor("weakness_mana_pct")
+			self:SetStackCount(isWeak and 1 or 0)
+			if isWeak and not self.pfx then
+				self.pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_disarm.vpcf", PATTACH_OVERHEAD_FOLLOW, parent)
+			elseif not isWeak and self.pfx then
+				ParticleManager:DestroyParticle(self.pfx, false)
+				self.pfx = nil
+			end
+			if ability:GetAutoCastState() and manacost * 2 < parent:GetMana() then
+				parent:CastAbilityNoTarget(ability, parent:GetPlayerID())
+			end
 		end
 	end
 end

@@ -1,41 +1,31 @@
 "Attachments"
 {
-	"models/props_gameplay/chicken.vmdl"
+	"models/hero_shinobu/shinobu_01.vmdl"
 	{
 		"attach_hitloc"
 		{
-			"models/heroes/earthshaker/totem.vmdl"
+			"models/custom/umbrella_rainbow.vmdl"
 			{
-				"scale"		"0.5"
-				"pitch"		"-20"
-				"roll"		"0"
-				"yaw"		"0"
-				"YPos"		"0"
-				"ZPos"		"-100"
-				"XPos"		"0"
+				"scale"		"1.5"
+				"pitch"		"0"
+				"roll"		"-14"
+				"ZPos"		"1"
+				"YPos"		"6"
+				"yaw"		"28"
+				"XPos"		"26"
 			}
 		}
-		"Head_plc0"
+		"attach_attack2"
 		{
-			"models/items/tidehunter/diving_helmet/tidehunter_diving_helmet.vmdl"
+			"models/custom/umbrella_rainbow.vmdl"
 			{
-				"scale"		"0.30000001192093"
-				"pitch"		"-100"
-				"roll"		"0"
-				"ZPos"		"-170"
+				"scale"		"1.7999999523163"
+				"pitch"		"81"
+				"roll"		"-33"
+				"ZPos"		"5"
 				"YPos"		"0"
 				"yaw"		"0"
-				"XPos"		"-58"
-			}
-			"models/heroes/items/hat_test/hat_test.vmdl"
-			{
-				"scale"		"0.80000001192093"
-				"pitch"		"-100"
-				"roll"		"30"
-				"yaw"		"-45"
-				"YPos"		"0"
-				"ZPos"		"-145"
-				"XPos"		"-8"
+				"XPos"		"0"
 			}
 		}
 	}
@@ -48,9 +38,9 @@
 				"scale"		"1.1000000238419"
 				"pitch"		"-67"
 				"roll"		"49"
-				"ZPos"		"15"
-				"YPos"		"7"
 				"yaw"		"0"
+				"YPos"		"7"
+				"ZPos"		"15"
 				"XPos"		"1"
 			}
 		}
@@ -64,10 +54,19 @@
 				"scale"		"1"
 				"pitch"		"0"
 				"roll"		"90"
-				"ZPos"		"0"
-				"YPos"		"2"
 				"yaw"		"90"
+				"YPos"		"2"
+				"ZPos"		"0"
 				"XPos"		"-60"
+			}
+		}
+	}
+	"Particles"
+	{
+		"models/items/dragon_knight/helmet_01/helmet_01.vmdl"
+		{
+			"particles/econ/items/rubick/rubick_force_gold_ambient/rubick_telekinesis_force_debuff_b_gold.vpcf"
+			{
 			}
 		}
 	}
@@ -80,19 +79,49 @@
 				"scale"		"1.7000000476837"
 				"pitch"		"-90"
 				"roll"		"0"
-				"yaw"		"0"
-				"YPos"		"0"
 				"ZPos"		"-163"
+				"YPos"		"0"
+				"yaw"		"0"
 				"XPos"		"4"
 			}
 		}
 	}
-	"Particles"
+	"models/props_gameplay/chicken.vmdl"
 	{
-		"models/items/dragon_knight/helmet_01/helmet_01.vmdl"
+		"attach_hitloc"
 		{
-			"particles/econ/items/rubick/rubick_force_gold_ambient/rubick_telekinesis_force_debuff_b_gold.vpcf"
+			"models/heroes/earthshaker/totem.vmdl"
 			{
+				"scale"		"0.5"
+				"pitch"		"-20"
+				"roll"		"0"
+				"ZPos"		"-100"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+		}
+		"Head_plc0"
+		{
+			"models/items/tidehunter/diving_helmet/tidehunter_diving_helmet.vmdl"
+			{
+				"scale"		"0.30000001192093"
+				"pitch"		"-100"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-170"
+				"XPos"		"-58"
+			}
+			"models/heroes/items/hat_test/hat_test.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"-100"
+				"roll"		"30"
+				"ZPos"		"-145"
+				"YPos"		"0"
+				"yaw"		"-45"
+				"XPos"		"-8"
 			}
 		}
 	}

@@ -5066,7 +5066,6 @@
 			{
 				"ScriptFile"					"items/item_manta.lua"
 				"Function"						"item_manta_arena_on_spell_start"
-				"CooldownMelee"					"%cooldown_melee"
 				"InvulnerabilityDuration"		"%invulnerability_duration"
 				"VisionRadius"					"%vision_radius"
 			}
@@ -6351,7 +6350,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityTextureName"			"item_arena/diffusal_style"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilitySharedCooldown"			"diffusal;manta"
+		"AbilitySharedCooldown"			"manta"
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -6499,7 +6498,6 @@
 			{
 				"ScriptFile"					"items/item_diffusal_style.lua"
 				"Function"						"item_diffusal_style_on_spell_start"
-				"CooldownMelee"					"%cooldown_melee"
 				"InvulnerabilityDuration"		"%invulnerability_duration"
 				"VisionRadius"					"%vision_radius"
 			}
@@ -13271,11 +13269,6 @@
 			}
 			"05"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_evasion_active_pct"		"100"
-			}
-			"06"
-			{
 				"var_type"						"FIELD_FLOAT"
 				"duration"						"5"
 			}
@@ -13320,7 +13313,7 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion_active_pct"
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"550"
 				}
 			}
 		}
@@ -14235,53 +14228,6 @@
 		}
 	}
 
-	// "item_spell_card"
-	// {
-	// 	// General
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	// 	"ID"							"100507"
-	// 	"BaseClass"         "item_lua"
-	// 	"AbilityTextureName"        "item_present"
-	// 	"ScriptFile"          "items/lua/item_spell_card.lua"
-
-	// 	"ItemCost"     	       "99999"
-	// //	"ItemPurchasable"          "0"
-	// 	"ItemKillable"             "0"
-	// 	"ItemDroppable"            "0"
-	// 	"ItemSellable"             "0"
-	// }
-
-	// "item_cad"
-	// {
-	// 	// General
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | BEHAVIOR_"
-	// 	"ID"							"100087"
-	// 	"BaseClass"         "item_datadriven"
-	// 	"AbilityTextureName"        "item_present"
-
-	// 	"ItemCost"     	       "99999"
-	// //	"ItemPurchasable"          "0"
-	// 	"ItemKillable"             "0"
-	// 	"ItemDroppable"            "0"
-	// 	"ItemSellable"             "0"
-
-	// 	"OnEquip"
-	// 	{
-	// 		"RunScript"
-	// 		{
-	// 			"ScriptFile"	"items/lua/item_cad.lua"
-	// 			"Function"		"OnItemEquipped"
-	// 		}
-	// 	}
-
-	// 	"OnSpellStart"
-	// 	{
-			
-	// 	}
-	// }
-
 	"item_recipe_thunder_musket"
 	{
 		"BaseClass"						"item_datadriven"
@@ -14634,7 +14580,7 @@
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_evasion_active_pct"		"100"
+				"bonus_evasion_active_pct"		"50"
 			}
 			"08"
 			{
@@ -14717,6 +14663,7 @@
 				{
 					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion_active_pct"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility_active"
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"550"
 				}
 			}
 
@@ -14820,7 +14767,7 @@
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_evasion_active_pct"		"100"
+				"bonus_evasion_active_pct"		"90"
 			}
 			"09"
 			{
@@ -14945,6 +14892,7 @@
 				{
 					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion_active_pct"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility_active"
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"550"
 				}
 			}
 
@@ -15071,7 +15019,7 @@
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_damage_pct"			"120"
+				"bonus_toggle_damage_pct"			"70"
 			}
 			"05"
 			{
@@ -15138,6 +15086,17 @@
 				}
 			}
 
+			"modifier_item_heavy_war_axe_of_rage_damage_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%bonus_toggle_damage_pct"
+				}
+			}
+
 			"modifier_item_heavy_war_axe_of_rage_regen"
 			{
 				"Passive"			"1"
@@ -15189,7 +15148,7 @@
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_damage_pct"			"120"
+				"bonus_toggle_damage_pct"			"70"
 			}
 			"05"
 			{
@@ -15898,6 +15857,7 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_damage"		"700"
+				"CalculateSpellDamageTooltip" "0"
 			}
 			"02"
 			{
@@ -15908,6 +15868,7 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"damage_per_hit"	"-6"
+				"CalculateSpellDamageTooltip" "0"
 			}
 			"04"
 			{
@@ -18643,6 +18604,70 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"radius"			"1200"
+			}
+		}
+	}
+
+	"item_recipe_mekansm_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"900"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mekansm_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_headdress;item_buckler;item_ultimate_orb"
+		}
+	}
+
+	"item_mekansm_arena"
+	{
+		"ID"							"-1"
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/item_mekansm_arena.lua"
+		"AbilityTextureName"			"item_mekansm"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"ItemAliases"					"mechanism;mekansm"
+		"AbilityCooldown"				"50"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"225"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"7"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"6"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_armor"		"6"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"400"
 			}
 		}
 	}

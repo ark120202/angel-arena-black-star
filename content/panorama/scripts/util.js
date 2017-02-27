@@ -15,6 +15,8 @@ var HERO_SELECTION_STATE_NOT_STARTED = 0
 var HERO_SELECTION_STATE_ALLPICK = 1
 var HERO_SELECTION_STATE_END = 2
 
+var DOTA_TEAM_SPECATOR = 1
+
 var RUNES_COLOR_MAP = {
 	0: "FF7800",
 	1: "FFEC5E",
@@ -295,6 +297,10 @@ function FindDotaHudElement(id) {
 function GetHEXPlayerColor(playerId) {
 	var playerColor = Players.GetPlayerColor(playerId).toString(16)
 	return playerColor == null ? "#000000" : ("#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2))
+}
+
+function IsPlayerAbandoned(playerId) {
+
 }
 
 var hud = GetDotaHud();

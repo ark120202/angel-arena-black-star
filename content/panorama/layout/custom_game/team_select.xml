@@ -1,0 +1,67 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/play.vcss_c" />
+		<include src="file://{resources}/styles/team_select.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/team_select.js" />
+	</scripts>
+	<snippets>
+		<snippet name="Team">
+			<Button class="TeamSelectTeam" onactivate="OnJoinTeamPressed()">
+				<Panel id="TeamBackgroundGradient" />
+				<Panel id="TeamBackgroundGradientHighlight" />
+				<Panel id="TeamGroup" >
+					<Panel id="TeamHeader">
+						<Panel id="TeamLogo" />
+						<Label id="TeamNameLabel" text="{s:team_name}" />
+						<Label id="JoinTeamLabel" text="#custom_game_team_select_join" />
+					</Panel>
+					<Panel id="TeamPlayerDivider" />
+					<Panel id="PlayerList" />
+				</Panel>
+			</Button>
+		</snippet>
+
+		<snippet name="PlayerSlot">
+			<Panel class="PlayerSlot">
+				<Panel id="EmptySlotIcon" />
+				<DOTAAvatarImage id="PlayerAvatar" />
+
+				<Label id="PlayerIsHostPanel" />
+
+				<Label id="PlayerName" text="#custom_game_team_select_empty_slot" />
+				<Label id="PlayerName" text="PLAYER_NAME" />
+
+				<Button id="PlayerLeaveTeamButton" onactivate="OnLeaveTeamPressed()" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="TeamSelect">
+		<Panel hittest="true" id="GCColumn" onactivate="$.Msg('hittest!')" >
+			<Panel id="LocalPlayerDataPanel">
+				<Label text="~~~" />
+			</Panel>
+		</Panel>
+		<Panel hittest="false" id="TeamSelectionColumn" >
+			<Panel id="TeamList">
+
+			</Panel>
+			<Panel id="UnassignedPlayersContainer">
+
+			</Panel>
+		</Panel>
+		<Panel hittest="false" id="SettingsColumn" >
+			<Label id="StartGameCountdownTimer" text="0" />
+			<Panel id="KillGoalVote">
+				<Panel id="KillGoalVoteVartiantList">
+
+				</Panel>
+				<TextButton id="KillGoalVoteSubmit" class="ButtonBevel Green" text="SUBMIT!" onactivate="SubmitKillGoal()" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>
+

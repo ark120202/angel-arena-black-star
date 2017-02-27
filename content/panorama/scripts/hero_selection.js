@@ -18,9 +18,9 @@ var SelectedHeroData,
 
 var SteamIDSpecialBGs = {
 	//ark120202
-	/*109792606: [
+	109792606: [
 		"https://pp.vk.me/c638727/v638727976/1134a/d1RxLF8mWkE.jpg",
-	],*/
+	],
 	//Murzik
 	82292900: [
 		"https://wallpaperscraft.ru/image/kot_morda_pushistyj_polosatyj_97082_1920x1080.jpg",
@@ -50,7 +50,10 @@ function HeroSelectionStart(HeroesServerData) {
 
 function HeroSelectionEnd(bImmidate) {
 	$.GetContextPanel().style.opacity = 0
-	$.Schedule(bImmidate ? 0 : 5.6, function() {
+	$.Schedule(bImmidate ? 0 : 3.5, function() { //4 + 1.5 [+ 0.1] - 2 (dota delay)
+		hud.GetChild(0).RemoveClass("IsBeforeGameplay")
+	})
+	$.Schedule(bImmidate ? 0 : 5.6, function() { //4 + 1.5 + 0.1
 		MainPanel.visible = false
 		FindDotaHudElement("PausedInfo").style.opacity = 1;
 		if (HideEvent != null)
@@ -124,6 +127,9 @@ function UpdateTimer() {
 	var SelectionTimerRemainingTime = SelectionTimerDuration - (SelectionTimerCurrentTime - SelectionTimerStartTime)
 	if (SelectionTimerRemainingTime > 0) {
 		$.Schedule(0.2, UpdateTimer);
+		if (HeroSelectionState != HERO_SELECTION_STATE_END) {
+			hud.GetChild(0).AddClass("IsBeforeGameplay")
+		}
 		$("#HeroSelectionTimer").text = Math.ceil(SelectionTimerRemainingTime);
 		SearchHero();
 		$.Each(Game.GetAllPlayerIDs(), function(id) {

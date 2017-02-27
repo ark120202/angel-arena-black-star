@@ -211,7 +211,7 @@ function GameMode:OnEntityKilled(keys)
 					killedUnit.InArena = false
 					killedUnit.ArenaBeforeTpLocation = nil
 					if Duel:GetWinner() ~= nil then
-						Duel.TimeUntilDuelEnd = 0
+						Duel:EndDuel()
 					end
 				end
 				if not IsValidEntity(killerEntity) or not killerEntity.GetPlayerOwner or not IsValidEntity(killerEntity:GetPlayerOwner()) then
