@@ -284,5 +284,7 @@
 		"custom_talents_talent_passive_experience_income_description"						"+{xp_per_minute} experience per minute"
 		"custom_talents_talent_true_strike"													"True Strike"
 		"custom_talents_talent_true_strike_description"										"Prevents your attacks from missing"
+
+		//"arena_tip_1"																		"TIP #1: You can see kill limit by holding ALT"
 	}
 }

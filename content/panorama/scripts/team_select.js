@@ -1,70 +1,24 @@
-var selectedKillGoal = 3
+$("#UnassignedPlayersContainer").RemoveAndDeleteChildren()
 var TeamPanels = []
 var PlayerPanels = [];
 
-function VoteMap(parentindex, gmtype) {
-	GameEvents.SendCustomGameEventToServer("submit_gamemode_map", {
-		GMType: gmtype
-	});
-	//$("#KillGoalVote").enabled = false;
-}
-
-function SubmitKillGoal() {
-	GameEvents.SendCustomGameEventToServer("submit_gamemode_vote", {
-		voteIndex: selectedKillGoal
-	});
-	$("#KillGoalVote").enabled = false;
-	$("#KillGoalVoteSubmit").enabled = false;
-}
-
-function CheckStartable() {
-	var player = Game.GetLocalPlayerInfo()
-	if (player == null)
-		$.Schedule(0.2, CheckStartable)
-	else {
-		//FindDotaHudElement("CustomLoadingScreenContainer").visible = true //temporary dark moon upadte fix
-		//$("#GoalVotePanel").AddClass("GoalVotePanel_In")
-		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
-			var gamemode_settings = changesObject["gamemode_settings"]
-			if (gamemode_settings != null) {
-				if (gamemode_settings.kill_goals != null) {
-					$.Each(gamemode_settings.kill_goals, function(killGoal, tIndex) {
-						var button = $.CreatePanel("RadioButton", $("#KillGoalVoteVartiantList"), "");
-						if (tIndex == selectedKillGoal) {
-							button.AddClass("Activated")
-						}
-						//button.AddClass("ButtonBevel")
-						//button.AddClass("VoteKillGoalButton")
-						button.AddClass("KillGoalVariant")
-						button.group = "kill_goal_variants"
-						var label = $.CreatePanel("Label", button, ""); //<Label text="4 (20%)" style="horizontal-align: right;" />;
-						label.text = killGoal;
-						label.style.color = "white"
-						label.style.fontSize = "20px"
-						var votedataLabel = $.CreatePanel("Label", button, ""); //<Label text="4 (20%)" style="horizontal-align: right;" />;
-						votedataLabel.text = "0 (0%)";
-						votedataLabel.style.horizontalAlign = "right"
-						votedataLabel.style.color = "white"
-						votedataLabel.style.fontSize = "19px"
-						button.SetPanelEvent("onactivate", function() {
-							selectedKillGoal = tIndex
-						})
-					})
-				}
-				//$("#GoalVotePanelCustomSettingsRoot").visible = Number(gamemode_settings.gamemode_map) == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES
-			}
-		});
-	}
-}
-
 function Snippet_PlayerSlot(playerId, root) {
-	if (PlayerPanels[playerId] == null) {
-		var panel = $.CreatePanel("Panel", root || $("#TeamList"), "")
+	var panel = PlayerPanels[playerId]
+	if (panel == null) {
+		panel = $.CreatePanel("Panel", root, "")
 		panel.BLoadLayoutSnippet("PlayerSlot")
 		panel.SetHasClass("slot_empty", playerId == -1)
-		PlayerPanels[playerId] = panel
+		panel.AddClass("player_" + playerId)
+		if (playerId != -1) {
+			PlayerPanels[playerId] = panel
+			var playerInfo = Game.GetPlayerInfo(playerId);
+			panel.FindChildTraverse("PlayerName").text = playerInfo.player_name;
+			panel.FindChildTraverse("PlayerAvatar").steamid = playerInfo.player_steamid;
+			panel.SetHasClass("player_is_local", playerInfo.player_is_local);
+			panel.SetHasClass("player_has_host_privileges", playerInfo.player_has_host_privileges);
+		}
 	}
-	return PlayerPanels[playerId];
+	return panel;
 }
 
 function Snippet_Team(team) {
@@ -73,15 +27,15 @@ function Snippet_Team(team) {
 		panel.BLoadLayoutSnippet("Team")
 		panel.SetPanelEvent("onactivate", function() {
 			Game.PlayerJoinTeam(team)
-			$.Msg("JOINTEAM: " + team)
 		})
 		var teamDetails = Game.GetTeamDetails(team)
 		var teamColor = GameUI.CustomUIConfig().team_colors[team].replace(";", "");
 		panel.SetDialogVariable("team_name", $.Localize(teamDetails.team_name))
-		panel.FindChildTraverse("TeamBackgroundGradient").style.backgroundColor = 'gradient( linear, -800% -1600%, 50% 100%, from( ' + teamColor + ' ), to( #00000088 ) );';
-		panel.FindChildTraverse("TeamBackgroundGradientHighlight").style.backgroundColor = 'gradient( linear, -800% -1600%, 90% 100%, from( ' + teamColor + ' ), to( #00000088 ) );';
-		var teamNameLabel = panel.FindChildTraverse("TeamNameLabel");
-		teamNameLabel.style.color = teamColor + ';';
+		panel.FindChildTraverse("TeamBackgroundGradient").style.backgroundColor = 'gradient(linear, 0% 0%, 100% 100%, from(#000000AA), to(' + teamColor + '80));';
+		panel.FindChildTraverse("TeamBackgroundGradientHighlight").style.backgroundColor = 'gradient(linear, 0% 0%, 100% 100%, from(#000000AA), to(' + teamColor + 'A0));';
+		var rgb = hexToRgb(teamColor)
+
+		panel.FindChildTraverse("TeamNameLabel").style.color = shadeColor2(teamColor, 0.75);
 		panel.EmptySlots = []
 		for (var i = 0; i < teamDetails.team_max_players; ++i) {
 			var slot = $.CreatePanel("Panel", panel.FindChildTraverse("PlayerList"), "");
@@ -95,23 +49,21 @@ function Snippet_Team(team) {
 
 function Snippet_Team_Update(team) {
 	var panel = Snippet_Team(team);
-	var teamPlayersLength = Game.GetPlayerIDsOnTeam(team).length;
-	for (var i = 0; i < teamPlayersLength; ++i) {
+	var teamPlayers = Game.GetPlayerIDsOnTeam(team);
+	for (var i = 0; i < teamPlayers.length; ++i) {
 		var playerSlot = panel.EmptySlots[i]
 		playerSlot.RemoveAndDeleteChildren();
-		var panel = Snippet_PlayerSlot(teamPlayersLength[i], playerSlot)
-		panel.SetParent(playerSlot)
+		Snippet_PlayerSlot(teamPlayers[i], playerSlot).SetParent(playerSlot)
 	}
 
 	var teamDetails = Game.GetTeamDetails(team);
-	$.Msg(team + panel.EmptySlots + "\n")
-	for (var i = teamPlayersLength; i < teamDetails.team_max_players; i++) {
+	for (var i = teamPlayers.length; i < teamDetails.team_max_players; i++) {
 		var playerSlot = panel.EmptySlots[i];
 		if (playerSlot.GetChildCount() == 0) {
 			Snippet_PlayerSlot(-1, playerSlot)
 		}
 	}
-	panel.SetHasClass("team_is_full", teamPlayersLength == teamDetails.team_max_players);
+	panel.SetHasClass("team_is_full", teamPlayers.length == teamDetails.team_max_players);
 	panel.SetHasClass("local_player_on_this_team", Players.GetTeam(Game.GetLocalPlayerID()) == team);
 }
 
@@ -125,7 +77,6 @@ function UpdateTimer() {
 	if (playerInfo != null) {
 		$.GetContextPanel().SetHasClass("player_has_host_privileges", playerInfo.player_has_host_privileges);
 	}
-
 	if (transitionTime >= 0) {
 		$("#StartGameCountdownTimer").SetDialogVariableInt("countdown_timer_seconds", Math.max(0, Math.floor(transitionTime - gameTime)));
 		$("#StartGameCountdownTimer").SetHasClass("countdown_active", true);
@@ -151,16 +102,19 @@ function OnPlayerSelectedTeam(nPlayerId, nTeamId, bSuccess) {
 
 function OnTeamPlayerListChanged() {
 	var unassignedPlayersContainerNode = $("#UnassignedPlayersContainer");
-	//unassignedPlayersContainerNode.RemoveAndDeleteChildren()
-	$.Msg("List changed")
+
+	// Move all existing player panels back to the unassigned player list
 	for (var i = 0; i < PlayerPanels.length; ++i) {
 		PlayerPanels[i].SetParent(unassignedPlayersContainerNode);
 	}
 
+	// Make sure all of the unassigned player have a player panel and that panel is a child of the unassigned player panel.
 	var unassignedPlayers = Game.GetUnassignedPlayerIDs();
 	for (var i = 0; i < unassignedPlayers.length; ++i) {
 		Snippet_PlayerSlot(unassignedPlayers[i], unassignedPlayersContainerNode)
 	}
+	Game.SetRemainingSetupTime(unassignedPlayers.length == 0 ? 15 : -1);
+	// Update all of the team panels moving the player panels for the players assigned to each team to the corresponding team panel.
 	for (var k in TeamPanels) {
 		Snippet_Team_Update(Number(k))
 	}
@@ -169,15 +123,36 @@ function OnTeamPlayerListChanged() {
 	$.GetContextPanel().SetHasClass("no_unassigned_players", unassignedPlayers.length == 0);
 }
 
+function OnLockAndStartPressed() {
+	if (Game.GetUnassignedPlayerIDs().length > 0)
+		return;
+	Game.SetTeamSelectionLocked(true);
+	Game.SetAutoLaunchEnabled(false);
+	Game.SetRemainingSetupTime(4);
+}
+
+function OnCancelAndUnlockPressed() {
+	Game.SetTeamSelectionLocked(false);
+	Game.SetRemainingSetupTime(-1);
+}
+
+function OnShufflePlayersPressed() {
+	Game.ShufflePlayerTeamAssignments();
+	Game.SetRemainingSetupTime(Game.GetUnassignedPlayerIDs().length == 0 ? 15 : -1);
+}
+
+function OnAutoAssignPressed() {
+	Game.AutoAssignPlayersToTeams();
+}
+
 (function() {
-	$.Schedule(0.2, CheckStartable)
-	UpdateTimer()
 	$("#TeamList").RemoveAndDeleteChildren()
 	for (var teamId of Game.GetAllTeamIDs()) {
 		Snippet_Team(Number(teamId))
 	}
-
+	Game.AutoAssignPlayersToTeams();
+	OnTeamPlayerListChanged();
 	$.RegisterForUnhandledEvent("DOTAGame_TeamPlayerListChanged", OnTeamPlayerListChanged);
 	$.RegisterForUnhandledEvent("DOTAGame_PlayerSelectedCustomTeam", OnPlayerSelectedTeam);
-	OnTeamPlayerListChanged();
+	UpdateTimer()
 })()

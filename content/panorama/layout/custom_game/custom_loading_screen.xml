@@ -1,6 +1,7 @@
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/team_select.css" />
 		<include src="file://{resources}/styles/custom_loading_screen.css" />
 	</styles>
 	<scripts>
@@ -107,23 +108,36 @@
 			<Image src="file://{images}/custom_game/loading_screen/angel_arena.png" />
 			<Image src="file://{images}/custom_game/loading_screen/black_star.png" />
 		</Panel>
+
+		<Panel id="TipsPanel" hittest="true" onactivate="NextTip()">
+			<Label id="TipLabel" text=""/>
+		</Panel>
 		<Panel id="afterload_panel" hittest="true">
-			<Panel id="GoalVotePanel">
-				<Label id="GoalVoteLabel" text="#kill_goal_tooltip_vote_title"/>
-				<Panel id="GoalVotePanelKLValues" />
-				<Panel id="GoalVotePanelCustomSettingsRoot">
-					<Panel class="LeftRightFlow FullWidth" id="GoalVotePanelCustomSettings_GM201"> <!-- ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES -->
-						<Button class="ButtonBevel Green GoalVoteSettingsButton" id="GoalVoteSettings_AbilityShop" onactivate="VoteMap(201, 102);">
-							<Label text="Ability Shop"/>
-						</Button>
-						<Button class="ButtonBevel Green GoalVoteSettingsButton" id="GoalVoteSettings_RandomOMG" onactivate="VoteMap(201, 101);">
-							<Label text="Random OMG"/>
-						</Button>
+			<Panel hittest="true" id="GCColumn" onactivate="$.Msg('hittest!')" >
+				<Panel id="LocalPlayerDataPanel">
+					<Panel id="PlayerInfoLoading" />
+					<Panel id="ServerStatsPanel">
+
 					</Panel>
 				</Panel>
 			</Panel>
-			<!-- <Movie class="VideoPanel" style="width: 640px; height: 360px;" src="file://{resources}/videos/promo/mk_arcana.webm" controls="none" repeat="true" autoplay="onload" />
-			<DOTAHTMLPanel id="InlineVideoPanel" style="width: 640px; height: 360px; align: right bottom;" url="https://www.youtube.com/embed/YXPiKP497lk"/> -->
+			<Panel id="TeamSelectionColumn" />
+			<Panel hittest="false" id="SettingsColumn" >
+				<Panel id="KillGoalVote">
+					<Panel id="CustomSettingsRoot">
+						<Panel class="LeftRightFlow FullWidth" id="GoalVotePanelCustomSettings_GM201"> <!-- ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES -->
+							<Button class="ButtonBevel Green GoalVoteSettingsButton" id="GoalVoteSettings_AbilityShop" onactivate="VoteMap(201, 102);">
+								<Label text="Ability Shop"/>
+							</Button>
+							<Button class="ButtonBevel Green GoalVoteSettingsButton" id="GoalVoteSettings_RandomOMG" onactivate="VoteMap(201, 101);">
+								<Label text="Random OMG"/>
+							</Button>
+						</Panel>
+					</Panel>
+					<Panel id="KillGoalVoteVartiantList" />
+					<TextButton id="KillGoalVoteSubmit" class="ButtonBevel Green" text="SUBMIT!" onactivate="SubmitKillGoal()" />
+				</Panel>
+			</Panel>
 		</Panel>
 	</Panel>
 </root>

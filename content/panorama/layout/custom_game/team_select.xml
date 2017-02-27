@@ -15,7 +15,7 @@
 				<Panel id="TeamBackgroundGradientHighlight" />
 				<Panel id="TeamGroup" >
 					<Panel id="TeamHeader">
-						<Panel id="TeamLogo" />
+						<!-- <Panel id="TeamLogo" /> -->
 						<Label id="TeamNameLabel" text="{s:team_name}" />
 						<Label id="JoinTeamLabel" text="#custom_game_team_select_join" />
 					</Panel>
@@ -27,39 +27,53 @@
 
 		<snippet name="PlayerSlot">
 			<Panel class="PlayerSlot">
-				<Panel id="EmptySlotIcon" />
 				<DOTAAvatarImage id="PlayerAvatar" />
-
 				<Label id="PlayerIsHostPanel" />
-
 				<Label id="PlayerName" text="#custom_game_team_select_empty_slot" />
-				<Label id="PlayerName" text="PLAYER_NAME" />
-
-				<Button id="PlayerLeaveTeamButton" onactivate="OnLeaveTeamPressed()" />
+				<Button id="PlayerLeaveTeamButton" onactivate="Game.PlayerJoinTeam(DOTATeam_t.DOTA_TEAM_NOTEAM)" />
 			</Panel>
 		</snippet>
 	</snippets>
 	<Panel hittest="false" class="TeamSelect">
-		<Panel hittest="true" id="GCColumn" onactivate="$.Msg('hittest!')" >
-			<Panel id="LocalPlayerDataPanel">
-				<Label text="~~~" />
-			</Panel>
-		</Panel>
+		<Panel hittest="true" id="GCColumn" />
 		<Panel hittest="false" id="TeamSelectionColumn" >
 			<Panel id="TeamList">
 
 			</Panel>
-			<Panel id="UnassignedPlayersContainer">
-
-			</Panel>
 		</Panel>
 		<Panel hittest="false" id="SettingsColumn" >
-			<Label id="StartGameCountdownTimer" text="0" />
-			<Panel id="KillGoalVote">
-				<Panel id="KillGoalVoteVartiantList">
-
+			<Panel id="UnassignedPlayerPanel" >
+				<Button id="UnassignedPlayersButton" onactivate="Game.PlayerJoinTeam(DOTATeam_t.DOTA_TEAM_NOTEAM)">
+					<Panel id="UnassignedPlayersHeader">
+						<Label text="#custom_game_team_select_unassigned_players" />
+					</Panel>
+					<Panel id="UnassignedPlayersDivider" />
+					<Panel id="UnassignedPlayersContainer" />
+				</Button>
+			
+				<Button id="AutoAssignButton" onactivate="OnAutoAssignPressed()">
+					<Image src="s2r://panorama/images/control_icons/double_arrow_left_png.vtex" />
+					<Label text="#custom_game_team_select_auto_assign" />
+				</Button>
+				<Button id="ShuffleTeamAssignmentButton" onactivate="OnShufflePlayersPressed()">
+					<Label text="#custom_game_team_select_shuffle" />
+					<Image src="s2r://panorama/images/control_icons/shuffle_psd.vtex" />
+				</Button>
+				<Button id="LockAndStartButton" class="PlayButton" onactivate="OnLockAndStartPressed()">
+					<Label text="#custom_game_team_select_lock_start" />
+				</Button>
+				<Button id="CancelAndUnlockButton" class="PlayButton" onactivate="OnCancelAndUnlockPressed()">
+					<Label text="#custom_game_team_select_cancel_unlock" />
+				</Button>
+			</Panel>
+			<Panel id="StartGameCountdownTimer">
+				<Image id="TimerBg" src="s2r://panorama/images/status_icons/timer_background_psd.vtex" />
+				<Image id="TimerRing" src="s2r://panorama/images/status_icons/timer_ring_psd.vtex" />
+				<Label id="TeamSelectTimer" text="#custom_game_team_select_timer" />
+				<Panel id="TimerLabelBox" >
+					<Label id="TimerLabelAutoStart" text="#custom_game_team_select_auto_start" />
+					<Label id="TimerLabelGameStart" text="#custom_game_team_select_starting" />
 				</Panel>
-				<TextButton id="KillGoalVoteSubmit" class="ButtonBevel Green" text="SUBMIT!" onactivate="SubmitKillGoal()" />
 			</Panel>
 		</Panel>
 	</Panel>
