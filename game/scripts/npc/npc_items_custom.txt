@@ -12771,7 +12771,7 @@
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
 
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"30"
 
 		"AbilitySpecial"
 		{
