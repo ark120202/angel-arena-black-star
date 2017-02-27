@@ -19,6 +19,7 @@
 #base "abilities/heroes/hero_poseidon.txt"
 #base "abilities/heroes/hero_saber.txt"
 #base "abilities/heroes/hero_sara.txt"
+#base "abilities/heroes/hero_destroyer.txt"
 
 #base "abilities/heroes/hero_wisp.txt"
 #base "abilities/heroes/hero_warlock.txt"

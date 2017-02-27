@@ -410,4 +410,27 @@
 		"Ability5"	"boss_kel_thuzad_summon_undead"
 		"Ability6"	"boss_kel_thuzad_erebus"
 	}
+
+	"npc_arena_hero_destroyer"
+	{
+		"base_hero"	"npc_dota_hero_wisp"
+		"Model"	"models/units/destroyer/destroyer.vmdl"
+		"SceneCamera"	"custom_scene_hero_destroyer"
+		"Ability1"		"destroyer_armor_crush"
+		"Ability2"		"destroyer_seal_of_limit"
+		"Ability3"		"destroyer_body_reconstruction"
+		"Ability4"		""
+		"Ability5"		""
+		"AttackRate"	"1.1"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttackRange"			"150"
+		"ProjectileModel"		""
+		"AttributeBaseStrength"	"31"
+		"AttributeBaseIntelligence"	"10"
+		"AttributeBaseAgility"	"12"
+		"AttributeStrengthGain"	"2.8"
+		"AttributeIntelligenceGain"	"1.2"
+		"AttributeAgilityGain"	"2.0"
+	}
 }
