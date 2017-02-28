@@ -235,9 +235,10 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 	end
 	local champLevel = Spawner:RollChampion()
 	if champLevel then
-		print("Spawn champion with level " .. champLevel)
+		--print("Spawn champion with level " .. champLevel)
 		modelScale = modelScale + (champLevel / 30)
 		unit:SetRenderColor(RandomInt(0, 255), RandomInt(0, 255), RandomInt(0, 255))
+		unit:AddNewModifier(unit, nil, "modifier_neutral_champion", nil):SetStackCount(champLevel)
 	else
 		champLevel = 1
 	end
@@ -255,7 +256,7 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 	unit:AddNewModifier(unit, nil, "modifier_neutral_upgrade_attackspeed", {})
 	local modifier = unit:FindModifierByNameAndCaster("modifier_neutral_upgrade_attackspeed", unit)
 	if modifier then
-		modifier:SetStackCount(attackspeed)
+		modifier:SetStackCount(attackspeed * champLevel)
 	end
 	unit:SetModelScale(modelScale)
 	local model = table.nearestOrLowerKey(SPAWNER_SETTINGS[spawnerType].SpawnTypes[spawnerIndex][1], minutelevel)

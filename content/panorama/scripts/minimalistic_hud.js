@@ -65,8 +65,8 @@ function UpdatePanoramaHUD() {
 	var sw = Game.GetScreenWidth()
 	var sh = Game.GetScreenHeight()
 	var minimap = FindDotaHudElement("minimap_block");
-	$("#DynamicMinimapRoot").style.height = ((minimap.actuallayoutheight + 8) / sh * 100) + "%";
-	$("#DynamicMinimapRoot").style.width = ((minimap.actuallayoutwidth + 8) / sw * 100) + "%";
+	$("#DynamicMinimapRoot").style.height = ((minimap.actuallayoutheight + 16) / sh * 100) + "%";
+	$("#DynamicMinimapRoot").style.width = ((minimap.actuallayoutwidth + 16) / sw * 100) + "%";
 	var glyphpos = FindDotaHudElement("glyph").GetPositionWithinWindow()
 	if (glyphpos != null && !isNaN(glyphpos.x) && !isNaN(glyphpos.y))
 		$("#SwitchDynamicMinimapButton").style.position = (glyphpos.x / sw * 100) + "% " + (glyphpos.y / sh * 100) + "% 0"

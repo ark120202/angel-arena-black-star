@@ -44,10 +44,7 @@ function GameMode:OnNPCSpawned(keys)
 				local base_hero = npc:GetPlayerOwner():GetAssignedHero()
 				Physics:Unit(npc)
 				npc:SetAutoUnstuck(true)
-				if npc:GetKeyValue("EquipDynamicWearables") == 1 then
-					--print("equip")
-					npc:EquipItemsFromPlayerSelectionOrDefault()
-				end
+				npc:EquipItemsFromPlayerSelectionOrDefault()
 				if npc.ModelOverride then
 					npc:SetModel(npc.ModelOverride)
 					npc:SetOriginalModel(npc.ModelOverride)
@@ -222,7 +219,6 @@ function GameMode:OnEntityKilled(keys)
 				end
 				killedUnit:SetTimeUntilRespawn(killedUnit:CalculateRespawnTime())
 			end
-			CustomWearables:UnequipAllWearables(killedUnit)
 		end
 
 		if killedUnit:IsRealCreep() then

@@ -27,12 +27,18 @@
 
 #TipsPanel
 {
-	align: center bottom;
-	width: 60%;
-	min-height: 68px;
+	align: right bottom;
+	min-height: 84px;
 	background-color: rgba(20,20,20, 0.97);
 	box-shadow: -4px -4px 8px 8px rgba(20,20,20, 0.97);
-	margin-bottom: 120px;
+	margin-bottom: 70px;
+	margin-right: 8px;
+	width: 57%;
+}
+.AspectRatio16x9 #TipsPanel
+{
+	width: 60%;
+	margin-right: 15px;
 }
 #TipLabel
 {
@@ -42,7 +48,6 @@
 	margin: 8px 20px;
 	text-align: center;
 }
-
 #LocalPlayerDataPanel
 {
 	width: 100%;
@@ -85,4 +90,104 @@
 .Loading #ServerStatsPanel
 {
 	visibility: collapse;
+}
+
+#LocalPlayerData
+{
+	flow-children: right;
+	height: 106px;
+}
+
+#PlayerAvatar
+{
+	margin: 3px;
+	border: 2px solid lightgrey;
+	border-radius: 100%;
+	height: 100px;
+	width: 100px;
+}
+
+#PlayerNickName
+{
+	vertical-align: center;
+	margin-left: 6px;
+}
+
+#PlayerNickName Label
+{
+	font-size: 30px;
+}
+
+#LocalPlayerDataFlow
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+}
+
+#ServerStatsPanel
+{
+	height: 100%;
+	width: 100%;
+	flow-children: down;
+}
+
+#ServerStatsPanel .KeyValuePanel
+{
+	margin: 6px 20px;
+	width: 100%;
+
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #373d45 ), to( #4d5860 ) );
+	border-style: solid;
+	border-width: 2px;
+	padding: 4px 10px;
+	border-top-color: #555555;
+	border-left-color: #494949;
+	border-bottom-color: #333333;
+	border-right-color: #404040;
+}
+
+#ServerStatsPanel Label
+{
+	color: white;
+	font-size: 30px;
+}
+
+#ServerStatsPanel .KeyValueKey
+{
+	font-weight: bold;
+}
+
+#KillGoalVote
+{
+	width: 100%;
+	vertical-align: center;
+	margin: 4px;
+	margin-top: 120px;
+	margin-left: 20px;
+	background-color: rgba(0,0,0,0.9);
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+	flow-children: down;
+	padding: 4px;
+}
+
+#KillGoalVoteVartiantList
+{
+	width: 100%;
+	flow-children: down;
+	margin-bottom: 7px;
+}
+
+.KillGoalVariant
+{
+	width: 100%;
+	margin-bottom: 3px;
+	border-bottom: 1px solid grey;
+}
+
+#KillGoalVoteSubmit
+{
+	width: 100%;
+	margin: 3px;
 }

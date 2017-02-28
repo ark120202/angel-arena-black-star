@@ -559,7 +559,7 @@ VALVE_ITEMBUILDS = {
 					"item_tranquil_boots",
 					"item_magic_wand",
 					"item_soul_ring",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_ward_observer",
 					"item_tpscroll",
 				}
@@ -576,7 +576,7 @@ VALVE_ITEMBUILDS = {
 					"item_ultimate_scepter_arena",
 					"item_heart_arena",
 					"item_sheep",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 					"item_glimmer_cape",
 					"item_solar_crest",
 				}
@@ -612,14 +612,14 @@ VALVE_ITEMBUILDS = {
 					"item_arcane_boots",
 					"item_blink_arena",
 					"item_magic_wand",
-					"item_mekansm",
+					"item_mekansm_2",
 				}
 			},
 			{
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
 					"item_necronomicon_3",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 					"item_shivas_guard",
 					"item_assault",
 					"item_blade_mail_3",
@@ -725,13 +725,13 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
 					"item_cyclone",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_sheepstick",
 					"item_rod_of_atos",
 					"item_force_staff",
 					"item_sphere",
 					"item_shivas_guard",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 				}
 			},
 		}
@@ -1385,7 +1385,7 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Core_Items",
 				content = {
 					"item_arcane_boots",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_ward_observer",
 				}
 			},
@@ -1393,7 +1393,7 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
 					"item_ultimate_scepter_arena",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 					"item_vladmir",
 					"item_sheepstick",
 					"item_necronomicon",
@@ -1525,7 +1525,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_magic_wand",
 					"item_arcane_boots",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_tpscroll",
 				}
 			},
@@ -1541,7 +1541,7 @@ VALVE_ITEMBUILDS = {
 					"item_shivas_guard",
 					"item_heart_arena",
 					"item_refresher_arena",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 				}
 			},
 		}
@@ -1583,14 +1583,14 @@ VALVE_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_sheepstick",
 					"item_shivas_guard",
 					"item_ultimate_scepter_arena",
 					"item_pipe",
 					"item_cyclone",
 					"item_ancient_janggo",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 				}
 			},
 		}
@@ -1638,11 +1638,11 @@ VALVE_ITEMBUILDS = {
 					"item_sheepstick",
 					"item_heart_arena",
 					"item_black_king_bar_6",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_pipe",
 					"item_travel_boots",
 					"item_octarine_core_arena",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 				}
 			},
 		}
@@ -1676,7 +1676,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_arcane_boots",
 					"item_magic_wand",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_ward_observer",
 					"item_tpscroll",
 				}
@@ -1932,7 +1932,7 @@ VALVE_ITEMBUILDS = {
 					"item_blade_mail_3",
 					"item_shivas_guard",
 					"item_blink_arena",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_ultimate_scepter_arena",
 				}
 			},
@@ -2123,14 +2123,14 @@ VALVE_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_black_king_bar_6",
 					"item_refresher_arena",
 					"item_ultimate_scepter_arena",
 					"item_sheepstick",
 					"item_shivas_guard",
 					"item_radiance_3",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 				}
 			},
 		}
@@ -2223,7 +2223,7 @@ VALVE_ITEMBUILDS = {
 					"item_desolator",
 					"item_necronomicon",
 					"item_greater_crit",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_silver_edge",
 				}
 			},
@@ -2319,7 +2319,7 @@ VALVE_ITEMBUILDS = {
 					"item_ultimate_scepter_arena",
 					"item_invis_sword",
 					"item_heavens_halberd_arena",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_silver_edge",
 				}
 			},
@@ -2410,7 +2410,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_shivas_guard",
 					"item_sheepstick",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_pipe",
 					"item_cyclone",
 					"item_rod_of_atos",
@@ -2497,7 +2497,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_tranquil_boots",
 					"item_magic_wand",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_ward_observer",
 					"item_tpscroll",
 				}
@@ -2660,7 +2660,7 @@ VALVE_ITEMBUILDS = {
 					"item_rod_of_atos",
 					"item_octarine_core_arena",
 					"item_glimmer_cape",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 				}
 			},
 		}
@@ -2690,7 +2690,7 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Core_Items",
 				content = {
 					"item_tranquil_boots",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_point_booster",
 					"item_tpscroll",
 				}
@@ -2833,7 +2833,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_magic_wand",
 					"item_tranquil_boots",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_ward_observer",
 					"item_tpscroll",
 				}
@@ -3133,7 +3133,7 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Core_Items",
 				content = {
 					"item_power_treads",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_ultimate_scepter_arena",
 					"item_tpscroll",
 				}
@@ -3322,7 +3322,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_magic_wand",
 					"item_power_treads",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_point_booster",
 					"item_tpscroll",
 				}
@@ -3331,7 +3331,7 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
 					"item_ultimate_scepter_arena",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 					"item_bloodstone_arena",
 					"item_sheepstick",
 					"item_shivas_guard",
@@ -3570,7 +3570,7 @@ VALVE_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_sheepstick",
 					"item_shivas_guard",
 					"item_ghost",
@@ -3623,7 +3623,7 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
 					"item_ultimate_scepter_arena",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_sheepstick",
 					"item_shivas_guard",
 					"item_travel_boots",
@@ -3633,7 +3633,7 @@ VALVE_ITEMBUILDS = {
 					"item_heart_arena",
 					"item_refresher_arena",
 					"item_radiance_3",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 				}
 			},
 		}
@@ -3665,7 +3665,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_magic_wand",
 					"item_tranquil_boots",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_ward_observer",
 					"item_tpscroll",
 				}
@@ -3677,7 +3677,7 @@ VALVE_ITEMBUILDS = {
 					"item_travel_boots",
 					"item_sheepstick",
 					"item_sunray_dagon_5_arena",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 				}
 			},
 		}
@@ -3804,7 +3804,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_magic_wand",
 					"item_tranquil_boots",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_tpscroll",
 				}
 			},
@@ -3953,7 +3953,7 @@ VALVE_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_rod_of_atos",
 					"item_sheepstick",
 					"item_shivas_guard",
@@ -4087,7 +4087,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_magic_wand",
 					"item_power_treads",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_tpscroll",
 				}
 			},
@@ -4288,7 +4288,7 @@ VALVE_ITEMBUILDS = {
 					"item_pipe",
 					"item_shivas_guard",
 					"item_necronomicon_3",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_cyclone",
 					"item_sheepstick",
 				}
@@ -4414,7 +4414,7 @@ VALVE_ITEMBUILDS = {
 					"item_power_treads",
 					"item_force_staff",
 					"item_magic_wand",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_tpscroll",
 				}
 			},
@@ -5085,7 +5085,7 @@ VALVE_ITEMBUILDS = {
 					"item_pipe",
 					"item_refresher_arena",
 					"item_ancient_janggo",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 					"item_glimmer_cape",
 					"item_ultimate_scepter_arena",
 				}
@@ -5237,7 +5237,7 @@ VALVE_ITEMBUILDS = {
 					"item_necronomicon_3",
 					"item_refresher_arena",
 					"item_ultimate_scepter_arena",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 				}
 			},
 		}
@@ -5566,7 +5566,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_magic_wand",
 					"item_power_treads",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_ultimate_scepter_arena",
 					"item_tpscroll",
 				}
@@ -5616,7 +5616,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_power_treads",
 					"item_magic_wand",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_medallion_of_courage",
 					"item_tpscroll",
 				}
@@ -5681,7 +5681,7 @@ VALVE_ITEMBUILDS = {
 					"item_pipe",
 					"item_veil_of_discord",
 					"item_octarine_core_arena",
-					"item_guardian_greaves",
+					"item_guardian_greaves_arena",
 				}
 			},
 		}
@@ -5768,7 +5768,7 @@ VALVE_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_sheepstick",
 					"item_orchid",
 					"item_rod_of_atos",
@@ -5819,7 +5819,7 @@ VALVE_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_sheepstick",
 					"item_cyclone",
 					"item_pipe",
@@ -5857,7 +5857,7 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Core_Items",
 				content = {
 					"item_magic_wand",
-					"item_mekansm",
+					"item_mekansm_2",
 					"item_arcane_boots",
 					"item_tpscroll",
 				}

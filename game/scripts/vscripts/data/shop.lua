@@ -123,10 +123,10 @@ PANORAMA_SHOP_ITEMS = {
 			"item_medallion_of_courage",
 			"item_arcane_boots",
 			"item_ancient_janggo",
-			"item_mekansm",
 			"item_vladmir",
 			"item_pipe",
-			"item_guardian_greaves",
+			"item_mekansm_2",
+			"item_guardian_greaves_arena",
 		},
 		{
 			"item_glimmer_cape",

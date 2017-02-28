@@ -13,47 +13,21 @@ TODO LIST:
 	2 виспа оверчарж
 	понерфить ама, апокалипсиса (боссы), инвокера
 	I found a bug in custom abilities using Pudge flesh heap + apocalypse can result in infinite size which would cause the hero unable to attack - ability_lua + MODIFIER_PROPERTY_MODEL_SCALE
-Идеи для предметов:
-	Star Blade:
-		Из Fallen Star + Dark Blade + ???
-		При ударе противника с шансом x% на него падает звезда, наносящая 1000 маг урона;
-
-	??:
-		Из вангварда + Fallen Star + blademail
-
-	Varanium:
-		Дропается с боссов. Ничего не даёт, материал. Когда находится в инветаре медленно тратит хп. В бэкпаке тратит в 2 раза быстрее
-
-	Black Eye:
-		Ап Cursed Eye. Когда включен тратит много маны и немного хп, но убирает каст тайм со всех скиллов и даёт вижон через хг
-
-	Black Shield:
-		Ап апнутого ВГ, отталкивает всех врагов
-
-	Black Sword:
-		Dark Blade + Armlet + Varanium + Рецепт за 400 000. Когда активирован увеличивает всеь наносимый урон в 3 раза, а получаемый в 2
-
-	Light Spear:
-		Раз в 12 секунд позволяет атакавать юнита в любой точке карты. Если атакован юнит в радиусе атаки, то вешает на него дебаффы: стан, ослепление на 2 сек. Делается из апнутого форса.
-
-Идеи для боссов: 
-	Roshan (remake):
-		Появляется после 30 минуты. Потом - респавн 8-15 минут.
-		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
-
+	Убрать партиклы смерти виспа при смерти кастомных героев (как со станом)
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_2628]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/9c55c5fd658d08c95de3695f1bc14ade]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/9c55c5fd658d08c95de3695f1bc14ade]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/9c55c5fd658d08c95de3695f1bc14ade
+[url=https://gist.github.com/ark120202/5434bc03e99c28988eda7e68d9c751c2]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/5434bc03e99c28988eda7e68d9c751c2]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/5434bc03e99c28988eda7e68d9c751c2
 ============================================================
 Angel Arena Black Star - Версия 1.4.5:
 Добавлен новый герой: Sara
 Добавлен новый предмет: Wand of Midas
-Переработан Aether Lens (I - V)
-Переработан Ultimate Scepter; Удалён Aghanim's Shard
+Переработаны Aether Lens (I - V), Mekansm (I - II), Guardian Greaves, Ultimate Scepter
+Добавлена система нейтралов-чемпионов
 Исправлена работа Soul Piercing
 Переработан верхний список героев
+Переработано меню выбора команды перед началом игры
 Ослаблены: Saber - Excalibur, Saber - Invisible Air, Apocalypse - King Slayer, Apocalypse - Armor Tear, Phantom Cuirass, Demonic Cuirass, Apocalypse - Agni's Touch
 Усилены: Apocalypse - Apocalypse, Axe - Culling Blade, Tusk - Frozen Sigil, Monkey King - Wukong's Command, Abaddon - Borrowed Time, Bane - Fiends Grip, Batrider - Flaming Lasso, Beastmaster - Primal Roar, Broodmother - Spawn Spiderlings, Disruptor - Static Storm, Lion - Finger Of Death, Queenofpain - Sonic Wave
 Изменены: Clockwerk - Hookshot, Drow Ranger - Marksmanship, Metamorphosis Elixir
@@ -61,11 +35,12 @@ Angel Arena Black Star - Версия 1.4.5:
 Angel Arena Black Star - Version 1.4.5:
 Added new hero: Sara
 Added new item: Wand of Midas
-Reworked Aether Lens (I - V)
-Reworked Ultimate Scepter; Removed Aghanim's Shard
+Reworked Aether Lens (I - V), Mekansm (I - II), Guardian Greaves, Ultimate Scepter
+Added Champion neutrals system
 Reworked top bar
+Reworked Team Selection pre-game hud
 Fixed Soul Piercing dealt additional damage after armor reductions
-Nerfed: Saber - Excalibur, Saber - Invisible Air, Apocalypse - King Slayer, Apocalypse - Armor Tear, Phantom Cuirass, Demonic Cuirass, Apocalypse - Agni's Touch
+Nerfed: Saber - Excalibur, Saber - Invisible Air, Apocalypse - King Slayer, Apocalypse - Armor Tear, Phantom Cuirass, Demonic Cuirass, Apocalypse - Agni's Touch, Butterfly, Butterfly of Sins, Rapier of Pain
 Upped: Apocalypse - Apocalypse, Axe - Culling Blade, Tusk - Frozen Sigil, Monkey King - Wukong's Command, Abaddon - Borrowed Time, Bane - Fiends Grip, Batrider - Flaming Lasso, Beastmaster - Primal Roar, Broodmother - Spawn Spiderlings, Disruptor - Static Storm, Lion - Finger Of Death, Queenofpain - Sonic Wave
 Modified: Clockwerk - Hookshot, Drow Ranger - Marksmanship, Metamorphosis Elixir
 ============================================================
@@ -74,9 +49,15 @@ General:
 	Added new hero: Sara
 	Added new item: Wand of Midas
 	Reworked Aether Lens (I - V)
+	Reworked Mekansm (I - II)
+	Reworked Guardian Greaves
 	Reworked Ultimate Scepter
+	Added Champion neutrals system
 	Removed Aghanim's Shard
 	Reworked top bar
+	Reworked Team Selection pre-game hud
+	Shop now looks more like dota shop
+	Added advertising banner in Hero Selection
 Balance:
 	Creeps now will spawn on first minute, but instead it won't spawn on second minute
 	Minimal respawn time: 0.1 => 3 (it should solve some immediate respawn bugs)
@@ -103,6 +84,11 @@ Balance:
 		Heavy War Axe of Rage:
 			Damage Mode - Bonus Damage: 120 => 70 %
 			Bonus damage now not stacks
+		Poor Man's Shield:
+			Damage Block (Melee): 40 => 28
+			Damage Block (Ranged): 38 => 15
+			Hero Block Chance: 40 => 100 %
+			Creep Block Chance: 20 => 25 %
 	Talents:
 		
 	Abilities:
@@ -172,7 +158,7 @@ Balance:
 Fixes:
 	Fixed duels not worked on 4v4v4v4 map if one of teams fully abandoned the game
 	Fixed Apocalypse - King Slayer was missing damage tooltip
-	Fixed Saber - Instinct evaded and bloacked damage from abilities and items
+	Fixed Saber - Instinct evaded and blocked damage from abilities and items
 	Fixed Wisp using Spirits could place units out of arena while duel is ongoing
 	Fixed heroes weren't killed under fountain with two Aegises of the Immortal
 	Saber - Mana Burst now has more detaled description
@@ -182,6 +168,8 @@ Fixes:
 	Fixed Huskar could crash game while abandoning game with someone has Burning Spear modifier
 	Fixed Warlock - Shadow Word didn't worked
 	Fixed Soul Piercing dealt additional damage after armor reductions (so it was useless)
+
+Sara - Evolution: Energy to Damage: 10% => 2%
 <<+===========================================================================================================
 
 
@@ -198,3 +186,60 @@ venom
 pugna ward
 
 [	]*\/\/ Text Example[0-9.A-z\- ,\/\\]*\n++++++++++++++++++++
+
+Идеи для предметов:
+	Star Blade:
+		Из Fallen Star + Dark Blade + ???
+		При ударе противника с шансом x% на него падает звезда, наносящая 1000 маг урона;
+
+	??:
+		Из вангварда + Fallen Star + blademail
+
+	Varanium:
+		Дропается с боссов. Ничего не даёт, материал. Когда находится в инветаре медленно тратит хп. В бэкпаке тратит в 2 раза быстрее
+
+	Black Eye:
+		Ап Cursed Eye. Когда включен тратит много маны и немного хп, но убирает каст тайм со всех скиллов и даёт вижон через хг
+
+	Black Shield:
+		Ап апнутого ВГ, отталкивает всех врагов
+
+	Black Sword:
+		Dark Blade + Armlet + Varanium + Рецепт за 400 000. Когда активирован увеличивает всеь наносимый урон в 3 раза, а получаемый в 2
+
+	Light Spear:
+		Раз в 12 секунд позволяет атакавать юнита в любой точке карты. Если атакован юнит в радиусе атаки, то вешает на него дебаффы: стан, ослепление на 2 сек. Делается из апнутого форса.
+
+Идеи для боссов: 
+	Roshan (remake):
+		Появляется после 30 минуты. Потом - респавн 8-15 минут.
+		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.
+==================================================================================
+Hero:
+	Stats:
+		BAT:
+		Primary:
+		AGI:
+		STR:
+		INT:
+		AGI Gain:
+		STR Gain:
+		INT Gain:
+		Special:
+	Abilities:
+
+======================================
+Fate:
+	Аттрибуты: 1 = 10, 2 = 14, 3 = 20, 4 = 24, 5 = 30, 5+ = 36
+=======
+
+Rin:
+	Abilities:
+		Gems:
+			Topaz:
+				Ярко-белый партикл взрыв в аое
+====================================================================================
+MMR:
+100 xp = 1 lvl
+дается за игры (от длительности) = 5-15 (20min - 60min)
+ммр за игру = 25 + разница между эвередж ммр / 100

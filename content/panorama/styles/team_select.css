@@ -24,41 +24,14 @@
 	width: 20%;
 }
 
-#KillGoalVote
-{
-	width: 100%;
-	vertical-align: bottom;
-	margin: 4px;
-	background-color: rgba(0,0,0,0.5);
-	flow-children: down;
-	padding: 4px;
-}
-
-#KillGoalVoteVartiantList
-{
-	width: 100%;
-	flow-children: down;
-	margin-bottom: 7px;
-}
-
-.KillGoalVariant
-{
-	width: 100%;
-	margin-bottom: 3px;
-	border-bottom: 1px solid grey;
-}
-
-#KillGoalVoteSubmit
-{
-	width: 100%;
-	margin: 3px;
-}
-
 #TeamList
 {
-	width: 100%;
-	margin-top: 50px;
-	flow-children: right-wrap;
+	margin-top: 30px;
+	horizontal-align: center;
+	flow-children: down;
+	background-color: rgba(30,30,30,0.95);
+	border: 2px solid white;
+	border-radius: 20px;
 }
 
 #StartGameCountdownTimer
@@ -137,8 +110,10 @@
 
 .TeamSelectTeam
 {
-	width: 49%;
-	margin: 1px;
+	width: 518px;
+	horizontal-align: center;
+	margin: 4px;
+	//border: 2px solid gtey;
 }
 .teams_unlocked .TeamSelectTeam:hover #TeamBackgroundGradient,
 #TeamBackgroundGradientHighlight

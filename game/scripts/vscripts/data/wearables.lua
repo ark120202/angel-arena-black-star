@@ -1,15 +1,18 @@
 CUSTOM_WEARABLES_PLAYER_ITEMS = {
 	[109792606] = {
-		"wearable_hero_stargazer_helmet_of_the_sunray",
-		"wearable_hero_omniknight_frozen_sword",
-		"wearable_item_summoned_unit_kyuubey",
+		--"wearable_hero_stargazer_helmet_of_the_sunray",
+		--"wearable_hero_omniknight_frozen_sword",
+		--"wearable_item_summoned_unit_kyuubey",
 		"shinobu_umbrella",
 		"wearable_developer"
 	},
 	[82292900] = {
-		"wearable_hero_stargazer_helmet_of_the_sunray",
-		"wearable_hero_omniknight_frozen_sword",
-		"wearable_item_summoned_unit_kyuubey"
+		--"wearable_hero_stargazer_helmet_of_the_sunray",
+		--"wearable_hero_omniknight_frozen_sword",
+		--"wearable_item_summoned_unit_kyuubey"
+	},
+	[103166883] = {
+		"shinobu_umbrella",
 	}
 }
 
@@ -112,7 +115,7 @@ CUSTOM_WEARABLES = {
 		used_by_heroes = {"npc_arena_hero_shinobu"},
 		attach_method = WEARABLES_ATTACH_METHOD_ATTACHMENTS,
 		attachment = "attach_hitloc",
-		scale = 1.5
+		--scale = 1.5
 	}
 
 }

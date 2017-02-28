@@ -113,16 +113,27 @@
 			<Label id="TipLabel" text=""/>
 		</Panel>
 		<Panel id="afterload_panel" hittest="true">
-			<Panel hittest="true" id="GCColumn" onactivate="$.Msg('hittest!')" >
-				<Panel id="LocalPlayerDataPanel">
+			<Panel hittest="false" id="GCColumn" >
+				<Panel id="LocalPlayerDataPanel" class="Loading" style="visibility: collapse;">
 					<Panel id="PlayerInfoLoading" />
-					<Panel id="ServerStatsPanel">
-
+					<Panel id="LocalPlayerDataFlow">
+						<Panel id="LocalPlayerData">
+							<DOTAAvatarImage id="PlayerAvatar" steamid="local" hittest="true" onactivate="$.Msg('hittest!')" />
+							<DOTAUserName id="PlayerNickName" steamid="local" hittest="true" onactivate="$.Msg('hittest!')" />
+						</Panel>
+						<Panel id="ServerStatsPanel">
+							<Panel class="KeyValuePanel">
+								<Label class="KeyValueKey" text="Rating: " />
+								<Label style="horizontal-align: right;" text="{s:rating}" />
+							</Panel>
+							<Panel class="KeyValuePanel">
+								<Label class="KeyValueKey" text="Winrate: " />
+								<Label style="horizontal-align: right;" text="{s:win_rate}" />
+							</Panel>
+						</Panel>
 					</Panel>
 				</Panel>
-			</Panel>
-			<Panel id="TeamSelectionColumn" />
-			<Panel hittest="false" id="SettingsColumn" >
+				
 				<Panel id="KillGoalVote">
 					<Panel id="CustomSettingsRoot">
 						<Panel class="LeftRightFlow FullWidth" id="GoalVotePanelCustomSettings_GM201"> <!-- ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES -->
@@ -138,6 +149,8 @@
 					<TextButton id="KillGoalVoteSubmit" class="ButtonBevel Green" text="SUBMIT!" onactivate="SubmitKillGoal()" />
 				</Panel>
 			</Panel>
+			<Panel id="TeamSelectionColumn" />
+			<Panel hittest="false" id="SettingsColumn" />
 		</Panel>
 	</Panel>
 </root>

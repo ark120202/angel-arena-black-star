@@ -1,4 +1,10 @@
 modifier_item_mekansm_arena = class({})
+function modifier_item_mekansm_arena:IsHidden()
+	return true
+end
+function modifier_item_mekansm_arena:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
 function modifier_item_mekansm_arena:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
@@ -29,13 +35,13 @@ function modifier_item_mekansm_arena:GetAuraRadius()
 	return self:GetAbility():GetSpecialValueFor("radius")
 end
 function modifier_item_mekansm_arena:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_FRIENDLY
+	return self:GetAbility():GetAbilityTargetTeam()
 end
 function modifier_item_mekansm_arena:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO
+	return self:GetAbility():GetAbilityTargetType()
 end
 function modifier_item_mekansm_arena:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+	return self:GetAbility():GetAbilityTargetFlags()
 end
 
 modifier_item_mekansm_arena_effect = class({})

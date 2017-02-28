@@ -33,8 +33,8 @@
 #DynamicMinimapRoot
 {
 	align: left bottom;
-	margin-left: -4px;
-	margin-bottom: -4px;
+	margin-left: -8px;
+	margin-bottom: -8px;
 	
 	transition-property: transform;
 	transition-duration: 0s;

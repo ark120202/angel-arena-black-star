@@ -22,7 +22,7 @@ function omniknight_purification_lua:OnSpellStart() if IsServer() then
 	end
 	for _,target in ipairs(targets) do
 		target:EmitSound("Hero_Omniknight.Purification")
-		local pfx = ParticleManager:CreateParticle(self:GetCaster():TranslateParticle("particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"), PATTACH_ABSORIGIN_FOLLOW, target)
+		local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification.vpcf", PATTACH_ABSORIGIN_FOLLOW, target, self:GetCaster())
 		ParticleManager:SetParticleControl(pfx, 1, Vector(radius, radius, radius))
 		ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 		for _,v in ipairs(FindUnitsInRadius(self:GetCaster():GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)) do

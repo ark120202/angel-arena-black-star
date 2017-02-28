@@ -52,8 +52,8 @@ if IsServer() then
 	end
 
 	function modifier_arena_hero:OnDeath(k)
-		local parent = k.attacker
-		if parent == self:GetParent() and k.unit:IsCreep() then
+		local parent = self:GetParent()
+		if k.attacker == parent and k.unit:IsCreep() then
 			local gold = 0
 			local xp = 0
 			for k,v in pairs(CREEP_BONUSES_MODIFIERS) do
@@ -75,6 +75,9 @@ if IsServer() then
 			if xp > 0 then
 				parent:AddExperience(xp, false, false)
 			end
+		end
+		if k.unit == parent then
+			parent:RemoveNoDraw()
 		end
 	end
 

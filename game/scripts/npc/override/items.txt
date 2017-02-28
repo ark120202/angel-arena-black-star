@@ -285,22 +285,22 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_block_melee"	"40"
+				"damage_block_melee"	"28"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_block_ranged"	"38"
+				"damage_block_ranged"	"15"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"20"
+				"block_chance"			"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance_hero"		"40"
+				"block_chance_hero"		"100"
 			}
 		}
 	}
@@ -325,14 +325,6 @@
 		"SecretShop"					"0"
 	}
 	"item_null_talisman"
-	{
-		"SecretShop"					"0"
-	}
-	"item_recipe_mekansm"
-	{
-		"SecretShop"					"0"
-	}
-	"item_mekansm"
 	{
 		"SecretShop"					"0"
 	}
@@ -758,14 +750,6 @@
 		"SecretShop"					"0"
 	}	
 	"item_solar_crest"
-	{
-		"SecretShop"					"0"
-	}	
-	"item_recipe_guardian_greaves"
-	{
-		"SecretShop"					"0"
-	}	
-	"item_guardian_greaves"
 	{
 		"SecretShop"					"0"
 	}	

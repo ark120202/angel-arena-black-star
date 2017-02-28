@@ -32,7 +32,6 @@ local requirements = {
 	"data/containers",
 	"data/kv_data",
 	"data/modifiers",
-	"data/wearables",
 	"data/shop",
 	"data/itembuilds",
 	"data/abilities",
@@ -51,14 +50,12 @@ local requirements = {
 	"hero_selection",
 	"internal/containers",
 	"internal/scepter",
-	"playermessages",
 	"herovoice",
 	"gold",
 	"kills",
 	"panorama_shop",
 	"gamemodes",
 	"statcollection/init",
-	"custom_wearables",
 	"SimpleAI",
 	"dynamic_minimap",
 	"custom_runes/custom_runes",
@@ -66,7 +63,8 @@ local requirements = {
 	"filters",
 	"ability_shop",
 	"custom_talents/custom_talents",
-	"dynamic_wearables/dynamic_wearables"
+	"dynamic_wearables/dynamic_wearables",
+	"data/wearables",
 }
 local modifiers = {
 	["modifier_state_hidden"] = "modifiers/modifier_state_hidden",
@@ -79,6 +77,8 @@ local modifiers = {
 	["modifier_max_attack_range"] = "modifiers/modifier_max_attack_range.lua",
 	["modifier_arena_courier"] = "modifiers/modifier_arena_courier.lua",
 	["modifier_arena_hero"] = "modifiers/modifier_arena_hero.lua",
+	["modifier_neutral_champion"] = "modifiers/modifier_neutral_champion.lua",
+	["modifier_arena_hero_wisp"] = "heroes/hero_wisp/modifier_arena_hero_wisp.lua"
 }
 
 for i = 1, #requirements do

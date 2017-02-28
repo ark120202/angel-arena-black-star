@@ -10,7 +10,7 @@
 	</scripts>
 	<snippets>
 		<snippet name="Team">
-			<Button class="TeamSelectTeam" onactivate="OnJoinTeamPressed()">
+			<Button class="TeamSelectTeam" >
 				<Panel id="TeamBackgroundGradient" />
 				<Panel id="TeamBackgroundGradientHighlight" />
 				<Panel id="TeamGroup" >
@@ -37,9 +37,7 @@
 	<Panel hittest="false" class="TeamSelect">
 		<Panel hittest="true" id="GCColumn" />
 		<Panel hittest="false" id="TeamSelectionColumn" >
-			<Panel id="TeamList">
-
-			</Panel>
+			<Panel id="TeamList" />
 		</Panel>
 		<Panel hittest="false" id="SettingsColumn" >
 			<Panel id="UnassignedPlayerPanel" >

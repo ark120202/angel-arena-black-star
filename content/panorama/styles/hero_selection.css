@@ -582,7 +582,7 @@
 #MinimapPanel
 {
 	width: 350px;
-	height: 350px;
+	height: width-percentage(100%);
 	margin-top: 50px;
 	horizontal-align: center;
 }
@@ -809,9 +809,8 @@
 
 #AdsBanner
 {
-	margin-top: 5px;
 	width: 100%; //384
-	height: width-percentage(17%); //45.3125% 174
+	height: width-percentage(64%); //45.3125% 174, 65.1 250
 	visibility: visible;
 	transition-property: pre-transform-scale2d, brightness;
 	transition-duration: 0.15s;

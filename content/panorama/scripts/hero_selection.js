@@ -19,7 +19,7 @@ var SelectedHeroData,
 var SteamIDSpecialBGs = {
 	//ark120202
 	109792606: [
-		"https://pp.vk.me/c638727/v638727976/1134a/d1RxLF8mWkE.jpg",
+		"https://pp.userapi.com/c638727/v638727976/1134a/d1RxLF8mWkE.jpg",
 	],
 	//Murzik
 	82292900: [
@@ -316,13 +316,17 @@ function UpdatePrecacheProgress(t) {
 	$("#PrecacheProgressBar").max = Object.keys(t).length;
 }
 
-var adsurl = "http://dota2.sgm-luck.ru/";
+var adsurl = "https://goo.gl/wQpngH"; //dota2.sgm-luck.ru
+var adsEnabledLangs = [
+	"russian",
+	"ukrainian",
+	"bulgarian",
+	"bulgarian",
+];
 
 function OnAdsClicked() {
-	//if (GameUI.IsControlDown()) {
-	$.DispatchEvent("ExternalBrowserGoToURL", adsurl)
-		//} else
-		//	$.DispatchEvent("DOTADisplayURL", adsurl)
+	$.DispatchEvent("ExternalBrowserGoToURL", adsurl);
+	//$.DispatchEvent("DOTADisplayURL", adsurl)
 }
 
 (function() {
@@ -370,6 +374,5 @@ function OnAdsClicked() {
 	$.GetContextPanel().SetHasClass("CustomSelectionBackground", bglist != null)
 	if (bglist)
 		$("#HeroSelectionCustomBackground").SetImage(bglist[Math.floor(Math.random() * bglist.length)]);
-	var lang = $.Language()
-		//$("#AdsBanner").visible = lang == "russian" || lang == "ukrainian"
+	$("#AdsBanner").visible = adsEnabledLangs.indexOf($.Language()) > -1
 })();

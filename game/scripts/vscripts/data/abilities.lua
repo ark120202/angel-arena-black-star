@@ -67,6 +67,9 @@ REFRESH_LIST_IGNORE_REARM = {
 	"item_black_king_bar_4",
 	"item_black_king_bar_5",
 	"item_black_king_bar_6",
+	"item_mekansm_arena",
+	"item_mekansm_2",
+	"item_guardian_greaves_arena",
 	
 	"earthshaker_echo_slam",
 	"juggernaut_omni_slash",

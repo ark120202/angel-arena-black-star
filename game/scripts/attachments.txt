@@ -15,19 +15,6 @@
 				"XPos"		"26"
 			}
 		}
-		"attach_attack2"
-		{
-			"models/custom/umbrella_rainbow.vmdl"
-			{
-				"scale"		"1.7999999523163"
-				"pitch"		"81"
-				"roll"		"-33"
-				"ZPos"		"5"
-				"YPos"		"0"
-				"yaw"		"0"
-				"XPos"		"0"
-			}
-		}
 	}
 	"models/items/furion/treant_stump.vmdl"
 	{

@@ -22,7 +22,7 @@
 	<Panel hittest="false" class="base">
 		<Panel hittest="true" onmouseactivate="" id="ShopBase" class="ShopBase_Out">
 			<Panel id="ItembuildsPanel">
-				<Panel id="Itembuild_select" />
+				<Panel id="Itembuild_selectBox" />
 				<Panel class="SimpleRow">
 					<Label text="#panorama_shop_itembuild_author"/>
 					<Label class="SimpleRowValue" id="Itembuild_author" />

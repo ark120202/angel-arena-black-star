@@ -2,7 +2,7 @@ function CPrint( ... )
 	if SendDebugInfoToClient then
 		local player
 		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-			if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) and CustomWearables:HasWearable(i, "wearable_developer") then
+			if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) and DynamicWearables:HasWearable(i, "wearable_developer") then
 				player = PlayerResource:GetPlayer(i)
 			end
 		end

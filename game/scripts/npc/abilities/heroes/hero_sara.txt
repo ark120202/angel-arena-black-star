@@ -46,7 +46,7 @@
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_to_energy_pct"	"10"
+				"damage_to_energy_pct"	"2"
 			}
 			"08"
 			{

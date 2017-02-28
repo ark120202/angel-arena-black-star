@@ -17,7 +17,7 @@ function OnSpellStart(keys)
 	end
 	local dummy = CreateUnitByName("npc_dummy_unit", point, false, nil, nil, caster:GetTeamNumber())
 	dummy:EmitSound("Arena.Hero_Stargazer.GammaRay.Cast")
-	local particle = ParticleManager:CreateParticle(caster:TranslateParticle("particles/arena/units/heroes/hero_stargazer/gamma_ray_immortal1.vpcf"), PATTACH_ABSORIGIN_FOLLOW, dummy)
+	local particle = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_stargazer/gamma_ray_immortal1.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy, caster)
 	ParticleManager:SetParticleControl(particle, 1, Vector(radius, radius, radius))
 	Timers:CreateTimer(0.5, function()
 		dummy:RemoveSelf()

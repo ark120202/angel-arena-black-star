@@ -55,12 +55,12 @@ function SearchItems() {
 function PushItemsToList() {
 	var isTabSelected = false
 	for (var shopName in ItemList) {
-		var TabButton = $.CreatePanel('Button', $("#ShopTabs"), "shop_tab_" + shopName)
+		var TabButton = $.CreatePanel('RadioButton', $("#ShopTabs"), "shop_tab_" + shopName)
 		TabButton.AddClass("ShopTabButton")
 		TabButton.style.width = (100 / Object.keys(ItemList).length) + "%";
 		var TabButtonLabel = $.CreatePanel('Label', TabButton, "")
 		TabButtonLabel.text = $.Localize("panorama_shop_shop_tab_" + shopName)
-		TabButtonLabel.AddClass("ShopTabButtonLabel")
+		TabButtonLabel.hittest = false;
 		var SelectShopTabAction = (function(_shopName) {
 			return function() {
 				SelectShopTab(_shopName)
@@ -455,7 +455,7 @@ function UpdateItembuildsForHero() {
 	var heroName = GetPlayerHeroName(Game.GetLocalPlayerID())
 	if (LastHero != heroName) {
 		LastHero = heroName;
-		var DropRoot = $("#Itembuild_select");
+		var DropRoot = $("#Itembuild_selectBox");
 		var content = "";
 		var SelectedTable;
 		if (Itembuilds[heroName]) {

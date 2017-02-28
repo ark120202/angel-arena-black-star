@@ -55,10 +55,13 @@ function Precache(context)
 		"particles/econ/events/ti6/radiance_owner_ti6.vpcf",
 		"particles/arena/items_fx/radiance_frozen_owner.vpcf",
 		"particles/arena/items_fx/wand_of_midas.vpcf",
+		"particles/econ/events/ti6/mekanism_ti6.vpcf",
+		"particles/econ/events/ti6/mekanism_recipient_ti6.vpcf",
 		--Heroes
 		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press.vpcf",
+		"particles/units/heroes/hero_wisp/wisp_stunned_original.vpcf", --fix
 		--Runes
 		"particles/arena/generic_gameplay/rune_tripledamage.vpcf",
 		"particles/arena/generic_gameplay/rune_tripledamage_owner.vpcf",
@@ -104,11 +107,12 @@ function Precache(context)
 	}
 	
 	for _, handle in pairs(CUSTOM_WEARABLES) do
-		if handle.particles then
+		DynamicWearables:PrecacheUnparsedWearable(context, handle)
+		--[[if handle.particles then
 			for _,v in pairs(handle.particles) do
 				table.insert(particles, v.name)
 			end
-		end
+		end]]
 		--[[if handle.models and type(handle.models) == "table" and #handle.models > 0 then
 			for _,v in pairs(handle.models) do
 				if v.model then

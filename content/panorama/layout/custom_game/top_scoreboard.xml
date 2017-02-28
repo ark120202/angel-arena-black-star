@@ -44,8 +44,8 @@
 		</snippet>
 	</snippets>
 
-	<Panel class="base">
-		<Panel id="TopBarLeftFlare" />
+	<Panel class="base" hittest="false">
+		<Panel id="TopBarLeftFlare" hittest="false" />
 		<Panel id="TopBarLeftTeams" hittest="false">
 			<Panel id="TopBarLeftPlayers" hittest="false" class="PlayerContainer" />
 		</Panel>

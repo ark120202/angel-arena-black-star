@@ -13,8 +13,6 @@
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/minimalistic_hud.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/containers/container_base.xml" />
 		
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/duel1x1call.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/playermessages.xml" />
 		<!-- <CustomUIElement type="HudTopBar" layoutfile="file://{resources}/layout/custom_game/arena_top_scoreboard.xml" /> -->
 		<CustomUIElement type="HudTopBar" layoutfile="file://{resources}/layout/custom_game/top_scoreboard.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_game_info.xml" />
