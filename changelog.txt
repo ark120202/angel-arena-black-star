@@ -21,155 +21,26 @@ TODO LIST:
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/5434bc03e99c28988eda7e68d9c751c2
 ============================================================
 Angel Arena Black Star - Версия 1.4.5:
-Добавлен новый герой: Sara
-Добавлен новый предмет: Wand of Midas
-Переработаны Aether Lens (I - V), Mekansm (I - II), Guardian Greaves, Ultimate Scepter
-Добавлена система нейтралов-чемпионов
-Исправлена работа Soul Piercing
-Переработан верхний список героев
-Переработано меню выбора команды перед началом игры
-Ослаблены: Saber - Excalibur, Saber - Invisible Air, Apocalypse - King Slayer, Apocalypse - Armor Tear, Phantom Cuirass, Demonic Cuirass, Apocalypse - Agni's Touch
-Усилены: Apocalypse - Apocalypse, Axe - Culling Blade, Tusk - Frozen Sigil, Monkey King - Wukong's Command, Abaddon - Borrowed Time, Bane - Fiends Grip, Batrider - Flaming Lasso, Beastmaster - Primal Roar, Broodmother - Spawn Spiderlings, Disruptor - Static Storm, Lion - Finger Of Death, Queenofpain - Sonic Wave
-Изменены: Clockwerk - Hookshot, Drow Ranger - Marksmanship, Metamorphosis Elixir
+
 ============================================================
 Angel Arena Black Star - Version 1.4.5:
-Added new hero: Sara
-Added new item: Wand of Midas
-Reworked Aether Lens (I - V), Mekansm (I - II), Guardian Greaves, Ultimate Scepter
-Added Champion neutrals system
-Reworked top bar
-Reworked Team Selection pre-game hud
-Fixed Soul Piercing dealt additional damage after armor reductions
-Nerfed: Saber - Excalibur, Saber - Invisible Air, Apocalypse - King Slayer, Apocalypse - Armor Tear, Phantom Cuirass, Demonic Cuirass, Apocalypse - Agni's Touch, Butterfly, Butterfly of Sins, Rapier of Pain
-Upped: Apocalypse - Apocalypse, Axe - Culling Blade, Tusk - Frozen Sigil, Monkey King - Wukong's Command, Abaddon - Borrowed Time, Bane - Fiends Grip, Batrider - Flaming Lasso, Beastmaster - Primal Roar, Broodmother - Spawn Spiderlings, Disruptor - Static Storm, Lion - Finger Of Death, Queenofpain - Sonic Wave
-Modified: Clockwerk - Hookshot, Drow Ranger - Marksmanship, Metamorphosis Elixir
+
 ============================================================
 Angel Arena Black Star - Version 1.4.5:
 General:
-	Added new hero: Sara
-	Added new item: Wand of Midas
-	Reworked Aether Lens (I - V)
-	Reworked Mekansm (I - II)
-	Reworked Guardian Greaves
-	Reworked Ultimate Scepter
-	Added Champion neutrals system
-	Removed Aghanim's Shard
-	Reworked top bar
-	Reworked Team Selection pre-game hud
-	Shop now looks more like dota shop
-	Added advertising banner in Hero Selection
+	
 Balance:
-	Creeps now will spawn on first minute, but instead it won't spawn on second minute
-	Minimal respawn time: 0.1 => 3 (it should solve some immediate respawn bugs)
+	
 	Runes:
 		
 	Items:
-		Butterfly, Butterfly of Sins and Rapier of Pain now gives max movement speed on activate
-		Butterfly:
-			Removed Flutter bonus evasion
-		Butterfly of Sins:
-			Flutter bonus evasion: 100 =>  50%
-		Rapier of Pain:
-			Flutter bonus evasion: 100 =>  90%
-		Phantom Cuirass:
-			Bonus Health Regen: 3.5 => 2.5 %
-		Demonic Cuirass:
-			Bonus Health Regen: 4 => 3 %
-		Metamorphosis Elixir:
-			Cost: 16000 => 100
-			Now is stockable item:
-				Stock Time: 5m
-				Stock Time form game start: 10m
-				Stock Limit: 2
-		Heavy War Axe of Rage:
-			Damage Mode - Bonus Damage: 120 => 70 %
-			Bonus damage now not stacks
-		Poor Man's Shield:
-			Damage Block (Melee): 40 => 28
-			Damage Block (Ranged): 38 => 15
-			Hero Block Chance: 40 => 100 %
-			Creep Block Chance: 20 => 25 %
+		
 	Talents:
 		
 	Abilities:
-		Viper - Nethertoxin:
-			Damage: 10 20 30 40 50 60 70 => 5 10 15 20 25 30 35
-			Fixed tooltips
-		Saber - Excalibur:
-			Damage per mana point: 4 5 6 7 8 9 10 = > 2 2.5 3 3.5 4 4.5 5
-			Scepter now also increases damage to per mana point to 3 3.75 4.5 5.25 6 6.75 7.5
-			Damage now not increases with spell damage amplify
-			Now is not rearmable
-		Saber - Invisible Air:
-			Damage now not increases with spell damage amplify
-			Damage per Second: 5 15 30 50 70 100 120 => 5 10 15 25 35 45 60
-		Saber - Mana Burst:
-			Autocast now triggers Outworld Devourer - Essence Aura
-		Apocalypse - King Slayer:
-			Now can't be casted on bosses
-			Now is not spell damage amplifiable
-		Apocalypse - Armor Tear:
-			Now can't be casted on bosses
-		Apocalypse - Agni's Touch:
-			Required Level: 1 => 2
-		Apocalypse - Apocalypse:
-			Damage per Second Increase: 3 => 3 5 7 9 11 13 15
-		Axe - Culling Blade:
-			Kill Threshold with Scepter: 350 550 800 1200 1600 2000 2600 => 1000 2500 4500 6500 8500 10000 12000
-			Cooldown with Scepter: 6 => 3
-		Tusk - Frozen Sigil:
-			Mana Cost: 75 100 125 150 175 200 228 => 75 125 175 228
-			Movement Speed Slow: 20 40 60 80 100 120 140 => 40 80 120 140
-			Attack Speed Slow: 40 80 120 160 200 240 280 => 80 160 240 280
-		Monkey King - Wukong's Command:
-			Attack Rate: 0.9 => 1.5
-			Bonus Damage: 50 90 140 190 240 290 340 => 80 150 190 260 320 380 450
-			Duration: 13 14 15 => 13 14 15 16 17 18 19
-		Clockwerk - Hookshot:
-			Cooldown: 70 60 50 40 30 20 15 => 120 110 100 90 80 70 60
-			Stun Duration: 0.5 1 1.5 2 2.5 3 3.5 => 1 1.5 2 2.5 3 3.5 4
-			Damage: 100 200 300 400 500 600 700 => 250 550 750 950 1200 1400 1800
-			Scepter Cooldown: 12 => 20
-		Drow Ranger - Marksmanship:
-			Bonus Agility: 100 400 600 800 1000 1200 1400 => 150 300 550 700 950 1100 1350
-		Abaddon - Borrowed Time:
-			Scepter Duration: 5 5 5 6 6 6 8 =>  5 6 7 8 9 9.5 10
-		Bane - Fiends Grip:
-			Scepter Mana Drain: 10 15 20 25 30 35 40 => 30 50 70 90 110 130 150
-			Scepter Damage: 155 215 270 325 400 475 535 => 300 600 900 1500 1900 2400 3000
-		Batrider - Flaming Lasso:
-			Scepter Damage: 50 100 150 200 250 300 350 => 300 600 900 1200 1500 1800 2100
-			Scepter Grab Radius: 400 => 750
-		Beastmaster - Primal Roar:
-			Scepter Cooldown: 45 45 45 45 45 45 45 => 30
-			Mana Cost: 150 175 200  => 150 175 200 225 250 275 300 
-		Broodmother - Spawn Spiderlings:
-			Mana Cost: 120 240 360 480 500 620 740 => 60 100 140 180 220 260 300
-		Disruptor - Static Storm:
-			Scepter Duration: 7 => 5 6 7 8 9 10 11
-			Pulses with Scepter: 28 => 40
-			Max Damage: 200 250 300 350 400 450 500 => 300 600 900 1500 1800 2200 2700
-		Lion - Finger Of Death:
-			Scepter Cooldown: 100 90 80 70 60 20 15 => 100 90 80 70 60 30 10
-			Scetper AOE: 450 => 800
-			Scepter Damage: 850 1200 1500 1800 2300 2600 2900 => 1500 3000 4500 6000 7500 9000 10500
-		Queenofpain - Sonic Wave:
-			Scepter Damage: 200 500 800 1110 1300 1500 2000  => 1000 2000 3000 4000 5000 6000 7000
+		
 Fixes:
-	Fixed duels not worked on 4v4v4v4 map if one of teams fully abandoned the game
-	Fixed Apocalypse - King Slayer was missing damage tooltip
-	Fixed Saber - Instinct evaded and blocked damage from abilities and items
-	Fixed Wisp using Spirits could place units out of arena while duel is ongoing
-	Fixed heroes weren't killed under fountain with two Aegises of the Immortal
-	Saber - Mana Burst now has more detaled description
-	Saber abilities were localized to russian
-	Text chat now not displays messages of muted allies
-	Fixed Spectre + Shard of True Sight crash
-	Fixed Huskar could crash game while abandoning game with someone has Burning Spear modifier
-	Fixed Warlock - Shadow Word didn't worked
-	Fixed Soul Piercing dealt additional damage after armor reductions (so it was useless)
-
-Sara - Evolution: Energy to Damage: 10% => 2%
+	
 <<+===========================================================================================================
 
 
