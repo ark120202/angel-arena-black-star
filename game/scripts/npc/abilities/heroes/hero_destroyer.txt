@@ -3,7 +3,7 @@
 	"destroyer_armor_crush"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"ability_name"
+		"AbilityTextureName"			"arena/alastor_conch1"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -83,7 +83,7 @@
 	"destroyer_seal_of_limit"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"ability_name"
+		"AbilityTextureName"			"arena/alastor_conch2"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCastPoint"				"0.1"
@@ -185,7 +185,7 @@
 	"destroyer_body_reconstruction"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"ability_name"
+		"AbilityTextureName"			"arena/alastor_conch3"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"150 140 130 120 110 100 60"
@@ -212,6 +212,86 @@
 				"Function"		"MaxHealth"
 			}
 		}
+	}
 
+	"destroyer_frenzy"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"heroes/hero_destroyer/frenzy.lua"
+		"AbilityTextureName"			"arena/alastor_conch4"
+		"MaxLevel" 						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_mark_pct_lvl1"	"80"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_lvl1"	"200 225 250 275 300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_armor_lvl1"	"100 125 150 175 200"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_speed_lvl1" 	"460 480 500 520 540"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_mark_pct_lvl2"	"50"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_lvl2"	"300 350 400 450 500"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_armor_lvl2"	"200 225 250 275 300"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_speed_lvl2" 	"540 560 580 600 620"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_mark_pct_lvl3"	"30"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_lvl3"	"500 550 600 650 700"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_armor_lvl3"	"300 350 400 450 500"
+			}
+			"12"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_speed_lvl3" 	"640 660 680 700 720"
+			}
+		}
+
+
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_shinobu/lifesteal_lvl1.vpcf"
+
+		}
 	}
 }
