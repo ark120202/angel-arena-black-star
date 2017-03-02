@@ -141,15 +141,15 @@ REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
 }
 
 BOSS_BANNED_ABILITIES = {
-	"item_heart_cyclone",
-	"item_blink_staff",
-	"huskar_life_break",
-	"necrolyte_reapers_scythe",
-	"death_prophet_spirit_siphon",
-	"rubick_personality_steal",
-	"item_urn_of_demons",
-	"apocalypse_king_slayer",
-	"apocalypse_armor_tear",
+	item_heart_cyclone = true,
+	item_blink_staff = true,
+	huskar_life_break = true,
+	necrolyte_reapers_scythe = true,
+	death_prophet_spirit_siphon = true,
+	rubick_personality_steal = true,
+	item_urn_of_demons = true,
+	apocalypse_king_slayer = true,
+	apocalypse_armor_tear = true,
 }
 
 PERSONALITY_STEAL_BANNED_HEROES = {

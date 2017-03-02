@@ -57,7 +57,7 @@ function CheckStartable() {
 		$.Schedule(0.2, CheckStartable)
 	else {
 		$("#afterload_panel").visible = true;
-		/*$.AsyncWebRequest('http://127.0.0.1:3228/AABSServer/getPlayerInfo?steam_id=' + player.player_steamid, {
+		/*$.AsyncWebRequest('http://127.0.0.1:3228/AABSServer/GetPublicInfoForPlayer?steam_id=' + player.player_steamid, {
 			type: 'GET',
 			success: function(data) {
 				$.Msg('Server Reply: ', data)

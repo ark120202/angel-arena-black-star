@@ -68,8 +68,12 @@ function GameMode:ExecuteOrderFilter(filterTable)
 								return false
 							end
 						end
-					elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET then
-						if target:IsBoss() and table.contains(BOSS_BANNED_ABILITIES, abilityname) then
+					elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
+						if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
+							Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_ability_cant_target_champion")
+							return false
+						end
+						if target:IsBoss() and BOSS_BANNED_ABILITIES[abilityname] then
 							Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_ability_cant_target_boss")
 							return false
 						end

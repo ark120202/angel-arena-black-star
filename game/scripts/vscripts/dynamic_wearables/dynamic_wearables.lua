@@ -338,7 +338,10 @@ function ParticleManager:CreateParticle(particle_name, attachment, unit, caster,
 		entAttachCP = caster
 		caster = nil
 	end
-	local particle = createParticle(ParticleManager, (caster or unit):TranslateParticleName(particle_name), attachment, unit)
+	if caster or unit then
+		particle_name = (caster or unit):TranslateParticleName(particle_name)
+	end
+	local particle = createParticle(ParticleManager, particle_name, attachment, unit)
 	if entAttachCP then
 		ParticleManager:SetParticleControlEnt(particle, entAttachCP, unit, PATTACH_POINT_FOLLOW, entAttachPoint or "attach_hitloc", unit:GetAbsOrigin(), true)
 	end

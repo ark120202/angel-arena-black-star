@@ -98,8 +98,21 @@ function StatsClient:HandleError(err)
 	end
 end
 
-function StatsClient:Send(path, data, callback, retryCount, _currentRetry)
-	local request = CreateHTTPRequest('POST', self.ServerAddress .. path)
+function StatsClient:GetMatchPlayerInfo()
+	local postData = {players = {}}
+	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+		if PlayerResource:IsValidPlayerID(i) and PlayerResource:IsValidTeamPlayer(i) then
+			postData.players[i] = PlayerResource:GetSteamID(i)
+		end
+	end
+	self:Send("GetPublicInfoForPlayer", postData, function()
+		PlayerTables:SetTableValue("arena", "player_server_stats", stats)
+	end, 5)
+	
+end
+
+function StatsClient:Send(path, data, callback, retryCount, protocol, _currentRetry)
+	local request = CreateHTTPRequest(protocol or "POST", self.ServerAddress .. path)
 	request:SetHTTPRequestGetOrPostParameter("data", JSON:encode(data))
 	request:Send(function(response)
 		if response.StatusCode ~= 200 or not response.Body then
@@ -108,7 +121,7 @@ function StatsClient:Send(path, data, callback, retryCount, _currentRetry)
 			if currentRetry < (retryCount or 0) then
 				Timers:CreateTimer(1, function()
 					print("Retry (" .. currentRetry .. ")")
-					StatsClient:Send(path, data, callback, retryCount, currentRetry)
+					StatsClient:Send(path, data, callback, retryCount, protocol, currentRetry)
 				end)
 			end
 		else

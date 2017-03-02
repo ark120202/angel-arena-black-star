@@ -8,7 +8,7 @@ function LoadPanelForPlayer(playerId) {
 	$("#PlayerVariable_Rating").text = "--"
 	$("#PlayerVariable_WinMatches").text = "0/0";
 	SetPagePlayerLevel(1)
-	$.AsyncWebRequest('http://127.0.0.1:3228/getPlayerInfo/' + steamid, {
+	$.AsyncWebRequest('http://127.0.0.1:3228/GetPublicInfoForPlayer/' + steamid, {
 		type: 'GET',
 		success: function(data) {
 			$.Msg('Server Reply: ', data)

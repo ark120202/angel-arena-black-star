@@ -1,4 +1,4 @@
-ARENA_VERSION = "1.4.4"
+ARENA_VERSION = "1.4.5b"
 
 BAREBONES_VERSION = "1.00"
 
@@ -38,6 +38,7 @@ local requirements = {
 	"data/ability_functions",
 	"data/ability_shop",
 	"data/commands",
+	"data/neutrals",
 	--------------------------------------------------
 	"internal/gamemode",
 	"internal/events",

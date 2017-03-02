@@ -49,6 +49,11 @@ if IsServer() then
 		self:SetDuration(60, true)
 		self.MaxEnergy = 100
 		self.Energy = self.MaxEnergy
+		if parent.SavedEnergyStates then
+			self.Energy = parent.SavedEnergyStates.Energy or self.Energy
+			self.MaxEnergy = parent.SavedEnergyStates.MaxEnergy or self.MaxEnergy
+			parent.SavedEnergyStates = nil
+		end
 		parent:SetNetworkableEntityInfo("Energy", self.Energy)
 		parent:SetNetworkableEntityInfo("MaxEnergy", self.MaxEnergy)
 		parent.ModifyEnergy = function(_, value, bShowMessage)
@@ -73,6 +78,16 @@ if IsServer() then
 			self.MaxEnergy = self.MaxEnergy + value
 			parent:SetNetworkableEntityInfo("MaxEnergy", self.MaxEnergy)
 			return self.MaxEnergy
+		end
+	end
+	function modifier_sara_evolution:OnDestroy()
+		local parent = self:GetParent()
+		if IsValidEntity(parent) then
+			--For RecreateAbility function
+			parent.SavedEnergyStates = {
+				Energy = self.Energy,
+				MaxEnergy = self.MaxEnergy
+			}
 		end
 	end
 	function modifier_sara_evolution:OnAttackLanded(keys)

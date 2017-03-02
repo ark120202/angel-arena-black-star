@@ -1,11 +1,5 @@
 LinkLuaModifier( "modifier_neutral_upgrade_attackspeed", "modifiers/modifier_neutral_upgrade_attackspeed", LUA_MODIFIER_MOTION_NONE )
 
-SPAWNER_CHAMPION_LEVELS = {
-	[3] = 5,
-	[8] = 2.5,
-	[15] = 1,
-	[30] = 0.5,
-}
 if Spawner == nil then
 	Spawner = class({})
 	Spawner.SpawnerEntities = {}
@@ -80,17 +74,21 @@ function Spawner:InitializeStack(id)
 	end	
 end
 
-function Spawner:RollChampion()
-	local champLevel = 0
-	for level, chance in pairs(SPAWNER_CHAMPION_LEVELS) do
-		if RollPercentage(chance) then
+function Spawner:RollChampion(minute)
+	local champLevel = 1
+	for level, info in pairs(SPAWNER_CHAMPION_LEVELS) do
+		if minute > info.minute and RollPercentage(info.chance) then
 			champLevel = math.max(champLevel, level)
 		end
 	end
-	if champLevel > 0 then
-		return champLevel
-	end
+	return champLevel
 end
+
+function CDOTA_BaseNPC:IsChampion()
+	return self.IsChampionNeutral == true
+end
+
+CDOTA_BaseNPC_Creature.IsChampion = CDOTA_BaseNPC.IsChampion
 
 function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 	local modelScale = 1 + (0.005 * minutelevel)
@@ -146,8 +144,7 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 			armor = 0.50 * minutelevel
 			xpbounty = 200 * minutelevel
 		end
-	end
-	if spawnerType == "medium" then
+	elseif spawnerType == "medium" then
 		if minutelevel <= 10 then
 			goldbounty = 10 * minutelevel
 			hp = 46 * minutelevel
@@ -189,8 +186,7 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 			armor = 6 * minutelevel
 			xpbounty = 150 * minutelevel
 		end
-	end
-	if spawnerType == "hard" then
+	elseif spawnerType == "hard" then
 		if minutelevel <= 10 then
 			goldbounty = 1.1 * minutelevel
 			hp = 50 * minutelevel
@@ -233,14 +229,13 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 			xpbounty = 250 * minutelevel
 		end
 	end
-	local champLevel = Spawner:RollChampion()
-	if champLevel then
+	local champLevel = Spawner:RollChampion(minutelevel)
+	if champLevel > 1 then
 		--print("Spawn champion with level " .. champLevel)
-		modelScale = modelScale + (champLevel / 30)
+		modelScale = modelScale + SPAWNER_CHAMPION_LEVELS[champLevel].model_scale
 		unit:SetRenderColor(RandomInt(0, 255), RandomInt(0, 255), RandomInt(0, 255))
 		unit:AddNewModifier(unit, nil, "modifier_neutral_champion", nil):SetStackCount(champLevel)
-	else
-		champLevel = 1
+		unit.IsChampionNeutral = true
 	end
 	unit:SetDeathXP((unit:GetDeathXP() + xpbounty) * champLevel)
 	unit:SetMinimumGoldBounty((unit:GetMinimumGoldBounty() + goldbounty) * champLevel)

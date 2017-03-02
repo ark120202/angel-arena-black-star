@@ -99,7 +99,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"energy_to_disarmor_pct"	"1 1.75 2.5 3.25 4 4.75 5.5"
+				"energy_to_disarmor_pct"	"1 1.75 2.5 3.25 4 4.75 5"
 			}
 			"04"
 			{
@@ -109,7 +109,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"energy_pct"		"20"
+				"energy_pct"		"15"
 			}
 		}
 

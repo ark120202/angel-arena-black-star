@@ -42,8 +42,17 @@ Balance:
 Fixes:
 	
 <<+===========================================================================================================
-
-
+Angel Arena Black Star - Version 1.4.5b:
+Champions now have minimal minute to spawn (x3 - 4m, x8 - 8m, x15 - 16m); x30 champions were removed
+These abilities now can't be used on champions: Helm of the Dominator, Chen - Holy Persuasion, Iron Talon, Shinobu - Kokorowatari, Doom Bringer - Devour, Shinobu - Eat Oddity
+Sara - Space Dissection:
+	Now decreases armor based on wasted energy, instead of current
+	Energy to Disarmor: 1 1.75 2.5 3.25 4 4.75 5.5 => 1 1.75 2.5 3.25 4 4.75 5
+	Energy: 20 => 15 %
+Fixed Sara's energy was resetted on changing team
+Fixed Changing Team wasn't synchronized with top bar
+Golden Eagle Relic now not works on illusions
+Fixed Pudge - Meat Hook
 
 rhasta,
 lycan,
