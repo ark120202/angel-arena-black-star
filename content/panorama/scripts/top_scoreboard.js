@@ -60,7 +60,7 @@ function Snippet_TopBarPlayerSlot_Update(panel) {
 		panel.FindChildTraverse("HealthBar").value = Entities.GetHealthPercent(heroEnt) / 100;
 		panel.FindChildTraverse("ManaBar").value = Entities.GetMana(heroEnt) / Entities.GetMaxMana(heroEnt);
 		panel.ultimateCooldown = ultStateOrTime;
-		if (playerInfo.player_team_id != panel.GetParent().team) {
+		if (playerInfo.player_team_id != DOTA_TEAM_SPECATOR && playerInfo.player_team_id != panel.GetParent().team) {
 			panel.SetParent(Snippet_DotaTeamBar(playerInfo.player_team_id).FindChildTraverse("TopBarPlayersContainer"))
 		}
 		//panel.FindChildTraverse("TopBarUltIndicatorTimer").text = 99;

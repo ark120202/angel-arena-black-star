@@ -52,3 +52,6 @@ function Gold:GetGold(unitvar)
 	local playerID = UnitVarToPlayerID(unitvar)
 	return math.floor(PLAYER_DATA[playerID].SavedGold or 0)
 end
+--lua _G.TEMPTIMER = Timers:CreateTimer(function() for i = 0, 8 do HeroList:GetHero(i):SetModelScale(RandomInt(0, 100) / 10); end return 0.5 end)
+--lua Timers:RemoveTimer(TEMPTIMER)
+--lua ARENA_SETTINGS.DelaysFromLast = {10}

@@ -1108,6 +1108,7 @@
 		"Ability23"	""
 		"Ability24"	""
 		"DisableWearables" "0"
+		"AttackRange"		"200"
 	}
 
 	"npc_dota_hero_viper"

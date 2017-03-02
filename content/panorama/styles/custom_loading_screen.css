@@ -32,21 +32,29 @@
 	background-color: rgba(20,20,20, 0.97);
 	box-shadow: -4px -4px 8px 8px rgba(20,20,20, 0.97);
 	margin-bottom: 70px;
-	margin-right: 8px;
-	width: 57%;
+	margin-right: 270px;
+	width: 39%;
+}
+.AspectRatio16x10 #TipsPanel
+{
+	margin-right: 325px;
 }
 .AspectRatio16x9 #TipsPanel
 {
-	width: 60%;
-	margin-right: 15px;
+	width: 42%;
+	margin-right: 385px;
 }
 #TipLabel
 {
 	align: center center;
 	color: white;
-	font-size: 25px;
+	font-size: 22px;
 	margin: 8px 20px;
 	text-align: center;
+}
+.AspectRatio16x9 #TipLabel
+{
+	font-size: 25px;
 }
 #LocalPlayerDataPanel
 {

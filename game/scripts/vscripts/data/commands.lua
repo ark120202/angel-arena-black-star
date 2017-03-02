@@ -139,6 +139,36 @@ CHAT_COMMANDS = {
 			_G.SendDebugInfoToClient = not SendDebugInfoToClient
 		end
 	},
+	["printplayers"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
+		f = function(args, hero)
+			local playerinfo = {}
+			for pID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+				if PlayerResource:IsValidPlayerID(pID) then
+					playerinfo[pID] = {
+						nick = PlayerResource:GetPlayerName(pID),
+						team = PlayerResource:GetTeam(pID),
+						steamID32 = PlayerResource:GetSteamAccountID(pID),
+						hero = "nil",
+					}
+					local tempHero = PlayerResource:GetSelectedHeroEntity(pID)
+					if tempHero then
+						playerinfo[pID].hero = tempHero:GetFullName()
+					end
+				end
+			end
+			CPrintTable(playerinfo)
+		end
+	},
+	["kick"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
+		f = function(args)
+			local usid = PLAYER_DATA[tonumber(args[1])].UserID
+			if usid then
+				SendToServerConsole("kickid " .. usid)
+			end
+		end
+	},
 	["model"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
 		f = function(args, hero)

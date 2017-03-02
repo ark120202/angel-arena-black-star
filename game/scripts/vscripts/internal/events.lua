@@ -103,6 +103,7 @@ function GameMode:_OnConnectFull(keys)
 
 	self.vUserIds = self.vUserIds or {}
 	self.vUserIds[userID] = ply
+	PLAYER_DATA[ply:GetPlayerID()].UserID = userID
 
 	GameMode._reentrantCheck = true
 	GameMode:OnConnectFull( keys )
