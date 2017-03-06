@@ -438,7 +438,7 @@
 		"base_hero"				"npc_dota_hero_wisp"
 		"LinkedHero"			"npc_arena_hero_soul_eater"
 		"Model"					"models/units/maka/maka.vmdl"
-		
+		"ModelScale"			"0.96"
 	}
 
 	"npc_arena_hero_soul_eater"
@@ -446,6 +446,6 @@
 		"base_hero"				"npc_dota_hero_wisp"
 		"LinkedHero"			"npc_arena_hero_maka"
 		"Model"					"models/units/soul_eater/soul_eater.vmdl"
-		
+		"ModelScale"			"1.15"
 	}
 }

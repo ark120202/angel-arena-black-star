@@ -132,7 +132,6 @@
 #ShopTabs
 {
 	align: center top;
-	margin-top: 2px;
 	height: 28px;
 	horizontal-align: center;
 	flow-children: right;
@@ -179,10 +178,11 @@
 #ShopSearch
 {
 	align: center top;
-	height: 53px;
+	height: 49px;
 	width: 100%;
 	//flow-children: right;
 	padding: 10px;
+	padding-bottom: 6px;
 }
 
 #ShopSearchEntry

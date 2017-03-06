@@ -39,8 +39,9 @@ function FillHeroesTable(heroesData, panel, big) {
 		var HeroImagePanel = $.CreatePanel('Image', StatPanel, "HeroListPanel_element_" + heroData.heroKey)
 		HeroImagePanel.SetImage(TransformTextureToPath(heroData.heroKey, "portrait"))
 		HeroImagePanel.AddClass("HeroListElement")
-		if (heroData.isChanged)
-			HeroImagePanel.AddClass("ChangedHeroPanel")
+		if (heroData.border_class) {
+			HeroImagePanel.AddClass(heroData.border_class)
+		}
 		var SelectHeroAction = (function(_heroData, _panel) {
 			return function() {
 				if (SelectedHeroPanel != _panel) {
@@ -88,9 +89,20 @@ function ChooseHeroUpdatePanels() {
 			ScenePanel.innerUnitModel = SelectedHeroData.model
 		}
 	}*/
-	UpdateSelectionButton()
-	$("#SelectedHeroSelectHeroName").text = $.Localize("#" + SelectedHeroData.heroKey).toUpperCase()
-	$("#SelectedHeroSelectButton").SetHasClass("LockInButton")
+	UpdateSelectionButton();
+	var context = $.GetContextPanel();
+	$("#SelectedHeroSelectHeroName").text = $.Localize("#" + SelectedHeroData.heroKey);
+	context.SetHasClass("HoveredHeroHasLinked", SelectedHeroData.linked_heroes != null);
+	//context.SetHasClass("HoveredHeroLockButton", SelectedHeroData.linked_heroes != null)
+	//context.SetHasClass("HoveredHeroUnlockButton", SelectedHeroData.linked_heroes != null)
+	if (SelectedHeroData.linked_heroes != null) {
+		var linked = [];
+		$.Each(SelectedHeroData.linked_heroes, function(hero) {
+			linked.push($.Localize(hero));
+		});
+		$("#SelectedHeroLinkedHero").text = linked.join(", ")
+	}
+
 	$("#SelectedHeroAbilitiesPanelInner").RemoveAndDeleteChildren()
 	for (var key in SelectedHeroData.abilities) {
 		var abilityName = SelectedHeroData.abilities[key]

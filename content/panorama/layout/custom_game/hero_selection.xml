@@ -63,9 +63,15 @@
 						</Button>
 					</Panel>
 					<Panel id="HeroListControlsGroup2" class="HeroListControlsGroup">
-						<Button id="SelectedHeroSelectButton" onactivate="SelectHero();">
-							<Label id="SelectedHeroSelectLabel" hittest="false" text="#hero_selection_button_select_hero" />
-							<Label id="SelectedHeroSelectHeroName" hittest="false" text="#npc_dota_hero_abaddon" />
+						<Button id="SelectedHeroSelectButton" onactivate="SelectHero();" hittestchildren="false">
+							<Label id="SelectedHeroSelectLabel" text="#hero_selection_button_select_hero" />
+							<Label id="SelectedHeroLockLabel" text="#hero_selection_lock" />
+							<Label id="SelectedHeroUnlockLabel" text="#hero_selection_unlock" />
+							<Label id="SelectedHeroSelectHeroName" text="#npc_dota_hero_abaddon" />
+							<Panel id="SelectedHeroLinkedHeroPanel" >
+								<Label id="SelectedHeroLinkedLabel" text="#hero_selection_linked_hero" />
+								<Label id="SelectedHeroLinkedHero" />
+							</Panel>
 						</Button>
 					</Panel>
 					<Panel id="HeroListControlsGroup3" class="HeroListControlsGroup">

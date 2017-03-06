@@ -15,7 +15,6 @@ TODO LIST:
 	I found a bug in custom abilities using Pudge flesh heap + apocalypse can result in infinite size which would cause the hero unable to attack - ability_lua + MODIFIER_PROPERTY_MODEL_SCALE
 	Убрать партиклы смерти виспа при смерти кастомных героев (как со станом)
 	при абандоне убирать из селекшона
-	переделать пик героев на сниппеты и тд
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_2628]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
 [url=https://gist.github.com/ark120202/5434bc03e99c28988eda7e68d9c751c2]FULL UPDATE[/url]
@@ -31,6 +30,7 @@ Angel Arena Black Star - Version 1.4.5:
 Angel Arena Black Star - Version 1.4.5:
 General:
 	Host now can fully control players in team selection menu (using Drag&Drop)
+	Added new hero: Destroyer
 Balance:
 	
 	Runes:
@@ -44,6 +44,7 @@ Balance:
 Fixes:
 	Fixed Slark - Dark Pact + Spikes Rune crashed game
 	Fixed Blade Mail particles
+	-------------------TODO - доделать хускару копья
 <<+===========================================================================================================
 
 
@@ -125,11 +126,14 @@ Maka:
 		Special:
 	Abilities:
 		Passive disarmed, scythe is hidden
-
-
-		Dark Blood:
-			Loses ability to control herself, hits anyone (allies?)
-			Bonus Resist, damage
+		Soul Resonance:
+			Каст поинт 0.1 сек.
+		Soul Perception
+			Позволяет видеть недавно увиденных врагов в радиусе до 3500, и любых врагов в радиусе до 1000. Показывает как души, только партиклом для одного игрока. Если Soul Resonance активен, то партиклы видны и соулу.
+		Grigori:
+			Необычайно редуи тип души, позволяющий владельцу летать. Временно даёт возможность летать, повышает макс скорость до 850.
+		Scythe Form:
+			Проджектайл со скоростью 900, наносящий урон = (Атаке Маки + Атаке Соула)*(1.25+0.05*стаки крови) .allows her to momentarily create many scythe blades from her body to fight.
 Soul:
 	Stats:
 		BAT:
@@ -143,7 +147,15 @@ Soul:
 		Special:
 	Abilities:
 		Transform to scythe:
-			Can be activated only
+			Превращается в косу, используется только если рядом есть Мака. Создаёт проджектайл со скоростью 500. Позволяет Маке атаковать, но её урон заменён уроном Соула + небольшой частью его хп. Атаки не наносят урона, но на 0.2 сек вешают дебафф, увиличивающий весь урон Маки в 2/3 раза. Макс скорость атаки = 1/секунду
+		Transform to human:
+			Превращается назад в человеческую форму. Точка превращения может быть выбрана в радиусе 500 от Маки. Создаёт проджектайл со скоростью 500.
+		Soul Resonance:
+			Кстуется в течении 0.6 секунд. Если в течении этого времени Мака активирует Soul Resonance, то оба героя получаю бафф Soul Resonance
+		Dark (Black?) Blood:
+			Toggle. Soul позваляет чёрной крови проникнуть в свою душу, с каждой секундой получая +1 стак корви. Если Soul Resonance активен, то Мака мгновенно получит столько же стаков, что и Soul. Когда отключена стаки спадают по 1 за секунду, с Маки спадают в 2 раза быстрее (из за Anti-Demon Wavelength). Сильно уменьшают физ урон. Если >60 стаков даёт бкб. >80 - фулл защита от пьюр. >100 теряет контроль на героем. С каждым стаком экран темнеет.
+		Witch-Hunt/Demon-Hunt/Kishin-Hunt
+			Активна только в Soul Resonance. Когда уровень Маки и Соула становится > 300 и абилка на макс левеле, то способность заменяется способностью Demon-Hunt (1лвл). Demon-Hunt не действует на крипов, а только на героев. Когад уровень становится равен максимальному, то заменяется на Kishin-Hunt. Kishin-Hunt работает только на героев уровнем >450.
 ====================================================================================
 Пик 2 героев:
 новый стэйт - locked:

@@ -20,6 +20,8 @@
 #base "abilities/heroes/hero_saber.txt"
 #base "abilities/heroes/hero_sara.txt"
 #base "abilities/heroes/hero_destroyer.txt"
+#base "abilities/heroes/hero_maka.txt"
+#base "abilities/heroes/hero_soul_eater.txt"
 
 #base "abilities/heroes/hero_wisp.txt"
 #base "abilities/heroes/hero_warlock.txt"
@@ -1511,6 +1513,117 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+			}
+		}
+	}
+
+	"huskar_burning_spear_arena"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"huskar_burning_spear"
+
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		"AbilityCooldown"				"0.0 0.0 0.0 0.0"
+
+		"AbilityDamage"					"5 10 15 20"
+
+		"AbilityManaCost"				"0 0 0 0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_cost"			"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"8"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+			"particle"  "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+			"particle"  "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"modifier_huskar_burning_spear_arena"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+
+				"Orb"
+				{
+	                "Priority"          "DOTA_ORB_PRIORITY_ABILITY"
+	                "ProjectileName"    "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+	                "CastAttack"        "1"
+	            }
+
+				"OnOrbFire"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Huskar.Burning_Spear.Cast"
+						"Target"		"CASTER"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_huskar/burning_spear.lua"
+						"Function"		"DoHealthCost"
+					}
+				}
+
+				"OnOrbImpact"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Huskar.Burning_Spear"
+						"Target"		"TARGET"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"IncreaseStacks"
+						"modifier"		"modifier_huskar_burning_spear_arena_debuff"
+						"per_stack_duration"	"%duration"
+					}
+				}
+			}
+
+			"modifier_huskar_burning_spear_arena_debuff"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+		
+				"EffectName"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				
+				"ThinkInterval"		"1.0"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%AbilityDamage"
+					}
+				}
 			}
 		}
 	}

@@ -45,7 +45,174 @@
 	{
 		m_pObject = null
 	}
-	m_pHitBoxSetLists = [  ]
+	m_pHitBoxSetLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "bone_torso"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_torso"
+								m_vMinBounds = [ -10.797174, -12.122835, -1.262627 ]
+								m_vMaxBounds = [ 11.202822, 10.877163, 31.737366 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_pelvis"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_pelvis"
+								m_vMinBounds = [ -12.787876, -11.96969, -2.424232 ]
+								m_vMaxBounds = [ 13.21212, 12.030308, 2.575768 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_arm R"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_arm R"
+								m_vMinBounds = [ -0.731819, -3.999993, -6.490913 ]
+								m_vMaxBounds = [ 0.60909, 4.000006, 4.19091 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_arm L"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_arm L"
+								m_vMinBounds = [ -0.486365, -3.999993, -6.695442 ]
+								m_vMaxBounds = [ 0.729547, 4.000006, 4.497742 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_leg R"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_leg R"
+								m_vMinBounds = [ -6.749999, -7.524471, -20.268059 ]
+								m_vMaxBounds = [ 6.249997, 7.475527, -4.268059 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_leg L"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_leg L"
+								m_vMinBounds = [ -5.898652, -6.397264, -18.808189 ]
+								m_vMaxBounds = [ 7.101346, 8.602734, -3.808189 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_elbow R"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_elbow R"
+								m_vMinBounds = [ -0.550001, -4.799994, -6.774986 ]
+								m_vMaxBounds = [ 29.449995, 4.200006, 4.225014 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_elbow L"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_elbow L"
+								m_vMinBounds = [ -29.504995, -4.799994, -6.649986 ]
+								m_vMaxBounds = [ 0.495001, 4.200006, 4.350014 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_knee R"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_knee R"
+								m_vMinBounds = [ -6.210422, -8.199991, -46.885715 ]
+								m_vMaxBounds = [ 9.789575, 6.800007, 0.257137 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_knee L"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_knee L"
+								m_vMinBounds = [ -8.987841, -7.998255, -46.885715 ]
+								m_vMaxBounds = [ 6.012156, 7.001742, 0.257137 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_head"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_head"
+								m_vMinBounds = [ -11.70492, -11.997089, -0.154327 ]
+								m_vMaxBounds = [ 16.495174, 10.290207, 28.657288 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_hand R"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_hand R"
+								m_vMinBounds = [ 0.000004, -4.333327, -1.999992 ]
+								m_vMaxBounds = [ 16.999996, 4.666672, 2.000008 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_hand L"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_hand L"
+								m_vMinBounds = [ -16.999992, -4.333327, -2.666649 ]
+								m_vMaxBounds = [ 0.0, 4.666672, 2.333351 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_foot R"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_foot R"
+								m_vMinBounds = [ -6.75, -17.442892, -17.249996 ]
+								m_vMaxBounds = [ 11.249996, 4.750006, 0.750006 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bone_foot L"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bone_foot L"
+								m_vMinBounds = [ -10.5, -17.389591, -17.999996 ]
+								m_vMaxBounds = [ 6.499998, 4.750006, 0.000006 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
 	m_pAttachmentLists = [  ]
 	m_pAnimGroup = 
 	{

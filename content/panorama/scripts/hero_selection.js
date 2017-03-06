@@ -9,14 +9,12 @@ var SelectedHeroData,
 	PTID,
 	DOTA_ACTIVE_GAMEMODE,
 	CustomChatLinesPanel,
-	localHeroPicked = false,
 	MinimapPTIDs = [],
 	HeroesPanels = [],
 	tabsData = {},
 	PlayerSpawnBoxes = {},
 	HeroSelectionState = -1,
 	PlayerPanels = [];
-
 var SteamIDSpecialBGs = {
 	//ark120202
 	109792606: [
@@ -88,7 +86,7 @@ function SwitchTab() {
 
 function ChooseHeroPanelHero() {
 	ChooseHeroUpdatePanels()
-	if (!localHeroPicked) {
+	if (!IsLocalHeroPicked()) {
 		GameEvents.SendCustomGameEventToServer("hero_selection_player_hover", {
 			hero: SelectedHeroData.heroKey
 		})
@@ -96,8 +94,7 @@ function ChooseHeroPanelHero() {
 }
 
 function SelectHero() {
-	if (!localHeroPicked) {
-		localHeroPicked = true
+	if (!IsLocalHeroPicked()) {
 		GameEvents.SendCustomGameEventToServer("hero_selection_player_select", {
 			hero: SelectedHeroData.heroKey
 		})
@@ -106,17 +103,19 @@ function SelectHero() {
 }
 
 function RandomHero() {
-	if (!localHeroPicked) {
-		localHeroPicked = true
+	if (!IsLocalHeroPicked()) {
 		GameEvents.SendCustomGameEventToServer("hero_selection_player_random", {})
 		Game.EmitSound("HeroPicker.Selected")
 	}
 }
 
 function UpdateSelectionButton() {
-	var canPick = SelectedHeroData != null && !IsHeroPicked(SelectedHeroData.heroKey) && !localHeroPicked
+	var canPick = SelectedHeroData != null && !IsHeroPicked(SelectedHeroData.heroKey) && !IsLocalHeroPicked()
 	$("#SelectedHeroSelectButton").enabled = canPick
 	$("#HeroRandomButton").enabled = canPick
+	var context = $.GetContextPanel()
+	context.SetHasClass("LocalHeroLockButton", SelectedHeroData.linked_heroes != null && !context.BHasClass("LocalPlayerLocked"));
+	context.SetHasClass("LocalHeroUnlockButton", SelectedHeroData.linked_heroes != null && context.BHasClass("LocalPlayerLocked"));
 }
 
 function UpdateTimer() {
@@ -151,15 +150,19 @@ function UpdateTimer() {
 	}
 }
 
-function Snippet_PlayerPanel(pid) {
+function Snippet_PlayerPanel(pid, root) {
 	if (PlayerPanels[pid] == null) {
-		var panel = $.CreatePanel('Panel', TeamSelectionPanel, "")
+		var panel = $.CreatePanel('Panel', root, "")
 		panel.BLoadLayoutSnippet("PlayerPanel")
-		panel.FindChildTraverse("NickName").text = Players.GetPlayerName(Number(playerIdInTeam))
-		panel.FindChildTraverse("ImageHost").style.borderColor = GetHEXPlayerColor(Number(playerIdInTeam))
+		panel.FindChildTraverse("NickName").text = Players.GetPlayerName(pid)
+		panel.FindChildTraverse("ImageHost").style.borderColor = GetHEXPlayerColor(pid)
 		PlayerPanels[pid] = panel
 	}
 	return PlayerPanels[pid]
+}
+
+function IsLocalHeroPicked() {
+	return $.GetContextPanel().BHasClass("LocalPlayerPicked")
 }
 
 function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
@@ -175,26 +178,30 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 		var TeamSelectionPanel = $("#team_selection_panels_team" + teamNumber)
 		for (var playerIdInTeam in changesObject[teamNumber]) {
 			var playerData = changesObject[teamNumber][playerIdInTeam]
+			var PlayerPanel = Snippet_PlayerPanel(Number(playerIdInTeam), TeamSelectionPanel)
 
-			var PlayerPanel = Snippet_PlayerPanel(playerIdInTeam)
+			var isLocalPlayer = playerIdInTeam == Game.GetLocalPlayerID()
+			var isLocalTeam = teamNumber == Players.GetTeam(Game.GetLocalPlayerID())
+
+			if (isLocalPlayer) {
+				$.GetContextPanel().SetHasClass("LocalPlayerLocked", playerData.status == "locked")
+				$.GetContextPanel().SetHasClass("LocalPlayerPicked", playerData.status == "picked")
+			}
+
 			PlayerPanel.SetHasClass("HoveredHero", playerData.status == "hover")
-			PlayerPanel.SetHasClass("LockedHero", playerData.status == "hover")
+			PlayerPanel.SetHasClass("LockedHero", playerData.status == "locked")
 			if (playerData.status == "hover" || playerData.status == "locked") {
-				if (teamNumber == Players.GetTeam(Game.GetLocalPlayerID())) {
+				if (isLocalTeam) {
 					PlayerPanel.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(playerData.hero))
 				}
 			} else if (playerData.status == "picked") {
-				if (playerIdInTeam == Game.GetLocalPlayerID()) {
-					localHeroPicked = true
-				}
 				UpdateSelectionButton()
 				if ($("#HeroListPanel_element_" + playerData.hero) != null) {
 					$("#HeroListPanel_element_" + playerData.hero).AddClass("HeroListElementPickedBySomeone")
 				}
 				PlayerPanel.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(playerData.hero))
 			}
-
-			if (teamNumber == Players.GetTeam(Game.GetLocalPlayerID())) {
+			if (isLocalTeam) {
 				if (playerData.SpawnBoxes != null) {
 					if (PlayerSpawnBoxes[playerIdInTeam] == null)
 						PlayerSpawnBoxes[playerIdInTeam] = [];

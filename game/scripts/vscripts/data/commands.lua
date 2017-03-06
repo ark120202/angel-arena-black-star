@@ -206,13 +206,18 @@ CHAT_COMMANDS = {
 			local heroName = args[1]
 			local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
 			local baseNewHero = heroTableCustom.base_hero or heroName
-			local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
-			h:SetTeam(PlayerResource:GetTeam(playerID) == 2 and 3 or 2)
+			local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(2))
+			local team = 2
+			if PlayerResource:GetTeam(playerID) == team and table.contains(args, "enemy") then
+				team = 3
+			end
+			h:SetTeam(team)
 			h:SetAbsOrigin(hero:GetAbsOrigin())
 			h:SetControllableByPlayer(playerID, true)
 			for i = 1, 300 do
 				h:HeroLevelUp(false)
 			end
+
 			if heroTableCustom.base_hero then
 				TransformUnitClass(h, heroTableCustom)
 				h.UnitName = heroName

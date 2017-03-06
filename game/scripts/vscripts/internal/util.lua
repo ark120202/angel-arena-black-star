@@ -1704,18 +1704,18 @@ function GetPreMitigationDamage(value, victim, attacker, damagetype)
 end
 
 function table.deepmerge(t1, t2)
-    for k,v in pairs(t2) do
-        if type(v) == "table" then
-            if type(t1[k] or false) == "table" then
-                tableMerge(t1[k] or {}, t2[k] or {})
-            else
-                t1[k] = v
-            end
-        else
-            t1[k] = v
-        end
-    end
-    return t1
+	for k,v in pairs(t2) do
+		if type(v) == "table" then
+			if type(t1[k] or false) == "table" then
+				tableMerge(t1[k] or {}, t2[k] or {})
+			else
+				t1[k] = v
+			end
+		else
+			t1[k] = v
+		end
+	end
+	return t1
 end
 
 function CDOTA_PlayerResource:SetPlayerTeam(playerID, newTeam)
@@ -1791,7 +1791,7 @@ function table.deepcopy(obj, seen)
 	local s = seen or {}
 	local res = setmetatable({}, getmetatable(obj))
 	s[obj] = res
-	for k, v in pairs(obj) do res[self:copy(k, s)] = self:copy(v, s) end
+	for k, v in pairs(obj) do res[table.deepcopy(k, s)] = table.deepcopy(v, s) end
 	return res
 end
 

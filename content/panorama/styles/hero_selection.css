@@ -120,16 +120,15 @@
 {
 	pre-transform-scale2d: 1.15;
 }
-.ChangedHeroPanel
+.HeroListElement.Border_Changed
 {
 	border: 1px solid red;
 }
-.HeroPanelSelected
+.HeroListElement.HeroPanelSelected
 {
 	border: 4px solid #b2da25;
 	pre-transform-scale2d: 1.1;
 }
-
 #SelectionStatusPanel
 {
 	height: 100px;
@@ -255,15 +254,27 @@
 {
 
 }
-#SelectedHeroSelectLabel
+#SelectedHeroSelectLabel,
+#SelectedHeroLockLabel,
+#SelectedHeroUnlockLabel
 {
 	align: center top;
 	font-size: 24px;
 	color: #b2da25;
 }
-#SelectedHeroSelectLabel .LockInButton
+#SelectedHeroLockLabel,
+#SelectedHeroUnlockLabel,
+.LocalHeroLockButton #SelectedHeroSelectLabel,
+.LocalHeroLockButton #SelectedHeroUnlockLabel,
+.LocalHeroUnlockButton #SelectedHeroSelectLabel,
+.LocalHeroUnlockButton #SelectedHeroLockLabel,
 {
 	visibility: collapse;
+}
+.LocalHeroLockButton #SelectedHeroLockLabel,
+.LocalHeroUnlockButton #SelectedHeroUnlockLabel,
+{
+	visibility: visible;
 }
 
 #SelectedHeroSelectHeroName
@@ -273,6 +284,25 @@
 	color: #b2da25;
 	text-transform: uppercase;
 	margin-bottom: -7px;
+}
+
+#SelectedHeroLinkedHeroPanel
+{
+	align: left center;
+	visibility: collapse;
+	margin-left: 12px;
+	flow-children: down;
+}
+
+ #SelectedHeroLinkedHeroPanel Label
+{
+	font-size: 20px;
+	color: #C5D199;
+}
+
+.HoveredHeroHasLinked #SelectedHeroLinkedHeroPanel
+{
+	visibility: visible;
 }
 
 .HeroListElementPickedBySomeone

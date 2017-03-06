@@ -205,12 +205,23 @@ function IncreaseStacks(keys)
 	local target = keys.target
 	local ability = keys.ability
 	local modifier = keys.modifier
+	local stacks = keys.stacks or 1
 	local max_stacks = keys.max_stacks
+	local per_stack_duration = keys.per_stack_duration
 	if (keys.NoBosses ~= 1 or not target:IsBoss()) then
-		if max_stacks and target:GetModifierStackCount(modifier, ability) >= max_stacks then
-			ability:ApplyDataDrivenModifier(caster, target, modifier, {})
+		if per_stack_duration then
+			ModifyStacks(ability, caster, target, modifier, stacks, true)
+			Timers:CreateTimer(per_stack_duration, function()
+				if IsValidEntity(ability) and IsValidEntity(target) then
+					ModifyStacks(ability, caster, target, modifier, -stacks, true)
+				end
+			end)
 		else
-			ModifyStacks(ability, caster, target, modifier, keys.stacks or 1, true)
+			if max_stacks and target:GetModifierStackCount(modifier, ability) >= max_stacks then
+				ability:ApplyDataDrivenModifier(caster, target, modifier, {})
+			else
+				ModifyStacks(ability, caster, target, modifier, stacks, true)
+			end
 		end
 	end
 end

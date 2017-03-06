@@ -1,5 +1,5 @@
-if HeroSelection == nil then
-	_G.HeroSelection = class({})
+if not HeroSelection then
+	HeroSelection = class({})
 	HeroSelection.SelectionEnd = false
 	HeroSelection.RandomableHeroes = {}
 end
@@ -88,9 +88,15 @@ function HeroSelection:PrepareTables()
 						custom_scene_camera = heroTable.SceneCamera,
 						custom_scene_image = heroTable.SceneImage,
 						abilities = HeroSelection:ParseAbilitiesFromTable(heroTable),
-						isChanged = heroTable.Changed == 1 and tabIndex == 1,
-						attributes = HeroSelection:ExtractHeroStats(heroTable),
+						border_class = heroTable.BorderClass,
+						attributes = HeroSelection:ExtractHeroStats(heroTable)
 					}
+					if heroTable.LinkedHero then
+						heroData.linked_heroes = string.split(heroTable.LinkedHero, " | ")
+					end
+					if not heroData.border_class and heroTable.Changed == 1 and tabIndex == 1 then
+						heroData.border_class = "Border_Changed"
+					end
 					table.insert(data.HeroTabs[tabIndex].Heroes, heroData)
 				end
 			end
@@ -111,7 +117,7 @@ function HeroSelection:PrepareTables()
 						model = heroTable.base_hero or name,
 						custom_scene_camera = heroTable.SceneCamera,
 						custom_scene_image = heroTable.SceneImage,
-						attributes = HeroSelection:ExtractHeroStats(heroTable),
+						attributes = HeroSelection:ExtractHeroStats(heroTable)
 					}
 					table.insert(data.HeroTabs[1].Heroes, heroData)
 				end
@@ -121,7 +127,9 @@ function HeroSelection:PrepareTables()
 	end
 	for _,v in ipairs(HeroSelection.ModeData.HeroTabs) do
 		for _,ht in ipairs(v.Heroes) do
-			table.insert(self.RandomableHeroes, ht)
+			if not ht.linked_heroes then
+				table.insert(HeroSelection.RandomableHeroes, ht)
+			end
 		end
 	end
 	PlayerTables:CreateTable("hero_selection_available_heroes", HeroSelection.ModeData, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
@@ -243,9 +251,9 @@ end
 
 function HeroSelection:PreformPlayerRandom(playerId)
 	while true do
-		local heroKey = self.RandomableHeroes[RandomInt(1, #self.RandomableHeroes)].heroKey
+		local heroKey = HeroSelection.RandomableHeroes[RandomInt(1, #HeroSelection.RandomableHeroes)].heroKey
 		if not HeroSelection:IsHeroSelected(heroKey) then
-			self:UpdateStatusForPlayer(playerId, "picked", heroKey)
+			HeroSelection:UpdateStatusForPlayer(playerId, "picked", heroKey)
 			Gold:ModifyGold(playerId, CUSTOM_GOLD_FOR_RANDOM_TOTAL)
 			break
 		end
@@ -264,8 +272,12 @@ function HeroSelection:UpdateStatusForPlayer(playerId, status, hero, bForNotPick
 	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(playerId))
 	if tableData and (not bForNotPicked or not tableData[playerId] or tableData[playerId].status ~= "picked") then
 		if not tableData[playerId] then tableData[playerId] = {} end
-		tableData[playerId].hero = hero
-		tableData[playerId].status = status
+		if hero then
+			tableData[playerId].hero = hero
+		end
+		if status then
+			tableData[playerId].status = status
+		end
 		PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(playerId), tableData)
 		return true
 	end
@@ -304,13 +316,21 @@ end
 
 function HeroSelection:OnHeroSelectHero(data)
 	local hero = tostring(data.hero)
-	if not HeroSelection.SelectionEnd and not self:IsHeroSelected(hero) and self:VerifyHeroGroup(hero, "Selection") then
+	if not HeroSelection.SelectionEnd and not HeroSelection:IsHeroSelected(hero) and HeroSelection:VerifyHeroGroup(hero, "Selection") then
 		local playerID = data.PlayerID
 		local linked = GetKeyValue(hero, "LinkedHero")
 		local newStatus = "picked"
 		if linked then
-			local team = PlayerResource:GetTeam()
+			local team = PlayerResource:GetTeam(playerID)
 			linked = string.split(linked, " | ")
+			local selected = HeroSelection:GetLinkedHeroLockedAlly(hero, team)
+			if selected == playerID then
+				newStatus = "hover"
+			elseif selected then
+				return
+			else
+				newStatus = "locked"
+			end
 			local areLinkedPicked = true
 			local linkedMap = {}
 			for _,v in ipairs(linked) do
@@ -322,16 +342,23 @@ function HeroSelection:OnHeroSelectHero(data)
 			end
 			if areLinkedPicked then
 				for hero, heroplayer in ipairs(linkedMap) do
-					self:UpdateStatusForPlayer(heroplayer, "picked", hero)
+					HeroSelection:UpdateStatusForPlayer(heroplayer, "picked", hero)
 				end
-			else
-				newStatus = "locked"
+				for team,teamdata in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection")) do
+					for plyId,playerStatus in pairs(teamdata) do
+						if (table.contains(linked, playerStatus.hero) or hero == playerStatus.hero) and playerStatus.status == "locked" then
+							HeroSelection:UpdateStatusForPlayer(plyId, "hover")
+						end
+					end
+				end
+				newStatus = "picked"
 			end
 		end
-		if self:UpdateStatusForPlayer(playerID, newStatus, hero, true) and newStatus == "picked" then
+		print(newStatus)
+		if HeroSelection:UpdateStatusForPlayer(playerID, newStatus, hero, true) and newStatus == "picked" then
 			PrecacheUnitByNameAsync(GetKeyValue(hero, "base_hero") or hero, function() end, playerID)
 			Gold:ModifyGold(playerID, CUSTOM_STARTING_GOLD)
-			self:CheckEndHeroSelection()
+			HeroSelection:CheckEndHeroSelection()
 		end
 	end
 
@@ -339,7 +366,7 @@ end
 
 function HeroSelection:OnHeroHover(data)
 	if not HeroSelection.SelectionEnd then
-		self:UpdateStatusForPlayer(data.PlayerID, "hover", tostring(data.hero), true)
+		HeroSelection:UpdateStatusForPlayer(data.PlayerID, "hover", tostring(data.hero), true)
 	end
 end
 
@@ -348,12 +375,11 @@ function HeroSelection:OnHeroRandomHero(data)
 	if not HeroSelection.SelectionEnd and HeroSelection:GetPlayerStatus(data.PlayerID).status ~= "picked" then
 		HeroSelection:PreformPlayerRandom(data.PlayerID)
 	end
-
 	HeroSelection:CheckEndHeroSelection()
 end
 
 function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
-	self:UpdateStatusForPlayer(playerId, "picked", heroName)
+	HeroSelection:UpdateStatusForPlayer(playerId, "picked", heroName)
 	Timers:CreateTimer(function()
 		local connectionState = PlayerResource:GetConnectionState(playerId)
 		if connectionState == DOTA_CONNECTION_STATE_CONNECTED then

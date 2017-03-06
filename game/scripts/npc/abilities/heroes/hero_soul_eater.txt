@@ -1,0 +1,56 @@
+"DOTAAbilities"
+{
+	"soul_eater_demon_weapon_from"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					""
+		"AbilityTextureName"			"arena/soul_eater_demon_weapon_from"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"projectile_speed"	"900"
+			}
+		}
+	}
+
+	"soul_eater_human_form"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					""
+		"AbilityTextureName"			"arena/soul_eater_human_form"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"projectile_speed"	"900"
+			}
+		}
+	}
+
+	"soul_eater_soul_resonance"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					""
+		"AbilityTextureName"			"arena/soul_eater_soul_resonance"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"projectile_speed"	"900"
+			}
+		}
+	}
+}

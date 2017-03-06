@@ -55,7 +55,9 @@
 		"npc_arena_hero_poseidon"						"Poseidon"
 		"npc_arena_hero_saber"							"Saber"
 		"npc_arena_hero_sara"							"Sara"
-		"npc_arena_hero_destroyer"						"Alastor"
+		"npc_arena_hero_destroyer"						"Destroyer"
+		"npc_arena_hero_maka"							"Maka"
+		"npc_arena_hero_soul_eater"						"Soul Evans"
 
 		"npc_arena_zaken_sailor"                        "Sailor"
 		
@@ -125,6 +127,9 @@
 		"hero_selection_button_switch"							"Switch Heroes"
 		"hero_selection_loading_message"						"Loading..."
 		"hero_selection_change_hero_selected"					"This hero is already selected"
+		"hero_selection_linked_hero"							"Linked Hero:"
+		"hero_selection_lock"									"Lock"
+		"hero_selection_unlock"									"Unlock"
 
 		"chat_placeholder_send_message"							"Type your message here..."
 
