@@ -3,6 +3,7 @@ var TeamPanels = [];
 var darknessEndTime = -Number.MAX_VALUE;
 var players_abandoned = [];
 var DuelTimerEndTime;
+var teamColors = GameUI.CustomUIConfig().team_colors;
 
 function Snippet_TopBarPlayerSlot(pid) {
 	if (PlayerPanels[pid] == null) {
@@ -40,14 +41,14 @@ function Snippet_TopBarPlayerSlot_Update(panel) {
 		panel.visible = false;
 	} else {
 		var playerInfo = Game.GetPlayerInfo(playerId);
-		var heroName = GetPlayerHeroName(playerId)
-		var respawnSeconds = playerInfo.player_respawn_seconds
-		var connectionState = playerInfo.player_connection_state
-		var heroEnt = playerInfo.player_selected_hero_entity_index
+		var heroName = GetPlayerHeroName(playerId);
+		var respawnSeconds = playerInfo.player_respawn_seconds;
+		var connectionState = playerInfo.player_connection_state;
+		var heroEnt = playerInfo.player_selected_hero_entity_index;
 		var playerColor = GetHEXPlayerColor(playerId);
-		var isAlly = playerInfo.player_team_id == Players.GetTeam(Game.GetLocalPlayerID())
-		panel.SetDialogVariableInt("respawn_seconds", respawnSeconds + 1)
-		panel.SetHasClass("Dead", respawnSeconds >= 0)
+		var isAlly = playerInfo.player_team_id == Players.GetTeam(Game.GetLocalPlayerID());
+		panel.SetDialogVariableInt("respawn_seconds", respawnSeconds + 1);
+		panel.SetHasClass("Dead", respawnSeconds >= 0);
 		panel.SetHasClass("Disconnected", connectionState == DOTAConnectionState_t.DOTA_CONNECTION_STATE_DISCONNECTED);
 		panel.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(heroName));
 		panel.FindChildTraverse("PlayerColor").style.backgroundColor = playerColor;
@@ -60,7 +61,7 @@ function Snippet_TopBarPlayerSlot_Update(panel) {
 		panel.FindChildTraverse("HealthBar").value = Entities.GetHealthPercent(heroEnt) / 100;
 		panel.FindChildTraverse("ManaBar").value = Entities.GetMana(heroEnt) / Entities.GetMaxMana(heroEnt);
 		panel.ultimateCooldown = ultStateOrTime;
-		if (playerInfo.player_team_id != DOTA_TEAM_SPECATOR && playerInfo.player_team_id != panel.GetParent().team) {
+		if (teamColors[playerInfo.player_team_id != panel.GetParent().team && playerInfo.player_team_id] != null) {
 			panel.SetParent(Snippet_DotaTeamBar(playerInfo.player_team_id).FindChildTraverse("TopBarPlayersContainer"))
 		}
 		//panel.FindChildTraverse("TopBarUltIndicatorTimer").text = 99;
@@ -93,7 +94,7 @@ function Snippet_DotaTeamBar_Update(panel) {
 	var team = panel.team
 	panel.SetHasClass("EnemyTeam", team != Players.GetTeam(Game.GetLocalPlayerID()));
 	var teamDetails = Game.GetTeamDetails(team);
-	panel.FindChildTraverse("TopBarScore").style.textShadow = "0 0 7px " + GameUI.CustomUIConfig().team_colors[team].replace(";", "");
+	panel.FindChildTraverse("TopBarScore").style.textShadow = "0 0 7px " + teamColors[team].replace(";", "");
 	panel.SetDialogVariableInt("team_score", teamDetails.team_score);
 	//"TeamName", $.Localize(teamDetails.team_name))
 }

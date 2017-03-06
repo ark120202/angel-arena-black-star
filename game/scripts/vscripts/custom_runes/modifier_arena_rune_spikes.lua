@@ -6,7 +6,7 @@ function modifier_arena_rune_spikes:GetEffectName()
 	return "particles/items_fx/blademail.vpcf"
 end
 function modifier_arena_rune_spikes:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
+	return PATTACH_ABSORIGIN
 end
 function modifier_arena_rune_spikes:GetStatusEffectName()
 	return "particles/status_fx/status_effect_blademail.vpcf"
@@ -20,17 +20,8 @@ end
 if IsServer() then
 	function modifier_arena_rune_spikes:OnTakeDamage(keys)
 		local unit = self:GetParent()
-		local inflictor = keys.inflictor
-		if unit == keys.unit and unit:IsAlive() and (not IsValidEntity(inflictor) or not NOT_DAMAGE_REFRLECTABLE_ABILITIES[inflictor:GetAbilityName()]) then
-			local ability = self:GetAbility()
-			ApplyDamage({
-				victim = keys.attacker,
-				attacker = self:GetCaster(),
-				damage = keys.original_damage * self:GetStackCount() * 0.01,
-				damage_type = keys.damage_type,
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				ability = ability
-			})
+		if unit == keys.unit and unit:IsAlive() then
+			SimpleDamageReflect(unit, keys.attacker, keys.original_damage * self:GetStackCount() * 0.01, keys.damage_flags, self:GetAbility(), keys.damage_type)
 		end
 	end
 else

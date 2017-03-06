@@ -271,7 +271,8 @@
 
 	"freya_pain_reflection"
 	{
-		"BaseClass"             		"ability_datadriven"
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"heroes/hero_freya/pain_reflection.lua"
 		"AbilityTextureName"			"arena/freya_pain_reflection"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -297,29 +298,6 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"duration"			"3 3.5 4 4.5 5 5.5 6"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_freya_pain_reflection"
-				"Target" 		"CASTER"
-				
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_freya_pain_reflection"
-			{
-				"Passive"			"0"
-				"IsPurgable"		"0"
-				"Duration"			"%duration"
-
-				"EffectName"		"particles/arena/units/heroes/hero_freya/pain_reflection.vpcf"
-				"EffectAttachType"	"follow_origin"
 			}
 		}
 	}

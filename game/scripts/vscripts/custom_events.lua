@@ -4,6 +4,7 @@ function GameMode:RegisterCustomListeners()
 	CustomGameEventManager:RegisterListener("modifier_clicked_purge", Dynamic_Wrap(GameMode, "ModifierClickedPurge"))
 	CustomGameEventManager:RegisterListener("submit_gamemode_vote", Dynamic_Wrap(GameMode, "SubmitGamemodeVote"))
 	CustomGameEventManager:RegisterListener("submit_gamemode_map", Dynamic_Wrap(GameMode, "SubmitGamemodeMap"))
+	CustomGameEventManager:RegisterListener("team_select_host_set_player_team", Dynamic_Wrap(GameMode, "TeamSelectHostSetPlayerTeam"))
 end
 
 function GameMode:MetamorphosisElixirCast(data)
@@ -47,6 +48,21 @@ function GameMode:ModifierClickedPurge(data)
 		local ent = EntIndexToHScript(data.unit)
 		if IsValidEntity(ent) and ent:GetPlayerOwner() == PlayerResource:GetPlayer(data.PlayerID) and table.contains(ONCLICK_PURGABLE_MODIFIERS, data.modifier) and not ent:IsStunned() and not ent:IsChanneling() then
 			ent:RemoveModifierByName(data.modifier)
+		end
+	end
+end
+
+function GameMode:TeamSelectHostSetPlayerTeam(data)
+	if GameRules:PlayerHasCustomGameHostPrivileges(PlayerResource:GetPlayer(data.PlayerID)) and data.player then
+		if data.team then
+			PlayerResource:SetCustomTeamAssignment(tonumber(data.player), tonumber(data.team))
+		end
+		if data.player2 then
+			local team = PlayerResource:GetCustomTeamAssignment(data.player)
+			local team2 = PlayerResource:GetCustomTeamAssignment(data.player2)
+			PlayerResource:SetCustomTeamAssignment(tonumber(data.player2), DOTA_TEAM_NOTEAM)
+			PlayerResource:SetCustomTeamAssignment(tonumber(data.player), team2)
+			PlayerResource:SetCustomTeamAssignment(tonumber(data.player2), team)
 		end
 	end
 end

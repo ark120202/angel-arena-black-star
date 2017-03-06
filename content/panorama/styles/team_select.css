@@ -220,6 +220,9 @@
 	width: 100%;
 	height: 32px;
 	flow-children: right;
+	transition-property: brightness, saturation, background-color;
+	transition-timing-function: linear;
+	transition-duration: 0.1s;
 }
 DOTAAvatarImage
 {
@@ -547,4 +550,28 @@ DOTAAvatarImage
 .player_has_host_privileges.teams_locked #CancelAndUnlockButton
 {
 	visibility: visible;
+}
+
+.PlayerSlot.player_dragged
+{
+	background-color: rgba(0,0,0,0.45);
+	brightness: 0.3;
+}
+.PlayerSlot.potential_drop_target
+{
+	background-color: rgba(255,255,255,0.05)
+	saturation: 1.5;
+}
+.TeamSelectTeam.potential_drop_target,
+#UnassignedPlayersButton.potential_drop_target
+{
+	brightness: 2;
+	saturation: 1.1;
+}
+.TeamSelectTeam,
+#UnassignedPlayersButton
+{
+	transition-property: brightness, saturation;
+	transition-timing-function: linear;
+	transition-duration: 0.1s;
 }

@@ -1,9 +1,14 @@
 if HeroSelection == nil then
 	_G.HeroSelection = class({})
 	HeroSelection.SelectionEnd = false
+	HeroSelection.RandomableHeroes = {}
 end
 local bStartGameOnAllPlayersSelected = GameRules:IsCheatMode()
 local bDebugPrecacheScreen = false
+local emptyStateData = {
+	hero = "npc_dota_hero_abaddon",
+	status = "hover"
+}
 HERO_SELECTION_STATE_NOT_STARTED = 0
 HERO_SELECTION_STATE_ALLPICK = 1
 HERO_SELECTION_STATE_END = 2
@@ -15,6 +20,23 @@ function HeroSelection:Initialize()
 		CustomGameEventManager:RegisterListener("hero_selection_player_select", Dynamic_Wrap(HeroSelection, "OnHeroSelectHero"))
 		CustomGameEventManager:RegisterListener("hero_selection_player_random", Dynamic_Wrap(HeroSelection, "OnHeroRandomHero"))
 		CustomGameEventManager:RegisterListener("hero_selection_minimap_set_spawnbox", Dynamic_Wrap(HeroSelection, "OnMinimapSetSpawnbox"))
+	end
+end
+
+function HeroSelection:CollectPD()
+	PlayerTables:CreateTable("hero_selection", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+		if PlayerResource:IsValidPlayerID(i) and PlayerResource:IsValidTeamPlayer(i) then
+			local team = PlayerResource:GetTeam(i)
+			if team and team >= 2 then
+				local storageData = PlayerTables:GetTableValue("hero_selection", team)
+				if not storageData then storageData = {} end
+				if not storageData[i] then
+					storageData[i] = emptyStateData
+					PlayerTables:SetTableValue("hero_selection", team, storageData)
+				end
+			end
+		end
 	end
 end
 
@@ -97,6 +119,11 @@ function HeroSelection:PrepareTables()
 		end
 		HeroSelection.ModeData = data
 	end
+	for _,v in ipairs(HeroSelection.ModeData.HeroTabs) do
+		for _,ht in ipairs(v.Heroes) do
+			table.insert(self.RandomableHeroes, ht)
+		end
+	end
 	PlayerTables:CreateTable("hero_selection_available_heroes", HeroSelection.ModeData, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 end
 
@@ -115,7 +142,7 @@ function HeroSelection:ParseAbilitiesFromTable(t)
 	local abilities = {}
 	for i = 1, 24 do
 		local ability = t["Ability" .. i]
-		if ability and ability ~= "" and ability ~= "attribute_bonus" and not AbilityHasBehaviorByName(ability, "DOTA_ABILITY_BEHAVIOR_HIDDEN") then
+		if ability and ability ~= "" and not AbilityHasBehaviorByName(ability, "DOTA_ABILITY_BEHAVIOR_HIDDEN") then
 			table.insert(abilities, ability)
 		end
 	end
@@ -162,6 +189,7 @@ function HeroSelection:PreformGameStart()
 			for k,v in pairs(toPrecache) do
 				if not v then
 					canEnd = false
+					break
 				end
 			end
 			if canEnd then
@@ -173,7 +201,7 @@ function HeroSelection:PreformGameStart()
 					callback = function()
 						for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
 							for plyId,v in pairs(_v) do
-								HeroSelection:OnSelectHero(plyId, tostring(v.hero), nil, true)
+								HeroSelection:SelectHero(plyId, tostring(v.hero), nil, true)
 							end
 						end
 						--Tutorial:ForceGameStart()
@@ -188,8 +216,23 @@ function HeroSelection:PreformGameStart()
 	})
 end
 
+function HeroSelection:CheckEndHeroSelection()
+	local canEnd = not HeroSelection.SelectionEnd and bStartGameOnAllPlayersSelected
+	for team,_v in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection")) do
+		for plyId,v in pairs(_v) do
+			if v.status ~= "picked" then
+				canEnd = false
+				break
+			end
+		end
+	end
+	if canEnd then
+		HeroSelection:PreformGameStart()
+	end
+end
+
 function HeroSelection:PreformRandomForNotPickedUnits()
-	for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
+	for team,_v in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection")) do
 		for plyId,v in pairs(_v) do
 			if v.status ~= "picked" then
 				HeroSelection:PreformPlayerRandom(plyId)
@@ -199,32 +242,47 @@ function HeroSelection:PreformRandomForNotPickedUnits()
 end
 
 function HeroSelection:PreformPlayerRandom(playerId)
-	local heroes = {}
-
-	for _,v in ipairs(HeroSelection.ModeData.HeroTabs) do
-		for _,ht in ipairs(v.Heroes) do
-			table.insert(heroes, ht)
-		end
-	end
-
 	while true do
-		local heroData = heroes[RandomInt(1, #heroes)]
-		if not HeroSelection:IsHeroSelected(heroData.heroKey) then
-			local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(playerId))
-			if not tableData[playerId] then tableData[playerId] = {} end
-			tableData[playerId].hero = heroData.heroKey
-			tableData[playerId].status = "picked"
-			PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(playerId), tableData)
+		local heroKey = self.RandomableHeroes[RandomInt(1, #self.RandomableHeroes)].heroKey
+		if not HeroSelection:IsHeroSelected(heroKey) then
+			self:UpdateStatusForPlayer(playerId, "picked", heroKey)
 			Gold:ModifyGold(playerId, CUSTOM_GOLD_FOR_RANDOM_TOTAL)
 			break
 		end
 	end
 end
 
+function HeroSelection:GetPlayerStatus(playerId)
+	local td = PlayerTables:GetTableValueForReadOnly("hero_selection", PlayerResource:GetTeam(playerId))
+	if td and td[playerId] then
+		return table.deepcopy(td[playerId])
+	end
+	return table.deepcopy(emptyStateData)
+end
+
+function HeroSelection:UpdateStatusForPlayer(playerId, status, hero, bForNotPicked)
+	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(playerId))
+	if tableData and (not bForNotPicked or not tableData[playerId] or tableData[playerId].status ~= "picked") then
+		if not tableData[playerId] then tableData[playerId] = {} end
+		tableData[playerId].hero = hero
+		tableData[playerId].status = status
+		PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(playerId), tableData)
+		return true
+	end
+	return false
+end
+
+function HeroSelection:GetSelectedHeroName(playerID)
+	local status = HeroSelection:GetPlayerStatus(playerID)
+	if status and status.status == "picked" then
+		return status.hero
+	end
+end
+
 function HeroSelection:IsHeroSelected(heroName)
-	for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
+	for team,_v in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection")) do
 		for plyId,v in pairs(_v) do
-			if v.status == "picked" and v.hero == heroName then
+			if v.hero == heroName and v.status == "picked" then
 				return true
 			end
 		end
@@ -232,21 +290,70 @@ function HeroSelection:IsHeroSelected(heroName)
 	return false
 end
 
-function HeroSelection:OnSelectHero(playerId, heroKey, callback, bSkipPrecache)
-	HeroSelection:SelectHero(playerId, heroKey, callback, bSkipPrecache)
-
-	local team = PlayerResource:GetTeam(playerId)
-	local tableData = PlayerTables:GetTableValue("hero_selection", team)
-	if not HeroSelection:IsHeroSelected(heroKey) and tableData and tableData[playerId] then
-		tableData[playerId] = {
-			hero=heroKey,
-			status="picked"
-		}
-		PlayerTables:SetTableValue("hero_selection", team, tableData)
+function HeroSelection:GetLinkedHeroLockedAlly(hero, desiredTeam)
+	for team,_v in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection")) do
+		if team == desiredTeam then
+			for plyId,v in pairs(_v) do
+				if v.hero == hero and v.status == "locked" then
+					return plyId
+				end
+			end
+		end
 	end
 end
 
+function HeroSelection:OnHeroSelectHero(data)
+	local hero = tostring(data.hero)
+	if not HeroSelection.SelectionEnd and not self:IsHeroSelected(hero) and self:VerifyHeroGroup(hero, "Selection") then
+		local playerID = data.PlayerID
+		local linked = GetKeyValue(hero, "LinkedHero")
+		local newStatus = "picked"
+		if linked then
+			local team = PlayerResource:GetTeam()
+			linked = string.split(linked, " | ")
+			local areLinkedPicked = true
+			local linkedMap = {}
+			for _,v in ipairs(linked) do
+				linkedMap[v] = HeroSelection:GetLinkedHeroLockedAlly(v, team)
+				if linkedMap[v] == nil then
+					areLinkedPicked = false
+					break
+				end
+			end
+			if areLinkedPicked then
+				for hero, heroplayer in ipairs(linkedMap) do
+					self:UpdateStatusForPlayer(heroplayer, "picked", hero)
+				end
+			else
+				newStatus = "locked"
+			end
+		end
+		if self:UpdateStatusForPlayer(playerID, newStatus, hero, true) and newStatus == "picked" then
+			PrecacheUnitByNameAsync(GetKeyValue(hero, "base_hero") or hero, function() end, playerID)
+			Gold:ModifyGold(playerID, CUSTOM_STARTING_GOLD)
+			self:CheckEndHeroSelection()
+		end
+	end
+
+end
+
+function HeroSelection:OnHeroHover(data)
+	if not HeroSelection.SelectionEnd then
+		self:UpdateStatusForPlayer(data.PlayerID, "hover", tostring(data.hero), true)
+	end
+end
+
+function HeroSelection:OnHeroRandomHero(data)
+	local team = PlayerResource:GetTeam(data.PlayerID)
+	if not HeroSelection.SelectionEnd and HeroSelection:GetPlayerStatus(data.PlayerID).status ~= "picked" then
+		HeroSelection:PreformPlayerRandom(data.PlayerID)
+	end
+
+	HeroSelection:CheckEndHeroSelection()
+end
+
 function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
+	self:UpdateStatusForPlayer(playerId, "picked", heroName)
 	Timers:CreateTimer(function()
 		local connectionState = PlayerResource:GetConnectionState(playerId)
 		if connectionState == DOTA_CONNECTION_STATE_CONNECTED then
@@ -254,7 +361,6 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 				Timers:CreateTimer(function()
 					connectionState = PlayerResource:GetConnectionState(playerId)
 					if connectionState == DOTA_CONNECTION_STATE_CONNECTED then
---Start block
 						local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
 						local oldhero = PlayerResource:GetSelectedHeroEntity(playerId)
 						local hero
@@ -282,7 +388,6 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 							TransformUnitClass(hero, heroTableCustom)
 							hero.UnitName = heroName
 						end
---End block
 						if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
 							for i = 0, hero:GetAbilityCount() - 1 do
 								if hero:GetAbilityByIndex(i) then
@@ -312,103 +417,6 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 			return 0.1
 		end
 	end)
-end
-
-function HeroSelection:RemoveAllOwnedUnits(playerId)
-	local player = PlayerResource:GetPlayer(playerId)
-	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
-	local courier = FindCourier(PlayerResource:GetTeam(playerId))
-	--print("Begun destroying all units for ".. playerId)
-	for _,v in ipairs(FindAllOwnedUnits(player or playerId)) do
-		--print("Checking " .. v:GetName())
-		if v ~= hero and v ~= courier then
-			--print("Removing " .. v:GetName())
-			v:ClearNetworkableEntityInfo()
-			v:ForceKill(false)
-			UTIL_Remove(v)
-		end
-	end
-end
-
-function HeroSelection:OnHeroHover(data)
-	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID)) or {}
-	if not HeroSelection.SelectionEnd and (not tableData[data.PlayerID] or tableData[data.PlayerID].status ~= "picked") then
-		if not tableData[data.PlayerID] then tableData[data.PlayerID] = {} end
-		tableData[data.PlayerID].hero = data.hero
-		tableData[data.PlayerID].status = "hover"
-		PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID), tableData)
-	end
-end
-
-function HeroSelection:OnHeroRandomHero(data)
-	local team = PlayerResource:GetTeam(data.PlayerID)
-	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID))
-	if not HeroSelection.SelectionEnd and tableData and tableData[data.PlayerID] and tableData[data.PlayerID].status and tableData[data.PlayerID].status ~= "picked" then
-		HeroSelection:PreformPlayerRandom(data.PlayerID)
-	end
-
-	local canEnd = not HeroSelection.SelectionEnd and bStartGameOnAllPlayersSelected
-	for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
-		for plyId,v in pairs(_v) do
-			if v.status ~= "picked" then
-				canEnd = false
-				break
-			end
-		end
-	end
-	if canEnd then
-		HeroSelection:PreformGameStart()
-	end
-end
-
-function HeroSelection:OnHeroSelectHero(data)
-	local team = PlayerResource:GetTeam(data.PlayerID)
-	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID))
-	if not HeroSelection.SelectionEnd and not HeroSelection:IsHeroSelected(tostring(data.hero)) and tableData and tableData[data.PlayerID] and tableData[data.PlayerID].status and tableData[data.PlayerID].status ~= "picked" and HeroSelection:VerifyHeroGroup(tostring(data.hero), "Selection") then
-		if not tableData[data.PlayerID] then tableData[data.PlayerID] = {} end
-		tableData[data.PlayerID].hero = data.hero
-		tableData[data.PlayerID].status = "picked"
-		PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID), tableData)
-		local newHeroName = data.hero
-		if string.starts(data.hero, "alternative_") then
-			newHeroName = string.sub(data.hero, 13)
-		end
-		PrecacheUnitByNameAsync(newHeroName, function() end, data.PlayerID)
-		Gold:ModifyGold(data.PlayerID, CUSTOM_STARTING_GOLD)
-	end
-
-	local canEnd = not HeroSelection.SelectionEnd and bStartGameOnAllPlayersSelected
-	for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
-		for plyId,v in pairs(_v) do
-			if v.status ~= "picked" then
-				canEnd = false
-				break
-			end
-		end
-	end
-	if canEnd then
-		HeroSelection:PreformGameStart()
-	end
-end
-
-function HeroSelection:CollectPD()
-	PlayerTables:CreateTable("hero_selection", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
-	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-		if PlayerResource:IsValidPlayerID(i) and PlayerResource:IsValidTeamPlayer(i) then
-			local team = PlayerResource:GetTeam(i)
-			if team and team >= 2 then
-				local storageData = PlayerTables:GetTableValue("hero_selection", team)
-				if not storageData then storageData = {} end
-				if not storageData[i] then
-					storageData[i] = {
-						hero="npc_dota_hero_abaddon",
-						status="hover",
-					}
-					PlayerTables:SetTableValue("hero_selection", team, storageData)
-				end
-			end
-		end
-	end
 end
 
 function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item)
@@ -443,9 +451,9 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			table.insert(items, CreateItem("item_dummy", hero, hero))
 		end
 	end
-	HeroSelection:RemoveAllOwnedUnits(playerId)
+	RemoveAllOwnedUnits(playerId)
 	local startTime = GameRules:GetDOTATime(true, true)
-	HeroSelection:OnSelectHero(playerId, newHeroName, function(newHero)
+	HeroSelection:SelectHero(playerId, newHeroName, function(newHero)
 		newHero:AddNewModifier(newHero, nil, "modifier_hero_selection_transformation", nil)
 		FindClearSpaceForUnit(newHero, location, true)
 		if keepExp then
@@ -495,15 +503,6 @@ function HeroSelection:OnMinimapSetSpawnbox(data)
 		tableData[data.PlayerID].SpawnBoxes = SpawnBoxes
 	end
 	PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID), tableData)
-end
-
-function HeroSelection:GetSelectedHeroName(playerID)
-	for _,v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
-		local t = v[playerID]
-		if t and type(t) == "table" and t.status == "picked" then
-			return t.hero
-		end
-	end
 end
 
 

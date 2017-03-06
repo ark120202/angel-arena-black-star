@@ -30,7 +30,7 @@ function modifier_item_blade_mail_arena_active:GetEffectName()
 	return "particles/items_fx/blademail.vpcf"
 end
 function modifier_item_blade_mail_arena_active:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
+	return PATTACH_ABSORIGIN
 end
 function modifier_item_blade_mail_arena_active:GetStatusEffectName()
 	return "particles/status_fx/status_effect_blademail.vpcf"
@@ -45,18 +45,9 @@ if IsServer() then
 
 	function modifier_item_blade_mail_arena_active:OnTakeDamage(keys)
 		local unit = self:GetParent()
-		local inflictor = keys.inflictor
-		if unit == keys.unit and unit:IsAlive() and (not IsValidEntity(inflictor) or not NOT_DAMAGE_REFRLECTABLE_ABILITIES[inflictor:GetAbilityName()]) then
-			local ability = self:GetAbility()
+		local ability = self:GetAbility()
+		if unit == keys.unit and SimpleDamageReflect(unit, keys.attacker, keys.original_damage * ability:GetSpecialValueFor("reflected_damage_pct") * 0.01, keys.damage_flags, ability, keys.damage_type) then
 			keys.attacker:EmitSound("DOTA_Item.BladeMail.Damage")
-			ApplyDamage({
-				victim = keys.attacker,
-				attacker = self:GetCaster(),
-				damage = keys.original_damage * ability:GetSpecialValueFor("reflected_damage_pct") * 0.01,
-				damage_type = keys.damage_type,
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				ability = ability
-			})
 		end
 	end
 end

@@ -129,13 +129,7 @@ function PlayerTables:equals(o1, o2, ignore_mt)
 end
 
 function PlayerTables:copy(obj, seen)
-	if type(obj) ~= 'table' then return obj end
-	if seen and seen[obj] then return seen[obj] end
-	local s = seen or {}
-	local res = setmetatable({}, getmetatable(obj))
-	s[obj] = res
-	for k, v in pairs(obj) do res[self:copy(k, s)] = self:copy(v, s) end
-	return res
+	return table.deepcopy(obj, seen)
 end
 
 function PlayerTables:GetPlayerSubscriptions(pid)
@@ -295,6 +289,15 @@ function PlayerTables:GetTableValue(tableName, key)
 	return ret
 end
 
+function PlayerTables:GetTableValueForReadOnly(tableName, key)
+	if not self.tables[tableName] then
+		print("[playertables.lua] Warning: Table '" .. tableName .. "' does not exist.")
+		return
+	end
+
+	return self.tables[tableName][key]
+end
+
 function PlayerTables:GetAllTableValues(tableName)
 	if not self.tables[tableName] then
 		print("[playertables.lua] Warning: Table '" .. tableName .. "' does not exist.")
@@ -306,6 +309,15 @@ function PlayerTables:GetAllTableValues(tableName)
 		return self:copy(ret)
 	end
 	return ret
+end
+
+function PlayerTables:GetAllTableValuesForReadOnly(tableName)
+	if not self.tables[tableName] then
+		print("[playertables.lua] Warning: Table '" .. tableName .. "' does not exist.")
+		return
+	end
+
+	return self.tables[tableName]
 end
 
 function PlayerTables:DeleteTableKey(tableName, key)

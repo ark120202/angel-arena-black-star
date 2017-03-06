@@ -292,7 +292,6 @@
 		"MagicalResistance"		"80"
 		"AttackDamageMin"		"25"
 		"AttackDamageMax"		"25"
-		"EquipDynamicWearables"	"1"
 	}
 
 	"npc_arena_hero_rin"
@@ -414,7 +413,7 @@
 	"npc_arena_hero_destroyer"
 	{
 		"base_hero"	"npc_dota_hero_sven"
-		"Enabled"	"1"
+		"Enabled"	"0"
 		"Ability1"		"destroyer_armor_crush"
 		"Ability2"		"destroyer_seal_of_limit"
 		"Ability3"		"destroyer_body_reconstruction"
@@ -432,5 +431,21 @@
 		"AttributeIntelligenceGain"	"1.2"
 		"AttributeAgilityGain"	"2.0"
 		//		"Model"	"models/units/destroyer/destroyer.vmdl"
+	}
+
+	"npc_arena_hero_maka"
+	{
+		"base_hero"				"npc_dota_hero_wisp"
+		"LinkedHero"			"npc_arena_hero_soul_eater"
+		"Model"					"models/units/maka/maka.vmdl"
+		
+	}
+
+	"npc_arena_hero_soul_eater"
+	{
+		"base_hero"				"npc_dota_hero_wisp"
+		"LinkedHero"			"npc_arena_hero_maka"
+		"Model"					"models/units/soul_eater/soul_eater.vmdl"
+		
 	}
 }

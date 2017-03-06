@@ -78,26 +78,6 @@ ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
 			end
 		end
 	end end,
-	["modifier_freya_pain_reflection"] = function(attacker, victim, inflictor, damage, damagetype_const)
-		if not IsValidEntity(inflictor) or not NOT_DAMAGE_REFRLECTABLE_ABILITIES[inflictor:GetAbilityName()] then
-			local freya_pain_reflection = victim:FindAbilityByName("freya_pain_reflection")
-			local returnedDmg = damage * freya_pain_reflection:GetAbilitySpecial("damage_return_pct") * 0.01
-			ApplyDamage({
-				victim = attacker,
-				attacker = victim,
-				damage = returnedDmg,
-				damage_type = freya_pain_reflection:GetAbilityDamageType(),
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				ability = freya_pain_reflection
-			})
-			local heal = returnedDmg * freya_pain_reflection:GetAbilitySpecial("returned_to_heal_pct") * 0.01
-			SafeHeal(victim, heal, victim)
-			if heal then
-				SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, victim, heal, nil)
-				ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
-			end
-		end
-	end
 }
 
 OUTGOING_DAMAGE_MODIFIERS = {
@@ -290,25 +270,14 @@ INCOMING_DAMAGE_MODIFIERS = {
 			local sara_fragment_of_armor = victim:FindAbilityByName("sara_fragment_of_armor")
 			if sara_fragment_of_armor and not victim:IsIllusion() and victim:IsAlive() and not victim:PassivesDisabled() and victim.GetEnergy and sara_fragment_of_armor:GetToggleState() then
 				local blocked_damage_pct = sara_fragment_of_armor:GetAbilitySpecial("blocked_damage_pct") * 0.01
-				local ndamage = damage * blocked_damage_pct
-				local mana_needed = ndamage / sara_fragment_of_armor:GetAbilitySpecial("damage_per_energy")
+				local mana_needed = (damage * blocked_damage_pct) / sara_fragment_of_armor:GetAbilitySpecial("damage_per_energy")
 				if victim:GetEnergy() >= mana_needed then
 					victim:EmitSound("Hero_Medusa.ManaShield.Proc")
 					victim:ModifyEnergy(-mana_needed)					
-					local particleName = "particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
+					local particleName = "particles/arena/units/heroes/hero_sara/fragment_of_armor_impact.vpcf"
 					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
 					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
 					ParticleManager:SetParticleControl(particle, 1, Vector(mana_needed,0,0))
-					if victim:HasScepter() and (not IsValidEntity(inflictor) or not NOT_DAMAGE_REFRLECTABLE_ABILITIES[inflictor:GetAbilityName()]) then
-						ApplyDamage({
-							victim = attacker,
-							attacker = victim,
-							damage = damage * sara_fragment_of_armor:GetSpecialValueFor("reflected_damage_pct_scepter") * 0.01,
-							damage_type = sara_fragment_of_armor:GetAbilityDamageType(),
-							damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-							ability = sara_fragment_of_armor
-						})
-					end
 					return 1 - blocked_damage_pct
 				end
 			end

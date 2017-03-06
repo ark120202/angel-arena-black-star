@@ -187,7 +187,7 @@
 	width: 110px;
 }
 
-.PlayerInTeamNickname
+.PlayerInTeamPanel #NickName
 {
 	margin: 4px 0px;
 	width: 100%;
@@ -201,23 +201,27 @@
 	text-overflow: shrink;
 }
 
-.PlayerInTeamHeroImageHost
+.PlayerInTeamPanel #ImageHost
 {
 	align: center top;
 	border-width: 2px;
 	border-style: solid;
 }
 
-.PlayerInTeamHeroImage
+.PlayerInTeamPanel #HeroImage
 {
 	width: 100px;
 	height: width-percentage(56.25%);
 	background-color: #282E30;
 }
 
-.PlayerInTeamHeroImageHover
+.PlayerInTeamPanel.HoveredHero #HeroImage
 {
 	saturation: .1;
+}
+.PlayerInTeamPanel.LockedHero #HeroImage
+{
+	saturation: .6;
 }
 #SelectedHeroSelectButton
 {
@@ -247,11 +251,19 @@
 	wash-color: grey;
 	pre-transform-scale2d: 1;
 }
+#SelectedHeroSelectButton .LockInButton
+{
+
+}
 #SelectedHeroSelectLabel
 {
 	align: center top;
 	font-size: 24px;
 	color: #b2da25;
+}
+#SelectedHeroSelectLabel .LockInButton
+{
+	visibility: collapse;
 }
 
 #SelectedHeroSelectHeroName

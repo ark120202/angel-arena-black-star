@@ -227,7 +227,11 @@ function Duel:EndDuelForUnit(unit)
 		end
 	end)
 	if unit.FindClearSpaceForUnitAndSetCamera then
-		unit:FindClearSpaceForUnitAndSetCamera(unit.ArenaBeforeTpLocation or FindFountain(unit:GetTeamNumber()):GetAbsOrigin())
+		local pos = unit.ArenaBeforeTpLocation
+		if not pos then
+			pos = FindFountain(unit:GetTeamNumber()):GetAbsOrigin()
+		end
+		unit:FindClearSpaceForUnitAndSetCamera(pos)
 	end
 	unit.InArena = nil
 	unit.ArenaBeforeTpLocation = nil

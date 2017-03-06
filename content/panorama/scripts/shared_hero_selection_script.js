@@ -1,5 +1,3 @@
-"use strict";
-
 function IsHeroPicked(name) {
 	var hero_selection_table = PlayerTables.GetAllTableValues("hero_selection")
 	if (hero_selection_table != null) {
@@ -79,7 +77,7 @@ function SelectFirstHeroPanel() {
 }
 
 function ChooseHeroUpdatePanels() {
-	var BioPanel = $("#SelectedHeroDescriptionText")
+	/*var BioPanel = $("#SelectedHeroDescriptionText")
 	if (BioPanel != null)
 		BioPanel.text = $.Localize("#" + SelectedHeroData.heroKey + "_bio")
 	var ScenePanel = $("#SelectedHeroScene")
@@ -89,9 +87,10 @@ function ChooseHeroUpdatePanels() {
 			ScenePanel.BCreateChildren("<DOTAScenePanel style=\"width: 100%; height: 100%;\" unit=\"" + SelectedHeroData.model + "\"/>");
 			ScenePanel.innerUnitModel = SelectedHeroData.model
 		}
-	}
+	}*/
 	UpdateSelectionButton()
 	$("#SelectedHeroSelectHeroName").text = $.Localize("#" + SelectedHeroData.heroKey).toUpperCase()
+	$("#SelectedHeroSelectButton").SetHasClass("LockInButton")
 	$("#SelectedHeroAbilitiesPanelInner").RemoveAndDeleteChildren()
 	for (var key in SelectedHeroData.abilities) {
 		var abilityName = SelectedHeroData.abilities[key]
