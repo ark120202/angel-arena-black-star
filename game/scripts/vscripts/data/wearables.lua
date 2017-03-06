@@ -1,4 +1,5 @@
 CUSTOM_WEARABLES_PLAYER_ITEMS = {
+	--ark120202
 	[109792606] = {
 		--"wearable_hero_stargazer_helmet_of_the_sunray",
 		--"wearable_hero_omniknight_frozen_sword",
@@ -6,17 +7,24 @@ CUSTOM_WEARABLES_PLAYER_ITEMS = {
 		"shinobu_umbrella",
 		"wearable_developer"
 	},
+	--Murzik
 	[82292900] = {
 		--"wearable_hero_stargazer_helmet_of_the_sunray",
 		--"wearable_hero_omniknight_frozen_sword",
 		--"wearable_item_summoned_unit_kyuubey"
 	},
+	--Dimka
 	[103166883] = {
 		"shinobu_umbrella",
+	},
+	--Alastor
+	[354150989] = {
+		"wearable_developer",
 	}
 }
 
 CUSTOM_WEARABLES = {
+	--Default
 	saber_excalibur = {
 		particles = {
 			--[[{
@@ -110,14 +118,23 @@ CUSTOM_WEARABLES = {
 		used_by_heroes = {"npc_arena_hero_anakim"},
 		IsDefault = true
 	},
+	maka_scythe = {
+		model = "models/units/maka/maka_scythe.vmdl",
+		used_by_heroes = {"npc_arena_hero_maka"},
+		IsDefault = true,
+		OnCreated = function(self)
+			self:SetVisible(false)
+		end
+	},
+
+	--Premium
 	shinobu_umbrella = {
 		model = "models/custom/umbrella_rainbow.vmdl",
 		used_by_heroes = {"npc_arena_hero_shinobu"},
 		attach_method = WEARABLES_ATTACH_METHOD_ATTACHMENTS,
 		attachment = "attach_hitloc",
 		--scale = 1.5
-	}
-
+	},
 }
 
 --[[CUSTOM_WEARABLES_ITEM_HANDLES = {

@@ -615,7 +615,11 @@ function AbilityHasBehaviorByName(ability_name, behaviorString)
 end
 
 function AbilityHasBehavior(ability, behavior)
-	return bit.band( ability:GetBehavior(), behavior) == behavior
+	return bit.band(ability:GetBehavior(), behavior) == behavior
+end
+
+function HasDamageFlag(damage_flags, flag)
+	return bit.band(damage_flags, flag) == flag
 end
 
 function table.merge(input1, input2)
@@ -994,6 +998,19 @@ function FindAllOwnedUnits(player)
 	return summons
 end
 
+function RemoveAllOwnedUnits(playerId)
+	local player = PlayerResource:GetPlayer(playerId)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+	local courier = FindCourier(PlayerResource:GetTeam(playerId))
+	for _,v in ipairs(FindAllOwnedUnits(player or playerId)) do
+		if v ~= hero and v ~= courier then
+			v:ClearNetworkableEntityInfo()
+			v:ForceKill(false)
+			UTIL_Remove(v)
+		end
+	end
+end
+
 function table.icontains(table, element)
 	for _, value in ipairs(table) do
 		if value == element then
@@ -1017,7 +1034,7 @@ end
 
 function MakePlayerAbandoned(iPlayerID)
 	if not PLAYER_DATA[iPlayerID].IsAbandoned then
-		HeroSelection:RemoveAllOwnedUnits(iPlayerID)
+		RemoveAllOwnedUnits(iPlayerID)
 		local hero = PlayerResource:GetSelectedHeroEntity(iPlayerID)
 		if IsValidEntity(hero) then
 			PLAYER_DATA[iPlayerID].BeforeAbandon_Level = hero:GetLevel()
@@ -1699,6 +1716,83 @@ function table.deepmerge(t1, t2)
         end
     end
     return t1
+end
+
+function CDOTA_PlayerResource:SetPlayerTeam(playerID, newTeam)
+	local oldTeam = self:GetTeam(playerID)
+	local player = self:GetPlayer(playerID)
+	local hero = self:GetSelectedHeroEntity(playerID)
+	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
+	local playerPickData = {}
+	local tableData = PlayerTables:GetTableValue("hero_selection", oldTeam)
+	if tableData and tableData[playerID] then
+		table.merge(playerPickData, tableData[playerID])
+		tableData[playerID] = nil
+		PlayerTables:SetTableValue("hero_selection", oldTeam, tableData)
+	end
+
+	for _,v in ipairs(FindAllOwnedUnits(player)) do
+		v:SetTeam(newTeam)
+	end
+	player:SetTeam(newTeam)
+
+	PlayerResource:UpdateTeamSlot(playerID, newTeam, 1)
+	PlayerResource:SetCustomTeamAssignment(playerID, newTeam)
+
+	local newTableData = PlayerTables:GetTableValue("hero_selection", newTeam)
+	if newTableData and playerPickData then
+		newTableData[playerID] = playerPickData
+		PlayerTables:SetTableValue("hero_selection", newTeam, newTableData)
+	end
+	--[[for _, v in ipairs(Entities:FindAllByClassname("npc_dota_courier") ) do
+		v:SetControllableByPlayer(playerID, v:GetTeamNumber() == newTeam)
+	end]]
+	--FindCourier(oldTeam):SetControllableByPlayer(playerID, false)
+	local targetCour = FindCourier(newTeam)
+	if IsValidEntity(targetCour) then
+		targetCour:SetControllableByPlayer(playerID, true)
+	end
+	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
+	PlayerTables:AddPlayerSubscription("dynamic_minimap_points_" .. newTeam, playerID)
+
+	for i = 0, hero:GetAbilityCount() - 1 do
+		local skill = hero:GetAbilityByIndex(i)
+		if skill then
+			--print(skill.GetIntrinsicModifierName and skill:GetIntrinsicModifierName())
+			if skill.GetIntrinsicModifierName and skill:GetIntrinsicModifierName() then
+				RecreateAbility(hero, skill)
+			end
+		end
+	end
+
+	CustomGameEventManager:Send_ServerToPlayer(player, "arena_team_changed_update", {})
+	PlayerResource:RefreshSelection()
+end
+
+function SimpleDamageReflect(victim, attacker, damage, flags, ability, damage_type)
+	if victim:IsAlive() and not HasDamageFlag(flags, DOTA_DAMAGE_FLAG_REFLECTION) and attacker:GetTeamNumber() ~= victim:GetTeamNumber() then
+		print("Reflected " .. damage .. " damage from " .. victim:GetUnitName() .. " to " .. attacker:GetUnitName())
+		ApplyDamage({
+			victim = attacker,
+			attacker = victim,
+			damage = damage,
+			damage_type = damage_type,
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_REFLECTION,
+			ability = ability
+		})
+		return true
+	end
+	return false
+end
+
+function table.deepcopy(obj, seen)
+	if type(obj) ~= 'table' then return obj end
+	if seen and seen[obj] then return seen[obj] end
+	local s = seen or {}
+	local res = setmetatable({}, getmetatable(obj))
+	s[obj] = res
+	for k, v in pairs(obj) do res[self:copy(k, s)] = self:copy(v, s) end
+	return res
 end
 
 --TODO

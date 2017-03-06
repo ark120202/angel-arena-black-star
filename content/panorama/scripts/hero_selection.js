@@ -14,7 +14,8 @@ var SelectedHeroData,
 	HeroesPanels = [],
 	tabsData = {},
 	PlayerSpawnBoxes = {},
-	HeroSelectionState = -1;
+	HeroSelectionState = -1,
+	PlayerPanels = [];
 
 var SteamIDSpecialBGs = {
 	//ark120202
@@ -113,13 +114,9 @@ function RandomHero() {
 }
 
 function UpdateSelectionButton() {
-	if (SelectedHeroData != null && !IsHeroPicked(SelectedHeroData.heroKey) && !localHeroPicked) {
-		$("#SelectedHeroSelectButton").enabled = true
-		$("#HeroRandomButton").enabled = true
-	} else {
-		$("#SelectedHeroSelectButton").enabled = false
-		$("#HeroRandomButton").enabled = false
-	}
+	var canPick = SelectedHeroData != null && !IsHeroPicked(SelectedHeroData.heroKey) && !localHeroPicked
+	$("#SelectedHeroSelectButton").enabled = canPick
+	$("#HeroRandomButton").enabled = canPick
 }
 
 function UpdateTimer() {
@@ -132,20 +129,37 @@ function UpdateTimer() {
 		}
 		$("#HeroSelectionTimer").text = Math.ceil(SelectionTimerRemainingTime);
 		SearchHero();
-		$.Each(Game.GetAllPlayerIDs(), function(id) {
-			var p = $("#playerpickpanelhost_player" + id)
-			if (p != null) {
-				var playerInfo = Game.GetPlayerInfo(id);
-				p.SetHasClass("player_connection_abandoned", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_ABANDONED);
-				p.SetHasClass("player_connection_failed", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_FAILED);
-				p.SetHasClass("player_connection_disconnected", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_DISCONNECTED);
+		for (var pid in PlayerPanels) {
+			var panel = PlayerPanels[pid]
+			var playerInfo = Game.GetPlayerInfo(Number(PlayerPanels));
+			if (playerInfo != null) {
+				panel.SetHasClass("player_connection_abandoned", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_ABANDONED);
+				panel.SetHasClass("player_connection_failed", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_FAILED);
+				panel.SetHasClass("player_connection_disconnected", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_DISCONNECTED);
 			}
+		}
+		$.Each($(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").GetChild(1).Children(), function(child) {
+			var childrencount = child.GetChildCount()
+			child.SetHasClass("SpawnBoxUnitPanelChildren2", childrencount >= 2)
+			child.SetHasClass("SpawnBoxUnitPanelChildren3", childrencount >= 3)
+			child.SetHasClass("SpawnBoxUnitPanelChildren5", childrencount >= 5)
 		});
 	} else {
 		$.Schedule(0.03, function() {
 			$("#HeroSelectionTimer").text = 0
 		})
 	}
+}
+
+function Snippet_PlayerPanel(pid) {
+	if (PlayerPanels[pid] == null) {
+		var panel = $.CreatePanel('Panel', TeamSelectionPanel, "")
+		panel.BLoadLayoutSnippet("PlayerPanel")
+		panel.FindChildTraverse("NickName").text = Players.GetPlayerName(Number(playerIdInTeam))
+		panel.FindChildTraverse("ImageHost").style.borderColor = GetHEXPlayerColor(Number(playerIdInTeam))
+		PlayerPanels[pid] = panel
+	}
+	return PlayerPanels[pid]
 }
 
 function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
@@ -161,35 +175,14 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 		var TeamSelectionPanel = $("#team_selection_panels_team" + teamNumber)
 		for (var playerIdInTeam in changesObject[teamNumber]) {
 			var playerData = changesObject[teamNumber][playerIdInTeam]
-			if ($("#playerpickpanelimage_player" + playerIdInTeam) == null) {
-				var SelectedPlayerHeroData = changesObject[teamNumber][playerIdInTeam]
-				var PlayerInTeamPanel = $.CreatePanel('Panel', TeamSelectionPanel, "")
-				PlayerInTeamPanel.AddClass("PlayerInTeamPanel")
 
-				var PlayerInTeamNickname = $.CreatePanel('Label', PlayerInTeamPanel, "")
-				PlayerInTeamNickname.AddClass("PlayerInTeamNickname")
-				PlayerInTeamNickname.text = Players.GetPlayerName(Number(playerIdInTeam))
-				var playerColor = Players.GetPlayerColor(Number(playerIdInTeam)).toString(16)
-				if (playerColor != null)
-					playerColor = "#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2)
-				else
-					playerColor = "#000000";
-				var HeroImageHost = $.CreatePanel("Panel", PlayerInTeamPanel, "playerpickpanelhost_player" + playerIdInTeam)
-				HeroImageHost.AddClass("PlayerInTeamHeroImageHost")
-				HeroImageHost.style.borderColor = playerColor
-				var HeroImage = $.CreatePanel('Image', HeroImageHost, "playerpickpanelimage_player" + playerIdInTeam)
-				HeroImage.AddClass("PlayerInTeamHeroImage")
-				var HeroDisconnectionIndicator = $.CreatePanel('Image', HeroImageHost, "")
-				HeroDisconnectionIndicator.AddClass("DisconnectionIndicator")
-				HeroDisconnectionIndicator.SetImage("file://{images}/custom_game/icon_disconnect.png")
-			}
-
-			var HeroImage = $("#playerpickpanelimage_player" + playerIdInTeam)
-			if (playerData.status == "hover") {
+			var PlayerPanel = Snippet_PlayerPanel(playerIdInTeam)
+			PlayerPanel.SetHasClass("HoveredHero", playerData.status == "hover")
+			PlayerPanel.SetHasClass("LockedHero", playerData.status == "hover")
+			if (playerData.status == "hover" || playerData.status == "locked") {
 				if (teamNumber == Players.GetTeam(Game.GetLocalPlayerID())) {
-					HeroImage.SetImage(TransformTextureToPath(playerData.hero))
+					PlayerPanel.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(playerData.hero))
 				}
-				HeroImage.AddClass("PlayerInTeamHeroImageHover")
 			} else if (playerData.status == "picked") {
 				if (playerIdInTeam == Game.GetLocalPlayerID()) {
 					localHeroPicked = true
@@ -198,9 +191,9 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 				if ($("#HeroListPanel_element_" + playerData.hero) != null) {
 					$("#HeroListPanel_element_" + playerData.hero).AddClass("HeroListElementPickedBySomeone")
 				}
-				HeroImage.SetImage(TransformTextureToPath(playerData.hero))
-				HeroImage.RemoveClass("PlayerInTeamHeroImageHover")
+				PlayerPanel.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(playerData.hero))
 			}
+
 			if (teamNumber == Players.GetTeam(Game.GetLocalPlayerID())) {
 				if (playerData.SpawnBoxes != null) {
 					if (PlayerSpawnBoxes[playerIdInTeam] == null)
@@ -232,14 +225,6 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 							}
 						}
 					}
-					$.Schedule(1, function() {
-						$.Each($(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").GetChild(1).Children(), function(child) {
-							var childrencount = child.GetChildCount()
-							child.SetHasClass("SpawnBoxUnitPanelChildren2", childrencount >= 2)
-							child.SetHasClass("SpawnBoxUnitPanelChildren3", childrencount >= 3)
-							child.SetHasClass("SpawnBoxUnitPanelChildren5", childrencount >= 5)
-						});
-					});
 				}
 			}
 		}
@@ -320,7 +305,6 @@ var adsurl = "https://goo.gl/wQpngH"; //dota2.sgm-luck.ru
 var adsEnabledLangs = [
 	"russian",
 	"ukrainian",
-	"bulgarian",
 	"bulgarian",
 ];
 

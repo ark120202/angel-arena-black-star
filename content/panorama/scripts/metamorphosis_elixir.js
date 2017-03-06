@@ -57,11 +57,7 @@ function SelectHero() {
 }
 
 function UpdateSelectionButton() {
-	if (SelectedHeroData != null && !IsHeroPicked(SelectedHeroData.heroKey)) {
-		$("#SelectedHeroSelectButton").enabled = true
-	} else {
-		$("#SelectedHeroSelectButton").enabled = false
-	}
+	$("#SelectedHeroSelectButton").enabled = SelectedHeroData != null && !IsHeroPicked(SelectedHeroData.heroKey)
 }
 
 function CloseMenu() {

@@ -38,6 +38,7 @@ function DynamicWearables:CreateDotaCustomWearable()
 		return true
 	end
 	wearableEntity.SetVisible = function(self, state)
+		--print("Set visible: " .. tostring(state))
 		self.WearableVisible = state
 	end
 	return wearableEntity
@@ -142,6 +143,9 @@ function CDOTA_BaseNPC:EquipWearable(wearableId)
 			end
 		end
 		table.insert(particles, pfx)
+	end
+	if wearable.OnCreated then
+		wearable.OnCreated(wearableEntity)
 	end
 	self.EquippedWearables = self.EquippedWearables or {}
 	self.EquippedWearables[wearable.slot] = {
@@ -263,7 +267,10 @@ function DynamicWearables:ParseData()
 			particles = wearableData.particles or {},
 			additional_attached_models = wearableData.additional_attached_models or {},
 			used_by_heroes = wearableData.used_by_heroes or {},
-			IsDefault = wearableData.IsDefault or false
+			IsDefault = wearableData.IsDefault or false,
+
+			--Events
+			OnCreated = wearableData.OnCreated
 		}
 		if wearableData.attach_method == nil then wearableData.attach_method = WEARABLES_ATTACH_METHOD_DOTA end
 		if wearableData.used_by_heroes then

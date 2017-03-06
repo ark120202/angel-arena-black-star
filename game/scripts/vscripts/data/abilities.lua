@@ -14,17 +14,6 @@ LINKED_ABILITIES = {
 	monkey_king_primal_spring = {"monkey_king_primal_spring_early"},
 }
 
-NOT_DAMAGE_REFRLECTABLE_ABILITIES = {
-	freya_pain_reflection = true,
-	centaur_return = true,
-	stargazer_inverse_field = true,
-	item_blade_mail_arena = true,
-	item_blade_mail_2 = true,
-	item_blade_mail_3 = true,
-	item_sacred_blade_mail = true,
-	sara_fragment_of_armor = true,
-}
-
 NOT_MULTICASTABLE_ABILITIES = {
 	"ogre_magi_bloodlust",
 	"ogre_magi_fireblast",

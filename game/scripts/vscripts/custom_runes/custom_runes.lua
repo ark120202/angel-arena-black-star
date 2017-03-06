@@ -160,6 +160,7 @@ RUNE_SETTINGS = {
 	[ARENA_RUNE_SPIKES] = {
 		model = "models/props_gameplay/heart001.vmdl",
 		particle = "particles/items_fx/blademail.vpcf",
+		particle_attach = PATTACH_ABSORIGIN,
 		z_modify = 64,
 		duration = 15,
 		damage_reflection_pct = 75,
@@ -237,7 +238,7 @@ function CustomRunes:CreateRune(position, runeType)
 	entity:SetOriginalModel(settings.model)
 	StartAnimation(entity, {duration=-1, activity=ACT_DOTA_IDLE})
 	entity:SetAbsOrigin(position)
-	local pfx = ParticleManager:CreateParticle(settings.particle, PATTACH_ABSORIGIN_FOLLOW, entity)
+	local pfx = ParticleManager:CreateParticle(settings.particle, settings.particle_attach or PATTACH_ABSORIGIN_FOLLOW, entity)
 	if settings.color then
 		entity:SetRenderColor(unpack(settings.color))
 	end

@@ -26,7 +26,7 @@
 		</snippet>
 
 		<snippet name="PlayerSlot">
-			<Panel class="PlayerSlot">
+			<Panel class="PlayerSlot" draggable="true">
 				<DOTAAvatarImage id="PlayerAvatar" />
 				<Label id="PlayerIsHostPanel" />
 				<Label id="PlayerName" text="#custom_game_team_select_empty_slot" />

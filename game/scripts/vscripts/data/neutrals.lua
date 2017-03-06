@@ -21,5 +21,6 @@ CHAMPIONS_BANNED_ABILITIES = {
 	item_iron_talon = true,
 	item_helm_of_the_dominator = true,
 	doom_bringer_devour_arena = true,
-	shinobu_eat_oddity = true
+	shinobu_eat_oddity = true,
+	clinkz_death_pact = true,
 }
