@@ -221,6 +221,7 @@
 		"AbilityTextureName"			"arena/destroyer_frenzy"
 		"MaxLevel" 						"5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 
 		"AbilitySpecial"
 		{
@@ -232,12 +233,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_lvl1"	"200 225 250 275 300"
+				"bonus_damage_pct_lvl1"	"200 225 250 275 300"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor_lvl1"	"100 125 150 175 200"
+				"bonus_armor_pct_lvl1"	"100 125 150 175 200"
 			}
 			"04"
 			{
@@ -252,12 +253,12 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_lvl2"	"300 350 400 450 500"
+				"bonus_damage_pct_lvl2"	"300 350 400 450 500"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor_lvl2"	"200 225 250 275 300"
+				"bonus_armor_pct_lvl2"	"200 225 250 275 300"
 			}
 			"08"
 			{
@@ -272,12 +273,12 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_lvl3"	"500 550 600 650 700"
+				"bonus_damage_pct_lvl3"	"500 550 600 650 700"
 			}
 			"11"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor_lvl3"	"300 350 400 450 500"
+				"bonus_armor_pct_lvl3"	"300 350 400 450 500"
 			}
 			"12"
 			{
@@ -292,29 +293,6 @@
 		{
 			"particle"  "particles/arena/units/heroes/hero_shinobu/lifesteal_lvl1.vpcf"
 
-		}
-	}
-
-	"destroyer_1vs1"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"ability_name"
-		"MaxLevel" 						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCooldown"				"8.0"
-		"AbilityManaCost"				"100"
-		"AbilityDamage"					"75 130 200"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"3.0 4.0 5.0"
-			}
 		}
 	}
 }
