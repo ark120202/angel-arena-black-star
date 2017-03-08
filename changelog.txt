@@ -35,20 +35,29 @@ General:
 	Host now can fully control players in team selection menu (using Drag&Drop)
 	Added new hero: Destroyer
 	Huskar - Burning Spear reworked //TODO
+	Slightly increased duel area size and changed central boss area
 Balance:
 	
 	Runes:
 		
 	Items:
-		
+		Eye of the Prophet:
+			Cooldown: 240 => 35
+		Ray of Fate:
+			Cooldown: 280 => 40
 	Talents:
 		
 	Abilities:
-		
+
+	Ability Shop:
+		New Bans: Lina - Fiery Soul + Techies - Focused Detonate, Saber - Mana Burst + (Obsidian Destroyer - Essence Aura|Earthshaker - Aftershock|Zuus - Static Field|Storm Spirit - Overload)
+		Doom - Devour now is not rearmable
 Fixes:
 	Fixed Slark - Dark Pact + Spikes Rune crashed game
 	Fixed Blade Mail particles
 	Now you can't sell hidden abilities in Ability Shop mode
+	New heroes in Custom Abilities were moved to second tab
+	Hero Selection now is hidden to spectating players
 <<+===========================================================================================================
 
 

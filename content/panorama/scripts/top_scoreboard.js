@@ -8,7 +8,7 @@ var teamColors = GameUI.CustomUIConfig().team_colors;
 function Snippet_TopBarPlayerSlot(pid) {
 	if (PlayerPanels[pid] == null) {
 		var team = Players.GetTeam(pid)
-		if (team != DOTA_TEAM_SPECATOR) {
+		if (team != DOTA_TEAM_SPECTATOR) {
 			var teamPanel = Snippet_DotaTeamBar(team)
 			var panel = $.CreatePanel("Panel", teamPanel.FindChildTraverse("TopBarPlayersContainer"), "")
 			panel.BLoadLayoutSnippet("TopBarPlayerSlot")
@@ -118,7 +118,9 @@ function Update() {
 	$("#NightTime").visible = !isNSNight && !isDayTime;
 	$("#NightstalkerNight").visible = isNSNight;
 	$.Each(Game.GetAllPlayerIDs(), function(pid) {
-		Snippet_TopBarPlayerSlot_Update(Snippet_TopBarPlayerSlot(pid));
+		if (Players.GetTeam(pid) != DOTA_TEAM_SPECTATOR) {
+			Snippet_TopBarPlayerSlot_Update(Snippet_TopBarPlayerSlot(pid));
+		}
 	})
 	for (var i in TeamPanels) {
 		Snippet_DotaTeamBar_Update(TeamPanels[i]);

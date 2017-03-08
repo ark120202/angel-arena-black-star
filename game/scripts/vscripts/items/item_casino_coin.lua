@@ -89,54 +89,6 @@ function CasinoCoinSlotMachine(keys)
 				end
 			end)
 		end)
-	elseif target:GetUnitName() == "npc_dota_casino_lina" and ability:GetCurrentCharges() >= 2 then
-		ability:SetCurrentCharges(ability:GetCurrentCharges() - 1)
-		target.Inactive = true
-		target:DestroyAllSpeechBubbles()
-		target.HasSpeechBubble = false
-		ability:ApplyDataDrivenModifier(caster, target, "modifier_slotmachine_in_work", {})
-		StartAnimation(target, {duration=2.5, activity=ACT_DOTA_RUN})
-		Timers:CreateTimer(2.5, function()
-			for _,v in ipairs(CosmeticLib:GetAvailableSlotForHero("npc_dota_hero_lina")) do
-				if v ~= "head" then
-					CosmeticLib:RemoveFromSlot( target, v )
-				end
-			end
-			--StartAnimation(target, {duration=2.5, activity=ACT_DOTA_RUN})
-			local lap1 = 0
-			Timers:CreateTimer(2.5, function()
-				Timers:CreateTimer(0, function()
-					lap1 = lap1 + 1
-					if lap1 <= 4 then
-						StartAnimation(target, {duration=1.7, activity=ACT_DOTA_ATTACK})
-						return 1.7
-					else
-						local lap2 = 0
-						Timers:CreateTimer(0, function()
-							lap2 = lap2 + 1
-							if lap2 <= 6 then
-								StartAnimation(target, {duration=1.1, activity=ACT_DOTA_CAST_ABILITY_1})
-								return 1.1
-							else
-								Timers:CreateTimer(0, function()
-									StartAnimation(target, {duration=7, activity=ACT_DOTA_FLAIL})
-									Timers:CreateTimer(7, function()
-										target:RemoveModifierByNameAndCaster("modifier_slotmachine_in_work", caster)
-										CosmeticLib:EquipSet( target, "npc_dota_hero_lina", 20769 )
-										target.Inactive = false
-										target:GetAbilityByIndex(0):ApplyDataDrivenModifier(target, caster, "modifier_casino_bitch_lina_effect", {duration=300})
-										local heroes = FindUnitsInRadius(target:GetTeamNumber(), target:GetAbsOrigin(), nil, target:GetAbilityByIndex(0):GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
-										if #heroes > 0 and not caster.Inactive then
-											BShowBubble(target)
-										end
-									end)
-								end)
-							end
-						end)
-					end
-				end)
-			end)
-		end)
 	else
 		ability:RefundManaCost()
 		ability:EndCooldown()

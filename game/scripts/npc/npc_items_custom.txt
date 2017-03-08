@@ -6044,7 +6044,7 @@
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"              "0.1"
-		"AbilityCooldown"				"240"
+		"AbilityCooldown"				"35"
 		"AbilityManaCost"				"55"
 		"AOERadius"                     "800"
 		
@@ -6110,7 +6110,7 @@
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"              "0.1"
-		"AbilityCooldown"				"280"
+		"AbilityCooldown"				"40"
 		"AbilityManaCost"				"95"
 		"AOERadius"                     "625"
 		

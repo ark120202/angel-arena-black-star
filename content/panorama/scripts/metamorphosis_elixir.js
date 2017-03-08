@@ -21,7 +21,7 @@ function CreateMenu(data) {
 	for (var tabKey in data.HeroTabs) {
 		var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey)
 		TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel")
-		FillHeroesTable(data.HeroTabs[tabKey].Heroes, TabHeroesPanel)
+		FillHeroesTable(data.HeroTabs[tabKey], TabHeroesPanel)
 		TabHeroesPanel.visible = false
 	}
 	SelectHeroTab(1);

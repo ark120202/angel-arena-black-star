@@ -26,7 +26,6 @@ DUEL_PURGED_MODIFIERS = {
 
 ABILITY_INVULNERABLE_UNITS = {
 	"npc_dota_casino_slotmachine",
-	"npc_dota_casino_lina",
 }
 
 MODIFIERS_TRUESIGHT = {

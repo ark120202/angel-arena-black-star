@@ -160,10 +160,9 @@ function UpdateAbilities() {
 
 function HeroSelectionStart(data) {
 	for (var tabKey in data.HeroTabs) {
-		var heroesInTab = data.HeroTabs[tabKey]
 		var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey)
 		TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel")
-		FillHeroesTable(heroesInTab, TabHeroesPanel)
+		FillHeroesTable(data.HeroTabs[tabKey], TabHeroesPanel)
 		TabHeroesPanel.visible = false
 	}
 	SelectHeroTab(1)
