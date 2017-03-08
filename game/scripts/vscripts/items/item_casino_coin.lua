@@ -35,6 +35,7 @@ function CasinoCoinSlotMachine(keys)
 							Notifications:Top(id, g2)
 							Notifications:Top(id, {text="#casino_slotmachine_roll_result_streak322_enemies_p2", style={color="red"}, duration = 10})
 							Notifications:Top(id, CreateHeroNameNotificationSettings(caster, caster:GetTeamNumber(), 10))
+							Notifications:Top(id, {text=PlayerResource:GetPlayerName(playerID), continue=true, style={color=ColorTableToCss(PLAYER_DATA[playerID].Color or {0, 0, 0})}})
 							Notifications:Top(id, {text="#casino_slotmachine_roll_result_streak322_enemies_p3", style={color="red"}, duration = 10})
 						end
 					else

@@ -116,9 +116,26 @@
 	transition-duration: 0.1s;
 	transition-property: pre-transform-scale2d;
 }
+
+.HeroListElement.SearchedPanelDisabled
+{
+	saturation: 0;
+	brightness: 0.4;
+	wash-color: lightblue;
+	contrast: 1.01;
+	blur: gaussian(1.8px);
+}
+.InSearch .HeroListElement:not(.SearchedPanelDisabled)
+{
+	pre-transform-scale2d: 1.1;
+}
 .HeroListElement:hover
 {
 	pre-transform-scale2d: 1.15;
+}
+.InSearch .HeroListElement:not(.SearchedPanelDisabled):hover
+{
+	pre-transform-scale2d: 1.2;
 }
 .HeroListElement.Border_Changed
 {
@@ -129,6 +146,30 @@
 	border: 4px solid #b2da25;
 	pre-transform-scale2d: 1.1;
 }
+.HeroListElement.Picked
+{
+	saturation: .1;
+	wash-color: lightgrey;
+	blur: gaussian(0.5px);
+}
+.HeroListElement.Locked
+{
+	saturation: .6;
+	wash-color: lightcyan;
+	blur: gaussian(0.1px);
+}
+
+.HeroListElement #LockedIcon
+{
+	width: 24px;
+	height: 24px;
+}
+
+.HeroListElement.Locked #LockedIcon
+{
+	visibility: visible;
+}
+
 #SelectionStatusPanel
 {
 	height: 100px;
@@ -291,10 +332,10 @@
 	align: left center;
 	visibility: collapse;
 	margin-left: 12px;
-	flow-children: down;
+	flow-children: right;
 }
 
- #SelectedHeroLinkedHeroPanel Label
+#SelectedHeroLinkedHeroPanel Label
 {
 	font-size: 20px;
 	color: #C5D199;
@@ -305,10 +346,9 @@
 	visibility: visible;
 }
 
-.HeroListElementPickedBySomeone
+.PlayerInTeamPanel.LockedHero #LockedIcon
 {
-	saturation: .1;
-	wash-color: lightgrey;
+	visibility: visible;
 }
 
 #ExitButton
@@ -869,4 +909,16 @@
 {
 	pre-transform-scale2d: 1.04;
 	brightness: 1.2;
+}
+
+#LockedIcon
+{
+	align: right bottom;
+	margin: 2px;
+	wash-color: #B1D8E0;
+	width: 22px;
+	height: 22px;
+	visibility: collapse;
+	background-image: url("file://{images}/control_icons/lock_small.png");
+	background-size: 100% 100%;
 }

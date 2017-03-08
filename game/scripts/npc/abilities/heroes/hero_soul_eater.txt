@@ -3,7 +3,7 @@
 	"soul_eater_demon_weapon_from"
 	{
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					""
+		"ScriptFile"					"heroes/hero_soul_eater/demon_weapon_from.lua"
 		"AbilityTextureName"			"arena/soul_eater_demon_weapon_from"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
@@ -24,7 +24,7 @@
 		"ScriptFile"					""
 		"AbilityTextureName"			"arena/soul_eater_human_form"
 		"MaxLevel" 						"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 
 		"AbilitySpecial"
 		{

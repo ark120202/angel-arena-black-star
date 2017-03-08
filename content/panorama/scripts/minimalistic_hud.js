@@ -104,7 +104,6 @@ function HookPanoramaPanels() {
 	FindDotaHudElement("topbar").visible = false;
 	FindDotaHudElement("DeliverItemsButton").style.horizontalAlign = "right"
 
-
 	FindDotaHudElement("LevelLabel").style.width = "100%";
 	FindDotaHudElement("stash").style.marginBottom = "47px";
 

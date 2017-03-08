@@ -259,14 +259,6 @@ function GetAllPlayers(bOnlyWithHeroes)
 	return Players
 end
 
-function CreateHeroNameNotificationSettings(hHero, flDuration)
-	if hHero.GetPlayerID then
-		local textColor = ColorTableToCss(PLAYER_DATA[hHero:GetPlayerID()].Color or {0, 0, 0})
-		local output = {text=PlayerResource:GetPlayerName(hHero:GetPlayerID()), duration=flDuration, continue=true, style={color=textColor}}
-		return output
-	end
-end
-
 function CreateTeamNotificationSettings(iTeam, bSecVar)
 	local textColor = ColorTableToCss(TEAM_COLORS[iTeam])
 	local text = TEAM_NAMES[iTeam]
@@ -1056,9 +1048,7 @@ function MakePlayerAbandoned(iPlayerID)
 					hero:SellItem(item)
 				end
 			end
-			Notifications:TopToAll({hero=hero:GetName(), duration=10})
-			Notifications:TopToAll(CreateHeroNameNotificationSettings(hero))
-			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
+			
 			
 			--Saving hero for 20 seconds to make sure most of debuffs were already removed
 			hero:DestroyAllModifiers()
@@ -1074,6 +1064,27 @@ function MakePlayerAbandoned(iPlayerID)
 			Timers:CreateTimer(20, function()
 				UTIL_Remove(hero)
 			end)
+		end
+		local heroname = HeroSelection:GetSelectedHeroName(iPlayerID)
+		local notLinked = true
+		if heroname then
+			Notifications:TopToAll({hero=heroname, duration=10})
+			Notifications:TopToAll({text=PlayerResource:GetPlayerName(iPlayerID), continue=true, style={color=ColorTableToCss(PLAYER_DATA[iPlayerID].Color or {0, 0, 0})}})
+			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
+
+			local linked = GetKeyValue(hero, "LinkedHero")
+			if linked then
+				for _,v in ipairs(string.split(linked, " | ")) do
+					local linkedHeroOwner = HeroSelection:GetSelectedHeroPlayer(v)
+					if linkedHeroOwner then
+						HeroSelection:ForceChangePlayerHeroMenu(linkedHeroOwner)
+					end
+				end
+				notLinked = false
+			end
+		end
+		if notLinked then
+			HeroSelection:UpdateStatusForPlayer(iPlayerID, "hover", "npc_dota_hero_abaddon")
 		end
 		PLAYER_DATA[iPlayerID].IsAbandoned = true
 		local ptd = PlayerTables:GetTableValue("arena", "players_abandoned")

@@ -56,7 +56,7 @@
 		"npc_arena_hero_saber"							"Saber"
 		"npc_arena_hero_sara"							"Sara"
 		"npc_arena_hero_destroyer"						"Destroyer"
-		"npc_arena_hero_maka"							"Maka"
+		"npc_arena_hero_maka"							"Maka Albarn"
 		"npc_arena_hero_soul_eater"						"Soul Evans"
 
 		"npc_arena_zaken_sailor"                        "Sailor"

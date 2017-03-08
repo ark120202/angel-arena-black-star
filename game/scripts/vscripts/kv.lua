@@ -280,7 +280,3 @@ end
 function UpdateAttackProjectile(keys)
 	keys.caster:UpdateAttackProjectile()
 end
-
-function Debug(keys)
-	print("DD Ability: " .. keys.msg or "nil")
-end

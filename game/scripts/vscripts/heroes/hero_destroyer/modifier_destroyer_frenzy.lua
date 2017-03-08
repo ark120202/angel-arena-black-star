@@ -11,9 +11,8 @@ end
 
 function modifier_destroyer_frenzy:GetModifierMoveSpeed_Max()
 	local ability = self:GetAbility()
-	local parent = self:GetParent()
 	local level
-	local healht_pct = parent:GetHealthPercent()
+	local healht_pct = self:GetParent():GetHealthPercent()
 	if healht_pct < ability:GetSpecialValueFor("hp_mark_pct_lvl3") then
 		level = 3
 	elseif	healht_pct < ability:GetSpecialValueFor("hp_mark_pct_lvl2") then
@@ -27,9 +26,8 @@ function modifier_destroyer_frenzy:GetModifierMoveSpeed_Max()
 end
 function modifier_destroyer_frenzy:GetModifierMoveSpeed_Limit()
 	local ability = self:GetAbility()
-	local parent = self:GetParent()
 	local level
-	local healht_pct = parent:GetHealthPercent()
+	local healht_pct = self:GetParent():GetHealthPercent()
 	if healht_pct < ability:GetSpecialValueFor("hp_mark_pct_lvl3") then
 		level = 3
 	elseif	healht_pct < ability:GetSpecialValueFor("hp_mark_pct_lvl2") then
@@ -46,9 +44,8 @@ function modifier_destroyer_frenzy:GetModifierPhysicalArmorBonus()
 end
 function modifier_destroyer_frenzy:GetModifierBaseDamageOutgoing_Percentage()
 	local ability = self:GetAbility()
-	local parent = self:GetParent()
 	local level
-	local healht_pct = parent:GetHealthPercent()
+	local healht_pct = self:GetParent():GetHealthPercent()
 	if healht_pct < ability:GetSpecialValueFor("hp_mark_pct_lvl3") then
 		level = 3
 	elseif	healht_pct < ability:GetSpecialValueFor("hp_mark_pct_lvl2") then
@@ -77,6 +74,6 @@ function modifier_destroyer_frenzy:OnIntervalThink()
 		level = 1
 	end
 	if level then
-		self.ReducedArmor = parent:GetPhysicalArmorValue() * ability:GetSpecialValueFor("bonus_armor_pct_lvl" .. level) * 0.01
+		self.ReducedArmor = (parent:GetPhysicalArmorValue() - (self.ReducedArmor or 0)) * ability:GetSpecialValueFor("bonus_armor_pct_lvl" .. level) * 0.01
 	end
 end

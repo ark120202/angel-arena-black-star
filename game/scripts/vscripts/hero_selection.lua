@@ -112,6 +112,10 @@ function HeroSelection:PrepareTables()
 			for name,enabled in pairsByKeys(ENABLED_HEROES.NoAbilities) do
 				if enabled == 1 then
 					local heroTable = GetHeroTableByName(name)
+					local tabIndex = 1
+					if heroTable.base_hero then
+						tabIndex = 2
+					end
 					local heroData = {
 						heroKey = name,
 						model = heroTable.base_hero or name,
@@ -119,7 +123,7 @@ function HeroSelection:PrepareTables()
 						custom_scene_image = heroTable.SceneImage,
 						attributes = HeroSelection:ExtractHeroStats(heroTable)
 					}
-					table.insert(data.HeroTabs[1].Heroes, heroData)
+					table.insert(data.HeroTabs[tabIndex].Heroes, heroData)
 				end
 			end
 		end
@@ -302,6 +306,16 @@ function HeroSelection:IsHeroSelected(heroName)
 	return false
 end
 
+function HeroSelection:GetSelectedHeroPlayer(hero)
+	for team,_v in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection")) do
+		for plyId,v in pairs(_v) do
+			if v.hero == hero and v.status == "picked" then
+				return plyId
+			end
+		end
+	end
+end
+
 function HeroSelection:GetLinkedHeroLockedAlly(hero, desiredTeam)
 	for team,_v in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection")) do
 		if team == desiredTeam then
@@ -354,7 +368,6 @@ function HeroSelection:OnHeroSelectHero(data)
 				newStatus = "picked"
 			end
 		end
-		print(newStatus)
 		if HeroSelection:UpdateStatusForPlayer(playerID, newStatus, hero, true) and newStatus == "picked" then
 			PrecacheUnitByNameAsync(GetKeyValue(hero, "base_hero") or hero, function() end, playerID)
 			Gold:ModifyGold(playerID, CUSTOM_STARTING_GOLD)
@@ -387,7 +400,7 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 				Timers:CreateTimer(function()
 					connectionState = PlayerResource:GetConnectionState(playerId)
 					if connectionState == DOTA_CONNECTION_STATE_CONNECTED then
-						local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
+						local heroTableCustom = NPC_HEROES_CUSTOM[heroName] or NPC_HEROES[heroName]
 						local oldhero = PlayerResource:GetSelectedHeroEntity(playerId)
 						local hero
 						local baseNewHero = heroTableCustom.base_hero or heroName
@@ -445,8 +458,9 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 	end)
 end
 
-function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item)
+function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item, callback)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+	hero.ChangingHeroProcessRunning = true
 	if hero.PocketItem then
 		hero.PocketHostEntity = nil
 		UTIL_Remove(hero.PocketItem)
@@ -503,9 +517,26 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 				UTIL_Remove(citem)
 			end
 		end
-		Timers:CreateTimer(duration - (GameRules:GetDOTATime(true, true) - startTime), function()
+		Timers:CreateTimer(startTime + duration - GameRules:GetDOTATime(true, true), function()
 			if IsValidEntity(newHero) then
 				newHero:RemoveModifierByName("modifier_hero_selection_transformation")
+			end
+		end)
+		if callback then callback(newHero) end
+	end)
+end
+
+function HeroSelection:ForceChangePlayerHeroMenu(playerID)
+	HeroSelection:ChangeHero(playerID, FORCE_PICKED_HERO, true, 0, nil, function(hero)
+		hero:AddNoDraw()
+		FindClearSpaceForUnit(hero, FindFountain(PlayerResource:GetTeam(playerID)):GetAbsOrigin(), true)
+		hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
+		hero.ForcedHeroChange = true
+		Timers:CreateTimer(function()
+			local player = PlayerResource:GetPlayer(playerID)
+			if not IsPlayerAbandoned(playerID) and player and IsValidEntity(hero) and not hero.ChangingHeroProcessRunning then
+				CustomGameEventManager:Send_ServerToPlayer(player, "metamorphosis_elixir_show_menu", {forced = true})
+				return 0.5
 			end
 		end)
 	end)

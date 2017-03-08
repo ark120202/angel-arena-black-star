@@ -110,9 +110,13 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush) {
 	if (itemName.lastIndexOf("item_recipe", 0) === 0)
 		panel.FindChildTraverse("SmallItemImage").SetImage("raw://resource/flash3/images/items/recipe.png")
 	panel.SetPanelEvent("onactivate", function() {
+		if (!$.GetContextPanel().BHasClass("InSearchMode")) {
+			panel.SetFocus();
+		}
 		ShowItemRecipe(itemName)
-		if (GameUI.IsShiftDown())
+		if (GameUI.IsShiftDown()) {
 			SetQuickbuyTarget(itemName)
+		}
 	})
 	panel.SetPanelEvent("oncontextmenu", function() {
 		if (panel.BHasClass("CanBuy")) {
@@ -504,7 +508,6 @@ function SelectItembuild(t) {
 
 function ShowHideItembuilds() {
 	$.GetContextPanel().ToggleClass("ItembuildsHidden");
-	$("#ShowHideItemguidesLabel").text = $.GetContextPanel().BHasClass("ItembuildsHidden") ? "<" : ">";
 }
 
 function SetItemStock(item, ItemStock) {

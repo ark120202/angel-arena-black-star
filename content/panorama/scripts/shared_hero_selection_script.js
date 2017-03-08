@@ -12,21 +12,33 @@ function IsHeroPicked(name) {
 	return false
 }
 
+function IsHeroLocked(name) {
+	var hero_selection_table = PlayerTables.GetAllTableValues("hero_selection")
+	if (hero_selection_table != null) {
+		for (var teamKey in hero_selection_table) {
+			for (var playerIdInSelection in hero_selection_table[teamKey]) {
+				if (hero_selection_table[teamKey][playerIdInSelection].hero == name && hero_selection_table[teamKey][playerIdInSelection].status == "locked") {
+					return true
+				}
+			}
+		}
+	}
+	return false
+}
+
 function SearchHero() {
 	if ($("#HeroSearchTextEntry") != null) {
 		var SearchString = $("#HeroSearchTextEntry").text.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+
+		$.GetContextPanel().SetHasClass("InSearch", SearchString.length > 0);
 		if (SearchString.length > 0) {
 			for (var key in HeroesPanels) {
 				var heroName = $.Localize(HeroesPanels[key].id.replace("HeroListPanel_element_", ""))
-				if (heroName.search(new RegExp(SearchString, "i")) > -1) {
-					HeroesPanels[key].visible = true
-				} else {
-					HeroesPanels[key].visible = false
-				}
+				HeroesPanels[key].SetHasClass("SearchedPanelDisabled", heroName.search(new RegExp(SearchString, "i")) === -1);
 			}
 		} else {
 			for (var key in HeroesPanels) {
-				HeroesPanels[key].visible = true
+				HeroesPanels[key].RemoveClass("SearchedPanelDisabled");
 			}
 		}
 	}
@@ -39,6 +51,9 @@ function FillHeroesTable(heroesData, panel, big) {
 		var HeroImagePanel = $.CreatePanel('Image', StatPanel, "HeroListPanel_element_" + heroData.heroKey)
 		HeroImagePanel.SetImage(TransformTextureToPath(heroData.heroKey, "portrait"))
 		HeroImagePanel.AddClass("HeroListElement")
+		var LockedImage = $.CreatePanel('Image', HeroImagePanel, "LockedIcon")
+		LockedImage.AddClass("LockedSelectionIcon")
+		LockedImage.hittest = false
 		if (heroData.border_class) {
 			HeroImagePanel.AddClass(heroData.border_class)
 		}
@@ -129,4 +144,18 @@ function ChooseHeroUpdatePanels() {
 	$("#HeroAttributes_speed").text = SelectedHeroData.attributes.movespeed
 	$("#HeroAttributes_armor").text = SelectedHeroData.attributes.armor
 	$("#HeroAttributes_bat").text = Number(SelectedHeroData.attributes.attackrate).toFixed(1)
+}
+
+function SwitchTab() {
+	SelectHeroTab(SelectedTabIndex == 1 ? 2 : 1)
+}
+
+function SelectHeroTab(tabIndex) {
+	if (SelectedTabIndex != tabIndex) {
+		if (SelectedTabIndex != null) {
+			$("#HeroListPanel_tabPanels_" + SelectedTabIndex).visible = false
+		}
+		$("#HeroListPanel_tabPanels_" + tabIndex).visible = true
+		SelectedTabIndex = tabIndex
+	}
 }

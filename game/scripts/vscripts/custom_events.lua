@@ -6,12 +6,12 @@ function GameMode:RegisterCustomListeners()
 	CustomGameEventManager:RegisterListener("submit_gamemode_map", Dynamic_Wrap(GameMode, "SubmitGamemodeMap"))
 	CustomGameEventManager:RegisterListener("team_select_host_set_player_team", Dynamic_Wrap(GameMode, "TeamSelectHostSetPlayerTeam"))
 end
-
 function GameMode:MetamorphosisElixirCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local elixirItem = FindItemInInventoryByName(hero, "item_metamorphosis_elixir", false)
-	if hero and GetFullHeroName(hero) ~= data.hero and not HeroSelection:IsHeroSelected(data.hero) and elixirItem and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(data.hero, "Selection") then
-		HeroSelection:ChangeHero(data.PlayerID, data.hero, true, elixirItem:GetSpecialValueFor("transformation_time"), elixirItem)
+	local newHeroName = tostring(data.hero)
+	if hero and GetFullHeroName(hero) ~= newHeroName and not HeroSelection:IsHeroSelected(newHeroName) and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(newHeroName, "Selection") and (elixirItem or hero.ForcedHeroChange) then
+		HeroSelection:ChangeHero(data.PlayerID, newHeroName, true, elixirItem and elixirItem:GetSpecialValueFor("transformation_time") or 0, elixirItem)
 	end
 end
 

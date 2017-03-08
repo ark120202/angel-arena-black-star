@@ -115,15 +115,16 @@ function AbilityShop:OnAbilityBuy(PlayerID, abilityname)
 	if hero and cost and hero:GetAbilityPoints() >= cost then
 		local function Buy()
 			if IsValidEntity(hero) and hero:GetAbilityPoints() >= cost then
-				if hero:HasAbility(abilityname) then
-					local abilityh = hero:FindAbilityByName(abilityname)
-					if abilityh then
-						if abilityh:GetLevel() < abilityh:GetMaxLevel() then
-							hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
-							abilityh:SetLevel(abilityh:GetLevel() + 1)
-						end
+				local abilityh = hero:FindAbilityByName(abilityname)
+				if abilityh and not abilityh:IsHidden() then
+					if abilityh:GetLevel() < abilityh:GetMaxLevel() then
+						hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
+						abilityh:SetLevel(abilityh:GetLevel() + 1)
 					end
 				elseif hero:HasAbility("ability_empty") then
+					if abilityh:IsHidden() then
+						RemoveAbilityWithModifiers(hero, abilityh)
+					end
 					hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
 					hero:RemoveAbility("ability_empty")
 					GameMode:PrecacheUnitQueueed(abilityInfo.hero)
@@ -155,9 +156,8 @@ function AbilityShop:OnAbilitySell(data)
 	if hero and hero:HasAbility(data.ability) and not hero:IsChanneling() and listDataInfo then
 		local cost = listDataInfo.cost
 		local abilityh = hero:FindAbilityByName(data.ability)
-
 		local gold = AbilityShop:CalculateDowngradeCost(data.ability, cost) * abilityh:GetLevel()
-		if Gold:GetGold(data.PlayerID) >= gold then
+		if Gold:GetGold(data.PlayerID) >= gold and not abilityh:IsHidden() then
 			Gold:RemoveGold(data.PlayerID, gold)
 			hero:SetAbilityPoints(hero:GetAbilityPoints() + cost*abilityh:GetLevel())
 			RemoveAbilityWithModifiers(hero, abilityh)
@@ -183,7 +183,7 @@ function AbilityShop:OnAbilityDowngrade(data)
 			AbilityShop:OnAbilitySell(data)
 		else
 			local gold = AbilityShop:CalculateDowngradeCost(data.ability, cost)
-			if Gold:GetGold(data.PlayerID) >= gold then
+			if Gold:GetGold(data.PlayerID) >= gold and not abilityh:IsHidden() then
 				Gold:RemoveGold(data.PlayerID, gold)
 				abilityh:SetLevel(abilityh:GetLevel() - 1)
 				hero:SetAbilityPoints(hero:GetAbilityPoints() + cost)
