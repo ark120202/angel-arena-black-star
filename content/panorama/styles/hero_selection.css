@@ -502,6 +502,13 @@
 	box-shadow: -10px -10px 20px 20px black;
 }
 
+.PrecacheTeamPlayerPanel DOTAScenePanel
+{
+	width: 100%;
+	height: 100%;
+	opacity-mask: url("file://{images}/masks/softedge_box.png");
+}
+
 .PrecachePlayerInTeamNickname
 {
 	margin-top: 4px;

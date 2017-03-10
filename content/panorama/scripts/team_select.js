@@ -273,5 +273,5 @@ function HostSwapPlayers(playerId, playerId2) {
 	SetUnassignedTeamDraggable()
 		//$("#TeamSelectContainer").SetAcceptsFocus(true);
 	UpdateTimer()
-	Game.PlayerJoinTeam(DOTA_TEAM_SPECTATOR)
+		//Game.PlayerJoinTeam(DOTA_TEAM_SPECTATOR)
 })()

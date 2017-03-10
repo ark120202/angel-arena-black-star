@@ -273,8 +273,8 @@ function Attachments:Attachment_Freeze(args)
 end
 
 function Attachments:Attachment_UpdateAttach(args)
-  DebugPrint('Attachment_UpdateAttach')
-  DebugPrintTable(args)
+  --DebugPrint('Attachment_UpdateAttach')
+  --DebugPrintTable(args)
 
   local unit = EntIndexToHScript(args.index)
   if not unit then

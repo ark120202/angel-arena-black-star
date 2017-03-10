@@ -16,28 +16,6 @@ function CPrint( ... )
 	end
 end
 
-function DebugPrint(...)
-	local spew = Convars:GetInt('barebones_spew') or -1
-	if spew == -1 and BAREBONES_DEBUG_SPEW then
-		spew = 1
-	end
-
-	if spew == 1 then
-		print(...)
-	end
-end
-
-function DebugPrintTable(...)
-	local spew = Convars:GetInt('barebones_spew') or -1
-	if spew == -1 and BAREBONES_DEBUG_SPEW then
-		spew = 1
-	end
-
-	if spew == 1 then
-		PrintTable(...)
-	end
-end
-
 function CPrintTable(t, indent, done)
 	PrintTableCall(t, CPrint, indent, done)
 end
@@ -1066,26 +1044,22 @@ function MakePlayerAbandoned(iPlayerID)
 			end)
 		end
 		local heroname = HeroSelection:GetSelectedHeroName(iPlayerID)
-		local notLinked = true
+		--local notLinked = true
 		if heroname then
 			Notifications:TopToAll({hero=heroname, duration=10})
 			Notifications:TopToAll({text=PlayerResource:GetPlayerName(iPlayerID), continue=true, style={color=ColorTableToCss(PLAYER_DATA[iPlayerID].Color or {0, 0, 0})}})
 			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
 
-			local linked = GetKeyValue(hero, "LinkedHero")
-			if linked then
-				for _,v in ipairs(string.split(linked, " | ")) do
-					local linkedHeroOwner = HeroSelection:GetSelectedHeroPlayer(v)
-					if linkedHeroOwner then
-						HeroSelection:ForceChangePlayerHeroMenu(linkedHeroOwner)
-					end
+			for _,v in ipairs(GetLinkedHeroNames(heroname)) do
+				local linkedHeroOwner = HeroSelection:GetSelectedHeroPlayer(v)
+				if linkedHeroOwner then
+					HeroSelection:ForceChangePlayerHeroMenu(linkedHeroOwner)
 				end
-				notLinked = false
 			end
 		end
-		if notLinked then
+		--if notLinked then
 			HeroSelection:UpdateStatusForPlayer(iPlayerID, "hover", "npc_dota_hero_abaddon")
-		end
+		--end
 		PLAYER_DATA[iPlayerID].IsAbandoned = true
 		local ptd = PlayerTables:GetTableValue("arena", "players_abandoned")
 		table.insert(ptd, iPlayerID)
@@ -1511,7 +1485,7 @@ function GetFullHeroName(unit)
 	return unit.UnitName or unit:GetUnitName()
 end
 
-function CDOTA_BaseNPC_Hero:GetFullName()
+function CDOTA_BaseNPC:GetFullName()
 	return self.UnitName or (self.GetUnitName and self:GetUnitName()) or self:GetName()
 end
 
@@ -1804,6 +1778,28 @@ function table.deepcopy(obj, seen)
 	s[obj] = res
 	for k, v in pairs(obj) do res[table.deepcopy(k, s)] = table.deepcopy(v, s) end
 	return res
+end
+
+function CDOTA_BaseNPC:GetLinkedHeroNames()
+	return GetLinkedHeroNames(self:GetFullName())
+end
+
+function GetLinkedHeroNames(hero)
+	local linked = GetKeyValue(hero, "LinkedHero")
+	return linked and string.split(linked, " | ") or {}
+end
+
+function CDOTA_BaseNPC:GetLinkedHeroEntities()
+	local linked = self:GetLinkedHeroNames()
+	local ents = {}
+	for _,v in ipairs(linked) do
+		local plid = HeroSelection:GetSelectedHeroPlayer(v)
+		if plid then
+			local ent = PlayerResource:GetSelectedHeroEntity(plid)
+			table.insert(ents, ent)
+		end
+	end
+	return ents
 end
 
 --TODO

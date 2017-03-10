@@ -206,7 +206,7 @@ CHAT_COMMANDS = {
 			local heroName = args[1]
 			local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
 			local baseNewHero = heroTableCustom.base_hero or heroName
-			local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(2))
+			local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
 			local team = 2
 			if PlayerResource:GetTeam(playerID) == team and table.contains(args, "enemy") then
 				team = 3

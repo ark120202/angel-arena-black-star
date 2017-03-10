@@ -254,15 +254,15 @@ function ShowPrecache() {
 			PlayerInTeamNickname.style.color = GetHEXPlayerColor(Number(playerIdInTeam))
 			hero_tabs_iter:
 				for (var tabkey in tabsData) {
-					for (var herokey in tabsData[tabkey].Heroes) {
-						var heroData = tabsData[tabkey].Heroes[herokey]
+					for (var herokey in tabsData[tabkey]) {
+						var heroData = tabsData[tabkey][herokey]
 						if (heroData.heroKey == SelectedPlayerHeroData.hero) {
 							if (heroData.custom_scene_camera != null)
-								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel antialias='true' light='global_light' renderdeferred='false' particleonly='false' style='width: 100%; height: 100%; opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' map='custom_scenes_map' camera='" + heroData.custom_scene_camera + "'/>");
+								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel particleonly='false' rotateonhover='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' map='custom_scenes_map' camera='" + heroData.custom_scene_camera + "'/>");
 							else if (heroData.custom_scene_image != null)
 								PlayerInTeamPanel.BCreateChildren("<Image style='opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' src='" + heroData.custom_scene_image + "'/>");
 							else
-								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel antialias='true' light='global_light' renderdeferred='false' particleonly='false' always-cache-composition-layer='true' style='width: 100%; height: 100%; opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' unit='" + heroData.model + "'/>");
+								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel particleonly='false' rotateonhover='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' unit='" + heroData.model + "'/>");
 							break hero_tabs_iter
 						}
 					}
