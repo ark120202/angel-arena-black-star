@@ -1,6 +1,6 @@
 function AddStat(keys)
 	local caster = keys.caster
-	if caster:HasModifier("modifier_arc_warden_tempest_double") then
+	if not caster:IsTrueHero() then
 		return
 	end
 	local ability = keys.ability
@@ -22,7 +22,7 @@ function AddStat(keys)
 end
 function AddAttackspeedModifier(keys)
 	local caster = keys.caster
-	if caster:HasModifier("modifier_arc_warden_tempest_double") then
+	if not caster:IsTrueHero() then
 		return
 	end
 	local ability = keys.ability
@@ -38,10 +38,10 @@ end
 
 function AddLevel(keys)
 	local caster = keys.caster
-	if caster:HasModifier("modifier_arc_warden_tempest_double") then
+	local level = caster:GetLevel()
+	if not caster:IsTrueHero() or not XP_PER_LEVEL_TABLE[level + 1] then
 		return
 	end
 	local ability = keys.ability
-	local xp_to_lvlup = XP_PER_LEVEL_TABLE[caster:GetLevel() + 1] - XP_PER_LEVEL_TABLE[caster:GetLevel()]
-	caster:AddExperience(xp_to_lvlup, 0, false, false)
+	caster:AddExperience(XP_PER_LEVEL_TABLE[level + 1] - XP_PER_LEVEL_TABLE[level], 0, false, false)
 end

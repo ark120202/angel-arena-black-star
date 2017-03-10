@@ -55,12 +55,12 @@ function SearchItems() {
 function PushItemsToList() {
 	var isTabSelected = false
 	for (var shopName in ItemList) {
-		var TabButton = $.CreatePanel('Button', $("#ShopTabs"), "shop_tab_" + shopName)
+		var TabButton = $.CreatePanel('RadioButton', $("#ShopTabs"), "shop_tab_" + shopName)
 		TabButton.AddClass("ShopTabButton")
 		TabButton.style.width = (100 / Object.keys(ItemList).length) + "%";
 		var TabButtonLabel = $.CreatePanel('Label', TabButton, "")
 		TabButtonLabel.text = $.Localize("panorama_shop_shop_tab_" + shopName)
-		TabButtonLabel.AddClass("ShopTabButtonLabel")
+		TabButtonLabel.hittest = false;
 		var SelectShopTabAction = (function(_shopName) {
 			return function() {
 				SelectShopTab(_shopName)
@@ -68,12 +68,8 @@ function PushItemsToList() {
 		})(shopName)
 		TabButton.SetPanelEvent('onactivate', SelectShopTabAction)
 		var TabShopItemlistPanel = $.CreatePanel('Panel', $("#ShopItemsBase"), "shop_panels_tab_" + shopName)
-		TabShopItemlistPanel.style.height = "100%";
-		TabShopItemlistPanel.style.horizontalAlign = "center";
-
-		TabShopItemlistPanel.style.flowChildren = "right-wrap"
+		TabShopItemlistPanel.AddClass("ItemsPageInnerContainer")
 		FillShopTable(TabShopItemlistPanel, ItemList[shopName])
-		TabShopItemlistPanel.visible = false
 
 		if (!isTabSelected) {
 			SelectShopTab(shopName)
@@ -86,10 +82,10 @@ function PushItemsToList() {
 function SelectShopTab(tabIndex) {
 	if (TabIndex != tabIndex) {
 		if (TabIndex != null) {
-			$("#shop_panels_tab_" + TabIndex).visible = false
+			$("#shop_panels_tab_" + TabIndex).RemoveClass("SelectedPage")
 			$("#shop_tab_" + TabIndex).RemoveClass("ShopTabButtonSelected")
 		}
-		$("#shop_panels_tab_" + tabIndex).visible = true
+		$("#shop_panels_tab_" + tabIndex).AddClass("SelectedPage")
 		$("#shop_tab_" + tabIndex).AddClass("ShopTabButtonSelected")
 		TabIndex = tabIndex
 	}
@@ -114,9 +110,13 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush) {
 	if (itemName.lastIndexOf("item_recipe", 0) === 0)
 		panel.FindChildTraverse("SmallItemImage").SetImage("raw://resource/flash3/images/items/recipe.png")
 	panel.SetPanelEvent("onactivate", function() {
+		if (!$.GetContextPanel().BHasClass("InSearchMode")) {
+			panel.SetFocus();
+		}
 		ShowItemRecipe(itemName)
-		if (GameUI.IsShiftDown())
+		if (GameUI.IsShiftDown()) {
 			SetQuickbuyTarget(itemName)
+		}
 	})
 	panel.SetPanelEvent("oncontextmenu", function() {
 		if (panel.BHasClass("CanBuy")) {
@@ -138,10 +138,9 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush) {
 	})
 	panel.DestroyItemPanel = function() {
 		var id1 = SmallItemsAlwaysUpdated.indexOf(panel);
-		if (id1 > -1) {
-			SmallItemsAlwaysUpdated.splice(id1, 1);
-		}
 		var id2 = SmallItems.indexOf(panel);
+		if (id1 > -1)
+			SmallItemsAlwaysUpdated.splice(id1, 1);
 		if (id2 > -1)
 			SmallItems.splice(id2, 1);
 		panel.visible = false
@@ -170,9 +169,6 @@ function SmallItemOnDragStart(panelId, dragCallbacks) {
 	dragCallbacks.displayPanel = displayPanel;
 	dragCallbacks.offsetX = 0;
 	dragCallbacks.offsetY = 0;
-	SetPannelDraggedChild(displayPanel, function() {
-		return !$.GetContextPanel().BHasClass("DropDownMode");
-	});
 	return true;
 }
 
@@ -232,7 +228,6 @@ function ShowItemRecipe(itemName) {
 		}
 	} else if (DropListData != null) {
 		$("#ItemRecipeBoxDrops").visible = true;
-		len = Object.keys(DropListData).length;
 		$.Each($("#ItemRecipeBoxDrops").Children(), function(pan) {
 			var unit = pan.id.replace("ItemRecipeBoxDrops_", "")
 			pan.enabled = DropListData[unit] != null;
@@ -245,9 +240,9 @@ function ShowItemRecipe(itemName) {
 				})
 		})
 	}
-	$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength7", len >= 7);
-	$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength8", len >= 8);
-	$("#ItemRecipeBoxRow1").SetHasClass("ItemRecipeBoxRowLength9", len >= 9);
+	$("#ItemRecipeBoxRow3").SetHasClass("ItemRecipeBoxRowLength7", len >= 7);
+	$("#ItemRecipeBoxRow3").SetHasClass("ItemRecipeBoxRowLength8", len >= 8);
+	$("#ItemRecipeBoxRow3").SetHasClass("ItemRecipeBoxRowLength9", len >= 9);
 	if (BuildsIntoData != null) {
 		$.Each(BuildsIntoData, function(childName) {
 			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow1"), "ItemRecipeBoxRow1_item_" + childName);
@@ -287,8 +282,9 @@ function LoadItemsFromTable(panorama_shop_data) {
 
 function UpdateSmallItem(panel, gold) {
 	try {
-		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) < (gold || PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]) && ItemData[panel.itemName].purchasable);
-		panel.SetHasClass("NotPurchasableItem", !ItemData[panel.itemName].purchasable);
+		var notpurchasable = !ItemData[panel.itemName].purchasable
+		panel.SetHasClass("CanBuy", GetRemainingPrice(panel.itemName, {}) <= (gold || PlayerTables.GetTableValue("arena", "gold")[Game.GetLocalPlayerID()]) || notpurchasable);
+		panel.SetHasClass("NotPurchasableItem", notpurchasable);
 		if (ItemStocks[panel.itemName] != null) {
 			var CurrentTime = Game.GetGameTime();
 			var RemainingTime = ItemStocks[panel.itemName].current_cooldown - (CurrentTime - ItemStocks[panel.itemName].current_last_purchased_time)
@@ -463,7 +459,7 @@ function UpdateItembuildsForHero() {
 	var heroName = GetPlayerHeroName(Game.GetLocalPlayerID())
 	if (LastHero != heroName) {
 		LastHero = heroName;
-		var DropRoot = $("#Itembuild_select");
+		var DropRoot = $("#Itembuild_selectBox");
 		var content = "";
 		var SelectedTable;
 		if (Itembuilds[heroName]) {
@@ -502,7 +498,6 @@ function SelectItembuild(t) {
 			$.Each(groupData.content, function(itemName) {
 				var itemPanel = $.CreatePanel("Panel", itemsRoot, "shop_itembuild_items_" + itemName)
 				SnippetCreate_SmallItem(itemPanel, itemName)
-				itemPanel.AddClass("BigItemPanel")
 			})
 		})
 	} else {
@@ -513,7 +508,6 @@ function SelectItembuild(t) {
 
 function ShowHideItembuilds() {
 	$.GetContextPanel().ToggleClass("ItembuildsHidden");
-	$("#ShowHideItemguidesLabel").text = $.GetContextPanel().BHasClass("ItembuildsHidden") ? "<" : ">";
 }
 
 function SetItemStock(item, ItemStock) {
@@ -521,12 +515,11 @@ function SetItemStock(item, ItemStock) {
 }
 
 (function() {
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP, false)
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_GOLD, false)
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, false)
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY, false)
-
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP, true)
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, true)
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY, true)
 	Game.Events.F4Pressed.push(OpenCloseShop)
+	GameEvents.Subscribe("panorama_shop_open_close", OpenCloseShop)
 	Game.Events.F5Pressed.push(function() {
 		var bought = false;
 		$.Each($("#QuickBuyPanelItems").Children(), function(child) {
@@ -552,11 +545,18 @@ function SetItemStock(item, ItemStock) {
 		SendItemBuyOrder($("#QuickBuyStickyButtonPanel").GetChild(0).itemName)
 	})
 	Game.MouseEvents.OnLeftPressed.push(function(ClickBehaviors, eventName, arg) {
-		if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE)
+		if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE) {
 			$("#ShopBase").AddClass("ShopBase_Out")
+		}
 	})
 
 	GameEvents.Subscribe("panorama_shop_show_item", ShowItemInShop)
+	GameEvents.Subscribe("dota_link_clicked", function(data) {
+		if (data != null && data.link != null && data.link.lastIndexOf("dota.item.", 0) === 0) {
+			$("#ShopBase").RemoveClass("ShopBase_Out")
+			ShowItemRecipe(data.link.replace("dota.item.", ""))
+		}
+	})
 	GameEvents.Subscribe("panorama_shop_show_item_if_open", function(data) {
 		if (!$("#ShopBase").BHasClass("ShopBase_Out"))
 			ShowItemInShop(data)
@@ -564,7 +564,7 @@ function SetItemStock(item, ItemStock) {
 	DynamicSubscribePTListener("panorama_shop_data", function(tableName, changesObject, deletionsObject) {
 		if (changesObject.ShopList != null) {
 			LoadItemsFromTable(changesObject);
-			SetQuickbuyStickyItem("item_tpscroll");
+			SetQuickbuyStickyItem("item_shard_level");
 		};
 		var stocksChanges = changesObject["ItemStocks_team" + Players.GetTeam(Game.GetLocalPlayerID())];
 		if (stocksChanges != null) {

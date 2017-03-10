@@ -1,3 +1,21 @@
+function CPrint( ... )
+	if SendDebugInfoToClient then
+		local player
+		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+			if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) and DynamicWearables:HasWearable(i, "wearable_developer") then
+				player = PlayerResource:GetPlayer(i)
+			end
+		end
+		if player then
+			local printResult = ""
+			for _,v in ipairs({...}) do
+				printResult = printResult .. tostring(v) .. "\t"
+			end
+			CustomGameEventManager:Send_ServerToPlayer(player, "debug_cprint", {text = printResult})
+		end
+	end
+end
+
 function DebugPrint(...)
 	local spew = Convars:GetInt('barebones_spew') or -1
 	if spew == -1 and BAREBONES_DEBUG_SPEW then
@@ -6,9 +24,6 @@ function DebugPrint(...)
 
 	if spew == 1 then
 		print(...)
-	end
-	if SERVER_LOGGING then
-		LogPrint(...)
 	end
 end
 
@@ -21,19 +36,134 @@ function DebugPrintTable(...)
 	if spew == 1 then
 		PrintTable(...)
 	end
-	if SERVER_LOGGING then
-		LogPrintTable(...)
-	end
+end
+
+function CPrintTable(t, indent, done)
+	PrintTableCall(t, CPrint, indent, done)
 end
 
 function PrintTable(t, indent, done)
-	--print ( string.format ('PrintTable type %s', type(keys)) )
+	PrintTableCall(t, print, indent, done)
+end
+
+local PhysicsUnitFDesc = {
+	StopPhysicsSimulation = true,
+	StartPhysicsSimulation = true,
+	SetPhysicsVelocity = true,
+	AddPhysicsVelocity = true,
+	SetPhysicsVelocityMax = true,
+	GetPhysicsVelocityMax = true,
+	SetPhysicsAcceleration = true,
+	AddPhysicsAcceleration = true,
+	SetPhysicsFriction = true,
+	GetPhysicsVelocity = true,
+	GetPhysicsAcceleration = true,
+	GetPhysicsFriction = true,
+	FollowNavMesh = true,
+	IsFollowNavMesh = true,
+	SetGroundBehavior = true,
+	GetGroundBehavior = true,
+	SetSlideMultiplier = true,
+	GetSlideMultiplier = true,
+	Slide = true,
+	IsSlide = true,
+	PreventDI = true,
+	IsPreventDI = true,
+	SetNavCollisionType = true,
+	GetNavCollisionType = true,
+	OnPhysicsFrame = true,
+	SetVelocityClamp = true,
+	GetVelocityClamp = true,
+	Hibernate = true,
+	IsHibernate = true,
+	DoHibernate = true,
+	OnHibernate = true,
+	OnPreBounce = true,
+	OnBounce = true,
+	OnPreSlide = true,
+	OnSlide = true,
+	AdaptiveNavGridLookahead = true,
+	IsAdaptiveNavGridLookahead = true,
+	SetNavGridLookahead = true,
+	GetNavGridLookahead = true,
+	SkipSlide = true,
+	SetRebounceFrames = true,
+	GetRebounceFrames = true,
+	GetLastGoodPosition = true,
+	SetStuckTimeout = true,
+	GetStuckTimeout = true,
+	SetAutoUnstuck = true,
+	GetAutoUnstuck = true,
+	SetBounceMultiplier = true,
+	GetBounceMultiplier = true,
+	GetTotalVelocity = true,
+	GetColliders = true,
+	RemoveCollider = true,
+	AddCollider = true,
+	AddColliderFromProfile = true,
+	GetMass = true,
+	SetMass = true,
+	GetNavGroundAngle = true,
+	SetNavGroundAngle = true,
+	CutTrees = true,
+	IsCutTrees = true,
+	IsInSimulation = true,
+	SetBoundOverride = true,
+	GetBoundOverride = true,
+	ClearStaticVelocity = true,
+	SetStaticVelocity = true,
+	GetStaticVelocity = true,
+	AddStaticVelocity = true,
+	SetPhysicsFlatFriction = true,
+	GetPhysicsFlatFriction = true,
+	PhysicsLastPosition = true,
+	PhysicsLastTime = true,
+	PhysicsTimer = true,
+	PhysicsTimerName = true,
+	bAdaptiveNavGridLookahead = true,
+	bAutoUnstuck = true,
+	bCutTrees = true,
+	bFollowNavMesh = true,
+	bHibernate = true,
+	bHibernating = true,
+	bPreventDI = true,
+	bSlide = true,
+	bStarted = true,
+	fBounceMultiplier = true,
+	fFlatFriction = true,
+	fFriction = true,
+	fMass = true,
+	fNavGroundAngle = true,
+	fSlideMultiplier = true,
+	fVelocityClamp = true,
+	lastGoodGround = true,
+	nLockToGround = true,
+	nMaxRebounce = true,
+	nNavCollision = true,
+	nNavGridLookahead = true,
+	nRebounceFrames = true,
+	nSkipSlide = true,
+	nStuckFrames = true,
+	nStuckTimeout = true,
+	nVelocityMax = true,
+	oColliders = true,
+	staticForces = true,
+	staticSum = true,
+	vAcceleration = true,
+	vLastGoodPosition = true,
+	vLastVelocity = true,
+	vSlideVelocity = true,
+	vTotalVelocity = true,
+	vVelocity = true,
+}
+function PrintTableCall(t, printFunc, indent, done)
+	--printFunc ( string.format ('PrintTable type %s', type(keys)) )
 	if type(t) ~= "table" then return end
 
 	done = done or {}
 	done[t] = true
 	if not indent then
-		print("Printing table")
+		printFunc("Printing table")
 	end
 	indent = indent or 1
 
@@ -45,61 +175,21 @@ function PrintTable(t, indent, done)
 	table.sort(l)
 	for k, v in ipairs(l) do
 		-- Ignore FDesc
-		if v ~= 'FDesc' then
+		if v ~= 'FDesc' and PhysicsUnitFDesc[v] == nil then
 			local value = t[v]
 			if type(value) == "table" and not done[value] then
-				done [value] = true
-				print(string.rep ("\t", indent)..tostring(v)..":")
-				PrintTable (value, indent + 2, done)
+				done[value] = true
+				printFunc(string.rep ("\t", indent)..tostring(v)..":")
+				PrintTableCall(value, printFunc, indent + 2, done)
 			elseif type(value) == "userdata" and not done[value] then
-				done [value] = true
-				print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
-				PrintTable ((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
+				done[value] = true
+				printFunc(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+				PrintTableCall((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), printFunc, indent + 2, done)
 			else
 				if t.FDesc and t.FDesc[v] then
-					print(string.rep ("\t", indent)..tostring(t.FDesc[v]))
+					printFunc(string.rep ("\t", indent)..tostring(t.FDesc[v]))
 				else
-					print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
-				end
-			end
-		end
-	end
-end
-
-function LogPrint(text)
-	AppendToLogFile("log/arena_log.txt", text .. "\n")
-end
-
-function LogPrintTable(t, indent, done)
-	if type(t) ~= "table" then return end
-
-	done = done or {}
-	done[t] = true
-	indent = indent or 0
-
-	local l = {}
-	for k, v in pairs(t) do
-		table.insert(l, k)
-	end
-
-	table.sort(l)
-	for k, v in ipairs(l) do
-		-- Ignore FDesc
-		if v ~= 'FDesc' then
-			local value = t[v]
-			if type(value) == "table" and not done[value] then
-				done [value] = true
-				AppendToLogFile("log/arena_log.txt", string.rep ("\t", indent)..tostring(v)..":" .. "\n")
-				PrintTable (value, indent + 2, done)
-			elseif type(value) == "userdata" and not done[value] then
-				done [value] = true
-				AppendToLogFile("log/arena_log.txt", string.rep ("\t", indent)..tostring(v)..": "..tostring(value) .. "\n")
-				PrintTable ((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
-			else
-				if t.FDesc and t.FDesc[v] then
-					AppendToLogFile("log/arena_log.txt", string.rep ("\t", indent)..tostring(t.FDesc[v]) .. "\n")
-				else
-					AppendToLogFile("log/arena_log.txt", string.rep ("\t", indent)..tostring(v)..": "..tostring(value) .. "\n")
+					printFunc(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
 				end
 			end
 		end
@@ -146,56 +236,14 @@ function DebugAllCalls()
 	end
 end
 
-function DebugToLogAllCalls()
-	if not GameRules.DebugCalls then
-		LogPrint("Starting DebugCalls")
-		GameRules.DebugCalls = true
-
-		debug.sethook(function(...)
-			local info = debug.getinfo(2)
-			local src = tostring(info.short_src)
-			local name = tostring(info.name)
-			if name ~= "__index" then
-				LogPrint("Call: ".. src .. " -- " .. name .. " -- " .. info.currentline)
-			end
-		end, "c")
-	else
-		LogPrint("Stopped DebugCalls")
-		GameRules.DebugCalls = false
-		debug.sethook(nil, "c")
-	end
-end
-
---[[Author: Noya
-	Date: 09.08.2015.
-	Hides all dem hats
-]]
-function HideWearables( unit )
-	unit.hiddenWearables = unit.hiddenWearables or {}
-	local model = unit:FirstMoveChild()
-	while model ~= nil do
-		if model:GetClassname() == "dota_item_wearable" then
-			model:AddEffects(EF_NODRAW) -- Set model hidden
-			table.insert(unit.hiddenWearables, model)
-		end
-		model = model:NextMovePeer()
-	end
-end
-
-function ShowWearables( unit )
-	for i,v in ipairs(unit.hiddenWearables) do
-		v:RemoveEffects(EF_NODRAW)
-	end
-end
-
 -----------------------------------------------------------------------------------------------
 
-function string.starts(String,Start)
-	return string.sub(String,1,string.len(Start))==Start
+function string.starts(s, start)
+	return string.sub(s, 1, string.len(start)) == start
 end
 
-function string.ends(String,End)
-	return End=='' or string.sub(String,-string.len(End))==End
+function string.ends(s, e)
+	return e == "" or string.sub(s, -string.len(e)) == e
 end
 
 function GetAllPlayers(bOnlyWithHeroes)
@@ -209,14 +257,6 @@ function GetAllPlayers(bOnlyWithHeroes)
 		end
 	end
 	return Players
-end
-
-function CreateHeroNameNotificationSettings(hHero, flDuration)
-	if hHero.GetPlayerID then
-		local textColor = ColorTableToCss(PLAYER_DATA[hHero:GetPlayerID()].Color or {0, 0, 0})
-		local output = {text=PlayerResource:GetPlayerName(hHero:GetPlayerID()), duration=flDuration, continue=true, style={color=textColor}}
-		return output
-	end
 end
 
 function CreateTeamNotificationSettings(iTeam, bSecVar)
@@ -297,21 +337,6 @@ function CreateLoopedPortal(point1, point2, iRadius, sParticle, sDisabledParticl
 	return unit
 end
 
-function IsInZone(position_x, position_y, startPosition_x, startPosition_y, size_x, size_y)
-	local size_x = size_x/2
-	local size_y = size_y/2
-	if position_x > startPosition_x - size_x and position_x < startPosition_x + size_x and position_y > startPosition_y - size_y and position_y < startPosition_y + size_y then
-		return true
-	else
-		return false
-	end
-end
-
-function IsInZoneEntity(hEntity, startPosition_x, startPosition_y, size_x, size_y)
-	local abs = hEntity:GetAbsOrigin()
-	return IsInZone(abs.x, abs.y, startPosition_x, startPosition_y, size_x, size_y)
-end
-
 function table.swap(array, index1, index2)
 	array[index1], array[index2] = array[index2], array[index1]
 end
@@ -326,9 +351,11 @@ function table.shuffle(array)
 end
 
 function table.contains(table, element)
-	for _, value in pairs(table) do
-		if value == element then
-			return true
+	if table then
+		for _, value in pairs(table) do
+			if value == element then
+				return true
+			end
 		end
 	end
 	return false
@@ -388,9 +415,15 @@ end
 function table.iterate(inputTable)
 	local toutput = {}
 	for _,v in pairs(inputTable) do
-		if v ~= nil then
-			table.insert(toutput, v)
-		end
+		table.insert(toutput, v)
+	end
+	return toutput
+end
+
+function table.iterateKeys(inputTable)
+	local toutput = {}
+	for k,_ in pairs(inputTable) do
+		table.insert(toutput, k)
 	end
 	return toutput
 end
@@ -448,12 +481,9 @@ function AddStacksLua(ability, caster, unit, modifier, stack_amount, refresh, da
 end
 
 function HasFreeSlot(unit)
-	if unit then
-		for i = 0, 5 do
-			local item  = unit:GetItemInSlot(i)
-			if item == nil then
-				return true
-			end
+	for i = 0, 5 do
+		if not unit:GetItemInSlot(i) then
+			return true
 		end
 	end
 	return false
@@ -479,45 +509,21 @@ end
 
 function GenerateAttackProjectile(unit, optAbility)
 	local projectile_info = {}
-	if unit then
-		local projectile = PROJECTILES_TABLE[unit:GetName()]
-		if not projectile then projectile = PROJECTILES_TABLE["npc_dota_hero_base"] end
-		local projectile_speed = projectile.speed
-		local attack_projectile = projectile.model
-		projectile_info = {
-			EffectName = attack_projectile,
-			Ability = optAbility,
-			vSpawnOrigin = unit:GetAbsOrigin(),
-			Source = unit,
-			bHasFrontalCone = false,
-			iMoveSpeed = projectile_speed,
-			bReplaceExisting = false,
-			bProvidesVision = false
-		}
-	end
+	projectile_info = {
+		EffectName = unit:GetKeyValue("ProjectileModel"),
+		Ability = optAbility,
+		vSpawnOrigin = unit:GetAbsOrigin(),
+		Source = unit,
+		bHasFrontalCone = false,
+		iMoveSpeed = unit:GetKeyValue("ProjectileSpeed") or 99999,
+		bReplaceExisting = false,
+		bProvidesVision = false
+	}
 	return projectile_info
 end
 
 function IsRangedUnit(unit)
-	if unit:IsRangedAttacker() or unit:HasModifier("modifier_terrorblade_metamorphosis_transform_aura_applier") then
-		return true
-	else
-		return false
-	end
-end
-
-function GetDotaAbilityLayout(unit)
-	local unitName = unit:GetName()
-	if unit.OverriddenAbilityLayout then
-		return unit.OverriddenAbilityLayout
-	end
-	if NPC_HEROES_CUSTOM[unitName] and NPC_HEROES_CUSTOM[unitName]["AbilityLayout"] then
-		return NPC_HEROES_CUSTOM[unitName]["AbilityLayout"]
-	elseif NPC_HEROES[unitName] and NPC_HEROES[unitName]["AbilityLayout"] then
-		return NPC_HEROES[unitName]["AbilityLayout"]
-	else
-		return 4
-	end
+	return unit:IsRangedAttacker() or unit:HasModifier("modifier_terrorblade_metamorphosis_transform_aura_applier")
 end
 
 function swap_to_item(unit, srcItem, newItem)
@@ -530,11 +536,11 @@ function swap_to_item(unit, srcItem, newItem)
 	ClearSlotsFromDummy(unit)
 end
 
-function FindItemInInventoryByName(unit, itemname, searchStash, onlyStash)
-	local lastSlot = 5
+function FindItemInInventoryByName(unit, itemname, searchStash, onlyStash, ignoreBackpack)
+	local lastSlot = ignoreBackpack and DOTA_ITEM_SLOT_6 or DOTA_ITEM_SLOT_9
 	local startSlot = 0
-	if searchStash then lastSlot = 11 end
-	if onlyStash then startSlot = 5 end
+	if searchStash then lastSlot = DOTA_STASH_SLOT_6 end
+	if onlyStash then startSlot = DOTA_STASH_SLOT_1 end
 	for slot = startSlot, lastSlot do
 		local item = unit:GetItemInSlot(slot)
 		if item and item:GetAbilityName() == itemname then
@@ -550,11 +556,17 @@ function RemoveDeathPreventingModifiers(unit)
 end
 
 function TrueKill(killer, ability, target)
+	target.IsMarkedForTrueKill = true
 	target:Kill(ability, killer)
-	if not target:IsNull() and target:IsAlive() then
+	if IsValidEntity(target) and target:IsAlive() then
 		RemoveDeathPreventingModifiers(target)
 		target:Kill(ability, killer)
 	end
+	target.IsMarkedForTrueKill = false
+end
+
+function CDOTA_BaseNPC:TrueKill(ability, killer)
+	TrueKill(killer, ability, self)
 end
 
 function table.count(inputTable)
@@ -595,7 +607,11 @@ function AbilityHasBehaviorByName(ability_name, behaviorString)
 end
 
 function AbilityHasBehavior(ability, behavior)
-	return bit.band( ability:GetBehavior(), behavior) == behavior
+	return bit.band(ability:GetBehavior(), behavior) == behavior
+end
+
+function HasDamageFlag(damage_flags, flag)
+	return bit.band(damage_flags, flag) == flag
 end
 
 function table.merge(input1, input2)
@@ -646,26 +662,6 @@ function SpendCharge(item, amount)
 	end
 end
 
-function SwapModel(unit, newModel, priority, bHideWearables)
-	if unit.caster_model == nil then 
-		unit.caster_model = unit:GetModelName()
-	end
-	--TODO
-	--if not unit.ModelHistory then unit.ModelHistory = {} end
-	unit:SetOriginalModel(newModel)
-	if bHideWearables then
-		HideWearables( unit )
-	end
-end
-
-function SwapModelBack(unit, bShowWearables)
-	unit:SetModel(unit.caster_model)
-	unit:SetOriginalModel(unit.caster_model)
-	if bShowWearables then
-		ShowWearables( unit )
-	end
-end
-
 function GetAbilityCooldown(unit, ability)
 	local level = ability:GetLevel() - 1
 	if level < 0 then level = 0 end
@@ -688,9 +684,14 @@ function PreformAbilityPrecastActions(unit, ability)
 	if ability:IsCooldownReady() and ability:IsOwnersManaEnough() then
 		ability:PayManaCost()
 		ability:StartCooldown(GetAbilityCooldown(unit, ability))
+		--ability:UseResources(true, true, true) -- not works with items?
 		return true
 	end
 	return false
+end
+
+function CDOTABaseAbility:PreformPrecastActions(unit)
+	return PreformAbilityPrecastActions(unit, self)
 end
 
 function ReplaceAbilities(unit, oldAbility, newAbility, keepLevel, keepCooldown)
@@ -723,63 +724,67 @@ end
 function CastMulticastedSpell(caster, ability, target, multicasts, delay)
 	if multicasts >= 1 then
 		Timers:CreateTimer(delay, function()
-			local skill = ability
-			local unit = caster
-			local channelled = false
-			if AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) then
-				local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
-				--TODO сделать чтобы дамаг от скилла умножался от инты.
-				for i=0, 5 do
-					local citem = caster:GetItemInSlot(i)
-					if citem then
-						dummy:AddItem(CopyItem(citem))
-					end
-				end
-				if HasScepter(caster) then dummy:AddNewModifier(caster, nil, "modifier_item_ultimate_scepter", {}) end
-				dummy:SetControllableByPlayer(caster:GetPlayerID(), true)
-				dummy:SetOwner(caster)
-				dummy:SetAbsOrigin(caster:GetAbsOrigin())
-				dummy.GetStrength = function()
-					return caster:GetStrength()
-				end
-				dummy.GetAgility = function()
-					return caster:GetAgility()
-				end
-				dummy.GetIntellect = function()
-					return caster:GetIntellect()
-				end
-				skill = dummy:AddAbility(ability:GetName())
-				unit = dummy
-				skill:SetLevel(ability:GetLevel())
-				channelled = true
-			end
+			CastAdditionalAbility(caster, ability, target)
 			caster:EmitSound('Hero_OgreMagi.Fireblast.x'.. multicasts)
-			if AbilityHasBehavior(skill, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then
-				if target and type(target) == "table" then
-					unit:SetCursorCastTarget(target)
-				end
-			elseif AbilityHasBehavior(skill, DOTA_ABILITY_BEHAVIOR_POINT) then
-				if target and target.x and target.y and target.z then
-					unit:SetCursorPosition(target)
-				end
-			end
-			skill:OnSpellStart()
-			if channelled then
-				Timers:CreateTimer(0.03, function()
-					if not caster:IsChanneling() then
-						skill:EndChannel(true)
-						skill:OnChannelFinish(true)
-						Timers:CreateTimer(0.03, function()
-							if skill then UTIL_Remove(skill) end
-							if unit then UTIL_Remove(unit) end
-						end)
-					else
-						return 0.03
-					end
-				end)
-			end
 			if multicasts >= 2 then
 				CastMulticastedSpell(caster, ability, target, multicasts - 1, delay)
+			end
+		end)
+	end
+end
+
+function CastAdditionalAbility(caster, ability, target)
+	local skill = ability
+	local unit = caster
+	local channelled = false
+	if AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) then
+		local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+		--TODO сделать чтобы дамаг от скилла умножался от инты.
+		for i = 0, DOTA_ITEM_SLOT_9 do
+			local citem = caster:GetItemInSlot(i)
+			if citem then
+				dummy:AddItem(CopyItem(citem))
+			end
+		end
+		if caster:HasScepter() then dummy:AddNewModifier(caster, nil, "modifier_item_ultimate_scepter", {}) end
+		dummy:SetControllableByPlayer(caster:GetPlayerID(), true)
+		dummy:SetOwner(caster)
+		dummy:SetAbsOrigin(caster:GetAbsOrigin())
+		dummy.GetStrength = function()
+			return caster:GetStrength()
+		end
+		dummy.GetAgility = function()
+			return caster:GetAgility()
+		end
+		dummy.GetIntellect = function()
+			return caster:GetIntellect()
+		end
+		skill = dummy:AddAbility(ability:GetName())
+		unit = dummy
+		skill:SetLevel(ability:GetLevel())
+		channelled = true
+	end
+	if AbilityHasBehavior(skill, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then
+		if target and type(target) == "table" then
+			unit:SetCursorCastTarget(target)
+		end
+	elseif AbilityHasBehavior(skill, DOTA_ABILITY_BEHAVIOR_POINT) then
+		if target and target.x and target.y and target.z then
+			unit:SetCursorPosition(target)
+		end
+	end
+	skill:OnSpellStart()
+	if channelled then
+		Timers:CreateTimer(0.03, function()
+			if not caster:IsChanneling() then
+				skill:EndChannel(true)
+				skill:OnChannelFinish(true)
+				Timers:CreateTimer(0.03, function()
+					if skill then UTIL_Remove(skill) end
+					if unit then UTIL_Remove(unit) end
+				end)
+			else
+				return 0.03
 			end
 		end)
 	end
@@ -852,10 +857,10 @@ end
 --illusion_incoming_damage = tooltip - 100
 --illusion_outgoing_damage = tooltip - 100
 function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage, illusion_outgoing_damage, illusion_duration)
+	local unitname = GetFullHeroName(unit)
 	local illusion = CreateUnitByName(unit:GetUnitName(), illusion_origin, true, unit, unit:GetPlayerOwner(), unit:GetTeamNumber())
 	FindClearSpaceForUnit(illusion, illusion_origin, true)
-	illusion:SetModel(unit:GetModelName())
-	illusion:SetOriginalModel(unit:GetModelName())
+	illusion:SetModelScale(unit:GetModelScale())
 	illusion:SetControllableByPlayer(unit:GetPlayerID(), true)
 
 	local caster_level = unit:GetLevel()
@@ -897,7 +902,6 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 		illusion:ModifyIntellect(unit.Additional_int)
 	end
 	if unit.Additional_attackspeed then
-		--TODO
 		if not illusion:HasModifier("modifier_item_shard_attackspeed_stack") then
 			illusion:AddNewModifier(caster, nil, "modifier_item_shard_attackspeed_stack", {})
 		end
@@ -907,7 +911,22 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 		end
 	end
 	illusion.UnitName = unit.UnitName
-	--PlayerResource:AddToSelection(unit:GetPlayerID(), illusion)
+	illusion:SetNetworkableEntityInfo("unit_name", GetFullHeroName(illusion))
+	if NPC_HEROES_CUSTOM[unitname] then
+		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[unitname], true)
+	end
+	--[[illusion.CustomGain_Strength = unit.CustomGain_Strength
+	illusion.CustomGain_Intelligence = unit.CustomGain_Intelligence
+	illusion.CustomGain_Agility = unit.CustomGain_Agility
+	illusion:SetNetworkableEntityInfo("AttributeStrengthGain", unit.CustomGain_Strength)
+	illusion:SetNetworkableEntityInfo("AttributeIntelligenceGain", unit.CustomGain_Intelligence)
+	illusion:SetNetworkableEntityInfo("AttributeAgilityGain", unit.CustomGain_Agility)]]
+	if unit:GetModelName() ~= illusion:GetModelName() then
+		illusion.ModelOverride = unit:GetModelName()
+		illusion:SetModel(illusion.ModelOverride)
+		illusion:SetOriginalModel(illusion.ModelOverride)
+	end
+	
 	return illusion
 end
 
@@ -921,20 +940,20 @@ function table.findIndex(t, value)
 	return values
 end
 
-function PerformGlobalAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, AttackFuncs)
+function PerformGlobalAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, bFakeAttack, bNeverMiss, AttackFuncs)
 	local abs = unit:GetAbsOrigin()
 	unit:SetAbsOrigin(hTarget:GetAbsOrigin())
-	SafePerformAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, AttackFuncs)
+	SafePerformAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, bFakeAttack, bNeverMiss, AttackFuncs)
 	unit:SetAbsOrigin(abs)
 end
 
-function SafePerformAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, AttackFuncs)
+function SafePerformAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, bFakeAttack, bNeverMiss, AttackFuncs)
 	--bNoSplashesMelee, bNoSplashesRanged, bNoDoubleAttackMelee, bNoDoubleAttackRanged
-	if AttackFuncs and unit.AttackFuncs then
-		table.merge(AttackFuncs, unit.AttackFuncs)
+	if AttackFuncs then
+		if not unit.AttackFuncs then unit.AttackFuncs = {} end
+		table.merge(unit.AttackFuncs, AttackFuncs)
 	end
-	unit.AttackFuncs = AttackFuncs
-	unit:PerformAttack(hTarget,bUseCastAttackOrb,bProcessProcs,bSkipCooldown,bIgnoreInvis,bUseProjectile)
+	unit:PerformAttack(hTarget,bUseCastAttackOrb,bProcessProcs,bSkipCooldown,bIgnoreInvis,bUseProjectile,bFakeAttack,bNeverMiss)
 	unit.AttackFuncs = nil
 end
 
@@ -954,18 +973,34 @@ function ColorTableToCss(color)
 end
 
 function IsPlayerAbandoned( playerID )
-	return PLAYER_DATA[playerID].IsAbandoned
+	return PLAYER_DATA[playerID].IsAbandoned == true
 end
 
 function FindAllOwnedUnits(player)
 	local summons = {}
-	local units = FindUnitsInRadius(PlayerResource:GetTeam(player:GetPlayerID()), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED, FIND_ANY_ORDER, false)
+	local pid = type(player) == "number" and player or player:GetPlayerID()
+	local units = FindUnitsInRadius(PlayerResource:GetTeam(pid), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED, FIND_ANY_ORDER, false)
 	for _,v in ipairs(units) do
-		if v:GetPlayerOwner() == player and not (v:HasModifier("modifier_dummy_unit") or v:HasModifier("modifier_containers_shopkeeper_unit") or v:HasModifier("modifier_teleport_passive")) and v ~= hero then
-			table.insert(summons, v)
+		if type(player) == "number" and ((v.GetPlayerID ~= nil and v:GetPlayerID() or v:GetPlayerOwnerID()) == pid) or v:GetPlayerOwner() == player then
+			if not (v:HasModifier("modifier_dummy_unit") or v:HasModifier("modifier_containers_shopkeeper_unit") or v:HasModifier("modifier_teleport_passive")) and v ~= hero then
+				table.insert(summons, v)
+			end
 		end
 	end
 	return summons
+end
+
+function RemoveAllOwnedUnits(playerId)
+	local player = PlayerResource:GetPlayer(playerId)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+	local courier = FindCourier(PlayerResource:GetTeam(playerId))
+	for _,v in ipairs(FindAllOwnedUnits(player or playerId)) do
+		if v ~= hero and v ~= courier then
+			v:ClearNetworkableEntityInfo()
+			v:ForceKill(false)
+			UTIL_Remove(v)
+		end
+	end
 end
 
 function table.icontains(table, element)
@@ -989,50 +1024,99 @@ function GetTeamPlayerCount(iTeam)
 	return counter
 end
 
-function GetAllPlayerCount(iTeam)
-	local counter = 0
-	for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
-		counter = counter + GetTeamPlayerCount(i)
-	end
-	return counter
-end
-
 function MakePlayerAbandoned(iPlayerID)
 	if not PLAYER_DATA[iPlayerID].IsAbandoned then
+		RemoveAllOwnedUnits(iPlayerID)
 		local hero = PlayerResource:GetSelectedHeroEntity(iPlayerID)
-		if hero then
-			Notifications:TopToAll({hero=hero:GetName(), duration=10.0})
-			Notifications:TopToAll(CreateHeroNameNotificationSettings(hero))
-			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
-			print("Abandoning: " .. hero:GetName())
+		if IsValidEntity(hero) then
+			PLAYER_DATA[iPlayerID].BeforeAbandon_Level = hero:GetLevel()
+			PLAYER_DATA[iPlayerID].BeforeAbandon_HeroInventorySnapshot = {}
+			hero:ClearNetworkableEntityInfo()
 			hero:Stop()
-			for i = 0, 11 do
-				local citem = hero:GetItemInSlot(i)
-				if citem then
-					hero:SellItem(citem)
-					Gold:UpdatePlayerGold(iPlayerID)
+			for i = 0, DOTA_STASH_SLOT_6 do
+				local item = hero:GetItemInSlot(i)
+				if item then
+					local charges = item:GetCurrentCharges()
+					local toWriteCharges
+					if item:GetInitialCharges() ~= charges then
+						toWriteCharges = charges
+					end
+					PLAYER_DATA[iPlayerID].BeforeAbandon_HeroInventorySnapshot[i] = {
+						name = item:GetAbilityName(),
+						stacks = toWriteCharges
+					}
+					hero:SellItem(item)
 				end
 			end
-			Timers:CreateTimer(function()
+			
+			
+			--Saving hero for 20 seconds to make sure most of debuffs were already removed
+			hero:DestroyAllModifiers()
+			for i = 0, hero:GetAbilityCount() - 1 do
+				local ability = hero:GetAbilityByIndex(i)
+				if ability then
+					ability:SetLevel(0)
+					ability:SetActivated(false)
+					--UTIL_Remove(ability)
+				end
+			end
+			hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
+			Timers:CreateTimer(20, function()
 				UTIL_Remove(hero)
 			end)
 		end
+		local heroname = HeroSelection:GetSelectedHeroName(iPlayerID)
+		local notLinked = true
+		if heroname then
+			Notifications:TopToAll({hero=heroname, duration=10})
+			Notifications:TopToAll({text=PlayerResource:GetPlayerName(iPlayerID), continue=true, style={color=ColorTableToCss(PLAYER_DATA[iPlayerID].Color or {0, 0, 0})}})
+			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
+
+			local linked = GetKeyValue(hero, "LinkedHero")
+			if linked then
+				for _,v in ipairs(string.split(linked, " | ")) do
+					local linkedHeroOwner = HeroSelection:GetSelectedHeroPlayer(v)
+					if linkedHeroOwner then
+						HeroSelection:ForceChangePlayerHeroMenu(linkedHeroOwner)
+					end
+				end
+				notLinked = false
+			end
+		end
+		if notLinked then
+			HeroSelection:UpdateStatusForPlayer(iPlayerID, "hover", "npc_dota_hero_abaddon")
+		end
+		PLAYER_DATA[iPlayerID].IsAbandoned = true
 		local ptd = PlayerTables:GetTableValue("arena", "players_abandoned")
 		table.insert(ptd, iPlayerID)
 		PlayerTables:SetTableValue("arena", "players_abandoned", ptd)
-		PLAYER_DATA[iPlayerID].IsAbandoned = true
-		local player_team = PlayerResource:GetTeam(iPlayerID)
-		local player_count = GetTeamPlayerCount(player_team)
-		if player_count <= 0 and not GameRules:IsCheatMode() then
-			local winners = 2
-			if player_team == 2 then
-				winners = 3
+		if not GameRules:IsCheatMode() then
+			local teamLeft = GetOneRemainingTeam()
+			if teamLeft then
+				Timers:CreateTimer(30, function()
+					local teamLeft = GetOneRemainingTeam()
+					if teamLeft then
+						GameMode:OnOneTeamLeft(teamLeft)
+					end
+				end)
 			end
-			GameRules:SetSafeToLeave(true)
-			GameRules:SetGameWinner(winners)
-			return
 		end
 	end
+end
+
+function GetOneRemainingTeam()
+	local teamLeft
+	for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
+		local count = GetTeamPlayerCount(i)
+		if count > 0 then
+			if teamLeft then
+				return
+			else
+				teamLeft = i
+			end
+		end
+	end
+	return teamLeft
 end
 
 function ClearFalseInnateModifiers(unit, ability)
@@ -1076,9 +1160,12 @@ function math.round(x)
 	return x-0.5
 end
 
-function SafeHeal(unit, flAmount, hInflictor)
+function SafeHeal(unit, flAmount, hInflictor, overhead)
 	if unit:IsAlive() then
 		unit:Heal(flAmount, hInflictor)
+		if overhead then
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, unit, flAmount, nil)
+		end
 	end
 end
 
@@ -1088,28 +1175,30 @@ function InvokeCheatCommand(s)
 end
 
 function UnitVarToPlayerID(unitvar)
-	if type(unitvar) == "number" then
-		return unitvar
-	elseif type(unitvar) == "table" and unitvar:entindex() then
-		if unitvar.GetPlayerID and unitvar:GetPlayerID() > -1 then
-			return unitvar:GetPlayerID()
-		elseif unitvar.GetPlayerOwnerID then
-			return unitvar:GetPlayerOwnerID()
+	if unitvar then
+		if type(unitvar) == "number" then
+			return unitvar
+		elseif type(unitvar) == "table" and not unitvar:IsNull() and unitvar.entindex and unitvar:entindex() then
+			if unitvar.GetPlayerID and unitvar:GetPlayerID() > -1 then
+				return unitvar:GetPlayerID()
+			elseif unitvar.GetPlayerOwnerID then
+				return unitvar:GetPlayerOwnerID()
+			end
 		end
 	end
+	return -1
 end
 
 function CreateSimpleBox(point1, point2)
 	local hlen = point2.y-point1.y
 	local cen = point1.y+hlen/2
-	point1.y = cen
-	point2.y = cen
-	point1.z = 0
-	return Physics:CreateBox(point2, point1, hlen, true)
+	local new1 = Vector(point1.x, cen, 0)
+	local new2 = Vector(point2.x, cen, point2.y)
+	return Physics:CreateBox(new2, new1, hlen, true)
 end
 
 function CDOTA_BaseNPC:IsRealCreep()
-	return self.SSpawner and self.SpawnerType
+	return self.SSpawner ~= nil and self.SpawnerType ~= nil
 end
 
 function FindUnitsInBox(teamNumber, vStartPos, vEndPos, cacheUnit, teamFilter, typeFilter, flagFilter)
@@ -1123,11 +1212,9 @@ function FindUnitsInBox(teamNumber, vStartPos, vEndPos, cacheUnit, teamFilter, t
 end
 
 function string.split(inputstr, sep)
-	if sep == nil then sep = "%s" end
-	local t={} ; i=1
-	for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-		t[i] = str
-		i = i + 1
+	local t = {}
+	for str in string.gmatch(inputstr, "([^" .. (sep or "%s") .. "]+)") do
+		table.insert(t, str)
 	end
 	return t
 end
@@ -1140,6 +1227,7 @@ function GetTrueItemCost(name)
 			print("[GetTrueItemCost] Warning: " .. name)
 		else
 			cost = tempItem:GetCost()
+			UTIL_Remove(tempItem)
 		end
 	end
 	return cost
@@ -1158,13 +1246,13 @@ function FindNearestEntity(vec3, units)
 end
 
 function FindCourier(team) 
-	return TEAMS_COURIERS[team]
+	if type(TEAMS_COURIERS[team]) == "table" then
+		return TEAMS_COURIERS[team]
+	end
 end
 
 function GetNotScaledDamage(damage, unit)
-	local amplify = unit:GetSpellDamageAmplify() * 0.01
-	print(damage, amplify, damage-(damage*(amplify)))
-	return damage-(damage*(1-amplify))
+	return math.floor(damage/(1 + (unit:GetIntellect() / 16) / 100) + 0.5)
 end
 
 function GetSpellDamageAmplify(unit)
@@ -1173,22 +1261,6 @@ end
 
 function CDOTA_BaseNPC:GetSpellDamageAmplify()
 	return GetSpellDamageAmplify(self)
-end
-
-function CustomChatSay(playerId, text, teamonly)
-	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
-	local heroName
-	if hero then
-		heroName = GetFullHeroName(hero)
-	end
-	if teamonly then
-		CustomGameEventManager:Send_ServerToTeam(PlayerResource:GetTeam(playerId), "custom_chat_recieve_message", {text=text, playerId=playerId, teamonly=teamonly, hero=heroName})
-	else
-		CustomGameEventManager:Send_ServerToAllClients("custom_chat_recieve_message", {text=text, playerId=playerId, teamonly=teamonly, hero=heroName})
-	end
-	if string.starts(text, "-") then
-		GameMode:OnPlayerSentCommand(playerId, text)
-	end
 end
 
 function IsUltimateAbility(ability)
@@ -1214,10 +1286,7 @@ function RandomPositionAroundPoint(pos, radius)
 end
 
 function EvalString(str)
-	local status, nextCall = xpcall(loadstring(str), function(msg) return msg..'\n'..debug.traceback()..'\n' end)
-	if not status then
-		print(nextCall)
-	end
+	return DebugCallFunction(loadstring(str))
 end
 
 function GetPlayersInTeam(team)
@@ -1230,15 +1299,14 @@ function GetPlayersInTeam(team)
 	return players
 end
 
-function CDOTA_BaseNPC:IsHoldoutUnit()
-	return self.HoldoutSpawner and self.HoldoutWave
-end
-
 function RemoveAbilityWithModifiers(unit, ability)
 	for _,v in ipairs(unit:FindAllModifiers()) do
 		if v:GetAbility() == ability then
 			v:Destroy()
 		end
+	end
+	if ability:GetAbilityName() == "pudge_meat_hook_lua" then
+		ability:DestroyHookParticles()
 	end
 	unit:RemoveAbility(ability:GetAbilityName())
 end
@@ -1276,10 +1344,6 @@ function WorldPosToMinimap(vec)
 	return pct1*100 .. "% " .. pct2*100 .. "%"
 end
 
-function GetFullHeroName(unit)
-	return unit.UnitName or unit:GetUnitName()
-end
-
 function GetHeroTableByName(name)
 	local output = {}
 	local default = NPC_HEROES[name]
@@ -1291,7 +1355,7 @@ function GetHeroTableByName(name)
 	if custom.base_hero then
 		table.merge(output, NPC_HEROES[custom.base_hero])
 		table.merge(output, NPC_HEROES_CUSTOM[custom.base_hero])
-		for i = 1, 17 do
+		for i = 1, 24 do
 			output["Ability" .. i] = nil
 		end
 		table.merge(output, custom)
@@ -1303,7 +1367,7 @@ function GetHeroTableByName(name)
 end
 
 function SetAllItemSlotsLocked(unit, locked, bNoStash)
-	for i = 0, bNoStash and 5 or 11 do
+	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if current_item then
 			ExecuteOrderFromTable({
@@ -1318,7 +1382,7 @@ function SetAllItemSlotsLocked(unit, locked, bNoStash)
 end
 
 function FillSlotsWithDummy(unit, bNoStash)
-	for i = 0, bNoStash and 5 or 11 do
+	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if not current_item then
 			unit:AddItem(CreateItem("item_dummy", unit, unit))
@@ -1327,7 +1391,7 @@ function FillSlotsWithDummy(unit, bNoStash)
 end
 
 function ClearSlotsFromDummy(unit, bNoStash)
-	for i = 0, bNoStash and 5 or 11 do
+	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if current_item and current_item:GetAbilityName() == "item_dummy" then
 			unit:RemoveItem(current_item)
@@ -1336,23 +1400,12 @@ function ClearSlotsFromDummy(unit, bNoStash)
 	end
 end
 
-function GetAllItemsByNameInInventory(unit, itemname, searchStash)
-	local lastSlot = 5
-	if searchStash then
-		lastSlot = 11
-	end
+function GetAllItemsByNameInInventory(unit, itemname, bStash)
 	local items = {}
-	for slot = 0, lastSlot do
-		if bFromSnapshot and unit.InventorySnapshot then
-			local item = unit.InventorySnapshot[slot]
-			if item and item.name == itemname then
-				table.insert(items, item.name)
-			end
-		else
-			item = unit:GetItemInSlot(slot)
-			if item and item:GetAbilityName() == itemname then
-				table.insert(items, item)
-			end
+	for slot = 0, bStash and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
+		local item = unit:GetItemInSlot(slot)
+		if item and item:GetAbilityName() == itemname then
+			table.insert(items, item)
 		end
 	end
 	return items
@@ -1362,7 +1415,7 @@ function CDOTA_BaseNPC:UnitHasSlotForItem(itemname, bStash)
 	if self.HasRoomForItem then
 		return self:HasRoomForItem(itemname, bStash, true) ~= 4
 	else
-		for i = 0, bStash and 11 or 5 do
+		for i = 0, bStash and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
 			local item = self:GetItemInSlot(i)
 			if not item or (not item:IsNull() and item:GetAbilityName() == itemname and item:IsStackable()) then
 				return true
@@ -1373,14 +1426,14 @@ function CDOTA_BaseNPC:UnitHasSlotForItem(itemname, bStash)
 end
 
 function table.nearest(table, number)
-    local smallestSoFar, smallestIndex
-    for i, y in ipairs(table) do
-        if not smallestSoFar or (math.abs(number-y) < smallestSoFar) then
-            smallestSoFar = math.abs(number-y)
-            smallestIndex = i
-        end
-    end
-    return table[smallestIndex], smallestIndex
+	local smallestSoFar, smallestIndex
+	for i, y in ipairs(table) do
+		if not smallestSoFar or (math.abs(number-y) < smallestSoFar) then
+			smallestSoFar = math.abs(number-y)
+			smallestIndex = i
+		end
+	end
+	return table[smallestIndex], smallestIndex
 end
 
 function CreateExplosion(position, minRadius, fullRdius, minForce, fullForce, teamNumber, teamFilter, typeFilter, flagFilter)
@@ -1411,3 +1464,350 @@ end
 function CEntityInstance:ClearNetworkableEntityInfo()
 	CustomNetTables:SetTableValue("custom_entity_values", tostring(self:GetEntityIndex()), nil)
 end
+
+function IsInBox(point, point1, point2)
+	print(point, point.x > point1.x, point.y > point1.y, point.x < point2.x, point.y < point2.y)
+	return point.x > point1.x and point.y > point1.y and point.x < point2.x and point.y < point2.y
+end
+
+function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
+	local time = (5 + self:GetLevel() * 0.1) + (self.RespawnTimeModifier or 0)
+	if self.talent_keys and self.talent_keys.respawn_time_reduction then
+		time = time + self.talent_keys.respawn_time_reduction
+	end
+	return math.max(time, 3)
+end
+
+function CDOTA_BaseNPC_Hero:IsWukongsSummon()
+	return self:HasModifier("modifier_monkey_king_fur_army_soldier") or self:HasModifier("modifier_monkey_king_fur_army_soldier_inactive") or self:HasModifier("modifier_monkey_king_fur_army_soldier_hidden")
+end
+
+function CDOTA_BaseNPC_Hero:GetTotalHealthReduction()
+	local pct = self:GetModifierStackCount("modifier_kadash_immortality_health_penalty", self)
+	local mod = self:FindModifierByName("modifier_stegius_brightness_of_desolate_effect")
+	if mod then
+		pct = pct + mod:GetAbility():GetAbilitySpecial("health_decrease_pct")
+	end
+	------------
+	local sara_evolution = self:FindAbilityByName("sara_evolution")
+	if sara_evolution then
+		local dec = sara_evolution:GetSpecialValueFor("health_reduction_pct")
+		return dec + ((100-dec) * pct * 0.01)
+	end
+	return pct
+end
+
+function CDOTA_BaseNPC_Hero:CalculateHealthReduction()
+	self:CalculateStatBonus()
+	local pct = self:GetTotalHealthReduction()
+	self:SetMaxHealth(pct >= 100 and 1 or self:GetMaxHealth() - pct * (self:GetMaxHealth()/100))
+end
+
+function CDOTA_BaseNPC_Hero:ResetAbilityPoints()
+	self:SetAbilityPoints(self:GetLevel() - self:GetAbilityPointsWastedAllOnTalents())
+end
+
+function GetFullHeroName(unit)
+	return unit.UnitName or unit:GetUnitName()
+end
+
+function CDOTA_BaseNPC_Hero:GetFullName()
+	return self.UnitName or (self.GetUnitName and self:GetUnitName()) or self:GetName()
+end
+
+function table.nearestKey(t, key)
+	if not t then return end
+	local selectedKey
+	for k,v in pairs(t) do
+		if not selectedKey or math.abs(k - key) < math.abs(selectedKey - key) then
+			selectedKey = k
+		end
+	end
+	return t[selectedKey]
+end
+
+function table.nearestOrLowerKey(t, key)
+	if not t then return end
+	local selectedKey
+	for k,v in pairs(t) do
+		if k <= key and (not selectedKey or math.abs(k - key) < math.abs(selectedKey - key)) then
+			selectedKey = k
+		end
+	end
+	return t[selectedKey]
+end
+
+function CDOTA_BaseNPC:DestroyAllModifiers()
+	for _,v in ipairs(self:FindAllModifiers()) do
+		v:Destroy()
+	end
+end
+
+function CDOTA_BaseNPC:HasModelChanged()
+	if self:HasModifier("modifier_terrorblade_metamorphosis") or self:HasModifier("modifier_monkey_king_transform") or self:HasModifier("modifier_lone_druid_true_form") then
+		return true
+	end
+	for _, modifier in ipairs(self:FindAllModifiers()) do
+		if modifier.DeclareFunctions and table.contains(modifier:DeclareFunctions(), MODIFIER_PROPERTY_MODEL_CHANGE) then
+			if modifier.GetModifierModelChange and modifier:GetModifierModelChange() then
+				return true
+			end
+		end
+	end
+	return false
+end
+
+function GetConnectionState(pid)
+	if DebugConnectionStates then
+		local map = {
+			[3] = "DOTA_CONNECTION_STATE_DISCONNECTED",
+			[6] = "DOTA_CONNECTION_STATE_FAILED",
+			[0] = "DOTA_CONNECTION_STATE_UNKNOWN",
+			[1] = "DOTA_CONNECTION_STATE_NOT_YET_CONNECTED",
+			[4] = "DOTA_CONNECTION_STATE_ABANDONED",
+			[2] = "DOTA_CONNECTION_STATE_CONNECTED",
+			[5] = "DOTA_CONNECTION_STATE_LOADING",
+		}
+		CPrint(pid, map[PlayerResource:GetConnectionState(pid)])
+	end
+	return PlayerResource:IsFakeClient(pid) and DOTA_CONNECTION_STATE_CONNECTED or PlayerResource:GetConnectionState(pid)
+end
+
+function DebugCallFunction(fun)
+	local status, nextCall = xpcall(fun, function (msg)
+		return msg..'\n'..debug.traceback()..'\n'
+	end)
+	if not status then
+		Timers:HandleEventError(nil, nil, nextCall)
+	end
+end
+function CDOTA_BaseNPC:FindClearSpaceForUnitAndSetCamera(position)
+	self:Stop()
+	PlayerResource:SetCameraTarget(self:GetPlayerOwnerID(), self)
+	FindClearSpaceForUnit(self, position, true)
+	Timers:CreateTimer(0.1, function()
+		if IsValidEntity(self) then
+			PlayerResource:SetCameraTarget(self:GetPlayerOwnerID(), nil)
+			self:Stop()
+		end
+	end)
+end
+
+function CDOTA_BaseNPC:SetPlayerStat(key, value)
+	if self.GetPlayerOwnerID and self:GetPlayerOwnerID() > -1 then
+		PlayerResource:SetPlayerStat(self:GetPlayerOwnerID(), key, value)
+	end
+end
+function CDOTA_BaseNPC:GetPlayerStat(key)
+	if self.GetPlayerOwnerID and self:GetPlayerOwnerID() > -1 then
+		return PlayerResource:GetPlayerStat(self:GetPlayerOwnerID(), key)
+	end
+end
+function CDOTA_BaseNPC:ModifyPlayerStat(key, value)
+	if self.GetPlayerOwnerID and self:GetPlayerOwnerID() > -1 then
+		return PlayerResource:ModifyPlayerStat(self:GetPlayerOwnerID(), key, value)
+	end
+end
+function CDOTA_BaseNPC:IsTrueHero()
+	return self:IsRealHero() and not self:IsTempestDouble() and not self:IsWukongsSummon()
+end
+function CDOTA_PlayerResource:SetPlayerStat(PlayerID, key, value)
+	local pd = PLAYER_DATA[PlayerID]
+	if not pd.HeroStats then pd.HeroStats = {} end
+	pd.HeroStats[key] = value
+end
+function CDOTA_PlayerResource:GetPlayerStat(PlayerID, key)
+	local pd = PLAYER_DATA[PlayerID]
+	return pd.HeroStats == nil and 0 or (pd.HeroStats[key] or 0)
+end
+function CDOTA_PlayerResource:ModifyPlayerStat(PlayerID, key, value)
+	local v = self:GetPlayerStat(PlayerID, key) + value
+	self:SetPlayerStat(PlayerID, key, v)
+	return v
+end
+
+function GetInGamePlayerCount()
+	local counter = 0
+	for i = 0, 23 do
+		if PlayerResource:IsValidPlayerID(i) then
+			counter = counter + 1
+		end
+	end
+	return counter
+end
+
+function GetTeamAllPlayerCount(iTeam)
+	local counter = 0
+	for i = 0, 23 do
+		if PlayerResource:IsValidPlayerID(i) then
+			if PlayerResource:GetTeam(i) == iTeam then
+				counter = counter + 1
+			end
+		end
+	end
+	return counter
+end
+
+function CDOTA_BaseNPC:UpdateAttackProjectile()
+	local projectile
+	for i = #ATTACK_MODIFIERS, 1, -1 do
+		local attack_modifier = ATTACK_MODIFIERS[i]
+		local apply = true
+		if attack_modifier.modifiers then
+			for _,v in ipairs(attack_modifier.modifiers) do
+				if not self:HasModifier(v) then
+					apply = false
+					break
+				end
+			end
+		end
+		if apply and attack_modifier.modifier then
+			apply = self:HasModifier(attack_modifier.modifier)
+		end
+		if apply then
+			projectile = attack_modifier.projectile
+			break
+		end
+	end
+	projectile = projectile or self:GetKeyValue("ProjectileModel")
+	self:SetRangedProjectileName(projectile)
+	return projectile
+end
+
+function Lifesteal(ability, unit, target, damage)
+	local target = keys.target
+	local lifesteal = keys.damage * keys.percent * 0.01
+	SafeHeal(caster, lifesteal, keys.ability, true)
+end
+
+function RecreateAbility(unit, ability)
+	local name = ability:GetAbilityName()
+	local level = ability:GetLevel()
+	RemoveAbilityWithModifiers(unit, ability)
+	ability = AddNewAbility(unit, name, true)
+	if ability then
+		ability:SetLevel(level)
+	end
+	return ability
+end
+
+function CDOTA_Buff:SetSharedKey(key, value)
+	local t = CustomNetTables:GetTableValue("shared_modifiers", self:GetParent():GetEntityIndex() .. "_" .. self:GetName()) or {}
+	t[key] = value
+	CustomNetTables:SetTableValue("shared_modifiers", self:GetParent():GetEntityIndex() .. "_" .. self:GetName(), t)
+end
+
+--from DotaCraft
+function GetPreMitigationDamage(value, victim, attacker, damagetype)
+	if damagetype == DAMAGE_TYPE_PHYSICAL then
+		local armor = victim:GetPhysicalArmorValue()
+		local reduction = ((armor)*0.06) / (1+0.06*(armor))
+		local damage = value / (1 - reduction)
+		return damage,reduction
+	elseif damagetype == DAMAGE_TYPE_MAGICAL then
+		local reduction = victim:GetMagicalArmorValue()*0.01
+		local damage = value / (1 - reduction)
+
+		return damage,reduction
+	else
+		return value,0
+	end
+end
+
+function table.deepmerge(t1, t2)
+	for k,v in pairs(t2) do
+		if type(v) == "table" then
+			if type(t1[k] or false) == "table" then
+				tableMerge(t1[k] or {}, t2[k] or {})
+			else
+				t1[k] = v
+			end
+		else
+			t1[k] = v
+		end
+	end
+	return t1
+end
+
+function CDOTA_PlayerResource:SetPlayerTeam(playerID, newTeam)
+	local oldTeam = self:GetTeam(playerID)
+	local player = self:GetPlayer(playerID)
+	local hero = self:GetSelectedHeroEntity(playerID)
+	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
+	local playerPickData = {}
+	local tableData = PlayerTables:GetTableValue("hero_selection", oldTeam)
+	if tableData and tableData[playerID] then
+		table.merge(playerPickData, tableData[playerID])
+		tableData[playerID] = nil
+		PlayerTables:SetTableValue("hero_selection", oldTeam, tableData)
+	end
+
+	for _,v in ipairs(FindAllOwnedUnits(player)) do
+		v:SetTeam(newTeam)
+	end
+	player:SetTeam(newTeam)
+
+	PlayerResource:UpdateTeamSlot(playerID, newTeam, 1)
+	PlayerResource:SetCustomTeamAssignment(playerID, newTeam)
+
+	local newTableData = PlayerTables:GetTableValue("hero_selection", newTeam)
+	if newTableData and playerPickData then
+		newTableData[playerID] = playerPickData
+		PlayerTables:SetTableValue("hero_selection", newTeam, newTableData)
+	end
+	--[[for _, v in ipairs(Entities:FindAllByClassname("npc_dota_courier") ) do
+		v:SetControllableByPlayer(playerID, v:GetTeamNumber() == newTeam)
+	end]]
+	--FindCourier(oldTeam):SetControllableByPlayer(playerID, false)
+	local targetCour = FindCourier(newTeam)
+	if IsValidEntity(targetCour) then
+		targetCour:SetControllableByPlayer(playerID, true)
+	end
+	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
+	PlayerTables:AddPlayerSubscription("dynamic_minimap_points_" .. newTeam, playerID)
+
+	for i = 0, hero:GetAbilityCount() - 1 do
+		local skill = hero:GetAbilityByIndex(i)
+		if skill then
+			--print(skill.GetIntrinsicModifierName and skill:GetIntrinsicModifierName())
+			if skill.GetIntrinsicModifierName and skill:GetIntrinsicModifierName() then
+				RecreateAbility(hero, skill)
+			end
+		end
+	end
+
+	CustomGameEventManager:Send_ServerToPlayer(player, "arena_team_changed_update", {})
+	PlayerResource:RefreshSelection()
+end
+
+function SimpleDamageReflect(victim, attacker, damage, flags, ability, damage_type)
+	if victim:IsAlive() and not HasDamageFlag(flags, DOTA_DAMAGE_FLAG_REFLECTION) and attacker:GetTeamNumber() ~= victim:GetTeamNumber() then
+		print("Reflected " .. damage .. " damage from " .. victim:GetUnitName() .. " to " .. attacker:GetUnitName())
+		ApplyDamage({
+			victim = attacker,
+			attacker = victim,
+			damage = damage,
+			damage_type = damage_type,
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_REFLECTION,
+			ability = ability
+		})
+		return true
+	end
+	return false
+end
+
+function table.deepcopy(obj, seen)
+	if type(obj) ~= 'table' then return obj end
+	if seen and seen[obj] then return seen[obj] end
+	local s = seen or {}
+	local res = setmetatable({}, getmetatable(obj))
+	s[obj] = res
+	for k, v in pairs(obj) do res[table.deepcopy(k, s)] = table.deepcopy(v, s) end
+	return res
+end
+
+--TODO
+--[[function CDOTA_BaseNPC:AddNewModifierShared(hCaster, hAbility, pszScriptName, hModifierTable)
+	CustomNetTables:SetTableValue("shared_modifiers", self:GetEntityIndex() .. "_" .. pszScriptName, hModifierTable)
+	return self:AddNewModifier(hCaster, hAbility, pszScriptName, hModifierTable)
+end]]

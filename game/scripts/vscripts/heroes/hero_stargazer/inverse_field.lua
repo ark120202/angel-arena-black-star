@@ -7,7 +7,7 @@ function Return(keys)
 	local multiplier = ((ability:GetLevelSpecialValueFor("base_reflection", level) * 0.01) + strMultiplier)
 
 	local return_damage = keys.damage * multiplier
-	if attacker:GetTeamNumber() ~= caster:GetTeamNumber() and not IsBossEntity(attacker) and not attacker:IsMagicImmune() and not caster:IsIllusion() and not caster:PassivesDisabled() then
+	if attacker:GetTeamNumber() ~= caster:GetTeamNumber() and not attacker:IsBoss() and not attacker:IsMagicImmune() and not caster:IsIllusion() and not caster:PassivesDisabled() then
 		local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_centaur/centaur_return.vpcf", PATTACH_POINT_FOLLOW, caster)
 		ParticleManager:SetParticleControlEnt(pfx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(pfx, 1, attacker, PATTACH_POINT_FOLLOW, "attach_hitloc", attacker:GetAbsOrigin(), true)

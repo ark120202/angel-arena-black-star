@@ -1,5 +1,6 @@
 if not CustomRunes then
 	CustomRunes = class({})
+	CustomRunes.ModifierApplier = CreateItem("item_dummy", nil, nil)
 end
 LinkLuaModifier("modifier_arena_rune_tripledamage", "custom_runes/modifier_arena_rune_tripledamage.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_arena_rune_haste", "custom_runes/modifier_arena_rune_haste.lua", LUA_MODIFIER_MOTION_NONE)
@@ -8,6 +9,11 @@ LinkLuaModifier("modifier_arena_rune_arcane", "custom_runes/modifier_arena_rune_
 LinkLuaModifier("modifier_arena_rune_flame", "custom_runes/modifier_arena_rune_flame.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_arena_rune_acceleration", "custom_runes/modifier_arena_rune_acceleration.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_arena_rune_vibration", "custom_runes/modifier_arena_rune_vibration.lua", LUA_MODIFIER_MOTION_NONE)
+
+LinkLuaModifier("modifier_arena_rune_soul_steal", "custom_runes/modifier_arena_rune_soul_steal.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_arena_rune_soul_steal_effect", "custom_runes/modifier_arena_rune_soul_steal.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_arena_rune_spikes", "custom_runes/modifier_arena_rune_spikes.lua", LUA_MODIFIER_MOTION_NONE)
+
 
 ARENA_RUNE_BOUNTY = 0
 ARENA_RUNE_TRIPLEDAMAGE = 1
@@ -19,10 +25,31 @@ ARENA_RUNE_ARCANE = 6
 ARENA_RUNE_FLAME = 7
 ARENA_RUNE_ACCELERATION = 8
 ARENA_RUNE_VIBRATION = 9
+ARENA_RUNE_SOUL_STEAL = 10
+ARENA_RUNE_SPIKES = 11
 
 ARENA_RUNE_FIRST = 1
-ARENA_RUNE_LAST = ARENA_RUNE_VIBRATION
-
+ARENA_RUNE_LAST = ARENA_RUNE_SPIKES
+--[[
+Growing Rates:
+	models/props_gameplay/gold_bag.vmdl
+	Multiplies all incoming and reduced gold by 1.5 for 25 seconds
+Curse:
+	models/props_gameplay/gem01.vmdl
+	139, 0, 139
+	Each attack applies a debuff that will suffer enemy until it purges it or kills any hero (damage will grow with each second: X^1.5)
+Mystic Candy:
+	models/props_gameplay/halloween_candy.vmdl
+	color random
+	Applies 3 random buffs/debuffs
+Ghost From:
+	models/props_gameplay/pig_blue.vmdl
+	Gives unobstructed movement, disarm, silence, invisibility, 550 movement speed
+Imitator:
+	particles/generic_gameplay/generic_electrified_beam_b.vpcf
+	Copies all features from another rune, but additionaly has.
+	When picked up spawns
+]]
 RUNE_SETTINGS = {
 	[ARENA_RUNE_TRIPLEDAMAGE] = {
 		model = "models/props_gameplay/rune_doubledamage01.vmdl",
@@ -78,10 +105,9 @@ RUNE_SETTINGS = {
 			if ability_goblins_greed and ability_goblins_greed:GetLevel() > 0 then
 				gold_multiplier = gold_multiplier + ability_goblins_greed:GetAbilitySpecial("bounty_multiplier_tooltip") - 1
 			end
-			local item_blood_of_midas = FindItemInInventoryByName(unit, "item_blood_of_midas", false)
-			if item_blood_of_midas then
-				gold_multiplier = gold_multiplier + item_blood_of_midas:GetLevelSpecialValueFor("gold_multiplier", item_blood_of_midas:GetLevel() - 1) - 1
-				xp_multiplier = xp_multiplier + item_blood_of_midas:GetLevelSpecialValueFor("xp_multiplier", item_blood_of_midas:GetLevel() - 1) - 1
+			if unit:HasModifier("modifier_item_blood_of_midas") then
+				gold_multiplier = gold_multiplier + GetAbilitySpecial("item_blood_of_midas", "gold_multiplier") - 1
+				xp_multiplier = xp_multiplier + GetAbilitySpecial("item_blood_of_midas", "xp_multiplier") - 1
 			end
 			return gold * gold_multiplier, xp * xp_multiplier
 		end,
@@ -98,32 +124,46 @@ RUNE_SETTINGS = {
 	[ARENA_RUNE_FLAME] = {
 		model = "models/props_gameplay/rune_illusion01.vmdl",
 		particle = "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf",
-		sound = "General.RunePickUp",
 		color = {255, 30, 0},
 		duration = 30,
-		damage_per_second = 80, --Tooltip
+		damage_per_second_max_hp_pct = 4,
 		radius = 350, --Tooltip
 	},
 	[ARENA_RUNE_ACCELERATION] = {
 		model = "models/props_gameplay/rune_goldxp.vmdl",
 		particle = "particles/arena/generic_gameplay/rune_acceleration.vpcf",
-		sound = "General.RunePickUp",
 		color = {20, 20, 255},
 		duration = 35,
 		attackspeed = 90, --Tooltip
-		creep_xp_multiplier = 2,
+		xp_multiplier = 3,
 	},
 	[ARENA_RUNE_VIBRATION] = {
 		model = "models/props_gameplay/rune_invisibility01.vmdl",
 		particle = "particles/arena/generic_gameplay/rune_vibration.vpcf",
-		sound = "General.RunePickUp",
 		color = {0, 0, 255},
 		duration = 25,
 		interval = 0.8,
 		minRadius = 150,
-		fullRdius = 350,
+		fullRadius = 350,
 		minForce = 375,
 		fullForce = 700,
+	},
+	[ARENA_RUNE_SOUL_STEAL] = {
+		model = "models/props_gameplay/heart001.vmdl",
+		particle = "particles/neutral_fx/prowler_shaman_stomp_debuff_glow.vpcf",
+		z_modify = 64,
+		color = {0, 0, 0},
+		duration = 32,
+		aura_radius = 500,
+		damage_heal_pct = 8,
+	},
+	[ARENA_RUNE_SPIKES] = {
+		model = "models/props_gameplay/heart001.vmdl",
+		particle = "particles/items_fx/blademail.vpcf",
+		particle_attach = PATTACH_ABSORIGIN,
+		z_modify = 64,
+		duration = 15,
+		damage_reflection_pct = 75,
 	}
 }
 
@@ -131,12 +171,17 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 	local settings = {}
 	table.merge(settings, RUNE_SETTINGS[runeType])
 	if unit.GetPlayerID then
-		GameRules:SendCustomMessageToTeam("custom_runes_rune_" .. runeType .. "_activated", unit:GetTeam(), unit:GetPlayerID(), -1)
+		CustomGameEventManager:Send_ServerToTeam(unit:GetTeam(), "create_custom_toast", {
+			type = "generic",
+			text = "#custom_toast_ActivatedRune",
+			player = unit:GetPlayerID(),
+			runeType = runeType
+		})
 		HeroVoice:OnRuneActivated(unit:GetPlayerID(), runeType)
 	end
 	if rune_multiplier then
 		for k, v in pairs(settings) do
-			if type(v) == "number" and k ~= "interval" and k ~= "illusion_incoming_damage" and k ~= "movespeed" then
+			if type(v) == "number" and k ~= "interval" and k ~= "illusion_incoming_damage" and k ~= "movespeed" and k ~= "z_modify" then
 				settings[k] = v * rune_multiplier
 			end
 		end
@@ -146,46 +191,54 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 		Gold:AddGoldWithMessage(unit, gold * settings.special_value_multiplier)
 		unit:AddExperience(xp * settings.special_value_multiplier, DOTA_ModifyXP_Unspecified, false, true)
 	elseif runeType == ARENA_RUNE_TRIPLEDAMAGE then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_tripledamage", {duration = settings.duration}):SetStackCount(settings.damage_pct)
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_tripledamage", {duration = settings.duration}):SetStackCount(settings.damage_pct)
 	elseif runeType == ARENA_RUNE_HASTE then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_haste", {duration = settings.duration}):SetStackCount(settings.movespeed)
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_haste", {duration = settings.duration}):SetStackCount(settings.movespeed)
 	elseif runeType == ARENA_RUNE_ILLUSION then
 		for i = 1, settings.illusion_count do
-			CreateIllusion(unit, nil, unit:GetAbsOrigin() + RandomVector(100), settings.illusion_incoming_damage - 100, settings.illusion_outgoing_damage - 100, settings.duration):SetForwardVector(unit:GetForwardVector())
+			CreateIllusion(unit, CustomRunes.ModifierApplier, unit:GetAbsOrigin() + RandomVector(100), settings.illusion_incoming_damage - 100, settings.illusion_outgoing_damage - 100, settings.duration):SetForwardVector(unit:GetForwardVector())
 		end
 	elseif runeType == ARENA_RUNE_INVISIBILITY then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_invisibility", {duration = settings.duration})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_invisibility", {duration = settings.duration})
 	elseif runeType == ARENA_RUNE_REGENERATION then
 		unit:SetHealth(unit:GetMaxHealth())
 		unit:SetMana(unit:GetMaxMana())
 	elseif runeType == ARENA_RUNE_ARCANE then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_arcane", {duration = settings.duration})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_arcane", {duration = settings.duration})
 	elseif runeType == ARENA_RUNE_FLAME then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_flame", {duration = settings.duration})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_flame", {duration = settings.duration, damage_per_second_max_hp_pct = settings.damage_per_second_max_hp_pct})
 	elseif runeType == ARENA_RUNE_ACCELERATION then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_acceleration", {duration = settings.duration, creep_xp_multiplier = settings.creep_xp_multiplier})
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_acceleration", {duration = settings.duration, xp_multiplier = settings.xp_multiplier})
 	elseif runeType == ARENA_RUNE_VIBRATION then
-		unit:AddNewModifier(unit, nil, "modifier_arena_rune_vibration", {
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_vibration", {
 			duration = settings.duration,
 			minRadius = settings.minRadius,
-			fullRdius = settings.fullRdius,
+			fullRadius = settings.fullRadius,
 			minForce = settings.minForce,
 			fullForce = settings.fullForce,
 			interval = settings.interval,
 		})
+	elseif runeType == ARENA_RUNE_SOUL_STEAL then
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_soul_steal", {duration = settings.duration, radius = settings.aura_radius}):SetStackCount(settings.damage_heal_pct)
+	elseif runeType == ARENA_RUNE_SPIKES then
+		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_spikes", {duration = settings.duration}):SetStackCount(settings.damage_reflection_pct)
 	end
-	unit:EmitSound(settings.sound)
+	
+	unit:EmitSound(settings.sound or "General.RunePickUp")
 end
 
 function CustomRunes:CreateRune(position, runeType)
 	local settings = RUNE_SETTINGS[runeType]
-
+	if settings.z_modify then
+		position.z = position.z + settings.z_modify
+	end
 	local entity = CreateUnitByName("npc_arena_rune", position, false, nil, nil, DOTA_TEAM_NEUTRALS)
 	entity.RuneType = runeType
 	entity:SetModel(settings.model)
 	entity:SetOriginalModel(settings.model)
 	StartAnimation(entity, {duration=-1, activity=ACT_DOTA_IDLE})
-	local pfx = ParticleManager:CreateParticle(settings.particle, PATTACH_ABSORIGIN_FOLLOW, entity)
+	entity:SetAbsOrigin(position)
+	local pfx = ParticleManager:CreateParticle(settings.particle, settings.particle_attach or PATTACH_ABSORIGIN_FOLLOW, entity)
 	if settings.color then
 		entity:SetRenderColor(unpack(settings.color))
 	end
@@ -209,7 +262,7 @@ function CustomRunes:SpawnRunes()
 	local spawners = Entities:FindAllByName("target_mark_rune_spawner")
 	local bountySpawner = RandomInt(1, #spawners)
 	for k,v in ipairs(spawners) do
-		if IsValidEntity(v.RuneEntity) and v.RuneEntity:IsAlive() then
+		if IsValidEntity(v.RuneEntity) then
 			v.RuneEntity:ClearNetworkableEntityInfo()
 			UTIL_Remove(v.RuneEntity)
 		end
@@ -221,7 +274,8 @@ function CustomRunes:ExecuteOrderFilter(order)
 	if order.units["0"] and (order.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET or order.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET) then
 		local unit = EntIndexToHScript(order.units["0"])
 		local rune = EntIndexToHScript(order.entindex_target)
-		if rune and unit and rune:IsCustomRune() then
+
+		if IsValidEntity(unit) and IsValidEntity(rune) and rune:IsCustomRune() then
 			local pos = rune:GetAbsOrigin()
 			order.order_type = DOTA_UNIT_ORDER_MOVE_TO_POSITION
 			order.position_x = pos.x
@@ -240,7 +294,7 @@ function CustomRunes:ExecuteOrderFilter(order)
 							rune:ClearNetworkableEntityInfo()
 							UTIL_Remove(rune)
 							unit:Stop()
-
+							
 							local bottle
 							local runeKeeper
 							for i = 0, 5 do
@@ -279,9 +333,3 @@ end
 function CEntityInstance:IsCustomRune()
 	return self.GetUnitName and self:GetUnitName() == "npc_arena_rune"
 end
-if not PlayerResource or true then return end
-local entity = CreateUnitByName("npc_arena_rune", PlayerResource:GetSelectedHeroEntity(0):GetAbsOrigin() + RandomVector(200), true, nil, nil, DOTA_TEAM_NEUTRALS)
-entity:SetModel("models/props_gameplay/rune_goldxp.vmdl")
-entity:SetOriginalModel("models/props_gameplay/rune_goldxp.vmdl")
-StartAnimation(entity, {duration=-1, activity=ACT_DOTA_IDLE})
-entity:SetRenderColor(unpack({20,20,255}))

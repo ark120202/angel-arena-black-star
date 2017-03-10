@@ -10,14 +10,24 @@
 
 #InfoContainer
 {
-	align: left top;
-	width: 125px;
-	height: 35px;
-	margin-top: 5px;
-	margin-left: 210px;
-	background-color: rgba(0,0,0,250);
+	align: right bottom;
+	width: 160px;
+	height: 40px;
+	margin-bottom: 5px;
+	margin-right: 290px;
+	background-color: rgba(50,50,70,0.94);
 	border: 2px solid white;
-	border-radius: 6px;
+	
+	transition-property: transform;
+	transition-duration: 0s;
+	transition-delay: 0s;
+	transition-timing-function: ease-in-out;
+}
+DOTAHud.IsBeforeGameplay #InfoContainer
+{
+	transform: translateY(230px);
+	transition-duration: 1s;
+	transition-delay: 2s;	
 }
 #InfoContainer:hover
 {
@@ -31,7 +41,7 @@
 #InfoContainerMainLabel
 {
 	align: left center;
-	font-size: 15px;
+	font-size: 17px;
 	color: white;
 	margin-left: 9px;
 }
@@ -40,7 +50,7 @@
 {
 	align: right top;
 	margin: 2px;
-	font-size: 17px;
+	font-size: 20px;
 	color: gold;
 }
 
@@ -49,9 +59,9 @@
 	align: center center;
 	width: 1550px;
 	height: 800px;
-	background-image: url("file://{images}/custom_game/ability_shop/background.png");
+	background-color: rgba(30,30,70,0.94);
+	border: 3px solid white;
 	flow-children: down;
-	border-radius: 12px;
 	transition-property: opacity;
 	transition-duration: 0.15s;
 	opacity: 1;
@@ -192,7 +202,7 @@
 	color: gold;
 	font-size: 22px;
 	font-weight: bold;
-	background-color: rgba(0,0,0,240);
+	background-color: rgba(0,0,0,0.95);
 }
 #SellReturn
 {
@@ -213,7 +223,7 @@
 	color: gold;
 	font-size: 20px;
 	font-weight: bold;
-	background-color: rgba(0,0,0,240);
+	background-color: rgba(0,0,0,0.95);
 	visibility: collapse;
 }
 
@@ -225,7 +235,7 @@
 	color: cyan;
 	font-size: 20px;
 	font-weight: bold;
-	background-color: rgba(0,0,0,240);
+	background-color: rgba(0,0,0,0.95);
 	visibility: collapse;
 }
 .Purchased #AbilityLevel
@@ -342,7 +352,7 @@
 #HeroAbilitiesRoot
 {
 	align: center center;
-	background-color: rgba(0,0,0,200);
+	background-color: rgba(0,0,0,0.8);
 	flow-children: right;
 }
 
@@ -364,12 +374,4 @@
 	vertical-align: center;
 	margin-left: 20px;
 	width: 730px;
-}
-
-#AttributeBonusSlot
-{
-	align: right center;
-	width: 128px;
-	height: 128px;
-	margin: 8px;
 }

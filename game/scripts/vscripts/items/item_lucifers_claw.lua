@@ -42,7 +42,7 @@ function OnSpellStart(keys)
 
 		doomling:CreatureLevelUp(1)
 
-		ability:ApplyDataDrivenModifier(caster, doomling, "modifier_item_lucifers_claw_lifesteal", {})
+		ability:ApplyDataDrivenModifier(caster, doomling, "modifier_item_lucifers_claw_unique", {})
 		
 		caster.lucifers_claw_doomling_ent = doomling
 	end
@@ -51,7 +51,7 @@ end
 function ModifyCreepDamage(keys)
 	local caster = keys.caster
 	local target = keys.target
-	if target:IsCreep() then
+	if target:IsRealCreep() then
 		local ability = keys.ability
 		local damage = keys.damage
 		local damage_bonus = keys.damage_bonus

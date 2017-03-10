@@ -1,12 +1,12 @@
 function CheckDeath(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	local target = keys.caster
 	ability.health_per_reincarnation_pct = ability:GetAbilitySpecial("health_per_reincarnation_pct")
 	if caster:HasScepter() then
 		ability.health_per_reincarnation_pct = ability:GetAbilitySpecial("health_per_reincarnation_pct_scepter")
 	end
-	if caster:GetHealth() > 1 or caster.is_reincarnating or caster:IsIllusion() or caster:GetModifierStackCount("modifier_kadash_immortality_health_penalty", caster) + ability.health_per_reincarnation_pct >= 100 then
+	local pct = caster:GetTotalHealthReduction()
+	if caster.IsMarkedForTrueKill or caster:GetHealth() > 1 or caster.is_reincarnating or caster:IsIllusion() or pct + ability.health_per_reincarnation_pct >= 100 then
 		caster:RemoveModifierByName("modifier_kadash_immortality_life_saver")
 	else
 		ability:ApplyDataDrivenModifier(caster, caster, "modifier_kadash_immortality_life_saver", {})
@@ -62,13 +62,5 @@ function OnModDestroy(keys)
 end
 
 function ThinkPenalty(keys)
-	local caster = keys.caster
-	local ability = keys.ability
-	caster:CalculateStatBonus()
-	local pct = caster:GetModifierStackCount("modifier_kadash_immortality_health_penalty", caster)
-	local mod = caster:FindModifierByName("modifier_stegius_brightness_of_desolate_effect")
-	if mod then
-		pct = pct + mod:GetAbility():GetAbilitySpecial("health_decrease_pct")
-	end
-	caster:SetMaxHealth(caster:GetMaxHealth() - pct * (caster:GetMaxHealth()/100))
+	keys.caster:CalculateHealthReduction()
 end

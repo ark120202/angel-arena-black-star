@@ -1,21 +1,19 @@
--- This is the entry-point to your game mode and should be used primarily to precache models/particles/sounds/etc
-
 require('internal/util')
+require('internal/sharedutil')
 --print(PlayerResource:GetSelectedHeroEntity(0):GetAbsOrigin())
 --do return end
 require('gamemode')
 
-function Precache( context )
-	DebugPrint("[BAREBONES] Performing pre-load precache")
+function Precache(context)
 	local particles = {
-		"particles/arena/items_fx/desolating_skadi_projectile.vpcf",
+		--items
 		"particles/arena/items_fx/gem_of_clear_mind_illusion.vpcf",
 		"particles/prototype_fx/item_linkens_buff_explosion_wave.vpcf",
 		"particles/arena/units/arena_statue/statue_eye.vpcf",
 		"particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_ambient_root_b.vpcf",
 		"particles/generic_gameplay/generic_manaburn.vpcf",
 		"particles/arena/generic_gameplay/generic_manasteal.vpcf",
-		"particles/dark_smoke_test.vpcf", --TODO Different particles
+		"particles/dark_smoke_test.vpcf",
 		"particles/generic_gameplay/generic_purge.vpcf",
 		"particles/arena/items_fx/steam_footgear.vpcf",
 		"particles/arena/items_fx/eye_of_the_prophet.vpcf",
@@ -24,7 +22,6 @@ function Precache( context )
 		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf",
 		"particles/econ/events/ti4/dagon_ti4.vpcf",
 		"particles/econ/events/ti5/dagon_lvl2_ti5.vpcf",
-		"particles/arena/aoe_range_ring.vpcf",
 		"particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf",
 		"particles/econ/items/enchantress/enchantress_virgas/ench_impetus_virgas.vpcf",
 		"particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf",
@@ -55,97 +52,108 @@ function Precache( context )
 		"particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf",
 		"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf",
 		"particles/arena/items_fx/lotus_sphere_buff.vpcf",
-
+		"particles/econ/events/ti6/radiance_owner_ti6.vpcf",
+		"particles/arena/items_fx/radiance_frozen_owner.vpcf",
+		"particles/arena/items_fx/wand_of_midas.vpcf",
+		"particles/econ/events/ti6/mekanism_ti6.vpcf",
+		"particles/econ/events/ti6/mekanism_recipient_ti6.vpcf",
+		--Heroes
+		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
+		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
+		"particles/econ/items/legion/legion_fallen/legion_fallen_press.vpcf",
+		"particles/units/heroes/hero_wisp/wisp_stunned_original.vpcf", --fix
+		--Runes
 		"particles/arena/generic_gameplay/rune_tripledamage.vpcf",
 		"particles/arena/generic_gameplay/rune_tripledamage_owner.vpcf",
 		"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf",
 		"particles/arena/generic_gameplay/rune_vibration.vpcf",
 		"particles/arena/generic_gameplay/rune_vibration_owner_wave.vpcf",
 		"particles/arena/generic_gameplay/rune_acceleration.vpcf",
-		
-		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
-		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
-		"particles/econ/items/legion/legion_fallen/legion_fallen_press.vpcf",
-		--"particles/econ/events/coal/coal_projectile.vpcf",
-		--"particles/units/heroes/hero_techies/techies_base_attack_model.vpcf",
+		"particles/arena/generic_gameplay/rune_soul_steal_owner_effect.vpcf",
+		"particles/neutral_fx/prowler_shaman_stomp_debuff_glow.vpcf",
+		"particles/items_fx/blademail.vpcf",
 	}
 	local models = {
 		"models/items/meepo/diggers_divining_rod/diggers_divining_rod_gem_saphire.vmdl",
-		"models/props_gameplay/chicken.vmdl",
-		"models/heroes/items/hat_test/hat_test.vmdl",
-		"models/items/tidehunter/diving_helmet/tidehunter_diving_helmet.vmdl",
 		"models/heroes/earthshaker/totem.vmdl",
 		--Neutrals
 		"models/heroes/centaur/centaur.vmdl",
-		--Wearables
-		"models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl",
-		"models/items/furion/treant_stump.vmdl",
+		"models/custom/umbrella_rainbow.vmdl",
+	}
+	local units = {
+		"npc_arena_boss_heaven",
+		"npc_arena_boss_hell",
+		"npc_arena_boss_central",
+		"npc_arena_boss_l1_v1",
+		"npc_arena_boss_l1_v2",
+		"npc_arena_boss_l2_v1",
+		"npc_arena_boss_l2_v2",
+		"npc_arena_boss_freya",
+
+		"npc_arena_boss_kel_thuzad_ghost",
+
+		"npc_dota_lucifers_claw_doomling",
+		"npc_queenofblades_alter_ego",
 	}
 
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_arena.vsndevts", context)
+	local soundevents = {
+		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts",
+		"soundevents/game_sounds_arena.vsndevts",
+	}
 	
-	PrecacheUnitByNameSync("npc_dota_hero_earth_spirit", context)
-	
-	PrecacheUnitByNameSync("npc_arena_boss_heaven", context)
-	PrecacheUnitByNameSync("npc_arena_boss_hell", context)
-	PrecacheUnitByNameSync("npc_arena_boss_central", context)
-	PrecacheUnitByNameSync("npc_arena_boss_l1_v1", context)
-	PrecacheUnitByNameSync("npc_arena_boss_l1_v2", context)
-	PrecacheUnitByNameSync("npc_arena_boss_l2_v1", context)
-	PrecacheUnitByNameSync("npc_arena_boss_l2_v2", context)
-	PrecacheUnitByNameSync("npc_arena_boss_freya", context)
-
-	PrecacheUnitByNameSync("npc_dota_lucifers_claw_doomling", context)
-	PrecacheUnitByNameSync("npc_queenofblades_alter_ego", context)
-
-
-	
-	for _, handle in pairs(CUSTOM_WEARABLES_ITEM_HANDLES) do
-		if handle.particles and type(handle.particles) == "table" and table.count(handle.particles) > 0 then
+	for _, handle in pairs(CUSTOM_WEARABLES) do
+		DynamicWearables:PrecacheUnparsedWearable(context, handle)
+		--[[if handle.particles then
 			for _,v in pairs(handle.particles) do
-				table.insert(particles, v)
+				table.insert(particles, v.name)
 			end
-		end
-		if handle.models and type(handle.models) == "table" and #handle.models > 0 then
+		end]]
+		--[[if handle.models and type(handle.models) == "table" and #handle.models > 0 then
 			for _,v in pairs(handle.models) do
 				if v.model then
 					table.insert(models, v.model)
 				end
 			end
-		end
+		end]]
 	end
 	
-	for _, v in pairs(NPC_HEROES_CUSTOM) do
+	for k, v in pairs(NPC_HEROES_CUSTOM) do
 		if v.Model then
 			table.insert(models, v.Model)
-			print(v.Model)
 		end
 		if v.ProjectileModel then
 			table.insert(particles, v.ProjectileModel)
 		end
+		if v.PrecacheAllWearables == 1 then
+			DynamicWearables:PrecacheAllWearablesForHero(context, k)
+		end
 	end
 	
-    local db = LoadKeyValues("scripts/attachments.txt")
-    if db['Particles'] then
-    	for _,v in pairs(db['Particles']) do
-    		for pfx,_ in pairs(v) do
+	local db = LoadKeyValues("scripts/attachments.txt")
+	if db['Particles'] then
+		for _,v in pairs(db['Particles']) do
+			for pfx,_ in pairs(v) do
 				table.insert(particles, pfx)
-    		end
-    	end
-    end
+			end
+		end
+	end
 
 	for _,v in ipairs(particles) do
 		PrecacheResource("particle", v, context)
 	end
 	for _,v in ipairs(models) do
-		PrecacheResource("model", v, context)
+		PrecacheModel(v, context)
+	end
+	for _,v in ipairs(units) do
+		PrecacheUnitByNameSync(v, context)
+	end
+	for _,v in ipairs(soundevents) do
+		PrecacheResource("soundfile", v, context)
 	end
 end
 

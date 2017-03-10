@@ -7,9 +7,7 @@ end
 function ThinkPenalty(keys)
 	local target = keys.target
 	if target:IsHero() then
-		target:CalculateStatBonus()
-		local pct = keys.ability:GetAbilitySpecial("health_decrease_pct") + target:GetModifierStackCount("modifier_kadash_immortality_health_penalty", target)
-		target:SetMaxHealth(target:GetMaxHealth() - pct * (target:GetMaxHealth()/100))
+		target:CalculateHealthReduction()
 	end
 end
 
@@ -26,7 +24,7 @@ function IncreaseDamage(keys)
 	end
 	ModifyStacks(ability, caster, caster, "modifier_stegius_brightness_of_desolate_damage", damage, true)
 	Timers:CreateTimer(ability:GetAbilitySpecial("bonus_damage_duration"), function()
-		if caster and not caster:IsNull() then
+		if IsValidEntity(caster) then
 			ModifyStacks(ability, caster, caster, "modifier_stegius_brightness_of_desolate_damage", -damage)
 		end
 	end)

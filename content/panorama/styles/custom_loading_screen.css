@@ -10,10 +10,13 @@
 	overflow: clip;
 }
 
-#movie_base
+#afterload_panel
 {
-	width: 59%;
+	width: 100%;
 	height: 100%;
+	//margin-left: 42px;
+	flow-children: right;
+	visibility: collapse;
 }
 
 #loading_base
@@ -22,129 +25,177 @@
 	height: 100%;
 }
 
-#loading_Logo_aa
-{
-	width: 698px;
-	height: 97px;
-	align: center center;
-	margin-bottom: 200px;
-}
-
-#loading_Logo_jesus
-{
-	width: 198.5px;
-	height: 320px;
-	align: left center;
-	margin-left: 425px;
-	margin-bottom: 200px;
-}
-
-#loading_Logo_satan
-{
-	width: 270px;
-	height: 318px;
-	align: right center;
-	margin-top: 200px;
-	margin-right: 350px;
-}
-
-#loading_Label_black_panel
-{
-	align: center center;
-}
-
-#loading_Label_black
-{
-	font-family: Courier;
-	font-weight: bold;
-	font-size: 96px;
-	color: black;
-}
-
-#loading_StarsBox
-{
-	align: center center;
-	margin-top: 275px;
-}
-
-#loading_Label_star
-{
-	color: black;
-	font-size: 132px;
-	font-family: Courier;
-	font-weight: bold;
-	margin-top: 70px;
-	margin-left: 60px;
-	margin-right: 60px;
-}
-
-#loading_star1
-{
-	align: left bottom;
-	margin-bottom: 50px;
-}
-
-#loading_star2
-{
-	align: left center;
-	margin-left: 60px;
-	margin-bottom: 85px;
-}
-
-#loading_star3
-{
-	align: center top;
-	margin-top: 5px;
-}
-
-#loading_star4
-{
-	align: right center;
-	margin-right: 60px;
-	margin-bottom: 85px;
-}
-
-#loading_star5
+#TipsPanel
 {
 	align: right bottom;
-	margin-bottom: 50px;
+	min-height: 84px;
+	background-color: rgba(20,20,20, 0.97);
+	box-shadow: -4px -4px 8px 8px rgba(20,20,20, 0.97);
+	margin-bottom: 70px;
+	margin-right: 270px;
+	width: 39%;
+}
+.AspectRatio16x10 #TipsPanel
+{
+	margin-right: 325px;
+}
+.AspectRatio16x9 #TipsPanel
+{
+	width: 42%;
+	margin-right: 385px;
+}
+#TipLabel
+{
+	align: center center;
+	color: white;
+	font-size: 22px;
+	margin: 8px 20px;
+	text-align: center;
+}
+.AspectRatio16x9 #TipLabel
+{
+	font-size: 25px;
+}
+#LocalPlayerDataPanel
+{
+	width: 100%;
+	border: 2px solid white;
+	margin: 10px;
+	margin-top: 55px;
+	background-color: rgba(100,100,150,0.9);
+	height: 500px;
 }
 
-.loading_star
+#PlayerInfoLoading
 {
-	background-image: url("file://{images}/custom_game/loading_screen/star.png");
-	height: 68px; 
-	width: 70px;
-    background-size: 68px 70px;
-    background-repeat: no-repeat;
+	align: center center;
+	width: 40px;
+	height: 40px;
+	
+	animation-name: PlayerLoadingAnim;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	background-image: url("file://{images}/status_icons/loadingthrobber_round.png");
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+	visibility: collapse;
 }
 
-#loading_Enigma
+@keyframes 'PlayerLoadingAnim'
 {
-	margin-left: -50px;
+	0% { transform: rotateZ( 360deg ); }
+	50% { transform: rotateZ( 180deg ); }
+	100% { transform: rotateZ( 0deg ); }
+}
+
+.Loading #PlayerInfoLoading
+{
+	visibility: visible;
+}
+.Loading #ServerStatsPanel
+{
+	visibility: collapse;
+}
+
+#LocalPlayerData
+{
+	flow-children: right;
+	height: 106px;
+}
+
+#PlayerAvatar
+{
+	margin: 3px;
+	border: 2px solid lightgrey;
+	border-radius: 100%;
+	height: 100px;
+	width: 100px;
+}
+
+#PlayerNickName
+{
 	vertical-align: center;
-	width: 601px;
-	height: 467px;
-	transition-property: transform;
-	transition-duration: 3s;
-	transition-timing-function: ease-in;
+	margin-left: 6px;
 }
 
-#loading_Lina
+#PlayerNickName Label
 {
-	margin-left: -50px;
-	align: right center;
-	width: 300px;
-	height: 533px;
-	transition-property: transform;
-	transition-duration: 3s;
-	transition-timing-function: ease-in;
+	font-size: 30px;
 }
 
-#loading_loading_bar
+#LocalPlayerDataFlow
 {
-	width: 680px;
-	height: 60px;
-	align: center bottom;
-	margin-bottom: 150px;
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+}
+
+#ServerStatsPanel
+{
+	height: 100%;
+	width: 100%;
+	flow-children: down;
+}
+
+#ServerStatsPanel .KeyValuePanel
+{
+	margin: 6px 20px;
+	width: 100%;
+
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #373d45 ), to( #4d5860 ) );
+	border-style: solid;
+	border-width: 2px;
+	padding: 4px 10px;
+	border-top-color: #555555;
+	border-left-color: #494949;
+	border-bottom-color: #333333;
+	border-right-color: #404040;
+}
+
+#ServerStatsPanel Label
+{
+	color: white;
+	font-size: 30px;
+}
+
+#ServerStatsPanel .KeyValueKey
+{
+	font-weight: bold;
+}
+
+#KillGoalVote
+{
+	width: 100%;
+	vertical-align: center;
+	margin: 4px;
+	margin-top: 120px;
+	margin-left: 20px;
+	background-color: rgba(0,0,0,0.9);
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+	flow-children: down;
+	padding: 4px;
+}
+
+#KillGoalVoteVartiantList
+{
+	width: 100%;
+	flow-children: down;
+	margin-bottom: 7px;
+}
+
+.KillGoalVariant
+{
+	width: 100%;
+	margin-bottom: 3px;
+	border-bottom: 1px solid grey;
+}
+
+#KillGoalVoteSubmit
+{
+	width: 100%;
+	margin: 3px;
 }

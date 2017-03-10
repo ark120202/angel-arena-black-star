@@ -31,7 +31,7 @@ function HideUnit(keys)
 	caster:AddNoDraw()
 	for i = 0, caster:GetAbilityCount()-1 do
 		local ability = caster:GetAbilityByIndex(i)
-		if ability and ability:GetName() ~= "riki_smoke_screen" then
+		if ability and ability:GetAbilityName() ~= "riki_smoke_screen" then
 			ability:SetActivated(false)
 		end
 	end
@@ -43,7 +43,7 @@ function ShowUnit(keys)
 	caster:RemoveNoDraw()
 	for i = 0, caster:GetAbilityCount()-1 do
 		local ability = caster:GetAbilityByIndex(i)
-		if ability and ability:GetName() ~= "riki_smoke_screen" then
+		if ability and ability:GetAbilityName() ~= "riki_smoke_screen" then
 			ability:SetActivated(true)
 		end
 	end

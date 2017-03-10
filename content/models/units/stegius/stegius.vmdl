@@ -1,0 +1,1573 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	m_meshList = 
+	{
+		m_meshList = 
+		[
+			{
+				m_meshName = "stegius"
+				m_meshFile = "models/units/stegius/stegius.fbx"
+				m_materialSearchPath = ""
+				m_bSkinParentedObjects = true
+				m_bLegacySkinParentedTransforms = false
+				m_bExpensiveTangents = false
+				m_bHighPrecisionTexCoords = false
+				m_bPerVertexCurvature = false
+				m_bIgnoreCloth = false
+				m_bGetSkinningFromLod0 = false
+				m_pMorphInfo = null
+			},
+		]
+	}
+	m_clothProxyMeshList = 
+	{
+		_class = "CVClothProxyMeshList"
+		m_flClothEnableThreshold = 0.05
+		m_bCreateStaticBone = false
+		m_nMaxBonesPerVertex = 4
+		m_bRemoveUnusedBonesEnabled = false
+		m_bDriveMeshesWithBacksolvedJointsOnly = true
+		m_flMatchProxiesToMeshes = 1.0
+		m_flFallbackEnvelope = 1.0
+		m_nReservedInt = 0
+		m_bReservedBool1 = false
+		m_bReservedBool2 = false
+		m_bReservedBool3 = false
+		m_bReservedBool4 = false
+		m_clothProxyMeshList = [  ]
+	}
+	m_physicsMeshList = 
+	{
+		m_meshList = [  ]
+	}
+	m_pModelInfo = null
+	m_pBoneFlagList = 
+	{
+		m_pObject = null
+	}
+	m_pHitBoxSetLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "Bip01 Pelvis"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 Pelvis"
+								m_vMinBounds = [ -10.284721, -17.716095, -23.966404 ]
+								m_vMaxBounds = [ 21.674995, 11.156162, 23.84428 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 Spine"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 Spine"
+								m_vMinBounds = [ -14.460381, -23.669765, -16.199018 ]
+								m_vMaxBounds = [ 39.027222, 13.846489, 17.79571 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 Spine1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 Spine1"
+								m_vMinBounds = [ -18.162674, -29.889984, -33.698727 ]
+								m_vMaxBounds = [ 54.197876, 51.274124, 33.698994 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 Neck"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 Neck"
+								m_vMinBounds = [ -6.708847, -24.719139, -17.707348 ]
+								m_vMaxBounds = [ 12.431156, 12.582092, 17.725063 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Clavicle"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Clavicle"
+								m_vMinBounds = [ 9.129339, -15.935799, -18.356871 ]
+								m_vMaxBounds = [ 23.114248, 11.493439, 11.684822 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Clavicle"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Clavicle"
+								m_vMinBounds = [ 8.340393, -16.032829, -13.68578 ]
+								m_vMaxBounds = [ 23.114231, 11.215378, 13.983915 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L UpperArm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L UpperArm"
+								m_vMinBounds = [ -6.200432, -7.830534, -7.275833 ]
+								m_vMaxBounds = [ 34.327515, 9.361435, 7.91449 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R UpperArm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R UpperArm"
+								m_vMinBounds = [ -20.590214, -32.367805, -7.914459 ]
+								m_vMaxBounds = [ 34.327454, 9.361382, 7.275848 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Thigh"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Thigh"
+								m_vMinBounds = [ -10.49189, -11.484023, -13.512077 ]
+								m_vMaxBounds = [ 55.540115, 14.589047, 11.239113 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Thigh"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Thigh"
+								m_vMinBounds = [ -10.660973, -11.484032, -11.23908 ]
+								m_vMaxBounds = [ 55.061096, 14.589031, 13.512108 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Forearm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Forearm"
+								m_vMinBounds = [ -4.407097, -14.040619, -6.659103 ]
+								m_vMaxBounds = [ 46.975166, 12.71344, 7.281433 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Forearm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Forearm"
+								m_vMinBounds = [ -4.407047, -14.040684, -7.282471 ]
+								m_vMaxBounds = [ 46.956429, 12.713398, 6.659111 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Calf"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Calf"
+								m_vMinBounds = [ -6.437946, -6.55588, -7.05299 ]
+								m_vMaxBounds = [ 24.592272, 7.87414, 6.460648 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Calf"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Calf"
+								m_vMinBounds = [ -6.437864, -6.555931, -6.460566 ]
+								m_vMaxBounds = [ 18.964714, 7.222687, 7.053083 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Hand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Hand"
+								m_vMinBounds = [ -18.601608, -127.507362, -11.587059 ]
+								m_vMaxBounds = [ 67.903984, 9.93409, 8.383621 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Hand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Hand"
+								m_vMinBounds = [ -18.601645, -127.507462, -8.383881 ]
+								m_vMaxBounds = [ 67.903862, 9.933971, 11.587044 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone33"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone33"
+								m_vMinBounds = [ 1.501877, -17.016022, -8.173608 ]
+								m_vMaxBounds = [ 21.317841, 9.773849, 10.86695 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone35"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone35"
+								m_vMinBounds = [ -1.373215, -13.676882, -8.486441 ]
+								m_vMaxBounds = [ 26.037865, 10.515585, 12.020439 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone17"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone17"
+								m_vMinBounds = [ 9.755524, -11.213223, -8.165602 ]
+								m_vMaxBounds = [ 30.691284, 11.512463, 11.166395 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L HorseLink"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L HorseLink"
+								m_vMinBounds = [ -4.939522, -9.100094, -7.540428 ]
+								m_vMaxBounds = [ 40.496811, 7.787968, 6.684891 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R HorseLink"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R HorseLink"
+								m_vMinBounds = [ -5.321125, -9.100151, -6.712231 ]
+								m_vMaxBounds = [ 38.945602, 5.477264, 7.537798 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 Neck1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 Neck1"
+								m_vMinBounds = [ 0.381359, -8.190384, -11.771643 ]
+								m_vMaxBounds = [ 9.19804, 9.811462, 11.461176 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger0"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger0"
+								m_vMinBounds = [ 1.084808, -1.874504, -2.738785 ]
+								m_vMaxBounds = [ 7.462685, 5.257339, 3.112808 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger1"
+								m_vMinBounds = [ -0.057613, -1.618835, -2.058357 ]
+								m_vMaxBounds = [ 6.295708, 1.786728, 2.1464 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger2"
+								m_vMinBounds = [ 0.305141, -1.378654, -1.971542 ]
+								m_vMaxBounds = [ 7.871719, 2.013969, 1.859436 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger3"
+								m_vMinBounds = [ 0.262379, -1.434639, -2.179474 ]
+								m_vMaxBounds = [ 7.214821, 2.084961, 1.873978 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger4"
+								m_vMinBounds = [ -0.15778, -1.495972, -1.755371 ]
+								m_vMaxBounds = [ 6.672005, 1.89183, 1.36232 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger0"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger0"
+								m_vMinBounds = [ 3.630936, -1.134193, -3.112938 ]
+								m_vMaxBounds = [ 7.462685, 5.25737, 2.738647 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger1"
+								m_vMinBounds = [ -0.057568, -1.618988, -2.147247 ]
+								m_vMaxBounds = [ 6.295727, 1.786606, 2.058304 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger2"
+								m_vMinBounds = [ 0.305134, -1.378777, -1.859489 ]
+								m_vMaxBounds = [ 7.871757, 2.013847, 1.972115 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger3"
+								m_vMinBounds = [ 0.259544, -1.434731, -1.872192 ]
+								m_vMaxBounds = [ 7.214863, 2.085434, 2.179436 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger4"
+								m_vMinBounds = [ -0.153427, -1.496132, -1.362411 ]
+								m_vMaxBounds = [ 6.672005, 1.892662, 1.755562 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone43"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone43"
+								m_vMinBounds = [ 11.904625, -6.076355, -6.779697 ]
+								m_vMaxBounds = [ 26.763466, 10.705124, 9.277241 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone49"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone49"
+								m_vMinBounds = [ 6.473785, -1.462433, -1.000664 ]
+								m_vMaxBounds = [ 6.917068, 0.696379, 1.216793 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone53"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone53"
+								m_vMinBounds = [ 4.981262, -0.633762, -0.583431 ]
+								m_vMaxBounds = [ 5.28392, 0.522984, 0.720562 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone61"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone61"
+								m_vMinBounds = [ -8.100357, -0.895241, -17.484169 ]
+								m_vMaxBounds = [ 6.565529, 12.103279, 0.955717 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone57"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone57"
+								m_vMinBounds = [ 5.298378, -0.657219, -0.603628 ]
+								m_vMaxBounds = [ 5.67691, 0.995316, 1.054183 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone69"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone69"
+								m_vMinBounds = [ 6.275146, -1.102783, -0.915153 ]
+								m_vMaxBounds = [ 6.769112, 0.991898, 1.117184 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone39"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone39"
+								m_vMinBounds = [ 6.664413, -11.283043, -9.273354 ]
+								m_vMaxBounds = [ 24.17878, 10.041502, 10.645435 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Foot"
+								m_vMinBounds = [ -5.009088, -4.673542, -6.037537 ]
+								m_vMaxBounds = [ 8.875672, 16.991421, 7.440907 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Foot"
+								m_vMinBounds = [ -5.334454, -4.487515, -7.435542 ]
+								m_vMaxBounds = [ 8.884405, 15.42688, 6.039133 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 head"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 head"
+								m_vMinBounds = [ -3.185844, -10.861938, -8.76329 ]
+								m_vMaxBounds = [ 12.785583, 14.079224, 8.763386 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger01"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger01"
+								m_vMinBounds = [ 0.2061, -1.232296, -1.449738 ]
+								m_vMaxBounds = [ 3.909668, 3.251377, 3.112823 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger11"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger11"
+								m_vMinBounds = [ -0.3972, -1.584381, -1.521378 ]
+								m_vMaxBounds = [ 5.60809, 1.321915, 1.32148 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger21"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger21"
+								m_vMinBounds = [ -0.372063, -1.45015, -1.359467 ]
+								m_vMaxBounds = [ 6.339451, 1.12619, 1.517395 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger31"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger31"
+								m_vMinBounds = [ -0.403696, -1.577057, -1.395081 ]
+								m_vMaxBounds = [ 6.643721, 1.005089, 1.386719 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger41"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger41"
+								m_vMinBounds = [ -0.580574, -1.491924, -1.032639 ]
+								m_vMaxBounds = [ 4.85305, 1.236118, 1.36232 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger01"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger01"
+								m_vMinBounds = [ 0.206024, -1.232252, -3.112946 ]
+								m_vMaxBounds = [ 3.909607, 3.251415, 1.449593 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger11"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger11"
+								m_vMinBounds = [ -0.397224, -1.584534, -1.321533 ]
+								m_vMaxBounds = [ 5.60807, 1.321789, 1.521255 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger21"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger21"
+								m_vMinBounds = [ -0.372131, -1.450264, -1.517532 ]
+								m_vMaxBounds = [ 6.339424, 1.126091, 1.359383 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger31"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger31"
+								m_vMinBounds = [ -0.403757, -1.577217, -1.38681 ]
+								m_vMaxBounds = [ 6.643721, 1.004974, 1.395004 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger41"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger41"
+								m_vMinBounds = [ -0.580654, -1.492073, -1.362404 ]
+								m_vMaxBounds = [ 4.853058, 1.235985, 1.03257 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone13"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone13"
+								m_vMinBounds = [ 3.890429, -0.830933, -0.681129 ]
+								m_vMaxBounds = [ 4.238733, 0.386444, 0.504524 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone50"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone50"
+								m_vMinBounds = [ -0.282852, -1.507034, -1.056885 ]
+								m_vMaxBounds = [ 6.415604, 0.742334, 1.21212 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone54"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone54"
+								m_vMinBounds = [ -0.29187, -0.545578, -0.579861 ]
+								m_vMaxBounds = [ 4.524048, 0.882965, 0.665413 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone62"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone62"
+								m_vMinBounds = [ -0.406296, -0.850471, -0.861889 ]
+								m_vMaxBounds = [ 4.529259, 0.866653, 0.934277 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone58"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone58"
+								m_vMinBounds = [ -0.683334, -0.640396, -0.727566 ]
+								m_vMaxBounds = [ 4.715317, 0.902809, 1.047249 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone70"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone70"
+								m_vMinBounds = [ -0.574867, -1.129234, -1.113992 ]
+								m_vMaxBounds = [ 6.860847, 0.954567, 1.091404 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone66"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone66"
+								m_vMinBounds = [ -0.445, -0.236755, -0.525013 ]
+								m_vMaxBounds = [ 4.420532, 0.953629, 0.646847 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone75"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone75"
+								m_vMinBounds = [ 2.466446, -0.258858, -0.320576 ]
+								m_vMaxBounds = [ 2.853092, 0.356499, 0.341492 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Toe0"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Toe0"
+								m_vMinBounds = [ -2.340458, -2.115376, -5.71627 ]
+								m_vMaxBounds = [ 20.157818, 9.015415, 7.560226 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Toe0"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Toe0"
+								m_vMinBounds = [ -2.306068, -2.200375, -7.57216 ]
+								m_vMaxBounds = [ 20.157757, 8.467102, 5.631676 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone01"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone01"
+								m_vMinBounds = [ -0.453598, -3.715111, -7.3505 ]
+								m_vMaxBounds = [ 20.316849, 4.257763, 7.842598 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger02"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger02"
+								m_vMinBounds = [ -0.34289, -1.412834, -1.813843 ]
+								m_vMaxBounds = [ 8.914648, 2.027634, 2.282921 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger12"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger12"
+								m_vMinBounds = [ -0.398422, -1.262024, -1.353653 ]
+								m_vMaxBounds = [ 5.08371, 0.874771, 0.917313 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger22"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger22"
+								m_vMinBounds = [ -0.811821, -0.996954, -1.359444 ]
+								m_vMaxBounds = [ 5.623726, 0.867704, 0.779007 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger32"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger32"
+								m_vMinBounds = [ -0.934052, -1.062212, -1.395096 ]
+								m_vMaxBounds = [ 5.478058, 0.343124, 1.020172 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Finger42"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Finger42"
+								m_vMinBounds = [ -0.720421, -0.92289, -1.032654 ]
+								m_vMaxBounds = [ 5.468758, 0.605392, 0.967911 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger02"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger02"
+								m_vMinBounds = [ -0.342842, -1.412567, -2.283066 ]
+								m_vMaxBounds = [ 8.914658, 2.027428, 1.813675 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger12"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger12"
+								m_vMinBounds = [ -0.398521, -1.262131, -0.917374 ]
+								m_vMaxBounds = [ 5.083641, 0.874672, 1.353607 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger22"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger22"
+								m_vMinBounds = [ -0.811974, -0.997066, -0.779099 ]
+								m_vMaxBounds = [ 5.623665, 0.867638, 1.359398 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger32"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger32"
+								m_vMinBounds = [ -0.934135, -1.062309, -1.020294 ]
+								m_vMaxBounds = [ 5.477921, 0.343121, 1.394997 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Finger42"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Finger42"
+								m_vMinBounds = [ -0.720528, -0.922981, -0.967957 ]
+								m_vMaxBounds = [ 5.468704, 0.605309, 1.032578 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone45"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone45"
+								m_vMinBounds = [ 2.307198, -12.613754, -6.803093 ]
+								m_vMaxBounds = [ 18.5588, 5.200073, 11.348751 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone14"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone14"
+								m_vMinBounds = [ -1.789837, -1.805473, -1.234451 ]
+								m_vMaxBounds = [ 5.240211, 0.346672, 1.189926 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone41"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone41"
+								m_vMinBounds = [ -0.062233, -12.185364, -13.3153 ]
+								m_vMaxBounds = [ 25.374054, 8.309755, 12.206446 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone51"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone51"
+								m_vMinBounds = [ 0.101196, -0.770256, -1.21843 ]
+								m_vMaxBounds = [ 10.364838, 0.930138, 0.737463 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone55"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone55"
+								m_vMinBounds = [ -0.230682, -0.207481, -0.523632 ]
+								m_vMaxBounds = [ 4.660675, 1.017853, 0.617864 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone63"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone63"
+								m_vMinBounds = [ -0.085892, -0.58798, -0.630188 ]
+								m_vMaxBounds = [ 4.012482, 0.57818, 0.48658 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone59"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone59"
+								m_vMinBounds = [ -0.189468, -0.493057, -0.781502 ]
+								m_vMaxBounds = [ 5.603157, 0.700424, 0.690361 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone71"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone71"
+								m_vMinBounds = [ -0.118866, -1.122108, -1.118005 ]
+								m_vMaxBounds = [ 8.002457, 0.625664, 0.718861 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone20"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone20"
+								m_vMinBounds = [ -11.547737, -11.184998, -28.04225 ]
+								m_vMaxBounds = [ 24.532936, 9.827072, 12.416487 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone47"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone47"
+								m_vMinBounds = [ 4.270218, -11.296627, -7.916906 ]
+								m_vMaxBounds = [ 25.314178, 8.843964, 11.389931 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone67"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone67"
+								m_vMinBounds = [ 0.080246, -0.271116, -0.561039 ]
+								m_vMaxBounds = [ 6.289825, 0.86021, 0.466927 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone76"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone76"
+								m_vMinBounds = [ 2.090897, -0.197929, -0.169993 ]
+								m_vMaxBounds = [ 2.16655, 0.256401, 0.283684 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone37"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone37"
+								m_vMinBounds = [ 13.638161, -6.909454, -11.352952 ]
+								m_vMaxBounds = [ 23.315453, 8.838257, 7.363601 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 L Toe0Nub"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 L Toe0Nub"
+								m_vMinBounds = [ 0.045877, -4.010562, -1.091492 ]
+								m_vMaxBounds = [ 7.587197, 1.545926, 2.925785 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone03"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone03"
+								m_vMinBounds = [ 0.861488, -3.035557, -2.701214 ]
+								m_vMaxBounds = [ 9.232563, 2.702179, 2.756821 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone07"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone07"
+								m_vMinBounds = [ -1.117149, -3.32737, -10.713509 ]
+								m_vMaxBounds = [ 17.377989, 4.117041, 9.174305 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bip01 R Toe0Nub"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bip01 R Toe0Nub"
+								m_vMinBounds = [ -7.587326, -1.545919, -2.925676 ]
+								m_vMaxBounds = [ -0.04594, 4.010937, 1.091595 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone05"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone05"
+								m_vMinBounds = [ 0.913195, -3.207963, -2.76343 ]
+								m_vMaxBounds = [ 9.242867, 2.451477, 2.686968 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone09"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone09"
+								m_vMinBounds = [ -1.364197, -3.386058, -9.612068 ]
+								m_vMaxBounds = [ 17.384911, 4.150518, 10.271397 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
+	m_pAttachmentLists = [  ]
+	m_pAnimGroup = 
+	{
+		m_pObject = 
+		{
+			m_Name = ""
+			m_pReferenceSkeleton = 
+			{
+				m_pObject = null
+			}
+			m_pBoneFlagList = 
+			{
+				m_pObject = null
+			}
+			m_pSeqGroup = 
+			{
+				m_pObject = null
+			}
+			m_pAnimGroups = [  ]
+			m_Vanim = 
+			[
+				{
+					m_Animationname = "atkwait"
+					m_Filepath = "models/units/stegius/anim/atkwait.FBX"
+					m_nStartframe = 0
+					m_nEndframe = 55
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = true
+						m_nSmoothLoopStart = 4
+						m_nSmoothLoopEnd = 4
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_IDLE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "atk01"
+					m_Filepath = "models/units/stegius/anim/atk01.FBX"
+					m_nStartframe = 0
+					m_nEndframe = 55
+					m_flFps = 55.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_ATTACK"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "death"
+					m_Filepath = "models/units/stegius/anim/death.FBX"
+					m_nStartframe = 0
+					m_nEndframe = 55
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_DIE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = 
+					[
+						{
+							m_nFrame = 0
+							m_bExtractTX = true
+							m_bExtractTY = true
+							m_bExtractTZ = false
+							m_bExtractRX = false
+							m_bExtractRY = false
+							m_bExtractRZ = false
+							m_bDiscardTX = false
+							m_bDiscardTY = false
+							m_bDiscardTZ = false
+							m_bDiscardRX = false
+							m_bDiscardRY = false
+							m_bDiscardRZ = false
+						},
+					]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "deathwait"
+					m_Filepath = "models/units/stegius/anim/deathwait.FBX"
+					m_nStartframe = 0
+					m_nEndframe = 55
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = [  ]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = 
+					[
+						{
+							m_nFrame = 0
+							m_bExtractTX = true
+							m_bExtractTY = true
+							m_bExtractTZ = false
+							m_bExtractRX = false
+							m_bExtractRY = false
+							m_bExtractRZ = false
+							m_bDiscardTX = false
+							m_bDiscardTY = false
+							m_bDiscardTZ = false
+							m_bDiscardRX = false
+							m_bDiscardRY = false
+							m_bDiscardRZ = false
+						},
+					]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "run"
+					m_Filepath = "models/units/stegius/anim/run.FBX"
+					m_nStartframe = 0
+					m_nEndframe = 15
+					m_flFps = 4.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = true
+						m_nSmoothLoopStart = 3
+						m_nSmoothLoopEnd = 3
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_RUN"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = 
+					[
+						{
+							m_nFrame = 0
+							m_bExtractTX = true
+							m_bExtractTY = true
+							m_bExtractTZ = false
+							m_bExtractRX = false
+							m_bExtractRY = false
+							m_bExtractRZ = false
+							m_bDiscardTX = false
+							m_bDiscardTY = false
+							m_bDiscardTZ = false
+							m_bDiscardRX = false
+							m_bDiscardRY = false
+							m_bDiscardRZ = false
+						},
+					]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "spatk01"
+					m_Filepath = "models/units/stegius/anim/spatk01.FBX"
+					m_nStartframe = 0
+					m_nEndframe = 55
+					m_flFps = 55.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAST_ABILITY_1"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "spatk02"
+					m_Filepath = "models/units/stegius/anim/spatk02.FBX"
+					m_nStartframe = 0
+					m_nEndframe = 55
+					m_flFps = 55.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAST_ABILITY_2"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "spwait01"
+					m_Filepath = "models/units/stegius/anim/spwait01.FBX"
+					m_nStartframe = 0
+					m_nEndframe = 55
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = [  ]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "Wait"
+					m_Filepath = "models/units/stegius/anim/Wait.FBX"
+					m_nStartframe = 0
+					m_nEndframe = 55
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = [  ]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "Walk"
+					m_Filepath = "models/units/stegius/anim/Walk.FBX"
+					m_nStartframe = 0
+					m_nEndframe = 55
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = [  ]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = 
+					[
+						{
+							m_nFrame = 0
+							m_bExtractTX = true
+							m_bExtractTY = true
+							m_bExtractTZ = false
+							m_bExtractRX = false
+							m_bExtractRY = false
+							m_bExtractRZ = false
+							m_bDiscardTX = false
+							m_bDiscardTY = false
+							m_bDiscardTZ = false
+							m_bDiscardRX = false
+							m_bDiscardRY = false
+							m_bDiscardRZ = false
+						},
+					]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+			]
+			m_sScripts = [  ]
+			m_folderNames = [  ]
+			m_sCompileScripts = [  ]
+		}
+	}
+	m_pMaterialGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pMeshGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pLodGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pPropBreakableList = 
+	{
+		m_pObject = null
+	}
+	m_pPropDataList = 
+	{
+		m_pObject = null
+	}
+	m_pConstraintLists = [  ]
+	m_collision = ""
+	m_softbody = ""
+	m_sMDLFilename = ""
+	m_sOffsetHitboxSets = [  ]
+	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
+	m_scriptFiles = [  ]
+	m_pMaterialRemapList = 
+	{
+		m_vMaterialRemapList = 
+		[
+			{
+				m_sSearchMaterial = "doll_degenerated_t00.vmat"
+				m_sReplaceMaterial = "materials/models/units/stegius/stegius_00.vmat"
+			},
+			{
+				m_sSearchMaterial = "doll_degenerated_t01.vmat"
+				m_sReplaceMaterial = "materials/models/units/stegius/stegius_01.vmat"
+			},
+		]
+	}
+	m_flFbxScale = 1.0
+	m_flQCScale = 1.0
+	m_vOrigin = [ 0.0, 0.0, 0.0 ]
+	m_pPsfList = null
+	m_keyValueText = ""
+	m_bStaticProp = false
+	m_bEnableClothProcessing = true
+	m_flClothEnableThreshold = 0.05
+	m_nMaxClothVertsPerMesh = 2048
+	m_bBuildClothBoneHierarchy = false
+	m_nNavType = "AUTH_NAV_MESH"
+	m_bMakeUniqueVMeshes = false
+	m_bMakeImplicitBindPoseSequence = false
+	m_bAdjustSkeletonFromBoneFlags = false
+	m_pAnimGroups = [  ]
+}

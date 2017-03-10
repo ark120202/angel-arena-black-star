@@ -1,0 +1,565 @@
+"DOTAUnits"
+{
+	"npc_arena_boss_l1_v1"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"15000"
+		"Bosses_RespawnDuration"	"300"
+
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/items/terrorblade/marauders_demon/marauders_demon.vmdl"
+		"ModelScale"				"2.1"
+		"Level"						"50"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_any_passive"
+		"Ability2"					"boss_armor"
+
+		"ArmorPhysical"				"60"
+		"MagicalResistance"			"50"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+		"ProjectileSpeed"			"900"
+		"AttackDamageMin"			"4000"
+		"AttackDamageMax"			"5000"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"900"
+
+		"BountyXP"					"15000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"422"
+
+		"StatusHealth"				"450000"
+		"StatusHealthRegen"			"500"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"     "50"
+		}
+	}
+
+	"npc_arena_boss_l1_v2"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"15000"
+		"Bosses_RespawnDuration"	"300"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/warlock/warlock_demon.vmdl"
+		"ModelScale"				"1.5"
+		"Level"						"50"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_any_passive"
+		"Ability2"					"boss_armor"
+
+		"ArmorPhysical"				"100"
+		"MagicalResistance"			"40"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"4500"
+		"AttackDamageMax"			"5500"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"450"
+		"AttackRange"				"250"
+
+		"BountyXP"					"18000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"522"
+
+		"StatusHealth"				"550000"
+		"StatusHealthRegen"			"500"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+
+	"npc_arena_boss_l2_v1"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"25000"
+		"Bosses_RespawnDuration"	"300"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/visage/visage_familiar.vmdl"
+		"ModelScale"				"3"
+		"Level"						"100"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_any_passive"
+		"Ability2"					"boss_armor"
+
+		"ArmorPhysical"				"200"
+		"MagicalResistance"			"50"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+		"ProjectileSpeed"			"900"
+		"AttackDamageMin"			"5000"
+		"AttackDamageMax"			"6600"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"900"
+
+		"BountyXP"					"25000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"422"
+
+		"StatusHealth"				"650000"
+		"StatusHealthRegen"			"800"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+
+	"npc_arena_boss_l2_v2"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"15000"
+		"Bosses_RespawnDuration"	"300"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/creeps/nian/nian_creep.vmdl"
+		"ModelScale"				"0.9"
+		"Level"						"100"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_any_passive"
+		"Ability2"					"boss_armor"
+
+		"ArmorPhysical"				"180"
+		"MagicalResistance"			"40"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"5200"
+		"AttackDamageMax"			"6600"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"450"
+		"AttackRange"				"250"
+
+		"BountyXP"					"25000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"522"
+
+		"StatusHealth"				"750000"
+		"StatusHealthRegen"			"800"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+	
+	"npc_arena_boss_central"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"100000"
+		"Bosses_RespawnDuration"	"600"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/viper/viper.vmdl"
+		"ModelScale"				"2"
+		"Level"						"200"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_any_passive"
+		"Ability2"					"boss_armor"
+		"Ability3"					"boss_central_passive"
+
+		"ArmorPhysical"				"250"
+		"MagicalResistance"			"50"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"ProjectileModel"			"particles/units/heroes/hero_viper/viper_poison_attack.vpcf"
+		"ProjectileSpeed"			"1000"
+		"AttackDamageMin"			"10000"
+		"AttackDamageMax"			"12000"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.10"
+		"AttackAnimationPoint"		"0.10"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"950"
+
+		"BountyXP"					"30000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"0"
+
+		"StatusHealth"				"1000000"
+		"StatusHealthRegen"			"999"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"100"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "70"
+		}
+	}
+
+	"npc_arena_boss_freya"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"15000"
+		"Bosses_RespawnDuration"	"300"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/units/freya/freya.vmdl"
+		"ModelScale"				"2.5"
+		"Level"						"100"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_freya_sharp_ice_shards"
+		"Ability5"					"boss_any_passive"
+		"Ability6"					"boss_armor"
+
+		"ArmorPhysical"				"180"
+		"MagicalResistance"			"40"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"5200"
+		"AttackDamageMax"			"6600"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"450"
+		"AttackRange"				"250"
+
+		"BountyXP"					"25000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"550"
+
+		"StatusHealth"				"750000"
+		"StatusHealthRegen"			"800"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+
+	"npc_arena_boss_zaken"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"15000"
+		"Bosses_RespawnDuration"	"300"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/units/zaken/zaken.vmdl"
+		"ModelScale"				"2.5"
+		"Level"						"100"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""//"boss_zaken_"
+		"Ability5"					"boss_any_passive"
+		"Ability6"					"boss_armor"
+
+		"ArmorPhysical"				"180"
+		"MagicalResistance"			"40"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"5200"
+		"AttackDamageMax"			"6600"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"450"
+		"AttackRange"				"250"
+
+		"BountyXP"					"25000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"550"
+
+		"StatusHealth"				"750000"
+		"StatusHealthRegen"			"800"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+
+	"npc_arena_boss_anakim"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"100000"
+		"Bosses_RespawnDuration"	"600"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/units/anakim/anakim.vmdl"
+		"ModelScale"				"2"
+		"Level"						"94"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"boss_freya_sharp_ice_shards"
+		"Ability5"					"boss_any_passive"
+		"Ability6"					"boss_armor"
+
+		"ArmorPhysical"				"1874"
+		"MagicalResistance"			"60"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"10404"
+		"AttackDamageMax"			"15367"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.2"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"450"
+		"AttackRange"				"600"
+
+		"BountyXP"					"91296"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"550"
+
+		"StatusHealth"				"1639146"
+		"StatusHealthRegen"			"800"
+		"StatusMana"				"43380"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+
+	"npc_arena_boss_kel_thuzad"
+	{
+		//Bosses
+		"Bosses_GoldToAll"			"100000"
+		"Bosses_RespawnDuration"	"600"
+		
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/items/undying/flesh_golem/corrupted_scourge_corpse_hive/corrupted_scourge_corpse_hive.vmdl"
+		"ModelScale"				"1.5"
+		"Level"						"100"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"	"boss_kel_thuzad_immortality"
+		"Ability2"	"boss_kel_thuzad_presence_of_death"
+		"Ability3"	"boss_kel_thuzad_invulnerability"
+		"Ability4"	"boss_kel_thuzad_shadows"
+		"Ability5"	"boss_kel_thuzad_summon_undead"
+		"Ability6"	"boss_kel_thuzad_erebus"
+
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+
+		"BountyXP"					"1000000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"550"
+
+		"StatusHealth"				"1000000"
+		"StatusHealthRegen"			"800"
+		"StatusMana"				"43380"
+		"StatusManaRegen"			"50"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
+	}
+
+	"npc_arena_boss_kel_thuzad_ghost"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_frost.vmdl"
+		"ModelScale"				"1.8"
+		"Level"						"1"
+
+		"Ability1"					""
+
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"150"
+
+		"BountyXP"					"0"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"0"
+
+		"StatusHealth"				"1"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"VisionDaytimeRange"		"1000"
+		"VisionNighttimeRange"		"1000"
+	}
+}

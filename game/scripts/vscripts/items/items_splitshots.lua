@@ -5,7 +5,7 @@ function SplitShotLaunch( keys )
 		local ability = keys.ability
 		local attack_target = caster:GetAttackTarget()
 		local radius = ability:GetSpecialValueFor("range")
-		local split_shot_targets = FindUnitsInRadius(caster:GetTeam(), keys.target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
+		local split_shot_targets = FindUnitsInRadius(caster:GetTeam(), keys.target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
 		for _,v in ipairs(split_shot_targets) do
 			if v ~= attack_target and not v:IsAttackImmune() then
 				local projectile_info = GenerateAttackProjectile(caster, ability)
@@ -46,7 +46,7 @@ end
 function AttackRandomTarget(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	local units = FindUnitsInRadius(caster:GetTeamNumber(), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+	local units = FindUnitsInRadius(caster:GetTeamNumber(), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 	local projectile_info = GenerateAttackProjectile(caster, ability)
 	local unit = units[RandomInt(1, #units)]
 	projectile_info["Target"] = unit

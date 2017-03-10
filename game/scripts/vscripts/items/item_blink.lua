@@ -38,7 +38,7 @@ function modifier_item_blink_arena_damage_cooldown_on_take_damage(keys)
 	local attacker = keys.attacker
 	if attacker then
 		local attacker_name = attacker:GetUnitName()
-		if keys.Damage > 0 and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or IsBossEntity(attacker)) then
+		if keys.Damage > 0 and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or attacker:IsBoss()) then
 			if keys.ability:GetCooldownTimeRemaining() < keys.BlinkDamageCooldown then
 				keys.ability:StartCooldown(keys.BlinkDamageCooldown)
 			end

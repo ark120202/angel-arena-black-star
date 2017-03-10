@@ -1,0 +1,661 @@
+"DOTAAbilities"
+{
+	"queenofblades_army"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/queenofblades_army"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"MaxLevel" 						"7"
+		"LevelsBetweenUpgrades"			"4"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"100 200 350 500 750 1000 1500"
+		"AbilityCastRange"				"800"
+		"AOERadius"						"%radius"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"summon_hp"			"100 250 500 1500 4000 10000 25000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"summon_damage"		"30 60 120 240 350 450 600"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"summon_amount"		"1 2 3 4 6 7 8"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"summon_bat"		"3 2.75 2.5 2.25 2 1.75 1.5"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"summon_duration"	"15"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cleave_radius"		"500"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"radius"			"100 200 250 300 350 400 450"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_queenofblades/army.lua"
+				"Function"		"SpawnSummons"
+				"Target"		"POINT"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_queenofblades_army"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_queenofblades/army.lua"
+						"Function"		"Cleave"
+						"Damage"		"%attack_damage"
+					}
+				}
+			}
+		}
+	}
+
+	"queenofblades_darkness_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"arena/queenofblades_darkness_aura"
+		"MaxLevel"						"7"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_mult"					"250"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"10 15 20 25 30 35 40"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"debuff_duration"			"2.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"debuff_vision_reduction"	"-200 -250 -300 -350 -400 -450 -500"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"debuff_movespeed_slow_pct"	"-18 -21 -24 -27 -30 -33 -36"
+			}
+
+		}
+
+		"precache"
+		{
+			"particle"	"particles/arena/units/heroes/hero_queenofblades/darkness_aura_critical.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"modifier_queenofblades_darkness_aura"
+			{
+				"Passive"   "1"
+				"IsHidden"  "1"
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName" 	"modifier_queenofblades_darkness_aura_crit"
+						"Target" 		"CASTER"
+					}
+
+					"Random"
+					{
+						"Chance" "%crit_chance"
+						"OnSuccess"
+						{
+							"FireSound"
+							{
+								"EffectName"	"Arena.Hero_QueenOfBlades.DarknessAura.Critical"
+								"Target"		"CASTER"
+							}
+
+							"ApplyModifier"
+							{
+								"ModifierName" 	"modifier_queenofblades_darkness_aura_crit"
+								"Target"    	"CASTER"    
+							}        
+						}
+					}
+				}
+			}
+
+			"modifier_queenofblades_darkness_aura_crit"
+			{
+				"IsHidden"  "1"
+				"IsPurgable"		"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_mult"
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_queenofblades_darkness_aura_crit"
+						"Target"   		"CASTER"    
+					}
+					"FireEffect"
+					{
+						"EffectName" 		"particles/arena/units/heroes/hero_queenofblades/darkness_aura_critical.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"    		"TARGET"
+					}
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_queenofblades_darkness_aura_debuff"
+						"Target" 		"TARGET"
+					}
+				}
+			}
+
+			"modifier_queenofblades_darkness_aura_debuff"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_duration"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BONUS_DAY_VISION"		"%debuff_vision_reduction"
+					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"		"%debuff_vision_reduction"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%debuff_movespeed_slow_pct"
+				}
+			}
+		}
+	}
+
+	"queenofblades_harbinger_of_death"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"arena/queenofblades_harbinger_of_death"
+		"MaxLevel"						"7"
+		"AbilityDamage"					"100 200 300 400 500 600 700"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+			"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_end.vpcf"
+		}
+
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"30 25 20 15 12.5 10 7"
+		"AbilityManaCost"				"70 90 110 130 150 170 190"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.5 1 1.5 2 2.5 3 3.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"air_time"				"0.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"air_height"			"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"			"1000"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_PhantomAssassin.Strike.Start"
+				"Target"			"CASTER"
+			}
+
+			"Blink"
+			{
+				"Target"	"TARGET"
+			}
+
+			"AttachEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_end.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"CASTER"
+			}
+
+			"FireSound"
+			{
+				"EffectName"		"Hero_PhantomAssassin.Strike.End"
+				"Target"			"TARGET"
+			}
+
+			"Knockback"
+			{
+				"Target"	"TARGET"
+				"Center"	"CASTER"
+				"Distance"	"0"
+				"Duration"	"%air_time"
+				"Height"	"%air_height"
+				"IsFixedDistance"	"1"
+			}
+
+			"DelayedAction"
+			{
+				"Delay"		"%air_time"
+
+				"Action"
+				{
+					"Stun"
+					{
+						"Duration"	"%stun_duration"
+						"Target" 	 "TARGET"
+					}
+
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_PURE"
+						"Damage"		"%AbilityDamage"
+					}
+				}
+			}
+		}
+	}
+
+	"queenofblades_alter_ego"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/queenofblades_alter_ego"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"180 160 140 120 100 80 60"
+		"AbilityManaCost"				"150 250 400 1500 3500 7000 15000"
+		"LevelsBetweenUpgrades"			"12"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"HasScepterUpgrade"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_damage"		"150 400 1000 1500 2500 4000 6000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_damage_scepter"	"300 800 2000 3000 5000 8000 12000"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp"				"800 1600 3200 6400 12800 25600 51200"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_scepter"		"1600 3200 6400 12800 25600 51200 102400"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor"				"4 8 16 32 64 128 256"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bat"				"1.3 1.1 1.0 0.9 0.8 0.7 0.6"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed"			"340 360 380 400 420 440 460"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"30 35 40 45 50 55 60"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"tooltip_soul_breaker_damage_scepter"		"1000 2000 4000 8000 12000 16000 20000"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_queenofblades/alter_ego.lua"
+				"Function"		"AlterEgo"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_queenofblades_alter_ego"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+		
+				"StatusEffectName" 		"particles/status_fx/status_effect_terrorblade_reflection.vpcf" 	   
+				"StatusEffectPriority"  "11"
+			}
+		}
+	}
+
+	"queenofblades_alter_ego_chains"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"arena/queenofblades_alter_ego_chains"
+
+		"AbilityCastPoint"				"0.65"
+		"AbilityCooldown"				"18"
+		"AbilityCastRange"				"800"
+		"MaxLevel" 						"7"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"2 2.5 3 3.5 4 4.5 5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"net_speed"					"1500"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts"
+			"particle"					"particles/arena/units/heroes/hero_queenofblades/alter_ego_chains.vpcf"
+			"particle"					"particles/arena/units/heroes/hero_queenofblades/alter_ego_chains_projectile.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"				"TARGET"
+				"EffectName"			"particles/arena/units/heroes/hero_queenofblades/alter_ego_chains_projectile.vpcf"
+				"Dodgeable"				"1"
+				"ProvidesVision"		"1"
+				"VisionRadius"			"0"
+				"MoveSpeed"				"%net_speed"
+				"SourceAttachment"		"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+			}
+
+			"FireSound"
+			{
+				"EffectName"			"Hero_NagaSiren.Ensnare.Cast"
+				"Target"				"CASTER"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+
+			"FireSound"
+			{
+				"EffectName"			"Hero_NagaSiren.Ensnare.Target"
+				"Target"				"TARGET"
+			}
+
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName"			"modifier_queenofblades_alter_ego_chains"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_queenofblades_alter_ego_chains"
+			{
+				"IsHidden"		"0"
+				"IsDebuff"		"1"
+				"IsPurgable"	"0"
+
+				"EffectName"			"particles/arena/units/heroes/hero_queenofblades/alter_ego_chains.vpcf"
+				"EffectAttachType"		"follow_origin"
+
+				"Duration"		"%duration"
+
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_DISABLED"
+				}
+			}
+		}
+	}
+
+	"queenofblades_alter_ego_discharge"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/queenofblades_alter_ego_discharge"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.1"
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_queenofblades/alter_ego_discharge.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attackspeed"	"80 120 160 200 240 280 320"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"900"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"15"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_queenofblades_alter_ego_discharge"
+				"Target" 		"CASTER"
+				"Duration"		"%duration"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_queenofblades_alter_ego_discharge"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+		
+				"Aura"          	"modifier_queenofblades_alter_ego_discharge_effect"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "1"
+			}
+
+			"modifier_queenofblades_alter_ego_discharge_effect"
+			{
+				"EffectName"		"particles/arena/units/heroes/hero_queenofblades/alter_ego_discharge.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attackspeed"
+				}
+			}
+		}
+	}
+
+	"queenofblades_alter_ego_soul_breaker"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"arena/queenofblades_alter_ego_soul_breaker"
+		"MaxLevel" 						"7"
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
+			"particle"			"particles/arena/units/heroes/hero_queenofblades/alter_ego_soul_breaker.vpcf"		
+		}
+
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.3"
+		"AbilityDamage"					"1000 2000 4000 8000 12000 16000 20000"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_missile_speed"	"1250"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_VengefulSpirit.MagicMissile"
+				"Target" 		"CASTER"
+			}
+			
+			"TrackingProjectile"
+			{
+				"Target"           	"TARGET"
+				"EffectName"		"particles/arena/units/heroes/hero_queenofblades/alter_ego_soul_breaker.vpcf"
+				"Dodgeable"			"0"
+				"ProvidesVision"	"0"
+				"MoveSpeed"        	"%magic_missile_speed"
+				"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_queenofblades/alter_ego.lua"
+				"Function"		"SoulBreakerDeactivate"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"FireSound"
+			{
+				"EffectName"	"Hero_VengefulSpirit.MagicMissileImpact"
+				"Target" 		"TARGET"
+			}
+
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_MAGICAL"
+				"Damage"		"%AbilityDamage"
+			}						
+		}
+	}
+}

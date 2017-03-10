@@ -1,0 +1,224 @@
+"DOTAAbilities"
+{
+	"boss_any_passive"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SetMaxLevel"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_boss_any_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/bosses/boss_any.lua"
+						"Function"		"OnBossDeath"
+					}
+				}
+			}
+		}
+	}
+
+	"boss_armor"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/boss_armor"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_range_limit" "900"
+			}
+		}
+
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/bosses/boss_armor.lua"
+				"Function"		"Init"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_boss_armor"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"States"
+				{
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_CANNOT_MISS"							"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/bosses/boss_armor.lua"
+						"Function"		"ClearDebuffs"
+					}
+				}
+
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/bosses/boss_armor.lua"
+						"Function"		"OnTakeDamage"
+					}
+				}
+			}
+		}
+	}
+
+	"boss_central_passive"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityTextureName"			"windrunner_focusfire"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			
+			"FireSound"
+			{
+				"EffectName"	"Hero_Medusa.AttackSplit"
+				"Target" 		"TARGET"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/bosses/boss_central.lua"
+				"Function"		"SplitShotDamage"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_boss_central_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+		
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/bosses/boss_central.lua"
+						"Function"		"SplitShotLaunch"
+					}
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/bosses/boss_central.lua"
+						"Function"		"CheckPosition"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"boss_freya_sharp_ice_shards"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCooldown"				"8"
+		"AbilityCastPoint"				"0.75"
+		"AbilityCastRange"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmage_pct"				"16"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_dmage_pct"		"8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stack_duration"		"16"
+			}
+		}
+
+		"precache"
+		{
+			"particle"					"particles/arena/units/bosses/freya/sharp_ice_shards_cast.vpcf"
+		}
+
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SetMaxLevel"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/bosses/boss_freya.lua"
+				"Function"		"ApplyShards"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/arena/units/bosses/freya/sharp_ice_shards_cast.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_boss_freya_sharp_ice_shards_stack"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%stack_duration"
+			}
+		}
+	}
+}

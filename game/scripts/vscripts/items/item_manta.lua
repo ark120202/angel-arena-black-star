@@ -7,15 +7,16 @@ function item_manta_arena_on_spell_start(keys)
 	caster:EmitSound("DOTA_Item.Manta.Activate")
 	caster:Purge(false, true, false, false, false)
 	ProjectileManager:ProjectileDodge(caster)
-	
-	ability:CreateVisibilityNode(caster:GetAbsOrigin(), keys.VisionRadius, keys.InvulnerabilityDuration)
-	caster:AddNoDraw()
-	ability:ApplyDataDrivenModifier(caster, caster, "modifier_item_manta_arena_invulnerability", nil)
+	if caster:IsHero() then
+		ability:CreateVisibilityNode(caster:GetAbsOrigin(), keys.VisionRadius, keys.InvulnerabilityDuration)
+		caster:AddNoDraw()
+		ability:ApplyDataDrivenModifier(caster, caster, "modifier_item_manta_arena_invulnerability", nil)
 
-	if caster.MantaIllusions then
-		for _,v in ipairs(caster.MantaIllusions) do
-			if v and not v:IsNull() and v:IsAlive() then
-				v:ForceKill(false)
+		if caster.MantaIllusions then
+			for _,v in ipairs(caster.MantaIllusions) do
+				if v and not v:IsNull() and v:IsAlive() then
+					v:ForceKill(false)
+				end
 			end
 		end
 	end

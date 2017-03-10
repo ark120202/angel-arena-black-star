@@ -1,0 +1,318 @@
+"DOTAAbilities"
+{
+	"mirratie_smoke_out"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"arena/mirratie_smoke_out"
+
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastRange"				"500 600 700 800 900 900 900"
+
+		"AbilityCooldown"				"25 22 19 17 15 13 11"
+		
+		"AbilityManaCost"				"105"
+		"MaxLevel"						"7"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"450"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"move_slow_pct"			"-15 -20 -25 -30 -35 -40 -45"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"miss_chance_pct"		"15 20 30 35 45 50 60"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
+			"particle"					"particles/arena/units/heroes/hero_mirratie/smoke_out_bomb.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+		 	"RunScript"
+		 	{
+		 		"ScriptFile"	"heroes/hero_mirratie/smoke_out.lua"
+		 		"Function"		"SmokeOut"
+		 		"Target"		"POINT"
+		 	}
+		} 
+
+		"Modifiers"
+		{
+			"modifier_mirratie_smoke_out"
+			{
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				
+				"Aura"					"modifier_mirratie_smoke_out_debuff"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Duration"				"%duration"
+
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Riki.Smoke_Screen"
+						"Target"		"TARGET"
+					}
+
+					"AttachEffect"
+					{
+						"EffectName"		"particles/arena/units/heroes/hero_mirratie/smoke_out_bomb.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+						"ControlPoints"
+						{
+							"00" "0 0 0"
+							"01" "%radius %radius %radius"
+						}
+					}
+				}
+			}
+
+			"modifier_mirratie_smoke_out_debuff"
+			{
+				"IsDebuff"		"1"
+				"Duration"			"0.5"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_slow_pct"
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE"				"%miss_chance_pct"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"mirratie_sixth_sense"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/mirratie_sixth_sense"
+		"MaxLevel" 						"8"
+		"LevelsBetweenUpgrades" 		"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"HasInnateModifiers"			"1"
+		"AbilityCastRange"				"1200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1200"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_evasion"		"0 10 20 30 40 45 50 55"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"dodge_chance_pct"	"0 5 10 15 20 20 25 30"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
+		}
+
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SetFirstLevel"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_mirratie_sixth_sense"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Aura"          	"modifier_mirratie_sixth_sense_visible"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_ALL"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"		"%bonus_evasion"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_mirratie_sixth_sense_visible"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PROVIDES_FOW_POSITION" "1"
+				}
+			}
+		}
+	}
+
+	"mirratie_snagshot"
+	{
+		"MaxLevel"						"7"
+		"BaseClass"						"meepo_earthbind"
+		"AbilityTextureName"			"arena/mirratie_snagshot"
+		"AbilityCastRange"				"500 750 1000 1250 1500 1750 2000"
+		"AbilityCooldown"				"10"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityManaCost"				"100"
+		"AbilityCastPoint"				"0.2"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"180 220 260 300 340 380 420"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"857"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"			"500 750 1000 1250 1500 1750 2000"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+			"particle"  "particles/units/heroes/hero_meepo/meepo_earthbind.vpcf"
+		}
+	}
+
+	"mirratie_impaling_shot"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"arena/mirratie_impaling_shot"
+		"ScriptFile"					"heroes/hero_mirratie/impaling_shot.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"HasScepterUpgrade"				"1"
+
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastRange"				"1000 1200 1400 1600 1800 2000 2200"
+
+		"AbilityCooldown"				"25 22 19 17 15 13 11"
+		
+		"AbilityManaCost"				"105"
+		"MaxLevel"						"7"
+		"AbilityChannelTime"			"2"
+		"AbilityDamage"					"400 700 900 1100 1300 1500 1700"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"channel_time"			"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"1000 1200 1400 1600 1800 2000 2200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impale_range"			"200 300 400 450 500 550 600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impale_effect_pct"		"40 50 60 70 80 90 100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"2 2.5 3 3.5 4 4.5 5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_scepter"	"3000"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration_scepter"	"6"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_scepter"		"1000 1300 1600 1900 2200 2500 2800"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1500"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impale_width"			"70"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_mirratie/impaling_shot.vpcf"
+			"particle"  "particles/arena/units/heroes/hero_mirratie/impaling_shot_impale.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+		}
+	}
+}

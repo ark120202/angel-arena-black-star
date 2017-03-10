@@ -12,14 +12,16 @@ function EatTrees(keys)
 	for _,v in ipairs(wards) do
 		local n = v:GetUnitName()
 		if n == "npc_dota_sentry_wards" or n == "npc_dota_observer_wards" then
-			TrueKill(caster, ability, v)
+			v:TrueKill(ability, caster)
 			trees = trees + keys.stacks_per_ward
 		end
 	end
 	if trees > 0 then
 		ModifyStacks(ability, caster, caster, "modifier_item_tango_arena", trees, true)
 		Timers:CreateTimer(ability:GetAbilitySpecial("buff_duration"), function()
-			ModifyStacks(ability, caster, caster, "modifier_item_tango_arena", -trees)
+			if IsValidEntity(caster) and IsValidEntity(ability) then
+				ModifyStacks(ability, caster, caster, "modifier_item_tango_arena", -trees)
+			end
 		end)
 	end
 end

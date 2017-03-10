@@ -1,7 +1,7 @@
 function Refresh(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	if not caster:HasModifier("modifier_arc_warden_tempest_double") then
+	if not caster:IsTempestDouble() then
 		RefreshAbilities(caster, REFRESH_LIST_IGNORE_REFRESHER)
 		RefreshItems(caster, REFRESH_LIST_IGNORE_REFRESHER)
 		caster:EmitSound("DOTA_Item.Refresher.Activate")

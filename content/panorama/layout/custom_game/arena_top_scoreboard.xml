@@ -18,10 +18,10 @@
 			<Panel hittest="false" id="MultiteamScoreboard">
 				<Panel id="timerPanel">
 					<Panel id="timerImgPanel" >
-						<Image id="timerImage" src="file://{resources}/images/custom_game/scoreboard/scoreboard_iec.png" />
-						<Image id="timerImageMask1" src="file://{resources}/images/custom_game/scoreboard/scoreboard_ief.png" />
-						<Image id="timerImageMask2" src="file://{resources}/images/custom_game/scoreboard/scoreboard_if2.png" />
-						<Image id="timerImageMask3" src="file://{resources}/images/custom_game/scoreboard/scoreboard_ifd.png" />
+						<Image id="timerImage" src="file://{images}/custom_game/scoreboard/scoreboard_iec.png" />
+						<Image id="timerImageMask1" src="file://{images}/custom_game/scoreboard/scoreboard_ief.png" />
+						<Image id="timerImageMask2" src="file://{images}/custom_game/scoreboard/scoreboard_if2.png" />
+						<Image id="timerImageMask3" src="file://{images}/custom_game/scoreboard/scoreboard_ifd.png" />
 					</Panel>
 					<Label id="timerLabel" text="00:00" />
 					<Label id="duelTimerLabel" text="00:00" />

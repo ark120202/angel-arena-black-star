@@ -22,12 +22,10 @@ function omniknight_purification_lua:OnSpellStart() if IsServer() then
 	end
 	for _,target in ipairs(targets) do
 		target:EmitSound("Hero_Omniknight.Purification")
-		local pfx = ParticleManager:CreateParticle(self:GetCaster():TranslateParticle("particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"), PATTACH_ABSORIGIN_FOLLOW, target)
-		--ParticleManager:SetParticleControl(pfx, 0, self:GetCaster():GetAbsOrigin())
+		local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification.vpcf", PATTACH_ABSORIGIN_FOLLOW, target, self:GetCaster())
 		ParticleManager:SetParticleControl(pfx, 1, Vector(radius, radius, radius))
 		ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
-		local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
-		for _,v in ipairs(units) do
+		for _,v in ipairs(FindUnitsInRadius(self:GetCaster():GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)) do
 			if self:GetCaster():GetTeamNumber() == v:GetTeamNumber() then
 				SafeHeal(v, self:GetSpecialValueFor("heal"), self:GetCaster())
 				SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, v, self:GetSpecialValueFor("heal"), nil)
@@ -40,7 +38,8 @@ function omniknight_purification_lua:OnSpellStart() if IsServer() then
 					ability = self
 				})
 			end
-			ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, v)
+			local hit_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf", PATTACH_ABSORIGIN, target)
+			ParticleManager:SetParticleControlEnt(hit_pfx, 1, v, PATTACH_POINT_FOLLOW, "follow_origin", v:GetAbsOrigin(), true)
 		end
 	end
 end end

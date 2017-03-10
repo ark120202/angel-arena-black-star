@@ -5,7 +5,6 @@ AI_STATE_AGGRESSIVE = 1
 AI_STATE_RETURNING = 2
 AI_STATE_CASTING = 3
 AI_STATE_ORDER = 4
-AI_STATE_HOLDOUT_PUSH = 5
 
 LinkLuaModifier("modifier_simple_ai", "modifiers/modifier_simple_ai", LUA_MODIFIER_MOTION_NONE)
 
@@ -18,6 +17,7 @@ function SimpleAI:new( unit, profile, params )
 
 	ai.unit = unit
 	ai.ThinkEnabled = true
+	ai.Thinkers = {}
 	ai.state = AI_STATE_IDLE
 	ai.profile = profile
 
@@ -49,22 +49,7 @@ function SimpleAI:new( unit, profile, params )
 		ai.leashRange = ai.aggroRange 
 		ai.abilityCastCallback = params.abilityCastCallback
 	end
-
-	if profile == "holdout_unit" then
-		ai.stateThinks = {
-			[AI_STATE_HOLDOUT_PUSH] = 'HoldoutPushThink',
-			[AI_STATE_AGGRESSIVE] = 'HoldoutAggressiveThink',
-			[AI_STATE_CASTING] = 'HoldoutCastingThink'
-			--[AI_STATE_ORDER] = 'HoldoutOrderThink',
-		}
-		ai.state = AI_STATE_HOLDOUT_PUSH
-		ai.spawnPos = params.spawnPos or unit:GetAbsOrigin()
-		ai.aggroRange = params.aggroRange or unit:GetAcquisitionRange()
-		ai.leashRange = params.leashRange or 600
-		--push / normal / kill / none
-		ai.MainTask = params.MainTask or "normal"
-		ai.abilityCastCallback = params.abilityCastCallback
-	end
+	
 	unit:AddNewModifier(unit, nil, "modifier_simple_ai", {})
 	Timers:CreateTimer( ai.GlobalThink, ai )
 	if unit.ai then
@@ -95,6 +80,11 @@ function SimpleAI:GlobalThink()
 			self.abilityCastCallback(self)
 		end
 	end
+	for k,_ in pairs(self.Thinkers) do
+		if not k() then
+			self.Thinkers[k] = nil
+		end
+	end
 	return AI_THINK_INTERVAL
 end
 
@@ -111,7 +101,14 @@ end
 	end
 
 	function SimpleAI:AggressiveThink()
-		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > self.leashRange or not self.aggroTarget or self.aggroTarget:IsNull() or not self.aggroTarget:IsAlive() or self.aggroTarget:IsInvisible() or self.aggroTarget:IsInvulnerable() or self.aggroTarget:IsAttackImmune() or (self.profile == "tower" and (self.spawnPos - self.aggroTarget:GetAbsOrigin()):Length2D() > self.leashRange) then
+		local aggroTarget = self.aggroTarget
+		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > self.leashRange
+											or not IsValidEntity(aggroTarget)
+											or not aggroTarget:IsAlive()
+											or (aggroTarget.IsInvisible and aggroTarget:IsInvisible())
+											or (aggroTarget.IsInvulnerable and aggroTarget:IsInvulnerable())
+											or (aggroTarget.IsAttackImmune and aggroTarget:IsAttackImmune())
+											or (self.profile == "tower" and (self.spawnPos - aggroTarget:GetAbsOrigin()):Length2D() > self.leashRange) then
 			self:SwitchState(AI_STATE_RETURNING)
 			return
 		else
@@ -143,40 +140,6 @@ end
 		end
 	end
 
---Holdout Thinkers
-	function SimpleAI:HoldoutPushThink()
-		--local units = Dynamic_Wrap(SimpleAI, "FindUnitsNearby")(self, self.aggroRange, false, true)
-		local units = self:FindUnitsNearby(self.aggroRange, false, true, nil, DOTA_UNIT_TARGET_FLAG_NO_INVIS)
-		if #units > 0 then
-			self.unit:MoveToTargetToAttack( units[1] )
-			self.aggroTarget = units[1]
-			self:SwitchState(AI_STATE_AGGRESSIVE)
-			return
-		else
-			local PushTarget
-			local towers = Entities:FindAllByName("npc_arena_holdout_tower_ally")
-			if #towers > 0 then
-				PushTarget = FindNearestEntity(self.spawnPos, towers)
-			else
-				PushTarget = Entities:FindByName(nil, "npc_arena_holdout_fort")
-			end
-			self.unit:MoveToTargetToAttack(PushTarget)
-		end
-	end
-
-	function SimpleAI:HoldoutAggressiveThink()
-		if (self.aggroTarget:GetAbsOrigin() - self.unit:GetAbsOrigin()):Length2D() > self.leashRange or not self.aggroTarget or self.aggroTarget:IsNull() or not self.aggroTarget:IsAlive() or self.aggroTarget:IsInvisible() or self.aggroTarget:IsInvulnerable() or self.aggroTarget:IsAttackImmune() then
-			self:SwitchState(AI_STATE_HOLDOUT_PUSH)
-			return
-		else
-			self.unit:MoveToTargetToAttack(self.aggroTarget)
-		end
-	end
-
-	function SimpleAI:HoldoutCastingThink()
-		
-	end
-
 --Utils
 function SimpleAI:OnTakeDamage(attacker)
 	if (self.state == AI_STATE_IDLE or self.state == AI_STATE_RETURNING) and (self.spawnPos - attacker:GetAbsOrigin()):Length2D() < self.leashRange then
@@ -186,8 +149,12 @@ function SimpleAI:OnTakeDamage(attacker)
 	end
 end
 
+function SimpleAI:AddThink(func)
+	self.Thinkers[func] = true
+end
 
-function SimpleAI:FindUnitsNearby(radius, bAllies, bEnemies, type, flags)
+--Legacy
+function SimpleAI:FindUnitsNearby(radius, bAllies, bEnemies, targettype, flags)
 	local teamfilter = DOTA_UNIT_TARGET_TEAM_NONE
 	if bAllies then
 		teamfilter = teamfilter + DOTA_UNIT_TARGET_TEAM_FRIENDLY
@@ -195,8 +162,13 @@ function SimpleAI:FindUnitsNearby(radius, bAllies, bEnemies, type, flags)
 	if bEnemies then
 		teamfilter = teamfilter + DOTA_UNIT_TARGET_TEAM_ENEMY
 	end
-	local units = FindUnitsInRadius(self.unit:GetTeam(), self.unit:GetAbsOrigin(), nil, radius, teamfilter or DOTA_UNIT_TARGET_TEAM_ENEMY, type or DOTA_UNIT_TARGET_ALL, flags or DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+	local units = FindUnitsInRadius(self.unit:GetTeam(), self.unit:GetAbsOrigin(), nil, radius, teamfilter or DOTA_UNIT_TARGET_TEAM_ENEMY, targettype or DOTA_UNIT_TARGET_ALL, flags or DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 	return units
+end
+
+function SimpleAI:FindUnitsNearbyForAbility(ability)
+	local selfAbs = self.unit:GetAbsOrigin()
+	return FindUnitsInRadius(self.unit:GetTeam(), selfAbs, nil, ability:GetCastRange(selfAbs, nil), ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_CLOSEST, false)
 end
 
 function SimpleAI:UseAbility(ability, target)
@@ -209,9 +181,18 @@ function SimpleAI:UseAbility(ability, target)
 		elseif AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_POINT) then
 			self.unit:CastAbilityOnPosition(target, ability, -1)
 		end
-		Timers:CreateTimer(ability:GetCastPoint() + 0.1, function()
-			self:SwitchState(AI_STATE_RETURNING)
+		local endtime = GameRules:GetGameTime() + ability:GetCastPoint() + 0.1
+		self:AddThink(function()
+			--print(GameRules:GetGameTime(), endtime, self.unit:IsChanneling())
+			if GameRules:GetGameTime() >= endtime and not self.unit:IsChanneling() then
+				self:SwitchState(AI_STATE_RETURNING)
+				return false
+			end
+			return true
 		end)
+		--[[Timers:CreateTimer(ability:GetCastPoint() + 0.1 + ability:GetChannelTime(), function()
+			
+		end)]]
 	end
 end
 

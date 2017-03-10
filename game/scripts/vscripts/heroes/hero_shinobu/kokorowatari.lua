@@ -3,8 +3,8 @@ function CreateSoul(keys)
 	local target = keys.unit
 	local ability = keys.ability
 
-	if not target:IsHero() and not target:IsCourier() and target:GetTeamNumber() ~= caster:GetTeamNumber() and not IsBossEntity(target) then
-		local soul = CreateUnitByName("npc_shinobu_soul", target:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NOTEAM)
+	if not target:IsHero() and not target:IsCourier() and target:GetTeamNumber() ~= caster:GetTeamNumber() and not target:IsBoss() and not target:IsChampion() then
+		local soul = CreateUnitByName("npc_shinobu_soul", target:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
 		soul:SetModel(target:GetModelName())
 		soul:SetOriginalModel(target:GetModelName())
 		soul:SetModelScale(target:GetModelScale())

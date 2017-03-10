@@ -11,14 +11,6 @@ function modifier_apocalypse_apocalypse:OnCreated(t)
 	self.cleave_radius = ability:GetSpecialValueFor("cleave_radius")
 end
 
-function modifier_apocalypse_apocalypse:OnIntervalThink()
-	if IsServer() then
-		self:SetStackCount(math.ceil(self:GetElapsedTime()))
-		self:GetParent():Purge(true, true, false, true, false)
-		self:StartIntervalThink(0.03)
-	end
-end
-
 function modifier_apocalypse_apocalypse:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MODEL_CHANGE,
@@ -54,16 +46,22 @@ function modifier_apocalypse_apocalypse:GetModifierMoveSpeedBonus_Percentage()
 	return self:GetStackCount() * self.movespeed_per_second_pct
 end
 
-function modifier_apocalypse_apocalypse:OnAttackLanded(k)
-	if IsServer() and k.attacker == self:GetParent() then
-		local radius = GetAbilitySpecial("queenofblades_army", "cleave_radius")
-		if ability then
-			radius = ability:GetAbilitySpecial("cleave_radius")
+if IsServer() then
+	function modifier_apocalypse_apocalypse:OnIntervalThink()
+		self:SetStackCount(math.ceil(self:GetElapsedTime()))
+		self:GetParent():Purge(true, true, false, true, false)
+		self:StartIntervalThink(0.03)
+	end
+
+	function modifier_apocalypse_apocalypse:OnAttackLanded(k)
+		if k.attacker == self:GetParent() then
+			DoCleaveAttack(k.attacker, k.target, self, k.damage, self.cleave_radius, self.cleave_radius, self.cleave_radius, "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf")
 		end
-		DoCleaveAttack(k.attacker, k.target, self, k.damage, self.cleave_radius, "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf")
+	end
+
+	function modifier_apocalypse_apocalypse:OnDestroy() 
+		if not self:GetParent():HasTalent("talent_hero_apocalypse_apocalypse_no_death") then
+			self:GetParent():TrueKill(self, self:GetCaster())
+		end
 	end
 end
-
-function modifier_apocalypse_apocalypse:OnDestroy() if IsServer() then
-	TrueKill(self:GetCaster(), self, self:GetParent())
-end end

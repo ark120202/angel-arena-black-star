@@ -3,7 +3,7 @@ function modifier_item_heart_cyclone_regen_on_take_damage(keys)
 	local ability = keys.ability
 	local caster = keys.caster
 	if attacker then
-		if keys.Damage > 0 and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or IsBossEntity(attacker)) then
+		if keys.Damage > 0 and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or attacker:IsBoss()) then
 			if caster:IsRangedAttacker() then
 				ability:ApplyDataDrivenModifier(caster, caster, "modifier_item_heart_cyclone_regen_cooldown", {duration=keys.CooldownRanged})
 			else
@@ -38,6 +38,6 @@ function modifier_item_heart_cyclone_active_damage_on_interval_think(keys)
 		damage = target:GetMaxHealth()*keys.damage*0.001,
 		damage_type = DAMAGE_TYPE_PURE,
 		ability = ability,
-		damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY
+		damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
 	})
 end

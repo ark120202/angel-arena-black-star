@@ -1,18 +1,144 @@
 CUSTOM_WEARABLES_PLAYER_ITEMS = {
+	--ark120202
 	[109792606] = {
-		"item_hero_stargazer_helmet_of_the_sunray",
-		"item_hero_omniknight_frozen_sword",
-		"item_item_summoned_unit_kyuubey",
+		--"wearable_hero_stargazer_helmet_of_the_sunray",
+		--"wearable_hero_omniknight_frozen_sword",
+		--"wearable_item_summoned_unit_kyuubey",
+		"shinobu_umbrella",
+		"wearable_developer"
 	},
+	--Murzik
 	[82292900] = {
-		"item_hero_stargazer_helmet_of_the_sunray",
-		"item_hero_omniknight_frozen_sword",
-		"item_item_summoned_unit_kyuubey",
+		--"wearable_hero_stargazer_helmet_of_the_sunray",
+		--"wearable_hero_omniknight_frozen_sword",
+		--"wearable_item_summoned_unit_kyuubey"
+	},
+	--Dimka
+	[103166883] = {
+		"shinobu_umbrella",
+	},
+	--Alastor
+	[354150989] = {
+		"wearable_developer",
 	}
 }
 
-CUSTOM_WEARABLES_ITEM_HANDLES = {
-	["item_hero_stargazer_helmet_of_the_sunray"] = {
+CUSTOM_WEARABLES = {
+	--Default
+	saber_excalibur = {
+		particles = {
+			--[[{
+				name = "particles/arena/units/heroes/hero_saber/sword_glow.vpcf",
+				attach = PATTACH_ABSORIGIN_FOLLOW,
+				bAttachToUnit = true,
+				control_points = {
+					{
+						index = 0,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_sword1"
+					},
+					{
+						index = 1,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_sword2"
+					},
+				}
+			},]]
+			{
+				name = "particles/arena/units/heroes/hero_saber/sword_glow2.vpcf",
+				attach = PATTACH_ABSORIGIN_FOLLOW,
+				bAttachToUnit = true,
+				control_points = {
+					{
+						index = 0,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_sword1"
+					},
+					{
+						index = 1,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_sword2"
+					},
+				}
+			}
+		},
+		used_by_heroes = {"npc_arena_hero_saber"},
+		IsDefault = true
+	},
+	anakim_wisps = {
+		particles = {
+			{
+				name = "particles/arena/units/heroes/hero_anakim/attack_wisps.vpcf",
+				attach = PATTACH_ABSORIGIN_FOLLOW,
+				bAttachToUnit = true,
+				control_points = {
+					{
+						index = 0,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit1"
+					},
+					{
+						index = 1,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit2"
+					},
+					{
+						index = 2,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit3"
+					},
+					{
+						index = 3,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit4"
+					},
+					{
+						index = 4,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit5"
+					},
+					{
+						index = 5,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit6"
+					},
+					{
+						index = 6,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit7"
+					},
+					{
+						index = 7,
+						attach = PATTACH_POINT_FOLLOW,
+						attachment = "attach_spirit8"
+					},
+				}
+			}
+		},
+		used_by_heroes = {"npc_arena_hero_anakim"},
+		IsDefault = true
+	},
+	maka_scythe = {
+		model = "models/units/maka/maka_scythe.vmdl",
+		used_by_heroes = {"npc_arena_hero_maka"},
+		IsDefault = true,
+		OnCreated = function(self)
+			self:SetVisible(false)
+		end
+	},
+
+	--Premium
+	shinobu_umbrella = {
+		model = "models/custom/umbrella_rainbow.vmdl",
+		used_by_heroes = {"npc_arena_hero_shinobu"},
+		attach_method = WEARABLES_ATTACH_METHOD_ATTACHMENTS,
+		attachment = "attach_hitloc",
+		--scale = 1.5
+	},
+}
+
+--[[CUSTOM_WEARABLES_ITEM_HANDLES = {
+	["wearable_hero_stargazer_helmet_of_the_sunray"] = {
 		hero = "alternative_npc_dota_hero_spectre",
 		models = {
 			{
@@ -27,7 +153,7 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 		},
 		hidden_slots = { "head" }
 	},
-	["item_hero_omniknight_frozen_sword"] = {
+	["wearable_hero_omniknight_frozen_sword"] = {
 		hero = "npc_dota_hero_omniknight",
 		models = {
 			{
@@ -40,7 +166,7 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 		},
 		hidden_slots = { "weapon" }
 	},
-	["item_common_model_tree"] = {
+	["wearable_common_model_tree"] = {
 		base_model = "models/items/furion/treant_stump.vmdl",
 		base_model_scale = 1.35,
 		models = {
@@ -51,12 +177,12 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 		},
 		hide_wearables = true,
 	},
-	["item_common_radio_car"] = {
+	["wearable_common_radio_car"] = {
 		on_first_equip = function(self, unit)
 			unit:AddItem(CreateItem("item_radio_car", unit, unit))
 		end
 	},
-	["item_item_summoned_unit_kyuubey"] = {
+	["wearable_item_summoned_unit_kyuubey"] = {
 		PlayerKeys = {
 			item_summoned_unit = {
 				model = "models/custom/kyuubey.vmdl",
@@ -64,4 +190,8 @@ CUSTOM_WEARABLES_ITEM_HANDLES = {
 			}
 		}
 	},
-}
+	["wearable_hero_shinobu_umbrella"] = {
+		
+	},
+	["wearable_developer"] = {}
+}]]

@@ -6,7 +6,7 @@ function OnSpellStart(keys)
 	local duration = ability:GetLevelSpecialValueFor("duration", level)
 	local creep_duration = ability:GetLevelSpecialValueFor("creep_duration", level)
 	local damage_interval = ability:GetLevelSpecialValueFor("damage_interval", level)
-	if target:IsHero() or IsBossEntity(target) then
+	if target:IsHero() or target:IsBoss() then
 		ability:ApplyDataDrivenModifier(caster, target, "modifier_frost_bite_root_arena", {duration = duration})
 		ability:ApplyDataDrivenModifier(caster, target, "modifier_frost_bite_damage_arena", {duration = duration - damage_interval})
 	else

@@ -32,11 +32,13 @@ function Superposition(keys)
 				ParticleManager:SetParticleControl(illusion_ability.thinker_dummy.particle, 1, Vector(illusion_ability:GetAbilitySpecial("radius")))
 				illusion_ability.thinker_dummy:EmitSound("Arena.Hero_ZenGehraz.MysticTwister")
 				Timers:CreateTimer(channel_time, function()
-					ParticleManager:DestroyParticle(illusion_ability.thinker_dummy.particle, false)
-					illusion_ability.thinker_dummy:StopSound("Arena.Hero_ZenGehraz.MysticTwister")
-					illusion_ability.thinker_dummy:ForceKill(false)
-					UTIL_Remove(illusion_ability.thinker_dummy)
-					illusion_ability.thinker_dummy = nil
+					if IsValidEntity(illusion_ability) and IsValidEntity(illusion_ability.thinker_dummy) then
+						ParticleManager:DestroyParticle(illusion_ability.thinker_dummy.particle, false)
+						illusion_ability.thinker_dummy:StopSound("Arena.Hero_ZenGehraz.MysticTwister")
+						illusion_ability.thinker_dummy:ForceKill(false)
+						UTIL_Remove(illusion_ability.thinker_dummy)
+						illusion_ability.thinker_dummy = nil
+					end
 				end)
 			elseif name == "zen_gehraz_vow_of_silence" then
 				illusion:AddNewModifier(caster, ability, "modifier_stunned", {duration = channel_time})

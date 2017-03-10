@@ -1,0 +1,472 @@
+"DOTAAbilities"
+{
+	"zen_gehraz_divine_intervention"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/zen_gehraz_divine_intervention"
+		"LevelsBetweenUpgrades"			"3"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityChannelTime"			"%channel_time"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"30 26 22 18 14 10 6"
+		"AbilityManaCost"				"100 200 300 400 500 600 700"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"channel_time"		"6"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_zen_gehraz/divine_intervention.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_zen_gehraz_divine_intervention"
+				"Target" 		"TARGET"
+				"Duration"		"%channel_time"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_zen_gehraz/superposition.lua"
+				"Function"		"OnChanneledAbilityExecuted"
+			}
+		}
+
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_zen_gehraz_divine_intervention"
+				"Target" 		"TARGET"
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_zen_gehraz/superposition.lua"
+				"Function"		"OnChanneledAbilityInterrupted"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_zen_gehraz_divine_intervention"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+	
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_DISABLED"
+				}
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"			"particles/arena/units/heroes/hero_zen_gehraz/divine_intervention.vpcf"
+						"EffectAttachType"		"follow_origin"
+						"Target"				"TARGET"
+						"ControlPointEntities"
+						{
+							"TARGET"	"attach_hitloc"
+							"TARGET"	"attach_hitloc"
+							"TARGET"	"attach_hitloc"
+							"TARGET"	"attach_hitloc"
+							"TARGET"	"attach_hitloc"
+							"CASTER"	"attach_hitloc" //Attach to the hands or any desired attach point of the hero
+							"CASTER"	"attach_hitloc"
+						}
+					}
+
+					"FireSound"
+					{
+						"EffectName"	"Hero_ShadowShaman.Shackles.Cast"
+						"Target" 		"CASTER"
+					}
+
+					"FireSound"
+					{
+						"EffectName"	"Hero_ShadowShaman.Shackles"
+						"Target" 		"TARGET"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"StopEndableSound"
+						"sound"			"Hero_ShadowShaman.Shackles"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_zen_gehraz/divine_intervention.lua"
+						"Function"		"OnModifierDestroy"
+					}
+				}
+			}
+		}
+	}
+
+	"zen_gehraz_mystic_twister"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"arena/zen_gehraz_mystic_twister"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"8"
+		"RequiredLevel"					"3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCastRange"				"700"
+		"AbilityChannelTime"			"%channel_time"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"8 6 5 4 3 2 1"
+		"AbilityManaCost"				"150"
+		"AOERadius"						"%radius"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"channel_time"		"2 3 4 5 6 7 10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_second"	"60 120 180 240 300 360 420"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_interval"	"0.1"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_zen_gehraz/mystic_twister.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_zen_gehraz/mystic_twister.lua"
+				"Function"		"StartAbility"
+				"Target"		"POINT"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_zen_gehraz/superposition.lua"
+				"Function"		"OnChanneledAbilityExecuted"
+				"Target"		"POINT"
+			}
+		}
+
+		"OnChannelFinish"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_zen_gehraz/mystic_twister.lua"
+				"Function"		"StopAbility"
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_zen_gehraz/superposition.lua"
+				"Function"		"OnChanneledAbilityInterrupted"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_zen_gehraz_mystic_twister_thinker"
+			{
+				"IsHidden"			"1"
+		
+				"Aura"          	"modifier_zen_gehraz_mystic_twister_aura_effect"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+
+			"modifier_zen_gehraz_mystic_twister_aura_effect"
+			{
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"0.1"
+				"Priority"			"MODIFIER_PRIORITY_HIGH"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+				"ThinkInterval"  "%damage_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"PercentDamage"
+						"Damage"		"%damage_per_second"
+						"multiplier"	"%damage_interval"
+					}
+				}
+	
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_DISABLED"
+				}
+			}
+		}
+	}
+
+	"zen_gehraz_vow_of_silence"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/zen_gehraz_vow_of_silence"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastRange"				"%radius"
+		"AbilityChannelTime"			"%channel_time"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"60 50 45 40 35 30 25"
+		"AbilityManaCost"				"125"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"channel_time"		"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"debuff_duration"	"3"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"900"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_zen_gehraz/vow_of_silence.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_zen_gehraz_vow_of_silence"
+				"Target" 		"CASTER"
+				"Duration"		"%channel_time"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_zen_gehraz/superposition.lua"
+				"Function"		"OnChanneledAbilityExecuted"
+			}
+		}
+
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_zen_gehraz_vow_of_silence"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_zen_gehraz/superposition.lua"
+				"Function"		"OnChanneledAbilityInterrupted"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_zen_gehraz_vow_of_silence"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/arena/units/heroes/hero_zen_gehraz/vow_of_silence.vpcf"
+						"EffectAttachType"  "follow_overhead"
+						"Target"            "CASTER"
+					}
+
+					"FireSound"
+					{
+						"EffectName"	"Arena.Hero_ZenGehraz.VowOfSilence"
+						"Target" 		"CASTER"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"StopEndableSound"
+						"sound"			"Arena.Hero_ZenGehraz.VowOfSilence"
+					}
+				}
+				
+		
+				"Aura"          	"modifier_zen_gehraz_vow_of_silence_effect"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+			}
+
+			"modifier_zen_gehraz_vow_of_silence_effect"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"0.1"
+
+			
+				"OnAbilityExecuted"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_zen_gehraz/vow_of_silence.lua"
+						"Function"		"OnAbilityExecuted"
+					}
+				}
+			}
+		}
+	}
+
+	"zen_gehraz_superposition"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/zen_gehraz_superposition"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCastPoint"				"0"
+		"AbilityManaCost"				"125"
+		"HasScepterUpgrade"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"distance"			"1000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_charges"		"1 1 1 2 2 2 3"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_charges_scepter"	"3 3 3 4 4 4 5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"charge_replenish_time"	"10"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"illusion_damage_percent_outgoing"	"30"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"illusion_damage_percent_incoming"	"200"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"illusion_duration"	"15"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_zen_gehraz/superposition.lua"
+				"Function"		"Superposition"
+				"Target"		"POINT"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_zen_gehraz_superposition"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"ThinkInterval"  "0.2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"UpgradeChargeBasedAbility"
+						"max_charges"	"%max_charges"
+						"max_charges_scepter"	"%max_charges_scepter"
+						"charge_replenish_time"	"%charge_replenish_time"
+					}
+				}
+			}
+		}
+	}
+}

@@ -25,5 +25,5 @@ function Cleave( keys )
 	if ability then
 		radius = ability:GetAbilitySpecial("cleave_radius")
 	end
-	DoCleaveAttack(keys.attacker, keys.target, ability, keys.Damage, radius, "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf")
+	DoCleaveAttack(keys.attacker, keys.target, ability, keys.Damage, radius, radius, radius, "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf")
 end

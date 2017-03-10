@@ -1,0 +1,292 @@
+"DOTAAbilities"
+{
+	"sara_evolution"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_sara/evolution.lua"
+		"AbilityTextureName"			"arena/sara_evolution"
+		"MaxLevel" 						"4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"HasInnateModifiers"			"1"
+		"LevelsBetweenUpgrades"			"4"
+		"HasScepterUpgrade"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_per_minute"	"10 20 30 40"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"max_per_minute_pct" "0 0 0 0.8"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"per_sec_pct"		"0.25 0.5 0.75 1"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"per_sec"			"2 4 6 8"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_per_creep"		"1 2 3 4"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"max_per_creep_pct"	"0 0 0 0.1"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_to_energy_pct"	"2"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health_reduction_pct"	"75"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_reduction_pct"	"-50"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_health"		"400 900 1500 2100"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"per_sec_multiplier_scepter"	"2"
+			}
+		}
+	}
+
+	"sara_space_dissection"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_sara/space_dissection.lua"
+		"AbilityTextureName"			"arena/sara_space_dissection"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCooldown"				"25 20 17.5 15 12.5 10 7.5"
+		"HasScepterUpgrade"				"1"
+		"LevelsBetweenUpgrades"			"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"creep_energy_multiplier"	"2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"creep_energy_multiplier_scepter"	"4"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"energy_to_disarmor_pct"	"1 1.75 2.5 3.25 4 4.75 5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarmor_duration"	"15"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"energy_pct"		"15"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_sara/space_dissection.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
+		}
+	}
+
+	"sara_energy_burst"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_sara/energy_burst.lua"
+		"AbilityTextureName"			"arena/sara_energy_burst"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCooldown"				"100 90 80 70 60 50 40"
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.2"
+		"HasScepterUpgrade"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_energy_point" "0.25 0.5 0.75 1 1.25 1.5 1.75"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"energy_pct"		"50"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"min_cost"			"25"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"pure_per_energy_point_scepter"	"0.25 0.3 0.35 0.4 0.45 0.5 0.55"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_aoe_scepter" "250"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_sara/energy_burst.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+		}
+	}
+
+	"sara_fragment_of_hate"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_sara/fragment_of_hate.lua"
+		"AbilityTextureName"			"arena/sara_fragment_of_hate"
+		"MaxLevel" 						"7"
+		"RequiredLevel"					"6"
+		"LevelsBetweenUpgrades"			"10"
+		"AbilityCooldown"				"40"
+		"HasScepterUpgrade"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_chance_pct"	"4 5 6 7 8 9 10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"energy_to_crit_pct" "5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"energy_to_damage_pct" "8 11 14 17 20 23 26"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_pct_scepter" "130 160 190 220 250 280 310"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"buff_duration_scepter" "3 3.5 4 4.5 5 5.5 6"
+			}
+		}
+	}
+
+	"sara_fragment_of_armor"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_sara/fragment_of_armor.lua"
+		"AbilityTextureName"			"arena/sara_fragment_of_armor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"MaxLevel"						"7"
+		"RequiredLevel"					"6"
+		"LevelsBetweenUpgrades"			"4"
+		"HasScepterUpgrade"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_energy"		"2"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blocked_damage_pct"	"20 30 40 50 60 70 80"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reflected_damage_pct_scepter"	"10 12 14 16 18 20 22"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			"particle"			"particles/arena/units/heroes/hero_sara/fragment_of_armor.vpcf"
+			"particle"			"particles/arena/units/heroes/hero_sara/fragment_of_armor_impact.vpcf"
+		}
+	}
+
+	"sara_fragment_of_logic"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_sara/fragment_of_logic.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"arena/sara_fragment_of_logic"
+		"MaxLevel" 						"7"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCooldown"				"5"
+		"LevelsBetweenUpgrades"			"10"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"energy_const"		"500 450 400 350 300 250 200"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"energy_pct"		"35 32.5 30 27.5 25 22.5 20 15"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"debuff_duration"	"10"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+			"particle"  "particles/arena/units/heroes/hero_sara/fragment_of_logic.vpcf"
+		}
+	}
+}

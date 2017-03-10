@@ -10,7 +10,7 @@ function item_bloodstone_arena_on_spell_start(keys)
 		caster:SetHealth(1)
 		ApplyDamage({victim = caster, attacker = caster, damage = 99999, damage_type = DAMAGE_TYPE_PURE, ability = ability, damage_flags = DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR + DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR + DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_BYPASSES_BLOCK + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DIRECTOR_EVENT + DOTA_DAMAGE_FLAG_USE_COMBAT_PROFICIENCY + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS})
 		if caster:IsAlive() then
-			TrueKill(caster, ability, caster)
+			caster:TrueKill(ability, caster)
 		end
 	else
 		ability:RefundManaCost()
@@ -33,12 +33,10 @@ function modifier_item_bloodstone_arena_aura_on_death(keys)
 	end
 
 	local bloodstone_in_highest_slot = nil
-	for i=0, 5, 1 do
+	for i = 0, 5 do
 		local current_item = caster:GetItemInSlot(i)
-		if current_item then			
-			if current_item:GetName() == ability:GetName() then
-				bloodstone_in_highest_slot = current_item
-			end
+		if current_item and current_item:GetAbilityName() == ability:GetAbilityName() then
+			bloodstone_in_highest_slot = current_item
 		end
 	end
 
@@ -65,9 +63,9 @@ function item_bloodstone_arena_recalculate_charge_bonuses(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local total_charge_count = 0
-	for i=0, 5, 1 do
+	for i = 0, 5 do
 		local current_item = caster:GetItemInSlot(i)
-		if current_item ~= nil and current_item:GetName() == "item_bloodstone_arena" then
+		if current_item ~= nil and current_item:GetAbilityName() == "item_bloodstone_arena" then
 			total_charge_count = total_charge_count + current_item:GetCurrentCharges()
 		end
 	end
@@ -77,12 +75,14 @@ function item_bloodstone_arena_recalculate_charge_bonuses(keys)
 		if not modifier then
 			ability:ApplyDataDrivenModifier(caster, caster, "modifier_item_bloodstone_arena_charge", {})
 			Timers:CreateTimer(function()
-				modifier = caster:FindModifierByName("modifier_item_bloodstone_arena_charge")
-				if modifier then
-					modifier:SetStackCount(total_charge_count)
-				end
-				if caster.CalculateStatBonus then
-					caster:CalculateStatBonus()
+				if IsValidEntity(caster) then
+					modifier = caster:FindModifierByName("modifier_item_bloodstone_arena_charge")
+					if modifier then
+						modifier:SetStackCount(total_charge_count)
+					end
+					if caster.CalculateStatBonus then
+						caster:CalculateStatBonus()
+					end
 				end
 			end)
 		else
@@ -115,9 +115,9 @@ function modifier_item_bloodstone_arena_aura_emitter_on_death(keys)
 	local caster = keys.caster
 	if caster:IsRealHero() then
 		local total_charge_count = 0
-		for i=0, 5, 1 do
+		for i = 0, 5 do
 			local current_item = caster:GetItemInSlot(i)
-			if current_item ~= nil and current_item:GetName() == "item_bloodstone_arena" then
+			if current_item ~= nil and current_item:GetAbilityName() == "item_bloodstone_arena" then
 				local current_charges = current_item:GetCurrentCharges()
 				total_charge_count = total_charge_count + current_charges
 				
@@ -148,9 +148,8 @@ function modifier_item_bloodstone_arena_aura_emitter_on_death(keys)
 		if not caster.BloodstoneDummies then caster.BloodstoneDummies = {} end
 		table.insert(caster.BloodstoneDummies, modelDummy)
 
-		
-		local new_time_until_respawn = caster:GetRespawnTime() - (total_charge_count * keys.RespawnTimeReductionPerCharge)
-		if new_time_until_respawn < 0 then
+		caster.RespawnTimeModifier = -(total_charge_count * keys.RespawnTimeReductionPerCharge)
+		if caster:CalculateRespawnTime() <= 0 then
 			caster:SetTimeUntilRespawn(0)
 			local abs = caster:GetAbsOrigin()
 			if not caster.InArena then
@@ -158,8 +157,6 @@ function modifier_item_bloodstone_arena_aura_emitter_on_death(keys)
 					FindClearSpaceForUnit(caster, abs, true)
 				end)
 			end
-		else
-			caster:SetTimeUntilRespawn(new_time_until_respawn)
 		end
 		item_bloodstone_arena_recalculate_charge_bonuses(keys)
 	end

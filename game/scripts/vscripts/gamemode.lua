@@ -1,12 +1,10 @@
--- This is the primary barebones gamemode script and should be used to assist in initializing your game mode
+ARENA_VERSION = "1.4.5b"
+
 BAREBONES_VERSION = "1.00"
 
--- Set this to true if you want to see a complete debug output of all events/processes done by barebones
--- You can also change the cvar 'barebones_spew' at any time to 1 or 0 for output/no output
 BAREBONES_DEBUG_SPEW = false 
 GAMEMODE_INITIALIZATION_STATUS = {}
 
-SERVER_LOGGING = false
 if GameMode == nil then
 	DebugPrint( '[BAREBONES] creating barebones game mode' )
 	_G.GameMode = class({})
@@ -31,17 +29,16 @@ local requirements = {
 	--------------------------------------------------
 	"data/globals",
 	"data/constants",
-	"data/projectiles_table",
 	"data/containers",
 	"data/kv_data",
 	"data/modifiers",
-	"data/settings",
-	"data/wearables",
 	"data/shop",
 	"data/itembuilds",
 	"data/abilities",
 	"data/ability_functions",
 	"data/ability_shop",
+	"data/commands",
+	"data/neutrals",
 	--------------------------------------------------
 	"internal/gamemode",
 	"internal/events",
@@ -54,22 +51,21 @@ local requirements = {
 	"hero_selection",
 	"internal/containers",
 	"internal/scepter",
-	"playermessages",
 	"herovoice",
 	"gold",
 	"kills",
 	"panorama_shop",
 	"gamemodes",
 	"statcollection/init",
-	"developer",
-	"custom_wearables",
 	"SimpleAI",
 	"dynamic_minimap",
 	"custom_runes/custom_runes",
 	"stats_client",
 	"filters",
-	"ability_shop"
-	--"dyanmic_wearables"
+	"ability_shop",
+	"custom_talents/custom_talents",
+	"dynamic_wearables/dynamic_wearables",
+	"data/wearables",
 }
 local modifiers = {
 	["modifier_state_hidden"] = "modifiers/modifier_state_hidden",
@@ -80,20 +76,60 @@ local modifiers = {
 	["modifier_hero_selection_transformation"] = "modifiers/modifier_hero_selection_transformation.lua",
 	["modifier_fountain_aura_arena"] = "modifiers/modifier_fountain_aura_arena.lua",
 	["modifier_max_attack_range"] = "modifiers/modifier_max_attack_range.lua",
-	["modifier_item_lotus_sphere_passive"] = "items/lua/modifiers/modifier_item_lotus_sphere_passive.lua",
 	["modifier_arena_courier"] = "modifiers/modifier_arena_courier.lua",
 	["modifier_arena_hero"] = "modifiers/modifier_arena_hero.lua",
+	["modifier_neutral_champion"] = "modifiers/modifier_neutral_champion.lua",
+	["modifier_arena_hero_wisp"] = "heroes/hero_wisp/modifier_arena_hero_wisp.lua"
 }
 
 for i = 1, #requirements do
 	require(requirements[i])
 end
+JSON = require("libraries/json")
 for k,v in pairs(modifiers) do
 	LinkLuaModifier(k, v, LUA_MODIFIER_MOTION_NONE)
 end
-JSON = require("libraries/json")
 GameModes:Preload()
 
+function GameMode:InitGameMode()
+	GameMode = self
+	DebugPrint('[BAREBONES] Starting to load Barebones gamemode...')
+	if GAMEMODE_INITIALIZATION_STATUS[2] then
+		return
+	end
+	GAMEMODE_INITIALIZATION_STATUS[2] = true
+
+	GameMode:InitFilters()
+	HeroSelection:Initialize()
+	GameMode:RegisterCustomListeners()
+	DynamicWearables:Init()
+	PlayerTables:CreateTable("arena", {
+		gold = {},
+		gamemode_settings = {
+			kill_goals = POSSIBLE_KILL_GOALS,
+			gamemode = DOTA_ACTIVE_GAMEMODE,
+			gamemode_type = DOTA_ACTIVE_GAMEMODE_TYPE,
+			gamemode_map = ARENA_ACTIVE_GAMEMODE_MAP,
+		},
+		players_abandoned = {},
+		courier_owner2 = -1,
+		courier_owner3 = -1,
+		courier_owner4 = -1,
+		courier_owner5 = -1,
+		courier_owner6 = -1,
+		courier_owner7 = -1,
+		courier_owner8 = -1,
+		courier_owner9 = -1,
+		courier_owner10 = -1,
+	}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+	PlayerTables:CreateTable("player_hero_entities", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+	Containers:SetItemLimit(50)
+	Containers:UsePanoramaInventory(false)
+	HeroSelection:PrepareTables()
+	PanoramaShop:InitializeItemTable()
+	Scepters:SetGlobalScepterThink()
+	DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
+end
 
 function GameMode:PostLoadPrecache()
 	DebugPrint("[BAREBONES] Performing Post-Load precache")
@@ -110,12 +146,6 @@ function GameMode:OnFirstPlayerLoaded()
 	if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
 		AbilityShop:PrepareData()
 	end
-	if DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_HOLDOUT_5 then
-		Holdout:Init()
-	end
-	if SERVER_LOGGING then
-		InitLogFile("log/arena_log.txt", "\n\n\n\nAngel Arena Black Star Gamemode Log:\n")
-	end
 end
 
 function GameMode:OnAllPlayersLoaded()
@@ -124,53 +154,38 @@ function GameMode:OnAllPlayersLoaded()
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[4] = true
-	HeroSelection:CollectPD()
 	DynamicMinimap:Init()
 	Spawner:PreloadSpawners()
 	Bosses:InitAllBosses()
 	CustomRunes:Init()
-	--Colors setup
-	Timers:CreateTimer(0.03, function()
-		local Counters = {}
-		Counters[DOTA_TEAM_GOODGUYS] = 1
-		Counters[DOTA_TEAM_BADGUYS]	= 1
-		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-			if PlayerResource:IsValidPlayerID(i) then
-				local team = PlayerResource:GetTeam(i)
-				if PLAYERS_COLORS[team] and Counters[team] then
-					local color = PLAYERS_COLORS[team][Counters[team]]
-					PLAYER_DATA[i].Color = color
-					PlayerResource:SetCustomPlayerColor(i, color[1], color[2], color[3])
-					Counters[team] = Counters[team] + 1
-				end
-			end
-		end
-	end)
+	CustomTalents:Init()
 end
 
---[[
-	This function is called once and only once for every player when they spawn into the game for the first time.	It is also called
-	if the player's hero is replaced with a new hero for any reason.	This function is useful for initializing heroes, such as adding
-	levels, changing the starting gold, removing/adding abilities, adding physics, etc.
+function GameMode:OnHeroSelectionEnd()
+	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
+	--Timers:CreateTimer(1/30, Dynamic_Wrap(GameMode, "QuickGameModeThink"))
+	PanoramaShop:StartItemStocks()
+	Duel:CreateGlobalTimer()
+end
 
-	The hero parameter is the hero entity that just spawned in
-]]
 function GameMode:OnHeroInGame(hero)
 	DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 	Timers:CreateTimer(function()
-		if HeroSelection.SelectionEnd and not hero:HasModifier("modifier_arc_warden_tempest_double") and hero:IsRealHero() then
+		if IsValidEntity(hero) and hero:IsTrueHero() then
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
+				local pid = hero:GetPlayerID()
+				local tn = hero:GetTeamNumber()
 				local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
 				TEAMS_COURIERS[hero:GetTeamNumber()] = true
 				Timers:CreateTimer(0.03, function()
 					for _,courier in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
 						local owner = courier:GetOwner()
-						if owner and owner:GetPlayerID() == hero:GetPlayerID() then
+						if IsValidEntity(owner) and owner:GetPlayerID() == pid then
 							courier:UpgradeToFlyingCourier()
 							courier:SetOwner(nil)
 							courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
 							courier:RemoveAbility("courier_burst")
-							TEAMS_COURIERS[hero:GetTeamNumber()] = courier
+							TEAMS_COURIERS[tn] = courier
 							courier:SetBaseMaxHealth(200)
 							courier:SetMaxHealth(200)
 							courier:SetHealth(200)
@@ -185,143 +200,21 @@ function GameMode:OnHeroInGame(hero)
 			end
 			HeroVoice:OnHeroInGame(hero)
 		end
-
 	end)
 end
 
---[[
-	This function is called once and only once when the game completely begins (about 0:00 on the clock).	At this point,
-	gold will begin to go up in ticks if configured, creeps will spawn, towers will become damageable etc.	This function
-	is useful for starting any game logic timers/thinkers, beginning the first round, etc.
-]]
 function GameMode:OnGameInProgress()
 	DebugPrint("[BAREBONES] The game has officially begun")
 	if GAMEMODE_INITIALIZATION_STATUS[3] then
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[3] = true
-	if DOTA_ACTIVE_GAMEMODE ~= DOTA_GAMEMODE_HOLDOUT_5 then
-		Duel:CreateGlobalTimer()
-		ContainersHelper:CreateShops()
-		Spawner:RegisterTimers()
-	else
-		Holdout:Start()
-	end
-	StatsClient:OnGameBegin()
-	Scepters:SetGlobalScepterThink()
-	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
-	PanoramaShop:StartItemStocks()
+	ContainersHelper:CreateShops()
+	Spawner:RegisterTimers()
 	Timers:CreateTimer(function()
 		CustomRunes:SpawnRunes()
 		return CUSTOM_RUNE_SPAWN_TIME
 	end)
-	Timers:CreateTimer(0.3, function()
-		PlayerResource:RefreshSelection()
-	end)
-end
-
--- This function initializes the game mode and is called before anyone loads into the game
--- It can be used to pre-initialize any values/tables that will be needed later
-function GameMode:InitGameMode()
-	GameMode = self
-	DebugPrint('[BAREBONES] Starting to load Barebones gamemode...')
-	if GAMEMODE_INITIALIZATION_STATUS[2] then
-		return
-	end
-	GAMEMODE_INITIALIZATION_STATUS[2] = true
-
-	GameMode:InitFilters()
-	HeroSelection:Initialize()
-	GameMode:RegisterCustomListeners()
-	PlayerTables:CreateTable("arena", {
-		gold = {},
-		gamemode_settings = {
-			kill_goals = POSSIBLE_KILL_GOALS,
-			xp_table = XP_PER_LEVEL_TABLE,
-			gamemode = DOTA_ACTIVE_GAMEMODE,
-			gamemode_type = DOTA_ACTIVE_GAMEMODE_TYPE,
-			gamemode_map = ARENA_ACTIVE_GAMEMODE_MAP,
-		},
-		players_abandoned = {},
-		courier_owner2 = -1,
-		courier_owner3 = -1,
-		courier_owner4 = -1,
-		courier_owner5 = -1,
-		courier_owner6 = -1,
-		courier_owner7 = -1,
-		courier_owner8 = -1,
-		courier_owner9 = -1,
-		courier_owner10 = -1,
-	}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
-	PlayerTables:CreateTable("entity_attributes", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
-	PlayerTables:CreateTable("player_hero_entities", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
-	--[[Containers:CreateContainer({
-		layout             = {24},
-		range              = -1,
-		closeOnOrder       = false,
-		pids               = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23},
-		OnDragFrom         = function(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			Containers:print('Containers:OnDragFrom', playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			print(item:GetName(), "from")
-			local canChange = Containers.itemKV[item:GetAbilityName()].ItemCanChangeContainer
-			if toContainer._OnDragTo == false or canChange == 0 or playerID + 1 ~= fromSlot then return end
-			local fun = nil
-			if type(toContainer._OnDragTo) == "function" then
-				fun = toContainer._OnDragTo
-			end
-			if fun then
-				fun(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			else
-				Containers:OnDragTo(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			end
-			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "spellcrafting_update_slot_cad", {id = -1})
-		end,
-		OnDragTo           = function(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			Containers:print('Containers:OnDragTo', playerID, container, unit, item, fromSlot, toContainer, toSlot)
-			if  playerID + 1 ~= toSlot then
-				return false
-			end 
-			local item2 = toContainer:GetItemInSlot(toSlot)
-			local addItem = nil
-			if item2 and IsValidEntity(item2) and (item2:GetAbilityName() ~= item:GetAbilityName() or not item2:IsStackable() or not item:IsStackable()) then
-				if Containers.itemKV[item2:GetAbilityName()].ItemCanChangeContainer == 0 then
-					return false
-				end
-				toContainer:RemoveItem(item2)
-				addItem = item2
-			end
-			if toContainer:AddItem(item, toSlot) then
-				container:ClearSlot(fromSlot)
-				if addItem then
-					if container:AddItem(addItem, fromSlot) then
-						CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "spellcrafting_update_slot_cad", {id = item:GetEntityIndex()})
-						return true
-					else
-						toContainer:RemoveItem(item)
-						toContainer:AddItem(item2, toSlot, nil, true)
-						container:AddItem(item, fromSlot, nil, true)
-						return false
-					end
-				end
-				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "spellcrafting_update_slot_cad", {id = item:GetEntityIndex()})
-				return true
-			elseif addItem then
-				toContainer:AddItem(item2, toSlot, nil, true)
-			end
-			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "spellcrafting_update_slot_cad", {id = item:GetEntityIndex()})
-			return false
-		end,
-		OnLeftClick        = false,
-		OnRightClick       = false,
-		AddItemFilter      = function(container, item, slot)
-			return item:GetAbilityName() == "item_cad"
-		end,
-    })]]
-	Containers:SetItemLimit(50)
-	Containers:UsePanoramaInventory(true)
-	HeroSelection:PrepareTables()
-	PanoramaShop:InitializeItemTable()
-	DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
 end
 
 function CDOTAGamerules:SetKillGoal(iGoal)
@@ -350,59 +243,51 @@ function GameMode:PrecacheUnitQueueed(name)
 end
 
 function GameMode:GameModeThink()
-	for _,v in ipairs(HeroList:GetAllHeroes()) do
-		if v and not v:IsNull() then
-			PlayerTables:SetTableValue("entity_attributes", v:GetEntityIndex(), {
-				str = v:GetStrength(),
-				agi = v:GetAgility(),
-				int = v:GetIntellect(),
-				str_gain = v:GetStrengthGain(),
-				agi_gain = v:GetAgilityGain(),
-				int_gain = v:GetIntellectGain(),
-				attribute_primary = v:GetPrimaryAttribute(),
-				spell_amplify = v:GetSpellDamageAmplify(),
-				hero_name = GetFullHeroName(v),
-			})
-		end
-	end
-
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
-			if PlayerResource:GetSelectedHeroEntity(i) then
-				PlayerTables:SetTableValue("player_hero_entities", i, PlayerResource:GetSelectedHeroEntity(i):GetEntityIndex())
+			local hero = PlayerResource:GetSelectedHeroEntity(i)
+			if hero then
+				PlayerTables:SetTableValue("player_hero_entities", i, hero:GetEntityIndex())
+				hero:SetNetworkableEntityInfo("unit_name", GetFullHeroName(hero))
 			end
-			Gold:AddGold(i, CUSTOM_GOLD_PER_TICK)
+			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+				local gold_per_tick = CUSTOM_GOLD_PER_TICK
+				if hero then
+					if hero.talent_keys and hero.talent_keys.bonus_gold_per_minute then
+						gold_per_tick = gold_per_tick + hero.talent_keys.bonus_gold_per_minute / 60 * CUSTOM_GOLD_TICK_TIME
+					end
+					if hero.talent_keys and hero.talent_keys.bonus_xp_per_minute then
+						hero:AddExperience(hero.talent_keys.bonus_xp_per_minute / 60 * CUSTOM_GOLD_TICK_TIME, 0, false, false)  
+					end
+				end
+				Gold:AddGold(i, gold_per_tick)
+			end
 			if not IsPlayerAbandoned(i) then
-				if PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
+				if GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
 					PLAYER_DATA[i].AutoAbandonGameTime = nil
-				else
-					if PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
-						if not PLAYER_DATA[i].AutoAbandonGameTime then
-							PLAYER_DATA[i].AutoAbandonGameTime = Time() + DOTA_PLAYER_AUTOABANDON_TIME
-							GameRules:SendCustomMessage("#DOTA_Chat_DisconnectWaitForReconnect", i, -1)
-						end
-						local timeLeft = PLAYER_DATA[i].AutoAbandonGameTime - Time()
-						if not PLAYER_DATA[i].LastLeftNotify or timeLeft < PLAYER_DATA[i].LastLeftNotify - 60 then
-							PLAYER_DATA[i].LastLeftNotify = timeLeft
-							GameRules:SendCustomMessage("#DOTA_Chat_DisconnectTimeRemainingPlural", i, math.round(timeLeft/60))
-						end
-						if PlayerResource:GetConnectionState(i) ~= DOTA_CONNECTION_STATE_CONNECTED then
-							if timeLeft <= 0 then
-								GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandonedDisconnectedTooLong", i, -1)
-								MakePlayerAbandoned(i)
-							end
-						end
-					elseif PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
-						GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandoned", i, -1)
+				elseif GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
+					if not PLAYER_DATA[i].AutoAbandonGameTime then
+						PLAYER_DATA[i].AutoAbandonGameTime = GameRules:GetGameTime() + DOTA_PLAYER_AUTOABANDON_TIME
+						--GameRules:SendCustomMessage("#DOTA_Chat_DisconnectWaitForReconnect", i, -1)
+					end
+					local timeLeft = PLAYER_DATA[i].AutoAbandonGameTime - GameRules:GetGameTime()
+					if not PLAYER_DATA[i].LastLeftNotify or timeLeft < PLAYER_DATA[i].LastLeftNotify - 60 then
+						PLAYER_DATA[i].LastLeftNotify = timeLeft
+						--GameRules:SendCustomMessage("#DOTA_Chat_DisconnectTimeRemainingPlural", i, math.round(timeLeft/60))
+					end
+					if timeLeft <= 0 then
+						--GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandonedDisconnectedTooLong", i, -1)
 						MakePlayerAbandoned(i)
 					end
+				elseif GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
+					--GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandoned", i, -1)
+					MakePlayerAbandoned(i)
 				end
 			else
 				local gold = Gold:GetGold(i)
 				local allyCount = GetTeamPlayerCount(PlayerResource:GetTeam(i))
 				local goldPerAlly = math.floor(gold/allyCount)
-				local goldCanBeWasted = goldPerAlly * allyCount
-				Gold:RemoveGold(i, goldCanBeWasted)
+				Gold:RemoveGold(i, goldPerAlly * allyCount)
 				for ally = 0, 23 do
 					if PlayerResource:IsValidPlayerID(ally) and not IsPlayerAbandoned(ally) then
 						if PlayerResource:GetTeam(ally) == PlayerResource:GetTeam(i) then
@@ -413,8 +298,5 @@ function GameMode:GameModeThink()
 			end
 		end
 	end
-	
 	return CUSTOM_GOLD_TICK_TIME
 end
--- GameRules:Playtesting_UpdateAddOnKeyValues()
--- dota_create_fake_clients

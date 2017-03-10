@@ -1,52 +1,46 @@
 "AddonInfo"
 {
-    //5v5_abilityshop
-    "maps"          "5v5 5v5_custom_abilities"
+	"maps"          "5v5 4v4v4v4 5v5_custom_abilities 4v4v4v4_custom_abilities"
 	"5v5"
 	{
 		"MaxPlayers"		"10"
+		"TeamCount"			"2"
 	}
-    "5v5_custom_abilities"
-    {
-        "MaxPlayers"        "10"
-    }
-    "TeamCount"     "2"
+	"5v5_custom_abilities"
+	{
+		"MaxPlayers"		"10"
+		"TeamCount"			"2"
+	}
+	"4v4v4v4"
+	{
+		"MaxPlayers"		"16"
+		"TeamCount"			"4"
+	}
+	"4v4v4v4_custom_abilities"
+	{
+		"MaxPlayers"		"16"
+		"TeamCount"			"4"
+	}
 
-    "Default_Keys"
-    {
-        "01"
-        {
-            "Key" "ENTER"
-            "Command" "+EnterPressed"
-            "Name" "Chat"
-        }
-
-        "02"
-        {
-            "Key" "KP_ENTER"
-            "Command" "+EnterPressed"
-            "Name" "Chat"
-        }
-
-        "03"
-        {
-            "Key" "F4"
-            "Command" "+F4Pressed"
-            "Name" "Toggle Shop"
-        }
-
-        "04"
-        {
-            "Key" "F5"
-            "Command" "+F5Pressed"
-            "Name" "Quickbuy"
-        }
-
-        "05"
-        {
-            "Key" "F8"
-            "Command" "+F8Pressed"
-            "Name" "Buy sticky item"
-        }
-    }
+	"Default_Keys"
+	{
+		"01"
+		{
+			"Key" "F4"
+			"Command" "+F4Pressed"
+			"Name" "Toggle Shop"
+		}
+		"02"
+		{
+			"Key" "F5"
+			"Command" "+F5Pressed"
+			"Name" "Quickbuy"
+		}
+		"03"
+		{
+			"Key" "F8"
+			"Command" "+F8Pressed"
+			"Name" "Buy sticky item"
+		}
+	}
 }

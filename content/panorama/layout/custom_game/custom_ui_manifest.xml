@@ -11,33 +11,28 @@
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_worldpanels.xml" />
 		
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/minimalistic_hud.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/dynamic_minimap.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/containers/container_base.xml" />
 		
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/duel1x1call.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/playermessages.xml" />
-		<CustomUIElement type="HudTopBar" layoutfile="file://{resources}/layout/custom_game/arena_top_scoreboard.xml" />
+		<!-- <CustomUIElement type="HudTopBar" layoutfile="file://{resources}/layout/custom_game/arena_top_scoreboard.xml" /> -->
+		<CustomUIElement type="HudTopBar" layoutfile="file://{resources}/layout/custom_game/top_scoreboard.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_game_info.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/kills.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/holdout.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/panorama_shop.xml" />
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_talents.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/ability_shop.xml" />
-		
-		<!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/spellcrafting_table.xml" /> -->
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/in_game_chat.xml" />
+		<!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/dynamic_wearables.xml" /> -->
 
 		<CustomUIElement type="FlyoutScoreboard"    layoutfile="file://{resources}/layout/custom_game/arena_flyout_scoreboard.xml" />
 		<CustomUIElement type="EndScreen"           layoutfile="file://{resources}/layout/custom_game/arena_end_screen.xml" />
 
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hero_selection.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/metamorphosis_elixir.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hell_hero_change.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/heaven_hero_change.xml" />
 
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/player_profiles.xml" />
+		<!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/player_profiles.xml" /> -->
 
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/modmaker/modmaker.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_attachments.xml" /> 
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_attachments.xml" />
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/debug_panel.xml" />
+		<!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_talent_tooltip.xml" /> -->
 		<!-- <CustomUIElement type="GameSetup"           layoutfile="file://{resources}/layout/custom_game/team_select.xml" /> -->
 		
 		<!-- From Overthrow.

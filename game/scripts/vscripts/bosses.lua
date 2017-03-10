@@ -1,20 +1,23 @@
 if Bosses == nil then
 	Bosses = class({})
 	Bosses.MinimapPoints = {}
+	Bosses.NextVoteID = 0
+end
+
+function CDOTA_BaseNPC:IsBoss()
+	return self.GetUnitName ~= nil and string.find(self:GetUnitName(), "npc_arena_boss_") ~= nil
 end
 
 function Bosses:InitAllBosses()
+	CustomGameEventManager:RegisterListener("bosses_vote_for_item", Dynamic_Wrap(Bosses, "VoteForItem"))
+	PlayerTables:CreateTable("bosses_loot_drop_votes", {}, GetPlayersInTeam(team))
 	Bosses:SpawnStaticBoss("l1_v1")
 	Bosses:SpawnStaticBoss("l1_v2")
 	Bosses:SpawnStaticBoss("l2_v1")
 	Bosses:SpawnStaticBoss("l2_v2")
 	Bosses:SpawnStaticBoss("central")
-	Bosses:SpawnStaticBoss("heaven")
-	Bosses:SpawnStaticBoss("hell")
-end
-
-function IsBossEntity(unit)
-	return string.find(unit:GetUnitName(), "npc_arena_boss_")
+	Bosses:SpawnStaticBoss("freya")
+	Bosses:SpawnStaticBoss("zaken")
 end
 
 function Bosses:SpawnStaticBoss(name)
@@ -35,22 +38,110 @@ end
 function Bosses:RegisterKilledBoss(unit, team)
 	local unitname = unit:GetUnitName()
 	local bossname = string.gsub(unitname, "npc_arena_boss_", "")
+	Bosses:CreateBossLoot(unit, team)
 	local amount = unit:GetKeyValue("Bosses_GoldToAll")
-	local p1, p2 = CreateGoldNotificationSettings(amount)
 	DynamicMinimap:SetVisibleGlobal(Bosses.MinimapPoints[unit.SpawnerEntity], false)
-	
-	Notifications:TopToAll({text="#" .. unitname})
-	Notifications:TopToAll({text="#bosses_killed_p1", continue=true})
-	Notifications:TopToAll(CreateTeamNotificationSettings(team, true))
-	Notifications:TopToAll({text="#bosses_killed_p2", continue=true})
-	Notifications:TopToAll(p1)
-	Notifications:TopToAll(p2)
+	CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+		type = "generic",
+		text = "#custom_toast_BossKilled",
+		victimUnitName = unitname,
+		teamColor = team,
+		team = team,
+		gold = amount
+	})
 	for _,v in ipairs(GetPlayersInTeam(team)) do
 		Gold:ModifyGold(v, amount)
 	end
 	Timers:CreateTimer(unit:GetKeyValue("Bosses_RespawnDuration"), function()
 		Bosses:SpawnBossUnit(bossname, unit.SpawnerEntity)
 	end)
+end
+
+function Bosses:CreateBossLoot(unit, team)
+	local id = team .. "_" .. Bosses.NextVoteID
+	Bosses.NextVoteID = Bosses.NextVoteID + 1
+	local dropTables = PlayerTables:copy(DROP_TABLE[unit:GetUnitName()])
+
+	local totalDamage = 0
+	local damageByPlayers = {}
+	for pid, damage in pairs(unit.DamageReceived) do
+		if PlayerResource:IsValidPlayerID(pid) and not IsPlayerAbandoned(pid) and team == PlayerResource:GetTeam(pid) then
+			damageByPlayers[pid] = (damageByPlayers[pid] or 0) + damage
+		end
+		totalDamage = totalDamage + damage
+	end
+	local damagePcts = {}
+	for pid, damage in pairs(damageByPlayers) do
+		damagePcts[pid] = damage/totalDamage*100
+	end
+
+	local t = {
+		boss = unit:GetUnitName(),
+		killtime = GameRules:GetGameTime(),
+		time = 30,
+		damageByPlayers = damageByPlayers,
+		totalDamage = totalDamage,
+		damagePcts = damagePcts,
+		votes = {},
+		team = team
+	}
+	local itemcount = RandomInt(math.min(5, #dropTables), math.min(7, #dropTables))
+	while #t.votes < itemcount do
+		table.shuffle(dropTables)
+		for k,dropTable in ipairs(dropTables) do
+			if RollPercentage(dropTable.DropChance) then
+				table.insert(t.votes, {
+					item = dropTable.Item,
+					weight = dropTable.DamageWeightPct or 10,
+					votes = {}
+				})
+				table.remove(dropTables, k)
+				if #t.votes >= itemcount then
+					break
+				end
+			end
+		end
+	end
+	PlayerTables:SetTableValue("bosses_loot_drop_votes", id, t)
+	Timers:CreateTimer(30, function()
+		t = PlayerTables:GetTableValue("bosses_loot_drop_votes", id)
+		for _, group in pairs(t.votes) do
+			local selectedPlayers = {}
+			local bestPctLeft = -math.huge
+			if table.count(group.votes) > 0 then
+				for pid, s in pairs(group.votes) do
+					damagePcts[pid] = damagePcts[pid] or 0
+					local totalPointsAfterReduction = damagePcts[pid] - group.weight
+					if s and totalPointsAfterReduction >= bestPctLeft then
+						if totalPointsAfterReduction > bestPctLeft then
+							selectedPlayers = {}
+						end
+						table.insert(selectedPlayers, pid)
+						damagePcts[pid] = totalPointsAfterReduction
+						bestPctLeft = totalPointsAfterReduction
+					end
+				end
+			end
+			if #selectedPlayers > 0 then
+				local selectedPlayer = selectedPlayers[RandomInt(1, #selectedPlayers)]
+				print(selectedPlayer, "just rolled", group.item)
+				local hero = PlayerResource:GetSelectedHeroEntity(selectedPlayer)
+				if hero then
+					PanoramaShop:PushItem(selectedPlayer, hero, group.item, true)
+				end
+			end
+		end
+		PlayerTables:SetTableValue("bosses_loot_drop_votes", id, nil)
+	end)
+--	ContainersHelper:CreateLootBox(unit:GetAbsOrigin() + RandomVector(100), items)
+end
+
+function Bosses:VoteForItem(data)
+	local t = PlayerTables:GetTableValue("bosses_loot_drop_votes", data.voteid)
+	if t and t.votes and t.votes[tonumber(data.itemid)] and PlayerResource:GetTeam(data.PlayerID) == t.team then
+		t.votes[tonumber(data.itemid)].votes[data.PlayerID] = not t.votes[tonumber(data.itemid)].votes[data.PlayerID]
+		PlayerTables:SetTableValue("bosses_loot_drop_votes", data.voteid, t)
+	end
 end
 
 function Bosses:MakeBossAI(unit, name)
@@ -84,8 +175,43 @@ function Bosses:MakeBossAI(unit, name)
 				end
 			end
 		end]]
-	end
-	if name == "central" then
+	elseif name == "kel_thuzad" then
+		local boss_kel_thuzad_presence_of_death = unit:FindAbilityByName("boss_kel_thuzad_presence_of_death")
+		local boss_kel_thuzad_invulnerability = unit:FindAbilityByName("boss_kel_thuzad_invulnerability")
+		local boss_kel_thuzad_shadows = unit:FindAbilityByName("boss_kel_thuzad_shadows")
+		local boss_kel_thuzad_summon_undead = unit:FindAbilityByName("boss_kel_thuzad_summon_undead")
+		local boss_kel_thuzad_erebus = unit:FindAbilityByName("boss_kel_thuzad_erebus")
+		aiTable["abilityCastCallback"] = function(self)
+			if boss_kel_thuzad_invulnerability:IsFullyCastable() then
+				--self:UseAbility(boss_kel_thuzad_invulnerability)
+			end
+			if boss_kel_thuzad_erebus:IsFullyCastable() then
+				local unitsInRange = self:FindUnitsNearbyForAbility(boss_kel_thuzad_erebus)
+				local stacks = self.unit:GetModifierStackCount("modifier_boss_kel_thuzad_immortality", self.unit)
+				if #unitsInRange > 0 and stacks < 20 then
+					self:UseAbility(boss_kel_thuzad_erebus)
+				end
+			end
+			if boss_kel_thuzad_shadows:IsFullyCastable() then
+				local unitsInRange = self:FindUnitsNearbyForAbility(boss_kel_thuzad_shadows)
+				if #unitsInRange > 0 then
+					self:UseAbility(boss_kel_thuzad_shadows)
+				end
+			end
+			if boss_kel_thuzad_summon_undead:IsFullyCastable() then
+				local unitsInRange = self:FindUnitsNearbyForAbility(boss_kel_thuzad_summon_undead)
+				if #unitsInRange > 0 then
+					self:UseAbility(boss_kel_thuzad_summon_undead)
+				end
+			end
+			if boss_kel_thuzad_presence_of_death:IsFullyCastable() then
+				local unitsInRange = self:FindUnitsNearbyForAbility(boss_kel_thuzad_presence_of_death)
+				if #unitsInRange > 0 then
+					self:UseAbility(boss_kel_thuzad_presence_of_death)
+				end
+			end
+		end
+	elseif name == "central" then
 		profile = "tower"
 	end
 
@@ -94,3 +220,5 @@ end
 
 --[[local boss = CreateUnitByName("npc_arena_boss_" .. "freya", Vector(0), true, nil, nil, DOTA_TEAM_NEUTRALS)
 Bosses:MakeBossAI(boss, "freya")]]
+--local boss = CreateUnitByName("npc_arena_boss_kel_thuzad", Vector(0), true, nil, nil, DOTA_TEAM_NEUTRALS)
+--Bosses:MakeBossAI(boss, "kel_thuzad")

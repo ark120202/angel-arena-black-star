@@ -18,14 +18,3 @@ function StopAbility(keys)
 	UTIL_Remove(ability.thinker_dummy)
 	ability.thinker_dummy = nil
 end
-
-function DoDamage(keys)
-	local ability = keys.ability
-	ApplyDamage({
-		victim = keys.target,
-		attacker = keys.caster,
-		damage = keys.Damage,
-		damage_type = ability:GetAbilityDamageType(),
-		ability = ability
-	})
-end

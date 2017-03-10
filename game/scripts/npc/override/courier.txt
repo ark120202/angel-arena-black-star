@@ -1,0 +1,60 @@
+"DOTAAbilities"
+{
+	"item_courier"
+	{
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemCastOnPickup"				"1"
+	}
+	
+	"item_flying_courier"
+	{
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0"
+	}
+
+	"courier_go_to_secretshop"
+	{
+		"BaseClass"             		"courier_go_to_secretshop"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	"courier_transfer_items"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"handoff_distance"	"200"
+			}
+		}
+	}
+
+	"courier_take_stash_items"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"stash_pickup_distance"	"250"
+			}
+		}
+	}
+
+	"courier_take_stash_and_transfer_items"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"handoff_distance"	"200"
+			}
+		}
+	}
+}

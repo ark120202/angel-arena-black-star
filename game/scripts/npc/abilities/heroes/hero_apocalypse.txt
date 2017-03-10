@@ -1,0 +1,446 @@
+"DOTAAbilities"
+{
+	"apocalypse_agnis_touch"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/apocalypse_agnis_touch"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"LevelsBetweenUpgrades" 		"4"
+		"RequiredLevel"					"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_per_attack"	"1 1 2 2 3 3 4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ablaze_radius"		"450"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ablaze_max_damage_per_second"	"100 200 300 400 500 600 700"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ablaze_threshold_pct"	"30 40 50 55 60 65 70"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+		}
+
+		"Modifiers"
+		{
+			"modifier_apocalypse_agnis_touch"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_apocalypse/agnis_touch.lua"
+						"Function"		"StealArmor"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_apocalypse/agnis_touch.lua"
+						"Function"		"ReturnArmor"
+					}
+				}
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_apocalypse/agnis_touch.lua"
+						"Function"		"CheckAblaze"
+					}
+				}
+			}
+
+			"modifier_apocalypse_agnis_touch_armor"
+			{
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"1"
+				}
+			}
+
+			"modifier_apocalypse_agnis_touch_disarmor"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"-1"
+				}
+			}
+
+			"modifier_apocalypse_agnis_touch_ablaze"
+			{
+				"IsPurgable"		"0"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"				"TARGET"
+						"EffectName"			"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+						"EffectAttachType"		"start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"			"attach_origin"
+							"CASTER"			"attach_origin"
+						}
+						"ControlPoints"
+						{
+							"03"	"%ablaze_radius 0 0"
+						}
+					}
+				}
+
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"FireSound"
+					{
+						"Target"				"CASTER"
+						"EffectName"			"Hero_EmberSpirit.FlameGuard.Loop"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_apocalypse/agnis_touch.lua"
+						"Function"		"AuraDamage"
+					}
+				}
+			}
+		}
+	}
+
+	"apocalypse_king_slayer"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/apocalypse_king_slayer"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCooldown"				"30 25 20 17 14 12 10"
+		"AbilityManaCost"				"50 75 100 125 150 175 200"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCastRange"				"150"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_armor"	"20 40 70 100 130 150 180"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_reduction_pct" "50"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarmor_duration" "4.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"knockback_range"	"600"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"knockback_duration" "0.7"
+			}
+		}
+
+		"precache"
+		{
+			"particle"		"particles/econ/events/ti6/force_staff_ti6.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"Knockback"
+			{
+				"Target"            "TARGET"
+				"Center" 	        "CASTER"
+				"Distance"	        "%knockback_range"
+				"Duration"	        "%knockback_duration"
+				"Height"	        "0"
+				"IsFixedDistance"	"1"
+				"ShouldStun"        "1"	
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_apocalypse/king_slayer.lua"
+				"Function"		"ApplyDisarmor"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_apocalypse_king_slayer_knockback"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%disarmor_duration"
+				"EffectName"		"particles/econ/events/ti6/force_staff_ti6.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "-1"
+				}
+			}
+		}
+	}
+
+	"apocalypse_weapon_break"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/apocalypse_weapon_break"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"50 75 100 150 200 250 325"
+		"AbilityDamage"					"55 120 185 250 330 410 500"
+		"AbilityCastRange"				"300"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"2 2.5 3 3.5 4 4.5 5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_apocalypse_weapon_break"
+				"Target" 		"TARGET"
+			}
+
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_MAGICAL"
+				"Damage"		"%AbilityDamage"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"DOTA_Item.IronTalon.Activate"
+				"Target" 		"TARGET"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_apocalypse/weapon_break_armor_tear.lua"
+				"Function"		"StartCooldown"
+				"new"			"apocalypse_armor_tear"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_apocalypse_weapon_break"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+		
+				"EffectName"            "particles/generic_gameplay/generic_disarm.vpcf"
+				"EffectAttachType"      "follow_overhead"
+				
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"apocalypse_armor_tear"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/apocalypse_armor_tear"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"50 75 100 150 200 250 325"
+		"AbilityDamage"					"40 100 165 230 300 375 450"
+		"AbilityCastRange"				"300"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"2 2.5 3 3.5 4 4.5 5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"armor_cut_pct"		"10 20 30 40 50 60 80"
+			}
+		}
+
+		"precache"
+		{
+			"particle"		"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_1.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_apocalypse/weapon_break_armor_tear.lua"
+				"Function"		"ApplyStacks"
+			}
+
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_PHYSICAL"
+				"Damage"		"%AbilityDamage"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"DOTA_Item.IronTalon.Activate"
+				"Target" 		"TARGET"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_apocalypse/weapon_break_armor_tear.lua"
+				"Function"		"StartCooldown"
+				"new"			"apocalypse_weapon_break"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_apocalypse_armor_tear"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+		
+				"EffectName"            "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_1.vpcf"
+				"EffectAttachType"      "follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "-1"
+				}
+			}
+		}
+	}
+
+	"apocalypse_apocalypse"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"arena/apocalypse_apocalypse"
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint"				"0.5"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"150"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"magic_resistance_per_second_pct" "1"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_second_pct" "3 5 7 9 11 13 15"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed_per_second_pct" "1"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cleave_radius"		"225"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"30 40 50 60 70 80 90"
+			}
+		}
+
+		"precache"
+		{
+			"model"			"models/creeps/nian/nian_creep.vmdl"
+			"particle"		"particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_apocalypse_apocalypse"
+				"Target" 		"CASTER"
+				"Duration"		"%duration"
+			}
+		}
+	}
+}

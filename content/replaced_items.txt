@@ -27,3 +27,8 @@
 "item_tango", "item_tango_arena"
 "item_heavens_halberd", "item_heavens_halberd_arena"
 "item_bottle", "item_bottle_arena"
+"item_blade_mail", "item_blade_mail_3"
+"item_aether_lens", "item_aether_lens_arena"
+"item_ultimate_scepter", "item_ultimate_scepter_arena"
+"item_mekansm", "item_mekansm_2"
+"item_guardian_greaves", "item_guardian_greaves_arena"

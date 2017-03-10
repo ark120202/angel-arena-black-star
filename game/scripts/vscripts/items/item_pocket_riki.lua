@@ -39,7 +39,7 @@ end
 function ConsumeRiki(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	TrueKill(ability.RikiContainer, ability, ability.RikiContainer)
+	ability.RikiContainer:TrueKill(ability, ability.RikiContainer)
 	local buffsTime = ability.RikiContainer:GetRespawnTime()
 	local newItem = CreateItem("item_pocket_riki_consumed", caster, caster)
 	swap_to_item(caster, ability, newItem)

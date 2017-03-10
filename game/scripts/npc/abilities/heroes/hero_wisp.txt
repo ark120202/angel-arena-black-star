@@ -1,0 +1,1276 @@
+"DOTAAbilities"
+{
+	"wisp_tether_aghanims"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"wisp_tether"
+		"CastFilterRejectCaster" 		"1"
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"7"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.001 0.001 0.001 0.001 0.001 0.001 0.001"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12"
+		"AbilityDuration"				"12 14 16 18 20 22 24"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40 50 60 70 80 90 100"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900 1350 1500 1750 2000 2250 2500"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"1000 1450 1600 1850 2100 2350 2600"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movespeed"					"14 15 16 17 18 19 20"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tether_duration"			"12 14 16 18 20 22 24"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tether_heal_amp"			"1.5"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow"			"-100"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attackslow_tooltip"			"-100"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"0.75 1.25 1.75 2.25 2.75 3.25 3.75"
+			}
+			// Extra variables
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tether_line_radius"		"32"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tether_line_tick_interval"	"0.03"
+			}
+		}
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_tether.vpcf"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_tether_hit.vpcf"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_tether_slow.vpcf"
+		}
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_tether_caster_aghanims"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_wisp/tether.lua"
+				"Function"			"CastTether"
+				"Target"			"TARGET"
+								
+				"sub_ability_name"	"wisp_tether_break_aghanims"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_wisp/tether.lua"
+				"Function"			"OnProjectileHit"
+				"Target"			"TARGET"
+				
+				"slow_modifier"		"modifier_tether_slow_aghanims"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_tether_caster_aghanims"
+			{
+				"IsPurgable"		"0"
+				"Duration"	"%tether_duration"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed"
+				}
+				
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"		"Hero_Wisp.Tether"	// a loop sound
+						"Target"			"CASTER"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/tether.lua"
+						"Function"			"EndTether"
+						
+						"ally_modifier"		"modifier_tether_ally_aghanims"
+						"sub_ability_name"	"wisp_tether_break_aghanims"
+					}
+				
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/tether.lua"
+						"Function"			"StopSound"
+						"sound_name"		"Hero_Wisp.Tether"
+					}
+					
+					"FireSound"
+					{
+						"EffectName"		"Hero_Wisp.Tether.Stop"
+						"Target"			"CASTER"
+					}
+				}
+				
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"TrackCurrentHealth"
+					}
+				}
+				
+				"OnHealReceived"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"HealAlly"
+						"tether_heal_amp"	"%tether_heal_amp"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"TrackCurrentHealth"
+					}
+				}
+				
+				"OnHealthGained"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"HealAlly"
+						"tether_heal_amp"	"%tether_heal_amp"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"TrackCurrentHealth"
+					}
+				}
+				
+				"OnSpentMana"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"GiveManaToAlly"
+						"tether_heal_amp"	"%tether_heal_amp"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"TrackCurrentMana"
+					}
+				}
+				
+				"OnManaGained"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"GiveManaToAlly"
+						"tether_heal_amp"	"%tether_heal_amp"
+					}
+				
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"TrackCurrentMana"
+					}
+				}
+				
+				"ThinkInterval"		"0.03"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"TrackCurrentHealth"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"TrackCurrentMana"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/tether.lua"
+						"Function"		"CheckDistance"
+						
+						"radius"			"%radius"
+						"caster_modifier"	"modifier_tether_caster_aghanims"
+					}
+				}
+			}
+			
+			"modifier_tether_ally_aghanims"
+			{
+				"IsPurgable"		"0"
+				"IsHidden"			"0"
+				"Duration"	"%tether_duration"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed"
+				}
+				
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"		"Hero_Wisp.Tether.Target"
+						"Target"			"TARGET"
+					}
+					
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_wisp/wisp_tether.vpcf"
+						"EffectAttachType"	"attach_hitloc"
+						"Target"			"TARGET"
+						
+						"ControlPointEntities"
+						{
+							"CASTER"	"attach_hitloc"
+							"TARGET"	"attach_hitloc"
+						}
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/tether.lua"
+						"Function"			"RemoveFromTable"
+						"caster_modifier"	"modifier_tether_caster_aghanims"
+					}
+				}
+				
+				"ThinkInterval"			"%tether_line_tick_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/tether.lua"
+						"Function"			"FireTetherProjectile"
+						"Target"			"TARGET"
+						
+						"tether_line_radius"	"%tether_line_radius"
+						"tick_interval"			"%tether_line_tick_interval"
+					}
+				}
+			}
+			
+			"modifier_tether_slow_aghanims"
+			{
+				"IsDebuff"	"1"
+			
+				"Duration"	"%stun_duration"
+				
+				"EffectName"		"particles/units/heroes/hero_wisp/wisp_tether_slow.vpcf"
+				"EffectAttachType"	"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+				
+				"OnCreated"
+				{
+					
+					"FireSound"
+					{
+						"EffectName"	"Hero_Wisp.Tether.Stun"
+						"Target"		"TARGET"
+					}
+				}
+			}
+		}
+	}
+
+	"wisp_tether_break_aghanims"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"wisp_tether_break"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1.0"
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_tether_caster_aghanims"
+			}
+		}
+		
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SetMaxLevel"
+			}
+		}
+	}
+
+	"wisp_spirits_aghanims"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"wisp_spirits"
+		"MaxLevel"	"7"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 19.0 18.0 17.0 16.0 15.0 14.0"
+		"AbilityDuration"				"19"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"120 130 140 150 160 170 180"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"creep_damage"				"10 20 30 40 50 60 100"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"revolution_time"			"5.0 5.0 5.0 5.0 5.0 5.0 5.0"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_range"					"100 100 100 100 100 100 100"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_range"					"1000 1000 1000 1000 1000 1000 1000"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hero_hit_radius"			"70 70 70 70 70 70 70"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"explode_radius"			"300 300 300 300 300 300 300"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hit_radius"				"150 150 150 150 150 150 150"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"default_radius"			"150"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spirit_movement_rate"		"250 250 250 250 250 250 250"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"spirit_duration"			"19.0 19.0 19.0 19.0 19.0 19.0 19.0"
+			}
+			// Extra variables
+			"13"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"spirit_summon_interval"	"1.0"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"spirit_turn_rate"			"150"
+			}
+			"15"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"vision_duration"			"3.0"
+			}
+			"16"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"think_interval"			"0.03"
+			}
+			"17"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"creep_damage_interval"		"0.48"		// == 360 / %spirit_turn_rate / %num_spirits
+			}
+		}
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_guardian_.vpcf"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_guardian_explosion.vpcf"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_guardian_explosion_small.vpcf"
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_wisp/spirits.lua"
+				"Function"			"CastSpirits"
+				"default_radius"	"%default_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_spirits_caster_aghanims"
+			{
+				"Duration"		"%spirit_duration"
+			
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"		"Hero_Wisp.Spirits.Loop"
+						"Target"			"CASTER"
+					}
+				}
+				
+				"ThinkInterval"		"%think_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/spirits.lua"
+						"Function"			"ThinkSpirits"
+						
+						"think_interval"			"%think_interval"
+						
+						"spirit_summon_interval"	"%spirit_summon_interval"
+						"spirit_turn_rate"			"%spirit_turn_rate"
+						
+						"min_range"					"%min_range"
+						"max_range"					"%max_range"
+						"spirit_movement_rate"		"%spirit_movement_rate"
+						
+						"caster_modifier"			"modifier_spirits_caster_aghanims"
+						
+						"spirit_particle_name"		"particles/units/heroes/hero_wisp/wisp_guardian_.vpcf"
+						"spirit_modifier"			"modifier_spirits_spirit_aghanims"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/spirits.lua"
+						"Function"			"EndSpirits"
+						
+						"spirit_modifier"	"modifier_spirits_spirit_aghanims"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/spirits.lua"
+						"Function"			"StopSound"
+						"sound_name"		"Hero_Wisp.Spirits.Loop"
+					}
+				}
+			}
+			
+			"modifier_spirits_spirit_aghanims"
+			{
+				"Aura"			"modifier_spirits_creep_damage_aghanims"
+				"Aura_Radius"	"%hit_radius"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_BASIC"
+				
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/spirits.lua"
+						"Function"		"RemoveSpiritParticle"
+					}
+				}
+
+				"ThinkInterval"  "0.03"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/spirits.lua"
+						"Function"		"ExplodeSpirit"
+						
+						"spirit_modifier"	"modifier_spirits_spirit_aghanims"
+						"explosion_sound"	"Hero_Wisp.Spirits.Target"
+					}
+				}
+			}
+			
+			"modifier_spirits_creep_damage_aghanims"
+			{
+				"Duration"	"0.03"
+				"IsHidden"	"1"
+				
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"		"Hero_Wisp.Spirits.TargetCreep"
+						"Target"			"TARGET"
+					}
+					
+					"FireEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_wisp/wisp_guardian_explosion_small.vpcf"
+						"EffectAttachType"	"attach_hitloc"
+						"Target"			"TARGET"
+					}
+					
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%creep_damage"
+					}
+				}
+				
+				"ThinkInterval"		"%creep_damage_interval"
+				"OnIntervalThink"
+				{
+					"FireSound"
+					{
+						"EffectName"		"Hero_Wisp.Spirits.TargetCreep"
+						"Target"			"TARGET"
+					}
+					
+					"FireEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_wisp/wisp_guardian_explosion_small.vpcf"
+						"EffectAttachType"	"attach_hitloc"
+						"Target"			"TARGET"
+					}
+					
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%creep_damage"
+					}
+				}
+			}
+		}
+	}	
+
+	"wisp_spirits_in_aghanims"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"wisp_spirits_in"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_wisp/spirits.lua"
+				"Function"		"ToggleOn"
+				
+				"spirit_movement"	"-1"
+				"opposite_ability"	"wisp_spirits_out_aghanims"
+			}
+		}
+		
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_wisp/spirits.lua"
+				"Function"		"ToggleOff"
+			}
+		}
+		
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SetMaxLevel"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SetAbilityActivated"
+				"Activated"		"0"
+			}
+		}
+	}
+
+	"wisp_spirits_out_aghanims"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"wisp_spirits_out"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_wisp/spirits.lua"
+				"Function"		"ToggleOn"
+				
+				"spirit_movement"	"1"
+				"opposite_ability"	"wisp_spirits_in_aghanims"
+			}
+		}
+		
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_wisp/spirits.lua"
+				"Function"		"ToggleOff"
+			}
+		}
+		
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SetMaxLevel"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SetAbilityActivated"
+				"Activated"		"0"
+			}
+		}
+	}
+
+	"wisp_overcharge_aghanims"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityTextureName"			"wisp_overcharge"
+		"MaxLevel"	"7"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"50 60 70 80 90 100 110"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage_pct"			"-5 -10 -15 -20 -25 -30 -40"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"drain_interval"			"0.2 0.2 0.2 0.2 0.2 0.2 0.2"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"drain_pct"					"0.045"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"drain_pct_tooltip"			"4.5 4.5 4.5 4.5 4.5 4.5 4.5"
+			}
+		}
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_overcharge.vpcf"
+		}
+		
+		"OnToggleOn"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_overcharge_drain_aghanims"
+				"Target"		"CASTER"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_overcharge_check_tether_aghanims"
+				"Target"		"CASTER"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_overcharge_buff_aghanims"
+				"Target"		"CASTER"
+			}
+		}
+		
+		"OnToggleOff"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_overcharge_drain_aghanims"
+				"Target"		"CASTER"
+			}
+			
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_overcharge_check_tether_aghanims"
+				"Target"		"CASTER"
+			}
+			
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_overcharge_buff_aghanims"
+				"Target"		"CASTER"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_overcharge_drain_aghanims"
+			{
+				"IsHidden"	"1"
+			
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Wisp.Overcharge"
+						"Target"		"CASTER"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/overcharge.lua"
+						"Function"			"StopSound"
+						"sound_name"		"Hero_Wisp.Overcharge"
+					}
+				}
+				
+				"ThinkInterval"		"%drain_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/overcharge.lua"
+						"Function"			"TickDrain"
+						
+						"drain_interval"	"%drain_interval"
+						"drain_pct"			"%drain_pct"
+					}
+				}
+			}
+			
+			"modifier_overcharge_check_tether_aghanims"
+			{
+				"IsHidden"	"1"
+				
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/overcharge.lua"
+						"Function"			"GrabTetherAbility"
+						
+						"tether_ability_name"	"wisp_tether_aghanims"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/overcharge.lua"
+						"Function"			"CheckTetheredAlly"
+						
+						"tether_ally_property_name"		"tether_allies"		// We can access the tethered ally through "tether_ability[tether_ally_property_name]"
+						"buff_modifier"					"modifier_overcharge_buff_aghanims"
+					}
+				}
+				
+				"ThinkInterval"		"0.03"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/overcharge.lua"
+						"Function"			"CheckTetheredAlly"
+						
+						"tether_ally_property_name"		"tether_allies"
+						"buff_modifier"					"modifier_overcharge_buff_aghanims"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/overcharge.lua"
+						"Function"			"RemoveOverchargeFromAlly"
+						
+						"buff_modifier"		"modifier_overcharge_buff_aghanims"
+					}
+				}
+			}
+		
+			"modifier_overcharge_buff_aghanims"
+			{
+				"IsBuff"	"1"
+				"Duration"	"-1"
+				
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_wisp/wisp_overcharge.vpcf"
+						"EffectAttachType"	"attach_hitloc"
+						"Target"			"TARGET"
+						
+						"ControlPointEntities"
+						{
+							"TARGET"	"attach_hitloc"
+						}
+					}
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%bonus_damage_pct"
+				}
+			}
+		}
+	}
+
+	"wisp_relocate_aghanims"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"wisp_relocate"
+		"MaxLevel"	"7"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90.0 75.0 60.0 50.0 40.0 30.0 20.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cast_delay"				"2.5 2.25 2.0 1.75 1.5 1.25 1.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"return_time"				"12.0 12.0 12.0 12.0 12.0 12.0 12.0"
+			}
+			// Extra variables
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"destroy_tree_radius"		"300"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"vision_radius"				"64"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"extra_tether_duration"		"2.0"
+			}
+		}
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_relocate_channel.vpcf"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_relocate_marker.vpcf"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_relocate_marker_endpoint.vpcf"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_relocate_teleport.vpcf"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_relocate_timer.vpcf"
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_Wisp.Relocate"
+				"Target"			"CASTER"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_wisp/relocate.lua"
+				"Function"			"CastRelocate"
+				"Target"			"POINT"
+				
+				"tether_ability"				"wisp_tether_aghanims"
+				"tether_modifier"				"modifier_tether_caster_aghanims"
+				"tether_ally_property_name"		"tether_allies"		// We can access the tethered ally through "tether_ability[tether_ally_property_name]"
+				"tether_ally_modifier"			"modifier_tether_ally_aghanims"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_relocate_channel_aghanims"
+				"Target"			"CASTER"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_relocate_channel_aghanims"
+			{
+				"Duration"	"%cast_delay"
+				
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_wisp/wisp_relocate_channel.vpcf"
+						"EffectAttachType"	"attach_hitloc"
+						"Target"			"TARGET"
+						
+						"ControlPointEntities"
+						{
+							"TARGET"	"attach_hitloc"
+						}
+					}
+				
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/relocate.lua"
+						"Function"		"CreateMarkerEndpoint"
+						
+						"endpoint_particle"		"particles/units/heroes/hero_wisp/wisp_relocate_marker_endpoint.vpcf"
+						
+						"vision_radius"			"%vision_radius"
+						"vision_duration"		"%cast_delay"
+					}
+				}
+				
+				"OnStateChanged"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/relocate.lua"
+						"Function"			"CheckToInterrupt"
+						
+						"channel_modifier"	"modifier_relocate_channel_aghanims"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/relocate.lua"
+						"Function"		"DestroyMarkerEndpoint"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/relocate.lua"
+						"Function"		"TryToTeleport"
+						
+						"timer_modifier"	"modifier_relocate_timer_aghanims"
+					}
+				}
+			}
+			
+			"modifier_relocate_return_aghanims"
+			{
+				// Visible from otheres as compared with modifier_relocate_timer_aghanims
+			}
+			
+			"modifier_relocate_timer_aghanims"
+			{
+				"IsHidden"	"1"
+				"Duration"	"%return_time"		// Timer should be hidden
+				
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_relocate_return_aghanims"
+						"Target"		"TARGET"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/relocate.lua"
+						"Function"		"Teleportation_PreDestroyTree"
+						
+						"tether_ability"				"wisp_tether_aghanims"
+						"tether_modifier"				"modifier_tether_caster_aghanims"
+						"tether_ally_property_name"		"tether_allies"
+						"tether_ally_modifier"			"modifier_tether_ally_aghanims"
+						"tether_duration"				"%return_time + %extra_tether_duration"
+						
+						"teleport_particle"		"particles/units/heroes/hero_wisp/wisp_relocate_teleport.vpcf"
+					}
+					
+					"DestroyTrees"
+					{
+						"Target"		"CASTER"
+						"Radius"		"%destroy_tree_radius"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/relocate.lua"
+						"Function"		"Teleportation_PostDestroyTree"
+						
+						"return_time"		"%return_time"
+						
+						"marker_particle"	"particles/units/heroes/hero_wisp/wisp_relocate_marker.vpcf"
+						"timer_particle"	"particles/units/heroes/hero_wisp/wisp_relocate_timer.vpcf"
+					}
+					
+					"FireSound"
+					{
+						"EffectName"	"Hero_Wisp.ReturnCounter"
+						"Target"		"CASTER"
+					}
+				}
+				
+				"ThinkInterval"		"1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/relocate.lua"
+						"Function"		"UpdateTimer"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/relocate.lua"
+						"Function"		"TryReturningTeleportation"
+						
+						"returning_modifier"	"modifier_relocate_returning_teleport_aghanims"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_wisp/relocate.lua"
+						"Function"			"StopSound"
+						"Target"			"CASTER"
+						"sound_name"		"Hero_Wisp.ReturnCounter"
+					}
+					
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_relocate_return_aghanims"
+						"Target"		"TARGET"
+					}
+				}
+			}
+			
+			"modifier_relocate_returning_teleport_aghanims"
+			{
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/relocate.lua"
+						"Function"		"ReturningTeleportation_PreDestroyTree"
+						
+						"tether_ability"				"wisp_tether_aghanims"
+						"tether_modifier"				"modifier_tether_caster_aghanims"
+						"tether_ally_property_name"		"tether_allies"
+						
+						"teleport_particle"		"particles/units/heroes/hero_wisp/wisp_relocate_teleport.vpcf"
+					}
+					
+					"DestroyTrees"
+					{
+						"Target"		"CASTER"
+						"Radius"		"%destroy_tree_radius"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_wisp/relocate.lua"
+						"Function"		"ReturningTeleportation_PostDestroyTree"
+					}
+					
+					"FireSound"
+					{
+						"EffectName"	"Hero_Wisp.Return"
+						"Target"		"CASTER"
+					}
+					
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_relocate_returning_teleport_aghanims"
+						"Target"		"CASTER"
+					}
+				}
+			}
+		}
+	}
+}

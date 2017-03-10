@@ -42,11 +42,11 @@ SPAWNER_SETTINGS = {
 				{
 					[-1] = "npc_dota_neutral_medium_variant1",
 					[0] = "models/heroes/lone_druid/spirit_bear.vmdl",
-					[10] = "models/items/lone_druid/bear/dark_wood_bear_brown/dark_wood_bear_brown.vmdl",
-					[20] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
-					[30] = "models/items/lone_druid/bear/dark_wood_bear/dark_wood_bear.vmdl",
-					[40] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
-					[50] = "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl",
+					--[10] = "models/items/lone_druid/bear/dark_wood_bear_brown/dark_wood_bear_brown.vmdl",
+					--[20] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
+					[20] = "models/items/lone_druid/bear/dark_wood_bear/dark_wood_bear.vmdl",
+					--[40] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
+					[40] = "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl",
 					[60] = "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl",						
 				}
 			},
@@ -141,3 +141,4 @@ DEFAULT_MANA_REGEN_PER_INT = 0.04
 DEFAULT_ARMOR_PER_AGI = 0.14
 DEFAULT_ATKSPD_PER_AGI = 1
 COURIER_RESPAWN_TIME = 180
+MAP_LENGTH = 8192

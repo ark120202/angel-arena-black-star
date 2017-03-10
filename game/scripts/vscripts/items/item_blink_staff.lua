@@ -73,8 +73,7 @@ end
 function modifier_item_blink_staff_damage_cooldown(keys)
 	local attacker = keys.attacker
 	if attacker then
-		local attacker_name = attacker:GetUnitName()
-		if keys.Damage > keys.blink_damage_to_cooldown and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or IsBossEntity(attacker)) then
+		if keys.Damage > keys.blink_damage_to_cooldown and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or attacker:IsBoss()) then
 			if keys.ability:GetCooldownTimeRemaining() < keys.BlinkDamageCooldown then
 				keys.ability:StartCooldown(keys.BlinkDamageCooldown)
 			end
@@ -88,10 +87,12 @@ function CreatePfx(keys)
 	local ability = keys.ability
 
 	if target ~= caster then
-		local pfx = ParticleManager:CreateParticleForTeam("particles/econ/courier/courier_trail_05/courier_trail_05.vpcf", PATTACH_ABSORIGIN_FOLLOW, target, caster:GetTeamNumber())
-		ParticleManager:SetParticleControl(pfx, 15, Vector(20, 0, 255))
 		if not ability.Pfxes then ability.Pfxes = {} end
-		ability.Pfxes[target:GetEntityIndex()] = pfx
+		if ability.Pfxes[target] then
+			ParticleManager:DestroyParticle(ability.Pfxes[target], false)
+		end
+		ability.Pfxes[target] = ParticleManager:CreateParticleForTeam("particles/econ/courier/courier_trail_05/courier_trail_05.vpcf", PATTACH_ABSORIGIN_FOLLOW, target, caster:GetTeamNumber())
+		ParticleManager:SetParticleControl(ability.Pfxes[target], 15, Vector(20, 0, 255))
 	end
 end
 
@@ -99,7 +100,7 @@ function DestroyPfx(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	if ability.Pfxes and ability.Pfxes[target:GetEntityIndex()] then
-		ParticleManager:DestroyParticle(ability.Pfxes[target:GetEntityIndex()], false)
+	if ability.Pfxes and ability.Pfxes[target] then
+		ParticleManager:DestroyParticle(ability.Pfxes[target], false)
 	end
 end

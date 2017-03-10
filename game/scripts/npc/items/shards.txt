@@ -1,0 +1,758 @@
+"DOTAAbilities"
+{
+	"item_shard_str_small"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10010"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_str_small"
+		"ItemCost"						"2000"
+		"ItemShopTags"					"str;stat;shard"
+		"ItemQuality"					"uncommon"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_str"							"5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"str"			"%bonus_str"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_str_medium"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10011"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_str_medium"
+		"ItemCost"						"10000"
+		"ItemShopTags"					"str;stat;shard"
+		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_str"							"25"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"str"			"%bonus_str"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_str_large"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10012"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_str_large"
+		"ItemCost"						"20000"
+		"ItemShopTags"					"str;stat;shard"
+		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_str"							"50"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"str"			"%bonus_str"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_str_extreme"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10013"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_str_extreme"
+		"ItemCost"						"40000"
+		"ItemShopTags"					"str;stat;shard"
+		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_str"							"100"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"str"			"%bonus_str"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_agi_small"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10014"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_agi_small"
+		"ItemCost"						"2000"
+		"ItemShopTags"					"agi;stat;shard"
+		"ItemQuality"					"uncommon"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_agi"							"5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"agi"			"%bonus_agi"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_agi_medium"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10015"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_agi_medium"
+		"ItemCost"						"10000"
+		"ItemShopTags"					"agi;stat;shard"
+		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_agi"							"25"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"agi"			"%bonus_agi"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_agi_large"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10016"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_agi_large"
+		"ItemCost"						"20000"
+		"ItemShopTags"					"agi;stat;shard"
+		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_agi"							"50"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"agi"			"%bonus_agi"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_agi_extreme"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10017"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_agi_extreme"
+		"ItemCost"						"40000"
+		"ItemShopTags"					"agi;stat;shard"
+		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_agi"							"100"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"agi"			"%bonus_agi"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_int_small"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10018"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_int_small"
+		"ItemCost"						"2000"
+		"ItemShopTags"					"int;stat;shard"
+		"ItemQuality"					"uncommon"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_int"							"5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"int"			"%bonus_int"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_int_medium"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10019"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_int_medium"
+		"ItemCost"						"10000"
+		"ItemShopTags"					"int;stat;shard"
+		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_int"							"25"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"int"			"%bonus_int"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_int_large"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10020"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_int_large"
+		"ItemCost"						"20000"
+		"ItemShopTags"					"int;stat;shard"
+		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_int"							"50"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"int"			"%bonus_int"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_int_extreme"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10021"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_int_extreme"
+		"ItemCost"						"40000"
+		"ItemShopTags"					"int;stat;shard"
+		"ItemQuality"					"legendary"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_int"							"100"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"int"			"%bonus_int"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_primal_small"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10022"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_primal_small"
+		"ItemCost"						"6000"
+		"ItemShopTags"					"stats;stat;shard"
+		"ItemQuality"					"uncommon"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_stats"							"5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"str"			"%bonus_stats"
+				"agi"			"%bonus_stats"
+				"int"			"%bonus_stats"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_primal_medium"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10023"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_primal_medium"
+		"ItemCost"						"30000"
+		"ItemShopTags"					"stats;stat;shard"
+		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_stats"							"25"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"str"			"%bonus_stats"
+				"agi"			"%bonus_stats"
+				"int"			"%bonus_stats"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_primal_large"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10024"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_primal_large"
+		"ItemCost"						"60000"
+		"ItemShopTags"					"stats;stat;shard"
+		"ItemQuality"					"rare"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_stats"							"50"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddStat"
+				"str"			"%bonus_stats"
+				"agi"			"%bonus_stats"
+				"int"			"%bonus_stats"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_level"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10025"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_level"
+		"ItemCost"						"1250"
+		"ItemShopTags"					"experience;level;shard"
+		"ItemQuality"					"rare"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddLevel"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_attackspeed"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10026"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_attackspeed"
+		"ItemCost"						"2000"
+		"ItemShopTags"					"as;attackspeed;shard"
+		"ItemQuality"					"rare"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_attackspeed"							"50"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddAttackspeedModifier"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+}

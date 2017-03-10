@@ -9,14 +9,14 @@ function CreateMissile(keys)
 	local direction = caster:GetForwardVector()
 	local position = caster:GetAbsOrigin() + starting_distance * direction
 	
-	local missile = CreateUnitByName("npc_dota_gyrocopter_homing_missile", position, true, caster, nil, caster:GetTeam())
+	local missile = CreateUnitByName("npc_dota_gyrocopter_homing_missile", position, true, caster, caster:GetPlayerOwner(), caster:GetTeam())
 	missile.target = target
 	missile.starting_position = position
 	missile.level = ability:GetLevel() - 1
 	missile.hits_to_kill = ability:GetLevelSpecialValueFor( "hits_to_kill_tooltip", ability:GetLevel() - 1 )
 	missile.hit = false
 	ability:ApplyDataDrivenModifier(caster, missile, "modifier_homing_missile_arena", {})
-	missile:SetOwner(caster)
+--	missile:SetOwner(caster)
 	missile.time_passed = 0
 	local particle = ParticleManager:CreateParticle(keys.particle, PATTACH_ABSORIGIN_FOLLOW, missile) 
 	ParticleManager:SetParticleControlEnt(particle, 1, missile, PATTACH_POINT_FOLLOW, "attach_hitloc", missile:GetAbsOrigin(), true)
@@ -67,6 +67,7 @@ function MoveMissile(keys)
 				end
 				missile:ForceKill(false)
 			else
+				print("rotate")
 				missile:SetForwardVector(Vector(direction.x/2, direction.y/2, -1))
 				local move_duration = math.modf(missile.time_passed - pre_flight_time)
 				speed = speed + acceleration * move_duration

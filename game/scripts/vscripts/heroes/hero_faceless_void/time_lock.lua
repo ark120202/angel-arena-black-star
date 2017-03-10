@@ -5,10 +5,10 @@ function TimeLock(keys)
 	local skills = {}
 	local bonus_cooldown = ability:GetLevelSpecialValueFor("bonus_cooldown", ability:GetLevel() - 1)
 	if not caster:IsIllusion() then
-		if target:IsRealHero() or IsBossEntity(target) then
+		if target:IsRealHero() or target:IsBoss() then
 			for i = 0, target:GetAbilityCount() - 1 do
 				local skill = target:GetAbilityByIndex(i)
-				if skill and not skill:IsHidden() and skill:GetName() ~= "attribute_bonus_arena" then
+				if skill and not skill:IsHidden() then
 					table.insert(skills, skill)
 				end
 			end

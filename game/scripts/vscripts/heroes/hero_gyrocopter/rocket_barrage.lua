@@ -1,8 +1,8 @@
 function RocketBarrage(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	caster:SpendMana(keys.mana, ability)
-	if caster:GetMana() < keys.mana then
+	caster:SpendMana(keys.mana * keys.interval, ability)
+	if caster:GetMana() < keys.mana * keys.interval then
 		ability:ToggleAbility()
 		caster:RemoveModifierByName("modifier_rocket_barrage_arena")
 	end

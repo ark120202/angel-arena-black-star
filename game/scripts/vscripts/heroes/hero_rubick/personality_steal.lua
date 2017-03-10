@@ -30,17 +30,19 @@ function SpellSteal(keys)
 	if caster:HasModifier("modifier_rubick_personality_steal") then
 		ability:EndCooldown()
 		ability:RefundManaCost()
+		return
 	end
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_rubick_personality_steal", {})
 	caster.rubick_spell_steal = {
-		level = ability:GetLevel(),
 		model = caster:GetModelName(),
-		model_scale = caster:GetModelScale()
+		model_scale = caster:GetModelScale(),
+		attack_capability = caster:GetAttackCapability(),
+		primary_attribute = caster:GetPrimaryAttribute(),
 	}
-	UTIL_Remove(ability)
+	ability:SetHidden(true)
 	for i = 0, caster:GetAbilityCount() - 1 do
 		local a = caster:GetAbilityByIndex(i)
-		if a then
+		if a and a ~= ability then
 			UTIL_Remove(a)
 		end
 	end
@@ -48,39 +50,53 @@ function SpellSteal(keys)
 	caster:SetModel(model)
 	caster:SetOriginalModel(model)
 	caster:SetModelScale(target:GetModelScale())
+	caster:SetAttackCapability(target:GetAttackCapability())
+	caster:SetRangedProjectileName(target:GetKeyValue("ProjectileModel"))
+	caster:AddNewModifier(caster, ability, "modifier_set_attack_range", {AttackRange = target:GetAttackRange()})
+	caster:SetPrimaryAttribute(target:GetPrimaryAttribute())
+
+	caster:CalculateStatBonus()
+	local targetname = target:GetFullName()
 	Timers:CreateTimer(0.03, function()
-		for i = 0, target:GetAbilityCount() - 1 do
-			local a = target:GetAbilityByIndex(i)
-			if a and a:GetAbilityName() ~= "rubick_personality_steal" then
-				ClearFalseInnateModifiers(caster, caster:AddAbility(a:GetAbilityName()))
+		local hc = NPC_HEROES_CUSTOM[targetname]
+		if hc then
+			for k,v in pairsByKeys(hc) do
+				if string.starts(k, "Ability") and v ~= "" then
+					AddNewAbility(caster, v, true)
+				end
 			end
 		end
 		caster:CalculateStatBonus()
-		PlayerResource:RefreshSelection()
 	end)
-	caster:SetAbilityPoints(caster:GetLevel())
+	
+	caster:ResetAbilityPoints()
 end
 
 function RemoveSpell(keys)
 	local caster = keys.caster
+	local ability = keys.ability
 	for i = 0, caster:GetAbilityCount() - 1 do
 		local a = caster:GetAbilityByIndex(i)
-		if a then
+		if a and a ~= ability then
+			if a:GetAbilityName() == "broodmother_spin_web" then
+				local player = caster:GetPlayerOwner()
+				for _,v in ipairs(Entities:FindAllByName("npc_dota_broodmother_web")) do
+					if v:GetPlayerOwner() == player then
+						UTIL_Remove(v)
+					end
+				end
+			end
 			RemoveAbilityWithModifiers(caster, a)
 		end
 	end
-	PlayerResource:RefreshSelection()
-	local newlevel = caster.rubick_spell_steal.level
-	Timers:CreateTimer(0, function()
-		PrecacheItemByNameAsync("rubick_personality_steal", function()
-			local rubick_personality_steal = caster:AddAbility("rubick_personality_steal")
-			rubick_personality_steal:SetLevel(newlevel)
-			PlayerResource:RefreshSelection()
-		end)
-	end)
+	ability:SetHidden(false)
 	caster:SetModel(caster.rubick_spell_steal.model)
 	caster:SetOriginalModel(caster.rubick_spell_steal.model)
 	caster:SetModelScale(caster.rubick_spell_steal.model_scale)
+	caster:SetAttackCapability(caster.rubick_spell_steal.attack_capability)
+	caster:SetRangedProjectileName(caster:GetKeyValue("ProjectileModel"))
+	caster:RemoveModifierByNameAndCaster("modifier_set_attack_range", caster)
+	caster:SetPrimaryAttribute(caster.rubick_spell_steal.primary_attribute)
 	caster.rubick_spell_steal = nil
-	caster:SetAbilityPoints(caster:GetLevel())
+	caster:ResetAbilityPoints()
 end

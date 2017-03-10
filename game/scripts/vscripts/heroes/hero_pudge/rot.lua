@@ -3,7 +3,7 @@ function Rot(keys)
 	local ability = keys.ability
 	local damage = ability:GetLevelSpecialValueFor("rot_damage", ability:GetLevel() - 1) * ability:GetLevelSpecialValueFor("rot_tick", ability:GetLevel() - 1)
 	local radius = ability:GetAbilitySpecial("rot_radius")
-	local passive_stacks = caster:GetModifierStackCount("modifier_modifier_pudge_flesh_heap_arena_stack", caster)
+	local passive_stacks = caster:GetModifierStackCount("modifier_pudge_flesh_heap_arena_stack", caster)
 	if passive_stacks and passive_stacks > 0 then
 		local flesh_heap = caster:FindAbilityByName("pudge_flesh_heap_arena")
 		if flesh_heap and flesh_heap:GetLevel() > 0 then
@@ -22,7 +22,7 @@ function CreateParticles(keys)
 	local target = keys.target
 	local ability = keys.ability
 	local radius = ability:GetAbilitySpecial("rot_radius")
-	local passive_stacks = caster:GetModifierStackCount("modifier_modifier_pudge_flesh_heap_arena_stack", caster)
+	local passive_stacks = caster:GetModifierStackCount("modifier_pudge_flesh_heap_arena_stack", caster)
 	if passive_stacks and passive_stacks > 0 then
 		local flesh_heap = caster:FindAbilityByName("pudge_flesh_heap_arena")
 		if flesh_heap and flesh_heap:GetLevel() > 0 then

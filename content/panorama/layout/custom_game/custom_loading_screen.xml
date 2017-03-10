@@ -1,30 +1,17 @@
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/team_select.css" />
 		<include src="file://{resources}/styles/custom_loading_screen.css" />
-		<include src="file://{resources}/styles/custom_loading_screen_movie.css" />
 	</styles>
-	<script>
-		function CheckStartable() {
-			var player = Game.GetLocalPlayerInfo()
-			if (player == null) {
-				$.Schedule(0.2, CheckStartable)
-			} else {
-				$("#loading_base").RemoveAndDeleteChildren()
-				$("#movie_base").BLoadLayout("file://{resources}/layout/custom_game/custom_loading_screen_movie.xml", true, true)
-			}
-		}
-		(function() {
-			$.Schedule(0.2, CheckStartable)
-		})()
-	</script>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/custom_loading_screen.js" />
+	</scripts>
 	<Panel class="AddonLoadingRoot">
 		<!-- Precache -->
 		<Panel hittest="false" style="visibility: collapse;">
-			<Image src="file://{images}/custom_game/kills/action_0.png" />
-			<Image src="file://{images}/custom_game/kills/action_1.png" />
-			<Image src="file://{images}/custom_game/kills/action_2.png" />
-			<Image src="file://{images}/custom_game/kills/action_3.png" />
+			<Image src="file://{images}/custom_game/scoreboard/scoreboard_ifd.png" />
 			<Image src="file://{images}/custom_game/scoreboard/scoreboard_if4.png" />
 
 			<Image src="file://{images}/heroes/npc_arena_hero_arthas.png" />
@@ -67,45 +54,103 @@
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_mirratie.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_mirratie.png" />
 
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_beastmaster_boar_base.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_beastmaster_hawk_base.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_courier_team2.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_courier_team3.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_neutral_easy_variant1.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_neutral_hard_variant1.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_neutral_medium_variant1.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_warlock_golem_base.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_warlock_golem_scepter_base.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_dota_warlock_minigolem.png" />
-			<Image src="file://{images}/custom_game/units/portraits/npc_queenofblades_army_unit.png" />
+			<Image src="file://{images}/heroes/npc_arena_hero_freya.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_freya.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_freya.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_zaken.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_zaken.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_zaken.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_poseidon.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_poseidon.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_poseidon.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_saber.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_saber.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_saber.png" />
+
+			<Image src="file://{images}/heroes/npc_arena_hero_sara.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_sara.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_sara.png" />
+			
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_central.png" />
-			<Image src="file://{images}/custom_game/units/npc_arena_boss_heaven.png" />
-			<Image src="file://{images}/custom_game/units/npc_arena_boss_hell.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l1_v1.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l1_v2.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l2_v1.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l2_v2.png" />
+
+			<Image src="file://{images}/custom_game/talents/armor.png" />
+			<Image src="file://{images}/custom_game/talents/cooldown_reduction.png" />
+			<Image src="file://{images}/custom_game/talents/damage.png" />
+			<Image src="file://{images}/custom_game/talents/day.png" />
+			<Image src="file://{images}/custom_game/talents/evasion.png" />
+			<Image src="file://{images}/custom_game/talents/experience.png" />
+			<Image src="file://{images}/custom_game/talents/gold.png" />
+			<Image src="file://{images}/custom_game/talents/health.png" />
+			<Image src="file://{images}/custom_game/talents/health_regen.png" />
+			<Image src="file://{images}/custom_game/talents/magic_resistance.png" />
+			<Image src="file://{images}/custom_game/talents/movespeed.png" />
+			<Image src="file://{images}/custom_game/talents/night.png" />
+			<Image src="file://{images}/custom_game/talents/respawn_time_reduction.png" />
+			<Image src="file://{images}/custom_game/talents/spell_amplify.png" />
+			<Image src="file://{images}/custom_game/talents/true_strike.png" />
+			
+			<Image src="file://{images}/custom_game/talents/hero_apocalypse_apocalypse_no_death.png" />
+			<Image src="file://{images}/custom_game/talents/hero_arc_warden_double_spark.png" />
+			<Image src="file://{images}/custom_game/talents/hero_arthas_vsolyanova_bunus_chance.png" />
+			<Image src="file://{images}/custom_game/talents/hero_pudge_hook_splitter.png" />
+			<Image src="file://{images}/custom_game/talents/hero_skeleton_king_reincarnation_notime_stun.png" />
 		</Panel>
-		<!--  -->
 		<Panel id="loading_base">
-			<Image id="loading_Logo_aa" src="file://{images}/custom_game/loading_screen/logo_aa.png" />
-			<Image id="loading_Logo_jesus" src="file://{images}/custom_game/loading_screen/logo_jesus.png" />
-			<Image id="loading_Logo_satan" src="file://{images}/custom_game/loading_screen/logo_satan.png" />
-			<Panel id="loading_Label_black_panel">
-				<Label id="loading_Label_black" text="BLACK" />
-			</Panel>
-			<Panel id="loading_StarsBox">
-				<Label id="loading_Label_star" text="STAR" />
-				<Image id="loading_star1" class="loading_star" />
-				<Image id="loading_star2" class="loading_star" />
-				<Image id="loading_star3" class="loading_star" />
-				<Image id="loading_star4" class="loading_star" />
-				<Image id="loading_star5" class="loading_star" />
-			</Panel>
-			<Image id="loading_Enigma" src="file://{images}/custom_game/loading_screen/enigma.png" />
-			<Image id="loading_Lina" src="file://{images}/custom_game/loading_screen/lina.png" />
-			<Image id="loading_loading_bar" src="file://{images}/custom_game/loading_screen/loading_bar.png" />
+			<Image src="file://{images}/custom_game/loading_screen/plate.png" />
+			<Image src="file://{images}/custom_game/loading_screen/grass.png" />
+			<Image src="file://{images}/custom_game/loading_screen/angel_arena.png" />
+			<Image src="file://{images}/custom_game/loading_screen/black_star.png" />
 		</Panel>
-		<Panel id="movie_base" hittest="true" />
+
+		<Panel id="TipsPanel" hittest="true" onactivate="NextTip()">
+			<Label id="TipLabel" text=""/>
+		</Panel>
+		<Panel id="afterload_panel" hittest="true">
+			<Panel hittest="false" id="GCColumn" >
+				<Panel id="LocalPlayerDataPanel" class="Loading" style="visibility: collapse;">
+					<Panel id="PlayerInfoLoading" />
+					<Panel id="LocalPlayerDataFlow">
+						<Panel id="LocalPlayerData">
+							<DOTAAvatarImage id="PlayerAvatar" steamid="local" hittest="true" onactivate="$.Msg('hittest!')" />
+							<DOTAUserName id="PlayerNickName" steamid="local" hittest="true" onactivate="$.Msg('hittest!')" />
+						</Panel>
+						<Panel id="ServerStatsPanel">
+							<Panel class="KeyValuePanel">
+								<Label class="KeyValueKey" text="Rating: " />
+								<Label style="horizontal-align: right;" text="{s:rating}" />
+							</Panel>
+							<Panel class="KeyValuePanel">
+								<Label class="KeyValueKey" text="Winrate: " />
+								<Label style="horizontal-align: right;" text="{s:win_rate}" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				
+				<Panel id="KillGoalVote">
+					<Panel id="CustomSettingsRoot">
+						<Panel class="LeftRightFlow FullWidth" id="GoalVotePanelCustomSettings_GM201"> <!-- ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES -->
+							<Button class="ButtonBevel Green GoalVoteSettingsButton" id="GoalVoteSettings_AbilityShop" onactivate="VoteMap(201, 102);">
+								<Label text="Ability Shop"/>
+							</Button>
+							<Button class="ButtonBevel Green GoalVoteSettingsButton" id="GoalVoteSettings_RandomOMG" onactivate="VoteMap(201, 101);">
+								<Label text="Random OMG"/>
+							</Button>
+						</Panel>
+					</Panel>
+					<Panel id="KillGoalVoteVartiantList" />
+					<TextButton id="KillGoalVoteSubmit" class="ButtonBevel Green" text="SUBMIT!" onactivate="SubmitKillGoal()" />
+				</Panel>
+			</Panel>
+			<Panel id="TeamSelectionColumn" />
+			<Panel hittest="false" id="SettingsColumn" />
+		</Panel>
 	</Panel>
 </root>

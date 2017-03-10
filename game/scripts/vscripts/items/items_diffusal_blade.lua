@@ -37,7 +37,7 @@ function Purge(keys)
 		target:Purge(false, true, false, false, false)
 	else
 		if target:IsSummoned() then
-			TrueKill(caster, ability, target)
+			target:TrueKill(ability, caster)
 		else
 			target:Purge(true, false, false, false, false)
 			if not target:IsMagicImmune() and not target:IsInvulnerable() then

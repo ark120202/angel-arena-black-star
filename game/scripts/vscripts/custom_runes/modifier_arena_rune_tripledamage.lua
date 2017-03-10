@@ -23,5 +23,5 @@ function modifier_arena_rune_tripledamage:IsPurgable()
 end
 
 function modifier_arena_rune_tripledamage:GetTexture()
-	return "arena_rune_tripledamage"
+	return "arena/arena_rune_tripledamage"
 end

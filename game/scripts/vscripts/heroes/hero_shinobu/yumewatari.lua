@@ -9,7 +9,7 @@ function shinobu_yumewatari_lua:OnSpellStart() if IsServer() then
 	local old_soul = self:GetCursorTarget()
 	local max_ghost_level = self:GetSpecialValueFor("max_ghost_level")
 
-	if old_soul and old_soul:GetUnitName() == "npc_shinobu_soul" and old_soul:GetTeamNumber() == DOTA_TEAM_NOTEAM and (old_soul:GetLevel() <= max_ghost_level or max_ghost_level == 0) then
+	if old_soul and old_soul:GetUnitName() == "npc_shinobu_soul" and old_soul:GetTeamNumber() == DOTA_TEAM_NEUTRALS and (old_soul:GetLevel() <= max_ghost_level or max_ghost_level == 0) then
 		old_soul:ForceKill(false)
 		local caster = self:GetCaster()
 		local soul = CreateUnitByName("npc_shinobu_soul", old_soul:GetAbsOrigin(), true, caster, nil, caster:GetTeam())
@@ -36,21 +36,13 @@ end end
 
 function shinobu_yumewatari_lua:CastFilterResultTarget(hTarget)
 	local max_ghost_level = self:GetSpecialValueFor("max_ghost_level")
-	if hTarget:GetUnitName() == "npc_shinobu_soul" and hTarget:GetTeamNumber() == DOTA_TEAM_NOTEAM and (hTarget:GetLevel() <= max_ghost_level or max_ghost_level == 0) then
-		return UF_SUCCESS
-	else
-		return UF_FAIL_CUSTOM
-	end
+	return hTarget:GetUnitName() == "npc_shinobu_soul" and hTarget:GetTeamNumber() == DOTA_TEAM_NEUTRALS and (hTarget:GetLevel() <= max_ghost_level or max_ghost_level == 0) and UF_SUCCESS or UF_FAIL_CUSTOM
 end
  
 function shinobu_yumewatari_lua:GetCustomCastErrorTarget(hTarget)
 	local max_ghost_level = self:GetSpecialValueFor("max_ghost_level")
-	if hTarget:GetUnitName() == "npc_shinobu_soul" and hTarget:GetTeamNumber() == DOTA_TEAM_NOTEAM then
-		if hTarget:GetLevel() <= max_ghost_level or max_ghost_level == 0 then
-			return "#dota_hud_error_cant_cast_creep_level"
-		else
-			return ""
-		end
+	if hTarget:GetUnitName() == "npc_shinobu_soul" and hTarget:GetTeamNumber() == DOTA_TEAM_NEUTRALS then
+		return hTarget:GetLevel() <= max_ghost_level or max_ghost_level == 0 and "#dota_hud_error_cant_cast_creep_level" or ""
 	else
 		return "#arena_dota_hud_error_must_target_soul"
 	end

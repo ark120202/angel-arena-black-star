@@ -9,6 +9,9 @@ LINKED_ABILITIES = {
 	phoenix_fire_spirits = {"phoenix_launch_fire_spirit"},
 	ancient_apparition_ice_blast = {"ancient_apparition_ice_blast_release"},
 	wisp_tether_aghanims = {"wisp_tether_break_aghanims"},
+	alchemist_unstable_concoction = {"alchemist_unstable_concoction_throw"},
+	monkey_king_mischief = {"monkey_king_untransform"},
+	monkey_king_primal_spring = {"monkey_king_primal_spring_early"},
 }
 
 NOT_MULTICASTABLE_ABILITIES = {
@@ -35,6 +38,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	"item_refresher_arena",
 	"item_aegis_arena",
 	"item_refresher_core",
+	"item_titanium_bar",
 	
 	"item_pipe",
 	"item_arcane_boots",
@@ -52,7 +56,9 @@ REFRESH_LIST_IGNORE_REARM = {
 	"item_black_king_bar_4",
 	"item_black_king_bar_5",
 	"item_black_king_bar_6",
-	"item_titanium_bar",
+	"item_mekansm_arena",
+	"item_mekansm_2",
+	"item_guardian_greaves_arena",
 	
 	"earthshaker_echo_slam",
 	"juggernaut_omni_slash",
@@ -96,11 +102,12 @@ REFRESH_LIST_IGNORE_REARM = {
 	"stargazer_cosmic_countdown",
 	"zen_gehraz_superposition",
 	"furion_force_of_nature",
-	"doom_bringer_devour",
+	"doom_bringer_devour_arena",
 	"omniknight_select_enemies",
 	"omniknight_select_allies",
 	"magnataur_reverse_polarity",
 	"queenofblades_alter_ego",
+	"saber_excalibur",
 }
 
 REFRESH_LIST_IGNORE_REFRESHER = {
@@ -108,6 +115,7 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	"item_refresher_arena",
 	"item_aegis_arena",
 	"item_refresher_core",
+	"item_titanium_bar",
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
@@ -115,40 +123,47 @@ REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
 	"item_refresher_arena",
 	"item_aegis_arena",
 	"item_refresher_core",
+	"item_titanium_bar",
 
 	"omniknight_select_allies",
 	"omniknight_select_enemies",
 }
 
-ATTRIBUTE_IGNORED_ABILITIES = {
-	"nyx_assassin_burrow",
-	"nyx_assassin_unburrow",
-	"morphling_hybrid",
-	"life_stealer_assimilate",
-	"treant_eyes_in_the_forest",
-	"ogre_magi_unrefined_fireblast",
-	"earth_spirit_petrify",
-}
-
 BOSS_BANNED_ABILITIES = {
-	"item_heart_cyclone",
-	"item_blink_staff",
-	"huskar_life_break",
-	"necrolyte_reapers_scythe",
-	"death_prophet_spirit_siphon",
-	"rubick_personality_steal",
+	item_heart_cyclone = true,
+	item_blink_staff = true,
+	huskar_life_break = true,
+	necrolyte_reapers_scythe = true,
+	death_prophet_spirit_siphon = true,
+	rubick_personality_steal = true,
+	item_urn_of_demons = true,
+	apocalypse_king_slayer = true,
+	apocalypse_armor_tear = true,
 }
 
 PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_dota_hero_wisp"] = true,
 	["npc_dota_hero_invoker"] = true,
+	["npc_arena_hero_sara"] = true,
 }
 
 SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
-	["warlock_fatal_bonds_arena"] = true,
-	["item_heart_cyclone"] = true,
+	["zuus_static_field"] = true,
+	["enigma_midnight_pulse"] = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
 	["freya_pain_reflection"] = true,
+}
+
+ARENA_NOT_CASTABLE_ABILITIES = {
+	["techies_land_mines"] = GetAbilitySpecial("techies_land_mines", "radius"),
+	["techies_stasis_trap"] = GetAbilitySpecial("techies_stasis_trap", "activation_radius"),
+	["techies_remote_mines"] = GetAbilitySpecial("techies_land_mines", "radius"),
+	["invoker_chaos_meteor"] = 1100,
+}
+
+PERCENT_DAMAGE_MODIFIERS = {
+	["ember_spirit_flame_guard"] = GetAbilitySpecial("ember_spirit_flame_guard", "tick_interval"),
+	["ember_spirit_searing_chains"] = GetAbilitySpecial("ember_spirit_searing_chains", "tick_interval"),
 }

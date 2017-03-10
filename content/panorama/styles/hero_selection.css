@@ -17,7 +17,21 @@
 {
 	width: 100%;
 	height: 100%;
+	background-color: #1c262f;
+}
+#HeroSelectionCustomBackground
+{
+	width: 100%;
+	height: 100%;
 	background-size: 100% 100%;
+}
+.CustomSelectionBackground #HeroSelectionBackground, #HeroSelectionCustomBackground
+{
+	visibility: collapse;
+}
+.CustomSelectionBackground #HeroSelectionCustomBackground
+{
+	visibility: visible;
 }
 
 #SelectedHeroPanel
@@ -49,26 +63,6 @@
 	font-weight: bold;
 	font-size: 40px;
 }
-
-/*#SelectedHeroImagePanel
-{
-	width: 100%;
-	height: 15.4%;
-	margin-left: 4px;
-	margin-right: 4px;
-	margin-top: 4px;
-	margin-bottom: 4px;
-}
-
-#SelectedHeroImage
-{
-	vertical-align: center;
-	horizontal-align: center;
-	width: 70%;
-	height: 100%;
-	border: 10px solid darkred;
-}
-*/
 #SelectedHeroScene
 {
 	horizontal-align: center;
@@ -78,10 +72,9 @@
 }
 #HeroListBasePanel
 {
-	height: 940px;
+	height: 980px;
 	width: 80%;
 	vertical-align: bottom;
-	background-color: rgba(0,0,0,240);
 	flow-children: down;
 }
 
@@ -113,35 +106,76 @@
 
 .HeroListElement
 {
-	margin-top: 10px;
+	margin-top: 6px;
 	margin-bottom: 0px;
 	margin-left: 18px;
 	margin-right: -8px;
-	width: 96px;
-	height: 54px;
+	border-radius: 2px;
+	width: height-percentage(72%); //75.5319149%
+	height: 90px;
 	transition-duration: 0.1s;
 	transition-property: pre-transform-scale2d;
 }
+
+.HeroListElement.SearchedPanelDisabled
+{
+	saturation: 0;
+	brightness: 0.4;
+	wash-color: lightblue;
+	contrast: 1.01;
+	blur: gaussian(1.8px);
+}
+.InSearch .HeroListElement:not(.SearchedPanelDisabled)
+{
+	pre-transform-scale2d: 1.1;
+}
 .HeroListElement:hover
+{
+	pre-transform-scale2d: 1.15;
+}
+.InSearch .HeroListElement:not(.SearchedPanelDisabled):hover
 {
 	pre-transform-scale2d: 1.2;
 }
-.ChangedHeroPanel
+.HeroListElement.Border_Changed
 {
-	border: 2px solid red;
+	border: 1px solid red;
 }
-.HeroPanelSelected
+.HeroListElement.HeroPanelSelected
 {
 	border: 4px solid #b2da25;
-	pre-transform-scale2d: 0.95;
+	pre-transform-scale2d: 1.1;
+}
+.HeroListElement.Picked
+{
+	saturation: .1;
+	wash-color: lightgrey;
+	blur: gaussian(0.5px);
+}
+.HeroListElement.Locked
+{
+	saturation: .6;
+	wash-color: lightcyan;
+	blur: gaussian(0.1px);
+}
+
+.HeroListElement #LockedIcon
+{
+	width: 24px;
+	height: 24px;
+}
+
+.HeroListElement.Locked #LockedIcon
+{
+	visibility: visible;
 }
 
 #SelectionStatusPanel
 {
-	height: 140px;
+	height: 100px;
 	width: 80%;
 	flow-children: right;
-	background-color: rgba(0,0,0,252);
+	background-color: rgba(0,0,0,0.2);
 }
 
 #GameModeInfoPanel
@@ -149,13 +183,13 @@
 	width: 135px;
 	margin: 4px;
 	vertical-align: center;
-	flow-children: down;
+	height: 100%;
 }
 
 #GameModeInfoGamemodeLabel
 {
-	horizontal-align: center;
-	margin: 10px;
+	align: center bottom;
+	margin-bottom: 4px;
 	font-size: 20px;
 	color: #CCCCCC;
 }
@@ -165,6 +199,7 @@
 	horizontal-align: center;
 	font-size: 28px;
 	color: white;
+	align: center center;
 }
 
 #TeamSelectionStatusPanel
@@ -181,58 +216,74 @@
 	margin: 4px;
 	height: 100%;
 	flow-children: right;
+	border: 2px solid white;
+	border-radius: 12px;
 }
 
 .PlayerInTeamPanel
 {
-	margin: 8px;
+	margin: 2px;
 	height: 100%;
+	width: 110px;
 }
 
-.PlayerInTeamNickname
+.PlayerInTeamPanel #NickName
 {
-	margin: 4px;
-	width: 92px;
+	margin: 4px 0px;
+	width: 100%;
 	align: center bottom;
 	text-align: center;
 	font-size: 18px;
-	color: rgb(150,150,150);
+	color: white;
+	height: 22px;
+	margin-bottom: -2px;
+	text-shadow: 0 0 6px black;
+	text-overflow: shrink;
 }
 
-.PlayerInTeamHeroImageHost
+.PlayerInTeamPanel #ImageHost
 {
 	align: center top;
 	border-width: 2px;
 	border-style: solid;
-	border-color: red;
-	border-radius: 100%;
 }
 
-.PlayerInTeamHeroImage
+.PlayerInTeamPanel #HeroImage
 {
-	width: 80px;
-	height: 80px;
-	border-radius: 100%;
+	width: 100px;
+	height: width-percentage(56.25%);
+	background-color: #282E30;
 }
 
-.PlayerInTeamHeroImageHover
+.PlayerInTeamPanel.HoveredHero #HeroImage
 {
 	saturation: .1;
+}
+.PlayerInTeamPanel.LockedHero #HeroImage
+{
+	saturation: .6;
 }
 #SelectedHeroSelectButton
 {
 	width: 95%;
 	height: 70%;
 	align: center center;
-	border: 4px solid #b2da25;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404D65dd ), to( #2B3445dd ) );
+	border-top: 1px solid #6F819B;
+	border-left: 1px solid #6F819B22;
+	border-right: 1px solid #6F819B11;
+	border-bottom: 1px solid #3F414B33;
+	box-shadow: #0000008f -6px -6px 12px 12px;
+	transition-property: opacity, background-color;
+	transition-duration: 0.18s;
 }
 #SelectedHeroSelectButton:hover
 {
-	pre-transform-scale2d: 1.02;
+	brightness: 1.2;
 }
 #SelectedHeroSelectButton:active
 {
-	pre-transform-scale2d: 0.98;
+	brightness: 1.5;
 }
 #SelectedHeroSelectButton:disabled
 {
@@ -240,11 +291,31 @@
 	wash-color: grey;
 	pre-transform-scale2d: 1;
 }
-#SelectedHeroSelectLabel
+#SelectedHeroSelectButton .LockInButton
+{
+
+}
+#SelectedHeroSelectLabel,
+#SelectedHeroLockLabel,
+#SelectedHeroUnlockLabel
 {
 	align: center top;
 	font-size: 24px;
 	color: #b2da25;
+}
+#SelectedHeroLockLabel,
+#SelectedHeroUnlockLabel,
+.LocalHeroLockButton #SelectedHeroSelectLabel,
+.LocalHeroLockButton #SelectedHeroUnlockLabel,
+.LocalHeroUnlockButton #SelectedHeroSelectLabel,
+.LocalHeroUnlockButton #SelectedHeroLockLabel,
+{
+	visibility: collapse;
+}
+.LocalHeroLockButton #SelectedHeroLockLabel,
+.LocalHeroUnlockButton #SelectedHeroUnlockLabel,
+{
+	visibility: visible;
 }
 
 #SelectedHeroSelectHeroName
@@ -256,10 +327,28 @@
 	margin-bottom: -7px;
 }
 
-.HeroListElementPickedBySomeone
+#SelectedHeroLinkedHeroPanel
 {
-	saturation: .1;
-	wash-color: lightgrey;
+	align: left center;
+	visibility: collapse;
+	margin-left: 12px;
+	flow-children: right;
+}
+
+#SelectedHeroLinkedHeroPanel Label
+{
+	font-size: 20px;
+	color: #C5D199;
+}
+
+.HoveredHeroHasLinked #SelectedHeroLinkedHeroPanel
+{
+	visibility: visible;
+}
+
+.PlayerInTeamPanel.LockedHero #LockedIcon
+{
+	visibility: visible;
 }
 
 #ExitButton
@@ -372,6 +461,7 @@
 	height: 100%;
 	width: 100%;
 	flow-children: down;
+	visibility: collapse;
 }
 
 #PrecacheLoadingMessageLabel
@@ -379,6 +469,7 @@
 	horizontal-align: center;
 	font-size: 100px;
 	color: white;
+	text-shadow: 0 0 20px black; 
 }
 
 #PrecacheLoadingMessagePanel
@@ -391,27 +482,23 @@
 {
 	horizontal-align: center;
 	margin-top: 40px;
-	width: 80%;
 	height: 70%;
 	flow-children: down;
 }
 
 .PrecacheTeamEntry
 {
-	margin: 5px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	horizontal-align: center;
-	height: 44.65%;
 	flow-children: right;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .PrecacheTeamPlayerPanel
 {
-	height: 100%;
+	height: 350px;
 	width: 250px;
 	margin: 5px;
-	background-color: rgba(0, 0, 0, 240);
+	background-color: rgba(0, 0, 0, 0.80);
 	box-shadow: -10px -10px 20px 20px black;
 }
 
@@ -420,7 +507,10 @@
 	margin-top: 4px;
 	align: center top;
 	font-size: 28px;
+	height: 32px;
 	color: black;
+	text-shadow: 0 0 6px black;
+	text-overflow: shrink;
 }
 
 .PrecacheHeroLabel
@@ -435,13 +525,8 @@
 	height: 100%;
 	width: 20%;
 	horizontal-align: right;
-	background-color: rgba(0,0,0,252);
+	background-color: rgba(0,0,0,0.2);
 	flow-children: down;
-}
-
-#SelectionChatBox
-{
-	vertical-align: bottom;
 }
 
 .HeroListControlsGroup
@@ -460,33 +545,9 @@
 {
 	width: 100%;
 	height: 33.3%;
-	padding-left: 20px;
-}
-
-.HeroesPanelElementTeam
-{
-	width: 50%;
-	height: 100%;
 	flow-children: right-wrap;
 }
 
-.HeroesPanelElementGood
-{
-	horizontal-align: left;
-	transform: scaleX(-1);
-	margin-left: -5px;
-}
-
-.HeroesPanelElementGood Image
-{
-	transform: scaleX(-1);
-}
-
-.HeroesPanelElementBad
-{
-	horizontal-align: right;
-	margin-right: -5px;
-}
 .SmallTextButton
 {
 	width: 170px;
@@ -532,12 +593,10 @@
 {
 	align: center center;
 	flow-children: right;
-	background-color: rgba(0,0,0,220);
-	box-shadow: -10px -10px 20px 20px rgba(0,0,0,220);
 }
 .AbilitiesLineSplitter
 {
-	width: 40%;
+	width: 42%;
 	height: 2px;
 	background-color: #ccc;
 	vertical-align: center;
@@ -546,9 +605,9 @@
 .SelectedHeroAbility
 {
 	height: 50px;
-	margin-left: 10px;
-	margin-right: 10px;
-	border-radius: 100%;
+	margin-left: 4px;
+	margin-right: 4px;
+	border-radius: 2px;
 }
 
 #HeroListControlsGroup1
@@ -605,14 +664,9 @@
 #MinimapPanel
 {
 	width: 350px;
-	height: 350px;
+	height: width-percentage(100%);
 	margin-top: 50px;
 	horizontal-align: center;
-}
-
-#MinimapImage
-{
-
 }
 
 .MinimapSpawnBox
@@ -685,42 +739,186 @@
 	width: 100%;
 	height: 100%;
 }
-
-#GamePausedOverlay
+#MinimapImage4v4v4v4, .Gamemode_4V4V4V4 #MinimapImage
 {
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 40, 100, 245);
 	visibility: collapse;
 }
 
-.GamePaused #GamePausedOverlay
+.Gamemode_4V4V4V4 #MinimapImage4v4v4v4
 {
 	visibility: visible;
 }
 
-#GamePausedTitle
+.Gamemode_4V4V4V4 .PrecacheTeamPlayerPanel
 {
-	horizontal-align: center;
-	font-size: 72px;
-	font-weight: bold;
-	color: white;
+	height: 350px;
+	width: 220px;
+	margin: 2px;
+	box-shadow: -3px -3px 6px 6px black;
 }
 
-#GamePausedDescription
+.PrecacheRow
 {
+	margin: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	horizontal-align: center;
-	font-size: 48px;
+	flow-children: right;
 }
 
-.ShowBGMode #ChatAndMapPanel,
-.ShowBGMode #SelectionStatusPanel,
+.Gamemode_4V4V4V4 .PlayerInTeamHeroImage
 {
-	//252
-	background-color: rgba(0,0,0,170);
+	width: 69px;
 }
-.ShowBGMode #HeroListBasePanel
+
+.Gamemode_4V4V4V4 .PlayerInTeamPanel
 {
-	//240
-	background-color: rgba(0,0,0,130);
+	margin: 2px;
+	width: 77px;
+}
+
+.Gamemode_4V4V4V4 .PlayerInTeamNickname
+{
+	font-size: 17px;
+}
+
+.AspectRatio4x3 .HeroListElement
+{
+	margin-left: 15px;
+	margin-right: -5px;
+	height: 80px;
+}
+
+.AspectRatio5x4 .HeroListElement
+{
+	margin-left: 15px;
+	margin-right: -5px;
+	height: 82px;
+}
+
+.AspectRatio16x10 .HeroListElement
+{
+	margin-left: 15px;
+	margin-right: -8px;
+	height: 84px;
+}
+
+
+
+#SelectionChatBox
+{
+	width: 100%;
+	height: 100%;
+}
+
+#SelectionChat
+{
+	width: 100%;
+	height: 100%;
+	margin: 4px;
+}
+
+#SelectionChatMessagesPanel
+{
+	width: 100%;
+	vertical-align: bottom;
+	margin-bottom: 17%;
+}
+
+#SelectionChatMessages
+{
+	flow-children: down;
+    transform: scaleY(-1);
+}
+
+#SelectionChatEntryPanel
+{
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	width: 100%;
+	height: 15%;
+	vertical-align: bottom;
+	border-top: 1px solid grey;
+}
+
+#SelectionChatEntry
+{
+	width: 100%;
+	height: 36px;
+	vertical-align: center;
+	background-color: none;
+	border-width: 0px;
+}
+
+.ChatLine
+{
+    vertical-align: bottom;
+    color: white;
+	font-size: 18px;
+	font-weight: thin;
+	margin-top: -2px;
+	margin-left: 5px;
+	padding-top: 2px;
+}
+
+.ChatLine .HeroIcon
+{
+	width: 40px;
+	height: 23px;
+
+	margin-bottom: -3px;
+	margin-top: 0px;
+	margin-bottom: -6px;
+	margin-right: 4px;
+	transform: translateY( 2px );
+	border: 1px solid black;
+}
+
+#PrecacheProgressBar
+{
+	vertical-align: bottom;
+	width: 800px;
+	margin-bottom: -10px;
+}
+
+#PrecacheProgressBar_Left
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #69B4FF ), to( #31A6E0 ) );
+	transition-property: width;
+	transition-duration: 0.2s;
+}
+
+#AdsBanner
+{
+	width: 100%; //384
+	height: width-percentage(64%); //45.3125% 174, 65.1 250
+	visibility: visible;
+	transition-property: pre-transform-scale2d, brightness;
+	transition-duration: 0.15s;
+	brightness: 0.8;
+}
+
+#AdsBanner:hover
+{
+	pre-transform-scale2d: 0.98;
+	brightness: 1;
+}
+
+#AdsBanner:active
+{
+	pre-transform-scale2d: 1.04;
+	brightness: 1.2;
+}
+
+#LockedIcon
+{
+	align: right bottom;
+	margin: 2px;
+	wash-color: #B1D8E0;
+	width: 22px;
+	height: 22px;
+	visibility: collapse;
+	background-image: url("file://{images}/control_icons/lock_small.png");
+	background-size: 100% 100%;
 }

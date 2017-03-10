@@ -28,7 +28,7 @@ function modifier_item_casino_drug_pill2_addiction:OnIntervalThink()
 end
 
 function modifier_item_casino_drug_pill2_addiction:GetTexture()
-	return "item_casino_drug_pill2"
+	return "arena/casino_drug_pill2"
 end
 
 function modifier_item_casino_drug_pill2_addiction:GetAttributes()

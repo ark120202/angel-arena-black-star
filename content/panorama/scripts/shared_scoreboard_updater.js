@@ -26,7 +26,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel(scoreboardConfig, playersContainer
 		playerPanel.BLoadLayout(scoreboardConfig.playerXmlName, false, false);
 	}
 
-	playerPanel.SetHasClass("is_local_player", (playerId == Game.GetLocalPlayerID()));
+	playerPanel.SetHasClass("is_local_player", playerId == Game.GetLocalPlayerID());
 
 	var ultStateOrTime = PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_HIDDEN; // values > 0 mean on cooldown for that many seconds
 	var goldValue = -1;
@@ -111,7 +111,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel(scoreboardConfig, playersContainer
 				}
 				var itemInfo = playerItems.inventory[i];
 				if (itemInfo) {
-					itemPanel.SetImage(TransformTextureToPath(itemInfo.item_name));
+					itemPanel.SetImage(TransformTextureToPath(itemInfo.item_name, "item"));
 				} else {
 					itemPanel.SetImage("");
 				}
@@ -337,37 +337,28 @@ function ScoreboardUpdater_InitializeScoreboard(scoreboardConfig, scoreboardPane
 //=============================================================================
 //=============================================================================
 function ScoreboardUpdater_SetScoreboardActive(scoreboardHandle, isActive) {
-	if (scoreboardHandle.scoreboardConfig === null || scoreboardHandle.scoreboardPanel === null) {
-		return;
-	}
-
-	if (isActive) {
+	if (scoreboardHandle.scoreboardConfig != null && scoreboardHandle.scoreboardPanel != null && isActive)
 		_ScoreboardUpdater_UpdateAllTeamsAndPlayers(scoreboardHandle.scoreboardConfig, scoreboardHandle.scoreboardPanel);
-	}
 }
 
 //=============================================================================
 //=============================================================================
 function ScoreboardUpdater_GetTeamPanel(scoreboardHandle, teamId) {
-	if (scoreboardHandle.scoreboardPanel === null) {
-		return;
+	if (scoreboardHandle.scoreboardPanel != null) {
+		var teamPanelName = "_dynamic_team_" + teamId;
+		return scoreboardHandle.scoreboardPanel.FindChild(teamPanelName);
 	}
-
-	var teamPanelName = "_dynamic_team_" + teamId;
-	return scoreboardHandle.scoreboardPanel.FindChild(teamPanelName);
 }
 
 //=============================================================================
 //=============================================================================
 function ScoreboardUpdater_GetSortedTeamInfoList(scoreboardHandle) {
 	var teamsList = [];
-	for (var teamId of Game.GetAllTeamIDs()) {
+	for (var teamId of Game.GetAllTeamIDs())
 		teamsList.push(Game.GetTeamDetails(teamId));
-	}
 
-	if (teamsList.length > 1) {
+	if (teamsList.length > 1)
 		teamsList.sort(stableCompareFunc);
-	}
 
 	return teamsList;
 }

@@ -26,7 +26,7 @@ function dragon_knight_dragon_tail_arena:OnSpellStart()
 
 			for i = 1, self:GetSpecialValueFor("attack_amount") do
 				Timers:CreateTimer(self:GetSpecialValueFor("attack_delay") * i, function()
-					PerformGlobalAttack(self:GetCaster(), target, true, true, true, true, false)
+					PerformGlobalAttack(self:GetCaster(), target, true, true, true, true, false, false, false)
 				end)
 			end
 		end

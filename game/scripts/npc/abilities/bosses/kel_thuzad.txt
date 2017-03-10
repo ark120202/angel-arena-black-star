@@ -1,0 +1,313 @@
+"DOTAAbilities"
+{
+	"boss_kel_thuzad_immortality"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/bosses/kel_thuzad/immortality.lua"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"initial_stack_count"	"20"
+			}
+		}
+	}
+
+	"boss_kel_thuzad_presence_of_death"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel" 						"1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastRange"				"%radius"
+		"AbilityChannelTime"			"%channel_time"
+		"AbilityCooldown"				"5"
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"channel_time"		"1"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"900"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"normal_damage_pct"	"5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reduced_damage_pct"	"10"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reduced_stacks"	"10"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/bosses/kel_thuzad/presence_of_death.lua"
+				"Function"		"PresenceOfDeath"
+			}
+		}
+	}
+
+	"boss_kel_thuzad_invulnerability"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/bosses/kel_thuzad/invulnerability.lua"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"normal_cooldown"	"5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"reduced_cooldown"	"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reduced_stacks"	"10"
+			}
+		}
+	}
+
+	"boss_kel_thuzad_shadows"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel" 						"1"
+		"AbilityCooldown"				"30"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastRange"				"1100"
+		"AbilityCastPoint"				"0.25"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"illusion_duration"			"5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_outgoing_tooltip"	"50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"reduced_count"				"2"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"reduced_stacks"			"10"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/bosses/kel_thuzad/shadows.lua"
+				"Function"			"Reflection"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_boss_kel_thuzad_shadows"
+			{
+				"IsPurgable"		"0"
+				"IsHidden"			"1"
+
+				"StatusEffectName"		"particles/status_fx/status_effect_terrorblade_reflection.vpcf"
+				"StatusEffectPriority"	"100"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"	"550"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"boss_kel_thuzad_summon_undead"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel" 						"1"
+		"AbilityCooldown"				"10"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.4"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ghosts_amount"		"5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"15"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health"			"20000"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"300"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed"			"300"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"base_attack_time"	"0.4"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"kv.lua"
+				"Function"				"SummonUnit"
+				"summoned"				"npc_arena_boss_kel_thuzad_ghost"
+				"amount"				"%ghosts_amount"
+				"duration"				"%duration"
+				"health"				"%health"
+				"damage"				"%damage"
+				"movespeed"				"%movespeed"
+				"base_attack_time"		"%base_attack_time"
+				"summon_random_radius"	"%radius"
+			}
+		}
+	}
+
+	"boss_kel_thuzad_erebus"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_name"
+		"MaxLevel" 						"1"
+		"AbilityCooldown"				"60"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastPoint"				"0.1"
+		"AbilityChannelTime"			"%duration"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ghosts_amount"		"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"think_interval"	"2"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_boss_kel_thuzad_erebus"
+				"Target" 		"CASTER"
+				"Duration"		"%duration"
+			}
+		}
+
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_boss_kel_thuzad_erebus"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_boss_kel_thuzad_erebus"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+
+				"ThinkInterval"  	"%think_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/bosses/kel_thuzad/erebus.lua"
+						"Function"		"Interval"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+}

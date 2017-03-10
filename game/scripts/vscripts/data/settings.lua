@@ -1,20 +1,16 @@
 -- In this file you can set up all the properties and settings for your game mode.
 
 
-ENABLE_HERO_RESPAWN = true              -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
-UNIVERSAL_SHOP_MODE = false             -- Should the main shop contain Secret Shop items as well as regular items
-ALLOW_SAME_HERO_SELECTION = true        -- Should we let people select the same hero as each other
+ENABLE_HERO_RESPAWN = true
+UNIVERSAL_SHOP_MODE = false
+ALLOW_SAME_HERO_SELECTION = true
 
-HERO_SELECTION_TIME = 0                 -- How long should we let people select their hero?
-PRE_GAME_TIME = 99999                   -- How long after people select their heroes should the horn blow and the game start?
-POST_GAME_TIME = 60.0                   -- How long should we let people look at the scoreboard before closing the server automatically?
-TREE_REGROW_TIME = 60.0                 -- How long should it take individual trees to respawn after being cut down/destroyed?
-
-CAMERA_DISTANCE_OVERRIDE = -1           -- How far out should we allow the camera to go?  Use -1 for the default (1134) while still allowing for panorama camera distance changes
+HERO_SELECTION_TIME = 80--IsInToolsMode() and math.pow(10, 5) or 80
+POST_GAME_TIME = 60
+TREE_REGROW_TIME = 60
 
 MINIMAP_ICON_SIZE = 1                   -- What icon size should we use for our heroes?
 MINIMAP_CREEP_ICON_SIZE = 1             -- What icon size should we use for creeps?
-MINIMAP_RUNE_ICON_SIZE = 1              -- What icon size should we use for runes?
 
 BUYBACK_ENABLED = false                 -- Should we allow people to buyback when they die?
 
@@ -36,29 +32,20 @@ KILLS_TO_END_GAME_FOR_TEAM = 200        -- How many kills for a team should sign
 
 USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom levels?
 USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
-
--- Fill this table up with the required XP per level if you want to change it
 XP_PER_LEVEL_TABLE = {}
 XP_PER_LEVEL_TABLE[1] = 0
-for i=2, 300 do
+for i = 2, 600 do
   	XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i-1] + i*100
 end
 
-XP_PER_LEVEL_TABLE[7] = XP_PER_LEVEL_TABLE[6] + 600 
-XP_PER_LEVEL_TABLE[8] = XP_PER_LEVEL_TABLE[7] + 600 
-XP_PER_LEVEL_TABLE[9] = XP_PER_LEVEL_TABLE[8] + 1200
-XP_PER_LEVEL_TABLE[11] = XP_PER_LEVEL_TABLE[10] + 600 
-XP_PER_LEVEL_TABLE[12] = XP_PER_LEVEL_TABLE[11] + 2200
-XP_PER_LEVEL_TABLE[13] = XP_PER_LEVEL_TABLE[12] + 800
-
 ENABLE_FIRST_BLOOD = false              -- Should we enable first blood for the first kill in this game?
-HIDE_KILL_BANNERS = true                -- Should we hide the kill banners that show when a player is killed?
+HIDE_KILL_BANNERS = false               -- Should we hide the kill banners that show when a player is killed?
 SHOW_ONLY_PLAYER_INVENTORY = false      -- Should we only allow players to see their own inventory even when selecting other units?
 DISABLE_STASH_PURCHASING = false        -- Should we prevent players from being able to buy items into their stash when not at a shop?
 DISABLE_ANNOUNCER = false               -- Should we disable the announcer from working in the game?
 FORCE_PICKED_HERO = "npc_dota_hero_target_dummy" -- What hero should we force all players to spawn as? (e.g. "npc_dota_hero_axe").  Use nil to allow players to pick their own hero.
 
-FIXED_RESPAWN_TIME = 8                  -- What time should we use for a fixed respawn timer?  Use -1 to keep the default dota behavior.
+FIXED_RESPAWN_TIME = -1                 -- What time should we use for a fixed respawn timer?  Use -1 to keep the default dota behavior.
 FOUNTAIN_CONSTANT_MANA_REGEN = 0        -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_MANA_REGEN = 0      -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_HEALTH_REGEN = 0    -- What should we use for the percentage fountain health regen?  Use -1 to keep the default dota behavior.
@@ -71,9 +58,9 @@ STARTING_GOLD = 0                       -- How much starting gold should we give
 DISABLE_DAY_NIGHT_CYCLE = false         -- Should we disable the day night cycle from naturally occurring? (Manual adjustment still possible)
 DISABLE_KILLING_SPREE_ANNOUNCER = false -- Shuold we disable the killing spree announcer?
 DISABLE_STICKY_ITEM = true              -- Should we disable the sticky item button in the quick buy area?
-SKIP_TEAM_SETUP = false--IsInToolsMode()       -- Should we skip the team setup entirely?
+SKIP_TEAM_SETUP = false                 -- Should we skip the team setup entirely?
 ENABLE_AUTO_LAUNCH = true               -- Should we automatically have the game complete team setup after AUTO_LAUNCH_DELAY seconds?
-AUTO_LAUNCH_DELAY = 15                  -- How long should the default team selection launch timer be?  The default for custom games is 30.  Setting to 0 will skip team selection.
+AUTO_LAUNCH_DELAY = IsInToolsMode() and 3 or 15                  -- How long should the default team selection launch timer be?  The default for custom games is 30.  Setting to 0 will skip team selection.
 LOCK_TEAM_SETUP = false                 -- Should we lock the teams initially?  Note that the host can still unlock the teams 
 
 
@@ -123,6 +110,20 @@ PLAYERS_COLORS[DOTA_TEAM_BADGUYS] = {
 	{0, 131, 33},
 	{164, 105, 0}
 }
+PLAYERS_COLORS[DOTA_TEAM_CUSTOM_1] = {
+	{178, 121, 90},
+	{147, 255, 120},
+	{255, 91, 0},
+	{26, 20, 204},
+	{130, 129, 178}
+}
+PLAYERS_COLORS[DOTA_TEAM_CUSTOM_2] = {
+	{71, 204, 131},
+	{255, 255, 255},
+	{255, 241, 96},
+	{195, 86, 255},
+	{204, 139, 85}
+}
 
 POSSIBLE_KILL_GOALS = {
 	75,
@@ -131,18 +132,23 @@ POSSIBLE_KILL_GOALS = {
 	150
 }
 DOTA_KILL_GOAL_VOTE_STANDART = 125
+if GameRules:IsCheatMode() then
+	POSSIBLE_KILL_GOALS = {1, 5, 10, 50, 75, 100, 125, 150, 300, 1000}
+end
 
-CUSTOM_HERO_SELECTION_TIME = 80
 DOTA_PLAYER_AUTOABANDON_TIME = 60*8
 MAX_SPAWNBOXES_SELECTED = 3
 
 ARENA_SETTINGS = {
-	DelayFromGameStart = 600,
-	DelayFromLast = 300,
+	DelaysFromLast = {
+		[0] = 300,
+		[30] = 240,
+		[60] = 180,
+	},
 	DurationBase = 60,
 	DurationForPlayer = 20,
 	Duel1x1Duration = 90,
-	WinGold_Base = 500,
+	WinGold_Base = 300,
 	WinGold_PerDuel = 2000,
 }
 CUSTOM_STARTING_GOLD = 625
@@ -151,3 +157,4 @@ CUSTOM_GOLD_PER_TICK = 4
 CUSTOM_GOLD_TICK_TIME = 0.6
 
 CUSTOM_RUNE_SPAWN_TIME = 120
+PRE_GAME_TIME = IsInToolsMode() and 0 or 60

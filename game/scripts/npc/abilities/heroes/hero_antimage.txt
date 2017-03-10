@@ -1,0 +1,394 @@
+"DOTAAbilities"
+{
+	"antimage_mana_break_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"		
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"antimage_mana_break"
+		"MaxLevel"						"7"
+		"HasScepterUpgrade"				"1"
+
+		// Precache	
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"	"particles/generic_gameplay/generic_manaburn.vpcf"
+			"particle"  "particles/arena/units/heroes/hero_antimage/mana_break_cleave.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_burn_pct"	"60"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_per_hit"			"20 40 80 120 180 220 260"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_hit_pct"		"0.5 0.75 1 1.25 1.5 1.75 2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_per_hit_illusions_pct"	"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"nomana_bonus_pure_damage_pct"	"8 12 16 20 24 28 32"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"nomana_stun_duration"	"1.0 1.2 1.6 2.0 2.4 2.8 3.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"nomana_stun_cooldown"	"6"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_hit_pct_scepter"		"1 1.5 2 2.5 3 3.5 4"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe_radius_scepter"	"400"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_to_secondary_targets_pct_scepter"	"40"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_antimage_mana_break_arena"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_antimage/mana_break.lua"
+						"Function"		"ManaBreak"
+						"Damage"		"%attack_damage"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MANA_ONLY"
+						}
+					}				
+				}
+			}
+
+			"modifier_antimage_mana_break_arena_stun_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"Duration"			"%nomana_stun_cooldown"
+			}
+		}
+	}
+
+	"antimage_blink_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityTextureName"			"antimage_blink"
+		"MaxLevel"						"7"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"particle"		"particles/units/heroes/hero_antimage/antimage_blink_end.vpcf"
+			"particle"		"particles/units/heroes/hero_antimage/antimage_blink_start.vpcf"
+			"particle"		"particles/arena/units/heroes/hero_antimage/blink_silence.vpcf"
+		}
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"20 18 16 14 12 10 8"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range"			"925 1000 1075 1150 1200 1250 1300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"silence_radius"		"200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"silence_duration"		"3"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Antimage.Blink_out"
+				"Target"		"CASTER"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_antimage/blink.lua"
+				"Function"		"Blink"
+				"Target"		"POINT"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"Hero_Antimage.Blink_in"
+				"Target"		"CASTER"
+			}
+
+			"AttachEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_antimage/antimage_blink_end.vpcf"
+				"Target"		"CASTER"
+				"EffectAttachType"	"follow_origin"
+			}
+
+			"AttachEffect"
+			{
+				"EffectName"	"particles/arena/units/heroes/hero_antimage/blink_silence.vpcf"
+				"Target"		"CASTER"
+				"EffectAttachType"	"follow_origin"
+				"ControlPoints"
+				{
+					"01"	"%silence_radius 0 0"
+				}
+			}
+
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"POINT"
+					"Radius" 	"%silence_radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_silence"
+						"Target" 		"TARGET"
+						"Duration"		"%silence_duration"
+					}
+				}
+			}
+		}
+	}
+
+	"antimage_spell_shield_arena"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"antimage_spell_shield"
+		"MaxLevel"						"7"
+		"AbilityCooldown"				"100 90 85 80 75 70 65"
+		"AbilityCastPoint"				"0.2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"spell_shield_resistance"		"26 30 34 16 42 45 50"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"reflect_duration"				"6 6.5 7 7.5 8 8.5 9"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/arena/units/heroes/hero_antimage/spell_shield_reflect_shield.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Antimage.SpellShield.Block"
+				"Target" 		"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_antimage_spell_shield_arena_reflect"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_antimage_spell_shield_arena"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%spell_shield_resistance"
+				}
+			}
+			"modifier_antimage_spell_shield_arena_reflect"
+			{
+				"IsPurgable"		"0"
+				"Duration"			"%reflect_duration"
+				"EffectName"		"particles/arena/units/heroes/hero_antimage/spell_shield_reflect_shield.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+		}
+	}
+
+	"antimage_mana_void_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"		
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"antimage_mana_void"
+		"AOERadius"						"%mana_void_aoe_radius"
+		"MaxLevel"						"7"
+		"HasScepterUpgrade"				"1"
+
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"80"
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"mana_void_damage_per_mana"		"0.4 0.5 0.6 0.7 0.8 0.9 1.0"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"silence_duration"				"6 6.5 7 7.5 8 8.5 9"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cooldown_increase"				"3 4 4.5 5 6 7 7.5"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"mana_void_aoe_radius"			"600"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_Antimage.ManaVoidCast"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				}
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_Antimage.ManaVoid"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				}
+			}
+
+			"FireEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
+				"EffectAttachType"	"attach_hitloc"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				}
+
+				"ControlPoints"
+				{
+					"01"	"%mana_void_aoe_radius 0 0"
+				}
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_stunned"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				}
+				"Duration"	"%"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_antimage/mana_void.lua"
+				"Function"		"ManaVoid"
+			}
+		}
+	}
+}

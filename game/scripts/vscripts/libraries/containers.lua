@@ -2,7 +2,7 @@
 MODIFIED:
 -Все манипуляции с золотом используют библиотеку Gold
 строка 575 - добавлена проверка на IsNull()
--В эвент Containers_OnDragWorld добавлена проверка на IsIllusion и модифиуатор "modifier_arc_warden_tempest_double"
+-В эвент Containers_OnDragWorld добавлена проверка на IsIllusion и tempest double
 -В Containers:Containers_OnDragFrom - IsRealHero
 -В js Проверки на предмет в контекстном меню, проверка на владение юнитом при дропе предмета
 -добавлены временные контейнеры
@@ -622,7 +622,8 @@ function Containers:AddItemToUnit(unit, item)
 			local iname = item:GetAbilityName()
 			local exists = false
 			local full = true
-			for i=0,5 do
+
+			for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_9 do
 				local it = unit:GetItemInSlot(i)
 				if not it then
 					full = false
@@ -1018,7 +1019,6 @@ function Containers:OrderFilter(order)
 			return false
 		end
 	end
-	
 	CustomRunes:ExecuteOrderFilter(order)
 	
 	return ret
@@ -1308,7 +1308,7 @@ function Containers:Containers_OnDragWorld(args)
 	local position = args.position
 	local entity = nil
 	if type(args.entity) == "number" then entity = EntIndexToHScript(args.entity) end
-	if unit:IsIllusion() or unit:HasModifier("modifier_arc_warden_tempest_double") then
+	if unit:IsIllusion() or unit:IsTempestDouble() then
 		return
 	end
 	if not playerID then return end

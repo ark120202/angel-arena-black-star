@@ -11,7 +11,7 @@ function KarmaOverflowKill(unit)
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf", PATTACH_WORLDORIGIN, unit)
 	ParticleManager:SetParticleControl(particle, 0, unit:GetAbsOrigin() + Vector(0, 0, 0))
 	ParticleManager:SetParticleControl(particle, 1, unit:GetAbsOrigin() + Vector(0, 0, 500))
-	TrueKill(nil, nil, unit)
+	unit:TrueKill()
 end
 
 function SacrificialDaggerOnAttack(keys)

@@ -1,0 +1,666 @@
+"DOTAAbilities"
+{
+	"faceless_void_time_walk_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"faceless_void_time_walk"
+		"MaxLevel"	"7"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_time_walk_preimage.vpcf"
+			"particle"  		"particles/units/heroes/hero_faceless_void/faceless_void_time_walk_slow.vpcf"
+			"particle"  		"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"625"
+		"AbilityCastPoint"				"0.15"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24 22 20 18 16 14 12"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.25"	// mostly about the blink
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"3500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"backtrack_time"			"4.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"		"625"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dodge_chance_time_walk_pct"		"100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dodge_chance_time_walk_duration"	"2.0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_FacelessVoid.TimeWalk"
+				"Target"		"CASTER"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_faceless_void/faceless_void_time_walk_preimage.vpcf"
+				"EffectAttachType"  "start_at_customorigin"
+
+				"ControlPointEntities"
+				{
+					"CASTER"	"attach_origin"
+				}
+
+				"ControlPoints"
+				{
+					"01"	"POINT"
+				}
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_faceless_void/time_walk.lua"
+				"Function"		"TimeWalk"
+				"Target"		"POINT"
+				"modifier"		"modifier_time_walk_arena"
+			}
+
+			"ApplyMotionController"
+			{
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Flags"     "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				}
+				"ScriptFile"    "heroes/hero_faceless_void/time_walk.lua"
+				"HorizontalControlFunction" "TimeWalkMotion"  
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_faceless_void/time_walk.lua"
+				"Function"		"RemoveDamage"
+				"BacktrackTime"	"%backtrack_time"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_time_walk_arena_damage_checker"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				
+				"OnTakeDamage"
+				{	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_faceless_void/time_walk.lua"
+						"Function"		"CalculateDamage"
+						"DamageTaken"	"%attack_damage"
+						"BacktrackTime"	"%backtrack_time"
+					}
+				}
+			}
+		
+			"modifier_time_walk_arena"
+			{
+				"IsHidden"	"1"
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+
+				"EffectName"		"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_time_walk_backtrack_increased_arena"
+						"Target" 		"TARGET"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		
+			"modifier_time_walk_backtrack_increased_arena"
+			{
+				"IsHidden"	"0"
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"Duration"			"%dodge_chance_time_walk_duration"
+			}
+		}
+	}
+
+	"faceless_void_time_dilation_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"faceless_void_time_dilation"
+		"MaxLevel"	"7"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_timedialate.vpcf"
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_dialatedebuf.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"36.0 30.0 24.0 18.0 16.0 14.0 12.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"1 2 3 4 5 6 7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"725"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed_slow"		"-17 -25 -21 -28 -36 -42 -50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_slow"		"-7 -8 -9 -10 -11 -12 -13"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_FacelessVoid.TimeDilation.Cast"
+				"Target"		"CASTER"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_faceless_void/faceless_void_timedialate.vpcf"
+				"EffectAttachType" 	"follow_origin"
+				"EffectRadius"		"%radius"
+				"Target" 			"CASTER"
+				"ControlPoints"
+				{
+					"00"	"0 0 0"
+					"01" "%radius %radius %radius"
+				}
+			}
+			
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  				"CASTER"
+					"Radius" 				"%radius"
+					"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 				"DOTA_UNIT_TARGET_HERO"
+				}
+
+				"Action"
+				{
+					"ApplyModifier"
+					{
+						"Target" 		"TARGET"
+						"ModifierName"	"modifier_time_dilation_cooldown_freeze"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_faceless_void/time_dilation.lua"
+						"Function"			"CooldownFreeze"
+					}
+				}
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_time_dilation_cooldown_freeze"
+			{
+				"IsDebuff"	"1"
+				"Duration"	"%duration"
+				
+				"EffectName"		"particles/units/heroes/hero_faceless_void/faceless_void_dialatedebuf.vpcf"
+				"EffectAttachType"	"follow_origin"
+				
+				"FireSound"
+				{
+					"EffectName"	"Hero_FacelessVoid.TimeDilation.Target"
+					"Target"		"CASTER"
+				}
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_faceless_void/time_dilation.lua"
+						"Function"			"StartAllCooldowns"
+					}
+				}
+				
+				"OnAbilityExecuted"
+				{
+					"DelayedAction"
+					{
+						"Delay" "0.03"
+						"Action"
+						{
+							"RunScript"
+							{
+								"ScriptFile"		"heroes/hero_faceless_void/time_dilation.lua"
+								"Function"			"SlowCooldown"
+							}
+						}
+					}
+				}
+			}
+			
+			"modifier_time_dilation_slow"
+			{
+				"IsHidden" "1"
+				"IsDebuff" "1"
+				
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_speed_slow"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_slow"
+				}
+			
+			}
+		}
+	}
+
+	"faceless_void_time_lock_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"faceless_void_time_lock"
+		"MaxLevel"	"7"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			"particle"			"particles/status_fx/status_effect_faceless_chronosphere.vpcf"
+			"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
+		}
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"		"25"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_creep"		"6.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance_pct"			"8 11 15 17 20 23 25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"100 150 250 300 400 450 550"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_cooldown"			"0.8"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_time_lock_arena"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"	"%chance_pct"
+						"PseudoRandom"	"DOTA_PSEUDO_RANDOM_FACELESS_BASH"
+
+						"OnSuccess"
+						{
+							"FireSound"
+							{
+								"EffectName"	"Hero_FacelessVoid.TimeLockImpact"
+								"Target"		"TARGET"
+							}
+
+							"RunScript"
+							{
+								"ScriptFile"	"heroes/hero_faceless_void/time_lock.lua"
+								"Function"		"TimeLock"
+								"modifier"		"modifier_time_lock_stun_arena"
+							}
+
+							"Damage"
+							{
+								"Target"	"TARGET"
+								"Type"		"DAMAGE_TYPE_MAGICAL"
+								"Damage"	"%bonus_damage"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_time_lock_stun_arena"
+			{
+				"IsDebuff"	"1"
+
+				"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"	"follow_overhead"
+
+				"StatusEffectName"		"particles/status_fx/status_effect_faceless_chronosphere.vpcf"
+				"StatusEffectPriority"	"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FROZEN"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_DISABLED"
+				}
+			}
+		}
+	}
+
+	"faceless_void_backtrack_arena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"faceless_void_backtrack"
+		"MaxLevel"						"7"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dodge_chance_pct"		"10 15 20 25 30 35 40"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_faceless_void_backtrack_arena"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"ThinkInterval"		"0.03"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_faceless_void/backtrack.lua"
+						"Function"		"BacktrackHealth"
+					}
+				}
+
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_faceless_void/backtrack.lua"
+						"Function"		"BacktrackHeal"
+					}
+				}
+			}
+		}
+	}
+
+	"faceless_void_time_freeze"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"arena/faceless_void_time_freeze"
+		"MaxLevel"	"7"
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
+		}
+		
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.35 0.35 0.35"
+		"AbilityCooldown"				"140 130 120 115 110 105 100"
+		"AbilityManaCost"				"150 225 300 400 500 600 700"
+		"HasScepterUpgrade"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.5 2.0 2.3 2.6 2.7 2.8 3.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_pfx"				"256"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_interval"				"0.1"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_FacelessVoid.Chronosphere"
+				"Target"			"CASTER"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/heroes/hero_faceless_void/time_freeze.lua"
+				"Function"			"Chronosphere"
+				"Target"			"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_faceless_void_time_freeze_tooltip"
+			{
+				"IsDebuff"		"1"
+				"IsPurgable"	"0"
+
+			}
+
+			"modifier_faceless_void_time_freeze_aura"
+			{
+				"IsHidden"		"1"
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_item_ward_true_sight"
+						"Target" 		"TARGET"
+						"true_sight_range"		"%radius_pfx"
+					}
+				}
+				
+				"ThinkInterval"		"%aura_interval"
+
+				"OnIntervalThink"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Types"		"DOTA_UNIT_TARGET_ALL"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+							"Radius"	"%radius_pfx"
+						}
+
+						"Action"
+						{
+							"RunScript"
+							{
+								"ScriptFile"		"heroes/hero_faceless_void/time_freeze.lua"
+								"Function"			"ChronosphereAura"
+								"Target"			"TARGET"
+							}
+						}
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION" 	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_faceless_void_time_freeze"
+			{
+				"IsHidden"	"1"
+
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_faceless_void_time_freeze_tooltip"
+						"Target"		"TARGET"
+					}
+					
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_faceless_void_time_freeze_tooltip"
+						"Target"		"TARGET"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FROZEN"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_DISABLED"
+				}
+			}
+		}
+	}
+}

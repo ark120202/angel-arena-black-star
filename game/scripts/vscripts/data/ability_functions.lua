@@ -22,19 +22,27 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	lion_finger_of_death = 50,
 	shredder_chakram_2 = 40,
 	shredder_chakram = 40,
+	sniper_shrapnel = 40,
+	abaddon_death_coil = 40,
+	abyssal_underlord_firestorm = 20,
+	bristleback_quill_spray = 40,
+	centaur_hoof_stomp = 40,
+	centaur_double_edge = 40,
+	kunkka_ghostship = 40,
+	slark_dark_pact = 40,
+	ember_spirit_flame_guard = 30,
+	sandking_sand_storm = 40,
+	antimage_mana_void_arena = 0,
+	ancient_apparition_ice_blast = 0
 }
 
-local function OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
+local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
 	if inflictor and attacker:GetTeam() ~= victim:GetTeam() and not OCTARINE_NOT_LIFESTALABLE_ABILITIES[inflictor:GetAbilityName()] then
-		local heal
-		if victim:IsHero() then
-			heal = damage * GetAbilitySpecial(itemname, "hero_lifesteal") * 0.01
-			SafeHeal(attacker, heal, attacker)
-		else
-			heal = damage * GetAbilitySpecial(itemname, "creep_lifesteal") * 0.01
-			SafeHeal(attacker, heal, attacker)
-		end
-		if heal then
+		local heal = math.floor(damage * GetAbilitySpecial(itemname, victim:IsHero() and "hero_lifesteal" or "creep_lifesteal") * 0.01)
+		if heal >= 1 then
+			if not victim:IsIllusion() then
+				SafeHeal(attacker, heal, attacker)
+			end
 			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, attacker, heal, nil)
 			ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
 		end
@@ -48,10 +56,16 @@ local function OctarineLifestel(attacker, victim, inflictor, damage, damagetype_
 end
 ON_DAMAGE_MODIFIER_PROCS = {
 	["modifier_item_octarine_core_arena"] = function(attacker, victim, inflictor, damage, damagetype_const)
-		OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, "item_octarine_core_arena", "modifier_octarine_bash_cooldown")
+		OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, "item_octarine_core_arena", "modifier_octarine_bash_cooldown")
 	end,
 	["modifier_item_refresher_core"] = function(attacker, victim, inflictor, damage, damagetype_const)
-		OctarineLifestel(attacker, victim, inflictor, damage, damagetype_const, "item_refresher_core", "modifier_octarine_bash_cooldown")
+		OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, "item_refresher_core", "modifier_octarine_bash_cooldown")
+	end,
+	["modifier_sara_evolution"] = function(attacker, victim, _, damage)
+		local ability = attacker:FindAbilityByName("sara_evolution")
+		if ability and attacker.ModifyEnergy then
+			attacker:ModifyEnergy(damage * ability:GetSpecialValueFor("damage_to_energy_pct") * 0.01, true)
+		end
 	end,
 }
 
@@ -64,23 +78,6 @@ ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
 			end
 		end
 	end end,
-	["modifier_freya_pain_reflection"] = function(attacker, victim, inflictor, damage, damagetype_const)
-		local freya_pain_reflection = victim:FindAbilityByName("freya_pain_reflection")
-		local returnedDmg = damage * freya_pain_reflection:GetAbilitySpecial("damage_return_pct") * 0.01
-		ApplyDamage({
-			victim = attacker,
-			attacker = victim,
-			damage = returnedDmg,
-			damage_type = freya_pain_reflection:GetAbilityDamageType(),
-			ability = freya_pain_reflection
-		})
-		local heal = returnedDmg * freya_pain_reflection:GetAbilitySpecial("returned_to_heal_pct") * 0.01
-		SafeHeal(victim, heal, victim)
-		if heal then
-			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, victim, heal, nil)
-			ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
-		end
-	end
 }
 
 OUTGOING_DAMAGE_MODIFIERS = {
@@ -120,16 +117,17 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		end
 	},
 	["modifier_item_piercing_blade"] = {
-		condition = function(_, _, inflictor)
-			return not inflictor
+		condition = function(attacker, _, inflictor)
+			return not inflictor and not attacker:HasModifier("modifier_item_haganemushi")
 		end,
-		multiplier = function(attacker, victim, _, damage)
+		multiplier = function(attacker, victim, _, damage, damagetype)
 			local pct = GetAbilitySpecial("item_piercing_blade", "attack_damage_to_pure_pct") * 0.01
 			ApplyDamage({
 				victim = victim,
 				attacker = attacker,
-				damage = damage * pct,
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
 				damage_type = _G[GetKeyValue("item_piercing_blade", "AbilityUnitDamageType")],
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 				ability = FindItemInInventoryByName(attacker, "item_piercing_blade", false)
 			})
 			return 1 - pct
@@ -139,25 +137,66 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
-		multiplier = function(attacker, victim, _, damage)
+		multiplier = function(attacker, victim, _, damage, damagetype)
 			local pct = GetAbilitySpecial("item_haganemushi", "attack_damage_to_pure_pct") * 0.01
 			ApplyDamage({
 				victim = victim,
 				attacker = attacker,
-				damage = damage * pct,
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
 				damage_type = _G[GetKeyValue("item_haganemushi", "AbilityUnitDamageType")],
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 				ability = FindItemInInventoryByName(attacker, "item_haganemushi", false)
 			})
 			return 1 - pct
 		end
-	}
+	},
+	["modifier_anakim_wisps"] = {
+		condition = function(_, _, inflictor)
+			return not inflictor
+		end,
+		multiplier = function(attacker, victim, _, damage)
+			local anakim_wisps = attacker:FindAbilityByName("anakim_wisps")
+			if anakim_wisps then
+				local dt = {
+					victim = victim,
+					attacker = attacker,
+					ability = anakim_wisps,
+					damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+				}
+				dt.damage_type = DAMAGE_TYPE_PURE
+				dt.damage = damage * anakim_wisps:GetAbilitySpecial("pure_damage_pct") * 0.01
+				ApplyDamage(dt)
+				dt.damage_type = DAMAGE_TYPE_MAGICAL
+				dt.damage = damage * anakim_wisps:GetAbilitySpecial("magic_damage_pct") * 0.01
+				ApplyDamage(dt)
+				dt.damage_type = DAMAGE_TYPE_PHYSICAL
+				dt.damage = damage * anakim_wisps:GetAbilitySpecial("physical_damage_pct") * 0.01
+				ApplyDamage(dt)
+				return 0
+			end
+		end
+	},
+	["modifier_item_golden_eagle_relic_unique"] = function(_, _, inflictor)
+		if not IsValidEntity(inflictor) then
+			return {
+				LifestealPercentage = GetAbilitySpecial("item_golden_eagle_relic", "lifesteal_pct")
+			}
+		end
+	end,
+	["modifier_item_lucifers_claw_unique"] = function(_, _, inflictor)
+		if not IsValidEntity(inflictor) then
+			return {
+				LifestealPercentage = GetAbilitySpecial("item_lucifers_claw", "lifesteal_percent")
+			}
+		end
+	end
 }
 
 INCOMING_DAMAGE_MODIFIERS = {
 	["modifier_mana_shield_arena"] = {
 		multiplier = function(attacker, victim, _, damage)
 			local medusa_mana_shield_arena = victim:FindAbilityByName("medusa_mana_shield_arena")
-			if medusa_mana_shield_arena and not victim:IsIllusion() and victim:IsAlive() then
+			if medusa_mana_shield_arena and not victim:IsIllusion() and victim:IsAlive() and not victim:PassivesDisabled() then
 				local absorption_percent = medusa_mana_shield_arena:GetAbilitySpecial("absorption_tooltip") * 0.01
 				local ndamage = damage * absorption_percent
 				local mana_needed = ndamage / medusa_mana_shield_arena:GetAbilitySpecial("damage_per_mana")
@@ -174,7 +213,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 						})
 					end
 					victim:SpendMana(mana_needed, medusa_mana_shield_arena)					
-					local particleName = "particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
+					local particleName = "particles/arena/units/heroes/hero_sara/fragment_of_armor_impact.vpcf"
 					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
 					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
 					ParticleManager:SetParticleControl(particle, 1, Vector(mana_needed,0,0))
@@ -186,10 +225,79 @@ INCOMING_DAMAGE_MODIFIERS = {
 	["modifier_mirratie_sixth_sense"] = {
 		multiplier = function(_, victim)
 			local mirratie_sixth_sense = victim:FindAbilityByName("mirratie_sixth_sense")
-			if mirratie_sixth_sense and victim:IsAlive() and RollPercentage(mirratie_sixth_sense:GetAbilitySpecial("dodge_chance_pct")) then
+			if mirratie_sixth_sense and victim:IsAlive() and RollPercentage(mirratie_sixth_sense:GetAbilitySpecial("dodge_chance_pct")) and not victim:PassivesDisabled() then
 				ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
 				return 0
 			end
 		end
-	}
+	},
+	["modifier_item_blade_mail_arena_active"] = {
+		multiplier = function(_, victim)
+			local modifier = victim:FindModifierByNameAndCaster("modifier_item_blade_mail_arena_active", victim)
+			if modifier and IsValidEntity(modifier:GetAbility()) then
+				return 1 - modifier:GetAbility():GetAbilitySpecial("reduced_damage_pct") * 0.01
+			end
+		end
+	},
+	["modifier_item_sacred_blade_mail_active"] = {
+		multiplier = function()
+			return 1 - GetAbilitySpecial("item_sacred_blade_mail", "reduced_damage_pct") * 0.01
+		end
+	},
+	["modifier_saber_instinct"] = {
+		multiplier = function(attacker, victim, inflictor, damage)
+			local saber_instinct = victim:FindAbilityByName("saber_instinct")
+			if not IsValidEntity(inflictor) and saber_instinct and victim:IsAlive() and not victim:PassivesDisabled() then
+				if IsRangedUnit(attacker) then
+					if RollPercentage(saber_instinct:GetAbilitySpecial("ranged_evasion_pct")) then
+						PopupEvadeMiss(victim, attacker)
+						ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
+						return false
+					end
+				else
+					if RollPercentage(saber_instinct:GetAbilitySpecial("melee_block_chance")) then
+						local blockPct = saber_instinct:GetAbilitySpecial("melee_damage_pct") * 0.01
+						return {
+							BlockedDamage = blockPct * damage,
+						}
+					end
+				end
+			end
+		end
+	},
+	["modifier_sara_fragment_of_armor"] = {
+		multiplier = function(attacker, victim, inflictor, damage)
+			local sara_fragment_of_armor = victim:FindAbilityByName("sara_fragment_of_armor")
+			if sara_fragment_of_armor and not victim:IsIllusion() and victim:IsAlive() and not victim:PassivesDisabled() and victim.GetEnergy and sara_fragment_of_armor:GetToggleState() then
+				local blocked_damage_pct = sara_fragment_of_armor:GetAbilitySpecial("blocked_damage_pct") * 0.01
+				local mana_needed = (damage * blocked_damage_pct) / sara_fragment_of_armor:GetAbilitySpecial("damage_per_energy")
+				if victim:GetEnergy() >= mana_needed then
+					victim:EmitSound("Hero_Medusa.ManaShield.Proc")
+					victim:ModifyEnergy(-mana_needed)					
+					local particleName = "particles/arena/units/heroes/hero_sara/fragment_of_armor_impact.vpcf"
+					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
+					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
+					ParticleManager:SetParticleControl(particle, 1, Vector(mana_needed,0,0))
+					return 1 - blocked_damage_pct
+				end
+			end
+		end
+	},
+}
+
+CREEP_BONUSES_MODIFIERS = {
+	["modifier_item_golden_eagle_relic_unique"] = {gold = GetAbilitySpecial("item_golden_eagle_relic", "kill_gold"), xp = GetAbilitySpecial("item_golden_eagle_relic", "kill_xp")},
+	["modifier_say_demonic_power"] = function(self)
+		local ability = self:FindAbilityByName("say_demonic_power")
+		if abiltiy then
+			return {gold = ability:GetLevelSpecialValueFor("bonus_creep_gold", ability:GetLevel() - 1)}
+		end
+	end,
+	["modifier_item_skull_of_midas"] = {gold = GetAbilitySpecial("item_skull_of_midas", "kill_gold"), xp = GetAbilitySpecial("item_skull_of_midas", "kill_xp")},
+	["modifier_talent_creep_gold"] = function(self)
+		local modifier = self:FindModifierByName("modifier_talent_creep_gold")
+		if modifier then
+			return {gold = modifier:GetStackCount()}
+		end
+	end
 }

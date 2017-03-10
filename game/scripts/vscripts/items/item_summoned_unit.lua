@@ -53,7 +53,7 @@ function ReturnDamage(keys)
 	local attacker = keys.attacker
 	if attacker then
 		local attacker_name = attacker:GetUnitName()
-		if keys.Damage > 0 and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or IsBossEntity(attacker)) then
+		if keys.Damage > 0 and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or attacker:IsBoss()) then
 			if keys.ability:GetCooldownTimeRemaining() < keys.cooldown then
 				keys.ability:StartCooldown(keys.cooldown)
 			end

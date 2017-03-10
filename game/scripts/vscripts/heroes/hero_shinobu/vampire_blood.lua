@@ -14,7 +14,7 @@ end
 function UpdateStateLevel(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	if ability then
+	if IsValidEntity(ability) then
 		local hp = caster:GetHealthPercent()
 		local mark_lvl2 = ability:GetAbilitySpecial("hp_mark_pct_lvl2")
 		local mark_lvl3 = ability:GetAbilitySpecial("hp_mark_pct_lvl3")
@@ -41,6 +41,8 @@ function RespawnHealth(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	Timers:CreateTimer(0.1, function()
-		caster:SetHealth(caster:GetMaxHealth() * 0.5)
+		if IsValidEntity(caster) then
+			caster:SetHealth(caster:GetMaxHealth() * 0.5)
+		end
 	end)
 end
