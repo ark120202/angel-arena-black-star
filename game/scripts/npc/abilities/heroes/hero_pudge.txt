@@ -377,7 +377,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"strength_damage"		"30 40 80 90 100 120 140"
+				"strength_damage"		"20 30 40 50 60 70 80"
 			}
 			"03"
 			{
@@ -392,7 +392,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_rate"				"1.01"
+				"tick_rate"				"1"
 			}
 		}
 
