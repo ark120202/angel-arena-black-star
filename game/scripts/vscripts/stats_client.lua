@@ -132,3 +132,12 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, _currentRe
 		end
 	end)
 end
+
+--[[
+function GameMode:CustomSaveFunc(pid)
+	print("HANDLED!")
+	return {Rating = 5000}
+end
+GameRules:SetCustomGameAccountRecordSaveFunction(Dynamic_Wrap(GameMode, "CustomSaveFunc"), GameMode)
+PrintTable(GameRules:GetPlayerCustomGameAccountRecord(0))
+]]

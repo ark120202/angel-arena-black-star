@@ -102,7 +102,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	"stargazer_cosmic_countdown",
 	"zen_gehraz_superposition",
 	"furion_force_of_nature",
-	"doom_bringer_devour",
+	"doom_bringer_devour_arena",
 	"omniknight_select_enemies",
 	"omniknight_select_allies",
 	"magnataur_reverse_polarity",

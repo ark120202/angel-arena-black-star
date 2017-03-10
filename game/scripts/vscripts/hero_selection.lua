@@ -66,17 +66,39 @@ function HeroSelection:PrepareTables()
 	local data = {
 		SelectionTime = HERO_SELECTION_TIME,
 		HeroSelectionState = HERO_SELECTION_STATE_ALLPICK,
+		HeroTabs = {}
 	}
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK then
-		data.HeroTabs = {{
-				Heroes = {}
-			}, {
-				Heroes = {}
-			}
-		}
-		for category,contents in pairsByKeys(ENABLED_HEROES) do
-			for name,enabled in pairsByKeys(contents) do
-				if enabled == 1 and category == "Selection" then
+		for name,enabled in pairsByKeys(ENABLED_HEROES.Selection) do
+			if enabled == 1 then
+				local heroTable = GetHeroTableByName(name)
+				local tabIndex = 1
+				if heroTable.base_hero then
+					tabIndex = 2
+				end
+				local heroData = {
+					heroKey = name,
+					model = heroTable.base_hero or name,
+					custom_scene_camera = heroTable.SceneCamera,
+					custom_scene_image = heroTable.SceneImage,
+					abilities = HeroSelection:ParseAbilitiesFromTable(heroTable),
+					border_class = heroTable.BorderClass,
+					attributes = HeroSelection:ExtractHeroStats(heroTable)
+				}
+				if heroTable.LinkedHero then
+					heroData.linked_heroes = string.split(heroTable.LinkedHero, " | ")
+				end
+				if not heroData.border_class and heroTable.Changed == 1 and tabIndex == 1 then
+					heroData.border_class = "Border_Changed"
+				end
+				if not data.HeroTabs[tabIndex] then data.HeroTabs[tabIndex] = {} end
+				table.insert(data.HeroTabs[tabIndex], heroData)
+			end
+		end
+	elseif ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
+		if ENABLED_HEROES.NoAbilities then
+			for name,enabled in pairsByKeys(ENABLED_HEROES.NoAbilities) do
+				if enabled == 1 then
 					local heroTable = GetHeroTableByName(name)
 					local tabIndex = 1
 					if heroTable.base_hero then
@@ -87,52 +109,23 @@ function HeroSelection:PrepareTables()
 						model = heroTable.base_hero or name,
 						custom_scene_camera = heroTable.SceneCamera,
 						custom_scene_image = heroTable.SceneImage,
-						abilities = HeroSelection:ParseAbilitiesFromTable(heroTable),
-						border_class = heroTable.BorderClass,
 						attributes = HeroSelection:ExtractHeroStats(heroTable)
 					}
-					if heroTable.LinkedHero then
-						heroData.linked_heroes = string.split(heroTable.LinkedHero, " | ")
-					end
-					if not heroData.border_class and heroTable.Changed == 1 and tabIndex == 1 then
-						heroData.border_class = "Border_Changed"
-					end
-					table.insert(data.HeroTabs[tabIndex].Heroes, heroData)
+					if not data.HeroTabs[tabIndex] then data.HeroTabs[tabIndex] = {} end
+					table.insert(data.HeroTabs[tabIndex], heroData)
 				end
 			end
 		end
-		HeroSelection.ModeData = data
-	elseif ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
-		data.HeroTabs = {
-			{
-				Heroes = {}
-			}
-		}
-		if ENABLED_HEROES.NoAbilities then
-			for name,enabled in pairsByKeys(ENABLED_HEROES.NoAbilities) do
-				if enabled == 1 then
-					local heroTable = GetHeroTableByName(name)
-					local heroData = {
-						heroKey = name,
-						model = heroTable.base_hero or name,
-						custom_scene_camera = heroTable.SceneCamera,
-						custom_scene_image = heroTable.SceneImage,
-						attributes = HeroSelection:ExtractHeroStats(heroTable)
-					}
-					table.insert(data.HeroTabs[1].Heroes, heroData)
-				end
-			end
-		end
-		HeroSelection.ModeData = data
 	end
-	for _,v in ipairs(HeroSelection.ModeData.HeroTabs) do
-		for _,ht in ipairs(v.Heroes) do
+	HeroSelection.ModeData = data
+	for _,v in ipairs(data.HeroTabs) do
+		for _,ht in ipairs(v) do
 			if not ht.linked_heroes then
 				table.insert(HeroSelection.RandomableHeroes, ht)
 			end
 		end
 	end
-	PlayerTables:CreateTable("hero_selection_available_heroes", HeroSelection.ModeData, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+	PlayerTables:CreateTable("hero_selection_available_heroes", data, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 end
 
 function HeroSelection:VerifyHeroGroup(hero, group)
@@ -302,6 +295,16 @@ function HeroSelection:IsHeroSelected(heroName)
 	return false
 end
 
+function HeroSelection:GetSelectedHeroPlayer(hero)
+	for team,_v in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection")) do
+		for plyId,v in pairs(_v) do
+			if v.hero == hero and v.status == "picked" then
+				return plyId
+			end
+		end
+	end
+end
+
 function HeroSelection:GetLinkedHeroLockedAlly(hero, desiredTeam)
 	for team,_v in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection")) do
 		if team == desiredTeam then
@@ -354,7 +357,6 @@ function HeroSelection:OnHeroSelectHero(data)
 				newStatus = "picked"
 			end
 		end
-		print(newStatus)
 		if HeroSelection:UpdateStatusForPlayer(playerID, newStatus, hero, true) and newStatus == "picked" then
 			PrecacheUnitByNameAsync(GetKeyValue(hero, "base_hero") or hero, function() end, playerID)
 			Gold:ModifyGold(playerID, CUSTOM_STARTING_GOLD)
@@ -387,7 +389,7 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 				Timers:CreateTimer(function()
 					connectionState = PlayerResource:GetConnectionState(playerId)
 					if connectionState == DOTA_CONNECTION_STATE_CONNECTED then
-						local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
+						local heroTableCustom = NPC_HEROES_CUSTOM[heroName] or NPC_HEROES[heroName]
 						local oldhero = PlayerResource:GetSelectedHeroEntity(playerId)
 						local hero
 						local baseNewHero = heroTableCustom.base_hero or heroName
@@ -445,8 +447,9 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 	end)
 end
 
-function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item)
+function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item, callback)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+	hero.ChangingHeroProcessRunning = true
 	if hero.PocketItem then
 		hero.PocketHostEntity = nil
 		UTIL_Remove(hero.PocketItem)
@@ -503,9 +506,26 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 				UTIL_Remove(citem)
 			end
 		end
-		Timers:CreateTimer(duration - (GameRules:GetDOTATime(true, true) - startTime), function()
+		Timers:CreateTimer(startTime + duration - GameRules:GetDOTATime(true, true), function()
 			if IsValidEntity(newHero) then
 				newHero:RemoveModifierByName("modifier_hero_selection_transformation")
+			end
+		end)
+		if callback then callback(newHero) end
+	end)
+end
+
+function HeroSelection:ForceChangePlayerHeroMenu(playerID)
+	HeroSelection:ChangeHero(playerID, FORCE_PICKED_HERO, true, 0, nil, function(hero)
+		hero:AddNoDraw()
+		FindClearSpaceForUnit(hero, FindFountain(PlayerResource:GetTeam(playerID)):GetAbsOrigin(), true)
+		hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
+		hero.ForcedHeroChange = true
+		Timers:CreateTimer(function()
+			local player = PlayerResource:GetPlayer(playerID)
+			if not IsPlayerAbandoned(playerID) and player and IsValidEntity(hero) and not hero.ChangingHeroProcessRunning then
+				CustomGameEventManager:Send_ServerToPlayer(player, "metamorphosis_elixir_show_menu", {forced = true})
+				return 0.5
 			end
 		end)
 	end)

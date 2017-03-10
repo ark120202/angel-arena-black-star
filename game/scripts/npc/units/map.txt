@@ -74,56 +74,6 @@
 			}
 		}
 	}
-
-	"npc_dota_casino_lina"
-	{
-		// General
-		//
-		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/heroes/lina/lina.vmdl"
-		"ModelScale"				"1.2"
-		"Level"						"50"
-		"IsAncient"					"1"
-				
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"casino_bitch_passive"
-		"Ability2"					""
-		"Ability3"					""
-		"Ability4"					""
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"0"		// Speed
-		"MovementTurnRate"			"0"		// Turning rate.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"	"100000"	// Base health.
-		"StatusHealthRegen"	"0"	// Health regeneration rate.
-		"StatusMana"	"0"	// Base mana.
-		"StatusManaRegen"	"0"	// Mana regeneration rate.
-
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1" { "ItemDef" "318" }
-				"Wearable2" { "ItemDef" "319" }
-				"Wearable3" { "ItemDef" "320" }
-				"Wearable4" { "ItemDef" "321" }
-			}
-		}
-	}
 	
 	"npc_dota_arena_statue"
 	{

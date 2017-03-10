@@ -25,6 +25,7 @@
 				<Panel id="ImageHost">
 					<Image id="HeroImage"/>
 					<Image src="file://{images}/custom_game/icon_disconnect.png" class="DisconnectionIndicator"/>
+					<Image id="LockedIcon" />
 				</Panel>
 			</Panel>
 		</snippet>

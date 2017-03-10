@@ -1,3 +1,5 @@
+@define mainPanelWidth: 310px;
+@define mainPanelHeight: 830px;
 .base
 {
 	align: right center;
@@ -19,8 +21,8 @@
 
 #ShopItemBasePanel
 {
-	height: 830px;
-	width: 310px;
+	height: mainPanelHeight;
+	width: mainPanelWidth;
 }
 
 #ItembuildsPanel
@@ -97,7 +99,7 @@
 {
 	width: 100%;
 	horizontal-align: right;
-	height: 78.5%;
+	height: 84%;
 	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 0.4);
 	flow-children: down;
 	background-image: url("s2r://panorama/images/hud/reborn/bg_mainshop_psd.vtex");
@@ -109,7 +111,7 @@
 {
 	width: 100%;
 	align: right bottom;
-	height: 21.5%;
+	height: 16%;
 	background-image: url("s2r://panorama/images/hud/reborn/bg_item_breakdown_recessed_psd.vtex");
 	background-size: cover;
 }
@@ -117,14 +119,13 @@
 #ItemRecipeBoxRows
 {
 	width: 100%;
-	height: 100%;
 	flow-children: down;
+	vertical-align: center;
 }
 
 .ItemRecipeBoxRow
 {
-	margin-top: 5px;
-	height: 50px;
+	height: 40px;
 	horizontal-align: center;
 	flow-children: right;
 }
@@ -180,15 +181,16 @@
 	align: center top;
 	height: 49px;
 	width: 100%;
-	//flow-children: right;
-	padding: 10px;
-	padding-bottom: 6px;
+	flow-children: right;
 }
 
 #ShopSearchEntry
 {
 	height: 100%;
 	width: 100%;
+	margin: 10px;
+	margin-bottom: 6px;
+	margin-left: 4px;
 	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
 	background-color: black;
 	padding: 5px 7px 3px 7px;
@@ -215,6 +217,57 @@
 #ShopSearchEntry:focus #PlaceholderText, #ShopSearchEntry.HasInput #PlaceholderText
 {
 	opacity: 0.0;
+}
+
+#ShowHideItemguidesButton
+{
+	width: 34px;
+    height: 34px;
+	margin-top: 10px;
+	margin-bottom: 6px;
+    margin-left: 4px;
+    transition-property: brightness, opacity;
+    transition-duration: 0.24s;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_item_build_psd.vtex");
+    opacity: 0.8;
+}
+
+.ItembuildsHidden #ShowHideItemguidesButton
+{
+   	background-image: url("s2r://panorama/images/hud/reborn/bg_item_build_psd.vtex");
+   	opacity: 0.8;
+}
+
+.ItembuildsHidden #ShowHideItemguidesButton:hover
+{
+   	opacity: 1;
+}
+
+#ShowHideItemguidesButton:hover
+{
+    brightness: 2.0;
+}
+
+#ShowHideItemguidesButton:active
+{
+    wash-color: #999999;
+}
+
+#ShowHideItemguidesIcon
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/hud/reborn/close_guide_btn_psd.vtex");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80%;
+    transition-property: transform;
+    transition-duration: 0.24s;
+}
+
+.ItembuildsHidden #ShowHideItemguidesIcon
+{
+	transform: rotateZ(180deg);
 }
 
 
@@ -261,7 +314,7 @@
 
 .CanBuy
 {
-	border: 1px solid #F0AB5D;
+	border: 1px solid #CD9607;
 }
 
 .NotPurchasableItem
@@ -424,25 +477,6 @@ DOTAHud.IsBeforeGameplay #QuickBuyPanel
 	width: 39px;
 	margin-left: -3px;
 	margin-right: -3px;
-}
-
-#ShowHideItemguidesPanel
-{
-	align: left bottom;
-	margin-left: 0;
-	height: 36px;
-	width: 36px;
-	background-color: rgba(0,0,0,0.95);
-	border-radius: 7px;
-}
-
-#ShowHideItemguidesLabel
-{
-	color: rgb(240,240,240);
-	font-weight: bold;
-	font-size: 24px;
-	align: center center;
-	text-shadow: 0px 0px 1px gold;
 }
 
 #StockOverlay

@@ -271,5 +271,7 @@ function HostSwapPlayers(playerId, playerId2) {
 	$.RegisterForUnhandledEvent("DOTAGame_TeamPlayerListChanged", OnTeamPlayerListChanged);
 	$.RegisterForUnhandledEvent("DOTAGame_PlayerSelectedCustomTeam", OnPlayerSelectedTeam);
 	SetUnassignedTeamDraggable()
+		//$("#TeamSelectContainer").SetAcceptsFocus(true);
 	UpdateTimer()
+	Game.PlayerJoinTeam(DOTA_TEAM_SPECTATOR)
 })()

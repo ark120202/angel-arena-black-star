@@ -1520,32 +1520,31 @@
 	"huskar_burning_spear_arena"
 	{
 		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"huskar_burning_spear"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"huskar_burning_spear"
-
 		"AbilityCastRange"				"450"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-		"AbilityCooldown"				"0.0 0.0 0.0 0.0"
-
-		"AbilityDamage"					"5 10 15 20"
-
-		"AbilityManaCost"				"0 0 0 0"
+		"MaxLevel"						"7"
+		"AbilityDamage"					"30 60 90 120 150 180 210"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_cost"			"15"
+				"health_cost"			"30 60 90 120 150 180 210"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
+				"fire_spread_radius"	"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
 				"duration"				"8"
 			}
 		}
@@ -1584,6 +1583,7 @@
 					{
 						"ScriptFile"	"heroes/hero_huskar/burning_spear.lua"
 						"Function"		"DoHealthCost"
+						"health_cost"	"%health_cost"
 					}
 				}
 
@@ -1617,11 +1617,12 @@
 				"ThinkInterval"		"1.0"
 				"OnIntervalThink"
 				{
-					"Damage"
+					"RunScript"
 					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%AbilityDamage"
+						"ScriptFile"	"heroes/hero_huskar/burning_spear.lua"
+						"Function"		"DealDamage"
+						"per_stack_duration"	"%duration"
+						"damage"		"%AbilityDamage"
 					}
 				}
 			}

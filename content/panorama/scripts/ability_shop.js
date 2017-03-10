@@ -13,12 +13,9 @@ function GetLocalAbilityNamesInfo() {
 	var hero = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID())
 	for (var i = 0; i < Entities.GetAbilityCount(hero); ++i) {
 		var ability = Entities.GetAbility(hero, i);
-		if (ability != -1) {
-			var levels = Abilities.GetLevel(ability)
-			if (Abilities.GetAbilityName(ability) == "attribute_bonus_arena")
-				levels--;
+		if (ability != -1 && !Abilities.IsHidden(ability)) {
 			ab[Abilities.GetAbilityName(ability)] = {
-				level: levels,
+				level: Abilities.GetLevel(ability),
 				maxLevel: Abilities.GetMaxLevel(ability)
 			};
 		}
@@ -163,10 +160,9 @@ function UpdateAbilities() {
 
 function HeroSelectionStart(data) {
 	for (var tabKey in data.HeroTabs) {
-		var heroesInTab = data.HeroTabs[tabKey]
 		var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey)
 		TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel")
-		FillHeroesTable(heroesInTab, TabHeroesPanel)
+		FillHeroesTable(data.HeroTabs[tabKey], TabHeroesPanel)
 		TabHeroesPanel.visible = false
 	}
 	SelectHeroTab(1)

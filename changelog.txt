@@ -15,6 +15,7 @@ TODO LIST:
 	I found a bug in custom abilities using Pudge flesh heap + apocalypse can result in infinite size which would cause the hero unable to attack - ability_lua + MODIFIER_PROPERTY_MODEL_SCALE
 	Убрать партиклы смерти виспа при смерти кастомных героев (как со станом)
 	при абандоне убирать из селекшона
+	сделать кастомное меню пика для спектаторов (+магазин)
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_2628]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
 [url=https://gist.github.com/ark120202/5434bc03e99c28988eda7e68d9c751c2]FULL UPDATE[/url]
@@ -29,22 +30,34 @@ Angel Arena Black Star - Version 1.4.5:
 ============================================================
 Angel Arena Black Star - Version 1.4.5:
 General:
+	Added new paired heroes system //TODO: Repick, team changing
+	Added new heroes pair: Maka Albarn & Soul Evans
 	Host now can fully control players in team selection menu (using Drag&Drop)
 	Added new hero: Destroyer
+	Huskar - Burning Spear reworked //TODO
+	Slightly increased duel area size and changed central boss area
 Balance:
 	
 	Runes:
 		
 	Items:
-		
+		Eye of the Prophet:
+			Cooldown: 240 => 35
+		Ray of Fate:
+			Cooldown: 280 => 40
 	Talents:
 		
 	Abilities:
-		
+
+	Ability Shop:
+		New Bans: Lina - Fiery Soul + Techies - Focused Detonate, Saber - Mana Burst + (Obsidian Destroyer - Essence Aura|Earthshaker - Aftershock|Zuus - Static Field|Storm Spirit - Overload)
+		Doom - Devour now is not rearmable
 Fixes:
 	Fixed Slark - Dark Pact + Spikes Rune crashed game
 	Fixed Blade Mail particles
-	-------------------TODO - доделать хускару копья
+	Now you can't sell hidden abilities in Ability Shop mode
+	New heroes in Custom Abilities were moved to second tab
+	Hero Selection now is hidden to spectating players
 <<+===========================================================================================================
 
 

@@ -15,7 +15,7 @@ var HERO_SELECTION_STATE_NOT_STARTED = 0
 var HERO_SELECTION_STATE_ALLPICK = 1
 var HERO_SELECTION_STATE_END = 2
 
-var DOTA_TEAM_SPECATOR = 1
+var DOTA_TEAM_SPECTATOR = 1
 
 var RUNES_COLOR_MAP = {
 	0: "FF7800",
@@ -28,6 +28,8 @@ var RUNES_COLOR_MAP = {
 	7: "FF4D00",
 	8: "0D0080",
 	9: "C800FF",
+	10: "4A0746",
+	11: "B35F5F",
 }
 
 function IsHeroName(str) {
@@ -327,13 +329,13 @@ function shadeColor2(color, percent) {
 }
 
 function shuffle(a) {
-    var j, x, i;
-    for (i = a.length; i; i--) {
-        j = Math.floor(Math.random() * i);
-        x = a[i - 1];
-        a[i - 1] = a[j];
-        a[j] = x;
-    }
+	var j, x, i;
+	for (i = a.length; i; i--) {
+		j = Math.floor(Math.random() * i);
+		x = a[i - 1];
+		a[i - 1] = a[j];
+		a[j] = x;
+	}
 }
 
 var hud = GetDotaHud();
