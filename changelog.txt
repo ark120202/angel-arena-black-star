@@ -16,6 +16,7 @@ TODO LIST:
 	Убрать партиклы смерти виспа при смерти кастомных героев (как со станом)
 	при абандоне убирать из селекшона
 	сделать кастомное меню пика для спектаторов (+магазин)
+	allowrotation="true" 
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_2628]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
 [url=https://gist.github.com/ark120202/5434bc03e99c28988eda7e68d9c751c2]FULL UPDATE[/url]
@@ -58,6 +59,7 @@ Fixes:
 	Now you can't sell hidden abilities in Ability Shop mode
 	New heroes in Custom Abilities were moved to second tab
 	Hero Selection now is hidden to spectating players
+	Fixed Hero Selection loading hero preview panels
 <<+===========================================================================================================
 
 

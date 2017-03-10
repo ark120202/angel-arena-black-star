@@ -6,7 +6,7 @@
 		"ScriptFile"					"heroes/hero_soul_eater/demon_weapon_from.lua"
 		"AbilityTextureName"			"arena/soul_eater_demon_weapon_from"
 		"MaxLevel" 						"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		"AbilitySpecial"
 		{

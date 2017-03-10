@@ -65,7 +65,6 @@ function GameMode:_OnEntityKilled( keys )
 
 	if killedUnit:IsRealHero() then 
 		if killerEntity then
-			DebugPrint("KILLED, KILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
 			local team = killerEntity:GetTeam()
 			if END_GAME_ON_KILLS and GetTeamHeroKills(team) >= KILLS_TO_END_GAME_FOR_TEAM then
 				self:OnKillGoalReached(team)

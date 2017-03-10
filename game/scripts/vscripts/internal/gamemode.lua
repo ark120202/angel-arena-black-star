@@ -67,7 +67,6 @@ function GameMode:_InitGameMode()
 			SetTeamCustomHealthbarColor(team, color[1], color[2], color[3])
 		end
 	end
-	DebugPrint('[BAREBONES] GameRules set')
 
 	--InitLogFile( "log/barebones.txt","")
 
@@ -119,7 +118,7 @@ function GameMode:_InitGameMode()
 	if BAREBONES_DEBUG_SPEW then
 		spew = 1
 	end
-	Convars:RegisterConvar('barebones_spew', tostring(spew), 'Set to 1 to start spewing barebones debug info.  Set to 0 to disable.', 0)
+	--Convars:RegisterConvar('barebones_spew', tostring(spew), 'Set to 1 to start spewing barebones debug info.  Set to 0 to disable.', 0)
 
 	-- Change random seed
 	local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '^0+','')
@@ -129,7 +128,6 @@ function GameMode:_InitGameMode()
 	self.bSeenWaitForPlayers = false
 	self.vUserIds = {}
 
-	DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
 	GameMode._reentrantCheck = true
 	GameMode:InitGameMode()
 	GameMode._reentrantCheck = false

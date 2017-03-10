@@ -448,5 +448,6 @@
 		"LinkedHero"			"npc_arena_hero_maka"
 		"Model"					"models/units/soul_eater/soul_eater.vmdl"
 		"ModelScale"			"1.15"
+		"Ability1"				"soul_eater_demon_weapon_from"
 	}
 }

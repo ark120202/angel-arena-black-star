@@ -6,7 +6,6 @@ BAREBONES_DEBUG_SPEW = false
 GAMEMODE_INITIALIZATION_STATUS = {}
 
 if GameMode == nil then
-	DebugPrint( '[BAREBONES] creating barebones game mode' )
 	_G.GameMode = class({})
 end
 
@@ -93,7 +92,6 @@ GameModes:Preload()
 
 function GameMode:InitGameMode()
 	GameMode = self
-	DebugPrint('[BAREBONES] Starting to load Barebones gamemode...')
 	if GAMEMODE_INITIALIZATION_STATUS[2] then
 		return
 	end
@@ -128,15 +126,13 @@ function GameMode:InitGameMode()
 	HeroSelection:PrepareTables()
 	PanoramaShop:InitializeItemTable()
 	Scepters:SetGlobalScepterThink()
-	DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
 end
 
 function GameMode:PostLoadPrecache()
-	DebugPrint("[BAREBONES] Performing Post-Load precache")
+
 end
 
 function GameMode:OnFirstPlayerLoaded()
-	DebugPrint("[BAREBONES] First Player has loaded")
 	--[[local portal2 = Entities:FindByName(nil, "target_mark_teleport_river_team2")
 	local portal3 = Entities:FindByName(nil, "target_mark_teleport_river_team3")
 	if portal2 and portal3 then
@@ -149,7 +145,6 @@ function GameMode:OnFirstPlayerLoaded()
 end
 
 function GameMode:OnAllPlayersLoaded()
-	DebugPrint("[BAREBONES] All Players have loaded into the game")
 	if GAMEMODE_INITIALIZATION_STATUS[4] then
 		return
 	end
@@ -169,7 +164,6 @@ function GameMode:OnHeroSelectionEnd()
 end
 
 function GameMode:OnHeroInGame(hero)
-	DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 	Timers:CreateTimer(function()
 		if IsValidEntity(hero) and hero:IsTrueHero() then
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
@@ -204,7 +198,6 @@ function GameMode:OnHeroInGame(hero)
 end
 
 function GameMode:OnGameInProgress()
-	DebugPrint("[BAREBONES] The game has officially begun")
 	if GAMEMODE_INITIALIZATION_STATUS[3] then
 		return
 	end

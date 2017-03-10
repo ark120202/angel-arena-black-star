@@ -174,16 +174,12 @@
 
 	"faceless_void_time_dilation_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"faceless_void_time_dilation"
 		"MaxLevel"	"7"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
@@ -191,20 +187,10 @@
 			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_dialatedebuf.vpcf"
 		}
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"36.0 30.0 24.0 18.0 16.0 14.0 12.0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -338,8 +324,6 @@
 
 	"faceless_void_time_lock_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -347,26 +331,19 @@
 		"AbilityTextureName"			"faceless_void_time_lock"
 		"MaxLevel"	"7"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
 			"particle"			"particles/status_fx/status_effect_faceless_chronosphere.vpcf"
 			"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
 		}
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportBonus"		"25"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"0.5"
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.5"
 			}
 			"02"
 			{
@@ -509,8 +486,6 @@
 
 	"faceless_void_time_freeze"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
