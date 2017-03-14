@@ -21,7 +21,7 @@
 	"soul_eater_human_form"
 	{
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					""
+		"ScriptFile"					"heroes/hero_soul_eater/human_form.lua"
 		"AbilityTextureName"			"arena/soul_eater_human_form"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"

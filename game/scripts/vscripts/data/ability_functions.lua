@@ -189,6 +189,11 @@ OUTGOING_DAMAGE_MODIFIERS = {
 				LifestealPercentage = GetAbilitySpecial("item_lucifers_claw", "lifesteal_percent")
 			}
 		end
+	end,
+	["modifier_soul_eater_demon_weapon_from"] = function(attacker, victim, inflictor)
+		if not inflictor then
+			return 0
+		end
 	end
 }
 

@@ -1,4 +1,4 @@
-if IsClient() then require('internal/sharedutil') end
+if IsClient() then require("utils/shared") end
 item_bottle_arena = class({})
 LinkLuaModifier("modifier_item_bottle_arena_heal", "items/lua/modifiers/modifier_item_bottle_arena_heal.lua", LUA_MODIFIER_MOTION_NONE)
 function item_bottle_arena:GetAbilityTextureName()

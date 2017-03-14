@@ -65,7 +65,7 @@ function Blink(ability, caster, Target, Point, MaxBlink)
 		Point = Origin + (Point - Origin):Normalized() * MaxBlink
 	end
 	Target:SetAbsOrigin(Point)
-	FindClearSpaceForUnit(Target, Point, false)
+	FindClearSpaceForUnit(Target, Point, true)
 	ParticleManager:CreateParticle("particles/items_fx/blink_dagger_end.vpcf", PATTACH_ABSORIGIN, Target)
 	ability:ApplyDataDrivenModifier(caster, Target, "modifier_item_blink_staff_unobstructed_movement", {})
 end

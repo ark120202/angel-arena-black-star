@@ -24,7 +24,7 @@ function HeroSelection:Initialize()
 end
 
 function HeroSelection:CollectPD()
-	PlayerTables:CreateTable("hero_selection", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+	PlayerTables:CreateTable("hero_selection", {}, AllPlayersInterval)
 	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:IsValidPlayerID(i) and PlayerResource:IsValidTeamPlayer(i) then
 			local team = PlayerResource:GetTeam(i)
@@ -125,7 +125,7 @@ function HeroSelection:PrepareTables()
 			end
 		end
 	end
-	PlayerTables:CreateTable("hero_selection_available_heroes", data, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+	PlayerTables:CreateTable("hero_selection_available_heroes", data, AllPlayersInterval)
 end
 
 function HeroSelection:VerifyHeroGroup(hero, group)
@@ -666,3 +666,4 @@ function HeroSelection:InitializeHeroClass(unit, classTable)
 		end
 	end
 end
+--PlayerResource:ReplaceHeroWith(0, "npc_dota_hero_arena_base", 0, 0)

@@ -3,14 +3,9 @@ function GoToThePocket(keys)
 	local caster = keys.caster
 	local target = keys.target
 	
-	if target ~= caster and HasFreeSlot(target) and target:IsRealHero() and target == PlayerResource:GetSelectedHeroEntity(target:GetPlayerOwnerID()) then
+	if target ~= caster and target:UnitHasSlotForItem("item_pocket_riki", false) and target:IsTrueHero() then
 		local item = CreateItem("item_pocket_riki", target, target)
 		item.RikiContainer = caster
-		local level = 1
-		local invisAbility = caster:FindAbilityByName("riki_permanent_invisibility")
-		if invisAbility and level < invisAbility:GetLevel() then
-			level = invisAbility:GetLevel()
-		end
 		target:AddItem(item)
 		ability:ApplyDataDrivenModifier(caster, caster, "modifier_pocket_riki_hide", {})
 		caster:SetAbsOrigin(target:GetAbsOrigin())

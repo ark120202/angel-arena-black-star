@@ -92,7 +92,7 @@ function AbilityShop:PostAbilityData()
 	end)
 	CustomGameEventManager:RegisterListener("ability_shop_sell", Dynamic_Wrap(AbilityShop, "OnAbilitySell"))
 	CustomGameEventManager:RegisterListener("ability_shop_downgrade", Dynamic_Wrap(AbilityShop, "OnAbilityDowngrade"))
-	PlayerTables:CreateTable("ability_shop_data", AbilityShop.ClientData, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+	PlayerTables:CreateTable("ability_shop_data", AbilityShop.ClientData, AllPlayersInterval)
 end
 
 function AbilityShop:GetAbilityListInfo(abilityname)

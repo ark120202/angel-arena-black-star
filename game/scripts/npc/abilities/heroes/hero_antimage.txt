@@ -273,8 +273,20 @@
 			{
 				"IsPurgable"		"0"
 				"Duration"			"%reflect_duration"
-				"EffectName"		"particles/arena/units/heroes/hero_antimage/spell_shield_reflect_shield.vpcf"
-				"EffectAttachType"	"follow_origin"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/arena/units/heroes/hero_antimage/spell_shield_reflect_shield.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+						"ControlPointEntities"
+						{
+							"TARGET"	"attach_hitloc"
+						}
+					}
+				}
 			}
 		}
 	}

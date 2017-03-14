@@ -383,7 +383,9 @@
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"arena/omniknight_select_enemies"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"IsGrantedByScepter"			"1"
+		"ScepterGrantedLevel"			"0"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"MaxLevel" 						"7"

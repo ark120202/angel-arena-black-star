@@ -169,4 +169,89 @@
 	{
 		"BaseClass"     "npc_dota_creature"
 	}
+
+	//Unit used as base for all custom heroes, based on npc_dota_hero_base
+	"npc_dota_hero_arena_base"
+	{
+		"BaseClass"					"npc_dota_hero"
+		"Model"						"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"Enabled"					"1"
+		"BotImplemented"			"0"
+		"NewHero"					"1"
+		"HeroID"					"126"
+
+		"Team"						"Bad"
+		"ModelScale"				"1"
+		"NoCombine"					"1"
+		"Legs"						"2"
+
+		//Should be handled in npc_heroes_custom
+		//"Role"					"Carry,Jungler,Durable"
+		//"Rolelevels"				"1,1,1"
+
+		"AbilityLayout"				"4"
+		"Ability1"					""
+
+		"ArmorPhysical"				"-1"
+		"MagicalResistance"			"25"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1"
+		"AttackDamageMax"			"1"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.3"
+		"AttackAnimationPoint"		"0.35"
+		"AttackAcquisitionRange"	"600" // MELEE: 600, RANGED: 800
+		"AttackRange"				"150"
+		"ProjectileModel"			"particles/base_attacks/ranged_hero.vpcf"
+		"ProjectileSpeed"			"900"
+
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"	"0"
+		"AttributeIntelligenceGain"	"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+		"HealthBarOffset"			"-1"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"200"
+		"StatusHealthRegen"			"0.25"
+		"StatusMana"				"50"
+		"StatusManaRegen"			"0.01"
+
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+		
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		
+		"HasInventory"				"1"
+
+		//"VoiceBackgroundSound"		""
+		"GameSoundsFile"			""
+		"VoiceFile"					""
+		"SoundSet"					"" // Hero_Name
+		"IdleSoundLoop"				"" // Hero_Name.IdleLoop
+		"HeroSelectSoundEffect"		"" // Hero_Name.Pick
+		//"Portrait"				"vgui/hud/heroportraits/portrait_hero"
+
+
+	//	"RenderablePortrait"
+	//	{
+	//
+	//	}
+	//	"precache"
+	//	{
+	//		"model"		"models/development/invisiblebox.vmdl"
+	//	}
+	}
 }

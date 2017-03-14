@@ -172,8 +172,8 @@ CHAT_COMMANDS = {
 	["model"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
 		f = function(args, hero)
-			hero:SetModel(cmd[2])
-			hero:SetOriginalModel(cmd[2])
+			hero:SetModel(args[1])
+			hero:SetOriginalModel(args[1])
 		end
 	},
 	["lua"] = {
@@ -203,10 +203,12 @@ CHAT_COMMANDS = {
 	["a_createhero"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
 		f = function(args, hero, playerID)
+			playerID = 6
 			local heroName = args[1]
 			local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
 			local baseNewHero = heroTableCustom.base_hero or heroName
-			local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
+			--local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
+			local h = PlayerResource:ReplaceHeroWith(playerID, baseNewHero, 0, 0)
 			local team = 2
 			if PlayerResource:GetTeam(playerID) == team and table.contains(args, "enemy") then
 				team = 3

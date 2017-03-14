@@ -133,7 +133,6 @@ function Bosses:CreateBossLoot(unit, team)
 		end
 		PlayerTables:SetTableValue("bosses_loot_drop_votes", id, nil)
 	end)
---	ContainersHelper:CreateLootBox(unit:GetAbsOrigin() + RandomVector(100), items)
 end
 
 function Bosses:VoteForItem(data)

@@ -14,6 +14,7 @@ if IsServer() then
 			v:GiveMana(self:GetSpecialValueFor("replenish_mana"))
 			ParticleManager:CreateParticle("particles/items3_fx/warmage_recipient.vpcf", PATTACH_ABSORIGIN_FOLLOW, v, caster)
 			v:EmitSound("Item.GuardianGreaves.Target")
+			v:Purge(false, true, false, true, false)
 		end
 	end
 end

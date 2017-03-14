@@ -49,6 +49,5 @@ function Gold:AddGoldWithMessage(unit, gold, optPlayerID)
 end
 
 function Gold:GetGold(unitvar)
-	local playerID = UnitVarToPlayerID(unitvar)
-	return math.floor(PLAYER_DATA[playerID].SavedGold or 0)
+	return math.floor(PLAYER_DATA[UnitVarToPlayerID(unitvar)].SavedGold or 0)
 end

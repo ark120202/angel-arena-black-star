@@ -1,11 +1,11 @@
-ARENA_VERSION = "1.4.5b"
+ARENA_VERSION = "1.4.6"
 
 BAREBONES_VERSION = "1.00"
 
 BAREBONES_DEBUG_SPEW = false 
 GAMEMODE_INITIALIZATION_STATUS = {}
 
-if GameMode == nil then
+if not GameMode then
 	_G.GameMode = class({})
 end
 
@@ -49,7 +49,6 @@ local requirements = {
 	"duel",
 	"hero_selection",
 	"internal/containers",
-	"internal/scepter",
 	"herovoice",
 	"gold",
 	"kills",
@@ -67,7 +66,6 @@ local requirements = {
 	"data/wearables",
 }
 local modifiers = {
-	["modifier_state_hidden"] = "modifiers/modifier_state_hidden",
 	["modifier_item_shard_attackspeed_stack"] = "items/lua/modifiers/modifier_item_shard_attackspeed_stack",
 	["modifier_apocalypse_apocalypse"] = "heroes/hero_apocalypse/modifier_apocalypse_apocalypse.lua",
 	["modifier_set_attack_range"] = "modifiers/modifier_set_attack_range.lua",
@@ -77,9 +75,9 @@ local modifiers = {
 	["modifier_max_attack_range"] = "modifiers/modifier_max_attack_range.lua",
 	["modifier_arena_courier"] = "modifiers/modifier_arena_courier.lua",
 	["modifier_arena_hero"] = "modifiers/modifier_arena_hero.lua",
-	["modifier_neutral_champion"] = "modifiers/modifier_neutral_champion.lua",
-	["modifier_arena_hero_wisp"] = "heroes/hero_wisp/modifier_arena_hero_wisp.lua"
+	["modifier_neutral_champion"] = "modifiers/modifier_neutral_champion.lua"
 }
+AllPlayersInterval = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23}
 
 for i = 1, #requirements do
 	require(requirements[i])
@@ -110,22 +108,12 @@ function GameMode:InitGameMode()
 			gamemode_map = ARENA_ACTIVE_GAMEMODE_MAP,
 		},
 		players_abandoned = {},
-		courier_owner2 = -1,
-		courier_owner3 = -1,
-		courier_owner4 = -1,
-		courier_owner5 = -1,
-		courier_owner6 = -1,
-		courier_owner7 = -1,
-		courier_owner8 = -1,
-		courier_owner9 = -1,
-		courier_owner10 = -1,
-	}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
-	PlayerTables:CreateTable("player_hero_entities", {}, {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
+		player_data = {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}},
+	}, AllPlayersInterval)
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
 	HeroSelection:PrepareTables()
 	PanoramaShop:InitializeItemTable()
-	Scepters:SetGlobalScepterThink()
 end
 
 function GameMode:PostLoadPrecache()
@@ -236,11 +224,12 @@ function GameMode:PrecacheUnitQueueed(name)
 end
 
 function GameMode:GameModeThink()
+	local player_data = PlayerTables:GetTableValue("arena", "player_data")
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
 			local hero = PlayerResource:GetSelectedHeroEntity(i)
 			if hero then
-				PlayerTables:SetTableValue("player_hero_entities", i, hero:GetEntityIndex())
+				player_data[i].hero = hero:GetEntityIndex()
 				hero:SetNetworkableEntityInfo("unit_name", GetFullHeroName(hero))
 			end
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -291,5 +280,6 @@ function GameMode:GameModeThink()
 			end
 		end
 	end
+	PlayerTables:SetTableValue("arena", "player_data", player_data)
 	return CUSTOM_GOLD_TICK_TIME
 end

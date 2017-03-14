@@ -9,13 +9,14 @@ function CastTether( event )
 	local caster = event.caster
 	local ability = event.ability
 	local target = event.target
+	local PlayerID = UnitVarToPlayerID(caster)
 
 	local targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false)
 
 	TrackCurrentHealth(event)
 	TrackCurrentMana(event)
 	local checkAndApply = function(unit)
-		if not unit:IsIllusion() and unit:IsRealHero() and unit ~= caster and UnitFilter(unit, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_CHECK_DISABLE_HELP, caster:GetTeam()) == UF_SUCCESS then
+		if not unit:IsIllusion() and unit:IsRealHero() and unit ~= caster and UnitFilter(unit, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, caster:GetTeam()) == UF_SUCCESS and not PlayerResource:IsDisableHelpSetForPlayerID(UnitVarToPlayerID(unit), PlayerID) then
 			ability:ApplyDataDrivenModifier(caster, unit, "modifier_tether_ally_aghanims", {})
 			table.insert(ability.tether_allies, unit)
 		end

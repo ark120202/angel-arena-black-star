@@ -132,6 +132,24 @@
 		"hero_selection_unlock"									"Unlock"
 
 		"chat_placeholder_send_message"							"Type your message here..."
+		"chat_message_gold_self"								"I have {gold} gold"
+		"chat_message_gold_ally"								"{player} has {gold} gold"
+		"chat_message_ability_not_learned"						"{ability_name} Not Learned"
+		"chat_message_ability_cooldown"							"{ability_name} On Cooldown ( {ability_cooldown} seconds remain )"
+		"chat_message_ability_passive"							"{ability_name} Passive ( Level {ability_level} )"
+		"chat_message_ability_ready"							"{ability_name} Ready ( Level {ability_level} )"
+		"chat_message_ability_mana"								"{ability_name} Not Enough Mana ( Need {mana_need} more )"
+		"chat_message_ability_ally_not_learned"					"{player}'s {ability_name} Not Learned"
+		"chat_message_ability_ally_cooldown"					"{player}'s {ability_name} On Cooldown ( {ability_cooldown} seconds remain )"
+		"chat_message_ability_ally_passive"						"{player}'s {ability_name} Passive ( Level {ability_level} )"
+		"chat_message_ability_ally_ready"						"{player}'s {ability_name} Ready ( Level {ability_level} )"
+		"chat_message_ability_ally_mana"						"{player}'s {ability_name} Not Enough Mana ( Need {mana_need} more )"
+		"chat_message_ability_enemy"							"Beware {player} {ability_name}"
+
+		"chat_message_item_passive"								"{ability_name} Passive"
+		"chat_message_item_ready"								"{ability_name} Ready"
+		"chat_message_item_ally_passive"						"{player}'s {ability_name} Passive"
+		"chat_message_item_ally_ready"							"{player}'s {ability_name} Ready"
 
 		"item_rune_keeper_no_runes_left"						"Rune Keeper is empty now."
 		"item_rune_keeper_contains"								"Rune Keeper contains: "
@@ -290,5 +308,7 @@
 		"arena_tip_14"																		"Most of new items are listed in 'New' tab in the shop"
 		"arena_tip_15"																		"If you found colored creep, be careful. This neutral is a champion. All it's attributes are highly increased, but kill bounty is also much more"
 		//"arena_tip_1"																		"TIP #1: You can see kill limit by holding ALT"
+
+
 	}
 }

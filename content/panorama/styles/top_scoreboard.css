@@ -787,11 +787,6 @@ DOTAHud.IsBeforeGameplay .base
 	transform: translateY(0px);
 }
 
-.Reborn.CustomHUDSkin .TopBarBackground
-{
-	opacity: 0;
-}
-
 
 
 

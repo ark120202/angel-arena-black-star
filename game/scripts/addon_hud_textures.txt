@@ -1,0 +1,14 @@
+"sprites/640_hud"
+{
+	"TextureData"
+	{
+		"minimap_heroicon_npc_dota_hero_arena_base"
+		{
+			"file"		"materials/vgui/hud/minimap_hero_arena_base.vmat"
+			"x"			"0"
+			"y"			"0"
+			"width"		"32"
+			"height"	"32"
+		}
+	}
+}

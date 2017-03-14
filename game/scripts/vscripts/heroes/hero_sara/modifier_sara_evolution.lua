@@ -1,5 +1,5 @@
 modifier_sara_evolution = class({})
-if IsClient() then require('internal/sharedutil') end
+if IsClient() then require("utils/shared") end
 
 function modifier_sara_evolution:DeclareFunctions()
 	return {

@@ -5,6 +5,6 @@
 		"containers_lua",
 		"selection",
 		"custom_entity_values",
-		"shared_modifiers",
+		"shared_modifiers"
 	]
 }

@@ -145,7 +145,7 @@ function SummonUnit(keys)
 		if keys.summon_random_radius then
 			pos = RandomPositionAroundPoint(pos, keys.summon_random_radius)
 		end
-		local unit = CreateUnitByName(keys.summoned, pos, true, caster, nil, team)
+		local unit = CreateUnitByName(keys.summoned, pos, true, caster, caster:GetPlayerOwner(), team)
 		FindClearSpaceForUnit(unit, pos, true)
 		unit:SetControllableByPlayer(caster:GetPlayerID(), true)
 		unit:SetOwner(caster)
@@ -208,7 +208,7 @@ function IncreaseStacks(keys)
 	local stacks = keys.stacks or 1
 	local max_stacks = keys.max_stacks
 	local per_stack_duration = keys.per_stack_duration
-	if (keys.NoBosses ~= 1 or not target:IsBoss()) then
+	if keys.NoBosses ~= 1 or not target:IsBoss() then
 		if per_stack_duration then
 			ModifyStacks(ability, caster, target, modifier, stacks, true)
 			Timers:CreateTimer(per_stack_duration, function()

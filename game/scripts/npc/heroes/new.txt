@@ -86,7 +86,7 @@
 
 	"npc_arena_hero_apocalypse"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"Ability1"	"apocalypse_agnis_touch"
 		"Ability2"	"apocalypse_king_slayer"
 		"Ability3"	"apocalypse_weapon_break"
@@ -111,7 +111,7 @@
 
 	"npc_arena_hero_shinobu"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	"custom_scene_hero_shinobu"
 		"Model"	"models/hero_shinobu/shinobu_01.vmdl"
 		"Ability1"	"shinobu_vampire_blood"
@@ -145,7 +145,7 @@
 
 	"npc_arena_hero_stegius"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"Ability1"	"stegius_desolus_wave"
 		"Ability2"	"stegius_rage_of_desolus"
 		"Ability3"	"stegius_brightness_of_desolate"
@@ -168,7 +168,7 @@
 
 	"npc_arena_hero_freya"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"Ability1"	"freya_strike_the_ice"
 		"Ability2"	"freya_ice_cage"
 		"Ability3"	"freya_pain_reflection"
@@ -191,7 +191,7 @@
 
 	"npc_arena_hero_zaken"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"Model"	"models/units/zaken/zaken.vmdl"
 		"SceneCamera"	"custom_scene_hero_zaken"
 		"Ability1"		"zaken_stitching_strikes"
@@ -213,7 +213,7 @@
 
 	"npc_arena_hero_poseidon"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	"custom_scene_hero_poseidon"
 		"Model"	"models/units/poseidon/poseidon.vmdl"
 		"ModelScale"	"1.4"
@@ -239,7 +239,7 @@
 
 	"npc_arena_hero_anakim"
 	{
-		"base_hero"		"npc_dota_hero_wisp"
+		"base_hero"		"npc_dota_hero_arena_base"
 		"Model"			"models/units/anakim/anakim.vmdl"
 		"Ability1"		"anakim_wisps"
 		"AttackRange"	"400"
@@ -252,7 +252,7 @@
 
 	"npc_arena_hero_arcueid"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	""
 		"Model"	"models/units/arcueid/arcueid.vmdl"
 		"ModelScale"	"1.3"
@@ -269,7 +269,7 @@
 
 	"npc_arena_hero_saber"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	"custom_scene_hero_saber"
 		"Model"	"models/units/saber/saber.vmdl"
 		"ModelScale"	"1.3"
@@ -296,7 +296,7 @@
 
 	"npc_arena_hero_rin"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	""
 		"Model"	"models/units/rin/rin.vmdl"
 		"ModelScale"	"1.3"
@@ -313,7 +313,7 @@
 
 	"npc_arena_hero_rider"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	""
 		"Model"	"models/units/rider/rider.vmdl"
 		"ModelScale"	"1.0"
@@ -330,7 +330,7 @@
 
 	"npc_arena_hero_madoka"
 	{
-		"base_hero"					"npc_dota_hero_wisp"
+		"base_hero"					"npc_dota_hero_arena_base"
 		"SceneCamera"				"custom_scene_hero_madoka"
 		"Model"						"models/units/madoka/madoka.vmdl"
 		"ModelScale"				"1.2"
@@ -348,7 +348,7 @@
 
 	"npc_arena_hero_sara"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	"custom_scene_hero_sara"
 		"Model"	"models/units/sara/sara.vmdl"
 		"ModelScale"	"1.3"
@@ -373,7 +373,7 @@
 
 	"npc_arena_hero_say"
 	{
-		"base_hero"	"npc_dota_hero_wisp"
+		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	"custom_scene_hero_say"
 		"Enabled"		"0"
 		"Model"	"models/units/say/say.vmdl"
@@ -412,7 +412,7 @@
 
 	"npc_arena_hero_destroyer"
 	{
-		"base_hero"		"npc_dota_hero_wisp"
+		"base_hero"		"npc_dota_hero_arena_base"
 		"SceneCamera"	"custom_scene_hero_destroyer"
 		"Model"			"models/units/destroyer/destroyer.vmdl"
 		"ModelScale"	"1.25"
@@ -436,7 +436,7 @@
 
 	"npc_arena_hero_maka"
 	{
-		"base_hero"				"npc_dota_hero_wisp"
+		"base_hero"				"npc_dota_hero_arena_base"
 		"LinkedHero"			"npc_arena_hero_soul_eater"
 		"Model"					"models/units/maka/maka.vmdl"
 		"ModelScale"			"0.96"
@@ -444,10 +444,11 @@
 
 	"npc_arena_hero_soul_eater"
 	{
-		"base_hero"				"npc_dota_hero_wisp"
+		"base_hero"				"npc_dota_hero_arena_base"
 		"LinkedHero"			"npc_arena_hero_maka"
 		"Model"					"models/units/soul_eater/soul_eater.vmdl"
 		"ModelScale"			"1.15"
 		"Ability1"				"soul_eater_demon_weapon_from"
+		"Ability2"				"soul_eater_human_form"
 	}
 }

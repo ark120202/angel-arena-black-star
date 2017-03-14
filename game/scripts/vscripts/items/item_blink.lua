@@ -20,7 +20,7 @@ function item_blink_arena_on_spell_start(keys)
 	end
 	
 	caster:SetAbsOrigin(target_point)
-	FindClearSpaceForUnit(caster, target_point, false)
+	FindClearSpaceForUnit(caster, target_point, true)
 	
 	ParticleManager:CreateParticle("particles/items_fx/blink_dagger_end.vpcf", PATTACH_ABSORIGIN, caster)
 end

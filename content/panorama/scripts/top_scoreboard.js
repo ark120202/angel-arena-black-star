@@ -9,8 +9,8 @@ function Snippet_TopBarPlayerSlot(pid) {
 	if (PlayerPanels[pid] == null) {
 		var team = Players.GetTeam(pid)
 		if (team != DOTA_TEAM_SPECTATOR) {
-			var teamPanel = Snippet_DotaTeamBar(team)
-			var panel = $.CreatePanel("Panel", teamPanel.FindChildTraverse("TopBarPlayersContainer"), "")
+			var teamPanel = Snippet_DotaTeamBar(team).FindChildTraverse("TopBarPlayersContainer")
+			var panel = $.CreatePanel("Panel", teamPanel, "")
 			panel.BLoadLayoutSnippet("TopBarPlayerSlot")
 			panel.playerId = pid
 			panel.FindChildTraverse("HeroImage").SetPanelEvent("onactivate", function() {
@@ -28,6 +28,12 @@ function Snippet_TopBarPlayerSlot(pid) {
 				$.DispatchEvent("UIHideTextTooltip", panel);
 				//$.DispatchEvent("DOTAHideTopBarUltimateTooltip", panel);
 			});
+			panel.Resort = function() {
+				SortPanelChildren(teamPanel, dynamicSort("playerId"), function(child, child2) {
+					return child.playerId < child2.playerId
+				});
+			}
+			panel.Resort();
 			// ="DOTAShowTopBarUltimateTooltip()" onmouseout="DOTAHideTopBarUltimateTooltip()"
 			PlayerPanels[pid] = panel;
 		}
@@ -61,7 +67,7 @@ function Snippet_TopBarPlayerSlot_Update(panel) {
 		panel.FindChildTraverse("HealthBar").value = Entities.GetHealthPercent(heroEnt) / 100;
 		panel.FindChildTraverse("ManaBar").value = Entities.GetMana(heroEnt) / Entities.GetMaxMana(heroEnt);
 		panel.ultimateCooldown = ultStateOrTime;
-		if (teamColors[playerInfo.player_team_id != panel.GetParent().team && playerInfo.player_team_id] != null) {
+		if (playerInfo.player_team_id != panel.GetParent().team && teamColors[playerInfo.player_team_id] != null) {
 			panel.SetParent(Snippet_DotaTeamBar(playerInfo.player_team_id).FindChildTraverse("TopBarPlayersContainer"))
 		}
 		//panel.FindChildTraverse("TopBarUltIndicatorTimer").text = 99;
@@ -85,7 +91,11 @@ function Snippet_DotaTeamBar(team) {
 		panel.team = team
 		panel.SetHasClass("LeftAlignedTeam", !isRight)
 		panel.SetHasClass("RightAlignedTeam", isRight)
+		panel.FindChildTraverse("TopBarScore").style.textShadow = "0 0 7px " + teamColors[team];
 		TeamPanels[team] = panel;
+		SortPanelChildren(rootPanel, dynamicSort("team"), function(child, child2) {
+			return child.team < child2.team
+		});
 	}
 	return TeamPanels[team];
 }
@@ -94,7 +104,6 @@ function Snippet_DotaTeamBar_Update(panel) {
 	var team = panel.team
 	panel.SetHasClass("EnemyTeam", team != Players.GetTeam(Game.GetLocalPlayerID()));
 	var teamDetails = Game.GetTeamDetails(team);
-	panel.FindChildTraverse("TopBarScore").style.textShadow = "0 0 7px " + teamColors[team].replace(";", "");
 	panel.SetDialogVariableInt("team_score", teamDetails.team_score);
 	//"TeamName", $.Localize(teamDetails.team_name))
 }

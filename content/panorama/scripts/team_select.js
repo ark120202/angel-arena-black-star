@@ -86,7 +86,7 @@ function Snippet_Team(team) {
 			Game.PlayerJoinTeam(team)
 		})
 		var teamDetails = Game.GetTeamDetails(team)
-		var teamColor = GameUI.CustomUIConfig().team_colors[team].replace(";", "");
+		var teamColor = GameUI.CustomUIConfig().team_colors[team];
 		panel.SetDialogVariable("team_name", $.Localize(teamDetails.team_name))
 		panel.FindChildTraverse("TeamBackgroundGradient").style.backgroundColor = 'gradient(linear, 0% 0%, 100% 100%, from(#000000AA), to(' + teamColor + '80));';
 		panel.FindChildTraverse("TeamBackgroundGradientHighlight").style.backgroundColor = 'gradient(linear, 0% 0%, 100% 100%, from(#000000AA), to(' + teamColor + 'A0));';

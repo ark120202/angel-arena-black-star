@@ -105,7 +105,6 @@ function LoadGameKeyValues()
 		if KVFilePaths.new then
 			table.deepmerge(custom_file, LoadKeyValues(scriptPath..KVFilePaths.new..".txt"))
 		end
-		--TODO: use deepmerge
 		if custom_file then
 			if KVType == "HeroKV" then
 				for k2,v2 in pairs(custom_file) do
@@ -113,32 +112,25 @@ function LoadGameKeyValues()
 						file[k2] = {}
 						local override_hero = v2.override_hero
 						if file[override_hero] then
-							table.merge(file[k2], file[override_hero])
+							table.deepmerge(file[k2], file[override_hero])
 						end
 						if custom_file[override_hero] then
-							table.merge(file[k2], custom_file[override_hero])
+							table.deepmerge(file[k2], custom_file[override_hero])
 						end
-						table.merge(file[k2], v2)
+						table.deepmerge(file[k2], v2)
 					else
-						for k3,v3 in pairs(v2) do
-							file[k2][k3] = v3
-						end
+						table.deepmerge(file[k2], v2)
 					end
 				end
 			else
-				for k2,v2 in pairs(custom_file) do
-					file[k2] = file[k2] or {}
-					for k3,v3 in pairs(v2) do
-						file[k2][k3] = v3
-					end
-				end
+				table.deepmerge(file, custom_file)
 			end
 		else
 			print("[KeyValues] Critical Error on "..KVFilePaths.custom..".txt")
 			return
 		end
 		
-		GameRules[KVType] = file --backwards compatibility
+		--GameRules[KVType] = file
 		KeyValues[KVType] = file
 	end   
 
@@ -146,9 +138,7 @@ function LoadGameKeyValues()
 	KeyValues.All = {}
 	for name,path in pairs(files) do
 		for key,value in pairs(KeyValues[name]) do
-			if not KeyValues.All[key] then
-				KeyValues.All[key] = value
-			end
+			KeyValues.All[key] = value
 		end
 	end
 
@@ -158,7 +148,9 @@ function LoadGameKeyValues()
 			KeyValues.UnitKV[key] = value
 		else
 			if type(KeyValues.All[key]) == "table" then
-				print("[KeyValues] Warning: Duplicated unit/hero entry for "..key)
+				print("[KeyValues] Warning: Duplicated unit/hero entry for " .. key)
+				table.deepmerge(value, KeyValues.UnitKV[key])
+				KeyValues.UnitKV[key] = value
 			end
 		end
 	end
@@ -193,10 +185,17 @@ function GetKeyValue(name, key, level, tbl)
 	if key and t then
 		if t[key] and level then
 			local s = string.split(t[key])
-			if s[level] then return tonumber(s[level]) or s[level] -- Try to cast to number
-			else return tonumber(s[#s]) or s[#s] end
-		else return t[key] end
-	else return t end
+			if s[level] then
+				return tonumber(s[level]) or s[level] -- Try to cast to number
+			else
+				return tonumber(s[#s]) or s[#s]
+			end
+		else
+			return t[key]
+		end
+	else
+		return t
+	end
 end
 
 function GetUnitKV(unitName, key, level)

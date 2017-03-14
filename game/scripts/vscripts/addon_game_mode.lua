@@ -1,5 +1,4 @@
-require('internal/util')
-require('internal/sharedutil')
+require('utils/init')
 --print(PlayerResource:GetSelectedHeroEntity(0):GetAbsOrigin())
 --do return end
 require('gamemode')
@@ -61,7 +60,6 @@ function Precache(context)
 		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press.vpcf",
-		"particles/units/heroes/hero_wisp/wisp_stunned_original.vpcf", --fix
 		--Runes
 		"particles/arena/generic_gameplay/rune_tripledamage.vpcf",
 		"particles/arena/generic_gameplay/rune_tripledamage_owner.vpcf",

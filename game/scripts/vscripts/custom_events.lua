@@ -5,6 +5,7 @@ function GameMode:RegisterCustomListeners()
 	CustomGameEventManager:RegisterListener("submit_gamemode_vote", Dynamic_Wrap(GameMode, "SubmitGamemodeVote"))
 	CustomGameEventManager:RegisterListener("submit_gamemode_map", Dynamic_Wrap(GameMode, "SubmitGamemodeMap"))
 	CustomGameEventManager:RegisterListener("team_select_host_set_player_team", Dynamic_Wrap(GameMode, "TeamSelectHostSetPlayerTeam"))
+	CustomGameEventManager:RegisterListener("set_help_disabled", Dynamic_Wrap(GameMode, "SetHelpDisabled"))
 end
 function GameMode:MetamorphosisElixirCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
@@ -16,10 +17,7 @@ function GameMode:MetamorphosisElixirCast(data)
 end
 
 function GameMode:CustomChatSendMessage(data)
-	if data and data.text and type(data.text) == "string" then
-		local teamonly = data.teamOnly == 1
-		CustomChatSay(tonumber(data.PlayerID), tostring(data.text), teamonly)
-	end
+	CustomChatSay(tonumber(data.PlayerID), data.teamOnly == 1, data)
 end
 
 function GameMode:SubmitGamemodeVote(data)
@@ -64,5 +62,12 @@ function GameMode:TeamSelectHostSetPlayerTeam(data)
 			PlayerResource:SetCustomTeamAssignment(tonumber(data.player), team2)
 			PlayerResource:SetCustomTeamAssignment(tonumber(data.player2), team)
 		end
+	end
+end
+
+function GameMode:SetHelpDisabled(data)
+	local player = data.player or -1
+	if PlayerResource:IsValidPlayerID(player) then
+		PlayerResource:SetDisableHelpForPlayerID(data.PlayerID, player, tonumber(data.disabled) == 1)
 	end
 end

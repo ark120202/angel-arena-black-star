@@ -26,7 +26,9 @@ function modifier_fountain_aura_arena:GetAbsoluteNoDamagePure()
 end
 
 function modifier_fountain_aura_arena:GetMinHealth()
-	return 1
+	if self:GetParent():IsConsideredHero() then
+		return 1 
+	end
 end
 
 function modifier_fountain_aura_arena:GetModifierHealthRegenPercentage()

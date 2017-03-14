@@ -1,3 +1,4 @@
+if IsClient() then require("utils/shared") end
 modifier_arena_hero = class({})
 
 function modifier_arena_hero:DeclareFunctions()
@@ -7,6 +8,7 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_PROPERTY_REFLECT_SPELL,
 		MODIFIER_PROPERTY_ABSORB_SPELL,
 		MODIFIER_EVENT_ON_DEATH,
+		MODIFIER_PROPERTY_ABILITY_LAYOUT
 	}
 end
 
@@ -26,10 +28,14 @@ function modifier_arena_hero:GetAttributes()
 	return MODIFIER_ATTRIBUTE_PERMANENT
 end
 
+function modifier_arena_hero:GetModifierAbilityLayout()
+	return self.VisibleAbilitiesCount or self:GetSharedKey("VisibleAbilitiesCount") or 4
+end
+
 if IsServer() then
 	modifier_arena_hero.HeroLevel = 1
 	function modifier_arena_hero:OnCreated()
-		self:StartIntervalThink(0.3)
+		self:StartIntervalThink(0.2)
 	end
 
 	function modifier_arena_hero:OnIntervalThink()
@@ -49,6 +55,15 @@ if IsServer() then
 				parent:ModifyAgility((parent.CustomGain_Agility - parent:GetKeyValue("AttributeAgilityGain", nil, true)) * diff)
 			end
 		end
+		local VisibleAbilitiesCount = 0
+		for i = 0, parent:GetAbilityCount() - 1 do
+			local ability = parent:GetAbilityByIndex(i)
+			if ability and not ability:IsHidden() then
+				VisibleAbilitiesCount = VisibleAbilitiesCount + 1
+			end
+		end
+		self.VisibleAbilitiesCount = VisibleAbilitiesCount
+		self:SetSharedKey("VisibleAbilitiesCount", VisibleAbilitiesCount)
 	end
 
 	function modifier_arena_hero:OnDeath(k)

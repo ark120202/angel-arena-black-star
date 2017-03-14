@@ -160,7 +160,6 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 			var TeamSelectionPanel = $.CreatePanel('Panel', $("#TeamSelectionStatusPanel"), "team_selection_panels_team" + teamNumber)
 			TeamSelectionPanel.AddClass("TeamSelectionPanel")
 			var color = GameUI.CustomUIConfig().team_colors[teamNumber]
-			color = color.substring(0, color.length - 1)
 			TeamSelectionPanel.style.backgroundColor = "gradient(linear, 100% 100%, 0% 100%, from( " + color + "4D" + " ), to( transparent ))"
 			TeamSelectionPanel.style.borderColor = color + "99";
 		}
@@ -240,8 +239,7 @@ function ShowPrecache() {
 		}*/
 
 		var TeamPanel = $("#PrecacheTeamEntryTeam" + teamNumber)
-		var color = GameUI.CustomUIConfig().team_colors[teamNumber]
-		color = color.substring(0, color.length - 1) + "4c"
+		var color = GameUI.CustomUIConfig().team_colors[teamNumber] + "4c"
 		TeamPanel.style.backgroundColor = "gradient(linear, 100% 100%, 0% 100%, from( " + color + " ), to( transparent ))"
 		for (var playerIdInTeam in PlayerPickData[teamNumber]) {
 			var SelectedPlayerHeroData = PlayerPickData[teamNumber][playerIdInTeam]
@@ -330,8 +328,6 @@ function OnAdsClicked() {
 		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 			if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
 				DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
-				if (DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4)
-					$.GetContextPanel().AddClass("Gamemode_4V4V4V4")
 				_DynamicMinimapSubscribe($(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").GetChild(0), function(ptid) {
 					MinimapPTIDs.push(ptid)
 				});

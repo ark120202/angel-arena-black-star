@@ -57,48 +57,45 @@ function TransformTextureToPath(texture, optPanelImageStyle, optTeamNumber) {
 	}
 }
 
-function SendAlert(type) {
-	//TODO
-	$.Msg("TODO: alerts, " + type)
-}
-
 function GetHeroName(unit) {
-	if (unit > -1) {
-		var data = GameUI.CustomUIConfig().custom_entity_values[unit]
-		if (data != null && data.unit_name != null)
-			return data.unit_name
-		else
-			return Entities.GetUnitName(unit)
-	} else
-		return ""
+	var data = GameUI.CustomUIConfig().custom_entity_values[unit || -1]
+	return data != null && data.unit_name != null ? data.unit_name : Entities.GetUnitName(unit)
 }
 
 function GetPlayerHeroName(playerId) {
 	if (playerId > -1) {
-		var ServersideData = PlayerTables.GetTableValue("player_hero_entities", playerId)
-		if (ServersideData != null)
-			return GetHeroName(ServersideData)
-		else
-			return GetHeroName(Players.GetPlayerHeroEntityIndex(playerId))
-	} else
-		return ""
+		var clientEnt = Players.GetPlayerHeroEntityIndex(playerId)
+		if (clientEnt != -1) {
+			return GetHeroName(clientEnt)
+		} else {
+			var ServersideData = PlayerTables.GetTableValue("arena", "player_data")
+			if (ServersideData != null && ServersideData[playerId] != null && ServersideData[playerId].hero != null) {
+				return GetHeroName(Number(ServersideData[playerId].hero))
+			}
+		}
+	}
+	return ""
 }
 
 Entities.GetHeroPlayerOwner = function(unit) {
 	for (var i = 0; i < 24; i++) {
-		var ServersideData = PlayerTables.GetTableValue("player_hero_entities", i)
-		if ((ServersideData && Number(ServersideData) == unit) || Players.GetPlayerHeroEntityIndex(i) == unit)
+		var clientEnt = Players.GetPlayerHeroEntityIndex(i)
+		if (clientEnt == -1) {
+			var ServersideData = PlayerTables.GetTableValue("arena", "player_data")
+			if (ServersideData != null && ServersideData[i] != null && ServersideData[i].hero != null) {
+				clientEnt = Number(ServersideData[i].hero)
+			}
+		}
+		if (clientEnt == unit) {
 			return i
+		}
 	}
 	return -1
 }
 
 function GetPlayerGold(iPlayerID) {
 	var goldTable = PlayerTables.GetTableValue("arena", "gold")
-	if (goldTable != null)
-		return goldTable[iPlayerID]
-	else
-		return 0
+	return goldTable == null ? 0 : Number(goldTable[iPlayerID])
 }
 
 function dynamicSort(property) {
@@ -301,10 +298,6 @@ function GetHEXPlayerColor(playerId) {
 	return playerColor == null ? "#000000" : ("#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2))
 }
 
-function IsPlayerAbandoned(playerId) {
-
-}
-
 function hexToRgb(hex) {
 	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 	return result ? {
@@ -337,5 +330,26 @@ function shuffle(a) {
 		a[j] = x;
 	}
 }
+
+function FormatGold(value) {
+	return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+String.prototype.endsWith = function(suffix) {
+	return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
+
+function SortPanelChildren(panel, sortFunc, compareFunc) {
+	var tlc = panel.Children().sort(sortFunc)
+	$.Each(tlc, function(child) {
+		for (var k in tlc) {
+			var child2 = tlc[k]
+			if (child != child2 && compareFunc(child, child2)) {
+				panel.MoveChildBefore(child, child2)
+				break;
+			}
+		}
+	});
+};
 
 var hud = GetDotaHud();

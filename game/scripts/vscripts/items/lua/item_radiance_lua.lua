@@ -1,4 +1,4 @@
-if IsClient() then require('internal/sharedutil') end
+if IsClient() then require("utils/shared") end
 item_radiance_baseclass = {}
 LinkLuaModifier("modifier_item_radiance_lua", "items/lua/modifiers/modifier_item_radiance_lua.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_radiance_lua_effect", "items/lua/modifiers/modifier_item_radiance_lua_effect.lua", LUA_MODIFIER_MOTION_NONE)

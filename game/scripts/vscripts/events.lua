@@ -38,10 +38,10 @@ function GameMode:OnNPCSpawned(keys)
 			--npc:AddNoDraw()
 			return
 		end
-		HeroVoice:OnNPCSpawned(npc)
+		--HeroVoice:OnNPCSpawned(npc)
 		Timers:CreateTimer(function()
-			if npc and not npc:IsNull() and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
-				local base_hero = npc:GetPlayerOwner():GetAssignedHero()
+			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
+				--local base_hero = npc:GetPlayerOwner():GetAssignedHero()
 				Physics:Unit(npc)
 				npc:SetAutoUnstuck(true)
 				npc:EquipItemsFromPlayerSelectionOrDefault()
@@ -85,11 +85,11 @@ function GameMode:OnItemPickedUp(keys)
 	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 	local itemname = keys.itemname
-	if itemEntity.CanOverrideOwner and unitEntity and (unitEntity:IsHero() or unitEntity:IsConsideredHero()) then
+	--[[if itemEntity.CanOverrideOwner and unitEntity and (unitEntity:IsHero() or unitEntity:IsConsideredHero()) then
 		itemEntity:SetOwner(PlayerResource:GetSelectedHeroEntity(keys.PlayerID))
 		itemEntity:SetPurchaser(PlayerResource:GetSelectedHeroEntity(keys.PlayerID))
 		itemEntity.CanOverrideOwner = nil
-	end
+	end]]
 end
 
 -- A player has reconnected to the game.	This function can be used to repaint Player-based particles or change
@@ -311,29 +311,53 @@ end
 
 -- This function is called whenever an NPC reaches its goal position/target
 function GameMode:OnNPCGoalReached(keys)
-	local goalEntity = EntIndexToHScript(keys.goal_entindex)
+	--[[local goalEntity = EntIndexToHScript(keys.goal_entindex)
 	local nextGoalEntity = EntIndexToHScript(keys.next_goal_entindex)
-	local npc = EntIndexToHScript(keys.npc_entindex)
+	local npc = EntIndexToHScript(keys.npc_entindex)]]
 end
 
 function GameMode:OnPlayerChat(keys)
-	local teamonly = keys.teamonly
 	local playerID = keys.playerid
 	local text = keys.text
-	CustomChatSay(playerID, text, teamonly == 1)
+	CustomChatSay(playerID, keys.teamonly == 1, {text = text})
 end
 
-function CustomChatSay(playerId, text, teamonly)
-	if GameMode:CustomChatFilter(playerId, text, teamonly) then
-		local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+function CustomChatSay(playerId, teamonly, data)
+	if GameMode:CustomChatFilter(playerId, teamonly, data) then
 		local heroName
-		if hero then
-			heroName = GetFullHeroName(hero)
+		if HeroSelection.SelectionEnd then
+			heroName = HeroSelection:GetSelectedHeroName(playerId)
 		end
-		if teamonly then
-			CustomGameEventManager:Send_ServerToTeam(PlayerResource:GetTeam(playerId), "custom_chat_recieve_message", {text=text, playerId=playerId, teamonly=teamonly, hero=heroName})
+		local args = {playerId=playerId, hero=heroName}
+		if data.text then
+			args.text = data.text
 		else
-			CustomGameEventManager:Send_ServerToAllClients("custom_chat_recieve_message", {text=text, playerId=playerId, teamonly=teamonly, hero=heroName})
+			teamonly = true
+			if data.GoldUnit then
+				local unit = EntIndexToHScript(tonumber(data.GoldUnit))
+				if IsValidEntity(unit) and unit:GetTeam() == PlayerResource:GetTeam(playerId) then
+					args.gold = Gold:GetGold(unit)
+					args.player = UnitVarToPlayerID(unit)
+				else
+					return
+				end
+			elseif data.ability then
+				local ability = EntIndexToHScript(data.ability)
+				if IsValidEntity(ability) then
+					args.ability = data.ability
+					args.unit = ability:GetCaster():GetEntityIndex()
+					args.player = UnitVarToPlayerID(ability:GetCaster())
+				else
+					return
+				end
+			end
+		end
+		args.teamonly = teamonly
+		if teamonly then
+			CustomGameEventManager:Send_ServerToTeam(PlayerResource:GetTeam(playerId), "custom_chat_recieve_message", args)
+			--CustomGameEventManager:Send_ServerToTeam(1, "custom_chat_recieve_message", {text=text, playerId=playerId, teamonly=teamonly, hero=heroName}) --TODO: Spect, need test
+		else
+			CustomGameEventManager:Send_ServerToAllClients("custom_chat_recieve_message", args)
 		end
 	end
 end

@@ -7,7 +7,7 @@ end
 
 function GameMode:ExecuteOrderFilter(filterTable)
 	local order_type = filterTable.order_type
-	local issuer_player_id_const = filterTable.issuer_player_id_const
+	local PlayerID = filterTable.issuer_player_id_const
 	if order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
 		return false
 	end
@@ -26,7 +26,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		end
 	end
 	if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
-		AbilityShop:OnAbilityBuy(issuer_player_id_const, abilityname)
+		AbilityShop:OnAbilityBuy(PlayerID, abilityname)
 		return false
 	end
 
@@ -46,7 +46,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, units[1]:GetTeamNumber())
 		end
 		UTIL_Remove(ability)
-		Gold:AddGoldWithMessage(units[1], cost, issuer_player_id_const)
+		Gold:AddGoldWithMessage(units[1], cost, PlayerID)
 		return false
 	end
 	for _,unit in ipairs(units) do
@@ -70,14 +70,17 @@ function GameMode:ExecuteOrderFilter(filterTable)
 						end
 					elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
 						if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
-							Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_ability_cant_target_champion")
+							Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_champion")
 							return false
 						end
 						if target:IsBoss() and BOSS_BANNED_ABILITIES[abilityname] then
-							Containers:DisplayError(issuer_player_id_const, "#dota_hud_error_ability_cant_target_boss")
+							Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_boss")
 							return false
 						end
-
+						if PlayerResource:IsDisableHelpSetForPlayerID(UnitVarToPlayerID(target), UnitVarToPlayerID(unit)--[[PlayerID]]) and DISABLE_HELP_ABILITIES[abilityname] then
+							Containers:DisplayError(PlayerID, "#dota_hud_error_target_has_disable_help")
+							return false
+						end
 						if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then
 							filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
 							return true
@@ -265,11 +268,11 @@ function GameMode:ModifyExperienceFilter(filterTable)
 	return true
 end
 
-function GameMode:CustomChatFilter(playerID, text, teamonly)
-	if string.starts(text, "-") then
+function GameMode:CustomChatFilter(playerID, teamonly, data)
+	if data.text and string.starts(data.text, "-") then
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 		local cmd = {}
-		for v in string.gmatch(string.sub(text, 2), "%S+") do table.insert(cmd, v) end
+		for v in string.gmatch(string.sub(data.text, 2), "%S+") do table.insert(cmd, v) end
 
 		local command = table.remove(cmd, 1)
 		local data = CHAT_COMMANDS[command]
