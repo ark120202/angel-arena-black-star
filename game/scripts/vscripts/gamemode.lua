@@ -108,8 +108,9 @@ function GameMode:InitGameMode()
 			gamemode_map = ARENA_ACTIVE_GAMEMODE_MAP,
 		},
 		players_abandoned = {},
-		player_data = {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}},
 	}, AllPlayersInterval)
+
+	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
 	HeroSelection:PrepareTables()
@@ -224,12 +225,10 @@ function GameMode:PrecacheUnitQueueed(name)
 end
 
 function GameMode:GameModeThink()
-	local player_data = PlayerTables:GetTableValue("arena", "player_data")
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
 			local hero = PlayerResource:GetSelectedHeroEntity(i)
 			if hero then
-				player_data[i].hero = hero:GetEntityIndex()
 				hero:SetNetworkableEntityInfo("unit_name", GetFullHeroName(hero))
 			end
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -280,6 +279,5 @@ function GameMode:GameModeThink()
 			end
 		end
 	end
-	PlayerTables:SetTableValue("arena", "player_data", player_data)
 	return CUSTOM_GOLD_TICK_TIME
 end

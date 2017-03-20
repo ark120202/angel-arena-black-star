@@ -4,11 +4,10 @@
 	{
 		"HeroID"	"126"
 		"BaseClass"		"npc_dota_hero"
-		"Ability1"	"axe_berserkers_call"
-		"Ability2"	"axe_battle_hunger"
-		"Ability3"	"axe_counter_helix"
-		"Ability4"	"axe_culling_blade"
-		"AttackRate"	"1.3"
+		"Ability1"	""
+		"Ability2"	""
+		"Ability3"	""
+		"Ability4"	""
 		"Ability5"	""
 		"Ability6"	""
 		"Ability7"	""
@@ -29,7 +28,7 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
+		"AttackRate"	"1.3"
 	}
 
 	"npc_dota_hero_axe"

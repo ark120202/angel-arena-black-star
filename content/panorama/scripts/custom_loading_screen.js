@@ -1,5 +1,4 @@
 "use strict";
-var selectedKillGoal;
 
 var TipList = [];
 var ShuffledTipList = [];
@@ -14,14 +13,14 @@ function VoteMap(parentindex, gmtype) {
 	})
 }
 
-function SubmitKillGoal() {
-	if (selectedKillGoal != null) {
-		GameEvents.SendCustomGameEventToServer("submit_gamemode_vote", {
-			voteIndex: selectedKillGoal
-		});
-		$("#KillGoalVote").enabled = false;
-		$("#KillGoalVoteSubmit").enabled = false;
-	}
+function SubmitKillGoal(index) {
+	GameEvents.SendCustomGameEventToServer("submit_gamemode_vote", {
+		voteIndex: index
+	});
+	$.Each($("#KillGoalVoteVartiantList").FindChildrenWithClassTraverse("KillGoalVariant"), function(child) {
+		child.enabled = false;
+	});
+	$("#KillGoalVote").enabled = false;
 }
 
 function FillTips() {
@@ -74,14 +73,17 @@ function CheckStartable() {
 			var gamemode_settings = changesObject["gamemode_settings"]
 			if (gamemode_settings != null) {
 				if (gamemode_settings.kill_goals != null) {
+					$("#KillGoalVote").visible = true;
 					$.Each(gamemode_settings.kill_goals, function(killGoal, tIndex) {
-						var button = $.CreatePanel("RadioButton", $("#KillGoalVoteVartiantList"), "");
-						//button.AddClass("ButtonBevel")
-						//button.AddClass("VoteKillGoalButton")
+						var group = $("#KillGoalVoteVartiantList").GetChild(Math.floor((tIndex-1) / 2)) || $.CreatePanel("Panel", $("#KillGoalVoteVartiantList"), "");
+						group.AddClass("KillGoalGroup");
+						var button = $.CreatePanel("Button", group, "");
+						button.AddClass("ButtonBevel")
+						//button.AddClass("Green")
 						button.AddClass("KillGoalVariant")
-						button.group = "kill_goal_variants"
+						button.style.horizontalAlign = tIndex % 2 == 1 ? "left" : "right"
 						button.SetPanelEvent("onactivate", function() {
-							selectedKillGoal = tIndex
+							SubmitKillGoal(tIndex)
 						})
 						var label = $.CreatePanel("Label", button, ""); //<Label text="4 (20%)" style="horizontal-align: right;" />;
 						label.text = killGoal;

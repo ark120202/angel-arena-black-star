@@ -75,8 +75,4 @@ function AutoSearchHero() {
 			CreateMenu(changesObject);
 		};
 	});
-	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
-		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null)
-			$("#SwitchTabButton").visible = changesObject["gamemode_settings"]["gamemode_type"] != DOTA_GAMEMODE_TYPE_RANDOM_OMG && changesObject["gamemode_settings"]["gamemode_type"] != DOTA_GAMEMODE_TYPE_ABILITY_SHOP
-	});
 })()

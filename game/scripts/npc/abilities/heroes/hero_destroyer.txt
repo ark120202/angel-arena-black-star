@@ -286,13 +286,5 @@
 				"max_speed_lvl3" 	"640 660 680 700 720"
 			}
 		}
-
-
-
-		"precache"
-		{
-			"particle"  "particles/arena/units/heroes/hero_shinobu/lifesteal_lvl1.vpcf"
-
-		}
 	}
 }

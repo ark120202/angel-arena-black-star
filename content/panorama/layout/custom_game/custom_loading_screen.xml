@@ -78,6 +78,10 @@
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_sara.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_sara.png" />
 
+			<Image src="file://{images}/heroes/npc_arena_hero_destroyer.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_destroyer.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_destroyer.png" />
+
 			<Image src="file://{images}/heroes/npc_arena_hero_maka.png" />
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_maka.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_maka.png" />
@@ -118,7 +122,7 @@
 		</Panel>
 
 		<Panel id="TipsPanel" hittest="true" onactivate="NextTip()">
-			<Label id="TipLabel" text=""/>
+			<Label id="TipLabel" />
 		</Panel>
 		<Panel id="afterload_panel" hittest="true">
 			<Panel hittest="false" id="GCColumn" >
@@ -142,19 +146,14 @@
 					</Panel>
 				</Panel>
 				
-				<Panel id="KillGoalVote">
+				<Panel id="KillGoalVote" hittest="true">
 					<Panel id="CustomSettingsRoot">
-						<Panel class="LeftRightFlow FullWidth" id="GoalVotePanelCustomSettings_GM201"> <!-- ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES -->
-							<Button class="ButtonBevel Green GoalVoteSettingsButton" id="GoalVoteSettings_AbilityShop" onactivate="VoteMap(201, 102);">
-								<Label text="Ability Shop"/>
-							</Button>
-							<Button class="ButtonBevel Green GoalVoteSettingsButton" id="GoalVoteSettings_RandomOMG" onactivate="VoteMap(201, 101);">
-								<Label text="Random OMG"/>
-							</Button>
+						<Panel class="KillGoalGroup FullWidth" id="GoalVotePanelCustomSettings_GM201" hittest="true"> <!-- ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES -->
+							<TextButton class="ButtonBevel Green KillGoalVariant" style="horizontal-align: left;" onactivate="VoteMap(201, 102);" text="Ability Shop" hittest="true" />
+							<TextButton class="ButtonBevel Green KillGoalVariant" style="horizontal-align: right;" onactivate="VoteMap(201, 101);" text="Random OMG" hittest="true" />
 						</Panel>
 					</Panel>
-					<Panel id="KillGoalVoteVartiantList" />
-					<TextButton id="KillGoalVoteSubmit" class="ButtonBevel Green" text="SUBMIT!" onactivate="SubmitKillGoal()" />
+					<Panel id="KillGoalVoteVartiantList" hittest="true"/>
 				</Panel>
 			</Panel>
 			<Panel id="TeamSelectionColumn" />

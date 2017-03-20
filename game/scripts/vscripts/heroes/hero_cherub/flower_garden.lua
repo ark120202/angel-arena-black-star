@@ -18,7 +18,7 @@ function CreatePlot(keys)
 	plot:AddNewModifier(caster, ability, "modifier_kill", {duration = ability:GetLevelSpecialValueFor("life_time", ability:GetLevel() - 1)})
 	plot:AddNewModifier(caster, ability, "modifier_cherub_flower_garden_tracker", {})
 	local health = ability:GetLevelSpecialValueFor("flower_health", level)
-	if HasScepter(caster) then
+	if caster:HasScepter() then
 		plot:AddNewModifier(caster, ability, "modifier_cherub_flower_garden_barrier", {})
 		health = ability:GetLevelSpecialValueFor("flower_health_scepter", level)
 	end

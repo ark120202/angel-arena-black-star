@@ -122,7 +122,7 @@ function AbilityShop:OnAbilityBuy(PlayerID, abilityname)
 						abilityh:SetLevel(abilityh:GetLevel() + 1)
 					end
 				elseif hero:HasAbility("ability_empty") then
-					if abilityh:IsHidden() then
+					if abilityh and abilityh:IsHidden() then
 						RemoveAbilityWithModifiers(hero, abilityh)
 					end
 					hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)

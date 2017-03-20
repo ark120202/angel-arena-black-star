@@ -234,7 +234,9 @@
 	height: 100%;
 	horizontal-align: left;
 	vertical-align: center;
-	margin-left: 7px;
+	margin-left: 1px;
+	margin-right: 6px;
+	margin-bottom: 2px;
 }
 
 .EmptyPlayerRow .ScoreboardXP
@@ -245,11 +247,6 @@
 #LevelLabel
 {
 	font-size: 2px;
-}
-
-.EnemyTeam #ScoreboardXP
-{
-	opacity: 0;
 }
 
 #GoldContainer

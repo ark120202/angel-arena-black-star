@@ -18,7 +18,7 @@ if IsServer() then
 			local ability = self:GetAbility()
 			local toWaste = ability:GetSpecialValueFor("energy_const") + parent:GetMaxEnergy() * ability:GetSpecialValueFor("energy_pct") * 0.01
 			if ability:IsCooldownReady() and parent:GetEnergy() >= toWaste then
-				ability:StartCooldown(GetAbilityCooldown(parent, ability))
+				ability:AutoStartCooldown()
 				parent:AddNewModifier(parent, ability, "modifier_sara_fragment_of_logic_debuff", {duration = ability:GetSpecialValueFor("debuff_duration")})
 				parent:ModifyEnergy(-toWaste)
 				parent:SetHealth(parent:GetMaxHealth())

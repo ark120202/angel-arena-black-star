@@ -63,31 +63,23 @@ function GetHeroName(unit) {
 }
 
 function GetPlayerHeroName(playerId) {
-	if (playerId > -1) {
+	if (Players.IsValidPlayerID(playerId)) {
 		var clientEnt = Players.GetPlayerHeroEntityIndex(playerId)
-		if (clientEnt != -1) {
-			return GetHeroName(clientEnt)
-		} else {
-			var ServersideData = PlayerTables.GetTableValue("arena", "player_data")
-			if (ServersideData != null && ServersideData[playerId] != null && ServersideData[playerId].hero != null) {
-				return GetHeroName(Number(ServersideData[playerId].hero))
-			}
-		}
+		return GetHeroName(clientEnt == -1 ? Game.GetPlayerInfo(playerId).player_selected_hero_entity_index : clientEnt)
 	}
 	return ""
 }
 
 Entities.GetHeroPlayerOwner = function(unit) {
 	for (var i = 0; i < 24; i++) {
-		var clientEnt = Players.GetPlayerHeroEntityIndex(i)
-		if (clientEnt == -1) {
-			var ServersideData = PlayerTables.GetTableValue("arena", "player_data")
-			if (ServersideData != null && ServersideData[i] != null && ServersideData[i].hero != null) {
-				clientEnt = Number(ServersideData[i].hero)
+		if (Players.IsValidPlayerID(i)) {
+			var clientEnt = Players.GetPlayerHeroEntityIndex(i)
+			if (clientEnt == -1) {
+				clientEnt = Game.GetPlayerInfo(Number(i)).player_selected_hero_entity_index
 			}
-		}
-		if (clientEnt == unit) {
-			return i
+			if ((clientEnt == -1 ? Game.GetPlayerInfo(Number(i)).player_selected_hero_entity_index : clientEnt) == unit) {
+				return i
+			}
 		}
 	}
 	return -1
@@ -95,7 +87,7 @@ Entities.GetHeroPlayerOwner = function(unit) {
 
 function GetPlayerGold(iPlayerID) {
 	var goldTable = PlayerTables.GetTableValue("arena", "gold")
-	return goldTable == null ? 0 : Number(goldTable[iPlayerID])
+	return goldTable == null ? 0 : Number(goldTable[iPlayerID] || 0)
 }
 
 function dynamicSort(property) {

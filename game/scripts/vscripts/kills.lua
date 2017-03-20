@@ -22,10 +22,7 @@ end
 
 function Kills:GetGoldForKill(killedUnit)
 	local gold = 150 + Kills:GetKillStreakGold(killedUnit:GetPlayerID()) + (killedUnit:GetLevel() * 30) --100 + streakGold + (killedUnit:GetLevel() * 9.9)
-	if Duel.IsFirstDuel and Duel:IsDuelOngoing() then
-		gold = 0
-	end
-	return gold
+	return (Duel.IsFirstDuel and Duel:IsDuelOngoing()) and 0 or gold
 end
 
 function Kills:SetKillStreak(player, ks)
@@ -42,10 +39,6 @@ end
 
 function Kills:IncreaseKillStreak(player)
 	Kills:SetKillStreak(player, Kills:GetKillStreak(player) + 1)
-end
-
-function Kills:ClearKillStreak(player)
-	Kills:SetKillStreak(player, 0)
 end
 
 function Kills:OnEntityKilled(killedPlayer, killerPlayer)
@@ -114,7 +107,24 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 		end
 		Kills:CreateKillTooltip(nil, killedPlayerID, goldChange)
 	end
-	Kills:ClearKillStreak(killedPlayerID)
+	if killedUnit.BloodstoneDeny then
+		killedUnit.BloodstoneDeny = nil
+	else
+		local streak = Kills:GetKillStreak(killedPlayerID)
+		if streak > 1 then
+			CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+				type = "generic",
+				text = "#custom_toast_KillStreak_Ended",
+				victimPlayer = killedPlayerID,
+				teamPlayer = killedPlayerID,
+				teamInverted = true,
+				variables = {
+					["{kill_streak}"] = streak
+				}
+			})
+		end
+		Kills:SetKillStreak(killedPlayerID, 0)
+	end
 end
 
 function Kills:_GiveKillGold(killerEntity, killedUnit, goldChange)
@@ -138,16 +148,4 @@ function Kills:CreateKillTooltip(killer, killed, gold)
 		victimPlayer = killed,
 		gold = gold,
 	})
-	if (Kills:GetKillStreak(killed) > 1) then
-		CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
-			type = "generic",
-			text = "#custom_toast_KillStreak_Ended",
-			victimPlayer = killed,
-			teamPlayer = killed,
-			teamInverted = true,
-			variables = {
-				["{kill_streak}"] = Kills:GetKillStreak(killed)
-			}
-		})
-	end
 end

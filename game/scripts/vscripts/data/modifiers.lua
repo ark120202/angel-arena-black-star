@@ -39,6 +39,19 @@ ONCLICK_PURGABLE_MODIFIERS = {
 	"modifier_tether_ally_aghanims"
 }
 
+COOLDOWN_REDUCTION_MODIFIERS = {
+	modifier_octarine_unique_cooldown_reduction = function(unit)
+		return  GetAbilitySpecial(unit:HasModifier("modifier_item_refresher_core") and "item_refresher_core" or "item_octarine_core_arena", "bonus_cooldown_pct")
+	end,
+	--TODO Make it work without that table, rewrite modifier_octarine_unique_cooldown_reduction in modifier_lua
+	modifier_arena_rune_arcane = function(unit)
+		return unit:FindModifierByName("modifier_arena_rune_arcane"):GetModifierPercentageCooldown()
+	end,
+	modifier_talent_cooldown_reduction_pct = function(unit)
+		return unit:FindModifierByName("modifier_talent_cooldown_reduction_pct"):GetModifierPercentageCooldown()
+	end
+}
+
 ATTACK_MODIFIERS = {
 	{
 		modifier = "modifier_item_skadi_arena",

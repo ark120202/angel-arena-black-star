@@ -51,7 +51,7 @@ function SlowCooldown(keys)
 	for i=0, 15 do
 		if target:GetAbilityByIndex(i) ~= nil then
 			local cd = target:GetAbilityByIndex(i):GetCooldownTimeRemaining()
-			local full_cd = GetAbilityCooldown(target, target:GetAbilityByIndex(i))
+			local full_cd = target:GetAbilityByIndex(i):GetReducedCooldown()
 			if cd > 0 and  full_cd - cd > 0 and full_cd - cd < 0.04 then
 				is_ability = 1
 				target:GetAbilityByIndex(i):StartCooldown(cd + time_left)

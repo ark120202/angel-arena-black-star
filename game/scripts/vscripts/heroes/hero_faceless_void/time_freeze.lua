@@ -8,7 +8,7 @@ function Chronosphere( keys )
 
 	caster:AddNewModifier(caster, ability, "modifier_chronosphere_speed_lua", {duration = duration})
 	for _,v in ipairs(HeroList:GetAllHeroes()) do
-		if v:IsAlive() and not (HasScepter(caster) and v:GetTeamNumber() == caster:GetTeamNumber()) then
+		if v:IsAlive() and not (caster:HasScepter() and v:GetTeamNumber() == caster:GetTeamNumber()) then
 			local dummy = CreateUnitByName("npc_dummy_blank", v:GetAbsOrigin(), false, nil, nil, caster:GetTeamNumber())
 			ability:ApplyDataDrivenModifier(caster, dummy, "modifier_faceless_void_time_freeze_aura", {duration = duration})
 			local radius_pfx = ability:GetLevelSpecialValueFor("radius_pfx", ability:GetLevel() - 1)

@@ -81,7 +81,7 @@ SPAWNER_SETTINGS = {
 					[30] = "models/items/dragon_knight/dragon_immortal_1/dragon_immortal_1.vmdl",
 					[40] = "models/items/dragon_knight/fireborn_dragon/fireborn_dragon.vmdl",
 					[50] = "models/heroes/dragon_knight/dragon_knight_dragon.vmdl",
-					[60] = "models/heroes/twin_headed_dragon/twin_headed_dragon.vmdl",
+					--[60] = "models/heroes/twin_headed_dragon/twin_headed_dragon.vmdl",
 				}
 
 			},

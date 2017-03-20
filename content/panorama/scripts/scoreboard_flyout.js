@@ -4,36 +4,27 @@ var SharedControlPanels = [];
 var players_abandoned = [];
 var teamColors = GameUI.CustomUIConfig().team_colors;
 
-function Snippet_SharedControlPlayer() {
-	var panel = $.CreatePanel("Panel", $("#PlayersContainer"), "");
-	panel.BLoadLayoutSnippet("SharedControlPlayer");
-	panel.playerId = -1;
-	var DisableHelpButton = panel.FindChildTraverse("DisableHelpButton")
-	DisableHelpButton.SetPanelEvent("onactivate", function() {
-		GameEvents.SendCustomGameEventToServer("set_help_disabled", {
-			player: panel.playerId,
-			disabled: DisableHelpButton.checked
-		});
-	})
-	SharedControlPanels.push(panel);
-	return panel;
+function Snippet_SharedControlPlayer(pid) {
+	if (SharedControlPanels[pid] == null) {
+		var panel = $.CreatePanel("Panel", $("#PlayersContainer"), "");
+		panel.BLoadLayoutSnippet("SharedControlPlayer");
+		panel.playerId = pid;
+		var DisableHelpButton = panel.FindChildTraverse("DisableHelpButton")
+		DisableHelpButton.SetDialogVariable("player_name", Players.GetPlayerName(pid))
+		DisableHelpButton.SetPanelEvent("onactivate", function() {
+			GameEvents.SendCustomGameEventToServer("set_help_disabled", {
+				player: pid,
+				disabled: DisableHelpButton.checked
+			});
+		})
+		SharedControlPanels[pid] = panel;
+	}
+	return SharedControlPanels[pid];
 }
 
-function Snippet_SharedControlPlayer_Update(panel, index, teamPlayers) {
-	var playerId = -1;
-	for (var i in teamPlayers) {
-		if (teamPlayers[i].visible) {
-			index--;
-			if (index == -1) {
-				playerId = Number(i);
-				break;
-			}
-		}
-	}
-	panel.playerId = playerId
-	panel.visible = playerId != -1
-	panel.FindChildTraverse("DisableHelpButton").SetDialogVariable("player_name", Players.GetPlayerName(playerId))
-	panel.SetHasClass("LocalPlayer", playerId == Game.GetLocalPlayerID())
+function Snippet_SharedControlPlayer_Update(panel) {
+	panel.visible = Players.GetTeam(panel.playerId) == Players.GetTeam(Game.GetLocalPlayerID()) && Snippet_Player(panel.playerId).visible
+	panel.SetHasClass("LocalPlayer", panel.playerId == Game.GetLocalPlayerID())
 }
 
 function Snippet_Player(pid) {
@@ -47,14 +38,23 @@ function Snippet_Player(pid) {
 			panel.playerId = pid
 			panel.SetHasClass("EmptyPlayerRow", false)
 			panel.SetHasClass("LocalPlayer", pid == Game.GetLocalPlayerID())
-			panel.FindChildTraverse("ScoreboardXP").FindChildTraverse("LevelLabel").style.width = "100%";
+			var xpRoot = FindDotaHudElement("ScoreboardXP")
+			$.Each([xpRoot.FindChildTraverse("LevelBackground"), xpRoot.FindChildTraverse("CircularXPProgress")/*, xpRoot.FindChildTraverse("XPProgress")*/], function(p) {
+				p.SetPanelEvent("onactivate", function() {
+					if (GameUI.IsAltDown()) {
+						var clientEnt = Players.GetPlayerHeroEntityIndex(pid)
+						GameEvents.SendCustomGameEventToServer("custom_chat_send_message", {
+							xpunit: clientEnt == -1 ? Game.GetPlayerInfo(pid).player_selected_hero_entity_index : clientEnt
+						})
+					}
+				});
+			})
 			panel.FindChildTraverse("HeroImage").SetPanelEvent("onactivate", function() {
 				Players.PlayerPortraitClicked(pid, GameUI.IsControlDown(), GameUI.IsAltDown());
 			});
+			VoiceMute.checked = Game.IsPlayerMuted(pid);
 			VoiceMute.SetPanelEvent("onactivate", function() {
-				//$.Msg(VoiceMute.checked)
 				Game.SetPlayerMuted(pid, VoiceMute.checked)
-					//$.Msg(Game.IsPlayerMuted(pid))
 			});
 			panel.Resort = function() {
 				SortPanelChildren(teamPanel, dynamicSort("playerId"), function(child, child2) {
@@ -157,7 +157,7 @@ function Snippet_Team_Update(panel) {
 	panel.SetHasClass("EnemyTeam", !isAlly);
 	panel.SetDialogVariableInt("score", teamDetails.team_score);
 	if (isAlly) {
-		$("#SharedUnitControl").style.marginTop = Math.min(panel.actualyoffset, 0) + "px"
+		$("#SharedUnitControl").style.marginTop = Math.max(parseInt(panel.actualyoffset, 10), 0) + "px"
 		$("#SharedUnitControl").style.height = panel.actuallayoutheight + "px"
 	}
 }
@@ -169,24 +169,13 @@ function Update() {
 		var team = Players.GetTeam(pid)
 		if (team != DOTA_TEAM_SPECTATOR) {
 			Snippet_Player_Update(Snippet_Player(pid));
+			Snippet_SharedControlPlayer_Update(Snippet_SharedControlPlayer(pid));
 		}
 	})
 	var LocalTeam = Players.GetTeam(Game.GetLocalPlayerID())
 	for (var i in TeamPanels) {
 		Snippet_Team_Update(TeamPanels[i]);
 	}
-	var teamPlayers = Snippet_Team(LocalTeam).FindChildTraverse("TeamPlayersContainer").Children()
-	for (var i in SharedControlPanels) {
-		Snippet_SharedControlPlayer_Update(SharedControlPanels[i], Number(i), teamPlayers);
-	}
-	var maxTeamPlayers = Game.GetTeamDetails(LocalTeam).team_max_players
-	if (SharedControlPanels.length < maxTeamPlayers) {
-		for (i = 0; i < maxTeamPlayers - SharedControlPanels.length; i++) {
-			Snippet_SharedControlPlayer();
-		}
-	}
-
-
 	context.SetHasClass("AltPressed", GameUI.IsAltDown())
 }
 
@@ -202,16 +191,16 @@ function SetFlyoutScoreboardVisible(visible) {
 				players_abandoned.push(Number(changesObject.players_abandoned[k]));
 			}
 		}
-		if (changesObject.player_data != null && changesObject.player_data[LocalPlayerID] != null && changesObject.player_data[LocalPlayerID].DisableHelp != null) {
-			$.Each(changesObject.player_data[LocalPlayerID].DisableHelp, function(state, playerID) {
-				for (var i in SharedControlPanels) {
-					if (SharedControlPanels[i].playerId == playerID) {
-						SharedControlPanels[i].FindChildTraverse("DisableHelpButton").checked = state == 1
-					}
-				}
+	});
+	DynamicSubscribePTListener("disable_help_data", function(tableName, changesObject, deletionsObject) {
+		if (changesObject[LocalPlayerID] != null) {
+			$.Each(changesObject[LocalPlayerID], function(state, playerID) {
+				Snippet_SharedControlPlayer(playerID).FindChildTraverse("DisableHelpButton").checked = state == 1
 			})
 		}
 	});
+
+
 	$("#TeamList").RemoveAndDeleteChildren()
 	$("#PlayersContainer").RemoveAndDeleteChildren()
 	Update();

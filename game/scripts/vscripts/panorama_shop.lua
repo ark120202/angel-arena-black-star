@@ -25,6 +25,11 @@ function PanoramaShop:PushStockInfoToAllClients()
 	end
 end
 
+function PanoramaShop:GetItemStockCooldown(team, item)
+	local t = PanoramaShop.StocksTable[team][item]
+	return t ~= nil and (t.current_cooldown - (GameRules:GetGameTime() - t.current_last_purchased_time))
+end
+
 function PanoramaShop:GetItemStockCount(team, item)
 	local t = PanoramaShop.StocksTable[team][item]
 	return t ~= nil and t.current_stock
@@ -358,7 +363,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 				ProbablyPurchasable[name .. "_index_" .. itemCounter[name]] = SHOP_LIST_STATUS_IN_STASH
 			elseif name ~= itemName and itemcount_inv >= itemCounter[name] then
 				ProbablyPurchasable[name .. "_index_" .. itemCounter[name]] = SHOP_LIST_STATUS_IN_INVENTORY
-			elseif (GetKeyValue(name, "ItemPurchasableFilter") == 0 or GetKeyValue(name, "ItemPurchasable") == 0) then
+			elseif GetKeyValue(name, "ItemPurchasableFilter") == 0 or GetKeyValue(name, "ItemPurchasable") == 0 then
 				ProbablyPurchasable[name .. "_index_" .. itemCounter[name]] = SHOP_LIST_STATUS_NO_BOSS
 			elseif stocks and stocks < 1 then
 				ProbablyPurchasable[name .. "_index_" .. itemCounter[name]] = SHOP_LIST_STATUS_NO_STOCK
@@ -401,6 +406,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 			table.insert(ItemsInStash, name)
 		end
 	end
+	
 	if Gold:GetGold(playerID) >= wastedGold then
 		Containers:EmitSoundOnClient(playerID, "General.Buy")
 		Gold:RemoveGold(playerID, wastedGold)

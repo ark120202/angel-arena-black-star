@@ -24,7 +24,6 @@
 				</Panel>
 			</Button>
 		</snippet>
-
 		<snippet name="PlayerSlot">
 			<Panel class="PlayerSlot" draggable="true">
 				<DOTAAvatarImage id="PlayerAvatar" />
@@ -35,7 +34,7 @@
 		</snippet>
 	</snippets>
 	<Panel hittest="false" class="TeamSelect">
-		<Panel hittest="true" id="GCColumn" />
+		<Panel hittest="false" id="GCColumn" />
 		<Panel hittest="false" id="TeamSelectionColumn" >
 			<Panel id="TeamList" />
 		</Panel>
@@ -65,8 +64,6 @@
 				</Button>
 			</Panel>
 			<Panel id="StartGameCountdownTimer">
-				<Image id="TimerBg" src="s2r://panorama/images/status_icons/timer_background_psd.vtex" />
-				<Image id="TimerRing" src="s2r://panorama/images/status_icons/timer_ring_psd.vtex" />
 				<Label id="TeamSelectTimer" text="#custom_game_team_select_timer" />
 				<Panel id="TimerLabelBox" >
 					<Label id="TimerLabelAutoStart" text="#custom_game_team_select_auto_start" />

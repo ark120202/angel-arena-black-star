@@ -13,7 +13,7 @@ function ChangeTeam(keys)
 	PlayerResource:SetPlayerTeam(caster:GetPlayerID(), newTeam)
 	FindClearSpaceForUnit(caster, FindFountain(newTeam):GetAbsOrigin(), true)
 	
-	SpendCharge(ability, 1)
+	ability:SpendCharge()
 end
 
 function OnAttacked(keys)

@@ -18,7 +18,7 @@ function SendMissiles(keys)
 		caster:SetCursorCastTarget(target)
 		homing_missile_arena:OnSpellStart()
 	end
-	if keys.DamageScepter and HasScepter(caster) then
+	if keys.DamageScepter and caster:HasScepter() then
 		ApplyDamage({victim = target, attacker = caster, damage = keys.DamageScepter, damage_type = ability:GetAbilityDamageType(), ability = ability})
 	elseif keys.Damage then
 		ApplyDamage({victim = target, attacker = caster, damage = keys.Damage, damage_type = ability:GetAbilityDamageType(), ability = ability})

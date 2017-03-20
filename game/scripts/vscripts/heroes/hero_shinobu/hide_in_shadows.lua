@@ -36,7 +36,7 @@ function CheckInvis(keys)
 end
 
 function PurgeAllTruesightModifiers(keys)
-	PurgeTruesightModifiers(keys.caster)
+	keys.caster:PurgeTruesightModifiers()
 end
 
 function UpgradeCleanup(keys)

@@ -45,7 +45,7 @@ function CreateProjectiles(keys)
 		})
 		Timers:CreateTimer(0.03, function()
 			if IsValidEntity(caster) and IsValidEntity(ability) then
-				ability:StartCooldown(GetAbilityCooldown(caster, ability))
+				ability:AutoStartCooldown()
 			end
 		end)
 	end

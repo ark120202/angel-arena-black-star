@@ -1,5 +1,5 @@
 function SpendChargeRight(keys)
-	SpendCharge(keys.ability, 1)
+	keys.ability:SpendCharge()
 end
 
 function SetMaxLevel(keys)
@@ -241,9 +241,9 @@ function ScepterOnlyPassiveModifierThink(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local modifier = keys.modifier
-	if HasScepter(caster) and not caster:HasModifier(modifier) then
+	if caster:HasScepter() and not caster:HasModifier(modifier) then
 		ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
-	elseif not HasScepter(caster) and caster:HasModifier(modifier) then
+	elseif not caster:HasScepter() and caster:HasModifier(modifier) then
 		caster:RemoveModifierByName(modifier)
 	end
 end

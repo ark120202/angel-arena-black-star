@@ -1,16 +1,3 @@
-COOLDOWN_REDUCTION_ABILITIES = { --reductionType can be "percent" and "constant"
-	["item_octarine_core_arena"] = {
-		reductionType = "percent",
-		reduction = GetAbilitySpecial("item_octarine_core_arena", "bonus_cooldown_pct"),
-		reductionGroup = "octarine",
-	},
-	["item_refresher_core"] = {
-		reductionType = "percent",
-		reduction = GetAbilitySpecial("item_refresher_core", "bonus_cooldown_pct"),
-		reductionGroup = "octarine",
-	},
-}
-
 BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	zuus_static_field = 15,
 	item_blade_mail = 0,

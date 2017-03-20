@@ -48,12 +48,8 @@ function CreateItemNotificationSettings(sItemName)
 	return {text= "#DOTA_Tooltip_ability_" .. sItemName, duration=7.0, continue=true, style={color="orange"}}
 end
 
-function GetDOTATimeInMinutes()
-	return GameRules:GetDOTATime(false, false)/60
-end
-
 function GetDOTATimeInMinutesFull()
-	return math.floor(GetDOTATimeInMinutes())
+	return math.floor(GameRules:GetDOTATime(false, false)/60)
 end
 
 function CreatePortal(vLocation, vTarget, iRadius, sParticle, sDisabledParticle, bEnabled, fOptionalActOnTeleport, sOptionalName)
@@ -108,58 +104,6 @@ function CreateGoldNotificationSettings(amount)
 	return {text=amount, duration=flDuration, continue=true, style={color="gold"}}, {text="#notifications_gold", continue=true, style={color="gold"}}
 end
 
-function ModifyStacks(ability, caster, unit, modifier, stack_amount, refresh)
-	if stack_amount > 0 then
-		return AddStacks(ability, caster, unit, modifier, stack_amount, refresh)
-	elseif stack_amount < 0 then
-		return RemoveStacks(ability, unit, modifier, -stack_amount)
-	end
-end
-
-function AddStacks(ability, caster, unit, modifier, stack_amount, refresh)
-	if unit:HasModifier(modifier) then
-		if refresh then
-			ability:ApplyDataDrivenModifier(caster, unit, modifier, {})
-		end
-		unit:SetModifierStackCount(modifier, ability, unit:GetModifierStackCount(modifier, ability) + stack_amount)
-	else
-		ability:ApplyDataDrivenModifier(caster, unit, modifier, {})
-		unit:SetModifierStackCount(modifier, ability, stack_amount)
-	end
-	return unit:FindModifierByNameAndCaster(modifier, caster)
-end
-
-function RemoveStacks(ability, unit, modifier, stack_amount)
-	if unit:HasModifier(modifier) then
-		if unit:GetModifierStackCount(modifier, ability) > stack_amount then
-			unit:SetModifierStackCount(modifier, ability, unit:GetModifierStackCount(modifier, ability) - stack_amount)
-		else
-			unit:RemoveModifierByName(modifier)
-		end
-	end
-end
-
-function ModifyStacksLua(ability, caster, unit, modifier, stack_amount, refresh, modifierTable)
-	if stack_amount > 0 then
-		AddStacksLua(ability, caster, unit, modifier, stack_amount, refresh, modifierTable)
-	elseif stack_amount < 0 then
-		RemoveStacks(ability, unit, modifier, stack_amount)
-	end
-end
-
-function AddStacksLua(ability, caster, unit, modifier, stack_amount, refresh, data)
-	local modifierTable = data or {}
-	if unit:HasModifier(modifier) then
-		if refresh then
-			unit:AddNewModifier(caster, ability, modifier, modifierTable)
-		end
-		unit:SetModifierStackCount(modifier, ability, unit:GetModifierStackCount(modifier, ability) + stack_amount)
-	else
-		unit:AddNewModifier(caster, ability, modifier, modifierTable)
-		unit:SetModifierStackCount(modifier, ability, stack_amount)
-	end
-end
-
 function GetEnemiesIds(heroteam)
 	local enemies = {}
 	for _,playerID in ipairs(GetAllPlayers(false)) do
@@ -189,35 +133,6 @@ function IsRangedUnit(unit)
 	return unit:IsRangedAttacker() or unit:HasModifier("modifier_terrorblade_metamorphosis_transform_aura_applier")
 end
 
-function swap_to_item(unit, srcItem, newItem)
-	FillSlotsWithDummy(unit)
-	if unit:HasItemInInventory(srcItem:GetName()) then
-		unit:RemoveItem(srcItem)
-		unit:AddItem(newItem)
-	end
-	
-	ClearSlotsFromDummy(unit)
-end
-
-function FindItemInInventoryByName(unit, itemname, searchStash, onlyStash, ignoreBackpack)
-	local lastSlot = ignoreBackpack and DOTA_ITEM_SLOT_6 or DOTA_ITEM_SLOT_9
-	local startSlot = 0
-	if searchStash then lastSlot = DOTA_STASH_SLOT_6 end
-	if onlyStash then startSlot = DOTA_STASH_SLOT_1 end
-	for slot = startSlot, lastSlot do
-		local item = unit:GetItemInSlot(slot)
-		if item and item:GetAbilityName() == itemname then
-			return item
-		end
-	end
-end
-
-function RemoveDeathPreventingModifiers(unit)
-	for _,v in ipairs(MODIFIERS_DEATH_PREVENTING) do
-		unit:RemoveModifierByName(v)
-	end
-end
-
 function TrueKill(killer, ability, target)
 	target.IsMarkedForTrueKill = true
 	target:Kill(ability, killer)
@@ -234,19 +149,6 @@ end
 
 function FindFountain(team)
 	return Entities:FindByName(nil, "npc_arena_fountain_" .. team)
-end
-
-function AbilityHasBehaviorByName(ability_name, behaviorString)
-	local AbilityBehavior = GetKeyValue(ability_name, "AbilityBehavior")
-	if AbilityBehavior then
-		local AbilityBehaviors = string.split(AbilityBehavior, " | ")
-		return table.contains(AbilityBehaviors, behaviorString)
-	end
-	return false
-end
-
-function AbilityHasBehavior(ability, behavior)
-	return bit.band(ability:GetBehavior(), behavior) == behavior
 end
 
 function HasDamageFlag(damage_flags, flag)
@@ -285,46 +187,14 @@ function GetLevelValue(value, level)
 	end
 end
 
-function SpendCharge(item, amount)
-	local charges = item:GetCurrentCharges()
-	local newCharges = charges - amount
-	if newCharges < 1 then
-		UTIL_Remove(item)
-	else
-		item:SetCurrentCharges(newCharges)
-	end
-end
-
-function GetAbilityCooldown(unit, ability)
-	local level = ability:GetLevel() - 1
-	if level < 0 then level = 0 end
-	local cd = ability:GetCooldown(level)
-	local vs = {}
-	for k,v in pairs(COOLDOWN_REDUCTION_ABILITIES) do
-		if unit:HasItemInInventory(k) and not vs[v.reductionGroup] then
-			vs[v.reductionGroup] = true
-			if v.reductionType == "percent" then
-				cd = cd * (100 - v.reduction) * 0.01
-			elseif v.reductionType == "constant" then
-				cd = cd - v.reduction
-			end
-		end
-	end
-	return cd
-end
-
 function PreformAbilityPrecastActions(unit, ability)
 	if ability:IsCooldownReady() and ability:IsOwnersManaEnough() then
 		ability:PayManaCost()
-		ability:StartCooldown(GetAbilityCooldown(unit, ability))
+		ability:AutoStartCooldown()
 		--ability:UseResources(true, true, true) -- not works with items?
 		return true
 	end
 	return false
-end
-
-function CDOTABaseAbility:PreformPrecastActions(unit)
-	return PreformAbilityPrecastActions(unit, self)
 end
 
 function ReplaceAbilities(unit, oldAbility, newAbility, keepLevel, keepCooldown)
@@ -343,7 +213,7 @@ function ReplaceAbilities(unit, oldAbility, newAbility, keepLevel, keepCooldown)
 end
 
 function PreformMulticast(caster, ability_cast, multicast, multicast_delay, target)
-	if IsAbilityMulticastable(ability_cast) then
+	if ability_cast:IsMulticastable() then
 		local prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf', PATTACH_OVERHEAD_FOLLOW, caster)
 		ParticleManager:SetParticleControl(prt, 1, Vector(multicast, 0, 0))
 		prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast_b.vpcf', PATTACH_OVERHEAD_FOLLOW, caster:GetCursorCastTarget() or caster)
@@ -370,7 +240,7 @@ function CastAdditionalAbility(caster, ability, target)
 	local skill = ability
 	local unit = caster
 	local channelled = false
-	if AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) then
+	if ability:HasBehavior(DOTA_ABILITY_BEHAVIOR_CHANNELLED) then
 		local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
 		--TODO сделать чтобы дамаг от скилла умножался от инты.
 		for i = 0, DOTA_ITEM_SLOT_9 do
@@ -397,11 +267,11 @@ function CastAdditionalAbility(caster, ability, target)
 		skill:SetLevel(ability:GetLevel())
 		channelled = true
 	end
-	if AbilityHasBehavior(skill, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then
+	if skill:HasBehavior(DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then
 		if target and type(target) == "table" then
 			unit:SetCursorCastTarget(target)
 		end
-	elseif AbilityHasBehavior(skill, DOTA_ABILITY_BEHAVIOR_POINT) then
+	elseif skill:HasBehavior(DOTA_ABILITY_BEHAVIOR_POINT) then
 		if target and target.x and target.y and target.z then
 			unit:SetCursorPosition(target)
 		end
@@ -421,17 +291,6 @@ function CastAdditionalAbility(caster, ability, target)
 			end
 		end)
 	end
-end
-
-function IsAbilityMulticastable(ability)
-	if AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_PASSIVE) or table.contains(NOT_MULTICASTABLE_ABILITIES, ability:GetName()) then
-		return false
-	end
-	return true
-end
-
-function HasScepter(unit)
-	return unit:HasScepter()
 end
 
 function IsHeroInAbilityPhase(unit)
@@ -721,31 +580,6 @@ function GetOneRemainingTeam()
 	return teamLeft
 end
 
-function ClearFalseInnateModifiers(unit, ability)
-	if ability:GetKeyValue("HasInnateModifiers") ~= 1 then
-		for _,v in ipairs(unit:FindAllModifiers()) do
-			if v:GetAbility() and v:GetAbility() == ability then
-				v:Destroy()
-			end
-		end
-	end
-end
-
-function AddNewAbility(unit, ability_name, skipLinked)
-	local hAbility = unit:AddAbility(ability_name)
-	ClearFalseInnateModifiers(unit, hAbility)
-	local linked
-	local link = LINKED_ABILITIES[ability_name]
-	if link and not skipLinked then
-		linked = {}
-		for _,v in ipairs(link) do
-			local h, _ = AddNewAbility(unit, v)
-			table.insert(linked, h)
-		end
-	end
-	return hAbility, linked
-end
-
 function CopyItem(item)
 	local newItem = CreateItem(item:GetAbilityName(), caster, caster)
 	newItem:SetPurchaseTime(item:GetPurchaseTime())
@@ -865,16 +699,6 @@ function IsUltimateAbilityKV(abilityname)
 	return GetKeyValue(abilityname, "AbilityType") == "DOTA_ABILITY_TYPE_ULTIMATE"
 end
 
-function CastConfiguratedPsiSpell(caster, ability, configuration)
-	-- body
-end
-
-function PurgeTruesightModifiers(unit)
-	for _,v in ipairs(MODIFIERS_TRUESIGHT) do
-		unit:RemoveModifierByName(v)
-	end
-end
-
 function RandomPositionAroundPoint(pos, radius)
 	return RotatePosition(pos, QAngle(0, RandomInt(0,359), 0), pos + Vector(1, 1, 0) * RandomInt(0, radius))
 end
@@ -899,7 +723,7 @@ function RemoveAbilityWithModifiers(unit, ability)
 			v:Destroy()
 		end
 	end
-	if ability:GetAbilityName() == "pudge_meat_hook_lua" then
+	if ability.DestroyHookParticles then
 		ability:DestroyHookParticles()
 	end
 	unit:RemoveAbility(ability:GetAbilityName())
@@ -926,7 +750,6 @@ end
 
 function GetHeroTableByName(name)
 	local output = {}
-	local default = NPC_HEROES[name]
 	local custom = NPC_HEROES_CUSTOM[name]
 	if not custom then
 		print("[GetHeroTableByName] Missing hero: " .. name)
@@ -939,69 +762,9 @@ function GetHeroTableByName(name)
 		end
 		table.merge(output, custom)
 	else
-		table.merge(output, default)
-		table.merge(output, custom)
+		table.merge(output, GetUnitKV(name))
 	end
 	return output
-end
-
-function SetAllItemSlotsLocked(unit, locked, bNoStash)
-	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
-		local current_item = unit:GetItemInSlot(i)
-		if current_item then
-			ExecuteOrderFromTable({
-				UnitIndex = unit:GetEntityIndex(), 
-				OrderType = DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK,
-				AbilityIndex = current_item:GetEntityIndex(),
-				TargetIndex = locked and 1 or 0,
-				Queue = false
-			})
-		end
-	end
-end
-
-function FillSlotsWithDummy(unit, bNoStash)
-	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
-		local current_item = unit:GetItemInSlot(i)
-		if not current_item then
-			unit:AddItem(CreateItem("item_dummy", unit, unit))
-		end
-	end
-end
-
-function ClearSlotsFromDummy(unit, bNoStash)
-	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
-		local current_item = unit:GetItemInSlot(i)
-		if current_item and current_item:GetAbilityName() == "item_dummy" then
-			unit:RemoveItem(current_item)
-			UTIL_Remove(current_item)
-		end
-	end
-end
-
-function GetAllItemsByNameInInventory(unit, itemname, bBackpack)
-	local items = {}
-	for slot = 0, bBackpack and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
-		local item = unit:GetItemInSlot(slot)
-		if item and item:GetAbilityName() == itemname then
-			table.insert(items, item)
-		end
-	end
-	return items
-end
-
-function CDOTA_BaseNPC:UnitHasSlotForItem(itemname, bBackpack)
-	if self.HasRoomForItem then
-		return self:HasRoomForItem(itemname, bBackpack, true) ~= 4
-	else
-		for i = 0, bBackpack and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
-			local item = self:GetItemInSlot(i)
-			if not IsValidEntity(item) or (item:GetAbilityName() == itemname and item:IsStackable()) then
-				return true
-			end
-		end
-		return false
-	end
 end
 
 function CreateExplosion(position, minRadius, fullRdius, minForce, fullForce, teamNumber, teamFilter, typeFilter, flagFilter)
@@ -1313,7 +1076,7 @@ end
 
 function SimpleDamageReflect(victim, attacker, damage, flags, ability, damage_type)
 	if victim:IsAlive() and not HasDamageFlag(flags, DOTA_DAMAGE_FLAG_REFLECTION) and attacker:GetTeamNumber() ~= victim:GetTeamNumber() then
-		print("Reflected " .. damage .. " damage from " .. victim:GetUnitName() .. " to " .. attacker:GetUnitName())
+		--print("Reflected " .. damage .. " damage from " .. victim:GetUnitName() .. " to " .. attacker:GetUnitName())
 		ApplyDamage({
 			victim = attacker,
 			attacker = victim,
@@ -1356,12 +1119,9 @@ function CDOTA_PlayerResource:SetDisableHelpForPlayerID(nPlayerID, nOtherPlayerI
 		end
 		PLAYER_DATA[nPlayerID].DisableHelp[nOtherPlayerID] = disabled
 
-		local player_data = PlayerTables:GetTableValue("arena", "player_data")
-		if not player_data[nPlayerID].DisableHelp then
-			player_data[nPlayerID].DisableHelp = {}
-		end
-		player_data[nPlayerID].DisableHelp[nOtherPlayerID] = PLAYER_DATA[nPlayerID].DisableHelp[nOtherPlayerID]
-		PlayerTables:SetTableValue("arena", "player_data", player_data)
+		local disable_help_data = PlayerTables:GetTableValue("disable_help_data", nPlayerID)
+		disable_help_data[nOtherPlayerID] = PLAYER_DATA[nPlayerID][nOtherPlayerID]
+		PlayerTables:SetTableValue("disable_help_data", disable_help_data)
 	end
 end
 

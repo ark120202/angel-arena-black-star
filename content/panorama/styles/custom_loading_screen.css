@@ -178,24 +178,29 @@
 	border-radius: 5px;
 	flow-children: down;
 	padding: 4px;
+	visibility: collapse;
 }
 
 #KillGoalVoteVartiantList
 {
 	width: 100%;
 	flow-children: down;
-	margin-bottom: 7px;
+}
+
+.KillGoalGroup
+{
+	width: 100%;
+	margin: 3px 0;
 }
 
 .KillGoalVariant
 {
-	width: 100%;
-	margin-bottom: 3px;
-	border-bottom: 1px solid grey;
+	width: 49%;
 }
 
-#KillGoalVoteSubmit
+#CustomSettingsRoot
 {
 	width: 100%;
-	margin: 3px;
+	visibility: collapse;
+	margin-bottom: 12px;
 }

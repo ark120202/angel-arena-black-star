@@ -1,15 +1,14 @@
-"use strict";
-var ItemList = {}
-var ItemData = {}
-var Itembuilds = {}
-var SmallItems = []
-var SmallItemsAlwaysUpdated = []
-var SearchingFor = null
-var TabIndex = null
-var QuickBuyTarget = null
-var QuickBuyTargetAmount = 0
-var LastHero = null
-var ItemStocks = [];
+var ItemList = {},
+	ItemData = {},
+	Itembuilds = {},
+	SmallItems = [],
+	SmallItemsAlwaysUpdated = [],
+	SearchingFor = null,
+	TabIndex = null,
+	QuickBuyTarget = null,
+	QuickBuyTargetAmount = 0,
+	LastHero = null,
+	ItemStocks = [];
 
 function OpenCloseShop() {
 	$("#ShopBase").ToggleClass("ShopBase_Out")
@@ -113,9 +112,17 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush) {
 		if (!$.GetContextPanel().BHasClass("InSearchMode")) {
 			panel.SetFocus();
 		}
-		ShowItemRecipe(itemName)
-		if (GameUI.IsShiftDown()) {
-			SetQuickbuyTarget(itemName)
+		if (GameUI.IsAltDown()) {
+			GameEvents.SendCustomGameEventToServer("custom_chat_send_message", {
+				shop_item_name: panel.IsInQuickbuy ? QuickBuyTarget : itemName,
+				isQuickbuy: panel.IsInQuickbuy,
+				gold: GetRemainingPrice(panel.IsInQuickbuy ? QuickBuyTarget : itemName, {})
+			})
+		} else {
+			ShowItemRecipe(itemName)
+			if (GameUI.IsShiftDown()) {
+				SetQuickbuyTarget(itemName)
+			}
 		}
 	})
 	panel.SetPanelEvent("oncontextmenu", function() {
@@ -469,13 +476,14 @@ function UpdateItembuildsForHero() {
 					SelectedTable = build;
 			});
 		}
-		DropRoot.BLoadLayoutFromString("<root><Panel><DropDown id='Itembuild_select'> " + content + " /></DropDown></Panel></root>", true, true);
+		DropRoot.BLoadLayoutFromString("<root><Panel><DropDown id='Itembuild_select'> " + content + "</DropDown></Panel></root>", true, true);
 		DropRoot.FindChildTraverse("Itembuild_select").SetPanelEvent("oninputsubmit", function() {
 			var index = Number(DropRoot.FindChildTraverse("Itembuild_select").GetSelected().id.replace("Itembuild_select_element_index_", ""))
 			if (Itembuilds[heroName] != null && Itembuilds[heroName][index] != null) {
-				SelectItembuild(Itembuilds[heroName][index])
+				SelectItembuild(Itembuilds[heroName][index]);
 			}
-		})
+		});
+		$.GetContextPanel().SetHasClass("ItembuildsHidden", SelectedTable == null);
 		SelectItembuild(SelectedTable);
 	}
 }
@@ -504,10 +512,6 @@ function SelectItembuild(t) {
 		$("#Itembuild_author").text = "";
 		$("#Itembuild_patch").text = "";
 	}
-}
-
-function ShowHideItembuilds() {
-	$.GetContextPanel().ToggleClass("ItembuildsHidden");
 }
 
 function SetItemStock(item, ItemStock) {

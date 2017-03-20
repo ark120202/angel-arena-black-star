@@ -6,7 +6,7 @@ function CheckAbility(keys)
 		caster:ModifyStrength(stats_per_cycle)
 		caster:ModifyAgility(stats_per_cycle)
 		caster:ModifyIntellect(stats_per_cycle)
-		ability:StartCooldown(GetAbilityCooldown(caster, ability))
+		ability:AutoStartCooldown()
 		caster:EmitSound("Arena.Hero_Stargazer.CosmicCountdown.Cast")
 		ParticleManager:CreateParticle("particles/arena/units/heroes/hero_stargazer/cosmic_countdown.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	end

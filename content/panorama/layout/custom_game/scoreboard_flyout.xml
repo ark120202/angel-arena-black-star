@@ -44,7 +44,7 @@
 
 				<Panel id="ScoreboardXP" class="ScoreboardXP">
 					<Panel id="LevelBackground" onactivate="DOTAHUDXPBarClicked();" />
-					<Label id="LevelLabel" class="MonoNumbersFont" text="{d:level}" hittest="false" />
+					<Label id="LevelLabel" class="MonoNumbersFont" text="{d:level}" hittest="false" style="width: 100%;" />
 					<CircularProgressBar id="CircularXPProgress" onactivate="DOTAHUDXPBarClicked();" />
 					<CircularProgressBar id="CircularXPProgressBlur" hittest="false"/>
 					<!-- <ProgressBar id="XPProgress" onactivate="DOTAHUDXPBarClicked();" >

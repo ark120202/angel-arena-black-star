@@ -11,34 +11,57 @@ TODO LIST:
 	]]
 	алхимику на новую голду
 	2 виспа оверчарж
-	понерфить ама, апокалипсиса (боссы), инвокера
 	I found a bug in custom abilities using Pudge flesh heap + apocalypse can result in infinite size which would cause the hero unable to attack - ability_lua + MODIFIER_PROPERTY_MODEL_SCALE
-	Убрать партиклы смерти виспа при смерти кастомных героев (как со станом)
-	при абандоне убирать из селекшона
 	сделать кастомное меню пика для спектаторов (+магазин)
 	allowrotation="true" 
 <<+===========================================================================================================
 [url=https://vk.com/wall-122685850_2628]ОБСУЖДЕНИЕ ОБНОВЛЕНИЯ[/url]
-[url=https://gist.github.com/ark120202/5434bc03e99c28988eda7e68d9c751c2]FULL UPDATE[/url]
-[url=https://gist.github.com/ark120202/5434bc03e99c28988eda7e68d9c751c2]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
-ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/5434bc03e99c28988eda7e68d9c751c2
+[url=https://gist.github.com/ark120202/fb8d5504b8795e00363518215a493f2d]FULL UPDATE[/url]
+[url=https://gist.github.com/ark120202/fb8d5504b8795e00363518215a493f2d]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
+ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/fb8d5504b8795e00363518215a493f2d
+• 
 ============================================================
 Angel Arena Black Star - Версия 1.4.6:
-
+• Большинство героев силы были перебалансированы
+• Tinker - Rearm был заменен на Rearming Strike
+• Huskar - Burning Spear переработан
+• Хост теперь может перемещать игроков между команадами во время этапа выбора команд
+• Увеличена площадь арены для дуэлей и изменено место центрального босса
+• Таблица счета переработана; Добавлена функция отключения помощи
+• Способности, предметы в инвентаре/магазине, золото и опыт теперь могут быть использованы с ALT для создания уведомлений в чате
+• Получаемое золото в секунду уменьшено до 3
+• Bloodstone теперь не сбрасывает серии убийств
+• Новые герои теперь не зависят от Wisp
+• Юниты не-герои теперь не неуязвимы на фонтане
+• Исправлено поведение Scepter со способностями, создоваемыми Scepter
+• Исправлено завершение игры на 60 минуте
 ============================================================
 Angel Arena Black Star - Version 1.4.6:
-
+• Most of strength heroes were rebalanced
+• Tinker - Rearm replaced with Rearming Strike
+• Huskar - Burning Spear reworked
+• Host now can control players in team selection menu (using Drag&Drop)
+• Increased duel area size and changed central boss area
+• Flyout Scoreboard reworked; Added Disable Help functinon
+• Abilities, inventory/shop items, gold and experience now are alertable
+• Gold per Second was reduced to 3
+• Bloodstone now not resets kill streak
+• New heroes no longer based on Wisp
+• Non-hero units no longer immortal under fountain aura
+• Fixed Scepter didn't gave abilities granted by scepter
+• Fixed server crashed after 60 minute
 ============================================================
 Angel Arena Black Star - Version 1.4.6:
 General:
 	//Added paired heroes system //TODO: Repick, team changing
 	//Added new hero pair: Maka Albarn & Soul Evans
-	Host now can fully control players in team selection menu (using Drag&Drop)
+	Host now can control players in team selection menu (using Drag&Drop)
 	//Added new hero: Destroyer
 	Tinker - Rearm replaced with Rearming Strike
 	Huskar - Burning Spear reworked
 	Increased duel area size and changed central boss area
 	Flyout Scoreboard reworked; Added Disable Help functinon
+	Abilities, inventory/shop items, gold and experience now are alertable
 Balance:
 	Gold per Second: 4 => 3
 	Runes:
@@ -51,6 +74,8 @@ Balance:
 		Guardian Greaves:
 			Now purges debuffs and stuns from all units it healed
 			Now can be used while stunned
+		Bloodstone:
+			Now not resets kill streak
 	Talents:
 		
 	Abilities:
@@ -230,10 +255,11 @@ Fixes:
 	Fixed top bar team panel backgrounds were invisible, if player has custom HUD equipped
 	New heroes no longer based on Wisp (also Wisp now has his voice)
 	Fixed ability layout background width with custom HUDs
-	Abilities, items and gold now are alertable
 	Fixed Scepter didn't gave abilities granted by scepter
 	Fixed heroes sometimes could stay in duel area
 	Non-hero units no longer immortal under fountain aura
+	Left click on item in inventory now shows that item in shop, if it's open
+	Fixed server crashed after 60 minute because of latest patch
 <<+===========================================================================================================
 
 

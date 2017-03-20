@@ -41,8 +41,8 @@ function item_blink_staff_blink(keys)
 					Blink(ability, caster, caster, point, MaxBlinkRange)
 				end
 			else
-				ability:ApplyDataDrivenModifier(caster, target, SelectedUntiModifierName,  { duration = GetAbilityCooldown(caster, ability) } )
-				ability:ApplyDataDrivenModifier(caster, caster, SelectedUntiModifierName,  { duration = GetAbilityCooldown(caster, ability) } )
+				ability:ApplyDataDrivenModifier(caster, target, SelectedUntiModifierName,  { duration = ability:GetReducedCooldown()} )
+				ability:ApplyDataDrivenModifier(caster, caster, SelectedUntiModifierName,  { duration = ability:GetReducedCooldown()} )
 				local hModifier = caster:FindModifierByNameAndCaster(SelectedUntiModifierName, caster)
 				local nTargetIndex = target:GetEntityIndex()
 				hModifier:SetStackCount(nTargetIndex)

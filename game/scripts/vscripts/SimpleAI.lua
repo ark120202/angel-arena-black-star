@@ -174,11 +174,11 @@ end
 function SimpleAI:UseAbility(ability, target)
 	if self.state ~= AI_STATE_CASTING and ability:IsFullyCastable() then
 		self:SwitchState(AI_STATE_CASTING)
-		if AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) then
+		if ability:HasBehavior(DOTA_ABILITY_BEHAVIOR_NO_TARGET) then
 			self.unit:CastAbilityNoTarget(ability, -1)
-		elseif AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then
+		elseif ability:HasBehavior(DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then
 			self.unit:CastAbilityOnTarget(target, ability, -1)
-		elseif AbilityHasBehavior(ability, DOTA_ABILITY_BEHAVIOR_POINT) then
+		elseif ability:HasBehavior(DOTA_ABILITY_BEHAVIOR_POINT) then
 			self.unit:CastAbilityOnPosition(target, ability, -1)
 		end
 		local endtime = GameRules:GetGameTime() + ability:GetCastPoint() + 0.1

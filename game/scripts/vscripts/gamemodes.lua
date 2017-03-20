@@ -91,7 +91,7 @@ function GameModes:OnAllVotesSubmitted()
 	end
 	local kl_result
 	if kl_count >= 1 then
-		GameRules:SetKillGoal(table.nearest(POSSIBLE_KILL_GOALS, math.floor(kl_sum / kl_count)))
+		GameRules:SetKillGoal(math.round(kl_sum / kl_count))
 	else
 		GameRules:SetKillGoal(DOTA_KILL_GOAL_VOTE_STANDART)
 	end

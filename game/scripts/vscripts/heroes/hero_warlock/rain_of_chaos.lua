@@ -7,7 +7,7 @@ function OnSpellStart(keys)
 	local damage = keys.golem_dmg_tooltip
 	local bounty = keys.bounty
 	local name = keys.name
-	if HasScepter(caster) then
+	if caster:HasScepter() then
 		count = ability:GetLevelSpecialValueFor("number_of_golems_scepter", ability:GetLevel() - 1)
 		hp = keys.golem_hp_tooltip_scepter
 		damage = keys.golem_dmg_tooltip_scepter

@@ -56,13 +56,7 @@ function UpdatePanoramaHUD() {
 
 	var GoldLabel = FindDotaHudElement("ShopButton").FindChildTraverse("GoldLabel");
 	if (Players.GetTeam(Game.GetLocalPlayerID()) == Entities.GetTeamNumber(unit)) {
-		var goldTable = PlayerTables.GetTableValue("arena", "gold")
-		var playerowner = Entities.GetHeroPlayerOwner(unit)
-		if (goldTable && goldTable[playerowner] != null) {
-			GoldLabel.text = FormatGold(goldTable[playerowner])
-		} else {
-			GoldLabel.text = ""
-		}
+		GoldLabel.text = FormatGold(GetPlayerGold(Entities.GetHeroPlayerOwner(unit)))
 	} else {
 		GoldLabel.text = ""
 	}
@@ -118,6 +112,7 @@ function HookPanoramaPanels() {
 	FindDotaHudElement("DeliverItemsButton").style.horizontalAlign = "right"
 	FindDotaHudElement("LevelLabel").style.width = "100%";
 	FindDotaHudElement("stash").style.marginBottom = "47px";
+	
 
 	var shopbtn = FindDotaHudElement("ShopButton");
 	var StatBranch = FindDotaHudElement("StatBranch")
@@ -201,17 +196,34 @@ function HookPanoramaPanels() {
 	})
 	var InventoryContainer = FindDotaHudElement("InventoryContainer")
 	$.Each(InventoryContainer.FindChildrenWithClassTraverse("InventoryItem"), function(child, index) {
-		var btn = child.FindChildTraverse("AbilityButton")
-		btn.SetPanelEvent("onactivate", function() {
-			if (GameUI.IsAltDown()) {
-				var item = Entities.GetItemInSlot(Players.GetLocalPlayerPortraitUnit(), index)
-				if (item > -1) {
+		child.FindChildTraverse("AbilityButton").SetPanelEvent("onactivate", function() {
+			var item = Entities.GetItemInSlot(Players.GetLocalPlayerPortraitUnit(), index)
+			if (item > -1) {
+				if (GameUI.IsAltDown()) {
 					GameEvents.SendCustomGameEventToServer("custom_chat_send_message", {
 						ability: item
 					})
+				} else {
+					GameEvents.SendEventClientSide("panorama_shop_show_item_if_open", {
+						"itemName": Abilities.GetAbilityName(item)
+					});
+					var _unit = Players.GetLocalPlayerPortraitUnit();
+					if (Entities.IsControllableByPlayer(_unit, Game.GetLocalPlayerID())) {
+						Abilities.ExecuteAbility(item, _unit, false);
+					}
 				}
 			}
 		})
+	})
+	var xpRoot = FindDotaHudElement("xp")
+	$.Each([xpRoot.FindChildTraverse("LevelBackground"), xpRoot.FindChildTraverse("CircularXPProgress"), xpRoot.FindChildTraverse("XPProgress")], function(p) {
+		p.SetPanelEvent("onactivate", function() {
+			if (GameUI.IsAltDown()) {
+				GameEvents.SendCustomGameEventToServer("custom_chat_send_message", {
+					xpunit: Players.GetLocalPlayerPortraitUnit()
+				})
+			}
+		});
 	})
 }
 

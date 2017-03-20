@@ -42,38 +42,26 @@
 }
 #TeamSelectTimer
 {
-	margin-top: 8px;
-	font-size: 48px;
-	color: #CCCCCC;
+	font-size: 32px;
+	color: white;
+	font-weight: bold;
 	horizontal-align: center;
 }
 #StartGameCountdownTimer.countdown_inactive #TeamSelectTimer 
 {
-	opacity: 0.0;
-}
-#TimerBg
-{
-	wash-color: #222222;
-}
-#TimerBg,
-#TimerRing
-{
-	width: 70px;
-	height: 70px;
-	margin-top: 2px;
-	horizontal-align: center;
-	transition-property: opacity;
-	transition-duration: 0.2s;
+	opacity: 0;
 }
 #TimerLabelBox 
 {
-	margin-top: 76px;
+	margin-top: 32px;
 	height: 20px;
 	width: 100%;
 }
+
+#TimerLabelGameStart,
 #TimerLabelAutoStart
 {
-	color: #a9aaaa;
+	color: #D6D6D6;
 	font-size: 16px;
 	text-transform: uppercase;
 	horizontal-align: center;
@@ -85,22 +73,10 @@
 {
 	visibility: visible;
 }
-#TimerLabelGameStart
-{
-	color: #a9aaaa;
-	font-size: 16px;
-	text-transform: uppercase;
-	horizontal-align: center;
-	visibility: collapse;
-	transition-property: opacity;
-	transition-duration: 0.2s;
-}
 #StartGameCountdownTimer.forced_start #TimerLabelGameStart 
 {
 	visibility: visible;
 }
-#StartGameCountdownTimer.countdown_inactive #TimerBg,
-#StartGameCountdownTimer.countdown_inactive #TimerRing,
 #StartGameCountdownTimer.countdown_inactive #TimerLabelAutoStart,
 #StartGameCountdownTimer.countdown_inactive #TimerLabelGameStart,
 {
@@ -222,7 +198,11 @@
 	flow-children: right;
 	transition-property: brightness, saturation, background-color;
 	transition-timing-function: linear;
-	transition-duration: 0.1s;
+	transition-duration: 0.2s;
+}
+.PlayerSlot:hover
+{
+	background-color: rgba(0,0,0,0.15);
 }
 DOTAAvatarImage
 {
@@ -445,13 +425,6 @@ DOTAAvatarImage
 #ShuffleTeamAssignmentButton:hover Image
 {
 	wash-color: white;
-}
-
-#CustomSettingsRoot
-{
-	width: 100%;
-	height: 30px;
-	visibility: collapse;
 }
 
 #LockAndStartButton

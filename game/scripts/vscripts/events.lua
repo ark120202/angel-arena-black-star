@@ -41,7 +41,6 @@ function GameMode:OnNPCSpawned(keys)
 		--HeroVoice:OnNPCSpawned(npc)
 		Timers:CreateTimer(function()
 			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
-				--local base_hero = npc:GetPlayerOwner():GetAssignedHero()
 				Physics:Unit(npc)
 				npc:SetAutoUnstuck(true)
 				npc:EquipItemsFromPlayerSelectionOrDefault()
@@ -53,10 +52,9 @@ function GameMode:OnNPCSpawned(keys)
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if npc:IsTrueHero() then
 						AbilityShop:RandomOMGRollAbilities(npc)
-						if npc.BloodstoneDummies then
-							for _,v in ipairs(npc.BloodstoneDummies) do
-								UTIL_Remove(v)
-							end
+						if IsValidEntity(npc.BloodstoneDummies) then
+							UTIL_Remove(npc.BloodstoneDummies)
+							npc.BloodstoneDummies = nil
 						end
 						if npc.PocketHostEntity ~= nil then
 							UTIL_Remove(npc.PocketItem)
@@ -189,22 +187,20 @@ end
 -- An entity died
 function GameMode:OnEntityKilled(keys)
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
-	local killerEntity = nil
-	if keys.entindex_attacker ~= nil then
+	local killerEntity
+	if keys.entindex_attacker then
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
-	--[[
-	local killerAbility = nil
-	if keys.entindex_inflictor ~= nil then
+	--[[local killerAbility
+	if keys.entindex_inflictor then
 		killerAbility = EntIndexToHScript( keys.entindex_inflictor )
-	end
-	]]
+	end]]
 	
 	if killedUnit then
 		if killedUnit:IsHero() then
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
 			if killedUnit:IsRealHero() then
-				if killedUnit.InArena and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
+				if killedUnit.InArena and Duel:IsDuelOngoing() then
 					killedUnit.InArena = false
 					killedUnit.ArenaBeforeTpLocation = nil
 					if Duel:GetWinner() ~= nil then
@@ -238,7 +234,6 @@ function GameMode:OnEntityKilled(keys)
 
 			if killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then
 				local plId = killerEntity.GetPlayerID ~= nil and killerEntity:GetPlayerID() or killerEntity:GetPlayerOwnerID()
-
 				if plId > -1 and not (killerEntity.HasModifier and killerEntity:HasModifier("modifier_item_golden_eagle_relic_enabled")) then
 					local gold = RandomInt(killedUnit:GetMinimumGoldBounty(), killedUnit:GetMaximumGoldBounty())
 					Gold:ModifyGold(plId, gold)
@@ -349,6 +344,35 @@ function CustomChatSay(playerId, teamonly, data)
 					args.player = UnitVarToPlayerID(ability:GetCaster())
 				else
 					return
+				end
+			elseif data.shop_item_name then
+				local item = data.shop_item_name
+				if item then
+					local team = PlayerResource:GetTeam(playerId)
+					local stocks = PanoramaShop:GetItemStockCount(team, item)
+					if GetKeyValue(item, "ItemPurchasableFilter") == 0 or GetKeyValue(item, "ItemPurchasable") == 0 then
+						args.boss_drop = true
+					elseif stocks and stocks < 1 then
+						args.stock_time = math.round(PanoramaShop:GetItemStockCooldown(team, item))
+					elseif data.gold then --relying on client for that
+						local gold_required = data.gold - Gold:GetGold(playerId)
+						if gold_required > 0 then
+							args.gold = gold_required
+						end
+					end
+					args.shop_item_name = item
+					args.isQuickbuy = data.isQuickbuy == 1
+				end
+			elseif data.xpunit then
+				local unit = EntIndexToHScript(data.xpunit)
+				if IsValidEntity(unit) then
+					args.unit = data.xpunit
+					args.level = unit:GetLevel()
+					args.player = UnitVarToPlayerID(unit)
+					args.isNeutral = args.player == -1
+					if unit.GetCurrentXP and XP_PER_LEVEL_TABLE[args.level + 1] then
+						args.xpToNextLevel = (XP_PER_LEVEL_TABLE[args.level + 1] or 0) - unit:GetCurrentXP()
+					end
 				end
 			end
 		end

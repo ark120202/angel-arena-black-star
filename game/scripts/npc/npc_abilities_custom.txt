@@ -804,54 +804,6 @@
 		}
 	}
 
-	"tinker_rearm_arena"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/hero_tinker/rearm.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityTextureName"			"tinker_rearm"
-		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_4"
-		"MaxLevel"						"7"
-		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"35 30 28 26 24 22 20"
-		"AbilityManaCost"				"300 600 900 1200 1500 1800 2100"
-
-		"AbilitySpecial"
-		{
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"debuff_duration"	"15"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"refresh_chance_pct"	"25 27.5 30 32 34 36 38"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"magical_resistanse_pct"	"-15 -20 -25 -30 -35 -40 -45"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"projectile_speed"	"800"
-			}
-		}
-
-		"precache"
-		{
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
-			"particle"				"particles/arena/units/heroes/hero_tinker/rearm_projectile.vpcf"
-			"particle"				"particles/arena/units/heroes/hero_tinker/rearm_buff_shield.vpcf"
-		}
-	}
-
 	"meepo_divided_we_stand_arena"
 	{
 		"BaseClass"				"ability_datadriven"
@@ -1686,6 +1638,54 @@
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_per_stack" 
 				}
 			}
+		}
+	}
+
+	"tinker_rearm_arena"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_tinker/rearm.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"tinker_rearm"
+		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_4"
+		"MaxLevel"						"7"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"35 30 28 26 24 22 20"
+		"AbilityManaCost"				"300 600 900 1200 1500 1800 2100"
+
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"debuff_duration"	"15"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"refresh_chance_pct"	"25 27.5 30 32 34 36 38"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"magical_resistanse_pct"	"-15 -20 -25 -30 -35 -40 -45"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"projectile_speed"	"800"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+			"particle"				"particles/arena/units/heroes/hero_tinker/rearm_projectile.vpcf"
+			"particle"				"particles/arena/units/heroes/hero_tinker/rearm_buff_shield.vpcf"
 		}
 	}
 }

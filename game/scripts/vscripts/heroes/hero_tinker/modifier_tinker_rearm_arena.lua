@@ -27,7 +27,7 @@ if IsServer() then
 		if self:GetParent() == keys.target then
 			local ability_cast = keys.ability
 			local caster = keys.unit
-			if ability_cast and not ability_cast:IsToggle() then
+			if ability_cast and not ability_cast:IsToggle() and not REFRESH_LIST_IGNORE_REARM[ability_cast:GetAbilityName()] then
 				if RollPercentage(self:GetAbility():GetSpecialValueFor("refresh_chance_pct")) then
 					Timers:CreateTimer(0.01, function()
 						if IsValidEntity(ability_cast) then
@@ -35,6 +35,7 @@ if IsServer() then
 						end
 					end)
 					ParticleManager:CreateParticle("particles/units/heroes/hero_tinker/tinker_rearm.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+					caster:EmitSound("Hero_Tinker.Rearm")
 				end
 			end
 		end

@@ -31,7 +31,7 @@
 
 				<ProgressBar id="HealthBar" class="TopBarHealthBar"/>
 				<ProgressBar id="ManaBar" class="TopBarManaBar"/>
-				<!-- <Panel id="BuybackIcon" hittest="false" /> -->
+				<Panel id="BuybackIcon" hittest="false" />
 				<Panel id="TopBarUltIndicator" />
 				<!-- TODO: Replace with Custom Abilities mode container -->
 				<!-- <Panel id="AbilityDraftHitBox" onmouseover="DOTAShowAbilityDraftTooltip()" onmouseout="DOTAHideAbilityDraftTooltip()" /> -->
@@ -39,16 +39,13 @@
 					<Label id="RespawnTimerLabel" text="{d:respawn_seconds}" hittest="false" />
 					<!-- <Panel id="TopBarBuybackStatus"/> -->
 				</Panel>
-				<!-- <Panel id="GoldIcon" hittest="false" /> -->
+				<Panel id="GoldIcon" hittest="false" />
 			</Panel>
 		</snippet>
 	</snippets>
 
 	<Panel class="base" hittest="false">
-		<Panel id="TopBarLeftFlare" hittest="false" />
-		<Panel id="TopBarLeftTeams" hittest="false">
-			<Panel id="TopBarLeftPlayers" hittest="false" class="PlayerContainer" />
-		</Panel>
+		
 
 		<Panel id="TimeOfDayBG"/>
 
@@ -66,9 +63,13 @@
 		<Panel id="NightGlow" hittest="false"/>
 		<Label id="TimeUntil" text="#DOTA_HUD_TimeUntil" hittest="false"/>
 
-		<Panel id="TopBarRightTeams" hittest="false">
-			<Panel id="TopBarRightPlayers" hittest="false" class="PlayerContainer" />
+		<Panel id="TeamsPanel" hittest="false">
+			<Panel id="TopBarLeftTeams" hittest="false">
+				<Panel id="TopBarLeftPlayers" hittest="false" class="PlayerContainer" />
+			</Panel>
+			<Panel id="TopBarRightTeams" hittest="false">
+				<Panel id="TopBarRightPlayers" hittest="false" class="PlayerContainer" />
+			</Panel>
 		</Panel>
-		<Panel id="TopBarRightFlare" />
 	</Panel>
 </root>
