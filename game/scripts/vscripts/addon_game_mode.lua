@@ -1,6 +1,4 @@
 require('utils/init')
---print(PlayerResource:GetSelectedHeroEntity(0):GetAbsOrigin())
---do return end
 require('gamemode')
 
 function Precache(context)
@@ -106,18 +104,6 @@ function Precache(context)
 	
 	for _, handle in pairs(CUSTOM_WEARABLES) do
 		DynamicWearables:PrecacheUnparsedWearable(context, handle)
-		--[[if handle.particles then
-			for _,v in pairs(handle.particles) do
-				table.insert(particles, v.name)
-			end
-		end]]
-		--[[if handle.models and type(handle.models) == "table" and #handle.models > 0 then
-			for _,v in pairs(handle.models) do
-				if v.model then
-					table.insert(models, v.model)
-				end
-			end
-		end]]
 	end
 	
 	for k, v in pairs(NPC_HEROES_CUSTOM) do
@@ -155,7 +141,6 @@ function Precache(context)
 	end
 end
 
--- Create the game mode when we activate
 function Activate()
 	GameRules.GameMode = GameMode()
 	GameRules.GameMode:_InitGameMode()

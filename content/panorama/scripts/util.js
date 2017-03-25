@@ -62,10 +62,14 @@ function GetHeroName(unit) {
 	return data != null && data.unit_name != null ? data.unit_name : Entities.GetUnitName(unit)
 }
 
+function SafeGetPlayerHeroEntityIndex(playerId) {
+	var clientEnt = Players.GetPlayerHeroEntityIndex(playerId)
+	return clientEnt == -1 ? (Number(PlayerTables.GetTableValue("player_hero_indexes", playerId)) || -1) : clientEnt
+}
+
 function GetPlayerHeroName(playerId) {
 	if (Players.IsValidPlayerID(playerId)) {
-		var clientEnt = Players.GetPlayerHeroEntityIndex(playerId)
-		return GetHeroName(clientEnt == -1 ? Game.GetPlayerInfo(playerId).player_selected_hero_entity_index : clientEnt)
+		return GetHeroName(SafeGetPlayerHeroEntityIndex(playerId))
 	}
 	return ""
 }
@@ -73,11 +77,7 @@ function GetPlayerHeroName(playerId) {
 Entities.GetHeroPlayerOwner = function(unit) {
 	for (var i = 0; i < 24; i++) {
 		if (Players.IsValidPlayerID(i)) {
-			var clientEnt = Players.GetPlayerHeroEntityIndex(i)
-			if (clientEnt == -1) {
-				clientEnt = Game.GetPlayerInfo(Number(i)).player_selected_hero_entity_index
-			}
-			if ((clientEnt == -1 ? Game.GetPlayerInfo(Number(i)).player_selected_hero_entity_index : clientEnt) == unit) {
+			if (SafeGetPlayerHeroEntityIndex(i) == unit) {
 				return i
 			}
 		}
@@ -343,5 +343,12 @@ function SortPanelChildren(panel, sortFunc, compareFunc) {
 		}
 	});
 };
+
+Entities.GetNetworkableEntityInfo = function(ent, key) {
+	var t = GameUI.CustomUIConfig().custom_entity_values[ent]
+	if (t != null) {
+		return key == null ? t : t[key]
+	}
+}
 
 var hud = GetDotaHud();

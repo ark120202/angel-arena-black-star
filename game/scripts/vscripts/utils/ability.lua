@@ -49,10 +49,7 @@ function CDOTABaseAbility:GetReducedCooldown()
 	local unit = self:GetCaster()
 	for k,v in pairs(COOLDOWN_REDUCTION_MODIFIERS) do
 		if unit:HasModifier(k) then
-			local reduction = type(v.reduction) == "function" and v.reduction(unit) or v.reduction
-			if reduction > pcred then
-				biggestReduction = pcred
-			end
+			biggestReduction = math.max(biggestReduction, type(v) == "function" and v(unit) or v)
 		end
 	end
 	return self:GetCooldown(math.max(self:GetLevel() - 1, 1)) * (100 - biggestReduction) * 0.01

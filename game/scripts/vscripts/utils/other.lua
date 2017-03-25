@@ -314,7 +314,7 @@ function GetAllAbilitiesCooldowns(unit)
 	for i = 0, unit:GetAbilityCount()-1 do
 		local ability = unit:GetAbilityByIndex(i)
 		if ability then
-			table.insert(cooldowns, GetAbilityCooldown(unit, ability))
+			table.insert(cooldowns, ability:GetReducedCooldown())
 		end
 	end
 	return cooldowns

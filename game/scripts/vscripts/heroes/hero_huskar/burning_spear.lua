@@ -33,11 +33,13 @@ function ThinkAura(keys)
 	local caster = keys.caster
 	local per_stack_duration = keys.per_stack_duration
 	for _,v in ipairs(FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, keys.aura_radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
-		ModifyStacks(ability, caster, v, "modifier_huskar_burning_spear_arena_debuff", 1, true)
-		Timers:CreateTimer(per_stack_duration, function()
-			if IsValidEntity(ability) and IsValidEntity(v) then
-				ModifyStacks(ability, caster, v, "modifier_huskar_burning_spear_arena_debuff", -1, true)
-			end
-		end)
+		if RollPercentage(keys.aura_burn_chance_pct) then
+			ModifyStacks(ability, caster, v, "modifier_huskar_burning_spear_arena_debuff", 1, true)
+			Timers:CreateTimer(per_stack_duration, function()
+				if IsValidEntity(ability) and IsValidEntity(v) then
+					ModifyStacks(ability, caster, v, "modifier_huskar_burning_spear_arena_debuff", -1, true)
+				end
+			end)
+		end
 	end
 end

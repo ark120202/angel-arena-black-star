@@ -55,214 +55,30 @@ Angel Arena Black Star - Version 1.4.6:
 General:
 	//Added paired heroes system //TODO: Repick, team changing
 	//Added new hero pair: Maka Albarn & Soul Evans
-	Host now can control players in team selection menu (using Drag&Drop)
 	//Added new hero: Destroyer
-	Tinker - Rearm replaced with Rearming Strike
-	Huskar - Burning Spear reworked
-	Increased duel area size and changed central boss area
-	Flyout Scoreboard reworked; Added Disable Help functinon
-	Abilities, inventory/shop items, gold and experience now are alertable
+	
 Balance:
 	Gold per Second: 4 => 3
 	Runes:
 		
 	Items:
-		Eye of the Prophet:
-			Cooldown: 240 => 35
-		Ray of Fate:
-			Cooldown: 280 => 40
-		Guardian Greaves:
-			Now purges debuffs and stuns from all units it healed
-			Now can be used while stunned
-		Bloodstone:
-			Now not resets kill streak
+		
 	Talents:
 		
 	Abilities:
-		Abaddon - Borrowed Time:
-			Duration: 2.0 2.0 2.0 3.0 4.0 4.0 5.0 => 2 3 4 4.5 5 5.5 6
-		Axe - Berserkers Call:
-			Radius: 350 => 350 360 370 380 390 400 410
-			Bonus Armor: 80 => 80 85 90 100 120 150 200
-		Axe - Battle Hunger:
-			Damage Per Second: 16 24 32 40 48 56 64 72 => 30 40 50 70 90 120 150
-			Slow: -12 -16 -18 -20 -22 -24 -26 => -12 -16 -20 -24 -28 -32 -40
-		Beastmaster - Inner Beast:
-			Bonus Attack Speed: 15 25 35 45 55 65 75 => 30 50 70 100 130 180 260
-		Beastmaster - Primal Roar:
-			Duration: 3.0 3.5 4.0 5.0 6.0 7.0 8.0 => 3 3.2 3.4 3.6 3.8 4 4.2
-			Damage: 250 300 350 400 450 500 550 => 300 500 700 900 1100 1400 1800
-		Chaos Knight - Chaos Bolt:
-			Stun Min: 1 2 3 3 4 4 4 => 1 1 1 2 2 2 2
-			Stun Max: 2 3 4 4 5 5 5 => 2 2 3 3 4 4 5
-			Damage Min: 75 100 125 150 175 200 300 => 100 150 200 250 325 400 500
-			Damage Max: 225 250 275 200 250 300 350 => 200 300 400 500 650 800 1000
-		Chaos knight - Chaos Strike
-			Critical Damage Chance: 12 13 14 15 16 17 18 => 14 15 16 17 18 19 20 %
-			Critical Damage: 125 120 160 200 240 280 320 => 120 160 200 240 280 320 360 %
-		Doom Bringer - Infernal Blade
-			Burn Damage: 8 => 1 1.5 2 2.5 3 3.5 4 %
-		Doom Bringer - Doom
-			Duration: 10.0 15.0 20.0 25.0 30.0 35.0 40.0 => 6 7 8 9 10 11 12
-			Damage: 35 50 70 90 120 150 200 => 50 100 150 200 250 300 350
-			Duration scepter: 20.0 25.0 30.0 35.0 40.0 45.0 50.0 => 7 8 9 10 11 12 13
-			Damage scepter: 70 90 120 150 200 230 260 => 100 200 300 400 500 600 700
-		Dragon Knight - Dragon Tail:
-			Cooldown: 12 11 10 9.5 9 8.5 8 => 11
-		Earthshaker - Enchant Totem:
-			Mana Cost: 100 90 80 70 60 50 40 => 20 40 80 160 200 240 280
-			Totem Damage Percentage: 150 300 450 700 950 1100 1300 => 150 250 400 500 650 800 1000
-		Earthshaker - Aftershock:
-			Duration: 0.6 0.9 1.1 1.2 1.5 1.7 1.9 => 0.6 0.8 1 1.2 1.3 1.4 1.5
-			Aftershock Range: 350 => 350 370 390 410 430 450 470
-			Scepter Distance: 1000 => 1600
-		Elder Titan - Echo Stomp:
-			Cooldown: 14 13 12 11 10 9 8 => 12
-			Cast Time: 1.7 => 1.2
-			Radius: 500 => 500 520 540 560 580 590 600
-			Duration: 2.0 3.0 4.0 5.0 6.0 7.0 8.0 => 2 2.5 3 3.5 4 4.5 5
-			Damage: 50 80 110 150 180 210 240 => 80 120 180 260 360 480 600
-		Elder Titan - ancestral spirit:
-			Radius: 275 => 400
-			Damage: 60 90 120 150 180 210 240 => 80 120 160 200 240 320 400
-			Speed: 600 => 1000
-			Bonus Movement Speed (Per Creep): 1 => 5 %
-			Bonus Movement Speed (Per Hero): 5 => 12 %
-			Bonus Damage (Per Creep): 9 12 15 18 21 24 27 => 10 20 30 35 40 45 50
-			Bonus Damage (Per Hero): 10 20 30 40 50 60 70 => 20 40 60 80 100 120 140
-		Huskar - Berserkers Blood:
-			Max Attack Speed: 196 224 252 280 300 350 400 => 100 200 250 300 350 400 500 
-			Max Health Threshold: 10 => 30
-		Kunkka - Torrent:
-			Radius: 235 => 300
-			Movespeed bonus: -5 -10 -15 -20 -25 -30 -35 => -10 -15 -20 -25 -30 -35 -40
-			Delay: 1.6 => 0.8
-		Kunkka - Ghostship:
-			Damage: 400 600 800 1100 1400 1600 1800 => 400 600 900 1200 1500 1700 2200
-			Stun duration: 1.4 1.6 1.8 2.0 2.2 2.4 2.6 => 1.8 2 2.2 2.4 2.6 2.8 3
-			Ghostship Speed: 700 => 900
-			Scepter Ghostship Speed: 900 => 1500
-			Scepter Ghostship Width: 350 => 500
-		Legion Commander - Press The Attack:
-			Attack speed: 60 80 100 120 140 160 180 => 60 100 140 180 220 260 300
-			Hp regen: 30 40 50 60 70 80 90 => 30 50 70 90 110 130 150
-		Legion Commander - Duel:
-			Duration: 2.0 3.0 3.5 4.0 4.75 5.5 6.0 => 2 2.4 2.8 3 3.4 3.8 4 
-			Duration scepter: 3.0 4.0 5.0 5.5 6.0 6.3 6.7 => 3 4 5 6 7 8 9
-		Life Stealer - Rage:
-			Duration: 3.0 4.0 5.0 6.0 7.0 8.0 9.0 => 3 3.5 4 4.5 5 5.5 6
-		Magnataur - Skewer: 
-			Speed: 950 => 900 1000 1100 1200 1300 1400 1500
-			Slow: 2.5 2.75 3 3.25 2.5 3.75 4.0 => 10 15 20 25 30 35 40 %
-			Skewer radius: 125 => 200
-		Magnataur - Reverse polarity:
-			Polarity damage: 50 125 200 275 350 425 500 => 200 300 400 600 800 1000 1200
-			Hero stun duration: 2.25 3.0 3.75 4.25 5.0 5.75 6.0 => 2 2.4 2.8 3.2 3.6 3.8 4
-			Creep stun duration: 3.0 4.0 5.0 6.0 7.0 8.0 9.0 => 3 3.5 4 4.5 5 5.5 6
-		Omniknight - Repel:
-			Duration: 6.0 8.0 10.0 12.0 14.0 15.0 16.0 => 3 4 5 6 7 8 9
-		Phoenix - Icarus Dive:
-			Health Cost: 15 => 5 %
-			Damage per second: 10 30 50 70 90 110 130 => 30 60 90 120 150 180 210
-			Burn duration: 4 => 5
-		Phoenix - Fire Spirits:
-			Helath Cost: 20 => 10
-			Projectile Speed: 900 => 1400
-			Radius: 175 => 200
-			Attackspeed slow: -80 -100 -120 -140 -160 -180 -200 => -40 -80 -120 -160 -200 -240 -280 
-		Phoenix - Sun Ray:
-			Health Cost per Second: 6 => 3
-		Pudge - Dismember:
-			Strength to Damage: 30 40 80 90 100 120 140 => 20 30 40 50 60 70 80 %
-		Rattletrap - Power Cogs:
-			Drain amount: 80 120 160 200 240 280 320 => 100 200 300 400 600 800 1000
-			Attacks to destroy: 1 2 3 4 5 6 7 => 3 6 9 12 15 18 21
-		Shredder - Timber Chain:
-			Mana Cost: 100 200 300 400 500 600 700 => 50 70 100 140 180 220 260
-		Shredder - Chakram:
-			Speed: 900.0 => 1500
-			Radius: 200.0 => 300
-			Mana per second: 15 25 50 75 120 180 250 => 10 20 40 60 80 100 120
-		Skeleton King - Hellfire Blast:
-			Damage: 50 100 150 200 => 100 200 300 400 500 600 700
-			Projectile Speed: 1000 => 1400
-			Slow Duration: 2 => 4
-			Slow: -20 -40 -60 -80 -100 -120 -140 => -10 -20 -30 -40 -50 -60 -70
-		Slardar - Sprint:
-			Bonus Damage: 30 25 20 15 10 5 0 => 10 8 6 4 2 1 0 %
-			Duration: 12 => 15
-		Slardar - Slithereen crush:
-			Movement Speed Slow: -5 -10 -15 -20 -25 -30 -35 => -16 -20 -24 -28 -32 -36 -40 %
-			Attack Speed Slow: -5 -10 -15 -20 -25 -30 -35 => -20 -40 -80 -100 -120 -140 -160
-			Slow Duration: 2.0 => 3
-		Slardar - Bash:
-			Chance: 10 13 15 18 21 24 27 => 6 8 10 12 14 16 18
-			Duration: 0.4 => 0.8
-		Spirit Breaker - Charge of Darkness:
-			Movement speed: 600 650 700 750 800 850 900 => 1400 1500 1600 1700 1800 1900 2000
-			Stun Duration: 1.2 1.6 2.0 2.4 2.8 3.0 3.2 => 1.8 2 2.2 2.4 2.6 2.8 3
-		Spirit Breaker - Empowering Haste:
-			Bonus Movespeed: 6 10 14 18 20 22 24 => 16 20 24 28 32 36 40 %
-			Bonus Movespeed (Active): 3 5 7 9 11 13 15 => 8 10 12 14 16 18 20 %
-		Spirit Breaker - Nether Strike:
-			Cast Point: 1.1 => 1.1 0.9 0.8 0.7 0.6 0.5 0.4
-			Damage: 150 250 350 500 595 675 765 => 100 200 300 400 500 600 700
-			Scepter Cast Range: 850 => 1500
-			Scepter Bash radius: 250 => 400
-		Sven - Storm Bolt:
-			Projectile Speed: 1000 => 1400
-			Radius: 255 => 300
-		Sven - Warcry:
-			Mana Cost: 25 45 65 85 105 135 166 => 20 40 60 80 100 120 140
-			Warcry Drmor: 5 10 15 20 25 30 35 => 5 10 20 30 40 60 80
-			Warcry Movespeed: 12 14 16 18 20 22 24 => 16 20 24 28 32 36 40
-		Tidehunter - Kraken Shell:
-			Damage Reduction: 12 24 36 48 65 75 100 => 20 40 60 100 140 180 300
-			Damage to Purge: 600 550 500 450 550 650 750 => 600
-			Damage Reset Interval: 6.0 => 4
-		Tidehunter - ravage:
-			Duration: 2.0 2.4 2.8 3.2 3.6 4.2 4.5 => 2.4 2.5 2.6 2.7 2.8 2.9 3
-		Tiny - Avalanche:
-			Stun Duration: 1.0 => 2
-			Avalanche Damage: 100 180 260 300 340 380 450 => 100 200 250 300 400 500 600
-		Tiny - Grow:
-			Levels Between Upgrades: 16 => 6
-			Bonus Damage: 400 900 1500 => 100 300 500
-			Bonus Movement Speed: 20 40 60 => 40 80 120
-			Scepter Bonus Attack Range: 90 => 150
-			Scepter Cleave Distance: 600 => 800
-			Scepter Cleave Damage: 50 => 100
-		Clinkz - Searing Arrows:
-			Damage: 30 40 60 70 90 100 120 => 30 60 90 120 150 180 210
-		Tusk - Frozen Sigil:
-			Movement Speed Slow: 40 80 120 140 => 15 30 60 120
-			Attack Speed Slow: 80 160 240 280 => 10 40 100 200
-			Levels Between Upgrades: 1 => 5
-		Lion - Finger Of Death:
-			Damage with Scepter: 1500 3000 4500 6000 7500 9000 10500 => 1000 2000 3000 4000 6000 7000 8000
+		
 	Ability Shop:
-		New Bans:
-			Lina - Fiery Soul + Techies - Focused Detonate
-			Saber - Mana Burst + (Obsidian Destroyer - Essence Aura|Earthshaker - Aftershock|Zuus - Static Field|Storm Spirit - Overload)
-		Doom - Devour now is not rearmable
+		
 Fixes:
-	Fixed Slark - Dark Pact + Spikes Rune crashed game
-	Fixed Blade Mail particles
-	Now you can't sell hidden abilities in Ability Shop mode
-	New heroes in Custom Abilities were moved to second tab
-	Hero Selection now is hidden to spectating players
-	Fixed Hero Selection loading hero preview panels
-	Fixed top bar team panel backgrounds were invisible, if player has custom HUD equipped
-	New heroes no longer based on Wisp (also Wisp now has his voice)
-	Fixed ability layout background width with custom HUDs
-	Fixed Scepter didn't gave abilities granted by scepter
-	Fixed heroes sometimes could stay in duel area
-	Non-hero units no longer immortal under fountain aura
-	Left click on item in inventory now shows that item in shop, if it's open
-	Fixed server crashed after 60 minute because of latest patch
+	
 <<+===========================================================================================================
 
 
+• Fixed hero icons weren't shown if you didn't saw it at least one time
+• Huskar - Burning Spear:
+ - Burn aura interval: 0.8 => 1.6
+ - Aura chance to burn: 100% => 40%
+• 
 rhasta,
 lycan,
 lone_druid,

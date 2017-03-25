@@ -51,6 +51,7 @@ function GameMode:OnNPCSpawned(keys)
 				if not npc:IsWukongsSummon() then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if npc:IsTrueHero() then
+						PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
 						AbilityShop:RandomOMGRollAbilities(npc)
 						if IsValidEntity(npc.BloodstoneDummies) then
 							UTIL_Remove(npc.BloodstoneDummies)

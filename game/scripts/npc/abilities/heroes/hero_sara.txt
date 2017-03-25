@@ -51,7 +51,7 @@
 			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"health_reduction_pct"	"75"
+				"health_reduction_pct"	"85"
 			}
 			"09"
 			{
@@ -61,7 +61,7 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_health"		"400 900 1500 2100"
+				"bonus_health"		"350 700 1050 1400"
 			}
 			"11"
 			{

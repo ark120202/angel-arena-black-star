@@ -55,10 +55,6 @@ function CreateTalent(talent, root) {
 	panel.SetPanelEvent("onmouseover", CreateTooltip);
 	panel.SetPanelEvent("onmouseout", function() {
 		$.DispatchEvent("UIHideCustomLayoutTooltip", panel, "TalentTooltip");
-		if (panel.TooltipSchedule != null) {
-			$.CancelScheduled(panel.TooltipSchedule)
-			panel.TooltipSchedule = null
-		}
 	});
 	panel.SetPanelEvent("onactivate", function() {
 		if (panel.BHasClass("CanLearn")) {
@@ -67,7 +63,9 @@ function CreateTalent(talent, root) {
 			});
 
 			$.DispatchEvent("UIHideCustomLayoutTooltip", panel, "TalentTooltip");
-			panel.TooltipSchedule = $.Schedule(0.1, CreateTooltip)
+			$.Schedule(0.1, function() {
+				if (panel.BHasHoverStyle()) CreateTooltip()
+			})
 		}
 	});
 	TalentsInfo[talent.name] = talent;
