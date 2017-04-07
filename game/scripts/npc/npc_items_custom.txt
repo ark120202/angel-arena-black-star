@@ -13672,7 +13672,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-150"
+				"corruption_armor"		"-100"
 			}
 			"03"
 			{
@@ -13820,7 +13820,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-250"
+				"corruption_armor"		"-200"
 			}
 			"06"
 			{
@@ -13994,7 +13994,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-350"
+				"corruption_armor"		"-300"
 			}
 			"07"
 			{
@@ -17879,12 +17879,12 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"7.5"
+				"duration"				"3"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"buff_chance"			"25"
+				"buff_chance"			"15"
 			}
 			"11"
 			{

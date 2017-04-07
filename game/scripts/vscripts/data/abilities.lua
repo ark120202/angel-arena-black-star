@@ -155,8 +155,10 @@ PERSONALITY_STEAL_BANNED_HEROES = {
 }
 
 SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
-	["zuus_static_field"] = true,
-	["enigma_midnight_pulse"] = true,
+	zuus_static_field = true,
+	enigma_midnight_pulse = true,
+	morphling_adaptive_strike = true,
+	nyx_assassin_spiked_carapace = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

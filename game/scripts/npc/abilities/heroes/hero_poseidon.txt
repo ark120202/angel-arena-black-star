@@ -24,7 +24,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.2 1.6 2 2.4 2.8 3.2 2.6"
+				"stun_duration"		"1.2 1.6 2 2.4 2.8 3 3.2"
 			}
 			"02"
 			{
@@ -360,22 +360,22 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_min"		"200 325 450 575 700 825 950"
+				"damage_min"		"200 400 600 700 800 900 1000"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_max"		"400 650 900 1150 1400 1650 1900"
+				"damage_max"		"400 800 1200 1400 1600 1800 2000"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_min"			"1 1.5 2 2.5 3 3.5 4"
+				"stun_min"			"1 1 2 2 2 3 3"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_max"			"2 3 4 5 6 7 8"
+				"stun_max"			"2 3 3 4 4 5 5"
 			}
 		}
 
