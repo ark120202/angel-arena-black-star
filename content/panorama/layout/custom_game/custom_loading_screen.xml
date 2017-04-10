@@ -91,28 +91,6 @@
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l1_v2.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l2_v1.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l2_v2.png" />
-
-			<Image src="file://{images}/custom_game/talents/armor.png" />
-			<Image src="file://{images}/custom_game/talents/cooldown_reduction.png" />
-			<Image src="file://{images}/custom_game/talents/damage.png" />
-			<Image src="file://{images}/custom_game/talents/day.png" />
-			<Image src="file://{images}/custom_game/talents/evasion.png" />
-			<Image src="file://{images}/custom_game/talents/experience.png" />
-			<Image src="file://{images}/custom_game/talents/gold.png" />
-			<Image src="file://{images}/custom_game/talents/health.png" />
-			<Image src="file://{images}/custom_game/talents/health_regen.png" />
-			<Image src="file://{images}/custom_game/talents/magic_resistance.png" />
-			<Image src="file://{images}/custom_game/talents/movespeed.png" />
-			<Image src="file://{images}/custom_game/talents/night.png" />
-			<Image src="file://{images}/custom_game/talents/respawn_time_reduction.png" />
-			<Image src="file://{images}/custom_game/talents/spell_amplify.png" />
-			<Image src="file://{images}/custom_game/talents/true_strike.png" />
-			
-			<Image src="file://{images}/custom_game/talents/hero_apocalypse_apocalypse_no_death.png" />
-			<Image src="file://{images}/custom_game/talents/hero_arc_warden_double_spark.png" />
-			<Image src="file://{images}/custom_game/talents/hero_arthas_vsolyanova_bunus_chance.png" />
-			<Image src="file://{images}/custom_game/talents/hero_pudge_hook_splitter.png" />
-			<Image src="file://{images}/custom_game/talents/hero_skeleton_king_reincarnation_notime_stun.png" />
 		</Panel>
 		<Panel id="loading_base">
 			<Image src="file://{images}/custom_game/loading_screen/plate.png" />

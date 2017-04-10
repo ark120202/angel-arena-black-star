@@ -2,7 +2,8 @@ function AutoSheepstick(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	if target:IsHero() and ability:IsActivated() and PreformAbilityPrecastActions(caster, ability) then
+
+	if not caster:IsStunned() and target:IsHero() and ability:IsActivated() and PreformAbilityPrecastActions(caster, ability) then
 		caster:SetCursorCastTarget(target)
 		ability:OnSpellStart()
 	end

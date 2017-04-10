@@ -36,7 +36,7 @@ function IsHeroName(str) {
 	return str.lastIndexOf("npc_dota_hero_") == 0 || str.lastIndexOf("npc_arena_hero_") == 0
 }
 
-function TransformTextureToPath(texture, optPanelImageStyle, optTeamNumber) {
+function TransformTextureToPath(texture, optPanelImageStyle) {
 	if (IsHeroName(texture)) {
 		if (optPanelImageStyle == "portrait")
 			return "file://{images}/heroes/selection/" + texture + ".png"

@@ -1291,7 +1291,7 @@
 				"IsPurgable"			"1"
 				
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				"EffectAttachType"      "follow_origin"
 				
 				"Properties"
 				{
@@ -1474,7 +1474,7 @@
 				"IsPurgable"			"1"
 				
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				"EffectAttachType"      "follow_origin"
 				
 				"Properties"
 				{
@@ -1501,10 +1501,6 @@
 		}
 	}
 
-
-	//=================================================================================================================
-	// Recipe: Nightshadow
-	//=================================================================================================================
 	"item_recipe_nightshadow"
 	{
 		"BaseClass"                     "item_datadriven"
@@ -1520,9 +1516,6 @@
 		}
 	}
 	
-	//=================================================================================================================
-	// Nightshadow
-	//=================================================================================================================
 	"item_nightshadow"
 	{
 		"BaseClass"                     "item_datadriven"
@@ -1546,12 +1539,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"proc_chance"			"5"
+				"nightshadow_chance"	"5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cooldown_reduction"			"0.25"
+				"cooldown_reduction"	"0.25"
 			}
 		}
 		"Modifiers"
@@ -1584,22 +1577,25 @@
 
 				"OnAttackLanded"
 				{
-					"RunScript"
+					"Random"
 					{
-						"ScriptFile"			"items/items_SYNS.lua"
-						"Function"				"CooldownReduction"
-						"cooldown_reducted"		"%cooldown_reduction"
-						"chance"				"%proc_chance"
-						"modifier"				"modifier_item_nightshadow_unique"
+						"Chance"			"%nightshadow_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"CooldownReduction"
+								"cooldown_reducted"		"%cooldown_reduction"
+								"modifier"				"modifier_item_nightshadow_unique"
+							}
+						}
 					}
 				}
 			}
 		}
 	}
 
-	//=================================================================================================================
-	// Recipe: Nightshadow and Sange
-	//=================================================================================================================
 	"item_recipe_nightshadow_and_sange"
 	{
 		"BaseClass"                     "item_datadriven"
@@ -1615,9 +1611,6 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Nightshadow and Sange
-	//=================================================================================================================
 	"item_nightshadow_and_sange"
 	{
 		"BaseClass"                     "item_datadriven"
@@ -1652,7 +1645,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"proc_chance"			"10"
+				"nightshadow_chance"			"10"
 			}
 			"05"
 			{
@@ -1717,13 +1710,19 @@
 				
 				"OnAttackLanded"
 				{
-					"RunScript"
+					"Random"
 					{
-						"ScriptFile"			"items/items_SYNS.lua"
-						"Function"				"CooldownReduction"
-						"cooldown_reducted"		"%cooldown_reduction"
-						"chance"				"%proc_chance"
-						"modifier"				"modifier_item_nightshadow_and_sange"
+						"Chance"			"%nightshadow_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"CooldownReduction"
+								"cooldown_reducted"		"%cooldown_reduction"
+								"modifier"				"modifier_item_nightshadow_and_sange"
+							}
+						}
 					}
 					"Random"
 					{
@@ -1751,7 +1750,7 @@
 				"IsPurgable"			"1"
 				
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				"EffectAttachType"      "follow_origin"
 				
 				"Properties"
 				{
@@ -1762,9 +1761,6 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Recipe: Nightshadow and Yasha
-	//=================================================================================================================
 	"item_recipe_nightshadow_and_yasha"
 	{
 		"BaseClass"                     "item_datadriven"
@@ -1780,9 +1776,6 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Nightshadow and Yasha
-	//=================================================================================================================
 	"item_nightshadow_and_yasha"
 	{
 		"BaseClass"                     "item_datadriven"
@@ -1822,7 +1815,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"proc_chance"			"10"
+				"nightshadow_chance"			"10"
 			}
 			"06"
 			{
@@ -1884,13 +1877,19 @@
 				
 				"OnAttackLanded"
 				{
-					"RunScript"
+					"Random"
 					{
-						"ScriptFile"			"items/items_SYNS.lua"
-						"Function"				"CooldownReduction"
-						"cooldown_reducted"		"%cooldown_reduction"
-						"chance"				"%proc_chance"
-						"modifier"				"modifier_item_nightshadow_and_yasha_unique"
+						"Chance"			"%nightshadow_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"CooldownReduction"
+								"cooldown_reducted"		"%cooldown_reduction"
+								"modifier"				"modifier_item_nightshadow_and_yasha_unique"
+							}
+						}
 					}
 					"RunScript"
 					{
@@ -1919,9 +1918,6 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Recipe: Three Spirits Blades
-	//=================================================================================================================
 	"item_recipe_three_spirits_blades"
 	{
 		"BaseClass"                     "item_datadriven"
@@ -1940,9 +1936,6 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Three Spirits Blades
-	//=================================================================================================================
 	"item_three_spirits_blades"
 	{
 		"BaseClass"                     "item_datadriven"
@@ -1992,7 +1985,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"proc_chance"			"15"
+				"nightshadow_chance"			"15"
 			}
 			"08"
 			{
@@ -2081,13 +2074,19 @@
 				
 				"OnAttackLanded"
 				{
-					"RunScript"
+					"Random"
 					{
-						"ScriptFile"			"items/items_SYNS.lua"
-						"Function"				"CooldownReduction"
-						"cooldown_reducted"		"%cooldown_reduction"
-						"chance"				"%proc_chance"
-						"modifier"				"modifier_item_three_spirits_blades_unique"
+						"Chance"			"%nightshadow_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"CooldownReduction"
+								"cooldown_reducted"		"%cooldown_reduction"
+								"modifier"				"modifier_item_three_spirits_blades_unique"
+							}
+						}
 					}
 					"Random"
 					{
@@ -2121,7 +2120,7 @@
 				"IsPurgable"			"1"
 				
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				"EffectAttachType"      "follow_origin"
 				
 				"Properties"
 				{
@@ -2342,7 +2341,7 @@
 				"IsPurgable"			"1"
 				
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				"EffectAttachType"      "follow_origin"
 				
 				"Properties"
 				{
@@ -2626,7 +2625,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"proc_chance"			"10"
+				"nightshadow_chance"			"10"
 			}
 			"12"
 			{
@@ -2690,15 +2689,18 @@
 					}
 				}
 
-				"OnAttackLanded"
+				"Random"
 				{
-					"RunScript"
+					"Chance"			"%nightshadow_chance"
+					"OnSuccess"
 					{
-						"ScriptFile"			"items/items_SYNS.lua"
-						"Function"				"CooldownReduction"
-						"cooldown_reducted"		"%cooldown_reduction"
-						"chance"				"%proc_chance"
-						"modifier"				"modifier_item_splitshot_int_unique"
+						"RunScript"
+						{
+							"ScriptFile"			"items/items_SYNS.lua"
+							"Function"				"CooldownReduction"
+							"cooldown_reducted"		"%cooldown_reduction"
+							"modifier"				"modifier_item_splitshot_int_unique"
+						}
 					}
 				}
 			}
@@ -2717,7 +2719,7 @@
 		"ItemResult"					"item_splitshot_ultimate"
 		"ItemRequirements"
 		{
-			"01"						"item_bfury;item_splitshot_str;item_splitshot_agi;item_splitshot_int;item_moon_dust;item_dark_blade"
+			"01"						"item_splitshot_str;item_splitshot_agi;item_splitshot_int;item_moon_dust;item_dark_blade"
 		}
 	}
 
@@ -2788,7 +2790,7 @@
 			"11"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"proc_chance"					"20"
+				"nightshadow_chance"			"20"
 			}
 			"12"
 			{
@@ -2908,7 +2910,6 @@
 					{
 						"ScriptFile"	"items/items_splitshots.lua"
 						"Function"		"SplitShotLaunch"
-						"melee"			"true"
 					}
 
 					"Random"
@@ -2927,13 +2928,19 @@
 
 				"OnAttackLanded"
 				{
-					"RunScript"
+					"Random"
 					{
-						"ScriptFile"			"items/items_SYNS.lua"
-						"Function"				"CooldownReduction"
-						"cooldown_reducted"		"%cooldown_reduction"
-						"chance"				"%proc_chance"
-						"modifier"				"modifier_item_splitshot_ultimate_unique"
+						"Chance"			"%nightshadow_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"CooldownReduction"
+								"cooldown_reducted"		"%cooldown_reduction"
+								"modifier"				"modifier_item_splitshot_ultimate_unique"
+							}
+						}
 					}
 					"Random"
 					{
@@ -2967,7 +2974,7 @@
 				"IsPurgable"			"1"
 				
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				"EffectAttachType"      "follow_origin"
 				
 				"Properties"
 				{
@@ -3027,7 +3034,7 @@
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"common"
 		"ItemAliases"					"quelling blade"
-		"AbilitySharedCooldown"			"item_quelling_blade;item_iron_talon;item_bfury"
+		"AbilitySharedCooldown"			"item_quelling_blade;item_iron_talon"
 
 
 		// Special	
@@ -3147,7 +3154,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"items/item_lucifers_claw.lua"
+						"ScriptFile"	"kv.lua"
 						"Function"		"ModifyCreepDamage"
 						"damage"		"%attack_damage"
 						"damage_bonus"	"%damage_bonus"
@@ -4394,7 +4401,7 @@
 		"ItemShopTags"					"int;regen_mana;agi;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"hex;sheepstick;scythe of vyse"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilitySharedCooldown"			"item_sheepstick;item_auto_sheepstick;item_silver_edge;item_edge_of_vyse"
 		
 		"AbilitySpecial"
@@ -8450,12 +8457,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"3 5 7"
+				"xp_multiplier"			"2.5 5 7"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"200 800 2000"
+				"bonus_gold"			"250 900 2200"
 			}
 		}
 		
@@ -9073,12 +9080,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"3 5 7"
+				"xp_multiplier"			"2.5 5 7"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"200 800 2000"
+				"bonus_gold"			"250 900 2200"
 			}
 		}
 		
@@ -9159,12 +9166,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"3 5 7"
+				"xp_multiplier"			"2.5 5 7"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"200 800 2000"
+				"bonus_gold"			"250 900 2200"
 			}
 		}
 		
@@ -11402,7 +11409,7 @@
 			{
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
-				"EffectAttachType"      	"PATTACH_ABSORIGIN"
+				"EffectAttachType"      	"follow_origin"
 				
 				"Properties"
 				{
@@ -11522,7 +11529,7 @@
 			{
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
-				"EffectAttachType"      	"PATTACH_ABSORIGIN"
+				"EffectAttachType"      	"follow_origin"
 				
 				"Properties"
 				{
@@ -11642,7 +11649,7 @@
 			{
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
-				"EffectAttachType"      	"PATTACH_ABSORIGIN"
+				"EffectAttachType"      	"follow_origin"
 				
 				"Properties"
 				{
@@ -11762,7 +11769,7 @@
 			{
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
-				"EffectAttachType"      	"PATTACH_ABSORIGIN"
+				"EffectAttachType"      	"follow_origin"
 				
 				"Properties"
 				{
@@ -11882,7 +11889,7 @@
 			{
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
-				"EffectAttachType"      	"PATTACH_ABSORIGIN"
+				"EffectAttachType"      	"follow_origin"
 				
 				"Properties"
 				{
@@ -12002,7 +12009,7 @@
 			{
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/items_fx/black_king_bar_avatar.vpcf"
-				"EffectAttachType"      	"PATTACH_ABSORIGIN"
+				"EffectAttachType"      	"follow_origin"
 				
 				"Properties"
 				{
@@ -12146,7 +12153,7 @@
 			{
 				"Duration"              	"%duration"
 				"EffectName"            	"particles/arena/items_fx/titanium_bar.vpcf"
-				"EffectAttachType"      	"PATTACH_ABSORIGIN"
+				"EffectAttachType"      	"follow_origin"
 				
 				"Properties"
 				{
@@ -15573,8 +15580,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"Model"							"models/props_gameplay/tango.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_tango.vpcf"
-	//	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
-	//	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 
 		"AbilityCastRange"				"250"
 		"AbilityCastPoint"				"0.0"
@@ -16321,7 +16326,7 @@
 				"IsPurgable"			"1"
 				
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				"EffectAttachType"      "follow_origin"
 				
 				"Properties"
 				{
@@ -18732,6 +18737,475 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"replenish_mana"		"550"
+			}
+		}
+	}
+
+	"item_recipe_quelling_fury"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_quelling_fury"
+		"ItemRequirements"
+		{
+			"01"						"item_quelling_blade;item_ring_of_regen;item_blades_of_attack;item_enchanted_mango"
+		}
+	}
+
+	"item_recipe_battlefury_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_battlefury_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_broadsword;item_claymore;item_pers;item_quelling_fury"
+		}
+	}
+
+	"item_quelling_fury"
+	{
+		"BaseClass"						"item_lua"
+		"ID"							"-1"
+		"AbilityTextureName"			"item_arena/quelling_fury"
+		"ScriptFile"					"items/item_battlefury.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+		"AbilityCastRange"				"450"
+		"AbilityCooldown"				"4 3"
+
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bf;battle fury;cleave;quelling fury"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"12 70"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"3 10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen_pct"	"100 250"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_damage_percent"	"15 30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_bonus_damage_pct"	"160"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_starting_width"	"150"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_ending_width"	"300"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_distance"		"570"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"	"450"
+			}
+		}
+	}
+
+	"item_battlefury_arena"
+	{
+		"BaseClass"						"item_lua"
+		"ID"							"-1"
+		"AbilityTextureName"			"item_bfury"
+		"ScriptFile"					"items/item_battlefury.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+		"AbilityCastRange"				"450"
+		"AbilityCooldown"				"4 3"
+
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bf;battle fury;cleave"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"12 70"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"3 10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen_pct"	"100 250"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_damage_percent"	"15 30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_bonus_damage_pct"	"160"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_starting_width"	"150"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_ending_width"	"300"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_distance"		"570"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"	"450"
+			}
+		}
+	}
+
+	"item_recipe_elemental_fury"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_elemental_fury"
+		"ItemRequirements"
+		{
+			"01"						"item_battlefury_arena;item_three_spirits_blades;item_moon_dust"
+		}
+	}
+
+	"item_elemental_fury"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"AbilityTextureName"			"item_arena/elemental_fury"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+		"AbilityCastRange"				"500"
+		"AbilityCooldown"				"2"
+
+		"ItemAliases"					"bf;battle fury;cleave;elemental fury"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"30"
+			}		
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed_percent_bonus"	"30"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"40"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"16"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen_pct"	"350"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_damage_percent"	"65"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_bonus_damage_pct"	"160"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_starting_width"	"150"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_ending_width"	"300"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_distance"		"570"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"nightshadow_chance"	"20"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown_reduction"	"1.5"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_chance"			"50"
+			}
+			"17"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_movement"	"-15"
+			}			
+			"18"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_attack"		"-20"
+			}	
+			"19"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"maim_duration"			"6.5"
+			}
+			"20"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_max_stacks"		"16"
+			}
+			"21"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed_buff"	"9"
+			}
+			"22"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed_percent_bonus_buff"		"7"
+			}
+			"23"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fast_attack_duration"	"10"
+			}
+			"24"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fast_attack_max_stacks"	"10"
+			}
+			"25"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"	"500"
+			}
+		}
+
+		"OnSpellStart"
+		{
+		//	"RunScript"
+		//	{
+		//		"ScriptFile"	"kv.lua"
+		//		"Function"		"CutTree"
+		//	}
+			"DestroyTrees"
+			{
+				"Target" 		"TARGET"
+				"Radius"		"10"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_elemental_fury"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"					"%bonus_intellect"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"					"%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"					"%bonus_strength"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"						"%bonus_agility"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"		"%movement_speed_percent_bonus"
+				}
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"Cleave"
+						"damage"		"%attack_damage"
+						"cleave_damage_percent"		"%cleave_damage_percent"
+						"cleave_distance"			"%cleave_distance"
+						"cleave_starting_width"		"%cleave_starting_width"
+						"cleave_ending_width"		"%cleave_ending_width"
+						"particle"					"particles/items_fx/battlefury_cleave.vpcf"
+					}
+				}
+			}
+
+			"modifier_item_elemental_fury_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"AllowIllusionDuplicate"     "0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_elemental_fury_unique"
+					}
+				}
+				
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%nightshadow_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"CooldownReduction"
+								"cooldown_reducted"		"%cooldown_reduction"
+								"modifier"				"modifier_item_elemental_fury_unique"
+							}
+						}
+					}
+					"Random"
+					{
+						"Chance"			"%maim_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"sange_lesser_maim_stacks"
+								"modifier"				"modifier_item_elemental_fury_lesser_maim"
+							}
+						}
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"items/items_SYNS.lua"
+						"Function"		"yasha_fast_attack_stacks"
+						"modifier"		"modifier_item_elemental_fury_fast_attack"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"ModifyCreepDamage"
+						"damage"		"%attack_damage"
+						"damage_bonus"	"%damage_bonus"
+						"damage_bonus_ranged"	"%damage_bonus_ranged"
+					}
+				}
+			}
+
+			"modifier_item_elemental_fury_lesser_maim"
+			{
+				"Duration"				"%maim_duration"
+				"IsDebuff"				"1"
+				"IsPurgable"			"1"
+				
+				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
+				"EffectAttachType"      "follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_slow_attack"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_slow_movement"
+				}
+			}
+
+			"modifier_item_elemental_fury_fast_attack"
+			{
+				"IsPurgable"		"1"
+				"Duration"			"%fast_attack_duration"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff" 
+				}
 			}
 		}
 	}

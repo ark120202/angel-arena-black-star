@@ -226,4 +226,14 @@ CHAT_COMMANDS = {
 			end
 		end
 	},
+	["consts"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
+		f = function(args)
+			for k, v in pairs(_G) do
+				if string.find(k, args[1]) then
+					print(k, v)
+				end
+			end
+		end
+	}
 }

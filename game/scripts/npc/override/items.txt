@@ -512,14 +512,6 @@
 	{
 		"SecretShop"					"0"
 	}
-	"item_recipe_bfury"
-	{
-		"SecretShop"					"0"
-	}
-	"item_bfury"
-	{
-		"SecretShop"					"0"
-	}
 	"item_recipe_lesser_crit"
 	{
 		"SecretShop"					"0"
@@ -842,7 +834,7 @@
 		"SecretShop"					"0"
 		"ItemStockMax"					"20"
 		"ItemStockTime"					"60"			  
-		"ItemInitialStockTime"			"240"
+		"ItemInitialStockTime"			"600"
 	}
 	"item_recipe_hurricane_pike"
 	{

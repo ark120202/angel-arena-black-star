@@ -325,6 +325,9 @@ function GetRemainingPrice(itemName, ItemCounter, baseItem) {
 	var itemCount = GetItemCountInInventory(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), itemName, true)
 	var val = 0
 	if (itemCount < ItemCounter[itemName] || !baseItem) {
+		if (ItemData[itemName] == null) {
+			throw new Error("Unable to find item " + itemName + "!")
+		}
 		var RecipeData = ItemData[itemName].Recipe
 		if (RecipeData != null && RecipeData.items != null) {
 			$.Each(RecipeData.items[1], function(childName) {

@@ -119,6 +119,10 @@ function CDOTA_BaseNPC:GetTalentSpecial(name, property)
 		if type(t) == "table" then
 			t = t[self.talents[name].level] or t[#t]
 		end
+		local effect = CUSTOM_TALENTS_DATA[name].effect
+		if effect and effect.special_values_multiplier then
+			t = t * effect.special_values_multiplier
+		end
 		return t
 	end
 end

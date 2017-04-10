@@ -91,8 +91,9 @@ RUNE_SETTINGS = {
 		particle = "particles/generic_gameplay/rune_bounty.vpcf",
 		sound = "Rune.Bounty",
 		GetValues = function(unit)
-			local gold = 300 + (20 * GetDOTATimeInMinutesFull())
-			local xp = 150 + (10 * GetDOTATimeInMinutesFull())
+			local m = GetDOTATimeInMinutesFull()
+			local gold = 100 + (m * 2)^2
+			local xp = 50 + m^2.2
 			local gold_multiplier = 1
 			local xp_multiplier = 1
 

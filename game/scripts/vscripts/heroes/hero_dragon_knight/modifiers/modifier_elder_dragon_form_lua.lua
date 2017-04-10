@@ -30,7 +30,7 @@ local modData = {
 		attackProjectile = "particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf",
 	},
 	[5] = {
-		model = "models/heroes/twin_headed_dragon/twin_headed_dragon.vmdl",
+		model = "models/heroes/jakiro/jakiro.vmdl",
 		attackProjectile = {"particles/units/heroes/hero_jakiro/jakiro_base_attack.vpcf", "particles/units/heroes/hero_jakiro/jakiro_base_attack_fire.vpcf"}
 	},
 	[6] = {

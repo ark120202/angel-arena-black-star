@@ -99,7 +99,8 @@ function Duel:StartDuel()
 						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 							unit.InArena = true
 							Duel:FillPreduelUnitData(unit)
-							unit:SetHealth(unit:GetMaxHealth())
+							local health = unit:GetMaxHealth()
+							unit:SetHealth(unit:HasAbility("shinobu_vampire_blood") and health * 0.5 or health)
 							unit:SetMana(unit:GetMaxMana())
 							count = count + 1
 						end
@@ -116,11 +117,15 @@ function Duel:StartDuel()
 						unit:RemoveModifierByName(v)
 					end
 				end
+				if unit:HasModifier("modifier_item_tango_arena") then
+					unit:SetModifierStackCount("modifier_item_tango_arena", unit, math.round(unit:GetModifierStackCount("modifier_item_tango_arena", unit) * 0.5))
+				end
 				if unit.PocketItem then
 					UTIL_Remove(unit.PocketItem)
 				end
 				if unit.InArena then
 					unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
+					ProjectileManager:ProjectileDodge(unit)
 					unit:FindClearSpaceForUnitAndSetCamera(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
 				elseif unit:IsAlive() then
 					Duel:SetUpVisitor(unit)
@@ -197,6 +202,7 @@ function Duel:SetUpVisitor(unit)
 	if not Duel.EntIndexer[team] then
 		Duel.EntIndexer[team] = Entities:FindByName(nil, "target_mark_arena_viewers_team" .. team)
 	end
+	ProjectileManager:ProjectileDodge(unit)
 	unit:FindClearSpaceForUnitAndSetCamera(Duel.EntIndexer[team]:GetAbsOrigin())
 	unit:AddNewModifier(unit, nil, "modifier_duel_hero_disabled_for_duel", {})
 end
@@ -207,20 +213,16 @@ function Duel:EndDuelForUnit(unit)
 		if IsValidEntity(unit) and unit:IsAlive() and unit.StatusBeforeArena then
 			if unit.StatusBeforeArena.Health then unit:SetHealth(unit.StatusBeforeArena.Health) end
 			if unit.StatusBeforeArena.Mana then unit:SetMana(unit.StatusBeforeArena.Mana) end
-			if unit.StatusBeforeArena.AbilityCooldowns and type(unit.StatusBeforeArena.AbilityCooldowns) == "table" then
-				for ability,v in pairs(unit.StatusBeforeArena.AbilityCooldowns) do
-					if ability and not ability:IsNull() and unit:HasAbility(ability:GetAbilityName()) then
-						ability:EndCooldown()
-						ability:StartCooldown(v)
-					end
+			for ability,v in pairs(unit.StatusBeforeArena.AbilityCooldowns or {}) do
+				if ability and not ability:IsNull() and unit:HasAbility(ability:GetAbilityName()) then
+					ability:EndCooldown()
+					ability:StartCooldown(v)
 				end
 			end
-			if unit.StatusBeforeArena.ItemCooldowns and type(unit.StatusBeforeArena.ItemCooldowns) == "table" then
-				for item,v in pairs(unit.StatusBeforeArena.ItemCooldowns) do
-					if item and not item:IsNull() then
-						item:EndCooldown()
-						item:StartCooldown(v)
-					end
+			for item,v in pairs(unit.StatusBeforeArena.ItemCooldowns or {}) do
+				if item and not item:IsNull() then
+					item:EndCooldown()
+					item:StartCooldown(v)
 				end
 			end
 			unit.StatusBeforeArena = nil
@@ -231,6 +233,7 @@ function Duel:EndDuelForUnit(unit)
 		if not pos then
 			pos = FindFountain(unit:GetTeamNumber()):GetAbsOrigin()
 		end
+		ProjectileManager:ProjectileDodge(unit)
 		unit:FindClearSpaceForUnitAndSetCamera(pos)
 	end
 	unit.InArena = nil

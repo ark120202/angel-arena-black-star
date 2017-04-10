@@ -680,7 +680,7 @@ function FindCourier(team)
 end
 
 function GetNotScaledDamage(damage, unit)
-	return math.floor(damage/(1 + (unit:GetIntellect() / 16) / 100) + 0.5)
+	return math.floor(damage/(1 + (unit:GetIntellect() * DEFAULT_SPELL_AMPLIFY_PER_INT) / 100) + 0.5)
 end
 
 function GetSpellDamageAmplify(unit)
@@ -1126,7 +1126,7 @@ function CDOTA_PlayerResource:SetDisableHelpForPlayerID(nPlayerID, nOtherPlayerI
 end
 
 function CDOTA_PlayerResource:IsDisableHelpSetForPlayerID(nPlayerID, nOtherPlayerID)
-	return PLAYER_DATA[nPlayerID] ~= nil and PLAYER_DATA[nPlayerID].DisableHelp ~= nil and PLAYER_DATA[nPlayerID].DisableHelp[nOtherPlayerID] and PlayerResource:GetTeam(nPlayerID) ~= PlayerResource:GetTeam(nOtherPlayerID)
+	return PLAYER_DATA[nPlayerID] ~= nil and PLAYER_DATA[nPlayerID].DisableHelp ~= nil and PLAYER_DATA[nPlayerID].DisableHelp[nOtherPlayerID] and PlayerResource:GetTeam(nPlayerID) == PlayerResource:GetTeam(nOtherPlayerID)
 end
 
 --TODO

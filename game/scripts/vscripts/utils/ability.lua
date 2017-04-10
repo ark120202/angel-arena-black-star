@@ -12,7 +12,7 @@ function AbilityHasBehaviorByName(ability_name, behaviorString)
 end
 
 function CDOTABaseAbility:PreformPrecastActions(unit)
-	return PreformAbilityPrecastActions(unit, self)
+	return PreformAbilityPrecastActions(unit or self:GetCaster(), self)
 end
 
 function CDOTABaseAbility:IsAbilityMulticastable()

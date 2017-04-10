@@ -70,6 +70,8 @@
 	"item_mekansm"					"REMOVE"
 	"item_recipe_guardian_greaves"	"REMOVE"
 	"item_guardian_greaves"			"REMOVE"
+	"item_recipe_bfury"				"REMOVE"
+	"item_bfury"					"REMOVE"
 
 	//"item_halloween_candy_corn"	"REMOVE"
 	//"item_mystery_hook"	"REMOVE"

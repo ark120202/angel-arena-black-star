@@ -47,26 +47,3 @@ function OnSpellStart(keys)
 		caster.lucifers_claw_doomling_ent = doomling
 	end
 end
-
-function ModifyCreepDamage(keys)
-	local caster = keys.caster
-	local target = keys.target
-	if target:IsRealCreep() then
-		local ability = keys.ability
-		local damage = keys.damage
-		local damage_bonus = keys.damage_bonus
-		local damage_bonus_ranged = keys.damage_bonus_ranged
-		local damage_table = {
-			attacker = caster,
-			victim = target,
-			damage_type = DAMAGE_TYPE_HP_REMOVAL,
-			ability = keys.ability
-		}
-		if IsRangedUnit(caster) then
-			damage_table.damage = damage * ((damage_bonus_ranged - 100) / 100)
-		else
-			damage_table.damage = damage * ((damage_bonus - 100) / 100)
-		end
-		ApplyDamage(damage_table)
-	end
-end

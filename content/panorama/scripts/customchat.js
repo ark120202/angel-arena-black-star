@@ -16,7 +16,7 @@ function RecieveMessage(data) {
 	//data.text = null;
 	//data.gold = 123;
 	if (playerID != null && !Game.IsPlayerMuted(playerID)) {
-		var localPlayerId = Game.GetLocalPlayerID()
+		//var localPlayerId = Game.GetLocalPlayerID()
 		var SenderHero = GetPlayerHeroName(playerID);
 		var html = "";
 		var rootPanel = CustomChatLinesPanel || $("#SelectionChatMessages");
@@ -29,7 +29,7 @@ function RecieveMessage(data) {
 			html += AddSmiles(String(data.text).encodeHTML());
 		} else if (data.gold != null && data.player != null) {
 			html += "<img src='file://{images}/control_icons/chat_wheel_icon.png' class='ChatWheelIcon' />";
-			var localized = $.Localize(data.player == localPlayerId ? "chat_message_gold_self" : "chat_message_gold_ally")
+			var localized = $.Localize(data.player == playerID ? "chat_message_gold_self" : "chat_message_gold_ally")
 			localized = localized.replace("{gold}", "<font color='gold'>" + FormatGold(data.gold) + "</font>")
 			localized = localized.replace("{player}", "<font color='" + GetHEXPlayerColor(data.player) + "'>" + $.Localize(GetPlayerHeroName(data.player)) + "</font>")
 			html += localized
@@ -37,7 +37,7 @@ function RecieveMessage(data) {
 			html += "<img src='file://{images}/control_icons/chat_wheel_icon.png' class='ChatWheelIcon' />";
 			var localized;
 			var cooldown = Abilities.GetCooldownTimeRemaining(data.ability)
-			if (Players.GetTeam(data.player) == Players.GetTeam(localPlayerId)) {
+			if (Players.GetTeam(data.player) == Players.GetTeam(playerID)) {
 				if (Abilities.GetLevel(data.ability) == 0) {
 					localized = "chat_message_ability_not_learned"
 				} else if (!Abilities.IsOwnersManaEnough(data.ability)) {
@@ -49,7 +49,7 @@ function RecieveMessage(data) {
 				} else {
 					localized = "chat_message_ability_ready"
 				}
-				if (data.player != localPlayerId) {
+				if (data.player != playerID) {
 					localized = localized.replace("chat_message_ability_", "chat_message_ability_ally_")
 				}
 			} else {
@@ -77,7 +77,7 @@ function RecieveMessage(data) {
 		} else if (data.level != null) {
 			html += "<img src='file://{images}/control_icons/chat_wheel_icon.png' class='ChatWheelIcon' />";
 			var localized = ((data.xpToNextLevel == null && !data.isNeutral) ? "chat_message_level_side_capped" : "chat_message_level_side")
-			var unitSide = data.unit == Players.GetPlayerHeroEntityIndex(localPlayerId) ? "self" : Entities.GetTeamNumber(data.unit) == Players.GetTeam(localPlayerId) ? "ally" : "enemy"
+			var unitSide = data.unit == Players.GetPlayerHeroEntityIndex(playerID) ? "self" : Entities.GetTeamNumber(data.unit) == Players.GetTeam(playerID) ? "ally" : "enemy"
 			localized = localized.replace("side", unitSide)
 			localized = $.Localize(localized)
 

@@ -51,7 +51,7 @@
 			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"health_reduction_pct"	"85"
+				"health_reduction_pct"	"80"
 			}
 			"09"
 			{

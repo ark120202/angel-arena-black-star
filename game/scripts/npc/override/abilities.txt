@@ -14109,14 +14109,6 @@
 				"var_type"	"FIELD_INTEGER"
 				"mana_regen_rate_scepter"	"3"
 			}
-
-			"99"
-			{
-				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "10"
-				"CalculateSpellDamageTooltip" "0"
-			}
-
 		}
 
 	}

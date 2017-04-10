@@ -308,6 +308,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityTextureName"			"phantom_lancer_juxtapose"
 		"HasScepterUpgrade"				"1"
+		"AbilityCooldown"				"1.5"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -326,7 +327,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_illusions"				"3"
+				"max_illusions"				"3 3 3 4 4 4 5"
 			}
 			"04"
 			{
@@ -335,8 +336,8 @@
 			}
 			"05"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_outgoing_damage"	"20 22.5 25 27.5 30 32.5 35"
+				"var_type"					"FIELD_FLOAT"
+				"illusion_outgoing_damage"	"17.5 20 22.5 27.5 32.5 37.5 40"
 			}
 			"06"
 			{
@@ -446,7 +447,7 @@
 					"RunScript"
 					{
 						"ScriptFile"	"heroes/hero_phantom_lancer/juxtapose.lua"
-						"Function"		"DecrementCount"
+						"Function"		"DecreaseCount"
 					}
 				}
 			}

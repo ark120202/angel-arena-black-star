@@ -36,7 +36,7 @@ function SpecialValuesArrayToString(values, level, percent) {
 function CreateTalent(talent, root) {
 	var panel = $.CreatePanel("Image", root, "talent_icon_" + talent.name);
 	panel.AddClass("TalentIcon")
-	panel.SetImage("file://{images}/custom_game/talents/" + talent.icon + ".png");
+	panel.SetImage(TransformTextureToPath(talent.icon));
 	var CreateTooltip = function() {
 		var description = $.Localize("custom_talents_" + talent.name + "_description");
 		if (talent.special_values != null)

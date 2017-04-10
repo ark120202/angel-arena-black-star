@@ -353,7 +353,7 @@
 				"model"			"models/heroes/phoenix/phoenix_bird.vmdl"
 				"particle"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 			//5
-				"model"			"models/heroes/twin_headed_dragon/twin_headed_dragon.vmdl"
+				"model"			"models/heroes/jakiro/jakiro.vmdl"
 				"particle"		"particles/units/heroes/hero_jakiro/jakiro_base_attack.vpcf"
 				"particle"		"particles/units/heroes/hero_jakiro/jakiro_base_attack_fire.vpcf"
 				"particle"		"particles/units/heroes/hero_jakiro/jakiro_dual_breath_ice.vpcf"

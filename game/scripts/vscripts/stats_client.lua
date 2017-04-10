@@ -105,14 +105,13 @@ function StatsClient:GetMatchPlayerInfo()
 			postData.players[i] = PlayerResource:GetSteamID(i)
 		end
 	end
-	self:Send("GetPublicInfoForPlayer", postData, function()
+	StatsClient:Send("GetPublicInfoForPlayer", postData, function()
 		PlayerTables:SetTableValue("arena", "player_server_stats", stats)
 	end, 5)
-	
 end
 
 function StatsClient:Send(path, data, callback, retryCount, protocol, _currentRetry)
-	local request = CreateHTTPRequest(protocol or "POST", self.ServerAddress .. path)
+	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path)
 	request:SetHTTPRequestGetOrPostParameter("data", JSON:encode(data))
 	request:Send(function(response)
 		if response.StatusCode ~= 200 or not response.Body then

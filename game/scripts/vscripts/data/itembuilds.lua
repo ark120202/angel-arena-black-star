@@ -22,7 +22,7 @@ ARENA_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Early_Game",
 				content = {
-					"item_bfury",
+					"item_battlefury_arena",
 					"item_steam_footgear",
 					"item_octarine_core_arena",
 
@@ -235,7 +235,7 @@ ARENA_ITEMBUILDS = {
 					"item_ultimate_scepter_arena",
 					"item_octarine_core_arena",
 					"item_angel_wings",
-					"item_bfury",
+					"item_battlefury_arena",
 
 				}
 			},
@@ -765,7 +765,7 @@ VALVE_ITEMBUILDS = {
 					"item_power_treads",
 					"item_magic_wand",
 					"item_yasha_arena",
-					"item_bfury",
+					"item_battlefury_arena",
 					"item_tpscroll",
 				}
 			},
@@ -2016,7 +2016,7 @@ VALVE_ITEMBUILDS = {
 				content = {
 					"item_phase_boots",
 					"item_ancient_janggo",
-					"item_bfury",
+					"item_battlefury_arena",
 					"item_tpscroll",
 				}
 			},
@@ -2024,14 +2024,14 @@ VALVE_ITEMBUILDS = {
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
 					"item_greater_crit",
-					"item_bfury",
+					"item_battlefury_arena",
 					"item_black_king_bar_6",
 					"item_skadi_8",
 					"item_desolator",
 					"item_assault",
 					"item_mjollnir",
 					"item_satanic",
-					"item_bfury",
+					"item_battlefury_arena",
 				}
 			},
 		}
@@ -2463,7 +2463,7 @@ VALVE_ITEMBUILDS = {
 					"item_three_spirits_blades",
 					"item_butterfly_arena",
 					"item_desolator",
-					"item_bfury",
+					"item_battlefury_arena",
 					"item_vladmir",
 					"item_black_king_bar_6",
 				}
@@ -2560,7 +2560,7 @@ VALVE_ITEMBUILDS = {
 					"item_heavens_halberd_arena",
 					"item_assault",
 					"item_heart_arena",
-					"item_bfury",
+					"item_battlefury_arena",
 					"item_silver_edge",
 				}
 			},
@@ -3047,7 +3047,7 @@ VALVE_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
-					"item_bfury",
+					"item_battlefury_arena",
 					"item_greater_crit",
 					"item_heart_arena",
 					"item_assault",
@@ -3717,7 +3717,7 @@ VALVE_ITEMBUILDS = {
 			{
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
-					"item_bfury",
+					"item_battlefury_arena",
 					"item_desolator",
 					"item_satanic",
 					"item_abyssal_blade",

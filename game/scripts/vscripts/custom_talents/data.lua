@@ -1,6 +1,6 @@
 CUSTOM_TALENTS_DATA = {
 	talent_experience_pct = {
-		icon = "experience",
+		icon = "talents/experience",
 		cost = 4,
 		group = 1,
 		max_level = 7,
@@ -14,7 +14,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_bonus_creep_gold = {
-		icon = "gold",
+		icon = "talents/gold",
 		cost = 4,
 		group = 1,
 		max_level = 7,
@@ -28,7 +28,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_spell_amplify = {
-		icon = "spell_amplify",
+		icon = "talents/spell_amplify",
 		cost = 7,
 		group = 4,
 		max_level = 7,
@@ -43,12 +43,12 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_respawn_time_reduction = {
-		icon = "respawn_time_reduction",
+		icon = "talents/respawn_time_reduction",
 		cost = 7,
 		group = 5,
 		max_level = 7,
 		special_values = {
-			respawn_time_reduction = { -10, -15, -20, -25, -30, -35, -40}
+			respawn_time_reduction = {-10, -15, -20, -25, -30, -35, -40}
 		},
 		effect = {
 			unit_keys = {
@@ -57,7 +57,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_attack_damage = {
-		icon = "damage",
+		icon = "talents/damage",
 		cost = 5,
 		group = 4,
 		max_level = 7,
@@ -71,7 +71,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_evasion = {
-		icon = "evasion",
+		icon = "talents/evasion",
 		cost = 4,
 		group = 3,
 		max_level = 7,
@@ -85,7 +85,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_movespeed_limit = {
-		icon = "movespeed",
+		icon = "talents/movespeed",
 		cost = 27,
 		group = 6,
 		max_level = 3,
@@ -99,7 +99,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_health = {
-		icon = "health",
+		icon = "talents/health",
 		cost = 2,
 		group = 1,
 		max_level = 12,
@@ -114,7 +114,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_health_regen = {
-		icon = "health_regen",
+		icon = "talents/health_regen",
 		cost = 2,
 		group = 2,
 		max_level = 6,
@@ -128,7 +128,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_armor = {
-		icon = "armor",
+		icon = "talents/armor",
 		cost = 2,
 		group = 2,
 		max_level = 16,
@@ -142,7 +142,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_magic_resistance_pct = {
-		icon = "magic_resistance",
+		icon = "talents/magic_resistance",
 		cost = 10,
 		group = 6,
 		max_level = 8,
@@ -156,7 +156,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_vision_day = {
-		icon = "day",
+		icon = "talents/day",
 		cost = 6,
 		group = 2,
 		max_level = 6,
@@ -170,7 +170,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_vision_night = {
-		icon = "night",
+		icon = "talents/night",
 		cost = 6,
 		group = 2,
 		max_level = 9,
@@ -184,7 +184,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_cooldown_reduction_pct = {
-		icon = "cooldown_reduction",
+		icon = "talents/cooldown_reduction",
 		cost = 10,
 		group = 4,
 		max_level = 7,
@@ -198,7 +198,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_movespeed_pct = {
-		icon = "movespeed",
+		icon = "talents/movespeed",
 		cost = 2,
 		group = 3,
 		max_level = 11,
@@ -212,7 +212,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_passive_gold_income = {
-		icon = "gold",
+		icon = "talents/gold",
 		cost = 10,
 		group = 2,
 		max_level = 6,
@@ -226,7 +226,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_passive_experience_income = {
-		icon = "experience",
+		icon = "talents/experience",
 		cost = 10,
 		group = 2,
 		max_level = 6,
@@ -240,7 +240,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_true_strike = {
-		icon = "true_strike",
+		icon = "talents/true_strike",
 		cost = 40,
 		group = 7,
 		effect = {
@@ -252,7 +252,7 @@ CUSTOM_TALENTS_DATA = {
 
 	--Unique
 	talent_hero_pudge_hook_splitter = {
-		icon = "hero_pudge_hook_splitter",
+		icon = "talents/heroes/pudge_hook_splitter",
 		cost = 48,
 		group = 5,
 		requirement = "pudge_meat_hook_lua",
@@ -261,7 +261,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_hero_arthas_vsolyanova_bunus_chance = {
-		icon = "hero_arthas_vsolyanova_bunus_chance",
+		icon = "talents/heroes/arthas_vsolyanova_bunus_chance",
 		cost = 25,
 		group = 5,
 		max_level = 5,
@@ -271,7 +271,7 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_hero_arc_warden_double_spark = {
-		icon = "hero_arc_warden_double_spark",
+		icon = "talents/heroes/arc_warden_double_spark",
 		cost = 16,
 		group = 5,
 		requirement = "arc_warden_spark_wraith",
@@ -282,17 +282,33 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_hero_apocalypse_apocalypse_no_death = {
-		icon = "hero_apocalypse_apocalypse_no_death",
+		icon = "talents/heroes/apocalypse_apocalypse_no_death",
 		cost = 20,
 		group = 6,
 		requirement = "apocalypse_apocalypse",
 	},
 	talent_hero_skeleton_king_reincarnation_notime_stun = {
-		icon = "hero_skeleton_king_reincarnation_notime_stun",
+		icon = "talents/heroes/skeleton_king_reincarnation_notime_stun",
 		cost = 32,
 		group = 6,
 		requirement = "skeleton_king_reincarnation_arena",
 	},
+	--[[talent_hero_sara_evolution_bonus_health = {
+		icon = "talents/heroes/sara_evolution_bonus_health",
+		cost = 4,
+		group = 2,
+		max_level = 8,
+		special_values = {
+			health = {300, 600, 900, 1200, 1500, 1800, 2100, 2400}
+		},
+		effect = {
+			calculate_stat_bonus = true,
+			special_values_multiplier = 1 / (1 - GetAbilitySpecial("sara_evolution", "health_reduction_pct") * 0.01),
+			modifiers = {
+				modifier_talent_health = "health",
+			},
+		}
+	},]]
 	--Tinker - Rearm = Purge
 	
 }

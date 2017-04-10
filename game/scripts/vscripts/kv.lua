@@ -280,3 +280,32 @@ end
 function UpdateAttackProjectile(keys)
 	keys.caster:UpdateAttackProjectile()
 end
+
+function ModifyCreepDamage(keys)
+	local caster = keys.caster
+	local target = keys.target
+	if target:IsRealCreep() then
+		local ability = keys.ability
+		local damage_bonus = keys.damage_bonus_ranged ~= nil and IsRangedUnit(caster) and keys.damage_bonus_ranged or keys.damage_bonus
+		ApplyDamage({
+			attacker = caster,
+			victim = target,
+			damage = keys.damage * (damage_bonus * 0.01 - 1),
+			damage_type = DAMAGE_TYPE_PURE,
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+			ability = keys.ability
+		})
+	end
+end
+
+function Cleave(keys)
+	if not IsRangedUnit(keys.caster) then
+		DoCleaveAttack(keys.caster, keys.target, keys.ability, keys.damage * keys.cleave_damage_percent * 0.01, keys.cleave_distance or keys.cleave_radius, keys.cleave_starting_width or keys.cleave_radius, keys.cleave_ending_width or keys.cleave_radius, keys.particle)
+	end
+end
+
+function CutTree(keys)
+	if keys.target:GetClassname() == "ent_dota_tree" then
+		keys.target:CutDown(keys.caster:GetTeamNumber())
+	end
+end

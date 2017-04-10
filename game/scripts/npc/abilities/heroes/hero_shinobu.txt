@@ -74,17 +74,17 @@
 			"13"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"lifesteal_pct_lvl4"		"20 25 30 35 40"
+				"lifesteal_pct_lvl4"	"20 25 30 35 40"
 			}
 			"14"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed_lvl4" "160 170 180 190 200"
+				"bonus_attack_speed_lvl4"	"160 170 180 190 200"
 			}
 			"15"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_move_speed_lvl4" "80"
+				"bonus_move_speed_lvl4"	"80"
 			}
 		}
 
