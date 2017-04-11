@@ -98,6 +98,13 @@
 				"var_type"	"FIELD_FLOAT"
 				"cooldown"	"7 6 5 4 3 2 1"
 			}
+			
+			"99"
+			{
+				"var_type" "FIELD_FLOAT"
+				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"CalculateSpellDamageTooltip" "0"
+			}
 
 		}
 
@@ -857,7 +864,7 @@
 	"juggernaut_blade_fury"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"42 34 26 18 17 16 15"
+		"AbilityCooldown"	"20 18 16 14 12 11 10"
 		"AbilityDuration"	"5.0"
 		"AbilityManaCost"	"120 110 100 90 80 70 60"
 		"LevelsBetweenUpgrades"	"4"
@@ -6134,13 +6141,13 @@
 			"10"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"cast_range_scepter"	"950 950 950 1000 1050 1100 1150"
+				"cast_range_scepter"	"1500"
 			}
 
 			"11"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"cooldown_scepter"	"30"
+				"cooldown_scepter"	"20"
 			}
 			"99"
 			{
@@ -7416,13 +7423,13 @@
 		"AbilityCastPoint"	"0.4"
 		"AbilityCooldown"	"60 50 40 30 20 15 12"
 		"AbilityManaCost"	"150 250 350 450 550 650 750"
-		"AbilityDuration"	"2 3 4 5 5 6 7"
+		"AbilityDuration"	"5"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration_tooltip"	"2 3 4 5 5 6 7"
+				"duration_tooltip"	"5"
 			}
 
 			"02"
@@ -7722,7 +7729,7 @@
 			"07"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"cooldown_scepter"	"20"
+				"cooldown_scepter"	"10"
 			}
 
 		}
@@ -8682,25 +8689,6 @@
 
 	}
 
-	"huskar_burning_spear"
-	{
-		"MaxLevel"	"7"
-		"AbilityCastRange"	"450"
-		"AbilityDuration"	"8"
-		"AbilityDamage"		"30 60 90 120 150 180 210"
-		"LevelsBetweenUpgrades"	"3"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"health_cost"	"30 60 90 120 150 180 210"
-			}
-
-		}
-
-	}
-
 	"huskar_berserkers_blood"
 	{
 		"MaxLevel"	"7"
@@ -9380,20 +9368,20 @@
 	"weaver_shukuchi"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"14 13 12 11 10 9 8"
+		"AbilityCooldown"	"10 9 8 8 7 7 6"
 		"AbilityManaCost"	"60"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"75 100 125 150 175 200 250"
+				"damage"	"75 150 225 300 375 450 550"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"175"
+				"radius"	"250"
 			}
 
 			"03"
@@ -13090,7 +13078,7 @@
 			"10"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"cooldown_scepter"	"110"
+				"cooldown_scepter"	"20"
 			}
 
 		}
@@ -13105,13 +13093,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"fade_time"	"12 11 10 9 8 7 6"
+				"fade_time"	"7 6 5 4 3 2 1.5"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"265"
+				"radius"	"400"
 			}
 
 			"03"
@@ -13245,7 +13233,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"eyes_radius"	"800"
+				"eyes_radius"	"1600"
 			}
 
 		}
@@ -13254,7 +13242,7 @@
 
 	"treant_eyes_in_the_forest"
 	{
-		"AbilityCastRange"	"160"
+		"AbilityCastRange"	"300"
 		"AbilityCastPoint"	"0.2"
 		"AbilityCooldown"	"25"
 		"AbilityManaCost"	"50"
@@ -13263,19 +13251,19 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"vision_aoe"	"800"
+				"vision_aoe"	"1600"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"overgrowth_aoe"	"800"
+				"overgrowth_aoe"	"1600"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage"	"400"
+				"damage"	"1000"
 			}
 
 		}
@@ -15969,31 +15957,31 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"speed"	"900.0"
+				"speed"	"2000"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"radius"	"200.0"
+				"radius"	"300"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"pass_damage"	"750"
+				"pass_damage"	"1500"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_second"	"340"
+				"damage_per_second"	"500"
 			}
 
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"slow"	"5"
+				"slow"	"15"
 			}
 
 			"06"
@@ -16011,7 +15999,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"mana_per_second"	"250"
+				"mana_per_second"	"100"
 			}
 
 			"09"
@@ -16038,7 +16026,7 @@
 
 	"shredder_return_chakram_2"
 	{
-		"MaxLevel"	"7"
+		"MaxLevel"	"3"
 		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
 		"AbilityCooldown"	"0.0 0.0 0.0"
 	}
@@ -16510,7 +16498,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"move_slow"	"40"
+				"move_slow"	"80"
 			}
 
 			"05"
@@ -16528,7 +16516,7 @@
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"350"
+				"damage"	"5000"
 			}
 
 		}

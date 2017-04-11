@@ -4429,7 +4429,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"30"
+				"spell_amp_pct"			"40"
 			}
 			"06"
 			{
@@ -4439,7 +4439,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"4.75"
+				"sheep_duration"		"3"
 			}
 			"08"
 			{
@@ -5146,7 +5146,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800 900 1000"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"8.0 7.0 6.0 5.0 4.0"
+		"AbilityCooldown"				"16 14 12 10 8"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -5300,7 +5300,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800 900 1000"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"8.0 7.0 6.0 5.0 4.0"
+		"AbilityCooldown"				"16 14 12 10 8"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -5454,7 +5454,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800 900 1000"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"8.0 7.0 6.0 5.0 4.0"
+		"AbilityCooldown"				"16 14 12 10 8"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -5608,7 +5608,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800 900 1000"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"8.0 7.0 6.0 5.0 4.0"
+		"AbilityCooldown"				"16 14 12 10 8"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -5762,7 +5762,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800 900 1000"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"8.0 7.0 6.0 5.0 4.0"
+		"AbilityCooldown"				"16 14 12 10 8"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -14448,12 +14448,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"80"
+				"bonus_agility"					"60"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"135"
+				"bonus_damage"					"120"
 			}
 			"03"
 			{
@@ -14463,12 +14463,12 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"100"
+				"bonus_attack_speed"			"60"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_chance"					"35"
+				"crit_chance"					"30"
 			}
 			"06"
 			{
@@ -14629,12 +14629,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"115"
+				"bonus_agility"					"90"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"155"
+				"bonus_damage"					"200"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
@@ -14655,12 +14655,12 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_chance"					"28"
+				"crit_chance"					"30"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_multiplier"				"322"
+				"crit_multiplier"				"300"
 			}
 			"08"
 			{
@@ -17700,7 +17700,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5 6 7"
+				"duration"				"4"
 			}
 		}
 	}
@@ -17752,7 +17752,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5 6 7"
+				"duration"				"4"
 			}
 		}
 	}
@@ -17804,7 +17804,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5 6 7"
+				"duration"				"4"
 			}
 		}
 	}

@@ -1,0 +1,68 @@
+Items:
+	Diffusal Blade:
+		Cooldown: 8.0 7.0 6.0 5.0 4.0 => 16 14 12 10 8
+	Auto Scythe of Vyse:
+		Spell Amp: 30 => 40
+		Sheep Duration: 4.75 => 3
+	Butterfly of Sins:
+		Bonus Agility: 80 => 60
+		Bonus Damage: 135 => 120
+		Bonus Attack Speed: 100 => 60
+		Crit Chance: 35 => 30
+	Rapier of Pain:
+		Bonus Agility: 115 => 90
+		Bonus Damage: 155 => 200
+		Crit Chance: 28 => 30
+		Crit Multiplier: 322 => 300
+	Blade Mail I-III:
+		Duration: 5 6 7 => 4
+Abilities:
+	Timbersaw - Chakram 2:
+		Speed: 900.0 => 2000
+		Radius: 200.0 => 300
+		Pass Damage: 750 => 1500
+		Damage Per Second: 340 => 500
+		Slow: 5 => 15
+		Mana Per Second:250 => 100
+	Clockwerk - Hookshot:
+		Cooldown Scepter: 20 => 10
+	Chaos Knight - Phantasm:
+		Cooldown Scepter: 110 => 20
+	Beastmaster - Primal Roar:
+		Cast Range Scepter: 950 950 950 1000 1050 1100 1150 => 1500
+		Cooldown Scepter: 30 => 20
+	Tusk - Walrus Kick:
+		Move Slow: 40 => 80
+		Damage: 350 => 5000
+	Treant - Natures Guise:
+		Fade Time: 12 11 10 9 8 7 6 => 7 6 5 4 3 2 1.5
+		Radius: 265 => 400
+	Treant - Eyes in the Forest:
+		Vision AOE: 800 => 1600
+		Overgrowth AOE: 800 => 1600
+		Damage: 400 => 1000
+	Weaver - Shukuchi:
+		Cooldown: 14 13 12 11 10 9 8 => 10 9 8 8 7 7 6
+		Damage: 75 100 125 150 175 200 250 => 75 150 225 300 375 450 550
+		Radius: 175 => 250
+	Juggernaut - Blade Fury:
+		Cooldown: 42 34 26 18 17 16 15 => 20 18 16 14 12 11 10
+	Dazzle - Shallow Grave:
+		Duration: 5 6 7 => 4
+	Mirana - Arrow:
+		Arrow Max Stun: 5 => 4
+	Huskar - Burning Spear:
+		Duration: 8 => 4
+		Damage: 30 60 90 120 150 180 210 => 10 20 40 60 80 100 120
+		Health Cost: 30 60 90 120 150 180 210 => 10 20 40 60 80 100 120
+	Axe - Counter Helix:
+		Damage From Current Health: 0 => 0.5 1 1.5 2 2.5 3 3.5 %
+These abilities now not refreshed:
+	Shallow Grave
+	Dark Whale
+	Select Allies
+	Select Enemies
+
+	
+axe_counter_helix
+
