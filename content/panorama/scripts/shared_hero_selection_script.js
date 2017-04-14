@@ -96,20 +96,11 @@ function ChooseHeroUpdatePanels() {
 	/*var BioPanel = $("#SelectedHeroDescriptionText")
 	if (BioPanel != null)
 		BioPanel.text = $.Localize("#" + SelectedHeroData.heroKey + "_bio")
-	var ScenePanel = $("#SelectedHeroScene")
-	if (ScenePanel != null) {
-		if (ScenePanel.innerUnitModel != SelectedHeroData.model) {
-			ScenePanel.RemoveAndDeleteChildren()
-			ScenePanel.BCreateChildren("<DOTAScenePanel style=\"width: 100%; height: 100%;\" unit=\"" + SelectedHeroData.model + "\"/>");
-			ScenePanel.innerUnitModel = SelectedHeroData.model
-		}
-	}*/
+	*/
 	UpdateSelectionButton();
 	var context = $.GetContextPanel();
 	$("#SelectedHeroSelectHeroName").text = $.Localize("#" + SelectedHeroData.heroKey);
 	context.SetHasClass("HoveredHeroHasLinked", SelectedHeroData.linked_heroes != null);
-	//context.SetHasClass("HoveredHeroLockButton", SelectedHeroData.linked_heroes != null)
-	//context.SetHasClass("HoveredHeroUnlockButton", SelectedHeroData.linked_heroes != null)
 	if (SelectedHeroData.linked_heroes != null) {
 		var linked = [];
 		$.Each(SelectedHeroData.linked_heroes, function(hero) {
@@ -117,33 +108,34 @@ function ChooseHeroUpdatePanels() {
 		});
 		$("#SelectedHeroLinkedHero").text = linked.join(", ")
 	}
-
 	$("#SelectedHeroAbilitiesPanelInner").RemoveAndDeleteChildren()
-	for (var key in SelectedHeroData.abilities) {
-		var abilityName = SelectedHeroData.abilities[key]
-		var abilityPanel = $.CreatePanel('DOTAAbilityImage', $("#SelectedHeroAbilitiesPanelInner"), "")
-		abilityPanel.AddClass("SelectedHeroAbility")
-		abilityPanel.abilityname = abilityName
-		abilityPanel.SetPanelEvent('onmouseover', (function(_abilityName, _panel) {
-			return function() {
-				$.DispatchEvent("DOTAShowAbilityTooltip", _panel, _abilityName);
-			}
-		})(abilityName, abilityPanel))
-		abilityPanel.SetPanelEvent('onmouseout', (function(_panel) {
-			return function() {
-				$.DispatchEvent("DOTAHideAbilityTooltip", _panel);
-			}
-		})(abilityPanel))
-	}
+	FillAbilitiesUI($("#SelectedHeroAbilitiesPanelInner"), SelectedHeroData.abilities, "SelectedHeroAbility")
+	FillAttributeUI($("#HeroListControlsGroup3"), SelectedHeroData)
+}
 
+function FillAbilitiesUI(rootPanel, abilities, className) {
+	$.Each(abilities, function(abilityName) {
+		var abilityPanel = $.CreatePanel('DOTAAbilityImage', rootPanel, "")
+		abilityPanel.AddClass(className)
+		abilityPanel.abilityname = abilityName
+		abilityPanel.SetPanelEvent('onmouseover', function() {
+			$.DispatchEvent("DOTAShowAbilityTooltip", abilityPanel, abilityName);
+		})
+		abilityPanel.SetPanelEvent('onmouseout', function() {
+			$.DispatchEvent("DOTAHideAbilityTooltip", abilityPanel);
+		})
+	})
+}
+
+function FillAttributeUI(rootPanel, SelectedHeroData) {
 	for (var i = 2; i >= 0; i--) {
-		$("#DotaAttributePic_" + (i + 1)).SetHasClass("PrimaryAttribute", SelectedHeroData.attributes.attribute_primary == i)
-		$("#HeroAttributes_" + (i + 1)).text = SelectedHeroData.attributes["attribute_base_" + i] + " + " + Number(SelectedHeroData.attributes["attribute_gain_" + i]).toFixed(1)
+		rootPanel.FindChildTraverse("DotaAttributePic_" + (i + 1)).SetHasClass("PrimaryAttribute", SelectedHeroData.attributes.attribute_primary == i)
+		rootPanel.FindChildTraverse("HeroAttributes_" + (i + 1)).text = SelectedHeroData.attributes["attribute_base_" + i] + " + " + Number(SelectedHeroData.attributes["attribute_gain_" + i]).toFixed(1)
 	}
-	$("#HeroAttributes_damage").text = SelectedHeroData.attributes.damage_min + " - " + SelectedHeroData.attributes.damage_max
-	$("#HeroAttributes_speed").text = SelectedHeroData.attributes.movespeed
-	$("#HeroAttributes_armor").text = SelectedHeroData.attributes.armor
-	$("#HeroAttributes_bat").text = Number(SelectedHeroData.attributes.attackrate).toFixed(1)
+	rootPanel.FindChildTraverse("HeroAttributes_damage").text = SelectedHeroData.attributes.damage_min + " - " + SelectedHeroData.attributes.damage_max
+	rootPanel.FindChildTraverse("HeroAttributes_speed").text = SelectedHeroData.attributes.movespeed
+	rootPanel.FindChildTraverse("HeroAttributes_armor").text = SelectedHeroData.attributes.armor
+	rootPanel.FindChildTraverse("HeroAttributes_bat").text = Number(SelectedHeroData.attributes.attackrate).toFixed(1)
 }
 
 function SwitchTab() {

@@ -6,7 +6,7 @@ if not HeroSelection then
 		hero = "npc_dota_hero_abaddon",
 		status = "hover"
 	}
-	HeroSelection.CurrentState = HERO_SELECTION_STATE_NOT_STARTED
+	HeroSelection.CurrentState = HERO_SELECTION_PHASE_NOT_STARTED
 end
 
 require("hero_selection/util")
@@ -14,13 +14,14 @@ require("hero_selection/linked")
 require("hero_selection/hero_selection")
 require("hero_selection/client_actions")
 
-HERO_SELECTION_STATE_NOT_STARTED = 0
-HERO_SELECTION_STATE_ALLPICK = 1
-HERO_SELECTION_STATE_STRATEGY = 2
-HERO_SELECTION_STATE_END = 3
+HERO_SELECTION_PHASE_NOT_STARTED = 0
+HERO_SELECTION_PHASE_BANNING = 1
+HERO_SELECTION_PHASE_ALLPICK = 2
+HERO_SELECTION_PHASE_STRATEGY = 3
+HERO_SELECTION_PHASE_END = 4
 
 HERO_SELECTION_PICK_TIME = 80
-HERO_SELECTION_STRATEGY_TIME = 35
+HERO_SELECTION_STRATEGY_TIME = 35 + 10000
 
 
 function HeroSelection:Initialize()
@@ -115,11 +116,15 @@ end
 
 function HeroSelection:HeroSelectionStart()
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled(true)
-	HeroSelection:SetState(HERO_SELECTION_STATE_ALLPICK)
-	self:SetTimerDuration(HERO_SELECTION_PICK_TIME)
-	HeroSelection.GameStartTimer = Timers:CreateTimer(HERO_SELECTION_PICK_TIME, function()
-		HeroSelection:PreformGameStart()
-	end)
+	if BANNING_PHASE_ENABLED then --Ranked
+		HeroSelection:SetState(HERO_SELECTION_PHASE_BANNING)
+	else
+		HeroSelection:SetState(HERO_SELECTION_PHASE_ALLPICK)
+		self:SetTimerDuration(HERO_SELECTION_PICK_TIME)
+		HeroSelection.GameStartTimer = Timers:CreateTimer(HERO_SELECTION_PICK_TIME, function()
+			HeroSelection:PreformGameStart()
+		end)
+	end
 end
 
 function HeroSelection:PreformGameStart()
@@ -144,7 +149,7 @@ function HeroSelection:PreformGameStart()
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled(DISABLE_ANNOUNCER)
 	--CustomGameEventManager:Send_ServerToAllClients("hero_selection_show_precache", {})
 	HeroSelection:SetTimerDuration(HERO_SELECTION_STRATEGY_TIME)
-	HeroSelection:SetState(HERO_SELECTION_STATE_STRATEGY)
+	HeroSelection:SetState(HERO_SELECTION_PHASE_STRATEGY)
 
 	HeroSelection.GameStartTimer = Timers:CreateTimer(HERO_SELECTION_STRATEGY_TIME, function()
 		HeroSelection:EndStrategyTime(toPrecache)
@@ -168,7 +173,7 @@ function HeroSelection:EndStrategyTime(toPrecache)
 			end
 			if canEnd then
 				--Actually enter in-game state
-				HeroSelection:SetState(HERO_SELECTION_STATE_END)
+				HeroSelection:SetState(HERO_SELECTION_PHASE_END)
 				Timers:CreateTimer({
 					useGameTime = false,
 					endTime = 3.75,

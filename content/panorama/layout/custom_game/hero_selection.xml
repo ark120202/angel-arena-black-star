@@ -37,10 +37,7 @@
 		<Panel hittest="false" id="HeroSelectionBox">
 			<!-- <Panel id="SelectedHeroPanel" hittest="false">
 				<Panel id="SelectedHeroPreview">
-					<Panel id="SelectedHeroScene">
-						<DOTAScenePanel style="width: 100%; height: 100%;" unit="npc_dota_hero_abaddon"/>
-						
-					</Panel>
+					
 				</Panel>
 
 				<Panel id="SelectedHeroDescriptionPanel">
@@ -76,6 +73,7 @@
 						</Button>
 					</Panel>
 					<Panel id="HeroListControlsGroup3" class="HeroListControlsGroup">
+						<Image id="HeroPreviewEnterButton" src="s2r://panorama/images/control_icons/return_to_game_png.vtex" onactivate="ToggleHeroPreviewHeroList(true)"/>
 						<Panel id="SelectedHeroAttributesPanel">
 							<Panel class="SelectedHeroAttributesElement" style="flow-children: down; height: fit-children; width: fit-children; vertical-align: center; margin-right: 12px;">
 								<Image src="file://{resources}/images/custom_game/hud/damage.png" style="horizontal-align: center;"/>
@@ -122,7 +120,52 @@
 			</Panel>
 
 			<Panel id="SelectedHeroPreview">
-				<Panel id="" />	
+				<Panel id="HeroPreviewSceneRoot">
+					<DOTAScenePanel id="PreviewRays" hittest="false" map="scenes/loadout_preview_rays" camera="camera_1" />
+					<Panel id="HeroPreviewScene" />
+					<Image id="HeroPreviewReturnButton" src="s2r://panorama/images/control_icons/return_to_game_png.vtex" onactivate="ToggleHeroPreviewHeroList(false)"/>
+				</Panel>
+				<Panel id="HeroPreviewInformation">
+					<Panel id="HeroPreviewAbilitiesAndAttributes">
+						<Panel id="HeroPreviewAbilities" />
+						<Panel id="HeroPreviewAttributes">
+							<Panel class="SelectedHeroAttributesElement" style="flow-children: down; height: fit-children; width: fit-children; vertical-align: center; margin-right: 12px;">
+								<Image src="file://{resources}/images/custom_game/hud/damage.png" style="horizontal-align: center;"/>
+								<Label id="HeroAttributes_damage" class="AttributeValueText" style="horizontal-align: center;" text="0 - 0" />
+							</Panel>
+							<Panel style="height: 100%; flow-children: down;">
+								<Panel class="SelectedHeroAttributesElement">
+									<Image src="file://{resources}/images/custom_game/hud/movespeed.png" style="vertical-align: center; padding-left: 6px; margin-right: 5px;"/>
+									<Label id="HeroAttributes_speed" class="AttributeValueText" text="0" />
+								</Panel>
+								<Panel class="SelectedHeroAttributesElement">
+									<Label style="color: white; align: center center; margin-left: 5px; font-size: 22px; horizontal-align: left;" text="BAT: " />
+									<Label id="HeroAttributes_bat" class="AttributeValueText" text="0" />
+								</Panel>
+								<Panel class="SelectedHeroAttributesElement">
+									<Image src="file://{resources}/images/custom_game/hud/armor.png" style="vertical-align: center; padding-left: 4px;"/>
+									<Label id="HeroAttributes_armor" style="margin-left: 5px;" class="AttributeValueText" text="0" />
+								</Panel>
+							</Panel>
+							<Panel style="width: 128px; height: 100%; flow-children: down;">
+								<Panel class="SelectedHeroAttributesElement">
+									<Panel class="DotaAttributePic" id="DotaAttributePic_1" />
+									<Label id="HeroAttributes_1" class="AttributeValueText" text="0 + 0.0" />
+								</Panel>
+								<Panel class="SelectedHeroAttributesElement">
+									<Label class="DotaAttributePic" id="DotaAttributePic_2" text="△" />
+									<Label id="HeroAttributes_2" class="AttributeValueText" text="0 + 0.0" />
+								</Panel>
+								<Panel class="SelectedHeroAttributesElement">
+									<Panel class="DotaAttributePic" id="DotaAttributePic_3" />
+									<Label id="HeroAttributes_3" class="AttributeValueText" text="0 + 0.0" />
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+
+					<UICanvas id="HeroStatsHistoryCanvas" style="width:100%;height:300px;background-color:black;" />
+				</Panel>
 			</Panel>
 
 			<Panel id="SelectionStatusPanel" >
@@ -225,23 +268,6 @@
 							<TextEntry id="SelectionChatEntry" maxchars="128" oninputsubmit="ChatSendMessage()" placeholder="#chat_placeholder_send_message"/>
 						</Panel>
 					</Panel>
-				</Panel>
-			</Panel>
-		</Panel>
-
-		<Panel id="HeroSelectionPrecacheBase">
-			<Panel id="PrecacheLoadingMessagePanel">
-				<Label id="PrecacheLoadingMessageLabel" text="#hero_selection_loading_message"/>
-				<ProgressBar id="PrecacheProgressBar" />
-			</Panel>
-			<Panel id="PrecacheTeamContainer">
-				<Panel class="PrecacheRow">
-					<Panel id="PrecacheTeamEntryTeam2" class="PrecacheTeamEntry" />
-					<Panel id="PrecacheTeamEntryTeam6" class="PrecacheTeamEntry" />
-				</Panel>
-				<Panel class="PrecacheRow">
-					<Panel id="PrecacheTeamEntryTeam3" class="PrecacheTeamEntry" />
-					<Panel id="PrecacheTeamEntryTeam7" class="PrecacheTeamEntry" />
 				</Panel>
 			</Panel>
 		</Panel>

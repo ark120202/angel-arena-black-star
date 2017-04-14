@@ -1,6 +1,8 @@
 function HeroSelection:OnHeroSelectHero(data)
 	local hero = tostring(data.hero)
-	if HeroSelection:GetState() == HERO_SELECTION_STATE_ALLPICK and not HeroSelection:IsHeroSelected(hero) and HeroSelection:VerifyHeroGroup(hero, "Selection") then
+	if HeroSelection:GetState() == HERO_SELECTION_PHASE_BANNING --[[and not HeroSelection:IsHeroBanned(hero) and HeroSelection:VerifyHeroGroup(hero, "Selection")]] then
+		print("BAN HERO ", hero)
+	elseif HeroSelection:GetState() == HERO_SELECTION_PHASE_ALLPICK and not HeroSelection:IsHeroSelected(hero) and HeroSelection:VerifyHeroGroup(hero, "Selection") then
 		local playerID = data.PlayerID
 		local linked = GetKeyValue(hero, "LinkedHero")
 		local newStatus = "picked"
@@ -47,14 +49,14 @@ function HeroSelection:OnHeroSelectHero(data)
 end
 
 function HeroSelection:OnHeroHover(data)
-	if HeroSelection:GetState() == HERO_SELECTION_STATE_ALLPICK then
+	if HeroSelection:GetState() == HERO_SELECTION_PHASE_ALLPICK then
 		HeroSelection:UpdateStatusForPlayer(data.PlayerID, "hover", tostring(data.hero), true)
 	end
 end
 
 function HeroSelection:OnHeroRandomHero(data)
 	local team = PlayerResource:GetTeam(data.PlayerID)
-	if HeroSelection:GetState() == HERO_SELECTION_STATE_ALLPICK and HeroSelection:GetPlayerStatus(data.PlayerID).status ~= "picked" then
+	if HeroSelection:GetState() == HERO_SELECTION_PHASE_ALLPICK and HeroSelection:GetPlayerStatus(data.PlayerID).status ~= "picked" then
 		HeroSelection:PreformPlayerRandom(data.PlayerID)
 	end
 	HeroSelection:CheckEndHeroSelection()
@@ -64,7 +66,7 @@ function HeroSelection:OnMinimapSetSpawnbox(data)
 	local team = PlayerResource:GetTeam(data.PlayerID)
 
 	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID))
-	if HeroSelection:GetState() < HERO_SELECTION_STATE_END then
+	if HeroSelection:GetState() < HERO_SELECTION_PHASE_END then
 		local SpawnBoxes = tableData[data.PlayerID].SpawnBoxes or {}
 		local nd = (data.team or 2) .. "_" .. (data.level or 1) .. "_" .. (data.index or 0)
 		if not table.contains(SpawnBoxes, nd) then

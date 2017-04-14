@@ -14,12 +14,13 @@ var SelectedHeroData,
 	PlayerSpawnBoxes = {},
 	HeroSelectionState = -1,
 	PlayerPanels = [],
-	LocalPlayerStatus = {};
+	LocalPlayerStatus = {},
+	InitializationStates = {};
 var SteamIDSpecialBGs = {
 	//ark120202
-	109792606: [
+	/*109792606: [
 		"https://pp.userapi.com/c638727/v638727976/1134a/d1RxLF8mWkE.jpg",
-	],
+	],*/
 	//Murzik
 	82292900: [
 		"https://wallpaperscraft.ru/image/kot_morda_pushistyj_polosatyj_97082_1920x1080.jpg",
@@ -94,8 +95,15 @@ function UpdateSelectionButton() {
 	$("#HeroRandomButton").enabled = canPick && !IsLocalHeroLocked()
 	if (SelectedHeroData != null) {
 		var context = $.GetContextPanel()
-		context.SetHasClass("LocalHeroLockButton", SelectedHeroData.linked_heroes != null && (!IsLocalHeroLocked() || SelectedHeroData.heroKey != LocalPlayerStatus.hero));
-		context.SetHasClass("LocalHeroUnlockButton", SelectedHeroData.linked_heroes != null && IsLocalHeroLocked() && SelectedHeroData.heroKey == LocalPlayerStatus.hero);
+		var mode = "pick";
+		if (HeroSelectionState == "Banning") {
+			mode = "ban"
+		} else if (SelectedHeroData.linked_heroes != null) {
+			mode = IsLocalHeroLocked() && SelectedHeroData.heroKey == LocalPlayerStatus.hero ? "unlock" : "lock"
+		}
+		context.SetHasClass("LocalHeroLockButton", mode == "lock");
+		context.SetHasClass("LocalHeroUnlockButton", mode == "unlock");
+		context.SetHasClass("LocalHeroBanButton", mode == "ban");
 	}
 }
 
@@ -103,7 +111,7 @@ function UpdateTimer() {
 	$.Schedule(0.2, UpdateTimer);
 	var SelectionTimerRemainingTime = SelectionTimerEndTime - Game.GetGameTime()
 	if (SelectionTimerRemainingTime > 0) {
-		if (HeroSelectionState != HERO_SELECTION_STATE_END) {
+		if (HeroSelectionState != HERO_SELECTION_PHASE_END) {
 			hud.GetChild(0).AddClass("IsBeforeGameplay")
 		}
 		$("#HeroSelectionTimer").text = Math.ceil(SelectionTimerRemainingTime);
@@ -134,6 +142,9 @@ function Snippet_PlayerPanel(pid, root) {
 		panel.BLoadLayoutSnippet("PlayerPanel")
 		panel.FindChildTraverse("NickName").text = Players.GetPlayerName(pid)
 		panel.FindChildTraverse("ImageHost").style.borderColor = GetHEXPlayerColor(pid)
+		/*panel.FindChildTraverse("ImageHost").SetPanelEvent("", function() {
+
+		})*/
 		PlayerPanels[pid] = panel
 	}
 	return PlayerPanels[pid]
@@ -171,8 +182,12 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 			if (isLocalPlayer) {
 				LocalPlayerStatus = playerData
 				$.GetContextPanel().SetHasClass("LocalPlayerLocked", playerData.status == "locked")
+				if (!$.GetContextPanel().BHasClass("LocalPlayerPicked") && playerData.status == "picked") {
+					OnLocalPlayerPicked()
+				} else if ($.GetContextPanel().BHasClass("LocalPlayerPicked") && playerData.status != "picked") {
+					ToggleHeroPreviewHeroList(false)
+				}
 				$.GetContextPanel().SetHasClass("LocalPlayerPicked", playerData.status == "picked")
-				if (playerData.status == "picked") OnLocalPlayerPicked()
 			}
 
 			PlayerPanel.SetHasClass("HoveredHero", playerData.status == "hover")
@@ -226,29 +241,36 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 }
 
 function OnLocalPlayerPicked() {
-	//Set hero preview visible
-	//Find model
-	var heroImageXML;
+	var localHeroData = {};
+	//TODO: Tab data shoud be set of Hero - Info
 	hero_tabs_iter:
 		for (var tabkey in tabsData) {
 			for (var herokey in tabsData[tabkey]) {
 				var heroData = tabsData[tabkey][herokey]
 				if (heroData.heroKey == LocalPlayerStatus.hero) {
-					if (heroData.custom_scene_camera != null)
-						heroImageXML = "<DOTAScenePanel particleonly='false' rotateonhover='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' map='custom_scenes_map' camera='" + heroData.custom_scene_camera + "'/>";
-					else if (heroData.custom_scene_image != null)
-						heroImageXML = "<Image style='opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' src='" + heroData.custom_scene_image + "'/>";
-					else
-						heroImageXML = "<DOTAScenePanel particleonly='false' rotateonhover='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' unit='" + heroData.model + "'/>";
+					localHeroData = heroData
 					break hero_tabs_iter
 				}
 			}
 		}
-	
 
+	var heroImageXML = localHeroData.custom_scene_camera != null ? "<DOTAScenePanel particleonly='false' allowrotation='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' map='custom_scenes_map' camera='" + localHeroData.custom_scene_camera + "'/>" : localHeroData.custom_scene_image != null ? "<Image src='" + localHeroData.custom_scene_image + "'/>" : "<DOTAScenePanel particleonly='false' allowrotation='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' unit='" + localHeroData.model + "'/>";
+	var ScenePanel = $("#HeroPreviewScene")
+	ScenePanel.RemoveAndDeleteChildren()
+	ScenePanel.BCreateChildren(heroImageXML);
+	$("#HeroPreviewAbilities").RemoveAndDeleteChildren()
+	FillAbilitiesUI($("#HeroPreviewAbilities"), localHeroData.abilities, "HeroPreviewAbility")
+	FillAttributeUI($("#HeroPreviewAttributes"), localHeroData);
+					
 	//var HeroLabel = $.CreatePanel('Label', PlayerInTeamPanel, "")
 	//HeroLabel.AddClass("PrecacheHeroLabel")
 	//HeroLabel.text = $.Localize("#" + LocalPlayerStatus.hero);
+
+	ToggleHeroPreviewHeroList(true)
+}
+
+function ToggleHeroPreviewHeroList(isPreview) {
+	$.GetContextPanel().SetHasClass("HeroPreview", isPreview != null ? isPreview : !$.GetContextPanel().BHasClass("HeroPreview"))
 }
 
 function OnMinimapClickSpawnBox(team, level, index) {
@@ -277,33 +299,40 @@ function StartStrategyTime() {
 }
 
 function UpdateMainTable(tableName, changesObject, deletionsObject) {
-	if (changesObject.HeroSelectionState != null) {
-		switch (changesObject.HeroSelectionState) {
-			case HERO_SELECTION_STATE_STRATEGY:
-				StartStrategyTime()
-				break;
-			case HERO_SELECTION_STATE_END:
-				HeroSelectionEnd(HeroSelectionState == -1);
-				break;
-		}
-		HeroSelectionState = changesObject.HeroSelectionState;
+	var newState = changesObject.HeroSelectionState
+	if (newState < HERO_SELECTION_PHASE_END && changesObject.HeroTabs != null) {
+		HeroSelectionStart(changesObject);
+	}
+	if (newState != null) {
+		SetCurrentPhase(newState)
 	}
 	if (changesObject.TimerEndTime != null) {
 		SelectionTimerEndTime = changesObject.TimerEndTime
 	}
-	if (HeroSelectionState < HERO_SELECTION_STATE_END) {
-		if (changesObject.HeroTabs != null)
-			HeroSelectionStart(changesObject);
-		if (HeroSelectionState == HERO_SELECTION_STATE_ALLPICK) {
-			UpdateTimer();
-			$.Msg("SFP!")
-			SelectFirstHeroPanel();
-		};
+}
+
+function SetCurrentPhase(newState) {
+	switch (newState) {
+		case HERO_SELECTION_PHASE_END:
+			HeroSelectionEnd(HeroSelectionState == -1);
+			break;
+		case HERO_SELECTION_PHASE_STRATEGY:
+			StartStrategyTime()
+		case HERO_SELECTION_PHASE_ALLPICK:
+			if (!InitializationStates[HERO_SELECTION_PHASE_ALLPICK]) {
+				InitializationStates[HERO_SELECTION_PHASE_ALLPICK] = true;
+				UpdateTimer();
+				SelectFirstHeroPanel();
+			}
 	}
+	var context = $.GetContextPanel()
+	HeroSelectionState = newState;
+	InitializationStates[newState] = true;
 }
 
 (function() {
 	$.GetContextPanel().visible = false;
+	$.GetContextPanel().RemoveClass("LocalPlayerPicked")
 	if (Players.GetTeam(Game.GetLocalPlayerID()) != DOTA_TEAM_SPECTATOR) {
 		DynamicSubscribePTListener("hero_selection_available_heroes", UpdateMainTable);
 		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {

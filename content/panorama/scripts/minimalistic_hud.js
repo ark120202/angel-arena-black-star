@@ -375,7 +375,6 @@ function UpdateBossItemVote(id, data) {
 (function() {
 	HookPanoramaPanels();
 	_DynamicMinimapSubscribe($("#DynamicMinimapRoot"));
-	$("#DynamicMinimapRoot").visible = GetSteamID(Game.GetLocalPlayerID(), 32) != 82292900
 	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
 			DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
