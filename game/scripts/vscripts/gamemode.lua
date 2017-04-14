@@ -47,7 +47,7 @@ local requirements = {
 	"spawner",
 	"bosses",
 	"duel",
-	"hero_selection",
+	"hero_selection/main",
 	"internal/containers",
 	"herovoice",
 	"gold",

@@ -2,11 +2,11 @@
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="s2r://panorama/styles/play.vcss_c" />
-		<include src="file://{resources}/styles/team_select.css" />
+		<include src="file://{resources}/styles/arena_setup.css" />
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/util.js" />
-		<include src="file://{resources}/scripts/team_select.js" />
+		<include src="file://{resources}/scripts/arena_setup.js" />
 	</scripts>
 	<snippets>
 		<snippet name="Team">

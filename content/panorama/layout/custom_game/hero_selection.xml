@@ -118,10 +118,11 @@
 					<TextEntry id="HeroSearchTextEntry" oninputsubmit="SearchHero();" placeholder="#hero_selection_button_search"/>
 					<Panel id="SelectedHeroAbilitiesPanelInner" />
 				</Panel>
-				<Panel id="HeroListBasePanelHost">
-					<Panel id="HeroListPanel" />
-					<Panel id="HeroListScenes" />
-				</Panel>
+				<Panel id="HeroListPanel" />
+			</Panel>
+
+			<Panel id="SelectedHeroPreview">
+				<Panel id="" />	
 			</Panel>
 
 			<Panel id="SelectionStatusPanel" >

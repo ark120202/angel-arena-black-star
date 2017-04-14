@@ -5,6 +5,8 @@
 		<include src="file://{resources}/scripts/custom_ui_manifest.js" />
 	</scripts>
 	<Panel>
+		<CustomUIElement type="GameSetup" layoutfile="file://{resources}/layout/custom_game/arena_setup.xml" />
+
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/statcollection.xml" />
 
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_notifications.xml" /> 
@@ -19,7 +21,6 @@
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_talents.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/ability_shop.xml" />
 		<CustomUIElement type="FlyoutScoreboard" layoutfile="file://{resources}/layout/custom_game/scoreboard_flyout.xml" />
-		<!-- <CustomUIElement type="FlyoutScoreboard"    layoutfile="file://{resources}/layout/custom_game/arena_flyout_scoreboard.xml" /> -->
 		<CustomUIElement type="EndScreen"           layoutfile="file://{resources}/layout/custom_game/arena_end_screen.xml" />
 
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hero_selection.xml" />
@@ -29,8 +30,6 @@
 
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/modmaker/modmaker.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_attachments.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/debug_panel.xml" />
-		<!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_talent_tooltip.xml" /> -->
 		
 		<!-- From Overthrow.
 			<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/overthrow_item_notification.xml" />

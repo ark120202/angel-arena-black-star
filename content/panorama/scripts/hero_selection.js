@@ -3,8 +3,7 @@ var MainPanel = $("#HeroSelectionBox")
 var SelectedHeroData,
 	SelectedHeroPanel,
 	SelectedTabIndex,
-	SelectionTimerDuration,
-	SelectionTimerStartTime = 0,
+	SelectionTimerEndTime = 0,
 	HideEvent,
 	PTID,
 	DOTA_ACTIVE_GAMEMODE,
@@ -33,7 +32,6 @@ var SteamIDSpecialBGs = {
 
 function HeroSelectionStart(HeroesServerData) {
 	$.GetContextPanel().visible = true;
-	SelectionTimerDuration = HeroesServerData.SelectionTime;
 	tabsData = HeroesServerData.HeroTabs
 	for (var tabKey in tabsData) {
 		var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey)
@@ -52,7 +50,7 @@ function HeroSelectionEnd(bImmidate) {
 	})
 	$.Schedule(bImmidate ? 0 : 5.6, function() { //4 + 1.5 + 0.1
 		MainPanel.visible = false
-		FindDotaHudElement("PausedInfo").style.opacity = 1;
+		//FindDotaHudElement("PausedInfo").style.opacity = 1;
 		if (HideEvent != null)
 			GameEvents.Unsubscribe(HideEvent)
 		if (PTID != null)
@@ -102,10 +100,9 @@ function UpdateSelectionButton() {
 }
 
 function UpdateTimer() {
-	var SelectionTimerCurrentTime = Game.GetGameTime();
-	var SelectionTimerRemainingTime = SelectionTimerDuration - (SelectionTimerCurrentTime - SelectionTimerStartTime)
+	$.Schedule(0.2, UpdateTimer);
+	var SelectionTimerRemainingTime = SelectionTimerEndTime - Game.GetGameTime()
 	if (SelectionTimerRemainingTime > 0) {
-		$.Schedule(0.2, UpdateTimer);
 		if (HeroSelectionState != HERO_SELECTION_STATE_END) {
 			hud.GetChild(0).AddClass("IsBeforeGameplay")
 		}
@@ -151,7 +148,7 @@ function IsLocalHeroLocked() {
 }
 
 function IsLocalHeroLockedOrPicked() {
-	return LocalPlayerStatus.status == "locked" || LocalPlayerStatus.status == "locked"
+	return IsLocalHeroPicked() || IsLocalHeroLocked()
 }
 
 function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
@@ -175,6 +172,7 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 				LocalPlayerStatus = playerData
 				$.GetContextPanel().SetHasClass("LocalPlayerLocked", playerData.status == "locked")
 				$.GetContextPanel().SetHasClass("LocalPlayerPicked", playerData.status == "picked")
+				if (playerData.status == "picked") OnLocalPlayerPicked()
 			}
 
 			PlayerPanel.SetHasClass("HoveredHero", playerData.status == "hover")
@@ -227,50 +225,30 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	UpdateSelectionButton()
 }
 
-function ShowPrecache() {
-	$("#HeroSelectionBox").visible = false
-	$("#HeroSelectionPrecacheBase").visible = true
-	var PlayerPickData = PlayerTables.GetAllTableValues("hero_selection")
-	FindDotaHudElement("PausedInfo").style.opacity = 0;
-	for (var teamNumber in PlayerPickData) {
-		/*if ($("#team_selection_panels_team" + teamNumber) == null) {
-			var TeamPanel = $.CreatePanel('Panel', $("#TeamSelectionStatusPanel"), "team_selection_panels_team" + teamNumber)
-			TeamPanel.AddClass("TeamPanel")
-		}*/
-
-		var TeamPanel = $("#PrecacheTeamEntryTeam" + teamNumber)
-		var color = GameUI.CustomUIConfig().team_colors[teamNumber] + "4c"
-		TeamPanel.style.backgroundColor = "gradient(linear, 100% 100%, 0% 100%, from( " + color + " ), to( transparent ))"
-		for (var playerIdInTeam in PlayerPickData[teamNumber]) {
-			var SelectedPlayerHeroData = PlayerPickData[teamNumber][playerIdInTeam]
-			var PlayerInTeamPanel = $.CreatePanel('Panel', TeamPanel, "")
-			PlayerInTeamPanel.AddClass("PrecacheTeamPlayerPanel")
-
-			var PlayerInTeamNickname = $.CreatePanel('Label', PlayerInTeamPanel, "")
-			PlayerInTeamNickname.AddClass("PrecachePlayerInTeamNickname")
-			PlayerInTeamNickname.text = Players.GetPlayerName(Number(playerIdInTeam))
-			PlayerInTeamNickname.style.color = GetHEXPlayerColor(Number(playerIdInTeam))
-			hero_tabs_iter:
-				for (var tabkey in tabsData) {
-					for (var herokey in tabsData[tabkey]) {
-						var heroData = tabsData[tabkey][herokey]
-						if (heroData.heroKey == SelectedPlayerHeroData.hero) {
-							if (heroData.custom_scene_camera != null)
-								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel particleonly='false' rotateonhover='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' map='custom_scenes_map' camera='" + heroData.custom_scene_camera + "'/>");
-							else if (heroData.custom_scene_image != null)
-								PlayerInTeamPanel.BCreateChildren("<Image style='opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' src='" + heroData.custom_scene_image + "'/>");
-							else
-								PlayerInTeamPanel.BCreateChildren("<DOTAScenePanel particleonly='false' rotateonhover='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' unit='" + heroData.model + "'/>");
-							break hero_tabs_iter
-						}
-					}
+function OnLocalPlayerPicked() {
+	//Set hero preview visible
+	//Find model
+	var heroImageXML;
+	hero_tabs_iter:
+		for (var tabkey in tabsData) {
+			for (var herokey in tabsData[tabkey]) {
+				var heroData = tabsData[tabkey][herokey]
+				if (heroData.heroKey == LocalPlayerStatus.hero) {
+					if (heroData.custom_scene_camera != null)
+						heroImageXML = "<DOTAScenePanel particleonly='false' rotateonhover='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' map='custom_scenes_map' camera='" + heroData.custom_scene_camera + "'/>";
+					else if (heroData.custom_scene_image != null)
+						heroImageXML = "<Image style='opacity-mask: url(\"s2r://panorama/images/masks/softedge_box_png.vtex\");' src='" + heroData.custom_scene_image + "'/>";
+					else
+						heroImageXML = "<DOTAScenePanel particleonly='false' rotateonhover='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' unit='" + heroData.model + "'/>";
+					break hero_tabs_iter
 				}
-
-			var HeroLabel = $.CreatePanel('Label', PlayerInTeamPanel, "")
-			HeroLabel.AddClass("PrecacheHeroLabel")
-			HeroLabel.text = $.Localize("#" + SelectedPlayerHeroData.hero);
+			}
 		}
-	}
+	
+
+	//var HeroLabel = $.CreatePanel('Label', PlayerInTeamPanel, "")
+	//HeroLabel.AddClass("PrecacheHeroLabel")
+	//HeroLabel.text = $.Localize("#" + LocalPlayerStatus.hero);
 }
 
 function OnMinimapClickSpawnBox(team, level, index) {
@@ -279,16 +257,6 @@ function OnMinimapClickSpawnBox(team, level, index) {
 		level: level,
 		index: index,
 	});
-}
-
-function UpdatePrecacheProgress(t) {
-	var progress = 0;
-	$.Each(t, function(status, hero) {
-		if (status == 1)
-			progress++;
-	})
-	$("#PrecacheProgressBar").value = progress;
-	$("#PrecacheProgressBar").max = Object.keys(t).length;
 }
 
 var adsurl = "https://goo.gl/wQpngH"; //dota2.sgm-luck.ru
@@ -303,28 +271,41 @@ function OnAdsClicked() {
 	//$.DispatchEvent("DOTADisplayURL", adsurl)
 }
 
+function StartStrategyTime() {
+	$.Msg("ENTER STRATEGY STATE!")
+	//FindDotaHudElement("PausedInfo").style.opacity = 0;
+}
+
+function UpdateMainTable(tableName, changesObject, deletionsObject) {
+	if (changesObject.HeroSelectionState != null) {
+		switch (changesObject.HeroSelectionState) {
+			case HERO_SELECTION_STATE_STRATEGY:
+				StartStrategyTime()
+				break;
+			case HERO_SELECTION_STATE_END:
+				HeroSelectionEnd(HeroSelectionState == -1);
+				break;
+		}
+		HeroSelectionState = changesObject.HeroSelectionState;
+	}
+	if (changesObject.TimerEndTime != null) {
+		SelectionTimerEndTime = changesObject.TimerEndTime
+	}
+	if (HeroSelectionState < HERO_SELECTION_STATE_END) {
+		if (changesObject.HeroTabs != null)
+			HeroSelectionStart(changesObject);
+		if (HeroSelectionState == HERO_SELECTION_STATE_ALLPICK) {
+			UpdateTimer();
+			$.Msg("SFP!")
+			SelectFirstHeroPanel();
+		};
+	}
+}
+
 (function() {
 	$.GetContextPanel().visible = false;
 	if (Players.GetTeam(Game.GetLocalPlayerID()) != DOTA_TEAM_SPECTATOR) {
-		DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {
-			if (changesObject.HeroSelectionState != null) {
-				switch (changesObject.HeroSelectionState) {
-					case HERO_SELECTION_STATE_END:
-						HeroSelectionEnd(HeroSelectionState == -1);
-						break;
-				}
-				HeroSelectionState = changesObject.HeroSelectionState;
-			}
-			if (HeroSelectionState != HERO_SELECTION_STATE_END) {
-				if (changesObject.HeroTabs != null)
-					HeroSelectionStart(changesObject);
-				if (changesObject.SelectionStartTime != null) {
-					SelectionTimerStartTime = changesObject.SelectionStartTime;
-					UpdateTimer();
-					SelectFirstHeroPanel();
-				};
-			}
-		});
+		DynamicSubscribePTListener("hero_selection_available_heroes", UpdateMainTable);
 		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 			if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
 				DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
@@ -337,8 +318,6 @@ function OnAdsClicked() {
 				$("#GameModeInfoGamemodeLabel").text = $.Localize("#arena_game_mode_type_" + DOTA_ACTIVE_GAMEMODE_TYPE)
 			}
 		})
-		GameEvents.Subscribe("hero_selection_show_precache", ShowPrecache);
-		GameEvents.Subscribe("hero_selection_update_precache_progress", UpdatePrecacheProgress);
 		DynamicSubscribePTListener("hero_selection", UpdateHeroesSelected, function(ptid) {
 			PTID = ptid
 		})

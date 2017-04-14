@@ -95,12 +95,6 @@
 	margin-right: 6px;
 	height: 100%;
 	width: 100%;
-}
-
-#HeroListBasePanelHost
-{
-	height: 100%;
-	width: 100%;
 	flow-children: down;
 }
 
