@@ -5,15 +5,16 @@ var DOTA_GAMEMODE_5V5 = 0
 var DOTA_GAMEMODE_4V4V4V4 = 1
 
 var DOTA_GAMEMODE_TYPE_ALLPICK = 100
-var DOTA_GAMEMODE_TYPE_RANDOM_OMG = 101
-var DOTA_GAMEMODE_TYPE_ABILITY_SHOP = 102
+var DOTA_GAMEMODE_TYPE_RANKED_ALLPICK = 101
+var DOTA_GAMEMODE_TYPE_RANDOM_OMG = 102
+var DOTA_GAMEMODE_TYPE_ABILITY_SHOP = 103
 
 var ARENA_GAMEMODE_MAP_NONE = 200
 var ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES = 201
 
 var HERO_SELECTION_PHASE_NOT_STARTED = 0
 var HERO_SELECTION_PHASE_BANNING = 1
-var HERO_SELECTION_PHASE_ALLPICK = 2
+var HERO_SELECTION_PHASE_HERO_PICK = 2
 var HERO_SELECTION_PHASE_STRATEGY = 3
 var HERO_SELECTION_PHASE_END = 4
 
@@ -326,7 +327,9 @@ function shuffle(a) {
 }
 
 function FormatGold(value) {
-	return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	return (GameUI.IsAltDown() ? value : value > 999999 ? (value/1000000).toFixed(2) + 'M' : value > 99999 ? (value/1000).toFixed(1) + 'k' : value)
+		.toString()
+		.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
 String.prototype.endsWith = function(suffix) {

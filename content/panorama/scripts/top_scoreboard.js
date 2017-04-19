@@ -79,8 +79,6 @@ function Snippet_DotaTeamBar(team) {
 		var panel = $.CreatePanel("Panel", rootPanel, "")
 		panel.BLoadLayoutSnippet("DotaTeamBar")
 		panel.team = team
-		panel.SetHasClass("LeftAlignedTeam", !isRight)
-		panel.SetHasClass("RightAlignedTeam", isRight)
 		panel.FindChildTraverse("TopBarScore").style.textShadow = "0 0 7px " + teamColors[team];
 		TeamPanels[team] = panel;
 		SortPanelChildren(rootPanel, dynamicSort("team"), function(child, child2) {

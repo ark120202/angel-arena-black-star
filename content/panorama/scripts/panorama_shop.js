@@ -4,7 +4,6 @@ var ItemList = {},
 	SmallItems = [],
 	SmallItemsAlwaysUpdated = [],
 	SearchingFor = null,
-	TabIndex = null,
 	QuickBuyTarget = null,
 	QuickBuyTargetAmount = 0,
 	LastHero = null,
@@ -34,18 +33,17 @@ function SearchItems() {
 				if (itemName.lastIndexOf("item_recipe_")) {
 					for (var key in ItemData[itemName].names) {
 						if (ItemData[itemName].names[key].search(new RegExp(searchStr, "i")) > -1) {
-							FoundItems.push({
-								itemName: itemName,
-								cost: ItemData[itemName].cost
-							})
+							FoundItems.push(itemName)
 							break;
 						}
 					}
 				}
 			}
-			FoundItems.sort(dynamicSort("cost"))
-			$.Each(FoundItems, function(itemTable) {
-				SnippetCreate_SmallItem($.CreatePanel("Panel", ShopSearchOverlay, "ShopSearchOverlay_item_" + itemTable.itemName), itemTable.itemName)
+			FoundItems.sort(function(x1, x2) {
+				return ItemData[x1].cost - ItemData[x2].cost
+			})
+			$.Each(FoundItems, function(itemName) {
+				SnippetCreate_SmallItem($.CreatePanel("Panel", ShopSearchOverlay, "ShopSearchOverlay_item_" + itemName), itemName)
 			})
 		}
 	}
@@ -72,22 +70,17 @@ function PushItemsToList() {
 
 		if (!isTabSelected) {
 			SelectShopTab(shopName)
+			TabButton.checked = true;
 			isTabSelected = true
 		}
 	}
 
 }
 
-function SelectShopTab(tabIndex) {
-	if (TabIndex != tabIndex) {
-		if (TabIndex != null) {
-			$("#shop_panels_tab_" + TabIndex).RemoveClass("SelectedPage")
-			$("#shop_tab_" + TabIndex).RemoveClass("ShopTabButtonSelected")
-		}
-		$("#shop_panels_tab_" + tabIndex).AddClass("SelectedPage")
-		$("#shop_tab_" + tabIndex).AddClass("ShopTabButtonSelected")
-		TabIndex = tabIndex
-	}
+function SelectShopTab(tabTitle) {
+	$.Each($("#ShopItemsBase").Children(), function(child) {
+		child.SetHasClass("SelectedPage", child.id.replace("shop_panels_tab_", "") == tabTitle);
+	})
 }
 
 function FillShopTable(panel, shopData) {

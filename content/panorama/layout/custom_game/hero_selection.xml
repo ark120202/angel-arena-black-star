@@ -3,6 +3,8 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/dynamic_minimap.css" />
 		<include src="file://{resources}/styles/hero_selection.css" />
+		<include src="file://{resources}/styles/hero_selection_preview.css" />
+		<include src="file://{resources}/styles/hero_selection_picking_player.css" />
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/util.js" />
@@ -20,30 +22,61 @@
 			</Panel>
 		</snippet>
 		<snippet name="PlayerPanel">
-			<Panel class="PlayerInTeamPanel">
+			<!-- <Panel class="PlayerInTeamPanel">
 				<Label id="NickName" />
 				<Panel id="ImageHost">
 					<Image id="HeroImage"/>
 					<Image src="file://{images}/custom_game/icon_disconnect.png" class="DisconnectionIndicator"/>
-					<Image id="LockedIcon" />
-				</Panel>
-			</Panel>
-		</snippet>
-	</snippets>
-	<Panel hittest="false" class="base Shown">
-		<!-- <DOTAScenePanel id="HeroSelectionBackground" map="maps/backgrounds/dashboard_parallax_spring2016.vmap" hittest="false" /> -->
-		<DOTAScenePanel id="HeroSelectionBackground" hittest="false" map="backgrounds/pregame_phase" />
-		<Image id="HeroSelectionCustomBackground" hittest="false" />
-		<Panel hittest="false" id="HeroSelectionBox">
-			<!-- <Panel id="SelectedHeroPanel" hittest="false">
-				<Panel id="SelectedHeroPreview">
-					
-				</Panel>
-
-				<Panel id="SelectedHeroDescriptionPanel">
-					<Label id="SelectedHeroDescriptionText" text="" />
 				</Panel>
 			</Panel> -->
+
+			<DOTAHudHeroPickingPlayer>
+				<Panel id="HeroImageBorder"/>
+				<Panel id="HeroImageContainer" acceptsinput="true">
+					<Panel id="SlotColor"/>
+					<DOTAHeroImage id="HeroImage" >
+						<Panel class="GradientTopBottom"/>
+					</DOTAHeroImage>
+				</Panel>
+				<Label id="PlayerMMR" text="#DOTA_PlayerMMR" />
+				<Panel id="HeroImagePickBar"/>
+				<Panel id="NameContainer">
+					<Label id="PlayerName" text="{s:player_name}" acceptsinput="true" allowtextselection="false" />
+					<Label id="HeroName" text="{s:dota_hero_name}"  allowtextselection="false" />
+				</Panel>
+				<Image id="LockedIcon" />
+				<Panel id="DisconnectedIcon" hittest="false"/>
+				<Panel id="CaptainOverlay" hittest="false" />
+				<Panel id="GoldChange" hittest="false">
+					<Label id="GoldChangeAmount"  hittest="false"/>
+					<Panel id="GoldChangeIcon"  hittest="false"/>
+				</Panel>
+			</DOTAHudHeroPickingPlayer>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="base Shown CanRepick RandomingEnabled">
+		<!-- <DOTAScenePanel id="HeroSelectionBackground" map="maps/backgrounds/dashboard_parallax_spring2016.vmap" hittest="false" /> -->
+		<DOTAScenePanel id="HeroSelectionBackground" hittest="false" map="backgrounds/pregame_phase" particleonly="false" />
+		<!-- <DOTAScenePanel id="HeroSelectionBackgroundRadiant" hittest="false" camera="camera_top" map="backgrounds/pregame_dire_ambient" particleonly="true" />
+		<DOTAScenePanel id="HeroSelectionBackgroundDire" hittest="false" camera="camera_bottom" map="backgrounds/pregame_dire_ambient" particleonly="true" /> -->
+		<Image id="HeroSelectionCustomBackground" hittest="false" />
+		<Panel hittest="false" id="HeroSelectionBox">
+			<Panel id="SelectionStatusPanel" >
+				<Panel id="ExitButton" onactivate="DOTAShowDashboard()"/>
+
+				<Panel id="TeamSelectionStatusPanel">
+					<Panel class="LeftRightFlow FullHeight" id="LeftTeams">
+
+					</Panel>
+					<Panel id="GameModeInfoPanel" >
+						<Label id="HeroSelectionTimer" text="0" />
+						<Label id="GameModeInfoGamemodeLabel" text="#hero_selection_mode_all_pick" />
+					</Panel>
+					<Panel class="LeftRightFlow FullHeight" id="RightTeams">
+
+					</Panel>
+				</Panel>
+			</Panel>
 			<Panel id="HeroListBasePanel">
 				<Panel id="HeroListControls">
 					<Panel id="HeroListControlsGroup1" class="HeroListControlsGroup">
@@ -53,23 +86,23 @@
 								<Label id="SwitchTabButtonLabel" hittest="false" text="#hero_selection_button_switch" />
 							</Panel>
 						</Button>
-						<Button class="SmallTextButton" id="HeroRandomButton" onactivate="RandomHero();">
-							<Panel class="SmallTextButtonContainer">
-								<Image hittest="false" src="file://{resources}/images/custom_game/hero_selection/random.png" />
-								<Label id="HeroRandomButtonLabel" hittest="false" text="#hero_selection_button_random" />
-							</Panel>
-						</Button>
+						<Label id="SelectedHeroOverview" />
 					</Panel>
 					<Panel id="HeroListControlsGroup2" class="HeroListControlsGroup">
-						<Button id="SelectedHeroSelectButton" onactivate="SelectHero();" hittestchildren="false">
+						<Button id="SelectedHeroSelectButton" onactivate="SelectHero()" hittestchildren="false">
 							<Label id="SelectedHeroSelectLabel" text="#hero_selection_button_select_hero" />
 							<Label id="SelectedHeroLockLabel" text="#hero_selection_lock" />
 							<Label id="SelectedHeroUnlockLabel" text="#hero_selection_unlock" />
-							<Label id="SelectedHeroSelectHeroName" text="#npc_dota_hero_abaddon" />
+							<Label id="SelectedHeroBanLabel" text="#DOTA_Hero_Selection_BanTitle" />
+							<Label id="SelectedHeroSelectHeroName" />
 							<Panel id="SelectedHeroLinkedHeroPanel" >
 								<Label id="SelectedHeroLinkedLabel" text="#hero_selection_linked_hero" />
 								<Label id="SelectedHeroLinkedHero" />
 							</Panel>
+						</Button>
+						<Button id="RandomButton" class="PickButton" onactivate="RandomHero()" >
+							<Panel class="RandomIcon" />
+							<Label text="#random" />
 						</Button>
 					</Panel>
 					<Panel id="HeroListControlsGroup3" class="HeroListControlsGroup">
@@ -99,7 +132,7 @@
 									<Label id="HeroAttributes_1" class="AttributeValueText" text="0 + 0.0" />
 								</Panel>
 								<Panel class="SelectedHeroAttributesElement">
-									<Label class="DotaAttributePic" id="DotaAttributePic_2" text="△" />
+									<Panel class="DotaAttributePic" id="DotaAttributePic_2" />
 									<Label id="HeroAttributes_2" class="AttributeValueText" text="0 + 0.0" />
 								</Panel>
 								<Panel class="SelectedHeroAttributesElement">
@@ -123,9 +156,22 @@
 				<Panel id="HeroPreviewSceneRoot">
 					<DOTAScenePanel id="PreviewRays" hittest="false" map="scenes/loadout_preview_rays" camera="camera_1" />
 					<Panel id="HeroPreviewScene" />
+
+					<Button id="EnterGameRepickButton" class="PickButton EnterGameButton" onactivate="$.GetContextPanel().RemoveClass('CanRepick');GameEvents.SendCustomGameEventToServer('hero_selection_player_repick', {hero: SelectedHeroName})"  onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Hero_Selection_TT_RePicking_Text );" >
+						<Panel class="EnterGameIconContainer">
+							<Panel class="RepickIcon"/>
+						</Panel>
+						<Label text="#repick" />
+					</Button>
+
 					<Image id="HeroPreviewReturnButton" src="s2r://panorama/images/control_icons/return_to_game_png.vtex" onactivate="ToggleHeroPreviewHeroList(false)"/>
 				</Panel>
 				<Panel id="HeroPreviewInformation">
+					<Panel id="HeroPreviewHeader">
+						<Panel>
+							<Label id="HeroPreviewName" text="SELECTED HERO" />
+						</Panel>
+					</Panel>
 					<Panel id="HeroPreviewAbilitiesAndAttributes">
 						<Panel id="HeroPreviewAbilities" />
 						<Panel id="HeroPreviewAttributes">
@@ -153,7 +199,7 @@
 									<Label id="HeroAttributes_1" class="AttributeValueText" text="0 + 0.0" />
 								</Panel>
 								<Panel class="SelectedHeroAttributesElement">
-									<Label class="DotaAttributePic" id="DotaAttributePic_2" text="△" />
+									<Panel class="DotaAttributePic" id="DotaAttributePic_2" />
 									<Label id="HeroAttributes_2" class="AttributeValueText" text="0 + 0.0" />
 								</Panel>
 								<Panel class="SelectedHeroAttributesElement">
@@ -164,17 +210,43 @@
 						</Panel>
 					</Panel>
 
-					<UICanvas id="HeroStatsHistoryCanvas" style="width:100%;height:300px;background-color:black;" />
-				</Panel>
-			</Panel>
+					<Panel id="HeroPreviewTabs">
+						<RadioButton class="HeroPreviewTab" group="preview_tabs" selected="true" text="#DOTA_HeroLoadout_Loadout" onactivate="ShowHeroPreviewTab('LoadoutTabContents')" />
+						<Label class="HeroPreviewTabSeparator" text="/" />
+						<RadioButton class="HeroPreviewTab" disabled="true" group="preview_tabs" text="#DOTA_HeroLoadout_Stats" onactivate="ShowHeroPreviewTab('StatsTabContents')" />
+						<Label class="HeroPreviewTabSeparator" text="/" />
+						<RadioButton class="HeroPreviewTab" disabled="true" group="preview_tabs" text="#DOTA_HeroLoadout_Guides" onactivate="ShowHeroPreviewTab('GuidesTabContents')" />
+						<Label class="HeroPreviewTabSeparator" text="/" />
+						<RadioButton class="HeroPreviewTab" group="preview_tabs" text="#DOTA_HeroLoadout_About" onactivate="ShowHeroPreviewTab('AboutTabContents')" />
+					</Panel>
 
-			<Panel id="SelectionStatusPanel" >
-				<Panel id="GameModeInfoPanel" >
-					<Panel id="ExitButton" onactivate="$.DispatchEvent('DOTAShowDashboard')"/>
-					<Label id="HeroSelectionTimer" text="0" />
-					<Label id="GameModeInfoGamemodeLabel" text="#hero_selection_mode_all_pick" />
+					<Panel id="TabContents">
+						<Panel id="LoadoutTabContents" class="HeroPreviewSubTab TabVisible" >
+							<!-- <Panel class="LoadoutPanelHeader">
+								<Label text="#DOTA_Hero_Selection_HeroLoadout" class="LoadoutCategoryTitle" />
+							</Panel>
+							<Panel class="FullWidth" id="HeroLoadoutContainer">
+								
+							</Panel> -->
+
+							<Panel class="LoadoutPanelHeader">
+								<Label text="#DOTA_Hero_Selection_GlobalLoadout" class="LoadoutCategoryTitle" />
+							</Panel>
+							<Panel class="FullWidth" id="GlobalLoadoutContainer" />
+						</Panel>
+						<!-- <DOTALoadoutHeroStats id="StatsTabContents" class="HeroPreviewSubTab" /> -->
+						<!-- <Panel id="GuidesTabContents" class="HeroPreviewSubTab">
+							<DOTAGuideBrowser id="GuideBrowser" />
+						</Panel> -->
+						<Panel id="AboutTabContents" class="HeroPreviewSubTab">
+							<Label id="HeroPreviewOverview" class="HeroDescriptionText" text="{s:hero_hype}" />
+							<!-- <Label class="HeroDescriptionHeader" text="#DOTA_HeroLoadout_Roles" />
+							<DOTAHeroRoles id="HeroRoleDetails" class="ColumnLayout" /> -->
+							<Label class="HeroDescriptionHeader" text="#DOTA_HeroLoadout_Biography" />
+							<Label id="HeroPreviewLore" class="HeroDescriptionText" html="true" />
+						</Panel>
+					</Panel>
 				</Panel>
-				<Panel id="TeamSelectionStatusPanel" />
 			</Panel>
 
 			<Panel id="ChatAndMapPanel">

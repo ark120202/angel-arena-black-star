@@ -9,7 +9,7 @@ function HeroSelection:CheckEndHeroSelection()
 		end
 	end
 	if canEnd then
-		HeroSelection:PreformGameStart()
+		HeroSelection:StartStateStrategy()
 	end
 end
 

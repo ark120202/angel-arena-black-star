@@ -104,7 +104,7 @@ function Snippet_Player_Update(panel) {
 		panel.SetDialogVariableInt("kills", Players.GetKills(playerId));
 		panel.SetDialogVariableInt("deaths", Players.GetDeaths(playerId));
 		panel.SetDialogVariableInt("assists", Players.GetAssists(playerId));
-		panel.SetDialogVariableInt("gold", GetPlayerGold(playerId));
+		panel.SetDialogVariable("gold", FormatGold(GetPlayerGold(playerId)));
 		panel.SetDialogVariableInt("level", Players.GetLevel(playerId))
 		panel.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(heroName));
 		panel.FindChildTraverse("HeroNameLabel").text = $.Localize(heroName).toUpperCase();

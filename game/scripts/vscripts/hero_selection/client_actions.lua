@@ -2,7 +2,7 @@ function HeroSelection:OnHeroSelectHero(data)
 	local hero = tostring(data.hero)
 	if HeroSelection:GetState() == HERO_SELECTION_PHASE_BANNING --[[and not HeroSelection:IsHeroBanned(hero) and HeroSelection:VerifyHeroGroup(hero, "Selection")]] then
 		print("BAN HERO ", hero)
-	elseif HeroSelection:GetState() == HERO_SELECTION_PHASE_ALLPICK and not HeroSelection:IsHeroSelected(hero) and HeroSelection:VerifyHeroGroup(hero, "Selection") then
+	elseif HeroSelection:GetState() == HERO_SELECTION_PHASE_HERO_PICK and not HeroSelection:IsHeroSelected(hero) and HeroSelection:VerifyHeroGroup(hero, "Selection") then
 		local playerID = data.PlayerID
 		local linked = GetKeyValue(hero, "LinkedHero")
 		local newStatus = "picked"
@@ -49,17 +49,25 @@ function HeroSelection:OnHeroSelectHero(data)
 end
 
 function HeroSelection:OnHeroHover(data)
-	if HeroSelection:GetState() == HERO_SELECTION_PHASE_ALLPICK then
+	if HeroSelection:GetState() == HERO_SELECTION_PHASE_HERO_PICK then
 		HeroSelection:UpdateStatusForPlayer(data.PlayerID, "hover", tostring(data.hero), true)
 	end
 end
 
 function HeroSelection:OnHeroRandomHero(data)
 	local team = PlayerResource:GetTeam(data.PlayerID)
-	if HeroSelection:GetState() == HERO_SELECTION_PHASE_ALLPICK and HeroSelection:GetPlayerStatus(data.PlayerID).status ~= "picked" then
+	if HeroSelection:GetState() == HERO_SELECTION_PHASE_HERO_PICK and HeroSelection:GetPlayerStatus(data.PlayerID).status ~= "picked" then
 		HeroSelection:PreformPlayerRandom(data.PlayerID)
 	end
 	HeroSelection:CheckEndHeroSelection()
+end
+
+function HeroSelection:OnHeroRepick(data)
+	if HeroSelection:GetState() == HERO_SELECTION_PHASE_HERO_PICK and not PLAYER_DATA[data.PlayerID].HeroSelectionRepicked then
+		PLAYER_DATA[data.PlayerID].HeroSelectionRepicked = true
+		HeroSelection:UpdateStatusForPlayer(data.PlayerID, "hover", tostring(data.hero))
+		PLAYER_DATA[data.PlayerID].SavedGold = -CUSTOM_GOLD_REPICK_COST
+	end
 end
 
 function HeroSelection:OnMinimapSetSpawnbox(data)

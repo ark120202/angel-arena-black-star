@@ -125,14 +125,14 @@ ABILITY_SHOP_DATA = {
 }
 
 ABILITY_SHOP_SKIP_HEROES = {
-	"npc_dota_hero_base",
-	"npc_dota_hero_invoker",
-	"npc_dota_hero_earth_spirit",
-	"npc_dota_hero_rubick",
-	"npc_dota_hero_arena_base",
-	"npc_arena_hero_sara",
-	"npc_arena_hero_maka",
-	"npc_arena_hero_soul_eater"
+	npc_dota_hero_base = true,
+	npc_dota_hero_invoker = true,
+	npc_dota_hero_earth_spirit = true,
+	npc_dota_hero_rubick = true,
+	npc_dota_hero_arena_base = true,
+	npc_arena_hero_sara = true,
+	npc_arena_hero_maka = true,
+	npc_arena_hero_soul_eater = true,
 }
 
 ABILITY_SHOP_SKIP_ABILITIES = {

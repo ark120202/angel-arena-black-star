@@ -167,11 +167,11 @@
 	color: #5b6872;
 	font-weight: bold;
 }
-.ShopTabButtonSelected
+.ShopTabButton:selected
 {
 	background-color: #57646d77;
 }
-.ShopTabButton.ShopTabButtonSelected Label
+.ShopTabButton:selected Label
 {
 	color: white;
 }

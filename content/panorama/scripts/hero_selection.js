@@ -1,7 +1,6 @@
 "use strict";
 var MainPanel = $("#HeroSelectionBox")
-var SelectedHeroData,
-	SelectedHeroPanel,
+var SelectedHeroPanel,
 	SelectedTabIndex,
 	SelectionTimerEndTime = 0,
 	HideEvent,
@@ -15,7 +14,7 @@ var SelectedHeroData,
 	HeroSelectionState = -1,
 	PlayerPanels = [],
 	LocalPlayerStatus = {},
-	InitializationStates = {};
+	InitializationStates = {}
 var SteamIDSpecialBGs = {
 	//ark120202
 	/*109792606: [
@@ -40,7 +39,6 @@ function HeroSelectionStart(HeroesServerData) {
 		FillHeroesTable(tabsData[tabKey], TabHeroesPanel)
 		TabHeroesPanel.visible = false
 	}
-	$("#SwitchTabButton").visible = tabsData[2] != null;
 	SelectHeroTab(1)
 }
 
@@ -68,7 +66,7 @@ function ChooseHeroPanelHero() {
 	ChooseHeroUpdatePanels()
 	if (!IsLocalHeroLockedOrPicked()) {
 		GameEvents.SendCustomGameEventToServer("hero_selection_player_hover", {
-			hero: SelectedHeroData.heroKey
+			hero: SelectedHeroName
 		})
 	}
 }
@@ -76,30 +74,30 @@ function ChooseHeroPanelHero() {
 function SelectHero() {
 	if (!IsLocalHeroPicked()) {
 		GameEvents.SendCustomGameEventToServer("hero_selection_player_select", {
-			hero: SelectedHeroData.heroKey
+			hero: SelectedHeroName
 		})
-		Game.EmitSound("HeroPicker.Selected")
+		Game.EmitSound("ui.pick_play")
 	}
 }
 
 function RandomHero() {
 	if (!IsLocalHeroLockedOrPicked()) {
 		GameEvents.SendCustomGameEventToServer("hero_selection_player_random", {})
-		Game.EmitSound("HeroPicker.Selected")
 	}
 }
 
 function UpdateSelectionButton() {
-	var canPick = SelectedHeroData == null || (!IsHeroPicked(SelectedHeroData.heroKey) && !IsLocalHeroPicked())
-	$("#SelectedHeroSelectButton").enabled = canPick && (!IsLocalHeroLocked() || SelectedHeroData.heroKey == LocalPlayerStatus.hero)
-	$("#HeroRandomButton").enabled = canPick && !IsLocalHeroLocked()
-	if (SelectedHeroData != null) {
+	var selectedHeroData = HeroesData[SelectedHeroName];
+	var canPick = selectedHeroData == null || (!IsHeroPicked(SelectedHeroName) && !IsLocalHeroPicked())
+	$("#SelectedHeroSelectButton").enabled = canPick && (!IsLocalHeroLocked() || SelectedHeroName == LocalPlayerStatus.hero)
+	$.GetContextPanel().SetHasClass("RandomingEnabled", canPick && !IsLocalHeroLocked())
+	if (selectedHeroData != null) {
 		var context = $.GetContextPanel()
 		var mode = "pick";
 		if (HeroSelectionState == "Banning") {
 			mode = "ban"
-		} else if (SelectedHeroData.linked_heroes != null) {
-			mode = IsLocalHeroLocked() && SelectedHeroData.heroKey == LocalPlayerStatus.hero ? "unlock" : "lock"
+		} else if (selectedHeroData.linked_heroes != null) {
+			mode = IsLocalHeroLocked() && selectedHeroData.heroKey == LocalPlayerStatus.hero ? "unlock" : "lock"
 		}
 		context.SetHasClass("LocalHeroLockButton", mode == "lock");
 		context.SetHasClass("LocalHeroUnlockButton", mode == "unlock");
@@ -136,12 +134,12 @@ function UpdateTimer() {
 	}
 }
 
-function Snippet_PlayerPanel(pid, root) {
+function Snippet_PlayerPanel(pid, rootPanel) {
 	if (PlayerPanels[pid] == null) {
-		var panel = $.CreatePanel('Panel', root, "")
+		var panel = $.CreatePanel("Panel", rootPanel, "")
 		panel.BLoadLayoutSnippet("PlayerPanel")
-		panel.FindChildTraverse("NickName").text = Players.GetPlayerName(pid)
-		panel.FindChildTraverse("ImageHost").style.borderColor = GetHEXPlayerColor(pid)
+		panel.SetDialogVariable("player_name", Players.GetPlayerName(pid))
+		panel.FindChildTraverse("SlotColor").style.backgroundColor = GetHEXPlayerColor(pid)
 		/*panel.FindChildTraverse("ImageHost").SetPanelEvent("", function() {
 
 		})*/
@@ -165,11 +163,12 @@ function IsLocalHeroLockedOrPicked() {
 function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	for (var teamNumber in changesObject) {
 		if ($("#team_selection_panels_team" + teamNumber) == null) {
-			var TeamSelectionPanel = $.CreatePanel('Panel', $("#TeamSelectionStatusPanel"), "team_selection_panels_team" + teamNumber)
+			var isRight = teamNumber % 2 != 0;
+			var TeamSelectionPanel = $.CreatePanel('Panel', $(isRight ? "#RightTeams" : "#LeftTeams"), "team_selection_panels_team" + teamNumber)
 			TeamSelectionPanel.AddClass("TeamSelectionPanel")
 			var color = GameUI.CustomUIConfig().team_colors[teamNumber]
 			TeamSelectionPanel.style.backgroundColor = "gradient(linear, 100% 100%, 0% 100%, from( " + color + "4D" + " ), to( transparent ))"
-			TeamSelectionPanel.style.borderColor = color + "99";
+			//TeamSelectionPanel.style.opacityMask = "url('s2r://panorama/images/masks/hero_model_opacity_mask_png.vtex')"
 		}
 		var TeamSelectionPanel = $("#team_selection_panels_team" + teamNumber)
 		for (var playerIdInTeam in changesObject[teamNumber]) {
@@ -190,14 +189,16 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 				$.GetContextPanel().SetHasClass("LocalPlayerPicked", playerData.status == "picked")
 			}
 
-			PlayerPanel.SetHasClass("HoveredHero", playerData.status == "hover")
-			PlayerPanel.SetHasClass("LockedHero", playerData.status == "locked")
+			PlayerPanel.SetHasClass("HeroPickHovered", playerData.status == "hover")
+			PlayerPanel.SetHasClass("HeroPickLocked", playerData.status == "locked")
 			if (playerData.status == "hover" || playerData.status == "locked") {
 				if (isLocalTeam) {
 					PlayerPanel.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(playerData.hero))
+					PlayerPanel.SetDialogVariable("dota_hero_name", $.Localize(playerData.hero))
 				}
 			} else if (playerData.status == "picked") {
 				PlayerPanel.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(playerData.hero))
+				PlayerPanel.SetDialogVariable("dota_hero_name", $.Localize(playerData.hero))
 			}
 			var heroPanel = $("#HeroListPanel_element_" + playerData.hero)
 			heroPanel.SetHasClass("Picked", IsHeroPicked(playerData.hero))
@@ -241,30 +242,49 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 }
 
 function OnLocalPlayerPicked() {
-	var localHeroData = {};
+	var heroName = LocalPlayerStatus.hero;
+	var localHeroData = HeroesData[heroName];
 	//TODO: Tab data shoud be set of Hero - Info
-	hero_tabs_iter:
-		for (var tabkey in tabsData) {
-			for (var herokey in tabsData[tabkey]) {
-				var heroData = tabsData[tabkey][herokey]
-				if (heroData.heroKey == LocalPlayerStatus.hero) {
-					localHeroData = heroData
-					break hero_tabs_iter
-				}
-			}
-		}
+
+	$("#HeroPreviewName").text = $.Localize(heroName);
+	var bio = $.Localize(heroName + "_bio");
+	$("#HeroPreviewLore").text = bio != heroName + "_bio" ? bio : "";
+	var hype = $.Localize(heroName + "_hype");
+	$("#HeroPreviewOverview").text = hype != heroName + "_hype" ? hype : "";
 
 	var heroImageXML = localHeroData.custom_scene_camera != null ? "<DOTAScenePanel particleonly='false' allowrotation='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' map='custom_scenes_map' camera='" + localHeroData.custom_scene_camera + "'/>" : localHeroData.custom_scene_image != null ? "<Image src='" + localHeroData.custom_scene_image + "'/>" : "<DOTAScenePanel particleonly='false' allowrotation='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' unit='" + localHeroData.model + "'/>";
 	var ScenePanel = $("#HeroPreviewScene")
 	ScenePanel.RemoveAndDeleteChildren()
 	ScenePanel.BCreateChildren(heroImageXML);
+
 	$("#HeroPreviewAbilities").RemoveAndDeleteChildren()
 	FillAbilitiesUI($("#HeroPreviewAbilities"), localHeroData.abilities, "HeroPreviewAbility")
 	FillAttributeUI($("#HeroPreviewAttributes"), localHeroData);
-					
+	
 	//var HeroLabel = $.CreatePanel('Label', PlayerInTeamPanel, "")
 	//HeroLabel.AddClass("PrecacheHeroLabel")
 	//HeroLabel.text = $.Localize("#" + LocalPlayerStatus.hero);
+
+	var GlobalLoadoutItems = FindDotaHudElement("GlobalLoadoutItems");
+	if (GlobalLoadoutItems) {
+		GlobalLoadoutItems.SetParent($("#GlobalLoadoutContainer"));
+		//Custom styles
+		$.Each(GlobalLoadoutItems.FindChildrenWithClassTraverse("HasItemsForSlot"), function(child) {
+			child.SetParent(GlobalLoadoutItems);
+			child.style.width = "180px";
+		})
+		$.Each(GlobalLoadoutItems.FindChildrenWithClassTraverse("GlobalLoadoutSlotCategory"), function(child) {
+			child.visible = false;
+		})
+
+		//These wearables are useless, hide them
+		try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_terrain")[0].GetParent().GetParent().visible = false; } catch(e) {}
+		try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_heroic_statue")[0].GetParent().GetParent().visible = false; } catch(e) {}
+		try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_loading_screen")[0].GetParent().GetParent().visible = false; } catch(e) {}
+
+	}
+	/*var HeroLoadoutItems = FindDotaHudElement("HeroLoadoutItems");
+	if (HeroLoadoutItems) HeroLoadoutItems.SetParent($("#HeroLoadoutContainer"));*/
 
 	ToggleHeroPreviewHeroList(true)
 }
@@ -317,10 +337,11 @@ function SetCurrentPhase(newState) {
 			HeroSelectionEnd(HeroSelectionState == -1);
 			break;
 		case HERO_SELECTION_PHASE_STRATEGY:
+			$.GetContextPanel().RemoveClass("CanRepick")
 			StartStrategyTime()
-		case HERO_SELECTION_PHASE_ALLPICK:
-			if (!InitializationStates[HERO_SELECTION_PHASE_ALLPICK]) {
-				InitializationStates[HERO_SELECTION_PHASE_ALLPICK] = true;
+		case HERO_SELECTION_PHASE_HERO_PICK:
+			if (!InitializationStates[HERO_SELECTION_PHASE_HERO_PICK]) {
+				InitializationStates[HERO_SELECTION_PHASE_HERO_PICK] = true;
 				UpdateTimer();
 				SelectFirstHeroPanel();
 			}
@@ -328,6 +349,12 @@ function SetCurrentPhase(newState) {
 	var context = $.GetContextPanel()
 	HeroSelectionState = newState;
 	InitializationStates[newState] = true;
+}
+
+function ShowHeroPreviewTab(tabID) {
+	$.Each($("#TabContents").Children(), function(child) {
+		child.SetHasClass("TabVisible", child.id == tabID);
+	})
 }
 
 (function() {

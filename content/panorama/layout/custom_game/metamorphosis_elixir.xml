@@ -29,6 +29,7 @@
 								<Label id="SwitchTabButtonLabel" hittest="false" text="#hero_selection_button_switch" />
 							</Panel>
 						</Button>
+						<Label id="SelectedHeroOverview" />
 					</Panel>
 					<Panel id="HeroListControlsGroup2" class="HeroListControlsGroup">
 						<Button id="SelectedHeroSelectButton" onactivate="SelectHero();" hittestchildren="false">
@@ -78,15 +79,6 @@
 							</Panel>
 						</Panel>
 						<Button id="ExitButton" onactivate="CloseMenu();" />
-						<!-- <Button class="SmallTextButton" onactivate="RandomHero();">
-							<Panel class="SmallTextButtonContainer">
-								<Image hittest="false" src="file://{resources}/images/custom_game/hero_selection/random.png" />
-								<Label id="HeroRandomButtonLabel" hittest="false" text="#hero_selection_button_random" />
-							</Panel>
-						</Button> -->
-						<!-- <Button id="HeroRandomButton" onactivate="RandomHero();">
-							<Label id="HeroRandomButtonLabel" hittest="false" text="#hero_selection_button_random" />
-						</Button> -->
 					</Panel>
 				</Panel>
 				<Panel id="AbilitiesPanel">
@@ -95,11 +87,7 @@
 					<TextEntry id="HeroSearchTextEntry" oninputsubmit="SearchHero();" placeholder="#hero_selection_button_search"/>
 					<Panel id="SelectedHeroAbilitiesPanelInner" />
 				</Panel>
-				<Panel id="HeroListBasePanelHost">
-					<Panel id="HeroListPanel">
-						<!-- Список героев -->
-					</Panel>
-				</Panel>
+				<Panel id="HeroListPanel" />
 			</Panel>
 		</Panel>
 	</Panel>

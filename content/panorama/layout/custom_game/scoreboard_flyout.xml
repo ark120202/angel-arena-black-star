@@ -53,7 +53,7 @@
 				</Panel>
 				<Panel id="GoldContainer">
 					<!-- <Panel id="ScoreboardBuybackIndicator" class="ScoreboardBuybackIndicator BuybackReady" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_StatTooltip_Buyback_Ready );"/> -->
-					<Label class="ScoreboardGold MonoNumbersFont" text="{d:gold}"/>		
+					<Label class="ScoreboardGold MonoNumbersFont" text="{s:gold}"/>		
 				</Panel>
 				<Label class="KDANumbers KDAKills MonoNumbersFont" text="{d:kills}"/>
 				<Label class="KDANumbers MonoNumbersFont" text="{d:deaths}"/>

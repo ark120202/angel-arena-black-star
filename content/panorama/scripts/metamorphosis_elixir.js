@@ -1,6 +1,5 @@
 "use strict";
 var MainPanel = $("#MainBox")
-var SelectedHeroData;
 var SelectedHeroPanel;
 var SelectedTabIndex;
 var HeroesPanels = [];
@@ -34,14 +33,14 @@ function ChooseHeroPanelHero() {
 
 function SelectHero() {
 	GameEvents.SendCustomGameEventToServer("metamorphosis_elixir_cast", {
-		hero: SelectedHeroData.heroKey
+		hero: SelectedHeroName
 	})
 	CloseMenu()
 	Game.EmitSound("HeroPicker.Selected")
 }
 
 function UpdateSelectionButton() {
-	$("#SelectedHeroSelectButton").enabled = SelectedHeroData == null || !IsHeroPicked(SelectedHeroData.heroKey)
+	$("#SelectedHeroSelectButton").enabled = HeroesData[SelectedHeroName] == null || !IsHeroPicked(SelectedHeroName)
 }
 
 function CloseMenu() {

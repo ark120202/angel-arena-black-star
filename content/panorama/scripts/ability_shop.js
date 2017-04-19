@@ -158,17 +158,6 @@ function UpdateAbilities() {
 	$.Schedule(0.1, UpdateAbilities)
 }
 
-function HeroSelectionStart(data) {
-	for (var tabKey in data.HeroTabs) {
-		var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey)
-		TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel")
-		FillHeroesTable(data.HeroTabs[tabKey], TabHeroesPanel)
-		TabHeroesPanel.visible = false
-	}
-	SelectHeroTab(1)
-	SelectFirstHeroPanel();
-}
-
 function SelectHeroTab(tabIndex) {
 	if (SelectedTabIndex != tabIndex) {
 		if (SelectedTabIndex != null) {
@@ -213,7 +202,7 @@ function Fill(heroesData, panel) {
 	}*/
 	for (var herokey in heroesData) {
 		var heroData = heroesData[herokey]
-		var StatPanel = panel.FindChildTraverse("HeroesByAttributes_" + heroData.attribute_primary + "_" + heroData.team.toLowerCase())
+		var StatPanel = panel.FindChildTraverse("HeroesByAttributes_" + heroData.attribute_primary)
 		var HeroImagePanel = $.CreatePanel('Image', StatPanel, "HeroListPanel_element_" + heroData.heroKey)
 		HeroImagePanel.SetImage(TransformTextureToPath(heroData.heroKey))
 		HeroImagePanel.AddClass("HeroListElement")

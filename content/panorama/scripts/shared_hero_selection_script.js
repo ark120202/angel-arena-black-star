@@ -1,3 +1,9 @@
+var HeroesData = {},
+	SelectedHeroName = "";
+DynamicSubscribePTListener("hero_selection_heroes_data", function(tableName, changesObject, deletionsObject) {
+	HeroesData = changesObject;
+});
+
 function IsHeroPicked(name) {
 	var hero_selection_table = PlayerTables.GetAllTableValues("hero_selection")
 	if (hero_selection_table != null) {
@@ -34,7 +40,7 @@ function SearchHero() {
 		if (SearchString.length > 0) {
 			for (var key in HeroesPanels) {
 				var heroName = $.Localize(HeroesPanels[key].id.replace("HeroListPanel_element_", ""))
-				HeroesPanels[key].SetHasClass("SearchedPanelDisabled", heroName.search(new RegExp(SearchString, "i")) === -1);
+				HeroesPanels[key].SetHasClass("SearchedPanelDisabled", heroName.search(new RegExp(SearchString, "i")) == -1);
 			}
 		} else {
 			for (var key in HeroesPanels) {
@@ -44,12 +50,12 @@ function SearchHero() {
 	}
 }
 
-function FillHeroesTable(heroesData, panel, big) {
-	for (var herokey in heroesData) {
-		var heroData = heroesData[herokey]
+function FillHeroesTable(heroList, panel, big) {
+	$.Each(heroList, function(heroName) {
+		var heroData = HeroesData[heroName]
 		var StatPanel = panel.FindChildTraverse("HeroesByAttributes_" + heroData.attributes.attribute_primary)
-		var HeroImagePanel = $.CreatePanel('Image', StatPanel, "HeroListPanel_element_" + heroData.heroKey)
-		HeroImagePanel.SetImage(TransformTextureToPath(heroData.heroKey, "portrait"))
+		var HeroImagePanel = $.CreatePanel('Image', StatPanel, "HeroListPanel_element_" + heroName)
+		HeroImagePanel.SetImage(TransformTextureToPath(heroName, "portrait"))
 		HeroImagePanel.AddClass("HeroListElement")
 		var LockedImage = $.CreatePanel('Image', HeroImagePanel, "LockedIcon")
 		LockedImage.AddClass("LockedSelectionIcon")
@@ -57,10 +63,10 @@ function FillHeroesTable(heroesData, panel, big) {
 		if (heroData.border_class) {
 			HeroImagePanel.AddClass(heroData.border_class)
 		}
-		var SelectHeroAction = (function(_heroData, _panel) {
+		var SelectHeroAction = (function(_heroName, _panel) {
 			return function() {
 				if (SelectedHeroPanel != _panel) {
-					SelectedHeroData = _heroData
+					SelectedHeroName = _heroName
 					if (SelectedHeroPanel != null) {
 						SelectedHeroPanel.RemoveClass("HeroPanelSelected")
 					}
@@ -69,11 +75,11 @@ function FillHeroesTable(heroesData, panel, big) {
 					ChooseHeroPanelHero()
 				}
 			}
-		})(heroData, HeroImagePanel)
+		})(heroName, HeroImagePanel)
 		HeroImagePanel.SetPanelEvent('onactivate', SelectHeroAction)
 		HeroImagePanel.SelectHeroAction = SelectHeroAction
 		HeroesPanels.push(HeroImagePanel)
-	}
+	})
 }
 
 function SelectFirstHeroPanel() {
@@ -93,24 +99,22 @@ function SelectFirstHeroPanel() {
 }
 
 function ChooseHeroUpdatePanels() {
-	/*var BioPanel = $("#SelectedHeroDescriptionText")
-	if (BioPanel != null)
-		BioPanel.text = $.Localize("#" + SelectedHeroData.heroKey + "_bio")
-	*/
+	var selectedHeroData = HeroesData[SelectedHeroName];
 	UpdateSelectionButton();
 	var context = $.GetContextPanel();
-	$("#SelectedHeroSelectHeroName").text = $.Localize("#" + SelectedHeroData.heroKey);
-	context.SetHasClass("HoveredHeroHasLinked", SelectedHeroData.linked_heroes != null);
-	if (SelectedHeroData.linked_heroes != null) {
+	$("#SelectedHeroSelectHeroName").text = $.Localize(SelectedHeroName);
+	$("#SelectedHeroOverview").text = $.Localize(SelectedHeroName + "_hype");
+	context.SetHasClass("HoveredHeroHasLinked", selectedHeroData.linked_heroes != null);
+	if (selectedHeroData.linked_heroes != null) {
 		var linked = [];
-		$.Each(SelectedHeroData.linked_heroes, function(hero) {
+		$.Each(selectedHeroData.linked_heroes, function(hero) {
 			linked.push($.Localize(hero));
 		});
 		$("#SelectedHeroLinkedHero").text = linked.join(", ")
 	}
 	$("#SelectedHeroAbilitiesPanelInner").RemoveAndDeleteChildren()
-	FillAbilitiesUI($("#SelectedHeroAbilitiesPanelInner"), SelectedHeroData.abilities, "SelectedHeroAbility")
-	FillAttributeUI($("#HeroListControlsGroup3"), SelectedHeroData)
+	FillAbilitiesUI($("#SelectedHeroAbilitiesPanelInner"), selectedHeroData.abilities, "SelectedHeroAbility")
+	FillAttributeUI($("#HeroListControlsGroup3"), selectedHeroData)
 }
 
 function FillAbilitiesUI(rootPanel, abilities, className) {
