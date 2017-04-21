@@ -18,8 +18,8 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"60"
-		"MagicalResistance"			"50"
+		"ArmorPhysical"				"90"
+		"MagicalResistance"			"60"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
@@ -36,10 +36,10 @@
 
 		"HealthBarOffset"			"400"
 
-		"MovementSpeed"				"422"
+		"MovementSpeed"				"420"
 
-		"StatusHealth"				"450000"
-		"StatusHealthRegen"			"500"
+		"StatusHealth"				"500000"
+		"StatusHealthRegen"			"600"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"50"
 
@@ -251,7 +251,7 @@
 		"Ability2"					"boss_armor"
 		"Ability3"					"boss_central_passive"
 
-		"ArmorPhysical"				"250"
+		"ArmorPhysical"				"300"
 		"MagicalResistance"			"50"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -329,8 +329,8 @@
 
 		"MovementSpeed"				"550"
 
-		"StatusHealth"				"750000"
-		"StatusHealthRegen"			"800"
+		"StatusHealth"				"800000"
+		"StatusHealthRegen"			"850"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"50"
 
@@ -387,8 +387,8 @@
 
 		"MovementSpeed"				"550"
 
-		"StatusHealth"				"750000"
-		"StatusHealthRegen"			"800"
+		"StatusHealth"				"800000"
+		"StatusHealthRegen"			"850"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"50"
 
