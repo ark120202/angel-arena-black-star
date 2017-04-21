@@ -1,9 +1,9 @@
 function HeroSelection:OnHeroSelectHero(data)
 	local hero = tostring(data.hero)
-	if HeroSelection:GetState() == HERO_SELECTION_PHASE_BANNING --[[and not HeroSelection:IsHeroBanned(hero) and HeroSelection:VerifyHeroGroup(hero, "Selection")]] then
-		print("BAN HERO ", hero)
-	elseif HeroSelection:GetState() == HERO_SELECTION_PHASE_HERO_PICK and not HeroSelection:IsHeroSelected(hero) and HeroSelection:VerifyHeroGroup(hero, "Selection") then
-		local playerID = data.PlayerID
+	local playerID = data.PlayerID
+	if HeroSelection:GetState() == HERO_SELECTION_PHASE_BANNING and not PLAYER_DATA[playerID].HeroSelectionBanned and NPC_HEROES_CUSTOM[hero] and NPC_HEROES_CUSTOM[hero].Enabled ~= 0 then
+		HeroSelection:NominateHeroForBan(playerID, data.hero)
+	elseif HeroSelection:GetState() == HERO_SELECTION_PHASE_HERO_PICK and not HeroSelection:IsHeroSelected(hero) and not HeroSelection:IsHeroBanned(hero) and HeroSelection:VerifyHeroGroup(hero, "Selection") then
 		local linked = GetKeyValue(hero, "LinkedHero")
 		local newStatus = "picked"
 		if linked then

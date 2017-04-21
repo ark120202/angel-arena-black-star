@@ -13,6 +13,11 @@
 	z-index: 3;
 }
 
+DOTAHud.IsBeforeGameplay .base
+{
+	opacity: 0;
+}
+
 .ScoreboardClosed
 {
 	transform: translateX( -160px );

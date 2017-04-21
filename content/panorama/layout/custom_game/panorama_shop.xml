@@ -2,9 +2,11 @@
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/panorama_shop.css" />
+		<include src="file://{resources}/styles/panorama_shop_itembuilds.css" />
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/panorama_shop_itembuilds.js" />
 		<include src="file://{resources}/scripts/panorama_shop.js" />
 	</scripts>
 	<snippets>
@@ -18,20 +20,40 @@
 				</Button>
 			</Panel>
 		</snippet>
+		<snippet name="GuideListEntry">
+			<RadioButton class="GuideListEntry" group="GuideEntries">
+				<Panel id="SelectedBar" />
+				<Panel id="GuideEntryTitles">
+					<Label id="GuideEntryTitle" text="{s:guide_entry_title}" />
+                    <Label id="GuideEntrySubtitle" text="#DOTA_Guide_WorkshopSubtitle" />
+                    <TextButton id="SelectGuideButton" text="#DOTA_Guide_Select" />
+                    <Label id="SelectedGuideLabel" text="#DOTA_Guide_Selected" />
+				</Panel>
+				<Panel id="GuideEntryRightColumn">
+					<Label id="GuideEntryRating" text="{s:guide_entry_rating}" />
+				</Panel>
+			</RadioButton>
+		</snippet>
 	</snippets>
 	<Panel hittest="false" class="base">
-		<Panel hittest="true" onmouseactivate="" id="ShopBase" class="ShopBase_Out">
+		<!-- ShopBase_Out -->
+		<Panel hittest="true" onmouseactivate="" id="ShopBase" class="">
 			<Panel id="ItembuildsPanel">
-				<Panel id="Itembuild_selectBox" />
-				<Panel class="SimpleRow">
-					<Label text="#panorama_shop_itembuild_author"/>
-					<Label class="SimpleRowValue" id="Itembuild_author" />
+				<Label id="ItembuildHeader" text="DOTA_Guide_Browse" onactivate="ToggleGuidesBrowser()" />
+				<Panel id="ItembuildTitleContainer">
+					<Panel id="ItembuildTitleTitleRow">
+						<Label id="Itembuild_title" />
+						<Button id="EditButton" onactivate="ToggleEditMode()" onmouseout="UIHideTextTooltip()" onmouseover="UIShowTextTooltip(#DOTA_HUD_EditModeTooltip)"/>
+					</Panel>
+					<Panel id="ItembuildTitleSubitleRow">
+						<DOTAUserName id="Itembuild_author_player" />
+						<Label id="Itembuild_patch" />
+					</Panel>
 				</Panel>
-				<Panel class="SimpleRow">
-					<Label text="#panorama_shop_itembuild_patch"/>
-					<Label class="SimpleRowValue" id="Itembuild_patch" />
+				<Panel id="ItembuildPanelsContainer">
+					<Panel id="ItembuildPanelsRoot" />
+					<Label id="ItembuildAddGroupButton" text="#panorama_shop_itembuilds_new_group" onactivate="AddNewGroupToItembuild()" allowtextselection="false" />
 				</Panel>
-				<Panel id="ItembuildPanelsRoot" />
 			</Panel>
 			<Panel id="ShopItemBasePanel">
 				<Panel id="ShopItemList">
@@ -70,6 +92,42 @@
 			<Panel id="QuickBuyPanelItems" />
 			<Image id="QuickBuyClearButtonPanel" onactivate="ClearQuickbuyItems()"/>
 			<Panel id="QuickBuyStickyButtonPanel" />
+		</Panel>
+		<Panel id="GuidesBrowser">
+			<Panel id="GuidesBrowserLeft">
+				<!-- <DropDown id="LanguageDropdown"/> -->
+				<Panel id="GuidesAvaliableList" />
+			</Panel>
+			<Panel id="GuidesBrowserRight">
+				<Button class="CloseButton" onactivate="$.GetContextPanel().RemoveClass('GuidesBrowserVisible')" />
+				<Panel id="GuidesHeader">
+					<Label id="GuidesTitleLabel" text="My awesome build!" />
+					<!-- <Label id="GuidesBrowserDescription" text="#DOTA_Guide_WorkshopSubtitle" />  -->
+					<Label id="GuidesBrowserDescription" text="" /> 
+				</Panel>
+				<Panel id="GuideArea">
+					<Panel id="GuideTop">
+						<Panel id="ItemBuild" />
+						<Panel id="GuideRightColumn">
+							<Panel id="RatingBlock" >
+								<Panel id="RatingLabels" >
+									<Label id="RatingPercent" class="GuideStat" text="{s:player_rating}" />
+									<Label id="RatingLabel" class="GuideStatLabel" text="#DOTA_Guide_PlayerRating" />
+								</Panel>
+								<Panel id="VotingButtons">
+									<Button id="VoteUpButton" onactivate="DOTAVoteGuideUp()" >
+										<Image class="VoteIcon" src="s2r://panorama/images/icon_thumbs_up_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+									</Button>
+									<Button id="VoteDownButton" onactivate="DOTAVoteGuideDown()" >
+										<Image class="VoteIcon VoteIconFlipped" src="s2r://panorama/images/icon_thumbs_up_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+									</Button>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+					<DOTAAbilityBuild id="AbilityBuild"/>
+				</Panel>
+			</Panel>
 		</Panel>
 	</Panel>
 </root>

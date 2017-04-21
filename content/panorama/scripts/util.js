@@ -1,5 +1,7 @@
 "use strict";
 var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
+var debug = true;
+var ServerAddress = (Game.IsInToolsMode() && debug ? "http://127.0.0.1:3228" : "https://angelarenablackstar-ark120202.rhcloud.com") + "/AABSServer/"
 
 var DOTA_GAMEMODE_5V5 = 0
 var DOTA_GAMEMODE_4V4V4V4 = 1
@@ -33,6 +35,27 @@ var RUNES_COLOR_MAP = {
 	9: "C800FF",
 	10: "4A0746",
 	11: "B35F5F",
+}
+
+function GetDataFromServer(path, params, resolve, reject) {
+	var encodedParams = params == null ? "" : "?" + Object.keys(params).map(function(key) {
+	    return encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
+	}).join("&");
+	$.Msg(ServerAddress + path + encodedParams)
+	
+	$.AsyncWebRequest(ServerAddress + path + encodedParams, {
+		type: "GET",
+		success: function(data) {
+			if (resolve) resolve(data || {});
+		},
+		error: function(e) {
+			if (reject) reject(e);
+		}
+	});
+}
+
+function MongoObjectIDToDate(objectId) {
+	return new Date(parseInt(objectId.substring(0, 8), 16) * 1000);
 }
 
 function IsHeroName(str) {
@@ -72,7 +95,8 @@ function SafeGetPlayerHeroEntityIndex(playerId) {
 
 function GetPlayerHeroName(playerId) {
 	if (Players.IsValidPlayerID(playerId)) {
-		return GetHeroName(SafeGetPlayerHeroEntityIndex(playerId))
+		//Is it causes lots of table copies? TODO: Check how that affects perfomance
+		return PlayerTables.GetTableValue("hero_selection", Players.GetTeam(playerId))[playerId].hero; //GetHeroName(SafeGetPlayerHeroEntityIndex(playerId))
 	}
 	return ""
 }

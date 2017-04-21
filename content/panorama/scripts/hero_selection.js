@@ -4,7 +4,6 @@ var SelectedHeroPanel,
 	SelectedTabIndex,
 	SelectionTimerEndTime = 0,
 	HideEvent,
-	PTID,
 	DOTA_ACTIVE_GAMEMODE,
 	CustomChatLinesPanel,
 	MinimapPTIDs = [],
@@ -49,11 +48,10 @@ function HeroSelectionEnd(bImmidate) {
 	})
 	$.Schedule(bImmidate ? 0 : 5.6, function() { //4 + 1.5 + 0.1
 		MainPanel.visible = false
-		//FindDotaHudElement("PausedInfo").style.opacity = 1;
+		FindDotaHudElement("PausedInfo").style.opacity = 1;
 		if (HideEvent != null)
 			GameEvents.Unsubscribe(HideEvent)
-		if (PTID != null)
-			PlayerTables.UnsubscribeNetTableListener(PTID)
+		if ($.GetContextPanel().PTID_hero_selection) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_selection)
 		if (MinimapPTIDs.length > 0)
 			$.Each(MinimapPTIDs, function(ptid) {
 				PlayerTables.UnsubscribeNetTableListener(ptid)
@@ -90,11 +88,11 @@ function UpdateSelectionButton() {
 	var selectedHeroData = HeroesData[SelectedHeroName];
 	var canPick = selectedHeroData == null || (!IsHeroPicked(SelectedHeroName) && !IsLocalHeroPicked())
 	$("#SelectedHeroSelectButton").enabled = canPick && (!IsLocalHeroLocked() || SelectedHeroName == LocalPlayerStatus.hero)
-	$.GetContextPanel().SetHasClass("RandomingEnabled", canPick && !IsLocalHeroLocked())
+	$.GetContextPanel().SetHasClass("RandomingEnabled", canPick && !IsLocalHeroLocked() && HeroSelectionState > HERO_SELECTION_PHASE_BANNING)
 	if (selectedHeroData != null) {
 		var context = $.GetContextPanel()
 		var mode = "pick";
-		if (HeroSelectionState == "Banning") {
+		if (HeroSelectionState == HERO_SELECTION_PHASE_BANNING) {
 			mode = "ban"
 		} else if (selectedHeroData.linked_heroes != null) {
 			mode = IsLocalHeroLocked() && selectedHeroData.heroKey == LocalPlayerStatus.hero ? "unlock" : "lock"
@@ -107,9 +105,9 @@ function UpdateSelectionButton() {
 
 function UpdateTimer() {
 	$.Schedule(0.2, UpdateTimer);
-	var SelectionTimerRemainingTime = SelectionTimerEndTime - Game.GetGameTime()
+	var SelectionTimerRemainingTime = (SelectionTimerEndTime || Number.MIN_SAFE_INTEGER) - Game.GetGameTime()
 	if (SelectionTimerRemainingTime > 0) {
-		if (HeroSelectionState != HERO_SELECTION_PHASE_END) {
+		if (HeroSelectionState < HERO_SELECTION_PHASE_END) {
 			hud.GetChild(0).AddClass("IsBeforeGameplay")
 		}
 		$("#HeroSelectionTimer").text = Math.ceil(SelectionTimerRemainingTime);
@@ -139,6 +137,7 @@ function Snippet_PlayerPanel(pid, rootPanel) {
 		var panel = $.CreatePanel("Panel", rootPanel, "")
 		panel.BLoadLayoutSnippet("PlayerPanel")
 		panel.SetDialogVariable("player_name", Players.GetPlayerName(pid))
+		panel.SetDialogVariable("player_mmr", "Infinity")
 		panel.FindChildTraverse("SlotColor").style.backgroundColor = GetHEXPlayerColor(pid)
 		/*panel.FindChildTraverse("ImageHost").SetPanelEvent("", function() {
 
@@ -244,9 +243,7 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 function OnLocalPlayerPicked() {
 	var heroName = LocalPlayerStatus.hero;
 	var localHeroData = HeroesData[heroName];
-	//TODO: Tab data shoud be set of Hero - Info
-
-	$("#HeroPreviewName").text = $.Localize(heroName);
+	$("#HeroPreviewName").text = $.Localize(heroName).toUpperCase();
 	var bio = $.Localize(heroName + "_bio");
 	$("#HeroPreviewLore").text = bio != heroName + "_bio" ? bio : "";
 	var hype = $.Localize(heroName + "_hype");
@@ -261,31 +258,25 @@ function OnLocalPlayerPicked() {
 	FillAbilitiesUI($("#HeroPreviewAbilities"), localHeroData.abilities, "HeroPreviewAbility")
 	FillAttributeUI($("#HeroPreviewAttributes"), localHeroData);
 	
-	//var HeroLabel = $.CreatePanel('Label', PlayerInTeamPanel, "")
-	//HeroLabel.AddClass("PrecacheHeroLabel")
-	//HeroLabel.text = $.Localize("#" + LocalPlayerStatus.hero);
+	$.Schedule(1, function() {
+		var GlobalLoadoutItems = FindDotaHudElement("GlobalLoadoutItems");
+		if (GlobalLoadoutItems) {
+			GlobalLoadoutItems.SetParent($("#GlobalLoadoutContainer"));
+			//Custom styles
+			$.Each(GlobalLoadoutItems.FindChildrenWithClassTraverse("HasItemsForSlot"), function(child) {
+				child.SetParent(GlobalLoadoutItems);
+				child.style.width = "180px";
+			})
+			$.Each(GlobalLoadoutItems.FindChildrenWithClassTraverse("GlobalLoadoutSlotCategory"), function(child) {
+				child.visible = false;
+			})
 
-	var GlobalLoadoutItems = FindDotaHudElement("GlobalLoadoutItems");
-	if (GlobalLoadoutItems) {
-		GlobalLoadoutItems.SetParent($("#GlobalLoadoutContainer"));
-		//Custom styles
-		$.Each(GlobalLoadoutItems.FindChildrenWithClassTraverse("HasItemsForSlot"), function(child) {
-			child.SetParent(GlobalLoadoutItems);
-			child.style.width = "180px";
-		})
-		$.Each(GlobalLoadoutItems.FindChildrenWithClassTraverse("GlobalLoadoutSlotCategory"), function(child) {
-			child.visible = false;
-		})
-
-		//These wearables are useless, hide them
-		try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_terrain")[0].GetParent().GetParent().visible = false; } catch(e) {}
-		try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_heroic_statue")[0].GetParent().GetParent().visible = false; } catch(e) {}
-		try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_loading_screen")[0].GetParent().GetParent().visible = false; } catch(e) {}
-
-	}
-	/*var HeroLoadoutItems = FindDotaHudElement("HeroLoadoutItems");
-	if (HeroLoadoutItems) HeroLoadoutItems.SetParent($("#HeroLoadoutContainer"));*/
-
+			//These wearables are useless, hide them
+			try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_terrain")[0].GetParent().GetParent().visible = false; } catch(e) {}
+			try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_heroic_statue")[0].GetParent().GetParent().visible = false; } catch(e) {}
+			try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_loading_screen")[0].GetParent().GetParent().visible = false; } catch(e) {}
+		}
+	})
 	ToggleHeroPreviewHeroList(true)
 }
 
@@ -314,8 +305,7 @@ function OnAdsClicked() {
 }
 
 function StartStrategyTime() {
-	$.Msg("ENTER STRATEGY STATE!")
-	//FindDotaHudElement("PausedInfo").style.opacity = 0;
+	FindDotaHudElement("PausedInfo").style.opacity = 0;
 }
 
 function UpdateMainTable(tableName, changesObject, deletionsObject) {
@@ -339,16 +329,18 @@ function SetCurrentPhase(newState) {
 		case HERO_SELECTION_PHASE_STRATEGY:
 			$.GetContextPanel().RemoveClass("CanRepick")
 			StartStrategyTime()
-		case HERO_SELECTION_PHASE_HERO_PICK:
-			if (!InitializationStates[HERO_SELECTION_PHASE_HERO_PICK]) {
-				InitializationStates[HERO_SELECTION_PHASE_HERO_PICK] = true;
-				UpdateTimer();
+		case HERO_SELECTION_PHASE_BANNING:
+			if (!InitializationStates[HERO_SELECTION_PHASE_BANNING]) {
+				InitializationStates[HERO_SELECTION_PHASE_BANNING] = true;
 				SelectFirstHeroPanel();
 			}
 	}
 	var context = $.GetContextPanel()
+	context.SetHasClass("HERO_SELECTION_PHASE_BANNING", newState == HERO_SELECTION_PHASE_STRATEGY)
 	HeroSelectionState = newState;
 	InitializationStates[newState] = true;
+	$("#GameModeInfoCurrentPhase").text = $.Localize("hero_selection_phase_" + newState)
+	UpdateSelectionButton()
 }
 
 function ShowHeroPreviewTab(tabID) {
@@ -363,20 +355,30 @@ function ShowHeroPreviewTab(tabID) {
 	if (Players.GetTeam(Game.GetLocalPlayerID()) != DOTA_TEAM_SPECTATOR) {
 		DynamicSubscribePTListener("hero_selection_available_heroes", UpdateMainTable);
 		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
-			if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
-				DOTA_ACTIVE_GAMEMODE = changesObject["gamemode_settings"]["gamemode"]
+			if (changesObject.gamemode_settings && changesObject.gamemode_settings.gamemode != null) {
+				DOTA_ACTIVE_GAMEMODE = changesObject.gamemode_settings.gamemode
 				_DynamicMinimapSubscribe($(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").GetChild(0), function(ptid) {
 					MinimapPTIDs.push(ptid)
 				});
 			}
-			if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
-				var DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
-				$("#GameModeInfoGamemodeLabel").text = $.Localize("#arena_game_mode_type_" + DOTA_ACTIVE_GAMEMODE_TYPE)
+			if (changesObject.gamemode_settings && changesObject.gamemode_settings.gamemode_type != null) {
+				var DOTA_ACTIVE_GAMEMODE_TYPE = changesObject.gamemode_settings.gamemode_type
+				$.GetContextPanel().SetHasClass("ShowMMR", DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANKED_ALLPICK)
+				$("#GameModeInfoGamemodeLabel").text = $.Localize("arena_game_mode_type_" + DOTA_ACTIVE_GAMEMODE_TYPE)
 			}
 		})
-		DynamicSubscribePTListener("hero_selection", UpdateHeroesSelected, function(ptid) {
-			PTID = ptid
+		DynamicSubscribePTListener("hero_selection_banning_phase", function(tableName, changesObject, deletionsObject) {
+			for (var hero in changesObject) {
+				var heroPanel = $("#HeroListPanel_element_" + hero)
+				heroPanel.SetHasClass("Banned", changesObject[hero] == true)
+				heroPanel.SetHasClass("BannedNominated", changesObject[hero] == false)
+			}
 		})
+		if ($.GetContextPanel().PTID_hero_selection) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_selection)
+		DynamicSubscribePTListener("hero_selection", UpdateHeroesSelected, function(ptid) {
+			$.GetContextPanel().PTID_hero_selection = ptid
+		})
+		UpdateTimer();
 
 		var steamid = GetSteamID(Game.GetLocalPlayerID(), 32)
 		var bglist = SteamIDSpecialBGs[steamid];

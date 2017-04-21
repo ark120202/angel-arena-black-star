@@ -68,9 +68,10 @@
 					<Panel class="LeftRightFlow FullHeight" id="LeftTeams">
 
 					</Panel>
-					<Panel id="GameModeInfoPanel" >
-						<Label id="HeroSelectionTimer" text="0" />
-						<Label id="GameModeInfoGamemodeLabel" text="#hero_selection_mode_all_pick" />
+					<Panel id="GameModeInfoPanel" hittestchildren="false" >
+						<Label id="HeroSelectionTimer" class="MonoNumbersFont" text="0" />
+						<Label id="GameModeInfoCurrentPhase" />
+						<Label id="GameModeInfoGamemodeLabel" />
 					</Panel>
 					<Panel class="LeftRightFlow FullHeight" id="RightTeams">
 
@@ -109,20 +110,20 @@
 						<Image id="HeroPreviewEnterButton" src="s2r://panorama/images/control_icons/return_to_game_png.vtex" onactivate="ToggleHeroPreviewHeroList(true)"/>
 						<Panel id="SelectedHeroAttributesPanel">
 							<Panel class="SelectedHeroAttributesElement" style="flow-children: down; height: fit-children; width: fit-children; vertical-align: center; margin-right: 12px;">
-								<Image src="file://{resources}/images/custom_game/hud/damage.png" style="horizontal-align: center;"/>
+								<Image src="s2r://panorama/images/hud/reborn/icon_damage_psd.vtex" style="horizontal-align: center;"/>
 								<Label id="HeroAttributes_damage" class="AttributeValueText" style="horizontal-align: center;" text="0 - 0" />
 							</Panel>
 							<Panel style="height: 100%; flow-children: down;">
 								<Panel class="SelectedHeroAttributesElement">
-									<Image src="file://{resources}/images/custom_game/hud/movespeed.png" style="vertical-align: center; padding-left: 6px; margin-right: 5px;"/>
+									<Image src="s2r://panorama/images/hud/reborn/icon_speed_psd.vtex"/>
 									<Label id="HeroAttributes_speed" class="AttributeValueText" text="0" />
 								</Panel>
 								<Panel class="SelectedHeroAttributesElement">
-									<Label style="color: white; align: center center; margin-left: 5px; font-size: 22px; horizontal-align: left;" text="BAT: " />
+									<Image src="s2r://panorama/images/hud/reborn/icon_attack_speed_psd.vtex" style="color: white; margin-left: -2px;" />
 									<Label id="HeroAttributes_bat" class="AttributeValueText" text="0" />
 								</Panel>
 								<Panel class="SelectedHeroAttributesElement">
-									<Image src="file://{resources}/images/custom_game/hud/armor.png" style="vertical-align: center; padding-left: 4px;"/>
+									<Image src="s2r://panorama/images/hud/reborn/icon_armor_psd.vtex" />
 									<Label id="HeroAttributes_armor" style="margin-left: 5px;" class="AttributeValueText" text="0" />
 								</Panel>
 							</Panel>
@@ -169,27 +170,27 @@
 				<Panel id="HeroPreviewInformation">
 					<Panel id="HeroPreviewHeader">
 						<Panel>
-							<Label id="HeroPreviewName" text="SELECTED HERO" />
+							<Label id="HeroPreviewName" />
 						</Panel>
 					</Panel>
 					<Panel id="HeroPreviewAbilitiesAndAttributes">
 						<Panel id="HeroPreviewAbilities" />
 						<Panel id="HeroPreviewAttributes">
 							<Panel class="SelectedHeroAttributesElement" style="flow-children: down; height: fit-children; width: fit-children; vertical-align: center; margin-right: 12px;">
-								<Image src="file://{resources}/images/custom_game/hud/damage.png" style="horizontal-align: center;"/>
+								<Image src="s2r://panorama/images/hud/reborn/icon_damage_psd.vtex" style="horizontal-align: center;"/>
 								<Label id="HeroAttributes_damage" class="AttributeValueText" style="horizontal-align: center;" text="0 - 0" />
 							</Panel>
 							<Panel style="height: 100%; flow-children: down;">
 								<Panel class="SelectedHeroAttributesElement">
-									<Image src="file://{resources}/images/custom_game/hud/movespeed.png" style="vertical-align: center; padding-left: 6px; margin-right: 5px;"/>
+									<Image src="s2r://panorama/images/hud/reborn/icon_speed_psd.vtex" />
 									<Label id="HeroAttributes_speed" class="AttributeValueText" text="0" />
 								</Panel>
 								<Panel class="SelectedHeroAttributesElement">
-									<Label style="color: white; align: center center; margin-left: 5px; font-size: 22px; horizontal-align: left;" text="BAT: " />
+									<Image src="s2r://panorama/images/hud/reborn/icon_attack_speed_psd.vtex" style="color: white; margin-left: -2px;" />
 									<Label id="HeroAttributes_bat" class="AttributeValueText" text="0" />
 								</Panel>
 								<Panel class="SelectedHeroAttributesElement">
-									<Image src="file://{resources}/images/custom_game/hud/armor.png" style="vertical-align: center; padding-left: 4px;"/>
+									<Image src="s2r://panorama/images/hud/reborn/icon_armor_psd.vtex" />
 									<Label id="HeroAttributes_armor" style="margin-left: 5px;" class="AttributeValueText" text="0" />
 								</Panel>
 							</Panel>

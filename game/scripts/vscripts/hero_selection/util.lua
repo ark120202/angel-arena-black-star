@@ -1,5 +1,5 @@
 function HeroSelection:CheckEndHeroSelection()
-	local canEnd = not HeroSelection.SelectionEnd and GameRules:IsCheatMode()
+	local canEnd = false --HeroSelection:GetState() < HERO_SELECTION_PHASE_END and GameRules:IsCheatMode()
 	for team,_v in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection")) do
 		for plyId,v in pairs(_v) do
 			if v.status ~= "picked" then
@@ -266,4 +266,19 @@ function HeroSelection:PreformPlayerRandom(playerId)
 			break
 		end
 	end
+end
+
+function HeroSelection:NominateHeroForBan(playerId, hero)
+	if not HeroSelection:IsHeroNominatedForBan(hero) then
+		PLAYER_DATA[playerId].HeroSelectionBanned = true
+		PlayerTables:SetTableValue("hero_selection_banning_phase", hero, false)
+	end
+end
+
+function HeroSelection:IsHeroNominatedForBan(hero)
+	return PlayerTables:GetTableValueForReadOnly("hero_selection_banning_phase", hero) == false
+end
+
+function HeroSelection:IsHeroBanned(hero)
+	return PlayerTables:GetTableValueForReadOnly("hero_selection_banning_phase", hero) == true
 end

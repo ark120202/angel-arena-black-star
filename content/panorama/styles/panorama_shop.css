@@ -13,7 +13,6 @@
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in;
 	transition-property: transform, opacity;
-	box-shadow: rgba(0,0,0,0.4) -4px -4px 8px 8px;
 	margin-bottom: 13.4%;
 	margin-right: 0px;
 	flow-children: right;
@@ -44,30 +43,150 @@
 	opacity: 0;
 }
 
-.SimpleRow
+#ItembuildHeader
 {
-	flow-children: right;
 	width: 100%;
-	margin: 6px 8px;
+	background-color: #000000ee;
+	padding: 12px;
+	height: 58px;
+
+	font-size: 13px;
+	color: #616f7b;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-top: 20px;
+	transition-property: color, text-decoration;
+	transition-duration: 0.15s;
+}
+#ItembuildHeader:hover
+{
+	color: #8da1b1;
+	text-decoration: underline;
+}
+#ItembuildTitleContainer
+{
+	width: 100%;
+	padding: 12px;
+	flow-children: down;
+}
+#ItembuildTitleTitleRow
+{
+	width: 100%;
+	flow-children: right;
+}
+#Itembuild_title
+{
+	font-size: 14px;
+	color: #616f7b;
+	font-weight: semi-bold;
+	vertical-align: center;
+	width: 88%;
+	height: 20px;
+	text-overflow: shrink;
+}
+#EditButton
+{
+    width: 22px;
+    height: 22px;
+    horizontal-align: right;
+    vertical-align: center;
+    background-image: url("s2r://panorama/images/control_icons/edit_pencil_psd.vtex");
+    background-size: 72%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    wash-color: #798b99;
+    tooltip-position: top;
+    margin-right: -4px;
+}
+.EditMode #EditButton
+{
+	background-color: #57646d77;
+    border-radius: 3px;
+    wash-color: #ffffff;
+}
+#EditButton:hover
+{
+    brightness: 2.0;
+}
+#EditButton:active
+{
+    wash-color: #798b99;
 }
 
-.SimpleRowValue
+#ItembuildTitleSubitleRow
 {
-	align: right center;
+	width: 100%;
+	flow-children: right;
+	margin-top: -2px;
+	height: 20px;
+}
+#Itembuild_author_player
+{
+	width: 80%;
+	text-overflow: shrink;
+	font-size: 14px;
+	color: #47515a;
+	font-weight: semi-bold;
+}
+#Itembuild_patch
+{
+	width: 20%;
+	text-align: right;
+	horizontal-align: right;
+
+	text-overflow: shrink;
+	font-size: 14px;
+	color: #8B9EB0;
+	font-weight: semi-bold;
+}
+#ItembuildPanelsContainer
+{
+	width: 100%;
+	flow-children: down;
+	min-height: 100%;
+	overflow: squish scroll;
+}
+.EditMode #ItembuildPanelsContainer
+{
+	box-shadow: inset #0B93BE33 6px 6px 12px 12px;
+}
+#ItembuildAddGroupButton
+{
+	width: 100%;
+	padding-left: 24px;
 	color: white;
 	font-weight: bold;
+	text-transform: uppercase;
+	opacity: 0.6;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	visibility: collapse;
 }
-
+.EditMode #ItembuildAddGroupButton
+{
+	visibility: visible;
+}
+#ItembuildAddGroupButton:hover
+{
+	opacity: 0.8;
+}
+#ItembuildAddGroupButton:active
+{
+	transition-duration: 0.1s;
+	opacity: 1;
+	margin-top: 1px;
+}
 #ItembuildPanelsRoot
 {
 	width: 100%;
 	flow-children: down;
-	overflow: squish scroll;
 }
 .ItembuildItemGroup
 {
 	width: 100%;
 	flow-children: down;
+	transition-property: position;
+	transition-duration: 0.1s;
 }
 
 .ItembuildItemGroupTitle
@@ -79,6 +198,13 @@
 	color: white;
 	letter-spacing: 2px;
 	font-size: 14px;
+	height: 26px;
+}
+.ItembuildItemGroupTitle:disabled
+{
+	background-color: transparent;
+	border-color: transparent;
+	color: white;
 }
 
 .ItembuildItemGroupItemRoot
@@ -87,6 +213,11 @@
 	margin-left: 5px;
 	width: 100%;
 	flow-children: right-wrap;
+}
+
+.EditMode .ItembuildItemGroupItemRoot
+{
+	min-height: 37px;
 }
 
 .ShopBase_Out
@@ -100,7 +231,6 @@
 	width: 100%;
 	horizontal-align: right;
 	height: 84%;
-	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 0.4);
 	flow-children: down;
 	background-image: url("s2r://panorama/images/hud/reborn/bg_mainshop_psd.vtex");
 	background-size: 100% 100%;
@@ -328,6 +458,10 @@
 	height: width-percentage( 72.7% );
 	margin: 2px;
 	border-radius: 3px;
+
+
+	transition-property: position;
+	transition-duration: 0.1s;
 }
 
 #SmallItemButton
@@ -540,29 +674,4 @@ DOTAHud.IsBeforeGameplay #QuickBuyPanel
 .ItemsPageInnerContainer.SelectedPage
 {
 	opacity: 1;
-}
-
-DropDownMenu.DropDownMenuVisible
-{
-	width: 208px;
-}
-DropDown Label,
-DropDownMenu Label
-{
-	font-size: 14px;
-	text-transform: uppercase;
-	font-weight: bold;
-}
-
-#Itembuild_select
-{
-	background-color: black;
-	padding: 6px 8px;
-	border-width: 0px;
-}
-#Itembuild_select .DropDownChild
-{
-	color: #616f7b;
-	text-decoration: underline;
-	text-transform: uppercase;
 }

@@ -1,12 +1,12 @@
 if not HeroSelection then
 	HeroSelection = class({})
-	HeroSelection.SelectionEnd = false
 	HeroSelection.RandomableHeroes = {}
 	HeroSelection.EmptyStateData = {
 		hero = "npc_dota_hero_abaddon",
 		status = "hover"
 	}
 	HeroSelection.CurrentState = HERO_SELECTION_PHASE_NOT_STARTED
+	HeroSelection.GameStartTimers = {}
 end
 
 require("hero_selection/util")
@@ -21,7 +21,7 @@ HERO_SELECTION_PHASE_STRATEGY = 3
 HERO_SELECTION_PHASE_END = 4
 
 HERO_SELECTION_PICK_TIME = 80
-HERO_SELECTION_STRATEGY_TIME = 35 + 10000
+HERO_SELECTION_STRATEGY_TIME = 35
 HERO_SELECTION_BANNING_TIME = 25
 
 
@@ -35,16 +35,19 @@ function HeroSelection:Initialize()
 		CustomGameEventManager:RegisterListener("hero_selection_player_random", Dynamic_Wrap(HeroSelection, "OnHeroRandomHero"))
 		CustomGameEventManager:RegisterListener("hero_selection_minimap_set_spawnbox", Dynamic_Wrap(HeroSelection, "OnMinimapSetSpawnbox"))
 		CustomGameEventManager:RegisterListener("hero_selection_player_repick", Dynamic_Wrap(HeroSelection, "OnHeroRepick"))
+		Convars:RegisterCommand("arena_hero_selection_skip_phase", function()
+			if HeroSelection.CurrentState == HERO_SELECTION_PHASE_BANNING then
+				HeroSelection:StartStateHeroPick()
+			elseif HeroSelection.CurrentState == HERO_SELECTION_PHASE_HERO_PICK then
+				HeroSelection:StartStateStrategy()
+			elseif HeroSelection.CurrentState == HERO_SELECTION_PHASE_STRATEGY then
+				HeroSelection:StartStateInGame({})
+			elseif HeroSelection.CurrentState == HERO_SELECTION_PHASE_END then
+				Tutorial:ForceGameStart()
+			end
+		end, "Skips current phase", FCVAR_CHEAT)
+		PlayerTables:CreateTable("hero_selection_banning_phase", {}, AllPlayersInterval)
 	end
-	Convars:RegisterCommand("arena_hero_selection_skip_phase", function()
-		if HeroSelection.CurrentState == HERO_SELECTION_PHASE_BANNING then
-			HeroSelection:StartStateHeroPick()
-		elseif HeroSelection.CurrentState == HERO_SELECTION_PHASE_HERO_PICK then
-			HeroSelection:StartStateStrategy()
-		elseif HeroSelection.CurrentState == HERO_SELECTION_PHASE_STRATEGY then
-			HeroSelection:StartStateInGame({})
-		end
-	end, "Skips current phase", FCVAR_CHEAT)
 end
 
 function HeroSelection:PrepareTables()
@@ -65,7 +68,7 @@ function HeroSelection:PrepareTables()
 				tabIndex = tabIndex
 			}
 
-			if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK then
+			if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK or DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANKED_ALLPICK then
 				heroData.abilities = HeroSelection:ParseAbilitiesFromTable(heroTable)
 				heroData.border_class = heroTable.BorderClass
 				if heroTable.LinkedHero then
@@ -111,13 +114,26 @@ function HeroSelection:GetState()
 	return HeroSelection.CurrentState
 end
 
+function HeroSelection:CreateTimer(...)
+	local t = Timers:CreateTimer(...)
+	table.insert(HeroSelection.GameStartTimers, t)
+	return t
+end
+
+function HeroSelection:DismissTimers()
+	for _,v in ipairs(HeroSelection.GameStartTimers) do
+		Timers:RemoveTimer(v)
+	end
+	HeroSelection.GameStartTimers = {}
+end
+
 function HeroSelection:HeroSelectionStart()
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled(true)
 	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANKED_ALLPICK then
-		EmitAnnouncerSound("ann_custom_mode_05")
+		EmitAnnouncerSound("announcer_ann_custom_mode_05")
 		HeroSelection:SetState(HERO_SELECTION_PHASE_BANNING)
 		HeroSelection:SetTimerDuration(HERO_SELECTION_BANNING_TIME)
-		HeroSelection.GameStartTimer = Timers:CreateTimer(HERO_SELECTION_BANNING_TIME, function()
+		HeroSelection:CreateTimer(HERO_SELECTION_BANNING_TIME, function()
 			HeroSelection:StartStateHeroPick()
 		end)
 	else
@@ -126,25 +142,36 @@ function HeroSelection:HeroSelectionStart()
 end
 
 function HeroSelection:StartStateHeroPick()
-	EmitAnnouncerSound("ann_custom_draft_01")
+	--Banning
+	local t = PlayerTables:GetAllTableValues("hero_selection_banning_phase")
+	local iter = 1
+	local iterCount = math.floor(#t / 2)
+	print("BAN PHASE: iter, iterCount, table length", iter, iterCount, #t)
+	for hero in shuffledPairs(t) do
+		PlayerTables:SetTableValue("hero_selection_banning_phase", hero, true)
+		print("BANNED", hero)
+		if iter >= iterCount then
+			iter = iter + 1
+			break
+		end
+	end
+
+	HeroSelection:DismissTimers()
+	EmitAnnouncerSound("announcer_ann_custom_draft_01")
 	HeroSelection:SetState(HERO_SELECTION_PHASE_HERO_PICK)
 	HeroSelection:SetTimerDuration(HERO_SELECTION_PICK_TIME)
 	for _,sec in ipairs({30, 15, 10, 5}) do
 		Timers:CreateTimer(HERO_SELECTION_PICK_TIME - sec, function()
-			EmitAnnouncerSound("ann_custom_timer_sec_" .. sec)
+			EmitAnnouncerSound("announcer_ann_custom_timer_sec_" .. sec)
 		end)
 	end
-	HeroSelection.GameStartTimer = Timers:CreateTimer(HERO_SELECTION_PICK_TIME, function()
+	HeroSelection:CreateTimer(HERO_SELECTION_PICK_TIME, function()
 		HeroSelection:StartStateStrategy()
 	end)
 end
 
 function HeroSelection:StartStateStrategy()
-	if HeroSelection.SelectionEnd then
-		return
-	end
-	HeroSelection.SelectionEnd = true
-	Timers:RemoveTimer(HeroSelection.GameStartTimer)
+	HeroSelection:DismissTimers()
 	HeroSelection:PreformRandomForNotPickedUnits()
 	local toPrecache = {}
 	for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
@@ -163,15 +190,14 @@ function HeroSelection:StartStateStrategy()
 	
 	HeroSelection:SetTimerDuration(HERO_SELECTION_STRATEGY_TIME)
 	HeroSelection:SetState(HERO_SELECTION_PHASE_STRATEGY)
-	HeroSelection.GameStartTimer = Timers:CreateTimer(HERO_SELECTION_STRATEGY_TIME, function()
+	HeroSelection:CreateTimer(HERO_SELECTION_STRATEGY_TIME, function()
 		HeroSelection:StartStateInGame(toPrecache)
 	end)
 end
 
 function HeroSelection:StartStateInGame(toPrecache)
+	HeroSelection:DismissTimers()
 	DeepPrintTable(toPrecache)
-	Timers:RemoveTimer(HeroSelection.GameStartTimer)
-
 	--If for some reason even after that time heroes weren't precached
 	Timers:CreateTimer({
 		useGameTime = false,

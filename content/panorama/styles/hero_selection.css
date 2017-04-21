@@ -167,20 +167,47 @@
 	width: 100%;
 }
 
-#GameModeInfoGamemodeLabel
+#GameModeInfoPanel
 {
-	align: center bottom;
-	margin-bottom: 4px;
-	font-size: 20px;
-	color: #CCCCCC;
+	flow-children: down;
+	margin: 0 12px;
+	width: 200px;
 }
 
 #HeroSelectionTimer
 {
 	horizontal-align: center;
-	font-size: 28px;
+	font-size: 64px;
 	color: white;
-	align: center center;
+	font-weight: thin;
+	text-align: center;
+	transition-property: transform, opacity, pre-transform-scale2d;
+	transition-duration: 0.4s;
+	transition-timing-function: ease-in-out;
+	margin-bottom: -20px;
+	width: 100%;
+}
+
+#GameModeInfoCurrentPhase
+{
+	align: center bottom;
+	color: white;
+	text-shadow: 0px 0px 6px 1.0 #9EF8FF45;
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+#GameModeInfoGamemodeLabel
+{
+	align: center bottom;
+	color: white;
+	text-shadow: 0px 0px 6px 1.0 #9EF8FF45;
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
 }
 
 #TeamSelectionStatusPanel
@@ -242,9 +269,8 @@
 #SelectedHeroUnlockLabel,
 #SelectedHeroBanLabel,
 .LocalHeroLockButton #SelectedHeroSelectLabel,
-.LocalHeroLockButton #SelectedHeroUnlockLabel,
 .LocalHeroUnlockButton #SelectedHeroSelectLabel,
-.LocalHeroUnlockButton #SelectedHeroLockLabel,
+.LocalHeroBanButton #SelectedHeroSelectLabel,
 {
 	visibility: collapse;
 }
@@ -307,9 +333,9 @@
 }
 #HeroSearchTextEntry
 {
-	width: 400px;
+	width: 320px;
 	height: 100%;
-	margin: 4px;
+	margin: 4px 12px;
 	border-radius: 10px;
 	font-size: 20px;
 	color: white;
@@ -400,14 +426,16 @@
 	height: 50%;
 	vertical-align: center;
 	margin: 10px;
+	transition-property: transform;
+	transition-duration: 0.1s;
 }
 .SmallTextButton:hover
 {
-	pre-transform-scale2d: 1.05;
+	transform: scaleX(1.05) scaleY(1.05);
 }
 .SmallTextButton:active
 {
-	pre-transform-scale2d: 0.96;
+	transform: scaleX(0.96) scaleY(0.96);
 }
 .SmallTextButton:disabled
 {
@@ -417,7 +445,7 @@
 .SmallTextButtonContainer
 {
 	align: center center;
-	flow-children: right;
+	flow-children: down;
 }
 .SmallTextButtonContainer Label
 {
@@ -427,7 +455,7 @@
 }
 .SmallTextButtonContainer Image
 {
-	vertical-align: center;
+	align: center center;
 	margin-right: 8px;
 	width: height-percentage(100%);
 }
@@ -834,4 +862,9 @@
 	margin-top: -5px;
 	margin-right: -17px;
 	text-shadow: 1px 1px 3px 2 black;
+}
+
+.SelectedHeroAttributesElement > Image
+{
+	vertical-align: center;
 }

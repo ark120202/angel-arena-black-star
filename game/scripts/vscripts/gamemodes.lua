@@ -22,6 +22,7 @@ if GameModes == nil then
 		["5v5_custom_abilities"] = {gamemode = DOTA_GAMEMODE_5V5, type = nil, map = ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES},
 		["4v4v4v4_custom_abilities"] = {gamemode = DOTA_GAMEMODE_4V4V4V4, type = nil, map = ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES},
 		["ranked"] = {gamemode = DOTA_GAMEMODE_5V5, type = DOTA_GAMEMODE_TYPE_RANKED_ALLPICK, map = ARENA_GAMEMODE_MAP_NONE},
+		["5v5"] = {gamemode = DOTA_GAMEMODE_5V5, type = DOTA_GAMEMODE_TYPE_RANKED_ALLPICK, map = ARENA_GAMEMODE_MAP_NONE},
 	}
 
 	GameModes.Settings = {

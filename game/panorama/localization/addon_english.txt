@@ -1,6 +1,6 @@
 "lang"
 {
-    "Language"      "English"
+	"Language"      "English"
 	"Tokens"
 	{
 		"Unassigned"      								"Unassigned Team"
@@ -9,13 +9,20 @@
 		"NoTeam"          								"No Team"
 		
 		"addonname"										"Angel Arena Black Star"
-        "addon_game_name"         						"Angel Arena Black Star"
-        "addon_game_name_p1"         					"Angel Arena"
-        "addon_game_name_p2"         					"Black Star"
+		"addon_game_name"         						"Angel Arena Black Star"
+		"addon_game_name_p1"         					"Angel Arena"
+		"addon_game_name_p2"         					"Black Star"
 
-        "arena_game_mode_type_100"						"All Pick"
-        "arena_game_mode_type_101"						"Random OMG"
-        "arena_game_mode_type_102"						"Ability Shop"
+		"arena_game_mode_type_100"						"All Pick"
+		"arena_game_mode_type_101"						"Ranked All Pick"
+		"arena_game_mode_type_102"						"Random OMG"
+		"arena_game_mode_type_103"						"Ability Shop"
+
+		"hero_selection_phase_0"						"Loading..."
+		"hero_selection_phase_1"						"Hero Banning"
+		"hero_selection_phase_2"						"Hero Selection"
+		"hero_selection_phase_3"						"Strategy Time"
+		"hero_selection_phase_4"						"Loading..."
 
 		"DOTA_GoodGuys"   								"Radiant"
 		"DOTA_BadGuys"    								"Dire"
@@ -193,8 +200,7 @@
 		"panorama_shop_shop_tab_3"								"NEW"
 		"panorama_shop_search_placeholder"						"Search..."
 		"panorama_shop_shop_label"								"SHOP"
-		"panorama_shop_itembuild_author"						"Author:"
-		"panorama_shop_itembuild_patch"							"Map Version:"
+		"panorama_shop_itembuilds_new_group"					"NEW GROUP"
 
 		"custom_end_screen_legend_lasthits"						"LH"
 

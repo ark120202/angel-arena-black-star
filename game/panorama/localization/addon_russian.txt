@@ -161,8 +161,6 @@
 		"panorama_shop_shop_tab_3"								"НОВЫЕ"
 		"panorama_shop_search_placeholder"						"Поиск..."
 		"panorama_shop_shop_label"								"ЛАВКА"
-		"panorama_shop_itembuild_author"						"Автор:"
-		"panorama_shop_itembuild_patch"							"Версия карты:"
 
 		"custom_end_screen_legend_lasthits"						"КРП"
 

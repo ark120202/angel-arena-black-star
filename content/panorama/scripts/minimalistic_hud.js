@@ -100,7 +100,7 @@ function AutoUpdatePanoramaHUD() {
 
 function HookPanoramaPanels() {
 	FindDotaHudElement("QuickBuyRows").visible = false;
-	FindDotaHudElement("shop").visible = false;
+	FindDotaHudElement("shop").visible = true;
 	FindDotaHudElement("RadarButton").visible = false;
 	FindDotaHudElement("HUDSkinMinimap").visible = false;
 	FindDotaHudElement("combat_events").visible = false;

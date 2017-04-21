@@ -106,6 +106,7 @@ function GameMode:InitGameMode()
 			gamemode = DOTA_ACTIVE_GAMEMODE,
 			gamemode_type = DOTA_ACTIVE_GAMEMODE_TYPE,
 			gamemode_map = ARENA_ACTIVE_GAMEMODE_MAP,
+			version = ARENA_VERSION
 		},
 		players_abandoned = {},
 	}, AllPlayersInterval)

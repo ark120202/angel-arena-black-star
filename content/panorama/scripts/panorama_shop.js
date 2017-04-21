@@ -7,6 +7,7 @@ var ItemList = {},
 	QuickBuyTarget = null,
 	QuickBuyTargetAmount = 0,
 	LastHero = null,
+	ARENA_VERSION = "1.0.0",
 	ItemStocks = [];
 
 function OpenCloseShop() {
@@ -95,7 +96,7 @@ function FillShopTable(panel, shopData) {
 	}
 }
 
-function SnippetCreate_SmallItem(panel, itemName, skipPush) {
+function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragEnd) {
 	panel.BLoadLayoutSnippet("SmallItem")
 	panel.itemName = itemName
 	panel.FindChildTraverse("SmallItemImage").itemname = itemName;
@@ -147,35 +148,35 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush) {
 		panel.DeleteAsync(0)
 	}
 	if (!panel.IsInQuickbuy) {
-		$.RegisterEventHandler('DragStart', panel, SmallItemOnDragStart);
-		$.RegisterEventHandler('DragEnd', panel, SmallItemOnDragEnd);
+		$.RegisterEventHandler('DragStart', panel, function(panelId, dragCallbacks) {
+			var itemName = panel.itemName
+			if (!onDragStart || onDragStart(panel)) {
+				$.GetContextPanel().AddClass("DropDownMode")
+				ItemHideTooltip(panel);
+				var displayPanel = $.CreatePanel("DOTAItemImage", panel, "dragImage");
+				displayPanel.itemname = itemName;
+				if (itemName.lastIndexOf("item_recipe_", 0) === 0)
+					displayPanel.SetImage("raw://resource/flash3/images/items/recipe.png")
+
+				dragCallbacks.displayPanel = displayPanel;
+				dragCallbacks.offsetX = 0;
+				dragCallbacks.offsetY = 0;
+				return true;
+			}
+			return false;
+		});
+		
+		$.RegisterEventHandler('DragEnd', panel, function(panelId, draggedPanel) {
+			$.GetContextPanel().RemoveClass("DropDownMode")
+			draggedPanel.DeleteAsync(0);
+			!onDragEnd || onDragEnd(panel)
+			return true;
+		});
 	}
 	UpdateSmallItem(panel)
 	if (!skipPush)
 		SmallItems.push(panel)
-}
-
-function SmallItemOnDragStart(panelId, dragCallbacks) {
-	$.GetContextPanel().AddClass("DropDownMode")
-	var panel = $("#" + panelId)
-	var itemName = panel.itemName
-	ItemHideTooltip(panel);
-
-	var displayPanel = $.CreatePanel("DOTAItemImage", panel, "dragImage");
-	displayPanel.itemname = itemName;
-	if (itemName.lastIndexOf("item_recipe_", 0) === 0)
-		displayPanel.SetImage("raw://resource/flash3/images/items/recipe.png")
-
-	dragCallbacks.displayPanel = displayPanel;
-	dragCallbacks.offsetX = 0;
-	dragCallbacks.offsetY = 0;
-	return true;
-}
-
-function SmallItemOnDragEnd(panelId, draggedPanel) {
-	$.GetContextPanel().RemoveClass("DropDownMode")
-	draggedPanel.DeleteAsync(0);
-	return true;
+	return panel;
 }
 
 function ShowItemRecipe(itemName) {
@@ -458,58 +459,6 @@ function AutoUpdateQuickbuy() {
 	$.Schedule(0.15, AutoUpdateQuickbuy)
 }
 
-function UpdateItembuildsForHero() {
-	var heroName = GetPlayerHeroName(Game.GetLocalPlayerID())
-	if (LastHero != heroName) {
-		LastHero = heroName;
-		var DropRoot = $("#Itembuild_selectBox");
-		var content = "";
-		var SelectedTable;
-		if (Itembuilds[heroName]) {
-			$.Each(Itembuilds[heroName], function(build, i) {
-				content = content + "<Label text='" + build.title + "' id='Itembuild_select_element_index_" + i + "'/>";
-				if (SelectedTable == null)
-					SelectedTable = build;
-			});
-		}
-		DropRoot.BLoadLayoutFromString("<root><Panel><DropDown id='Itembuild_select'> " + content + "</DropDown></Panel></root>", true, true);
-		DropRoot.FindChildTraverse("Itembuild_select").SetPanelEvent("oninputsubmit", function() {
-			var index = Number(DropRoot.FindChildTraverse("Itembuild_select").GetSelected().id.replace("Itembuild_select_element_index_", ""))
-			if (Itembuilds[heroName] != null && Itembuilds[heroName][index] != null) {
-				SelectItembuild(Itembuilds[heroName][index]);
-			}
-		});
-		$.GetContextPanel().SetHasClass("ItembuildsHidden", SelectedTable == null);
-		SelectItembuild(SelectedTable);
-	}
-}
-
-function SelectItembuild(t) {
-	var groupsRoot = $("#ItembuildPanelsRoot")
-	groupsRoot.RemoveAndDeleteChildren();
-	if (t != null) {
-		$("#Itembuild_author").text = t.author || "?";
-		$("#Itembuild_patch").text = t.patch || "?";
-		$.Each(t.items, function(groupData) {
-			var groupRoot = $.CreatePanel("Panel", groupsRoot, "");
-			groupRoot.AddClass("ItembuildItemGroup");
-			var groupTitle = $.CreatePanel("Label", groupRoot, "");
-			groupTitle.AddClass("ItembuildItemGroupTitle");
-			groupTitle.text = $.Localize(groupData.title);
-			var itemsRoot = $.CreatePanel("Panel", groupRoot, "");
-			itemsRoot.AddClass("ItembuildItemGroupItemRoot");
-
-			$.Each(groupData.content, function(itemName) {
-				var itemPanel = $.CreatePanel("Panel", itemsRoot, "shop_itembuild_items_" + itemName)
-				SnippetCreate_SmallItem(itemPanel, itemName)
-			})
-		})
-	} else {
-		$("#Itembuild_author").text = "";
-		$("#Itembuild_patch").text = "";
-	}
-}
-
 function SetItemStock(item, ItemStock) {
 	ItemStocks[item] = ItemStock;
 }
@@ -574,6 +523,11 @@ function SetItemStock(item, ItemStock) {
 			}
 		};
 	});
+	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
+		if (changesObject.gamemode_settings && changesObject.gamemode_settings.version != null) {
+			ARENA_VERSION = changesObject.gamemode_settings.version
+		}
+	})
 
 	GameEvents.Subscribe("arena_team_changed_update", function() {
 		var stockdata = PlayerTables.GetTableValue("panorama_shop_data", "ItemStocks_team" + Players.GetTeam(Game.GetLocalPlayerID()))
@@ -590,13 +544,13 @@ function SetItemStock(item, ItemStock) {
 		if (draggedPanel.itemname != null) {
 			SetQuickbuyStickyItem(draggedPanel.itemname)
 		}
-		draggedPanel.DeleteAsync(0);
+		return true;
 	});
 
 	$.RegisterEventHandler('DragDrop', $("#QuickBuyPanelItems"), function(panelId, draggedPanel) {
 		if (draggedPanel.itemname != null) {
 			SetQuickbuyTarget(draggedPanel.itemname)
 		}
-		draggedPanel.DeleteAsync(0);
+		return true;
 	});
 })()
