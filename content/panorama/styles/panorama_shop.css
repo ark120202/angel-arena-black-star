@@ -123,10 +123,13 @@
 #Itembuild_author_player
 {
 	width: 80%;
+}
+#Itembuild_author_player > Label
+{
 	text-overflow: shrink;
 	font-size: 14px;
-	color: #47515a;
 	font-weight: semi-bold;
+	wash-color: #47515af0;
 }
 #Itembuild_patch
 {
@@ -189,7 +192,7 @@
 	transition-duration: 0.1s;
 }
 
-.ItembuildItemGroupTitle
+#ItembuildItemGroupTitle
 {
 	margin-left: 4px;
 	width: 100%;
@@ -200,22 +203,22 @@
 	font-size: 14px;
 	height: 26px;
 }
-.ItembuildItemGroupTitle:disabled
+#ItembuildItemGroupTitle:disabled
 {
 	background-color: transparent;
 	border-color: transparent;
 	color: white;
 }
 
-.ItembuildItemGroupItemRoot
+#ItembuildItemGroupItemRoot
 {
-	margin-top: 6px;
-	margin-left: 5px;
+	padding-top: 6px;
+	padding-left: 5px;
 	width: 100%;
 	flow-children: right-wrap;
 }
 
-.EditMode .ItembuildItemGroupItemRoot
+.EditMode #ItembuildItemGroupItemRoot
 {
 	min-height: 37px;
 }

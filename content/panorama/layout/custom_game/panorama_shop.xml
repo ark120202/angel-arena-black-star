@@ -34,6 +34,12 @@
 				</Panel>
 			</RadioButton>
 		</snippet>
+		<snippet name="ItembuildGroup">
+			<Panel class="ItembuildItemGroup">
+				<TextEntry id="ItembuildItemGroupTitle" maxchars="20" />
+				<Panel id="ItembuildItemGroupItemRoot" draggable="true" />
+			</Panel>
+		</snippet>
 	</snippets>
 	<Panel hittest="false" class="base">
 		<!-- ShopBase_Out -->
@@ -101,31 +107,43 @@
 			<Panel id="GuidesBrowserRight">
 				<Button class="CloseButton" onactivate="$.GetContextPanel().RemoveClass('GuidesBrowserVisible')" />
 				<Panel id="GuidesHeader">
-					<Label id="GuidesTitleLabel" text="My awesome build!" />
+					<Panel id="GuidesHeaderTitleRow">
+						<TextEntry id="GuidesTitleLabel" maxchars="20" undohistory="enabled" />
+						<Button class="ButtonBevel" id="GuideTogglePublish" onactivate="TogglePublishMode();">
+							<Label id="GuideTogglePublishLabel" text="Publish" hittest="false" />
+							<Label id="GuideTogglePublishLabelCancel" text="Cancel" hittest="false" />
+						</Button>
+					</Panel>
 					<!-- <Label id="GuidesBrowserDescription" text="#DOTA_Guide_WorkshopSubtitle" />  -->
-					<Label id="GuidesBrowserDescription" text="" /> 
+					<Label id="GuidesBrowserDescription" /> 
 				</Panel>
 				<Panel id="GuideArea">
-					<Panel id="GuideTop">
-						<Panel id="ItemBuild" />
-						<Panel id="GuideRightColumn">
-							<Panel id="RatingBlock" >
-								<Panel id="RatingLabels" >
-									<Label id="RatingPercent" class="GuideStat" text="{s:player_rating}" />
-									<Label id="RatingLabel" class="GuideStatLabel" text="#DOTA_Guide_PlayerRating" />
-								</Panel>
-								<Panel id="VotingButtons">
-									<Button id="VoteUpButton" onactivate="DOTAVoteGuideUp()" >
-										<Image class="VoteIcon" src="s2r://panorama/images/icon_thumbs_up_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
-									</Button>
-									<Button id="VoteDownButton" onactivate="DOTAVoteGuideDown()" >
-										<Image class="VoteIcon VoteIconFlipped" src="s2r://panorama/images/icon_thumbs_up_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
-									</Button>
-								</Panel>
+					<Panel id="GuideItemBuild" />
+					<Panel id="GuideRightColumn">
+						<Panel id="GuideRatingBlock" >
+							<Panel id="GuideRatingLabels" >
+								<Label id="GuideRatingValue" class="GuideStat" text="{s:guide_player_rating}" />
+								<Label id="RatingLabel" class="GuideStatLabel" text="#DOTA_Guide_PlayerRating" />
+							</Panel>
+							<Panel id="VotingButtons">
+								<Button id="VoteUpButton" onactivate="DOTAVoteGuideUp()" >
+									<Image class="VoteIcon" src="s2r://panorama/images/icon_thumbs_up_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+								<Button id="VoteDownButton" onactivate="DOTAVoteGuideDown()" >
+									<Image class="VoteIcon VoteIconFlipped" src="s2r://panorama/images/icon_thumbs_up_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
 							</Panel>
 						</Panel>
+						<Panel id="GuidePublishBlock">
+							<TextEntry id="GuidePublishYouTube" placeholder="youtube.com/watch?v=..." />
+							<TextEntry id="GuidePublishDescription" placeholder="Text..." maxchars="250" undohistory="enabled" />
+							<TextButton class="ButtonBevel Green" id="GuidePublishButton" onactivate="PublishGuide(SelectedBuild)" text="Publish" />
+						</Panel>
+						<Panel id="GuideYouTubeLogo" onactivate="OpenYoutubeForGuide(SelectedBuild)" >
+							<Image src="file://{images}/custom_game/shop/YouTube-logo-full_color.png" />
+							<Label text="#panorama_shop_guide_youtube_open" />
+						</Panel>
 					</Panel>
-					<DOTAAbilityBuild id="AbilityBuild"/>
 				</Panel>
 			</Panel>
 		</Panel>

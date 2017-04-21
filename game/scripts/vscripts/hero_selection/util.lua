@@ -259,9 +259,9 @@ end
 
 function HeroSelection:PreformPlayerRandom(playerId)
 	while true do
-		local heroKey = HeroSelection.RandomableHeroes[RandomInt(1, #HeroSelection.RandomableHeroes)].heroKey
-		if not HeroSelection:IsHeroSelected(heroKey) then
-			HeroSelection:UpdateStatusForPlayer(playerId, "picked", heroKey)
+		local hero = HeroSelection.RandomableHeroes[RandomInt(1, #HeroSelection.RandomableHeroes)]
+		if not HeroSelection:IsHeroSelected(hero) and not HeroSelection:IsHeroBanned(hero) then
+			HeroSelection:UpdateStatusForPlayer(playerId, "picked", hero)
 			Gold:ModifyGold(playerId, CUSTOM_GOLD_FOR_RANDOM_TOTAL)
 			break
 		end

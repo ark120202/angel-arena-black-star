@@ -96,7 +96,8 @@ function SafeGetPlayerHeroEntityIndex(playerId) {
 function GetPlayerHeroName(playerId) {
 	if (Players.IsValidPlayerID(playerId)) {
 		//Is it causes lots of table copies? TODO: Check how that affects perfomance
-		return PlayerTables.GetTableValue("hero_selection", Players.GetTeam(playerId))[playerId].hero; //GetHeroName(SafeGetPlayerHeroEntityIndex(playerId))
+		//return PlayerTables.GetTableValue("hero_selection", Players.GetTeam(playerId))[playerId].hero;
+		return GetHeroName(SafeGetPlayerHeroEntityIndex(playerId))
 	}
 	return ""
 }

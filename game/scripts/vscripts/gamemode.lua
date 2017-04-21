@@ -99,6 +99,12 @@ function GameMode:InitGameMode()
 	HeroSelection:Initialize()
 	GameMode:RegisterCustomListeners()
 	DynamicWearables:Init()
+	HeroSelection:PrepareTables()
+	PanoramaShop:InitializeItemTable()
+	
+	Containers:SetItemLimit(50)
+	Containers:UsePanoramaInventory(false)
+	StatsClient:Init()
 	PlayerTables:CreateTable("arena", {
 		gold = {},
 		gamemode_settings = {
@@ -111,12 +117,7 @@ function GameMode:InitGameMode()
 		players_abandoned = {},
 	}, AllPlayersInterval)
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
-
 	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
-	Containers:SetItemLimit(50)
-	Containers:UsePanoramaInventory(false)
-	HeroSelection:PrepareTables()
-	PanoramaShop:InitializeItemTable()
 end
 
 function GameMode:PostLoadPrecache()
