@@ -15606,7 +15606,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"180"
+				"aoe"					"300"
 			}
 			"04"
 			{

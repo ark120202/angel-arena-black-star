@@ -3,6 +3,6 @@ function MaxHealth(keys)
 	local ability = keys.ability
 	caster:SetHealth(caster:GetMaxHealth())
 	caster:SetMana(caster:GetMaxMana())
-	RefreshAbilities(caster, REFRESH_LIST_IGNORE_REFRESHER)
-	RefreshItems(caster, REFRESH_LIST_IGNORE_REFRESHER)
+	RefreshAbilities(caster, REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION)
+	RefreshItems(caster, REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION)
 end

@@ -31,14 +31,14 @@
 
 		"precache"
 		{
-			"particle"				"particles/arena/units/heroes/hero_destroyer/armor_crush.vpcf"
+			"particle"				"particles/arena/units/heroes/hero_destroyer/destroyer_armor_crush.vpcf"
 		}
 
 		"OnSpellStart"
 		{
 			"FireEffect"
 			{
-				"EffectName"		"particles/arena/units/heroes/hero_destroyer/armor_crush.vpcf"
+				"EffectName"		"particles/arena/units/heroes/hero_destroyer/destroyer_armor_crush.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"Target"			"TARGET"
 			}
@@ -126,7 +126,7 @@
 
 		"precache"
 		{
-			"particle"				"particles/arena/units/heroes/hero_destroyer/seal_of_limit.vpcf"
+			"particle"				"particles/arena/units/heroes/hero_destroyer/destroyer_seal_of_limit.vpcf"
 		}
 
 
@@ -145,21 +145,8 @@
 			{
 				"Duration"			"%duration"
 
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"        "particles/arena/units/heroes/hero_destroyer/seal_of_limit.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "CASTER"
-
-						"ControlPointEntities"
-						{
-							"CASTER"	"follow_origin"
-							"CASTER"	"follow_origin"
-						}
-					}
-				}
+				"EffectName"        "particles/arena/units/heroes/hero_destroyer/destroyer_seal_of_limit.vpcf"
+				"EffectAttachType"  "follow_origin"
 
 				"ThinkInterval"  "0.1"
 				"OnIntervalThink"
@@ -190,20 +177,19 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"150 140 130 120 110 100 60"
 		"AbilityManaCost"				"100 150 200 250 300 350 400"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 
 		"precache"
 		{
-			"particle"				"particles/arena/units/heroes/hero_destroyer/body_reconstruction.vpcf"
+			"particle"				"particles/arena/units/heroes/hero_destroyer/destroyer_body_reconstruction.vpcf"
 		}
 
 		"OnSpellStart"
 		{
 			"FireEffect"
 			{
-				"EffectName"		"particles/arena/units/heroes/hero_destroyer/body_reconstruction.vpcf"
+				"EffectName"		"particles/arena/units/heroes/hero_destroyer/destroyer_body_reconstruction.vpcf"
 				"EffectAttachType"	"follow_origin"
-				"Target"			"TARGET"
 			}
 			
 			"RunScript"
@@ -285,6 +271,11 @@
 				"var_type"			"FIELD_INTEGER"
 				"max_speed_lvl3" 	"640 660 680 700 720"
 			}
+		}
+
+		"precache"
+		{
+			"particle"				"particles/arena/units/heroes/hero_destroyer/destroyer_frenzy.vpcf"
 		}
 	}
 }

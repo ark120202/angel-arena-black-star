@@ -58,8 +58,16 @@ function modifier_destroyer_frenzy:GetModifierBaseDamageOutgoing_Percentage()
 	end
 end
 function modifier_destroyer_frenzy:OnCreated()
+	if IsServer() then
+		self.pfx = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_destroyer/destroyer_frenzy.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+	end
 	self:StartIntervalThink(0.1)
 	self:OnIntervalThink()
+end
+if IsServer() then
+	function modifier_destroyer_frenzy:OnDestroy()
+		ParticleManager:DestroyParticle(self.pfx, false)
+	end
 end
 function modifier_destroyer_frenzy:OnIntervalThink()
 	local ability = self:GetAbility()
@@ -73,7 +81,8 @@ function modifier_destroyer_frenzy:OnIntervalThink()
 	elseif	healht_pct < ability:GetSpecialValueFor("hp_mark_pct_lvl1") then
 		level = 1
 	end
-	if level then
-		self.ReducedArmor = (parent:GetPhysicalArmorValue() - (self.ReducedArmor or 0)) * ability:GetSpecialValueFor("bonus_armor_pct_lvl" .. level) * 0.01
+	self.ReducedArmor = level == nil and 0 or (parent:GetPhysicalArmorValue() - (self.ReducedArmor or 0)) * ability:GetSpecialValueFor("bonus_armor_pct_lvl" .. level) * 0.01
+	if IsServer() then
+		ParticleManager:SetParticleControl(self.pfx, 15, Vector(level == 3 and 255 or 0, level == 2 and 255 or 0, level == 1 and 255 or 0))
 	end
 end

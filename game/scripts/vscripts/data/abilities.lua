@@ -50,6 +50,14 @@ REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
 	omniknight_select_enemies = true,
 }
 
+REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
+	item_refresher_arena = true,
+	item_aegis_arena = true,
+	item_refresher_core = true,
+	item_titanium_bar = true,
+
+	destroyer_body_reconstruction = true,
+}
 
 REFRESH_LIST_IGNORE_REARM = {
 	tinker_rearm_arena = true,
