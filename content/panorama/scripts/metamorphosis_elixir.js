@@ -70,6 +70,8 @@ function AutoSearchHero() {
 	MainPanel.visible = false
 	DynamicSubscribePTListener("hero_selection", UpdateHeroesSelected)
 	DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {
+		
+		return;
 		if (changesObject.HeroTabs != null) {
 			CreateMenu(changesObject);
 		};

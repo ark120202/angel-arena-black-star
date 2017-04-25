@@ -129,9 +129,9 @@
 	text-overflow: shrink;
 	font-size: 14px;
 	font-weight: semi-bold;
-	wash-color: #47515af0;
+	//wash-color: #47515af0;
 }
-#Itembuild_patch
+#Itembuild_version
 {
 	width: 20%;
 	text-align: right;

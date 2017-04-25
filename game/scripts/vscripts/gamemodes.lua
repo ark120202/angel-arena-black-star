@@ -26,29 +26,28 @@ if GameModes == nil then
 	}
 
 	GameModes.Settings = {
-		[ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES] = {
-			onPreload = function()
-				for k,t in pairs(DROP_TABLE) do
-					for i,info in ipairs(t) do
-						if string.starts(info.Item, "item_god_transform_") then
-							table.remove(DROP_TABLE[k], i)
-						end
+		[ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES] = function()
+			for k,t in pairs(DROP_TABLE) do
+				for i,info in ipairs(t) do
+					if string.starts(info.Item, "item_god_transform_") then
+						table.remove(DROP_TABLE[k], i)
 					end
 				end
-			end,
-		},
-		[DOTA_GAMEMODE_4V4V4V4] = {
-			onPreload = function()
-				MAP_LENGTH = 9216
-				USE_AUTOMATIC_PLAYERS_PER_TEAM = false
-				MAX_NUMBER_OF_TEAMS = 4
-				CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 4
-				CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS] = 4
-				CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_1] = 4
-				CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_2] = 4
-				USE_CUSTOM_TEAM_COLORS = true
-			end,
-		},
+			end
+		end,
+		[DOTA_GAMEMODE_4V4V4V4] = function()
+			MAP_LENGTH = 9216
+			USE_AUTOMATIC_PLAYERS_PER_TEAM = false
+			MAX_NUMBER_OF_TEAMS = 4
+			CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 4
+			CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS] = 4
+			CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_1] = 4
+			CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_2] = 4
+			USE_CUSTOM_TEAM_COLORS = true
+		end,
+		[DOTA_GAMEMODE_TYPE_RANKED_ALLPICK] = function()
+			HERO_SELECTION_ENABLE_BANNING_PHASE = true
+		end,
 	}
 end
 
@@ -67,13 +66,18 @@ end
 
 function GameModes:PreloadGamemodeSettingsFromTable(t)
 	if not t then return end
-	if t.requirements and type(t.requirements) == "table" then
-		for _,v in ipairs(t.requirements) do
-			require(v)
+	if type(t) == "function" then
+		t()
+		return
+	elseif type(t) == "table" then
+		if t.requirements and type(t.requirements) == "table" then
+			for _,v in ipairs(t.requirements) do
+				require(v)
+			end
 		end
-	end
-	if t.onPreload then
-		t.onPreload()
+		if t.onPreload then
+			t.onPreload()
+		end
 	end
 end
 
@@ -115,4 +119,42 @@ function GameModes:OnAllVotesSubmitted()
 		end
 		print("Gamemode " .. key .. " was selected because of " .. max .. " votes")
 	end
+end
+
+
+
+Options = Options or class({})
+Options.Values = Options.Values or {}
+Options.PreGameVotings = Options.PreGameVotings or {}
+function Options:SetValue(name, value)
+	--if type(value) == "boolean" then value = value and 1 or 0 end
+	Options.Values[name] = value
+	PlayerTables:SetTableValue("options", name, value)
+end
+
+function Options:GetValue(name)
+	return Options.Values[name]
+end
+
+function Options:IsEquals(name, value)
+	--if type(value) == "boolean" then value = value and 1 or 0 end
+	return Options:GetOptionValue(name) == value
+end
+
+function Options:SetPreGameVoting(name, variants, default)
+	Options.PreGameVotings[name] = {variants = table.deepcopy(variants), default = default}
+	return Options.PreGameVotings[name]
+end
+
+function Options:LoadDefaultValues()
+	Options:SetValue("EnableRandomAbilities", false)
+	Options:SetValue("EnableAbilityShop", false)
+	Options:SetValue("EnableStatisticsCollection", true)
+	Options:SetValue("EnableRatingAffection", true)
+
+	Options:SetValue("BanningPhaseBanPercentage", 0)
+	Options:SetValue("MainHeroList", "Selection")
+
+	Options:SetPreGameVoting("KillLimit", {100, 200, 300}, 200, VOTING_COUNT_NUMBER_SP)
+	Options:SetPreGameVoting("", {100, 200, 300}, 200)
 end

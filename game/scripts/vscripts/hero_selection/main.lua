@@ -26,28 +26,31 @@ HERO_SELECTION_BANNING_TIME = 25
 
 
 function HeroSelection:Initialize()
-	if not HeroSelection._initialized then
-		HeroSelection._initialized = true
-		GameRules:SetHeroSelectionTime(-1)
-		GameRules:SetPreGameTime(HERO_SELECTION_PICK_TIME + HERO_SELECTION_STRATEGY_TIME + 3.75 + PRE_GAME_TIME)
-		CustomGameEventManager:RegisterListener("hero_selection_player_hover", Dynamic_Wrap(HeroSelection, "OnHeroHover"))
-		CustomGameEventManager:RegisterListener("hero_selection_player_select", Dynamic_Wrap(HeroSelection, "OnHeroSelectHero"))
-		CustomGameEventManager:RegisterListener("hero_selection_player_random", Dynamic_Wrap(HeroSelection, "OnHeroRandomHero"))
-		CustomGameEventManager:RegisterListener("hero_selection_minimap_set_spawnbox", Dynamic_Wrap(HeroSelection, "OnMinimapSetSpawnbox"))
-		CustomGameEventManager:RegisterListener("hero_selection_player_repick", Dynamic_Wrap(HeroSelection, "OnHeroRepick"))
-		Convars:RegisterCommand("arena_hero_selection_skip_phase", function()
-			if HeroSelection.CurrentState == HERO_SELECTION_PHASE_BANNING then
-				HeroSelection:StartStateHeroPick()
-			elseif HeroSelection.CurrentState == HERO_SELECTION_PHASE_HERO_PICK then
-				HeroSelection:StartStateStrategy()
-			elseif HeroSelection.CurrentState == HERO_SELECTION_PHASE_STRATEGY then
-				HeroSelection:StartStateInGame({})
-			elseif HeroSelection.CurrentState == HERO_SELECTION_PHASE_END then
-				Tutorial:ForceGameStart()
-			end
-		end, "Skips current phase", FCVAR_CHEAT)
-		PlayerTables:CreateTable("hero_selection_banning_phase", {}, AllPlayersInterval)
+	GameRules:SetHeroSelectionTime(-1)
+	local preTime = HERO_SELECTION_PICK_TIME + HERO_SELECTION_STRATEGY_TIME + 3.75 + PRE_GAME_TIME
+	if HERO_SELECTION_ENABLE_BANNING_PHASE then
+		preTime = preTime + HERO_SELECTION_BANNING_TIME
 	end
+	GameRules:SetPreGameTime(preTime)
+
+	CustomGameEventManager:RegisterListener("hero_selection_player_hover", Dynamic_Wrap(HeroSelection, "OnHeroHover"))
+	CustomGameEventManager:RegisterListener("hero_selection_player_select", Dynamic_Wrap(HeroSelection, "OnHeroSelectHero"))
+	CustomGameEventManager:RegisterListener("hero_selection_player_random", Dynamic_Wrap(HeroSelection, "OnHeroRandomHero"))
+	CustomGameEventManager:RegisterListener("hero_selection_minimap_set_spawnbox", Dynamic_Wrap(HeroSelection, "OnMinimapSetSpawnbox"))
+	CustomGameEventManager:RegisterListener("hero_selection_player_repick", Dynamic_Wrap(HeroSelection, "OnHeroRepick"))
+	PlayerTables:CreateTable("hero_selection_banning_phase", {}, AllPlayersInterval)
+
+	Convars:RegisterCommand("arena_hero_selection_skip_phase", function()
+		if HeroSelection.CurrentState == HERO_SELECTION_PHASE_BANNING then
+			HeroSelection:StartStateHeroPick()
+		elseif HeroSelection.CurrentState == HERO_SELECTION_PHASE_HERO_PICK then
+			HeroSelection:StartStateStrategy()
+		elseif HeroSelection.CurrentState == HERO_SELECTION_PHASE_STRATEGY then
+			HeroSelection:StartStateInGame({})
+		elseif HeroSelection.CurrentState == HERO_SELECTION_PHASE_END then
+			Tutorial:ForceGameStart()
+		end
+	end, "Skips current phase", FCVAR_CHEAT)
 end
 
 function HeroSelection:PrepareTables()
@@ -70,12 +73,11 @@ function HeroSelection:PrepareTables()
 
 			if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK or DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANKED_ALLPICK then
 				heroData.abilities = HeroSelection:ParseAbilitiesFromTable(heroTable)
-				heroData.border_class = heroTable.BorderClass
+				heroData.isChanged = heroTable.Changed == 1 and tabIndex == 1
+				heroData.linkedColorGroup = heroTable.LinkedColorGroup
+
 				if heroTable.LinkedHero then
 					heroData.linked_heroes = string.split(heroTable.LinkedHero, " | ")
-				end
-				if not heroData.border_class and heroTable.Changed == 1 and tabIndex == 1 then
-					heroData.border_class = "Border_Changed"
 				end
 			end
 			heroesData[name] = heroData
@@ -83,7 +85,7 @@ function HeroSelection:PrepareTables()
 	end
 	for name,enabled in pairsByKeys(ENABLED_HEROES[ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES and "NoAbilities" or "Selection"]) do
 		if enabled == 1 then
-			if not heroesData[name] then
+			if not heroesData[name] or heroesData[name].Enabled == 0 then
 				error("Hero from enabled hero list is not a valid hero")
 			end
 			local tabIndex = heroesData[name].tabIndex
@@ -91,14 +93,15 @@ function HeroSelection:PrepareTables()
 			table.insert(data.HeroTabs[tabIndex], name)
 		end
 	end
-	for k,v in pairs(heroesData) do
-		if not v.linked_heroes then
-			table.insert(HeroSelection.RandomableHeroes, k)
+	for _,tab in pairs(data.HeroTabs) do
+		for _,name in ipairs(tab) do
+			if heroesData[name] and not heroesData[name].linked_heroes then
+				table.insert(HeroSelection.RandomableHeroes, k)
+			end
 		end
 	end
 	PlayerTables:CreateTable("hero_selection_heroes_data", heroesData, AllPlayersInterval)
 	PlayerTables:CreateTable("hero_selection_available_heroes", data, AllPlayersInterval)
-	--PlayerTables:CreateTable("hero_selection_repicked_players", {}, AllPlayersInterval)
 end
 
 function HeroSelection:SetTimerDuration(duration)
@@ -129,7 +132,7 @@ end
 
 function HeroSelection:HeroSelectionStart()
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled(true)
-	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANKED_ALLPICK then
+	if HERO_SELECTION_ENABLE_BANNING_PHASE then
 		EmitAnnouncerSound("announcer_ann_custom_mode_05")
 		HeroSelection:SetState(HERO_SELECTION_PHASE_BANNING)
 		HeroSelection:SetTimerDuration(HERO_SELECTION_BANNING_TIME)
@@ -143,25 +146,26 @@ end
 
 function HeroSelection:StartStateHeroPick()
 	--Banning
-	local t = PlayerTables:GetAllTableValues("hero_selection_banning_phase")
-	local iter = 1
-	local iterCount = math.floor(#t / 2)
-	print("BAN PHASE: iter, iterCount, table length", iter, iterCount, #t)
-	for hero in shuffledPairs(t) do
-		PlayerTables:SetTableValue("hero_selection_banning_phase", hero, true)
-		print("BANNED", hero)
-		if iter >= iterCount then
-			iter = iter + 1
-			break
+	local notBanned = {}
+	for hero in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")) do
+		if not table.contains(notBanned, hero) then
+			table.insert(notBanned, hero)
 		end
 	end
+	local iterCount = math.ceil(#notBanned / 2) 
+	for i = 1, iterCount do
+		table.remove(notBanned, RandomInt(1, #notBanned))
+	end
+	PlayerTables:DeleteTableKeys("hero_selection_banning_phase", notBanned)
+	--local banned = PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")
+
 
 	HeroSelection:DismissTimers()
 	EmitAnnouncerSound("announcer_ann_custom_draft_01")
 	HeroSelection:SetState(HERO_SELECTION_PHASE_HERO_PICK)
 	HeroSelection:SetTimerDuration(HERO_SELECTION_PICK_TIME)
-	for _,sec in ipairs({30, 15, 10, 5}) do
-		Timers:CreateTimer(HERO_SELECTION_PICK_TIME - sec, function()
+	for _,sec in ipairs({30, 15, 10, "05"}) do
+		HeroSelection:CreateTimer(HERO_SELECTION_PICK_TIME - tonumber(sec), function()
 			EmitAnnouncerSound("announcer_ann_custom_timer_sec_" .. sec)
 		end)
 	end

@@ -94,6 +94,10 @@
 	width: 100%;
 	flow-children: down;
 }
+.base #HeroListPanel
+{
+	margin-left: 50px;
+}
 
 .HeroListElement
 {
@@ -116,7 +120,7 @@
 	contrast: 1.01;
 	blur: gaussian(1.8px);
 }
-.InSearch .HeroListElement:not(.SearchedPanelDisabled)
+.SearchingHeroes .HeroListElement:not(.SearchedPanelDisabled)
 {
 	pre-transform-scale2d: 1.1;
 }
@@ -124,7 +128,7 @@
 {
 	pre-transform-scale2d: 1.15;
 }
-.InSearch .HeroListElement:not(.SearchedPanelDisabled):hover
+.SearchingHeroes .HeroListElement:not(.SearchedPanelDisabled):hover
 {
 	pre-transform-scale2d: 1.2;
 }
@@ -137,28 +141,11 @@
 	border: 4px solid #b2da25;
 	pre-transform-scale2d: 1.1;
 }
-.HeroListElement.Picked
-{
-	saturation: .1;
-	wash-color: lightgrey;
-	blur: gaussian(0.5px);
-}
 .HeroListElement.Locked
 {
 	saturation: .6;
 	wash-color: lightcyan;
 	blur: gaussian(0.1px);
-}
-
-.HeroListElement #LockedIcon
-{
-	width: 24px;
-	height: 24px;
-}
-
-.HeroListElement.Locked #LockedIcon
-{
-	visibility: visible;
 }
 
 #SelectionStatusPanel
@@ -397,7 +384,6 @@
 	width: 20%;
 	horizontal-align: right;
 	align: right bottom;
-	background-color: rgba(0,0,0,0.2);
 	flow-children: down;
 }
 
@@ -676,6 +662,7 @@
 	width: 100%;
 	height: 100%;
 	margin: 4px;
+	background-color: #0009;
 }
 
 #SelectionChatMessagesPanel

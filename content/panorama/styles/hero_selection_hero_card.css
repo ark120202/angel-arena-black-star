@@ -1,0 +1,737 @@
+/* .HeroCard */
+
+@define expandDuration: 0.05s;
+@define contentBorderSize: 2px;
+@define contentBorderSizeNegative: -2px; /* = -1.0 * contentBorderSize */
+
+/* Adjust these constants to change the layout of the hero grid.
+   WARNING: if you adjust any of these, you must also adjust the other constants below according to their formulas!
+*/
+@define expandedScale: 1.0; /* When a card is expanded it should be at 1.0 scale so that text works correctly */
+@define defaultScale: 0.485; /* The scale of a card when it's not expanded */
+@define defaultScaleX: 0.32; /* We scale the x slightly smaller than the Y so that the card is a little less wide when not expanded */
+@define imageWidth: 71px;
+@define imageHeight: 94px;
+
+@define imageScale: 2.06; /* = expandedScale / defaultScale */
+@define cardWidth: 213px;
+@define cardHeight: 282px;
+@define imageDefaultScaleX: 3.0; /* = ( 1.0 - ( defaultScaleX / defaultScale ) ) * imageScale */
+@define hitSizePercent: 66.67%; /* = 1.0 / ( defaultScale + ( expandedScale - defaultScale ) * 2.0 ) */
+
+/* These values are calculated as ( 1.0 - hitSizePercent ) * defaultScale / expandedScale.
+   However, using that exact value ( 16.67% ) causes clipping issues, so I've rounded down to 15%. */
+@define translateFirstColumn: translateX( 13% );
+@define translateLastColumn: translateX( -13% );
+@define translateFirstRow: translateY( 16% ); 
+@define translateLastRow: translateY( -16% );
+
+@define defaultScale3d: scale3d( defaultScaleX, defaultScale, 1.0 );
+@define expandedScale3d: scale3d( expandedScale, expandedScale, 1.0 );
+@define imageDefaultScale3d: scale3d( imageDefaultScaleX, imageScale, 1.0 );
+@define imageExpandedScale3d: scale3d( imageScale, imageScale, 1.0 );
+
+/* 5x4 aspect ratio is a little smaller */
+@define defaultScale5x4: 0.43;
+@define defaultScaleX5x4: 0.29;
+@define defaultScale3d5x4: scale3d( defaultScaleX5x4, defaultScale5x4, 1.0 );
+
+/* The expanded size during hero picking is a little smaller than full size so that
+   there's not clipping at the top/bottom */
+@define heroPickExpandedScale: 0.85;
+@define heroPickExpandedScale3d: scale3d( heroPickExpandedScale, heroPickExpandedScale, 1.0 );
+
+/* Hero picking spacing for 16x9, 16x10, 21x9 and wider */
+@define heroPickDefaultScale: 0.38;
+@define heroPickDefaultScaleX: 0.32;
+@define heroPickImageDefaultScaleX: 2.5;
+@define heroPickCardMargin: -100px -79px;
+@define heroPickDefaultScale3d: scale3d( heroPickDefaultScaleX, heroPickDefaultScale, 1.0 );
+@define heroPickImageDefaultScale3d: scale3d( heroPickImageDefaultScaleX, imageScale, 1.0 );
+
+/* Hero picking spacing for 4x3 */
+@define heroPickDefaultScale4x3: 0.34;
+@define heroPickDefaultScaleX4x3: 0.27;
+@define heroPickImageDefaultScaleX4x3: 2.4;
+@define heroPickCardMargin4x3: -105px -84px;
+@define heroPickDefaultScale3d4x3: scale3d( heroPickDefaultScaleX4x3, heroPickDefaultScale4x3, 1.0 );
+@define heroPickImageDefaultScale3d4x3: scale3d( heroPickImageDefaultScaleX4x3, imageScale, 1.0 );
+
+/* Hero picking spacing for 5x4 */
+@define heroPickDefaultScale5x4: 0.34;
+@define heroPickDefaultScaleX5x4: 0.26;
+@define heroPickImageDefaultScaleX5x4: 2.6;
+@define heroPickCardMargin5x4: -105px -85px;
+@define heroPickDefaultScale3d5x4: scale3d( heroPickDefaultScaleX5x4, heroPickDefaultScale5x4, 1.0 );
+@define heroPickImageDefaultScale3d5x4: scale3d( heroPickImageDefaultScaleX5x4, imageScale, 1.0 );
+
+
+.HeroCard
+{
+	width: cardWidth;
+	height: cardHeight;
+}
+
+#Contents
+{
+	width: hitSizePercent;
+	height: hitSizePercent;
+
+	transform-origin: 50% 50%;
+	transform: defaultScale3d;
+
+	vertical-align: middle;
+	horizontal-align: center;
+
+	box-shadow: #000000aa -2px -2px 4px 4px;
+
+	transition-property: transform, box-shadow, opacity, saturation, wash-color;
+	transition-duration: expandDuration, expandDuration, 0.3s, 0.3s, 0.3s;
+	transition-timing-function: ease-in-out;
+}
+
+.AspectRatio5x4 .HeroCard #Contents { transform: defaultScale3d5x4; }
+//.base .HeroCard #Contents { transform: heroPickDefaultScale3d; }
+//.AspectRatio4x3 .base .HeroCard #Contents { transform: heroPickDefaultScale3d4x3; }
+//.AspectRatio5x4 .base .HeroCard #Contents { transform: heroPickDefaultScale3d5x4; }
+
+.HeroCard.Showing #Contents
+{
+	saturation: 0.7;
+	brightness: 1.0;
+	wash-color: white;
+}
+
+.HeroCard.Showing.Highlighted #Contents
+{
+	saturation: 1;
+}
+
+.HeroCard.Showing.Filtered #Contents,
+.HeroCard.Showing.Unavailable #Contents
+{
+	/* fade out when unavailable */
+	brightness: 0.3;
+	saturation: 0.0;
+	wash-color: #777777aa;
+	
+	brightness: 1;
+	contrast: .8;
+	saturation: 0;
+	wash-color: #7ABCCEaa;
+	opacity: .4;
+	box-shadow: none;
+}
+
+.HeroCard.Showing.Banned #Contents
+{
+	brightness: 0.3;
+	saturation: 0.2;
+	wash-color: #ff4444aa;
+	contrast: .9;
+	opacity: 1;
+}
+
+.IsInBanPhase .HeroCard.Showing.Banned #Contents
+{
+	brightness: 0.5;
+	saturation: 0.5;
+	wash-color: #ffffff;
+	contrast: 1;
+}
+
+
+.HeroCard.Showing.AlreadyPicked #Contents
+{
+	brightness: 1;
+	contrast: .8;
+	saturation: 0;
+	wash-color: #7ABCCEaa;
+	opacity: .4;
+	box-shadow: none;
+}
+
+
+.HeroCard.Showing.Suggested:not(.SuggestedBan) #SuggestedOverlay,
+.HeroCard.Showing.SuggestedBan #SuggestedBanOverlay
+{
+	opacity: 1;
+}
+
+.HeroCard.Showing.Suggested.Filtered:not(.SuggestedBan) #SuggestedOverlay,
+.HeroCard.Showing.SuggestedBan.Filtered #SuggestedBanOverlay
+{
+	opacity: 0.15;
+}
+
+.SearchingHeroes .HeroCard.Showing #Contents
+{
+	brightness: 0.3;
+	saturation: 0.0;
+	wash-color: #777777aa;
+}
+
+.SearchingHeroes .HeroCard.Showing.Filtered #Contents,
+.SearchingHeroes .HeroCard.Showing.Banned #Contents,
+.SearchingHeroes .HeroCard.Showing.Unavailable #Contents,
+.SearchingHeroes .HeroCard.Showing.AlreadyPicked #Contents
+{
+	brightness: 0.3;
+	saturation: 0.0;
+	wash-color: #777777aa;
+}
+
+.SearchingHeroes .HeroCard.Showing.Highlighted #Contents
+{
+	brightness: 1.0;
+	saturation: 1;
+	wash-color: white;
+}
+
+#HitTarget
+{
+	width: 88%;
+	height: 79%;
+
+	transform: defaultScale3d;
+
+	vertical-align: middle;
+	horizontal-align: center;
+}
+
+.AspectRatio5x4 .HeroCard #HitTarget { transform: defaultScale3d5x4; }
+//.base .HeroCard #HitTarget { transform: heroPickDefaultScale3d; }
+//.AspectRatio4x3 .base .HeroCard #HitTarget { transform: heroPickDefaultScale3d4x3; }
+//.AspectRatio5x4 .base .HeroCard #HitTarget { transform: heroPickDefaultScale3d5x4; }
+
+#HitTarget
+{
+	/* Useful to enable for debugging 
+	border: 3px solid white;*/
+}
+
+.HeroCard.Showing.Highlighted #Contents
+{
+	box-shadow: #00ffff44 -4px -4px 8px 8px;
+
+	animation-name: HeroCardHighlight;
+	animation-duration: 0.2s;
+
+	brightness: 2;
+}
+
+.HeroCard.Showing.Highlighted:focus #Contents
+{
+	box-shadow: #00ffffcc -6px -6px 12px 12px;
+	brightness: 3;
+}
+
+.HeroCard.Showing.Highlighted.Expanded #Contents
+{
+	box-shadow: #000000aa -2px -2px 4px 4px;
+}
+
+@keyframes 'HeroCardHighlight'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+	}
+	1%
+	{
+		z-index: 1;
+	}
+	50%
+	{
+		pre-transform-scale2d: 1.25;
+	}				
+	99%
+	{
+		z-index: 0;
+	}
+	100%
+	{
+		pre-transform-scale2d: 1;
+	}
+}
+
+
+@keyframes 'HeroCardSelected'
+{
+	0%
+	{
+		brightness: 1;
+	}
+	50%
+	{
+		brightness: 2;
+	}				
+	100%
+	{
+		brightness: 1;
+	}
+}
+
+.HeroCard.Showing.Expanded #Contents
+{
+	transform: expandedScale3d;
+	transition-duration: 0.18s;
+	saturation: 1;
+	
+	animation-name: HeroCardExpand;
+	animation-duration: 0.25s;
+	animation-timing-function: ease-in;
+}
+
+.base .HeroCard.Showing.Expanded #Contents
+{
+	//transform: heroPickExpandedScale3d;
+}
+
+@keyframes 'HeroCardExpand'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 1.075;
+	}				
+				
+	100%
+	{
+		pre-transform-scale2d: 1;
+	}
+}
+
+
+/* Apply a translate as well as the scale so the cards on the edges scale inwards */
+.HeroCard.LastRow.Expanded #Contents, .HeroCard.LastRow.Expanded .CardStatusOverlay								{ transform: expandedScale3d translateLastRow; }
+.HeroCard.LastColumn.Expanded #Contents, .HeroCard.LastColumn.Expanded .CardStatusOverlay							{ transform: expandedScale3d translateLastColumn; }
+.HeroCard.FirstRow.Expanded #Contents, .HeroCard.FirstRow.Expanded .CardStatusOverlay								{ transform: expandedScale3d translateFirstRow; }
+.HeroCard.FirstColumn.Expanded #Contents, .HeroCard.FirstColumn.Expanded .CardStatusOverlay						{ transform: expandedScale3d translateFirstColumn; }
+.HeroCard.LastColumn.LastRow.Expanded #Contents, .HeroCard.LastColumn.LastRow.Expanded .CardStatusOverlay			{ transform: expandedScale3d translateLastColumn translateLastRow; }
+.HeroCard.FirstColumn.LastRow.Expanded #Contents, .HeroCard.FirstColumn.LastRow.Expanded .CardStatusOverlay		{ transform: expandedScale3d translateFirstColumn translateLastRow; }
+.HeroCard.LastColumn.FirstRow.Expanded #Contents, .HeroCard.LastColumn.FirstRow.Expanded .CardStatusOverlay		{ transform: expandedScale3d translateLastColumn translateFirstRow; }
+.HeroCard.FirstColumn.FirstRow.Expanded #Contents, .HeroCard.FirstColumn.FirstRow.Expanded .CardStatusOverlay		{ transform: expandedScale3d translateFirstColumn translateFirstRow; }
+
+.base .HeroCard.LastRow.Expanded #Contents					{ transform: heroPickExpandedScale3d translateLastRow; }
+.base .HeroCard.LastColumn.Expanded #Contents				{ transform: heroPickExpandedScale3d translateLastColumn; }
+.base .HeroCard.FirstRow.Expanded #Contents					{ transform: heroPickExpandedScale3d translateFirstRow; }
+.base .HeroCard.FirstColumn.Expanded #Contents				{ transform: heroPickExpandedScale3d translateFirstColumn; }
+.base .HeroCard.LastColumn.LastRow.Expanded #Contents		{ transform: heroPickExpandedScale3d translateLastColumn translateLastRow; }
+.base .HeroCard.FirstColumn.LastRow.Expanded #Contents		{ transform: heroPickExpandedScale3d translateFirstColumn translateLastRow; }
+.base .HeroCard.LastColumn.FirstRow.Expanded #Contents		{ transform: heroPickExpandedScale3d translateLastColumn translateFirstRow; }
+.base .HeroCard.FirstColumn.FirstRow.Expanded #Contents		{ transform: heroPickExpandedScale3d translateFirstColumn translateFirstRow; }
+
+
+.HeroCard #HeroImage
+{
+	width: imageWidth;
+	height: imageHeight;
+	
+	background-color: #000000de;
+
+	vertical-align: middle;
+	horizontal-align: center;
+
+	overflow: noclip;
+
+	transform: imageDefaultScale3d;
+
+	transition-property: transform;
+	transition-duration: expandDuration;
+	transition-timing-function: ease-in-out;
+}
+
+//.base .HeroCard #HeroImage {	transform: heroPickImageDefaultScale3d; }
+//.AspectRatio4x3 .base .HeroCard #HeroImage {	transform: heroPickImageDefaultScale3d4x3; }
+//.AspectRatio5x4 .base .HeroCard #HeroImage {	transform: heroPickImageDefaultScale3d5x4; }
+
+.HeroCard.Showing.Expanded #HeroImage
+{
+	transform: imageExpandedScale3d;
+	transition-duration: 0.2s;
+}
+
+/* Movie expands to fill the content area. */
+#HeroMovie
+{
+	border: 2px solid transparent;
+	width: 100%;
+	height: 100%;
+
+	opacity: 0.0;
+	
+	transition-property: opacity;
+	transition-duration: 0.15s;
+	transition-timing-function: ease-in-out;
+}
+
+.HeroCard.Showing.Expanded #HeroMovie
+{
+	border: 2px solid black;
+	opacity: 1.0;
+}
+
+
+#HeroName
+{
+	background-color: #111111cc;
+	width: 100%;
+	min-height: 14%;
+	text-align: center;
+	vertical-align: bottom;
+	padding: 5px;
+	color: white;
+	text-shadow: 2px 2px 2px black;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	opacity: 0.0;
+	font-size: 15px;
+	margin-bottom: -2px;
+
+	transition-property: opacity, background-color;
+	transition-duration: 0.3s;
+}
+
+.HeroCard.Expanded #HeroName
+{
+	opacity: 1.0;
+}
+
+//.base .HeroCard { margin: heroPickCardMargin; }
+//.AspectRatio4x3 .base .HeroCard { margin: heroPickCardMargin4x3; }
+//.AspectRatio5x4 .base .HeroCard { margin: heroPickCardMargin5x4; }
+
+
+#HitBlocker
+{
+	width: 30%;
+	height: 40%;
+	visibility: collapse;
+	//border: 1px solid red;
+	horizontal-align: center;
+	vertical-align: middle;
+}
+
+.Filtered #HitBlocker,
+.AlreadyPicked #HitBlocker,
+.Unavailable #HitBlocker,
+.Banned #HitBlocker
+{
+	visibility: visible;
+}
+
+
+#BannedOverlay
+{
+	background-image: url("s2r://panorama/images/hero_selection/banned_overlay_psd.vtex");
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	wash-color: red;
+
+	width: 80%;
+	height: 100%;
+	horizontal-align: center;
+	
+	
+	transform: translateX(14px) translateY(-18px);
+	
+	vertical-align: center;
+	
+	pre-transform-scale2d: .4;
+
+	opacity: 0.0;
+
+	transition-property: opacity, pre-transform-scale2d, transform;
+	transition-duration: .24s;
+}
+
+.CardStatusOverlay
+{
+	background-image: url("s2r://panorama/images/hero_selection/suggested_overlay_psd.vtex");
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+
+	width: 80%;
+	height: 77%;
+	horizontal-align: center;
+
+	animation-name: none;
+	animation-duration: 0.25s;
+	animation-timing-function: ease-in;	
+	
+	transform: translateX(0px) translateY(0px);
+	
+	vertical-align: center;
+	
+	pre-transform-scale2d: .4;
+
+	opacity: 0.0;
+
+	transition-property: opacity, pre-transform-scale2d, background, transform;
+	transition-duration: expandDuration;
+}
+
+.HeroCard.Expanded .CardStatusOverlay
+{
+	background-size: 100% 100%;
+}
+
+.AspectRatio4x3 .CardStatusOverlay
+{
+	background-size: 85% 90%;
+}
+.AspectRatio5x4 .CardStatusOverlay
+{
+	background-size: 80% 95%;
+}
+
+.Filtered #BattlePassIcon,
+.AlreadyPicked #BattlePassIcon,
+.Unavailable #BattlePassIcon
+{
+	opacity: .1;
+}
+
+
+#SuggestedOverlay
+{
+	background-image: url("s2r://panorama/images/hero_selection/suggested_overlay_psd.vtex");
+}
+
+#SuggestedBanOverlay
+{
+	background-image: url("s2r://panorama/images/hero_selection/suggested_ban_overlay_psd.vtex");
+}
+
+#AllHeroChallengeOverlay
+{
+	background-image: url("s2r://panorama/images/hero_selection/allhero_overlay_psd.vtex");	
+}
+
+#DailyHeroChallengeOverlay
+{
+	background-image: none;
+}
+
+#BattlePassIcon
+{
+	background-image: url("s2r://panorama/images/hero_selection/battlepassdaily_winter_psd.vtex");	
+	background-size: contain;
+	width: 86px;
+	height: 129px;
+	horizontal-align: left;
+	vertical-align: top;
+	margin-left: -2px;
+	margin-top: -24px;
+}
+
+.base .HeroCard.Showing.Expanded #BattlePassIcon
+{
+	width: 56px;
+	height: 84px;
+	vertical-align: middle;
+	margin: 0px;
+	margin-left: 22px;
+	margin-bottom: 64px;
+	margin-top: 20px;
+}
+
+.base .HeroCard.Showing.Expanded.AllHeroChallenge.DailyHeroChallenge #BattlePassIcon
+{
+	width: 56px;
+	height: 84px;
+	vertical-align: middle;
+	margin: 0px;
+	//margin-left: 22px;
+	horizontal-align: center;
+	margin-top: 42px;
+	opacity: .35;
+}	
+
+#DailyHeroChallengeOverlay Label
+{
+	vertical-align: center;
+	margin-top: 80px;
+	width: 100px;
+	text-align: center;
+	
+	/* Fall 2016 */
+	color: #B1F25C;
+	text-shadow: 0px 0px 8px 2 #598223;
+	
+	/* Winter 2017 */
+	color: #63befd;
+	text-shadow: 0px 0px 8px 2 #235482;
+	
+	
+	
+}
+
+.CardStatusOverlay Label
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #F9D1ED;
+	text-shadow: 0px 0px 8px 2 #CA4385;
+	opacity: 0;
+
+	transition-property: opacity;
+	transition-duration: expandDuration;	
+}
+
+#AllHeroChallengeOverlay Label
+{
+	vertical-align: top;
+	margin-top: 36px;
+	width: 100px;
+	text-align: center;
+	color: #BBDDF8;
+	text-shadow: 0px 0px 8px 2 #6FAEF8;
+}
+
+#SuggestedBanOverlay Label
+{
+	color: #edbbbe;
+	text-shadow: 0px 0px 8px 2 #ed3b48;
+}
+
+.base .HeroCard.Showing.Expanded .CardStatusOverlay
+{
+	animation-name: HeroCardExpand;
+	pre-transform-scale2d: 1;
+}
+
+.base .HeroCard.Expanded .CardStatusOverlay Label
+{
+	opacity: 1;
+}
+
+.base .HeroCard.Expanded.Filtered .CardStatusOverlay
+{
+	opacity: 0.2;
+}
+
+.HeroCard.Banned #BannedOverlay
+{
+	opacity: 1.0;
+	transform: translateX(0px) translateY(0px);
+}
+
+.HeroCard.AllHeroChallenge #AllHeroChallengeOverlay,
+.HeroCard.DailyHeroChallenge #DailyHeroChallengeOverlay
+{
+	opacity: 1.0;
+}
+
+
+
+
+.HeroCard
+{
+	margin: -89px -78px;
+
+	opacity: 0.0;
+
+	/* Card position is set in code, but we still want to animate it */
+	transition-property: opacity, wash-color, brightness;
+	transition-duration: 0.30s;
+	transition-timing-function: ease-in-out;
+}
+
+.AspectRatio4x3 .HeroCard
+{
+	//margin: -92px -81px;
+}
+.AspectRatio5x4 .HeroCard
+{
+	//margin: -98px -83px;
+}
+
+.AspectRatio4x3 .base .HeroCard
+{
+	//margin: -68px -72px;
+}
+.AspectRatio5x4 .base .HeroCard
+{
+	//margin: -70px -75px;
+}
+
+.HeroCard.Showing
+{
+	opacity: 1.0;
+}
+
+.HeroCard.Showing.Highlighted
+{
+	animation-name: HeroCardSelected;
+	animation-iteration-count: infinite;   
+	animation-duration: 0.8s;	
+}
+
+.HeroCard.Showing:not(.HeroCardDisabled):hover
+{
+	z-index: 2;
+}
+
+.HeroCard.Activated
+{
+	sound: "ui_hero_select_slide";
+}
+
+/* Custom things */
+
+.HeroCard #LockedIcon
+{
+	align: right top;
+	width: 50px;
+	height: 40px;
+}
+
+.HeroCard.Locked #LockedIcon
+{
+	visibility: visible;
+}
+
+#HeroChangedBurst
+{
+	width: 100%;
+	height: 100%;
+	transition-property: opacity;
+	transition-duration: .24s;
+	opacity: 0;
+}
+
+.HeroCard.IsChanged #HeroChangedBurst
+{
+	opacity: 0.4;
+}
+
+#LinkedHeroesGroupRow
+{
+	width: 100%;
+	height: 8px;
+	transform: translateX(-8px);
+	background-color: white;
+
+	opacity: 0.0;
+
+	transition-property: opacity, transform, background-color;
+	transition-duration: .24s;
+}
+
+.HeroCard.HasLinkedColorGroup #LinkedHeroesGroupRow
+{
+	transform: translateX(0px);
+	opacity: 1;
+}

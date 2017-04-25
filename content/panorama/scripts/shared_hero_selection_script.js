@@ -1,5 +1,6 @@
 var HeroesData = {},
-	SelectedHeroName = "";
+	SelectedHeroName = "",
+	BannedHeroes = [];
 DynamicSubscribePTListener("hero_selection_heroes_data", function(tableName, changesObject, deletionsObject) {
 	HeroesData = changesObject;
 });
@@ -32,19 +33,34 @@ function IsHeroLocked(name) {
 	return false
 }
 
+function IsHeroBanned(name) {
+	return BannedHeroes.indexOf(name) != -1
+}
+
+var PreviousSearchText = ""
 function SearchHero() {
 	if ($("#HeroSearchTextEntry") != null) {
 		var SearchString = $("#HeroSearchTextEntry").text.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+		if (PreviousSearchText != SearchString) {
+			PreviousSearchText = SearchString
+			$.GetContextPanel().SetHasClass("SearchingHeroes", SearchString.length > 0);
 
-		$.GetContextPanel().SetHasClass("InSearch", SearchString.length > 0);
-		if (SearchString.length > 0) {
-			for (var key in HeroesPanels) {
-				var heroName = $.Localize(HeroesPanels[key].id.replace("HeroListPanel_element_", ""))
-				HeroesPanels[key].SetHasClass("SearchedPanelDisabled", heroName.search(new RegExp(SearchString, "i")) == -1);
-			}
-		} else {
-			for (var key in HeroesPanels) {
-				HeroesPanels[key].RemoveClass("SearchedPanelDisabled");
+			if (SearchString.length > 0) {
+				var matchRegexp = new RegExp(SearchString, "i");
+				var first;
+				for (var key in HeroesPanels) {
+					var heroName = $.Localize(HeroesPanels[key].id.replace("HeroListPanel_element_", ""))
+					var high = matchRegexp.test(heroName);
+					HeroesPanels[key].SetHasClass("Highlighted", high);
+					if (high && !first) first = HeroesPanels[key]
+				}
+				if (first != null) {
+					first.SelectHeroAction();
+				}
+			} else {
+				for (var key in HeroesPanels) {
+					HeroesPanels[key].RemoveClass("Highlighted");
+				}
 			}
 		}
 	}
@@ -54,31 +70,39 @@ function FillHeroesTable(heroList, panel, big) {
 	$.Each(heroList, function(heroName) {
 		var heroData = HeroesData[heroName]
 		var StatPanel = panel.FindChildTraverse("HeroesByAttributes_" + heroData.attributes.attribute_primary)
-		var HeroImagePanel = $.CreatePanel('Image', StatPanel, "HeroListPanel_element_" + heroName)
-		HeroImagePanel.SetImage(TransformTextureToPath(heroName, "portrait"))
-		HeroImagePanel.AddClass("HeroListElement")
-		var LockedImage = $.CreatePanel('Image', HeroImagePanel, "LockedIcon")
-		LockedImage.AddClass("LockedSelectionIcon")
-		LockedImage.hittest = false
-		if (heroData.border_class) {
-			HeroImagePanel.AddClass(heroData.border_class)
+
+		var HeroCard = $.CreatePanel("Panel", StatPanel, "HeroListPanel_element_" + heroName)
+		HeroCard.BLoadLayoutSnippet("HeroCard");
+		HeroCard.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(heroName, "portrait"));
+		HeroCard.FindChildTraverse("HeroMovie").heroname = heroName;
+		if (heroData.isChanged) HeroCard.AddClass("IsChanged");
+		if (heroData.linkedColorGroup) {
+			HeroCard.AddClass("HasLinkedColorGroup");
+			HeroCard.FindChildTraverse("LinkedHeroesGroupRow").style.backgroundColor = heroData.linkedColorGroup;
 		}
-		var SelectHeroAction = (function(_heroName, _panel) {
-			return function() {
-				if (SelectedHeroPanel != _panel) {
-					SelectedHeroName = _heroName
-					if (SelectedHeroPanel != null) {
-						SelectedHeroPanel.RemoveClass("HeroPanelSelected")
-					}
-					_panel.AddClass("HeroPanelSelected")
-					SelectedHeroPanel = _panel
-					ChooseHeroPanelHero()
+		var SelectHeroAction = (function() {
+			if (SelectedHeroPanel != HeroCard) {
+				SelectedHeroName = heroName
+				if (SelectedHeroPanel != null) {
+					SelectedHeroPanel.RemoveClass("HeroPanelSelected")
 				}
+				HeroCard.AddClass("HeroPanelSelected")
+				SelectedHeroPanel = HeroCard
+				ChooseHeroPanelHero()
 			}
-		})(heroName, HeroImagePanel)
-		HeroImagePanel.SetPanelEvent('onactivate', SelectHeroAction)
-		HeroImagePanel.SelectHeroAction = SelectHeroAction
-		HeroesPanels.push(HeroImagePanel)
+		});
+		var HitTarget = HeroCard.FindChildTraverse("HitTarget");
+		HitTarget.SetPanelEvent("onactivate", SelectHeroAction)
+		HitTarget.SetPanelEvent("oninputsubmit", SelectHeroAction)
+		HitTarget.SetPanelEvent("onmouseover", function() {
+			HeroCard.AddClass("Expanded")
+		})
+		HitTarget.SetPanelEvent("onmouseout", function() {
+			HeroCard.RemoveClass("Expanded")
+		})
+		HeroCard.FindChildTraverse("HeroName").text = $.Localize(heroName)
+		HeroCard.SelectHeroAction = SelectHeroAction
+		HeroesPanels.push(HeroCard)
 	})
 }
 
@@ -155,3 +179,22 @@ function SelectHeroTab(tabIndex) {
 		SelectedTabIndex = tabIndex
 	}
 }
+$.Schedule(0, function() {
+	DynamicSubscribePTListener("hero_selection_banning_phase", function(tableName, changesObject, deletionsObject) {
+		for (var hero in changesObject) {
+			var heroPanel = $("#HeroListPanel_element_" + hero)
+			if (changesObject[hero] == Game.GetLocalPlayerID()) {
+				HasBanPoint = false
+				if (UpdateSelectionButton) UpdateSelectionButton()
+			}
+			if (heroPanel) heroPanel.AddClass("Banned")
+			BannedHeroes.push(hero)
+		}
+		for (var hero in deletionsObject) {
+			var heroPanel = $("#HeroListPanel_element_" + hero)
+			if (heroPanel) heroPanel.RemoveClass("Banned")
+			var index = BannedHeroes.indexOf(hero);
+			if (index > -1) BannedHeroes.splice(index, 1);
+		}
+	})
+})

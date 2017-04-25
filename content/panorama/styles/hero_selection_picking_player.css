@@ -44,7 +44,7 @@ DOTAHudPreGame.EndPregameIntro DOTAHudHeroPickingPlayer
 	transform: translateY(0px);
 }
 
-#HeroImage
+.PlayerPanel #HeroImage
 {
 	background-color: gradient( radial, 50% 90%, 0% 0%, 80% 90%, from( #444D5A ), to( #161B23 ) );
 	width: 118px;
@@ -62,17 +62,17 @@ DOTAHudPreGame.EndPregameIntro DOTAHudHeroPickingPlayer
 	transition-timing-function: ease-in-out;
 }
 
-.AspectRatio4x3 #HeroImage, .AspectRatio5x4 #HeroImage
+.AspectRatio4x3 .PlayerPanel #HeroImage, .AspectRatio5x4 .PlayerPanel #HeroImage
 {
 	width: 100px;
 }
 
-.StrategyVisible #HeroImageContainer:hover #HeroImage
+.StrategyVisible .PlayerPanel #HeroImageContainer:hover .PlayerPanel #HeroImage
 {
 	pre-transform-scale2d: 1.2;
 }
 
-.HeroPickNone #HeroImageContainer:hover #HeroImage
+.HeroPickNone .PlayerPanel #HeroImageContainer:hover .PlayerPanel #HeroImage
 {
 	pre-transform-scale2d: 1;
 }

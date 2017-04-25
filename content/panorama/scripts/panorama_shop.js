@@ -1,6 +1,5 @@
 var ItemList = {},
 	ItemData = {},
-	Itembuilds = {},
 	SmallItems = [],
 	SmallItemsAlwaysUpdated = [],
 	SearchingFor = null,
@@ -277,7 +276,6 @@ function ItemHideTooltip(panel) {
 function LoadItemsFromTable(panorama_shop_data) {
 	ItemList = panorama_shop_data.ShopList
 	ItemData = panorama_shop_data.ItemData
-	Itembuilds = panorama_shop_data.Itembuilds
 	PushItemsToList()
 }
 

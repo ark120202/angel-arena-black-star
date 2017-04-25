@@ -1,5 +1,6 @@
 var SelectedBuild = {},
 	CustomBuildToggleButton = {};
+
 function UpdateItembuildsForHero() {
 	var heroName = GetPlayerHeroName(Game.GetLocalPlayerID())
 	if (LastHero != heroName && heroName != "npc_dota_hero_arena_base" && heroName != "npc_dota_hero_target_dummy") {
@@ -10,7 +11,7 @@ function UpdateItembuildsForHero() {
 
 function LoadGuidesForHero(heroName, skipAutoSelect, callback) {
 	GetDataFromServer("GetGuides", {steamID: Game.GetLocalPlayerInfo().player_steamid, hero: heroName}, function(builds) {
-		if (LastHero == heroName) { //If hero wasn't changed while builds loaded
+		if (LastHero == heroName) {
 			var autoSelectedBuild;
 			var best = builds.best;
 			$("#GuidesAvaliableList").RemoveAndDeleteChildren()
@@ -41,11 +42,11 @@ function SelectItembuild(build) {
 	var groupsRoot = $("#ItembuildPanelsRoot")
 	$("#ItembuildPanelsRoot").RemoveAndDeleteChildren();
 	if (build != null) {
-		$("#Itembuild_patch").text = build.version || "";
+		$("#Itembuild_version").text = build.version || "";
 		UpdateSelectedItembuildAuthorData(build.steamID, build.title)
 		//MongoObjectIDToDate(build._id)
 		$.Each(build.items, function(groupData) {
-			CreateItembuildGroup(groupsRoot, groupData.title, groupData.content)
+			CreateItembuildGroup(groupsRoot, build.steamID == -1 ? $.Localize(groupData.title) : groupData.title, groupData.content)
 		})
 	} else {
 		UpdateSelectedItembuildAuthorData(-1)
@@ -160,8 +161,8 @@ function ToggleGuidesBrowser(state) {
 		$.Each($("#GuidesAvaliableList").Children(), function(c) {
 			c.checked = c.build == SelectedBuild
 			c.SetHasClass("IsSelectedGuide", c.build == SelectedBuild)
-			GuidesBrowserLoadBuild(SelectedBuild)
 		})
+		GuidesBrowserLoadBuild(SelectedBuild)
 	}
 }
 
@@ -169,7 +170,12 @@ function Snippet_GuideListEntry(build) {
 	var steamID = build.steamID
 	var panel = $.CreatePanel("RadioButton", $("#GuidesAvaliableList"), "")
 	panel.BLoadLayoutSnippet("GuideListEntry")
-	panel.SetDialogVariable("guide_entry_rating", build.rating || "")
+	panel.SetDialogVariable("guide_entry_rating", build.votes != null ? build.votes : "")
+
+	panel.FindChildTraverse("GuideEntryVersion").text = build.version || "";
+	var GuideEntryAuthor = panel.FindChildTraverse("GuideEntryAuthor")
+	GuideEntryAuthor.visible = typeof steamID == "string"
+	GuideEntryAuthor.steamid = steamID
 
 	panel.SetDialogVariable("guide_entry_title", steamID == 0 ? $.Localize("DOTA_UI_default_build") : steamID == -1 ? $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)) : build.title || "")
 	panel.build = build
@@ -185,14 +191,57 @@ function Snippet_GuideListEntry(build) {
 	return panel;
 }
 
+
+var CurrentPageGuide = {};
+function GuideVote(vote) {
+	var newVotes = CurrentPageGuide.votes;
+	if ($.GetContextPanel().BHasClass("VotedYes")) {
+		if (vote > 0) return; newVotes--; vote = 0;
+	} else if ($.GetContextPanel().BHasClass("VotedNo")) {
+		if (vote < 0) return; newVotes++; vote = 0;
+	} else
+		newVotes += vote;
+	$.GetContextPanel().SetHasClass("VotedYes", vote > 0)
+	$.GetContextPanel().SetHasClass("VotedNo", vote < 0)
+
+	CurrentPageGuide.votes = newVotes;
+	var localSteamId = Game.GetLocalPlayerInfo().player_steamid
+	if (vote >= 0) {
+		var i = CurrentPageGuide.votes_down.indexOf(localSteamId);
+		if (i > -1) CurrentPageGuide.votes_down.splice(i, 1);
+	}
+	if (vote <= 0) {
+		var i = CurrentPageGuide.votes_up.indexOf(localSteamId);
+		if (i > -1) CurrentPageGuide.votes_up.splice(i, 1);
+	}
+	if (vote != 0) {
+		var a = CurrentPageGuide[vote > 0 ? "votes_up" : "votes_down"];
+		if (a.indexOf(localSteamId) === -1) a.push(localSteamId)
+	}
+	$.Each($("#GuidesAvaliableList").Children(), function(c) {
+		if (c.build == CurrentPageGuide) {
+			c.SetDialogVariable("guide_entry_rating", newVotes)
+			return false;
+		}
+	})
+	$.GetContextPanel().SetDialogVariable("guide_player_rating", newVotes)
+
+	GameEvents.SendCustomGameEventToServer("stats_client_vote_guide", {id: CurrentPageGuide._id, vote: vote})
+}
+
 function GuidesBrowserLoadBuild(build) {
 	var steamID = build.steamID
+	CurrentPageGuide = build;
+	var localSteamId = Game.GetLocalPlayerInfo().player_steamid
 	$.GetContextPanel().SetHasClass("ShowVoteAndFavorite", typeof steamID == "string")
 	$.GetContextPanel().SetHasClass("HasYouTubeVideo", build.youtube != null)
 	$.GetContextPanel().SetHasClass("CanPublishBuild", steamID == -1)
+	$.GetContextPanel().SetHasClass("VotedYes", build.votes_up && build.votes_up.indexOf(localSteamId) !== -1)
+	$.GetContextPanel().SetHasClass("VotedNo", build.votes_down && build.votes_down.indexOf(localSteamId) !== -1)
+	$.GetContextPanel().SetDialogVariable("guide_player_rating", build.votes || 0)
+
 	if (steamID != -1) TogglePublishMode(false)
 
-	$.GetContextPanel().SetDialogVariable("guide_player_rating", build.score || 0)
 	$("#GuidesTitleLabel").text = steamID == 0 ? $.Localize("DOTA_UI_default_build") : steamID == -1 ? $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)) : build.title || ""
 	$("#GuidesBrowserDescription").text = build.description || ""
 	var GuideItemBuild = $("#GuideItemBuild")
@@ -220,7 +269,7 @@ function PublishGuide(build) {
 	build.title = $("#GuidesTitleLabel").text
 	build.description = $("#GuidePublishDescription").text
 	build.youtube = $("#GuidePublishYouTube").text
-	if (build.title == $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero))) {
+	if (build.title == $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)).substring(0, 20)) {
 		GameEvents.SendEventClientSide("dota_hud_error_message", {
 			"reason": 80,
 			"message": "#error_panorama_shop_publish_guide_title"
@@ -233,12 +282,6 @@ function PublishGuide(build) {
 
 (function() {
 	var groupsRoot = $("#ItembuildPanelsRoot")
-	/*$.RegisterEventHandler('DragDrop', groupsRoot, function(panelId, draggedPanel) {
-		if (draggedPanel.ItembuildParentPanel != null) {
-			groupsRoot.MoveChildAfter(draggedPanel.ItembuildParentPanel, groupsRoot.GetChild(groupsRoot.GetChildCount() - 1))
-			UpdateSelectedItembuildAuthorData(-1)
-		}
-	});*/
 	$.RegisterEventHandler('DragDrop', $("#ShopItemBasePanel"), function(panelId, draggedPanel) {
 		if (draggedPanel.ItembuildParentPanel != null) {
 			draggedPanel.ItembuildParentPanel.DeleteAsync(0)

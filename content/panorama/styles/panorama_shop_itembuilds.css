@@ -357,15 +357,6 @@
 	width: 208px;
 }
 
-#GuideEntrySubtitle
-{
-	color: #5b6872;
-	font-size: 14px;
-	height: 16px;
-	margin-top: 18px;
-	width: 160px;
-}
-
 .GuideListEntry .PersonaName,
 #SubtitleLabel .PersonaName
 {
@@ -465,4 +456,35 @@
 .GuideListEntry:selected
 {
 	background-color: gradient( linear, 100% 0%, 0% 0%, from( #424a4f00 ), to( #373f4888 ) );
+}
+
+#GuideEntrySubtitleRow
+{
+	//width: 100%;
+	width: 160px;
+	flow-children: right;
+	margin-top: 18px;
+	height: 16px;
+}
+#GuideEntryAuthor
+{
+	width: 80%;
+}
+#GuideEntryAuthor > Label
+{
+	text-overflow: shrink;
+	font-size: 14px;
+	font-weight: semi-bold;
+	//wash-color: #5b6872f0;
+}
+#GuideEntryVersion
+{
+	width: 20%;
+	text-align: right;
+	horizontal-align: right;
+
+	text-overflow: shrink;
+	font-size: 14px;
+	color: #5b6872;
+	font-weight: semi-bold;
 }

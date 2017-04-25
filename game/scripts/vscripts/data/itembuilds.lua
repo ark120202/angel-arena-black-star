@@ -1,4 +1,4 @@
-ARENA_ITEMBUILDS = {
+--[[ARENA_ITEMBUILDS = {
 	{
 		hero = "npc_dota_hero_abaddon",
 		title = "#DOTA_Item_Build_Title_Arena",
@@ -5973,3 +5973,18 @@ VALVE_ITEMBUILDS = {
 		}
 	},
 }
+
+for _,build in pairs(VALVE_ITEMBUILDS) do
+	StatsClient:Send("AddGuide", {
+		steamID = 0,
+		hero = build.hero,
+		items = build.items,
+		version = "1.0.0",
+	}, function(response)
+		if response.success then
+			print("Added guide: ", build.hero)
+		else
+			print("error: ", response.error)
+		end
+	end)
+end]]

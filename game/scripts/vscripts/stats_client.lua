@@ -5,6 +5,7 @@ end
 StatsClient.ServerAddress = (IsInToolsMode() and "http://127.0.0.1:3228" or "https://angelarenablackstar-ark120202.rhcloud.com") .. "/AABSServer/"
 function StatsClient:Init()
 	CustomGameEventManager:RegisterListener("stats_client_add_guide", Dynamic_Wrap(StatsClient, "AddGuide"))
+	CustomGameEventManager:RegisterListener("stats_client_vote_guide", Dynamic_Wrap(StatsClient, "VoteGuide"))
 end
 function StatsClient:OnGameBegin()
 	local data = {
@@ -91,7 +92,7 @@ function StatsClient:OnGameEnd(winner)
 		PrintTable(response)
 	end, 4)
 end
---StatsClient:OnGameEnd(2)
+
 function StatsClient:HandleError(err)
 	if err and type(err) == "string" then
 		StatsClient:Send("HandleError", {
@@ -158,6 +159,14 @@ function StatsClient:AddGuide(data)
 	end)
 end
 
+function StatsClient:VoteGuide(data)
+	StatsClient:Send("VoteGuide", {
+		steamID = tostring(PlayerResource:GetSteamID(data.PlayerID)),
+		id = data.id or "",
+		vote = type(data.vote) == "number" and data.vote or 0
+	})
+end
+
 function StatsClient:Send(path, data, callback, retryCount, protocol, _currentRetry)
 	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path)
 	request:SetHTTPRequestGetOrPostParameter("data", JSON:encode(data))
@@ -179,61 +188,3 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, _currentRe
 		end
 	end)
 end
---[[StatsClient:AddGuide({
-	PlayerID = 0,
-	items = {
-		{
-			title = "#DOTA_Item_Build_Starting_Items",
-			content = {
-				"item_tango_arena",
-				"item_flask",
-				"item_clarity",
-				"item_clarity",
-				"item_clarity",
-				"item_circlet",
-				"item_branches",
-			}
-		},
-		{
-			title = "#DOTA_Item_Build_Early_Game",
-			content = {
-				"item_bottle_arena",
-				"item_boots",
-				"item_null_talisman",
-			}
-		},
-		{
-			title = "#DOTA_Item_Build_Core_Items",
-			content = {
-				"item_arcane_boots",
-				"item_veil_of_discord",
-				"item_tpscroll",
-			}
-		},
-		{
-			title = "#DOTA_Item_Build_Luxury",
-			content = {
-				"item_ultimate_scepter_arena",
-				"item_refresher_arena",
-				"item_cyclone",
-				"item_blink_arena",
-				"item_sheepstick",
-				"item_bloodstone_arena",
-				"item_sunray_dagon_5_arena",
-				"item_octarine_core_arena",
-			}
-		},
-	},
-	title = "Valve's build",
-	description = "Valve's build",
-
-	--youtube = "",
-})]]
---[[
-function GameMode:CustomSaveFunc(pid)
-	print("HANDLED!")
-	return {Rating = 5000}
-end
-GameRules:SetCustomGameAccountRecordSaveFunction(Dynamic_Wrap(GameMode, "CustomSaveFunc"), GameMode)
-PrintTable(GameRules:GetPlayerCustomGameAccountRecord(0))
-]]

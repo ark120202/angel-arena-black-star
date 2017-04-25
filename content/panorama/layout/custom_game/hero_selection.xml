@@ -3,6 +3,7 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/dynamic_minimap.css" />
 		<include src="file://{resources}/styles/hero_selection.css" />
+		<include src="file://{resources}/styles/hero_selection_hero_card.css" />
 		<include src="file://{resources}/styles/hero_selection_preview.css" />
 		<include src="file://{resources}/styles/hero_selection_picking_player.css" />
 	</styles>
@@ -21,16 +22,36 @@
 				<Panel id="HeroesByAttributes_2" class="HeroesPanelElement" />
 			</Panel>
 		</snippet>
-		<snippet name="PlayerPanel">
-			<!-- <Panel class="PlayerInTeamPanel">
-				<Label id="NickName" />
-				<Panel id="ImageHost">
-					<Image id="HeroImage"/>
-					<Image src="file://{images}/custom_game/icon_disconnect.png" class="DisconnectionIndicator"/>
+		<snippet name="HeroCard">
+			<Panel class="HeroCard Showing" hittest="false">
+				<Panel id="Contents" hittest="false">
+					<DOTAHeroImage id="HeroImage" heroimagestyle="portrait" hittest="false" />
+					<DOTAHeroMovie id="HeroMovie" hittest="false" />
+					<Label id="HeroName" hittest="false" />
+					<Image id="LockedIcon" hittest="false" />
+					<DOTAScenePanel id="HeroChangedBurst" map="scenes/hud/levelupburst" hittest="false" />
+					<Panel id="LinkedHeroesGroupRow" hittest="false" />
 				</Panel>
-			</Panel> -->
-
-			<DOTAHudHeroPickingPlayer>
+				<Panel id="BannedOverlay" hittest="false" />
+				<!-- <Panel id="SuggestedOverlay" class="CardStatusOverlay" hittest="false">
+					<Label text="#DOTA_HeroCard_Suggested"/>
+				</Panel>
+				<Panel id="SuggestedBanOverlay" class="CardStatusOverlay" hittest="false">
+					<Label text="#DOTA_HeroCard_SuggestedBan"/>
+				</Panel>
+				<Panel id="AllHeroChallengeOverlay" class="CardStatusOverlay" hittest="false">
+					<Label text="#DOTA_HeroCard_AllHeroChallenge"/>
+				</Panel>
+				<Panel id="DailyHeroChallengeOverlay" class="CardStatusOverlay" hittest="false">
+					<Panel id="BattlePassIcon"/>
+					<Label text="#DOTA_HeroCard_DailyQuest"/>
+				</Panel> -->
+				<Panel id="HitTarget" acceptsinput="true" hittest="true" />
+				<Panel id="HitBlocker" hittest="true"/>
+			</Panel>
+		</snippet>
+		<snippet name="PlayerPanel">
+			<DOTAHudHeroPickingPlayer class="PlayerPanel">
 				<Panel id="HeroImageBorder"/>
 				<Panel id="HeroImageContainer" acceptsinput="true">
 					<Panel id="SlotColor"/>

@@ -25,7 +25,10 @@
 				<Panel id="SelectedBar" />
 				<Panel id="GuideEntryTitles">
 					<Label id="GuideEntryTitle" text="{s:guide_entry_title}" />
-                    <Label id="GuideEntrySubtitle" text="#DOTA_Guide_WorkshopSubtitle" />
+					<Panel id="GuideEntrySubtitleRow">
+						<DOTAUserName id="GuideEntryAuthor" />
+						<Label id="GuideEntryVersion" />
+					</Panel>
                     <TextButton id="SelectGuideButton" text="#DOTA_Guide_Select" />
                     <Label id="SelectedGuideLabel" text="#DOTA_Guide_Selected" />
 				</Panel>
@@ -53,7 +56,7 @@
 					</Panel>
 					<Panel id="ItembuildTitleSubitleRow">
 						<DOTAUserName id="Itembuild_author_player" />
-						<Label id="Itembuild_patch" />
+						<Label id="Itembuild_version" />
 					</Panel>
 				</Panel>
 				<Panel id="ItembuildPanelsContainer">
@@ -126,10 +129,10 @@
 								<Label id="RatingLabel" class="GuideStatLabel" text="#DOTA_Guide_PlayerRating" />
 							</Panel>
 							<Panel id="VotingButtons">
-								<Button id="VoteUpButton" onactivate="DOTAVoteGuideUp()" >
+								<Button id="VoteUpButton" onactivate="GuideVote($.GetContextPanel().BHasClass('VotedYes') ? 0 : 1)" >
 									<Image class="VoteIcon" src="s2r://panorama/images/icon_thumbs_up_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 								</Button>
-								<Button id="VoteDownButton" onactivate="DOTAVoteGuideDown()" >
+								<Button id="VoteDownButton" onactivate="GuideVote($.GetContextPanel().BHasClass('VotedNo') ? 0 : -1)" >
 									<Image class="VoteIcon VoteIconFlipped" src="s2r://panorama/images/icon_thumbs_up_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 								</Button>
 							</Panel>

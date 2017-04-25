@@ -269,16 +269,12 @@ function HeroSelection:PreformPlayerRandom(playerId)
 end
 
 function HeroSelection:NominateHeroForBan(playerId, hero)
-	if not HeroSelection:IsHeroNominatedForBan(hero) then
+	if not HeroSelection:IsHeroBanned(hero) then
 		PLAYER_DATA[playerId].HeroSelectionBanned = true
-		PlayerTables:SetTableValue("hero_selection_banning_phase", hero, false)
+		PlayerTables:SetTableValue("hero_selection_banning_phase", hero, playerId)
 	end
 end
 
-function HeroSelection:IsHeroNominatedForBan(hero)
-	return PlayerTables:GetTableValueForReadOnly("hero_selection_banning_phase", hero) == false
-end
-
 function HeroSelection:IsHeroBanned(hero)
-	return PlayerTables:GetTableValueForReadOnly("hero_selection_banning_phase", hero) == true
+	return PlayerTables:GetTableValueForReadOnly("hero_selection_banning_phase", hero) ~= nil
 end

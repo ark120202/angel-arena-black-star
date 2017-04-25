@@ -1,15 +1,16 @@
 "use strict";
 var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
-var debug = true;
-var ServerAddress = (Game.IsInToolsMode() && debug ? "http://127.0.0.1:3228" : "https://angelarenablackstar-ark120202.rhcloud.com") + "/AABSServer/"
+var Options = GameUI.CustomUIConfig().Options;
+var ServerDebug = true;
+var ServerAddress = (Game.IsInToolsMode() && ServerDebug ? "http://127.0.0.1:3228" : "https://angelarenablackstar-ark120202.rhcloud.com") + "/AABSServer/"
 
-var DOTA_GAMEMODE_5V5 = 0
+//var DOTA_GAMEMODE_5V5 = 0
 var DOTA_GAMEMODE_4V4V4V4 = 1
 
-var DOTA_GAMEMODE_TYPE_ALLPICK = 100
-var DOTA_GAMEMODE_TYPE_RANKED_ALLPICK = 101
-var DOTA_GAMEMODE_TYPE_RANDOM_OMG = 102
-var DOTA_GAMEMODE_TYPE_ABILITY_SHOP = 103
+//var DOTA_GAMEMODE_TYPE_ALLPICK = 100
+//var DOTA_GAMEMODE_TYPE_RANKED_ALLPICK = 101
+//var DOTA_GAMEMODE_TYPE_RANDOM_OMG = 102
+//var DOTA_GAMEMODE_TYPE_ABILITY_SHOP = 103
 
 var ARENA_GAMEMODE_MAP_NONE = 200
 var ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES = 201

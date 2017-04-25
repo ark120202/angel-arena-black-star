@@ -15,8 +15,6 @@ TODO LIST:
 	allowrotation="true" 
 	Ульта тайда в полёте + util_remove (рубик) - краш
 ======================================================
-Ranked:
-	Добавление новой карты с банами (возможно аналагом цм мода)
 Лабиринт
 Эвент в лесу
 Сборки:
@@ -29,24 +27,24 @@ Ranked:
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/f2a60227fc99c9a7595bde07a569ea52
 • 
 ============================================================
-Angel Arena Black Star - Версия 1.4.7:
-• Большинство героев с характеристикой ловкость былы перебалансированы
-• Переработаны / добавлены новые предметы: Quelling Fury, Battle Fury, Elemental Fury
-• Ослаблены Sacred Blade Mail, Tango, Desolator 4 - 6, Tome of Knowlege, Auto Scythe of Vyse
-• Изменено золото и опыт получаемое за руны богатства
+Angel Arena Black Star - Версия 1.5:
+• 
 ============================================================
-Angel Arena Black Star - Version 1.4.7:
-• Most of agility heroes were rebalanced
-• Reworked / Added new items: Quelling Fury, Battle Fury, Elemental Fury
-• Nerfed Sacred Blade Mail, Tango, Desolator's 4 - 6, Tome of Knowlege, Auto Scythe of Vyse
-• Changed gold and experience from Bounty Runes
+Angel Arena Black Star - Version 1.5:
+• 
 ============================================================
-Angel Arena Black Star - Version 1.4.7:
+Angel Arena Black Star - Version 1.5:
 General:
+	
 	//Added paired heroes system //TODO: Repick, team changing
 	//Added new hero pair: Maka Albarn & Soul Evans
-	Added Strategy Phase to Hero Selection that replaces precaching phase
 	Added new hero: Destroyer
+	Hero Selection:
+		Added Strategy Phase to Hero Selection that replaces precaching phase
+		Added banning phase (only Ranked gamemode for now)
+		Added ability to repick heroes //TODO: Costs 200 gold, not 100
+		Redesigned player images and hero panels
+	Players now can submit their itembuilds using new build builder in shop //TODO: Votings
 	Gold now is formatted to thousands and millions (normal values are shown while holding ALT)
 Balance:
 	Runes:
