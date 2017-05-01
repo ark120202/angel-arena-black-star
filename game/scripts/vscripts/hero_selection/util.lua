@@ -80,7 +80,7 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 				unit:RemoveAbility(unit:GetAbilityByIndex(i):GetName())
 			end
 		end
-		if ARENA_ACTIVE_GAMEMODE_MAP ~= ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
+		if Options:IsEquals("EnableAbilityShop", false) and Options:IsEquals("EnableRandomAbilities", false) then
 			for i = 1, 24 do
 				if classTable["Ability" .. i] and classTable["Ability" .. i] ~= "" then
 					PrecacheItemByNameAsync(classTable["Ability" .. i], function() end)
@@ -194,15 +194,12 @@ function HeroSelection:ForceChangePlayerHeroMenu(playerID)
 	end)
 end
 
-function HeroSelection:VerifyHeroGroup(hero, group)
-	if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
-		return ENABLED_HEROES.NoAbilities[hero] == 1
-	else
-		local herolist = ENABLED_HEROES[group]
-		if herolist then
-			return herolist[hero] == 1
-		end
+function HeroSelection:VerifyHeroGroup(hero)
+	local herolist = ENABLED_HEROES[Options:GetValue("MainHeroList")]
+	if herolist then
+		return herolist[hero] == 1
 	end
+	return false
 end
 
 function HeroSelection:ParseAbilitiesFromTable(t)

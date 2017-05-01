@@ -3,26 +3,6 @@
 var TipList = [];
 var ShuffledTipList = [];
 
-function VoteMap(parentindex, gmtype) {
-	GameEvents.SendCustomGameEventToServer("submit_gamemode_map", {
-		GMType: gmtype
-	});
-	$("#GoalVotePanelCustomSettings_GM201").enabled = false;
-	$.Each($("#GoalVotePanelCustomSettings_GM201").Children(), function(child) {
-		child.enabled = false;
-	})
-}
-
-function SubmitKillGoal(index) {
-	GameEvents.SendCustomGameEventToServer("submit_gamemode_vote", {
-		voteIndex: index
-	});
-	$.Each($("#KillGoalVoteVartiantList").FindChildrenWithClassTraverse("KillGoalVariant"), function(child) {
-		child.enabled = false;
-	});
-	$("#KillGoalVote").enabled = false;
-}
-
 function FillTips() {
 	var i = 1
 	while (true) {
@@ -41,7 +21,7 @@ function FillTips() {
 }
 
 function NextTip() {
-	if (ShuffledTipList.length == 0) {
+	if (ShuffledTipList.length === 0) {
 		ShuffledTipList = JSON.parse(JSON.stringify(TipList))
 		shuffle(ShuffledTipList)
 	}
@@ -50,70 +30,99 @@ function NextTip() {
 	$("#TipLabel").text = shifted.text;
 }
 
+function Snippet_OptionVoting(voteName, voteData) {
+	var votePanel = $.CreatePanel("Panel", $("#OptionVotings"), "option_voting_" + voteName)
+	votePanel.BLoadLayoutSnippet("OptionVoting")
+	votePanel.SetDialogVariable("title", $.Localize("option_voting_" + voteName))
+	var OptionVotingVariants = votePanel.FindChildTraverse("OptionVotingVariants")
+	var shouldGroup = false;
+	votePanel.SetHasClass("ShouldGroup", shouldGroup)
+	$.Each(voteData.variants, function(variant, tIndex) {
+		var group = shouldGroup ? OptionVotingVariants.GetChild(Math.floor((tIndex-1) / 2)) || $.CreatePanel("Panel", OptionVotingVariants, "") : OptionVotingVariants;
+		if (shouldGroup) group.AddClass("OptionVotingVariantRow");
+
+		var button = $.CreatePanel("Button", group, "option_variant_" + variant);
+		button.AddClass("ButtonBevel")
+		button.AddClass("OptionVotingVariant")
+		if (shouldGroup) button.style.horizontalAlign = tIndex % 2 == 1 ? "left" : "right"
+		button.SetPanelEvent("onactivate", function() {
+			if (!votePanel.BHasClass("Voted")) {
+				GameEvents.SendCustomGameEventToServer("options_vote", {
+					name: voteName,
+					vote: variant
+				});
+				votePanel.AddClass("Voted");
+			}
+		})
+
+		var label = $.CreatePanel("Label", button, "");
+		label.text = typeof variant == "string" ? $.Localize("option_voting_" + voteName + "_" + variant) : typeof variant == "boolean" ? $.Localize(variant ? "option_yes" : "option_no") : variant;
+
+		var votedataLabel = $.CreatePanel("Label", button, "vote_data_variant_" + tIndex);
+		votedataLabel.text = "{s:votes}";
+		votedataLabel.style.horizontalAlign = "right"
+	})
+	return votePanel
+}
+
+function Snippet_OptionVoting_Recalculate(votePanel, voteData) {
+	var amount = {};
+	for (var k in voteData.variants)
+		amount[voteData.variants[k]] = 0;
+
+	var total = 0;
+	//var leadingKey;
+	for (var pid in voteData.votes) {
+		total += 1;
+		var vote = voteData.votes[pid];
+		amount[vote] += 1;
+		/*if (leadingKey == null || amount[vote] > voteData.votes[leadingKey]) {
+			leadingKey = vote
+		}*/
+	}
+	//leadingKey = leadingKey || "";
+	//var leadingValue = voteData.votes[leadingKey] || 1;
+	for (var variant in amount) {
+		var count = amount[variant];
+		var variantPanel = votePanel.FindChildTraverse("option_variant_" + variant);
+		variantPanel.SetDialogVariable("votes", count + " (" + Math.round(count/(total||1)*100) + "%)");
+		//var shade = Math.round(255-255*(count/leadingValue))*2;
+		//variantPanel.GetChild(1).style.color = "rgb("+shade+", 255, "+shade+")"
+		//variantPanel.SetHasClass("LeadingVote", variant == leadingKey)
+	}
+}
+
 function CheckStartable() {
-	var player = Game.GetLocalPlayerInfo()
+	var player = Game.GetLocalPlayerInfo();
 	if (player == null)
-		$.Schedule(0.2, CheckStartable)
+		$.Schedule(0.2, CheckStartable);
 	else {
 		$("#afterload_panel").visible = true;
-		/*$.AsyncWebRequest('http://127.0.0.1:3228/AABSServer/GetPublicInfoForPlayer?steam_id=' + player.player_steamid, {
-			type: 'GET',
-			success: function(data) {
-				$.Msg('Server Reply: ', data)
-				if (data) {
-					var LocalPlayerDataPanel = $("#LocalPlayerDataPanel");
-					LocalPlayerDataPanel.RemoveClass("Loading");
-					LocalPlayerDataPanel.SetDialogVariable("rating", data.Rating || "TBD")
-					LocalPlayerDataPanel.SetDialogVariable("win_rate", data.Games_Won + "/" + data.Games_Played + " (" + Math.round(data.Games_Won / data.Games_Played * 100) + ")");
-				}
-			}
-		});*/
+		var LocalPlayerData = $("#LocalPlayerData");
+		LocalPlayerData.BLoadLayout("file://{resources}/layout/custom_game/player_profiles.xml", false, false);
+		LocalPlayerData.FindChildTraverse("CloseButton").vislbe = false;
+		LocalPlayerData.LoadPanelForPlayer(Game.GetLocalPlayerID());
 		PlayerTables = GameUI.CustomUIConfig().PlayerTables;
-		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
-			var gamemode_settings = changesObject["gamemode_settings"]
-			if (gamemode_settings != null) {
-				if (gamemode_settings.kill_goals != null) {
-					$("#KillGoalVote").visible = true;
-					$.Each(gamemode_settings.kill_goals, function(killGoal, tIndex) {
-						var group = $("#KillGoalVoteVartiantList").GetChild(Math.floor((tIndex-1) / 2)) || $.CreatePanel("Panel", $("#KillGoalVoteVartiantList"), "");
-						group.AddClass("KillGoalGroup");
-						var button = $.CreatePanel("Button", group, "");
-						button.AddClass("ButtonBevel")
-						//button.AddClass("Green")
-						button.AddClass("KillGoalVariant")
-						button.style.horizontalAlign = tIndex % 2 == 1 ? "left" : "right"
-						button.SetPanelEvent("onactivate", function() {
-							SubmitKillGoal(tIndex)
-						})
-						var label = $.CreatePanel("Label", button, ""); //<Label text="4 (20%)" style="horizontal-align: right;" />;
-						label.text = killGoal;
-						label.style.color = "white"
-						label.style.fontSize = "20px"
-							/*var votedataLabel = $.CreatePanel("Label", button, "vote_data_variant_" + tIndex); //<Label text="4 (20%)" style="horizontal-align: right;" />;
-							//votedataLabel.text = "0 (0%)";
-							votedataLabel.style.horizontalAlign = "right"
-							votedataLabel.style.color = "white"
-							votedataLabel.style.fontSize = "19px"*/
-					})
-				}
-				if (gamemode_settings.kill_goal_votes != null) {
-					var votes = []
-					$.Each(gamemode_settings.kill_goal_votes, function(selectedVariant, playerID) {
-						votes[selectedVariant] = (votes[selectedVariant] || 0) + 1
-					})
-				}
-				$("#CustomSettingsRoot").visible = Number(gamemode_settings.gamemode_map) == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES
+		DynamicSubscribePTListener("option_votings", function(tableName, changesObject, deletionsObject) {
+			$("#OptionVotings").AddClass("Loaded");
+			for (var voteName in changesObject) {
+				var voteData = changesObject[voteName];
+				var votePanel = $("#option_voting_" + voteName);
+				if (votePanel == null) votePanel = Snippet_OptionVoting(voteName, voteData);
+				Snippet_OptionVoting_Recalculate(votePanel, voteData);
 			}
+		});
+
+		GameEvents.Subscribe("option_votings_refresh", function(data) {
+			Snippet_OptionVoting_Recalculate($("#option_voting_" + data.name), data.data);
 		});
 	}
 }
 
 (function() {
-	$("#LocalPlayerDataPanel").AddClass("Loading")
-	$.Schedule(0.2, CheckStartable);
+	$("#OptionVotings").RemoveAndDeleteChildren();
+	CheckStartable();
 	FillTips();
 	$("#TipsPanel").visible = TipList.length > 0;
-	if (TipList.length > 0) {
-		NextTip()
-	}
+	if (TipList.length > 0) NextTip();
 })()

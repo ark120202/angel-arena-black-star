@@ -47,7 +47,7 @@ function UpdatePanoramaHUD() {
 		}
 	}
 
-	$.Each(CustomModifiersList.Children(), function(child) {
+	_.each(CustomModifiersList.Children(), function(child) {
 		if (VisibleModifiers.indexOf(child.id) == -1)
 			child.DeleteAsync(0);
 	})
@@ -74,7 +74,7 @@ function UpdatePanoramaHUD() {
 	var abilities = FindDotaHudElement("abilities")
 	if (HookedAbilityPanelsCount != abilities.GetChildCount()) {
 		HookedAbilityPanelsCount = abilities.GetChildCount()
-		$.Each(abilities.Children(), function(child, index) {
+		_.each(abilities.Children(), function(child, index) {
 			var btn = child.FindChildTraverse("AbilityButton")
 			btn.SetPanelEvent("onactivate", function() {
 				if (GameUI.IsAltDown()) {
@@ -100,7 +100,7 @@ function AutoUpdatePanoramaHUD() {
 
 function HookPanoramaPanels() {
 	FindDotaHudElement("QuickBuyRows").visible = false;
-	FindDotaHudElement("shop").visible = true;
+	FindDotaHudElement("shop").visible = false;
 	FindDotaHudElement("RadarButton").visible = false;
 	FindDotaHudElement("HUDSkinMinimap").visible = false;
 	FindDotaHudElement("combat_events").visible = false;
@@ -112,7 +112,6 @@ function HookPanoramaPanels() {
 	FindDotaHudElement("DeliverItemsButton").style.horizontalAlign = "right"
 	FindDotaHudElement("LevelLabel").style.width = "100%";
 	FindDotaHudElement("stash").style.marginBottom = "47px";
-	
 
 	var shopbtn = FindDotaHudElement("ShopButton");
 	var StatBranch = FindDotaHudElement("StatBranch")
@@ -195,7 +194,7 @@ function HookPanoramaPanels() {
 		$.DispatchEvent("DOTAHUDHideDamageArmorTooltip")
 	})
 	var InventoryContainer = FindDotaHudElement("InventoryContainer")
-	$.Each(InventoryContainer.FindChildrenWithClassTraverse("InventoryItem"), function(child, index) {
+	_.each(InventoryContainer.FindChildrenWithClassTraverse("InventoryItem"), function(child, index) {
 		child.FindChildTraverse("AbilityButton").SetPanelEvent("onactivate", function() {
 			var item = Entities.GetItemInSlot(Players.GetLocalPlayerPortraitUnit(), index)
 			if (item > -1) {
@@ -216,7 +215,7 @@ function HookPanoramaPanels() {
 		})
 	})
 	var xpRoot = FindDotaHudElement("xp")
-	$.Each([xpRoot.FindChildTraverse("LevelBackground"), xpRoot.FindChildTraverse("CircularXPProgress"), xpRoot.FindChildTraverse("XPProgress")], function(p) {
+	_.each([xpRoot.FindChildTraverse("LevelBackground"), xpRoot.FindChildTraverse("CircularXPProgress"), xpRoot.FindChildTraverse("XPProgress")], function(p) {
 		p.SetPanelEvent("onactivate", function() {
 			if (GameUI.IsAltDown()) {
 				GameEvents.SendCustomGameEventToServer("custom_chat_send_message", {
@@ -336,7 +335,7 @@ function CreateBossItemVote(id, data) {
 	})(row, BossDropHideShowInfo))
 	row.FindChildTraverse("BossName").text = $.Localize(data.boss) + "<br>" + $.Localize("boss_loot_vote_killed")
 	row.FindChildTraverse("DamagedDealt").text = $.Localize("boss_loot_vote_damage") + (data.damageByPlayers[Game.GetLocalPlayerID()] || 0).toFixed() + "/" + (data.totalDamage || 0).toFixed() + " (" + (data.damagePcts[Game.GetLocalPlayerID()] || 0).toFixed() + "%)"
-	$.Each(data.votes, function(vote, itemid) {
+	_.each(data.votes, function(vote, itemid) {
 		var itemRow = $.CreatePanel("Panel", row.FindChildTraverse("BossItemList"), "boss_item_vote_id_" + id + "_item_" + itemid);
 		itemRow.itemid = itemid
 		itemRow.BLoadLayoutSnippet("BossDropItemVoteItemPanel")
@@ -354,10 +353,10 @@ function UpdateBossItemVote(id, data) {
 	if ($("#boss_item_vote_id_" + id) == null)
 		CreateBossItemVote(id, data)
 	var panel = $("#boss_item_vote_id_" + id)
-	$.Each(data.votes, function(vote, itemid) {
+	_.each(data.votes, function(vote, itemid) {
 		var itempanel = panel.FindChildTraverse("boss_item_vote_id_" + id + "_item_" + itemid)
 		itempanel.FindChildTraverse("BossDropPlayersRow").RemoveAndDeleteChildren()
-		$.Each(vote.votes, function(voteval, pid) {
+		_.each(vote.votes, function(voteval, pid) {
 			if (voteval == 1) {
 				var img = $.CreatePanel("Image", itempanel.FindChildTraverse("BossDropPlayersRow"), "")
 				img.SetImage(TransformTextureToPath(GetPlayerHeroName(pid), "icon"))
@@ -382,11 +381,10 @@ function UpdateBossItemVote(id, data) {
 		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode_type"] != null) {
 			DOTA_ACTIVE_GAMEMODE_TYPE = changesObject["gamemode_settings"]["gamemode_type"]
 		}
-		if (changesObject["gamemode_settings"] != null && changesObject["gamemode_settings"]["gamemode"] != null) {
-			if (changesObject["gamemode_settings"]["gamemode"] == DOTA_GAMEMODE_4V4V4V4)
-				hud.AddClass("Gamemode_4V4V4V4")
-		}
 	})
+	var mapInfo = Options.GetMapInfo()
+	hud.AddClass("map_landscape_" + mapInfo.landscape)
+	hud.AddClass("map_gamemode_" + mapInfo.gamemode)
 	DynamicSubscribePTListener("bosses_loot_drop_votes", function(tableName, changesObject, deletionsObject) {
 		for (var id in changesObject) {
 			if (Number(id.split("_")[0]) == Players.GetTeam(Game.GetLocalPlayerID()))

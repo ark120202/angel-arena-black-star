@@ -1,6 +1,6 @@
-_G.DOTA_DUEL_STATUS_NONE = 0
-_G.DOTA_DUEL_STATUS_WATING = 1
-_G.DOTA_DUEL_STATUS_IN_PROGRESS = 2
+DOTA_DUEL_STATUS_NONE = 0
+DOTA_DUEL_STATUS_WATING = 1
+DOTA_DUEL_STATUS_IN_PROGRESS = 2
 LinkLuaModifier("modifier_duel_hero_disabled_for_duel", "modifiers/modifier_duel_hero_disabled_for_duel.lua", LUA_MODIFIER_MOTION_NONE)
 if Duel == nil then
 	_G.Duel = class({})

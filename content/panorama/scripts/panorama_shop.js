@@ -6,7 +6,6 @@ var ItemList = {},
 	QuickBuyTarget = null,
 	QuickBuyTargetAmount = 0,
 	LastHero = null,
-	ARENA_VERSION = "1.0.0",
 	ItemStocks = [];
 
 function OpenCloseShop() {
@@ -521,11 +520,6 @@ function SetItemStock(item, ItemStock) {
 			}
 		};
 	});
-	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
-		if (changesObject.gamemode_settings && changesObject.gamemode_settings.version != null) {
-			ARENA_VERSION = changesObject.gamemode_settings.version
-		}
-	})
 
 	GameEvents.Subscribe("arena_team_changed_update", function() {
 		var stockdata = PlayerTables.GetTableValue("panorama_shop_data", "ItemStocks_team" + Players.GetTeam(Game.GetLocalPlayerID()))

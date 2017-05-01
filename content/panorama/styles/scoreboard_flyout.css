@@ -973,12 +973,12 @@ DOTAScoreboardPlayerInventory #ScoreboardStash
 	pre-transform-scale2d: 0.8;
 }
 
-.Gamemode_4V4V4V4 .ScoreboardPlayer
+.map_landscape_4v4v4v4 .ScoreboardPlayer
 {
 	height: 50px;
 }
 
-.Gamemode_4V4V4V4 .SharedControlPlayer
+.map_landscape_4v4v4v4 .SharedControlPlayer
 {
 	height: 50px;
 }

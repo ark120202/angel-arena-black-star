@@ -8,8 +8,6 @@
 		"Neutrals"        								"Neutral Team"
 		"NoTeam"          								"No Team"
 		
-		"addonname"										"Angel Arena Black Star"
-		"addon_game_name"         						"Angel Arena Black Star"
 		"addon_game_name_p1"         					"Angel Arena"
 		"addon_game_name_p2"         					"Black Star"
 
@@ -127,13 +125,12 @@
 		"arthas_vsolyanova_notifiaction"						"NAAAAAAAAAAAAAAAA ✓✓✓✓"
 
 		"hero_selection_select_hero"							"Select Hero"
-		"hero_selection_notes_npc_dota_hero_base"				"This hero hasn't any important changes."
 		"hero_selection_button_select_hero"						"SELECT"
 		"hero_selection_button_random"							"RANDOM"
 		"hero_selection_button_search"							"Search Hero..."
 		"hero_selection_button_switch"							"Switch Heroes"
-		"hero_selection_loading_message"						"Loading..."
-		"hero_selection_change_hero_selected"					"This hero is already selected"
+		"hero_selection_button_switch"							"Switch Heroes"
+		"hero_selection_loadout_items_first_game"				"Changing loadout items is not avaliable in first game after starting DOTA"
 		"hero_selection_linked_hero"							"Linked Hero:"
 		"hero_selection_lock"									"Lock"
 		"hero_selection_unlock"									"Unlock"
@@ -321,8 +318,12 @@
 		"arena_tip_13"																		"Don't forget about Silver Edge!"
 		"arena_tip_14"																		"Most of new items are listed in 'New' tab in the shop"
 		"arena_tip_15"																		"If you found colored creep, be careful. This neutral is a champion. All it's attributes are highly increased, but kill bounty is also much more"
-		//"arena_tip_1"																		"TIP #1: You can see kill limit by holding ALT"
 
-
+		"option_yes"																		"Yes"
+		"option_no"																			"No"
+		"option_voting_kill_limit"															"Kill Limit:"
+		"option_voting_custom_abilities"													"Custom Abilities Mode:"
+		"option_voting_custom_abilities_random_omg"											"Random OMG"
+		"option_voting_custom_abilities_ability_shop"										"Ability Shop"
 	}
 }

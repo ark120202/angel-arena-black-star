@@ -1,19 +1,9 @@
 "use strict";
+var _ = GameUI.CustomUIConfig()._;
 var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
 var Options = GameUI.CustomUIConfig().Options;
 var ServerDebug = true;
 var ServerAddress = (Game.IsInToolsMode() && ServerDebug ? "http://127.0.0.1:3228" : "https://angelarenablackstar-ark120202.rhcloud.com") + "/AABSServer/"
-
-//var DOTA_GAMEMODE_5V5 = 0
-var DOTA_GAMEMODE_4V4V4V4 = 1
-
-//var DOTA_GAMEMODE_TYPE_ALLPICK = 100
-//var DOTA_GAMEMODE_TYPE_RANKED_ALLPICK = 101
-//var DOTA_GAMEMODE_TYPE_RANDOM_OMG = 102
-//var DOTA_GAMEMODE_TYPE_ABILITY_SHOP = 103
-
-var ARENA_GAMEMODE_MAP_NONE = 200
-var ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES = 201
 
 var HERO_SELECTION_PHASE_NOT_STARTED = 0
 var HERO_SELECTION_PHASE_BANNING = 1
@@ -54,6 +44,16 @@ function GetDataFromServer(path, params, resolve, reject) {
 		}
 	});
 }
+
+Promise.delay = function(x) {
+	return new Promise(function(resolve) {
+		$.Schedule(x, resolve)
+	})
+}
+
+Promise.prototype.method_name = function(cback) {
+	return new Promise(cback).catch($.Msg(err))
+};
 
 function MongoObjectIDToDate(objectId) {
 	return new Date(parseInt(objectId.substring(0, 8), 16) * 1000);
@@ -353,7 +353,7 @@ function shuffle(a) {
 }
 
 function FormatGold(value) {
-	return (GameUI.IsAltDown() ? value : value > 999999 ? (value/1000000).toFixed(2) + 'M' : value > 99999 ? (value/1000).toFixed(1) + 'k' : value)
+	return (GameUI.IsAltDown() ? value : value > 9999999 ? (value/1000000).toFixed(2) + 'M' : value > 99999 ? (value/1000).toFixed(1) + 'k' : value)
 		.toString()
 		.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }

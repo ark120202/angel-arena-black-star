@@ -176,6 +176,8 @@ function SelectHeroTab(tabIndex) {
 			$("#HeroListPanel_tabPanels_" + SelectedTabIndex).visible = false
 		}
 		$("#HeroListPanel_tabPanels_" + tabIndex).visible = true
+		$("#SwitchHeroesButton").RemoveClass("ActiveTab" + SelectedTabIndex)
+		$("#SwitchHeroesButton").AddClass("ActiveTab" + tabIndex)
 		SelectedTabIndex = tabIndex
 	}
 }

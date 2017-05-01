@@ -27,9 +27,10 @@ end
 --StatsClient:OnGameBegin()
 function StatsClient:OnGameEnd(winner)
 	local time = GameRules:GetDOTATime(false, true)
-	if not IsInToolsMode() and (GameRules:IsCheatMode() or GetInGamePlayerCount() < 8 or time < 0) then
-		return
-	end
+	--local debug = true
+	--if (not IsInToolsMode() or debug) and (GameRules:IsCheatMode() or GetInGamePlayerCount() < 8 or time < 0) then
+	--	return
+	--end
 	local data = {
 		version = ARENA_VERSION,
 		matchid = tostring(GameRules:GetMatchID()),
@@ -42,7 +43,7 @@ function StatsClient:OnGameEnd(winner)
 	}
 	for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
 		if GetTeamAllPlayerCount(i) > 0 then
-			data.TeamsInfo[i] = {
+			data.TeamsInfo[tostring(i)] = {
 				Duels_Won = (Duel.TimesTeamWins[i] or 0),
 				IsGameWinner = i == winner,
 				Kills = GetTeamHeroKills(i),
@@ -92,7 +93,7 @@ function StatsClient:OnGameEnd(winner)
 		PrintTable(response)
 	end, 4)
 end
-
+--StatsClient:OnGameEnd(2)
 function StatsClient:HandleError(err)
 	if err and type(err) == "string" then
 		StatsClient:Send("HandleError", {
@@ -151,7 +152,7 @@ function StatsClient:AddGuide(data)
 		youtube = data.youtube,
 		version = ARENA_VERSION,
 	}, function(response)
-		if response.success then
+		if response.insertedId then
 			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "stats_client_add_guide_success", {insertedId = response.insertedId})
 		else
 			Containers:DisplayError(playerID, response.error)

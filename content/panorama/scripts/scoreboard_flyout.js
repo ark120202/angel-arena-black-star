@@ -31,9 +31,15 @@ function Snippet_Player(pid) {
 	if (PlayerPanels[pid] == null) {
 		var team = Players.GetTeam(pid)
 		if (team != DOTA_TEAM_SPECTATOR) {
+			var playerInfo = Game.GetPlayerInfo(pid);
 			var teamPanel = Snippet_Team(team).FindChildTraverse("TeamPlayersContainer")
 			var panel = $.CreatePanel("Panel", teamPanel, "")
-			panel.BLoadLayoutSnippet("Player")
+			panel.BLoadLayoutSnippet("Player");
+			panel.FindChildTraverse("PlayerNameLabel").text = Players.GetPlayerName(pid);
+			panel.FindChildTraverse("AvatarImage").steamid = playerInfo.player_steamid;
+			panel.FindChildTraverse("AvatarImage").SetPanelEvent("onactivate", function() {
+				GameEvents.SendEventClientSide("player_profiles_show_info", {PlayerID: pid});
+			})
 			var VoiceMute = panel.FindChildTraverse("VoiceMute")
 			panel.playerId = pid
 			panel.SetHasClass("EmptyPlayerRow", false)
@@ -44,7 +50,7 @@ function Snippet_Player(pid) {
 					if (GameUI.IsAltDown()) {
 						var clientEnt = Players.GetPlayerHeroEntityIndex(pid)
 						GameEvents.SendCustomGameEventToServer("custom_chat_send_message", {
-							xpunit: clientEnt == -1 ? Game.GetPlayerInfo(pid).player_selected_hero_entity_index : clientEnt
+							xpunit: clientEnt == -1 ? playerInfo.player_selected_hero_entity_index : clientEnt
 						})
 					}
 				});
@@ -108,8 +114,6 @@ function Snippet_Player_Update(panel) {
 		panel.SetDialogVariableInt("level", Players.GetLevel(playerId))
 		panel.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(heroName));
 		panel.FindChildTraverse("HeroNameLabel").text = $.Localize(heroName).toUpperCase();
-		panel.FindChildTraverse("PlayerNameLabel").text = Players.GetPlayerName(playerId)
-		panel.FindChildTraverse("AvatarImage").steamid = playerInfo.player_steamid
 		panel.FindChildTraverse("PlayerColor").style.backgroundColor = GetHEXPlayerColor(playerId);
 
 		/*panel.SetDialogVariableInt("respawn_seconds", respawnSeconds + 1);

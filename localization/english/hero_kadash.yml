@@ -1,0 +1,40 @@
+DOTA_Tooltip_ability_kadash_assasins_skills: Assasins Skills
+DOTA_Tooltip_ability_kadash_assasins_skills_Description: 'Kadash uses his skills, increasing his damage from all sources and granting him critical strike.'
+DOTA_Tooltip_ability_kadash_assasins_skills_all_damage_bonus_pct: '%DAMAGE INCREASE:'
+DOTA_Tooltip_ability_kadash_assasins_skills_crit_chance: '%CRIT CHANCE:'
+DOTA_Tooltip_ability_kadash_assasins_skills_crit_mult: '%CRIT DAMAGE:'
+DOTA_Tooltip_ability_kadash_strike_from_shadows: Strike From Shadows
+DOTA_Tooltip_ability_kadash_strike_from_shadows_Description: 'Kadash becomes invisible and gains +%bonus_attack_range% attack range for one attack. This attack will deal increased damage and will decrease enemy armor. Instead of physical dmaage, that attack will deal magical damage.'
+DOTA_Tooltip_ability_kadash_strike_from_shadows_duration: 'DURATION:'
+DOTA_Tooltip_ability_kadash_strike_from_shadows_fade_time: 'FADE TIME:'
+DOTA_Tooltip_ability_kadash_strike_from_shadows_armor_reduction: 'ARMOR REDUCTION:'
+DOTA_Tooltip_ability_kadash_strike_from_shadows_armor_reduction_duration: 'ARMOR REDUCTION DURATION:'
+DOTA_Tooltip_ability_kadash_strike_from_shadows_bonus_attack_range: 'BONUS ATTACK RANGE:'
+DOTA_Tooltip_ability_kadash_strike_from_shadows_magical_damage_pct: '%ATTACK DAMAGE:'
+DOTA_Tooltip_modifier_kadash_strike_from_shadows_fade: Strike From Shadows
+DOTA_Tooltip_modifier_kadash_strike_from_shadows_fade_Description: Invisible. First attack can be done with +%dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS% attack range and will deal magic damage.
+DOTA_Tooltip_modifier_kadash_strike_from_shadows: Strike From Shadows
+DOTA_Tooltip_modifier_kadash_strike_from_shadows_Description: Invisible. First attack can be done with +%dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS% attack range and will deal magic damage.
+DOTA_Tooltip_modifier_kadash_strike_from_shadows_debuff: Strike From Shadows
+DOTA_Tooltip_modifier_kadash_strike_from_shadows_debuff_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
+DOTA_Tooltip_ability_kadash_survival_skills: Survival Skills
+DOTA_Tooltip_ability_kadash_survival_skills_Description: 'Kadash becomes elusive, gaining additional armor, magic resistance, evasion and damage block.'
+DOTA_Tooltip_ability_kadash_survival_skills_bonus_evasion: '%BONUS EVASION:'
+DOTA_Tooltip_ability_kadash_survival_skills_bonus_armor: 'BONUS ARMOR:'
+DOTA_Tooltip_ability_kadash_survival_skills_bonus_magic_resist_pct: '%BONUS MAGIC RESISTANCE:'
+DOTA_Tooltip_ability_kadash_survival_skills_block_damage: 'DAMAGE BLOCK:'
+DOTA_Tooltip_ability_kadash_immortality: Immortality
+DOTA_Tooltip_ability_kadash_immortality_Description: |-
+  When killed, instead of death, Kadash respawns with decreased maximum health and without mana. If Kadash can't respawn (health reduction more then 100%) he dies and, after respawn, he will have his normal health.
+
+  Upgradable by Aghanim's Scepter.
+DOTA_Tooltip_ability_kadash_immortality_aghanim_description: Decreases health decrease and makes Kadash invulnerable and unable to attack for some time after reincarnation.
+DOTA_Tooltip_ability_kadash_immortality_reincarnate_time: 'REINCARNATION TIME:'
+DOTA_Tooltip_ability_kadash_immortality_vision_radius: 'VISION RADIUS:'
+DOTA_Tooltip_ability_kadash_immortality_health_per_reincarnation_pct: '%HEALTH DECREASE PER REINCARNATION:'
+DOTA_Tooltip_ability_kadash_immortality_health_per_reincarnation_pct_scepter: '%HEALTH DECREASE PER REINCARNATION WITH SCEPTER:'
+DOTA_Tooltip_ability_kadash_immortality_ghostform_duration_scepter: 'INVULNERABILITY DURATION:'
+DOTA_Tooltip_modifier_kadash_immortality_ghostform: Immortality Ghost Form
+DOTA_Tooltip_modifier_kadash_immortality_ghostform_Description: Kadash just respawned and can't attack or be attacked.
+DOTA_Tooltip_modifier_kadash_immortality_health_penalty: Immortality
+DOTA_Tooltip_modifier_kadash_immortality_health_penalty_Description: Maximum health is decreased.

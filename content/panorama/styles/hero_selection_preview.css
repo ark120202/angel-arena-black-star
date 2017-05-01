@@ -83,7 +83,7 @@
 {
 	margin-left: -40px;
 }
-.EnterGameButton
+.PickButton.EnterGameButton
 {
 	height: 108px;
 	width: 140px;
@@ -130,7 +130,7 @@
 	vertical-align: middle;
 	horizontal-align: center;
 }
-.EnterGameButton > Label
+.PickButton.EnterGameButton > Label
 {
 	vertical-align: bottom;
 	width: 100%;

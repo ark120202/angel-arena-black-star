@@ -255,8 +255,9 @@ function HostSwapPlayers(playerId, playerId2) {
 
 (function() {
 	$("#TeamList").RemoveAndDeleteChildren()
-	for (var teamId of Game.GetAllTeamIDs()) {
-		Snippet_Team(Number(teamId))
+	var teamIDs = Game.GetAllTeamIDs();
+	for (var i = 0; i < teamIDs.length; i++) {
+		Snippet_Team(teamIDs[i])
 	}
 	Game.AutoAssignPlayersToTeams();
 	OnTeamPlayerListChanged();

@@ -182,9 +182,11 @@ function PlayerTables:CreateTable(tableName, tableContents, pids)
 		end
 		if pid >= 0 and pid < DOTA_MAX_TEAM_PLAYERS then
 			self.subscriptions[tableName][pid] = true
-			local player = PlayerResource:GetPlayer(pid)
-			if player then  
-				CustomGameEventManager:Send_ServerToPlayer(player, "pt_fu", {name=tableName, table=tableContents} )
+			if PlayerResource then -- After Activate called
+				local player = PlayerResource:GetPlayer(pid)
+				if player then  
+					CustomGameEventManager:Send_ServerToPlayer(player, "pt_fu", {name=tableName, table=tableContents} )
+				end
 			end
 		else
 			print("[playertables.lua] Warning: Pid value '" .. pid .. "' is not an integer between [0," .. DOTA_MAX_TEAM_PLAYERS .. "].  Ignoring.")
@@ -394,9 +396,11 @@ function PlayerTables:SetTableValue(tableName, key, value)
 	if not self:equals(table[key], value) then
 		table[key] = value
 		for pid,v in pairs(pids) do
-			local player = PlayerResource:GetPlayer(pid)
-			if player then  
-				CustomGameEventManager:Send_ServerToPlayer(player, "pt_uk", {name=tableName, changes={[key]=value}} )
+			if PlayerResource then -- After Activate called
+				local player = PlayerResource:GetPlayer(pid)
+				if player then  
+					CustomGameEventManager:Send_ServerToPlayer(player, "pt_uk", {name=tableName, changes={[key]=value}} )
+				end
 			end
 		end
 	end

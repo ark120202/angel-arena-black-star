@@ -34,7 +34,7 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 							TransformUnitClass(hero, heroTableCustom)
 							hero.UnitName = heroName
 						end
-						if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
+						if Options:IsEquals("EnableAbilityShop") then
 							for i = 0, hero:GetAbilityCount() - 1 do
 								if hero:GetAbilityByIndex(i) then
 									hero:RemoveAbility(hero:GetAbilityByIndex(i):GetName())

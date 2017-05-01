@@ -24,15 +24,16 @@ HERO_SELECTION_PICK_TIME = 80
 HERO_SELECTION_STRATEGY_TIME = 35
 HERO_SELECTION_BANNING_TIME = 25
 
+FORCE_PICKED_HERO = "npc_dota_hero_target_dummy"
 
 function HeroSelection:Initialize()
 	GameRules:SetHeroSelectionTime(-1)
-	local preTime = HERO_SELECTION_PICK_TIME + HERO_SELECTION_STRATEGY_TIME + 3.75 + PRE_GAME_TIME
-	if HERO_SELECTION_ENABLE_BANNING_PHASE then
+	local preTime = HERO_SELECTION_PICK_TIME + HERO_SELECTION_STRATEGY_TIME + 3.75 + Options:GetValue("PreGameTime")
+	if Options:GetValue("BanningPhaseBannedPercentage") > 0 then
 		preTime = preTime + HERO_SELECTION_BANNING_TIME
 	end
 	GameRules:SetPreGameTime(preTime)
-
+	GameRules:GetGameModeEntity():SetCustomGameForceHero(FORCE_PICKED_HERO)
 	CustomGameEventManager:RegisterListener("hero_selection_player_hover", Dynamic_Wrap(HeroSelection, "OnHeroHover"))
 	CustomGameEventManager:RegisterListener("hero_selection_player_select", Dynamic_Wrap(HeroSelection, "OnHeroSelectHero"))
 	CustomGameEventManager:RegisterListener("hero_selection_player_random", Dynamic_Wrap(HeroSelection, "OnHeroRandomHero"))
@@ -71,7 +72,7 @@ function HeroSelection:PrepareTables()
 				tabIndex = tabIndex
 			}
 
-			if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ALLPICK or DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANKED_ALLPICK then
+			if Options:IsEquals("EnableAbilityShop", false) and Options:IsEquals("EnableRandomAbilities", false) then
 				heroData.abilities = HeroSelection:ParseAbilitiesFromTable(heroTable)
 				heroData.isChanged = heroTable.Changed == 1 and tabIndex == 1
 				heroData.linkedColorGroup = heroTable.LinkedColorGroup
@@ -83,7 +84,7 @@ function HeroSelection:PrepareTables()
 			heroesData[name] = heroData
 		end
 	end
-	for name,enabled in pairsByKeys(ENABLED_HEROES[ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES and "NoAbilities" or "Selection"]) do
+	for name,enabled in pairsByKeys(ENABLED_HEROES[Options:GetValue("MainHeroList")]) do
 		if enabled == 1 then
 			if not heroesData[name] or heroesData[name].Enabled == 0 then
 				error("Hero from enabled hero list is not a valid hero")
@@ -132,7 +133,7 @@ end
 
 function HeroSelection:HeroSelectionStart()
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled(true)
-	if HERO_SELECTION_ENABLE_BANNING_PHASE then
+	if Options:GetValue("BanningPhaseBannedPercentage") > 0 then
 		EmitAnnouncerSound("announcer_ann_custom_mode_05")
 		HeroSelection:SetState(HERO_SELECTION_PHASE_BANNING)
 		HeroSelection:SetTimerDuration(HERO_SELECTION_BANNING_TIME)
@@ -152,13 +153,12 @@ function HeroSelection:StartStateHeroPick()
 			table.insert(notBanned, hero)
 		end
 	end
-	local iterCount = math.ceil(#notBanned / 2) 
+	local iterCount = math.ceil(#notBanned * Options:GetValue("BanningPhaseBannedPercentage") * 0.01) 
 	for i = 1, iterCount do
 		table.remove(notBanned, RandomInt(1, #notBanned))
 	end
 	PlayerTables:DeleteTableKeys("hero_selection_banning_phase", notBanned)
 	--local banned = PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")
-
 
 	HeroSelection:DismissTimers()
 	EmitAnnouncerSound("announcer_ann_custom_draft_01")

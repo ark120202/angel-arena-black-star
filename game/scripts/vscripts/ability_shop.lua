@@ -190,7 +190,7 @@ function AbilityShop:CalculateDowngradeCost(abilityname, upgradecost)
 end
 
 function AbilityShop:RandomOMGRollAbilities(unit)
-	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG then
+	if Options:IsEquals("EnableRandomAbilities") then
 		local ability_count = 6
 		local ultimate_count = 2
 		for i = 0, unit:GetAbilityCount() - 1 do

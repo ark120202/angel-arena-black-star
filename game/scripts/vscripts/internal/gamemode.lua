@@ -14,6 +14,8 @@ function GameMode:_InitGameMode()
 	GameRules:SetUseCustomHeroXPValues ( USE_CUSTOM_XP_VALUES )
 	GameRules:SetGoldPerTick(0)
 	GameRules:SetGoldTickTime(0)
+	GameRules:SetStartingGold(0)
+
 	GameRules:SetUseBaseGoldBountyOnHeroes(USE_STANDARD_HERO_GOLD_BOUNTY)
 	GameRules:SetHeroMinimapIconScale( MINIMAP_ICON_SIZE )
 	GameRules:SetCreepMinimapIconScale( MINIMAP_CREEP_ICON_SIZE )
@@ -23,7 +25,6 @@ function GameMode:_InitGameMode()
 
 	GameRules:SetCustomGameEndDelay( GAME_END_DELAY )
 	GameRules:SetCustomVictoryMessageDuration( VICTORY_MESSAGE_DURATION )
-	GameRules:SetStartingGold( STARTING_GOLD )
 
 	if SKIP_TEAM_SETUP then
 		GameRules:SetCustomGameSetupAutoLaunchDelay( 0 )
@@ -37,27 +38,12 @@ function GameMode:_InitGameMode()
 
 
 	-- This is multiteam configuration stuff
-	if USE_AUTOMATIC_PLAYERS_PER_TEAM then
-		local num = math.floor(10 / MAX_NUMBER_OF_TEAMS)
-		local count = 0
-		for team,number in pairs(TEAM_COLORS) do
-			if count >= MAX_NUMBER_OF_TEAMS then
-				GameRules:SetCustomGameTeamMaxPlayers(team, 0)
-			else
-				GameRules:SetCustomGameTeamMaxPlayers(team, num)
-			end
-			count = count + 1
-		end
-	else
-		local count = 0
-		for team,number in pairs(CUSTOM_TEAM_PLAYER_COUNT) do
-			if count >= MAX_NUMBER_OF_TEAMS then
-				GameRules:SetCustomGameTeamMaxPlayers(team, 0)
-			else
-				GameRules:SetCustomGameTeamMaxPlayers(team, number)
-			end
-			count = count + 1
-		end
+	local mapinfo = LoadKeyValues("addoninfo.txt")[GetMapName()]
+	local num = math.floor(mapinfo.MaxPlayers / mapinfo.TeamCount)
+	local count = 0
+	for team in pairs(TEAM_COLORS) do
+		GameRules:SetCustomGameTeamMaxPlayers(team, count < mapinfo.TeamCount and num or 0)
+		count = count + 1
 	end
 
 	if USE_CUSTOM_TEAM_COLORS then
@@ -152,13 +138,9 @@ function GameMode:_CaptureGameMode()
 
 		mode:SetAlwaysShowPlayerInventory( SHOW_ONLY_PLAYER_INVENTORY )
 		mode:SetAnnouncerDisabled( DISABLE_ANNOUNCER )
-		if FORCE_PICKED_HERO ~= nil then
-			mode:SetCustomGameForceHero( FORCE_PICKED_HERO )
-		end
-		mode:SetFixedRespawnTime( FIXED_RESPAWN_TIME ) 
-		mode:SetFountainConstantManaRegen( FOUNTAIN_CONSTANT_MANA_REGEN )
-		mode:SetFountainPercentageHealthRegen( FOUNTAIN_PERCENTAGE_HEALTH_REGEN )
-		mode:SetFountainPercentageManaRegen( FOUNTAIN_PERCENTAGE_MANA_REGEN )
+		mode:SetFountainConstantManaRegen(0)
+		mode:SetFountainPercentageHealthRegen(0)
+		mode:SetFountainPercentageManaRegen(0)
 		mode:SetMaximumAttackSpeed( MAXIMUM_ATTACK_SPEED )
 		mode:SetMinimumAttackSpeed( MINIMUM_ATTACK_SPEED )
 		mode:SetStashPurchasingDisabled ( DISABLE_STASH_PURCHASING )

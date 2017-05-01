@@ -31,7 +31,6 @@ var SteamIDSpecialBGs = {
 }
 
 function HeroSelectionStart(HeroesServerData) {
-	$.GetContextPanel().visible = true;
 	tabsData = HeroesServerData.HeroTabs
 	for (var tabKey in tabsData) {
 		var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey)
@@ -54,9 +53,9 @@ function HeroSelectionEnd(bImmidate) {
 			GameEvents.Unsubscribe(HideEvent)
 		if ($.GetContextPanel().PTID_hero_selection) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_selection)
 		if (MinimapPTIDs.length > 0)
-			$.Each(MinimapPTIDs, function(ptid) {
-				PlayerTables.UnsubscribeNetTableListener(ptid)
-			})
+			for (var i = 0; i < MinimapPTIDs.length; i++) {
+				PlayerTables.UnsubscribeNetTableListener(MinimapPTIDs[i])
+			}
 		$.GetContextPanel().DeleteAsync(0)
 	})
 }
@@ -127,7 +126,7 @@ function UpdateTimer() {
 				panel.SetHasClass("player_connection_disconnected", playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_DISCONNECTED);
 			}
 		}
-		$.Each($(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").GetChild(1).Children(), function(child) {
+		_.each($MinimapSpawnBoxes().Children(), function(child) {
 			var childrencount = child.GetChildCount()
 			child.SetHasClass("SpawnBoxUnitPanelChildren2", childrencount >= 2)
 			child.SetHasClass("SpawnBoxUnitPanelChildren3", childrencount >= 3)
@@ -218,7 +217,7 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 						var SPBoxInfoGroup = playerData.SpawnBoxes[index]
 						var SPBoxID = "MinimapSpawnBoxPlayerIcon_" + SPBoxInfoGroup + "_" + playerIdInTeam;
 						var SpawnBoxUnitPanel = $("#" + SPBoxID);
-						var RootPanel = $(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").FindChildTraverse("MinimapSpawnBox_" + SPBoxInfoGroup);
+						var RootPanel = $MinimapSpawnBoxes().FindChildTraverse("MinimapSpawnBox_" + SPBoxInfoGroup);
 						if (SpawnBoxUnitPanel == null) {
 							SpawnBoxUnitPanel = $.CreatePanel("Image", RootPanel, SPBoxID)
 							SpawnBoxUnitPanel.AddClass("SpawnBoxUnitPanel")
@@ -246,6 +245,14 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	UpdateSelectionButton()
 }
 
+function $MinimapSpawnBoxes() {
+	var vs = $("#MinimapPanel").FindChildrenWithClassTraverse("MinimapSpawnBoxes");
+	for (var i = 0; i < vs.length; i++) {
+		if (vs[i].BHasClass("only_map_landscape_" + Options.GetMapInfo().landscape))
+			return vs[i];
+	}
+}
+
 function OnLocalPlayerPicked() {
 	var heroName = LocalPlayerStatus.hero;
 	var localHeroData = HeroesData[heroName];
@@ -264,25 +271,29 @@ function OnLocalPlayerPicked() {
 	FillAbilitiesUI($("#HeroPreviewAbilities"), localHeroData.abilities, "HeroPreviewAbility")
 	FillAttributeUI($("#HeroPreviewAttributes"), localHeroData);
 	
-	$.Schedule(1, function() {
-		var GlobalLoadoutItems = FindDotaHudElement("GlobalLoadoutItems");
-		if (GlobalLoadoutItems) {
-			GlobalLoadoutItems.SetParent($("#GlobalLoadoutContainer"));
-			//Custom styles
-			$.Each(GlobalLoadoutItems.FindChildrenWithClassTraverse("HasItemsForSlot"), function(child) {
-				child.SetParent(GlobalLoadoutItems);
-				child.style.width = "180px";
-			})
-			$.Each(GlobalLoadoutItems.FindChildrenWithClassTraverse("GlobalLoadoutSlotCategory"), function(child) {
-				child.visible = false;
-			})
-
-			//These wearables are useless, hide them
-			try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_terrain")[0].GetParent().GetParent().visible = false; } catch(e) {}
-			try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_heroic_statue")[0].GetParent().GetParent().visible = false; } catch(e) {}
-			try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_loading_screen")[0].GetParent().GetParent().visible = false; } catch(e) {}
+	var GlobalLoadoutItems = FindDotaHudElement("GlobalLoadoutItems");
+	if (GlobalLoadoutItems) {
+		GlobalLoadoutItems.SetParent($("#GlobalLoadoutContainer"));
+		//Custom styles
+		_.each(GlobalLoadoutItems.FindChildrenWithClassTraverse("HasItemsForSlot"), function(child) {
+			child.SetParent(GlobalLoadoutItems);
+			child.style.width = "180px";
+			//child.DeleteAsync(0)
+		})
+		_.each(GlobalLoadoutItems.FindChildrenWithClassTraverse("GlobalLoadoutSlotCategory"), function(child) {
+			child.visible = false;
+		})
+		if (GlobalLoadoutItems.FindChildrenWithClassTraverse("HasItemsForSlot").length === 0 && !GlobalLoadoutItems.FindChildTraverse("GlobalLoadoutItemsArenaMessage")) {
+			var label = $.CreatePanel("Label", GlobalLoadoutItems, "GlobalLoadoutItemsArenaMessage");
+			label.text = $.Localize("hero_selection_loadout_items_first_game");
+			label.style.fontSize = "22px";
+			label.style.align = "center center";
 		}
-	})
+		//These wearables are useless, hide them
+		try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_terrain")[0].GetParent().GetParent().visible = false; } catch(e) {}
+		try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_heroic_statue")[0].GetParent().GetParent().visible = false; } catch(e) {}
+		try{ GlobalLoadoutItems.FindChildrenWithClassTraverse("ItemSlot_loading_screen")[0].GetParent().GetParent().visible = false; } catch(e) {}
+	}
 	ToggleHeroPreviewHeroList(true)
 }
 
@@ -335,6 +346,7 @@ function SetCurrentPhase(newState) {
 		case HERO_SELECTION_PHASE_STRATEGY:
 			$.GetContextPanel().RemoveClass("CanRepick")
 			StartStrategyTime()
+		case HERO_SELECTION_PHASE_HERO_PICK:
 		case HERO_SELECTION_PHASE_BANNING:
 			if (!InitializationStates[HERO_SELECTION_PHASE_BANNING]) {
 				InitializationStates[HERO_SELECTION_PHASE_BANNING] = true;
@@ -350,7 +362,7 @@ function SetCurrentPhase(newState) {
 }
 
 function ShowHeroPreviewTab(tabID) {
-	$.Each($("#TabContents").Children(), function(child) {
+	_.each($("#TabContents").Children(), function(child) {
 		child.SetHasClass("TabVisible", child.id == tabID);
 	})
 }
@@ -360,16 +372,16 @@ function ShowHeroPreviewTab(tabID) {
 	$("#HeroListPanel").RemoveAndDeleteChildren()
 	if (Players.GetTeam(Game.GetLocalPlayerID()) != DOTA_TEAM_SPECTATOR) {
 		DynamicSubscribePTListener("hero_selection_available_heroes", UpdateMainTable);
+		$.GetContextPanel().SetHasClass("ShowMMR", Options.IsEquals("EnableRatingAffection"))
 		DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
 			if (changesObject.gamemode_settings && changesObject.gamemode_settings.gamemode != null) {
 				DOTA_ACTIVE_GAMEMODE = changesObject.gamemode_settings.gamemode
-				_DynamicMinimapSubscribe($(DOTA_ACTIVE_GAMEMODE == DOTA_GAMEMODE_4V4V4V4 ? "#MinimapImage4v4v4v4" : "#MinimapImage").GetChild(0), function(ptid) {
+				_DynamicMinimapSubscribe($("#MinimapDynamicIcons"), function(ptid) {
 					MinimapPTIDs.push(ptid)
 				});
 			}
 			if (changesObject.gamemode_settings && changesObject.gamemode_settings.gamemode_type != null) {
 				var DOTA_ACTIVE_GAMEMODE_TYPE = changesObject.gamemode_settings.gamemode_type
-				$.GetContextPanel().SetHasClass("ShowMMR", Options.IsEquals("EnableRatingAffection"))
 				$("#GameModeInfoGamemodeLabel").text = $.Localize("arena_game_mode_type_" + DOTA_ACTIVE_GAMEMODE_TYPE)
 			}
 		})

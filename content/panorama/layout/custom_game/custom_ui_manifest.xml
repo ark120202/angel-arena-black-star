@@ -1,6 +1,7 @@
 <root>
 	<scripts>
 		<include src="file://{resources}/scripts/playertables/playertables_base.js" />
+		<include src="file://{resources}/scripts/lodash.min.js" />
 		<include src="file://{resources}/scripts/util.js" />
 		<include src="file://{resources}/scripts/options.js" />
 		<include src="file://{resources}/scripts/custom_ui_manifest.js" />
@@ -27,7 +28,7 @@
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hero_selection.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/metamorphosis_elixir.xml" />
 
-		<!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/player_profiles.xml" /> -->
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/player_profiles.xml" />
 
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/modmaker/modmaker.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_attachments.xml" />

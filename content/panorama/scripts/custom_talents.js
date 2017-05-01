@@ -120,6 +120,7 @@ function Update() {
 }
 
 (function() {
+	$("#TalentListContainer").RemoveAndDeleteChildren();
 	GameEvents.Subscribe("custom_talents_toggle_tree", function() {
 		$.GetContextPanel().ToggleClass("PanelOpened")
 	});

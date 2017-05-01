@@ -24,7 +24,7 @@ function GameMode:OnGameRulesStateChange(keys)
 			end
 		end
 		HeroSelection:CollectPD()
-		GameModes:OnAllVotesSubmitted()
+		Options:CalculateVotes()
 		StatsClient:OnGameBegin()
 		HeroSelection:HeroSelectionStart()
 	end
@@ -34,7 +34,6 @@ end
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	if npc:IsHero() then
-		print(HeroSelection:GetState(), HERO_SELECTION_PHASE_END)
 		if HeroSelection:GetState() < HERO_SELECTION_PHASE_END then
 			--npc:AddNoDraw()
 			return

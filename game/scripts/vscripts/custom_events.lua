@@ -2,8 +2,7 @@ function GameMode:RegisterCustomListeners()
 	CustomGameEventManager:RegisterListener("custom_chat_send_message", Dynamic_Wrap(GameMode, "CustomChatSendMessage"))
 	CustomGameEventManager:RegisterListener("metamorphosis_elixir_cast", Dynamic_Wrap(GameMode, "MetamorphosisElixirCast"))
 	CustomGameEventManager:RegisterListener("modifier_clicked_purge", Dynamic_Wrap(GameMode, "ModifierClickedPurge"))
-	CustomGameEventManager:RegisterListener("submit_gamemode_vote", Dynamic_Wrap(GameMode, "SubmitGamemodeVote"))
-	CustomGameEventManager:RegisterListener("submit_gamemode_map", Dynamic_Wrap(GameMode, "SubmitGamemodeMap"))
+	CustomGameEventManager:RegisterListener("options_vote", Dynamic_Wrap(Options, "OnVote"))
 	CustomGameEventManager:RegisterListener("team_select_host_set_player_team", Dynamic_Wrap(GameMode, "TeamSelectHostSetPlayerTeam"))
 	CustomGameEventManager:RegisterListener("set_help_disabled", Dynamic_Wrap(GameMode, "SetHelpDisabled"))
 end
@@ -11,7 +10,7 @@ function GameMode:MetamorphosisElixirCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local elixirItem = FindItemInInventoryByName(hero, "item_metamorphosis_elixir", false)
 	local newHeroName = tostring(data.hero)
-	if hero and GetFullHeroName(hero) ~= newHeroName and not HeroSelection:IsHeroSelected(newHeroName) and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(newHeroName, "Selection") and (elixirItem or hero.ForcedHeroChange) then
+	if hero and GetFullHeroName(hero) ~= newHeroName and not HeroSelection:IsHeroSelected(newHeroName) and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(newHeroName) and (elixirItem or hero.ForcedHeroChange) then
 		HeroSelection:ChangeHero(data.PlayerID, newHeroName, true, elixirItem and elixirItem:GetSpecialValueFor("transformation_time") or 0, elixirItem)
 	end
 end

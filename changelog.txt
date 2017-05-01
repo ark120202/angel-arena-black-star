@@ -43,14 +43,28 @@ General:
 		Added Strategy Phase to Hero Selection that replaces precaching phase
 		Added banning phase (only Ranked gamemode for now)
 		Added ability to repick heroes //TODO: Costs 200 gold, not 100
+		Added announcer sounds
 		Redesigned player images and hero panels
-	Players now can submit their itembuilds using new build builder in shop //TODO: Votings
+	Players now can submit their itembuilds using new build builder in shop
 	Gold now is formatted to thousands and millions (normal values are shown while holding ALT)
+	Added announcer countdown before duel
 Balance:
 	Runes:
 		
 	Items:
-		
+		Orb of Essences:
+			Now not requires Moon Dust
+			Recipe Cost: 3600 => 8800
+			Bonus Attributes: 80 => 45
+		Aghanim's Scepter:
+			Bonus Attributes: 100 => 65
+		Mekansm II:
+			Now requires Orb of Essences instead of Ultimate Orb
+		Demonic Cuirass:
+			Passive cursing now is active
+			Cooldown: 0 => 80
+			Mana Cost: 0 => 600
+			Curse Duration: 60 => 25
 	Talents:
 		
 	Abilities:
@@ -58,7 +72,7 @@ Balance:
 	Ability Shop:
 		
 Fixes:
-	
+	Fixed Curese sometimes killed heroes even after it was purged
 <<+===========================================================================================================
 rhasta,
 lycan,

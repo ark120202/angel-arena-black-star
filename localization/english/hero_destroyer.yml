@@ -1,0 +1,33 @@
+DOTA_Tooltip_ability_destroyer_armor_crush: Armor Crush
+DOTA_Tooltip_ability_destroyer_armor_crush_Description: 'Destroyer strikes enemy unit with his hammer, dealing damage, stunning enemy and decreasing target''s armor'
+DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'DURATION:'
+DOTA_Tooltip_ability_destroyer_armor_crush_armor_reduction: 'ARMOR REDUCTION:'
+DOTA_Tooltip_ability_destroyer_seal_of_limit: Seal of Limit
+DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: 'Destroyer seals his infinity power, limiting his max health to %max_health_pct%%%, but instead that seal gives him movement speed, attack speed, physical armor and health regeneration.'
+DOTA_Tooltip_ability_destroyer_seal_of_limit_duration: 'DURATION:'
+DOTA_Tooltip_ability_destroyer_seal_of_limit_max_health_pct: '%HEALTH LIMIT:'
+DOTA_Tooltip_ability_destroyer_seal_of_limit_movement_speed: 'MOVEMENT SPEED:'
+DOTA_Tooltip_ability_destroyer_seal_of_limit_bonus_armor: 'BONUS ARMOR:'
+DOTA_Tooltip_ability_destroyer_seal_of_limit_health_regen: 'HEALTH REGEN:'
+DOTA_Tooltip_ability_destroyer_body_reconstruction: Body Reconstruction
+DOTA_Tooltip_ability_destroyer_body_reconstruction_Description: 'Destroyer rebuilds his body, immediatly recovering all his health and mana points and refreshing all items in his inventory'
+DOTA_Tooltip_ability_destroyer_frenzy: Frenzy
+DOTA_Tooltip_ability_destroyer_frenzy_Description: ''
+DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl1: |-
+  %Level 1
+  • HEALTH TO TRIGGER:
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl1: '%• BONUS DAMAGE:'
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl1: '%• BONUS ARMOR:'
+DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl1: '• BONUS MOVEMENT SPEED:'
+DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl2: |-
+  %Level 2
+  • HEALTH TO TRIGGER:
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl2: '%• BONUS DAMAGE:'
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl2: '%• BONUS ARMOR:'
+DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl2: '• BONUS MOVEMENT SPEED:'
+DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl3: |-
+  %Level 3
+  • HEALTH TO TRIGGER:
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl3: '%• BONUS DAMAGE:'
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl3: '%• BONUS ARMOR:'
+DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl3: '• BONUS MOVEMENT SPEED:'

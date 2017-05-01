@@ -20,7 +20,11 @@
 
 *.sublime-workspace
 *.sublime-project
+
 content/tooltips_*.txt
 content/addon_*_utf8.txt
 
 CGJsToolkit
+
+game/resource/addon_*.txt
+game/panorama/localization/addon_*.txt

@@ -38,7 +38,7 @@ function GameMode:_OnNPCSpawned(keys)
 
 	local npc = EntIndexToHScript(keys.entindex)
 
-	if npc:IsRealHero() and npc.bFirstSpawned == nil and HeroSelection.SelectionEnd then
+	if npc:IsRealHero() and npc.bFirstSpawned == nil and HeroSelection:GetState() >= HERO_SELECTION_PHASE_END then
 		npc.bFirstSpawned = true
 		GameMode:OnHeroInGame(npc)
 	end
