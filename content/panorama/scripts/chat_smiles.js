@@ -1,5 +1,5 @@
-var bttvUrlMask = "https://cdn.betterttv.net/emote/{id}/1x"
-var twitchUrlMask = "https://static-cdn.jtvnw.net/emoticons/v1/{id}/1.0"
+var bttvUrlMask = "https://cdn.betterttv.net/emote/{id}/1x";
+var twitchUrlMask = "https://static-cdn.jtvnw.net/emoticons/v1/{id}/1.0";
 
 var bttvSmileMap = {
 	"OhMyGoodness": "54fa925e01e468494b85b54d",
@@ -101,7 +101,7 @@ var bttvSmileMap = {
 	"notsquishY": "5709ab688eff3b595e93c595",
 	"FeelsAmazingMan": "5733ff12e72c3c0814233e20",
 	"DuckerZ": "573d38b50ffbf6cc5cc38dc9",
-}
+};
 
 var twitchSmileMap = {
 	"4Head": "354",
@@ -53604,4 +53604,4 @@ var twitchSmileMap = {
 	"Xa4": "26748",
 	"Dedmoroz": "26749",
 	"shwayBlaze": "33179",
-}
+};

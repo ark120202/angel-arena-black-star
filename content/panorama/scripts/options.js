@@ -5,7 +5,7 @@ var Options = {
 	container: {},
 	callbacks: {},
 	SetValue: function(name, value) {
-		if (this.container[name] != value && this.callbacks[name])
+		if (this.container[name] !== value && this.callbacks[name])
 			for (var i = 0; i < this.callbacks.length; i++)
 				this.callbacks[i](value);
 		this.container[name] = value;
@@ -14,13 +14,13 @@ var Options = {
 		delete this.container[name];
 	},
 	GetValue: function(name) {
-		return this.container[name]
+		return this.container[name];
 	},
 	IsEquals: function(name, value) {
 		if (value === undefined)
-			return this.GetValue(name) == true;
+			return this.GetValue(name) === true;
 		else
-			return this.GetValue(name) == value;
+			return this.GetValue(name) === value;
 	},
 	Subscribe: function(name, callback) {
 		if (!this.callbacks[name]) this.callbacks[name] = [];
@@ -35,7 +35,7 @@ var Options = {
 			landscape: name.substr(0, underscoreIndex === -1 ? name.length : underscoreIndex),
 			gamemode: name.substr((underscoreIndex === -1 ? name.length : underscoreIndex) + 1),
 			name: name
-		}
+		};
 	}
 };
 
@@ -48,5 +48,5 @@ var Options = {
 		for (var k in deletionsObject) {
 			Options.DeleteValue(k);
 		}
-	})
-})()
+	});
+})();

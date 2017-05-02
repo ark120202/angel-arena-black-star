@@ -84,30 +84,23 @@
 		<Panel hittest="false" id="HeroSelectionBox">
 			<Panel id="SelectionStatusPanel" >
 				<Panel id="ExitButton" onactivate="DOTAShowDashboard()"/>
-
 				<Panel id="TeamSelectionStatusPanel">
-					<Panel class="LeftRightFlow FullHeight" id="LeftTeams">
-
-					</Panel>
+					<Panel class="LeftRightFlow FullHeight" id="LeftTeams" />
 					<Panel id="GameModeInfoPanel" hittestchildren="false" >
 						<Label id="HeroSelectionTimer" class="MonoNumbersFont" text="0" />
 						<Label id="GameModeInfoCurrentPhase" />
 						<Label id="GameModeInfoGamemodeLabel" />
 					</Panel>
-					<Panel class="LeftRightFlow FullHeight" id="RightTeams">
-
-					</Panel>
+					<Panel class="LeftRightFlow FullHeight" id="RightTeams" />
 				</Panel>
 			</Panel>
 			<Panel id="HeroListBasePanel">
 				<Panel id="HeroListControls">
 					<Panel id="HeroListControlsGroup1" class="HeroListControlsGroup">
-						<!-- SwitchTabButton -->
 						<Button id="SwitchHeroesButton" class="PickButton" onactivate="SwitchTab()" >
-							<Label text="#default" id="SwitchHeroesDefault" />
+							<Label text="#hero_selection_heroes_default" id="SwitchHeroesDefault" />
 							<Panel />
-							<Label text="#new" id="SwitchHeroesNew" />
-							<!-- #hero_selection_button_switch -->
+							<Label text="#hero_selection_heroes_new" id="SwitchHeroesNew" />
 						</Button>
 						<Label id="SelectedHeroOverview" />
 					</Panel>

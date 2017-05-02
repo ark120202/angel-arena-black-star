@@ -10,7 +10,7 @@ var SelectedHeroPanel = null;
 
 function GetLocalAbilityNamesInfo() {
 	var ab = {};
-	var hero = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID())
+	var hero = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID());
 	for (var i = 0; i < Entities.GetAbilityCount(hero); ++i) {
 		var ability = Entities.GetAbility(hero, i);
 		if (ability != -1 && !Abilities.IsHidden(ability)) {
@@ -24,30 +24,30 @@ function GetLocalAbilityNamesInfo() {
 }
 
 function GetBannedAbilities() {
-	var b = []
+	var b = [];
 	for (var a in GetLocalAbilityNamesInfo()) {
 		var abinf = ParsedAbilityData[a];
 		if (abinf != null)
 			for (var v in abinf.banned_with)
 				if (b.indexOf(abinf.banned_with[v]) == -1)
-					b.push(abinf.banned_with[v])
+					b.push(abinf.banned_with[v]);
 	}
 	return b;
 }
 
 function CreateSnippet_Ability(panel, abilityname, heroname, cost) {
-	panel.abilityname = abilityname
-	panel.heroname = heroname
+	panel.abilityname = abilityname;
+	panel.heroname = heroname;
 	panel.BLoadLayoutSnippet("Ability");
 
 	panel.FindChildTraverse("PointCost").text = cost;
 	panel.FindChildTraverse("AbilityImage").abilityname = abilityname;
 	panel.SetPanelEvent("onmouseover", function() {
 		$.DispatchEvent("DOTAShowAbilityTooltip", panel, abilityname);
-	})
+	});
 	panel.SetPanelEvent("onmouseout", function() {
-		$.DispatchEvent("DOTAHideAbilityTooltip", panel)
-	})
+		$.DispatchEvent("DOTAHideAbilityTooltip", panel);
+	});
 	panel.SetPanelEvent("onactivate", function() {
 		if (GameUI.IsShiftDown()) {
 			GameEvents.SendCustomGameEventToServer("ability_shop_sell", {
@@ -57,7 +57,7 @@ function CreateSnippet_Ability(panel, abilityname, heroname, cost) {
 			GameEvents.SendCustomGameEventToServer("ability_shop_buy", {
 				ability: abilityname
 			});
-	})
+	});
 	panel.SetPanelEvent("oncontextmenu", function() {
 		if (GameUI.IsShiftDown()) {
 			GameEvents.SendCustomGameEventToServer("ability_shop_downgrade", {
@@ -67,8 +67,8 @@ function CreateSnippet_Ability(panel, abilityname, heroname, cost) {
 			GameEvents.SendCustomGameEventToServer("ability_shop_buy", {
 				ability: abilityname
 			});
-	})
-	return panel
+	});
+	return panel;
 }
 
 function Search() {
@@ -78,19 +78,19 @@ function Search() {
 		SearchingFor = SearchText;
 		SearchingPurchasedChecked = $("#PurchasedAbilitiesToggle").checked;
 		SearchingAbLevels = abLevels;
-		var ShopSearchOverlay = $("#MainSearchRoot")
+		var ShopSearchOverlay = $("#MainSearchRoot");
 		$.Each(ShopSearchOverlay.Children(), function(child) {
 			var index = AllAbilityPanels.indexOf(child);
 			if (index > -1) {
-				child.visible = false
+				child.visible = false;
 				AllAbilityPanels.splice(index, 1);
 			}
-		})
-		ShopSearchOverlay.RemoveAndDeleteChildren()
-		var ShowSearch = SearchText.length > 0 || SearchingPurchasedChecked
-		$.GetContextPanel().SetHasClass("InSearchMode", ShowSearch)
+		});
+		ShopSearchOverlay.RemoveAndDeleteChildren();
+		var ShowSearch = SearchText.length > 0 || SearchingPurchasedChecked;
+		$.GetContextPanel().SetHasClass("InSearchMode", ShowSearch);
 		if (ShowSearch) {
-			var FoundAbilities = []
+			var FoundAbilities = [];
 			if (AbilityShopData) {
 				for (var tab in AbilityShopData) {
 					for (var heroKey in AbilityShopData[tab]) {
@@ -102,7 +102,7 @@ function Search() {
 									name: abs[ability].ability,
 									data: abs[ability],
 									hero: hero
-								})
+								});
 							}
 						}
 					}
@@ -117,33 +117,33 @@ function Search() {
 }
 
 function CalculateDowngradeCost(abilityname, upgradecost) {
-	return (upgradecost * 60) + (upgradecost * 10 * Math.floor(Game.GetDOTATime(false, false) / 60))
+	return (upgradecost * 60) + (upgradecost * 10 * Math.floor(Game.GetDOTATime(false, false) / 60));
 }
 
 function UpdateAbilities() {
 	Search();
-	var shifttext = GameUI.IsShiftDown() ? "#ability_shop_shift_yes" : "#ability_shop_shift_no"
+	var shifttext = GameUI.IsShiftDown() ? "#ability_shop_shift_yes" : "#ability_shop_shift_no";
 	$("#ShiftStateLabel").text = $.Localize(shifttext);
 	var points = Entities.GetAbilityPoints(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()));
-	$("#InfoContainerPointsLabel").text = "+" + points
+	$("#InfoContainerPointsLabel").text = "+" + points;
 	var abLevels = GetLocalAbilityNamesInfo();
 	var banned_with = GetBannedAbilities();
 	$.Each(AllAbilityPanels, function(panel) {
-		var abilityname = panel.abilityname
-		var purchasedInfo = abLevels[abilityname]
-		var cost = Number(panel.FindChildTraverse("PointCost").text)
-		panel.SetHasClass("NoPoints", cost > points)
-		panel.SetHasClass("Purchased", purchasedInfo != null)
+		var abilityname = panel.abilityname;
+		var purchasedInfo = abLevels[abilityname];
+		var cost = Number(panel.FindChildTraverse("PointCost").text);
+		panel.SetHasClass("NoPoints", cost > points);
+		panel.SetHasClass("Purchased", purchasedInfo != null);
 		if (purchasedInfo != null) {
 			panel.SetHasClass("MaxUpgraded", purchasedInfo.level == purchasedInfo.maxLevel);
-			panel.FindChildTraverse("AbilityLevel").text = "x" + purchasedInfo.level
+			panel.FindChildTraverse("AbilityLevel").text = "x" + purchasedInfo.level;
 		} else
-			panel.RemoveClass("MaxUpgraded")
+			panel.RemoveClass("MaxUpgraded");
 
 		if (panel.BHasClass("Purchased") && GameUI.IsShiftDown()) {
 			panel.AddClass("CanDelete");
-			panel.FindChildTraverse("SellReturn").text = "+" + cost * purchasedInfo.level
-			panel.FindChildTraverse("SellCost").text = "-" + CalculateDowngradeCost(abilityname, cost) * purchasedInfo.level
+			panel.FindChildTraverse("SellReturn").text = "+" + cost * purchasedInfo.level;
+			panel.FindChildTraverse("SellCost").text = "-" + CalculateDowngradeCost(abilityname, cost) * purchasedInfo.level;
 
 			/*GameEvents.SendEventClientSide("dota_hud_error_message", {
 				"splitscreenplayer": 0,
@@ -154,36 +154,36 @@ function UpdateAbilities() {
 		} else
 			panel.RemoveClass("CanDelete");
 		panel.SetHasClass("Banned", banned_with.indexOf(abilityname) !== -1);
-	})
-	$.Schedule(0.1, UpdateAbilities)
+	});
+	$.Schedule(0.1, UpdateAbilities);
 }
 
 function SelectHeroTab(tabIndex) {
 	if (SelectedTabIndex != tabIndex) {
 		if (SelectedTabIndex != null) {
-			$("#HeroListPanel_tabPanels_" + SelectedTabIndex).visible = false
+			$("#HeroListPanel_tabPanels_" + SelectedTabIndex).visible = false;
 		}
-		$("#HeroListPanel_tabPanels_" + tabIndex).visible = true
-		SelectedTabIndex = tabIndex
+		$("#HeroListPanel_tabPanels_" + tabIndex).visible = true;
+		SelectedTabIndex = tabIndex;
 	}
 }
 
 function SwitchTab() {
 	if (SelectedTabIndex == 1)
-		SelectHeroTab(2)
+		SelectHeroTab(2);
 	else
-		SelectHeroTab(1)
+		SelectHeroTab(1);
 }
 
 function UpdateHeroAbilityList(hero, abilities) {
-	var abilitiesroot = $("#HeroAbilitiesRoot")
+	var abilitiesroot = $("#HeroAbilitiesRoot");
 	$.Each(abilitiesroot.Children(), function(child) {
 		var index = AllAbilityPanels.indexOf(child);
 		if (index > -1) {
-			child.visible = false
+			child.visible = false;
 			AllAbilityPanels.splice(index, 1);
 		}
-	})
+	});
 	abilitiesroot.RemoveAndDeleteChildren();
 
 	$.Each(abilities, function(abilityInfo) {
@@ -201,29 +201,29 @@ function Fill(heroesData, panel) {
 		}
 	}*/
 	for (var herokey in heroesData) {
-		var heroData = heroesData[herokey]
-		var StatPanel = panel.FindChildTraverse("HeroesByAttributes_" + heroData.attribute_primary)
-		var HeroImagePanel = $.CreatePanel('Image', StatPanel, "HeroListPanel_element_" + heroData.heroKey)
-		HeroImagePanel.SetImage(TransformTextureToPath(heroData.heroKey))
-		HeroImagePanel.AddClass("HeroListElement")
+		var heroData = heroesData[herokey];
+		var StatPanel = panel.FindChildTraverse("HeroesByAttributes_" + heroData.attribute_primary);
+		var HeroImagePanel = $.CreatePanel('Image', StatPanel, "HeroListPanel_element_" + heroData.heroKey);
+		HeroImagePanel.SetImage(TransformTextureToPath(heroData.heroKey));
+		HeroImagePanel.AddClass("HeroListElement");
 		if (heroData.isChanged) {
-			HeroImagePanel.AddClass("ChangedHeroPanel")
+			HeroImagePanel.AddClass("ChangedHeroPanel");
 		}
 		var SelectHeroAction = (function(_heroData, _herokey, _panel) {
 			return function() {
 				if (SelectedHeroPanel != _panel) {
-					SelectedHeroData = _heroData
+					SelectedHeroData = _heroData;
 					if (SelectedHeroPanel != null) {
-						SelectedHeroPanel.RemoveClass("HeroPanelSelected")
+						SelectedHeroPanel.RemoveClass("HeroPanelSelected");
 					}
 					_panel.AddClass("HeroPanelSelected");
 					SelectedHeroPanel = _panel;
 					UpdateHeroAbilityList(_herokey, _heroData.abilities);
 				}
-			}
-		})(heroData, herokey, HeroImagePanel)
-		HeroImagePanel.SetPanelEvent('onactivate', SelectHeroAction)
-		HeroImagePanel.SelectHeroAction = SelectHeroAction
+			};
+		})(heroData, herokey, HeroImagePanel);
+		HeroImagePanel.SetPanelEvent('onactivate', SelectHeroAction);
+		HeroImagePanel.SelectHeroAction = SelectHeroAction;
 		for (var k in heroData.abilities) {
 			var abinf = heroData.abilities[k];
 			ParsedAbilityData[abinf.ability] = abinf;
@@ -237,12 +237,12 @@ function Fill(heroesData, panel) {
 		$("#AbilityShopBase").visible = true;
 		AbilityShopData = changesObject;
 		for (var tab in changesObject) {
-			var TabHeroesPanel = $.CreatePanel('Panel', $("#MainHeroesList"), "HeroListPanel_tabPanels_" + tab)
+			var TabHeroesPanel = $.CreatePanel('Panel', $("#MainHeroesList"), "HeroListPanel_tabPanels_" + tab);
 			TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel");
 			TabHeroesPanel.visible = false;
-			Fill(changesObject[tab], TabHeroesPanel)
+			Fill(changesObject[tab], TabHeroesPanel);
 		}
-		SelectHeroTab(1)
+		SelectHeroTab(1);
 	});
 	Game.DisableWheelPanels.push($("#MainContainer"));
 })();

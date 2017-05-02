@@ -1,0 +1,30 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/libraries/containers/container.css" />
+		<include src="file://{resources}/styles/libraries/containers/container_skins.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/libraries/containers/inventory_context_menu.js" />
+	</scripts>
+	<Panel class="ItemMenu">
+		<Button class="ItemMenuButton" id="ShowInShop" onmouseactivate="OnShowInShop()">
+			<Label text="#containers_inventory_context_show_in_shop" />
+		</Button>
+		<Button class="ItemMenuButton" id="Sell" onactivate="OnSell()">
+			<Label text="#containers_inventory_context_sell" />
+		</Button>
+		<Button class="ItemMenuButton" id="Disassemble" onactivate="OnDisassemble()">
+			<Label text="#containers_inventory_context_disassemble" />
+		</Button>
+		<Button class="ItemMenuButton" id="DropFromStash" onactivate="OnDropFromStash()">
+			<Label text="#containers_inventory_context_drop_from_stash" />
+		</Button>
+		<Button class="ItemMenuButton" id="Alert" onactivate="OnAlert()">
+			<Label text="#containers_inventory_context_alert" />
+		</Button>
+		<Button class="ItemMenuButton" id="MoveToStash" onactivate="OnMoveToStash()">
+			<Label text="#containers_inventory_context_move_to_stash" />
+		</Button>
+	</Panel>
+</root>

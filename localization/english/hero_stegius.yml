@@ -1,0 +1,43 @@
+npc_arena_hero_stegius: Stegius
+
+DOTA_Tooltip_ability_stegius_desolus_wave: Desolus Wave
+DOTA_Tooltip_ability_stegius_desolus_wave_Description: 'Stegius releases powerful wave, that deals damage to all enemy units on it''s way and decreasing their armor for some time.'
+DOTA_Tooltip_ability_stegius_desolus_wave_range: 'MAX RANGE:'
+DOTA_Tooltip_ability_stegius_desolus_wave_speed: 'WAVE SPEED:'
+DOTA_Tooltip_ability_stegius_desolus_wave_armor_reduction: 'ARMOR REDUCTION:'
+DOTA_Tooltip_ability_stegius_desolus_wave_duration: 'DURATION:'
+DOTA_Tooltip_modifier_stegius_desolus_wave: Desolus Wave
+DOTA_Tooltip_modifier_stegius_desolus_wave_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
+
+DOTA_Tooltip_ability_stegius_rage_of_desolus: Rage of Desolus
+DOTA_Tooltip_ability_stegius_rage_of_desolus_Description: 'Awakens rage in target unit, increasing it''s movement and attack speed.'
+DOTA_Tooltip_ability_stegius_rage_of_desolus_duration: 'DURATION:'
+DOTA_Tooltip_ability_stegius_rage_of_desolus_bonus_attack_speed: 'ATTACK SPEED INCREASEMENT:'
+DOTA_Tooltip_ability_stegius_rage_of_desolus_bonus_movement_speed_pct: '%MOVEMENT SPEED INCREASEMENT:'
+DOTA_Tooltip_modifier_stegius_rage_of_desolus: Rage of Desolus
+DOTA_Tooltip_modifier_stegius_rage_of_desolus_Description: 'Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
+
+DOTA_Tooltip_ability_stegius_brightness_of_desolate: Brightness of Desolate
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_Description: 'All enemies in %radius% range loses their armor, heroes also have decreased max health. If affected by this aura unit dies, Stegius gains attack damage for some time. If killed unit is hero, Stegius will gain some attack speed and armor forever.'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_radius: 'RADIUS:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_health_decrease_pct: '%HEALTH DECREASE ON HEROES:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_armor_decrease: 'ARMOR REDUCTION:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_bonus_damage_from_creep: 'DAMAGE FROM CREEP:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_bonus_damage_from_hero: 'DAMAGE FROM HERO:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_bonus_damage_duration: 'DAMAGE INCREASEMENT DURATION:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_stolen_attack_speed: 'ATTACK SPEED FOR HERO:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_stolen_armor: 'ARMOR FOR HERO:'
+DOTA_Tooltip_modifier_stegius_brightness_of_desolate_effect: Brightness of Desolate
+DOTA_Tooltip_modifier_stegius_brightness_of_desolate_effect_Description: 'Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%. On heroes, also reduces max health.'
+DOTA_Tooltip_modifier_stegius_brightness_of_desolate_damage: Brightness of Desolate
+DOTA_Tooltip_modifier_stegius_brightness_of_desolate_damage_Description: Attack damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%
+DOTA_Tooltip_modifier_stegius_brightness_of_desolate_steal_buff: Brightness of Desolate
+DOTA_Tooltip_modifier_stegius_brightness_of_desolate_steal_buff_Description: 'Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%'
+
+DOTA_Tooltip_ability_stegius_desolating_touch: Desolating Touch
+DOTA_Tooltip_ability_stegius_desolating_touch_Description: With each attack Stegius reduces armor. This effect stacks. Each stack has unique duration. On bosses has trigger chance. Stegius illusions also reduces armor.
+DOTA_Tooltip_ability_stegius_desolating_touch_armor_per_hit: 'ARMOR REDUCTION:'
+DOTA_Tooltip_ability_stegius_desolating_touch_boss_armor_reduction_chance_pct: '%BOSS ARMOR REDUCTION CHANCE:'
+DOTA_Tooltip_ability_stegius_desolating_touch_duration: 'DURATION:'
+DOTA_Tooltip_modifier_stegius_desolating_touch_debuff: Desolating Touch
+DOTA_Tooltip_modifier_stegius_desolating_touch_debuff_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%

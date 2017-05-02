@@ -6,53 +6,53 @@ DynamicSubscribePTListener("hero_selection_heroes_data", function(tableName, cha
 });
 
 function IsHeroPicked(name) {
-	var hero_selection_table = PlayerTables.GetAllTableValues("hero_selection")
+	var hero_selection_table = PlayerTables.GetAllTableValues("hero_selection");
 	if (hero_selection_table != null) {
 		for (var teamKey in hero_selection_table) {
 			for (var playerIdInSelection in hero_selection_table[teamKey]) {
 				if (hero_selection_table[teamKey][playerIdInSelection].hero == name && hero_selection_table[teamKey][playerIdInSelection].status == "picked") {
-					return true
+					return true;
 				}
 			}
 		}
 	}
-	return false
+	return false;
 }
 
 function IsHeroLocked(name) {
-	var hero_selection_table = PlayerTables.GetAllTableValues("hero_selection")
+	var hero_selection_table = PlayerTables.GetAllTableValues("hero_selection");
 	if (hero_selection_table != null) {
 		for (var teamKey in hero_selection_table) {
 			for (var playerIdInSelection in hero_selection_table[teamKey]) {
 				if (hero_selection_table[teamKey][playerIdInSelection].hero == name && hero_selection_table[teamKey][playerIdInSelection].status == "locked") {
-					return true
+					return true;
 				}
 			}
 		}
 	}
-	return false
+	return false;
 }
 
 function IsHeroBanned(name) {
-	return BannedHeroes.indexOf(name) != -1
+	return BannedHeroes.indexOf(name) != -1;
 }
 
-var PreviousSearchText = ""
+var PreviousSearchText = "";
 function SearchHero() {
 	if ($("#HeroSearchTextEntry") != null) {
 		var SearchString = $("#HeroSearchTextEntry").text.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 		if (PreviousSearchText != SearchString) {
-			PreviousSearchText = SearchString
+			PreviousSearchText = SearchString;
 			$.GetContextPanel().SetHasClass("SearchingHeroes", SearchString.length > 0);
 
 			if (SearchString.length > 0) {
 				var matchRegexp = new RegExp(SearchString, "i");
 				var first;
 				for (var key in HeroesPanels) {
-					var heroName = $.Localize(HeroesPanels[key].id.replace("HeroListPanel_element_", ""))
+					var heroName = $.Localize(HeroesPanels[key].id.replace("HeroListPanel_element_", ""));
 					var high = matchRegexp.test(heroName);
 					HeroesPanels[key].SetHasClass("Highlighted", high);
-					if (high && !first) first = HeroesPanels[key]
+					if (high && !first) first = HeroesPanels[key];
 				}
 				if (first != null) {
 					first.SelectHeroAction();
@@ -68,10 +68,10 @@ function SearchHero() {
 
 function FillHeroesTable(heroList, panel, big) {
 	$.Each(heroList, function(heroName) {
-		var heroData = HeroesData[heroName]
-		var StatPanel = panel.FindChildTraverse("HeroesByAttributes_" + heroData.attributes.attribute_primary)
+		var heroData = HeroesData[heroName];
+		var StatPanel = panel.FindChildTraverse("HeroesByAttributes_" + heroData.attributes.attribute_primary);
 
-		var HeroCard = $.CreatePanel("Panel", StatPanel, "HeroListPanel_element_" + heroName)
+		var HeroCard = $.CreatePanel("Panel", StatPanel, "HeroListPanel_element_" + heroName);
 		HeroCard.BLoadLayoutSnippet("HeroCard");
 		HeroCard.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(heroName, "portrait"));
 		HeroCard.FindChildTraverse("HeroMovie").heroname = heroName;
@@ -82,36 +82,36 @@ function FillHeroesTable(heroList, panel, big) {
 		}
 		var SelectHeroAction = (function() {
 			if (SelectedHeroPanel != HeroCard) {
-				SelectedHeroName = heroName
+				SelectedHeroName = heroName;
 				if (SelectedHeroPanel != null) {
-					SelectedHeroPanel.RemoveClass("HeroPanelSelected")
+					SelectedHeroPanel.RemoveClass("HeroPanelSelected");
 				}
-				HeroCard.AddClass("HeroPanelSelected")
-				SelectedHeroPanel = HeroCard
-				ChooseHeroPanelHero()
+				HeroCard.AddClass("HeroPanelSelected");
+				SelectedHeroPanel = HeroCard;
+				ChooseHeroPanelHero();
 			}
 		});
 		var HitTarget = HeroCard.FindChildTraverse("HitTarget");
-		HitTarget.SetPanelEvent("onactivate", SelectHeroAction)
-		HitTarget.SetPanelEvent("oninputsubmit", SelectHeroAction)
+		HitTarget.SetPanelEvent("onactivate", SelectHeroAction);
+		HitTarget.SetPanelEvent("oninputsubmit", SelectHeroAction);
 		HitTarget.SetPanelEvent("onmouseover", function() {
-			HeroCard.AddClass("Expanded")
-		})
+			HeroCard.AddClass("Expanded");
+		});
 		HitTarget.SetPanelEvent("onmouseout", function() {
-			HeroCard.RemoveClass("Expanded")
-		})
-		HeroCard.FindChildTraverse("HeroName").text = $.Localize(heroName)
-		HeroCard.SelectHeroAction = SelectHeroAction
-		HeroesPanels.push(HeroCard)
-	})
+			HeroCard.RemoveClass("Expanded");
+		});
+		HeroCard.FindChildTraverse("HeroName").text = $.Localize(heroName);
+		HeroCard.SelectHeroAction = SelectHeroAction;
+		HeroesPanels.push(HeroCard);
+	});
 }
 
 function SelectFirstHeroPanel() {
 	var p;
 	for (var key in HeroesPanels) {
-		var heroName = HeroesPanels[key].id.replace("HeroListPanel_element_", "")
+		var heroName = HeroesPanels[key].id.replace("HeroListPanel_element_", "");
 		if (heroName == "npc_dota_hero_abaddon") {
-			p = HeroesPanels[key]
+			p = HeroesPanels[key];
 		}
 	}
 	if (p == null) {
@@ -134,69 +134,69 @@ function ChooseHeroUpdatePanels() {
 		$.Each(selectedHeroData.linked_heroes, function(hero) {
 			linked.push($.Localize(hero));
 		});
-		$("#SelectedHeroLinkedHero").text = linked.join(", ")
+		$("#SelectedHeroLinkedHero").text = linked.join(", ");
 	}
-	$("#SelectedHeroAbilitiesPanelInner").RemoveAndDeleteChildren()
-	FillAbilitiesUI($("#SelectedHeroAbilitiesPanelInner"), selectedHeroData.abilities, "SelectedHeroAbility")
-	FillAttributeUI($("#HeroListControlsGroup3"), selectedHeroData)
+	$("#SelectedHeroAbilitiesPanelInner").RemoveAndDeleteChildren();
+	FillAbilitiesUI($("#SelectedHeroAbilitiesPanelInner"), selectedHeroData.abilities, "SelectedHeroAbility");
+	FillAttributeUI($("#HeroListControlsGroup3"), selectedHeroData);
 }
 
 function FillAbilitiesUI(rootPanel, abilities, className) {
 	$.Each(abilities, function(abilityName) {
-		var abilityPanel = $.CreatePanel('DOTAAbilityImage', rootPanel, "")
-		abilityPanel.AddClass(className)
-		abilityPanel.abilityname = abilityName
+		var abilityPanel = $.CreatePanel('DOTAAbilityImage', rootPanel, "");
+		abilityPanel.AddClass(className);
+		abilityPanel.abilityname = abilityName;
 		abilityPanel.SetPanelEvent('onmouseover', function() {
 			$.DispatchEvent("DOTAShowAbilityTooltip", abilityPanel, abilityName);
-		})
+		});
 		abilityPanel.SetPanelEvent('onmouseout', function() {
 			$.DispatchEvent("DOTAHideAbilityTooltip", abilityPanel);
-		})
-	})
+		});
+	});
 }
 
 function FillAttributeUI(rootPanel, SelectedHeroData) {
 	for (var i = 2; i >= 0; i--) {
-		rootPanel.FindChildTraverse("DotaAttributePic_" + (i + 1)).SetHasClass("PrimaryAttribute", SelectedHeroData.attributes.attribute_primary == i)
-		rootPanel.FindChildTraverse("HeroAttributes_" + (i + 1)).text = SelectedHeroData.attributes["attribute_base_" + i] + " + " + Number(SelectedHeroData.attributes["attribute_gain_" + i]).toFixed(1)
+		rootPanel.FindChildTraverse("DotaAttributePic_" + (i + 1)).SetHasClass("PrimaryAttribute", SelectedHeroData.attributes.attribute_primary == i);
+		rootPanel.FindChildTraverse("HeroAttributes_" + (i + 1)).text = SelectedHeroData.attributes["attribute_base_" + i] + " + " + Number(SelectedHeroData.attributes["attribute_gain_" + i]).toFixed(1);
 	}
-	rootPanel.FindChildTraverse("HeroAttributes_damage").text = SelectedHeroData.attributes.damage_min + " - " + SelectedHeroData.attributes.damage_max
-	rootPanel.FindChildTraverse("HeroAttributes_speed").text = SelectedHeroData.attributes.movespeed
-	rootPanel.FindChildTraverse("HeroAttributes_armor").text = SelectedHeroData.attributes.armor
-	rootPanel.FindChildTraverse("HeroAttributes_bat").text = Number(SelectedHeroData.attributes.attackrate).toFixed(1)
+	rootPanel.FindChildTraverse("HeroAttributes_damage").text = SelectedHeroData.attributes.damage_min + " - " + SelectedHeroData.attributes.damage_max;
+	rootPanel.FindChildTraverse("HeroAttributes_speed").text = SelectedHeroData.attributes.movespeed;
+	rootPanel.FindChildTraverse("HeroAttributes_armor").text = SelectedHeroData.attributes.armor;
+	rootPanel.FindChildTraverse("HeroAttributes_bat").text = Number(SelectedHeroData.attributes.attackrate).toFixed(1);
 }
 
 function SwitchTab() {
-	SelectHeroTab(SelectedTabIndex == 1 ? 2 : 1)
+	SelectHeroTab(SelectedTabIndex == 1 ? 2 : 1);
 }
 
 function SelectHeroTab(tabIndex) {
 	if (SelectedTabIndex != tabIndex) {
 		if (SelectedTabIndex != null) {
-			$("#HeroListPanel_tabPanels_" + SelectedTabIndex).visible = false
+			$("#HeroListPanel_tabPanels_" + SelectedTabIndex).visible = false;
 		}
-		$("#HeroListPanel_tabPanels_" + tabIndex).visible = true
-		$("#SwitchHeroesButton").RemoveClass("ActiveTab" + SelectedTabIndex)
-		$("#SwitchHeroesButton").AddClass("ActiveTab" + tabIndex)
-		SelectedTabIndex = tabIndex
+		$("#HeroListPanel_tabPanels_" + tabIndex).visible = true;
+		$("#SwitchHeroesButton").RemoveClass("ActiveTab" + SelectedTabIndex);
+		$("#SwitchHeroesButton").AddClass("ActiveTab" + tabIndex);
+		SelectedTabIndex = tabIndex;
 	}
 }
 $.Schedule(0, function() {
 	DynamicSubscribePTListener("hero_selection_banning_phase", function(tableName, changesObject, deletionsObject) {
 		for (var hero in changesObject) {
-			var heroPanel = $("#HeroListPanel_element_" + hero)
+			var heroPanel = $("#HeroListPanel_element_" + hero);
 			if (changesObject[hero] == Game.GetLocalPlayerID()) {
-				HasBanPoint = false
-				if (UpdateSelectionButton) UpdateSelectionButton()
+				HasBanPoint = false;
+				if (UpdateSelectionButton) UpdateSelectionButton();
 			}
-			if (heroPanel) heroPanel.AddClass("Banned")
-			BannedHeroes.push(hero)
+			if (heroPanel) heroPanel.AddClass("Banned");
+			BannedHeroes.push(hero);
 		}
 		for (var hero in deletionsObject) {
-			var heroPanel = $("#HeroListPanel_element_" + hero)
-			if (heroPanel) heroPanel.RemoveClass("Banned")
+			var heroPanel = $("#HeroListPanel_element_" + hero);
+			if (heroPanel) heroPanel.RemoveClass("Banned");
 			var index = BannedHeroes.indexOf(hero);
 			if (index > -1) BannedHeroes.splice(index, 1);
 		}
-	})
-})
+	});
+});

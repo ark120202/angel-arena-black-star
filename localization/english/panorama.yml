@@ -1,282 +1,89 @@
-Language: English
-Tokens:
-  Unassigned: Unassigned Team
-  Spectator: Spectator Team
-  Neutrals: Neutral Team
-  NoTeam: No Team
-  addon_game_name_p1: Angel Arena
-  addon_game_name_p2: Black Star
-  arena_game_mode_type_100: All Pick
-  arena_game_mode_type_101: Ranked All Pick
-  arena_game_mode_type_102: Random OMG
-  arena_game_mode_type_103: Ability Shop
-  hero_selection_phase_0: Loading...
-  hero_selection_phase_1: Hero Banning
-  hero_selection_phase_2: Hero Selection
-  hero_selection_phase_3: Strategy Time
-  hero_selection_phase_4: Loading...
-  DOTA_GoodGuys: Radiant
-  DOTA_BadGuys: Dire
-  DOTA_Custom1: Murlocs
-  DOTA_Custom2: Orcs
-  DOTA_Custom3: Blue Rooster
-  DOTA_Custom4: Green Ram
-  DOTA_Custom5: Brown Rat
-  DOTA_Custom6: Cyan Boar
-  DOTA_Custom7: Olive Snake
-  DOTA_Custom8: Purple Horse
-  DOTA_GoodGuys_2: Radiant
-  DOTA_BadGuys_2: Dire
-  DOTA_Custom1_2: Murlocs
-  DOTA_Custom2_2: Orcs
-  DOTA_Custom3_2: Blue Rooster
-  DOTA_Custom4_2: Green Ram
-  DOTA_Custom5_2: Brown Rat
-  DOTA_Custom6_2: Cyan Boar
-  DOTA_Custom7_2: Olive Snake
-  DOTA_Custom8_2: Purple Horse
-  npc_arena_hero_arthas: Arthas
-  npc_arena_hero_stargazer: Stargazer
-  npc_arena_hero_queenofblades: Queen of Blades
-  npc_arena_hero_cherub: Cherub
-  npc_arena_hero_kadash: Kadash
-  npc_arena_hero_apocalypse: APOCALYPSE
-  npc_arena_hero_shinobu: Shinobu
-  npc_arena_hero_zen_gehraz: Zen Gehraz
-  npc_arena_hero_stegius: Stegius
-  npc_arena_hero_mirratie: Mirratie
-  npc_arena_hero_freya: Freya
-  npc_arena_hero_zaken: Zaken
-  npc_arena_hero_anakim: Anakim
-  npc_arena_hero_poseidon: Poseidon
-  npc_arena_hero_saber: Saber
-  npc_arena_hero_sara: Sara
-  npc_arena_hero_destroyer: Destroyer
-  npc_arena_hero_maka: Maka Albarn
-  npc_arena_hero_soul_eater: Soul Evans
-  npc_arena_zaken_sailor: Sailor
-  npc_arena_hero_arthas_bio: 'It was in ''20 after Dota 2 has enslaved the whole world, Gabe Newell became president. Arthas was disappointed in the world and for some time didn''t play DotA. Then Gabe found him in the Vinnytsia, Ukraine and put into DotA as a hero. To get out he should gain 7000 MMR and revenge him...'
-  npc_arena_hero_stargazer_bio: 'Where there is war, there is always appears he - the ghost of retribution, Stargazer never miss the opportunity to get knowledge, which he receives from the battlefield, every second of his power is growing. Moving into the heat of battle Stargazer instantly slipping out of sight in one place and appear in another.'
-  npc_arena_hero_queenofblades_bio: 'Even in early childhood Sarah psi high-potential was discovered, and therefore, the girl took custody of soldiers from the Terran Confederation, for the study and development of her abilities. Because of hard and unusual childhood, Sarah had no chance for a normal life, constant severe grueling training did Sarah closed and inhospitable. Despite this insolubility Kerrigan proved their strength, agility, intelligence, and ability to adapt to any complex situations. While living in confiscation, she was a good tactician and soldier. However, at the confluence of many factors, Sarah became a man like creature with sharp claws and the blade is not less dangerous than she had wings. Sarah Kerrigan became the self-proclaimed Queen of Blades. It is free from any moral prohibitions was, at will burst the dark essence of her soul. Now it is dominated by cruel, treacherous, arrogant, thrift and bloodlust. It would seem that she will not be able to find a field of battle with a worthy opponent, because in the past she left behind only ashes, carrying the army of enemies, but the dark forces heard her request and brought her to the place of the battle, where she will meet the same strong an enemy. This will be her last fight where it either lose everything or will gain even more strength and power.'
-  game_player_abandoned_game: "\_has abandoned the game."
-  notifications_gold: "\_gold"
-  bosses_respawn: "\_was resurrected!"
-  duel_over_winner_none: The duel is over. At this time there is no winner.
-  duel_over_winner_p1: "The duel is over.\_"
-  duel_over_winner_p2: "\_is the winner. All it's heroes received\_"
-  duel_no_heroes: In one or more teams not enough heroes for duel
-  casino_slotmachine_roll_start: "Hero rolled the slot machine. Numbers:\_"
-  casino_slotmachine_roll_result_streak000: You lost. Lost everything.
-  casino_slotmachine_roll_result_streak00: "You lost\_"
-  casino_slotmachine_roll_result_streakxxx: "Nice! You won\_"
-  casino_slotmachine_roll_result_streakxx: "Not bad! You won\_"
-  casino_slotmachine_roll_result_streak777: "Jackpot! You won\_"
-  casino_slotmachine_roll_result_streak322: "All your enemies have got\_"
-  casino_slotmachine_roll_result_streak322_enemies_p1: "You and your teammates have been granted with\_"
-  casino_slotmachine_roll_result_streak322_enemies_p2: ", because enemy\_"
-  casino_slotmachine_roll_result_streak322_enemies_p3: "\_ rolled 322."
-  casino_slotmachine_roll_result_streak_no: You didn't win anything this time
-  containers_shop_secret_name: Casino Shop
-  containers_shop_duel_name: Duel Shop
-  containers_loot_boxes_take_all: TAKE ALL
-  containers_loot_boxes_box_name: Loot Box
-  containers_inventory_context_show_in_shop: Show In Shop
-  containers_inventory_context_sell: Sell
-  containers_inventory_context_disassemble: Disassemble
-  containers_inventory_context_drop_from_stash: Drop From Stash
-  containers_inventory_context_alert: Alert
-  containers_inventory_context_move_to_stash: Move To Stash
-  containers_inventory_stash_takeall: GRAB ALL
-  arthas_vsolyanova_notifiaction: NAAAAAAAAAAAAAAAA ✓✓✓✓
-  hero_selection_select_hero: Select Hero
-  hero_selection_button_select_hero: SELECT
-  hero_selection_button_random: RANDOM
-  hero_selection_button_search: Search Hero...
-  hero_selection_button_switch: Switch Heroes
-  hero_selection_loadout_items_first_game: Changing loadout items is not avaliable in first game after starting DOTA
-  hero_selection_linked_hero: 'Linked Hero:'
-  hero_selection_lock: Lock
-  hero_selection_unlock: Unlock
-  chat_placeholder_send_message: Type your message here...
-  chat_message_gold_self: 'I have <font color=''gold''>{gold}</font> gold'
-  chat_message_gold_ally: '{player} has <font color=''gold''>{gold}</font> gold'
-  chat_message_ability_not_learned: '<font color=''#FFC9C9''>{ability_name}</font> Not Learned'
-  chat_message_ability_cooldown: '<font color=''#FFC9C9''>{ability_name}</font> On Cooldown ( {ability_cooldown} seconds remain )'
-  chat_message_ability_passive: '<font color=''#FFC9C9''>{ability_name}</font> Passive ( Level {ability_level} )'
-  chat_message_ability_ready: '<font color=''#FFC9C9''>{ability_name}</font> Ready ( Level {ability_level} )'
-  chat_message_ability_mana: '<font color=''#FFC9C9''>{ability_name}</font> Not Enough Mana ( Need {mana_need} more )'
-  chat_message_ability_ally_not_learned: '{player}''s <font color=''#FFC9C9''>{ability_name}</font> Not Learned'
-  chat_message_ability_ally_cooldown: '{player}''s <font color=''#FFC9C9''>{ability_name}</font> On Cooldown ( {ability_cooldown} seconds remain )'
-  chat_message_ability_ally_passive: '{player}''s <font color=''#FFC9C9''>{ability_name}</font> Passive ( Level {ability_level} )'
-  chat_message_ability_ally_ready: '{player}''s <font color=''#FFC9C9''>{ability_name}</font> Ready ( Level {ability_level} )'
-  chat_message_ability_ally_mana: '{player}''s <font color=''#FFC9C9''>{ability_name}</font> Not Enough Mana ( Need {mana_need} more )'
-  chat_message_ability_enemy: 'Beware {player} <font color=''#FFC9C9''>{ability_name}</font>'
-  chat_message_item_passive: '<font color=''#FFC9C9''>{ability_name}</font> Passive'
-  chat_message_item_ready: '<font color=''#FFC9C9''>{ability_name}</font> Ready'
-  chat_message_item_ally_passive: '{player}''s <font color=''#FFC9C9''>{ability_name}</font> Passive'
-  chat_message_item_ally_ready: '{player}''s <font color=''#FFC9C9''>{ability_name}</font> Ready'
-  chat_message_item_enemy: 'Enemy {player} has <font color=''#FFC9C9''>{ability_name}</font>'
-  chat_message_shop_purchase: 'I will purchase <font color=''#D1E3FF''>{item_name}</font>'
-  chat_message_shop_purchase_no_gold: 'I will purchase <font color=''#D1E3FF''>{item_name}</font> ( <font color=''gold''>{gold}</font> gold away )'
-  chat_message_shop_purchase_no_stock: 'I will purchase <font color=''#D1E3FF''>{item_name}</font> ( out of stock {stock_time} )'
-  chat_message_shop_purchase_boss: 'I want to recieve <font color=''#D1E3FF''>{item_name}</font> from boss'
-  chat_message_shop_purchase_quickbuy: 'I have enough gold for <font color=''#D1E3FF''>{item_name}</font>'
-  chat_message_shop_purchase_quickbuy_no_gold: 'Need <font color=''gold''>{gold}</font> gold for <font color=''#D1E3FF''>{item_name}</font>'
-  chat_message_level_self: 'I need <font color=''#F2CD38''>{xp} XP</font> to reach <font color=''#F2CD38''>Level {level_next}</font>'
-  chat_message_level_self_capped: I'm at max level!
-  chat_message_level_ally: '{player} needs <font color=''#F2CD38''>{xp} XP</font> to reach <font color=''#F2CD38''>Level {level_next}</font>'
-  chat_message_level_ally_capped: '{player} is at max level!'
-  chat_message_level_enemy: 'Enemy {player} is <font color=''#F2CD38''>Level {level}</font>'
-  chat_message_level_enemy_capped: 'Enemy {player} is at max level!'
-  item_rune_keeper_no_runes_left: Rune Keeper is empty now.
-  item_rune_keeper_contains: "Rune Keeper contains:\_"
-  item_rune_keeper_rune_picked_up: "Rune Picked up:\_"
-  item_rune_keeper_rune_picked_up_cont: ', Rune Keeper now contains: '
-  custom_game_info_content_1_introduction: Introduction
-  custom_game_info_content_1_book_content: Book Content
-  custom_game_info_content_1_book_content_tile_items: Items
-  custom_game_info_content_1_book_content_tile_farm: Farming
-  custom_game_info_content_1_book_content_tile_abilities: 'Heroes, abilities'
-  custom_game_info_content_1_book_content_tile_bosses: Bosses
-  custom_game_info_content_1_book_content_tile_media: Media
-  custom_game_info_content_1_book_content_tile_info: Contacts
-  custom_game_info_content_7_authors: Authors and gratitude
-  custom_game_info_content_7_role_creator: CREATOR
-  custom_game_info_content_7_role_balance: BALANCE
-  custom_game_info_content_7_contacts: Contacts
-  custom_game_info_content_1_text: |-
-    Angel Arena Black Star is a gamemode which is based on farm, ganks and fights. First team that reaches kill goal wins.
+npc_arena_hero_anakim: Anakim
+npc_arena_hero_maka: Maka Albarn
+npc_arena_hero_soul_eater: Soul Evans
 
-    Each 5 minutes there is Duel, which winners will get some gold.
+addon_game_name_p1: Angel Arena
+addon_game_name_p2: Black Star
+arena_game_mode_type_100: All Pick
+arena_game_mode_type_101: Ranked All Pick
+arena_game_mode_type_102: Random OMG
+arena_game_mode_type_103: Ability Shop
+hero_selection_phase_0: Loading...
+hero_selection_phase_1: Hero Banning
+hero_selection_phase_2: Hero Selection
+hero_selection_phase_3: Strategy Time
+hero_selection_phase_4: Loading...
+game_player_abandoned_game: "\_has abandoned the game."
+notifications_gold: "\_gold"
+bosses_respawn: "\_was resurrected!"
+duel_over_winner_none: The duel is over. At this time there is no winner.
+duel_over_winner_p1: "The duel is over.\_"
+duel_over_winner_p2: "\_is the winner. All it's heroes received\_"
+duel_no_heroes: In one or more teams not enough heroes for duel
+casino_slotmachine_roll_start: "Hero rolled the slot machine. Numbers:\_"
+casino_slotmachine_roll_result_streak000: You lost. Lost everything.
+casino_slotmachine_roll_result_streak00: "You lost\_"
+casino_slotmachine_roll_result_streakxxx: "Nice! You won\_"
+casino_slotmachine_roll_result_streakxx: "Not bad! You won\_"
+casino_slotmachine_roll_result_streak777: "Jackpot! You won\_"
+casino_slotmachine_roll_result_streak322: "All your enemies have got\_"
+casino_slotmachine_roll_result_streak322_enemies_p1: "You and your teammates have been granted with\_"
+casino_slotmachine_roll_result_streak322_enemies_p2: ", because enemy\_"
+casino_slotmachine_roll_result_streak322_enemies_p3: "\_ rolled 322."
+casino_slotmachine_roll_result_streak_no: You didn't win anything this time
+containers_shop_secret_name: Casino Shop
+containers_shop_duel_name: Duel Shop
+arthas_vsolyanova_notifiaction: NAAAAAAAAAAAAAAAA ✓✓✓✓
 
-    Even it's still Angel Arena this map wasn't based on any Warcraft map. Everything were created by ourselves or based community ideas.
+hero_selection_select_hero: Select Hero
+hero_selection_button_select_hero: SELECT
+hero_selection_button_random: RANDOM
+hero_selection_button_search: Search Hero...
+hero_selection_loadout_items_first_game: Changing loadout items is not avaliable in first game after starting DotA
+hero_selection_linked_hero: 'Linked Hero:'
+hero_selection_lock: Lock
+hero_selection_unlock: Unlock
+hero_selection_heroes_default: Default
+hero_selection_heroes_new: New
 
-    On the following pages you can get more specific information.
-  custom_game_info_content_wip: WORK IN PROGRESS
-  custom_game_info_content_2_title: ''
-  kill_goal_tooltip: 'Goal:'
-  kill_goal_tooltip_vote_title: 'KILL GOAL VOTE:'
-  panorama_shop_shop_tab_1: BASICS
-  panorama_shop_shop_tab_2: UPGRADES
-  panorama_shop_shop_tab_3: NEW
-  panorama_shop_search_placeholder: Search...
-  panorama_shop_shop_label: SHOP
-  panorama_shop_itembuilds_new_group: NEW GROUP
-  panorama_shop_guide_youtube_open: Open in Browser
-  error_panorama_shop_publish_guide_title: Title.
-  server_error_panorama_shop_youtube_no_tags: Make sure your video has 'Angel Arena Black Star' tag
-  server_error_panorama_shop_youtube_not_found: Video wasn't found
-  hud_modifier_click_to_remove: Click to remove
-  ability_shop_shift_no: LMB/RMB - Buy Ability. Hold SHIFT to enter selling mode.
-  ability_shop_shift_yes: 'LMB - Sell ability, RMB - Downgrade ability. Release SHIFT to enter purchase mode.'
-  ability_shop_purchased_only: Show purchased abilities
-  ability_shop_search_placeholder: Ability or hero name...
-  notification_item_demon_king_bar_curse_p1: "You just received Demon King Bar's Curse effect. You'll die in\_"
-  notification_item_demon_king_bar_curse_p2: "\_seconds."
-  custom_runes_rune_0_title: Bounty
-  custom_runes_rune_0_text: Grants bonus Gold and XP.
-  custom_runes_rune_1_title: Triple Damage
-  custom_runes_rune_1_text: Increases base damage by 200%
-  custom_runes_rune_2_title: Haste
-  custom_runes_rune_2_text: Increases movement speed to 750
-  custom_runes_rune_3_title: Illusion
-  custom_runes_rune_3_text: Conjures 2 illusions of your hero which deal 35% damage and take 200% damage. Illusions last 75 seconds.
-  custom_runes_rune_4_title: Invisibility
-  custom_runes_rune_4_text: Become invisible for 60 seconds. This invisibility is broken by attacking or by using an ability or item.
-  custom_runes_rune_5_title: Regeneration
-  custom_runes_rune_5_text: Instantly regenerates health and mana to maximum.
-  custom_runes_rune_6_title: Arcane
-  custom_runes_rune_6_text: Reduces cooldowns by 30% and increases ability damage by 50%
-  custom_runes_rune_7_title: Flame
-  custom_runes_rune_7_text: Deals 4% of unit's max helath as damage each second in 350 radius for 30 seconds
-  custom_runes_rune_8_title: Acceleration
-  custom_runes_rune_8_text: Increases attack speed by 90 and multiplies all incoming experience by 3
-  custom_runes_rune_9_title: Vibration
-  custom_runes_rune_9_text: Pushes all enemies from you in 350 radius
-  custom_runes_rune_10_title: Soul Steal
-  custom_runes_rune_10_text: Heals you for 8% of damage recieved by any ally within 500 range for 32 seconds
-  custom_runes_rune_11_title: Spikes
-  custom_runes_rune_11_text: Reflects 75% of incoming damage to attacker for 15 seconds
-  custom_toast_PlayerDeniedSelf: '{victim_name} {denied_icon} Denied'
-  custom_toast_PlayerDenied: '{killer_name} {denied_icon} Denied {victim_name}'
-  custom_toast_KillStreak_Ended: '{victim_name} {kill_streak}x Kill Streak ended'
-  custom_toast_ActivatedRune: '{player_name} has activated {rune_name}'
-  custom_toast_BottledRune: '{player_name} bottled {rune_name}'
-  custom_toast_DuelStarted: '{time_dota}: {duel_index}th duel has started!'
-  custom_toast_BossKilled: '{team_name} {killed_icon} {victim_name} {gold}'
-  boss_loot_vote_dropped: 'Items Dropped:'
-  boss_loot_vote_killed: was killed!
-  boss_loot_vote_damage: 'Damage: '
-  boss_loot_vote_hide: Hide
-  boss_loot_vote_show: Show
-  custom_talents_cost: 'Cost:'
-  custom_talents_requirements: 'Requirements:'
-  custom_talents_level: 'Level: '
-  custom_talents_hide_requirement_errors: Hide unavaliable talents
-  custom_talents_talent_experience_pct: Bonus Experience
-  custom_talents_talent_experience_pct_description: '+{%experience_pct%} experience'
-  custom_talents_talent_bonus_creep_gold: Bonus Creep Gold
-  custom_talents_talent_bonus_creep_gold_description: 'Each killed creep grants {gold_for_creep} more gold'
-  custom_talents_talent_spell_amplify: Spell Damage Amplify
-  custom_talents_talent_spell_amplify_description: '+{%spell_amplify%} spell damage amplify'
-  custom_talents_talent_respawn_time_reduction: Respawn Time
-  custom_talents_talent_respawn_time_reduction_description: 'Respawn time decreased by {respawn_time_reduction}'
-  custom_talents_talent_attack_damage: Damage
-  custom_talents_talent_attack_damage_description: '+{damage} damage'
-  custom_talents_talent_evasion: Evasion
-  custom_talents_talent_evasion_description: '+{%evasion%} evasion'
-  custom_talents_talent_movespeed_limit: Movement Speed Limit
-  custom_talents_talent_movespeed_limit_description: 'Increases maximum movement speed to {movespeed_limit}'
-  custom_talents_talent_health: Health
-  custom_talents_talent_health_description: '+{health} health'
-  custom_talents_talent_health_regen: Health Regeneration
-  custom_talents_talent_health_regen_description: '+{health_regen} health regeneration'
-  custom_talents_talent_armor: Armor
-  custom_talents_talent_armor_description: '+{armor} armor'
-  custom_talents_talent_magic_resistance_pct: Magic Damage Resistance
-  custom_talents_talent_magic_resistance_pct_description: '+{%magic_resistance_pct%} magic damage resistance'
-  custom_talents_talent_vision_day: Day Vision
-  custom_talents_talent_vision_day_description: '+{vision_day} day vision range'
-  custom_talents_talent_vision_night: Night Vision
-  custom_talents_talent_vision_night_description: '+{vision_night} night vision range'
-  custom_talents_talent_cooldown_reduction_pct: Cooldown Reduction
-  custom_talents_talent_cooldown_reduction_pct_description: 'Reduces ability cooldown by {%cooldown_reduction_pct%}'
-  custom_talents_talent_passive_gold_income: Gold Income
-  custom_talents_talent_passive_gold_income_description: '+{gold_per_minute} gold per minute'
-  custom_talents_talent_hero_pudge_hook_splitter: Hook Splitter
-  custom_talents_talent_hero_pudge_hook_splitter_description: 'Pudge will launch {hook_amount} hooks, instead of 1'
-  custom_talents_talent_hero_arthas_vsolyanova_bunus_chance: Mega Solyara
-  custom_talents_talent_hero_arthas_vsolyanova_bunus_chance_description: 'Multiplies chance to Zalyit Solyaru by {chance_multiplier}'
-  custom_talents_talent_hero_arc_warden_double_spark: Double Spark Wraith
-  custom_talents_talent_hero_arc_warden_double_spark_description: Each cast of Spark Wraith creates two sparks
-  custom_talents_talent_hero_apocalypse_apocalypse_no_death: Protection from Apocalypse
-  custom_talents_talent_hero_apocalypse_apocalypse_no_death_description: Apocalypse will not die when ultimate effect ends
-  custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun: Reincarnation
-  custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun_description: 'Removes respawn delay. When Skeleton King ressurects he stuns enemies, instead of slowing them'
-  custom_talents_talent_movespeed_pct: Movement speed
-  custom_talents_talent_movespeed_pct_description: '+{%movespeed_pct%} movement speed'
-  custom_talents_talent_passive_experience_income: Experience Income
-  custom_talents_talent_passive_experience_income_description: '+{xp_per_minute} experience per minute'
-  custom_talents_talent_true_strike: True Strike
-  custom_talents_talent_true_strike_description: Prevents your attacks from missing
-  arena_tip_1: In Hero Selection you can pick new heroes pressing 'Change heroes' button in the left top corner
-  arena_tip_2: With Blood of Midas & Rune Keeper you can get 10x gold from bounty runes. Hand of Midas not increases gold from runes
-  arena_tip_3: All bosses have True Strike
-  arena_tip_4: Try to make new itembuilds! There are very much unrevealed powerful heroes and itembuilds.
-  arena_tip_5: All items here arn't Unique Attack Modifiers
-  arena_tip_6: 'If you can''t get out from your base, you can purchase Blink Staff and blink enemies under your base'
-  arena_tip_7: You can see Kill Limit holding Alt or by hovering game time panel with your cursor
-  arena_tip_8: Steam Footgear gives you ability to climb on high grounds and gives you good attributes for game beginning
-  arena_tip_9: 'If Wisp uses you as Spirit too often, you can UnTether him by pressing Tether icon nearby your hero portrait'
-  arena_tip_10: 'Critical Strike items, Eye of Skadi x4 and Desolator II can help you to kill bosses easier'
-  arena_tip_11: 'Don''t rush to buy attribute shards. First kill bosses and get important items. Game is very dynamic, maybe later you''ll wish to change your hero'
-  arena_tip_12: Diffusal Style's illusions are very powerful in late game
-  arena_tip_13: Don't forget about Silver Edge!
-  arena_tip_14: Most of new items are listed in 'New' tab in the shop
-  arena_tip_15: 'If you found colored creep, be careful. This neutral is a champion. All it''s attributes are highly increased, but kill bounty is also much more'
-  option_yes: 'Yes'
-  option_no: 'No'
-  option_voting_kill_limit: 'Kill Limit:'
-  option_voting_custom_abilities: 'Custom Abilities Mode:'
-  option_voting_custom_abilities_random_omg: Random OMG
-  option_voting_custom_abilities_ability_shop: Ability Shop
+item_rune_keeper_no_runes_left: Rune Keeper is empty now.
+item_rune_keeper_contains: "Rune Keeper contains:\_"
+item_rune_keeper_rune_picked_up: "Rune Picked up:\_"
+item_rune_keeper_rune_picked_up_cont: ', Rune Keeper now contains: '
+kill_goal_tooltip: 'Goal:'
+kill_goal_tooltip_vote_title: 'KILL GOAL VOTE:'
+panorama_shop_shop_tab_1: BASICS
+panorama_shop_shop_tab_2: UPGRADES
+panorama_shop_shop_tab_3: NEW
+panorama_shop_search_placeholder: Search...
+panorama_shop_shop_label: SHOP
+panorama_shop_itembuilds_new_group: NEW GROUP
+panorama_shop_guide_youtube_open: Open in Browser
+error_panorama_shop_publish_guide_title: Title.
+server_error_panorama_shop_youtube_no_tags: Make sure your video has 'Angel Arena Black Star' tag
+server_error_panorama_shop_youtube_not_found: Video wasn't found
+hud_modifier_click_to_remove: Click to remove
+ability_shop_shift_no: LMB/RMB - Buy Ability. Hold SHIFT to enter selling mode.
+ability_shop_shift_yes: 'LMB - Sell ability, RMB - Downgrade ability. Release SHIFT to enter purchase mode.'
+ability_shop_purchased_only: Show purchased abilities
+ability_shop_search_placeholder: Ability or hero name...
+notification_item_demon_king_bar_curse_p1: "You just received Demon King Bar's Curse effect. You'll die in\_"
+notification_item_demon_king_bar_curse_p2: "\_seconds."
+custom_toast_PlayerDeniedSelf: '{victim_name} {denied_icon} Denied'
+custom_toast_PlayerDenied: '{killer_name} {denied_icon} Denied {victim_name}'
+custom_toast_KillStreak_Ended: '{victim_name} {kill_streak}x Kill Streak ended'
+custom_toast_ActivatedRune: '{player_name} has activated {rune_name}'
+custom_toast_BottledRune: '{player_name} bottled {rune_name}'
+custom_toast_DuelStarted: '{time_dota}: {duel_index}th duel has started!'
+custom_toast_BossKilled: '{team_name} {killed_icon} {victim_name} {gold}'
+boss_loot_vote_dropped: 'Items Dropped:'
+boss_loot_vote_killed: was killed!
+boss_loot_vote_damage: 'Damage: '
+boss_loot_vote_hide: Hide
+boss_loot_vote_show: Show
+option_yes: 'Yes'
+option_no: 'No'
+option_voting_kill_limit: 'Kill Limit:'
+option_voting_custom_abilities: 'Custom Abilities Mode:'
+option_voting_custom_abilities_random_omg: Random OMG
+option_voting_custom_abilities_ability_shop: Ability Shop

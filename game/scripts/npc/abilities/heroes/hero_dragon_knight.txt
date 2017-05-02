@@ -120,7 +120,7 @@
 
 			"ApplyModifier"
 			{
-				"ModifierName"	"modifier_breathe_fire_arena_debuff"
+				"ModifierName"	"modifier_dragon_knight_breathe_fire_arena_debuff"
 				"Target" 		"TARGET"
 			}
 
@@ -134,7 +134,7 @@
 
 		"Modifiers"
 		{
-			"modifier_breathe_fire_arena_debuff"
+			"modifier_dragon_knight_breathe_fire_arena_debuff"
 			{
 				"IsDebuff"		"1"
 				"IsPurgable"	"1"
@@ -274,7 +274,7 @@
 		}
 		"Modifiers"
 		{
-			"modifier_dragon_blood_arena"
+			"modifier_dragon_knight_dragon_blood_arena"
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
@@ -303,7 +303,7 @@
 				}
 			}
 
-			"modifier_dragon_blood_arena_disarm_enemy"
+			"modifier_dragon_knight_dragon_blood_arena_disarm_enemy"
 			{
 				"Passive"	"0"
 				"IsHidden"	"0"

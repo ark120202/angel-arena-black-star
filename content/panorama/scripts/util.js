@@ -1,17 +1,32 @@
 "use strict";
-var _ = GameUI.CustomUIConfig()._;
+
+//Libraries
 var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
+var _ = GameUI.CustomUIConfig()._;
+
 var Options = GameUI.CustomUIConfig().Options;
+var console = {
+	log: function() {
+		var args = Array.prototype.slice.call(arguments);
+		return $.Msg(args.join("\t"));
+	},
+	error: function() {
+		var args = Array.prototype.slice.call(arguments);
+		_.each(args, function(arg) {
+			throw typeof arg === "string" ? new Error(arg) : arg;
+		});
+	}
+};
 var ServerDebug = true;
-var ServerAddress = (Game.IsInToolsMode() && ServerDebug ? "http://127.0.0.1:3228" : "https://angelarenablackstar-ark120202.rhcloud.com") + "/AABSServer/"
+var ServerAddress = (Game.IsInToolsMode() && ServerDebug ? "http://127.0.0.1:3228" : "https://angelarenablackstar-ark120202.rhcloud.com") + "/AABSServer/";
 
-var HERO_SELECTION_PHASE_NOT_STARTED = 0
-var HERO_SELECTION_PHASE_BANNING = 1
-var HERO_SELECTION_PHASE_HERO_PICK = 2
-var HERO_SELECTION_PHASE_STRATEGY = 3
-var HERO_SELECTION_PHASE_END = 4
+var HERO_SELECTION_PHASE_NOT_STARTED = 0;
+var HERO_SELECTION_PHASE_BANNING = 1;
+var HERO_SELECTION_PHASE_HERO_PICK = 2;
+var HERO_SELECTION_PHASE_STRATEGY = 3;
+var HERO_SELECTION_PHASE_END = 4;
 
-var DOTA_TEAM_SPECTATOR = 1
+var DOTA_TEAM_SPECTATOR = 1;
 
 var RUNES_COLOR_MAP = {
 	0: "FF7800",
@@ -26,13 +41,13 @@ var RUNES_COLOR_MAP = {
 	9: "C800FF",
 	10: "4A0746",
 	11: "B35F5F",
-}
+};
 
 function GetDataFromServer(path, params, resolve, reject) {
 	var encodedParams = params == null ? "" : "?" + Object.keys(params).map(function(key) {
 	    return encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
 	}).join("&");
-	$.Msg(ServerAddress + path + encodedParams)
+	$.Msg(ServerAddress + path + encodedParams);
 	
 	$.AsyncWebRequest(ServerAddress + path + encodedParams, {
 		type: "GET",
@@ -45,78 +60,68 @@ function GetDataFromServer(path, params, resolve, reject) {
 	});
 }
 
-Promise.delay = function(x) {
-	return new Promise(function(resolve) {
-		$.Schedule(x, resolve)
-	})
-}
-
-Promise.prototype.method_name = function(cback) {
-	return new Promise(cback).catch($.Msg(err))
-};
-
 function MongoObjectIDToDate(objectId) {
 	return new Date(parseInt(objectId.substring(0, 8), 16) * 1000);
 }
 
 function IsHeroName(str) {
-	return str.lastIndexOf("npc_dota_hero_") == 0 || str.lastIndexOf("npc_arena_hero_") == 0
+	return str.lastIndexOf("npc_dota_hero_") === 0 || str.lastIndexOf("npc_arena_hero_") === 0;
 }
 
 function TransformTextureToPath(texture, optPanelImageStyle) {
 	if (IsHeroName(texture)) {
-		if (optPanelImageStyle == "portrait")
-			return "file://{images}/heroes/selection/" + texture + ".png"
-		else if (optPanelImageStyle == "icon")
-			return "file://{images}/heroes/icons/" + texture + ".png"
+		if (optPanelImageStyle === "portrait")
+			return "file://{images}/heroes/selection/" + texture + ".png";
+		else if (optPanelImageStyle === "icon")
+			return "file://{images}/heroes/icons/" + texture + ".png";
 		else
-			return "file://{images}/heroes/" + texture + ".png"
-	} else if (texture.lastIndexOf("npc_") == 0) {
-		if (optPanelImageStyle == "portrait") {
-			return "file://{images}/custom_game/units/portraits/" + texture + ".png"
+			return "file://{images}/heroes/" + texture + ".png";
+	} else if (texture.lastIndexOf("npc_") === 0) {
+		if (optPanelImageStyle === "portrait") {
+			return "file://{images}/custom_game/units/portraits/" + texture + ".png";
 		} else
-			return "file://{images}/custom_game/units/" + texture + ".png"
+			return "file://{images}/custom_game/units/" + texture + ".png";
 	} else {
-		if (optPanelImageStyle == "item") {
-			return "raw://resource/flash3/images/items/" + texture + ".png"
+		if (optPanelImageStyle === "item") {
+			return "raw://resource/flash3/images/items/" + texture + ".png";
 		} else
-			return "raw://resource/flash3/images/spellicons/" + texture + ".png"
+			return "raw://resource/flash3/images/spellicons/" + texture + ".png";
 	}
 }
 
 function GetHeroName(unit) {
-	var data = GameUI.CustomUIConfig().custom_entity_values[unit || -1]
-	return data != null && data.unit_name != null ? data.unit_name : Entities.GetUnitName(unit)
+	var data = GameUI.CustomUIConfig().custom_entity_values[unit || -1];
+	return data != null && data.unit_name != null ? data.unit_name : Entities.GetUnitName(unit);
 }
 
 function SafeGetPlayerHeroEntityIndex(playerId) {
-	var clientEnt = Players.GetPlayerHeroEntityIndex(playerId)
-	return clientEnt == -1 ? (Number(PlayerTables.GetTableValue("player_hero_indexes", playerId)) || -1) : clientEnt
+	var clientEnt = Players.GetPlayerHeroEntityIndex(playerId);
+	return clientEnt === -1 ? (Number(PlayerTables.GetTableValue("player_hero_indexes", playerId)) || -1) : clientEnt;
 }
 
 function GetPlayerHeroName(playerId) {
 	if (Players.IsValidPlayerID(playerId)) {
 		//Is it causes lots of table copies? TODO: Check how that affects perfomance
 		//return PlayerTables.GetTableValue("hero_selection", Players.GetTeam(playerId))[playerId].hero;
-		return GetHeroName(SafeGetPlayerHeroEntityIndex(playerId))
+		return GetHeroName(SafeGetPlayerHeroEntityIndex(playerId));
 	}
-	return ""
+	return "";
 }
 
 Entities.GetHeroPlayerOwner = function(unit) {
 	for (var i = 0; i < 24; i++) {
 		if (Players.IsValidPlayerID(i)) {
-			if (SafeGetPlayerHeroEntityIndex(i) == unit) {
-				return i
+			if (SafeGetPlayerHeroEntityIndex(i) === unit) {
+				return i;
 			}
 		}
 	}
-	return -1
-}
+	return -1;
+};
 
 function GetPlayerGold(iPlayerID) {
-	var goldTable = PlayerTables.GetTableValue("arena", "gold")
-	return goldTable == null ? 0 : Number(goldTable[iPlayerID] || 0)
+	var goldTable = PlayerTables.GetTableValue("arena", "gold");
+	return goldTable == null ? 0 : Number(goldTable[iPlayerID] || 0);
 }
 
 function dynamicSort(property) {
@@ -128,92 +133,75 @@ function dynamicSort(property) {
 	return function(a, b) {
 		var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
 		return result * sortOrder;
-	}
+	};
 }
 
 function GetItemCountInInventory(nEntityIndex, itemName, bStash) {
-	var counter = 0
-	var endPoint = 8
+	var counter = 0;
+	var endPoint = 8;
 	if (bStash)
-		endPoint = 14
+		endPoint = 14;
 	for (var i = endPoint; i >= 0; i--) {
-		var item = Entities.GetItemInSlot(nEntityIndex, i)
-		if (Abilities.GetAbilityName(item) == itemName)
-			counter = counter + 1
+		var item = Entities.GetItemInSlot(nEntityIndex, i);
+		if (Abilities.GetAbilityName(item) === itemName)
+			counter = counter + 1;
 	}
-	return counter
+	return counter;
 }
 
 function GetItemCountInCourier(nEntityIndex, itemName, bStash) {
-	var courier = FindCourier(nEntityIndex)
+	var courier = FindCourier(nEntityIndex);
 	if (courier == null)
-		return 0
-	var counter = 0
-	var endPoint = 8
+		return 0;
+	var counter = 0;
+	var endPoint = 8;
 	if (bStash)
-		endPoint = 14
+		endPoint = 14;
 	for (var i = endPoint; i >= 0; i--) {
-		var item = Entities.GetItemInSlot(courier, i)
-		if (Abilities.GetAbilityName(item) == itemName && Items.GetPurchaser(item) == nEntityIndex)
-			counter = counter + 1
+		var item = Entities.GetItemInSlot(courier, i);
+		if (Abilities.GetAbilityName(item) === itemName && Items.GetPurchaser(item) === nEntityIndex)
+			counter = counter + 1;
 	}
-	return counter
+	return counter;
 }
 
 function FindCourier(unit) {
 	return $.Each(Entities.GetAllEntitiesByClassname("npc_dota_courier"), function(ent) {
-		if (Entities.GetTeamNumber(ent) == Entities.GetTeamNumber(unit)) {
-			return ent
+		if (Entities.GetTeamNumber(ent) === Entities.GetTeamNumber(unit)) {
+			return ent;
 		}
-	})[0]
+	})[0];
 }
 
 function DynamicSubscribePTListener(table, callback, OnConnectedCallback) {
 	if (PlayerTables.IsConnected()) {
 		//$.Msg("Update " + table + " / PT connected")
-		var tableData = PlayerTables.GetAllTableValues(table)
+		var tableData = PlayerTables.GetAllTableValues(table);
 		if (tableData != null)
-			callback(table, tableData, {})
-		var ptid = PlayerTables.SubscribeNetTableListener(table, callback)
+			callback(table, tableData, {});
+		var ptid = PlayerTables.SubscribeNetTableListener(table, callback);
 		if (OnConnectedCallback != null) {
-			OnConnectedCallback(ptid)
+			OnConnectedCallback(ptid);
 		}
 	} else {
 		//$.Msg("Update " + table + " / PT not connected, repeat")
 		$.Schedule(0.1, function() {
-			DynamicSubscribePTListener(table, callback, OnConnectedCallback)
-		})
+			DynamicSubscribePTListener(table, callback, OnConnectedCallback);
+		});
 	}
 }
 
 function DynamicSubscribeNTListener(table, callback, OnConnectedCallback) {
-	var tableData = CustomNetTables.GetAllTableValues(table)
+	var tableData = CustomNetTables.GetAllTableValues(table);
 	if (tableData != null) {
 		$.Each(tableData, function(ent) {
-			callback(table, ent.key, ent.value)
-		})
+			callback(table, ent.key, ent.value);
+		});
 	}
-	var ptid = CustomNetTables.SubscribeNetTableListener(table, callback)
+	var ptid = CustomNetTables.SubscribeNetTableListener(table, callback);
 	if (OnConnectedCallback != null) {
-		OnConnectedCallback(ptid)
+		OnConnectedCallback(ptid);
 	}
-}
-
-function GetArrayLength(array) {
-	var counter = 0
-	for (var arrKey in array) {
-		counter = counter + 1
-	}
-	return counter
-}
-
-function arraysIdentical(a, b) {
-	var i = GetArrayLength(a);
-	if (i != GetArrayLength(b)) return false;
-	while (i--) {
-		if (a[i] !== b[i]) return false;
-	}
-	return true;
 }
 
 function getRandomArbitrary(min, max) {
@@ -225,13 +213,13 @@ function getRandomInt(min, max) {
 }
 
 function GetDotaHud() {
-	var p = $.GetContextPanel()
+	var p = $.GetContextPanel();
 	while (true) {
-		var parent = p.GetParent()
+		var parent = p.GetParent();
 		if (parent == null)
-			return p
+			return p;
 		else
-			p = parent
+			p = parent;
 	}
 	/*try {
 		while (true) {
@@ -246,7 +234,7 @@ function GetDotaHud() {
 function GetSteamID(pid, type) {
 	var steamID64 = Game.GetPlayerInfo(pid).player_steamid,
 		steamID32 = String(Number(steamID64.substring(3)) - 61197960265728);
-	return type == 64 ? steamID64 : steamID32;
+	return type === 64 ? steamID64 : steamID32;
 }
 
 function _DynamicMinimapSubscribe(minimapPanel, OnConnectedCallback) {
@@ -263,16 +251,16 @@ function _DynamicMinimapSubscribe(minimapPanel, OnConnectedCallback) {
 					panel.AddClass(ss);
 				});
 				panel.style.position = changesObject[index].position + " 0";
-				panel.visible = changesObject[index].visible == 1
+				panel.visible = changesObject[index].visible === 1;
 			}
 		}, OnConnectedCallback);
 	});
 }
 
 function IsCursorOnPanel(panel) {
-	var panelCoords = panel.GetPositionWithinWindow()
-	var cursorPos = GameUI.GetCursorPosition()
-	return cursorPos[0] > panelCoords.x && cursorPos[1] > panelCoords.y && cursorPos[0] < panelCoords.x + panel.actuallayoutwidth && cursorPos[1] < panelCoords.y + panel.actuallayoutheight
+	var panelCoords = panel.GetPositionWithinWindow();
+	var cursorPos = GameUI.GetCursorPosition();
+	return cursorPos[0] > panelCoords.x && cursorPos[1] > panelCoords.y && cursorPos[0] < panelCoords.x + panel.actuallayoutwidth && cursorPos[1] < panelCoords.y + panel.actuallayoutheight;
 }
 
 function secondsToMS(seconds, bTwoChars) {
@@ -289,19 +277,19 @@ function secondsToMS(seconds, bTwoChars) {
 
 function escapeRegExp(string) {
 	return String(string).replace(/[()]/g, function(s) {
-		return "\\" + s
-	})
+		return "\\" + s;
+	});
 }
 
 function AddStyle(panel, table) {
 	for (var k in table) {
-		panel.style[k] = table[k]
+		panel.style[k] = table[k];
 	}
 }
 
 function AddJSClass(panel, classname) {
 	if (JSStyleMap[classname] != null)
-		AddStyle(panel, JSStyleMap[classname])
+		AddStyle(panel, JSStyleMap[classname]);
 	else
 		$.Msg("[AddJSClass] Critical error - style map has no " + classname + " class");
 }
@@ -311,12 +299,12 @@ String.prototype.encodeHTML = function() {
 };
 
 function FindDotaHudElement(id) {
-	return hud.FindChildTraverse(id)
+	return hud.FindChildTraverse(id);
 }
 
 function GetHEXPlayerColor(playerId) {
-	var playerColor = Players.GetPlayerColor(playerId).toString(16)
-	return playerColor == null ? "#000000" : ("#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2))
+	var playerColor = Players.GetPlayerColor(playerId).toString(16);
+	return playerColor == null ? "#000000" : ("#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2));
 }
 
 function hexToRgb(hex) {
@@ -363,12 +351,12 @@ String.prototype.endsWith = function(suffix) {
 };
 
 function SortPanelChildren(panel, sortFunc, compareFunc) {
-	var tlc = panel.Children().sort(sortFunc)
+	var tlc = panel.Children().sort(sortFunc);
 	$.Each(tlc, function(child) {
 		for (var k in tlc) {
-			var child2 = tlc[k]
-			if (child != child2 && compareFunc(child, child2)) {
-				panel.MoveChildBefore(child, child2)
+			var child2 = tlc[k];
+			if (child !== child2 && compareFunc(child, child2)) {
+				panel.MoveChildBefore(child, child2);
 				break;
 			}
 		}
@@ -376,10 +364,10 @@ function SortPanelChildren(panel, sortFunc, compareFunc) {
 };
 
 Entities.GetNetworkableEntityInfo = function(ent, key) {
-	var t = GameUI.CustomUIConfig().custom_entity_values[ent]
+	var t = GameUI.CustomUIConfig().custom_entity_values[ent];
 	if (t != null) {
-		return key == null ? t : t[key]
+		return key == null ? t : t[key];
 	}
-}
+};
 
 var hud = GetDotaHud();

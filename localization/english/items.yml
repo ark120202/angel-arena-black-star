@@ -1,3 +1,15 @@
+Variables:
+  modifier_item_yasha_arena_fast_attack: Fast Attack
+  modifier_item_yasha_arena_fast_attack_Description: Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
+  modifier_item_sange_maim: Maim
+  modifier_item_sange_maim_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
+  item_yasha_Description: 'Passive: Fast Attack - Each attack increases your movement and attack speed for %fast_attack_duration% seconds. Buff can be stacked %fast_attack_max_stacks% times.'
+  item_sange_Description: 'Passive: Maim - Each attack has a chance to slow the enemy''s movement and attack speed for %maim_duration% seconds. Debuff can be stacked %maim_max_stacks% times.'
+  item_nightshadow_Description: 'Passive: Arcane Art - Each attack has a chance to decrease all your active cooldowns for %cooldown_reduction% seconds.'
+  item_yasha_movespeed_note: |-
+
+    Yasha-based movement speed bonuses from multiple items do not stack.
+
 DOTA_Tooltip_Ability_item_heart_arena: Heart of Tarrasque
 DOTA_Tooltip_ability_item_heart_arena_Description: 'Passive: Health Regeneration - Restores a percentage of max health per second. If damage is taken from an enemy hero or boss, this ability is disabled for %cooldown_melee% seconds for melee heroes, or %cooldown_ranged_tooltip% seconds for ranged heroes.'
 DOTA_Tooltip_ability_item_heart_arena_Lore: 'Preserved heart of an extinct monster, it bolsters the bearer''s fortitude.'
@@ -9,63 +21,66 @@ DOTA_Tooltip_ability_item_blink_arena_Description: 'Active: Blink - Teleport to 
 DOTA_Tooltip_ability_item_blink_arena_Lore: The fabled dagger used by the fastest assassin ever to walk the lands.
 DOTA_Tooltip_ability_item_blink_arena_Note0: Self-casting will cause you to teleport in the direction of your team's fountain.
 DOTA_Tooltip_ability_item_blink_arena_Note1: 'If you used Blink to teleport to a distance over the maximum range, you''ll be teleported 4/5 of the maximum range instead.'
+
 DOTA_Tooltip_ability_item_casino_coin: Casino Coin
 DOTA_Tooltip_ability_item_casino_coin_Description: Can be used to play slotmachine or to pay for various services
-DOTA_Tooltip_ability_item_shard_str_small: Small Strength Shard
-DOTA_Tooltip_ability_item_shard_str_small_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_str_small_bonus_str: +$str
-DOTA_Tooltip_ability_item_shard_str_medium: Medium Strength Shard
-DOTA_Tooltip_ability_item_shard_str_medium_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_str_medium_bonus_str: +$str
-DOTA_Tooltip_ability_item_shard_str_large: Large Strength Shard
-DOTA_Tooltip_ability_item_shard_str_large_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_str_large_bonus_str: +$str
-DOTA_Tooltip_ability_item_shard_str_extreme: Extreme Strength Shard
-DOTA_Tooltip_ability_item_shard_str_extreme_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_str_extreme_bonus_str: +$str
-DOTA_Tooltip_ability_item_shard_agi_small: Small Agility Shard
-DOTA_Tooltip_ability_item_shard_agi_small_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_agi_small_bonus_agi: +$agi
-DOTA_Tooltip_ability_item_shard_agi_medium: Medium Agility Shard
-DOTA_Tooltip_ability_item_shard_agi_medium_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_agi_medium_bonus_agi: +$agi
-DOTA_Tooltip_ability_item_shard_agi_large: Large Agility Shard
-DOTA_Tooltip_ability_item_shard_agi_large_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_agi_large_bonus_agi: +$agi
-DOTA_Tooltip_ability_item_shard_agi_extreme: Extreme Agility Shard
-DOTA_Tooltip_ability_item_shard_agi_extreme_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_agi_extreme_bonus_agi: +$agi
-DOTA_Tooltip_ability_item_shard_int_small: Small Intelligence Shard
-DOTA_Tooltip_ability_item_shard_int_small_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_int_small_bonus_int: +$int
-DOTA_Tooltip_ability_item_shard_int_medium: Medium Intelligence Shard
-DOTA_Tooltip_ability_item_shard_int_medium_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_int_medium_bonus_int: +$int
-DOTA_Tooltip_ability_item_shard_int_large: Large Intelligence Shard
-DOTA_Tooltip_ability_item_shard_int_large_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_int_large_bonus_int: +$int
-DOTA_Tooltip_ability_item_shard_int_extreme: Extreme Intelligence Shard
-DOTA_Tooltip_ability_item_shard_int_extreme_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_int_extreme_bonus_int: +$int
-DOTA_Tooltip_ability_item_shard_primal_small: Small Primal Shard
-DOTA_Tooltip_ability_item_shard_primal_small_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_primal_small_bonus_stats: +$all
-DOTA_Tooltip_ability_item_shard_primal_medium: Medium Primal Shard
-DOTA_Tooltip_ability_item_shard_primal_medium_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_primal_medium_bonus_stats: +$all
-DOTA_Tooltip_ability_item_shard_primal_large: Large Primal Shard
-DOTA_Tooltip_ability_item_shard_primal_large_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
-DOTA_Tooltip_ability_item_shard_primal_large_bonus_stats: +$all
+
 DOTA_Tooltip_ability_item_shard_level: Level Up Shard
 DOTA_Tooltip_ability_item_shard_level_Description: 'Active: Consume - consumes shard and level up''s your hero.'
+DOTA_Tooltip_ability_item_shard_str_small: Small Strength Shard
+DOTA_Tooltip_ability_item_shard_str_small_bonus_str: +$str
+DOTA_Tooltip_ability_item_shard_str_medium: Medium Strength Shard
+DOTA_Tooltip_ability_item_shard_str_medium_bonus_str: +$str
+DOTA_Tooltip_ability_item_shard_str_large: Large Strength Shard
+DOTA_Tooltip_ability_item_shard_str_large_bonus_str: +$str
+DOTA_Tooltip_ability_item_shard_str_extreme: Extreme Strength Shard
+DOTA_Tooltip_ability_item_shard_str_extreme_bonus_str: +$str
+DOTA_Tooltip_ability_item_shard_agi_small: Small Agility Shard
+DOTA_Tooltip_ability_item_shard_agi_small_bonus_agi: +$agi
+DOTA_Tooltip_ability_item_shard_agi_medium: Medium Agility Shard
+DOTA_Tooltip_ability_item_shard_agi_medium_bonus_agi: +$agi
+DOTA_Tooltip_ability_item_shard_agi_large: Large Agility Shard
+DOTA_Tooltip_ability_item_shard_agi_large_bonus_agi: +$agi
+DOTA_Tooltip_ability_item_shard_agi_extreme: Extreme Agility Shard
+DOTA_Tooltip_ability_item_shard_agi_extreme_bonus_agi: +$agi
+DOTA_Tooltip_ability_item_shard_int_small: Small Intelligence Shard
+DOTA_Tooltip_ability_item_shard_int_small_bonus_int: +$int
+DOTA_Tooltip_ability_item_shard_int_medium: Medium Intelligence Shard
+DOTA_Tooltip_ability_item_shard_int_medium_bonus_int: +$int
+DOTA_Tooltip_ability_item_shard_int_large: Large Intelligence Shard
+DOTA_Tooltip_ability_item_shard_int_large_bonus_int: +$int
+DOTA_Tooltip_ability_item_shard_int_extreme: Extreme Intelligence Shard
+DOTA_Tooltip_ability_item_shard_int_extreme_bonus_int: +$int
+DOTA_Tooltip_ability_item_shard_primal_small: Small Primal Shard
+DOTA_Tooltip_ability_item_shard_primal_small_bonus_stats: +$all
+DOTA_Tooltip_ability_item_shard_primal_medium: Medium Primal Shard
+DOTA_Tooltip_ability_item_shard_primal_medium_bonus_stats: +$all
+DOTA_Tooltip_ability_item_shard_primal_large: Large Primal Shard
+DOTA_Tooltip_ability_item_shard_primal_large_bonus_stats: +$all
 DOTA_Tooltip_ability_item_shard_attackspeed: Attackspeed Shard
-DOTA_Tooltip_ability_item_shard_attackspeed_Description: 'Active: Consume - consumes shard and gives hero permanent bonus.'
 DOTA_Tooltip_ability_item_shard_attackspeed_bonus_attackspeed: +$attack
+'Active: Consume - consumes shard and gives hero permanent bonus.':
+  - DOTA_Tooltip_ability_item_shard_str_small_Description
+  - DOTA_Tooltip_ability_item_shard_str_medium_Description
+  - DOTA_Tooltip_ability_item_shard_str_large_Description
+  - DOTA_Tooltip_ability_item_shard_str_extreme_Description
+  - DOTA_Tooltip_ability_item_shard_agi_small_Description
+  - DOTA_Tooltip_ability_item_shard_agi_medium_Description
+  - DOTA_Tooltip_ability_item_shard_agi_large_Description
+  - DOTA_Tooltip_ability_item_shard_agi_extreme_Description
+  - DOTA_Tooltip_ability_item_shard_int_small_Description
+  - DOTA_Tooltip_ability_item_shard_int_medium_Description
+  - DOTA_Tooltip_ability_item_shard_int_large_Description
+  - DOTA_Tooltip_ability_item_shard_int_extreme_Description
+  - DOTA_Tooltip_ability_item_shard_primal_small_Description
+  - DOTA_Tooltip_ability_item_shard_primal_medium_Description
+  - DOTA_Tooltip_ability_item_shard_primal_large_Description
+  - DOTA_Tooltip_ability_item_shard_attackspeed_Description
+
 DOTA_Tooltip_Ability_item_yasha_arena: Yasha
 DOTA_Tooltip_ability_item_yasha_arena_Description: |-
-  Passive: Fast Attack - Each attack increases your movement and attack speed for %fast_attack_duration% seconds. Buff can be stacked %fast_attack_max_stacks% times.
-
-  Yasha-based movement speed bonuses from multiple items do not stack.
+  {lc:item_yasha_Description}
+  {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_yasha_arena_Lore: Yasha is regarded as the swiftest weapon ever created.
 DOTA_Tooltip_ability_item_yasha_arena_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_yasha_arena_bonus_attack_speed: +$attack
@@ -73,10 +88,11 @@ DOTA_Tooltip_ability_item_yasha_arena_movement_speed_percent_bonus: '%+$move_spe
 DOTA_Tooltip_ability_item_yasha_arena_bonus_attack_speed_buff: 'FAST ATTACK ATTACK SPEED:'
 DOTA_Tooltip_ability_item_yasha_arena_movement_speed_percent_bonus_buff: '%FAST ATTACK MOVEMENT SPEED:'
 DOTA_Tooltip_ability_item_yasha_arena_maim_duration: 'FAST ATTACK DURATION:'
-DOTA_Tooltip_modifier_item_yasha_arena_fast_attack: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_yasha_arena_fast_attack_Description: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack_Description}'
+DOTA_Tooltip_modifier_item_yasha_arena_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
+DOTA_Tooltip_modifier_item_yasha_arena_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
+
 DOTA_Tooltip_Ability_item_sange_arena: Sange
-DOTA_Tooltip_ability_item_sange_arena_Description: 'Passive: Lesser Maim - Each attack has a chance to slow the enemy''s movement and attack speed for %maim_duration% seconds. Debuff can be stacked %maim_max_stacks% times.'
+DOTA_Tooltip_ability_item_sange_arena_Description: '{lc:item_sange_Description}'
 DOTA_Tooltip_ability_item_sange_arena_Lore: 'Sange is an unusually accurate weapon, seeking weak points automatically.'
 DOTA_Tooltip_ability_item_sange_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sange_arena_bonus_strength: +$str
@@ -84,20 +100,20 @@ DOTA_Tooltip_ability_item_sange_arena_maim_chance: '%MAIM CHANCE:'
 DOTA_Tooltip_ability_item_sange_arena_maim_movement_speed: '%MAIM MOVEMENT SLOW:'
 DOTA_Tooltip_ability_item_sange_arena_maim_attack_speed: 'MAIM ATTACK SLOW:'
 DOTA_Tooltip_ability_item_sange_arena_maim_duration: 'MAIM DURATION:'
-DOTA_Tooltip_modifier_item_sange_arena_lesser_maim: '{lc:DOTA_Tooltip_modifier_item_sange_arena_lesser_maim}'
-DOTA_Tooltip_modifier_item_sange_arena_lesser_maim_Description: '{lc:DOTA_Tooltip_modifier_item_sange_arena_lesser_maim_Description}'
+DOTA_Tooltip_modifier_item_sange_arena_lesser_maim: '{lc:modifier_item_sange_maim}'
+DOTA_Tooltip_modifier_item_sange_arena_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
+
 DOTA_Tooltip_ability_item_nightshadow: Nightshadow
-DOTA_Tooltip_ability_item_nightshadow_Description: 'Passive: Arcane Art - Each attack has a chance to decrease all your active cooldowns for %cooldown_reduction% seconds.'
+DOTA_Tooltip_ability_item_nightshadow_Description: '{lc:item_nightshadow_Description}'
 DOTA_Tooltip_ability_item_nightshadow_Lore: Nightshadow an ancient weapon used by legendary archmages.
 DOTA_Tooltip_ability_item_nightshadow_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_nightshadow_nightshadow_chance: '%REDUCTION CHANCE:'
 DOTA_Tooltip_ability_item_nightshadow_cooldown_reduction: 'COOLDOWN REDUCTION:'
 DOTA_Tooltip_Ability_item_sange_and_yasha_arena: Sange & Yasha
 DOTA_Tooltip_ability_item_sange_and_yasha_arena_Description: |-
-  Passive: Greater Maim - Each attack has a chance to slow the enemy's movement and attack speed for %maim_duration% seconds. Debuff can be stacked %maim_max_stacks% times.
-  Passive: Fast Attack - Each attack increases your movement and attack speed for %fast_attack_duration% seconds. Buff can be stacked %fast_attack_max_stacks% times.
-
-  Yasha-based movement speed bonuses from multiple items do not stack.
+  {lc:item_sange_Description}
+  {lc:item_yasha_Description}
+  {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_sange_and_yasha_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sange_and_yasha_arena_bonus_strength: +$str
 DOTA_Tooltip_ability_item_sange_and_yasha_arena_bonus_agility: +$agi
@@ -110,14 +126,14 @@ DOTA_Tooltip_ability_item_sange_and_yasha_arena_maim_duration: 'MAIM DURATION:'
 DOTA_Tooltip_ability_item_sange_and_yasha_arena_bonus_attack_speed_buff: 'FAST ATTACK ATTACK SPEED:'
 DOTA_Tooltip_ability_item_sange_and_yasha_arena_movement_speed_percent_bonus_buff: '%FAST ATTACK MOVEMENT SPEED:'
 DOTA_Tooltip_ability_item_sange_and_yasha_arena_fast_attack_duration: 'FAST ATTACK DURATION:'
-DOTA_Tooltip_modifier_item_sange_and_yasha_lesser_maim: '{lc:DOTA_Tooltip_modifier_item_sange_arena_lesser_maim}'
-DOTA_Tooltip_modifier_item_sange_and_yasha_lesser_maim_Description: '{lc:DOTA_Tooltip_modifier_item_sange_arena_lesser_maim_Description}'
-DOTA_Tooltip_modifier_item_sange_and_yasha_fast_attack: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_sange_and_yasha_fast_attack_Description: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack_Description}'
+DOTA_Tooltip_modifier_item_sange_and_yasha_lesser_maim: '{lc:modifier_item_sange_maim}'
+DOTA_Tooltip_modifier_item_sange_and_yasha_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
+DOTA_Tooltip_modifier_item_sange_and_yasha_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
+DOTA_Tooltip_modifier_item_sange_and_yasha_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
 DOTA_Tooltip_Ability_item_nightshadow_and_sange: Nightshadow & Sange
 DOTA_Tooltip_ability_item_nightshadow_and_sange_Description: |-
-  Passive: Greater Maim - Each attack has a chance to slow the enemy's movement and attack speed for %maim_duration% seconds. Debuff can be stacked %maim_max_stacks% times.
-  Passive: Arcane Art - Each attack has a chance to decrease all your active cooldowns for %cooldown_reduction% seconds.
+  {lc:item_sange_Description}
+  {lc:item_nightshadow_Description}
 DOTA_Tooltip_ability_item_nightshadow_and_sange_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_nightshadow_and_sange_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_nightshadow_and_sange_bonus_strength: +$str
@@ -127,16 +143,15 @@ DOTA_Tooltip_ability_item_nightshadow_and_sange_maim_chance: '%MAIM CHANCE:'
 DOTA_Tooltip_ability_item_nightshadow_and_sange_maim_slow_movement: '%MAIM MOVEMENT SLOW:'
 DOTA_Tooltip_ability_item_nightshadow_and_sange_maim_slow_attack: 'MAIM ATTACK SLOW:'
 DOTA_Tooltip_ability_item_nightshadow_and_sange_maim_duration: 'MAIM DURATION:'
-DOTA_Tooltip_modifier_item_nightshadow_and_sange_lesser_maim: Maim
-DOTA_Tooltip_modifier_item_nightshadow_and_sange_lesser_maim_Description: '{lc:DOTA_Tooltip_modifier_item_sange_arena_lesser_maim_Description}'
-DOTA_Tooltip_modifier_item_nightshadow_and_yasha_fast_attack: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_nightshadow_and_yasha_fast_attack_Description: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack_Description}'
+DOTA_Tooltip_modifier_item_nightshadow_and_sange_lesser_maim: '{lc:modifier_item_sange_maim}'
+DOTA_Tooltip_modifier_item_nightshadow_and_sange_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
+DOTA_Tooltip_modifier_item_nightshadow_and_yasha_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
+DOTA_Tooltip_modifier_item_nightshadow_and_yasha_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
 DOTA_Tooltip_ability_item_nightshadow_and_yasha: Nightshadow & Yasha
 DOTA_Tooltip_ability_item_nightshadow_and_yasha_Description: |-
-  Passive: Fast Attack - Each attack increases your movement and attack speed for %fast_attack_duration% seconds. Buff can be stacked %fast_attack_max_stacks% times.
-  Passive: Arcane Art - Each attack has a chance to decrease all your active cooldowns for %cooldown_reduction% seconds.
-
-  Yasha-based movement speed bonuses from multiple items do not stack.
+  {lc:item_yasha_Description}
+  {lc:item_nightshadow_Description}
+  {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_nightshadow_and_yasha_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_nightshadow_and_yasha_nightshadow_chance: '%REDUCTION CHANCE:'
 DOTA_Tooltip_ability_item_nightshadow_and_yasha_cooldown_reduction: 'COOLDOWN REDUCTION:'
@@ -149,10 +164,9 @@ DOTA_Tooltip_ability_item_nightshadow_and_yasha_fast_attack_duration: 'FAST ATTA
 DOTA_Tooltip_ability_item_three_spirits_blades: Three Spirits Blades
 DOTA_Tooltip_ability_item_three_spirits_blades_Description: |-
   Passive: Greater Maim - Each attack has a %maim_chance%% chance to slow the enemy's movement and attack speed for %maim_duration% seconds. Debuff can be stacked %maim_max_stacks% times.
-  Passive: Fast Attack - Each attack increases your movement and attack speed for %fast_attack_duration% seconds. Buff can be stacked %fast_attack_max_stacks% times.
-  Passive: Arcane Art - Each attack has a chance to decrease all your active cooldowns for %cooldown_reduction% seconds.
-
-  Yasha-based movement speed bonuses from multiple items do not stack.
+  {lc:item_yasha_Description}
+  {lc:item_nightshadow_Description}
+  {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_three_spirits_blades_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_three_spirits_blades_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_three_spirits_blades_bonus_strength: +$str
@@ -164,10 +178,10 @@ DOTA_Tooltip_ability_item_three_spirits_blades_maim_slow_movement: '%MAIM MOVEME
 DOTA_Tooltip_ability_item_three_spirits_blades_maim_slow_attack: 'MAIM ATTACK SLOW:'
 DOTA_Tooltip_ability_item_three_spirits_blades_bonus_attack_speed_buff: 'FAST ATTACK ATTACK SPEED:'
 DOTA_Tooltip_ability_item_three_spirits_blades_movement_speed_percent_bonus_buff: '%FAST ATTACK MOVEMENT SPEED:'
-DOTA_Tooltip_modifier_item_three_spirits_blades_lesser_maim: Maim
-DOTA_Tooltip_modifier_item_three_spirits_blades_lesser_maim_Description: '{lc:DOTA_Tooltip_modifier_item_sange_arena_lesser_maim_Description}'
-DOTA_Tooltip_modifier_item_three_spirits_blades_fast_attack: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_three_spirits_blades_fast_attack_Description: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack_Description}'
+DOTA_Tooltip_modifier_item_three_spirits_blades_lesser_maim: '{lc:modifier_item_sange_maim}'
+DOTA_Tooltip_modifier_item_three_spirits_blades_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
+DOTA_Tooltip_modifier_item_three_spirits_blades_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
+DOTA_Tooltip_modifier_item_three_spirits_blades_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
   Active: Unwilling Ritual - Targets non-hero enemy unit. The target gets sacrificed for a Doomling. Doomling possesses the abilities of the sacrificed unit and and adds it's health, damage and mana to Doomling's stats. By default doomling has %doomling_health% health, %doomling_mana% mana, %doomling_damage_min% - %doomling_damage_max% damage, %doomling_health_regen% health regeneration, %doomling_mana_regen% mana regeneration. Normal XP and gold bounty is granted for the target unit.
@@ -220,16 +234,24 @@ DOTA_Tooltip_ability_item_heart_cyclone_health_regen_percent_per_second: '%HEALT
 DOTA_Tooltip_ability_item_heart_cyclone_active_health_regen_percent_per_second: '%HEALTH RESTORED PER SECOND IN SHIFT:'
 DOTA_Tooltip_ability_item_heart_cyclone_active_damage_percent_per_second: '%DAMAGE PER SECOND IN SHIFT:'
 DOTA_Tooltip_ability_item_heart_cyclone_duration: 'SHIFT DURATION:'
+DOTA_Tooltip_modifier_item_heart_cyclone_regen_cooldown: Regeniration Cooldown
+DOTA_Tooltip_modifier_item_heart_cyclone_regen_cooldown_Description: Tarrasque's Scepter of Divinity health regeniration is on cooldown.
+DOTA_Tooltip_modifier_item_heart_cyclone_active_regen: Tarrasque's Scepter of Divinity Shift
+DOTA_Tooltip_modifier_item_heart_cyclone_active_regen_Description: Shifted into another dimension where it is immune from harm. Also target regenerates percents of maximum health.
+DOTA_Tooltip_modifier_item_heart_cyclone_active_damage: Tarrasque's Scepter of Divinity Enemy Shift
+DOTA_Tooltip_modifier_item_heart_cyclone_active_damage_Description: Shifted into another dimension where it is immune from harm. Also target loses health in percents of maximum health.
+
 DOTA_Tooltip_ability_item_metamorphosis_elixir: Metamorphosis Elixir
 DOTA_Tooltip_ability_item_metamorphosis_elixir_Description: |-
   Transforms your hero into another.
 
   Can't be used while duel is ongoing.
 DOTA_Tooltip_ability_item_metamorphosis_elixir_transformation_time: 'TRANSFORMATION TIME:'
+
 DOTA_Tooltip_ability_item_splitshot_str: Enchanted Trident
 DOTA_Tooltip_ability_item_splitshot_str_Description: |-
   Passive: Attack Split - Deals a percent of attack damage in a %range% area around the target. Melee units cannot Split Attack.
-  Passive: Lesser Maim - Each attack has a chance to slow the enemy's movement and attack speed for %maim_duration% seconds. Debuff can be stacked %maim_max_stacks% times.
+  {lc:item_sange_Description}
 DOTA_Tooltip_ability_item_splitshot_str_Note0: 'Illusions will fire attack projectiles, but they won''t deal any damage.'
 DOTA_Tooltip_ability_item_splitshot_str_damage_percent: '%SPLASH DAMAGE:'
 DOTA_Tooltip_ability_item_splitshot_str_bonus_agility: +$agi
@@ -243,14 +265,14 @@ DOTA_Tooltip_ability_item_splitshot_str_maim_chance: '%MAIM CHANCE:'
 DOTA_Tooltip_ability_item_splitshot_str_maim_movement_speed: '%MAIM MOVEMENT SLOW:'
 DOTA_Tooltip_ability_item_splitshot_str_maim_slow_attack: 'MAIM ATTACK SLOW:'
 DOTA_Tooltip_ability_item_splitshot_str_maim_duration: 'MAIM DURATION:'
-DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim: Maim
-DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim_Description: '{lc:DOTA_Tooltip_modifier_item_sange_arena_lesser_maim_Description}'
+DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim: '{lc:modifier_item_sange_maim}'
+DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
+
 DOTA_Tooltip_ability_item_splitshot_agi: Nagascale Bow
 DOTA_Tooltip_ability_item_splitshot_agi_Description: |-
   Passive: Attack Split - Deals a percent of attack damage in a %range% area around the target. Melee units cannot Split Attack.
-  Passive: Fast Attack - Each attack increases your movement and attack speed for %fast_attack_duration% seconds. Buff can be stacked %fast_attack_max_stacks% times.
-
-  Yasha-based movement speed bonuses from multiple items do not stack.
+  {lc:item_yasha_Description}
+  {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_splitshot_agi_Note0: 'Illusions will fire attack projectiles, but they won''t deal any damage.'
 DOTA_Tooltip_ability_item_splitshot_agi_damage_percent: '%SPLASH DAMAGE:'
 DOTA_Tooltip_ability_item_splitshot_agi_bonus_agility: +$agi
@@ -264,12 +286,13 @@ DOTA_Tooltip_ability_item_splitshot_agi_bonus_mana_regen_percentage: '%+$mana_re
 DOTA_Tooltip_ability_item_splitshot_agi_bonus_attack_speed_buff: 'FAST ATTACK ATTACK SPEED:'
 DOTA_Tooltip_ability_item_splitshot_agi_movement_speed_percent_bonus_buff: '%FAST ATTACK MOVEMENT SPEED:'
 DOTA_Tooltip_ability_item_splitshot_agi_fast_attack_duration: 'FAST ATTACK DURATION:'
-DOTA_Tooltip_modifier_item_splitshot_agi_fast_attack: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_splitshot_agi_fast_attack_Description: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack_Description}'
+DOTA_Tooltip_modifier_item_splitshot_agi_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
+DOTA_Tooltip_modifier_item_splitshot_agi_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
+
 DOTA_Tooltip_ability_item_splitshot_int: Staff of Splitted Sunray
 DOTA_Tooltip_ability_item_splitshot_int_Description: |-
   Passive: Attack Split - Deals a percent of attack damage in a %range% area around the target. Melee units cannot Split Attack.
-  Passive: Arcane Art - Each attack has a chance to decrease all your active cooldowns for %cooldown_reduction% seconds.
+  {lc:item_nightshadow_Description}
 DOTA_Tooltip_ability_item_splitshot_int_Note0: 'Illusions will fire attack projectiles, but they won''t deal any damage.'
 DOTA_Tooltip_ability_item_splitshot_int_damage_percent: '%SPLASH DAMAGE:'
 DOTA_Tooltip_ability_item_splitshot_int_bonus_agility: +$agi
@@ -281,6 +304,7 @@ DOTA_Tooltip_ability_item_splitshot_int_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_splitshot_int_bonus_mana_regen_percentage: '%+$mana_regen'
 DOTA_Tooltip_ability_item_splitshot_int_nightshadow_chance: '%REDUCTION CHANCE:'
 DOTA_Tooltip_ability_item_splitshot_int_cooldown_reduction: 'COOLDOWN REDUCTION:'
+
 DOTA_Tooltip_ability_item_splitshot_ultimate: Ultimate Enchanted Tactical Magical Big Bow Of Integrated Blades
 DOTA_Tooltip_ability_item_splitshot_ultimate_Description: |-
   Passive: Attack Split - Deals a percent of attack damage in a %range% area around the target. Melee units cannot Split Attack.
@@ -288,8 +312,7 @@ DOTA_Tooltip_ability_item_splitshot_ultimate_Description: |-
   Passive: Greater Maim - Each attack has a %maim_chance%% chance to slow the enemy's movement speed by %maim_slow_movement%% and attack speed by %slow_attack% for %maim_duration% seconds. Debuff can be stacked %maim_max_stacks% times.
   Passive: Fast Attack - Each attack increases your movement speed by %movement_speed_percent_bonus_buff%% and attack speed by %bonus_attack_speed_buff% for %fast_attack_duration% seconds. Buff can be stacked %fast_attack_max_stacks% times.
   Passive: Arcane Art - Each attack has a %nightshadow_chance%% chance to decrease all your active cooldowns for %cooldown_reduction% seconds.
-
-  Yasha-based movement speed bonuses from multiple items do not stack.
+  {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_splitshot_ultimate_Note0: 'Illusions will fire attack projectiles, but they won''t deal any damage.'
 DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_strength: +$str
@@ -300,10 +323,11 @@ DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_mana_regen_percentage: '%+$mana_regen'
 DOTA_Tooltip_ability_item_splitshot_ultimate_damage_percent: '%SPLASH DAMAGE:'
-DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim: Greater Maim
-DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim_Description: '{lc:DOTA_Tooltip_modifier_item_sange_arena_lesser_maim_Description}'
-DOTA_Tooltip_modifier_item_splitshot_ultimate_fast_attack: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_splitshot_ultimate_fast_attack_Description: '{lc:DOTA_Tooltip_modifier_yasha_arena_fast_attack_Description}'
+DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim: '{lc:modifier_item_sange_maim}'
+DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
+DOTA_Tooltip_modifier_item_splitshot_ultimate_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
+DOTA_Tooltip_modifier_item_splitshot_ultimate_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
+
 DOTA_Tooltip_ability_item_edge_of_vyse: Edge Of Vyse
 DOTA_Tooltip_ability_item_edge_of_vyse_Description: 'Active: Vyse Walk - Makes you invisible until the duration ends, or until you attack or cast a spell. While invisible, you move %windwalk_bonus_movement_speed_percentage%%% faster and can move through units.  Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus damage to the target and turns it into a harmless critter for %sheep_duration% seconds.'
 DOTA_Tooltip_ability_item_edge_of_vyse_Note0: Backstab cannot miss.
@@ -318,18 +342,23 @@ DOTA_Tooltip_ability_item_edge_of_vyse_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_edge_of_vyse_windwalk_duration: 'VYSE WALK DURATION:'
 DOTA_Tooltip_ability_item_edge_of_vyse_windwalk_bonus_damage: 'BONUS ATTACK DAMAGE:'
 DOTA_Tooltip_ability_item_edge_of_vyse_sheep_duration: 'HEX DURATION:'
+DOTA_Tooltip_modifier_item_edge_of_vyse_active: Vyse Walk
+DOTA_Tooltip_modifier_item_edge_of_vyse_active_Description: 'Invisible. Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and you can move through units. Attacking to break invisibility will deal 350 bonus damage, slow the target, reduce their damage output and hex it.'
+
 DOTA_Tooltip_ability_item_gem_of_clear_mind: Gem of Clear Mind
 DOTA_Tooltip_ability_item_gem_of_clear_mind_Description: |-
   Passive: Clear Mind - Adds the ability to differentiate illusions and real heroes to any allied vision within its carrier's range.
   Dropped on death, and cannot be destroyed.
 DOTA_Tooltip_ability_item_gem_of_clear_mind_radius: 'CLEAR MIND RADIUS:'
 DOTA_Tooltip_ability_item_gem_Note0: Disabled while on a courier.
+
 DOTA_Tooltip_ability_item_gem_of_pure_soul: Gem of Pure Soul
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Description: |-
   Passive: Pure Soul - Adds the ability to see enemies ability cooldowns to any allied vision within its carrier's range.
   Dropped on death, and cannot be destroyed.
 DOTA_Tooltip_ability_item_gem_of_pure_soul_radius: 'PURE SOUL RADIUS:'
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Note0: Disabled while on a courier.
+
 DOTA_Tooltip_ability_item_auto_sheepstick: Auto Scythe of Vyse
 DOTA_Tooltip_ability_item_auto_sheepstick_Description: |-
   Passive: Autohex - Automatically uses Hex on any hero in radius. Not works while caster is stunned.
@@ -343,13 +372,16 @@ DOTA_Tooltip_ability_item_auto_sheepstick_bonus_mana_regen: '%+$mana_regen'
 DOTA_Tooltip_ability_item_auto_sheepstick_sheep_duration: 'HEX DURATION:'
 DOTA_Tooltip_ability_item_auto_sheepstick_radius: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_auto_sheepstick_spell_amp_pct: '%SPELL DAMAGE AMP:'
+
 DOTA_Tooltip_ability_item_tree_banana: Banana
 DOTA_Tooltip_ability_item_tree_banana_Description: 'Banana. Increases your Intelligence by 10, Strength by 4 and Agility by 2.'
 DOTA_Tooltip_ability_item_tree_banana_slide_distance: 'SLIDE DISTANCE:'
 DOTA_Tooltip_ability_item_tree_banana_slide_duration: 'SLIDE DURATION:'
 DOTA_Tooltip_ability_item_tree_banana_radius: 'RADIUS:'
+
 DOTA_Tooltip_ability_item_aegis_arena: Aegis of the Immortal
 DOTA_Tooltip_ability_item_aegis_arena_Description: 'Passive: Reincarnation - Brings you to life with full health and mana %reincarnate_time% seconds after you die, at the location where you died. While reincarnating you gain %vision_radius% vision around the location of death. Reincarnation must be used within %disappear_time_minutes_tooltip% minutes or Aegis of the Immortal disappears. If it expires, it instantly heal you.'
+
 DOTA_Tooltip_ability_item_refresher_arena: Refresher Orb
 DOTA_Tooltip_ability_item_refresher_arena_Description: |-
   Active: Reset Cooldowns - Resets the cooldowns of all your items and abilities.
@@ -357,18 +389,39 @@ DOTA_Tooltip_ability_item_refresher_arena_Description: |-
 DOTA_Tooltip_ability_item_refresher_arena_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_refresher_arena_bonus_mana_regen_percentage: '%+$mana_regen'
 DOTA_Tooltip_ability_item_refresher_arena_bonus_damage: +$damage
+
 DOTA_Tooltip_ability_item_casino_drug_pill1: Blue Pill
 DOTA_Tooltip_ability_item_casino_drug_pill1_Description: 'Active: Eat - eat that pill to gain bonuses and debuffs for some time. Each time you use this you will get a stack of addiction. Each stack of addiction increases debuffs duration. If you get more than 8 stack of addiction you will get permanent debuff, if you get more than 8 stack of addiction you will get much greater debuff.'
+DOTA_Tooltip_modifier_item_casino_drug_pill1_buff: Blue Pill Buff
+DOTA_Tooltip_modifier_item_casino_drug_pill1_buff_Description: Something good from it.
+DOTA_Tooltip_modifier_item_casino_drug_pill1_debuff: Blue Pill Debuff
+DOTA_Tooltip_modifier_item_casino_drug_pill1_debuff_Description: Everything bad from it.
+DOTA_Tooltip_modifier_item_casino_drug_pill1_addiction: Blue Pill Addiction
+DOTA_Tooltip_modifier_item_casino_drug_pill1_addiction_Description: It's time to stop.
+
 DOTA_Tooltip_ability_item_casino_drug_pill2: Red Pill
 DOTA_Tooltip_ability_item_casino_drug_pill2_Description: 'Active: Eat - eat that pill to gain bonuses and debuffs for some time. Each time you use this you will get a stack of addiction. Each stack of addiction increases debuffs duration. If you get more than 8 stack of addiction you will get permanent debuff, if you get more than 8 stack of addiction you will get much greater debuff.'
+DOTA_Tooltip_modifier_item_casino_drug_pill2_buff: Red Pill Buff
+DOTA_Tooltip_modifier_item_casino_drug_pill2_buff_Description: Something good from it.
+DOTA_Tooltip_modifier_item_casino_drug_pill2_debuff: Red Pill Debuff
+DOTA_Tooltip_modifier_item_casino_drug_pill2_debuff_Description: Everything bad from it.
+DOTA_Tooltip_modifier_item_casino_drug_pill2_addiction: Red Pill Addiction
+DOTA_Tooltip_modifier_item_casino_drug_pill2_addiction_Description: It's time to stop.
+
 DOTA_Tooltip_ability_item_casino_drug_pill3: Black Pill
 DOTA_Tooltip_ability_item_casino_drug_pill3_Description: 'Active: Eat - eat that pill to gain bonuses and debuffs for some time. Each time you use this you will get a stack of addiction. Each stack of addiction increases debuffs duration. If you get more than 8 stack of addiction you will get permanent debuff, if you get more than 8 stack of addiction you will get much greater debuff.'
+DOTA_Tooltip_modifier_item_casino_drug_pill3_buff: Black Pill Buff
+DOTA_Tooltip_modifier_item_casino_drug_pill3_buff_Description: Something good from it.
+DOTA_Tooltip_modifier_item_casino_drug_pill3_debuff: Black Pill Debuff
+DOTA_Tooltip_modifier_item_casino_drug_pill3_debuff_Description: Everything bad from it.
+DOTA_Tooltip_modifier_item_casino_drug_pill3_addiction: Black Pill Addiction
+DOTA_Tooltip_modifier_item_casino_drug_pill3_addiction_Description: It's time to stop.
+
 DOTA_Tooltip_ability_item_manta_arena: Manta Style
 DOTA_Tooltip_ability_item_manta_arena_Description: |-
   Active: Mirror Image - Creates %images_count% images of your hero that last %illusion_duration% seconds. Images deal %illusion_damage_percent_outgoing_tooltip%%% damage and take %illusion_damage_percent_incoming_tooltip%%% damage.
-  Passive: Fast Attack - Each attack increases your movement and attack speed for %fast_attack_duration% seconds. Buff can be stacked %fast_attack_max_stacks% times.
-
-  Yasha-based movement speed bonuses from multiple items do not stack.
+  {lc:item_yasha_Description}
+  {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_manta_arena_Note0: Has a 0.1 second cast time during which you are invulnerable.
 DOTA_Tooltip_ability_item_manta_arena_Note1: Many effects are removed upon using Manta.
 DOTA_Tooltip_ability_item_manta_arena_bonus_strength: +$str
@@ -382,6 +435,9 @@ DOTA_Tooltip_ability_item_manta_arena_illusion_damage_percent_outgoing_tooltip: 
 DOTA_Tooltip_ability_item_manta_arena_illusion_damage_percent_incoming_tooltip: '%IMAGE DAMAGE TAKEN:'
 DOTA_Tooltip_ability_item_manta_arena_bonus_attack_speed_buff: 'FAST ATTACK ATTACK SPEED:'
 DOTA_Tooltip_ability_item_manta_arena_movement_speed_percent_bonus_buff: '%FAST ATTACK MOVEMENT SPEED:'
+DOTA_Tooltip_modifier_item_manta_arena_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
+DOTA_Tooltip_modifier_item_manta_arena_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
+
 DOTA_Tooltip_ability_item_diffusal_blade_arena: Diffusal Blade I
 DOTA_Tooltip_ability_item_diffusal_blade_arena_Description: |-
   Active: Purge - If cast on an enemy, removes buffs from the target, roots it for %purge_root_duration% seconds and slows it for %purge_slow_duration% seconds. If cast on an ally, Purge removes most debuffs.
@@ -394,6 +450,11 @@ DOTA_Tooltip_ability_item_diffusal_blade_arena_feedback_mana_burn_illusion_pct: 
 DOTA_Tooltip_ability_item_diffusal_blade_arena_feedback_mana_drain_pct: '%MANA DRAIN:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_damage_per_burn_pct: '%MANA BURN TO DAMAGE:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_cast_range_tooltip: 'PURGE CAST RANGE:'
+DOTA_Tooltip_modifier_item_diffusal_blade_arena_root: Diffusal Blade Purge Rooted
+DOTA_Tooltip_modifier_item_diffusal_blade_arena_root_Description: You can't move.
+DOTA_Tooltip_modifier_item_diffusal_blade_arena_slow: Diffusal Blade Purge
+DOTA_Tooltip_modifier_item_diffusal_blade_arena_slow_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
+
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2: Diffusal Blade II
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_Description: |-
   Active: Purge - If cast on an enemy, removes buffs from the target, roots it for %purge_root_duration% seconds and slows it for %purge_slow_duration% seconds. If cast on an ally, Purge removes most debuffs.
@@ -469,9 +530,8 @@ DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   Active: Mirror Image - Creates %images_count% images of your hero that last %illusion_duration% seconds. Images deal %illusion_damage_percent_outgoing_tooltip%%% damage and take %illusion_damage_percent_incoming_tooltip%%% damage.
   Passive: Manabreak - Each attack burns %feedback_mana_burn% mana from the target, and deals %damage_per_burn_pct%%% of burned mana as pure damage. Also gives you %feedback_mana_drain_pct%%% of burned mana.
   Passive: Purge - Each attack has a %purge_chance_pct%%% chance to remove buffs from the target, root it for %purge_root_duration% seconds and slow it for %purge_slow_duration% seconds.
-  Passive: Fast Attack - Each attack increases your movement and attack speed for %fast_attack_duration% seconds. Buff can be stacked %fast_attack_max_stacks% times.
-
-  Yasha-based movement speed bonuses from multiple items do not stack.
+  {lc:item_yasha_Description}
+  {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_diffusal_style_Note0: Has a 0.1 second cast time during which you are invulnerable.
 DOTA_Tooltip_ability_item_diffusal_style_Note1: Many effects are removed upon using Manta.
 DOTA_Tooltip_ability_item_diffusal_style_bonus_strength: +$str
@@ -1271,7 +1331,7 @@ DOTA_Tooltip_ability_item_dark_blade_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_heavens_halberd_arena: Heaven's Halberd
 DOTA_Tooltip_ability_item_heavens_halberd_arena_Description: |-
   Active: Disarm - Prevents a target from attacking. Lasts %disarm_duration% seconds.
-  Passive: Lesser Maim - Each attack has a chance to slow the enemy's movement and attack speed for %maim_duration% seconds. Debuff can be stacked %maim_max_stacks% times.
+  {lc:item_sange_Description}
 
   Stacks diminishingly with other sources of Evasion.
 DOTA_Tooltip_ability_item_heavens_halberd_arena_bonus_evasion: '%+$evasion'
@@ -1426,7 +1486,10 @@ DOTA_Tooltip_ability_item_bottle_arena_health_restore: 'HEALTH RESTORED:'
 DOTA_Tooltip_ability_item_bottle_arena_mana_restore: 'MANA RESTORED:'
 DOTA_Tooltip_ability_item_bottle_arena_restore_time: 'DURATION:'
 DOTA_Tooltip_ability_item_blade_mail_arena: Blade Mail
-DOTA_Tooltip_ability_item_blade_mail_arena_Description: 'Active: Damage Return - Reflects any damage taken back to the unit that dealt the damage and reduces it. Lasts %duration% seconds.'
+'Active: Damage Return - Reflects any damage taken back to the unit that dealt the damage and reduces it. Lasts %duration% seconds.':
+  - DOTA_Tooltip_ability_item_blade_mail_arena_Description
+  - DOTA_Tooltip_ability_item_blade_mail_2_Description
+  - DOTA_Tooltip_ability_item_blade_mail_3_Description
 DOTA_Tooltip_ability_item_blade_mail_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_blade_mail_arena_bonus_armor: +$armor
 DOTA_Tooltip_ability_item_blade_mail_arena_bonus_intellect: +$int
@@ -1436,7 +1499,6 @@ DOTA_Tooltip_ability_item_blade_mail_arena_duration: 'DURATION:'
 DOTA_Tooltip_modifier_item_blade_mail_arena_active: Blade Mail
 DOTA_Tooltip_modifier_item_blade_mail_arena_active_Description: Returning damage to attacking units.
 DOTA_Tooltip_ability_item_blade_mail_2: Blade Mail II
-DOTA_Tooltip_ability_item_blade_mail_2_Description: 'Active: Damage Return - Reflects any damage taken back to the unit that dealt the damage and reduces it. Lasts %duration% seconds.'
 DOTA_Tooltip_ability_item_blade_mail_2_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_blade_mail_2_bonus_armor: +$armor
 DOTA_Tooltip_ability_item_blade_mail_2_bonus_intellect: +$int
@@ -1444,13 +1506,13 @@ DOTA_Tooltip_ability_item_blade_mail_2_reflected_damage_pct: '%RETURNED DAMAGE:'
 DOTA_Tooltip_ability_item_blade_mail_2_reduced_damage_pct: '%DAMAGE REDUCE:'
 DOTA_Tooltip_ability_item_blade_mail_2_duration: 'DURATION:'
 DOTA_Tooltip_ability_item_blade_mail_3: Blade Mail III
-DOTA_Tooltip_ability_item_blade_mail_3_Description: 'Active: Damage Return - Reflects any damage taken back to the unit that dealt the damage and reduces it. Lasts %duration% seconds.'
 DOTA_Tooltip_ability_item_blade_mail_3_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_blade_mail_3_bonus_armor: +$armor
 DOTA_Tooltip_ability_item_blade_mail_3_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_blade_mail_3_reflected_damage_pct: '%RETURNED DAMAGE:'
 DOTA_Tooltip_ability_item_blade_mail_3_reduced_damage_pct: '%DAMAGE REDUCE:'
 DOTA_Tooltip_ability_item_blade_mail_3_duration: 'DURATION:'
+
 DOTA_Tooltip_ability_item_sacred_blade_mail: Sacred Blade Mail
 DOTA_Tooltip_ability_item_sacred_blade_mail_Description: |-
   Active: Damage Return - Reflects any damage taken back to the unit that dealt the damage and reduces it. Lasts %duration% seconds.
@@ -1472,6 +1534,7 @@ DOTA_Tooltip_modifier_item_sacred_blade_mail_buff: Holy Warrior
 DOTA_Tooltip_modifier_item_sacred_blade_mail_buff_Description: Magic Immune
 DOTA_Tooltip_modifier_item_sacred_blade_mail_buff_cooldown: Holy Warrior Cooldown
 DOTA_Tooltip_modifier_item_sacred_blade_mail_buff_cooldown_Description: Holy Warrior is on cooldown and can't trigger now
+
 DOTA_Tooltip_ability_item_ultimate_scepter_arena: Ultimate Scepter
 DOTA_Tooltip_ability_item_ultimate_scepter_arena_Description: 'Passive: Ultimate Upgrade - Upgrades the ultimate, and some abilities, of certain heroes.'
 DOTA_Tooltip_ability_item_ultimate_scepter_arena_bonus_all: +$all
@@ -1479,44 +1542,52 @@ DOTA_Tooltip_ability_item_ultimate_scepter_arena_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_ultimate_scepter_arena_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_ultimate_scepter_arena_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_ultimate_scepter_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
+
 DOTA_Tooltip_ability_item_orb_of_essences: Orb of Essences
 DOTA_Tooltip_ability_item_orb_of_essences_bonus_all: +$all
+
 DOTA_Tooltip_ability_item_aether_lens_arena: Aether Lens I
 DOTA_Tooltip_ability_item_aether_lens_arena_Description: 'Passive: Increases spell cast range by %cast_range_bonus% and spell damage output by %spell_amp_pct%%%'
 DOTA_Tooltip_ability_item_aether_lens_arena_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_aether_lens_arena_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_aether_lens_arena_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_aether_lens_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
+
 DOTA_Tooltip_ability_item_aether_lens_2: Aether Lens II
 DOTA_Tooltip_ability_item_aether_lens_2_Description: 'Passive: Increases spell cast range by %cast_range_bonus% and spell damage output by %spell_amp_pct%%%'
 DOTA_Tooltip_ability_item_aether_lens_2_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_aether_lens_2_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_aether_lens_2_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_aether_lens_2_spell_amp_pct: '%SPELL DAMAGE AMP:'
+
 DOTA_Tooltip_ability_item_aether_lens_3: Aether Lens III
 DOTA_Tooltip_ability_item_aether_lens_3_Description: 'Passive: Increases spell cast range by %cast_range_bonus% and spell damage output by %spell_amp_pct%%%'
 DOTA_Tooltip_ability_item_aether_lens_3_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_aether_lens_3_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_aether_lens_3_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_aether_lens_3_spell_amp_pct: '%SPELL DAMAGE AMP:'
+
 DOTA_Tooltip_ability_item_aether_lens_4: Aether Lens IV
 DOTA_Tooltip_ability_item_aether_lens_4_Description: 'Passive: Increases spell cast range by %cast_range_bonus% and spell damage output by %spell_amp_pct%%%'
 DOTA_Tooltip_ability_item_aether_lens_4_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_aether_lens_4_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_aether_lens_4_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_aether_lens_4_spell_amp_pct: '%SPELL DAMAGE AMP:'
+
 DOTA_Tooltip_ability_item_aether_lens_5: Aether Lens V
 DOTA_Tooltip_ability_item_aether_lens_5_Description: 'Passive: Increases spell cast range by %cast_range_bonus% and spell damage output by %spell_amp_pct%%%'
 DOTA_Tooltip_ability_item_aether_lens_5_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_aether_lens_5_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_aether_lens_5_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_aether_lens_5_spell_amp_pct: '%SPELL DAMAGE AMP:'
+
 DOTA_Tooltip_ability_item_wand_of_midas: Wand of Midas
 DOTA_Tooltip_ability_item_wand_of_midas_Description: 'Active: Gold Charge - Instantly restores health and mana based on the number of charges stored. Gains a charge (max %max_charges%) and gives owner some gold whenever whenever a nearby enemy uses an ability.'
 DOTA_Tooltip_ability_item_wand_of_midas_bonus_all: +$all
 DOTA_Tooltip_ability_item_wand_of_midas_gold: 'GOLD PER CAST:'
 DOTA_Tooltip_ability_item_wand_of_midas_restore_per_charge: 'HEALTH/MANA PER CHARGE:'
 DOTA_Tooltip_ability_item_wand_of_midas_radius: 'RADIUS:'
+
 DOTA_Tooltip_ability_item_mekansm_arena: Mekansm
 DOTA_Tooltip_ability_item_mekansm_arena_Description: |-
   Active: Restore - Heals %heal_amount% health and gives +%heal_bonus_armor% armor to allied units in a %radius% radius.
@@ -1531,6 +1602,7 @@ DOTA_Tooltip_ability_item_mekansm_arena_aura_bonus_armor: 'AURA ARMOR:'
 DOTA_Tooltip_ability_item_mekansm_arena_heal_amount: 'RESTORE HEAL:'
 DOTA_Tooltip_modifier_item_mekansm_arena_effect: Guardian Aura
 DOTA_Tooltip_modifier_item_mekansm_arena_effect_Description: Regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health per second. Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+
 DOTA_Tooltip_ability_item_mekansm_2: Mekansm II
 DOTA_Tooltip_ability_item_mekansm_2_Description: |-
   Active: Restore - Heals %heal_amount% health and gives +%heal_bonus_armor% armor to allied units in a %radius% radius.
@@ -1543,6 +1615,7 @@ DOTA_Tooltip_ability_item_mekansm_2_radius: 'AURA/RESTORE RADIUS:'
 DOTA_Tooltip_ability_item_mekansm_2_aura_health_regen: 'AURA HEALTH REGEN:'
 DOTA_Tooltip_ability_item_mekansm_2_aura_bonus_armor: 'AURA ARMOR:'
 DOTA_Tooltip_ability_item_mekansm_2_heal_amount: 'RESTORE HEAL:'
+
 DOTA_Tooltip_ability_item_guardian_greaves_arena: Guardian Greaves
 DOTA_Tooltip_ability_item_guardian_greaves_arena_Description: |-
   Active: Mend - Restores %replenish_health% health and %replenish_mana% mana to nearby allies, and removes most negative buffs and stuns from them.
@@ -1562,6 +1635,7 @@ DOTA_Tooltip_ability_item_guardian_greaves_arena_aura_health_regen_bonus: 'AURA 
 DOTA_Tooltip_ability_item_guardian_greaves_arena_aura_armor_bonus: 'AURA BOOST ARMOR:'
 DOTA_Tooltip_ability_item_guardian_greaves_arena_replenish_health: 'MEND HEAL:'
 DOTA_Tooltip_ability_item_guardian_greaves_arena_replenish_mana: 'MEND MANA RESTORE:'
+
 DOTA_Tooltip_Ability_item_quelling_fury: Quelling Fury
 DOTA_Tooltip_ability_item_quelling_fury_Description: |-
   Active: Chop Tree/Ward - Destroy a target tree or ward.
@@ -1576,6 +1650,7 @@ DOTA_Tooltip_ability_item_quelling_fury_bonus_mana_regen_pct: '%+$mana_regen'
 DOTA_Tooltip_ability_item_quelling_fury_cleave_damage_percent: '%CLEAVE DAMAGE:'
 DOTA_Tooltip_ability_item_quelling_fury_quelling_bonus_damage_pct: '%QUELL DAMAGE:'
 DOTA_Tooltip_ability_item_quelling_fury_cast_range_tooltip: 'CHOP CAST RANGE:'
+
 DOTA_Tooltip_Ability_item_battlefury_arena: Battle Fury
 DOTA_Tooltip_ability_item_battlefury_arena_Description: |-
   Active: Chop Tree/Ward - Destroy a target tree or ward.
@@ -1590,6 +1665,7 @@ DOTA_Tooltip_ability_item_battlefury_arena_bonus_mana_regen_pct: '%+$mana_regen'
 DOTA_Tooltip_ability_item_battlefury_arena_cleave_damage_percent: '%CLEAVE DAMAGE:'
 DOTA_Tooltip_ability_item_battlefury_arena_quelling_bonus_damage_pct: '%QUELL DAMAGE:'
 DOTA_Tooltip_ability_item_battlefury_arena_cast_range_tooltip: 'CHOP CAST RANGE:'
+
 DOTA_Tooltip_Ability_item_elemental_fury: Elemental Fury
 DOTA_Tooltip_ability_item_elemental_fury_Description: |-
   Active: Chop Tree/Ward - Destroy a target tree or ward.

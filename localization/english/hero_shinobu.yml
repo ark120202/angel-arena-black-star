@@ -1,0 +1,77 @@
+npc_arena_hero_shinobu: Shinobu
+
+DOTA_Tooltip_ability_shinobu_vampire_blood: Vampire Blood
+DOTA_Tooltip_ability_shinobu_vampire_blood_Description: |-
+  Kiss-Shot Acerola-Orion Heart-Under-Blade is a legendary vampire, she can't regenerate her health using any item or ability and hasn't passive regeneration, but instead she has lifesteal and bonuses based on her current health.
+
+  [LEVEL 1] (0% HP or more):
+  ~LIFESTEAL:%lifesteal_pct_lvl1%%
+  ~ATTACK SPEED: %bonus_attack_speed_lvl1%
+  ~MOVEMENT SPEED: %bonus_move_speed_lvl1%
+
+  [LEVEL 2] (%hp_mark_pct_lvl2%%% HP or more):
+  ~LIFESTEAL:%lifesteal_pct_lvl2%%
+  ~ATTACK SPEED: %bonus_attack_speed_lvl2%
+  ~MOVEMENT SPEED: %bonus_move_speed_lvl2%
+
+  [LEVEL 3] (%hp_mark_pct_lvl3%%% HP or more):
+  ~LIFESTEAL:%lifesteal_pct_lvl3%%
+  ~ATTACK SPEED: %bonus_attack_speed_lvl3%
+  ~MOVEMENT SPEED: %bonus_move_speed_lvl3%
+
+  [LEVEL 4] (%hp_mark_pct_lvl4%%% HP or more):
+  ~LIFESTEAL:%lifesteal_pct_lvl4%%
+  ~ATTACK SPEED: %bonus_attack_speed_lvl4%
+  ~MOVEMENT SPEED: %bonus_move_speed_lvl4%
+DOTA_Tooltip_ability_shinobu_vampire_blood_Note0: Shinobu respawns and starts duel with 50% health
+DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl1: Vampire Blood - Level 1
+DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl1_Description: |-
+  +%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack speed
+  +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% movement speed
+DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl2: Vampire Blood - Level 2
+DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl2_Description: |-
+  +%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack speed
+  +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% movement speed
+DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl3: Vampire Blood - Level 3
+DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl3_Description: |-
+  +%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack speed
+  +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% movement speed
+DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl4: Vampire Blood - Level 4
+DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl4_Description: |-
+  +%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack speed
+  +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% movement speed
+
+DOTA_Tooltip_ability_shinobu_eat_oddity: Eat Oddity
+DOTA_Tooltip_ability_shinobu_eat_oddity_Description: 'Shinobu jumps to a unit, eats it and gains part of it''s health for some time and increased gold.'
+DOTA_Tooltip_ability_shinobu_eat_oddity_bonus_gold_pct: '%BONUS GOLD:'
+DOTA_Tooltip_ability_shinobu_eat_oddity_buff_duration: 'BUFF DURATION:'
+DOTA_Tooltip_ability_shinobu_eat_oddity_buff_health_pct: '%BONUS HEALTH:'
+DOTA_Tooltip_modifier_shinobu_eat_oddity_buff: Eat Oddity bonus health
+DOTA_Tooltip_modifier_shinobu_eat_oddity_buff_Description: Max Health increased by %dMODIFIER_PROPERTY_HEALTH_BONUS%
+
+DOTA_Tooltip_ability_shinobu_kokorowatari: Kokorowatari
+DOTA_Tooltip_ability_shinobu_kokorowatari_Description: 'When Shinobu kills non-hero unit, she creates a soul of this unit. This soul is invulnerable and lasts %soul_duration% seconds. Also, increases Shinobu''s attack range and gives her chance to kill creep with one hit.'
+DOTA_Tooltip_ability_shinobu_kokorowatari_bonus_attack_range: 'BONUS ATTACK RANGE:'
+DOTA_Tooltip_ability_shinobu_kokorowatari_chance_to_kill: '%CHANCE TO KILL CREEP:'
+DOTA_Tooltip_ability_shinobu_kokorowatari_soul_duration: 'SOUL DURATION:'
+npc_shinobu_soul: Soul
+
+DOTA_Tooltip_ability_shinobu_yumewatari_lua: Yumewatari
+DOTA_Tooltip_ability_shinobu_yumewatari_lua_Description: 'Shinobu ressurects selected soul with level below %max_ghost_level%. Also, increases Shinobu''s attack damage.'
+DOTA_Tooltip_ability_shinobu_yumewatari_lua_bonus_damage: +$damage
+DOTA_Tooltip_ability_shinobu_yumewatari_lua_max_ghost_level: 'MAX SOUL LEVEL:'
+
+DOTA_Tooltip_ability_shinobu_hide_in_shadows: Hide in Shadows
+DOTA_Tooltip_ability_shinobu_hide_in_shadows_Description: 'Shinobu hides herself in shadows of ally heroes, becoming immune to detection. Attacking will reveal Shinobu. If nearby ally dies, while she is hidden, Shinobu recoveres all her health, becomes magic immune, gets bonus damage, movespeed and evasion chance.'
+DOTA_Tooltip_ability_shinobu_hide_in_shadows_ally_radius: 'ALLY RADIUS:'
+DOTA_Tooltip_ability_shinobu_hide_in_shadows_fade_time: 'FADE TIME:'
+DOTA_Tooltip_ability_shinobu_hide_in_shadows_rage_duration: 'RAGE DURATION:'
+DOTA_Tooltip_ability_shinobu_hide_in_shadows_rage_bonus_damage: 'RAGE BONUS DAMAGE:'
+DOTA_Tooltip_ability_shinobu_hide_in_shadows_rage_bonus_speed_const: 'RAGE BONUS MOVEMENT SPEED:'
+DOTA_Tooltip_ability_shinobu_hide_in_shadows_rage_bonus_evasion_chance: '%RAGE BONUS EVASION CHANCE:'
+DOTA_Tooltip_modifier_shinobu_hide_in_shadows_fade: Hide in Shadows Fade
+DOTA_Tooltip_modifier_shinobu_hide_in_shadows_fade_Description: Invisibility temporary is not available
+DOTA_Tooltip_modifier_shinobu_hide_in_shadows_invisibility: Hide in Shadows Invisibility
+DOTA_Tooltip_modifier_shinobu_hide_in_shadows_invisibility_Description: 'Immune to detection, attacking will reveal Shinobu'
+DOTA_Tooltip_modifier_shinobu_hide_in_shadows_rage: Hide in Shadows Rage
+DOTA_Tooltip_modifier_shinobu_hide_in_shadows_rage_Description: 'Magic immune, attack damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%, movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, evasion increased by %dMODIFIER_PROPERTY_EVASION_CONSTANT%%%.'

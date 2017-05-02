@@ -1,0 +1,35 @@
+DOTA_Tooltip_ability_faceless_void_time_walk_arena_Description: 'Совершает рывок к указанной точке и восстанавливает здоровье, потерянное за последние %backtrack_time% секунды. После использования шанс Backtrack повышается.'
+DOTA_Tooltip_ability_faceless_void_time_walk_arena_Note0: Во время рывка герой неуязвим.
+DOTA_Tooltip_ability_faceless_void_time_walk_arena_tooltip_range: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
+DOTA_Tooltip_ability_faceless_void_time_walk_arena_dodge_chance_time_walk_pct: '%ДОП. ШАНС УКЛОНЕНИЯ:'
+DOTA_Tooltip_ability_faceless_void_time_walk_arena_dodge_chance_time_walk_duration: 'ДЛИТЕЛЬНОСТЬ ДОП. ШАНСА:'
+DOTA_Tooltip_modifier_faceless_void_time_walk_arena_backtrack_Description: Шанс на Backtrack повышен.
+
+DOTA_Tooltip_ability_faceless_void_time_dilation_arena_Description: 'Faceless Void на %duration% секунд замедляет течение времени для всех врагов вокруг себя, при этом замораживая перезарядку их способностей и замедляя их передвижение и атаку на %move_speed_slow%%% и %attack_speed_slow% за каждую замороженную способность. Если способность не на перезарядке, то способность уйдёт в перезарядку, но юнит не будет замедлен за неё.'
+DOTA_Tooltip_ability_faceless_void_time_dilation_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_faceless_void_time_dilation_arena_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_faceless_void_time_dilation_arena_move_speed_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ ЗА СПОСОБНОСТЬ:'
+DOTA_Tooltip_ability_faceless_void_time_dilation_arena_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ ЗА СПОСОБНОСТЬ:'
+DOTA_Tooltip_modifier_faceless_void_time_dilation_arena_freeze_Description: Время перезарядки способностей замороженно
+DOTA_Tooltip_modifier_faceless_void_time_dilation_arena_slow: Замедление от Time Dilation
+DOTA_Tooltip_modifier_faceless_void_time_dilation_arena_slow_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
+DOTA_Tooltip_modifier_time_dilation_cooldown_freeze_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, а скорость атаки — на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+
+DOTA_Tooltip_ability_faceless_void_time_lock_arena_Description: 'При атаке появляется шанс остановить время для вражеского юнита, оглушая его, нанося дополнительный урон и увеличивая время перезарядки случайной способности юнита.'
+DOTA_Tooltip_ability_faceless_void_time_lock_arena_Note0: 'Оглушает врагов, невосприимчивых к заклинаниям.'
+DOTA_Tooltip_ability_faceless_void_time_lock_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_faceless_void_time_lock_arena_duration_creep: 'ДЛИТЕЛЬНОСТЬ НА КРИПАХ:'
+DOTA_Tooltip_ability_faceless_void_time_lock_arena_chance_pct: '%ШАНС:'
+DOTA_Tooltip_ability_faceless_void_time_lock_arena_bonus_damage: 'ДОПОЛНИТЕЛЬНЫЙ УРОН:'
+DOTA_Tooltip_ability_faceless_void_time_lock_arena_bonus_cooldown: 'УВЕЛИЧЕНИЕ ПЕРЕЗАРЯДКИ:'
+DOTA_Tooltip_modifier_faceless_void_time_lock_arena_stun_Description: Faceless Void заморозил вас во времени!
+
+DOTA_Tooltip_ability_faceless_void_time_freeze_Description: 'Создает прореху в пространстве и времени, заключая всех врагов на карте и юнитов рядом с ними в сферу, при этом сильно увеличивая скорость передвижения Faceless Void. Только Faceless Void и подконтрольные ему существа остаются нетронутыми ее силой. Раскрывает невидимость внутри сферы.'
+DOTA_Tooltip_ability_faceless_void_time_freeze_aghanim_description: Основной эффект не накладывается на союзников (но они всё равно будут остановлены если попадут в сферу).
+DOTA_Tooltip_ability_faceless_void_time_freeze_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_faceless_void_time_freeze_radius_pfx: 'РАДИУС ПОИСКА ЮНИТОВ:'
+DOTA_Tooltip_modifier_faceless_void_time_freeze_tooltip_Description: Заперт во временном пространстве. Не может двигаться и действовать.
+
+DOTA_Tooltip_ability_faceless_void_backtrack_arena_Description: 'Faceless Void искажает время и пространство, чтобы уклониться от физических и магических атак.'
+DOTA_Tooltip_ability_faceless_void_backtrack_arena_dodge_chance_pct: '%ШАНС УКЛОНЕНИЯ:'
+DOTA_Tooltip_ability_faceless_void_backtrack_arena_Note0: 'Способности, дающие эффект True Strike, не работают против этой способности.'

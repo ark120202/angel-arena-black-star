@@ -13,7 +13,7 @@ function SendMissiles(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	local homing_missile_arena = caster:FindAbilityByName("homing_missile_arena")
+	local homing_missile_arena = caster:FindAbilityByName("gyrocopter_homing_missile_arena")
 	if target:IsHero() and homing_missile_arena and homing_missile_arena:GetLevel() > 0 then
 		caster:SetCursorCastTarget(target)
 		homing_missile_arena:OnSpellStart()

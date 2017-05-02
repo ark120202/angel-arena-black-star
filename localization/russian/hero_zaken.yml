@@ -1,0 +1,42 @@
+npc_arena_hero_zaken_hype: 'Закен мастерски владеет семью шпагами одновременно. Вращая их вокруг себя и опутывая врагов сетью, он крушит их в салат. А если они уцелели, то вызывает своих верных матросов, чтобы они добили ослабевшего врага.'
+npc_arena_hero_zaken_bio: |-
+  Закен - легендарный король пиратов. С самого детства его родителей убили солдаты. Мальчик чудом уцелел и обитал в трущобах одного из многочисленных портовых городов. У него был врожденный талант - он мог поднимать в воздух предметы и манипулировать ими. Закен всегда грезил морскими путешествиями, наблюдая за торговыми судами в порту. Но однажды появился корабль, резко отличавшийся от всех, ранеее видимых мальчишкой. Ветер колыхал черные изорванные паруса, а флаг носил изображение человеческого черепа. Судно открыло огонь по пристани, в щепки разрушая прибрежные харчевни и лавки. Люди в панике бежали, оставив все свое добро. Когда пристань опустела, корабль вошел в бухту, и с его борта сошли пираты, собирая все ценности, брошенные купцами.
+  Чудом выживший Закен с восхищнием наблюдал за морскими разбойниками. Чтобы попасть на корабль, он забрался в большой ящик, набитый мехами. Пираты подхватили Закена вместе с ящиком и отчалили.
+  Вскоре Закена нашли. Мальчишку не стали выбрасывать за борт и дали шанс показать себя. Многие годы он странствовал по морю на корабле "Мертвая мечта". Как всякий юнга, он начал с драяния палуб, но, показав себя в бою, он заслужил уважение членов команды и капитана. Его телекинетические способности позволяли ему виртуозно обращаться сразу с семью шпагами. В юном возрасте уже никто не мог совладать с его искусством на равных, в честном бою. Вскоре он дослужился и до боцмана и стал правой рукой капитана, но юнцу этого было мало. Ему хотелось свой корабль. Но однажды над всем пиратством нависла угроза исчезновения. Большая торговая компания, путем вложения огромных средств, построила огромный военный флот, чтобы покончить с разбоем в море раз и навсегда. И тогда семь королей пиратов собрались в тайной бухте Мрачного Левиафана, чтобы обсудить контрмеры. Было решено собрать свой флот и дать бой торговой компании. Этот бой решил бы, кто будет править морями. И два флота схлестнулись в Карибском заливе. Судна друг за другом шли на дно, и было ясно, что поражение торговой компании неизбежно. Но море разверзнулось, и огромное нечто, покрытое зеленой кожей, опрокинуло весь флот пиратов. "Левиафан!" - кричали моряки.  Огромные щупальца утаскивали корабли на дно. Немногим суднам удалось уцелеть. Среди них оказалось и судно Закена. Капитан был убит во время сражения, поэтому Закен занял его место. Никто не оспаривал это, ведь матросы понимали, что сражаться с ним бессмысленно. Он показал себя отличным командиром. Собрав остатки пиратов, разбросанных по свету, он провозгласил себя последним Королем пиратов и поклялся покончить с компанией.
+
+DOTA_Tooltip_ability_zaken_stitching_strikes_Description: 'Закен обрушивает на цель шквал клинков, обездвиживая и нанося ей урон в течение %duration% секунд.'
+DOTA_Tooltip_ability_zaken_stitching_strikes_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_zaken_stitching_strikes_max_helath_damage_pct: '%УРОН ОТ МАКСИМАЛЬНОГО ЗДОРОВЬЯ:'
+DOTA_Tooltip_modifier_zaken_stitching_strikes: Stitching Strikes
+DOTA_Tooltip_modifier_zaken_stitching_strikes_Description: Получает урон. Не может перемещаться и телепортироваться
+
+DOTA_Tooltip_ability_zaken_last_chance_Description: 'Когда Закен атакует, он имеет шанс нанести критический урон, оглушение, обездвиживание или безмолвие, если здоровье противника опустится ниже требуемого процента.'
+DOTA_Tooltip_ability_zaken_last_chance_crit_chance_pct: '%ШАНС КРИТА:'
+DOTA_Tooltip_ability_zaken_last_chance_crit_damage_pct: '%КРИТИЧЕСКИЙ УРОН:'
+DOTA_Tooltip_ability_zaken_last_chance_crit_health_pct: '%ПОРОГ ЗДОРОВЬЯ ДЛЯ КРИТА:'
+DOTA_Tooltip_ability_zaken_last_chance_stun_chance_pct: '%ШАНС ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_zaken_last_chance_stun_health_pct: '%ПОРОГ ЗДОРОВЬЯ ДЛЯ ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_zaken_last_chance_stun_duration: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_zaken_last_chance_root_chance_pct: '%ШАНС ОБЕЗДВИЖИВАНИЯ:'
+DOTA_Tooltip_ability_zaken_last_chance_root_health_pct: '%ПОРОГ ЗДОРОВЬЯ ДЛЯ ОБЕЗДВИЖИВАНИЯ:'
+DOTA_Tooltip_ability_zaken_last_chance_root_duration: 'ДЛИТЕЛЬНОСТЬ ОБЕЗДВИЖИВАНИЯ:'
+DOTA_Tooltip_ability_zaken_last_chance_silence_chance_pct: '%ШАНС БЕЗМОЛВИЯ:'
+DOTA_Tooltip_ability_zaken_last_chance_silence_health_pct: '%ПОРОГ ЗДОРОВЬЯ ДЛЯ БЕЗМОЛВИЯ:'
+DOTA_Tooltip_ability_zaken_last_chance_silence_duration: 'ДЛИТЕЛЬНОСТЬ БЕЗМОЛВИЯ:'
+
+DOTA_Tooltip_ability_zaken_summon_sailors_Description: 'Закен призывает своих верных матросов, которые будут выполнять его приказы.'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailors_amount: 'КОЛИЧЕСТВО МАТРОСОВ:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_duration: 'ДЛИТЕЛЬНОСТЬ ЖИЗНИ:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_health: 'ЗДОРОВЬЕ:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_damage: 'УРОН:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_armor: 'БРОНЯ:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_health_regen: 'РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_bounty: 'НАГРАДА ЗА УБИЙСТВО:'
+
+DOTA_Tooltip_ability_zaken_sword_control_Description: 'Закен приказывает всем своим мечам летать вокруг него, из за чего он будет разоружён, но вместо этого он атакует всех врагов вокруг себя в %radius_tooltip% радиусе. Кроме того, эти мечи будут защищать его от наносимого ему урона.'
+DOTA_Tooltip_ability_zaken_sword_control_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_zaken_sword_control_incoming_damage_reduction: '%УМЕНЬШЕНИЕ ПОЛУЧАЕМОГО УРОНА:'
+DOTA_Tooltip_ability_zaken_sword_control_attack_time: 'ВРЕМЯ МЕЖДУ АТАКАМИ:'
+DOTA_Tooltip_ability_zaken_sword_control_radius_tooltip: 'РАДИУС:'
+DOTA_Tooltip_modifier_zaken_sword_control: Sword Control
+DOTA_Tooltip_modifier_zaken_sword_control_Description: 'Разоружет, но вместо этого атакует всех врагов вокруг себя. Получаемый урон уменьшен на %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%'

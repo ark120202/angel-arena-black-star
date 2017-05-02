@@ -1,0 +1,38 @@
+npc_arena_hero_mirratie: Mirratie
+
+DOTA_Tooltip_ability_mirratie_snagshot: Snagshot
+DOTA_Tooltip_ability_mirratie_snagshot_Description: 'Fires a net at the target location, trapping enemy units in the area for some time, preventing them from going invisible, moving or blinking. Also interrupts any channeled spells.'
+DOTA_Tooltip_ability_mirratie_snagshot_duration: 'DURATION:'
+DOTA_Tooltip_ability_mirratie_snagshot_radius: 'RADIUS:'
+DOTA_Tooltip_ability_mirratie_snagshot_tooltip_range: 'RANGE:'
+
+DOTA_Tooltip_ability_mirratie_smoke_out: Smoke Out
+DOTA_Tooltip_ability_mirratie_smoke_out_Description: 'Mirratie leaps to the target point while leaving a smoke screen that slows, blinds and causing units in it to miss most attacks.'
+DOTA_Tooltip_ability_mirratie_smoke_out_radius: 'SMOKE RADIUS:'
+DOTA_Tooltip_ability_mirratie_smoke_out_duration: 'DURATION:'
+DOTA_Tooltip_ability_mirratie_smoke_out_move_slow_pct: '%SLOW:'
+DOTA_Tooltip_ability_mirratie_smoke_out_miss_chance_pct: '%MISS CHANCE:'
+DOTA_Tooltip_modifier_mirratie_smoke_out_debuff: Smoke Out
+DOTA_Tooltip_modifier_mirratie_smoke_out_debuff_Description: Blind. Missing %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% of attacks. Move Speed slowed.
+
+DOTA_Tooltip_ability_mirratie_sixth_sense: Sixth Sense
+DOTA_Tooltip_ability_mirratie_sixth_sense_Description: |-
+  Mirratie concentrates on her senses, allowing her to feel enemies, without seeing them, evade enemy attacks and dodge enemy spells.
+
+  This ability 
+DOTA_Tooltip_ability_mirratie_sixth_sense_radius: 'RADIUS:'
+DOTA_Tooltip_ability_mirratie_sixth_sense_bonus_evasion: '%+$evasion'
+DOTA_Tooltip_ability_mirratie_sixth_sense_dodge_chance_pct: '%DODGE CHANCE:'
+
+DOTA_Tooltip_ability_mirratie_impaling_shot: Impaling Shot
+DOTA_Tooltip_ability_mirratie_impaling_shot_Description: |-
+  Mirratie fires her arbalest at her target, dealing massive damage as well as stunning them. The shot will hit any other enemy hero unit behind her target dealing reduced damage and stunning for decreased time.
+DOTA_Tooltip_ability_mirratie_impaling_shot_aghanim_description: 'Changes damage type to Pure, and allows it to slice through spell immunity, increases cast range, stun duration and damage.'
+DOTA_Tooltip_ability_mirratie_impaling_shot_channel_time: 'CHANNEL DURATION:'
+DOTA_Tooltip_ability_mirratie_impaling_shot_cast_range: 'RANGE:'
+DOTA_Tooltip_ability_mirratie_impaling_shot_impale_range: 'IMPALE RANGE:'
+DOTA_Tooltip_ability_mirratie_impaling_shot_impale_effect_pct: '%IMPALE DAMAGE / STUN DURATION:'
+DOTA_Tooltip_ability_mirratie_impaling_shot_stun_duration: 'STUN DURATION:'
+DOTA_Tooltip_ability_mirratie_impaling_shot_cast_range_scepter: 'SCEPTER RANGE:'
+DOTA_Tooltip_ability_mirratie_impaling_shot_stun_duration_scepter: 'SCEPTER STUN DURATION:'
+DOTA_Tooltip_ability_mirratie_impaling_shot_damage_scepter: 'SCEPTER DAMAGE:'

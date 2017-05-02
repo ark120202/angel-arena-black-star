@@ -1,6 +1,6 @@
 "DOTAAbilities"
 {
-	"rocket_barrage_arena"
+	"gyrocopter_rocket_barrage_arena"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -54,7 +54,7 @@
 		{
 			"ApplyModifier"
 			{
-				"ModifierName"	"modifier_rocket_barrage_arena"
+				"ModifierName"	"modifier_gyrocopter_rocket_barrage_arena"
 				"Target"		"CASTER"
 			}
 			
@@ -69,7 +69,7 @@
 		{
 			"RemoveModifier"
 			{
-				"ModifierName"	"modifier_rocket_barrage_arena"
+				"ModifierName"	"modifier_gyrocopter_rocket_barrage_arena"
 				"Target"
 				{
 					"Center"			"CASTER"
@@ -102,7 +102,7 @@
 			
 		"Modifiers"
 		{
-			"modifier_rocket_barrage_arena"
+			"modifier_gyrocopter_rocket_barrage_arena"
 			{
 				"IsHidden"			"1"
 				"IsPurgable"		"0"
@@ -121,7 +121,7 @@
 		}	
 	}
 
-	"homing_missile_arena"
+	"gyrocopter_homing_missile_arena"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -238,14 +238,14 @@
 			
 			"ApplyModifier"
 			{
-				"ModifierName"	"modifier_homing_missile_target"
+				"ModifierName"	"modifier_gyrocopter_homing_missile_target"
 				"Target"		"TARGET"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_homing_missile_arena"
+			"modifier_gyrocopter_homing_missile_arena"
 			{
 				"IsHidden"				"1"
 				"OnCreated"
@@ -283,7 +283,7 @@
 				}
 			}
 			
-			"modifier_homing_missile_target"
+			"modifier_gyrocopter_homing_missile_target"
 			{
 				"IsPurgable"		"0"
 				"IsHidden"			"1"
@@ -295,7 +295,7 @@
 		}
 	}
 
-	"flak_cannon_arena"
+	"gyrocopter_flak_cannon_arena"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -384,7 +384,7 @@
 		
 		"Modifiers"
 		{
-			"modifier_flak_cannon_arena"
+			"modifier_gyrocopter_flak_cannon_arena"
 			{
 				"OnAttack"
 				{
@@ -427,7 +427,7 @@
 				}
 			}
 
-			"modifier_flak_cannon_scepter"
+			"modifier_gyrocopter_flak_cannon_scepter"
 			{
 				"IsHidden"			"1"
 				"Passive"			"1"
@@ -444,7 +444,7 @@
 		}
 	}
 
-	"call_down_arena"
+	"gyrocopter_call_down_arena"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -543,7 +543,7 @@
 		
 			"CreateThinker"
 			{
-				"ModifierName"	"modifier_call_down_marker_first"
+				"ModifierName"	"modifier_gyrocopter_call_down_marker_first"
 				"Target"		"POINT"	
 			}
 			
@@ -556,7 +556,7 @@
 		
 		"Modifiers"
 		{
-			"modifier_call_down_marker_first"
+			"modifier_gyrocopter_call_down_marker_first"
 			{
 				"IsHidden"				"1"
 				"Duration"	"%missile_delay"
@@ -636,13 +636,13 @@
 					
 					"CreateThinker"
 					{
-						"ModifierName"	"modifier_call_down_marker_second"
+						"ModifierName"	"modifier_gyrocopter_call_down_marker_second"
 						"Target"		"TARGET"	
 					}
 				}
 			}
 		
-			"modifier_call_down_marker_second"
+			"modifier_gyrocopter_call_down_marker_second"
 			{
 				"IsHidden"				"1"
 				"Duration"	"%missile_delay"

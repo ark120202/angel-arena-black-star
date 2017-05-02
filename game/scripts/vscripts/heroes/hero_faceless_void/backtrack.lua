@@ -20,7 +20,7 @@ function BacktrackHeal( keys )
 	local ability = keys.ability
 	local faceless_void_time_walk_arena = caster:FindAbilityByName("faceless_void_time_walk_arena")
 	local chance = ability:GetLevelSpecialValueFor("dodge_chance_pct", ability:GetLevel() - 1)
-	if (faceless_void_time_walk_arena and caster:HasModifier("modifier_time_walk_backtrack_increased_arena")) then
+	if (faceless_void_time_walk_arena and caster:HasModifier("modifier_faceless_void_time_walk_arena_backtrack")) then
 		chance = chance + faceless_void_time_walk_arena:GetLevelSpecialValueFor("dodge_chance_time_walk_pct", faceless_void_time_walk_arena:GetLevel() - 1)
 	end
 

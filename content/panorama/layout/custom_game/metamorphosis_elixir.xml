@@ -17,33 +17,66 @@
 				<Panel class="HeroesPanelElement" id="HeroesByAttributes_2" />
 			</Panel>
 		</snippet>
+		<snippet name="HeroCard">
+			<Panel class="HeroCard Showing" hittest="false">
+				<Panel id="Contents" hittest="false">
+					<DOTAHeroImage id="HeroImage" heroimagestyle="portrait" hittest="false" />
+					<DOTAHeroMovie id="HeroMovie" hittest="false" />
+					<Label id="HeroName" hittest="false" />
+					<Image id="LockedIcon" hittest="false" />
+					<DOTAScenePanel id="HeroChangedBurst" map="scenes/hud/levelupburst" hittest="false" />
+					<Panel id="LinkedHeroesGroupRow" hittest="false" />
+				</Panel>
+				<Panel id="BannedOverlay" hittest="false" />
+				<!-- <Panel id="SuggestedOverlay" class="CardStatusOverlay" hittest="false">
+					<Label text="#DOTA_HeroCard_Suggested"/>
+				</Panel>
+				<Panel id="SuggestedBanOverlay" class="CardStatusOverlay" hittest="false">
+					<Label text="#DOTA_HeroCard_SuggestedBan"/>
+				</Panel>
+				<Panel id="AllHeroChallengeOverlay" class="CardStatusOverlay" hittest="false">
+					<Label text="#DOTA_HeroCard_AllHeroChallenge"/>
+				</Panel>
+				<Panel id="DailyHeroChallengeOverlay" class="CardStatusOverlay" hittest="false">
+					<Panel id="BattlePassIcon"/>
+					<Label text="#DOTA_HeroCard_DailyQuest"/>
+				</Panel> -->
+				<Panel id="HitTarget" acceptsinput="true" hittest="true" />
+				<Panel id="HitBlocker" hittest="true"/>
+			</Panel>
+		</snippet>
 	</snippets>
 	<Panel hittest="false" class="MetamorphosisElixirBase">
 		<Panel hittest="false" id="MainBox">
 			<Panel id="HeroListBasePanel">
 				<Panel id="HeroListControls">
 					<Panel id="HeroListControlsGroup1" class="HeroListControlsGroup">
-						<Button class="SmallTextButton" id="SwitchTabButton" onactivate="SwitchTab();">
-							<Panel class="SmallTextButtonContainer">
-								<Image hittest="false" src="file://{resources}/images/custom_game/hero_selection/hero_swich.png" />
-								<Label id="SwitchTabButtonLabel" hittest="false" text="#hero_selection_button_switch" />
-							</Panel>
+						<Button id="SwitchHeroesButton" class="PickButton" onactivate="SwitchTab()" >
+							<Label text="#hero_selection_heroes_default" id="SwitchHeroesDefault" />
+							<Panel />
+							<Label text="#hero_selection_heroes_new" id="SwitchHeroesNew" />
 						</Button>
 						<Label id="SelectedHeroOverview" />
 					</Panel>
 					<Panel id="HeroListControlsGroup2" class="HeroListControlsGroup">
-						<Button id="SelectedHeroSelectButton" onactivate="SelectHero();" hittestchildren="false">
+						<Button id="SelectedHeroSelectButton" onactivate="SelectHero()" hittestchildren="false">
 							<Label id="SelectedHeroSelectLabel" text="#hero_selection_button_select_hero" />
 							<Label id="SelectedHeroLockLabel" text="#hero_selection_lock" />
 							<Label id="SelectedHeroUnlockLabel" text="#hero_selection_unlock" />
-							<Label id="SelectedHeroSelectHeroName" text="#npc_dota_hero_abaddon" />
+							<Label id="SelectedHeroBanLabel" text="#DOTA_Hero_Selection_BanTitle" />
+							<Label id="SelectedHeroSelectHeroName" />
 							<Panel id="SelectedHeroLinkedHeroPanel" >
 								<Label id="SelectedHeroLinkedLabel" text="#hero_selection_linked_hero" />
 								<Label id="SelectedHeroLinkedHero" />
 							</Panel>
 						</Button>
+						<Button id="RandomButton" class="PickButton" onactivate="RandomHero()" >
+							<Panel />
+							<Label text="#random" />
+						</Button>
 					</Panel>
 					<Panel id="HeroListControlsGroup3" class="HeroListControlsGroup">
+						<Image id="HeroPreviewEnterButton" src="s2r://panorama/images/control_icons/return_to_game_png.vtex" onactivate="ToggleHeroPreviewHeroList(true)"/>
 						<Panel id="SelectedHeroAttributesPanel">
 							<Panel class="SelectedHeroAttributesElement" style="flow-children: down; height: fit-children; width: fit-children; vertical-align: center; margin-right: 12px;">
 								<Image src="s2r://panorama/images/hud/reborn/icon_damage_psd.vtex" style="horizontal-align: center;"/>
@@ -51,7 +84,7 @@
 							</Panel>
 							<Panel style="height: 100%; flow-children: down;">
 								<Panel class="SelectedHeroAttributesElement">
-									<Image src="s2r://panorama/images/hud/reborn/icon_speed_psd.vtex" />
+									<Image src="s2r://panorama/images/hud/reborn/icon_speed_psd.vtex"/>
 									<Label id="HeroAttributes_speed" class="AttributeValueText" text="0" />
 								</Panel>
 								<Panel class="SelectedHeroAttributesElement">
@@ -63,13 +96,13 @@
 									<Label id="HeroAttributes_armor" style="margin-left: 5px;" class="AttributeValueText" text="0" />
 								</Panel>
 							</Panel>
-							<Panel style="width: 128px; height: 100%; flow-children: down;" >
+							<Panel style="width: 128px; height: 100%; flow-children: down;">
 								<Panel class="SelectedHeroAttributesElement">
 									<Panel class="DotaAttributePic" id="DotaAttributePic_1" />
 									<Label id="HeroAttributes_1" class="AttributeValueText" text="0 + 0.0" />
 								</Panel>
 								<Panel class="SelectedHeroAttributesElement">
-									<Label class="DotaAttributePic" id="DotaAttributePic_2" text="△" />
+									<Panel class="DotaAttributePic" id="DotaAttributePic_2" />
 									<Label id="HeroAttributes_2" class="AttributeValueText" text="0 + 0.0" />
 								</Panel>
 								<Panel class="SelectedHeroAttributesElement">

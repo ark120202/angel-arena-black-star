@@ -1,0 +1,43 @@
+npc_arena_hero_zaken: Zaken
+
+DOTA_Tooltip_ability_zaken_stitching_strikes: Stitching Strikes
+DOTA_Tooltip_ability_zaken_stitching_strikes_Description: 'Zaken rushes his blades towards target unit, perventing it from moving and dealing it damage within %duration% seconds.'
+DOTA_Tooltip_ability_zaken_stitching_strikes_duration: 'DURATION:'
+DOTA_Tooltip_ability_zaken_stitching_strikes_max_helath_damage_pct: '%MAX HELATH DAMAGE:'
+DOTA_Tooltip_modifier_zaken_stitching_strikes: Stitching Strikes
+DOTA_Tooltip_modifier_zaken_stitching_strikes_Description: Recieves damage over time. Can't move or blink
+
+DOTA_Tooltip_ability_zaken_last_chance: Last Chance
+DOTA_Tooltip_ability_zaken_last_chance_Description: 'When Zaken attacks, he has a chance to deal critical damage, stun, root or silence enemy, if it''s health is below required percent.'
+DOTA_Tooltip_ability_zaken_last_chance_crit_chance_pct: '%CRIT CHANCE:'
+DOTA_Tooltip_ability_zaken_last_chance_crit_damage_pct: '%CRITICAL STRIKE:'
+DOTA_Tooltip_ability_zaken_last_chance_crit_health_pct: '%CRIT TRIGGER HEALTH:'
+DOTA_Tooltip_ability_zaken_last_chance_stun_chance_pct: '%STUN CHANCE:'
+DOTA_Tooltip_ability_zaken_last_chance_stun_health_pct: '%STUN TRIGGER HEALTH:'
+DOTA_Tooltip_ability_zaken_last_chance_stun_duration: 'STUN DURATION:'
+DOTA_Tooltip_ability_zaken_last_chance_root_chance_pct: '%ROOT CHANCE:'
+DOTA_Tooltip_ability_zaken_last_chance_root_health_pct: '%ROOT TRIGGER HEALTH:'
+DOTA_Tooltip_ability_zaken_last_chance_root_duration: 'ROOT DURATION:'
+DOTA_Tooltip_ability_zaken_last_chance_silence_chance_pct: '%SILENCE CHANCE:'
+DOTA_Tooltip_ability_zaken_last_chance_silence_health_pct: '%SILENCE TRIGGER HEALTH:'
+DOTA_Tooltip_ability_zaken_last_chance_silence_duration: 'SILENCE DURATION:'
+
+DOTA_Tooltip_ability_zaken_summon_sailors: Summon Sailors
+DOTA_Tooltip_ability_zaken_summon_sailors_Description: 'Zaken summons his faithful sailors, that will obey his commands.'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailors_amount: 'SAILORS AMOUNT:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_duration: 'SUMMON DURATION:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_health: 'HEALTH:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_damage: 'ATTACK DAMAGE:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_armor: 'ARMOR:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_health_regen: 'HEALTH REGEN:'
+DOTA_Tooltip_ability_zaken_summon_sailors_sailor_bounty: 'GOLD BOUNTY:'
+npc_arena_zaken_sailor: Sailor
+
+DOTA_Tooltip_ability_zaken_sword_control: Sword Control
+DOTA_Tooltip_ability_zaken_sword_control_Description: 'Zaken commands all his swords to float around him, so he will be disarmed, but instead he will attack all enemies around him within %radius_tooltip% radius. Also, these swords will protect him from incoming damage.'
+DOTA_Tooltip_ability_zaken_sword_control_duration: 'DURATION:'
+DOTA_Tooltip_ability_zaken_sword_control_incoming_damage_reduction: '%INCOMING DAMAGE REDUCTION:'
+DOTA_Tooltip_ability_zaken_sword_control_attack_time: 'TIME BETWEEN ATTACKS:'
+DOTA_Tooltip_ability_zaken_sword_control_radius_tooltip: 'RADIUS:'
+DOTA_Tooltip_modifier_zaken_sword_control: Sword Control
+DOTA_Tooltip_modifier_zaken_sword_control_Description: 'Can''t attack using normal way, but instead attacks all enemies around. Incoming damage reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%'

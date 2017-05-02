@@ -1,0 +1,48 @@
+npc_arena_rune: Rune
+
+DOTA_Tooltip_modifier_arena_rune_tripledamage: Triple Damage
+DOTA_Tooltip_modifier_arena_rune_haste: Haste
+DOTA_Tooltip_modifier_arena_rune_invisibility: Invisible
+DOTA_Tooltip_modifier_arena_rune_arcane: Arcane
+DOTA_Tooltip_modifier_arena_rune_flame: Flame
+DOTA_Tooltip_modifier_arena_rune_acceleration: Acceleration
+DOTA_Tooltip_modifier_arena_rune_vibration: Vibration
+DOTA_Tooltip_modifier_arena_rune_soul_steal: Soul Steal
+DOTA_Tooltip_modifier_arena_rune_soul_steal_effect: Soul Steal
+DOTA_Tooltip_modifier_arena_rune_spikes: Spikes
+
+DOTA_Tooltip_modifier_arena_rune_tripledamage_Description: Base damage increased by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%
+DOTA_Tooltip_modifier_arena_rune_haste_Description: Movement speed increased to %dMODIFIER_PROPERTY_MOVESPEED_ABSOLUTE%
+DOTA_Tooltip_modifier_arena_rune_invisibility_Description: Attacking removes invisibility
+DOTA_Tooltip_modifier_arena_rune_arcane_Description: Reduces cooldowns by %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE%%% and increases ability damage by 50%%
+DOTA_Tooltip_modifier_arena_rune_flame_Description: All enemies around you recieve 4%% of their max health as damage each second
+DOTA_Tooltip_modifier_arena_rune_acceleration_Description: 'Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, all incoming experience is multiplied by 3'
+DOTA_Tooltip_modifier_arena_rune_vibration_Description: All enemies around you will be pushed away
+DOTA_Tooltip_modifier_arena_rune_soul_steal_Description: Heals you for %dMODIFIER_PROPERTY_TOOLTIP%%% of damage recieved by any ally around you
+DOTA_Tooltip_modifier_arena_rune_soul_steal_effect_Description: Heals Soul Steal rune owner for %dMODIFIER_PROPERTY_TOOLTIP%%% of damage recieved by you
+DOTA_Tooltip_modifier_arena_rune_spikes_Description: Returning %dMODIFIER_PROPERTY_TOOLTIP%%% damage to attacking units
+
+custom_runes_rune_0_title: Bounty
+custom_runes_rune_0_text: Grants bonus Gold and XP.
+custom_runes_rune_1_title: Triple Damage
+custom_runes_rune_1_text: Increases base damage by 200%
+custom_runes_rune_2_title: Haste
+custom_runes_rune_2_text: Increases movement speed to 750
+custom_runes_rune_3_title: Illusion
+custom_runes_rune_3_text: Conjures 2 illusions of your hero which deal 35% damage and take 200% damage. Illusions last 75 seconds.
+custom_runes_rune_4_title: Invisibility
+custom_runes_rune_4_text: Become invisible for 60 seconds. This invisibility is broken by attacking or by using an ability or item.
+custom_runes_rune_5_title: Regeneration
+custom_runes_rune_5_text: Instantly regenerates health and mana to maximum.
+custom_runes_rune_6_title: Arcane
+custom_runes_rune_6_text: Reduces cooldowns by 30% and increases ability damage by 50%
+custom_runes_rune_7_title: Flame
+custom_runes_rune_7_text: Deals 4% of unit's max helath as damage each second in 350 radius for 30 seconds
+custom_runes_rune_8_title: Acceleration
+custom_runes_rune_8_text: Increases attack speed by 90 and multiplies all incoming experience by 3
+custom_runes_rune_9_title: Vibration
+custom_runes_rune_9_text: Pushes all enemies from you in 350 radius
+custom_runes_rune_10_title: Soul Steal
+custom_runes_rune_10_text: Heals you for 8% of damage recieved by any ally within 500 range for 32 seconds
+custom_runes_rune_11_title: Spikes
+custom_runes_rune_11_text: Reflects 75% of incoming damage to attacker for 15 seconds

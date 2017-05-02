@@ -1,0 +1,93 @@
+npc_arena_hero_cherub_hype: ''
+npc_arena_hero_cherub_bio: 'Дитя лесов, создание из чистой природной энергии, Черуб стремится к равновесию и чистоте экосистем. Особенно близки ей растения. Познав потоки энергии, текущие в их стеблях, она научилась управлять жизненной и природной энергией внутри себя, преобразовавшись в природного духа. Черуб пришла в арену Ангелов, чтобы познакомиться с себе подобными - Фурионом и Энчантресс, для обмена опыта и знаниями. Но, по факту, она является сущностью Порядка, и сражается ради него.'
+
+DOTA_Tooltip_ability_cherub_sleep_cloud: Sleep Cloud
+DOTA_Tooltip_ability_cherub_sleep_cloud_Description: 'Создает облако успокаивающих ароматов, которые усыпляют врагов, если они находятся внутри его радиуса в течение некоторого времени. Враги будут просыпаться, когда длительность облака заканчивается, или когда они берут определенное количество повреждений.'
+DOTA_Tooltip_ability_cherub_sleep_cloud_Note0: 'Если юнит был разбужен, то таймер сна перезапустится.'
+DOTA_Tooltip_ability_cherub_sleep_cloud_radius: 'РАДИУС ОБЛАКА:'
+DOTA_Tooltip_ability_cherub_sleep_cloud_duration: 'ДЛИТЕЛЬНОСТЬ ОБЛАКА:'
+DOTA_Tooltip_ability_cherub_sleep_cloud_time_to_sleep: 'ВРЕМЯ УСЫПЛЕНИЯ:'
+DOTA_Tooltip_ability_cherub_sleep_cloud_damage_to_wake: 'УРОН ДЛЯ ПРОБУЖДЕНИЯ:'
+DOTA_Tooltip_modifier_cherub_sleep_cloud_timer_Description: 'Заснёт, если останится здесь.'
+DOTA_Tooltip_modifier_cherub_sleep_cloud_sleep: Сон от Sleep Cloud
+DOTA_Tooltip_modifier_cherub_sleep_cloud_sleep_Description: 'Спит. Проснётся, если получит достаточно урона.'
+
+DOTA_Tooltip_ability_cherub_synthesis: Synthesis
+DOTA_Tooltip_ability_cherub_synthesis_Description: 'Когда включен, превращает ману Cherub в в здоровье или здоровье в ману, в зависимости от времени суток. В течение деня, преобразует ее здоровье в ману. Во время ночи, преобразует ее ману в здоровье.'
+DOTA_Tooltip_ability_cherub_synthesis_base_conversion_rate: 'БАЗЮ СКОРОСТЬ КОНВЕРТАЦИИ:'
+DOTA_Tooltip_ability_cherub_synthesis_mana_to_hp_pct: '%МАНА В ЗДОРОВЬЕ (ДЕНЬ):'
+DOTA_Tooltip_ability_cherub_synthesis_hp_to_mana_pct: '%ЗДОРОВЬЕ В МАНУ (НОЧЬ):'
+
+DOTA_Tooltip_ability_cherub_explosive_spore_Description: |-
+  Создает плавающую спору со свободным передвижением. Спора будет расти с течением времени и взорвётся через %explode_delay% секунд, нанося магический урон в зоне действия и восстанавливаясь на основе нанесенного урона.
+  Спора имеет 0 брони и 0% сопротивления к магии, а при убийстве даёт %spore_bounty_gold% золота и %spore_bounty_exp% опыта.
+DOTA_Tooltip_ability_cherub_explosive_spore_explode_delay: 'ЗАДЕРЖКА ПЕРЕД ВЗРЫВОМ:'
+DOTA_Tooltip_ability_cherub_explosive_spore_explode_radius: 'РАДИУС ВЗРЫВА:'
+DOTA_Tooltip_ability_cherub_explosive_spore_lifesteel_heroes_pct: '%ВОССТАНОВЛЕНИЕ (ОТ ГЕРОЕВ):'
+DOTA_Tooltip_ability_cherub_explosive_spore_lifesteel_creeps_pct: '%ВОССТАНОВЛЕНИЕ (ОТ КРИПОВ):'
+DOTA_Tooltip_ability_cherub_explosive_spore_spore_health: 'ЗДОРОВЬЕ СПОРЫ:'
+DOTA_Tooltip_ability_cherub_explosive_spore_spore_movespeed: 'СКОРОСТЬ СПОРЫ:'
+DOTA_Tooltip_ability_cherub_explosive_spore_spore_vision_range: 'ДАЛЬНОСТЬ ВИДИМОСТИ СПОРЫ:'
+
+DOTA_Tooltip_ability_cherub_flower_garden_Description: 'Удобряет участок земли, превращая его в грядку, на %life_time_min_tooltip% минут. Cherub может посадить один из шести различных цветов на ее грядках, которые улучшаются по мере улучшения уровня этой способности.'
+DOTA_Tooltip_ability_cherub_flower_garden_aghanim_description: 'Добавляет шипастый барьер для растений, увеличивая их здоровье и возвращая магический урон, когда его атакуют.'
+DOTA_Tooltip_ability_cherub_flower_garden_channel_time: 'ДЛИТЕЛЬНОСТЬ ПРИМЕНЕНИЯ:'
+DOTA_Tooltip_ability_cherub_flower_garden_flower_health: 'ЗДОРОВЬЕ ЦВЕТКА:'
+DOTA_Tooltip_ability_cherub_flower_garden_flower_health_scepter: 'ЗДОРОВЬЕ ЦВЕТКА СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_cherub_flower_garden_damage_return_scepter: 'ВОЗВРАТ УРОНА СО СКИПЕТРОМ:'
+DOTA_Tooltip_modifier_cherub_flower_garden_barrier_Description: 'Находится под шипастым барьером и вовзращает магический урон, когда атакуют.'
+
+DOTA_Tooltip_ability_cherub_flower_white_rose_Description: Наносит небольшой урон в большом радиусе. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_white_rose_attack_range: 'РАДИУС АТАКИ:'
+DOTA_Tooltip_ability_cherub_flower_white_rose_damage: 'УРОН:'
+DOTA_Tooltip_ability_cherub_flower_white_rose_attack_rate: 'BAT:'
+DOTA_Tooltip_ability_cherub_flower_white_rose_enabled_Description: Наносит небольшой урон в большом радиусе. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_white_rose_enabled_attack_range: 'РАДИУС АТАКИ:'
+DOTA_Tooltip_ability_cherub_flower_white_rose_enabled_damage: 'УРОН:'
+DOTA_Tooltip_ability_cherub_flower_white_rose_enabled_attack_rate: 'BAT:'
+
+DOTA_Tooltip_ability_cherub_flower_red_rose_Description: Наносит большой урон в небольшом радиусе. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_red_rose_attack_range: 'РАДИУС АТАКИ:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_damage: 'УРОН:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_attack_rate: 'BAT:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_Description: Наносит большой урон в небольшом радиусе. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_attack_range: 'РАДИУС АТАКИ:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_damage: 'УРОН:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_attack_rate: 'BAT:'
+
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_Description: Вовосстанавливает здоровье трём союзникам каждую секунду. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_heal_range: 'РАДИУС ЛЕЧЕНИЯ:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_heal_amount: 'ЛЕЧЕНИЕ:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_max_targets: 'МАКС. ЦЕЛЕЙ:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_heal_interval: 'ИНТЕРВАЛ ЛЕЧЕНИЯ:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_enabled_Description: Восстанавливает здоровье трём союзникам каждую секунду. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_enabled_heal_range: 'РАДИУС ЛЕЧЕНИЯ:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_enabled_heal_amount: 'ЛЕЧЕНИЕ:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_enabled_max_targets: 'МАКС. ЦЕЛЕЙ:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_enabled_heal_interval: 'ИНТЕРВАЛ ЛЕЧЕНИЯ:'
+
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_Description: Восстанавливает ману всем союзникам каждые %restore_interval% секунд. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_restore_range: 'РАДИУС ВОССТАНОВЛЕНИЯ:'
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_restore_amount: 'ВОССТАНОВЛЕНИЕ:'
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_restore_interval: 'ИНТЕРВАЛ ВОССТАНОВЛЕНИЯ:'
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_enabled_Description: Восстанавливает ману всем союзникам каждые %restore_interval% секунд. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_enabled_restore_range: 'РАДИУС ВОССТАНОВЛЕНИЯ:'
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_enabled_restore_amount: 'ВОССТАНОВЛЕНИЕ:'
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_enabled_restore_interval: 'ИНТЕРВАЛ ВОССТАНОВЛЕНИЯ:'
+
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_Description: Повышает скорость атаки всем союзникам рядом. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_aura_radius: 'РАДИУС АУРЫ:'
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_enabled_Description: Повышает скорость атаки всем союзникам рядом. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_enabled_aura_radius: 'РАДИУС АУРЫ:'
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_enabled_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
+DOTA_Tooltip_modifier_cherub_flower_yellow_daisy_enabled_aura_effect: Yellow Daisy
+DOTA_Tooltip_modifier_cherub_flower_yellow_daisy_enabled_aura_effect_Description: Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
+
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_Description: Понижает сопротивление магическому урону всем противникам рядом. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_aura_radius: 'РАДИУС АУРЫ:'
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_magic_resistance_reduction: '%ПОНИЖЕНИЕ СОПРОТИВЛЕНИЯ:'
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_enabled_Description: Понижает сопротивление магическому урону всем противникам рядом. Максимум составляет %max_plants% растений.
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_enabled_aura_radius: 'РАДИУС АУРЫ:'
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_enabled_magic_resistance_reduction: '%ПОНИЖЕНИЕ СОПРОТИВЛЕНИЯ:'
+DOTA_Tooltip_modifier_cherub_flower_purple_lotus_enabled_aura_effect_Description: Сопротивление магии уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%.

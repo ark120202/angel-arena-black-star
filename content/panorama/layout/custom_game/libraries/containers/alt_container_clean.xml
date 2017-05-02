@@ -1,0 +1,15 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/libraries/containers/container.css" />
+		<include src="file://{resources}/styles/libraries/containers/container_skins.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/libraries/containers/container.js" /> 
+	</scripts>
+	<Panel style="align: center center;">
+		<Panel id="Inner" style="margin:0;">
+
+		</Panel>
+	</Panel>
+</root>

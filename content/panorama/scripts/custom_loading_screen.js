@@ -4,10 +4,10 @@ var TipList = [];
 var ShuffledTipList = [];
 
 function FillTips() {
-	var i = 1
+	var i = 1;
 	while (true) {
-		var unlocalized = "arena_tip_" + i
-		var localized = $.Localize(unlocalized)
+		var unlocalized = "arena_tip_" + i;
+		var localized = $.Localize(unlocalized);
 		if (localized != unlocalized) {
 			TipList.push({
 				num: i,
@@ -22,29 +22,29 @@ function FillTips() {
 
 function NextTip() {
 	if (ShuffledTipList.length === 0) {
-		ShuffledTipList = JSON.parse(JSON.stringify(TipList))
-		shuffle(ShuffledTipList)
+		ShuffledTipList = JSON.parse(JSON.stringify(TipList));
+		shuffle(ShuffledTipList);
 	}
-	var shifted = ShuffledTipList.shift()
+	var shifted = ShuffledTipList.shift();
 
 	$("#TipLabel").text = shifted.text;
 }
 
 function Snippet_OptionVoting(voteName, voteData) {
-	var votePanel = $.CreatePanel("Panel", $("#OptionVotings"), "option_voting_" + voteName)
-	votePanel.BLoadLayoutSnippet("OptionVoting")
-	votePanel.SetDialogVariable("title", $.Localize("option_voting_" + voteName))
-	var OptionVotingVariants = votePanel.FindChildTraverse("OptionVotingVariants")
+	var votePanel = $.CreatePanel("Panel", $("#OptionVotings"), "option_voting_" + voteName);
+	votePanel.BLoadLayoutSnippet("OptionVoting");
+	votePanel.SetDialogVariable("title", $.Localize("option_voting_" + voteName));
+	var OptionVotingVariants = votePanel.FindChildTraverse("OptionVotingVariants");
 	var shouldGroup = false;
-	votePanel.SetHasClass("ShouldGroup", shouldGroup)
+	votePanel.SetHasClass("ShouldGroup", shouldGroup);
 	$.Each(voteData.variants, function(variant, tIndex) {
 		var group = shouldGroup ? OptionVotingVariants.GetChild(Math.floor((tIndex-1) / 2)) || $.CreatePanel("Panel", OptionVotingVariants, "") : OptionVotingVariants;
 		if (shouldGroup) group.AddClass("OptionVotingVariantRow");
 
 		var button = $.CreatePanel("Button", group, "option_variant_" + variant);
-		button.AddClass("ButtonBevel")
-		button.AddClass("OptionVotingVariant")
-		if (shouldGroup) button.style.horizontalAlign = tIndex % 2 == 1 ? "left" : "right"
+		button.AddClass("ButtonBevel");
+		button.AddClass("OptionVotingVariant");
+		if (shouldGroup) button.style.horizontalAlign = tIndex % 2 == 1 ? "left" : "right";
 		button.SetPanelEvent("onactivate", function() {
 			if (!votePanel.BHasClass("Voted")) {
 				GameEvents.SendCustomGameEventToServer("options_vote", {
@@ -53,16 +53,16 @@ function Snippet_OptionVoting(voteName, voteData) {
 				});
 				votePanel.AddClass("Voted");
 			}
-		})
+		});
 
 		var label = $.CreatePanel("Label", button, "");
-		label.text = typeof variant == "string" ? $.Localize("option_voting_" + voteName + "_" + variant) : typeof variant == "boolean" ? $.Localize(variant ? "option_yes" : "option_no") : variant;
+		label.text = typeof variant === "string" ? $.Localize("option_voting_" + voteName + "_" + variant) : typeof variant === "boolean" ? $.Localize(variant ? "option_yes" : "option_no") : variant;
 
 		var votedataLabel = $.CreatePanel("Label", button, "vote_data_variant_" + tIndex);
 		votedataLabel.text = "{s:votes}";
-		votedataLabel.style.horizontalAlign = "right"
-	})
-	return votePanel
+		votedataLabel.style.horizontalAlign = "right";
+	});
+	return votePanel;
 }
 
 function Snippet_OptionVoting_Recalculate(votePanel, voteData) {
@@ -125,4 +125,4 @@ function CheckStartable() {
 	FillTips();
 	$("#TipsPanel").visible = TipList.length > 0;
 	if (TipList.length > 0) NextTip();
-})()
+})();

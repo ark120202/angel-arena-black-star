@@ -1,0 +1,48 @@
+DOTA_Tooltip_ability_pudge_meat_hook_lua: Meat Hook
+DOTA_Tooltip_ability_pudge_meat_hook_lua_Description: |-
+  Launches a bloody hook toward a unit or location. The hook will snag the all units it encounters, dragging units back to Pudge and dealing damage if it is an enemy. Drags units even while hook is coming back to Pudge.
+  When Pudge kills enemy using hook he gains Bloodstained Stack. Each stack increases Hook Range and Speed.
+DOTA_Tooltip_ability_pudge_meat_hook_lua_aghanim_description: 'Reduces cooldown, increases damage and removes delay after using Meat Hook.'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_Note0: Interrupts channeling spells of the primary target if it's an enemy.
+DOTA_Tooltip_ability_pudge_meat_hook_lua_Note1: Meat Hook hits invisible units.
+DOTA_Tooltip_ability_pudge_meat_hook_lua_Note2: 'Meat Hook can go through trees, cliffs and buildings.'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_Note3: 'Meat Hook can drag friendly units, but they won''t be damaged.'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_speed: 'SPEED:'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance: 'RANGE:'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_damage_scepter: 'SCEPTER DAMAGE:'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_cooldown_scepter: 'SCEPTER COOLDOWN:'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance_per_stack: 'RANGE PER STACK:'
+
+DOTA_Tooltip_ability_pudge_rot_arena: Rot
+DOTA_Tooltip_ability_pudge_rot_arena_Description: A toxic cloud that deals intense damage and slows movement--harming not only enemy units but Pudge himself. Each Flesh Heap stack increases Rot radius.
+DOTA_Tooltip_ability_pudge_rot_arena_Note0: Using Rot doesn't interrupt channeling.
+DOTA_Tooltip_ability_pudge_rot_arena_Note1: Rot hits invisible units.
+DOTA_Tooltip_ability_pudge_rot_arena_Note2: 'If Pudge is silenced, he can''t deactivate Rot if it''s activated.'
+DOTA_Tooltip_ability_pudge_rot_arena_Note3: Pudge can deny himself with this ability.
+DOTA_Tooltip_ability_pudge_rot_arena_rot_radius: 'RADIUS:'
+DOTA_Tooltip_ability_pudge_rot_arena_rot_slow: '%MOVE SLOW:'
+DOTA_Tooltip_ability_pudge_rot_arena_rot_damage: 'DAMAGE:'
+DOTA_Tooltip_ability_pudge_rot_arena_rot_radius_per_stack: 'RADIUS PER STACK:'
+DOTA_Tooltip_ability_pudge_rot_arena_rot_radius_limit: 'MAX RADIUS:'
+DOTA_Tooltip_modifier_pudge_rot_arena_slow: Rot
+DOTA_Tooltip_modifier_pudge_rot_arena_slow_Description: 'Recieves damage, movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%'
+
+DOTA_Tooltip_ability_pudge_flesh_heap_arena: Flesh Heap
+DOTA_Tooltip_ability_pudge_flesh_heap_arena_Description: 'Gives Pudge resistance to magic damage and bonus strength that increases each time Pudge kills an enemy Hero or it dies in his vicinity. Each %creeps_killed_to_stack% killed creeps will also grant pudge a stack of Flesh Heap. Also, increases pudge scale a bit. Flesh Heap is retroactive, meaning it can gain charges before it is skilled, which then become active.'
+DOTA_Tooltip_ability_pudge_flesh_heap_arena_flesh_heap_magic_resist_stack_pct: '%MAGIC RESISTANCE PER STACK:'
+DOTA_Tooltip_ability_pudge_flesh_heap_arena_flesh_heap_strength_buff_amount: 'STRENGTH BONUS PER STACK:'
+DOTA_Tooltip_ability_pudge_flesh_heap_arena_creeps_killed_to_stack: 'CREEPS TO STACK:'
+DOTA_Tooltip_ability_pudge_flesh_heap_arena_range: 'RANGE:'
+DOTA_Tooltip_modifier_pudge_flesh_heap_arena_stack: Flesh Heap
+DOTA_Tooltip_modifier_pudge_flesh_heap_arena_stack_Description: 'Strength increased by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, magic damage resistance increased by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%'
+
+DOTA_Tooltip_ability_pudge_dismember_arena: Dismember
+DOTA_Tooltip_ability_pudge_dismember_arena_Description: 'CHANNELED - Pudge chows down on an enemy unit, disabling it and dealing damage over time. Pudge gets healed for the same amount he damages.'
+DOTA_Tooltip_ability_pudge_dismember_arena_aghanim_description: Dismember will also damage all enemies in some radius around a target.
+DOTA_Tooltip_ability_pudge_dismember_arena_Note0: 'Dismember will disable Spell Immune units, but not damage them.'
+DOTA_Tooltip_ability_pudge_dismember_arena_dismember_damage: 'DAMAGE PER SECOND:'
+DOTA_Tooltip_ability_pudge_dismember_arena_strength_damage: '%STRENGTH MULTIPLIER:'
+DOTA_Tooltip_ability_pudge_dismember_arena_duration: 'DURATION:'
+DOTA_Tooltip_ability_pudge_dismember_arena_damage_aoe_scepter: 'SCEPTER AOE:'
+DOTA_Tooltip_modifier_pudge_dismember_arena: Dismember
+DOTA_Tooltip_modifier_pudge_dismember_arena_Description: Getting dismembered by Pudge

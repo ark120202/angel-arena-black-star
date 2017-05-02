@@ -1,0 +1,35 @@
+DOTA_Tooltip_ability_antimage_mana_break_arena_Description: 'Каждая атака сжигает ману цели и наносит ей урон, равный %damage_per_burn_pct%%% сожженной маны. Иллюзии так же выжигают ману, но меньше, чем Анти Маг. Если у противника закончится мана, то он будет оглушен и будет получать дополнительный чистый урон, основаный на наносимом ему уроне.'
+DOTA_Tooltip_ability_antimage_mana_break_arena_aghanim_description: Mana Break так же сжигает ману всех врагов вокруг цели. Увеличивает процентное сжигание маны.
+DOTA_Tooltip_ability_antimage_mana_break_arena_mana_per_hit: 'СЖИГАНИЕ МАНЫ ЗА УДАР:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_mana_per_hit_pct: '%СЖИГАНИЕ МАНЫ ЗА УДАР:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_mana_per_hit_illusions_pct: '%СЖИГАНИЕ МАНЫ ЗА УДАР У ИЛЛЮЗИЙ:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_nomana_bonus_pure_damage_pct: |-
+  %ПРИ ОТСУТСТВИИ МАНЫ У ЦЕЛИ:
+  • ДОПОЛНИТЕЛЬНЫЙ ЧИСТЫЙ УРОН:
+DOTA_Tooltip_ability_antimage_mana_break_arena_nomana_stun_duration: '• ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_nomana_stun_cooldown: '• ПЕРЕЗАРЯДКА ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_mana_per_hit_pct_scepter: '%МАНЫ ЗА УДАР:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_aoe_radius_scepter: '%РАДИУС СПЛЭША:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_mana_to_secondary_targets_pct_scepter: '%СЖИГАНИЕ МАНЫ ЗА УДАР СОСЕДНИМ ЦЕЛЯМ:'
+DOTA_Tooltip_modifier_antimage_mana_break_arena_stun_cooldown: Перезарядка оглушения
+DOTA_Tooltip_modifier_antimage_mana_break_arena_stun_cooldown_Description: Нельзя нанести оглушение от Mana Break
+
+DOTA_Tooltip_ability_antimage_blink_arena_Description: 'Телепортация на небольшое расстояние, позволяющая герою врываться в схватку либо быстро сбегать от противника. Когда герой телепортируется куда-то, все противники получают безмолвие.'
+DOTA_Tooltip_ability_antimage_blink_arena_blink_range: 'ДАЛЬНОСТЬ:'
+DOTA_Tooltip_ability_antimage_blink_arena_silence_radius: 'РАДИУС БЕЗМОЛВИЯ:'
+DOTA_Tooltip_ability_antimage_blink_arena_silence_duration: 'ДЛИТЕЛЬНОСТЬ БЕЗМОЛВИЯ:'
+
+DOTA_Tooltip_ability_antimage_spell_shield_arena_Description: |-
+  Активная: временно даёт герою антимагический щит, который блокирует и отражает большинство направленных заклинаний обратно во врага.
+  Пассивная: Увеличивает сопротивление магии Анти Мага.
+DOTA_Tooltip_ability_antimage_spell_shield_arena_spell_shield_resistance: '%МАГИЧЕСКОЕ СОПРОТИВЛЕНИЕ:'
+DOTA_Tooltip_ability_antimage_spell_shield_arena_reflect_duration: 'ДЛИТЕЛЬНОСТЬ АНТИМАГИЧЕСКОГО ЩИТА:'
+DOTA_Tooltip_modifier_antimage_spell_shield_arena_reflect: Antimagic shell
+DOTA_Tooltip_modifier_antimage_spell_shield_arena_reflect_Description: Блокирует и отражает большинство направленных заклинаний обратно во врага
+
+DOTA_Tooltip_ability_antimage_mana_void_arena_Description: 'За каждую отсутствующую единицу маны противника, наносит ему и находящимся рядом противникам чистый урон. Все цели будут обезмолвлены, а их скиллы отправятся на перезарядку.'
+DOTA_Tooltip_ability_antimage_mana_void_arena_aghanim_description: Урон будет нанесён от отсутсвуещей маны всех целей в радиусе
+DOTA_Tooltip_ability_antimage_mana_void_arena_mana_void_damage_per_mana: 'УРОН ЗА ОТСУТСТВУЮЩУЮ ЕДИНИЦУ МАНЫ:'
+DOTA_Tooltip_ability_antimage_mana_void_arena_silence_duration: 'ВРЕМЯ БЕЗМОЛВИЯ:'
+DOTA_Tooltip_ability_antimage_mana_void_arena_cooldown_increase: 'УВЕЛИЧЕНИЕ ПЕРЕЗАРЯДКИ:'
+DOTA_Tooltip_ability_antimage_mana_void_arena_mana_void_aoe_radius: 'РАДИУС:'

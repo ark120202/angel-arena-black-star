@@ -1,0 +1,34 @@
+npc_arena_hero_stegius_hype: ''
+npc_arena_hero_stegius_bio: 'Хозяин Разрушения, Хозяин Смерти... Много имен у этого демона, но все говорят об одном: этот монстр разрушает все на своем пути. Некогда он был Хозяином Дезолуса, ужасного и гиблого мира из шестой Бездны, и его главным кузнецом, именно он создал страшнейший клинок во всем мироздании - Стигианский Дезолятор, сделанный из шипа на хвосте Стегиуса, который этот дьявол вырвал из себя. Дезолятор впитал всю злобу и ненависть своего создателя. Стегиус изничтожил множество миров, не щадя их жителей, фактически разрушил полностью 3-е и 4-е измерения. За это на него была наложена печать Аш-Галора, и теперь Стегиус никогда не обретет покой. Он будет уничтожать и уничтожать. Всех и вся. Пока сам не будет уничтожен своей же яростью.'
+
+DOTA_Tooltip_ability_stegius_desolus_wave_Description: 'Stegius выпускает мощную волну, которая наносит урон всем врагам на своём пути и уменьшает их броню на некоторое время.'
+DOTA_Tooltip_ability_stegius_desolus_wave_range: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
+DOTA_Tooltip_ability_stegius_desolus_wave_speed: 'СКОРОСТЬ ВОЛНЫ:'
+DOTA_Tooltip_ability_stegius_desolus_wave_armor_reduction: 'СНИЖЕНИЕ БРОНИ:'
+DOTA_Tooltip_ability_stegius_desolus_wave_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_modifier_stegius_desolus_wave_Description: Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
+
+DOTA_Tooltip_ability_stegius_rage_of_desolus_Description: 'Пробуждает ярость в выбранном юните, увеличивая скорость его передвижения и атаки.'
+DOTA_Tooltip_ability_stegius_rage_of_desolus_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_stegius_rage_of_desolus_bonus_attack_speed: 'УВЕЛИЧЕНИЕ СКОРОСТИ АТАКИ:'
+DOTA_Tooltip_ability_stegius_rage_of_desolus_bonus_movement_speed_pct: '%УВЕЛИЧЕНИЕ СКОРОСТИ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_modifier_stegius_rage_of_desolus_Description: 'Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки увеличена от %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
+
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_Description: 'Все враги в радиусе применения, теряют броню, у героев так же уменьшается максимальное здоровье. Если юнит под действием этой способности умирает, Stegius получает дополнительный урон. Если юнит - герой, Stegius так же получает дополнительную скорость атаки и броню.'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_radius: 'РАДИУС СПОСОБНОСТИ:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_health_decrease_pct: '%УМЕНЬШЕНИЕ ЗДОРОВЬЯ У ГЕРОЕВ:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_armor_decrease: 'СНИЖЕНИЕ БРОНИ:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_bonus_damage_from_creep: 'УРОН ОТ КРИПОВ:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_bonus_damage_from_hero: 'УРОН ОТ ГЕРОЕВ:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_bonus_damage_duration: 'ДЛИТЕЛЬНОСТЬ УВЕЛИЧЕНИЯ УРОНА:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_stolen_attack_speed: 'СКОРОСТЬ АТАКИ ОТ ГЕРОЯ:'
+DOTA_Tooltip_ability_stegius_brightness_of_desolate_stolen_armor: 'БРОНЯ ОТ ГЕРОЯ:'
+DOTA_Tooltip_modifier_stegius_brightness_of_desolate_effect_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%. Так же уменьшает максимальное здоровье у героев.
+DOTA_Tooltip_modifier_stegius_brightness_of_desolate_damage_Description: Урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%
+DOTA_Tooltip_modifier_stegius_brightness_of_desolate_steal_buff_Description: 'Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%'
+
+DOTA_Tooltip_ability_stegius_desolating_touch_Description: С каждой атакой Stegius уменьшает броню. Этот эффект суммируется. У каждого эффекта отдельная длительность. Боссам броня снижается лишь с определенным шансом. Иллюзии Stegius так же уменьшают броню.
+DOTA_Tooltip_ability_stegius_desolating_touch_armor_per_hit: 'СНИЖЕНИЕ БРОНИ:'
+DOTA_Tooltip_ability_stegius_desolating_touch_boss_armor_reduction_chance_pct: '%ШАНС СНИЗИТЬ БРОНЮ БОССАМ:'
+DOTA_Tooltip_ability_stegius_desolating_touch_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_modifier_stegius_desolating_touch_debuff_Description: Броня снажена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%

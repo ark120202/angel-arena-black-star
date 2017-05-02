@@ -2,16 +2,12 @@
 {
 	"faceless_void_time_walk_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"faceless_void_time_walk"
-		"MaxLevel"	"7"
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"		"faceless_void_time_walk"
+		"MaxLevel"					"7"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
@@ -19,26 +15,11 @@
 			"particle"  		"particles/units/heroes/hero_faceless_void/faceless_void_time_walk_slow.vpcf"
 			"particle"  		"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
 		}
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"625"
 		"AbilityCastPoint"				"0.15"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"24 22 20 18 16 14 12"
+		"AbilityModifierSupportValue"	"0.25"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.25"	// mostly about the blink
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -97,7 +78,7 @@
 				"ScriptFile"	"heroes/hero_faceless_void/time_walk.lua"
 				"Function"		"TimeWalk"
 				"Target"		"POINT"
-				"modifier"		"modifier_time_walk_arena"
+				"modifier"		"modifier_faceless_void_time_walk_arena"
 			}
 
 			"ApplyMotionController"
@@ -121,7 +102,7 @@
 
 		"Modifiers"
 		{
-			"modifier_time_walk_arena_damage_checker"
+			"modifier_faceless_void_time_walk_arena_damage_checker"
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
@@ -138,9 +119,9 @@
 				}
 			}
 		
-			"modifier_time_walk_arena"
+			"modifier_faceless_void_time_walk_arena"
 			{
-				"IsHidden"	"1"
+				"IsHidden"			"1"
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
 
@@ -151,7 +132,7 @@
 				{
 					"ApplyModifier"
 					{
-						"ModifierName"	"modifier_time_walk_backtrack_increased_arena"
+						"ModifierName"	"modifier_faceless_void_time_walk_arena_backtrack"
 						"Target" 		"TARGET"
 					}
 				}
@@ -162,7 +143,7 @@
 				}
 			}
 		
-			"modifier_time_walk_backtrack_increased_arena"
+			"modifier_faceless_void_time_walk_arena_backtrack"
 			{
 				"IsHidden"	"0"
 				"IsPurgable"		"0"
@@ -251,7 +232,7 @@
 					"ApplyModifier"
 					{
 						"Target" 		"TARGET"
-						"ModifierName"	"modifier_time_dilation_cooldown_freeze"
+						"ModifierName"	"modifier_faceless_void_time_dilation_arena_freeze"
 					}
 					
 					"RunScript"
@@ -265,8 +246,9 @@
 		
 		"Modifiers"
 		{
-			"modifier_time_dilation_cooldown_freeze"
+			"modifier_faceless_void_time_dilation_arena_freeze"
 			{
+				//"IsHidden" "1"
 				"IsDebuff"	"1"
 				"Duration"	"%duration"
 				
@@ -305,9 +287,8 @@
 				}
 			}
 			
-			"modifier_time_dilation_slow"
+			"modifier_faceless_void_time_dilation_arena_slow"
 			{
-				"IsHidden" "1"
 				"IsDebuff" "1"
 				
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -369,7 +350,7 @@
 
 		"Modifiers"
 		{
-			"modifier_time_lock_arena"
+			"modifier_faceless_void_time_lock_arena"
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
@@ -393,7 +374,7 @@
 							{
 								"ScriptFile"	"heroes/hero_faceless_void/time_lock.lua"
 								"Function"		"TimeLock"
-								"modifier"		"modifier_time_lock_stun_arena"
+								"modifier"		"modifier_faceless_void_time_lock_arena_stun"
 							}
 
 							"Damage"
@@ -407,7 +388,7 @@
 				}
 			}
 
-			"modifier_time_lock_stun_arena"
+			"modifier_faceless_void_time_lock_arena_stun"
 			{
 				"IsDebuff"	"1"
 

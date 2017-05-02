@@ -1,0 +1,50 @@
+custom_talents_cost: 'Цена:'
+custom_talents_requirements: 'Условие:'
+custom_talents_level: 'Уровень: '
+custom_talents_hide_requirement_errors: Скрывать недоступные таланты
+custom_talents_talent_experience_pct: Дополнительный опыт
+custom_talents_talent_experience_pct_description: '+{%experience_pct%} опыта'
+custom_talents_talent_bonus_creep_gold: Дополнительное золото с крипов
+custom_talents_talent_bonus_creep_gold_description: 'Каждый добитый крип дает на {gold_for_creep} золота больше'
+custom_talents_talent_spell_amplify: Урон от способностей
+custom_talents_talent_spell_amplify_description: '+{%spell_amplify%} к урону от способностей'
+custom_talents_talent_respawn_time_reduction: Время возрождения
+custom_talents_talent_respawn_time_reduction_description: 'Время возрождения уменьшено на {respawn_time_reduction}'
+custom_talents_talent_attack_damage: Урон
+custom_talents_talent_attack_damage_description: '+{damage} к урону'
+custom_talents_talent_evasion: Уклонение
+custom_talents_talent_evasion_description: '+{%evasion%} к уклонению'
+custom_talents_talent_movespeed_limit: Макс. скорость передвижения
+custom_talents_talent_movespeed_limit_description: 'Увеличивает максимальную скорость передвижения до {movespeed_limit}'
+custom_talents_talent_health: Здоровье
+custom_talents_talent_health_description: '+{health} к здоровью'
+custom_talents_talent_health_regen: Регенерация Здоровья
+custom_talents_talent_health_regen_description: '+{health_regen} к регенерации здоровья'
+custom_talents_talent_armor: Броня
+custom_talents_talent_armor_description: '+{armor} к броне'
+custom_talents_talent_magic_resistance_pct: Сопротивление магии
+custom_talents_talent_magic_resistance_pct_description: '+{%magic_resistance_pct%} к сопротивлению магии'
+custom_talents_talent_vision_day: Дневное зрение
+custom_talents_talent_vision_day_description: '+{vision_day} к радиусу обзора днем'
+custom_talents_talent_vision_night: Ночное зрение
+custom_talents_talent_vision_night_description: '+{vision_night} к радиусу обзора ночью'
+custom_talents_talent_cooldown_reduction_pct: Уменьшение перезарядки
+custom_talents_talent_cooldown_reduction_pct_description: 'Уменьшает время перезарядки всех способностей и предметов на {%cooldown_reduction_pct%}'
+custom_talents_talent_passive_gold_income: Прирост золота
+custom_talents_talent_passive_gold_income_description: '+{gold_per_minute} золота в минуту'
+custom_talents_talent_hero_pudge_hook_splitter: Hook Splitter
+custom_talents_talent_hero_pudge_hook_splitter_description: 'Pudge бросает {hook_amount} крюков, а не 1'
+custom_talents_talent_hero_arthas_vsolyanova_bunus_chance: Mega Solyara
+custom_talents_talent_hero_arthas_vsolyanova_bunus_chance_description: 'Увеличивает шанс залить соляру в {chance_multiplier} раза'
+custom_talents_talent_hero_arc_warden_double_spark: Double Spark Wraith
+custom_talents_talent_hero_arc_warden_double_spark_description: Каждое применение Spark Wraith призывает две призрачные искры
+custom_talents_talent_hero_apocalypse_apocalypse_no_death: Protection from Apocalypse
+custom_talents_talent_hero_apocalypse_apocalypse_no_death_description: 'Apocalypse не погибнет, когда закончится время действия ультимативной способности'
+custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun: Reincarnation
+custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun_description: 'Убирает задержку перед возрождением. При воскрешении оглушает противников, вместо замедления'
+custom_talents_talent_movespeed_pct: Скорость передвижения
+custom_talents_talent_movespeed_pct_description: '+{%movespeed_pct%} к скорости передвижения'
+custom_talents_talent_passive_experience_income: Прирост опыта
+custom_talents_talent_passive_experience_income_description: '+{xp_per_minute} опыта в минуту'
+custom_talents_talent_true_strike: True Strike
+custom_talents_talent_true_strike_description: Исключает шанс промаха при атаке

@@ -357,43 +357,6 @@
 	flow-children: right-wrap;
 }
 
-#SwitchTabButton
-{
-	width: 130px;
-	height: 90%;
-	vertical-align: center;
-	margin: 0 10px;
-	flow-children: down;
-}
-#SwitchTabButton:hover
-{
-	//transform: translateY(2px);
-	margin-top: 4px;
-}
-#SwitchTabButton:active
-{
-	//transform: translateY(4px);
-	margin-top: 8px;
-}
-#SwitchTabButton:disabled
-{
-	saturation: .1;
-	wash-color: grey;
-}
-#SwitchTabButton Image
-{
-	margin-top: 20px;
-	horizontal-align: center;
-	width: height-percentage(100%);
-}
-#SwitchTabButton Label
-{
-	margin-top: 6px;
-	horizontal-align: center;
-	text-align: center;
-	font-size: 23px;
-	color: rgb(200,200,200);
-}
 #AbilitiesPanel
 {
 	width: 100%;

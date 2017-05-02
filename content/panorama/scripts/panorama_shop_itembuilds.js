@@ -2,36 +2,36 @@ var SelectedBuild = {},
 	CustomBuildToggleButton = {};
 
 function UpdateItembuildsForHero() {
-	var heroName = GetPlayerHeroName(Game.GetLocalPlayerID())
-	if (LastHero != heroName && heroName != "npc_dota_hero_arena_base" && heroName != "npc_dota_hero_target_dummy") {
+	var heroName = GetPlayerHeroName(Game.GetLocalPlayerID());
+	if (heroName && heroName !== "npc_dota_hero_arena_base" && heroName !== "npc_dota_hero_target_dummy" && LastHero !== heroName) {
 		LastHero = heroName;
-		LoadGuidesForHero(heroName)
+		LoadGuidesForHero(heroName);
 	}
 }
 
 function LoadGuidesForHero(heroName, skipAutoSelect, callback) {
 	GetDataFromServer("GetGuides", {steamID: Game.GetLocalPlayerInfo().player_steamid, hero: heroName}, function(builds) {
-		if (LastHero == heroName) {
+		if (LastHero === heroName) {
 			var autoSelectedBuild;
 			var best = builds.best;
-			$("#GuidesAvaliableList").RemoveAndDeleteChildren()
-			if (builds.standard) Snippet_GuideListEntry(builds.standard)
+			$("#GuidesAvaliableList").RemoveAndDeleteChildren();
+			if (builds.standard) Snippet_GuideListEntry(builds.standard);
 
-			CustomBuildToggleButton = Snippet_GuideListEntry({steamID: -1})
+			CustomBuildToggleButton = Snippet_GuideListEntry({steamID: -1});
 			$.Each(best, function(build) {
 				if (!autoSelectedBuild) autoSelectedBuild = build;
-				Snippet_GuideListEntry(build)
-			})
+				Snippet_GuideListEntry(build);
+			});
 			if (!autoSelectedBuild) autoSelectedBuild = builds.standard;
-			$.GetContextPanel().SetHasClass("ItembuildsHidden", autoSelectedBuild == null)
+			$.GetContextPanel().SetHasClass("ItembuildsHidden", autoSelectedBuild == null);
 			if (!skipAutoSelect) SelectItembuild(autoSelectedBuild);
-			if (callback) callback()
+			if (callback) callback();
 		}
 	}, function(error) {
-		if (LastHero == heroName) { //If hero wasn't changed while builds loaded
-			$("#GuidesAvaliableList").RemoveAndDeleteChildren()
-			CustomBuildToggleButton = Snippet_GuideListEntry({steamID: -1})
-			$.GetContextPanel().AddClass("ItembuildsHidden")
+		if (LastHero === heroName) {
+			$("#GuidesAvaliableList").RemoveAndDeleteChildren();
+			CustomBuildToggleButton = Snippet_GuideListEntry({steamID: -1});
+			$.GetContextPanel().AddClass("ItembuildsHidden");
 			if (!skipAutoSelect) SelectItembuild(null);
 		}
 	});
@@ -39,57 +39,57 @@ function LoadGuidesForHero(heroName, skipAutoSelect, callback) {
 
 function SelectItembuild(build) {
 	SelectedBuild = build;
-	var groupsRoot = $("#ItembuildPanelsRoot")
+	var groupsRoot = $("#ItembuildPanelsRoot");
 	$("#ItembuildPanelsRoot").RemoveAndDeleteChildren();
 	if (build != null) {
 		$("#Itembuild_version").text = build.version || "";
-		UpdateSelectedItembuildAuthorData(build.steamID, build.title)
+		UpdateSelectedItembuildAuthorData(build.steamID, build.title);
 		//MongoObjectIDToDate(build._id)
 		$.Each(build.items, function(groupData) {
-			CreateItembuildGroup(groupsRoot, build.steamID == -1 ? $.Localize(groupData.title) : groupData.title, groupData.content)
-		})
+			CreateItembuildGroup(groupsRoot, build.steamID === -1 ? $.Localize(groupData.title) : groupData.title, groupData.content);
+		});
 	} else {
-		UpdateSelectedItembuildAuthorData(-1)
+		UpdateSelectedItembuildAuthorData(-1);
 	}
 }
 
 function UpdateSelectedItembuildAuthorData(steamID, title) {
-	var Itembuild_author_player = $("#Itembuild_author_player")
-	$("#Itembuild_title").text = steamID == 0 ? $.Localize("DOTA_UI_default_build") : steamID == -1 ? $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)) : title || ""
-	Itembuild_author_player.visible = typeof steamID == "string"
-	Itembuild_author_player.steamid = steamID
-	Itembuild_author_player.SetAttributeString("steamid", steamID)
+	var Itembuild_author_player = $("#Itembuild_author_player");
+	$("#Itembuild_title").text = steamID === 0 ? $.Localize("DOTA_UI_default_build") : steamID === -1 ? $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)) : title || "";
+	Itembuild_author_player.visible = typeof steamID === "string";
+	Itembuild_author_player.steamid = steamID;
+	Itembuild_author_player.SetAttributeString("steamid", steamID);
 }
 
 function AddNewGroupToItembuild() {
-	CreateItembuildGroup($("#ItembuildPanelsRoot"), "New Group", [])
+	CreateItembuildGroup($("#ItembuildPanelsRoot"), "New Group", []);
 }
 
 function CreateItembuildGroup(groupsRoot, title, content) {
 	var groupRoot = $.CreatePanel("Panel", groupsRoot, "");
-	groupRoot.BLoadLayoutSnippet("ItembuildGroup")
-	var groupTitle = groupRoot.FindChildTraverse("ItembuildItemGroupTitle")
+	groupRoot.BLoadLayoutSnippet("ItembuildGroup");
+	var groupTitle = groupRoot.FindChildTraverse("ItembuildItemGroupTitle");
 	groupTitle.text = title;
 	groupTitle.enabled = $.GetContextPanel().BHasClass("EditMode");
-	var itemsRoot = groupRoot.FindChildTraverse("ItembuildItemGroupItemRoot")
+	var itemsRoot = groupRoot.FindChildTraverse("ItembuildItemGroupItemRoot");
 	var createPanelForGroup = function(item) {
 		var itemPanel = SnippetCreate_SmallItem($.CreatePanel("Panel", itemsRoot, "shop_itembuild_items_" + item), item, false, function(panel) {
 			if ($.GetContextPanel().BHasClass("EditMode")) panel.visible = false;
 			return true;
 		}, function(panel) {
 			if ($.GetContextPanel().BHasClass("EditMode")) {
-				panel.DeleteAsync(0)
-				UpdateSelectedItembuildAuthorData(-1)
+				panel.DeleteAsync(0);
+				UpdateSelectedItembuildAuthorData(-1);
 			}
-		})
+		});
 		$.RegisterEventHandler('DragDrop', itemPanel, function(panelId, draggedPanel) {
 			if ($.GetContextPanel().BHasClass("EditMode") && draggedPanel.itemname != null) {
-				itemsRoot.MoveChildBefore(createPanelForGroup(draggedPanel.itemname), itemPanel)
+				itemsRoot.MoveChildBefore(createPanelForGroup(draggedPanel.itemname), itemPanel);
 				return true;
 			}
 		});
 		return itemPanel;
-	}
+	};
 
 	$.RegisterEventHandler('DragStart', itemsRoot, function(panelId, dragCallbacks) {
 		//$.GetContextPanel().AddClass("DropDownMode")
@@ -111,15 +111,15 @@ function CreateItembuildGroup(groupsRoot, title, content) {
 
 	$.RegisterEventHandler('DragDrop', groupRoot, function(panelId, draggedPanel) {
 		if ($.GetContextPanel().BHasClass("EditMode") && draggedPanel.itemname) {
-			createPanelForGroup(draggedPanel.itemname)
-			UpdateSelectedItembuildAuthorData(-1)
+			createPanelForGroup(draggedPanel.itemname);
+			UpdateSelectedItembuildAuthorData(-1);
 			return true;
 		} else if (draggedPanel.ItembuildParentPanel != null) {
-			groupsRoot.MoveChildBefore(draggedPanel.ItembuildParentPanel, groupRoot)
-			UpdateSelectedItembuildAuthorData(-1)
+			groupsRoot.MoveChildBefore(draggedPanel.ItembuildParentPanel, groupRoot);
+			UpdateSelectedItembuildAuthorData(-1);
 		}
 	});
-	$.Each(content, createPanelForGroup)
+	$.Each(content, createPanelForGroup);
 }
 
 function ToggleEditMode(state) {
@@ -127,67 +127,67 @@ function ToggleEditMode(state) {
 
 	$.Each($("#ItembuildPanelsRoot").Children(), function(child) {
 		var te = child.GetChild(0);
-		te.enabled = newState
+		te.enabled = newState;
 		if (te.BHasKeyFocus()) {
-			$.GetContextPanel().SetFocus()
+			$.GetContextPanel().SetFocus();
 		}
-	})
-	if (newState) ToggleGuidesBrowser(false)
-	$.GetContextPanel().SetHasClass("EditMode", newState)
+	});
+	if (newState) ToggleGuidesBrowser(false);
+	$.GetContextPanel().SetHasClass("EditMode", newState);
 }
 
 function ParseCurrentGuide() {
 	var build = {steamID: -1, items: []};
 	$.Each($("#ItembuildPanelsRoot").Children(), function(group) {
-		var g = {title: group.GetChild(0).text, content: []}
+		var g = {title: group.GetChild(0).text, content: []};
 		$.Each(group.GetChild(1).Children(), function(item) {
-			g.content.push(item.itemName)
-		})
-		build.items.push(g)
-	})
-	return build
+			g.content.push(item.itemName);
+		});
+		build.items.push(g);
+	});
+	return build;
 }
 
 function ToggleGuidesBrowser(state) {
 	var newState = state != null ? state : !$.GetContextPanel().BHasClass("GuidesBrowserVisible");
-	$.GetContextPanel().SetHasClass("GuidesBrowserVisible", newState)
+	$.GetContextPanel().SetHasClass("GuidesBrowserVisible", newState);
 	if (newState) {
-		ToggleEditMode(false)
-		if ($("#Itembuild_author_player").GetAttributeString("steamid", "-1") == "-1") {
-			SelectedBuild = ParseCurrentGuide()
-			CustomBuildToggleButton.build = SelectedBuild
+		ToggleEditMode(false);
+		if ($("#Itembuild_author_player").GetAttributeString("steamid", "-1") === "-1") {
+			SelectedBuild = ParseCurrentGuide();
+			CustomBuildToggleButton.build = SelectedBuild;
 		}
-		CustomBuildToggleButton.visible = CustomBuildToggleButton.build.items != null
+		CustomBuildToggleButton.visible = CustomBuildToggleButton.build.items != null;
 		$.Each($("#GuidesAvaliableList").Children(), function(c) {
-			c.checked = c.build == SelectedBuild
-			c.SetHasClass("IsSelectedGuide", c.build == SelectedBuild)
-		})
-		GuidesBrowserLoadBuild(SelectedBuild)
+			c.checked = c.build === SelectedBuild;
+			c.SetHasClass("IsSelectedGuide", c.build === SelectedBuild);
+		});
+		GuidesBrowserLoadBuild(SelectedBuild);
 	}
 }
 
 function Snippet_GuideListEntry(build) {
-	var steamID = build.steamID
-	var panel = $.CreatePanel("RadioButton", $("#GuidesAvaliableList"), "")
-	panel.BLoadLayoutSnippet("GuideListEntry")
-	panel.SetDialogVariable("guide_entry_rating", build.votes != null ? build.votes : "")
+	var steamID = build.steamID;
+	var panel = $.CreatePanel("RadioButton", $("#GuidesAvaliableList"), "");
+	panel.BLoadLayoutSnippet("GuideListEntry");
+	panel.SetDialogVariable("guide_entry_rating", build.votes != null ? build.votes : "");
 
 	panel.FindChildTraverse("GuideEntryVersion").text = build.version || "";
-	var GuideEntryAuthor = panel.FindChildTraverse("GuideEntryAuthor")
-	GuideEntryAuthor.visible = typeof steamID == "string"
-	GuideEntryAuthor.steamid = steamID
+	var GuideEntryAuthor = panel.FindChildTraverse("GuideEntryAuthor");
+	GuideEntryAuthor.visible = typeof steamID === "string";
+	GuideEntryAuthor.steamid = steamID;
 
-	panel.SetDialogVariable("guide_entry_title", steamID == 0 ? $.Localize("DOTA_UI_default_build") : steamID == -1 ? $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)) : build.title || "")
-	panel.build = build
+	panel.SetDialogVariable("guide_entry_title", steamID === 0 ? $.Localize("DOTA_UI_default_build") : steamID === -1 ? $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)) : build.title || "");
+	panel.build = build;
 	panel.SetPanelEvent("onactivate", function() {
-		GuidesBrowserLoadBuild(panel.build)
-	})
+		GuidesBrowserLoadBuild(panel.build);
+	});
 	panel.FindChildTraverse("SelectGuideButton").SetPanelEvent("onactivate", function() {
-		SelectItembuild(panel.build)
+		SelectItembuild(panel.build);
 		$.Each($("#GuidesAvaliableList").Children(), function(c) {
-			c.SetHasClass("IsSelectedGuide", c.build == SelectedBuild)
-		})
-	})
+			c.SetHasClass("IsSelectedGuide", c.build === SelectedBuild);
+		});
+	});
 	return panel;
 }
 
@@ -201,11 +201,11 @@ function GuideVote(vote) {
 		if (vote < 0) return; newVotes++; vote = 0;
 	} else
 		newVotes += vote;
-	$.GetContextPanel().SetHasClass("VotedYes", vote > 0)
-	$.GetContextPanel().SetHasClass("VotedNo", vote < 0)
+	$.GetContextPanel().SetHasClass("VotedYes", vote > 0);
+	$.GetContextPanel().SetHasClass("VotedNo", vote < 0);
 
 	CurrentPageGuide.votes = newVotes;
-	var localSteamId = Game.GetLocalPlayerInfo().player_steamid
+	var localSteamId = Game.GetLocalPlayerInfo().player_steamid;
 	if (vote >= 0) {
 		var i = CurrentPageGuide.votes_down.indexOf(localSteamId);
 		if (i > -1) CurrentPageGuide.votes_down.splice(i, 1);
@@ -214,44 +214,45 @@ function GuideVote(vote) {
 		var i = CurrentPageGuide.votes_up.indexOf(localSteamId);
 		if (i > -1) CurrentPageGuide.votes_up.splice(i, 1);
 	}
-	if (vote != 0) {
+	if (vote !== 0) {
 		var a = CurrentPageGuide[vote > 0 ? "votes_up" : "votes_down"];
-		if (a.indexOf(localSteamId) === -1) a.push(localSteamId)
+		if (a.indexOf(localSteamId) === -1) a.push(localSteamId);
 	}
 	$.Each($("#GuidesAvaliableList").Children(), function(c) {
-		if (c.build == CurrentPageGuide) {
-			c.SetDialogVariable("guide_entry_rating", newVotes)
+		if (c.build === CurrentPageGuide) {
+			c.SetDialogVariable("guide_entry_rating", newVotes);
 			return false;
 		}
-	})
-	$.GetContextPanel().SetDialogVariable("guide_player_rating", newVotes)
+	});
+	$.GetContextPanel().SetDialogVariable("guide_player_rating", newVotes);
 
-	GameEvents.SendCustomGameEventToServer("stats_client_vote_guide", {id: CurrentPageGuide._id, vote: vote})
+	GameEvents.SendCustomGameEventToServer("stats_client_vote_guide", {id: CurrentPageGuide._id, vote: vote});
 }
 
 function GuidesBrowserLoadBuild(build) {
-	var steamID = build.steamID
+	var steamID = build.steamID;
 	CurrentPageGuide = build;
-	var localSteamId = Game.GetLocalPlayerInfo().player_steamid
-	$.GetContextPanel().SetHasClass("ShowVoteAndFavorite", typeof steamID == "string")
-	$.GetContextPanel().SetHasClass("HasYouTubeVideo", build.youtube != null)
-	$.GetContextPanel().SetHasClass("CanPublishBuild", steamID == -1)
-	$.GetContextPanel().SetHasClass("VotedYes", build.votes_up && build.votes_up.indexOf(localSteamId) !== -1)
-	$.GetContextPanel().SetHasClass("VotedNo", build.votes_down && build.votes_down.indexOf(localSteamId) !== -1)
-	$.GetContextPanel().SetDialogVariable("guide_player_rating", build.votes || 0)
+	var localSteamId = Game.GetLocalPlayerInfo().player_steamid;
+	$.GetContextPanel().SetHasClass("ShowVoteAndFavorite", typeof steamID === "string");
+	$.GetContextPanel().SetHasClass("HasYouTubeVideo", build.youtube != null);
+	$.GetContextPanel().SetHasClass("CanPublishBuild", steamID === -1);
+	
+	$.GetContextPanel().SetHasClass("VotedYes", _.includes(build.votes_up, localSteamId));
+	$.GetContextPanel().SetHasClass("VotedNo", _.includes(build.votes_down, localSteamId));
+	$.GetContextPanel().SetDialogVariable("guide_player_rating", build.votes || 0);
 
-	if (steamID != -1) TogglePublishMode(false)
+	if (steamID !== -1) TogglePublishMode(false);
 
-	$("#GuidesTitleLabel").text = steamID == 0 ? $.Localize("DOTA_UI_default_build") : steamID == -1 ? $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)) : build.title || ""
-	$("#GuidesBrowserDescription").text = build.description || ""
-	var GuideItemBuild = $("#GuideItemBuild")
+	$("#GuidesTitleLabel").text = steamID === 0 ? $.Localize("DOTA_UI_default_build") : steamID === -1 ? $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)) : build.title || "";
+	$("#GuidesBrowserDescription").text = build.description || "";
+	var GuideItemBuild = $("#GuideItemBuild");
 	$.Each(GuideItemBuild.FindChildrenWithClassTraverse("SmallItemPanel"), function(c) {
-		c.DestroyItemPanel()
-	})
-	GuideItemBuild.RemoveAndDeleteChildren()
+		c.DestroyItemPanel();
+	});
+	GuideItemBuild.RemoveAndDeleteChildren();
 	$.Each(build.items, function(groupData) {
-		CreateItembuildGroup(GuideItemBuild, groupData.title, groupData.content)
-	})
+		CreateItembuildGroup(GuideItemBuild, groupData.title, groupData.content);
+	});
 }
 
 function OpenYoutubeForGuide(build) {
@@ -260,44 +261,44 @@ function OpenYoutubeForGuide(build) {
 
 function TogglePublishMode(state) {
 	var newState = state != null ? state : !$.GetContextPanel().BHasClass("InGuidePublishMode");
-	$.GetContextPanel().SetHasClass("InGuidePublishMode", newState)
-	$("#GuidesTitleLabel").enabled = newState
+	$.GetContextPanel().SetHasClass("InGuidePublishMode", newState);
+	$("#GuidesTitleLabel").enabled = newState;
 }
 
 function PublishGuide(build) {
 	var build = CustomBuildToggleButton.build;
-	build.title = $("#GuidesTitleLabel").text
-	build.description = $("#GuidePublishDescription").text
-	build.youtube = $("#GuidePublishYouTube").text
-	if (build.title == $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)).substring(0, 20)) {
+	build.title = $("#GuidesTitleLabel").text;
+	build.description = $("#GuidePublishDescription").text;
+	build.youtube = $("#GuidePublishYouTube").text;
+	if (build.title === $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)).substring(0, 20)) {
 		GameEvents.SendEventClientSide("dota_hud_error_message", {
 			"reason": 80,
 			"message": "#error_panorama_shop_publish_guide_title"
 		});
 	} else {
-		GameEvents.SendCustomGameEventToServer("stats_client_add_guide", build)
-		TogglePublishMode(false)
+		GameEvents.SendCustomGameEventToServer("stats_client_add_guide", build);
+		TogglePublishMode(false);
 	}
 }
 
 (function() {
-	var groupsRoot = $("#ItembuildPanelsRoot")
+	var groupsRoot = $("#ItembuildPanelsRoot");
 	$.RegisterEventHandler('DragDrop', $("#ShopItemBasePanel"), function(panelId, draggedPanel) {
 		if (draggedPanel.ItembuildParentPanel != null) {
-			draggedPanel.ItembuildParentPanel.DeleteAsync(0)
-			UpdateSelectedItembuildAuthorData(-1)
+			draggedPanel.ItembuildParentPanel.DeleteAsync(0);
+			UpdateSelectedItembuildAuthorData(-1);
 		}
 	});
 	GameEvents.Subscribe("stats_client_add_guide_success", function(data) {
-		$("#GuidePublishDescription").text = ""
-		$("#GuidePublishYouTube").text = ""
+		$("#GuidePublishDescription").text = "";
+		$("#GuidePublishYouTube").text = "";
 		LoadGuidesForHero(LastHero, true, function() {
 			$.Each($("#GuidesAvaliableList").Children(), function(c) {
-				if (c.build && c.build._id == data.insertedId) SelectItembuild(c.build)
-			})
-			ToggleGuidesBrowser($.GetContextPanel().BHasClass("GuidesBrowserVisible"))
+				if (c.build && c.build._id === data.insertedId) SelectItembuild(c.build);
+			});
+			ToggleGuidesBrowser($.GetContextPanel().BHasClass("GuidesBrowserVisible"));
 
-		})
-	})
-	TogglePublishMode(false)
+		});
+	});
+	TogglePublishMode(false);
 })();

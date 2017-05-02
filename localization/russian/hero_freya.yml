@@ -1,0 +1,31 @@
+npc_arena_hero_freya__hype: ''
+npc_arena_hero_freya__bio: ''
+
+DOTA_Tooltip_ability_freya_strike_the_ice_Description: 'Фрея запускает ледяные болты во всех врагов в выбранной области. При попадании эти болты нанесут урон, оглушат противника, и сделают невозможным регенерацию или лечение.'
+DOTA_Tooltip_ability_freya_strike_the_ice_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_freya_strike_the_ice_magic_missile_stun: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
+DOTA_Tooltip_modifier_freya_strike_the_ice_Description: Оглушен. Не может восстанавливать здоровье
+
+DOTA_Tooltip_ability_freya_ice_cage_Description: 'Окутывает цель льдом, оглушая и нанося урон от максимального здоровья цели. Все юниты вокруг цели так же заморозятся.'
+DOTA_Tooltip_ability_freya_ice_cage_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_freya_ice_cage_damage_per_second_pct: '%ПРОЦЕНТНЫЙ УРОН В СЕКУНДУ:'
+DOTA_Tooltip_ability_freya_ice_cage_aura_radius: 'РАДИУС ЗАМОРОЗКИ:'
+DOTA_Tooltip_modifier_freya_ice_cage: Ice Cage
+DOTA_Tooltip_modifier_freya_ice_cage_Description: Замораживает всех союзников рядом с собой
+DOTA_Tooltip_modifier_freya_ice_cage_aura_effect: Ice Cage
+DOTA_Tooltip_modifier_freya_ice_cage_aura_effect_Description: 'Окутан льдом. Получает урон, основанный на максимальном здоровье'
+
+DOTA_Tooltip_ability_freya_pain_reflection_Description: 'Фрея покрывает своё тело ледяными кристалами, которые отражают любой урон юниту, нанося урон и излечивая Фрею на часть возвращённого урона.'
+DOTA_Tooltip_ability_freya_pain_reflection_damage_return_pct: '%ВОЗВРАЩАЕТ УРОНА:'
+DOTA_Tooltip_ability_freya_pain_reflection_returned_to_heal_pct: '%УРОНА В ЗДОРОВЬЕ:'
+DOTA_Tooltip_ability_freya_pain_reflection_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_modifier_freya_pain_reflection: Pain Reflection
+DOTA_Tooltip_modifier_freya_pain_reflection_Description: 'Вовзращает урон атакующему, излечивая Фрею на часть возвращённого урона'
+
+DOTA_Tooltip_ability_freya_frozen_strike_Description: 'Следующая после активации атака оттолкнёт противника и нанесёт критический урон, основанный на основном атрибуте героя. Так же урон будет нанесён всем врагам за целью атаки.'
+DOTA_Tooltip_ability_freya_frozen_strike_base_crit_pct: '%КРИТИЧЕСКИЙ УРОН:'
+DOTA_Tooltip_ability_freya_frozen_strike_stat_to_crit_pct: '%ДОПОЛНИТЕЛЬНЫЙ УРОН ОТ ОСНОВНОГО АТРИБУТА:'
+DOTA_Tooltip_ability_freya_frozen_strike_cleave_radius: 'РАДИУС УРОНА ПО ОБЛАСТИ:'
+DOTA_Tooltip_ability_freya_frozen_strike_knockback_duration: 'ДЛИТЕЛЬНОСТЬ ОТТАЛКИВАНИЯ:'
+DOTA_Tooltip_modifier_freya_frozen_strike_crit: Frozen Strike
+DOTA_Tooltip_modifier_freya_frozen_strike_crit_Description: 'Следующая после активации атака нанесет урон по области, оттолкнёт противника и нанесёт критический урон'
