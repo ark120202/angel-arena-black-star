@@ -1,78 +1,69 @@
 "use strict";
-var MainPanel = $("#MainBox")
-var SelectedHeroData;
+var MainPanel = $("#MainBox");
 var SelectedHeroPanel;
 var SelectedTabIndex;
 var HeroesPanels = [];
 var DOTA_ACTIVE_GAMEMODE_TYPE;
 var AutoSearchHeroThinker;
 
-function OpenMenu(data) {
-	if (!MainPanel.visible) {
-		MainPanel.SetHasClass("ForcedHeroChange", data.forced == true)
-		MainPanel.visible = true
-		SelectHeroTab(1)
-		SelectFirstHeroPanel()
-		AutoSearchHero()
-	}
-}
-
 function CreateMenu(data) {
 	for (var tabKey in data.HeroTabs) {
-		var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey)
-		TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel")
-		FillHeroesTable(data.HeroTabs[tabKey], TabHeroesPanel)
-		TabHeroesPanel.visible = false
+		var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey);
+		TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel");
+		FillHeroesTable(data.HeroTabs[tabKey], TabHeroesPanel);
+		TabHeroesPanel.visible = false;
 	}
 	SelectHeroTab(1);
 	SelectFirstHeroPanel();
 }
 
+function OpenMenu(data) {
+	if (!MainPanel.visible) {
+		MainPanel.SetHasClass("ForcedHeroChange", data.forced === true);
+		MainPanel.visible = true;
+		SelectHeroTab(1);
+		SelectFirstHeroPanel();
+		AutoSearchHero();
+	}
+}
+
+function CloseMenu() {
+	MainPanel.visible = false;
+	if (AutoSearchHeroThinker != null)
+		$.CancelScheduled(AutoSearchHeroThinker);
+}
+
 function ChooseHeroPanelHero() {
-	ChooseHeroUpdatePanels()
+	ChooseHeroUpdatePanels();
 }
 
 function SelectHero() {
 	GameEvents.SendCustomGameEventToServer("metamorphosis_elixir_cast", {
-		hero: SelectedHeroData.heroKey
-	})
-	CloseMenu()
-	Game.EmitSound("HeroPicker.Selected")
+		hero: SelectedHeroName
+	});
+	CloseMenu();
+	Game.EmitSound("HeroPicker.Selected");
 }
 
 function UpdateSelectionButton() {
-	$("#SelectedHeroSelectButton").enabled = SelectedHeroData == null || !IsHeroPicked(SelectedHeroData.heroKey)
-}
-
-function CloseMenu() {
-	MainPanel.visible = false
-	if (AutoSearchHeroThinker != null)
-		$.CancelScheduled(AutoSearchHeroThinker)
+	$("#SelectedHeroSelectButton").enabled = HeroesData[SelectedHeroName] == null || !IsHeroPicked(SelectedHeroName);
 }
 
 function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
-	for (var k in HeroesPanels) {
-		var heroPanel = HeroesPanels[k]
-		if (heroPanel != null) {
-			heroPanel.SetHasClass("Picked", IsHeroPicked(heroPanel.id.substring("HeroListPanel_element_".length)))
-			heroPanel.SetHasClass("Locked", IsHeroLocked(heroPanel.id.substring("HeroListPanel_element_".length)))
-		}
-	}
-	UpdateSelectionButton()
+	_.each(HeroesPanels, function(heroPanel) {
+		heroPanel.SetHasClass("Picked", IsHeroPicked(heroPanel.id.substring("HeroListPanel_element_".length)));
+		heroPanel.SetHasClass("Locked", IsHeroLocked(heroPanel.id.substring("HeroListPanel_element_".length)));
+	});
+	UpdateSelectionButton();
 }
 
 function AutoSearchHero() {
-	SearchHero()
-	AutoSearchHeroThinker = $.Schedule(0.3, AutoSearchHero)
+	SearchHero();
+	AutoSearchHeroThinker = $.Schedule(0.3, AutoSearchHero);
 }
 
 (function() {
-	GameEvents.Subscribe("metamorphosis_elixir_show_menu", OpenMenu)
-	MainPanel.visible = false
-	DynamicSubscribePTListener("hero_selection", UpdateHeroesSelected)
-	DynamicSubscribePTListener("hero_selection_available_heroes", function(tableName, changesObject, deletionsObject) {
-		if (changesObject.HeroTabs != null) {
-			CreateMenu(changesObject);
-		};
-	});
-})()
+	GameEvents.Subscribe("metamorphosis_elixir_show_menu", OpenMenu);
+	MainPanel.visible = false;
+	DynamicSubscribePTListener("hero_selection", UpdateHeroesSelected);
+})();

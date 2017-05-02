@@ -1,0 +1,29 @@
+npc_arena_hero_stargazer: Stargazer
+npc_arena_hero_stargazer_bio: 'Where there is war, there is always appears he - the ghost of retribution, Stargazer never miss the opportunity to get knowledge, which he receives from the battlefield, every second of his power is growing. Moving into the heat of battle Stargazer instantly slipping out of sight in one place and appear in another.'
+
+DOTA_Tooltip_ability_stargazer_gamma_ray: Gamma Ray
+DOTA_Tooltip_ability_stargazer_gamma_ray_Description: 'Stargazer strikes the target point with intense energy, dealing damage to enemies caught inside. The damage dealt and the radius both scale based on his current Intelligence stat.'
+DOTA_Tooltip_ability_stargazer_gamma_ray_Lore: 'As the Stargazer grows wiser, so his enemies feel his pain.'
+DOTA_Tooltip_ability_stargazer_gamma_ray_base_damage: 'BASE DAMAGE:'
+DOTA_Tooltip_ability_stargazer_gamma_ray_int_to_dmg_pct: '%INT TO DAMAGE:'
+DOTA_Tooltip_ability_stargazer_gamma_ray_base_radius: 'BASE RADIUS:'
+DOTA_Tooltip_ability_stargazer_gamma_ray_int_to_radius_pct: '%INT TO RADIUS:'
+
+DOTA_Tooltip_ability_stargazer_warp: Warp
+DOTA_Tooltip_ability_stargazer_warp_Description: 'Stargazer quickly leaps away, using a similar technique learned from traveling from star to star. The distance traveled is augmented by his current Agility stat.'
+DOTA_Tooltip_ability_stargazer_warp_Lore: 'As the Stargazer grows nimbler, so his enemies find him harder to catch.'
+DOTA_Tooltip_ability_stargazer_warp_base_range: 'BASE RANGE:'
+DOTA_Tooltip_ability_stargazer_warp_agi_to_range_pct: '%RANGE AGILITY BONUS:'
+
+DOTA_Tooltip_ability_stargazer_inverse_field: Inverse Field
+DOTA_Tooltip_ability_stargazer_inverse_field_Description: 'Stargazer reflects a portion of damage dealt to him to his original attacker, his matter being unstable when put into human form. The damage reflected scales based off his current Strength stat.'
+DOTA_Tooltip_ability_stargazer_inverse_field_Lore: 'As the Stargazer grows tougher, so his enemies feel his wounds'
+DOTA_Tooltip_ability_stargazer_inverse_field_base_reflection: '%BASE DAMAGE REFLECTION:'
+DOTA_Tooltip_ability_stargazer_inverse_field_str_to_reflection_pct: '%STR TO REFLECTION PERCENT:'
+
+DOTA_Tooltip_ability_stargazer_cosmic_countdown: Cosmic Countdown
+DOTA_Tooltip_ability_stargazer_cosmic_countdown_Description: |-
+  Stargazer has the patience of one older than time. He gains a small amount of Intelligence, Agility, and Strength every time a cycle completes itself, hoping to make himself whole once more.
+  This ability acts retroactively untill it is first leveled, but not on consecutive levels
+DOTA_Tooltip_ability_stargazer_cosmic_countdown_Lore: 'As the Stargazer grows older, so his enemies''s time grows shorter.'
+DOTA_Tooltip_ability_stargazer_cosmic_countdown_stats_per_cycle: 'STATS PER CYCLE:'

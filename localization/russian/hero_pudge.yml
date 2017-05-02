@@ -1,0 +1,42 @@
+DOTA_Tooltip_ability_pudge_meat_hook_lua_Description: |-
+  Бросает окровавленный крюк в указанную цель или в выбранном направлении. Крюк будет цеплять всех существ, в которых попадет, притащит их к Pudge и нанесет урон, если это враг. Цепляет юнитов, даже когда крюк вовзращается к Pudge
+  Когда Pudge убивает противника при помощи Meat Hook он получает стак Bloodstained. Каждый стак повышает радиус применения Hook и его скорость.
+DOTA_Tooltip_ability_pudge_meat_hook_lua_aghanim_description: 'Уменьшает время перезарядки, увеличивает урон и убирает задержку после применения Meat Hook.'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_Note0: Прерывает прочтение врагом заклинания.
+DOTA_Tooltip_ability_pudge_meat_hook_lua_Note1: Действует на невидимых юнитов.
+DOTA_Tooltip_ability_pudge_meat_hook_lua_Note2: 'Проходит через деревья, возвышенности и строения.'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_Note3: Может притягивать союзников; урон нанесен не будет.
+DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_speed: 'СКОРОСТЬ:'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance: 'РАДИУС:'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_damage_scepter: 'УРОН СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_cooldown_scepter: 'ПЕРЕЗАРЯДКА СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance_per_stack: 'РАДИУС ЗА СТАК:'
+
+DOTA_Tooltip_ability_pudge_rot_arena_Description: "Токсичное облако, которое постоянно наносит урон и замедляет противников,\_ранит не только вражеских юнитов, но и самого Pudge. Каждый стак способности Flesh Heap увеличивает радиус Rot."
+DOTA_Tooltip_ability_pudge_rot_arena_Note0: Не прерывает прочтение других заклинаний.
+DOTA_Tooltip_ability_pudge_rot_arena_Note1: Действует на невидимых врагов.
+DOTA_Tooltip_ability_pudge_rot_arena_Note2: 'Если ваш герой обезмолвлен, то выключить способность Rot нельзя.'
+DOTA_Tooltip_ability_pudge_rot_arena_Note3: С помощью этой способности можно совершить самоубийство.
+DOTA_Tooltip_ability_pudge_rot_arena_rot_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_pudge_rot_arena_rot_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_pudge_rot_arena_rot_damage: 'УРОН:'
+DOTA_Tooltip_ability_pudge_rot_arena_rot_radius_per_stack: 'РАДИУС ЗА СТАК:'
+DOTA_Tooltip_ability_pudge_rot_arena_rot_radius_limit: 'МАКС. СТАК:'
+DOTA_Tooltip_modifier_pudge_rot_arena_slow_Description: 'Получает урон, скорость передвидения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%'
+
+DOTA_Tooltip_ability_pudge_flesh_heap_arena_Description: 'Дает Pudge сопротивление магическому урону и дополнительную силу, которая увеличивается, когда Pudge убивает вражеского героя или тот умирает поблизости. Каждые %creeps_killed_to_stack% убитых крипов также дают Pudge стак Flesh Heap. Также слегка увеличивает размер самого Pudge. Способность начинает накапливать заряды уже до того, как будет выучена, но получить силу герой сможет, только изучив ее.'
+DOTA_Tooltip_ability_pudge_flesh_heap_arena_flesh_heap_magic_resist_stack_pct: '%СОПРОТИВЛЕНИЕ МАГИИ ЗА СТАК:'
+DOTA_Tooltip_ability_pudge_flesh_heap_arena_flesh_heap_strength_buff_amount: 'ДОП. СИЛА ЗА СТАК:'
+DOTA_Tooltip_ability_pudge_flesh_heap_arena_creeps_killed_to_stack: 'КРИПОВ ДЛЯ СТАКА:'
+DOTA_Tooltip_ability_pudge_flesh_heap_arena_range: 'РАДИУС:'
+DOTA_Tooltip_modifier_pudge_flesh_heap_arena_stack_Description: 'Сила увеличена на %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, сопротивление магическому урону увеличено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%'
+
+DOTA_Tooltip_ability_pudge_dismember_arena_Description: 'ПРЕРЫВАЕМАЯ — Pudge начинает заживо пожирать вражеского юнита, обездвиживая его и нанося периодический урон. Весь нанесенный урон излечивает Pudge. Длится 3 секунды на героях или 6 секунд на крипах.'
+DOTA_Tooltip_ability_pudge_dismember_arena_aghanim_description: Dismember будет наносить урон всем противникам рядом с основной целью.
+DOTA_Tooltip_ability_pudge_dismember_arena_Note0: 'Выводит из строя невосприимчивых к заклинаниям врагов, но не наносит им урона.'
+DOTA_Tooltip_ability_pudge_dismember_arena_dismember_damage: 'УРОН В СЕКУНДУ:'
+DOTA_Tooltip_ability_pudge_dismember_arena_strength_damage: '%МНОЖИТЕЛЬ СИЛЫ:'
+DOTA_Tooltip_ability_pudge_dismember_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_pudge_dismember_arena_damage_aoe_scepter: 'РАДИУС СО СКИПЕТРОМ:'
+DOTA_Tooltip_modifier_pudge_dismember_arena: Dismember
+DOTA_Tooltip_modifier_pudge_dismember_arena_Description: Расчленяется Pudge

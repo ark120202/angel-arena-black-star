@@ -47,13 +47,13 @@ local requirements = {
 	"spawner",
 	"bosses",
 	"duel",
-	"hero_selection",
+	"hero_selection/main",
 	"internal/containers",
 	"herovoice",
 	"gold",
 	"kills",
 	"panorama_shop",
-	"gamemodes",
+	"options",
 	"statcollection/init",
 	"SimpleAI",
 	"dynamic_minimap",
@@ -86,7 +86,7 @@ JSON = require("libraries/json")
 for k,v in pairs(modifiers) do
 	LinkLuaModifier(k, v, LUA_MODIFIER_MOTION_NONE)
 end
-GameModes:Preload()
+Options:Preload()
 
 function GameMode:InitGameMode()
 	GameMode = self
@@ -99,23 +99,18 @@ function GameMode:InitGameMode()
 	HeroSelection:Initialize()
 	GameMode:RegisterCustomListeners()
 	DynamicWearables:Init()
+	HeroSelection:PrepareTables()
+	PanoramaShop:InitializeItemTable()
+	
+	Containers:SetItemLimit(50)
+	Containers:UsePanoramaInventory(false)
+	StatsClient:Init()
 	PlayerTables:CreateTable("arena", {
 		gold = {},
-		gamemode_settings = {
-			kill_goals = POSSIBLE_KILL_GOALS,
-			gamemode = DOTA_ACTIVE_GAMEMODE,
-			gamemode_type = DOTA_ACTIVE_GAMEMODE_TYPE,
-			gamemode_map = ARENA_ACTIVE_GAMEMODE_MAP,
-		},
 		players_abandoned = {},
 	}, AllPlayersInterval)
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
-
 	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
-	Containers:SetItemLimit(50)
-	Containers:UsePanoramaInventory(false)
-	HeroSelection:PrepareTables()
-	PanoramaShop:InitializeItemTable()
 end
 
 function GameMode:PostLoadPrecache()
@@ -123,13 +118,7 @@ function GameMode:PostLoadPrecache()
 end
 
 function GameMode:OnFirstPlayerLoaded()
-	--[[local portal2 = Entities:FindByName(nil, "target_mark_teleport_river_team2")
-	local portal3 = Entities:FindByName(nil, "target_mark_teleport_river_team3")
-	if portal2 and portal3 then
-		CreateLoopedPortal(portal2:GetAbsOrigin(), portal3:GetAbsOrigin(), 80, "particles/customgames/capturepoints/cp_wood.vpcf", "", true)
-	end]]
-
-	if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
+	if Options:IsEquals("EnableAbilityShop") then
 		AbilityShop:PrepareData()
 	end
 end

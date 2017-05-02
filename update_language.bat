@@ -1,0 +1,1 @@
+@dota_locale_gen

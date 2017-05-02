@@ -1,0 +1,34 @@
+npc_arena_hero_arthas: Папич
+npc_arena_hero_arthas_hype: ''
+npc_arena_hero_arthas_bio: 'Лучший игрок доты Evil Arthas, величайший во Вселенной и топ 3 ладдера, не нуждается в представлении. Однажды, во время стрима, в его квартире открылся Раскол, ведущий в арену Ангелов. Под свой фирменный гимн он запрыгнул в него, трансформировавшись в могущественного демона, чтобы в очередной раз доказать хейтерам, что он лучший в мире.'
+
+DOTA_Tooltip_ability_arthas_rage_of_arthas: Ярость Папича
+DOTA_Tooltip_ability_arthas_rage_of_arthas_Description: 'Папич издаёт громкий крик, оглушая и нанося урон всём противникам рядом.'
+DOTA_Tooltip_ability_arthas_rage_of_arthas_area_of_effect: 'РАДИУС:'
+DOTA_Tooltip_ability_arthas_rage_of_arthas_stun_duration: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
+DOTA_Tooltip_modifier_arthas_rage_of_arthas_stun: Оглушение
+DOTA_Tooltip_modifier_arthas_rage_of_arthas_stun_Description: Оглушен криком Папича.
+
+DOTA_Tooltip_ability_arthas_plus_morality: НА ПЛЮСМОРАЛИЧАХ
+DOTA_Tooltip_ability_arthas_plus_morality_Description: 'Когда Папич убивает вражеского героя или забирает руну богатства он получает дополнительную скорость атаки и скорость передвижения. Эти бонусы имеют бесконечную продолжительность, но сбрасываются при смерти. Также руны богатства дают в %bounty_multiplier_tooltip% раза больше золота.'
+DOTA_Tooltip_ability_arthas_plus_morality_bonus_attackspeed: 'СКОРОСТЬ АТАКИ ЗА СТАК:'
+DOTA_Tooltip_ability_arthas_plus_morality_bonus_movespeed: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ЗА СТАК:'
+DOTA_Tooltip_ability_arthas_plus_morality_bounty_multiplier: 'МНОЖИТЕЛЬ РУНЫ БОГАТСТВА:'
+DOTA_Tooltip_arthas_plus_morality_buff: Плюс Мораль
+DOTA_Tooltip_arthas_plus_morality_buff_Description: Добавляет %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% скорости передвижения и %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% скорости атаки.
+
+DOTA_Tooltip_ability_arthas_vikared: Измерение Вики
+DOTA_Tooltip_ability_arthas_vikared_Description: Папич перемещается в другое измерение где его ждёт Вика. В это время он неуезвим и получает дополнительную регенерацию здоровья.
+DOTA_Tooltip_ability_arthas_vikared_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_arthas_vikared_health_regen_percent: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
+DOTA_Tooltip_modifier_arthas_vikared: Vikared
+DOTA_Tooltip_modifier_arthas_vikared_Description: 'Смещен из измерения, регенерирует %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% от максимального здоровья в секунду.'
+
+DOTA_Tooltip_ability_arthas_vsolyanova: В СОЛЯНОВА
+DOTA_Tooltip_ability_arthas_vsolyanova_Description: 'Если от союзников Папича нет помощи (их нет рядом) то он становится демоном с повышенным уроном и шансом залить солярую (убить противника с одной тычки). Когда Папич заливает соляру все противники оглушаются, а на союзников накладывается обезмолвие. Иллюзии Папича тоже могут залить соляру, но с меньшим шансом.'
+DOTA_Tooltip_ability_arthas_vsolyanova_Note0: Папич не может залить соляру на боссов.
+DOTA_Tooltip_ability_arthas_vsolyanova_radius: 'РАДИУС ПОИСКА СОЮЗНИКОВ:'
+DOTA_Tooltip_ability_arthas_vsolyanova_bonus_damage: 'ДОПОЛНИТЕЛЬНЫЙ УРОН:'
+DOTA_Tooltip_ability_arthas_vsolyanova_nia_chance: '%ШАНС ЗАЛИТЬ СОЛЯРУ:'
+DOTA_Tooltip_ability_arthas_vsolyanova_nia_chance_illusions: '%ШАНС ЗАЛИТЬ СОЛЯРУ У ИЛЛЮЗИЙ:'
+DOTA_Tooltip_ability_arthas_vsolyanova_roar_duration: 'ДЛИТЕЛЬНОСТЬ СТАНА/ОБЕЗМОЛВИЯ:'

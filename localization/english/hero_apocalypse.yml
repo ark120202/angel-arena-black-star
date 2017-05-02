@@ -1,0 +1,52 @@
+npc_arena_hero_apocalypse: APOCALYPSE
+
+DOTA_Tooltip_ability_apocalypse_agnis_touch: Agni's Touch
+DOTA_Tooltip_ability_apocalypse_agnis_touch_Description: |-
+  Apocalypse steals a portion of an enemy's armor with each attack. Stolen armor is lost on death. Can't steal armor from bosses, illusions and creeps. As Apocalypse's health dwindles it starts to become ablaze, gaining an aura that scorches enemies around it; the lower it's health gets, the stronger the effects.
+  Ablaze aura begins when Apocalypse reaches a certain percentage of his health.
+DOTA_Tooltip_ability_apocalypse_agnis_touch_armor_per_attack: 'ARMOR STOLEN PER ATTACK:'
+DOTA_Tooltip_ability_apocalypse_agnis_touch_ablaze_radius: 'ABLAZE AURA RADIUS:'
+DOTA_Tooltip_ability_apocalypse_agnis_touch_ablaze_max_damage_per_second: 'ABLAZE MAX DAMAGE PER SECOND:'
+DOTA_Tooltip_ability_apocalypse_agnis_touch_ablaze_threshold_pct: '%ABLAZE AURA HEALTH THRESHOLD:'
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_armor: Agni's Touch
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_armor_Description: Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_disarmor: Agni's Touch
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_disarmor_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_ablaze: Agni's Touch Ablaze
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_ablaze_Description: Scorches enemies around Apocalypse. Damage depends on missing health percentage
+
+DOTA_Tooltip_ability_apocalypse_king_slayer: King Slayer
+DOTA_Tooltip_ability_apocalypse_king_slayer_Description: 'Apocalypse strikes a devastating blow to a target, dealing damage. That unit''s armor will melt to the floor losing base armor. Damage will be based on lost armor amount.'
+DOTA_Tooltip_ability_apocalypse_king_slayer_damage_per_armor: 'DAMAGE PER LOST ARMOR:'
+DOTA_Tooltip_ability_apocalypse_king_slayer_armor_reduction_pct: '%BASE ARMOR REDUCTION:'
+DOTA_Tooltip_ability_apocalypse_king_slayer_disarmor_duration: 'ARMOR REDUCTION DURATION:'
+DOTA_Tooltip_ability_apocalypse_king_slayer_knockback_duration: 'KNOCKBACK DURATION:'
+DOTA_Tooltip_modifier_apocalypse_king_slayer_knockback: King Slayer
+DOTA_Tooltip_modifier_apocalypse_king_slayer_knockback_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+
+DOTA_Tooltip_ability_apocalypse_weapon_break: Weapon Break
+DOTA_Tooltip_ability_apocalypse_weapon_break_Description: |-
+  Apocalypse strikes an enemy unit, dealing damage and disarming them for a duration.
+  If Weapon Break is used, Armor Tear will be put on a cooldown.
+DOTA_Tooltip_ability_apocalypse_weapon_break_duration: 'DURATION:'
+DOTA_Tooltip_modifier_apocalypse_weapon_break: Weapon Break Disarm
+DOTA_Tooltip_modifier_apocalypse_weapon_break_Description: Can't attack
+
+DOTA_Tooltip_ability_apocalypse_armor_tear: Armor Tear
+DOTA_Tooltip_ability_apocalypse_armor_tear_Description: |-
+  Apocalypse tears at an enemy units armor, dealing damage and temporarily removing a percentage of their base armor.
+  If Armor Tear is used, Weapon Break will be put on a cooldown.
+DOTA_Tooltip_ability_apocalypse_armor_tear_duration: 'DURATION:'
+DOTA_Tooltip_ability_apocalypse_armor_tear_armor_cut_pct: '%BASE ARMOR REDUCTION:'
+DOTA_Tooltip_modifier_apocalypse_armor_tear: Armor Tear
+DOTA_Tooltip_modifier_apocalypse_armor_tear_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+
+DOTA_Tooltip_ability_apocalypse_apocalypse: Apocalypse
+DOTA_Tooltip_ability_apocalypse_apocalypse_Description: |-
+  Unraveling as an unholy beast, through a ritualistic chant Apocalypse becomes a terrible fiend of destruction. The beast gains magic resistance, damage and movement speed at an increasing rate over time, cleave attack and purges buffs and debuffs constantly.
+  When the duration expires, Apocalypse will die, but it will be counted as suicide.
+DOTA_Tooltip_ability_apocalypse_apocalypse_magic_resistance_per_second_pct: '%MAGIC RESISTANCE INCREASE PER SECOND:'
+DOTA_Tooltip_ability_apocalypse_apocalypse_damage_per_second_pct: 'DAMAGE INCREASE PER SECOND:'
+DOTA_Tooltip_ability_apocalypse_apocalypse_movespeed_per_second_pct: '%MOVESPEED INCREASE PER SECOND:'
+DOTA_Tooltip_ability_apocalypse_apocalypse_cleave_radius: 'CLEAVE RADIUS:'
+DOTA_Tooltip_ability_apocalypse_apocalypse_duration: 'DURATION:'

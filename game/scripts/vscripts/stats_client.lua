@@ -3,6 +3,10 @@ if StatsClient == nil then
 end
 
 StatsClient.ServerAddress = (IsInToolsMode() and "http://127.0.0.1:3228" or "https://angelarenablackstar-ark120202.rhcloud.com") .. "/AABSServer/"
+function StatsClient:Init()
+	CustomGameEventManager:RegisterListener("stats_client_add_guide", Dynamic_Wrap(StatsClient, "AddGuide"))
+	CustomGameEventManager:RegisterListener("stats_client_vote_guide", Dynamic_Wrap(StatsClient, "VoteGuide"))
+end
 function StatsClient:OnGameBegin()
 	local data = {
 		matchid = tostring(GameRules:GetMatchID()),
@@ -23,9 +27,10 @@ end
 --StatsClient:OnGameBegin()
 function StatsClient:OnGameEnd(winner)
 	local time = GameRules:GetDOTATime(false, true)
-	if not IsInToolsMode() and (GameRules:IsCheatMode() or GetInGamePlayerCount() < 8 or time < 0) then
-		return
-	end
+	--local debug = true
+	--if (not IsInToolsMode() or debug) and (GameRules:IsCheatMode() or GetInGamePlayerCount() < 8 or time < 0) then
+	--	return
+	--end
 	local data = {
 		version = ARENA_VERSION,
 		matchid = tostring(GameRules:GetMatchID()),
@@ -38,7 +43,7 @@ function StatsClient:OnGameEnd(winner)
 	}
 	for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
 		if GetTeamAllPlayerCount(i) > 0 then
-			data.TeamsInfo[i] = {
+			data.TeamsInfo[tostring(i)] = {
 				Duels_Won = (Duel.TimesTeamWins[i] or 0),
 				IsGameWinner = i == winner,
 				Kills = GetTeamHeroKills(i),
@@ -110,6 +115,59 @@ function StatsClient:GetMatchPlayerInfo()
 	end, 5)
 end
 
+function StatsClient:AddGuide(data)
+	local playerID = data.PlayerID
+	local hero = HeroSelection:GetSelectedHeroName(playerID)
+	local steamID = tostring(PlayerResource:GetSteamID(playerID))
+	if #data.title < 4 or #data.description < 4 then
+		return
+	end
+	if #data.title > 60 or #data.description > 250 or table.count(data.items) == 0 then
+		return
+	end
+	if not NPC_HEROES_CUSTOM[hero] or NPC_HEROES_CUSTOM[hero].Enabled == 0 then
+		return
+	end
+	for _,group in ipairs(data.items) do
+		if type(group.title) ~= "string" or #group.title > 20 then
+			return
+		end
+		for _,item in ipairs(group.content) do
+			if not KeyValues.ItemKV[item] then
+				error("Invalid item", item)
+			end
+		end
+	end
+
+	if data.youtube ~= nil and (type(data.youtube) ~= "string" or #data.youtube == 0) then
+		data.youtube = nil
+	end
+
+	StatsClient:Send("AddGuide", {
+		title = data.title,
+		description = data.description,
+		steamID = steamID,
+		hero = hero,
+		items = data.items,
+		youtube = data.youtube,
+		version = ARENA_VERSION,
+	}, function(response)
+		if response.insertedId then
+			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "stats_client_add_guide_success", {insertedId = response.insertedId})
+		else
+			Containers:DisplayError(playerID, response.error)
+		end
+	end)
+end
+
+function StatsClient:VoteGuide(data)
+	StatsClient:Send("VoteGuide", {
+		steamID = tostring(PlayerResource:GetSteamID(data.PlayerID)),
+		id = data.id or "",
+		vote = type(data.vote) == "number" and data.vote or 0
+	})
+end
+
 function StatsClient:Send(path, data, callback, retryCount, protocol, _currentRetry)
 	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path)
 	request:SetHTTPRequestGetOrPostParameter("data", JSON:encode(data))
@@ -131,12 +189,3 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, _currentRe
 		end
 	end)
 end
-
---[[
-function GameMode:CustomSaveFunc(pid)
-	print("HANDLED!")
-	return {Rating = 5000}
-end
-GameRules:SetCustomGameAccountRecordSaveFunction(Dynamic_Wrap(GameMode, "CustomSaveFunc"), GameMode)
-PrintTable(GameRules:GetPlayerCustomGameAccountRecord(0))
-]]

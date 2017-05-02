@@ -1,13 +1,21 @@
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
-		<include src="file://{resources}/styles/team_select.css" />
+		<include src="file://{resources}/styles/arena_setup.css" />
 		<include src="file://{resources}/styles/custom_loading_screen.css" />
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/util.js" />
 		<include src="file://{resources}/scripts/custom_loading_screen.js" />
 	</scripts>
+	<snippets>
+		<snippet name="OptionVoting">
+			<Panel class="OptionVoting">
+				<Label id="OptionVotingTitle" text="{s:title}"/>
+				<Panel id="OptionVotingVariants" />
+			</Panel>
+		</snippet>
+	</snippets>
 	<Panel class="AddonLoadingRoot">
 		<!-- Precache -->
 		<Panel hittest="false" style="visibility: collapse;">
@@ -104,35 +112,8 @@
 		</Panel>
 		<Panel id="afterload_panel" hittest="true">
 			<Panel hittest="false" id="GCColumn" >
-				<Panel id="LocalPlayerDataPanel" class="Loading" style="visibility: collapse;">
-					<Panel id="PlayerInfoLoading" />
-					<Panel id="LocalPlayerDataFlow">
-						<Panel id="LocalPlayerData">
-							<DOTAAvatarImage id="PlayerAvatar" steamid="local" hittest="true" onactivate="$.Msg('hittest!')" />
-							<DOTAUserName id="PlayerNickName" steamid="local" hittest="true" onactivate="$.Msg('hittest!')" />
-						</Panel>
-						<Panel id="ServerStatsPanel">
-							<Panel class="KeyValuePanel">
-								<Label class="KeyValueKey" text="Rating: " />
-								<Label style="horizontal-align: right;" text="{s:rating}" />
-							</Panel>
-							<Panel class="KeyValuePanel">
-								<Label class="KeyValueKey" text="Winrate: " />
-								<Label style="horizontal-align: right;" text="{s:win_rate}" />
-							</Panel>
-						</Panel>
-					</Panel>
-				</Panel>
-				
-				<Panel id="KillGoalVote" hittest="true">
-					<Panel id="CustomSettingsRoot">
-						<Panel class="KillGoalGroup FullWidth" id="GoalVotePanelCustomSettings_GM201" hittest="true"> <!-- ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES -->
-							<TextButton class="ButtonBevel Green KillGoalVariant" style="horizontal-align: left;" onactivate="VoteMap(201, 102);" text="Ability Shop" hittest="true" />
-							<TextButton class="ButtonBevel Green KillGoalVariant" style="horizontal-align: right;" onactivate="VoteMap(201, 101);" text="Random OMG" hittest="true" />
-						</Panel>
-					</Panel>
-					<Panel id="KillGoalVoteVartiantList" hittest="true"/>
-				</Panel>
+				<Panel id="LocalPlayerData" />
+				<Panel id="OptionVotings" hittest="true" />
 			</Panel>
 			<Panel id="TeamSelectionColumn" />
 			<Panel hittest="false" id="SettingsColumn" />

@@ -1,0 +1,47 @@
+npc_arena_hero_queenofblades_hype: ''
+npc_arena_hero_queenofblades_bio: 'Ещё в раннем детстве у Сары был обнаружен высокий пси-потенциал, в связи с чем, девочку взяли под опеку военные из Конфедерации терранов, для изучения и развития её способностей. Из-за непростого детства, у Сары не было шансов на нормальную жизнь. Постоянные, жестокие, изнурительные тренировки и использование нейроплантантов для контроля над её способностями сделали Сару замкнутой и нелюдимой. Несмотря на это, Керриган не раз доказывала свою силу, ловкость, ум и умение приспосабливаться в любой сложной ситуации. При своей жизни в Конфедерации, она была хорошим тактиком и бойцом. Однако, при стечении многих обстоятельств, Сара превратилась в человекоподобное создание, с острыми, как лезвия бритвы, когтями и не менее опасными, чем она сама, крыльями. Сара Керриган стала самопровозглашённой Королевой Клинков. Она освободилась от каких бы то ни было моральных запретов, на волю вырвалась тёмная сущность её души. Теперь в ней преобладают жестокость, коварность, высокомерие, расчетливость и жажда крови. Казалось бы, она уже не сможет найти себе поле боя с достойным противником, ведь в прошлом она оставляла после себя только пепелища, разнося армии врагов, но Тёмные силы услышали её просьбу и привели её на место сражения Ангелов и Демонов, где она встретит равного по силе врага. Это будет её последний бой, где она либо потеряет все, либо обретет ещё большую силу и могущество.'
+
+DOTA_Tooltip_ability_queenofblades_army_Description: 'Керриган призывает несколько своих подопечных-помошников, которые наносят урон врагам по области.'
+DOTA_Tooltip_ability_queenofblades_army_summon_hp: 'ЗДОРОВЬЕ:'
+DOTA_Tooltip_ability_queenofblades_army_summon_damage: 'УРОН:'
+DOTA_Tooltip_ability_queenofblades_army_summon_amount: 'КОЛ-ВО СУЩЕСТВ:'
+DOTA_Tooltip_ability_queenofblades_army_summon_bat: 'СКОРОСТЬ АТАКИ:'
+DOTA_Tooltip_ability_queenofblades_army_summon_duration: 'ВРЕМЯ ЖИЗНИ:'
+DOTA_Tooltip_ability_queenofblades_army_cleave_radius: 'РАДИУС УРОНА:'
+DOTA_Tooltip_ability_queenofblades_army_radius: 'РАДИУС:'
+
+DOTA_Tooltip_ability_queenofblades_darkness_aura_Description: 'Керриган, уповаясь боем, наносит сокрушительные критические удары, против которых никто не устоит. В добавок, при выпадении критического урона, у противника на время будет снижена скорость передвижения и радиус видимости.'
+DOTA_Tooltip_ability_queenofblades_darkness_aura_crit_mult: '%КРИТИЧЕСКИЙ УРОН:'
+DOTA_Tooltip_ability_queenofblades_darkness_aura_crit_chance: '%ШАНС КРИТА:'
+DOTA_Tooltip_ability_queenofblades_darkness_aura_debuff_duration: 'ДЛИТЕЛЬНОСТЬ ЭФФЕКТА:'
+DOTA_Tooltip_ability_queenofblades_darkness_aura_debuff_vision_reduction: 'СИНЖЕНИЕ ВИДИМОСТИ:'
+DOTA_Tooltip_ability_queenofblades_darkness_aura_debuff_movespeed_slow_pct: 'СНИЖЕНИЕ СКОРОСТИ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_modifier_queenofblades_darkness_aura_debuff_Description: 'Радиус видимости снижен на %dMODIFIER_PROPERTY_BONUS_DAY_VISION%, скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%.'
+
+DOTA_Tooltip_ability_queenofblades_harbinger_of_death_Description: 'Керриган делает рывок к врагу, захватывая его крыльями, оглушая цель и нанося урон.'
+DOTA_Tooltip_ability_queenofblades_harbinger_of_death_stun_duration: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_queenofblades_harbinger_of_death_tooltip_range: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
+
+DOTA_Tooltip_ability_queenofblades_alter_ego_Description: 'Королева помнит, кем она была. Заглядывая в недра своей почерневшей души, она призывает Сару Керриган - прошлое своё воплощение, чтобы та сражалась на стороне Королевы. Воплощение живёт %duration% секунд и является подконтрольным игроку. Имеет две способности - Chains и Discharge.'
+DOTA_Tooltip_ability_queenofblades_alter_ego_aghanim_description: 'Увеличивает здоровье и урон Сары и добавляет ей новую способность - Soul Breaker, позволяющую ей нанести один раз за свою жизнь удар, наносящий большое колличество урона.'
+DOTA_Tooltip_ability_queenofblades_alter_ego_attack_damage: 'УРОН:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_attack_damage_scepter: 'УРОН СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_hp: 'ЗДОРОВЬЕ:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_hp_scepter: 'ЗДОРОВЬЕ СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_armor: 'БРОНЯ:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_bat: 'СКОРОСТЬ АТАКИ:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_movespeed: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_tooltip_soul_breaker_damage_scepter: 'УРОН SOUL BREAKER:'
+
+DOTA_Tooltip_ability_queenofblades_alter_ego_chains_Description: Сара кидает сетку обездвиживающую противников.
+DOTA_Tooltip_ability_queenofblades_alter_ego_chains_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_modifier_queenofblades_alter_ego_chains_Description: 'Пойман в сеть, не может двигаться и телепортироваться.'
+
+DOTA_Tooltip_ability_queenofblades_alter_ego_discharge_Description: 'Повышает скорость атаки Сары и всех союзников, находящихся рядом.'
+DOTA_Tooltip_ability_queenofblades_alter_ego_discharge_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_discharge_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_discharge_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_modifier_queenofblades_alter_ego_discharge_Description: Скорость атаки союзников увеличена.
+DOTA_Tooltip_modifier_queenofblades_alter_ego_discharge_effect_Description: Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
+
+DOTA_Tooltip_ability_queenofblades_alter_ego_soul_breaker_Description: 'Сара наносит мощный удар, наносящий большое колличество урона, но она может применить эту способность только раз.'

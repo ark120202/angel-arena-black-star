@@ -1,7 +1,7 @@
 "use strict";
 
 (function() {
-	if (ScoreboardUpdater_InitializeScoreboard === null) {
+	if (ScoreboardUpdater_InitializeScoreboard == null) {
 		$.Msg("WARNING: This file requires shared_scoreboard_updater.js to be included.");
 	}
 
@@ -16,17 +16,17 @@
 	var teamInfoList = ScoreboardUpdater_GetSortedTeamInfoList(endScoreboardHandle);
 	var delay = 0.2;
 	var delay_per_panel = 1 / teamInfoList.length;
-	for (var teamInfo of teamInfoList) {
+	_.each(teamInfoList, function(teamInfo) {
 		var teamPanel = ScoreboardUpdater_GetTeamPanel(endScoreboardHandle, teamInfo.team_id);
 		teamPanel.SetHasClass("team_endgame", false);
 		var callback = function(panel) {
 			return function() {
 				panel.SetHasClass("team_endgame", 1);
-			}
+			};
 		}(teamPanel);
-		$.Schedule(delay, callback)
+		$.Schedule(delay, callback);
 		delay += delay_per_panel;
-	}
+	});
 
 	var winningTeamId = Game.GetGameWinner();
 	var winningTeamDetails = Game.GetTeamDetails(winningTeamId);
@@ -49,6 +49,6 @@
 			winningTeamLogo.BLoadLayout(logo_xml, false, false);
 		}
 	}
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false)
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME_CHAT, false)
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false);
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME_CHAT, false);
 })();

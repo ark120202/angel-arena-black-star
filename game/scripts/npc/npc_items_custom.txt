@@ -1521,7 +1521,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10043"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "arena/nightshadow"
+		"AbilityTextureName"            "item_arena/nightshadow"
 		"ItemShopTags"					"int;cooldown_reduction"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"nightshadow"
@@ -1616,7 +1616,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10045"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "arena/nightshadow_and_sange"
+		"AbilityTextureName"            "item_arena/nightshadow_and_sange"
 		"ItemShopTags"					"int;cooldown_reduction;damage;str;unique"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -1781,7 +1781,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10047"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "arena/nightshadow_and_yasha"
+		"AbilityTextureName"            "item_arena/nightshadow_and_yasha"
 		"ItemShopTags"					"int;cooldown_reduction;agi;attack_speed;move_speed"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -1941,7 +1941,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10049"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "arena/three_spirits_blades"
+		"AbilityTextureName"            "item_arena/three_spirits_blades"
 		"ItemShopTags"					"int;cooldown_reduction;agi;attack_speed;move_speed;damage;str;unique"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -13087,7 +13087,6 @@
 				"IsHidden"			"1"
 				"IsPurgable"		"1"
 				"IsDebuff"			"1"
-				"Duration"			"%curse_duration"
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"EffectName"		"particles/arena/items_fx/demon_king_bar_curse_mark.vpcf"
 				"EffectAttachType"	"follow_overhead"
@@ -16610,13 +16609,17 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"ID"							"10269"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/demonic_cuirass"
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemAliases"					"ac;assault cuirass;dkb;demon king bar;monkey king bar;mkb;demonic cuirass"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;attack_speed;armor;hard_to_tag"
+
+		"AbilityCooldown"				"80"
+		"AbilityManaCost"				"600"
+		"AbilityCastRange"				"%aura_radius"
 			
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -16629,8 +16632,8 @@
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"60"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"60"
 			}
 			"03"
 			{
@@ -16640,12 +16643,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"self_bash_chance"			"25"
+				"self_bash_chance"		"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"self_bash_damage"			"300"
+				"self_bash_damage"		"300"
 			}
 			"06"
 			{
@@ -16655,7 +16658,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"curse_duration"		"60"
+				"curse_duration"		"25"
 			}
 			"08"
 			{
@@ -16685,12 +16688,37 @@
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bash_chance"			"15"
+				"aura_bash_chance"		"15"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bash_damage"			"200"
+				"aura_bash_damage"		"200"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"TARGET"
+					"Radius" 	"%aura_radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"ApplyModifierWithoutRefresh"
+						//"HeroOnly"		"1"
+						"modifier"		"modifier_item_demon_king_bar_curse_mark"
+					}
+				}
 			}
 		}
 
@@ -16705,7 +16733,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 
@@ -16831,18 +16859,6 @@
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%aura_negative_armor"
 				}
-
-				"ThinkInterval"			"0.1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"ApplyModifierWithoutRefresh"
-						"HeroOnly"		"1"
-						"modifier"		"modifier_item_demon_king_bar_curse_mark"
-					}
-				}
 			}
 			"modifier_item_demon_king_bar_curse_mark"
 			{
@@ -16850,7 +16866,6 @@
 				"IsHidden"			"1"
 				"IsPurgable"		"1"
 				"IsDebuff"			"1"
-				"Duration"			"%curse_duration"
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"EffectName"		"particles/arena/items_fx/demon_king_bar_curse_mark.vpcf"
 				"EffectAttachType"	"follow_overhead"
@@ -17910,12 +17925,12 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"3600"	
+		"ItemCost"						"8800"	
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_orb_of_essences"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_reaver;item_eagle;item_mystic_staff;item_moon_dust"
+			"01"						"item_ultimate_orb;item_reaver;item_eagle;item_mystic_staff"
 		}
 	}
 
@@ -17931,7 +17946,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_all"				"80"
+				"bonus_all"				"45"
 			}
 		}
 
@@ -18253,7 +18268,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_all"				"100"
+				"bonus_all"				"65"
 			}
 			"02"
 			{

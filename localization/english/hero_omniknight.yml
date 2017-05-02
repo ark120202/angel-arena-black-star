@@ -1,0 +1,49 @@
+DOTA_Tooltip_ability_omniknight_purification_lua: Purification
+DOTA_Tooltip_ability_omniknight_purification_lua_Description: Instantly heals allies and damages enemies nearby a unit.
+DOTA_Tooltip_ability_omniknight_purification_lua_heal: 'HEAL/DAMAGE:'
+DOTA_Tooltip_ability_omniknight_purification_lua_radius: 'RADIUS:'
+
+DOTA_Tooltip_ability_omniknight_repel_lua: Repel
+DOTA_Tooltip_ability_omniknight_repel_lua_Description: |-
+  Creates a divine barrier around a target unit which grants them Spell Immunity and 100%% resistance to Magic Damage.
+DOTA_Tooltip_ability_omniknight_repel_lua_duration: 'DURATION:'
+DOTA_Tooltip_ability_omniknight_repel_lua_magic_resistance_reduction_scepter: '%MAGIC RESISTANCE REDUCTION:'
+DOTA_Tooltip_ability_omniknight_repel_lua_aghanim_description: 'Can be casted on enemies, decreasing their magic resistance.'
+DOTA_Tooltip_modifier_omniknight_repel_lua: Repel
+DOTA_Tooltip_modifier_omniknight_repel_lua_Description: Spell Immune.
+DOTA_Tooltip_modifier_omniknight_repel_inverse_lua: Inverse Repel
+DOTA_Tooltip_modifier_omniknight_repel_inverse_lua_Description: Magic Resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%.
+
+DOTA_Tooltip_ability_omniknight_guardian_angel_lua: Guardian Angel
+DOTA_Tooltip_ability_omniknight_guardian_angel_lua_Description: 'Omniknight summons a Guardian Angel that grants a target unit immunity from physical damage.'
+DOTA_Tooltip_ability_omniknight_guardian_angel_lua_duration: 'DURATION:'
+DOTA_Tooltip_ability_omniknight_guardian_angel_lua_armor_debuff_scepter: 'ARMOR REDUCTION:'
+DOTA_Tooltip_ability_omniknight_guardian_angel_lua_aghanim_description: 'Can be casted on enemies, decreasing their physical armor.'
+DOTA_Tooltip_modifier_omniknight_guardian_angel_lua: Guardian Angel
+DOTA_Tooltip_modifier_omniknight_guardian_angel_lua_Description: Immune to physical damage.
+DOTA_Tooltip_modifier_omniknight_guardian_angel_inverse_lua: Inverse Guardian Angel
+DOTA_Tooltip_modifier_omniknight_guardian_angel_inverse_lua_Description: Physical Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
+
+DOTA_Tooltip_ability_omniknight_select_allies: 'Select: Allies'
+DOTA_Tooltip_ability_omniknight_select_allies_Description: 'Refreshes Omniknight''s abilities and makes abilities for some time work on all alive allies.'
+DOTA_Tooltip_ability_omniknight_select_allies_duration: 'DURATION:'
+DOTA_Tooltip_ability_omniknight_select_allies_aghanim_description: 'Adds ''Select: Enemies'' ability, that allows to select all enemies.'
+DOTA_Tooltip_modifier_omniknight_select_allies: 'Select: Allies'
+DOTA_Tooltip_modifier_omniknight_select_allies_Description: All abilities will work on all alive allies.
+
+DOTA_Tooltip_ability_omniknight_select_enemies: 'Select: Enemies'
+DOTA_Tooltip_ability_omniknight_select_enemies_Description: Refreshes Omniknight's abilities and makes abilities for some time work on all alive enemies.
+DOTA_Tooltip_ability_omniknight_select_enemies_duration: 'DURATION:'
+DOTA_Tooltip_modifier_omniknight_select_enemies: 'Select: Enemies'
+DOTA_Tooltip_modifier_omniknight_select_enemies_Description: All abilities will work on all alive enemies.
+
+DOTA_Tooltip_ability_omniknight_degen_aura_arena: Degen Aura
+DOTA_Tooltip_ability_omniknight_degen_aura_arena_Description: 'Greatly degenerates the movement and attack capabilities of enemy units that stray too near. Effect grows stronger with each second, with start of %start_stack_amount% stacks. Also, units will have a chance to get bashed when attacked.'
+DOTA_Tooltip_ability_omniknight_degen_aura_arena_speed_bonus_per_stack_pct: '%MOVEMENT SLOW PER STACK:'
+DOTA_Tooltip_ability_omniknight_degen_aura_arena_attack_bonus_per_stack: 'ATTACK SLOW PER STACK:'
+DOTA_Tooltip_ability_omniknight_degen_aura_arena_damage_bonus_per_stack: 'DAMAGE REDUCTION PER STACK:'
+DOTA_Tooltip_ability_omniknight_degen_aura_arena_chance_to_bash_pct: '%CHANCE TO BASH:'
+DOTA_Tooltip_ability_omniknight_degen_aura_arena_bash_duration: 'BASH DURATION:'
+DOTA_Tooltip_ability_omniknight_degen_aura_arena_radius: 'RADIUS:'
+DOTA_Tooltip_modifier_omniknight_degen_aura_arena_stack: Degen Aura
+DOTA_Tooltip_modifier_omniknight_degen_aura_arena_stack_Description: 'Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, damage reduced by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'

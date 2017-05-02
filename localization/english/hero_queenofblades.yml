@@ -1,0 +1,58 @@
+npc_arena_hero_queenofblades: Queen of Blades
+npc_arena_hero_queenofblades_bio: 'Even in early childhood Sarah psi high-potential was discovered, and therefore, the girl took custody of soldiers from the Terran Confederation, for the study and development of her abilities. Because of hard and unusual childhood, Sarah had no chance for a normal life, constant severe grueling training did Sarah closed and inhospitable. Despite this insolubility Kerrigan proved their strength, agility, intelligence, and ability to adapt to any complex situations. While living in confiscation, she was a good tactician and soldier. However, at the confluence of many factors, Sarah became a man like creature with sharp claws and the blade is not less dangerous than she had wings. Sarah Kerrigan became the self-proclaimed Queen of Blades. It is free from any moral prohibitions was, at will burst the dark essence of her soul. Now it is dominated by cruel, treacherous, arrogant, thrift and bloodlust. It would seem that she will not be able to find a field of battle with a worthy opponent, because in the past she left behind only ashes, carrying the army of enemies, but the dark forces heard her request and brought her to the place of the battle, where she will meet the same strong an enemy. This will be her last fight where it either lose everything or will gain even more strength and power.'
+
+DOTA_Tooltip_ability_queenofblades_army: Queen of Blades Army
+DOTA_Tooltip_ability_queenofblades_army_Description: 'Kerrigan summns her assistants, which have cleave.'
+DOTA_Tooltip_ability_queenofblades_army_summon_hp: 'HEALTH:'
+DOTA_Tooltip_ability_queenofblades_army_summon_damage: 'DAMAGE:'
+DOTA_Tooltip_ability_queenofblades_army_summon_amount: 'UNIT AMOUNT:'
+DOTA_Tooltip_ability_queenofblades_army_summon_bat: 'ATTACK SPEED:'
+DOTA_Tooltip_ability_queenofblades_army_summon_duration: 'DURATION:'
+DOTA_Tooltip_ability_queenofblades_army_cleave_radius: 'CLEAVE RADIUS:'
+DOTA_Tooltip_ability_queenofblades_army_radius: 'RADIUS:'
+
+DOTA_Tooltip_ability_queenofblades_darkness_aura: Darkness Aura
+DOTA_Tooltip_ability_queenofblades_darkness_aura_Description: 'Kerrigan, deals crushing critical strikes, no one cam resist against. In addition, when critical strike procs, enemy will have a decreased movement speed and vision range.'
+DOTA_Tooltip_ability_queenofblades_darkness_aura_crit_mult: '%CRIT DAMAGE:'
+DOTA_Tooltip_ability_queenofblades_darkness_aura_crit_chance: '%CRIT CHANCE:'
+DOTA_Tooltip_ability_queenofblades_darkness_aura_debuff_duration: 'DURATION:'
+DOTA_Tooltip_ability_queenofblades_darkness_aura_debuff_vision_reduction: 'VISION RANGE REDUCTION:'
+DOTA_Tooltip_ability_queenofblades_darkness_aura_debuff_movespeed_slow_pct: 'MOVEMENT SPEED SLOW:'
+DOTA_Tooltip_modifier_queenofblades_darkness_aura_debuff: Darkness Aura
+DOTA_Tooltip_modifier_queenofblades_darkness_aura_debuff_Description: 'Vision radius reduced by %dMODIFIER_PROPERTY_BONUS_DAY_VISION%, movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%.'
+
+DOTA_Tooltip_ability_queenofblades_harbinger_of_death: Harbinger of Death
+DOTA_Tooltip_ability_queenofblades_harbinger_of_death_Description: 'Kerrigan makes the leap to the enemy, capturing it with her wings, stunning the target and dealing damage.'
+DOTA_Tooltip_ability_queenofblades_harbinger_of_death_stun_duration: 'STUN DURATION:'
+DOTA_Tooltip_ability_queenofblades_harbinger_of_death_tooltip_range: 'CAST RANGE:'
+
+DOTA_Tooltip_ability_queenofblades_alter_ego: Alter Ego
+DOTA_Tooltip_ability_queenofblades_alter_ego_Description: 'Queen remembers who she was. Looking into the depths of his blackened soul, she summons Sarah Kerrigan - her previous incarnation, so she will fought on the side of the Queen. Sarah lives %duration% seconds and is controllabe to player. She also has two abilities - Chains and Discharge.'
+DOTA_Tooltip_ability_queenofblades_alter_ego_aghanim_description: 'Increases Sasah''s health and damage and adds a new ability to her - Soul Breaker, that allowing her to bring a huge amount of damage to target once, per her live.'
+DOTA_Tooltip_ability_queenofblades_alter_ego_attack_damage: 'DAMAGE:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_attack_damage_scepter: 'DAMAGE WITH SCEPTER:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_hp: 'HEALTH:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_hp_scepter: 'HEALTH WITH SCEPTER:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_armor: 'ARMOR:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_bat: 'ATTACK SPEED:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_movespeed: 'MOVEMENT SPEED:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_tooltip_soul_breaker_damage_scepter: 'SOUL BREAKER DAMAGE:'
+
+DOTA_Tooltip_ability_queenofblades_alter_ego_chains: Chains
+DOTA_Tooltip_ability_queenofblades_alter_ego_chains_Description: 'Sarah throws chains, that roots enemy.'
+DOTA_Tooltip_ability_queenofblades_alter_ego_chains_duration: 'DURATION:'
+DOTA_Tooltip_modifier_queenofblades_alter_ego_chains: Chains
+DOTA_Tooltip_modifier_queenofblades_alter_ego_chains_Description: 'Trapped in place, cannot move or blink.'
+
+DOTA_Tooltip_ability_queenofblades_alter_ego_discharge: Discharge
+DOTA_Tooltip_ability_queenofblades_alter_ego_discharge_Description: Increases all nearby allies attack speed for some time.
+DOTA_Tooltip_ability_queenofblades_alter_ego_discharge_bonus_attackspeed: 'BONUS ATTACKSPEED:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_discharge_radius: 'RADIUS:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_discharge_duration: 'DURATION:'
+DOTA_Tooltip_modifier_queenofblades_alter_ego_discharge: Discharge
+DOTA_Tooltip_modifier_queenofblades_alter_ego_discharge_Description: Attack speed of nearby allies increased.
+DOTA_Tooltip_modifier_queenofblades_alter_ego_discharge_effect: Discharge
+DOTA_Tooltip_modifier_queenofblades_alter_ego_discharge_effect_Description: Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
+
+DOTA_Tooltip_ability_queenofblades_alter_ego_soul_breaker: Soul Breaker
+DOTA_Tooltip_ability_queenofblades_alter_ego_soul_breaker_Description: 'Sarah Deals one powerful hit, than can be used only once per her live.'

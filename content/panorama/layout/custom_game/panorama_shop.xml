@@ -2,9 +2,11 @@
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/panorama_shop.css" />
+		<include src="file://{resources}/styles/panorama_shop_itembuilds.css" />
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/panorama_shop_itembuilds.js" />
 		<include src="file://{resources}/scripts/panorama_shop.js" />
 	</scripts>
 	<snippets>
@@ -18,20 +20,49 @@
 				</Button>
 			</Panel>
 		</snippet>
+		<snippet name="GuideListEntry">
+			<RadioButton class="GuideListEntry" group="GuideEntries">
+				<Panel id="SelectedBar" />
+				<Panel id="GuideEntryTitles">
+					<Label id="GuideEntryTitle" text="{s:guide_entry_title}" />
+					<Panel id="GuideEntrySubtitleRow">
+						<DOTAUserName id="GuideEntryAuthor" />
+						<Label id="GuideEntryVersion" />
+					</Panel>
+                    <TextButton id="SelectGuideButton" text="#DOTA_Guide_Select" />
+                    <Label id="SelectedGuideLabel" text="#DOTA_Guide_Selected" />
+				</Panel>
+				<Panel id="GuideEntryRightColumn">
+					<Label id="GuideEntryRating" text="{s:guide_entry_rating}" />
+				</Panel>
+			</RadioButton>
+		</snippet>
+		<snippet name="ItembuildGroup">
+			<Panel class="ItembuildItemGroup">
+				<TextEntry id="ItembuildItemGroupTitle" maxchars="20" />
+				<Panel id="ItembuildItemGroupItemRoot" draggable="true" />
+			</Panel>
+		</snippet>
 	</snippets>
 	<Panel hittest="false" class="base">
-		<Panel hittest="true" onmouseactivate="" id="ShopBase" class="ShopBase_Out">
+		<!-- ShopBase_Out -->
+		<Panel hittest="true" onmouseactivate="" id="ShopBase" class="">
 			<Panel id="ItembuildsPanel">
-				<Panel id="Itembuild_selectBox" />
-				<Panel class="SimpleRow">
-					<Label text="#panorama_shop_itembuild_author"/>
-					<Label class="SimpleRowValue" id="Itembuild_author" />
+				<Label id="ItembuildHeader" text="DOTA_Guide_Browse" onactivate="ToggleGuidesBrowser()" />
+				<Panel id="ItembuildTitleContainer">
+					<Panel id="ItembuildTitleTitleRow">
+						<Label id="Itembuild_title" />
+						<Button id="EditButton" onactivate="ToggleEditMode()" onmouseout="UIHideTextTooltip()" onmouseover="UIShowTextTooltip(#DOTA_HUD_EditModeTooltip)"/>
+					</Panel>
+					<Panel id="ItembuildTitleSubitleRow">
+						<DOTAUserName id="Itembuild_author_player" />
+						<Label id="Itembuild_version" />
+					</Panel>
 				</Panel>
-				<Panel class="SimpleRow">
-					<Label text="#panorama_shop_itembuild_patch"/>
-					<Label class="SimpleRowValue" id="Itembuild_patch" />
+				<Panel id="ItembuildPanelsContainer">
+					<Panel id="ItembuildPanelsRoot" />
+					<Label id="ItembuildAddGroupButton" text="#panorama_shop_itembuilds_new_group" onactivate="AddNewGroupToItembuild()" allowtextselection="false" />
 				</Panel>
-				<Panel id="ItembuildPanelsRoot" />
 			</Panel>
 			<Panel id="ShopItemBasePanel">
 				<Panel id="ShopItemList">
@@ -70,6 +101,54 @@
 			<Panel id="QuickBuyPanelItems" />
 			<Image id="QuickBuyClearButtonPanel" onactivate="ClearQuickbuyItems()"/>
 			<Panel id="QuickBuyStickyButtonPanel" />
+		</Panel>
+		<Panel id="GuidesBrowser">
+			<Panel id="GuidesBrowserLeft">
+				<!-- <DropDown id="LanguageDropdown"/> -->
+				<Panel id="GuidesAvaliableList" />
+			</Panel>
+			<Panel id="GuidesBrowserRight">
+				<Button class="CloseButton" onactivate="$.GetContextPanel().RemoveClass('GuidesBrowserVisible')" />
+				<Panel id="GuidesHeader">
+					<Panel id="GuidesHeaderTitleRow">
+						<TextEntry id="GuidesTitleLabel" maxchars="20" undohistory="enabled" />
+						<Button class="ButtonBevel" id="GuideTogglePublish" onactivate="TogglePublishMode();">
+							<Label id="GuideTogglePublishLabel" text="Publish" hittest="false" />
+							<Label id="GuideTogglePublishLabelCancel" text="Cancel" hittest="false" />
+						</Button>
+					</Panel>
+					<!-- <Label id="GuidesBrowserDescription" text="#DOTA_Guide_WorkshopSubtitle" />  -->
+					<Label id="GuidesBrowserDescription" /> 
+				</Panel>
+				<Panel id="GuideArea">
+					<Panel id="GuideItemBuild" />
+					<Panel id="GuideRightColumn">
+						<Panel id="GuideRatingBlock" >
+							<Panel id="GuideRatingLabels" >
+								<Label id="GuideRatingValue" class="GuideStat" text="{s:guide_player_rating}" />
+								<Label id="RatingLabel" class="GuideStatLabel" text="#DOTA_Guide_PlayerRating" />
+							</Panel>
+							<Panel id="VotingButtons">
+								<Button id="VoteUpButton" onactivate="GuideVote($.GetContextPanel().BHasClass('VotedYes') ? 0 : 1)" >
+									<Image class="VoteIcon" src="s2r://panorama/images/icon_thumbs_up_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+								<Button id="VoteDownButton" onactivate="GuideVote($.GetContextPanel().BHasClass('VotedNo') ? 0 : -1)" >
+									<Image class="VoteIcon VoteIconFlipped" src="s2r://panorama/images/icon_thumbs_up_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+							</Panel>
+						</Panel>
+						<Panel id="GuidePublishBlock">
+							<TextEntry id="GuidePublishYouTube" placeholder="youtube.com/watch?v=..." />
+							<TextEntry id="GuidePublishDescription" placeholder="Text..." maxchars="250" undohistory="enabled" />
+							<TextButton class="ButtonBevel Green" id="GuidePublishButton" onactivate="PublishGuide(SelectedBuild)" text="Publish" />
+						</Panel>
+						<Panel id="GuideYouTubeLogo" onactivate="OpenYoutubeForGuide(SelectedBuild)" >
+							<Image src="file://{images}/custom_game/shop/YouTube-logo-full_color.png" />
+							<Label text="#panorama_shop_guide_youtube_open" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
 		</Panel>
 	</Panel>
 </root>

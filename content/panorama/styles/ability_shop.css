@@ -286,32 +286,9 @@ DOTAHud.IsBeforeGameplay #InfoContainer
 	width: 100%;
 	height: 33.3%;
 	padding-left: 20px;
-}
-
-.HeroesPanelElementTeam
-{
-	width: 50%;
-	height: 100%;
 	flow-children: right-wrap;
 }
 
-.HeroesPanelElementGood
-{
-	horizontal-align: left;
-	transform: scaleX(-1);
-	margin-left: -5px;
-}
-
-.HeroesPanelElementGood Image
-{
-	transform: scaleX(-1);
-}
-
-.HeroesPanelElementBad
-{
-	horizontal-align: right;
-	margin-right: -5px;
-}
 .SmallTextButton
 {
 	width: 170px;

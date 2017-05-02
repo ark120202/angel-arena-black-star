@@ -1,0 +1,109 @@
+npc_arena_hero_cherub: Cherub
+
+DOTA_Tooltip_ability_cherub_sleep_cloud: Sleep Cloud
+DOTA_Tooltip_ability_cherub_sleep_cloud_Description: Creates a cloud of soothing aromas which put enemies to sleep if they are inside its radius for some time. Enemies will wake up when the cloud duration ends or when they take a certain amount of damage.
+DOTA_Tooltip_ability_cherub_sleep_cloud_Note0: 'If awoken by damage, the sleep timer restarts.'
+DOTA_Tooltip_ability_cherub_sleep_cloud_radius: 'CLOUD RADIUS:'
+DOTA_Tooltip_ability_cherub_sleep_cloud_duration: 'CLOUD DURATION:'
+DOTA_Tooltip_ability_cherub_sleep_cloud_time_to_sleep: 'TIME TO SLEEP:'
+DOTA_Tooltip_ability_cherub_sleep_cloud_damage_to_wake: 'DAMAGE TO WAKE:'
+DOTA_Tooltip_modifier_cherub_sleep_cloud_timer: Sleep Cloud
+DOTA_Tooltip_modifier_cherub_sleep_cloud_timer_Description: Will fall asleep if will stay here.
+DOTA_Tooltip_modifier_cherub_sleep_cloud_sleep: Sleep Cloud Sleeping
+DOTA_Tooltip_modifier_cherub_sleep_cloud_sleep_Description: Spleeping. Wakes up when recieves some damage.
+
+DOTA_Tooltip_ability_cherub_synthesis: Synthesis
+DOTA_Tooltip_ability_cherub_synthesis_Description: 'While Toggled, converts Cherub''s mana into health or health into mana, depending on the day/night cycle. During the day cycle, converts her health into mana. During the night cycle, converts her mana into health.'
+DOTA_Tooltip_ability_cherub_synthesis_base_conversion_rate: 'BASE CONVERSION RATE:'
+DOTA_Tooltip_ability_cherub_synthesis_mana_to_hp_pct: '%MANA TO HEALTH (DAY):'
+DOTA_Tooltip_ability_cherub_synthesis_hp_to_mana_pct: '%HEALTH TO MANA (NIGHT):'
+
+DOTA_Tooltip_ability_cherub_explosive_spore_Description: |-
+  Creates a floating spore with free pathing. Spores will grow over time and explode after %explode_delay% seconds, dealing magical damage in an area of effect and lifestealing based on damage dealt.
+  Cherub controls Spores individually and gains lifesteal from them. Spores have 0 armor and 0 magic resistance, and give %spore_bounty_gold% gold and %spore_bounty_exp% exp if killed.
+DOTA_Tooltip_ability_cherub_explosive_spore_explode_delay: 'EXPLODE DELAY:'
+DOTA_Tooltip_ability_cherub_explosive_spore_explode_radius: 'EXPLODE RADIUS:'
+DOTA_Tooltip_ability_cherub_explosive_spore_lifesteel_heroes_pct: '%LIFESTEEL (HEROES):'
+DOTA_Tooltip_ability_cherub_explosive_spore_lifesteel_creeps_pct: '%LIFESTEEL (CREEPS):'
+DOTA_Tooltip_ability_cherub_explosive_spore_spore_health: 'SPORE HEALTH:'
+DOTA_Tooltip_ability_cherub_explosive_spore_spore_movespeed: 'SPORE MOVEMENT SPEED:'
+DOTA_Tooltip_ability_cherub_explosive_spore_spore_vision_range: 'SPORE VISION RANGE:'
+
+DOTA_Tooltip_ability_cherub_flower_garden: Flower Garden
+DOTA_Tooltip_ability_cherub_flower_garden_Description: |-
+  Fertilizes a plot of land for %life_time_min_tooltip% minutes, turning it into a garden plot. Cherub can plant any one of six different flowers on her garden plots, which have increased stats based on the level of this ability.
+DOTA_Tooltip_ability_cherub_flower_garden_aghanim_description: 'Adds a thorny barrier to plants, increasing the plant''s health and returning magical damage when an enemy attacks.'
+DOTA_Tooltip_ability_cherub_flower_garden_channel_time: 'CHANNEL DURATION:'
+DOTA_Tooltip_ability_cherub_flower_garden_flower_health: 'FLOWER HEALTH:'
+DOTA_Tooltip_ability_cherub_flower_garden_flower_health_scepter: 'SCEPTER FLOWER HEALTH:'
+DOTA_Tooltip_ability_cherub_flower_garden_damage_return_scepter: 'SCEPTER DAMAGE RETURN:'
+DOTA_Tooltip_modifier_cherub_flower_garden_barrier: Thorny Barrier
+DOTA_Tooltip_modifier_cherub_flower_garden_barrier_Description: 'Have a thorny barrier, returning magical damage when an attacked.'
+
+DOTA_Tooltip_ability_cherub_flower_white_rose: White Rose
+DOTA_Tooltip_ability_cherub_flower_white_rose_Description: Deals low attack damage from a long range. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_white_rose_attack_range: 'ATTACK RANGE:'
+DOTA_Tooltip_ability_cherub_flower_white_rose_damage: 'ATTACK DAMAGE:'
+DOTA_Tooltip_ability_cherub_flower_white_rose_attack_rate: 'BASE ATTACK TIME:'
+DOTA_Tooltip_ability_cherub_flower_white_rose_enabled: White Rose
+DOTA_Tooltip_ability_cherub_flower_white_rose_enabled_Description: Deals low attack damage from a long range. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_white_rose_enabled_attack_range: 'ATTACK RANGE:'
+DOTA_Tooltip_ability_cherub_flower_white_rose_enabled_damage: 'ATTACK DAMAGE:'
+DOTA_Tooltip_ability_cherub_flower_white_rose_enabled_attack_rate: 'BASE ATTACK TIME:'
+
+DOTA_Tooltip_ability_cherub_flower_red_rose: Red Rose
+DOTA_Tooltip_ability_cherub_flower_red_rose_Description: Deals high attack damage from a short range. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_red_rose_attack_range: 'ATTACK RANGE:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_damage: 'ATTACK DAMAGE:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_attack_rate: 'BASE ATTACKTIME:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_enabled: Red Rose
+DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_Description: Deals high attack damage from a short range. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_attack_range: 'ATTACK RANGE:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_damage: 'ATTACK DAMAGE:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_attack_rate: 'BASE ATTACKTIME:'
+
+DOTA_Tooltip_ability_cherub_flower_pink_blossom: Pink Blossom
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_Description: Heals three random allies every second. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_heal_range: 'HEAL RANGE:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_heal_amount: 'HEAL AMOUNT:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_max_targets: 'MAX TARGETS:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_heal_interval: 'HEAL INTERVAL:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_enabled: Pink Blossom
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_enabled_Description: Heals three random allies every second. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_enabled_heal_range: 'HEAL RANGE:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_enabled_heal_amount: 'HEAL AMOUNT:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_enabled_max_targets: 'MAX TARGETS:'
+DOTA_Tooltip_ability_cherub_flower_pink_blossom_enabled_heal_interval: 'HEAL INTERVAL:'
+
+DOTA_Tooltip_ability_cherub_flower_blue_blossom: Blue Blossom
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_Description: Restores ally mana in a radius every %restore_interval% seconds. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_restore_range: 'RESTORE RADIUS:'
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_restore_amount: 'RESTORE AMOUNT:'
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_restore_interval: 'RESTORE INTERVAL:'
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_enabled: Blue Blossom
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_enabled_Description: Restores ally mana in a radius every %restore_interval% seconds. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_enabled_restore_range: 'RESTORE RADIUS:'
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_enabled_restore_amount: 'RESTORE AMOUNT:'
+DOTA_Tooltip_ability_cherub_flower_blue_blossom_enabled_restore_interval: 'RESTORE INTERVAL:'
+
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy: Yellow Daisy
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_Description: Increases attackspeed for nearby allies. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_aura_radius: 'AURA RADIUS:'
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_bonus_attackspeed: 'ATTACKSPEED BONUS:'
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_enabled: Yellow Daisy
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_enabled_Description: Increases attackspeed for nearby allies. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_enabled_aura_radius: 'AURA RADIUS:'
+DOTA_Tooltip_ability_cherub_flower_yellow_daisy_enabled_bonus_attackspeed: 'ATTACKSPEED BONUS:'
+DOTA_Tooltip_modifier_cherub_flower_yellow_daisy_enabled_aura_effect: Yellow Daisy
+DOTA_Tooltip_modifier_cherub_flower_yellow_daisy_enabled_aura_effect_Description: Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
+
+DOTA_Tooltip_ability_cherub_flower_purple_lotus: Purple Lotus
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_Description: Reduces magic resistance for nearby enemies. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_aura_radius: 'AURA RADIUS:'
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_magic_resistance_reduction: '%MAGIC RESISTANCE REDUCTION:'
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_enabled: Purple Lotus
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_enabled_Description: Reduces magic resistance for nearby enemies. Maximum of %max_plants% plants.
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_enabled_aura_radius: 'AURA RADIUS:'
+DOTA_Tooltip_ability_cherub_flower_purple_lotus_enabled_magic_resistance_reduction: '%MAGIC RESISTANCE REDUCTION:'
+DOTA_Tooltip_modifier_cherub_flower_purple_lotus_enabled_aura_effect: Purple Lotus
+DOTA_Tooltip_modifier_cherub_flower_purple_lotus_enabled_aura_effect_Description: Magic Resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%.

@@ -7,7 +7,7 @@ function Disarm(keys)
 		if caster:HasScepter() then
 			attacker:AddNewModifier(caster, ability, "modifier_sheepstick_debuff", { duration = ability:GetLevelSpecialValueFor("disarm_duration", ability:GetLevel() - 1), sheep_movement_speed = ability:GetLevelSpecialValueFor("sheep_movement_speed_scepter", ability:GetLevel() - 1)})
 		else
-			ability:ApplyDataDrivenModifier(caster, attacker, "modifier_dragon_blood_arena_disarm_enemy", {})
+			ability:ApplyDataDrivenModifier(caster, attacker, "modifier_dragon_knight_dragon_blood_arena_disarm_enemy", nil)
 		end
 	end
 end

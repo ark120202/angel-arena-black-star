@@ -15,7 +15,7 @@ function CreateMissile(keys)
 	missile.level = ability:GetLevel() - 1
 	missile.hits_to_kill = ability:GetLevelSpecialValueFor( "hits_to_kill_tooltip", ability:GetLevel() - 1 )
 	missile.hit = false
-	ability:ApplyDataDrivenModifier(caster, missile, "modifier_homing_missile_arena", {})
+	ability:ApplyDataDrivenModifier(caster, missile, "modifier_gyrocopter_homing_missile_arena", {})
 --	missile:SetOwner(caster)
 	missile.time_passed = 0
 	local particle = ParticleManager:CreateParticle(keys.particle, PATTACH_ABSORIGIN_FOLLOW, missile) 
@@ -114,7 +114,7 @@ function MissileAttacked(keys)
 			EmitSoundOn(keys.sound3, missile)
 		end
 		missile:AddNoDraw()
-		target:RemoveModifierByName("modifier_homing_missile_target")
+		target:RemoveModifierByName("modifier_gyrocopter_homing_missile_target")
 		StopSoundEvent(keys.sound, missile)
 		StopSoundEvent(keys.sound2, missile)
 		EmitSoundOn(keys.sound4, missile)

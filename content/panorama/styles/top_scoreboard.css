@@ -133,13 +133,13 @@ DOTAHud.IsBeforeGameplay .base
 	opacity: 0;
 }
 
-.LeftAlignedTeam #TopBarPlayersContainer .SlantedContainer
+#TopBarLeftPlayers #TopBarPlayersContainer .SlantedContainer
 {
 	opacity-mask: url("s2r://panorama/images/masks/topbar_heroslant_left_psd.vtex");
 }
 
 
-.RightAlignedTeam #TopBarPlayersContainer .SlantedContainer
+#TopBarRightPlayers #TopBarPlayersContainer .SlantedContainer
 {
 	opacity-mask: url("s2r://panorama/images/masks/topbar_heroslant_right_psd.vtex");
 }
@@ -176,12 +176,12 @@ DOTAHud.IsBeforeGameplay .base
 	height: 66px;
 }
 
-.LeftAlignedTeam #TopBarPlayersContainer .TopBarPlayerSlot
+#TopBarLeftPlayers #TopBarPlayersContainer .TopBarPlayerSlot
 {
 	margin-left: -4px;
 }
 
-.RightAlignedTeam #TopBarPlayersContainer .TopBarPlayerSlot
+#TopBarRightPlayers #TopBarPlayersContainer .TopBarPlayerSlot
 {
 	margin-right: -4px;
 }
@@ -204,12 +204,12 @@ DOTAHud.IsBeforeGameplay .base
 {
 	margin-top: 3px;
 }
-.LeftAlignedTeam #TopBarScore
+#TopBarLeftPlayers #TopBarScore
 {
 	horizontal-align: left;
 	margin-left: 4px;
 }
-.RightAlignedTeam #TopBarScore
+#TopBarRightPlayers #TopBarScore
 {
 	horizontal-align: right;
 	margin-right: 8px;
@@ -222,16 +222,16 @@ DOTAHud.IsBeforeGameplay .base
 {
 	height: 100%;
 }
-.RightAlignedTeam #TeamScorePlayersMainFlow
+#TopBarRightPlayers #TeamScorePlayersMainFlow
 {
 	flow-children: left;
 }
-.LeftAlignedTeam #TeamScorePlayersMainFlow
+#TopBarLeftPlayers #TeamScorePlayersMainFlow
 {
 	flow-children: right;
 	overflow: noclip;
 }
-.LeftAlignedTeam #TopBarPlayersContainer
+#TopBarLeftPlayers #TopBarPlayersContainer
 {
 	flow-children: left;
 }
@@ -471,7 +471,7 @@ DOTAHud.IsBeforeGameplay .base
 	margin-bottom: 8px;
 }
 
-.TeamScorePlayers.LeftAlignedTeam #RespawnTimer
+.TeamScorePlayers#TopBarLeftPlayers #RespawnTimer
 {
 	transform: translateY(-28px) translateX(-4px);
 }
@@ -552,7 +552,7 @@ DOTAHud.IsBeforeGameplay .base
 	opacity: 0;
 }
 
-.LeftAlignedTeam #TopBarPlayersContainer #DeadLayer
+#TopBarLeftPlayers #TopBarPlayersContainer #DeadLayer
 {
 	transform: scaleX(-1);
 } 
@@ -632,7 +632,7 @@ DOTAHud.IsBeforeGameplay .base
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #000 ), color-stop( 0.03, #000a ), color-stop( 0.1, #0000 ), color-stop( 0.91, #0000 ), color-stop( 0.95, #0006 ),  to( #000a ) );
 }
 
-.RightAlignedTeam #TopBarPlayersContainer #PlayerColor
+#TopBarRightPlayers #TopBarPlayersContainer #PlayerColor
 {
 	background-size: 93% 100%;
 	background-position: 5px 0px;
@@ -751,20 +751,20 @@ DOTAHud.IsBeforeGameplay .base
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #101932 ), color-stop( 0.2, #172447 ), color-stop( .5, #162244), to( #101932 ) );
 }
 
-.LeftAlignedTeam #TopBarPlayersContainer .TopBarHealthBar,
-.LeftAlignedTeam #TopBarPlayersContainer #TopBarUltIndicator,
-.LeftAlignedTeam #TopBarPlayersContainer #ManaBar,
-.LeftAlignedTeam #TopBarPlayersContainer #GoldIcon,
-.LeftAlignedTeam #TopBarPlayersContainer #RespawnTimer
+#TopBarLeftPlayers #TopBarPlayersContainer .TopBarHealthBar,
+#TopBarLeftPlayers #TopBarPlayersContainer #TopBarUltIndicator,
+#TopBarLeftPlayers #TopBarPlayersContainer #ManaBar,
+#TopBarLeftPlayers #TopBarPlayersContainer #GoldIcon,
+#TopBarLeftPlayers #TopBarPlayersContainer #RespawnTimer
 {
 	margin-left: 6px;
 }
 
-.RightAlignedTeam #TopBarPlayersContainer .TopBarHealthBar,
-.RightAlignedTeam #TopBarPlayersContainer #TopBarUltIndicator,
-.RightAlignedTeam #TopBarPlayersContainer #ManaBar,
-.RightAlignedTeam #TopBarPlayersContainer #GoldIcon,
-.RightAlignedTeam #TopBarPlayersContainer #RespawnTimer
+#TopBarRightPlayers #TopBarPlayersContainer .TopBarHealthBar,
+#TopBarRightPlayers #TopBarPlayersContainer #TopBarUltIndicator,
+#TopBarRightPlayers #TopBarPlayersContainer #ManaBar,
+#TopBarRightPlayers #TopBarPlayersContainer #GoldIcon,
+#TopBarRightPlayers #TopBarPlayersContainer #RespawnTimer
 {
 	margin-right: 6px;
 }

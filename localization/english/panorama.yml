@@ -1,0 +1,89 @@
+npc_arena_hero_anakim: Anakim
+npc_arena_hero_maka: Maka Albarn
+npc_arena_hero_soul_eater: Soul Evans
+
+addon_game_name_p1: Angel Arena
+addon_game_name_p2: Black Star
+arena_game_mode_type_100: All Pick
+arena_game_mode_type_101: Ranked All Pick
+arena_game_mode_type_102: Random OMG
+arena_game_mode_type_103: Ability Shop
+hero_selection_phase_0: Loading...
+hero_selection_phase_1: Hero Banning
+hero_selection_phase_2: Hero Selection
+hero_selection_phase_3: Strategy Time
+hero_selection_phase_4: Loading...
+game_player_abandoned_game: "\_has abandoned the game."
+notifications_gold: "\_gold"
+bosses_respawn: "\_was resurrected!"
+duel_over_winner_none: The duel is over. At this time there is no winner.
+duel_over_winner_p1: "The duel is over.\_"
+duel_over_winner_p2: "\_is the winner. All it's heroes received\_"
+duel_no_heroes: In one or more teams not enough heroes for duel
+casino_slotmachine_roll_start: "Hero rolled the slot machine. Numbers:\_"
+casino_slotmachine_roll_result_streak000: You lost. Lost everything.
+casino_slotmachine_roll_result_streak00: "You lost\_"
+casino_slotmachine_roll_result_streakxxx: "Nice! You won\_"
+casino_slotmachine_roll_result_streakxx: "Not bad! You won\_"
+casino_slotmachine_roll_result_streak777: "Jackpot! You won\_"
+casino_slotmachine_roll_result_streak322: "All your enemies have got\_"
+casino_slotmachine_roll_result_streak322_enemies_p1: "You and your teammates have been granted with\_"
+casino_slotmachine_roll_result_streak322_enemies_p2: ", because enemy\_"
+casino_slotmachine_roll_result_streak322_enemies_p3: "\_ rolled 322."
+casino_slotmachine_roll_result_streak_no: You didn't win anything this time
+containers_shop_secret_name: Casino Shop
+containers_shop_duel_name: Duel Shop
+arthas_vsolyanova_notifiaction: NAAAAAAAAAAAAAAAA ✓✓✓✓
+
+hero_selection_select_hero: Select Hero
+hero_selection_button_select_hero: SELECT
+hero_selection_button_random: RANDOM
+hero_selection_button_search: Search Hero...
+hero_selection_loadout_items_first_game: Changing loadout items is not avaliable in first game after starting DotA
+hero_selection_linked_hero: 'Linked Hero:'
+hero_selection_lock: Lock
+hero_selection_unlock: Unlock
+hero_selection_heroes_default: Default
+hero_selection_heroes_new: New
+
+item_rune_keeper_no_runes_left: Rune Keeper is empty now.
+item_rune_keeper_contains: "Rune Keeper contains:\_"
+item_rune_keeper_rune_picked_up: "Rune Picked up:\_"
+item_rune_keeper_rune_picked_up_cont: ', Rune Keeper now contains: '
+kill_goal_tooltip: 'Goal:'
+kill_goal_tooltip_vote_title: 'KILL GOAL VOTE:'
+panorama_shop_shop_tab_1: BASICS
+panorama_shop_shop_tab_2: UPGRADES
+panorama_shop_shop_tab_3: NEW
+panorama_shop_search_placeholder: Search...
+panorama_shop_shop_label: SHOP
+panorama_shop_itembuilds_new_group: NEW GROUP
+panorama_shop_guide_youtube_open: Open in Browser
+error_panorama_shop_publish_guide_title: Title.
+server_error_panorama_shop_youtube_no_tags: Make sure your video has 'Angel Arena Black Star' tag
+server_error_panorama_shop_youtube_not_found: Video wasn't found
+hud_modifier_click_to_remove: Click to remove
+ability_shop_shift_no: LMB/RMB - Buy Ability. Hold SHIFT to enter selling mode.
+ability_shop_shift_yes: 'LMB - Sell ability, RMB - Downgrade ability. Release SHIFT to enter purchase mode.'
+ability_shop_purchased_only: Show purchased abilities
+ability_shop_search_placeholder: Ability or hero name...
+notification_item_demon_king_bar_curse_p1: "You just received Demon King Bar's Curse effect. You'll die in\_"
+notification_item_demon_king_bar_curse_p2: "\_seconds."
+custom_toast_PlayerDeniedSelf: '{victim_name} {denied_icon} Denied'
+custom_toast_PlayerDenied: '{killer_name} {denied_icon} Denied {victim_name}'
+custom_toast_KillStreak_Ended: '{victim_name} {kill_streak}x Kill Streak ended'
+custom_toast_ActivatedRune: '{player_name} has activated {rune_name}'
+custom_toast_BottledRune: '{player_name} bottled {rune_name}'
+custom_toast_DuelStarted: '{time_dota}: {duel_index}th duel has started!'
+custom_toast_BossKilled: '{team_name} {killed_icon} {victim_name} {gold}'
+boss_loot_vote_dropped: 'Items Dropped:'
+boss_loot_vote_killed: was killed!
+boss_loot_vote_damage: 'Damage: '
+boss_loot_vote_hide: Hide
+boss_loot_vote_show: Show
+option_yes: 'Yes'
+option_no: 'No'
+option_voting_kill_limit: 'Kill Limit:'
+option_voting_custom_abilities: 'Custom Abilities Mode:'
+option_voting_custom_abilities_random_omg: Random OMG
+option_voting_custom_abilities_ability_shop: Ability Shop

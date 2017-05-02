@@ -1,0 +1,77 @@
+npc_arena_hero_sara_bio: 'Сара родилась в неблагополучной семье. У нее не было отца, а мать была проституткой-алкоголичкой. Девочка не посещала школы, не общалась ни с кем, кроме нетрезвой матери и получила психологическую травму, стала социопаткой. В один прекрасный день она прикончила свою мать и семью по соседству. После этой бойни в ней пробудилось нечто. Она ощутила в себе странную и темную силу. Позже она познакомилась с кем-то, называвшим себя Жрецом Пустоты. Он  помог развить ей свои способности. Сара становилась сильнее с каждым днем, с каждым убийством. До тех пор, пока ее родной мир не опустел. Так она и путешествовала по измерениям, оставляя за собой руины, подпитывая свои силы убийствами и агониями своих жертв. Так она и попала на арену Ангелов - место, где слехстнулись сильнейшие создания Вселенной. Возможно, хотябы здесь найдутся противники, с которыми она сможет поиграть немножко дольше...'
+npc_arena_hero_sara_hype: 'Хрупкая Сара становится сильнее с каждым убитым крипом, получая за него энергию. Слабая в начале, она становится тем сильнее, чем дольше длится игра. В грамотных руках в поздней игре ей никто не сможет противостоять.'
+
+addonname: Angel Arena Black Star
+addon_game_name: Angel Arena Black Star
+addon_game_name_p1: Angel Arena
+addon_game_name_p2: Black Star
+game_player_abandoned_game: "\_покинул игру."
+notifications_gold: "\_золота"
+bosses_respawn: "\_возродился!"
+duel_over_winner_none: Дуэль окончена. В этот раз победителя нет.
+duel_over_winner_p1: "Дуэль окончена.\_"
+duel_over_winner_p2: "\_победили. Все их герои получили\_"
+duel_no_heroes: В одной из команд недостаточно героев для дуэли.
+casino_slotmachine_roll_start: "Вы использовали Слот машину. Числа:\_"
+casino_slotmachine_roll_result_streak000: Вы проиграли. Проиграли всё.
+casino_slotmachine_roll_result_streak00: "Вы проиграли\_"
+casino_slotmachine_roll_result_streakxxx: "Отлично! Вы выиграли\_"
+casino_slotmachine_roll_result_streakxx: "Не плохо! Вы выиграли\_"
+casino_slotmachine_roll_result_streak777: "Джекпот! Вы выиграли\_"
+casino_slotmachine_roll_result_streak322: "Все ваши противники получили\_"
+casino_slotmachine_roll_result_streak322_enemies_p1: "Ваша команда получила\_"
+casino_slotmachine_roll_result_streak322_enemies_p2: ", потому что вражескому\_"
+casino_slotmachine_roll_result_streak322_enemies_p3: "\_ выпало 322 в Казино."
+casino_slotmachine_roll_result_streak_no: В этот раз вы ничего не выиграли
+containers_shop_secret_name: Магазин в Казино
+containers_shop_duel_name: Дуэльный Магазин
+arthas_vsolyanova_notifiaction: НЫЫЫЫЫЫЫЫАААААААААААААААААААААААА ✓✓✓✓
+
+hero_selection_select_hero: Выберите Героя
+hero_selection_button_select_hero: ВЫБРАТЬ
+hero_selection_button_random: СЛУЧАЙНЫЙ
+hero_selection_button_search: Поиск среди героев...
+hero_selection_loadout_items_first_game: Смена стандартных общих предметов невозможна в первой игре после запуска DotA
+hero_selection_linked_hero: 'Связанный герой:'
+hero_selection_lock: Закрепить
+hero_selection_unlock: Открепить
+hero_selection_heroes_default: Стандартные
+hero_selection_heroes_new: Новые
+
+item_rune_keeper_no_runes_left: Rune Keeper теперь пуст.
+item_rune_keeper_contains: "Rune Keeper содержит руны:\_"
+item_rune_keeper_rune_picked_up: "Поднята руна:\_"
+item_rune_keeper_rune_picked_up_cont: ", Rune Keeper сейчас содержит:\_"
+kill_goal_tooltip: 'Цель:'
+kill_goal_tooltip_vote_title: 'Желаемое макс. число убийств:'
+panorama_shop_shop_tab_1: ОСНОВНЫЕ
+panorama_shop_shop_tab_2: УЛУЧШЕНИЯ
+panorama_shop_shop_tab_3: НОВЫЕ
+panorama_shop_search_placeholder: Поиск...
+panorama_shop_shop_label: ЛАВКА
+custom_end_screen_legend_lasthits: КРП
+hud_modifier_click_to_remove: Нажмите чтобы снять
+ability_shop_shift_no: ЛКМ/ПКМ - Купить способность. Для перехода в режим продажи удерживайте SHIFT.
+ability_shop_shift_yes: 'ЛКМ - Продать способность, ПКМ - Понизить уровень способности. Для покупки отпустите SHIFT.'
+ability_shop_purchased_only: Только приобретенные способности
+ability_shop_search_placeholder: Название способности или героя...
+DOTA_Item_Build_Altenative_Starting_Items: Альт. нач. предметы
+DOTA_Item_Build_Title_Valve: РЕКОМЕНДУЕМЫЕ
+DOTA_Item_Build_Title_Arena: ПРЕДМЕТЫ ИЗ AABS
+notification_item_demon_king_bar_curse_p1: "Вы получили проклятье от Demon King Bar. Вы погибнете через\_"
+notification_item_demon_king_bar_curse_p2: "\_секунд."
+custom_toast_PlayerDeniedSelf: '{victim_name} {denied_icon} не отдается врагу'
+custom_toast_PlayerDenied: '{killer_name} {denied_icon} не отдает врагу {victim_name}'
+custom_toast_KillStreak_Ended: '{victim_name} Серия из {kill_streak} убийств прервана'
+custom_toast_ActivatedRune: '{player_name} использовал руну {rune_name}'
+custom_toast_BottledRune: '{player_name} помещает в бутыль {rune_name}'
+custom_toast_DuelStarted: '{time_dota}: {duel_index}ая общая дуэль началась!'
+boss_loot_vote_dropped: 'Выпавшие предметы:'
+boss_loot_vote_killed: был убит!
+boss_loot_vote_damage: 'Урон: '
+boss_loot_vote_hide: Скрыть
+boss_loot_vote_show: Показать
+option_yes: Да
+option_no: Нет
+option_voting_kill_limit: 'Кол-во убийств:'
+option_voting_custom_abilities: 'Режим выбора способностей:'

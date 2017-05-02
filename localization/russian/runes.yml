@@ -1,0 +1,38 @@
+npc_arena_rune: Руна
+
+DOTA_Tooltip_modifier_arena_rune_tripledamage: Тройной урон
+DOTA_Tooltip_modifier_arena_rune_haste: Ускорение
+DOTA_Tooltip_modifier_arena_rune_invisibility: Невидимость
+DOTA_Tooltip_modifier_arena_rune_arcane: Волшебство
+DOTA_Tooltip_modifier_arena_rune_flame: Пылание
+DOTA_Tooltip_modifier_arena_rune_acceleration: Учащение
+DOTA_Tooltip_modifier_arena_rune_vibration: Колебание
+
+DOTA_Tooltip_modifier_arena_rune_tripledamage_Description: Базовый урон увеличен на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%
+DOTA_Tooltip_modifier_arena_rune_haste_Description: Увеличивает скорость передвижения до %dMODIFIER_PROPERTY_MOVESPEED_ABSOLUTE%
+DOTA_Tooltip_modifier_arena_rune_invisibility_Description: При атаке невидимость пропадает
+DOTA_Tooltip_modifier_arena_rune_arcane_Description: Уменьшает время перезарядки способностей на %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE%%% и урон от них на 50%%
+DOTA_Tooltip_modifier_arena_rune_flame_Description: Все противники рядом с вами получают 4%% от максимального здоровья в виде урона каждую секунду
+DOTA_Tooltip_modifier_arena_rune_acceleration_Description: 'Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, получаемый опыт увеличен в 3 раза'
+DOTA_Tooltip_modifier_arena_rune_vibration_Description: Все противники рядом с вами будут оттолкнуты
+
+custom_runes_rune_0_title: Богатство
+custom_runes_rune_0_text: Дает дополнительные золото и опыт
+custom_runes_rune_1_title: Тройной урон
+custom_runes_rune_1_text: Увеличивает базовый урон на 200%
+custom_runes_rune_2_title: Ускорение
+custom_runes_rune_2_text: Увеличивает скорость передвижения до 750
+custom_runes_rune_3_title: Иллюзия
+custom_runes_rune_3_text: 'Создает 2 иллюзии вашего героя, наносящие 35% урона и получающие 200% урона. Иллюзии пропадут через 75 секунд'
+custom_runes_rune_4_title: Невидимость
+custom_runes_rune_4_text: Вы станете невидимым на 60 секунд. Руна прекращает свое действие при атаке или при использовании умения или предмета
+custom_runes_rune_5_title: Регенерация
+custom_runes_rune_5_text: Мгновенно полностью восстанавливает здоровье и ману
+custom_runes_rune_6_title: Волшебство
+custom_runes_rune_6_text: Уменьшает время перезарядки способностей на 30% и урон от них на 50%
+custom_runes_rune_7_title: Пылание
+custom_runes_rune_7_text: Наносит 4% здоровья юнитов в виде урона каждую секунду в радиусе 350 в течение 30 секунд
+custom_runes_rune_8_title: Учащение
+custom_runes_rune_8_text: Увеличивает скорость атаки на 90 и увеличивает весь получаемый опыт в 3 раза
+custom_runes_rune_9_title: Колебание
+custom_runes_rune_9_text: Отталкивает всех противников в радиусе 350 от вас

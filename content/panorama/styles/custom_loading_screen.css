@@ -56,11 +56,12 @@
 {
 	font-size: 25px;
 }
-#LocalPlayerDataPanel
+#LocalPlayerData
 {
-	width: 100%;
-	border: 2px solid white;
-	margin: 10px;
+	width: 180%;
+	//margin-left: 100px;
+	margin-right: -82%;
+	horizontal-align: right;
 	margin-top: 55px;
 	background-color: rgba(100,100,150,0.9);
 	height: 500px;
@@ -91,116 +92,78 @@
 	100% { transform: rotateZ( 0deg ); }
 }
 
-.Loading #PlayerInfoLoading
-{
-	visibility: visible;
-}
-.Loading #ServerStatsPanel
-{
-	visibility: collapse;
-}
-
-#LocalPlayerData
-{
-	flow-children: right;
-	height: 106px;
-}
-
-#PlayerAvatar
-{
-	margin: 3px;
-	border: 2px solid lightgrey;
-	border-radius: 100%;
-	height: 100px;
-	width: 100px;
-}
-
-#PlayerNickName
-{
-	vertical-align: center;
-	margin-left: 6px;
-}
-
-#PlayerNickName Label
-{
-	font-size: 30px;
-}
-
-#LocalPlayerDataFlow
-{
-	width: 100%;
-	height: 100%;
-	flow-children: down;
-}
-
-#ServerStatsPanel
-{
-	height: 100%;
-	width: 100%;
-	flow-children: down;
-}
-
-#ServerStatsPanel .KeyValuePanel
-{
-	margin: 6px 20px;
-	width: 100%;
-
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #373d45 ), to( #4d5860 ) );
-	border-style: solid;
-	border-width: 2px;
-	padding: 4px 10px;
-	border-top-color: #555555;
-	border-left-color: #494949;
-	border-bottom-color: #333333;
-	border-right-color: #404040;
-}
-
-#ServerStatsPanel Label
-{
-	color: white;
-	font-size: 30px;
-}
-
-#ServerStatsPanel .KeyValueKey
-{
-	font-weight: bold;
-}
-
-#KillGoalVote
+#OptionVotings
 {
 	width: 100%;
 	vertical-align: center;
 	margin: 4px;
 	margin-top: 120px;
 	margin-left: 20px;
-	background-color: rgba(0,0,0,0.9);
+	background-color: rgba(0,0,0,0.7);
 	border: 2px solid lightgrey;
 	border-radius: 5px;
 	flow-children: down;
 	padding: 4px;
-	visibility: collapse;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	opacity: 0;
 }
-
-#KillGoalVoteVartiantList
+#OptionVotings.Loaded
 {
-	width: 100%;
-	flow-children: down;
+	opacity: 1;
 }
 
-.KillGoalGroup
+.OptionVoting
 {
 	width: 100%;
 	margin: 3px 0;
+	flow-children: down;
 }
 
-.KillGoalVariant
+#OptionVotingTitle
+{
+	color: white;
+	horizontal-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-shadow: 0 0 3 black;
+}
+
+#OptionVotingVariants
+{
+	flow-children: down;
+	width: 100%;
+}
+
+.OptionVotingVariantRow
+{
+	width: 100%;
+	margin: 3px 10px;
+}
+
+.OptionVotingVariant
 {
 	width: 49%;
 }
-
-#CustomSettingsRoot
+.OptionVoting:not(.ShouldGroup) .OptionVotingVariant
 {
 	width: 100%;
-	visibility: collapse;
-	margin-bottom: 12px;
+	margin: 3px 10px;
+}
+.OptionVoting.Voted .OptionVotingVariant
+{
+	wash-color: #999999;
+	saturation: 0;
+}
+
+.OptionVotingVariant > Label
+{
+	color: white;
+	font-size: 20px;
+	horizontal-align: left;
+}
+.OptionVoting.Voted .OptionVotingVariant > Label
+{
+	wash-color: #888888;
 }

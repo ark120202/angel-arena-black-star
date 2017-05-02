@@ -1,0 +1,37 @@
+DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena: Rocket Barrage
+DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_Description: 'While turned on launches a salvo of rockets at nearby enemy units in a radius around the Gyrocopter and drains %mana_per_second% mana per second. Normally it attacks one random unit, but if Gyrocopter is affected by Flak Cannon it launches rockets to all enemies in radius.'
+DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_radius: 'RADIUS:'
+DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_mana_per_second: 'MANA PER SECOND:'
+DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_rockets_per_second: 'ROCKETS PER SECOND:'
+
+DOTA_Tooltip_ability_gyrocopter_homing_missile_arena: Homing Missile
+DOTA_Tooltip_ability_gyrocopter_homing_missile_arena_Description: 'Fires a homing missile to seek the targeted enemy unit. The missile gains speed over time, dealing damage and stunning all units around the target when it impacts.  Homing Missile deals greater damage the further it has traveled.  Enemy units can destroy the missile before it reaches its target.'
+DOTA_Tooltip_ability_gyrocopter_homing_missile_arena_Note0: The missile will follow and hit invisible units.
+DOTA_Tooltip_ability_gyrocopter_homing_missile_arena_hits_to_kill_tooltip: 'HITS TO DESTROY:'
+DOTA_Tooltip_ability_gyrocopter_homing_missile_arena_tower_hits_to_kill_tooltip: 'TOWER HITS TO DESTROY:'
+DOTA_Tooltip_ability_gyrocopter_homing_missile_arena_stun_duration: 'STUN DURATION:'
+DOTA_Tooltip_ability_gyrocopter_homing_missile_arena_min_damage: 'MINIMUM DAMAGE:'
+
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena: Flak Cannon
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_Description: |-
+  Gyrocopter's attacks hit all enemy units in an area around it and deals additional magic damage to target for a limited number of attacks.  Only the main target of attacks will receive attack bonuses such as Critical Strike and additional magic damage. Also causes Rocket Barrage to attack all units in radius, instead of one random unit.
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_Note0: 'Illusions will fire attack projectiles, but they won''t deal any damage.'
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_radius: 'RADIUS:'
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_max_attacks: 'MAX ATTACKS:'
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_postattack_magic_damage: 'EXPLOSION MAGIC DAMAGE:'
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_fire_rate_scepter: 'SIDE GUNNER ATTACK RATE:'
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_scepter_radius_scepter: 'SIDE GUNNER RADIUS:'
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_aghanim_description: Adds a Side Gunner that at random attacks enemy units within a 700 radius every 0.5 seconds.
+DOTA_Tooltip_modifier_gyrocopter_flak_cannon_arena: Flak Cannon
+DOTA_Tooltip_modifier_gyrocopter_flak_cannon_arena_Description: 'Attacking all nearby targets, deals additional magic damage.'
+
+DOTA_Tooltip_ability_gyrocopter_call_down_arena: Call Down
+DOTA_Tooltip_ability_gyrocopter_call_down_arena_Description: |-
+  Call down an aerial missile strike on enemy units in a target area. Two missiles arrive in succession, the first dealing major damage, stun for %slow_duration_first% seconds and launch Homing Missile's to each hero touched; the second dealing minor damage and stun for %slow_duration_second% seconds.
+DOTA_Tooltip_ability_gyrocopter_call_down_arena_slow_duration_first: 'MISSILE ONE STUN DURATION:'
+DOTA_Tooltip_ability_gyrocopter_call_down_arena_slow_duration_second: 'MISSILE TWO STUN DURATION:'
+DOTA_Tooltip_ability_gyrocopter_call_down_arena_damage_first: 'MISSILE ONE DAMAGE:'
+DOTA_Tooltip_ability_gyrocopter_call_down_arena_damage_second: 'MISSILE TWO DAMAGE:'
+DOTA_Tooltip_ability_gyrocopter_call_down_arena_radius: 'RADIUS:'
+DOTA_Tooltip_ability_gyrocopter_call_down_arena_damage_second_scepter: 'MISSILE TWO DAMAGE WITH SCEPTER:'
+DOTA_Tooltip_ability_gyrocopter_call_down_arena_aghanim_description: Damage Increased.

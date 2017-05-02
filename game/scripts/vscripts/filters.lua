@@ -25,7 +25,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			table.insert(units, u)
 		end
 	end
-	if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
+	if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and Options:IsEquals("EnableAbilityShop") then
 		AbilityShop:OnAbilityBuy(PlayerID, abilityname)
 		return false
 	end

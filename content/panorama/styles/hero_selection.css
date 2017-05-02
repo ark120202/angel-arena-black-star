@@ -1,3 +1,5 @@
+@define mainPanelHeight: 960px;
+
 .base
 {
 	height: 100%;
@@ -24,9 +26,6 @@
 	width: 100%;
 	height: 100%;
 	background-size: 100% 100%;
-}
-.CustomSelectionBackground #HeroSelectionBackground, #HeroSelectionCustomBackground
-{
 	visibility: collapse;
 }
 .CustomSelectionBackground #HeroSelectionCustomBackground
@@ -63,19 +62,17 @@
 	font-weight: bold;
 	font-size: 40px;
 }
-#SelectedHeroScene
+
+#HeroListBasePanel,
+#SelectedHeroPreview
 {
-	horizontal-align: center;
-	height: 100%;
-	width: 80%;
-	opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
-}
-#HeroListBasePanel
-{
-	height: 980px;
+	height: mainPanelHeight;
 	width: 80%;
 	vertical-align: bottom;
 	flow-children: down;
+	transition-duration: 0.4s;
+	transition-property: transform, opacity;
+	transition-timing-function: ease-in-out;
 }
 
 #HeroListTabsPanel
@@ -95,120 +92,67 @@
 	margin-right: 6px;
 	height: 100%;
 	width: 100%;
-}
-
-#HeroListBasePanelHost
-{
-	height: 100%;
-	width: 100%;
 	flow-children: down;
 }
-
-.HeroListElement
+.base #HeroListPanel
 {
-	margin-top: 6px;
-	margin-bottom: 0px;
-	margin-left: 18px;
-	margin-right: -8px;
-	border-radius: 2px;
-	width: height-percentage(72%); //75.5319149%
-	height: 90px;
-	transition-duration: 0.1s;
-	transition-property: pre-transform-scale2d;
-}
-
-.HeroListElement.SearchedPanelDisabled
-{
-	saturation: 0;
-	brightness: 0.4;
-	wash-color: lightblue;
-	contrast: 1.01;
-	blur: gaussian(1.8px);
-}
-.InSearch .HeroListElement:not(.SearchedPanelDisabled)
-{
-	pre-transform-scale2d: 1.1;
-}
-.HeroListElement:hover
-{
-	pre-transform-scale2d: 1.15;
-}
-.InSearch .HeroListElement:not(.SearchedPanelDisabled):hover
-{
-	pre-transform-scale2d: 1.2;
-}
-.HeroListElement.Border_Changed
-{
-	border: 1px solid red;
-}
-.HeroListElement.HeroPanelSelected
-{
-	border: 4px solid #b2da25;
-	pre-transform-scale2d: 1.1;
-}
-.HeroListElement.Picked
-{
-	saturation: .1;
-	wash-color: lightgrey;
-	blur: gaussian(0.5px);
-}
-.HeroListElement.Locked
-{
-	saturation: .6;
-	wash-color: lightcyan;
-	blur: gaussian(0.1px);
-}
-
-.HeroListElement #LockedIcon
-{
-	width: 24px;
-	height: 24px;
-}
-
-.HeroListElement.Locked #LockedIcon
-{
-	visibility: visible;
+	margin-left: 50px;
 }
 
 #SelectionStatusPanel
 {
-	height: 100px;
-	width: 80%;
-	flow-children: right;
-	background-color: rgba(0,0,0,0.2);
+	height: 120px;
+	width: 100%;
 }
 
 #GameModeInfoPanel
 {
-	width: 135px;
-	margin: 4px;
-	vertical-align: center;
-	height: 100%;
-}
-
-#GameModeInfoGamemodeLabel
-{
-	align: center bottom;
-	margin-bottom: 4px;
-	font-size: 20px;
-	color: #CCCCCC;
+	flow-children: down;
+	margin: 0 12px;
+	width: 200px;
 }
 
 #HeroSelectionTimer
 {
 	horizontal-align: center;
-	font-size: 28px;
+	font-size: 64px;
 	color: white;
-	align: center center;
+	font-weight: thin;
+	text-align: center;
+	transition-property: transform, opacity, pre-transform-scale2d;
+	transition-duration: 0.4s;
+	transition-timing-function: ease-in-out;
+	margin-bottom: -20px;
+	width: 100%;
+}
+
+#GameModeInfoCurrentPhase
+{
+	align: center bottom;
+	color: white;
+	text-shadow: 0px 0px 6px 1.0 #9EF8FF45;
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+#GameModeInfoGamemodeLabel
+{
+	align: center bottom;
+	color: white;
+	text-shadow: 0px 0px 6px 1.0 #9EF8FF45;
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
 }
 
 #TeamSelectionStatusPanel
 {
-	margin-left: 16px;
-	margin-right: 16px;
 	height: 100%;
 	flow-children: right;
-	align: center center;
+	horizontal-align: center;
 }
 
 .TeamSelectionPanel
@@ -216,58 +160,12 @@
 	margin: 4px;
 	height: 100%;
 	flow-children: right;
-	border: 2px solid white;
-	border-radius: 12px;
-}
-
-.PlayerInTeamPanel
-{
-	margin: 2px;
-	height: 100%;
-	width: 110px;
-}
-
-.PlayerInTeamPanel #NickName
-{
-	margin: 4px 0px;
-	width: 100%;
-	align: center bottom;
-	text-align: center;
-	font-size: 18px;
-	color: white;
-	height: 22px;
-	margin-bottom: -2px;
-	text-shadow: 0 0 6px black;
-	text-overflow: shrink;
-}
-
-.PlayerInTeamPanel #ImageHost
-{
-	align: center top;
-	border-width: 2px;
-	border-style: solid;
-}
-
-.PlayerInTeamPanel #HeroImage
-{
-	width: 100px;
-	height: width-percentage(56.25%);
-	background-color: #282E30;
-}
-
-.PlayerInTeamPanel.HoveredHero #HeroImage
-{
-	saturation: .1;
-}
-.PlayerInTeamPanel.LockedHero #HeroImage
-{
-	saturation: .6;
 }
 #SelectedHeroSelectButton
 {
-	width: 95%;
+	width: 78%;
 	height: 70%;
-	align: center center;
+	align: left center;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404D65dd ), to( #2B3445dd ) );
 	border-top: 1px solid #6F819B;
 	border-left: 1px solid #6F819B22;
@@ -291,13 +189,15 @@
 	wash-color: grey;
 	pre-transform-scale2d: 1;
 }
-#SelectedHeroSelectButton .LockInButton
+#SelectedHeroSelectButton .LocalHeroBanButton
 {
-
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #1A0202dd ), to( #7D3636dd ) );
 }
+
 #SelectedHeroSelectLabel,
 #SelectedHeroLockLabel,
-#SelectedHeroUnlockLabel
+#SelectedHeroUnlockLabel,
+#SelectedHeroBanLabel
 {
 	align: center top;
 	font-size: 24px;
@@ -305,15 +205,16 @@
 }
 #SelectedHeroLockLabel,
 #SelectedHeroUnlockLabel,
+#SelectedHeroBanLabel,
 .LocalHeroLockButton #SelectedHeroSelectLabel,
-.LocalHeroLockButton #SelectedHeroUnlockLabel,
 .LocalHeroUnlockButton #SelectedHeroSelectLabel,
-.LocalHeroUnlockButton #SelectedHeroLockLabel,
+.LocalHeroBanButton #SelectedHeroSelectLabel,
 {
 	visibility: collapse;
 }
 .LocalHeroLockButton #SelectedHeroLockLabel,
 .LocalHeroUnlockButton #SelectedHeroUnlockLabel,
+.LocalHeroBanButton #SelectedHeroBanLabel
 {
 	visibility: visible;
 }
@@ -346,18 +247,13 @@
 	visibility: visible;
 }
 
-.PlayerInTeamPanel.LockedHero #LockedIcon
-{
-	visibility: visible;
-}
-
 #ExitButton
 {
 	transform: rotatez(180deg);
 	background-image: url("file://{images}/control_icons/return_to_game.png");
 	width: 38.75px;
 	height: 36.25px;
-	margin: 5px;
+	margin: 9px;
 	background-size: 38.75px;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -375,9 +271,9 @@
 }
 #HeroSearchTextEntry
 {
-	width: 400px;
+	width: 320px;
 	height: 100%;
-	margin: 4px;
+	margin: 4px 12px;
 	border-radius: 10px;
 	font-size: 20px;
 	color: white;
@@ -389,12 +285,7 @@
 	horizontal-align: right;
 	height: 100%;
 	flow-children: right;
-}
-
-#SelectedHeroPreview
-{
-	height: 35%;
-	width: 100%;
+	margin-right: 12px;
 }
 
 .SelectedHeroAttributesColumn
@@ -417,36 +308,18 @@
 	height: 24px;
 	margin-left: 5px;
 	margin-right: 8px;
-}
-#DotaAttributePic_1
-{
-	border: 2px solid red;
-	border-radius: 5px;
-}
 
-#DotaAttributePic_2
-{
-	color: lime;
-	font-size: 24px;
-	text-align: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border-radius: 50%;
 }
-
-#DotaAttributePic_3
+.DotaAttributePic.PrimaryAttribute
 {
-	border: 4px solid DodgerBlue;
-	border-radius: -1px;
+	box-shadow: -1.5px -1.5px 3px 3px #ffffff99;
 }
-
-.PrimaryAttribute
-{
-	box-shadow: -2px -2px 4px 4px white;
-}
-
-#DotaAttributePic_2.PrimaryAttribute
-{
-	box-shadow: none;
-	text-shadow: 0 0 4px white; 
-}
+#DotaAttributePic_1 { background-image: url("s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_strength_psd.vtex"); }
+#DotaAttributePic_2 { background-image: url("s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_agility_psd.vtex"); }
+#DotaAttributePic_3 { background-image: url("s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_intelligence_psd.vtex"); }
 
 .AttributeValueText
 {
@@ -456,83 +329,12 @@
 	horizontal-align: right;
 }
 
-#HeroSelectionPrecacheBase
-{
-	height: 100%;
-	width: 100%;
-	flow-children: down;
-	visibility: collapse;
-}
-
-#PrecacheLoadingMessageLabel
-{
-	horizontal-align: center;
-	font-size: 100px;
-	color: white;
-	text-shadow: 0 0 20px black; 
-}
-
-#PrecacheLoadingMessagePanel
-{
-	horizontal-align: center;
-	margin-top: 40px;
-}
-
-#PrecacheTeamContainer
-{
-	horizontal-align: center;
-	margin-top: 40px;
-	height: 70%;
-	flow-children: down;
-}
-
-.PrecacheTeamEntry
-{
-	flow-children: right;
-	margin-left: 10px;
-	margin-right: 10px;
-}
-
-.PrecacheTeamPlayerPanel
-{
-	height: 350px;
-	width: 250px;
-	margin: 5px;
-	background-color: rgba(0, 0, 0, 0.80);
-	box-shadow: -10px -10px 20px 20px black;
-}
-
-.PrecacheTeamPlayerPanel DOTAScenePanel
-{
-	width: 100%;
-	height: 100%;
-	opacity-mask: url("file://{images}/masks/softedge_box.png");
-}
-
-.PrecachePlayerInTeamNickname
-{
-	margin-top: 4px;
-	align: center top;
-	font-size: 28px;
-	height: 32px;
-	color: black;
-	text-shadow: 0 0 6px black;
-	text-overflow: shrink;
-}
-
-.PrecacheHeroLabel
-{
-	align: center bottom;
-	font-size: 24px;
-	color: white;
-}
-
 #ChatAndMapPanel
 {
-	height: 100%;
+	height: mainPanelHeight;
 	width: 20%;
 	horizontal-align: right;
-	background-color: rgba(0,0,0,0.2);
+	align: right bottom;
 	flow-children: down;
 }
 
@@ -555,42 +357,6 @@
 	flow-children: right-wrap;
 }
 
-.SmallTextButton
-{
-	width: 170px;
-	height: 50%;
-	vertical-align: center;
-	margin: 10px;
-}
-.SmallTextButton:hover
-{
-	pre-transform-scale2d: 1.05;
-}
-.SmallTextButton:active
-{
-	pre-transform-scale2d: 0.96;
-}
-.SmallTextButton:disabled
-{
-	saturation: .1;
-	wash-color: grey;
-}
-.SmallTextButtonContainer
-{
-	align: center center;
-	flow-children: right;
-}
-.SmallTextButtonContainer Label
-{
-	vertical-align: center;
-	font-size: 20px;
-	color: rgb(180,180,180);
-}
-.SmallTextButtonContainer Image
-{
-	vertical-align: center;
-	margin-right: 8px;
-}
 #AbilitiesPanel
 {
 	width: 100%;
@@ -625,13 +391,15 @@
 
 #HeroListControlsGroup2
 {
-	width: 25%;
+	width: 30%;
 	align: center center;
+	margin-left: 10%;
 }
 
 #HeroListControlsGroup3
 {
 	align: right center;
+	width: 30%;
 	flow-children: right;
 }
 
@@ -672,7 +440,7 @@
 {
 	width: 350px;
 	height: width-percentage(100%);
-	margin-top: 50px;
+	margin-top: 10px;
 	horizontal-align: center;
 }
 
@@ -735,56 +503,39 @@
 	wash-color: #fff;
 }
 
-.MinimapSpawnBoxes
+#MinimapSpawnBoxes
 {
 	width: 100%;
 	height: 100%;
 }
 
-.MinimapDynamicIcons
+#MinimapDynamicIcons
 {
 	width: 100%;
 	height: 100%;
 }
-#MinimapImage4v4v4v4, .Gamemode_4V4V4V4 #MinimapImage
+.MinimapImage
 {
-	visibility: collapse;
+	width: 100%;
+	height: 100%;
 }
+.only_map_landscape_4v4v4v4, .only_map_landscape_5v5	{ visibility: collapse; }
+.map_landscape_4v4v4v4 .only_map_landscape_4v4v4v4,
+.map_landscape_5v5 .only_map_landscape_5v5,
+{ visibility: visible; }
 
-.Gamemode_4V4V4V4 #MinimapImage4v4v4v4
-{
-	visibility: visible;
-}
-
-.Gamemode_4V4V4V4 .PrecacheTeamPlayerPanel
-{
-	height: 350px;
-	width: 220px;
-	margin: 2px;
-	box-shadow: -3px -3px 6px 6px black;
-}
-
-.PrecacheRow
-{
-	margin: 5px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	horizontal-align: center;
-	flow-children: right;
-}
-
-.Gamemode_4V4V4V4 .PlayerInTeamHeroImage
+.map_landscape_4v4v4v4 .PlayerInTeamHeroImage
 {
 	width: 69px;
 }
 
-.Gamemode_4V4V4V4 .PlayerInTeamPanel
+.map_landscape_4v4v4v4 .PlayerInTeamPanel
 {
 	margin: 2px;
 	width: 77px;
 }
 
-.Gamemode_4V4V4V4 .PlayerInTeamNickname
+.map_landscape_4v4v4v4 .PlayerInTeamNickname
 {
 	font-size: 17px;
 }
@@ -823,6 +574,9 @@
 	width: 100%;
 	height: 100%;
 	margin: 4px;
+	padding: 10px;
+	background-color: #0009;
+	border-radius: 12px;
 }
 
 #SelectionChatMessagesPanel
@@ -836,6 +590,7 @@
 {
 	flow-children: down;
     transform: scaleY(-1);
+	overflow: squish clip;
 }
 
 #SelectionChatEntryPanel
@@ -882,20 +637,6 @@
 	border: 1px solid black;
 }
 
-#PrecacheProgressBar
-{
-	vertical-align: bottom;
-	width: 800px;
-	margin-bottom: -10px;
-}
-
-#PrecacheProgressBar_Left
-{
-	background-color: gradient( linear, 0% 0%, 100% 0%, from( #69B4FF ), to( #31A6E0 ) );
-	transition-property: width;
-	transition-duration: 0.2s;
-}
-
 #AdsBanner
 {
 	width: 100%; //384
@@ -928,4 +669,157 @@
 	visibility: collapse;
 	background-image: url("file://{images}/control_icons/lock_small.png");
 	background-size: 100% 100%;
+}
+
+.PickButton
+{
+	height: 100%;
+	padding: 8px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404D65dd ), to( #2B3445dd ) );
+	
+	border-top: 1px solid #6F819B;
+	border-left: 1px solid #6F819B22;
+	border-right: 1px solid #6F819B11;
+	border-bottom: 1px solid #3F414B33;
+	box-shadow: #0000008f -6px -6px 12px 12px;	
+	transition-property: opacity, background-color;
+	transition-duration: 0.18s;
+}
+.PickButton:hover
+{
+	brightness: 1.2;
+}
+.PickButton:active
+{
+	brightness: 1.5;
+}
+
+.PickButton Label
+{
+	color: #ccc;
+	text-transform: uppercase;
+}
+
+#RandomButton
+{
+	width: 20%;
+	height: 70%;
+	align: right center;
+
+	saturation: 0.0;
+	brightness: 0.2;
+}
+
+.RandomingEnabled #RandomButton.Activated,
+{
+	sound: "ui.pick_play";
+}
+
+#RandomButton > Label
+{
+	width: 100%;
+	font-size: 14px;
+	text-align: center;
+	text-overflow: shrink;
+	margin-bottom: -6px;
+	vertical-align: bottom;
+}
+
+#RandomButton > Panel
+{
+	background-image: url("s2r://panorama/images/control_icons/random_dice_psd.vtex");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 34px;
+	height: 38px;
+	horizontal-align: center;
+}
+
+.RandomingEnabled #RandomButton
+{
+	saturation: 1.0;
+	brightness: 1.0;
+}
+
+.RandomingEnabled #RandomButton:hover
+{
+	brightness: 2.0;
+}
+.RandomingEnabled #RandomButton:active
+{
+	brightness: 1.5;
+}
+
+#SelectedHeroOverview
+{
+	color: white;
+	height: 130%;
+	margin-bottom: -30px;
+	margin-top: -5px;
+	margin-right: -17px;
+	text-shadow: 1px 1px 3px 2 black;
+}
+
+.SelectedHeroAttributesElement > Image
+{
+	vertical-align: center;
+}
+
+
+
+
+
+
+#SwitchHeroesButton
+{
+	width: 100px;
+	height: 75%;
+	align: right center;
+	margin-left: 4px;
+	margin-right: 15px;
+	margin-top: 10px;
+}
+#SwitchHeroesButton:hover
+{
+	brightness: 2.0;
+	margin-top: 12px;
+}
+#SwitchHeroesButton:active
+{
+	brightness: 1.5;
+	margin-top: 14px;
+}
+#SwitchHeroesButton > Label
+{
+	width: 100%;
+	font-size: 14px;
+	text-align: center;
+	text-overflow: shrink;
+	margin-bottom: -6px;
+	vertical-align: bottom;
+	transition-property: color;
+	transition-duration: 0.1s;
+}
+#SwitchHeroesButton > #SwitchHeroesDefault
+{
+	margin-top: -6px;
+	vertical-align: top;
+}
+.ActiveTab1 > #SwitchHeroesDefault,
+.ActiveTab2 > #SwitchHeroesNew
+{
+	color: lime;
+	font-weight: bold;
+}
+#SwitchHeroesButton > Panel
+{
+	background-image: url("file://{resources}/images/custom_game/hero_selection/hero_swich.png");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 34px;
+	height: 38px;
+	margin-top: -4px;
+	align: center center;
 }

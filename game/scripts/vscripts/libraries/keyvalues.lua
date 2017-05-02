@@ -1,19 +1,9 @@
---[[
-MODIFIED:
--CDOTA_BaseNPC:GetKeyValue - Поддержка alternative 
-GetItemNameById - добавлена функция поиска предмета по id
-split заменена на string.split и перенесена в util.lua
-Override теперь мерджит таблицы, а не заменяет
-]]
 KEYVALUES_VERSION = "1.00"
 
- -- Change to false to skip loading the base files
-LOAD_BASE_FILES = true
-
 --[[
-	Simple Lua KeyValues library
+	Simple Lua KeyValues library, modified version
 	Author: Martin Noya // github.com/MNoya
-
+	
 	Installation:
 	- require this file inside your code
 
@@ -75,7 +65,8 @@ end
 function LoadGameKeyValues()
 	local scriptPath = "scripts/npc/"
 	local override = LoadKeyValues(scriptPath.."npc_abilities_override.txt")
-	local files = { AbilityKV = {base = "npc_abilities",custom = "npc_abilities_custom"},
+	local files = {
+		AbilityKV = {base = "npc_abilities",custom = "npc_abilities_custom"},
 		ItemKV = {base = "items", custom = "npc_items_custom"},
 		UnitKV = {base = "npc_units", custom = "npc_units_custom"},
 		HeroKV = {base = "npc_heroes", custom = "npc_heroes_custom", new = "heroes/new"}
@@ -86,11 +77,7 @@ function LoadGameKeyValues()
 	end
 	-- Load and validate the files
 	for KVType,KVFilePaths in pairs(files) do
-		local file = {}
-		if LOAD_BASE_FILES then
-			file = LoadKeyValues(scriptPath..KVFilePaths.base..".txt")
-		end
-
+		local file = LoadKeyValues(scriptPath .. KVFilePaths.base .. ".txt")
 		-- Replace main game keys by any match on the override file
 		for k,v in pairs(override) do
 			if file[k] then
@@ -101,36 +88,37 @@ function LoadGameKeyValues()
 				end
 			end
 		end
-		local custom_file = LoadKeyValues(scriptPath..KVFilePaths.custom..".txt")
-		if KVFilePaths.new then
-			table.deepmerge(custom_file, LoadKeyValues(scriptPath..KVFilePaths.new..".txt"))
-		end
+		local custom_file = LoadKeyValues(scriptPath .. KVFilePaths.custom .. ".txt")
 		if custom_file then
 			if KVType == "HeroKV" then
-				for k2,v2 in pairs(custom_file) do
-					if not file[k2] then
-						file[k2] = {}
-						local override_hero = v2.override_hero
-						if file[override_hero] then
-							table.deepmerge(file[k2], file[override_hero])
+				for k,v in pairs(custom_file) do
+					if not file[k] then
+						file[k] = {}
+						local override_hero = v.override_hero
+						if override_hero then
+							if file[override_hero] then
+								table.deepmerge(file[k], file[override_hero])
+							end
+							if custom_file[override_hero] then
+								table.deepmerge(file[k], custom_file[override_hero])
+							end
 						end
-						if custom_file[override_hero] then
-							table.deepmerge(file[k2], custom_file[override_hero])
-						end
-						table.deepmerge(file[k2], v2)
+						table.deepmerge(file[k], v)
 					else
-						table.deepmerge(file[k2], v2)
+						table.deepmerge(file[k], v)
 					end
 				end
 			else
 				table.deepmerge(file, custom_file)
 			end
 		else
-			print("[KeyValues] Critical Error on "..KVFilePaths.custom..".txt")
+			print("[KeyValues] Critical Error on " .. KVFilePaths.custom .. ".txt")
 			return
 		end
+		if KVFilePaths.new then
+			table.deepmerge(file, LoadKeyValues(scriptPath .. KVFilePaths.new .. ".txt"))
+		end
 		
-		--GameRules[KVType] = file
 		KeyValues[KVType] = file
 	end   
 
@@ -146,12 +134,9 @@ function LoadGameKeyValues()
 	for key,value in pairs(KeyValues.HeroKV) do
 		if not KeyValues.UnitKV[key] then
 			KeyValues.UnitKV[key] = value
-		else
-			if type(KeyValues.All[key]) == "table" then
-				print("[KeyValues] Warning: Duplicated unit/hero entry for " .. key)
-				table.deepmerge(value, KeyValues.UnitKV[key])
-				KeyValues.UnitKV[key] = value
-			end
+		elseif type(KeyValues.All[key]) == "table" then
+			print("[KeyValues] Warning: Duplicated unit/hero entry for " .. key)
+			table.deepmerge(KeyValues.UnitKV[key], value)
 		end
 	end
 end

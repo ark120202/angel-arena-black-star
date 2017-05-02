@@ -1,0 +1,366 @@
+Variables:
+  ability_scepter_upgradable: |- #Handled with script
+
+    Upgradable by Aghanim's Scepter.
+
+game_mode_15: Angel Arena Black Star
+ADDON_GAME_NAME: Angel Arena Black Star
+addon_game_name: Angel Arena Black Star
+addonname: Angel Arena Black Star
+npc_dota_hero_arena_base: Hero
+DOTA_Chat_GlyphUsedGood: ''
+DOTA_Chat_GlyphUsedBad: ''
+arena_dota_hud_error_must_target_soul: Ability Must Target a soul
+dota_hud_error_cant_purchase_duel_ongoing: Shop is disabled because of duel
+dota_hud_error_spirits_no_tether: Ability requires tethered unit
+dota_hud_error_phantom_swap_no_illusions: This item requires an item that
+dota_hud_error_item_from_bosses: This item or one of it's components can be recieved only from bosses
+dota_hud_error_target_health_overflow: Target health is more then trigger point
+dota_hud_error_ability_cant_target_boss: Ability can't target bosses
+dota_hud_error_ability_cant_target_champion: Ability can't target champions
+DOTA_Tooltip_modifier_neutral_champion: Champion
+DOTA_Tooltip_modifier_neutral_champion_Description: 'This neutral is a champion, so it''s %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death'
+bitch_lina_bubble_text: 'Hey, do you want to have a good time? Then give me 2 Casino Coins'
+riki_pocket_riki_chat_notify_text: '%s1 has sold Riki.'
+npc_dota_hero_riki: Rikimaru
+npc_dota_hero_wisp: Wisp
+npc_dota_hero_skeleton_king: Skeleton King
+npc_dota_hero_life_stealer: Naix
+npc_dota_hero_furion: Furion
+npc_dota_hero_phantom_assassin: Mortred
+npc_dummy_unit: Dummy
+npc_dummy_blank: Blank Dummy
+npc_dummy_flying: Flying Dummy
+npc_arena_boss_l1_v1: Cursed Demon
+npc_arena_boss_l1_v2: Fire Golem
+npc_arena_boss_l2_v1: Stone Statue
+npc_arena_boss_l2_v2: Ancient Beast
+npc_arena_boss_central: The Netherdrake
+npc_arena_boss_freya: Freya
+npc_arena_boss_zaken: Zaken
+npc_dota_neutral_easy_variant1: Easy Camp Creep
+npc_dota_neutral_medium_variant1: Medium Camp Creep
+npc_dota_neutral_hard_variant1: Dragon
+npc_dota_neutral_hard_variant2: Centaur
+npc_arena_fountain: Fountain
+npc_dota_casino_slotmachine: Slotmachine
+npc_dota_casino_lina: Lina
+npc_dota_arena_statue: Statue
+npc_dota_lucifers_claw_doomling: Lucifer's Doomling
+npc_dota_beastmaster_boar_base: Boar
+npc_dota_beastmaster_hawk_base: Hawk
+npc_dota_warlock_golem_base: Warlock Golem
+npc_dota_warlock_golem_scepter_base: Warlock Golem
+npc_dota_warlock_minigolem: Mini Golem
+DOTA_Tooltip_modifier_casino_bitch_lina_effect: Lina Buff
+DOTA_Tooltip_modifier_casino_bitch_lina_effect_Description: 'Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, health regeniration increased by %MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%.'
+DOTA_Tooltip_modifier_multicast_lua: Multicast
+DOTA_Tooltip_modifier_multicast_lua_Description: Gives you chance to cast your spells multiple times with each use.
+DOTA_Tooltip_modifier_shadow_word_self_secondary: Shadow Word Self Secondary
+DOTA_Tooltip_modifier_shadow_word_self_secondary_Description: Taking half of periodic heal.
+DOTA_Tooltip_modifier_shadow_word_self: Shadow Word Self
+DOTA_Tooltip_modifier_shadow_word_self_Description: Taking doubled periodic heal.
+DOTA_Tooltip_modifier_shadow_word_buff: Shadow Word Buff
+DOTA_Tooltip_modifier_shadow_word_buff_Description: Taking periodic heal.
+DOTA_Tooltip_modifier_shadow_word_debuff: Shadow Word Debuff
+DOTA_Tooltip_modifier_shadow_word_debuff_Description: 'Taking periodic damage, has chance to spawn Mini Golem.'
+DOTA_Tooltip_modifier_upheaval_arena_debuff: Upheaval
+DOTA_Tooltip_modifier_upheaval_arena_debuff_Description: Movement Speed reduced.
+DOTA_Tooltip_modifier_tether_caster_aghanims: Tethered
+DOTA_Tooltip_modifier_tether_caster_aghanims_Description: Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and giving regen to tethered targets.
+DOTA_Tooltip_modifier_tether_ally_aghanims: Tethered
+DOTA_Tooltip_modifier_tether_ally_aghanims_Description: Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and getting regen from Wisp.
+DOTA_Tooltip_modifier_tether_slow_aghanims: Tether Slow
+DOTA_Tooltip_modifier_tether_slow_aghanims_Description: Move speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed slowed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
+DOTA_Tooltip_modifier_spirits_caster_aghanims: Spirits
+DOTA_Tooltip_modifier_spirits_caster_aghanims_Description: Surrounded by friendly heroes.
+DOTA_Tooltip_modifier_spirits_spirit_aghanims: Spirit
+DOTA_Tooltip_modifier_spirits_spirit_aghanims_Description: Part of Wisp.
+DOTA_Tooltip_modifier_overcharge_buff_aghanims: Overcharged
+DOTA_Tooltip_modifier_overcharge_buff_aghanims_Description: 'Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, incoming damage reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%.'
+DOTA_Tooltip_modifier_relocate_channel_aghanims: Relocating
+DOTA_Tooltip_modifier_relocate_channel_aghanims_Description: Teleports self and tethered units to location.
+DOTA_Tooltip_modifier_relocate_return_aghanims: Return
+DOTA_Tooltip_modifier_relocate_return_aghanims_Description: About to return to previous location.
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally: Reincarnation Ally
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally_Description: 'If slain, will reincarnate.'
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown: Reincarnation Cooldown
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown_Description: Reincarnation disabled.
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow: Reincarnate
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow_Description: Affected by Wraith King's Reincarnation. Move speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%.
+DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_buff: Glacier Tranqulity
+DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_buff_Description: Can't receive and can't deal any damage.
+DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_debuff: Glacier Tranqulity
+DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_debuff_Description: Can't receive and can't deal any damage.
+
+DOTA_Tooltip_modifier_crystal_nova_slow_arena: Crystal Nova
+DOTA_Tooltip_modifier_crystal_nova_slow_arena_Description: 'Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+DOTA_Tooltip_modifier_frost_bite_root_arena: Frostbite
+DOTA_Tooltip_modifier_frost_bite_root_arena_Description: Cannot move or attack. Taking pereodic damage every half-second.
+DOTA_Tooltip_modifier_frost_bite_root_arena_aura_effect: Frostbite slow
+DOTA_Tooltip_modifier_frost_bite_root_arena_aura_effect_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
+DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_caster_arena: Brilliance Aura
+DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_caster_arena_Description: 'Adds %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regeneration, %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% intellect and %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% movement speed.'
+DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_effect_arena: Brilliance Aura
+DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_effect_arena_Description: 'Adds %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regeneration, %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% intellect and %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% movement speed.'
+DOTA_Tooltip_modifier_freezing_field_debuff_arena: Freezing Field Slow
+DOTA_Tooltip_modifier_freezing_field_debuff_arena_Description: 'Movement speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+DOTA_Tooltip_modifier_freezing_field_debuff_scepter_arena: Freezing Field Slow
+DOTA_Tooltip_modifier_freezing_field_debuff_scepter_arena_Description: 'Movement speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+
+DOTA_Tooltip_ability_casino_bitch_passive: Casino Bitch
+DOTA_Tooltip_ability_casino_bitch_passive_Description: 'Gives you bonuses, if you''ll pay for them.'
+DOTA_Tooltip_ability_casino_bitch_passive_lina_attack_speed: 'BONUS ATTACK SPEED:'
+DOTA_Tooltip_ability_casino_bitch_passive_lina_movement_speed_percent: '%BONUS MOVEMENT SPEED:'
+DOTA_Tooltip_ability_casino_bitch_passive_lina_health_regen: 'BONUS HEALTH REGEN:'
+DOTA_Tooltip_ability_riki_tricks_of_the_trade_Description: |-
+  CHANNELED - Phases out of the world while striking every enemy from behind in a %range% AoE once per second.
+DOTA_Tooltip_ability_riki_tricks_of_the_trade_aghanim_Description: 'Grants the Pocket Riki ability, allowing Riki to go to ally''s pocket, granting him Cloak and Dagger passive effect, but additional damage will be based on owner''s base attribute. In the pocket Riki can use his items and Smoke Screen spell. While in pocket Riki can be consumed and owner hero will get all Riki''s stats until Riki respawns. Riki also can be sold, granting owner gold, that enemy could get for killing Riki.'
+DOTA_Tooltip_ability_riki_pocket_riki: Pocket Riki
+DOTA_Tooltip_ability_riki_pocket_riki_Description: 'Riki goes to the ally''s pocket granting him Cloak and Dagger passive effect, but additional damage will be based on owner''s base attribute. In the pocket Riki can use his items and Smoke Screen spell. While in pocket Riki can be consumed and owner hero will get all Riki''s stats until Riki respawns. Riki also can be sold, granting ally gold, that enemy could get for killing Riki.'
+DOTA_Tooltip_ability_riki_pocket_riki_Lore: Good assassins can easily fit in the pocket.
+DOTA_Tooltip_ability_riki_pocket_riki_Note0: Ally won't auto attack enemies while invisible.
+DOTA_Tooltip_ability_riki_pocket_riki_Note1: 'Illusions will play Backstab animations, but not deal any bonus damage.'
+DOTA_Tooltip_ability_riki_pocket_riki_Note2: Bonus damage from Backstab can't be evaded.
+DOTA_Tooltip_ability_riki_pocket_riki_fade_time: 'FADE DELAY:'
+DOTA_Tooltip_ability_riki_pocket_riki_stat_damage: '%ATTRIBUTE DAMAGE:'
+DOTA_Tooltip_ability_boss_water_illusions_of_the_deep: Illusions Of The Deep
+DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_Description: Creates %images_count% illusions of the Guardian of the Deep under her control.
+DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_illusion_duration: 'ILLUSION DURATION:'
+DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_outgoing_damage_tooltip: '%ILLUSION DAMAGE:'
+DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_tooltip_incoming_damage_total_pct: '%IMAGE DAMAGE TAKEN:'
+DOTA_Tooltip_ability_boss_water_splash: Splash
+DOTA_Tooltip_ability_boss_water_splash_Description: Each attack cleaves a large area of effect in front of the Guardian of the Deep
+DOTA_Tooltip_ability_boss_water_splash_radius: 'RADIUS:'
+DOTA_Tooltip_ability_boss_earth_grow: Construct's Grow
+DOTA_Tooltip_ability_boss_earth_grow_Description: 'Each 100 taken damage points increases damage, attack speed and move speed by 1. Also increases its size a little bit.'
+DOTA_Tooltip_ability_boss_wind_windwalk: Windy Soul
+DOTA_Tooltip_ability_boss_wind_windwalk_Description: Made from pure wind she will have 100% evasion chance.
+DOTA_Tooltip_ability_boss_wind_splitshot: Splitshot
+DOTA_Tooltip_ability_boss_wind_splitshot_Description: Materialized Wind has splitshot and maximum attack speed.
+DOTA_Tooltip_ability_boss_armor: Boss Armor
+DOTA_Tooltip_ability_boss_armor_Description: |-
+  Boss is immune from most debuffs.
+  When boss recieves damage, it limit's attacker's attack range to %attack_range_limit% for some time.
+DOTA_Tooltip_ability_ogre_magi_multicast_arena: Multicast
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: |-
+  Enables Ogre Magi to cast his spells multiple times with each use (on ultimates multicast proc chance decreased by 50%), while also granting his spells greater potency:
+  <font color='#EEF10D'>Fireblast</font> has its cooldown decreased, its range increased, and its mana cost increased.
+  <font color='#DE8930'>Ignite</font> hits enemies in an area, its range is increased, and it may be cast onto random nearby enemies when used.
+  <font color='#E34F4F'>Bloodlust</font> has its cooldown reduced, and may be cast on random nearby allies when used.
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_2_times: '%2X CAST CHANCE:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_3_times: '%3X CAST CHANCE:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_4_times: '%4X CAST CHANCE:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_fireblast_mana_cost: 'FIREBLAST MANA INCREASE:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_fireblast_cooldown: 'FIREBLAST COOLDOWN REDUCTION:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_ignite_aoe: 'IGNITE RADIUS:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_ignite_cast_range: 'IGNITE CAST RANGE INCREASE:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_aoe: 'BLOODLUST RADIUS:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_cooldown: 'BLOODLUST COOLDOWN REDUCTION:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally: 'MULTICAST ALLY DURATION:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: Adds the Unrefined Fireblast ability. Multicast can be used on allies to give them chance to multicast for some time.
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena: 'Call of the Wild: Hawk'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_Description: 'Beastmaster calls forth watchful Hawks to scout the battlefield. At level 3 and beyond, the hawk can become invisible after being still for 4 seconds.'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_Lore: 'After befriending the strange beast of his childhood, Beastmaster has learned to call to animals in times of need.'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_hp_tooltip: 'HAWK HEALTH:'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_speed_tooltip: 'HAWK MOVEMENT SPEED:'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_daysight_tooltip: 'HAWK DAY SIGHT RANGE:'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_nightsight_tooltip: 'HAWK NIGHT SIGHT RANGE:'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_duration: 'HAWK DURATION:'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_unit_count: 'HAWK COUNT:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena: 'Call of the Wild: Boar'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_Description: 'Beastmaster calls powerful Boars to stalk the battlefield, capable of spitting poison at enemies to slow their movement and attack speed.'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_Lore: 'After befriending the strange beast of his childhood, Beastmaster has learned to call to animals in times of need.'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_hp_tooltip: 'BOAR HEALTH:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_damage_tooltip: 'BOAR ATTACK DAMAGE:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_moveslow_tooltip: '%BOAR MOVEMENT SLOW:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_poison_duration_tooltip: 'BOAR POISON DURATION:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_attackslow_tooltip: 'BOAR ATTACK SLOW:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_duration: 'BOAR DURATION:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_unit_count: 'BOAR COUNT:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena: Chaotic Offering
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Description: 'Summons a Golem from the depths, stunning enemies for one second. The Golem lives 60 seconds, takes reduced damage from spells, has Permanent Immolation and Flaming Fists on attack.'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Lore: 'Demnok unleashes the captive spirit in his Dreadwood staff, causing destruction in enemy ranks.'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Note0: Spell Immune units will be stunned.
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Note1: This ability destroys trees in its area of effect.
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_stun_duration: 'STUN DURATION:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_aoe: 'SUMMON BLAST RADIUS:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_hp_tooltip: 'GOLEM HEALTH:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_dmg_tooltip: 'GOLEM DAMAGE:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_armor_tooltip: 'GOLEM ARMOR:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_regen_tooltip: 'GOLEM HEALTH REGEN:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_bounty_reduction_scepter: 'SCEPTER GOLEM BOUNTY:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_number_of_golems_scepter: 'SCEPTER NUMBER OF GOLEMS:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_hp_tooltip_scepter: 'SCEPTER GOLEM HEALTH:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_dmg_tooltip_scepter: 'SCEPTER GOLEM DAMAGE:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_aghanim_description: Calls several changed Golems.
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena: Fatal Bonds
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Description: 'Binds several enemy units together, causing %damage_share_percentage%%% of the damage dealt to one of them to be felt by the others. Also causes enemies to take %bonus_damage_taken%%% more damage from all sources.'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Lore: An ancient incantation that links the vital energies of multiple lifeforms into one collective body.
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Note0: Damage will disable abilities and items like Blink Dagger.
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_count: 'ENEMIES BOUND:'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_duration: 'DURATION:'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_bonus_damage_taken: '%BONUS DAMAGE TAKEN:'
+DOTA_Tooltip_ability_warlock_shadow_word_arena: Shadow Word
+DOTA_Tooltip_ability_warlock_shadow_word_arena_Description: |-
+  Warlock whispers an incantation, healing a friendly unit or damaging an enemy unit over time. When casted on self healing is multiplied by 2. When casted on any another unit Warlock will get healing divided by 2.
+  When casted on enemy additionally to damage has small chance to spawn Mini Golem, that is weaker version of golem from Chaotic Offering. Golem will attack enemy which has debuff that caused Mini Golem to spawn.
+DOTA_Tooltip_ability_warlock_shadow_word_arena_Lore: 'Demnok''s arcane arts have a myriad of uses, allowing them to be powerful friendly enchantments or damaging curses.'
+DOTA_Tooltip_ability_warlock_shadow_word_arena_Note0: Warlock can't control Mini Golem.
+DOTA_Tooltip_ability_warlock_shadow_word_arena_duration: 'DURATION:'
+DOTA_Tooltip_ability_warlock_shadow_word_arena_minigolem_chance: '%GOLEM SPAWN CHANCE:'
+DOTA_Tooltip_ability_warlock_shadow_word_arena_minigolem_duration: 'GOLEM DURATION:'
+DOTA_Tooltip_ability_warlock_upheaval_arena: Upheaval
+DOTA_Tooltip_ability_warlock_upheaval_arena_Description: Warlock places a powerful slowing current that grows stronger with time. Lasts up to %cast_duration% seconds. Enemies are slowed for %debuff_duration% seconds after leaving the area or the spell ends.
+DOTA_Tooltip_ability_warlock_upheaval_arena_Lore: 'Demnok manipulates space-time, impairing entire armies.'
+DOTA_Tooltip_ability_warlock_upheaval_arena_aoe: 'RADIUS:'
+DOTA_Tooltip_ability_warlock_upheaval_arena_slow_rate: '%SLOW PER SECOND:'
+DOTA_Tooltip_ability_wisp_tether_aghanims: Aghanim's Tether
+DOTA_Tooltip_ability_wisp_tether_aghanims_Description: 'Tethers Io to ally unit, granting it bonus movement speed. When Io restores health or mana, tethered units target gain 1.5x the amount. Any enemy unit that crosses the tether is slowed. The tether breaks when the allied unit moves too far away, or Io cancels the tether.'
+DOTA_Tooltip_ability_wisp_tether_aghanims_aghanim_description: Allows you to Tether all allies in cast range.
+DOTA_Tooltip_ability_wisp_tether_aghanims_Lore: The benevolent touch of Io brings strength from between the planes.
+DOTA_Tooltip_ability_wisp_tether_aghanims_Note0: The tethered unit will heal 50% faster.
+DOTA_Tooltip_ability_wisp_tether_aghanims_radius: 'MAX TETHER DISTANCE:'
+DOTA_Tooltip_ability_wisp_tether_aghanims_movespeed: '%MOVEMENT SPEED BONUS:'
+DOTA_Tooltip_ability_wisp_tether_aghanims_slow: '%ENEMY MOVEMENT SLOW:'
+DOTA_Tooltip_ability_wisp_tether_aghanims_attackslow_tooltip: 'ENEMY ATTACK SLOW:'
+DOTA_Tooltip_ability_wisp_tether_aghanims_stun_duration: 'ENEMY SLOW DURATION:'
+DOTA_Tooltip_ability_wisp_tether_break_aghanims: Break Tether
+DOTA_Tooltip_ability_wisp_tether_break_aghanims_Description: Break the link to the tethered units.
+DOTA_Tooltip_ability_wisp_spirits_aghanims: Aghanim's Spirits
+DOTA_Tooltip_ability_wisp_spirits_aghanims_Description: 'Transforms tethered units to spirits that dance in a circle around Io. If hero collides with an enemy hero, it explodes, damaging all enemy units in an area around it with his current health amount, but with cost of his live.  Creeps take minor damage from touching a hero, but do not cause them to explode.  Heroes can cast abilities, use items, attack units, but they can''t move.'
+DOTA_Tooltip_ability_wisp_spirits_aghanims_Lore: Io twists the particles of the universe with its unimaginable capabilities.
+DOTA_Tooltip_ability_wisp_spirits_aghanims_Note0: 'Min/Max Range: 100/875.'
+DOTA_Tooltip_ability_wisp_spirits_aghanims_creep_damage: 'CREEP DAMAGE:'
+DOTA_Tooltip_ability_wisp_spirits_aghanims_max_range: 'OSCILLATION RADIUS:'
+DOTA_Tooltip_ability_wisp_spirits_aghanims_explode_radius: 'EXPLOSION RADIUS:'
+DOTA_Tooltip_ability_wisp_spirits_aghanims_spirit_duration: 'DURATION:'
+DOTA_Tooltip_ability_wisp_spirits_in_aghanims: Spirits In
+DOTA_Tooltip_ability_wisp_spirits_in_aghanims_Description: Calls the spirits closer to you. Can be toggled on and off.
+DOTA_Tooltip_ability_wisp_spirits_out_aghanims: Spirits Out
+DOTA_Tooltip_ability_wisp_spirits_out_aghanims_Description: Sends the spirits farther away from you. Can be toggled on and off.
+DOTA_Tooltip_ability_wisp_overcharge_aghanims: Overcharge
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_Lore: 'Drawing on the energy of matter from all worlds, Io begins the unravelling of time.'
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_Description: 'Io gains bonus attack speed and damage reduction, at the cost of draining a percentage of its current health and mana per second.  If Io is Tethered to allies, they also gains the bonuses.'
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_Note0: 'Io''s tethered unit will also benefit from the attack speed and reduction, but only Io pays the drain in HP and mana.'
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_bonus_attack_speed: 'ATTACK SPEED:'
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_bonus_damage_pct: '%INCOMING DAMAGE REDUCTION:'
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_drain_pct_tooltip: '%HEALTH/MANA DRAIN:'
+DOTA_Tooltip_ability_wisp_relocate_aghanims: Relocate
+DOTA_Tooltip_ability_wisp_relocate_aghanims_Description: Teleports Io and all tethered allies to any location. After the spell expires Io and all tethered allies will return to their original location. Double-click to teleport to your team's base fountain.
+DOTA_Tooltip_ability_wisp_relocate_aghanims_Note0: Enemies receive a visual indicator in the world and on the minimap of the target location during the cast delay.
+DOTA_Tooltip_ability_wisp_relocate_aghanims_Note1: 'If Io is disabled during the cast delay, Relocate is cancelled.'
+DOTA_Tooltip_ability_wisp_relocate_aghanims_Note2: 'If allies heroes are Tethered, they will teleported along with you. You can break the tether at any time to prevent they from teleporting with you.'
+DOTA_Tooltip_ability_wisp_relocate_aghanims_cast_delay: 'CAST DELAY:'
+DOTA_Tooltip_ability_wisp_relocate_aghanims_return_time: 'RETURN TIME:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena: Reincarnation
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_Description: 'Wraith King''s form regroups after death, allowing him to resurrect when killed in battle. While reincarnating you gain %vision_radius% vision around the location of death.  Upon death, enemy units in a %slow_radius% radius will be slowed.'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_description: 'Reincarnation becomes aura, that affects all nearby ally heroes. Each hero have his own reincarnation cooldown.'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_Note0: 'If Wraith King has an Aegis and Reincarnation off cooldown, Reincarnation will trigger first.'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_Note1: Revives with full HP and Mana.
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_reincarnate_time: 'REINCARNATION TIME:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_movespeed: '%MOVEMENT SLOW:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_attackslow_tooltip: 'ATTACK SPEED SLOW:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_slow_duration: 'SLOW DURATION:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_vision_radius: 'VISION RADIUS:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_radius_scepter: 'SCEPTER REINCARNATION RADIUS:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_ally_cooldown_scepter: 'COOLDOWN ON ALLIES:'
+DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity: Glacier Tranqulity
+DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity_Description: Fills target allied or enemy unit with icy calm. Under it's influence unit can't receive and can't deal any damage.
+DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity_duration: 'DURATION:'
+
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena: Crystal Nova
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_Description: 'A burst of damaging frost slows enemy movement and attack rate in the targeted area. Also, creates icy wall that prevents everyone from passing through it.'
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_duration: 'DURATION:'
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_radius: 'RADIUS:'
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_movespeed_slow: '%MOVEMENT SLOW:'
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_attackspeed_slow: 'ATTACK SLOW:'
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_block_duration: 'ICE WALL DURATION:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena: Frostbite
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_Description: 'Encases an enemy unit in ice, prohibiting movement and attack, while dealing %damage_per_second_tooltip% damage every half-second. Lasts 10 seconds on creeps. Also, everyone near affected by frostbite unit will get attack speed and movement speed slow.'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_Note0: Blink abilities cannot be used while under the affects of Frostbite.
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_damage_per_second_tooltip: 'DAMAGE PER SECOND:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_duration: 'HERO DURATION:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_creep_duration: 'CREEP DURATION:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_radius: 'SLOW RADIUS:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_attack_speed: 'ATTACK SPEED SLOW:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_movement_speed_pct: '%MOVEMENT SPEED SLOW:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena: Brilliance Aura
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_Description: 'Gives additional mana regeneration, intellect and movement speed to all friendly units on the map. This bonus is increased for Crystal Maiden.'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_mana_regen: 'ALLY MANA REGEN:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_bonus_intellect: 'ALLY BONUS INTELLECT:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_bonus_movespeed_pct: '%ALLY BONUS MOVE SPEED:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_mana_regen: 'SELF MANA REGEN:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_bonus_intellect: 'SELF BONUS INTELLECT:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_bonus_movespeed_pct: '%SELF BONUS MOVE SPEED:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena: Freezing Field
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Description: 'CHANNELED - Surrounds Crystal Maiden with random icy explosions that slow enemies and deal massive damage and, with small chance, freeze enemy with Frostbite of it''s current level. Lasts %duration_tooltip% seconds.'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_aghanim_description: 'Hides Crystal Maiden from everyone, making she invulnerable. Also, increases damage and slow.'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Note0: 'The slow is applied on all enemies in the radius, even if they aren''t hit by an explosion (lasts 1 second).'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Note1: 'Every 0.1 second an explosion occurs, for a total of 100 explosions.'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_radius: 'RADIUS:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_explosion_radius: 'EXPLOSION RADIUS:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_movespeed_slow: '%MOVEMENT SLOW:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_attack_slow: 'ATTACK SLOW:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_slow_duration: 'SLOW DURATION:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_damage: 'DAMAGE:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_damage_scepter: 'SCEPTER DAMAGE:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_movespeed_slow_scepter: '%SCEPTER MOVEMENT SLOW:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_attack_slow_scepter: 'SCEPTER ATTACK SLOW:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_chance_to_frostbite_pct: '%CHANCE TO FROSTBITE:'
+
+DOTA_Tooltip_ability_ability_empty: Empty Ability Slot
+DOTA_Tooltip_ability_ability_empty_Description: ''
+DOTA_Tooltip_ability_rubick_personality_steal: Personality Steal
+DOTA_Tooltip_ability_rubick_personality_steal_Description: 'Rubick studies the trace magical essence of one enemy hero, learning the secrets of all the spells the hero has and copying it''s model. Rubick can use that spells as his own until he dies or removes it, clicking on the buff icon in status bar.'
+DOTA_Tooltip_modifier_rubick_personality_steal: Personality Steal
+DOTA_Tooltip_modifier_rubick_personality_steal_Description: |-
+  Rubick has stolen abilities and model.
+
+  Click to remove.
+DOTA_Tooltip_ability_item_god_transform_freya: 'Select Hero: Freya'
+DOTA_Tooltip_ability_item_god_transform_freya_Description: |-
+  Transforms your hero to Freya.
+
+  Can't be used while duel is ongoing.
+
+  This item is dropped by bosses and you can't buy it in the shop.
+DOTA_Tooltip_ability_item_god_transform_zaken: 'Select Hero: Zaken'
+DOTA_Tooltip_ability_item_god_transform_zaken_Description: |-
+  Transforms your hero to Zaken.
+
+  Can't be used while duel is ongoing.
+
+  This item is dropped by bosses and you can't buy it in the shop.
+DOTA_Tooltip_ability_doom_bringer_devour_arena: Devour
+DOTA_Tooltip_ability_doom_bringer_devour_arena_Description: 'Consumes an enemy or neutral creep, acquiring any special abilities that it possessed and increasing Doom''s health and attack damage based on creep''s health.'
+DOTA_Tooltip_ability_doom_bringer_devour_arena_min_bonus_gold: 'MINIMAL BONUS GOLD:'
+DOTA_Tooltip_ability_doom_bringer_devour_arena_bonus_gold_pct: '%BONUS GOLD:'
+DOTA_Tooltip_ability_doom_bringer_devour_arena_duration: 'DURATION:'
+DOTA_Tooltip_ability_doom_bringer_devour_arena_stolen_health_pct: '%STOLEN HEALTH:'
+DOTA_Tooltip_ability_doom_bringer_devour_arena_stolen_health_to_damage: 'DAMAGE FOR STOLEN HEALTH POINT:'
+DOTA_Tooltip_modifier_doom_bringer_devour_arena: Devour
+DOTA_Tooltip_modifier_doom_bringer_devour_arena_Description: 'Helath increased by %dMODIFIER_PROPERTY_HEALTH_BONUS%, attack damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%'
+DOTA_Tooltip_ability_huskar_burning_spear_arena: Burning Spear
+DOTA_Tooltip_ability_huskar_burning_spear_arena_Description: 'Huskar sets his spears aflame, dealing damage over time with his regular attack. Damage grows with each missing health point. Multiple attacks will stack additional damage. Each stack also decreases armor and magic damage resistance. Each attack drains some of Huskar''s health, based on burn damage. Lasts %duration% seconds. When Huskar''s health drops below %health_cost_pct%%%, his blood blazes, with some chance applying Burning Spear stacks to all enemies around him.'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_Note0: Burning Spears stacks additively when used multiple times on one target. There is no cap.
+DOTA_Tooltip_ability_huskar_burning_spear_arena_Note1: Huskar cannot kill himself with this skill.
+DOTA_Tooltip_ability_huskar_burning_spear_arena_health_cost_pct: '%HEALTH COST:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_armor_reduction_per_stack: 'ARMOR REDUCTION PER STACK:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_magic_resist_per_stack: '%MAGIC DAMAGE RESISTANCE REDUCTION PER STACK:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_aura_trigger_health_pct: '%AURA TRIGGER HEALTH:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_aura_radius: 'AURA RADIUS:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_aura_think_interval: 'AURA STACK INTERVAL:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_aura_burn_chance_pct: '%AURA BURN CHANCE:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_duration: 'DURATION:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_damage: 'DAMAGE:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_missing_hp_damage_pct: '%MISSING HEALTH AS BURN DAMAGE:'
+DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura: Blazing Blood
+DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura_Description: Applies Burning Spear stacks to all enemies around
+DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff: Burning Spear
+DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff_Description: 'YOU ARE ON FIRE! Taking periodic damage. Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, magic damage resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%'
+DOTA_Tooltip_ability_tinker_rearm_arena: Rearming Strike
+DOTA_Tooltip_ability_tinker_rearm_arena_Description: 'Tinker shoots a ball of pure energy, refreshing cooldowns of all non unit-target abilities and items with some chance, or decreasing enemy''s magic damage resistance and causing each unit-target ability or item used on it to have a chance to immediately reset it''s cooldown.'
+DOTA_Tooltip_ability_tinker_rearm_arena_debuff_duration: 'DURATION:'
+DOTA_Tooltip_ability_tinker_rearm_arena_refresh_chance_pct: '%REFRESH CHANCE:'
+DOTA_Tooltip_ability_tinker_rearm_arena_magical_resistanse_pct: '%MAGIC DAMAGE RESISTANCE REDUCTION:'

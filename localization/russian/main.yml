@@ -1,0 +1,337 @@
+Variables:
+  ability_scepter_upgradable: |- #Handled with script
+
+    Улучшается с Aghanim's Scepter.
+
+npc_dota_hero_arena_base: Герой
+arena_dota_hud_error_must_target_soul: Способность действует на души
+dota_hud_error_cant_purchase_duel_ongoing: Магазин отключен из-за дуэли
+dota_hud_error_spirits_no_tether: Способность требует привязанных юнитов
+dota_hud_error_phantom_swap_no_illusions: Способность требует иллюзию
+dota_hud_error_item_from_bosses: Этот предмет или один из его компонентов выпадает только с боссов
+dota_hud_error_ability_cant_target_boss: Способность не может быть использована на боссов
+dota_hud_error_ability_cant_target_champion: Способность не может быть использована на чемпионов
+DOTA_Tooltip_modifier_neutral_champion: Чемпион
+DOTA_Tooltip_modifier_neutral_champion_Description: 'Этот нейтрал - чемпион, он в %dMODIFIER_PROPERTY_TOOLTIP% раз сильнее обычного, но награда за него также увеличена'
+bitch_lina_bubble_text: 'Эй, хочешь хорошо провести время? Тогда дай мне 2 Casino Coins'
+riki_pocket_riki_chat_notify_text: '%s1 продал Riki.'
+npc_dota_neutral_easy_variant1: Крип Легкого Лагеря
+npc_dota_neutral_medium_variant1: Крип Среднего Лагеря
+npc_dota_neutral_hard_variant1: Дракон
+npc_dota_neutral_hard_variant2: Кентавр
+npc_arena_fountain: Фонтан
+npc_dota_casino_slotmachine: Слотмашина
+npc_dota_casino_lina: Lina
+npc_dota_arena_statue: Статуя
+npc_dota_lucifers_claw_doomling: Думлинг
+npc_dota_beastmaster_boar_base: Кабан
+npc_dota_beastmaster_hawk_base: Ястреб
+npc_dota_warlock_golem_base: Warlock Golem
+npc_dota_warlock_golem_scepter_base: Warlock Golem
+npc_dota_warlock_minigolem: Mini Golem
+DOTA_Tooltip_modifier_casino_bitch_lina_effect: Эффект от Lina
+DOTA_Tooltip_modifier_casino_bitch_lina_effect_Description: 'Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, восстановление здоровья увеличена на %MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%.'
+DOTA_Tooltip_modifier_multicast_lua: Multicast
+DOTA_Tooltip_modifier_multicast_lua_Description: Даёт вам шанс использовать заклинания по нескольку раз за одно применение.
+DOTA_Tooltip_modifier_shadow_word_self_secondary: Shadow Word Self Secondary
+DOTA_Tooltip_modifier_shadow_word_self_secondary_Description: Вдвойне слабее исцеляется со временем.
+DOTA_Tooltip_modifier_shadow_word_self: Shadow Word Self
+DOTA_Tooltip_modifier_shadow_word_self_Description: Вдвойне сильнее исцеляется со временем.
+DOTA_Tooltip_modifier_shadow_word_buff: Shadow Word Buff
+DOTA_Tooltip_modifier_shadow_word_buff_Description: Исцеляется со временем.
+DOTA_Tooltip_modifier_shadow_word_debuff: Shadow Word Debuff
+DOTA_Tooltip_modifier_shadow_word_debuff_Description: 'Получает периодический урон, есть шанс на создание Mini Golem.'
+DOTA_Tooltip_modifier_upheaval_arena_debuff: Upheaval
+DOTA_Tooltip_modifier_upheaval_arena_debuff_Description: Скорость передвижения снижена.
+DOTA_Tooltip_modifier_tether_caster_aghanims: Связан
+DOTA_Tooltip_modifier_tether_caster_aghanims_Description: 'Скорость передвижения повышена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, реген связанных союзников увеличен.'
+DOTA_Tooltip_modifier_tether_ally_aghanims: Связан
+DOTA_Tooltip_modifier_tether_ally_aghanims_Description: 'Скорость передвижения повышена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, Wisp увеличивает реген.'
+DOTA_Tooltip_modifier_tether_slow_aghanims: Tether Slow
+DOTA_Tooltip_modifier_tether_slow_aghanims_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, а скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+DOTA_Tooltip_modifier_spirits_caster_aghanims: Духи
+DOTA_Tooltip_modifier_spirits_caster_aghanims_Description: Окружен союзными героями.
+DOTA_Tooltip_modifier_spirits_spirit_aghanims: Дух
+DOTA_Tooltip_modifier_spirits_spirit_aghanims_Description: Часть Wisp.
+DOTA_Tooltip_modifier_overcharge_buff_aghanims: Под действием Overcharge
+DOTA_Tooltip_modifier_overcharge_buff_aghanims_Description: 'Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, получаемый урон снижен на %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%.'
+DOTA_Tooltip_modifier_relocate_channel_aghanims: Телепортируется
+DOTA_Tooltip_modifier_relocate_channel_aghanims_Description: Телепортирует себя и связанных собзников в точку.
+DOTA_Tooltip_modifier_relocate_return_aghanims: Возвращение
+DOTA_Tooltip_modifier_relocate_return_aghanims_Description: Вернется в прежнее место спустя некоторое время.
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally: Skeleton King Reincarnation Ally
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally_Description: Реинкарнируется eсли погибнет
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown: Перезарядка Reincarnation
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown_Description: Reincarnation перезаряжается.
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow: Reincarnate
+DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow_Description: 'Под действием способности Reincarnation у Wraith King. Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%.'
+DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_buff: Glacier Tranqulity
+DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_buff_Description: Не получает и не наносит урон.
+DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_debuff: Glacier Tranqulity
+DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_debuff_Description: Не получает и не наносит урон.
+
+DOTA_Tooltip_modifier_crystal_nova_slow_arena: Crystal Nova
+DOTA_Tooltip_modifier_crystal_nova_slow_arena_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+DOTA_Tooltip_modifier_frost_bite_root_arena: Frostbite
+DOTA_Tooltip_modifier_frost_bite_root_arena_Description: 'Не может ни двигаться, ни атаковать. Получает урон каждые полсекунды.'
+DOTA_Tooltip_modifier_frost_bite_root_arena_aura_effect: Frostbite slow
+DOTA_Tooltip_modifier_frost_bite_root_arena_aura_effect_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_caster_arena: Brilliance Aura
+DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_caster_arena_Description: 'Увеличивает восстановление маны на %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, интеллект на %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% и скорость предвижения на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.'
+DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_effect_arena: Brilliance Aura
+DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_effect_arena_Description: 'Увеличивает восстановление маны на %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, интеллект на %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% и скорость предвижения на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.'
+DOTA_Tooltip_modifier_freezing_field_debuff_arena: Freezing Field Slow
+DOTA_Tooltip_modifier_freezing_field_debuff_arena_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+DOTA_Tooltip_modifier_freezing_field_debuff_scepter_arena: Freezing Field Slow
+DOTA_Tooltip_modifier_freezing_field_debuff_scepter_arena_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+
+DOTA_Tooltip_ability_casino_bitch_passive: Casino Bitch
+DOTA_Tooltip_ability_casino_bitch_passive_Description: 'Даст вам бонусы, если вы за них заплатите.'
+DOTA_Tooltip_ability_casino_bitch_passive_lina_attack_speed: 'ДОП. СКОРОСТЬ АТАКИ:'
+DOTA_Tooltip_ability_casino_bitch_passive_lina_movement_speed_percent: '%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_casino_bitch_passive_lina_health_regen: 'ДОП. РЕГЕН ЗДОРОВЬЯ:'
+DOTA_Tooltip_ability_riki_tricks_of_the_trade_Description: 'ПРЕРЫВАЕМАЯ — Riki пропадает из нашего мира, каждую секунду атакуя со спины всех противников в радиусе %range% ед. вокруг себя.'
+DOTA_Tooltip_ability_riki_tricks_of_the_trade_aghanim_description: 'Добовляет новую способность - Pocket Riki, позволяющая Рики залезть в карман союзника, передавая ему эффект от способности Cloak and Dagger, но дополнительный урон будет основан на его основной характеристике. Находясь в кармане Рики может использовать предметы и способность Smoke Screen. Находясь в кармане Рики может быть поглощён, даруя владельцу характеристики Рики до того как Рики возродится. Рики также может быть продан, в этом случае владелец получит золото, которое мог получить враг за убийство Рики.'
+DOTA_Tooltip_ability_riki_pocket_riki: Pocket Riki
+DOTA_Tooltip_ability_riki_pocket_riki_Description: 'Рики залезает в карман союзника, передавая ему эффект от способности Cloak and Dagger, но дополнительный урон бутет основан на его основной характеристике. Находясь в кармане Рики может использовать предметы и способность Smoke Screen. Находясь в кармане Рики может быть поглощён, даруя владельцу характеристики Рики до того как Рики возродится. Рики также может быть продан, в этом случае владелец получит золото, которое мог получить враг за убийство Рики.'
+DOTA_Tooltip_ability_riki_pocket_riki_Lore: Хорошие убийцы легко могут поместиться в кармане.
+DOTA_Tooltip_ability_riki_pocket_riki_Note0: 'Пока владелец невидим, он не будет атаковать автоматически.'
+DOTA_Tooltip_ability_riki_pocket_riki_Note1: 'У иллюзий имеется анимация удара в спину, однако они не наносят дополнительного урона.'
+DOTA_Tooltip_ability_riki_pocket_riki_Note2: От дополнительного урона в спину невозможно уклониться.
+DOTA_Tooltip_ability_riki_pocket_riki_fade_time: 'ЗАДЕРЖКА ДО НЕВИДИМОСТИ:'
+DOTA_Tooltip_ability_riki_pocket_riki_stat_damage: '%МНОЖИТЕЛЬ ХАРАКТЕРИСТИКИ:'
+DOTA_Tooltip_ability_boss_water_illusions_of_the_deep: Иллюзии Глубины
+DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_Description: Создаёт %images_count% иллюзий Защитницы Глубины.
+DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_illusion_duration: 'ДЛИТЕЛЬНОСТЬ ИЛЛЮЗИЙ:'
+DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_outgoing_damage_tooltip: '%УРОН ИЛЛЮЗИЙ:'
+DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_tooltip_incoming_damage_total_pct: '%УРОН ПО ИЛЛЮЗИЯМ:'
+DOTA_Tooltip_ability_boss_water_splash: Splash
+DOTA_Tooltip_ability_boss_water_splash_Description: Каждая атака наносит урон по области
+DOTA_Tooltip_ability_boss_water_splash_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_boss_earth_grow: Construct's Grow
+DOTA_Tooltip_ability_boss_earth_grow_Description: 'Каждые 100 полученные единицы урона увеличивает урон, скорость атаки и передвижения на 1. Также Землянная Конструкция слегка растёт при получении урона.'
+DOTA_Tooltip_ability_boss_wind_windwalk: Windy Soul
+DOTA_Tooltip_ability_boss_wind_windwalk_Description: Сделанная из чистого ветра имеет 100% шанс на уклонение.
+DOTA_Tooltip_ability_boss_wind_splitshot: Splitshot
+DOTA_Tooltip_ability_boss_wind_splitshot_Description: Материализованный Ветер атакует по области и имеет максимальную скорость.
+DOTA_Tooltip_ability_boss_armor: Boss Armor
+DOTA_Tooltip_ability_boss_armor_Description: |-
+  Имеет иммунитет к большинству негативных эффектов.
+  При получении урона от вражеского героя временно снижает его радиус атаки до %attack_range_limit%.
+DOTA_Tooltip_ability_ogre_magi_multicast_arena: Multicast
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: |-
+  Позволяет Ogre Magi использовать заклинания по нескольку раз за одно применение (шанс срабатывания на ультимативные способности в два раза меньше) и усиливает каждое из них:
+  <font color='#EEF10D'>Fireblast</font> получает уменьшенное время перезарядки, бóльшую дальность применения и увеличенный расход маны.
+  <font color='#DE8930'>Ignite</font> действует на область вокруг цели, получает увеличенную дальность применения и может срабатывать на случайных врагах неподалеку.
+  <font color='#E34F4F'>Bloodlust</font> получает уменьшенное время перезарядки и шанс сработать на случайных союзниках неподалеку.
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_2_times: '%ШАНС 2Х:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_3_times: '%ШАНС 3X:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_4_times: '%ШАНС 4Х:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_fireblast_mana_cost: 'УВЕЛИЧ. ЗАТРАТ МАНЫ FIREBLAST:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_fireblast_cooldown: 'УМЕНЬШ. ПЕРЕЗАРЯДКИ FIREBLAST:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_ignite_aoe: 'IGNITE AOE:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_ignite_cast_range: 'РАДИУС ИСПОЛЬЗОВАНЯ IGNITE:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_aoe: 'BLOODLUST AOE:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_cooldown: 'УМЕНЬШЕНИЕ ПЕРЕЗАРЯДКИ BLOODLUST:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally: 'ДЛИТЕЛЬНОСТЬ НА СОЮЗНИКАХ:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: 'Добавляет способность Unrefined Fireblast. Multicast может быть использован на союзниках, временно даруя им шанс на использование заклинаний по нескольку раз за одно применение.'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena: 'Call of the Wild: Ястреб'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_Description: 'Beastmaster призывает зорких ястребов, наблюдающих за полем боя. С 3 уровня ястребы становится невидимыми, если не передвигаются в течение 4 секунд.'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_Lore: 'После того, как Beastmaster подружился со странным зверем в детстве, он научился призывать животных на помощь.'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_hp_tooltip: 'ЗДОРОВЬЕ ЯСТРЕБА:'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_speed_tooltip: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_daysight_tooltip: 'ОБЗОР ЯСТРЕБА ДНЕМ:'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_nightsight_tooltip: 'ОБЗОР ЯСТРЕБА НОЧЬЮ:'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_duration: 'ДЛИТЕЛЬНОСТЬ ЖИЗНИ ЯСТРЕБА:'
+DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_unit_count: 'КОЛИЧЕСТВО ЯСТРЕБОВ:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena: 'Call of the Wild: Кабан'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_Description: 'Beastmaster призывает на поле боя могучих кабанов, способных плеваться во врагов ядом, замедляющим их скорость передвижения и атаки.'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_Lore: 'После того, как в детстве Beastmaster подружится со странным зверем, он научился призывать животных когда ему нужно.'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_hp_tooltip: 'ЗДОРОВЬЕ КАБАНА:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_damage_tooltip: 'УРОН:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_moveslow_tooltip: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_poison_duration_tooltip: 'BOAR POISON DURATION:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_attackslow_tooltip: 'ЗАМЕДЛЕНИЕ СКОРОСТИ АТАКИ:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_duration: 'ДЛИТЕЛЬНОСТЬ ЖИЗНИ КАБАНА:'
+DOTA_Tooltip_ability_call_of_the_wild_boar_arena_unit_count: 'КОЛИЧЕСТВО КАБАНОВ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena: Chaotic Offering
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Description: 'Вызывает из пучин Голема, оглушающего врагов на 1 секунду. Время жизни голема - 60 секунд, он получает меньше урона от заклинаний и при атаке накладывает на жертву Permanent Immolation и Flaming Fists.'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Lore: 'Демнок выпускает из своего дредвудского посоха плененного духа, который разрушает вражеские ряды.'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Note0: 'Оглушает врагов, невосприимчивых к заклинаниям.'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Note1: Уничтожает деревья в области действия.
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_stun_duration: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_aoe: 'РАДИУС ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_hp_tooltip: 'ЗДОРОВЬЕ ГОЛЕМА:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_dmg_tooltip: 'УРОН ГОЛЕМА:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_armor_tooltip: 'БРОНЯ ГОЛЕМА:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_regen_tooltip: 'ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ ГОЛЕМА:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_bounty_reduction_scepter: 'НАГРАДЫ ЗА УБИЙСТВО СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_number_of_golems_scepter: 'ГОЛЕМОВ СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_hp_tooltip_scepter: 'ЗДОРОВЬЕ ГОЛЕМА СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_dmg_tooltip_scepter: 'УРОН ГОЛЕМА СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_aghanim_description: Призывает несколько изменённых големов.
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena: Fatal Bonds
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Description: 'Соединяет несколько врагов магической связью, в результате чего %damage_share_percentage%%% от урона, полученного любым из них, наносится и остальным. Все связанные враги получают от всех источников на %bonus_damage_taken%%% урона больше.'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Lore: 'Древнее заклятие, которое объединяет жизненные силы различных существ в единую сущность.'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Note0: 'Урон запрещает использование способностей или предметов, зависящих от урона (например, Blink Dagger).'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_count: 'СВЯЗЫВАЕТ ВРАГОВ:'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_bonus_damage_taken: '%УВЕЛИЧЕНИЕ УРОНА:'
+DOTA_Tooltip_ability_warlock_shadow_word_arena: Shadow Word
+DOTA_Tooltip_ability_warlock_shadow_word_arena_Description: |-
+  Warlock шепчет заклинание, излечивая дружественных юнитов или нанося урон вражеским на протяжении времени. При использованиии на себе эффект лечения в два раза больше. При спользовании на других юнитов Warlock тоже получает эффект излечивания, но в два раза слабее обычного.
+  При использовании на противника появляется небольшой шанс создать Mini Golem, который является ослабленной версией голема от способности Chaotic Offering. Голем будет атаковать противника, на котором был дебафф, из-за которого голем был создан.
+DOTA_Tooltip_ability_warlock_shadow_word_arena_Lore: Тайные искусства Демнока могут найти множество применений — будь то мощные исцеляющие чары либо страшное уничтожающее проклятье.
+DOTA_Tooltip_ability_warlock_shadow_word_arena_Note0: Warlock не может контроллировать Mini Golem.
+DOTA_Tooltip_ability_warlock_shadow_word_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_warlock_shadow_word_arena_minigolem_chance: '%ШАНС СОЗДАНИЯ ГОЛЕМА:'
+DOTA_Tooltip_ability_warlock_shadow_word_arena_minigolem_duration: 'ДЛИТЕЛЬНОСТЬ ЖИЗНИ ГОЛЕМА:'
+DOTA_Tooltip_ability_warlock_upheaval_arena: Upheaval
+DOTA_Tooltip_ability_warlock_upheaval_arena_Description: 'Warlock создает на площади мощный замедляющий поток энергии, со временем становящийся сильнее. Действует до 16 секунд. Эффект сохраняется в течение 3 секунд после того, как враг покинул зону действия или заклинание прервалось.'
+DOTA_Tooltip_ability_warlock_upheaval_arena_Lore: 'Демнок управляет пространством и временем, смешивая с грязью целые армии.'
+DOTA_Tooltip_ability_warlock_upheaval_arena_aoe: 'РАДИУС:'
+DOTA_Tooltip_ability_warlock_upheaval_arena_slow_rate: '%ЗАМЕДЛЕНИЕ В СЕК.:'
+DOTA_Tooltip_ability_wisp_tether_aghanims: Aghanim's Tether
+DOTA_Tooltip_ability_wisp_tether_aghanims_Description: 'Связывает вас и союзного юнита, увеличивая его скорость передвижения. Когда Io пополняет здоровье или ману, привязанные герои тоже восстанавливается, но на 50% больше. Любой враг, оказавшийся на пути связи, будет замедлен. Связь разрывается, если вы с целью разойдетесь слишком далеко друг от друга, или если Io отменит заклинание.'
+DOTA_Tooltip_ability_wisp_tether_aghanims_aghanim_description: Позволяет вам привязывать всех союзников в радиусе применения.
+DOTA_Tooltip_ability_wisp_tether_aghanims_Lore: Великодушное прикосновение Ио переносит силу между мирами.
+DOTA_Tooltip_ability_wisp_tether_aghanims_Note0: Связанный с вами союзник восстанавливается на 50% больше.
+DOTA_Tooltip_ability_wisp_tether_aghanims_radius: 'МАКС. РАССТОЯНИЕ СВЯЗКИ:'
+DOTA_Tooltip_ability_wisp_tether_aghanims_movespeed: '%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_wisp_tether_aghanims_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_wisp_tether_aghanims_attackslow_tooltip: 'ЗАМЕДЛЕНИЕ АТАКИ:'
+DOTA_Tooltip_ability_wisp_tether_aghanims_stun_duration: 'ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ ВРАГОВ:'
+DOTA_Tooltip_ability_wisp_tether_break_aghanims: Break Tether
+DOTA_Tooltip_ability_wisp_tether_break_aghanims_Description: Разорвать связь.
+DOTA_Tooltip_ability_wisp_spirits_aghanims: Aghanim's Spirits
+DOTA_Tooltip_ability_wisp_spirits_aghanims_Description: 'Превращает связанных героев в духов, которые кружатся вокруг героя. При столкновении с вражеским героем герой взрывается, нанося урон всем существам в области вокруг взрыва в количестве текущего здоровья, при этом умирая. При столкновении с крипом дух наносит немного урона, но не взрывается. Герои могут использовать способность, использовать предметы и атакавать, но не могут двигаться.'
+DOTA_Tooltip_ability_wisp_spirits_aghanims_Lore: Своей невообразимой силой Io раскручивает частицы вселенной.
+DOTA_Tooltip_ability_wisp_spirits_aghanims_Note0: 'Мин./макс. радиус: 100/875.'
+DOTA_Tooltip_ability_wisp_spirits_aghanims_creep_damage: 'УРОН КРИПУ:'
+DOTA_Tooltip_ability_wisp_spirits_aghanims_max_range: 'РАДИУС КОЛЕБАНИЙ:'
+DOTA_Tooltip_ability_wisp_spirits_aghanims_explode_radius: 'РАДИУС ВЗРЫВА:'
+DOTA_Tooltip_ability_wisp_spirits_aghanims_spirit_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_wisp_spirits_in_aghanims: Spirits In
+DOTA_Tooltip_ability_wisp_spirits_in_aghanims_Description: Призывает духов ближе к вам. Может быть включено и выключено.
+DOTA_Tooltip_ability_wisp_spirits_out_aghanims: Spirits Out
+DOTA_Tooltip_ability_wisp_spirits_out_aghanims_Description: Отправляет духов дальше от вас. Может быть включено и выключено.
+DOTA_Tooltip_ability_wisp_overcharge_aghanims: Overcharge
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_Lore: 'Привлекая энергию мироздания из всех миров, Ио начинает расплетать время.'
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_Description: 'Ваша скорость атаки, урон и сопротивляемость любому урону повышаются, но при этом каждую секунду вы теряете часть от текущего здоровья и маны. Связанные с вами герои получают такой же бонус, но не теряют здоровье и ману.'
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_Note0: 'Связанный с вами союзник будет получать дополнительную скорость атаки и сопротивление урону, но не будет при этом терять здоровье и ману.'
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_bonus_attack_speed: 'ATTACK SPEED:'
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_bonus_damage_pct: '%INCOMING DAMAGE REDUCTION:'
+DOTA_Tooltip_ability_wisp_overcharge_aghanims_drain_pct_tooltip: '%ПОТЕРИ ЗДОРОВЬЯ/МАНЫ:'
+DOTA_Tooltip_ability_wisp_relocate_aghanims: Relocate
+DOTA_Tooltip_ability_wisp_relocate_aghanims_Description: Телепортирует вас и всех связанных с вами героев в любую точку карты. После телепортации вы вернетесь на первоначальное место спустя некоторое время. Двойное нажатие телепортирует вас к своему фонтану.
+DOTA_Tooltip_ability_wisp_relocate_aghanims_Note0: 'Враги смогут видеть место в игре и на мини-карте, куда вы будете телепортироваться.'
+DOTA_Tooltip_ability_wisp_relocate_aghanims_Note1: 'Если вас оглушат во время подготовки к телепортации, она прервется.'
+DOTA_Tooltip_ability_wisp_relocate_aghanims_Note2: 'Если вы связаны с союзными героями, то вы будете телепортированы вместе с ними. Вы можете разорвать связь в любой момент, чтобы предотвратить телепортацию героев вместе с вами.'
+DOTA_Tooltip_ability_wisp_relocate_aghanims_cast_delay: 'ЗАДЕРЖКА ДО СОЗДАНИЯ:'
+DOTA_Tooltip_ability_wisp_relocate_aghanims_return_time: 'ВРЕМЯ ВОЗВРАТА:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena: Reincarnation
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_Description: 'После смерти тело Wraith King вновь собирается воедино, воскрешая его на поле боя. Во время реинкарнации вы видите в радиусе %vision_radius% вокруг точки смерти. При этом все враги в радиусе %slow_radius% замедляются.'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_description: 'Reincarnation становится аурой, воздействующей на всех союзных героев рядом. Перезарядка Reincarnation уникальна для каждого героя.'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_Note0: 'Если Wraith King имеет одновременно Aegis of the Immortal и готовую способность, то способность сработает первой.'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_Note1: Возвращает к жизни с полным запасом здоровья и маны.
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_reincarnate_time: 'ВРЕМЯ ПЕРЕРОЖДЕНИЯ:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_movespeed: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_attackslow_tooltip: 'ЗАМЕДЛЕНИЕ СКОРОСТИ АТАКИ:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_slow_duration: 'ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_vision_radius: 'РАДИУС ВИДИМОСТИ:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_radius_scepter: 'РАДИУС РЕИНКАРНАЦИИ:'
+DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_ally_cooldown_scepter: 'ПЕРЕЗАРЯДКА НА СОЮЗНИКАХ:'
+DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity: Glacier Tranqulity
+DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity_Description: Наполняет выбранный союзный или вражеский юнит ледяным спокойствием. Под его действием юнит не получает и не наносит никакого урона.
+DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity_duration: 'ДЛИТЕЛЬНОСТЬ:'
+
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena: Crystal Nova
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_Description: 'Шквал губительного холода замедляет движение врага и скорость его атаки в выбранной области. Также создаёт ледяную стену, преграждающую проход всем юнитам.'
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_movespeed_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_attackspeed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
+DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_block_duration: 'ДЛИТЕЛЬНОСТЬ ЛЕДЯНОЙ СТЕНЫ:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena: Frostbite
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_Description: 'Заковывает противника в лед, нанося ему %damage_per_second_tooltip% урона каждые полсекунды и запрещая двигаться или атаковать. Действует 10 секунд на крипов 6-го уровня или ниже. Также, юниты, находящиеся рядом с целью Frostbite, получат замедление скорости атаки и передвижения.'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_Note0: Под действием этой способности нельзя телепортироваться.
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_damage_per_second_tooltip: 'УРОН В СЕКУНДУ:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_duration: 'ДЛИТЕЛЬНОСТЬ НА ГЕРОЯХ:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_creep_duration: 'ДЛИТЕЛЬНОСТЬ НА КРИПАХ:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_radius: 'РАДИУС ЗАМЕДЛЕНИЯ:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_attack_speed: 'ЗАМЕДЛЕНИЕ СКОРОСТИ АТАКИ:'
+DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_movement_speed_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena: Brilliance Aura
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_Description: 'Увеличивает скорость восстановления маны, интеллект и скорость передвижения всех союзников на карте. Crystal Maiden получает увеличенный бонус.'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_mana_regen: 'РЕГЕН МАНЫ СОЮЗНИКАМ:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_bonus_intellect: 'ИНТЕЛЛЕКТ СОЮЗНИКАМ:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_bonus_movespeed_pct: '%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ СОЮЗНИКАМ:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_mana_regen: 'РЕГЕН МАНЫ СЕБЕ:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_bonus_intellect: 'ИНТЕЛЛЕКТ СЕБЕ:'
+DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_bonus_movespeed_pct: '%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ СЕБЕ:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena: Freezing Field
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Description: 'ПРЕРЫВАЕМАЯ — окружает Crystal Maiden случайными ледяными взрывами, замедляющими врагов и наносящими большой урон и, с небольшим шансом, замораживающими врагов Frostbite текущего уровня.  Длится %duration_tooltip% секунд.'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_aghanim_description: 'Прячет Crystal Maiden с карты на всё время использования Freezing Field, делая её неуязвимой. Также увеличивает урон и замедление.'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Note0: 'В первую секунду заклинания замедляются все враги в области действия, даже если взрывы их не задели.'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Note1: 'Взрыв происходит каждую 0,1 секунды; всего их 100.'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_explosion_radius: 'РАДИУС ВЗРЫВА:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_movespeed_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_attack_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_slow_duration: 'ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_damage: 'УРОН:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_damage_scepter: 'УРОН СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_movespeed_slow_scepter: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_attack_slow_scepter: 'ЗАМЕДЛЕНИЕ АТАКИ СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_chance_to_frostbite_pct: '%ШАНС НА FROSTBITE:'
+
+DOTA_Tooltip_ability_ability_empty: Слот для способности
+DOTA_Tooltip_ability_rubick_personality_steal: Personality Steal
+DOTA_Tooltip_ability_rubick_personality_steal_Description: 'Rubick изучает остатки магической сущности вражеского героя, обучаясь секретам всех заклинаний, которыми владеет этот герой и копируя его модель. Маг сможет использовать это заклинание как свое собственное пока он не умрет, или пока не снимет эффект, нажав на него в списке эффектов.'
+DOTA_Tooltip_modifier_rubick_personality_steal: Personality Steal
+DOTA_Tooltip_modifier_rubick_personality_steal_Description: |-
+  Украл заклинания и модель.
+
+  Нажмите сюда, чтобы снять этот эффект.
+DOTA_Tooltip_ability_item_god_transform_freya_Description: |-
+  Превращает вашего героя в Freya.
+
+  Не может быть использовано пока активна дуэль.
+
+  Этот предмет выпадает с боссов и не может быть куплен в лавке.
+DOTA_Tooltip_ability_item_god_transform_zaken_Description: |-
+  Превращает вашего героя в Zaken.
+
+  Не может быть использовано пока активна дуэль.
+
+  Этот предмет выпадает с боссов и не может быть куплен в лавке.
+DOTA_Tooltip_ability_doom_bringer_devour_arena_Description: 'Пожирает вражеского или нейтрального крипа, перенимая способности, которыми он обладал и увеличивая здоровье Дума и его урон, основываясь на здоровье убитого крипа.'
+DOTA_Tooltip_ability_doom_bringer_devour_arena_min_bonus_gold: 'МИНИМАЛЬНОЕ БОНУСНОЕ ЗОЛОТО:'
+DOTA_Tooltip_ability_doom_bringer_devour_arena_bonus_gold_pct: '%БОНУСНОЕ ЗОЛОТО:'
+DOTA_Tooltip_ability_doom_bringer_devour_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_doom_bringer_devour_arena_stolen_health_pct: '%КРАЖА ЗДОРОВЬЯ:'
+DOTA_Tooltip_ability_doom_bringer_devour_arena_stolen_health_to_damage: 'УРОН ЗА УКРАДЕННУЮ ЕДИНИЦУ ЗДОРОВЬЯ:'
+DOTA_Tooltip_modifier_doom_bringer_devour_arena: Devour
+DOTA_Tooltip_modifier_doom_bringer_devour_arena_Description: 'Здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_BONUS%, урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%'
+DOTA_Tooltip_ability_huskar_burning_spear_arena: Burning Spear
+DOTA_Tooltip_ability_huskar_burning_spear_arena_Description: 'Huskar поджигает свои копья, нанося периодический урон своей обычной атакой. Урон горения увеличивается с уменьшением здоровья Huskar. Дополнительный урон складывается с несколькими атаками. Каждый стак также уменьшает броню и магическое сопротивление противника. Каждая атака поглощает часть здоровья Huskar, основанную на уроне от горения. Длится %duration% секунд. Когда здоровье Huskar''а опускается ниже %health_cost_pct%%%, его кровь начинает пылать, с некоторым шансом постоянно накладывая стаки Burning Spear на всех находящихся рядом противников.'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_Note0: Эффекты от этой способности складываются. Порога количества нет.
+DOTA_Tooltip_ability_huskar_burning_spear_arena_Note1: Этой способностью нельзя совершить самоубийство.
+DOTA_Tooltip_ability_huskar_burning_spear_arena_health_cost_pct: '%ЗДОРОВЬЯ ЗА УДАР:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_armor_reduction_per_stack: 'СНИЖЕНИЕ БРОНИ ЗА СТАК:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_magic_resist_per_stack: '%СНИЖЕНИЕ МАГ. СОПРОТИВЛЕНИЯ ЗА СТАК:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_aura_trigger_health_pct: '%ЗДОРОВЬЕ ДЛЯ ПЫЛАНИЯ:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_aura_radius: 'РАДИУС ПЫЛАНИЯ:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_aura_think_interval: 'ИНТЕРВАЛ УВЕЛИЧЕНИЯ СТАКОВ ПЫЛАНИЯ:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_aura_burn_chance_pct: '%ШАНС УВЕЛИЧИТЬ СТАКИ:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_damage: 'УРОН:'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_missing_hp_damage_pct: '%ОТСУТСТВУЮЩЕЕ ЗДОРОВЬЕ В УРОН:'
+DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura: Blazing Blood
+DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura_Description: Applies Burning Spear stacks to all enemies around
+DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff: Burning Spear
+DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff_Description: 'ВЫ ГОРИТЕ! Вам периодически наносится урон. Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, сопротивление магическому урону уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%'
+DOTA_Tooltip_ability_tinker_rearm_arena_Description: 'Tinker выпускает в цель энергетический шар, при использовании на союзников перезаряжая не нпаправленные на юнитов способности с некоторым шансом, либо временно снижающий магическое сопротивление противников и давая каждой применённой на цели способности шанс на мгновенную перезарядку.'
+DOTA_Tooltip_ability_tinker_rearm_arena_debuff_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_tinker_rearm_arena_refresh_chance_pct: '%ШАНС ПЕРЕЗАРЯДИТЬ СПОСОБНОСТЬ:'
+DOTA_Tooltip_ability_tinker_rearm_arena_magical_resistanse_pct: '%СНИЖЕНИЕ СОПРОТИВЛЕНИЯ МАГИЧЕСКОМУ УРОНУ:'

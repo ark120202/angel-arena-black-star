@@ -9,11 +9,6 @@ if AbilityShop == nil then
 end
 
 function AbilityShop:PrepareData()
-	local Heroes_all = {}
-	table.merge(Heroes_all, NPC_HEROES_CUSTOM)
-	for _,v in ipairs(ABILITY_SHOP_SKIP_HEROES) do
-		Heroes_all[v] = nil
-	end
 	for a,vs in pairs(ABILITY_SHOP_BANNED) do
 		if not ABILITY_SHOP_DATA[a] then
 			ABILITY_SHOP_DATA[a] = {}
@@ -47,13 +42,10 @@ function AbilityShop:PrepareData()
 			end
 		end
 	end
-	for name,baseData in pairsByKeys(Heroes_all) do
-		if baseData and baseData.Enabled ~= 0 then
+	for name, baseData in pairsByKeys(NPC_HEROES_CUSTOM) do
+		if baseData.Enabled ~= 0 and not ABILITY_SHOP_SKIP_HEROES[name] then
 			local heroTable = GetHeroTableByName(name)
-			local tabIndex = 1
-			if not NPC_HEROES[name] then
-				tabIndex = 2
-			end
+			local tabIndex = NPC_HEROES[name] and 1 or 2
 			local abilityTbl = {}
 			for i = 1, 24 do
 				local at = heroTable["Ability" .. i]
@@ -78,8 +70,7 @@ function AbilityShop:PrepareData()
 				heroKey = name,
 				abilities = abilityTbl,
 				isChanged = heroTable.Changed == 1 and tabIndex == 1,
-				attribute_primary = _G[heroTable.AttributePrimary],
-				team = heroTable.Team
+				attribute_primary = _G[heroTable.AttributePrimary]
 			}
 			table.insert(AbilityShop.ClientData[tabIndex], heroData)
 		end
@@ -199,7 +190,7 @@ function AbilityShop:CalculateDowngradeCost(abilityname, upgradecost)
 end
 
 function AbilityShop:RandomOMGRollAbilities(unit)
-	if DOTA_ACTIVE_GAMEMODE_TYPE == DOTA_GAMEMODE_TYPE_RANDOM_OMG then
+	if Options:IsEquals("EnableRandomAbilities") then
 		local ability_count = 6
 		local ultimate_count = 2
 		for i = 0, unit:GetAbilityCount() - 1 do

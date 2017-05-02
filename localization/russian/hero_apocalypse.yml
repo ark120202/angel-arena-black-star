@@ -1,0 +1,48 @@
+npc_arena_hero_apocalypse_hype: 'Своим пылающим клинком Апокалипсис прожигает любые доспехи, становясь сильнее. Высвобождая мрак в своей душе, она преобразуется в Зверя, растущего вместе с течением времени, после чего погибает и возрождается вновь, дабы снова погружать во мрак миры, мрак, который она когда-то впустила в свою душу.'
+npc_arena_hero_apocalypse_bio: 'Апокалипсис - извечная спутница Хаоса, рожденная в одном из самых мрачных закоулков мироздания. Древний и могущественный демон, чье влияние ломает волю самым сильным воинам, ступает на Арену, дабы сразиться во имя своего господина. Или погибнуть в его честь. Раньше Апокалипсис была человеком. На заре миров она родилась в девственном мире, подобном раю. Ей дали имя Аппо, в честь долины, в которой она была рождена. Этот прекрасный мир состоял сплошь из полей цветов и фруктовых садов. Однако беззаботная и счастливая жизнь не была ей по нраву. Она жаждала нечто большего, нечто темного... Однажды Аппо нашла мрачную, темную пещеру, сокрытую в гроте. Спустившись во мрак, она обнаружила Зверя - темное существо, олицетворяющее собой саму Тьму, закованного в кобальтовые цепи под землей. Аппо впустила его в свою душу, превратившись в демона Апокалипсис. С помощью своих новых сил она разрушила свой райский мир, и тогда поняла, что это - то, что она искала. Странствуя по Вселенной, она встретила Chaos Knight, и, почувствовав родство с ним, полюбила его. Рыцарь Хаоса взял ее в жены, и вместе они продолжили свой поход, разрушая все миры на своем пути. Однако за человеческой оболочкой живет ее истинная темная сущность, Зверь, и горе тому, кто осмелится узреть ее истинное лицо.'
+
+DOTA_Tooltip_ability_apocalypse_agnis_touch_Description: |-
+  Apocalypse вореут часть брони противника с каждой атакой. Украденная броня теряется при смерти. Не ворует броню боссов, иллюзий и крипов. С уменьшением здоровья Apocalypse'а он начинает пылать, нанося урон всем противникам рядом; чем меньше здоровья - тем сильнее эффекты.
+  Apocalypse начинает пылать, когда его здоровье опускается ниже определенной отметки.
+DOTA_Tooltip_ability_apocalypse_agnis_touch_armor_per_attack: 'БРОНИ ЗА АТАКУ:'
+DOTA_Tooltip_ability_apocalypse_agnis_touch_ablaze_radius: 'РАДИУС ПЫЛАНИЯ:'
+DOTA_Tooltip_ability_apocalypse_agnis_touch_ablaze_max_damage_per_second: 'УРОН ОТ ПЫЛАНИЯ В СЕКУНДУ:'
+DOTA_Tooltip_ability_apocalypse_agnis_touch_ablaze_threshold_pct: '%ГРАНИЦА ЗДОРОВЬЯ ДЛЯ ПЫЛАНИЯ:'
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_armor: Agni's Touch
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_armor_Description: Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_disarmor: Agni's Touch
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_disarmor_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_ablaze: Agni's Touch Ablaze
+DOTA_Tooltip_modifier_apocalypse_agnis_touch_ablaze_Description: Apocalypse пылает и наносит урон всем противникам рядом. Урон зависит от процента отсутствующего здоровья Apocalypse
+
+DOTA_Tooltip_ability_apocalypse_king_slayer_Description: 'Apocalypse наносит сокрушительный удар цели, нанося урон. Броня юнита оплавится и он потеряет часть базовой брони. Урон наносится за каждую единицу потерянной брони.'
+DOTA_Tooltip_ability_apocalypse_king_slayer_damage_per_armor: 'УРОНА ЗА ЕДИНИЦУ БРОНИ:'
+DOTA_Tooltip_ability_apocalypse_king_slayer_armor_reduction_pct: '%СНИЖЕНИЕ БАЗОВОЙ БРОНИ:'
+DOTA_Tooltip_ability_apocalypse_king_slayer_disarmor_duration: 'ДЛИТЕЛЬНОСТЬ СНИЖЕНИЯ БРОНИ:'
+DOTA_Tooltip_ability_apocalypse_king_slayer_knockback_duration: 'ДЛИТЕЛЬНОСТЬ ОТТАЛКИВАНИЯ:'
+DOTA_Tooltip_modifier_apocalypse_king_slayer_knockback: King Slayer
+DOTA_Tooltip_modifier_apocalypse_king_slayer_knockback_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+
+DOTA_Tooltip_ability_apocalypse_weapon_break_Description: |-
+  Apocalypse ударяет оружие противника, нанося урон и обезоруживая его.
+  При использовании Weapon Break, Armor Tear тоже станет перезаряжаться.
+DOTA_Tooltip_ability_apocalypse_weapon_break_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_modifier_apocalypse_weapon_break: Weapon Break Disarm
+DOTA_Tooltip_modifier_apocalypse_weapon_break_Description: Не может атаковать
+
+DOTA_Tooltip_ability_apocalypse_armor_tear_Description: |-
+  Apocalypse ударяет противника по броне, нанося урон и временно снижая его базовую броню на определённый процент.
+  При использовании Armor Tear, Weapon Break тоже станет перезаряжаться.
+DOTA_Tooltip_ability_apocalypse_armor_tear_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_apocalypse_armor_tear_armor_cut_pct: '%СНИЖЕНИЕ БАЗОВОЙ БРОНИ:'
+DOTA_Tooltip_modifier_apocalypse_armor_tear: Armor Tear
+DOTA_Tooltip_modifier_apocalypse_armor_tear_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+
+DOTA_Tooltip_ability_apocalypse_apocalypse_Description: |-
+  Древним ритуалом Apocalypse выпускает тёмное существо из глубин своей души, становяь ужасным демоном разрушения. Существо получает сопротивление к магии, урон и скорость передвижения, увеличивающиеся с течением времени, атаку по площади и постоянно снимает с себя все эффекты.
+  Когда время действия заклинания истечёт, Apocalypse погибнет, но это будет засчитано как самоубийство.
+DOTA_Tooltip_ability_apocalypse_apocalypse_magic_resistance_per_second_pct: '%СОПРОТИВЛЕНИЕ МАГИИ ЗА СЕКУНДУ:'
+DOTA_Tooltip_ability_apocalypse_apocalypse_damage_per_second_pct: 'ДОП. УРОН ЗА СЕКУНДУ:'
+DOTA_Tooltip_ability_apocalypse_apocalypse_movespeed_per_second_pct: '%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ЗА СЕКУНДУ:'
+DOTA_Tooltip_ability_apocalypse_apocalypse_cleave_radius: 'РАДИУС АТАКИ ПО ПЛОЩАДИ:'
+DOTA_Tooltip_ability_apocalypse_apocalypse_duration: 'ДЛИТЕЛЬНОСТЬ:'

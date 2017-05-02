@@ -1,6 +1,6 @@
 "use strict";
 GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_PROTECT, false);
-GameUI.CustomUIConfig().team_colors = {}
+GameUI.CustomUIConfig().team_colors = {};
 GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_GOODGUYS] = "#008000";
 GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_BADGUYS] = "#FF0000";
 GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_1] = "#c54da8";
@@ -24,7 +24,7 @@ GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_8] = "#8c2af4";*
 //GameUI.CustomUIConfig().team_icons[DOTATeam_t.DOTA_TEAM_CUSTOM_7] = "file://{images}/custom_game/team_icons/team_icon_snake_01.png";
 //GameUI.CustomUIConfig().team_icons[DOTATeam_t.DOTA_TEAM_CUSTOM_8] = "file://{images}/custom_game/team_icons/team_icon_horse_01.png";
 
-GameUI.CustomUIConfig().team_names = {}
+GameUI.CustomUIConfig().team_names = {};
 GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_GOODGUYS] = $.Localize("#DOTA_GoodGuys");
 GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_BADGUYS] = $.Localize("#DOTA_BadGuys");
 GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_CUSTOM_1] = $.Localize("#DOTA_Custom1");
@@ -37,10 +37,10 @@ GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_CUSTOM_7] = $.Localize("
 GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_CUSTOM_8] = $.Localize("#DOTA_Custom8");*/
 
 function RegisterKeybind(command) {
-	Game.Events[command] = []
+	Game.Events[command] = [];
 	Game.AddCommand("+" + command, function() {
 		for (var key in Game.Events[command]) {
-			Game.Events[command][key]()
+			Game.Events[command][key]();
 		}
 	}, "", 0);
 	Game.AddCommand("-" + command, function() {}, "", 0);
@@ -53,7 +53,7 @@ Game.MouseEvents = {
 Game.DisableWheelPanels = [];
 GameUI.SetMouseCallback(function(eventName, arg) {
 	var result = false;
-	var ClickBehaviors = GameUI.GetClickBehaviors()
+	var ClickBehaviors = GameUI.GetClickBehaviors();
 	if (eventName == "pressed") {
 		if (arg === 0) {
 			if (Game.MouseEvents.OnLeftPressed.length > 0) {

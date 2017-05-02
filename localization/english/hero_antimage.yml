@@ -1,0 +1,41 @@
+DOTA_Tooltip_ability_antimage_mana_break_arena: Mana Break
+DOTA_Tooltip_ability_antimage_mana_break_arena_Description: |-
+  Burns an opponent's mana on each attack. Mana Break deals %damage_per_burn_pct%%% of the mana burned as damage to the target. Illusions also will burn mana, but less then Anti-Mage. If enemy ran out of mana it will be stunned and will recieve additional pure damage, based on your attack damage.
+DOTA_Tooltip_ability_antimage_mana_break_arena_aghanim_description: Mana Break will also burn mana to all enemies around attacked target. Increases burned mana percentage.
+DOTA_Tooltip_ability_antimage_mana_break_arena_mana_per_hit: 'MANA PER HIT:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_mana_per_hit_pct: '%MANA PER HIT:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_mana_per_hit_illusions_pct: '%MANA PER HIT ILLUSIONS:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_nomana_bonus_pure_damage_pct: |-
+  %TARGET HAS NO MANA:
+  • BONUS PURE DAMAGE:
+DOTA_Tooltip_ability_antimage_mana_break_arena_nomana_stun_duration: '• BASH DURATION:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_nomana_stun_cooldown: '• BASH COOLDOWN:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_mana_per_hit_pct_scepter: '%MANA PER HIT:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_aoe_radius_scepter: '%CLEAVE RADIUS:'
+DOTA_Tooltip_ability_antimage_mana_break_arena_mana_to_secondary_targets_pct_scepter: '%MANA PER HIT TO SECONDARY TARGETS:'
+DOTA_Tooltip_modifier_antimage_mana_break_arena_stun_cooldown: Stun Cooldown
+DOTA_Tooltip_modifier_antimage_mana_break_arena_stun_cooldown_Description: Can't recieve stun from Mana Break
+
+DOTA_Tooltip_ability_antimage_blink_arena: Blink
+DOTA_Tooltip_ability_antimage_blink_arena_Description: 'Short distance teleportation that allows Anti-Mage to move in and out of combat. When Anti-Mage blinks somewhere, all enemies around him will be silenced.'
+DOTA_Tooltip_ability_antimage_blink_arena_blink_range: 'RANGE:'
+DOTA_Tooltip_ability_antimage_blink_arena_silence_radius: 'SILENCE RADIUS:'
+DOTA_Tooltip_ability_antimage_blink_arena_silence_duration: 'SILENCE DURATION:'
+
+DOTA_Tooltip_ability_antimage_spell_shield_arena: Spell Shield
+DOTA_Tooltip_ability_antimage_spell_shield_arena_Description: |-
+  Active: Gives Anti-Mage Antimagic shell, that blocks and re-casts most targeted spells back to their caster.
+  Passive: Increases Anti-Mage's resistance to magic damage.
+DOTA_Tooltip_ability_antimage_spell_shield_arena_spell_shield_resistance: '%MAGIC DAMAGE RESISTANCE:'
+DOTA_Tooltip_ability_antimage_spell_shield_arena_reflect_duration: 'ANTIMAGIC SHELL DURATION:'
+DOTA_Tooltip_modifier_antimage_spell_shield_arena_reflect: Antimagic shell
+DOTA_Tooltip_modifier_antimage_spell_shield_arena_reflect_Description: Blocks and re-casts most targeted spells back to their caster
+
+DOTA_Tooltip_ability_antimage_mana_void_arena: Mana Void
+DOTA_Tooltip_ability_antimage_mana_void_arena_Description: |-
+  For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies. All targets will be silenced and all their abilities will have a cooldown.
+DOTA_Tooltip_ability_antimage_mana_void_arena_aghanim_description: Damage will be calculated by missing mana of all units in AoE
+DOTA_Tooltip_ability_antimage_mana_void_arena_mana_void_damage_per_mana: 'DAMAGE PER MANA POINT:'
+DOTA_Tooltip_ability_antimage_mana_void_arena_silence_duration: 'SILENCE DURATION:'
+DOTA_Tooltip_ability_antimage_mana_void_arena_cooldown_increase: 'COOLDOWN INCREASE:'
+DOTA_Tooltip_ability_antimage_mana_void_arena_mana_void_aoe_radius: 'RADIUS:'

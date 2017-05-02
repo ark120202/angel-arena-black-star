@@ -4,11 +4,11 @@ function RocketBarrage(keys)
 	caster:SpendMana(keys.mana * keys.interval, ability)
 	if caster:GetMana() < keys.mana * keys.interval then
 		ability:ToggleAbility()
-		caster:RemoveModifierByName("modifier_rocket_barrage_arena")
+		caster:RemoveModifierByName("modifier_gyrocopter_rocket_barrage_arena")
 	end
 	local units = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_ANY_ORDER, false)
 	if #units > 0 then
-		if not caster:HasModifier("modifier_flak_cannon_arena") then
+		if not caster:HasModifier("modifier_gyrocopter_flak_cannon_arena") then
 			units = {units[RandomInt(1, #units)]}
 		end
 		for _,v in ipairs(units) do

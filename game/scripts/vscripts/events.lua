@@ -24,7 +24,7 @@ function GameMode:OnGameRulesStateChange(keys)
 			end
 		end
 		HeroSelection:CollectPD()
-		GameModes:OnAllVotesSubmitted()
+		Options:CalculateVotes()
 		StatsClient:OnGameBegin()
 		HeroSelection:HeroSelectionStart()
 	end
@@ -34,7 +34,7 @@ end
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	if npc:IsHero() then
-		if not HeroSelection.SelectionEnd then
+		if HeroSelection:GetState() < HERO_SELECTION_PHASE_END then
 			--npc:AddNoDraw()
 			return
 		end
@@ -321,7 +321,7 @@ end
 function CustomChatSay(playerId, teamonly, data)
 	if GameMode:CustomChatFilter(playerId, teamonly, data) then
 		local heroName
-		if HeroSelection.SelectionEnd then
+		if HeroSelection:GetState() == HERO_SELECTION_PHASE_END then
 			heroName = HeroSelection:GetSelectedHeroName(playerId)
 		end
 		local args = {playerId=playerId, hero=heroName}
