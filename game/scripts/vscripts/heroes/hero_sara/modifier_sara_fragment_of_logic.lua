@@ -18,10 +18,15 @@ if IsServer() then
 			local ability = self:GetAbility()
 			local toWaste = ability:GetSpecialValueFor("energy_const") + parent:GetMaxEnergy() * ability:GetSpecialValueFor("energy_pct") * 0.01
 			if ability:IsCooldownReady() and parent:GetEnergy() >= toWaste then
-				ability:AutoStartCooldown()
+				if parent:HasScepter() then
+					ability:StartCooldown(ability:GetSpecialValueFor("scepter_cooldown"))
+				else
+					ability:AutoStartCooldown()
+				end
 				parent:AddNewModifier(parent, ability, "modifier_sara_fragment_of_logic_debuff", {duration = ability:GetSpecialValueFor("debuff_duration")})
 				parent:ModifyEnergy(-toWaste)
 				parent:SetHealth(parent:GetMaxHealth())
+				parent:Purge(false, true, false, true, false)
 				ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sara/fragment_of_logic.vpcf", PATTACH_ABSORIGIN, parent)
 				parent:EmitSound("Hero_Chen.HandOfGodHealHero")
 			end

@@ -2155,7 +2155,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"presence_armor_reduction"	"-8 -12 -16 -20 -24 -28 -32"
+				"presence_armor_reduction"	"-2 -4 -6 -8 -10 -12 -14"
 			}
 
 			"02"
@@ -3631,12 +3631,12 @@
 
 	"sandking_sand_storm"
 	{
-		"MaxLevel"	"7"
-		"AbilityDuration"	"50"
-		"AbilityCooldown"	"70.0 60.0 50.0 40.0 30.0 20.0 10.0"
-		"AbilityDamage"		"40 80 120 200 250 300 400"
-		"AbilityManaCost"	"60 50 40 30 20 10 0"
-		"LevelsBetweenUpgrades" "2"
+		"MaxLevel"				"7"
+		"AbilityDuration"		"20.0 30.0 40.0 50.0 60.0 70.0 80.0"
+		"AbilityCooldown"		"70.0 60.0 50.0 40.0 30.0 20.0 10.0"
+		"AbilityDamage"			"40 80 120 200 250 300 400"
+		"AbilityManaCost"		"60 50 40 30 20 10 0"
+		"LevelsBetweenUpgrades" "4"
 		"AbilitySpecial"
 		{
 			"01"
@@ -3654,7 +3654,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"AbilityDuration"	"20.0 40.0 60.0 80.0 100.0 120.0 140.0"
+				"AbilityDuration"	"20.0 30.0 40.0 50.0 60.0 70.0 80.0"
 			}
 			"99"
 			{
@@ -3668,7 +3668,8 @@
 
 	"sandking_caustic_finale"
 	{
-		"MaxLevel"	"7"
+		"MaxLevel"		"7"
+		"RequiredLevel" "2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -10575,7 +10576,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage"	"40 80 120 160 200 240 280"
+				"damage"	"32 42 52 62 72 82 92"
 			}
 
 			"03"
@@ -14940,7 +14941,7 @@
 
 	"slark_dark_pact"
 	{
-		"MaxLevel"	"7"
+		"MaxLevel"			"7"
 		"AbilityCastPoint"	"0.001"
 		"AbilityCastRange"	"325"
 		"AbilityCooldown"	"14.0 13.0 12.0 9.0 8.0 7.0 6.0"
@@ -19528,7 +19529,7 @@
 		"AbilityCastRange"	"800"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3"
 		"AbilityCooldown"	"120 110 100 90 80 70 60"
-		"AbilityManaCost"	"250 500 750 1000 1250 1500 1750"
+		"AbilityManaCost"	"300 400 500 600 700 800 900"
 		"AbilitySpecial"
 		{
 			"01"

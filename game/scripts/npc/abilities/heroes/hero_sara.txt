@@ -21,7 +21,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"max_per_minute_pct" "0 0 0 0.8"
+				"max_per_minute_pct" "1"
 			}
 			"03"
 			{
@@ -41,7 +41,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"max_per_creep_pct"	"0 0 0 0.1"
+				"max_per_creep_pct"	"0.1"
 			}
 			"07"
 			{
@@ -120,49 +120,33 @@
 		}
 	}
 
-	"sara_energy_burst"
+	"sara_dark_blink"
 	{
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/hero_sara/energy_burst.lua"
-		"AbilityTextureName"			"arena/sara_energy_burst"
+		"ScriptFile"					"heroes/hero_sara/dark_blink.lua"
+		"AbilityTextureName"			"arena/sara_dark_blink"
 		"MaxLevel" 						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCooldown"				"100 90 80 70 60 50 40"
-		"AbilityCastRange"				"1200"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityCooldown"				"30 27 24 21 18 15 12"
 		"AbilityCastPoint"				"0.2"
-		"HasScepterUpgrade"				"1"
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_per_energy_point" "0.25 0.5 0.75 1 1.25 1.5 1.75"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"energy_pct"		"50"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"min_cost"			"25"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"pure_per_energy_point_scepter"	"0.25 0.3 0.35 0.4 0.45 0.5 0.55"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_aoe_scepter" "250"
+				"var_type" 		 	"FIELD_INTEGER"
+				"blink_range"  		"600 700 800 900 1000 1100 1200"
 			}
 		}
 
+		"OnSpellStart"
+		{
+		 	"RunScript"
+		 	{
+		 		"ScriptFile"	"heroes/hero_sara/dark_blink.lua"
+		 		"Function"		"Blink"
+		 		"Target"		"POINT"
+		 	}
+		} 
 		"precache"
 		{
 			"particle"  "particles/arena/units/heroes/hero_sara/energy_burst.vpcf"
@@ -241,7 +225,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"reflected_damage_pct_scepter"	"10 12 14 16 18 20 22"
-				"CalculateSpellDamageTooltip"	"0"
+				//"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 
@@ -263,6 +247,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown"				"5"
 		"LevelsBetweenUpgrades"			"10"
+		"HasScepterUpgrade"				"1"
 
 		"AbilitySpecial"
 		{
@@ -280,6 +265,11 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"debuff_duration"	"10"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"scepter_cooldown"	"1"
 			}
 		}
 

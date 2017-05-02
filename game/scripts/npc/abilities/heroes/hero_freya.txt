@@ -8,7 +8,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"arena/freya_strike_the_ice"
 		"MaxLevel"						"7"
@@ -17,7 +17,7 @@
 		"AbilityCastRange"				"1100"
 		"AbilityCastPoint"				"0.3"
 		
-		"AbilityCooldown"				"40"
+		"AbilityCooldown"				"25"
 
 		"AbilityDamage"					"600 1200 1800 2400 3000 3600 4500"
 
@@ -34,12 +34,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_missile_stun"	"2 3 4 5 6 7 8"
+				"magic_missile_stun"	"2.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_missile_speed"	"750"
+				"magic_missile_speed"	"2000"
 			}
 		}
 
@@ -93,7 +93,11 @@
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_freya_strike_the_ice"
-				"Target" 		"TARGET"
+				"Target" 
+				{ 
+				"Center" "TARGET" 
+				"Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES" 
+				}
 				"Duration"		"%magic_missile_stun"
 			}
 
@@ -139,12 +143,13 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"arena/freya_ice_cage"
 		"MaxLevel"						"7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 
 		"AbilityCastRange"				"525"
 		"AbilityCastPoint"				"0.3"
@@ -161,12 +166,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"2 3 4 5 6 7 8"
+				"duration"			"3.5"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_second_pct"		"2.5"
+				"damage_per_second_pct"		"5"
 			}
 			"03"
 			{
@@ -200,7 +205,11 @@
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_freya_ice_cage"
-				"Target" 		"TARGET"
+				"Target" 
+				{ 
+				"Center" "TARGET" 
+				"Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES" 
+				}
 			}
 			
 			"FireSound"
@@ -279,7 +288,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-		"AbilityCooldown"				"14.0"
+		"AbilityCooldown"				"20.0"
 		"AbilityManaCost"				"100 140 180 220 260 300 340"
 
 		"AbilitySpecial"
@@ -288,6 +297,7 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"damage_return_pct"	"70 90 110 120 130 140 150"
+				"CalculateSpellDamageTooltip" "0"
 			}
 			"02"
 			{

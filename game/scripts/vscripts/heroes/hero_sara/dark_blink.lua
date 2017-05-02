@@ -1,4 +1,4 @@
-sara_energy_burst = class({})
+--[[sara_energy_burst = class({})
 
 function sara_energy_burst:CastFilterResultTarget(hTarget)
 	if IsServer() then
@@ -52,4 +52,19 @@ else
 	function sara_energy_burst:GetManaCost()
 		return math.max(self:GetSpecialValueFor("min_cost"), self:GetCaster():GetMana() * self:GetSpecialValueFor("energy_pct") * 0.01)
 	end
+end ]]--
+
+function Blink(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	local point = keys.target_points[1]
+	local casterPos = caster:GetAbsOrigin()
+	local blink_range = ability:GetLevelSpecialValueFor("blink_range", ability:GetLevel() - 1)
+
+	if (point - casterPos):Length2D() > blink_range then
+		point = casterPos + (point - casterPos):Normalized() * blink_range
+	end
+	
+	FindClearSpaceForUnit(caster, point, false)
+	ProjectileManager:ProjectileDodge(caster)
 end

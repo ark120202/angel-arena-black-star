@@ -21,13 +21,14 @@
 		"MovementTurnRate"	"0.7"
 		"MagicalResistance"	"20"
 		"AttackDamageMin"	"17"
-		"AttributeBaseStrength"	"10"
-		"AttributeBaseIntelligence"	"10"
-		"AttributeBaseAgility"	"10"
+		"AttributeBaseStrength"	"20"
+		"AttributeBaseIntelligence"	"20"
+		"AttributeBaseAgility"	"20"
 		"AttributeStrengthGain"	"1.7"
 		"AttributeIntelligenceGain"	"1.7"
 		"AttributeAgilityGain"	"1.7"
-	}
+		"AttackDamageMin"	"28"
+		"AttackDamageMax"	"30"	}
 
 	"npc_arena_hero_cherub"
 	{
@@ -107,6 +108,8 @@
 		"AttributeStrengthGain"	"2.4"
 		"AttributeIntelligenceGain"	"1.4"
 		"AttributeAgilityGain"	"1.7"
+		"AttackDamageMin"	"23"
+		"AttackDamageMax"	"27"
 	}
 
 	"npc_arena_hero_shinobu"
@@ -130,6 +133,8 @@
 		"AttributeStrengthGain"		"1.3"
 		"AttributeIntelligenceGain"	"1.6"
 		"AttributeAgilityGain"		"2.7"
+		"AttackDamageMin"	"26"
+		"AttackDamageMax"	"30"
 		// "CustomSoundEvents"
 		// {
 		// 	"precache"
@@ -164,6 +169,8 @@
 		"AttributeStrengthGain"	"2.4"
 		"AttributeIntelligenceGain"	"0.9"
 		"AttributeAgilityGain"	"2.1"
+		"AttackDamageMin"	"40"
+		"AttackDamageMax"	"42"
 	}
 
 	"npc_arena_hero_freya"
@@ -187,6 +194,8 @@
 		"AttributeStrengthGain"	"2.8"
 		"AttributeIntelligenceGain"	"2"
 		"AttributeAgilityGain"	"1.7"
+		"AttackDamageMin"	"46"
+		"AttackDamageMax"	"50"
 	}
 
 	"npc_arena_hero_zaken"
@@ -209,6 +218,8 @@
 		"AttributeStrengthGain"	"2.5"
 		"AttributeIntelligenceGain"	"2.2"
 		"AttributeAgilityGain"	"1.5"
+		"AttackDamageMin"	"20"
+		"AttackDamageMax"	"30"
 	}
 
 	"npc_arena_hero_poseidon"
@@ -235,6 +246,8 @@
 		"AttributeStrengthGain"	"2.2"
 		"AttributeIntelligenceGain"	"2.9"
 		"AttributeAgilityGain"	"1.5"
+		"AttackDamageMin"	"22"
+		"AttackDamageMax"	"25"
 	}
 
 	"npc_arena_hero_anakim"
@@ -252,11 +265,13 @@
 		"AttackRange"			"150"
 		"ProjectileModel"		""
 		"AttributeBaseStrength"	"16"
-		"AttributeBaseIntelligence"	"46"
+		"AttributeBaseIntelligence"	"24"
 		"AttributeBaseAgility"	"8"
 		"AttributeStrengthGain"	"2.2"
 		"AttributeIntelligenceGain"	"3.1"
 		"AttributeAgilityGain"	"1.5"
+		"AttackDamageMin"	"22"
+		"AttackDamageMax"	"26"
 	}
 
 	"npc_arena_hero_arcueid"
@@ -299,8 +314,8 @@
 		"AttributeIntelligenceGain"	"3.0"
 		"AttributeAgilityGain"	"2.2"
 		"MagicalResistance"		"80"
-		"AttackDamageMin"		"25"
-		"AttackDamageMax"		"25"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"32"
 	}
 
 	"npc_arena_hero_rin"
@@ -378,6 +393,8 @@
 		"AttributeStrengthGain"	"3.0"
 		"AttributeIntelligenceGain"	"2.1"
 		"AttributeAgilityGain"	"2.5"
+		"AttackDamageMin"	"40"
+		"AttackDamageMax"	"41"
 	}
 
 	"npc_arena_hero_say"
@@ -436,12 +453,14 @@
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 		"AttackRange"			"150"
 		"ProjectileModel"		""
-		"AttributeBaseStrength"	"31"
+		"AttributeBaseStrength"	"25"
 		"AttributeBaseIntelligence"	"10"
 		"AttributeBaseAgility"	"12"
 		"AttributeStrengthGain"	"2.8"
 		"AttributeIntelligenceGain"	"1.2"
 		"AttributeAgilityGain"	"2.0"
+		"AttackDamageMin"		"26"
+		"AttackDamageMax"		"28"
 	}
 
 	"npc_arena_hero_maka"
