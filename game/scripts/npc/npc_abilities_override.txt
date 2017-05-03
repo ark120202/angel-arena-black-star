@@ -1,7 +1,5 @@
-
 #base "override/abilities.txt"
 #base "override/items.txt"
 #base "override/courier.txt"
 #base "override/remove.txt"
-"DOTAAbilities"
-{}
+"DOTAAbilities"{}

@@ -2,6 +2,7 @@
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/hero_selection.css" />
+		<include src="file://{resources}/styles/hero_selection_hero_card.css" />
 		<include src="file://{resources}/styles/metamorphosis_elixir.css" />
 	</styles>
 	<scripts>
@@ -24,7 +25,7 @@
 					<DOTAHeroMovie id="HeroMovie" hittest="false" />
 					<Label id="HeroName" hittest="false" />
 					<Image id="LockedIcon" hittest="false" />
-					<DOTAScenePanel id="HeroChangedBurst" map="scenes/hud/levelupburst" hittest="false" />
+					<Panel id="HeroChangedBurstRoot" hittest="false" />
 					<Panel id="LinkedHeroesGroupRow" hittest="false" />
 				</Panel>
 				<Panel id="BannedOverlay" hittest="false" />
@@ -46,7 +47,7 @@
 			</Panel>
 		</snippet>
 	</snippets>
-	<Panel hittest="false" class="MetamorphosisElixirBase">
+	<Panel hittest="false" class="base">
 		<Panel hittest="false" id="MainBox">
 			<Panel id="HeroListBasePanel">
 				<Panel id="HeroListControls">
@@ -70,13 +71,8 @@
 								<Label id="SelectedHeroLinkedHero" />
 							</Panel>
 						</Button>
-						<Button id="RandomButton" class="PickButton" onactivate="RandomHero()" >
-							<Panel />
-							<Label text="#random" />
-						</Button>
 					</Panel>
 					<Panel id="HeroListControlsGroup3" class="HeroListControlsGroup">
-						<Image id="HeroPreviewEnterButton" src="s2r://panorama/images/control_icons/return_to_game_png.vtex" onactivate="ToggleHeroPreviewHeroList(true)"/>
 						<Panel id="SelectedHeroAttributesPanel">
 							<Panel class="SelectedHeroAttributesElement" style="flow-children: down; height: fit-children; width: fit-children; vertical-align: center; margin-right: 12px;">
 								<Image src="s2r://panorama/images/hud/reborn/icon_damage_psd.vtex" style="horizontal-align: center;"/>

@@ -703,7 +703,7 @@
 	visibility: visible;
 }
 
-#HeroChangedBurst
+#HeroChangedBurstRoot
 {
 	width: 100%;
 	height: 100%;
@@ -712,9 +712,15 @@
 	opacity: 0;
 }
 
-.HeroCard.IsChanged #HeroChangedBurst
+.HeroCard.IsChanged #HeroChangedBurstRoot
 {
 	opacity: 0.4;
+}
+
+#HeroChangedBurstRoot > DOTAScenePanel
+{
+	width: 100%;
+	height: 100%;
 }
 
 #LinkedHeroesGroupRow

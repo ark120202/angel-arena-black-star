@@ -175,6 +175,16 @@ function HeroSelection:InitializeHeroClass(unit, classTable)
 				unit:AddNewModifier(unit, nil, v, nil)
 			end
 		end
+		if key == "RenderColor" then
+			local r,g,b = unpack(string.split(value))
+			r,g,b = tonumber(r), tonumber(g), tonumber(b)
+			unit:SetRenderColor(r, g, b)
+			for _, child in ipairs(unit:GetChildren()) do
+				if child:GetClassname() == "dota_item_wearable" and child:GetModelName() ~= "" then
+					child:SetRenderColor(r, g, b)
+				end
+			end
+		end
 	end
 end
 

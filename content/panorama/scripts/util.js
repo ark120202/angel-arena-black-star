@@ -166,7 +166,7 @@ function GetItemCountInCourier(nEntityIndex, itemName, bStash) {
 }
 
 function FindCourier(unit) {
-	return $.Each(Entities.GetAllEntitiesByClassname("npc_dota_courier"), function(ent) {
+	return _.each(Entities.GetAllEntitiesByClassname("npc_dota_courier"), function(ent) {
 		if (Entities.GetTeamNumber(ent) === Entities.GetTeamNumber(unit)) {
 			return ent;
 		}
@@ -194,7 +194,7 @@ function DynamicSubscribePTListener(table, callback, OnConnectedCallback) {
 function DynamicSubscribeNTListener(table, callback, OnConnectedCallback) {
 	var tableData = CustomNetTables.GetAllTableValues(table);
 	if (tableData != null) {
-		$.Each(tableData, function(ent) {
+		_.each(tableData, function(ent) {
 			callback(table, ent.key, ent.value);
 		});
 	}
@@ -238,7 +238,7 @@ function GetSteamID(pid, type) {
 }
 
 function _DynamicMinimapSubscribe(minimapPanel, OnConnectedCallback) {
-	$.Each(Game.GetAllTeamIDs(), function(team) {
+	_.each(Game.GetAllTeamIDs(), function(team) {
 		DynamicSubscribePTListener("dynamic_minimap_points_" + team, function(tableName, changesObject, deletionsObject) {
 			for (var index in changesObject) {
 				var panel = $("#minimap_point_id_" + index);
@@ -247,7 +247,7 @@ function _DynamicMinimapSubscribe(minimapPanel, OnConnectedCallback) {
 					panel.hittest = false;
 					panel.AddClass("icon");
 				}
-				$.Each(changesObject[index].styleClasses.split(" "), function(ss) {
+				_.each(changesObject[index].styleClasses.split(" "), function(ss) {
 					panel.AddClass(ss);
 				});
 				panel.style.position = changesObject[index].position + " 0";
@@ -352,7 +352,7 @@ String.prototype.endsWith = function(suffix) {
 
 function SortPanelChildren(panel, sortFunc, compareFunc) {
 	var tlc = panel.Children().sort(sortFunc);
-	$.Each(tlc, function(child) {
+	_.each(tlc, function(child) {
 		for (var k in tlc) {
 			var child2 = tlc[k];
 			if (child !== child2 && compareFunc(child, child2)) {

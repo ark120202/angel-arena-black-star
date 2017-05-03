@@ -48,6 +48,7 @@ General:
 	Players now can submit their itembuilds using new build builder in shop
 	Gold now is formatted to thousands and millions (normal values are shown while holding ALT)
 	Added announcer countdown before duel
+	Kadash's model now is purple
 Balance:
 	Runes:
 		

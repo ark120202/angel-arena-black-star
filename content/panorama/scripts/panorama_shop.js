@@ -19,10 +19,10 @@ function OpenCloseShop() {
 
 function SearchItems() {
 	var searchStr = $("#ShopSearchEntry").text.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-	if (SearchingFor != searchStr) {
+	if (SearchingFor !== searchStr) {
 		SearchingFor = searchStr;
 		var ShopSearchOverlay = $("#ShopSearchOverlay");
-		$.Each(ShopSearchOverlay.Children(), function(child) {
+		_.each(ShopSearchOverlay.Children(), function(child) {
 			child.DestroyItemPanel();
 		});
 		$.GetContextPanel().SetHasClass("InSearchMode", searchStr.length > 0);
@@ -41,7 +41,7 @@ function SearchItems() {
 			FoundItems.sort(function(x1, x2) {
 				return ItemData[x1].cost - ItemData[x2].cost;
 			});
-			$.Each(FoundItems, function(itemName) {
+			_.each(FoundItems, function(itemName) {
 				SnippetCreate_SmallItem($.CreatePanel("Panel", ShopSearchOverlay, "ShopSearchOverlay_item_" + itemName), itemName);
 			});
 		}
@@ -51,10 +51,10 @@ function SearchItems() {
 function PushItemsToList() {
 	var isTabSelected = false;
 	for (var shopName in ItemList) {
-		var TabButton = $.CreatePanel('RadioButton', $("#ShopTabs"), "shop_tab_" + shopName);
+		var TabButton = $.CreatePanel("RadioButton", $("#ShopTabs"), "shop_tab_" + shopName);
 		TabButton.AddClass("ShopTabButton");
 		TabButton.style.width = (100 / Object.keys(ItemList).length) + "%";
-		var TabButtonLabel = $.CreatePanel('Label', TabButton, "");
+		var TabButtonLabel = $.CreatePanel("Label", TabButton, "");
 		TabButtonLabel.text = $.Localize("panorama_shop_shop_tab_" + shopName);
 		TabButtonLabel.hittest = false;
 		var SelectShopTabAction = (function(_shopName) {
@@ -62,8 +62,8 @@ function PushItemsToList() {
 				SelectShopTab(_shopName);
 			};
 		})(shopName);
-		TabButton.SetPanelEvent('onactivate', SelectShopTabAction);
-		var TabShopItemlistPanel = $.CreatePanel('Panel', $("#ShopItemsBase"), "shop_panels_tab_" + shopName);
+		TabButton.SetPanelEvent("onactivate", SelectShopTabAction);
+		var TabShopItemlistPanel = $.CreatePanel("Panel", $("#ShopItemsBase"), "shop_panels_tab_" + shopName);
 		TabShopItemlistPanel.AddClass("ItemsPageInnerContainer");
 		FillShopTable(TabShopItemlistPanel, ItemList[shopName]);
 
@@ -77,8 +77,8 @@ function PushItemsToList() {
 }
 
 function SelectShopTab(tabTitle) {
-	$.Each($("#ShopItemsBase").Children(), function(child) {
-		child.SetHasClass("SelectedPage", child.id.replace("shop_panels_tab_", "") == tabTitle);
+	_.each($("#ShopItemsBase").Children(), function(child) {
+		child.SetHasClass("SelectedPage", child.id.replace("shop_panels_tab_", "") === tabTitle);
 	});
 }
 
@@ -86,7 +86,7 @@ function FillShopTable(panel, shopData) {
 	for (var groupName in shopData) {
 		var groupPanel = $.CreatePanel("Panel", panel, panel.id + "_group_" + groupName);
 		groupPanel.AddClass("ShopItemGroup");
-		$.Each(shopData[groupName], function(itemName) {
+		_.each(shopData[groupName], function(itemName) {
 			var itemPanel = $.CreatePanel("Panel", groupPanel, groupPanel.id + "_item_" + itemName);
 			SnippetCreate_SmallItem(itemPanel, itemName);
 				//groupPanel.AddClass("ShopItemGroup")
@@ -184,19 +184,19 @@ function ShowItemRecipe(itemName) {
 	var RecipeData = currentItemData.Recipe;
 	var BuildsIntoData = currentItemData.BuildsInto;
 	var DropListData = currentItemData.DropListData;
-	$.Each($("#ItemRecipeBoxRow1").Children(), function(child) {
+	_.each($("#ItemRecipeBoxRow1").Children(), function(child) {
 		if (child.DestroyItemPanel != null)
 			child.DestroyItemPanel();
 		else
 			child.DeleteAsync(0);
 	});
-	$.Each($("#ItemRecipeBoxRow2").Children(), function(child) {
+	_.each($("#ItemRecipeBoxRow2").Children(), function(child) {
 		if (child.DestroyItemPanel != null)
 			child.DestroyItemPanel();
 		else
 			child.DeleteAsync(0);
 	});
-	$.Each($("#ItemRecipeBoxRow3").Children(), function(child) {
+	_.each($("#ItemRecipeBoxRow3").Children(), function(child) {
 		if (child.DestroyItemPanel != null)
 			child.DestroyItemPanel();
 		else
@@ -213,7 +213,7 @@ function ShowItemRecipe(itemName) {
 	var len = 0;
 	$("#ItemRecipeBoxDrops").visible = false;
 	if (RecipeData != null && RecipeData.items != null) {
-		$.Each(RecipeData.items[1], function(childName) {
+		_.each(RecipeData.items[1], function(childName) {
 			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow3"), "ItemRecipeBoxRow3_item_" + childName);
 			SnippetCreate_SmallItem(itemPanel, childName);
 			itemPanel.style.align = "center center";
@@ -227,12 +227,12 @@ function ShowItemRecipe(itemName) {
 		}
 	} else if (DropListData != null) {
 		$("#ItemRecipeBoxDrops").visible = true;
-		$.Each($("#ItemRecipeBoxDrops").Children(), function(pan) {
+		_.each($("#ItemRecipeBoxDrops").Children(), function(pan) {
 			var unit = pan.id.replace("ItemRecipeBoxDrops_", "");
 			pan.enabled = DropListData[unit] != null;
 			pan.RemoveAndDeleteChildren();
 			if (DropListData[unit] != null)
-				$.Each(DropListData[unit], function(chance) {
+				_.each(DropListData[unit], function(chance) {
 					var chancePanel = $.CreatePanel("Label", pan, "");
 					chancePanel.AddClass("UnitItemlikeRecipePanelChance");
 					chancePanel.text = chance + "%";
@@ -243,7 +243,7 @@ function ShowItemRecipe(itemName) {
 	$("#ItemRecipeBoxRow3").SetHasClass("ItemRecipeBoxRowLength8", len >= 8);
 	$("#ItemRecipeBoxRow3").SetHasClass("ItemRecipeBoxRowLength9", len >= 9);
 	if (BuildsIntoData != null) {
-		$.Each(BuildsIntoData, function(childName) {
+		_.each(BuildsIntoData, function(childName) {
 			var itemPanel = $.CreatePanel("Panel", $("#ItemRecipeBoxRow1"), "ItemRecipeBoxRow1_item_" + childName);
 			SnippetCreate_SmallItem(itemPanel, childName);
 			itemPanel.style.align = "center center";
@@ -321,7 +321,7 @@ function GetRemainingPrice(itemName, ItemCounter, baseItem) {
 		}
 		var RecipeData = ItemData[itemName].Recipe;
 		if (RecipeData != null && RecipeData.items != null) {
-			$.Each(RecipeData.items[1], function(childName) {
+			_.each(RecipeData.items[1], function(childName) {
 				val += GetRemainingPrice(childName, ItemCounter, baseItem || itemName);
 			});
 			if (RecipeData.visible && RecipeData.recipeItemName != null) {
@@ -335,7 +335,7 @@ function GetRemainingPrice(itemName, ItemCounter, baseItem) {
 }
 
 function SetQuickbuyStickyItem(itemName) {
-	$.Each($("#QuickBuyStickyButtonPanel").Children(), function(child) {
+	_.each($("#QuickBuyStickyButtonPanel").Children(), function(child) {
 		child.DestroyItemPanel();
 	});
 	var itemPanel = $.CreatePanel("Panel", $("#QuickBuyStickyButtonPanel"), "QuickBuyStickyButtonPanel_item_" + itemName);
@@ -347,7 +347,7 @@ function SetQuickbuyStickyItem(itemName) {
 function ClearQuickbuyItems() {
 	QuickBuyTarget = null;
 	QuickBuyTargetAmount = null;
-	$.Each($("#QuickBuyPanelItems").Children(), function(child) {
+	_.each($("#QuickBuyPanelItems").Children(), function(child) {
 		if (!child.BHasClass("DropDownValidTarget")) {
 			child.DestroyItemPanel();
 		} else {
@@ -371,7 +371,7 @@ function MakeQuickbuyCheckItem(itemName, ItemCounter, ItemIndexer, sourceExpecte
 	var itemCount = GetItemCountInCourier(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), itemName, true) + GetItemCountInInventory(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), itemName, true);
 	if ((itemCount < ItemCounter[itemName] || (itemName == QuickBuyTarget && itemCount - (sourceExpectedCount - 1) < ItemCounter[itemName]))) {
 		if (RecipeData != null && RecipeData.items != null) {
-			$.Each(RecipeData.items[1], function(childName) {
+			_.each(RecipeData.items[1], function(childName) {
 				MakeQuickbuyCheckItem(childName, ItemCounter, ItemIndexer);
 			});
 			if (RecipeData.visible && RecipeData.recipeItemName != null) {
@@ -399,7 +399,7 @@ function RemoveQuickbuyItemChildren(itemName, ItemIndexer, bIncrease) {
 		ItemIndexer[itemName] = (ItemIndexer[itemName] || 0) + 1;
 	RemoveQuckbuyPanel(itemName, ItemIndexer[itemName]);
 	if (RecipeData != null && RecipeData.items != null) {
-		$.Each(RecipeData.items[1], function(childName) {
+		_.each(RecipeData.items[1], function(childName) {
 			RemoveQuickbuyItemChildren(childName, ItemIndexer, true);
 		});
 		if (RecipeData.visible && RecipeData.recipeItemName != null) {
@@ -434,11 +434,11 @@ function UpdateShop() {
 	SearchItems();
 	UpdateItembuildsForHero();
 	var gold = GetPlayerGold(Game.GetLocalPlayerID());
-	$.Each(SmallItemsAlwaysUpdated, function(panel) {
+	_.each(SmallItemsAlwaysUpdated, function(panel) {
 		UpdateSmallItem(panel, gold);
 	});
 	if (!$("#ShopBase").BHasClass("ShopBase_Out"))
-		$.Each(SmallItems, function(panel) {
+		_.each(SmallItems, function(panel) {
 			UpdateSmallItem(panel, gold);
 		});
 	//$.GetContextPanel().SetHasClass("InRangeOfShop", Entities.IsInRangeOfShop(m_QueryUnit, 0, true))
@@ -468,7 +468,7 @@ function SetItemStock(item, ItemStock) {
 	GameEvents.Subscribe("panorama_shop_open_close", OpenCloseShop);
 	Game.Events.F5Pressed.push(function() {
 		var bought = false;
-		$.Each($("#QuickBuyPanelItems").Children(), function(child) {
+		_.each($("#QuickBuyPanelItems").Children(), function(child) {
 			if (!child.BHasClass("DropDownValidTarget")) {
 				UpdateSmallItem(child);
 				if (child.BHasClass("CanBuy")) {

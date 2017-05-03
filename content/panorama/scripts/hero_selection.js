@@ -30,17 +30,6 @@ var SteamIDSpecialBGs = {
 	],
 };
 
-function HeroSelectionStart(HeroesServerData) {
-	tabsData = HeroesServerData.HeroTabs;
-	for (var tabKey in tabsData) {
-		var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey);
-		TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel");
-		FillHeroesTable(tabsData[tabKey], TabHeroesPanel);
-		TabHeroesPanel.visible = false;
-	}
-	SelectHeroTab(1);
-}
-
 function HeroSelectionEnd(bImmidate) {
 	$.GetContextPanel().style.opacity = 0;
 	$.Schedule(bImmidate ? 0 : 3.5, function() { //4 + 1.5 [+ 0.1] - 2 (dota delay)
@@ -327,7 +316,15 @@ function StartStrategyTime() {
 function UpdateMainTable(tableName, changesObject, deletionsObject) {
 	var newState = changesObject.HeroSelectionState;
 	if (newState < HERO_SELECTION_PHASE_END && changesObject.HeroTabs != null) {
-		HeroSelectionStart(changesObject);
+		if (HeroesPanels.length === 0 && HeroesData) {
+			_.each(changesObject.HeroTabs, function(tabContent, tabKey) {
+				var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey);
+				TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel");
+				FillHeroesTable(tabContent, TabHeroesPanel);
+				TabHeroesPanel.visible = false;
+			});
+			SelectHeroTab(1);
+		}
 	}
 	if (newState != null) {
 		SetCurrentPhase(newState);

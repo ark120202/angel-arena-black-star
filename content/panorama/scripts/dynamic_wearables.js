@@ -47,7 +47,7 @@ function SetAvaliableWearables(data) {
 	$.Msg(data);
 	for (var slot in data) {
 		var WearablesInSlot = data[slot];
-		$.Each(WearablesInSlot, function(wearable) {
+		_.each(WearablesInSlot, function(wearable) {
 			$.Msg(slot, "       ", wearable);
 		});
 	}

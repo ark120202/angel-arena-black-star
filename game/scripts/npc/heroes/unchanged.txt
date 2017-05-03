@@ -2104,7 +2104,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"Enabled"		"0"
 		"DisableWearables" "0"
 	}
 

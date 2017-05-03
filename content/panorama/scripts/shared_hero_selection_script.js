@@ -3,6 +3,7 @@ var HeroesData = {},
 	BannedHeroes = [];
 DynamicSubscribePTListener("hero_selection_heroes_data", function(tableName, changesObject, deletionsObject) {
 	HeroesData = changesObject;
+	//if (OnRecieveHeroesData) OnRecieveHeroesData();
 });
 
 function IsHeroPicked(name) {
@@ -10,7 +11,7 @@ function IsHeroPicked(name) {
 	if (hero_selection_table != null) {
 		for (var teamKey in hero_selection_table) {
 			for (var playerIdInSelection in hero_selection_table[teamKey]) {
-				if (hero_selection_table[teamKey][playerIdInSelection].hero == name && hero_selection_table[teamKey][playerIdInSelection].status == "picked") {
+				if (hero_selection_table[teamKey][playerIdInSelection].hero === name && hero_selection_table[teamKey][playerIdInSelection].status === "picked") {
 					return true;
 				}
 			}
@@ -24,7 +25,7 @@ function IsHeroLocked(name) {
 	if (hero_selection_table != null) {
 		for (var teamKey in hero_selection_table) {
 			for (var playerIdInSelection in hero_selection_table[teamKey]) {
-				if (hero_selection_table[teamKey][playerIdInSelection].hero == name && hero_selection_table[teamKey][playerIdInSelection].status == "locked") {
+				if (hero_selection_table[teamKey][playerIdInSelection].hero === name && hero_selection_table[teamKey][playerIdInSelection].status === "locked") {
 					return true;
 				}
 			}
@@ -34,14 +35,14 @@ function IsHeroLocked(name) {
 }
 
 function IsHeroBanned(name) {
-	return BannedHeroes.indexOf(name) != -1;
+	return BannedHeroes.indexOf(name) !== -1;
 }
 
 var PreviousSearchText = "";
 function SearchHero() {
 	if ($("#HeroSearchTextEntry") != null) {
 		var SearchString = $("#HeroSearchTextEntry").text.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-		if (PreviousSearchText != SearchString) {
+		if (PreviousSearchText !== SearchString) {
 			PreviousSearchText = SearchString;
 			$.GetContextPanel().SetHasClass("SearchingHeroes", SearchString.length > 0);
 
@@ -67,21 +68,24 @@ function SearchHero() {
 }
 
 function FillHeroesTable(heroList, panel, big) {
-	$.Each(heroList, function(heroName) {
+	_.each(heroList, function(heroName) {
 		var heroData = HeroesData[heroName];
 		var StatPanel = panel.FindChildTraverse("HeroesByAttributes_" + heroData.attributes.attribute_primary);
 
 		var HeroCard = $.CreatePanel("Panel", StatPanel, "HeroListPanel_element_" + heroName);
 		HeroCard.BLoadLayoutSnippet("HeroCard");
 		HeroCard.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(heroName, "portrait"));
-		HeroCard.FindChildTraverse("HeroMovie").heroname = heroName;
-		if (heroData.isChanged) HeroCard.AddClass("IsChanged");
+		//HeroCard.FindChildTraverse("HeroMovie").heroname = heroName;
+		if (heroData.isChanged) {
+			HeroCard.FindChildTraverse("HeroChangedBurstRoot").BCreateChildren('<DOTAScenePanel map="scenes/hud/levelupburst" hittest="false" />');
+			HeroCard.AddClass("IsChanged");
+		}
 		if (heroData.linkedColorGroup) {
 			HeroCard.AddClass("HasLinkedColorGroup");
 			HeroCard.FindChildTraverse("LinkedHeroesGroupRow").style.backgroundColor = heroData.linkedColorGroup;
 		}
 		var SelectHeroAction = (function() {
-			if (SelectedHeroPanel != HeroCard) {
+			if (SelectedHeroPanel !== HeroCard) {
 				SelectedHeroName = heroName;
 				if (SelectedHeroPanel != null) {
 					SelectedHeroPanel.RemoveClass("HeroPanelSelected");
@@ -110,7 +114,7 @@ function SelectFirstHeroPanel() {
 	var p;
 	for (var key in HeroesPanels) {
 		var heroName = HeroesPanels[key].id.replace("HeroListPanel_element_", "");
-		if (heroName == "npc_dota_hero_abaddon") {
+		if (heroName === "npc_dota_hero_abaddon") {
 			p = HeroesPanels[key];
 		}
 	}
@@ -131,7 +135,7 @@ function ChooseHeroUpdatePanels() {
 	context.SetHasClass("HoveredHeroHasLinked", selectedHeroData.linked_heroes != null);
 	if (selectedHeroData.linked_heroes != null) {
 		var linked = [];
-		$.Each(selectedHeroData.linked_heroes, function(hero) {
+		_.each(selectedHeroData.linked_heroes, function(hero) {
 			linked.push($.Localize(hero));
 		});
 		$("#SelectedHeroLinkedHero").text = linked.join(", ");
@@ -142,14 +146,14 @@ function ChooseHeroUpdatePanels() {
 }
 
 function FillAbilitiesUI(rootPanel, abilities, className) {
-	$.Each(abilities, function(abilityName) {
-		var abilityPanel = $.CreatePanel('DOTAAbilityImage', rootPanel, "");
+	_.each(abilities, function(abilityName) {
+		var abilityPanel = $.CreatePanel("DOTAAbilityImage", rootPanel, "");
 		abilityPanel.AddClass(className);
 		abilityPanel.abilityname = abilityName;
-		abilityPanel.SetPanelEvent('onmouseover', function() {
+		abilityPanel.SetPanelEvent("onmouseover", function() {
 			$.DispatchEvent("DOTAShowAbilityTooltip", abilityPanel, abilityName);
 		});
-		abilityPanel.SetPanelEvent('onmouseout', function() {
+		abilityPanel.SetPanelEvent("onmouseout", function() {
 			$.DispatchEvent("DOTAHideAbilityTooltip", abilityPanel);
 		});
 	});
@@ -157,7 +161,7 @@ function FillAbilitiesUI(rootPanel, abilities, className) {
 
 function FillAttributeUI(rootPanel, SelectedHeroData) {
 	for (var i = 2; i >= 0; i--) {
-		rootPanel.FindChildTraverse("DotaAttributePic_" + (i + 1)).SetHasClass("PrimaryAttribute", SelectedHeroData.attributes.attribute_primary == i);
+		rootPanel.FindChildTraverse("DotaAttributePic_" + (i + 1)).SetHasClass("PrimaryAttribute", Number(SelectedHeroData.attributes.attribute_primary) === i);
 		rootPanel.FindChildTraverse("HeroAttributes_" + (i + 1)).text = SelectedHeroData.attributes["attribute_base_" + i] + " + " + Number(SelectedHeroData.attributes["attribute_gain_" + i]).toFixed(1);
 	}
 	rootPanel.FindChildTraverse("HeroAttributes_damage").text = SelectedHeroData.attributes.damage_min + " - " + SelectedHeroData.attributes.damage_max;
@@ -167,11 +171,11 @@ function FillAttributeUI(rootPanel, SelectedHeroData) {
 }
 
 function SwitchTab() {
-	SelectHeroTab(SelectedTabIndex == 1 ? 2 : 1);
+	SelectHeroTab(SelectedTabIndex === 1 ? 2 : 1);
 }
 
 function SelectHeroTab(tabIndex) {
-	if (SelectedTabIndex != tabIndex) {
+	if (SelectedTabIndex !== tabIndex) {
 		if (SelectedTabIndex != null) {
 			$("#HeroListPanel_tabPanels_" + SelectedTabIndex).visible = false;
 		}
@@ -185,7 +189,7 @@ $.Schedule(0, function() {
 	DynamicSubscribePTListener("hero_selection_banning_phase", function(tableName, changesObject, deletionsObject) {
 		for (var hero in changesObject) {
 			var heroPanel = $("#HeroListPanel_element_" + hero);
-			if (changesObject[hero] == Game.GetLocalPlayerID()) {
+			if (Number(changesObject[hero]) === Game.GetLocalPlayerID()) {
 				HasBanPoint = false;
 				if (UpdateSelectionButton) UpdateSelectionButton();
 			}

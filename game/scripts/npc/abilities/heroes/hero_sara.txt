@@ -133,20 +133,16 @@
 		{
 			"01"
 			{
-				"var_type" 		 	"FIELD_INTEGER"
-				"blink_range"  		"600 700 800 900 1000 1100 1200"
+				"var_type"				"FIELD_INTEGER"
+				"blink_range"			"600 700 800 900 1000 1100 1200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"energy_to_blink_range"	"5"
 			}
 		}
 
-		"OnSpellStart"
-		{
-		 	"RunScript"
-		 	{
-		 		"ScriptFile"	"heroes/hero_sara/dark_blink.lua"
-		 		"Function"		"Blink"
-		 		"Target"		"POINT"
-		 	}
-		} 
 		"precache"
 		{
 			"particle"  "particles/arena/units/heroes/hero_sara/energy_burst.vpcf"

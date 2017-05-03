@@ -154,4 +154,5 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"wisp_spirits_in_aghanims",
 	"wisp_spirits_out_aghanims",
 	"wisp_tether_break_aghanims",
+	"meepo_divided_we_stand",
 }

@@ -101,7 +101,7 @@ function CreateLoopedPortal(point1, point2, iRadius, sParticle, sDisabledParticl
 end
 
 function CreateGoldNotificationSettings(amount)
-	return {text=amount, duration=flDuration, continue=true, style={color="gold"}}, {text="#notifications_gold", continue=true, style={color="gold"}}
+	return {text=amount, continue=true, style={color="gold"}}, {text="#notifications_gold", continue=true, style={color="gold"}}
 end
 
 function GetEnemiesIds(heroteam)
@@ -341,8 +341,9 @@ end
 --illusion_incoming_damage = tooltip - 100
 --illusion_outgoing_damage = tooltip - 100
 function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage, illusion_outgoing_damage, illusion_duration)
-	local unitname = GetFullHeroName(unit)
-	local illusion = CreateUnitByName(unit:GetUnitName(), illusion_origin, true, unit, unit:GetPlayerOwner(), unit:GetTeamNumber())
+	local heroname = GetFullHeroName(unit)
+	local unitname = unit:GetUnitName()
+	local illusion = CreateUnitByName(unitname, illusion_origin, true, unit, unit:GetPlayerOwner(), unit:GetTeamNumber())
 	FindClearSpaceForUnit(illusion, illusion_origin, true)
 	illusion:SetModelScale(unit:GetModelScale())
 	illusion:SetControllableByPlayer(unit:GetPlayerID(), true)
@@ -353,16 +354,19 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	end
 
 	illusion:SetAbilityPoints(0)
-	for ability_slot = 0, unit:GetAbilityCount()-1 do
-		local i_ability = illusion:GetAbilityByIndex(ability_slot)
-		if i_ability then
-			illusion:RemoveAbility(i_ability:GetAbilityName())
-		end
+	--For perfomance
+	if Options:IsEquals("MainHeroList", "NoAbilities") or unit:HasAbility("rubick_personality_steal") or heroname ~= unitname then
+		for ability_slot = 0, unit:GetAbilityCount()-1 do
+			local i_ability = illusion:GetAbilityByIndex(ability_slot)
+			if i_ability then
+				illusion:RemoveAbility(i_ability:GetAbilityName())
+			end
 
-		local individual_ability = unit:GetAbilityByIndex(ability_slot)
-		if individual_ability then 
-			local illusion_ability = illusion:AddAbility(individual_ability:GetName())
-			illusion_ability:SetLevel(individual_ability:GetLevel())
+			local individual_ability = unit:GetAbilityByIndex(ability_slot)
+			if individual_ability then 
+				local illusion_ability = illusion:AddAbility(individual_ability:GetName())
+				illusion_ability:SetLevel(individual_ability:GetLevel())
+			end
 		end
 	end
 	for item_slot = 0, 5 do
@@ -396,19 +400,17 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	end
 	illusion.UnitName = unit.UnitName
 	illusion:SetNetworkableEntityInfo("unit_name", GetFullHeroName(illusion))
-	if NPC_HEROES_CUSTOM[unitname] then
-		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[unitname], true)
+	if not NPC_HEROES[heroname] and NPC_HEROES_CUSTOM[heroname] then
+		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroname], true)
 	end
-	--[[illusion.CustomGain_Strength = unit.CustomGain_Strength
-	illusion.CustomGain_Intelligence = unit.CustomGain_Intelligence
-	illusion.CustomGain_Agility = unit.CustomGain_Agility
-	illusion:SetNetworkableEntityInfo("AttributeStrengthGain", unit.CustomGain_Strength)
-	illusion:SetNetworkableEntityInfo("AttributeIntelligenceGain", unit.CustomGain_Intelligence)
-	illusion:SetNetworkableEntityInfo("AttributeAgilityGain", unit.CustomGain_Agility)]]
 	if unit:GetModelName() ~= illusion:GetModelName() then
 		illusion.ModelOverride = unit:GetModelName()
 		illusion:SetModel(illusion.ModelOverride)
 		illusion:SetOriginalModel(illusion.ModelOverride)
+	end
+	local rc = unit:GetRenderColor()
+	if rc ~= Vector(255, 255, 255) then
+		illusion:SetRenderColor(rc.x, rc.y, rc.z)
 	end
 	
 	return illusion

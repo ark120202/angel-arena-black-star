@@ -29,7 +29,7 @@ function GetBannedAbilities() {
 		var abinf = ParsedAbilityData[a];
 		if (abinf != null)
 			for (var v in abinf.banned_with)
-				if (b.indexOf(abinf.banned_with[v]) == -1)
+				if (b.indexOf(abinf.banned_with[v]) === -1)
 					b.push(abinf.banned_with[v]);
 	}
 	return b;
@@ -74,12 +74,12 @@ function CreateSnippet_Ability(panel, abilityname, heroname, cost) {
 function Search() {
 	var abLevels = GetLocalAbilityNamesInfo();
 	var SearchText = $("#SearchBar").text.toLowerCase();
-	if (SearchingFor != SearchText || SearchingPurchasedChecked != $("#PurchasedAbilitiesToggle").checked || JSON.stringify(SearchingAbLevels) != JSON.stringify(abLevels)) {
+	if (SearchingFor !== SearchText || SearchingPurchasedChecked !== $("#PurchasedAbilitiesToggle").checked || _.isEqual(SearchingAbLevels, abLevels)) {
 		SearchingFor = SearchText;
 		SearchingPurchasedChecked = $("#PurchasedAbilitiesToggle").checked;
 		SearchingAbLevels = abLevels;
 		var ShopSearchOverlay = $("#MainSearchRoot");
-		$.Each(ShopSearchOverlay.Children(), function(child) {
+		_.each(ShopSearchOverlay.Children(), function(child) {
 			var index = AllAbilityPanels.indexOf(child);
 			if (index > -1) {
 				child.visible = false;
@@ -92,24 +92,22 @@ function Search() {
 		if (ShowSearch) {
 			var FoundAbilities = [];
 			if (AbilityShopData) {
-				for (var tab in AbilityShopData) {
-					for (var heroKey in AbilityShopData[tab]) {
-						var hero = AbilityShopData[tab][heroKey].heroKey;
-						var abs = AbilityShopData[tab][heroKey].abilities;
-						for (var ability in abs) {
-							if ((hero.toLowerCase().indexOf(SearchText) != -1 || abs[ability].ability.toLowerCase().indexOf(SearchText) != -1 || $.Localize("#" + hero.toLowerCase()).toLowerCase().indexOf(SearchText) != -1 || $.Localize(abs[ability].ability.toLowerCase()).toLowerCase().indexOf(SearchText) != -1) && (!SearchingPurchasedChecked || (SearchingPurchasedChecked && abLevels[abs[ability].ability] != null))) {
+				_.each(AbilityShopData, function(tabContent) {
+					_.each(tabContent, function(heroData) {
+						var hero = heroData.heroKey;
+						_.each(heroData.abilities, function(abilityData) {
+							if ((hero.toLowerCase().indexOf(SearchText) !== -1 || abilityData.ability.toLowerCase().indexOf(SearchText) !== -1 || $.Localize("#" + hero.toLowerCase()).toLowerCase().indexOf(SearchText) !== -1 || $.Localize(abilityData.ability.toLowerCase()).toLowerCase().indexOf(SearchText) !== -1) && (!SearchingPurchasedChecked || (SearchingPurchasedChecked && abLevels[abilityData.ability] != null))) {
 								FoundAbilities.push({
-									name: abs[ability].ability,
-									data: abs[ability],
+									name: abilityData.ability,
+									data: abilityData,
 									hero: hero
 								});
 							}
-						}
-					}
-				}
+						});
+					});
+				});
 			}
-			FoundAbilities.sort(dynamicSort("name"));
-			$.Each(FoundAbilities, function(abilityInfo) {
+			_.each(_.sortBy(FoundAbilities, "name"), function(abilityInfo) {
 				AllAbilityPanels.push(CreateSnippet_Ability($.CreatePanel("Panel", ShopSearchOverlay, ""), abilityInfo.name, abilityInfo.hero, abilityInfo.data.cost));
 			});
 		}
@@ -122,13 +120,12 @@ function CalculateDowngradeCost(abilityname, upgradecost) {
 
 function UpdateAbilities() {
 	Search();
-	var shifttext = GameUI.IsShiftDown() ? "#ability_shop_shift_yes" : "#ability_shop_shift_no";
-	$("#ShiftStateLabel").text = $.Localize(shifttext);
+	$("#ShiftStateLabel").text = $.Localize(GameUI.IsShiftDown() ? "#ability_shop_shift_yes" : "#ability_shop_shift_no");
 	var points = Entities.GetAbilityPoints(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()));
 	$("#InfoContainerPointsLabel").text = "+" + points;
 	var abLevels = GetLocalAbilityNamesInfo();
 	var banned_with = GetBannedAbilities();
-	$.Each(AllAbilityPanels, function(panel) {
+	_.each(AllAbilityPanels, function(panel) {
 		var abilityname = panel.abilityname;
 		var purchasedInfo = abLevels[abilityname];
 		var cost = Number(panel.FindChildTraverse("PointCost").text);
@@ -159,7 +156,7 @@ function UpdateAbilities() {
 }
 
 function SelectHeroTab(tabIndex) {
-	if (SelectedTabIndex != tabIndex) {
+	if (SelectedTabIndex !== tabIndex) {
 		if (SelectedTabIndex != null) {
 			$("#HeroListPanel_tabPanels_" + SelectedTabIndex).visible = false;
 		}
@@ -169,15 +166,12 @@ function SelectHeroTab(tabIndex) {
 }
 
 function SwitchTab() {
-	if (SelectedTabIndex == 1)
-		SelectHeroTab(2);
-	else
-		SelectHeroTab(1);
+	SelectHeroTab(SelectedTabIndex === 1 ? 2 : 1);
 }
 
 function UpdateHeroAbilityList(hero, abilities) {
 	var abilitiesroot = $("#HeroAbilitiesRoot");
-	$.Each(abilitiesroot.Children(), function(child) {
+	_.each(abilitiesroot.Children(), function(child) {
 		var index = AllAbilityPanels.indexOf(child);
 		if (index > -1) {
 			child.visible = false;
@@ -186,7 +180,7 @@ function UpdateHeroAbilityList(hero, abilities) {
 	});
 	abilitiesroot.RemoveAndDeleteChildren();
 
-	$.Each(abilities, function(abilityInfo) {
+	_.each(abilities, function(abilityInfo) {
 		AllAbilityPanels.push(CreateSnippet_Ability($.CreatePanel("Panel", abilitiesroot, ""), abilityInfo.ability, hero, abilityInfo.cost));
 	});
 }
@@ -203,7 +197,7 @@ function Fill(heroesData, panel) {
 	for (var herokey in heroesData) {
 		var heroData = heroesData[herokey];
 		var StatPanel = panel.FindChildTraverse("HeroesByAttributes_" + heroData.attribute_primary);
-		var HeroImagePanel = $.CreatePanel('Image', StatPanel, "HeroListPanel_element_" + heroData.heroKey);
+		var HeroImagePanel = $.CreatePanel("Image", StatPanel, "HeroListPanel_element_" + heroData.heroKey);
 		HeroImagePanel.SetImage(TransformTextureToPath(heroData.heroKey));
 		HeroImagePanel.AddClass("HeroListElement");
 		if (heroData.isChanged) {
@@ -211,7 +205,7 @@ function Fill(heroesData, panel) {
 		}
 		var SelectHeroAction = (function(_heroData, _herokey, _panel) {
 			return function() {
-				if (SelectedHeroPanel != _panel) {
+				if (SelectedHeroPanel !== _panel) {
 					SelectedHeroData = _heroData;
 					if (SelectedHeroPanel != null) {
 						SelectedHeroPanel.RemoveClass("HeroPanelSelected");
@@ -222,7 +216,7 @@ function Fill(heroesData, panel) {
 				}
 			};
 		})(heroData, herokey, HeroImagePanel);
-		HeroImagePanel.SetPanelEvent('onactivate', SelectHeroAction);
+		HeroImagePanel.SetPanelEvent("onactivate", SelectHeroAction);
 		HeroImagePanel.SelectHeroAction = SelectHeroAction;
 		for (var k in heroData.abilities) {
 			var abinf = heroData.abilities[k];
@@ -237,7 +231,7 @@ function Fill(heroesData, panel) {
 		$("#AbilityShopBase").visible = true;
 		AbilityShopData = changesObject;
 		for (var tab in changesObject) {
-			var TabHeroesPanel = $.CreatePanel('Panel', $("#MainHeroesList"), "HeroListPanel_tabPanels_" + tab);
+			var TabHeroesPanel = $.CreatePanel("Panel", $("#MainHeroesList"), "HeroListPanel_tabPanels_" + tab);
 			TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel");
 			TabHeroesPanel.visible = false;
 			Fill(changesObject[tab], TabHeroesPanel);

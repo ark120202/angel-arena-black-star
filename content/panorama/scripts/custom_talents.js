@@ -2,12 +2,12 @@ var groupLevelMap = [];
 var TalentsInfo = {};
 
 function LoadTalentTable(table) {
-	$.Each(table, function(group, group_index) {
+	_.each(table, function(group, group_index) {
 		var grouppanel = $.CreatePanel("Panel", $("#TalentListContainer"), "talent_group_" + group_index);
 		grouppanel.BLoadLayoutSnippet("TalentColumn");
 		grouppanel.FindChildTraverse("TalentColumnHeader").text = groupLevelMap[group_index];
 		grouppanel.RequiredLevel = groupLevelMap[group_index];
-		$.Each(group, function(talent) {
+		_.each(group, function(talent) {
 			CreateTalent(talent, grouppanel.FindChildTraverse("TalentColumnInner"));
 		});
 	});
@@ -15,14 +15,14 @@ function LoadTalentTable(table) {
 
 function SpecialValuesArrayToString(values, level, percent) {
 	if (typeof values !== "object") {
-		if (level == 0)
+		if (level === 0)
 			return percent ? values + "%" : values;
 		else
 			return "<font color='gold'>" + (percent ? values + "%" : values) + "</font>";
 	} else {
 		var text = "";
-		$.Each(values, function(value, index) {
-			if (index++ == level)
+		_.each(values, function(value, index) {
+			if (index++ === level)
 				text = text + "<font color='gold'>" + (percent ? value + "%" : value) + "</font>" + "\/";
 			else
 				text = text + (percent ? value + "%" : value) + "\/";
@@ -40,7 +40,7 @@ function CreateTalent(talent, root) {
 	var CreateTooltip = function() {
 		var description = $.Localize("custom_talents_" + talent.name + "_description");
 		if (talent.special_values != null)
-			$.Each(talent.special_values, function(values, key) {
+			_.each(talent.special_values, function(values, key) {
 				description = description.replace("{" + key + "}", SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name)));
 				description = description.replace("{%" + key + "%}", SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name), true));
 			});
@@ -96,13 +96,13 @@ function Update() {
 	var unit = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID());
 	var points = Entities.GetAbilityPoints(unit);
 	$("#AbilityPointsLabel").text = points;
-	$.Each($("#TalentListContainer").Children(), function(group, group_index) {
+	_.each($("#TalentListContainer").Children(), function(group, group_index) {
 		var CompletedGroup = true;
 		var GroupAvaliable = Entities.GetLevel(unit) >= group.RequiredLevel && group_index <= GetActualTalentGroup(unit);
-		$.Each(group.FindChildTraverse("TalentColumnInner").Children(), function(icon) {
+		_.each(group.FindChildTraverse("TalentColumnInner").Children(), function(icon) {
 			var tn = icon.id.replace("talent_icon_", "");
-			var requirement = TalentsInfo[tn].requirement;
-			var Error_Requirement = requirement != null && ((IsHeroName(requirement) && GetHeroName(unit) != requirement) || Entities.GetAbilityByName(unit, requirement) == -1);
+			var requirement = String(TalentsInfo[tn].requirement);
+			var Error_Requirement = requirement != null && ((IsHeroName(requirement) && GetHeroName(unit) !== requirement) || Entities.GetAbilityByName(unit, requirement) === -1);
 			var Error_Points = points < TalentsInfo[tn].cost;
 			var level = GetTalentLevel(unit, tn);
 			var Learnt = level == (TalentsInfo[tn].max_level || 1);
@@ -128,6 +128,6 @@ function Update() {
 		groupLevelMap = changesObject.groupLevelMap;
 		LoadTalentTable(changesObject.talentList);
 	});
-	$('#ToggleHideRequirementErrors').checked = true;
+	$("#ToggleHideRequirementErrors").checked = true;
 	Update();
 })();

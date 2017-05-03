@@ -47,6 +47,7 @@
 			}
 		],
 		"no-multi-spaces": "error",
-		"space-before-function-paren": ["error", "never"]
+		"space-before-function-paren": ["error", "never"],
+		"quotes": ["error", "double", {"avoidEscape": true}]
     }
 }

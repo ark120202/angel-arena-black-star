@@ -113,7 +113,7 @@ function Update() {
 	$("#DayTime").visible = isDayTime;
 	$("#NightTime").visible = !isNSNight && !isDayTime;
 	$("#NightstalkerNight").visible = isNSNight;
-	$.Each(Game.GetAllPlayerIDs(), function(pid) {
+	_.each(Game.GetAllPlayerIDs(), function(pid) {
 		Snippet_TopBarPlayerSlot_Update(Snippet_TopBarPlayerSlot(pid));
 	});
 	for (var i in TeamPanels) {

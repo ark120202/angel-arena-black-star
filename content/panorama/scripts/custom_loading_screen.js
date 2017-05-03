@@ -37,14 +37,14 @@ function Snippet_OptionVoting(voteName, voteData) {
 	var OptionVotingVariants = votePanel.FindChildTraverse("OptionVotingVariants");
 	var shouldGroup = false;
 	votePanel.SetHasClass("ShouldGroup", shouldGroup);
-	$.Each(voteData.variants, function(variant, tIndex) {
+	_.each(voteData.variants, function(variant, tIndex) {
 		var group = shouldGroup ? OptionVotingVariants.GetChild(Math.floor((tIndex-1) / 2)) || $.CreatePanel("Panel", OptionVotingVariants, "") : OptionVotingVariants;
 		if (shouldGroup) group.AddClass("OptionVotingVariantRow");
 
 		var button = $.CreatePanel("Button", group, "option_variant_" + variant);
 		button.AddClass("ButtonBevel");
 		button.AddClass("OptionVotingVariant");
-		if (shouldGroup) button.style.horizontalAlign = tIndex % 2 == 1 ? "left" : "right";
+		if (shouldGroup) button.style.horizontalAlign = tIndex % 2 === 1 ? "left" : "right";
 		button.SetPanelEvent("onactivate", function() {
 			if (!votePanel.BHasClass("Voted")) {
 				GameEvents.SendCustomGameEventToServer("options_vote", {

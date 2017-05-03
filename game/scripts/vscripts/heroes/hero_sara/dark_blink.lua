@@ -1,70 +1,29 @@
---[[sara_energy_burst = class({})
-
-function sara_energy_burst:CastFilterResultTarget(hTarget)
-	if IsServer() then
-		if hTarget and hTarget:IsMagicImmune() and not self:GetCaster():HasScepter() then
-			return UF_FAIL_MAGIC_IMMUNE_ENEMY
-		end
-		return UnitFilter(hTarget, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(), self:GetCaster():GetTeamNumber())
-	end
-	return UF_SUCCESS
-end
+sara_dark_blink = class({})
 
 if IsServer() then
-	function sara_energy_burst:OnSpellStart()
+	function sara_dark_blink:OnSpellStart()
 		local caster = self:GetCaster()
 		if caster.GetEnergy then
+			local energyBeforeCast = caster:GetEnergy()
 			local wasted = math.max(self:GetSpecialValueFor("min_cost"), caster:GetEnergy() * self:GetSpecialValueFor("energy_pct") * 0.01)
 			if caster:GetEnergy() >= wasted then
 				caster:ModifyEnergy(-wasted)
-				local target = self:GetCursorTarget()
-				local pfx = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sara/energy_burst.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-				ParticleManager:SetParticleControlEnt(pfx, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack2", caster:GetOrigin(), true)
-				ParticleManager:SetParticleControlEnt(pfx, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true)
-				Timers:CreateTimer(0.2, function()
-					if IsValidEntity(caster) and IsValidEntity(self) and IsValidEntity(target) then
-						caster:EmitSound("Ability.LagunaBlade")
-						target:EmitSound("Ability.LagunaBladeImpact")
-						for _,v in ipairs(caster:HasScepter() and FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, self:GetSpecialValueFor("damage_aoe_scepter"), self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false) or {target}) do
-							ApplyDamage({
-								attacker = caster,
-								victim = v,
-								damage_type = self:GetAbilityDamageType(),
-								damage = wasted * self:GetSpecialValueFor("damage_per_energy_point"),
-								ability = self
-							})
-							if caster:HasScepter() then
-								ApplyDamage({
-									attacker = caster,
-									victim = v,
-									damage_type = DAMAGE_TYPE_PURE,
-									damage = wasted * self:GetSpecialValueFor("pure_per_energy_point_scepter"),
-									ability = self
-								})
-							end
-						end
-					end
-				end)
+
+				local point = self:GetCursorPosition()
+				local casterPos = caster:GetAbsOrigin()
+				local blinkRange = self:GetSpecialValueFor("blink_range") + self:GetSpecialValueFor("energy_to_blink_range") * energyBeforeCast
+
+				if (point - casterPos):Length2D() > blinkRange then
+					point = casterPos + (point - casterPos):Normalized() * blinkRange
+				end
+
+				FindClearSpaceForUnit(caster, point, false)
+				ProjectileManager:ProjectileDodge(caster)
 			end
 		end
 	end
 else
-	function sara_energy_burst:GetManaCost()
-		return math.max(self:GetSpecialValueFor("min_cost"), self:GetCaster():GetMana() * self:GetSpecialValueFor("energy_pct") * 0.01)
+	function sara_dark_blink:GetCastRange()
+		return self:GetSpecialValueFor("blink_range") + self:GetSpecialValueFor("energy_to_blink_range") * self:GetCaster():GetMana()
 	end
-end ]]--
-
-function Blink(keys)
-	local caster = keys.caster
-	local ability = keys.ability
-	local point = keys.target_points[1]
-	local casterPos = caster:GetAbsOrigin()
-	local blink_range = ability:GetLevelSpecialValueFor("blink_range", ability:GetLevel() - 1)
-
-	if (point - casterPos):Length2D() > blink_range then
-		point = casterPos + (point - casterPos):Normalized() * blink_range
-	end
-	
-	FindClearSpaceForUnit(caster, point, false)
-	ProjectileManager:ProjectileDodge(caster)
 end

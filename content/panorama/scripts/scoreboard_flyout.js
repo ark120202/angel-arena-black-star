@@ -45,7 +45,7 @@ function Snippet_Player(pid) {
 			panel.SetHasClass("EmptyPlayerRow", false);
 			panel.SetHasClass("LocalPlayer", pid === Game.GetLocalPlayerID());
 			var xpRoot = FindDotaHudElement("ScoreboardXP");
-			$.Each([xpRoot.FindChildTraverse("LevelBackground"), xpRoot.FindChildTraverse("CircularXPProgress")/*, xpRoot.FindChildTraverse("XPProgress")*/], function(p) {
+			_.each([xpRoot.FindChildTraverse("LevelBackground"), xpRoot.FindChildTraverse("CircularXPProgress")/*, xpRoot.FindChildTraverse("XPProgress")*/], function(p) {
 				p.SetPanelEvent("onactivate", function() {
 					if (GameUI.IsAltDown()) {
 						var clientEnt = Players.GetPlayerHeroEntityIndex(pid);
@@ -169,7 +169,7 @@ function Snippet_Team_Update(panel) {
 function Update() {
 	$.Schedule(0.1, Update);
 	var context = $.GetContextPanel();
-	$.Each(Game.GetAllPlayerIDs(), function(pid) {
+	_.each(Game.GetAllPlayerIDs(), function(pid) {
 		var team = Players.GetTeam(pid);
 		if (team !== DOTA_TEAM_SPECTATOR) {
 			Snippet_Player_Update(Snippet_Player(pid));
@@ -198,7 +198,7 @@ function SetFlyoutScoreboardVisible(visible) {
 	});
 	DynamicSubscribePTListener("disable_help_data", function(tableName, changesObject, deletionsObject) {
 		if (changesObject[LocalPlayerID] != null) {
-			$.Each(changesObject[LocalPlayerID], function(state, playerID) {
+			_.each(changesObject[LocalPlayerID], function(state, playerID) {
 				Snippet_SharedControlPlayer(playerID).FindChildTraverse("DisableHelpButton").checked = state === 1;
 			});
 		}

@@ -1,4 +1,4 @@
-.MetamorphosisElixirBase
+Panel .base
 {
 	vertical-align: center;
 	horizontal-align: center;
@@ -6,7 +6,7 @@
 	height: 92%;
 }
 
-.AspectRatio4x3 .MetamorphosisElixirBase
+.AspectRatio4x3 Panel .base
 {
 	vertical-align: center;
 	horizontal-align: center;
@@ -30,7 +30,16 @@
 	background-color: rgba(0,0,0,0.85);
 	flow-children: down;
 }
+#ExitButton
+{
+	horizontal-align: right;
+}
 .ForcedHeroChange #ExitButton
 {
 	visibility: collapse;
+}
+
+Panel > #SelectedHeroOverview
+{
+	margin-top: 2px;
 }

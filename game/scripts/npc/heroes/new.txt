@@ -28,7 +28,8 @@
 		"AttributeIntelligenceGain"	"1.7"
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"	"28"
-		"AttackDamageMax"	"30"	}
+		"AttackDamageMax"	"30"
+	}
 
 	"npc_arena_hero_cherub"
 	{
@@ -61,6 +62,7 @@
 		"AttackRate"	"1.3"
 		"ArmorPhysical"	"2"
 		"MagicalResistance"	"10"
+		"RenderColor"	"165 0 255"
 	}
 
 	"npc_arena_hero_zen_gehraz"
@@ -378,7 +380,7 @@
 		"ModelScale"	"1.3"
 		"Ability1"	"sara_evolution"
 		"Ability2"	"sara_space_dissection"
-		"Ability3"	"sara_energy_burst"
+		"Ability3"	"sara_dark_blink"
 		"Ability4"	"sara_fragment_of_hate"
 		"Ability5"	"sara_fragment_of_armor"
 		"Ability6"	"sara_fragment_of_logic"

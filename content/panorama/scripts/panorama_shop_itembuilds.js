@@ -18,7 +18,7 @@ function LoadGuidesForHero(heroName, skipAutoSelect, callback) {
 			if (builds.standard) Snippet_GuideListEntry(builds.standard);
 
 			CustomBuildToggleButton = Snippet_GuideListEntry({steamID: -1});
-			$.Each(best, function(build) {
+			_.each(best, function(build) {
 				if (!autoSelectedBuild) autoSelectedBuild = build;
 				Snippet_GuideListEntry(build);
 			});
@@ -45,7 +45,7 @@ function SelectItembuild(build) {
 		$("#Itembuild_version").text = build.version || "";
 		UpdateSelectedItembuildAuthorData(build.steamID, build.title);
 		//MongoObjectIDToDate(build._id)
-		$.Each(build.items, function(groupData) {
+		_.each(build.items, function(groupData) {
 			CreateItembuildGroup(groupsRoot, build.steamID === -1 ? $.Localize(groupData.title) : groupData.title, groupData.content);
 		});
 	} else {
@@ -82,7 +82,7 @@ function CreateItembuildGroup(groupsRoot, title, content) {
 				UpdateSelectedItembuildAuthorData(-1);
 			}
 		});
-		$.RegisterEventHandler('DragDrop', itemPanel, function(panelId, draggedPanel) {
+		$.RegisterEventHandler("DragDrop", itemPanel, function(panelId, draggedPanel) {
 			if ($.GetContextPanel().BHasClass("EditMode") && draggedPanel.itemname != null) {
 				itemsRoot.MoveChildBefore(createPanelForGroup(draggedPanel.itemname), itemPanel);
 				return true;
@@ -91,7 +91,7 @@ function CreateItembuildGroup(groupsRoot, title, content) {
 		return itemPanel;
 	};
 
-	$.RegisterEventHandler('DragStart', itemsRoot, function(panelId, dragCallbacks) {
+	$.RegisterEventHandler("DragStart", itemsRoot, function(panelId, dragCallbacks) {
 		//$.GetContextPanel().AddClass("DropDownMode")
 		if (!$.GetContextPanel().BHasClass("EditMode")) return false;
 		var displayPanel = $.CreatePanel("Label", groupRoot, "");
@@ -103,13 +103,13 @@ function CreateItembuildGroup(groupsRoot, title, content) {
 		return true;
 	});
 	
-	$.RegisterEventHandler('DragEnd', itemsRoot, function(panelId, draggedPanel) {
+	$.RegisterEventHandler("DragEnd", itemsRoot, function(panelId, draggedPanel) {
 		//$.GetContextPanel().RemoveClass("DropDownMode")
 		draggedPanel.DeleteAsync(0);
 		return true;
 	});
 
-	$.RegisterEventHandler('DragDrop', groupRoot, function(panelId, draggedPanel) {
+	$.RegisterEventHandler("DragDrop", groupRoot, function(panelId, draggedPanel) {
 		if ($.GetContextPanel().BHasClass("EditMode") && draggedPanel.itemname) {
 			createPanelForGroup(draggedPanel.itemname);
 			UpdateSelectedItembuildAuthorData(-1);
@@ -119,13 +119,13 @@ function CreateItembuildGroup(groupsRoot, title, content) {
 			UpdateSelectedItembuildAuthorData(-1);
 		}
 	});
-	$.Each(content, createPanelForGroup);
+	_.each(content, createPanelForGroup);
 }
 
 function ToggleEditMode(state) {
 	var newState = state != null ? state : !$.GetContextPanel().BHasClass("EditMode");
 
-	$.Each($("#ItembuildPanelsRoot").Children(), function(child) {
+	_.each($("#ItembuildPanelsRoot").Children(), function(child) {
 		var te = child.GetChild(0);
 		te.enabled = newState;
 		if (te.BHasKeyFocus()) {
@@ -138,9 +138,9 @@ function ToggleEditMode(state) {
 
 function ParseCurrentGuide() {
 	var build = {steamID: -1, items: []};
-	$.Each($("#ItembuildPanelsRoot").Children(), function(group) {
+	_.each($("#ItembuildPanelsRoot").Children(), function(group) {
 		var g = {title: group.GetChild(0).text, content: []};
-		$.Each(group.GetChild(1).Children(), function(item) {
+		_.each(group.GetChild(1).Children(), function(item) {
 			g.content.push(item.itemName);
 		});
 		build.items.push(g);
@@ -158,7 +158,7 @@ function ToggleGuidesBrowser(state) {
 			CustomBuildToggleButton.build = SelectedBuild;
 		}
 		CustomBuildToggleButton.visible = CustomBuildToggleButton.build.items != null;
-		$.Each($("#GuidesAvaliableList").Children(), function(c) {
+		_.each($("#GuidesAvaliableList").Children(), function(c) {
 			c.checked = c.build === SelectedBuild;
 			c.SetHasClass("IsSelectedGuide", c.build === SelectedBuild);
 		});
@@ -184,7 +184,7 @@ function Snippet_GuideListEntry(build) {
 	});
 	panel.FindChildTraverse("SelectGuideButton").SetPanelEvent("onactivate", function() {
 		SelectItembuild(panel.build);
-		$.Each($("#GuidesAvaliableList").Children(), function(c) {
+		_.each($("#GuidesAvaliableList").Children(), function(c) {
 			c.SetHasClass("IsSelectedGuide", c.build === SelectedBuild);
 		});
 	});
@@ -218,7 +218,7 @@ function GuideVote(vote) {
 		var a = CurrentPageGuide[vote > 0 ? "votes_up" : "votes_down"];
 		if (a.indexOf(localSteamId) === -1) a.push(localSteamId);
 	}
-	$.Each($("#GuidesAvaliableList").Children(), function(c) {
+	_.each($("#GuidesAvaliableList").Children(), function(c) {
 		if (c.build === CurrentPageGuide) {
 			c.SetDialogVariable("guide_entry_rating", newVotes);
 			return false;
@@ -246,11 +246,11 @@ function GuidesBrowserLoadBuild(build) {
 	$("#GuidesTitleLabel").text = steamID === 0 ? $.Localize("DOTA_UI_default_build") : steamID === -1 ? $.Localize("DOTA_UI_scratch_build_for").replace("%s", $.Localize(LastHero)) : build.title || "";
 	$("#GuidesBrowserDescription").text = build.description || "";
 	var GuideItemBuild = $("#GuideItemBuild");
-	$.Each(GuideItemBuild.FindChildrenWithClassTraverse("SmallItemPanel"), function(c) {
+	_.each(GuideItemBuild.FindChildrenWithClassTraverse("SmallItemPanel"), function(c) {
 		c.DestroyItemPanel();
 	});
 	GuideItemBuild.RemoveAndDeleteChildren();
-	$.Each(build.items, function(groupData) {
+	_.each(build.items, function(groupData) {
 		CreateItembuildGroup(GuideItemBuild, groupData.title, groupData.content);
 	});
 }
@@ -283,7 +283,7 @@ function PublishGuide(build) {
 
 (function() {
 	var groupsRoot = $("#ItembuildPanelsRoot");
-	$.RegisterEventHandler('DragDrop', $("#ShopItemBasePanel"), function(panelId, draggedPanel) {
+	$.RegisterEventHandler("DragDrop", $("#ShopItemBasePanel"), function(panelId, draggedPanel) {
 		if (draggedPanel.ItembuildParentPanel != null) {
 			draggedPanel.ItembuildParentPanel.DeleteAsync(0);
 			UpdateSelectedItembuildAuthorData(-1);
@@ -293,7 +293,7 @@ function PublishGuide(build) {
 		$("#GuidePublishDescription").text = "";
 		$("#GuidePublishYouTube").text = "";
 		LoadGuidesForHero(LastHero, true, function() {
-			$.Each($("#GuidesAvaliableList").Children(), function(c) {
+			_.each($("#GuidesAvaliableList").Children(), function(c) {
 				if (c.build && c.build._id === data.insertedId) SelectItembuild(c.build);
 			});
 			ToggleGuidesBrowser($.GetContextPanel().BHasClass("GuidesBrowserVisible"));
