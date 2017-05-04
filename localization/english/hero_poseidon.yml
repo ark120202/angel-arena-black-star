@@ -1,4 +1,6 @@
 npc_arena_hero_poseidon: Poseidon
+npc_arena_hero_poseidon_hype: 'Poseidon directs the sea itself against its enemies. Knocking them down with huge waves and dragging them into deadly whirlpools, he does not allow enemies to do anything, causing a terrible sea monster from the unknown depths.'
+npc_arena_hero_poseidon_bio: 'Once upon a time, the three oldest sons of Kronos divided the world among themselves: Hades took the underworld, Zeus took heaven, and Poseidon got the seas, oceans and all the other marine elements. But, behind the scenes, Zeus was the most powerful of the pantheon of the gods of Olympus. Everything was subject only to his will. However, the elder god experienced a weakness for the lives of mortals, and once lost his immortality, becoming one of them. To bring him back, he left his world to take part in the battle of the Ancients. Hades and Poseidon took advantage of this, and a terrible war broke out between the sea and the underworld. But Split changed everything. The world was shaken, and the gods lost their strength and immortality, and Poseidon was no exception. Escaping from his collapsing world, Poseidon got into the arena of the Angels and got a chance to regain his divinity, and at the same time to compete with his elder brother ...'
 
 DOTA_Tooltip_ability_poseidon_wave: Wave
 DOTA_Tooltip_ability_poseidon_wave_Description: 'Poseidon sneds a wave of sea water, that will deal damage and stun everyone who touches it.'
@@ -27,7 +29,7 @@ DOTA_Tooltip_modifier_poseidon_sea_hole_slow: Sea Hole
 DOTA_Tooltip_modifier_poseidon_sea_hole_slow_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%
 
 DOTA_Tooltip_ability_poseidon_dark_whale: Dark Whale
-DOTA_Tooltip_ability_poseidon_dark_whale_Description: Poseidon summons ancient whale from the depths of the sea. That whale will deal damage and stun all enemies in radius. Damage and stun duration will be based on victim's distance to whale.
+DOTA_Tooltip_ability_poseidon_dark_whale_Description: 'Poseidon summons ancient whale from the depths of the sea. That whale will deal damage and stun all enemies in radius. Damage and stun duration will be based on victim's distance to whale.'
 DOTA_Tooltip_ability_poseidon_dark_whale_aoe_radius: 'RADIUS:'
 DOTA_Tooltip_ability_poseidon_dark_whale_damage_min: 'MIN DAMAGE:'
 DOTA_Tooltip_ability_poseidon_dark_whale_damage_max: 'MAX DAMAGE:'

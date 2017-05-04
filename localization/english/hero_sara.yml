@@ -1,4 +1,6 @@
 npc_arena_hero_sara: Sara
+npc_arena_hero_sara_hype: 'Fragile Sarah becomes stronger with each killed creep, gaining energy for him. Weak at the beginning, it becomes stronger the longer the game lasts. In literate hands, no one can resist it.'
+npc_arena_hero_sara_bio: 'Sarah was born in an unhappy family. She did not have a father, and her mother was a prostitute-alcoholic. The girl did not attend school, did not communicate with anyone other than a drunk mother and received a psychological trauma, became a sociopath. One day she killed her mother and family next door. After this slaughter, something awakened in her. She felt a strange and dark power in her. Later, she met someone who called herself the Priestess of the Void. He helped develop her abilities. Sarah was getting stronger every day, with every murder. Until her homeworld was empty. So she traveled the dimensions, leaving behind her ruins, fueling her forces with the murders and agonies of her victims. So she got to the arena of the Angels - the place where the strongest creatures of the Universe collapsed. Perhaps, at least there will be opponents with whom she can play a little longer ...'
 
 DOTA_Tooltip_ability_sara_evolution: Evolution
 DOTA_Tooltip_ability_sara_evolution_Description: |-
@@ -17,22 +19,18 @@ DOTA_Tooltip_modifier_sara_evolution_Description: Increases maximal energy with 
 DOTA_Tooltip_ability_sara_space_dissection: Space Dissection
 DOTA_Tooltip_ability_sara_space_dissection_Description: 'Sara''s cursed blade splits time space and enemy solus. When ability is not on coolodwn it can immediately kill creep or decrease hero''s or bosses armor. When ability kills a creep you won''t get gold and experience from this creep, but instead you will get %creep_energy_multiplier%x max energy. Decreased armor will be based on Sara''s wasted energy. Armor decreasing debuff stacks. Attacking hero or boss with this ability will waste %energy_pct%%% of Sara''s max energy.'
 DOTA_Tooltip_ability_sara_space_dissection_aghanim_description: 'Killed creeps now will grant gold and experience, energy multiplier also increased. Now applying armor reduction debuff also refreshes duration of previous effects'
-DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier: 'CREEP ENERGY MULTIPLIER:'
-DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier_scepter: 'CREEP ENERGY MULTIPLIER WITH SCEPTER:'
+DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier: '%CREEP ENERGY MULTIPLIER:'
+DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier_scepter: '%CREEP ENERGY MULTIPLIER WITH SCEPTER:'
 DOTA_Tooltip_ability_sara_space_dissection_energy_to_disarmor_pct: '%ENERGY TO ARMOR REDUCTION:'
 DOTA_Tooltip_ability_sara_space_dissection_disarmor_duration: 'REDUCTION DURATION:'
 DOTA_Tooltip_ability_sara_space_dissection_energy_pct: '%ENERGY COST:'
 DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction: Space Dissection
 DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 
-DOTA_Tooltip_ability_sara_energy_burst: Energy Burst
-DOTA_Tooltip_ability_sara_energy_burst_Description: Sara directs a part of her current energy to a target unit. This ability wastes %energy_pct%%% of her current energy and deals damage for each wasted energy point.
-DOTA_Tooltip_ability_sara_energy_burst_aghanim_description: Precies spell immunity. Also now deals additional pure damage. Now deals damage in a small area around the target.
-DOTA_Tooltip_ability_sara_energy_burst_damage_per_energy_point: 'DAMAGE PER EP:'
-DOTA_Tooltip_ability_sara_energy_burst_pure_per_energy_point_scepter: 'PURE DAMAGE PER EP WITH SCEPTER:'
-DOTA_Tooltip_ability_sara_energy_burst_damage_aoe_scepter: 'DAMAGE AOE WITH SCEPTER:'
-DOTA_Tooltip_ability_sara_energy_burst_energy_pct: '%ENERGY COST:'
-DOTA_Tooltip_ability_sara_energy_burst_min_cost: 'MINIMAL WASTED ENERGY:'
+DOTA_Tooltip_ability_sara_dark_blink: Dark Blink
+DOTA_Tooltip_ability_sara_dark_blink_Description: 'Sara instantly moves to the selected point. The distance increases with the amount of energy.'
+DOTA_Tooltip_ability_sara_dark_blink_blink_range: 'RANGE:'
+DOTA_Tooltip_ability_sara_dark_blink_energy_to_blink_range: 'ENERGY IN RANGE:'
 
 DOTA_Tooltip_ability_sara_fragment_of_hate: Fragment of Hate
 DOTA_Tooltip_ability_sara_fragment_of_hate_Description: 'The Fragment of Sara''s soul, embodying her violence and power. Gives each her attack a chance to deal critical strike. Critical strike damage will be based on current energy. Additionally passively increases her attack damage, based on current energy.'

@@ -11,7 +11,7 @@ if IsServer() then
 
 				local point = self:GetCursorPosition()
 				local casterPos = caster:GetAbsOrigin()
-				local blinkRange = self:GetSpecialValueFor("blink_range") + self:GetSpecialValueFor("energy_to_blink_range") * energyBeforeCast
+				local blinkRange = self:GetSpecialValueFor("blink_range") + self:GetSpecialValueFor("energy_to_blink_range") * energyBeforeCast * 0.01
 
 				if (point - casterPos):Length2D() > blinkRange then
 					point = casterPos + (point - casterPos):Normalized() * blinkRange

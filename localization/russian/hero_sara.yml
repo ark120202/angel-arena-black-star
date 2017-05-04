@@ -1,0 +1,59 @@
+npc_arena_hero_sara: Sara
+
+DOTA_Tooltip_ability_sara_evolution: Evolution
+DOTA_Tooltip_ability_sara_evolution_Description: |-
+  Мана Сары заменена энергией, которую нельзя изменить обычным способом.
+  Максимальное здоровье снижено на %health_reduction_pct%%%, броня снижена на %armor_reduction_pct%%%.
+  Максимальное здоровье увеличено %bonus_health% (это здоровье не уменьшается)
+  Каждую минуту максимальная энергия растет на %max_per_minute_pct%%% + %max_per_minute%
+  Когда Сара добивает крипов, энергия увеличивается на %max_per_creep_pct%%% + %max_per_creep%
+  Каждую секунду мана восстанавливается на %per_sec_pct%%% + %per_sec%
+  Также восстанавливается %damage_to_energy_pct%%% от всего нанесенного урона.
+DOTA_Tooltip_ability_sara_evolution_aghanim_description: Увеличивает пассивное восстановление энергии
+DOTA_Tooltip_ability_sara_evolution_per_sec_multiplier_scepter: 'ПАССИВНАЯ РЕГЕНЕРАЦИЯ СО СКИПЕТРОМ:'
+DOTA_Tooltip_modifier_sara_evolution: Evolution
+DOTA_Tooltip_modifier_sara_evolution_Description: Увеличивает максимальную энергию за каждый цикл на %dMODIFIER_PROPERTY_TOOLTIP%
+
+DOTA_Tooltip_ability_sara_space_dissection: Space Dissection
+DOTA_Tooltip_ability_sara_space_dissection_Description: 'Клинок Сары рассекает пространство, время и души врагов.Когда способность не вперезарядке, она мгновенно убивает крипа и снижает броню боссам и героям. Когда способность убивает крипа, вы не получаете за него золото и опыт, но прирост максимальной энергии увеличивается вдвое. Снижение брони зависит от потребления энергии этой способностью. Снижение брони стакается. При атаке боссов или героев отнимается %energy_pct%%% максимальной энергии Сары.'
+DOTA_Tooltip_ability_sara_space_dissection_aghanim_description: 'Теперь убийство крипов дает золото и опыт, множитель маны также увеличен до 4. Теперь количество стаков не ограничено.'
+DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier: 'МНОЖИТЕЛЬ:'
+DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier_scepter: 'МНОЖИТЕЛЬ СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_sara_space_dissection_energy_to_disarmor_pct: '%ЭНЕРГИИ В СНИЖЕНИЕ БРОНИ:'
+DOTA_Tooltip_ability_sara_space_dissection_disarmor_duration: 'ДЛИТЕЛЬНОСТЬ СНИЖЕНИЯ:'
+DOTA_Tooltip_ability_sara_space_dissection_energy_pct: '%МАНАКОСТ:'
+DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction: Space Dissection
+DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction_Description: Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+
+DOTA_Tooltip_ability_sara_dark_blink: Dark Blink
+DOTA_Tooltip_ability_sara_dark_blink_Description: 'Сара мгновенно перемещается из одной точки пространства в другую. Дальность применения зависит от количества текущей энергии.'
+DOTA_Tooltip_ability_sara_dark_blink_blink_range: 'ДАЛЬНОСТЬ:'
+DOTA_Tooltip_ability_sara_dark_blink_energy_to_blink_range: '%ЭНЕРГИИ В ДАЛЬНОСТЬ:'
+
+DOTA_Tooltip_ability_sara_fragment_of_hate: Fragment of Hate
+DOTA_Tooltip_ability_sara_fragment_of_hate_Description: 'Фрагмент души Сары, олицетворяющий ее жестокость и силу. Добавляет атакам шанс критического удара. Множитель крита основан на ее текущей энергии. Также увеличивает ее урон, основываясь на текущей энергии.'
+DOTA_Tooltip_ability_sara_fragment_of_hate_aghanim_description: Активная способность; Временно увеличивает бонус к урону.
+DOTA_Tooltip_ability_sara_fragment_of_hate_crit_chance_pct: '%ШАНС КРИТА:'
+DOTA_Tooltip_ability_sara_fragment_of_hate_energy_to_crit_pct: '%ЭНЕРГИИ В КРИТ:'
+DOTA_Tooltip_ability_sara_fragment_of_hate_energy_to_damage_pct: '%ЭНЕРГИИ В УРОН:'
+DOTA_Tooltip_ability_sara_fragment_of_hate_damage_pct_scepter: '%ЭНЕРГИИ В УРОН СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_sara_fragment_of_hate_buff_duration_scepter: 'ДЛИТЕЛЬНОСТЬ БАФФА СО СКИПЕТРОМ:'
+DOTA_Tooltip_modifier_sara_fragment_of_hate_buff_scepter: Fragment of Hate
+DOTA_Tooltip_modifier_sara_fragment_of_hate_buff_scepter_Description: Бонусный урон увеличен на %dMODIFIER_PROPERTY_TOOLTIP%%%
+
+DOTA_Tooltip_ability_sara_fragment_of_armor: Fragment of Armor
+DOTA_Tooltip_ability_sara_fragment_of_armor_Description: 'Фрагмент души Сары, олицетворяющий ее стойкость и непоколебимость. Создает щит, снижающий входящий урон на %blocked_damage_pct%%%, расходуя энергию Сары.'
+DOTA_Tooltip_ability_sara_fragment_of_armor_aghanim_description: Часть урона возвращается нападающим. Урон не отразится, если у Сары не хватило энергии поглотить его.
+DOTA_Tooltip_ability_sara_fragment_of_armor_damage_per_energy: 'УРОНА НА ЕДИНИЦУ ЭНЕРГИИ:'
+DOTA_Tooltip_ability_sara_fragment_of_armor_blocked_damage_pct: '%СНИЖЕНИЕ УРОНА:'
+DOTA_Tooltip_ability_sara_fragment_of_armor_reflected_damage_pct_scepter: '%ОТРАЖЕНИЕ УРОНА:'
+
+DOTA_Tooltip_ability_sara_fragment_of_logic: Fragment of Logic
+DOTA_Tooltip_ability_sara_fragment_of_logic_Description: 'Фрагмент души Сары, олицетворяющий ее хитрость и интеллект. Когда Сара получает летальный урон, она тратит %energy_const% + %energy_pct%%% своей энергии для полного восстановления здоровья. После срабатывания способности, Сара не может восстанавливать энергию 10 секунд. При срабатывании способности с Сары сбрасываются все дебаффы и станы.'
+DOTA_Tooltip_ability_sara_fragment_of_logic_energy_const: 'ЗНАЧЕНИЕ ЭНЕРГИИ:'
+DOTA_Tooltip_ability_sara_fragment_of_logic_energy_pct: '%ПРОЦЕНТ ЭНЕРГИИ:'
+DOTA_Tooltip_ability_sara_fragment_of_logic_debuff_duration: 'ДЛИТЕЛЬНОСТЬ ДЕБАФФА:'
+DOTA_Tooltip_modifier_sara_fragment_of_logic_debuff: Fragment of Logic
+DOTA_Tooltip_modifier_sara_fragment_of_logic_debuff_Description: Невозможно восстановить энергию.
+DOTA_Tooltip_modifier_sara_fragment_of_logic_buff_scepter: Fragment of Logic
+DOTA_Tooltip_modifier_sara_fragment_of_logic_buff_scepter_Description: Кулдаун способности снижен до единицы.

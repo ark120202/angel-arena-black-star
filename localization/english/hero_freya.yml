@@ -1,4 +1,6 @@
 npc_arena_hero_freya: Freya
+npc_arena_hero_apocalypse_hype: ''
+npc_arena_hero_apocalypse_bio: ''
 
 DOTA_Tooltip_ability_freya_strike_the_ice: Strike the Ice
 DOTA_Tooltip_ability_freya_strike_the_ice_Description: 'Freya launches ice bolts to all enemies in selected area. On impact these bolts will deal damage, stun and prevent unit from regenerating or healing.'

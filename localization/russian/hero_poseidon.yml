@@ -1,0 +1,37 @@
+npc_arena_hero_poseidon: Poseidon
+npc_arena_hero_poseidon_bio: 'Когда-то давно три старших сына Кроноса разделили между собой мир: Аид взял подземное царство, Зевс взял небеса, а Посейдону достались моря, океаны и все прочие морские стихии. Но, негласно, всем правил Зевс - сильнейший из пантеона богов Олимпа. Все подчинялось лишь его воле. Однако старший бог испытывал слабость к жизням смертных, и однажды утратил свое бессмертие, став одним из них. Чтобы вернуть его назад, он покинул свой мир, чтобы принять участие в битве Древних. Аид и Посейдон воспользовались этим, и разразилась ужасная война между морским и подземным миром. Но Раскол изменил всем. Мир пошатнулся, и боги утратили свои силы и бессмертие, и Посейдон не был исключением. Спасаясь из своего разрушающегося мира, Посейдон попал на арену Ангелов и получил шанс вернуть свою божественность, а заодно померяться силами со своим старшим братом... '
+npc_arena_hero_poseidon_hype: 'Посейдон направляет само море против своих врагов. Сбивая их с ног огромными волнами и затягивая в смертоносные водовороты, он не дает врагам ничего сделать, вызывая ужасное морское чудовище из неизведанных глубин.'
+
+DOTA_Tooltip_ability_poseidon_wave: Wave
+DOTA_Tooltip_ability_poseidon_wave_Description: 'Посейдон создает морскую волну, оглушая и нанося урон врагам.'
+DOTA_Tooltip_ability_poseidon_wave_stun_duration: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_poseidon_wave_range: 'ДАЛЬНОСТЬ:'
+
+DOTA_Tooltip_ability_poseidon_trident: Trident
+DOTA_Tooltip_ability_poseidon_trident_Description: 'Посейдон зачаровывает свой трезубец, получая скорость передвижения, сплеш и доп. урон.'
+DOTA_Tooltip_ability_poseidon_trident_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_poseidon_trident_movement_speed_pct: '%СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_poseidon_trident_cleave_damage_pct: '%ЧИСТЫЙ УРОН:'
+DOTA_Tooltip_ability_poseidon_trident_cleave_radius: 'РАДИУС СПЛЕША:'
+DOTA_Tooltip_modifier_poseidon_trident: Trident
+DOTA_Tooltip_modifier_poseidon_trident_Description: 'Скорость передвижение увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, атаки наносят бонусный урон.'
+
+DOTA_Tooltip_ability_poseidon_sea_hole: Sea Hole
+DOTA_Tooltip_ability_poseidon_sea_hole_Description: 'Создает водоворот в указанной точке, втягивая врагов к центру и замедляя на процент, основанный на расстоянии героя к центру. Если расстояние менее %mute_radius%, враг не сможет использовать способности и предметы.'
+DOTA_Tooltip_ability_poseidon_sea_hole_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_poseidon_sea_hole_aoe_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_poseidon_sea_hole_pull_per_second: 'СКОРОСТЬ ВТЯГИВАНИЯ:'
+DOTA_Tooltip_ability_poseidon_sea_hole_slow_min_pct: '%МИН. ЗАМЕДЛЕНИЕ:'
+DOTA_Tooltip_ability_poseidon_sea_hole_slow_max_pct: '%МАКС. ЗАМЕДЛЕНИЕ:'
+DOTA_Tooltip_modifier_poseidon_sea_hole_mute: Sea Hole Mute
+DOTA_Tooltip_modifier_poseidon_sea_hole_mute_Description: Не может действовать.
+DOTA_Tooltip_modifier_poseidon_sea_hole_slow: Sea Hole
+DOTA_Tooltip_modifier_poseidon_sea_hole_slow_Description: Скорость движения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%
+
+DOTA_Tooltip_ability_poseidon_dark_whale: Dark Whale
+DOTA_Tooltip_ability_poseidon_dark_whale_Description: 'Посейдон призывает древнего кита из морских глубин. Кит наносит урон и оглушает врагов врадиусе. Урон и оглушение зависит от расстояния героя до кита.'
+DOTA_Tooltip_ability_poseidon_dark_whale_aoe_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_poseidon_dark_whale_damage_min: 'МИН. УРОН:'
+DOTA_Tooltip_ability_poseidon_dark_whale_damage_max: 'МАКС. УРОН:'
+DOTA_Tooltip_ability_poseidon_dark_whale_stun_min: 'МИН. ДЛИТЕЛЬНОСТЬ СТАНА:'
+DOTA_Tooltip_ability_poseidon_dark_whale_stun_max: 'МАКС. ДЛИТЕЛЬНОСТЬ СТАНА:'

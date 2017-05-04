@@ -66,7 +66,7 @@
 			"11"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"per_sec_multiplier_scepter"	"2"
+				"per_sec_multiplier_scepter"	"4"
 			}
 		}
 	}
@@ -139,7 +139,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"energy_to_blink_range"	"5"
+				"energy_to_blink_range"	"6 7 8 9 10 11 12"
 			}
 		}
 
