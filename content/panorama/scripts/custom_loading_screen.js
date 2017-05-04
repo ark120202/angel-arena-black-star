@@ -8,7 +8,7 @@ function FillTips() {
 	while (true) {
 		var unlocalized = "arena_tip_" + i;
 		var localized = $.Localize(unlocalized);
-		if (localized != unlocalized) {
+		if (localized !== unlocalized) {
 			TipList.push({
 				num: i,
 				text: localized
@@ -37,7 +37,9 @@ function Snippet_OptionVoting(voteName, voteData) {
 	var OptionVotingVariants = votePanel.FindChildTraverse("OptionVotingVariants");
 	var shouldGroup = false;
 	votePanel.SetHasClass("ShouldGroup", shouldGroup);
-	_.each(voteData.variants, function(variant, tIndex) {
+	for (var tIndex in voteData.variants) {
+		tIndex = Number(tIndex);
+		var variant = voteData.variants[tIndex];
 		var group = shouldGroup ? OptionVotingVariants.GetChild(Math.floor((tIndex-1) / 2)) || $.CreatePanel("Panel", OptionVotingVariants, "") : OptionVotingVariants;
 		if (shouldGroup) group.AddClass("OptionVotingVariantRow");
 
@@ -61,7 +63,7 @@ function Snippet_OptionVoting(voteName, voteData) {
 		var votedataLabel = $.CreatePanel("Label", button, "vote_data_variant_" + tIndex);
 		votedataLabel.text = "{s:votes}";
 		votedataLabel.style.horizontalAlign = "right";
-	});
+	}
 	return votePanel;
 }
 

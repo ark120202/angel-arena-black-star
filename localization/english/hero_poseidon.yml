@@ -29,7 +29,7 @@ DOTA_Tooltip_modifier_poseidon_sea_hole_slow: Sea Hole
 DOTA_Tooltip_modifier_poseidon_sea_hole_slow_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%
 
 DOTA_Tooltip_ability_poseidon_dark_whale: Dark Whale
-DOTA_Tooltip_ability_poseidon_dark_whale_Description: 'Poseidon summons ancient whale from the depths of the sea. That whale will deal damage and stun all enemies in radius. Damage and stun duration will be based on victim's distance to whale.'
+DOTA_Tooltip_ability_poseidon_dark_whale_Description: 'Poseidon summons ancient whale from the depths of the sea. That whale will deal damage and stun all enemies in radius. Damage and stun duration will be based on victim''s distance to whale.'
 DOTA_Tooltip_ability_poseidon_dark_whale_aoe_radius: 'RADIUS:'
 DOTA_Tooltip_ability_poseidon_dark_whale_damage_min: 'MIN DAMAGE:'
 DOTA_Tooltip_ability_poseidon_dark_whale_damage_max: 'MAX DAMAGE:'

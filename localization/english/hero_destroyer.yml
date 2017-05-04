@@ -1,6 +1,6 @@
 npc_arena_hero_destroyer: Destroyer
-npc_arena_hero_apocalypse_hype: ''
-npc_arena_hero_apocalypse_bio: ''
+npc_arena_hero_destroyer_hype: ''
+npc_arena_hero_destroyer_bio: ''
 
 DOTA_Tooltip_ability_destroyer_armor_crush: Armor Crush
 DOTA_Tooltip_ability_destroyer_armor_crush_Description: 'Destroyer strikes enemy unit with his hammer, dealing damage, stunning enemy and decreasing target''s armor'
