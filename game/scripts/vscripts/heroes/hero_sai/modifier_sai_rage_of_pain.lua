@@ -6,8 +6,8 @@ end
 
 function modifier_sai_rage_of_pain:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-		MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE
+		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
+		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
 	}
 end
 
@@ -20,9 +20,11 @@ function modifier_sai_rage_of_pain:GetModifierPreAttack_CriticalStrike(keys)
 	end
 end
 
-function modifier_sai_rage_of_pain:GetModifierBaseDamageOutgoing_Percentage(keys)
-	local ability = self:GetAbility()
-	local parent = self:GetParent()
-	local pctHealth = math.round(parent:GetHealth() / parent:GetMaxHealth() * 10)
-	return parent:GetSpecialValueFor("damage_pct") * (10 - pctHealth)
+if IsServer() then
+	function modifier_sai_rage_of_pain:GetModifierPreAttack_BonusDamage(keys)
+		local ability = self:GetAbility()
+		local parent = self:GetParent()
+		local pctHealth = math.round(parent:GetHealth() / parent:GetMaxHealth() * 10)
+		return parent:GetBaseDamageMax()*(ability:GetSpecialValueFor("damage_pct") * (10 - pctHealth)*0.01)
+	end
 end
