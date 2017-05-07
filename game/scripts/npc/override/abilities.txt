@@ -2148,8 +2148,8 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"900"
-		"LevelsBetweenUpgrades"	"8"
-		"RequiredLevel"	"3"
+		"LevelsBetweenUpgrades"	"3"
+		"RequiredLevel"	"1"
 		"AbilitySpecial"
 		{
 			"01"

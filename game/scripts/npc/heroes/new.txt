@@ -399,18 +399,17 @@
 		"AttackDamageMax"	"41"
 	}
 
-	"npc_arena_hero_say"
+	"npc_arena_hero_sai"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_say"
-		"Enabled"		"0"
-		"Model"	"models/units/say/say.vmdl"
+		"SceneCamera"	"custom_scene_hero_sai"
+		"Enabled"		"1"
+		"Model"	"models/units/sai/sai.vmdl"
 		"ModelScale"	"1.3"
-		"Ability1"	""
-		"Ability2"	""
-		"Ability3"	""
-		"Ability4"	""
-		"Ability5"	""
+		"Ability1"	"sai_rage_of_pain"
+		"Ability2"	"sai_divine_flesh"
+		"Ability3"	"sai_immortal"
+		"Ability4"	"sai_release_of_forge"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttackRange"			"150"
@@ -422,8 +421,8 @@
 		"AttributeStrengthGain"	"2.8"
 		"AttributeIntelligenceGain"	"3.0"
 		"AttributeAgilityGain"	"2.2"
-		"AttackDamageMin"		"25"
-		"AttackDamageMax"		"25"
+		"AttackDamageMin"		"30"
+		"AttackDamageMax"		"35"
 	}
 
 	"npc_arena_hero_debug"
