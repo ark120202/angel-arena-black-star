@@ -41,8 +41,9 @@ function CreateTalent(talent, root) {
 		var description = $.Localize("custom_talents_" + talent.name + "_description");
 		if (talent.special_values != null)
 			_.each(talent.special_values, function(values, key) {
-				description = description.replace("{" + key + "}", SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name)));
-				description = description.replace("{%" + key + "%}", SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name), true));
+				description = description
+					.replace("{" + key + "}", SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name)))
+					.replace("{%" + key + "%}", SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name), true));
 			});
 		$.DispatchEvent("UIShowCustomLayoutParametersTooltip", panel, "TalentTooltip", "file://{resources}/layout/custom_game/custom_talent_tooltip.xml",
 			"title=" + $.Localize("custom_talents_" + talent.name) +
