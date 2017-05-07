@@ -102,11 +102,15 @@ function Update() {
 		var GroupAvaliable = Entities.GetLevel(unit) >= group.RequiredLevel && group_index <= GetActualTalentGroup(unit);
 		_.each(group.FindChildTraverse("TalentColumnInner").Children(), function(icon) {
 			var tn = icon.id.replace("talent_icon_", "");
-			var requirement = String(TalentsInfo[tn].requirement);
-			var Error_Requirement = requirement != null && ((IsHeroName(requirement) && GetHeroName(unit) !== requirement) || Entities.GetAbilityByName(unit, requirement) === -1);
+
+			var Error_Requirement = false;
+			if (TalentsInfo[tn].requirement) {
+				var requirement = TalentsInfo[tn].requirement;
+				Error_Requirement = (IsHeroName(requirement) && GetHeroName(unit) !== requirement) || Entities.GetAbilityByName(unit, requirement) === -1;
+			}
 			var Error_Points = points < TalentsInfo[tn].cost;
 			var level = GetTalentLevel(unit, tn);
-			var Learnt = level == (TalentsInfo[tn].max_level || 1);
+			var Learnt = level === (Number(TalentsInfo[tn].max_level) || 1);
 			icon.SetHasClass("Error_Requirement", Error_Requirement);
 			icon.SetHasClass("Error_Points", Error_Points);
 			icon.SetHasClass("Learnt", Learnt);
