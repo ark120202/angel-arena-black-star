@@ -4,26 +4,44 @@
 	{
 		"BaseClass"             		"ability_lua"
 		"AbilityTextureName"			"arena/sai_rage_of_pain"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ScriptFile"					"heroes/hero_sai/rage_of_pain.lua"
 		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_pct"			"12 20 28 36 44 52 60"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_chance_pct"		"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_pct"				"6 15 24 33 42 51 60"
+			}
+		}
 	}
 	"sai_divine_flesh"
 	{
-		"BaseClass"             		"ability_lua"
+		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"arena/sai_divine_flesh"
 		"MaxLevel" 						"7"
 	}	
 	"sai_immortal"
 	{
-		"BaseClass"             		"ability_lua"
+		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"arena/sai_immortal"
 		"MaxLevel" 						"7"
 	}
 	"sai_release_of_forge"
 	{
-		"BaseClass"             		"ability_lua"
+		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"arena/sai_release_of_forge"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel" 						"7"
 	}
 }
