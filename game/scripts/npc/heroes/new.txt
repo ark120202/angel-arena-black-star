@@ -412,7 +412,7 @@
 		"Ability4"	"sai_release_of_forge"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-		"AttackRange"			"150"
+		"AttackRange"			"300"
 		"ProjectileModel"		""
 		"AttackRate"			"1.1"
 		"AttributeBaseStrength"	"24"
