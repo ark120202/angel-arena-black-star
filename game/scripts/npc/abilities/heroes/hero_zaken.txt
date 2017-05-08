@@ -305,7 +305,7 @@
 			{
 				"ScriptFile"	"kv.lua"
 				"Function"		"SummonUnit"
-				"summoned"		"npc_arena_zaken_sailor"
+				"summoned"		"npc_arena_divine_knight"
 				"summon_random_radius"	"200"
 				"duration"				"%sailor_duration"
 				"health"				"%sailor_health"
@@ -314,8 +314,7 @@
 				"health_regeneration"	"%sailor_health_regen"
 				"gold"					"%sailor_bounty"
 				"amount"				"%sailors_amount"
-			}
-			
+			}	
 		}
 	}
 

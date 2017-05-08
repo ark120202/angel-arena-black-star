@@ -14,4 +14,23 @@ DOTA_Tooltip_ability_destroyer_seal_of_limit_health_regen: 'РЕГЕНЕРАЦИ
 
 DOTA_Tooltip_ability_destroyer_body_reconstruction_Description: 'Destroyer полностью перестраивает своё тело, мгновенно восстанавливая здоровье и ману, а также сбрасывая время перезарядки всех его предметов.'
 
-DOTA_Tooltip_ability_destroyer_frenzy_Description: '---'
+DOTA_Tooltip_ability_destroyer_frenzy: Frenzy
+DOTA_Tooltip_ability_destroyer_frenzy_Description: 'Destroyer высвобождает боевой дух, увеличивая свои возможности'
+DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl1: |-
+  %Level 1
+  • HEALTH TO TRIGGER:
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl1: '%• ДОПОЛНИТЕЛЬНЫЙ УРОН:'
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl1: '%• БОНУСНАЯ БРОНЯ:'
+DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl1: '• ДОПОЛНИТЕЛЬНАЯ СКОРОСТЬ БЕГА:'
+DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl2: |-
+  %Level 2
+  • HEALTH TO TRIGGER:
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl2: '%• ДОПОЛНИТЕЛЬНЫЙ УРОН:'
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl2: '%• БОНУСНАЯ БРОНЯ:'
+DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl2: '• ДОПОЛНИТЕЛЬНАЯ СКОРОСТЬ БЕГА:'
+DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl3: |-
+  %Level 3
+  • HEALTH TO TRIGGER:
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl3: '%• ДОПОЛНИТЕЛЬНЫЙ УРОН:'
+DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl3: '%• БОНУСНАЯ БРОНЯ:'
+DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl3: '• ДОПОЛНИТЕЛЬНАЯ СКОРОСТЬ БЕГА:'

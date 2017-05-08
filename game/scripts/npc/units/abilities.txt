@@ -680,4 +680,62 @@
 			}
 		}
 	}
+
+	"npc_arena_divine_knight"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/kunkka/kunkka.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"Level"						"1"
+		"ModelScale"				"0.65"
+		"IsSummoned"				"1"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+		"AttackRate"				"0.4"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"HealthBarOffset"			"80"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"350"
+		"MovementTurnRate"			"0.6"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1"
+		"StatusHealthRegen"			"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"900"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "10" }
+				"Wearable2" { "ItemDef" "11" }
+				"Wearable3" { "ItemDef" "12" }
+				"Wearable4" { "ItemDef" "14" }
+				"Wearable5" { "ItemDef" "81" }
+			}
+		}
+	}
 }

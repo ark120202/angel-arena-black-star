@@ -176,6 +176,9 @@ function SummonUnit(keys)
 			unit:SetMinimumGoldBounty(keys.gold)
 			unit:SetMaximumGoldBounty(keys.gold)
 		end
+		if keys.xp then
+			unit:SetDeathXP(keys.xp)
+		end
 		if keys.movespeed then
 			unit:SetBaseMoveSpeed(keys.movespeed)
 		end

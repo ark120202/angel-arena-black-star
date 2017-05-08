@@ -18,7 +18,7 @@ DOTA_Tooltip_ability_destroyer_seal_of_limit_health_regen: 'HEALTH REGEN:'
 DOTA_Tooltip_ability_destroyer_body_reconstruction: Body Reconstruction
 DOTA_Tooltip_ability_destroyer_body_reconstruction_Description: 'Destroyer rebuilds his body, immediatly recovering all his health and mana points and refreshing all items in his inventory'
 DOTA_Tooltip_ability_destroyer_frenzy: Frenzy
-DOTA_Tooltip_ability_destroyer_frenzy_Description: ''
+DOTA_Tooltip_ability_destroyer_frenzy_Description: 'Destroyer frees morale by increasing its capabilities'
 DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl1: |-
   %Level 1
   • HEALTH TO TRIGGER:
