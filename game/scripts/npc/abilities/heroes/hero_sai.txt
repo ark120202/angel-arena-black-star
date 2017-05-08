@@ -12,17 +12,17 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"damage_pct"			"12 20 28 36 44 52 60"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"crit_chance_pct"		"10"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"crit_pct"				"6 15 24 33 42 51 60"
 			}
 		}
