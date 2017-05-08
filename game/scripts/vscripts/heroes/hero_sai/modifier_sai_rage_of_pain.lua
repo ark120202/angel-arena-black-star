@@ -1,7 +1,7 @@
 modifier_sai_rage_of_pain = class({})
 
 function modifier_sai_rage_of_pain:IsHidden()
-	return true
+	return false
 end
 
 function modifier_sai_rage_of_pain:DeclareFunctions()
@@ -11,7 +11,7 @@ function modifier_sai_rage_of_pain:DeclareFunctions()
 	}
 end
 
-function modifier_sai_rage_of_pain:GetModifierPreAttack_CriticalStrike(keys)
+function modifier_sai_rage_of_pain:GetModifierPreAttack_CriticalStrike()
 	local ability = self:GetAbility()
 	local parent = self:GetParent()
 	local pctHealth = math.round(parent:GetHealth() / parent:GetMaxHealth() * 10)
@@ -20,11 +20,9 @@ function modifier_sai_rage_of_pain:GetModifierPreAttack_CriticalStrike(keys)
 	end
 end
 
-if IsServer() then
-	function modifier_sai_rage_of_pain:GetModifierPreAttack_BonusDamage(keys)
-		local ability = self:GetAbility()
-		local parent = self:GetParent()
-		local pctHealth = math.round(parent:GetHealth() / parent:GetMaxHealth() * 10)
-		return parent:GetBaseDamageMax()*(ability:GetSpecialValueFor("damage_pct") * (10 - pctHealth)*0.01)
-	end
+function modifier_sai_rage_of_pain:GetModifierPreAttack_BonusDamage()
+	local ability = self:GetAbility()
+	local parent = self:GetParent()
+	local pctHealth = math.round(parent:GetHealth() / parent:GetMaxHealth() * 10)
+	return parent:GetBaseDamageMax()*(ability:GetSpecialValueFor("damage_pct") * (10 - pctHealth)*0.01)
 end
