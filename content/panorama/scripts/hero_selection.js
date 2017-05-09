@@ -317,7 +317,7 @@ function UpdateMainTable(tableName, changesObject, deletionsObject) {
 	if (newState < HERO_SELECTION_PHASE_END && changesObject.HeroTabs != null) {
 		if (HeroesPanels.length === 0 && HeroesData) {
 			_.each(changesObject.HeroTabs, function(tabContent, tabKey) {
-				var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey);
+				var TabHeroesPanel = $.CreatePanel("Panel", $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey);
 				TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel");
 				FillHeroesTable(tabContent, TabHeroesPanel);
 				TabHeroesPanel.visible = false;

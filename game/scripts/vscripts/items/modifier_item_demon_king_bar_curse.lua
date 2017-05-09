@@ -20,20 +20,21 @@ if IsServer() then
 
 	function modifier_item_demon_king_bar_curse:OnIntervalThink()
 		local parent = self:GetParent()
+		local ability = self:GetAbility()
 		ApplyDamage({
-			attacker = parent,
+			attacker = self:GetCaster(),
 			victim = parent,
 			damage = self:OnTooltip() * 0.5,
-			damage_type = ability:GetAbilityDamageType(),
+			damage_type = DAMAGE_TYPE_PURE,
 			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 			ability = ability,
 		})
 		if not parent:IsAlive() then
-			target:EmitSound("Hero_VengefulSpirit.MagicMissileImpact")
+			parent:EmitSound("Hero_VengefulSpirit.MagicMissileImpact")
 		end
 	end
+end
 
-	function modifier_item_demon_king_bar_curse:OnTooltip()
-		return 2 ^ math.ceil(self:GetDuration())
-	end
+function modifier_item_demon_king_bar_curse:OnTooltip()
+	return 1.1 ^ math.ceil(self:GetElapsedTime())/2
 end

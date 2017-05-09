@@ -965,13 +965,13 @@ DOTA_Tooltip_modifier_item_urn_of_souls_damage: Shadow Release
 DOTA_Tooltip_modifier_item_urn_of_souls_damage_Description: Сжигает ману со временем.
 DOTA_Tooltip_ability_item_demon_king_bar: Demon King Bar
 DOTA_Tooltip_ability_item_demon_king_bar_Description: |-
-  Активируемая: <font color='#b44ce3'>Curse</font> - Прокленает вражеского героя, из-за чего он умрёт через %curse_duration% секунд. Этот эффект может быть сброшен.
+  Активируемая: <font color='#b44ce3'>Curse</font> - Проклинает вражеского героя, из-за чего он будет непрерывно получать урон, увеличивающийся с каждой секундой. Этот эффект может быть сброшен.
   Пассивная: Mini-Bash — дает шанс нанести дополнительный урон и кратковременно оглушить цель при каждой атаке.
   Пассивная: True Strike — исключает шанс промаха при атаке.
 DOTA_Tooltip_ability_item_demon_king_bar_bash_chance: '%ШАНС МИНИ-ОГЛУШЕНИЯ:'
 DOTA_Tooltip_ability_item_demon_king_bar_bash_damage: 'УРОН МИНИ-ОГЛУШЕНИЯ:'
 DOTA_Tooltip_modifier_item_demon_king_bar_curse: 'Проклятье'
-DOTA_Tooltip_modifier_item_demon_king_bar_curse_Description: 'Непрерывно получает урон, который увеличивается с каждой секундой (сейчас %MODIFIER_PROPERTY_TOOLTIP%). Снимается очищением.'
+DOTA_Tooltip_modifier_item_demon_king_bar_curse_Description: 'Непрерывно получает урон, который увеличивается с каждой секундой (сейчас %dMODIFIER_PROPERTY_TOOLTIP%). Снимается очищением.'
 DOTA_Tooltip_ability_item_butterfly_arena: Butterfly
 DOTA_Tooltip_ability_item_butterfly_arena_Description: |-
   Активируемая: Flutter - Даёт владельцу максимальную скорость передвижения на %duration% секунд.
@@ -1233,7 +1233,7 @@ DOTA_Tooltip_modifier_item_phantom_cuirass_ally_aura_Description: |-
   Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
 DOTA_Tooltip_modifier_item_phantom_cuirass_enemy_aura_Description: Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 DOTA_Tooltip_ability_item_demonic_cuirass_Description: |-
-  Активируемая: <font color='#b44ce3'>Area Curse</font> - Прокленает всех вражеских героев поблизости, из-за чего они умрут через %curse_duration% секунд. Этот эффект может быть сброшен.
+  Активируемая: <font color='#b44ce3'>Area Curse</font> - Прокленает всех вражеских героев поблизости, из-за чего они будут непрерывно получать урон, увеличивающийся с каждой секундой. Этот эффект может быть сброшен.
   Пассивная: Demonic Aura - увеличивает скорость атаки, броню, восстановление здоровья, даёт True Strike и шанс на Mini-Bash союзным существам, при этом снижая броню врагов поблизости.
   Пассивная: Mini-Bash — дает шанс нанести дополнительный урон и кратковременно оглушить цель при каждой атаке.
   Пассивная: True Strike — исключает шанс промаха при атаке.
