@@ -18,12 +18,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance"		"8 12 16 20 24 28 32"
+				"crit_chance"		"16 18 20 22 24 26 28"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_mult"			"30 60 90 120 150 180 210"
+				"crit_mult"			"130 160 190 220 250 280 310"
 			}
 		}
 

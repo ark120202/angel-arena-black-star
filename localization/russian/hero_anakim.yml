@@ -1,30 +1,26 @@
-DOTA_Tooltip_ability_anakim_wisps_Description: 'Извергает огненное дыхание на вражеских юнитов в линии перед Dragon Knight, поджигая их, уменьшая урон от их атак, замедляя, увеличивая шанс на промах и нанося им урон в течении вресени.'
-DOTA_Tooltip_ability_anakim_wisps_aghanim_description: Dragon Knight будет извергать огненное дыхание во все направления вокруг него.
+DOTA_Tooltip_ability_anakim_wisps_Description: 'Часть урона наноситься чистым, магисчем , физическим уроном, так же позволяет Anakim с шансом наносить критические атаки'
+DOTA_Tooltip_ability_anakim_wisps_wisps_pure_damage_pct: 'ЧИСТЫЙ УРОН:'
+DOTA_Tooltip_ability_anakim_wisps_magic_damage_pct: 'МАГИЧЕСКИЙ УРОН:'
+DOTA_Tooltip_ability_anakim_wisps_physical_damage_pct: 'ФИЗИЧЕСКИЙ УРОН:'
+DOTA_Tooltip_ability_anakim_wisps_critical_chance_pct: 'ШАНС КРИТИЧЕСКОЙ АТАКИ:'
+DOTA_Tooltip_ability_anakim_wisps_critical_damage_pct: 'СИЛА КРИТИЧЕСКОЙ АТАКИ:'
 
+DOTA_Tooltip_ability_anakim_solar_flare_Description: 'НОНОСИТ УРОН В %radius И СТАНИТ НА %duration УМЕНЬШАЯ СОПРОТИВЛЕНИЯ %magical_resistance_pct'
+DOTA_Tooltip_ability_anakim_solar_flare_duration: 'ДЛИТЕЛЬНОСТЬ СТАНА:'
+DOTA_Tooltip_ability_anakim_solar_flare_radius: ' РАДИУС:'
+DOTA_Tooltip_ability_anakim_solar_flare_magical_resistance_pct: ' %ПОНИЖЕНИЕ СОПРОТИВЛЕНИЯ:'
 
-DOTA_Tooltip_ability_anakim_wisps_Description: 'Dragon Knight поражает своим щитом врага в радиусе ближнего боя, оглушая его, нанося урон и, после небольшой задержки, ударяя юнита несколько раз. На эти удары воздействуют все модификаторы атаки и критический урон. Когда рыцарь находится в форме дракона, он может применять заклинание с расстояния в 400 единиц.'
-DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_stun_duration: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
-DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_attack_amount: 'КОЛ-ВО АТАК:'
-DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_attack_delay: 'ЗАДЕРЖКА АТАК:'
+DOTA_Tooltip_ability_anakim_divine_gift_Description: 'ВОСПОЛНЯЕТ ЖИЗНЕНЫЕ СИЛЫ СОЮЗНИКОВ УВЕЛИЧИВАЯ %healht_regen %bonus_strength %magical_resistance_pct '
+DOTA_Tooltip_ability_anakim_divine_gift_healht_regen: 'ДОП РЕГЕН ХР:'
+DOTA_Tooltip_ability_anakim_divine_gift_bonus_strength: 'ДОПОЛНИТЕЛЬНАЯ СИЛА:'
+DOTA_Tooltip_ability_anakim_divine_gift_magical_resistance_pct: 'РЕЗИСТ ХУЙ:'
+DOTA_Tooltip_ability_anakim_divine_gift_global_radius: 'РАДИУС:'
 
-DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_Description: 'Текущая в жилах Dragon Knight кровь дракона улучшает его регенерацию здоровья, броню и сопротивление магическому урону. Также, когда Dragon Knight атакуют, атакующий может получить разоружение. Эта способность имеет время перезарядки.'
-DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_aghanim_description: 'Атакующий получает Hex, вместо разоружения.'
-DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_bonus_health_regen: 'РЕГЕН ЗДОРОВЬЯ:'
-DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_bonus_armor: 'БРОНЯ:'
-DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_bonus_magical_resist_pct: '%СОПРОТИВЛЕНИЕ МАГИИ:'
-DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_disarm_chance: '%ШАНС ОБЕЗОРУЖИТЬ:'
-DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_disarm_duration: 'ДЛИТЕЛЬНОСТЬ РАЗОРУЖЕНИЯ:'
-DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_sheep_movement_speed_scepter: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ В HEX:'
-DOTA_Tooltip_modifier_dragon_knight_dragon_blood_arena_disarm_enemy: Обезоружен
-DOTA_Tooltip_modifier_dragon_knight_dragon_blood_arena_disarm_enemy_Description: 'Обезоружен способностью Dragon Blood, не может атаковать.'
-
-DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_arena_Description: |-
-
-DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_poison: Poison
-DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_poison_Description: Вы периодически получаете урон.
-DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_cold: Cold
-DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_cold_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, периодически получает урон основанный на максимальном здоровье.'
-DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_breath: Frostfire Breath
-DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_breath_Description: Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
-DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_flame_debuff_tooltip: Flame
-DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_flame_debuff_tooltip_Description: ВЫ ГОРИТЕ! Вам периодически наносится урон.
+DOTA_Tooltip_modifier_anakim_summon_divine_knight_Description: 'ПРИЗЫВАЕТ ВОИНА СВЕТА'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_health: 'ЗДОРОВЬЕ РЫЦАРЯ:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_damage: 'УРОН РЫЦАРЯ:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_armor: 'БРОНЯ РЫЦАРЯ:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_health_regen: 'РЕГЕН ХР РЫЦАРЯ:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_bounty: 'ЗОЛОТО ЗА УБИЙСТВО:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_xp: 'ОПЫТА ЗА УБИЙСТВО:'

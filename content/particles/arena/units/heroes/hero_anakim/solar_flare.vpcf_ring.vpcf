@@ -8,24 +8,30 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_bAdditive = true
-			m_hTexture = resource:"materials/particle/particle_flares/aircraft_red.vtex"
-			m_flAnimationRate = 0.5
+			m_flStartFadeSize = 0.4
+			m_flEndFadeSize = 0.65
+			m_bBlendFramesSeq0 = false
+			m_hTexture = resource:"materials/particle/smoke3/smoke3.vtex"
 		},
 	]
 	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_fDrag = 0.1
+			m_fDrag = 0.175
 			m_Gravity = [ 0.0, 0.0, -100.0 ]
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flBias = 0.75
+			m_flEndScale = 12.0
 		},
 		{
 			_class = "C_OP_Decay"
 		},
 		{
 			_class = "C_OP_FadeOutSimple"
-			m_flFadeOutTime = 0.2
+			m_flFadeOutTime = 1.0
 		},
 		{
 			_class = "C_OP_RemapSpeed"
@@ -39,41 +45,46 @@
 		{
 			_class = "C_OP_SpinUpdate"
 		},
-		{
-			_class = "C_OP_FadeInSimple"
-			m_flFadeInTime = 0.1
-		},
 	]
 	m_Initializers = 
 	[
 		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax = [ 181, 165, 149, 255 ]
+		},
+		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 10.0
-			m_flRadiusMin = 5.0
+			m_flRadiusMin = 8.0
+			m_flRadiusMax = 12.0
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 50
+			m_nAlphaMax = 60
 		},
 		{
 			_class = "C_INIT_RandomRotation"
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin = [ 0.0, 0.0, 3.0 ]
-			m_OffsetMax = [ 0.0, 0.0, 300.0 ]
+			m_OffsetMin = [ 0.0, 0.0, 40.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 40.0 ]
 		},
 		{
 			_class = "C_INIT_RingWave"
-			m_nOverrideCP = 1
 			m_flInitialSpeedMax = 1500.0
-			m_flInitialSpeedMin = 500.0
-			m_flInitialRadius = 0.2
+			m_flInitialSpeedMin = 1200.0
+			m_flInitialRadius = 32.0
 		},
 		{
 			_class = "C_INIT_RandomSequence"
-			m_nSequenceMax = 15
+			m_nSequenceMin = 2
+			m_nSequenceMax = 3
 		},
 		{
 			_class = "C_INIT_InitialVelocityNoise"
-			m_vecOutputMax = [ 24.0, 24.0, 500.0 ]
-			m_vecOutputMin = [ -24.0, -24.0, 200.0 ]
+			m_vecOutputMax = [ 24.0, 24.0, 200.0 ]
+			m_vecOutputMin = [ -24.0, -24.0, 100.0 ]
 		},
 		{
 			_class = "C_INIT_RandomRotationSpeed"
@@ -83,44 +94,23 @@
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 2.0
-			m_fLifetimeMax = 3.0
+			m_fLifetimeMin = 1.5
+			m_fLifetimeMax = 1.5
 		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
+			m_flStartTime = 0.25
 		},
 	]
 	m_ForceGenerators = 
 	[
 		{
 			_class = "C_OP_RandomForce"
-			m_MinForce = [ -800.0, -800.0, -400.0 ]
-			m_MaxForce = [ 800.0, 800.0, 400.0 ]
-		},
-	]
-	m_controlPointConfigurations = 
-	[
-		{
-			m_name = "preview"
-			m_drivers = 
-			[
-				{
-					m_iAttachType = "PATTACH_WORLDORIGIN"
-					m_vecOffset = [ 0.0, 0.0, 0.0 ]
-					m_angOffset = [ null, null, null ]
-					m_entityName = "self"
-				},
-				{
-					m_iControlPoint = 1
-					m_iAttachType = "PATTACH_WORLDORIGIN"
-					m_vecOffset = [ 1.0, 1.0, 1.0 ]
-					m_angOffset = [ null, null, null ]
-					m_entityName = "self"
-				},
-			]
+			m_MinForce = [ -1200.0, -1200.0, -200.0 ]
+			m_MaxForce = [ 1200.0, 1200.0, 200.0 ]
 		},
 	]
 }

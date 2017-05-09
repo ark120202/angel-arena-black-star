@@ -49,7 +49,7 @@
 	[
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 250.0
+			m_flRadiusMax = 200.0
 			m_flRadiusMin = 180.0
 		},
 		{
@@ -119,28 +119,6 @@
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 5
 			m_flStartTime = 0.14
-		},
-	]
-	m_controlPointConfigurations = 
-	[
-		{
-			m_name = "preview"
-			m_drivers = 
-			[
-				{
-					m_iAttachType = "PATTACH_WORLDORIGIN"
-					m_vecOffset = [ 0.0, 0.0, 0.0 ]
-					m_angOffset = [ null, null, null ]
-					m_entityName = "self"
-				},
-				{
-					m_iControlPoint = 1
-					m_iAttachType = "PATTACH_WORLDORIGIN"
-					m_vecOffset = [ 1.0, 1.0, 1.0 ]
-					m_angOffset = [ null, null, null ]
-					m_entityName = "self"
-				},
-			]
 		},
 	]
 }

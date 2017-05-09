@@ -2155,7 +2155,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"presence_armor_reduction"	"-2 -4 -6 -8 -10 -12 -14"
+				"presence_armor_reduction"	"-4 -8 -12 -16 -20 -24 -28"
 			}
 
 			"02"

@@ -25,6 +25,16 @@
 				"var_type"			"FIELD_INTEGER"
 				"physical_damage_pct"	"33"
 			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"critical_damage_pct"	"133"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"critical_chance_pct"	"133"
+			}
 		}
 
 		"precache"
@@ -54,6 +64,60 @@
 					{
 						"ScriptFile"	"heroes/hero_anakim/wisps.lua"
 						"Function"		"CreateParticles"
+					}
+				}
+
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName" 	"modifier_anakim_wisps_crit"
+						"Target" 		"CASTER"
+					}
+
+					"Random"
+					{
+						"Chance" "%critical_chance_pct"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName" 	"modifier_anakim_wisps_crit"
+								"Target"    	"CASTER"    
+							}        
+						}
+					}
+				}
+			}
+
+			"modifier_anakim_wisps_crit"
+			{
+				"IsHidden"  "1"
+				"IsHidden"  "1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%critical_damage_pct"
+				}
+
+				"OnAttackLanded"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Arena.Hero_Kadash.AssasinsSkills.Critical"
+						"Target"		"CASTER"
+					}
+
+					"FireEffect"
+					{
+						"EffectName" 		"particles/arena/units/heroes/hero_kadash/assasins_skills_weapon_blur_critical.vpcf"
+						"EffectAttachType"  "attach_attack1"
+						"Target"    		"CASTER"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_anakim_wisps_crit"
+						"Target"   		"CASTER"    
 					}
 				}
 			}
@@ -94,19 +158,19 @@
 			}
 		}
 
-	"precache"
-	{
-		"particle"				"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
-	}
+		"precache"
+		{
+			"particle"				"particles/arena/units/heroes/hero_anakim/anakim_solar_flare.vpcf"
+		}
 
 		"OnSpellStart"
 		{
-			//"FireEffect"
-			//{
-			//	"EffectName"		".vpcf"
-			//	"EffectAttachType"	"follow_origin"
-			//	"Target"			"POINT"
-			//}
+			"FireEffect"
+			{
+				"EffectName"		"particles/arena/units/heroes/hero_anakim/anakim_solar_flare.vpcf"
+				"EffectAttachType"  "world_origin"
+				"TargetPoint"		"POINT"
+			}
 			"Damage"
 			{
 				"Target"
@@ -140,9 +204,9 @@
 				"IsStunDebuff"		"1"
 				"Duration"			"%duration"
 				
-				//"OverrideAnimation"	"ACT_DOTA_DISABLED"
-				//"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
-				//"EffectAttachType"	"follow_overhead"
+				"OverrideAnimation"	"ACT_DOTA_DISABLED"
+				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"	"follow_overhead"
 
 				"Properties"
 				{
@@ -162,7 +226,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityTextureName"			"arena/anakim_transfer_pain"
+		"AbilityTextureName"			"arena/anakim_divine_gift"
 		"MaxLevel"	"7"
 
 		"AbilitySpecial"
@@ -183,16 +247,6 @@
 				"magical_resistance_pct"	"6 9 12 15 18 21 24"
 			}
 			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"self_division_damage_pct"	"20.0 30.0 40.0 50.0 60.0 70.0 80.0"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"self_radius"	"400 500 600 700 800 900 1000"
-			}
-			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"global_radius"		"20000"
@@ -226,6 +280,7 @@
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			""
 		"MaxLevel" 						"7"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"300"
 		"AbilityManaCost"				"100 200 300 400 500 600 700"
@@ -298,11 +353,10 @@
 	"anakim_transfer_pain"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			""
+		"AbilityTextureName"			"arena/anakim_transfer_pain"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityCooldown"				"3"
-		"AbilityManaCost"				"0"
 		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 
@@ -311,14 +365,34 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"				"900"
+				"radius"				"900 950 1000 1050 1100"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"transfer_pain"		"3.0 4.0 5.0"
+				"transfer_pain"		"35.0 40.0 50.0 60.0 70.0 80.0 85.0"
 			}
 		}
 	}
+
+	"anakim_stats_heroes"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			""
+		"MaxLevel" 						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stats_pct"			"30.0 40.0 50.0 60.0 70.0 80.0 95.0"
+			}
+		}
+	}
+
+
 
 }
