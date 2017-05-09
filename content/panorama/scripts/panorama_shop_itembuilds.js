@@ -23,7 +23,6 @@ function LoadGuidesForHero(heroName, skipAutoSelect, callback) {
 				Snippet_GuideListEntry(build);
 			});
 			if (!autoSelectedBuild) autoSelectedBuild = builds.standard;
-			$.GetContextPanel().SetHasClass("ItembuildsHidden", autoSelectedBuild == null);
 			if (!skipAutoSelect) SelectItembuild(autoSelectedBuild);
 			if (callback) callback();
 		}
@@ -31,7 +30,6 @@ function LoadGuidesForHero(heroName, skipAutoSelect, callback) {
 		if (LastHero === heroName) {
 			$("#GuidesAvaliableList").RemoveAndDeleteChildren();
 			CustomBuildToggleButton = Snippet_GuideListEntry({steamID: -1});
-			$.GetContextPanel().AddClass("ItembuildsHidden");
 			if (!skipAutoSelect) SelectItembuild(null);
 		}
 	});

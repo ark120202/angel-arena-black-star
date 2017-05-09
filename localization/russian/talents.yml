@@ -18,6 +18,8 @@ custom_talents_talent_movespeed_limit: Макс. скорость передви
 custom_talents_talent_movespeed_limit_description: 'Увеличивает максимальную скорость передвижения до {movespeed_limit}'
 custom_talents_talent_health: Здоровье
 custom_talents_talent_health_description: '+{health} к здоровью'
+custom_talents_talent_mana: Мана
+custom_talents_talent_mana_description: '+{mana} к мане'
 custom_talents_talent_health_regen: Регенерация Здоровья
 custom_talents_talent_health_regen_description: '+{health_regen} к регенерации здоровья'
 custom_talents_talent_armor: Броня

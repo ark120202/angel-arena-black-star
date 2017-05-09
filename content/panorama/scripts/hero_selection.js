@@ -297,7 +297,6 @@ function OnMinimapClickSpawnBox(team, level, index) {
 	});
 }
 
-var adsurl = "https://goo.gl/wQpngH"; //dota2.sgm-luck.ru
 var adsEnabledLangs = [
 	"russian",
 	"ukrainian",
@@ -305,7 +304,7 @@ var adsEnabledLangs = [
 ];
 
 function OnAdsClicked() {
-	$.DispatchEvent("ExternalBrowserGoToURL", adsurl);
+	$.DispatchEvent("ExternalBrowserGoToURL", "https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection_redirect");
 	//$.DispatchEvent("DOTADisplayURL", adsurl)
 }
 

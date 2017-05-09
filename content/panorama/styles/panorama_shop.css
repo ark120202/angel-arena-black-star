@@ -1,5 +1,10 @@
 @define mainPanelWidth: 310px;
-@define mainPanelHeight: 830px;
+
+@define guidesPanelWidth: 208px;
+
+@define fullPanelHeight: 830px;
+@define fullPanelWidth: 518px; /* mainPanelWidth + guidesPanelWidth */
+
 .base
 {
 	align: right center;
@@ -10,24 +15,32 @@
 #ShopBase
 {
 	align: right center;
-	transition-duration: 0.25s;
+	transition-duration: 0.01s;
 	transition-timing-function: ease-in;
 	transition-property: transform, opacity;
 	margin-bottom: 13.4%;
 	margin-right: 0px;
 	flow-children: right;
+	transform: translateX(fullPanelWidth);
+	opacity: 0;
+}
+
+#ShopBase.ShopBaseOpen
+{
+	transform: translateX(0);
+	opacity: 1;
 }
 
 #ShopItemBasePanel
 {
-	height: mainPanelHeight;
 	width: mainPanelWidth;
+	height: fullPanelHeight;
 }
 
 #ItembuildsPanel
 {
-	width: 208px;
-	height: 100%;
+	width: guidesPanelWidth;
+	height: fullPanelHeight;
 	background-image: url("s2r://panorama/images/hud/reborn/bg_shop_guide_psd.vtex");
 	background-position: bottom;
 	background-size: cover;
@@ -37,7 +50,8 @@
 	transition-timing-function: ease-in-out;
 }
 
-.ItembuildsHidden #ItembuildsPanel
+.ItembuildsHidden #ItembuildsPanel,
+#ShopBase:not(.ShopBaseOpen) #ItembuildsPanel,
 {
 	width: 0;
 	opacity: 0;
@@ -221,12 +235,6 @@
 .EditMode #ItembuildItemGroupItemRoot
 {
 	min-height: 37px;
-}
-
-.ShopBase_Out
-{
-	transform: translateX(650px);
-	opacity: 0;
 }
 
 #ShopItemList

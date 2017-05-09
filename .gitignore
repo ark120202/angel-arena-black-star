@@ -23,6 +23,7 @@ content/addon_*_utf8.txt
 
 game/resource/addon_*.txt
 game/panorama/localization/addon_*.txt
+game/screenshots
 
 *.bin
 *.cfg
@@ -32,3 +33,7 @@ game/server_log.txt
 game/rich_presence_persistent_data.txt
 
 npm-debug.log
+
+generator/node_modules
+!generator/node_modules/vdf-extra
+!generator/node_modules/dota-custom-game-toolkit

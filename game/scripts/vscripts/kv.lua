@@ -232,7 +232,11 @@ end
 function ApplyModifierWithoutRefresh(keys)
 	local target = keys.target or keys.caster
 	if ((keys.HeroOnly == 1 and target:IsHero()) or (keys.HeroOnly ~= 1)) and not target:HasModifier(keys.modifier) then
-		keys.ability:ApplyDataDrivenModifier(keys.caster, target, keys.modifier, nil)
+		if keys.lua == 1 then
+			target:AddNewModifier(keys.caster, keys.ability, keys.modifier, {duration = keys.duration})
+		else
+			keys.ability:ApplyDataDrivenModifier(keys.caster, target, keys.modifier, {duration = keys.duration})
+		end
 	end
 end
 

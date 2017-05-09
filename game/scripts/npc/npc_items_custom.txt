@@ -12978,11 +12978,6 @@
 				"var_type"				"FIELD_FLOAT"
 				"bash_stun"				"0.01"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"curse_duration"		"60"
-			}
 		}
 
 		"OnSpellStart"
@@ -12991,7 +12986,8 @@
 			{
 				"ScriptFile"	"kv.lua"
 				"Function"		"ApplyModifierWithoutRefresh"
-				"modifier"		"modifier_item_demon_king_bar_curse_mark"
+				"modifier"		"modifier_item_demon_king_bar_curse"
+				"lua"			"1"
 			}
 
 			"FireSound"
@@ -13079,34 +13075,6 @@
 				"States"
 				{
 					"MODIFIER_STATE_STUNNED" 		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-			"modifier_item_demon_king_bar_curse_mark"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsPurgable"		"1"
-				"IsDebuff"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"EffectName"		"particles/arena/items_fx/demon_king_bar_curse_mark.vpcf"
-				"EffectAttachType"	"follow_overhead"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_demon_king_bar.lua"
-						"Function"		"StartTimer"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_demon_king_bar.lua"
-						"Function"		"StopTimer"
-					}
 				}
 			}
 		}
@@ -16658,39 +16626,34 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"curse_duration"		"25"
+				"aura_radius"			"1050"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1050"
+				"aura_attack_speed"		"175"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_attack_speed"		"175"
+				"aura_positive_armor"	"60"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_positive_armor"	"60"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"aura_negative_armor"	"-60"
 			}
-			"12"
+			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"aura_bonus_hp_regen_pct" "3"
 			}
-			"13"
+			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"aura_bash_chance"		"15"
 			}
-			"14"
+			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"aura_bash_damage"		"200"
@@ -16715,8 +16678,8 @@
 					{
 						"ScriptFile"	"kv.lua"
 						"Function"		"ApplyModifierWithoutRefresh"
-						//"HeroOnly"		"1"
-						"modifier"		"modifier_item_demon_king_bar_curse_mark"
+						"modifier"		"modifier_item_demon_king_bar_curse"
+						"lua"			"1"
 					}
 				}
 			}
@@ -16858,34 +16821,6 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%aura_negative_armor"
-				}
-			}
-			"modifier_item_demon_king_bar_curse_mark"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsPurgable"		"1"
-				"IsDebuff"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"EffectName"		"particles/arena/items_fx/demon_king_bar_curse_mark.vpcf"
-				"EffectAttachType"	"follow_overhead"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_demon_king_bar.lua"
-						"Function"		"StartTimer"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_demon_king_bar.lua"
-						"Function"		"StopTimer"
-					}
 				}
 			}
 			"modifier_item_demonic_cuirass_bash"

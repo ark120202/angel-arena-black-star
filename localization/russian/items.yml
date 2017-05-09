@@ -970,7 +970,8 @@ DOTA_Tooltip_ability_item_demon_king_bar_Description: |-
   Пассивная: True Strike — исключает шанс промаха при атаке.
 DOTA_Tooltip_ability_item_demon_king_bar_bash_chance: '%ШАНС МИНИ-ОГЛУШЕНИЯ:'
 DOTA_Tooltip_ability_item_demon_king_bar_bash_damage: 'УРОН МИНИ-ОГЛУШЕНИЯ:'
-DOTA_Tooltip_ability_item_demon_king_bar_curse_duration: 'ЗАДЕРЖКА ПЕРЕД СМЕРТЬЮ:'
+DOTA_Tooltip_modifier_item_demon_king_bar_curse: 'Проклятье'
+DOTA_Tooltip_modifier_item_demon_king_bar_curse_Description: 'Непрерывно получает урон, который увеличивается с каждой секундой (сейчас %MODIFIER_PROPERTY_TOOLTIP%). Снимается очищением.'
 DOTA_Tooltip_ability_item_butterfly_arena: Butterfly
 DOTA_Tooltip_ability_item_butterfly_arena_Description: |-
   Активируемая: Flutter - Даёт владельцу максимальную скорость передвижения на %duration% секунд.
@@ -1148,7 +1149,7 @@ DOTA_Tooltip_ability_item_book_of_the_keeper_Description: 'Пассивная: �
 DOTA_Tooltip_ability_item_book_of_the_keeper_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 DOTA_Tooltip_ability_item_angel_wings: Angel Wings
 DOTA_Tooltip_ability_item_angel_wings_Description: |-
-  Активируемая: Flight - Дает вам возможность свободно перемещаться через препятствия и увиличивает радиус атаки. Можно использовать во время произнесения заклинаний.
+  Активируемая: Flight - Дает вам возможность свободно перемещаться через препятствия и увеличивает радиус атаки. Можно использовать во время произнесения заклинаний.
   Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus% и их урон на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_angel_wings_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_angel_wings_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'

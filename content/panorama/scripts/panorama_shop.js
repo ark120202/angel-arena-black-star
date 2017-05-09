@@ -8,13 +8,23 @@ var ItemList = {},
 	LastHero = null,
 	ItemStocks = [];
 
-function OpenCloseShop() {
-	$("#ShopBase").ToggleClass("ShopBase_Out");
-	if ($("#ShopBase").BHasClass("ShopBase_Out")) {
+function OpenCloseShop(newState) {
+	if (typeof newState !== "boolean") newState = !$("#ShopBase").BHasClass("ShopBaseOpen");
+	$("#ShopBase").SetHasClass("ShopBaseOpen", newState);
+
+	if (newState) {
 		Game.EmitSound("Shop.PanelUp");
 		UpdateShop();
-	} else
+		//$("#ShopBase").SetFocus();
+	} else {
 		Game.EmitSound("Shop.PanelDown");
+		ClearSearch();
+	}
+}
+
+function ClearSearch() {
+	$.DispatchEvent("DropInputFocus", $("#ShopSearchEntry"));
+	$("#ShopSearchEntry").text = "";
 }
 
 function SearchItems() {
@@ -50,30 +60,28 @@ function SearchItems() {
 
 function PushItemsToList() {
 	var isTabSelected = false;
-	for (var shopName in ItemList) {
+	_.each(ItemList, function(shopContent, shopName) {
 		var TabButton = $.CreatePanel("RadioButton", $("#ShopTabs"), "shop_tab_" + shopName);
 		TabButton.AddClass("ShopTabButton");
 		TabButton.style.width = (100 / Object.keys(ItemList).length) + "%";
 		var TabButtonLabel = $.CreatePanel("Label", TabButton, "");
 		TabButtonLabel.text = $.Localize("panorama_shop_shop_tab_" + shopName);
 		TabButtonLabel.hittest = false;
-		var SelectShopTabAction = (function(_shopName) {
+		TabButton.SetPanelEvent("onactivate", (function(_shopName) {
 			return function() {
 				SelectShopTab(_shopName);
 			};
-		})(shopName);
-		TabButton.SetPanelEvent("onactivate", SelectShopTabAction);
+		})(shopName));
 		var TabShopItemlistPanel = $.CreatePanel("Panel", $("#ShopItemsBase"), "shop_panels_tab_" + shopName);
 		TabShopItemlistPanel.AddClass("ItemsPageInnerContainer");
-		FillShopTable(TabShopItemlistPanel, ItemList[shopName]);
+		FillShopTable(TabShopItemlistPanel, shopContent);
 
 		if (!isTabSelected) {
 			SelectShopTab(shopName);
 			TabButton.checked = true;
 			isTabSelected = true;
 		}
-	}
-
+	});
 }
 
 function SelectShopTab(tabTitle) {
@@ -102,7 +110,7 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 		panel.FindChildTraverse("SmallItemImage").SetImage("raw://resource/flash3/images/items/recipe.png");
 	panel.SetPanelEvent("onactivate", function() {
 		if (!$.GetContextPanel().BHasClass("InSearchMode")) {
-			panel.SetFocus();
+			$("#ShopBase").SetFocus();
 		}
 		if (GameUI.IsAltDown()) {
 			GameEvents.SendCustomGameEventToServer("custom_chat_send_message", {
@@ -164,7 +172,7 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 			return false;
 		});
 		
-		$.RegisterEventHandler('DragEnd', panel, function(panelId, draggedPanel) {
+		$.RegisterEventHandler("DragEnd", panel, function(panelId, draggedPanel) {
 			$.GetContextPanel().RemoveClass("DropDownMode");
 			draggedPanel.DeleteAsync(0);
 			!onDragEnd || onDragEnd(panel);
@@ -259,8 +267,9 @@ function SendItemBuyOrder(itemName) {
 	var unit = Players.GetLocalPlayerPortraitUnit();
 	unit = Entities.IsControllableByPlayer(unit, pid) ? unit : Players.GetPlayerHeroEntityIndex(pid);
 	GameEvents.SendCustomGameEventToServer("panorama_shop_item_buy", {
-		"itemName": itemName,
-		"unit": unit,
+		itemName: itemName,
+		unit: unit,
+		isControlDown: GameUI.IsControlDown()
 	});
 }
 
@@ -425,7 +434,7 @@ function SetQuickbuyTarget(itemName) {
 
 function ShowItemInShop(data) {
 	if (data && data.itemName != null) {
-		$("#ShopBase").RemoveClass("ShopBase_Out");
+		$("#ShopBase").AddClass("ShopBaseOpen");
 		ShowItemRecipe(String(data.itemName));
 	}
 }
@@ -437,7 +446,7 @@ function UpdateShop() {
 	_.each(SmallItemsAlwaysUpdated, function(panel) {
 		UpdateSmallItem(panel, gold);
 	});
-	if (!$("#ShopBase").BHasClass("ShopBase_Out"))
+	if ($("#ShopBase").BHasClass("ShopBaseOpen"))
 		_.each(SmallItems, function(panel) {
 			UpdateSmallItem(panel, gold);
 		});
@@ -447,6 +456,7 @@ function UpdateShop() {
 function AutoUpdateShop() {
 	UpdateShop();
 	$.Schedule(0.5, AutoUpdateShop);
+	//OpenCloseShop(FindDotaHudElement("shop").BHasClass("ShopOpen"));
 }
 
 function AutoUpdateQuickbuy() {
@@ -467,24 +477,29 @@ function SetItemStock(item, ItemStock) {
 	Game.Events.F4Pressed.push(OpenCloseShop);
 	GameEvents.Subscribe("panorama_shop_open_close", OpenCloseShop);
 	Game.Events.F5Pressed.push(function() {
-		var bought = false;
-		_.each($("#QuickBuyPanelItems").Children(), function(child) {
-			if (!child.BHasClass("DropDownValidTarget")) {
-				UpdateSmallItem(child);
-				if (child.BHasClass("CanBuy")) {
-					SendItemBuyOrder(child.itemName);
-					bought = true;
-					return false;
+		if (QuickBuyTarget != null) {
+			var bought = false;
+			var QuickBuyPanelItems = $("#QuickBuyPanelItems");
+			var childCount = QuickBuyPanelItems.GetChildCount();
+			for (var i = 0; i < childCount; i++) {
+				var child = QuickBuyPanelItems.GetChild(i);
+				if (!child.BHasClass("DropDownValidTarget")) {
+					UpdateSmallItem(child);
+					if (child.BHasClass("CanBuy")) {
+						SendItemBuyOrder(child.itemName);
+						bought = true;
+						break;
+					}
 				}
 			}
-		});
-		if (!bought) {
-			GameEvents.SendEventClientSide("dota_hud_error_message", {
-				"splitscreenplayer": 0,
-				"reason": 80,
-				"message": "#dota_hud_error_not_enough_gold"
-			});
-			Game.EmitSound("General.NoGold");
+			if (!bought) {
+				GameEvents.SendEventClientSide("dota_hud_error_message", {
+					"splitscreenplayer": 0,
+					"reason": 80,
+					"message": "#dota_hud_error_not_enough_gold"
+				});
+				Game.EmitSound("General.NoGold");
+			}
 		}
 	});
 	Game.Events.F8Pressed.push(function() {
@@ -492,20 +507,19 @@ function SetItemStock(item, ItemStock) {
 	});
 	Game.MouseEvents.OnLeftPressed.push(function(ClickBehaviors, eventName, arg) {
 		if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE) {
-			$("#ShopBase").AddClass("ShopBase_Out");
+			$("#ShopBase").RemoveClass("ShopBaseOpen");
 		}
 	});
 
 	GameEvents.Subscribe("panorama_shop_show_item", ShowItemInShop);
 	GameEvents.Subscribe("dota_link_clicked", function(data) {
 		if (data != null && data.link != null && data.link.lastIndexOf("dota.item.", 0) === 0) {
-			$("#ShopBase").RemoveClass("ShopBase_Out");
+			$("#ShopBase").AddClass("ShopBaseOpen");
 			ShowItemRecipe(data.link.replace("dota.item.", ""));
 		}
 	});
 	GameEvents.Subscribe("panorama_shop_show_item_if_open", function(data) {
-		if (!$("#ShopBase").BHasClass("ShopBase_Out"))
-			ShowItemInShop(data);
+		if ($("#ShopBase").BHasClass("ShopBaseOpen")) ShowItemInShop(data);
 	});
 	DynamicSubscribePTListener("panorama_shop_data", function(tableName, changesObject, deletionsObject) {
 		if (changesObject.ShopList != null) {
@@ -532,14 +546,14 @@ function SetItemStock(item, ItemStock) {
 	AutoUpdateShop();
 	AutoUpdateQuickbuy();
 
-	$.RegisterEventHandler('DragDrop', $("#QuickBuyStickyButtonPanel"), function(panelId, draggedPanel) {
+	$.RegisterEventHandler("DragDrop", $("#QuickBuyStickyButtonPanel"), function(panelId, draggedPanel) {
 		if (draggedPanel.itemname != null) {
 			SetQuickbuyStickyItem(draggedPanel.itemname);
 		}
 		return true;
 	});
 
-	$.RegisterEventHandler('DragDrop', $("#QuickBuyPanelItems"), function(panelId, draggedPanel) {
+	$.RegisterEventHandler("DragDrop", $("#QuickBuyPanelItems"), function(panelId, draggedPanel) {
 		if (draggedPanel.itemname != null) {
 			SetQuickbuyTarget(draggedPanel.itemname);
 		}

@@ -64,41 +64,6 @@
 				"think_interval"	"0.1"
 			}
 		}
-		"OnToggleOn"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_sai_divine_flesh_damage"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnToggleOff"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_sai_divine_flesh_damage"
-				"Target" 		"CASTER"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_sai_divine_flesh_damage"
-			{
-				"ThinkInterval"  	"%think_interval"
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_sai/modifier_sai_divine_flesh.lua"
-						"Function"		"DealDamage"
-						"damage"		"%damage_pct*%think_interval"
-					}
-				}
-			}
-		}
 	}	
 	"sai_immortal"
 	{

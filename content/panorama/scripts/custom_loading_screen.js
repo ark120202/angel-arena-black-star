@@ -47,15 +47,17 @@ function Snippet_OptionVoting(voteName, voteData) {
 		button.AddClass("ButtonBevel");
 		button.AddClass("OptionVotingVariant");
 		if (shouldGroup) button.style.horizontalAlign = tIndex % 2 === 1 ? "left" : "right";
-		button.SetPanelEvent("onactivate", function() {
-			if (!votePanel.BHasClass("Voted")) {
-				GameEvents.SendCustomGameEventToServer("options_vote", {
-					name: voteName,
-					vote: variant
-				});
-				votePanel.AddClass("Voted");
-			}
-		});
+		button.SetPanelEvent("onactivate", (function(voteName, variant) {
+			return function() {
+				if (!votePanel.BHasClass("Voted")) {
+					GameEvents.SendCustomGameEventToServer("options_vote", {
+						name: voteName,
+						vote: variant
+					});
+					votePanel.AddClass("Voted");
+				}
+			};
+		})(voteName, variant));
 
 		var label = $.CreatePanel("Label", button, "");
 		label.text = typeof variant === "string" ? $.Localize("option_voting_" + voteName + "_" + variant) : typeof variant === "boolean" ? $.Localize(variant ? "option_yes" : "option_no") : variant;
