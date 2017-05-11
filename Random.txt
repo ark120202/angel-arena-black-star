@@ -24,31 +24,22 @@ Items:
 		Attack Damage To Pure: 40 => 20
 Abilities:
 	Timbersaw - Chakram 2:
-		Speed: 900.0 => 2000
-		Radius: 200.0 => 300
-		Pass Damage: 750 => 1500
-		Damage Per Second: 340 => 500
-		Slow: 5 => 15
 		Mana Per Second:250 => 100
 	Clockwerk - Hookshot:
-		Cooldown Scepter: 20 => 10
+		Cooldown Scepter: 20 => 25
 	Chaos Knight - Phantasm:
-		Cooldown Scepter: 110 => 20
+		Cooldown Scepter: 110 => 40
 	Beastmaster - Primal Roar:
-		Cast Range Scepter: 950 950 950 1000 1050 1100 1150 => 1500
-		Cooldown Scepter: 30 => 20
+		Cooldown Scepter: 30 => 45
 	Tusk - Walrus Kick:
-		Move Slow: 40 => 80
-		Damage: 350 => 5000
+		Damage: 350 => 500 1000 1500 2000 2500 3000 3500
 	Treant - Natures Guise:
-		Fade Time: 12 11 10 9 8 7 6 => 7 6 5 4 3 2 1.5
-		Radius: 265 => 400
+		Radius: 265 => 350
 	Treant - Eyes in the Forest:
-		Vision AOE: 800 => 1600
-		Overgrowth AOE: 800 => 1600
-		Damage: 400 => 1000
+		Vision AOE: 800 => 950
+		Overgrowth AOE: 800 => 950
+		Damage: 400 => 500 800 1000 1250 1500 1750 2000
 	Weaver - Shukuchi:
-		Cooldown: 14 13 12 11 10 9 8 => 10 9 8 8 7 7 6
 		Damage: 75 100 125 150 175 200 250 => 75 150 225 300 375 450 550
 		Radius: 175 => 250
 	Juggernaut - Blade Fury:

@@ -300,7 +300,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance_hero"		"100"
+				"block_chance_hero"		"80"
 			}
 		}
 	}
