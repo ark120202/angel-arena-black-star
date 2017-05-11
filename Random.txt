@@ -16,6 +16,12 @@ Items:
 		Crit Multiplier: 322 => 300
 	Blade Mail I-III:
 		Duration: 5 6 7 => 4
+	Piercing Blade:
+		Bonus Damage: 400 => 500
+		Attack Damage To Pure: 30 => 10
+	Haganemushi:
+		Bonus Damage: 700 => 900
+		Attack Damage To Pure: 40 => 20
 Abilities:
 	Timbersaw - Chakram 2:
 		Speed: 900.0 => 2000
@@ -57,12 +63,34 @@ Abilities:
 		Health Cost: 30 60 90 120 150 180 210 => 10 20 40 60 80 100 120
 	Axe - Counter Helix:
 		Damage From Current Health: 0 => 0.5 1 1.5 2 2.5 3 3.5 %
+	Faceless - Void Time Freeze:
+		Duration: 1.5 2.0 2.3 2.6 2.7 2.8 3.0 => 2 2.4 2.8 3.2 3.6 3.8 4
+	Faceless - Void Time Walk:
+		Cast Range: 625 => 900
+	Life Stealer - Feast:
+		Hp Leech Percent: 4 => 0.5
+	Ancient Apparition - Cold Feet:
+		Duration: 4.0 => 3
+		ManaCost: 150 200 250 300 350 400 450 => 100 120 140 160 180 200 220
+		Stun Duration: 2.0 2.75 3.5 3.75 4.0 4.25 4.50 => 2 2.2 2.4 2.6 2.8 3 3.2
+		Damage: 50 62 75 90 110 130 150 => 60 80 100 120 140 180 220
+	Ancient Apparition - Ice Vortex:
+		Radius: 275 275 275 275 275 275 275 => 300 300 300 300 300 300 300
+		Movement Speed: -15 -20 -25 -30 -35 -40 -45 => -20 -30 -40 -50 -60 -70 -80
+		Vision AOE: 200 200 200 200 200 200 200 => 300 300 300 300 300 300 300
+	Ancient Apparition - Ice Blast:
+		Damage: 250 350 450 550 750 950 => 300 400 500 600 800 1000 1400
+		Radius Min: 275 => 350
+		Radius Max: 1000 => 1400
+		Speed: 1500 => 2500
+		Frostbite Duration: 8.0 9.0 10.0 11.0 12.0 13.0 14.0 => 10
+		Dot Damage: 12.5 32.0 52.0 80.0 100.0 120.0 140.0 => 10 20 40 80 120 160 200
 These abilities now not refreshed:
 	Shallow Grave
 	Dark Whale
 	Select Allies
 	Select Enemies
-
+	Time Freeze
 	
 axe_counter_helix
 

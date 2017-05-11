@@ -15,7 +15,7 @@
 			"particle"  		"particles/units/heroes/hero_faceless_void/faceless_void_time_walk_slow.vpcf"
 			"particle"  		"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
 		}
-		"AbilityCastRange"				"625"
+		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.15"
 		"AbilityCooldown"				"24 22 20 18 16 14 12"
 		"AbilityModifierSupportValue"	"0.25"
@@ -35,7 +35,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_range"		"625"
+				"tooltip_range"		"900"
 			}
 			"04"
 			{
@@ -493,7 +493,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.5 2.0 2.3 2.6 2.7 2.8 3.0"
+				"duration"				"2 2.4 2.8 3.2 3.6 3.8 4"
 			}
 			"02"
 			{

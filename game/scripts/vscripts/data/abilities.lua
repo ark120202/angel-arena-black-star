@@ -38,6 +38,11 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_titanium_bar = true,
+	dazzle_shallow_grave = true,
+	omniknight_select_allies = true,
+	omniknight_select_enemies = true,
+	poseidon_dark_whale = true,
+	faceless_void_time_freeze =true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
