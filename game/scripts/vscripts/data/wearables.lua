@@ -15,6 +15,7 @@ CUSTOM_WEARABLES_PLAYER_ITEMS = {
 	},
 	--Dimka
 	[103166883] = {
+		"wearable_developer",
 		"shinobu_umbrella",
 	},
 	--Alastor

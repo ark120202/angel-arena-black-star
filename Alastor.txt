@@ -1,5 +1,50 @@
-нерф крипов 
+нерф крипов 💛💛💛💛💛
 
-"item_tango_arena"
-"aoe"					"180" => 300
+Item Tango Arena
+aoe: 180 => 300
 
+
+Kadash - Assasins Sskills
+Crit mult: 30 60 90 120 150 180 210 => 130 160 190 220 250 280 310
+Crit chance: 8 12 16 20 24 28 32 => 16 18 20 22 24 26 28
+
+Cherub - Sleep Cloud
+Time to sleep: 5.0 4.0 3.5 3.0 2.5 2.0 1.5 => 3.5 3.0 2.5 2.0 1.5 1.0 0.5
+
+Cherub - explosive spore
+Spore movespeed: 200 210 220 230 240 250 260 => 340 370 400 430 460 490 520
+Spore health: 100 150 200 250 300 350 400 => 350 550 750 950 1050 2000 2500
+Spore bounty gold: 30 => 150 300 450 900 1500 2500 3500
+
+Cherub - Flower Garden
+AbilityCastPoint: 0.5 => 0.1
+AbilityChannelTime: 2.0 => 0.5
+Flower health scepter: 900 1500 2000 3500 5000 7000 10000 => 2500 5000 7500 10000 12500 15000 20000
+Damage return scepter: 150 500 800 1500 3000 3500 4000 => 150 500 1000 1500 3000 6000 10000
+
+Cherub - Flower White Rose
+Attack range: 700 => 600 800 1000 1200 1400 1600 2000
+Damage: 30 60 90 120 150 180 210 => 80 190 310 600 1200 2400 4800
+Attack rate: 1.5
+
+Cherub - Flower Red Rose
+Attack range: 350 => 250 350 450 550 650 750 850
+Damage: 60 120 180 240 300 360 420 => 100 150 230 350 480 560 620
+Attack rate: 1.5 => 0.1
+
+Cherub - Flower Pink Blossom
+Heal range: 500 => 400 450 500 550 600 650 700
+Heal amount: 10 30 50 70 90 110 130 => 35 70 150 190 210 260 300
+Heal interval: 1.0 => 0.3
+Max targets: 3 => 2
+
+Cherub - Flower Yellow Daisy
+Aura radius: 400 => 250 350 450 550 650 750 850
+Bonus attackspeed: 30 50 70 90 110 130 150 => 80 120 160 200 240 280 320
+
+Cherub - Flower Purple Lotus
+Aura radius: 450 => 50 100 150 200 250 300 350
+Magic resistance reduction -20 -25 -30 -35 -40 -45 -50 => -30 -35 -40 -45 -50 -55 -60
+
+"nevermore_dark_lord"
+"presence_armor_reduction"	"-4 -8 -12 -16 -20 -24 -28"

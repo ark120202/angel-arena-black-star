@@ -19,6 +19,7 @@ local modifiers = {
 	"vision_night",
 	"cooldown_reduction_pct",
 	"true_strike",
+	"mana"
 	--rune multiplier
 }
 for _,v in pairs(modifiers) do

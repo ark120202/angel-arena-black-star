@@ -75,7 +75,8 @@ local modifiers = {
 	["modifier_max_attack_range"] = "modifiers/modifier_max_attack_range.lua",
 	["modifier_arena_courier"] = "modifiers/modifier_arena_courier.lua",
 	["modifier_arena_hero"] = "modifiers/modifier_arena_hero.lua",
-	["modifier_neutral_champion"] = "modifiers/modifier_neutral_champion.lua"
+	["modifier_neutral_champion"] = "modifiers/modifier_neutral_champion.lua",
+	["modifier_item_demon_king_bar_curse"] = "items/modifier_item_demon_king_bar_curse"
 }
 AllPlayersInterval = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23}
 

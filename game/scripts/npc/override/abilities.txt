@@ -2148,14 +2148,14 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"900"
-		"LevelsBetweenUpgrades"	"8"
-		"RequiredLevel"	"3"
+		"LevelsBetweenUpgrades"	"3"
+		"RequiredLevel"	"1"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"presence_armor_reduction"	"-2 -4 -6 -8 -10 -12 -14"
+				"presence_armor_reduction"	"-4 -8 -12 -16 -20 -24 -28"
 			}
 
 			"02"

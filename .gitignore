@@ -12,9 +12,6 @@
 *.vagrp_c
 *.vmdl_c
 
-*.bin
-*.cfg
-
 !game/panorama/images/*.vtex_c
 !game/panorama/images/custom_game/*.vtex_c
 
@@ -26,3 +23,17 @@ content/addon_*_utf8.txt
 
 game/resource/addon_*.txt
 game/panorama/localization/addon_*.txt
+game/screenshots
+
+*.bin
+*.cfg
+game/cache_*.soc
+game/*.tmp
+game/server_log.txt
+game/rich_presence_persistent_data.txt
+
+npm-debug.log
+
+generator/node_modules
+!generator/node_modules/vdf-extra
+!generator/node_modules/dota-custom-game-toolkit

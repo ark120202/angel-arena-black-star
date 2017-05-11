@@ -26,7 +26,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 0, 0, 0, 255 ]
+			m_ColorFade = [ 45, 162, 217, 255 ]
 		},
 	]
 	m_Initializers = 
@@ -53,6 +53,21 @@
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 4
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

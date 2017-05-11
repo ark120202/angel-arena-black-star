@@ -24,7 +24,6 @@ DOTA_Tooltip_ability_antimage_spell_shield_arena_Description: |-
   Пассивная: Увеличивает сопротивление магии Анти Мага.
 DOTA_Tooltip_ability_antimage_spell_shield_arena_spell_shield_resistance: '%МАГИЧЕСКОЕ СОПРОТИВЛЕНИЕ:'
 DOTA_Tooltip_ability_antimage_spell_shield_arena_reflect_duration: 'ДЛИТЕЛЬНОСТЬ АНТИМАГИЧЕСКОГО ЩИТА:'
-DOTA_Tooltip_modifier_antimage_spell_shield_arena_reflect: Antimagic shell
 DOTA_Tooltip_modifier_antimage_spell_shield_arena_reflect_Description: Блокирует и отражает большинство направленных заклинаний обратно во врага
 
 DOTA_Tooltip_ability_antimage_mana_void_arena_Description: 'За каждую отсутствующую единицу маны противника, наносит ему и находящимся рядом противникам чистый урон. Все цели будут обезмолвлены, а их скиллы отправятся на перезарядку.'

@@ -49,7 +49,8 @@
 	[
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 181, 165, 149, 255 ]
+			m_ColorMax = [ 103, 239, 240, 255 ]
+			m_ColorMin = [ 0, 255, 255, 255 ]
 		},
 		{
 			_class = "C_INIT_RandomRadius"
@@ -113,6 +114,28 @@
 			_class = "C_OP_RandomForce"
 			m_MaxForce = [ 600.0, 600.0, 200.0 ]
 			m_MinForce = [ -600.0, -600.0, -200.0 ]
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 1.0, 1.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

@@ -38,7 +38,7 @@ function RecieveMessage(data) {
 			var localized;
 			var cooldown = Abilities.GetCooldownTimeRemaining(data.ability);
 			if (Players.GetTeam(data.player) === Players.GetTeam(playerID)) {
-				if (Abilities.GetLevel(data.ability) == 0) {
+				if (Abilities.GetLevel(data.ability) === 0) {
 					localized = "chat_message_ability_not_learned";
 				} else if (!Abilities.IsOwnersManaEnough(data.ability)) {
 					localized = "chat_message_ability_mana";
@@ -103,14 +103,14 @@ function RecieveMessage(data) {
 	}
 }
 
+var twitchRegExp = new RegExp("\\b(" + escapeRegExp(Object.keys(twitchSmileMap).join("|")) + ")\\b", "g");
+var bttvRegExp = new RegExp("\\b(" + escapeRegExp(Object.keys(bttvSmileMap).join("|")) + ")\\b", "g");
 function AddSmiles(string) {
-	string = string.replace(new RegExp("\\b(" + escapeRegExp(Object.keys(twitchSmileMap).join("|")) + ")\\b", "g"), function(matched) {
+	return string.replace(twitchRegExp, function(matched) {
 		return "<img src='" + twitchUrlMask.replace("{id}", twitchSmileMap[matched]) + "'/>";
-	});
-	string = string.replace(new RegExp("\\b(" + escapeRegExp(Object.keys(bttvSmileMap).join("|")) + ")\\b", "g"), function(matched) {
+	}).replace(bttvRegExp, function(matched) {
 		return "<img src='" + bttvUrlMask.replace("{id}", bttvSmileMap[matched]) + "'/>";
 	});
-	return string;
 }
 
 (function() {

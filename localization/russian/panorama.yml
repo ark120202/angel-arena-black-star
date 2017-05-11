@@ -58,8 +58,6 @@ ability_shop_search_placeholder: Название способности или 
 DOTA_Item_Build_Altenative_Starting_Items: Альт. нач. предметы
 DOTA_Item_Build_Title_Valve: РЕКОМЕНДУЕМЫЕ
 DOTA_Item_Build_Title_Arena: ПРЕДМЕТЫ ИЗ AABS
-notification_item_demon_king_bar_curse_p1: "Вы получили проклятье от Demon King Bar. Вы погибнете через\_"
-notification_item_demon_king_bar_curse_p2: "\_секунд."
 custom_toast_PlayerDeniedSelf: '{victim_name} {denied_icon} не отдается врагу'
 custom_toast_PlayerDenied: '{killer_name} {denied_icon} не отдает врагу {victim_name}'
 custom_toast_KillStreak_Ended: '{victim_name} Серия из {kill_streak} убийств прервана'

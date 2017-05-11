@@ -204,7 +204,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 							damage_type = medusa_mana_shield_arena:GetAbilityDamageType(),
 						})
 					end
-					victim:SpendMana(mana_needed, medusa_mana_shield_arena)					
+					victim:SpendMana(mana_needed, medusa_mana_shield_arena)
 					local particleName = "particles/arena/units/heroes/hero_sara/fragment_of_armor_impact.vpcf"
 					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
 					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
@@ -265,7 +265,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 				local mana_needed = (damage * blocked_damage_pct) / sara_fragment_of_armor:GetAbilitySpecial("damage_per_energy")
 				if victim:GetEnergy() >= mana_needed then
 					victim:EmitSound("Hero_Medusa.ManaShield.Proc")
-					victim:ModifyEnergy(-mana_needed)					
+					victim:ModifyEnergy(-mana_needed)
 					local particleName = "particles/arena/units/heroes/hero_sara/fragment_of_armor_impact.vpcf"
 					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
 					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())

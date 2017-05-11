@@ -18,6 +18,8 @@ custom_talents_talent_movespeed_limit: Movement Speed Limit
 custom_talents_talent_movespeed_limit_description: 'Increases maximum movement speed to {movespeed_limit}'
 custom_talents_talent_health: Health
 custom_talents_talent_health_description: '+{health} health'
+custom_talents_talent_mana: Mana
+custom_talents_talent_mana_description: '+{mana} mana'
 custom_talents_talent_health_regen: Health Regeneration
 custom_talents_talent_health_regen_description: '+{health_regen} health regeneration'
 custom_talents_talent_armor: Armor

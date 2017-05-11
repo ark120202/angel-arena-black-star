@@ -297,7 +297,6 @@ function OnMinimapClickSpawnBox(team, level, index) {
 	});
 }
 
-var adsurl = "https://goo.gl/wQpngH"; //dota2.sgm-luck.ru
 var adsEnabledLangs = [
 	"russian",
 	"ukrainian",
@@ -305,7 +304,7 @@ var adsEnabledLangs = [
 ];
 
 function OnAdsClicked() {
-	$.DispatchEvent("ExternalBrowserGoToURL", adsurl);
+	$.DispatchEvent("ExternalBrowserGoToURL", "https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection_redirect");
 	//$.DispatchEvent("DOTADisplayURL", adsurl)
 }
 
@@ -318,7 +317,7 @@ function UpdateMainTable(tableName, changesObject, deletionsObject) {
 	if (newState < HERO_SELECTION_PHASE_END && changesObject.HeroTabs != null) {
 		if (HeroesPanels.length === 0 && HeroesData) {
 			_.each(changesObject.HeroTabs, function(tabContent, tabKey) {
-				var TabHeroesPanel = $.CreatePanel('Panel', $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey);
+				var TabHeroesPanel = $.CreatePanel("Panel", $("#HeroListPanel"), "HeroListPanel_tabPanels_" + tabKey);
 				TabHeroesPanel.BLoadLayoutSnippet("HeroesPanel");
 				FillHeroesTable(tabContent, TabHeroesPanel);
 				TabHeroesPanel.visible = false;

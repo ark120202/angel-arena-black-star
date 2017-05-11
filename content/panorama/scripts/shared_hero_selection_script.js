@@ -75,7 +75,6 @@ function FillHeroesTable(heroList, panel, big) {
 		var HeroCard = $.CreatePanel("Panel", StatPanel, "HeroListPanel_element_" + heroName);
 		HeroCard.BLoadLayoutSnippet("HeroCard");
 		HeroCard.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(heroName, "portrait"));
-		//HeroCard.FindChildTraverse("HeroMovie").heroname = heroName;
 		if (heroData.isChanged) {
 			HeroCard.FindChildTraverse("HeroChangedBurstRoot").BCreateChildren('<DOTAScenePanel map="scenes/hud/levelupburst" hittest="false" />');
 			HeroCard.AddClass("IsChanged");
@@ -99,9 +98,11 @@ function FillHeroesTable(heroList, panel, big) {
 		HitTarget.SetPanelEvent("onactivate", SelectHeroAction);
 		HitTarget.SetPanelEvent("oninputsubmit", SelectHeroAction);
 		HitTarget.SetPanelEvent("onmouseover", function() {
+			if (IsDotaHeroName(heroName)) HeroCard.FindChildTraverse("HeroMovie").heroname = heroName;
 			HeroCard.AddClass("Expanded");
 		});
 		HitTarget.SetPanelEvent("onmouseout", function() {
+			if (IsDotaHeroName(heroName)) HeroCard.FindChildTraverse("HeroMovie").heroname = null;
 			HeroCard.RemoveClass("Expanded");
 		});
 		HeroCard.FindChildTraverse("HeroName").text = $.Localize(heroName);

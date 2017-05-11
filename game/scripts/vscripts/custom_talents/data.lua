@@ -113,6 +113,21 @@ CUSTOM_TALENTS_DATA = {
 			},
 		}
 	},
+	talent_mana = {
+		icon = "talents/mana",
+		cost = 2,
+		group = 1,
+		max_level = 12,
+		special_values = {
+			mana = {150, 300, 500, 800, 900, 1100, 1300, 1500, 1800, 2100, 2300, 2500}
+		},
+		effect = {
+			calculate_stat_bonus = true,
+			modifiers = {
+				modifier_talent_mana = "mana",
+			},
+		}
+	},
 	talent_health_regen = {
 		icon = "talents/health_regen",
 		cost = 2,

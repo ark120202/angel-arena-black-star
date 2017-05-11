@@ -1,7 +1,9 @@
 Nevermore: 
 	dark lord:
 		presence armor reduction: -8 -12 -16 -20 -24 -28 -32 => -2 -4 -6 -8 -10 -12 -14
-
+		Levels Between Upgrades: 8 => 3
+		Required Level: 3 => 1
+ 
 Sandking
 	sand storm:
 		Levels Between Upgrades: 2 => 4
@@ -45,55 +47,3 @@ Gyrocopter:
 Spirit Breaker:
 	greater bash: 
 		damage: 40 80 120 160 200 240 280 => 32 42 52 62 72 82 92
-
-
-Scripts:
-"sara_energy_burst"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/hero_sara/energy_burst.lua"
-		"AbilityTextureName"			"arena/sara_energy_burst"
-		"MaxLevel" 						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCooldown"				"100 90 80 70 60 50 40"
-		"AbilityCastRange"				"1200"
-		"AbilityCastPoint"				"0.2"
-		"HasScepterUpgrade"				"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_per_energy_point" "0.25 0.5 0.75 1 1.25 1.5 1.75"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"energy_pct"		"50"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"min_cost"			"25"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"pure_per_energy_point_scepter"	"0.25 0.3 0.35 0.4 0.45 0.5 0.55"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_aoe_scepter" "250"
-			}
-		}
-
-		"precache"
-		{
-			"particle"  "particles/arena/units/heroes/hero_sara/energy_burst.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-		}
-	}

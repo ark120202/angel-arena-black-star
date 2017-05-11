@@ -67,8 +67,6 @@ ability_shop_shift_no: LMB/RMB - Buy Ability. Hold SHIFT to enter selling mode.
 ability_shop_shift_yes: 'LMB - Sell ability, RMB - Downgrade ability. Release SHIFT to enter purchase mode.'
 ability_shop_purchased_only: Show purchased abilities
 ability_shop_search_placeholder: Ability or hero name...
-notification_item_demon_king_bar_curse_p1: "You just received Demon King Bar's Curse effect. You'll die in\_"
-notification_item_demon_king_bar_curse_p2: "\_seconds."
 custom_toast_PlayerDeniedSelf: '{victim_name} {denied_icon} Denied'
 custom_toast_PlayerDenied: '{killer_name} {denied_icon} Denied {victim_name}'
 custom_toast_KillStreak_Ended: '{victim_name} {kill_streak}x Kill Streak ended'

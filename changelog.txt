@@ -49,6 +49,7 @@ General:
 	Gold now is formatted to thousands and millions (normal values are shown while holding ALT)
 	Added announcer countdown before duel
 	Kadash's model now is purple
+	Added Mana Talent //test
 Balance:
 	Runes:
 		
@@ -74,6 +75,7 @@ Balance:
 		
 Fixes:
 	Fixed Curese sometimes killed heroes even after it was purged
+	Fixed shop's focus
 <<+===========================================================================================================
 rhasta,
 lycan,

@@ -1,5 +1,5 @@
-npc_arena_hero_freya__hype: ''
-npc_arena_hero_freya__bio: ''
+npc_arena_hero_freya_hype: ''
+npc_arena_hero_freya_bio: ''
 
 DOTA_Tooltip_ability_freya_strike_the_ice_Description: 'Фрея запускает ледяные болты во всех врагов в выбранной области. При попадании эти болты нанесут урон, оглушат противника, и сделают невозможным регенерацию или лечение.'
 DOTA_Tooltip_ability_freya_strike_the_ice_radius: 'РАДИУС:'

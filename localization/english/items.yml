@@ -1025,14 +1025,15 @@ DOTA_Tooltip_modifier_item_urn_of_souls_damage: Shadow Release
 DOTA_Tooltip_modifier_item_urn_of_souls_damage_Description: Mana is burning over time.
 DOTA_Tooltip_ability_item_demon_king_bar: Demon King Bar
 DOTA_Tooltip_ability_item_demon_king_bar_Description: |-
-  Active: <font color='#b44ce3'>Curse</font> - Curses enemy hero, causing it to die after %curse_duration% seconds. This debuff is purgable.
+  Active: <font color='#b44ce3'>Curse</font> - Curses enemy hero, causing it to continuously receive damage, which grows with each second. This debuff is purgable.
   Passive: Mini-Bash - Grants each attack a chance to deal bonus damage and deal a mini-stun.
   Passive: True Strike - Prevents your attacks from missing.
 DOTA_Tooltip_ability_item_demon_king_bar_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_demon_king_bar_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_demon_king_bar_bash_chance: '%MINI-BASH CHANCE:'
 DOTA_Tooltip_ability_item_demon_king_bar_bash_damage: 'MINI-BASH DAMAGE:'
-DOTA_Tooltip_ability_item_demon_king_bar_curse_duration: 'CURSE DELAY:'
+DOTA_Tooltip_modifier_item_demon_king_bar_curse: 'Curse'
+DOTA_Tooltip_modifier_item_demon_king_bar_curse_Description: 'Continuously gets damage, which grows with each second (now %dMODIFIER_PROPERTY_TOOLTIP%). Can be purged.'
 DOTA_Tooltip_ability_item_butterfly_arena: Butterfly
 DOTA_Tooltip_ability_item_butterfly_arena_Description: |-
   Active: Flutter - Gives owner max movement speed for %duration% seconds.
@@ -1384,7 +1385,7 @@ DOTA_Tooltip_modifier_item_phantom_cuirass_enemy_aura: Phantom Cuirass
 DOTA_Tooltip_modifier_item_phantom_cuirass_enemy_aura_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 DOTA_Tooltip_ability_item_demonic_cuirass: Demonic Cuirass
 DOTA_Tooltip_ability_item_demonic_cuirass_Description: |-
-  Acitve: <font color='#b44ce3'>Area Curse</font> - Curses all nearby enemies, causing them to die after %curse_duration% seconds. This debuff is purgable.
+  Acitve: <font color='#b44ce3'>Area Curse</font> - Curses all nearby enemies, causing them to continuously receive damage, which grows with each second. This debuff is purgable.
   Passive: Demonic Aura - Grants attack speed, armor, health regeneration, True Strike and Mini-Bash chance to nearby allied units, and decreases the armor of nearby enemies.
   Passive: Mini-Bash - Grants each attack a chance to deal bonus damage and deal a mini-stun.
   Passive: True Strike - Prevents your and your allies attacks from missing.

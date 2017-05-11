@@ -3,8 +3,8 @@
 //Libraries
 var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
 var _ = GameUI.CustomUIConfig()._;
-
 var Options = GameUI.CustomUIConfig().Options;
+
 var console = {
 	log: function() {
 		var args = Array.prototype.slice.call(arguments);
@@ -17,8 +17,9 @@ var console = {
 		});
 	}
 };
+
 var ServerDebug = true;
-var ServerAddress = (Game.IsInToolsMode() && ServerDebug ? "http://127.0.0.1:3228" : "https://angelarenablackstar-ark120202.rhcloud.com") + "/AABSServer/";
+var ServerAddress = (Game.IsInToolsMode() && ServerDebug ? "http://stats.angelarenablackstar.com" : "https://stats.angelarenablackstar-ark120202.rhcloud.com");
 
 var HERO_SELECTION_PHASE_NOT_STARTED = 0;
 var HERO_SELECTION_PHASE_BANNING = 1;
@@ -47,8 +48,6 @@ function GetDataFromServer(path, params, resolve, reject) {
 	var encodedParams = params == null ? "" : "?" + Object.keys(params).map(function(key) {
 	    return encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
 	}).join("&");
-	$.Msg(ServerAddress + path + encodedParams);
-	
 	$.AsyncWebRequest(ServerAddress + path + encodedParams, {
 		type: "GET",
 		success: function(data) {
@@ -65,7 +64,15 @@ function MongoObjectIDToDate(objectId) {
 }
 
 function IsHeroName(str) {
-	return str.lastIndexOf("npc_dota_hero_") === 0 || str.lastIndexOf("npc_arena_hero_") === 0;
+	return IsDotaHeroName(str) || IsArenaHeroName(str);
+}
+
+function IsDotaHeroName(str) {
+	return str.lastIndexOf("npc_dota_hero_") === 0;
+}
+
+function IsArenaHeroName(str) {
+	return str.lastIndexOf("npc_arena_hero_") === 0;
 }
 
 function TransformTextureToPath(texture, optPanelImageStyle) {
