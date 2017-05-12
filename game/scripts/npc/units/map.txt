@@ -2,12 +2,10 @@
 {
 	"npc_arena_fountain"
 	{
-		// General
-		//
 		"BaseClass"	"npc_dota_building"
 		"Model"	"models/development/invisiblebox.vmdl"
-		"Level"	"1000"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
+		"Ability1"				"fountain_passive"
 
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
 
@@ -36,10 +34,10 @@
 		"ModelScale"			"1.0"
 		"Level"	"1000"
 		"IsAncient"					"1"
-		
+
 		// Abilities
 		//----------------------------------------------------------------
-		
+
 		"Ability1"	"slotmachine_passive"
 		"Ability2"	""
 		"Ability3"	""
@@ -74,7 +72,7 @@
 			}
 		}
 	}
-	
+
 	"npc_dota_arena_statue"
 	{
 		// General
@@ -84,7 +82,7 @@
 		"ModelScale"				"2"
 		"Level"						"50"
 		"IsAncient"					"1"
-				
+
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"arena_statue"

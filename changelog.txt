@@ -12,7 +12,7 @@ TODO LIST:
 	2 виспа оверчарж
 	I found a bug in custom abilities using Pudge flesh heap + apocalypse can result in infinite size which would cause the hero unable to attack - ability_lua + MODIFIER_PROPERTY_MODEL_SCALE
 	сделать кастомное меню пика для спектаторов (+магазин)
-	allowrotation="true" 
+	allowrotation="true"
 	Ульта тайда в полёте + util_remove (рубик) - краш
 ======================================================
 Лабиринт
@@ -25,23 +25,25 @@ TODO LIST:
 [url=https://gist.github.com/ark120202/f2a60227fc99c9a7595bde07a569ea52]FULL UPDATE[/url]
 [url=https://gist.github.com/ark120202/f2a60227fc99c9a7595bde07a569ea52]ПОЛНОЕ ОБНОВЛЕНИЕ[/url]
 ПОЛНОЕ ОБНОВЛЕНИЕ: https://gist.github.com/ark120202/f2a60227fc99c9a7595bde07a569ea52
-• 
+•
 ============================================================
 Angel Arena Black Star - Версия 1.5:
-• 
+•
 ============================================================
 Angel Arena Black Star - Version 1.5:
-• 
+•
 ============================================================
 Angel Arena Black Star - Version 1.5:
 General:
-	
+
 	//Added paired heroes system //TODO: Repick, team changing
 	//Added new hero pair: Maka Albarn & Soul Evans
 	Added new hero: Destroyer
+	Added new hero: Anakim
+	Added new hero: Sai
 	Hero Selection:
 		Added Strategy Phase to Hero Selection that replaces precaching phase
-		Added banning phase (only Ranked gamemode for now)
+		Added banning phase (Ranked only)
 		Added ability to repick heroes //TODO: Costs 200 gold, not 100
 		Added announcer sounds
 		Redesigned player images and hero panels
@@ -49,10 +51,25 @@ General:
 	Gold now is formatted to thousands and millions (normal values are shown while holding ALT)
 	Added announcer countdown before duel
 	Kadash's model now is purple
-	Added Mana Talent //test
+	Added Mana Talent
 Balance:
 	Runes:
-		
+
+	Bosses:
+		Cursed Demon:
+			Armor: 60 => 90
+			Magical Resistance: 50 => 60 %
+			Movement Speed: 422 => 420
+			Health: 450000 => 500000
+			Health Regeneration: 500 => 600
+		The Netherdrake:
+			Armor 250 => 300
+		Freya:
+			Health: 750000 => 800000
+			Health Regeneration: 800 => 850
+		Zaken
+			Health: 750000 => 800000
+			Health Regeneration: 800 => 850
 	Items:
 		Orb of Essences:
 			Now not requires Moon Dust
@@ -67,15 +84,97 @@ Balance:
 			Cooldown: 0 => 80
 			Mana Cost: 0 => 600
 			Curse Duration: 60 => 25
+		Diffusal Blade:
+			Cooldown: 8.0 7.0 6.0 5.0 4.0 => 16 14 12 10 8
+		Auto Scythe of Vyse:
+			Spell Amp: 30 => 40
+			Sheep Duration: 4.75 => 3
+		Butterfly of Sins:
+			Bonus Agility: 80 => 60
+			Bonus Damage: 135 => 120
+			Bonus Attack Speed: 100 => 60
+			Crit Chance: 35 => 30
+		Rapier of Pain:
+			Bonus Agility: 115 => 90
+			Bonus Damage: 155 => 200
+			Crit Chance: 28 => 30
+			Crit Multiplier: 322 => 300
+		Blade Mail I-III:
+			Duration: 5 6 7 => 4
+		Piercing Blade:
+			Bonus Damage: 400 => 500
+			Attack Damage To Pure: 30 => 10
+		Haganemushi:
+			Bonus Damage: 700 => 900
+			Attack Damage To Pure: 40 => 20
 	Talents:
-		
+
 	Abilities:
-		
+		Timbersaw - Chakram 2:
+			Mana Per Second:250 => 100
+		Clockwerk - Hookshot:
+			Cooldown Scepter: 20 => 25
+		Chaos Knight - Phantasm:
+			Cooldown Scepter: 110 => 40
+		Beastmaster - Primal Roar:
+			Cooldown Scepter: 30 => 45
+		Tusk - Walrus Kick:
+			Damage: 350 => 500 1000 1500 2000 2500 3000 3500
+		Treant - Natures Guise:
+			Radius: 265 => 350
+		Treant - Eyes in the Forest:
+			Vision AOE: 800 => 950
+			Overgrowth AOE: 800 => 950
+			Damage: 400 => 500 800 1000 1250 1500 1750 2000
+		Weaver - Shukuchi:
+			Damage: 75 100 125 150 175 200 250 => 75 150 225 300 375 450 550
+			Radius: 175 => 250
+		Juggernaut - Blade Fury:
+			Cooldown: 42 34 26 18 17 16 15 => 20 18 16 14 12 11 10
+		Dazzle - Shallow Grave:
+			Duration: 5 6 7 => 4
+		Mirana - Arrow:
+			Arrow Max Stun: 5 => 4
+		Huskar - Burning Spear:
+			Duration: 8 => 4
+			Damage: 30 60 90 120 150 180 210 => 10 20 40 60 80 100 120
+			Health Cost: 30 60 90 120 150 180 210 => 10 20 40 60 80 100 120
+		Axe - Counter Helix:
+			Damage From Current Health: 0 => 0.5 1 1.5 2 2.5 3 3.5 %
+		Faceless - Void Time Freeze:
+			Duration: 1.5 2.0 2.3 2.6 2.7 2.8 3.0 => 2 2.4 2.8 3.2 3.6 3.8 4
+		Faceless - Void Time Walk:
+			Cast Range: 625 => 900
+		Life Stealer - Feast:
+			Hp Leech Percent: 4 => 0.5
+		Ancient Apparition - Cold Feet:
+			Duration: 4.0 => 3
+			ManaCost: 150 200 250 300 350 400 450 => 100 120 140 160 180 200 220
+			Stun Duration: 2.0 2.75 3.5 3.75 4.0 4.25 4.50 => 2 2.2 2.4 2.6 2.8 3 3.2
+			Damage: 50 62 75 90 110 130 150 => 60 80 100 120 140 180 220
+		Ancient Apparition - Ice Vortex:
+			Radius: 275 275 275 275 275 275 275 => 300 300 300 300 300 300 300
+			Movement Speed: -15 -20 -25 -30 -35 -40 -45 => -20 -30 -40 -50 -60 -70 -80
+			Vision AOE: 200 200 200 200 200 200 200 => 300 300 300 300 300 300 300
+		Ancient Apparition - Ice Blast:
+			Damage: 250 350 450 550 750 950 => 300 400 500 600 800 1000 1400
+			Radius Min: 275 => 350
+			Radius Max: 1000 => 1400
+			Speed: 1500 => 2500
+			Frostbite Duration: 8.0 9.0 10.0 11.0 12.0 13.0 14.0 => 10
+			Dot Damage: 12.5 32.0 52.0 80.0 100.0 120.0 140.0 => 10 20 40 80 120 160 200
+		These abilities no longer refreshable:
+			Shallow Grave
+			Dark Whale
+			Select Allies
+			Select Enemies
+			Time Freeze
 	Ability Shop:
-		
+
 Fixes:
 	Fixed Curese sometimes killed heroes even after it was purged
 	Fixed shop's focus
+	Fixed Freya - Pain Reflection tooltip shown that it was affected by spell damage amplify
 <<+===========================================================================================================
 rhasta,
 lycan,
@@ -113,7 +212,7 @@ pugna ward
 	Light Spear:
 		Раз в 12 секунд позволяет атакавать юнита в любой точке карты. Если атакован юнит в радиусе атаки, то вешает на него дебаффы: стан, ослепление на 2 сек. Делается из апнутого форса.
 
-Идеи для боссов: 
+Идеи для боссов:
 	Roshan (remake):
 		Появляется после 30 минуты. Потом - респавн 8-15 минут.
 		Ходит за героями. Кд на 1 героя -  4 героя. Ходит через хг, когда доганяет - появляется сообщение (с модуля нотификаций) с предложением дать (10000 + (цикл роши * 5000)) золота. Если дать - переключится на рандом противника. Если нет - Будет ходить до 1 смерти,  потом на рандом героя. Фонтан его не убивает. Отключает все способы восстановления здоровья (кроме вампирки шинобу) в радиусе 900. При смерти - золото, в зависимости от того, кто наносил урон (те тому кто нанёс 75% его хп - 75% золота). Не регенится.

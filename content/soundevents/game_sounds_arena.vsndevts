@@ -17,7 +17,7 @@
 							"value0"	"sounds/arena/weapons/hero/arthas/vsolyanova_1.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"3.500000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -48,7 +48,7 @@
 							"value0"	"sounds/arena/weapons/hero/arthas/vsolyanova_transformate.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"5.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -82,7 +82,7 @@
 							"value4"	"sounds/arena/weapons/hero/arthas/rage_of_arthas_5.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"3.000000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -112,7 +112,7 @@
 							"value0"	"sounds/arena/weapons/hero/stargazer/gamma_ray.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"3.500000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -142,7 +142,7 @@
 							"value0"	"sounds/arena/weapons/hero/stargazer/cosmic_countdown.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"5.000000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -172,7 +172,7 @@
 							"value0"	"sounds/weapons/hero/warlock/warlock_upheaval.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"1.000000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -202,7 +202,7 @@
 							"value0"	"sounds/arena/items/steam_footgear.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"1.000000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -232,7 +232,7 @@
 							"value0"	"sounds/arena/weapons/hero/crystal_maiden/glacier_tranqulity.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"1.000000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -262,7 +262,7 @@
 							"value0"	"sounds/arena/book_page_turn.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"3.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -293,7 +293,7 @@
 							"value0"	"sounds/arena/weapons/hero/cherub/explosive_spore_plant.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"5.000000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -323,7 +323,7 @@
 							"value0"	"sounds/arena/weapons/hero/cherub/explosive_spore_explode.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"5.000000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -353,7 +353,7 @@
 							"value0"	"sounds/arena/weapons/hero/cherub/synthesis_working.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"50.000000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -383,7 +383,7 @@
 							"value0"	"sounds/arena/weapons/hero/cherub/sleep_cloud.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"5.000000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -413,7 +413,7 @@
 							"value0"	"sounds/arena/items/essential_orb_fire.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"1.000000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -443,7 +443,7 @@
 							"value0"	"sounds/addons/conquest/capture_point_timer_hallow.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"1.500000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -473,7 +473,7 @@
 							"value0"	"sounds/arena/weapons/hero/queenofblades/darkness_aura.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"5.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -504,7 +504,7 @@
 							"value0"	"sounds/arena/weapons/hero/kadash/crit.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"50.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -535,7 +535,7 @@
 							"value0"	"sounds/arena/items/coffee_bean.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"5.000000" }
 					"pitch"				{ "value"	"1.000000" }
 					"soundlevel"		{ "value"	"100.000000" }
@@ -565,7 +565,7 @@
 							"value0"	"sounds/arena/weapons/hero/zen_gehraz/vow_of_silence.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"40.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -596,7 +596,7 @@
 							"value0"	"sounds/arena/weapons/hero/zen_gehraz/mystic_twister.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"10.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -627,7 +627,7 @@
 							"value0"	"sounds/arena/weapons/hero/zen_gehraz/superposition.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"75.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -658,7 +658,7 @@
 							"value0"	"sounds/arena/weapons/hero/freya/strike_the_ice_cast.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"75.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -689,7 +689,7 @@
 							"value0"	"sounds/arena/weapons/hero/freya/strike_the_ice_impact.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"75.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -720,7 +720,7 @@
 							"value0"	"sounds/arena/weapons/hero/freya/frozen_strike_charge.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"100.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -751,7 +751,7 @@
 							"value0"	"sounds/arena/weapons/hero/freya/frozen_strike_impact.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"0.010000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -782,7 +782,7 @@
 							"value0"	"sounds/arena/weapons/hero/freya/ice_cage.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"50.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -813,7 +813,7 @@
 							"value0"	"sounds/arena/weapons/hero/zaken/summon_sailors.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"75.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -844,7 +844,7 @@
 							"value0"	"sounds/arena/weapons/hero/zaken/summon_sailors.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"75.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -875,7 +875,7 @@
 							"value0"	"sounds/arena/weapons/hero/zaken/sword_control.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"15.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -906,7 +906,7 @@
 							"value0"	"sounds/arena/weapons/hero/zaken/stitching_strikes.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"10.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -937,7 +937,7 @@
 							"value0"	"sounds/arena/weapons/hero/zaken/last_chance_proc.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"75.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -968,7 +968,7 @@
 							"value0"	"sounds/arena/weapons/hero/poseidon/sea_hole.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"75.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -999,7 +999,7 @@
 							"value0"	"sounds/arena/weapons/hero/poseidon/dark_whale.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"75.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -1030,7 +1030,7 @@
 							"value0"	"sounds/arena/weapons/hero/saber/excalibur_ex.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"100.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -1061,7 +1061,7 @@
 							"value0"	"sounds/arena/weapons/hero/saber/excalibur_calibur.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"100.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -1093,7 +1093,7 @@
 							"value1"	"sounds/arena/weapons/hero/saber/mana_burst_2.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"100.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }
@@ -1124,7 +1124,7 @@
 							"value0"	"sounds/arena/weapons/hero/saber/invisible_air.vsnd"
 						}
 					}
-					
+
 					"volume"			{ "value"	"100.000000" }
 					"pitch_min"			{ "value"	"1.000000" }
 					"pitch_max"			{ "value"	"1.000000" }

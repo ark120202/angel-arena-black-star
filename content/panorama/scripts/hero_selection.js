@@ -76,7 +76,7 @@ function RandomHero() {
 function UpdateSelectionButton() {
 	var selectedHeroData = HeroesData[SelectedHeroName];
 	$.GetContextPanel().SetHasClass("RandomingEnabled", !IsLocalHeroPicked() && !IsLocalHeroLocked() && HeroSelectionState > HERO_SELECTION_PHASE_BANNING);
-	
+
 	var canPick = !IsLocalHeroPicked()
 		&& !IsHeroPicked(SelectedHeroName)
 		&& !IsHeroBanned(SelectedHeroName)
@@ -131,7 +131,7 @@ function Snippet_PlayerPanel(pid, rootPanel) {
 		var panel = $.CreatePanel("Panel", rootPanel, "");
 		panel.BLoadLayoutSnippet("PlayerPanel");
 		panel.SetDialogVariable("player_name", Players.GetPlayerName(pid));
-		panel.SetDialogVariable("player_mmr", "Infinity");
+		panel.SetDialogVariable("player_mmr", "99999");
 		panel.FindChildTraverse("SlotColor").style.backgroundColor = GetHEXPlayerColor(pid);
 		/*panel.FindChildTraverse("ImageHost").SetPanelEvent("", function() {
 
@@ -157,7 +157,7 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	_.each(changesObject, function(teamPlayers, teamNumber) {
 		if ($("#team_selection_panels_team" + teamNumber) == null) {
 			var isRight = teamNumber % 2 !== 0;
-			var TeamSelectionPanel = $.CreatePanel('Panel', $(isRight ? "#RightTeams" : "#LeftTeams"), "team_selection_panels_team" + teamNumber);
+			var TeamSelectionPanel = $.CreatePanel("Panel", $(isRight ? "#RightTeams" : "#LeftTeams"), "team_selection_panels_team" + teamNumber);
 			TeamSelectionPanel.AddClass("TeamSelectionPanel");
 			var color = GameUI.CustomUIConfig().team_colors[teamNumber];
 			TeamSelectionPanel.style.backgroundColor = "gradient(linear, 100% 100%, 0% 100%, from( " + color + "4D" + " ), to( transparent ))";
@@ -257,7 +257,7 @@ function OnLocalPlayerPicked() {
 	$("#HeroPreviewAbilities").RemoveAndDeleteChildren();
 	FillAbilitiesUI($("#HeroPreviewAbilities"), localHeroData.abilities, "HeroPreviewAbility");
 	FillAttributeUI($("#HeroPreviewAttributes"), localHeroData);
-	
+
 	var GlobalLoadoutItems = FindDotaHudElement("GlobalLoadoutItems");
 	if (GlobalLoadoutItems) {
 		GlobalLoadoutItems.SetParent($("#GlobalLoadoutContainer"));

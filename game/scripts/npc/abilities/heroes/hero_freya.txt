@@ -8,7 +8,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"arena/freya_strike_the_ice"
 		"MaxLevel"						"7"
@@ -16,7 +16,7 @@
 
 		"AbilityCastRange"				"1100"
 		"AbilityCastPoint"				"0.3"
-		
+
 		"AbilityCooldown"				"25"
 
 		"AbilityDamage"					"600 1200 1800 2400 3000 3600 4500"
@@ -45,7 +45,7 @@
 
 		"precache"
 		{
-			"particle"			"particles/arena/units/heroes/hero_freya/strike_the_ice.vpcf"		
+			"particle"			"particles/arena/units/heroes/hero_freya/strike_the_ice.vpcf"
 		}
 
 		"OnSpellStart"
@@ -65,8 +65,8 @@
 					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				}
-			
-				"Action"    
+
+				"Action"
 				{
 					"TrackingProjectile"
 					{
@@ -93,10 +93,10 @@
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_freya_strike_the_ice"
-				"Target" 
-				{ 
-				"Center" "TARGET" 
-				"Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES" 
+				"Target"
+				{
+					"Center" "TARGET"
+					"Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				}
 				"Duration"		"%magic_missile_stun"
 			}
@@ -106,7 +106,7 @@
 				"Target"		"TARGET"
 				"Type"			"DAMAGE_TYPE_MAGICAL"
 				"Damage"		"%AbilityDamage"
-			}						
+			}
 		}
 
 		"Modifiers"
@@ -116,7 +116,7 @@
 				"IsPurgable"		"0"
 				"IsDebuff"			"1"
 				"IsStunDebuff"		"1"
-				
+
 				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
 				"EffectAttachType"	"follow_overhead"
@@ -153,12 +153,12 @@
 
 		"AbilityCastRange"				"525"
 		"AbilityCastPoint"				"0.3"
-		
+
 		"AbilityCooldown"				"30"
 
 		"AbilityManaCost"				"115 125 140 150 160 170 180"
 
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -184,7 +184,7 @@
 				"aura_radius"		"350"
 			}
 		}
-		
+
 		// Data driven
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -193,7 +193,7 @@
 			"particle"				"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff_model.vpcf"
 			"particle"				"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff_glow.vpcf"
 		}
-		
+
 		"OnSpellStart"
 		{
 			"Stun"
@@ -205,20 +205,20 @@
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_freya_ice_cage"
-				"Target" 
-				{ 
-				"Center" "TARGET" 
-				"Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES" 
+				"Target"
+				{
+				"Center" "TARGET"
+				"Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				}
 			}
-			
+
 			"FireSound"
 			{
 				"Target"			"TARGET"
 				"EffectName"		"Arena.Hero_Freya.IceCage"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_freya_ice_cage"
@@ -226,7 +226,7 @@
 				"Duration"		"%duration"
 				"IsPurgable"	"1"
 				"IsDebuff"		"1"
-			
+
 				"EffectName"		"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff_glow.vpcf"
 				"EffectAttachType"	"follow_origin"
 
@@ -252,7 +252,7 @@
 			{
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
-			
+
 				"EffectName"		"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff_model.vpcf"
 				"EffectAttachType"	"follow_origin"
 
@@ -267,7 +267,7 @@
 						"multiplier"		"%damage_interval"
 					}
 				}
-			
+
 				"States"
 				{
 					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
@@ -416,7 +416,7 @@
 						"Duration"	        "%knockback_duration"
 						"Height"	        "400"
 						"IsFixedDistance"	"1"
-						"ShouldStun"        "1"	
+						"ShouldStun"        "1"
 					}
 
 					"CleaveAttack"
@@ -429,7 +429,7 @@
 					"RemoveModifier"
 					{
 						"ModifierName"  "modifier_freya_frozen_strike_crit"
-						"Target"   		"CASTER"    
+						"Target"   		"CASTER"
 					}
 				}
 			}

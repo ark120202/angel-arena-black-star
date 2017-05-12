@@ -37,3 +37,4 @@ npm-debug.log
 generator/node_modules
 !generator/node_modules/vdf-extra
 !generator/node_modules/dota-custom-game-toolkit
+serverinfo.txt

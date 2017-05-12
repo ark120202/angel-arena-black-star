@@ -72,7 +72,7 @@
 	align: center center;
 	width: 40px;
 	height: 40px;
-	
+
 	animation-name: PlayerLoadingAnim;
 	animation-duration: 1s;
 	animation-timing-function: linear;
@@ -122,8 +122,12 @@
 
 #OptionVotingTitle
 {
-	color: white;
+	width: 100%;
+	height: 41px;
 	horizontal-align: center;
+	color: white;
+	text-align: center;
+	text-overflow: shrink;
 	font-size: 30px;
 	font-weight: bold;
 	letter-spacing: 1px;

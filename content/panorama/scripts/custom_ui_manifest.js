@@ -54,7 +54,7 @@ Game.DisableWheelPanels = [];
 GameUI.SetMouseCallback(function(eventName, arg) {
 	var result = false;
 	var ClickBehaviors = GameUI.GetClickBehaviors();
-	if (eventName == "pressed") {
+	if (eventName === "pressed") {
 		if (arg === 0) {
 			if (Game.MouseEvents.OnLeftPressed.length > 0) {
 				for (var k in Game.MouseEvents.OnLeftPressed) {

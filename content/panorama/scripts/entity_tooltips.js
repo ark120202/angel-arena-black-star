@@ -1,8 +1,9 @@
 var CurrentEntityHoveredPanel, CurrentEntityHoveredIndex;
 var Check = function() {
 	var CursorTargetEnts = [];
-	_.each(GameUI.FindScreenEntities(GameUI.GetCursorPosition()), function(target) {
-		var ent = Number(target.entityIndex);
+	var cursorEntities = GameUI.FindScreenEntities(GameUI.GetCursorPosition());
+	for (var i = 0; i < cursorEntities.length; i++) {
+		var ent = Number(cursorEntities[i].entityIndex);
 		CursorTargetEnts.push(ent);
 		var entTooltipInfo = GameUI.CustomUIConfig().custom_entity_values[ent];
 		if (entTooltipInfo != null && entTooltipInfo.custom_tooltip != null && CurrentEntityHoveredPanel == null) {
@@ -12,9 +13,9 @@ var Check = function() {
 			CurrentEntityHoveredPanel.style.position = ((Game.WorldToScreenX(abs[0], abs[1], abs[2]) / Game.GetScreenWidth()) * 100) + "% " + ((Game.WorldToScreenY(abs[0], abs[1], abs[2]) / Game.GetScreenHeight()) * 100) + "% 0";
 			CurrentEntityHoveredPanel.style.tooltipPosition = "bottom";
 			$.DispatchEvent("DOTAShowTitleTextTooltip", CurrentEntityHoveredPanel, entTooltipInfo.custom_tooltip.title, entTooltipInfo.custom_tooltip.text);
-			return false;
+			break;
 		}
-	});
+	}
 	if (CurrentEntityHoveredIndex != null && CursorTargetEnts.indexOf(CurrentEntityHoveredIndex) === -1) {
 		$.DispatchEvent("DOTAHideTitleTextTooltip");
 		CurrentEntityHoveredPanel.visible = false;
@@ -25,3 +26,10 @@ var Check = function() {
 	$.Schedule(0.1, Check);
 };
 Check();
+
+
+Game.MouseEvents.OnLeftPressed.push(function(ClickBehaviors, eventName, arg) {
+	if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE) {
+		if (CurrentEntityHoveredIndex) return true;
+	}
+});

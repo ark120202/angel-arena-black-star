@@ -97,7 +97,7 @@ function HeroSelection:PrepareTables()
 	for _,tab in pairs(data.HeroTabs) do
 		for _,name in ipairs(tab) do
 			if heroesData[name] and not heroesData[name].linked_heroes then
-				table.insert(HeroSelection.RandomableHeroes, k)
+				table.insert(HeroSelection.RandomableHeroes, name)
 			end
 		end
 	end
@@ -153,7 +153,7 @@ function HeroSelection:StartStateHeroPick()
 			table.insert(notBanned, hero)
 		end
 	end
-	local iterCount = math.ceil(#notBanned * Options:GetValue("BanningPhaseBannedPercentage") * 0.01) 
+	local iterCount = math.ceil(#notBanned * Options:GetValue("BanningPhaseBannedPercentage") * 0.01)
 	for i = 1, iterCount do
 		table.remove(notBanned, RandomInt(1, #notBanned))
 	end
@@ -191,7 +191,7 @@ function HeroSelection:StartStateStrategy()
 	--CustomGameEventManager:Send_ServerToAllClients("hero_selection_update_precache_progress", toPrecache)
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled(DISABLE_ANNOUNCER)
 	--CustomGameEventManager:Send_ServerToAllClients("hero_selection_show_precache", {})
-	
+
 	HeroSelection:SetTimerDuration(HERO_SELECTION_STRATEGY_TIME)
 	HeroSelection:SetState(HERO_SELECTION_PHASE_STRATEGY)
 	HeroSelection:CreateTimer(HERO_SELECTION_STRATEGY_TIME, function()

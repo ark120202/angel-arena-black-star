@@ -9,8 +9,9 @@ var CustomChatLinesPanel,
 
 function UpdatePanoramaHUD() {
 	var unit = Players.GetLocalPlayerPortraitUnit();
-	FindDotaHudElement("UnitNameLabel").text = $.Localize(GetHeroName(unit)).toUpperCase();
-
+	var unitName = GetHeroName(unit);
+	FindDotaHudElement("UnitNameLabel").text = $.Localize(unitName).toUpperCase();
+	if (unitName === "npc_arena_rune") GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
 	var CustomModifiersList = $("#CustomModifiersList");
 	var VisibleModifiers = [];
 	for (var i = 0; i < Entities.GetNumBuffs(unit); ++i) {
@@ -46,7 +47,7 @@ function UpdatePanoramaHUD() {
 	}
 
 	_.each(CustomModifiersList.Children(), function(child) {
-		if (!_.incluedes(VisibleModifiers.indexOf(child.id))) child.DeleteAsync(0);
+		if (VisibleModifiers.indexOf(child.id) === -1) child.DeleteAsync(0);
 	});
 
 	FindDotaHudElement("level_stats_frame").visible = Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
@@ -226,7 +227,7 @@ function CreateCustomToast(data) {
 	if (data.type === "kill") {
 		var byNeutrals = data.killerPlayer == null;
 		var isSelfKill = data.victimPlayer === data.killerPlayer;
-		var isAllyKill = !byNeutrals && data.victimPlayer != null && Players.GetTeam(data.victimPlayer) == Players.GetTeam(data.killerPlayer);
+		var isAllyKill = !byNeutrals && data.victimPlayer != null && Players.GetTeam(data.victimPlayer) === Players.GetTeam(data.killerPlayer);
 		var isVictim = data.victimPlayer === Game.GetLocalPlayerID();
 		var isKiller = data.killerPlayer === Game.GetLocalPlayerID();
 		var teamVictim = byNeutrals || Players.GetTeam(data.victimPlayer) === Players.GetTeam(Game.GetLocalPlayerID());
@@ -308,19 +309,18 @@ function CreateBossItemVote(id, data) {
 	row.BLoadLayoutSnippet("BossDropItemVote");
 	var BossTakeLootTime = row.FindChildTraverse("BossTakeLootTime");
 	BossTakeLootTime.max = data.time;
-	var f = function() {
+	(function Update() {
 		var diff = Game.GetGameTime() - data.killtime;
 		if (diff <= data.time) {
 			BossTakeLootTime.value = BossTakeLootTime.max - diff;
-			$.Schedule(0.1, f);
+			$.Schedule(0.1, Update);
 		}
-	};
-	f();
+	})();
 
 	var BossDropHideShowInfo = row.FindChildTraverse("BossDropHideShowInfo");
 	row.FindChildTraverse("BossDropHideShowInfo").SetPanelEvent("onactivate", (function(_row, _BossDropHideShowInfo) {
 		return function() {
-			_BossDropHideShowInfo.text = $.Localize(_BossDropHideShowInfo.text == $.Localize("boss_loot_vote_hide") ? "boss_loot_vote_show" : "boss_loot_vote_hide");
+			_BossDropHideShowInfo.text = $.Localize(_BossDropHideShowInfo.text === $.Localize("boss_loot_vote_hide") ? "boss_loot_vote_show" : "boss_loot_vote_hide");
 			_row.ToggleClass("CollapseBossDropInfo");
 		};
 	})(row, BossDropHideShowInfo));

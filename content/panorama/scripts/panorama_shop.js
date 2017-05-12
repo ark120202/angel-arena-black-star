@@ -154,7 +154,7 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 		panel.DeleteAsync(0);
 	};
 	if (!panel.IsInQuickbuy) {
-		$.RegisterEventHandler('DragStart', panel, function(panelId, dragCallbacks) {
+		$.RegisterEventHandler("DragStart", panel, function(panelId, dragCallbacks) {
 			var itemName = panel.itemName;
 			if (!onDragStart || onDragStart(panel)) {
 				$.GetContextPanel().AddClass("DropDownMode");
@@ -171,7 +171,7 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 			}
 			return false;
 		});
-		
+
 		$.RegisterEventHandler("DragEnd", panel, function(panelId, draggedPanel) {
 			$.GetContextPanel().RemoveClass("DropDownMode");
 			draggedPanel.DeleteAsync(0);
@@ -297,7 +297,7 @@ function UpdateSmallItem(panel, gold) {
 			var RemainingTime = ItemStocks[panel.itemName].current_cooldown - (CurrentTime - ItemStocks[panel.itemName].current_last_purchased_time);
 			var stock = ItemStocks[panel.itemName].current_stock;
 			panel.FindChildTraverse("SmallItemStock").text = stock;
-			if (stock == 0 && RemainingTime > 0) {
+			if (stock === 0 && RemainingTime > 0) {
 				panel.FindChildTraverse("StockTimer").text = Math.round(RemainingTime);
 				panel.FindChildTraverse("StockOverlay").style.width = (RemainingTime / ItemStocks[panel.itemName].current_cooldown * 100) + "%";
 			} else {
@@ -378,7 +378,7 @@ function MakeQuickbuyCheckItem(itemName, ItemCounter, ItemIndexer, sourceExpecte
 	ItemCounter[itemName] = ItemCounter[itemName] + 1;
 	ItemIndexer[itemName] = ItemIndexer[itemName] + 1;
 	var itemCount = GetItemCountInCourier(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), itemName, true) + GetItemCountInInventory(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), itemName, true);
-	if ((itemCount < ItemCounter[itemName] || (itemName == QuickBuyTarget && itemCount - (sourceExpectedCount - 1) < ItemCounter[itemName]))) {
+	if ((itemCount < ItemCounter[itemName] || (itemName === QuickBuyTarget && itemCount - (sourceExpectedCount - 1) < ItemCounter[itemName]))) {
 		if (RecipeData != null && RecipeData.items != null) {
 			_.each(RecipeData.items[1], function(childName) {
 				MakeQuickbuyCheckItem(childName, ItemCounter, ItemIndexer);
@@ -394,7 +394,7 @@ function MakeQuickbuyCheckItem(itemName, ItemCounter, ItemIndexer, sourceExpecte
 			SmallItemsAlwaysUpdated.push(itemPanel);
 		}
 	} else {
-		if (itemName == QuickBuyTarget) {
+		if (itemName === QuickBuyTarget) {
 			ClearQuickbuyItems();
 		} else {
 			RemoveQuickbuyItemChildren(itemName, ItemIndexer, false);

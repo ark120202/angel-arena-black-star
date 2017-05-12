@@ -137,7 +137,11 @@ local PhysicsUnitFDesc = {
 
 function PrintTableCall(t, printFunc, indent, done)
 	--printFunc ( string.format ('PrintTable type %s', type(keys)) )
-	if type(t) ~= "table" then return end
+	if type(t) ~= "table" then
+		printFunc("PrintTable called on not table value")
+		printFunc(tostring(t))
+		return
+	end
 
 	done = done or {}
 	done[t] = true

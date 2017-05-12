@@ -18,9 +18,9 @@ var Options = {
 	},
 	IsEquals: function(name, value) {
 		if (value === undefined)
-			return this.GetValue(name) === true;
+			return this.GetValue(name) === 1;
 		else
-			return this.GetValue(name) === value;
+			return this.GetValue(name) === typeof value === "boolean" ? value?1:0 : value;
 	},
 	Subscribe: function(name, callback) {
 		if (!this.callbacks[name]) this.callbacks[name] = [];
