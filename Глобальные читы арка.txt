@@ -1,0 +1,67 @@
+Глобальные читы арка ( ГАЙД )
+
+say -lua PlayerResource:GetSelectedHeroEntity(ЦИФАРКА ID):AddAbility("СКИЛ")    - ДАТЬ СКИЛ
+
+say -lua PlayerResource:GetSelectedHeroEntity(ЦИФАРКА ID):RemoveAbility("СКИЛ") - ЗАБРАТЬ СКИЛ
+
+-lua HeroSelection:ChangeHero(playerId, newHeroName, true, 0)
+
+PlayerResource:SetPlayerTeam(playerID, newTeam)
+
+say -lua  Kills:SetKillStreak(i, 100000)
+
+
+Gold:AddGold(pid, gold)
+
+
+for i = 0, 9 do PlayerResource:GetSelectedHeroEntity(i):ModifyStrength(10000) end
+AttributeIntelligenceGain
+
+PlayerResource:GetLevelValue(i):level(120)
+
+while(true) do Notifications:TopToAll({text="ALASTOR PIDOR"}) end
+
+PlayerResource:GetSelectedHeroEntity(i):SetBaseMoveSpeed(666)
+
+-kick <pid>			-ban <pid>
+
+PlayerResource:GetSelectedHeroEntity(pid):SetLevel(11111)
+
+PlayerResource:GetSelectedHeroEntity(pid):AddItemByName("item_rapier")
+
+PlayerResource:GetSelectedHeroEntity(pid):SetModel("models/units/zaken/zaken.vmdl")
+
+PlayerResource:GetSelectedHeroEntity(pid):SetModelScale(2.5)
+
+большой кот мурзика models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl
+
+say -lua for i = 0, 9 do HeroSelection:ChangeHero(i, "npc_arena_hero_destroyer", true, 0) end
+
+
+
+СПРОСИТЬ ПЛЕР ID  -  !!!!!-cprint !!!! потом  !!!!  -printplayers !!!!!
+
+say -lua PlayerResource:GetSelectedHeroEntity(6):ModifyAgility(-10)
+
+say -lua GetSelectedHeroEntity(0):ModifyIntelligence(10000)
+
+say -lua PlayerResource:GetSelectedHeroEntity(7):SetBaseIntellect(10000)			:ModifyIntellect(1000000)
+
+say -lua for i = 0, 9 do PlayerResource:GetSelectedHeroEntity(i):SetBaseMoveSpeed(1) end
+
+say -lua for i = 0, 9 do PlayerResource:SetPlayerTeam(i, 2) end
+
+say -lua for i = 0, 9 do Kills:SetKillStreak(i, 100000) end
+
+say -lua for I = 0, 9 do CHAT_COMMANDS.kick({I}) end
+
+GameRules:SetKillGoal(iGoal)
+
+GameRules:SetCustomGameTeamMaxPlayers(team, 10)
+
+for team in pairs(TEAM_COLORS) do
+  GameRules:SetCustomGameTeamMaxPlayers(team, 10) end
+
+for i = 0, 9 do Gold:AddGold(i, gold) end
+
+Gold:AddGold(i, gold)
