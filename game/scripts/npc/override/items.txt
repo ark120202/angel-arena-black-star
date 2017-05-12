@@ -135,6 +135,7 @@
 		"SecretShop"					"0"
 		"ItemStockTime"					"300.0"
 		"ItemStockMax"					"3"
+		"ItemKillable"					"1"
 	}
 	"item_cloak"
 	{
@@ -163,10 +164,36 @@
 	"item_clarity"
 	{
 		"SecretShop"					"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_mana"			"370"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"35"
+			}			
+		}
 	}
 	"item_flask"
 	{
 		"SecretShop"					"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"1200"
+			}
+		}
 	}
 	"item_ward_observer"
 	{
@@ -174,7 +201,7 @@
 		"ItemStockMax"					"10"
 		"ItemStockInitial"				"3"
 		"ItemStockTime"					"50"
-		"ItemCost"						"150"
+		"ItemCost"						"70"
 	}
 	"item_ward_sentry"
 	{
@@ -183,6 +210,8 @@
 	"item_tpscroll"
 	{
 		"SecretShop"					"0"
+		"AbilityManaCost"				"25"
+		"AbilityCooldown"				"45.0"
 	}
 	"item_recipe_travel_boots"
 	{
@@ -295,12 +324,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"25"
+				"block_chance"			"51"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance_hero"		"80"
+				"block_chance_hero"		"65"
 			}
 		}
 	}
@@ -584,7 +613,7 @@
 	{
 		"SecretShop"					"0"
 		"AbilityManaCost"				"0"
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"15"
 		"AbilitySpecial"
 		{
 			"02"
@@ -624,6 +653,36 @@
 	"item_soul_ring"
 	{
 		"SecretShop"					"0"
+		"AbilityCooldown"				"20.0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_regen"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen"			"75"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_sacrifice"		"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_gain"				"350"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"12"
+			}
+		}
+	}
 	}
 	"item_recipe_arcane_boots"
 	{
@@ -632,6 +691,30 @@
 	"item_arcane_boots"
 	{
 		"SecretShop"					"0"
+		"AbilityCastRange"				"1000"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement"		"60"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"350"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_amount"		"250"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_radius"		"1000"
+			}
+		}
 	}
 	"item_orb_of_venom"
 	{
@@ -656,6 +739,8 @@
 	"item_smoke_of_deceit"
 	{
 		"SecretShop"					"0"
+		"ItemStockMax"					"6"
+		"ItemStockTime"					"220.0"	
 	}
 	"item_recipe_veil_of_discord"
 	{
@@ -692,10 +777,39 @@
 	"item_recipe_tranquil_boots"
 	{
 		"SecretShop"					"0"
+		"ItemRequirements"
+		{
+			"01"						"item_boots;item_ring_of_regen;item_ring_of_protection"
+		}
 	}
 	"item_tranquil_boots"
 	{
 		"SecretShop"					"0"
+		"ItemCost"						"0"
+		"AbilityCooldown"				"5.5"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"25"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"break_time"			"5.5"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"broken_movement_speed"	"75"
+			}
+		}
 	}
 	"item_shadow_amulet"
 	{
@@ -773,7 +887,7 @@
 	{
 		"SecretShop"					"0"
 		"AbilityCastRange"				"500"
-		"AbilityCooldown"				"16.0"
+		"AbilityCooldown"				"12.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -784,7 +898,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"40"
+				"damage_bonus_ranged"	"30"
 			}
 			"03"
 			{
@@ -833,8 +947,21 @@
 	{
 		"SecretShop"					"0"
 		"ItemStockMax"					"20"
-		"ItemStockTime"					"60"			  
-		"ItemInitialStockTime"			"600"
+		"ItemStockTime"					"49.5"			  
+		"ItemInitialStockTime"			"150"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"xp_bonus"				"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"xp_per_use"			"150"
+			}
+			"03"
 	}
 	"item_recipe_hurricane_pike"
 	{

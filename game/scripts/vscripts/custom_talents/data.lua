@@ -1,7 +1,7 @@
 CUSTOM_TALENTS_DATA = {
 	talent_experience_pct = {
 		icon = "talents/experience",
-		cost = 4,
+		cost = 2,
 		group = 1,
 		max_level = 7,
 		special_values = {
@@ -15,7 +15,7 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_bonus_creep_gold = {
 		icon = "talents/gold",
-		cost = 4,
+		cost = 2,
 		group = 1,
 		max_level = 7,
 		special_values = {
@@ -58,8 +58,8 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_attack_damage = {
 		icon = "talents/damage",
-		cost = 5,
-		group = 4,
+		cost = 8,
+		group = 5,
 		max_level = 7,
 		special_values = {
 			damage = {200, 400, 600, 800, 1000, 1200, 1400}
@@ -329,7 +329,7 @@ CUSTOM_TALENTS_DATA = {
 }
 
 TALENT_GROUP_TO_LEVEL = {
-	[1] = 5,
+	[1] = 2,
 	[2] = 10,
 	[3] = 15,
 	[4] = 20,

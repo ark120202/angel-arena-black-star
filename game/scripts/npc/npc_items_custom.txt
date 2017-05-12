@@ -3646,7 +3646,7 @@
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0"
+		"AbilityCooldown"				"22"
 		"AbilityCastRange"				"800"
 		"ItemShopTags"					"str;regen_health;health_pool;mana_regen;mana_restore;mana;int;ms;move_speed;movespeed"
 		"ItemQuality"					"legendary"
@@ -3671,12 +3671,12 @@
 			"03"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"health_regen_percent_per_second"	"6.25"
+				"health_regen_percent_per_second"	"5.25"
 			}
 			"04"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"active_health_regen_percent_per_second"	"5.75"
+				"active_health_regen_percent_per_second"	"4.25"
 			}
 			"05"
 			{
@@ -3686,12 +3686,12 @@
 			"06"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"duration"							"4.0"
+				"duration"							"3.0"
 			}
 			"07"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"cooldown_melee"					"2.5"
+				"cooldown_melee"					"3.5"
 			}
 			"08"
 			{
@@ -3701,7 +3701,7 @@
 			"09"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"cooldown_ranged_tooltip"			"4"
+				"cooldown_ranged_tooltip"			"5"
 			}
 		}
 
@@ -5925,8 +5925,8 @@
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"              "0"
-		"AbilityCooldown"				"12"
-		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"14"
+		"AbilityManaCost"				"50"
 		"ItemShopTags"					"stats;move_speed;hard_to_tag"
 		"ItemQuality"					"common"
 		"ItemAliases"					"boots;steam footgear"
@@ -5937,7 +5937,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"55"
+				"bonus_movement_speed"		"60"
 			}
 			"02"
 			{
@@ -5952,12 +5952,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"passability_duration"		"5.5"
+				"passability_duration"		"3.5"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"passability_movement_speed"  "20"
+				"passability_movement_speed"  "25"
 			}
 		}
 		
@@ -18254,7 +18254,7 @@
 		"ItemAliases"					"boots;angel wings"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityManaCost"				"240"
-		"AbilityCooldown"				"22"
+		"AbilityCooldown"				"18"
 		
 		"AbilitySpecial"
 		{
@@ -18306,7 +18306,7 @@
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_range"		"325"
+				"bonus_attack_range"		"25"
 			}
 		}
 		
