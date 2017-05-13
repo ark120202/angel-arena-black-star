@@ -47,11 +47,19 @@ Hero:SetOriginalModel("models/items/courier/shibe_dog_cat/shibe_dog_cat_flying.v
 Hero:SetModel("models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl")
 Hero:SetOriginalModel("models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl")
 
+Hero:SetModel(models/items/courier/onibi_lvl_15/onibi_lvl_15.vmdl)
+Hero:SetOriginalModel(models/items/courier/onibi_lvl_15/onibi_lvl_15.vmdl)
+
+ПАТИКЛЫ
+ParticleManager:CreateParticle("string_1", PATTACH_ABSORIGIN_FOLLOW, Hero)
+ParticleManager:CreateParticle("particles/world_tower/tower_upgrade/ti7_dire_tower_ambient_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, Hero)
+
+particles/world_tower/tower_upgrade/ti7_dire_tower_ambient_core.vpcf
 
 say -lua for i = 0, 9 do HeroSelection:ChangeHero(i, "npc_arena_hero_destroyer", true, 0) end
 
 
-
+say -lua Hero:SetBaseDamageMin(-111) УРОН
 
 
 say -lua PlayerResource:GetSelectedHeroEntity(6):ModifyAgility(-10)
@@ -70,8 +78,7 @@ say -lua for I = 0, 9 do CHAT_COMMANDS.kick({I}) end
 
 GameRules:SetKillGoal(iGoal)
 
-GameRules:SetCustomGameTeamMaxPlayers(team, 10)
-
+ИДИАЛЬНАЯ КОМАНДА ПИЗДЕЦ 
 for team in pairs(TEAM_COLORS) do
   GameRules:SetCustomGameTeamMaxPlayers(team, 10) end
 
@@ -83,3 +90,66 @@ Gold:AddGold(i, gold)
 ГЛОБАЛ ШТУКА
 say -lua _G.pid = ID
 say -lua _G.Hero = PlayerResource:GetSelectedHeroEntity(pid)
+
+
+
+
+Наркотики
+
+say -lua _G.DRUGGS = CreateItem("item_casino_drug_pill3",nil,nil)
+say -lua _G.ForH = function(l) for i = 0,9 do l(PlayerResource:GetSelectedHeroEntity(i)) end end
+say -lua ForH(function(h) if h then DRUGGS:ApplyDataDrivenModifier(h,h,"modifier_item_casino_drug_pill3_debuff",{}) end end)
+
+
+
+say -lua _G.DRUGGS = CreateItem("item_casino_drug_pill1",nil,nil)
+say -lua ForH(function(h) if h then DRUGGS:ApplyDataDrivenModifier(h,h,"modifier_item_casino_drug_pill1_debuff",{}) end end)
+
+
+
+ВЗРЫВЫ КАПЕЦ ЖОПА!
+_G.A_F1 = function(particle) Timers:CreateTimer(duration, function() ParticleManager:DestroyParticle(particle, false) end) end
+_G.A_F2 = "particles/arena/units/heroes/hero_skeletonking/alternative_vsolyanova_screen.vpcf"
+Timers:CreateTimer(function() CreateGlobalParticle(A_F2, A_F1, PATTACH_EYES_FOLLOW); return 6 end)
+Timers:CreateTimer(function() EmitGlobalSound("Arena.Hero_Arthas.RageOfArthas"); return RandomInt(5,15) end)
+Timers:CreateTimer(function() EmitGlobalSound("Arena.Hero_Arthas.Vsolyanova.Impact"); return RandomInt(5,15) end)
+
+_G.A_F0 = function() ParticleManager:DestroyParticle(particle, false) end
+_G.A_F1 = function(particle)Timers:CreateTimer(duration,A_F0) end
+_G.A_F2 = "particles/arena/units/heroes/hero_skeletonking/alternative_vsolyanova_screen.vpcf"
+Timers:CreateTimer(function() CreateGlobalParticle(A_F2, A_F1, PATTACH_EYES_FOLLOW) return 1 end)
+Timers:CreateTimer(function() EmitGlobalSound("Arena.Hero_Arthas.RageOfArthas"); return RandomInt(0,15) end)
+Timers:CreateTimer(function() EmitGlobalSound("Arena.Hero_Arthas.Vsolyanova.Impact"); return RandomInt(2,15) end)
+
+
+
+
+
+ForH(function(h) if h then PlayerResource:SetPlayerTeam(h:GetPlayerID(), 2) end end)
+
+
+
+
+ЧИСТКА 
+for i = 0, GameRules:NumDroppedItems() - 1 do UTIL_Remove(GameRules:GetDroppedItem(i)) end
+
+
+
+Много шлюх по всей карте ЖОПА КРАШШШШШШ 
+say -lua CPrint(RANDVECT())
+_G.RANDVECT = function() return Vector(RandomInt(-MAP_LENGTH,MAP_LENGTH),RandomInt(-MAP_LENGTH,MAP_LENGTH),0) end
+for i = 1, 100 do CreateUnitByName("npc_dota_hero_lina",RANDVECT(),true, nil,nil,RandomInt(2,3))
+
+
+БЕССМЕРИЕ КАПЕЦ ЖОПА
+Hero:AddNewModifier(Hero,nil,"modifier_fountain_aura_arena",nil)
+
+ВИЖН ПО ВСЕЙ КАРТЕ КАПЕЦ
+GameRules:GetGameModeEntity():SetFogOfWarDisabled(true)
+
+
+Атака маленьека и большая 
+GameRules:GetGameModeEntity():SetMaximumAttackSpeed(1)-минимум
+GameRules:GetGameModeEntity():SetMinimumAttackSpeed( 99999 )
+GameRules:GetGameModeEntity():SetMaximumAttackSpeed( 99999 ) МНОГО
+
