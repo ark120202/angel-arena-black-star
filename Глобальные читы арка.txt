@@ -44,6 +44,8 @@ Hero:SetOriginalModel("models/items/courier/catakeet/catakeet_head_sly.vmdl")
 Hero:SetModel("models/items/courier/shibe_dog_cat/shibe_dog_cat_flying.vmdl")
 Hero:SetOriginalModel("models/items/courier/shibe_dog_cat/shibe_dog_cat_flying.vmdl")
 
+Hero:SetModel("models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl")
+Hero:SetOriginalModel("models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl")
 
 
 say -lua for i = 0, 9 do HeroSelection:ChangeHero(i, "npc_arena_hero_destroyer", true, 0) end
