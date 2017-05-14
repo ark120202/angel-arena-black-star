@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 //Libraries
 var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
@@ -8,18 +8,17 @@ var Options = GameUI.CustomUIConfig().Options;
 var console = {
 	log: function() {
 		var args = Array.prototype.slice.call(arguments);
-		return $.Msg(args.join("\t"));
+		return $.Msg(args.join('\t'));
 	},
 	error: function() {
 		var args = Array.prototype.slice.call(arguments);
 		_.each(args, function(arg) {
-			throw typeof arg === "string" ? new Error(arg) : arg;
+			throw typeof arg === 'string' ? new Error(arg) : arg;
 		});
 	}
 };
 
-var ServerDebug = true;
-var ServerAddress = (Game.IsInToolsMode() && ServerDebug ? "http://stats.angelarenablackstar.com" : "https://stats.angelarenablackstar-ark120202.rhcloud.com");
+var ServerAddress = 'https://stats.angelarenablackstar.com';
 
 var HERO_SELECTION_PHASE_NOT_STARTED = 0;
 var HERO_SELECTION_PHASE_BANNING = 1;
@@ -30,26 +29,56 @@ var HERO_SELECTION_PHASE_END = 4;
 var DOTA_TEAM_SPECTATOR = 1;
 
 var RUNES_COLOR_MAP = {
-	0: "FF7800",
-	1: "FFEC5E",
-	2: "F62817",
-	3: "FFD700",
-	4: "8B008B",
-	5: "7FFF00",
-	6: "FD3AFB",
-	7: "FF4D00",
-	8: "0D0080",
-	9: "C800FF",
-	10: "4A0746",
-	11: "B35F5F",
+	0: 'FF7800',
+	1: 'FFEC5E',
+	2: 'F62817',
+	3: 'FFD700',
+	4: '8B008B',
+	5: '7FFF00',
+	6: 'FD3AFB',
+	7: 'FF4D00',
+	8: '0D0080',
+	9: 'C800FF',
+	10: '4A0746',
+	11: 'B35F5F',
+};
+
+Entities.GetHeroPlayerOwner = function(unit) {
+	for (var i = 0; i < 24; i++) {
+		if (Players.IsValidPlayerID(i)) {
+			if (SafeGetPlayerHeroEntityIndex(i) === unit) {
+				return i;
+			}
+		}
+	}
+	return -1;
+};
+
+String.prototype.encodeHTML = function() {
+	return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+};
+
+String.prototype.endsWith = function(suffix) {
+	return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
+
+Entities.GetNetworkableEntityInfo = function(ent, key) {
+	var t = GameUI.CustomUIConfig().custom_entity_values[ent];
+	if (t != null) {
+		return key == null ? t : t[key];
+	}
+};
+
+Players.GetStatsData = function(playerId) {
+	return PlayerTables.GetTableValue('stats_client', playerId) || {};
 };
 
 function GetDataFromServer(path, params, resolve, reject) {
-	var encodedParams = params == null ? "" : "?" + Object.keys(params).map(function(key) {
-	    return encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
-	}).join("&");
+	var encodedParams = params == null ? '' : '?' + Object.keys(params).map(function(key) {
+	    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+	}).join('&');
 	$.AsyncWebRequest(ServerAddress + path + encodedParams, {
-		type: "GET",
+		type: 'GET',
 		success: function(data) {
 			if (resolve) resolve(data || {});
 		},
@@ -68,31 +97,31 @@ function IsHeroName(str) {
 }
 
 function IsDotaHeroName(str) {
-	return str.lastIndexOf("npc_dota_hero_") === 0;
+	return str.lastIndexOf('npc_dota_hero_') === 0;
 }
 
 function IsArenaHeroName(str) {
-	return str.lastIndexOf("npc_arena_hero_") === 0;
+	return str.lastIndexOf('npc_arena_hero_') === 0;
 }
 
 function TransformTextureToPath(texture, optPanelImageStyle) {
 	if (IsHeroName(texture)) {
-		if (optPanelImageStyle === "portrait")
-			return "file://{images}/heroes/selection/" + texture + ".png";
-		else if (optPanelImageStyle === "icon")
-			return "file://{images}/heroes/icons/" + texture + ".png";
+		if (optPanelImageStyle === 'portrait')
+			return 'file://{images}/heroes/selection/' + texture + '.png';
+		else if (optPanelImageStyle === 'icon')
+			return 'file://{images}/heroes/icons/' + texture + '.png';
 		else
-			return "file://{images}/heroes/" + texture + ".png";
-	} else if (texture.lastIndexOf("npc_") === 0) {
-		if (optPanelImageStyle === "portrait") {
-			return "file://{images}/custom_game/units/portraits/" + texture + ".png";
+			return 'file://{images}/heroes/' + texture + '.png';
+	} else if (texture.lastIndexOf('npc_') === 0) {
+		if (optPanelImageStyle === 'portrait') {
+			return 'file://{images}/custom_game/units/portraits/' + texture + '.png';
 		} else
-			return "file://{images}/custom_game/units/" + texture + ".png";
+			return 'file://{images}/custom_game/units/' + texture + '.png';
 	} else {
-		if (optPanelImageStyle === "item") {
-			return "raw://resource/flash3/images/items/" + texture + ".png";
+		if (optPanelImageStyle === 'item') {
+			return 'raw://resource/flash3/images/items/' + texture + '.png';
 		} else
-			return "raw://resource/flash3/images/spellicons/" + texture + ".png";
+			return 'raw://resource/flash3/images/spellicons/' + texture + '.png';
 	}
 }
 
@@ -103,7 +132,7 @@ function GetHeroName(unit) {
 
 function SafeGetPlayerHeroEntityIndex(playerId) {
 	var clientEnt = Players.GetPlayerHeroEntityIndex(playerId);
-	return clientEnt === -1 ? (Number(PlayerTables.GetTableValue("player_hero_indexes", playerId)) || -1) : clientEnt;
+	return clientEnt === -1 ? (Number(PlayerTables.GetTableValue('player_hero_indexes', playerId)) || -1) : clientEnt;
 }
 
 function GetPlayerHeroName(playerId) {
@@ -112,28 +141,17 @@ function GetPlayerHeroName(playerId) {
 		//return PlayerTables.GetTableValue("hero_selection", Players.GetTeam(playerId))[playerId].hero;
 		return GetHeroName(SafeGetPlayerHeroEntityIndex(playerId));
 	}
-	return "";
+	return '';
 }
 
-Entities.GetHeroPlayerOwner = function(unit) {
-	for (var i = 0; i < 24; i++) {
-		if (Players.IsValidPlayerID(i)) {
-			if (SafeGetPlayerHeroEntityIndex(i) === unit) {
-				return i;
-			}
-		}
-	}
-	return -1;
-};
-
 function GetPlayerGold(iPlayerID) {
-	var goldTable = PlayerTables.GetTableValue("arena", "gold");
+	var goldTable = PlayerTables.GetTableValue('arena', 'gold');
 	return goldTable == null ? 0 : Number(goldTable[iPlayerID] || 0);
 }
 
 function dynamicSort(property) {
 	var sortOrder = 1;
-	if (property[0] === "-") {
+	if (property[0] === '-') {
 		sortOrder = -1;
 		property = property.substr(1);
 	}
@@ -173,7 +191,7 @@ function GetItemCountInCourier(nEntityIndex, itemName, bStash) {
 }
 
 function FindCourier(unit) {
-	return _.each(Entities.GetAllEntitiesByClassname("npc_dota_courier"), function(ent) {
+	return _.each(Entities.GetAllEntitiesByClassname('npc_dota_courier'), function(ent) {
 		if (Entities.GetTeamNumber(ent) === Entities.GetTeamNumber(unit)) {
 			return ent;
 		}
@@ -228,36 +246,30 @@ function GetDotaHud() {
 		else
 			p = parent;
 	}
-	/*try {
-		while (true) {
-			if (p.id === "Hud")
-				return p
-			else
-				p = p.GetParent()
-		}
-	} catch (e) {}*/
 }
 
 function GetSteamID(pid, type) {
-	var steamID64 = Game.GetPlayerInfo(pid).player_steamid,
+	var playerInfo = Game.GetPlayerInfo(pid);
+	if (!playerInfo) return 0;
+	var steamID64 = playerInfo.player_steamid,
 		steamID32 = String(Number(steamID64.substring(3)) - 61197960265728);
 	return type === 64 ? steamID64 : steamID32;
 }
 
 function _DynamicMinimapSubscribe(minimapPanel, OnConnectedCallback) {
 	_.each(Game.GetAllTeamIDs(), function(team) {
-		DynamicSubscribePTListener("dynamic_minimap_points_" + team, function(tableName, changesObject, deletionsObject) {
+		DynamicSubscribePTListener('dynamic_minimap_points_' + team, function(tableName, changesObject, deletionsObject) {
 			for (var index in changesObject) {
-				var panel = $("#minimap_point_id_" + index);
+				var panel = $('#minimap_point_id_' + index);
 				if (panel == null) {
-					panel = $.CreatePanel("Panel", minimapPanel, "minimap_point_id_" + index);
+					panel = $.CreatePanel('Panel', minimapPanel, 'minimap_point_id_' + index);
 					panel.hittest = false;
-					panel.AddClass("icon");
+					panel.AddClass('icon');
 				}
-				_.each(changesObject[index].styleClasses.split(" "), function(ss) {
+				_.each(changesObject[index].styleClasses.split(' '), function(ss) {
 					panel.AddClass(ss);
 				});
-				panel.style.position = changesObject[index].position + " 0";
+				panel.style.position = changesObject[index].position + ' 0';
 				panel.visible = changesObject[index].visible === 1;
 			}
 		}, OnConnectedCallback);
@@ -276,15 +288,15 @@ function secondsToMS(seconds, bTwoChars) {
 	var seconds = Math.floor(sec_num - minutes * 60);
 
 	if (bTwoChars && minutes < 10)
-		minutes = "0" + minutes;
+		minutes = '0' + minutes;
 	if (seconds < 10)
-		seconds = "0" + seconds;
+		seconds = '0' + seconds;
 	return minutes + ':' + seconds;
 }
 
 function escapeRegExp(string) {
 	return String(string).replace(/[()]/g, function(s) {
-		return "\\" + s;
+		return '\\' + s;
 	});
 }
 
@@ -298,12 +310,8 @@ function AddJSClass(panel, classname) {
 	if (JSStyleMap[classname] != null)
 		AddStyle(panel, JSStyleMap[classname]);
 	else
-		$.Msg("[AddJSClass] Critical error - style map has no " + classname + " class");
+		$.Msg('[AddJSClass] Critical error - style map has no ' + classname + ' class');
 }
-
-String.prototype.encodeHTML = function() {
-	return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
-};
 
 function FindDotaHudElement(id) {
 	return hud.FindChildTraverse(id);
@@ -311,7 +319,7 @@ function FindDotaHudElement(id) {
 
 function GetHEXPlayerColor(playerId) {
 	var playerColor = Players.GetPlayerColor(playerId).toString(16);
-	return playerColor == null ? "#000000" : ("#" + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2));
+	return playerColor == null ? '#000000' : ('#' + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2));
 }
 
 function hexToRgb(hex) {
@@ -324,7 +332,7 @@ function hexToRgb(hex) {
 }
 
 function rgbToHex(r, g, b) {
-	return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+	return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
 
 function shadeColor2(color, percent) {
@@ -334,7 +342,7 @@ function shadeColor2(color, percent) {
 		R = f >> 16,
 		G = f >> 8 & 0x00FF,
 		B = f & 0x0000FF;
-	return "#" + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
+	return '#' + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
 }
 
 function shuffle(a) {
@@ -350,12 +358,8 @@ function shuffle(a) {
 function FormatGold(value) {
 	return (GameUI.IsAltDown() ? value : value > 9999999 ? (value/1000000).toFixed(2) + 'M' : value > 99999 ? (value/1000).toFixed(1) + 'k' : value)
 		.toString()
-		.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+		.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 }
-
-String.prototype.endsWith = function(suffix) {
-	return this.indexOf(suffix, this.length - suffix.length) !== -1;
-};
 
 function SortPanelChildren(panel, sortFunc, compareFunc) {
 	var tlc = panel.Children().sort(sortFunc);
@@ -370,11 +374,5 @@ function SortPanelChildren(panel, sortFunc, compareFunc) {
 	});
 };
 
-Entities.GetNetworkableEntityInfo = function(ent, key) {
-	var t = GameUI.CustomUIConfig().custom_entity_values[ent];
-	if (t != null) {
-		return key == null ? t : t[key];
-	}
-};
-
 var hud = GetDotaHud();
+

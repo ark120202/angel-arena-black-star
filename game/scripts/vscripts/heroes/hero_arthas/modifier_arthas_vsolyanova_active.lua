@@ -25,6 +25,8 @@ function modifier_arthas_vsolyanova_active:DeclareFunctions()
 	}
 end
 
+
+for i = 0, GameRules:NumDroppedItems() - 1 do UTIL_Remove(GameRules:GetDroppedItem(i)) end
 function modifier_arthas_vsolyanova_active:GetModifierPreAttack_BonusDamage()
 	return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end

@@ -17,6 +17,11 @@ TODO LIST:
 	харону - скорость
 	сильвер + алебарда
 	Рецепт блинк стаффу ~ 575
+	У дестра нет тултипов на модификаторах
+	топбар в хс на 16 игроков + разрешения
+	...:
+		Витя-ражим с аласторами на экране
+		Лаги для грэя
 ======================================================
 Лабиринт
 Эвент в лесу
@@ -54,7 +59,7 @@ General:
 	Gold now is formatted to thousands and millions (normal values are shown while holding ALT)
 	Added announcer countdown before duel
 	Kadash's model now is purple
-	Added Mana Talent
+	//New loading screen
 Balance:
 	Runes:
 
@@ -110,8 +115,12 @@ Balance:
 		Haganemushi:
 			Bonus Damage: 700 => 900
 			Attack Damage To Pure: 40 => 20
+		Blink Staff:
+			Added 525 gold costed recipe
+			Bonus Intellect: 20 => 22
+			Max Blink Range: 1400 => 1550
 	Talents:
-
+		Added Mana Talent
 	Abilities:
 		Timbersaw - Chakram 2:
 			Mana Per Second:250 => 100
@@ -166,6 +175,8 @@ Balance:
 			Speed: 1500 => 2500
 			Frostbite Duration: 8.0 9.0 10.0 11.0 12.0 13.0 14.0 => 10
 			Dot Damage: 12.5 32.0 52.0 80.0 100.0 120.0 140.0 => 10 20 40 80 120 160 200
+		Freya:
+			Reverted all previous changes
 		These abilities no longer refreshable:
 			Shallow Grave
 			Dark Whale
@@ -178,6 +189,9 @@ Fixes:
 	Fixed Curese sometimes killed heroes even after it was purged
 	Fixed shop's focus
 	Fixed Freya - Pain Reflection tooltip shown that it was affected by spell damage amplify
+	Fixed game spectating
+	Fixed Rubick with his Personality Steal could steal abilities forever
+	Hero Selection & Shop search inputs now has clearer behaviour with ENTER and ESC
 <<+===========================================================================================================
 rhasta,
 lycan,

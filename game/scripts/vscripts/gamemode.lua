@@ -1,8 +1,4 @@
-ARENA_VERSION = "1.4.7"
-
-BAREBONES_VERSION = "1.00"
-
-BAREBONES_DEBUG_SPEW = false 
+ARENA_VERSION = "1.5"
 GAMEMODE_INITIALIZATION_STATUS = {}
 
 if not GameMode then
@@ -83,10 +79,13 @@ AllPlayersInterval = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
 for i = 1, #requirements do
 	require(requirements[i])
 end
-JSON = require("libraries/json")
+
+_G.JSON = require("libraries/json")
+
 for k,v in pairs(modifiers) do
 	LinkLuaModifier(k, v, LUA_MODIFIER_MOTION_NONE)
 end
+
 Options:Preload()
 
 function GameMode:InitGameMode()
@@ -111,6 +110,7 @@ function GameMode:InitGameMode()
 		players_abandoned = {},
 	}, AllPlayersInterval)
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
+	PlayerTables:CreateTable("stats_client", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
 end
 

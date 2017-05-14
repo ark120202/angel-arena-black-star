@@ -187,7 +187,7 @@ function PanoramaShop:InitializeItemTable()
 		for groupName, groupData in pairs(shopData) do
 			Items[shopName][groupName] = {}
 			for _, itemName in ipairs(groupData) do
-				if not PanoramaShop.FormattedData[itemName] then
+				if not PanoramaShop.FormattedData[itemName] and itemName ~= "__indent__" then
 					print("[PanoramaShop] Item defined in shop list is not defined in any of item KV files", itemName)
 				else
 					table.insert(Items[shopName][groupName], itemName)

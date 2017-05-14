@@ -1,4 +1,4 @@
-$("#UnassignedPlayersContainer").RemoveAndDeleteChildren();
+$('#UnassignedPlayersContainer').RemoveAndDeleteChildren();
 var TeamPanels = [];
 var PlayerPanels = [];
 var LockTime = 4;
@@ -7,48 +7,48 @@ var NormalTime = 15;
 function Snippet_PlayerSlot(playerId, root) {
 	var panel = PlayerPanels[playerId];
 	if (panel == null) {
-		panel = $.CreatePanel("Panel", root, "");
-		panel.BLoadLayoutSnippet("PlayerSlot");
-		panel.SetHasClass("slot_empty", playerId == -1);
-		panel.AddClass("player_" + playerId);
+		panel = $.CreatePanel('Panel', root, '');
+		panel.BLoadLayoutSnippet('PlayerSlot');
+		panel.SetHasClass('slot_empty', playerId == -1);
+		panel.AddClass('player_' + playerId);
 		if (playerId != -1) {
 			$.RegisterEventHandler('DragStart', panel, function(panelId, dragCallbacks) {
-				if ($.GetContextPanel().BHasClass("player_has_host_privileges")) {
-					var displayPanel = $.CreatePanel("Panel", panel, "");
+				if ($.GetContextPanel().BHasClass('player_has_host_privileges')) {
+					var displayPanel = $.CreatePanel('Panel', panel, '');
 					displayPanel.hittest = false;
 					displayPanel.hittestchildren = false;
-					displayPanel.BLoadLayoutSnippet("PlayerSlot");
-					displayPanel.AddClass("player_" + playerId);
+					displayPanel.BLoadLayoutSnippet('PlayerSlot');
+					displayPanel.AddClass('player_' + playerId);
 					displayPanel.playerId = playerId;
 					var playerInfo = Game.GetPlayerInfo(playerId);
 					displayPanel.team = playerInfo.player_team_id;
-					displayPanel.FindChildTraverse("PlayerName").text = playerInfo.player_name;
-					displayPanel.FindChildTraverse("PlayerAvatar").steamid = playerInfo.player_steamid;
-					displayPanel.SetHasClass("player_is_local", playerInfo.player_is_local);
-					displayPanel.SetHasClass("player_has_host_privileges", playerInfo.player_has_host_privileges);
-					$.DispatchEvent("DOTAHideProfileCardTooltip", panel.FindChildTraverse("PlayerAvatar"));
+					displayPanel.FindChildTraverse('PlayerName').text = playerInfo.player_name;
+					displayPanel.FindChildTraverse('PlayerAvatar').steamid = playerInfo.player_steamid;
+					displayPanel.SetHasClass('player_is_local', playerInfo.player_is_local);
+					displayPanel.SetHasClass('player_has_host_privileges', playerInfo.player_has_host_privileges);
+					$.DispatchEvent('DOTAHideProfileCardTooltip', panel.FindChildTraverse('PlayerAvatar'));
 
 					dragCallbacks.displayPanel = displayPanel;
 					dragCallbacks.offsetX = 15;
 					dragCallbacks.offsetY = 15;
-					panel.AddClass("player_dragged");
+					panel.AddClass('player_dragged');
 					return true;
 				}
 				return false;
 			});
 			$.RegisterEventHandler('DragEnd', panel, function(panelId, draggedPanel) {
 				draggedPanel.DeleteAsync(0);
-				panel.RemoveClass("player_dragged");
+				panel.RemoveClass('player_dragged');
 				return true;
 			});
 			$.RegisterEventHandler('DragEnter', panel, function(a, draggedPanel) {
 				if (draggedPanel.playerId == null || draggedPanel.playerId == playerId)
 					return true;
-				panel.AddClass("potential_drop_target");
+				panel.AddClass('potential_drop_target');
 				return true;
 			});
 			$.RegisterEventHandler('DragDrop', panel, function(panelId, draggedPanel) {
-				panel.RemoveClass("potential_drop_target");
+				panel.RemoveClass('potential_drop_target');
 				if (draggedPanel.playerId != playerId) {
 					HostSwapPlayers(draggedPanel.playerId, playerId);
 				}
@@ -56,15 +56,15 @@ function Snippet_PlayerSlot(playerId, root) {
 			});
 			$.RegisterEventHandler('DragLeave', panel, function(panelId, draggedPanel) {
 				if (draggedPanel.playerId == null || draggedPanel.playerId == playerId) return false;
-				panel.RemoveClass("potential_drop_target");
+				panel.RemoveClass('potential_drop_target');
 				return true;
 			});
 			PlayerPanels[playerId] = panel;
 			var playerInfo = Game.GetPlayerInfo(playerId);
-			panel.FindChildTraverse("PlayerName").text = playerInfo.player_name;
-			panel.FindChildTraverse("PlayerAvatar").steamid = playerInfo.player_steamid;
-			panel.SetHasClass("player_is_local", playerInfo.player_is_local);
-			panel.SetHasClass("player_has_host_privileges", playerInfo.player_has_host_privileges);
+			panel.FindChildTraverse('PlayerName').text = playerInfo.player_name;
+			panel.FindChildTraverse('PlayerAvatar').steamid = playerInfo.player_steamid;
+			panel.SetHasClass('player_is_local', playerInfo.player_is_local);
+			panel.SetHasClass('player_has_host_privileges', playerInfo.player_has_host_privileges);
 		}
 	}
 	return panel;
@@ -72,33 +72,33 @@ function Snippet_PlayerSlot(playerId, root) {
 
 function Snippet_Team(team) {
 	if (TeamPanels[team] == null) {
-		var panel = $.CreatePanel("Panel", $("#TeamList"), "");
-		panel.BLoadLayoutSnippet("Team");
-		panel.SetPanelEvent("onactivate", function() {
+		var panel = $.CreatePanel('Panel', $('#TeamList'), '');
+		panel.BLoadLayoutSnippet('Team');
+		panel.SetPanelEvent('onactivate', function() {
 			Game.PlayerJoinTeam(team);
 		});
 		var teamDetails = Game.GetTeamDetails(team);
 		var teamColor = GameUI.CustomUIConfig().team_colors[team];
-		panel.SetDialogVariable("team_name", $.Localize(teamDetails.team_name));
-		panel.FindChildTraverse("TeamBackgroundGradient").style.backgroundColor = 'gradient(linear, 0% 0%, 100% 100%, from(#000000AA), to(' + teamColor + '80));';
-		panel.FindChildTraverse("TeamBackgroundGradientHighlight").style.backgroundColor = 'gradient(linear, 0% 0%, 100% 100%, from(#000000AA), to(' + teamColor + 'A0));';
+		panel.SetDialogVariable('team_name', $.Localize(teamDetails.team_name));
+		panel.FindChildTraverse('TeamBackgroundGradient').style.backgroundColor = 'gradient(linear, 0% 0%, 100% 100%, from(#000000AA), to(' + teamColor + '80));';
+		panel.FindChildTraverse('TeamBackgroundGradientHighlight').style.backgroundColor = 'gradient(linear, 0% 0%, 100% 100%, from(#000000AA), to(' + teamColor + 'A0));';
 		// var rgb = hexToRgb(teamColor)
 
-		panel.FindChildTraverse("TeamNameLabel").style.color = shadeColor2(teamColor, 0.75);
+		panel.FindChildTraverse('TeamNameLabel').style.color = shadeColor2(teamColor, 0.75);
 		panel.EmptySlots = [];
 		for (var i = 0; i < teamDetails.team_max_players; ++i) {
-			var slot = $.CreatePanel("Panel", panel.FindChildTraverse("PlayerList"), "");
-			slot.AddClass("player_slot");
+			var slot = $.CreatePanel('Panel', panel.FindChildTraverse('PlayerList'), '');
+			slot.AddClass('player_slot');
 			panel.EmptySlots[i] = slot;
 		}
 		$.RegisterEventHandler('DragEnter', panel, function(a, draggedPanel) {
 			if (draggedPanel.team == null || draggedPanel.team == team)
 				return true;
-			panel.AddClass("potential_drop_target");
+			panel.AddClass('potential_drop_target');
 			return true;
 		});
 		$.RegisterEventHandler('DragDrop', panel, function(panelId, draggedPanel) {
-			panel.RemoveClass("potential_drop_target");
+			panel.RemoveClass('potential_drop_target');
 			if (draggedPanel.team == team)
 				return true;
 			HostSwapPlayerWithTeam(draggedPanel.playerId, team);
@@ -107,7 +107,7 @@ function Snippet_Team(team) {
 		$.RegisterEventHandler('DragLeave', panel, function(panelId, draggedPanel) {
 			if (draggedPanel.team == null || draggedPanel.team == team)
 				return false;
-			panel.RemoveClass("potential_drop_target");
+			panel.RemoveClass('potential_drop_target');
 			return true;
 		});
 		TeamPanels[team] = panel;
@@ -131,8 +131,8 @@ function Snippet_Team_Update(team) {
 			Snippet_PlayerSlot(-1, playerSlot);
 		}
 	}
-	panel.SetHasClass("team_is_full", teamPlayers.length == teamDetails.team_max_players);
-	panel.SetHasClass("local_player_on_this_team", Players.GetTeam(Game.GetLocalPlayerID()) == team);
+	panel.SetHasClass('team_is_full', teamPlayers.length == teamDetails.team_max_players);
+	panel.SetHasClass('local_player_on_this_team', Players.GetTeam(Game.GetLocalPlayerID()) == team);
 }
 
 function UpdateTimer() {
@@ -143,31 +143,31 @@ function UpdateTimer() {
 
 	var playerInfo = Game.GetLocalPlayerInfo();
 	if (playerInfo != null) {
-		$.GetContextPanel().SetHasClass("player_has_host_privileges", playerInfo.player_has_host_privileges);
+		$.GetContextPanel().SetHasClass('player_has_host_privileges', playerInfo.player_has_host_privileges);
 	}
 	if (transitionTime >= 0) {
-		$("#StartGameCountdownTimer").SetDialogVariableInt("countdown_timer_seconds", Math.max(0, Math.floor(transitionTime - gameTime)));
+		$('#StartGameCountdownTimer').SetDialogVariableInt('countdown_timer_seconds', Math.max(0, Math.floor(transitionTime - gameTime)));
 	}
 	
-	$("#StartGameCountdownTimer").SetHasClass("countdown_active", transitionTime >= 0);
-	$("#StartGameCountdownTimer").SetHasClass("countdown_inactive", transitionTime < 0);
+	$('#StartGameCountdownTimer').SetHasClass('countdown_active', transitionTime >= 0);
+	$('#StartGameCountdownTimer').SetHasClass('countdown_inactive', transitionTime < 0);
 
 	var autoLaunch = Game.GetAutoLaunchEnabled();
-	$("#StartGameCountdownTimer").SetHasClass("auto_start", autoLaunch);
-	$("#StartGameCountdownTimer").SetHasClass("forced_start", !autoLaunch);
+	$('#StartGameCountdownTimer').SetHasClass('auto_start', autoLaunch);
+	$('#StartGameCountdownTimer').SetHasClass('forced_start', !autoLaunch);
 	var teams_locked = Game.GetTeamSelectionLocked();
-	$.GetContextPanel().SetHasClass("teams_locked", teams_locked);
-	$.GetContextPanel().SetHasClass("teams_unlocked", !teams_locked);
+	$.GetContextPanel().SetHasClass('teams_locked', teams_locked);
+	$.GetContextPanel().SetHasClass('teams_unlocked', !teams_locked);
 }
 
 function OnPlayerSelectedTeam(nPlayerId, nTeamId, bSuccess) {
 	if (Game.GetLocalPlayerID() === nPlayerId) {
-		Game.EmitSound(bSuccess ? "ui_team_select_pick_team" : "ui_team_select_pick_team_failed");
+		Game.EmitSound(bSuccess ? 'ui_team_select_pick_team' : 'ui_team_select_pick_team_failed');
 	}
 }
 
 function OnTeamPlayerListChanged() {
-	var unassignedPlayersContainerNode = $("#UnassignedPlayersContainer");
+	var unassignedPlayersContainerNode = $('#UnassignedPlayersContainer');
 
 	// Move all existing player panels back to the unassigned player list
 	for (var i = 0; i < PlayerPanels.length; ++i) {
@@ -185,8 +185,8 @@ function OnTeamPlayerListChanged() {
 		Snippet_Team_Update(Number(k));
 	}
 
-	$.GetContextPanel().SetHasClass("unassigned_players", unassignedPlayers.length != 0);
-	$.GetContextPanel().SetHasClass("no_unassigned_players", unassignedPlayers.length == 0);
+	$.GetContextPanel().SetHasClass('unassigned_players', unassignedPlayers.length != 0);
+	$.GetContextPanel().SetHasClass('no_unassigned_players', unassignedPlayers.length == 0);
 }
 
 function OnLockAndStartPressed() {
@@ -212,16 +212,16 @@ function OnAutoAssignPressed() {
 }
 
 function SetUnassignedTeamDraggable() {
-	var panel = $("#UnassignedPlayersButton");
+	var panel = $('#UnassignedPlayersButton');
 	var team = DOTATeam_t.DOTA_TEAM_NOTEAM;
 	$.RegisterEventHandler('DragEnter', panel, function(a, draggedPanel) {
 		if (draggedPanel.team == null || draggedPanel.team == team)
 			return true;
-		panel.AddClass("potential_drop_target");
+		panel.AddClass('potential_drop_target');
 		return true;
 	});
 	$.RegisterEventHandler('DragDrop', panel, function(panelId, draggedPanel) {
-		panel.RemoveClass("potential_drop_target");
+		panel.RemoveClass('potential_drop_target');
 		if (draggedPanel.team == team)
 			return true;
 		HostSwapPlayerWithTeam(draggedPanel.playerId, team);
@@ -230,14 +230,14 @@ function SetUnassignedTeamDraggable() {
 	$.RegisterEventHandler('DragLeave', panel, function(panelId, draggedPanel) {
 		if (draggedPanel.team == null || draggedPanel.team == team)
 			return false;
-		panel.RemoveClass("potential_drop_target");
+		panel.RemoveClass('potential_drop_target');
 		return true;
 	});
 }
 
 function HostSwapPlayerWithTeam(playerId, team) {
 	if (!Game.GetTeamSelectionLocked() || team != DOTATeam_t.DOTA_TEAM_NOTEAM) {
-		GameEvents.SendCustomGameEventToServer("team_select_host_set_player_team", {
+		GameEvents.SendCustomGameEventToServer('team_select_host_set_player_team', {
 			player: playerId,
 			team: team
 		});
@@ -246,7 +246,7 @@ function HostSwapPlayerWithTeam(playerId, team) {
 }
 
 function HostSwapPlayers(playerId, playerId2) {
-	GameEvents.SendCustomGameEventToServer("team_select_host_set_player_team", {
+	GameEvents.SendCustomGameEventToServer('team_select_host_set_player_team', {
 		player: playerId,
 		player2: playerId2,
 	});
@@ -254,15 +254,15 @@ function HostSwapPlayers(playerId, playerId2) {
 }
 
 (function() {
-	$("#TeamList").RemoveAndDeleteChildren();
+	$('#TeamList').RemoveAndDeleteChildren();
 	var teamIDs = Game.GetAllTeamIDs();
 	for (var i = 0; i < teamIDs.length; i++) {
 		Snippet_Team(teamIDs[i]);
 	}
 	Game.AutoAssignPlayersToTeams();
 	OnTeamPlayerListChanged();
-	$.RegisterForUnhandledEvent("DOTAGame_TeamPlayerListChanged", OnTeamPlayerListChanged);
-	$.RegisterForUnhandledEvent("DOTAGame_PlayerSelectedCustomTeam", OnPlayerSelectedTeam);
+	$.RegisterForUnhandledEvent('DOTAGame_TeamPlayerListChanged', OnTeamPlayerListChanged);
+	$.RegisterForUnhandledEvent('DOTAGame_PlayerSelectedCustomTeam', OnPlayerSelectedTeam);
 	SetUnassignedTeamDraggable();
 		//$("#TeamSelectContainer").SetAcceptsFocus(true);
 	UpdateTimer();

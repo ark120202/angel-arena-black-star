@@ -1,29 +1,33 @@
 if StatsClient == nil then
 	_G.StatsClient = class({})
+	StatsClient.ServerAddress = "https://stats.angelarenablackstar.com"
 end
 
-StatsClient.ServerAddress = (IsInToolsMode() and "http://127.0.0.1:3228" or "https://angelarenablackstar-ark120202.rhcloud.com") .. "/AABSServer/"
 function StatsClient:Init()
 	CustomGameEventManager:RegisterListener("stats_client_add_guide", Dynamic_Wrap(StatsClient, "AddGuide"))
 	CustomGameEventManager:RegisterListener("stats_client_vote_guide", Dynamic_Wrap(StatsClient, "VoteGuide"))
 end
-function StatsClient:OnGameBegin()
+
+function StatsClient:FetchPreGameData()
 	local data = {
 		matchid = tostring(GameRules:GetMatchID()),
 		players = {},
 	}
 	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) then
-			data.players[i] = {
-				steam_id = tostring(PlayerResource:GetSteamID(i)),
-			}
+			data.players[i] = tostring(PlayerResource:GetSteamID(i))
 		end
 	end
 	--Should return rating table
-	--[[StatsClient:Send("startMatch", data, function(response)
-		PrintTable(response)
-	end)]]
+	StatsClient:Send("startMatch", data, function(response)
+		for pid, data in ipairs(response.players) do
+			PLAYER_DATA[pid].serverData = data
+			PLAYER_DATA[pid].Inventory = data.inventory or {}
+			PlayerTables:SetTableValue("stats_client", pid, data)
+		end
+	end)
 end
+
 --StatsClient:OnGameBegin()
 function StatsClient:OnGameEnd(winner)
 	local time = GameRules:GetDOTATime(false, true)
@@ -93,7 +97,7 @@ function StatsClient:OnGameEnd(winner)
 		PrintTable(response)
 	end, 4)
 end
---StatsClient:OnGameEnd(2)
+
 function StatsClient:HandleError(err)
 	if err and type(err) == "string" then
 		StatsClient:Send("HandleError", {
@@ -103,18 +107,7 @@ function StatsClient:HandleError(err)
 	end
 end
 
-function StatsClient:GetMatchPlayerInfo()
-	local postData = {players = {}}
-	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-		if PlayerResource:IsValidPlayerID(i) and PlayerResource:IsValidTeamPlayer(i) then
-			postData.players[i] = PlayerResource:GetSteamID(i)
-		end
-	end
-	StatsClient:Send("GetPublicInfoForPlayer", postData, function()
-		PlayerTables:SetTableValue("arena", "player_server_stats", stats)
-	end, 5)
-end
-
+--Guides
 function StatsClient:AddGuide(data)
 	local playerID = data.PlayerID
 	local hero = HeroSelection:GetSelectedHeroName(playerID)
