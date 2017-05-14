@@ -443,7 +443,6 @@
 		"base_hero"		"npc_dota_hero_arena_base"
 		"SceneCamera"	"custom_scene_hero_destroyer"
 		"Model"			"models/units/destroyer/destroyer.vmdl"
-		"Enabled"		"1"
 		"ModelScale"	"1.25"
 		"Ability1"		"destroyer_armor_crush"
 		"Ability2"		"destroyer_seal_of_limit"
@@ -481,5 +480,30 @@
 		"ModelScale"			"1.15"
 		"Ability1"				"soul_eater_demon_weapon_from"
 		"Ability2"				"soul_eater_human_form"
+	}
+
+	"npc_arena_hero_murzik"
+	{
+		"base_hero"		"npc_dota_hero_arena_base"
+		"SceneCamera"	"custom_scene_hero_destroyer"
+		"Model"			"models/units/destroyer/destroyer.vmdl"
+		"ModelScale"	"1.25"
+		"Ability1"		"murzik_fatality"
+		"Ability2"		"murzik_neo_style"
+		"Ability3"		"murzik_leap"
+		"Ability4"		"murzik_blood_day"
+		"AttackRate"	"1.1"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttackRange"			"150"
+		"ProjectileModel"		""
+		"AttributeBaseStrength"	"18"
+		"AttributeBaseIntelligence"	"12"
+		"AttributeBaseAgility"	"31"
+		"AttributeStrengthGain"	"2.5"
+		"AttributeIntelligenceGain"	"1.5"
+		"AttributeAgilityGain"	"3.2"
+		"AttackDamageMin"		"39"
+		"AttackDamageMax"		"47"
 	}
 }

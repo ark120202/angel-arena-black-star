@@ -93,7 +93,6 @@
 			"modifier_anakim_wisps_crit"
 			{
 				"IsHidden"  "1"
-				"IsHidden"  "1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%critical_damage_pct"

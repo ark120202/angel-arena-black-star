@@ -13,10 +13,10 @@ DOTA_Tooltip_ability_anakim_solar_flare_magical_resistance_pct: ' %ПОНИЖЕ�
 DOTA_Tooltip_ability_anakim_divine_gift_Description: 'ВОСПОЛНЯЕТ ЖИЗНЕНЫЕ СИЛЫ СОЮЗНИКОВ УВЕЛИЧИВАЯ %healht_regen %bonus_strength %magical_resistance_pct '
 DOTA_Tooltip_ability_anakim_divine_gift_healht_regen: 'ДОП РЕГЕН ХР:'
 DOTA_Tooltip_ability_anakim_divine_gift_bonus_strength: 'ДОПОЛНИТЕЛЬНАЯ СИЛА:'
-DOTA_Tooltip_ability_anakim_divine_gift_magical_resistance_pct: 'РЕЗИСТ ХУЙ:'
+DOTA_Tooltip_ability_anakim_divine_gift_magical_resistance_pct: 'СОПРОТИВЛЕНИЕ МАГИЧЕСКОМУ УРОНУ:'
 DOTA_Tooltip_ability_anakim_divine_gift_global_radius: 'РАДИУС:'
 
-DOTA_Tooltip_modifier_anakim_summon_divine_knight_Description: 'ПРИЗЫВАЕТ ВОИНА СВЕТА'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_Description: 'ПРИЗЫВАЕТ ВОИНА СВЕТА'
 DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_health: 'ЗДОРОВЬЕ РЫЦАРЯ:'
 DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_damage: 'УРОН РЫЦАРЯ:'

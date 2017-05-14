@@ -132,6 +132,7 @@
 		"npc_arena_hero_saber"							"1"
 		"npc_arena_hero_sara"							"1"
 		"npc_arena_hero_destroyer"						"1"
+		"npc_arena_hero_murzik"							"1"
 
 		"npc_arena_hero_maka"							"1"
 		"npc_arena_hero_soul_eater"						"0"

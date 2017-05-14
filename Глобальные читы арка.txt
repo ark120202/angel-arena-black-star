@@ -153,3 +153,23 @@ GameRules:GetGameModeEntity():SetMaximumAttackSpeed(1)-минимум
 GameRules:GetGameModeEntity():SetMinimumAttackSpeed( 99999 )
 GameRules:GetGameModeEntity():SetMaximumAttackSpeed( 99999 ) МНОГО
 
+
+МОДЕЛЬКИ
+
+РЫБА maps/reef_assets/characters/hatchetfish/darkreef_hatchetfish.vmdl
+
+СНЕЖНЫЙ КОТИК models/courier/snowleopard/snowleopard_shape.vmdl
+
+МАШИНКА models/custom/car_01.vmdl
+
+ЛЕТАЮЩАЯ МЫШЬ models/heroes/batrider/batrider_mount.vmdl
+
+ИНВОКЕР ???  models/heroes/invoker/invoker_head.vmdl
+
+БОЛЬШАЯ КИСКА  models/heroes/mirana/mount.vmdl
+
+ХОРОШИЙ ЛЕОРИК models/heroes/wraith_king/wraith_king_prop.vmdl
+
+КОНЬ models/items/chaos_knight/rising_chaos_steed/rising_chaos_steed.vmdl
+
+ГУМУНКУЛ models/items/courier/onibi_lvl_15/onibi_lvl_15.vmdl

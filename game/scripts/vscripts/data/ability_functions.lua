@@ -275,6 +275,18 @@ INCOMING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
+	["modifier_murzik_neo_style"] = {
+		multiplier = function(attacker, victim, inflictor, damage)
+			local murzik_neo_style = victim:FindAbilityByName("murzik_neo_style")
+			if murzik_neo_style and victim:IsAlive() then
+				if RollPercentage(murzik_neo_style:GetAbilitySpecial("neo_evision_pct")) then
+					PopupEvadeMiss(victim, attacker)
+					ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
+					return false
+				end
+			end
+		end
+	},
 }
 
 CREEP_BONUSES_MODIFIERS = {
