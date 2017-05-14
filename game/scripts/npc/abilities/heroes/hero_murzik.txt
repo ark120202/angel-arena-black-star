@@ -199,27 +199,27 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"buff_threshold_pct" "75"
+				"buff_threshold_pct" "100"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"bonus_movement_speed" "10 20 30 40"
+				"bonus_movement_speed" "30 90 160 230 300 370 765"
 			} 
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"bonus_damage" "10 20 30 40"
+				"bonus_damage" "100 200 300 400 500 600 700"
 			}
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"bonus_movement_speed_per_stack" "0.2 0.4 0.6 0.8"
+				"bonus_movement_speed_per_stack" "1 5 10 15 20 25 30"
 			} 
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"bonus_damage_per_stack" "0.2 0.4 0.6 0.8"
+				"bonus_damage_per_stack" "1 5 10 15 20 25 30"
 			}
 			"07"
 			{
@@ -230,7 +230,7 @@
 
 		"Modifiers"
 		{
-			"modifier_thirst_datadriven"
+			"modifier_murzik_vision"
 			{
 				"IsHidden"	"1"
 				"Passive"	"1"
@@ -242,7 +242,7 @@
 				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 			}
 				
-			"modifier_thirst_check_health_datadriven"
+			"modifier_murzik_check_health"
 			{
 				"IsDebuff" "1"
 				"IsPurgable" "0"
@@ -252,8 +252,8 @@
 				{
 					"RunScript"
 					{                             
-						"ScriptFile" "heroes/hero_bloodseeker/thirst.lua"
-						"Function" "AddThirst"
+						"ScriptFile" "heroes/hero_murzik/bear_day.lua"
+						"Function" "AddMurzik"
 	                   }
 				}
 
@@ -261,13 +261,13 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "heroes/hero_bloodseeker/thirst.lua"
-						"Function" "RemoveThirst"
+						"ScriptFile" "heroes/hero_murzik/bear_day.lua"
+						"Function" "RemoveMurzik"
 					}
 				}
 			} 
 				
-			"modifier_thirst_buff"
+			"modifier_murzik_buff"
 			{
 				"IsHidden"	"1"
 				
@@ -278,13 +278,13 @@
 				}
 			}
 				
-			"modifier_thirst_visual"
+			"modifier_murzik_visual"
 			{
 				"EffectName" "particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
 				"EffectAttachType" "follow_origin"
 			}
 
-			"modifier_thirst_debuff_datadriven"
+			"modifier_murzik_debuff"
 			{
 				"IsDebuff"        "1"                          
 					
@@ -297,7 +297,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "heroes/hero_bloodseeker/thirst.lua"
+						"ScriptFile" "heroes/hero_murzik/bear_day.lua"
 						"Function" "GiveVision"
 					}
 				}

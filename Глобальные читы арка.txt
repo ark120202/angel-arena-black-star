@@ -47,6 +47,9 @@ Hero:SetOriginalModel("models/items/courier/shibe_dog_cat/shibe_dog_cat_flying.v
 Hero:SetModel("models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl")
 Hero:SetOriginalModel("models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl")
 
+Hero:SetModel("models/heroes/mirana/mount.vmdl")
+Hero:SetOriginalModel("models/heroes/mirana/mount.vmdl")
+
 Hero:SetModel(models/items/courier/onibi_lvl_15/onibi_lvl_15.vmdl)
 Hero:SetOriginalModel(models/items/courier/onibi_lvl_15/onibi_lvl_15.vmdl)
 
@@ -74,13 +77,16 @@ say -lua for i = 0, 9 do PlayerResource:SetPlayerTeam(i, 2) end
 
 say -lua for i = 0, 9 do Kills:SetKillStreak(i, 100000) end
 
+say -lua for i = 0, 9 do Gold:AddGold(i, 11111111111) end
+
+Gold:AddGold(pid, gold)
+
 say -lua for I = 0, 9 do CHAT_COMMANDS.kick({I}) end
 
 GameRules:SetKillGoal(iGoal)
 
 ИДИАЛЬНАЯ КОМАНДА ПИЗДЕЦ 
-for team in pairs(TEAM_COLORS) do
-  GameRules:SetCustomGameTeamMaxPlayers(team, 10) end
+for team in pairs(TEAM_COLORS) do GameRules:SetCustomGameTeamMaxPlayers(team, 10) end
 
 for i = 0, 9 do Gold:AddGold(i, gold) end
 
