@@ -25,7 +25,7 @@ function GameMode:OnGameRulesStateChange(keys)
 		end
 		HeroSelection:CollectPD()
 		Options:CalculateVotes()
-		StatsClient:OnGameBegin()
+		StatsClient:FetchPreGameData()
 		HeroSelection:HeroSelectionStart()
 	end
 end

@@ -3,29 +3,29 @@ var TalentsInfo = {};
 
 function LoadTalentTable(table) {
 	_.each(table, function(group, group_index) {
-		var grouppanel = $.CreatePanel("Panel", $("#TalentListContainer"), "talent_group_" + group_index);
-		grouppanel.BLoadLayoutSnippet("TalentColumn");
-		grouppanel.FindChildTraverse("TalentColumnHeader").text = groupLevelMap[group_index];
+		var grouppanel = $.CreatePanel('Panel', $('#TalentListContainer'), 'talent_group_' + group_index);
+		grouppanel.BLoadLayoutSnippet('TalentColumn');
+		grouppanel.FindChildTraverse('TalentColumnHeader').text = groupLevelMap[group_index];
 		grouppanel.RequiredLevel = groupLevelMap[group_index];
 		_.each(group, function(talent) {
-			CreateTalent(talent, grouppanel.FindChildTraverse("TalentColumnInner"));
+			CreateTalent(talent, grouppanel.FindChildTraverse('TalentColumnInner'));
 		});
 	});
 }
 
 function SpecialValuesArrayToString(values, level, percent) {
-	if (typeof values !== "object") {
+	if (typeof values !== 'object') {
 		if (level === 0)
-			return percent ? values + "%" : values;
+			return percent ? values + '%' : values;
 		else
-			return "<font color='gold'>" + (percent ? values + "%" : values) + "</font>";
+			return "<font color='gold'>" + (percent ? values + '%' : values) + '</font>';
 	} else {
-		var text = "";
+		var text = '';
 		_.each(values, function(value, index) {
 			if (index++ === level)
-				text = text + "<font color='gold'>" + (percent ? value + "%" : value) + "</font>" + "\/";
+				text = text + "<font color='gold'>" + (percent ? value + '%' : value) + '</font>' + '\/';
 			else
-				text = text + (percent ? value + "%" : value) + "\/";
+				text = text + (percent ? value + '%' : value) + '\/';
 
 		});
 		text = text.slice(0, -1);
@@ -34,36 +34,36 @@ function SpecialValuesArrayToString(values, level, percent) {
 }
 
 function CreateTalent(talent, root) {
-	var panel = $.CreatePanel("Image", root, "talent_icon_" + talent.name);
-	panel.AddClass("TalentIcon");
+	var panel = $.CreatePanel('Image', root, 'talent_icon_' + talent.name);
+	panel.AddClass('TalentIcon');
 	panel.SetImage(TransformTextureToPath(talent.icon));
 	var CreateTooltip = function() {
-		var description = $.Localize("custom_talents_" + talent.name + "_description");
+		var description = $.Localize('custom_talents_' + talent.name + '_description');
 		if (talent.special_values != null)
 			_.each(talent.special_values, function(values, key) {
 				description = description
-					.replace("{" + key + "}", SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name)))
-					.replace("{%" + key + "%}", SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name), true));
+					.replace('{' + key + '}', SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name)))
+					.replace('{%' + key + '%}', SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name), true));
 			});
-		$.DispatchEvent("UIShowCustomLayoutParametersTooltip", panel, "TalentTooltip", "file://{resources}/layout/custom_game/custom_talent_tooltip.xml",
-			"title=" + $.Localize("custom_talents_" + talent.name) +
-			"&description=" + description.replace("+", "%2B") +
-			"&cost=" + talent.cost +
-			"&requirements=" + talent.requirement +
-			"&levelText=" + $.Localize("custom_talents_level") + GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name) + "\/" + (talent.max_level || 1)
+		$.DispatchEvent('UIShowCustomLayoutParametersTooltip', panel, 'TalentTooltip', 'file://{resources}/layout/custom_game/custom_talent_tooltip.xml',
+			'title=' + $.Localize('custom_talents_' + talent.name) +
+			'&description=' + description.replace('+', '%2B') +
+			'&cost=' + talent.cost +
+			'&requirements=' + talent.requirement +
+			'&levelText=' + $.Localize('custom_talents_level') + GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name) + '\/' + (talent.max_level || 1)
 		);
 	};
-	panel.SetPanelEvent("onmouseover", CreateTooltip);
-	panel.SetPanelEvent("onmouseout", function() {
-		$.DispatchEvent("UIHideCustomLayoutTooltip", panel, "TalentTooltip");
+	panel.SetPanelEvent('onmouseover', CreateTooltip);
+	panel.SetPanelEvent('onmouseout', function() {
+		$.DispatchEvent('UIHideCustomLayoutTooltip', panel, 'TalentTooltip');
 	});
-	panel.SetPanelEvent("onactivate", function() {
-		if (panel.BHasClass("CanLearn")) {
-			GameEvents.SendCustomGameEventToServer("custom_talents_upgrade", {
+	panel.SetPanelEvent('onactivate', function() {
+		if (panel.BHasClass('CanLearn')) {
+			GameEvents.SendCustomGameEventToServer('custom_talents_upgrade', {
 				talent: talent.name
 			});
 
-			$.DispatchEvent("UIHideCustomLayoutTooltip", panel, "TalentTooltip");
+			$.DispatchEvent('UIHideCustomLayoutTooltip', panel, 'TalentTooltip');
 			$.Schedule(0.1, function() {
 				if (panel.BHasHoverStyle()) CreateTooltip();
 			});
@@ -96,12 +96,12 @@ function Update() {
 	$.Schedule(0.2, Update);
 	var unit = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID());
 	var points = Entities.GetAbilityPoints(unit);
-	$("#AbilityPointsLabel").text = points;
-	_.each($("#TalentListContainer").Children(), function(group, group_index) {
+	$('#AbilityPointsLabel').text = points;
+	_.each($('#TalentListContainer').Children(), function(group, group_index) {
 		var CompletedGroup = true;
 		var GroupAvaliable = Entities.GetLevel(unit) >= group.RequiredLevel && group_index <= GetActualTalentGroup(unit);
-		_.each(group.FindChildTraverse("TalentColumnInner").Children(), function(icon) {
-			var tn = icon.id.replace("talent_icon_", "");
+		_.each(group.FindChildTraverse('TalentColumnInner').Children(), function(icon) {
+			var tn = icon.id.replace('talent_icon_', '');
 
 			var Error_Requirement = false;
 			if (TalentsInfo[tn].requirement) {
@@ -111,28 +111,28 @@ function Update() {
 			var Error_Points = points < TalentsInfo[tn].cost;
 			var level = GetTalentLevel(unit, tn);
 			var Learnt = level === (Number(TalentsInfo[tn].max_level) || 1);
-			icon.SetHasClass("Error_Requirement", Error_Requirement);
-			icon.SetHasClass("Error_Points", Error_Points);
-			icon.SetHasClass("Learnt", Learnt);
-			icon.SetHasClass("CanLearn", !Learnt && !Error_Requirement && !Error_Points && GroupAvaliable);
-			icon.SetHasClass("Selected", level > 0);
-			if (icon.visible && !icon.BHasClass("Learnt"))
+			icon.SetHasClass('Error_Requirement', Error_Requirement);
+			icon.SetHasClass('Error_Points', Error_Points);
+			icon.SetHasClass('Learnt', Learnt);
+			icon.SetHasClass('CanLearn', !Learnt && !Error_Requirement && !Error_Points && GroupAvaliable);
+			icon.SetHasClass('Selected', level > 0);
+			if (icon.visible && !icon.BHasClass('Learnt'))
 				CompletedGroup = false;
 		});
-		group.SetHasClass("CompletedColumn", CompletedGroup);
-		group.SetHasClass("EnabledColumn", !CompletedGroup && GroupAvaliable);
+		group.SetHasClass('CompletedColumn', CompletedGroup);
+		group.SetHasClass('EnabledColumn', !CompletedGroup && GroupAvaliable);
 	});
 }
 
 (function() {
-	$("#TalentListContainer").RemoveAndDeleteChildren();
-	GameEvents.Subscribe("custom_talents_toggle_tree", function() {
-		$.GetContextPanel().ToggleClass("PanelOpened");
+	$('#TalentListContainer').RemoveAndDeleteChildren();
+	GameEvents.Subscribe('custom_talents_toggle_tree', function() {
+		$.GetContextPanel().ToggleClass('PanelOpened');
 	});
-	DynamicSubscribePTListener("custom_talents_data", function(tableName, changesObject, deletionsObject) {
+	DynamicSubscribePTListener('custom_talents_data', function(tableName, changesObject, deletionsObject) {
 		groupLevelMap = changesObject.groupLevelMap;
 		LoadTalentTable(changesObject.talentList);
 	});
-	$("#ToggleHideRequirementErrors").checked = true;
+	$('#ToggleHideRequirementErrors').checked = true;
 	Update();
 })();

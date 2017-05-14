@@ -27,12 +27,17 @@ function SpellSteal(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local target = ability.new_steal_target
-	if caster:HasModifier("modifier_rubick_personality_steal") then
+	if caster:HasModifier("modifier_rubick_personality_steal") or not caster:IsAlive() then
 		ability:EndCooldown()
 		ability:RefundManaCost()
 		return
 	end
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_rubick_personality_steal", {})
+	if not caster:HasModifier("modifier_rubick_personality_steal") then
+		ability:EndCooldown()
+		ability:RefundManaCost()
+		return
+	end
 	caster.rubick_spell_steal = {
 		model = caster:GetModelName(),
 		model_scale = caster:GetModelScale(),

@@ -20,7 +20,7 @@ var Options = {
 		if (value === undefined)
 			return this.GetValue(name) === 1;
 		else
-			return this.GetValue(name) === typeof value === "boolean" ? value?1:0 : value;
+			return this.GetValue(name) === typeof value === 'boolean' ? value?1:0 : value;
 	},
 	Subscribe: function(name, callback) {
 		if (!this.callbacks[name]) this.callbacks[name] = [];
@@ -30,7 +30,7 @@ var Options = {
 	},
 	GetMapInfo: function() {
 		var name = Game.GetMapInfo().map_display_name;
-		var underscoreIndex = name.indexOf("_");
+		var underscoreIndex = name.indexOf('_');
 		return {
 			landscape: name.substr(0, underscoreIndex === -1 ? name.length : underscoreIndex),
 			gamemode: name.substr((underscoreIndex === -1 ? name.length : underscoreIndex) + 1),
@@ -41,7 +41,7 @@ var Options = {
 
 (function() {
 	GameUI.CustomUIConfig().Options = Options;
-	DynamicSubscribePTListener("options", function(tableName, changesObject, deletionsObject) {
+	DynamicSubscribePTListener('options', function(tableName, changesObject, deletionsObject) {
 		for (var k in changesObject) {
 			Options.SetValue(k, changesObject[k]);
 		}

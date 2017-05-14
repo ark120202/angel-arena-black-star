@@ -6,13 +6,13 @@ var teamColors = GameUI.CustomUIConfig().team_colors;
 
 function Snippet_SharedControlPlayer(pid) {
 	if (SharedControlPanels[pid] == null) {
-		var panel = $.CreatePanel("Panel", $("#PlayersContainer"), "");
-		panel.BLoadLayoutSnippet("SharedControlPlayer");
+		var panel = $.CreatePanel('Panel', $('#PlayersContainer'), '');
+		panel.BLoadLayoutSnippet('SharedControlPlayer');
 		panel.playerId = pid;
-		var DisableHelpButton = panel.FindChildTraverse("DisableHelpButton");
-		DisableHelpButton.SetDialogVariable("player_name", Players.GetPlayerName(pid));
-		DisableHelpButton.SetPanelEvent("onactivate", function() {
-			GameEvents.SendCustomGameEventToServer("set_help_disabled", {
+		var DisableHelpButton = panel.FindChildTraverse('DisableHelpButton');
+		DisableHelpButton.SetDialogVariable('player_name', Players.GetPlayerName(pid));
+		DisableHelpButton.SetPanelEvent('onactivate', function() {
+			GameEvents.SendCustomGameEventToServer('set_help_disabled', {
 				player: pid,
 				disabled: DisableHelpButton.checked
 			});
@@ -24,7 +24,7 @@ function Snippet_SharedControlPlayer(pid) {
 
 function Snippet_SharedControlPlayer_Update(panel) {
 	panel.visible = Players.GetTeam(panel.playerId) === Players.GetTeam(Game.GetLocalPlayerID()) && Snippet_Player(panel.playerId).visible;
-	panel.SetHasClass("LocalPlayer", panel.playerId === Game.GetLocalPlayerID());
+	panel.SetHasClass('LocalPlayer', panel.playerId === Game.GetLocalPlayerID());
 }
 
 function Snippet_Player(pid) {
@@ -32,38 +32,38 @@ function Snippet_Player(pid) {
 		var team = Players.GetTeam(pid);
 		if (team !== DOTA_TEAM_SPECTATOR) {
 			var playerInfo = Game.GetPlayerInfo(pid);
-			var teamPanel = Snippet_Team(team).FindChildTraverse("TeamPlayersContainer");
-			var panel = $.CreatePanel("Panel", teamPanel, "");
-			panel.BLoadLayoutSnippet("Player");
-			panel.FindChildTraverse("PlayerNameLabel").text = Players.GetPlayerName(pid);
-			panel.FindChildTraverse("AvatarImage").steamid = playerInfo.player_steamid;
-			panel.FindChildTraverse("AvatarImage").SetPanelEvent("onactivate", function() {
-				GameEvents.SendEventClientSide("player_profiles_show_info", {PlayerID: pid});
+			var teamPanel = Snippet_Team(team).FindChildTraverse('TeamPlayersContainer');
+			var panel = $.CreatePanel('Panel', teamPanel, '');
+			panel.BLoadLayoutSnippet('Player');
+			panel.FindChildTraverse('PlayerNameLabel').text = Players.GetPlayerName(pid);
+			panel.FindChildTraverse('AvatarImage').steamid = playerInfo.player_steamid;
+			panel.FindChildTraverse('AvatarImage').SetPanelEvent('onactivate', function() {
+				GameEvents.SendEventClientSide('player_profiles_show_info', {PlayerID: pid});
 			});
-			var VoiceMute = panel.FindChildTraverse("VoiceMute");
+			var VoiceMute = panel.FindChildTraverse('VoiceMute');
 			panel.playerId = pid;
-			panel.SetHasClass("EmptyPlayerRow", false);
-			panel.SetHasClass("LocalPlayer", pid === Game.GetLocalPlayerID());
-			var xpRoot = FindDotaHudElement("ScoreboardXP");
-			_.each([xpRoot.FindChildTraverse("LevelBackground"), xpRoot.FindChildTraverse("CircularXPProgress")/*, xpRoot.FindChildTraverse("XPProgress")*/], function(p) {
-				p.SetPanelEvent("onactivate", function() {
+			panel.SetHasClass('EmptyPlayerRow', false);
+			panel.SetHasClass('LocalPlayer', pid === Game.GetLocalPlayerID());
+			var xpRoot = FindDotaHudElement('ScoreboardXP');
+			_.each([xpRoot.FindChildTraverse('LevelBackground'), xpRoot.FindChildTraverse('CircularXPProgress')/*, xpRoot.FindChildTraverse("XPProgress")*/], function(p) {
+				p.SetPanelEvent('onactivate', function() {
 					if (GameUI.IsAltDown()) {
 						var clientEnt = Players.GetPlayerHeroEntityIndex(pid);
-						GameEvents.SendCustomGameEventToServer("custom_chat_send_message", {
+						GameEvents.SendCustomGameEventToServer('custom_chat_send_message', {
 							xpunit: clientEnt === -1 ? playerInfo.player_selected_hero_entity_index : clientEnt
 						});
 					}
 				});
 			});
-			panel.FindChildTraverse("HeroImage").SetPanelEvent("onactivate", function() {
+			panel.FindChildTraverse('HeroImage').SetPanelEvent('onactivate', function() {
 				Players.PlayerPortraitClicked(pid, GameUI.IsControlDown(), GameUI.IsAltDown());
 			});
 			VoiceMute.checked = Game.IsPlayerMuted(pid);
-			VoiceMute.SetPanelEvent("onactivate", function() {
+			VoiceMute.SetPanelEvent('onactivate', function() {
 				Game.SetPlayerMuted(pid, VoiceMute.checked);
 			});
 			panel.Resort = function() {
-				SortPanelChildren(teamPanel, dynamicSort("playerId"), function(child, child2) {
+				SortPanelChildren(teamPanel, dynamicSort('playerId'), function(child, child2) {
 					return child.playerId < child2.playerId;
 				});
 			};
@@ -100,27 +100,27 @@ function Snippet_Player_Update(panel) {
 		var respawnSeconds = playerInfo.player_respawn_seconds;
 		var connectionState = playerInfo.player_connection_state;
 		var heroEnt = playerInfo.player_selected_hero_entity_index;
-		var ScoreboardUltIndicator = panel.FindChildTraverse("ScoreboardUltIndicator");
+		var ScoreboardUltIndicator = panel.FindChildTraverse('ScoreboardUltIndicator');
 		var ultStateOrTime = playerInfo.player_team_id === Players.GetTeam(Game.GetLocalPlayerID()) ? Game.GetPlayerUltimateStateOrTime(playerId) : PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_HIDDEN;
-		panel.SetHasClass("UltLearned", ultStateOrTime !== PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_NOT_LEVELED);
-		panel.SetHasClass("UltReady", ultStateOrTime === PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_READY);
-		panel.SetHasClass("UltReadyNoMana", ultStateOrTime === PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_NO_MANA);
-		panel.SetHasClass("UltOnCooldown", ultStateOrTime > 0);
-		panel.SetDialogVariableInt("ult_cooldown", ultStateOrTime);
-		panel.SetDialogVariableInt("kills", Players.GetKills(playerId));
-		panel.SetDialogVariableInt("deaths", Players.GetDeaths(playerId));
-		panel.SetDialogVariableInt("assists", Players.GetAssists(playerId));
-		panel.SetDialogVariable("gold", FormatGold(GetPlayerGold(playerId)));
-		panel.SetDialogVariableInt("level", Players.GetLevel(playerId));
-		panel.FindChildTraverse("HeroImage").SetImage(TransformTextureToPath(heroName));
-		panel.FindChildTraverse("HeroNameLabel").text = $.Localize(heroName).toUpperCase();
-		panel.FindChildTraverse("PlayerColor").style.backgroundColor = GetHEXPlayerColor(playerId);
+		panel.SetHasClass('UltLearned', ultStateOrTime !== PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_NOT_LEVELED);
+		panel.SetHasClass('UltReady', ultStateOrTime === PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_READY);
+		panel.SetHasClass('UltReadyNoMana', ultStateOrTime === PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_NO_MANA);
+		panel.SetHasClass('UltOnCooldown', ultStateOrTime > 0);
+		panel.SetDialogVariableInt('ult_cooldown', ultStateOrTime);
+		panel.SetDialogVariableInt('kills', Players.GetKills(playerId));
+		panel.SetDialogVariableInt('deaths', Players.GetDeaths(playerId));
+		panel.SetDialogVariableInt('assists', Players.GetAssists(playerId));
+		panel.SetDialogVariable('gold', FormatGold(GetPlayerGold(playerId)));
+		panel.SetDialogVariableInt('level', Players.GetLevel(playerId));
+		panel.FindChildTraverse('HeroImage').SetImage(TransformTextureToPath(heroName));
+		panel.FindChildTraverse('HeroNameLabel').text = $.Localize(heroName).toUpperCase();
+		panel.FindChildTraverse('PlayerColor').style.backgroundColor = GetHEXPlayerColor(playerId);
 
 		/*panel.SetDialogVariableInt("respawn_seconds", respawnSeconds + 1);
 		panel.SetHasClass("Dead", respawnSeconds >= 0);
 		panel.SetHasClass("Disconnected", connectionState == DOTAConnectionState_t.DOTA_CONNECTION_STATE_DISCONNECTED);*/
 		if (playerInfo.player_team_id !== panel.GetParent().team && teamColors[playerInfo.player_team_id] != null) {
-			panel.SetParent(Snippet_Team(playerInfo.player_team_id).FindChildTraverse("TeamPlayersContainer"));
+			panel.SetParent(Snippet_Team(playerInfo.player_team_id).FindChildTraverse('TeamPlayersContainer'));
 			panel.Resort();
 		}
 		//panel.FindChildTraverse("TopBarUltIndicatorTimer").text = 99;
@@ -137,17 +137,17 @@ function Snippet_Player_Update(panel) {
 
 function Snippet_Team(team) {
 	if (TeamPanels[team] == null) {
-		var TeamList = $("#TeamList");
-		var panel = $.CreatePanel("Panel", TeamList, "");
-		panel.BLoadLayoutSnippet("Team");
+		var TeamList = $('#TeamList');
+		var panel = $.CreatePanel('Panel', TeamList, '');
+		panel.BLoadLayoutSnippet('Team');
 		panel.team = team;
 		TeamPanels[team] = panel;
-		panel.FindChildTraverse("TeamLabel").text = GameUI.CustomUIConfig().team_names[team];
-		panel.FindChildTraverse("TeamLabel").style.textShadow = "0px 0px 6px 1.0 " + teamColors[team];
-		panel.FindChildTraverse("TeamScoreLabel").style.textShadow = "0px 0px 6px 1.0 " + teamColors[team];
-		panel.SetHasClass("FirstTeam", team === DOTATeam_t.DOTA_TEAM_GOODGUYS);
+		panel.FindChildTraverse('TeamLabel').text = GameUI.CustomUIConfig().team_names[team];
+		panel.FindChildTraverse('TeamLabel').style.textShadow = '0px 0px 6px 1.0 ' + teamColors[team];
+		panel.FindChildTraverse('TeamScoreLabel').style.textShadow = '0px 0px 6px 1.0 ' + teamColors[team];
+		panel.SetHasClass('FirstTeam', team === DOTATeam_t.DOTA_TEAM_GOODGUYS);
 
-		SortPanelChildren(TeamList, dynamicSort("team"), function(child, child2) {
+		SortPanelChildren(TeamList, dynamicSort('team'), function(child, child2) {
 			return child.team < child2.team;
 		});
 	}
@@ -158,11 +158,11 @@ function Snippet_Team_Update(panel) {
 	var team = panel.team;
 	var teamDetails = Game.GetTeamDetails(team);
 	var isAlly = team === Players.GetTeam(Game.GetLocalPlayerID());
-	panel.SetHasClass("EnemyTeam", !isAlly);
-	panel.SetDialogVariableInt("score", teamDetails.team_score);
+	panel.SetHasClass('EnemyTeam', !isAlly);
+	panel.SetDialogVariableInt('score', teamDetails.team_score);
 	if (isAlly) {
-		$("#SharedUnitControl").style.marginTop = Math.max(parseInt(panel.actualyoffset, 10), 0) + "px";
-		$("#SharedUnitControl").style.height = panel.actuallayoutheight + "px";
+		$('#SharedUnitControl').style.marginTop = Math.max(parseInt(panel.actualyoffset, 10), 0) + 'px';
+		$('#SharedUnitControl').style.height = panel.actuallayoutheight + 'px';
 	}
 }
 
@@ -180,37 +180,37 @@ function Update() {
 	for (var i in TeamPanels) {
 		Snippet_Team_Update(TeamPanels[i]);
 	}
-	context.SetHasClass("AltPressed", GameUI.IsAltDown());
+	context.SetHasClass('AltPressed', GameUI.IsAltDown());
 }
 
 function SetFlyoutScoreboardVisible(visible) {
-	$.GetContextPanel().SetHasClass("ScoreboardClosed", !visible);
+	$.GetContextPanel().SetHasClass('ScoreboardClosed', !visible);
 }
 
 (function() {
 	var LocalPlayerID = Game.GetLocalPlayerID();
-	DynamicSubscribePTListener("arena", function(tableName, changesObject, deletionsObject) {
+	DynamicSubscribePTListener('arena', function(tableName, changesObject, deletionsObject) {
 		if (changesObject.players_abandoned != null) {
 			for (var k in changesObject.players_abandoned) {
 				players_abandoned.push(Number(changesObject.players_abandoned[k]));
 			}
 		}
 	});
-	DynamicSubscribePTListener("disable_help_data", function(tableName, changesObject, deletionsObject) {
+	DynamicSubscribePTListener('disable_help_data', function(tableName, changesObject, deletionsObject) {
 		if (changesObject[LocalPlayerID] != null) {
 			_.each(changesObject[LocalPlayerID], function(state, playerID) {
-				Snippet_SharedControlPlayer(playerID).FindChildTraverse("DisableHelpButton").checked = state === 1;
+				Snippet_SharedControlPlayer(playerID).FindChildTraverse('DisableHelpButton').checked = state === 1;
 			});
 		}
 	});
 
 
-	$("#TeamList").RemoveAndDeleteChildren();
-	$("#PlayersContainer").RemoveAndDeleteChildren();
+	$('#TeamList').RemoveAndDeleteChildren();
+	$('#PlayersContainer').RemoveAndDeleteChildren();
 	Update();
 
 	SetFlyoutScoreboardVisible(false);
-	$.RegisterEventHandler("DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible);
+	$.RegisterEventHandler('DOTACustomUI_SetFlyoutScoreboardVisible', $.GetContextPanel(), SetFlyoutScoreboardVisible);
 	var debug = false;
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, debug);
 	$.GetContextPanel().visible = !debug;

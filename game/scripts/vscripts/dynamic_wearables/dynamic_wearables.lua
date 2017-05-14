@@ -321,10 +321,8 @@ function DynamicWearables:Init()
 end
 
 function DynamicWearables:ParseInventory(player)
-	local steam = PlayerResource:GetSteamAccountID(player)
-	local inv = CUSTOM_WEARABLES_PLAYER_ITEMS[steam] or {}
 	DynamicWearables.WearableInventory[player] = DynamicWearables.WearableInventory[player] or {}
-	for _,v in ipairs(inv) do
+	for _,v in ipairs(PLAYER_DATA[player].Inventory or {}) do
 		local wearableData = DynamicWearables:GetWearableDataById(v)
 		if wearableData then
 			if wearableData.used_by_heroes then
@@ -355,10 +353,9 @@ function ParticleManager:CreateParticle(particle_name, attachment, unit, caster,
 	return particle
 end
 
-function DynamicWearables:HasWearable(pID, name)
-	local steamid = PlayerResource:GetSteamAccountID(pID)
-	if CUSTOM_WEARABLES_PLAYER_ITEMS[steamid] then
-		return table.contains(CUSTOM_WEARABLES_PLAYER_ITEMS[steamid], name)
+function DynamicWearables:HasWearable(playerID, name)
+	if PLAYER_DATA[playerID].Inventory then
+		return table.contains(PLAYER_DATA[playerID].Inventory, name)
 	end
 	return false
 end

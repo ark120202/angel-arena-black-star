@@ -6535,7 +6535,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10103"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"
+		"ItemCost"						"525"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_blink_staff"
@@ -6572,7 +6572,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"max_blink_range"				"1400"
+				"max_blink_range"				"1550"
 			}
 			"02"
 			{
@@ -6587,7 +6587,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_intellect"				"20"
+				"bonus_intellect"				"22"
 			}
 			"05"
 			{

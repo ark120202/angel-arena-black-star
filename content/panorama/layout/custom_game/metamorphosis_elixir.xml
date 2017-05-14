@@ -113,7 +113,7 @@
 				<Panel id="AbilitiesPanel">
 					<Panel class="AbilitiesLineSplitter" />
 					<Panel class="AbilitiesLineSplitter" style="horizontal-align: right;" />
-					<TextEntry id="HeroSearchTextEntry" oninputsubmit="SearchHero();" placeholder="#hero_selection_button_search"/>
+					<TextEntry id="HeroSearchTextEntry" oncancel="ClearSearch()" oninputsubmit="DropInputFocus()" placeholder="#hero_selection_button_search"/>
 					<Panel id="SelectedHeroAbilitiesPanelInner" />
 				</Panel>
 				<Panel id="HeroListPanel" />

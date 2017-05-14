@@ -189,7 +189,7 @@
 	wash-color: grey;
 	pre-transform-scale2d: 1;
 }
-#SelectedHeroSelectButton .LocalHeroBanButton
+.LocalHeroBanButton #SelectedHeroSelectButton
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #1A0202dd ), to( #7D3636dd ) );
 }
@@ -203,6 +203,7 @@
 	font-size: 24px;
 	color: #b2da25;
 }
+
 #SelectedHeroLockLabel,
 #SelectedHeroUnlockLabel,
 #SelectedHeroBanLabel,
