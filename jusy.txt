@@ -1,90 +1,189 @@
-Invoker - invoke lvl 1
-		"AbilityCooldown"	changed to "3"
-		"AbilityManaCost"	changed to "60"
-		"cooldown_scepter"	changed 0.1 to "0.5"
-		"LevelsBetweenUpgrades"	from 15 to "5"
-	QUAS "health_regen_per_instance" from "8 15 21 26 31 38 45" to "3 9 15 20 26 31 35"
-	WEX "attack_speed_per_instance" from "5 10 15 20 25 30 35 40" to "5 10 15 20 25 30 35 60"
-		"move_speed_per_instance"	from "3 6 9 12 15 18 21 24" to "1 2 3 4 5 7 9 11"
-	EXORT "bonus_damage_per_instance"	from "15 40 60 80 70 90 110 120" to	"7 16 28 35 43 52 60 90"
-	COLD SNAP "freeze_damage"	from "30 100 150 200 250 300 350 400" to "15 30 50 80 110 140 170 250"
-	GHOST WALK "AbilityCastPoint"	from "0.05" to "0"
-		"enemy_slow"	from "-20 -40 -60 80 -100 -120 -140 -160" to "-20 -25 -30 -35 -40 -45 -50 -60"
-		"self_slow"	from "-30 -20 0 20 40 60 80 100" to "-30 -20 0 10 20 30 40 60"
-	TORNADO "travel_distance"	from "1000 2000 3000 4000 5000 6000 7000 8000" to "1000 1600 2200 2900 3500 4000 4500 5200"
-		"travel_speed"	from "1500" to "1200"
-		"area_of_effect"	from "250" to "200" (я так понял это радиус поднятия в ветра)
-		"lift_duration"	from "1.0 2.0 2.5 3.0 3.5 4.0 4.5 5.0" to "0.8 1.2 1.5 1.8 2.2 2.5 2.7 3"
-		"base_damage"	from "333" to "70"
-		"wex_damage"	from "100 400 600 800 1000 1200 1400 1600" to "wex_damage"	"50 150 270 360 420 500 570 700"
-	EMP "mana_burned"	from "250 1000 1500 2000 3000 3500 4000 5000" to "150 300 500 700 1000 1400 2000 3000"
-		"damage_per_mana_pct"	from "50" to "40"
-	ALACRITY "bonus_attack_speed"	from "20 40 60 80 100 120 140 160" to "bonus_attack_speed"	"15 40 70 100 130 150 180 250"
-		"bonus_damage"	from "30 80 120 160 200 250 300 350" to "15 40 70 100 130 150 180 250"
-	METEOR "area_of_effect"	from "300" to "275" (radius)
-		"travel_distance"	from "615 780 930 1095 1245 1410 1575" to "travel_distance"	"465 615 780 930 1095 1245 1410 1600"
-		"travel_speed"	from "500" to "300"
-		"main_damage"	from "150 350 400 600 700 800 900" to "main_damage"	"70 125 160 200 250 320 500"
-		"burn_dps"	from "30 80 150 200 250 300 350" to "15 22 35 43 55 70 150"
-	SUNSTRIKE "area_of_effect"	from "250" to "200"
-		"damage"	from "200 500 1000 1500 2000 2500 3000 3500" to "200 350 500 650 800 1000 1300 2000"
-	FORGE "armor_removed"	from "3" to "1"
-	ICE WALL "slow"	from "-40 -60 -80 -100 -120 -140 -160 -180" to "-20 -40 -60 -80 -100 -120 -140 -160"
-		"slow_duration"	from "5" to "2"
-		"damage_per_second"	from "50 100 150 200 250 300 350 400" to "10 20 50 70 100 130 170 250"
-	BLAST "travel_distance"	from "1500" to "1200"
-		"travel_speed"	from "1500" to "1200"
-		"damage"	from "150 300 450 600 750 1000 1250 1500" to "60 120 220 310 400 490 600 750"
-CLARITY "total_mana"			190 > "370"
-"buff_duration"			50 > "35"
-SCROLL TP "AbilityManaCost"				75 > "25"
-"AbilityCooldown"				80 > "45.0"
-WARD OBS "ItemCost"						150 > "70"
-FLASK "buff_duration"			8 > "12"
-"total_health"			400 > "1200"
-GEM "ItemKillable"					0 > "1"
-TALON "AbilityCooldown"				16 > "12.0"
-"damage_bonus_ranged"	40 > "30"
-CHARON "active_health_regen_percent_per_second"	5.75 > "4.25"
-"health_regen_percent_per_second"	6.25 > "5.25"
-"duration"							4 > "3.0"
-"cooldown_melee"					2.5 > "3.5"
-"cooldown_ranged_tooltip"			4 > "5"
-"AbilityCooldown"				25 > "22"
-SMOKE 	"ItemStockMax"					3 > "6"
-		"ItemStockTime"					660 > "220.0"	
-POOR MAN SHIELD "block_chance_hero"		80 > "65"
-"block_chance"			25 > "51"
-ARCANE BOOTS"AbilityCastRange"				900 > "1000"
-"bonus_movement"		50 > "60"
-"replenish_amount"		135 > "250"
-"bonus_mana"			250 > "350"
-MOM "AbilityCooldown"				12 > "15"
-TRANQUIL "AbilityCooldown"				13 > "5.5"
-"bonus_armor"			0 > "5"
-"broken_movement_speed"	65 > "75"
-"bonus_health_regen"	14 > "25"
-removed wind lace and added ring of protection
-ANGEL WINGS "AbilityCooldown"				22 > "18"
-"bonus_attack_range"		325 > "25"
-steam_footgear "AbilityCooldown"			12 > "14"
-"passability_duration"		5.5 > "3.5"
-"bonus_movement_speed"		55 > "60"
-"passability_movement_speed"  20 > "25"
-"AbilityManaCost"				5 > "50"
-SOUL RING "AbilityCooldown"				30 > "20.0"
-"mana_regen"			50 > "75"
-"health_regen"			3 > "10"
-"duration"				10 > "12"
-"mana_gain"				150 > "350"
-"health_sacrifice"		150 > "200"
+								ITEMS:
+
+LVL_SHARD 
+	"ItemCost"						1250 > "1000"
+tome_of_knowledge 
+	"ItemInitialStockTime"			600 > "150"
+	"ItemStockTime"					60 > "49.5"	
+	"xp_bonus"				500 > "200"
+	"xp_per_use"			135 > "150"
+CLARITY 
+	"total_mana"			190 > "370"
+	"buff_duration"			50 > "35"
+SCROLL TP 
+	"AbilityManaCost"				75 > "25"
+	"AbilityCooldown"				80 > "45.0"
+WARD OBS 
+	"ItemCost"						150 > "70"
+FLASK 
+	"buff_duration"			8 > "12"
+	"total_health"			400 > "1200"
+GEM 
+	"ItemKillable"					0 > "1"
+TALON 
+	"AbilityCooldown"				16 > "12.0"
+	"damage_bonus_ranged"	40 > "30"
+CHARON 
+	"active_health_regen_percent_per_second"	5.75 > "4.25"
+	"health_regen_percent_per_second"	6.25 > "5.25"
+	"duration"							4 > "3.0"
+	"cooldown_melee"					2.5 > "3.5"
+	"cooldown_ranged_tooltip"			4 > "5"
+	"AbilityCooldown"				25 > "22"
+SMOKE 	
+	"ItemStockMax"					3 > "6"
+	"ItemStockTime"					660 > "220.0"	
+POOR MAN SHIELD 
+	"block_chance_hero"		80 > "65"
+	"block_chance"			25 > "51"
+ARCANE BOOTS
+	"AbilityCastRange"				900 > "1000"
+	"bonus_movement"		50 > "60"
+	"replenish_amount"		135 > "250"
+	"bonus_mana"			250 > "350"
+MOM 
+	"AbilityCooldown"				12 > "15"
+TRANQUIL 
+		removed wind lace and added ring of protection
+	"AbilityCooldown"				13 > "5.5"
+	"bonus_armor"			0 > "5"
+	"broken_movement_speed"	65 > "75"
+	"bonus_health_regen"	14 > "25"
+ANGEL WINGS 
+	"AbilityCooldown"				22 > "18"
+	"bonus_attack_range"		325 > "25"
+steam_footgear 
+	"AbilityCooldown"			12 > "14"
+	"passability_duration"		5.5 > "3.5"
+	"bonus_movement_speed"		55 > "60"
+	"passability_movement_speed"  20 > "25"
+	"AbilityManaCost"				5 > "50"
+SOUL RING 
+	"AbilityCooldown"				30 > "20.0"
+	"mana_regen"			50 > "75"
+	"health_regen"			3 > "10"
+	"duration"				10 > "12"
+	"mana_gain"				150 > "350"
+	"health_sacrifice"		150 > "200"
+
+								TALENTS:
+
 TALENT_DAMAGE cost = 8,
 			  group = 5,
 TALENT_EXP_GROUP1 - cost = 2,
 TALENT_GROUP_TO_LEVEL = [1] = 2,
-"talents/gold",cost = 2,
-LVL_SHARD "ItemCost"						1250 > "1000"
-tome_of_knowledge "ItemInitialStockTime"			600 > "150"
-"ItemStockTime"					60 > "49.5"	
-"xp_bonus"				500 > "200"
-"xp_per_use"			135 > "150"
+	"talents/gold",cost = 2,
+
+								OTHER:
+
+DUEL	WinGold_Base - from 300 to 100,
+		WinGold_PerDuel - from 2000 to 400,
+GOLD_PER_TICK - from 3 to 6 
+	Kills.GoldForStreaks 
+		[0] = 0,
+		[1] = 100 to 50
+		[2] = 220 to 100
+		[3] = 450 to 250
+		[4] = 750 to 500
+		[5] = 3000 to 700
+		[6] = 4500 to 1000
+		[7] = 7500 to 1500
+		[8] = 12000 to 2500
+		[9] = 18000 to 4000
+		[10] = 22500 to 6000
+		[11] = 30000 to 9000
+		[12] = 33000 to 12000
+		[13] = 39000 to 16000
+		[14] = 48000 to 21000
+		[15] = 60000 to 30000
+
+								HEROES CHANGES:
+
+ALL HEROES CHANGED BAT to "1.7" some heroes "1.4 1.5 1.6 1.8"
+Invoker - invoke lvl
+	"AbilityCooldown"	changed to "3"
+	"AbilityManaCost"	changed to "60"
+	"cooldown_scepter"	changed 0.1 to "0.5"
+	"LevelsBetweenUpgrades"	from 15 to "5"
+QUAS
+	"health_regen_per_instance" from "8 15 21 26 31 38 45" to "3 9 15 20 26 31 35"
+WEX
+	"attack_speed_per_instance" from "5 10 15 20 25 30 35 40" to "5 10 15 20 25 30 35 60"
+	"move_speed_per_instance"	from "3 6 9 12 15 18 21 24" to "1 2 3 4 5 7 9 11"
+EXORT
+	"bonus_damage_per_instance"	from "15 40 60 80 70 90 110 120" to	"7 16 28 35 43 52 60 90"
+COLD SNAP
+	"freeze_damage"	from "30 100 150 200 250 300 350 400" to "15 30 50 80 110 140 170 250"
+GHOST WALK
+	"AbilityCastPoint"	from "0.05" to "0"
+	"enemy_slow"	from "-20 -40 -60 80 -100 -120 -140 -160" to "-20 -25 -30 -35 -40 -45 -50 -60"
+	"self_slow"	from "-30 -20 0 20 40 60 80 100" to "-30 -20 0 10 20 30 40 60"
+TORNADO
+	"travel_distance"	from "1000 2000 3000 4000 5000 6000 7000 8000" to "1000 1600 2200 2900 3500 4000 4500 5200"
+	"travel_speed"	from "1500" to "1200"
+	"area_of_effect"	from "250" to "200" (я так понял это радиус поднятия в ветра)
+	"lift_duration"	from "1.0 2.0 2.5 3.0 3.5 4.0 4.5 5.0" to "0.8 1.2 1.5 1.8 2.2 2.5 2.7 3"
+	"base_damage"	from "333" to "70"
+	"wex_damage"	from "100 400 600 800 1000 1200 1400 1600" to "wex_damage"	"50 150 270 360 420 500 570 700"
+EMP 
+	"mana_burned"	from "250 1000 1500 2000 3000 3500 4000 5000" to "150 300 500 700 1000 1400 2000 3000"
+	"damage_per_mana_pct"	from "50" to "40"
+ALACRITY
+	"bonus_attack_speed"	from "20 40 60 80 100 120 140 160" to "bonus_attack_speed"	"15 40 70 100 130 150 180 250"
+	"bonus_damage"	from "30 80 120 160 200 250 300 350" to "15 40 70 100 130 150 180 250"
+METEOR
+	"area_of_effect"	from "300" to "275" (radius)
+	"travel_distance"	from "615 780 930 1095 1245 1410 1575" to "travel_distance"	"465 615 780 930 1095 1245 1410 1600"
+	"travel_speed"	from "500" to "300"
+	"main_damage"	from "150 350 400 600 700 800 900" to "main_damage"	"70 125 160 200 250 320 500"
+	"burn_dps"	from "30 80 150 200 250 300 350" to "15 22 35 43 55 70 150"
+SUNSTRIKE
+	"area_of_effect"	from "250" to "200"
+	"damage"	from "200 500 1000 1500 2000 2500 3000 3500" to "200 350 500 650 800 1000 1300 2000"
+FORGE 
+	"armor_removed"	from "3" to "1"
+ICE WALL
+	"slow"	from "-40 -60 -80 -100 -120 -140 -160 -180" to "-20 -40 -60 -80 -100 -120 -140 -160"
+	"slow_duration"	from "5" to "2"
+	"damage_per_second"	from "50 100 150 200 250 300 350 400" to "10 20 50 70 100 130 170 250"
+BLAST
+	"travel_distance"	from "1500" to "1200"
+	"travel_speed"	from "1500" to "1200"
+	"damage"	from "150 300 450 600 750 1000 1250 1500" to "60 120 220 310 400 490 600 750"
+"AXE"
+	BERSERKERS CALL	
+		"bonus_armor"	from "80 85 90 100 120 150 200" to "40 60 80 100 140 200 260"
+		"duration"	from "3" to "1.7 2 2.3 2.7 3 3.2 3.5"
+		"CastPoint"	from "0.2" to "0.1"
+	BATTLE HUNGER 
+		"slow"	from "-12 -16 -20 -24 -28 -32 -40" to "-20"
+		"speed_bonus"	"12 14 16 18 20 22 24" to "12 13 14 15 16 17 18"
+		"damage_per_second"	"30 40 50 70 90 120 150" to "16 24 34 50 62 74 90"
+
+"MONKEY KING"
+	JINGU MASTERY
+		"required_hits"	"3" to "4"
+		"counter_duration"	"15" to 10
+		"bonus_damage"	"80 120 160 200 250 300 350" to	"40 50 60 70 80 90 100"
+	WUKONGS COMMAND
+		"AbilityCooldown"	"100 85 70 60.0 50.0 40.0 30.0" to "100 90 80 70 60 55 50"
+		"AbilityCastPoint"	0.7 to "1"
+		"first_radius"	"400" to 300
+		"second_radius"	"850" to 750
+		"num_first_soldiers"	7 to "5"
+		"num_second_soldiers"	11 to "9"
+		"attack_speed"	1.5 to "2"
+		"bonus_damage"	"80 150 190 260 320 380 450" to "80 120 160 200 240 280 320"
+		"duration"	"13 14 15 16 17 18 19" to "13 13.5 14 14.5 15 15.5 16"
+	PRIMAL SPRING
+		"AbilityCooldown"	10 to "18 17 16 15 14 13 12"
+		"impact_movement_slow"	"40 50 60 70 80 90 100" to "20 30 40 50 60 70 80"
+	TREE DANCE
+		"AbilityCooldown"	1 to "1.5"
+	MISCHIEF
+		"AbilityCooldown"	4 to "3"
+		"movespeed"	"250"
+		"reveal_radius"	200 to "350"
+	BONDLESS STRIKE
+		"AbilityCooldown"	"25 24 23 22 21 20 18" to 22
+		"strike_crit_mult"	"100 130 160 190 210 240 270" to "130 150 170 190 210 230 250"

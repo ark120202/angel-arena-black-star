@@ -962,6 +962,7 @@
 				"xp_per_use"			"150"
 			}
 			"03"
+		}
 	}
 	"item_recipe_hurricane_pike"
 	{
