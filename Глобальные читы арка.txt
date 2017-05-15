@@ -93,7 +93,7 @@ Gold:AddGold(i, gold)
 СПРОСИТЬ ПЛЕР ID  -  !!!!!-cprint !!!! потом  !!!!  -printplayers !!!!!
 ГЛОБАЛ ШТУКА
 say -lua _G.pid = ID
-say -lua _G.Hero = PlayerResource:GetSelectedHeroEntity(pid)
+s
 
 
 
@@ -126,18 +126,24 @@ Timers:CreateTimer(function() EmitGlobalSound("Arena.Hero_Arthas.RageOfArthas");
 Timers:CreateTimer(function() EmitGlobalSound("Arena.Hero_Arthas.Vsolyanova.Impact"); return RandomInt(2,15) end)
 
 
-
+БАБКИ 
+CUSTOM_GOLD_PER_TICK = 100
 
 
 ForH(function(h) if h then PlayerResource:SetPlayerTeam(h:GetPlayerID(), 2) end end)
 
 
+Черная карта
+GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled(true)
 
+МИНУС МАГАЗ!
+function PanoramaShop:BuyItem(playerID, unit, itemName) end
 
 ЧИСТКА 
 for i = 0, GameRules:NumDroppedItems() - 1 do UTIL_Remove(GameRules:GetDroppedItem(i)) end
 
-
+АЛАСТОР ПИДР
+function PanoramaShop:BuyItem(playerID) Notifications:Top(playerID, {text="АЛАСТОР ПИДОР!"}) end
 
 Много шлюх по всей карте ЖОПА КРАШШШШШШ 
 say -lua CPrint(RANDVECT())
@@ -146,12 +152,12 @@ for i = 1, 100 do CreateUnitByName("npc_dota_hero_lina",RANDVECT(),true, nil,nil
 
 
 БЕССМЕРИЕ КАПЕЦ ЖОПА
-Hero:AddNewModifier(Hero,nil,"modifier_fountain_aura_arena",nil)
+Hero:AddNewModifier(Hero,nil,"modifier_fountain_aura_arena",nil)`
 
 ВИЖН ПО ВСЕЙ КАРТЕ КАПЕЦ
 GameRules:GetGameModeEntity():SetFogOfWarDisabled(true)
 
-
+`
 Атака маленьека и большая 
 GameRules:GetGameModeEntity():SetMaximumAttackSpeed(1)-минимум
 GameRules:GetGameModeEntity():SetMinimumAttackSpeed( 99999 )
@@ -177,3 +183,4 @@ GameRules:GetGameModeEntity():SetMaximumAttackSpeed( 99999 ) МНОГО
 КОНЬ models/items/chaos_knight/rising_chaos_steed/rising_chaos_steed.vmdl
 
 ГУМУНКУЛ models/items/courier/onibi_lvl_15/onibi_lvl_15.vmdl
+
