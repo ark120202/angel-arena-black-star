@@ -491,7 +491,7 @@
 		"Ability1"		"murzik_fatality"
 		"Ability2"		"murzik_neo_style"
 		"Ability3"		"murzik_leap"
-		"Ability4"		"murzik_blood_day"
+		"Ability4"		"murzik_cheat"
 		"AttackRate"	"1.1"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"

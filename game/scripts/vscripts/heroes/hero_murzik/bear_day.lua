@@ -1,102 +1,94 @@
-LinkLuaModifier( "modifier_movespeed_cap", "libraries/modifiers/modifier_movespeed_cap.lua" ,LUA_MODIFIER_MOTION_NONE )
+"enchant_totem_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"earthshaker_enchant_totem"
+	
+	"precache"
+	{
+		"particle"		"particles/units/heroes/hero_earthshaker/earthshaker_totem_blur.vpcf"
+		"soundfile" 	"sounds/weapons/hero/earthshaker/enchant.vsnd"
+		"soundfile" 	"sounds/weapons/hero/earthshaker/enchant_attack.vsnd"
+	}
 
-function AddThirst(keys)
-	local target = keys.unit
-	local caster = keys.caster
-	local ability = keys.ability
-	local sight_modifier = "modifier_murzik_debuff_datadriven"
-	local buff_modifier = "modifier_murzik_buff"
-	local buff_visual = "modifier_murzik_visual"
-	local healthPercentage = target:GetHealth() / target:GetMaxHealth()
-	local buff_threshold = ability:GetLevelSpecialValueFor( "buff_threshold_pct", ability:GetLevel() - 1 )/100
-	local visibility_threshold = ability:GetLevelSpecialValueFor( "visibility_threshold_pct", ability:GetLevel() - 1 )/100
-	
-	if caster:HasModifier("modifier_movespeed_cap") == false then
-		caster:AddNewModifier(caster, nil, "modifier_movespeed_cap", {})
-	end
-	
-	if target.stacks == nil then
-		target.stacks = 0
-	end
-	
-	local previous_stacks
-	if caster:HasModifier(buff_modifier) then
-		previous_stacks = caster:GetModifierStackCount(buff_modifier, ability)
-	else
-		previous_stacks = 0
-	end
-	
-	if target:IsAlive() and healthPercentage <= buff_threshold then
-		if healthPercentage < visibility_threshold then
-			ability:ApplyDataDrivenModifier(caster, target, sight_modifier, {})
-			healthPercentage = visibility_threshold
-		end
-		if caster:HasModifier(buff_modifier) == false then
-			ability:ApplyDataDrivenModifier(caster, caster, buff_modifier, {})
-			ability:ApplyDataDrivenModifier(caster, caster, buff_visual, {})
-		end
-		local new_stacks = math.floor((buff_threshold - healthPercentage)*100)
-		caster:SetModifierStackCount(buff_modifier, ability, new_stacks + previous_stacks - target.stacks)
-		target.stacks = new_stacks
-	else
-		caster:SetModifierStackCount(buff_modifier, ability, previous_stacks - target.stacks)
-		target.stacks = 0
-		if caster:GetModifierStackCount(buff_modifier, ability) == 0 then
-			caster:RemoveModifierByName(buff_modifier)
-			caster:RemoveModifierByName(buff_visual)
-		end
-	end
-end
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.69 0.69 0.69 0.69"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"earthshaker_enchant_totem"
 
-function RemoveThirst(keys)
-	local target = keys.unit
-	local caster = keys.caster
-	local ability = keys.ability
-	local sight_modifier = "modifier_thirst_debuff_datadriven"
-	local buff_modifier = "modifier_thirst_buff"
-	local buff_visual = "modifier_thirst_visual"
-	local healthPercentage = target:GetHealth() / target:GetMaxHealth()
-	local buff_threshold = ability:GetLevelSpecialValueFor( "buff_threshold_pct", ability:GetLevel() - 1 )/100
-	local visibility_threshold = ability:GetLevelSpecialValueFor( "visibility_threshold_pct", ability:GetLevel() - 1 )/100
-	
-	if target.stacks == nil then
-		target.stacks = 0
-	end
-	local previous_stacks
-	if caster:HasModifier(buff_modifier) then
-		previous_stacks = caster:GetModifierStackCount(buff_modifier, ability)
-	else
-		previous_stacks = 0
-	end
-	
-	if healthPercentage >= visibility_threshold then
-		if target:HasModifier(sight_modifier) then
-			target:RemoveModifierByName(sight_modifier)
-		end
-	end
-	
-	if healthPercentage > buff_threshold then
-		if caster:HasModifier(buff_modifier) then
-			caster:SetModifierStackCount(buff_modifier, ability, previous_stacks - target.stacks)
-			target.stacks = 0
-			if caster:GetModifierStackCount(buff_modifier, ability) == 0 then
-				caster:RemoveModifierByName(buff_modifier)
-				caster:RemoveModifierByName(buff_visual)
-			end
-		end
-	else
-		if healthPercentage < visibility_threshold then
-			healthPercentage = visibility_threshold
-		end
-		local new_stacks =	math.floor((buff_threshold - healthPercentage)*100)
-		caster:SetModifierStackCount(buff_modifier, ability, new_stacks + previous_stacks - target.stacks)
-		target.stacks = new_stacks
-	end
-end
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"5.0"
+	"AbilityDuration"				"14.0 14.0 14.0 14.0"
 
-function GiveVision(keys)
-	caster = keys.caster
-	target = keys.target
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"0 0 0 0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"20 30 40 50"		
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"totem_damage_percentage"	"100 200 300 400"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"tooltip_duration"			"14.0 14.0 14.0 14.0"
+		}
+	}
 	
-	AddFOWViewer(caster:GetTeam(), target:GetAbsOrigin(), 10, 0.01, false)
-end
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_EarthShaker.Totem"
+			"Target"		"CASTER"
+		}
+	
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_enchant_totem_datadriven"
+			"Target"		"CASTER"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_enchant_totem_datadriven"
+		{
+			"Duration"		"%tooltip_duration"
+			
+			"OnAttackLanded"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_enchant_totem_datadriven"
+					"Target"		"CASTER"
+				}
+				
+				"FireSound"
+				{
+					"EffectName"	"Hero_EarthShaker.Totem.Attack"
+					"Target"		"CASTER"
+				}
+			}
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%totem_damage_percentage"
+			}
+		}
+	}
+}

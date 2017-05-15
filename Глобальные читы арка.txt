@@ -11,7 +11,7 @@ PlayerResource:SetPlayerTeam(playerID, newTeam)
 say -lua  Kills:SetKillStreak(i, 100000)
 
 
-Gold:AddGold(pid, gold)
+say -lua Gold:AddGold(pid, gold)
 
 
 for i = 0, 9 do PlayerResource:GetSelectedHeroEntity(i):ModifyStrength(10000) end
@@ -21,13 +21,12 @@ PlayerResource:GetLevelValue(i):level(120)
 
 while(true) do Notifications:TopToAll({text="ALASTOR PIDOR"}) end
 
-PlayerResource:GetSelectedHeroEntity(i):SetBaseMoveSpeed(666)
 
 -kick <pid>			-ban <pid>
 
 PlayerResource:GetSelectedHeroEntity(pid):SetLevel(11111)
 
-PlayerResource:GetSelectedHeroEntity(pid):AddItemByName("item_rapier")
+PlayerResource:GetSelectedHeroEntity(pid):AddItemByName("item_ward_observer")
 
 PlayerResource:GetSelectedHeroEntity(pid):SetModel("models/units/zaken/zaken.vmdl")
 
@@ -65,7 +64,6 @@ say -lua for i = 0, 9 do HeroSelection:ChangeHero(i, "npc_arena_hero_destroyer",
 say -lua Hero:SetBaseDamageMin(-111) УРОН
 
 
-say -lua PlayerResource:GetSelectedHeroEntity(6):ModifyAgility(-10)
 
 say -lua GetSelectedHeroEntity(0):ModifyIntelligence(10000)
 
