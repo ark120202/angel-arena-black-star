@@ -76,8 +76,8 @@
 	"axe_counter_helix"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"0.7 0.6 0.5 0.4 0.3 0.2 0.1"
-		"AbilityDamage"		"80 160 240 300 380 460 520"
+		"AbilityCooldown"	"0.45 0.4 0.35 0.3 0.25 0.2 0.15" 
+		"AbilityDamage"		"65 100 135 170 205 230 280"
 		"LevelsBetweenUpgrades"	"1"
 		"AbilitySpecial"
 		{
@@ -96,7 +96,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"cooldown"	"0.7 0.6 0.5 0.4 0.3 0.2 0.1"
+				"cooldown"	"0.45 0.4 0.35 0.3 0.25 0.2 0.15"
 			}
 			
 			"99"
@@ -114,7 +114,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.2"
-		"AbilityCooldown"	"75.0 65.0 55.0 50.0 45.0 40.0 35.0"
+		"AbilityCooldown"	"75 70 65 60 55 50 45"
 		"AbilityManaCost"	"60 120 180 240 280 320 380"
 		"AbilityCastRange"	"200"
 		"AbilitySpecial"
@@ -122,19 +122,19 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"kill_threshold"	"250 350 550 800 1200 1600 2000"
+				"kill_threshold"	"250 325 400 500 600 750 1000"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"150 250 300 400 500 600 700"
+				"damage"	"150 250 300 350 400 450 580"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"speed_bonus"	"20 25 30 35 40 45 50"
+				"speed_bonus"	"30"
 			}
 
 			"04"
@@ -146,7 +146,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"speed_duration"	"6 10 13 15 18 20 25"
+				"speed_duration"	"6"
 			}
 
 			"06"
@@ -158,19 +158,19 @@
 			"07"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"cooldown_scepter"	"3.0"
+				"cooldown_scepter"	"5"
 			}
 
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"kill_threshold_scepter"	"1000 2500 4500 6500 8500 10000 12000"
+				"kill_threshold_scepter"	"500 700 900 1100 1300 1500 1800"
 			}
 
 			"09"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"speed_duration_scepter"	"20"
+				"speed_duration_scepter"	"10"
 			}
 
 		}
