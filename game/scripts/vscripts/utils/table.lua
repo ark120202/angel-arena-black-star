@@ -121,15 +121,6 @@ function table.findIndex(t, value)
 	return values
 end
 
-function table.icontains(table, element)
-	for _, value in ipairs(table) do
-		if value == element then
-			return true
-		end
-	end
-	return false
-end
-
 function table.add(input1, input2)
 	for _,v in ipairs(input2) do
 		table.insert(input1, v)

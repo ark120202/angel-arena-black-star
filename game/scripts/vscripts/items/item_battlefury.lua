@@ -5,16 +5,17 @@ function item_battlefury_baseclass:GetIntrinsicModifierName()
 	return "modifier_item_battlefury_arena"
 end
 
---[[function item_battlefury_baseclass:CastFilterResultTarget(target)
-	return target:GetClassname() == "ent_dota_tree" and UF_SUCCESS or UF_FAIL_CUSTOM
-end]]
+function item_battlefury_baseclass:CastFilterResultTarget(hTarget)
+	return (hTarget:GetClassname() == "ent_dota_tree" or hTarget:IsCustomWard()) and UF_SUCCESS or UF_FAIL_CUSTOM
+end
+
+function item_battlefury_baseclass:GetCustomCastErrorTarget(hTarget)
+	return (hTarget:GetClassname() == "ent_dota_tree" or hTarget:IsCustomWard()) and "" or "dota_hud_error_cant_cast_on_non_tree_ward"
+end
 
 if IsServer() then
 	function item_battlefury_baseclass:OnSpellStart()
-		local target = self:GetCursorTarget()
-		if target:GetClassname() == "ent_dota_tree" then
-			target:CutDown(self:GetCaster():GetTeamNumber())
-		end
+		self:GetCursorTarget():CutTreeOrWard(self:GetCaster(), self)
 	end
 end
 

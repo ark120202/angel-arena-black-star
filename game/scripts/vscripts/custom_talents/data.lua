@@ -308,6 +308,32 @@ CUSTOM_TALENTS_DATA = {
 		group = 6,
 		requirement = "skeleton_king_reincarnation_arena",
 	},
+
+	--Default talent remap example
+	--special_bonus_unique_invoker_1         +4 Forged Spirit Summoned (original - 4, see scripts/npc/override/talents.txt)
+	talent_hero_invoker_forge_spirit_more_spirits = {
+		icon = "arena/invoker_forge_spirit",
+		cost = 1,
+		group = 1,
+		requirement = "invoker_forge_spirit",
+		effect = {abilities = "special_bonus_unique_invoker_1"}
+	},
+	--special_bonus_unique_invoker_2         AoE Deafening Blast
+	talent_hero_invoker_deafening_blast_aoe = {
+		icon = "arena/invoker_deafening_blast",
+		cost = 1,
+		group = 1,
+		requirement = "invoker_deafening_blast",
+		effect = {abilities = "special_bonus_unique_invoker_2"}
+	},
+	--special_bonus_unique_invoker_3         -120s Tornado Cooldown (original - 18s, see scripts/npc/override/talents.txt)
+	talent_hero_invoker_tornado_cooldown_decrease = {
+		icon = "arena/invoker_tornado",
+		cost = 1,
+		group = 1,
+		requirement = "invoker_tornado",
+		effect = {abilities = "special_bonus_unique_invoker_3"}
+	},
 	--[[talent_hero_sara_evolution_bonus_health = {
 		icon = "talents/heroes/sara_evolution_bonus_health",
 		cost = 4,

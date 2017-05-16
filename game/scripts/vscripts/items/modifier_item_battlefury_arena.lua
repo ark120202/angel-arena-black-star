@@ -30,7 +30,7 @@ if IsServer() then
 		if attacker == self:GetParent() --[[and not attacker:IsMuted()]] then
 			local ability = self:GetAbility()
 			local target = keys.target
-			if not target:IsRealCreep() then
+			if target:IsRealCreep() then
 				ApplyDamage({
 					attacker = attacker,
 					victim = target,
@@ -40,7 +40,9 @@ if IsServer() then
 					ability = ability
 				})
 			end
-			DoCleaveAttack(attacker, target, ability, keys.damage * ability:GetSpecialValueFor("cleave_damage_percent") * 0.01, ability:GetSpecialValueFor("cleave_distance"), ability:GetSpecialValueFor("cleave_starting_width"), ability:GetSpecialValueFor("cleave_ending_width"), self:GetAbility().cleave_pfx)
+			if not IsRangedUnit(keys.caster) then
+				DoCleaveAttack(attacker, target, ability, keys.damage * ability:GetSpecialValueFor("cleave_damage_percent") * 0.01, ability:GetSpecialValueFor("cleave_distance"), ability:GetSpecialValueFor("cleave_starting_width"), ability:GetSpecialValueFor("cleave_ending_width"), self:GetAbility().cleave_pfx)
+			end
 		end
 	end
 end

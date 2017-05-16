@@ -1131,6 +1131,25 @@ function CDOTA_PlayerResource:IsDisableHelpSetForPlayerID(nPlayerID, nOtherPlaye
 	return PLAYER_DATA[nPlayerID] ~= nil and PLAYER_DATA[nPlayerID].DisableHelp ~= nil and PLAYER_DATA[nPlayerID].DisableHelp[nOtherPlayerID] and PlayerResource:GetTeam(nPlayerID) == PlayerResource:GetTeam(nOtherPlayerID)
 end
 
+function CEntityInstance:CutTreeOrWard(caster, ability)
+	if self:GetClassname() == "ent_dota_tree" then
+		self:CutDown(caster:GetTeamNumber())
+	elseif self:IsCustomWard() then
+		self:TrueKill(ability, caster)
+	end
+end
+
+function IsModifierStrongest(unit, modifier, modifierList)
+	local ind = modifierList[modifier]
+	if not ind then return false end
+	for v,i in pairs(modifierList) do
+		if unit:HasModifier(v) and i > ind then
+			return false
+		end
+	end
+	return true
+end
+
 --TODO
 --[[function CDOTA_BaseNPC:AddNewModifierShared(hCaster, hAbility, pszScriptName, hModifierTable)
 	CustomNetTables:SetTableValue("shared_modifiers", self:GetEntityIndex() .. "_" .. pszScriptName, hModifierTable)

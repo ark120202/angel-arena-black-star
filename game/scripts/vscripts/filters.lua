@@ -277,7 +277,7 @@ function GameMode:CustomChatFilter(playerID, teamonly, data)
 		local command = table.remove(cmd, 1)
 		local data = CHAT_COMMANDS[command]
 		if data then
-			local isDev = DynamicWearables:HasWearable(playerID, "wearable_developer")
+			local isDev = DynamicWearables:HasWearable(playerID, "wearable_developer") or IsInToolsMode()
 			local isCheat = GameRules:IsCheatMode()
 			if data.level == CUSTOMCHAT_COMMAND_LEVEL_PUBLIC
 				or (data.level == CUSTOMCHAT_COMMAND_LEVEL_CHEAT and isCheat)

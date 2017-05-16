@@ -14323,7 +14323,7 @@
 		"ID"							"10237"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_arena/golden_eagle_relic"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		
 		"AbilitySpecial"
 		{
@@ -14331,6 +14331,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"60"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{
@@ -14355,7 +14356,8 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"gold_as_damage_pct"	"0.75"
+				"active_gold_as_damage_pct"	"0.75"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"07"
 			{
@@ -18767,7 +18769,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"160"
+				"quelling_bonus_damage_pct"	"130 150"
 			}
 			"06"
 			{
@@ -18838,7 +18840,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"160"
+				"quelling_bonus_damage_pct"	"130 150"
 			}
 			"06"
 			{
@@ -18885,8 +18887,10 @@
 		"AbilityTextureName"			"item_arena/elemental_fury"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL | DOTA_UNIT_TARGET_TREE"
+		//"AbilityAffectsOnlyTrees"		"1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 
 		"AbilityCastRange"				"500"
 		"AbilityCooldown"				"2"
@@ -18944,7 +18948,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"160"
+				"quelling_bonus_damage_pct"	"180"
 			}
 			"11"
 			{
@@ -19023,17 +19027,21 @@
 			}
 		}
 
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"KVCastFilter"
+			}
+		}
+
 		"OnSpellStart"
 		{
-		//	"RunScript"
-		//	{
-		//		"ScriptFile"	"kv.lua"
-		//		"Function"		"CutTree"
-		//	}
-			"DestroyTrees"
+			"RunScript"
 			{
-				"Target" 		"TARGET"
-				"Radius"		"10"
+				"ScriptFile"	"kv.lua"
+				"Function"		"CutTree"
 			}
 		}
 
@@ -19052,6 +19060,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"						"%bonus_agility"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"		"%movement_speed_percent_bonus"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"					"%bonus_mana_regen_pct"
 				}
 				"OnAttackLanded"
 				{
@@ -19124,8 +19133,7 @@
 						"ScriptFile"	"kv.lua"
 						"Function"		"ModifyCreepDamage"
 						"damage"		"%attack_damage"
-						"damage_bonus"	"%damage_bonus"
-						"damage_bonus_ranged"	"%damage_bonus_ranged"
+						"damage_bonus"	"%quelling_bonus_damage_pct"
 					}
 				}
 			}

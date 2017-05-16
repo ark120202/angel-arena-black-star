@@ -10,8 +10,7 @@ function EatTrees(keys)
 
 	local wards = FindUnitsInRadius(caster:GetTeamNumber(), point, nil, keys.aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 	for _,v in ipairs(wards) do
-		local n = v:GetUnitName()
-		if n == "npc_dota_sentry_wards" or n == "npc_dota_observer_wards" then
+		if v:IsCustomWard() then
 			v:TrueKill(ability, caster)
 			trees = trees + keys.stacks_per_ward
 		end

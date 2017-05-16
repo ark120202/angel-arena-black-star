@@ -1069,19 +1069,18 @@ DOTA_Tooltip_ability_item_thunder_musket_thunderstruck_bonus_attack_range: '• 
 DOTA_Tooltip_ability_item_thunder_musket_thunderstruck_magical_damage: '• УРОН:'
 DOTA_Tooltip_ability_item_golden_eagle_relic: Golden Eagle Relic
 DOTA_Tooltip_ability_item_golden_eagle_relic_Description: |-
-  Активируемая: Toggle Swift Strike - Когда активен, Swift Strike увеличивает скорость атаки на %active_bonus_attackspeed% и скорость передвижения на %active_bonus_movespeed_pct%%%, но вы будете постоянно терять золото и не будете получать золото за убийства.
-  Пассивная: Wealth Approach - Наносит %gold_as_damage_pct%%% золота владельца в виде дополнительного магического урона. Если Swift Strike активен, то способность нанесёт чистый урон.
+  Активируемая: Toggle Wealth Strike - Когда активен, Wealth Strike наносит %active_gold_as_damage_pct%%% золота владельца в виде дополнительного чистого урона, увеличивает скорость атаки на %active_bonus_attackspeed% и скорость передвижения на %active_bonus_movespeed_pct%%%, но вы будете постоянно терять золото и не будете получать золото за убийства.
   Пассивная: Touch of Midas - Каждый убитый юнит будет превращен в золото, что принесет вам дополнительные золото и опыт.
   Пассивная: Lifesteal — дает владельцу вампиризм, который с каждой атакой восстанавливает его здоровье на часть нанесенного урона.
-DOTA_Tooltip_ability_item_golden_eagle_relic_Note0: Wealth Approach не работает на боссах
+DOTA_Tooltip_ability_item_golden_eagle_relic_Note0: Wealth Strike не наносит урон по боссам
 DOTA_Tooltip_ability_item_golden_eagle_relic_kill_xp: 'ОПЫТ ЗА ЮНИТА:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_kill_gold: 'ЗОЛОТО ЗА ЮНИТА:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_lifesteal_pct: '%ВАМПИРИЗМ:'
-DOTA_Tooltip_ability_item_golden_eagle_relic_gold_as_damage_pct: '%ЗОЛОТА В УРОН:'
-DOTA_Tooltip_ability_item_golden_eagle_relic_active_bonus_attackspeed: |-
+DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_as_damage_pct: |-
 
   Swift Strike
-  • СКОРОСТЬ АТАКИ:
+  • %ЗОЛОТА В УРОН:
+DOTA_Tooltip_ability_item_golden_eagle_relic_active_bonus_attackspeed: '• СКОРОСТЬ АТАКИ:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_bonus_movespeed_pct: '%• СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_lost_per_sec_pct: '%• ЗОЛОТА В СЕКУНДУ:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_lost_per_sec_min: '• МИН. ЗОЛОТА В СЕКУНДУ:'

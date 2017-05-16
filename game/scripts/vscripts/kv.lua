@@ -312,7 +312,15 @@ function Cleave(keys)
 end
 
 function CutTree(keys)
-	if keys.target:GetClassname() == "ent_dota_tree" then
-		keys.target:CutDown(keys.caster:GetTeamNumber())
+	keys.target:CutTreeOrWard(keys.caster, keys.ability)
+end
+
+--Hardcored now
+function KVCastFilter(keys)
+	local caster = keys.caster
+	local hTarget = keys.target
+	if not (hTarget:GetClassname() == "ent_dota_tree" or hTarget:IsCustomWard()) then
+		caster:Interrupt()
+		Containers:DisplayError(caster:GetPlayerOwnerID(), "dota_hud_error_cant_cast_on_non_tree_ward")
 	end
 end

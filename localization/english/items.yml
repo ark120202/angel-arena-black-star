@@ -1160,21 +1160,20 @@ DOTA_Tooltip_ability_item_thunder_musket_thunderstruck_bonus_attack_range: '• 
 DOTA_Tooltip_ability_item_thunder_musket_thunderstruck_magical_damage: '• MAGIC DAMAGE:'
 DOTA_Tooltip_ability_item_golden_eagle_relic: Golden Eagle Relic
 DOTA_Tooltip_ability_item_golden_eagle_relic_Description: |-
-  Active: Toggle Swift Strike - When active, Swift Strike grants +%active_bonus_attackspeed% attack speed and +%active_bonus_movespeed_pct%%% movement speed, but you will continuously lose gold and won't get gold from kills.
-  Passive: Wealth Approach - Deals %gold_as_damage_pct%%% of bearer's gold as bonus magic damage. If Swift Strike is active ability will deal pure damage.
+  Active: Toggle Wealth Strike - When active, Wealth Strike deals %active_gold_as_damage_pct%%% of bearer's gold as bonus pure damage, grants +%active_bonus_attackspeed% attack speed and +%active_bonus_movespeed_pct%%% movement speed, but you will continuously lose gold and won't get gold from kills.
   Passive: Touch of Midas - Each killed unit will give you some more gold and experience.
   Passive: Lifesteal - Heals the attacker for a percentage of attack damage dealt.
-DOTA_Tooltip_ability_item_golden_eagle_relic_Note0: Wealth Approach not works on bosses
+DOTA_Tooltip_ability_item_golden_eagle_relic_Note0: Wealth Strike doesn't deals additional damage to bosses
 DOTA_Tooltip_ability_item_golden_eagle_relic_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_golden_eagle_relic_bonus_attackspeed: +$attack
 DOTA_Tooltip_ability_item_golden_eagle_relic_kill_xp: 'KILL XP:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_kill_gold: 'KILL GOLD:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_lifesteal_pct: '%LIFESTEAL:'
-DOTA_Tooltip_ability_item_golden_eagle_relic_gold_as_damage_pct: '%GOLD AS DAMAGE:'
-DOTA_Tooltip_ability_item_golden_eagle_relic_active_bonus_attackspeed: |-
+DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_as_damage_pct: |-
 
   Swift Strike
-  • BONUS ATTACKSPEED:
+  • %GOLD AS DAMAGE:
+DOTA_Tooltip_ability_item_golden_eagle_relic_active_bonus_attackspeed: '• BONUS ATTACKSPEED:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_bonus_movespeed_pct: '%• MOVEMENT SPEED:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_lost_per_sec_pct: '%• GOLD PER SECOND:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_lost_per_sec_min: '• MINIMAL GOLD PER SECOND:'

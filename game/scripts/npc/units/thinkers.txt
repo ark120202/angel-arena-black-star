@@ -224,7 +224,7 @@
 
 		"StatusHealth"				"200"
 		"StatusHealthRegen"			"0.25"
-		"StatusMana"				"50"
+		"StatusMana"				"75"
 		"StatusManaRegen"			"0.01"
 
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
