@@ -277,7 +277,7 @@
 	"anakim_summon_divine_knight"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			""
+		"AbilityTextureName"			"arena/anakim_summon_divine_knight"
 		"MaxLevel" 						"7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -377,7 +377,7 @@
 	"anakim_stats_heroes"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			""
+		"AbilityTextureName"			"arena/anakim_stats_heroes"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"

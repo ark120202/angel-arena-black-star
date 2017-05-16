@@ -40,7 +40,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"faceless_void_backtrack"
+		"AbilityTextureName"			"arena/murzik_neo_style"
 		"ScriptFile"					"heroes/hero_murzik/neo_style.lua"
 		"MaxLevel"						"7"
 
@@ -63,7 +63,7 @@
 	{
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityTextureName"	"mirana_leap"
+		"AbilityTextureName"	"arena/murzik_leap"
 		"MaxLevel" 						"7"
 
 		"precache"
