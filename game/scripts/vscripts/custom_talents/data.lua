@@ -333,51 +333,51 @@ CUSTOM_TALENTS_DATA = {
 
 	
 	--Default talents
-	talent_hero_special_bonus_unique_antimage = {
-		icon = "special_bonus_unique_antimage",
+	-- talent_hero_anitmage_blink_cd_reduction = {
+	-- 	icon = "antimage_blink",
+	-- 	cost = 1,
+	-- 	group = 1,
+	-- 	requirement = "antimage_blink",
+	-- 	special_values = {value = 1},
+	-- 	effect = {abilities = "special_bonus_unique_antimage"}
+	-- },
+	-- talent_hero_special_bonus_unique_antimage_2 = {
+	-- 	icon = "antimage_mana_void",
+	-- 	cost = 1,
+	-- 	group = 1,
+	-- 	requirement = "antimage_mana_void",
+	-- 	special_values = {value = 50},
+	-- 	effect = {abilities = "special_bonus_unique_antimage_2"}
+	-- },
+	talent_hero_axe_battle_hunger_dps = {
+		icon = "axe_battle_hunger",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_antimage",
-		special_values = {value = 1},
-		effect = {abilities = "special_bonus_unique_antimage"}
-	},
-	talent_hero_special_bonus_unique_antimage_2 = {
-		icon = "special_bonus_unique_antimage_2",
-		cost = 1,
-		group = 1,
-		requirement = "special_bonus_unique_antimage_2",
-		special_values = {value = 50},
-		effect = {abilities = "special_bonus_unique_antimage_2"}
-	},
-	talent_hero_special_bonus_unique_axe = {
-		icon = "special_bonus_unique_axe",
-		cost = 1,
-		group = 1,
-		requirement = "special_bonus_unique_axe",
+		requirement = "axe_battle_hunger",
 		special_values = {value = 100},
 		effect = {abilities = "special_bonus_unique_axe"}
 	},
-	talent_hero_special_bonus_unique_bane_1 = {
-		icon = "special_bonus_unique_bane_1",
+	talent_hero_bane_enfeeble_reduction = {
+		icon = "bane_enfeeble",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_bane_1",
+		requirement = "bane_enfeeble",
 		special_values = {value = 90},
 		effect = {abilities = "special_bonus_unique_bane_1"}
 	},
 	talent_hero_special_bonus_unique_bane_2 = {
-		icon = "special_bonus_unique_bane_2",
+		icon = "bain_brain_sap",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_bane_2",
+		requirement = "bain_brain_sap",
 		special_values = {value = 200},
 		effect = {abilities = "special_bonus_unique_bane_2"}
 	},
-	talent_hero_special_bonus_unique_bloodseeker_2 = {
-		icon = "special_bonus_unique_bloodseeker_2",
+	talent_hero_bloodseeker_blood_bath_dmg = {
+		icon = "bloodseeker_blood_bath",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_bloodseeker_2",
+		requirement = "bloodseeker_blood_bath",
 		special_values = {value = 75},
 		effect = {abilities = "special_bonus_unique_bloodseeker_2"}
 	},

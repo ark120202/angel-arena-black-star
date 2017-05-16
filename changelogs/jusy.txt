@@ -201,3 +201,18 @@ BLAST
 	BONDLESS STRIKE
 		"AbilityCooldown"	"25 24 23 22 21 20 18" to 22
 		"strike_crit_mult"	"100 130 160 190 210 240 270" to "130 150 170 190 210 230 250"
+
+"BANE"
+	ENFEEBLE
+		"AbilityManaCost"	"95 110 130 150 170 190 210" to "100"
+		"enfeeble_attack_reduction"	"40 80 120 160 200 240 280" to "30 60 90 120 150 180 210"
+	BRAIN SAP
+		"AbilityCastRange"	"700" to "650"
+		"AbilityCooldown"	"16 15 14 13 12 11 10" to "14 13.5 13 12.5 12 11.5 11"
+		"brain_sap_damage" (and heal)	"90 160 230 300 370 430 520" to "90 160 230 300 350 400 450"
+		"cooldown_scepter"				"1.5" to "3"
+	FIENDS GRIP
+		"AbilityCooldown"	"120.0 110.0 100.0 90.0 80.0 70.0 60.0" to "120 115 110 105 100 95 90"
+		"AbilityManaCost"	"200 300 400 500 600 700 800" to "200 300 400 450 500 550 600"
+		"fiend_grip_tick_interval"	"1.0" to "0.5"
+		"fiend_grip_mana_drain"	"5 10 15 20 25 30 35" to "4"

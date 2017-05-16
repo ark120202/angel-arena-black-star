@@ -184,13 +184,13 @@
 		"AbilityCastPoint"	"0.3"
 		"AbilityCooldown"	"8.0"
 		"AbilityDuration"	"20.0"
-		"AbilityManaCost"	"95 110 130 150 170 190 210"
+		"AbilityManaCost"	"100"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"enfeeble_attack_reduction"	"40 80 120 160 200 240 280"
+				"enfeeble_attack_reduction"	"30 60 90 120 150 180 210"
 				"LinkedSpecialBonus"	"special_bonus_unique_bane_1"
 			}
 
@@ -202,23 +202,28 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.3"
-		"AbilityCastRange"	"700"
-		"AbilityCooldown"	"16 15 14 13 12 11 10"
+		"AbilityCastRange"	"650"
+		"AbilityCooldown"	"14 13.5 13 12.5 12 11.5 11"
 		"AbilityManaCost"	"70 100 130 160 190 210 230"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"brain_sap_damage"	"90 160 230 300 370 430 520"
+				"brain_sap_damage"	"90 160 230 300 350 400 450"
 				"LinkedSpecialBonus"	"special_bonus_unique_bane_2"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tooltip_brain_sap_heal_amt"	"90 160 230 300 370 430 520"
+				"tooltip_brain_sap_heal_amt"	"90 160 230 300 350 400 450"
 				"LinkedSpecialBonus"	"special_bonus_unique_bane_2"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cooldown_scepter"				"3"
 			}
 			"99"
 			{
@@ -236,20 +241,20 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"650"
 		"AbilityCastPoint"	"0.4"
-		"AbilityCooldown"	"120.0 110.0 100.0 90.0 80.0 70.0 60.0"
-		"AbilityManaCost"	"200 300 400 500 600 700 800"
+		"AbilityCooldown"	"120 115 110 105 100 95 90"
+		"AbilityManaCost"	"200 300 400 450 500 550 600"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"fiend_grip_tick_interval"	"1.0"
+				"fiend_grip_tick_interval"	"0.5"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"fiend_grip_mana_drain"	"5 10 15 20 25 30 35"
+				"fiend_grip_mana_drain"	"4"
 			}
 
 			"03"

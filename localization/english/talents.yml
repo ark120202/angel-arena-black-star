@@ -55,13 +55,13 @@ custom_talents_talent_true_strike_description: Prevents your attacks from missin
 
 
 
-custom_talents_talent_hero_special_bonus_unique_antimage: -1s Blink Cooldown
+custom_talents_talent_hero_anitmage_blink_cd_reduction: -1s Blink Cooldown
 custom_talents_talent_hero_special_bonus_unique_antimage_2: -50s Mana Void Cooldown
-custom_talents_talent_hero_special_bonus_unique_axe: +100 Battle Hunger DPS
-custom_talents_talent_hero_special_bonus_unique_bane_1: +90 Enfeeble Damage Reduction
+custom_talents_talent_hero_axe_battle_hunger_dps: +{value} Battle Hunger DPS
+custom_talents_talent_hero_bane_enfeeble_reduction: +90 Enfeeble Damage Reduction
 custom_talents_talent_hero_special_bonus_unique_bane_2: +200 Brain Sap Damage/Heal
-custom_talents_talent_hero_special_bonus_unique_bloodseeker_2: +75 Blood Rite Damage
-custom_talents_talent_hero_special_bonus_unique_bloodseeker_3: +14% Rupture Damage
+custom_talents_talent_hero_bloodseeker_blood_bath_dmg: +75 Blood Rite Damage
+custom_talents_talent_hero_special_bonus_unique_bloodseeker_3: +{%value%} Rupture Damage
 custom_talents_talent_hero_special_bonus_unique_bloodseeker: -7s Blood Rite Cooldown
 custom_talents_talent_hero_special_bonus_unique_crystal_maiden_3: +50 Freezing Field Damage
 custom_talents_talent_hero_special_bonus_unique_crystal_maiden_1: +1.5s Frostbite Duration
