@@ -19167,4 +19167,121 @@
 			}
 		}
 	}
+
+	"item_recipe_book_of_the_guardian"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"100000"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_book_of_the_guardian"
+		"ItemRequirements"
+		{
+			"01"						"item_book_of_the_keeper;item_shivas_guard"
+		}
+	}
+
+	"item_book_of_the_guardian"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_book_of_the_guardian.lua"
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_arena/book_of_the_guardian"
+		"ItemShopTags"					"int;regen_mana;hard_to_tag"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+			
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"65"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"18"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"		"225"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"20"
+			}
+
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"900"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_attack_speed"		"-45"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_damage"			"200"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_movement_speed"	"-40"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_debuff_duration"	"4.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_radius"			"900"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_speed"			"350"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_book_of_the_guardian"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intellect"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"				"%bonus_health_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"				"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"			"%spell_amp_pct"
+				}
+			}
+		}
+	}
 }

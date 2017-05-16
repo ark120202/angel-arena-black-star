@@ -183,16 +183,12 @@ function SimpleAI:UseAbility(ability, target)
 		end
 		local endtime = GameRules:GetGameTime() + ability:GetCastPoint() + 0.1
 		self:AddThink(function()
-			--print(GameRules:GetGameTime(), endtime, self.unit:IsChanneling())
 			if GameRules:GetGameTime() >= endtime and not self.unit:IsChanneling() then
 				self:SwitchState(AI_STATE_RETURNING)
 				return false
 			end
 			return true
 		end)
-		--[[Timers:CreateTimer(ability:GetCastPoint() + 0.1 + ability:GetChannelTime(), function()
-			
-		end)]]
 	end
 end
 
