@@ -681,14 +681,14 @@
 		}
 	}
 
-	"npc_arena_divine_knight"
+	"npc_arena_anakim_divine_knight"
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/heroes/kunkka/kunkka.vmdl"
+		"Model"						"models/units/anakim_pet/anakim_pet.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"Level"						"1"
-		"ModelScale"				"0.65"
+		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
 
 		// Attack
@@ -726,16 +726,5 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"
 		"VisionNighttimeRange"		"900"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1" { "ItemDef" "10" }
-				"Wearable2" { "ItemDef" "11" }
-				"Wearable3" { "ItemDef" "12" }
-				"Wearable4" { "ItemDef" "14" }
-				"Wearable5" { "ItemDef" "81" }
-			}
-		}
 	}
 }
