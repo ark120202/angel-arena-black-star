@@ -1,0 +1,648 @@
+								ITEMS:
+
+LVL_SHARD 
+	"ItemCost"						1250 > "1000"
+tome_of_knowledge 
+	"ItemInitialStockTime"			600 > "150"
+	"ItemStockTime"					60 > "49.5"	
+	"xp_bonus"				500 > "200"
+	"xp_per_use"			135 > "150"
+CLARITY 
+	"total_mana"			190 > "370"
+	"buff_duration"			50 > "35"
+SCROLL TP 
+	"AbilityManaCost"				75 > "25"
+	"AbilityCooldown"				80 > "45.0"
+WARD OBS 
+	"ItemCost"						150 > "70"
+FLASK 
+	"buff_duration"			8 > "12"
+	"total_health"			400 > "1200"
+GEM 
+	"ItemKillable"					0 > "1"
+TALON 
+	"AbilityCooldown"				16 > "12.0"
+	"damage_bonus_ranged"	40 > "30"
+CHARON 
+	"active_health_regen_percent_per_second"	5.75 > "4.25"
+	"health_regen_percent_per_second"	6.25 > "5.25"
+	"duration"							4 > "3.0"
+	"cooldown_melee"					2.5 > "3.5"
+	"cooldown_ranged_tooltip"			4 > "5"
+	"AbilityCooldown"				25 > "22"
+SMOKE 	
+	"ItemStockMax"					3 > "6"
+	"ItemStockTime"					660 > "220.0"	
+POOR MAN SHIELD 
+	"block_chance_hero"		80 > "65"
+	"block_chance"			25 > "51"
+ARCANE BOOTS
+	"AbilityCastRange"				900 > "1000"
+	"bonus_movement"		50 > "60"
+	"replenish_amount"		135 > "250"
+	"bonus_mana"			250 > "350"
+MOM 
+	"AbilityCooldown"				12 > "15"
+TRANQUIL 
+		removed wind lace and added ring of protection
+	"AbilityCooldown"				13 > "5.5"
+	"bonus_armor"			0 > "5"
+	"broken_movement_speed"	65 > "75"
+	"bonus_health_regen"	14 > "25"
+ANGEL WINGS 
+	"AbilityCooldown"				22 > "18"
+	"bonus_attack_range"		325 > "25"
+steam_footgear 
+	"AbilityCooldown"			12 > "14"
+	"passability_duration"		5.5 > "3.5"
+	"bonus_movement_speed"		55 > "60"
+	"passability_movement_speed"  20 > "25"
+	"AbilityManaCost"				5 > "50"
+SOUL RING 
+	"AbilityCooldown"				30 > "20.0"
+	"mana_regen"			50 > "75"
+	"health_regen"			3 > "10"
+	"duration"				10 > "12"
+	"mana_gain"				150 > "350"
+	"health_sacrifice"		150 > "200"
+
+								TALENTS:
+
+TALENT_DAMAGE cost = 8,
+			  group = 5,
+TALENT_EXP_GROUP1 - cost = 2,
+TALENT_GROUP_TO_LEVEL = [1] = 2,
+	"talents/gold",cost = 2,
+
+								OTHER:
+
+DUEL	WinGold_Base - from 300 to 100,
+		WinGold_PerDuel - from 2000 to 400,
+GOLD_PER_TICK - from 3 to 6 
+	Kills.GoldForStreaks 
+		[0] = 0,
+		[1] = 100 to 50
+		[2] = 220 to 100
+		[3] = 450 to 250
+		[4] = 750 to 500
+		[5] = 3000 to 700
+		[6] = 4500 to 1000
+		[7] = 7500 to 1500
+		[8] = 12000 to 2500
+		[9] = 18000 to 4000
+		[10] = 22500 to 6000
+		[11] = 30000 to 9000
+		[12] = 33000 to 12000
+		[13] = 39000 to 16000
+		[14] = 48000 to 21000
+		[15] = 60000 to 30000
+
+								HEROES CHANGES:
+
+ALL HEROES CHANGED BAT to "1.7" some heroes "1.4 1.5 1.6 1.8"
+
+"INVOKER"
+		"invoke" now have only one lvl
+		"AbilityCooldown"	changed to "3"
+		"AbilityManaCost"	changed to "60"
+		"cooldown_scepter"	changed 0.1 to "0.5"
+		"LevelsBetweenUpgrades"	from 15 to "5"
+	QUAS
+		"health_regen_per_instance" from "8 15 21 26 31 38 45" to "3 9 15 20 26 31 35"
+	WEX
+		"attack_speed_per_instance" from "5 10 15 20 25 30 35 40" to "5 10 15 20 25 30 35 60"
+		"move_speed_per_instance"	from "3 6 9 12 15 18 21 24" to "1 2 3 4 5 7 9 11"
+	EXORT
+		"bonus_damage_per_instance"	from "15 40 60 80 70 90 110 120" to	"7 16 28 35 43 52 60 90"
+	COLD SNAP
+		"freeze_damage"	from "30 100 150 200 250 300 350 400" to "15 30 50 80 110 140 170 250"
+	GHOST WALK
+		"AbilityCastPoint"	from "0.05" to "0"
+		"enemy_slow"	from "-20 -40 -60 80 -100 -120 -140 -160" to "-20 -25 -30 -35 -40 -45 -50 -60"
+		"self_slow"	from "-30 -20 0 20 40 60 80 100" to "-30 -20 0 10 20 30 40 60"
+	TORNADO
+		"travel_distance"	from "1000 2000 3000 4000 5000 6000 7000 8000" to "1000 1600 2200 2900 3500 4000 4500 5200"
+		"travel_speed"	from "1500" to "1200"
+		"area_of_effect"	from "250" to "200" (я так понял это радиус поднятия в ветра)
+		"lift_duration"	from "1.0 2.0 2.5 3.0 3.5 4.0 4.5 5.0" to "0.8 1.2 1.5 1.8 2.2 2.5 2.7 3"
+		"base_damage"	from "333" to "70"
+		"wex_damage"	from "100 400 600 800 1000 1200 1400 1600" to "wex_damage"	"50 150 270 360 420 500 570 700"
+	EMP 
+		"mana_burned"	from "250 1000 1500 2000 3000 3500 4000 5000" to "150 300 500 700 1000 1400 2000 3000"
+		"damage_per_mana_pct"	from "50" to "40"
+	ALACRITY
+		"bonus_attack_speed"	from "20 40 60 80 100 120 140 160" to "bonus_attack_speed"	"15 40 70 100 130 150 180 250"
+		"bonus_damage"	from "30 80 120 160 200 250 300 350" to "15 40 70 100 130 150 180 250"
+	METEOR
+		"area_of_effect"	from "300" to "275" (radius)
+		"travel_distance"	from "615 780 930 1095 1245 1410 1575" to "travel_distance"	"465 615 780 930 1095 1245 1410 1600"
+		"travel_speed"	from "500" to "300"
+		"main_damage"	from "150 350 400 600 700 800 900" to "main_damage"	"70 125 160 200 250 320 500"
+		"burn_dps"	from "30 80 150 200 250 300 350" to "15 22 35 43 55 70 150"
+	SUNSTRIKE
+		"area_of_effect"	from "250" to "200"
+		"damage"	from "200 500 1000 1500 2000 2500 3000 3500" to "200 350 500 650 800 1000 1300 2000"
+	FORGE 
+		"armor_removed"	from "3" to "1"
+	ICE WALL
+		"slow"	from "-40 -60 -80 -100 -120 -140 -160 -180" to "-20 -40 -60 -80 -100 -120 -140 -160"
+		"slow_duration"	from "5" to "2"
+		"damage_per_second"	from "50 100 150 200 250 300 350 400" to "10 20 50 70 100 130 170 250"
+	BLAST
+		"travel_distance"	from "1500" to "1200"
+		"travel_speed"	from "1500" to "1200"
+		"damage"	from "150 300 450 600 750 1000 1250 1500" to "60 120 220 310 400 490 600 750"
+
+"AXE"
+	BERSERKERS CALL	
+		"bonus_armor"	from "80 85 90 100 120 150 200" to "40 60 80 100 140 200 260"
+		"duration"	from "3" to "1.7 2 2.3 2.7 3 3.2 3.5"
+		"CastPoint"	from "0.2" to "0.1"
+	BATTLE HUNGER 
+		"slow"	from "-12 -16 -20 -24 -28 -32 -40" to "-20"
+		"speed_bonus"	"12 14 16 18 20 22 24" to "12 13 14 15 16 17 18"
+		"damage_per_second"	"30 40 50 70 90 120 150" to "16 24 34 50 62 74 90"
+	COUNTER HELIX
+		"AbilityDamage"		"80 160 240 300 380 460 520" to "65 100 135 170 205 230 280"
+		"cooldown"	"0.7 0.6 0.5 0.4 0.3 0.2 0.1" to "0.45 0.4 0.35 0.3 0.25 0.2 0.15"
+	CULLING BLADE
+		"AbilityCooldown"	"75.0 65.0 55.0 50.0 45.0 40.0 35.0" to "75 70 65 60 55 50 45"
+		"kill_threshold"	"250 350 550 800 1200 1600 2000" to "250 325 400 500 600 750 1000"
+		"damage"	"150 250 300 400 500 600 700" to "150 250 300 350 400 450 580"
+		"speed_bonus"	"20 25 30 35 40 45 50" to "30"
+		"speed_duration"	"6 10 13 15 18 20 25" to "6"
+		"cooldown_scepter"	"3.0" to "cooldown_scepter"	"5"
+		"kill_threshold_scepter"	"1000 2500 4500 6500 8500 10000 12000" to "500 700 900 1100 1300 1500 1800"
+		"speed_duration_scepter"	20 to "10"
+
+"MONKEY KING"
+	JINGU MASTERY
+		"required_hits"	"3" to "4"
+		"counter_duration"	"15" to 10
+		"bonus_damage"	"80 120 160 200 250 300 350" to	"40 50 60 70 80 90 100"
+	WUKONGS COMMAND
+		"AbilityCooldown"	"100 85 70 60.0 50.0 40.0 30.0" to "100 90 80 70 60 55 50"
+		"AbilityCastPoint"	0.7 to "1"
+		"first_radius"	"400" to 300
+		"second_radius"	"850" to 750
+		"num_first_soldiers"	7 to "5"
+		"num_second_soldiers"	11 to "9"
+		"attack_speed"	1.5 to "2"
+		"bonus_damage"	"80 150 190 260 320 380 450" to "80 120 160 200 240 280 320"
+		"duration"	"13 14 15 16 17 18 19" to "13 13.5 14 14.5 15 15.5 16"
+	PRIMAL SPRING
+		"AbilityCooldown"	10 to "18 17 16 15 14 13 12"
+		"impact_movement_slow"	"40 50 60 70 80 90 100" to "20 30 40 50 60 70 80"
+	TREE DANCE
+		"AbilityCooldown"	1 to "1.5"
+	MISCHIEF
+		"AbilityCooldown"	4 to "3"
+		"movespeed"	"250"
+		"reveal_radius"	200 to "350"
+	BONDLESS STRIKE
+		"AbilityCooldown"	"25 24 23 22 21 20 18" to 22
+		"strike_crit_mult"	"100 130 160 190 210 240 270" to "130 150 170 190 210 230 250"
+
+"BANE"
+	ENFEEBLE
+		"AbilityManaCost"	"95 110 130 150 170 190 210" to "100"
+		"enfeeble_attack_reduction"	"40 80 120 160 200 240 280" to "30 60 90 120 150 180 210"
+	BRAIN SAP
+		"AbilityCastRange"	"700" to "650"
+		"AbilityCooldown"	"16 15 14 13 12 11 10" to "14 13.5 13 12.5 12 11.5 11"
+		"brain_sap_damage" (and heal)	"90 160 230 300 370 430 520" to "90 160 230 300 350 400 450"
+		"cooldown_scepter"				"1.5" to "3"
+	FIENDS GRIP
+		"AbilityCooldown"	"120.0 110.0 100.0 90.0 80.0 70.0 60.0" to "120 115 110 105 100 95 90"
+		"AbilityManaCost"	"200 300 400 500 600 700 800" to "200 300 400 450 500 550 600"
+		"fiend_grip_tick_interval"	"1.0" to "0.5"
+		"fiend_grip_mana_drain"	"5 10 15 20 25 30 35" to "4"
+		"fiend_grip_mana_drain_scepter"	"30 50 70 90 110 130 150" to "5"
+		"fiend_grip_duration_scepter"	"7" to "6"
+		"fiend_grip_damage_scepter"	"300 600 900 1500 1900 2400 3000" to "200 300 400 500 600 700 800"
+	NIGHTMAGE
+		"AbilityCastRange"	"500 550 600 650 700 750 800" to "500 525 550 575 600 625 650"
+		"AbilityDuration"	"3.0 4.0 5.0 6.0 7.0 8.0 9.0" to "AbilityDuration"	"4 4.5 5 5.5 6 6.5 7"
+		"AbilityDamage"		"20 40 60 80 100 120 140" to "20 25 30 35 40 45 50"
+		"nightmare_dot_interval"	"0.5" to "1"
+		"nightmare_invuln_time"	"0.5" to "1"
+
+"BLOOD SEEKER"
+	BLOOD RAGE
+		"AbilityCooldown"	"13 12 11 10 9 8 6" to "12 11 10 9 8 7 6"
+		"duration"	"6 7 8 9 10 11 12" to "9 9.5 10 10.5 11 11.5 12"
+		"damage_increase_pct"	"15 20 25 30 35 40 45" to "20 24 28 32 37 41 45"
+		"health_bonus_pct"	"17 19 21 23 25 27 29" to "19 21 23 25 27 29 31"
+	BLOOD RITE
+		"AbilityCooldown"	"29 27 25 21 17 13 11" to "18 17 16 15 14 13 12"
+		"AbilityManaCost"	"50 75 100 125 150 175 200" to "100"
+		"silence_duration"	"2 3 4 5 6 7 8" to "3 3.5 4 4.5 5 5.5 6"
+		"damage"	"90 180 270 360 450 540 630" to "120 160 200 240 280 320 360"
+	THIRST
+		"bonus_movement_speed"	"16 24 32 40 48 56 72" to "16 22 30 38 44 48 52"
+		"bonus_damage"	"10 20 30 40 50 60 70" to "16 22 30 38 44 48 52"
+	RUPTURE
+		"duration"	"8.0 9.0 10.0 11.0 12.0 13.0 14.0" to "12"
+		"movement_damage_pct"	"30 60 90 120 150 180 210" to "30 45 60 75 90 105 120"
+		"max_charges_scepter"	"1 2 3 4 5 6 7" to "3"
+		"charge_restore_time_scepter"	"30" to "40"
+		"damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7" to "0.3 0.4 0.5 0.6 0.7 0.8 0.9"
+
+"DROW RANGER"
+	FROST ARROW
+		"AbilityManaCost"	"12 16 20 24 28 32 36" to "12"
+		"frost_arrows_movement_speed"	"-16 -32 -48 -64 -80 -96 -110" to "-16 -22 -28 -34 -40 -46 -52"
+		"frost_arrows_hero_duration_tooltip"	"2.0" to "1.5"
+	GUSH	
+		"AbilityCooldown"	"19 18 17 16 15 14 13" to "AbilityCooldown"	"16 15.5 15 14.5 14 13.5 13"
+		"wave_speed"	"2300.0" to "2000"
+		"silence_duration"	"1 2 2 3 3 4 5" to "silence_duration"	"3 3.5 4 4.5 5 5.5 6"
+		"knockback_duration"	"0.3 0.4 0.5 0.6 0.7 0.8 0.9" to "0.6 0.65 0.7 0.75 0.8 0.85 0.9"
+		"knockback_height"	"10 15 20 25 30 35 40" to "5"
+	TRUSHOT AURA	
+		"trueshot_ranged_damage"	"20 26 32 38 42 48 54" to "20 24 28 32 36 40 44"
+	MARKSMANSHIP
+		"marksmanship_agility_bonus"	"80 160 240 320 400 500 600" to "40 70 100 130 160 190 220"
+		"radius"	"500" to "350
+		"scepter_range"	"550" to 300""
+		"damage_reduction_scepter"	"0" to "50"
+
+"EARTHSHAKER"
+	FISSURE
+		"AbilityDamage"		"110 180 270 360 450 540 630" to "110 160 210 260 310 360 410"
+		"stun_duration"	"1.0 1.25 1.5 1.75 2.0 2.25 2.5" to "stun_duration"	"1.0 1.20 1.4 1.6 1.8 2 2.2"
+	ENCHANT TOTEM
+		"AbilityCastPoint"	"0.4" to "0.5"
+		"AbilityCooldown"	"11.0 10.0 9.0 8.0 7.0 6.0 5.0" to "6"
+		"AbilityDuration"	"15.0" to "11"
+		"AbilityManaCost"	"20 40 80 160 200 240 280" to "AbilityManaCost"	"20 30 40 50 60 70 80"
+		"LevelsBetweenUpgrades"	"3" to "1"
+		"totem_damage_percentage"	"150 250 400 500 650 800 1000" to "totem_damage_percentage"	"100 200 300 400 450 500 600"
+		"distance_scepter"	"1600" to "1100"
+		"duration"	"0.1" to "0.75"
+	AFTERSHOCK
+		"AbilityDamage"		"50 100 150 200 250 300 350" to "75 100 125 150 175 200 225"
+		"aftershock_range"	"350 370 390 410 430 450 470" to "350"
+	ECHO SLAM
+		"AbilityCooldown"	"130.0 120.0 110.0 100.0 90.0 80.0 60.0" to "110 105 100 95 90 85 80"
+		"echo_slam_echo_damage"	"30 60 90 120 150 180 210" to "40 55 70 90 110 135 180"
+
+"JUGGERNAUT"
+	BLADE DANCE
+		"blade_dance_crit_mult"	"200 220 225 230 240 245 260" to "250"
+		"blade_dance_crit_chance"	"15 18 21 24 27 30 33" to "20 23 26 29 32 35 40"
+	BLADE FURY
+		"AbilityCooldown"	"20 18 16 14 12 11 10" to "AbilityCooldown"	"30 28 26 24 22 20 18"
+		"LevelsBetweenUpgrades"	"3" to "1"
+		"blade_fury_damage_tick"	"0.1" to "0.2"
+		"blade_fury_damage"	"100 200 300 400 500 600 700" to "80 105 130 155 200 250 310"
+	HEALING WARD
+		"AbilityCooldown"	"60" to "50"
+		"AbilityDuration"	"25" to "30"
+		"AbilityManaCost"	"140 150 160 170 180 200 220" to "150"
+		"healing_ward_movespeed_tooltip"	"550" to "480"
+	OMNISLASH
+		"AbilityCastRange"	"500" to "350"
+		"AbilityCooldown"	"130.0 120.0 110.0 100.0 90.0 80.0 70.0" to "110 105 100 95 90 85 80"
+		"omni_slash_damage"	"200 250 300 350 400 450 500" to "200 225 250 275 300 325 350"
+		"omni_slash_jumps"	"3 6 9 12 15 18 21" to "omni_slash_jumps"	"3 6 9 11 12 13 14"
+		"omni_slash_bounce_tick"	"0.1" to "0.4"
+		"omni_slash_jumps_scepter"	"30" to "20"
+		"omni_slash_cooldown_scepter"	"20" to "30"
+
+"KUNKKA"
+	TORRENT
+		"AbilityCooldown"	"16 14 13 12 11 10 9" to "16 15 14 13 12 11 10"
+		"radius"	"300" to "225"
+		"movespeed_bonus"	"-10 -15 -20 -25 -30 -35 -40" to "-35"
+		"slow_duration"	"1.75 2.5 3.25 4.0 4.25 4.5 4.75" to "1.75 2.25 2.75 3.25 3.75 4.25 4.75"
+		"delay"	"0.8" to "1.5"
+	TIDEBRINGER
+		"AbilityCooldown"	"13.0 10.0 7.0 4.0 3.0 2.0 1.0" to "9 8 7 6 5 4 3"
+		"LevelsBetweenUpgrades"	"4" to "1"
+		"cleave_ending_width"	"450 500 550 600 650 700 750" to "cleave_ending_width"	"525 550 575 600 625 650 675"
+		"cleave_distance"	"675 750 825 900 925 975 1000" to "cleave_distance"	"650 725 800 875 950 1025 1100"
+		"cleave_damage"	"60 70 80 90 100 110 120" to "100"
+	X MARK THE SPOT
+		"AbilityCastRange"	"400 600 800 1000 1100 1200 1300" to "400 525 650 775 900 1025 1150"
+		"AbilityCastPoint"	"0.3" to "0.1"
+		"AbilityCooldown"	"26 20 14 12 8 7 6" to "22 20 16 14 12 10 8"
+		"AbilityManaCost"	"50 75 100 125 150 175 200" to "60"
+		"duration"	"4" to "5"
+		"allied_duration_tooltip"	"8.0" to "10"
+	GHOSTSHIP
+		"AbilityCooldown"	"90 80 70 60 50 40 30" to "70 65 60 55 50 45 40"
+		"AbilityDamage"		"400 600 900 1200 1500 1700 2200" to "400 500 600 700 800 900 1000"
+		"ghostship_distance"	"1000" to "2000"
+		"movespeed_bonus"	"10 15 20 25 30 35 40" to "15"
+		"stun_duration"	"1.8 2 2.2 2.4 2.6 2.8 3" to "1.5"
+		"ghostship_speed"	"900" to "650"
+		"ghostship_speed_scepter"	"1500" to "700"
+		"ghostship_width_scepter"	"500" to "250"
+
+"LINA"
+	LIGHT STRIKE ARRAY
+		"AbilityDamage"		"120 190 270 375 425 500 675" to "100 140 180 220 260 300 400" 
+	FIERY SOUL
+		"fiery_soul_move_speed_bonus"	"4 6 8 10 12 14 16" to "4 5 6 7 8 9 10"
+		"fiery_soul_max_stacks"	"5" to "3"
+		"fiery_soul_stack_duration"	"20" to "10"
+	LAGUNA BLADE
+		"AbilityCooldown"	"90 80 70 60 50 40 30" to "75 70 65 60 55 50 45"
+		"damage"	"450 650 850 1200 1500 1800 2300" to "450 650 850 1050 1250 1500 1800"
+
+"LION"
+	IMPALE
+		"duration"	"1.1 1.6 2.1 2.6 2.7 2.8 3.0" to "1.1 1.4 1.7 2 2.2 2.4 2.6"
+	HEX
+		"AbilityCooldown"	"30.0 24.0 20.0 18.0 16.0 12.0 10.0" to "20 19 18 17 16 15 14"
+		"AbilityManaCost"	"125 150 175 200 275 335 400" to "125 150 175 200 225 250 275"
+		"duration"	"2.0 2.5 2.8 3 3.3 3.5 4" to "2.5 2.7 2.9 3.1 3.3 3.5 3.7"
+		"movespeed"	"200" to "140"
+	MANA DRAIN 
+		"AbilityCooldown"	"16 14 12 10 9 8 5" to "11 10 9 8 7 6 5"
+	FIGNER OF DEATH
+		"AbilityCooldown"	"160.0 130.0 100.0 40.0 30.0 25.0 20.0" to "90 80 70 60 50 45 40"
+		"AbilityManaCost"	"305 420 650 850 1200 1500 2800" to "200 420 650 800 900 1200 1800"
+		"damage"	"650 850 1200 1500 1800 2300 2600" to "600 725 850 975 1100 1400 1800"
+		"damage_scepter"	"1000 2000 3000 4000 6000 7000 8000" to "725 875 1025 1300 1600 2000 2500"
+		"mana_cost_scepter"	"305 400 550 750 1000 1300 2500" to "200 420 620 700 800 1000 1200"
+		"cooldown_scepter"	"100.0 90.0 80.0 70.0 60.0 30.0 10.0" to "80 70 60 50 40 30 20"
+		"splash_radius_scepter"	"800" to "500"
+
+"MIRANA"
+	INVIS
+		"AbilityCooldown"	"140.0 130.0 120.0 110.0 100.0 90.0 70.0" to "100 95 90 85 80 75 70"
+		"fade_delay"	"3 2 1 1 1 1 1" to "2.5 2.2 1.9 1.6 1.3 1 0.7"
+		"duration"	"6 8 10 12 13 14 15" to "15"
+	LEAP
+		"AbilityCooldown"	"30.0 28.0 26.0 24.0 22.0 18.0 15.0" to "21 20 19 18 17 16 15"
+		"AbilityDuration"	"10.0" to "6"
+		"leap_distance"	"1300" to "600 700 800 900 1000 1100 1200"
+		"leap_speed"	"2000" to "1800"
+		"leap_speedbonus"	"10 16 22 28 34 40 46" to "6 8 10 12 16 18 20"
+		"leap_speedbonus_as"	"20 40 80 100 120 140 160" to "16 32 48 64 80 100 120"
+	STARFALL
+		"AbilityCooldown"	"8" to "12"
+		"AbilityDamage"		"80 120 160 200 300 400 500" to "75 150 225 300 375 450 525"
+		"interval_scepter"	"0.5" to "6"
+
+"MORPHLING"
+	WAVEFORM
+		"AbilityCooldown"	"22.0 20.0 18.0 16.0 14.0 12.0 10.0" to "11"
+		"AbilityDamage"		"125 175 250 325 400 475 550" to "100 175 250 325 450 525 650"
+	ADAPTIVE STRIKE
+		"AbilityCastRange"	"600 700 777 800 900 1000 1100" to "700 750 800 850 900 950 1000"
+		"AbilityManaCost"	"50 75 100 170 235 345 540" to "100"
+	MORPH
+		"points_per_tick"	"1 2 3 4 5 6 7" to "1 1 1 1 1 4 8"
+	REPLICATE
+		"AbilityCooldown"	"60.0" to "80"
+		"duration"	"16 20 24 28 32 36 40" to "30 35 40 45 50 55 60"
+
+"SHADOW FIEND"
+	SHADOWRAZE
+		"AbilityCastPoint"	"0.55" to "0.4"
+		"AbilityDamage"	"100 150 200 250 300 400 500" to "100 175 250 325 450 550 600" 
+	NECROMASTERY
+		"LevelsBetweenUpgrades"	"5" to "1"
+		"necromastery_damage_per_soul"	"2 2 2 2 2 2 3" to "2"
+		"necromastery_max_souls"	"15 22 29 36 72 86 125" to "18 24 30 36 44 66 90"
+		"necromastery_max_souls_scepter"	"300" to "22 30 38 46 58 76 90 120"
+	DARK LORD
+		"LevelsBetweenUpgrades"	"3" to "1"
+		"presence_armor_reduction"	"-4 -8 -12 -16 -20 -24 -28" to "-3 -5 -7 -9 -11 -13 -16"
+	REQUIEM OF SOULS
+		"AbilityCooldown"	"120 110 100 90 80 70 60" to "100 95 90 85 80 75 70"
+		"AbilityDamage"		"80 120 160 200 300 400 500" to "80 120 160 200 240 280 350"
+
+"PUCK"
+	ILLUSORY ORB
+		"AbilityCooldown"	"16 15 14 13 12 11 10" to "12 11.5 11 10.5 10 9.5 9"
+		"max_distance"	"2350" to "1950"
+		"orb_speed"	"450" to "675"
+	WANING RIFT
+		"AbilityCooldown"	"16 15 14 13" to "12 11.5 11 10.5 10 9.5 9"
+	SHIFT
+		"AbilityCooldown"	"16 15 14 13 12 10 9" to "8"
+	DREAM COIL
+		"AbilityCooldown"	"75" to "75 70 65 60 55 50 45"
+		"coil_init_damage"	"100 150 200 250 300 350 400" to "100 150 200 300 400 500 600"
+		"coil_stun_duration"	"1.5 2.0 2.25 2.5 3.0 3.5 4.0" to "1.5 1.8 2.1 2.4 2.7 3 3.5"
+		"coil_break_damage_scepter"	"200 250 300 350 400 450 500" to "200 250 300 400 500 600 700"
+
+"SHADOW SHAMAN"
+	ETHER SHOCK
+		"targets"	"1 3 5 7 9 11" to "2 5 7 9 11 13 15"
+	HEX
+		"AbilityCooldown"	"20" to "14"
+		"movespeed"	"200" to "100"
+		"duration"	"1.25 2.0 2.75 3.5 3.9 4.3 5.0" to "1.25 1.75 2 2.25 2.5 2.75 3"
+		"AbilityCooldown"	"20" to "15"
+		"total_damage"	"120 200 280 360 420 500 580" to "120 200 280 360 400 460 520"
+		"channel_time"	"2.75 3.5 4.25 5.0 5.5" to "2.75 3 3.25 3.50 3.75 4 4.5"
+		"AbilityCooldown"	"120" to "100 80 60"
+		"damage_tooltip"	"40 70 100" to "50 100 180"
+
+"RAZOR"
+	PLAZMA FIELD
+		"damage_max"	"130 155 200 266 310 380 450" to "160 230 300 370 440 500 560"
+	STATIC FIELD
+		"AbilityCooldown"	"30" to "32 30 28 26 24 22 20"
+		"AbilityManaCost"	"50 90 160 210 260 310 360" to "50 55 60 65 70 75 80"
+		"LevelsBetweenUpgrades"	"5" to "1"
+		"drain_rate"	"10 20 30 40 50 60 70" to "7 14 21 28 35 42 50"
+	UNSTABLE CURRENT
+		"LevelsBetweenUpgrades"	"3" to "1"
+		"movement_speed_pct"	"18 20 22 24 26 28 30" to "6 8 10 12 14 16 18"
+		"slow_duration"	"2" to "0.5 0.8 1.1 1.4 1.8 2.1 2.5"
+	EYE OF THE STORM
+		"AbilityCastPoint"	"0.3" to "0.0"
+		"AbilityCooldown"	"110 100 90 90 80 70 60" to "80 75 70 65 60 55 50"
+		"strike_interval"	"0.9 0.8 0.7 0.6 0.5 0.4 0.3" to "0.7 0.65 0.6 0.55 0.5 0.45 0.4"
+		"armor_reduction"	"1 1 1 2 2 2 3" to "1"
+		"strike_interval_scepter"	"0.1" to "0.5 0.45 0.4 0.35 0.3 0.25 0.2"
+"SKELETON KING"
+	HELLFIRE BLAST
+		"AbilityDamage"		"100 200 300 400 500 600 700" to "50 100 150 200 275 375 500"
+		"AbilityManaCost"	"140 180 220 260 300 340 380" to "120 130 140 150 160 170 180"
+		"blast_speed"	"1400" to "1100'
+		"tooltip_slow_duration"	"4" to "2"
+		"blast_slow"	"-10 -20 -30 -40 -50 -60 -70" to "-20"
+	VAMPIRIC
+		"vampiric_aura_radius"	"900" to "1000"
+		"vampiric_aura"	"10 15 20 25 30 35 40" to "16 20 24 28 32 36 40"
+	MORTAL STRIKE
+		"crit_mult"	"100 130 160 190 210 240 270" to "150 175 200 225 250 275 300"
+		"crit_chance"	"15 16 17 18 19 20 21" to "15"
+	REINCARNATION
+		"AbilityManaCost"	"160 220 260 300 340 380 420" to "160 180 200 220 240 260 280"
+		"AbilityCooldown"	"260 240 220 200 180 120 60" to "220 190 160 130 100 70 40"
+		"movespeed"	"-55 -65 -75 -85 -95 -105 -115" to "-75"
+		"attackslow_tooltip"	"-55 -65 -75 -85 -95 -105 -115" to "-75 -75 -75 -90 -105 -120 -150"
+		"scepter_duration"	"7" to "6"
+
+"DEATH PROPHET"
+	CRYPT SWARM
+		"AbilityCooldown"	"11 10 9 8 7 6 5" to "8 7.5 7 6.5 6 5.5 5"
+	SILENCE
+		"AbilityCooldown"	"15 14 13 12" to "15 14.5 14 13.5 13 12.5 12"
+		"AbilityDuration"	"2.0 3.0 4.0 5.0 6.0 7.0 8.0" to "3 3.5 4 4.5 5 5.5 6"
+		"AbilityManaCost"	"80 100 120 140 160 180 200" to "80 90 100 110 120 130 140"
+	WITCHCRAFT
+		"bonus_movement_speed"	"5 10 15 20 25 30 35" to "5 8 11 14 17 20 23"
+		"carrion_swarm_cooldown_adjust"	"-1.0 -2.0 -3.0 -4.0 -5.0 -6.0 -7.0 -8.0" to "-1 -1.5 -2 -2.5 -3 -3.5 -4"
+		"silence_cooldown_adjust" "-1.0 -2.0 -3.0 -4.0 -5.0 -6.0 -7.0 -8.0" to "-1 -1.5 -2 -2.5 -3 -3.5 -4"
+	SPIRIT SYPHON
+		"damage_pct"	"1.0 2.5 2.8 3.0 3.3 3.6 4.0" to "1 1.75 2.5 3.25 4 4.75 5.5"
+		"max_charges"	"1 2 3 4 5 6 7" to "1 2 2 3 3 4 4"
+		"charge_restore_time"	"45" to "35"
+	EXORCISM
+		"AbilityCooldown"	"190.0" to "140"
+		"spirits"	"8 16 24 32 40 48 62" to "8 14 20 26 32 40 48"
+		"min_damage"	"50 100 228 300 400 500 600" to "50 50 50 100 100 100 150"
+		"max_damage"	"50 100 228 300 400 500 600" to "60 80 100 120 150 180 250"
+		"average_damage"	"50 100 228 300 400 500 600" to "55 70 90 110 135 165 225"
+
+"SVEN"
+	STORM HAMMER
+		"AbilityManaCost"	"140 180 200 240 280 320 360" to "140 145 150 155 160 165 170"
+	CLEAVE
+		"LevelsBetweenUpgrades"	"4" to "1"
+	WAR CRY
+		"AbilityCooldown"	"32.0 26.0 20.0 14.0 13.0 12.0 11.0" to "26 24 22 20 18 16 14"
+		"AbilityManaCost"	"20 40 60 80 100 120 140" to "20 25 30 35 40 45 50"
+		"LevelsBetweenUpgrades"	"3" to "1"
+		"warcry_armor"	"5 10 20 30 40 60 80" to "5 10 15 20 25 30 35"
+		"warcry_movespeed"	"16 20 24 28 32 36 40" to "15"
+		"warcry_radius"	"900" to "1000"
+	GOD STRENGTH
+		"gods_strength_damage"	"100 200 300 400 500 600 700" to "80 120 160 200 240 280 350"
+		"gods_strength_bonus_str"		"16 28 40"	 to "16 28 40 52 64 76 88"
+		"radius_scepter"	"900" to "1000"
+		"gods_strength_damage_scepter"	"50 100 150 200 250 300 350" to "75 100 125 150 175 200 225"
+
+"STORM SPIRIT"
+	REMNANT
+		"AbilityManaCost"	"100 150 200 250 300 350 400" to "100 115 130 145 160 175 190" 
+	VORTEX
+		"AbilityCastRange"	"300 350 400 450 500 550 600" to "300 310 320 330 340 350 360"
+		"AbilityCooldown"	"21 20 19 18 16 14 12" to "20 19.5 19 18.5 18 17.5 17"
+		"AbilityDuration"	"1.0 1.5 2.0 2.3 2.5 2.7 2.9" to "1.0 1.3 1.6 1.9 2.2 2.5 2.8"
+	OVERLOAD
+		"AbilityDuration"	"0.4" to "0.6"
+	BALL LIGHTNING
+		"ball_lightning_travel_cost_percent"	"0.4" to "1"
+
+"SAND KING"
+	BURROWSTRIKE
+		"AbilityCastRange"	"350 450 550 650 750 850 905" to "350 400 450 500 550 600 650"
+		"AbilityCooldown"	"14.0 13.0 12.0 11.0 10.0 9.0 8.0" to "11"
+		"AbilityDamage"		"100 160 220 280 240 300 360" to "100 160 220 280 330 380 440"
+		"cast_range_scepter"	"700 900 1100 1200 1300 1400 1500" to "700 800 900 1000 1100 1200 1300"
+	SAND STORM
+		"AbilityDuration"		"20.0 30.0 40.0 50.0 60.0 70.0 80.0" to "50"
+		"AbilityCooldown"		"70.0 60.0 50.0 40.0 30.0 20.0 10.0" to "27 24 21 18 15 12 10"
+		"AbilityDamage"			"40 80 120 200 250 300 400" to "20 30 40 60 80 100 120"
+		"LevelsBetweenUpgrades" "4" to "1"
+		"sand_storm_invis_delay"	"1.5" to "0.7 0.8 0.9 1 1.1 1.3 1.5"
+	CAUSTIC FINALE
+		"RequiredLevel" "2" to "1"
+		"caustic_finale_damage"	"90 130 170 220 250 270 300" to "caustic_finale_damage"	"40 70 100 130 170 220 280"
+	EPICENTR
+		"AbilityCooldown"	"120 110 100 90 80 70 60" to "90 85 80 75 70 65 60"
+		"epicenter_radius"	"800" to "275 325 375 425 475 525 575 650 675 700 725 750 775 800"
+		"epicenter_pulses"	"6 8 10 12 14 16 18" to "6 8 10 11 12 13 14"
+		"epicenter_damage"	"110 120 130 200 250 300 400" to "110 120 130 180 230 280 330"
+		"epicenter_slow_as"	"-30" to "-30 -40 -50 -60 -70 -80 -90"
+
+"TINY"
+	AVALANCHE
+		"AbilityCooldown"	"17.0 15.0 13.0 12.0 11.0 10.0 8.0" to "17 16.5 16 15.5 15 14.5 14"
+		"stun_duration"	"2" to "1.5"
+		"AbilityManaCost"	"120 145 180 220 260 300 340" to "120 125 130 135 140 145 150"
+		"avalanche_damage"	"100 200 250 300 400 500 600" to "100 180 260 300 340 380 440"
+	TOSS
+		"AbilityManaCost"	"120 140 160 180 200 220 240" to "120 125 130 135 140 145 150"
+	CRAGGY EXTERIOR
+		"stun_chance"	"2 4 6 8 10 12 14" to "25"
+		"stun_duration"	"0.5 1.0 1.3 1.5 2.0 2.3 2.6" to "stun_duration"	"0.5 0.7 0.9 1.1 1.3 1.5 1.7"
+		"damage"	"30 60 90 140 180 210 250" to "40 50 60 70 80 90 100"
+	GROW
+		"bonus_damage"	"100 300 500" to "60 120 200"
+		"bonus_attack_speed"	"-40 -80 -140" to "40 70 100"
+		"bonus_range_scepter"	"150" to "100"
+		"cleave_distance"	"800" to "600"
+
+"ZEUS"
+	ARC LIGHTNING
+		"LevelsBetweenUpgrades"	"3" to "1"
+	LIGHTNING BOLT
+		"AbilityCastPoint"	"0.4" to "0.4 0.4 0.4 0.4 0.4 0.4 0.2"
+	CLOUD
+		"AbilityCooldown"	"60" to "35"
+		"AbilityManaCost"	"450" to "325"
+		"cloud_duration"	"20" to "30"
+		"cloud_radius"	"800" to "650"
+	STATIC FIELD
+		"radius"	"1200" to "1300"
+	THUNDERGODS
+		"AbilityCastPoint"	"0.4" to "0.4 0.4 0.4 0.4 0.4 0.4 0.2"
+		"damage"	"200 500 800 1110 1400 1700 2100" to "225 325 425 525 650 775 900"
+
+"SLARDAR"
+	SPRINT
+		"bonus_speed"	"20 28 36 44 50 56 62" to "20 25 30 35 40 45 50"
+		"bonus_damage"	"10 8 6 4 2 1 0" to "15 13 11 9 7 5 0"
+		"duration"	"15" to "12"
+	SLITHEREEN CRUSH
+		"AbilityCastPoint"	"0.35" to "0.35 0.35 0.35 0.35 0.35 0.35 0.2"
+		"crush_extra_slow"	"-16 -20 -24 -28 -32 -36 -40" to "-20 -22 -24 -26 -28 -30 -32"
+		"crush_attack_slow_tooltip"	"-20 -40 -80 -100 -120 -140 -160" to "-20 -30 -40 -50 -60 -70 -80"
+		"stun_duration"	"1.6 1.7 1.9 2.2 2.5 2.7 2.9" to "1.25 1.40 1.55 1.70 1.95 2.10 2.25"
+	BASH
+		"chance"	"6 8 10 12 14 16 18" to "10 12 14 18 20 22 25"
+		"bonus_damage"	"100 200 250 300 350 400 450" to "60 80 100 120 150 180 220"
+		"duration"	"0.8" to "0.7"
+	AMPLIFY DAMAGE
+		"AbilityCastPoint"	"0.35" to "0.35 0.35 0.35 0.35 0.35 0.35 0.2"
+		"AbilityManaCost"	"25 55 85 105 135 185 210" to "25 30 35 40 45 50 55"
+		"armor_reduction"	"-10 -15 -20 -30 -40 -50 -70" to "-10 -15 -20 -25 -30 -35 -40"
+		"duration"	"25.0" to "15"
+
+"TIDEHUNTER"
+	GUSH
+		"AbilityManaCost"	"120 140 180 210 240 270 300" to "90 100 110 120 130 140 150"
+		"negative_armor"	"3 6 9 12 15 18 21" to "3 4 5 7 9 11 13"
+		"speed_scepter"	"1500" to "1700"
+	KRAKEN SHELL
+		"LevelsBetweenUpgrades"	"3" to "2"
+		"damage_reduction"	"20 40 60 100 140 180 300" to "20 40 60 80 100 120 160"
+		"damage_cleanse"	"600" to "600 580 560 540 520 500 475"
+	ANCHOR SMASH
+		"AbilityCastPoint"	"0.4" to "0.4 0.4 0.4 0.4 0.4 0.4 0.2"
+		"AbilityCooldown"	"10.0 9.0 8.0 7.0 6.0 5.0 4.0" to "7 6.5 6 5.5 5 4.5 4"
+		"AbilityDamage"		"75 125 175 225 300 375 425" to "65 95 145 200 250 300 375"
+		"AbilityManaCost"	"30 60 90 120 150 180 210" to "30 40 50 60 70 80 90"
+		"damage_reduction"	"-45 -50 -55 -60 -65 -70 -75" to "-35 -40 -45 -50 -55 -60 -65"
+	RAVAGE
+		"AbilityCastPoint"	"0.3" to "0.3 0.3 0.3 0.25 0.2 0.15 0.1"
+		"AbilityCooldown"	"150.0 150.0 150.0 140.0 130.0 120.0" to "150 145 140 135 130 125 120"
+		"AbilityDamage"		"300 600 900 1200 1500 1800 2100" to "200 290 380 470 560 650 750"
+		"radius"	"1800" to "1200"
+		"speed"	"1800" to "900"
+		"duration"	"2.4 2.5 2.6 2.7 2.8 2.9 3" to "2.0 2.2 2.4 2.6 2.8 3.0 3.3"
+
+"VENGE"
+	MAGIC MISSILE
+		"AbilityCastPoint"	"0.3" to "0.3 0.3 0.3 0.3 0.3 0.25 0.2"
+		"AbilityCooldown"	"13 12 11 10 9 8 7" to "13 12.5 12 11.5 11 10.5 10"
+		"magic_missile_stun"	"1.2 1.4 1.6 1.8 2.0 2.2 2.4" to "1.2 1.3 1.4 1.5 1.6 1.7 1.8"
+	COMMAND AURA
+		"aura_radius"	"900" to "1000"
+		"bonus_damage_pct"	"12 20 28 36 40 46 52" to "10 15 20 25 30 35 40"
+	WAVE OF TERROR
+		"AbilityCastPoint"	"0.3" to "0.3 0.3 0.3 0.25 0.2 0.15 0.1"
+		"AbilityCooldown"	"10" to "22 21 20 19 18 17 16"
+		"AbilityManaCost"	"40 60 80 100 120 140 160" to "40 50 60 70 80 90 100"
+		"armor_reduction"	"-3 -6 -9 -12 -15 -18 -21" to "-3 -4 -5 -7 -9 -11 -13"
