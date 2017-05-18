@@ -68,7 +68,7 @@
 
 		"precache"
 		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
 		}
 		
 		"AbilityCastRange"				"0"
@@ -120,7 +120,7 @@
 		{
 			"FireSound"
 			{
-				"EffectName"	"Ability.Leap"
+				"EffectName"	"Arena.Hero_Murzik.Leap"
 				"Target"		"CASTER"
 			}
 			
@@ -180,16 +180,15 @@
 		"AbilityTextureName"			"earthshaker_enchant_totem"
 		"AbilityCastPoint"				"0.01"
 		"FightRecapLevel"				"1"
-		"AbilityCooldown"				"5.0"
-		"AbilityDuration"				"14.0 14.0 14.0 14.0"
-		"AbilityManaCost"				"20 30 40 50"
+		"AbilityCooldown"				"10"
+		"AbilityDuration"				"14.0"
+		"AbilityManaCost"				"0"
 		"AbilityTextureName"			"earthshaker_enchant_totem"
 		"MaxLevel"						"7"
 
 		"precache"
 		{
 			"particle"		"particles/dark_smoke_test.vpcf"
-			"soundfile" 	"sounds/weapons/hero/earthshaker/enchant.vsnd"
 		}
 
 		"AbilitySpecial"
@@ -197,22 +196,22 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"murzik_vzlom_damage_pct"	"100 200 300 400"
+				"murzik_vzlom_damage_pct"	"400 900 1700 2300 3000 3900 4500"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"tooltip_duration"			"14.0 14.0 14.0 14.0"
+				"tooltip_duration"			"20.0"
 			}
 		}
 		
 		"OnSpellStart"
 		{
-			//"FireSound"
-			//{
-			//	"EffectName"	"Hero_EarthShaker.Totem"
-			//	"Target"		"CASTER"
-			//}
+			"FireSound"
+			{
+				"EffectName"	"Arena.Hero_Murzik.Cheat"
+				"Target"		"CASTER"
+			}
 		
 			"ApplyModifier"
 			{
@@ -235,11 +234,11 @@
 						"Target"		"CASTER"
 					}
 					
-					//"FireSound"
-					//{
-					//	"EffectName"	"Hero_EarthShaker.Totem.Attack"
-					//	"Target"		"CASTER"
-					//}
+					"FireSound"
+					{
+						"EffectName"	"Arena.Hero_Murzik.Cheat_attack"
+						"Target"		"CASTER"
+					}
 				}
 				
 				"Properties"

@@ -67,7 +67,7 @@ say -lua Hero:SetBaseDamageMin(-111) УРОН
 
 say -lua GetSelectedHeroEntity(0):ModifyIntelligence(10000)
 
-say -lua PlayerResource:GetSelectedHeroEntity(7):SetBaseIntellect(10000)			:ModifyIntellect(1000000)
+say -lua PlayerResource:GetSelectedHeroEntity(7)::ModifyIntellect(1000000)			:ModifyIntellect(1000000)
 
 say -lua for i = 0, 9 do PlayerResource:GetSelectedHeroEntity(i):SetBaseMoveSpeed(1) end
 
@@ -93,7 +93,8 @@ Gold:AddGold(i, gold)
 СПРОСИТЬ ПЛЕР ID  -  !!!!!-cprint !!!! потом  !!!!  -printplayers !!!!!
 ГЛОБАЛ ШТУКА
 say -lua _G.pid = ID
-s
+say -lua _G.Hero = PlayerResource:GetSelectedHeroEntity(pid)
+
 
 
 
@@ -168,19 +169,19 @@ GameRules:GetGameModeEntity():SetMaximumAttackSpeed( 99999 ) МНОГО
 
 РЫБА maps/reef_assets/characters/hatchetfish/darkreef_hatchetfish.vmdl
 
-СНЕЖНЫЙ КОТИК models/courier/snowleopard/snowleopard_shape.vmdl
+МАКАКА maps/journey_assets/characters/journey_monkey/journey_monkey.vmdl
 
-МАШИНКА models/custom/car_01.vmdl
+ДИМА maps/journey_assets/characters/journey_crane/crane.vmdl
 
 ЛЕТАЮЩАЯ МЫШЬ models/heroes/batrider/batrider_mount.vmdl
 
-ИНВОКЕР ???  models/heroes/invoker/invoker_head.vmdl
+БАТРАЙДЕР ???  models/heroes/batrider/batrider.vmdl
 
-БОЛЬШАЯ КИСКА  models/heroes/mirana/mount.vmdl
+ШАРИК  models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon_fx.vmdl
 
-ХОРОШИЙ ЛЕОРИК models/heroes/wraith_king/wraith_king_prop.vmdl
+МИШКА models/items/courier/virtus_werebear_t1/virtus_werebear_t1.vmdl
 
-КОНЬ models/items/chaos_knight/rising_chaos_steed/rising_chaos_steed.vmdl
+ПРИЗРАК models/items/death_prophet/exorcism/mourning_ult/mourning_ult.vmdl
 
 ГУМУНКУЛ models/items/courier/onibi_lvl_15/onibi_lvl_15.vmdl
 
