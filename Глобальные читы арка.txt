@@ -14,7 +14,7 @@ say -lua  Kills:SetKillStreak(i, 100000)
 say -lua Gold:AddGold(pid, gold)
 
 
-for i = 0, 9 do PlayerResource:GetSelectedHeroEntity(i):ModifyStrength(10000) end
+for i = 0, 9 do PlayerResource:GetSelectedHeroEntity(i):ModifyAgility(10000) end
 AttributeIntelligenceGain
 
 PlayerResource:GetLevelValue(i):level(120)
@@ -36,12 +36,15 @@ PlayerResource:GetSelectedHeroEntity(pid):SetModelScale(2.5)
 Hero:SetModel("models/props_gameplay/pig_blue.vmdl")
 Hero:SetOriginalModel("models/props_gameplay/pig_blue.vmdl")
 
-Hero:SetModel("models/items/courier/catakeet/catakeet_head_sly.vmdl")
-Hero:SetOriginalModel("models/items/courier/catakeet/catakeet_head_sly.vmdl")
+`
+Hero:SetOriginalModel("models/items/courier/virtus_werebear_t1/virtus_werebear_t1.vmdl")
 
 
 Hero:SetModel("models/items/courier/shibe_dog_cat/shibe_dog_cat_flying.vmdl")
 Hero:SetOriginalModel("models/items/courier/shibe_dog_cat/shibe_dog_cat_flying.vmdl")
+
+Hero:SetModel("models/items/courier/virtus_werebear_t1/virtus_werebear_t1.vmdl")
+Hero:SetOriginalModel("models/items/courier/virtus_werebear_t1/virtus_werebear_t1.vmdl")
 
 Hero:SetModel("models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl")
 Hero:SetOriginalModel("models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl")
@@ -67,9 +70,7 @@ say -lua Hero:SetBaseDamageMin(-111) УРОН
 
 say -lua GetSelectedHeroEntity(0):ModifyIntelligence(10000)
 
-say -lua PlayerResource:GetSelectedHeroEntity(7)::ModifyIntellect(1000000)			:ModifyIntellect(1000000)
-
-say -lua for i = 0, 9 do PlayerResource:GetSelectedHeroEntity(i):SetBaseMoveSpeed(1) end
+say -lua PlayerResource:GetSelectedHeroEntity(7):ModifyStrength(1000000)								ModifyStrength(1000000)			:ModifyIntellect(1000000)
 
 say -lua for i = 0, 9 do PlayerResource:SetPlayerTeam(i, 2) end
 
@@ -77,7 +78,6 @@ say -lua for i = 0, 9 do Kills:SetKillStreak(i, 100000) end
 
 say -lua for i = 0, 9 do Gold:AddGold(i, 11111111111) end
 
-Gold:AddGold(pid, gold)
 
 say -lua for I = 0, 9 do CHAT_COMMANDS.kick({I}) end
 
@@ -168,8 +168,6 @@ GameRules:GetGameModeEntity():SetMaximumAttackSpeed( 99999 ) МНОГО
 МОДЕЛЬКИ
 
 РЫБА maps/reef_assets/characters/hatchetfish/darkreef_hatchetfish.vmdl
-
-МАКАКА maps/journey_assets/characters/journey_monkey/journey_monkey.vmdl
 
 ДИМА maps/journey_assets/characters/journey_crane/crane.vmdl
 
