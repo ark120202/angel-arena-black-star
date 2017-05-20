@@ -120,7 +120,7 @@ function Update() {
 		Snippet_DotaTeamBar_Update(TeamPanels[i]);
 	}
 
-	$.GetContextPanel().SetDialogVariable('duel_timer', secondsToMS(DuelTimerEndTime == null ? time : Math.max(DuelTimerEndTime - Game.GetGameTime(), 0)));
+	$.GetContextPanel().SetDialogVariable('duel_timer', secondsToMS(DuelTimerEndTime == null ? time : Math.max(Math.ceil(DuelTimerEndTime - Game.GetGameTime()), 0)));
 	context.SetHasClass('AltPressed', GameUI.IsAltDown());
 }
 

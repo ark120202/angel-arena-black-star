@@ -63,7 +63,7 @@ function SimpleAI:SwitchState(newState)
 	if self.stateThinks[newState] then
 		self.state = newState
 		if newState == AI_STATE_RETURNING then
-			self.unit:MoveToPosition( self.spawnPos )
+			self.unit:MoveToPosition(self.spawnPos)
 		end
 	else
 		self:SwitchState(AI_STATE_IDLE)
@@ -74,6 +74,7 @@ function SimpleAI:GlobalThink()
 	if self.MarkedForDestroy or not self.unit:IsAlive() then
 		return
 	end
+
 	if self.ThinkEnabled then
 		Dynamic_Wrap(SimpleAI, self.stateThinks[ self.state ])(self)
 		if self.abilityCastCallback and self.state ~= AI_STATE_CASTING then
@@ -117,6 +118,7 @@ end
 	end
 
 	function SimpleAI:ReturningThink()
+		self.unit:MoveToPosition(self.spawnPos) -- If movement order was interrupted for some reason (Force Staff)
 		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() < 10 then
 			self:SwitchState(AI_STATE_IDLE)
 			return

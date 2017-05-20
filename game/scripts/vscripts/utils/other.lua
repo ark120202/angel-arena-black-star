@@ -448,7 +448,7 @@ function ColorTableToCss(color)
 	return "rgb(" .. color[1] .. ',' .. color[2] .. ',' .. color[3] .. ')'
 end
 
-function IsPlayerAbandoned( playerID )
+function IsPlayerAbandoned(playerID)
 	return PLAYER_DATA[playerID].IsAbandoned == true
 end
 
@@ -527,7 +527,7 @@ function MakePlayerAbandoned(iPlayerID)
 					--UTIL_Remove(ability)
 				end
 			end
-			hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
+			hero:AddNewModifier(hero, nil, "modifier_hero_out_of_game", nil)
 			Timers:CreateTimer(20, function()
 				UTIL_Remove(hero)
 			end)

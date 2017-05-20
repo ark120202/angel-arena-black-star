@@ -15,29 +15,12 @@ var SelectedHeroPanel,
 	LocalPlayerStatus = {},
 	InitializationStates = {},
 	HasBanPoint = true;
-var SteamIDSpecialBGs = {
-	//ark120202
-	/*109792606: [
-		"https://pp.userapi.com/c638727/v638727976/1134a/d1RxLF8mWkE.jpg",
-	],*/
-	//Murzik
-	82292900: [
-		'https://wallpaperscraft.ru/image/kot_morda_pushistyj_polosatyj_97082_1920x1080.jpg',
-		'http://file.mobilmusic.ru/b2/19/29/836852.jpg',
-		'https://wallpaperscraft.ru/image/koshka_kot_seryy_poroda_russkaya_golubaya_glaza_zelenye_vzglyad_chernyy_fon_81774_1920x1080.jpg',
-		'http://anywalls.com/pic/201304/1920x1080/anywalls.com-64496.jpg',
-		'http://file.mobilmusic.ru/8f/8e/b8/768273.jpg',
-	],
-};
 
 function HeroSelectionEnd(bImmidate) {
 	$.GetContextPanel().style.opacity = 0;
-	$.Schedule(bImmidate ? 0 : 3.5, function() { //4 + 1.5 [+ 0.1] - 2 (dota delay)
-		hud.GetChild(0).RemoveClass('IsBeforeGameplay');
-	});
-	$.Schedule(bImmidate ? 0 : 5.6, function() { //4 + 1.5 + 0.1
+	hud.GetChild(0).RemoveClass('IsBeforeGameplay');
+	$.Schedule(bImmidate ? 0 : 1.6, function() { //1.5 + 0.1
 		MainPanel.visible = false;
-		FindDotaHudElement('PausedInfo').style.opacity = 1;
 		if (HideEvent != null)
 			GameEvents.Unsubscribe(HideEvent);
 		if ($.GetContextPanel().PTID_hero_selection) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_selection);
@@ -306,7 +289,7 @@ function OnAdsClicked() {
 }
 
 function StartStrategyTime() {
-	FindDotaHudElement('PausedInfo').style.opacity = 0;
+
 }
 
 function UpdateMainTable(tableName, changesObject, deletionsObject) {
@@ -363,34 +346,23 @@ function ShowHeroPreviewTab(tabID) {
 	$.GetContextPanel().RemoveClass('LocalPlayerPicked');
 	$('#HeroListPanel').RemoveAndDeleteChildren();
 	//if (Players.GetTeam(Game.GetLocalPlayerID()) !== DOTA_TEAM_SPECTATOR) {
-
-	if (!Players.IsSpectator(Game.GetLocalPlayerID())) {
+	var localPlayerId = Game.GetLocalPlayerID();
+	if (!Players.IsSpectator(localPlayerId)) {
 		console.log('Is Player');
+		_DynamicMinimapSubscribe($('#MinimapDynamicIcons'), function(ptid) {
+			MinimapPTIDs.push(ptid);
+		});
 		DynamicSubscribePTListener('hero_selection_available_heroes', UpdateMainTable);
 		$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
-		DynamicSubscribePTListener('arena', function(tableName, changesObject, deletionsObject) {
-			if (changesObject.gamemode_settings && changesObject.gamemode_settings.gamemode != null) {
-				DOTA_ACTIVE_GAMEMODE = changesObject.gamemode_settings.gamemode;
-				_DynamicMinimapSubscribe($('#MinimapDynamicIcons'), function(ptid) {
-					MinimapPTIDs.push(ptid);
-				});
-			}
-			if (changesObject.gamemode_settings && changesObject.gamemode_settings.gamemode_type != null) {
-				var DOTA_ACTIVE_GAMEMODE_TYPE = changesObject.gamemode_settings.gamemode_type;
-				$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + DOTA_ACTIVE_GAMEMODE_TYPE);
-			}
-		});
+		//$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + DOTA_ACTIVE_GAMEMODE_TYPE);
 		if ($.GetContextPanel().PTID_hero_selection) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_selection);
 		DynamicSubscribePTListener('hero_selection', UpdateHeroesSelected, function(ptid) {
 			$.GetContextPanel().PTID_hero_selection = ptid;
 		});
 		UpdateTimer();
 
-		var steamid = GetSteamID(Game.GetLocalPlayerID(), 32);
-		var bglist = SteamIDSpecialBGs[steamid];
-		$.GetContextPanel().SetHasClass('CustomSelectionBackground', bglist != null);
-		if (bglist)
-			$('#HeroSelectionCustomBackground').SetImage(bglist[Math.floor(Math.random() * bglist.length)]);
+		var bglist = Players.GetStatsData(localPlayerId).Backgrounds;
+		if (bglist) $('#HeroSelectionCustomBackground').SetImage(bglist[Math.floor(Math.random() * bglist.length)]);
 		$('#AdsBanner').visible = adsEnabledLangs.indexOf($.Language()) > -1;
 	} else {
 		HeroSelectionEnd(true);

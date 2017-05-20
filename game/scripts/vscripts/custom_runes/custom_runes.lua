@@ -157,6 +157,7 @@ RUNE_SETTINGS = {
 		duration = 32,
 		aura_radius = 500,
 		damage_heal_pct = 8,
+		angles = {0, 270, 0},
 	},
 	[ARENA_RUNE_SPIKES] = {
 		model = "models/props_gameplay/heart001.vmdl",
@@ -165,6 +166,7 @@ RUNE_SETTINGS = {
 		z_modify = 64,
 		duration = 15,
 		damage_reflection_pct = 75,
+		angles = {0, 270, 0},
 	}
 }
 
@@ -239,6 +241,9 @@ function CustomRunes:CreateRune(position, runeType)
 	entity:SetOriginalModel(settings.model)
 	StartAnimation(entity, {duration=-1, activity=ACT_DOTA_IDLE})
 	entity:SetAbsOrigin(position)
+	if settings.angles then
+		entity:SetAngles(unpack(settings.angles))
+	end
 	local pfx = ParticleManager:CreateParticle(settings.particle, settings.particle_attach or PATTACH_ABSORIGIN_FOLLOW, entity)
 	if settings.color then
 		entity:SetRenderColor(unpack(settings.color))

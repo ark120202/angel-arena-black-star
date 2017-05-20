@@ -87,7 +87,7 @@ function HeroSelection:PrepareTables()
 	for name,enabled in pairsByKeys(ENABLED_HEROES[Options:GetValue("MainHeroList")]) do
 		if enabled == 1 then
 			if not heroesData[name] or heroesData[name].Enabled == 0 then
-				error("Hero from enabled hero list is not a valid hero")
+				error(name .. " is enabled in hero list, but not a valid hero")
 			end
 			local tabIndex = heroesData[name].tabIndex
 			if not data.HeroTabs[tabIndex] then data.HeroTabs[tabIndex] = {} end
@@ -201,12 +201,10 @@ end
 
 function HeroSelection:StartStateInGame(toPrecache)
 	HeroSelection:DismissTimers()
-	DeepPrintTable(toPrecache)
 	--If for some reason even after that time heroes weren't precached
 	Timers:CreateTimer({
 		useGameTime = false,
 		callback = function()
-			PauseGame(true)
 			local canEnd = true
 			for k,v in pairs(toPrecache) do
 				if not v then
@@ -214,22 +212,16 @@ function HeroSelection:StartStateInGame(toPrecache)
 					break
 				end
 			end
+			PauseGame(not canEnd)
 			if canEnd then
 				--Actually enter in-game state
 				HeroSelection:SetState(HERO_SELECTION_PHASE_END)
-				Timers:CreateTimer({
-					useGameTime = false,
-					endTime = 3.75,
-					callback = function()
-						for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
-							for plyId,v in pairs(_v) do
-								HeroSelection:SelectHero(plyId, tostring(v.hero), nil, true)
-							end
-						end
-						PauseGame(false)
-						GameMode:OnHeroSelectionEnd()
+				for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
+					for plyId,v in pairs(_v) do
+						HeroSelection:SelectHero(plyId, tostring(v.hero), nil, true)
 					end
-				})
+				end
+				GameMode:OnHeroSelectionEnd()
 			else
 				return 0.1
 			end

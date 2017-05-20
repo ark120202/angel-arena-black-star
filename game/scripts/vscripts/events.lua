@@ -201,8 +201,8 @@ function GameMode:OnEntityKilled(keys)
 		if killedUnit:IsHero() then
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
 			if killedUnit:IsRealHero() then
-				if killedUnit.InArena and Duel:IsDuelOngoing() then
-					killedUnit.InArena = false
+				if killedUnit.OnDuel and Duel:IsDuelOngoing() then
+					killedUnit.OnDuel = false
 					killedUnit.ArenaBeforeTpLocation = nil
 					if Duel:GetWinner() ~= nil then
 						Duel:EndDuel()

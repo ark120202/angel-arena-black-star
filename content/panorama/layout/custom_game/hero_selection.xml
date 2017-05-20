@@ -77,9 +77,9 @@
 	</snippets>
 	<Panel hittest="false" class="base Shown CanRepick RandomingEnabled">
 		<!-- <DOTAScenePanel id="HeroSelectionBackground" map="maps/backgrounds/dashboard_parallax_spring2016.vmap" hittest="false" /> -->
-		<DOTAScenePanel id="HeroSelectionBackground" hittest="false" map="backgrounds/pregame_phase" particleonly="false" />
 		<!-- <DOTAScenePanel id="HeroSelectionBackgroundRadiant" hittest="false" camera="camera_top" map="backgrounds/pregame_dire_ambient" particleonly="true" />
 		<DOTAScenePanel id="HeroSelectionBackgroundDire" hittest="false" camera="camera_bottom" map="backgrounds/pregame_dire_ambient" particleonly="true" /> -->
+		<DOTAScenePanel id="HeroSelectionBackground" hittest="false" map="backgrounds/pregame_phase" particleonly="false" />
 		<Image id="HeroSelectionCustomBackground" hittest="false" />
 		<Panel hittest="false" id="HeroSelectionBox">
 			<Panel id="SelectionStatusPanel" >

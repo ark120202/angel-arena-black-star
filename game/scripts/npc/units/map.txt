@@ -111,4 +111,44 @@
 		"StatusMana"	"0"	// Base mana.
 		"StatusManaRegen"	"0"	// Mana regeneration rate.
 	}
+
+	"npc_arena_healer"
+	{
+		"BaseClass"					"npc_dota_healer"
+		"Model"						"models/props_structures/radiant_statue001.vmdl"
+		"SoundSet"					"Creep_Good_Melee"
+		"MinimapIcon"				"minimap_miscbuilding"
+		
+		"Ability1"					"backdoor_protection_in_base"
+		"Ability2"					"filler_ability"
+
+		"ArmorPhysical"				"20"
+		"MagicalResistance"			"0"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+		"AttackRange"				"0"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_FILLER"
+		"RingRadius"				"100"
+		"HealthBarOffset"			"260"
+		"MinimapIconSize"			"375"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"0"
+
+		"StatusHealth"				"1500"
+		"StatusHealthRegen"			"10"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+	}
 }

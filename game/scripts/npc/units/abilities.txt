@@ -1,7 +1,7 @@
 "DOTAUnits"
 {
 	"npc_dota_beastmaster_boar_base"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/beastmaster/beastmaster_beast.vmdl"
@@ -70,7 +70,7 @@
 	}
 
 	"npc_dota_beastmaster_hawk_base"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/beastmaster/beastmaster_bird.vmdl"
@@ -134,7 +134,7 @@
 
 
 	"npc_dota_warlock_golem_base"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/warlock/warlock_demon.vmdl"
@@ -213,7 +213,7 @@
 
 
 	"npc_dota_warlock_golem_scepter_base"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/warlock/warlock_demon.vmdl"
@@ -290,7 +290,7 @@
 	}
 
 	"npc_dota_warlock_minigolem"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/warlock/warlock_demon.vmdl"
@@ -474,7 +474,7 @@
 	}
 
 	"npc_queenofblades_army_unit"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
@@ -523,7 +523,7 @@
 	}
 
 	"npc_queenofblades_alter_ego"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/queenofpain/queenofpain.vmdl"
@@ -577,7 +577,7 @@
 	}
 
 	"npc_shinobu_soul"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_b.vmdl"
@@ -624,7 +624,7 @@
 	}
 
 	"npc_arena_zaken_sailor"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/kunkka/kunkka.vmdl"
@@ -682,7 +682,7 @@
 	}
 
 	"npc_arena_anakim_divine_knight"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/units/anakim_pet/anakim_pet.vmdl"

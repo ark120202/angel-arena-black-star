@@ -19,27 +19,6 @@ function GameMode:CustomChatSendMessage(data)
 	CustomChatSay(tonumber(data.PlayerID), data.teamOnly == 1, data)
 end
 
-function GameMode:SubmitGamemodeVote(data)
-	if data and data.voteIndex then
-		local vote = POSSIBLE_KILL_GOALS[tonumber(data.voteIndex)]
-		if not vote then
-			vote = DOTA_KILL_GOAL_VOTE_STANDART
-		end
-		PLAYER_DATA[tonumber(data.PlayerID)].GameModeVote = vote
-	end
-end
-
-function GameMode:SubmitGamemodeMap(data)
-	if data and data.GMType then
-		local GMType = tonumber(data.GMType)
-		if ARENA_ACTIVE_GAMEMODE_MAP == ARENA_GAMEMODE_MAP_CUSTOM_ABILITIES then
-			if GMType and GMType == DOTA_GAMEMODE_TYPE_RANDOM_OMG or GMType == DOTA_GAMEMODE_TYPE_ABILITY_SHOP then
-				PLAYER_DATA[tonumber(data.PlayerID)].GameModeTypeVote = GMType
-			end
-		end
-	end
-end
-
 function GameMode:ModifierClickedPurge(data)
 	if data.PlayerID and data.unit and data.modifier then
 		local ent = EntIndexToHScript(data.unit)

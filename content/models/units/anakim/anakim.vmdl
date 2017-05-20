@@ -1057,10 +1057,10 @@
 					m_flFps = 30.0
 					m_Loop = 
 					{
-						m_bLoop = false
-						m_bSmoothLoop = false
-						m_nSmoothLoopStart = 0
-						m_nSmoothLoopEnd = 0
+						m_bLoop = true
+						m_bSmoothLoop = true
+						m_nSmoothLoopStart = 5
+						m_nSmoothLoopEnd = 5
 						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
@@ -1210,5 +1210,6 @@
 	m_bMakeUniqueVMeshes = false
 	m_bMakeImplicitBindPoseSequence = false
 	m_bAdjustSkeletonFromBoneFlags = false
+	m_bHiddenAssetFlag = false
 	m_pAnimGroups = [  ]
 }

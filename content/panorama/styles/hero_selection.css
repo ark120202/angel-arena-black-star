@@ -7,7 +7,6 @@
 	opacity: 1;
 	transition-property: opacity;
 	transition-duration: 1.5s;
-	transition-delay: 4s;
 }
 
 #HeroSelectionBox
@@ -25,12 +24,6 @@
 {
 	width: 100%;
 	height: 100%;
-	background-size: 100% 100%;
-	visibility: collapse;
-}
-.CustomSelectionBackground #HeroSelectionCustomBackground
-{
-	visibility: visible;
 }
 
 #SelectedHeroPanel
@@ -503,7 +496,7 @@
 	wash-color: #fff;
 }
 
-#MinimapSpawnBoxes
+.MinimapSpawnBoxes
 {
 	width: 100%;
 	height: 100%;

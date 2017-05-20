@@ -213,7 +213,6 @@ function Bosses:MakeBossAI(unit, name)
 	elseif name == "central" then
 		profile = "tower"
 	end
-
 	local ai = SimpleAI:new(unit, profile, aiTable)
 end
 

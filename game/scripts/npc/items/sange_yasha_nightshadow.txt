@@ -1,0 +1,984 @@
+""
+{
+	"item_recipe_sange_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"10038"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"600"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_sange_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_ogre_axe;item_belt_of_strength"
+		}
+	}
+
+	"item_sange_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"10039"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_sange"
+		"ItemShopTags"					"damage;str;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"sange"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+			
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"18"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"maim_chance"			"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_movement_speed"	"-4"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_attack_speed"		"-5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"maim_duration"			"3.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_max_stacks"		"6"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_sange_arena"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
+				}
+			}
+
+			"modifier_item_sange_arena_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"AllowIllusionDuplicate"     "0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_sange_arena_unique"
+					}
+				}
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%maim_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"sange_lesser_maim_stacks"
+								"modifier"				"modifier_item_sange_arena_lesser_maim"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_item_sange_arena_lesser_maim"
+			{
+				"Duration"				"%maim_duration"
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"IsBuff"				"0"
+				"IsDebuff"				"1"
+				"IsPurgable"			"1"
+				
+				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
+				"EffectAttachType"      "follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_movement_speed"
+				}
+			}
+		}
+	}
+
+	"item_recipe_sange_and_yasha_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"10040"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_sange_and_yasha_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_yasha_arena;item_sange_arena"
+		}
+	}
+
+	"item_sange_and_yasha_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"10041"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"ItemShopTags"					"damage;str;agi;attack_speed;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"sny;s&y;sy;sange and yasha"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+			
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"maim_chance"			"50"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maim_slow_movement"			"-8"
+			}			
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maim_slow_attack"				"-7"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"24"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_strength"				"24"
+			}		
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"maim_duration"					"4.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_max_stacks"		"8"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility"					"24"
+			}	
+			"09"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"movement_speed_percent_bonus"	"20"
+			}	
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"24"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed_buff"		"7"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"movement_speed_percent_bonus_buff"		"6"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"fast_attack_duration"			"8"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"fast_attack_max_stacks"			"8"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_sange_and_yasha"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"							"%bonus_agility"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%movement_speed_percent_bonus"
+				}
+			}
+
+			"modifier_item_sange_and_yasha_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"AllowIllusionDuplicate"     "0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_sange_and_yasha_unique"
+					}
+				}
+				
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%maim_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"sange_lesser_maim_stacks"
+								"modifier"				"modifier_item_sange_and_yasha_lesser_maim"
+							}
+						}
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"items/items_SYNS.lua"
+						"Function"		"yasha_fast_attack_stacks"
+						"modifier"		"modifier_item_sange_and_yasha_fast_attack"
+					}
+				}
+			}
+
+			"modifier_item_sange_and_yasha_lesser_maim"
+			{
+				"Duration"				"%maim_duration"
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"IsBuff"				"0"
+				"IsDebuff"				"1"
+				"IsPurgable"			"1"
+				
+				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
+				"EffectAttachType"      "follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_slow_attack"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_slow_movement"
+				}
+			}
+
+			"modifier_item_sange_and_yasha_fast_attack"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"1"
+				"Duration"			"%fast_attack_duration"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff" 
+				}
+			}
+		}
+	}
+
+	"item_recipe_nightshadow"
+	{
+		"BaseClass"                     "item_datadriven"
+		"ID"							"10042"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"600"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nightshadow"
+		"ItemRequirements"
+		{
+			"01"						"item_staff_of_wizardry;item_robe"
+		}
+	}
+	
+	"item_nightshadow"
+	{
+		"BaseClass"                     "item_datadriven"
+		"ID"							"10043"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "item_arena/nightshadow"
+		"ItemShopTags"					"int;cooldown_reduction"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"nightshadow"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"nightshadow_chance"	"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown_reduction"	"0.25"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_nightshadow"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
+				}
+			}
+
+			"modifier_item_nightshadow_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"AllowIllusionDuplicate"     "0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_nightshadow_unique"
+					}
+				}
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%nightshadow_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"CooldownReduction"
+								"cooldown_reducted"		"%cooldown_reduction"
+								"modifier"				"modifier_item_nightshadow_unique"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	"item_recipe_nightshadow_and_sange"
+	{
+		"BaseClass"                     "item_datadriven"
+		"ID"							"10044"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nightshadow_and_sange"
+		"ItemRequirements"
+		{
+			"01"						"item_nightshadow;item_sange_arena"
+		}
+	}
+
+	"item_nightshadow_and_sange"
+	{
+		"BaseClass"                     "item_datadriven"
+		"ID"							"10045"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "item_arena/nightshadow_and_sange"
+		"ItemShopTags"					"int;cooldown_reduction;damage;str;unique"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemAliases"					"nightshadow and sange"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"24"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"24"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_strength"				"24"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"nightshadow_chance"			"10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown_reduction"			"0.75"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"maim_chance"			"50"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maim_slow_movement"			"-8"
+			}			
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maim_slow_attack"				"-7"
+			}		
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"maim_duration"					"4.5"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_max_stacks"		"8"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_nightshadow_and_sange"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
+				}
+			}
+
+			"modifier_item_nightshadow_and_sange"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"AllowIllusionDuplicate"     "0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_nightshadow_and_sange"
+					}
+				}
+				
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%nightshadow_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"CooldownReduction"
+								"cooldown_reducted"		"%cooldown_reduction"
+								"modifier"				"modifier_item_nightshadow_and_sange"
+							}
+						}
+					}
+					"Random"
+					{
+						"Chance"			"%maim_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"sange_lesser_maim_stacks"
+								"modifier"				"modifier_item_nightshadow_and_sange_lesser_maim"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_item_nightshadow_and_sange_lesser_maim"
+			{
+				"Duration"				"%maim_duration"
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"IsBuff"				"0"
+				"IsDebuff"				"1"
+				"IsPurgable"			"1"
+				
+				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
+				"EffectAttachType"      "follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_slow_attack"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_slow_movement"
+				}
+			}
+		}
+	}
+
+	"item_recipe_nightshadow_and_yasha"
+	{
+		"BaseClass"                     "item_datadriven"
+		"ID"							"10046"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nightshadow_and_yasha"
+		"ItemRequirements"
+		{
+			"01"						"item_nightshadow;item_yasha_arena"
+		}
+	}
+
+	"item_nightshadow_and_yasha"
+	{
+		"BaseClass"                     "item_datadriven"
+		"ID"							"10047"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "item_arena/nightshadow_and_yasha"
+		"ItemShopTags"					"int;cooldown_reduction;agi;attack_speed;move_speed"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemAliases"					"nightshadow and yasha"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"24"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility"					"24"
+			}	
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"movement_speed_percent_bonus"	"20"
+			}	
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"24"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"nightshadow_chance"			"10"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown_reduction"			"0.75"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed_buff"		"7"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"movement_speed_percent_bonus_buff"		"6"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"fast_attack_duration"			"8"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"fast_attack_max_stacks"			"8"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_nightshadow_and_yasha"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intellect"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"					"%bonus_agility"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%movement_speed_percent_bonus"
+				}
+			}
+
+			"modifier_item_nightshadow_and_yasha_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"AllowIllusionDuplicate"     "0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_nightshadow_and_yasha_unique"
+					}
+				}
+				
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%nightshadow_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"CooldownReduction"
+								"cooldown_reducted"		"%cooldown_reduction"
+								"modifier"				"modifier_item_nightshadow_and_yasha_unique"
+							}
+						}
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"items/items_SYNS.lua"
+						"Function"		"yasha_fast_attack_stacks"
+						"modifier"		"modifier_item_nightshadow_and_yasha_fast_attack"
+					}
+				}
+			}
+
+			"modifier_item_nightshadow_and_yasha_fast_attack"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"1"
+				"Duration"			"%fast_attack_duration"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff" 
+				}
+			}
+		}
+	}
+
+	"item_recipe_three_spirits_blades"
+	{
+		"BaseClass"                     "item_datadriven"
+		"ID"							"10048"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_three_spirits_blades"
+		"ItemRequirements"
+		{
+			"01"						"item_yasha_arena;item_sange_arena;item_nightshadow"
+			"02"						"item_sange_and_yasha_arena;item_nightshadow"
+			"03"						"item_nightshadow_and_yasha;item_sange_arena"
+			"04"						"item_nightshadow_and_sange;item_yasha_arena"
+		}
+	}
+
+	"item_three_spirits_blades"
+	{
+		"BaseClass"                     "item_datadriven"
+		"ID"							"10049"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "item_arena/three_spirits_blades"
+		"ItemShopTags"					"int;cooldown_reduction;agi;attack_speed;move_speed;damage;str;unique"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemAliases"					"three spirits blades"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"30"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_strength"				"30"
+			}		
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility"					"30"
+			}	
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"movement_speed_percent_bonus"	"30"
+			}	
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"40"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"nightshadow_chance"			"15"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown_reduction"			"1.0"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"maim_chance"			"65"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maim_slow_movement"			"-12"
+			}			
+			"11"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maim_slow_attack"				"-15"
+			}	
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"maim_duration"					"6.5"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_max_stacks"		"12"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed_buff"		"9"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"movement_speed_percent_bonus_buff"		"7"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"fast_attack_duration"			"10"
+			}
+			"17"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"fast_attack_max_stacks"			"10"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_three_spirits_blades"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"					"%bonus_intellect"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"					"%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"					"%bonus_strength"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"						"%bonus_agility"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"		"%movement_speed_percent_bonus"
+				}
+			}
+
+			"modifier_item_three_spirits_blades_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"AllowIllusionDuplicate"     "0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_three_spirits_blades_unique"
+					}
+				}
+				
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%nightshadow_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"CooldownReduction"
+								"cooldown_reducted"		"%cooldown_reduction"
+								"modifier"				"modifier_item_three_spirits_blades_unique"
+							}
+						}
+					}
+					"Random"
+					{
+						"Chance"			"%maim_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"items/items_SYNS.lua"
+								"Function"				"sange_lesser_maim_stacks"
+								"modifier"				"modifier_item_three_spirits_blades_lesser_maim"
+							}
+						}
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"items/items_SYNS.lua"
+						"Function"		"yasha_fast_attack_stacks"
+						"modifier"		"modifier_item_three_spirits_blades_fast_attack"
+					}
+				}
+			}
+
+			"modifier_item_three_spirits_blades_lesser_maim"
+			{
+				"Duration"				"%maim_duration"
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"IsBuff"				"0"
+				"IsDebuff"				"1"
+				"IsPurgable"			"1"
+				
+				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
+				"EffectAttachType"      "follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_slow_attack"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_slow_movement"
+				}
+			}
+
+			"modifier_item_three_spirits_blades_fast_attack"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"1"
+				"Duration"			"%fast_attack_duration"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff" 
+				}
+			}
+		}
+	}
+}

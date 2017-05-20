@@ -41,7 +41,7 @@ function GameMode:_InitGameMode()
 	local mapinfo = LoadKeyValues("addoninfo.txt")[GetMapName()]
 	local num = math.floor(mapinfo.MaxPlayers / mapinfo.TeamCount)
 	local count = 0
-	for team in pairs(TEAM_COLORS) do
+	for team in pairsByKeys(TEAM_COLORS) do
 		GameRules:SetCustomGameTeamMaxPlayers(team, count < mapinfo.TeamCount and num or 0)
 		count = count + 1
 	end
@@ -51,8 +51,6 @@ function GameMode:_InitGameMode()
 			SetTeamCustomHealthbarColor(team, color[1], color[2], color[3])
 		end
 	end
-
-	--InitLogFile( "log/barebones.txt","")
 
 	-- Event Hooks
 	-- All of these events can potentially be fired by the game, though only the uncommented ones have had

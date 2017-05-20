@@ -22,8 +22,8 @@ local requirements = {
 	"libraries/CosmeticLib",
 	"libraries/PopupNumbers",
 	--------------------------------------------------
-	"data/globals",
 	"data/constants",
+	"data/globals",
 	"data/containers",
 	"data/kv_data",
 	"data/modifiers",
@@ -62,17 +62,19 @@ local requirements = {
 	"data/wearables",
 }
 local modifiers = {
-	["modifier_item_shard_attackspeed_stack"] = "items/lua/modifiers/modifier_item_shard_attackspeed_stack",
-	["modifier_apocalypse_apocalypse"] = "heroes/hero_apocalypse/modifier_apocalypse_apocalypse.lua",
-	["modifier_set_attack_range"] = "modifiers/modifier_set_attack_range.lua",
-	["modifier_charges"] = "libraries/modifiers/modifier_charges.lua",
-	["modifier_hero_selection_transformation"] = "modifiers/modifier_hero_selection_transformation.lua",
-	["modifier_fountain_aura_arena"] = "modifiers/modifier_fountain_aura_arena.lua",
-	["modifier_max_attack_range"] = "modifiers/modifier_max_attack_range.lua",
-	["modifier_arena_courier"] = "modifiers/modifier_arena_courier.lua",
-	["modifier_arena_hero"] = "modifiers/modifier_arena_hero.lua",
-	["modifier_neutral_champion"] = "modifiers/modifier_neutral_champion.lua",
-	["modifier_item_demon_king_bar_curse"] = "items/modifier_item_demon_king_bar_curse"
+	modifier_item_shard_attackspeed_stack = "items/lua/modifiers/modifier_item_shard_attackspeed_stack",
+	modifier_apocalypse_apocalypse = "heroes/hero_apocalypse/modifier_apocalypse_apocalypse",
+	modifier_set_attack_range = "modifiers/modifier_set_attack_range",
+	modifier_charges = "libraries/modifiers/modifier_charges",
+	modifier_hero_selection_transformation = "modifiers/modifier_hero_selection_transformation",
+	modifier_fountain_aura_arena = "modifiers/modifier_fountain_aura_arena",
+	modifier_max_attack_range = "modifiers/modifier_max_attack_range",
+	modifier_arena_courier = "modifiers/modifier_arena_courier",
+	modifier_arena_hero = "modifiers/modifier_arena_hero",
+	modifier_neutral_champion = "modifiers/modifier_neutral_champion",
+	modifier_item_demon_king_bar_curse = "items/modifier_item_demon_king_bar_curse",
+	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game",
+	modifier_arena_healer = "modifiers/modifier_arena_healer",
 }
 AllPlayersInterval = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23}
 
@@ -112,6 +114,16 @@ function GameMode:InitGameMode()
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("stats_client", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
+	HealerModels = {
+		[DOTA_TEAM_GOODGUYS] = {mdl = ""}
+	}
+	for _,v in ipairs(Entities:FindAllByName("npc_arena_healer")) do
+		local model = HealerModels[v:GetTeamNumber()]
+		v:SetOriginalModel(model.mdl)
+		v:SetModel(model.mdl)
+		if model.color then v:SetRenderColor(unpack(model.color)) end
+		v:AddNewModifier(v, nil, "modifier_arena_healer", nil)
+	end
 end
 
 function GameMode:PostLoadPrecache()
@@ -155,19 +167,13 @@ function GameMode:OnHeroInGame(hero)
 					for _,courier in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
 						local owner = courier:GetOwner()
 						if IsValidEntity(owner) and owner:GetPlayerID() == pid then
-							courier:UpgradeToFlyingCourier()
 							courier:SetOwner(nil)
+							courier:UpgradeToFlyingCourier()
+
 							courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
 							courier:RemoveAbility("courier_burst")
+
 							TEAMS_COURIERS[tn] = courier
-							courier:SetBaseMaxHealth(200)
-							courier:SetMaxHealth(200)
-							courier:SetHealth(200)
-							Timers:CreateTimer(60, function()
-								courier:SetBaseMaxHealth(courier:GetBaseMaxHealth() + 200)
-								courier:SetMaxHealth(courier:GetMaxHealth() + 200)
-								return 60
-							end)
 						end
 					end
 				end)
