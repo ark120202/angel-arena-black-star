@@ -24,6 +24,6 @@ if IsServer() then
 	end
 else
 	function sara_dark_blink:GetCastRange()
-		return self:GetSpecialValueFor("blink_range") + self:GetSpecialValueFor("energy_to_blink_range") * self:GetCaster():GetMana()
+		return self:GetSpecialValueFor("blink_range") + self:GetSpecialValueFor("energy_to_blink_range") * self:GetCaster():GetMana() * 0.01
 	end
 end

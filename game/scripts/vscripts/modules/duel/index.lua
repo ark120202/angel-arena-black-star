@@ -38,7 +38,7 @@ function Duel:CreateGlobalTimer()
 		return IsPhysicsUnit(unit) and Duel.DuelStatus == DOTA_DUEL_STATUS_WATING and not unit.OnDuel
 	end
 end
-Duel:SetDuelTimer(10)
+
 function Duel:GlobalThink()
 	local now = GameRules:GetGameTime()
 	for i = 1, 10 do
@@ -161,6 +161,11 @@ function Duel:EndDuel()
 	end]]
 	local winner = Duel:GetWinner()
 	if winner then
+		if winner == DOTA_TEAM_GOODGUYS then
+			EmitAnnouncerSound("announcer_announcer_victory_rad")
+		elseif winner == DOTA_TEAM_BADGUYS then
+			EmitAnnouncerSound("announcer_announcer_victory_dire")
+		end
 		Notifications:TopToAll({text="#duel_over_winner_p1", duration=6})
 		Notifications:TopToAll(CreateTeamNotificationSettings(winner, false))
 		Notifications:TopToAll({text="#duel_over_winner_p2", continue=true})
@@ -229,7 +234,9 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 	end
 	if timeUpdate then
 		local delay = table.nearestOrLowerKey(DUEL_SETTINGS.DelaysFromLast, GetDOTATimeInMinutesFull())
-		EmitAnnouncerSound("announcer_ann_custom_timer_0" .. delay/60)
+		Timers:CreateTimer(2, function()
+			EmitAnnouncerSound("announcer_ann_custom_timer_0" .. delay/60)
+		end)
 		Duel:SetDuelTimer(delay)
 	end
 end

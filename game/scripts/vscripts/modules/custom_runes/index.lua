@@ -2,18 +2,27 @@ if not CustomRunes then
 	CustomRunes = class({})
 	CustomRunes.ModifierApplier = CreateItem("item_dummy", nil, nil)
 end
-LinkLuaModifier("modifier_arena_rune_tripledamage", "custom_runes/modifier_arena_rune_tripledamage.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_arena_rune_haste", "custom_runes/modifier_arena_rune_haste.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_arena_rune_invisibility", "custom_runes/modifier_arena_rune_invisibility.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_arena_rune_arcane", "custom_runes/modifier_arena_rune_arcane.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_arena_rune_flame", "custom_runes/modifier_arena_rune_flame.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_arena_rune_acceleration", "custom_runes/modifier_arena_rune_acceleration.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_arena_rune_vibration", "custom_runes/modifier_arena_rune_vibration.lua", LUA_MODIFIER_MOTION_NONE)
 
-LinkLuaModifier("modifier_arena_rune_soul_steal", "custom_runes/modifier_arena_rune_soul_steal.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_arena_rune_soul_steal_effect", "custom_runes/modifier_arena_rune_soul_steal.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_arena_rune_spikes", "custom_runes/modifier_arena_rune_spikes.lua", LUA_MODIFIER_MOTION_NONE)
-
+local modifiers = {
+	"tripledamage",
+	"haste",
+	"invisibility",
+	"arcane",
+	"flame",
+	"acceleration",
+	"vibration",
+	"spikes",
+	"soul_steal",
+	soul_steal_effect = "soul_steal"
+}
+for k,v in pairs(modifiers) do
+	if type(k) == "string" then
+		k, v = v, k
+	else
+		k = nil
+	end
+	LinkLuaModifier("modifier_arena_rune_" .. v, "modules/custom_runes/modifiers/modifier_arena_rune_" .. (k or v), LUA_MODIFIER_MOTION_NONE)
+end
 
 ARENA_RUNE_BOUNTY = 0
 ARENA_RUNE_TRIPLEDAMAGE = 1
@@ -154,9 +163,9 @@ RUNE_SETTINGS = {
 		particle = "particles/neutral_fx/prowler_shaman_stomp_debuff_glow.vpcf",
 		z_modify = 64,
 		color = {0, 0, 0},
-		duration = 32,
-		aura_radius = 500,
-		damage_heal_pct = 8,
+		duration = 45,
+		aura_radius = 1200,
+		damage_heal_pct = 15,
 		angles = {0, 270, 0},
 	},
 	[ARENA_RUNE_SPIKES] = {
@@ -164,7 +173,7 @@ RUNE_SETTINGS = {
 		particle = "particles/items_fx/blademail.vpcf",
 		particle_attach = PATTACH_ABSORIGIN,
 		z_modify = 64,
-		duration = 15,
+		duration = 25,
 		damage_reflection_pct = 75,
 		angles = {0, 270, 0},
 	}

@@ -240,7 +240,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 		multiplier = function(attacker, victim, inflictor, damage)
 			local saber_instinct = victim:FindAbilityByName("saber_instinct")
 			if not IsValidEntity(inflictor) and saber_instinct and victim:IsAlive() and not victim:PassivesDisabled() then
-				if IsRangedUnit(attacker) then
+				if attacker:IsRangedUnit() then
 					if RollPercentage(saber_instinct:GetAbilitySpecial("ranged_evasion_pct")) then
 						PopupEvadeMiss(victim, attacker)
 						ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)

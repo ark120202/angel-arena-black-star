@@ -1,6 +1,6 @@
 function SplitShotLaunch( keys )
 	local caster = keys.caster
-	if IsRangedUnit(caster) then
+	if caster:IsRangedUnit() then
 		local caster_location = caster:GetAbsOrigin()
 		local ability = keys.ability
 		local attack_target = caster:GetAttackTarget()

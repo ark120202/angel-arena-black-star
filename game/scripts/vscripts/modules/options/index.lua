@@ -55,28 +55,26 @@ function Options:CalculateVotes()
 			if calculationFunction then
 				if type(calculationFunction) == "function" then
 					value = calculationFunction(counts)
-				else
-					if calculationFunction == "/" then
-						local sum = 0
-						local count = 0
-						for v, num in pairs(counts) do
-							sum = sum + v * num
-							count = count + num
-						end
-						value = sum / count
-					elseif calculationFunction == ">" then
-						local key, max = next(counts)
-						for k, v in pairs(counts) do
-							if v > max then
-								key, max = k, v
-							elseif v == max and key ~= k and RollPercentage(50) then --TODO: better chance based roll
-								key, max = k, v
-							end
-						end
-						value = key
-					else
-						error("Unknown calculation function type")
+				elseif calculationFunction == "/" then
+					local sum = 0
+					local count = 0
+					for v, num in pairs(counts) do
+						sum = sum + v * num
+						count = count + num
 					end
+					value = sum / count
+				elseif calculationFunction == ">" then
+					local key, max = next(counts)
+					for k, v in pairs(counts) do
+						if v > max then
+							key, max = k, v
+						elseif v == max and key ~= k and RollPercentage(50) then --TODO: better chance based roll
+							key, max = k, v
+						end
+					end
+					value = key
+				else
+					error("Unknown calculation function type")
 				end
 			end
 			if calculation.callback then
@@ -90,8 +88,8 @@ function Options:CalculateVotes()
 end
 
 function Options:LoadDefaultValues()
-	Options:SetValue("EnableRandomAbilities", false)
 	Options:SetValue("EnableAbilityShop", false)
+	Options:SetValue("EnableRandomAbilities", false)
 	Options:SetValue("EnableStatisticsCollection", true)
 	Options:SetValue("EnableRatingAffection", false)
 	--Options:SetValue("MapLayout", "5v5")
@@ -134,8 +132,7 @@ function Options:LoadMapValues()
 				Options:SetValue("EnableRandomAbilities", value == "random_omg")
 			end
 		})
-	end
-	if gamemode == "ranked" then
+	elseif gamemode == "ranked" then
 		Options:SetValue("EnableRatingAffection", true)
 		Options:SetValue("BanningPhaseBannedPercentage", 50)
 	end

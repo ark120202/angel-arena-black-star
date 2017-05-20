@@ -293,7 +293,7 @@ function ModifyCreepDamage(keys)
 	local target = keys.target
 	if target:IsRealCreep() then
 		local ability = keys.ability
-		local damage_bonus = keys.damage_bonus_ranged ~= nil and IsRangedUnit(caster) and keys.damage_bonus_ranged or keys.damage_bonus
+		local damage_bonus = keys.damage_bonus_ranged ~= nil and caster:IsRangedUnit() and keys.damage_bonus_ranged or keys.damage_bonus
 		ApplyDamage({
 			attacker = caster,
 			victim = target,
@@ -306,7 +306,7 @@ function ModifyCreepDamage(keys)
 end
 
 function Cleave(keys)
-	if not IsRangedUnit(keys.caster) then
+	if not keys.caster:IsRangedUnit() then
 		DoCleaveAttack(keys.caster, keys.target, keys.ability, keys.damage * keys.cleave_damage_percent * 0.01, keys.cleave_distance or keys.cleave_radius, keys.cleave_starting_width or keys.cleave_radius, keys.cleave_ending_width or keys.cleave_radius, keys.particle)
 	end
 end

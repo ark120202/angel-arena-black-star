@@ -1,3 +1,6 @@
+ModuleRequire(..., "data")
+LinkLuaModifier("modifier_arena_wearable", "modules/dynamic_wearables/modifier_arena_wearable.lua", LUA_MODIFIER_MOTION_NONE)
+
 if not DynamicWearables then
 	DynamicWearables = class({})
 	DynamicWearables.RawItemsKV = LoadKeyValues( "scripts/items/items_game.txt" )
@@ -13,9 +16,6 @@ DynamicWearables.KVAttachTypeToLua = {
 	point_follow = PATTACH_POINT_FOLLOW,
 	worldorigin = PATTACH_WORLDORIGIN
 }
-LinkLuaModifier("modifier_arena_wearable", "dynamic_wearables/modifier_arena_wearable.lua", LUA_MODIFIER_MOTION_NONE)
-WEARABLES_ATTACH_METHOD_DOTA = 0
-WEARABLES_ATTACH_METHOD_ATTACHMENTS = 1
 
 function DynamicWearables:GetWearableDataById(wearableId)
 	return DynamicWearables.DotaWearablesByIds[wearableId]
@@ -53,7 +53,7 @@ end
 
 function CDOTA_BaseNPC:EquipItemsFromPlayerSelectionOrDefault()
 	local playerID = self:GetPlayerID()
-	local heroName = GetFullHeroName(self)
+	local heroName = self:GetFullName()
 	local ItemSet = {}
 	local DotaItems = DynamicWearables.DefaultWearables[heroName]
 	if DotaItems then table.merge(ItemSet, DotaItems) end
@@ -170,7 +170,7 @@ end
 function DynamicWearables:CanPlayerEquipWearable(PlayerID, wearableId)
 	local hero = PlayerResource:GetSelectedHeroEntity(PlayerID)
 	if hero then
-		local heroname = GetFullHeroName(hero)
+		local heroname = hero:GetFullName()
 		local DotaHeroWearables = self.DotaWearablesByHeroes[heroname]
 		if DotaHeroWearables[wearableId] then
 			return true

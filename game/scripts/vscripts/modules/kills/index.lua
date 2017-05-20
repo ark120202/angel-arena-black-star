@@ -1,23 +1,6 @@
+ModuleRequire(..., "data")
 if not Kills then
 	_G.Kills = class({})
-	Kills.GoldForStreaks = {
-		[0] = 0,
-		[1] = 50,
-		[2] = 100,
-		[3] = 250,
-		[4] = 500,
-		[5] = 700,
-		[6] = 1000,
-		[7] = 1500,
-		[8] = 2500,
-		[9] = 4000,
-		[10] = 6000,
-		[11] = 9000,
-		[12] = 12000,
-		[13] = 16000,
-		[14] = 21000,
-		[15] = 30000
-	}
 end
 
 function Kills:GetGoldForKill(killedUnit)
@@ -34,7 +17,7 @@ function Kills:GetKillStreak(player)
 end
 
 function Kills:GetKillStreakGold(player)
-	return Kills.GoldForStreaks[Kills:GetKillStreak(player)] or Kills.GoldForStreaks[#Kills.GoldForStreaks]
+	return KILL_STREAK_GOLD[Kills:GetKillStreak(player)] or KILL_STREAK_GOLD[#KILL_STREAK_GOLD]
 end
 
 function Kills:IncreaseKillStreak(player)

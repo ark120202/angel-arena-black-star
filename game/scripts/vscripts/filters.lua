@@ -170,11 +170,11 @@ function GameMode:DamageFilter(filterTable)
 					if multiplier.BlockedDamage then
 						BlockedDamage = math.max(BlockedDamage, multiplier.BlockedDamage)
 					end
-					if multiplier.multiplier then
-						multiplier = multiplier.multiplier
-					end
 					if multiplier.LifestealPercentage then
 						LifestealPercentage = math.max(LifestealPercentage, multiplier.LifestealPercentage)
+					end
+					if multiplier.multiplier then
+						multiplier = multiplier.multiplier
 					end
 				end
 				--print("Raw damage: " .. filterTable.damage .. ", after " .. k .. ": " .. filterTable.damage * multiplier .. " (multiplier: " .. multiplier .. ")")

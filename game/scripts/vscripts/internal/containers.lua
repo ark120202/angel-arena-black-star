@@ -13,9 +13,9 @@ function ContainersHelper:CreateShops()
 	end
 	for _,v in ipairs(Entities:FindAllByName("target_mark_containers_shop_duel")) do
 		local DuelShop = CreateItemOnPositionSync(v:GetAbsOrigin(), nil) 
-		DuelShop:SetModel("models/courier/greevil/gold_greevil.vmdl")
-		DuelShop:SetForwardVector(Vector(0, 1, 0.2))
-		DuelShop:SetModelScale(1.75)
+		DuelShop:SetModel("models/heroes/shopkeeper/shopkeeper.vmdl")
+		SecretShop:SetForwardVector(Vector(-1, 0, 0))
+		DuelShop:SetModelScale(2.25)
 		ContainersHelper:CreateShop(DuelShop, ShopsData.Duel, "#containers_shop_duel_name", 192, {3})
 	end
 end

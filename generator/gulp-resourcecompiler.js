@@ -1,13 +1,13 @@
 /* eslint no-plusplus: "off" */
 //gulp-resourcecompiler
 //Supports: js, css, xml, vmap, vsndevts, audio, vpcf, vmdl, vtex, vmat. Not works with panorama's vtex
-const Promise = require("bluebird");
-const gutil = require("gulp-util");
-const through = require("through2");
-const exec = require("child_process").exec;
-const fs = require("fs-extra");
-const path = require("path");
-const tempDir = __dirname + "/temp";
+const Promise = require('bluebird');
+const gutil = require('gulp-util');
+const through = require('through2');
+const exec = require('child_process').exec;
+const fs = require('fs-extra');
+const path = require('path');
+const tempDir = __dirname + '/temp';
 
 const vtex_template = `<!-- dmx encoding keyvalues2_noids 1 format vtex 1 -->
 "CDmeVtex"
@@ -77,7 +77,7 @@ function compile(executable, pathReplacer, customArgs) {
 		}
 
 		if (file.isStream()) {
-			callback(new gutil.PluginError("gulp-resourcecompiler", "Streaming not supported"));
+			callback(new gutil.PluginError('gulp-resourcecompiler', 'Streaming not supported'));
 			return;
 		}
 
@@ -91,19 +91,19 @@ function compile(executable, pathReplacer, customArgs) {
 			}*/
 			let args = [];
 			args.push('"' + executable + '"');
-			args.push("-f");
-			args.push("-fshallow");
-			args.push("-quiet");
-			args.push("-nop4");
-			args.push("-outroot");
+			args.push('-f');
+			args.push('-fshallow');
+			args.push('-quiet');
+			args.push('-nop4');
+			args.push('-outroot');
 			args.push('"' + tempDir + '"');
-			args.push("-i");
+			args.push('-i');
 			args.push('"' + filePath + '"');
 			if (customArgs) args.concat(customArgs);
 
-			exec(args.join(" "), (err, stdout/*, stderr*/) => {
+			exec(args.join(' '), (err, stdout/*, stderr*/) => {
 				if (err) {
-					this.emit("error", new gutil.PluginError("gulp-resourcecompiler", new Error(stdout), {fileName: file.path}));
+					this.emit('error', new gutil.PluginError('gulp-resourcecompiler', new Error(stdout), {fileName: file.path}));
 					return;
 				}
 				let compiledFilePath;
@@ -114,22 +114,22 @@ function compile(executable, pathReplacer, customArgs) {
 					})
 					.then(buffer => {
 						file.contents = buffer;
-						file.path = file.path.substr(0, file.path.lastIndexOf(".")) + path.extname(compiledFilePath);
+						file.path = file.path.substr(0, file.path.lastIndexOf('.')) + path.extname(compiledFilePath);
 						this.push(file);
 						return fs.emptyDir(tempDir);
 					})
 					.then(callback)
 					.catch(err => {
-						this.emit("error", new gutil.PluginError("gulp-resourcecompiler", err, {fileName: file.path}));
+						this.emit('error', new gutil.PluginError('gulp-resourcecompiler', err, {fileName: file.path}));
 					});
 			});
 		} catch (err) {
-			this.emit("error", new gutil.PluginError("gulp-resourcecompiler", err, {fileName: file.path}));
+			this.emit('error', new gutil.PluginError('gulp-resourcecompiler', err, {fileName: file.path}));
 		}
 	});
 }
 
-module.exports = compile;
+module.exports = (executable, pathReplacer) => customArgs => compile(executable, pathReplacer, customArgs);
 
 /*
 "G:\Program Files\Steam\steamapps\common\dota 2 beta\game\bin\win64\resourcecompiler.exe" -fshallow -maxtextureres 256 -dxlevel 110 -quiet -html -unbufferedio -i "g:/program files/steam/steamapps/common/dota 2 beta/content/dota_addons/angelarenablackstar_develop/maps/5v5_ranked.vmap"  -world -entities -phys -vis -gridnav -breakpad  -nop4 -outroot "G:\Apps\git\aabs-server-legacy\outtest"

@@ -388,11 +388,10 @@
 				"var_type"	"FIELD_FLOAT"
 				"self_bonus_movespeed_pct"	"9 13.5 18 22.5 27 31.5 36"
 			}
-			// Extra variables
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"global_radius"		"20000"
+				"global_radius"		"99999"
 			}
 		}
 		

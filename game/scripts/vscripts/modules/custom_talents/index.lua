@@ -1,4 +1,4 @@
-require("custom_talents/data")
+ModuleRequire(..., "data")
 if not CustomTalents then
 	CustomTalents = class({})
 	CustomTalents.ModifierApplier = CreateItem("item_talent_modifier_applier", nil, nil)
@@ -23,7 +23,7 @@ local modifiers = {
 	--rune multiplier
 }
 for _,v in pairs(modifiers) do
-	LinkLuaModifier("modifier_talent_" .. v, "custom_talents/modifier_talent_" .. v, LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_talent_" .. v, "modules/custom_talents/modifiers/modifier_talent_" .. v, LUA_MODIFIER_MOTION_NONE)
 end
 
 function CustomTalents:Init()
@@ -106,11 +106,10 @@ end
 function CDOTA_BaseNPC:CanUpgradeTalent(name)
 	local group = CustomTalents:Talent_GetGroup(name)
 	local requirement = CUSTOM_TALENTS_DATA[name].requirement
-	--print(self:GetAbilityPoints() >= CustomTalents:Talent_GetCost(name), self:GetLevel() >= TALENT_GROUP_TO_LEVEL[group], self:GetLastUpgradedTalentGroup() + 1 >= group, (not requirement or (NPC_HEROES_CUSTOM[requirement] ~= nil and GetFullHeroName(self) == requirement) or self:HasAbility(requirement)), self:GetTalentLevel(name) < (CUSTOM_TALENTS_DATA[name].max_level or 1))
 	return self:GetAbilityPoints() >= CustomTalents:Talent_GetCost(name)
 		and self:GetLevel() >= TALENT_GROUP_TO_LEVEL[group]
 		and self:GetLastUpgradedTalentGroup() + 1 >= group
-		and (not requirement or (NPC_HEROES_CUSTOM[requirement] ~= nil and GetFullHeroName(self) == requirement) or self:HasAbility(requirement))
+		and (not requirement or (NPC_HEROES_CUSTOM[requirement] ~= nil and self:GetFullName() == requirement) or self:HasAbility(requirement))
 		and self:GetTalentLevel(name) < (CUSTOM_TALENTS_DATA[name].max_level or 1)
 end
 
@@ -238,8 +237,5 @@ function CDOTA_BaseNPC:UpgradeTalent(name)
 				self:CalculateStatBonus()
 			end
 		end
-		--[[if self.OnTalentUpgrade then
-
-		end]]
 	end
 end

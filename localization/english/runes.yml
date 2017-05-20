@@ -43,6 +43,6 @@ custom_runes_rune_8_text: Increases attack speed by 90 and multiplies all incomi
 custom_runes_rune_9_title: Vibration
 custom_runes_rune_9_text: Pushes all enemies from you in 350 radius
 custom_runes_rune_10_title: Soul Steal
-custom_runes_rune_10_text: Heals you for 8% of damage recieved by any ally within 500 range for 32 seconds
+custom_runes_rune_10_text: Heals you for 15% of damage recieved by any ally within 1200 range for 45 seconds
 custom_runes_rune_11_title: Spikes
-custom_runes_rune_11_text: Reflects 75% of incoming damage to attacker for 15 seconds
+custom_runes_rune_11_text: Reflects 75% of incoming damage to attacker for 25 seconds

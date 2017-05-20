@@ -143,7 +143,7 @@ end
 
 -- Works for heroes and units on the same table due to merging both tables on game init
 function CDOTA_BaseNPC:GetKeyValue(key, level, bOriginalHero)
-	return GetUnitKV(bOriginalHero and self:GetUnitName() or GetFullHeroName(self), key, level)
+	return GetUnitKV(bOriginalHero and self:GetUnitName() or self:GetFullName(), key, level)
 end
 
 -- Dynamic version of CDOTABaseAbility:GetAbilityKeyValues()

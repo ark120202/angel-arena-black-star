@@ -21,6 +21,7 @@ local requirements = {
 	"libraries/worldpanels",
 	"libraries/CosmeticLib",
 	"libraries/PopupNumbers",
+	"libraries/statcollection/init",
 	--------------------------------------------------
 	"data/constants",
 	"data/globals",
@@ -34,33 +35,20 @@ local requirements = {
 	"data/ability_shop",
 	"data/commands",
 	"data/neutrals",
+	"data/wearables",
 	--------------------------------------------------
 	"internal/gamemode",
 	"internal/events",
 	--------------------------------------------------
 	"events",
 	"custom_events",
-	"spawner",
-	"bosses",
-	"duel",
-	"hero_selection/main",
-	"internal/containers",
-	"herovoice",
-	"gold",
-	"kills",
-	"panorama_shop",
-	"options",
-	"statcollection/init",
-	"SimpleAI",
-	"dynamic_minimap",
-	"custom_runes/custom_runes",
-	"stats_client",
 	"filters",
-	"ability_shop",
-	"custom_talents/custom_talents",
-	"dynamic_wearables/dynamic_wearables",
-	"data/wearables",
+
+	"internal/containers",
+
+	"modules/index"
 }
+
 local modifiers = {
 	modifier_item_shard_attackspeed_stack = "items/lua/modifiers/modifier_item_shard_attackspeed_stack",
 	modifier_apocalypse_apocalypse = "heroes/hero_apocalypse/modifier_apocalypse_apocalypse",
@@ -81,8 +69,7 @@ AllPlayersInterval = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
 for i = 1, #requirements do
 	require(requirements[i])
 end
-
-_G.JSON = require("libraries/json")
+JSON = require("libraries/json")
 
 for k,v in pairs(modifiers) do
 	LinkLuaModifier(k, v, LUA_MODIFIER_MOTION_NONE)
@@ -131,7 +118,7 @@ function GameMode:PostLoadPrecache()
 end
 
 function GameMode:OnFirstPlayerLoaded()
-	if Options:IsEquals("EnableAbilityShop") then
+	if Options:IsEquals("MainHeroList", "NoAbilities") then
 		AbilityShop:PrepareData()
 	end
 end
@@ -226,7 +213,7 @@ function GameMode:GameModeThink()
 		if PlayerResource:IsValidPlayerID(i) then
 			local hero = PlayerResource:GetSelectedHeroEntity(i)
 			if hero then
-				hero:SetNetworkableEntityInfo("unit_name", GetFullHeroName(hero))
+				hero:SetNetworkableEntityInfo("unit_name", hero:GetFullName())
 			end
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 				local gold_per_tick = CUSTOM_GOLD_PER_TICK

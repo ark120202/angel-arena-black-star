@@ -33,13 +33,8 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"critical_chance_pct"	"133"
+				"critical_chance_pct"	"33"
 			}
-		}
-
-		"precache"
-		{
-			"particle"  "particles/arena/units/heroes/hero_anakim/attack_wisp.vpcf"
 		}
 
 		"OnCreated"
@@ -57,15 +52,6 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_anakim/wisps.lua"
-						"Function"		"CreateParticles"
-					}
-				}
 
 				"OnAttackStart"
 				{
@@ -77,12 +63,12 @@
 
 					"Random"
 					{
-						"Chance" "%critical_chance_pct"
+						"Chance"		"%critical_chance_pct"
 						"OnSuccess"
 						{
 							"ApplyModifier"
 							{
-								"ModifierName" 	"modifier_anakim_wisps_crit"
+								"ModifierName"	"modifier_anakim_wisps_crit"
 								"Target"    	"CASTER"    
 							}        
 						}
@@ -92,31 +78,19 @@
 
 			"modifier_anakim_wisps_crit"
 			{
-				"IsHidden"  "1"
+				"IsPurgable"		"0"
+				"IsHidden"			"1"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%critical_damage_pct"
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%critical_damage_pct"
 				}
 
 				"OnAttackLanded"
 				{
-					"FireSound"
-					{
-						"EffectName"	"Arena.Hero_Kadash.AssasinsSkills.Critical"
-						"Target"		"CASTER"
-					}
-
-					"FireEffect"
-					{
-						"EffectName" 		"particles/arena/units/heroes/hero_kadash/assasins_skills_weapon_blur_critical.vpcf"
-						"EffectAttachType"  "attach_attack1"
-						"Target"    		"CASTER"
-					}
-
 					"RemoveModifier"
 					{
-						"ModifierName"  "modifier_anakim_wisps_crit"
-						"Target"   		"CASTER"    
+						"ModifierName"			"modifier_anakim_wisps_crit"
+						"Target"				"CASTER"
 					}
 				}
 			}
@@ -233,7 +207,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"healht_regen"	"1.0 1.5 3.0 5.0 7.0 10.0 15.0"
+				"health_regen"	"1.0 1.5 3.0 5.0 7.0 10.0 15.0"
 			}
 			"02"
 			{
@@ -248,7 +222,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"global_radius"		"20000"
+				"global_radius"		"99999"
 			}
 		}
 
@@ -266,7 +240,7 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%healht_regen"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%health_regen"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magical_resistance_pct"
 				}
@@ -345,6 +319,7 @@
 				"health_regeneration"	"%knight_health_regen"
 				"gold"					"%knight_bounty"
 				"xp"					"%knight_xp"
+				"max_units"				"1"
 			}	
 		}
 	}

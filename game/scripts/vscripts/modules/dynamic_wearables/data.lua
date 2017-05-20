@@ -1,3 +1,6 @@
+WEARABLES_ATTACH_METHOD_DOTA = 0
+WEARABLES_ATTACH_METHOD_ATTACHMENTS = 1
+
 CUSTOM_WEARABLES_PLAYER_ITEMS = {
 	--ark120202
 	[109792606] = {
@@ -87,37 +90,37 @@ CUSTOM_WEARABLES = {
 					{
 						index = 1,
 						attach = PATTACH_POINT_FOLLOW,
-						attachment = "attach_spirit2"
+						attachment = "attach_spirit5"
 					},
 					{
 						index = 2,
 						attach = PATTACH_POINT_FOLLOW,
-						attachment = "attach_spirit3"
+						attachment = "attach_spirit7"
 					},
 					{
 						index = 3,
 						attach = PATTACH_POINT_FOLLOW,
-						attachment = "attach_spirit4"
+						attachment = "attach_spirit2"
 					},
 					{
 						index = 4,
 						attach = PATTACH_POINT_FOLLOW,
-						attachment = "attach_spirit5"
+						attachment = "attach_spirit8"
 					},
 					{
 						index = 5,
 						attach = PATTACH_POINT_FOLLOW,
-						attachment = "attach_spirit6"
+						attachment = "attach_spirit4"
 					},
 					{
 						index = 6,
 						attach = PATTACH_POINT_FOLLOW,
-						attachment = "attach_spirit7"
+						attachment = "attach_spirit6"
 					},
 					{
 						index = 7,
 						attach = PATTACH_POINT_FOLLOW,
-						attachment = "attach_spirit8"
+						attachment = "attach_spirit3"
 					},
 				}
 			}

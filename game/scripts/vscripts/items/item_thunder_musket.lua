@@ -2,7 +2,7 @@ function UpdateRangedBonus(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 
-	if IsRangedUnit(caster) then
+	if caster:IsRangedUnit() then
 		if not caster:HasModifier("modifier_item_thunder_musket_ranged") then
 			ability:ApplyDataDrivenModifier(caster, caster, "modifier_item_thunder_musket_ranged", nil)
 		end
@@ -11,7 +11,7 @@ function UpdateRangedBonus(keys)
 		elseif caster:HasModifier("modifier_item_thunder_musket_ranged_thunderstruck") and not ability:IsCooldownReady() then
 			caster:RemoveModifierByName("modifier_item_thunder_musket_ranged_thunderstruck")
 		end
-	elseif (caster:HasModifier("modifier_item_thunder_musket_ranged") or caster:HasModifier("modifier_item_thunder_musket_ranged_thunderstruck")) and not IsRangedUnit(caster) then
+	elseif (caster:HasModifier("modifier_item_thunder_musket_ranged") or caster:HasModifier("modifier_item_thunder_musket_ranged_thunderstruck")) and not caster:IsRangedUnit() then
 		caster:RemoveModifierByName("modifier_item_thunder_musket_ranged")
 		caster:RemoveModifierByName("modifier_item_thunder_musket_ranged_thunderstruck")
 	end

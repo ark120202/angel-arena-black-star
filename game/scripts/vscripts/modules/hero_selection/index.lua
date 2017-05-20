@@ -9,10 +9,10 @@ if not HeroSelection then
 	HeroSelection.GameStartTimers = {}
 end
 
-require("hero_selection/util")
-require("hero_selection/linked")
-require("hero_selection/hero_selection")
-require("hero_selection/client_actions")
+ModuleRequire(..., "util")
+ModuleRequire(..., "linked")
+ModuleRequire(..., "hero_selection")
+ModuleRequire(..., "client_actions")
 
 HERO_SELECTION_PHASE_NOT_STARTED = 0
 HERO_SELECTION_PHASE_BANNING = 1

@@ -281,6 +281,7 @@ var adsEnabledLangs = [
 	'russian',
 	'ukrainian',
 	'bulgarian',
+	'english'
 ];
 
 function OnAdsClicked() {

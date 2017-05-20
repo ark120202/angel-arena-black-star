@@ -2,7 +2,7 @@ function SpellCheck(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	if PERSONALITY_STEAL_BANNED_HEROES[GetFullHeroName(target)] then
+	if PERSONALITY_STEAL_BANNED_HEROES[target:GetFullName()] then
 		ability:EndCooldown()
 		ability:RefundManaCost()
 		Containers:DisplayError(caster:GetPlayerID(), "#dota_hud_error_cant_steal_spell")

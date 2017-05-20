@@ -1,26 +1,3 @@
-
-
--- Colors
-COLOR_NONE = '\x06'
-COLOR_GRAY = '\x06'
-COLOR_GREY = '\x06'
-COLOR_GREEN = '\x0C'
-COLOR_DPURPLE = '\x0D'
-COLOR_SPINK = '\x0E'
-COLOR_DYELLOW = '\x10'
-COLOR_PINK = '\x11'
-COLOR_RED = '\x12'
-COLOR_LGREEN = '\x15'
-COLOR_BLUE = '\x16'
-COLOR_DGREEN = '\x18'
-COLOR_SBLUE = '\x19'
-COLOR_PURPLE = '\x1A'
-COLOR_ORANGE = '\x1B'
-COLOR_LRED = '\x1C'
-COLOR_GOLD = '\x1D'
-
------------------------------------------------------------------------------------------------
-
 function GetAllPlayers(bOnlyWithHeroes)
 	local Players = {}
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
@@ -127,24 +104,6 @@ function GenerateAttackProjectile(unit, optAbility)
 		bProvidesVision = false
 	}
 	return projectile_info
-end
-
-function IsRangedUnit(unit)
-	return unit:IsRangedAttacker() or unit:HasModifier("modifier_terrorblade_metamorphosis_transform_aura_applier")
-end
-
-function TrueKill(killer, ability, target)
-	target.IsMarkedForTrueKill = true
-	target:Kill(ability, killer)
-	if IsValidEntity(target) and target:IsAlive() then
-		RemoveDeathPreventingModifiers(target)
-		target:Kill(ability, killer)
-	end
-	target.IsMarkedForTrueKill = false
-end
-
-function CDOTA_BaseNPC:TrueKill(ability, killer)
-	TrueKill(killer, ability, self)
 end
 
 function FindFountain(team)
@@ -341,7 +300,7 @@ end
 --illusion_incoming_damage = tooltip - 100
 --illusion_outgoing_damage = tooltip - 100
 function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage, illusion_outgoing_damage, illusion_duration)
-	local heroname = GetFullHeroName(unit)
+	local heroname = unit:GetFullName()
 	local unitname = unit:GetUnitName()
 	local illusion = CreateUnitByName(unitname, illusion_origin, true, unit, unit:GetPlayerOwner(), unit:GetTeamNumber())
 	FindClearSpaceForUnit(illusion, illusion_origin, true)
@@ -399,7 +358,7 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 		end
 	end
 	illusion.UnitName = unit.UnitName
-	illusion:SetNetworkableEntityInfo("unit_name", GetFullHeroName(illusion))
+	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
 	if not NPC_HEROES[heroname] and NPC_HEROES_CUSTOM[heroname] then
 		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroname], true)
 	end
@@ -635,10 +594,6 @@ function CreateSimpleBox(point1, point2)
 	return Physics:CreateBox(new2, new1, hlen, true)
 end
 
-function CDOTA_BaseNPC:IsRealCreep()
-	return self.SSpawner ~= nil and self.SpawnerType ~= nil
-end
-
 function FindUnitsInBox(teamNumber, vStartPos, vEndPos, cacheUnit, teamFilter, typeFilter, flagFilter)
 	local hlen = (vEndPos.y-vStartPos.y) / 2
 	local cen = vStartPos.y+hlen
@@ -687,10 +642,6 @@ end
 
 function GetSpellDamageAmplify(unit)
 	return unit:GetIntellect() * 0.0625
-end
-
-function CDOTA_BaseNPC:GetSpellDamageAmplify()
-	return GetSpellDamageAmplify(self)
 end
 
 function IsUltimateAbility(ability)
@@ -788,84 +739,8 @@ function CreateExplosion(position, minRadius, fullRdius, minForce, fullForce, te
 	end
 end
 
-function CEntityInstance:SetNetworkableEntityInfo(key, value)
-	local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
-	t[key] = value
-	CustomNetTables:SetTableValue("custom_entity_values", tostring(self:GetEntityIndex()), t)
-end
-
-function CEntityInstance:ClearNetworkableEntityInfo()
-	CustomNetTables:SetTableValue("custom_entity_values", tostring(self:GetEntityIndex()), nil)
-end
-
 function IsInBox(point, point1, point2)
-	print(point, point.x > point1.x, point.y > point1.y, point.x < point2.x, point.y < point2.y)
 	return point.x > point1.x and point.y > point1.y and point.x < point2.x and point.y < point2.y
-end
-
-function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
-	local time = (5 + self:GetLevel() * 0.1) + (self.RespawnTimeModifier or 0)
-	if self.talent_keys and self.talent_keys.respawn_time_reduction then
-		time = time + self.talent_keys.respawn_time_reduction
-	end
-	return math.max(time, 3)
-end
-
-function CDOTA_BaseNPC_Hero:IsWukongsSummon()
-	return self:HasModifier("modifier_monkey_king_fur_army_soldier") or self:HasModifier("modifier_monkey_king_fur_army_soldier_inactive") or self:HasModifier("modifier_monkey_king_fur_army_soldier_hidden")
-end
-
-function CDOTA_BaseNPC_Hero:GetTotalHealthReduction()
-	local pct = self:GetModifierStackCount("modifier_kadash_immortality_health_penalty", self)
-	local mod = self:FindModifierByName("modifier_stegius_brightness_of_desolate_effect")
-	if mod then
-		pct = pct + mod:GetAbility():GetAbilitySpecial("health_decrease_pct")
-	end
-	------------
-	local sara_evolution = self:FindAbilityByName("sara_evolution")
-	if sara_evolution then
-		local dec = sara_evolution:GetSpecialValueFor("health_reduction_pct")
-		return dec + ((100-dec) * pct * 0.01)
-	end
-	return pct
-end
-
-function CDOTA_BaseNPC_Hero:CalculateHealthReduction()
-	self:CalculateStatBonus()
-	local pct = self:GetTotalHealthReduction()
-	self:SetMaxHealth(pct >= 100 and 1 or self:GetMaxHealth() - pct * (self:GetMaxHealth()/100))
-end
-
-function CDOTA_BaseNPC_Hero:ResetAbilityPoints()
-	self:SetAbilityPoints(self:GetLevel() - self:GetAbilityPointsWastedAllOnTalents())
-end
-
-function GetFullHeroName(unit)
-	return unit.UnitName or unit:GetUnitName()
-end
-
-function CDOTA_BaseNPC:GetFullName()
-	return self.UnitName or (self.GetUnitName and self:GetUnitName()) or self:GetName()
-end
-
-function CDOTA_BaseNPC:DestroyAllModifiers()
-	for _,v in ipairs(self:FindAllModifiers()) do
-		v:Destroy()
-	end
-end
-
-function CDOTA_BaseNPC:HasModelChanged()
-	if self:HasModifier("modifier_terrorblade_metamorphosis") or self:HasModifier("modifier_monkey_king_transform") or self:HasModifier("modifier_lone_druid_true_form") then
-		return true
-	end
-	for _, modifier in ipairs(self:FindAllModifiers()) do
-		if modifier.DeclareFunctions and table.contains(modifier:DeclareFunctions(), MODIFIER_PROPERTY_MODEL_CHANGE) then
-			if modifier.GetModifierModelChange and modifier:GetModifierModelChange() then
-				return true
-			end
-		end
-	end
-	return false
 end
 
 function GetConnectionState(pid)
@@ -892,50 +767,6 @@ function DebugCallFunction(fun)
 		Timers:HandleEventError(nil, nil, nextCall)
 	end
 end
-function CDOTA_BaseNPC:FindClearSpaceForUnitAndSetCamera(position)
-	self:Stop()
-	PlayerResource:SetCameraTarget(self:GetPlayerOwnerID(), self)
-	FindClearSpaceForUnit(self, position, true)
-	Timers:CreateTimer(0.1, function()
-		if IsValidEntity(self) then
-			PlayerResource:SetCameraTarget(self:GetPlayerOwnerID(), nil)
-			self:Stop()
-		end
-	end)
-end
-
-function CDOTA_BaseNPC:SetPlayerStat(key, value)
-	if self.GetPlayerOwnerID and self:GetPlayerOwnerID() > -1 then
-		PlayerResource:SetPlayerStat(self:GetPlayerOwnerID(), key, value)
-	end
-end
-function CDOTA_BaseNPC:GetPlayerStat(key)
-	if self.GetPlayerOwnerID and self:GetPlayerOwnerID() > -1 then
-		return PlayerResource:GetPlayerStat(self:GetPlayerOwnerID(), key)
-	end
-end
-function CDOTA_BaseNPC:ModifyPlayerStat(key, value)
-	if self.GetPlayerOwnerID and self:GetPlayerOwnerID() > -1 then
-		return PlayerResource:ModifyPlayerStat(self:GetPlayerOwnerID(), key, value)
-	end
-end
-function CDOTA_BaseNPC:IsTrueHero()
-	return self:IsRealHero() and not self:IsTempestDouble() and not self:IsWukongsSummon()
-end
-function CDOTA_PlayerResource:SetPlayerStat(PlayerID, key, value)
-	local pd = PLAYER_DATA[PlayerID]
-	if not pd.HeroStats then pd.HeroStats = {} end
-	pd.HeroStats[key] = value
-end
-function CDOTA_PlayerResource:GetPlayerStat(PlayerID, key)
-	local pd = PLAYER_DATA[PlayerID]
-	return pd.HeroStats == nil and 0 or (pd.HeroStats[key] or 0)
-end
-function CDOTA_PlayerResource:ModifyPlayerStat(PlayerID, key, value)
-	local v = self:GetPlayerStat(PlayerID, key) + value
-	self:SetPlayerStat(PlayerID, key, v)
-	return v
-end
 
 function GetInGamePlayerCount()
 	local counter = 0
@@ -957,32 +788,6 @@ function GetTeamAllPlayerCount(iTeam)
 		end
 	end
 	return counter
-end
-
-function CDOTA_BaseNPC:UpdateAttackProjectile()
-	local projectile
-	for i = #ATTACK_MODIFIERS, 1, -1 do
-		local attack_modifier = ATTACK_MODIFIERS[i]
-		local apply = true
-		if attack_modifier.modifiers then
-			for _,v in ipairs(attack_modifier.modifiers) do
-				if not self:HasModifier(v) then
-					apply = false
-					break
-				end
-			end
-		end
-		if apply and attack_modifier.modifier then
-			apply = self:HasModifier(attack_modifier.modifier)
-		end
-		if apply then
-			projectile = attack_modifier.projectile
-			break
-		end
-	end
-	projectile = projectile or self:GetKeyValue("ProjectileModel")
-	self:SetRangedProjectileName(projectile)
-	return projectile
 end
 
 function Lifesteal(ability, unit, target, damage)
@@ -1025,57 +830,6 @@ function GetPreMitigationDamage(value, victim, attacker, damagetype)
 	end
 end
 
-function CDOTA_PlayerResource:SetPlayerTeam(playerID, newTeam)
-	local oldTeam = self:GetTeam(playerID)
-	local player = self:GetPlayer(playerID)
-	local hero = self:GetSelectedHeroEntity(playerID)
-	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
-	local playerPickData = {}
-	local tableData = PlayerTables:GetTableValue("hero_selection", oldTeam)
-	if tableData and tableData[playerID] then
-		table.merge(playerPickData, tableData[playerID])
-		tableData[playerID] = nil
-		PlayerTables:SetTableValue("hero_selection", oldTeam, tableData)
-	end
-
-	for _,v in ipairs(FindAllOwnedUnits(player)) do
-		v:SetTeam(newTeam)
-	end
-	player:SetTeam(newTeam)
-
-	PlayerResource:UpdateTeamSlot(playerID, newTeam, 1)
-	PlayerResource:SetCustomTeamAssignment(playerID, newTeam)
-
-	local newTableData = PlayerTables:GetTableValue("hero_selection", newTeam)
-	if newTableData and playerPickData then
-		newTableData[playerID] = playerPickData
-		PlayerTables:SetTableValue("hero_selection", newTeam, newTableData)
-	end
-	--[[for _, v in ipairs(Entities:FindAllByClassname("npc_dota_courier") ) do
-		v:SetControllableByPlayer(playerID, v:GetTeamNumber() == newTeam)
-	end]]
-	--FindCourier(oldTeam):SetControllableByPlayer(playerID, false)
-	local targetCour = FindCourier(newTeam)
-	if IsValidEntity(targetCour) then
-		targetCour:SetControllableByPlayer(playerID, true)
-	end
-	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
-	PlayerTables:AddPlayerSubscription("dynamic_minimap_points_" .. newTeam, playerID)
-
-	for i = 0, hero:GetAbilityCount() - 1 do
-		local skill = hero:GetAbilityByIndex(i)
-		if skill then
-			--print(skill.GetIntrinsicModifierName and skill:GetIntrinsicModifierName())
-			if skill.GetIntrinsicModifierName and skill:GetIntrinsicModifierName() then
-				RecreateAbility(hero, skill)
-			end
-		end
-	end
-
-	CustomGameEventManager:Send_ServerToPlayer(player, "arena_team_changed_update", {})
-	PlayerResource:RefreshSelection()
-end
-
 function SimpleDamageReflect(victim, attacker, damage, flags, ability, damage_type)
 	if victim:IsAlive() and not HasDamageFlag(flags, DOTA_DAMAGE_FLAG_REFLECTION) and attacker:GetTeamNumber() ~= victim:GetTeamNumber() then
 		--print("Reflected " .. damage .. " damage from " .. victim:GetUnitName() .. " to " .. attacker:GetUnitName())
@@ -1092,51 +846,9 @@ function SimpleDamageReflect(victim, attacker, damage, flags, ability, damage_ty
 	return false
 end
 
-function CDOTA_BaseNPC:GetLinkedHeroNames()
-	return GetLinkedHeroNames(self:GetFullName())
-end
-
 function GetLinkedHeroNames(hero)
 	local linked = GetKeyValue(hero, "LinkedHero")
 	return linked and string.split(linked, " | ") or {}
-end
-
-function CDOTA_BaseNPC:GetLinkedHeroEntities()
-	local linked = self:GetLinkedHeroNames()
-	local ents = {}
-	for _,v in ipairs(linked) do
-		local plid = HeroSelection:GetSelectedHeroPlayer(v)
-		if plid then
-			local ent = PlayerResource:GetSelectedHeroEntity(plid)
-			table.insert(ents, ent)
-		end
-	end
-	return ents
-end
-
-function CDOTA_PlayerResource:SetDisableHelpForPlayerID(nPlayerID, nOtherPlayerID, disabled)
-	if nPlayerID ~= nOtherPlayerID then
-		if not PLAYER_DATA[nPlayerID].DisableHelp then
-			PLAYER_DATA[nPlayerID].DisableHelp = {}
-		end
-		PLAYER_DATA[nPlayerID].DisableHelp[nOtherPlayerID] = disabled
-
-		local disable_help_data = PlayerTables:GetTableValue("disable_help_data", nPlayerID)
-		disable_help_data[nOtherPlayerID] = PLAYER_DATA[nPlayerID][nOtherPlayerID]
-		PlayerTables:SetTableValue("disable_help_data", disable_help_data)
-	end
-end
-
-function CDOTA_PlayerResource:IsDisableHelpSetForPlayerID(nPlayerID, nOtherPlayerID)
-	return PLAYER_DATA[nPlayerID] ~= nil and PLAYER_DATA[nPlayerID].DisableHelp ~= nil and PLAYER_DATA[nPlayerID].DisableHelp[nOtherPlayerID] and PlayerResource:GetTeam(nPlayerID) == PlayerResource:GetTeam(nOtherPlayerID)
-end
-
-function CEntityInstance:CutTreeOrWard(caster, ability)
-	if self:GetClassname() == "ent_dota_tree" then
-		self:CutDown(caster:GetTeamNumber())
-	elseif self:IsCustomWard() then
-		self:TrueKill(ability, caster)
-	end
 end
 
 function IsModifierStrongest(unit, modifier, modifierList)
@@ -1150,8 +862,6 @@ function IsModifierStrongest(unit, modifier, modifierList)
 	return true
 end
 
---TODO
---[[function CDOTA_BaseNPC:AddNewModifierShared(hCaster, hAbility, pszScriptName, hModifierTable)
-	CustomNetTables:SetTableValue("shared_modifiers", self:GetEntityIndex() .. "_" .. pszScriptName, hModifierTable)
-	return self:AddNewModifier(hCaster, hAbility, pszScriptName, hModifierTable)
-end]]
+function ModuleRequire(this, file)
+	require(string.gsub(this, "index", "") .. file)
+end

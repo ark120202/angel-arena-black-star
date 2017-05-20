@@ -1,13 +1,13 @@
-local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
+local statInfo = LoadKeyValues('scripts/vscripts/libraries/statcollection/settings.kv')
 if not statInfo then
     print("Stat Collection: Critical Error, no settings.kv file found")
     return
 end
 
-require("statcollection/schema")
-require('statcollection/lib/statcollection')
-require('statcollection/staging')
-require('statcollection/lib/utilities')
+require("libraries/statcollection/schema")
+require('libraries/statcollection/lib/statcollection')
+require('libraries/statcollection/staging')
+require('libraries/statcollection/lib/utilities')
 
 local COLLECT_STATS = not Convars:GetBool('developer')
 local TESTING = tobool(statInfo.TESTING)
