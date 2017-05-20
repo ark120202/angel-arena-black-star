@@ -502,6 +502,8 @@ Storm spirit electric vortex
 Storm spirit overload
 	AbilityDuration 0.4 => 0.6
 Storm spirit ball lightning
+	CastPoint 0.3 => 0.3 0.3 0.3 0.3 0.3 0.3 0.2
+	Speed 800 1000 1200 1600 1800 2400 3000 => 1250 1500 1775 2000 2250 2500 2800
 	Ball lightning travel cost percent 0.4 => 1
 Sandking burrowstrike
 	AbilityCastRange 350 450 550 650 750 850 905 => 350 400 450 500 550 600 650
@@ -583,8 +585,8 @@ Tidehunter anchor smash
 	AbilityCooldown 10.0 9.0 8.0 7.0 6.0 5.0 4.0 => 7 6.5 6 5.5 5 4.5 4
 	AbilityDamage 75 125 175 225 300 375 425 => 65 95 145 200 250 300 375
 	AbilityManaCost 30 60 90 120 150 180 210 => 30 40 50 60 70 80 90
-	Damage reduction -45 -50 -55 -60 -65 -70 -75 => -35 -40 -45 -50 -55 -60 -65
-Tidehunter ravage
+	Damage reduction -45 -50 -55 -60 -65 -70 -75 => -35 -40 -45 -50 -55 -60 -65 %
+Tidehunter - Ravage:
 	AbilityCastPoint 0.3 => 0.3 0.3 0.3 0.25 0.2 0.15 0.1
 	AbilityCooldown 150.0 150.0 150.0 140.0 130.0 120.0 => 150 145 140 135 130 125 120
 	AbilityDamage 300 600 900 1200 1500 1800 2100 => 200 290 380 470 560 650 750
@@ -603,3 +605,241 @@ Vengefulspirit wave of terror
 	AbilityCooldown 10 => 22 21 20 19 18 17 16
 	AbilityManaCost 40 60 80 100 120 140 160 => 40 50 60 70 80 90 100
 	Armor reduction -3 -6 -9 -12 -15 -18 -21 => -3 -4 -5 -7 -9 -11 -13
+Windrunner - Shackleshot:
+	"AbilityCooldown" "12.0 12.0 12.0 12.0 14.0 16.0 18.0" => 15
+	"AbilityManaCost" "90 100 110 120 140 180 210" => "90 100 110 120 140 150 160"
+	"stun_duration"	"1.5 2.25 3.0 3.75 4.0 4.5 4.9" => "1.5 1.75 2.0 2.25 2.5 2.75 3"
+	"shackle_count" "1" => "1 1 1 1 2 3 4"
+	"shackle_angle"	"23" => "23 23 23 23 23 30 50"
+Windrunner - Powershot:
+	"AbilityCooldown" "10.0" => "12 11.5 11 10.5 10 9.5 9"
+	"AbilityDamage"	"120 220 320 420 540 600 666" => "180 260 340 420 500 580 666"
+Windrunner - Windrun:
+	"AbilityCooldown" "15" => "14"
+	"AbilityDuration" "3 4 5 6 7 8 9" => "3 3.5 4 4.5 5 5.5 6"
+	"AbilityManaCost" "100 100 100 100" => "75"
+	"movespeed_bonus_pct" "50 70 90 110 130 150 170" => "50"
+	"enemy_movespeed_bonus_pct"	"-8 -16 -24 -30 -38 -44 -50" => "-10 15 20 25 30 35 40"
+Windrunner - Focus Fire:
+	"AbilityDuration" "10" => "20"
+	"AbilityManaCost" "75 100 125 175 225 300 375" => "75 100 125 150 175 200 250"
+	"bonus_attack_speed" "500 600 700 800 900 1000 1100" => "600"
+	"focusfire_damage_reduction_scepter"	"-30 -15 5 10 15 20 25" => "-30 -15 0 10 20 30 40"
+Lich - Frost Nova:
+	"AbilityCastPoint" "0.4" => "0.4 0.4 0.4 0.4 0.4 0.3 0.2"
+	"AbilityCooldown" "10.0" => "8"
+	"AbilityDuration" "4.0" => 3
+	"AbilityDamage" "50 100 150 200 250 300 350" => "75 125 175 225 275 325 375"
+	"slow_attack_speed"	"-20 -20 -20 -20 -30 -40 -50" => "-20 -25 -30 -35 -45 -55 -70"
+	"aoe_damage" "75 125 228 300 375 425 500" => "75 100 125 150 175 200 225"
+Lich - Frost Armor:
+	"AbilityCastPoint" "0.4" => "0.4 0.4 0.4 0.4 0.4 0.3 0.2"
+	"AbilityCooldown" "8.0" => "5"
+	"AbilityManaCost" "50 90 120 150 180 210 240" => "50 60 70 80 90 100 110"
+	"armor_bonus" "3 5 7 9 15 20 25" => "3 6 9 12 15 18 21"
+Lich - Chain Frost:
+	"AbilityCooldown" "120.0 100.0 90.0 60.0 50.0 40.0 30.0" => "80 75 70 65 60 55 50"
+	"AbilityManaCost" "200 325 500 700 900 1100 1300" => "200 325 500 650 800 950 1050"
+	"damage" "280 370 460 600 750 900 1100" => "280 370 460 550 640 730 820"
+	"jumps"	"10 10 12 14 18 24 28" => "10 11 12 13 14 15 16"
+	"slow_movement_speed" "-30 -30 -30 -30 -30 -30 -30" => -60
+	"slow_attack_speed"	"-30 -30 -30 -30 -30 -30 -30" => "-60 -70 -80 -90 -100 -110 -120"
+	"slow_duration"	"4.0 4.0 4.0 4.0 4.0 4.0 4.0" => "2.5"
+	"damage_scepter" "370 460 600 750 900 1100 1300" => "370 460 550 640 730 820 950"
+Witch Doctor - Paralyzing Cask:
+	"AbilityCastPoint" " 0.35" => "0.35 0.35 0.35 0.35 0.35 0.3 0.2"
+	"AbilityCooldown" "20.0 18.0 16.0 14.0 13.0 11.0 10.0" => "20 19 18 17 16 15 14"
+	"AbilityDamage" "50 100 150 220 250 300 350" => "75 100 125 150 175 200 225"
+	"AbilityManaCost" "110 140 170 200 230 250 280" => "110 120 130 140 150 160 170"
+	"LevelsBetweenUpgrades"	is now standart
+	"hero_duration"	"1.5" => "1"
+	"bounces" "3 5 7 9 11 13 15" => "3 5 7 9 10 11 12"
+	"speed"	"1500" => 1000
+Witch Doctor - Voodoo Restoration:
+	"AbilityManaCost" "10 20 30 40 50 60 70" => "20 30 40 50 60 70 80"
+	"mana_per_second" "4 6 8 10 25 40 50" => "8 12 16 20 24 28 32"
+	"radius" "300 400 500 600 700 800 900" => "500 525 550 575 600 625 650"
+	"heal" "16 24 32 40 100 150 200" => "20 30 40 50 60 70 80"
+Witch Doctor - Maledict:
+	"AbilityCastPoint" "0.35" => "0.35 0.35 0.35 0.35 0.35 0.3 0.2"
+	"AbilityDamage"	"30 60 90 120 150 180 210" => "7 14 21 28 35 45 60"
+	"AbilityManaCost" "100 140 180 210 250 300 350" => "105 110 115 120 125 130 135"
+	"radius" "120 140 160 180 200 220 240" => "180"
+Witch Doctor - Death Ward:
+	"AbilityCastPoint" "0.35" => "0.35 0.35 0.35 0.35 0.35 0.3 0.2"
+	"AbilityCooldown" "60.0" => "80
+	"AbilityManaCost" "200 300 400 500 600 700 800" => "200 250 300 350 400 450 500"
+	"damage" "100 200 300 400 500 600 700" => "60 105 150 195 240 285 350"
+	"bounces_scepter" "4 5 6 7 8 9 999" => "4 4 4 4 5 6 7"
+	"bounce_radius"	"650 650 650 700 750 800 850" => "650 675 700 725 750 775 800"
+Riki - Smoke Screen:
+	"AbilityCastPoint" "0.4" => "0.4 0.4 0.4 0.4 0.4 0.3 0.2"
+	"AbilityManaCost" "75 80 85 90 110 130 150" => "100"
+	"radius" "250 275 300 325 350 375 400" => "250 270 290 310 330 350 370"
+	"miss_rate"	"40 50 60 70 75 80 90" => "40 45 50 55 60 65 70"
+	"movement_speed_reduction" "25 30 35 40 45 50 55" => "10 14 28 32 36 40 44"
+Riki - Blink Strike:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "16 15 14 13 12 8 4" => "12 11 10 9 8 6 4"
+	"tooltip_range"	"400 500 600 700 800 900 1000" => "700 715 730 745 760 775 800"
+	"bonus_damage" "20 40 60 80 100 120 140" => "55 70 85 100 115 130 145"
+Riki - Invisibility:
+	"damage_multiplier" spell damage amplify off
+	"fade_delay" "8 7 6 5 4 3 2" => "6 5.5 5 4.5 4 3.5 3"
+Riki - Tricks of the Trade:
+	"AbilityCastPoint" "0.2" => "0.3 0.3 0.3 0.3 0.25 0.2"
+	"AbilityCooldown" "75 70 60 55 40 35 30" => "35"
+	"AbilityManaCost" "75" => "100"
+	"attack_count" "4 5 6 8 10 12 14" => "4 5 6 8 10 12 14"
+Enigma - Malefice:
+	"AbilityCastPoint" "0.2" => "0.3 0.3 0.3 0.3 0.3 0.25 0.2"
+	"AbilityManaCost" "110 130 150 160 190 220 250" => "110 130 150 160 170 180 190"
+	"stun_duration"	"0.25 0.5 0.75 1.0 1.25 1.50 1.75" => "0.25 0.35 0.45 0.55 0.65 0.80 1"
+	"damage" "30 50 70 90 130 140 170" => "30 50 70 90 110 130 150"
+	"duration" "4.0 4.0 4.0 5.0 6.0 7.0 8.0" => "4"
+Enigma - Demonic Conversion:
+	"AbilityCastPoint" "0.3 0.3 0.3 0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"spawn_count" "3 5 6 7" => "4"
+	"split_attack_count" "6 5 4 3" => "5"
+Enigma - Midnight Pulse:
+	"AbilityCastPoint" "0.1" => "0.1 0.1 0.1 0.1 0.1 0.1 0.1 0"
+Enigma - Black Hole:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.3 0.2"
+	"far_damage" "55 110 165 350 450 550 650" => "50 100 150 200 250 300 350"
+Tinker - Laser:
+	"AbilityCastPoint" "0.4" => "0.4 0.4 0.4 0.4 0.4 0.35 0.3"
+	"duration_hero"	"3 3.5 4 4.5 5.0 5.5 6.0" => "3 3.3 3.6 3.9 4.2 4.5 5"
+	"cast_range_scepter" "650" => "700"
+Tinker - Seeking Missile:
+	"radius" "2500 2500 2500 2500 3000 3500 4000" => "2500 2600 2700 2800 2900 3000 3200"
+	"targets" "2 2 2 3 4 5 6" => "2"
+Tinker - March of the Machines:
+	"AbilityCastPoint" "0.3" => "0.53 0.53 0.53 0.53 0.3 0.1"
+	"AbilityDamage"	"20 40 60 80 100 120 140" => "20 28 36 42 50 60 80"
+	"AbilityManaCost" "145 180 200 220 240 260 280" => "145 150 165 180 195 215 250"
+	LevelsBetweenUpgrades now is standart
+	"speed"	"500 600 700 800 900 1000 1100" => "400 400 400 400 400 450 500"
+Sniper - Shrapnel:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityManaCost" "50 100 150 200 250 300 350" => "50 55 60 65 70 75 80"
+	LevelsBetweenUpgrades is now standart
+	"shrapnel_damage" "40 80 120 160 200 240 280" => "20 40 60 80 100 120 140"
+Sniper - Headshot:
+	"AbilityDamage"	"15 40 65 90 150 170 200" => "15 40 65 90 115 140 180"
+	"slow_duration"	"0.1 0.2 0.3 0.4 0.5 0.6 0.7" => "0.5"
+	"proc_chance" "45" => "40"
+Sniper - Take Aim:
+	"bonus_attack_range" "100 200 300 400 500 600 700" => "100 180 260 340 420 500 580"
+Sniper - Assassinate:
+	"AbilityCastRange" "2000 2500 3000 3500 4000 4500 5000" => "2000 2300 2600 2900 3200 3500 3800"
+	"AbilityCastPoint" "2.0 2.0 2.0 1.0 1.0 1.0 1.0" => "2 2 2 2 2 2 1.5"
+	"AbilityCooldown" "20 17 14 11 9 7 3" => "20 18 16 14 12 11 10"
+	"AbilityDamage"	"320 485 650 720 885 950 1100" => "320 485 650 700 825 925 1000"
+	"AbilityManaCost" "75 150 275 350 400 450 500" => "175 275 375 475 575 675 775"
+	"projectile_speed" "1500 2500 3000 3500 4000 4500 5000" => "2500 2550 2600 2650 2700 2750 2800"
+	"scepter_radius" "600" => "500"
+	"scepter_crit_bonus" "500" => "300"
+Necrophos - Death Pulse:
+	"AbilityCooldown" "10 9 8 7 6 5 4" => "8 7.5 7 6.5 6 5.5 5"
+	"AbilityDamage"	"125 175 225 275 300 400 500" => "80 120 160 200 250 300 350"
+	"area_of_effect" "400 425 450 475 500 525 550" => "475 485 495 505 515 525 535"
+	"heal" "70 90 110 130 200 300 400" => "60 80 100 120 140 165 200"
+	"health_regen" "1 3 5 7 9 11 13" => "1 3 5 7 8 9 10"
+	"mana_regen" "1 3 5 7 9 11 13" => "1 3 5 7 8 9 10"
+	"aura_damage" "0.2 0.4 0.6 0.8 1.0 1.2 1.4" => "0.6 0.7 0.8 0.9 1 1.2 1.4"
+Necrophos - Sadist:
+	"AbilityCooldown" "28 24 22 20 16 12 10" => "28 24 20 16 14 13 12"
+	"AbilityManaCost" "50 100 150 200 250 300 350" => "50 55 60 65 60 75 70"
+	"duration" "3 3.5 4 4.5 5.0 5.5 6.0" => "3 3.25 3.5 3.75 4 4.25 4.5"
+	"heal_bonus" "50 70 90 110 130 150 170" => "70 75 80 85 90 95 100"
+	"movement_speed" "12 20 28 36 42 50 58" => "12 16 20 24 26 32 36"
+	"bonus_damage" "-20 -30 -35 -40 -45 -55 -60" => "-20"
+Necrophos - Reapers Scythe:
+	"AbilityCastPoint" "0.4" => "0.5 0.5 0.5 0.5 0.5 0.4 0.3"
+	"AbilityCooldown" "100 85 70 60 60 60 60" => "100 95 90 85 80 75 70"
+	"damage_per_health"	"0.1 0.1 0.2 0.2 0.3 0.3 0.4" => "0.6 0.65 0.7 0.75 0.8 0.85 0.9"
+	"cooldown_scepter" "60 55 50 45 40 35 30" => "30"
+Beastmaster - Wild Axes:
+	"AbilityCastRange" "1300" => "1500"
+	"AbilityManaCost" "120 150 180 210 240 270 300" => "105 110 115 120 125 130 135"
+	"axe_damage" "120 240 360 480 600 720 840" => "70 100 130 160 200 250 300"
+Beastmaster - Inner Beast:
+	"radius" "900" => 15000
+	"bonus_attack_speed" "30 50 70 100 130 180 260" => "15 25 35 45 55 65 90"
+Beastmaster - Primal Roar:
+	"AbilityCastPoint" "0.4" => "0.5 0.5 0.5 0.5 0.5 0.4 0.3"
+	"damage" "300 500 700 900 1100 1400 1800" => "150 225 300 375 450 525 600"
+	"side_damage" "300 500 700 900 1100 1400 1800" => "150 225 300 375 450 525 600"
+	"slow_attack_speed_pct"	"-50 -50 -50 -50 -50 -50 -50" => "-50 -55 -60 -65 -70 -75 -80"
+	"slow_duration"	"2.0 3.0 4.0 5.0 6.0 7.0 8.0" => "2 2.5 3 3.5 4 4.5 5"
+	"cooldown_scepter" "45" => 35
+Queen of Pain - Shadow Strike:
+	"AbilityCooldown" "16.0 12.0 9.0 8.0 7.0 6.0 4.0" => "11 10 9 8 7 6 5"
+	"AbilityManaCost" "110 220 330 440 550 660 770" => "110 115 120 125 130 135 140"
+	"strike_damage"	"100 200 300 400 500 600 700" => "50 75 100 125 150 200 250"
+	"duration_damage" "30 40 50 60 70 80 90" => "30 45 60 75 90 105 130"
+	"movement_slow"	"-20 -30 -40 -50 -60 -70 -80" => "-25 -30 -35 -40 -45 -50 -55"
+Queen of Pain - Blink:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "22.0 20.0 18.0 16.0 14.0 12.0 10.0" => "13 11 10 9 8 7 6"
+Queen of Pain - Scream of Pain:
+	"AbilityDamage"  "75 150 225 300 375 450 750" => "75 150 225 300 375 450 550"
+Queen of pain - Sonic Wave:
+	"AbilityCastPoint" "0.45" => "0.45 0.45 0.45 0.45 0.45 0.325 0.2"
+	"AbilityCooldown" "130 120 110 100 90 80 70 60" => "110 105 100 95 90 85 80"
+	"AbilityManaCost" "250 360 500 700 900 1100 1300" => "250 360 500 640 780 920 1040"
+	"damage" "500 800 1110 1300 1500 2000 2500" => "290 380 470 560 650 760 850"
+	"cooldown_scepter" "40 40 40 30 30 30 30" => "30"
+	"damage_scepter" "1000 2000 3000 4000 5000 6000 7000" => "325 440 555 660 775 910 1035"
+Venomancer - Venomous Gale:
+	"strike_damage" "100 150 225 300 350 400 450" => "25 50 75 100 125 175 250"
+	"tick_damage" "100 150 225 300 350 400 450" => "10 40 70 100 130 180 250"
+	"movement_slow" "-20 -30 -40 -50 -60 -70 -80" => "-50 -52 -54 -56 -58 -60 -65"
+Venomancer - Poison sting:
+	"duration" "5" => "4 6 8 10 12 14 15"
+	"damage" "20.0 40.0 60.0 80.0 100.0 120.0 140.0" => "10 15 20 25 35 45 60"
+Venomancer - Poison Nova:
+	"AbilityCooldown" "140.0 130.0 120.0 110.0 100.0 90.0 80.0" => "100 95 90 85 80 75 70"
+	"duration" "10" => "16"
+	"damage" "100 200 300 400 500 600 700" => "30 55 80 125 175 250 350"
+	"damage_scepter" "1000" => "60 85 110 155 205 300 400"
+Pugna - Nether Blast:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.2 0.1"
+	"delay"	"0.9" => "0.9 0.9 0.9 0.9 0.9 0.8 0.7"
+	"radius" "500" => "450"
+	"blast_damage" "100 175 250 325 400 500 600" => "100 175 250 325 400 475 550"
+Pugna - Decrepify:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.2 0.1"
+	"AbilityCooldown" "21.0 18.0 15.0 12.0 9.0 6.0 5.0" => "15 13 11 9 8 7 6"
+	"AbilityManaCost" "60 120 180 240 300 360 420" => "60 65 70 75 80 85 90"
+	"bonus_spell_damage_pct" "-30 -40 -50 -60 -80 -100 -120" => "-30 -35 -40 -45 -50 -55 -60"
+	"bonus_movement_speed" "-30 -40 -50 -60 -70 -80 -90" => "-30 -35 -40 -45 -50 -55 -60"
+Pugna - Nether Ward:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.2 0.1"
+	"AbilityManaCost" "80 160 240 320" => "80 100 120 140"
+	"mana_regen" "-1.5 -4.5 -9.0 -30.0" => "-1 -2 -4 -8"
+	"attacks_to_destroy_tooltip" "4 4 4 4" => "4 4 5 6"
+Pugna - Life Drain:
+	"AbilityCastRange" "900 1050 1200" => "850"
+	"AbilityCastPoint" "0.2 0.2 0.2" => "0.2 0.2 0.2 0.2 0.2 0.2 0.1"
+	"AbilityManaCost" "125 175 225" => "125 175 225 275 325 375 425"
+	"health_drain" "150 200 250 300 350 450 500" => "150 200 250 275 300 350 400"
+	"health_drain_scepter" "200 250 300 350 450 500 650" => "180 220 280 320 380 420 480"
+	"scepter_cooldown" "0" => "2"
+Phantom Assassin - Stifling Dagger:
+	"AbilityCastRange" "525 750 975 1200 1350 1500 1700" => "525 675 825 975 1125 1275 1425"
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.3 0.2"
+	"AbilityDuration" "1 2 3 4 5 6 7" => "1 1.5 2 2.5 3 3.5 4"
+	"dagger_speed" "1000 1100 1200 1300 1400 1500 1600" => "1200 1225 1250 1275 1300 1325 1350"
+	"base_damage" "50 100 150 200 250 300 350" => "65 70 75 80 85 90 95"
+Phantom Assassin - Phantom Strike:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "14 13 11 8 7 6 5" => "12 11 9 8 7 5"
+	"AbilityManaCost" "50 100 150 200 250 300 350" => "50 55 60 65 70 75 80"
+	"bonus_attack_speed" "60 70 80 90 100 110 120" => "130 135 140 145 150 155 160"
+	"bonus_max_attack_count" "2 4 6 8 10 12 14" => "4 5 6 7 8 10 12"
+Phantom Assassin - Evasion:
+	"bonus_evasion"	"10 20 30 40 50 60 70" => "20 25 30 35 45 50 55"
+Phantom Assassin - Crit:
+	"crit_bonus" "110 230 340 450 560 670 780" => "230 280 320 360 400 440 480"
+	"crit_chance"	"20" => "15"
