@@ -46,42 +46,6 @@ Cherub - Flower Purple Lotus
 	Aura radius: 450 => 50 100 150 200 250 300 350
 	Magic resistance reduction -20 -25 -30 -35 -40 -45 -50 => -30 -35 -40 -45 -50 -55 -60
 
-Nevermore Dark Lord
-	Presence Armor Reduction: -4 -8 -12 -16 -20 -24 -28
-
-Item Poor Mans Shield
-	Block Chance Hero: 100 => 80
-
-Axe Counter Helix
-	AbilityDamage 100 200 300 400 500 600 700 => 80 160 240 300 380 460 520
-	AbilityCooldown 7 6 5 4 3 2 1 => 0.7 0.6 0.5 0.4 0.3 0.2 0.1
-	Trigger chance 100 => 22 24 26 28 30 32 34
-	Cooldown 0.7 0.6 0.5 0.4 0.3 0.2 0.1 
-
-Bane Enfeeble
-	Enfeeble attack reduction 30 60 90 120 160 200 240 => 40 80 120 160 200 240 280
-
-Bloodseeker Blood Bath
-	AbilityManaCost 100 => 50 75 100 125 150 175 200
-	LevelsBetweenUpgrades 3 => 1
-	Damage 100 200 300 400 500 600 700 => 90 180 270 360 450 540 630
 
 Drow Ranger Marksmanship
-	LevelsBetweenUpgrades 10 => 8
 	Split count scepter 8 => 2
-
-Earthshaker Enchant Totem
-	LevelsBetweenUpgrades 5 => 3
-
-Juggernaut Blade Dance
-	Blade dance crit mult 200 => 200 220 225 230 240 245 260
-	Blade dance crit chance 10 15 20 25 30 35 40 => 15 18 21 24 27 30 33
-
-Kunkka Tidebringer
-	LevelsBetweenUpgrades 3 => 4
-
-Lion Impale
-	Damage from current health pct 1 2 4 5 6 7 10 => 1 2 4 5 6 7 8
-
-Lion Voodoo
-	Duration 2.0 2.5 2.8 3 3.3 3.5 4 =>

@@ -10422,7 +10422,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"25"
+				"bonus_armor"					"10"
 			}
 			"03"
 			{
@@ -10432,7 +10432,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"buff_duration"					"3"
+				"buff_duration"					"1"
 			}
 		}
 		
@@ -13107,7 +13107,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_hp_regen_pct" 	"2.4"
+				"bonus_hp_regen_pct" 	"1"
 			}
 			"07"
 			{
@@ -13132,7 +13132,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"3.2"
+				"buff_duration"			"1.5"
 			}
 			"12"
 			{
