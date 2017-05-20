@@ -632,8 +632,8 @@
 
 #AdsBanner
 {
+	padding: 2px;
 	width: 100%; //384
-	height: width-percentage(64%); //45.3125% 174, 65.1 250
 	visibility: visible;
 	transition-property: pre-transform-scale2d, brightness;
 	transition-duration: 0.15s;

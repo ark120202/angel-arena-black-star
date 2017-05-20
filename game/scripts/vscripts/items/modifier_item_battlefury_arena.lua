@@ -40,7 +40,7 @@ if IsServer() then
 					ability = ability
 				})
 			end
-			if not IsRangedUnit(keys.caster) then
+			if not IsRangedUnit(attacker) then
 				DoCleaveAttack(attacker, target, ability, keys.damage * ability:GetSpecialValueFor("cleave_damage_percent") * 0.01, ability:GetSpecialValueFor("cleave_distance"), ability:GetSpecialValueFor("cleave_starting_width"), ability:GetSpecialValueFor("cleave_ending_width"), self:GetAbility().cleave_pfx)
 			end
 		end
