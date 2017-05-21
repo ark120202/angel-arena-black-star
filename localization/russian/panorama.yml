@@ -58,18 +58,22 @@ ability_shop_search_placeholder: Название способности или 
 DOTA_Item_Build_Altenative_Starting_Items: Альт. нач. предметы
 DOTA_Item_Build_Title_Valve: РЕКОМЕНДУЕМЫЕ
 DOTA_Item_Build_Title_Arena: ПРЕДМЕТЫ ИЗ AABS
+
 custom_toast_PlayerDeniedSelf: '{victim_name} {denied_icon} не отдается врагу'
 custom_toast_PlayerDenied: '{killer_name} {denied_icon} не отдает врагу {victim_name}'
 custom_toast_KillStreak_Ended: '{victim_name} Серия из {kill_streak} убийств прервана'
 custom_toast_ActivatedRune: '{player_name} использовал руну {rune_name}'
 custom_toast_BottledRune: '{player_name} помещает в бутыль {rune_name}'
 custom_toast_DuelStarted: '{time_dota}: {duel_index}ая общая дуэль началась!'
+
 boss_loot_vote_dropped: 'Выпавшие предметы:'
 boss_loot_vote_killed: был убит!
 boss_loot_vote_damage: 'Урон: '
 boss_loot_vote_hide: Скрыть
 boss_loot_vote_show: Показать
+
 option_yes: Да
 option_no: Нет
+
 option_voting_kill_limit: 'Кол-во убийств:'
 option_voting_custom_abilities: 'Режим выбора способностей:'

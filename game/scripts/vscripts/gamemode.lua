@@ -34,8 +34,6 @@ local requirements = {
 	"data/ability_functions",
 	"data/ability_shop",
 	"data/commands",
-	"data/neutrals",
-	"data/wearables",
 	--------------------------------------------------
 	"internal/gamemode",
 	"internal/events",
@@ -64,16 +62,17 @@ local modifiers = {
 	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game",
 	modifier_arena_healer = "modifiers/modifier_arena_healer",
 }
+
+for k,v in pairs(modifiers) do
+	LinkLuaModifier(k, v, LUA_MODIFIER_MOTION_NONE)
+end
+
 AllPlayersInterval = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23}
 
 for i = 1, #requirements do
 	require(requirements[i])
 end
 JSON = require("libraries/json")
-
-for k,v in pairs(modifiers) do
-	LinkLuaModifier(k, v, LUA_MODIFIER_MOTION_NONE)
-end
 
 Options:Preload()
 
@@ -90,6 +89,8 @@ function GameMode:InitGameMode()
 	DynamicWearables:Init()
 	HeroSelection:PrepareTables()
 	PanoramaShop:InitializeItemTable()
+	Structures:AddHealers()
+	ContainersHelper:CreateShops()
 	
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
@@ -101,16 +102,6 @@ function GameMode:InitGameMode()
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("stats_client", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
-	HealerModels = {
-		[DOTA_TEAM_GOODGUYS] = {mdl = ""}
-	}
-	for _,v in ipairs(Entities:FindAllByName("npc_arena_healer")) do
-		local model = HealerModels[v:GetTeamNumber()]
-		v:SetOriginalModel(model.mdl)
-		v:SetModel(model.mdl)
-		if model.color then v:SetRenderColor(unpack(model.color)) end
-		v:AddNewModifier(v, nil, "modifier_arena_healer", nil)
-	end
 end
 
 function GameMode:PostLoadPrecache()
@@ -146,24 +137,7 @@ function GameMode:OnHeroInGame(hero)
 	Timers:CreateTimer(function()
 		if IsValidEntity(hero) and hero:IsTrueHero() then
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
-				local pid = hero:GetPlayerID()
-				local tn = hero:GetTeamNumber()
-				local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
-				TEAMS_COURIERS[hero:GetTeamNumber()] = true
-				Timers:CreateTimer(0.03, function()
-					for _,courier in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
-						local owner = courier:GetOwner()
-						if IsValidEntity(owner) and owner:GetPlayerID() == pid then
-							courier:SetOwner(nil)
-							courier:UpgradeToFlyingCourier()
-
-							courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
-							courier:RemoveAbility("courier_burst")
-
-							TEAMS_COURIERS[tn] = courier
-						end
-					end
-				end)
+				Structures:GiveCourier(hero)
 			end
 			HeroVoice:OnHeroInGame(hero)
 		end
@@ -175,7 +149,6 @@ function GameMode:OnGameInProgress()
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[3] = true
-	ContainersHelper:CreateShops()
 	Spawner:RegisterTimers()
 	Timers:CreateTimer(function()
 		CustomRunes:SpawnRunes()
@@ -211,6 +184,7 @@ end
 function GameMode:GameModeThink()
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
+			local playerData = PLAYER_DATA[i]
 			local hero = PlayerResource:GetSelectedHeroEntity(i)
 			if hero then
 				hero:SetNetworkableEntityInfo("unit_name", hero:GetFullName())
@@ -229,23 +203,56 @@ function GameMode:GameModeThink()
 			end
 			if not IsPlayerAbandoned(i) then
 				if GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
-					PLAYER_DATA[i].AutoAbandonGameTime = nil
-				elseif GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
-					if not PLAYER_DATA[i].AutoAbandonGameTime then
-						PLAYER_DATA[i].AutoAbandonGameTime = GameRules:GetGameTime() + DOTA_PLAYER_AUTOABANDON_TIME
-						--GameRules:SendCustomMessage("#DOTA_Chat_DisconnectWaitForReconnect", i, -1)
-					end
-					local timeLeft = PLAYER_DATA[i].AutoAbandonGameTime - GameRules:GetGameTime()
-					if not PLAYER_DATA[i].LastLeftNotify or timeLeft < PLAYER_DATA[i].LastLeftNotify - 60 then
-						PLAYER_DATA[i].LastLeftNotify = timeLeft
-						--GameRules:SendCustomMessage("#DOTA_Chat_DisconnectTimeRemainingPlural", i, math.round(timeLeft/60))
+					playerData.AutoAbandonGameTime = nil
+					--Anti-AFK
+					local timeLeft = (playerData.AntiAFKLastXP or PLAYER_ANTI_AFK_TIME) - GameRules:GetGameTime()
+					if timeLeft <= PLAYER_ANTI_AFK_NOTIFY_TIME and (not playerData.AntiAFKLastLeftNotify or timeLeft < playerData.AntiAFKLastLeftNotify - 60) then
+						playerData.AntiAFKLastLeftNotify = timeLeft
+						CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+							type = "generic",
+							text = "#custom_toast_AntiAFKTime",
+							player = i,
+							variables = {
+								["{minutes}"] = math.ceil(timeLeft/60)
+							}
+						})
 					end
 					if timeLeft <= 0 then
-						--GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandonedDisconnectedTooLong", i, -1)
+						CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+							type = "generic",
+							text = "#custom_toast_AntiAFKNoTime",
+							player = i
+						})
+						PlayerResource:KickPlayer(i)
+					end
+				elseif GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
+					playerData.AntiAFKLastXP = nil
+					--Auto Abandon
+					if not playerData.AutoAbandonGameTime then
+						playerData.AutoAbandonGameTime = GameRules:GetGameTime() + PLAYER_AUTOABANDON_TIME
+						--GameRules:SendCustomMessage("#DOTA_Chat_DisconnectWaitForReconnect", i, -1)
+					end
+					local timeLeft = playerData.AutoAbandonGameTime - GameRules:GetGameTime()
+					if not playerData.LastLeftNotify or timeLeft < playerData.LastLeftNotify - 60 then
+						playerData.LastLeftNotify = timeLeft
+						CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+							type = "generic",
+							text = "#custom_toast_AutoAbandonTime",
+							player = i,
+							variables = {
+								["{minutes}"] = math.ceil(timeLeft/60)
+							}
+						})
+					end
+					if timeLeft <= 0 then
+						CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+							type = "generic",
+							text = "#custom_toast_AutoAbandonNoTime",
+							player = i
+						})
 						MakePlayerAbandoned(i)
 					end
 				elseif GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
-					--GameRules:SendCustomMessage("#DOTA_Chat_PlayerAbandoned", i, -1)
 					MakePlayerAbandoned(i)
 				end
 			else

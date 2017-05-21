@@ -1,0 +1,52 @@
+"DOTAAbilities"
+{
+	"filler_ability"
+	{
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"300"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_heal"				"90"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mp_heal"				"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_heal_growth"		"2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mp_heal_growth"		"0.75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_heal_pct"			"0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mp_heal_pct"			"0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+		}
+	}
+}

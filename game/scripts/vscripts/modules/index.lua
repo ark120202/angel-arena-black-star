@@ -14,9 +14,10 @@ local modules = {
 	"panorama_shop",
 	"SimpleAI",
 	"spawner",
-	"stats"
+	"stats",
+	"structures"
 }
 
-for _,v in ipairs(modules) do
-	require("modules/" .. v .. "/index")
-end
+
+
+for _,v in ipairs(modules) do require("modules/" .. v .. "/index") end

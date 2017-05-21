@@ -22,12 +22,14 @@ DOTA_Tooltip_modifier_neutral_champion: Champion
 DOTA_Tooltip_modifier_neutral_champion_Description: 'This neutral is a champion, so it''s %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death'
 bitch_lina_bubble_text: 'Hey, do you want to have a good time? Then give me 2 Casino Coins'
 riki_pocket_riki_chat_notify_text: '%s1 has sold Riki.'
+
 npc_dota_hero_riki: Rikimaru
 npc_dota_hero_wisp: Wisp
 npc_dota_hero_skeleton_king: Skeleton King
 npc_dota_hero_life_stealer: Naix
 npc_dota_hero_furion: Furion
 npc_dota_hero_phantom_assassin: Mortred
+
 npc_dummy_unit: Dummy
 npc_dummy_blank: Blank Dummy
 npc_dummy_flying: Flying Dummy
@@ -52,6 +54,8 @@ npc_dota_beastmaster_hawk_base: Hawk
 npc_dota_warlock_golem_base: Warlock Golem
 npc_dota_warlock_golem_scepter_base: Warlock Golem
 npc_dota_warlock_minigolem: Mini Golem
+npc_arena_healer: Shrine
+
 DOTA_Tooltip_modifier_casino_bitch_lina_effect: Lina Buff
 DOTA_Tooltip_modifier_casino_bitch_lina_effect_Description: 'Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, health regeniration increased by %MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%.'
 DOTA_Tooltip_modifier_multicast_lua: Multicast

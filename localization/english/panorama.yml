@@ -67,6 +67,7 @@ ability_shop_shift_no: LMB/RMB - Buy Ability. Hold SHIFT to enter selling mode.
 ability_shop_shift_yes: 'LMB - Sell ability, RMB - Downgrade ability. Release SHIFT to enter purchase mode.'
 ability_shop_purchased_only: Show purchased abilities
 ability_shop_search_placeholder: Ability or hero name...
+
 custom_toast_PlayerDeniedSelf: '{victim_name} {denied_icon} Denied'
 custom_toast_PlayerDenied: '{killer_name} {denied_icon} Denied {victim_name}'
 custom_toast_KillStreak_Ended: '{victim_name} {kill_streak}x Kill Streak ended'
@@ -74,13 +75,20 @@ custom_toast_ActivatedRune: '{player_name} has activated {rune_name}'
 custom_toast_BottledRune: '{player_name} bottled {rune_name}'
 custom_toast_DuelStarted: '{time_dota}: {duel_index}th duel has started!'
 custom_toast_BossKilled: '{team_name} {killed_icon} {victim_name} {gold}'
+custom_toast_AntiAFKTime: '{player_name} should get some experience, or will be kicked in {minutes} minutes'
+custom_toast_AntiAFKNoTime: '{player_name} was kicked by Anti-AFK system'
+custom_toast_AutoAbandonTime: '{player_name} has {minutes} minutes left to reconnect.'
+custom_toast_AutoAbandonNoTime: '{player_name} has been disconnected for too long and will be assessed with an abandon.'
+
 boss_loot_vote_dropped: 'Items Dropped:'
 boss_loot_vote_killed: was killed!
 boss_loot_vote_damage: 'Damage: '
 boss_loot_vote_hide: Hide
 boss_loot_vote_show: Show
+
 option_yes: 'Yes'
 option_no: 'No'
+
 option_voting_kill_limit: 'Kill Limit:'
 option_voting_custom_abilities: 'Custom Abilities Mode:'
 option_voting_custom_abilities_random_omg: Random OMG

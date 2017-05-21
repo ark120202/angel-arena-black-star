@@ -159,6 +159,8 @@ function GameMode:DamageFilter(filterTable)
 					else
 						multiplier = v.multiplier
 					end
+				else
+					multiplier = v
 				end
 			end
 			if multiplier ~= nil then
@@ -172,6 +174,10 @@ function GameMode:DamageFilter(filterTable)
 					end
 					if multiplier.LifestealPercentage then
 						LifestealPercentage = math.max(LifestealPercentage, multiplier.LifestealPercentage)
+					end
+					if multiplier.damage then
+						filterTable.damage = multiplier.damage
+						return true
 					end
 					if multiplier.multiplier then
 						multiplier = multiplier.multiplier
@@ -262,6 +268,7 @@ function GameMode:ModifyExperienceFilter(filterTable)
 			filterTable.experience = filterTable.experience * (1 + hero.talent_keys.bonus_experience_percentage * 0.01)
 		end
 	end
+	PLAYER_DATA[filterTable.player_id_const].AntiAFKLastXP = GameRules:GetGameTime() + PLAYER_ANTI_AFK_TIME
 	if Duel.IsFirstDuel and Duel:IsDuelOngoing() then
 		filterTable.experience = filterTable.experience * 0.1
 	end

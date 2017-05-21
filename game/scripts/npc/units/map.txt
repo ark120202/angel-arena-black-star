@@ -119,8 +119,7 @@
 		"SoundSet"					"Creep_Good_Melee"
 		"MinimapIcon"				"minimap_miscbuilding"
 		
-		"Ability1"					"backdoor_protection_in_base"
-		"Ability2"					"filler_ability"
+		"Ability1"					"filler_ability"
 
 		"ArmorPhysical"				"20"
 		"MagicalResistance"			"0"
@@ -140,7 +139,7 @@
 		"MovementTurnRate"			"0"
 
 		"StatusHealth"				"1500"
-		"StatusHealthRegen"			"10"
+		"StatusHealthRegen"			"0.25"
 		"StatusMana"				"0"
 		"StatusManaRegen"			"0"
 

@@ -77,14 +77,13 @@ function Precache(context)
 		"models/custom/umbrella_rainbow.vmdl",
 	}
 	local units = {
-		"npc_arena_boss_heaven",
-		"npc_arena_boss_hell",
 		"npc_arena_boss_central",
 		"npc_arena_boss_l1_v1",
 		"npc_arena_boss_l1_v2",
 		"npc_arena_boss_l2_v1",
 		"npc_arena_boss_l2_v2",
 		"npc_arena_boss_freya",
+		"npc_arena_healer",
 
 		"npc_arena_boss_kel_thuzad_ghost",
 

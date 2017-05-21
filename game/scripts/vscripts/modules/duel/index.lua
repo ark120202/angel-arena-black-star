@@ -146,7 +146,7 @@ function Duel:StartDuel()
 			type = "generic",
 			text = "#custom_toast_DuelStarted",
 			variables = {
-				["{duel_index}"] = Duel.DuelCounter + 1
+				["{duel_index}"] = Duel.DuelCounter
 			}
 		})
 	else
@@ -198,7 +198,7 @@ function Duel:GetWinner()
 	local teams = {}
 	for team,tab in pairs(Duel.heroes_teams_for_duel) do
 		for _,unit in pairs(tab) do
-			if unit and not unit:IsNull() and unit:IsAlive() then
+			if IsValidEntity(unit) and unit:IsAlive() then
 				if not table.contains(teams, team) and unit.OnDuel then
 					table.insert(teams, team)
 				end
@@ -211,9 +211,7 @@ end
 function Duel:SetUpVisitor(unit)
 	unit.ArenaBeforeTpLocation = unit.ArenaBeforeTpLocation or (unit:GetUnitName() == FORCE_PICKED_HERO and FindFountain(unit:GetTeamNumber()):GetAbsOrigin() or unit:GetAbsOrigin())
 	Duel:FillPreduelUnitData(unit)
-	local team = unit:GetTeamNumber()
 	ProjectileManager:ProjectileDodge(unit)
-	--unit:FindClearSpaceForUnitAndSetCamera(Duel.EntIndexer[team]:GetAbsOrigin())
 	unit:AddNewModifier(unit, nil, "modifier_hero_out_of_game", {})
 end
 

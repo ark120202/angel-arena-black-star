@@ -18,7 +18,6 @@
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/libraries/containers/container_base.xml" />
 		
 		<CustomUIElement type="HudTopBar" layoutfile="file://{resources}/layout/custom_game/top_scoreboard.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_game_info.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/panorama_shop.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_talents.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/ability_shop.xml" />

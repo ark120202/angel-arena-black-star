@@ -163,10 +163,7 @@ CHAT_COMMANDS = {
 	["kick"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
 		f = function(args)
-			local usid = PLAYER_DATA[tonumber(args[1])].UserID
-			if usid then
-				SendToServerConsole("kickid " .. usid)
-			end
+			PlayerResource:KickPlayer(tonumber(args[1]))
 		end
 	},
 	["model"] = {

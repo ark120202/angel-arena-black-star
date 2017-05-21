@@ -82,3 +82,12 @@ end
 function CDOTA_PlayerResource:IsDisableHelpSetForPlayerID(nPlayerID, nOtherPlayerID)
 	return PLAYER_DATA[nPlayerID] ~= nil and PLAYER_DATA[nPlayerID].DisableHelp ~= nil and PLAYER_DATA[nPlayerID].DisableHelp[nOtherPlayerID] and PlayerResource:GetTeam(nPlayerID) == PlayerResource:GetTeam(nOtherPlayerID)
 end
+
+function CDOTA_PlayerResource:KickPlayer(nPlayerID)
+	local usid = PLAYER_DATA[nPlayerID].UserID
+	if usid then
+		SendToServerConsole("kickid " .. usid)
+		return true
+	end
+	return false
+end

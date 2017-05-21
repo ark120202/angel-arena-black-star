@@ -287,6 +287,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
+	["modifier_arena_healer"] = {damage = 1}
 }
 
 CREEP_BONUSES_MODIFIERS = {
