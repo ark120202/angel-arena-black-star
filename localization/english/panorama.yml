@@ -76,9 +76,9 @@ custom_toast_BottledRune: '{player_name} bottled {rune_name}'
 custom_toast_DuelStarted: '{time_dota}: {duel_index}th duel has started!'
 custom_toast_BossKilled: '{team_name} {killed_icon} {victim_name} {gold}'
 custom_toast_AntiAFKTime: '{player_name} should get some experience, or will be kicked in {minutes} minutes'
-custom_toast_AntiAFKNoTime: '{player_name} was kicked by Anti-AFK system'
-custom_toast_AutoAbandonTime: '{player_name} has {minutes} minutes left to reconnect.'
-custom_toast_AutoAbandonNoTime: '{player_name} has been disconnected for too long and will be assessed with an abandon.'
+custom_toast_AntiAFKNoTime: '{player_name} has been removed from the game due to inactivity'
+custom_toast_AutoAbandonTime: '{player_name} has {minutes} minutes left to reconnect'
+custom_toast_AutoAbandonNoTime: '{player_name} has been disconnected for too long and will be assessed with an abandon'
 
 boss_loot_vote_dropped: 'Items Dropped:'
 boss_loot_vote_killed: was killed!

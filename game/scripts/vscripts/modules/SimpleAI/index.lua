@@ -6,7 +6,7 @@ AI_STATE_RETURNING = 2
 AI_STATE_CASTING = 3
 AI_STATE_ORDER = 4
 
-LinkLuaModifier("modifier_simple_ai", "modifiers/modifier_simple_ai", LUA_MODIFIER_MOTION_NONE)
+ModuleLinkLuaModifier(..., "modifier_simple_ai")
 
 SimpleAI = {}
 SimpleAI.__index = SimpleAI

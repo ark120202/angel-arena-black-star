@@ -1,5 +1,8 @@
 ModuleRequire(..., "data")
 ModuleRequire(..., "shops")
+ModuleLinkLuaModifier(..., "modifier_arena_healer")
+ModuleLinkLuaModifier(..., "modifier_arena_courier")
+
 Structures = Structures or class({})
 
 function Structures:AddHealers()

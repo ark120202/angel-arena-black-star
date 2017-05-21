@@ -58,9 +58,10 @@
 }
 #LocalPlayerData
 {
-	width: 180%;
-	//margin-left: 100px;
-	margin-right: -82%;
+	vertical-align: top;
+	width: 100%;
+	margin-left: 4px;
+	//margin-right: -82%;
 	horizontal-align: right;
 	margin-top: 55px;
 	background-color: rgba(100,100,150,0.9);

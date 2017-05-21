@@ -27,7 +27,7 @@ DOTAHud.IsBeforeGameplay #InfoContainer
 {
 	transform: translateY(230px);
 	transition-duration: 1s;
-	transition-delay: 2s;	
+	transition-delay: 2s;
 }
 #InfoContainer:hover
 {

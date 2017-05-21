@@ -29,21 +29,6 @@ function CDOTABaseAbility:ClearFalseInnateModifiers()
 	end
 end
 
-function AddNewAbility(unit, ability_name, skipLinked)
-	local hAbility = unit:AddAbility(ability_name)
-	hAbility:ClearFalseInnateModifiers()
-	local linked
-	local link = LINKED_ABILITIES[ability_name]
-	if link and not skipLinked then
-		linked = {}
-		for _,v in ipairs(link) do
-			local h, _ = AddNewAbility(unit, v)
-			table.insert(linked, h)
-		end
-	end
-	return hAbility, linked
-end
-
 function CDOTABaseAbility:GetReducedCooldown()
 	local biggestReduction = 0
 	local unit = self:GetCaster()

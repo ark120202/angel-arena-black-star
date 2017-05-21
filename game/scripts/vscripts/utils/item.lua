@@ -1,5 +1,3 @@
-
-
 function GetAllItemsByNameInInventory(unit, itemname, bBackpack)
 	local items = {}
 	for slot = 0, bBackpack and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do

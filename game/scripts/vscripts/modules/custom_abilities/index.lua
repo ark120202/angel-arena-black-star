@@ -119,7 +119,7 @@ function AbilityShop:OnAbilityBuy(PlayerID, abilityname)
 					hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
 					hero:RemoveAbility("ability_empty")
 					GameMode:PrecacheUnitQueueed(abilityInfo.hero)
-					local a, linked = AddNewAbility(hero, abilityname)
+					local a, linked = hero:AddNewAbility(abilityname)
 					a:SetLevel(1)
 					if linked then
 						for _,v in ipairs(linked) do
@@ -212,7 +212,7 @@ function AbilityShop:RandomOMGRollAbilities(unit)
 			if ability and not unit:HasAbility(ability) then
 				PrecacheItemByNameAsync(ability, function() end)
 				GameMode:PrecacheUnitQueueed(abilityTable.hero)
-				AddNewAbility(unit, ability)
+				unit:AddNewAbility(ability)
 				has_abilities = has_abilities + 1
 			end
 		end
@@ -223,7 +223,7 @@ function AbilityShop:RandomOMGRollAbilities(unit)
 			if ability and not unit:HasAbility(ability) then
 				PrecacheItemByNameAsync(ability, function() end)
 				GameMode:PrecacheUnitQueueed(abilityTable.hero)
-				AddNewAbility(unit, ability)
+				unit:AddNewAbility(ability)
 				has_ultimates = has_ultimates + 1
 			end
 		end

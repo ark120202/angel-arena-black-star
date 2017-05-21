@@ -800,7 +800,7 @@ function RecreateAbility(unit, ability)
 	local name = ability:GetAbilityName()
 	local level = ability:GetLevel()
 	RemoveAbilityWithModifiers(unit, ability)
-	ability = AddNewAbility(unit, name, true)
+	ability = unit:AddNewAbility(name, true)
 	if ability then
 		ability:SetLevel(level)
 	end
@@ -862,6 +862,10 @@ function IsModifierStrongest(unit, modifier, modifierList)
 	return true
 end
 
-function ModuleRequire(this, file)
-	require(string.gsub(this, "index", "") .. file)
+function ModuleRequire(this, fileName)
+	return require(string.gsub(this, "index", "") .. fileName)
+end
+
+function ModuleLinkLuaModifier(this, className, fileName, LuaModifierType)
+	return LinkLuaModifier(className, string.gsub(this, "index", "") .. (fileName or className), LuaModifierType or LUA_MODIFIER_MOTION_NONE)
 end

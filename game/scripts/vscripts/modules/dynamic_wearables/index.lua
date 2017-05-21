@@ -1,5 +1,5 @@
 ModuleRequire(..., "data")
-LinkLuaModifier("modifier_arena_wearable", "modules/dynamic_wearables/modifier_arena_wearable.lua", LUA_MODIFIER_MOTION_NONE)
+ModuleLinkLuaModifier(..., "modifier_arena_wearable")
 
 if not DynamicWearables then
 	DynamicWearables = class({})

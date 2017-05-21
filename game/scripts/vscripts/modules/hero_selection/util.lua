@@ -84,7 +84,7 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			for i = 1, 24 do
 				if classTable["Ability" .. i] and classTable["Ability" .. i] ~= "" then
 					PrecacheItemByNameAsync(classTable["Ability" .. i], function() end)
-					AddNewAbility(unit, classTable["Ability" .. i])
+					unit:AddNewAbility(classTable["Ability" .. i])
 				end
 			end
 		end

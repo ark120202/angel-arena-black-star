@@ -333,7 +333,7 @@
 	margin-left: 4px;
 	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
 	background-color: black;
-	padding: 5px 7px 3px 7px;
+	padding: 5px 7px 3px;
 	color: white;
 	font-size: 20px;
 	text-overflow: clip;
@@ -343,7 +343,7 @@
 }
 #ShopSearchEntry #PlaceholderText
 {
-	opacity: 1.0;
+	opacity: 1;
 
 	transition-property: opacity;
 	transition-duration: 0.2s;

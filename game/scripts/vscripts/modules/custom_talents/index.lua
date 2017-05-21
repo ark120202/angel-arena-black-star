@@ -23,7 +23,7 @@ local modifiers = {
 	--rune multiplier
 }
 for _,v in pairs(modifiers) do
-	LinkLuaModifier("modifier_talent_" .. v, "modules/custom_talents/modifiers/modifier_talent_" .. v, LUA_MODIFIER_MOTION_NONE)
+	ModuleLinkLuaModifier(..., "modifier_talent_" .. v, "modifiers/modifier_talent_" .. v)
 end
 
 function CustomTalents:Init()
@@ -164,7 +164,7 @@ function CDOTA_BaseNPC:UpgradeTalent(name)
 					effect.abilities = {effect.abilities}
 				end
 				for _,v in ipairs(effect.abilities) do
-					local ability = self:FindAbilityByName(v) or AddNewAbility(self, v)
+					local ability = self:FindAbilityByName(v) or self:AddNewAbility(v)
 					ability:SetLevel(self.talents[name].level)
 					if not table.contains(self.talents[name].abilities, ability) then
 						table.insert(self.talents[name].abilities, ability)

@@ -51,16 +51,13 @@ local modifiers = {
 	modifier_item_shard_attackspeed_stack = "items/lua/modifiers/modifier_item_shard_attackspeed_stack",
 	modifier_apocalypse_apocalypse = "heroes/hero_apocalypse/modifier_apocalypse_apocalypse",
 	modifier_set_attack_range = "modifiers/modifier_set_attack_range",
-	modifier_charges = "libraries/modifiers/modifier_charges",
+	modifier_charges = "modifiers/modifier_charges",
 	modifier_hero_selection_transformation = "modifiers/modifier_hero_selection_transformation",
 	modifier_fountain_aura_arena = "modifiers/modifier_fountain_aura_arena",
 	modifier_max_attack_range = "modifiers/modifier_max_attack_range",
-	modifier_arena_courier = "modifiers/modifier_arena_courier",
 	modifier_arena_hero = "modifiers/modifier_arena_hero",
-	modifier_neutral_champion = "modifiers/modifier_neutral_champion",
 	modifier_item_demon_king_bar_curse = "items/modifier_item_demon_king_bar_curse",
-	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game",
-	modifier_arena_healer = "modifiers/modifier_arena_healer",
+	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game"
 }
 
 for k,v in pairs(modifiers) do
@@ -205,25 +202,27 @@ function GameMode:GameModeThink()
 				if GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
 					playerData.AutoAbandonGameTime = nil
 					--Anti-AFK
-					local timeLeft = (playerData.AntiAFKLastXP or PLAYER_ANTI_AFK_TIME) - GameRules:GetGameTime()
-					if timeLeft <= PLAYER_ANTI_AFK_NOTIFY_TIME and (not playerData.AntiAFKLastLeftNotify or timeLeft < playerData.AntiAFKLastLeftNotify - 60) then
-						playerData.AntiAFKLastLeftNotify = timeLeft
-						CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
-							type = "generic",
-							text = "#custom_toast_AntiAFKTime",
-							player = i,
-							variables = {
-								["{minutes}"] = math.ceil(timeLeft/60)
-							}
-						})
-					end
-					if timeLeft <= 0 then
-						CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
-							type = "generic",
-							text = "#custom_toast_AntiAFKNoTime",
-							player = i
-						})
-						PlayerResource:KickPlayer(i)
+					if not GameRules:IsCheatMode() then
+						local timeLeft = (playerData.AntiAFKLastXP or PLAYER_ANTI_AFK_TIME) - GameRules:GetGameTime()
+						if timeLeft <= PLAYER_ANTI_AFK_NOTIFY_TIME and (not playerData.AntiAFKLastLeftNotify or timeLeft < playerData.AntiAFKLastLeftNotify - 60) then
+							playerData.AntiAFKLastLeftNotify = timeLeft
+							CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+								type = "generic",
+								text = "#custom_toast_AntiAFKTime",
+								player = i,
+								variables = {
+									["{minutes}"] = math.ceil(timeLeft/60)
+								}
+							})
+						end
+						if timeLeft <= 0 then
+							CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+								type = "generic",
+								text = "#custom_toast_AntiAFKNoTime",
+								player = i
+							})
+							PlayerResource:KickPlayer(i)
+						end
 					end
 				elseif GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
 					playerData.AntiAFKLastXP = nil

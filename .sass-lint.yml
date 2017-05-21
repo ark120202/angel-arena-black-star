@@ -1,0 +1,12 @@
+extends: stylelint-config-standard
+rules:
+  no-important: 0
+  indentation:
+    - 2
+    - size: 'tab'
+  property-sort-order:
+    - 1
+    - order: 'recess'
+  no-color-literals: 0
+  no-misspelled-properties: 0
+  brace-style

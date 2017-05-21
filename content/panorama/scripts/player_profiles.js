@@ -6,12 +6,10 @@ function LoadPanelForPlayer(playerId) {
 	$('#UserName').steamid = steamid;
 	$('#PlayerVariable_Rating').text = '';
 	$('#PlayerVariable_WinMatches').text = '';
-	SetPagePlayerLevel(199);
-	GetDataFromServer('player/' + steamid, null, function(data) {
-		SetPagePlayerLevel(data.Level);
-		$('#PlayerVariable_Rating').text = data.MMR;
-		$('#PlayerVariable_WinMatches').text = data.Wins + '/' + data.Matches;
-	}, function(e) {$.Msg(e);});
+	var stats = Players.GetStatsData(playerId);
+	SetPagePlayerLevel(Math.floor((stats.XP || 0) / 100) + 1);
+	$('#PlayerVariable_Rating').text = stats.MMR;
+	$('#PlayerVariable_WinMatches').text = stats.Wins + '/' + stats.Matches;
 }
 
 function SetPagePlayerLevel(level) {
@@ -25,7 +23,7 @@ function SetPagePlayerLevel(level) {
 
 (function() {
 	//LoadPanelForPlayer()
-	if ($.GetContextPanel().BHasClass('CustomUIState_HUD')) { // Is hud element?
+	if ($.GetContextPanel().BHasClass('CustomUIState_HUD')) { // Is hud element or it was called within other panel?
 		$.GetContextPanel().RemoveClass('PanelOpened');
 		GameEvents.Subscribe('player_profiles_show_info', function(data) {
 			$.Msg('asd');

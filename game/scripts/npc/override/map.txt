@@ -3,7 +3,7 @@
 	"filler_ability"
 	{
 		"MaxLevel"						"1"
-		"AbilityCooldown"				"300"
+		"AbilityCooldown"				"120"
 
 		"AbilitySpecial"
 		{

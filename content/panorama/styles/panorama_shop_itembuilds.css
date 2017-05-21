@@ -1,11 +1,11 @@
 #GuidesBrowser
 {
-	align: center center;
 	width: 800px;
 	height: 600px;
+	align: center center;
 	opacity: 0;
-	transition-property: opacity;
 	transition-duration: 0.1s;
+	transition-property: opacity;
 	flow-children: right;
 }
 
@@ -16,8 +16,8 @@
 
 #GuidesBrowserLeft
 {
-	height: 100%;
 	width: 266px;
+	height: 100%;
 	background-color: black;
 	flow-children: down;
 }
@@ -45,12 +45,12 @@
 
 #GuidesHeader
 {
+	width: 100%;
+	height: 200px;
 	padding-top: 4px;
 	flow-children: down;
 	padding-left: 10px;
 	margin-top: 10px;
-	width: 100%;
-	height: 200px;
 }
 #GuidesHeaderTitleRow
 {

@@ -1,5 +1,6 @@
 ModuleRequire(..., "data")
-LinkLuaModifier( "modifier_neutral_upgrade_attackspeed", "modifiers/modifier_neutral_upgrade_attackspeed", LUA_MODIFIER_MOTION_NONE )
+ModuleLinkLuaModifier(..., "modifier_neutral_upgrade_attackspeed")
+ModuleLinkLuaModifier(..., "modifier_neutral_champion")
 
 if Spawner == nil then
 	Spawner = class({})

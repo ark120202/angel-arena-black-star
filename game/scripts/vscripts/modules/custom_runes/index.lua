@@ -21,7 +21,7 @@ for k,v in pairs(modifiers) do
 	else
 		k = nil
 	end
-	LinkLuaModifier("modifier_arena_rune_" .. v, "modules/custom_runes/modifiers/modifier_arena_rune_" .. (k or v), LUA_MODIFIER_MOTION_NONE)
+	ModuleLinkLuaModifier(..., "modifier_arena_rune_" .. v, "modifiers/modifier_arena_rune_" .. (k or v))
 end
 
 ARENA_RUNE_BOUNTY = 0

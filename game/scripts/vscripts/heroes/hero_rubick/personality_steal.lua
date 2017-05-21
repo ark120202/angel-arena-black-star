@@ -67,7 +67,7 @@ function SpellSteal(keys)
 		if hc then
 			for k,v in pairsByKeys(hc) do
 				if string.starts(k, "Ability") and v ~= "" then
-					AddNewAbility(caster, v, true)
+					caster:AddNewAbility(v, true)
 				end
 			end
 		end

@@ -70,19 +70,14 @@ function CDOTA_BaseNPC:IsRangedUnit()
 	return self:IsRangedAttacker() or self:HasModifier("modifier_terrorblade_metamorphosis_transform_aura_applier")
 end
 
---Legacy
-function TrueKill(killer, ability, target)
-	target.IsMarkedForTrueKill = true
-	target:Kill(ability, killer)
-	if IsValidEntity(target) and target:IsAlive() then
-		RemoveDeathPreventingModifiers(target)
-		target:Kill(ability, killer)
-	end
-	target.IsMarkedForTrueKill = false
-end
-
 function CDOTA_BaseNPC:TrueKill(ability, killer)
-	TrueKill(killer, ability, self)
+	self.IsMarkedForTrueKill = true
+	self:Kill(ability, killer)
+	if IsValidEntity(self) and self:IsAlive() then
+		RemoveDeathPreventingModifiers(self)
+		self:Kill(ability, killer)
+	end
+	self.IsMarkedForTrueKill = false
 end
 
 function CDOTA_BaseNPC:GetLinkedHeroEntities()
@@ -150,6 +145,21 @@ function CDOTA_BaseNPC:IsTrueHero()
 	return self:IsRealHero() and not self:IsTempestDouble() and not self:IsWukongsSummon()
 end
 
+function CDOTA_BaseNPC:AddNewAbility(unit, ability_name, skipLinked)
+	local hAbility = unit:AddAbility(ability_name)
+	hAbility:ClearFalseInnateModifiers()
+	local linked
+	local link = LINKED_ABILITIES[ability_name]
+	if link and not skipLinked then
+		linked = {}
+		for _,v in ipairs(link) do
+			local h, _ = AddNewAbility(unit, v)
+			table.insert(linked, h)
+		end
+	end
+	return hAbility, linked
+end
+
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	local time = (5 + self:GetLevel() * 0.1) + (self.RespawnTimeModifier or 0)
@@ -169,7 +179,7 @@ function CDOTA_BaseNPC_Hero:GetTotalHealthReduction()
 	if mod then
 		pct = pct + mod:GetAbility():GetAbilitySpecial("health_decrease_pct")
 	end
-	------------
+	
 	local sara_evolution = self:FindAbilityByName("sara_evolution")
 	if sara_evolution then
 		local dec = sara_evolution:GetSpecialValueFor("health_reduction_pct")

@@ -65,9 +65,7 @@ function UpdateHeroesSelected() {
 
 (function() {
 	DynamicSubscribePTListener('hero_selection_available_heroes', function(tableName, changesObject) {
-		if (changesObject.HeroTabs != null) {
-			HeroTabs = changesObject.HeroTabs;
-		}
+		if (changesObject.HeroTabs) HeroTabs = changesObject.HeroTabs;
 	});
 	GameEvents.Subscribe('metamorphosis_elixir_show_menu', OpenMenu);
 	MainPanel.visible = false;
