@@ -14,6 +14,8 @@
 		"AbilityCooldown"				"60.0 50.0 40.0 35.0 30.0 25.0 20.0 "
 		"AbilityManaCost"				"100 150 200 250 300 350 400"
 		"AbilityDamage"					"175 300 375 450 525 600 725"
+		"LevelsBetweenUpgrades"	"2"
+
 
 		"AbilitySpecial"
 		{
@@ -208,6 +210,7 @@
 		"MaxLevel" 						"5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"LevelsBetweenUpgrades"	"10"
 
 		"AbilitySpecial"
 		{

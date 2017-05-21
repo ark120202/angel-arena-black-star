@@ -27,12 +27,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"10 12 14 16 18 20 22"
+				"duration"				"9 10 11 12 13 14 15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"time_to_sleep"			"3.5 3.0 2.5 2.0 1.5 1.0 0.5"
+				"time_to_sleep"			"2.1 1.8 1.5 1.2 0.9 0.6 0.3"
 			}
 			"04"
 			{
