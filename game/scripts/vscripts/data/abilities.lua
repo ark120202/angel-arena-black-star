@@ -172,6 +172,7 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	enigma_midnight_pulse = true,
 	morphling_adaptive_strike = true,
 	nyx_assassin_spiked_carapace = true,
+	huskar_life_break = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

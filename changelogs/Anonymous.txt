@@ -103,7 +103,6 @@ GOLD PER TICK - 3 => 6
  [13] = 39000 => 16000
  [14] = 48000 => 21000
  [15] = 60000 => 30000
-
  						HEROES CHANGES:
 
 ALL HEROES CHANGED BAT => 1.7 some heroes 1.4 1.5 1.6 1.8
@@ -842,4 +841,259 @@ Phantom Assassin - Evasion:
 	"bonus_evasion"	"10 20 30 40 50 60 70" => "20 25 30 35 45 50 55"
 Phantom Assassin - Crit:
 	"crit_bonus" "110 230 340 450 560 670 780" => "230 280 320 360 400 440 480"
-	"crit_chance"	"20" => "15"
+	"crit_chance" "20" => "15"
+Templar Assassin - Refraction:
+	"AbilityManaCost" "100 125 150 175 200 228 240" => "100 105 110 115 120 125 130"
+	"instances"	"2 3 4 5 6 7 8" => "3 4 5 6 7 8 9"
+	"bonus_damage" "40 60 80 100 120 140 160" => "20 40 60 80 100 120 140"
+Templar Assassin - Meld:
+	"AbilityManaCost" "50 100 150 200 250 300 350" => "50"
+	"bonus_damage" "100 150 200 300 400 500 550" => "50 100 150 200 250 300 400"
+	"bonus_armor" "-2 -4 -6 -8 -15 -20 -25" => "-2 -4 -6 -8 -10 -12 -15"
+Templar Assassin - Psi Blades:
+	"bonus_attack_range" "60 120 180 240 300 360 420" => "60 100 140 180 220 260 300"
+	"attack_spill_range" "590 630 670 710 740 770 810" => "590 620 650 680 710 740 770"
+	"attack_spill_width" "68 68 68 68 68 68 68" => "80"
+Templar Assassin - Psionic Trap:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "11.0 8.0 7.0 6.0 5.0 5.0 4.0" => "11 10 9 8 7 6 5"
+	"max_traps"	"5 8 11 14 17 20 23" => "3 5 7 9 11 13 15"
+Viper - Poison Attack:
+	"AbilityManaCost" "20 20 20 20 20 10 0" => "20"
+	"damage" "30 60 90 120 150 200 250" => "10 16 22 28 36 48 66"
+	"bonus_movement_speed" "-20 -30 -40 -50 -60 -70 -80" => "-10 -15 -20 -25 -30 -35 -45"
+	"bonus_attack_speed" "-20 -30 -40 -50 -60 -70 -80" => "-10 -15 -20 -25 -30 -45 -60"
+Viper - Nethertoxin:
+	LevelsBetweenUpgrades is now standart
+	"non_hero_damage_pct" "20" => "50"
+Viper - Corrosive Skin:
+	"bonus_movement_speed" "-10 -15 -20 -25 -30 -35 -40" => "-10 -13 -16 -19 -22 -25 -30"
+	"bonus_magic_resistance" "15 20 25 30 35 40 45" => "10 13 16 19 22 25 30"
+	"damage" "40 60 80 120 160 180 200" => "10 15 20 25 30 35 50"
+Viper - Viper Striker:
+	"AbilityCastRange" "800" => "550"
+	"AbilityCooldown" "40 35 30 35 30 25 20" => "60 55 50 45 40 35 30"
+	"damage" "100 150 200 250 300 350 400" => "60 100 145 190 245 300 355"
+	"bonus_movement_speed" "-40 -60 -80 -100 -120 -140 -160" => "-40 -45 -50 -60 -70 -80 -90"
+	"bonus_attack_speed" "-60 -80 -100 -120 -140 -180 -200" => "-40 -60 -80 -100 -120 -140 -180"
+	"mana_cost_scepter"	"0" => "125"
+	"cooldown_scepter" "8" => "10"
+	"cast_range_scepter" "2000" => "900"
+	"max_charges" "2" => "3"
+Luna - Lucent Beam:
+	"AbilityCastPoint" "0.6" => "0.5 0.5 0.5 0.5 0.5 0.4 0.3"
+	"AbilityManaCost" "90 120 150 170 190 220 250" => "90 100 110 120 130 140 150"
+Luna - Moon Glaive:
+	"bounces" "1 2 3 6 9 12 15" => "1 2 3 5 7 9 11"
+	"damage_reduction_percent" "50" => 40
+Luna - Lunar Blessing:
+	LevelsBetweenUpgrades is now standart
+	"bonus_damage" "50 100 150 200 250 300 350" => "15 24 33 42 51 60 70"
+	"bonus_night_vision" "700 800 900 950 1000 1100 1200" => "250 400 550 700 850 1000 1150"
+Luna - Eclipse:
+	"AbilityCastPoint" "0.6" => "0.6 0.6 0.6 0.6 0.6 0.5 0.4"
+	"beams"	"5 10 15 20 25 30 35" => "5 8 11 14 17 20 23"
+	"beam_interval"	"0.4" => 0.6
+	"beam_interval_scepter"	"0.2" => 0.3
+	"radius" "675 675 675 675 675 675 675" => "675 675 675 675 675 700 750"
+	"beams_scepter"	"80" => "6 10 14 18 24 28 32"
+	"cast_range_tooltip_scepter" "3500" => 3000
+Dazzle - Poison Touch:
+	"AbilityCastRange" "600 700 800 900 1000 1000 1000" => "600 630 660 690 720 750 780"
+	"AbilityCastPoint" "3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "15 13 11 7 5 5 5" => "13 12 11 10 9 7 5"
+	"AbilityDamage"	"14 20 26 36 46 54 66" => "14 20 26 36 46 58 70"
+	"set_time" "3" => "3 3 3 3 3 2 1"
+Dazzle - Shallow Grave:
+	"AbilityCastRange" "550 700 850 1000 1250 1500 1750" => "550 625 700 775 850 925 1000"
+	"AbilityCastPoint" "0.4" => "0.4 0.4 0.4 0.4 0.4 0.35 0.3"
+	"AbilityCooldown" "60 50 40 30 20 15 12" => "30 28 26 24 22 20 15"
+	"AbilityManaCost" "150 250 350 450 550 650 750" => "150 160 170 180 190 200 210"
+	"scepter_radius" "450" => "500"
+Dazzle - Shadow Wave:
+	"AbilityCastRange" "900" => "900 900 900 900 900 950 1000"
+	"AbilityCastPoint" "0.3 0.3 0.3 0.3 0.3 0.3 0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "12 10 8 6 6 6 6" => "12 11 10 9 8 7 6"
+	"AbilityManaCost" "90 100 110 120 170 240 360" => "90 100 110 120 130 140 150"
+	"damage" "80 100 120 140 160 320 640" => "80 100 120 140 160 190 240"
+Dazzle - Weave:
+	"AbilityCastRange" "2000" => "2000 2000 2000 2000 2000 2250 2500"
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"armor_per_second" "0.75 1 1.25 2 2.75 3 4.5" => "0.75 1 1.25 1.5 1.75 2.25 3"
+	"duration" "30.0" => "24"
+Clockwerk - Battery Assault:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "32.0 28.0 24.0 20.0 16.0 12.0 8.0" => "32 30 28 26 24 22 20"
+	"AbilityManaCost" "75 75 75 75 100 300 500" => "75"
+	"AbilityDamage"	"20 40 60 80 180 200 400" => "20 45 70 95 110 125 150"
+	"interval"	"0.5" => 0.7
+Clockwerk - Power Cogs:
+	"AbilityCastPoint" "0.3" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+	"drain_amount" "100 200 300 400 600 800 1000" => "80 120 160 200 250 300 360"
+	"attacks_to_destroy" "3 6 9 12 15 18 21" => "2 2 2 3 4 5 6"
+Clockwerk - Rocket Flare:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "20.0 18.0 16.0 14.0 12.0 10.0 8.0" => "18 17 16 15 14 13 12"
+	"AbilityDamage"	"80 120 160 200 300 400 500" => "80 120 160 200 260 320 410"
+	"speed"	"1500 1700 1900 2100 2300 2500 2700" => "1750 1750 1750 1750 1750 1875 2000"
+Clockwerk - Hookshot:
+	"AbilityCastPoint" "0.15" => "0.3 0.3 0.3 0.3 0.3 0.25 0.2"
+	"AbilityCastRange" "2000 2500 3000 4000 5000 6000 7000" => "2000 2300 2600 2900 3200 3500 3800"
+	"AbilityCooldown" "120.0 110.0 100.0 90.0 80.0 70.0 60.0" => "70 65 60 55 50 45 40"
+	"duration" "1.0 1.5 2.0 2.5 3.0 3.5 4.0" => "1.0 1.3 1.6 1.9 2.2 2.5 2.8"
+	"damage" "250 550 750 950 1200 1400 1800" => "100 200 300 400 500 600 700"
+	"cooldown_scepter" "25" => 12
+Leshrac - Split Earth:
+	"AbilityCastPoint" "0.6" => "0.7 0.7 0.7 0.7 0.7 0.6 0.5"
+	"AbilityCooldown" "15 14 13 12 11 10 9" => 10
+	"AbilityManaCost" "100 160 200 240 280 320 360" => "100 125 140 160 180 200 260"
+	"radius" "175 200 225 250 275 300 666" => "150 175 200 225 250 275 325"
+Leshrac - Diabolic Edict:
+	"AbilityCastPoint" "0.5" => "0.5 0.5 0.5 0.5 0.5 0.4 0.3"
+	"AbilityManaCost" "100 130 160 190 220 250 280" => "95 120 135 155 175 195 220"
+	"AbilityDamage"	"15 30 45 60 75 90 105" => "9 18 27 36 45 60 75"
+	"radius" "500" => "500 500 500 500 500 550 600"
+Leshrac - Lightning Storm:
+	"AbilityCastPoint" "0.4" => "0.45 0.45 0.45 0.45 0.45 0.35 0.25"
+	"AbilityCooldown" "10 9 8 7 6 5 4" => 4
+	"AbilityManaCost" "90 120 140 160 200 240 280" => "90 100 110 120 130 140 150"
+	"AbilityDamage"	"50 100 150 200 400 500 600" => "50 100 150 200 250 300 350"
+	"slow_duration"	"0.7 0.8 0.9 1.0 1.1 1.2 1.3" => "0.7 0.75 0.8 0.85 0.9 0.95 1"
+	"interval_scepter" "1.75" => "1.75 1.75 1.75 1.75 1.75 1.65 1.55"
+	"radius_scepter" "750" => "750 750 750 750 750 775 800"
+Leshrac - Pulse Nova:
+	"mana_cost_per_second" "20 40 60 120 200 400 500" => "20 40 60 80 100 120 140"
+	"radius" "450" => "450 450 450 450 450 500 550"
+	"damage" "100 130 160 200 300 450 550" => "100 130 160 190 220 250 300"
+	"damage_scepter" "160 190 220 300 450 650 800" => "160 190 220 250 280 315 350"
+Furion - Sprout:
+	"AbilityCastRange" "625 700 775 850 1300 1500 1800" => "625 675 725 775 825 875 925"
+	"AbilityCastPoint" "0.35" => "0.35 0.35 0.35 0.35 0.35 0.3 0.25"
+	"AbilityCooldown" "14 13 12 11 10 9 8" => "11 10.5 10 9.5 9 8.5 8"
+	"vision_range" "1500" => 800
+	"duration"	"3 3 3 3 3 4 5" => "3 3.5 4 4.5 5 5.5 6"
+Furion - Teleportation:
+	LevelsBetweenUpgrades is now standart
+	"AbilityCooldown" "70 60 50 40 30 20 10" => "40 37 34 31 28 24 20"
+	"AbilityManaCost" "50 100 150 200 250 300 350" => "50 55 60 65 70 75 80"
+Furion - Wrath of Nature:
+	"AbilityCastPoint" "0.5" => "0.5 0.5 0.5 0.5 0.5 0.4 0.3"
+	"AbilityCooldown" "60" => "80 75 70 65 60 55 50"
+	"max_targets" "16 23 36 48 96 128 322" => "16 20 24 26 30 35 40"
+	"damage" "75 150 225 300 375 425 500" => "110 140 170 200 230 260 300"
+	"damage_percent_add" "3" => 10
+	"jump_delay" "0.20 0.18 0.12 0.8 0.6 0.4 0.1" => "0.25 0.25 0.25 0.25 0.25 0.2 0.15"
+	"damage_scepter" "100 200 400 500 700 800 1000" => "135 170 205 240 275 315 380"
+Life Stealer - Rage:
+	"AbilityCooldown" "25 23 21 19 17 15 13" => 17
+	"attack_speed_bonus" "50 60 70 80 90 100 120" => "40 50 60 70 80 95 110"
+Life Stealer - Feast:
+	RequiredLevel is now standart
+	"hp_leech_percent" "4" => 0.1 0.2 0.3 0.4 0.5 0.6 1.0 %
+Life Stealer - Open Wounds:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.1 0"
+	"AbilityCastRange" "200 300 400 500 600 700 800" => "200 260 320 380 440 500 560"
+	"AbilityCooldown" "34 30 24 20 16 12 8" => "24 22 20 16 18 16 12"
+	"AbilityDuration" "6" => 10
+	"slow_steps" "-20 -40 -60 -80 -100 -120 -140" => "-70 -70 -60 -50 -30 -10 -10 -10"
+	"heal_percent" "50" => "50 55 60 65 70 75 80"
+Life Stealer - Invfest:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+	"AbilityCooldown" "100 75 50 25 25 25 25" => "80 75 70 60 65 60 45"
+	"AbilityManaCost" "50 100 150 200 250 300 350" => "50 60 70 80 90 100 110"
+	"radius" "700 700 700 700 700 900 1100" => "700 725 750 775 800 825 850"
+Life Stealer - Assimilate:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+	"AbilityCooldown" "25" => "50"
+	"damage" "960" => "400"
+Dark Seer - Vacuum:
+	"AbilityCastPoint" "0.4" => "0.4 0.4 0.4 0.4 0.4 0.3 0.2"
+	"AbilityCooldown" "28 25 20 18 15 13 11 9" => "20"
+	"radius" "250 350 450 550 650 850 1000" => "250 325 400 475 525 575 625"
+	"damage" "40 80 120 160 380 550 960" => "80 120 160 200 240 280 320"
+Dark Seer - Ion Shell:
+	LevelsBetweenUpgrades is now standart
+	"AbilityCastPoint" "0.4" => "0.4 0.4 0.4 0.4 0.4 0.3 0.2"
+	"AbilityCooldown" "5" => 9
+	"AbilityManaCost" "70 90 110 130 150 180 210" => "100 110 120 130 140 150 160"
+	"radius" "250" => "250 250 250 250 250 265 280"
+	"damage_per_second"	"30 50 70 90 180 290 410" => "30 50 70 90 120 150 180"
+	"duration" "25" => "20"
+Dark Seer - Surge:
+	"AbilityCastPoint" "0.4" => "0.4 0.4 0.4 0.4 0.4 0.2 0"
+	"AbilityCooldown" "13.0 12.0 11.0 10.0 9.0 8.0 7.0" => "12 11.5 11.0 10.5 10.0 9.5 9.0"
+	"AbilityManaCost" "50 80 110 140 170 200 230" => 50
+	"duration" "3.0 4.5 6.0 7.5 8.0 8.5 9.0" => "3.0 3.5 4.0 4.5 5.0 5.5 6.0"
+
+Dark Seer - Wall of Replica:
+	"AbilityCastPoint" "0.4" => "0.4 0.4 0.4 0.4 0.4 0.3 0.2"
+	"AbilityCastRange" "500 900 1300 1500 1800 2100 2300" => "500 700 900 1100 1300 1500 1700"
+	"AbilityCooldown" "100.0 100.0 100.0 90.0 80.0 70.0 60.0" => "100 95 90 85 80 75 70"
+	"duration"	"30" => 45
+	"replica_damage_outgoing" "-40 -25 -10" => "-40 -35 -30 -25 -20 -15 -10"
+	"replica_damage_outgoing_scepter" "0 20 40" => "10 15 20 25 30 35 40"
+	"slow_duration"	"1.0" => "0.6 0.65 0.7 0.75 0.8 0.9 1.0"
+Clinkz - Strafe:
+	"AbilityCooldown" "20" => 25
+	"AbilityManaCost" "90 80 70 60 50 40 30" => 
+	"duration" "10" => "4 5 6 7 8 9 10"
+	"attack_speed_bonus_pct" "60 120 180 240 300 360 420" => "130 135 140 145 150 155 160"
+Clinkz - Searing Arrows:
+	"AbilityManaCost" "20 20 20 10 10 10 0" => 10
+	"damage_bonus" "30 60 90 120 150 180 210" => "30 40 50 60 70 80 90"
+Clinkz - Wind Walk:
+	"AbilityManaCost" "75 100 125 150 175 200 225" => 75
+	"duration" "15 20 25 30 35 40 45" => "20 24 28 32 36 40 44"
+	"fade_time"	"0.6" => "0.6 0.6 0.6 0.6 0.6 0.5 0.4"
+	"move_speed_bonus_pct" "20 30 40 50 60 70 80" => "11 18 25 32 39 46 51"
+Clinkz - Death Pact:
+	"AbilityCastPoint" "0.5" => "0.5 0.5 0.5 0.5 0.5 0.4 0.3"
+	"AbilityManaCost" "100 200 300 400 500 600 700" => "100 150 200 250 300 350 400"
+	"duration" "60" => 50
+	"damage_gain_pct" "8 10 12 14 16 18 20" => "5 6.5 8 9.5 11 12.5 14"
+Enchantress - Untouchable:
+	LevelsBetweenUpgrades is now standart
+	"slow_attack_speed"	"-40 -70 -100 -130 -160 -190 -220" => "-40 -70 -100 -130 -170 -210 -250"
+	"slow_duration"	"4 5 6 7 8 9 10" => 4
+Enchantress - Enchant:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "30.0 24.0 18.0 12.0 10.0 8.0 6.0" => "24 22 20 18 16 14 12"
+	"AbilityDuration" "5.55" => "2.25 3.0 3.75 4.25 5.0 5.75 6.25"
+	"AbilityManaCost" "65 120 180 240 300 360 420" => "65 70 75 80 85 90 95"
+	"dominate_duration"	"120.0" => 100
+	"slow_movement_speed" "-20 -30 -40 -50 -60 -70 -80" => "-60"
+Enchantress - Natures Attendants:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "30" => 35
+	"AbilityDuration" "15" => 11
+	"radius" "275" => "275 275 275 275 275 300 325"
+	"wisp_count" "10 14 18 22 26 32 36" => "4 6 8 10 12 16 20"
+Enchantress - Impetus:
+	"AbilityManaCost" "55 70 90 110 130 150 170" => "55 60 65 70 80 90 100"
+	"distance_damage_pct" "30 60 90 120 150 180 210" => "14 18 22 30 40 50 60"
+	"bonus_attack_range_scepter" "50 75 100 125 150 175 200" => "200"
+Huskar - Inner Vitality:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.15 0"
+	"AbilityDuration" "10 11 12 13 14 15 16" => 16
+	"AbilityCooldown" "22 18 14 10 8 6 4" => "22 20 18 16 14 12"
+Huskar - Burning Spear:
+	RequiredLevel is now standart
+	LevelsBetweenUpgrades is now standart
+	"health_cost_pct" "80" => "15"
+	"armor_reduction_per_stack"	"-0.4 -0.5 -0.6 -0.7 -0.8 -0.9 -1" => "-0.0 -0.0 -0.1 -0.2 -0.3 -0.4 -0.5"
+	"magic_resist_per_stack" "-0.4 -0.5 -0.6 -0.7 -0.8 -0.9 -1" => "-0.0 -0.0 -0.1 -0.2 -0.3 -0.4 -0.5"
+	"damage" "10 20 40 60 80 100 120" => "5 10 15 20 25 30 40"
+	"aura_burn_chance_pct" "40" => 100%
+	"duration" "4" => 8
+	"aura_think_interval" "0.9" => 1
+Huskar - Berserkers Blood:
+	"maximum_attack_speed" "100 200 250 300 350 400 500" => "220 260 300 340 380 420 500"
+Huskar - Life Break:
+	CalculateSpellDamage is now turn off
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityDuration" "3 4 5 6 7 8 9" => "5"
+	"health_cost_percent" "0.35" => "0.34 0.36 0.38 4.0 4.2 4.4 4.6"
+	"health_damage"	"0.35" => "0.34 0.36 0.38 4.0 4.2 4.4 4.6"
+	"charge_speed" "1000" => 1200
+	"movespeed"	"-40 -50 -60 -80 -100 -120 150" => "-30 -35 -40 -45 -50 -55 -60"
+	"cooldown_scepter"	"4" => 6

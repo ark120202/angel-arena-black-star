@@ -1304,8 +1304,6 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCastRange"				"450"
-		"RequiredLevel"					"3"
-		"LevelsBetweenUpgrades"			"3"
 		"MaxLevel"						"7"
 
 		"AbilitySpecial"
@@ -1313,17 +1311,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_cost_pct"		"80"
+				"health_cost_pct"		"15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"armor_reduction_per_stack"	"-0.4 -0.5 -0.6 -0.7 -0.8 -0.9 -1"
+				"armor_reduction_per_stack"	"-0.0 -0.0 -0.1 -0.2 -0.3 -0.4 -0.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resist_per_stack"	"-0.4 -0.5 -0.6 -0.7 -0.8 -0.9 -1"
+				"magic_resist_per_stack"	"-0.0 -0.0 -0.1 -0.2 -0.3 -0.4 -0.5"
 			}
 			"04"
 			{
@@ -1343,12 +1341,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_burn_chance_pct"	"40"
+				"aura_burn_chance_pct"	"100"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"4"
+				"duration"				"8"
 			}
 			"09"
 			{
