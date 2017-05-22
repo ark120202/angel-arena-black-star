@@ -1134,5 +1134,211 @@ Broodmother - Incapacitating Bite:
 	"bonus_movespeed" "-10 -20 -30 -40 -50 -60 -70" => "-16 -22 -28 -34 -40 -46 -52"
 Broodmother - Insatiable Hunger:
 	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
-	"AbilityCooldown"	"30.0" => 45
-	"AbilityManaCost"	"100 150 200 250 300 350 400" => 
+	"AbilityCooldown" "30.0" => 45
+	"AbilityManaCost" "100 150 200 250 300 350 400" => "100 125 150 175 200 225 250"
+	"bonus_damage" "100 250 350 400 500 600 700" => "60 100 140 180 240 300 380"
+	"lifesteal_pct"	"60 90 120 150 180 210 240" => "40 60 80 100 120 140 160"
+Bounty Hunter - Shuriken Toss:
+	"AbilityCastRange" "800" => 400
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"bonus_damage" "150 225 300 400 500 600 700" => "150 225 300 375 450 525 600"
+	"speed"	"1000" => "1000 1000 1000 1000 1000 1100 1200"
+	"bounce_aoe" "2000" => "1200 1200 1200 1200 1200 1350 1500"
+Bounty Hunter - Jinada:
+	"AbilityCooldown" "12.0 10.0 8.0 6.0" => "12 11 10 9 8 7 6"
+	"bonus_movespeed" "-25 -27 -29 -31 -33 -35 -37" => "-15 -18 -21 -24 -27 -30 -35"
+	"bonus_attackspeed"	"-25 -27 -29 -31 -33 -35 -37" => "-15 -20 -25 -30 -35 -50 -65"
+Bounty Hunter - Wind Walk:
+	"AbilityCooldown" "25.0 20.0 15.0 13.0 11.0 9.0" => 15
+	"AbilityManaCost" "50 90 140 180 230 280 310" => "70"
+	"duration" "25.0 30.0 35.0 40.0 45.0" => "20 25 30 35 40 45 50"
+	"bonus_damage" "60 90 120 150 180 230 250" => "30 60 90 120 150 180 230"
+Bounty Hunter - Track:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityManaCost" "65 90 130 180 230 280 330" => "65 75 85 95 105 115 125"
+	"bonus_gold_radius"	"900 1000 1100 1200 1300 1400 1500" => "925 925 925 925 950 975 1000"
+	"bonus_gold_self" "200 275 350 400 450 500 550" => "150 250 350 500 750 1000 1500"
+	"bonus_gold" "50 100 150 200 250 300 350" => "40 90 150 250 340 500 750"
+	"duration"	"30" => 20
+Weaver - The Swarm:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "60 55 50 40 35 30 25" => "30 28 26 24 22 20 18"
+	"damage" "10 30 50 70 90 110 130" => "14 16 18 20 25 30 40"
+	"attack_rate" "1.0 0.9 0.8 0.7 0.6 0.5 0.4" => "1.25 1.15 1.05 0.95 0.85 0.75 0.65"
+	"count"	"10 15 20 25 30 35 40" => "12 14 16 18 20 22 24"
+	"armor_reduction" "1 1 1 1 1 1 1" => "1 1 1 1 1 1 2"
+	"duration"	"10 12 14 16 18 20 22" => 16
+	"speed"	"800" => "800 800 800 800 800 900 1000"
+	"destroy_attacks" "5 8 13 15 18 21 24" => "8 8 8 10 12 14 16"
+Weaver - Shikuchi:
+	"AbilityCooldown" "14 13 12 11 10 9 8" => "12 11 10 9 8 7 6"
+	"damage" "75 150 225 300 375 450 550" => "75 100 125 150 175 250 375"
+	"duration"	"3.0" => 4
+	"fade_time" "0.25" => "0.25 0.25 0.25 0.25 0.25 0.2 0.1"
+	"AbilityCooldown" "7.0 6.0 5.0 4.0 3.0 2.0 1.0" => "6 5 4 3 2 1 0.75"
+Weaver - Time Lapse:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "60 50 40" => "60 55 50 45 40 35 30"
+	"AbilityManaCost" "150 75 0" => "100 75 60 45 30 15 0"
+Jakiro - Dual Breath:
+	"AbilityCastPoint" "0.65" => "0.65 0.65 0.65 0.65 0.65 0.55 0.4"
+	"AbilityCooldown" "16.0 14.0 12.0 10.0 8.0 6.0 4.0" => 10
+	"speed"	"1050" => "1050 1050 1050 1050 1050 1100 1200"
+	"fire_delay" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"burn_damage" "40 60 80 100 120 140 160" => "20 40 60 80 100 125 150"
+	"slow_movement_speed_pct" "-10 -20 -30 -40 -50 -60 -70" => "-28 -30 -32 -34 -36 -38 -40"
+	"slow_attack_speed_pct"	"-15 -30 -45 -60 -75 -90 -110" => "-30 -35 -40 -45 -50 -65 -80"
+Jakiro - Ice Path:
+	"AbilityCastPoint" "0.65" => "0.65 0.65 0.65 0.65 0.65 0.55 0.4"
+	"AbilityCooldown" "14.0 13.0 12.0 11.0 10.0 9.0 8.0" => 10
+	"duration" "0.3 0.6 0.9 1.2 1.8 2.1 2.5" => "1.0 1.3 1.6 1.9 2.2 2.5 2.8"
+Jakiro - Liquid Fire:
+	"AbilityCooldown" "12.0 10.0 8.0 6.0 4.0 2.0 1.0" => "14 12 10 8 6 5 4"
+	"AbilityDuration" "3.0" => 5
+	"slow_attack_speed_pct"	"-20 -30 -40 -50 -60 -70 -80" => "-30 -40 -50 -60 -70 -80 -90"
+	"damage" "10 20 30 40 50 60 70" => "12 16 20 24 30 40 55"
+	"AbilityCastRange" "900" => 1400
+	"AbilityCastPoint" "0.3" => "0.65 0.65 0.65 0.65 0.65 0.55 0.4"
+	"damage" "300 600 900 1200 1500 1800 2100" => "100 140 180 220 280 340 450"
+	"duration" "3 6 9 12 15 18 21" => "10 10 10 10 10 10 15"
+	"damage_scepter" "300 600 900 1200 1500 2000 3000" => "125 175 225 275 325 425 550"
+Batrider - Sticky Napalm:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+	LevelsBetweenUpgrades is now standart
+	"damage" "20 40 60 80 100 120 140" => "10 15 20 25 30 40 55"
+	"radius" "375" => "375 375 375 375 375 400 425"
+	"movement_speed_pct" "-3 -5 -7 -9 -11 -13 -15" => "-3 -4 -5 -6 -7 -8 -10"
+	"turn_rate_pct"	"-70" => -50
+Batrider - Flamebreak:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+	"AbilityCooldown" "20.0 18.0 16.0 14.0 12.0 10.0" => 17
+	"damage_duration" "3 4 5 6 7 8 9" => "4 4.5 5 5.5 6 6.5 7"
+Batrider - Firefly:
+	"AbilityManaCost" "100 133 180 210 240 290 310" => "100 105 110 115 120 125 130"
+Batrider - Flaming Lasso:
+	"AbilityCooldown" "120 110 100 90.0 80.0 70.0 60.0" => "90 85 80 75 70 65 60"
+	"AbilityManaCost" "225 280 340 380 450 650 700" => "225 250 275 300 325 350 375"
+	"duration" "3.0 3.5 4.0 4.5 5.0 5.5 6.0" => "3.0 3.2 3.4 3.6 3.8 4.0 4.2"
+	"grab_radius_scepter" "750" => 400
+	"damage_scepter" "300 600 900 1200 1500 1800 2100" => "100 125 150 175 200 225 250"
+Chen - Penitence:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "14.0 13.0 12.0 11.0 10.0 9.0 8.0" => "14.0 13.5 13.0 12.5 12.0 11.5 11"
+	"bonus_movement_speed" "-15 -20 -25 -30 -35 -40 -45" => "-18 -21 -24 -27 -30 -33 -36"
+	"bonus_damage_taken" "15 20 25 30 35 40 45" => "-18 -21 -24 -27 -30 -33 -36"
+Chen - Test of Faith:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "16 15 14 13 12 11 10" => "16.0 15.5 15.0 14.5 14.0 13.5 13.0"
+Chen - Test of Faith Teleport:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "24.0 22.0 20.0 18.0 16.0 14.0" => "20"
+	"AbilityManaCost" "200 250 300 350 400 450 500" => 200
+	"hero_teleport_delay" "8.0 7.0 6.0 5.0 4.0 3.0 2.0" => "6.0 5.5 5.0 4.5 4.0 3.0 2.0"
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "30.0 26.0 22.0 18.0 14.0 10.0 6.0" => 10
+	"AbilityManaCost" "100 150 200 250 300 350 450" => 100
+	"max_units"	"2 4 6 8 10 14 16" => "1 2 3 4 5 6 7"
+Chen - Hand of God:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "160.0 150.0 140.0 130.0 120.0 110.0 100.0" => "90 80 70 60 50 40 30"
+	"heal_amount" "200 300 400 500 800 1000 1300" => "200 300 400 600 900 1500 3000"
+	"ancient_creeps_scepter" "1 2 3 5 8 11 14" => "1 2 3 4 5 6 7"
+Spectre - Spectral Dagger:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCooldown" "16.0" => 12
+	"AbilityManaCost" "140 150 160 180 200 220 240" => "140 150 160 170 180 190 200"
+	"damage" "50 100 150 200 300 400 500" => "75 125 175 225 300 425 550"
+	"bonus_movespeed" "8 12 16 20 24 28 32" => "8 11 14 17 20 23 26"
+	"speed"	"800 800 800 800 800 800 800" => "800 800 800 800 800 900 1000"
+Spectre - Desolate:
+	"bonus_damage" "35 50 65 80 110 130 150" => "20 30 40 50 60 70 85"
+Spectre - Dispersion:
+	LevelsBetweenUpgrades is now standart
+	"max_radius" "1000" => "1000 1000 1000 1000 1000 1100 1200"
+Spectre - Haunt:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+	"AbilityManaCost" "150 200 250 300 350 400 450" => "150"
+	"duration" "5.0 6.0 7.0 8.0 9.0 10.0 11.0" => "5.0 5.5 6.0 6.5 7.0 7.5 8.0"
+Doom - Devour:
+	RequiredLevel is now standart
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityCastRange" "250 300 325 350 375 400 425" => 300
+	"AbilityCooldown" "90 80 70 60 50 40 30" => "70 65 60 55 50 45 40"
+	"AbilityManaCost" "60 120 180 210 260 320 400" => "40 50 60 70 80 90 100"
+	"min_bonus_gold" "300 600 900 1200 1500 1800 2100" => "150 300 450 600 800 1100 1500"
+	"duration" "8 12 16 20 24 28 32" => "15"
+Doom - Bringer Scorched Earth:
+	LevelsBetweenUpgrades is now standart
+	"AbilityCooldown" "60 50 40 35 30 25 20" => "40"
+	"AbilityCastRange" "300 400 500 600 700 800 900" => 600
+	"AbilityManaCost" "60 70 75 80 90 100 110" => "60 70 75 80 85 90 95"
+	"damage_per_second"	"25 50 75 100 200 250 300" => "16 24 32 40 50 60 70"
+	"bonus_movement_speed_pct" "10 15 20 25 30 35 40" => 15
+	"duration" "4.0 6.0 8.0 10.0 12.0 14.0 16.0" => "10 11 12 13 14 15 16"
+	"AbilityCooldown" "20 16 14 12 10 8 6" => "15 13 11 9 7 6 5"
+	"AbilityManaCost" "40 60 80 100 140 180 320" => 50
+	"burn_damage" "20 40 60 80 100 120 140" => "25 30 35 40 45 50 65"
+	"ministun_duration"	"0.1 0.2 0.3 0.4 0.5 0.6 0.7" => "0.4"
+Doom - Bringer Doom:
+	"AbilityCastPoint" "0.5" => "0.5 0.5 0.5 0.5 0.5 0.4 0.3"
+	"AbilityCooldown" "145.0 135.0 125.0 115.0 105.0 95.0 85.0" => "120 115 110 105 100 90 95"
+	"duration" "6 7 8 9 10 11 12" => 15
+	"damage" "50 100 150 200 250 300 350" => "25 40 55 70 90 115 160"
+	"duration_scepter" "7 8 9 10 11 12 13" => 16
+	"damage_scepter" "100 200 300 400 500 600 700" => "30 45 60 80 100 140 200"
+Ancient Apparation - Cold Feet:
+	"AbilityCastRange" "700 800 900 1000 1100 1200 1300" => "700 750 800 850 900 950 1000"
+	"AbilityCooldown" "13 12 11 10 9 8 7" => "10 9.5 9.0 8.5 8.0 7.5 7.0"
+	"AbilityManaCost" "100 120 140 160 180 200 220" => "100 110 120 130 140 150 160"
+	"damage" "60 80 100 120 140 180 220" => "30 50 70 90 110 130 160"
+Ancient Apparation - Ice Vortex:
+	"movement_speed_pct" "-20 -30 -40 -50 -60 -70 -80" => "-15 -18 -21 -24 -27 -30 -33"
+	"spell_resist_pct"	"-15 -20 -25 -30 -35 -40 -45" => "-15 -18 -21 -24 -27 -30 -33"
+Ancient Apparation - Chilling Touch:
+	"AbilityCooldown" "50.0 42.0 34.0 26.0 24.0 22.0 20.0" => "30 28 26 24 22 20 18"
+	"AbilityDuration" "30.0" => 20
+	"AbilityManaCost" "110 140 180 210 240 280 320" => "110 120 130 140 150 160 170"
+	"bonus_damage" "50 80 110 130 150 210 250" => "50 60 70 80 90 120 150"
+	"attack_speed_pct" "-20 -30 -40 -50 -60 -70 -80" => "-20 -25 -30 -35 -40 -45 -50"
+Ancient Apparation - Ice Blast:
+	"AbilityManaCost" "100 175 230 290 260 320 380" => "100 125 150 175 200 225 250"
+	"AbilityDamage"	"300 400 500 600 800 1000 1400" => "250 350 450 550 650 750 850"
+	"dot_damage" "10 20 40 80 120 160 200" => "12.5 20 32 40 52 74 90"
+	"frostbite_duration_scepter" "20" => 17
+Spirit Breaker - Charge of Darkness:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+	"AbilityCooldown" "16 15 14 13 12 11 10" => 12
+	"AbilityManaCost" "100 150 200 250 300 350 400" => 100
+	"movement_speed" "1400 1500 1600 1700 1800 1900 2000" => "600 650 700 750 800 850 900"
+	"stun_duration"	"1.8 2 2.2 2.4 2.6 2.8 3" => "1.2 1.4 1.6 1.8 2.0 2.2 2.4"
+Spirit Breaker - Empowering Haste:
+	"bonus_movespeed_pct" "16 20 24 28 32 36 40" => "8 10 12 14 16 18 20"
+	"aura_radius" "900" => "900 900 900 900 900 950 1000"
+	"bonus_movespeed_pct_extra"	"8 10 12 14 16 18 20" => "3 4 5 6 7 8 9"
+	"damage" "32 42 52 62 72 82 92" => "22 30 38 46 54 66 80"
+	"duration" "1.0 1.2 1.4 1.6 1.8 2.0 2.2" => "1.0 1.1 1.2 1.3 1.4 1.5 1.6"
+	"knockback_distance" "143 152 158 162 180 200 220" => "142 146 150 154 158 162 166"
+	"bonus_movespeed_pct" "15" => "20"
+Spirit Breaker - Nether Striker:
+	"AbilityCastPoint" "1.1 0.9 0.8 0.7 0.6 0.5 0.4" => "1.2 1.2 1.2 1.2 1.2 1.0 0.8"
+	"AbilityCooldown" "90 80 70 60 50 40 30" => "70 65 60 55 50 45 40"
+	"damage" "100 200 300 400 500 600 700" => "150 250 350 450 550 650 750"
+	"cast_range_scepter" "1500" => 900
+	"cooldown_scepter" "15.0" => 20
+Ursa - Earthshock:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"AbilityManaCost" "75 100 125 150 175 200 225" => 75
+	"shock_radius" "385" => "385 385 385 385 385 385 400"
+	"movement_slow"	"-25 -35 -45 -55 -65 -75 -85" => "-25 -30 -35 -40 -45 -50 -55"
+Ursa - Empower:
+	"AbilityCastPoint" "0.3" => "0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+	"max_attacks" "2 4 6 8 10 12 14" => "3 4 5 6 7 8 9"
+	"attack_speed_bonus_pct" "1000" => "450"
+Ursa - 	Fury Swipes:
+	"bonus_reset_time" "5" => 7
+	"damage_per_stack" "15 30 45 60 75 100 125" => "15 20 25 30 35 40 45"
+Ursa - Enrage:
+	"AbilityCooldown" "60" => "50 50 50 45 40 35 30"
+	"enrage_multiplier"	"2 4 8 10 12 14 16" => "1.5 2.0 2.5 3.0 3.5 4.0 4.5"
+	"damage_reduction" "60" => 80
+	"cooldown_scepter" "12" => "30 28 26 24 22 20 18"

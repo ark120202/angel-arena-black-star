@@ -1157,11 +1157,10 @@
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"AbilityTextureName"		"doom_bringer_devour"
 		"MaxLevel"					"7"
-		"AbilityCastPoint"			"0.3"
-		"AbilityCastRange"			"250 300 325 350 375 400 425"
-		"AbilityCooldown"			"90 80 70 60 50 40 30"
-		"AbilityManaCost"			"60 120 180 210 260 320 400"
-		"RequiredLevel"				"3"
+		"AbilityCastPoint"			"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+		"AbilityCastRange"			"300"
+		"AbilityCooldown"			"70 65 60 55 50 45 40"
+		"AbilityManaCost"			"40 50 60 70 80 90 100"
 
 		"precache"
 		{
@@ -1174,7 +1173,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"min_bonus_gold"		"300 600 900 1200 1500 1800 2100"
+				"min_bonus_gold"		"150 300 450 600 800 1100 1500"
 			}
 			"02"
 			{
@@ -1184,7 +1183,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"8 12 16 20 24 28 32"
+				"duration"				"15"
 			}
 			"04"
 			{
