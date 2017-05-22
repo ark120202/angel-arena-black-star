@@ -1,22 +1,25 @@
-Item - Tango:
+Tango:
 	Radius: 180 => 300
-"item_piercing_blade"
-	"bonus_damage"			"500" => 420
-"item_splitshot_agi"
-	"bonus_attack_speed"			"15" => 25
-"item_recipe_steam_footgear"
-	"ItemCost"						"450" => 1250
-"item_ray_of_fate"
-	"ItemCost"						"380" => 180
-"item_skull_of_midas"
-	"ItemCost"						"1650" => 1100
-"item_horn_of_the_underworld"
-	"duration"								"6" => 3
-"item_wand_of_midas"
-	"gold"				"30" => 60
-"item_shard_attackspeed"
-	"ItemCost"						"2000" => 1350
-
+Piercing blade:
+	Bonus Damage: 500 => 420
+	"item_javelin;item_rapier;item_broadsword;item_claymore;item_blades_of_attack" =>  item_javelin;item_rapier;
+	"ItemCost"						"1980"	=>  4300
+Splitshot Agi:
+	Bonus Attack speed: 15 => 25
+Recipe Steam Footgear:
+	Cost: 450 => 1250
+Ray of fate:
+	Cost: 380 => 180
+Skull of midas:
+	Cost: 1650 => 1100
+Horn of the underworld:
+	Duration: 6 => 3
+Wand Of Midas:
+	Gold: 30 => 60
+Shard Attackspeed:
+	Cost: 2000 => 1350
+"item_lotus_sphere"
+	"AbilityCooldown"				"7.5" => 10
 
 
 Kadash - Assasins Skills:

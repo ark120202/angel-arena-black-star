@@ -10919,12 +10919,12 @@
 		"ID"							"10256"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1980"	
+		"ItemCost"						"4300"	
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_piercing_blade"
 		"ItemRequirements"
 		{
-			"01"						"item_javelin;item_rapier;item_broadsword;item_claymore;item_blades_of_attack"
+			"01"						"item_javelin;item_rapier;"
 		}
 	}
 
@@ -12576,7 +12576,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"7.5"
+		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"125"
 
 		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
