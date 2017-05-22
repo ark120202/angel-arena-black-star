@@ -1,7 +1,24 @@
-нерф крипов 💛💛💛💛💛
-
 Item - Tango:
-	aoe: 180 => 300
+	Radius: 180 => 300
+"item_piercing_blade"
+	"bonus_damage"			"500" => 420
+"item_splitshot_agi"
+	"bonus_attack_speed"			"15" => 25
+"item_recipe_steam_footgear"
+	"ItemCost"						"450" => 1250
+"item_ray_of_fate"
+	"ItemCost"						"380" => 180
+"item_skull_of_midas"
+	"ItemCost"						"1650" => 1100
+"item_horn_of_the_underworld"
+	"duration"								"6" => 3
+"item_wand_of_midas"
+	"gold"				"30" => 60
+"item_shard_attackspeed"
+	"ItemCost"						"2000" => 1350
+
+
+
 Kadash - Assasins Skills:
 	Crit Mult: 30 60 90 120 150 180 210 => 130 160 190 220 250 280 310
 	Crit Chance: 8 12 16 20 24 28 32 => 16 18 20 22 24 26 28
@@ -38,9 +55,9 @@ Cherub - Flower Purple Lotus:
 Drow Ranger - Marksmanship:
 	Split Count Scepter 8 => 2
 Arthas - Plus Morality:
-	Bounty Multiplier	2 5 8 12 15 18 20 => 2 4 6 8 10 12 14
+	Bounty Multiplier: 2 5 8 12 15 18 20 => 2 4 6 8 10 12 14
 Arthas - Vikared:
-	Cooldown	: 60 55 50 45 40 35 30 => 60
+	Cooldown : 60 55 50 45 40 35 30 => 60
 Cherub - Sleep Cloud:
 	Duration: 10 12 14 16 18 20 22 => 9 10 11 12 13 14 15
 	Time To Sleep: 3.5 3.0 2.5 2.0 1.5 1.0 0.5 => 2.1 1.8 1.5 1.2 0.9 0.6 0.3

@@ -2911,7 +2911,7 @@
 		"ID"							"10094"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"450"	
+		"ItemCost"						"1250"	
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_steam_footgear"
 		"ItemRequirements"
@@ -3101,7 +3101,7 @@
 		"ID"							"10098"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"380"
+		"ItemCost"						"180"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_ray_of_fate"
 		"ItemUseCharges"				"item_dust"
@@ -3778,7 +3778,7 @@
 		"ID"							"10137"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1650"	
+		"ItemCost"						"1100"	
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_skull_of_midas"
 		"ItemRequirements"
@@ -8540,7 +8540,7 @@
 			"10"
 			{
 				"var_type"								"FIELD_FLOAT"
-				"duration"								"6"
+				"duration"								"3"
 			}
 			"11"
 			{
@@ -10942,7 +10942,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"			"500"
+				"bonus_damage"			"420"
 			}
 			"02"
 			{
@@ -13452,7 +13452,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"gold"				"30"
+				"gold"				"60"
 			}
 			"03"
 			{

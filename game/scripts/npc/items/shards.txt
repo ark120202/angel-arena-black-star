@@ -721,7 +721,7 @@
 		"ID"							"10026"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_attackspeed"
-		"ItemCost"						"2000"
+		"ItemCost"						"1350"
 		"ItemShopTags"					"as;attackspeed;shard"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
