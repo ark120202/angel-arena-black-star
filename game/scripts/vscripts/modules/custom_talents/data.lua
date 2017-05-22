@@ -758,34 +758,34 @@ CUSTOM_TALENTS_DATA = {
 		effect = {abilities = "special_bonus_unique_lina_1"}
 	},
 	talent_hero_lina_fiery_soul_per_stack = {
-		icon = "iery_soul_per_stack",
+		icon = "fiery_soul_per_stack",
 		cost = 1,
 		group = 1,
-		requirement = "ffffiery_soul_per_stack",
+		requirement = "fiery_soul_per_stack",
 		special_values = {value = 40},
 		effect = {abilities = "special_bonus_unique_lina_2"}
 	},
 	talent_hero_lich_frost_blast_cooldown = {
-		icon = "ffffrost_blast_cooldown",
+		icon = "frost_blast_cooldown",
 		cost = 1,
 		group = 1,
-		requirement = "ffffrost_blast_cooldown",
+		requirement = "frost_blast_cooldown",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_lich_3"}
 	},
 	talent_hero_lich_frost_armor_structure_armor = {
-		icon = "ffffrost_armor_structure_armor",
+		icon = "frost_armor_structure_armor",
 		cost = 1,
 		group = 1,
-		requirement = "ffffrost_armor_structure_armor",
+		requirement = "frost_armor_structure_armor",
 		special_values = {value = 35},
 		effect = {abilities = "special_bonus_unique_lich_1"}
 	},
 	talent_hero_lich_attacks_apply_ms_slow = {
-		icon = "fffattacks_apply_ms_slow",
+		icon = "attacks_apply_ms_slow",
 		cost = 1,
 		group = 1,
-		requirement = "fffattacks_apply_ms_slow",
+		requirement = "attacks_apply_ms_slow",
 		special_values = {value = 30},
 		effect = {abilities = "special_bonus_unique_lich_2"}
 	},
@@ -798,90 +798,90 @@ CUSTOM_TALENTS_DATA = {
 		effect = {abilities = "special_bonus_unique_lion_2"}
 	},
 	talent_hero_lion_mana_drain_multi_target = {
-		icon = "fffmana_drain_multi_target",
+		icon = "mana_drain_multi_target",
 		cost = 1,
 		group = 1,
-		requirement = "fffmana_drain_multi_target",
+		requirement = "mana_drain_multi_target",
 		special_values = {value = 3},
 		effect = {abilities = "special_bonus_unique_lion"}
 	},
 	talent_hero_shadow_shaman_wards_summoned = {
-		icon = "fffwards_summoned",
+		icon = "wards_summoned",
 		cost = 1,
 		group = 1,
-		requirement = "fffwards_summoned",
+		requirement = "wards_summoned",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_shadow_shaman_4"}
 	},
 	talent_hero_shadow_shaman_shackles_duration = {
-		icon = "fffshackles_duration",
+		icon = "shackles_duration",
 		cost = 1,
 		group = 1,
-		requirement = "fffshackles_duration",
+		requirement = "shackles_duration",
 		special_values = {value = 3},
 		effect = {abilities = "special_bonus_unique_shadow_shaman_2"}
 	},
 	talent_hero_shadow_shaman_serpent_wards_attacks = {
-		icon = "fffserpent_wards_attacks",
+		icon = "serpent_wards_attacks",
 		cost = 1,
 		group = 1,
-		requirement = "fffserpent_wards_attacks",
+		requirement = "serpent_wards_attacks",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_shadow_shaman_1"}
 	},
 	talent_hero_shadow_shaman_ether_shock_damage = {
-		icon = "fffether_shock_damage",
+		icon = "ether_shock_damage",
 		cost = 1,
 		group = 1,
-		requirement = "fffether_shock_damage",
+		requirement = "ether_shock_damage",
 		special_values = {value = 350},
 		effect = {abilities = "special_bonus_unique_shadow_shaman_3"}
 	},
 	talent_hero_slardar_bash_chance = {
-		icon = "fffbash_chance",
+		icon = "bash_chance",
 		cost = 1,
 		group = 1,
-		requirement = "fffbash_chance",
+		requirement = "bash_chance",
 		special_values = {value = 10},
 		effect = {abilities = "special_bonus_unique_slardar"}
 	},
 	talent_hero_tidehunter_gush_armor = {
-		icon = "fffgush_armor",
+		icon = "gush_armor",
 		cost = 1,
 		group = 1,
-		requirement = "fffgush_armor",
+		requirement = "gush_armor",
 		special_values = {value = 6},
 		effect = {abilities = "special_bonus_unique_tidehunter"}
 	},
 	talent_hero_witch_doctor_cask_bounces = {
-		icon = "fffcask_bounces",
+		icon = "cask_bounces",
 		cost = 1,
 		group = 1,
-		requirement = "fffcask_bounces",
+		requirement = "cask_bounces",
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_witch_doctor_3"}
 	},
 	talent_hero_witch_doctor_death_ward_attack_range = {
-		icon = "fffdeath_ward_attack_range",
+		icon = "death_ward_attack_range",
 		cost = 1,
 		group = 1,
-		requirement = "fffdeath_ward_attack_range",
+		requirement = "death_ward_attack_range",
 		special_values = {value = 175},
 		effect = {abilities = "special_bonus_unique_witch_doctor_1"}
 	},
 	talent_hero_witch_doctor_voodoo_restoration_heal = {
-		icon = "fffvoodoo_restoration_heal",
+		icon = "voodoo_restoration_heal",
 		cost = 1,
 		group = 1,
-		requirement = "fffvoodoo_restoration_heal",
+		requirement = "voodoo_restoration_heal",
 		special_values = {value = 20},
 		effect = {abilities = "special_bonus_unique_witch_doctor_2"}
 	},
 	talent_hero_riki_backstab_multiplier = {
-		icon = "fffbackstab_multiplier",
+		icon = "fbackstab_multiplier",
 		cost = 1,
 		group = 1,
-		requirement = "fffbackstab_multiplier",
+		requirement = "fbackstab_multiplier",
 		special_values = {value = 40},
 		effect = {abilities = "special_bonus_unique_riki_1"}
 	},
@@ -893,339 +893,339 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_riki_2"}
 	},
-	talent_hero_special_bonus_unique_enigma_2 = {
-		icon = "special_bonus_unique_enigma_2",
+	talent_hero_enigma_malefice_instance = {
+		icon = "malefice_instance",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_enigma_2",
+		requirement = "malefice_instance",
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_enigma_2"}
 	},
-	talent_hero_special_bonus_unique_enigma = {
-		icon = "special_bonus_unique_enigma",
+	talent_hero_enigma_demonic_conversion_eidolons = {
+		icon = "demonic_conversion_eidolons",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_enigma",
+		requirement = "demonic_conversion_eidolons",
 		special_values = {value = 8},
 		effect = {abilities = "special_bonus_unique_enigma"}
 	},
-	talent_hero_special_bonus_unique_tinker = {
-		icon = "special_bonus_unique_tinker",
+	talent_hero_tinker_laser_damage = {
+		icon = "laser_damage",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_tinker",
+		requirement = "laser_damage",
 		special_values = {value = 100},
 		effect = {abilities = "special_bonus_unique_tinker"}
 	},
-	talent_hero_special_bonus_unique_sniper_1 = {
-		icon = "special_bonus_unique_sniper_1",
+	talent_hero_sniper_shrapnel_dps = {
+		icon = "shrapnel_dps",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_sniper_1",
+		requirement = "shrapnel_dps",
 		special_values = {value = 20},
 		effect = {abilities = "special_bonus_unique_sniper_1"}
 	},
-	talent_hero_special_bonus_unique_sniper_2 = {
-		icon = "special_bonus_unique_sniper_2",
+	talent_hero_sniper_shrapnel_charges = {
+		icon = "shrapnel_charges",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_sniper_2",
+		requirement = "shrapnel_charges",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_sniper_2"}
 	},
-	talent_hero_special_bonus_unique_necrophos = {
-		icon = "special_bonus_unique_necrophos",
+	talent_hero_necrophos_death_pulse_cooldown = {
+		icon = "death_pulse_cooldown",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_necrophos",
+		requirement = "death_pulse_cooldown",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_necrophos"}
 	},
-	talent_hero_special_bonus_unique_warlock_3 = {
-		icon = "special_bonus_unique_warlock_3",
+	talent_hero_warlock_shadow_word_cooldown = {
+		icon = "shadow_word_cooldown",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_warlock_3",
+		requirement = "shadow_word_cooldown",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_warlock_3"}
 	},
-	talent_hero_special_bonus_unique_warlock_4 = {
-		icon = "special_bonus_unique_warlock_4",
+	talent_hero_warlock_summons_golem_on_death = {
+		icon = "summons_golem_on_death",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_warlock_4",
+		requirement = "summons_golem_on_death",
 		special_values = {value = 0},
 		effect = {abilities = "special_bonus_unique_warlock_4"}
 	},
-	talent_hero_special_bonus_unique_warlock_1 = {
-		icon = "special_bonus_unique_warlock_1",
+	talent_hero_warlock_magic_immunity_for_chaotic_offering_golems = {
+		icon = "magic_immunity_for_chaotic_offering_golems",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_warlock_1",
+		requirement = "magic_immunity_for_chaotic_offering_golems",
 		special_values = {value = 0},
 		effect = {abilities = "special_bonus_unique_warlock_1"}
 	},
-	talent_hero_special_bonus_unique_warlock_2 = {
-		icon = "special_bonus_unique_warlock_2",
+	talent_hero_warlock_chaotic_offering_golems_armor = {
+		icon = "chaotic_offering_golems_armor",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_warlock_2",
+		requirement = "chaotic_offering_golems_armor",
 		special_values = {value = 15},
 		effect = {abilities = "special_bonus_unique_warlock_2"}
 	},
-	talent_hero_special_bonus_unique_beastmaster_2 = {
-		icon = "special_bonus_unique_beastmaster_2",
+	talent_hero_beastmaster_boar_summoned = {
+		icon = "boar_summoned",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_beastmaster_2",
+		requirement = "boar_summoned",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_beastmaster_2"}
 	},
-	talent_hero_special_bonus_unique_beastmaster = {
-		icon = "special_bonus_unique_beastmaster",
+	talent_hero_beastmaster_wild_axes_damage = {
+		icon = "wild_axes_damage",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_beastmaster",
+		requirement = "wild_axes_damage",
 		special_values = {value = 250},
 		effect = {abilities = "special_bonus_unique_beastmaster"}
 	},
-	talent_hero_special_bonus_unique_queen_of_pain = {
-		icon = "special_bonus_unique_queen_of_pain",
+	talent_hero_queen_of_pain_aoe_shadow_strike = {
+		icon = "aoe_shadow_strike",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_queen_of_pain",
+		requirement = "aoe_shadow_strike",
 		special_values = {value = 550},
 		effect = {abilities = "special_bonus_unique_queen_of_pain"}
 	},
-	talent_hero_special_bonus_unique_venomancer_2 = {
-		icon = "special_bonus_unique_venomancer_2",
+	talent_hero_venomancer_poison_sting_slow = {
+		icon = "poison_sting_slow",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_venomancer_2",
+		requirement = "poison_sting_slow",
 		special_values = {value = -14},
 		effect = {abilities = "special_bonus_unique_venomancer_2"}
 	},
-	talent_hero_special_bonus_unique_venomancer = {
-		icon = "special_bonus_unique_venomancer",
+	talent_hero_venomancer_plague_ward_hp_damage = {
+		icon = "plague_ward_hp_damage",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_venomancer",
+		requirement = "plague_ward_hp_damage",
 		special_values = {value = 3},
 		effect = {abilities = "special_bonus_unique_venomancer"}
 	},
-	talent_hero_special_bonus_unique_faceless_void = {
-		icon = "special_bonus_unique_faceless_void",
+	talent_hero_faceless_void_timewalk_cast_range = {
+		icon = "timewalk_cast_range",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_faceless_void",
+		requirement = "timewalk_cast_range",
 		special_values = {value = 600},
 		effect = {abilities = "special_bonus_unique_faceless_void"}
 	},
-	talent_hero_special_bonus_unique_wraith_king_3 = {
-		icon = "special_bonus_unique_wraith_king_3",
+	talent_hero_wraith_king_wraithfire_blast_dps = {
+		icon = "wraithfire_blast_dps",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_wraith_king_3",
+		requirement = "wraithfire_blast_dps",
 		special_values = {value = 60},
 		effect = {abilities = "special_bonus_unique_wraith_king_3"}
 	},
-	talent_hero_special_bonus_unique_wraith_king_2 = {
-		icon = "special_bonus_unique_wraith_king_2",
+	talent_hero_wraith_king_vampiric_aura_lifesteal = {
+		icon = "vampiric_aura_lifesteal",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_wraith_king_2",
+		requirement = "vampiric_aura_lifesteal",
 		special_values = {value = 10},
 		effect = {abilities = "special_bonus_unique_wraith_king_2"}
 	},
-	talent_hero_special_bonus_unique_wraith_king_1 = {
-		icon = "special_bonus_unique_wraith_king_1",
+	talent_hero_wraith_king_no reincarnation_manacost = {
+		icon = "no_reincarnation_manacost",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_wraith_king_1",
+		requirement = "no_reincarnation_manacost",
 		special_values = {value = 0},
 		effect = {abilities = "special_bonus_unique_wraith_king_1"}
 	},
-	talent_hero_special_bonus_unique_wraith_king_4 = {
-		icon = "special_bonus_unique_wraith_king_4",
+	talent_hero_wraith_king_reincarnation_casts_wraithfire blast = {
+		icon = "reincarnation_casts_wraithfire blast",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_wraith_king_4",
+		requirement = "reincarnation_casts_wraithfire blast",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_wraith_king_4"}
 	},
-	talent_hero_special_bonus_unique_death_prophet_2 = {
-		icon = "special_bonus_unique_death_prophet_2",
+	talent_hero_death_prophet_crypt_swarm_cooldown = {
+		icon = "crypt_swarm_cooldown",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_death_prophet_2",
+		requirement = "crypt_swarm_cooldown",
 		special_values = {value = 1.5},
 		effect = {abilities = "special_bonus_unique_death_prophet_2"}
 	},
-	talent_hero_special_bonus_unique_death_prophet = {
-		icon = "special_bonus_unique_death_prophet",
+	talent_hero_death_prophet_exorcism_spirits = {
+		icon = "exorcism_spirits",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_death_prophet",
+		requirement = "exorcism_spirits",
 		special_values = {value = 8},
 		effect = {abilities = "special_bonus_unique_death_prophet"}
 	},
-	talent_hero_special_bonus_unique_phantom_assassin = {
-		icon = "special_bonus_unique_phantom_assassin",
+	talent_hero_phantom_assassin_double_strike_stifling_dagger = {
+		icon = "double_strike_stifling_dagger",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_phantom_assassin",
+		requirement = "double_strike_stifling_dagger",
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_phantom_assassin"}
 	},
-	talent_hero_special_bonus_unique_pugna_5 = {
-		icon = "special_bonus_unique_pugna_5",
+	talent_hero_pugna_decrepify_duration = {
+		icon = "decrepify_duration",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_pugna_5",
+		requirement = "decrepify_duration",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_pugna_5"}
 	},
-	talent_hero_special_bonus_unique_pugna_4 = {
-		icon = "special_bonus_unique_pugna_4",
+	talent_hero_pugna_netherblast_cooldown = {
+		icon = "netherblast_cooldown",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_pugna_4",
+		requirement = "netherblast_cooldown",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_pugna_4"}
 	},
-	talent_hero_special_bonus_unique_pugna_3 = {
-		icon = "special_bonus_unique_pugna_3",
+	talent_hero_pugna_netherward_damage_per_mana = {
+		icon = "netherward_damage_per_mana",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_pugna_3",
+		requirement = "netherward_damage_per_mana",
 		special_values = {value = 0.5},
 		effect = {abilities = "special_bonus_unique_pugna_3"}
 	},
-	talent_hero_special_bonus_unique_pugna_1 = {
-		icon = "special_bonus_unique_pugna_1",
+	talent_hero_pugna_life_drain_heal = {
+		icon = "life_drain_heal",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_pugna_1",
+		requirement = "life_drain_heal",
 		special_values = {value = 50},
 		effect = {abilities = "special_bonus_unique_pugna_1"}
 	},
-	talent_hero_special_bonus_unique_pugna_2 = {
-		icon = "special_bonus_unique_pugna_2",
+	talent_hero_pugna_nether_blast_damage = {
+		icon = "nether_blast_damage",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_pugna_2",
+		requirement = "nether_blast_damage",
 		special_values = {value = 150},
 		effect = {abilities = "special_bonus_unique_pugna_2"}
 	},
-	talent_hero_special_bonus_unique_templar_assassin_2 = {
-		icon = "special_bonus_unique_templar_assassin_2",
+	talent_hero_templar_assassin_armor_reduction = {
+		icon = "assassin_armor_reduction",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_templar_assassin_2",
+		requirement = "assassin_armor_reduction",
 		special_values = {value = -8},
 		effect = {abilities = "special_bonus_unique_templar_assassin_2"}
 	},
-	talent_hero_special_bonus_unique_templar_assassin = {
-		icon = "special_bonus_unique_templar_assassin",
+	talent_hero_templar_assassin_refraction_instances = {
+		icon = "assassin_refraction_instances",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_templar_assassin",
+		requirement = "assassin_refraction_instances",
 		special_values = {value = 3},
 		effect = {abilities = "special_bonus_unique_templar_assassin"}
 	},
-	talent_hero_special_bonus_unique_viper_1 = {
-		icon = "special_bonus_unique_viper_1",
+	talent_hero_viper_poison_attack = {
+		icon = "poison_attack",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_viper_1",
+		requirement = "poison_attack",
 		special_values = {value = 0},
 		effect = {abilities = "special_bonus_unique_viper_1"}
 	},
-	talent_hero_special_bonus_unique_viper_2 = {
-		icon = "special_bonus_unique_viper_2",
+	talent_hero_viper_strike_dps = {
+		icon = "strike_dps",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_viper_2",
+		requirement = "viper_strike_dps",
 		special_values = {value = 80},
 		effect = {abilities = "special_bonus_unique_viper_2"}
 	},
-	talent_hero_special_bonus_unique_luna_1 = {
-		icon = "special_bonus_unique_luna_1",
+	talent_hero_luna_lucent_beam_damage = {
+		icon = "lucent_beam_damage",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_luna_1",
+		requirement = "lucent_beam_damage",
 		special_values = {value = 40},
 		effect = {abilities = "special_bonus_unique_luna_1"}
 	},
-	talent_hero_special_bonus_unique_luna_2 = {
-		icon = "special_bonus_unique_luna_2",
+	talent_hero_luna_lucent_beam_cooldown = {
+		icon = "lucent_beam_cooldown",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_luna_2",
+		requirement = "lucent_beam_cooldown",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_luna_2"}
 	},
-	talent_hero_special_bonus_unique_dragon_knight = {
-		icon = "special_bonus_unique_dragon_knight",
+	talent_hero_knight_dragon_blood_hp_regen_armor = {
+		icon = "blood_hp_regen_armor",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_dragon_knight",
+		requirement = "blood_hp_regen_armor",
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_dragon_knight"}
 	},
-	talent_hero_special_bonus_unique_dazzle_3 = {
-		icon = "special_bonus_unique_dazzle_3",
+	talent_hero_dazzle_poison_touch_dps = {
+		icon = "poison_touch_dps",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_dazzle_3",
+		requirement = "poison_touch_dps",
 		special_values = {value = 25},
 		effect = {abilities = "special_bonus_unique_dazzle_3"}
 	},
-	talent_hero_special_bonus_unique_dazzle_1 = {
-		icon = "special_bonus_unique_dazzle_1",
+	talent_hero_dazzle_poison_touch_cooldown = {
+		icon = "poison_touch_cooldown",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_dazzle_1",
+		requirement = "poison_touch_cooldown",
 		special_values = {value = 6},
 		effect = {abilities = "special_bonus_unique_dazzle_1"}
 	},
-	talent_hero_special_bonus_unique_dazzle_2 = {
-		icon = "special_bonus_unique_dazzle_2",
+	talent_hero_dazzle_shadow_wave_heal = {
+		icon = "shadow_wave_heal",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_dazzle_2",
+		requirement = "shadow_wave_heal",
 		special_values = {value = 60},
 		effect = {abilities = "special_bonus_unique_dazzle_2"}
 	},
-	talent_hero_special_bonus_unique_clockwerk_2 = {
-		icon = "special_bonus_unique_clockwerk_2",
+	talent_hero_clockwerk_rocket_flare_damage = {
+		icon = "rocket_flare_damage",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_clockwerk_2",
+		requirement = "rocket_flare_damage",
 		special_values = {value = 75},
 		effect = {abilities = "special_bonus_unique_clockwerk_2"}
 	},
-	talent_hero_special_bonus_unique_clockwerk_3 = {
-		icon = "special_bonus_unique_clockwerk_3",
+	talent_hero_clockwerk_battery_assault_damage = {
+		icon = "battery_assault_damage",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_clockwerk_3",
+		requirement = "battery_assault_damage",
 		special_values = {value = 40},
 		effect = {abilities = "special_bonus_unique_clockwerk_3"}
 	},
-	talent_hero_special_bonus_unique_clockwerk = {
-		icon = "special_bonus_unique_clockwerk",
+	talent_hero_clockwerk_battery_assault_duration = {
+		icon = "battery_assault_duration",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_clockwerk",
+		requirement = "battery_assault_duration",
 		special_values = {value = 10},
 		effect = {abilities = "special_bonus_unique_clockwerk"}
 	},
-	talent_hero_special_bonus_unique_leshrac_1 = {
-		icon = "special_bonus_unique_leshrac_1",
+	talent_hero_leshrac_diabolic_edict_explosions = {
+		icon = "diabolic_edict_explosions",
 		cost = 1,
 		group = 1,
-		requirement = "special_bonus_unique_leshrac_1",
+		requirement = "diabolic_edict_explosions",
 		special_values = {value = 50},
 		effect = {abilities = "special_bonus_unique_leshrac_1"}
 	},

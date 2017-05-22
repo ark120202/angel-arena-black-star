@@ -2,8 +2,8 @@ Tango:
 	Radius: 180 => 300
 Piercing blade:
 	Bonus Damage: 500 => 420
-	"item_javelin;item_rapier;item_broadsword;item_claymore;item_blades_of_attack" =>  item_javelin;item_rapier;
-	"ItemCost"						"1980"	=>  4300
+	item_javelin;item_rapier;item_broadsword;item_claymore;item_blades_of_attack =>  item_javelin;item_rapier;
+	Cost						"1980"	=>  4300
 Splitshot Agi:
 	Bonus Attack speed: 15 => 25
 Recipe Steam Footgear:
@@ -18,8 +18,8 @@ Wand Of Midas:
 	Gold: 30 => 60
 Shard Attackspeed:
 	Cost: 2000 => 1350
-"item_lotus_sphere"
-	"AbilityCooldown"				"7.5" => 10
+Lotus Sphere:
+	AbilityCooldown:7.5 => 10
 
 
 Kadash - Assasins Skills:
