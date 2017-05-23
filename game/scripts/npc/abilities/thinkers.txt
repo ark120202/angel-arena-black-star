@@ -8,19 +8,19 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
 		//"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL" 
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"rubick_empty1"
 		"ScriptFile"	"libraries/abilities/containers_lua_targeting"
 		"MaxLevel"	"1"
 		"IsCastableWhileHidden" "1"
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"	"0"
 		"AbilityCastPoint"	"0.0"
 
-		// Time	
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"	"0"
 
@@ -37,19 +37,19 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
 		//"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_ALL | DOTA_UNIT_TARGET_TREE"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL" 
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"BaseClass"	"ability_lua"
 		"AbilityTextureName"	"rubick_empty1"
 		"ScriptFile"	"libraries/abilities/containers_lua_targeting_tree"
 		"MaxLevel"	"1"
 		"IsCastableWhileHidden" "1"
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"	"0"
 		"AbilityCastPoint"	"0.0"
 
-		// Time	
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"	"0"
 
@@ -80,13 +80,13 @@
 				"Function"		"SetMaxLevel"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_dummy_unit"
 			{
 				"Passive"				"1"
-				"IsHidden"				"1"		
+				"IsHidden"				"1"
 				"States"
 				{
 					"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -113,13 +113,13 @@
 				"Function"		"SetMaxLevel"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_arena_custom_rune"
 			{
 				"Passive"				"1"
-				"IsHidden"				"1"		
+				"IsHidden"				"1"
 				"States"
 				{
 					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -131,9 +131,9 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL" "1"
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL" "1" 
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL" "1"
 					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE" "1"
-					"MODIFIER_PROPERTY_MIN_HEALTH" "1" 
+					"MODIFIER_PROPERTY_MIN_HEALTH" "1"
 				}
 			}
 		}
@@ -154,13 +154,13 @@
 				"Function"		"SetMaxLevel"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_containers_shopkeeper_unit"
 			{
 				"Passive"				"1"
-				"IsHidden"				"1"		
+				"IsHidden"				"1"
 				"States"
 				{
 					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"

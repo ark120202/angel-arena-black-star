@@ -6,7 +6,7 @@ CHAT_COMMANDS = {
 	["command"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
 		f = function(args, hero, playerID)
-			
+
 		end
 	},
 	["gold"] = {

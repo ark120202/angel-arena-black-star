@@ -6,7 +6,7 @@
 		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"pudge_meat_hook"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
 		"ScriptFile"					"heroes/hero_pudge/pudge_meat_hook_lua.lua"
@@ -76,14 +76,14 @@
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"pudge_rot"
 		"MaxLevel"						"7"
-		
+
 		"AbilityCastPoint"				"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_2"
 		"AbilityCastRange"				"%rot_radius"
@@ -178,7 +178,7 @@
 						"Function"		"CreateParticles"
 						"particle"		"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
 					}
-					
+
 				}
 
 				"ThinkInterval"			"%rot_tick"
@@ -222,7 +222,7 @@
 		"precache"
 		{
 			"particle"			"particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf"
-		}		
+		}
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -355,7 +355,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 
@@ -366,7 +366,7 @@
 
 		"AbilityCooldown"				"30.0"
 		"AbilityManaCost"				"100 130 170 200 230 270 300"
-			
+
 		"AbilitySpecial"
 		{
 			"01"

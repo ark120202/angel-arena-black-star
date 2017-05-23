@@ -23,7 +23,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"1.7 2 2.3 2.7 3 3.2 3.5" 
+				"duration"	"1.7 2 2.3 2.7 3 3.2 3.5"
 			}
 
 		}
@@ -76,7 +76,7 @@
 	"axe_counter_helix"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"0.45 0.4 0.35 0.3 0.25 0.2 0.15" 
+		"AbilityCooldown"	"0.45 0.4 0.35 0.3 0.25 0.2 0.15"
 		"AbilityDamage"		"65 100 135 170 205 230 280"
 		"LevelsBetweenUpgrades"	"2"
 		"AbilitySpecial"
@@ -98,7 +98,7 @@
 				"var_type"	"FIELD_FLOAT"
 				"cooldown"	"0.45 0.4 0.35 0.3 0.25 0.2 0.15"
 			}
-			
+
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
@@ -1256,7 +1256,7 @@
 		"AbilityCastPoint"	"0.3"
 		"AbilityCooldown"	"7.0"
 		"AbilityDuration"	"2.5"
-		"AbilityDamage"		"100 140 180 220 260 300 400" 
+		"AbilityDamage"		"100 140 180 220 260 300 400"
 		"AbilityManaCost"	"100 120 140 160 180 200 220"
 		"AbilitySpecial"
 		{
@@ -2001,7 +2001,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.4"
 		"AbilityCooldown"	"10"
-		"AbilityDamage"	"100 175 250 325 450 550 600" 
+		"AbilityDamage"	"100 175 250 325 450 550 600"
 		"AbilityManaCost"	"90"
 		"AbilitySpecial"
 		{
@@ -3363,7 +3363,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"gods_strength_bonus_str"		"16 28 40 52 64 76 88"		
+				"gods_strength_bonus_str"		"16 28 40 52 64 76 88"
 			}
 			"03"
 			{
@@ -11049,7 +11049,7 @@
 
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER" 
+				"var_type"	"FIELD_INTEGER"
 				"move_speed_per_instance"	"1 2 3 4 5 7 9 11"
 			}
 
@@ -11195,7 +11195,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"enemy_slow"	"-20 -25 -30 -35 -40 -45 -50 -60"	
+				"enemy_slow"	"-20 -25 -30 -35 -40 -45 -50 -60"
 				"levelkey"	"quaslevel"
 			}
 

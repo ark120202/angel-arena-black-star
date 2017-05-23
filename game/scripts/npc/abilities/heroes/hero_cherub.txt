@@ -14,8 +14,8 @@
 		"AbilityCastRange"				"400 450 500 550 600 650 700"
 		"AbilityCooldown"				"40"
 		"AbilityManaCost"				"160"
-		
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -58,7 +58,7 @@
 				"ModifierName"	"modifier_cherub_sleep_cloud"
 				"Target" 		"CASTER"
 			}
-		} 
+		}
 
 		"Modifiers"
 		{
@@ -151,7 +151,7 @@
 						"damage_to_wake"	"%damage_to_wake"
 					}
 				}
-				
+
 				"States"
 				{
 					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -230,7 +230,7 @@
 			{
 				"IsHidden"			"1"
 				"IsPurgable"		"0"
-		
+
 				"OnCreated"
 				{
 					"AttachEffect"
@@ -421,7 +421,7 @@
 						"Function"		"GrowthThink"
 					}
 				}
-		
+
 				"OnDeath"
 				{
 					"RunScript"
@@ -434,7 +434,7 @@
 				"States"
 				{
 					"MODIFIER_STATE_FLYING"				"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"	
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}
@@ -587,11 +587,11 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"			"%attack_range"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%damage" 
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%damage"
 				}
 			}
 		}
@@ -675,7 +675,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"			"%attack_range"
@@ -773,7 +773,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"ThinkInterval"  "%heal_interval"
 				"OnIntervalThink"
 				{
@@ -865,7 +865,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"ThinkInterval"  "%restore_interval"
 				"OnIntervalThink"
 				{
@@ -947,7 +947,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"Aura"          	"modifier_cherub_flower_yellow_daisy_enabled_aura_effect"
 				"Aura_Radius"   	"%aura_radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -960,7 +960,7 @@
 			{
 				"IsBuff"			"1"
 				"IsPurgable"		"0"
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attackspeed"
@@ -1037,7 +1037,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"Aura"          	"modifier_cherub_flower_purple_lotus_enabled_aura_effect"
 				"Aura_Radius"   	"%aura_radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -1049,7 +1049,7 @@
 			{
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resistance_reduction"

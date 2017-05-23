@@ -88,7 +88,7 @@
 				"Passive"			"0"
 				"IsHidden"			"1"
 				"IsPurgable"		"0"
-		
+
 				"States"
 				{
 					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -106,7 +106,7 @@
 					{
 						"ScriptFile"	"heroes/hero_riki/pocket_riki.lua"
 						"Function"		"MoveUnit"
-					}				
+					}
 				}
 
 				"OnCreated"
@@ -157,7 +157,7 @@
 			"particle"		"particles/arena/units/heroes/hero_ogre_magi/multicast_aghanims_buff.vpcf"
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 		}
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -238,12 +238,12 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"beastmaster_call_of_the_wild_boar"
 		"MaxLevel"	"7"
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"42 38 34 30 25 20 15"
 
@@ -291,7 +291,7 @@
 				"boar_duration"				"60 60 60 60 60 60 60"
 			}
 
-			// Extra		
+			// Extra
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -372,7 +372,7 @@
 				{
 					"FireEffect"
 					{
-						"Target"			
+						"Target"
 						{
 							"Center"	"UNIT"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
@@ -380,10 +380,10 @@
 						"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
-					
+
 					"FireSound"
 					{
-						"Target"			
+						"Target"
 						{
 							"Center"	"UNIT"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
@@ -403,12 +403,12 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"	"beastmaster_call_of_the_wild_hawk"
 		"MaxLevel"	"7"
-			
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"42 38 34 30 25 20 15"
 
@@ -451,7 +451,7 @@
 				"hawk_duration"				"60 60 60 60 60 60 60"
 			}
 
-			// Extra		
+			// Extra
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -527,7 +527,7 @@
 				{
 					"FireEffect"
 					{
-						"Target"			
+						"Target"
 						{
 							"Center"	"UNIT"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
@@ -538,7 +538,7 @@
 
 					"FireSound"
 					{
-						"Target"			
+						"Target"
 						{
 							"Center"	"UNIT"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
@@ -562,8 +562,8 @@
 		"AbilityTextureName"			"skeleton_king_reincarnation"
 		"MaxLevel"	"7"
 		"HasScepterUpgrade"				"1"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"260 240 220 200 180 120 60"
 
@@ -667,10 +667,10 @@
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
 				"AllowIllusionDuplicate"     "0"
-				
+
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MIN_HEALTH"		"1" 
+					"MODIFIER_PROPERTY_MIN_HEALTH"		"1"
 				}
 			}
 
@@ -679,7 +679,7 @@
 				"IsHidden"	"1"
 				"IsPurgable"		"0"
 				"AllowIllusionDuplicate"     "0"
-				
+
 				"Aura"          	"modifier_skeleton_king_reincarnation_ally_tracker"
 				"Aura_Radius"   	"%radius_scepter"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -728,10 +728,10 @@
 						"aftercast_modifier"	"modifier_skeleton_king_reincarnation_cooldown"
 					}
 				}
-				
+
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MIN_HEALTH"		"1" 
+					"MODIFIER_PROPERTY_MIN_HEALTH"		"1"
 				}
 			}
 
@@ -774,7 +774,7 @@
 						"vision_radius"		"%vision_radius"
 					}
 				}
-				
+
 				"OnDestroy"
 				{
 					"RunScript"
@@ -788,7 +788,7 @@
 				{
 					"MODIFIER_PROPERTY_DISABLE_HEALING"	"1"
 				}
-				
+
 				"States"
 				{
 					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
@@ -904,7 +904,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"return_damage_cooldown"		"3"		
+				"return_damage_cooldown"		"3"
 			}
 		}
 
@@ -916,7 +916,7 @@
 				"Function"		"SetMaxLevel"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -939,7 +939,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-				
+
 				"OnTakeDamage"
 				{
 					"RunScript"
@@ -1006,7 +1006,7 @@
 			{
 				"IsHidden"			"1"
 				"IsPurgable"		"0"
-		
+
 				"OnCreated"
 				{
 					"RunScript"
@@ -1046,7 +1046,7 @@
 						"Function"		"CheckPlayers"
 					}
 				}
-				
+
 				"States"
 				{
 					"MODIFIER_STATE_ROOTED"					"MODIFIER_STATE_VALUE_ENABLED"
@@ -1078,7 +1078,7 @@
 		"AbilityCastPoint"				"0.1"
 		"AbilityManaCost"				"100"
 		"AbilityCastRange"				"1000"
-		
+
 		"precache"
 		{
 			"particle"			"particles/units/heroes/hero_rubick/rubick_spell_steal.vpcf"
@@ -1102,7 +1102,7 @@
 				"Function"		"SetMaxLevel"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1112,7 +1112,7 @@
 				"particle"		"particles/units/heroes/hero_rubick/rubick_spell_steal.vpcf"
 			}
 		}
-		
+
 		"OnProjectileHitUnit"
 		{
 			"RunScript"
@@ -1120,20 +1120,20 @@
 				"ScriptFile"	"heroes/hero_rubick/personality_steal.lua"
 				"Function"		"SpellSteal"
 			}
-			
+
 			"FireSound"
 			{
 				"EffectName"	"Hero_Rubick.SpellSteal.Complete"
 				"Target"		"CASTER"
 			}
 		}
-		
+
 		"Modifiers"
-		{			
+		{
 			"modifier_rubick_personality_steal"
 			{
 				"IsHidden"			"1"
-				"IsPurgable"		"0"				
+				"IsPurgable"		"0"
 				"OnDestroy"
 				{
 					"RunScript"
@@ -1209,7 +1209,7 @@
 			{
 				"EffectName"        "particles/units/heroes/hero_doom_bringer/doom_bringer_devour.vpcf"
 				"EffectAttachType"  "follow_origin"
-				
+
 				"ControlPointEntities"
 				{
 					"TARGET"	"attach_origin"
@@ -1235,7 +1235,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"1"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%stolen_health_to_damage" 
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%stolen_health_to_damage"
 				}
 			}
 		}
@@ -1448,7 +1448,7 @@
 						}
 					}
 				}
-			
+
 				"ThinkInterval"  "%aura_think_interval"
 				"OnIntervalThink"
 				{
@@ -1469,10 +1469,10 @@
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
 				"Duration"			"%duration"
-		
+
 				"EffectName"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
-				
+
 				"ThinkInterval"		"1.0"
 				"OnIntervalThink"
 				{
@@ -1488,7 +1488,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_reduction_per_stack"
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_per_stack" 
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_per_stack"
 				}
 			}
 		}

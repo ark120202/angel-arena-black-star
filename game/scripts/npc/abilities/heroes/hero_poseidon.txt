@@ -153,7 +153,7 @@
 
 				"Properties"
 				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movement_speed_pct" 
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movement_speed_pct"
 				}
 
 				"OnAttackLanded"
@@ -165,7 +165,7 @@
 						"CleaveEffect"          "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
 					}
 				}
-		
+
 				"OnAttack"
 				{
 					"Damage"
@@ -305,7 +305,7 @@
 			{
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"IsPurgable"		"0"	
+				"IsPurgable"		"0"
 
 				"States"
 				{
@@ -318,7 +318,7 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
-				"Duration"			"0.25"			
+				"Duration"			"0.25"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-1"

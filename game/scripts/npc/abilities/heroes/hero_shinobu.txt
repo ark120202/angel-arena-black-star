@@ -176,7 +176,7 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_DISABLE_HEALING" "1" 
+					"MODIFIER_PROPERTY_DISABLE_HEALING" "1"
 				}
 			}
 
@@ -342,7 +342,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"OnKill"
 				{
 					"RunScript"
@@ -360,7 +360,7 @@
 						"Function"		"ChanceToKill"
 					}
 				}
-		
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%bonus_attack_range"
@@ -374,14 +374,14 @@
 		"AbilityBehavior"		 	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"BaseClass"					"ability_datadriven"
 		"MaxLevel"					"1"
-		
+
 		"Modifiers"
 		{
 			"modifier_shinobu_soul_unit"
 			{
 				"Passive"				"1"
 				"IsHidden"				"1"
-				"StatusEffectName" 		"particles/status_fx/status_effect_phantom_lancer_illusion.vpcf" 	   
+				"StatusEffectName" 		"particles/status_fx/status_effect_phantom_lancer_illusion.vpcf"
 				"StatusEffectPriority"  "999999"
 				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT"
 
@@ -618,7 +618,7 @@
 						"Function"		"PurgeAllTruesightModifiers"
 					}
 				}
-		
+
 				"States"
 				{
 					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"

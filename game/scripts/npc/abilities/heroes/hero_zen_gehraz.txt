@@ -39,7 +39,7 @@
 				"Target" 		"TARGET"
 				"Duration"		"%channel_time"
 			}
-			
+
 			"RunScript"
 			{
 				"ScriptFile"	"heroes/hero_zen_gehraz/superposition.lua"
@@ -71,7 +71,7 @@
 			{
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
-	
+
 				"States"
 				{
 					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -185,7 +185,7 @@
 				"Function"		"StartAbility"
 				"Target"		"POINT"
 			}
-			
+
 			"RunScript"
 			{
 				"ScriptFile"	"heroes/hero_zen_gehraz/superposition.lua"
@@ -217,7 +217,7 @@
 			"modifier_zen_gehraz_mystic_twister_thinker"
 			{
 				"IsHidden"			"1"
-		
+
 				"Aura"          	"modifier_zen_gehraz_mystic_twister_aura_effect"
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -233,7 +233,7 @@
 				"Duration"			"0.1"
 				"Priority"			"MODIFIER_PRIORITY_HIGH"
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-			
+
 				"ThinkInterval"  "%damage_interval"
 				"OnIntervalThink"
 				{
@@ -245,7 +245,7 @@
 						"multiplier"	"%damage_interval"
 					}
 				}
-	
+
 				"States"
 				{
 					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_DISABLED"
@@ -359,8 +359,8 @@
 						"sound"			"Arena.Hero_ZenGehraz.VowOfSilence"
 					}
 				}
-				
-		
+
+
 				"Aura"          	"modifier_zen_gehraz_vow_of_silence_effect"
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -374,7 +374,7 @@
 				"IsDebuff"			"1"
 				"Duration"			"0.1"
 
-			
+
 				"OnAbilityExecuted"
 				{
 					"RunScript"

@@ -5,7 +5,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10084"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"800"	
+		"ItemCost"						"800"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena"
 		"ItemRequirements"
@@ -19,7 +19,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10085"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_2"
 		"ItemRequirements"
@@ -33,7 +33,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10086"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_3"
 		"ItemRequirements"
@@ -47,7 +47,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10087"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_4"
 		"ItemRequirements"
@@ -61,7 +61,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10088"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_5"
 		"ItemRequirements"
@@ -93,7 +93,7 @@
 		"ItemShopTags"					"agi;int;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"diffusal blade 1"
-		
+
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"1"
 
@@ -215,10 +215,10 @@
 				"EffectName"		"particles/items_fx/diffusal_slow.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"IsDebuff"			"1"
-				
+
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct"
 				}
 			}
 		}
@@ -247,7 +247,7 @@
 		"ItemShopTags"					"agi;int;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"diffusal blade 2"
-		
+
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 
@@ -369,10 +369,10 @@
 				"EffectName"		"particles/items_fx/diffusal_slow.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"IsDebuff"			"1"
-				
+
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct"
 				}
 			}
 		}
@@ -401,7 +401,7 @@
 		"ItemShopTags"					"agi;int;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"diffusal blade 3"
-		
+
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 
@@ -523,10 +523,10 @@
 				"EffectName"		"particles/items_fx/diffusal_slow.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"IsDebuff"			"1"
-				
+
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct"
 				}
 			}
 		}
@@ -555,7 +555,7 @@
 		"ItemShopTags"					"agi;int;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"diffusal blade 4"
-		
+
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 
@@ -677,10 +677,10 @@
 				"EffectName"		"particles/items_fx/diffusal_slow.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"IsDebuff"			"1"
-				
+
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct"
 				}
 			}
 		}
@@ -709,7 +709,7 @@
 		"ItemShopTags"					"agi;int;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"diffusal blade 5"
-		
+
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"5"
 
@@ -831,10 +831,10 @@
 				"EffectName"		"particles/items_fx/diffusal_slow.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"IsDebuff"			"1"
-				
+
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct"
 				}
 			}
 		}

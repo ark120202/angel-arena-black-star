@@ -17,7 +17,7 @@ ShopsData = {
 	item_phantom_bone
 	item_moon_dust
 	item_cursed_eye
-	item_fallen_star 
+	item_fallen_star
 	item_demons_paw
 
 	item_shard_primal_medium

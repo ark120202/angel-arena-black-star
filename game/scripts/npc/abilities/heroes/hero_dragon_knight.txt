@@ -5,12 +5,12 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"				   
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"dragon_knight_breathe_fire"
 		"MaxLevel"						"7"
@@ -31,19 +31,19 @@
 		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12.0 12.0 12.0 12.0 12.0 12.0 12.0"
-		
+
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"90 150 200 240 270 310 350"
-		
+
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100 110 120 130 140 150 160"
-		
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -98,7 +98,7 @@
 				"debuff_duration"		"11.0"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"FireSound"
@@ -113,7 +113,7 @@
 				"Target"		"POINT"
 			}
 		}
-		
+
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit" "0"
@@ -173,7 +173,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"dragon_knight_dragon_tail"
@@ -191,8 +191,8 @@
 		"AbilityCooldown"				"11"
 		"AbilityDamage"					"25 50 75 100 125 150 175"
 		"AbilityManaCost"				"100 100 100 100 100 100 100"
-		
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -236,7 +236,7 @@
 		"LevelsBetweenUpgrades"	"5"
 
 		"AbilityCooldown"				"5.0"
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -367,10 +367,10 @@
 				"particle"		"particles/econ/items/visage/immortal_familiar/visage_immortal_ti5/visage_familiar_base_attack_ti5.vpcf"
 		}
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"115.0 115.0 115.0 115.0 115.0 115.0 115.0"
-		"AbilityManaCost"				"50 50 50 50 50 50 50"	
+		"AbilityManaCost"				"50 50 50 50 50 50 50"
 		"AbilityModifierSupportValue"	"0.35"
 
 		// Special
@@ -513,7 +513,7 @@
 			{
 				"var_type"											"FIELD_INTEGER"
 				"illusion_damage_percent_outgoing_tooltip"	"30"
-			}	
+			}
 			"27"
 			{
 				"var_type"											"FIELD_INTEGER"
@@ -538,7 +538,7 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"	"0"
-			
+
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_dragon_knight_elder_dragon_form_arena_breath"
@@ -554,10 +554,10 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 				"Duration"			"%poison_duration"
-		
+
 				"EffectName"		"particles/units/heroes/hero_viper/viper_poison_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
-		
+
 				"ThinkInterval"  "1.0"
 				"OnIntervalThink"
 				{
@@ -575,7 +575,7 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 				"Duration"			"%cold_duration"
-			
+
 				"EffectName"		"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_borealis.vpcf"
 				"EffectAttachType"	"follow_origin"
 
@@ -588,11 +588,11 @@
 						"Function"		"ColdDamage"
 					}
 				}
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%cold_bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%cold_bonus_movement_speed_pct" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%cold_bonus_movement_speed_pct"
 				}
 			}
 
@@ -612,7 +612,7 @@
 						"Damage"		"%breath_damage"
 					}
 				}
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%breath_debuff_slow_pct"

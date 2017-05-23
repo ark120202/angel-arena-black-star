@@ -326,12 +326,12 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},]]
 	--Tinker - Rearm = Purge
-	
 
 
 
 
-	
+
+
 	--Default talents
 	-- talent_hero_anitmage_blink_cd_reduction = {
 	-- 	icon = "antimage_blink",
@@ -1037,7 +1037,7 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = 10},
 		effect = {abilities = "special_bonus_unique_wraith_king_2"}
 	},
-	talent_hero_wraith_king_no reincarnation_manacost = {
+	talent_hero_wraith_king_no_reincarnation_manacost = {
 		icon = "no_reincarnation_manacost",
 		cost = 1,
 		group = 1,
@@ -1045,7 +1045,7 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = 0},
 		effect = {abilities = "special_bonus_unique_wraith_king_1"}
 	},
-	talent_hero_wraith_king_reincarnation_casts_wraithfire blast = {
+	talent_hero_wraith_king_reincarnation_casts_wraithfire_blast = {
 		icon = "reincarnation_casts_wraithfire blast",
 		cost = 1,
 		group = 1,

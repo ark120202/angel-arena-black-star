@@ -88,7 +88,7 @@ function GameMode:InitGameMode()
 	PanoramaShop:InitializeItemTable()
 	Structures:AddHealers()
 	ContainersHelper:CreateShops()
-	
+
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
 	StatsClient:Init()
@@ -193,7 +193,7 @@ function GameMode:GameModeThink()
 						gold_per_tick = gold_per_tick + hero.talent_keys.bonus_gold_per_minute / 60 * CUSTOM_GOLD_TICK_TIME
 					end
 					if hero.talent_keys and hero.talent_keys.bonus_xp_per_minute then
-						hero:AddExperience(hero.talent_keys.bonus_xp_per_minute / 60 * CUSTOM_GOLD_TICK_TIME, 0, false, false)  
+						hero:AddExperience(hero.talent_keys.bonus_xp_per_minute / 60 * CUSTOM_GOLD_TICK_TIME, 0, false, false)
 					end
 				end
 				Gold:AddGold(i, gold_per_tick)

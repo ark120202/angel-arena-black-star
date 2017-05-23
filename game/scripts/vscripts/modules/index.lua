@@ -15,9 +15,15 @@ local modules = {
 	"SimpleAI",
 	"spawner",
 	"stats",
-	"structures"
+	"structures",
+	"attributes",
 }
 
-
-
-for _,v in ipairs(modules) do require("modules/" .. v .. "/index") end
+for k, v in ipairs(modules) do
+	if type(k) == "string" then
+		k, v = v, k
+	else
+		k = nil
+	end
+	require("modules/" .. v .. "/" .. (k or v))
+end

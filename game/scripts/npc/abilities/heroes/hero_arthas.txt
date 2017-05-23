@@ -7,7 +7,7 @@
 		"MaxLevel"				"7"
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"arena/arthas_rage_of_arthas"
 
@@ -26,7 +26,7 @@
 		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.35 0.35 0.35 0.35 0.35 0.35 0.35"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"9 8.5 8 7.5 7 6.5 6"
 
@@ -78,7 +78,7 @@
 				"EffectName"        "particles/arena/units/heroes/hero_skeletonking/alternative_rage_of_arthas_warmup.vpcf"
 				"EffectAttachType"  "start_at_customorigin"
 				"Target"		"CASTER"
-				
+
 				"ControlPointEntities"
 				{
 					"CASTER"	"attach_attack2"
@@ -156,7 +156,7 @@
 				"IsDebuff"			"1"
 				"IsStunDebuff"		"1"
 				"Duration"			"%stun_duration"
-				
+
 				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
 				"EffectAttachType"	"follow_overhead"
@@ -179,7 +179,7 @@
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"arena/arthas_plus_morality"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -244,7 +244,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.05"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"60"
 
@@ -267,14 +267,14 @@
 				"health_regen_percent"		"4 5 6 7 8 9 10"
 			}
 		}
-		
+
 		// Data driven
 		//-------------------------------------------------------------------------------------------------------------
 		//"precache"
 		//{
 		//	"particle"					"particles/econ/items/ursa/ursa_fierce_heart/ursa_fierce_heart_warp_r.vpcf"
 		//}
-		
+
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -283,16 +283,16 @@
 				"Target"		"CASTER"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_arthas_vikared"
 			{
 				"Duration"		"%duration"
-				
+
 				//"EffectName"		"particles/econ/items/ursa/ursa_fierce_heart/ursa_fierce_heart_warp_r.vpcf"
 				//"EffectAttachType"	"attach_origin"
-				
+
 				"OnCreated"
 				{
 					"RemoveModifier"
@@ -306,7 +306,7 @@
 						"Function"			"HideCaster"
 					}
 				}
-				
+
 				"OnDestroy"
 				{
 					"RunScript"
@@ -320,7 +320,7 @@
 				{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" "%health_regen_percent"
 				}
-				
+
 				"States"
 				{
 					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
@@ -346,7 +346,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-		// Special	
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{

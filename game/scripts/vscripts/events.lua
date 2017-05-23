@@ -94,7 +94,7 @@ end
 -- A player has reconnected to the game.	This function can be used to repaint Player-based particles or change
 -- state as necessary
 function GameMode:OnPlayerReconnect(keys)
-	
+
 end
 
 -- An ability was used by a player
@@ -171,7 +171,7 @@ end
 
 function GameMode:CreateTreeDrop(location, item)
 	local item = CreateItemOnPositionSync(location, CreateItem(item, nil, nil))
-	item:SetAbsOrigin(GetGroundPosition(location, item)) 
+	item:SetAbsOrigin(GetGroundPosition(location, item))
 end
 
 -- A player killed another player in a multi-team context
@@ -196,7 +196,7 @@ function GameMode:OnEntityKilled(keys)
 	if keys.entindex_inflictor then
 		killerAbility = EntIndexToHScript( keys.entindex_inflictor )
 	end]]
-	
+
 	if killedUnit then
 		if killedUnit:IsHero() then
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
@@ -245,7 +245,7 @@ function GameMode:OnEntityKilled(keys)
 	end
 end
 
--- This function is called 1 to 2 times as the player connects initially but before they 
+-- This function is called 1 to 2 times as the player connects initially but before they
 -- have completely connected
 function GameMode:PlayerConnect(keys)
 
@@ -263,7 +263,7 @@ function GameMode:OnItemCombined(keys)
 	local plyID = keys.PlayerID
 	if not plyID then return end
 	local player = PlayerResource:GetPlayer(plyID)
-	local itemName = keys.itemname 
+	local itemName = keys.itemname
 	local hero = player:GetAssignedHero()
 	local itemcost = keys.itemcost
 
@@ -298,7 +298,7 @@ function GameMode:OnAbilityCastBegins(keys)
 	--local abilityName = keys.abilityname
 end
 
--- This function is called whenever a player changes there custom team selection during Game Setup 
+-- This function is called whenever a player changes there custom team selection during Game Setup
 function GameMode:OnPlayerSelectedCustomTeam(keys)
 	--[[local player = PlayerResource:GetPlayer(keys.player_id)
 	local success = (keys.success == 1)

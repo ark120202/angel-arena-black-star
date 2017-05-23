@@ -6,7 +6,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"crystal_maiden_crystal_nova"
@@ -17,11 +17,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12"
-		
+
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"100 175 250 325 400 475 550"
@@ -29,7 +29,7 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100 120 140 160 180 200 220"
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -76,7 +76,7 @@
 				"vision_radius"		"900"
 			}
 		}
-		
+
 		// Data driven
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -86,7 +86,7 @@
 			"particle"				"particles/generic_gameplay/generic_slowed_cold.vpcf"
 			"model"					"models/particle/tusk_igloo1.vmdl"
 		}
-		
+
 		"OnSpellStart"
 		{
 			"FireEffect"
@@ -99,23 +99,23 @@
 					"01"				"%radius 2 %radius*2"
 				}
 			}
-			
+
 			"FireSound"
 			{
 				"EffectName"			"Hero_Crystal.CrystalNova"
 				"Target"				"CASTER"
 			}
-		
+
 			"ActOnTargets"
 			{
 				"Target"
 				{
 					"Center"		"POINT"
 					"Radius"		"%radius"
-					"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+					"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Type"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 				}
-				
+
 				"Action"
 				{
 					"Damage"
@@ -124,7 +124,7 @@
 						"Damage"	"%AbilityDamage"
 						"Type"		"DAMAGE_TYPE_MAGICAL"
 					}
-					
+
 					"ApplyModifier"
 					{
 						"Target"		"TARGET"
@@ -132,7 +132,7 @@
 					}
 				}
 			}
-			
+
 			"RunScript"
 			{
 				"ScriptFile"		"heroes/hero_crystal_maiden/crystal_nova.lua"
@@ -140,7 +140,7 @@
 				"Target"			"POINT"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_crystal_nova_slow_arena"
@@ -150,7 +150,7 @@
 				"StatusEffectName"		"particles/status_fx/status_effect_frost_lich.vpcf"
 				"StatusEffectPriority"	"10"
 				"IsDebuff"		"1"
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attackspeed_slow"
@@ -179,8 +179,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"525"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"10"
 
@@ -191,7 +191,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.5"	// Applies multiple modifiers
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -238,7 +238,7 @@
 				"damage_interval"	"0.5"
 			}
 		}
-		
+
 		// Data driven
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -247,7 +247,7 @@
 			"particle"				"particles/units/heroes/hero_crystalmaiden/maiden_frostbite_buff.vpcf"
 			"particle"				"particles/units/heroes/hero_crystalmaiden/maiden_frostbite.vpcf"
 		}
-		
+
 		"OnSpellStart"
 		{
 			"TrackingProjectile"
@@ -256,7 +256,7 @@
 				"EffectName"		"particles/units/heroes/hero_crystalmaiden/maiden_frostbite.vpcf"
 				"MoveSpeed"			"2000"
 			}
-		
+
 			"Stun"
 			{
 				"Target"			"TARGET"
@@ -268,14 +268,14 @@
 				"ScriptFile"		"heroes/hero_crystal_maiden/frostbite.lua"
 				"Function"			"OnSpellStart"
 			}
-			
+
 			"FireSound"
 			{
 				"Target"			"TARGET"
 				"EffectName"		"hero_Crystal.frostbite"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_frost_bite_root_arena"
@@ -288,9 +288,9 @@
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
-			
+
 				"EffectName"		"particles/units/heroes/hero_crystalmaiden/maiden_frostbite_buff.vpcf"
-			
+
 				"States"
 				{
 					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -304,20 +304,20 @@
 				"Passive"			"0"
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%aura_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%aura_movement_speed_pct" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%aura_movement_speed_pct"
 				}
 			}
-			
+
 			"modifier_frost_bite_damage_arena"
 			{
 				"IsPurgable"		"1"
 				"IsHidden"		"1"
 				"IsDebuff"		"1"
-				
+
 				"OnCreated"
 				{
 					"RunScript"
@@ -328,7 +328,7 @@
 						"multiplier"	"%damage_interval"
 					}
 				}
-				
+
 				"ThinkInterval"		"%damage_interval"
 				"OnIntervalThink"
 				{
@@ -353,7 +353,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityTextureName"			"crystal_maiden_brilliance_aura"
 		"MaxLevel"	"7"
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -394,7 +394,7 @@
 				"global_radius"		"99999"
 			}
 		}
-		
+
 		// Data driven
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
@@ -408,7 +408,7 @@
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
 				"Aura_ApplyToCaster"	"0"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%self_mana_regen"
@@ -416,7 +416,7 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%self_bonus_movespeed_pct"
 				}
 			}
-			
+
 			"modifier_crystal_maiden_brilliance_aura_effect_arena"
 			{
 				"Properties"
@@ -496,7 +496,7 @@
 				"IsHidden"			"0"
 				"IsBuff"			"1"
 				"Duration"			"%duration"
-		
+
 				"EffectName"		"particles/arena/units/heroes/hero_crystal_maiden/tranqulity_buff.vpcf"
 				"EffectAttachType"	"follow_origin"
 			}
@@ -507,7 +507,7 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 				"Duration"			"%duration"
-		
+
 				"EffectName"		"particles/arena/units/heroes/hero_crystal_maiden/tranqulity_buff.vpcf"
 				"EffectAttachType"	"follow_origin"
 			}
@@ -535,8 +535,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"10"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"120 115 110 105 100 95 90"
 		"AbilityDuration"				"6.5 7 7.5 8 8.5 9 10"
@@ -554,7 +554,7 @@
 				"var_type"				"FIELD_INTEGER"
 				"radius"				"835 835 835"
 			}
-		
+
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -621,7 +621,7 @@
 				"duration_tooltip"		"6.5 7 7.5 8 8.5 9 10"
 			}
 		}
-		
+
 		// Data driven
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -632,7 +632,7 @@
 			"particle"				"particles/generic_gameplay/generic_slowed_cold.vpcf"
 			"particle"				"particles/status_fx/status_effect_frost_lich.vpcf"
 		}
-		
+
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -641,7 +641,7 @@
 				"ModifierName"		"modifier_freezing_field_caster_arena"
 			}
 		}
-		
+
 		"OnChannelFinish"
 		{
 			"RemoveModifier"
@@ -649,7 +649,7 @@
 				"Target"			"CASTER"
 				"ModifierName"		"modifier_freezing_field_caster_arena"
 			}
-			
+
 			"RemoveModifier"
 			{
 				"Target"			"CASTER"
@@ -664,14 +664,14 @@
 				"IsPurgable"			"0"
 				"IsHidden"				"1"
 				"OverrideAnimation"		"ACT_DOTA_IDLE"
-				
+
 				"Aura"					"modifier_freezing_field_debuff_arena"
 				"Aura_Radius"			"%radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				
+
 				"Duration"				"%AbilityDuration"
-				
+
 				"OnCreated"
 				{
 					"AttachEffect"
@@ -681,7 +681,7 @@
 						"EffectAttachType"	"follow_origin"
 						"EffectRadius"		"%radius"
 					}
-					
+
 					"RunScript"
 					{
 						"ScriptFile"	"heroes/hero_crystal_maiden/freezing_field.lua"
@@ -703,7 +703,7 @@
 						"Target" 		"CASTER"
 					}
 				}
-				
+
 				"ThinkInterval"			"%explosion_interval"
 				"OnIntervalThink"
 				{
@@ -715,36 +715,36 @@
 					}
 				}
 			}
-			
+
 			"modifier_freezing_field_debuff_arena"
 			{
 				"IsHidden"				"0"
 				"IsPurgable"			"0"
 				"IsDebuff"				"1"
 				"Duration"				"%slow_duration"
-				
+
 				"EffectName"			"particles/generic_gameplay/generic_slowed_cold.vpcf"
 				"StatusEffectName"		"particles/status_fx/status_effect_frost_lich.vpcf"
 				"StatusEffectPriority"	"10"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_slow"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_slow"
 				}
 			}
-			
+
 			"modifier_freezing_field_debuff_scepter_arena"
 			{
 				"IsHidden"				"0"
 				"IsPurgable"			"0"
 				"IsDebuff"				"1"
 				"Duration"				"%slow_duration"
-				
+
 				"EffectName"			"particles/generic_gameplay/generic_slowed_cold.vpcf"
 				"StatusEffectName"		"particles/status_fx/status_effect_frost_lich.vpcf"
 				"StatusEffectPriority"	"10"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_slow_scepter"
@@ -767,7 +767,7 @@
 						"Function"			"HideCaster"
 					}
 				}
-				
+
 				"OnDestroy"
 				{
 					"RunScript"
@@ -780,10 +780,10 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL" "1"
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL" "1" 
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL" "1"
 					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE" "1"
 				}
-				
+
 				"States"
 				{
 					"MODIFIER_STATE_ATTACK_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"

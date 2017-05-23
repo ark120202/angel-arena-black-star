@@ -249,25 +249,25 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"dagon 1"
-		
+
 		"UpgradesItems"					"item_dagon_arena;item_dagon_2_arena;item_dagon_3_arena;item_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_dagon_arena"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -296,7 +296,7 @@
 				"range_tooltip"			"600 650 700 750 800"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -306,7 +306,7 @@
 				"Damage"			"%damage"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_dagon_arena"
@@ -314,7 +314,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -336,25 +336,25 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_2_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"dagon 2"
-		
+
 		"UpgradesItems"					"item_dagon_2_arena;item_dagon_3_arena;item_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_dagon_arena"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -383,7 +383,7 @@
 				"range_tooltip"			"600 650 700 750 800"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -393,7 +393,7 @@
 				"Damage"			"%damage"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_dagon_2_arena"
@@ -401,7 +401,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -423,25 +423,25 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_3_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"dagon 3"
-		
+
 		"UpgradesItems"					"item_dagon_3_arena;item_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_dagon_arena"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -470,7 +470,7 @@
 				"range_tooltip"			"600 650 700 750 800"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -480,7 +480,7 @@
 				"Damage"			"%damage"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_dagon_3_arena"
@@ -488,7 +488,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -510,25 +510,25 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_4_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"dagon 4"
-		
+
 		"UpgradesItems"					"item_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_dagon_arena"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -557,7 +557,7 @@
 				"range_tooltip"			"600 650 700 750 800"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -567,7 +567,7 @@
 				"Damage"			"%damage"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_dagon_4_arena"
@@ -575,7 +575,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -597,20 +597,20 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_5_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"5"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"dagon 5"
 
 		"AbilitySpecial"
@@ -641,7 +641,7 @@
 				"range_tooltip"			"600 650 700 750 800"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -651,7 +651,7 @@
 				"Damage"			"%damage"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_dagon_5_arena"
@@ -659,7 +659,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -681,22 +681,22 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900 950 1000 1050 1100"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"enchanted dagon"
-		
+
 		"UpgradesItems"					"item_enchanted_dagon_arena;item_enchanted_dagon_2_arena;item_enchanted_dagon_3_arena;item_enchanted_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_enchanted_dagon_arena"
 
@@ -733,7 +733,7 @@
 				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -744,7 +744,7 @@
 				"DamagePct"			"%damage_percent"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_enchanted_dagon_arena"
@@ -752,7 +752,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -774,22 +774,22 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_2_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900 950 1000 1050 1100"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"enchanted dagon 2"
-		
+
 		"UpgradesItems"					"item_enchanted_dagon_2_arena;item_enchanted_dagon_3_arena;item_enchanted_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_enchanted_dagon_arena"
 
@@ -826,7 +826,7 @@
 				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -837,7 +837,7 @@
 				"DamagePct"			"%damage_percent"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_enchanted_dagon_2_arena"
@@ -845,7 +845,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -867,22 +867,22 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_3_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900 950 1000 1050 1100"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"enchanted dagon 3"
-		
+
 		"UpgradesItems"					"item_enchanted_dagon_3_arena;item_enchanted_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_enchanted_dagon_arena"
 
@@ -919,7 +919,7 @@
 				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -930,7 +930,7 @@
 				"DamagePct"			"%damage_percent"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_enchanted_dagon_3_arena"
@@ -938,7 +938,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -960,22 +960,22 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_4_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900 950 1000 1050 1100"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"enchanted dagon 4"
-		
+
 		"UpgradesItems"					"item_enchanted_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_enchanted_dagon_arena"
 
@@ -1012,7 +1012,7 @@
 				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1023,7 +1023,7 @@
 				"DamagePct"			"%damage_percent"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_enchanted_dagon_4_arena"
@@ -1031,7 +1031,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -1053,20 +1053,20 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_5_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900 950 1000 1050 1100"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"5"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"enchanted dagon 5"
 
 		"AbilitySpecial"
@@ -1102,7 +1102,7 @@
 				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1113,7 +1113,7 @@
 				"DamagePct"			"%damage_percent"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_enchanted_dagon_5_arena"
@@ -1121,7 +1121,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -1143,21 +1143,21 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"sunray dagon"
-		
+
 		"UpgradesItems"					"item_sunray_dagon_arena;item_sunray_dagon_2_arena;item_sunray_dagon_3_arena;item_sunray_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_sunray_dagon_arena"
 
@@ -1199,7 +1199,7 @@
 				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1211,7 +1211,7 @@
 				"modifier"			"modifier_item_sunray_dagon_arena_blind"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_sunray_dagon_arena"
@@ -1219,7 +1219,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -1236,7 +1236,7 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 				"Duration"			"%blind_duration"
-			
+
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
 
@@ -1244,7 +1244,7 @@
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
 				}
-			
+
 				"States"
 				{
 					"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -1262,21 +1262,21 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_2_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"sunray dagon 2"
-		
+
 		"UpgradesItems"					"item_sunray_dagon_2_arena;item_sunray_dagon_3_arena;item_sunray_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_sunray_dagon_arena"
 
@@ -1318,7 +1318,7 @@
 				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1330,7 +1330,7 @@
 				"modifier"			"modifier_item_sunray_dagon_arena_blind"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_sunray_dagon_2_arena"
@@ -1338,7 +1338,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -1355,7 +1355,7 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 				"Duration"			"%blind_duration"
-			
+
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
 
@@ -1363,7 +1363,7 @@
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
 				}
-			
+
 				"States"
 				{
 					"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -1381,21 +1381,21 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_3_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"sunray dagon 3"
-		
+
 		"UpgradesItems"					"item_sunray_dagon_3_arena;item_sunray_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_sunray_dagon_arena"
 
@@ -1437,7 +1437,7 @@
 				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1449,7 +1449,7 @@
 				"modifier"			"modifier_item_sunray_dagon_arena_blind"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_sunray_dagon_3_arena"
@@ -1457,7 +1457,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -1474,7 +1474,7 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 				"Duration"			"%blind_duration"
-			
+
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
 
@@ -1482,7 +1482,7 @@
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
 				}
-			
+
 				"States"
 				{
 					"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -1500,21 +1500,21 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_4_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"sunray dagon 4"
-		
+
 		"UpgradesItems"					"item_sunray_dagon_4_arena"
 		"UpgradeRecipe"					"item_recipe_sunray_dagon_arena"
 
@@ -1556,7 +1556,7 @@
 				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1568,7 +1568,7 @@
 				"modifier"			"modifier_item_sunray_dagon_arena_blind"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_sunray_dagon_4_arena"
@@ -1576,7 +1576,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -1593,7 +1593,7 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 				"Duration"			"%blind_duration"
-			
+
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
 
@@ -1601,7 +1601,7 @@
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
 				}
-			
+
 				"States"
 				{
 					"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -1619,19 +1619,19 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_5_arena"
 		"FightRecapLevel"				"1"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
 		"AbilityManaCost"				"180"
-		
+
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"5"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"sunray dagon 5"
 
 		"AbilitySpecial"
@@ -1672,7 +1672,7 @@
 				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1684,7 +1684,7 @@
 				"modifier"			"modifier_item_sunray_dagon_arena_blind"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_sunray_dagon_5_arena"
@@ -1692,7 +1692,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
@@ -1709,7 +1709,7 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 				"Duration"			"%blind_duration"
-			
+
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
 
@@ -1717,7 +1717,7 @@
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
 				}
-			
+
 				"States"
 				{
 					"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"

@@ -118,7 +118,7 @@
 		"Model"						"models/props_structures/radiant_statue001.vmdl"
 		"SoundSet"					"Creep_Good_Melee"
 		"MinimapIcon"				"minimap_miscbuilding"
-		
+
 		"Ability1"					"filler_ability"
 
 		"ArmorPhysical"				"20"
@@ -146,7 +146,7 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-		
+
 		"VisionDaytimeRange"		"0"
 		"VisionNighttimeRange"		"0"
 	}

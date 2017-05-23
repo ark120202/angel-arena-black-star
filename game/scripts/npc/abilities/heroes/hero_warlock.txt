@@ -7,7 +7,7 @@
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilityTextureName"			"warlock_rain_of_chaos"
@@ -19,14 +19,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.5 0.5 0.5"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"165 145 125 105 85 65 45 35"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200 300 400 500 600 700 800"
-		
+
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
@@ -34,7 +34,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.5"	// Primarily about the summon
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"LevelsBetweenUpgrades" "20"
@@ -157,8 +157,8 @@
 					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 					"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				}
-			
-				"Action"    
+
+				"Action"
 				{
 					"Stun"
 					{
@@ -181,7 +181,7 @@
 			"DelayedAction"
 			{
 				"Delay"     "0.25"
-				"Action"    
+				"Action"
 				{
 					"RunScript"
 					{
@@ -225,7 +225,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25.0 25.0 25.0 25.0 25.0 25.0 25.0"
 
@@ -235,8 +235,8 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 120 120 120 120 120 120"		
-		
+		"AbilityManaCost"				"120 120 120 120 120 120 120"
+
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
@@ -244,7 +244,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.0"	// only does damage
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -310,7 +310,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
 		"FightRecapLevel"				"1"
@@ -321,7 +321,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"16"
 
@@ -331,8 +331,8 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 110 130 150 170 190 210"	
-		
+		"AbilityManaCost"				"90 110 130 150 170 190 210"
+
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
@@ -340,7 +340,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.0"	// Modifier just does damage/healing
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -390,12 +390,12 @@
 				"IsBuff"			"1"
 				"IsPurgable"		"1"
 				"Duration"			"%duration"
-		
+
 				"EffectName"		"particles/units/heroes/hero_warlock/warlock_shadow_word_buff.vpcf"
 				"EffectAttachType"	"follow_origin"
 
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
+
 				"ThinkInterval"  "%tick_interval"
 				"OnIntervalThink"
 				{
@@ -440,12 +440,12 @@
 				"IsBuff"			"1"
 				"IsPurgable"		"1"
 				"Duration"			"%duration"
-		
+
 				"EffectName"		"particles/units/heroes/hero_warlock/warlock_shadow_word_buff.vpcf"
 				"EffectAttachType"	"follow_origin"
 
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
+
 				"ThinkInterval"  "%tick_interval"
 				"OnIntervalThink"
 				{
@@ -490,12 +490,12 @@
 				"IsBuff"			"1"
 				"IsPurgable"		"1"
 				"Duration"			"%duration"
-		
+
 				"EffectName"		"particles/units/heroes/hero_warlock/warlock_shadow_word_buff.vpcf"
 				"EffectAttachType"	"follow_origin"
 
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
+
 				"ThinkInterval"  "%tick_interval"
 				"OnIntervalThink"
 				{
@@ -539,12 +539,12 @@
 				"IsDebuff"			"1"
 				"IsPurgable"		"1"
 				"Duration"			"%duration"
-		
+
 				"EffectName"		"particles/units/heroes/hero_warlock/warlock_shadow_word_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
 
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
+
 				"ThinkInterval"  "%tick_interval"
 				"OnIntervalThink"
 				{
@@ -612,18 +612,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"50 46 42 38 34 30 26"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 100 100 100 100 100 100"		
-		
+		"AbilityManaCost"				"100 100 100 100 100 100 100"
+
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -731,7 +731,7 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-1" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-1"
 				}
 			}
 		}

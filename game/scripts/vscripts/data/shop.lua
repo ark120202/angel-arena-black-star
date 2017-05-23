@@ -93,7 +93,7 @@ PANORAMA_SHOP_ITEMS = {
 			"__indent__",
 			"__indent__",
 			"item_shard_primal_small",
-			"item_shard_primal_medium", 
+			"item_shard_primal_medium",
 			"item_shard_primal_large",
 		},
 	},

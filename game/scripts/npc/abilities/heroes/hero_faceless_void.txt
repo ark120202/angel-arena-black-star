@@ -48,7 +48,7 @@
 				"dodge_chance_time_walk_duration"	"2.0"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"FireSound"
@@ -56,7 +56,7 @@
 				"EffectName"	"Hero_FacelessVoid.TimeWalk"
 				"Target"		"CASTER"
 			}
-			
+
 			"FireEffect"
 			{
 				"EffectName"        "particles/units/heroes/hero_faceless_void/faceless_void_time_walk_preimage.vpcf"
@@ -89,9 +89,9 @@
 					"Flags"     "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 				}
 				"ScriptFile"    "heroes/hero_faceless_void/time_walk.lua"
-				"HorizontalControlFunction" "TimeWalkMotion"  
+				"HorizontalControlFunction" "TimeWalkMotion"
 			}
-			
+
 			"RunScript"
 			{
 				"ScriptFile"	"heroes/hero_faceless_void/time_walk.lua"
@@ -106,9 +106,9 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
-				
+
 				"OnTakeDamage"
-				{	
+				{
 					"RunScript"
 					{
 						"ScriptFile"	"heroes/hero_faceless_void/time_walk.lua"
@@ -118,7 +118,7 @@
 					}
 				}
 			}
-		
+
 			"modifier_faceless_void_time_walk_arena"
 			{
 				"IsHidden"			"1"
@@ -142,7 +142,7 @@
 					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
-		
+
 			"modifier_faceless_void_time_walk_arena_backtrack"
 			{
 				"IsHidden"	"0"
@@ -167,7 +167,7 @@
 			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_timedialate.vpcf"
 			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_dialatedebuf.vpcf"
 		}
-		
+
 		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"36.0 30.0 24.0 18.0 16.0 14.0 12.0"
 		"AbilityManaCost"				"50"
@@ -195,7 +195,7 @@
 				"attack_speed_slow"		"-7 -8 -9 -10 -11 -12 -13"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"FireSound"
@@ -216,7 +216,7 @@
 					"01" "%radius %radius %radius"
 				}
 			}
-			
+
 			"ActOnTargets"
 			{
 				"Target"
@@ -234,7 +234,7 @@
 						"Target" 		"TARGET"
 						"ModifierName"	"modifier_faceless_void_time_dilation_arena_freeze"
 					}
-					
+
 					"RunScript"
 					{
 						"ScriptFile"		"heroes/hero_faceless_void/time_dilation.lua"
@@ -243,7 +243,7 @@
 				}
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_faceless_void_time_dilation_arena_freeze"
@@ -251,10 +251,10 @@
 				//"IsHidden" "1"
 				"IsDebuff"	"1"
 				"Duration"	"%duration"
-				
+
 				"EffectName"		"particles/units/heroes/hero_faceless_void/faceless_void_dialatedebuf.vpcf"
 				"EffectAttachType"	"follow_origin"
-				
+
 				"FireSound"
 				{
 					"EffectName"	"Hero_FacelessVoid.TimeDilation.Target"
@@ -269,7 +269,7 @@
 						"Function"			"StartAllCooldowns"
 					}
 				}
-				
+
 				"OnAbilityExecuted"
 				{
 					"DelayedAction"
@@ -286,19 +286,19 @@
 					}
 				}
 			}
-			
+
 			"modifier_faceless_void_time_dilation_arena_slow"
 			{
 				"IsDebuff" "1"
-				
+
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_speed_slow"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_slow"
 				}
-			
+
 			}
 		}
 	}
@@ -307,7 +307,7 @@
 	{
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"faceless_void_time_lock"
 		"MaxLevel"	"7"
@@ -423,7 +423,7 @@
 		{
 			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
 		}
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -481,7 +481,7 @@
 			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
 			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
 		}
-		
+
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.35 0.35 0.35"
 		"AbilityCooldown"				"140 130 120 115 110 105 100"
@@ -549,7 +549,7 @@
 						"true_sight_range"		"%radius_pfx"
 					}
 				}
-				
+
 				"ThinkInterval"		"%aura_interval"
 
 				"OnIntervalThink"
@@ -598,7 +598,7 @@
 						"ModifierName"	"modifier_faceless_void_time_freeze_tooltip"
 						"Target"		"TARGET"
 					}
-					
+
 				}
 
 				"OnDestroy"

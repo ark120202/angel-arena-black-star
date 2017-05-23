@@ -6,7 +6,7 @@
 		"ID"							"10050"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_splitshot_str"
@@ -26,7 +26,7 @@
 		"ItemQuality"					"legendary"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		// Special	
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -105,7 +105,7 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"	"1"
-			
+
 			"FireSound"
 			{
 				"EffectName"	"Hero_Medusa.AttackSplit"
@@ -192,10 +192,10 @@
 				"IsBuff"				"0"
 				"IsDebuff"				"1"
 				"IsPurgable"			"1"
-				
+
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
 				"EffectAttachType"      "follow_origin"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_attack_speed"
@@ -211,7 +211,7 @@
 		"ID"							"10052"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_splitshot_agi"
@@ -231,7 +231,7 @@
 		"ItemQuality"					"legendary"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		// Special	
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -310,7 +310,7 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"	"1"
-			
+
 			"FireSound"
 			{
 				"EffectName"	"Hero_Medusa.AttackSplit"
@@ -390,11 +390,11 @@
 				"IsBuff"			"1"
 				"IsPurgable"		"1"
 				"Duration"			"%fast_attack_duration"
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
 				}
 			}
 		}
@@ -406,7 +406,7 @@
 		"ID"							"10054"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_splitshot_int"
@@ -426,7 +426,7 @@
 		"ItemQuality"					"legendary"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		// Special	
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -490,7 +490,7 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"	"1"
-			
+
 			"FireSound"
 			{
 				"EffectName"	"Hero_Medusa.AttackSplit"
@@ -586,7 +586,7 @@
 		"ItemQuality"					"legendary"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		// Special	
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -659,12 +659,12 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"maim_slow_movement"			"-15"
-			}			
+			}
 			"15"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"maim_slow_attack"				"-20"
-			}	
+			}
 			"16"
 			{
 				"var_type"						"FIELD_FLOAT"
@@ -705,7 +705,7 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"	"1"
-			
+
 			"FireSound"
 			{
 				"EffectName"	"Hero_Medusa.AttackSplit"
@@ -825,10 +825,10 @@
 				"IsBuff"				"0"
 				"IsDebuff"				"1"
 				"IsPurgable"			"1"
-				
+
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
 				"EffectAttachType"      "follow_origin"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_slow_attack"
@@ -844,11 +844,11 @@
 				"IsBuff"			"1"
 				"IsPurgable"		"1"
 				"Duration"			"%fast_attack_duration"
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
 				}
 			}
 		}

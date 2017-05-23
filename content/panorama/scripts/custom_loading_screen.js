@@ -35,7 +35,7 @@ function Snippet_OptionVoting(voteName, voteData) {
 	votePanel.BLoadLayoutSnippet('OptionVoting');
 	votePanel.SetDialogVariable('title', $.Localize('option_voting_' + voteName));
 	var OptionVotingVariants = votePanel.FindChildTraverse('OptionVotingVariants');
-	var shouldGroup = false;
+	var shouldGroup = true; //voteName === 'kill_limit';
 	votePanel.SetHasClass('ShouldGroup', shouldGroup);
 	for (var tIndex in voteData.variants) {
 		tIndex = Number(tIndex);

@@ -9,7 +9,7 @@
 		"ItemKillable"					"0"
 		"ItemCastOnPickup"				"1"
 	}
-	
+
 	"item_flying_courier"
 	{
 		"SecretShop"					"0"

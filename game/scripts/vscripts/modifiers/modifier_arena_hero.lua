@@ -62,8 +62,10 @@ if IsServer() then
 				VisibleAbilitiesCount = VisibleAbilitiesCount + 1
 			end
 		end
-		self.VisibleAbilitiesCount = VisibleAbilitiesCount
-		self:SetSharedKey("VisibleAbilitiesCount", VisibleAbilitiesCount)
+		if self.VisibleAbilitiesCount ~= VisibleAbilitiesCount then
+			self.VisibleAbilitiesCount = VisibleAbilitiesCount
+			self:SetSharedKey("VisibleAbilitiesCount", VisibleAbilitiesCount)
+		end
 	end
 
 	function modifier_arena_hero:OnDeath(k)

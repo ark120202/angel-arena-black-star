@@ -100,11 +100,11 @@ function Precache(context)
 		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts",
 		"soundevents/game_sounds_arena.vsndevts",
 	}
-	
+
 	for _, handle in pairs(CUSTOM_WEARABLES) do
 		DynamicWearables:PrecacheUnparsedWearable(context, handle)
 	end
-	
+
 	for k, v in pairs(NPC_HEROES_CUSTOM) do
 		if v.Model then
 			table.insert(models, v.Model)
@@ -116,7 +116,7 @@ function Precache(context)
 			DynamicWearables:PrecacheAllWearablesForHero(context, k)
 		end
 	end
-	
+
 	local db = LoadKeyValues("scripts/attachments.txt")
 	if db['Particles'] then
 		for _,v in pairs(db['Particles']) do

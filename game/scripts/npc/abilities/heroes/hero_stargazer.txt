@@ -125,7 +125,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityTextureName"			"arena/stargazer_inverse_field"
 		"MaxLevel"						"7"
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -153,7 +153,7 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
-				
+
 				"OnAttacked"
 				{
 					"RunScript"
@@ -162,7 +162,7 @@
 						"Function"		"Return"
 						"damage"		"%attack_damage"
 					}
-				}	
+				}
 			}
 		}
 	}
@@ -191,7 +191,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"ThinkInterval"  "0.1"
 				"OnIntervalThink"
 				{

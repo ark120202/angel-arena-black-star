@@ -6,13 +6,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"		
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"antimage_mana_break"
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 
-		// Precache	
+		// Precache
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
@@ -21,7 +21,7 @@
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
 		}
 
-		// Special	
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -97,7 +97,7 @@
 							"Center"	"TARGET"
 							"Flags"		"DOTA_UNIT_TARGET_FLAG_MANA_ONLY"
 						}
-					}				
+					}
 				}
 			}
 
@@ -130,8 +130,8 @@
 		}
 		"AbilityCastPoint"				"0.4"
 		"AbilityCooldown"				"20 18 16 14 12 10 8"
-		
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -200,8 +200,8 @@
 					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				}
-			
-				"Action"    
+
+				"Action"
 				{
 					"ApplyModifier"
 					{
@@ -222,7 +222,7 @@
 		"MaxLevel"						"7"
 		"AbilityCooldown"				"100 90 85 80 75 70 65"
 		"AbilityCastPoint"				"0.2"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -302,7 +302,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"		
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"FightRecapLevel"				"2"
 		"AbilityTextureName"			"antimage_mana_void"
 		"AOERadius"						"%mana_void_aoe_radius"
@@ -318,7 +318,7 @@
 			"particle"		"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
 		}
-		
+
 		"AbilitySpecial"
 		{
 			"01"

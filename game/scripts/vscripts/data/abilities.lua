@@ -73,7 +73,7 @@ REFRESH_LIST_IGNORE_REARM = {
 
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
-	
+
 	item_hand_of_midas = true,
 	item_black_king_bar_arena = true,
 	item_black_king_bar_2 = true,
@@ -81,7 +81,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_black_king_bar_4 = true,
 	item_black_king_bar_5 = true,
 	item_black_king_bar_6 = true,
-	
+
 	--[[item_pipe = true,
 	item_arcane_boots = true,
 	item_helm_of_the_dominator = true,
@@ -99,7 +99,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_sunray_dagon_3_arena = true,
 	item_sunray_dagon_4_arena = true,
 	item_sunray_dagon_5_arena = true,]]
-	
+
 	--[[earthshaker_echo_slam = true,
 	juggernaut_omni_slash = true,
 	warlock_rain_of_chaos_arena = true,

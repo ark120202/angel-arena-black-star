@@ -162,8 +162,8 @@
 							"ApplyModifier"
 							{
 								"ModifierName" 	"modifier_queenofblades_darkness_aura_crit"
-								"Target"    	"CASTER"    
-							}        
+								"Target"    	"CASTER"
+							}
 						}
 					}
 				}
@@ -183,7 +183,7 @@
 					"RemoveModifier"
 					{
 						"ModifierName"  "modifier_queenofblades_darkness_aura_crit"
-						"Target"   		"CASTER"    
+						"Target"   		"CASTER"
 					}
 					"FireEffect"
 					{
@@ -203,7 +203,7 @@
 			{
 				"IsDebuff"			"1"
 				"Duration"			"%debuff_duration"
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_BONUS_DAY_VISION"		"%debuff_vision_reduction"
@@ -241,7 +241,7 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"30 25 20 15 12.5 10 7"
 		"AbilityManaCost"				"70 90 110 130 150 170 190"
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -404,8 +404,8 @@
 				"Passive"			"0"
 				"IsHidden"			"1"
 				"IsPurgable"		"0"
-		
-				"StatusEffectName" 		"particles/status_fx/status_effect_terrorblade_reflection.vpcf" 	   
+
+				"StatusEffectName" 		"particles/status_fx/status_effect_terrorblade_reflection.vpcf"
 				"StatusEffectPriority"  "11"
 			}
 		}
@@ -560,7 +560,7 @@
 			{
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
-		
+
 				"Aura"          	"modifier_queenofblades_alter_ego_discharge_effect"
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -590,7 +590,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"arena/queenofblades_alter_ego_soul_breaker"
 		"MaxLevel" 						"7"
@@ -598,7 +598,7 @@
 		"precache"
 		{
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
-			"particle"			"particles/arena/units/heroes/hero_queenofblades/alter_ego_soul_breaker.vpcf"		
+			"particle"			"particles/arena/units/heroes/hero_queenofblades/alter_ego_soul_breaker.vpcf"
 		}
 
 		"AbilityCastRange"				"500"
@@ -623,7 +623,7 @@
 				"EffectName"	"Hero_VengefulSpirit.MagicMissile"
 				"Target" 		"CASTER"
 			}
-			
+
 			"TrackingProjectile"
 			{
 				"Target"           	"TARGET"
@@ -655,7 +655,7 @@
 				"Target"		"TARGET"
 				"Type"			"DAMAGE_TYPE_MAGICAL"
 				"Damage"		"%AbilityDamage"
-			}						
+			}
 		}
 	}
 }

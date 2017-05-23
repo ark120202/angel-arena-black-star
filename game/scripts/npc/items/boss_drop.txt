@@ -34,7 +34,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"Aura"          	"modifier_item_soul_of_titan_effect"
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -67,8 +67,8 @@
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasableFilter"			"0"
-			
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -86,7 +86,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
@@ -105,8 +105,8 @@
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasableFilter"			"0"
-			
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -129,7 +129,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
@@ -186,7 +186,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"%bonus_day_vision"
-					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%bonus_night_vision" 
+					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%bonus_night_vision"
 				}
 			}
 		}
@@ -244,7 +244,7 @@
 				"EffectName"	"Ability.Starfall"
 				"Target"		"CASTER"
 			}
-		
+
 			"FireEffect"
 			{
 				"EffectName"	"particles/units/heroes/hero_mirana/mirana_starfall_attack.vpcf"
@@ -281,7 +281,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"

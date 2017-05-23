@@ -4,7 +4,7 @@
 	{
 		"SecretShop"					"0"
 		"ItemCost"						"90"
-		"ItemInitialCharges"			"1"	
+		"ItemInitialCharges"			"1"
 	}
 	"item_blades_of_attack"
 	{
@@ -175,7 +175,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"buff_duration"			"35"
-			}			
+			}
 		}
 	}
 	"item_flask"
@@ -683,7 +683,6 @@
 			}
 		}
 	}
-	}
 	"item_recipe_arcane_boots"
 	{
 		"SecretShop"					"0"
@@ -703,7 +702,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_mana"			"350"
-			}	
+			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -740,7 +739,7 @@
 	{
 		"SecretShop"					"0"
 		"ItemStockMax"					"6"
-		"ItemStockTime"					"220.0"	
+		"ItemStockTime"					"220.0"
 	}
 	"item_recipe_veil_of_discord"
 	{
@@ -818,27 +817,27 @@
 	"item_enchanted_mango"
 	{
 		"SecretShop"					"0"
-	}	
+	}
 	"item_recipe_travel_boots_2"
 	{
 		"SecretShop"					"0"
-	}	
+	}
 	"item_travel_boots_2"
 	{
 		"SecretShop"					"0"
-	}	
+	}
 	"item_recipe_lotus_orb"
 	{
 		"SecretShop"					"0"
-	}	
+	}
 	"item_lotus_orb"
 	{
 		"SecretShop"					"0"
-	}	
+	}
 	"item_recipe_crimson_guard"
 	{
 		"SecretShop"					"0"
-	}	
+	}
 	"item_crimson_guard"
 	{
 		"SecretShop"					"0"
@@ -850,19 +849,19 @@
 	"item_silver_edge"
 	{
 		"SecretShop"					"0"
-	}	
+	}
 	"item_recipe_solar_crest"
 	{
 		"SecretShop"					"0"
-	}	
+	}
 	"item_solar_crest"
 	{
 		"SecretShop"					"0"
-	}	
+	}
 	"item_recipe_glimmer_cape"
 	{
 		"SecretShop"					"0"
-	}	
+	}
 	"item_glimmer_cape"
 	{
 		"SecretShop"					"0"
@@ -947,7 +946,7 @@
 	{
 		"SecretShop"					"0"
 		"ItemStockMax"					"20"
-		"ItemStockTime"					"49.5"			  
+		"ItemStockTime"					"49.5"
 		"ItemInitialStockTime"			"150"
 		"AbilitySpecial"
 		{

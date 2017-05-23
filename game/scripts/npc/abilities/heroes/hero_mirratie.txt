@@ -10,10 +10,10 @@
 		"AbilityCastRange"				"500 600 700 800 900 900 900"
 
 		"AbilityCooldown"				"25 22 19 17 15 13 11"
-		
+
 		"AbilityManaCost"				"105"
 		"MaxLevel"						"7"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -52,7 +52,7 @@
 		 		"Function"		"SmokeOut"
 		 		"Target"		"POINT"
 		 	}
-		} 
+		}
 
 		"Modifiers"
 		{
@@ -60,7 +60,7 @@
 			{
 				"IsHidden"				"1"
 				"IsPurgable"			"0"
-				
+
 				"Aura"					"modifier_mirratie_smoke_out_debuff"
 				"Aura_Radius"			"%radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -93,7 +93,7 @@
 			{
 				"IsDebuff"		"1"
 				"Duration"			"0.5"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_slow_pct"
@@ -177,7 +177,7 @@
 			{
 				"IsHidden"			"1"
 				"IsPurgable"		"0"
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PROVIDES_FOW_POSITION" "1"
@@ -248,12 +248,12 @@
 		"AbilityCastRange"				"1000 1200 1400 1600 1800 2000 2200"
 
 		"AbilityCooldown"				"25 22 19 17 15 13 11"
-		
+
 		"AbilityManaCost"				"105"
 		"MaxLevel"						"7"
 		"AbilityChannelTime"			"2"
 		"AbilityDamage"					"400 700 900 1100 1300 1500 1700"
-		
+
 		"AbilitySpecial"
 		{
 			"01"

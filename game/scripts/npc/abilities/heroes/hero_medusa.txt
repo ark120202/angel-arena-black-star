@@ -24,7 +24,7 @@
 			"particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
 			"particle"			"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
 		}
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.4"
@@ -34,12 +34,12 @@
 		"AbilitySpecial"
 		{
 			"01"
-			{	
+			{
 				"var_type"					"FIELD_INTEGER"
 				"arrow_count"				"1 3 5 7 9 11 13"
 			}
 			"02"
-			{	
+			{
 				"var_type"					"FIELD_INTEGER"
 				"total_arrow_count"			"1 3 5 7 9 11 13"
 			}
@@ -48,7 +48,7 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"	"1"
-			
+
 			"FireSound"
 			{
 				"EffectName"	"Hero_Medusa.AttackSplit"
@@ -68,7 +68,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"OnAttack"
 				{
 					"RunScript"
@@ -89,7 +89,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"medusa_mystic_snake"
@@ -138,7 +138,7 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"	"1"
-			
+
 			"RunScript"
 			{
 				"ScriptFile"	"heroes/hero_medusa/mystic_snake.lua"
@@ -151,7 +151,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"OnAttack"
 				{
 					"RunScript"
@@ -213,7 +213,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"EffectName"		"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
 				"EffectAttachType"	"follow_origin"
 			}
@@ -240,7 +240,7 @@
 			"particle"			"particles/units/heroes/hero_medusa/medusa_stone_gaze_active.vpcf"
 			"particle"			"particles/status_fx/status_effect_medusa_stone_gaze.vpcf"
 		}
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -295,7 +295,7 @@
 				"IsDebuff"		"1"
 				"IsPurgable"	"0"
 
-				"StatusEffectName" 		"particles/status_fx/status_effect_medusa_stone_gaze.vpcf" 	   
+				"StatusEffectName" 		"particles/status_fx/status_effect_medusa_stone_gaze.vpcf"
 				"StatusEffectPriority"  "11"
 
 				"States"
@@ -307,7 +307,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" 			"%bonus_magic_resist"
-					"MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE" "%bonus_physical_damage" 
+					"MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE" "%bonus_physical_damage"
 				}
 			}
 		}

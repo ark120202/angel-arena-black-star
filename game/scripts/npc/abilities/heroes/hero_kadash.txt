@@ -54,8 +54,8 @@
 							"ApplyModifier"
 							{
 								"ModifierName" 	"modifier_kadash_assasins_skills_crit"
-								"Target"    	"CASTER"    
-							}        
+								"Target"    	"CASTER"
+							}
 						}
 					}
 				}
@@ -88,7 +88,7 @@
 					"RemoveModifier"
 					{
 						"ModifierName"  "modifier_kadash_assasins_skills_crit"
-						"Target"   		"CASTER"    
+						"Target"   		"CASTER"
 					}
 				}
 			}
@@ -231,7 +231,7 @@
 
 				"States"
 				{
-					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED" 
+					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 			"modifier_kadash_strike_from_shadows_debuff"
@@ -392,7 +392,7 @@
 				"StatusEffectPriority" 		"15"
 				"EffectName"            	"particles/items_fx/ghost.vpcf"
 				"EffectAttachType"      	"PATTACH_ABSORIGIN"
-				
+
 				"States"
 				{
 					"MODIFIER_STATE_INVULNERABLE" 			"MODIFIER_STATE_VALUE_ENABLED"
@@ -407,10 +407,10 @@
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
 				"AllowIllusionDuplicate"     "0"
-				
+
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MIN_HEALTH"		"1" 
+					"MODIFIER_PROPERTY_MIN_HEALTH"		"1"
 				}
 			}
 
@@ -432,7 +432,7 @@
 						"vision_radius"		"%vision_radius"
 					}
 				}
-				
+
 				"OnDestroy"
 				{
 					"RunScript"
@@ -446,7 +446,7 @@
 				{
 					"MODIFIER_PROPERTY_DISABLE_HEALING"	"1"
 				}
-				
+
 				"States"
 				{
 					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"

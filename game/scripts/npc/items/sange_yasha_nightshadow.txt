@@ -6,7 +6,7 @@
 		"ID"							"10038"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"600"	
+		"ItemCost"						"600"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_sange_arena"
@@ -26,8 +26,8 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"sange"
 		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-			
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -67,7 +67,7 @@
 				"maim_max_stacks"		"6"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_sange_arena"
@@ -75,7 +75,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
@@ -124,10 +124,10 @@
 				"IsBuff"				"0"
 				"IsDebuff"				"1"
 				"IsPurgable"			"1"
-				
+
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
 				"EffectAttachType"      "follow_origin"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_attack_speed"
@@ -143,7 +143,7 @@
 		"ID"							"10040"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_sange_and_yasha_arena"
@@ -164,8 +164,8 @@
 		"ItemAliases"					"sny;s&y;sy;sange and yasha"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-			
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -178,7 +178,7 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"maim_slow_movement"			"-8"
-			}			
+			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
@@ -193,7 +193,7 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"bonus_strength"				"24"
-			}		
+			}
 			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
@@ -208,12 +208,12 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"bonus_agility"					"24"
-			}	
+			}
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"movement_speed_percent_bonus"	"20"
-			}	
+			}
 			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
@@ -240,7 +240,7 @@
 				"fast_attack_max_stacks"			"8"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_sange_and_yasha"
@@ -248,7 +248,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
@@ -273,7 +273,7 @@
 						"modifier"		"modifier_item_sange_and_yasha_unique"
 					}
 				}
-				
+
 				"OnAttackLanded"
 				{
 					"Random"
@@ -307,10 +307,10 @@
 				"IsBuff"				"0"
 				"IsDebuff"				"1"
 				"IsPurgable"			"1"
-				
+
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
 				"EffectAttachType"      "follow_origin"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_slow_attack"
@@ -326,11 +326,11 @@
 				"IsBuff"			"1"
 				"IsPurgable"		"1"
 				"Duration"			"%fast_attack_duration"
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
 				}
 			}
 		}
@@ -341,7 +341,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10042"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"600"	
+		"ItemCost"						"600"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_nightshadow"
@@ -350,7 +350,7 @@
 			"01"						"item_staff_of_wizardry;item_robe"
 		}
 	}
-	
+
 	"item_nightshadow"
 	{
 		"BaseClass"                     "item_datadriven"
@@ -361,8 +361,8 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"nightshadow"
 		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -436,7 +436,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10044"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_nightshadow_and_sange"
@@ -457,8 +457,8 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAliases"					"nightshadow and sange"
 		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -496,12 +496,12 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"maim_slow_movement"			"-8"
-			}			
+			}
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"maim_slow_attack"				"-7"
-			}		
+			}
 			"09"
 			{
 				"var_type"						"FIELD_FLOAT"
@@ -542,7 +542,7 @@
 						"modifier"		"modifier_item_nightshadow_and_sange"
 					}
 				}
-				
+
 				"OnAttackLanded"
 				{
 					"Random"
@@ -583,10 +583,10 @@
 				"IsBuff"				"0"
 				"IsDebuff"				"1"
 				"IsPurgable"			"1"
-				
+
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
 				"EffectAttachType"      "follow_origin"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_slow_attack"
@@ -601,7 +601,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10046"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_nightshadow_and_yasha"
@@ -622,8 +622,8 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAliases"					"nightshadow and yasha"
 		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -636,12 +636,12 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"bonus_agility"					"24"
-			}	
+			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"movement_speed_percent_bonus"	"20"
-			}	
+			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
@@ -709,7 +709,7 @@
 						"modifier"		"modifier_item_nightshadow_and_yasha_unique"
 					}
 				}
-				
+
 				"OnAttackLanded"
 				{
 					"Random"
@@ -743,11 +743,11 @@
 				"IsBuff"			"1"
 				"IsPurgable"		"1"
 				"Duration"			"%fast_attack_duration"
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
 				}
 			}
 		}
@@ -758,7 +758,7 @@
 		"BaseClass"                     "item_datadriven"
 		"ID"							"10048"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_three_spirits_blades"
@@ -782,8 +782,8 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAliases"					"three spirits blades"
 		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -801,17 +801,17 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"bonus_strength"				"30"
-			}		
+			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"bonus_agility"					"30"
-			}	
+			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"movement_speed_percent_bonus"	"30"
-			}	
+			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
@@ -836,12 +836,12 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"maim_slow_movement"			"-12"
-			}			
+			}
 			"11"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"maim_slow_attack"				"-15"
-			}	
+			}
 			"12"
 			{
 				"var_type"						"FIELD_FLOAT"
@@ -906,7 +906,7 @@
 						"modifier"		"modifier_item_three_spirits_blades_unique"
 					}
 				}
-				
+
 				"OnAttackLanded"
 				{
 					"Random"
@@ -953,10 +953,10 @@
 				"IsBuff"				"0"
 				"IsDebuff"				"1"
 				"IsPurgable"			"1"
-				
+
 				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
 				"EffectAttachType"      "follow_origin"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_slow_attack"
@@ -972,11 +972,11 @@
 				"IsBuff"			"1"
 				"IsPurgable"		"1"
 				"Duration"			"%fast_attack_duration"
-			
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
 				}
 			}
 		}

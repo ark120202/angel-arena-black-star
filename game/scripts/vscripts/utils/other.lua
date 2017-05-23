@@ -322,7 +322,7 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 			end
 
 			local individual_ability = unit:GetAbilityByIndex(ability_slot)
-			if individual_ability then 
+			if individual_ability then
 				local illusion_ability = illusion:AddAbility(individual_ability:GetName())
 				illusion_ability:SetLevel(individual_ability:GetLevel())
 			end
@@ -371,7 +371,7 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	if rc ~= Vector(255, 255, 255) then
 		illusion:SetRenderColor(rc.x, rc.y, rc.z)
 	end
-	
+
 	return illusion
 end
 
@@ -474,8 +474,8 @@ function MakePlayerAbandoned(iPlayerID)
 					hero:SellItem(item)
 				end
 			end
-			
-			
+
+
 			--Saving hero for 20 seconds to make sure most of debuffs were already removed
 			hero:DestroyAllModifiers()
 			for i = 0, hero:GetAbilityCount() - 1 do
@@ -630,14 +630,14 @@ function FindNearestEntity(vec3, units)
 	return unit
 end
 
-function FindCourier(team) 
+function FindCourier(team)
 	if type(TEAMS_COURIERS[team]) == "table" then
 		return TEAMS_COURIERS[team]
 	end
 end
 
 function GetNotScaledDamage(damage, unit)
-	return math.floor(damage/(1 + (unit:GetIntellect() * DEFAULT_SPELL_AMPLIFY_PER_INT) / 100) + 0.5)
+	return math.floor(damage/(1 + Attributes:GetTotalGrantedSpellAmplify(unit) / 100) + 0.5)
 end
 
 function GetSpellDamageAmplify(unit)
@@ -862,10 +862,14 @@ function IsModifierStrongest(unit, modifier, modifierList)
 	return true
 end
 
+function GetDirectoryFromPath(path)
+	return path:match("(.*[/\\])")
+end
+
 function ModuleRequire(this, fileName)
-	return require(string.gsub(this, "index", "") .. fileName)
+	return require(GetDirectoryFromPath(this) .. fileName)
 end
 
 function ModuleLinkLuaModifier(this, className, fileName, LuaModifierType)
-	return LinkLuaModifier(className, string.gsub(this, "index", "") .. (fileName or className), LuaModifierType or LUA_MODIFIER_MOTION_NONE)
+	return LinkLuaModifier(className, GetDirectoryFromPath(this) .. (fileName or className), LuaModifierType or LUA_MODIFIER_MOTION_NONE)
 end

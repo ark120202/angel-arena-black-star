@@ -64,7 +64,7 @@
 				"IsDebuff"			"1"
 				"IsStunDebuff"		"1"
 				"Duration"			"%duration"
-				
+
 				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
 				"EffectAttachType"	"follow_overhead"
@@ -193,7 +193,7 @@
 				"EffectName"		"particles/arena/units/heroes/hero_destroyer/destroyer_body_reconstruction.vpcf"
 				"EffectAttachType"	"follow_origin"
 			}
-			
+
 			"RunScript"
 			{
 				"ScriptFile"	"heroes/hero_destroyer/body_reconstruction.lua"

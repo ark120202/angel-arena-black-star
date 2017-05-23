@@ -201,7 +201,7 @@
 				"Duration"	        "%knockback_duration"
 				"Height"	        "0"
 				"IsFixedDistance"	"1"
-				"ShouldStun"        "1"	
+				"ShouldStun"        "1"
 			}
 			"RunScript"
 			{
@@ -291,10 +291,10 @@
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
 				"Duration"			"%duration"
-		
+
 				"EffectName"            "particles/generic_gameplay/generic_disarm.vpcf"
 				"EffectAttachType"      "follow_overhead"
-				
+
 				"States"
 				{
 					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -374,7 +374,7 @@
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
 				"Duration"			"%duration"
-		
+
 				"EffectName"            "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_1.vpcf"
 				"EffectAttachType"      "follow_origin"
 

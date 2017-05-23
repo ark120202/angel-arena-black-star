@@ -44,7 +44,7 @@
 				content = {
 					"item_diffusal_blade_arena_5",
 					"item_desolator6",
-					"item_fallhammer",	
+					"item_fallhammer",
 					"item_blade_of_discord",
 					"item_radiance_frozen",
 					"item_shard_of_true_sight",
@@ -97,7 +97,7 @@
 				content = {
 					"item_diffusal_blade_arena_5",
 					"item_desolator6",
-					"item_fallhammer",	
+					"item_fallhammer",
 					"item_blade_of_discord",
 					"item_radiance_frozen",
 					"item_shard_of_true_sight",
@@ -148,10 +148,10 @@
 				title = "#DOTA_Item_Build_Luxury",
 				content = {
 					"item_desolator6",
-					"item_shard_of_true_sight",	
+					"item_shard_of_true_sight",
 					"item_blade_of_discord",
 					"item_radiance_frozen",
-					"item_diffusal_blade_arena_5",	
+					"item_diffusal_blade_arena_5",
 					"item_refresher_core",
 				}
 			},
@@ -203,7 +203,7 @@
 				content = {
 					"item_shard_of_true_sight",
 					"item_blink_staff",
-					"item_sunray_dagon_5_arena",	
+					"item_sunray_dagon_5_arena",
 					"item_refresher_core",
 				}
 			},
@@ -256,7 +256,7 @@
 				content = {
 					"item_lotus_sphere",
 					"item_diffusal_blade_arena_5",
-					"item_auto_sheepstick",	
+					"item_auto_sheepstick",
 					"item_shard_of_true_sight",
 				}
 			},
@@ -306,7 +306,7 @@
 				content = {
 					"item_shard_of_true_sight",
 					"item_auto_sheepstick",
-					"item_lotus_sphere",	
+					"item_lotus_sphere",
 					"item_angel_wings",
 					"item_golden_eagle_relic",
 				}
@@ -357,7 +357,7 @@
 				content = {
 					"item_shard_of_true_sight",
 					"item_auto_sheepstick",
-					"item_diffusal_blade_arena_5",	
+					"item_diffusal_blade_arena_5",
 					"item_golden_eagle_relic",
 				}
 			},
@@ -410,7 +410,7 @@
 				content = {
 					"item_shard_of_true_sight",
 					"item_diffusal_blade_arena_5",
-					"item_golden_eagle_relic",	
+					"item_golden_eagle_relic",
 					"item_auto_sheepstick",
 				}
 			},
@@ -464,7 +464,7 @@
 				content = {
 					"item_diffusal_blade_arena_5",
 					"item_shard_of_true_sight",
-					"item_angel_wings",	
+					"item_angel_wings",
 					"item_blink_staff",
 					"item_edge_of_vyse",
 					"item_auto_sheepstick",
@@ -519,7 +519,7 @@
 				content = {
 					"item_shard_of_true_sight",
 					"item_angel_wings",
-					"item_haganemushi",	
+					"item_haganemushi",
 					"item_edge_of_vyse",
 					"item_auto_sheepstick",
 				}

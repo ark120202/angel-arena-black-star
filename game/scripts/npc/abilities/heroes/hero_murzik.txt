@@ -48,7 +48,7 @@
 		{
 			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
 		}
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -70,7 +70,7 @@
 		{
 			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
 		}
-		
+
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 		"AbilityCooldown"				"30.0 26.0 22.0 18.0"
@@ -123,7 +123,7 @@
 				"EffectName"	"Arena.Hero_Murzik.Leap"
 				"Target"		"CASTER"
 			}
-			
+
 			"RunScript"
 			{
 				"ScriptFile"	"heroes/hero_murzik/leap.lua"
@@ -135,7 +135,7 @@
 			    "Target" 		"CASTER"
 			    "ScriptFile"    "heroes/hero_murzik/leap.lua"
 			    "HorizontalControlFunction" "LeapHorizonal"
-			    "VerticalControlFunction" 	"LeapVertical"         
+			    "VerticalControlFunction" 	"LeapVertical"
 			}
 
 			"ActOnTargets"
@@ -144,7 +144,7 @@
 	            {
 	                "Center" "CASTER"
 	                "Radius" "%leap_radius"
-	                "Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY" 
+	                "Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	                "Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	            }
 
@@ -204,7 +204,7 @@
 				"tooltip_duration"			"20.0"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"FireSound"
@@ -212,20 +212,20 @@
 				"EffectName"	"Arena.Hero_Murzik.Cheat"
 				"Target"		"CASTER"
 			}
-		
+
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_murzik_cheat"
 				"Target"		"CASTER"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_murzik_cheat"
 			{
 				"Duration"		"%tooltip_duration"
-				
+
 				"OnAttackLanded"
 				{
 					"RemoveModifier"
@@ -233,14 +233,14 @@
 						"ModifierName"	"modifier_murzik_cheat"
 						"Target"		"CASTER"
 					}
-					
+
 					"FireSound"
 					{
 						"EffectName"	"Arena.Hero_Murzik.Cheat_attack"
 						"Target"		"CASTER"
 					}
 				}
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%murzik_vzlom_damage_pct"

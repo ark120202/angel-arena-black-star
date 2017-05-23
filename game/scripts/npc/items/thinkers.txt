@@ -14,7 +14,7 @@
 
 	"item_talent_modifier_applier"
 	{
-		"BaseClass"                     "item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"ItemPurchasable"				"0"
 		"ItemCost"						"0"
 
@@ -25,10 +25,86 @@
 				"IsHidden"			"1"
 				"IsPurgable"		"0"
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "1"
+				}
+			}
+		}
+	}
+
+	"item_attributes_modifier_applier"
+	{
+		"BaseClass"						"item_datadriven"
+		"ItemPurchasable"				"0"
+		"ItemCost"						"0"
+
+		"Modifiers"
+		{
+			"modifier_attribute_health"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"1"
+				}
+			}
+
+			"modifier_attribute_health_regen"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"0.01"
+				}
+			}
+
+			"modifier_attribute_attackspeed"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"1"
+				}
+			}
+
+			"modifier_attribute_mana"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+
+					"MODIFIER_PROPERTY_MANA_BONUS"	"1"
+				}
+			}
+
+			"modifier_attribute_mana_regen"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"0.01"
+				}
+			}
+
+			"modifier_attribute_spell_amplify"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"0.01"
 				}
 			}
 		}

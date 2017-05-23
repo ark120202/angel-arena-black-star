@@ -82,7 +82,7 @@
 						"sound"			"Arena.Hero_Zaken.StitchingStrikes"
 					}
 				}
-		
+
 				"ThinkInterval"  "%damage_interval"
 				"OnIntervalThink"
 				{
@@ -185,7 +185,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-				
+
 				"OnAttackStart"
 				{
 					"RemoveModifier"
@@ -238,7 +238,7 @@
 					"RemoveModifier"
 					{
 						"ModifierName"  "modifier_zaken_last_chance_crit"
-						"Target"   		"CASTER"    
+						"Target"   		"CASTER"
 					}
 				}
 			}
@@ -314,7 +314,7 @@
 				"health_regeneration"	"%sailor_health_regen"
 				"gold"					"%sailor_bounty"
 				"amount"				"%sailors_amount"
-			}	
+			}
 		}
 	}
 

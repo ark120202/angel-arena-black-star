@@ -5,7 +5,7 @@ function ApplyDisarmor(keys)
 	local disarmor = ability:GetLevelSpecialValueFor("armor_reduction_pct", ability:GetLevel() - 1) * 0.01
 	local stacks = target:GetPhysicalArmorBaseValue() * disarmor
 	if target.GetAgility then
-		stacks = stacks + (target:GetAgility() * DEFAULT_ARMOR_PER_AGI * disarmor)
+		stacks = stacks + Attributes:GetTotalGrantedArmor(target) * disarmor
 	end
 	local m = ability:ApplyDataDrivenModifier(caster, target, "modifier_apocalypse_king_slayer_knockback", nil)
 	if m:GetStackCount() < stacks then

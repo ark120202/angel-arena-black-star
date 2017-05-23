@@ -64,7 +64,7 @@
 		//Bosses
 		"Bosses_GoldToAll"			"15000"
 		"Bosses_RespawnDuration"	"300"
-		
+
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
@@ -121,7 +121,7 @@
 		//Bosses
 		"Bosses_GoldToAll"			"25000"
 		"Bosses_RespawnDuration"	"300"
-		
+
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
@@ -180,7 +180,7 @@
 		//Bosses
 		"Bosses_GoldToAll"			"15000"
 		"Bosses_RespawnDuration"	"300"
-		
+
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
@@ -231,13 +231,13 @@
 			"DisableResistance"            "50"
 		}
 	}
-	
+
 	"npc_arena_boss_central"
 	{
 		//Bosses
 		"Bosses_GoldToAll"			"100000"
 		"Bosses_RespawnDuration"	"600"
-		
+
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
@@ -297,7 +297,7 @@
 		//Bosses
 		"Bosses_GoldToAll"			"15000"
 		"Bosses_RespawnDuration"	"300"
-		
+
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
@@ -355,7 +355,7 @@
 		//Bosses
 		"Bosses_GoldToAll"			"15000"
 		"Bosses_RespawnDuration"	"300"
-		
+
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
@@ -413,7 +413,7 @@
 		//Bosses
 		"Bosses_GoldToAll"			"100000"
 		"Bosses_RespawnDuration"	"600"
-		
+
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
@@ -471,7 +471,7 @@
 		//Bosses
 		"Bosses_GoldToAll"			"100000"
 		"Bosses_RespawnDuration"	"600"
-		
+
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"

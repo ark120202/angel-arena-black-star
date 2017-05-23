@@ -111,7 +111,7 @@ function GameMode:DamageFilter(filterTable)
 		inflictor = EntIndexToHScript(filterTable.entindex_inflictor_const)
 	end
 	local attacker
-	if filterTable.entindex_attacker_const then 
+	if filterTable.entindex_attacker_const then
 		attacker = EntIndexToHScript(filterTable.entindex_attacker_const)
 	end
 	local victim = EntIndexToHScript(filterTable.entindex_victim_const)

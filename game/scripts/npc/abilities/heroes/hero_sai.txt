@@ -64,7 +64,7 @@
 				"think_interval"	"0.1"
 			}
 		}
-	}	
+	}
 	"sai_immortal"
 	{
 		"BaseClass"             		"ability_lua"

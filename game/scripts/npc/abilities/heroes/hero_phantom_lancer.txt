@@ -9,23 +9,23 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"phantom_lancer_spirit_lance"
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"750"
 		"AbilityCastPoint"				"0.3"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"7.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100 125 150 200 250 300 350"
-		
+
 		//Damage
 		"AbilityDamage"					"200 300 400 500 600 700 800"
 
@@ -51,7 +51,7 @@
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"illusion_outgoing_damage"			"20"		
+				"illusion_outgoing_damage"			"20"
 			}
 			"05"
 			{
@@ -62,7 +62,7 @@
 			{
 				"var_type"							"FIELD_INTEGER"
 				"projectile_speed"					"1000"
-			}		
+			}
 		}
 
 		"precache"
@@ -78,7 +78,7 @@
 				"EffectName"		"Hero_PhantomLancer.SpiritLance.Throw"
 				"Target"			"CASTER"
 			}
-			
+
 			"TrackingProjectile"
 			{
 				"Target"           	"TARGET"
@@ -89,7 +89,7 @@
 			    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
 			}
 		}
-		
+
 		"OnProjectileHitUnit"
 		{
 			"FireSound"
@@ -97,13 +97,13 @@
 				"EffectName"		"Hero_PhantomLancer.SpiritLance.Impact"
 				"Target"			"TARGET"
 			}
-			
+
 			"RunScript"
 			{
 				"ScriptFile"		"heroes/hero_phantom_lancer/spirit_lance.lua"
 				"Function"			"ConjureImage"
 			}
-			
+
 			"Damage"
 			{
 				"Target"	"TARGET"
@@ -116,9 +116,9 @@
 				"ModifierName"	"modifier_phantom_lancer_spirit_lance_arena"
 				"Target"		"TARGET"
 				"Duration"		"%slow_duration"
-			}	
+			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_phantom_lancer_spirit_lance_arena"
@@ -127,8 +127,8 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
-				}			
-			}	
+				}
+			}
 		}
 	}
 
@@ -156,7 +156,7 @@
 		"AoERadius"						"325"
 		"AbilityCooldown"				"50 45 40 35 30 25 20"
 		"AbilityManaCost"				"50 75 100 125 150 175 200"
-			
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -202,7 +202,7 @@
 				"illusion_incoming_damage"	"150"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"FireSound"
@@ -210,7 +210,7 @@
 				"EffectName" "Hero_PhantomLancer.Doppelganger.Cast"
 				"Target"	"CASTER"
 			}
-			
+
 			"ActOnTargets"
 			{
 				"Target"
@@ -226,11 +226,11 @@
 					"RunScript"
 					{
 						"ScriptFile"	"heroes/hero_phantom_lancer/doppelganger.lua"
-						"Function"		"CheckUnits"	
+						"Function"		"CheckUnits"
 					}
 				}
-			}		
-		}	
+			}
+		}
 
 		"Modifiers"
 		{
@@ -252,7 +252,7 @@
 					"RunScript"
 					{
 						"ScriptFile"	"heroes/hero_phantom_lancer/doppelganger.lua"
-						"Function"		"DoppelgangerStart"				
+						"Function"		"DoppelgangerStart"
 					}
 				}
 
@@ -282,7 +282,7 @@
 		"AbilityTextureName"			"phantom_lancer_phantom_edge"
 		"AbilityManaCost"				"80 120 240 360 480 600 720"
 		"AbilityCooldown"				"70 60 50 40 30 20 10"
-		
+
 		"precache"
 		{
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
@@ -309,7 +309,7 @@
 		"AbilityTextureName"			"phantom_lancer_juxtapose"
 		"HasScepterUpgrade"				"1"
 		"AbilityCooldown"				"1.5"
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -362,7 +362,7 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
-			
+
 				"OnAttackLanded"
 				{
 					"RunScript"
@@ -405,7 +405,7 @@
 				"IsHidden"	"1"
 				"IsPurgable"		"0"
 				"AllowIllusionDuplicate"     "0"
-				
+
 				"Aura"          	"modifier_phantom_lancer_juxtapose_arena_scepter_effect"
 				"Aura_Radius"   	"%immortal_illusions_radius_scepter"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"

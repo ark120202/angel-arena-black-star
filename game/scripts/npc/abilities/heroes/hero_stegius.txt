@@ -58,7 +58,7 @@
 				"duration"				"8"
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"LinearProjectile"
@@ -81,7 +81,7 @@
 				"Target" 		"CASTER"
 			}
 		}
-		
+
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit" "0"
@@ -170,21 +170,21 @@
 				"Target" 		"TARGET"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_stegius_rage_of_desolus"
 			{
 				"Duration"			"%duration"
 				"IsHidden"			"0"
-		
+
 				"EffectName"		"particles/arena/units/heroes/hero_stegius/rage_of_desolus_buff.vpcf"
 				"EffectAttachType"	"follow_overhead"
-		
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movement_speed_pct" 
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movement_speed_pct"
 				}
 			}
 		}
@@ -318,11 +318,11 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%stolen_attack_speed"
-				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%stolen_armor" 
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%stolen_armor"
 				}
 			}
 		}
-		
+
 	}
 
 	"stegius_desolating_touch"
@@ -361,7 +361,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"OnAttackLanded"
 				{
 					"RunScript"

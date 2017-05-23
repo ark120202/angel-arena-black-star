@@ -97,12 +97,12 @@
 		"BaseClass"				"ability_datadriven"
 		"AbilityTextureName"			"windrunner_focusfire"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		
+
 
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"	"1"
-			
+
 			"FireSound"
 			{
 				"EffectName"	"Hero_Medusa.AttackSplit"
@@ -122,7 +122,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-		
+
 				"OnAttack"
 				{
 					"RunScript"

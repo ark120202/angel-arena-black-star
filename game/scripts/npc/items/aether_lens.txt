@@ -6,7 +6,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"500"	
+		"ItemCost"						"500"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_aether_lens_arena"
 		"ItemRequirements"
@@ -21,7 +21,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1000"	
+		"ItemCost"						"1000"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_aether_lens_2"
 		"ItemRequirements"
@@ -36,7 +36,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1500"	
+		"ItemCost"						"1500"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_aether_lens_3"
 		"ItemRequirements"
@@ -51,7 +51,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2000"	
+		"ItemCost"						"2000"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_aether_lens_4"
 		"ItemRequirements"
@@ -66,7 +66,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2500"	
+		"ItemCost"						"2500"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_aether_lens_5"
 		"ItemRequirements"
@@ -85,10 +85,10 @@
 
 		"ItemAliases"					"aether lens"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
+
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"1"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -124,10 +124,10 @@
 
 		"ItemAliases"					"aether lens 2"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
+
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -163,10 +163,10 @@
 
 		"ItemAliases"					"aether lens 3"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
+
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -202,10 +202,10 @@
 
 		"ItemAliases"					"aether lens 4"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
+
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -241,10 +241,10 @@
 
 		"ItemAliases"					"aether lens 5"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		
+
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"5"
-		
+
 		"AbilitySpecial"
 		{
 			"01"

@@ -6,10 +6,10 @@
 		//
 		"BaseClass"	"npc_dota_base_additive"
 		"Model"	"models/development/invisiblebox.vmdl"
-		
+
 		// Abilities
 		//----------------------------------------------------------------
-		
+
 		"Ability1"	"dummy_unit"
 		"Ability2"	""
 		"Ability3"	""
@@ -36,7 +36,7 @@
 		"StatusHealth"	"1"	// Base health.
 		"StatusMana"	"50000"	// Base mana.
 		"UnitRelationshipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
-		
+
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"	"0"
@@ -49,10 +49,10 @@
 		//
 		"BaseClass"	"npc_dota_base_additive"
 		"Model"	"models/development/invisiblebox.vmdl"
-		
+
 		// Abilities
 		//----------------------------------------------------------------
-		
+
 		"Ability1"	""
 		"Ability2"	""
 		"Ability3"	""
@@ -83,7 +83,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"	"1"	// Base health.
 		"StatusMana"	"50000"	// Base mana.
-		
+
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"	"0"
@@ -96,10 +96,10 @@
 		//
 		"BaseClass"		"npc_dota_base_additive"
 		"Model"			"models/development/invisiblebox.vmdl"
-		
+
 		// Abilities
 		//----------------------------------------------------------------
-		
+
 		"Ability1"	"arena_custom_rune"
 		"Ability2"	""
 		"Ability3"	""
@@ -117,7 +117,7 @@
 		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
 
 		"StatusHealth"			"1"
-		
+
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
 	}
@@ -128,10 +128,10 @@
 		//
 		"BaseClass"	"npc_dota_base_additive"
 		"Model"	"models/development/invisiblebox.vmdl"
-		
+
 		// Abilities
 		//----------------------------------------------------------------
-		
+
 		"Ability1"	"dummy_unit"
 		"Ability2"	""
 		"Ability3"	""
@@ -158,13 +158,13 @@
 		"StatusHealth"	"1"	// Base health.
 		"StatusMana"	"50000"	// Base mana.
 		"UnitRelationshipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
-		
+
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
 	}
-	
+
 	"npc_arena_wearable"
 	{
 		"BaseClass"     "npc_dota_creature"
@@ -230,10 +230,10 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
-		
+
 		"VisionDaytimeRange"		"1800"
 		"VisionNighttimeRange"		"800"
-		
+
 		"HasInventory"				"1"
 
 		//"VoiceBackgroundSound"		""
