@@ -145,15 +145,15 @@ function CDOTA_BaseNPC:IsTrueHero()
 	return self:IsRealHero() and not self:IsTempestDouble() and not self:IsWukongsSummon()
 end
 
-function CDOTA_BaseNPC:AddNewAbility(unit, ability_name, skipLinked)
-	local hAbility = unit:AddAbility(ability_name)
+function CDOTA_BaseNPC:AddNewAbility(ability_name, skipLinked)
+	local hAbility = self:AddAbility(ability_name)
 	hAbility:ClearFalseInnateModifiers()
 	local linked
 	local link = LINKED_ABILITIES[ability_name]
 	if link and not skipLinked then
 		linked = {}
 		for _,v in ipairs(link) do
-			local h, _ = AddNewAbility(unit, v)
+			local h, _ = AddNewAbility(self, v)
 			table.insert(linked, h)
 		end
 	end
@@ -179,7 +179,7 @@ function CDOTA_BaseNPC_Hero:GetTotalHealthReduction()
 	if mod then
 		pct = pct + mod:GetAbility():GetAbilitySpecial("health_decrease_pct")
 	end
-	
+
 	local sara_evolution = self:FindAbilityByName("sara_evolution")
 	if sara_evolution then
 		local dec = sara_evolution:GetSpecialValueFor("health_reduction_pct")
