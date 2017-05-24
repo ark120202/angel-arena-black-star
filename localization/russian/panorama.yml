@@ -44,20 +44,26 @@ item_rune_keeper_rune_picked_up: "Поднята руна:\_"
 item_rune_keeper_rune_picked_up_cont: ", Rune Keeper сейчас содержит:\_"
 kill_goal_tooltip: 'Цель:'
 kill_goal_tooltip_vote_title: 'Желаемое макс. число убийств:'
+
 panorama_shop_shop_tab_1: ОСНОВНЫЕ
 panorama_shop_shop_tab_2: УЛУЧШЕНИЯ
 panorama_shop_shop_tab_3: НОВЫЕ
 panorama_shop_search_placeholder: Поиск...
 panorama_shop_shop_label: ЛАВКА
-custom_end_screen_legend_lasthits: КРП
+panorama_shop_itembuilds_new_group: НОВАЯ ГРУППА
+panorama_shop_guide_youtube_open: Открыть в браузере
+panorama_shop_stackable_purchase: Purchased item was dropped on the base, because your hero has same stackable item in inventory
+
+error_panorama_shop_publish_guide_title: Название.
+server_error_panorama_shop_youtube_no_tags: Проверьте наличие тега 'Angel Arena Black Star' у этого видео
+server_error_panorama_shop_youtube_not_found: Видео не найдено
+
 hud_modifier_click_to_remove: Нажмите чтобы снять
 ability_shop_shift_no: ЛКМ/ПКМ - Купить способность. Для перехода в режим продажи удерживайте SHIFT.
 ability_shop_shift_yes: 'ЛКМ - Продать способность, ПКМ - Понизить уровень способности. Для покупки отпустите SHIFT.'
 ability_shop_purchased_only: Только приобретенные способности
 ability_shop_search_placeholder: Название способности или героя...
 DOTA_Item_Build_Altenative_Starting_Items: Альт. нач. предметы
-DOTA_Item_Build_Title_Valve: РЕКОМЕНДУЕМЫЕ
-DOTA_Item_Build_Title_Arena: ПРЕДМЕТЫ ИЗ AABS
 
 custom_toast_PlayerDeniedSelf: '{victim_name} {denied_icon} не отдается врагу'
 custom_toast_PlayerDenied: '{killer_name} {denied_icon} не отдает врагу {victim_name}'

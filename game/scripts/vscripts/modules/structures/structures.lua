@@ -1,9 +1,9 @@
+Structures = Structures or class({})
+
 ModuleRequire(..., "data")
 ModuleRequire(..., "shops")
 ModuleLinkLuaModifier(..., "modifier_arena_healer")
 ModuleLinkLuaModifier(..., "modifier_arena_courier")
-
-Structures = Structures or class({})
 
 function Structures:AddHealers()
 	for _,v in ipairs(Entities:FindAllByClassname("npc_dota_healer")) do
@@ -22,18 +22,16 @@ function Structures:GiveCourier(hero)
 	local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
 	TEAMS_COURIERS[hero:GetTeamNumber()] = true
 	Timers:CreateTimer(0.03, function()
-		if IsValidEntity(owner)  then
-			for _,courier in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
-				local owner = courier:GetOwner()
-				if owner:GetPlayerID() == pid then
-					courier:SetOwner(nil)
-					courier:UpgradeToFlyingCourier()
+		for _,courier in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
+			local owner = courier:GetOwner()
+			if IsValidEntity(owner) and owner:GetPlayerID() == pid then
+				courier:SetOwner(nil)
+				courier:UpgradeToFlyingCourier()
 
-					courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
-					courier:RemoveAbility("courier_burst")
+				courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
+				courier:RemoveAbility("courier_burst")
 
-					TEAMS_COURIERS[tn] = courier
-				end
+				TEAMS_COURIERS[tn] = courier
 			end
 		end
 	end)

@@ -332,6 +332,53 @@ function GameMode:TrackInventory(unit)
 			}
 		end
 	end
+
+	-- Meepo's shared items
+	if unit:IsMainHero() and unit:GetFullName() == "npc_dota_hero_meepo" then
+		local playerId = unit:GetPlayerID()
+
+		-- Small delay to let Dota to do that first
+		Timers:CreateTimer(function()
+			if IsValidEntity(unit) then
+				local mainItemHash = _GetFilteredInventoryHash(unit, MEEPO_SHARED_ITEMS)
+				for _,clone in ipairs(Entities:FindAllByName("npc_dota_hero_meepo")) do
+					if clone ~= unit and clone:GetPlayerID() == playerId then
+						if _GetFilteredInventoryHash(clone, MEEPO_SHARED_ITEMS) ~= mainItemHash then
+							print("Redo items!")
+							--Clean all previous boots
+							for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_9 do
+								local item = clone:GetItemInSlot(i)
+								if item then UTIL_Remove(item) end
+							end
+
+							for _,v in ipairs(mainItemHash:split()) do
+								if v ~= "nil" then
+									clone:AddItemByName(v)
+								else
+									clone:AddItemByName("item_dummy")
+								end
+							end
+							ClearSlotsFromDummy(clone, false)
+						end
+					end
+				end
+			end
+		end)
+	end
+end
+
+function _GetFilteredInventoryHash(unit, list)
+	local hash = ""
+	for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_9 do
+		local item = unit:GetItemInSlot(i)
+		if item then
+			local itemName = item:GetAbilityName()
+			hash = hash .. (list[itemName] and itemName or "nil") .. " "
+		else
+			hash = hash .. "nil "
+		end
+	end
+	return hash:sub(1, -2)
 end
 
 function GameMode:OnKillGoalReached(team)

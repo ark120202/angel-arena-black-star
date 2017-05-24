@@ -52,6 +52,7 @@ item_rune_keeper_rune_picked_up: "Rune Picked up:\_"
 item_rune_keeper_rune_picked_up_cont: ', Rune Keeper now contains: '
 kill_goal_tooltip: 'Goal:'
 kill_goal_tooltip_vote_title: 'KILL GOAL VOTE:'
+
 panorama_shop_shop_tab_1: BASICS
 panorama_shop_shop_tab_2: UPGRADES
 panorama_shop_shop_tab_3: NEW
@@ -59,9 +60,12 @@ panorama_shop_search_placeholder: Search...
 panorama_shop_shop_label: SHOP
 panorama_shop_itembuilds_new_group: NEW GROUP
 panorama_shop_guide_youtube_open: Open in Browser
+panorama_shop_stackable_purchase: Купленный назодится на базе, так как в инвентаре героя находится такой же стакающийся предмет
+
 error_panorama_shop_publish_guide_title: Title.
 server_error_panorama_shop_youtube_no_tags: Make sure your video has 'Angel Arena Black Star' tag
 server_error_panorama_shop_youtube_not_found: Video wasn't found
+
 hud_modifier_click_to_remove: Click to remove
 ability_shop_shift_no: LMB/RMB - Buy Ability. Hold SHIFT to enter selling mode.
 ability_shop_shift_yes: 'LMB - Sell ability, RMB - Downgrade ability. Release SHIFT to enter purchase mode.'

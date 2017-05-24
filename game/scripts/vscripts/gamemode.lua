@@ -42,8 +42,6 @@ local requirements = {
 	"custom_events",
 	"filters",
 
-	"internal/containers",
-
 	"modules/index"
 }
 
@@ -87,7 +85,7 @@ function GameMode:InitGameMode()
 	HeroSelection:PrepareTables()
 	PanoramaShop:InitializeItemTable()
 	Structures:AddHealers()
-	ContainersHelper:CreateShops()
+	Structures:CreateShops()
 
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)

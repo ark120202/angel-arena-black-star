@@ -145,6 +145,10 @@ function CDOTA_BaseNPC:IsTrueHero()
 	return self:IsRealHero() and not self:IsTempestDouble() and not self:IsWukongsSummon()
 end
 
+function CDOTA_BaseNPC:IsMainHero()
+	return self:IsRealHero() and self == PlayerResource:GetSelectedHeroEntity(self:GetPlayerID())
+end
+
 function CDOTA_BaseNPC:AddNewAbility(ability_name, skipLinked)
 	local hAbility = self:AddAbility(ability_name)
 	hAbility:ClearFalseInnateModifiers()

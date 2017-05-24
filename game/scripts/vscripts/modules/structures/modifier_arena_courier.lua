@@ -1,6 +1,7 @@
 modifier_arena_courier = class({})
 function modifier_arena_courier:IsHidden() return true end
 function modifier_arena_courier:IsPurgable() return false end
+function modifier_arena_courier:RemoveOnDeath() return false end
 
 function modifier_arena_courier:DeclareFunctions()
 	return {
@@ -10,19 +11,9 @@ function modifier_arena_courier:DeclareFunctions()
 	}
 end
 
-function modifier_arena_courier:GetModifierMoveSpeed_Max()
-	return 800
-end
-function modifier_arena_courier:GetModifierMoveSpeed_Limit()
-	return 800
-end
-function modifier_arena_courier:GetModifierMoveSpeed_Absolute()
-	return 800
-end
-
-function modifier_arena_courier:RemoveOnDeath()
-	return false
-end
+function modifier_arena_courier:GetModifierMoveSpeed_Max() return 800 end
+function modifier_arena_courier:GetModifierMoveSpeed_Limit() return 800 end
+function modifier_arena_courier:GetModifierMoveSpeed_Absolute() return 800 end
 
 if IsServer() then
 	function modifier_arena_courier:OnCreated()

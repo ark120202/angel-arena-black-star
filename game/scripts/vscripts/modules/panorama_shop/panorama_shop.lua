@@ -223,37 +223,65 @@ function PanoramaShop:OnItemBuy(data)
 	end
 end
 
-function PanoramaShop:PushItem(playerID, unit, name, bOnlyStash)
+function PanoramaShop:SellItem(unit, item)
+	local cost = item:GetCost()
+	--GetStackCount()
+	if GameRules:GetGameTime() - item:GetPurchaseTime() > 10 then
+		cost = cost / 2
+	end
+	if itemname == "item_pocket_riki" then
+		cost = Kills:GetGoldForKill(item.RikiContainer)
+		item.RikiContainer:TrueKill(item, units[1])
+		Kills:ClearStreak(item.RikiContainer:GetPlayerID())
+		unit:RemoveItem(item)
+		unit:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
+		unit:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
+		unit:RemoveModifierByName("modifier_invisible")
+		GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber())
+	end
+	UTIL_Remove(item)
+	Gold:AddGoldWithMessage(unit, cost, PlayerID)
+	GameMode:TrackInventory(unit)
+end
+
+function PanoramaShop:PushItem(playerID, unit, itemName, bOnlyStash)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	local team = PlayerResource:GetTeam(playerID)
-	local item = CreateItem(name, hero, hero)
-	local isInShop = unit:HasModifier("modifier_fountain_aura_arena")
+	local item = CreateItem(itemName, hero, hero)
+	local isInShop = unit:HasModifier("modifier_fountain_aura_arena") -- Works only while fontain area === shop area
 	item:SetPurchaseTime(GameRules:GetGameTime())
 	item:SetPurchaser(hero)
 
 	local itemPushed = false
 	--If unit has slot for that item
 	if isInShop and not bOnlyStash then
-		if unit:UnitHasSlotForItem(name, true) then
+		if unit:UnitHasSlotForItem(itemName, true) then
 			unit:AddItem(item)
 			itemPushed = true
 		end
 	end
+
 	--Try to add item to hero's stash
 	if not itemPushed then
-		if not isInShop then SetAllItemSlotsLocked(hero, true, true) end
-		FillSlotsWithDummy(hero, false)
-		for i = DOTA_STASH_SLOT_1 , DOTA_STASH_SLOT_6 do
-			local current_item = unit:GetItemInSlot(i)
-			if current_item and current_item:GetAbilityName() == "item_dummy" then
-				UTIL_Remove(current_item)
-				unit:AddItem(item)
-				itemPushed = true
-				break
+		-- Stackable item abuse fix, not very good, but that's all I can do without smth like SetStackable
+		local hasSameStackableItem = item:IsStackable() and unit:HasItemInInventory(itemName)
+		if hasSameStackableItem then
+			Notifications:Bottom(playerID, {text="panorama_shop_stackable_purchase", style = {color = "red"}, duration = 4.5})
+		else
+			if not isInShop then SetAllItemSlotsLocked(unit, true, true) end
+			FillSlotsWithDummy(unit, false)
+			for i = DOTA_STASH_SLOT_1 , DOTA_STASH_SLOT_6 do
+				local current_item = unit:GetItemInSlot(i)
+				if current_item and current_item:GetAbilityName() == "item_dummy" then
+					UTIL_Remove(current_item)
+					unit:AddItem(item)
+					itemPushed = true
+					break
+				end
 			end
+			ClearSlotsFromDummy(unit, false)
+			if not isInShop then SetAllItemSlotsLocked(unit, false, true) end
 		end
-		ClearSlotsFromDummy(hero, false)
-		if not isInShop then SetAllItemSlotsLocked(hero, false, true) end
 	end
 	--At last drop an item on fountain
 	if not itemPushed then
@@ -369,7 +397,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 		end
 	end
 	DefineItemState(itemName)
-	
+
 	local ItemsInInventory = {}
 	local ItemsInStash = {}
 	local ItemsToBuy = {}
@@ -391,7 +419,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 			table.insert(ItemsInStash, name)
 		end
 	end
-	
+
 	if Gold:GetGold(playerID) >= wastedGold then
 		Containers:EmitSoundOnClient(playerID, "General.Buy")
 		Gold:RemoveGold(playerID, wastedGold)
@@ -427,5 +455,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 				end
 			end
 		end
+
+		GameMode:TrackInventory(unit)
 	end
 end

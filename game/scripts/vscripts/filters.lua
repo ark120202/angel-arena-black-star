@@ -31,22 +31,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 	end
 
 	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability and not units[1]:IsIllusion() and not units[1]:IsTempestDouble() then
-		local cost = ability:GetCost()
-		if GameRules:GetGameTime() - ability:GetPurchaseTime() > 10 then
-			cost = cost / 2
-		end
-		if abilityname == "item_pocket_riki" then
-			cost = Kills:GetGoldForKill(ability.RikiContainer)
-			ability.RikiContainer:TrueKill(ability, units[1])
-			Kills:ClearStreak(ability.RikiContainer:GetPlayerID())
-			units[1]:RemoveItem(ability)
-			units[1]:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
-			units[1]:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
-			units[1]:RemoveModifierByName("modifier_invisible")
-			GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, units[1]:GetTeamNumber())
-		end
-		UTIL_Remove(ability)
-		Gold:AddGoldWithMessage(units[1], cost, PlayerID)
+		PanoramaShop:SellItem(units[1], ability)
 		return false
 	end
 	for _,unit in ipairs(units) do
