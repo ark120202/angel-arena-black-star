@@ -728,12 +728,13 @@ DOTA_Tooltip_ability_item_team_changer_Description: |-
   Change your team to the opposite team. Can be used only if another team has less players than your. If damage is taken from an enemy hero or boss, this ability is disabled for %attacked_cooldown% seconds
 
   Can't be used while duel is ongoing.
+
 DOTA_Tooltip_Ability_item_skadi_arena: Eye of Skadi
 DOTA_Tooltip_ability_item_skadi_arena_Description: 'Passive: Cold Attack - Each attack slows the movement and attack speed of the target for %cold_duration% seconds.'
 DOTA_Tooltip_ability_item_skadi_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_arena_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_arena_bonus_mana: +$mana
-DOTA_Tooltip_ability_item_skadi_arena_cold_movement_speed: '%COLD MOVE SLOW:'
+DOTA_Tooltip_ability_item_skadi_arena_cold_movement_speed_pct: '%COLD MOVE SLOW:'
 DOTA_Tooltip_ability_item_skadi_arena_cold_attack_speed: 'COLD ATTACK SLOW:'
 DOTA_Tooltip_modifier_item_skadi_arena_cold_attack: Eye of Skadi Cold Attack
 DOTA_Tooltip_modifier_item_skadi_arena_cold_attack_Description: 'Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
@@ -742,22 +743,27 @@ DOTA_Tooltip_ability_item_skadi_2_Description: 'Passive: Cold Attack - Each atta
 DOTA_Tooltip_ability_item_skadi_2_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_2_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_2_bonus_mana: +$mana
-DOTA_Tooltip_ability_item_skadi_2_cold_movement_speed: '%COLD MOVE SLOW:'
+DOTA_Tooltip_ability_item_skadi_2_cold_movement_speed_pct: '%COLD MOVE SLOW:'
 DOTA_Tooltip_ability_item_skadi_2_cold_attack_speed: 'COLD ATTACK SLOW:'
 DOTA_Tooltip_Ability_item_skadi_4: Eye of Skadi X4
 DOTA_Tooltip_ability_item_skadi_4_Description: 'Passive: Cold Attack - Each attack slows the movement and attack speed of the target for %cold_duration% seconds.'
 DOTA_Tooltip_ability_item_skadi_4_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_4_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_4_bonus_mana: +$mana
-DOTA_Tooltip_ability_item_skadi_4_cold_movement_speed: '%COLD MOVE SLOW:'
+DOTA_Tooltip_ability_item_skadi_4_cold_movement_speed_pct: '%COLD MOVE SLOW:'
 DOTA_Tooltip_ability_item_skadi_4_cold_attack_speed: 'COLD ATTACK SLOW:'
 DOTA_Tooltip_Ability_item_skadi_8: Eye of Skadi X8
 DOTA_Tooltip_ability_item_skadi_8_Description: 'Passive: Cold Attack - Each attack slows the movement and attack speed of the target for %cold_duration% seconds.'
 DOTA_Tooltip_ability_item_skadi_8_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_8_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_8_bonus_mana: +$mana
-DOTA_Tooltip_ability_item_skadi_8_cold_movement_speed: '%COLD MOVE SLOW:'
+DOTA_Tooltip_ability_item_skadi_8_cold_movement_speed_pct: '%COLD MOVE SLOW:'
 DOTA_Tooltip_ability_item_skadi_8_cold_attack_speed: 'COLD ATTACK SLOW:'
+DOTA_Tooltip_ability_item_skadi_arena_Note0: Cold Attack not slows bosses
+DOTA_Tooltip_ability_item_skadi_2_Note0: Cold Attack not slows bosses
+DOTA_Tooltip_ability_item_skadi_4_Note0: Cold Attack not slows bosses
+DOTA_Tooltip_ability_item_skadi_8_Note0: Cold Attack not slows bosses
+
 DOTA_Tooltip_Ability_item_radiance_arena: Radiance
 DOTA_Tooltip_ability_item_radiance_arena_Description: 'Active: Toggle Burn - When active, scorches nearby enemies for %aura_damage_per_second% damage per second, reduces their movement speed by %move_speed_slow_pct%%%, attack speed by %attack_speed_slow% and blinds them, causing them to miss %blind_pct%%% of their attacks.'
 DOTA_Tooltip_ability_item_radiance_arena_bonus_damage: +$damage

@@ -64,7 +64,7 @@ if IsServer() then
 		local attacker = keys.attacker
 		if attacker == self:GetParent() then
 			local ability = self:GetAbility()
-			if not target.IsBoss or not target:IsBoss() and not attacker:IsIllusion() then
+			if not (target.IsBoss and target:IsBoss()) and not attacker:IsIllusion() then
 				local dmg = Gold:GetGold(attacker) * ability:GetSpecialValueFor("active_gold_as_damage_pct") * 0.01
 				ApplyDamage({
 					victim = target,
@@ -75,7 +75,7 @@ if IsServer() then
 				})
 				SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, target, dmg, nil)
 			end
-			
+
 		end
 	end
 end

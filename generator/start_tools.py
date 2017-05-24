@@ -7,7 +7,7 @@ def main(argv):
 	try:
 		opts, args = getopt.getopt(argv, 'hd:m:')
 	except getopt.GetoptError:
-		print('start_tools.py -d <dotaPath>')
+		print('start_tools.py -d <dotaPath> [-m <mode>]')
 		sys.exit(2)
 	for opt, arg in opts:
 		if opt == '-h':
