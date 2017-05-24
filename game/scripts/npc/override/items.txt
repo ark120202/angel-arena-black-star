@@ -616,22 +616,22 @@
 		"AbilityCooldown"				"15"
 		"AbilitySpecial"
 		{
-			"02"
+			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"lifesteal_percent"		"18"
 			}
-			"03"
+			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"berserk_bonus_attack_speed"	"200"
 			}
-			"04"
+			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"berserk_bonus_movement_speed"	"50"
 			}
-			"06"
+			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"berserk_duration"		"9.0"

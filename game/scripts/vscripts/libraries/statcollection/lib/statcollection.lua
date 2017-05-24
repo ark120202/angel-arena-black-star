@@ -22,7 +22,7 @@ require('libraries/statcollection/lib/md5')
 require('libraries/statcollection/schema')
 
 -- Settings
-local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
+local statInfo = LoadKeyValues('scripts/vscripts/libraries/statcollection/settings.kv')
 
 -- Where stuff is posted to
 local postLocation = 'https://api.getdotastats.com/'
@@ -514,7 +514,7 @@ function statCollection:sendHostCheckIn()
     local payload = {
         modIdentifier = self.modIdentifier,
         steamID32 = "-1",
-        isHost = "1", 
+        isHost = "1",
         matchID = self.matchID,
         schemaVersion = schemaVersion,
     }
@@ -552,7 +552,7 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
             statCollection:print("Body", res.Body or "nil")
             return
         end
-         
+
         if not res.Body then
             statCollection:print(errorEmptyServerResponse)
             statCollection:print("Status Code", res.StatusCode or "nil")
