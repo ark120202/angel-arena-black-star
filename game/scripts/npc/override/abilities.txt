@@ -13045,6 +13045,115 @@
 
 	}
 
+	"meepo_earthbind"
+	{
+		"MaxLevel"						"7"
+		"AbilityCastRange"				"500 750 1000 1250"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"20 16 12 8"
+		"AbilityManaCost"				"100"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"220"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"857"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"			"500 750 1000 1250"
+			}
+		}
+	}
+
+	"meepo_poof"
+	{
+		"MaxLevel"						"7"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCastPoint"				"1.5"
+		"AbilityCooldown"				"12 10 8 6"
+		"AbilityManaCost"				"80"
+		"AbilityDamage"					"80 100 120 140"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"375"
+			}
+		}
+	}
+
+	"meepo_geostrike"
+	{
+		"MaxLevel"						"7"
+		"AbilityDamage"					"10 20 30 40"
+		"AbilityDuration"				"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-5 -10 -15 -20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_tooltip"		"2.0"
+			}
+		}
+	}
+
+	"meepo_divided_we_stand"
+	{
+		"MaxLevel"						"5"
+		"LevelsBetweenUpgrades"			"7"
+		"RequiredLevel"					"3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_clones"		"1 2 3 4 5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_share_percentage"		"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_share_percentage_scepter"		"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"respawn"				"0.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_respawn"		"20"
+			}
+		}
+	}
+
 	"treant_natures_guise"
 	{
 		"MaxLevel"	"7"
