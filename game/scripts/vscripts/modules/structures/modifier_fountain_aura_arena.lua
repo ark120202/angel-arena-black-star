@@ -1,34 +1,16 @@
 modifier_fountain_aura_arena = class({})
+function modifier_fountain_aura_arena:IsPurgable() return false end
+function modifier_fountain_aura_arena:IsHidden() return true end
+
 local FOUNTAIN_PERCENTAGE_MANA_REGEN = 20
 local FOUNTAIN_PERCENTAGE_HEALTH_REGEN = 20
 
 function modifier_fountain_aura_arena:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
-		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
-		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
 		MODIFIER_PROPERTY_MIN_HEALTH,
 		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
 		MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
 	}
-end
-
-function modifier_fountain_aura_arena:GetAbsoluteNoDamageMagical()
-	return 1
-end
-
-function modifier_fountain_aura_arena:GetAbsoluteNoDamagePhysical()
-	return 1
-end
-
-function modifier_fountain_aura_arena:GetAbsoluteNoDamagePure()
-	return 1
-end
-
-function modifier_fountain_aura_arena:GetMinHealth()
-	if self:GetParent():IsConsideredHero() then
-		return 1 
-	end
 end
 
 function modifier_fountain_aura_arena:GetModifierHealthRegenPercentage()
@@ -39,13 +21,6 @@ function modifier_fountain_aura_arena:GetModifierTotalPercentageManaRegen()
 	return FOUNTAIN_PERCENTAGE_HEALTH_REGEN
 end
 
-function modifier_fountain_aura_arena:IsPurgable()
-	return false
-end
-
-function modifier_fountain_aura_arena:IsHidden()
-	return true
-end
 
 if IsServer() then
 	function modifier_fountain_aura_arena:OnCreated()

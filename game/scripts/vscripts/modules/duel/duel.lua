@@ -120,26 +120,27 @@ function Duel:StartDuel()
 			end
 		end
 		for team,tab in pairs(Duel.heroes_teams_for_duel) do
-			for _,unit in pairs(tab) do
-				for _,v in ipairs(DUEL_PURGED_MODIFIERS) do
-					if unit:HasModifier(v) then
-						unit:RemoveModifierByName(v)
+			for _,_unit in pairs(tab) do
+				for _,unit in ipairs(_unit:GetFullName() == "npc_dota_hero_meepo" and MeepoFixes:FindMeepos(_unit, true) or {_unit}) do
+					for _,v in ipairs(DUEL_PURGED_MODIFIERS) do
+						if unit:HasModifier(v) then
+							unit:RemoveModifierByName(v)
+						end
+					end
+					if unit:HasModifier("modifier_item_tango_arena") then
+						unit:SetModifierStackCount("modifier_item_tango_arena", unit, math.round(unit:GetModifierStackCount("modifier_item_tango_arena", unit) * 0.5))
+					end
+					if unit.PocketItem then
+						UTIL_Remove(unit.PocketItem)
+					end
+					if _unit.OnDuel then
+						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
+						ProjectileManager:ProjectileDodge(unit)
+						unit:FindClearSpaceForUnitAndSetCamera(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
+					elseif unit:IsAlive() then
+						Duel:SetUpVisitor(unit)
 					end
 				end
-				if unit:HasModifier("modifier_item_tango_arena") then
-					unit:SetModifierStackCount("modifier_item_tango_arena", unit, math.round(unit:GetModifierStackCount("modifier_item_tango_arena", unit) * 0.5))
-				end
-				if unit.PocketItem then
-					UTIL_Remove(unit.PocketItem)
-				end
-				if unit.OnDuel then
-					unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
-					ProjectileManager:ProjectileDodge(unit)
-					unit:FindClearSpaceForUnitAndSetCamera(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
-				elseif unit:IsAlive() then
-					Duel:SetUpVisitor(unit)
-				end
-				--TODO Meepo
 			end
 		end
 		CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
@@ -223,9 +224,11 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 	if bEndForUnits then
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
 			if PlayerResource:IsValidPlayerID(playerID) then
-				local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-				if IsValidEntity(hero) then
-					Duel:EndDuelForUnit(hero)
+				local _hero = PlayerResource:GetSelectedHeroEntity(playerID)
+				if IsValidEntity(_hero) then
+					for _,hero in ipairs(_hero:GetFullName() == "npc_dota_hero_meepo" and MeepoFixes:FindMeepos(_hero, true) or {_hero}) do
+						Duel:EndDuelForUnit(hero)
+					end
 				end
 			end
 		end
@@ -260,7 +263,7 @@ function Duel:EndDuelForUnit(unit)
 			unit.StatusBeforeArena = nil
 		end
 	end)
-	
+
 	if not unit:IsAlive() and PlayerResource:GetRespawnSeconds(unit:GetPlayerID()) <= 1 then
 		unit:RespawnHero(false, false, false)
 	end

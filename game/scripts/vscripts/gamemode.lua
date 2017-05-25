@@ -51,7 +51,6 @@ local modifiers = {
 	modifier_set_attack_range = "modifiers/modifier_set_attack_range",
 	modifier_charges = "modifiers/modifier_charges",
 	modifier_hero_selection_transformation = "modifiers/modifier_hero_selection_transformation",
-	modifier_fountain_aura_arena = "modifiers/modifier_fountain_aura_arena",
 	modifier_max_attack_range = "modifiers/modifier_max_attack_range",
 	modifier_arena_hero = "modifiers/modifier_arena_hero",
 	modifier_item_demon_king_bar_curse = "items/modifier_item_demon_king_bar_curse",
@@ -179,7 +178,6 @@ end
 function GameMode:GameModeThink()
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
-			local playerData = PLAYER_DATA[i]
 			local hero = PlayerResource:GetSelectedHeroEntity(i)
 			if hero then
 				hero:SetNetworkableEntityInfo("unit_name", hero:GetFullName())

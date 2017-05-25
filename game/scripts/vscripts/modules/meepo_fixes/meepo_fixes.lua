@@ -22,30 +22,25 @@ end
 
 function MeepoFixes:ShareItems(unit)
 	if unit:GetFullName() == "npc_dota_hero_meepo" then
-		-- Small delay to let Dota to do that first
-		Timers:CreateTimer(function()
-			if IsValidEntity(unit) then
-				local mainItemHash = MeepoFixes:GetFilteredInventoryHash(unit, MEEPO_SHARED_ITEMS)
-				for _,clone in ipairs(MeepoFixes:FindMeepos(unit)) do
-					if MeepoFixes:GetFilteredInventoryHash(clone, MEEPO_SHARED_ITEMS) ~= mainItemHash then
-						for i,v in ipairs(mainItemHash:split()) do
-							local oldItem = clone:GetItemInSlot(i - 1)
-							--Mostly uselss, because Dota's clears inventory, but should work with default boots
-							if oldItem then
-								local oldItemName = oldItem:GetAbilityName()
-								if oldItemName ~= v then
-									UTIL_Remove(oldItem)
-									clone:AddItemByName(v ~= "nil" and v or "item_dummy")
-								end
-							else
-								clone:AddItemByName(v ~= "nil" and v or "item_dummy")
-							end
+		local mainItemHash = MeepoFixes:GetFilteredInventoryHash(unit, MEEPO_SHARED_ITEMS)
+		for _,clone in ipairs(MeepoFixes:FindMeepos(unit)) do
+			if MeepoFixes:GetFilteredInventoryHash(clone, MEEPO_SHARED_ITEMS) ~= mainItemHash then
+				for i,v in ipairs(mainItemHash:split()) do
+					local oldItem = clone:GetItemInSlot(i - 1)
+					--Mostly uselss, because Dota's clears inventory, but should work with default boots
+					if oldItem then
+						local oldItemName = oldItem:GetAbilityName()
+						if oldItemName ~= v then
+							UTIL_Remove(oldItem)
+							clone:AddItemByName(v ~= "nil" and v or "item_dummy")
 						end
-						ClearSlotsFromDummy(clone, true)
+					else
+						clone:AddItemByName(v ~= "nil" and v or "item_dummy")
 					end
 				end
+				ClearSlotsFromDummy(clone, true)
 			end
-		end)
+		end
 	end
 end
 

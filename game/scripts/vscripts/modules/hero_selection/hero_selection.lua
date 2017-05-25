@@ -13,6 +13,7 @@ ModuleRequire(..., "util")
 ModuleRequire(..., "linked")
 ModuleRequire(..., "hero_replacer")
 ModuleRequire(..., "client_actions")
+ModuleLinkLuaModifier(..., "modifier_hero_selection_transformation")
 
 HERO_SELECTION_PHASE_NOT_STARTED = 0
 HERO_SELECTION_PHASE_BANNING = 1

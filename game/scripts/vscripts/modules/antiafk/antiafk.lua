@@ -19,6 +19,7 @@ function AntiAFK:Think(playerId)
 end
 
 function AntiAFK:ThinkPlayerInGame(playerId)
+	local playerData = PLAYER_DATA[playerId]
 	if GetConnectionState(playerId) == DOTA_CONNECTION_STATE_CONNECTED then
 		playerData.AutoAbandonGameTime = nil
 		--Anti-AFK

@@ -38,6 +38,6 @@ generator/node_modules/*
 !generator/node_modules/vdf-extra
 !generator/node_modules/dota-custom-game-toolkit
 
-changelogs/ideas.txt
+changelogs/!ideas.txt
 changelogs/!local.txt
 serverinfo.txt
