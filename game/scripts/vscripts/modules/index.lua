@@ -17,6 +17,8 @@ local modules = {
 	"stats",
 	"structures",
 	"attributes",
+	"antiafk",
+	"meepo_fixes" -- until rewrite
 }
 
 local errors = {}

@@ -183,6 +183,7 @@ function GameMode:GameModeThink()
 			local hero = PlayerResource:GetSelectedHeroEntity(i)
 			if hero then
 				hero:SetNetworkableEntityInfo("unit_name", hero:GetFullName())
+				MeepoFixes:ShareItems(hero)
 			end
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 				local gold_per_tick = CUSTOM_GOLD_PER_TICK
@@ -196,75 +197,7 @@ function GameMode:GameModeThink()
 				end
 				Gold:AddGold(i, gold_per_tick)
 			end
-			if not IsPlayerAbandoned(i) then
-				if GetConnectionState(i) == DOTA_CONNECTION_STATE_CONNECTED then
-					playerData.AutoAbandonGameTime = nil
-					--Anti-AFK
-					if not GameRules:IsCheatMode() then
-						local timeLeft = (playerData.AntiAFKLastXP or PLAYER_ANTI_AFK_TIME) - GameRules:GetGameTime()
-						if timeLeft <= PLAYER_ANTI_AFK_NOTIFY_TIME and (not playerData.AntiAFKLastLeftNotify or timeLeft < playerData.AntiAFKLastLeftNotify - 60) then
-							playerData.AntiAFKLastLeftNotify = timeLeft
-							CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
-								type = "generic",
-								text = "#custom_toast_AntiAFKTime",
-								player = i,
-								variables = {
-									["{minutes}"] = math.ceil(timeLeft/60)
-								}
-							})
-						end
-						if timeLeft <= 0 then
-							CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
-								type = "generic",
-								text = "#custom_toast_AntiAFKNoTime",
-								player = i
-							})
-							PlayerResource:KickPlayer(i)
-						end
-					end
-				elseif GetConnectionState(i) == DOTA_CONNECTION_STATE_DISCONNECTED then
-					playerData.AntiAFKLastXP = nil
-					--Auto Abandon
-					if not playerData.AutoAbandonGameTime then
-						playerData.AutoAbandonGameTime = GameRules:GetGameTime() + PLAYER_AUTOABANDON_TIME
-						--GameRules:SendCustomMessage("#DOTA_Chat_DisconnectWaitForReconnect", i, -1)
-					end
-					local timeLeft = playerData.AutoAbandonGameTime - GameRules:GetGameTime()
-					if not playerData.LastLeftNotify or timeLeft < playerData.LastLeftNotify - 60 then
-						playerData.LastLeftNotify = timeLeft
-						CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
-							type = "generic",
-							text = "#custom_toast_AutoAbandonTime",
-							player = i,
-							variables = {
-								["{minutes}"] = math.ceil(timeLeft/60)
-							}
-						})
-					end
-					if timeLeft <= 0 then
-						CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
-							type = "generic",
-							text = "#custom_toast_AutoAbandonNoTime",
-							player = i
-						})
-						MakePlayerAbandoned(i)
-					end
-				elseif GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
-					MakePlayerAbandoned(i)
-				end
-			else
-				local gold = Gold:GetGold(i)
-				local allyCount = GetTeamPlayerCount(PlayerResource:GetTeam(i))
-				local goldPerAlly = math.floor(gold/allyCount)
-				Gold:RemoveGold(i, goldPerAlly * allyCount)
-				for ally = 0, 23 do
-					if PlayerResource:IsValidPlayerID(ally) and not IsPlayerAbandoned(ally) then
-						if PlayerResource:GetTeam(ally) == PlayerResource:GetTeam(i) then
-							Gold:ModifyGold(ally, goldPerAlly)
-						end
-					end
-				end
-			end
+			AntiAFK:Think(i)
 		end
 	end
 	return CUSTOM_GOLD_TICK_TIME

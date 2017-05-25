@@ -27,7 +27,7 @@ function FillSlotsWithDummy(unit, bNoStash)
 	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if not current_item then
-			unit:AddItem(CreateItem("item_dummy", unit, unit))
+			unit:AddItemByName("item_dummy")
 		end
 	end
 end
@@ -47,7 +47,7 @@ function SetAllItemSlotsLocked(unit, locked, bNoStash)
 		local current_item = unit:GetItemInSlot(i)
 		if current_item then
 			ExecuteOrderFromTable({
-				UnitIndex = unit:GetEntityIndex(), 
+				UnitIndex = unit:GetEntityIndex(),
 				OrderType = DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK,
 				AbilityIndex = current_item:GetEntityIndex(),
 				TargetIndex = locked and 1 or 0,
@@ -63,7 +63,7 @@ function swap_to_item(unit, srcItem, newItem)
 		unit:RemoveItem(srcItem)
 		unit:AddItem(newItem)
 	end
-	
+
 	ClearSlotsFromDummy(unit)
 end
 
