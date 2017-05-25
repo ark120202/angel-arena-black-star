@@ -200,12 +200,12 @@ CHAT_COMMANDS = {
 	["a_createhero"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
 		f = function(args, hero, playerID)
-			playerID = 6
+			--playerID = 6
 			local heroName = args[1]
 			local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
 			local baseNewHero = heroTableCustom.base_hero or heroName
-			--local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
-			local h = PlayerResource:ReplaceHeroWith(playerID, baseNewHero, 0, 0)
+			local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
+			--local h = PlayerResource:ReplaceHeroWith(playerID, baseNewHero, 0, 0)
 			local team = 2
 			if PlayerResource:GetTeam(playerID) == team and table.contains(args, "enemy") then
 				team = 3
@@ -232,5 +232,21 @@ CHAT_COMMANDS = {
 				end
 			end
 		end
-	}
+	},
+	["ccreate"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
+		f = function(args)
+			local pid = tonumber(args[1])
+			local pType = args[2]
+			local source = args[3]
+			local duration = tonumber(args[4])
+			if PlayerResource:IsValidPlayerID(pid) and pType and source and (args[4] == nil or duration ~= nil) then
+				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(pid), "create_generic_panel", {
+					type = pType,
+					source = source,
+					duration = duration
+				})
+			end
+		end
+	},
 }

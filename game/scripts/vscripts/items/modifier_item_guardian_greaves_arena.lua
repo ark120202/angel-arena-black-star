@@ -62,11 +62,15 @@ end
 function modifier_item_guardian_greaves_arena_effect:GetModifierConstantHealthRegen()
 	local parent = self:GetParent()
 	local ability = self:GetAbility()
-	return ability:GetSpecialValueFor(parent:GetHealth() / parent:GetMaxHealth() > ability:GetSpecialValueFor("aura_bonus_threshold_pct") * 0.01 and "aura_health_regen" or "aura_health_regen_bonus")
+	if ability then
+		return ability:GetSpecialValueFor(parent:GetHealth() / parent:GetMaxHealth() > ability:GetSpecialValueFor("aura_bonus_threshold_pct") * 0.01 and "aura_health_regen" or "aura_health_regen_bonus")
+	end
 end
 function modifier_item_guardian_greaves_arena_effect:GetModifierPhysicalArmorBonus()
 	local parent = self:GetParent()
 	local ability = self:GetAbility()
-	local s = parent:GetHealthPercent() >= ability:GetSpecialValueFor("aura_bonus_threshold_pct") and "aura_armor" or "aura_armor_bonus"
-	return ability:GetSpecialValueFor(s)
+	if ability then
+		local s = parent:GetHealthPercent() >= ability:GetSpecialValueFor("aura_bonus_threshold_pct") and "aura_armor" or "aura_armor_bonus"
+		return ability:GetSpecialValueFor(s)
+	end
 end

