@@ -9,7 +9,7 @@ function Structures:CreateShops()
 	for _,v in ipairs(Entities:FindAllByName("target_mark_containers_shop_duel")) do
 		local DuelShop = CreateItemOnPositionSync(v:GetAbsOrigin(), nil)
 		DuelShop:SetModel("models/heroes/shopkeeper/shopkeeper.vmdl")
-		DuelShop:SetForwardVector(Vector(-1, 0, 0))
+		DuelShop:SetForwardVector(Vector(0, -1, 0))
 		DuelShop:SetModelScale(1.6)
 		Structures:CreateShop(DuelShop, ShopsData.Duel, "#containers_shop_duel_name", 192, {3})
 	end
