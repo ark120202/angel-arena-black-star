@@ -14763,16 +14763,16 @@
 	"visage_grave_chill"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.2"
-		"AbilityCooldown"	"16.0 14.0 12.0 10.0 10.0 10.0 10.0"
+		"AbilityCastPoint"	"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+		"AbilityCooldown"	"16 15 14 13 12 11 10"
 		"AbilityManaCost"	"100"
-		"AbilityCastRange"	"650 850 100 125 150 175 200"
+		"AbilityCastRange"	"650"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"chill_duration"	"3.0 4.0 5.0 6.0 7.0 8.0 9.0"
+				"chill_duration"	"3.25 3.75 4.25 4.75 5.25 5.75 6.25"
 			}
 
 			"02"
@@ -14784,7 +14784,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attackspeed_bonus"	"64"
+				"attackspeed_bonus"	"64 64 64 64 76 88 100"
 			}
 
 		}
@@ -14794,8 +14794,8 @@
 	"visage_soul_assumption"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.2"
-		"AbilityCooldown"	"8.0"
+		"AbilityCastPoint"	"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+		"AbilityCooldown"	"4"
 		"AbilityManaCost"	"170 160 150 140 130 120 110"
 		"AbilityCastRange"	"900"
 		"AbilitySpecial"
@@ -14803,7 +14803,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bolt_speed"	"1000"
+				"bolt_speed"	"1000 1000 1000 1000 1000 1100 1200"
 			}
 
 			"02"
@@ -14845,13 +14845,13 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_min"	"500.0"
+				"damage_min"	"10.0"
 			}
 
 			"09"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_max"	"6000.0"
+				"damage_max"	"4500.0"
 			}
 			"99"
 			{
@@ -14866,37 +14866,36 @@
 	"visage_gravekeepers_cloak"
 	{
 		"MaxLevel"	"7"
-		"LevelsBetweenUpgrades"	"5"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_layers"	"4"
+				"max_layers"	"4 4 4 4 4 5 6"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_reduction"	"8 12 16 20 24 28 32"
+				"damage_reduction"	"8 10 12 14 16 18 20"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"recovery_time"	"8 7 6 5 4 3 2"
+				"recovery_time"	"6.0 5.5 5.0 4.5 4.0 3.0 2.0"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"minimum_damage"	"50"
+				"minimum_damage"	"50 50 50 50 50 100 150"
 			}
 
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"900"
+				"radius"	"900 900 900 900 900 1000 1100"
 			}
 
 		}
@@ -14907,33 +14906,33 @@
 	{
 		"MaxLevel"	"3"
 		"AbilityCastPoint"	"0 0 0"
-		"AbilityCooldown"	"160 145 130"
-		"AbilityManaCost"	"150 150 150"
+		"AbilityCooldown"	"100 80 60"
+		"AbilityManaCost"	"150"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"familiar_hp"	"600 800 1100"
+				"familiar_hp"	"450 900 1500"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"familiar_armor"	"5 10 14"
+				"familiar_armor"	"1 7 16"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"familiar_speed"	"380 390 400"
+				"familiar_speed"	"430"
 				"LinkedSpecialBonus"	"special_bonus_unique_visage_2"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"familiar_max_damage"	"320 700 1200"
+				"familiar_max_damage"	"70 180 550"
 			}
 
 			"05"
@@ -14945,13 +14944,13 @@
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_charge"	"40 70 100"
+				"damage_per_charge"	"10 20 50"
 			}
 
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_damage_charges"	"8 10 12"
+				"max_damage_charges"	"7 9 11"
 			}
 
 		}
@@ -14975,7 +14974,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"stun_delay"	"0.55"
+				"stun_delay"	"0.55 0.55 0.55 0.55 0.55 0.45 0.35"
 			}
 
 			"03"
@@ -14987,7 +14986,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"stun_duration"	"1.0 1.5 2.0"
+				"stun_duration"	"1.0 1.25 1.5"
 			}
 
 			"05"
@@ -14999,7 +14998,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"hp_regen"	"50.0 90.0 130.0"
+				"hp_regen"	"90.0 180.0 300.0"
 			}
 
 		}
@@ -15010,39 +15009,39 @@
 	{
 		"MaxLevel"			"7"
 		"AbilityCastPoint"	"0.001"
-		"AbilityCastRange"	"325"
-		"AbilityCooldown"	"14.0 13.0 12.0 9.0 8.0 7.0 6.0"
-		"AbilityManaCost"	"100 90 80 70 60 50 40"
+		"AbilityCastRange"	"325 325 325 325 325 350 375"
+		"AbilityCooldown"	"9.0 8.5 8.0 7.5 7.0 6.5 6.0"
+		"AbilityManaCost"	"50"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"delay"	"1.5"
+				"delay"	"1.5 1.5 1.5 1.5 1.5 1.3 1.1"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"pulse_duration"	"1.0"
+				"pulse_duration"	"1.0 1.0 1.0 1.0 1.0 1.2 1.4"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"325"
+				"radius"	"325 325 325 325 325 350 375"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"total_damage"	"75 150 225 300 350 400 450"
+				"total_damage"	"75 150 225 300 375 450 525"
 			}
 
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"total_pulses"	"10"
+				"total_pulses"	"10 10 10 10 10 12 14"
 			}
 
 			"06"
@@ -15064,19 +15063,19 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"13 12 11 10 9 8 7"
-		"AbilityManaCost"	"75 100 125 150 175 200 225"
+		"AbilityManaCost"	"75"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"pounce_distance"	"700"
+				"pounce_distance"	"700 715 730 745 760 780 800"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"pounce_speed"	"1100"
+				"pounce_speed"	"933.33 933.33 933.33 933.33 933.33 983.33 1033.33"
 			}
 
 			"03"
@@ -15094,7 +15093,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"pounce_damage"	"75 150 250 350 450 525 600"
+				"pounce_damage"	"60 100 140 180 220 280 360"
 			}
 
 			"06"
@@ -15107,7 +15106,7 @@
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"leash_radius"	"325"
+				"leash_radius"	"325 325 325 325 325 300 275"
 			}
 
 			"99"
@@ -15124,24 +15123,25 @@
 	"slark_essence_shift"
 	{
 		"MaxLevel"	"7"
+		"LevelsBetweenUpgrades" "3"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"agi_gain"	"3 3 3 3 6 6 9"
+				"agi_gain"	"3 3 3 3 3 3 6"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"stat_loss"	"1 1 1 1 2 2 3"
+				"stat_loss"	"1 1 1 1 1 1 2"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"30 60 120 150 180 210 230"
+				"duration"	"10 30 50 75 105 140 180"
 			}
 
 		}
@@ -15152,7 +15152,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"60.0"
-		"AbilityManaCost"	"120 180 220 260 280 300"
+		"AbilityManaCost"	"120"
 		"AbilitySpecial"
 		{
 			"01"
@@ -15170,7 +15170,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_movement_speed"	"30 35 40 45 50 55 60"
+				"bonus_movement_speed"	"30 32 34 36 38 40 42"
 			}
 
 			"04"
@@ -15182,25 +15182,25 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"activation_delay"	"0.5"
+				"activation_delay"	"0.5 0.5 0.5 0.5 0.5 0.4 0.3"
 			}
 
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"neutral_disable"	"2.0"
+				"neutral_disable"	"2 2 2 2 2 2 1"
 			}
 
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"scepter_aoe"	"600"
+				"scepter_aoe"	"325 325 325 325 325 350 375"
 			}
 
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"cooldown_scepter"	"20"
+				"cooldown_scepter"	"30"
 			}
 
 		}
@@ -15210,13 +15210,13 @@
 	"troll_warlord_berserkers_rage"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.1"
+		"AbilityCastPoint"	"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_hp"	"100 300 500 700 900 1100 1300"
+				"bonus_hp"	"0 0 0 0 0 200 400"
 			}
 
 			"02"
@@ -15228,7 +15228,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_armor"	"3 6 9 12 15 17 19"
+				"bonus_armor"	"6 6 6 6 9 12 15"
 			}
 
 			"04"
@@ -15240,25 +15240,25 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"base_attack_time"	"1.60 1.55 1.50 1.40 1.30 1.20 1.1"
+				"base_attack_time"	"1.5"
 			}
 
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bash_chance"	"20"
+				"bash_chance"	"10"
 			}
 
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"bash_duration"	"0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+				"bash_duration"	"0.9"
 			}
 
 			"09"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bash_damage"	"20 50 80 100 120 150 200"
+				"bash_damage"	"20 30 40 50 60 80 100"
 			}
 
 		}
@@ -15269,9 +15269,9 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"1000"
-		"AbilityCastPoint"	"0.2"
+		"AbilityCastPoint"	"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
 		"AbilityCooldown"	"19 16 14 13 12 11 10"
-		"AbilityManaCost"	"50 75 100 150 200 250 300"
+		"AbilityManaCost"	"50"
 		"AbilitySpecial"
 		{
 			"01"

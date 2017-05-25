@@ -1699,3 +1699,70 @@ Keeper of the Light - Blinding Light:
 	"AbilityCooldown" "20 16 15 14 12 11 10" => "18 17 16 15 14 13 12"
 	"AbilityManaCost" "50 75 100 125 150 175 200" => "60"
 	"miss_duration"	"4.0 5.0 6.0 7.0 8.0 9.0 10.0" => "3.0 3.5 4.0 4.5 5.0 5.5 6.0"
+Visage - Grave Chill:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+	"AbilityCooldown" "16.0 14.0 12.0 10.0 10.0 10.0 10.0" => "16 15 14 13 12 11 10"
+	"chill_duration" "3.0 4.0 5.0 6.0 7.0 8.0 9.0" => "3.25 3.75 4.25 4.75 5.25 5.75 6.25"
+	"attackspeed_bonus"	"64" => "64 64 64 64 76 88 100"
+Visage - Soul Assumption:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+	"AbilityCooldown" "8.0" => 4
+	"bolt_speed" "1000" => "1000 1000 1000 1000 1000 1100 1200"
+	"damage_min" "500.0" => 10
+	"damage_max" "6000.0" => 4500
+Visage - Gravekeepers Cloak:
+	LevelsBetweenUpgrades is now standart
+	"max_layers" "4" => "4 4 4 4 4 5 6"
+	"damage_reduction" "8 12 16 20 24 28 32" => "8 10 12 14 16 18 20"
+	"recovery_time"	"8 7 6 5 4 3 2" => "6.0 5.5 5.0 4.5 4.0 3.0 2.0"
+	"minimum_damage" "50" => "50 50 50 50 50 100 150"
+	"radius" "900" => "900 900 900 900 900 1000 1100"
+Visage - Summon Familiars:
+	"AbilityCooldown" "160 145 130" => "100 80 60"
+	"familiar_hp" "600 800 1100" => "450 900 1500"
+	"familiar_armor" "5 10 14" => "1 7 16"
+	"familiar_speed" "380 390 400" => "430"
+	"familiar_max_damage" "320 700 1200" => "70 180 550"
+	"damage_per_charge"	"40 70 100" => "10 20 50"
+	"max_damage_charges" "8 10 12" => "7 9 11"
+Visage - Summon Familliars Stone Form:
+	"stun_delay" "0.55" => "0.55 0.55 0.55 0.55 0.55 0.45 0.35"
+	"stun_duration"	"1.0 1.5 2.0" => "1.0 1.25 1.5"
+	"hp_regen" "50.0 90.0 130.0" => "90.0 180.0 300.0"
+Slark - Dark Pact:
+	"AbilityCastRange" "325" => "325 325 325 325 325 350 375"
+	"AbilityCooldown" "14.0 13.0 12.0 9.0 8.0 7.0 6.0" => "9.0 8.5 8.0 7.5 7.0 6.5 6.0"
+	"AbilityManaCost" "100 90 80 70 60 50 40" => 50
+	"delay"	"1.5" => "1.5 1.5 1.5 1.5 1.5 1.3 1.1"
+	"pulse_duration" "1.0" => "1.0 1.0 1.0 1.0 1.0 1.2 1.4"
+	"total_damage"	"75 150 225 300 350 400 450" => "75 150 225 300 375 450 525"
+	"total_pulses" "10" => "10 10 10 10 10 12 14"
+Slark - Pounce:
+	"AbilityManaCost" "75 100 125 150 175 200 225" => "75"
+	"pounce_distance" "700" => "700 715 730 745 760 780 800"
+	"pounce_speed" "1100" => "933.33 ... 983.33 1033.33"
+	"pounce_damage"	"75 150 250 350 450 525 600" => "60 100 140 180 220 280 360"
+	"leash_radius" "325" => "325 325 325 325 325 300 275"
+Slark - Essence Shift:
+	LevelsBetweenUpgrades is now 3
+	"agi_gain" "3 3 3 3 6 6 9" => "3 3 3 3 3 3 6"
+	"stat_loss"	"1 1 1 1 2 2 3" => "1 1 1 1 1 1 2"
+	"duration" "30 60 120 150 180 210 230" => "10 30 50 75 105 140 180"
+Slark - Shadow Dance:
+	"AbilityManaCost" "120 180 220 260 280 300" => 120
+	"bonus_movement_speed" "30 35 40 45 50 55 60" => "30 32 34 36 38 40 42"
+	"activation_delay" "0.5" => "0.5 0.5 0.5 0.5 0.5 0.4 0.3"
+	"neutral_disable" "2.0" => "2 2 2 2 2 2 1"
+	"scepter_aoe" "600" => "325 325 325 325 325 350 375"
+	"cooldown_scepter" "20" => 30
+Troll Warlord 0 Berserkers Rage:
+	"AbilityCastPoint" "0.1" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+	"bonus_hp" "100 300 500 700 900 1100 1300" => "0 0 0 0 0 200 400"
+	"bonus_armor" "3 6 9 12 15 17 19" => "6 6 6 6 9 12 15"
+	"base_attack_time" "1.60 1.55 1.50 1.40 1.30 1.20 1.1" => "1.5 1.5 1.5 1.5 1.5 1.45 1.4"
+	"bash_chance" "20" => 10
+	"bash_duration"	"0.1 0.2 0.3 0.4 0.5 0.6 0.7" => 0.9
+	"bash_damage" "20 50 80 100 120 150 200" => "20 30 40 50 60 80 100"
+Troll Warlord - Whirling Axes Ranged:
+	"AbilityCastPoint" "0.2" => "0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+	"AbilityManaCost" "50 75 100 150 200 250 300" => 
