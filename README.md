@@ -7,7 +7,7 @@
 5. Launch Dota 2 Workshop Tools with **Start tools.bat** file
 
 ## [RU] Установка
-1. Удастоверьтесь что у вас установлены **<a href="https://nodejs.org/en/" target="_blank">Node.js</a>** и **Dota 2 Workshop Tools DLC**
+1. Удостоверьтесь что у вас установлены **<a href="https://nodejs.org/en/" target="_blank">Node.js</a>** и **Dota 2 Workshop Tools DLC**
 2. Клонируйте репозиторий используя **<a href="https://www.sourcetreeapp.com/" target="_blank">SourceTree</a>** или другую вариацию git
 3. Создайте файл **settings.yml**, основываясь на файле **default_settings.yml** в директории **generator**
 4. Откройте консоль в директории **generator** и выполните команду `npm install && node install.js && node node_modules/gulp/bin/gulp.js build`

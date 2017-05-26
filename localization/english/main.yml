@@ -117,9 +117,7 @@ DOTA_Tooltip_ability_casino_bitch_passive_Description: 'Gives you bonuses, if yo
 DOTA_Tooltip_ability_casino_bitch_passive_lina_attack_speed: 'BONUS ATTACK SPEED:'
 DOTA_Tooltip_ability_casino_bitch_passive_lina_movement_speed_percent: '%BONUS MOVEMENT SPEED:'
 DOTA_Tooltip_ability_casino_bitch_passive_lina_health_regen: 'BONUS HEALTH REGEN:'
-DOTA_Tooltip_ability_riki_tricks_of_the_trade_Description: |-
-  CHANNELED - Phases out of the world while striking every enemy from behind in a %range% AoE once per second.
-DOTA_Tooltip_ability_riki_tricks_of_the_trade_aghanim_Description: 'Grants the Pocket Riki ability, allowing Riki to go to ally''s pocket, granting him Cloak and Dagger passive effect, but additional damage will be based on owner''s base attribute. In the pocket Riki can use his items and Smoke Screen spell. While in pocket Riki can be consumed and owner hero will get all Riki''s stats until Riki respawns. Riki also can be sold, granting owner gold, that enemy could get for killing Riki.'
+DOTA_Tooltip_ability_riki_tricks_of_the_trade_aghanim_Description: 'Increases duration and allows you to target an allied hero, hiding inside them for the duration. Also, grants the Pocket Riki ability, that allows Riki to go to ally''s pocket, granting him Cloak and Dagger passive effect, but additional damage will be based on owner''s base attribute. In the pocket Riki can use his items and Smoke Screen spell. While in pocket Riki can be consumed and owner hero will get all Riki''s stats until Riki respawns. Riki also can be sold, granting owner gold, that enemy could get for killing Riki.'
 DOTA_Tooltip_ability_riki_pocket_riki: Pocket Riki
 DOTA_Tooltip_ability_riki_pocket_riki_Description: 'Riki goes to the ally''s pocket granting him Cloak and Dagger passive effect, but additional damage will be based on owner''s base attribute. In the pocket Riki can use his items and Smoke Screen spell. While in pocket Riki can be consumed and owner hero will get all Riki''s stats until Riki respawns. Riki also can be sold, granting ally gold, that enemy could get for killing Riki.'
 DOTA_Tooltip_ability_riki_pocket_riki_Lore: Good assassins can easily fit in the pocket.
@@ -376,3 +374,6 @@ DOTA_Tooltip_ability_life_stealer_feast_arena_Note1: Affects Spell Immune units.
 DOTA_Tooltip_ability_life_stealer_feast_arena_Note2: The heal is independent of the damage.
 DOTA_Tooltip_ability_life_stealer_feast_arena_Note3: Stacks additively with other sources of Lifesteal.
 DOTA_Tooltip_ability_life_stealer_feast_arena_hp_leech_percent: '%LIFE LEECH:'
+
+DOTA_Tooltip_ability_meepo_divided_we_stand_Description: 'Meepo summons an imperfect, semi-autonomous duplicate of himself, which can gain gold and experience as he does and shares his experience, attributes and abilities. However, the clones cannot purchase any items, but they share some items Meepo himself has. If any of the clones die, they all die.'
+DOTA_Tooltip_ability_meepo_divided_we_stand_Note0: Clones can't use Arcane Boots.

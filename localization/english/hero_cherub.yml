@@ -58,12 +58,12 @@ DOTA_Tooltip_ability_cherub_flower_red_rose: Red Rose
 DOTA_Tooltip_ability_cherub_flower_red_rose_Description: Deals high attack damage from a short range. Maximum of %max_plants% plants.
 DOTA_Tooltip_ability_cherub_flower_red_rose_attack_range: 'ATTACK RANGE:'
 DOTA_Tooltip_ability_cherub_flower_red_rose_damage: 'ATTACK DAMAGE:'
-DOTA_Tooltip_ability_cherub_flower_red_rose_attack_rate: 'BASE ATTACKTIME:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_attack_rate: 'BASE ATTACK TIME:'
 DOTA_Tooltip_ability_cherub_flower_red_rose_enabled: Red Rose
 DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_Description: Deals high attack damage from a short range. Maximum of %max_plants% plants.
 DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_attack_range: 'ATTACK RANGE:'
 DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_damage: 'ATTACK DAMAGE:'
-DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_attack_rate: 'BASE ATTACKTIME:'
+DOTA_Tooltip_ability_cherub_flower_red_rose_enabled_attack_rate: 'BASE ATTACK TIME:'
 
 DOTA_Tooltip_ability_cherub_flower_pink_blossom: Pink Blossom
 DOTA_Tooltip_ability_cherub_flower_pink_blossom_Description: Heals three random allies every second. Maximum of %max_plants% plants.

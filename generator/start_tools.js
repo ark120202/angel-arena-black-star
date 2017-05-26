@@ -41,4 +41,4 @@ setTimeout(() => {
 	fs.removeSync(path.join(content, 'angelarenablackstar'));
 	fs.renameSync(path.join(game, '___angelarenablackstar'), path.join(game, 'angelarenablackstar'));
 	fs.renameSync(path.join(content, '___angelarenablackstar'), path.join(content, 'angelarenablackstar'));
-}, 800);
+}, settings.delay || 1600);

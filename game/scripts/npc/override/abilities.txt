@@ -13081,7 +13081,6 @@
 	"meepo_poof"
 	{
 		"MaxLevel"						"7"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityCastPoint"				"1.5"
 		"AbilityCooldown"				"12 10 8 6"
 		"AbilityManaCost"				"80"
@@ -13123,34 +13122,36 @@
 		"MaxLevel"						"5"
 		"LevelsBetweenUpgrades"			"7"
 		"RequiredLevel"					"3"
+		"HasScepterUpgrade"				"0"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_clones"		"1 2 3 4 5"
+				"tooltip_clones"		"1 2 3 4 5" // Just a tooltip, always equals level
 			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_share_percentage"		"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_share_percentage_scepter"		"100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"respawn"				"0.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_respawn"		"20"
-			}
+			// Not used
+			// "02"
+			// {
+			// 	"var_type"				"FIELD_INTEGER"
+			// 	"tooltip_share_percentage"		"20"
+			// }
+			// "03"
+			// {
+			// 	"var_type"				"FIELD_INTEGER"
+			// 	"tooltip_share_percentage_scepter"		"100"
+			// }
+			// "04"
+			// {
+			// 	"var_type"				"FIELD_FLOAT"
+			// 	"respawn"				"0.0"
+			// }
+			// "05"
+			// {
+			// 	"var_type"				"FIELD_INTEGER"
+			// 	"tooltip_respawn"		"20"
+			// }
 		}
 	}
 
