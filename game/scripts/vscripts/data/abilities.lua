@@ -174,6 +174,8 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	nyx_assassin_spiked_carapace = true,
 	huskar_life_break = true,
 	nyx_assassin_mana_burn = true,
+	skywrath_mage_arcane_bolt = true,
+	elder_titan_earth_splitter = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
