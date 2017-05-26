@@ -2,16 +2,30 @@ const dcgt = require('dota-custom-game-toolkit');
 const path = require('path'),
 	vdf = require('vdf-extra'),
 	fs = require('fs-extra'),
-	Promise = require('bluebird');
+	Promise = require('bluebird'),
+	yaml = require('js-yaml');
+
+let settings;
+try {
+	fs.statSync('./settings.yml');
+	settings = yaml.safeLoad(fs.readFileSync('./settings.yml', 'utf8'));
+} catch (err) {
+	if (err.code === 'ENOENT')			console.error('settings.yml not found.'); else
+	if (err.name === 'YAMMLException')	console.error('Bad settings.yml syntax,', err.message); else {
+		console.error('Unknown error while parsing settings.yml:');
+		console.error(err);
+	}
+	process.exit(1);
+}
 
 const paths = {
 	root: path.resolve(__dirname, '..'),
 	game: path.resolve(__dirname, '../game'),
 	content: path.resolve(__dirname, '../content'),
 	localization: path.resolve(__dirname, '../localization'),
-	resourcecompiler: 'G:/Program Files/Steam/steamapps/common/dota 2 beta/game/bin/win64/resourcecompiler.exe',
-	addon_game: 'G:/Program Files/Steam/steamapps/common/dota 2 beta/game/dota_addons/angelarenablackstar_develop',
-	addon_content: 'G:/Program Files/Steam/steamapps/common/dota 2 beta/content/dota_addons/angelarenablackstar_develop',
+	resourcecompiler: path.join(settings.dota, 'bin/win64/resourcecompiler.exe'),
+	addon_game: path.join(settings.dota, 'game/dota_addons/angelarenablackstar'),
+	addon_content: path.join(settings.dota, 'content/dota_addons/angelarenablackstar'),
 };
 
 const gulp = require('gulp'),
@@ -57,3 +71,10 @@ gulp.task('js', () => {
 		.pipe(gulp.dest(path.join(paths.game, 'panorama/scripts')));
 });
 gulp.task('panorama', ['xml', 'css', 'js']);
+
+gulp.task('build', [/*'panorama', */'localization']);
+
+gulp.task('watch', () => {
+	gulp.watch(paths.localization + '/**/*.yml', ['localization']);
+});
+

@@ -1,5 +1,5 @@
 Variables:
-  ability_scepter_upgradable: |- #Handled with script
+  ability_scepter_upgradable: |- # Handled with script
 
     Upgradable by Aghanim's Scepter.
 
@@ -368,3 +368,11 @@ DOTA_Tooltip_ability_tinker_rearm_arena_Description: 'Tinker shoots a ball of pu
 DOTA_Tooltip_ability_tinker_rearm_arena_debuff_duration: 'DURATION:'
 DOTA_Tooltip_ability_tinker_rearm_arena_refresh_chance_pct: '%REFRESH CHANCE:'
 DOTA_Tooltip_ability_tinker_rearm_arena_magical_resistanse_pct: '%MAGIC DAMAGE RESISTANCE REDUCTION:'
+
+DOTA_Tooltip_ability_life_stealer_feast_arena: Feast
+DOTA_Tooltip_ability_life_stealer_feast_arena_Description: Lifestealer's attacks damage enemies and heal himself for a percentage of his target's current health.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note0: Does not affect bosses.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note1: Affects Spell Immune units.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note2: The heal is independent of the damage.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note3: Stacks additively with other sources of Lifesteal.
+DOTA_Tooltip_ability_life_stealer_feast_arena_hp_leech_percent: '%LIFE LEECH:'

@@ -1,5 +1,5 @@
 Variables:
-  ability_scepter_upgradable: |- #Handled with script
+  ability_scepter_upgradable: |- # Handled with script
 
     Улучшается с Aghanim's Scepter.
 
@@ -338,3 +338,10 @@ DOTA_Tooltip_ability_tinker_rearm_arena_Description: 'Tinker выпускает 
 DOTA_Tooltip_ability_tinker_rearm_arena_debuff_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_tinker_rearm_arena_refresh_chance_pct: '%ШАНС ПЕРЕЗАРЯДИТЬ СПОСОБНОСТЬ:'
 DOTA_Tooltip_ability_tinker_rearm_arena_magical_resistanse_pct: '%СНИЖЕНИЕ СОПРОТИВЛЕНИЯ МАГИЧЕСКОМУ УРОНУ:'
+
+DOTA_Tooltip_ability_life_stealer_feast_arena_Description: Каждая атака лечит вас на долю от текущего здоровья противника и наносит равноценное количество урона.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note0: Не действует на боссов.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note1: Действует на врагов, невосприимчивых к заклинаниям.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note2: Количество восстановленного здоровья не зависит от нанесенного урона.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note3: Складывается с другими источниками вампиризма.
+DOTA_Tooltip_ability_life_stealer_feast_arena_hp_leech_percent: '%ВАМПИРИЗМ:'

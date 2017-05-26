@@ -101,9 +101,9 @@ function compile(executable, pathReplacer, customArgs) {
 			args.push('"' + filePath + '"');
 			if (customArgs) args.concat(customArgs);
 
-			exec(args.join(' '), (err, stdout/*, stderr*/) => {
+			exec(args.join(' '), (err, stdout, stderr) => {
 				if (err) {
-					this.emit('error', new gutil.PluginError('gulp-resourcecompiler', new Error(stdout), {fileName: file.path}));
+					this.emit('error', new gutil.PluginError('gulp-resourcecompiler', new Error(stdout + '\n' + stderr + '\nIn: ' + file.path + '\n'), {fileName: file.path}));
 					return;
 				}
 				let compiledFilePath;

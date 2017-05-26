@@ -1,5 +1,5 @@
-require("utils/other")
 require("utils/shared")
+require("utils/other")
 require("utils/table")
 require("utils/debug")
 require("utils/string")
