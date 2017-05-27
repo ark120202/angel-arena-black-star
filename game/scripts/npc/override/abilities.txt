@@ -6555,7 +6555,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"1600"
+				"radius"	"1600 1600 1600 3200"
 			}
 
 			"02"
@@ -14336,8 +14336,9 @@
 	"naga_siren_song_of_the_siren"
 	{
 		"MaxLevel"	"7"
+		"LevelsBetweenUpgrades" "11"
 		"AbilityCastPoint"	"1.0 1.0 1.0 1.0 1.0 0.9 0.8"
-		"AbilityCastRange"	"1000 1075 1150 1225 1300 1375 1450"
+		"AbilityCastRange"	"1000 1075 1150 1225 1300 1375 0"
 		"AbilityCooldown"	"140 130 120 110 100 90 80"
 		"AbilityManaCost"	"100 150 200 250 300 350 400"
 		"AbilitySpecial"
@@ -14345,7 +14346,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"1000 1075 1150 1225 1300 1375 1450"
+				"radius"	"1000 1075 1150 1225 1300 1375 0"
 			}
 
 			"02"
