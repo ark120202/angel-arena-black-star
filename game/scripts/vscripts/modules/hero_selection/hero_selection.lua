@@ -1,3 +1,15 @@
+HERO_SELECTION_PICK_TIME = 80
+HERO_SELECTION_STRATEGY_TIME = 35
+HERO_SELECTION_BANNING_TIME = 25
+
+HERO_SELECTION_PHASE_NOT_STARTED = 0
+HERO_SELECTION_PHASE_BANNING = 1
+HERO_SELECTION_PHASE_HERO_PICK = 2
+HERO_SELECTION_PHASE_STRATEGY = 3
+HERO_SELECTION_PHASE_END = 4
+
+FORCE_PICKED_HERO = "npc_dota_hero_target_dummy"
+
 if not HeroSelection then
 	HeroSelection = class({})
 	HeroSelection.RandomableHeroes = {}
@@ -14,18 +26,6 @@ ModuleRequire(..., "linked")
 ModuleRequire(..., "hero_replacer")
 ModuleRequire(..., "client_actions")
 ModuleLinkLuaModifier(..., "modifier_hero_selection_transformation")
-
-HERO_SELECTION_PHASE_NOT_STARTED = 0
-HERO_SELECTION_PHASE_BANNING = 1
-HERO_SELECTION_PHASE_HERO_PICK = 2
-HERO_SELECTION_PHASE_STRATEGY = 3
-HERO_SELECTION_PHASE_END = 4
-
-HERO_SELECTION_PICK_TIME = 80
-HERO_SELECTION_STRATEGY_TIME = 35
-HERO_SELECTION_BANNING_TIME = 25
-
-FORCE_PICKED_HERO = "npc_dota_hero_target_dummy"
 
 function HeroSelection:Initialize()
 	GameRules:SetHeroSelectionTime(-1)

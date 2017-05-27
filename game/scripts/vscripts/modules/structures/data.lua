@@ -16,3 +16,17 @@ TEAM_HEALER_MODELS = {
 		ambient = "particles/world_shrine/dire_shrine_ambient.vpcf"
 	},
 }
+
+ShopsData = {
+	Secret = {
+		"item_casino_drug_pill1",
+		"item_casino_drug_pill2",
+		"item_casino_drug_pill3",
+		"item_casino_coin",
+	},
+	Duel = {
+		{ item = "item_dust", cost = 900 },
+		{ item = "item_ward_sentry", cost = 1800 },
+		{ item = "item_tango_arena", cost = 550 },
+	}
+}

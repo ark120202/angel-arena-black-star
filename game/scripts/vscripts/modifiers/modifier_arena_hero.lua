@@ -8,7 +8,8 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_PROPERTY_REFLECT_SPELL,
 		MODIFIER_PROPERTY_ABSORB_SPELL,
 		MODIFIER_EVENT_ON_DEATH,
-		MODIFIER_PROPERTY_ABILITY_LAYOUT
+		MODIFIER_PROPERTY_ABILITY_LAYOUT,
+		MODIFIER_EVENT_ON_RESPAWN
 	}
 end
 
@@ -98,12 +99,21 @@ if IsServer() then
 		end
 	end
 
+	function modifier_arena_hero:OnRespawn(k)
+		if k.unit == self:GetParent() and k.unit:GetUnitName() == "npc_dota_hero_crystal_maiden" then
+			k.unit:AddNoDraw()
+			Timers:CreateTimer(0.03, function()
+				k.unit:RemoveNoDraw()
+			end)
+		end
+	end
+
 	function modifier_arena_hero:OnAttackStart(keys)
 		local parent = self:GetParent()
 		if keys.attacker == parent and keys.target:IsCustomRune() then
 			parent:Stop()
 			ExecuteOrderFromTable({
-				UnitIndex = parent:GetEntityIndex(), 
+				UnitIndex = parent:GetEntityIndex(),
 				OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
 				Position = parent:GetAbsOrigin(),
 			})
@@ -144,7 +154,7 @@ if IsServer() then
 			if not self.absorb_without_check and item_lotus_sphere and parent:HasModifier("modifier_item_lotus_sphere") and PreformAbilityPrecastActions(parent, item_lotus_sphere) then
 				ParticleManager:SetParticleControlEnt(ParticleManager:CreateParticle("particles/arena/items_fx/lotus_sphere.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent), 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
 				parent:EmitSound("Item.LotusOrb.Activate")
-				self.absorb_without_check = true 
+				self.absorb_without_check = true
 			end
 			if self.absorb_without_check then
 				if IsValidEntity(self.reflect_stolen_ability) then

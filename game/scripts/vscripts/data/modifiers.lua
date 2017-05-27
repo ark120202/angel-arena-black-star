@@ -13,7 +13,7 @@ MODIFIERS_DEATH_PREVENTING = {
 	"modifier_item_titanium_bar_active",
 	"modifier_fountain_aura_arena",
 	"modifier_mana_shield_arena",
-	"modifier_saber_avalon_invulnerability"
+	"modifier_saber_avalon_invulnerability",
 }
 
 DUEL_PURGED_MODIFIERS = {

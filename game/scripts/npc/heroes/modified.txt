@@ -90,7 +90,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_ogre_magi"
@@ -127,7 +126,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_beastmaster"
@@ -159,7 +157,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_warlock"
@@ -191,7 +188,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_skeleton_king"
@@ -223,7 +219,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_tinker"
@@ -255,7 +250,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_crystal_maiden"
@@ -287,7 +281,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_dragon_knight"
@@ -319,7 +312,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_faceless_void"
@@ -351,7 +343,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_gyrocopter"
@@ -383,7 +374,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_omniknight"
@@ -416,7 +406,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_pudge"
@@ -448,7 +437,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_medusa"
@@ -485,7 +473,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_rubick"
@@ -517,7 +504,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_phantom_lancer"
@@ -549,7 +535,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_doom_bringer"
@@ -586,7 +571,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 	"npc_dota_hero_antimage"
 	{
@@ -621,7 +605,6 @@
 		"AttributeIntelligenceGain"		"0"
 		"StatusMana"					"0"
 		"StatusManaRegen"				"0"
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_huskar"
@@ -653,7 +636,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_life_stealer"
@@ -685,6 +667,5 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 }

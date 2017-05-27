@@ -76,9 +76,8 @@ custom_toast_AntiAFKNoTime: '{player_name} удаляется из игры из
 custom_toast_AutoAbandonTime: 'У {player_name} осталось {minutes} мин. для повторного подключения.'
 custom_toast_AutoAbandonNoTime: '{player_name} находится вне игры слишком долго. Будет засчитано, что этот игрок покинул игру.'
 
-boss_loot_vote_dropped: 'Выпавшие предметы:'
-boss_loot_vote_killed: был убит!
-boss_loot_vote_damage: 'Урон: '
+boss_loot_vote_score_tooltip: Очки приоритета
+boss_loot_vote_take: Взять
 boss_loot_vote_hide: Скрыть
 boss_loot_vote_show: Показать
 

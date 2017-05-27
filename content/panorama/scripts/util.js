@@ -8,7 +8,7 @@ var Options = GameUI.CustomUIConfig().Options;
 var console = {
 	log: function() {
 		var args = Array.prototype.slice.call(arguments);
-		return $.Msg(args.join('\t'));
+		return $.Msg(args.map(function(x) {return JSON.stringify(x)}).join('\t'));
 	},
 	error: function() {
 		var args = Array.prototype.slice.call(arguments);
@@ -96,6 +96,10 @@ function IsHeroName(str) {
 	return IsDotaHeroName(str) || IsArenaHeroName(str);
 }
 
+function IsBossName(str) {
+	return str.lastIndexOf('npc_arena_boss_') === 0;
+}
+
 function IsDotaHeroName(str) {
 	return str.lastIndexOf('npc_dota_hero_') === 0;
 }
@@ -104,24 +108,27 @@ function IsArenaHeroName(str) {
 	return str.lastIndexOf('npc_arena_hero_') === 0;
 }
 
+var bossesMap = {
+	npc_arena_boss_freya: 'file://{images}/heroes/npc_arena_hero_freya.png',
+	npc_arena_boss_zaken: 'file://{images}/heroes/npc_arena_hero_zaken.png',
+};
 function TransformTextureToPath(texture, optPanelImageStyle) {
 	if (IsHeroName(texture)) {
-		if (optPanelImageStyle === 'portrait')
-			return 'file://{images}/heroes/selection/' + texture + '.png';
-		else if (optPanelImageStyle === 'icon')
-			return 'file://{images}/heroes/icons/' + texture + '.png';
-		else
-			return 'file://{images}/heroes/' + texture + '.png';
+		return optPanelImageStyle === 'portrait' ?
+			'file://{images}/heroes/selection/' + texture + '.png' :
+			optPanelImageStyle === 'icon' ?
+				'file://{images}/heroes/icons/' + texture + '.png' :
+				'file://{images}/heroes/' + texture + '.png';
+	} else if (IsBossName(texture)) {
+		return bossesMap[texture] || 'file://{images}/custom_game/units/' + texture + '.png';
 	} else if (texture.lastIndexOf('npc_') === 0) {
-		if (optPanelImageStyle === 'portrait') {
-			return 'file://{images}/custom_game/units/portraits/' + texture + '.png';
-		} else
-			return 'file://{images}/custom_game/units/' + texture + '.png';
+		return optPanelImageStyle === 'portrait' ?
+			'file://{images}/custom_game/units/portraits/' + texture + '.png' :
+			'file://{images}/custom_game/units/' + texture + '.png';
 	} else {
-		if (optPanelImageStyle === 'item') {
-			return 'raw://resource/flash3/images/items/' + texture + '.png';
-		} else
-			return 'raw://resource/flash3/images/spellicons/' + texture + '.png';
+		return optPanelImageStyle === 'item' ?
+			'raw://resource/flash3/images/items/' + texture + '.png' :
+			'raw://resource/flash3/images/spellicons/' + texture + '.png';
 	}
 }
 

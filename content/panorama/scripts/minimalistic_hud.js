@@ -85,6 +85,13 @@ function UpdatePanoramaHUD() {
 		});
 	}
 
+	var context = $.GetContextPanel();
+	var activeBossDropVotingsCount = $('#BossDropItemVotingsListContainer').GetChildCount() - 1;
+	var inactiveBossDropVotingsCount = $('#boss_item_vote_id_-1_container').GetChildCount();
+	$('#BossDropActiveItemVotingsCounter').text = activeBossDropVotingsCount;
+	$('#BossDropInactiveItemVotingsCounter').text = inactiveBossDropVotingsCount;
+	context.SetHasClass('hideActiveBossItemVotings', activeBossDropVotingsCount === 0);
+	context.SetHasClass('hideInactiveBossItemVotings', inactiveBossDropVotingsCount === 0);
 }
 
 function SetDynamicMinimapVisible(status) {
@@ -218,6 +225,8 @@ function HookPanoramaPanels() {
 	});
 }
 
+
+// Toasts
 function CreateCustomToast(data) {
 	var row = $.CreatePanel('Panel', $('#CustomToastManager'), '');
 	row.BLoadLayoutSnippet('ToastPanel');
@@ -304,8 +313,13 @@ function CreateHeroElements(id) {
 	return "<img src='" + TransformTextureToPath(GetPlayerHeroName(id), 'icon') + "' class='CombatEventHeroIcon'/> <font color='" + playerColor + "'>" + Players.GetPlayerName(id).encodeHTML() + '</font>';
 }
 
+// Boss Drop
+function SetBossDropItemVotingsVisible() {
+	$.GetContextPanel().ToggleClass('ShowBossDrop');
+}
+
 function CreateBossItemVote(id, data) {
-	var row = $.CreatePanel('Panel', $('#BossDropItemVotes'), 'boss_item_vote_id_' + id);
+	var row = $.CreatePanel('Panel', $('#BossDropItemVotingsListContainer'), 'boss_item_vote_id_' + id);
 	row.BLoadLayoutSnippet('BossDropItemVote');
 	var BossTakeLootTime = row.FindChildTraverse('BossTakeLootTime');
 	BossTakeLootTime.max = data.time;
@@ -318,66 +332,107 @@ function CreateBossItemVote(id, data) {
 	})();
 
 	var BossDropHideShowInfo = row.FindChildTraverse('BossDropHideShowInfo');
-	row.FindChildTraverse('BossDropHideShowInfo').SetPanelEvent('onactivate', (function(_row, _BossDropHideShowInfo) {
-		return function() {
-			_BossDropHideShowInfo.text = $.Localize(_BossDropHideShowInfo.text === $.Localize('boss_loot_vote_hide') ? 'boss_loot_vote_show' : 'boss_loot_vote_hide');
-			_row.ToggleClass('CollapseBossDropInfo');
-		};
-	})(row, BossDropHideShowInfo));
-	row.FindChildTraverse('BossName').text = $.Localize(data.boss) + '<br>' + $.Localize('boss_loot_vote_killed');
-	row.FindChildTraverse('DamagedDealt').text = $.Localize('boss_loot_vote_damage') + (data.damageByPlayers[Game.GetLocalPlayerID()] || 0).toFixed() + '/' + (data.totalDamage || 0).toFixed() + ' (' + (data.damagePcts[Game.GetLocalPlayerID()] || 0).toFixed() + '%)';
-	_.each(data.votes, function(vote, itemid) {
-		var itemRow = $.CreatePanel('Panel', row.FindChildTraverse('BossItemList'), 'boss_item_vote_id_' + id + '_item_' + itemid);
-		itemRow.itemid = itemid;
-		itemRow.BLoadLayoutSnippet('BossDropItemVoteItemPanel');
-		itemRow.FindChildTraverse('BossDropItemIcon').itemname = vote.item;
-		itemRow.SetPanelEvent('onactivate', function() {
-			GameEvents.SendCustomGameEventToServer('bosses_vote_for_item', {
-				voteid: id,
-				itemid: itemid
-			});
-		});
+	row.FindChildTraverse('KilledBossName').text = $.Localize(data.boss);
+	row.FindChildTraverse('KilledBossImage').SetImage(TransformTextureToPath(data.boss));
+	var localPlayerScore = data.damagePcts[Game.GetLocalPlayerID()] || 0;
+	//localPlayerScore = 50;
+	var BossPlayerScore = row.FindChildTraverse('BossPlayerScore');
+	BossPlayerScore.text = localPlayerScore.toFixed();
+
+	var r = localPlayerScore<50 ? 255 : Math.floor(255-(localPlayerScore*2-100)*255/100), g = localPlayerScore>50 ? 255 : Math.floor((localPlayerScore*2)*255/100);
+	BossPlayerScore.style.color = 'rgb('+r+','+g+',0)';
+	_.each(data.rollableEntries, function(entry, entryid) {
+		SnippetBossDropItemVoteItemPanel(row.FindChildTraverse('BossItemList'), id, entry, entryid);
 	});
 }
 
-function UpdateBossItemVote(id, data) {
-	if ($('#boss_item_vote_id_' + id) == null)
-		CreateBossItemVote(id, data);
-	var panel = $('#boss_item_vote_id_' + id);
-	_.each(data.votes, function(vote, itemid) {
-		var itempanel = panel.FindChildTraverse('boss_item_vote_id_' + id + '_item_' + itemid);
-		itempanel.FindChildTraverse('BossDropPlayersRow').RemoveAndDeleteChildren();
-		_.each(vote.votes, function(voteval, pid) {
-			if (voteval === 1) {
-				var img = $.CreatePanel('Image', itempanel.FindChildTraverse('BossDropPlayersRow'), '');
-				img.SetImage(TransformTextureToPath(GetPlayerHeroName(pid), 'icon'));
-				img.SetPanelEvent('onmouseover', function() {
-					$.DispatchEvent('DOTAShowTextTooltip', img, Players.GetPlayerName(pid));
-				});
-				img.SetPanelEvent('onmouseout', function() {
-					$.DispatchEvent('DOTAHideTextTooltip');
-				});
-			}
+function SnippetBossDropItemVoteItemPanel(rootPanel, id, entry, entryid) {
+	var itemRow = $.CreatePanel('Panel', rootPanel, 'boss_item_vote_id_' + id + '_item_' + entryid);
+	itemRow.BLoadLayoutSnippet('BossDropItemVoteItemPanel');
+	if (typeof entry === 'string') {
+		itemRow.FindChildTraverse('BossDropItemIcon').itemname = entry;
+		itemRow.AddClass('HasTakeButton');
+		itemRow.FindChildTraverse('BossDropPlayersTake').SetPanelEvent('onactivate', function() {
+			GameEvents.SendCustomGameEventToServer('bosses_vote_for_item', {
+				voteid: id,
+				entryid: entryid
+			});
 		});
+	} else {
+		itemRow.FindChildTraverse('BossDropItemIcon').itemname = entry.item;
+		itemRow.FindChildTraverse('BossDropScoreCost').text = entry.weight;
+
+		itemRow.SetPanelEvent('onactivate', function() {
+			GameEvents.SendCustomGameEventToServer('bosses_vote_for_item', {
+				voteid: id,
+				entryid: entryid
+			});
+		});
+	}
+}
+
+function UpdateBossItemVote(id, data) {
+	if ($('#boss_item_vote_id_' + id) == null) CreateBossItemVote(id, data);
+	var panel = $('#boss_item_vote_id_' + id);
+	_.each(data.rollableEntries, function(entry, entryid) {
+		var itempanel = panel.FindChildTraverse('boss_item_vote_id_' + id + '_item_' + entryid);
+		if (entry.votes) {
+			itempanel.FindChildTraverse('BossDropPlayersRow').RemoveAndDeleteChildren();
+			//var localPlayerPickedTotalScore = 0;
+			_.each(entry.votes, function(voteval, pid) {
+				if (voteval === 1) {
+					pid = Number(pid);
+					var img = $.CreatePanel('Image', itempanel.FindChildTraverse('BossDropPlayersRow'), '');
+					img.SetImage(TransformTextureToPath(GetPlayerHeroName(pid), 'icon'));
+					img.SetPanelEvent('onmouseover', function() {
+						$.DispatchEvent('DOTAShowTextTooltip', img, Players.GetPlayerName(pid));
+					});
+					img.SetPanelEvent('onmouseout', function() {
+						$.DispatchEvent('DOTAHideTextTooltip');
+					});
+				}
+			});
+		}
 	});
+}
+
+function CreateInactiveList() {
+	var row = $.CreatePanel('Panel', $('#BossDropItemVotingsListContainer'), 'boss_item_vote_id_-1');
+	var label = $.CreatePanel('Label', row, '');
+	label.text = '#boss_loot_vote_inactive';
+	$.CreatePanel('Panel', row, 'boss_item_vote_id_-1_container');
 }
 
 (function() {
 	HookPanoramaPanels();
+	$('#BossDropItemVotingsListContainer').RemoveAndDeleteChildren();
+	CreateInactiveList();
 	_DynamicMinimapSubscribe($('#DynamicMinimapRoot'));
 	var mapInfo = Options.GetMapInfo();
 	hud.AddClass('map_landscape_' + mapInfo.landscape);
 	hud.AddClass('map_gamemode_' + mapInfo.gamemode);
+	if ($.GetContextPanel().PTID_hero_bosses_loot_drop_votes) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_bosses_loot_drop_votes);
 	DynamicSubscribePTListener('bosses_loot_drop_votes', function(tableName, changesObject, deletionsObject) {
 		for (var id in changesObject) {
-			if (Number(id.split('_')[0]) === Players.GetTeam(Game.GetLocalPlayerID()))
-				UpdateBossItemVote(id, changesObject[id]);
+			var splittedId = id.split('_');
+			if (Number(splittedId[0]) === Players.GetTeam(Game.GetLocalPlayerID())) {
+				if (splittedId[1] === '-1') {
+					$('#boss_item_vote_id_-1_container').RemoveAndDeleteChildren();
+					_.each(changesObject[id], function(entry, entryid) {
+						if (!$('#boss_item_vote_id_' + id + '_item_' + entryid)) SnippetBossDropItemVoteItemPanel($('#boss_item_vote_id_-1_container'), id, entry, entryid);
+					});
+				} else {
+					UpdateBossItemVote(id, changesObject[id]);
+				}
+			}
 		}
 		for (var id in deletionsObject) {
-			if ($('#boss_item_vote_id_' + id) != null)
+			if ($('#boss_item_vote_id_' + id) != null) {
 				$('#boss_item_vote_id_' + id).DeleteAsync(0);
+			}
 		}
-	});
+	}, function(ptid) {$.GetContextPanel().PTID_hero_bosses_loot_drop_votes = ptid;});
+
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
 

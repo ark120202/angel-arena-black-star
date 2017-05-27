@@ -25,6 +25,7 @@
 {
 	pre-transform-scale2d: 1.04;
 }
+
 .PlayerControlsButton:active
 {
 	pre-transform-scale2d: 0.96;
@@ -35,7 +36,7 @@
 	align: left bottom;
 	margin-left: -8px;
 	margin-bottom: -8px;
-	
+
 	transition-property: transform;
 	transition-duration: 0s;
 	transition-delay: 0s;
@@ -45,7 +46,7 @@ DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
 {
 	transform: translateY(230px);
 	transition-duration: 1s;
-	transition-delay: 2s;	
+	transition-delay: 2s;
 }
 
 .HUDFlipped #DynamicMinimapRoot
@@ -96,7 +97,7 @@ DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
 	margin-bottom: 27%;
 	vertical-align: bottom;
 	height: 400px;
-    overflow: noclip;
+	overflow: noclip;
 }
 
 .HUDFlipped #CustomToastManager
@@ -113,40 +114,40 @@ DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
 	margin-bottom: 5px;
 	transition-property: position, opacity, transform;
 	transition-duration: 0.2s;
-    animation-name: CombatEvent;
-    animation-duration: .41s;
+	animation-name: CombatEvent;
+	animation-duration: 0.41s;
 }
 
 @keyframes 'CombatEvent'
 {
-    0%
-    {
-        pre-transform-scale2d: .2;
-        opacity: 0;
-    }
+	0%
+	{
+		opacity: 0;
+		pre-transform-scale2d: 0.2;
+	}
 
-    50%
-    {
-        pre-transform-scale2d: 1.5;
-        opacity: 1;
-    }
+	50%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1.5;
+	}
 
-    100%
-    {
-        pre-transform-scale2d: 1;
-        opacity: 1;
-    }
+	100%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1;
+	}
 }
 
 .ToastPanel.Collapsed
 {
-	transform: translateX( -40px ) scale3d(0.5, 0.5, 1);
 	opacity: 0;
+	transform: translateX(-40px) scale3d(0.5, 0.5, 1);
 }
 
 .ToastPanel.ToastVisible
 {
-	opacity: 1.0;
+	opacity: 1;
 	transform: none;
 }
 
@@ -196,9 +197,9 @@ DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
 
 .DeniedIcon
 {
-    width: 48px;
-    height: 30px;
-    transform: translateY( 8px );
+	width: 48px;
+	height: 30px;
+	transform: translateY( 8px );
 	background-size: 100%;
 	background-image: url("s2r://panorama/images/hud/icon_suicide_enemy_psd.vtex");
 }
@@ -223,13 +224,13 @@ DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
 	horizontal-align: right;
 	padding-right: -2px;
 	height: 100%;
-    opacity-mask: url("s2r://panorama/images/masks/combat_event_slant_left_psd.vtex");
+	opacity-mask: url("s2r://panorama/images/masks/combat_event_slant_left_psd.vtex");
 	overflow: clip;
 }
 
 .HUDFlipped #SlashContainer
 {
-    opacity-mask: url("s2r://panorama/images/masks/combat_event_slant_right_psd.vtex");
+	opacity-mask: url("s2r://panorama/images/masks/combat_event_slant_right_psd.vtex");
 }
 
 .AllyEvent.LocalPlayerInvolved #SlashContainer { background-color: #00000088; }
@@ -258,8 +259,8 @@ DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
 	width: 12px;
 	margin-top: -6px;
 	height: 44px;
-    margin-left: 7px;
-    margin-right: 0px;
+	margin-left: 7px;
+	margin-right: 0px;
 	visibility: collapse;
 	transform: rotateZ(25deg);
 	border-radius: 0.1px;
@@ -267,7 +268,7 @@ DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
 
 .HUDFlipped #TeamColorBar
 {
-    margin-left: -2px;
+	margin-left: -2px;
 }
 
 .AllyEvent #TeamColorBar
@@ -288,23 +289,23 @@ DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
 
 @keyframes 'CombatEvent'
 {
-    0%
-    {
-        pre-transform-scale2d: .2;
-        opacity: 0;
-    }
+	0%
+	{
+		pre-transform-scale2d: .2;
+		opacity: 0;
+	}
 
-    50%
-    {
-        pre-transform-scale2d: 1.5;
-        opacity: 1;
-    }
+	50%
+	{
+		pre-transform-scale2d: 1.5;
+		opacity: 1;
+	}
 
-    100%
-    {
-        pre-transform-scale2d: 1;
-        opacity: 1;
-    }
+	100%
+	{
+		pre-transform-scale2d: 1;
+		opacity: 1;
+	}
 }
 
 #ToastLabel
@@ -339,104 +340,290 @@ DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
 	padding-top: 0px;
 }
 
-#BossDropItemVotes
+#BossDropItemVotings
 {
+	horizontal-align: right;
+	width: 400px;
+	height: 70%;
+	transition-property: transform;
+	transition-duration: 0.3s; /* Thanks, Valve. All short animations looks terrible now */
+	transition-timing-function: ease-in-out;
+	transform: translateX(375px);
+}
+
+.ShowBossDrop #BossDropItemVotings
+{
+	transform: translateX(0);
+}
+
+.hideActiveBossItemVotings.hideInactiveBossItemVotings #BossDropItemVotings {
+	transform: translateX(402px);
+}
+
+#BossDropItemVotingsToggle
+{
+	width: 28px;
+	height: 70px;
+	vertical-align: center;
+	background-color: rgb(15, 15, 15);
+	border-radius: 5px 0 0 5px;
+}
+
+#BossDropItemVotingsIcon
+{
+	width: 80%;
+	height: width-percentage(100%);
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/control_icons/expand_collapse_png.vtex");
+	background-size: 100% 100%;
+	transition-duration: 0.4s;
+	transition-property: transform;
+	transform: rotateZ(90deg) translateX(-2px);
+}
+
+.ShowBossDrop #BossDropItemVotingsIcon
+{
+	transform: rotateZ(-90deg) translateX(10px);
+}
+
+#BossDropActiveItemVotingsCounter,
+#BossDropInactiveItemVotingsCounter
+{
+	width: height-percentage(100%);
+	height: 20px;
+	border-radius: 50%;
+	padding-top: -1px;
+
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+
+	transition-property: opacity;
+	transition-duration: 0.15s;
+	opacity: 1;
+
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+#BossDropActiveItemVotingsCounter
+{
+	background-color: red;
+	color: white;
 	align: right top;
-	margin-top: 120px;
-	margin-right: 16px;
-	flow-children: left;
+	margin: 1px;
+
+	padding-right: 1px;
+}
+
+#BossDropInactiveItemVotingsCounter
+{
+	margin: 2px;
+	color: rgb(240, 240, 240);
+	background-color: rgb(96, 96, 96);
+	align: left bottom;
+}
+
+@keyframes 'votingsCounterEnabled'
+{
+	0%		{ pre-transform-scale2d: 0.9; }
+	50%		{ pre-transform-scale2d: 1.1; }
+	100%	{ pre-transform-scale2d: 0.9; }
+}
+
+.hideActiveBossItemVotings #BossDropActiveItemVotingsCounter,
+.hideInactiveBossItemVotings #BossDropInactiveItemVotingsCounter
+{
+	opacity: 0;
+	animation-name: votingsCounterEnabled;
+}
+
+#BossDropItemVotingsList
+{
+	width: 375px;
+	height: 100%;
+	background-color: rgb(20, 20, 20);
+	border-radius: 20px 0 0 20px;
+	horizontal-align: right;
+}
+
+#BossDropItemVotingsListContainer
+{
+	width: 100%;
+	overflow: squish scroll;
+	flow-children: up;
 }
 
 .BossDropItemVote
 {
-	background-color: #A6E9FF40;
-	width: 320px;
+	width: 100%;
+	transition-property: position;
+	transition-duration: 0.2s;
 	flow-children: down;
 }
 
-#BossDropAdditionalInfo
+#KilledBossInfo
 {
-	flow-children: down;
+	margin: 12px 1px 1px 6px;
+	flow-children: right;
 	width: 100%;
 }
 
-.CollapseBossDropInfo #BossDropAdditionalInfo
+#BossPlayerScore
 {
-	visibility: collapse;
-}
-
-.BossDropItemVote Label
-{
-	margin: 0 4px;
-	color: white;
-	text-shadow: 2px 1px 5px 2 black;
-	font-size: 22px;
+	min-width: 17.5%;
+	padding-right: 6px;
+	padding-bottom: -4px;
+	margin-right: 4px;
+	font-size: 36px;
 	font-weight: bold;
-}
-
-.BossDropItemVoteItemPanel
-{
-	flow-children: right;
-	width: 100%;
-	margin: 1px 3px;
-	border: 0px solid #363636;
-	border-bottom-width: 1px;
-}
-
-#BossItemList
-{
-	flow-children: down;
-	width: 100%;
-	margin: 2px;
-}
-
-#BossDropPlayersRow
-{
-	flow-children: right;
-	width: 100%;
+	color: lime;
 	vertical-align: center;
-	margin: 3px;
+	border-right: 1px solid red;
+	tooltip-position: left;
 }
 
-#BossDropItemIcon
+#KilledBossImage
 {
-	width: 65px;
-	height: width-percentage(72.727272%);
-}
-
-#BossDropLabel,
-#BossName
-{
-	horizontal-align: center;
-	text-align: center;
+	width: 57.6px;
+	height: width-percentage(60.8%);
+	vertical-align: center;
+	border: 1px solid #999;
+	border-radius: 1px;
 }
 
 #BossTakeLootTime_Left
 {
-	background-color: gradient(linear, 0% 0%, 100% 0%, from(#4375E8), to(#72ADCC));
+	background-color: #777;
 }
 
-#BossDropFirstRow
+#BossItemList
 {
 	width: 100%;
+	margin: 2px;
+	flow-children: down;
 }
 
-#BossDropHideShowInfo
+#KilledBossName
 {
-	align: right top;
+	width: 100%;
+	margin-left: 5px;
+	font-size: 26px;
+	color: white;
+	text-overflow: shrink;
+	text-shadow: 2px 1px 5px 2 black;
+	vertical-align: center;
 }
 
-#BossDropHideShowInfo Label
+#BossTakeLootTime
 {
-	text-decoration: underline;
+	width: 100%;
+	height: 4px;
+	margin-right: 24px;
+	margin-bottom: 12px;
+	margin-left: 9px;
+	border-width: 0;
+	box-shadow: none;
+	align: center bottom;
 }
 
-//.Border
-//{
-//	opacity: .25;
-//	width: 100%;
-//	height: 100%;
-//	texture-sampling: alpha-only;
-//	z-index: 0;
-//	pre-transform-scale2d: 1.1;
-//}
+.BossDropItemVoteItemPanel
+{
+	width: 100%;
+	margin: 1px 3px;
+	border-bottom: 1px solid #363636;
+	flow-children: right;
+}
+
+#BossDropScoreCost
+{
+	width: 17.5%;
+
+	padding-left: 6px;
+	font-size: 28px;
+	font-weight: bold;
+	vertical-align: center;
+	tooltip-position: left;
+}
+
+#BossDropActiveBlock
+{
+	width: 64.5%;
+	height: 100%;
+	margin: 3px;
+}
+
+#BossDropPlayersRow
+{
+	width: 100%;
+	height: 100%;
+	flow-children: right;
+}
+
+#BossDropPlayersTake
+{
+	width: 60%;
+	height: 55%;
+	visibility: collapse;
+	background-color: #444;
+	align: center center;
+}
+
+.HasTakeButton #BossDropPlayersTake
+{
+	visibility: visible;
+}
+
+#BossDropPlayersTake:hover
+{
+	transform: translateY(1px);
+}
+
+#BossDropPlayersTake:active
+{
+	transform: translateY(2px);
+}
+
+#BossDropPlayersTake > Label
+{
+	color: #ddd;
+	align: center center;
+}
+
+#BossDropItemIcon
+{
+	width: 18%;
+	height: width-percentage(72.727272%);
+}
+
+#boss_item_vote_id_-1
+{
+	width: 100%;
+	transition-duration: 0.2s;
+	transition-property: position, opacity;
+	flow-children: down;
+}
+
+.hideInactiveBossItemVotings #boss_item_vote_id_-1
+{
+	visibility: collapse;
+}
+
+#boss_item_vote_id_-1 > Label
+{
+	width: 100%;
+	text-align: center;
+	margin-left: 5px;
+	font-size: 32px;
+	color: white;
+	text-overflow: shrink;
+	text-shadow: 2px 1px 5px 2 black;
+}
+
+#boss_item_vote_id_-1_container
+{
+	width: 100%;
+	margin: 2px;
+	flow-children: down;
+}

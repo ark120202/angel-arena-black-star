@@ -84,9 +84,8 @@ custom_toast_AntiAFKNoTime: '{player_name} has been removed from the game due to
 custom_toast_AutoAbandonTime: '{player_name} has {minutes} minutes left to reconnect'
 custom_toast_AutoAbandonNoTime: '{player_name} has been disconnected for too long and will be assessed with an abandon'
 
-boss_loot_vote_dropped: 'Items Dropped:'
-boss_loot_vote_killed: was killed!
-boss_loot_vote_damage: 'Damage: '
+boss_loot_vote_score_tooltip: Priority score
+boss_loot_vote_take: Take
 boss_loot_vote_hide: Hide
 boss_loot_vote_show: Show
 
