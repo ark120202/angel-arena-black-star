@@ -651,7 +651,7 @@
 		"Ability7"	"life_stealer_control"
 		"Ability8"	"life_stealer_consume"
 		"Ability9"	""
-		"AttackRate"	"1.8"
+		"AttackRate"	"1.9"
 		"Ability10"	""
 		"Ability11"	""
 		"Ability12"	""

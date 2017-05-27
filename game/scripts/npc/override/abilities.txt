@@ -2888,19 +2888,19 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"reincarnate_time"	"3.0"
+				"reincarnate_time"	"3.0 3.0 3.0 3.0 3.0 2.5 2.0"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"slow_radius"	"1000"
+				"slow_radius"	"900 900 900 900 900 1000 1100"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"movespeed"	"-75"
+				"movespeed"	"-75 -75 -75 -90 -105 -120 -150"
 			}
 
 			"04"
