@@ -5019,7 +5019,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bounces"	"3 5 7 9 10 11 12"
+				"bounces"	"3 4 5 6 7 8 9"
 			}
 
 			"06"
@@ -6115,7 +6115,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"450 475 500 525 550 575 600"
-		"AbilityCastPoint"	"0.5"
+		"AbilityCastPoint"	"0.5 0.5 0.5 0.5 0.5 0.4 0.3"
 		"AbilityCooldown"	"11 10 9 8 7 6 5"
 		"AbilityDuration"	"15.0"
 		"AbilityManaCost"	"110 115 120 125 130 135 140"
@@ -7305,7 +7305,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"600 630 660 690 720 750 780"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
-		"AbilityCooldown"	"13 12 11 10 9 7 5"
+		"AbilityCooldown"	"13 12 11 10 9 8 7"
 		"AbilityManaCost"	"70"
 		"AbilityDamage"		"14 20 26 36 46 58 70"
 		"AbilityDuration"	"10"
@@ -10472,13 +10472,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_movespeed_pct"	"8 10 12 14 16 18 20"
+				"bonus_movespeed_pct"	"4 5 6 7 8 9 10"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"aura_radius"	"900 900 900 900 900 950 1000"
+				"aura_radius"	"0"
 			}
 
 			"03"
@@ -11793,7 +11793,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"int_steal_duration"	"80"
+				"int_steal_duration"	"60"
 				"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer"
 			}
 
@@ -16482,7 +16482,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"crit_multiplier"	"350 375 400 425 450 475 500"
+				"crit_multiplier"	"350"
 				"LinkedSpecialBonus"	"special_bonus_unique_tusk"
 			}
 

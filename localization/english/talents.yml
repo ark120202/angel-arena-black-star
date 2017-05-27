@@ -111,7 +111,7 @@ custom_talents_talent_hero_lina_dragon_slave_cooldown: +{value} Dragon Slave Coo
 custom_talents_talent_hero_lina_fiery_soul_stack: +40/4% Fiery Soul Per Stack
 custom_talents_talent_hero_lich_frost_nova_cd: +{value} Frost Blast Cooldown
 custom_talents_talent_hero_lich_frost_armor_structure: +{value} Frost Armor Structure Armor
-custom_talents_talent_hero_lich_attacks_apply_ms_slow: Attacks Apply +{%value%} MS and AS Slow
+custom_talents_talent_hero_npc_dota_hero_lich_slow: Attacks Apply +{%value%} MS and AS Slow
 custom_talents_talent_hero_lion_impale_damage: +{value} Earth Spike Damage 
 custom_talents_talent_hero_lion_mana_drain_multi: +{value} mana Drain Multi Target
 custom_talents_talent_hero_shadow_shaman_mass_serpent_ward_summon: +{value} Wards Summoned
