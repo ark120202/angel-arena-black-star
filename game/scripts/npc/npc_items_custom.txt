@@ -9279,7 +9279,7 @@
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"200"
 		"ItemRecipe"					"1"
-		"ItemResult"					"legendary_butterfly"
+		"ItemResult"					"item_legendary_butterfly"
 		"ItemRequirements"
 		{
 			"01"						"item_untouchable_butterfly;item_butterfly_arena"
