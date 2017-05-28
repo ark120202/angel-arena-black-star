@@ -886,7 +886,7 @@
 	{
 		"SecretShop"					"0"
 		"AbilityCastRange"				"500"
-		"AbilityCooldown"				"12.0"
+		"AbilityCooldown"				"10.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -912,12 +912,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"creep_damage_pct"			"60"
+				"creep_damage_pct"			"70"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"3"
+				"bonus_armor"			"4"
 			}
 		}
 	}
@@ -946,14 +946,14 @@
 	{
 		"SecretShop"					"0"
 		"ItemStockMax"					"20"
-		"ItemStockTime"					"49.5"
+		"ItemStockTime"					"70"
 		"ItemInitialStockTime"			"150"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"xp_bonus"				"200"
+				"xp_bonus"				"300"
 			}
 			"02"
 			{
