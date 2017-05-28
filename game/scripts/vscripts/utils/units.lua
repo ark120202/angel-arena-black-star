@@ -166,6 +166,7 @@ end
 
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
+	if Duel:IsDuelOngoing() then return 0 end
 	local time = (5 + self:GetLevel() * 0.1) + (self.RespawnTimeModifier or 0)
 	if self.talent_keys and self.talent_keys.respawn_time_reduction then
 		time = time + self.talent_keys.respawn_time_reduction
