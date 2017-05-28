@@ -24,7 +24,7 @@
 		"AbilityManaCost"				"100"
 		"AbilityCastRange"        		"192"
 
-		"ItemCost"						"2500"
+		"ItemCost"						"1500"
 		"ItemShopTags"					"coin;casino"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -8201,12 +8201,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"100"
+				"bonus_damage"			"70"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-22"
+				"corruption_armor"		"-16"
 			}
 			"03"
 			{
@@ -8308,13 +8308,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"560"
+				"bonus_damage"			"430"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-40"
-			}
+				"corruption_armor"		"-25"
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
@@ -8415,12 +8414,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"1150"
+				"bonus_damage"			"620"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-100"
+				"corruption_armor"		"-45"
 			}
 			"03"
 			{
@@ -8717,7 +8716,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"1650"
+				"bonus_damage"			"1100"
 			}
 			"02"
 			{
@@ -8742,7 +8741,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-300"
+				"corruption_armor"		"-120"
 			}
 			"07"
 			{

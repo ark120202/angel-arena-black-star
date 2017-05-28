@@ -18,6 +18,23 @@ Shard Attackspeed:
 	Cost: 2000 => 1350
 Lotus Sphere:
 	AbilityCooldown:7.5 => 10
+"item_casino_coin"
+	"ItemCost"						"2500" => 1500
+item_desolator2
+	"bonus_damage"			"100" => 70
+	"corruption_armor"		"-22" => -16
+item_desolator3
+	"bonus_damage"			"560" => 430
+	"corruption_armor"		"-40" => -25
+"item_desolator4"
+	"bonus_damage"			"1150" => 620
+	"corruption_armor"		"-100" => -45
+"item_desolator5"
+	"bonus_damage"			"1200" => 850
+	"corruption_armor"		"-200" => -80
+"item_desolator6"
+	"bonus_damage"			"1650" => 1100
+	"corruption_armor"		"-300" => -120
 
 
 Kadash - Assasins Skills:

@@ -324,49 +324,46 @@
 		}
 	}
 
-	"anakim_transfer_pain"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"arena/anakim_transfer_pain"
-		"MaxLevel" 						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityCooldown"				"3"
-		"AbilityCastPoint"				"0.1"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"				"900 950 1000 1050 1100"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"transfer_pain"		"35.0 40.0 50.0 60.0 70.0 80.0 85.0"
-			}
-		}
-	}
-
-	"anakim_stats_heroes"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"arena/anakim_stats_heroes"
-		"MaxLevel" 						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"stats_pct"			"30.0 40.0 50.0 60.0 70.0 80.0 95.0"
-			}
-		}
-	}
-
-
-
+//	"anakim_transfer_pain"
+//	{
+//		"BaseClass"             		"ability_datadriven"
+//		"AbilityTextureName"			"arena/anakim_transfer_pain"
+//		"MaxLevel" 						"7"
+//		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+//		"AbilityCooldown"				"3"
+//		"AbilityCastPoint"				"0.1"
+//		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+//
+//		"AbilitySpecial"
+//		{
+//			"01"
+//			{
+//				"var_type"			"FIELD_INTEGER"
+//				"radius"				"900 950 1000 1050 1100"
+//			}
+//			"02"
+//			{
+//				"var_type"			"FIELD_FLOAT"
+//				"transfer_pain"		"35.0 40.0 50.0 60.0 70.0 80.0 85.0"
+//			}
+//		}
+//	}
+//
+//	"anakim_stats_heroes"
+//	{
+//		"BaseClass"             		"ability_datadriven"
+//		"AbilityTextureName"			"arena/anakim_stats_heroes"
+//		"MaxLevel" 						"7"
+//		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+//		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+//
+//		"AbilitySpecial"
+//		{
+//			"01"
+//			{
+//				"var_type"			"FIELD_INTEGER"
+//				"stats_pct"			"30.0 40.0 50.0 60.0 70.0 80.0 95.0"
+//			}
+//		}
+//	}
 }
