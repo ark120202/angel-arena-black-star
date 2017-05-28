@@ -62,7 +62,7 @@ custom_talents_talent_hero_bane_enfeeble_reduction: +{value} Enfeeble Damage Red
 custom_talents_talent_hero_bane_brain_sap_dmg: +{value} Brain Sap Damage/Heal
 custom_talents_talent_hero_bloodseeker_blood_bath_dmg: +{value} Blood Rite Damage
 custom_talents_talent_hero_bloodseeker_rupture_damage: +{%value%} Rupture Damage
-custom_talents_talent_hero_bloodseeker_blood_rite_cooldown: +{value} Blood Rite Cooldown
+custom_talents_talent_hero_bloodseeker_blood_bath_cooldown: +{value} Blood Rite Cooldown
 # custom_talents_talent_hero_crystal_maiden_freezing_field_damage: +{value} Freezing Field Damage
 # custom_talents_talent_hero_crystal_maiden_frostbite_duration: +{value} Frostbite Duration
 # custom_talents_talent_hero_crystal_maiden_crystal_nova_damage: +{value} Crystal Nova Damage
@@ -123,7 +123,7 @@ custom_talents_talent_hero_tidehunter_gush_armor: +{value} Gush Armor
 custom_talents_talent_hero_witch_doctor_paralyzing_cask_bounces: +{value} Cask Bounces
 custom_talents_talent_hero_witch_doctor_death_ward_atkrange: +{value} Death Ward Attack Range
 custom_talents_talent_hero_witch_doctor_voodoo_restoration_heal: +{value} Voodoo Restoration Heal
-custom_talents_talent_hero_riki_backstab_multiplier: +{value} Backstab Multiplier
+custom_talents_talent_hero_riki_permanent_invisibility_multiplier: +{%value%} Backstab Multiplier
 custom_talents_talent_hero_riki_smoke_screen_cooldown: +{value} Smokescreen Cooldown
 custom_talents_talent_hero_enigma_malefice_instance: +{value} Malefice Instance
 custom_talents_talent_hero_enigma_demonic_conversion_eidolons: +{value} Demonic Conversion Eidolons
@@ -138,7 +138,7 @@ custom_talents_talent_hero_necrolyte_death_pulse_cooldown: +{value} Death Pulse 
 # custom_talents_talent_hero_beastmaster_boar_summoned: +{value} Boar Summoned
 custom_talents_talent_hero_beastmaster_wild_axes_damage: +{value} Wild Axes Damage
 custom_talents_talent_hero_queenofpain_shadow_strike_aoe: +{value} AoE Shadow Strike
-custom_talents_talent_hero_venomancer_poison_sting_slow: +{%value%} Poison Sting Slow
+custom_talents_talent_hero_venomancer_poison_sting_slow: '{%value%} Poison Sting Slow'
 custom_talents_talent_hero_venomancer_plague_ward_hpdamage: +{value} Plague Ward HP/Damage
 # custom_talents_talent_hero_faceless_void_time_walk_range: +{value} Timewalk Cast Range
 custom_talents_talent_hero_skeleton_king_hellfire_blast_dps: +{value} Wraithfire Blast DPS

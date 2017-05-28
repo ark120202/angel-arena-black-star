@@ -102,10 +102,10 @@ function CheckStartable() {
 		$.Schedule(0.2, CheckStartable);
 	else {
 		$('#afterload_panel').visible = true;
-		var LocalPlayerData = $('#LocalPlayerData');
-		LocalPlayerData.BLoadLayout('file://{resources}/layout/custom_game/player_profiles.xml', false, false);
-		LocalPlayerData.FindChildTraverse('CloseButton').vislbe = false;
-		LocalPlayerData.LoadPanelForPlayer(Game.GetLocalPlayerID());
+		// var LocalPlayerData = $('#LocalPlayerData');
+		// LocalPlayerData.BLoadLayout('file://{resources}/layout/custom_game/player_profiles.xml', false, false);
+		// LocalPlayerData.FindChildTraverse('CloseButton').vislbe = false;
+		// LocalPlayerData.LoadPanelForPlayer(Game.GetLocalPlayerID());
 		PlayerTables = GameUI.CustomUIConfig().PlayerTables;
 		DynamicSubscribePTListener('option_votings', function(tableName, changesObject, deletionsObject) {
 			$('#OptionVotings').AddClass('Loaded');
@@ -123,8 +123,16 @@ function CheckStartable() {
 	}
 }
 
+
+var adsEnabledLangs = [
+	'russian',
+	'ukrainian',
+	'bulgarian',
+	'english'
+];
 (function() {
 	$('#OptionVotings').RemoveAndDeleteChildren();
+	$('#loading-alastor').visible = adsEnabledLangs.indexOf($.Language()) > -1;
 	CheckStartable();
 	FillTips();
 	$('#TipsPanel').visible = TipList.length > 0;

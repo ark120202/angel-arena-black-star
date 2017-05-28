@@ -389,11 +389,11 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = 14},
 		effect = {abilities = "special_bonus_unique_bloodseeker_3"}
 	},
-	talent_hero_bloodseeker_blood_rite_cooldown = {
-		icon = "bloodseeker_blood_rite",
+	talent_hero_bloodseeker_blood_bath_cooldown = {
+		icon = "bloodseeker_blood_bath",
 		cost = 1,
 		group = 5,
-		requirement = "bloodseeker_blood_rite",
+		requirement = "bloodseeker_blood_bath",
 		special_values = {value = 7},
 		effect = {abilities = "special_bonus_unique_bloodseeker"}
 	},
@@ -510,10 +510,10 @@ CUSTOM_TALENTS_DATA = {
 		effect = {abilities = "special_bonus_unique_nevermore_1"}
 	},
 	talent_hero_nevermore_shadowraze_dmg = {
-		icon = "nevermore_shadowraze",
+		icon = "nevermore_shadowraze1",
 		cost = 1,
 		group = 5,
-		requirement = "nevermore_shadowraze",
+		requirement = "nevermore_shadowraze1",
 		special_values = {value = 500},
 		effect = {abilities = "special_bonus_unique_nevermore_2"}
 	},
@@ -877,11 +877,11 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = 80},
 		effect = {abilities = "special_bonus_unique_witch_doctor_2"}
 	},
-	talent_hero_riki_backstab_multiplier = {
-		icon = "riki_backstab",
+	talent_hero_riki_permanent_invisibility_multiplier = {
+		icon = "riki_permanent_invisibility",
 		cost = 1,
 		group = 5,
-		requirement = "riki_backstab",
+		requirement = "riki_permanent_invisibility",
 		special_values = {value = 40},
 		effect = {abilities = "special_bonus_unique_riki_1"}
 	},
@@ -2157,7 +2157,7 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = 0.75},
 		effect = {abilities = "special_bonus_unique_oracle_2"}
 	},
-	talent_hero_talent_hero_oracle_false_promise_duration = {
+	talent_hero_oracle_false_promise_duration = {
 		icon = "oracle_false_promise",
 		cost = 1,
 		group = 5,

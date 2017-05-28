@@ -8,23 +8,21 @@
 	</scripts>
 	<script>
 		function setTooltip() {
-			$("#TitleLabel").text = $.GetContextPanel().GetAttributeString("title", "Error");
-			$("#DescriptionLabel").text = $.GetContextPanel().GetAttributeString("description", "Error");
-			$("#CostValue").text = $.GetContextPanel().GetAttributeString("cost", "Error");
-			$("#LevelLabel").text = $.GetContextPanel().GetAttributeString("levelText", "Level: 0\/0");
-			var requirements = $.GetContextPanel().GetAttributeString("requirements", "Error")
-			$("#RequirementsPanel").visible = requirements != "undefined"
-			if (requirements != "undefined") {
-				if (IsHeroName(requirements))
-					$("#RequirementsImage").SetImage(TransformTextureToPath(requirements, "icon"));
-				else
-					$("#RequirementsImage").abilityname = requirements;
+			$('#TitleLabel').text = $.GetContextPanel().GetAttributeString('title', 'Error');
+			$('#DescriptionLabel').text = $.GetContextPanel().GetAttributeString('description', 'Error');
+			$('#DescriptionLabel').visible = $.GetContextPanel().GetAttributeString('description', 'Error') !== 'undefined';
+			$('#CostValue').text = $.GetContextPanel().GetAttributeString('cost', 'Error');
+			$('#LevelLabel').text = $.GetContextPanel().GetAttributeString('levelText', 'Level: 0\/0');
+			var requirements = $.GetContextPanel().GetAttributeString('requirements', 'Error')
+			$('#RequirementsPanel').visible = requirements != 'undefined'
+			if (requirements != 'undefined') {
+				IsHeroName(requirements) ? $('#RequirementsImage').SetImage(TransformTextureToPath(requirements, 'icon')) : $('#RequirementsImage').abilityname = requirements;
 			}
 		}
 	</script>
 	<Panel hittest="false" hittestchildren="false" ontooltiploaded="setTooltip()" class="TooltipRoot">
 		<Panel id="TopInfoPanel">
-			<Label id="TitleLabel" />
+			<Label id="TitleLabel" html="true" />
 			<Label id="LevelLabel" />
 		</Panel>
 		<Label html="true" id="DescriptionLabel" />

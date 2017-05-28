@@ -1,6 +1,7 @@
 .TooltipRoot
 {
 	flow-children:down;
+	min-width: 200px;
 	max-width: 500px;
 }
 
@@ -50,12 +51,11 @@
 
 #TopInfoPanel
 {
-	width: 100%;
+	min-width: 100%;
 }
 
 #TitleLabel
 {
-	text-overflow: shrink;
 
 	color: white;
 	font-size: 24px;

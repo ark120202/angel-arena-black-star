@@ -381,5 +381,11 @@ function SortPanelChildren(panel, sortFunc, compareFunc) {
 	});
 };
 
+function JoinUrlParams(params) {
+	return params == null ? '' : '?' + Object.keys(params).map(function(key) {
+	    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+	}).join('&');
+}
+
 var hud = GetDotaHud();
 

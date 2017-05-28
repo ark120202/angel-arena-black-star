@@ -39,19 +39,25 @@ function CreateTalent(talent, root) {
 	panel.SetImage(TransformTextureToPath(talent.icon));
 	var CreateTooltip = function() {
 		var description = $.Localize('custom_talents_' + talent.name + '_description');
+		if (description === 'custom_talents_' + talent.name + '_description') description = undefined;
+		var title = $.Localize('custom_talents_' + talent.name);
 		if (talent.special_values != null)
 			_.each(talent.special_values, function(values, key) {
-				description = description
+				if (description) description = description
+					.replace('{' + key + '}', SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name)))
+					.replace('{%' + key + '%}', SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name), true));
+				title = title
 					.replace('{' + key + '}', SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name)))
 					.replace('{%' + key + '%}', SpecialValuesArrayToString(values, GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name), true));
 			});
-		$.DispatchEvent('UIShowCustomLayoutParametersTooltip', panel, 'TalentTooltip', 'file://{resources}/layout/custom_game/custom_talent_tooltip.xml',
-			'title=' + $.Localize('custom_talents_' + talent.name) +
-			'&description=' + description.replace('+', '%2B') +
+		title = title.replace('+', '%2B');
+		if (description) description = description.replace('+', '%2B');
+		var params = 'title=' + title +
+			'&description=' + description +
 			'&cost=' + talent.cost +
 			'&requirements=' + talent.requirement +
-			'&levelText=' + $.Localize('custom_talents_level') + GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name) + '\/' + (talent.max_level || 1)
-		);
+			'&levelText=' + $.Localize('custom_talents_level') + GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name) + '\/' + (talent.max_level || 1);
+		$.DispatchEvent('UIShowCustomLayoutParametersTooltip', panel, 'TalentTooltip', 'file://{resources}/layout/custom_game/custom_talent_tooltip.xml', params);
 	};
 	panel.SetPanelEvent('onmouseover', CreateTooltip);
 	panel.SetPanelEvent('onmouseout', function() {
@@ -135,4 +141,5 @@ function Update() {
 	});
 	$('#ToggleHideRequirementErrors').checked = true;
 	Update();
+	Game.DisableWheelPanels.push($('#TalentsBase'));
 })();

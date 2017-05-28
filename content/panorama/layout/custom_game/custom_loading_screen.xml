@@ -90,6 +90,10 @@
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_destroyer.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_destroyer.png" />
 
+			<Image src="file://{images}/heroes/npc_arena_hero_anakim.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_anakim.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_anakim.png" />
+
 			<Image src="file://{images}/heroes/npc_arena_hero_maka.png" />
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_maka.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_maka.png" />
@@ -97,7 +101,7 @@
 			<Image src="file://{images}/heroes/npc_arena_hero_sai.png" />
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_sai.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_sai.png" />
-			
+
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_central.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l1_v1.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l1_v2.png" />
@@ -105,10 +109,13 @@
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l2_v2.png" />
 		</Panel>
 		<Panel id="loading_base">
-			<Image src="file://{images}/custom_game/loading_screen/plate.png" />
-			<Image src="file://{images}/custom_game/loading_screen/grass.png" />
-			<Image src="file://{images}/custom_game/loading_screen/angel_arena.png" />
-			<Image src="file://{images}/custom_game/loading_screen/black_star.png" />
+			<Image id="loading-aabs" src="file://{images}/custom_game/loading_screen/Angel Arena Black Star.png" />
+			<Image id="loading-au" src="file://{images}/custom_game/loading_screen/Anniversary Update.png" />
+			<Image id="loading-heroes" src="file://{images}/custom_game/loading_screen/Heroes.png" />
+			<Image id="loading-shrine" src="file://{images}/custom_game/loading_screen/Shrine.png" />
+			<Image id="loading-ratings" src="file://{images}/custom_game/loading_screen/volvo-1.png" />
+			<Image id="loading-alastor" src="file://{images}/custom_game/loading_screen/alastor.png" />
+			<Image id="loading-l2" src="file://{images}/custom_game/loading_screen/l2.png" />
 		</Panel>
 
 		<Panel id="TipsPanel" hittest="true" onactivate="NextTip()">
