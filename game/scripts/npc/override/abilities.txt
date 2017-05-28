@@ -7993,21 +7993,6 @@
 
 	}
 
-	"life_stealer_feast"
-	{
-		"MaxLevel"	"7"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"hp_leech_percent"	"0.1 0.2 0.3 0.4 0.5 0.6 1.0"
-			}
-
-		}
-
-	}
-
 	"life_stealer_open_wounds"
 	{
 		"MaxLevel"	"7"

@@ -1555,7 +1555,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_leech_percent"		"0.1 0.2 0.3 0.4 0.5 0.6 1.0"
+				"hp_leech_percent"		"4.0 4.5 5.0 5.5 6.0 6.5 7.0"
 			}
 		}
 
