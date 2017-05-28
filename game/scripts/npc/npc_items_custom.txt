@@ -7889,7 +7889,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"30"
+				"bonus_agility"					"35"
 			}
 			"02"
 			{
@@ -9162,12 +9162,12 @@
 		"ID"							"10239"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"5600"
+		"ItemCost"						"500"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_butterfly_of_sins"
 		"ItemRequirements"
 		{
-			"01"						"item_butterfly_arena;item_greater_crit"
+			"01"						"item_butterfly_arena;item_butterfly_arena"
 		}
 	}
 
@@ -9179,9 +9179,8 @@
 		"AbilityTextureName"			"item_arena/butterfly_of_sins"
 
 		"AbilityCooldown"				"30"
-		"ItemShopTags"					"agi;damage;evasion;attack_speed;crit"
 		"ItemQuality"					"legendary"
-		"ItemAliases"					"bfly;butterfly;butterfly of sins;damage;crit;daedalus"
+		"ItemAliases"					"bfly;butterfly;butterfly of sins;damage"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		// Special
@@ -9191,12 +9190,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"60"
+				"bonus_agility"					"70"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"120"
+				"bonus_damage"					"60"
 			}
 			"03"
 			{
@@ -9211,27 +9210,17 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_chance"					"30"
+				"bonus_evasion_active_pct"		"30"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_multiplier"				"250"
+				"bonus_agility_active"			"70"
 			}
 			"07"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_evasion_active_pct"		"50"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_agility_active"			"120"
-			}
-			"09"
-			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"6"
+				"duration"						"5"
 			}
 		}
 
@@ -9266,34 +9255,6 @@
 				}
 			}
 
-			"modifier_item_butterfly_of_sins_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"OnAttackStart"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName" 	"modifier_item_butterfly_of_sins_crit"
-						"Target" 		"CASTER"
-					}
-
-					"Random"
-					{
-						"Chance" "%crit_chance"
-						"OnSuccess"
-						{
-							"ApplyModifier"
-							{
-								"ModifierName" 	"modifier_item_butterfly_of_sins_crit"
-								"Target"    	"CASTER"
-							}
-						}
-					}
-				}
-			}
-
 			"modifier_item_butterfly_of_sins_evasion"
 			{
 				"Duration"			"%duration"
@@ -9308,32 +9269,6 @@
 				}
 			}
 
-
-			"modifier_item_butterfly_of_sins_crit"
-			{
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_multiplier"
-				}
-
-				"OnAttackLanded"
-				{
-					"FireSound"
-					{
-						"EffectName"	"DOTA_Item.Daedelus.Crit"
-						"Target"		"CASTER"
-					}
-
-					"RemoveModifier"
-					{
-						"ModifierName"  "modifier_item_butterfly_of_sins_crit"
-						"Target"   		"CASTER"
-					}
-				}
-			}
 		}
 	}
 
@@ -9343,12 +9278,12 @@
 		"ID"							"10241"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"4200"
+		"ItemCost"						"200"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_rapier_of_pain"
 		"ItemRequirements"
 		{
-			"01"						"item_butterfly_of_sins;item_javelin;item_butterfly_arena"
+			"01"						"item_butterfly_of_sins;item_butterfly_arena"
 		}
 	}
 
@@ -9360,9 +9295,8 @@
 		"AbilityTextureName"			"item_arena/rapier_of_pain"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityCooldown"				"25"
-		"ItemShopTags"					"agi;damage;evasion;attack_speed;crit"
 		"ItemQuality"					"legendary"
-		"ItemAliases"					"bfly;butterfly;butterfly of sins;damage;crit;daedalus"
+		"ItemAliases"					"bfly;butterfly;butterfly of sins;damage;"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		// Special
@@ -9377,73 +9311,38 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"200"
+				"bonus_damage"					"90"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_evasion"					"50"
+				"bonus_evasion"					"45"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"100"
+				"bonus_attack_speed"			"90"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_movement_speed"			"50"
+				"bonus_movement_speed"			"40"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_chance"					"30"
+				"bonus_evasion_active_pct"		"60"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_multiplier"				"300"
+				"bonus_agility_active"			"90"
 			}
 			"08"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_evasion_active_pct"		"90"
-			}
-			"09"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_agility_active"			"180"
-			}
-			"10"
-			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"6"
-			}
-			"11"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"debuff_chance"					"30"
-			}
-			"12"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"debuff_duration"				"3"
-			}
-			"13"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"debuff_damage_per_second"		"150"
-			}
-			"14"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"debuff_movement_speed_pct"		"-35"
-			}
-			"15"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"debuff_damage_interval"		"1"
+				"duration"						"5"
 			}
 		}
 
@@ -9477,45 +9376,6 @@
 					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion"
 				}
 			}
-			"modifier_item_rapier_of_pain_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"OnAttackStart"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName" 	"modifier_item_rapier_of_pain_crit"
-						"Target" 		"CASTER"
-					}
-
-					"Random"
-					{
-						"Chance" "%crit_chance"
-						"OnSuccess"
-						{
-							"ApplyModifier"
-							{
-								"ModifierName" 	"modifier_item_rapier_of_pain_crit"
-								"Target"    	"CASTER"
-							}
-						}
-					}
-
-					"Random"
-					{
-						"Chance"			"%debuff_chance"
-						"OnSuccess"
-						{
-							"ApplyModifier"
-							{
-								"ModifierName"	"modifier_item_rapier_of_pain_debuff"
-								"Target" 		"TARGET"
-							}
-						}
-					}
-				}
 
 				"Properties"
 				{
@@ -9534,74 +9394,6 @@
 					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion_active_pct"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility_active"
 					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"550"
-				}
-			}
-
-
-			"modifier_item_rapier_of_pain_crit"
-			{
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_multiplier"
-				}
-
-				"OnAttackLanded"
-				{
-					"FireSound"
-					{
-						"EffectName"	"DOTA_Item.Daedelus.Crit"
-						"Target"		"CASTER"
-					}
-
-					"RemoveModifier"
-					{
-						"ModifierName"  "modifier_item_rapier_of_pain_crit"
-						"Target"   		"CASTER"
-					}
-				}
-			}
-
-			"modifier_item_rapier_of_pain_debuff"
-			{
-				"Duration"			"%debuff_duration"
-				"IsDebuff"			"1"
-
-				"EffectName"		"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture_b.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"				"%debuff_movement_speed_pct"
-				}
-
-				"OnCreated"
-				{
-					"FireEffect"
-					{
-						"EffectName"        "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture_nuke.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "TARGET"
-					}
-				}
-
-				"ThinkInterval"  "%debuff_damage_interval"
-				"OnIntervalThink"
-				{
-					"FireEffect"
-					{
-						"EffectName"        "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture_nuke.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "TARGET"
-					}
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_PURE"
-						"Damage"		"%debuff_damage_per_second * %debuff_damage_interval"
-					}
 				}
 			}
 		}
@@ -10414,12 +10206,12 @@
 		"ID"							"10256"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1980"
+		"ItemCost"						"3000"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_piercing_blade"
 		"ItemRequirements"
 		{
-			"01"						"item_javelin;item_rapier;item_broadsword;item_claymore;item_blades_of_attack"
+			"01"						"item_javelin;item_relic;item_relic"
 		}
 	}
 
@@ -10437,12 +10229,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"			"420"
+				"bonus_damage"			"150"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"10"
+				"attack_damage_to_pure_pct"	"5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -10495,7 +10287,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"900"
+				"bonus_damage"		"400"
 				"CalculateSpellDamageTooltip" "0"
 			}
 			"02"
@@ -10512,12 +10304,12 @@
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"armor_per_hit"		"-0.8"
+				"armor_per_hit"		"-0.5"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"20"
+				"attack_damage_to_pure_pct"	"10"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
@@ -10538,7 +10330,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"windwalk_bonus_damage"	"600"
+				"windwalk_bonus_damage"	"2000"
 			}
 		}
 
