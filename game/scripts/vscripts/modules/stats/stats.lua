@@ -21,7 +21,8 @@ function StatsClient:FetchPreGameData()
 	end
 	--Should return rating table
 	StatsClient:Send("fetchPreGameMatchData", data, function(response)
-		for pid, data in ipairs(response) do
+		for pid, data in pairs(response) do
+			pid = tonumber(pid)
 			PLAYER_DATA[pid].serverData = data
 			PLAYER_DATA[pid].Inventory = data.inventory or {}
 			PlayerTables:SetTableValue("stats_client", pid, data)

@@ -268,7 +268,7 @@ function Duel:EndDuelForUnit(unit)
 		end
 	end)
 
-	if not unit:IsAlive() and PlayerResource:GetRespawnSeconds(unit:GetPlayerID()) <= 1 then
+	if not unit:IsAlive() and PlayerResource:GetRespawnSeconds(unit:GetPlayerID()) <= 2 then
 		unit:RespawnHero(false, false, false)
 	end
 	if unit.FindClearSpaceForUnitAndSetCamera then

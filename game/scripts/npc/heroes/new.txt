@@ -347,7 +347,7 @@
 		"Ability1"		"anakim_wisps"
 		"Ability2"		"anakim_solar_flare"
 		"Ability3"		"anakim_divine_gift"
-		//"Ability4"		"anakim_transfer_pain"
+		"Ability4"		"anakim_transfer_pain"
 		"Ability5"		"anakim_summon_divine_knight"
 		"AttackRange"	"400"
 		"Enabled"		"1"

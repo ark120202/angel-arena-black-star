@@ -287,7 +287,29 @@ INCOMING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
-	["modifier_arena_healer"] = {damage = 1}
+	["modifier_arena_healer"] = {damage = 1},
+	modifier_anakim_transfer_pain = {
+		multiplier = function(attacker, victim, inflictor, damage)
+			local anakim_transfer_pain = victim:FindAbilityByName("anakim_transfer_pain")
+			if anakim_transfer_pain and victim:IsAlive() then
+				local transfered_damage_pct = anakim_transfer_pain:GetAbilitySpecial("transfered_damage_pct")
+				local radius = anakim_transfer_pain:GetAbilitySpecial("radius")
+				local dealt_damage = damage * transfered_damage_pct * 0.01
+				local summonTable = victim.custom_summoned_unit_ability_anakim_summon_divine_knight
+
+				if summonTable and summonTable[1] and summonTable[1]:IsAlive() and (summonTable[1]:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() <= radius then
+					ApplyDamage({
+						attacker = victim,
+						victim = summonTable[1],
+						ability = anakim_transfer_pain,
+						damage = dealt_damage,
+						damage_type = DAMAGE_TYPE_PURE
+					})
+					return 1 - transfered_damage_pct * 0.01
+				end
+			end
+		end
+	}
 }
 
 CREEP_BONUSES_MODIFIERS = {

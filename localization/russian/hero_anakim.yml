@@ -1,3 +1,4 @@
+DOTA_Tooltip_ability_anakim_wisps: Wisps
 DOTA_Tooltip_ability_anakim_wisps_Description: 'Anakim аткует противников своими духами, разделяя весь свой урон от атак на чистый, магический и физический, а так же дает Anakim шанс наносить критические атаки. Весь урон от атак Anakim будет считаться уроном, нанесенным способностями.'
 DOTA_Tooltip_ability_anakim_wisps_pure_damage_pct: '%ЧИСТЫЙ УРОН:'
 DOTA_Tooltip_ability_anakim_wisps_magic_damage_pct: '%МАГИЧЕСКИЙ УРОН:'
@@ -5,17 +6,19 @@ DOTA_Tooltip_ability_anakim_wisps_physical_damage_pct: '%ФИЗИЧЕСКИЙ У
 DOTA_Tooltip_ability_anakim_wisps_critical_chance_pct: '%ШАНС КРИТА:'
 DOTA_Tooltip_ability_anakim_wisps_critical_damage_pct: '%КРИТИЧЕСКИЙ УРОН:'
 
+DOTA_Tooltip_ability_anakim_solar_flare: Solar Flare
 DOTA_Tooltip_ability_anakim_solar_flare_Description: 'Anakim при помощи света наносит урон всем противникам попавшим в область применения, оглушая их и уменьшая сопротивление магическому урону.'
 DOTA_Tooltip_ability_anakim_solar_flare_duration: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
 DOTA_Tooltip_ability_anakim_solar_flare_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_anakim_solar_flare_magical_resistance_pct: '%СНИЖЕНИЕ СОПРОТИВЛЕНИЯ МАГИЧЕСКОМУ УРОНУ:'
-
+DOTA_Tooltip_ability_anakim_divine_gift: Divine Gift
 DOTA_Tooltip_ability_anakim_divine_gift_Description: 'Восполняет жизненые силы союзников увеличивая их регенерцию здоровья, силу и сопротивление магическому урону.'
 DOTA_Tooltip_ability_anakim_divine_gift_health_regen: 'ДОП. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_anakim_divine_gift_bonus_strength: 'ДОП. СИЛА:'
 DOTA_Tooltip_ability_anakim_divine_gift_magical_resistance_pct: '%ДОП. СОПРОТИВЛЕНИЕ МАГИЧЕСКОМУ УРОНУ:'
 DOTA_Tooltip_ability_anakim_divine_gift_global_radius: 'РАДИУС:'
 
+DOTA_Tooltip_ability_anakim_summon_divine_knight: Divine Knight
 DOTA_Tooltip_ability_anakim_summon_divine_knight_Description: 'Anakim призывает своего верного воина света. Только один воин света может быть призван.'
 DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_health: 'ЗДОРОВЬЕ РЫЦАРЯ:'
@@ -24,3 +27,8 @@ DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_armor: 'БРОНЯ РЫ�
 DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_health_regen: 'РЕГЕН ХР РЫЦАРЯ:'
 DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_bounty: 'ЗОЛОТА ЗА УБИЙСТВО:'
 DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_xp: 'ОПЫТА ЗА УБИЙСТВО:'
+
+DOTA_Tooltip_ability_anakim_transfer_pain: Transfer Pain
+DOTA_Tooltip_ability_anakim_transfer_pain_Description: Anakim перенаправляет потоки части получаемого урона своему рыцарю, призанному способностью Divine Knight.
+DOTA_Tooltip_ability_anakim_transfer_pain_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_anakim_transfer_pain_transfered_damage_pct: '%ПЕРЕНАПРАВЛЕНИЕ УРОНА:'

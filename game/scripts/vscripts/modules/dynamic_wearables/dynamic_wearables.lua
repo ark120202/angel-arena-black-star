@@ -332,7 +332,7 @@ function DynamicWearables:ParseInventory(player)
 				end
 			end
 		else
-			print("[DynamicWearables] Player with SteamID "..steam.. " has an unhandled item in inventory (" .. v .. ")")
+			print("[DynamicWearables] Player with PlayerID "..player.. " has an unhandled item in inventory (" .. v .. ")")
 		end
 	end
 end
@@ -359,5 +359,3 @@ function DynamicWearables:HasWearable(playerID, name)
 	end
 	return false
 end
-
---DynamicWearables:ParseData()
