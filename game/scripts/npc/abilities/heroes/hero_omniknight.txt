@@ -16,17 +16,17 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700 800 900 1000 1100 1200 1300"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2 0.2 0.1 0"
 		"AOERadius"						"%radius"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10.0"
+		"AbilityCooldown"				"11.0 10.5 10.0 9.5 9.0 8.5 8.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 120 140 160 200 240 280"
+		"AbilityManaCost"				"85 100 115 130 145 160 175"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -35,12 +35,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal"					"120 200 280 360 440 520 600"
+				"heal"					"100 170 240 310 380 450 520"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
+				"radius"				"260"
 			}
 		}
 
@@ -69,9 +69,9 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"20"
-		"AbilityManaCost"				"50 100 150 200 250 300 350"
+		"AbilityCastPoint"				"0.35 0.35 0.35 0.35 0.35 0.25 0.15"
+		"AbilityCooldown"				"30 28 26 24 22 20 18"
+		"AbilityManaCost"				"50"
 
 
 		// Special
@@ -81,7 +81,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3 4 5 6 7 8 9"
+				"duration"				"4.0 4.5 5.0 5.5 6.0 6.5 7.0"
 			}
 			"02"
 			{
@@ -109,16 +109,18 @@
 		"AbilityTextureName"			"omniknight_guardian_angel"
 		"ScriptFile"					"heroes/hero_omniknight/guardian_angel_lua.lua"
 		"MaxLevel" 						"7"
+		"LevelsBetweenUpgrades" 		"7"
+		"RequiredLevel"					"6"
 		"HasScepterUpgrade"				"1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"32 30 28 26 24 22 20"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"40"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.4 0.3"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 200 300 400 500 600 700"
+		"AbilityManaCost"				"125 175 250 325 400 475 550"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -127,7 +129,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"1 2 3 4 5 6 7"
+				"duration"					"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
 			}
 			"02"
 			{
@@ -156,7 +158,6 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"omniknight_degen_aura"
 		"MaxLevel" 						"7"
-		"LevelsBetweenUpgrades"			"5"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -169,7 +170,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed_bonus_per_stack_pct"	"-2 -3 -5 -6 -7 -7 -8"
+				"speed_bonus_per_stack_pct"	"-3"
 			}
 			"02"
 			{
@@ -179,7 +180,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_per_stack"	"-2 -4 -6 -8 -10 -12 -14"
+				"damage_bonus_per_stack"	"-1 -2 -3 -4 -5 -6 -7"
 			}
 			"04"
 			{
@@ -204,12 +205,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stack_growth_interval"	"1"
+				"stack_growth_interval"	"2"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stack_duration"		"1.5"
+				"stack_duration"		"3"
 			}
 		}
 

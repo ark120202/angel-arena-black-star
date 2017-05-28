@@ -15,9 +15,9 @@
 			"particle"  		"particles/units/heroes/hero_faceless_void/faceless_void_time_walk_slow.vpcf"
 			"particle"  		"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
 		}
-		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.15"
-		"AbilityCooldown"				"24 22 20 18 16 14 12"
+		"AbilityCastRange"				"675"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+		"AbilityCooldown"				"20 18 16 14 12 9 6"
 		"AbilityModifierSupportValue"	"0.25"
 
 		"AbilitySpecial"
@@ -25,22 +25,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed"					"3500"
+				"speed"					"3000"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"backtrack_time"			"4.0"
+				"backtrack_time"			"2.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_range"		"900"
+				"tooltip_range"		"675"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dodge_chance_time_walk_pct"		"100"
+				"dodge_chance_time_walk_pct"		"26"
 			}
 			"05"
 			{
@@ -169,7 +169,7 @@
 		}
 
 		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"36.0 30.0 24.0 18.0 16.0 14.0 12.0"
+		"AbilityCooldown"				"36.0 33.0 30.0 27.0 24.0 21.0 18.0"
 		"AbilityManaCost"				"50"
 
 		"AbilitySpecial"
@@ -177,7 +177,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"1 2 3 4 5 6 7"
+				"duration"				"4 5 6 7 8 9 10"
 			}
 			"02"
 			{
@@ -187,12 +187,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"move_speed_slow"		"-17 -25 -21 -28 -36 -42 -50"
+				"move_speed_slow"		"-14"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed_slow"		"-7 -8 -9 -10 -11 -12 -13"
+				"attack_speed_slow"		"-14 -24 -34 -44 -54 -64 -74"
 			}
 		}
 
@@ -324,27 +324,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.5"
+				"duration"				"1.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_creep"		"6.0"
+				"duration_creep"		"3.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"8 11 15 17 20 23 25"
+				"chance_pct"			"10.0 12.5 15.0 17.5 20.0 22.5 25.0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"100 150 250 300 400 450 550"
+				"bonus_damage"			"50 75 100 125 150 175 200"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_cooldown"			"0.8"
+				"bonus_cooldown"			"2.0"
 			}
 		}
 
@@ -431,7 +431,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dodge_chance_pct"		"10 12 16 18 20 22 24"
+				"dodge_chance_pct"		"10 12.5 15 17.5 20 22.5 25"
 			}
 		}
 
@@ -483,7 +483,7 @@
 		}
 
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.35 0.35 0.35"
+		"AbilityCastPoint"				"0.35 0.35 0.35 0.35 0.35 0.3 0.25"
 		"AbilityCooldown"				"140 130 120 115 110 105 100"
 		"AbilityManaCost"				"150 225 300 400 500 600 700"
 		"HasScepterUpgrade"				"1"
@@ -493,7 +493,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2 2.4 2.8 3.2 3.6 3.8 4"
+				"duration"				"2.0 2.25 2.5 2.75 3.0 3.25 3.5"
 			}
 			"02"
 			{

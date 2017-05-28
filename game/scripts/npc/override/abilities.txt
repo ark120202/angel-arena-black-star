@@ -3631,7 +3631,6 @@
 	"sandking_caustic_finale"
 	{
 		"MaxLevel"		"7"
-		"RequiredLevel" "1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11861,7 +11860,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"10000"
+				"radius"	"-1"
 			}
 
 			"02"

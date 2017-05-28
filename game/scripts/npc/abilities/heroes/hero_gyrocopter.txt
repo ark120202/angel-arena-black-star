@@ -10,8 +10,6 @@
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"gyrocopter_rocket_barrage"
 		"MaxLevel"						"7"
-		"RequiredLevel" 				"2"
-		"LevelsBetweenUpgrades"			"6"
 		"HasScepterUpgrade"				"1"
 
 		"precache"
@@ -21,8 +19,8 @@
 		}
 		"AbilityCastRange"				"400"
 		"AbilityCooldown"				"0.5"
-		"AbilityDamage"					"10 50 80 120 150 200 230"
-		"AbilityManaCost"				"2.5 3.5 4.5 5.5 6.5 7.5 8.5" // %mana_per_second * %interval
+		"AbilityDamage"					"8 13 18 23 28 34 50"
+		"AbilityManaCost"				"2.0 2.25 2.5 2.75 3.0 3.25 3.5" // %mana_per_second * %interval
 
 		"AbilitySpecial"
 		{
@@ -34,7 +32,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"mana_per_second"			"25 35 45 55 65 75 85"
+				"mana_per_second"			"20.0 22.5 25.0 27.5 30.0 32.5 35.0"
 			}
 			"03"
 			{
@@ -143,11 +141,11 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1050"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 17 14 11 11 11 11"
+		"AbilityCooldown"				"20 19 18 17 15 13 11"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -155,7 +153,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"125 250 375 500 600 700 900"
+		"AbilityDamage"					"125 250 375 500 625 750 875"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -164,7 +162,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hits_to_kill_tooltip"		"3 3 4 5 6 7 8"
+				"hits_to_kill_tooltip"		"3 3 4 5 5 6 6"
 			}
 			"02"
 			{
@@ -174,7 +172,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.5 1.0 1.5 2.0 2.0 2.5 2.8"
+				"stun_duration"				"0.5 0.75 1.0 1.25 1.5 1.75 2.0"
 			}
 			"04"
 			{
@@ -189,7 +187,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"pre_flight_time"			"3"
+				"pre_flight_time"			"2"
 			}
 			"08"
 			{
@@ -209,7 +207,7 @@
 			"11"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"vision_time"				"3.5"
+				"vision_time"				"4"
 			}
 			"12"
 			{
@@ -322,7 +320,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 200 300 400 500 600 700"
+		"AbilityManaCost"				"50"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -336,17 +334,17 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"max_attacks"					"2 3 4 6 8 10 12"
+				"max_attacks"					"3 4 5 6 7 8 9"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"projectile_speed"				"800"
+				"projectile_speed"				"800 800 800 800 800 900 1000"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"postattack_magic_damage"		"50 100 150 150 150 150 150"
+				"postattack_magic_damage"		"0 0 0 0 25 50 75"
 			}
 			"05"
 			{
@@ -356,7 +354,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"scepter_radius_scepter"				"700"
+				"scepter_radius_scepter"				"600"
 			}
 		}
 
@@ -448,7 +446,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AoERadius"						"600 625 650 675 700 725 750"
+		"AoERadius"						"600"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilityTextureName"			"gyrocopter_call_down"
@@ -468,11 +466,11 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.25 0.2"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"45 45 40 40 35 35 30"
+		"AbilityCooldown"				"50"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -485,7 +483,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"slow_duration_first"		"0.1"
+				"slow_duration_first"		"1"
 			}
 			"02"
 			{
@@ -495,27 +493,27 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_first"				"300 500 700 900 1100 1300 1500"
+				"damage_first"				"200 275 350 425 500 575 625"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_second"				"100 200 300 500 700 900 1100"
+				"damage_second"				"100 150 200 250 300 350 400"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"600 625 650 675 700 725 750"
+				"radius"					"600"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_second_scepter"		"400 700 1000 1300 1600 1900 2200"
+				"damage_second_scepter"		"150 200 250 300 350 425 500"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"missile_delay"				"2.0"
+				"missile_delay"				"3.0"
 			}
 			"08"
 			{
