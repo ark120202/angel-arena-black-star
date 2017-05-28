@@ -1188,15 +1188,12 @@ DOTA_Tooltip_modifier_item_golden_eagle_relic_enabled_Description: 'Continually 
 DOTA_Tooltip_ability_item_butterfly_of_sins: Butterfly of Sins
 DOTA_Tooltip_ability_item_butterfly_of_sins_Description: |-
   Active: Flutter - Gives owner max movement speed, %bonus_evasion_active_pct%%% evasion and %bonus_agility_active% agility for %duration% seconds.
-  Passive: Critical Strike - Grants each attack a chance to deal additional damage.
 
   Stacks diminishingly with other sources of Evasion.
 DOTA_Tooltip_ability_item_butterfly_of_sins_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_butterfly_of_sins_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_butterfly_of_sins_bonus_evasion: '%+$evasion'
-DOTA_Tooltip_ability_item_butterfly_of_sins_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_butterfly_of_sins_crit_chance: '%CRITICAL CHANCE:'
-DOTA_Tooltip_ability_item_butterfly_of_sins_crit_multiplier: '%CRITICAL DAMAGE:'
+DOTA_Tooltip_ability_item_butterfly_of_sins_bonus_attack_speed: +$attack'
 DOTA_Tooltip_ability_item_butterfly_of_sins_bonus_evasion_active_pct: '%FLUTTER BONUS EVASION:'
 DOTA_Tooltip_ability_item_butterfly_of_sins_bonus_agility_active: 'FLUTTER BONUS AGILITY:'
 DOTA_Tooltip_ability_item_butterfly_of_sins_duration: 'FLUTTER DURATION:'
@@ -1205,8 +1202,6 @@ DOTA_Tooltip_modifier_item_butterfly_of_sins_evasion_Description: 'Have max move
 DOTA_Tooltip_ability_item_rapier_of_pain: Rapier of Pain
 DOTA_Tooltip_ability_item_rapier_of_pain_Description: |-
   Active: Flutter - Gives owner max movement speed, %bonus_evasion_active_pct%%% evasion and %bonus_agility_active% agility for %duration% seconds.
-  Passive: Critical Strike - Grants each attack a chance to deal additional damage.
-  Passive: Open Wounds - Each attack has a chance to reduce enemy movement speed for some time and deals damage through time.
 
   Stacks diminishingly with other sources of Evasion.
 DOTA_Tooltip_ability_item_rapier_of_pain_bonus_agility: +$agi
@@ -1214,19 +1209,11 @@ DOTA_Tooltip_ability_item_rapier_of_pain_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_rapier_of_pain_bonus_evasion: '%+$evasion'
 DOTA_Tooltip_ability_item_rapier_of_pain_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_rapier_of_pain_bonus_movement_speed: +$move_speed
-DOTA_Tooltip_ability_item_rapier_of_pain_crit_chance: '%CRITICAL CHANCE:'
-DOTA_Tooltip_ability_item_rapier_of_pain_crit_multiplier: '%CRITICAL DAMAGE:'
 DOTA_Tooltip_ability_item_rapier_of_pain_bonus_evasion_active_pct: '%FLUTTER BONUS EVASION:'
 DOTA_Tooltip_ability_item_rapier_of_pain_bonus_agility_active: 'FLUTTER BONUS AGILITY:'
 DOTA_Tooltip_ability_item_rapier_of_pain_duration: 'FLUTTER DURATION:'
-DOTA_Tooltip_ability_item_rapier_of_pain_debuff_chance: '%OPEN WOUNDS CHANCE:'
-DOTA_Tooltip_ability_item_rapier_of_pain_debuff_duration: 'OPEN WOUNDS DURATION:'
-DOTA_Tooltip_ability_item_rapier_of_pain_debuff_damage_per_second: 'OPEN WOUNDS DAMAGE PER SECOND:'
-DOTA_Tooltip_ability_item_rapier_of_pain_debuff_movement_speed_pct: '%OPEN WOUNDS SLOW:'
 DOTA_Tooltip_modifier_item_rapier_of_pain_evasion: Flutter
 DOTA_Tooltip_modifier_item_rapier_of_pain_evasion_Description: 'Have max movement speed, %dMODIFIER_PROPERTY_EVASION_CONSTANT%%% evasion and agility increased by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%'
-DOTA_Tooltip_modifier_item_rapier_of_pain_debuff: Open Wounds
-DOTA_Tooltip_modifier_item_rapier_of_pain_debuff_Description: 'Movement speed decreased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, get pure damage each second.'
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health: Heavy War Axe of Rage - Health
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health_Description: |-
   Active: Switch Mode (Damage) - In Damage mode increases your attack damage based on your base attack. In health mode increases your max health.

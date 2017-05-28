@@ -1095,11 +1095,8 @@ DOTA_Tooltip_modifier_item_golden_eagle_relic_enabled_Description: 'Непрер
 DOTA_Tooltip_ability_item_butterfly_of_sins: Butterfly of Sins
 DOTA_Tooltip_ability_item_butterfly_of_sins_Description: |-
   Активируемая: Flutter - Даёт владельцу максимальную скорость передвижения, %bonus_evasion_active_pct%%% уклонения и %bonus_agility_active% ловкости на %duration% секунд.
-  Пассивная: Critical Strike — дает шанс нанести дополнительный урон при каждой атаке.
 
   Сочетается по закону убывающей полезности с другими источниками уклонения.
-DOTA_Tooltip_ability_item_butterfly_of_sins_crit_chance: '%ШАНС КРИТА:'
-DOTA_Tooltip_ability_item_butterfly_of_sins_crit_multiplier: '%КРИТИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_butterfly_of_sins_bonus_evasion_active_pct: |-
   %СПОСОБНОСТЬ FLUTTER:
   • ДОПОЛНИТЕЛЬНЫЙ ШАНС НА УКЛОНЕНИЕ:
@@ -1110,25 +1107,14 @@ DOTA_Tooltip_modifier_item_rapier_of_pain_evasion_Description: 'Движется
 DOTA_Tooltip_ability_item_rapier_of_pain: Rapier of Pain
 DOTA_Tooltip_ability_item_rapier_of_pain_Description: |-
   Активируемая: Flutter - Даёт владельцу максимальную скорость передвижения, %bonus_evasion_active_pct%%% уклонения и %bonus_agility_active% ловкости на %duration% секунд.
-  Пассивная: Critical Strike — дает шанс нанести дополнительный урон при каждой атаке.
-  Пассивная: Open Wounds - Атаки имеют шанс замедлить скорость передвижения противника и наносить ему урон в течении времени.
 
   Сочетается по закону убывающей полезности с другими источниками уклонения.
-DOTA_Tooltip_ability_item_rapier_of_pain_crit_chance: '%ШАНС КРИТА:'
-DOTA_Tooltip_ability_item_rapier_of_pain_crit_multiplier: '%КРИТИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_rapier_of_pain_bonus_evasion_active_pct: |-
   %СПОСОБНОСТЬ FLUTTER:
   • ДОПОЛНИТЕЛЬНЫЙ ШАНС НА УКЛОНЕНИЕ:
 DOTA_Tooltip_ability_item_rapier_of_pain_bonus_agility_active: '• ДОПОЛНИТЕЛЬНАЯ ЛОВКОСТЬ:'
 DOTA_Tooltip_ability_item_rapier_of_pain_duration: '• ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_ability_item_rapier_of_pain_debuff_chance: |-
-  %СПОСОБНОСТЬ OPEN WOUNDS:
-  • ШАНС СРАБАТЫВАНИЯ:
-DOTA_Tooltip_ability_item_rapier_of_pain_debuff_duration: '• ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_ability_item_rapier_of_pain_debuff_damage_per_second: '• УРОН В СЕКУНДУ:'
-DOTA_Tooltip_ability_item_rapier_of_pain_debuff_movement_speed_pct: '%• ЗАМЕДЛЕНИЕ СКОРОСТИ ПЕРЕДВВИЖЕНИЯ:'
-DOTA_Tooltip_modifier_item_rapier_of_pain_debuff: Open Wounds
-DOTA_Tooltip_modifier_item_rapier_of_pain_debuff_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, каждую секунду получает чистый урон.'
+
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health: Heavy War Axe of Rage - Здоровье
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health_Description: |-
   Активируемая: Switch Mode (Урон) - В режиме Урона увеличивает ваш урон, основываясь на вашем базовом уроне. В режиме Здоровья увеличивает ваше максимальное здоровье.
