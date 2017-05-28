@@ -256,8 +256,8 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_true_strike = {
 		icon = "talents/true_strike",
-		cost = 1,
-		group = 9,
+		cost = 20,
+		group = 8,
 		effect = {
 			modifiers = {
 				"modifier_talent_true_strike"
