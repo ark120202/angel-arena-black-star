@@ -64,10 +64,10 @@ function UpdateBossItemVote(id, data) {
 		if (entry.votes) {
 			itempanel.FindChildTraverse('BossDropPlayersRow').RemoveAndDeleteChildren();
 			//var localPlayerPickedTotalScore = 0;
+			itempanel.SetHasClass('LocalPlayerSelected', entry.votes[localPlayerId] === 1);
 			_.each(entry.votes, function(voteval, pid) {
-				pid = Number(pid);
-				itempanel.SetHasClass('LocalPlayerSelected', pid === localPlayerId && voteval === 1);
 				if (voteval === 1) {
+					pid = Number(pid);
 					var img = $.CreatePanel('Image', itempanel.FindChildTraverse('BossDropPlayersRow'), '');
 					img.SetImage(TransformTextureToPath(GetPlayerHeroName(pid), 'icon'));
 					img.SetPanelEvent('onmouseover', function() {

@@ -297,7 +297,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 				local dealt_damage = damage * transfered_damage_pct * 0.01
 				local summonTable = victim.custom_summoned_unit_ability_anakim_summon_divine_knight
 
-				if summonTable and summonTable[1] and summonTable[1]:IsAlive() and (summonTable[1]:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() <= radius then
+				if summonTable and IsValidEntity(summonTable[1]) and summonTable[1]:IsAlive() and (summonTable[1]:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() <= radius then
 					ApplyDamage({
 						attacker = victim,
 						victim = summonTable[1],
