@@ -91,3 +91,85 @@ function CDOTA_PlayerResource:KickPlayer(nPlayerID)
 	end
 	return false
 end
+
+function CDOTA_PlayerResource:IsPlayerAbandoned(playerID)
+	return IsPlayerAbandoned(playerID)
+end
+
+function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
+	if not PLAYER_DATA[iPlayerID].IsAbandoned then
+		RemoveAllOwnedUnits(iPlayerID)
+		local hero = PlayerResource:GetSelectedHeroEntity(iPlayerID)
+		if IsValidEntity(hero) then
+			PLAYER_DATA[iPlayerID].BeforeAbandon_Level = hero:GetLevel()
+			PLAYER_DATA[iPlayerID].BeforeAbandon_HeroInventorySnapshot = {}
+			hero:ClearNetworkableEntityInfo()
+			hero:Stop()
+			for i = 0, DOTA_STASH_SLOT_6 do
+				local item = hero:GetItemInSlot(i)
+				if item then
+					local charges = item:GetCurrentCharges()
+					local toWriteCharges
+					if item:GetInitialCharges() ~= charges then
+						toWriteCharges = charges
+					end
+					PLAYER_DATA[iPlayerID].BeforeAbandon_HeroInventorySnapshot[i] = {
+						name = item:GetAbilityName(),
+						stacks = toWriteCharges
+					}
+					hero:SellItem(item)
+				end
+			end
+
+
+			for i = 0, hero:GetAbilityCount() - 1 do
+				local ability = hero:GetAbilityByIndex(i)
+				if ability then
+					ability:SetLevel(0)
+					ability:SetHidden(true)
+					ability:SetActivated(false)
+					--UTIL_Remove(ability)
+				end
+			end
+			hero:DestroyAllModifiers()
+			hero:AddNewModifier(hero, nil, "modifier_hero_out_of_game", nil)
+
+			-- Crashes game for Earth/Ember/Storm spirits
+			--[[Timers:CreateTimer(20, function()
+				UTIL_Remove(hero)
+			end)]]
+		end
+		local heroname = HeroSelection:GetSelectedHeroName(iPlayerID)
+		--local notLinked = true
+		if heroname then
+			Notifications:TopToAll({hero=heroname, duration=10})
+			Notifications:TopToAll({text=PlayerResource:GetPlayerName(iPlayerID), continue=true, style={color=ColorTableToCss(PLAYER_DATA[iPlayerID].Color or {0, 0, 0})}})
+			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
+
+			for _,v in ipairs(GetLinkedHeroNames(heroname)) do
+				local linkedHeroOwner = HeroSelection:GetSelectedHeroPlayer(v)
+				if linkedHeroOwner then
+					HeroSelection:ForceChangePlayerHeroMenu(linkedHeroOwner)
+				end
+			end
+		end
+		--if notLinked then
+			HeroSelection:UpdateStatusForPlayer(iPlayerID, "hover", "npc_dota_hero_abaddon")
+		--end
+		PLAYER_DATA[iPlayerID].IsAbandoned = true
+		local ptd = PlayerTables:GetTableValue("arena", "players_abandoned")
+		table.insert(ptd, iPlayerID)
+		PlayerTables:SetTableValue("arena", "players_abandoned", ptd)
+		if not GameRules:IsCheatMode() then
+			local teamLeft = GetOneRemainingTeam()
+			if teamLeft then
+				Timers:CreateTimer(30, function()
+					local teamLeft = GetOneRemainingTeam()
+					if teamLeft then
+						GameMode:OnOneTeamLeft(teamLeft)
+					end
+				end)
+			end
+		end
+	end
+end

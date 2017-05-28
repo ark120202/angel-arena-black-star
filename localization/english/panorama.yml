@@ -60,6 +60,8 @@ panorama_shop_search_placeholder: Search...
 panorama_shop_shop_label: SHOP
 panorama_shop_itembuilds_new_group: NEW GROUP
 panorama_shop_guide_youtube_open: Open in Browser
+panorama_shop_guide_publish: Publish
+panorama_shop_guide_cancel: Cancel
 panorama_shop_stackable_purchase: Купленный назодится на базе, так как в инвентаре героя находится такой же стакающийся предмет
 
 error_panorama_shop_publish_guide_title: Title.
@@ -86,8 +88,9 @@ custom_toast_AutoAbandonNoTime: '{player_name} has been disconnected for too lon
 
 boss_loot_vote_score_tooltip: Priority score
 boss_loot_vote_take: Take
-boss_loot_vote_hide: Hide
-boss_loot_vote_show: Show
+boss_loot_vote_inactive: Untaken items
+boss_loot_vote_hero_duel_delayed: Hero change is scheduled after duel
+boss_loot_vote_hero: 'Change hero to '
 
 option_yes: 'Yes'
 option_no: 'No'

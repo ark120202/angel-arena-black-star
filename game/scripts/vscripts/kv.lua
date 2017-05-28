@@ -146,6 +146,9 @@ function SummonUnit(keys)
 			pos = RandomPositionAroundPoint(pos, keys.summon_random_radius)
 		end
 		local unit = CreateUnitByName(keys.summoned, pos, true, caster, caster:GetPlayerOwner(), team)
+		if not unit then
+			error("kv.SummonUnit: Unit with name " .. keys.summoned .. " not found.")
+		end
 		FindClearSpaceForUnit(unit, pos, true)
 		unit:SetControllableByPlayer(caster:GetPlayerID(), true)
 		unit:SetOwner(caster)

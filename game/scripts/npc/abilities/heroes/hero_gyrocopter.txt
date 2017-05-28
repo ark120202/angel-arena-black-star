@@ -2,9 +2,7 @@
 {
 	"gyrocopter_rocket_barrage_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
+		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
@@ -14,6 +12,7 @@
 		"MaxLevel"						"7"
 		"RequiredLevel" 				"2"
 		"LevelsBetweenUpgrades"			"6"
+		"HasScepterUpgrade"				"1"
 
 		"precache"
 		{
@@ -23,10 +22,8 @@
 		"AbilityCastRange"				"400"
 		"AbilityCooldown"				"0.5"
 		"AbilityDamage"					"10 50 80 120 150 200 230"
-		"AbilityManaCost"				"3 5 7 9 11 13 15" // %mana_per_second * %interval
+		"AbilityManaCost"				"2.5 3.5 4.5 5.5 6.5 7.5 8.5" // %mana_per_second * %interval
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -124,9 +121,7 @@
 
 	"gyrocopter_homing_missile_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
+		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -134,7 +129,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"gyrocopter_homing_missile"
-		"MaxLevel"	"7"
+		"MaxLevel"						"7"
 
 		"precache"
 		{
@@ -307,7 +302,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"gyrocopter_flak_cannon"
-		"MaxLevel"	"7"
+		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 		"LevelsBetweenUpgrades" 		"5"
 
@@ -457,7 +452,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilityTextureName"			"gyrocopter_call_down"
-		"MaxLevel"	"7"
+		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 
 		"precache"

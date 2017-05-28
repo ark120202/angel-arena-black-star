@@ -8,7 +8,7 @@ var Options = GameUI.CustomUIConfig().Options;
 var console = {
 	log: function() {
 		var args = Array.prototype.slice.call(arguments);
-		return $.Msg(args.map(function(x) {return JSON.stringify(x)}).join('\t'));
+		return $.Msg(args.map(function(x) {return typeof x === 'object' ? JSON.stringify(x) : x;}).join('\t'));
 	},
 	error: function() {
 		var args = Array.prototype.slice.call(arguments);
@@ -18,7 +18,7 @@ var console = {
 	}
 };
 
-var ServerAddress = 'https://stats.angelarenablackstar.com';
+var ServerAddress = 'https://stats.dota-aabs.com';
 
 var HERO_SELECTION_PHASE_NOT_STARTED = 0;
 var HERO_SELECTION_PHASE_BANNING = 1;

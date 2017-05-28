@@ -91,7 +91,7 @@
 						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_central" src="file://{images}/custom_game/units/npc_arena_boss_central.png" style="position: 128px 80px 0;"/>
 						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_l2_v1" src="file://{images}/custom_game/units/npc_arena_boss_l2_v1.png" style="position: 190px 80px 0;"/>
 						<Image class="UnitItemlikeRecipePanel" id="ItemRecipeBoxDrops_npc_arena_boss_l2_v2" src="file://{images}/custom_game/units/npc_arena_boss_l2_v2.png" style="position: 251px 80px 0;"/>
-					</Panel>	
+					</Panel>
 				</Panel>
 			</Panel>
 		</Panel>
@@ -112,12 +112,12 @@
 					<Panel id="GuidesHeaderTitleRow">
 						<TextEntry id="GuidesTitleLabel" maxchars="20" undohistory="enabled" />
 						<Button class="ButtonBevel" id="GuideTogglePublish" onactivate="TogglePublishMode();">
-							<Label id="GuideTogglePublishLabel" text="Publish" hittest="false" />
-							<Label id="GuideTogglePublishLabelCancel" text="Cancel" hittest="false" />
+							<Label id="GuideTogglePublishLabel" text="panorama_shop_guide_publish" hittest="false" />
+							<Label id="GuideTogglePublishLabelCancel" text="panorama_shop_guide_cancel" hittest="false" />
 						</Button>
 					</Panel>
 					<!-- <Label id="GuidesBrowserDescription" text="#DOTA_Guide_WorkshopSubtitle" />  -->
-					<Label id="GuidesBrowserDescription" /> 
+					<Label id="GuidesBrowserDescription" />
 				</Panel>
 				<Panel id="GuideArea">
 					<Panel id="GuideItemBuild" />
@@ -139,11 +139,11 @@
 						<Panel id="GuidePublishBlock">
 							<TextEntry id="GuidePublishYouTube" placeholder="youtube.com/watch?v=..." />
 							<TextEntry id="GuidePublishDescription" placeholder="Text..." maxchars="250" undohistory="enabled" />
-							<TextButton class="ButtonBevel Green" id="GuidePublishButton" onactivate="PublishGuide(SelectedBuild)" text="Publish" />
+							<TextButton class="ButtonBevel Green" id="GuidePublishButton" onactivate="PublishGuide(SelectedBuild)" text="panorama_shop_guide_publish" />
 						</Panel>
 						<Panel id="GuideYouTubeLogo" onactivate="OpenYoutubeForGuide(SelectedBuild)" >
 							<Image src="file://{images}/custom_game/shop/YouTube-logo-full_color.png" />
-							<Label text="#panorama_shop_guide_youtube_open" />
+							<Label text="panorama_shop_guide_youtube_open" />
 						</Panel>
 					</Panel>
 				</Panel>

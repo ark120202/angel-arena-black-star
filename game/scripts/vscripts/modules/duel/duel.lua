@@ -8,6 +8,7 @@ if Duel == nil then
 	Duel.DuelStatus = DOTA_DUEL_STATUS_NONE
 	Duel.EntIndexer = {}
 	Duel.TimesTeamWins = {}
+	Duel.AnnouncerCountdownCooldowns = {}
 	--Duel.Particles = {}
 	Duel.DuelCounter = 0
 	Duel.DuelBox1 = Vector(0,0,0)
@@ -43,7 +44,8 @@ function Duel:GlobalThink()
 	local now = GameRules:GetGameTime()
 	for i = 1, 10 do
 		local diff = now + i - Duel.DuelTimerEndTime
-		if diff < 0.2 and diff > 0 then
+		if diff < 0.3 and diff > 0 and (not Duel.AnnouncerCountdownCooldowns[i] or now > Duel.AnnouncerCountdownCooldowns[i]) then
+			Duel.AnnouncerCountdownCooldowns[i] = now + 1
 			if i < 10 then i = "0" .. i end
 			EmitAnnouncerSound("announcer_ann_custom_countdown_" .. i)
 		end
@@ -233,6 +235,7 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 			end
 		end
 	end
+	Events:Emit("Duel/end")
 	if timeUpdate then
 		local delay = table.nearestOrLowerKey(DUEL_SETTINGS.DelaysFromLast, GetDOTATimeInMinutesFull())
 		Timers:CreateTimer(2, function()

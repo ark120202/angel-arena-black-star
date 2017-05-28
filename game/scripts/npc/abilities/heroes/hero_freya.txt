@@ -379,22 +379,24 @@
 			"modifier_freya_frozen_strike_crit"
 			{
 				"IsPurgable"		"0"
-				"EffectName"		"particles/units/heroes/hero_tusk/tusk_rubickpunch_status.vpcf"
-				"EffectAttachType"	"follow_origin"
 
-				"Properties"
+				"OnCreated"
 				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "1"
-				}
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_tusk/tusk_rubickpunch_status.vpcf"
+						"EffectAttachType"  "point_follow"
+						"Target"            "CASTER"
 
-				"States"
-				{
-					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
+						"ControlPointEntities"
+						{
+							"CASTER"	"attach_weapon"
+						}
+					}
 				}
 
 				"OnAttackLanded"
 				{
-
 					"FireSound"
 					{
 						"EffectName"	"Arena.Hero_Freya.FrozenStrike.Impact"
@@ -431,6 +433,16 @@
 						"ModifierName"  "modifier_freya_frozen_strike_crit"
 						"Target"   		"CASTER"
 					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "1"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}

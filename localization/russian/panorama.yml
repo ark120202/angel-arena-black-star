@@ -52,6 +52,8 @@ panorama_shop_search_placeholder: Поиск...
 panorama_shop_shop_label: ЛАВКА
 panorama_shop_itembuilds_new_group: НОВАЯ ГРУППА
 panorama_shop_guide_youtube_open: Открыть в браузере
+panorama_shop_guide_publish: Опубликовать
+panorama_shop_guide_cancel: Отменить
 panorama_shop_stackable_purchase: Purchased item was dropped on the base, because your hero has same stackable item in inventory
 
 error_panorama_shop_publish_guide_title: Название.
@@ -78,8 +80,9 @@ custom_toast_AutoAbandonNoTime: '{player_name} находится вне игр�
 
 boss_loot_vote_score_tooltip: Очки приоритета
 boss_loot_vote_take: Взять
-boss_loot_vote_hide: Скрыть
-boss_loot_vote_show: Показать
+boss_loot_vote_inactive: Оставленные предметы
+boss_loot_vote_hero_duel_delayed: Смена героя запланирована после дуэли
+boss_loot_vote_hero: 'Сменить героя на '
 
 option_yes: Да
 option_no: Нет

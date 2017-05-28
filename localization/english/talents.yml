@@ -112,7 +112,7 @@ custom_talents_talent_hero_lina_fiery_soul_stack: +40/4% Fiery Soul Per Stack
 custom_talents_talent_hero_lich_frost_nova_cd: +{value} Frost Blast Cooldown
 custom_talents_talent_hero_lich_frost_armor_structure: +{value} Frost Armor Structure Armor
 custom_talents_talent_hero_npc_dota_hero_lich_slow: Attacks Apply +{%value%} MS and AS Slow
-custom_talents_talent_hero_lion_impale_damage: +{value} Earth Spike Damage 
+custom_talents_talent_hero_lion_impale_damage: +{value} Earth Spike Damage
 custom_talents_talent_hero_lion_mana_drain_multi: +{value} mana Drain Multi Target
 custom_talents_talent_hero_shadow_shaman_mass_serpent_ward_summon: +{value} Wards Summoned
 custom_talents_talent_hero_shadow_shaman_shackles_duration: +{value} Shackles Duration
@@ -210,13 +210,13 @@ custom_talents_talent_hero_doom_bringer_doom_dps: +{value} Doom DPS
 custom_talents_talent_hero_doom_bringer_infernal_blade_dmg: +{%value%} Infernal Blade Damage
 custom_talents_talent_hero_ancient_apparition_ice_vortex_cd: -{value} Ice Vortex Cooldown
 custom_talents_talent_hero_ancient_apparition_ice_vortex_slow: +{%value%} Ice Vortex Slow/Resistance
-custom_talents_talent_hero_ancient_apparition_cold_feet_charges: {value} Charges of Cold Feet
+custom_talents_talent_hero_ancient_apparition_cold_feet_charges: '{value} Charges of Cold Feet'
 custom_talents_talent_hero_ancient_apparition_chilling_touch_dmg: +{value} Chilling Touch Damage
 custom_talents_talent_hero_ursa_fury_swipes_dmg: +{value} Fury Swipes Damage
 custom_talents_talent_hero_spirit_breaker_greater_bash_dmg: +{%value%} Greater Bash Damage
 custom_talents_talent_hero_spirit_breaker_greater_bash_chance: +{%value%} Greater Bash Chance
 custom_talents_talent_hero_spirit_breaker_empowering_haste_speed: +{value} Charge Speed
-# custom_talents_talent_hero_special_bonus_unique_gyrocopter_1: {value} Homing Missile Charges
+# custom_talents_talent_hero_special_bonus_unique_gyrocopter_1: '{value} Homing Missile Charges'
 # custom_talents_talent_hero_special_bonus_unique_gyrocopter_2: +{value} Flak Cannon Attacks
 custom_talents_talent_hero_alchemist_unstable_concoction_dmg: +{value} Unstable Concoction Damage
 custom_talents_talent_hero_alchemist_acid_spray_armor: -{value} Acid Spray Armor

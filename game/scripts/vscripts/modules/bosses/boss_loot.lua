@@ -27,7 +27,7 @@ function Bosses:CreateBossLoot(unit, team)
 		team = team
 	}
 	local itemcount = RandomInt(math.min(5, #dropTables), math.min(7, #dropTables))
-	if dropTables.hero then
+	if dropTables.hero and not HeroSelection:IsHeroSelected(dropTables.hero) then
 		table.insert(t.rollableEntries, {
 			hero = dropTables.hero,
 			weight = 0,
@@ -54,35 +54,32 @@ function Bosses:CreateBossLoot(unit, team)
 	Timers:CreateTimer(30, function()
 		-- Take new data
 		t = PlayerTables:GetTableValue("bosses_loot_drop_votes", id)
-		-- Iterate over all vote entries
+		-- Iterate over all entries
 		for _, entry in pairs(t.rollableEntries) do
 			local selectedPlayers = {}
 			local bestPctLeft = -math.huge
-			if table.count(entry.votes) > 0 then
-				for pid, s in pairs(entry.votes) do
-					damagePcts[pid] = damagePcts[pid] or 0
-					local totalPointsAfterReduction = damagePcts[pid] - entry.weight
-					if s and totalPointsAfterReduction >= bestPctLeft then
-						if totalPointsAfterReduction > bestPctLeft then
-							selectedPlayers = {}
-						end
-						table.insert(selectedPlayers, pid)
-						damagePcts[pid] = totalPointsAfterReduction
-						bestPctLeft = totalPointsAfterReduction
+			-- Iterate over all voted players and select player with biggest priority points
+			for pid, s in pairs(entry.votes) do
+				damagePcts[pid] = damagePcts[pid] or 0
+				local totalPointsAfterReduction = damagePcts[pid] - entry.weight
+				if s and totalPointsAfterReduction >= bestPctLeft and not PlayerResource:IsPlayerAbandoned(pid) then
+					if totalPointsAfterReduction > bestPctLeft then
+						selectedPlayers = {}
 					end
+					table.insert(selectedPlayers, pid)
+					damagePcts[pid] = totalPointsAfterReduction
+					bestPctLeft = totalPointsAfterReduction
 				end
 			end
 			if #selectedPlayers > 0 then
 				local selectedPlayer = selectedPlayers[RandomInt(1, #selectedPlayers)]
-				print(selectedPlayer, "just rolled", entry.item)
-				local hero = PlayerResource:GetSelectedHeroEntity(selectedPlayer)
-				if hero then
-					PanoramaShop:PushItem(selectedPlayer, hero, entry.item, true)
-				end
+				Bosses:GivePlayerSelectedDrop(selectedPlayer, entry)
 			else
 				local ntid = team .. "_" .. -1
 				local tt = PlayerTables:GetTableValue("bosses_loot_drop_votes", ntid) or {}
-				table.insert(tt, entry.item)
+				entry.votes = nil
+				entry.weight = nil
+				table.insert(tt, entry)
 				PlayerTables:SetTableValue("bosses_loot_drop_votes", ntid, tt)
 			end
 		end
@@ -92,20 +89,43 @@ end
 
 function Bosses:VoteForItem(data)
 	local splittedId = data.voteid:split("_")
+	local PlayerID = data.PlayerID
 	local t = PlayerTables:GetTableValue("bosses_loot_drop_votes", data.voteid)
-	if t and PlayerResource:GetTeam(data.PlayerID) == tonumber(splittedId[1]) then
+	if t and not PlayerResource:IsPlayerAbandoned(PlayerID) and PlayerResource:GetTeam(PlayerID) == tonumber(splittedId[1]) then
 		if t.rollableEntries and t.rollableEntries[tonumber(data.entryid)] then
-			t.rollableEntries[tonumber(data.entryid)].votes[data.PlayerID] = not t.rollableEntries[tonumber(data.entryid)].votes[data.PlayerID]
+			t.rollableEntries[tonumber(data.entryid)].votes[PlayerID] = not t.rollableEntries[tonumber(data.entryid)].votes[PlayerID]
 		else
-			local x = t[tonumber(data.entryid)]
-			if x then
-				local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-				if hero then
-					PanoramaShop:PushItem(data.PlayerID, hero, x, true)
-				end
+			-- -1
+			local entry = t[tonumber(data.entryid)]
+			if entry then
+				Bosses:GivePlayerSelectedDrop(PlayerID, entry)
 				table.remove(t, tonumber(data.entryid))
 			end
 		end
 		PlayerTables:SetTableValue("bosses_loot_drop_votes", data.voteid, t)
+	end
+end
+
+function Bosses:GivePlayerSelectedDrop(playerId, entry)
+	if entry.item then
+		local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+		if hero then
+			PanoramaShop:PushItem(playerId, hero, entry.item, true)
+		end
+	else
+		local newHero = entry.hero
+		function ActuallyReplaceHero()
+			if PlayerResource:GetSelectedHeroEntity(playerId) and not HeroSelection:IsHeroSelected(newHero) then
+				HeroSelection:ChangeHero(playerId, newHero, true, 0)
+			else
+				Notifications:Bottom(playerId, {text="hero_selection_change_hero_selected"})
+			end
+		end
+		if Duel:IsDuelOngoing() then
+			Notifications:Bottom(playerId, {text="boss_loot_vote_hero_duel_delayed"})
+			Events:On("Duel/end", ActuallyReplaceHero, true)
+		else
+			ActuallyReplaceHero()
+		end
 	end
 end

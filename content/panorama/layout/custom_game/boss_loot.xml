@@ -1,0 +1,45 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/boss_loot.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/boss_loot.js" />
+	</scripts>
+	<snippets>
+		<snippet name="BossDropItemVoteItemPanel">
+			<Panel class="BossDropItemVoteItemPanel">
+				<Label id="BossDropScoreCost" />
+				<Panel id="BossDropActiveBlock">
+					<Panel id="BossDropPlayersRow" />
+					<TextButton id="BossDropPlayersTake" text="#boss_loot_vote_take" />
+				</Panel>
+				<DOTAItemImage id="BossDropItemIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="BossDropItemVote">
+			<Panel class="BossDropItemVote" hittest="false">
+				<Panel id="KilledBossInfo">
+					<Label id="BossPlayerScore" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip(#boss_loot_vote_score_tooltip);" />
+					<Image id="KilledBossImage" />
+					<Label id="KilledBossName" />
+				</Panel>
+				<Panel id="BossItemList" hittest="false" />
+				<ProgressBar id="BossTakeLootTime" min="0" hittest="false" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="BossLootBase">
+		<Panel id="BossDropItemVotings">
+			<Panel id="BossDropItemVotingsToggle" onactivate="SetBossDropItemVotingsVisible()">
+				<Label id="BossDropActiveItemVotingsCounter" />
+				<Label id="BossDropItemVotingsIcon" />
+				<Label id="BossDropInactiveItemVotingsCounter" />
+			</Panel>
+			<Panel id="BossDropItemVotingsList">
+				<Panel id="BossDropItemVotingsListContainer" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

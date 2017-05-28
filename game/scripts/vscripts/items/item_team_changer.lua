@@ -4,15 +4,19 @@ function ChangeTeam(keys)
 	if not caster:IsTrueHero() or Duel:IsDuelOngoing() then
 		return
 	end
-	--TODO Меню для смены в 4v4v4v4
 	local oldTeam = caster:GetTeamNumber()
 	local newTeam = oldTeam == DOTA_TEAM_BADGUYS and DOTA_TEAM_GOODGUYS or DOTA_TEAM_BADGUYS
-	if GetTeamPlayerCount(targetTeam) >= GetTeamPlayerCount(oldTeam) and not IsInToolsMode() then
+	if GetTeamPlayerCount(newTeam) >= GetTeamPlayerCount(oldTeam) and not IsInToolsMode() then
+		Containers:DisplayError(caster:GetPlayerID(), "#arena_hud_error_team_changer_players")
 		return
 	end
+
+	GameRules:SetCustomGameTeamMaxPlayers(newTeam, GameRules:GetCustomGameTeamMaxPlayers(newTeam) + 1)
 	PlayerResource:SetPlayerTeam(caster:GetPlayerID(), newTeam)
+	GameRules:SetCustomGameTeamMaxPlayers(oldTeam, GameRules:GetCustomGameTeamMaxPlayers(oldTeam) - 1)
+
 	FindClearSpaceForUnit(caster, FindFountain(newTeam):GetAbsOrigin(), true)
-	
+
 	ability:SpendCharge()
 end
 
@@ -20,7 +24,6 @@ function OnAttacked(keys)
 	local ability = keys.ability
 	local attacker = keys.attacker
 	if attacker then
-		local attacker_name = attacker:GetUnitName()
 		if keys.Damage > 0 and ((attacker.IsControllableByAnyPlayer and attacker:IsControllableByAnyPlayer()) or attacker:IsBoss()) then
 			ability:StartCooldown(ability:GetLevelSpecialValueFor("attacked_cooldown", ability:GetLevel() - 1))
 		end

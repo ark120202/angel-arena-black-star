@@ -1,7 +1,7 @@
 DROP_TABLE = {
 	["npc_arena_boss_freya"] = {
 		--{ Item = "item_consecrated_sword", DropChance = 100, },
-		hero = "item_god_transform_freya",
+		hero = "npc_arena_hero_freya",
 		{ Item = "item_soul_of_titan", DropChance = 30, DamageWeightPct = 30, },
 		{ Item = "item_dark_blade", DropChance = 50, DamageWeightPct = 25, },
 		{ Item = "item_dark_blade", DropChance = 30, DamageWeightPct = 25, },
@@ -21,7 +21,7 @@ DROP_TABLE = {
 	},
 	["npc_arena_boss_zaken"] = {
 		--{ Item = "item_sacrificial_dagger", DropChance = 100, },
-		{ Item = "item_god_transform_zaken", DropChance = 100, },
+		hero = "npc_arena_hero_zaken",
 		{ Item = "item_soul_of_titan", DropChance = 30, DamageWeightPct = 30, },
 		{ Item = "item_dark_blade", DropChance = 50, DamageWeightPct = 25, },
 		{ Item = "item_dark_blade", DropChance = 30, DamageWeightPct = 25, },

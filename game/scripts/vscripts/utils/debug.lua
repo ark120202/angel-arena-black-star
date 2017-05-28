@@ -1,17 +1,14 @@
 function CPrint( ... )
 	if SendDebugInfoToClient then
-		local player
+		local printResult = ""
+		for _,v in ipairs({...}) do
+			printResult = printResult .. tostring(v) .. "\t"
+		end
 		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 			if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) and DynamicWearables:HasWearable(i, "wearable_developer") then
-				player = PlayerResource:GetPlayer(i)
+				local player = PlayerResource:GetPlayer(i)
+				if player then CustomGameEventManager:Send_ServerToPlayer(player, "debug_cprint", {text = printResult}) end
 			end
-		end
-		if player then
-			local printResult = ""
-			for _,v in ipairs({...}) do
-				printResult = printResult .. tostring(v) .. "\t"
-			end
-			CustomGameEventManager:Send_ServerToPlayer(player, "debug_cprint", {text = printResult})
 		end
 	end
 end

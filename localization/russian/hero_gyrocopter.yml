@@ -1,4 +1,5 @@
 DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_Description: 'Пока включена запускает ракеты залпом на ближайших вражеских юнитов вокруг Gyrocopter и тратит %mana_per_second% маны в секунду. Обычно одна ракета предназначена одному юниту, но если Gyrocopter находится под воздействием Flak Cannon, то ракеты запускаются во всех юнитов, находящихся рядом.'
+DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_aghanim_description: Если Gyrocopter находится под воздействием Flak Cannon, то ракеты запускаются одновременно во всех юнитов, находящихся рядом, вместо одного случайного.
 DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_mana_per_second: 'МАНЫ В СЕКУНДУ:'
 DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_rockets_per_second: 'РАКЕТ В СЕКУНДУ:'
@@ -21,10 +22,10 @@ DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_aghanim_description: Кажд�
 DOTA_Tooltip_modifier_gyrocopter_flak_cannon_arena_Description: 'Атакует все близлежащие цели, наносит дополнительный магический урон.'
 
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_Description: 'Вызывает воздушный удар на выбранную область. С неба падает 2 снаряда: первый наносит большой урон, оглушает противников на %slow_duration_first% сек. и запускает во всех героев в области действия Homing Missile текущего уровня, а второй наносит незначительный урон, но оглушает врагов на %slow_duration_second% сек.'
+DOTA_Tooltip_ability_gyrocopter_call_down_arena_aghanim_description: Урон повышен.
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_slow_duration_first: 'ДЛИТ. ОГЛУШ. ОТ ПЕРВ. СНАРЯДА:'
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_slow_duration_second: 'ДЛИТ. ОГЛУШ. ОТ ВТОР. СНАРЯДА:'
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_damage_first: 'УРОН ОТ ПЕРВОГО СНАРЯДА:'
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_damage_second: 'УРОН ОТ ВТОРОГО СНАРЯДА:'
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_damage_second_scepter: 'УРОН ОТ ВТОРОГО СНАРЯДА СО СКИПЕТРОМ:'
-DOTA_Tooltip_ability_gyrocopter_call_down_arena_aghanim_description: Урон повышен.

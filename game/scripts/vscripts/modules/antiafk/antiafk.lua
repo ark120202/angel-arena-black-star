@@ -70,9 +70,9 @@ function AntiAFK:ThinkPlayerInGame(playerId)
 				text = "#custom_toast_AutoAbandonNoTime",
 				player = playerId
 			})
-			MakePlayerAbandoned(playerId)
+			PlayerResource:MakePlayerAbandoned(playerId)
 		end
 	elseif GetConnectionState(playerId) == DOTA_CONNECTION_STATE_ABANDONED then
-		MakePlayerAbandoned(playerId)
+		PlayerResource:MakePlayerAbandoned(playerId)
 	end
 end

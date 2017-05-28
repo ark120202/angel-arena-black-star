@@ -4488,9 +4488,9 @@
 		"ID"							"10151"
 		"ItemCost"						"5000"
 		"AbilityTextureName"			"item_arena/team_changer"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.1"
 
 		"AbilitySpecial"
 		{
@@ -12204,64 +12204,6 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"rune_multiplier"		"1.5"
-			}
-		}
-	}
-
-	"item_god_transform_freya"
-	{
-		"BaseClass"             		"item_datadriven"
-		"AbilityTextureName"			"item_arena/god_transform_freya"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityChannelTime"			"4"
-		"ItemPurchasableFilter"			"0"
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_god_transforms.lua"
-				"Function"		"Check"
-				"heroname"		"npc_arena_hero_freya"
-			}
-		}
-
-		"OnChannelSucceeded"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_god_transforms.lua"
-				"Function"		"GodTransform"
-				"heroname"		"npc_arena_hero_freya"
-			}
-		}
-	}
-
-	"item_god_transform_zaken"
-	{
-		"BaseClass"             		"item_datadriven"
-		"AbilityTextureName"			"item_arena/god_transform_zaken"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityChannelTime"			"4"
-		"ItemPurchasableFilter"			"0"
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_god_transforms.lua"
-				"Function"		"Check"
-				"heroname"		"npc_arena_hero_zaken"
-			}
-		}
-
-		"OnChannelSucceeded"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_god_transforms.lua"
-				"Function"		"GodTransform"
-				"heroname"		"npc_arena_hero_zaken"
 			}
 		}
 	}

@@ -11,9 +11,11 @@ dota_hud_error_phantom_swap_no_illusions: Способность требует 
 dota_hud_error_item_from_bosses: Этот предмет или один из его компонентов выпадает только с боссов
 dota_hud_error_ability_cant_target_boss: Способность не может быть использована на боссов
 dota_hud_error_ability_cant_target_champion: Способность не может быть использована на чемпионов
+arena_hud_error_team_changer_players: В другой команде уже больше игроков чем в вашей
+
 DOTA_Tooltip_modifier_neutral_champion: Чемпион
 DOTA_Tooltip_modifier_neutral_champion_Description: 'Этот нейтрал - чемпион, он в %dMODIFIER_PROPERTY_TOOLTIP% раз сильнее обычного, но награда за него также увеличена'
-bitch_lina_bubble_text: 'Эй, хочешь хорошо провести время? Тогда дай мне 2 Casino Coins'
+
 riki_pocket_riki_chat_notify_text: '%s1 продал Riki.'
 npc_dota_neutral_easy_variant1: Крип Легкого Лагеря
 npc_dota_neutral_medium_variant1: Крип Среднего Лагеря
@@ -347,3 +349,10 @@ DOTA_Tooltip_ability_life_stealer_feast_arena_hp_leech_percent: '%ВАМПИРИ
 
 DOTA_Tooltip_ability_meepo_divided_we_stand_Description: 'Герой создает неидеальную, но почти разумную копию самого себя. Эти клоны получают золото и опыт, а также перенимают способности, характеристики и уровень героя. Клоны не могут покупать предметы, но получают некоторые предметы главного героя. Если умрет хоть один из клонов, то умирают как все остальные клоны, так и сам герой.'
 DOTA_Tooltip_ability_meepo_divided_we_stand_Note0: Клоны не могут использовать артефакт Arcane Boots.
+
+DOTA_Tooltip_ability_filler_ability_Description: Создает ауру, которая восстанавливает здоровье и ману союзникам поблизости. Сила восстановления увеличивается каждую минуту.
+DOTA_Tooltip_ability_filler_ability_Note1: ""
+DOTA_Tooltip_ability_filler_ability_hp_heal_growth: 'ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ В МИНУТУ:'
+DOTA_Tooltip_ability_filler_ability_mp_heal_growth: 'ВОССТАНОВЛЕНИЕ МАНЫ В МИНУТУ:'
+DOTA_Tooltip_ability_filler_ability_hp_heal_pct: '%ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ:'
+DOTA_Tooltip_ability_filler_ability_mp_heal_pct: '%ВОССТАНОВЛЕНИЕ МАНЫ:'

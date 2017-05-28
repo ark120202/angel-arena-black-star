@@ -5,7 +5,7 @@ DOTA_Tooltip_ability_anakim_wisps_physical_damage_pct: '%ФИЗИЧЕСКИЙ У
 DOTA_Tooltip_ability_anakim_wisps_critical_chance_pct: '%ШАНС КРИТА:'
 DOTA_Tooltip_ability_anakim_wisps_critical_damage_pct: '%КРИТИЧЕСКИЙ УРОН:'
 
-DOTA_Tooltip_ability_anakim_solar_flare_Description: 'Anakim !!!TODO!!! и наносит урон всем противникам попавшим в область применения, оглушая их и уменьшая сопротивление магическому урону.'
+DOTA_Tooltip_ability_anakim_solar_flare_Description: 'Anakim при помощи света наносит урон всем противникам попавшим в область применения, оглушая их и уменьшая сопротивление магическому урону.'
 DOTA_Tooltip_ability_anakim_solar_flare_duration: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
 DOTA_Tooltip_ability_anakim_solar_flare_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_anakim_solar_flare_magical_resistance_pct: '%СНИЖЕНИЕ СОПРОТИВЛЕНИЯ МАГИЧЕСКОМУ УРОНУ:'

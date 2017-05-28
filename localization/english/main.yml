@@ -18,11 +18,12 @@ dota_hud_error_item_from_bosses: This item or one of it's components can be reci
 dota_hud_error_target_health_overflow: Target health is more then trigger point
 dota_hud_error_ability_cant_target_boss: Ability can't target bosses
 dota_hud_error_ability_cant_target_champion: Ability can't target champions
+arena_hud_error_team_changer_players: Other team already has more players than yours
+
 DOTA_Tooltip_modifier_neutral_champion: Champion
 DOTA_Tooltip_modifier_neutral_champion_Description: 'This neutral is a champion, so it''s %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death'
-bitch_lina_bubble_text: 'Hey, do you want to have a good time? Then give me 2 Casino Coins'
-riki_pocket_riki_chat_notify_text: '%s1 has sold Riki.'
 
+riki_pocket_riki_chat_notify_text: '%s1 has sold Riki.'
 npc_dota_hero_riki: Rikimaru
 npc_dota_hero_wisp: Wisp
 npc_dota_hero_skeleton_king: Skeleton King
@@ -377,3 +378,10 @@ DOTA_Tooltip_ability_life_stealer_feast_arena_hp_leech_percent: '%LIFE LEECH:'
 
 DOTA_Tooltip_ability_meepo_divided_we_stand_Description: 'Meepo summons an imperfect, semi-autonomous duplicate of himself, which can gain gold and experience as he does and shares his experience, attributes and abilities. However, the clones cannot purchase any items, but they share some items Meepo himself has. If any of the clones die, they all die.'
 DOTA_Tooltip_ability_meepo_divided_we_stand_Note0: Clones can't use Arcane Boots.
+
+DOTA_Tooltip_ability_filler_ability_Description: Generates an aura that provides increased health and mana regeneration to nearby allies when activated. Regeneration values increases with each minute.
+DOTA_Tooltip_ability_filler_ability_Note1: ""
+DOTA_Tooltip_ability_filler_ability_hp_heal_growth: 'HEALTH REGEN / MIN:'
+DOTA_Tooltip_ability_filler_ability_mp_heal_growth: 'MANA REGEN / MIN:'
+DOTA_Tooltip_ability_filler_ability_hp_heal_pct: '%HEALTH REGEN:'
+DOTA_Tooltip_ability_filler_ability_mp_heal_pct: '%MANA REGEN:'

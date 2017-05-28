@@ -1,6 +1,7 @@
 if StatsClient == nil then
 	_G.StatsClient = class({})
-	StatsClient.ServerAddress = "https://stats.angelarenablackstar.com"
+	StatsClient.ServerAddress = "https://stats.dota-aabs.com/"
+	StatsClient.RetryDelay = 5
 end
 
 function StatsClient:Init()
@@ -19,13 +20,13 @@ function StatsClient:FetchPreGameData()
 		end
 	end
 	--Should return rating table
-	StatsClient:Send("startMatch", data, function(response)
+	--[[StatsClient:Send("fetchPreGameMatchData", data, function(response)
 		for pid, data in ipairs(response.players) do
 			PLAYER_DATA[pid].serverData = data
 			PLAYER_DATA[pid].Inventory = data.inventory or {}
 			PlayerTables:SetTableValue("stats_client", pid, data)
 		end
-	end)
+	end, math.huge)]]
 end
 
 --StatsClient:OnGameBegin()
@@ -95,7 +96,7 @@ function StatsClient:OnGameEnd(winner)
 	PrintTable(data)
 	StatsClient:Send("endMatch", data, function(response)
 		PrintTable(response)
-	end, 4)
+	end, math.huge)
 end
 
 function StatsClient:HandleError(err)
@@ -162,21 +163,31 @@ function StatsClient:VoteGuide(data)
 end
 
 function StatsClient:Send(path, data, callback, retryCount, protocol, _currentRetry)
+	if type(retryCount) == "boolean" then
+		retryCount = retryCount and math.huge or 0
+	elseif not retryCount then
+		retryCount = 0
+	end
 	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path)
 	request:SetHTTPRequestGetOrPostParameter("data", JSON:encode(data))
 	request:Send(function(response)
 		if response.StatusCode ~= 200 or not response.Body then
-			print("error, status == " .. response.StatusCode)
+			print("[StatsClient] error, status == " .. response.StatusCode)
+			if response.Body then
+				print("[StatsClient] " .. response.StatusCode .. ": " .. response.Body)
+			end
 			local currentRetry = (_currentRetry or 0) + 1
-			if currentRetry < (retryCount or 0) then
-				Timers:CreateTimer(1, function()
-					print("Retry (" .. currentRetry .. ")")
+			if currentRetry < retryCount then
+				Timers:CreateTimer(self.RetryDelay, function()
+					print("[StatsClient] Retry (" .. currentRetry .. ")")
 					StatsClient:Send(path, data, callback, retryCount, protocol, currentRetry)
 				end)
 			end
 		else
 			local obj, pos, err = JSON:decode(response.Body, 1, nil)
-			if callback then
+			if not obj then
+				print("[StatsClient] Critical Error: request to " .. self.ServerAddress .. path .. " returned undefined. Check server configuration")
+			elseif callback then
 				callback(obj)
 			end
 		end

@@ -34,6 +34,7 @@ game/rich_presence_persistent_data.txt
 
 npm-debug.log
 
+generator/settings.yml
 generator/node_modules/*
 !generator/node_modules/vdf-extra
 !generator/node_modules/dota-custom-game-toolkit

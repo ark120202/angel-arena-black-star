@@ -8,7 +8,7 @@ function RocketBarrage(keys)
 	end
 	local units = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_ANY_ORDER, false)
 	if #units > 0 then
-		if not caster:HasModifier("modifier_gyrocopter_flak_cannon_arena") then
+		if not caster:HasModifier("modifier_gyrocopter_flak_cannon_arena") or not caster:HasScepter() then
 			units = {units[RandomInt(1, #units)]}
 		end
 		for _,v in ipairs(units) do

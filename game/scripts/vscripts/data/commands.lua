@@ -193,7 +193,7 @@ CHAT_COMMANDS = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
 		f = function(args, hero, playerID)
 			if PlayerResource:IsValidPlayerID(tonumber(args[1])) then
-				MakePlayerAbandoned(tonumber(args[1]))
+				PlayerResource:MakePlayerAbandoned(tonumber(args[1]))
 			end
 		end
 	},

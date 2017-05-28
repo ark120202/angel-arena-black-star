@@ -13,6 +13,9 @@ function modifier_hero_out_of_game:CheckState()
 		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
 		[MODIFIER_STATE_INVULNERABLE] = true,
 		[MODIFIER_STATE_OUT_OF_GAME] = true,
+		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+		[MODIFIER_STATE_MUTED] = true,
+		[MODIFIER_STATE_HEXED] = true
 	}
 end
 

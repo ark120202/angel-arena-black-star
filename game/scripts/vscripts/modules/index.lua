@@ -18,6 +18,7 @@ local modules = {
 	"structures",
 	"attributes",
 	"antiafk",
+	"events_helper",
 	"meepo_fixes" -- until rewrite
 }
 
@@ -38,10 +39,10 @@ for k, v in ipairs(modules) do
 	end
 end
 if #errors > 0 then
-	print("#### Module loading error ####")
+	print("\n#### Module loading error ####")
 	for _,v in ipairs(errors) do
 		print(v)
 	end
 	print("##############################")
-	error("Found " .. #errors .. " while loading modules")
+	error("Found " .. #errors .. " errors while loading modules")
 end

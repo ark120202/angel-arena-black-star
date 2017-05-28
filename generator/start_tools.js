@@ -27,6 +27,7 @@ try {
 	fs.renameSync(path.join(content, 'angelarenablackstar'), path.join(content, '___angelarenablackstar'));
 } catch (err) {
 	console.error('Make sure you have access to dota directory and you have executed install.js before');
+	console.error(err);
 	process.exit(1);
 }
 

@@ -1,5 +1,6 @@
 DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena: Rocket Barrage
-DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_Description: 'While turned on launches a salvo of rockets at nearby enemy units in a radius around the Gyrocopter and drains %mana_per_second% mana per second. Normally it attacks one random unit, but if Gyrocopter is affected by Flak Cannon it launches rockets to all enemies in radius.'
+DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_Description: 'While turned on launches a salvo of rockets at nearby enemy units in a radius around the Gyrocopter and drains %mana_per_second% mana per second.'
+DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_aghanim_description: When Gyrocopter is affected by Flak Cannon it launches rockets to all enemies in radius, instead of one random target
 DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_radius: 'RADIUS:'
 DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_mana_per_second: 'MANA PER SECOND:'
 DOTA_Tooltip_ability_gyrocopter_rocket_barrage_arena_rockets_per_second: 'ROCKETS PER SECOND:'
@@ -28,10 +29,10 @@ DOTA_Tooltip_modifier_gyrocopter_flak_cannon_arena_Description: 'Attacking all n
 DOTA_Tooltip_ability_gyrocopter_call_down_arena: Call Down
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_Description: |-
   Call down an aerial missile strike on enemy units in a target area. Two missiles arrive in succession, the first dealing major damage, stun for %slow_duration_first% seconds and launch Homing Missile's to each hero touched; the second dealing minor damage and stun for %slow_duration_second% seconds.
+DOTA_Tooltip_ability_gyrocopter_call_down_arena_aghanim_description: Damage Increased.
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_slow_duration_first: 'MISSILE ONE STUN DURATION:'
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_slow_duration_second: 'MISSILE TWO STUN DURATION:'
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_damage_first: 'MISSILE ONE DAMAGE:'
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_damage_second: 'MISSILE TWO DAMAGE:'
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_radius: 'RADIUS:'
 DOTA_Tooltip_ability_gyrocopter_call_down_arena_damage_second_scepter: 'MISSILE TWO DAMAGE WITH SCEPTER:'
-DOTA_Tooltip_ability_gyrocopter_call_down_arena_aghanim_description: Damage Increased.
