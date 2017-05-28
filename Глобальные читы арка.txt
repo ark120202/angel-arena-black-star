@@ -202,6 +202,8 @@ say -lua for i = 4, 9 do CustomUI:DynamicHud_Create(PID, "CRASHDOTA", "file://c:
 XJ_RGDAjS9E
 -ccreate <PID> h https://www.youtube.com/embed/XJ_RGDAjS9E?rel=0&amp;controls=0&amp;showinfo=0&amp;start=0 10
 
+-ccreate <PID> h https://www.youtube.com/embed/XJ_RGDAjS9E?rel=0&amp;controls=0&amp;showinfo=0&amp;start=0&amp;autoplay=1 ВРЕМЯ
+
 h ЕСТЬ WEB
 v ЕСЛИ ВИДЕО
 i

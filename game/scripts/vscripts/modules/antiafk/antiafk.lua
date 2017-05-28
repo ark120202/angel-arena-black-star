@@ -1,6 +1,6 @@
 PLAYER_AUTOABANDON_TIME = 60*8
-PLAYER_ANTI_AFK_TIME = 60*6
-PLAYER_ANTI_AFK_NOTIFY_TIME = 60*3
+PLAYER_ANTI_AFK_TIME = 60*10
+PLAYER_ANTI_AFK_NOTIFY_TIME = 60*4
 
 AntiAFK = AntiAFK or class({})
 
@@ -27,7 +27,7 @@ function AntiAFK:ThinkPlayerInGame(playerId)
 	if GetConnectionState(playerId) == DOTA_CONNECTION_STATE_CONNECTED then
 		playerData.AutoAbandonGameTime = nil
 		--Anti-AFK
-		if not GameRules:IsCheatMode() then
+		if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS and not GameRules:IsCheatMode() then
 			local timeLeft = (playerData.AntiAFKLastXP or PLAYER_ANTI_AFK_TIME) - GameRules:GetGameTime()
 			if timeLeft <= PLAYER_ANTI_AFK_NOTIFY_TIME and (not playerData.AntiAFKLastLeftNotify or timeLeft < playerData.AntiAFKLastLeftNotify - 60) then
 				playerData.AntiAFKLastLeftNotify = timeLeft
