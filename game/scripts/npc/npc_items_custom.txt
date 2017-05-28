@@ -9156,7 +9156,7 @@
 		}
 	}
 
-	"item_recipe_butterfly_of_sins"
+	"item_recipe_untouchable_butterfly"
 	{
 		"BaseClass"						"item_datadriven"
 		"ID"							"10239"
@@ -9164,23 +9164,22 @@
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"500"
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_butterfly_of_sins"
+		"ItemResult"					"item_untouchable_butterfly"
 		"ItemRequirements"
 		{
 			"01"						"item_butterfly_arena;item_butterfly_arena"
 		}
 	}
 
-	"item_butterfly_of_sins"
+	"item_untouchable_butterfly"
 	{
 		"BaseClass"						"item_datadriven"
 		"ID"							"10240"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/butterfly_of_sins"
-
 		"AbilityCooldown"				"30"
 		"ItemQuality"					"legendary"
-		"ItemAliases"					"bfly;butterfly;butterfly of sins;damage"
+		"ItemAliases"					"bfly;butterfly;untouchable_butterfly;damage"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		// Special
@@ -9233,14 +9232,14 @@
 			}
 			"ApplyModifier"
 			{
-				"ModifierName"		"modifier_item_butterfly_of_sins_evasion"
+				"ModifierName"		"modifier_item_untouchable_butterfly_evasion"
 				"Target" 			"CASTER"
 			}
 		}
 
 		"Modifiers"
 		{
-			"modifier_item_butterfly_of_sins"
+			"modifier_item_untouchable_butterfly"
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
@@ -9255,7 +9254,7 @@
 				}
 			}
 
-			"modifier_item_butterfly_of_sins_evasion"
+			"modifier_item_untouchable_butterfly_evasion"
 			{
 				"Duration"			"%duration"
 				"Passive"			"0"
@@ -9272,7 +9271,7 @@
 		}
 	}
 
-	"item_recipe_rapier_of_pain"
+	"item_recipe_legendary_butterfly"
 	{
 		"BaseClass"						"item_datadriven"
 		"ID"							"10241"
@@ -9280,23 +9279,22 @@
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"200"
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_rapier_of_pain"
+		"ItemResult"					"legendary_butterfly"
 		"ItemRequirements"
 		{
-			"01"						"item_butterfly_of_sins;item_butterfly_arena"
+			"01"						"item_untouchable_butterfly;item_butterfly_arena"
 		}
 	}
 
-	"item_rapier_of_pain"
+	"item_legendary_butterfly"
 	{
 		"BaseClass"						"item_datadriven"
 		"ID"							"10242"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/rapier_of_pain"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityCooldown"				"25"
 		"ItemQuality"					"legendary"
-		"ItemAliases"					"bfly;butterfly;butterfly of sins;damage;"
+		"ItemAliases"					"bfly;butterfly;legendary;damage"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		// Special
@@ -9355,14 +9353,14 @@
 			}
 			"ApplyModifier"
 			{
-				"ModifierName"		"modifier_item_rapier_of_pain_evasion"
+				"ModifierName"		"modifier_item_legendary_butterfly_evasion"
 				"Target" 			"CASTER"
 			}
 		}
 
 		"Modifiers"
 		{
-			"modifier_item_rapier_of_pain"
+			"modifier_item_legendary_butterfly"
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
@@ -9375,7 +9373,6 @@
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion"
 				}
-			}
 
 				"Properties"
 				{
@@ -9383,7 +9380,7 @@
 				}
 			}
 
-			"modifier_item_rapier_of_pain_evasion"
+			"modifier_item_legendary_butterfly_evasion"
 			{
 				"Duration"			"%duration"
 				"Passive"			"0"
@@ -9398,7 +9395,6 @@
 			}
 		}
 	}
-
 	"item_recipe_heavy_war_axe_of_rage_damage"
 	{
 		"BaseClass"						"item_datadriven"
