@@ -1,6 +1,7 @@
-if Gold == nil then
-	_G.Gold = class({})
-end
+CUSTOM_GOLD_PER_TICK = 6
+CUSTOM_GOLD_TICK_TIME = 0.6
+
+Gold = Gold or class({})
 
 function Gold:UpdatePlayerGold(unitvar)
 	local playerID = UnitVarToPlayerID(unitvar)

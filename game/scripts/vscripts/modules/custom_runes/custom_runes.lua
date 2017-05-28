@@ -1,3 +1,5 @@
+CUSTOM_RUNE_SPAWN_TIME = 120
+
 if not CustomRunes then
 	CustomRunes = class({})
 	CustomRunes.ModifierApplier = CreateItem("item_dummy", nil, nil)
@@ -235,7 +237,7 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 	elseif runeType == ARENA_RUNE_SPIKES then
 		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_spikes", {duration = settings.duration}):SetStackCount(settings.damage_reflection_pct)
 	end
-	
+
 	unit:EmitSound(settings.sound or "General.RunePickUp")
 end
 
@@ -309,7 +311,7 @@ function CustomRunes:ExecuteOrderFilter(order)
 							rune:ClearNetworkableEntityInfo()
 							UTIL_Remove(rune)
 							unit:Stop()
-							
+
 							local bottle
 							local runeKeeper
 							for i = 0, 5 do
@@ -322,7 +324,7 @@ function CustomRunes:ExecuteOrderFilter(order)
 									end
 								end
 							end
-							
+
 							if runeKeeper and runeKeeper.RuneContainer then
 								table.insert(runeKeeper.RuneContainer, {rune=runeType, expireGameTime = GameRules:GetGameTime() + runeKeeper:GetAbilitySpecial("store_duration")})
 								Notifications:Bottom(issuerID, {text="#item_rune_keeper_rune_picked_up", duration = 8})

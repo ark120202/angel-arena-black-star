@@ -1,9 +1,7 @@
 ARENA_VERSION = "1.5"
 GAMEMODE_INITIALIZATION_STATUS = {}
 
-if not GameMode then
-	_G.GameMode = class({})
-end
+GameMode = GameMode or class({})
 
 local requirements = {
 	"libraries/keyvalues",
@@ -25,11 +23,8 @@ local requirements = {
 	--------------------------------------------------
 	"data/constants",
 	"data/globals",
-	"data/containers",
 	"data/kv_data",
 	"data/modifiers",
-	"data/shop",
-	"data/itembuilds",
 	"data/abilities",
 	"data/ability_functions",
 	"data/ability_shop",

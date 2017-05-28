@@ -1,6 +1,7 @@
 DOTA_DUEL_STATUS_NONE = 0
 DOTA_DUEL_STATUS_WATING = 1
 DOTA_DUEL_STATUS_IN_PROGRESS = 2
+ModuleRequire(..., "data")
 if Duel == nil then
 	_G.Duel = class({})
 	Duel.TimeUntilDuel = 0

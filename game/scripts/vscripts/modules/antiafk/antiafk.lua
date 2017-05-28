@@ -1,3 +1,7 @@
+PLAYER_AUTOABANDON_TIME = 60*8
+PLAYER_ANTI_AFK_TIME = 60*6
+PLAYER_ANTI_AFK_NOTIFY_TIME = 60*3
+
 AntiAFK = AntiAFK or class({})
 
 function AntiAFK:Think(playerId)

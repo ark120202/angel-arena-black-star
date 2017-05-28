@@ -20,16 +20,15 @@ function StatsClient:FetchPreGameData()
 		end
 	end
 	--Should return rating table
-	--[[StatsClient:Send("fetchPreGameMatchData", data, function(response)
-		for pid, data in ipairs(response.players) do
+	StatsClient:Send("fetchPreGameMatchData", data, function(response)
+		for pid, data in ipairs(response) do
 			PLAYER_DATA[pid].serverData = data
 			PLAYER_DATA[pid].Inventory = data.inventory or {}
 			PlayerTables:SetTableValue("stats_client", pid, data)
 		end
-	end, math.huge)]]
+	end, math.huge)
 end
 
---StatsClient:OnGameBegin()
 function StatsClient:OnGameEnd(winner)
 	local time = GameRules:GetDOTATime(false, true)
 	--local debug = true

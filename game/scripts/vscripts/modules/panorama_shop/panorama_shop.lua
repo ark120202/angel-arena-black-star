@@ -1,3 +1,5 @@
+ModuleRequire(..., "data")
+
 if PanoramaShop == nil then
 	_G.PanoramaShop = class({})
 	PanoramaShop._RawItemData = {}

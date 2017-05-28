@@ -1,6 +1,3 @@
--- In this file you can set up all the properties and settings for your game mode.
-
-
 ENABLE_HERO_RESPAWN = true
 UNIVERSAL_SHOP_MODE = false
 ALLOW_SAME_HERO_SELECTION = true
@@ -57,29 +54,3 @@ AUTO_LAUNCH_DELAY = IsInToolsMode() and 3 or 15                  -- How long sho
 LOCK_TEAM_SETUP = false                 -- Should we lock the teams initially?  Note that the host can still unlock the teams
 
 USE_CUSTOM_TEAM_COLORS = false           -- Should we use custom team colors?
-
-------------------------------------------------------------------
-PLAYER_AUTOABANDON_TIME = 60*8
-PLAYER_ANTI_AFK_TIME = 60*6
-PLAYER_ANTI_AFK_NOTIFY_TIME = 60*3
-MAX_SPAWNBOXES_SELECTED = 3
-
-DUEL_SETTINGS = {
-	DelaysFromLast = {
-		[0] = 300,
-		[30] = 240,
-		[60] = 180,
-	},
-	DurationBase = 60,
-	DurationForPlayer = 20,
-	Duel1x1Duration = 90,
-	WinGold_Base = 100,
-	WinGold_PerDuel = 400,
-}
-CUSTOM_STARTING_GOLD = 625
-CUSTOM_GOLD_FOR_RANDOM_TOTAL = 1000
-CUSTOM_GOLD_REPICK_COST = 100
-CUSTOM_GOLD_PER_TICK = 6
-CUSTOM_GOLD_TICK_TIME = 0.6
-
-CUSTOM_RUNE_SPAWN_TIME = 120
