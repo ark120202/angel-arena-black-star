@@ -217,7 +217,7 @@
 				{
 					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion_active_pct"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility_active"
-					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"99999"
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"500"
 				}
 			}
 
