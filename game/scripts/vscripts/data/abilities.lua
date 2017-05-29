@@ -164,6 +164,7 @@ BOSS_BANNED_ABILITIES = {
 PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_dota_hero_wisp"] = true,
 	["npc_dota_hero_invoker"] = true,
+	["npc_dota_hero_meepo"] = true,
 	["npc_arena_hero_sara"] = true,
 }
 
