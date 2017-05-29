@@ -3918,12 +3918,12 @@
 		"ID"							"10141"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2550"
+		"ItemCost"						"500"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_blood_of_midas"
 		"ItemRequirements"
 		{
-			"01"						"item_ring_of_health"
+			"01"						"item_hand_of_midas_arena;item_ring_of_health"
 		}
 	}
 
@@ -3943,7 +3943,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_regen"			"15"
+				"bonus_regen"			"10"
 			}
 			"02"
 			{
@@ -3953,7 +3953,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"gold_multiplier"		"4"
+				"gold_multiplier"		"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_attackspeed"		"35"
 			}
 		}
 
@@ -3968,6 +3973,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_regen"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attackspeed"
 				}
 			}
 		}
@@ -12031,7 +12037,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"8800"
+		"ItemCost"						"1000"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_orb_of_essences"
 		"ItemRequirements"

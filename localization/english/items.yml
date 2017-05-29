@@ -702,6 +702,7 @@ DOTA_Tooltip_ability_item_blood_of_midas: Blood of Midas
 DOTA_Tooltip_ability_item_blood_of_midas_Description: 'Passive: Rune Enchant - Any picked up bounty rune will have increased bounty.'
 DOTA_Tooltip_ability_item_blood_of_midas_arena_Note0: Stacks with any another rune increment.
 DOTA_Tooltip_ability_item_blood_of_midas_bonus_regen: +$hp_regen
+DOTA_Tooltip_ability_item_blood_of_midas_bonus_attackspeed: +$attack
 DOTA_Tooltip_ability_item_blood_of_midas_xp_multiplier: 'XP BONUS MULTIPLIER:'
 DOTA_Tooltip_ability_item_blood_of_midas_gold_multiplier: 'GOLD BONUS MULTIPLIER:'
 DOTA_Tooltip_ability_item_bloodstone_arena: Bloodstone
