@@ -1320,7 +1320,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_night_stalker_crippling_fear_cd = {
 		icon = "night_stalker_crippling_fear",
 		cost = 1,
-		group = ,
+		group = 5,
 		requirement = "night_stalker_crippling_fear",
 		special_values = {value = 8},
 		effect = {abilities = "special_bonus_unique_night_stalker"}

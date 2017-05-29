@@ -231,8 +231,6 @@ MEEPO_SHARED_ITEMS = {
 
 	item_heart_cyclone = true,
 	item_edge_of_vyse = true,
-	item_hand_of_midas_2_arena = true,
-	item_hand_of_midas_3_arena = true,
 	item_radiance_arena = true,
 	item_radiance_2 = true,
 	item_radiance_3 = true,

@@ -3,7 +3,7 @@
 	"npc_arena_boss_l1_v1"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"15000"
+		"Bosses_GoldToAll"			"7500"
 		"Bosses_RespawnDuration"	"300"
 
 		// General
@@ -18,8 +18,8 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"90"
-		"MagicalResistance"			"60"
+		"ArmorPhysical"				"45"
+		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
@@ -27,12 +27,12 @@
 		"AttackDamageMin"			"4000"
 		"AttackDamageMax"			"5000"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.2"
+		"AttackRate"				"0.15"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"900"
 
-		"BountyXP"					"15000"
+		"BountyXP"					"30000"
 
 		"HealthBarOffset"			"400"
 
@@ -62,7 +62,7 @@
 	"npc_arena_boss_l1_v2"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"15000"
+		"Bosses_GoldToAll"			"7500"
 		"Bosses_RespawnDuration"	"300"
 
 		// General
@@ -77,19 +77,19 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"100"
+		"ArmorPhysical"				"55"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"4500"
 		"AttackDamageMax"			"5500"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.2"
+		"AttackRate"				"0.15"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"250"
 
-		"BountyXP"					"18000"
+		"BountyXP"					"36000"
 
 		"HealthBarOffset"			"400"
 
@@ -119,7 +119,7 @@
 	"npc_arena_boss_l2_v1"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"25000"
+		"Bosses_GoldToAll"			"12500"
 		"Bosses_RespawnDuration"	"300"
 
 		// General
@@ -134,8 +134,8 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"200"
-		"MagicalResistance"			"50"
+		"ArmorPhysical"				"100"
+		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
@@ -143,12 +143,12 @@
 		"AttackDamageMin"			"5000"
 		"AttackDamageMax"			"6600"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.2"
+		"AttackRate"				"0.15"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"900"
 
-		"BountyXP"					"25000"
+		"BountyXP"					"50000"
 
 		"HealthBarOffset"			"400"
 
@@ -178,7 +178,7 @@
 	"npc_arena_boss_l2_v2"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"15000"
+		"Bosses_GoldToAll"			"7500"
 		"Bosses_RespawnDuration"	"300"
 
 		// General
@@ -193,19 +193,19 @@
 		"Ability1"					"boss_any_passive"
 		"Ability2"					"boss_armor"
 
-		"ArmorPhysical"				"180"
+		"ArmorPhysical"				"90"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"5200"
 		"AttackDamageMax"			"6600"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.2"
+		"AttackRate"				"0.15"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"250"
 
-		"BountyXP"					"25000"
+		"BountyXP"					"50000"
 
 		"HealthBarOffset"			"400"
 
@@ -235,7 +235,7 @@
 	"npc_arena_boss_central"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"100000"
+		"Bosses_GoldToAll"			"50000"
 		"Bosses_RespawnDuration"	"600"
 
 		// General
@@ -251,7 +251,7 @@
 		"Ability2"					"boss_armor"
 		"Ability3"					"boss_central_passive"
 
-		"ArmorPhysical"				"300"
+		"ArmorPhysical"				"150"
 		"MagicalResistance"			"50"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -265,7 +265,7 @@
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"950"
 
-		"BountyXP"					"30000"
+		"BountyXP"					"60000"
 
 		"HealthBarOffset"			"400"
 
@@ -295,7 +295,7 @@
 	"npc_arena_boss_freya"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"15000"
+		"Bosses_GoldToAll"			"8000"
 		"Bosses_RespawnDuration"	"300"
 
 		// General
@@ -311,19 +311,19 @@
 		"Ability5"					"boss_any_passive"
 		"Ability6"					"boss_armor"
 
-		"ArmorPhysical"				"180"
+		"ArmorPhysical"				"90"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"5200"
 		"AttackDamageMax"			"6600"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.2"
+		"AttackRate"				"0.15"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"250"
 
-		"BountyXP"					"25000"
+		"BountyXP"					"50000"
 
 		"HealthBarOffset"			"400"
 
@@ -353,7 +353,7 @@
 	"npc_arena_boss_zaken"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"15000"
+		"Bosses_GoldToAll"			"7500"
 		"Bosses_RespawnDuration"	"300"
 
 		// General
@@ -369,19 +369,19 @@
 		"Ability5"					"boss_any_passive"
 		"Ability6"					"boss_armor"
 
-		"ArmorPhysical"				"180"
+		"ArmorPhysical"				"90"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"5200"
 		"AttackDamageMax"			"6600"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.2"
+		"AttackRate"				"0.15"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"250"
 
-		"BountyXP"					"25000"
+		"BountyXP"					"50000"
 
 		"HealthBarOffset"			"400"
 
@@ -411,7 +411,7 @@
 	"npc_arena_boss_anakim"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"100000"
+		"Bosses_GoldToAll"			"50000"
 		"Bosses_RespawnDuration"	"600"
 
 		// General
@@ -427,27 +427,27 @@
 		"Ability5"					"boss_any_passive"
 		"Ability6"					"boss_armor"
 
-		"ArmorPhysical"				"1874"
+		"ArmorPhysical"				"120"
 		"MagicalResistance"			"60"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"10404"
 		"AttackDamageMax"			"15367"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.2"
+		"AttackRate"				"0.15"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"600"
 
-		"BountyXP"					"91296"
+		"BountyXP"					"100000"
 
 		"HealthBarOffset"			"400"
 
 		"MovementSpeed"				"550"
 
-		"StatusHealth"				"1639146"
+		"StatusHealth"				"1000000"
 		"StatusHealthRegen"			"800"
-		"StatusMana"				"43380"
+		"StatusMana"				"50000"
 		"StatusManaRegen"			"50"
 
 		"MovementTurnRate"			"1.0"
@@ -469,7 +469,7 @@
 	"npc_arena_boss_kel_thuzad"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"100000"
+		"Bosses_GoldToAll"			"50000"
 		"Bosses_RespawnDuration"	"600"
 
 		// General
@@ -488,8 +488,8 @@
 		"Ability5"	"boss_kel_thuzad_summon_undead"
 		"Ability6"	"boss_kel_thuzad_erebus"
 
-		"ArmorPhysical"				"0"
-		"MagicalResistance"			"0"
+		"ArmorPhysical"				"150"
+		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		"AttackDamageMin"			"0"

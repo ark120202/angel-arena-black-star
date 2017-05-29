@@ -695,6 +695,7 @@ DOTA_Tooltip_ability_item_chest_of_midas_gold: 'ЗОЛОТО:'
 DOTA_Tooltip_ability_item_blood_of_midas: Blood of Midas
 DOTA_Tooltip_ability_item_blood_of_midas_Description: 'Пассивная: Rune Enchant - Каждая поднятая руна богатства даст вам больше золота и опыта.'
 DOTA_Tooltip_ability_item_blood_of_midas_arena_Note0: Складывается с любым другим усилением руны.
+DOTA_Tooltip_ability_item_blood_of_midas_bonus_attackspeed: +$attack
 DOTA_Tooltip_ability_item_blood_of_midas_bonus_regen: +$hp_regen
 DOTA_Tooltip_ability_item_blood_of_midas_xp_multiplier: 'МНОЖИТЕЛЬ ОПЫТА:'
 DOTA_Tooltip_ability_item_blood_of_midas_gold_multiplier: 'МНОЖИТЕЛЬ ЗОЛОТА:'
