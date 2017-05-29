@@ -22,10 +22,6 @@ function CDOTA_BaseNPC:IsRealCreep()
 	return self.SSpawner ~= nil and self.SpawnerType ~= nil
 end
 
-function CDOTA_BaseNPC:GetSpellDamageAmplify()
-	return GetSpellDamageAmplify(self)
-end
-
 function GetFullHeroName(unit)
 	return unit.UnitName or unit:GetUnitName()
 end
@@ -166,7 +162,7 @@ end
 
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
-	if Duel:IsDuelOngoing() then return 0 end
+	if Duel:IsDuelOngoing() then return 1 end
 	local time = (5 + self:GetLevel() * 0.1) + (self.RespawnTimeModifier or 0)
 	if self.talent_keys and self.talent_keys.respawn_time_reduction then
 		time = time + self.talent_keys.respawn_time_reduction

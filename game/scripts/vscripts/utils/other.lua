@@ -562,10 +562,6 @@ function GetNotScaledDamage(damage, unit)
 	return math.floor(damage/(1 + Attributes:GetTotalGrantedSpellAmplify(unit) / 100) + 0.5)
 end
 
-function GetSpellDamageAmplify(unit)
-	return unit:GetIntellect() * 0.0625
-end
-
 function IsUltimateAbility(ability)
 	return bit.band(ability:GetAbilityType(), 1) == 1
 end

@@ -62,9 +62,6 @@ function GameMode:OnNPCSpawned(keys)
 							npc.PocketItem = nil
 							npc.PocketHostEntity = nil
 						end
-						if Duel:IsDuelOngoing() then
-							Duel:SetUpVisitor(npc)
-						end
 					end
 				end
 			end

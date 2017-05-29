@@ -10,7 +10,6 @@ if Duel == nil then
 	Duel.EntIndexer = {}
 	Duel.TimesTeamWins = {}
 	Duel.AnnouncerCountdownCooldowns = {}
-	--Duel.Particles = {}
 	Duel.DuelCounter = 0
 	Duel.DuelBox1 = Vector(0,0,0)
 	Duel.DuelBox2 = Vector(0,0,0)
@@ -77,7 +76,10 @@ function Duel:StartDuel()
 	for i,v in pairs(Duel.heroes_teams_for_duel) do
 		for _,unit in pairs(v) do
 			local pid = unit:GetPlayerOwnerID()
-			if unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
+			if not unit:IsAlive() then
+				unit:RespawnHero(false, false, false)
+			end
+			if PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 				heroes_in_teams[i] = (heroes_in_teams[i] or 0) + 1
 			end
 		end
@@ -88,14 +90,6 @@ function Duel:StartDuel()
 		EmitAnnouncerSound("announcer_ann_custom_mode_20")
 		GameRules:SetHeroRespawnEnabled(false)
 		Duel.IsFirstDuel = Duel.DuelCounter == 0
-		--[[for _,v in ipairs(Entities:FindAllByName("npc_dota_arena_statue")) do
-			local particle1 = ParticleManager:CreateParticle("particles/arena/units/arena_statue/statue_eye.vpcf", PATTACH_ABSORIGIN, v)
-			local particle2 = ParticleManager:CreateParticle("particles/arena/units/arena_statue/statue_eye.vpcf", PATTACH_ABSORIGIN, v)
-			ParticleManager:SetParticleControlEnt(particle1, 0, v, PATTACH_POINT_FOLLOW, "attach_eye_l", v:GetAbsOrigin(), true)
-			ParticleManager:SetParticleControlEnt(particle2, 0, v, PATTACH_POINT_FOLLOW, "attach_eye_r", v:GetAbsOrigin(), true)
-			table.insert(Duel.Particles, particle1)
-			table.insert(Duel.Particles, particle2)
-		end]]
 		Duel:SetDuelTimer(DUEL_SETTINGS.DurationBase + DUEL_SETTINGS.DurationForPlayer * heroes_to_fight_n)
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
 		local rndtbl = {}
@@ -160,9 +154,6 @@ function Duel:StartDuel()
 end
 
 function Duel:EndDuel()
-	--[[for _,v in ipairs(Duel.Particles) do
-		ParticleManager:DestroyParticle(v, false)
-	end]]
 	local winner = Duel:GetWinner()
 	if winner then
 		if winner == DOTA_TEAM_GOODGUYS then
@@ -268,7 +259,7 @@ function Duel:EndDuelForUnit(unit)
 		end
 	end)
 
-	if not unit:IsAlive() and PlayerResource:GetRespawnSeconds(unit:GetPlayerID()) <= 1 then
+	if not unit:IsAlive() then
 		unit:RespawnHero(false, false, false)
 	end
 	if unit.FindClearSpaceForUnitAndSetCamera then
