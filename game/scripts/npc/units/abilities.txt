@@ -697,7 +697,7 @@
 		"AttackDamageMin"			"0"
 		"AttackDamageMax"			"0"
 		"AttackRate"				"0.4"
-		"AttackAnimationPoint"		"0.2"
+		"AttackAnimationPoint"		"0.41" // 25/60
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 

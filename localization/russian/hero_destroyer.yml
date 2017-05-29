@@ -11,8 +11,8 @@ DOTA_Tooltip_ability_destroyer_seal_of_limit_max_health_pct: 'МАКСИМУМ �
 DOTA_Tooltip_ability_destroyer_seal_of_limit_movement_speed: 'СКОРОСТЬ:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_bonus_armor: 'БРОНЯ:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_health_regen: 'РЕГЕНЕРАЦИЯ ЖИЗНЕНЫХ СИЛ:'
-DOTA_Tooltip_modifier_destroyer_seal_of_limit_Description: Здоровье Destroyer не может подыматься выше %max_health_pct%%%.
 DOTA_Tooltip_modifier_destroyer_seal_of_limit_: Seal of Limit
+DOTA_Tooltip_modifier_destroyer_seal_of_limit_Description: Максимальное здоровье ограничено, но скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, регенерация здоровья увеличена на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
 
 DOTA_Tooltip_ability_destroyer_body_reconstruction_Description: 'Destroyer полностью перестраивает своё тело, мгновенно восстанавливая здоровье и ману, а также сбрасывая время перезарядки всех его предметов.'
 

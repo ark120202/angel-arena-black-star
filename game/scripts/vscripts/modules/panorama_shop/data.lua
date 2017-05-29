@@ -1,4 +1,4 @@
---First level - tab,  second level - category (column),  third level - item name
+-- First level - tab, second level - category (column), third level - item
 PANORAMA_SHOP_ITEMS = {
 	{
 		{
@@ -235,13 +235,13 @@ PANORAMA_SHOP_ITEMS = {
 		{
 			"item_quelling_fury",
 			"item_dark_flow",
+			"item_butterfly_of_wind",
+			"item_edge_of_vyse",
 			"item_piercing_blade",
 			"item_elemental_fury",
-			"item_edge_of_vyse",
-			"item_butterfly_of_sins",
+			"item_timelords_butterfly",
 			"item_diffusal_style",
 			"item_demon_king_bar",
-			"item_rapier_of_pain",
 			"item_fallhammer",
 			"item_haganemushi",
 			"item_radiance_frozen",

@@ -1,0 +1,357 @@
+""
+{
+	"item_recipe_butterfly_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_butterfly_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_talisman_of_evasion;item_quarterstaff;item_eagle"
+		}
+	}
+
+	"item_butterfly_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_butterfly"
+
+		"AbilityCooldown"				"25"
+		"ItemShopTags"					"agi;damage;evasion;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bfly;butterfly"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility"					"35"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"30"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_evasion"					"30"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"30"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"DOTA_Item.Butterfly"
+				"Target" 			"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_item_butterfly_arena_evasion"
+				"Target" 			"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_butterfly_arena"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion"
+				}
+			}
+
+			"modifier_item_butterfly_arena_evasion"
+			{
+				"Duration"			"%duration"
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"450"
+				}
+			}
+		}
+	}
+
+	"item_recipe_butterfly_of_wind"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"500"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_butterfly_of_wind"
+		"ItemRequirements"
+		{
+			"01"						"item_butterfly_arena;item_butterfly_arena;item_wind_lace"
+		}
+	}
+
+	"item_butterfly_of_wind"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/butterfly_of_wind"
+		"AbilityCooldown"				"25"
+		"ItemQuality"					"legendary"
+		"ItemAliases"					"bfly;butterfly;butterfly_of_wind;damage"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility"					"70"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"60"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_evasion"					"35"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"60"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_movement_speed"			"35"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_evasion_active_pct"		"35"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility_active"			"50"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"DOTA_Item.Butterfly"
+				"Target" 			"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_item_butterfly_of_wind_evasion"
+				"Target" 			"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_butterfly_of_wind"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%bonus_movement_speed"
+				}
+			}
+
+			"modifier_item_butterfly_of_wind_evasion"
+			{
+				"Duration"			"%duration"
+				"IsHidden"			"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion_active_pct"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility_active"
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"99999"
+				}
+			}
+
+		}
+	}
+
+	"item_recipe_timelords_butterfly"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"200"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_timelords_butterfly"
+		"ItemRequirements"
+		{
+			"01"						"item_butterfly_of_wind;item_butterfly_arena"
+		}
+	}
+
+	"item_timelords_butterfly"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/timelords_butterfly"
+		"AbilityCooldown"				"25"
+		"ItemQuality"					"timelords"
+		"ItemAliases"					"bfly;butterfly;timelords;damage"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility"					"100"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"100"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_evasion"					"40"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"90"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_movement_speed"			"50"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dodge_chance_pct"				"15"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_evasion_active_pct"		"60"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility_active"			"90"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"6"
+			}
+		}
+
+		"precache"
+		{
+			"particle"							"particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"DOTA_Item.Butterfly"
+				"Target" 			"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_item_timelords_butterfly_evasion"
+				"Target" 			"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_timelords_butterfly"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%bonus_movement_speed"
+				}
+			}
+
+			"modifier_item_timelords_butterfly_evasion"
+			{
+				"Duration"			"%duration"
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion_active_pct"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility_active"
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"99999"
+				}
+			}
+		}
+	}
+}

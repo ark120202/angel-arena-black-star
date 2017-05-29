@@ -8,10 +8,11 @@ function modifier_item_demon_king_bar_curse:GetEffectAttachType()
 	return PATTACH_OVERHEAD_FOLLOW
 end
 
+function modifier_item_demon_king_bar_curse:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+
 if IsServer() then
-	function modifier_item_demon_king_bar_curse:DeclareFunctions()
-		return {MODIFIER_PROPERTY_TOOLTIP}
-	end
 
 	function modifier_item_demon_king_bar_curse:OnCreated()
 		self:StartIntervalThink(0.5)

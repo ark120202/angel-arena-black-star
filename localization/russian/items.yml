@@ -1092,28 +1092,30 @@ DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_lost_per_sec_pct: '%•
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_lost_per_sec_min: '• МИН. ЗОЛОТА В СЕКУНДУ:'
 DOTA_Tooltip_modifier_item_golden_eagle_relic_enabled: Swift Strike
 DOTA_Tooltip_modifier_item_golden_eagle_relic_enabled_Description: 'Непрерывно тепряет золото, Wealth Approach наносит чистый урон, скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-DOTA_Tooltip_ability_item_untouchable_butterfly: Untouchable Butterfly
-DOTA_Tooltip_ability_item_untouchable_butterfly_Description: |-
+
+DOTA_Tooltip_ability_item_butterfly_of_wind_Description: |-
   Активируемая: Flutter - Даёт владельцу максимальную скорость передвижения, %bonus_evasion_active_pct%%% уклонения и %bonus_agility_active% ловкости на %duration% секунд.
 
   Сочетается по закону убывающей полезности с другими источниками уклонения.
-DOTA_Tooltip_ability_item_untouchable_butterfly_bonus_evasion_active_pct: |-
+DOTA_Tooltip_ability_item_butterfly_of_wind_bonus_evasion_active_pct: |-
   %СПОСОБНОСТЬ FLUTTER:
   • ДОПОЛНИТЕЛЬНЫЙ ШАНС НА УКЛОНЕНИЕ:
-DOTA_Tooltip_ability_item_untouchable_butterfly_bonus_agility_active: '• ДОПОЛНИТЕЛЬНАЯ ЛОВКОСТЬ:'
-DOTA_Tooltip_ability_item_untouchable_butterfly_duration: '• ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_modifier_item_legendary_butterfly_evasion: Flutter
-DOTA_Tooltip_modifier_item_legendary_butterfly_evasion_Description: 'Движется с максимальной скоростью передвижения, уклонение увеличено на %dMODIFIER_PROPERTY_EVASION_CONSTANT%%%, ловкость увеличена на %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%'
-DOTA_Tooltip_ability_item_legendary_butterfly: Legendary Butterfly
-DOTA_Tooltip_ability_item_legendary_butterfly_Description: |-
+DOTA_Tooltip_ability_item_butterfly_of_wind_bonus_agility_active: '• ДОПОЛНИТЕЛЬНАЯ ЛОВКОСТЬ:'
+DOTA_Tooltip_ability_item_butterfly_of_wind_duration: '• ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_modifier_item_butterfly_of_wind_evasion_Description: 'Движется с максимальной скоростью передвижения, уклонение увеличено на %dMODIFIER_PROPERTY_EVASION_CONSTANT%%%, ловкость увеличена на %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%'
+
+DOTA_Tooltip_ability_item_timelords_butterfly_Description: |-
   Активируемая: Flutter - Даёт владельцу максимальную скорость передвижения, %bonus_evasion_active_pct%%% уклонения и %bonus_agility_active% ловкости на %duration% секунд.
+  Пассивная: Timelord - Даёт владельцу %dodge_chance_pct%%% шанс уклониться от любого типа урона.
 
   Сочетается по закону убывающей полезности с другими источниками уклонения.
-DOTA_Tooltip_ability_item_legendary_butterfly_bonus_evasion_active_pct: |-
+DOTA_Tooltip_ability_item_timelords_butterfly_dodge_chance_pct: '%ШАНС СРАБАТЫВАНИЯ TIMELORD'
+DOTA_Tooltip_ability_item_timelords_butterfly_bonus_evasion_active_pct: |-
   %СПОСОБНОСТЬ FLUTTER:
   • ДОПОЛНИТЕЛЬНЫЙ ШАНС НА УКЛОНЕНИЕ:
-DOTA_Tooltip_ability_item_legendary_butterfly_bonus_agility_active: '• ДОПОЛНИТЕЛЬНАЯ ЛОВКОСТЬ:'
-DOTA_Tooltip_ability_item_legendary_butterfly_duration: '• ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_item_timelords_butterfly_bonus_agility_active: '• ДОПОЛНИТЕЛЬНАЯ ЛОВКОСТЬ:'
+DOTA_Tooltip_ability_item_timelords_butterfly_duration: '• ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_modifier_item_timelords_butterfly_evasion_Description: 'Движется с максимальной скоростью передвижения, уклонение увеличено на %dMODIFIER_PROPERTY_EVASION_CONSTANT%%%, ловкость увеличена на %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%'
 
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health: Heavy War Axe of Rage - Здоровье
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health_Description: |-

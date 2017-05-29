@@ -12,11 +12,10 @@ DOTA_Tooltip_ability_anakim_solar_flare_duration: 'ДЛИТЕЛЬНОСТЬ ОГ
 DOTA_Tooltip_ability_anakim_solar_flare_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_anakim_solar_flare_magical_resistance_pct: '%СНИЖЕНИЕ СОПРОТИВЛЕНИЯ МАГИЧЕСКОМУ УРОНУ:'
 DOTA_Tooltip_ability_anakim_divine_gift: Divine Gift
-DOTA_Tooltip_ability_anakim_divine_gift_Description: 'Восполняет жизненые силы союзников увеличивая их регенерцию здоровья, силу и сопротивление магическому урону.'
+DOTA_Tooltip_ability_anakim_divine_gift_Description: 'Восполняет жизненые силы всех союзников на картеm, увеличивая их регенерцию здоровья, силу и сопротивление магическому урону.'
 DOTA_Tooltip_ability_anakim_divine_gift_health_regen: 'ДОП. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_anakim_divine_gift_bonus_strength: 'ДОП. СИЛА:'
 DOTA_Tooltip_ability_anakim_divine_gift_magical_resistance_pct: '%ДОП. СОПРОТИВЛЕНИЕ МАГИЧЕСКОМУ УРОНУ:'
-DOTA_Tooltip_ability_anakim_divine_gift_global_radius: 'РАДИУС:'
 
 DOTA_Tooltip_ability_anakim_summon_divine_knight: Divine Knight
 DOTA_Tooltip_ability_anakim_summon_divine_knight_Description: 'Anakim призывает своего верного воина света. Только один воин света может быть призван.'
@@ -32,3 +31,5 @@ DOTA_Tooltip_ability_anakim_transfer_pain: Transfer Pain
 DOTA_Tooltip_ability_anakim_transfer_pain_Description: Anakim перенаправляет потоки части получаемого урона своему рыцарю, призанному способностью Divine Knight.
 DOTA_Tooltip_ability_anakim_transfer_pain_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_anakim_transfer_pain_transfered_damage_pct: '%ПЕРЕНАПРАВЛЕНИЕ УРОНА:'
+DOTA_Tooltip_modifier_anakim_transfer_pain: Transfer Pain
+DOTA_Tooltip_modifier_anakim_transfer_pain_Description: Часть получаемого урона передаётся рыцарю, если он находится достаточно близко

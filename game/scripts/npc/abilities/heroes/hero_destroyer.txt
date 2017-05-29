@@ -131,7 +131,6 @@
 			"particle"				"particles/arena/units/heroes/hero_destroyer/destroyer_seal_of_limit.vpcf"
 		}
 
-
 		"OnSpellStart"
 		{
 			"ApplyModifier"
