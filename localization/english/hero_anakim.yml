@@ -1,0 +1,36 @@
+DOTA_Tooltip_ability_anakim_wisps: Wisps
+DOTA_Tooltip_ability_anakim_wisps_Description: 'Anakim attacks her enemies with wisps, causing her damage to deal pure, magical and physical damage at the same time, and also gives her a chance to deal critical strikes. All Anaikm''s attack damage will be considered as ability damage.'
+DOTA_Tooltip_ability_anakim_wisps_pure_damage_pct: '%PURE DAMAGE:'
+DOTA_Tooltip_ability_anakim_wisps_magic_damage_pct: '%MAGICAL DAMAGE:'
+DOTA_Tooltip_ability_anakim_wisps_physical_damage_pct: '%PHYSICAL DAMAGE:'
+DOTA_Tooltip_ability_anakim_wisps_critical_chance_pct: '%CRIT CHANCE:'
+DOTA_Tooltip_ability_anakim_wisps_critical_damage_pct: '%CRITICAL STRIKE:'
+
+DOTA_Tooltip_ability_anakim_solar_flare: Solar Flare
+DOTA_Tooltip_ability_anakim_solar_flare_Description: 'Using light Anakim deals damage to all enemies in selected area, stunning them and reducing their resistance to magical damage.'
+DOTA_Tooltip_ability_anakim_solar_flare_duration: 'STUN DURATION:'
+DOTA_Tooltip_ability_anakim_solar_flare_radius: 'RADIUS:'
+DOTA_Tooltip_ability_anakim_solar_flare_magical_resistance_pct: '%MAGICAL DAMAGE RESISTANCE REDUCTION:'
+
+DOTA_Tooltip_ability_anakim_divine_gift: Divine Gift
+DOTA_Tooltip_ability_anakim_divine_gift_Description: 'Replenishes vitality of all her allies, increasing their health regeneration, strength and magical damage resistance.'
+DOTA_Tooltip_ability_anakim_divine_gift_health_regen: 'BONUS HEALTH REGENERATION:'
+DOTA_Tooltip_ability_anakim_divine_gift_bonus_strength: 'BONUS STRENGTH:'
+DOTA_Tooltip_ability_anakim_divine_gift_magical_resistance_pct: '%BONUS MAGICAL DAMAGE RESISTANCE:'
+
+DOTA_Tooltip_ability_anakim_transfer_pain: Transfer Pain
+DOTA_Tooltip_ability_anakim_transfer_pain_Description: Anakim redirects streams of incoming damage to her knight, summoned with Divine Knight ability. This ability works only when knight is close enough
+DOTA_Tooltip_ability_anakim_transfer_pain_radius: 'RADIUS:'
+DOTA_Tooltip_ability_anakim_transfer_pain_transfered_damage_pct: '%DAMAGE TRANSFER:'
+DOTA_Tooltip_modifier_anakim_transfer_pain: Transfer Pain
+DOTA_Tooltip_modifier_anakim_transfer_pain_Description: A part of incoming damage will be redirected to Knight, if he is close enough.
+
+DOTA_Tooltip_ability_anakim_summon_divine_knight: Divine Knight
+DOTA_Tooltip_ability_anakim_summon_divine_knight_Description: 'Anakim summons her faithful knight of light. Only one knight can be summoned at once.'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_duration: 'DURATION:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_health: 'KNIGHT HEALTH:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_damage: 'KNIGHT DAMAGE:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_armor: 'KNIGHT ARMOR:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_health_regen: 'KNIGHT HEALTH REGENERATION:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_bounty: 'GOLD FOR KILL:'
+DOTA_Tooltip_ability_anakim_summon_divine_knight_knight_xp: 'EXPERIENCE FOR KILL:'
