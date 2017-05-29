@@ -3942,23 +3942,23 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_regen"			"10"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_attackspeed"		"35"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"3"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_regen"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"gold_multiplier"		"3"
+				"xp_multiplier"			"3"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_attackspeed"		"35"
+				"gold_multiplier"		"3"
 			}
 		}
 
@@ -7238,24 +7238,39 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"15 80"
+				"bonus_agility"			"0 30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"20 40"
+				"bonus_attack_speed"	"15 80"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"100 200"
+				"bonus_damage"			"20 40"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_delay"			"0.15 0.1"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"		"100 200"
 			}
 			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_delay"			"0.2 0.15"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"-100"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_slow"		"-100 -150"
+			}
+			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"slow_duration"			"1.0 1.0"
@@ -7302,11 +7317,10 @@
 			{
 				"IsDebuff"			"1"
 				"Duration"			"%slow_duration"
-
-				"States"
+				"Properties"
 				{
-					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_ROOTED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movement_slow"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_slow"
 				}
 			}
 		}
@@ -7382,8 +7396,18 @@
 			}
 			"08"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"-100"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_slow"		"-100 -150"
+			}
+			"10"
+			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"1.5 1.0"
+				"slow_duration"			"1.0 1.0"
 			}
 		}
 
@@ -7428,11 +7452,10 @@
 			{
 				"IsDebuff"			"1"
 				"Duration"			"%slow_duration"
-
-				"States"
+				"Properties"
 				{
-					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_ROOTED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movement_slow"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_slow"
 				}
 			}
 		}

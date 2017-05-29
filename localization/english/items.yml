@@ -989,18 +989,20 @@ DOTA_Tooltip_ability_item_dark_flow_duration: 'DURATION:'
 DOTA_Tooltip_modifier_item_dark_flow_stack: Dark Flow
 DOTA_Tooltip_modifier_item_dark_flow_stack_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_echo_sabre_arena: Echo Sabre
-DOTA_Tooltip_ability_item_echo_sabre_arena_Description: 'Passive: Double Hit - Causes melee attacks to attack twice after a short delay. The double attacks apply a %slow_duration% second disarm and root on each strike. Second attack isn''t affected by attack point and will be done instantly.'
+DOTA_Tooltip_ability_item_echo_sabre_arena_Description: 'Passive: Double Hit - Causes melee attacks to attack twice after a short delay. The double attacks apply a %slow_duration% second %movement_slow%%% movement slow and %attack_speed_slow% attack speed slow on each strike. Second attack isn''t affected by attack point and will be done instantly.'
 DOTA_Tooltip_ability_item_echo_sabre_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_echo_sabre_arena_bonus_strength: +$str
 DOTA_Tooltip_ability_item_echo_sabre_arena_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_echo_sabre_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_echo_sabre_arena_bonus_mana_regen: '%+$mana_regen'
 DOTA_Tooltip_ability_item_echo_sabre_arena_attack_delay: 'SECOND HIT DELAY:'
+DOTA_Tooltip_ability_item_echo_sabre_arena_movement_slow: '%MOVEMENT SLOW:'
+DOTA_Tooltip_ability_item_echo_sabre_arena_attack_speed_slow: 'ATTACK SPEED SLOW:'
 DOTA_Tooltip_ability_item_echo_sabre_arena_slow_duration: 'DEBUFF DURATION:'
 DOTA_Tooltip_modifier_item_echo_sabre_arena_debuff: Echo Sabre
-DOTA_Tooltip_modifier_item_echo_sabre_arena_debuff_Description: Can't move and disarmed.
+DOTA_Tooltip_modifier_item_echo_sabre_arena_debuff_Description: 'Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_echo_sabre_2: Echo Sabre 2
-DOTA_Tooltip_ability_item_echo_sabre_2_Description: 'Passive: Double Hit - Causes melee attacks to attack twice after a short delay. The double attacks apply a %slow_duration% second disarm and root on each strike. Second attack isn''t affected by attack point and will be done instantly.'
+DOTA_Tooltip_ability_item_echo_sabre_2_Description: 'Passive: Double Hit - Causes melee attacks to attack twice after a short delay. The double attacks apply a %slow_duration% second %movement_slow%%% movement slow and %attack_speed_slow% attack speed slow on each strike. Second attack isn''t affected by attack point and will be done instantly.'
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_strength: +$str
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_agility: +$agi
@@ -1008,8 +1010,11 @@ DOTA_Tooltip_ability_item_echo_sabre_2_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_mana_regen: '%+$mana_regen'
 DOTA_Tooltip_ability_item_echo_sabre_2_attack_delay: 'SECOND HIT DELAY:'
+DOTA_Tooltip_ability_item_echo_sabre_2_movement_slow: '%MOVEMENT SLOW:'
+DOTA_Tooltip_ability_item_echo_sabre_2_attack_speed_slow: 'ATTACK SPEED SLOW:'
 DOTA_Tooltip_ability_item_echo_sabre_2_slow_duration: 'DEBUFF DURATION:'
 DOTA_Tooltip_modifier_item_echo_sabre_2_debuff: Echo Sabre 2
+DOTA_Tooltip_modifier_item_echo_sabre_2_debuff_Description: 'Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_coffee_bean: Coffee Bean
 DOTA_Tooltip_ability_item_coffee_bean_Description: 'Active: Caffeinated - within %duration% seconds your next executed non-ultimate ability will be refreshed.'
 DOTA_Tooltip_ability_item_coffee_bean_duration: 'DURATION:'

@@ -942,16 +942,21 @@ DOTA_Tooltip_ability_item_dark_flow_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_modifier_item_dark_flow_stack: Dark Flow
 DOTA_Tooltip_modifier_item_dark_flow_stack_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_echo_sabre_arena: Echo Sabre
-DOTA_Tooltip_ability_item_echo_sabre_arena_Description: 'Пассивная: Double Hit - Позволяет героям ближнего боя совершать двойную атаку, которая на %slow_duration% секунды запрещает противнику передвигаться и атаковать.'
+DOTA_Tooltip_ability_item_echo_sabre_arena_Description: 'Пассивная: Double Hit - Позволяет героям ближнего боя совершать двойную атаку, которая на %slow_duration% секунды замедляет скорость передвижения на %movement_slow%%% и скорость атаки на %attack_speed_slow%.'
 DOTA_Tooltip_ability_item_echo_sabre_arena_attack_delay: 'ЗАДЕРЖКА ПЕРЕД ВТОРОЙ АТАКОЙ:'
+DOTA_Tooltip_ability_item_echo_sabre_arena_movement_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_item_echo_sabre_arena_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_echo_sabre_arena_slow_duration: 'ДЛИТЕЛЬНОСТЬ ЭФФЕКТА:'
 DOTA_Tooltip_modifier_item_echo_sabre_arena_debuff: Echo Sabre
-DOTA_Tooltip_modifier_item_echo_sabre_arena_debuff_Description: Не может двигаться и атаковать.
+DOTA_Tooltip_modifier_item_echo_sabre_arena_debuff_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_echo_sabre_2: Echo Sabre 2
-DOTA_Tooltip_ability_item_echo_sabre_2_Description: 'Пассивная: Double Hit - Позволяет героям ближнего боя совершать двойную атаку, которая на %slow_duration% секунды запрещает противнику передвигаться и атаковать.'
+DOTA_Tooltip_ability_item_echo_sabre_2_Description: 'Пассивная: Double Hit - Позволяет героям ближнего боя совершать двойную атаку, которая на %slow_duration% секунды замедляет скорость передвижения на %movement_slow%%% и скорость атаки на %attack_speed_slow%.'
 DOTA_Tooltip_ability_item_echo_sabre_2_attack_delay: 'ЗАДЕРЖКА ПЕРЕД ВТОРОЙ АТАКОЙ:'
+DOTA_Tooltip_ability_item_echo_sabre_2_movement_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_item_echo_sabre_2_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_echo_sabre_2_slow_duration: 'ДЛИТЕЛЬНОСТЬ ЭФФЕКТА:'
 DOTA_Tooltip_modifier_item_echo_sabre_2_debuff: Echo Sabre 2
+DOTA_Tooltip_modifier_item_echo_sabre_2_debuff_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_coffee_bean: Coffee Bean
 DOTA_Tooltip_ability_item_coffee_bean_Description: 'Активируемая: Caffeinated - в течение %duration% секунд ваша следующая применённая не-ультимативная способность будет мгновенно перезаряжена.'
 DOTA_Tooltip_ability_item_coffee_bean_duration: 'ДЛИТЕЛЬНОСТЬ:'
