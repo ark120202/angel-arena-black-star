@@ -63,7 +63,7 @@ function UpdatePanoramaHUD() {
 	var minimap = FindDotaHudElement('minimap_block');
 	$('#DynamicMinimapRoot').style.height = ((minimap.actuallayoutheight + 16) / sh * 100) + '%';
 	$('#DynamicMinimapRoot').style.width = ((minimap.actuallayoutwidth + 16) / sw * 100) + '%';
-	var glyphpos = FindDotaHudElement('glyph').GetPositionWithinWindow();
+	var glyphpos = FindDotaHudElement('RadarButton').GetPositionWithinWindow();
 	if (glyphpos != null && !isNaN(glyphpos.x) && !isNaN(glyphpos.y))
 		$('#SwitchDynamicMinimapButton').style.position = (glyphpos.x / sw * 100) + '% ' + (glyphpos.y / sh * 100) + '% 0';
 	var pcs = FindDotaHudElement('PortraitContainer').GetPositionWithinWindow();
@@ -98,7 +98,7 @@ function AutoUpdatePanoramaHUD() {
 function HookPanoramaPanels() {
 	FindDotaHudElement('QuickBuyRows').visible = false;
 	FindDotaHudElement('shop').visible = false;
-	FindDotaHudElement('RadarButton').visible = false;
+	FindDotaHudElement('RadarButton').style.opacity = 0.01;
 	FindDotaHudElement('HUDSkinMinimap').visible = false;
 	FindDotaHudElement('combat_events').visible = false;
 	FindDotaHudElement('ChatEmoticonButton').visible = false;

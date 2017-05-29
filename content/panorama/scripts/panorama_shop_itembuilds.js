@@ -3,7 +3,7 @@ var SelectedBuild = {},
 
 function UpdateItembuildsForHero() {
 	var heroName = GetPlayerHeroName(Game.GetLocalPlayerID());
-	if (heroName && heroName !== 'npc_dota_hero_arena_base' && heroName !== 'npc_dota_hero_target_dummy' && LastHero !== heroName) {
+	if (LastHero !== heroName && heroName && heroName !== 'npc_dota_hero_arena_base' && heroName !== 'npc_dota_hero_target_dummy') {
 		LastHero = heroName;
 		LoadGuidesForHero(heroName);
 	}
@@ -100,7 +100,7 @@ function CreateItembuildGroup(groupsRoot, title, content) {
 		dragCallbacks.offsetY = 0;
 		return true;
 	});
-	
+
 	$.RegisterEventHandler('DragEnd', itemsRoot, function(panelId, draggedPanel) {
 		//$.GetContextPanel().RemoveClass("DropDownMode")
 		draggedPanel.DeleteAsync(0);
@@ -234,7 +234,7 @@ function GuidesBrowserLoadBuild(build) {
 	$.GetContextPanel().SetHasClass('ShowVoteAndFavorite', typeof steamID === 'string');
 	$.GetContextPanel().SetHasClass('HasYouTubeVideo', build.youtube != null);
 	$.GetContextPanel().SetHasClass('CanPublishBuild', steamID === -1);
-	
+
 	$.GetContextPanel().SetHasClass('VotedYes', _.includes(build.votes_up, localSteamId));
 	$.GetContextPanel().SetHasClass('VotedNo', _.includes(build.votes_down, localSteamId));
 	$.GetContextPanel().SetDialogVariable('guide_player_rating', build.votes || 0);
