@@ -74,7 +74,7 @@ gulp.task('panorama', ['xml', 'css', 'js']);
 
 gulp.task('build', [/*'panorama', */'localization']);
 
-gulp.task('watch', () => {
+gulp.task('watch', ['localization'], () => {
 	gulp.watch(paths.localization + '/**/*.yml', ['localization']);
 });
 

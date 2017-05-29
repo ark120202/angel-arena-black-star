@@ -1191,9 +1191,10 @@ DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_lost_per_sec_pct: '%•
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_lost_per_sec_min: '• MINIMAL GOLD PER SECOND:'
 DOTA_Tooltip_modifier_item_golden_eagle_relic_enabled: Swift Strike
 DOTA_Tooltip_modifier_item_golden_eagle_relic_enabled_Description: 'Continually loses gold, Wealth Approach deals pure damage, movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+
 DOTA_Tooltip_ability_item_butterfly_of_wind: Butterfly of Wind
 DOTA_Tooltip_ability_item_butterfly_of_wind_Description: |-
-  Active: Flutter - Gives owner max movement speed, %bonus_evasion_active_pct%%% evasion and %bonus_agility_active% agility for %duration% seconds.
+  Active: Flutter - Increases owner's movement speed to %movement_speed_active%, %bonus_evasion_active_pct%%% evasion and %bonus_agility_active% agility for %duration% seconds.
 
   Stacks diminishingly with other sources of Evasion.
 DOTA_Tooltip_ability_item_butterfly_of_wind_bonus_agility: +$agi
@@ -1203,9 +1204,10 @@ DOTA_Tooltip_ability_item_butterfly_of_wind_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_butterfly_of_wind_bonus_movement_speed: +$move_speed
 DOTA_Tooltip_ability_item_butterfly_of_wind_bonus_evasion_active_pct: '%FLUTTER BONUS EVASION:'
 DOTA_Tooltip_ability_item_butterfly_of_wind_bonus_agility_active: 'FLUTTER BONUS AGILITY:'
+DOTA_Tooltip_ability_item_butterfly_of_wind_movement_speed_active: 'FLUTTER MOVEMENT SPEED:'
 DOTA_Tooltip_ability_item_butterfly_of_wind_duration: 'FLUTTER DURATION:'
 DOTA_Tooltip_modifier_item_butterfly_of_wind_evasion: Flutter
-DOTA_Tooltip_modifier_item_butterfly_of_wind_evasion_Description: 'Has max movement speed, %dMODIFIER_PROPERTY_EVASION_CONSTANT%%% evasion and agility increased by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%'
+DOTA_Tooltip_modifier_item_butterfly_of_wind_evasion_Description: 'Movement speed increased to %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, %dMODIFIER_PROPERTY_EVASION_CONSTANT%%% evasion and agility increased by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%'
 
 DOTA_Tooltip_ability_item_timelords_butterfly: Timelord's Butterfly
 DOTA_Tooltip_ability_item_timelords_butterfly_Description: |-
@@ -1225,7 +1227,7 @@ DOTA_Tooltip_ability_item_timelords_butterfly_bonus_evasion_active_pct: |-
 DOTA_Tooltip_ability_item_timelords_butterfly_bonus_agility_active: '• BONUS AGILITY:'
 DOTA_Tooltip_ability_item_timelords_butterfly_duration: '• FLUTTER DURATION:'
 DOTA_Tooltip_modifier_item_timelords_butterfly_evasion: Flutter
-DOTA_Tooltip_modifier_item_timelords_butterfly_evasion_Description: 'Have max movement speed, %dMODIFIER_PROPERTY_EVASION_CONSTANT%%% evasion and agility increased by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%'
+DOTA_Tooltip_modifier_item_timelords_butterfly_evasion_Description: 'Has max movement speed, %dMODIFIER_PROPERTY_EVASION_CONSTANT%%% evasion and agility increased by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%'
 
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health: Heavy War Axe of Rage - Health
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health_Description: |-

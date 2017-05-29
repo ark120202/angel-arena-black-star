@@ -1100,15 +1100,16 @@ DOTA_Tooltip_modifier_item_golden_eagle_relic_enabled: Swift Strike
 DOTA_Tooltip_modifier_item_golden_eagle_relic_enabled_Description: 'Непрерывно тепряет золото, Wealth Approach наносит чистый урон, скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 
 DOTA_Tooltip_ability_item_butterfly_of_wind_Description: |-
-  Активируемая: Flutter - Даёт владельцу максимальную скорость передвижения, %bonus_evasion_active_pct%%% уклонения и %bonus_agility_active% ловкости на %duration% секунд.
+  Активируемая: Flutter - Увеличивает скорость передвижения владельца до %movement_speed_active%, %bonus_evasion_active_pct%%% уклонения и %bonus_agility_active% ловкости на %duration% секунд.
 
   Сочетается по закону убывающей полезности с другими источниками уклонения.
 DOTA_Tooltip_ability_item_butterfly_of_wind_bonus_evasion_active_pct: |-
   %СПОСОБНОСТЬ FLUTTER:
   • ДОПОЛНИТЕЛЬНЫЙ ШАНС НА УКЛОНЕНИЕ:
 DOTA_Tooltip_ability_item_butterfly_of_wind_bonus_agility_active: '• ДОПОЛНИТЕЛЬНАЯ ЛОВКОСТЬ:'
+DOTA_Tooltip_ability_item_butterfly_of_wind_movement_speed_active: '• СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_butterfly_of_wind_duration: '• ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_modifier_item_butterfly_of_wind_evasion_Description: 'Движется с максимальной скоростью передвижения, уклонение увеличено на %dMODIFIER_PROPERTY_EVASION_CONSTANT%%%, ловкость увеличена на %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%'
+DOTA_Tooltip_modifier_item_butterfly_of_wind_evasion_Description: 'Скорость передвижения увеличена до %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, уклонение увеличено на %dMODIFIER_PROPERTY_EVASION_CONSTANT%%%, ловкость увеличена на %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%'
 
 DOTA_Tooltip_ability_item_timelords_butterfly_Description: |-
   Активируемая: Flutter - Даёт владельцу максимальную скорость передвижения, %bonus_evasion_active_pct%%% уклонения и %bonus_agility_active% ловкости на %duration% секунд.
