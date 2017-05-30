@@ -6712,9 +6712,14 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"active_bonus_strength"			"50"
+				"active_damage_reduction_pct"	"-90"
 			}
 			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"active_bonus_strength"			"50"
+			}
+			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"active_bonus_attackspeed"		"150"
@@ -6782,16 +6787,12 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%active_bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%active_bonus_attackspeed"
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"		"1"
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"		"1"
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE"			"1"
-					"MODIFIER_PROPERTY_MIN_HEALTH"						"1"
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%active_damage_reduction_pct"
 				}
 
 				"States"
 				{
-					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"					"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}

@@ -932,16 +932,17 @@ DOTA_Tooltip_ability_item_black_king_bar_6_duration: 'AVATAR DURATION:'
 DOTA_Tooltip_ability_item_black_king_bar_6_active_bonus_strength: 'AVATAR BONUS STRENGTH:'
 DOTA_Tooltip_ability_item_black_king_bar_6_active_bonus_attackspeed: 'AVATAR BONUS ATTACK SPEED:'
 DOTA_Tooltip_ability_item_titanium_bar: Titanium Bar
-DOTA_Tooltip_ability_item_titanium_bar_Description: 'Active: Avatar - Grants Invulnerability, additional strength and attack speed.'
+DOTA_Tooltip_ability_item_titanium_bar_Description: 'Active: Avatar - Grants Spell Immunity, 100% Magic Damage Resistance, additional strength and attack speed, and also reduces all incoming damage by %active_damage_reduction_pct%%%.'
 DOTA_Tooltip_ability_item_titanium_bar_bonus_strength: +$str
 DOTA_Tooltip_ability_item_titanium_bar_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_titanium_bar_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_titanium_bar_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_titanium_bar_duration: 'AVATAR DURATION:'
+DOTA_Tooltip_ability_item_titanium_bar_active_damage_reduction_pct: '%AVATAR DAMAGE REDUCTION:'
 DOTA_Tooltip_ability_item_titanium_bar_active_bonus_strength: 'AVATAR BONUS STRENGTH:'
 DOTA_Tooltip_ability_item_titanium_bar_active_bonus_attackspeed: 'AVATAR BONUS ATTACKSPEED:'
 DOTA_Tooltip_modifier_item_titanium_bar_active: Titanium Bar
-DOTA_Tooltip_modifier_item_titanium_bar_active_Description: 'Invulnerable, strength increased by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+DOTA_Tooltip_modifier_item_titanium_bar_active_Description: 'Spell Immune, 100% resistant to magic damage type, all incoming damage is reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, strength increased by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 DOTA_Tooltip_ability_item_vermillion_robe: Vermillion Robe
 DOTA_Tooltip_ability_item_vermillion_robe_Description: |-
   Active: True Flame - Deal half the caster's current health as damage to itself, then, after %damage_delay% seconds, deals damage in an area around the caster, based on the difference between max and current health.

@@ -896,12 +896,13 @@ DOTA_Tooltip_ability_item_black_king_bar_6_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_black_king_bar_6_active_bonus_strength: 'ДОП. СИЛА:'
 DOTA_Tooltip_ability_item_black_king_bar_6_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
 DOTA_Tooltip_ability_item_titanium_bar: Titanium Bar
-DOTA_Tooltip_ability_item_titanium_bar_Description: 'Активируемая: Avatar - дает неуязвимость, дополнительную силу и скорость атаки.'
+DOTA_Tooltip_ability_item_titanium_bar_Description: 'Активируемая: Avatar - дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки, а также уменьшение всего получаемого урона на %active_damage_reduction_pct%%%.'
 DOTA_Tooltip_ability_item_titanium_bar_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_item_titanium_bar_active_damage_reduction_pct: '%СНИЖЕНИЕ УРОНА:'
 DOTA_Tooltip_ability_item_titanium_bar_active_bonus_strength: 'ДОП. СИЛА:'
 DOTA_Tooltip_ability_item_titanium_bar_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
 DOTA_Tooltip_modifier_item_titanium_bar_active: Titanium Bar
-DOTA_Tooltip_modifier_item_titanium_bar_active_Description: 'Неуязвим, сила увеличена на %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+DOTA_Tooltip_modifier_item_titanium_bar_active_Description: 'Невосприимчив к заклинаниям, имеет полное сопротивление магическому урону, весь получаемый урон уменьшен на %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, сила увеличена на %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 DOTA_Tooltip_ability_item_vermillion_robe: Vermillion Robe
 DOTA_Tooltip_ability_item_vermillion_robe_Description: |-
   Активируемая: True Flame - Наносит половинный урон заклинателю как урон по себе, затем, после %damage_delay% секунд, наносит урон по площади вокруг заклинателя, основываясь на разнице максимального и текущего здоровья.
