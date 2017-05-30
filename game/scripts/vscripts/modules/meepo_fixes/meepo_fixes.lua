@@ -1,4 +1,5 @@
 MeepoFixes = MeepoFixes or class({})
+ModuleRequire(..., "data")
 
 function MeepoFixes:FindMeepos(main, includeMain)
 	local playerId = main:GetPlayerID()

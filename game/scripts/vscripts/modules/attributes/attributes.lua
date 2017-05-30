@@ -40,35 +40,35 @@ end
 
 
 function Attributes:GetTotalGrantedHealth(hero)
-	Attributes:GetHeroTotalGrantedX(hero, "hp", hero:GetStrength())
+	return Attributes:GetHeroTotalGrantedX(hero, "hp", hero:GetStrength())
 end
 
 function Attributes:GetTotalGrantedHealthRegen(hero)
-	Attributes:GetHeroTotalGrantedX(hero, "hp_regen", hero:GetStrength())
+	return Attributes:GetHeroTotalGrantedX(hero, "hp_regen", hero:GetStrength())
 end
 
 function Attributes:GetTotalGrantedArmor(hero)
-	Attributes:GetHeroTotalGrantedX(hero, "armor", hero:GetAgility())
+	return Attributes:GetHeroTotalGrantedX(hero, "armor", hero:GetAgility())
 end
 
 function Attributes:GetTotalGrantedAttackspeed(hero)
-	Attributes:GetHeroTotalGrantedX(hero, "attackspeed", hero:GetAgility())
+	return Attributes:GetHeroTotalGrantedX(hero, "attackspeed", hero:GetAgility())
 end
 
 function Attributes:GetTotalGrantedMana(hero)
-	Attributes:GetHeroTotalGrantedX(hero, "mana", hero:GetIntellect())
+	return Attributes:GetHeroTotalGrantedX(hero, "mana", hero:GetIntellect())
 end
 
 function Attributes:GetTotalGrantedManaRegen(hero)
-	Attributes:GetHeroTotalGrantedX(hero, "mana_regen", hero:GetIntellect())
+	return Attributes:GetHeroTotalGrantedX(hero, "mana_regen", hero:GetIntellect())
 end
 
 function Attributes:GetTotalGrantedSpellAmplify(hero)
-	Attributes:GetHeroTotalGrantedX(hero, "spell_amplify", hero:GetIntellect())
+	return Attributes:GetHeroTotalGrantedX(hero, "spell_amplify", hero:GetIntellect())
 end
 
 function Attributes:GetHeroTotalGrantedX(hero, x, stat)
-	local adjustment = GLOBAL_ATTRIBUTE_ADJUSTMENTS
+	local adjustment = GLOBAL_ATTRIBUTE_ADJUSTMENTS[x]
 	if hero.attributes_adjustments and hero.attributes_adjustments[x] then
 		adjustment = hero.attributes_adjustments[x]
 	end
