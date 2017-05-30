@@ -300,6 +300,10 @@
 	"item_recipe_poor_mans_shield"
 	{
 		"SecretShop"					"0"
+		"ItemRequirements"
+		{
+			"01"						"item_slippers;item_slippers;item_slippers;item_stout_shield"
+		}
 	}
 	"item_poor_mans_shield"
 	{
@@ -309,7 +313,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"9"
+				"bonus_agility"			"12"
 			}
 			"02"
 			{
