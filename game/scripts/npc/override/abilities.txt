@@ -12731,7 +12731,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_multiply_stacks"	"6 7 8 9 10 11 12"
+				"max_multiply_stacks"	"9"
 			}
 
 			"03"

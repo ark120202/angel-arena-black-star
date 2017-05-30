@@ -2593,7 +2593,7 @@
 			"06"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"images_count"										"3"
+				"images_count"										"2"
 			}
 			"07"
 			{
@@ -6836,7 +6836,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_as_damage_pct"		"50"
+				"hp_as_damage_pct"		"30"
 			}
 			"03"
 			{
@@ -10532,13 +10532,13 @@
 		"ID"							"10266"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"5350"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_phantom_cuirass"
 		"ItemRequirements"
 		{
-			"01"						"item_assault;item_phantom_bone;item_soul_of_titan;item_hyperstone;item_hyperstone"
+			"01"						"item_assault;item_platemail;item_hyperstone;"
 		}
 	}
 
@@ -10560,37 +10560,37 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"60"
+				"bonus_armor"		"30"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_hp_regen_pct" "2.5"
+				"bonus_hp_regen_pct" "1"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"50"
+				"bonus_attack_speed"	"35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1050"
+				"aura_radius"			"1000"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_attack_speed"		"130"
+				"aura_attack_speed"		"70"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_positive_armor"	"45"
+				"aura_positive_armor"	"15"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_negative_armor"	"-30"
+				"aura_negative_armor"	"-10"
 			}
 		}
 
@@ -10663,7 +10663,7 @@
 		"ItemResult"					"item_demonic_cuirass"
 		"ItemRequirements"
 		{
-			"01"						"item_phantom_cuirass;item_demon_king_bar"
+			"01"						"item_phantom_cuirass;item_demon_king_bar;item_phantom_bone;item_soul_of_titan"
 		}
 	}
 
@@ -10680,7 +10680,7 @@
 		"ItemShopTags"					"damage;attack_speed;armor;hard_to_tag"
 
 		"AbilityCooldown"				"80"
-		"AbilityManaCost"				"600"
+		"AbilityManaCost"				"400"
 		"AbilityCastRange"				"%aura_radius"
 		"AbilityCastPoint"				"0.4"
 
@@ -10741,7 +10741,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_bonus_hp_regen_pct" "3"
+				"aura_bonus_hp_regen_pct" "1"
 			}
 			"12"
 			{
@@ -13050,7 +13050,7 @@
 		"ItemResult"					"item_scythe_of_sun"
 		"ItemRequirements"
 		{
-			"01"						"item_solar_crest;item_sheepstick;item_aether_lens_5"
+			"01"						"item_solar_crest;item_sheepstick;item_aether_lens_5;item_fallen_star"
 		}
 	}
 
@@ -13120,7 +13120,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"20"
+				"spell_amp_pct"			"40"
 			}
 			"11"
 			{

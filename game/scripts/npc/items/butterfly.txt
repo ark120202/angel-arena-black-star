@@ -240,7 +240,7 @@
 		"ItemResult"					"item_timelords_butterfly"
 		"ItemRequirements"
 		{
-			"01"						"item_butterfly_of_wind;item_butterfly_arena"
+			"01"						"item_butterfly_of_wind;item_butterfly_arena;item_moon_dust"
 		}
 	}
 
