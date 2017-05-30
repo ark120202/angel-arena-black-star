@@ -623,17 +623,17 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_percent"		"18"
+				"lifesteal_percent"		"15"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"berserk_bonus_attack_speed"	"200"
+				"berserk_bonus_attack_speed"	"150"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"berserk_bonus_movement_speed"	"50"
+				"berserk_bonus_movement_speed"	"17"
 			}
 			"07"
 			{
@@ -743,7 +743,7 @@
 	{
 		"SecretShop"					"0"
 		"ItemStockMax"					"6"
-		"ItemStockTime"					"220.0"
+		"ItemStockTime"					"60"
 	}
 	"item_recipe_veil_of_discord"
 	{
@@ -789,7 +789,7 @@
 	{
 		"SecretShop"					"0"
 		"ItemCost"						"0"
-		"AbilityCooldown"				"5.5"
+		"AbilityCooldown"				"6"
 		"AbilitySpecial"
 		{
 			"02"
@@ -896,17 +896,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"50"
+				"damage_bonus"			"35"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"30"
+				"damage_bonus_ranged"	"20"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_range_tooltip"			"500"
+				"quelling_range_tooltip"	"500"
 			}
 			"04"
 			{
@@ -921,7 +921,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"4"
+				"bonus_armor"				"4"
 			}
 		}
 	}
@@ -950,7 +950,7 @@
 	{
 		"SecretShop"					"0"
 		"ItemStockMax"					"20"
-		"ItemStockTime"					"70"
+		"ItemStockTime"					"60"
 		"ItemInitialStockTime"			"150"
 		"AbilitySpecial"
 		{

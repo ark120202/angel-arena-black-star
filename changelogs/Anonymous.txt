@@ -1,55 +1,55 @@
 	 					S:
 
-LVL SHARD
+LVL SHARD:
 	Cost 1250 => 1000
-	Tome of Knowledge
+TOME OF KNOWLEDGE:
 	InitialStockTime 600 => 150
-	StockTime 60 => 49.5
-	Xp bonus 500 => 200
+	StockTime 60 => 60
+	Xp bonus 500 => 300
 	Xp per use 135 => 150
-CLARITY
+CLARITY:
 	Total Mana 190 => 370
 	Buff Duration: 50 => 35
-SCROLL TP
+SCROLL TP:
 	ManaCost: 75 => 25
 	Cooldown: 80 => 45.0
-WARD OBS
+WARD OBS:
 	Cost 150 => 70
-FLASK
+FLASK:
 	Buff Duration: 8 => 12
 	Total health 400 => 1200
-GEM
+GEM:
 	Killable 0 => 1
-	TALON
-	Cooldown: 16 => 12.0
+TALON:
+	Cooldown: 16 => 10.0
 	Damage: bonus Rangerd 40 => 30
-CHARON
+CHARON:
 	Active health regen percent per second 5.75 => 4.25
 	Health regen percent per second 6.25 => 5.25
 	Duration: 4 => 3.0
 	Cooldown: melee 2.5 => 3.5
 	Cooldown: Rangerd tooltip 4 => 5
 	Cooldown: 25 => 22
-SMOKE
+SMOKE:
 	StockMax 3 => 6
-	StockTime 660 => 220.0
-POOR MAN SHIELD
+	StockTime 660 => 60
+POOR MAN SHIELD:
 	Block chance hero 80 => 65
 	Block chance 25 => 51
-ARCANE BOOTS
+ARCANE BOOTS:
 	CastRanger: 900 => 1000
 	Bonus movement 50 => 60
 	Replenish amount 135 => 250
 	Bonus mana 250 => 350
-MOM
+MOM:
 	Cooldown: 12 => 15
-TRANQUIL
+TRANQUIL:
 	Removed wind lace and added ring of protection
-	Cooldown: 13 => 5.5
+	Cooldown: 13 => 5
 	Bonus Armor 0 => 5
 	Broken movement Speed 65 => 75
 	Bonus health regen 14 => 25
-ANGEL WINGS
+ANGEL WINGS:
 	Cooldown: 22 => 18
 	Bonus Attack Ranger 325 => 25
 	Steam footgear
@@ -58,57 +58,64 @@ ANGEL WINGS
 	Bonus movement Speed 55 => 60
 	Pass movement Speed 20 => 25
 	ManaCost: 5 => 50
-SOUL RING
+SOUL RING:
 	Cooldown: 30 => 20.0
 	Mana regen 50 => 75
 	Health regen 3 => 10
 	Duration: 10 => 12
 	Mana gain 150 => 350
 	Health sacrifice 150 => 200
-ACRED BLADE MALE
+SACRED BLADE MALE:
 	Buff Duration: 3.2 => 1.5
 	Bonus hp regen pct 2.4 => 1
 	HOLY KNIGHT SHIELD
 	Buff Duration: 3 => 1
 	Buff chance 20 => 15
 	Bonus Armor 25 => 10
-
+BOTTLE:
+	ItemInitialStockTime 150.0 => 0
+ECHO SABRE:
+	reworked passive ability and now the double attacks apply for 1 second -100% movement slow and -100 attack speed slow instead of root and disarm
  				TALENTS:
+Rebalanced talent's cost, groups, max levels of all talents. Reworked require lvl for each group and now for
+1-st group is available at 5 lvl (old => 2)
+2-nd => 10
+3-rd => 15
+4 => 20
+5 => 25
+6 => 30
+7 => 35
+8 => 40
+9 => 45
+and etc.
 
-TALENT Damage: cost = 8,
- group = 5,
-TALENT EXP GROUP1 - cost = 2,
-TALENT GROUP => LEVEL = [1] = 2,
- talents/gold,cost = 2,
-
- OTHER:
+				OTHER:
 
 DUEL WinGold Base - 300 => 100,
  WinGold PerDuel - 2000 => 400,
-GOLD PER TICK - 3 => 6
  Kills.GoldForStreaks
  [0] = 0,
- [1] = 100 => 50
- [2] = 220 => 100
- [3] = 450 => 250
- [4] = 750 => 500
- [5] = 3000 => 700
- [6] = 4500 => 1000
- [7] = 7500 => 1500
- [8] = 12000 => 2500
- [9] = 18000 => 4000
- [10] = 22500 => 6000
- [11] = 30000 => 9000
- [12] = 33000 => 12000
- [13] = 39000 => 16000
- [14] = 48000 => 21000
+ [1] = 100 => 75
+ [2] = 220 => 250
+ [3] = 450 => 550
+ [4] = 750 => 1250
+ [5] = 3000 => 2350
+ [6] = 4500 => 3330
+ [7] = 7500 => 5000
+ [8] = 12000 => 6500
+ [9] = 18000 => 8500
+ [10] = 22500 => 10000
+ [11] = 30000 => 12000
+ [12] = 33000 => 15000
+ [13] = 39000 => 18000
+ [14] = 48000 => 25000
  [15] = 60000 => 30000
  						HEROES CHANGES:
 
 ALL HEROES CHANGED BAT => 1.7 some heroes 1.4 1.5 1.6 1.8
 
-Invoker - Invoke
-	Invoke now have only one lvl
+Invoker - Invoke:
+	now have only one lvl
 	Cooldown: changed => 6
 	ManaCost: changed => 60
 	Cooldown: Scepter changed 0.1 => 0.5

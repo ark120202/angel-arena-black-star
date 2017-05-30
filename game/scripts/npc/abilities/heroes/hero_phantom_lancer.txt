@@ -16,7 +16,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"750"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -24,10 +24,10 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150 200 250 300 350"
+		"AbilityManaCost"				"125 130 135 140 145 150 155"
 
 		//Damage
-		"AbilityDamage"					"200 300 400 500 600 700 800"
+		"AbilityDamage"					"100 150 200 250 300 350 400"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -36,7 +36,7 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"slow"								"-10 -20 -30 -40 -50 -60 -70"
+				"slow"								"-10 -15 -20 -25 -30 -35 -40"
 			}
 			"02"
 			{
@@ -46,7 +46,7 @@
 			"03"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"illusion_duration"					"4 6 8 10 12 14 15"
+				"illusion_duration"					"2.0 3.5 5.0 6.5 8.0 9.5 11.0"
 			}
 			"04"
 			{
@@ -154,8 +154,8 @@
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.1"
 		"AoERadius"						"325"
-		"AbilityCooldown"				"50 45 40 35 30 25 20"
-		"AbilityManaCost"				"50 75 100 125 150 175 200"
+		"AbilityCooldown"				"25.0 22.5 20.0 17.5 15.0 12.5 10.0"
+		"AbilityManaCost"				"50"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -280,8 +280,8 @@
 		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"phantom_lancer_phantom_edge"
-		"AbilityManaCost"				"80 120 240 360 480 600 720"
-		"AbilityCooldown"				"70 60 50 40 30 20 10"
+		"AbilityManaCost"				"100 110 120 130 140 150 160"
+		"AbilityCooldown"				"40 35 30 25 20 15 10"
 
 		"precache"
 		{
@@ -317,12 +317,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hero_proc_chance"			"30 30 30 40 40 50 50"
+				"hero_proc_chance"			"40 40 40 40 40 45 50"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_proc_chance"		"6 7 8 9 10 11 12"
+				"illusion_proc_chance"		"8"
 			}
 			"03"
 			{
