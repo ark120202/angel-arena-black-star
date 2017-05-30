@@ -35,6 +35,6 @@ function OnTakeDamage(keys)
 	if attacker:IsIllusion() then
 		attacker:TrueKill(ability, caster)
 	end
-	
+
 	attacker:AddNewModifier(caster, ability, "modifier_max_attack_range", {AttackRange = ability:GetAbilitySpecial("attack_range_limit"), duration = 3})
 end

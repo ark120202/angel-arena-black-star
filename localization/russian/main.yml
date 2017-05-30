@@ -12,6 +12,7 @@ dota_hud_error_item_from_bosses: Этот предмет или один из е
 dota_hud_error_ability_cant_target_boss: Способность не может быть использована на боссов
 dota_hud_error_ability_cant_target_champion: Способность не может быть использована на чемпионов
 arena_hud_error_team_changer_players: В другой команде уже больше игроков чем в вашей
+arena_hud_error_panorama_shop_dropped_items_limit: Достигнут лимит выброшенных предметов
 
 DOTA_Tooltip_modifier_neutral_champion: Чемпион
 DOTA_Tooltip_modifier_neutral_champion_Description: 'Этот нейтрал - чемпион, он в %dMODIFIER_PROPERTY_TOOLTIP% раз сильнее обычного, но награда за него также увеличена'

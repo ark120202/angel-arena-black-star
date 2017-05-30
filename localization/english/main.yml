@@ -19,6 +19,7 @@ dota_hud_error_target_health_overflow: Target health is more then trigger point
 dota_hud_error_ability_cant_target_boss: Ability can't target bosses
 dota_hud_error_ability_cant_target_champion: Ability can't target champions
 arena_hud_error_team_changer_players: Other team already has more players than yours
+arena_hud_error_panorama_shop_dropped_items_limit: Dropped items limit was reached
 
 DOTA_Tooltip_modifier_neutral_champion: Champion
 DOTA_Tooltip_modifier_neutral_champion_Description: 'This neutral is a champion, so it''s %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death'

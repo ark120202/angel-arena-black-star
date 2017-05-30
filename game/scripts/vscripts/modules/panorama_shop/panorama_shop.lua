@@ -307,11 +307,65 @@ function PanoramaShop:PushItem(playerID, unit, itemName, bOnlyStash)
 	end
 end
 
+function PanoramaShop:GetNumDroppedItemsForPlayer(playerID)
+	local droppedItems = 0
+	for i = 0, GameRules:NumDroppedItems() - 1 do
+		local item = GameRules:GetDroppedItem(i):GetContainedItem()
+		if IsValidEntity(item) then
+			local owner = item:GetPurchaser()
+			if IsValidEntity(owner) and owner:GetPlayerID() == playerID then
+				droppedItems = droppedItems + 1
+			end
+		end
+	end
+	return droppedItems
+end
+
 SHOP_LIST_STATUS_IN_INVENTORY = 0
 SHOP_LIST_STATUS_IN_STASH = 1
 SHOP_LIST_STATUS_TO_BUY = 2
 SHOP_LIST_STATUS_NO_STOCK = 3
 SHOP_LIST_STATUS_NO_BOSS = 4
+
+function PanoramaShop:GetAllPrimaryRecipeItems(childItemName)
+	local primary_items = {}
+	local itemData = PanoramaShop.FormattedData[childItemName]
+	local _tempItemCounter = {}
+	_tempItemCounter[childItemName] = (_tempItemCounter[childItemName] or 0) + 1
+
+	--local itemcount_all = #GetAllItemsByNameInInventory(unit, childItemName, true)
+	local itemcount = #GetAllItemsByNameInInventory(unit, childItemName, true) --isInShop and itemcount_all or itemcount_all - #GetAllItemsByNameInInventory(unit, childItemName, false)
+	if (childItemName == itemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
+		for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
+			local subitems, newCounter = PanoramaShop:GetAllPrimaryRecipeItems(newchilditem)
+			table.add(primary_items, subitems)
+			for k,v in pairs(newCounter) do
+				_tempItemCounter[k] = (_tempItemCounter[k] or 0) + v
+			end
+		end
+		if itemData.Recipe.cost > 0 then
+			table.insert(primary_items, itemData.Recipe.recipeItemName)
+			_tempItemCounter[itemData.Recipe.recipeItemName] = (_tempItemCounter[itemData.Recipe.recipeItemName] or 0) + 1
+		end
+	end
+	table.insert(primary_items, childItemName)
+	return primary_items, _tempItemCounter
+end
+
+function PanoramaShop:HasAnyOfItemChildren(unit, childItemName)
+	if not PanoramaShop.FormattedData[childItemName].Recipe then return false end
+	local primary_items = PanoramaShop:GetAllPrimaryRecipeItems(childItemName)
+	table.removeByValue(primary_items, childItemName)
+
+	for _,v in ipairs(primary_items) do
+		local stocks = PanoramaShop:GetItemStockCount(team, v)
+		if FindItemInInventoryByName(unit, v, true) or GetKeyValue(v, "ItemPurchasableFilter") == 0 or GetKeyValue(v, "ItemPurchasable") == 0 or stocks then
+			return true
+		end
+	end
+	return false
+end
+
 function PanoramaShop:BuyItem(playerID, unit, itemName)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	local team = PlayerResource:GetTeam(playerID)
@@ -319,6 +373,12 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 		Containers:DisplayError(playerID, "#dota_hud_error_cant_purchase_duel_ongoing")
 		return
 	end
+
+	if PanoramaShop:GetNumDroppedItemsForPlayer(playerID) >= PANORAMA_SHOP_DROPPED_ITEMS_LIMIT then
+		Containers:DisplayError(playerID, "#arena_hud_error_panorama_shop_dropped_items_limit")
+		return
+	end
+
 	if unit:IsIllusion() or not unit:HasInventory() then
 		unit = hero
 	end
@@ -327,45 +387,8 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 	local itemCounter = {}
 	local ProbablyPurchasable = {}
 
-	function GetAllPrimaryRecipeItems(childItemName)
-		local primary_items = {}
-		local itemData = PanoramaShop.FormattedData[childItemName]
-		local _tempItemCounter = {}
-		_tempItemCounter[childItemName] = (_tempItemCounter[childItemName] or 0) + 1
-
-		--local itemcount_all = #GetAllItemsByNameInInventory(unit, childItemName, true)
-		local itemcount = #GetAllItemsByNameInInventory(unit, childItemName, true) --isInShop and itemcount_all or itemcount_all - #GetAllItemsByNameInInventory(unit, childItemName, false)
-		if (childItemName == itemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
-			for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
-				local subitems, newCounter = GetAllPrimaryRecipeItems(newchilditem)
-				table.add(primary_items, subitems)
-				for k,v in pairs(newCounter) do
-					_tempItemCounter[k] = (_tempItemCounter[k] or 0) + v
-				end
-			end
-			if itemData.Recipe.cost > 0 then
-				table.insert(primary_items, itemData.Recipe.recipeItemName)
-				_tempItemCounter[itemData.Recipe.recipeItemName] = (_tempItemCounter[itemData.Recipe.recipeItemName] or 0) + 1
-			end
-		end
-		table.insert(primary_items, childItemName)
-		return primary_items, _tempItemCounter
-	end
-	function HasAnyOfItemChildren(childItemName)
-		if not PanoramaShop.FormattedData[childItemName].Recipe then return false end
-		local primary_items = GetAllPrimaryRecipeItems(childItemName)
-		table.removeByValue(primary_items, childItemName)
-
-		for _,v in ipairs(primary_items) do
-			local stocks = PanoramaShop:GetItemStockCount(team, v)
-			if FindItemInInventoryByName(unit, v, true) or GetKeyValue(v, "ItemPurchasableFilter") == 0 or GetKeyValue(v, "ItemPurchasable") == 0 or stocks then
-				return true
-			end
-		end
-		return false
-	end
 	function DefineItemState(name)
-		local has = HasAnyOfItemChildren(name)
+		local has = PanoramaShop:HasAnyOfItemChildren(unit, name)
 		--print(name, has)
 		if has then
 			InsertItemChildrenToCheck(name)
@@ -387,6 +410,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 			end
 		end
 	end
+
 	function InsertItemChildrenToCheck(name)
 		local itemData = PanoramaShop.FormattedData[name]
 		if itemData.Recipe then
@@ -398,6 +422,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 			end
 		end
 	end
+
 	DefineItemState(itemName)
 
 	local ItemsInInventory = {}

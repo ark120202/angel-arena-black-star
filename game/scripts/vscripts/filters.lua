@@ -232,11 +232,11 @@ end
 
 function GameMode:ModifyGoldFilter(filterTable)
 	if filterTable.reason_const >= DOTA_ModifyGold_HeroKill and filterTable.reason_const <= DOTA_ModifyGold_CourierKill then
-		filterTable["gold"] = 0
+		filterTable.gold = 0
 		return false
 	end
-	print("[GameMode:ModifyGoldFilter]: Attempt to call default dota gold modify func... FIX IT - Reason: " .. filterTable.reason_const .."  --  Amount: " .. filterTable["gold"])
-	filterTable["gold"] = 0
+	print("[GameMode:ModifyGoldFilter]: Attempt to call default dota gold modify func... FIX IT - Reason: " .. filterTable.reason_const .."  --  Amount: " .. filterTable.gold)
+	filterTable.gold = 0
 	return false
 end
 

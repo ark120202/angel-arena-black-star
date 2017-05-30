@@ -1,3 +1,5 @@
+PANORAMA_SHOP_DROPPED_ITEMS_LIMIT = 30
+
 -- First level - tab, second level - category (column), third level - item
 PANORAMA_SHOP_ITEMS = {
 	{
@@ -272,3 +274,9 @@ PANORAMA_SHOP_ITEMS = {
 		},
 	}
 }
+
+SHOP_LIST_STATUS_IN_INVENTORY = 0
+SHOP_LIST_STATUS_IN_STASH = 1
+SHOP_LIST_STATUS_TO_BUY = 2
+SHOP_LIST_STATUS_NO_STOCK = 3
+SHOP_LIST_STATUS_NO_BOSS = 4
