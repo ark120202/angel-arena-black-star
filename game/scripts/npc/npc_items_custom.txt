@@ -7942,13 +7942,13 @@
 		"ID"							"10224"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
-		"ItemCost"						"400"
+		"ItemCost"						"25"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_desolator2"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator;item_claymore;item_medallion_of_courage"
+			"01"						"item_desolator;item_demon_edge;item_medallion_of_courage"
 		}
 	}
 
@@ -7970,17 +7970,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"70"
+				"bonus_damage"			"110"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-16"
+				"corruption_armor"		"-14"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"15.0"
+				"corruption_duration"	"10.0"
 			}
 		}
 
@@ -8055,7 +8055,7 @@
 		"ItemResult"					"item_desolator3"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator2;item_rapier;item_dark_blade"
+			"01"						"item_desolator2;item_dark_flow"
 		}
 	}
 
@@ -8077,17 +8077,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"430"
+				"bonus_damage"			"180"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-25"
+				"corruption_armor"		"-21"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"15.0"
+				"corruption_duration"	"10.0"
 			}
 		}
 
@@ -8162,7 +8162,7 @@
 		"ItemResult"					"item_desolator4"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator3"
+			"01"						"item_desolator3;item_dark_blade;item_orb_of_venom"
 		}
 	}
 
@@ -8184,17 +8184,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"620"
+				"bonus_damage"			"320"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-45"
+				"corruption_armor"		"-30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"15.0"
+				"corruption_duration"	"5.0"
 			}
 			"04"
 			{
@@ -8295,7 +8295,7 @@
 		"ItemResult"					"item_desolator5"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator4;item_skadi_4;item_moon_dust"
+			"01"						"item_desolator4;item_skadi_4;item_soul_of_titan"
 		}
 	}
 
@@ -8317,12 +8317,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"1200"
+				"bonus_damage"			"400"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"120"
+				"bonus_all_stats"		"100"
 			}
 			"03"
 			{
@@ -8337,22 +8337,22 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-200"
+				"corruption_armor"		"-45"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"15.0"
+				"corruption_duration"	"5.0"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed"	"-55"
+				"cold_movement_speed"	"-30"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-65"
+				"cold_attack_speed"		"-150"
 			}
 			"09"
 			{
@@ -8464,7 +8464,7 @@
 		"ItemResult"					"item_desolator6"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator5;item_demons_paw;item_dark_blade"
+			"01"						"item_desolator5;item_rapier;item_demons_paw;item_moon_dust"
 		}
 	}
 
@@ -8486,12 +8486,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"1100"
+				"bonus_damage"			"800"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"180"
+				"bonus_all_stats"		"150"
 			}
 			"03"
 			{
@@ -8506,27 +8506,27 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"150"
+				"bonus_attack_range"	"120"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-120"
+				"corruption_armor"		"-70"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"15.0"
+				"corruption_duration"	"5.0"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed"	"-65"
+				"cold_movement_speed"	"-40"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-90"
+				"cold_attack_speed"		"-300"
 			}
 			"10"
 			{
@@ -12520,7 +12520,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15 70"
+				"bonus_damage"			"15 55"
 			}
 			"02"
 			{
@@ -12591,7 +12591,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15 70"
+				"bonus_damage"			"15 55"
 			}
 			"02"
 			{

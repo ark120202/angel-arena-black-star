@@ -24,7 +24,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.35 0.35 0.35 0.35 0.35 0.35 0.35"
+		"AbilityCastPoint"				"0.35 0.35 0.35 0.35 0.35 0.30 0.25"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.7 1 1.5 2 2.5 3 3.5"
+				"stun_duration"			"1.5"
 			}
 			"03"
 			{
@@ -174,8 +174,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"				"7"
-		"RequiredLevel"			"3"
-		"LevelsBetweenUpgrades" "11"
+
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"arena/arthas_plus_morality"
@@ -185,17 +184,17 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attackspeed"	"21 24 27 30 33 36 39"
+				"bonus_attackspeed"	"15 20 25 30 35 40 50"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_movespeed"	"12 16 20 24 28 32 38"
+				"bonus_movespeed"	"15 20 25 30 35 40 50"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bounty_multiplier"	"2 4 6 8 10 12 14"
+				"bounty_multiplier"	"1.5 2.0 2.5 3.0 3.5 4.0 4.5"
 			}
 		}
 
@@ -246,11 +245,11 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"60 55 50 45 40 35 30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
+		"AbilityManaCost"				"70"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -259,12 +258,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"5"
+				"duration"					"4"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_regen_percent"		"4 5 6 7 8 9 10"
+				"health_regen_percent"		"6"
 			}
 		}
 
@@ -353,22 +352,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1600 1600 1600 1600 1600 1600 1600"
+				"radius"				"1000"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"40 80 120 160 200 240 280"
+				"bonus_damage"			"30 50 70 100 160 220 280"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"nia_chance"			"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
+				"nia_chance"			"1"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"nia_chance_illusions"	"0.25 0.375 0.5 0.625 0.75 0.875 1.0"
+				"nia_chance_illusions"	"0.1 0.15 0.2 0.25 0.3 0.35 0.4"
 			}
 			"05"
 			{

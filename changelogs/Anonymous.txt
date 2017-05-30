@@ -45,7 +45,7 @@ MOM:
 	Cooldown: 12 => 15
 TRANQUIL:
 	Removed wind lace and added ring of protection
-	Cooldown: 13 => 5
+	Cooldown: 13 => 6
 	Bonus Armor 0 => 5
 	Broken movement Speed 65 => 75
 	Bonus health regen 14 => 25
