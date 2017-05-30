@@ -759,7 +759,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"15"
+				"bonus_attack_speed"			"10"
 			}
 			"03"
 			{
@@ -774,17 +774,17 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"2"
+				"movement_speed_percent_bonus_buff"		"1"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_duration"			"6"
+				"fast_attack_duration"			"4"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"			"6"
+				"fast_attack_max_stacks"			"4"
 			}
 		}
 
@@ -6712,7 +6712,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"active_damage_reduction_pct"	"-90"
+				"active_damage_reduction_pct"	"-70"
 			}
 			"07"
 			{

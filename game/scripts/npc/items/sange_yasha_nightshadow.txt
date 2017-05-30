@@ -34,22 +34,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"18"
+				"bonus_damage"			"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"20"
+				"bonus_strength"		"16"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"maim_chance"			"50"
+				"maim_chance"			"30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_movement_speed"	"-4"
+				"maim_movement_speed"	"-5"
 			}
 			"05"
 			{
@@ -59,12 +59,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"maim_duration"			"3.0"
+				"maim_duration"			"4"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_max_stacks"		"6"
+				"maim_max_stacks"		"4"
 			}
 		}
 
@@ -172,72 +172,72 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"maim_chance"			"50"
+				"maim_chance"			"40"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maim_slow_movement"			"-8"
+				"maim_slow_movement"			"-6"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maim_slow_attack"				"-7"
+				"maim_slow_attack"				"-6"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"24"
+				"bonus_damage"					"16"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_strength"				"24"
+				"bonus_strength"				"16"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"maim_duration"					"4.5"
+				"maim_duration"					"5.0"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_max_stacks"		"8"
+				"maim_max_stacks"		"5"
 			}
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"24"
+				"bonus_agility"					"16"
 			}
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"20"
+				"movement_speed_percent_bonus"	"16"
 			}
 			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"24"
+				"bonus_attack_speed"			"16"
 			}
 			"11"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed_buff"		"7"
+				"bonus_attack_speed_buff"		"3"
 			}
 			"12"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"6"
+				"movement_speed_percent_bonus_buff"		"1"
 			}
 			"13"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_duration"			"8"
+				"fast_attack_duration"			"5"
 			}
 			"14"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"			"8"
+				"fast_attack_max_stacks"			"5"
 			}
 		}
 
@@ -369,7 +369,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"20"
+				"bonus_intellect"		"16"
 			}
 			"02"
 			{
@@ -465,17 +465,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"24"
+				"bonus_intellect"		"16"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"24"
+				"bonus_damage"					"16"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_strength"				"24"
+				"bonus_strength"				"16"
 			}
 			"04"
 			{
@@ -490,27 +490,27 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"maim_chance"			"50"
+				"maim_chance"			"40"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maim_slow_movement"			"-8"
+				"maim_slow_movement"			"-6"
 			}
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maim_slow_attack"				"-7"
+				"maim_slow_attack"				"-6"
 			}
 			"09"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"maim_duration"					"4.5"
+				"maim_duration"					"5.0"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_max_stacks"		"8"
+				"maim_max_stacks"		"5"
 			}
 		}
 		"Modifiers"
@@ -630,22 +630,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"24"
+				"bonus_intellect"		"16"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"24"
+				"bonus_agility"					"16"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"20"
+				"movement_speed_percent_bonus"	"16"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"24"
+				"bonus_attack_speed"			"16"
 			}
 			"05"
 			{
@@ -660,22 +660,22 @@
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed_buff"		"7"
+				"bonus_attack_speed_buff"		"3"
 			}
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"6"
+				"movement_speed_percent_bonus_buff"		"1"
 			}
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_duration"			"8"
+				"fast_attack_duration"			"5"
 			}
 			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"			"8"
+				"fast_attack_max_stacks"			"5"
 			}
 		}
 
@@ -790,37 +790,37 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"30"
+				"bonus_damage"					"24"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"30"
+				"bonus_intellect"		"24"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_strength"				"30"
+				"bonus_strength"				"24"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"30"
+				"bonus_agility"					"24"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"30"
+				"movement_speed_percent_bonus"	"16"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"40"
+				"bonus_attack_speed"			"24"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"nightshadow_chance"			"15"
+				"nightshadow_chance"			"16"
 			}
 			"08"
 			{
@@ -830,47 +830,47 @@
 			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"maim_chance"			"65"
+				"maim_chance"			"45"
 			}
 			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maim_slow_movement"			"-12"
+				"maim_slow_movement"			"-6"
 			}
 			"11"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maim_slow_attack"				"-15"
+				"maim_slow_attack"				"-8"
 			}
 			"12"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"maim_duration"					"6.5"
+				"maim_duration"					"5.0"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_max_stacks"		"12"
+				"maim_max_stacks"		"6"
 			}
 			"14"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed_buff"		"9"
+				"bonus_attack_speed_buff"		"6"
 			}
 			"15"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"7"
+				"movement_speed_percent_bonus_buff"		"2"
 			}
 			"16"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_duration"			"10"
+				"fast_attack_duration"			"6"
 			}
 			"17"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"			"10"
+				"fast_attack_max_stacks"			"6"
 			}
 		}
 
