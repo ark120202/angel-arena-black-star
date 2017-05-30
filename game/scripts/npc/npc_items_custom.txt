@@ -2208,164 +2208,6 @@
 		}
 	}
 
-	"item_recipe_auto_sheepstick"
-	{
-		"BaseClass"						"item_datadriven"
-		"ID"							"10073"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_auto_sheepstick"
-		"ItemRequirements"
-		{
-			"01"						"item_sheepstick;item_fallen_star;item_moon_dust"
-		}
-	}
-
-	"item_auto_sheepstick"
-	{
-		"BaseClass"						"item_datadriven"
-		"ID"							"10074"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilityTextureName"			"item_arena/auto_sheepstick"
-		"FightRecapLevel"				"2"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.2"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20"
-		"AbilityDamage"					"500"
-		"AbilityManaCost"				"600"
-		"ItemShopTags"					"int;regen_mana;agi;hard_to_tag"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"hex;sheepstick;scythe of vyse"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySharedCooldown"			"item_sheepstick;item_auto_sheepstick;item_silver_edge;item_edge_of_vyse"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"90"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"350"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"40"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown_illusion"		"4.75"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"3"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"sheep_movement_speed"	"100"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"800"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/item_auto_sheepstick.lua"
-				"Function"		"CastHex"
-				"hex_duration"		"%sheep_duration"
-				"sheep_movement_speed"	"%sheep_movement_speed"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_auto_sheepstick"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"AllowIllusionDuplicate"     "0"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_auto_sheepstick"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
-					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp_pct"
-				}
-
-				"ThinkInterval"  "0.1"
-				"OnIntervalThink"
-				{
-					"ActOnTargets"
-					{
-						"Target"
-						{
-							"Center"  	"CASTER"
-							"Radius" 	"%radius"
-							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" 	"DOTA_UNIT_TARGET_HERO"
-						}
-
-						"Action"
-						{
-							"RunScript"
-							{
-								"ScriptFile"	"items/item_auto_sheepstick.lua"
-								"Function"		"AutoSheepstick"
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
 	// "item_tree_banana"
 	// {
 	// 	"BaseClass"             		"item_datadriven"
@@ -13192,6 +13034,113 @@
 				"var_type"				"FIELD_INTEGER"
 				"blast_speed"			"350"
 			}
+		}
+	}
+
+	"item_recipe_scythe_of_sun"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_scythe_of_sun"
+		"ItemRequirements"
+		{
+			"01"						"item_solar_crest;item_sheepstick;item_aether_lens_5"
+		}
+	}
+
+	"item_scythe_of_sun"
+	{
+		"BaseClass"						"item_lua"
+		"ID"							"-1"
+		"ScriptFile"					"items/item_scythe_of_sun.lua"
+		"AbilityTextureName"			"item_arena/scythe_of_sun"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"19"
+		"AbilityManaCost"				"250"
+		"ItemAliases"					"hex;sheepstick;scythe of vyse;scythe of sun"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"1500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"30"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen_pct"	"350"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_evasion"			"25"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"275"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"20"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hex_duration"			"3.5"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hex_damage_pct"		"30"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hex_movement_speed"	"100"
+			}
+		}
+
+		"precache"
+		{
+			"model"						"models/items/hex/sheep_hex/sheep_hex_gold.vmdl"
 		}
 	}
 }

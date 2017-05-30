@@ -359,20 +359,6 @@ DOTA_Tooltip_ability_item_gem_of_pure_soul_Description: |-
 DOTA_Tooltip_ability_item_gem_of_pure_soul_radius: 'PURE SOUL RADIUS:'
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Note0: Disabled while on a courier.
 
-DOTA_Tooltip_ability_item_auto_sheepstick: Auto Scythe of Vyse
-DOTA_Tooltip_ability_item_auto_sheepstick_Description: |-
-  Passive: Autohex - Automatically uses Hex on any hero in radius. Not works while caster is stunned.
-  Active: Hex - Turns a target unit into a harmless critter for %sheep_duration% seconds and deals it some magical damage. If ability was used on illusion, it will be destroyed instantly and cooldown will be decreased to %cooldown_illusion% seconds.
-  Passive: Increases spell damage output by %spell_amp_pct%%%.
-DOTA_Tooltip_ability_item_auto_sheepstick_Note0: 'The target will have a base movement speed of 100, but buffs granting maximum movement speed won''t be disabled.'
-DOTA_Tooltip_ability_item_auto_sheepstick_bonus_strength: +$str
-DOTA_Tooltip_ability_item_auto_sheepstick_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_auto_sheepstick_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_auto_sheepstick_bonus_mana_regen: '%+$mana_regen'
-DOTA_Tooltip_ability_item_auto_sheepstick_sheep_duration: 'HEX DURATION:'
-DOTA_Tooltip_ability_item_auto_sheepstick_radius: 'CAST RANGE:'
-DOTA_Tooltip_ability_item_auto_sheepstick_spell_amp_pct: '%SPELL DAMAGE AMP:'
-
 DOTA_Tooltip_ability_item_tree_banana: Banana
 DOTA_Tooltip_ability_item_tree_banana_Description: 'Banana. Increases your Intelligence by 10, Strength by 4 and Agility by 2.'
 DOTA_Tooltip_ability_item_tree_banana_slide_distance: 'SLIDE DISTANCE:'
@@ -1696,3 +1682,22 @@ DOTA_Tooltip_ability_item_elemental_fury_bonus_mana_regen_pct: '%+$mana_regen'
 DOTA_Tooltip_ability_item_elemental_fury_cleave_damage_percent: '%CLEAVE DAMAGE:'
 DOTA_Tooltip_ability_item_elemental_fury_quelling_bonus_damage_pct: '%QUELL DAMAGE:'
 DOTA_Tooltip_ability_item_elemental_fury_cast_range_tooltip: 'CHOP CAST RANGE:'
+
+DOTA_Tooltip_ability_item_scythe_of_sun: Scythe of Sun
+DOTA_Tooltip_ability_item_scythe_of_sun_Description: |-
+  Active: Shiny Hex - Turns a target unit into a harmless critter for %hex_duration% seconds, at the same time decreasing it's movement speed to %hex_movement_speed%. All attacks on the hexed target will have True Strike. Instantly destroys illusions.
+DOTA_Tooltip_ability_item_scythe_of_sun_Note0: 'The target will have a base movement speed of 100, but buffs granting maximum movement speed won''t be disabled.'
+DOTA_Tooltip_ability_item_scythe_of_sun_bonus_strength: +$str
+DOTA_Tooltip_ability_item_scythe_of_sun_bonus_agility: +$agi
+DOTA_Tooltip_ability_item_scythe_of_sun_bonus_intellect: +$int
+DOTA_Tooltip_ability_item_scythe_of_sun_bonus_mana: +$mana
+DOTA_Tooltip_ability_item_scythe_of_sun_bonus_armor: +$armor
+DOTA_Tooltip_ability_item_scythe_of_sun_bonus_health_regen: +$hp_regen
+DOTA_Tooltip_ability_item_scythe_of_sun_bonus_mana_regen_pct: '%+$mana_regen'
+DOTA_Tooltip_ability_item_scythe_of_sun_bonus_evasion: '%+$evasion'
+DOTA_Tooltip_ability_item_scythe_of_sun_cast_range_bonus: 'CAST RANGE:'
+DOTA_Tooltip_ability_item_scythe_of_sun_spell_amp_pct: '%SPELL DAMAGE AMP:'
+# DOTA_Tooltip_ability_item_scythe_of_sun_hex_duration: 'HEX DURATION:' # Too much specials
+DOTA_Tooltip_ability_item_scythe_of_sun_hex_damage_pct: '%HEX DAMAGE INCREASE:'
+DOTA_Tooltip_modifier_item_scythe_of_sun_hex: Sheeped
+DOTA_Tooltip_modifier_item_scythe_of_sun_hex_Description: You are a sheep. Cannot attack or cast spells. Incoming damage increased by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, movement speed is limited to %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%

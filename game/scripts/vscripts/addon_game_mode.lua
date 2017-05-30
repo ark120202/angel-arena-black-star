@@ -54,6 +54,7 @@ function Precache(context)
 		"particles/arena/items_fx/wand_of_midas.vpcf",
 		"particles/econ/events/ti6/mekanism_ti6.vpcf",
 		"particles/econ/events/ti6/mekanism_recipient_ti6.vpcf",
+		"particles/arena/items_fx/scythe_of_sun.vpcf",
 		--Heroes
 		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",

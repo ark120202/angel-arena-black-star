@@ -34,4 +34,4 @@ function SetPagePlayerLevel(level) {
 	}
 	$.GetContextPanel().LoadPanelForPlayer = LoadPanelForPlayer;
 	//LoadPanelForPlayer(0)
-})(); //asdasdsssssssssssdSssssssSSSSSSSCsassss
+})();
