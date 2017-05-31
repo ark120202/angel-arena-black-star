@@ -12945,7 +12945,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"100000"
+		"ItemCost"						"6050"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_book_of_the_guardian"
 		"ItemRequirements"
@@ -12957,10 +12957,11 @@
 	"item_book_of_the_guardian"
 	{
 		"BaseClass"						"item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"ScriptFile"					"items/item_book_of_the_guardian.lua"
 		"ID"							"-1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/book_of_the_guardian"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"ItemShopTags"					"int;regen_mana;hard_to_tag"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityCastRange"				"%aura_radius"
@@ -13013,7 +13014,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blast_damage_int_mult"	"10"
+				"blast_damage_int_mult"	"7.5"
 			}
 			"10"
 			{
@@ -13034,6 +13035,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"blast_speed"			"350"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_vision_duration"	"3.5"
 			}
 		}
 	}

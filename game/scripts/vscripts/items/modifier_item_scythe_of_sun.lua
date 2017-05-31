@@ -65,15 +65,20 @@ function modifier_item_scythe_of_sun_hex:IsPurgable() return false end
 
 function modifier_item_scythe_of_sun_hex:CheckState()
 	return {
+		[MODIFIER_STATE_SILENCED] = true,
+		[MODIFIER_STATE_MUTED] = true,
+		[MODIFIER_STATE_DISARMED] = true,
+		[MODIFIER_STATE_PASSIVES_DISABLED] = true,
+		[MODIFIER_STATE_BLOCK_DISABLED] = true,
+		[MODIFIER_STATE_EVADE_DISABLED] = true,
 		[MODIFIER_STATE_HEXED] = true,
-		[MODIFIER_STATE_EVADE_DISABLED] = true
 	}
 end
 
 function modifier_item_scythe_of_sun_hex:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MODEL_CHANGE,
-		MODIFIER_PROPERTY_MOVESPEED_MAX,
+		MODIFIER_PROPERTY_MOVESPEED_MAX, -- MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE
 		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
 		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
 

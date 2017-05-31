@@ -9,4 +9,3 @@ rules:
     - order: 'recess'
   no-color-literals: 0
   no-misspelled-properties: 0
-  brace-style

@@ -1244,6 +1244,7 @@ DOTA_Tooltip_ability_item_holy_knight_shield_buff_chance: '%HOLY WARRIOR CHANCE:
 DOTA_Tooltip_ability_item_holy_knight_shield_buff_duration: 'HOLY WARRIOR DURATION:'
 DOTA_Tooltip_modifier_item_holy_knight_shield_buff: Holy Warrior
 DOTA_Tooltip_modifier_item_holy_knight_shield_buff_Description: Magic Immune
+
 DOTA_Tooltip_ability_item_book_of_the_keeper: Book of the Keeper
 DOTA_Tooltip_ability_item_book_of_the_keeper_Description: 'Passive: Increases spell damage output by %spell_amp_pct%%%'
 DOTA_Tooltip_ability_item_book_of_the_keeper_bonus_intellect: +$int
@@ -1251,6 +1252,7 @@ DOTA_Tooltip_ability_item_book_of_the_keeper_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_book_of_the_keeper_bonus_mana_regen: '%+$mana_regen'
 DOTA_Tooltip_ability_item_book_of_the_keeper_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_book_of_the_keeper_spell_amp_pct: '%SPELL DAMAGE AMP:'
+
 DOTA_Tooltip_ability_item_angel_wings: Angel Wings
 DOTA_Tooltip_ability_item_angel_wings_Description: |-
   Active: Flight - For some time gives you ability to go through obstructions and increases your attack range. Can be cast while channelling.
@@ -1267,8 +1269,10 @@ DOTA_Tooltip_ability_item_angel_wings_spell_amp_pct: '%SPELL DAMAGE AMP:'
 DOTA_Tooltip_ability_item_angel_wings_abonus_attack_range: 'FLIGHT ATTACK RANGE:'
 DOTA_Tooltip_modifier_item_angel_wings_active: Flight
 DOTA_Tooltip_modifier_item_angel_wings_active_Description: 'Has ability to go through obstructions, attack range increased by %dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS%'
+
 DOTA_Tooltip_ability_item_radio_car: Radio Car
 npc_arena_radio_car: Radio Car
+
 DOTA_Tooltip_ability_item_blade_of_discord: Blade of Discord
 DOTA_Tooltip_ability_item_blade_of_discord_Description: 'Active: Ether Weakness - Emits a weakening blast which converts all caught enemies to ethereal form, increasing any incoming magic damage they take, while rendering them immune to physical damage and unable to attack, and dealing them %debuff_stats_multiplier%x your all attributes + %debuff_damage_base% as pure damage. Lasts %debuff_duration% seconds.'
 DOTA_Tooltip_ability_item_blade_of_discord_bonus_health_regen: +$hp_regen
@@ -1283,6 +1287,7 @@ DOTA_Tooltip_ability_item_blade_of_discord_debuff_duration: 'MAGIC WEAKNESS DURA
 DOTA_Tooltip_ability_item_blade_of_discord_debuff_movement_slow: '%MAGIC WEAKNESS MOVE SLOW:'
 DOTA_Tooltip_modifier_item_blade_of_discord_magic_weakness: Ether Weakness
 DOTA_Tooltip_modifier_item_blade_of_discord_magic_weakness_Description: 'Ethereal Form. Taking %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE%%% increased magic damage, movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% and cannot attack or be attacked'
+
 DOTA_Tooltip_ability_item_tango_arena: Tango
 DOTA_Tooltip_ability_item_tango_arena_Description: |-
   Use: Eat Trees and Wards - Consume all trees and wards to increase health regeneration and movement speed. Eating wards gives %stacks_per_ward%x effect.
@@ -1295,10 +1300,12 @@ DOTA_Tooltip_ability_item_tango_arena_aoe: 'RADIUS:'
 DOTA_Tooltip_ability_item_tango_arena_buff_duration: 'HEAL DURATION:'
 DOTA_Tooltip_modifier_item_tango_arena: Tango
 DOTA_Tooltip_modifier_item_tango_arena_Description: 'Health regeneration increased by %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%, movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%'
+
 DOTA_Tooltip_ability_item_piercing_blade: Piercing Blade
 DOTA_Tooltip_ability_item_piercing_blade_Description: 'Passive: Soul Piercing - %attack_damage_to_pure_pct%%% of your attack damage will deal pure damage, instead of physical.'
 DOTA_Tooltip_ability_item_piercing_blade_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_piercing_blade_attack_damage_to_pure_pct: '%PURE ATTACK DAMAGE:'
+
 DOTA_Tooltip_ability_item_fallhammer: Fallhammer
 DOTA_Tooltip_ability_item_fallhammer_Description: |-
   Active: Valor - If cast on an ally, increases their armor while reducing the caster's. If cast on an enemy, reduces the armor of both the enemy and the caster.
@@ -1320,6 +1327,7 @@ DOTA_Tooltip_modifier_item_fallhammer_valor_buff: Fallhammer Valor
 DOTA_Tooltip_modifier_item_fallhammer_valor_buff_Description: Increases Armor by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_modifier_item_fallhammer_valor_debuff: Fallhammer Valor
 DOTA_Tooltip_modifier_item_fallhammer_valor_debuff_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
+
 DOTA_Tooltip_ability_item_dark_blade: Dark Blade
 DOTA_Tooltip_ability_item_dark_blade_Description: This item is dropped by bosses and you can't buy it in the shop.
 DOTA_Tooltip_ability_item_dark_blade_bonus_damage: +$damage
@@ -1702,3 +1710,28 @@ DOTA_Tooltip_ability_item_scythe_of_sun_spell_amp_pct: '%SPELL DAMAGE AMP:'
 DOTA_Tooltip_ability_item_scythe_of_sun_hex_damage_pct: '%HEX DAMAGE INCREASE:'
 DOTA_Tooltip_modifier_item_scythe_of_sun_hex: Sheeped
 DOTA_Tooltip_modifier_item_scythe_of_sun_hex_Description: You are a sheep. Cannot attack or cast spells. Incoming damage increased by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, movement speed is limited to %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%
+
+DOTA_Tooltip_ability_item_book_of_the_guardian: Book of the Guardian
+DOTA_Tooltip_ability_item_book_of_the_guardian_Description: |-
+  Active: Arctic Blast - Emits a freezing wave that deals %blast_damage_int_mult%x your intelligence magical damage to enemies and slows their movement by %blast_movement_speed_pct%%% for %blast_debuff_duration% seconds.
+  Passive: Freezing Aura - Reduces the attack speed of all enemies in a %aura_radius% radius.
+  Passive: Increases spell damage output by %spell_amp_pct%%%
+
+  Multiple instances of Freezing Aura do not stack.
+DOTA_Tooltip_ability_item_book_of_the_guardian_Note0: The wave extends at a speed of 350 to a max size of 900.
+DOTA_Tooltip_ability_item_book_of_the_guardian_Note1: The Arctic Blast follows its caster.
+DOTA_Tooltip_ability_item_book_of_the_guardian_bonus_intellect: +$int
+DOTA_Tooltip_ability_item_book_of_the_guardian_bonus_armor: +$armor
+DOTA_Tooltip_ability_item_book_of_the_guardian_bonus_health_regen: +$hp_regen
+DOTA_Tooltip_ability_item_book_of_the_guardian_bonus_mana_regen: '%+$mana_regen'
+DOTA_Tooltip_ability_item_book_of_the_guardian_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_book_of_the_guardian_spell_amp_pct: '%SPELL DAMAGE AMP:'
+DOTA_Tooltip_ability_item_book_of_the_guardian_aura_attack_speed: 'AURA ATTACK SLOW:'
+DOTA_Tooltip_ability_item_book_of_the_guardian_blast_damage_int_mult: 'INTELLIGENCE DAMAGE MULTIPLIER:'
+DOTA_Tooltip_ability_item_book_of_the_guardian_blast_movement_speed_pct: '%BLAST MOVEMENT SLOW:'
+DOTA_Tooltip_ability_item_book_of_the_guardian_blast_debuff_duration: 'BLAST SLOW DURATION:'
+DOTA_Tooltip_ability_item_book_of_the_guardian_blast_radius: 'BLAST RADIUS:'
+DOTA_Tooltip_modifier_item_book_of_the_guardian_aura: Freezing Aura
+DOTA_Tooltip_modifier_item_book_of_the_guardian_aura_Description: Attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
+DOTA_Tooltip_modifier_item_book_of_the_guardian_blast: Arctic Blast
+DOTA_Tooltip_modifier_item_book_of_the_guardian_blast_Description: Movement speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
