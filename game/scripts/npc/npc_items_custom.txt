@@ -5626,17 +5626,17 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_chance"			"20"
+				"bash_chance"			"10"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.75"
+				"bash_duration"			"0.5"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_cooldown"			"7.5"
+				"bash_cooldown"			"6"
 			}
 		}
 
@@ -5691,7 +5691,7 @@
 		"ItemResult"					"item_refresher_core"
 		"ItemRequirements"
 		{
-			"01"						"item_octarine_core_arena;item_refresher_arena;"
+			"01"						"item_octarine_core_arena;item_refresher_arena"
 		}
 	}
 
@@ -5746,7 +5746,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cooldown_min"			"25"
+				"cooldown_min"			"30"
 			}
 			"08"
 			{
@@ -5771,12 +5771,12 @@
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_chance"			"15"
+				"bash_chance"			"10"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"1.25"
+				"bash_duration"			"0.75"
 			}
 			"14"
 			{
@@ -12207,7 +12207,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"gold"				"60"
+				"gold"				"30"
 			}
 			"03"
 			{
@@ -12535,7 +12535,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"10 30"
+				"cleave_damage_percent"	"15 30"
 			}
 			"05"
 			{
@@ -13157,7 +13157,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"1000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_bloodthorn2"
@@ -13186,8 +13186,48 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"20"
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intellect"			"30"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attackspeed"			"40"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"150"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana_regen_pct"		"200"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"30"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_multiplier"			"250"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"silence_duration"			"5"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"target_crit_multiplier"	"200"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hex_damage_pct"			"15"
 			}
 		}
 
