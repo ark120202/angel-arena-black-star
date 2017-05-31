@@ -1,12 +1,10 @@
-	 					S:
-
 LVL SHARD:
 	Cost 1250 => 1000
 TOME OF KNOWLEDGE:
 	InitialStockTime 600 => 150
 	StockTime 60 => 60
-	Xp bonus 500 => 300
-	Xp per use 135 => 150
+	Xp bonus 500 => 250
+	Xp per use 135 => 100
 CLARITY:
 	Total Mana 190 => 370
 	Buff Duration: 50 => 35

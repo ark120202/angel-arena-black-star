@@ -3091,7 +3091,7 @@
 		"ItemResult"					"item_diffusal_style"
 		"ItemRequirements"
 		{
-			"01"						"item_manta_arena;item_diffusal_blade_arena_5;item_demons_paw"
+			"01"						"item_manta_arena;item_diffusal_blade_arena_5;item_orb_of_essences;item_demons_paw"
 		}
 	}
 
@@ -3120,17 +3120,17 @@
 			"01"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_strength"									"15"
+				"bonus_strength"									"70"
 			}
 			"02"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_agility"										"110"
+				"bonus_agility"										"160"
 			}
 			"03"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_intelligence"								"50"
+				"bonus_intelligence"								"100"
 			}
 			"04"
 			{
@@ -3140,7 +3140,7 @@
 			"05"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_movement_speed_percentage"					"18"
+				"bonus_movement_speed_percentage"					"16"
 			}
 			"06"
 			{
@@ -3190,22 +3190,22 @@
 			"15"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed_buff"		"9"
+				"bonus_attack_speed_buff"		"15"
 			}
 			"16"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"7"
+				"movement_speed_percent_bonus_buff"		"4"
 			}
 			"17"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_duration"			"10"
+				"fast_attack_duration"			"8"
 			}
 			"18"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"			"10"
+				"fast_attack_max_stacks"			"8"
 			}
 			"19"
 			{
@@ -3220,17 +3220,17 @@
 			"21"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"2.5"
+				"purge_root_duration"	"0.3"
 			}
 			"22"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"purge_chance_pct"		"12"
+				"purge_chance_pct"		"10"
 			}
 			"23"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_slow_duration"	"4.5"
+				"purge_slow_duration"	"4"
 			}
 			"24"
 			{
@@ -3240,7 +3240,7 @@
 			"25"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_burn_pct"		"120"
+				"damage_per_burn_pct"		"100"
 			}
 		}
 
@@ -8968,7 +8968,7 @@
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_strength"					"900"
+				"bonus_strength"					"90"
 			}
 			"03"
 			{
@@ -8978,7 +8978,7 @@
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_damage_pct"			"50"
+				"bonus_toggle_damage_pct"			"25"
 			}
 			"05"
 			{
@@ -9107,7 +9107,7 @@
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_damage_pct"			"50"
+				"bonus_toggle_damage_pct"			"25"
 			}
 			"05"
 			{

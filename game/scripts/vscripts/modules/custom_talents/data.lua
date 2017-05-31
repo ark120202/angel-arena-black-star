@@ -44,11 +44,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_respawn_time_reduction = {
 		icon = "talents/respawn_time_reduction",
-		cost = 2,
+		cost = 3,
 		group = 8,
-		max_level = 7,
+		max_level = 5,
 		special_values = {
-			respawn_time_reduction = {-10, -15, -20, -25, -30, -35, -40}
+			respawn_time_reduction = {-10, -15, -20, -25, -30}
 		},
 		effect = {
 			unit_keys = {
@@ -58,7 +58,7 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_attack_damage = {
 		icon = "talents/damage",
-		cost = 5,
+		cost = 3,
 		group = 4,
 		max_level = 7,
 		special_values = {
@@ -158,7 +158,7 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_magic_resistance_pct = {
 		icon = "talents/magic_resistance",
-		cost = 4,
+		cost = 3,
 		group = 3,
 		max_level = 8,
 		special_values = {

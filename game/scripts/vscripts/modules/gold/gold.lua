@@ -1,4 +1,4 @@
-CUSTOM_GOLD_PER_TICK = 3
+CUSTOM_GOLD_PER_TICK = 2
 CUSTOM_GOLD_TICK_TIME = 0.6
 
 Gold = Gold or class({})

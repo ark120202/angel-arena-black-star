@@ -951,18 +951,18 @@
 		"SecretShop"					"0"
 		"ItemStockMax"					"20"
 		"ItemStockTime"					"60"
-		"ItemInitialStockTime"			"150"
+		"ItemInitialStockTime"			"180"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"xp_bonus"				"300"
+				"xp_bonus"				"250"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"xp_per_use"			"150"
+				"xp_per_use"			"100"
 			}
 		}
 	}

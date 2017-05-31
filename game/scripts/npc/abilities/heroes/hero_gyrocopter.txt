@@ -302,7 +302,6 @@
 		"AbilityTextureName"			"gyrocopter_flak_cannon"
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
-		"LevelsBetweenUpgrades" 		"5"
 
 		"precache"
 		{
@@ -316,7 +315,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -349,7 +348,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"fire_rate_scepter"						"0.5"
+				"fire_rate_scepter"						"0.6"
 			}
 			"06"
 			{

@@ -19,12 +19,12 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10085"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"
+		"ItemCost"						"1200"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_2"
 		"ItemRequirements"
 		{
-			"01"						"item_diffusal_blade_arena;item_recipe_diffusal_blade_arena"
+			"01"						"item_diffusal_blade_arena"
 		}
 	}
 
@@ -33,12 +33,12 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10086"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"
+		"ItemCost"						"1200"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_3"
 		"ItemRequirements"
 		{
-			"01"						"item_diffusal_blade_arena_2;item_recipe_diffusal_blade_arena"
+			"01"						"item_diffusal_blade_arena_2"
 		}
 	}
 
@@ -47,12 +47,12 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10087"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"
+		"ItemCost"						"1200"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_4"
 		"ItemRequirements"
 		{
-			"01"						"item_diffusal_blade_arena_3;item_recipe_diffusal_blade_arena"
+			"01"						"item_diffusal_blade_arena_3"
 		}
 	}
 
@@ -61,12 +61,12 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10088"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"
+		"ItemCost"						"1200"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_5"
 		"ItemRequirements"
 		{
-			"01"						"item_diffusal_blade_arena_4;item_recipe_diffusal_blade_arena"
+			"01"						"item_diffusal_blade_arena_4"
 		}
 	}
 
@@ -84,9 +84,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 700 800 900 1000"
+		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"16 14 12 10 8"
+		"AbilityCooldown"				"14 12 10 8 6"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -102,12 +102,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"30 38 46 54 62"
+				"bonus_agility"			"25 35 45 55 65"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"15 20 30 35 40"
+				"bonus_intellect"		"10 15 20 25 30"
 			}
 			"03"
 			{
@@ -117,22 +117,22 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_pct"	"50"
+				"feedback_mana_burn_illusion_pct"	"15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_drain_pct"	"20 25 30 35 40"
+				"feedback_mana_drain_pct"	"10 15 20 25 30"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"0.5 1.0 1.5 2.0 2.5"
+				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_slow_duration"	"2.5 3.0 3.5 4.0 4.5"
+				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
 			"08"
 			{
@@ -147,7 +147,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"		"600 700 800 900 1000"
+				"cast_range_tooltip"		"500 550 600 650 700"
 			}
 		}
 
@@ -238,9 +238,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 700 800 900 1000"
+		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"16 14 12 10 8"
+		"AbilityCooldown"				"14 12 10 8 6"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -256,12 +256,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"30 38 46 54 62"
+				"bonus_agility"			"25 35 45 55 65"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"15 20 30 35 40"
+				"bonus_intellect"		"10 15 20 25 30"
 			}
 			"03"
 			{
@@ -271,22 +271,22 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_pct"	"50"
+				"feedback_mana_burn_illusion_pct"	"15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_drain_pct"	"20 25 30 35 40"
+				"feedback_mana_drain_pct"	"10 15 20 25 30"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"0.5 1.0 1.5 2.0 2.5"
+				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_slow_duration"	"2.5 3.0 3.5 4.0 4.5"
+				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
 			"08"
 			{
@@ -301,7 +301,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"		"600 700 800 900 1000"
+				"cast_range_tooltip"		"500 550 600 650 700"
 			}
 		}
 
@@ -392,9 +392,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 700 800 900 1000"
+		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"16 14 12 10 8"
+		"AbilityCooldown"				"14 12 10 8 6"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -410,12 +410,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"30 38 46 54 62"
+				"bonus_agility"			"25 35 45 55 65"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"15 20 30 35 40"
+				"bonus_intellect"		"10 15 20 25 30"
 			}
 			"03"
 			{
@@ -425,22 +425,22 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_pct"	"50"
+				"feedback_mana_burn_illusion_pct"	"15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_drain_pct"	"20 25 30 35 40"
+				"feedback_mana_drain_pct"	"10 15 20 25 30"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"0.5 1.0 1.5 2.0 2.5"
+				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_slow_duration"	"2.5 3.0 3.5 4.0 4.5"
+				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
 			"08"
 			{
@@ -455,7 +455,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"		"600 700 800 900 1000"
+				"cast_range_tooltip"		"500 550 600 650 700"
 			}
 		}
 
@@ -546,9 +546,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 700 800 900 1000"
+		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"16 14 12 10 8"
+		"AbilityCooldown"				"14 12 10 8 6"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -564,12 +564,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"30 38 46 54 62"
+				"bonus_agility"			"25 35 45 55 65"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"15 20 30 35 40"
+				"bonus_intellect"		"10 15 20 25 30"
 			}
 			"03"
 			{
@@ -579,22 +579,22 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_pct"	"50"
+				"feedback_mana_burn_illusion_pct"	"15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_drain_pct"	"20 25 30 35 40"
+				"feedback_mana_drain_pct"	"10 15 20 25 30"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"0.5 1.0 1.5 2.0 2.5"
+				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_slow_duration"	"2.5 3.0 3.5 4.0 4.5"
+				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
 			"08"
 			{
@@ -609,7 +609,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"		"600 700 800 900 1000"
+				"cast_range_tooltip"		"500 550 600 650 700"
 			}
 		}
 
@@ -700,9 +700,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 700 800 900 1000"
+		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"16 14 12 10 8"
+		"AbilityCooldown"				"14 12 10 8 6"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -718,12 +718,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"30 38 46 54 62"
+				"bonus_agility"			"25 35 45 55 65"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"15 20 30 35 40"
+				"bonus_intellect"		"10 15 20 25 30"
 			}
 			"03"
 			{
@@ -733,22 +733,22 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_pct"	"50"
+				"feedback_mana_burn_illusion_pct"	"15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_drain_pct"	"20 25 30 35 40"
+				"feedback_mana_drain_pct"	"10 15 20 25 30"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"0.5 1.0 1.5 2.0 2.5"
+				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_slow_duration"	"2.5 3.0 3.5 4.0 4.5"
+				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
 			"08"
 			{
@@ -763,7 +763,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"		"600 700 800 900 1000"
+				"cast_range_tooltip"		"500 550 600 650 700"
 			}
 		}
 
