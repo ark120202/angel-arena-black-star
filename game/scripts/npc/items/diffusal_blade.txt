@@ -66,7 +66,7 @@
 		"ItemResult"					"item_diffusal_blade_arena_5"
 		"ItemRequirements"
 		{
-			"01"						"item_diffusal_blade_arena_4"
+			"01"						"item_diffusal_blade_arena_4;item_rod_of_atos"
 		}
 	}
 
@@ -127,24 +127,19 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"	"-20 -40 -60 -80 -100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_burn_pct"		"80 90 100 110 120"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"		"500 550 600 650 700"
@@ -157,7 +152,7 @@
 			{
 				"ScriptFile"	"items/items_diffusal_blade.lua"
 				"Function"		"Purge"
-				"modifier_root"	"modifier_item_diffusal_blade_arena_root"
+				"modifier_root" "modifier_item_diffusal_blade_arena_root"
 				"modifier_slow"	"modifier_item_diffusal_blade_arena_slow"
 			}
 		}
@@ -193,19 +188,6 @@
 						"feedback_mana_drain_pct"			"%feedback_mana_drain_pct"
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 					}
-				}
-			}
-
-			"modifier_item_diffusal_blade_arena_root"
-			{
-				"Duration"			"%purge_root_duration"
-				"EffectName"		"particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_ambient_root_b.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"IsDebuff"			"1"
-
-				"States"
-				{
-					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 
@@ -281,24 +263,19 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"	"-20 -40 -60 -80 -100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_burn_pct"		"80 90 100 110 120"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"		"500 550 600 650 700"
@@ -311,7 +288,6 @@
 			{
 				"ScriptFile"	"items/items_diffusal_blade.lua"
 				"Function"		"Purge"
-				"modifier_root"	"modifier_item_diffusal_blade_arena_root"
 				"modifier_slow"	"modifier_item_diffusal_blade_arena_slow"
 			}
 		}
@@ -347,19 +323,6 @@
 						"feedback_mana_drain_pct"			"%feedback_mana_drain_pct"
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 					}
-				}
-			}
-
-			"modifier_item_diffusal_blade_arena_root"
-			{
-				"Duration"			"%purge_root_duration"
-				"EffectName"		"particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_ambient_root_b.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"IsDebuff"			"1"
-
-				"States"
-				{
-					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 
@@ -435,24 +398,19 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"	"-20 -40 -60 -80 -100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_burn_pct"		"80 90 100 110 120"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"		"500 550 600 650 700"
@@ -465,7 +423,6 @@
 			{
 				"ScriptFile"	"items/items_diffusal_blade.lua"
 				"Function"		"Purge"
-				"modifier_root"	"modifier_item_diffusal_blade_arena_root"
 				"modifier_slow"	"modifier_item_diffusal_blade_arena_slow"
 			}
 		}
@@ -501,19 +458,6 @@
 						"feedback_mana_drain_pct"			"%feedback_mana_drain_pct"
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 					}
-				}
-			}
-
-			"modifier_item_diffusal_blade_arena_root"
-			{
-				"Duration"			"%purge_root_duration"
-				"EffectName"		"particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_ambient_root_b.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"IsDebuff"			"1"
-
-				"States"
-				{
-					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 
@@ -589,24 +533,19 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"	"-20 -40 -60 -80 -100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_burn_pct"		"80 90 100 110 120"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"		"500 550 600 650 700"
@@ -619,7 +558,6 @@
 			{
 				"ScriptFile"	"items/items_diffusal_blade.lua"
 				"Function"		"Purge"
-				"modifier_root"	"modifier_item_diffusal_blade_arena_root"
 				"modifier_slow"	"modifier_item_diffusal_blade_arena_slow"
 			}
 		}
@@ -655,19 +593,6 @@
 						"feedback_mana_drain_pct"			"%feedback_mana_drain_pct"
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 					}
-				}
-			}
-
-			"modifier_item_diffusal_blade_arena_root"
-			{
-				"Duration"			"%purge_root_duration"
-				"EffectName"		"particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_ambient_root_b.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"IsDebuff"			"1"
-
-				"States"
-				{
-					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 
@@ -728,39 +653,44 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"40 60 80 100 120"
+				"bonus_health"			"3000000"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_pct"	"15"
+				"feedback_mana_burn"	"40 60 80 100 120"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_drain_pct"	"10 15 20 25 30"
+				"feedback_mana_burn_illusion_pct"	"15"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
+				"var_type"				"FIELD_INTEGER"
+				"feedback_mana_drain_pct"	"10 15 20 25 30"
 			}
 			"07"
+			{
+			 	"var_type"    "FIELD_FLOAT"
+			 	"purge_root_duration" "0.1 0.2 0.3 0.4 0.5"
+			}
+			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
-			"08"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"	"-20 -40 -60 -80 -100"
 			}
-			"09"
+			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_burn_pct"		"80 90 100 110 120"
 			}
-			"10"
+			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"		"500 550 600 650 700"
@@ -773,7 +703,6 @@
 			{
 				"ScriptFile"	"items/items_diffusal_blade.lua"
 				"Function"		"Purge"
-				"modifier_root"	"modifier_item_diffusal_blade_arena_root"
 				"modifier_slow"	"modifier_item_diffusal_blade_arena_slow"
 			}
 		}
@@ -790,6 +719,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 				}
 			}
 
@@ -814,15 +744,15 @@
 
 			"modifier_item_diffusal_blade_arena_root"
 			{
-				"Duration"			"%purge_root_duration"
-				"EffectName"		"particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_ambient_root_b.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"IsDebuff"			"1"
+			    "Duration"   "%purge_root_duration"
+			    "EffectName"  "particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_ambient_root_b.vpcf"
+			    "EffectAttachType" "follow_origin"
+			    "IsDebuff"   "1"
 
-				"States"
-				{
-					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
+			    "States"
+			    {
+			     	"MODIFIER_STATE_ROOTED"  "MODIFIER_STATE_VALUE_ENABLED"
+			    }
 			}
 
 			"modifier_item_diffusal_blade_arena_slow"

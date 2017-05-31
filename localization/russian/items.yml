@@ -432,7 +432,7 @@ DOTA_Tooltip_modifier_item_manta_arena_fast_attack_Description: '{lc:modifier_it
 
 DOTA_Tooltip_ability_item_diffusal_blade_arena: Diffusal Blade I
 DOTA_Tooltip_ability_item_diffusal_blade_arena_Description: |-
-  Активируемая: Purge — снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
+  Активируемая: Purge — снимает положительные эффекты, замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
   Пассивная: Manabreak — каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
@@ -448,7 +448,7 @@ DOTA_Tooltip_modifier_item_diffusal_blade_arena_slow: Очищение от Diff
 DOTA_Tooltip_modifier_item_diffusal_blade_arena_slow_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2: Diffusal Blade II
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_Description: |-
-  Активируемая: Purge — снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
+  Активируемая: Purge — снимает положительные эффекты, замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
   Пассивная: Manabreak — каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
@@ -460,7 +460,7 @@ DOTA_Tooltip_ability_item_diffusal_blade_arena_2_damage_per_burn_pct: '%СОЖЖ
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_cast_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3: Diffusal Blade III
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_Description: |-
-  Активируемая: Purge — снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
+  Активируемая: Purge — снимает положительные эффекты, замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
   Пассивная: Manabreak — каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
@@ -472,7 +472,7 @@ DOTA_Tooltip_ability_item_diffusal_blade_arena_3_damage_per_burn_pct: '%СОЖЖ
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_cast_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4: Diffusal Blade IV
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_Description: |-
-  Активируемая: Purge — снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
+  Активируемая: Purge — снимает положительные эффекты, замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
   Пассивная: Manabreak — каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
