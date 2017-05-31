@@ -1195,3 +1195,127 @@
 		}
 	}
 }
+
+"Arena.Hero_Anakim.SolarFlare"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/anakim/solar_flare.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"50.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Destroyer.ArmorCrush"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/destroyer/armor_crush.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"20.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Destroyer.BodyReconstruction"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/destroyer/body_reconstruction.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"20.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Destroyer.SealOfLimit"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/destroyer/seal_of_limit.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"20.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}

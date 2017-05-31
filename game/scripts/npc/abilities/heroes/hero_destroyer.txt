@@ -38,6 +38,11 @@
 
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"	"Arena.Hero_Destroyer.ArmorCrush"
+				"Target"		"CASTER"
+			}
 			"FireEffect"
 			{
 				"EffectName"		"particles/arena/units/heroes/hero_destroyer/destroyer_armor_crush.vpcf"
@@ -133,6 +138,11 @@
 
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"	"Arena.Hero_Destroyer.SealOfLimit"
+				"Target"		"CASTER"
+			}
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_destroyer_seal_of_limit"
@@ -187,6 +197,11 @@
 
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"	"Arena.Hero_Destroyer.BodyReconstruction"
+				"Target"		"CASTER"
+			}
 			"FireEffect"
 			{
 				"EffectName"		"particles/arena/units/heroes/hero_destroyer/destroyer_body_reconstruction.vpcf"

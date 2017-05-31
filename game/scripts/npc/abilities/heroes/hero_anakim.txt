@@ -138,6 +138,11 @@
 
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"Target"			"CASTER"
+				"EffectName"		"Arena.Hero_Anakim.SolarFlare"
+			}
 			"FireEffect"
 			{
 				"EffectName"		"particles/arena/units/heroes/hero_anakim/anakim_solar_flare.vpcf"
@@ -374,22 +379,22 @@
 			}
 		}
 	}
-//
-//	"anakim_stats_heroes"
-//	{
-//		"BaseClass"             		"ability_datadriven"
-//		"AbilityTextureName"			"arena/anakim_stats_heroes"
-//		"MaxLevel" 						"7"
-//		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-//		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-//
-//		"AbilitySpecial"
-//		{
-//			"01"
-//			{
-//				"var_type"			"FIELD_INTEGER"
-//				"stats_pct"			"30.0 40.0 50.0 60.0 70.0 80.0 95.0"
-//			}
-//		}
-//	}
+ //
+ //	"anakim_stats_heroes"
+ //	{
+ //		"BaseClass"             		"ability_datadriven"
+ //		"AbilityTextureName"			"arena/anakim_stats_heroes"
+ //		"MaxLevel" 						"7"
+ //		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+ //		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+ //
+ //		"AbilitySpecial"
+ //		{
+ //			"01"
+ //			{
+ //				"var_type"			"FIELD_INTEGER"
+ //				"stats_pct"			"30.0 40.0 50.0 60.0 70.0 80.0 95.0"
+ //			}
+ //		}
+ //	}
 }
