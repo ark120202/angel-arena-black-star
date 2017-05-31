@@ -13179,7 +13179,7 @@
 		"AbilityCastRange"				"1200"
 		"AbilityCooldown"				"12"
 		"AbilityManaCost"				"120"
-		"ItemAliases"					"hex;sheepstick;scythe of vyse;scythe of sun"
+		"ItemAliases"					"bloodthorn"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilitySpecial"
@@ -13207,7 +13207,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"30"
+				"crit_chance"				"100"
 			}
 			"06"
 			{
@@ -13227,13 +13227,106 @@
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hex_damage_pct"			"15"
+				"silence_damage_pct"			"15"
 			}
 		}
 
 		"precache"
 		{
 			"model"						"models/items/hex/sheep_hex/sheep_hex_gold.vmdl"
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_item_bloodthorn_silence"
+				"Target" 		"TARGET"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_bloodthorn"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intellect"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%bonus_attackspeed"
+					"MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL"	"%bonus_damage"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"					"%bonus_mana_regen_pct"
+				}
+			}
+			"modifier_item_bloodthorn_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName" 	"modifier_item_bloodthorn_crit"
+						"Target" 		"CASTER"
+					}
+
+					"Random"
+					{
+						"Chance" "%crit_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName" 	"modifier_item_bloodthorn_crit"
+								"Target"    	"CASTER"
+							}
+						}
+					}
+
+					"Random"
+					{
+						"Chance"			"%debuff_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_item_bloodthorn_debuff"
+								"Target" 		"TARGET"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_item_bloodthorn_crit"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_multiplier"
+				}
+
+				"OnAttackLanded"
+				{
+					"FireSound"
+					{
+						"EffectName"	"DOTA_Item.Daedelus.Crit"
+						"Target"		"CASTER"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_item_bloodthorn_crit"
+						"Target"   		"CASTER"
+					}
+				}
+			}
 		}
 	}
 }
