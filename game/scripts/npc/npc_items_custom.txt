@@ -13150,4 +13150,50 @@
 			"model"						"models/items/hex/sheep_hex/sheep_hex_gold.vmdl"
 		}
 	}
+
+	"item_recipe_bloodthorn2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bloodthorn2"
+		"ItemRequirements"
+		{
+			"01"						"item_bloodthorn;item_greater_crit"
+		}
+	}
+
+	"item_bloodthorn2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"AbilityTextureName"			"item_arena/scythe_of_sun"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityCastRange"				"1200"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"120"
+		"ItemAliases"					"hex;sheepstick;scythe of vyse;scythe of sun"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"20"
+			}
+		}
+
+		"precache"
+		{
+			"model"						"models/items/hex/sheep_hex/sheep_hex_gold.vmdl"
+		}
+	}
 }
