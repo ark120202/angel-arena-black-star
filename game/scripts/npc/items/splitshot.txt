@@ -572,7 +572,7 @@
 		"ItemResult"					"item_splitshot_ultimate"
 		"ItemRequirements"
 		{
-			"01"						"item_splitshot_str;item_splitshot_agi;item_splitshot_int;item_moon_dust;item_dark_blade"
+			"01"						"item_splitshot_str;item_splitshot_agi;item_splitshot_int;item_moon_dust"
 		}
 	}
 
@@ -628,7 +628,7 @@
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"295"
+				"bonus_damage"					"100"
 			}
 			"09"
 			{

@@ -45,6 +45,18 @@
 	"item_quelling_blade"
 	{
 		"SecretShop"					"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_bonus"			"28"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_bonus_ranged"	"14"
+		}
 	}
 	"item_ring_of_protection"
 	{
