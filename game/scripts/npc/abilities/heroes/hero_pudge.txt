@@ -14,7 +14,7 @@
 		"HasScepterUpgrade"				"1"
 		"AbilityCooldown"				"14.0 13.5 13.0 12.5 12.0 11.5 11.0"
 		"AbilityManaCost"				"120 150 180 220 240 280"
-		"AbilityDamage"					"90 180 270 360 450 540 630"
+		"AbilityDamage"					"90 140 190 240 290 340 390"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -51,7 +51,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_scepter"		"460 560 660 760 860 960 1060"
+				"damage_scepter"		"200 250 300 350 400 450 500"
 			}
 			"06"
 			{
@@ -235,7 +235,7 @@
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"flesh_heap_strength_buff_amount"	"1.0 1.5 2.0 2.5 3.5 4.0 4.5"
+				"flesh_heap_strength_buff_amount"	"1.0 1.25 1.5 1.75 2.0 2.25 2.5"
 			}
 			"03"
 			{
@@ -250,7 +250,7 @@
 			"05"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"creeps_killed_to_stack"			"25"
+				"creeps_killed_to_stack"			"40"
 			}
 			"06"
 			{
