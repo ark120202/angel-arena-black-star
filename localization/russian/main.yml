@@ -121,7 +121,7 @@ DOTA_Tooltip_ability_boss_wind_splitshot: Splitshot
 DOTA_Tooltip_ability_boss_wind_splitshot_Description: Материализованный Ветер атакует по области и имеет максимальную скорость.
 DOTA_Tooltip_ability_boss_armor: Boss Armor
 DOTA_Tooltip_ability_boss_armor_Description: |-
-  Имеет иммунитет к большинству негативных эффектов.
+  Имеет иммунитет к большинству негативных эффектов, если пассивные способности не отключены.
   При получении урона от вражеского героя временно снижает его радиус атаки до %attack_range_limit%.
 DOTA_Tooltip_ability_ogre_magi_multicast_arena: Multicast
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: |-

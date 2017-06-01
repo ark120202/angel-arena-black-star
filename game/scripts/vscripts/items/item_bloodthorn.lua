@@ -110,10 +110,10 @@ if IsServer() then
 	end
 
 	function modifier_item_bloodthorn_arena_silence:OnDestroy()
+		local ability = self:GetAbility()
 		local damage = (self.damage or 0) * ability:GetSpecialValueFor("silence_damage_pct") * 0.01
 		ParticleManager:SetParticleControl(ParticleManager:CreateParticle("particles/items2_fx/orchid_pop.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.unit), 1, Vector(damage))
 		if damage > 0 then
-			local ability = self:GetAbility()
 			ApplyDamage({
 				attacker = self:GetCaster(),
 				victim = self:GetParent(),
