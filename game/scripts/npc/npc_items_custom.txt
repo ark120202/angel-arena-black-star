@@ -13211,7 +13211,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance_pct"		"100"
+				"crit_chance_pct"		"35"
 			}
 			"06"
 			{
