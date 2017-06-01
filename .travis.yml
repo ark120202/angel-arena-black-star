@@ -1,0 +1,8 @@
+language: node_js
+node_js: "7"
+before_script:
+  - npm i -g gulp
+  - cd generator
+  - npm i
+script:
+  - gulp --build

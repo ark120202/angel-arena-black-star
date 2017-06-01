@@ -70,7 +70,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"heroes/bosses/boss_any.lua"
+						"ScriptFile"	"heroes/bosses/boss_armor.lua"
 						"Function"		"OnBossDeath"
 					}
 				}
