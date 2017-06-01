@@ -65,12 +65,12 @@ DROP_TABLE = {
 		{ Item = "item_moon_dust", DropChance = 25, DamageWeightPct = 25, },
 		{ Item = "item_cursed_eye", DropChance = 10, DamageWeightPct = 50, },
 		{ Item = "item_fallen_star", DropChance = 10, DamageWeightPct = 50, },
-		{ Item = "item_demons_paw", DropChance = 14,DamageWeightPct = 50,  },
+		{ Item = "item_demons_paw", DropChance = 14, DamageWeightPct = 50,  },
 
-		{ Item = "item_shard_primal_medium", DropChance = 30, },
-		{ Item = "item_shard_str_large", DropChance = 35, },
-		{ Item = "item_shard_agi_large", DropChance = 35, },
-		{ Item = "item_shard_int_large", DropChance = 35, },
+		--{ Item = "item_shard_primal_medium", DropChance = 30, },
+		--{ Item = "item_shard_str_large", DropChance = 35, },
+		--{ Item = "item_shard_agi_large", DropChance = 35, },
+		--{ Item = "item_shard_int_large", DropChance = 35, },
 	},
 	["npc_arena_boss_l1_v2"] = {
 		{ Item = "item_soul_of_titan", DropChance = 15, DamageWeightPct = 30, },
@@ -81,10 +81,10 @@ DROP_TABLE = {
 		{ Item = "item_fallen_star", DropChance = 10, DamageWeightPct = 50, },
 		{ Item = "item_demons_paw", DropChance = 14, DamageWeightPct = 50, },
 
-		{ Item = "item_shard_primal_medium", DropChance = 30, },
-		{ Item = "item_shard_str_large", DropChance = 35, },
-		{ Item = "item_shard_agi_large", DropChance = 35, },
-		{ Item = "item_shard_int_large", DropChance = 35, },
+		--{ Item = "item_shard_primal_medium", DropChance = 30, },
+		--{ Item = "item_shard_str_large", DropChance = 35, },
+		--{ Item = "item_shard_agi_large", DropChance = 35, },
+		--{ Item = "item_shard_int_large", DropChance = 35, },
 	},
 	["npc_arena_boss_l2_v1"] = {
 		{ Item = "item_soul_of_titan", DropChance = 25, DamageWeightPct = 30, },

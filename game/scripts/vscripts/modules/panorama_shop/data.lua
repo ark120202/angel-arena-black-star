@@ -175,7 +175,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_butterfly_arena",
 			"item_rapier",
 			"item_abyssal_blade",
-			"item_bloodthorn",
+			"item_bloodthorn_2",
 			"item_radiance_3",
 		},
 

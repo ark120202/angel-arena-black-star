@@ -1,7 +1,7 @@
 modifier_item_book_of_the_guardian = class({})
 function modifier_item_book_of_the_guardian:IsHidden() return true end
-function modifier_item_book_of_the_guardian:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_book_of_the_guardian:IsAura() return true end
+function modifier_item_book_of_the_guardian:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 
 function modifier_item_book_of_the_guardian:DeclareFunctions()
 	return {

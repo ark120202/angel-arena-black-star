@@ -15,8 +15,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"boss_any_passive"
-		"Ability2"					"boss_armor"
+		"Ability1"					"boss_armor"
 
 		"ArmorPhysical"				"45"
 		"MagicalResistance"			"40"
@@ -27,7 +26,7 @@
 		"AttackDamageMin"			"4000"
 		"AttackDamageMax"			"5000"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.15"
+		"AttackRate"				"0.6"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"900"
@@ -74,8 +73,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"boss_any_passive"
-		"Ability2"					"boss_armor"
+		"Ability1"					"boss_armor"
 
 		"ArmorPhysical"				"55"
 		"MagicalResistance"			"40"
@@ -84,7 +82,7 @@
 		"AttackDamageMin"			"4500"
 		"AttackDamageMax"			"5500"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.15"
+		"AttackRate"				"0.6"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"250"
@@ -131,8 +129,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"boss_any_passive"
-		"Ability2"					"boss_armor"
+		"Ability1"					"boss_armor"
 
 		"ArmorPhysical"				"100"
 		"MagicalResistance"			"40"
@@ -143,7 +140,7 @@
 		"AttackDamageMin"			"5000"
 		"AttackDamageMax"			"6600"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.15"
+		"AttackRate"				"0.6"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"900"
@@ -190,8 +187,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"boss_any_passive"
-		"Ability2"					"boss_armor"
+		"Ability1"					"boss_armor"
 
 		"ArmorPhysical"				"90"
 		"MagicalResistance"			"40"
@@ -200,7 +196,7 @@
 		"AttackDamageMin"			"5200"
 		"AttackDamageMax"			"6600"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.15"
+		"AttackRate"				"0.6"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"250"
@@ -247,9 +243,8 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"boss_any_passive"
-		"Ability2"					"boss_armor"
-		"Ability3"					"boss_central_passive"
+		"Ability1"					"boss_armor"
+		"Ability2"					"boss_central_passive"
 
 		"ArmorPhysical"				"150"
 		"MagicalResistance"			"50"
@@ -260,7 +255,7 @@
 		"AttackDamageMin"			"10000"
 		"AttackDamageMax"			"12000"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.10"
+		"AttackRate"				"0.3"
 		"AttackAnimationPoint"		"0.10"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"950"
@@ -308,8 +303,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"boss_freya_sharp_ice_shards"
-		"Ability5"					"boss_any_passive"
-		"Ability6"					"boss_armor"
+		"Ability5"					"boss_armor"
 
 		"ArmorPhysical"				"90"
 		"MagicalResistance"			"40"
@@ -318,7 +312,7 @@
 		"AttackDamageMin"			"5200"
 		"AttackDamageMax"			"6600"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.15"
+		"AttackRate"				"0.6"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"250"
@@ -366,8 +360,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					""//"boss_zaken_"
-		"Ability5"					"boss_any_passive"
-		"Ability6"					"boss_armor"
+		"Ability5"					"boss_armor"
 
 		"ArmorPhysical"				"90"
 		"MagicalResistance"			"40"
@@ -376,7 +369,7 @@
 		"AttackDamageMin"			"5200"
 		"AttackDamageMax"			"6600"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.15"
+		"AttackRate"				"0.6"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"250"
@@ -424,8 +417,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"boss_freya_sharp_ice_shards"
-		"Ability5"					"boss_any_passive"
-		"Ability6"					"boss_armor"
+		"Ability5"					"boss_armor"
 
 		"ArmorPhysical"				"120"
 		"MagicalResistance"			"60"
@@ -434,7 +426,7 @@
 		"AttackDamageMin"			"10404"
 		"AttackDamageMax"			"15367"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.15"
+		"AttackRate"				"0.6"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"600"

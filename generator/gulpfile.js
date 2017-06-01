@@ -57,6 +57,9 @@ gulp.task('localization', () =>
 		})
 		.catch(console.error)
 );
+gulp.task('localization_watch', ['localization'], () => {
+	gulp.watch(paths.localization + '/**/*.yml', ['localization']);
+});
 
 // Panorama
 // Resource compiler throws error :(
@@ -71,17 +74,11 @@ gulp.task('localization', () =>
 // 		.pipe(gulp.dest(path.join(paths.game, 'panorama/scripts')))
 // );
 const shouldWatch = argv.build == null;
-const minimizeCssRegExp1 = /\/\*(?:(?!\*\/)[\s\S])*\*\/|[\r\n\t]+/g;
-const minimizeCssRegExp2 = / {2,}/g;
-
 gulp.task('src_sass', () =>
 	gulp.src(path.join(paths.content, 'panorama_src/styles/**/*.sass'))
 		.pipe(shouldWatch ? watch(path.join(paths.content, 'panorama_src/styles/**/*.sass')) : gutil.noop())
 		.pipe(plumber())
-
 		.pipe(sass())
-		//.pipe(replace(minimizeCssRegExp1, ''))
-		//.pipe(replace(minimizeCssRegExp2, ''))
 		.pipe(gulp.dest(path.join(paths.content, 'panorama/styles')))
 		//.pipe(resourcecompiler())
 		//.pipe(gulp.dest(path.join(paths.game, 'panorama/styles')))
@@ -91,12 +88,12 @@ gulp.task('src_css', () =>
 	gulp.src(path.join(paths.content, 'panorama_src/styles/**/*.css'))
 		.pipe(shouldWatch ? watch(path.join(paths.content, 'panorama_src/styles/**/*.css')) : gutil.noop())
 		.pipe(plumber())
-
-		//.pipe(replace(minimizeCssRegExp1, ''))
-		//.pipe(replace(minimizeCssRegExp2, ''))
 		.pipe(gulp.dest(path.join(paths.content, 'panorama/styles')))
 );
 gulp.task('panorama', ['src_sass', 'src_css']);
 
 // Startup
-gulp.task('default', ['panorama', 'localization'], shouldWatch ? () => gulp.watch(paths.localization + '/**/*.yml', ['localization']) : null);
+gulp.task('default', [
+	'panorama',
+	shouldWatch ? 'localization_watch' : 'localization'
+]);

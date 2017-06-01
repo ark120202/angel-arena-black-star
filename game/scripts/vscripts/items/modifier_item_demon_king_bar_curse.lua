@@ -1,4 +1,5 @@
 modifier_item_demon_king_bar_curse = class({})
+function modifier_item_demon_king_bar_curse:IsDebuff() return true end
 
 function modifier_item_demon_king_bar_curse:GetEffectName()
 	return "particles/arena/items_fx/demon_king_bar_curse_mark.vpcf"

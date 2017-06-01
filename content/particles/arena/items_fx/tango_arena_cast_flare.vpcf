@@ -50,7 +50,7 @@
 		},
 		{
 			_class = "C_INIT_RingWave"
-			m_flInitialRadius = 40.0
+			m_flInitialRadius = 80.0
 		},
 		{
 			_class = "C_INIT_RandomRotation"
@@ -74,6 +74,21 @@
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 10
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

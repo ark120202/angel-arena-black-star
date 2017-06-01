@@ -1735,3 +1735,22 @@ DOTA_Tooltip_modifier_item_book_of_the_guardian_aura: Freezing Aura
 DOTA_Tooltip_modifier_item_book_of_the_guardian_aura_Description: Attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
 DOTA_Tooltip_modifier_item_book_of_the_guardian_blast: Arctic Blast
 DOTA_Tooltip_modifier_item_book_of_the_guardian_blast_Description: Movement speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
+
+DOTA_Tooltip_Ability_item_bloodthorn_2: Bloodthorn 2
+DOTA_Tooltip_ability_item_bloodthorn_2_Description: |-
+  Active: Silences a target for %silence_duration% seconds and amplifies the damage it takes by %silence_damage_pct%%%. All attacks on the silenced target will have True Strike and land a crit on impact.
+  Passive: Critical Strike - Grants each attack a chance to deal additional damage. Critical Strike does not work against buildings.
+DOTA_Tooltip_ability_item_bloodthorn_2_Note0: Amplified damage is dealt at the end of the duration as magical damage.
+DOTA_Tooltip_ability_item_bloodthorn_2_bonus_intellect: +$int
+DOTA_Tooltip_ability_item_bloodthorn_2_bonus_attack_speed: +$attack
+DOTA_Tooltip_ability_item_bloodthorn_2_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_bloodthorn_2_bonus_mana_regen_pct: '%+$mana_regen'
+DOTA_Tooltip_ability_item_bloodthorn_2_crit_chance_pct: '%CRITICAL CHANCE:'
+DOTA_Tooltip_ability_item_bloodthorn_2_crit_multiplier_pct: '%CRITICAL DAMAGE:'
+DOTA_Tooltip_ability_item_bloodthorn_2_silence_damage_pct: '%SILENCE INCREASED DAMAGE:'
+DOTA_Tooltip_ability_item_bloodthorn_2_silence_duration: 'SILENCE DURATION:'
+DOTA_Tooltip_ability_item_bloodthorn_2_target_crit_multiplier_pct: '%SILENCE CRITICAL DAMAGE:'
+DOTA_Tooltip_modifier_item_bloodthorn_arena_silence: Bloodthorn 2
+DOTA_Tooltip_modifier_item_bloodthorn_arena_silence_Description: |-
+  Silenced and taking increased damage, dealt at the end of the duration of the debuff as magic damage.
+  Causes all incoming attacks to crit for %dMODIFIER_PROPERTY_TOOLTIP%%% damage.

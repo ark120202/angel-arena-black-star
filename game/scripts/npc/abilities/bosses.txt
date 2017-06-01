@@ -1,38 +1,5 @@
 "DOTAAbilities"
 {
-	"boss_any_passive"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"MaxLevel" 						"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"OnCreated"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SetMaxLevel"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_boss_any_passive"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/bosses/boss_any.lua"
-						"Function"		"OnBossDeath"
-					}
-				}
-			}
-		}
-	}
-
 	"boss_armor"
 	{
 		"BaseClass"             		"ability_datadriven"
@@ -45,7 +12,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_range_limit" "900"
+				"attack_range_limit"	"900"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed"	"400"
 			}
 		}
 
@@ -70,6 +42,11 @@
 					"MODIFIER_STATE_CANNOT_MISS"							"MODIFIER_STATE_VALUE_ENABLED"
 				}
 
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%bonus_attack_speed"
+				}
+
 				"ThinkInterval"  "0.1"
 				"OnIntervalThink"
 				{
@@ -86,6 +63,15 @@
 					{
 						"ScriptFile"	"heroes/bosses/boss_armor.lua"
 						"Function"		"OnTakeDamage"
+					}
+				}
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/bosses/boss_any.lua"
+						"Function"		"OnBossDeath"
 					}
 				}
 			}
