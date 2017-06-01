@@ -4,8 +4,8 @@
 		<include src="file://{resources}/styles/ability_shop.css" />
 	</styles>
 	<scripts>
-		<include src="file://{resources}/scripts/util.js" /> 
-		<include src="file://{resources}/scripts/ability_shop.js" /> 
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/ability_shop.js" />
 	</scripts>
 	<snippets>
 		<snippet name="Ability">

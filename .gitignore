@@ -1,3 +1,4 @@
+# Compiled files
 *.vpcf_c
 *.vtex_c
 *.vsndevts_c
@@ -12,9 +13,10 @@
 *.vagrp_c
 *.vmdl_c
 
-!game/panorama/images/*.vtex_c
-!game/panorama/images/custom_game/*.vtex_c
+# Preprocessored
+content/panorama/styles/*
 
+# Environments
 *.sublime-workspace
 *.sublime-project
 
@@ -41,4 +43,3 @@ generator/node_modules/*
 
 changelogs/!ideas.txt
 changelogs/!local.txt
-serverinfo.txt

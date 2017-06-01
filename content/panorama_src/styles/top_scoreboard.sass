@@ -1,0 +1,708 @@
+.base
+	vertical-align: top
+	horizontal-align: center
+	height: 132px
+	width: 1700px
+	transform: translateY(0px)
+	transition-property: transform
+	transition-duration: 1s
+	transition-delay: 2s
+	transition-timing-function: ease-in-out
+
+#HeroImage
+	transition-property: wash-color, saturation, brightness, contrast
+	z-index: 3
+	background-color: gradient(linear, 0 0, 0 100%, from(rgb(51, 51, 51) ), color-stop(0.2, rgb(68, 68, 68) ), color-stop(.5, rgb(51, 51, 51)), to(rgb(17, 17, 17) ) )
+	width: 66px
+	height: width-percentage(55%)
+	margin-top: 4px
+	vertical-align: top
+	transition-duration: 0.1s
+	saturation: 1
+	brightness: 1
+	contrast: 1
+
+#TeamsPanel
+	height: 100%
+	flow-children: right
+	horizontal-align: center
+
+#TopBarLeftTeams
+	width: 772px
+	height: 100%
+	margin-right: 76px
+	.TopBarBackground
+		horizontal-align: right
+
+
+#TopBarRightTeams
+	width: 772px
+	height: 100%
+	.TopBarBackground
+		transform: scaleX(-1)
+
+
+.AspectRatio4x3
+	#TopBarLeftTeams
+		margin-left: -91px
+
+	#HeroImage
+		width: 50px
+
+	#BuybackIcon
+		margin-bottom: 18px
+
+	.TopBarBackground
+		background-size: 100% 80%
+
+	#TopBarScore
+		margin-top: 3px
+
+	#TopBarUltIndicator
+		margin-top: 21px
+
+	#RespawnTimer
+		margin-bottom: 8px
+
+	#GoldIcon
+		margin-bottom: 8px
+
+	#DisconnectIcon
+		width: 50px
+
+	.TopBarHealthBar
+		width: 40px
+		margin-bottom: 38px
+
+	#ManaBar
+		width: 40px
+		margin-bottom: 30px
+
+
+.AspectRatio5x4
+	#TopBarLeftTeams
+		margin-left: -91px
+
+	#HeroImage
+		width: 50px
+
+	#BuybackIcon
+		margin-bottom: 18px
+
+	.TopBarBackground
+		background-size: 100% 80%
+
+	#TopBarScore
+		margin-top: 3px
+
+	#TopBarUltIndicator
+		margin-top: 21px
+
+	#RespawnTimer
+		margin-bottom: 8px
+
+	#GoldIcon
+		margin-bottom: 8px
+
+	#DisconnectIcon
+		width: 50px
+
+	.TopBarHealthBar
+		width: 40px
+		margin-bottom: 38px
+
+	#ManaBar
+		width: 40px
+		margin-bottom: 30px
+
+
+#TopBarRightPlayers
+	horizontal-align: right
+	flow-children: right
+	#BuybackIcon
+		margin-left: 0
+		margin-right: 6px
+
+	#TopBarPlayersContainer
+		.SlantedContainer
+			opacity-mask: url('s2r://panorama/images/masks/topbar_heroslant_right_psd.vtex')
+
+		.TopBarPlayerSlot
+			margin-right: -4px
+
+		#PlayerColor
+			background-size: 93% 100%
+			background-position: 5px 0
+
+		.TopBarHealthBar
+			margin-right: 6px
+
+		#TopBarUltIndicator
+			margin-right: 6px
+
+		#ManaBar
+			margin-right: 6px
+
+		#GoldIcon
+			margin-right: 6px
+
+		#RespawnTimer
+			margin-right: 6px
+
+
+	#TopBarScore
+		horizontal-align: right
+		margin-right: 8px
+
+	#TeamScorePlayersMainFlow
+		flow-children: left
+
+
+#TopBarLeftPlayers
+	flow-children: left
+	#TopBarPlayersContainer
+		flow-children: left
+		.SlantedContainer
+			opacity-mask: url('s2r://panorama/images/masks/topbar_heroslant_left_psd.vtex')
+
+		.TopBarPlayerSlot
+			margin-left: -4px
+
+		#DeadLayer
+			transform: scaleX(-1)
+
+		.TopBarHealthBar
+			margin-left: 6px
+
+		#TopBarUltIndicator
+			margin-left: 6px
+
+		#ManaBar
+			margin-left: 6px
+
+		#GoldIcon
+			margin-left: 6px
+
+		#RespawnTimer
+			margin-left: 6px
+
+
+	#TopBarScore
+		horizontal-align: left
+		margin-left: 4px
+
+	#TeamScorePlayersMainFlow
+		flow-children: right
+		overflow: noclip
+
+
+.PlayerContainer
+	width: 100%
+	height: 100%
+
+#BuybackIcon
+	background-image: url('s2r://panorama/images/hud/reborn/buyback_topbar_alive_psd.vtex')
+	background-size: 100%
+	background-repeat: no-repeat
+	width: 100%
+	height: 11px
+	opacity: 0
+	horizontal-align: left
+	vertical-align: bottom
+	z-index: 3
+	margin-bottom: 10px
+	margin-left: 6px
+	transform: translateY(-13px)
+	transition-property: opacity, pre-transform-scale2d, transform
+	transition-duration: .12s
+	transition-timing-function: ease-out
+
+.AltPressed
+	.TopBarHealthBar
+		opacity: 1
+		transform: translateY(11px )
+
+	#ManaBar
+		opacity: 1
+		transform: translateY(11px)
+
+	#TimeUntil
+		opacity: 1
+		transform: translateY(0px)
+
+	#KillGoal
+		opacity: 1
+		transform: translateY(0px)
+
+	#GamemodeVariablePanel
+		height: 36px
+
+	#DuelTimer
+		transform: translateY(0px)
+
+	.TeamScorePlayers:not(.EnemyTeam) .BuybackReady #BuybackIcon
+		transform: translateY(0px)
+		opacity: 1
+
+	.Dead.BuybackReady #BuybackIcon
+		opacity: 0
+
+	.EnemyTeam #ManaBar
+		opacity: 0
+
+
+#TopBarPlayersContainer
+	height: 100%
+	z-index: 2
+	min-width: 200px
+
+.TopBarBackground
+	background-image: url('s2r://panorama/images/hud/reborn/top_bar_team_bg_psd.vtex')
+	background-size: 100% 100%
+	background-repeat: no-repeat
+	width: 98%
+	height: 40px
+
+.TopBarPlayerSlot
+	height: 66px
+
+#TopBarScore
+	color: rgb(255, 255, 255)
+	font-size: 22px
+	font-weight: bold
+	font-family: 'RadianceM'
+	height: 38px
+	width: 50px
+	text-align: center
+	margin-top: 7px
+	z-index: 5
+
+.TeamScorePlayers
+	height: 66px
+	&#TopBarLeftPlayers #RespawnTimer
+		transform: translateY(-28px) translateX(-4px)
+
+	.Dead #RespawnTimer
+		z-index: 5
+		opacity: 1
+		transform: translateY(0px)
+
+
+#TeamScorePlayersMainFlow
+	height: 100%
+
+.TopBarHealthBar
+	width: 60px
+	height: 8px
+	border: 0
+	margin-bottom: 30px
+	vertical-align: bottom
+	border-radius: 0
+	opacity: 0
+	z-index: -500
+	transition-property: transform, opacity
+	transition-duration: 0.12s
+	transition-timing-function: ease-in-out
+	.ProgressBarLeft
+		background-color: rgb(51, 153, 51)
+		background-image: url('s2r://panorama/images/hud/reborn/topbar_health_psd.vtex')
+		background-size: cover
+		border-radius: 0
+
+	.ProgressBarRight
+		background-color: gradient(linear, 0 0, 0 100%, from(rgb(23, 32, 13) ), color-stop(0.2, rgb(34, 46, 19) ), color-stop(.5, rgb(30, 41, 17)), to(rgb(23, 32, 13)) )
+
+
+#TopBarUltIndicator
+	vertical-align: top
+	horizontal-align: center
+	width: 38px
+	height: 20px
+	background-size: 18px
+	background-position: 50% 100%
+	background-repeat: no-repeat
+	z-index: 500
+	opacity: 0
+	margin-top: 28px
+	tooltip-position: bottom
+	tooltip-body-position: 50% 50%
+
+#AbilityDraftHitBox
+	visibility: collapse
+	width: 58px
+	height: 30px
+	vertical-align: top
+	horizontal-align: center
+	tooltip-position: bottom
+	tooltip-body-position: 50% 50%
+	opacity: 1
+
+#TimeOfDay
+	width: 80px
+	height: 82px
+	//46 +36 horizontal-align: center
+	vertical-align: top
+	z-index: 2
+	background-size: cover
+
+#TimeOfDayContent
+	height: 100%
+	width: 100%
+
+#DayGlow
+	height: 46px
+	width: 90px
+	horizontal-align: center
+	vertical-align: top
+	z-index: 2
+	background-size: cover
+	background-image: url('s2r://panorama/images/hud/reborn/glow_day_psd.vtex')
+	background-repeat: no-repeat
+	animation-name: DayNightPulse
+	animation-duration: 2.94s
+	animation-timing-function: linear
+	animation-iteration-count: infinite
+	visibility: collapse
+
+#NightGlow
+	height: 46px
+	width: 90px
+	horizontal-align: center
+	vertical-align: top
+	z-index: 2
+	background-size: cover
+	background-image: url('s2r://panorama/images/hud/reborn/glow_night_psd.vtex')
+	background-repeat: no-repeat
+	animation-name: DayNightPulse
+	animation-duration: 2.94s
+	animation-timing-function: linear
+	animation-iteration-count: infinite
+	visibility: collapse
+
+#GameTime
+	color: rgb(255, 255, 255)
+	vertical-align: top
+	horizontal-align: center
+	margin-top: 23px
+	letter-spacing: 1px
+	font-family: 'RadianceM'
+	font-size: 14px
+	font-weight: bold
+	width: 200px
+	text-align: center
+
+.LowVisualQuality
+	#GameTime
+		text-shadow: 1px 1px 0 2.0 rgba(0, 0, 0, 0.06667)
+
+	#RespawnTimerLabel
+		text-shadow: 0 0 0 2.0 rgb(0, 0, 0)
+
+	#TimeUntil
+		text-shadow: 1px 1px 0 2.0 rgba(0, 0, 0, 0.26667)
+
+
+.TimeOfDayIcon
+	width: 23px
+	height: 23px
+	horizontal-align: center
+	background-size: cover
+	z-index: 50
+	margin-top: 2px
+	margin-right: 1px
+
+.DayIcon
+	background-image: url('s2r://panorama/images/hud/reborn/icon_sun_psd.vtex')
+
+.NightIcon
+	transform: scaleX(-1)
+	background-image: url('s2r://panorama/images/hud/reborn/icon_moon_psd.vtex')
+
+#RespawnTimer
+	width: 100%
+	height: 26px
+	z-index: -1
+	vertical-align: bottom
+	horizontal-align: center
+	background-color: gradient(linear, 0 0, 0 100%, from(rgb(24, 27, 29)), to(rgb(34, 41, 47) ) )
+	opacity: 0
+	transform: translateY(-28px) translateX(4px)
+	border-bottom-right-radius: 4px
+	border-bottom-left-radius: 4px
+	transition-property: transform, opacity
+	transition-duration: .2s
+	transition-timing-function: ease-out
+
+#RespawnTimerLabel
+	color: rgb(255, 255, 255)
+	font-size: 16px
+	text-align: center
+	opacity: 1
+	horizontal-align: center
+	vertical-align: center
+	margin-top: 4px
+	width: 100%
+	height: 100%
+	font-family: 'RadianceM'
+	font-weight: bold
+
+.BuybackReady
+	#RespawnTimer
+		background-image: url('s2r://panorama/images/hud/reborn/top_bar_buyback_bg_psd.vtex')
+		width: 100%
+		background-repeat: no-repeat
+		background-size: cover
+
+	#RespawnTimerLabel
+		//color: rgb(255, 216, 37)
+
+	&.Dead #TopBarBuybackStatus
+		opacity: 1
+
+
+#AliveBuybackStatus
+	background-image: url('s2r://panorama/images/hud/reborn/topbar_buyback_psd.vtex')
+	background-size: 100%
+	background-repeat: no-repeat
+	height: 100%
+	width: 100%
+	opacity: 0
+	transition-property: opacity
+	transition-duration: .18s
+	transition-timing-function: ease-in-out
+
+#TopBarBuybackStatus
+	background-image: url('s2r://panorama/images/hud/reborn/topbar_buyback_psd.vtex')
+	background-size: 100%
+	background-repeat: no-repeat
+	height: 100%
+	width: 100%
+	opacity: 0
+	transition-property: opacity
+	transition-duration: .18s
+	transition-timing-function: ease-in-out
+
+.Dead
+	#HeroImage
+		wash-color: rgb(137, 137, 137)
+		saturation: 0.0
+
+	#DeadLayer
+		opacity: 1
+
+	#HealthBar
+		opacity: 0
+
+	#ManaBar
+		opacity: 0
+
+
+#DeadLayer
+	width: 100%
+	height: 100%
+	z-index: 5
+	opacity: 0
+
+.HideElement
+	opacity: 0
+
+.EnemyTeam
+	#TopBarUltIndicator
+		opacity: 0
+
+	#HealthBar
+		opacity: 0
+
+
+
+	opacity: 0
+
+#GoldIcon
+	background-image: url('s2r://panorama/images/hud/icon_gold_psd.vtex')
+	background-size: 100% 100%
+	width: 30px
+	height: 30px
+	horizontal-align: center
+	vertical-align: bottom
+	opacity: 0
+	margin-top: 4px
+
+#PlayerColor
+	width: 100%
+	height: 4px
+	z-index: 5
+	background-image: url('s2r://panorama/images/hud/reborn/topbar_playerslot_vignette_psd.vtex')
+	background-size: 92% 100%
+	background-repeat: no-repeat
+
+#PlayerColorShadow
+	width: 100%
+	height: 100%
+	margin-top: 4px
+	z-index: 4
+	background-color: gradient(linear, 0 0, 0 100%, from(rgb(0, 0, 0)), color-stop(0.03, rgba(0, 0, 0, 0.66667)), color-stop(0.1, rgba(0, 0, 0, 0)), color-stop(0.91, rgba(0, 0, 0, 0)), color-stop(0.95, rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.66667)))
+
+.Disconnected
+	#HeroImage
+		opacity: 0.5
+
+	#DisconnectIcon
+		opacity: 1
+
+
+#DisconnectIcon
+	width: 67px
+	height: 20px
+	margin-top: 12px
+	vertical-align: top
+	background-image: url('s2r://panorama/images/hud/reborn/icon_disconnect_png.vtex')
+	background-repeat: no-repeat
+	background-size: 100%
+	z-index: 20
+	opacity: 0
+
+#ManaBar
+	width: 60px
+	height: 8px
+	border: 0
+	z-index: 1
+	margin-bottom: 22px
+	vertical-align: bottom
+	box-shadow: none
+	border-radius: 0
+	opacity: 0
+	transition-property: transform, opacity
+	transition-duration: 0.12s
+	transition-timing-function: ease-in-out
+	.ProgressBarLeft
+		border-radius: 0
+		background-image: url('s2r://panorama/images/hud/reborn/topbar_mana_psd.vtex')
+		background-size: cover
+
+	.ProgressBarRight
+		border-radius: 0
+		background-color: gradient(linear, 0 0, 0 100%, from(rgb(16, 25, 50) ), color-stop(0.2, rgb(23, 36, 71) ), color-stop(.5, rgb(22, 34, 68)), to(rgb(16, 25, 50) ) )
+
+
+#TimeOfDayBG
+	horizontal-align: center
+	visibility: visible
+	z-index: 2
+	background-image: url('s2r://panorama/images/hud/reborn/bg_timer_psd.vtex')
+	background-size: 100%
+	height: 46px
+	width: 90px
+
+#TimeUntil
+	color: rgb(255, 255, 255)
+	align: center top
+	margin-top: 84px
+	letter-spacing: 1px
+	font-family: 'RadianceM', 'Radiance'
+	font-size: 14px
+	font-weight: bold
+	opacity: 0
+	text-shadow: 1px 1px 0 2.0 rgba(0, 0, 0, 0.26667)
+	transition-property: transform, opacity
+	transition-duration: 0.18s
+	transition-timing-function: ease-in-out
+	transform: translateY(-4px)
+
+.ShowTimeUntil
+	#TimeUntil
+		opacity: 1
+		transform: translateY(0px)
+
+	#KillGoal
+		opacity: 1
+		transform: translateY(0px)
+
+	#GamemodeVariablePanel
+		height: 36px
+
+	#DuelTimer
+		transform: translateY(0px)
+
+
+#GamemodeVariablePanel
+	background-image: url('s2r://panorama/images/hud/reborn/bg_timer_psd.vtex')
+	background-size: 100%
+	height: 30px
+	width: height-percentage(195.7%)
+	margin-top: 44px
+	align: center top
+	flow-children: down
+	transition-property: height
+	transition-duration: 0.18s
+	transition-timing-function: ease-in-out
+
+#KillGoal
+	color: rgb(255, 65, 65)
+	align: center top
+	letter-spacing: 1px
+	font-family: 'RadianceM'
+	font-size: 15px
+	font-weight: bold
+	text-align: center
+	opacity: 0
+	transition-property: transform, opacity
+	transition-duration: 0.18s
+	transition-timing-function: ease-in-out
+	transform: translateY(-4px)
+
+#DuelTimer
+	color: rgb(255, 255, 255)
+	align: center top
+	letter-spacing: 0.8px
+	font-family: 'RadianceM'
+	font-size: 16px
+	text-align: center
+	font-weight: bold
+	margin-top: -4px
+	transform: translateY(-10px)
+	transition-property: transform
+	transition-duration: 0.18s
+	transition-timing-function: ease-in-out
+
+DOTAHud.IsBeforeGameplay .base
+	transform: translateY(-78px)
+
+.ColorBlindModeEnabled .TopBarHealthBar .ProgressBarLeft
+	background-color: gradient(linear, 0 0, 0 100%, from(rgb(101, 143, 223) ), color-stop(0.2, rgb(164, 202, 255) ), color-stop(.5, rgb(63, 111, 203)), to(rgb(44, 86, 171) ) )
+	background-image: none
+
+.IsAbilityDraft #AbilityDraftHitBox
+	visibility: visible
+
+.UltLearned #TopBarUltIndicator
+	opacity: 1
+
+.UltReady #TopBarUltIndicator
+	background-image: url('s2r://panorama/images/hud/reborn/ult_ready_psd.vtex')
+
+.UltReadyNoMana #TopBarUltIndicator
+	background-image: url('s2r://panorama/images/hud/reborn/ult_no_mana_psd.vtex')
+
+.UltOnCooldown #TopBarUltIndicator
+	background-image: url('s2r://panorama/images/hud/reborn/ult_cooldown_psd.vtex')
+
+.NightTime #NightGlow
+	visibility: visible
+
+.DayTime #DayGlow
+	visibility: visible
+
+.EnemyHeroMissing #HeroImage
+	opacity: 1.0
+
+.Spectating #ManaBar
+	opacity: 1
+	transform: translateY(11px)
+
+.BuybackUsed #GoldIcon
+	z-index: 500
+	opacity: 1
+
+.IsLocalPlayerSpectating .TopBarHealthBar
+	opacity: 1
+	transform: translateY(11px )

@@ -1,0 +1,239 @@
+$totalWidth: 410px;
+$mainPanelWidth: 375px;
+$toggleButtonWidth: ($totalWidth - $mainPanelWidth + 3px); /* x + 3px */
+$backgroundColor: rgb(20, 20, 20);
+
+.BossLootBase
+	width: 100%
+	height: 100%
+
+#BossDropItemVotings
+	width: $totalWidth
+	height: 70%
+	transform: translateX($mainPanelWidth)
+	transition-duration: .3s
+	transition-property: transform
+	transition-timing-function: ease-in-out
+	horizontal-align: right
+
+.ShowBossDrop
+	#BossDropItemVotings
+		transform: translateX(0)
+
+	#BossDropItemVotingsIcon
+		transform: rotateZ(-90deg) translateX(10px)
+
+
+#BossDropItemVotingsToggle
+	width: $toggleButtonWidth
+	height: 70px
+	margin-top: 100px
+	background-color: $backgroundColor
+	border-radius: 30px 0 0 30px
+
+#BossDropItemVotingsIcon
+	width: 70%
+	height: width-percentage(100%)
+	vertical-align: center
+	background-image: url('s2r://panorama/images/control_icons/expand_collapse_png.vtex')
+	background-size: 100% 100%
+	transform: rotateZ(90deg) translateX(-2px)
+	transition-duration: .4s
+	transition-property: transform
+
+#BossDropActiveItemVotingsCounter
+	width: height-percentage(100%)
+	height: 20px
+	padding-top: -1px
+	font-weight: bold
+	color: #fff
+	text-align: center
+	background-color: #f00
+	border-radius: 50%
+	opacity: 1
+	transition-duration: 0.15s
+	transition-property: opacity
+	animation-duration: 1s
+	animation-iteration-count: infinite
+	padding-right: 1px
+	margin: 1px
+	color: #fff
+	background-color: #f00
+	align: right top
+
+#BossDropInactiveItemVotingsCounter
+	width: height-percentage(100%)
+	height: 20px
+	padding-top: -1px
+	margin: 2px
+	font-weight: bold
+	color: #f0f0f0
+	text-align: center
+	background-color: #606060
+	border-radius: 50%
+	opacity: 1
+	animation-duration: 1s
+	animation-iteration-count: infinite
+	transition-duration: .15s
+	transition-property: opacity
+	align: right bottom
+
+.hideActiveBossItemVotings
+	#BossDropActiveItemVotingsCounter
+		opacity: 0
+		animation-name: votingsCounterEnabled
+
+	&.hideInactiveBossItemVotings #BossDropItemVotings
+		transform: translateX($totalWidth)
+
+
+.hideInactiveBossItemVotings
+	#BossDropInactiveItemVotingsCounter
+		opacity: 0
+		animation-name: votingsCounterEnabled
+
+	#boss_item_vote_id_-1
+		visibility: collapse
+
+
+#BossDropItemVotingsList
+	width: $mainPanelWidth
+	height: 100%
+	background-color: $backgroundColor
+	border-radius: 20px 0 0 20px
+	horizontal-align: right
+
+#BossDropItemVotingsListContainer
+	width: 100%
+	overflow: squish scroll
+	flow-children: up
+
+.BossDropItemVote
+	width: 100%
+	transition-duration: .2s
+	transition-property: position
+	flow-children: down
+
+#KilledBossInfo
+	width: 100%
+	margin: 12px 1px 1px 6px
+	flow-children: right
+
+#BossPlayerScore
+	min-width: 17.5%
+	padding-right: 6px
+	padding-bottom: -4px
+	margin-right: 4px
+	font-size: 36px
+	font-weight: bold
+	color: #0f0
+	vertical-align: center
+	border-right: 1px solid #f00
+	tooltip-position: left
+
+#KilledBossImage
+	width: 57.6px
+	height: width-percentage(60.8%)
+	vertical-align: center
+	border: 1px solid #999
+	border-radius: 1px
+
+#KilledBossName
+	width: 100%
+	margin-left: 5px
+	font-size: 26px
+	color: #fff
+	text-overflow: shrink
+	text-shadow: 2px 1px 5px 2 #000
+	vertical-align: center
+
+#BossTakeLootTime
+	width: 100%
+	height: 4px
+	margin: 0 9px 12px
+	border-width: 0
+	box-shadow: none
+	align: center bottom
+
+#BossTakeLootTime_Left
+	background-color: #777
+
+#BossItemList
+	width: 100%
+	margin: 2px
+	flow-children: down
+
+.BossDropItemVoteItemPanel
+	width: 100%
+	margin: 1px 3px
+	border-bottom: 1px solid #363636
+	flow-children: right
+
+#BossDropScoreCost
+	width: 17.5%
+	padding-left: 6px
+	font-size: 28px
+	font-weight: bold
+	vertical-align: center
+	transition-duration: .1s
+	transition-property: color
+	tooltip-position: left
+
+#BossDropActiveBlock
+	width: 64.5%
+	height: 100%
+	margin: 3px
+
+#BossDropPlayersRow
+	width: 100%
+	height: 100%
+	flow-children: right
+
+#BossDropPlayersTake
+	width: 60%
+	height: 55%
+	background-color: #444
+	visibility: collapse
+	align: center center
+
+	&:hover
+		transform: translateY(1px)
+
+	&:active
+		transform: translateY(2px)
+
+	> Label
+		color: #ddd
+		align: center center
+
+
+#BossDropItemIcon
+	width: 18%
+	height: width-percentage(72.727272%)
+
+#boss_item_vote_id_-1
+	width: 100%
+	transition-duration: 0.2s
+	transition-property: position, opacity
+	flow-children: down
+
+	> Label
+		width: 100%
+		margin-left: 5px
+		font-size: 32px
+		color: #fff
+		text-align: center
+		text-overflow: shrink
+		text-shadow: 2px 1px 5px 2 #000
+
+
+#boss_item_vote_id_-1_container
+	width: 100%
+	margin: 2px
+	flow-children: down
+
+.LocalPlayerSelected #BossDropScoreCost
+	color: #f02d1b
+
+.HasTakeButton #BossDropPlayersTake
+	visibility: visible

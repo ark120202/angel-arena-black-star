@@ -1,114 +1,93 @@
-.base
-{
-	width: 600px;
-	height: 500px;
-	align: center center;
-}
+.base {
+  width: 600px;
+  height: 500px;
+  align: center center; }
 
-#TalentsBase
-{
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.99);
-	border-radius: 6px;
-	box-shadow: -4px -4px 8px 8px black;
-	transition-duration: 0.2s;
-	transition-property: opacity;
-	opacity: 0;
-	flow-children: down;
-}
+#TalentsBase {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.99);
+  border-radius: 6px;
+  box-shadow: -4px -4px 8px 8px black;
+  transition-duration: 0.2s;
+  transition-property: opacity;
+  opacity: 0;
+  flow-children: down; }
 
-.PanelOpened #TalentsBase
-{
-	opacity: 1;
-}
+#CloseButton {
+  align: right center;
+  margin-right: 10px; }
 
-#CloseButton
-{
-	align: right center;
-	margin-right: 10px;
-}
+#TopBar {
+  width: 100%;
+  height: 32px;
+  background-color: rgba(100, 100, 100, 0.1);
+  flow-children: right; }
 
-#TopBar
-{
-	width: 100%;
-	height: 32px;
-	background-color: rgba(100,100,100,0.1);
-	flow-children: right;
-}
+#TalentListContainer {
+  width: 100%;
+  height: 100%;
+  overflow: scroll squish;
+  flow-children: right;
+  margin: 5px; }
 
-#TalentListContainer
-{
-	width: 100%;
-	height: 100%;
-	overflow: scroll squish;
-	flow-children: right;
-	margin: 5px;
-}
+.TalentColumn {
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.3);
+  margin-right: 12px;
+  flow-children: down; }
+  .TalentColumn.EnabledColumn {
+    background-color: rgba(100, 100, 100, 0.3); }
 
-.TalentColumn
-{
-	height: 100%;
-	background-color: rgba(50,50,50,0.3);
-	margin-right: 12px;
-	flow-children: down;
-}
+#TalentColumnInner {
+  vertical-align: center;
+  flow-children: down;
+  overflow: squish scroll; }
 
-#TalentColumnInner
-{
-	vertical-align: center;
-	flow-children: down;
-	overflow: squish scroll;
-}
+#TalentColumnHeader {
+  width: 100%;
+  text-align: center;
+  margin-top: 2px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-overflow: shrink;
+  text-shadow: 0 0 6px 3 black; }
 
-.TalentColumn.EnabledColumn
-{
-	background-color: rgba(100,100,100,0.3);
-}
+.TalentIcon {
+  width: 32px;
+  height: 32px;
+  margin: 3px 0;
+  border-radius: 100%;
+  background-color: #363d40;
+  padding: 1px; }
 
-#TalentColumnHeader
-{
-	width: 100%;
-	text-align: center;
-	margin-top: 2px;
-	font-size: 24px;
-	font-weight: bold;
-	color: white;
-	text-overflow: shrink;
-	text-shadow: 0px 0px 6px 3 black;
-}
+.Selected {
+  border: 1px solid lightblue; }
+  .Selected.CanLearn {
+    box-shadow: -1.5px -1.5px 3px 3px blue; }
 
-.TalentIcon
-{
-	width: 32px;
-	height: 32px;
-	margin: 3px 0;
-	border-radius: 100%;
-	background-color: #363D40;
-	padding: 1px;
-}
-.Selected { border: 1px solid lightblue; }
-.CanLearn { border: 1px solid gold; }
-.Selected.CanLearn { box-shadow: -1.5px -1.5px 3px 3px blue; }
-.Learnt { background-color: #292D2E; }
-.HideRequirementErrors .Error_Requirement
-{
-	visibility: collapse;
-}
+.CanLearn {
+  border: 1px solid gold; }
 
-#AbilityPointsLabel
-{
-	width: 48px;
-	vertical-align: center;
-	margin-left: 6px;
-	margin-right: 16px;
-	margin-top: 1px;
-	color: gold;
-	font-size: 24px;
-	text-shadow: 0 0 0.1px white;
-}
+.Learnt {
+  background-color: #292d2e; }
 
-#ToggleHideRequirementErrors
-{
-	vertical-align: center;
-}
+#AbilityPointsLabel {
+  width: 48px;
+  vertical-align: center;
+  margin-left: 6px;
+  margin-right: 16px;
+  margin-top: 1px;
+  color: gold;
+  font-size: 24px;
+  text-shadow: 0 0 0.1px white; }
+
+#ToggleHideRequirementErrors {
+  vertical-align: center; }
+
+.PanelOpened #TalentsBase {
+  opacity: 1; }
+
+.HideRequirementErrors .Error_Requirement {
+  visibility: collapse; }

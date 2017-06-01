@@ -1,6 +1,7 @@
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/keyframes.css" />
 		<include src="file://{resources}/styles/custom_hud.css" />
 		<include src="file://{resources}/styles/dynamic_minimap.css" />
 	</styles>

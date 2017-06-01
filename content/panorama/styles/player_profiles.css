@@ -1,107 +1,75 @@
-.base
-{
-	width: 900px;
-	height: 600px;
-	align: center center;
-}
+.base {
+  width: 900px;
+  height: 600px;
+  align: center center; }
 
-#PlayerProfileBase
-{
-	z-index: -9;
-	width: 100%;
-	height: 100%;
-	visibility: collapse;
-	background-color: rgba(0, 0, 0, 0.95);
-	box-shadow: #000 -12px -12px 24px 24px;
-}
+#PlayerProfileBase {
+  z-index: -9;
+  width: 100%;
+  height: 100%;
+  visibility: collapse;
+  background-color: rgba(0, 0, 0, 0.95);
+  box-shadow: black -12px -12px 24px 24px; }
 
-.PanelOpened #PlayerProfileBase
-{
-	visibility: visible;
-}
+#CloseButton {
+  margin: 10px;
+  align: right top; }
 
-#CloseButton
-{
-	margin: 10px;
-	align: right top;
-}
+#BasicStatusPanel {
+  width: 100%;
+  background-color: #3c3c3c;
+  flow-children: right; }
 
-#BasicStatusPanel
-{
-	width: 100%;
-	background-color: rgb(60, 60, 60);
-	flow-children: right;
-}
+#Avatar {
+  width: 128px;
+  height: 128px;
+  margin: 20px;
+  border-radius: 4px; }
 
-#Avatar
-{
-	width: 128px;
-	height: 128px;
-	margin: 20px;
-	border-radius: 4px;
-}
+#TextBasedInfoPanel {
+  width: 100%;
+  height: 150px;
+  margin-top: 20px;
+  flow-children: down; }
 
-#TextBasedInfoPanel
-{
-	width: 100%;
-	height: 150px;
-	margin-top: 20px;
-	flow-children: down;
-}
+#UserName {
+  width: 100%;
+  height: 37px; }
+  #UserName Label {
+    font-size: 35px; }
 
-#UserName
-{
-	width: 100%;
-	height: 37px;
-}
+#DotalikeVariables {
+  margin-top: 6px;
+  flow-children: right; }
 
-#UserName Label
-{
-	font-size: 35px;
-}
+#ProfileBadge {
+  transition-timing-function: ease-in-out;
+  transition-property: pre-transform-scale2d;
+  transition-duration: 0.1s; }
+  #ProfileBadge:hover {
+    pre-transform-scale2d: 1.05; }
 
-#DotalikeVariables
-{
-	margin-top: 6px;
-	flow-children: right;
-}
+.Stat {
+  width: fill-parent-flow(1);
+  padding: 7px 5px 3px;
+  flow-children: down;
+  horizontal-align: center; }
 
-#ProfileBadge
-{
-	transition-timing-function: ease-in-out;
-	transition-property: pre-transform-scale2d;
-	transition-duration: 0.1s;
-}
+.StatTitle {
+  width: 100%;
+  font-size: 14px;
+  color: baseText;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  horizontal-align: center; }
 
-#ProfileBadge:hover
-{
-	pre-transform-scale2d: 1.05;
-}
+.StatValue {
+  width: 100%;
+  font-size: 28px;
+  color: white;
+  text-align: center;
+  horizontal-align: center; }
 
-.Stat
-{
-	width: fill-parent-flow(1);
-	padding: 7px 5px 3px;
-	flow-children: down;
-	horizontal-align: center;
-}
-
-.StatTitle
-{
-	width: 100%;
-	font-size: 14px;
-	color: baseText;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	horizontal-align: center;
-}
-
-.StatValue
-{
-	width: 100%;
-	font-size: 28px;
-	color: white;
-	text-align: center;
-	horizontal-align: center;
-}
+.PanelOpened #PlayerProfileBase {
+  visibility: visible; }

@@ -1,220 +1,153 @@
-.AddonLoadingRoot
-{
-	width: 100%;
-	height: 100%;
-	background-color: black;
+.AddonLoadingRoot {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background-position: 100% 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: clip; }
 
-	/* background-image: url("file://{resources}/images/custom_game/loading_screen/background.png"); */
+#loading-ratings {
+  align: right top; }
 
-	background-position: 100% 100%;
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-	overflow: clip;
-}
+#loading-heroes {
+  width: 1000px;
+  height: width-percentage(73.97%);
+  align: left bottom; }
 
-#loading-ratings
-{
-	align: right top;
-}
+#loading-shrine {
+  width: height-percentage(85.38%);
+  height: 400px;
+  align: right bottom; }
 
-#loading-heroes
-{
-	width: 1000px;
-	height: width-percentage(73.97%);
-	align: left bottom;
-}
+#loading-aabs {
+  width: 1400px;
+  height: width-percentage(23.38%); }
 
-#loading-shrine
-{
-	width: height-percentage(85.38%);
-	height: 400px;
-	align: right bottom;
-}
+#loading-au {
+  width: 700px;
+  height: width-percentage(45.11%);
+  align: right center; }
 
-#loading-aabs
-{
-	width: 1400px;
-	height: width-percentage(23.38%);
-}
+#loading-alastor {
+  visibility: collapse;
+  align: center center; }
 
-#loading-au
-{
-	width: 700px;
-	height: width-percentage(45.11%);
-	align: right center;
-}
+#loading-l2 {
+  margin-right: 120px;
+  align: center center; }
 
-#loading-alastor
-{
-	visibility: collapse;
-	align: center center;
-}
+#afterload_panel {
+  width: 100%;
+  height: 100%;
+  flow-children: right;
+  visibility: collapse; }
 
-#loading-l2
-{
-	margin-right: 120px;
-	align: center center;
-}
+#loading_base {
+  width: 100%;
+  height: 100%; }
 
-/*                            */
-#afterload_panel
-{
-	width: 100%;
-	height: 100%;
-	//margin-left: 42px;
-	flow-children: right;
-	visibility: collapse;
-}
+#TipsPanel {
+  align: right bottom;
+  min-height: 84px;
+  background-color: rgba(20, 20, 20, 0.97);
+  box-shadow: -4px -4px 8px 8px rgba(20, 20, 20, 0.97);
+  margin-bottom: 70px;
+  margin-right: 270px;
+  width: 39%; }
 
-#loading_base
-{
-	width: 100%;
-	height: 100%;
-}
+.AspectRatio16x9 #TipsPanel {
+  width: 42%;
+  margin-right: 385px; }
 
-#TipsPanel
-{
-	align: right bottom;
-	min-height: 84px;
-	background-color: rgba(20,20,20, 0.97);
-	box-shadow: -4px -4px 8px 8px rgba(20,20,20, 0.97);
-	margin-bottom: 70px;
-	margin-right: 270px;
-	width: 39%;
-}
-.AspectRatio16x10 #TipsPanel
-{
-	margin-right: 325px;
-}
-.AspectRatio16x9 #TipsPanel
-{
-	width: 42%;
-	margin-right: 385px;
-}
-#TipLabel
-{
-	align: center center;
-	color: white;
-	font-size: 22px;
-	margin: 8px 20px;
-	text-align: center;
-}
-.AspectRatio16x9 #TipLabel
-{
-	font-size: 25px;
-}
-#LocalPlayerData
-{
-	vertical-align: top;
-	width: 100%;
-	margin-left: 4px;
-	//margin-right: -82%;
-	horizontal-align: right;
-	margin-top: 55px;
-	height: 500px;
-}
+.AspectRatio16x9 #TipLabel {
+  font-size: 25px; }
 
-#PlayerInfoLoading
-{
-	align: center center;
-	width: 40px;
-	height: 40px;
+#TipLabel {
+  align: center center;
+  color: white;
+  font-size: 22px;
+  margin: 8px 20px;
+  text-align: center; }
 
-	animation-name: PlayerLoadingAnim;
-	animation-duration: 1s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
+#LocalPlayerData {
+  vertical-align: top;
+  width: 100%;
+  margin-left: 4px;
+  horizontal-align: right;
+  margin-top: 55px;
+  height: 500px; }
 
-	background-image: url("file://{images}/status_icons/loadingthrobber_round.png");
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 100% 100%;
-	visibility: collapse;
-}
+#PlayerInfoLoading {
+  align: center center;
+  width: 40px;
+  height: 40px;
+  animation-name: PlayerLoadingAnim;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  background-image: url("file://{images}/status_icons/loadingthrobber_round.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  visibility: collapse; }
 
-@keyframes 'PlayerLoadingAnim'
-{
-	0% { transform: rotateZ(360deg); }
-	50% { transform: rotateZ(180deg); }
-	100% { transform: rotateZ(0deg); }
-}
+#OptionVotings {
+  width: 550px;
+  vertical-align: bottom;
+  margin: 4px;
+  margin-left: 20px;
+  margin-bottom: 290px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  flow-children: down;
+  padding: 4px;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+  opacity: 0; }
+  #OptionVotings.Loaded {
+    opacity: 1; }
 
-#OptionVotings
-{
-	width: 550px;
-	vertical-align: bottom;
-	margin: 4px;
-	margin-left: 20px;
-	margin-bottom: 290px;
-	background-color: rgba(0,0,0,0.7);
-	border: 2px solid lightgrey;
-	border-radius: 5px;
-	flow-children: down;
-	padding: 4px;
-	transition-property: opacity;
-	transition-duration: 0.2s;
-	opacity: 0;
-}
-#OptionVotings.Loaded
-{
-	opacity: 1;
-}
+.OptionVoting {
+  width: 100%;
+  margin: 3px 0;
+  flow-children: down; }
+  .OptionVoting:not(.ShouldGroup) .OptionVotingVariant {
+    width: 100%;
+    margin: 3px 10px; }
+  .OptionVoting.Voted .OptionVotingVariant {
+    wash-color: #999999;
+    saturation: 0; }
+    .OptionVoting.Voted .OptionVotingVariant > Label {
+      wash-color: #888888; }
 
-.OptionVoting
-{
-	width: 100%;
-	margin: 3px 0;
-	flow-children: down;
-}
+#OptionVotingTitle {
+  width: 100%;
+  height: 41px;
+  horizontal-align: center;
+  color: white;
+  text-align: center;
+  text-overflow: shrink;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 0 3 black; }
 
-#OptionVotingTitle
-{
-	width: 100%;
-	height: 41px;
-	horizontal-align: center;
-	color: white;
-	text-align: center;
-	text-overflow: shrink;
-	font-size: 30px;
-	font-weight: bold;
-	letter-spacing: 1px;
-	text-shadow: 0 0 3 black;
-}
+#OptionVotingVariants {
+  flow-children: down;
+  width: 100%; }
 
-#OptionVotingVariants
-{
-	flow-children: down;
-	width: 100%;
-}
+.OptionVotingVariantRow {
+  width: 100%;
+  margin: 3px 10px; }
 
-.OptionVotingVariantRow
-{
-	width: 100%;
-	margin: 3px 10px;
-}
+.OptionVotingVariant {
+  width: 49%; }
+  .OptionVotingVariant > Label {
+    color: white;
+    font-size: 20px;
+    horizontal-align: left; }
 
-.OptionVotingVariant
-{
-	width: 49%;
-}
-.OptionVoting:not(.ShouldGroup) .OptionVotingVariant
-{
-	width: 100%;
-	margin: 3px 10px;
-}
-.OptionVoting.Voted .OptionVotingVariant
-{
-	wash-color: #999999;
-	saturation: 0;
-}
-
-.OptionVotingVariant > Label
-{
-	color: white;
-	font-size: 20px;
-	horizontal-align: left;
-}
-.OptionVoting.Voted .OptionVotingVariant > Label
-{
-	wash-color: #888888;
-}
+.AspectRatio16x10 #TipsPanel {
+  margin-right: 325px; }

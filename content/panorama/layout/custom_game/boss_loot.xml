@@ -1,6 +1,7 @@
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/keyframes.css" />
 		<include src="file://{resources}/styles/boss_loot.css" />
 	</styles>
 	<scripts>
@@ -21,7 +22,7 @@
 		<snippet name="BossDropItemVote">
 			<Panel class="BossDropItemVote" hittest="false">
 				<Panel id="KilledBossInfo">
-					<Label id="BossPlayerScore" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip(#boss_loot_vote_score_tooltip);" />
+					<Label id="BossPlayerScore" onmouseout="UIHideTextTooltip()" onmouseover="UIShowTextTooltip(#boss_loot_vote_score_tooltip)" />
 					<Image id="KilledBossImage" />
 					<Label id="KilledBossName" />
 				</Panel>

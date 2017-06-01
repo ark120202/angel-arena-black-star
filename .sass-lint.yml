@@ -9,3 +9,7 @@ rules:
     - order: 'recess'
   no-color-literals: 0
   no-misspelled-properties: 0
+  no-ids: 0
+  class-name-format: 0 # Fix it
+  no-url-domains: 0
+  nesting-depth: 0

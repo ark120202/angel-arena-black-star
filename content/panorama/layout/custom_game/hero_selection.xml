@@ -1,6 +1,7 @@
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/keyframes.css" />
 		<include src="file://{resources}/styles/dynamic_minimap.css" />
 		<include src="file://{resources}/styles/hero_selection.css" />
 		<include src="file://{resources}/styles/hero_selection_hero_card.css" />
@@ -242,7 +243,7 @@
 								<Label text="#DOTA_Hero_Selection_HeroLoadout" class="LoadoutCategoryTitle" />
 							</Panel>
 							<Panel class="FullWidth" id="HeroLoadoutContainer">
-								
+
 							</Panel> -->
 
 							<Panel class="LoadoutPanelHeader">

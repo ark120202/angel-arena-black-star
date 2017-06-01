@@ -1,0 +1,685 @@
+$mainPanelHeight: 960px;
+
+.base
+	height: 100%
+	width: 100%
+	opacity: 1
+	transition-property: opacity
+	transition-duration: 1.5s
+	#HeroListPanel
+		margin-left: 50px
+
+
+#HeroSelectionBox
+	height: 100%
+	width: 100%
+
+#HeroSelectionBackground
+	width: 100%
+	height: 100%
+	background-color: rgb(28, 38, 47)
+
+#HeroSelectionCustomBackground
+	width: 100%
+	height: 100%
+
+#SelectedHeroPanel
+	margin-left: 4px
+	margin-right: 4px
+	margin-top: 5px
+	margin-bottom: 5px
+	height: 100%
+	width: 20%
+	flow-children: down
+	visibility: collapse
+
+#SelectedHeroLabelPanel
+	width: 100%
+	height: 4.5%
+	margin-left: 4px
+	margin-right: 4px
+	margin-top: 4px
+	margin-bottom: 4px
+
+#SelectedHeroLabel
+	vertical-align: center
+	horizontal-align: center
+	color: rgb(255, 255, 255)
+	font-weight: bold
+	font-size: 40px
+
+#HeroListBasePanel
+	height: $mainPanelHeight
+	width: 80%
+	vertical-align: bottom
+	flow-children: down
+	transition-duration: 0.4s
+	transition-property: transform, opacity
+	transition-timing-function: ease-in-out
+
+#SelectedHeroPreview
+	height: $mainPanelHeight
+	width: 80%
+	vertical-align: bottom
+	flow-children: down
+	transition-duration: 0.4s
+	transition-property: transform, opacity
+	transition-timing-function: ease-in-out
+
+#HeroListTabsPanel
+	margin-left: 6px
+	margin-right: 6px
+	height: 5%
+	width: 100%
+	horizontal-align: center
+	flow-children: right
+
+#HeroListPanel
+	margin-top: -1px
+	margin-left: 6px
+	margin-right: 6px
+	height: 100%
+	width: 100%
+	flow-children: down
+
+#SelectionStatusPanel
+	height: 120px
+	width: 100%
+
+#GameModeInfoPanel
+	flow-children: down
+	margin: 0 12px
+	width: 200px
+
+#HeroSelectionTimer
+	horizontal-align: center
+	font-size: 64px
+	color: rgb(255, 255, 255)
+	font-weight: thin
+	text-align: center
+	transition-property: transform, opacity, pre-transform-scale2d
+	transition-duration: 0.4s
+	transition-timing-function: ease-in-out
+	margin-bottom: -20px
+	width: 100%
+
+#GameModeInfoCurrentPhase
+	align: center bottom
+	color: rgb(255, 255, 255)
+	text-shadow: 0 0 6px 1.0 rgba(158, 248, 255, 0.27059)
+	font-size: 20px
+	text-align: center
+	text-transform: uppercase
+	width: 100%
+
+#GameModeInfoGamemodeLabel
+	align: center bottom
+	color: rgb(255, 255, 255)
+	text-shadow: 0 0 6px 1.0 rgba(158, 248, 255, 0.27059)
+	font-size: 20px
+	text-align: center
+	text-transform: uppercase
+	width: 100%
+
+#TeamSelectionStatusPanel
+	height: 100%
+	flow-children: right
+	horizontal-align: center
+
+.TeamSelectionPanel
+	margin: 4px
+	height: 100%
+	flow-children: right
+
+#SelectedHeroSelectButton
+	width: 78%
+	height: 70%
+	align: left center
+	background-color: gradient(linear, 0 0, 0 100%, from(rgba(64, 77, 101, 0.86667) ), to(rgba(43, 52, 69, 0.86667) ) )
+	border-top: 1px solid rgb(111, 129, 155)
+	border-left: 1px solid rgba(111, 129, 155, 0.13333)
+	border-right: 1px solid rgba(111, 129, 155, 0.06667)
+	border-bottom: 1px solid rgba(63, 65, 75, 0.2)
+	box-shadow: rgba(0, 0, 0, 0.56078) -6px -6px 12px 12px
+	transition-property: opacity, background-color
+	transition-duration: 0.18s
+	&:hover
+		brightness: 1.2
+
+	&:active
+		brightness: 1.5
+
+	&:disabled
+		saturation: 0.4
+		wash-color: rgb(128, 128, 128)
+		pre-transform-scale2d: 1
+
+
+.LocalHeroBanButton
+	#SelectedHeroSelectButton
+		background-color: gradient(linear, 0 0, 0 100%, from(rgba(26, 2, 2, 0.86667) ), to(rgba(125, 54, 54, 0.86667) ) )
+
+	#SelectedHeroSelectLabel
+		visibility: collapse
+
+	#SelectedHeroBanLabel
+		visibility: visible
+
+
+#SelectedHeroSelectLabel
+	align: center top
+	font-size: 24px
+	color: rgb(178, 218, 37)
+
+#SelectedHeroLockLabel
+	align: center top
+	font-size: 24px
+	color: rgb(178, 218, 37)
+	visibility: collapse
+
+#SelectedHeroUnlockLabel
+	align: center top
+	font-size: 24px
+	color: rgb(178, 218, 37)
+	visibility: collapse
+
+#SelectedHeroBanLabel
+	align: center top
+	font-size: 24px
+	color: rgb(178, 218, 37)
+	visibility: collapse
+
+.LocalHeroLockButton
+	#SelectedHeroSelectLabel
+		visibility: collapse
+
+	#SelectedHeroLockLabel
+		visibility: visible
+
+
+.LocalHeroUnlockButton
+	#SelectedHeroSelectLabel
+		visibility: collapse
+
+	#SelectedHeroUnlockLabel
+		visibility: visible
+
+
+
+	visibility: collapse
+	visibility: visible
+	sound: "ui.pick_play"
+
+#SelectedHeroSelectHeroName
+	align: center bottom
+	font-size: 32px
+	color: rgb(178, 218, 37)
+	text-transform: uppercase
+	margin-bottom: -7px
+
+#SelectedHeroLinkedHeroPanel
+	align: left center
+	visibility: collapse
+	margin-left: 12px
+	flow-children: right
+	Label
+		font-size: 20px
+		color: rgb(197, 209, 153)
+
+
+#ExitButton
+	transform: rotatez(180deg)
+	background-image: url('file://{images}/control_icons/return_to_game.png')
+	width: 38.75px
+	height: 36.25px
+	margin: 9px
+	background-size: 38.75px
+	background-position: 50% 50%
+	background-repeat: no-repeat
+	wash-color: rgb(68, 74, 85)
+	transition-property: wash-color
+	transition-duration: 0.15s
+	&:hover
+		wash-color: rgb(204, 204, 204)
+
+	&:active
+		wash-color: rgb(255, 255, 255)
+
+
+#HeroListControls
+	width: 100%
+	vertical-align: bottom
+	height: 112px
+	margin: 4px
+
+#HeroSearchTextEntry
+	width: 320px
+	height: 100%
+	margin: 4px 12px
+	border-radius: 10px
+	font-size: 20px
+	color: rgb(255, 255, 255)
+	align: right center
+
+#SelectedHeroAttributesPanel
+	horizontal-align: right
+	height: 100%
+	flow-children: right
+	margin-right: 12px
+
+.SelectedHeroAttributesColumn
+	width: 125px
+	flow-children: down
+
+.SelectedHeroAttributesElement
+	flow-children: right
+	height: 37px
+	width: 105px
+	horizontal-align: right
+	> Image
+		vertical-align: center
+
+
+.DotaAttributePic
+	vertical-align: center
+	width: 24px
+	height: 24px
+	margin-left: 5px
+	margin-right: 8px
+	background-repeat: no-repeat
+	background-size: contain
+	border-radius: 50%
+	&.PrimaryAttribute
+		box-shadow: -1.5px -1.5px 3px 3px rgba(255, 255, 255, 0.6)
+
+
+#DotaAttributePic_1
+	background-image: url('s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_strength_psd.vtex')
+
+#DotaAttributePic_2
+	background-image: url('s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_agility_psd.vtex')
+
+#DotaAttributePic_3
+	background-image: url('s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_intelligence_psd.vtex')
+
+.AttributeValueText
+	color: rgb(255, 255, 255)
+	align: center center
+	font-size: 20px
+	horizontal-align: right
+
+#ChatAndMapPanel
+	height: $mainPanelHeight
+	width: 20%
+	horizontal-align: right
+	align: right bottom
+	flow-children: down
+
+.HeroListControlsGroup
+	height: 100%
+
+.HeroesPanelPage
+	width: 100%
+	height: 100%
+	flow-children: down
+
+.HeroesPanelElement
+	width: 100%
+	height: 33.3%
+	flow-children: right-wrap
+
+#AbilitiesPanel
+	width: 100%
+	height: 52px
+
+#SelectedHeroAbilitiesPanelInner
+	align: center center
+	flow-children: right
+
+.AbilitiesLineSplitter
+	width: 42%
+	height: 2px
+	background-color: rgb(204, 204, 204)
+	vertical-align: center
+
+.SelectedHeroAbility
+	height: 50px
+	margin-left: 4px
+	margin-right: 4px
+	border-radius: 2px
+
+#HeroListControlsGroup1
+	width: 38%
+	flow-children: right
+
+#HeroListControlsGroup2
+	width: 30%
+	align: center center
+	margin-left: 10%
+
+#HeroListControlsGroup3
+	align: right center
+	flow-children: right
+
+.AspectRatio4x3
+	#HeroListControlsGroup2
+		width: 30%
+		align: center center
+
+	.HeroListElement
+		margin-left: 15px
+		margin-right: -5px
+		height: 80px
+
+
+.AspectRatio5x4
+	#HeroListControlsGroup2
+		width: 33%
+		align: center center
+
+	.HeroListElement
+		margin-left: 15px
+		margin-right: -5px
+		height: 82px
+
+
+.DisconnectionIndicator
+	opacity: 0
+	width: 100%
+	height: 18px
+	vertical-align: center
+
+.player_connection_abandoned
+	.PlayerInTeamHeroImage
+		wash-color: rgb(255, 0, 0)
+		saturation: 0
+
+	.DisconnectionIndicator
+		opacity: 1
+
+
+#MinimapPanel
+	width: 350px
+	height: width-percentage(100%)
+	margin-top: 10px
+	horizontal-align: center
+
+.MinimapSpawnBox
+	width: 32px
+	height: 32px
+	flow-children: right-wrap
+	&.SpawnBoxUnitPanelChildren2
+		width: 64px
+		transform: translateX(-16px)
+
+	&.SpawnBoxUnitPanelChildren3
+		width: 50px
+		height: 50px
+		transform: translateX(-9px) translateY(-9px)
+
+	&.SpawnBoxUnitPanelChildren5
+		width: 50px
+		height: 75px
+		transform: translateX(-9px) translateY(-21.5px)
+
+
+.SpawnBoxUnitPanel
+	width: 32px
+	height: 32px
+	&.hero_selection_hover
+		saturation: 0
+
+
+.MinimapSpawnBoxes
+	width: 100%
+	height: 100%
+
+#MinimapDynamicIcons
+	width: 100%
+	height: 100%
+
+.MinimapImage
+	width: 100%
+	height: 100%
+
+.only_map_landscape_4v4v4v4
+	visibility: collapse
+
+.only_map_landscape_5v5
+	visibility: collapse
+
+.map_landscape_4v4v4v4
+	.only_map_landscape_4v4v4v4
+		visibility: visible
+
+	.PlayerInTeamHeroImage
+		width: 69px
+
+	.PlayerInTeamPanel
+		margin: 2px
+		width: 77px
+
+	.PlayerInTeamNickname
+		font-size: 17px
+
+
+#SelectionChatBox
+	width: 100%
+	height: 100%
+
+#SelectionChat
+	width: 100%
+	height: 100%
+	margin: 4px
+	padding: 10px
+	background-color:
+	border-radius: 12px
+
+#SelectionChatMessagesPanel
+	width: 100%
+	vertical-align: bottom
+	margin-bottom: 17%
+
+#SelectionChatMessages
+	flow-children: down
+	transform: scaleY(-1)
+	overflow: squish clip
+
+#SelectionChatEntryPanel
+	margin-left: 4px
+	margin-right: 4px
+	margin-top: 4px
+	width: 100%
+	height: 15%
+	vertical-align: bottom
+	border-top: 1px solid rgb(128, 128, 128)
+
+#SelectionChatEntry
+	width: 100%
+	height: 36px
+	vertical-align: center
+	background-color: none
+	border-width: 0
+
+.ChatLine
+	vertical-align: bottom
+	color: rgb(255, 255, 255)
+	font-size: 18px
+	font-weight: thin
+	margin-top: -2px
+	margin-left: 5px
+	padding-top: 2px
+	.HeroIcon
+		width: 40px
+		height: 23px
+		margin-top: 0
+		margin-bottom: -6px
+		margin-right: 4px
+		transform: translateY(2px )
+		border: 1px solid rgb(0, 0, 0)
+
+
+#AdsBanner
+	padding: 2px
+	width: 100%
+	//384 visibility: visible
+	transition-property: pre-transform-scale2d, brightness
+	transition-duration: 0.15s
+	brightness: 0.8
+	&:hover
+		pre-transform-scale2d: 0.98
+		brightness: 1
+
+	&:active
+		pre-transform-scale2d: 1.04
+		brightness: 1.2
+
+
+#LockedIcon
+	align: right bottom
+	margin: 2px
+	wash-color: rgb(177, 216, 224)
+	width: 22px
+	height: 22px
+	visibility: collapse
+	background-image: url('file://{images}/control_icons/lock_small.png')
+	background-size: 100% 100%
+
+.PickButton
+	height: 100%
+	padding: 8px
+	background-color: gradient(linear, 0 0, 0 100%, from(rgba(64, 77, 101, 0.86667) ), to(rgba(43, 52, 69, 0.86667) ) )
+	border-top: 1px solid rgb(111, 129, 155)
+	border-left: 1px solid rgba(111, 129, 155, 0.13333)
+	border-right: 1px solid rgba(111, 129, 155, 0.06667)
+	border-bottom: 1px solid rgba(63, 65, 75, 0.2)
+	box-shadow: rgba(0, 0, 0, 0.56078) -6px -6px 12px 12px
+	transition-property: opacity, background-color
+	transition-duration: 0.18s
+	&:hover
+		brightness: 1.2
+
+	&:active
+		brightness: 1.5
+
+	Label
+		color: rgb(204, 204, 204)
+		text-transform: uppercase
+
+
+#RandomButton
+	width: 20%
+	height: 70%
+	align: right center
+	saturation: 0.0
+	brightness: 0.2
+	> Label
+		width: 100%
+		font-size: 14px
+		text-align: center
+		text-overflow: shrink
+		margin-bottom: -6px
+		vertical-align: bottom
+
+	> Panel
+		background-image: url('s2r://panorama/images/control_icons/random_dice_psd.vtex')
+		background-position: center
+		background-size: contain
+		background-repeat: no-repeat
+		width: 34px
+		height: 38px
+		horizontal-align: center
+
+
+#SelectedHeroOverview
+	color: rgb(255, 255, 255)
+	height: 130%
+	margin-bottom: -30px
+	margin-top: -5px
+	margin-right: -17px
+	text-shadow: 1px 1px 3px 2 rgb(0, 0, 0)
+
+#SwitchHeroesButton
+	width: 100px
+	height: 75%
+	align: right center
+	margin-left: 4px
+	margin-right: 15px
+	margin-top: 10px
+	&:hover
+		brightness: 2.0
+		margin-top: 12px
+
+	&:active
+		brightness: 1.5
+		margin-top: 14px
+
+	> Label
+		width: 100%
+		font-size: 14px
+		text-align: center
+		text-overflow: shrink
+		margin-bottom: -6px
+		vertical-align: bottom
+		transition-property: color
+		transition-duration: 0.1s
+
+	> Panel
+		background-image: url('file://{resources}/images/custom_game/hero_selection/hero_swich.png')
+		background-position: center
+		background-size: contain
+		background-repeat: no-repeat
+		width: 34px
+		height: 38px
+		margin-top: -4px
+		align: center center
+
+	> #SwitchHeroesDefault
+		margin-top: -6px
+		vertical-align: top
+
+
+.HoveredHeroHasLinked #SelectedHeroLinkedHeroPanel
+	visibility: visible
+
+.player_connection_failed .DisconnectionIndicator
+	opacity: 1
+
+.player_connection_disconnected .DisconnectionIndicator
+	opacity: 1
+
+.Debug .MinimapSpawnBox
+	border: 1px solid rgb(255, 0, 0)
+
+.SpawnBoxUnitPanelChildren3 .SpawnBoxUnitPanel
+	width: 25px
+	height: 25px
+
+.map_landscape_5v5 .only_map_landscape_5v5
+	visibility: visible
+
+.AspectRatio16x10 .HeroListElement
+	margin-left: 15px
+	margin-right: -8px
+	height: 84px
+
+.RandomingEnabled #RandomButton
+	saturation: 1.0
+	brightness: 1.0
+	&.Activated
+		sound: "ui.pick_play"
+
+	&:hover
+		brightness: 2.0
+
+	&:active
+		brightness: 1.5
+
+
+.ActiveTab1 > #SwitchHeroesDefault
+	color: rgb(0, 255, 0)
+	font-weight: bold
+
+.ActiveTab2 > #SwitchHeroesNew
+	color: rgb(0, 255, 0)
+	font-weight: bold
