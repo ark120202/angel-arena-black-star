@@ -6,9 +6,9 @@
 		"AbilityTextureName"			"arena/queenofblades_army"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"MaxLevel" 						"7"
-		"LevelsBetweenUpgrades"			"4"
+		"LevelsBetweenUpgrades"			"1"
 		"AbilityCooldown"				"30"
-		"AbilityManaCost"				"100 200 350 500 750 1000 1500"
+		"AbilityManaCost"				"100 120 140 160 180 200 220"
 		"AbilityCastRange"				"800"
 		"AOERadius"						"%radius"
 
@@ -17,12 +17,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"summon_hp"			"100 250 500 1500 4000 10000 25000"
+				"summon_hp"			"450 950 1300 1700 2000 2250 2750"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"summon_damage"		"30 60 120 240 350 450 600"
+				"summon_damage"		"40 60 75 100 125 150 175"
 			}
 			"03"
 			{
@@ -37,7 +37,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"summon_duration"	"15"
+				"summon_duration"	"30"
 			}
 			"06"
 			{
@@ -249,7 +249,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.5 1 1.5 2 2.5 3 3.5"
+				"stun_duration"			"0.5 0.75 1.2 1.5 1.75 2 2.5"
 			}
 			"02"
 			{
@@ -334,8 +334,8 @@
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"180 160 140 120 100 80 60"
-		"AbilityManaCost"				"150 250 400 1500 3500 7000 15000"
-		"LevelsBetweenUpgrades"			"12"
+		"AbilityManaCost"				"150 180 210 240 270 300 330"
+		"LevelsBetweenUpgrades"			"5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"HasScepterUpgrade"				"1"
 
@@ -344,22 +344,22 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage"		"150 400 1000 1500 2500 4000 6000"
+				"attack_damage"		"100 140 180 220 260 300 340"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_scepter"	"300 800 2000 3000 5000 8000 12000"
+				"attack_damage_scepter"	"180 250 320 400 460 500 540"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"hp"				"800 1600 3200 6400 12800 25600 51200"
+				"hp"				"800 1600 2000 2400 2800 3000 3400"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"hp_scepter"		"1600 3200 6400 12800 25600 51200 102400"
+				"hp_scepter"		"2000 2500 2900 3400 3800 4300 5000"
 			}
 			"05"
 			{
@@ -384,7 +384,7 @@
 			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"tooltip_soul_breaker_damage_scepter"		"1000 2000 4000 8000 12000 16000 20000"
+				"tooltip_soul_breaker_damage_scepter"		"500 900 1400 1800 2200 2600 3000"
 			}
 		}
 
