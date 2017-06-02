@@ -325,11 +325,11 @@ function CreateHeroElements(id) {
 				panel.SetImage(data.image);
 				break;
 			case 'v':
-				$.GetContextPanel().BCreateChildren('<Movie id="' + random + '" src="' + data.source + '" controls="none" repeat="true" autoplay="onload" />');
+				$.GetContextPanel().BCreateChildren('<Movie id="' + random + '" src="' + data.source.encodeHTML() + '" controls="none" repeat="true" autoplay="onload" />');
 				panel = $.GetContextPanel().FindChildTraverse(random);
 				break;
 			case 'h':
-				$.GetContextPanel().BCreateChildren('<HTML id="' + random + '" url="' + data.source + '" />');
+				$.GetContextPanel().BCreateChildren('<HTML id="' + random + '" url="' + data.source.encodeHTML() + '" />');
 				panel = $.GetContextPanel().FindChildTraverse(random);
 				panel.style.height = '600px';
 				panel.style.width = '800px';
