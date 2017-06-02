@@ -3,28 +3,28 @@ $BACKGROUND_COLOR: #000;
 .EndScreenRoot
 	width: 100%
 	height: 100%
-	background-color: gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.00392)), color-stop(.12, rgba(0, 0, 0, 0.00392)), color-stop(.5, rgba(0, 0, 0, 0.13333)), to(rgba(0, 0, 0, 0)))
+	background-color: gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, .00392)), color-stop(.12, rgba(0, 0, 0, .00392)), color-stop(.5, rgba(0, 0, 0, .13333)), to(rgba(0, 0, 0, 0)))
 
 #VictoryRow
-	flow-children: right
-	horizontal-align: right
 	margin-right: 8px
 	margin-bottom: 16px
-	transition-property: opacity, transform
-	transition-duration: 1s
 	opacity: 0
 	transform: scaleX(0) scaleY(0) translatey(-50px)
+	transition-duration: 1s
+	transition-property: opacity, transform
+	horizontal-align: right
+	flow-children: right
 
 #WinningTeamLogo
-	vertical-align: center
 	margin-right: 16px
+	vertical-align: center
 
 #EndScreenVictory
+	margin-bottom: -16px
 	font-size: 64px
 	color: #ccc
-	vertical-align: center
 	text-transform: uppercase
-	margin-bottom: -16px
+	vertical-align: center
 
 .EndScreenWindow
 	margin-top: 100px
@@ -36,24 +36,25 @@ $BACKGROUND_COLOR: #000;
 	width: 100%
 
 #CloseButton
+	width: 200px
+	margin-top: 50px
+	vertical-align: bottom
 	background-color: #121618
 	border: 3px solid #4d5051
-	margin-top: 50px
 	horizontal-align: right
-	vertical-align: bottom
-	width: 200px
 
 	&:hover
 		border: 3px solid #fff
+
 		Label
 			color: #fff
 
 
 	Label
-		horizontal-align: center
-		vertical-align: center
 		color: #6f6f6f
 		text-transform: uppercase
+		vertical-align: center
+		horizontal-align: center
 
 
 #TeamsContainer
@@ -62,17 +63,17 @@ $BACKGROUND_COLOR: #000;
 
 .FlyoutTeam
 	margin-top: 3px
+	margin-right: 8px
 	margin-bottom: 3px
-	transition-property: opacity, transform
-	transition-duration: .5s
 	opacity: 0
 	transform: translatey(-50px)
-	margin-right: 8px
+	transition-duration: .5s
+	transition-property: opacity, transform
 	//&.local_player_team
 
 	&.team_endgame
 		opacity: 1
-		transform: translatey(0px)
+		transform: translatey(0)
 
 	&.no_players
 		visibility: collapse
@@ -82,8 +83,8 @@ $BACKGROUND_COLOR: #000;
 	flow-children: right
 
 .TeamInfo
-	margin-top: 1px
 	height: 100%
+	margin-top: 1px
 
 #TeamColor_GradentFromTransparentLeft
 	width: 100%
@@ -99,7 +100,7 @@ $BACKGROUND_COLOR: #000;
 
 .local_player_team
 	#PlayersContainer
-		box-shadow: fill rgba(255, 255, 255, 0.25098) -3px -3px 3px 6px
+		box-shadow: fill rgba(255, 255, 255, .25098) -3px -3px 3px 6px
 
 	#TeamScore
 		color: #fff
@@ -109,37 +110,38 @@ $BACKGROUND_COLOR: #000;
 	flow-children: right
 
 #TeamLogo
-	vertical-align: top
-	horizontal-align: right
-	height: 30px
 	width: 30px
+	height: 30px
 	margin-top: 2px
 	margin-right: 2px
+	vertical-align: top
+	horizontal-align: right
 
 #TeamScorePanel
-	margin-top: 1px
-	margin-left: 306px
 	width: 79px
 	height: 100%
+	margin-top: 1px
+	margin-left: 306px
 	background-color: $BACKGROUND_COLOR
 
 #TeamScore
+	margin-top: -2px
+	font-size: 42px
+	font-weight: bold
+	color: #ccc
+	text-shadow: 2px 2px 2px #000
 	vertical-align: center
 	horizontal-align: center
-	color: #ccc
-	font-size: 42px
-	text-shadow: 2px 2px 2px #000
-	font-weight: bold
-	margin-top: -2px
 
 .Legend
-	flow-children: right
-	horizontal-align: right
 	margin-right: 8px
+	horizontal-align: right
+	flow-children: right
+
 	Label
-		text-transform: uppercase
 		font-size: 12px
 		color: #90999b
+		text-transform: uppercase
 
 
 .PlayerRow
@@ -166,14 +168,15 @@ $BACKGROUND_COLOR: #000;
 	height: 100%
 
 .ScoreboardPanel
-	background-color: BACKGROUND_COLOR
+	height: 100%
 	margin-top: 1px
 	margin-left: 1px
-	height: 100%
+	background-color: BACKGROUND_COLOR
+
 	Label
+		margin-top: -2px
 		font-size: 30px
 		text-shadow: 2px 2px 2px #000
-		margin-top: -2px
 
 
 .LegendPanel
@@ -181,63 +184,63 @@ $BACKGROUND_COLOR: #000;
 	margin-left: 1px
 
 .UltimateIndicatorShared
-	margin-left: 44px
-	margin-top: 2px
-	vertical-align: center
 	width: 20px
 	height: 20px
-	background-size: 20px
-	background-repeat: no-repeat
+	margin-top: 2px
+	margin-left: 44px
+	vertical-align: center
 	background-position: 50% 50%
+	background-repeat: no-repeat
+	background-size: 20px
 
 #Level
+	color: #898b8c
 	vertical-align: middle
 	horizontal-align: center
-	color: #898b8c
 
 #Kills
-	horizontal-align: center
-	vertical-align: center
-	text-align: center
-	font-size: 20px
 	margin-top: 3px
+	font-size: 20px
+	text-align: center
+	vertical-align: center
+	horizontal-align: center
 
 #Deaths
-	horizontal-align: center
-	vertical-align: center
-	text-align: center
-	font-size: 20px
 	margin-top: 3px
+	font-size: 20px
+	text-align: center
+	vertical-align: center
+	horizontal-align: center
 
 #Assists
-	horizontal-align: center
-	vertical-align: center
-	text-align: center
-	font-size: 20px
 	margin-top: 3px
+	font-size: 20px
+	text-align: center
+	vertical-align: center
+	horizontal-align: center
 
 #PlayerGoldAmount
-	horizontal-align: center
-	vertical-align: center
-	text-align: center
-	font-size: 20px
 	margin-top: 3px
+	font-size: 20px
+	text-align: center
+	vertical-align: center
+	horizontal-align: center
 
 #PlayerName
+	padding-left: 4px
+	margin-top: 0
+	margin-bottom: -4px
 	font-size: 14px
 	font-weight: bold
-	margin-bottom: -4px
-	margin-top: 0
-	padding-left: 4px
 	color: #ccc
 	white-space: nowrap
 
 #HeroNameAndDescription
 	padding-left: 4px
-	font-size: 13px
-	text-shadow: 2px 2px 2px #000
 	margin-top: 0
+	font-size: 13px
 	color: #999
+	text-shadow: 2px 2px 2px #000
 	vertical-align: bottom
 
 #PlayerDetailsContainer
@@ -248,10 +251,11 @@ $BACKGROUND_COLOR: #000;
 
 #PlayerItemsContainer
 	flow-children: right
+
 	Image
-		margin: 1px
 		width: 41px
 		height: 30px
+		margin: 1px
 		background-color: BACKGROUND_COLOR
 
 
