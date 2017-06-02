@@ -73,7 +73,9 @@ SACRED BLADE MALE:
 BOTTLE:
 	ItemInitialStockTime 150.0 => 0
 ECHO SABRE:
-	reworked passive ability and now the double attacks apply for 1 second -100% movement slow and -100 attack speed slow instead of root and disarm
+	Reworked passive ability and now the double attacks apply for 1 second -100% movement slow and -100 attack speed slow instead of root and disarm
+ELEMENTAL FURY:
+	Now not require Moon Dust for purchase
  				TALENTS:
 Rebalanced talent's cost, groups, max levels of all talents. Reworked require lvl for each group and now for
 1-st group is available at 5 lvl (old => 2)
@@ -117,3 +119,8 @@ Invoker - Invoke:
 	Cooldown: changed => 6
 	ManaCost: changed => 60
 	Cooldown: Scepter changed 0.1 => 0.5
+	
+SPELL AMPLIFY NOT SCALABLE:
+	huskar life break
+	ember spirit sleight of fist
+	shadow demon soul catcher

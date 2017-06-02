@@ -2564,7 +2564,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_min"	"45 90 135 190 225 260 300"
+				"damage_min"	"30 50 70 90 110 155 200"
 			}
 
 			"02"
@@ -2601,7 +2601,6 @@
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityCooldown"	"32 30 28 26 24 22 20"
 		"AbilityManaCost"	"50 55 60 65 70 75 80"
-		"LevelsBetweenUpgrades"	"2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -8678,6 +8677,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"tooltip_health_damage"	"34 36 38 40 42 44 46"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"06"
@@ -8703,6 +8703,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"tooltip_health_damage_scepter"	"65"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"10"
@@ -11253,7 +11254,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"mana_burned"	"150 300 500 700 1000 1400 2000 3000"
+				"mana_burned"	"150 300 450 600 750 900 1050 1300"
 				"levelkey"	"wexlevel"
 			}
 
@@ -11356,7 +11357,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"main_damage"	"70 125 160 200 250 320 500"
+				"main_damage"	"60 90 125 162 200 260 320"
 				"levelkey"	"exortlevel"
 			}
 
@@ -11369,7 +11370,7 @@
 			"10"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"burn_dps"	"15 22 35 43 55 70 150"
+				"burn_dps"	"15 22 35 43 55 70 100"
 				"levelkey"	"exortlevel"
 				"CalculateSpellDamageTooltip"	"1"
 			}
@@ -11402,7 +11403,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage"	"200 350 500 650 800 1000 1300 2000"
+				"damage"	"200 300 450 600 750 900 1100 1400"
 				"levelkey"	"exortlevel"
 			}
 
@@ -12692,7 +12693,8 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_damage_taken"	"20 25 30 35 40 45 50"
+				"bonus_damage_taken"	"10 15 20 25 30 35 40"
+				"CalculateSpellDamageTooltip" "0"
 			}
 
 			"02"
@@ -17439,7 +17441,6 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"700"
 		"AbilityCastPoint"	"0"
-		"LevelsBetweenUpgrades" "4"
 		"AbilityCooldown"	"12 11 10 9 8 7 6"
 		"AbilityManaCost"	"50"
 		"AbilitySpecial"
@@ -17458,12 +17459,12 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"attack_interval"	"0.2"
+				"attack_interval"	"0.2 0.2 0.2 0.2 0.2 0.2 0.15"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"creep_damage_penalty"	"-70"
+				"creep_damage_penalty"	"-60"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -17502,7 +17503,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_second"	"20 30 35 40 55 70 90"
+				"damage_per_second"	"20 25 30 35 40 55 70"
 			}
 			"99"
 			{
