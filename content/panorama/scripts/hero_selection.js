@@ -113,24 +113,26 @@ function Snippet_PlayerPanel(pid, rootPanel) {
 		var panel = $.CreatePanel('Panel', rootPanel, '');
 		panel.BLoadLayoutSnippet('PlayerPanel');
 		panel.SetDialogVariable('player_name', Players.GetPlayerName(pid));
-		var playerData = Players.GetStatsData(pid);
-		panel.SetDialogVariable('player_mmr', playerData.Rating || 'TBD');
+		var statsData = Players.GetStatsData(pid);
+		panel.SetDialogVariable('player_mmr', statsData.Rating || 'TBD');
 		panel.FindChildTraverse('SlotColor').style.backgroundColor = GetHEXPlayerColor(pid);
 		PlayerPanels[pid] = panel;
 	}
 	return PlayerPanels[pid];
 }
 
+
 function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	_.each(changesObject, function(teamPlayers, teamNumber) {
 		if ($('#team_selection_panels_team' + teamNumber) == null) {
 			var isRight = teamNumber % 2 !== 0;
 			var TeamSelectionPanel = $.CreatePanel('Panel', $(isRight ? '#RightTeams' : '#LeftTeams'), 'team_selection_panels_team' + teamNumber);
-			TeamSelectionPanel.AddClass('TeamSelectionPanel');
+			TeamSelectionPanel.BLoadLayoutSnippet('TeamBar');
+			TeamSelectionPanel.SetDialogVariable('team_rating', PlayerTables.GetTableValue('stats_team_rating', teamNumber));
 			var color = GameUI.CustomUIConfig().team_colors[teamNumber];
 			TeamSelectionPanel.style.backgroundColor = 'gradient(linear, 100% 100%, 0% 100%, from(transparent), color-stop(0.15, ' + color + '4D), to(transparent))';
 		}
-		var TeamSelectionPanel = $('#team_selection_panels_team' + teamNumber);
+		var TeamSelectionPanel = $('#team_selection_panels_team' + teamNumber).FindChildTraverse('TeamBarPlayers');
 		_.each(teamPlayers, function(playerData, playerIdInTeam) {
 			var PlayerPanel = Snippet_PlayerPanel(Number(playerIdInTeam), TeamSelectionPanel);
 

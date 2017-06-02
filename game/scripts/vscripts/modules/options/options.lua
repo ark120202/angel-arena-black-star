@@ -139,17 +139,12 @@ function Options:LoadMapValues()
 	if landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216
 		USE_AUTOMATIC_PLAYERS_PER_TEAM = false
-		MAX_NUMBER_OF_TEAMS = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS] = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_1] = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_2] = 4
 		USE_CUSTOM_TEAM_COLORS = true
 	end
 end
 
 function Options:LoadCheatValues()
-	
+
 end
 
 function Options:LoadToolsValues()

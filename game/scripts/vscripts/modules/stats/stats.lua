@@ -5,6 +5,8 @@ if StatsClient == nil then
 end
 
 function StatsClient:Init()
+	PlayerTables:CreateTable("stats_client", {}, AllPlayersInterval)
+	PlayerTables:CreateTable("stats_team_rating", {}, AllPlayersInterval)
 	CustomGameEventManager:RegisterListener("stats_client_add_guide", Dynamic_Wrap(StatsClient, "AddGuide"))
 	CustomGameEventManager:RegisterListener("stats_client_vote_guide", Dynamic_Wrap(StatsClient, "VoteGuide"))
 end
@@ -21,12 +23,28 @@ function StatsClient:FetchPreGameData()
 	end
 	--Should return rating table
 	StatsClient:Send("fetchPreGameMatchData", data, function(response)
+		local teamRatings = {}
 		for pid, data in pairs(response) do
 			pid = tonumber(pid)
+			local team = PlayerResource:GetTeam(pid)
+
+			teamRatings[team] = teamRatings[team] or {}
+			local rating = data.Rating or data.TBDRating
+			if rating then table.insert(teamRatings[team], rating) end
+
 			PLAYER_DATA[pid].serverData = data
 			PLAYER_DATA[pid].Inventory = data.inventory or {}
-			PlayerTables:SetTableValue("stats_client", pid, data)
+
+			local clientData = table.deepcopy(data)
+			clientData.TBDRating = nil
+			PlayerTables:SetTableValue("stats_client", pid, clientData)
 		end
+
+		for team, values in pairs(teamRatings) do
+			debugp("StatsClient:FetchPreGameData", "Set team #" .. tostring(team) .. "'s average rating to " .. table.average(values))
+			PlayerTables:SetTableValue("stats_team_rating", team, table.average(values))
+		end
+
 	end, math.huge)
 end
 
@@ -168,25 +186,26 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, _currentRe
 	elseif not retryCount then
 		retryCount = 0
 	end
+	debugp("StatsClient:Send", "Sent data to " .. path .. "(with current retry of " .. (_currentRetry or 0) .. ")")
 	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path)
 	request:SetHTTPRequestGetOrPostParameter("data", JSON:encode(data))
 	request:Send(function(response)
 		if response.StatusCode ~= 200 or not response.Body then
-			print("[StatsClient] error, status == " .. response.StatusCode)
+			debugp("StatsClient:Send", "Server returned an error, status is " .. response.StatusCode)
 			if response.Body then
-				print("[StatsClient] " .. response.StatusCode .. ": " .. response.Body)
+				debugp("StatsClient:Send", response.StatusCode .. ": " .. response.Body)
 			end
 			local currentRetry = (_currentRetry or 0) + 1
 			if currentRetry < retryCount then
 				Timers:CreateTimer(self.RetryDelay, function()
-					print("[StatsClient] Retry (" .. currentRetry .. ")")
+					debugp("StatsClient:Send", "Retry (" .. currentRetry .. ")")
 					StatsClient:Send(path, data, callback, retryCount, protocol, currentRetry)
 				end)
 			end
 		else
 			local obj, pos, err = JSON:decode(response.Body, 1, nil)
 			if not obj then
-				print("[StatsClient] Critical Error: request to " .. self.ServerAddress .. path .. " returned undefined. Check server configuration")
+				debugp("[StatsClient] Critical Error: request to " .. self.ServerAddress .. path .. " returned undefined. Check server configuration")
 			elseif callback then
 				callback(obj)
 			end
