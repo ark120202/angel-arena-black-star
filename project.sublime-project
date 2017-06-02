@@ -15,7 +15,8 @@
 				"game/rich_presence_persistent_data.txt",
 				"game/panorama_debugger.cfg",
 				"*.sublime-project",
-				"LICENSE.md"
+				"LICENSE.md",
+				"package-lock.json"
 			],
 			"folder_exclude_patterns":
 			[

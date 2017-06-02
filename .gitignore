@@ -35,7 +35,9 @@ game/*.tmp
 game/server_log.txt
 game/rich_presence_persistent_data.txt
 
+# npm
 npm-debug.log
+package-lock.json
 
 generator/settings.yml
 generator/node_modules/*
