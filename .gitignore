@@ -13,12 +13,13 @@
 *.vagrp_c
 *.vmdl_c
 
-# Preprocessored
+# Preprocessed
 content/panorama/styles/*
 
 # Environments
 *.sublime-workspace
 *.sublime-project
+!project.sublime-project
 
 content/tooltips_*.txt
 content/addon_*_utf8.txt
