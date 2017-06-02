@@ -412,7 +412,7 @@
 		"AbilityTextureName"			"arena/shinobu_yumewatari_lua"
 		"ScriptFile"					"heroes/hero_shinobu/yumewatari.lua"
 		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"10"
+		"LevelsBetweenUpgrades"			"1"
 		"RequiredLevel"					"5"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK2"
 
@@ -426,7 +426,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"150 550 750 850 1200 1600 2000"
+				"bonus_damage"		"50 80 120 140 160 185 200"
 			}
 			"02"
 			{
@@ -464,7 +464,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"rage_bonus_damage"	"80 150 230 400 600 1000 1800"
+				"rage_bonus_damage"	"40 80 120 140 160 180 200"
 			}
 			"05"
 			{
