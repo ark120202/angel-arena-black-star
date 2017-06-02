@@ -80,7 +80,6 @@ function GameMode:InitGameMode()
 	PanoramaShop:InitializeItemTable()
 	Structures:AddHealers()
 	Structures:CreateShops()
-
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
 	StatsClient:Init()
@@ -108,6 +107,11 @@ function GameMode:OnAllPlayersLoaded()
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[4] = true
+	StatsClient:FetchPreGameData()
+end
+
+function GameMode:OnHeroSelectionStart()
+	Options:CalculateVotes()
 	DynamicMinimap:Init()
 	Spawner:PreloadSpawners()
 	Bosses:InitAllBosses()

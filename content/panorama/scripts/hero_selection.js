@@ -113,7 +113,8 @@ function Snippet_PlayerPanel(pid, rootPanel) {
 		var panel = $.CreatePanel('Panel', rootPanel, '');
 		panel.BLoadLayoutSnippet('PlayerPanel');
 		panel.SetDialogVariable('player_name', Players.GetPlayerName(pid));
-		panel.SetDialogVariable('player_mmr', Players.GetStatsData(pid).Rating || 'TBD');
+		var playerData = Players.GetStatsData(pid);
+		panel.SetDialogVariable('player_mmr', playerData.Rating || 'TBD');
 		panel.FindChildTraverse('SlotColor').style.backgroundColor = GetHEXPlayerColor(pid);
 		PlayerPanels[pid] = panel;
 	}

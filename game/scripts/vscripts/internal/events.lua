@@ -9,9 +9,10 @@ function GameMode:_OnGameRulesStateChange(keys)
 		self.bSeenWaitForPlayers = true
 	elseif newState == DOTA_GAMERULES_STATE_INIT then
 		--Timers:RemoveTimer("alljointimer")
+	elseif newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+		GameMode:OnAllPlayersLoaded()
 	elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
 		GameMode:PostLoadPrecache()
-		GameMode:OnAllPlayersLoaded()
 
 		if USE_CUSTOM_TEAM_COLORS_FOR_PLAYERS then
 			for i=0,9 do
@@ -63,14 +64,14 @@ function GameMode:_OnEntityKilled( keys )
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
 
-	if killedUnit:IsRealHero() then 
+	if killedUnit:IsRealHero() then
 		if killerEntity then
 			local team = killerEntity:GetTeam()
 			if END_GAME_ON_KILLS and GetTeamHeroKills(team) >= KILLS_TO_END_GAME_FOR_TEAM then
 				self:OnKillGoalReached(team)
 			end
 		end
-		
+
 		if SHOW_KILLS_ON_TOPBAR then
 			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_BADGUYS, GetTeamHeroKills(DOTA_TEAM_BADGUYS))
 			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_GOODGUYS, GetTeamHeroKills(DOTA_TEAM_GOODGUYS))
@@ -97,7 +98,7 @@ function GameMode:_OnConnectFull(keys)
 	local entIndex = keys.index+1
 	-- The Player entity of the joining user
 	local ply = EntIndexToHScript(entIndex)
-	
+
 	local userID = keys.userid
 
 	self.vUserIds = self.vUserIds or {}
