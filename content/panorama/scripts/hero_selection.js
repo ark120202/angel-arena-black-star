@@ -12,7 +12,6 @@ var SelectedHeroPanel,
 	PlayerSpawnBoxes = {},
 	HeroSelectionState = -1,
 	PlayerPanels = [],
-	LocalPlayerStatus = {},
 	InitializationStates = {},
 	HasBanPoint = true;
 
@@ -119,18 +118,6 @@ function Snippet_PlayerPanel(pid, rootPanel) {
 		PlayerPanels[pid] = panel;
 	}
 	return PlayerPanels[pid];
-}
-
-function IsLocalHeroPicked() {
-	return LocalPlayerStatus.status === 'picked';
-}
-
-function IsLocalHeroLocked() {
-	return LocalPlayerStatus.status === 'locked';
-}
-
-function IsLocalHeroLockedOrPicked() {
-	return IsLocalHeroPicked() || IsLocalHeroLocked();
 }
 
 function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
@@ -303,6 +290,7 @@ function UpdateMainTable(tableName, changesObject, deletionsObject) {
 				FillHeroesTable(tabContent, TabHeroesPanel);
 				TabHeroesPanel.visible = false;
 			});
+			ListenToBanningPhase();
 			SelectHeroTab(1);
 		}
 	}

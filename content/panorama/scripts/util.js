@@ -73,6 +73,10 @@ Players.GetStatsData = function(playerId) {
 	return PlayerTables.GetTableValue('stats_client', playerId) || {};
 };
 
+Players.GetHeroSelectionPlayerInfo = function(playerId) {
+	return Players.IsValidPlayerID(playerId) ? PlayerTables.GetTableValue('hero_selection', Players.GetTeam(playerId))[playerId] : {};
+};
+
 function GetDataFromServer(path, params, resolve, reject) {
 	var encodedParams = params == null ? '' : '?' + Object.keys(params).map(function(key) {
 	    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);

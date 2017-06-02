@@ -285,3 +285,7 @@ end
 function HeroSelection:IsHeroBanned(hero)
 	return PlayerTables:GetTableValueForReadOnly("hero_selection_banning_phase", hero) ~= nil
 end
+
+function HeroSelection:IsHeroPickAvaliable(hero)
+	return not HeroSelection:IsHeroSelected(hero) and not HeroSelection:IsHeroBanned(hero) and HeroSelection:VerifyHeroGroup(hero)
+end
