@@ -1965,7 +1965,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.55 0.55 0.55 0.55 0.55 0.45 0.35"
 		"AbilityCooldown"	"10"
-		"AbilityDamage"	"100 175 250 325 450 550 600"
+		"AbilityDamage"	"100 150 200 250 300 375 450"
 		"AbilityManaCost"	"90"
 		"AbilitySpecial"
 		{
@@ -2001,7 +2001,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.55 0.55 0.55 0.55 0.55 0.45 0.35"
 		"AbilityCooldown"	"10"
-		"AbilityDamage"		"100 175 250 325 450 550 600"
+		"AbilityDamage"		"100 150 200 250 300 375 450"
 		"AbilityManaCost"	"90"
 		"AbilitySpecial"
 		{
@@ -2037,7 +2037,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.55 0.55 0.55 0.55 0.55 0.45 0.35"
 		"AbilityCooldown"	"10"
-		"AbilityDamage"		"100 175 250 325 450 550 600"
+		"AbilityDamage"		"100 150 200 250 300 375 450"
 		"AbilityManaCost"	"90"
 		"AbilitySpecial"
 		{
@@ -7207,7 +7207,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"0"
+				"radius"	"99999"
 			}
 
 			"02"
@@ -8652,19 +8652,19 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"health_cost_percent"	"0.34 0.36 0.38 4.0 4.2 4.4 4.6"
+				"health_cost_percent"	"0.35"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"health_damage"	"0.34 0.36 0.38 4.0 4.2 4.4 4.6"
+				"health_damage"	"0.30 0.33 0.36 0.39 0.42 0.45 0.48"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"health_damage_scepter"	"0.65"
+				"health_damage_scepter"	"0.60"
 			}
 
 			"04"
@@ -8676,14 +8676,14 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tooltip_health_damage"	"34 36 38 40 42 44 46"
+				"tooltip_health_damage"	"30 33 36 39 42 45 48"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tooltip_health_cost_percent"	"34 36 38 40 42 44 46"
+				"tooltip_health_cost_percent"	"35"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 
@@ -8702,7 +8702,7 @@
 			"09"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tooltip_health_damage_scepter"	"65"
+				"tooltip_health_damage_scepter"	"60"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 
@@ -9885,7 +9885,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
-		"AbilityCooldown"	"90 80 70 60 50 40 30"
+		"AbilityCooldown"	"35"
 		"AbilityManaCost"	"200 300 400 500 600 700 800"
 		"AbilitySpecial"
 		{
@@ -9910,7 +9910,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
-		"AbilityCastRange"	"2000"
+		"AbilityCastRange"	"3000"
 		"AbilityCooldown"	"12.0"
 		"AbilityManaCost"	"100"
 		"AbilitySpecial"

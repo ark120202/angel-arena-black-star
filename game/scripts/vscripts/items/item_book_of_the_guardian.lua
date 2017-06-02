@@ -32,6 +32,7 @@ if IsServer() then
 						victim = v,
 						damage = caster:GetIntellect() * blast_damage_int_mult,
 						damage_type = self:GetAbilityDamageType(),
+						damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 						ability = self
 					})
 
