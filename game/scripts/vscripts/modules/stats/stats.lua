@@ -29,7 +29,7 @@ function StatsClient:FetchPreGameData()
 			local team = PlayerResource:GetTeam(pid)
 
 			teamRatings[team] = teamRatings[team] or {}
-			local rating = data.Rating or data.TBDRating
+			local rating = data.Rating or (3000 + data.TBDRating)
 			if rating then table.insert(teamRatings[team], rating) end
 
 			PLAYER_DATA[pid].serverData = data
@@ -57,40 +57,44 @@ function StatsClient:OnGameEnd(winner)
 	local data = {
 		version = ARENA_VERSION,
 		matchid = tostring(GameRules:GetMatchID()),
-		WinnerTeam = winner,
 		players = {},
-		KillGoal = KILLS_TO_END_GAME_FOR_TEAM,
-		TeamsInfo = {},
+		killGoal = KILLS_TO_END_GAME_FOR_TEAM,
+		teamsInfo = {},
 		version = ARENA_VERSION,
 		duration = math.floor(time),
+		isRanked = Options:IsEquals("EnableRatingAffection")
 	}
+
 	for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
 		if GetTeamAllPlayerCount(i) > 0 then
 			data.TeamsInfo[tostring(i)] = {
-				Duels_Won = (Duel.TimesTeamWins[i] or 0),
-				IsGameWinner = i == winner,
-				Kills = GetTeamHeroKills(i),
+				duelsWon = (Duel.TimesTeamWins[i] or 0),
+				isGameWinner = i == winner,
+				kills = GetTeamHeroKills(i),
 			}
 		end
 	end
+
 	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:IsValidPlayerID(i) then
 			local hero = PlayerResource:GetSelectedHeroEntity(i)
 			local playerInfo = {
 				abandoned = IsPlayerAbandoned(i),
 				steamid = tostring(PlayerResource:GetSteamID(i)),
-				stats = PLAYER_DATA[i].HeroStats or {},
-				hero_name = HeroSelection:GetSelectedHeroName(i),
+				stats = {
+					damageToEnemyHeroes = PlayerResource:GetPlayerStat("DamageToEnemyHeroes"),
+					duelsPlayed = PlayerResource:GetPlayerStat("Duels_Played"),
+					duelsWon = PlayerResource:GetPlayerStat("Duels_Won"),
+					kills = PlayerResource:GetKills(i),
+					deaths = PlayerResource:GetDeaths(i),
+					assists = PlayerResource:GetAssists(i),
+					lasthits = PlayerResource:GetLastHits(i)
+				},
+				heroName = HeroSelection:GetSelectedHeroName(i),
 				team = tonumber(PlayerResource:GetTeam(i)),
 				level = PLAYER_DATA[i].BeforeAbandon_Level or 0,
 				items = PLAYER_DATA[i].BeforeAbandon_HeroInventorySnapshot or {}
 			}
-			table.merge(playerInfo.stats, {
-				Kills = PlayerResource:GetKills(i),
-				Deaths = PlayerResource:GetDeaths(i),
-				Assists = PlayerResource:GetAssists(i),
-				Lasthits = PlayerResource:GetLastHits(i)
-			})
 			if IsValidEntity(hero) then
 				playerInfo.level = hero:GetLevel()
 				for item_slot = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
@@ -114,6 +118,7 @@ function StatsClient:OnGameEnd(winner)
 	PrintTable(data)
 	StatsClient:Send("endMatch", data, function(response)
 		PrintTable(response)
+		CustomGameEventManager:Send_ServerToAllClients("stats_client_match_results", response)
 	end, math.huge)
 end
 

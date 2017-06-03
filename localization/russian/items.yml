@@ -254,6 +254,8 @@ DOTA_Tooltip_ability_item_metamorphosis_elixir_Description: |-
   Превращает вашего героя в другого.
 
   Не может быть использовано пока активна дуэль.
+
+  <font color='cyan'>Рейтинговая игра: может быть использовано лишь один раз.</font>
 DOTA_Tooltip_ability_item_metamorphosis_elixir_transformation_time: 'ДЛИТЕЛЬНОСТЬ ТРАНСФОРМАЦИИ:'
 
 DOTA_Tooltip_ability_item_splitshot_str: Enchanted Trident

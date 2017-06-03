@@ -117,13 +117,6 @@ function Options:LoadMapValues()
 	local gamemode = underscoreIndex and mapName:sub(underscoreIndex - #mapName) or ""
 
 	if gamemode == "custom_abilities" then
-		for k,t in pairs(DROP_TABLE) do
-			for i,info in ipairs(t) do
-				if string.starts(info.Item, "item_god_transform_") then
-					table.remove(DROP_TABLE[k], i)
-				end
-			end
-		end
 		Options:SetValue("MainHeroList", "NoAbilities")
 		Options:SetPreGameVoting("custom_abilities", {"random_omg", "ability_shop"}, "ability_shop", {
 			calculationFunction = ">",
@@ -138,7 +131,6 @@ function Options:LoadMapValues()
 	end
 	if landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216
-		USE_AUTOMATIC_PLAYERS_PER_TEAM = false
 		USE_CUSTOM_TEAM_COLORS = true
 	end
 end
