@@ -1,4 +1,4 @@
-const dcgt = require('dota-custom-game-toolkit');
+const localizationBuilder = require('./localization-builder');
 const path = require('path'),
 	vdf = require('vdf-extra'),
 	fs = require('fs-extra'),
@@ -33,7 +33,7 @@ const gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	watch = require('gulp-watch'),
 	plumber = require('gulp-plumber'),
-	replace = require('gulp-replace'),
+	//replace = require('gulp-replace'),
 	gutil = require('gulp-util'),
 	resourcecompiler = require('./gulp-resourcecompiler')(paths.resourcecompiler, p => p.replace(paths.content, paths.addon_content));
 
@@ -45,13 +45,13 @@ gulp.task('maps', () =>
 
 // L10n
 gulp.task('localization', () =>
-	dcgt.ParseLocalesFromDirectory(paths.localization)
+	localizationBuilder.ParseLocalesFromDirectory(paths.localization)
 		.then(tokensByLanguages => {
 			return Promise.map(Object.keys(tokensByLanguages), language => {
 				let lang = {Language: language, Tokens: tokensByLanguages[language]};
 				let minified = '\ufeff' + vdf.stringify({lang}, 0);
 				return Promise.map([path.join(paths.game, 'resource/addon_' + language + '.txt'), path.join(paths.game, 'panorama/localization/addon_' + language + '.txt')], path => {
-					return fs.ensureFile(path).then(() => fs.writeFile(path, minified, 'ucs2'));
+					return fs.outputFile(path, minified, 'ucs2');
 				});
 			});
 		})
