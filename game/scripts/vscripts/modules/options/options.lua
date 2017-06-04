@@ -126,6 +126,7 @@ function Options:LoadMapValues()
 			end
 		})
 	elseif gamemode == "ranked" then
+		SKIP_TEAM_SETUP = true
 		Options:SetValue("EnableRatingAffection", true)
 		Options:SetValue("BanningPhaseBannedPercentage", 50)
 	end

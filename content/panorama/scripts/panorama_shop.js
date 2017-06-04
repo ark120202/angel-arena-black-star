@@ -48,6 +48,7 @@ function SearchItems() {
 					}
 				}
 			}
+
 			FoundItems.sort(function(x1, x2) {
 				return ItemData[x1].cost - ItemData[x2].cost;
 			});

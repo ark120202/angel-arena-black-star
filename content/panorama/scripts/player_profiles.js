@@ -4,12 +4,11 @@ function LoadPanelForPlayer(playerId) {
 	var steamid = Game.GetPlayerInfo(playerId).player_steamid;
 	$('#Avatar').steamid = steamid;
 	$('#UserName').steamid = steamid;
-	$('#PlayerVariable_Rating').text = '';
-	$('#PlayerVariable_WinMatches').text = '';
 	var stats = Players.GetStatsData(playerId);
-	SetPagePlayerLevel(Math.floor((stats.XP || 0) / 100) + 1);
-	$('#PlayerVariable_Rating').text = stats.MMR;
-	$('#PlayerVariable_WinMatches').text = stats.Wins + '/' + stats.Matches;
+	SetPagePlayerLevel(Math.floor((stats.experience || 0) / 100) + 1);
+	$('#PlayerVariable_Rating').text = stats.Rating || 'TBD';
+	$('#PlayerVariable_WinMatches').text = (stats.gamesWon || 0) + '/' + (stats.gamesPlayed || 0);
+	// TODO: use rest api for other features
 }
 
 function SetPagePlayerLevel(level) {
@@ -23,15 +22,15 @@ function SetPagePlayerLevel(level) {
 
 (function() {
 	//LoadPanelForPlayer()
-	if ($.GetContextPanel().BHasClass('CustomUIState_HUD')) { // Is hud element or it was called within other panel?
-		$.GetContextPanel().RemoveClass('PanelOpened');
+	if ($.GetContextPanel().id !== 'LocalPlayerData') {
 		GameEvents.Subscribe('player_profiles_show_info', function(data) {
-			$.Msg('asd');
 			if (Players.IsValidPlayerID(Number(data.PlayerID))) {
 				LoadPanelForPlayer(Number(data.PlayerID));
 			}
 		});
 	}
+
 	$.GetContextPanel().LoadPanelForPlayer = LoadPanelForPlayer;
 	//LoadPanelForPlayer(0)
 })();
+

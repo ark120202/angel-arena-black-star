@@ -249,4 +249,13 @@ CHAT_COMMANDS = {
 			end
 		end
 	},
+	["end"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
+		f = function(args, hero, playerID)
+			local team = tonumber(args[1])
+			if team then
+				GameMode:OnKillGoalReached(team)
+			end
+		end
+	},
 }

@@ -50,24 +50,29 @@ end
 
 function StatsClient:OnGameEnd(winner)
 	local time = GameRules:GetDOTATime(false, true)
+	local matchID = tostring(GameRules:GetMatchID())
 	--local debug = true
-	--if (not IsInToolsMode() or debug) and (GameRules:IsCheatMode() or GetInGamePlayerCount() < 8 or time < 0) then
+	--if (not IsInToolsMode() or debug) and (GetInGamePlayerCount() < 8 or time < 0 or matchID == 0) then
 	--	return
 	--end
 	local data = {
 		version = ARENA_VERSION,
-		matchid = tostring(GameRules:GetMatchID()),
+		matchid = matchID,
 		players = {},
 		killGoal = KILLS_TO_END_GAME_FOR_TEAM,
 		teamsInfo = {},
 		version = ARENA_VERSION,
 		duration = math.floor(time),
-		isRanked = Options:IsEquals("EnableRatingAffection")
+		flags = {
+			isRanked = Options:IsEquals("EnableRatingAffection"),
+			isCheatMode = GameRules:IsCheatMode()
+		}
+
 	}
 
 	for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
 		if GetTeamAllPlayerCount(i) > 0 then
-			data.TeamsInfo[tostring(i)] = {
+			data.teamsInfo[tostring(i)] = {
 				duelsWon = (Duel.TimesTeamWins[i] or 0),
 				isGameWinner = i == winner,
 				kills = GetTeamHeroKills(i),
@@ -82,9 +87,9 @@ function StatsClient:OnGameEnd(winner)
 				abandoned = IsPlayerAbandoned(i),
 				steamid = tostring(PlayerResource:GetSteamID(i)),
 				stats = {
-					damageToEnemyHeroes = PlayerResource:GetPlayerStat("DamageToEnemyHeroes"),
-					duelsPlayed = PlayerResource:GetPlayerStat("Duels_Played"),
-					duelsWon = PlayerResource:GetPlayerStat("Duels_Won"),
+					damageToEnemyHeroes = PlayerResource:GetPlayerStat(i, "DamageToEnemyHeroes"),
+					duelsPlayed = PlayerResource:GetPlayerStat(i, "Duels_Played"),
+					duelsWon = PlayerResource:GetPlayerStat(i, "Duels_Won"),
 					kills = PlayerResource:GetKills(i),
 					deaths = PlayerResource:GetDeaths(i),
 					assists = PlayerResource:GetAssists(i),
@@ -118,7 +123,9 @@ function StatsClient:OnGameEnd(winner)
 	PrintTable(data)
 	StatsClient:Send("endMatch", data, function(response)
 		PrintTable(response)
-		CustomGameEventManager:Send_ServerToAllClients("stats_client_match_results", response)
+		CustomGameEventManager:Send_ServerToAllClients("stats_client_match_results", {
+			id = response.success and matchID or 0
+		})
 	end, math.huge)
 end
 
