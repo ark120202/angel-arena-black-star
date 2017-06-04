@@ -114,7 +114,6 @@ function Snippet_PlayerPanel(pid, rootPanel) {
 		panel.BLoadLayoutSnippet('PlayerPanel');
 		panel.SetDialogVariable('player_name', Players.GetPlayerName(pid));
 		var statsData = Players.GetStatsData(pid);
-		panel.SetDialogVariable('player_mmr', statsData.Rating || 'TBD');
 		panel.FindChildTraverse('SlotColor').style.backgroundColor = GetHEXPlayerColor(pid);
 		PlayerPanels[pid] = panel;
 	}
@@ -128,7 +127,6 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 			var isRight = teamNumber % 2 !== 0;
 			var TeamSelectionPanel = $.CreatePanel('Panel', $(isRight ? '#RightTeams' : '#LeftTeams'), 'team_selection_panels_team' + teamNumber);
 			TeamSelectionPanel.BLoadLayoutSnippet('TeamBar');
-			TeamSelectionPanel.SetDialogVariable('team_rating', PlayerTables.GetTableValue('stats_team_rating', teamNumber));
 			var color = GameUI.CustomUIConfig().team_colors[teamNumber];
 			TeamSelectionPanel.style.backgroundColor = 'gradient(linear, 100% 100%, 0% 100%, from(transparent), color-stop(0.15, ' + color + '4D), to(transparent))';
 		}
@@ -355,6 +353,17 @@ function ShowHeroPreviewTab(tabID) {
 		if ($.GetContextPanel().PTID_hero_selection) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_selection);
 		DynamicSubscribePTListener('hero_selection', UpdateHeroesSelected, function(ptid) {
 			$.GetContextPanel().PTID_hero_selection = ptid;
+		});
+
+		DynamicSubscribePTListener('stats_team_rating', function(tableName, changesObject, deletionsObject) {
+			for (var teamNumber in changesObject) {
+				$('#team_selection_panels_team' + teamNumber).SetDialogVariable('team_rating', changesObject[teamNumber]);
+			}
+		});
+		DynamicSubscribePTListener('stats_client', function(tableName, changesObject, deletionsObject) {
+			for (var playerID in changesObject) {
+				Snippet_PlayerPanel(playerID).SetDialogVariable('player_mmr', changesObject[playerID].Rating || 'TBD');
+			}
 		});
 		UpdateTimer();
 

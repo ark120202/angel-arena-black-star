@@ -7,6 +7,7 @@ game_mode_15: Angel Arena Black Star
 ADDON_GAME_NAME: Angel Arena Black Star
 addon_game_name: Angel Arena Black Star
 addonname: Angel Arena Black Star
+
 npc_dota_hero_arena_base: Hero
 DOTA_Chat_GlyphUsedGood: ''
 DOTA_Chat_GlyphUsedBad: ''

@@ -2,11 +2,6 @@ npc_arena_hero_anakim: Anakim
 npc_arena_hero_maka: Maka Albarn
 npc_arena_hero_soul_eater: Soul Evans
 
-addonname: Angel Arena Black Star
-addon_game_name: Angel Arena Black Star
-addon_game_name_p1: Angel Arena
-addon_game_name_p2: Black Star
-
 hero_selection_phase_0: Loading...
 hero_selection_phase_1: Hero Banning
 hero_selection_phase_2: Hero Selection
