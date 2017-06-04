@@ -9,20 +9,18 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityCastRange"				"200"
-		"AbilityCastPoint"				"0.4"
-		"AbilityCooldown"				"60.0 50.0 40.0 35.0 30.0 25.0 20.0 "
-		"AbilityManaCost"				"100 150 200 250 300 350 400"
-		"AbilityDamage"					"175 300 375 450 525 600 725"
-		"LevelsBetweenUpgrades"	"3"
-
+		"AbilityCastRange"				"180"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4 0.4 0.35 0.3"
+		"AbilityCooldown"				"16.0"
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"100 150 200 250 300 350 400"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_reduction"	"-10 -15 -20 -25 -30 -35 -40"
+				"armor_reduction"	"-3 -5 -7 -9 -11 -13 -15"
 			}
 			"02"
 			{
@@ -94,7 +92,7 @@
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"60.0"
+		"AbilityCooldown"				"30.0"
 		"AbilityManaCost"				"100 105 110 115 120 125 130"
 
 		"AbilitySpecial"
@@ -102,7 +100,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"10.0 15.0 20.0 25.0 30.0 35.0"
+				"duration"			"15"
 			}
 			"02"
 			{
@@ -117,12 +115,12 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_speed"		"10 20 30 40 50 60 70"
+				"attack_speed"		"15 25 35 45 55 65 75"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"6 12 21 29 36 45 51"
+				"bonus_armor"		"6 10 14 18 22 28 34"
 			}
 			"06"
 			{
@@ -186,8 +184,8 @@
 		"AbilityTextureName"			"arena/destroyer_body_reconstruction"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"				"150 140 130 120 110 100 60"
-		"AbilityManaCost"				"100 120 140 160 180 200 220"
+		"AbilityCooldown"				"120 110 100 90 80 70 60"
+		"AbilityManaCost"				"100 110 120 130 140 150 160"
 		"AbilityCastPoint"				"0.1"
 
 		"precache"
@@ -221,10 +219,9 @@
 		"BaseClass"             		"ability_lua"
 		"ScriptFile"					"heroes/hero_destroyer/frenzy.lua"
 		"AbilityTextureName"			"arena/destroyer_frenzy"
-		"MaxLevel" 						"5"
+		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"LevelsBetweenUpgrades"	"10"
 
 		"AbilitySpecial"
 		{
@@ -236,17 +233,17 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_pct_lvl1"	"100 120 130 140 160"
+				"bonus_damage_pct_lvl1"	"30 50 70 90 110 130 150"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor_pct_lvl1"	"20 40 60 80 100"
+				"bonus_armor_pct_lvl1"	"20 25 30 35 40"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_speed_lvl1" 	"550 570 590 610 630"
+				"max_speed_lvl1" 	"555 560 565 570 575 580 585"
 			}
 			"05"
 			{
@@ -256,17 +253,17 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_pct_lvl2"	"120 140 160 180 200 220"
+				"bonus_damage_pct_lvl2"	"50 70 90 110 130 150 170"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor_pct_lvl2"	"40 60 80 100 120"
+				"bonus_armor_pct_lvl2"	"30 35 40 45 50 55 60"
 			}
 			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_speed_lvl2" 	"570 590 610 630 650"
+				"max_speed_lvl2" 	"575 580 585 590 595 600 605"
 			}
 			"09"
 			{
@@ -276,17 +273,17 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_pct_lvl3"	"160 190 220 250 280"
+				"bonus_damage_pct_lvl3"	"70 90 110 130 150 170 190"
 			}
 			"11"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor_pct_lvl3"	"60 80 100 120 140"
+				"bonus_armor_pct_lvl3"	"40 45 50 55 60 65 70"
 			}
 			"12"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_speed_lvl3" 	"590 610 630 650 670"
+				"max_speed_lvl3" 	"595 600 605 610 615 620 625"
 			}
 		}
 
