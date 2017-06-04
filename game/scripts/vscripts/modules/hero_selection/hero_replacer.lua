@@ -81,7 +81,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 	local location = hero:GetAbsOrigin()
 	if fountatin then location = location or fountatin:GetAbsOrigin() end
 	local items = {}
-	for i = 0, 11 do
+	for i = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
 		local citem  = hero:GetItemInSlot(i)
 		if citem and citem ~= item then
 			local newItem = CreateItem(citem:GetName(), nil, nil)

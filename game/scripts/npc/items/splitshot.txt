@@ -572,7 +572,7 @@
 		"ItemResult"					"item_splitshot_ultimate"
 		"ItemRequirements"
 		{
-			"01"						"item_splitshot_str;item_splitshot_agi;item_splitshot_int;item_moon_dust"
+			"01"						"item_splitshot_str;item_splitshot_agi;item_splitshot_int"
 		}
 	}
 
@@ -603,17 +603,17 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"35"
+				"bonus_agility"					"30"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_strength"				"35"
+				"bonus_strength"				"30"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_intelligence"			"35"
+				"bonus_intelligence"			"30"
 			}
 			"06"
 			{
@@ -623,22 +623,22 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"40"
+				"movement_speed_percent_bonus"	"20"
 			}
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"100"
+				"bonus_damage"					"80"
 			}
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"25"
+				"bonus_health_regen"			"20"
 			}
 			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"	"600"
+				"bonus_mana_regen_percentage"	"400"
 			}
 			"11"
 			{
@@ -648,7 +648,7 @@
 			"12"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"cooldown_reduction"			"1.5"
+				"cooldown_reduction"			"0.65"
 			}
 			"13"
 			{
@@ -658,22 +658,22 @@
 			"14"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maim_slow_movement"			"-15"
+				"maim_slow_movement"			"-6"
 			}
 			"15"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maim_slow_attack"				"-20"
+				"maim_slow_attack"				"-8"
 			}
 			"16"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"maim_duration"					"6.5"
+				"maim_duration"					"5"
 			}
 			"17"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maim_max_stacks"				"16"
+				"maim_max_stacks"				"8"
 			}
 			"18"
 			{
@@ -683,17 +683,17 @@
 			"19"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"7"
+				"movement_speed_percent_bonus_buff"		"3"
 			}
 			"20"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_duration"			"10"
+				"fast_attack_duration"			"5"
 			}
 			"21"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"		"10"
+				"fast_attack_max_stacks"		"8"
 			}
 			"22"
 			{

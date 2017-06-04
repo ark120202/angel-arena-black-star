@@ -12993,6 +12993,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"50"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
 			{
@@ -13014,6 +13015,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"blast_damage_int_mult"	"7.5"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"10"
 			{

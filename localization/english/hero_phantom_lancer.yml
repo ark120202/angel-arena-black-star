@@ -27,8 +27,8 @@ DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_Description: 'Phantom Lancer
 DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_hero_proc_chance: '%HERO TRIGGER CHANCE:'
 DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_illusion_proc_chance: '%ILLUSION TRIGGER CHANCE:'
 DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_max_illusions: 'MAX ILLUSIONS:'
-DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_illusion_incoming_damage: '%ILLUSION DAMAGE:'
-DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_illusion_outgoing_damage: '%ILLUSION DAMAGE TAKEN:'
+DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_illusion_incoming_damage: '%ILLUSION DAMAGE TAKEN:'
+DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_illusion_outgoing_damage: '%ILLUSION DAMAGE:'
 DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_aghanim_description: 'All illusions around Phantom Lancer will have stopped duration timer. These illusions will die only when their health will ran out. If illusion will be too far from Phantom Lancer, timer will continue.'
 DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_immortal_illusions_radius_scepter: 'SCEPTER ILLUSIONS RADIUS:'
 DOTA_Tooltip_modifier_phantom_lancer_juxtapose_arena_scepter_effect: Juxtapose Timer Stopped

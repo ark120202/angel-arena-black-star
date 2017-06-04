@@ -20,6 +20,10 @@ function MeepoFixes:ShareRespawnTime(unit, respawnTime)
 	end
 end
 
+function MeepoFixes:IsMeepoClone(unit)
+	return unit:GetFullName() == "npc_dota_hero_meepo" and unit:IsTrueHero() and not unit:IsMainHero()
+end
+
 
 function MeepoFixes:ShareItems(unit)
 	if unit:GetFullName() == "npc_dota_hero_meepo" then
@@ -33,10 +37,10 @@ function MeepoFixes:ShareItems(unit)
 						local oldItemName = oldItem:GetAbilityName()
 						if oldItemName ~= v then
 							UTIL_Remove(oldItem)
-							clone:AddItemByName(v ~= "nil" and v or "item_dummy")
+							clone:AddItemByName(v ~= "nil" and v or "item_dummy"):SetSellable(false)
 						end
 					else
-						clone:AddItemByName(v ~= "nil" and v or "item_dummy")
+						clone:AddItemByName(v ~= "nil" and v or "item_dummy"):SetSellable(false)
 					end
 				end
 				ClearSlotsFromDummy(clone, true)
