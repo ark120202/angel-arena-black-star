@@ -346,7 +346,12 @@ function ShowHeroPreviewTab(tabID) {
 		});
 		DynamicSubscribePTListener('hero_selection_available_heroes', UpdateMainTable);
 		$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
-		//$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + DOTA_ACTIVE_GAMEMODE_TYPE);
+		//$.GetContextPanel().SetHasClass('FailedRankedGame', Options.IsEquals('FailedRankedGame'));
+		var gamemodeType = Options.IsEquals('FailedRankedGame') ? 'ranked_failed' : Options.GetMapInfo().gamemode;
+		if (gamemodeType === 'custom_abilities') gamemodeType =
+			Options.IsEquals('EnableAbilityShop') ? 'ability_shop' : Options.IsEquals('EnableRandomAbilities') ? 'random_omg' : '';
+		$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + gamemodeType);
+
 		if ($.GetContextPanel().PTID_hero_selection) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_selection);
 		DynamicSubscribePTListener('hero_selection', UpdateHeroesSelected, function(ptid) {
 			$.GetContextPanel().PTID_hero_selection = ptid;

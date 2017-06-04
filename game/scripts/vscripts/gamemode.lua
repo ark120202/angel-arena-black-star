@@ -107,6 +107,7 @@ function GameMode:OnAllPlayersLoaded()
 	end
 	GAMEMODE_INITIALIZATION_STATUS[4] = true
 	StatsClient:FetchPreGameData()
+	Events:Emit("AllPlayersLoaded")
 end
 
 function GameMode:OnHeroSelectionStart()

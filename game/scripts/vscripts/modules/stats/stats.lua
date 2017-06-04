@@ -51,10 +51,10 @@ end
 function StatsClient:OnGameEnd(winner)
 	local time = GameRules:GetDOTATime(false, true)
 	local matchID = tostring(GameRules:GetMatchID())
-	--local debug = true
-	--if (not IsInToolsMode() or debug) and (GetInGamePlayerCount() < 8 or time < 0 or matchID == 0) then
-	--	return
-	--end
+	local debug = true
+	if (GameRules:IsCheatMode() and not debug) or time < 0 then
+		return
+	end
 	local data = {
 		version = ARENA_VERSION,
 		matchid = matchID,
@@ -64,10 +64,8 @@ function StatsClient:OnGameEnd(winner)
 		version = ARENA_VERSION,
 		duration = math.floor(time),
 		flags = {
-			isRanked = Options:IsEquals("EnableRatingAffection"),
-			isCheatMode = GameRules:IsCheatMode()
+			isRanked = Options:IsEquals("EnableRatingAffection")
 		}
-
 	}
 
 	for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do

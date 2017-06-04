@@ -2,17 +2,23 @@ npc_arena_hero_anakim: Anakim
 npc_arena_hero_maka: Maka Albarn
 npc_arena_hero_soul_eater: Soul Evans
 
+addonname: Angel Arena Black Star
+addon_game_name: Angel Arena Black Star
 addon_game_name_p1: Angel Arena
 addon_game_name_p2: Black Star
-arena_game_mode_type_100: All Pick
-arena_game_mode_type_101: Ranked All Pick
-arena_game_mode_type_102: Random OMG
-arena_game_mode_type_103: Ability Shop
+
 hero_selection_phase_0: Loading...
 hero_selection_phase_1: Hero Banning
 hero_selection_phase_2: Hero Selection
 hero_selection_phase_3: Strategy Time
 hero_selection_phase_4: Loading...
+
+arena_game_mode_type_: All Pick
+arena_game_mode_type_ranked_failed: <font color='red'>All Pick</font>
+arena_game_mode_type_ranked: Ranked All Pick
+arena_game_mode_type_ability_shop: Ability Shop
+arena_game_mode_type_random_omg: Random OMG
+
 game_player_abandoned_game: "\_has abandoned the game."
 notifications_gold: "\_gold"
 bosses_respawn: "\_was resurrected!"

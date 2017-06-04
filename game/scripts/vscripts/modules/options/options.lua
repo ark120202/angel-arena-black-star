@@ -92,6 +92,7 @@ function Options:LoadDefaultValues()
 	Options:SetValue("EnableRandomAbilities", false)
 	Options:SetValue("EnableStatisticsCollection", true)
 	Options:SetValue("EnableRatingAffection", false)
+	Options:SetValue("FailedRankedGame", false)
 	--Options:SetValue("MapLayout", "5v5")
 
 	Options:SetValue("BanningPhaseBannedPercentage", 0)
@@ -127,8 +128,16 @@ function Options:LoadMapValues()
 		})
 	elseif gamemode == "ranked" then
 		SKIP_TEAM_SETUP = true
-		Options:SetValue("EnableRatingAffection", true)
-		Options:SetValue("BanningPhaseBannedPercentage", 50)
+		Events:On("AllPlayersLoaded", function()
+			local failed = (GetInGamePlayerCount() < 10 or matchID == 0) and not IsInToolsMode()
+			if not failed then
+				Options:SetValue("EnableRatingAffection", true)
+				Options:SetValue("BanningPhaseBannedPercentage", 50)
+			else
+				debugp("Options:LoadMapValues", "Ranked disabled because of low amount of players of match id == 0")
+				Options:SetValue("FailedRankedGame", true)
+			end
+		end, true)
 	end
 	if landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216

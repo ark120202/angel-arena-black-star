@@ -99,7 +99,7 @@
 					<Panel id="GameModeInfoPanel" hittestchildren="false" >
 						<Label id="HeroSelectionTimer" class="MonoNumbersFont" text="0" />
 						<Label id="GameModeInfoCurrentPhase" />
-						<Label id="GameModeInfoGamemodeLabel" />
+						<Label id="GameModeInfoGamemodeLabel" html="true" />
 					</Panel>
 					<Panel class="FullHeight" id="RightTeams" />
 				</Panel>
