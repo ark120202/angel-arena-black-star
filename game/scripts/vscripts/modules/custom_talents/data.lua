@@ -504,7 +504,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_nevermore_necromastery_dmg = {
 		icon = "nevermore_necromastery",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "nevermore_necromastery",
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_nevermore_1"}
@@ -512,9 +512,9 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_nevermore_shadowraze_dmg = {
 		icon = "nevermore_shadowraze1",
 		cost = 1,
-		group = 5,
+		group = 6,
 		requirement = "nevermore_shadowraze1",
-		special_values = {value = 500},
+		special_values = {value = 400},
 		effect = {abilities = "special_bonus_unique_nevermore_2"}
 	},
 	talent_hero_morphling_waveform_range = {

@@ -1965,7 +1965,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.55 0.55 0.55 0.55 0.55 0.45 0.35"
 		"AbilityCooldown"	"10"
-		"AbilityDamage"	"100 150 200 250 300 375 450"
+		"AbilityDamage"		"100 145 190 235 280 325 370"
 		"AbilityManaCost"	"90"
 		"AbilitySpecial"
 		{
@@ -2001,7 +2001,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.55 0.55 0.55 0.55 0.55 0.45 0.35"
 		"AbilityCooldown"	"10"
-		"AbilityDamage"		"100 150 200 250 300 375 450"
+		"AbilityDamage"		"100 145 190 235 280 325 370"
 		"AbilityManaCost"	"90"
 		"AbilitySpecial"
 		{
@@ -2037,7 +2037,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.55 0.55 0.55 0.55 0.55 0.45 0.35"
 		"AbilityCooldown"	"10"
-		"AbilityDamage"		"100 150 200 250 300 375 450"
+		"AbilityDamage"		"100 145 190 235 280 325 370"
 		"AbilityManaCost"	"90"
 		"AbilitySpecial"
 		{
@@ -2062,7 +2062,7 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"damage_from_current_health_pct" "0.3 0.6 0.9 1.2 1.5 1.8 2.1"
-				"CalculateSpellDamageTooltip" "0"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 
@@ -2095,7 +2095,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"necromastery_souls_hero_bonus"	"25"
+				"necromastery_souls_hero_bonus"	"16"
 			}
 
 			"05"
@@ -2111,7 +2111,7 @@
 	"nevermore_dark_lord"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastRange"	"900 900 900 900 900 1000 1100"
+		"AbilityCastRange"	"900 900 900 900 900 950 1000"
 		"AbilitySpecial"
 		{
 			"01"
@@ -2123,7 +2123,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"presence_radius"	"900 900 900 900 900 1000 1100"
+				"presence_radius"	"900 900 900 900 900 950 1000"
 			}
 
 		}
@@ -2136,7 +2136,7 @@
 		"AbilityCastPoint"	"1.67 1.67 1.67 1.67 1.67 1.37 1.07"
 		"AbilityCooldown"	"100 95 90 85 80 75 70"
 		"AbilityDuration"	"5.0"
-		"AbilityDamage"		"80 120 160 200 240 280 350"
+		"AbilityDamage"		"80 110 140 170 200 230 260"
 		"AbilityManaCost"	"150 175 200 275 375 485 565"
 		"AbilitySpecial"
 		{
@@ -5938,6 +5938,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"damage_per_health"	"0.6 0.65 0.7 0.75 0.8 0.85 0.9"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"02"
@@ -5998,7 +5999,7 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
-				"CalculateSpellDamageTooltip" "0"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 
@@ -6018,7 +6019,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_attack_speed"	"15 25 35 45 55 65 90"
+				"bonus_attack_speed"	"20 30 40 50 60 75 90"
 			}
 
 		}
@@ -16132,7 +16133,6 @@
 		"AbilityCastRange"	"650"
 		"AbilityCooldown"	"3.0"
 		"AbilityManaCost"	"35"
-		"LevelsBetweenUpgrades"	"2"
 		"AbilitySpecial"
 		{
 			"01"

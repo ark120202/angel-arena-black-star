@@ -9,7 +9,7 @@
 	"special_bonus_unique_earthshaker_3"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"600"}}}
 	"special_bonus_unique_juggernaut"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"290"}}}
 	"special_bonus_unique_mirana_3"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"6"}}}
-	"special_bonus_unique_nevermore_2"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"500"}}}
+	"special_bonus_unique_nevermore_2"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"400"}}}
 	"special_bonus_unique_morphling_2"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"120"}}}
 	"special_bonus_unique_razor_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"300"}}}
 	"special_bonus_unique_razor"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"50"}}}

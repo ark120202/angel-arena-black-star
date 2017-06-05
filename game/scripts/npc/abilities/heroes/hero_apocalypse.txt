@@ -8,30 +8,29 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"LevelsBetweenUpgrades" 		"4"
-		"RequiredLevel"					"2"
+		"LevelsBetweenUpgrades"			"2"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_per_attack"	"1 1 2 2 3 3 4"
+				"armor_per_attack"	"1"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"ablaze_radius"		"450"
+				"ablaze_radius"		"360 375 390 405 420 435 450"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"ablaze_max_damage_per_second"	"100 200 300 400 500 600 700"
+				"ablaze_max_damage_per_second"	"50 80 110 140 170 200 230"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"ablaze_threshold_pct"	"30 40 50 55 60 65 70"
+				"ablaze_threshold_pct"	"50 55 60 65 70 75 80"
 			}
 		}
 
@@ -151,23 +150,23 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCooldown"				"30 25 20 17 14 12 10"
-		"AbilityManaCost"				"50 75 100 125 150 175 200"
+		"AbilityCooldown"				"18"
+		"AbilityManaCost"				"100"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityCastRange"				"150"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"200"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_per_armor"	"20 40 70 100 130 150 180"
+				"damage_per_armor"	"120 125 130 135 140 145 150"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_reduction_pct" "50"
+				"armor_reduction_pct" "25"
 			}
 			"03"
 			{
@@ -177,7 +176,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"knockback_range"	"600"
+				"knockback_range"	"400"
 			}
 			"05"
 			{
@@ -241,10 +240,10 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCooldown"				"12"
-		"AbilityManaCost"				"50 75 100 150 200 250 325"
+		"AbilityManaCost"				"75"
 		"AbilityDamage"					"55 120 185 250 330 410 500"
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilitySpecial"
 		{
@@ -314,10 +313,10 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityCooldown"				"12"
-		"AbilityManaCost"				"50 75 100 150 200 250 325"
-		"AbilityDamage"					"40 100 165 230 300 375 450"
+		"AbilityManaCost"				"75"
+		"AbilityDamage"					"100 175 250 325 400 475 550"
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilitySpecial"
 		{
@@ -329,7 +328,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"armor_cut_pct"		"10 20 30 40 50 60 80"
+				"armor_cut_pct"		"20.0 22.5 25.0 27.5 30.0 32.5 35.0"
 			}
 		}
 
@@ -392,23 +391,23 @@
 		"AbilityTextureName"			"arena/apocalypse_apocalypse"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.4 0.3"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 
-		"AbilityCooldown"				"180"
+		"AbilityCooldown"				"120"
 		"AbilityManaCost"				"150"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"magic_resistance_per_second_pct" "1"
+				"var_type"			"FIELD_FLOAT"
+				"magic_resistance_per_second_pct" "0.5"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_per_second_pct" "3 5 7 9 11 13 15"
+				"damage_per_second_pct" "2 3 4 5 6 7 8"
 			}
 			"03"
 			{
@@ -423,7 +422,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"30 40 50 60 70 80 90"
+				"duration"			"30 35 40 45 50 55 60"
 			}
 		}
 

@@ -970,7 +970,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"xp_bonus"				"250"
+				"xp_bonus"				"100"
 			}
 			"02"
 			{
