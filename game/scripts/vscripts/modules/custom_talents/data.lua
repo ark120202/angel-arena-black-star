@@ -33,7 +33,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 4,
 		max_level = 9,
 		special_values = {
-			spell_amplify = {10, 15, 20, 25, 30, 35, 40, 45, 50}
+			spell_amplify = {5, 8, 11, 15, 18, 21, 24, 27, 30}
 		},
 		effect = {
 			use_modifier_applier = true,
@@ -158,11 +158,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_magic_resistance_pct = {
 		icon = "talents/magic_resistance",
-		cost = 3,
+		cost = 2,
 		group = 3,
 		max_level = 8,
 		special_values = {
-			magic_resistance_pct = {8, 11, 14, 17, 20, 23, 26, 29}
+			magic_resistance_pct = {8, 12, 16, 20, 24, 28, 32, 36}
 		},
 		effect = {
 			modifiers = {
@@ -272,7 +272,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 7,
 		requirement = "pudge_meat_hook_lua",
 		special_values = {
-			hook_amount = 6
+			hook_amount = 4
 		}
 	},
 	talent_hero_arthas_vsolyanova_bunus_chance = {
