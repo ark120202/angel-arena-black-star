@@ -1,54 +1,127 @@
-'use strict';
+GAME_RESULT = {};
 
-(function() {
-	if (ScoreboardUpdater_InitializeScoreboard == null) {
-		$.Msg('WARNING: This file requires shared_scoreboard_updater.js to be included.');
-	}
+function FinishGame() {
+	$.GetContextPanel().AddClass('FadeOut');
+	$.Schedule(1, function() {
+		Game.FinishGame();
+	});
+}
 
-	var scoreboardConfig = {
-		'teamXmlName': 'file://{resources}/layout/custom_game/arena_end_screen_team.xml',
-		'playerXmlName': 'file://{resources}/layout/custom_game/arena_end_screen_player.xml',
-	};
-
-	var endScoreboardHandle = ScoreboardUpdater_InitializeScoreboard(scoreboardConfig, $('#TeamsContainer'));
-	$.GetContextPanel().SetHasClass('endgame', 1);
-
-	var teamInfoList = ScoreboardUpdater_GetSortedTeamInfoList(endScoreboardHandle);
-	var delay = 0.2;
-	var delay_per_panel = 1 / teamInfoList.length;
-	_.each(teamInfoList, function(teamInfo) {
-		var teamPanel = ScoreboardUpdater_GetTeamPanel(endScoreboardHandle, teamInfo.team_id);
-		teamPanel.SetHasClass('team_endgame', false);
-		var callback = function(panel) {
-			return function() {
-				panel.SetHasClass('team_endgame', 1);
-			};
-		}(teamPanel);
-		$.Schedule(delay, callback);
-		delay += delay_per_panel;
+/**
+ * Creates Panel snippet and sets all player-releated information
+ *
+ * @param {Number} playerID Player ID
+ * @param {Panel} rootPanel Panel that will be parent for that player
+ */
+function Snippet_Player(playerID, rootPanel, index, isRight) {
+	var panel = $.CreatePanel('Panel', rootPanel, '');
+	panel.BLoadLayoutSnippet('Player');
+	panel.SetHasClass('IsRight', isRight);
+	var playerData = GAME_RESULT.playerData[playerID];
+	var playerInfo = Game.GetPlayerInfo(playerID);
+	panel.FindChildTraverse('PlayerAvatar').steamid = playerInfo.player_steamid;
+	panel.FindChildTraverse('PlayerAvatar').SetPanelEvent('onactivate', function() {
+		GameEvents.SendEventClientSide('player_profiles_show_info', {PlayerID: playerID});
 	});
 
-	var winningTeamId = Game.GetGameWinner();
-	var winningTeamDetails = Game.GetTeamDetails(winningTeamId);
-	var endScreenVictory = $('#EndScreenVictory');
-	if (endScreenVictory) {
-		endScreenVictory.SetDialogVariable('winning_team_name', $.Localize(winningTeamDetails.team_name));
 
-		if (GameUI.CustomUIConfig().team_colors) {
-			var teamColor = GameUI.CustomUIConfig().team_colors[winningTeamId];
-			teamColor = teamColor;
-			endScreenVictory.style.color = teamColor;
-		}
-	}
+	panel.FindChildTraverse('HeroIcon').SetImage(TransformTextureToPath(playerData.hero));
+	panel.SetDialogVariableInt('hero_level', Players.GetLevel(playerID));
+	panel.SetDialogVariable('hero_name', $.Localize(playerData.hero));
+	panel.SetDialogVariableInt('kills', Players.GetKills(playerID));
+	panel.SetDialogVariableInt('deaths', Players.GetDeaths(playerID));
+	panel.SetDialogVariableInt('assists', Players.GetAssists(playerID));
+	panel.SetDialogVariableInt('last_hits', Players.GetLastHits(playerID));
+	panel.SetDialogVariableInt('hero_damage', playerData.damage);
+	var mmrString;
+	// playerData.ratingNew
+	// playerData.ratingOld
+	if (typeof playerData.ratingNew === 'number') {
+		if (typeof playerData.ratingOld === 'number') {
+			var delta = playerData.ratingNew - playerData.ratingOld;
+			mmrString = delta > 0 ?
+				'<font color="lime">+' + delta + '</font>' :
+				delta < 0 ? '<font color="red">' + delta + '</font>' : '±0';
+			mmrString = playerData.ratingNew + ' (' + mmrString + ')';
+		} else mmrString = 'TBD -> ' + playerData.ratingNew;
+	} else mmrString = 'TBD';
+	panel.SetDialogVariable('rating', mmrString);
 
-	var winningTeamLogo = $('#WinningTeamLogo');
-	if (winningTeamLogo) {
-		var logo_xml = GameUI.CustomUIConfig().team_logo_large_xml;
-		if (logo_xml) {
-			winningTeamLogo.SetAttributeInt('team_id', winningTeamId);
-			winningTeamLogo.BLoadLayout(logo_xml, false, false);
-		}
+	panel.SetDialogVariableInt('net_worth', playerData.netWorth);
+	panel.style.animationDelay = index * 0.6 + 's';
+	$.Schedule(index * 0.6, function() {
+		panel.opacity = 1;
+		panel.AddClass('AnimationEnd');
+	});
+
+	var ItemsContainer = panel.FindChildTraverse('ItemsContainer');
+	var BackpackItemsContainer = panel.FindChildTraverse('BackpackItemsContainer');
+	var playerItems = Game.GetPlayerItems(playerID);
+	for (var i = playerItems.inventory_slot_min; i < playerItems.inventory_slot_max; i++) {
+		var item = playerItems.inventory[i];
+		var isBackpack = i >= 6;
+		var itemContainer = panel.FindChildTraverse(isBackpack ? 'BackpackItemsContainer' : 'ItemsContainer');
+		var itemPanel = $.CreatePanel('DOTAItemImage', itemContainer, '');
+
+		if (item) itemPanel.itemname = item.item_name;
 	}
+}
+
+/**
+ * Creates Team snippet and all in-team information
+ *
+ * @param {Number} team Team Index
+ */
+function Snippet_Team(team) {
+	var isRight = team % 2 !== 0;
+	var panel = $.CreatePanel('Panel', $('#TeamsContainer'), '');
+	panel.BLoadLayoutSnippet('Team');
+	panel.SetDialogVariable('team_name', GameUI.CustomUIConfig().team_names[team]);
+	var teamDetails = Game.GetTeamDetails(team);
+	panel.SetDialogVariableInt('team_score', teamDetails.team_score);
+	panel.SetHasClass('IsWinner', GAME_RESULT.winner === team);
+
+	var teamColor = GameUI.CustomUIConfig().team_colors[team];
+	panel.FindChildTraverse('TeamName').style.textShadow = '0px 0px 6px 1.0 ' + teamColor;
+	//panel.FindChildTraverse('TeamScore').style.textShadow = '0px 0px 6px 1.0 ' + teamColor;
+	//panel.FindChildTraverse('TeamInfo').style.backgroundColor = 'gradient(linear, 0 0, 0 100%, from(#373d35), to(' + teamColor + '))';
+
+	_.each(/*Game.GetPlayerIDsOnTeam(team)*/[0], function(playerID, i) {
+		Snippet_Player(playerID, panel, i, isRight);
+		Snippet_Player(playerID, panel, i+1, isRight);
+		Snippet_Player(playerID, panel, i+2, isRight);
+		Snippet_Player(playerID, panel, i+3, isRight);
+		Snippet_Player(playerID, panel, i+4, isRight);
+		Snippet_Player(playerID, panel, i+5, isRight);
+		Snippet_Player(playerID, panel, i+6, isRight);
+		Snippet_Player(playerID, panel, i+7, isRight);
+	});
+}
+
+function OnGameResult(gameResult) {
+	GAME_RESULT = gameResult;
+	$.GetContextPanel().SetDialogVariable('winning_team_name', GameUI.CustomUIConfig().team_names[GAME_RESULT.winner]);
+	$('#TeamsContainer').RemoveAndDeleteChildren();
+	_.each(Game.GetAllTeamIDs(), function(team) {
+		Snippet_Team(team);
+	});
+}
+
+(function() {
+	GameEvents.Subscribe('stats_client_game_result', OnGameResult);
+	OnGameResult({
+		winner: Game.GetGameWinner(),
+		playerData: {
+			0: {
+				hero: 'npc_dota_hero_slark',
+				netWorth: 600000,
+				damage: 30000,
+				ratingNew: 10000,
+				ratingOld: 'TBD'
+			}
+		}
+	});
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false);
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME_CHAT, false);
+	FindDotaHudElement('GameEndContainer').visible = false;
 })();

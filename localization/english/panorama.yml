@@ -100,3 +100,5 @@ option_voting_kill_limit: 'Kill Limit:'
 option_voting_custom_abilities: 'Custom Abilities Mode:'
 option_voting_custom_abilities_random_omg: Random OMG
 option_voting_custom_abilities_ability_shop: Ability Shop
+
+arena_end_screen_score: 'SCORE: '

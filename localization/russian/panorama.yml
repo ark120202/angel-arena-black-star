@@ -97,3 +97,5 @@ option_no: Нет
 
 option_voting_kill_limit: 'Кол-во убийств:'
 option_voting_custom_abilities: 'Режим выбора способностей:'
+
+arena_end_screen_score: 'СЧЕТ: '
