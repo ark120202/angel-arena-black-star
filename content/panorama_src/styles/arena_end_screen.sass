@@ -1,5 +1,5 @@
-$window-width: 800px * 1.5
-$window-height: 600px * 1.5
+$window-width: 1200px + 150px
+$window-height: 900px
 
 .EndScreenBase
 	width: 100%
@@ -14,8 +14,8 @@ $window-height: 600px * 1.5
 	#MatchResultBlock
 		width: $window-width
 		height: 20%
-		horizontal-align: center
 		background-color: #555
+		horizontal-align: center
 
 		#EndScreenVictory
 			font-size: 70px
@@ -29,6 +29,21 @@ $window-height: 600px * 1.5
 			height: 38px
 			margin-top: 12px
 			horizontal-align: center
+
+		#LevelProgress
+			height: 32px
+			padding: 4px
+			background-color: #464748
+			border: 1px solid #3d4746
+			box-shadow: inset #1f2020 2px 2px 4px 4px
+
+			#LevelProgress_Left
+				background-color: dotalevelgradient
+				border-radius: 2px
+				box-shadow: rgba(97, 120, 156, .666) -2px -2px 4px 4px
+				transition-duration: 1s
+				transition-property: width
+				transition-timing-function: linear
 
 	#TeamsContainer
 		width: 100%
@@ -68,6 +83,12 @@ $window-height: 600px * 1.5
 	width: 100px
 	padding-left: 5px
 
+.StrColumn,
+.AgiColumn,
+.IntColumn
+	width: 48px
+	margin: 0 2px
+
 .GoldIcon
 	width: 24px
 	height: 24px
@@ -75,8 +96,7 @@ $window-height: 600px * 1.5
 	background-size: 100% 100%
 
 .Team
-	width: $window-width
-	horizontal-align: center
+	width: 100%
 	flow-children: down
 
 	&.IsWinner
@@ -84,12 +104,13 @@ $window-height: 600px * 1.5
 			visibility: visible
 
 	#TeamInfo
-		width: 100%
+		width: $window-width
 		height: 60px
 		padding-top: 1px
 		padding-bottom: 6px
 		background-color: gradient(linear, 0% 0%, 0% 100%, from(#222424), to(#121a1f))
 		flow-children: right
+		horizontal-align: center
 
 		> .HeaderColumn
 			#TeamFlowBlock
@@ -164,6 +185,12 @@ $window-height: 600px * 1.5
 			tooltip-position: top
 			tooltip-body-position: 75%
 
+		.StrColumn,
+		.AgiColumn,
+		.IntColumn
+			height: 32px
+			padding: 0 8px
+
 		.LegendPanel
 			vertical-align: bottom
 
@@ -180,7 +207,7 @@ $window-height: 600px * 1.5
 
 
 .Player
-	width: 100%
+	width: $window-width
 	height: 60px
 	padding-bottom: 6px
 	background-color: rgba(0, 0, 0, .7)
@@ -191,6 +218,7 @@ $window-height: 600px * 1.5
 	animation-name: EndPlayerFadeLeft
 	animation-timing-function: ease-in-out
 	flow-children: right
+	horizontal-align: center
 
 	&.AnimationEnd
 		opacity: 1

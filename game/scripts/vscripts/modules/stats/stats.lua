@@ -121,7 +121,7 @@ function StatsClient:OnGameEnd(winner)
 	PrintTable(data)
 	StatsClient:Send("endMatch", data, function(response)
 		PrintTable(response)
-		CustomGameEventManager:Send_ServerToAllClients("stats_client_match_results", {
+		CustomGameEventManager:Send_ServerToAllClients("stats_client_game_result", {
 			id = response.success and matchID or 0
 		})
 	end, math.huge)

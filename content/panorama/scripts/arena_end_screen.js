@@ -32,10 +32,11 @@ function Snippet_Player(playerID, rootPanel, index, isRight) {
 	panel.SetDialogVariableInt('deaths', Players.GetDeaths(playerID));
 	panel.SetDialogVariableInt('assists', Players.GetAssists(playerID));
 	panel.SetDialogVariableInt('last_hits', Players.GetLastHits(playerID));
-	panel.SetDialogVariableInt('hero_damage', playerData.damage);
+	panel.SetDialogVariableInt('hero_damage', playerData.hero_damage);
+	panel.SetDialogVariableInt('strength', playerData.strength);
+	panel.SetDialogVariableInt('agility', playerData.agility);
+	panel.SetDialogVariableInt('intellect', playerData.intellect);
 	var mmrString;
-	// playerData.ratingNew
-	// playerData.ratingOld
 	if (typeof playerData.ratingNew === 'number') {
 		if (typeof playerData.ratingOld === 'number') {
 			var delta = playerData.ratingNew - playerData.ratingOld;
@@ -115,9 +116,14 @@ function OnGameResult(gameResult) {
 			0: {
 				hero: 'npc_dota_hero_slark',
 				netWorth: 600000,
-				damage: 30000,
+				hero_damage: 30000,
 				ratingNew: 10000,
-				ratingOld: 'TBD'
+				ratingOld: 'TBD',
+				strength: 100,
+				agility: 100,
+				intellect: 100,
+				xpNew: 100,
+				xpOld: 0
 			}
 		}
 	});

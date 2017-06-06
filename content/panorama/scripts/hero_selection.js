@@ -362,7 +362,7 @@ function ShowHeroPreviewTab(tabID) {
 		});
 		DynamicSubscribePTListener('stats_client', function(tableName, changesObject, deletionsObject) {
 			for (var playerID in changesObject) {
-				Snippet_PlayerPanel(playerID).SetDialogVariable('player_mmr', changesObject[playerID].Rating || 'TBD');
+				Snippet_PlayerPanel(+playerID).SetDialogVariable('player_mmr', changesObject[playerID].Rating || 'TBD');
 			}
 		});
 		UpdateTimer();
