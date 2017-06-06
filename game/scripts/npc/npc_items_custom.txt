@@ -6712,7 +6712,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"active_damage_reduction_pct"	"-70"
+				"active_damage_reduction_pct"	"-40"
 			}
 			"07"
 			{
@@ -13015,7 +13015,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blast_damage_int_mult"	"7.5"
+				"blast_damage_int_mult"	"3.5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"10"

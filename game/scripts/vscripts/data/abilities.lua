@@ -37,7 +37,6 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	item_refresher_arena = true,
 	item_aegis_arena = true,
 	item_refresher_core = true,
-	item_titanium_bar = true,
 	dazzle_shallow_grave = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
