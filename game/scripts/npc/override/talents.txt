@@ -88,7 +88,7 @@
 	"special_bonus_unique_keeper_of_the_light_2"	{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"3000"}}}
 	"special_bonus_unique_keeper_of_the_light"		{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"500"}}}
 	"special_bonus_unique_slark"					{"AbilitySpecial"{"01"{ "var_type""FIELD_FLOAT""value"		"1.5"}}}
-	"special_bonus_unique_bristleback_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"150"}}}
+	"special_bonus_unique_bristleback_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"120"}}}
 	"special_bonus_unique_tusk_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"400"}}}
 	"special_bonus_unique_abaddon"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"600"}}}
 	"special_bonus_unique_elder_titan_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"300"}}}

@@ -2008,9 +2008,9 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_bristleback_quill_spray_dmg = {
 		icon = "bristleback_quill_spray",
 		cost = 1,
-		group = 8,
+		group = 6,
 		requirement = "bristleback_quill_spray",
-		special_values = {value = 150},
+		special_values = {value = 120},
 		effect = {abilities = "special_bonus_unique_bristleback_2"}
 	},
 	talent_hero_tusk_snowball_dmg = {

@@ -5621,7 +5621,6 @@
 				"speed"	"400 400 400 400 400 450 500"
 			}
 		}
-
 	}
 
 	"sniper_shrapnel"
@@ -16144,13 +16143,13 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"quill_base_damage"	"20.0 40.0 60.0 80.0 100.0 120.0 140.0"
+				"quill_base_damage"	"15 20 25 30 35 50 70"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"quill_stack_damage"	"30.0 32.0 34.0 36.0 38.0 40.0 42.0"
+				"quill_stack_damage"	"10 15 20 25 30 35 40"
 			}
 
 			"04"
@@ -16213,7 +16212,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"quill_release_threshold"	"200"
+				"quill_release_threshold"	"240"
 			}
 
 		}
