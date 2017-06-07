@@ -1,312 +1,422 @@
-$BACKGROUND_COLOR: #000;
+$window-width: 1200px + 150px
+$window-height: 900px
 
-.EndScreenRoot
-	width: 100%
-	height: 100%
-	background-color: gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.00392)), color-stop(.12, rgba(0, 0, 0, 0.00392)), color-stop(.5, rgba(0, 0, 0, 0.13333)), to(rgba(0, 0, 0, 0)))
-
-#VictoryRow
-	flow-children: right
-	horizontal-align: right
-	margin-right: 8px
-	margin-bottom: 16px
-	transition-property: opacity, transform
-	transition-duration: 1s
-	opacity: 0
-	transform: scaleX(0) scaleY(0) translatey(-50px)
-
-#WinningTeamLogo
-	vertical-align: center
-	margin-right: 16px
-
-#EndScreenVictory
-	font-size: 64px
-	color: #ccc
-	vertical-align: center
-	text-transform: uppercase
-	margin-bottom: -16px
-
-.EndScreenWindow
-	margin-top: 100px
-	margin-right: 200px
-	horizontal-align: right
-	flow-children: down
-
-.EndScreenVictoryRow
-	width: 100%
-
-#CloseButton
-	background-color: #121618
-	border: 3px solid #4d5051
-	margin-top: 50px
-	horizontal-align: right
-	vertical-align: bottom
-	width: 200px
-
-	&:hover
-		border: 3px solid #fff
-		Label
-			color: #fff
-
-
-	Label
-		horizontal-align: center
-		vertical-align: center
-		color: #6f6f6f
-		text-transform: uppercase
-
-
-#TeamsContainer
-	horizontal-align: right
-	flow-children: down
-
-.FlyoutTeam
-	margin-top: 3px
-	margin-bottom: 3px
-	transition-property: opacity, transform
-	transition-duration: .5s
-	opacity: 0
-	transform: translatey(-50px)
-	margin-right: 8px
-	//&.local_player_team
-
-	&.team_endgame
-		opacity: 1
-		transform: translatey(0px)
-
-	&.no_players
-		visibility: collapse
-
-
-.FlyoutTeamData
-	flow-children: right
-
-.TeamInfo
-	margin-top: 1px
-	height: 100%
-
-#TeamColor_GradentFromTransparentLeft
+.EndScreenBase
 	width: 100%
 	height: 100%
 
-.FlyoutPlayer
-	flow-children: right
-
-//.TeamCloseSpacer
-
-#PlayersContainer
+#LoadingPanel
+	width: 500px
+	margin-top: -20px
+	align: center center
 	flow-children: down
 
-.local_player_team
-	#PlayersContainer
-		box-shadow: fill rgba(255, 255, 255, 0.25098) -3px -3px 3px 6px
+	> Label
+		width: 100%
+		text-align: center
 
-	#TeamScore
+	#LoadingText
+		margin-bottom: -12px
+		font-size: 72px
+		font-weight: bold
 		color: #fff
 
+	.Spinner
+		width: 80px
+		height: 80px
+		horizontal-align: center
 
-.TeamId
-	flow-children: right
-
-#TeamLogo
-	vertical-align: top
-	horizontal-align: right
-	height: 30px
-	width: 30px
-	margin-top: 2px
-	margin-right: 2px
-
-#TeamScorePanel
-	margin-top: 1px
-	margin-left: 306px
-	width: 79px
-	height: 100%
-	background-color: $BACKGROUND_COLOR
-
-#TeamScore
-	vertical-align: center
-	horizontal-align: center
-	color: #ccc
-	font-size: 42px
-	text-shadow: 2px 2px 2px #000
-	font-weight: bold
-	margin-top: -2px
-
-.Legend
-	flow-children: right
-	horizontal-align: right
-	margin-right: 8px
-	Label
-		text-transform: uppercase
-		font-size: 12px
-		color: #90999b
-
-
-.PlayerRow
-	height: 32px
-
-#PlayerRowContainer
-	flow-children: right
-	height: 32px
-
-#HeroIcon
-	vertical-align: middle
-	border: 1px solid #000
-
-#LevelContainer
-	height: 100%
-
-#KillsContainer
-	height: 100%
-
-#DeathsContainer
-	height: 100%
-
-#AssistsContainer
-	height: 100%
-
-.ScoreboardPanel
-	background-color: BACKGROUND_COLOR
-	margin-top: 1px
-	margin-left: 1px
-	height: 100%
-	Label
+	#LoadingMessage
+		margin-top: 8px
 		font-size: 30px
-		text-shadow: 2px 2px 2px #000
-		margin-top: -2px
+
+#ErrorPanel
+	width: 500px
+	visibility: collapse
+	align: center center
+	flow-children: down
+
+	> Label
+		width: 100%
+		text-align: center
+
+	#ErrorText
+		margin-bottom: -15px
+		font-size: 72px
+		font-weight: bold
+		color: #f22
+
+	#ErrorIcon
+		width: 70px
+		height: 70px
+		margin-bottom: 20px
+		background-image: url('s2r://panorama/images/status_icons/exclamation_psd.vtex')
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		background-size: contain
+		horizontal-align: center
+		wash-color: #f99
+
+	#ErrorMessage
+		max-height: 300px
+		font-size: 30px
+		color: #fff
+		text-overflow: shrink
+
+	#CloseButton
+		width: 50%
+		margin-top: 20px
+		horizontal-align: center
+
+#EndScreenWindow
+	width: 100%
+	height: $window-height
+	visibility: collapse
+	align: center center
+	flow-children: down
+
+	#MatchResultBlock
+		width: $window-width
+		height: 20%
+		$background-color: rgba(20, 20, 20, .5)
+		background-color: $background-color
+		box-shadow: $background-color -5px -5px 10px 10px
+		horizontal-align: center
+
+		#EndScreenVictory
+			margin-right: 12px
+			font-size: 70px
+			font-weight: bold
+			color: #fff
+			text-shadow: 5px 5px 5px #000
+			horizontal-align: right
+
+		#CloseButton
+			width: 20%
+			height: 38px
+			margin: 12px
+			align: right bottom
+
+		#MatchResultPlayer
+			margin-bottom: 5px
+			margin-left: 4px
+			align: left bottom
+			flow-children: down
+
+			#ProfileBadge
+				width: 120px
+				height: 120px
+				horizontal-align: center
+
+				> #ProfileLevel > Label
+					margin-bottom: 4px
+					font-size: 28px
+
+			#LevelProgress
+				height: 32px
+				padding: 4px
+				background-color: #464748
+				border: 1px solid #3d4746
+				box-shadow: inset #1f2020 2px 2px 4px 4px
+
+				#LevelProgress_Left
+					background-color: dotalevelgradient
+					border-radius: 2px
+					box-shadow: rgba(97, 120, 156, .666) -2px -2px 4px 4px
+					transition-duration: .7s
+					transition-property: width
+					transition-timing-function: linear
+
+				#LevelProgressValue
+					margin-top: 2px
+					font-size: 16px
+					font-weight: bold
+					color: #000
+					text-shadow: 0 0 8px 1 rgba(193, 206, 234, .533)
+					align: center center
+
+				#LevelProgressChange
+					color: #ddd
+					text-shadow: 0 0 8px 1 rgba(202, 226, 234, .533)
+					opacity: 0
+					transition-duration: .4s
+					transition-property: opacity
+					align: right center
+
+	#TeamsContainer
+		width: 100%
+		overflow: squish scroll
+		flow-children: down
+
+.HeaderColumn
+	width: 280px
+
+.KillsColumn
+	width: 40px
+
+.DeathsColumn
+	width: 40px
+
+.AssistsColumn
+	width: 40px
+
+.LastHitsColumn
+	width: 60px
+
+.ItemsColumn
+	width: 300px
+
+.BackpackItemsColumn
+	width: 150px
+
+.NetWorthColumn
+	width: 64px
+	margin-right: 16px
+	margin-left: 32px
+
+.HeroDamageColumn
+	width: 60px
+
+.MMRColumn
+	width: 100px
+	padding-left: 5px
+
+.StrColumn,
+.AgiColumn,
+.IntColumn
+	width: 48px
+	margin: 0 2px
+
+.GoldIcon
+	width: 24px
+	height: 24px
+	background-image: url('s2r://panorama/images/hud/icon_gold_psd.vtex')
+	background-size: 100% 100%
+
+.Team
+	width: 100%
+	animation-duration: .7s
+	animation-name: EndPlayerFadeLeft
+	animation-timing-function: ease-in-out
+	flow-children: down
+
+	&.IsWinner
+		#TeamInfo > .HeaderColumn > #WinnerPanel
+			visibility: visible
+
+	#TeamInfo
+		width: $window-width
+		height: 60px
+		padding-top: 1px
+		padding-bottom: 6px
+		background-color: gradient(linear, 0% 0%, 0% 100%, from(#222424), to(#121a1f))
+		flow-children: right
+		horizontal-align: center
+
+		> .HeaderColumn
+			#TeamFlowBlock
+				height: 54px
+				margin-left: 7px
+				flow-children: down
+
+				#TeamName
+					height: 36px
+					margin-top: 6px
+					margin-left: 10px
+					font-size: 26px
+					font-weight: thin
+					letter-spacing: 1px
+					color: #fff
+					text-shadow: 2px 2px 2px #000
+					vertical-align: center
+
+				#TeamScorePanel
+					margin-top: -8px
+					flow-children: right
+
+					> Label
+						font-size: 18px
+						font-weight: thin
+						color: #fff
+						text-transform: uppercase
+
+					#TeamScoreValue
+						font-weight: bold
+
+			#WinnerPanel
+				height: 32px
+				padding-left: 2px
+				margin-top: 1px
+				visibility: collapse
+				transition-duration: .4s
+				transition-property: transform
+				align: right center
+
+				#WinnerSides
+					z-index: 0
+					width: 14px
+					height: 14px
+					margin-right: -7px
+					background-color: #cad3e7
+					transform: rotateZ(45deg) translateY(3px)
+
+				#WinnerTag
+					z-index: 1
+					width: 80px
+					height: 20px
+					padding-top: 2px
+					font-size: 14px
+					font-weight: bold
+					letter-spacing: 2px
+					color: #000
+					text-align: center
+					text-overflow: shrink
+					text-shadow: 0 0 8px 1 #000
+					text-transform: uppercase
+					background-color: #cad3e7
+
+		> Label,
+		> .NetWorthColumn
+			max-height: 20px + 7px
+			font-size: 20px
+			font-weight: thin
+			color: #768e8d
+			text-align: center
+			text-transform: uppercase
+			tooltip-position: top
+			tooltip-body-position: 75%
+
+		.StrColumn,
+		.AgiColumn,
+		.IntColumn
+			height: 32px
+			padding: 0 8px
+
+		.LegendPanel
+			vertical-align: bottom
+
+			> .LegendGold
+				max-height: 32px
+				font-size: 20px
+				font-weight: thin
+				color: #c48103
+				text-align: right
+				text-overflow: shrink
+				text-transform: uppercase
+				horizontal-align: right
 
 
-.LegendPanel
-	margin-top: 1px
-	margin-left: 1px
+.IsRight
+	.Player
+		animation-name: EndPlayerFadeRight
 
-.UltimateIndicatorShared
-	margin-left: 44px
-	margin-top: 2px
-	vertical-align: center
-	width: 20px
-	height: 20px
-	background-size: 20px
-	background-repeat: no-repeat
-	background-position: 50% 50%
-
-#Level
-	vertical-align: middle
-	horizontal-align: center
-	color: #898b8c
-
-#Kills
-	horizontal-align: center
-	vertical-align: center
-	text-align: center
-	font-size: 20px
-	margin-top: 3px
-
-#Deaths
-	horizontal-align: center
-	vertical-align: center
-	text-align: center
-	font-size: 20px
-	margin-top: 3px
-
-#Assists
-	horizontal-align: center
-	vertical-align: center
-	text-align: center
-	font-size: 20px
-	margin-top: 3px
-
-#PlayerGoldAmount
-	horizontal-align: center
-	vertical-align: center
-	text-align: center
-	font-size: 20px
-	margin-top: 3px
-
-#PlayerName
-	font-size: 14px
-	font-weight: bold
-	margin-bottom: -4px
-	margin-top: 0
-	padding-left: 4px
-	color: #ccc
-	white-space: nowrap
-
-#HeroNameAndDescription
-	padding-left: 4px
-	font-size: 13px
-	text-shadow: 2px 2px 2px #000
-	margin-top: 0
-	color: #999
-	vertical-align: bottom
-
-#PlayerDetailsContainer
-	height: 100%
-
-#PlayerAndHeroName
-	height: 100%
-
-#PlayerItemsContainer
+.Player
+	width: $window-width
+	height: 60px
+	padding-bottom: 6px
+	background-color: rgba(0, 0, 0, .7)
+	border-top: 1px solid #000
+	border-bottom: 1px solid #000
+	opacity: .0001
+	animation-duration: .7s
+	animation-name: EndPlayerFadeLeft
+	animation-timing-function: ease-in-out
 	flow-children: right
-	Image
-		margin: 1px
-		width: 41px
-		height: 30px
-		background-color: BACKGROUND_COLOR
+	horizontal-align: center
 
+	&.AnimationEnd
+		opacity: 1
 
-.ScoreCol_TeamInfo
-	width: 80px
+	> .HeaderColumn
+		height: 100%
+		flow-children: right
 
-.ScoreCol_PlayerDetails
-	width: 170px
+		#PlayerAvatar
+			width: 42px
+			height: 42px
+			margin-left: 6px
+			vertical-align: center
+			border: 4px solid #000
 
-.ScoreCol_TeamScore
-	width: 80px
-	text-align: center
+		#HeroIcon
+			width: 72px
+			height: 42px
+			vertical-align: center
+			background-color: rgba(0, 0, 0, .87)
+			border: 1px solid #000
 
-.ScoreCol_Hero
-	width: 53px
+		#NameAndHero
+			#PlayerNameScoreboard
+				width: 100%
+				height: 30px
+				white-space: nowrap
+				wash-color: #b9d3d3
 
-.ScoreCol_Level
-	width: 50px
-	text-align: center
+				> Label
+					padding-right: 12px
+					padding-left: 12px
+					font-size: 22px
+					font-weight: thin
+					letter-spacing: 1px
+					text-overflow: shrink
 
-.ScoreCol_Kills
-	width: 50px
-	text-align: center
+			#HeroLevelLabel
+				width: 27px
+				height: 27px
+				padding-top: 4px
+				padding-right: 1px
+				margin-top: -3px
+				margin-bottom: -3px
+				margin-left: 12px
+				font-size: 14px
+				letter-spacing: 1px
+				color: #e7d291
+				text-align: center
+				text-overflow: shrink
+				vertical-align: center
+				border: 1px solid rgba(231, 210, 145, .533)
+				border-radius: 50%
+				box-shadow: fill 0 0 12px #000
 
-.ScoreCol_Deaths
-	width: 50px
-	text-align: center
+			#LevelAndHero
+				padding-left: 6px
+				margin-bottom: 4px
+				font-size: 14px
+				color: #ccc
+				text-overflow: shrink
+				text-transform: uppercase
+				vertical-align: center
 
-.ScoreCol_Assists
-	width: 50px
-	text-align: center
+	> Label
+		margin-top: 3px
+		margin-bottom: 3px
+		font-size: 26px
+		color: #fff
+		text-align: center
+		text-overflow: shrink
+		text-shadow: 1px 1px 3px 3 #000
+		vertical-align: center
+		brightness: 2
 
-.ScoreCol_Items
-	width: 258px
-	text-align: center
+	> .NetWorthColumn
+		font-size: 22px
+		color: rgb(231, 186, 1)
+		text-align: right
+		text-overflow: shrink
 
-.ScoreCol_Gold
-	width: 70px
-	text-align: center
+	#ItemsContainer,
+	#BackpackItemsContainer
+		height: 100%
 
-.endgame #VictoryRow
-	opacity: 1
-	transform: scaleX(1) scaleY(1)
+		DOTAItemImage
+			width: 47px
+			height: width-percentage(72.7%)
+			margin: 0 1px
+			vertical-align: center
+			border: 1px solid #000
+			tooltip-position: right
+			tooltip-body-position: 3%
 
-.AspectRatio4x3 .EndScreenWindow
-	margin-right: 50px
-
-.AspectRatio5x4 .EndScreenWindow
-	margin-right: 50px
-
-.FlyoutScoreboardRoot.flyout_scoreboard_visible
-	transform: translatey(0)
-
-.one_player #TeamScore
-	font-size: 30px
-
-.is_local_player Label
-	color: #fff
+.FadeOut
+	.Player
+		animation-direction: reverse

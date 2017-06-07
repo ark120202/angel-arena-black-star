@@ -144,5 +144,5 @@ function GameMode:_CaptureGameMode()
 		mode:SetStickyItemDisabled( DISABLE_STICKY_ITEM )
 
 		self:OnFirstPlayerLoaded()
-	end 
+	end
 end

@@ -1,3 +1,13 @@
+local DEBUG_ENV = IsInToolsMode() and "."
+
+function debugp( ... )
+	local args = {...}
+	local caller = table.remove(args, 1)
+	if DEBUG_ENV and caller:match(DEBUG_ENV) then
+		print(caller .. ":", unpack(args))
+	end
+end
+
 function CPrint( ... )
 	if SendDebugInfoToClient then
 		local printResult = ""

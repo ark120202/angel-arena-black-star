@@ -66,6 +66,7 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 end
 
 function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item, callback)
+	PlayerResource:ModifyPlayerStat(playerId, "ChangedHeroAmount", 1)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	hero.ChangingHeroProcessRunning = true
 	if hero.PocketItem then

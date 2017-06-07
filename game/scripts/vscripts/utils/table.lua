@@ -224,3 +224,12 @@ function shuffledPairs(t)
 	end
 	return iter
 end
+
+function table.average(t)
+	if #t == 0 then return 0 end
+	local sum = 0
+	for _,v in pairs(t) do
+		sum = sum + v
+	end
+	return sum/#t
+end

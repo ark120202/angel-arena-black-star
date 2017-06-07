@@ -2,7 +2,7 @@ ENABLE_HERO_RESPAWN = true
 UNIVERSAL_SHOP_MODE = false
 ALLOW_SAME_HERO_SELECTION = true
 
-POST_GAME_TIME = 60
+POST_GAME_TIME = 99999
 TREE_REGROW_TIME = 60
 
 MINIMAP_ICON_SIZE = 1                   -- What icon size should we use for our heroes?

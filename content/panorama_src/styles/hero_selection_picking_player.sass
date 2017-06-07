@@ -1,8 +1,7 @@
-DOTAHudHeroPickingPlayer
-	padding-bottom: 24px
+.PlayerPanel
 	margin-right: -2px
 	margin-left: -2px
-	transform: translateY(-90px) translateX(-20px)
+	//transform: translateY(-90px) translateX(-20px)
 	transition-duration: .3s
 	transition-property: transform, saturation, contrast, brightness, wash-color, pre-transform-scale2d
 	transition-timing-function: ease-out
@@ -10,10 +9,15 @@ DOTAHudHeroPickingPlayer
 	context-menu-body-position: 50% 50%
 	flow-children: none
 
+
+.AspectRatio5x4,
 .AspectRatio4x3
-	DOTAHudHeroPickingPlayer
+	.PlayerPanel
 		margin-right: -4px
 		margin-left: -4px
+
+		#HeroImage
+			width: 100px
 
 	#HeroImageBorder
 		width: 110px
@@ -33,40 +37,24 @@ DOTAHudHeroPickingPlayer
 	#PlayerMMR
 		margin-top: 36px
 
-	.PlayerPanel #HeroImage
-		width: 100px
+
+.map_landscape_4v4v4v4
+	.PlayerPanel
+		margin-right: -20px
+		margin-left: -6px
+		pre-transform-scale2d: .9
+
+	.AspectRatio5x4,
+	.AspectRatio4x3
+		.PlayerPanel
+			margin-right: -30px
+			margin-left: -10px
+			pre-transform-scale2d: .8
 
 
-.AspectRatio5x4
-	DOTAHudHeroPickingPlayer
-		margin-right: -4px
-		margin-left: -4px
-
-	#HeroImageBorder
-		width: 110px
-		height: 66px
-
-	#HeroImageContainer
-		height: 62px
-
-	#NameContainer
-		margin-top: 68px
-
-	#DisconnectedIcon
-		width: 80px
-		margin-top: 20px
-		margin-left: 14px
-
-	#PlayerMMR
-		margin-top: 36px
-
-	.PlayerPanel #HeroImage
-		width: 100px
-
-
-#DireTeamPlayers
-	DOTAHudHeroPickingPlayer
-		transform: translateY(-90px) translateX(20px)
+#RightTeams
+	.PlayerPanel
+		//transform: translateY(-90px) translateX(20px)
 		transition-duration: .3s
 		transition-timing-function: ease-in
 
@@ -102,8 +90,8 @@ DOTAHudHeroPickingPlayer
 
 DOTAHudPreGame
 	&.StartPregameIntro
-		DOTAHudHeroPickingPlayer
-			transform: translateY(0)
+		//.PlayerPanel
+		//	transform: translateY(0)
 
 		#HeroImageContainer
 			wash-color: rgb(255, 255, 255)
@@ -111,16 +99,16 @@ DOTAHudPreGame
 		#NameContainer
 			opacity: 1
 
-		#DireTeamPlayers DOTAHudHeroPickingPlayer
-			transform: translateY(0)
+		//#RightTeams .PlayerPanel
+		//	transform: translateY(0)
 
 
-	&.EndPregameIntro
-		DOTAHudHeroPickingPlayer
-			transform: translateY(0)
+		//&.EndPregameIntro
+		//.PlayerPanel
+		//	transform: translateY(0)
 
-		#DireTeamPlayers DOTAHudHeroPickingPlayer
-			transform: translateY(0)
+		//#RightTeams .PlayerPanel
+		//	transform: translateY(0)
 
 
 	&.BecomeActive
@@ -377,7 +365,7 @@ DOTAHudPreGame
 		context-menu-body-position: 50% 50%
 
 
-#RadiantTeamPlayers
+#LeftTeams
 	#NameContainer
 		margin-right: 4px
 
@@ -480,8 +468,8 @@ DOTAHudPreGame
 	transition-duration: .12s
 	transition-timing-function: ease-in-out
 
-.StrategyVisible .PlayerPanel #HeroImageContainer:hover .PlayerPanel #HeroImage
-	pre-transform-scale2d: 1.2
+//.StrategyVisible .PlayerPanel #HeroImageContainer:hover .PlayerPanel #HeroImage
+//	pre-transform-scale2d: 1.2
 
 .HeroPickHovered #HeroImage
 	saturation: 0.0

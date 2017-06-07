@@ -1,6 +1,7 @@
 var HeroesData = {},
 	SelectedHeroName = '',
-	BannedHeroes = [];
+	BannedHeroes = [],
+	LocalPlayerStatus = {};
 DynamicSubscribePTListener('hero_selection_heroes_data', function(tableName, changesObject, deletionsObject) {
 	HeroesData = changesObject;
 	//if (OnRecieveHeroesData) OnRecieveHeroesData();
@@ -36,6 +37,18 @@ function IsHeroLocked(name) {
 
 function IsHeroBanned(name) {
 	return BannedHeroes.indexOf(name) !== -1;
+}
+
+function IsLocalHeroPicked() {
+	return (LocalPlayerStatus || Players.GetHeroSelectionPlayerInfo(Game.GetLocalPlayerID())).status === 'picked';
+}
+
+function IsLocalHeroLocked() {
+	return (LocalPlayerStatus || Players.GetHeroSelectionPlayerInfo(Game.GetLocalPlayerID())).status === 'locked';
+}
+
+function IsLocalHeroLockedOrPicked() {
+	return IsLocalHeroPicked() || IsLocalHeroLocked();
 }
 
 var PreviousSearchText = '';
@@ -192,7 +205,7 @@ function ClearSearch() {
 	$('#HeroSearchTextEntry').text = '';
 }
 
-$.Schedule(0, function() {
+function ListenToBanningPhase() {
 	DynamicSubscribePTListener('hero_selection_banning_phase', function(tableName, changesObject, deletionsObject) {
 		for (var hero in changesObject) {
 			var heroPanel = $('#HeroListPanel_element_' + hero);
@@ -210,4 +223,4 @@ $.Schedule(0, function() {
 			if (index > -1) BannedHeroes.splice(index, 1);
 		}
 	});
-});
+}

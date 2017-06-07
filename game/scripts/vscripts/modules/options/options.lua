@@ -92,6 +92,7 @@ function Options:LoadDefaultValues()
 	Options:SetValue("EnableRandomAbilities", false)
 	Options:SetValue("EnableStatisticsCollection", true)
 	Options:SetValue("EnableRatingAffection", false)
+	Options:SetValue("FailedRankedGame", false)
 	--Options:SetValue("MapLayout", "5v5")
 
 	Options:SetValue("BanningPhaseBannedPercentage", 0)
@@ -117,13 +118,6 @@ function Options:LoadMapValues()
 	local gamemode = underscoreIndex and mapName:sub(underscoreIndex - #mapName) or ""
 
 	if gamemode == "custom_abilities" then
-		for k,t in pairs(DROP_TABLE) do
-			for i,info in ipairs(t) do
-				if string.starts(info.Item, "item_god_transform_") then
-					table.remove(DROP_TABLE[k], i)
-				end
-			end
-		end
 		Options:SetValue("MainHeroList", "NoAbilities")
 		Options:SetPreGameVoting("custom_abilities", {"random_omg", "ability_shop"}, "ability_shop", {
 			calculationFunction = ">",
@@ -133,23 +127,26 @@ function Options:LoadMapValues()
 			end
 		})
 	elseif gamemode == "ranked" then
-		Options:SetValue("EnableRatingAffection", true)
-		Options:SetValue("BanningPhaseBannedPercentage", 50)
+		SKIP_TEAM_SETUP = true
+		Events:On("AllPlayersLoaded", function()
+			local failed = (GetInGamePlayerCount() < 10 or matchID == 0) and not IsInToolsMode()
+			if not failed then
+				Options:SetValue("EnableRatingAffection", true)
+				Options:SetValue("BanningPhaseBannedPercentage", 50)
+			else
+				debugp("Options:LoadMapValues", "Ranked disabled because of low amount of players of match id == 0")
+				Options:SetValue("FailedRankedGame", true)
+			end
+		end, true)
 	end
 	if landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216
-		USE_AUTOMATIC_PLAYERS_PER_TEAM = false
-		MAX_NUMBER_OF_TEAMS = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS] = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_1] = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_2] = 4
 		USE_CUSTOM_TEAM_COLORS = true
 	end
 end
 
 function Options:LoadCheatValues()
-	
+
 end
 
 function Options:LoadToolsValues()

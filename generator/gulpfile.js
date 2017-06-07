@@ -33,7 +33,7 @@ const gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	watch = require('gulp-watch'),
 	plumber = require('gulp-plumber'),
-	//replace = require('gulp-replace'),
+	replace = require('gulp-replace'),
 	gutil = require('gulp-util'),
 	resourcecompiler = require('./gulp-resourcecompiler')(paths.resourcecompiler, p => p.replace(paths.content, paths.addon_content));
 
@@ -79,6 +79,7 @@ gulp.task('src_sass', () =>
 		.pipe(shouldWatch ? watch(path.join(paths.content, 'panorama_src/styles/**/*.sass')) : gutil.noop())
 		.pipe(plumber())
 		.pipe(sass())
+		.pipe(replace(/ {2}/g, ''))
 		.pipe(gulp.dest(path.join(paths.content, 'panorama/styles')))
 		//.pipe(resourcecompiler())
 		//.pipe(gulp.dest(path.join(paths.game, 'panorama/styles')))
@@ -88,6 +89,7 @@ gulp.task('src_css', () =>
 	gulp.src(path.join(paths.content, 'panorama_src/styles/**/*.css'))
 		.pipe(shouldWatch ? watch(path.join(paths.content, 'panorama_src/styles/**/*.css')) : gutil.noop())
 		.pipe(plumber())
+		.pipe(replace(/ {2}/g, ''))
 		.pipe(gulp.dest(path.join(paths.content, 'panorama/styles')))
 );
 gulp.task('panorama', ['src_sass', 'src_css']);
