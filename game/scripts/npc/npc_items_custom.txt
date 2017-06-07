@@ -3584,7 +3584,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"250 900 2200"
+				"bonus_gold"			"250 900 1600"
 			}
 		}
 
@@ -13071,6 +13071,8 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityDamage"					"600"
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"19"
 		"AbilityManaCost"				"250"

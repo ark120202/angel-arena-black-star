@@ -50,7 +50,7 @@ function StatsClient:FetchPreGameData()
 end
 
 function StatsClient:OnGameEnd(winner)
-	local status, nextCall = xpcall(fun, function (msg)
+	local status, nextCall = xpcall(function()
 		local time = GameRules:GetDOTATime(false, true)
 		local matchID = tostring(GameRules:GetMatchID())
 		local debug = true
@@ -136,7 +136,6 @@ function StatsClient:OnGameEnd(winner)
 			else
 				for pid, receivedData in pairs(response.players) do
 					pid = tonumber(pid)
-					print(pid)
 					local sentData = data.players[pid]
 					clientData.players[pid] = {
 						hero = sentData.heroName,
@@ -154,6 +153,8 @@ function StatsClient:OnGameEnd(winner)
 				PlayerTables:CreateTable("stats_game_result", clientData, AllPlayersInterval)
 			end
 		end, math.huge, nil, true)
+	end, function (msg)
+		return msg..'\n'..debug.traceback()..'\n'
 	end)
 	if not status then
 		PlayerTables:CreateTable("stats_game_result", {error = status}, AllPlayersInterval)
