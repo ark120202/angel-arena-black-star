@@ -8,7 +8,7 @@ var Options = GameUI.CustomUIConfig().Options;
 var console = {
 	log: function() {
 		var args = Array.prototype.slice.call(arguments);
-		return $.Msg(args.map(function(x) {return typeof x === 'object' ? JSON.stringify(x) : x;}).join('\t'));
+		return $.Msg(args.map(function(x) {return typeof x === 'object' ? JSON.stringify(x, null, 4) : x;}).join('\t'));
 	},
 	error: function() {
 		var args = Array.prototype.slice.call(arguments);
@@ -389,6 +389,14 @@ function JoinUrlParams(params) {
 	return params == null ? '' : '?' + Object.keys(params).map(function(key) {
 	    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
 	}).join('&');
+}
+
+function SetPagePlayerLevel(ProfileBadge, level) {
+	var levelbg = Math.floor(level / 100);
+	ProfileBadge.FindChildTraverse('BackgroundImage').SetImage('file://{images}/profile_badges/bg_' + ('0' + (levelbg + 1)).slice(-2) + '.psd');
+	ProfileBadge.FindChildTraverse('ItemImage').SetImage('file://{images}/profile_badges/level_' + ('0' + (level - levelbg * 100)).slice(-2) + '.png');
+	ProfileBadge.FindChildTraverse('ProfileLevel').SetImage('file://{images}/profile_badges/bg_number_01.psd');
+	ProfileBadge.FindChildTraverse('ProfileLevel').GetChild(0).text = level;
 }
 
 var hud = GetDotaHud();

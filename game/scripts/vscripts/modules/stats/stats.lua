@@ -1,8 +1,9 @@
 if StatsClient == nil then
 	_G.StatsClient = class({})
-	StatsClient.ServerAddress = "https://stats.dota-aabs.com/"
+
 	StatsClient.RetryDelay = 5
 end
+StatsClient.ServerAddress = false and "https://stats.dota-aabs.com/" or "http://127.0.0.1:6502/"
 
 function StatsClient:Init()
 	PlayerTables:CreateTable("stats_client", {}, AllPlayersInterval)
@@ -49,82 +50,114 @@ function StatsClient:FetchPreGameData()
 end
 
 function StatsClient:OnGameEnd(winner)
-	local time = GameRules:GetDOTATime(false, true)
-	local matchID = tostring(GameRules:GetMatchID())
-	local debug = true
-	if (GameRules:IsCheatMode() and not debug) or time < 0 then
-		return
-	end
-	local data = {
-		version = ARENA_VERSION,
-		matchid = matchID,
-		players = {},
-		killGoal = KILLS_TO_END_GAME_FOR_TEAM,
-		teamsInfo = {},
-		version = ARENA_VERSION,
-		duration = math.floor(time),
-		flags = {
-			isRanked = Options:IsEquals("EnableRatingAffection")
-		}
-	}
-
-	for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
-		if GetTeamAllPlayerCount(i) > 0 then
-			data.teamsInfo[tostring(i)] = {
-				duelsWon = (Duel.TimesTeamWins[i] or 0),
-				isGameWinner = i == winner,
-				kills = GetTeamHeroKills(i),
-			}
+	local status, nextCall = xpcall(fun, function (msg)
+		local time = GameRules:GetDOTATime(false, true)
+		local matchID = tostring(GameRules:GetMatchID())
+		local debug = true
+		if (GameRules:IsCheatMode() and not debug) or time < 0 then
+			return
 		end
-	end
+		local data = {
+			version = ARENA_VERSION,
+			matchID = matchID,
+			players = {},
+			killGoal = KILLS_TO_END_GAME_FOR_TEAM,
+			teamsInfo = {},
+			version = ARENA_VERSION,
+			duration = math.floor(time),
+			flags = {
+				isRanked = Options:IsEquals("EnableRatingAffection")
+			}
+		}
 
-	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-		if PlayerResource:IsValidPlayerID(i) then
-			local hero = PlayerResource:GetSelectedHeroEntity(i)
-			local playerInfo = {
-				abandoned = IsPlayerAbandoned(i),
-				steamid = tostring(PlayerResource:GetSteamID(i)),
-				stats = {
-					damageToEnemyHeroes = PlayerResource:GetPlayerStat(i, "DamageToEnemyHeroes"),
+		for i = DOTA_TEAM_FIRST, DOTA_TEAM_CUSTOM_MAX do
+			if GetTeamAllPlayerCount(i) > 0 then
+				data.teamsInfo[tostring(i)] = {
+					duelsWon = (Duel.TimesTeamWins[i] or 0),
+					isGameWinner = i == winner,
+					kills = GetTeamHeroKills(i),
+				}
+			end
+		end
+
+		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+			if PlayerResource:IsValidPlayerID(i) then
+				local hero = PlayerResource:GetSelectedHeroEntity(i)
+				local playerInfo = {
+					abandoned = IsPlayerAbandoned(i),
+					steamid = tostring(PlayerResource:GetSteamID(i)),
+
+					heroDamage = PlayerResource:GetPlayerStat(i, "DamageToEnemyHeroes"),
 					duelsPlayed = PlayerResource:GetPlayerStat(i, "Duels_Played"),
 					duelsWon = PlayerResource:GetPlayerStat(i, "Duels_Won"),
 					kills = PlayerResource:GetKills(i),
 					deaths = PlayerResource:GetDeaths(i),
 					assists = PlayerResource:GetAssists(i),
-					lasthits = PlayerResource:GetLastHits(i)
-				},
-				heroName = HeroSelection:GetSelectedHeroName(i),
-				team = tonumber(PlayerResource:GetTeam(i)),
-				level = PLAYER_DATA[i].BeforeAbandon_Level or 0,
-				items = PLAYER_DATA[i].BeforeAbandon_HeroInventorySnapshot or {}
-			}
-			if IsValidEntity(hero) then
-				playerInfo.level = hero:GetLevel()
-				for item_slot = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
-					local item = hero:GetItemInSlot(item_slot)
-					if item then
-						local charges = item:GetCurrentCharges()
-						local toWriteCharges
-						if item:GetInitialCharges() ~= charges then
-							toWriteCharges = charges
+					lasthits = PlayerResource:GetLastHits(i),
+					heroName = HeroSelection:GetSelectedHeroName(i),
+					bonus_str = 0,
+					bonus_agi = 0,
+					bonus_int = 0,
+
+					team = tonumber(PlayerResource:GetTeam(i)),
+					level = 0,
+					items = {}
+				}
+				if IsValidEntity(hero) then
+					playerInfo.level = hero:GetLevel()
+					if hero.Additional_str then playerInfo.bonus_str = hero.Additional_str end
+					if hero.Additional_agi then playerInfo.bonus_agi = hero.Additional_agi end
+					if hero.Additional_int then playerInfo.bonus_int = hero.Additional_int end
+					for item_slot = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
+						local item = hero:GetItemInSlot(item_slot)
+						if item then
+							playerInfo.items[item_slot] = {
+								name = item:GetAbilityName(),
+								charges = item:GetCurrentCharges()
+							}
 						end
-						playerInfo.items[item_slot] = {
-							name = item:GetAbilityName(),
-							stacks = toWriteCharges
-						}
 					end
 				end
+				playerInfo.networth = Gold:GetGold(i)
+				for slot, item in pairs(playerInfo.items) do
+					playerInfo.networth = playerInfo.networth + GetTrueItemCost(item.name)
+				end
+				data.players[i] = playerInfo
 			end
-			data.players[i] = playerInfo
 		end
+		PrintTable(data)
+
+		local clientData = {players = {}}
+
+		StatsClient:Send("endMatch", data, function(response)
+			PrintTable(response)
+			if not response.players then
+				PlayerTables:CreateTable("stats_game_result", response, AllPlayersInterval)
+			else
+				for pid, receivedData in pairs(response.players) do
+					pid = tonumber(pid)
+					print(pid)
+					local sentData = data.players[pid]
+					clientData.players[pid] = {
+						hero = sentData.heroName,
+						hero_damage = sentData.heroDamage,
+						netWorth = sentData.networth,
+						bonus_str = sentData.bonus_str,
+						bonus_agi = sentData.bonus_agi,
+						bonus_int = sentData.bonus_int,
+						ratingNew = receivedData.ratingNew,
+						ratingOld = receivedData.ratingOld,
+						experienceNew = receivedData.experienceNew,
+						experienceOld = receivedData.experienceOld,
+					}
+				end
+				PlayerTables:CreateTable("stats_game_result", clientData, AllPlayersInterval)
+			end
+		end, math.huge, nil, true)
+	end)
+	if not status then
+		PlayerTables:CreateTable("stats_game_result", {error = status}, AllPlayersInterval)
 	end
-	PrintTable(data)
-	StatsClient:Send("endMatch", data, function(response)
-		PrintTable(response)
-		CustomGameEventManager:Send_ServerToAllClients("stats_client_game_result", {
-			id = response.success and matchID or 0
-		})
-	end, math.huge)
 end
 
 function StatsClient:HandleError(err)
@@ -190,7 +223,7 @@ function StatsClient:VoteGuide(data)
 	})
 end
 
-function StatsClient:Send(path, data, callback, retryCount, protocol, _currentRetry)
+function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _currentRetry)
 	if type(retryCount) == "boolean" then
 		retryCount = retryCount and math.huge or 0
 	elseif not retryCount then
@@ -209,8 +242,11 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, _currentRe
 			if currentRetry < retryCount then
 				Timers:CreateTimer(self.RetryDelay, function()
 					debugp("StatsClient:Send", "Retry (" .. currentRetry .. ")")
-					StatsClient:Send(path, data, callback, retryCount, protocol, currentRetry)
+					StatsClient:Send(path, data, callback, retryCount, protocol, onerror, currentRetry)
 				end)
+			elseif onerror then
+				if onerror == true then onerror = callback end
+				onerror(response.Body)
 			end
 		else
 			local obj, pos, err = JSON:decode(response.Body, 1, nil)

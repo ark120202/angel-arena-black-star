@@ -1,6 +1,7 @@
 <root>
     <styles>
  		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/profile_badge.vcss_c" />
         <include src="file://{resources}/styles/keyframes.css" />
         <include src="file://{resources}/styles/arena_end_screen.css" />
     </styles>
@@ -60,7 +61,7 @@
 						</Panel>
 					</Panel>
 				</Panel>
-				
+
 				<Label class="KillsColumn" text="{d:kills}" />
 				<Label class="DeathsColumn" text="{d:deaths}" />
 				<Label class="AssistsColumn" text="{d:assists}" />
@@ -78,13 +79,27 @@
 	</snippets>
 
 	<Panel class="EndScreenBase" >
+		<Panel id="LoadingPanel">
+			<Label id="LoadingText" text="LOADING"/>
+			<Panel class="Spinner" />
+			<Label id="LoadingMessage" text="Sending match data to servers..."/>
+		</Panel>
+		<Panel id="ErrorPanel">
+			<Label id="ErrorText" text="ERROR"/>
+			<Image id="ErrorIcon" />
+			<Label id="ErrorMessage" text="{msg: 'bad error'}"/>
+			<TextButton id="CloseButton" class="ButtonBevel" onactivate="FinishGame()" text="#CustomEndScreenClose" />
+		</Panel>
 		<Panel id="EndScreenWindow">
 			<Panel id="MatchResultBlock">
 				<Panel id="MatchResultPlayer">
 					<DOTAProfileBadge id="ProfileBadge" />
-					<ProgressBar id="LevelProgress" text="15 / 100TP" value="6" />
+					<ProgressBar id="LevelProgress" max="100">
+						<Label id="LevelProgressValue" text="15 / 100 XP"/>
+						<Label id="LevelProgressChange" text="+5 XP"/>
+					</ProgressBar>
 				</Panel>
-				<Label id="EndScreenVictory" text="#custom_end_screen_victory_message" />
+				<Label id="EndScreenVictory" text="Victory!" />
 				<TextButton id="CloseButton" class="ButtonBevel" onactivate="FinishGame()" text="#CustomEndScreenClose" />
 			</Panel>
 			<Panel id="TeamsContainer" />

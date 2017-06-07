@@ -99,3 +99,5 @@ option_voting_kill_limit: 'Кол-во убийств:'
 option_voting_custom_abilities: 'Режим выбора способностей:'
 
 arena_end_screen_score: 'СЧЕТ: '
+arena_end_screen_victory: 'Победа'
+arena_end_screen_defeat: 'Поражение'

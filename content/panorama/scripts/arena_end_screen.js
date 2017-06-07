@@ -1,8 +1,17 @@
 GAME_RESULT = {};
 
 function FinishGame() {
+	var maxDelay = 0;
 	$.GetContextPanel().AddClass('FadeOut');
-	$.Schedule(1, function() {
+	_.each($.GetContextPanel().FindChildrenWithClassTraverse('Player'), function(panel) {
+		panel.style.animationDelay = panel.index * 0.1 + 's';
+		maxDelay = Math.max(maxDelay, panel.index * 0.1);
+		$.Schedule(panel.index * 0.1, function() {
+			panel.RemoveClass('AnimationEnd');
+		});
+	});
+	// animation-delay + animation-duration
+	$.Schedule(maxDelay + .7, function() {
 		Game.FinishGame();
 	});
 }
@@ -13,17 +22,21 @@ function FinishGame() {
  * @param {Number} playerID Player ID
  * @param {Panel} rootPanel Panel that will be parent for that player
  */
-function Snippet_Player(playerID, rootPanel, index, isRight) {
+function Snippet_Player(playerID, rootPanel, index) {
 	var panel = $.CreatePanel('Panel', rootPanel, '');
 	panel.BLoadLayoutSnippet('Player');
-	panel.SetHasClass('IsRight', isRight);
-	var playerData = GAME_RESULT.playerData[playerID];
+	var playerData = GAME_RESULT.players[playerID];
 	var playerInfo = Game.GetPlayerInfo(playerID);
 	panel.FindChildTraverse('PlayerAvatar').steamid = playerInfo.player_steamid;
 	panel.FindChildTraverse('PlayerAvatar').SetPanelEvent('onactivate', function() {
 		GameEvents.SendEventClientSide('player_profiles_show_info', {PlayerID: playerID});
 	});
 
+	panel.index = index; // For backwards compatibility
+	panel.style.animationDelay = index * 0.3 + 's';
+	$.Schedule(index * 0.3, function() {
+		panel.AddClass('AnimationEnd');
+	});
 
 	panel.FindChildTraverse('HeroIcon').SetImage(TransformTextureToPath(playerData.hero));
 	panel.SetDialogVariableInt('hero_level', Players.GetLevel(playerID));
@@ -33,9 +46,11 @@ function Snippet_Player(playerID, rootPanel, index, isRight) {
 	panel.SetDialogVariableInt('assists', Players.GetAssists(playerID));
 	panel.SetDialogVariableInt('last_hits', Players.GetLastHits(playerID));
 	panel.SetDialogVariableInt('hero_damage', playerData.hero_damage);
-	panel.SetDialogVariableInt('strength', playerData.strength);
-	panel.SetDialogVariableInt('agility', playerData.agility);
-	panel.SetDialogVariableInt('intellect', playerData.intellect);
+	panel.SetDialogVariableInt('strength', playerData.bonus_str);
+	panel.SetDialogVariableInt('agility', playerData.bonus_agi);
+	panel.SetDialogVariableInt('intellect', playerData.bonus_int);
+	panel.SetDialogVariableInt('net_worth', playerData.netWorth);
+
 	var mmrString;
 	if (typeof playerData.ratingNew === 'number') {
 		if (typeof playerData.ratingOld === 'number') {
@@ -47,13 +62,6 @@ function Snippet_Player(playerID, rootPanel, index, isRight) {
 		} else mmrString = 'TBD -> ' + playerData.ratingNew;
 	} else mmrString = 'TBD';
 	panel.SetDialogVariable('rating', mmrString);
-
-	panel.SetDialogVariableInt('net_worth', playerData.netWorth);
-	panel.style.animationDelay = index * 0.6 + 's';
-	$.Schedule(index * 0.6, function() {
-		panel.opacity = 1;
-		panel.AddClass('AnimationEnd');
-	});
 
 	var ItemsContainer = panel.FindChildTraverse('ItemsContainer');
 	var BackpackItemsContainer = panel.FindChildTraverse('BackpackItemsContainer');
@@ -77,6 +85,7 @@ function Snippet_Team(team) {
 	var isRight = team % 2 !== 0;
 	var panel = $.CreatePanel('Panel', $('#TeamsContainer'), '');
 	panel.BLoadLayoutSnippet('Team');
+	panel.SetHasClass('IsRight', isRight);
 	panel.SetDialogVariable('team_name', GameUI.CustomUIConfig().team_names[team]);
 	var teamDetails = Game.GetTeamDetails(team);
 	panel.SetDialogVariableInt('team_score', teamDetails.team_score);
@@ -84,39 +93,60 @@ function Snippet_Team(team) {
 
 	var teamColor = GameUI.CustomUIConfig().team_colors[team];
 	panel.FindChildTraverse('TeamName').style.textShadow = '0px 0px 6px 1.0 ' + teamColor;
-	//panel.FindChildTraverse('TeamScore').style.textShadow = '0px 0px 6px 1.0 ' + teamColor;
-	//panel.FindChildTraverse('TeamInfo').style.backgroundColor = 'gradient(linear, 0 0, 0 100%, from(#373d35), to(' + teamColor + '))';
 
-	_.each(/*Game.GetPlayerIDsOnTeam(team)*/[0], function(playerID, i) {
-		Snippet_Player(playerID, panel, i, isRight);
-		Snippet_Player(playerID, panel, i+1, isRight);
-		Snippet_Player(playerID, panel, i+2, isRight);
-		Snippet_Player(playerID, panel, i+3, isRight);
-		Snippet_Player(playerID, panel, i+4, isRight);
-		Snippet_Player(playerID, panel, i+5, isRight);
-		Snippet_Player(playerID, panel, i+6, isRight);
-		Snippet_Player(playerID, panel, i+7, isRight);
+	_.each(Game.GetPlayerIDsOnTeam(team), function(playerID, i) {
+		Snippet_Player(playerID, panel, i + 1);
 	});
 }
 
 function OnGameResult(gameResult) {
-	GAME_RESULT = gameResult;
-	$.GetContextPanel().SetDialogVariable('winning_team_name', GameUI.CustomUIConfig().team_names[GAME_RESULT.winner]);
-	$('#TeamsContainer').RemoveAndDeleteChildren();
-	_.each(Game.GetAllTeamIDs(), function(team) {
-		Snippet_Team(team);
-	});
+	console.log(gameResult);
+	if (!gameResult.players) {
+		$('#LoadingPanel').visible = false;
+		$('#ErrorPanel').visible = true;
+		$('#ErrorMessage').text = gameResult.error || 'Unknown error';
+	} else {
+		$('#LoadingPanel').visible = false;
+		$('#EndScreenWindow').visible = true;
+		gameResult.winner = Game.GetGameWinner();
+		GAME_RESULT = gameResult;
+		$('#TeamsContainer').RemoveAndDeleteChildren();
+		_.each(Game.GetAllTeamIDs(), function(team) {
+			Snippet_Team(team);
+		});
+		var localData = gameResult.players[Game.GetLocalPlayerID()];
+
+		var experienceNew = localData.experienceNew || 0;
+		var experienceOld = localData.experienceOld || 0;
+		SetPagePlayerLevel($('#ProfileBadge'), Math.floor(experienceNew / 100) + 1);
+		$('#EndScreenVictory').text = $.Localize(Players.GetTeam(Game.GetLocalPlayerID()) === gameResult.winner ? 'arena_end_screen_victory' : 'arena_end_screen_defeat');
+		$('#LevelProgressValue').text = Math.floor(experienceNew % 100) + ' / 100 XP';
+		$('#LevelProgressChange').text = '+' + Math.floor(experienceNew - experienceOld) + ' XP';
+		$('#LevelProgress').value = experienceOld % 100;
+		$.Schedule(.5, function() {
+			$('#LevelProgress').value = experienceNew % 100;
+			$('#LevelProgressChange').style.opacity = 1;
+		});
+	}
 }
 
 (function() {
-	GameEvents.Subscribe('stats_client_game_result', OnGameResult);
-	OnGameResult({
+	$.GetContextPanel().RemoveClass('FadeOut');
+	$('#LoadingPanel').visible = true;
+	$('#ErrorPanel').visible = false;
+	$('#EndScreenWindow').visible = false;
+
+	DynamicSubscribePTListener('stats_game_result', function(tableName, changesObject) {
+		OnGameResult(changesObject);
+	});
+
+	/*OnGameResult({
 		winner: Game.GetGameWinner(),
-		playerData: {
+		players: {
 			0: {
 				hero: 'npc_dota_hero_slark',
-				netWorth: 600000,
 				hero_damage: 30000,
+				netWorth: 600000,
 				ratingNew: 10000,
 				ratingOld: 'TBD',
 				strength: 100,
@@ -126,7 +156,7 @@ function OnGameResult(gameResult) {
 				xpOld: 0
 			}
 		}
-	});
+	});*/
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false);
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME_CHAT, false);
 	FindDotaHudElement('GameEndContainer').visible = false;

@@ -5,45 +5,143 @@ $window-height: 900px
 	width: 100%
 	height: 100%
 
+#LoadingPanel
+	width: 500px
+	margin-top: -20px
+	align: center center
+	flow-children: down
+
+	> Label
+		width: 100%
+		text-align: center
+
+	#LoadingText
+		margin-bottom: -12px
+		font-size: 72px
+		font-weight: bold
+		color: #fff
+
+	.Spinner
+		width: 80px
+		height: 80px
+		horizontal-align: center
+
+	#LoadingMessage
+		margin-top: 8px
+		font-size: 30px
+
+#ErrorPanel
+	width: 500px
+	visibility: collapse
+	align: center center
+	flow-children: down
+
+	> Label
+		width: 100%
+		text-align: center
+
+	#ErrorText
+		margin-bottom: -15px
+		font-size: 72px
+		font-weight: bold
+		color: #f22
+
+	#ErrorIcon
+		width: 70px
+		height: 70px
+		margin-bottom: 20px
+		background-image: url('s2r://panorama/images/status_icons/exclamation_psd.vtex')
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		background-size: contain
+		horizontal-align: center
+		wash-color: #f99
+
+	#ErrorMessage
+		max-height: 300px
+		font-size: 30px
+		color: #fff
+		text-overflow: shrink
+
+	#CloseButton
+		width: 50%
+		margin-top: 20px
+		horizontal-align: center
+
 #EndScreenWindow
 	width: 100%
 	height: $window-height
+	visibility: collapse
 	align: center center
 	flow-children: down
 
 	#MatchResultBlock
 		width: $window-width
 		height: 20%
-		background-color: #555
+		$background-color: rgba(20, 20, 20, .5)
+		background-color: $background-color
+		box-shadow: $background-color -5px -5px 10px 10px
 		horizontal-align: center
 
 		#EndScreenVictory
+			margin-right: 12px
 			font-size: 70px
 			font-weight: bold
 			color: #fff
 			text-shadow: 5px 5px 5px #000
-			horizontal-align: center
+			horizontal-align: right
 
 		#CloseButton
 			width: 20%
 			height: 38px
-			margin-top: 12px
-			horizontal-align: center
+			margin: 12px
+			align: right bottom
 
-		#LevelProgress
-			height: 32px
-			padding: 4px
-			background-color: #464748
-			border: 1px solid #3d4746
-			box-shadow: inset #1f2020 2px 2px 4px 4px
+		#MatchResultPlayer
+			margin-bottom: 5px
+			margin-left: 4px
+			align: left bottom
+			flow-children: down
 
-			#LevelProgress_Left
-				background-color: dotalevelgradient
-				border-radius: 2px
-				box-shadow: rgba(97, 120, 156, .666) -2px -2px 4px 4px
-				transition-duration: 1s
-				transition-property: width
-				transition-timing-function: linear
+			#ProfileBadge
+				width: 120px
+				height: 120px
+				horizontal-align: center
+
+				> #ProfileLevel > Label
+					margin-bottom: 4px
+					font-size: 28px
+
+			#LevelProgress
+				height: 32px
+				padding: 4px
+				background-color: #464748
+				border: 1px solid #3d4746
+				box-shadow: inset #1f2020 2px 2px 4px 4px
+
+				#LevelProgress_Left
+					background-color: dotalevelgradient
+					border-radius: 2px
+					box-shadow: rgba(97, 120, 156, .666) -2px -2px 4px 4px
+					transition-duration: .7s
+					transition-property: width
+					transition-timing-function: linear
+
+				#LevelProgressValue
+					margin-top: 2px
+					font-size: 16px
+					font-weight: bold
+					color: #000
+					text-shadow: 0 0 8px 1 rgba(193, 206, 234, .533)
+					align: center center
+
+				#LevelProgressChange
+					color: #ddd
+					text-shadow: 0 0 8px 1 rgba(202, 226, 234, .533)
+					opacity: 0
+					transition-duration: .4s
+					transition-property: opacity
+					align: right center
 
 	#TeamsContainer
 		width: 100%
@@ -97,6 +195,9 @@ $window-height: 900px
 
 .Team
 	width: 100%
+	animation-duration: .7s
+	animation-name: EndPlayerFadeLeft
+	animation-timing-function: ease-in-out
 	flow-children: down
 
 	&.IsWinner
@@ -205,6 +306,9 @@ $window-height: 900px
 				horizontal-align: right
 
 
+.IsRight
+	.Player
+		animation-name: EndPlayerFadeRight
 
 .Player
 	width: $window-width
@@ -222,9 +326,6 @@ $window-height: 900px
 
 	&.AnimationEnd
 		opacity: 1
-
-	&.IsRight
-		animation-name: EndPlayerFadeRight
 
 	> .HeaderColumn
 		height: 100%

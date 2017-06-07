@@ -102,3 +102,5 @@ option_voting_custom_abilities_random_omg: Random OMG
 option_voting_custom_abilities_ability_shop: Ability Shop
 
 arena_end_screen_score: 'SCORE: '
+arena_end_screen_victory: 'Victory'
+arena_end_screen_defeat: 'Defeat'
