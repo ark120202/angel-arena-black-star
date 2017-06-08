@@ -1,7 +1,7 @@
-ARENA_VERSION = "1.5"
-GAMEMODE_INITIALIZATION_STATUS = {}
-
 GameMode = GameMode or class({})
+ARENA_VERSION = LoadKeyValues("addoninfo.txt").version
+
+GAMEMODE_INITIALIZATION_STATUS = {}
 
 local requirements = {
 	"libraries/keyvalues",

@@ -1,9 +1,5 @@
-if StatsClient == nil then
-	_G.StatsClient = class({})
-
-	StatsClient.RetryDelay = 5
-end
-StatsClient.ServerAddress = false and "https://stats.dota-aabs.com/" or "http://127.0.0.1:6502/"
+StatsClient = StatsClient or class({})
+ModuleRequire(..., "data")
 
 function StatsClient:Init()
 	PlayerTables:CreateTable("stats_client", {}, AllPlayersInterval)
@@ -53,7 +49,7 @@ function StatsClient:OnGameEnd(winner)
 		local time = GameRules:GetDOTATime(false, true)
 		local matchID = tostring(GameRules:GetMatchID())
 		local debug = true
-		if (GameRules:IsCheatMode() and not debug) or time < 0 then
+		if (GameRules:IsCheatMode() and not StatsClient.Debug) or time < 0 then
 			return
 		end
 		local data = {

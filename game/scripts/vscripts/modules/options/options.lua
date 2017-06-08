@@ -139,7 +139,7 @@ function Options:LoadMapValues()
 	elseif gamemode == "ranked" then
 		SKIP_TEAM_SETUP = true
 		Events:On("AllPlayersLoaded", function()
-			local failed = (GetInGamePlayerCount() < 10 or matchID == 0) and not IsInToolsMode()
+			local failed = (GetInGamePlayerCount() < 10 or matchID == 0) and not StatsClient.Debug
 			if not failed then
 				Options:SetValue("EnableRatingAffection", true)
 				Options:SetValue("BanningPhaseBannedPercentage", 50)

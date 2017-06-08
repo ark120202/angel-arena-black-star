@@ -3,14 +3,14 @@ KEYVALUES_VERSION = "1.00"
 --[[
 	Simple Lua KeyValues library, modified version
 	Author: Martin Noya // github.com/MNoya
-	
+
 	Installation:
 	- require this file inside your code
 
 	Usage:
 	- Your npc custom files will be validated on require, error will occur if one is missing or has faulty syntax.
 	- This allows to safely grab key-value definitions in npc custom abilities/items/units/heroes
-	
+
 		"some_custom_entry"
 		{
 			"CustomName" "Barbarian"
@@ -24,7 +24,7 @@ KEYVALUES_VERSION = "1.00"
 			handle:GetKeyValue("CustomKey")  -- returns 1 (number)
 			handle:GetKeyValue("CustomStat") -- returns "100 200" (string)
 			handle:GetKeyValue("CustomStat", 2) -- returns 200 (number)
-		
+
 		Same results with strings:
 			GetKeyValue("some_custom_entry")
 			GetKeyValue("some_custom_entry", "CustomName")
@@ -118,9 +118,9 @@ function LoadGameKeyValues()
 		if KVFilePaths.new then
 			table.deepmerge(file, LoadKeyValues(scriptPath .. KVFilePaths.new .. ".txt"))
 		end
-		
+
 		KeyValues[KVType] = file
-	end   
+	end
 
 	-- Merge All KVs
 	KeyValues.All = {}
@@ -135,7 +135,6 @@ function LoadGameKeyValues()
 		if not KeyValues.UnitKV[key] then
 			KeyValues.UnitKV[key] = value
 		elseif type(KeyValues.All[key]) == "table" then
-			print("[KeyValues] Warning: Duplicated unit/hero entry for " .. key)
 			table.deepmerge(KeyValues.UnitKV[key], value)
 		end
 	end
