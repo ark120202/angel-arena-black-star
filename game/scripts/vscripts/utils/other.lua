@@ -791,3 +791,7 @@ end
 function ModuleLinkLuaModifier(this, className, fileName, LuaModifierType)
 	return LinkLuaModifier(className, GetDirectoryFromPath(this) .. (fileName or className), LuaModifierType or LUA_MODIFIER_MOTION_NONE)
 end
+
+function pluralize(n, one, many)
+	return n == 1 and one or (many or one .. "s")
+end

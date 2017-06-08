@@ -269,6 +269,14 @@ function HeroSelection:PreformPlayerRandom(playerId)
 		local hero = HeroSelection.RandomableHeroes[RandomInt(1, #HeroSelection.RandomableHeroes)]
 		if not HeroSelection:IsHeroSelected(hero) and not HeroSelection:IsHeroBanned(hero) then
 			HeroSelection:UpdateStatusForPlayer(playerId, "picked", hero)
+			CustomChatSay(-1, PlayerResource:GetTeam(playerId), {
+				localizable = "DOTA_Chat_Random",
+				variables = {
+					["%s1"] = "{player}",
+					["%s2"] = hero
+				},
+				player = playerId
+			})
 			Gold:ModifyGold(playerId, CUSTOM_GOLD_FOR_RANDOM_TOTAL)
 			break
 		end
@@ -277,6 +285,13 @@ end
 
 function HeroSelection:NominateHeroForBan(playerId, hero)
 	if not HeroSelection:IsHeroBanned(hero) then
+		CustomChatSay(-1, -1, {
+			localizable = "DOTA_Chat_AD_NominatedBan",
+			variables = {
+				["%s1"] = hero
+			}
+		})
+
 		PLAYER_DATA[playerId].HeroSelectionBanned = true
 		PlayerTables:SetTableValue("hero_selection_banning_phase", hero, playerId)
 	end
