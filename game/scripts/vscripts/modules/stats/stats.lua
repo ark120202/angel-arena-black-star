@@ -40,7 +40,6 @@ function StatsClient:FetchPreGameData()
 			debugp("StatsClient:FetchPreGameData", "Set team #" .. tostring(team) .. "'s average rating to " .. table.average(values))
 			PlayerTables:SetTableValue("stats_team_rating", team, table.average(values))
 		end
-
 	end, math.huge)
 end
 
