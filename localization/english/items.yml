@@ -609,7 +609,7 @@ DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_arena_Description: |-
-  Active: Energy Burst - Emits a powerful burst of magical damage, which depends on targets max health, upon a targeted enemy unit on any point on the map. Also, blinds enemy for a short time. Upgradable.
+  Active: Energy Burst - Emits a powerful burst of magical damage, which depends on targets max health, upon a targeted enemy unit. Also, blinds enemy for a short time. Upgradable.
   Passive: Increases spell damage output by %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_arena_damage: 'BURST DAMAGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena_bonus_intellect: +$int
@@ -618,11 +618,12 @@ DOTA_Tooltip_ability_item_sunray_dagon_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sunray_dagon_arena_damage_percent: '%HP TO DAMAGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena_blind_duration: 'BLIND DURATION:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
+DOTA_Tooltip_ability_item_sunray_dagon_arena_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_modifier_item_sunray_dagon_arena_blind: Sunray Dagon Blind
 DOTA_Tooltip_modifier_item_sunray_dagon_arena_blind_Description: Missing 100%% of attacks.
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_Description: |-
-  Active: Energy Burst - Emits a powerful burst of magical damage, which depends on targets max health, upon a targeted enemy unit on any point on the map. Also, blinds enemy for a short time. Upgradable.
+  Active: Energy Burst - Emits a powerful burst of magical damage, which depends on targets max health, upon a targeted enemy unit. Also, blinds enemy for a short time. Upgradable.
   Passive: Increases spell damage output by %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_damage: 'BURST DAMAGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_bonus_intellect: +$int
@@ -631,9 +632,10 @@ DOTA_Tooltip_ability_item_sunray_dagon_2_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_damage_percent: '%HP TO DAMAGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_blind_duration: 'BLIND DURATION:'
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
+DOTA_Tooltip_ability_item_sunray_dagon_2_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_Description: |-
-  Active: Energy Burst - Emits a powerful burst of magical damage, which depends on targets max health, upon a targeted enemy unit on any point on the map. Also, blinds enemy for a short time. Upgradable.
+  Active: Energy Burst - Emits a powerful burst of magical damage, which depends on targets max health, upon a targeted enemy unit. Also, blinds enemy for a short time. Upgradable.
   Passive: Increases spell damage output by %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_damage: 'BURST DAMAGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_bonus_intellect: +$int
@@ -642,9 +644,10 @@ DOTA_Tooltip_ability_item_sunray_dagon_3_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_damage_percent: '%HP TO DAMAGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_blind_duration: 'BLIND DURATION:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
+DOTA_Tooltip_ability_item_sunray_dagon_3_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_Description: |-
-  Active: Energy Burst - Emits a powerful burst of magical damage, which depends on targets max health, upon a targeted enemy unit on any point on the map. Also, blinds enemy for a short time. Upgradable.
+  Active: Energy Burst - Emits a powerful burst of magical damage, which depends on targets max health, upon a targeted enemy unit. Also, blinds enemy for a short time. Upgradable.
   Passive: Increases spell damage output by %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_damage: 'BURST DAMAGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_bonus_intellect: +$int
@@ -653,9 +656,10 @@ DOTA_Tooltip_ability_item_sunray_dagon_4_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_damage_percent: '%HP TO DAMAGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_blind_duration: 'BLIND DURATION:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
+DOTA_Tooltip_ability_item_sunray_dagon_4_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_Description: |-
-  Active: Energy Burst - Emits a powerful burst of magical damage, which depends on targets max health, upon a targeted enemy unit on any point on the map. Also, blinds enemy for a short time.
+  Active: Energy Burst - Emits a powerful burst of magical damage, which depends on targets max health, upon a targeted enemy unit. Also, blinds enemy for a short time.
   Passive: Increases spell damage output by %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_damage: 'BURST DAMAGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_bonus_intellect: +$int
@@ -664,6 +668,7 @@ DOTA_Tooltip_ability_item_sunray_dagon_5_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_damage_percent: '%HP TO DAMAGE:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_blind_duration: 'BLIND DURATION:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
+DOTA_Tooltip_ability_item_sunray_dagon_5_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_blink_staff: Blink Staff
 DOTA_Tooltip_ability_item_blink_staff_Description: 'Active: Blink Force - Teleport any target unit to a target point up to %max_blink_range% units away. Double click to instantly cast Blink Force on yourself.  If damage bigger than %blink_damage_to_cooldown% is taken, Blink Staff cannot be used for %blink_damage_cooldown% seconds. After blink any unit get''s unobstructed movement for %unobstructed_movement_duration% seconds.'
 DOTA_Tooltip_ability_item_blink_staff_Note0: Self-casting will cause you to the direction you are facing.

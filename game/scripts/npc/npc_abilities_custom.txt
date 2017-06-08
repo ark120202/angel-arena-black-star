@@ -1506,7 +1506,7 @@
 		"MaxLevel"						"7"
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"3.0 2.5 2.0 1.75 1.5 1.25 1.0"
+		"AbilityCooldown"				"6 5 4 3.5 3 2.5 2"
 		"AbilityManaCost"				"100 150 200 250 300 350 400"
 
 		"AbilitySpecial"

@@ -68,7 +68,7 @@ function RecieveMessage(data) {
 		} else if (data.shop_item_name != null) {
 			html += '<img src="file://{images}/control_icons/chat_wheel_icon.png" class="ChatWheelIcon" />';
 			var localized = data.boss_drop ? 'chat_message_shop_purchase_boss' : data.stock_time != null ? 'chat_message_shop_purchase_no_stock' : data.gold != null ? (data.isQuickbuy ? 'chat_message_shop_purchase_quickbuy_no_gold' : 'chat_message_shop_purchase_no_gold') : (data.isQuickbuy ? 'chat_message_shop_purchase_quickbuy' : 'chat_message_shop_purchase');
-			
+
 			localized = $.Localize(localized);
 			localized = localized.replace('{item_name}', $.Localize('DOTA_Tooltip_ability_' + data.shop_item_name));
 			localized = localized.replace('{gold}', data.gold);

@@ -110,7 +110,7 @@ function Options:LoadDefaultValues()
 	--Can be not networkable
 	Options:SetInitialValue("PreGameTime", 60)
 
-	Options:SetPreGameVoting("kill_limit", {75, 100, 125, 150}, 125, {
+	Options:SetPreGameVoting("kill_limit", {100, 125, 150, 175}, 150, {
 		calculationFunction = "/",
 		callback = function(value)
 			GameRules:SetKillGoal(math.round(value))
