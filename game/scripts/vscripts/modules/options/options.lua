@@ -8,12 +8,21 @@ function Options:SetValue(name, value)
 	PlayerTables:SetTableValue("options", name, value)
 end
 
+function Options:SetInitialValue(name, value)
+	--if type(value) == "boolean" then value = value and 1 or 0 end
+	if not Options.Values[name] then
+		Options.Values[name] = value
+		PlayerTables:SetTableValue("options", name, value)
+	end
+end
+
 function Options:GetValue(name)
 	return Options.Values[name]
 end
 
 function Options:IsEquals(name, value)
 	--if type(value) == "boolean" then value = value and 1 or 0 end
+	if value == nil then value = true end
 	return Options:GetValue(name) == value
 end
 
@@ -88,20 +97,18 @@ function Options:CalculateVotes()
 end
 
 function Options:LoadDefaultValues()
-	Options:SetValue("EnableAbilityShop", false)
-	Options:SetValue("EnableRandomAbilities", false)
-	Options:SetValue("EnableStatisticsCollection", true)
-	Options:SetValue("EnableRatingAffection", false)
-	Options:SetValue("FailedRankedGame", false)
-	--Options:SetValue("MapLayout", "5v5")
+	Options:SetInitialValue("EnableAbilityShop", false)
+	Options:SetInitialValue("EnableRandomAbilities", false)
+	Options:SetInitialValue("EnableStatisticsCollection", true)
+	Options:SetInitialValue("EnableRatingAffection", false)
+	Options:SetInitialValue("FailedRankedGame", false)
+	--Options:SetInitialValue("MapLayout", "5v5")
 
-	Options:SetValue("BanningPhaseBannedPercentage", 0)
-	Options:SetValue("MainHeroList", "Selection")
+	Options:SetInitialValue("BanningPhaseBannedPercentage", 0)
+	Options:SetInitialValue("MainHeroList", "Selection")
 
 	--Can be not networkable
-	Options:SetValue("PlayerCount", 10)
-
-	Options:SetValue("PreGameTime", 60)
+	Options:SetInitialValue("PreGameTime", 60)
 
 	Options:SetPreGameVoting("kill_limit", {75, 100, 125, 150}, 125, {
 		calculationFunction = "/",
@@ -124,6 +131,9 @@ function Options:LoadMapValues()
 			callback = function(value)
 				Options:SetValue("EnableAbilityShop", value == "ability_shop")
 				Options:SetValue("EnableRandomAbilities", value == "random_omg")
+				if value == "ability_shop" then
+					CustomAbilities:PostAbilityShopData()
+				end
 			end
 		})
 	elseif gamemode == "ranked" then
@@ -150,7 +160,7 @@ function Options:LoadCheatValues()
 end
 
 function Options:LoadToolsValues()
-	Options:SetValue("PreGameTime", 0)
+	Options:SetInitialValue("PreGameTime", 0)
 end
 
 function Options:Preload()

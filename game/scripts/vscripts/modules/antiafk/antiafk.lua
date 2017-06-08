@@ -51,6 +51,7 @@ function AntiAFK:ThinkPlayerInGame(playerId)
 		end
 	elseif GetConnectionState(playerId) == DOTA_CONNECTION_STATE_DISCONNECTED then
 		playerData.AntiAFKLastLeftNotify = nil
+		playerData.AntiAFKLastXP = nil
 		--Auto Abandon
 		if not playerData.AutoAbandonGameTime then
 			playerData.AutoAbandonGameTime = GameRules:GetGameTime() + PLAYER_AUTOABANDON_TIME

@@ -97,7 +97,7 @@ end
 
 function GameMode:OnFirstPlayerLoaded()
 	if Options:IsEquals("MainHeroList", "NoAbilities") then
-		AbilityShop:PrepareData()
+		CustomAbilities:PrepareData()
 	end
 end
 

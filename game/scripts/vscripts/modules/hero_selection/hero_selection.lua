@@ -78,7 +78,7 @@ function HeroSelection:PrepareTables()
 				tabIndex = tabIndex
 			}
 
-			if Options:IsEquals("EnableAbilityShop", false) and Options:IsEquals("EnableRandomAbilities", false) then
+			if not Options:IsEquals("MainHeroList", "NoAbilities") then
 				heroData.abilities = HeroSelection:ParseAbilitiesFromTable(heroTable)
 				heroData.isChanged = heroTable.Changed == 1 and tabIndex == 1
 				heroData.linkedColorGroup = heroTable.LinkedColorGroup

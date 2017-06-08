@@ -26,7 +26,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		end
 	end
 	if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and Options:IsEquals("EnableAbilityShop") then
-		AbilityShop:OnAbilityBuy(PlayerID, abilityname)
+		CustomAbilities:OnAbilityBuy(PlayerID, abilityname)
 		return false
 	end
 

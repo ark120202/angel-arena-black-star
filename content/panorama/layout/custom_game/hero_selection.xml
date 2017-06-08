@@ -3,6 +3,7 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/keyframes.css" />
 		<include src="file://{resources}/styles/dynamic_minimap.css" />
+		<include src="file://{resources}/styles/hero_selection_shared.css" />
 		<include src="file://{resources}/styles/hero_selection.css" />
 		<include src="file://{resources}/styles/hero_selection_hero_card.css" />
 		<include src="file://{resources}/styles/hero_selection_preview.css" />
