@@ -99,7 +99,7 @@ option_voting_kill_limit: 'Кол-во убийств:'
 option_voting_custom_abilities: 'Режим выбора способностей:'
 
 arena_end_screen_score: 'СЧЕТ: '
-arena_end_screen_victory: 'Победа'
-arena_end_screen_defeat: 'Поражение'
-arena_end_screen_legend_boss_damage: 'ПБОС'
-arena_end_screen_legend_boss_damage_tooltip: 'Урон по боссам'
+arena_end_screen_victory: Победа
+arena_end_screen_defeat: Поражение
+arena_end_screen_legend_boss_damage: ПБОС
+arena_end_screen_legend_boss_damage_tooltip: Урон по боссам

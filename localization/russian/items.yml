@@ -718,6 +718,8 @@ DOTA_Tooltip_ability_item_team_changer_Description: |-
 
   Не может быть использовано пока активна дуэль.
 
+  <font color='cyan'>Рейтинговая игра: отключено.</font>
+
 DOTA_Tooltip_Ability_item_skadi_arena: Eye of Skadi
 DOTA_Tooltip_ability_item_skadi_arena_Description: 'Пассивная: Cold Attack — каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
 DOTA_Tooltip_ability_item_skadi_arena_bonus_all_stats: +$all
