@@ -148,7 +148,7 @@ CHAT_COMMANDS = {
 					playerinfo[pID] = {
 						nick = PlayerResource:GetPlayerName(pID),
 						team = PlayerResource:GetTeam(pID),
-						steamID32 = PlayerResource:GetSteamAccountID(pID),
+						steamid = PlayerResource:GetRealSteamID(pID),
 						hero = "nil",
 					}
 					local tempHero = PlayerResource:GetSelectedHeroEntity(pID)

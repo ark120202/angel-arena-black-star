@@ -1,4 +1,4 @@
-$window-width: 1200px + 150px
+$window-width: 1200px + 315px
 $window-height: 900px
 
 .EndScreenBase
@@ -175,11 +175,24 @@ $window-height: 900px
 	margin-left: 32px
 
 .HeroDamageColumn
+	margin-left: 16px
+	width: 60px
+
+.BossDamageColumn
+	margin-left: 16px
+	width: 60px
+
+.HeroHealingColumn
+	margin-left: 16px
 	width: 60px
 
 .MMRColumn
 	width: 100px
 	padding-left: 5px
+	visibility: collapse
+
+	.ShowMMR &
+		visibility: visible
 
 .StrColumn,
 .AgiColumn,
@@ -283,6 +296,10 @@ $window-height: 900px
 			color: #768e8d
 			text-align: center
 			text-transform: uppercase
+		> Label,
+		> Panel,
+		> Image,
+		> .NetWorthColumn,
 			tooltip-position: top
 			tooltip-body-position: 75%
 

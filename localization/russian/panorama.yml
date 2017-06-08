@@ -101,3 +101,5 @@ option_voting_custom_abilities: 'Режим выбора способносте�
 arena_end_screen_score: 'СЧЕТ: '
 arena_end_screen_victory: 'Победа'
 arena_end_screen_defeat: 'Поражение'
+arena_end_screen_legend_boss_damage: 'ПБОС'
+arena_end_screen_legend_boss_damage_tooltip: 'Урон по боссам'

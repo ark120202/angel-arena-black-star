@@ -218,9 +218,10 @@ function GameMode:DamageFilter(filterTable)
 			local attackerpid = attacker:GetPlayerOwnerID()
 			if attackerpid > -1 then
 				if victim:IsRealHero() then
-					attacker:ModifyPlayerStat("DamageToEnemyHeroes", filterTable.damage)
+					attacker:ModifyPlayerStat("heroDamage", filterTable.damage)
 				end
 				if victim:IsBoss() then
+					attacker:ModifyPlayerStat("bossDamage", filterTable.damage)
 					victim.DamageReceived = victim.DamageReceived or {}
 					victim.DamageReceived[attackerpid] = (victim.DamageReceived[attackerpid] or 0) + filterTable.damage
 				end

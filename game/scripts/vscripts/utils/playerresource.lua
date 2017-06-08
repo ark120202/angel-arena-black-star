@@ -156,3 +156,8 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 		end
 	end
 end
+
+function CDOTA_PlayerResource:GetRealSteamID(PlayerID)
+	local id = tostring(PlayerResource:GetSteamID(PlayerID))
+	return id == "0" and tostring(PlayerID) or id
+end

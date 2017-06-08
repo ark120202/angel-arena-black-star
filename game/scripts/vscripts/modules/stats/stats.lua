@@ -19,7 +19,7 @@ function StatsClient:FetchPreGameData()
 	}
 	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) then
-			data.players[i] = tostring(PlayerResource:GetSteamID(i))
+			data.players[i] = PlayerResource:GetRealSteamID(i)
 		end
 	end
 	--Should return rating table
@@ -30,8 +30,7 @@ function StatsClient:FetchPreGameData()
 			local team = PlayerResource:GetTeam(pid)
 
 			teamRatings[team] = teamRatings[team] or {}
-			local rating = data.Rating or (3000 + data.TBDRating)
-			if rating then table.insert(teamRatings[team], rating) end
+			table.insert(teamRatings[team], data.Rating or (2500 + (data.TBDRating or 0)))
 
 			PLAYER_DATA[pid].serverData = data
 			PLAYER_DATA[pid].Inventory = data.inventory or {}
@@ -85,16 +84,18 @@ function StatsClient:OnGameEnd(winner)
 				local hero = PlayerResource:GetSelectedHeroEntity(i)
 				local playerInfo = {
 					abandoned = IsPlayerAbandoned(i),
-					steamid = tostring(PlayerResource:GetSteamID(i)),
+					steamid = PlayerResource:GetRealSteamID(i),
 
-					heroDamage = PlayerResource:GetPlayerStat(i, "DamageToEnemyHeroes"),
+					heroDamage = PlayerResource:GetPlayerStat(i, "heroDamage"),
+					bossDamage = PlayerResource:GetPlayerStat(i, "bossDamage"),
+					heroHealing = PlayerResource:GetHealing(i),
 					duelsPlayed = PlayerResource:GetPlayerStat(i, "Duels_Played"),
 					duelsWon = PlayerResource:GetPlayerStat(i, "Duels_Won"),
 					kills = PlayerResource:GetKills(i),
 					deaths = PlayerResource:GetDeaths(i),
 					assists = PlayerResource:GetAssists(i),
 					lasthits = PlayerResource:GetLastHits(i),
-					heroName = HeroSelection:GetSelectedHeroName(i),
+					heroName = HeroSelection:GetSelectedHeroName(i) or "",
 					bonus_str = 0,
 					bonus_agi = 0,
 					bonus_int = 0,
@@ -117,6 +118,7 @@ function StatsClient:OnGameEnd(winner)
 							}
 						end
 					end
+					if playerInfo.heroName == "" then playerInfo.heroName = hero:GetFullName() end
 				end
 				playerInfo.networth = Gold:GetGold(i)
 				for slot, item in pairs(playerInfo.items) do
@@ -139,13 +141,17 @@ function StatsClient:OnGameEnd(winner)
 					local sentData = data.players[pid]
 					clientData.players[pid] = {
 						hero = sentData.heroName,
-						hero_damage = sentData.heroDamage,
+						heroDamage = sentData.heroDamage,
+						bossDamage = sentData.bossDamage,
+						heroHealing = sentData.heroHealing,
+
 						netWorth = sentData.networth,
 						bonus_str = sentData.bonus_str,
 						bonus_agi = sentData.bonus_agi,
 						bonus_int = sentData.bonus_int,
 						ratingNew = receivedData.ratingNew,
 						ratingOld = receivedData.ratingOld,
+						ratingGamesRemaining = receivedData.ratingGamesRemaining,
 						experienceNew = receivedData.experienceNew,
 						experienceOld = receivedData.experienceOld,
 					}
@@ -174,7 +180,7 @@ end
 function StatsClient:AddGuide(data)
 	local playerID = data.PlayerID
 	local hero = HeroSelection:GetSelectedHeroName(playerID)
-	local steamID = tostring(PlayerResource:GetSteamID(playerID))
+	local steamID = PlayerResource:GetRealSteamID(playerID)
 	if #data.title < 4 or #data.description < 4 then
 		return
 	end
@@ -218,7 +224,7 @@ end
 
 function StatsClient:VoteGuide(data)
 	StatsClient:Send("VoteGuide", {
-		steamID = tostring(PlayerResource:GetSteamID(data.PlayerID)),
+		steamID = PlayerResource:GetRealSteamID(data.PlayerID),
 		id = data.id or "",
 		vote = type(data.vote) == "number" and data.vote or 0
 	})

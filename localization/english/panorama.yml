@@ -104,3 +104,5 @@ option_voting_custom_abilities_ability_shop: Ability Shop
 arena_end_screen_score: 'SCORE: '
 arena_end_screen_victory: 'Victory'
 arena_end_screen_defeat: 'Defeat'
+arena_end_screen_legend_boss_damage: 'BSD'
+arena_end_screen_legend_boss_damage_tooltip: 'Damage done to Bosses'

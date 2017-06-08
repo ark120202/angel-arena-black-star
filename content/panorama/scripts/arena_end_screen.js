@@ -1,4 +1,4 @@
-GAME_RESULT = {};
+var GAME_RESULT = {};
 
 function FinishGame() {
 	var maxDelay = 0;
@@ -28,14 +28,14 @@ function Snippet_Player(playerID, rootPanel, index) {
 	var playerData = GAME_RESULT.players[playerID];
 	var playerInfo = Game.GetPlayerInfo(playerID);
 	panel.FindChildTraverse('PlayerAvatar').steamid = playerInfo.player_steamid;
-	panel.FindChildTraverse('PlayerAvatar').SetPanelEvent('onactivate', function() {
-		GameEvents.SendEventClientSide('player_profiles_show_info', {PlayerID: playerID});
-	});
+	panel.FindChildTraverse('PlayerNameScoreboard').steamid = playerInfo.player_steamid;
 
 	panel.index = index; // For backwards compatibility
 	panel.style.animationDelay = index * 0.3 + 's';
 	$.Schedule(index * 0.3, function() {
-		panel.AddClass('AnimationEnd');
+		try {
+			panel.AddClass('AnimationEnd');
+		} catch(e){};
 	});
 
 	panel.FindChildTraverse('HeroIcon').SetImage(TransformTextureToPath(playerData.hero));
@@ -45,7 +45,9 @@ function Snippet_Player(playerID, rootPanel, index) {
 	panel.SetDialogVariableInt('deaths', Players.GetDeaths(playerID));
 	panel.SetDialogVariableInt('assists', Players.GetAssists(playerID));
 	panel.SetDialogVariableInt('last_hits', Players.GetLastHits(playerID));
-	panel.SetDialogVariableInt('hero_damage', playerData.hero_damage);
+	panel.SetDialogVariableInt('heroDamage', playerData.heroDamage);
+	panel.SetDialogVariableInt('bossDamage', playerData.bossDamage);
+	panel.SetDialogVariableInt('heroHealing', playerData.heroHealing);
 	panel.SetDialogVariableInt('strength', playerData.bonus_str);
 	panel.SetDialogVariableInt('agility', playerData.bonus_agi);
 	panel.SetDialogVariableInt('intellect', playerData.bonus_int);
@@ -60,7 +62,7 @@ function Snippet_Player(playerID, rootPanel, index) {
 				delta < 0 ? '<font color="red">' + delta + '</font>' : '±0';
 			mmrString = playerData.ratingNew + ' (' + mmrString + ')';
 		} else mmrString = 'TBD -> ' + playerData.ratingNew;
-	} else mmrString = 'TBD';
+	} else mmrString = 'TBD (' + (playerData.ratingGamesRemaining || 0) + ')';
 	panel.SetDialogVariable('rating', mmrString);
 
 	var ItemsContainer = panel.FindChildTraverse('ItemsContainer');
@@ -131,6 +133,7 @@ function OnGameResult(gameResult) {
 }
 
 (function() {
+	$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
 	$.GetContextPanel().RemoveClass('FadeOut');
 	$('#LoadingPanel').visible = true;
 	$('#ErrorPanel').visible = false;
