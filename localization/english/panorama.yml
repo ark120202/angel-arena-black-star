@@ -46,6 +46,7 @@ hero_selection_lock: Lock
 hero_selection_unlock: Unlock
 hero_selection_heroes_default: Default
 hero_selection_heroes_new: New
+hero_selection_repick_tooltip: You forfeit 200 of your starting gold for repicking
 
 item_rune_keeper_no_runes_left: Rune Keeper is empty now.
 item_rune_keeper_contains: "Rune Keeper contains:\_"
@@ -70,6 +71,7 @@ server_error_panorama_shop_youtube_no_tags: Make sure your video has 'Angel Aren
 server_error_panorama_shop_youtube_not_found: Video wasn't found
 
 hud_modifier_click_to_remove: Click to remove
+
 ability_shop_shift_no: LMB/RMB - Buy Ability. Hold SHIFT to enter selling mode.
 ability_shop_shift_yes: 'LMB - Sell ability, RMB - Downgrade ability. Release SHIFT to enter purchase mode.'
 ability_shop_purchased_only: Show purchased abilities

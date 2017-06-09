@@ -184,7 +184,7 @@
 					<DOTAScenePanel id="PreviewRays" hittest="false" map="scenes/loadout_preview_rays" camera="camera_1" />
 					<Panel id="HeroPreviewScene" />
 
-					<Button id="EnterGameRepickButton" class="PickButton EnterGameButton" onactivate="$.GetContextPanel().RemoveClass('CanRepick');GameEvents.SendCustomGameEventToServer('hero_selection_player_repick', {hero: SelectedHeroName})"  onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Hero_Selection_TT_RePicking_Text );" >
+					<Button id="EnterGameRepickButton" class="PickButton EnterGameButton" onactivate="$.GetContextPanel().RemoveClass('CanRepick');GameEvents.SendCustomGameEventToServer('hero_selection_player_repick', {hero: SelectedHeroName})"  onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip(#hero_selection_repick_tooltip);" >
 						<Panel class="EnterGameIconContainer">
 							<Panel class="RepickIcon"/>
 						</Panel>

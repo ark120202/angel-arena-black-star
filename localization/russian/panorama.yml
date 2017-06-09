@@ -45,6 +45,7 @@ hero_selection_lock: Закрепить
 hero_selection_unlock: Открепить
 hero_selection_heroes_default: Стандартные
 hero_selection_heroes_new: Новые
+hero_selection_repick_tooltip: За смену героя вы потеряете 200 начального золота
 
 item_rune_keeper_no_runes_left: Rune Keeper теперь пуст.
 item_rune_keeper_contains: "Rune Keeper содержит руны:\_"
@@ -69,6 +70,7 @@ server_error_panorama_shop_youtube_no_tags: Проверьте наличие т
 server_error_panorama_shop_youtube_not_found: Видео не найдено
 
 hud_modifier_click_to_remove: Нажмите чтобы снять
+
 ability_shop_shift_no: ЛКМ/ПКМ - Купить способность. Для перехода в режим продажи удерживайте SHIFT.
 ability_shop_shift_yes: 'ЛКМ - Продать способность, ПКМ - Понизить уровень способности. Для покупки отпустите SHIFT.'
 ability_shop_purchased_only: Только приобретенные способности
