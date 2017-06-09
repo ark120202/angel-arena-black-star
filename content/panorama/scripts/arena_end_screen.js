@@ -68,13 +68,17 @@ function Snippet_Player(playerID, rootPanel, index) {
 	var ItemsContainer = panel.FindChildTraverse('ItemsContainer');
 	var BackpackItemsContainer = panel.FindChildTraverse('BackpackItemsContainer');
 	var playerItems = Game.GetPlayerItems(playerID);
-	for (var i = playerItems.inventory_slot_min; i < playerItems.inventory_slot_max; i++) {
-		var item = playerItems.inventory[i];
-		var isBackpack = i >= 6;
-		var itemContainer = panel.FindChildTraverse(isBackpack ? 'BackpackItemsContainer' : 'ItemsContainer');
-		var itemPanel = $.CreatePanel('DOTAItemImage', itemContainer, '');
+	if (playerItems && playerItems.inventory_slot_min && playerItems.inventory_slot_max && playerItems.inventory) {
+		for (var i = playerItems.inventory_slot_min; i < playerItems.inventory_slot_max; i++) {
+			var item = playerItems.inventory[i];
+			var itemPanel = $.CreatePanel('DOTAItemImage', panel.FindChildTraverse(i >= 6 ? 'BackpackItemsContainer' : 'ItemsContainer'), '');
 
-		if (item) itemPanel.itemname = item.item_name;
+			if (item) itemPanel.itemname = item.item_name;
+		}
+	} else {
+		for (var i = 0; i < 9; i++) {
+			var itemPanel = $.CreatePanel('DOTAItemImage', panel.FindChildTraverse(i >= 6 ? 'BackpackItemsContainer' : 'ItemsContainer'), '');
+		}
 	}
 }
 
@@ -133,6 +137,10 @@ function OnGameResult(gameResult) {
 }
 
 (function() {
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false);
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME_CHAT, false);
+	FindDotaHudElement('GameEndContainer').visible = false;
+
 	$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
 	$.GetContextPanel().RemoveClass('FadeOut');
 	$('#LoadingPanel').visible = true;
@@ -160,7 +168,4 @@ function OnGameResult(gameResult) {
 			}
 		}
 	});*/
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false);
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME_CHAT, false);
-	FindDotaHudElement('GameEndContainer').visible = false;
 })();
