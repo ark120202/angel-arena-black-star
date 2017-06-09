@@ -818,7 +818,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"break_time"			"5.5"
+				"break_time"			"6"
 			}
 			"10"
 			{

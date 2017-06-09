@@ -15,7 +15,7 @@ DOTA_Tooltip_ability_item_heart_arena_Description: 'Пассивная: Health R
 DOTA_Tooltip_ability_item_heart_arena_Lore: 'Сохранившееся сердце вымершего монстра, с которым его владелец становится мужественнее.'
 DOTA_Tooltip_ability_item_heart_arena_bonus_strength: +$str
 DOTA_Tooltip_ability_item_heart_arena_bonus_health: +$health
-DOTA_Tooltip_ability_item_heart_arena_health_regen_rate: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
+DOTA_Tooltip_ability_item_heart_arena_health_regen_percent_per_second: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
 DOTA_Tooltip_ability_item_blink_arena: Blink Dagger
 DOTA_Tooltip_ability_item_blink_arena_Description: 'Активируемая: Blink — телепортирует к указанной точке на расстоянии до %blink_range% единиц. Если вы получите урон, то не сможете использовать Blink Dagger в течение %blink_damage_cooldown% сек.'
 DOTA_Tooltip_ability_item_blink_arena_Lore: 'Легендарный кинжал, использовавшийся самым быстрым убийцей, когда-либо ходившим по земле.'

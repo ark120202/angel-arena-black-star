@@ -7757,7 +7757,7 @@
 		"AbilitySharedCooldown"			"ethereal"
 		"ItemShopTags"					"int;agi;str;hard_to_tag"
 		"ItemQuality"					"rare"
-		"ItemAliases"					"ghost scepter;drums of endurance;ancient;"
+		"ItemAliases"					"ghost scepter;drums of endurance;ancient"
 
 		"AbilitySpecial"
 		{
@@ -9419,17 +9419,15 @@
 				"var_type"				"FIELD_INTEGER"
 				"bash_damage"			"210"
 			}
-
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"valor_armor_reduction"	"-25"
+				"valor_armor_reduction"	"-40"
 			}
-
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"valor_armor_bonus"		"50"
+				"valor_armor_bonus"		"40"
 			}
 			"13"
 			{
@@ -9837,7 +9835,7 @@
 		"ItemResult"					"item_phantom_cuirass"
 		"ItemRequirements"
 		{
-			"01"						"item_assault;item_platemail;item_hyperstone;"
+			"01"						"item_assault;item_platemail;item_hyperstone"
 		}
 	}
 

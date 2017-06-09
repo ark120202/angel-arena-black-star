@@ -819,12 +819,6 @@
 				"var_type"	"FIELD_INTEGER"
 				"blade_dance_crit_chance"	"20.0 22.5 25.0 27.5 30.0 32.5 35.0"
 			}
-			"99"
-			{
-				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
-				"CalculateSpellDamageTooltip" "0"
-			}
 		}
 
 	}
@@ -885,13 +879,13 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"healing_ward_movespeed_tooltip"	"480"
+				"healing_ward_movespeed_tooltip"	"550"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"healing_ward_duration_tooltip"	"30"
+				"healing_ward_duration_tooltip"	"25"
 			}
 
 		}
@@ -9529,7 +9523,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tooltip_duration"	"10"
+				"tooltip_duration"	"10 10 10 10 10 10 15"
 			}
 			"05"
 			{
@@ -12694,7 +12688,6 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_damage_taken"	"10 15 20 25 30 35 40"
-				"CalculateSpellDamageTooltip" "0"
 			}
 
 			"02"
@@ -16779,7 +16772,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"missile_speed"	"1600 1600 1600 1600 1600 1800 0"
+				"missile_speed"	"1600 1600 1600 1600 1600 1800 2000"
 			}
 			"99"
 			{

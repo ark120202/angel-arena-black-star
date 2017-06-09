@@ -205,12 +205,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stack_growth_interval"	"2"
+				"stack_growth_interval"	"1"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stack_duration"		"3"
+				"stack_duration"		"1.5"
 			}
 		}
 

@@ -15,7 +15,7 @@ DOTA_Tooltip_ability_item_heart_arena_Description: 'Passive: Health Regeneration
 DOTA_Tooltip_ability_item_heart_arena_Lore: 'Preserved heart of an extinct monster, it bolsters the bearer''s fortitude.'
 DOTA_Tooltip_ability_item_heart_arena_bonus_strength: +$str
 DOTA_Tooltip_ability_item_heart_arena_bonus_health: +$health
-DOTA_Tooltip_ability_item_heart_arena_health_regen_rate: '%HEALTH RESTORED PER SECOND:'
+DOTA_Tooltip_ability_item_heart_arena_health_regen_percent_per_second: '%HEALTH RESTORED PER SECOND:'
 DOTA_Tooltip_ability_item_blink_arena: Blink Dagger
 DOTA_Tooltip_ability_item_blink_arena_Description: 'Active: Blink - Teleport to a target point up to %blink_range% units away. If damage is taken, Blink Dagger cannot be used for %blink_damage_cooldown% seconds.'
 DOTA_Tooltip_ability_item_blink_arena_Lore: The fabled dagger used by the fastest assassin ever to walk the lands.

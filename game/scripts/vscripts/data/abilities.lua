@@ -177,8 +177,6 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	nyx_assassin_mana_burn = true,
 	skywrath_mage_arcane_bolt = true,
 	elder_titan_earth_splitter = true,
-	ember_spirit_sleight_of_fist = true,
-	shadow_demon_soul_catcher = true,
 	necrolyte_reapers_scythe = true,
 }
 

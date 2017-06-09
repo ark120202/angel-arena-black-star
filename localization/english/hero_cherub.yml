@@ -21,6 +21,7 @@ DOTA_Tooltip_ability_cherub_synthesis_base_conversion_rate: 'BASE CONVERSION RAT
 DOTA_Tooltip_ability_cherub_synthesis_mana_to_hp_pct: '%MANA TO HEALTH (DAY):'
 DOTA_Tooltip_ability_cherub_synthesis_hp_to_mana_pct: '%HEALTH TO MANA (NIGHT):'
 
+DOTA_Tooltip_ability_cherub_explosive_spore: Explosive Spore
 DOTA_Tooltip_ability_cherub_explosive_spore_Description: |-
   Creates a floating spore with free pathing. Spores will grow over time and explode after %explode_delay% seconds, dealing magical damage in an area of effect and lifestealing based on damage dealt.
   Cherub controls Spores individually and gains lifesteal from them. Spores have 0 armor and 0 magic resistance, and give %spore_bounty_gold% gold and %spore_bounty_exp% exp if killed.
