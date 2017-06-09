@@ -116,7 +116,6 @@ function Precache(context)
 					for minute,model in pairs(minutes) do
 						if minute ~= -1 then
 							table.insert(models, model)
-							print(model)
 						end
 					end
 				end
