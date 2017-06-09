@@ -795,3 +795,7 @@ end
 function pluralize(n, one, many)
 	return n == 1 and one or (many or one .. "s")
 end
+
+function iif(cond, yes, no)
+	if cond then return yes else return no end
+end
