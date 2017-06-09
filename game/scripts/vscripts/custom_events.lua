@@ -122,7 +122,7 @@ function CustomChatSay(playerId, teamonly, data)
 			end
 		end
 		local team = type(teamonly) == "number" and teamonly or PlayerResource:GetTeam(playerId)
-		args.teamonly = type(teamonly) == "boolean" and teamonly or teamonly ~= -1
+		args.teamonly = type(teamonly) == "boolean" and teamonly
 		if args.teamonly then
 			CustomGameEventManager:Send_ServerToTeam(team, "custom_chat_recieve_message", args)
 			--CustomGameEventManager:Send_ServerToTeam(1, "custom_chat_recieve_message", args) --TODO: Spect, need test

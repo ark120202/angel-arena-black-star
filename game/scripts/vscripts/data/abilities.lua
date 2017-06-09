@@ -41,7 +41,15 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
 	poseidon_dark_whale = true,
-	faceless_void_time_freeze =true,
+	faceless_void_time_freeze = true,
+
+	item_titanium_bar = true,
+	item_black_king_bar_arena = true,
+	item_black_king_bar_2 = true,
+	item_black_king_bar_3 = true,
+	item_black_king_bar_4 = true,
+	item_black_king_bar_5 = true,
+	item_black_king_bar_6 = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
@@ -59,6 +67,12 @@ REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_titanium_bar = true,
+	item_black_king_bar_arena = true,
+	item_black_king_bar_2 = true,
+	item_black_king_bar_3 = true,
+	item_black_king_bar_4 = true,
+	item_black_king_bar_5 = true,
+	item_black_king_bar_6 = true,
 
 	destroyer_body_reconstruction = true,
 }

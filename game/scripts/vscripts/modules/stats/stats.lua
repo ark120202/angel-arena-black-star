@@ -115,9 +115,9 @@ function StatsClient:OnGameEnd(winner)
 					end
 					if playerInfo.heroName == "" then playerInfo.heroName = hero:GetFullName() end
 				end
-				playerInfo.networth = Gold:GetGold(i)
+				playerInfo.netWorth = Gold:GetGold(i)
 				for slot, item in pairs(playerInfo.items) do
-					playerInfo.networth = playerInfo.networth + GetTrueItemCost(item.name)
+					playerInfo.netWorth = playerInfo.netWorth + GetTrueItemCost(item.name)
 				end
 				data.players[i] = playerInfo
 			end
@@ -140,10 +140,12 @@ function StatsClient:OnGameEnd(winner)
 						bossDamage = sentData.bossDamage,
 						heroHealing = sentData.heroHealing,
 
-						netWorth = sentData.networth,
+						netWorth = sentData.netWorth,
 						bonus_str = sentData.bonus_str,
 						bonus_agi = sentData.bonus_agi,
 						bonus_int = sentData.bonus_int,
+						items = sentData.items,
+
 						ratingNew = receivedData.ratingNew,
 						ratingOld = receivedData.ratingOld,
 						ratingGamesRemaining = receivedData.ratingGamesRemaining,

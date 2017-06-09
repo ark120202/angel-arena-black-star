@@ -67,14 +67,14 @@ function Snippet_Player(playerID, rootPanel, index) {
 
 	var ItemsContainer = panel.FindChildTraverse('ItemsContainer');
 	var BackpackItemsContainer = panel.FindChildTraverse('BackpackItemsContainer');
-	var playerItems = Game.GetPlayerItems(playerID);
-	for (var i = playerItems.inventory_slot_min; i < playerItems.inventory_slot_max; i++) {
-		var item = playerItems.inventory[i];
-		var isBackpack = i >= 6;
-		var itemContainer = panel.FindChildTraverse(isBackpack ? 'BackpackItemsContainer' : 'ItemsContainer');
-		var itemPanel = $.CreatePanel('DOTAItemImage', itemContainer, '');
 
-		if (item) itemPanel.itemname = item.item_name;
+	for (var i = 0; i < 9; i++) {
+		var item = playerData.items[i];
+		var itemPanel = $.CreatePanel('DOTAItemImage', panel.FindChildTraverse(i >= 6 ? 'BackpackItemsContainer' : 'ItemsContainer'), '');
+		if (item) {
+			itemPanel.itemname = item.name;
+			// item.charges
+		}
 	}
 }
 
@@ -102,7 +102,6 @@ function Snippet_Team(team) {
 }
 
 function OnGameResult(gameResult) {
-	console.log(gameResult);
 	if (!gameResult.players) {
 		$('#LoadingPanel').visible = false;
 		$('#ErrorPanel').visible = true;
@@ -133,6 +132,10 @@ function OnGameResult(gameResult) {
 }
 
 (function() {
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false);
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME_CHAT, false);
+	FindDotaHudElement('GameEndContainer').visible = false;
+
 	$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
 	$.GetContextPanel().RemoveClass('FadeOut');
 	$('#LoadingPanel').visible = true;
@@ -142,25 +145,4 @@ function OnGameResult(gameResult) {
 	DynamicSubscribePTListener('stats_game_result', function(tableName, changesObject) {
 		OnGameResult(changesObject);
 	});
-
-	/*OnGameResult({
-		winner: Game.GetGameWinner(),
-		players: {
-			0: {
-				hero: 'npc_dota_hero_slark',
-				hero_damage: 30000,
-				netWorth: 600000,
-				ratingNew: 10000,
-				ratingOld: 'TBD',
-				strength: 100,
-				agility: 100,
-				intellect: 100,
-				xpNew: 100,
-				xpOld: 0
-			}
-		}
-	});*/
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false);
-	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME_CHAT, false);
-	FindDotaHudElement('GameEndContainer').visible = false;
 })();
