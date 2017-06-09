@@ -5746,7 +5746,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cooldown_min"			"30"
+				"cooldown_min"			"60"
 			}
 			"08"
 			{

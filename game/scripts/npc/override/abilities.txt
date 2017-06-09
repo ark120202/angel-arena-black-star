@@ -17433,7 +17433,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"700"
 		"AbilityCastPoint"	"0"
-		"AbilityCooldown"	"12 11 10 9 8 7 6"
+		"AbilityCooldown"	"35 31 27 23 18 12 6"
 		"AbilityManaCost"	"50"
 		"AbilitySpecial"
 		{
