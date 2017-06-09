@@ -1,10 +1,12 @@
-modifier_item_casino_drug_pill3_addiction = class({})
+modifier_item_casino_drug_pill3_addiction = class({
+	IsDebuff =      function() return true end,
+	IsPurgable =    function() return false end,
+	RemoveOnDeath = function() return false end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_PERMANENT end,
+	GetTexture =    function() return "arena/casino_drug_pill3" end,
+})
 
-function modifier_item_casino_drug_pill3_addiction:IsDebuff()
-	return true
-end
-
-function modifier_item_casino_drug_pill3_addiction:OnCreated(keys)
+function modifier_item_casino_drug_pill3_addiction:OnCreated()
 	if IsServer() then
 		self.amplitude = GetAbilitySpecial(self:GetAbility():GetName(), "strange_moving_addiction_amplitude")
 		self.duration = GetAbilitySpecial(self:GetAbility():GetName(), "random_particles_addiction_duration")
@@ -24,20 +26,4 @@ function modifier_item_casino_drug_pill3_addiction:OnIntervalThink()
 			end
 		end
 	end
-end
-
-function modifier_item_casino_drug_pill3_addiction:GetTexture()
-	return "arena/casino_drug_pill3"
-end
-
-function modifier_item_casino_drug_pill3_addiction:GetAttributes()
-	return MODIFIER_ATTRIBUTE_PERMANENT
-end
-
-function modifier_item_casino_drug_pill3_addiction:IsPurgable()
-	return false
-end
-
-function modifier_item_casino_drug_pill3_addiction:RemoveOnDeath()
-	return false
 end

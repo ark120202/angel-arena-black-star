@@ -41,7 +41,6 @@ local requirements = {
 }
 
 local modifiers = {
-	modifier_item_shard_attackspeed_stack = "items/lua/modifiers/modifier_item_shard_attackspeed_stack",
 	modifier_apocalypse_apocalypse = "heroes/hero_apocalypse/modifier_apocalypse_apocalypse",
 	modifier_set_attack_range = "modifiers/modifier_set_attack_range",
 	modifier_charges = "modifiers/modifier_charges",
@@ -49,7 +48,12 @@ local modifiers = {
 	modifier_max_attack_range = "modifiers/modifier_max_attack_range",
 	modifier_arena_hero = "modifiers/modifier_arena_hero",
 	modifier_item_demon_king_bar_curse = "items/modifier_item_demon_king_bar_curse",
-	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game"
+	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game",
+
+	modifier_item_shard_attackspeed_stack = "items/modifier_item_shard_attackspeed_stack",
+	modifier_item_casino_drug_pill1_addiction = "modifiers/modifier_item_casino_drug_pill1_addiction",
+	modifier_item_casino_drug_pill2_addiction = "modifiers/modifier_item_casino_drug_pill2_addiction",
+	modifier_item_casino_drug_pill3_addiction = "modifiers/modifier_item_casino_drug_pill3_addiction",
 }
 
 for k,v in pairs(modifiers) do

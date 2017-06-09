@@ -1,11 +1,27 @@
-modifier_item_sacred_blade_mail = class({})
+LinkLuaModifier("modifier_item_sacred_blade_mail", "items/item_sacred_blade_mail.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_sacred_blade_mail_active", "items/item_sacred_blade_mail.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_sacred_blade_mail_buff", "items/item_sacred_blade_mail.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_sacred_blade_mail_buff_cooldown", "items/item_sacred_blade_mail.lua", LUA_MODIFIER_MOTION_NONE)
 
-function modifier_item_sacred_blade_mail:IsHidden()
-	return true
+item_sacred_blade_mail = class({
+	GetIntrinsicModifierName = function() return "modifier_item_sacred_blade_mail" end,
+})
+
+if IsServer() then
+	function item_sacred_blade_mail:OnSpellStart()
+		local caster = self:GetCaster()
+		caster:AddNewModifier(caster, self, "modifier_item_sacred_blade_mail_active", {duration = self:GetSpecialValueFor("duration")})
+		caster:EmitSound("DOTA_Item.BladeMail.Activate")
+	end
 end
 
+
+modifier_item_sacred_blade_mail = class({
+	IsHidden = function() return true end,
+})
+
 function modifier_item_sacred_blade_mail:DeclareFunctions()
-	return { 
+	return {
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
@@ -53,19 +69,13 @@ if IsServer() then
 end
 
 
-modifier_item_sacred_blade_mail_active = class({})
-function modifier_item_sacred_blade_mail_active:GetEffectName()
-	return "particles/items_fx/blademail.vpcf"
-end
-function modifier_item_sacred_blade_mail_active:GetEffectAttachType()
-	return PATTACH_ABSORIGIN
-end
-function modifier_item_sacred_blade_mail_active:GetStatusEffectName()
-	return "particles/status_fx/status_effect_blademail.vpcf"
-end
-function modifier_item_sacred_blade_mail_active:StatusEffectPriority()
-	return 10
-end
+modifier_item_sacred_blade_mail_active = class({
+	GetEffectName =        function() return "particles/items_fx/blademail.vpcf" end,
+	GetEffectAttachType =  function() return PATTACH_ABSORIGIN end,
+	GetStatusEffectName =  function() return "particles/status_fx/status_effect_blademail.vpcf" end,
+	StatusEffectPriority = function() return 10 end,
+})
+
 if IsServer() then
 	function modifier_item_sacred_blade_mail_active:DeclareFunctions()
 		return { MODIFIER_EVENT_ON_TAKEDAMAGE }
@@ -97,10 +107,7 @@ if IsServer() then
 	end
 end
 
-modifier_item_sacred_blade_mail_buff_cooldown = class({})
-function modifier_item_sacred_blade_mail_buff_cooldown:IsPurgable()
-	return false
-end
-function modifier_item_sacred_blade_mail_buff_cooldown:IsDebuff()
-	return true
-end
+modifier_item_sacred_blade_mail_buff_cooldown = class({
+	IsPurgable = function() return false end,
+	IsDebuff = function() return true end,
+})

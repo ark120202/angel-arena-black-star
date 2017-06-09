@@ -1,0 +1,279 @@
+""
+{
+	"item_recipe_radiance_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"10152"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"1350"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_radiance_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_relic"
+		}
+	}
+
+	"item_recipe_radiance_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"10153"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"4300"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_radiance_2"
+		"ItemRequirements"
+		{
+			"01"						"item_radiance_arena"
+		}
+	}
+
+	"item_recipe_radiance_3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"10154"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"15000"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_radiance_3"
+		"ItemRequirements"
+		{
+			"01"						"item_radiance_2"
+		}
+	}
+
+	"item_recipe_radiance_frozen"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"10155"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"20000"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_radiance_frozen"
+		"ItemRequirements"
+		{
+			"01"						"item_radiance_3;item_skadi_8"
+		}
+	}
+
+	"item_radiance_arena"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_radiance.lua"
+		"ID"							"10159"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"item_arena/radiance_arena"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"65 120 200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_damage_per_second"	"50 120 225"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blind_pct"					"20 30 40"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_speed_slow_pct"		"-10 -15 -20"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_slow"			"-15 -30 -45"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"700 750 800"
+			}
+		}
+	}
+
+	"item_radiance_2"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_radiance.lua"
+		"ID"							"10161"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"item_arena/radiance_2"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance 2"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"65 120 200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_damage_per_second"	"50 120 225"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blind_pct"					"20 30 40"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_speed_slow_pct"		"-10 -15 -20"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_slow"			"-15 -30 -45"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"700 750 800"
+			}
+		}
+	}
+
+	"item_radiance_3"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_radiance.lua"
+		"ID"							"10163"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"item_arena/radiance_3"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"65 120 200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_damage_per_second"	"50 120 225"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blind_pct"					"20 30 40"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_speed_slow_pct"		"-10 -15 -20"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_slow"			"-15 -30 -45"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"700 750 800"
+			}
+		}
+	}
+
+	"item_radiance_frozen"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_radiance.lua"
+		"ID"							"10165"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"item_arena/radiance_frozen"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"frozen radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"225"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"2150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"2350"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"350"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_damage_per_second"	"500"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blind_pct"					"40"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"800"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cold_movement_speed_pct"		"-50"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cold_attack_speed"			"-75"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_duration"			"8"
+			}
+		}
+	}
+}

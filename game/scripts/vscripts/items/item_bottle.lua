@@ -1,6 +1,7 @@
 if IsClient() then require("utils/shared") end
+LinkLuaModifier("modifier_item_bottle_arena_heal", "items/item_bottle.lua", LUA_MODIFIER_MOTION_NONE)
+
 item_bottle_arena = class({})
-LinkLuaModifier("modifier_item_bottle_arena_heal", "items/lua/modifiers/modifier_item_bottle_arena_heal.lua", LUA_MODIFIER_MOTION_NONE)
 function item_bottle_arena:GetAbilityTextureName()
 	return self:GetNetworkableEntityInfo("ability_texture") or "item_arena/bottle_3"
 end
@@ -44,4 +45,27 @@ if IsServer() then
 		self.RuneStorage = type
 		self:SetCurrentCharges(3)
 	end
+end
+
+
+modifier_item_bottle_arena_heal = class({
+	GetTexture =          function() return "item_arena/bottle_3" end,
+	IsPurgable =          function() return false end,
+	GetEffectName =       function() return "particles/items_fx/bottle.vpcf" end,
+	GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end,
+})
+
+function modifier_item_bottle_arena_heal:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT
+	}
+end
+
+function modifier_item_bottle_arena_heal:GetModifierConstantHealthRegen()
+	return self:GetAbility():GetAbilitySpecial("health_restore") / self:GetDuration()
+end
+
+function modifier_item_bottle_arena_heal:GetModifierConstantManaRegen()
+	return self:GetAbility():GetAbilitySpecial("mana_restore") / self:GetDuration()
 end

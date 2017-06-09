@@ -1,10 +1,29 @@
-modifier_item_golden_eagle_relic = class({})
-function modifier_item_golden_eagle_relic:IsHidden()
-	return true
+LinkLuaModifier("modifier_item_golden_eagle_relic", "items/item_golden_eagle_relic.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_golden_eagle_relic_enabled", "items/item_golden_eagle_relic.lua", LUA_MODIFIER_MOTION_NONE)
+
+item_golden_eagle_relic = class({
+	GetIntrinsicModifierName = function() return "modifier_item_golden_eagle_relic" end,
+})
+
+if IsServer() then
+	function item_golden_eagle_relic:OnSpellStart()
+		local caster = self:GetCaster()
+		if caster:HasModifier("modifier_item_golden_eagle_relic_enabled") then
+			caster:RemoveModifierByName("modifier_item_golden_eagle_relic_enabled")
+			caster:EmitSound("DOTA_Item.Armlet.DeActivate")
+		else
+			caster:AddNewModifier(caster, self, "modifier_item_golden_eagle_relic_enabled", nil)
+			caster:EmitSound("DOTA_Item.MaskOfMadness.Activate")
+		end
+	end
 end
-function modifier_item_golden_eagle_relic:GetAttributes()
-	return MODIFIER_ATTRIBUTE_MULTIPLE
-end
+
+
+modifier_item_golden_eagle_relic = class({
+	IsHidden =      function() return true end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+})
+
 function modifier_item_golden_eagle_relic:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
@@ -19,13 +38,11 @@ function modifier_item_golden_eagle_relic:GetModifierPreAttack_BonusDamage()
 end
 
 
-modifier_item_golden_eagle_relic_enabled = class({})
-function modifier_item_golden_eagle_relic_enabled:GetEffectName()
-	return "particles/arena/items_fx/golden_eagle_relic_buff.vpcf"
-end
-function modifier_item_golden_eagle_relic_enabled:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
-end
+modifier_item_golden_eagle_relic_enabled = class({
+	GetEffectName =       function() return "particles/arena/items_fx/golden_eagle_relic_buff.vpcf" end,
+	GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end,
+})
+
 function modifier_item_golden_eagle_relic_enabled:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
