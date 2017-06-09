@@ -109,6 +109,21 @@ function Precache(context)
 		DynamicWearables:PrecacheUnparsedWearable(context, handle)
 	end
 
+	for _, spawner in pairs(SPAWNER_SETTINGS) do
+		if type(spawner) == "table" and spawner.SpawnTypes then
+			for _, spawnType in pairs(spawner.SpawnTypes) do
+				for _,minutes in pairs(spawnType) do
+					for minute,model in pairs(minutes) do
+						if minute ~= -1 then
+							table.insert(models, model)
+							print(model)
+						end
+					end
+				end
+			end
+		end
+	end
+
 	for k, v in pairs(NPC_HEROES_CUSTOM) do
 		if v.Model then
 			table.insert(models, v.Model)
