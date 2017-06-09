@@ -227,7 +227,11 @@ end
 
 function PanoramaShop:SellItem(unit, item)
 	local cost = item:GetCost()
-	--GetStackCount()
+	local playerID = UnitVarToPlayerID(unit)
+	if not item:IsSellable() or MeepoFixes:IsMeepoClone(unit) then
+		Containers:DisplayError(playerID, "dota_hud_error_cant_sell_item")
+		return
+	end
 	if GameRules:GetGameTime() - item:GetPurchaseTime() > 10 then
 		cost = cost / 2
 	end
@@ -242,7 +246,7 @@ function PanoramaShop:SellItem(unit, item)
 		GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber())
 	end
 	UTIL_Remove(item)
-	Gold:AddGoldWithMessage(unit, cost, PlayerID)
+	Gold:AddGoldWithMessage(unit, cost, playerID)
 	GameMode:TrackInventory(unit)
 end
 

@@ -10,13 +10,13 @@ Variables:
 
     Бонусы к скорости передвижения от нескольких предметов на основе Yasha не складываются.
 
-DOTA_Tooltip_Ability_item_heart_arena: Heart of Tarrasque
+DOTA_Tooltip_ability_item_heart_arena: Heart of Tarrasque
 DOTA_Tooltip_ability_item_heart_arena_Description: 'Пассивная: Health Regeneration — восстанавливает определенный процент максимального здоровья в секунду. Если владелец получит урон от вражеского героя или Босса, способность отключается на определенное время.'
 DOTA_Tooltip_ability_item_heart_arena_Lore: 'Сохранившееся сердце вымершего монстра, с которым его владелец становится мужественнее.'
 DOTA_Tooltip_ability_item_heart_arena_bonus_strength: +$str
 DOTA_Tooltip_ability_item_heart_arena_bonus_health: +$health
-DOTA_Tooltip_ability_item_heart_arena_health_regen_rate: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
-DOTA_Tooltip_Ability_item_blink_arena: Blink Dagger
+DOTA_Tooltip_ability_item_heart_arena_health_regen_percent_per_second: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
+DOTA_Tooltip_ability_item_blink_arena: Blink Dagger
 DOTA_Tooltip_ability_item_blink_arena_Description: 'Активируемая: Blink — телепортирует к указанной точке на расстоянии до %blink_range% единиц. Если вы получите урон, то не сможете использовать Blink Dagger в течение %blink_damage_cooldown% сек.'
 DOTA_Tooltip_ability_item_blink_arena_Lore: 'Легендарный кинжал, использовавшийся самым быстрым убийцей, когда-либо ходившим по земле.'
 DOTA_Tooltip_ability_item_blink_arena_Note0: Применение на себя переместит вас в сторону фонтана вашей команды.
@@ -77,7 +77,7 @@ DOTA_Tooltip_ability_item_shard_attackspeed_bonus_attackspeed: +$attack
   - DOTA_Tooltip_ability_item_shard_primal_large_Description
   - DOTA_Tooltip_ability_item_shard_attackspeed_Description
 
-DOTA_Tooltip_Ability_item_yasha_arena: Yasha
+DOTA_Tooltip_ability_item_yasha_arena: Yasha
 DOTA_Tooltip_ability_item_yasha_arena_Description: |-
   {lc:item_yasha_Description}
   {lc:item_yasha_movespeed_note}
@@ -91,7 +91,7 @@ DOTA_Tooltip_ability_item_yasha_arena_maim_duration: 'ДЛИТЕЛЬНОСТЬ F
 DOTA_Tooltip_modifier_item_yasha_arena_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
 DOTA_Tooltip_modifier_item_yasha_arena_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
 
-DOTA_Tooltip_Ability_item_sange_arena: Sange
+DOTA_Tooltip_ability_item_sange_arena: Sange
 DOTA_Tooltip_ability_item_sange_arena_Description: '{lc:item_sange_Description}'
 DOTA_Tooltip_ability_item_sange_arena_Lore: 'Sange is an unusually accurate weapon, seeking weak points automatically.'
 DOTA_Tooltip_ability_item_sange_arena_bonus_damage: +$damage
@@ -110,7 +110,7 @@ DOTA_Tooltip_ability_item_nightshadow_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_nightshadow_proc_chance: '%ШАНС УМЕНЬШЕНИЯ:'
 DOTA_Tooltip_ability_item_nightshadow_cooldown_reduction: УМЕНЬШЕНИЕ ПЕРЕЗАРЯДКИ
 
-DOTA_Tooltip_Ability_item_sange_and_yasha_arena: Sange & Yasha
+DOTA_Tooltip_ability_item_sange_and_yasha_arena: Sange & Yasha
 DOTA_Tooltip_ability_item_sange_and_yasha_arena_Description: |-
   {lc:item_sange_Description}
   {lc:item_yasha_Description}
@@ -132,7 +132,7 @@ DOTA_Tooltip_modifier_item_sange_and_yasha_lesser_maim_Description: '{lc:modifie
 DOTA_Tooltip_modifier_item_sange_and_yasha_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
 DOTA_Tooltip_modifier_item_sange_and_yasha_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
 
-DOTA_Tooltip_Ability_item_nightshadow_and_sange: Nightshadow & Sange
+DOTA_Tooltip_ability_item_nightshadow_and_sange: Nightshadow & Sange
 DOTA_Tooltip_ability_item_nightshadow_and_sange_Description: |-
   {lc:item_sange_Description}
   {lc:item_nightshadow_Description}
@@ -224,7 +224,7 @@ DOTA_Tooltip_ability_item_pocket_riki_consumed_Note1: От дополнител�
 DOTA_Tooltip_ability_item_pocket_riki_consumed_fade_time: 'ЗАДЕРЖКА ДО НЕВИДИМОСТИ:'
 DOTA_Tooltip_ability_item_pocket_riki_consumed_stat_damage: '%МНОЖИТЕЛЬ ХАРАКТЕРИСТИКИ:'
 
-DOTA_Tooltip_Ability_item_homemade_cheese: Homemade Cheese
+DOTA_Tooltip_ability_item_homemade_cheese: Homemade Cheese
 DOTA_Tooltip_ability_item_homemade_cheese_Description: 'Использование: исчезает и мгновенно восстанавливает здоровье и ману. При использовании на союзниках длительность перезарядки составляет %alternative_cooldown% секунд.'
 DOTA_Tooltip_ability_item_homemade_cheese_Note0: Можно передавать союзникам.
 DOTA_Tooltip_ability_item_homemade_cheese_health_restore: 'ПОПОЛНЯЕТ ЗДОРОВЬЯ:'
@@ -254,6 +254,8 @@ DOTA_Tooltip_ability_item_metamorphosis_elixir_Description: |-
   Превращает вашего героя в другого.
 
   Не может быть использовано пока активна дуэль.
+
+  <font color='cyan'>Рейтинговая игра: может быть использовано лишь один раз.</font>
 DOTA_Tooltip_ability_item_metamorphosis_elixir_transformation_time: 'ДЛИТЕЛЬНОСТЬ ТРАНСФОРМАЦИИ:'
 
 DOTA_Tooltip_ability_item_splitshot_str: Enchanted Trident
@@ -607,7 +609,7 @@ DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту на любой точке карты, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
+  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena_bonus_intellect: +$int
@@ -616,11 +618,12 @@ DOTA_Tooltip_ability_item_sunray_dagon_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sunray_dagon_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena_blind_duration: 'ДЛИТЕЛЬНОСТЬ ПРОМАХОВ:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
+DOTA_Tooltip_ability_item_sunray_dagon_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_modifier_item_sunray_dagon_arena_blind: Ослепление от Sunray Dagon
 DOTA_Tooltip_modifier_item_sunray_dagon_arena_blind_Description: Промахивается в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% атак.
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту на любой точке карты, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
+  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_bonus_intellect: +$int
@@ -629,9 +632,10 @@ DOTA_Tooltip_ability_item_sunray_dagon_2_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_blind_duration: 'ДЛИТЕЛЬНОСТЬ ПРОМАХОВ:'
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
+DOTA_Tooltip_ability_item_sunray_dagon_2_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту на любой точке карты, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
+  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_bonus_intellect: +$int
@@ -640,9 +644,10 @@ DOTA_Tooltip_ability_item_sunray_dagon_3_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_blind_duration: 'ДЛИТЕЛЬНОСТЬ ПРОМАХОВ:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
+DOTA_Tooltip_ability_item_sunray_dagon_3_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту на любой точке карты, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
+  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_bonus_intellect: +$int
@@ -651,9 +656,10 @@ DOTA_Tooltip_ability_item_sunray_dagon_4_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_blind_duration: 'ДЛИТЕЛЬНОСТЬ ПРОМАХОВ:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
+DOTA_Tooltip_ability_item_sunray_dagon_4_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту на любой точке карты, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени.
+  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_bonus_intellect: +$int
@@ -662,6 +668,7 @@ DOTA_Tooltip_ability_item_sunray_dagon_5_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_blind_duration: 'ДЛИТЕЛЬНОСТЬ ПРОМАХОВ:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
+DOTA_Tooltip_ability_item_sunray_dagon_5_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_blink_staff: Blink Staff
 DOTA_Tooltip_ability_item_blink_staff_Description: 'Active: Blink Force - Телепортирует любого юнита к указанной точке на расстоянии до %max_blink_range% единиц. При применении на себя телепортирует героя в направлении взгляда.  Если вы получите урон более %blink_damage_to_cooldown%, то не сможете использовать Blink Staff в течение %blink_damage_cooldown% сек. После телепортации юнит получает свободное перемещение на %unobstructed_movement_duration% сек.'
 DOTA_Tooltip_ability_item_blink_staff_Note0: Применение на себя переместит вас в сторону вашего взгляда.
@@ -716,7 +723,9 @@ DOTA_Tooltip_ability_item_team_changer_Description: |-
 
   Не может быть использовано пока активна дуэль.
 
-DOTA_Tooltip_Ability_item_skadi_arena: Eye of Skadi
+  <font color='cyan'>Рейтинговая игра: отключено.</font>
+
+DOTA_Tooltip_ability_item_skadi_arena: Eye of Skadi
 DOTA_Tooltip_ability_item_skadi_arena_Description: 'Пассивная: Cold Attack — каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
 DOTA_Tooltip_ability_item_skadi_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_arena_bonus_health: +$health
@@ -725,21 +734,21 @@ DOTA_Tooltip_ability_item_skadi_arena_cold_movement_speed_pct: '%ЗАМЕДЛЕ�
 DOTA_Tooltip_ability_item_skadi_arena_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_modifier_item_skadi_arena_cold_attack: Eye of Skadi Cold Attack
 DOTA_Tooltip_modifier_item_skadi_arena_cold_attack_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-DOTA_Tooltip_Ability_item_skadi_2: Eye of Skadi X2
+DOTA_Tooltip_ability_item_skadi_2: Eye of Skadi X2
 DOTA_Tooltip_ability_item_skadi_2_Description: 'Пассивная: Cold Attack — каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
 DOTA_Tooltip_ability_item_skadi_2_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_2_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_2_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_skadi_2_cold_movement_speed_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_skadi_2_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_Ability_item_skadi_4: Eye of Skadi X4
+DOTA_Tooltip_ability_item_skadi_4: Eye of Skadi X4
 DOTA_Tooltip_ability_item_skadi_4_Description: 'Пассивная: Cold Attack — каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
 DOTA_Tooltip_ability_item_skadi_4_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_4_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_4_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_skadi_4_cold_movement_speed_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_skadi_4_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_Ability_item_skadi_8: Eye of Skadi X8
+DOTA_Tooltip_ability_item_skadi_8: Eye of Skadi X8
 DOTA_Tooltip_ability_item_skadi_8_Description: 'Пассивная: Cold Attack — каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
 DOTA_Tooltip_ability_item_skadi_8_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_8_bonus_health: +$health
@@ -751,7 +760,7 @@ DOTA_Tooltip_ability_item_skadi_2_Note0: Cold Attack не замедляет б�
 DOTA_Tooltip_ability_item_skadi_4_Note0: Cold Attack не замедляет боссов
 DOTA_Tooltip_ability_item_skadi_8_Note0: Cold Attack не замедляет боссов
 
-DOTA_Tooltip_Ability_item_radiance_arena: Radiance
+DOTA_Tooltip_ability_item_radiance_arena: Radiance
 DOTA_Tooltip_ability_item_radiance_arena_Description: 'Активируемая: Toggle Burn — когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
 DOTA_Tooltip_ability_item_radiance_arena_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_arena_blind_pct: '%ШАНС ПРОМАХА:'
@@ -760,21 +769,21 @@ DOTA_Tooltip_ability_item_radiance_arena_move_speed_slow_pct: '%ЗАМЕДЛЕН
 DOTA_Tooltip_ability_item_radiance_arena_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_modifier_item_radiance_lua_effect: Burn Damage
 DOTA_Tooltip_modifier_item_radiance_lua_effect_Description: 'Получает урон, скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% и промахивается в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% случаев.'
-DOTA_Tooltip_Ability_item_radiance_2: Radiance
+DOTA_Tooltip_ability_item_radiance_2: Radiance
 DOTA_Tooltip_ability_item_radiance_2_Description: 'Активируемая: Toggle Burn — когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
 DOTA_Tooltip_ability_item_radiance_2_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_2_blind_pct: '%ШАНС ПРОМАХА:'
 DOTA_Tooltip_ability_item_radiance_2_aura_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_item_radiance_2_move_speed_slow_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_radiance_2_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_Ability_item_radiance_3: Radiance
+DOTA_Tooltip_ability_item_radiance_3: Radiance
 DOTA_Tooltip_ability_item_radiance_3_Description: 'Активируемая: Toggle Burn — когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
 DOTA_Tooltip_ability_item_radiance_3_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_3_blind_pct: '%ШАНС ПРОМАХА:'
 DOTA_Tooltip_ability_item_radiance_3_aura_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_item_radiance_3_move_speed_slow_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_radiance_3_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_Ability_item_radiance_frozen: Frozen Radiance
+DOTA_Tooltip_ability_item_radiance_frozen: Frozen Radiance
 DOTA_Tooltip_ability_item_radiance_frozen_Description: 'Активируемая: Toggle Burn — когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %cold_movement_speed_pct%%%, скорость атаки на %cold_attack_speed% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
 DOTA_Tooltip_ability_item_radiance_frozen_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_frozen_blind_pct: '%ШАНС ПРОМАХА:'

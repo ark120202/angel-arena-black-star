@@ -459,7 +459,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"rage_duration"		"8 10 12 14 16 18 20"
+				"rage_duration"		"4"
 			}
 			"04"
 			{
@@ -474,7 +474,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"rage_bonus_evasion_chance" "40"
+				"rage_bonus_evasion_chance" "15"
 			}
 		}
 

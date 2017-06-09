@@ -1,6 +1,7 @@
 <root>
 	<styles>
  		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/hero_selection_shared.css" />
 		<include src="file://{resources}/styles/ability_shop.css" />
 	</styles>
 	<scripts>
@@ -43,11 +44,10 @@
 					<Panel id="MainHeroesRoot">
 						<Panel id="MainHeroesList" />
 						<Panel id="HeroesToolbar">
-							<Button class="SmallTextButton" id="SwitchTabButton" onactivate="SwitchTab();">
-								<Panel class="SmallTextButtonContainer">
-									<Image hittest="false" src="file://{resources}/images/custom_game/hero_selection/hero_swich.png" />
-									<Label id="SwitchTabButtonLabel" hittest="false" text="#hero_selection_button_switch" />
-								</Panel>
+							<Button id="SwitchHeroesButton" class="PickButton" onactivate="SwitchTab()" >
+								<Label text="#hero_selection_heroes_default" id="SwitchHeroesDefault" />
+								<Panel />
+								<Label text="#hero_selection_heroes_new" id="SwitchHeroesNew" />
 							</Button>
 							<Panel id="HeroAbilitiesRoot" />
 						</Panel>

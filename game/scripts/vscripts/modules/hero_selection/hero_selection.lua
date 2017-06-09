@@ -78,7 +78,7 @@ function HeroSelection:PrepareTables()
 				tabIndex = tabIndex
 			}
 
-			if Options:IsEquals("EnableAbilityShop", false) and Options:IsEquals("EnableRandomAbilities", false) then
+			if not Options:IsEquals("MainHeroList", "NoAbilities") then
 				heroData.abilities = HeroSelection:ParseAbilitiesFromTable(heroTable)
 				heroData.isChanged = heroTable.Changed == 1 and tabIndex == 1
 				heroData.linkedColorGroup = heroTable.LinkedColorGroup
@@ -164,7 +164,22 @@ function HeroSelection:StartStateHeroPick()
 		table.remove(notBanned, RandomInt(1, #notBanned))
 	end
 	PlayerTables:DeleteTableKeys("hero_selection_banning_phase", notBanned)
-	--local banned = PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")
+	local banned = PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")
+	local bannedCount = table.count(banned)
+	CustomChatSay(-1, -1, {
+		localizable = pluralize(bannedCount, "DOTA_Chat_AD_BanCount1", "DOTA_Chat_AD_BanCount"),
+		variables = {
+			["%s1"] = bannedCount
+		}
+	})
+	for hero in pairs(banned) do
+		CustomChatSay(-1, -1, {
+			localizable = "DOTA_Chat_AD_Ban",
+			variables = {
+				["%s1"] = hero
+			}
+		})
+	end
 
 	HeroSelection:DismissTimers()
 	EmitAnnouncerSound("announcer_ann_custom_draft_01")

@@ -119,8 +119,7 @@ Invoker - Invoke:
 	Cooldown: changed => 6
 	ManaCost: changed => 60
 	Cooldown: Scepter changed 0.1 => 0.5
-	
+
 SPELL AMPLIFY NOT SCALABLE:
 	huskar life break
-	ember spirit sleight of fist
 	shadow demon soul catcher

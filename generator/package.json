@@ -14,7 +14,9 @@
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
     "js-yaml": "^3.8.4",
+    "lodash.merge": "^4.6.0",
     "through2": "^2.0.3",
+    "vdf-extra": "^1.0.1",
     "yargs": "^8.0.1"
   }
 }

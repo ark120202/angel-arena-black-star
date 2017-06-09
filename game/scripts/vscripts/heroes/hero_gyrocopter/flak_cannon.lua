@@ -5,7 +5,7 @@ function ApplyModifier(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local stacks = ability:GetLevelSpecialValueFor( "max_attacks", ability:GetLevel() - 1 )
-	
+
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_gyrocopter_flak_cannon_arena", {})
 	caster:SetModifierStackCount("modifier_gyrocopter_flak_cannon_arena", ability, stacks)
 end
@@ -29,7 +29,7 @@ function CreateProjectiles(keys)
 	local target = keys.target
 	local ability = keys.ability
 	local stacks = caster:GetModifierStackCount("modifier_gyrocopter_flak_cannon_arena", ability)
-	
+
 	ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_suicide_base.vpcf", PATTACH_ABSORIGIN, target)
 	ApplyDamage({victim = target, attacker = caster, damage = ability:GetLevelSpecialValueFor("postattack_magic_damage", ability:GetLevel() - 1), damage_type = DAMAGE_TYPE_MAGICAL, ability = ability})
 	if stacks == 1 then

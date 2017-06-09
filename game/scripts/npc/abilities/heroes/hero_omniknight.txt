@@ -86,7 +86,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_resistance_reduction_scepter"	"-80"
+				"magic_resistance_reduction_scepter"	"-60"
 			}
 		}
 
@@ -109,7 +109,7 @@
 		"AbilityTextureName"			"omniknight_guardian_angel"
 		"ScriptFile"					"heroes/hero_omniknight/guardian_angel_lua.lua"
 		"MaxLevel" 						"7"
-		"LevelsBetweenUpgrades" 		"7"
+		"LevelsBetweenUpgrades" 		"6"
 		"RequiredLevel"					"6"
 		"HasScepterUpgrade"				"1"
 
@@ -129,12 +129,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
+				"duration"					"3.0 3.25 3.5 3.75 4.0 4.5 5.0"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"armor_debuff_scepter"		"-5 -10 -20 -30 -40 -50 -60"
+				"armor_debuff_scepter"		"-5 -10 -15 -20 -25 -30 -35"
 			}
 		}
 
@@ -170,12 +170,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed_bonus_per_stack_pct"	"-3"
+				"speed_bonus_per_stack_pct"	"-1"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_bonus_per_stack"	"-2 -3 -5 -7 -8 -10 -12"
+				"attack_bonus_per_stack"	"-1 -2 -3 -4 -5 -6 -8 -10"
 			}
 			"03"
 			{
@@ -195,7 +195,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
+				"radius"				"300"
 			}
 			"07"
 			{
@@ -205,12 +205,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stack_growth_interval"	"2"
+				"stack_growth_interval"	"1"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stack_duration"		"3"
+				"stack_duration"		"1.5"
 			}
 		}
 

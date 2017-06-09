@@ -269,5 +269,6 @@
 		"npc_arena_hero_saber"							"1"
 		"npc_arena_hero_sara"							"1"
 		"npc_arena_hero_destroyer"						"1"
+		"npc_arena_hero_anakim"							"1"
 	}
 }

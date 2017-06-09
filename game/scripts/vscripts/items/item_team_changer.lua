@@ -1,7 +1,7 @@
 function ChangeTeam(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	if not caster:IsTrueHero() or Duel:IsDuelOngoing() then
+	if not caster:IsTrueHero() or Duel:IsDuelOngoing() or Options:IsEquals("EnableRatingAffection") then
 		return
 	end
 	local oldTeam = caster:GetTeamNumber()

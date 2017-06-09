@@ -84,6 +84,29 @@ function UpdatePanoramaHUD() {
 			});
 		});
 	}
+
+	// Chat redirect
+	var ChatLinesPanel = FindDotaHudElement('ChatLinesPanel');
+	var redirectedPhrases = [
+		$.Localize('DOTA_Chat_CantPause'),
+		$.Localize('DOTA_Chat_NoPausesLeft'),
+		$.Localize('DOTA_Chat_CantPauseYet'),
+		$.Localize('DOTA_Chat_PauseCountdown'),
+		$.Localize('DOTA_Chat_Paused'),
+		$.Localize('DOTA_Chat_UnpauseCountdown'),
+		$.Localize('DOTA_Chat_Unpaused'),
+		$.Localize('DOTA_Chat_AutoUnpaused'),
+		$.Localize('DOTA_Chat_YouPaused'),
+		$.Localize('DOTA_Chat_CantUnpauseTeam')
+	];
+	var escaped = escapeRegExp(redirectedPhrases.map(function(x) {return $.Localize(x).replace(/%s\d/g, '.*');}).join('|'));
+	var regexp = new RegExp('^(' + escaped + ')$');
+	for (var i = 0; i < ChatLinesPanel.GetChildCount(); i++) {
+		var child = ChatLinesPanel.GetChild(i);
+		if (child.text && child.text.match(regexp)) {
+			RedirectMessage(child);
+		}
+	}
 }
 
 function SetDynamicMinimapVisible(status) {
@@ -143,6 +166,7 @@ function HookPanoramaPanels() {
 		GameEvents.SendEventClientSide('custom_talents_toggle_tree', {});
 	});
 	var DebugChat = false;
+
 	chat.FindChildTraverse('ChatLinesPanel').visible = DebugChat;
 	if (chat.FindChildTraverse('SelectionChatMessages'))
 		chat.FindChildTraverse('SelectionChatMessages').DeleteAsync(0);
@@ -274,23 +298,23 @@ function CreateCustomToast(data) {
 	}
 
 	rowText = rowText.replace('{denied_icon}', "<img class='DeniedIcon'/>").replace('{killed_icon}', "<img class='CombatEventKillIcon'/>").replace('{time_dota}', "<font color='lime'>" + secondsToMS(Game.GetDOTATime(false, false), true) + '</font>');
-	if (data.player != null)
+	if (data.player)
 		rowText = rowText.replace('{player_name}', CreateHeroElements(data.player));
-	if (data.victimPlayer != null)
+	if (data.victimPlayer)
 		rowText = rowText.replace('{victim_name}', CreateHeroElements(data.victimPlayer));
-	if (data.killerPlayer != null)
+	if (data.killerPlayer)
 		rowText = rowText.replace('{killer_name}', CreateHeroElements(data.killerPlayer));
-	if (data.victimUnitName != null)
+	if (data.victimUnitName)
 		rowText = rowText.replace('{victim_name}', "<font color='red'>" + $.Localize(data.victimUnitName) + '</font>');
-	if (data.team != null)
+	if (data.team)
 		rowText = rowText.replace('{team_name}', "<font color='" + GameUI.CustomUIConfig().team_colors[data.team] + "'>" + GameUI.CustomUIConfig().team_names[data.team] + '</font>');
-	if (data.gold != null)
+	if (data.gold)
 		rowText = rowText.replace('{gold}', "<font color='gold'>" + FormatGold(data.gold) + "</font> <img class='CombatEventGoldIcon' />");
-	if (data.runeType != null)
+	if (data.runeType)
 		rowText = rowText.replace('{rune_name}', "<font color='#" + RUNES_COLOR_MAP[data.runeType] + "'>" + $.Localize('custom_runes_rune_' + data.runeType + '_title') + '</font>');
-	if (data.variables != null)
+	if (data.variables)
 		for (var k in data.variables) {
-			rowText = rowText.replace(k, data.variables[k]);
+			rowText = rowText.replace(k, $.Localize(data.variables[k]));
 		}
 	if (rowText.indexOf('<img') === -1)
 		row.AddClass('SimpleText');
@@ -325,11 +349,11 @@ function CreateHeroElements(id) {
 				panel.SetImage(data.image);
 				break;
 			case 'v':
-				$.GetContextPanel().BCreateChildren('<Movie id="' + random + '" src="' + data.source + '" controls="none" repeat="true" autoplay="onload" />');
+				$.GetContextPanel().BCreateChildren('<Movie id="' + random + '" src="' + data.source.encodeHTML() + '" controls="none" repeat="true" autoplay="onload" />');
 				panel = $.GetContextPanel().FindChildTraverse(random);
 				break;
 			case 'h':
-				$.GetContextPanel().BCreateChildren('<HTML id="' + random + '" url="' + data.source + '" />');
+				$.GetContextPanel().BCreateChildren('<HTML id="' + random + '" url="' + data.source.encodeHTML() + '" />');
 				panel = $.GetContextPanel().FindChildTraverse(random);
 				panel.style.height = '600px';
 				panel.style.width = '800px';

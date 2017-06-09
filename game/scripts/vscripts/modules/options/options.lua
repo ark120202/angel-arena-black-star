@@ -8,12 +8,21 @@ function Options:SetValue(name, value)
 	PlayerTables:SetTableValue("options", name, value)
 end
 
+function Options:SetInitialValue(name, value)
+	--if type(value) == "boolean" then value = value and 1 or 0 end
+	if not Options.Values[name] then
+		Options.Values[name] = value
+		PlayerTables:SetTableValue("options", name, value)
+	end
+end
+
 function Options:GetValue(name)
 	return Options.Values[name]
 end
 
 function Options:IsEquals(name, value)
 	--if type(value) == "boolean" then value = value and 1 or 0 end
+	if value == nil then value = true end
 	return Options:GetValue(name) == value
 end
 
@@ -88,21 +97,20 @@ function Options:CalculateVotes()
 end
 
 function Options:LoadDefaultValues()
-	Options:SetValue("EnableAbilityShop", false)
-	Options:SetValue("EnableRandomAbilities", false)
-	Options:SetValue("EnableStatisticsCollection", true)
-	Options:SetValue("EnableRatingAffection", false)
-	--Options:SetValue("MapLayout", "5v5")
+	Options:SetInitialValue("EnableAbilityShop", false)
+	Options:SetInitialValue("EnableRandomAbilities", false)
+	Options:SetInitialValue("EnableStatisticsCollection", true)
+	Options:SetInitialValue("EnableRatingAffection", false)
+	Options:SetInitialValue("FailedRankedGame", false)
+	--Options:SetInitialValue("MapLayout", "5v5")
 
-	Options:SetValue("BanningPhaseBannedPercentage", 0)
-	Options:SetValue("MainHeroList", "Selection")
+	Options:SetInitialValue("BanningPhaseBannedPercentage", 0)
+	Options:SetInitialValue("MainHeroList", "Selection")
 
 	--Can be not networkable
-	Options:SetValue("PlayerCount", 10)
+	Options:SetInitialValue("PreGameTime", 60)
 
-	Options:SetValue("PreGameTime", 60)
-
-	Options:SetPreGameVoting("kill_limit", {75, 100, 125, 150}, 125, {
+	Options:SetPreGameVoting("kill_limit", {100, 125, 150, 175}, 150, {
 		calculationFunction = "/",
 		callback = function(value)
 			GameRules:SetKillGoal(math.round(value))
@@ -117,43 +125,42 @@ function Options:LoadMapValues()
 	local gamemode = underscoreIndex and mapName:sub(underscoreIndex - #mapName) or ""
 
 	if gamemode == "custom_abilities" then
-		for k,t in pairs(DROP_TABLE) do
-			for i,info in ipairs(t) do
-				if string.starts(info.Item, "item_god_transform_") then
-					table.remove(DROP_TABLE[k], i)
-				end
-			end
-		end
 		Options:SetValue("MainHeroList", "NoAbilities")
 		Options:SetPreGameVoting("custom_abilities", {"random_omg", "ability_shop"}, "ability_shop", {
 			calculationFunction = ">",
 			callback = function(value)
 				Options:SetValue("EnableAbilityShop", value == "ability_shop")
 				Options:SetValue("EnableRandomAbilities", value == "random_omg")
+				if value == "ability_shop" then
+					CustomAbilities:PostAbilityShopData()
+				end
 			end
 		})
 	elseif gamemode == "ranked" then
-		Options:SetValue("EnableRatingAffection", true)
-		Options:SetValue("BanningPhaseBannedPercentage", 50)
+		SKIP_TEAM_SETUP = true
+		Events:On("AllPlayersLoaded", function()
+			local failed = (GetInGamePlayerCount() < 10 or matchID == 0) and not StatsClient.Debug
+			if not failed then
+				Options:SetValue("EnableRatingAffection", true)
+				Options:SetValue("BanningPhaseBannedPercentage", 50)
+			else
+				debugp("Options:LoadMapValues", "Ranked disabled because of low amount of players of match id == 0")
+				Options:SetValue("FailedRankedGame", true)
+			end
+		end, true)
 	end
 	if landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216
-		USE_AUTOMATIC_PLAYERS_PER_TEAM = false
-		MAX_NUMBER_OF_TEAMS = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS] = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_1] = 4
-		CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_2] = 4
 		USE_CUSTOM_TEAM_COLORS = true
 	end
 end
 
 function Options:LoadCheatValues()
-	
+
 end
 
 function Options:LoadToolsValues()
-	Options:SetValue("PreGameTime", 0)
+	Options:SetInitialValue("PreGameTime", 0)
 end
 
 function Options:Preload()

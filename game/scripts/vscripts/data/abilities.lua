@@ -37,7 +37,6 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	item_refresher_arena = true,
 	item_aegis_arena = true,
 	item_refresher_core = true,
-	item_titanium_bar = true,
 	dazzle_shallow_grave = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
@@ -178,8 +177,7 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	nyx_assassin_mana_burn = true,
 	skywrath_mage_arcane_bolt = true,
 	elder_titan_earth_splitter = true,
-	ember_spirit_sleight_of_fist = true,
-	shadow_demon_soul_catcher = true,
+	necrolyte_reapers_scythe = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

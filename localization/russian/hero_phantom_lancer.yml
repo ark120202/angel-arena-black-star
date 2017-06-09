@@ -27,8 +27,8 @@ DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_Description: 'Phantom Lancer
 DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_hero_proc_chance: '%ШАНС СРАБАТЫВАНИЯ У ГЕРОЯ:'
 DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_illusion_proc_chance: '%ШАНС СРАБАТЫВАНИЯ У ИЛЛЮЗИИ:'
 DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_max_illusions: 'МАКС. ИЛЛЮЗИЙ:'
-DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_illusion_incoming_damage: '%УРОН ИЛЛЮЗИЙ:'
-DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_illusion_outgoing_damage: '%УРОН ПО ИЛЛЮЗИЯМ:'
+DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_illusion_incoming_damage: '%УРОН ПО ИЛЛЮЗИЯМ:'
+DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_illusion_outgoing_damage: '%УРОН ИЛЛЮЗИЙ:'
 DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_aghanim_description: 'Все иллюзии вокруг Phantom Lancer будут иметь неограниченное время жизни. Эти иллюзии смогут погибнуть только потеряв всё здоровье. Если иллюзия выйдет за пределы действия способности, то время жизни продолжит идти.'
 DOTA_Tooltip_ability_phantom_lancer_juxtapose_arena_immortal_illusions_radius_scepter: 'РАДИУС СПОСОБНОСТИ СО СКИПЕТРОМ:'
 DOTA_Tooltip_modifier_phantom_lancer_juxtapose_arena_scepter_effect: Juxtapose Timer Stopped

@@ -13,12 +13,19 @@ if IsServer() then
 		if not target:TriggerSpellAbsorb(self) then
 			ParticleManager:CreateParticle("particles/arena/items_fx/scythe_of_sun.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 			target:EmitSound("DOTA_Item.Sheepstick.Activate")
-
+			local caster = self:GetCaster()
 			if target:IsIllusion() then
-				target:Kill(ability, caster)
+				target:Kill(self, caster)
 			else
 				target:TriggerSpellReflect(self)
-				target:AddNewModifier(self:GetCaster(), self, "modifier_item_scythe_of_sun_hex", {duration = self:GetSpecialValueFor("hex_duration")})
+				target:AddNewModifier(caster, self, "modifier_item_scythe_of_sun_hex", {duration = self:GetSpecialValueFor("hex_duration")})
+				ApplyDamage({
+					attacker = caster,
+					victim = target,
+					damage = self:GetAbilityDamage(),
+					damage_type = self:GetAbilityDamageType(),
+					ability = self
+				})
 			end
 		end
 	end

@@ -86,7 +86,7 @@
 		"ID"							"10110"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1750"
+		"ItemCost"						"2250"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_enchanted_dagon_arena"
@@ -166,7 +166,7 @@
 		"ID"							"10115"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2250"
+		"ItemCost"						"3000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_sunray_dagon_arena"
@@ -684,10 +684,10 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 950 1000 1050 1100"
+		"AbilityCastRange"				"825 850 875 900 950"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
-		"AbilityManaCost"				"180"
+		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
+		"AbilityManaCost"				"200"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -720,17 +720,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1000 1100 1200 1300"
+				"damage"				"850 900 950 1000 1050"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"900 950 1000 1050 1100"
+				"range_tooltip"			"825 850 875 900 950"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
+				"damage_percent"		"2 2.25 2.5 2.75 3"
 			}
 		}
 
@@ -777,9 +777,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 950 1000 1050 1100"
+		"AbilityCastRange"				"825 850 875 900 950"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
+		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
 		"AbilityManaCost"				"180"
 
 		"AbilitySharedCooldown"			"dagon"
@@ -813,17 +813,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1000 1100 1200 1300"
+				"damage"				"850 900 950 1000 1050"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"900 950 1000 1050 1100"
+				"range_tooltip"			"825 850 875 900 950"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
+				"damage_percent"		"2 2.25 2.5 2.75 3"
 			}
 		}
 
@@ -870,9 +870,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 950 1000 1050 1100"
+		"AbilityCastRange"				"825 850 875 900 950"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
+		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
 		"AbilityManaCost"				"180"
 
 		"AbilitySharedCooldown"			"dagon"
@@ -906,17 +906,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1000 1100 1200 1300"
+				"damage"				"850 900 950 1000 1050"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"900 950 1000 1050 1100"
+				"range_tooltip"			"825 850 875 900 950"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
+				"damage_percent"		"2 2.25 2.5 2.75 3"
 			}
 		}
 
@@ -963,9 +963,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 950 1000 1050 1100"
+		"AbilityCastRange"				"825 850 875 900 950"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
+		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
 		"AbilityManaCost"				"180"
 
 		"AbilitySharedCooldown"			"dagon"
@@ -999,17 +999,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1000 1100 1200 1300"
+				"damage"				"850 900 950 1000 1050"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"900 950 1000 1050 1100"
+				"range_tooltip"			"825 850 875 900 950"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
+				"damage_percent"		"2 2.25 2.5 2.75 3"
 			}
 		}
 
@@ -1056,9 +1056,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 950 1000 1050 1100"
+		"AbilityCastRange"				"825 850 875 900 950"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
+		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
 		"AbilityManaCost"				"180"
 
 		"AbilitySharedCooldown"			"dagon"
@@ -1089,17 +1089,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1000 1100 1200 1300"
+				"damage"				"850 900 950 1000 1050"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"900 950 1000 1050 1100"
+				"range_tooltip"			"825 850 875 900 950"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
+				"damage_percent"		"2 2.25 2.5 2.75 3"
 			}
 		}
 
@@ -1144,8 +1144,7 @@
 		"AbilityTextureName"			"item_arena/sunray_dagon_arena"
 		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2500"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
 		"AbilityManaCost"				"180"
@@ -1191,12 +1190,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"8.0 8.25 8.5 8.75 9.0"
+				"damage_percent"		"3.5 3.75 4 4.25 4.5"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"2500"
 			}
 		}
 
@@ -1263,8 +1267,7 @@
 		"AbilityTextureName"			"item_arena/sunray_dagon_2_arena"
 		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2500"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
 		"AbilityManaCost"				"180"
@@ -1310,12 +1313,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"8.0 8.25 8.5 8.75 9.0"
+				"damage_percent"		"3.5 3.75 4 4.25 4.5"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"2500"
 			}
 		}
 
@@ -1382,8 +1390,7 @@
 		"AbilityTextureName"			"item_arena/sunray_dagon_3_arena"
 		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2500"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
 		"AbilityManaCost"				"180"
@@ -1429,12 +1436,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"8.0 8.25 8.5 8.75 9.0"
+				"damage_percent"		"3.5 3.75 4 4.25 4.5"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"2500"
 			}
 		}
 
@@ -1501,8 +1513,7 @@
 		"AbilityTextureName"			"item_arena/sunray_dagon_4_arena"
 		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2500"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
 		"AbilityManaCost"				"180"
@@ -1548,12 +1559,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"8.0 8.25 8.5 8.75 9.0"
+				"damage_percent"		"3.5 3.75 4 4.25 4.5"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"2500"
 			}
 		}
 
@@ -1620,8 +1636,7 @@
 		"AbilityTextureName"			"item_arena/sunray_dagon_5_arena"
 		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2500"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
 		"AbilityManaCost"				"180"
@@ -1664,12 +1679,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"8.0 8.25 8.5 8.75 9.0"
+				"damage_percent"		"3.5 3.75 4 4.25 4.5"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"2500"
 			}
 		}
 

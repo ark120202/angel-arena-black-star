@@ -13,12 +13,13 @@
 *.vagrp_c
 *.vmdl_c
 
-# Preprocessored
+# Preprocessed
 content/panorama/styles/*
 
 # Environments
 *.sublime-workspace
 *.sublime-project
+!project.sublime-project
 
 content/tooltips_*.txt
 content/addon_*_utf8.txt
@@ -34,12 +35,11 @@ game/*.tmp
 game/server_log.txt
 game/rich_presence_persistent_data.txt
 
+# npm
 npm-debug.log
 
 generator/settings.yml
 generator/node_modules/*
-!generator/node_modules/vdf-extra
-!generator/node_modules/dota-custom-game-toolkit
 
 changelogs/!ideas.txt
 changelogs/!local.txt

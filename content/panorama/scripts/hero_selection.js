@@ -12,7 +12,6 @@ var SelectedHeroPanel,
 	PlayerSpawnBoxes = {},
 	HeroSelectionState = -1,
 	PlayerPanels = [],
-	LocalPlayerStatus = {},
 	InitializationStates = {},
 	HasBanPoint = true;
 
@@ -114,35 +113,24 @@ function Snippet_PlayerPanel(pid, rootPanel) {
 		var panel = $.CreatePanel('Panel', rootPanel, '');
 		panel.BLoadLayoutSnippet('PlayerPanel');
 		panel.SetDialogVariable('player_name', Players.GetPlayerName(pid));
-		panel.SetDialogVariable('player_mmr', Players.GetStatsData(pid).Rating || 'TBD');
+		var statsData = Players.GetStatsData(pid);
 		panel.FindChildTraverse('SlotColor').style.backgroundColor = GetHEXPlayerColor(pid);
 		PlayerPanels[pid] = panel;
 	}
 	return PlayerPanels[pid];
 }
 
-function IsLocalHeroPicked() {
-	return LocalPlayerStatus.status === 'picked';
-}
-
-function IsLocalHeroLocked() {
-	return LocalPlayerStatus.status === 'locked';
-}
-
-function IsLocalHeroLockedOrPicked() {
-	return IsLocalHeroPicked() || IsLocalHeroLocked();
-}
 
 function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	_.each(changesObject, function(teamPlayers, teamNumber) {
 		if ($('#team_selection_panels_team' + teamNumber) == null) {
 			var isRight = teamNumber % 2 !== 0;
 			var TeamSelectionPanel = $.CreatePanel('Panel', $(isRight ? '#RightTeams' : '#LeftTeams'), 'team_selection_panels_team' + teamNumber);
-			TeamSelectionPanel.AddClass('TeamSelectionPanel');
+			TeamSelectionPanel.BLoadLayoutSnippet('TeamBar');
 			var color = GameUI.CustomUIConfig().team_colors[teamNumber];
 			TeamSelectionPanel.style.backgroundColor = 'gradient(linear, 100% 100%, 0% 100%, from(transparent), color-stop(0.15, ' + color + '4D), to(transparent))';
 		}
-		var TeamSelectionPanel = $('#team_selection_panels_team' + teamNumber);
+		var TeamSelectionPanel = $('#team_selection_panels_team' + teamNumber).FindChildTraverse('TeamBarPlayers');
 		_.each(teamPlayers, function(playerData, playerIdInTeam) {
 			var PlayerPanel = Snippet_PlayerPanel(Number(playerIdInTeam), TeamSelectionPanel);
 
@@ -303,6 +291,7 @@ function UpdateMainTable(tableName, changesObject, deletionsObject) {
 				FillHeroesTable(tabContent, TabHeroesPanel);
 				TabHeroesPanel.visible = false;
 			});
+			ListenToBanningPhase();
 			SelectHeroTab(1);
 		}
 	}
@@ -355,10 +344,26 @@ function ShowHeroPreviewTab(tabID) {
 		});
 		DynamicSubscribePTListener('hero_selection_available_heroes', UpdateMainTable);
 		$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
-		//$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + DOTA_ACTIVE_GAMEMODE_TYPE);
+		//$.GetContextPanel().SetHasClass('FailedRankedGame', Options.IsEquals('FailedRankedGame'));
+		var gamemodeType = Options.IsEquals('FailedRankedGame') ? 'ranked_failed' : Options.GetMapInfo().gamemode;
+		if (gamemodeType === 'custom_abilities') gamemodeType =
+			Options.IsEquals('EnableAbilityShop') ? 'ability_shop' : Options.IsEquals('EnableRandomAbilities') ? 'random_omg' : '';
+		$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + gamemodeType);
+
 		if ($.GetContextPanel().PTID_hero_selection) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_selection);
 		DynamicSubscribePTListener('hero_selection', UpdateHeroesSelected, function(ptid) {
 			$.GetContextPanel().PTID_hero_selection = ptid;
+		});
+
+		DynamicSubscribePTListener('stats_team_rating', function(tableName, changesObject, deletionsObject) {
+			for (var teamNumber in changesObject) {
+				$('#team_selection_panels_team' + teamNumber).SetDialogVariable('team_rating', changesObject[teamNumber]);
+			}
+		});
+		DynamicSubscribePTListener('stats_client', function(tableName, changesObject, deletionsObject) {
+			for (var playerID in changesObject) {
+				Snippet_PlayerPanel(+playerID).SetDialogVariable('player_mmr', changesObject[playerID].Rating || 'TBD');
+			}
 		});
 		UpdateTimer();
 

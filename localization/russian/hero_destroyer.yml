@@ -8,11 +8,11 @@ DOTA_Tooltip_ability_destroyer_armor_crush_armor_reduction: 'СНИЖЕНИЕ Б
 DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: 'Destroyer запечатывает свои нескончаемые силы магической печатью, ограничивая своё максимальное здоровье до %max_health_pct%%%, в то же время увеличивая скорость передвижения, скорость атаки, броню и регенерацию здоровья.'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_max_health_pct: 'МАКСИМУМ ЗДОРОВЬЯ:'
-DOTA_Tooltip_ability_destroyer_seal_of_limit_movement_speed: 'СКОРОСТЬ:'
+DOTA_Tooltip_ability_destroyer_seal_of_limit_movement_speed: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_destroyer_seal_of_limit_attack_speed: 'СКОРОСТЬ АТАКИ:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_bonus_armor: 'БРОНЯ:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_health_regen: 'РЕГЕНЕРАЦИЯ ЖИЗНЕНЫХ СИЛ:'
-DOTA_Tooltip_modifier_destroyer_seal_of_limit_: Seal of Limit
-DOTA_Tooltip_modifier_destroyer_seal_of_limit_Description: Максимальное здоровье ограничено, но скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, регенерация здоровья увеличена на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
+DOTA_Tooltip_modifier_destroyer_seal_of_limit_Description: Максимальное здоровье ограничено, но скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, регенерация здоровья увеличена на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%
 
 DOTA_Tooltip_ability_destroyer_body_reconstruction_Description: 'Destroyer полностью перестраивает своё тело, мгновенно восстанавливая здоровье и ману, а также сбрасывая время перезарядки всех его предметов.'
 

@@ -33,7 +33,7 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 
 	local killerEntity
 	local killerPlayerID
-	if killerPlayer then 
+	if killerPlayer then
 		killerEntity = killerPlayer:GetAssignedHero()
 		if killerEntity.GetPlayerID then
 			killerPlayerID = killerEntity:GetPlayerID()
@@ -69,7 +69,7 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 			local assistGold = goldChange * 0.5
 			local hadGold = {killerPlayerID}
 			for _,v in ipairs(assists) do
-				if v ~= killerEntity and v and v:IsRealHero() then
+				if v ~= killerEntity and v and v:IsMainHero() then
 					if not table.contains(hadGold) then
 						Kills:_GiveKillGold(v, killedUnit, assistGold)
 						table.insert(hadGold, v:GetPlayerID())

@@ -8,6 +8,7 @@
 #base "items/splitshot.txt"
 #base "items/skadi.txt"
 #base "items/butterfly.txt"
+#base "items/desolator.txt"
 
 "DOTAAbilities"
 {
@@ -1438,7 +1439,6 @@
 		"ID"							"10064"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityTextureName"			"item_arena/metamorphosis_elixir"
-		"AbilityCastPoint"        		"0.2"
 		"ItemCost"						"100"
 		"ItemQuality"					"epic"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -3585,7 +3585,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"250 900 2200"
+				"bonus_gold"			"250 900 1600"
 			}
 		}
 
@@ -6712,7 +6712,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"active_damage_reduction_pct"	"-70"
+				"active_damage_reduction_pct"	"-40"
 			}
 			"07"
 			{
@@ -7757,7 +7757,7 @@
 		"AbilitySharedCooldown"			"ethereal"
 		"ItemShopTags"					"int;agi;str;hard_to_tag"
 		"ItemQuality"					"rare"
-		"ItemAliases"					"ghost scepter;drums of endurance;ancient;"
+		"ItemAliases"					"ghost scepter;drums of endurance;ancient"
 
 		"AbilitySpecial"
 		{
@@ -7889,7 +7889,6 @@
 				"Passive"					"0"
 				"IsHidden"					"0"
 				"IsBuff"					"1"
-				"IsDebuff"					"0"
 				"IsPurgable"				"1"
 				"StatusEffectName" 			"particles/status_fx/status_effect_ghost.vpcf"
 				"StatusEffectPriority" 		"15"
@@ -7932,705 +7931,6 @@
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%endurance_bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%endurance_bonus_movement_speed_pct"
-				}
-			}
-		}
-	}
-
-	"item_recipe_desolator2"
-	{
-		"ID"							"10224"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"                     "item_datadriven"
-		"ItemCost"						"25"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_desolator2"
-		"ItemRequirements"
-		{
-			"01"						"item_desolator;item_demon_edge;item_medallion_of_courage"
-		}
-	}
-
-	"item_desolator2"
-	{
-		"ID"							"10225"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"AbilityTextureName"            "arena/desolator2"
-		"ItemShopTags"					"damage;unique"
-		"ItemQuality"					"artifact"
-		"ItemAliases"					"desolator 2"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"110"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-14"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"10.0"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_desolator2_arena"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"UpdateAttackProjectile"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"UpdateAttackProjectile"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
-				}
-
-				"OnAttackLanded"
-				{
-					"ApplyModifier"
-					{
-						"Target"			"TARGET"
-						"ModifierName"		"modifier_item_desolator2_arena_corruption"
-					}
-
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
-					}
-				}
-			}
-			"modifier_item_desolator2_arena_corruption"
-			{
-				"Duration"				"%corruption_duration"
-				"Passive"				"0"
-				"IsHidden"				"0"
-				"IsDebuff"				"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%corruption_armor"
-				}
-			}
-		}
-	}
-
-	"item_recipe_desolator3"
-	{
-		"ID"							"10226"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"                     "item_datadriven"
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_desolator3"
-		"ItemRequirements"
-		{
-			"01"						"item_desolator2;item_dark_flow"
-		}
-	}
-
-	"item_desolator3"
-	{
-		"ID"							"10227"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"AbilityTextureName"            "arena/desolator3"
-		"ItemShopTags"					"damage;unique"
-		"ItemQuality"					"artifact"
-		"ItemAliases"					"desolator 3"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"180"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-21"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"10.0"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_desolator3_arena"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"UpdateAttackProjectile"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"UpdateAttackProjectile"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
-				}
-
-				"OnAttackLanded"
-				{
-					"ApplyModifier"
-					{
-						"Target"			"TARGET"
-						"ModifierName"		"modifier_item_desolator3_arena_corruption"
-					}
-
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
-					}
-				}
-			}
-			"modifier_item_desolator3_arena_corruption"
-			{
-				"Duration"				"%corruption_duration"
-				"Passive"				"0"
-				"IsHidden"				"0"
-				"IsDebuff"				"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%corruption_armor"
-				}
-			}
-		}
-	}
-
-	"item_recipe_desolator4"
-	{
-		"ID"							"10228"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"                     "item_datadriven"
-		"ItemCost"						"20250"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_desolator4"
-		"ItemRequirements"
-		{
-			"01"						"item_desolator3;item_dark_blade;item_orb_of_venom"
-		}
-	}
-
-	"item_desolator4"
-	{
-		"ID"							"10229"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"AbilityTextureName"            "arena/desolator4"
-		"ItemShopTags"					"damage;unique"
-		"ItemQuality"					"artifact"
-		"ItemAliases"					"desolator 4"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"320"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"5.0"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"poison_damage_per_second"			"120"
-			}
-			"05"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"poison_damage_interval"			"1.0"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_desolator4_arena"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"UpdateAttackProjectile"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"UpdateAttackProjectile"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
-				}
-
-				"OnAttackLanded"
-				{
-					"ApplyModifier"
-					{
-						"Target"			"TARGET"
-						"ModifierName"		"modifier_item_desolator4_arena_corruption"
-					}
-
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
-					}
-				}
-			}
-			"modifier_item_desolator4_arena_corruption"
-			{
-				"Duration"				"%corruption_duration"
-				"Passive"				"0"
-				"IsHidden"				"0"
-				"IsBuff"				"0"
-				"IsDebuff"				"1"
-				"IsPurgable"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%corruption_armor"
-				}
-
-				"EffectName"			"particles/items2_fx/orb_of_venom.vpcf"
-				"EffectAttachType"		"follow_origin"
-
-				"ThinkInterval" 		"%poison_damage_interval"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%poison_damage_per_second"
-					}
-				}
-			}
-		}
-	}
-
-	"item_recipe_desolator5"
-	{
-		"ID"							"10230"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"                     "item_datadriven"
-		"ItemCost"						"1250"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_desolator5"
-		"ItemRequirements"
-		{
-			"01"						"item_desolator4;item_skadi_4;item_soul_of_titan"
-		}
-	}
-
-	"item_desolator5"
-	{
-		"ID"							"10231"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"AbilityTextureName"            "arena/desolator5"
-		"ItemShopTags"					"damage;unique"
-		"ItemQuality"					"artifact"
-		"ItemAliases"					"frozen desolator 5"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"100"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"1200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"1200"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-45"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"5.0"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed"	"-30"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-150"
-			}
-			"09"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"poison_damage_per_second"			"200"
-			}
-			"10"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"poison_damage_interval"			"1.0"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_desolator5_arena"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"UpdateAttackProjectile"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"UpdateAttackProjectile"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
-					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
-				}
-
-				"OnAttackLanded"
-				{
-					"ApplyModifier"
-					{
-						"Target"			"TARGET"
-						"ModifierName"		"modifier_item_desolator5_arena_corruption"
-					}
-
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
-					}
-				}
-			}
-			"modifier_item_desolator5_arena_corruption"
-			{
-				"Duration"				"%corruption_duration"
-				"Passive"				"0"
-				"IsHidden"				"0"
-				"IsBuff"				"0"
-				"IsDebuff"				"1"
-				"IsPurgable"			"1"
-
-				"EffectName"			"particles/items2_fx/orb_of_venom.vpcf"
-				"EffectAttachType"		"follow_origin"
-
-				"StatusEffectName"     "particles/status_fx/status_effect_frost.vpcf"
-				"StatusEffectPriority" "10"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%corruption_armor"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%cold_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%cold_movement_speed"
-				}
-
-				"ThinkInterval" 		"%poison_damage_interval"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%poison_damage_per_second"
-					}
-				}
-			}
-		}
-
-	}
-
-	"item_recipe_desolator6"
-	{
-		"ID"							"10232"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"                     "item_datadriven"
-		"ItemCost"						"40000"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_desolator6"
-		"ItemRequirements"
-		{
-			"01"						"item_desolator5;item_rapier;item_demons_paw;item_moon_dust"
-		}
-	}
-
-	"item_desolator6"
-	{
-		"ID"							"10233"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"AbilityTextureName"            "arena/desolator6"
-		"ItemShopTags"					"damage;unique"
-		"ItemQuality"					"artifact"
-		"ItemAliases"					"ultimate desolator 6"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"150"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"2800"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"2000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"120"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-70"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"5.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed"	"-40"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-300"
-			}
-			"10"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"poison_damage_per_second"			"350"
-			}
-			"11"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"poison_damage_interval"			"1.0"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_desolator6_arena"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"UpdateAttackProjectile"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"UpdateAttackProjectile"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
-					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
-				}
-
-				"OnAttackLanded"
-				{
-					"ApplyModifier"
-					{
-						"Target"			"TARGET"
-						"ModifierName"		"modifier_item_desolator6_arena_corruption"
-					}
-
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
-					}
-				}
-			}
-			"modifier_item_demons_paw"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%bonus_attack_range"
-				}
-			}
-			"modifier_item_desolator6_arena_corruption"
-			{
-				"Duration"				"%corruption_duration"
-				"Passive"				"0"
-				"IsHidden"				"0"
-				"IsBuff"				"0"
-				"IsDebuff"				"1"
-				"IsPurgable"			"1"
-
-				"EffectName"			"particles/items2_fx/orb_of_venom.vpcf"
-				"EffectAttachType"		"follow_origin"
-
-				"StatusEffectName"     "particles/status_fx/status_effect_frost.vpcf"
-				"StatusEffectPriority" "10"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%corruption_armor"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%cold_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%cold_movement_speed"
-				}
-
-				"ThinkInterval" 		"%poison_damage_interval"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%poison_damage_per_second"
-					}
 				}
 			}
 		}
@@ -9491,11 +8791,10 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"10"
 			}
-
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_resist"			"-60"
+				"debuff_resist"			"-50"
 			}
 			"08"
 			{
@@ -10120,17 +9419,15 @@
 				"var_type"				"FIELD_INTEGER"
 				"bash_damage"			"210"
 			}
-
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"valor_armor_reduction"	"-25"
+				"valor_armor_reduction"	"-40"
 			}
-
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"valor_armor_bonus"		"50"
+				"valor_armor_bonus"		"40"
 			}
 			"13"
 			{
@@ -10318,7 +9615,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"disarm_duration"		"45"
+				"disarm_duration"		"4.5"
 			}
 		}
 
@@ -10538,7 +9835,7 @@
 		"ItemResult"					"item_phantom_cuirass"
 		"ItemRequirements"
 		{
-			"01"						"item_assault;item_platemail;item_hyperstone;"
+			"01"						"item_assault;item_platemail;item_hyperstone"
 		}
 	}
 
@@ -12994,6 +12291,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"50"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
 			{
@@ -13014,7 +12312,8 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blast_damage_int_mult"	"7.5"
+				"blast_damage_int_mult"	"4"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"10"
 			{
@@ -13070,6 +12369,8 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityDamage"					"600"
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"19"
 		"AbilityManaCost"				"250"
