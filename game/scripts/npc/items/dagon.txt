@@ -780,7 +780,7 @@
 		"AbilityCastRange"				"825 850 875 900 950"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
-		"AbilityManaCost"				"180"
+		"AbilityManaCost"				"220"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -873,7 +873,7 @@
 		"AbilityCastRange"				"825 850 875 900 950"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
-		"AbilityManaCost"				"180"
+		"AbilityManaCost"				"240"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -966,7 +966,7 @@
 		"AbilityCastRange"				"825 850 875 900 950"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
-		"AbilityManaCost"				"180"
+		"AbilityManaCost"				"260"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1059,7 +1059,7 @@
 		"AbilityCastRange"				"825 850 875 900 950"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
-		"AbilityManaCost"				"180"
+		"AbilityManaCost"				"280"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1146,8 +1146,8 @@
 
 		"AbilityCastRange"				"2500"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"300"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1269,8 +1269,8 @@
 
 		"AbilityCastRange"				"2500"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"350"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1392,8 +1392,8 @@
 
 		"AbilityCastRange"				"2500"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"400"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1515,8 +1515,8 @@
 
 		"AbilityCastRange"				"2500"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"450"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1638,8 +1638,8 @@
 
 		"AbilityCastRange"				"2500"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"500"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"

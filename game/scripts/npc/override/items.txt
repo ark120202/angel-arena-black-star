@@ -321,6 +321,7 @@
 	"item_poor_mans_shield"
 	{
 		"SecretShop"					"0"
+		"ItemCost"						"650"
 		"AbilitySpecial"
 		{
 			"01"

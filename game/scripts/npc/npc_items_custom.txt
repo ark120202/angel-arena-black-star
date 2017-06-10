@@ -5733,12 +5733,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"55"
+				"bonus_damage"		"100"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_per_hit"		"-2"
+				"armor_per_hit"		"-1"
 			}
 			"03"
 			{
@@ -5748,7 +5748,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"4"
+				"duration"			"3"
 			}
 		}
 
@@ -7825,7 +7825,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"5"
+				"attack_damage_to_pure_pct"	"7"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -8628,7 +8628,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_hp_regen_pct" "1"
+				"bonus_hp_regen_pct" "2"
 			}
 			"03"
 			{
@@ -10907,7 +10907,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hex_damage_pct"		"30"
+				"hex_damage_pct"		"25"
 			}
 			"13"
 			{
@@ -10992,7 +10992,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"silence_damage_pct"	"30"
+				"silence_damage_pct"	"25"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"08"
