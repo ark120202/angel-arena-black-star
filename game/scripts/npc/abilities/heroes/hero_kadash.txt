@@ -22,7 +22,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_mult"			"130 160 190 220 250 280 310"
+				"crit_mult"			"245"
 			}
 		}
 

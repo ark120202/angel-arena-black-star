@@ -5711,12 +5711,12 @@
 		"ID"							"10209"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"6450"
+		"ItemCost"						"5700"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_dark_flow"
 		"ItemRequirements"
 		{
-			"01"						"item_blight_stone;item_broadsword;item_broadsword;item_blades_of_attack"
+			"01"						"item_blight_stone;item_mithril_hammer;item_broadsword;item_demon_edge"
 		}
 	}
 
@@ -9495,12 +9495,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_day_vision"		"200"
+				"bonus_day_vision"		"300"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_night_vision"	"1500"
+				"bonus_night_vision"	"200"
 			}
 		}
 
@@ -9550,7 +9550,7 @@
 		"AbilityCooldown"				"0.5"
 		"AbilityCastRange"				"350"
 		"AbilityCastPoint"				"0.0"
-		"ItemCost"						"900"
+		"ItemCost"						"700"
 
 		"ItemStockTime"					"60"
 		"ItemInitialStockTime"			"0"
