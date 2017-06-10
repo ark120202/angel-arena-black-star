@@ -189,11 +189,9 @@ function SetFlyoutScoreboardVisible(visible) {
 
 (function() {
 	var LocalPlayerID = Game.GetLocalPlayerID();
-	DynamicSubscribePTListener('arena', function(tableName, changesObject, deletionsObject) {
-		if (changesObject.players_abandoned != null) {
-			for (var k in changesObject.players_abandoned) {
-				players_abandoned.push(Number(changesObject.players_abandoned[k]));
-			}
+	DynamicSubscribePTListener('players_abandoned', function(tableName, changesObject, deletionsObject) {
+		for (var k in changesObject) {
+			players_abandoned.push(Number(k));
 		}
 	});
 	DynamicSubscribePTListener('disable_help_data', function(tableName, changesObject, deletionsObject) {

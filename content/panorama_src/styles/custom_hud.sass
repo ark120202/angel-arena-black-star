@@ -267,6 +267,10 @@ DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
 	border: 5px solid #f24444
 	align: center center
 	flow-children: down
+	visibility: collapse
+
+	.LocalPlayerAbandoned &
+		visibility: visible
 
 	> Label
 		margin-bottom: 6px;

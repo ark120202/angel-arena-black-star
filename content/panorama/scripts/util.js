@@ -156,8 +156,7 @@ function GetPlayerHeroName(playerId) {
 }
 
 function GetPlayerGold(iPlayerID) {
-	var goldTable = PlayerTables.GetTableValue('arena', 'gold');
-	return goldTable == null ? 0 : Number(goldTable[iPlayerID] || 0);
+	return +PlayerTables.GetTableValue('gold', iPlayerID);
 }
 
 function dynamicSort(property) {

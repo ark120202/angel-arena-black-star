@@ -140,9 +140,7 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 			HeroSelection:UpdateStatusForPlayer(iPlayerID, "hover", "npc_dota_hero_abaddon")
 		--end
 		PLAYER_DATA[iPlayerID].IsAbandoned = true
-		local ptd = PlayerTables:GetTableValue("arena", "players_abandoned")
-		table.insert(ptd, iPlayerID)
-		PlayerTables:SetTableValue("arena", "players_abandoned", ptd)
+		PlayerTables:SetTableValue("players_abandoned", iPlayerID, true)
 		if not GameRules:IsCheatMode() then
 			local teamLeft = GetOneRemainingTeam()
 			if teamLeft then
