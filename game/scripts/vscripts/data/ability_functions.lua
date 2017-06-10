@@ -205,7 +205,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 						})
 					end
 					victim:SpendMana(mana_needed, medusa_mana_shield_arena)
-					local particleName = "particles/arena/units/heroes/hero_sara/fragment_of_armor_impact.vpcf"
+					local particleName = "particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
 					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
 					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
 					ParticleManager:SetParticleControl(particle, 1, Vector(mana_needed,0,0))
