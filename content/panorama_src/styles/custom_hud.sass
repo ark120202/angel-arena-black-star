@@ -259,3 +259,39 @@ DOTAHud.IsBeforeGameplay #DynamicMinimapRoot
 
 .SimpleText #ToastLabel
 	padding-top: 0
+
+
+#AbandonedPanel
+	width: 700px
+	margin-bottom: 200px
+	background-color: #555
+	border: 5px solid #f24444
+	align: center bottom
+	flow-children: down
+
+	> Label
+		margin-bottom: 6px;
+		font-size: 20px
+		color: rgb(204, 217, 189)
+		text-align: center
+		horizontal-align: center
+
+	#AbandonedTitle
+		width: 100%
+		padding-bottom: -12px
+		margin: 0 40px
+		margin-top: 4px
+		margin-bottom: 20px
+		font-size: 50px
+		font-weight: bold
+		color: #fff
+		text-align: center
+		border-bottom: 1px solid #000
+
+	#AbandonedRanked
+		margin-bottom: -12px
+		opacity: .0001
+
+		.ShowMMR &
+			margin-bottom: 12px
+			opacity: 1

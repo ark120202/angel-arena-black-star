@@ -219,7 +219,7 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
 			if PlayerResource:IsValidPlayerID(playerID) then
 				local _hero = PlayerResource:GetSelectedHeroEntity(playerID)
-				if IsValidEntity(_hero) then
+				if not PlayerResource:IsPlayerAbandoned(playerID) and IsValidEntity(_hero) then
 					for _,hero in ipairs(_hero:GetFullName() == "npc_dota_hero_meepo" and MeepoFixes:FindMeepos(_hero, true) or {_hero}) do
 						Duel:EndDuelForUnit(hero)
 					end

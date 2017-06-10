@@ -337,6 +337,7 @@ function CreateHeroElements(id) {
 	var mapInfo = Options.GetMapInfo();
 	hud.AddClass('map_landscape_' + mapInfo.landscape);
 	hud.AddClass('map_gamemode_' + mapInfo.gamemode);
+	$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
 
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
