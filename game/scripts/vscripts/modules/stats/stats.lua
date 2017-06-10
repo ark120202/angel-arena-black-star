@@ -45,6 +45,8 @@ end
 
 function StatsClient:OnGameEnd(winner)
 	local status, nextCall = xpcall(function()
+		if not IsInToolsMode() and StatsClient.GameEndScheduled then return end
+		StatsClient.GameEndScheduled = true
 		local time = GameRules:GetDOTATime(false, true)
 		local matchID = tostring(GameRules:GetMatchID())
 		local debug = true
@@ -148,18 +150,20 @@ function StatsClient:OnGameEnd(winner)
 
 						ratingNew = receivedData.ratingNew,
 						ratingOld = receivedData.ratingOld,
-						ratingGamesRemaining = receivedData.ratingGamesRemaining,
-						experienceNew = receivedData.experienceNew,
-						experienceOld = receivedData.experienceOld,
+						ratingGamesRemaining = receivedData.ratingGamesRemaining or 10,
+						experienceNew = receivedData.experienceNew or 0,
+						experienceOld = receivedData.experienceOld or 0,
 					}
 				end
 				PlayerTables:CreateTable("stats_game_result", clientData, AllPlayersInterval)
 			end
 		end, math.huge, nil, true)
-	end, function (msg)
+	end, function(msg)
 		return msg..'\n'..debug.traceback()..'\n'
 	end)
 	if not status then
+		print(nextCall)
+		CPrint(nextCall)
 		PlayerTables:CreateTable("stats_game_result", {error = status}, AllPlayersInterval)
 	end
 end
