@@ -88,7 +88,6 @@ function Duel:StartDuel()
 	local heroes_to_fight_n = math.min(unpack(table.iterate(heroes_in_teams)))
 	if heroes_to_fight_n > 0 and table.count(heroes_in_teams) > 1 then
 		EmitAnnouncerSound("announcer_ann_custom_mode_20")
-		GameRules:SetHeroRespawnEnabled(false)
 		Duel.IsFirstDuel = Duel.DuelCounter == 0
 		Duel:SetDuelTimer(DUEL_SETTINGS.DurationBase + DUEL_SETTINGS.DurationForPlayer * heroes_to_fight_n)
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
@@ -211,7 +210,6 @@ function Duel:SetUpVisitor(unit)
 end
 
 function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
-	GameRules:SetHeroRespawnEnabled(true)
 	Duel.EntIndexer = {}
 	Duel.DuelStatus = DOTA_DUEL_STATUS_WATING
 	Duel.heroes_teams_for_duel = {}
@@ -259,9 +257,6 @@ function Duel:EndDuelForUnit(unit)
 		end
 	end)
 
-	if not unit:IsAlive() then
-		unit:RespawnHero(false, false, false)
-	end
 	if unit.FindClearSpaceForUnitAndSetCamera then
 		local pos = unit.ArenaBeforeTpLocation
 		if not pos then
