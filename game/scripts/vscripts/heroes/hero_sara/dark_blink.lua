@@ -17,10 +17,10 @@ if IsServer() then
 					point = casterPos + (point - casterPos):Normalized() * blinkRange
 				end
 				caster:EmitSound('Hero_Antimage.Blink_out')
-				ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_blink_start.vpcf", PATTACH_ABSORIGIN, caster)
+				ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sara/dark_blink_start.vpcf", PATTACH_ABSORIGIN, caster)
 				FindClearSpaceForUnit(caster, point, false)
 				caster:EmitSound('Hero_Antimage.Blink_in')
-				ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_blink_end.vpcf", PATTACH_ABSORIGIN, caster)
+				ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sara/dark_blink_end.vpcf", PATTACH_ABSORIGIN, caster)
 				ProjectileManager:ProjectileDodge(caster)
 			end
 		end
