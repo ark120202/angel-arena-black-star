@@ -105,3 +105,11 @@ arena_end_screen_victory: Победа
 arena_end_screen_defeat: Поражение
 arena_end_screen_legend_boss_damage: ПБОС
 arena_end_screen_legend_boss_damage_tooltip: Урон по боссам
+
+abaddoned_panel_title: Игра была покинута
+abaddoned_panel_reason: Герой был удален так как вы находились вне игры слишком долго
+abaddoned_panel_redistribution: Все предметы героя были проданы, а ваше золато было распределено между союзниками
+abaddoned_panel_ranked: Ваш рейтинг будет сильно понижен
+
+ranked_top_players: Лучшие игроки
+ranked_top_more: Открыть топ 100...

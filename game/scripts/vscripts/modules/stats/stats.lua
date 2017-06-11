@@ -8,6 +8,12 @@ function StatsClient:Init()
 	CustomGameEventManager:RegisterListener("stats_client_vote_guide", Dynamic_Wrap(StatsClient, "VoteGuide"))
 end
 
+function StatsClient:FetchTopPlayers()
+	StatsClient:Send("fetchTopPlayers", nil, function(response)
+		PlayerTables:CreateTable("loading_top_players", response, AllPlayersInterval)
+	end, nil, "GET")
+end
+
 function StatsClient:FetchPreGameData()
 	local data = {
 		matchid = tostring(GameRules:GetMatchID()),
@@ -45,6 +51,8 @@ end
 
 function StatsClient:OnGameEnd(winner)
 	local status, nextCall = xpcall(function()
+		if not IsInToolsMode() and StatsClient.GameEndScheduled then return end
+		StatsClient.GameEndScheduled = true
 		local time = GameRules:GetDOTATime(false, true)
 		local matchID = tostring(GameRules:GetMatchID())
 		local debug = true
@@ -148,18 +156,20 @@ function StatsClient:OnGameEnd(winner)
 
 						ratingNew = receivedData.ratingNew,
 						ratingOld = receivedData.ratingOld,
-						ratingGamesRemaining = receivedData.ratingGamesRemaining,
-						experienceNew = receivedData.experienceNew,
-						experienceOld = receivedData.experienceOld,
+						ratingGamesRemaining = receivedData.ratingGamesRemaining or 10,
+						experienceNew = receivedData.experienceNew or 0,
+						experienceOld = receivedData.experienceOld or 0,
 					}
 				end
 				PlayerTables:CreateTable("stats_game_result", clientData, AllPlayersInterval)
 			end
 		end, math.huge, nil, true)
-	end, function (msg)
+	end, function(msg)
 		return msg..'\n'..debug.traceback()..'\n'
 	end)
 	if not status then
+		print(nextCall)
+		CPrint(nextCall)
 		PlayerTables:CreateTable("stats_game_result", {error = status}, AllPlayersInterval)
 	end
 end
@@ -234,7 +244,7 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 		retryCount = 0
 	end
 	debugp("StatsClient:Send", "Sent data to " .. path .. "(with current retry of " .. (_currentRetry or 0) .. ")")
-	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path)
+	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path .. (protocol == "GET" and StatsClient:EncodeParams(data) or ""))
 	request:SetHTTPRequestGetOrPostParameter("data", JSON:encode(data))
 	request:Send(function(response)
 		if response.StatusCode ~= 200 or not response.Body then
@@ -261,4 +271,15 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 			end
 		end
 	end)
+end
+
+function StatsClient:EncodeParams(params)
+	if type(params) ~= "table" or next(params) == nil then return "" end
+	local str = "/?"
+	for k,v in pairs(params) do
+		k = k:gsub("([^%w ])", function(c) return string.format("%%%02X", string.byte(c)) end):gsub(" ", "+")
+		v = v:gsub("([^%w ])", function(c) return string.format("%%%02X", string.byte(c)) end):gsub(" ", "+")
+		str = str + k + "=" + v
+	end
+	return str
 end

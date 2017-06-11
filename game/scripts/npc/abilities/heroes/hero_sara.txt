@@ -145,8 +145,9 @@
 
 		"precache"
 		{
-			"particle"  "particles/arena/units/heroes/hero_sara/energy_burst.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"particle"		"particles/arena/units/heroes/hero_sara/dark_blink_start.vpcf"
+			"particle"		"particles/arena/units/heroes/hero_sara/dark_blink_end.vpcf"
 		}
 	}
 
@@ -221,7 +222,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"reflected_damage_pct_scepter"	"10 12 14 16 18 20 22"
-				//"CalculateSpellDamageTooltip"	"0"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 

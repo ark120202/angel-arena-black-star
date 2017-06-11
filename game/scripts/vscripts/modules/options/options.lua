@@ -142,7 +142,7 @@ function Options:LoadMapValues()
 			local failed = (GetInGamePlayerCount() < 10 or matchID == 0) and not StatsClient.Debug
 			if not failed then
 				Options:SetValue("EnableRatingAffection", true)
-				Options:SetValue("BanningPhaseBannedPercentage", 50)
+				Options:SetValue("BanningPhaseBannedPercentage", 100)
 			else
 				debugp("Options:LoadMapValues", "Ranked disabled because of low amount of players of match id == 0")
 				Options:SetValue("FailedRankedGame", true)

@@ -41,7 +41,6 @@ local requirements = {
 }
 
 local modifiers = {
-	modifier_item_shard_attackspeed_stack = "items/lua/modifiers/modifier_item_shard_attackspeed_stack",
 	modifier_apocalypse_apocalypse = "heroes/hero_apocalypse/modifier_apocalypse_apocalypse",
 	modifier_set_attack_range = "modifiers/modifier_set_attack_range",
 	modifier_charges = "modifiers/modifier_charges",
@@ -49,7 +48,12 @@ local modifiers = {
 	modifier_max_attack_range = "modifiers/modifier_max_attack_range",
 	modifier_arena_hero = "modifiers/modifier_arena_hero",
 	modifier_item_demon_king_bar_curse = "items/modifier_item_demon_king_bar_curse",
-	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game"
+	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game",
+
+	modifier_item_shard_attackspeed_stack = "items/modifier_item_shard_attackspeed_stack",
+	modifier_item_casino_drug_pill1_addiction = "modifiers/modifier_item_casino_drug_pill1_addiction",
+	modifier_item_casino_drug_pill2_addiction = "modifiers/modifier_item_casino_drug_pill2_addiction",
+	modifier_item_casino_drug_pill3_addiction = "modifiers/modifier_item_casino_drug_pill3_addiction",
 }
 
 for k,v in pairs(modifiers) do
@@ -83,11 +87,10 @@ function GameMode:InitGameMode()
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
 	StatsClient:Init()
-	PlayerTables:CreateTable("arena", {
-		gold = {},
-		players_abandoned = {},
-	}, AllPlayersInterval)
+	PlayerTables:CreateTable("arena", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
+	PlayerTables:CreateTable("players_abandoned", {}, AllPlayersInterval)
+	PlayerTables:CreateTable("gold", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
 end
 
@@ -99,6 +102,7 @@ function GameMode:OnFirstPlayerLoaded()
 	if Options:IsEquals("MainHeroList", "NoAbilities") then
 		CustomAbilities:PrepareData()
 	end
+	StatsClient:FetchTopPlayers()
 end
 
 function GameMode:OnAllPlayersLoaded()

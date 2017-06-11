@@ -1,4 +1,3 @@
-'use strict';
 var ONCLICK_PURGABLE_MODIFIERS = [
 	'modifier_rubick_personality_steal',
 	'modifier_tether_ally_aghanims'
@@ -337,6 +336,10 @@ function CreateHeroElements(id) {
 	var mapInfo = Options.GetMapInfo();
 	hud.AddClass('map_landscape_' + mapInfo.landscape);
 	hud.AddClass('map_gamemode_' + mapInfo.gamemode);
+	$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
+	DynamicSubscribePTListener('players_abandoned', function(tableName, changesObject, deletionsObject) {
+		if (changesObject[Game.GetLocalPlayerID()]) $.GetContextPanel().AddClass('LocalPlayerAbandoned');
+	});
 
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe('create_custom_toast', CreateCustomToast);

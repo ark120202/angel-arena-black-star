@@ -119,12 +119,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			end
 			newHero:AddItem(v)
 		end
-		for i = 0, 11 do
-			local citem = newHero:GetItemInSlot(i)
-			if citem and citem:GetName() == "item_dummy" then
-				UTIL_Remove(citem)
-			end
-		end
+		ClearSlotsFromDummy(newHero)
 		Timers:CreateTimer(startTime + duration - GameRules:GetDOTATime(true, true), function()
 			if IsValidEntity(newHero) then
 				newHero:RemoveModifierByName("modifier_hero_selection_transformation")

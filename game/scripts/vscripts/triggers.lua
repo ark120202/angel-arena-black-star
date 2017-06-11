@@ -25,7 +25,8 @@ function FountainOnStartTouch(trigger, team)
 	if unit and unit:GetTeam() == team then
 		unit:AddNewModifier(unit, nil, "modifier_fountain_aura_arena", nil)
 	elseif not unit:IsBoss() then
-		if unit:GetUnitName() ~= "" then
+		local unitName = unit:GetUnitName()
+		if unitName ~= "" and unitName ~= "npc_dota_thinker" and unitName ~= "npc_dummy_unit" then
 			Timers:CreateTimer(0.1, function()
 				local fountain = FindFountain(team)
 				fountain:EmitSound("Ability.LagunaBlade")
@@ -36,8 +37,8 @@ function FountainOnStartTouch(trigger, team)
 					ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
 				end
 			end)
+			unit:TrueKill()
 		end
-		unit:TrueKill()
 	end
 end
 function Fountain2OnStartTouch(trigger)

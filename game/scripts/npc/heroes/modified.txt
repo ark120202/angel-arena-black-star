@@ -603,6 +603,7 @@
 		"Ability24"	""
 		"AttributeBaseIntelligence"		"0"
 		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"			"14"
 		"StatusMana"					"0"
 		"StatusManaRegen"				"0"
 	}

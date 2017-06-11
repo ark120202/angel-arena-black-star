@@ -331,7 +331,7 @@ SHOP_LIST_STATUS_TO_BUY = 2
 SHOP_LIST_STATUS_NO_STOCK = 3
 SHOP_LIST_STATUS_NO_BOSS = 4
 
-function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName)
+function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName, baseItemName)
 	local primary_items = {}
 	local itemData = PanoramaShop.FormattedData[childItemName]
 	local _tempItemCounter = {}
@@ -339,9 +339,9 @@ function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName)
 
 	--local itemcount_all = #GetAllItemsByNameInInventory(unit, childItemName, true)
 	local itemcount = #GetAllItemsByNameInInventory(unit, childItemName, true) --isInShop and itemcount_all or itemcount_all - #GetAllItemsByNameInInventory(unit, childItemName, false)
-	if (childItemName == itemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
+	if (childItemName == baseItemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
 		for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
-			local subitems, newCounter = PanoramaShop:GetAllPrimaryRecipeItems(unit, newchilditem)
+			local subitems, newCounter = PanoramaShop:GetAllPrimaryRecipeItems(unit, newchilditem, baseItemName)
 			table.add(primary_items, subitems)
 			for k,v in pairs(newCounter) do
 				_tempItemCounter[k] = (_tempItemCounter[k] or 0) + v
@@ -356,11 +356,10 @@ function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName)
 	return primary_items, _tempItemCounter
 end
 
-function PanoramaShop:HasAnyOfItemChildren(unit, team, childItemName)
+function PanoramaShop:HasAnyOfItemChildren(unit, team, childItemName, baseItemName)
 	if not PanoramaShop.FormattedData[childItemName].Recipe then return false end
-	local primary_items = PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName)
+	local primary_items = PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName, baseItemName)
 	table.removeByValue(primary_items, childItemName)
-
 	for _,v in ipairs(primary_items) do
 		local stocks = PanoramaShop:GetItemStockCount(team, v)
 		if FindItemInInventoryByName(unit, v, true) or GetKeyValue(v, "ItemPurchasableFilter") == 0 or GetKeyValue(v, "ItemPurchasable") == 0 or stocks then
@@ -392,7 +391,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 	local ProbablyPurchasable = {}
 
 	function DefineItemState(name)
-		local has = PanoramaShop:HasAnyOfItemChildren(unit, team, name)
+		local has = PanoramaShop:HasAnyOfItemChildren(unit, team, name, itemName)
 		--print(name, has)
 		if has then
 			InsertItemChildrenToCheck(name)

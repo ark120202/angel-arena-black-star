@@ -1,8 +1,10 @@
-modifier_hero_out_of_game = class({})
-function modifier_hero_out_of_game:IsHidden() return true end
-function modifier_hero_out_of_game:IsPurgable() return false end
-function modifier_hero_out_of_game:IsPermanent() return true end
-function modifier_hero_out_of_game:RemoveOnDeath() return false end
+modifier_hero_out_of_game = class({
+	IsHidden =      function() return true end,
+	IsPurgable =    function() return false end,
+	IsPermanent =   function() return true end,
+	RemoveOnDeath = function() return false end,
+})
+
 function modifier_hero_out_of_game:CheckState()
 	return {
 		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,

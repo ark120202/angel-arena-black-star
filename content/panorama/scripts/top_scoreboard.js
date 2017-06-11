@@ -8,7 +8,7 @@ var teamColors = GameUI.CustomUIConfig().team_colors;
 function Snippet_TopBarPlayerSlot(pid) {
 	if (PlayerPanels[pid] == null) {
 		var team = Players.GetTeam(pid);
-		if (team != DOTA_TEAM_SPECTATOR) {
+		if (team !== DOTA_TEAM_SPECTATOR) {
 			var teamPanel = Snippet_DotaTeamBar(team).FindChildTraverse('TopBarPlayersContainer');
 			var panel = $.CreatePanel('Panel', teamPanel, '');
 			panel.BLoadLayoutSnippet('TopBarPlayerSlot');
@@ -41,32 +41,32 @@ function Snippet_TopBarPlayerSlot(pid) {
 
 function Snippet_TopBarPlayerSlot_Update(panel) {
 	var playerId = panel.playerId;
-	if (players_abandoned.indexOf(playerId) != -1) {
+	if (players_abandoned.indexOf(playerId) !== -1) {
 		panel.visible = false;
 	} else {
 		var playerInfo = Game.GetPlayerInfo(playerId);
 		var respawnSeconds = playerInfo.player_respawn_seconds;
 		var connectionState = playerInfo.player_connection_state;
 		var heroEnt = playerInfo.player_selected_hero_entity_index;
-		var isAlly = playerInfo.player_team_id == Players.GetTeam(Game.GetLocalPlayerID());
+		var isAlly = playerInfo.player_team_id === Players.GetTeam(Game.GetLocalPlayerID());
 		panel.SetDialogVariableInt('respawn_seconds', respawnSeconds + 1);
 		panel.SetHasClass('Dead', respawnSeconds >= 0);
-		panel.SetHasClass('Disconnected', connectionState == DOTAConnectionState_t.DOTA_CONNECTION_STATE_DISCONNECTED);
+		panel.SetHasClass('Disconnected', connectionState === DOTAConnectionState_t.DOTA_CONNECTION_STATE_DISCONNECTED);
 		panel.FindChildTraverse('HeroImage').SetImage(TransformTextureToPath(GetPlayerHeroName(playerId)));
 		panel.FindChildTraverse('PlayerColor').style.backgroundColor = GetHEXPlayerColor(playerId);
 		var ultStateOrTime = isAlly ? Game.GetPlayerUltimateStateOrTime(playerId) : PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_HIDDEN;
 		var TopBarUltIndicator = panel.FindChildTraverse('TopBarUltIndicator');
-		panel.SetHasClass('UltLearned', ultStateOrTime != PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_NOT_LEVELED);
-		panel.SetHasClass('UltReady', ultStateOrTime == PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_READY);
-		panel.SetHasClass('UltReadyNoMana', ultStateOrTime == PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_NO_MANA);
+		panel.SetHasClass('UltLearned', ultStateOrTime !== PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_NOT_LEVELED);
+		panel.SetHasClass('UltReady', ultStateOrTime === PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_READY);
+		panel.SetHasClass('UltReadyNoMana', ultStateOrTime === PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_NO_MANA);
 		panel.SetHasClass('UltOnCooldown', ultStateOrTime > 0);
 		panel.FindChildTraverse('HealthBar').value = Entities.GetHealthPercent(heroEnt) / 100;
 		panel.FindChildTraverse('ManaBar').value = Entities.GetMana(heroEnt) / Entities.GetMaxMana(heroEnt);
 		panel.ultimateCooldown = ultStateOrTime;
 		panel.SetHasClass('BuybackReady', Players.CanPlayerBuyback(playerId));
 		var lastBuybackTime = Players.GetLastBuybackTime(playerId);
-		panel.SetHasClass('BuybackUsed', lastBuybackTime != 0 && Game.GetGameTime() - lastBuybackTime < 10);
-		if (playerInfo.player_team_id != DOTA_TEAM_SPECTATOR && playerInfo.player_team_id != panel.GetParent().team && teamColors[playerInfo.player_team_id] != null) {
+		panel.SetHasClass('BuybackUsed', lastBuybackTime !== 0 && Game.GetGameTime() - lastBuybackTime < 10);
+		if (playerInfo.player_team_id !== DOTA_TEAM_SPECTATOR && playerInfo.player_team_id !== panel.GetParent().team && teamColors[playerInfo.player_team_id] != null) {
 			panel.SetParent(Snippet_DotaTeamBar(playerInfo.player_team_id).FindChildTraverse('TopBarPlayersContainer'));
 		}
 	}
@@ -90,7 +90,7 @@ function Snippet_DotaTeamBar(team) {
 
 function Snippet_DotaTeamBar_Update(panel) {
 	var team = panel.team;
-	panel.SetHasClass('EnemyTeam', team != Players.GetTeam(Game.GetLocalPlayerID()));
+	panel.SetHasClass('EnemyTeam', team !== Players.GetTeam(Game.GetLocalPlayerID()));
 	var teamDetails = Game.GetTeamDetails(team);
 	panel.SetDialogVariableInt('team_score', teamDetails.team_score);
 }
@@ -139,10 +139,10 @@ function Update() {
 		if (changesObject.duel_end_time != null) {
 			DuelTimerEndTime = Number(changesObject.duel_end_time);
 		}
-		if (changesObject.players_abandoned != null) {
-			for (var k in changesObject.players_abandoned) {
-				players_abandoned.push(Number(changesObject.players_abandoned[k]));
-			}
+	});
+	DynamicSubscribePTListener('players_abandoned', function(tableName, changesObject, deletionsObject) {
+		for (var k in changesObject) {
+			players_abandoned.push(Number(k));
 		}
 	});
 	$('#TopBarLeftPlayers').RemoveAndDeleteChildren();

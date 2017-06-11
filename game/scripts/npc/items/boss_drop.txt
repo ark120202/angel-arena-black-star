@@ -307,7 +307,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_range"	"120"
+				"bonus_attack_range"	"50"
 			}
 		}
 

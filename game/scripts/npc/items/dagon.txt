@@ -248,12 +248,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
 
@@ -335,12 +332,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_2_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
 
@@ -422,12 +416,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_3_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
 
@@ -509,12 +500,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_4_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
 
@@ -596,12 +584,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_5_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
 
@@ -680,14 +665,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"825 850 875 900 950"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
-		"AbilityManaCost"				"200"
+		"AbilityManaCost"				"200 220 240 260 280"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -773,14 +755,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_2_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"825 850 875 900 950"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
-		"AbilityManaCost"				"180"
+		"AbilityManaCost"				"200 220 240 260 280"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -866,14 +845,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_3_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"825 850 875 900 950"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
-		"AbilityManaCost"				"180"
+		"AbilityManaCost"				"200 220 240 260 280"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -959,14 +935,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_4_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"825 850 875 900 950"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
-		"AbilityManaCost"				"180"
+		"AbilityManaCost"				"200 220 240 260 280"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1052,14 +1025,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_5_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"825 850 875 900 950"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
-		"AbilityManaCost"				"180"
+		"AbilityManaCost"				"200 220 240 260 280"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1142,12 +1112,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_arena"
-		"FightRecapLevel"				"1"
 
 		"AbilityCastRange"				"2500"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"300 350 400 450 500"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1265,12 +1234,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_2_arena"
-		"FightRecapLevel"				"1"
 
 		"AbilityCastRange"				"2500"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"300 350 400 450 500"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1388,12 +1356,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_3_arena"
-		"FightRecapLevel"				"1"
 
 		"AbilityCastRange"				"2500"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"300 350 400 450 500"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1511,12 +1478,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_4_arena"
-		"FightRecapLevel"				"1"
 
 		"AbilityCastRange"				"2500"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"300 350 400 450 500"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1634,12 +1600,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_5_arena"
-		"FightRecapLevel"				"1"
 
 		"AbilityCastRange"				"2500"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"300 350 400 450 500"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"

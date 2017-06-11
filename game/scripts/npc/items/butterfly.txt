@@ -137,12 +137,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"70"
+				"bonus_agility"					"80"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"60"
+				"bonus_damage"					"70"
 			}
 			"03"
 			{
@@ -152,12 +152,12 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"60"
+				"bonus_attack_speed"			"70"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_movement_speed"			"35"
+				"bonus_movement_speed"			"40"
 			}
 			"06"
 			{
@@ -167,12 +167,12 @@
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility_active"			"50"
+				"bonus_agility_active"			"70"
 			}
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_active"			"500"
+				"movement_speed_active"			"525"
 			}
 			"09"
 			{
@@ -262,12 +262,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"100"
+				"bonus_agility"					"150"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"100"
+				"bonus_damage"					"150"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
@@ -278,17 +278,17 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"90"
+				"bonus_attack_speed"			"150"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_movement_speed"			"50"
+				"bonus_movement_speed"			"60"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"dodge_chance_pct"				"15"
+				"dodge_chance_pct"				"20"
 			}
 			"07"
 			{
@@ -298,7 +298,7 @@
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility_active"			"90"
+				"bonus_agility_active"			"120"
 			}
 			"09"
 			{

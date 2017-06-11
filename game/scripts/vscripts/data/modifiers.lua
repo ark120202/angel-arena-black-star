@@ -14,6 +14,7 @@ MODIFIERS_DEATH_PREVENTING = {
 	"modifier_fountain_aura_arena",
 	"modifier_mana_shield_arena",
 	"modifier_saber_avalon_invulnerability",
+	"modifier_fountain_aura_invulnerability"
 }
 
 DUEL_PURGED_MODIFIERS = {
@@ -22,6 +23,8 @@ DUEL_PURGED_MODIFIERS = {
 	"modifier_tether_ally_aghanims",
 	"modifier_life_stealer_assimilate",
 	"modifier_life_stealer_assimilate_effect",
+	"modifier_item_black_king_bar_arena_active",
+	"modifier_item_titanium_bar_active"
 }
 
 ABILITY_INVULNERABLE_UNITS = {
