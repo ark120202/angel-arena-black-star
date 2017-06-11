@@ -102,6 +102,7 @@ function GameMode:OnFirstPlayerLoaded()
 	if Options:IsEquals("MainHeroList", "NoAbilities") then
 		CustomAbilities:PrepareData()
 	end
+	StatsClient:FetchTopPlayers()
 end
 
 function GameMode:OnAllPlayersLoaded()

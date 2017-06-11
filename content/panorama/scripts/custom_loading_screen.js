@@ -96,6 +96,14 @@ function Snippet_OptionVoting_Recalculate(votePanel, voteData) {
 	}
 }
 
+function Snippet_TopPlayer(player) {
+	var panel = $.CreatePanel('Panel', $('#TopPlayersList'), '');
+	panel.BLoadLayoutSnippet('TopPlayer');
+	panel.FindChildTraverse('PlayerAvatar').steamid = player.steamid;
+	panel.FindChildTraverse('PlayerName').steamid = player.steamid;
+	panel.SetDialogVariableInt('rating', player.Rating);
+}
+
 function CheckStartable() {
 	var player = Game.GetLocalPlayerInfo();
 	if (player == null)
@@ -107,6 +115,15 @@ function CheckStartable() {
 		// LocalPlayerData.FindChildTraverse('CloseButton').vislbe = false;
 		// LocalPlayerData.LoadPanelForPlayer(Game.GetLocalPlayerID());
 		PlayerTables = GameUI.CustomUIConfig().PlayerTables;
+
+		$('#TopPlayersList').RemoveAndDeleteChildren();
+		DynamicSubscribePTListener('loading_top_players', function(tableName, changesObject) {
+			$('#TopPlayers').AddClass('Loaded');
+			for(var i in changesObject) {
+				Snippet_TopPlayer(changesObject[i]);
+			}
+		});
+
 		DynamicSubscribePTListener('option_votings', function(tableName, changesObject, deletionsObject) {
 			$('#OptionVotings').AddClass('Loaded');
 			for (var voteName in changesObject) {

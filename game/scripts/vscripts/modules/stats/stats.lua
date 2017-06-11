@@ -8,6 +8,12 @@ function StatsClient:Init()
 	CustomGameEventManager:RegisterListener("stats_client_vote_guide", Dynamic_Wrap(StatsClient, "VoteGuide"))
 end
 
+function StatsClient:FetchTopPlayers()
+	StatsClient:Send("fetchTopPlayers", nil, function(response)
+		PlayerTables:CreateTable("loading_top_players", response, AllPlayersInterval)
+	end, nil, "GET")
+end
+
 function StatsClient:FetchPreGameData()
 	local data = {
 		matchid = tostring(GameRules:GetMatchID()),
@@ -238,7 +244,7 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 		retryCount = 0
 	end
 	debugp("StatsClient:Send", "Sent data to " .. path .. "(with current retry of " .. (_currentRetry or 0) .. ")")
-	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path)
+	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path .. (protocol == "GET" and StatsClient:EncodeParams(data) or ""))
 	request:SetHTTPRequestGetOrPostParameter("data", JSON:encode(data))
 	request:Send(function(response)
 		if response.StatusCode ~= 200 or not response.Body then
@@ -265,4 +271,15 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 			end
 		end
 	end)
+end
+
+function StatsClient:EncodeParams(params)
+	if type(params) ~= "table" or next(params) == nil then return "" end
+	local str = "/?"
+	for k,v in pairs(params) do
+		k = k:gsub("([^%w ])", function(c) return string.format("%%%02X", string.byte(c)) end):gsub(" ", "+")
+		v = v:gsub("([^%w ])", function(c) return string.format("%%%02X", string.byte(c)) end):gsub(" ", "+")
+		str = str + k + "=" + v
+	end
+	return str
 end
