@@ -1,6 +1,6 @@
-LinkLuaModifier("modifier_sara_fragment_of_logic", "heroes/hero_sara/fragment_of_armor.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_sara_fragment_of_logic_debuff", "heroes/hero_sara/fragment_of_armor.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_sara_fragment_of_logic_buff_scepter", "heroes/hero_sara/fragment_of_armor.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_sara_fragment_of_logic", "heroes/hero_sara/fragment_of_logic.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_sara_fragment_of_logic_debuff", "heroes/hero_sara/fragment_of_logic.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_sara_fragment_of_logic_buff_scepter", "heroes/hero_sara/fragment_of_logic.lua", LUA_MODIFIER_MOTION_NONE)
 
 sara_fragment_of_logic = class({
 	GetIntrinsicModifierName = function() return "modifier_sara_fragment_of_logic" end,

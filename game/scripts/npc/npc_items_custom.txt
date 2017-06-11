@@ -6652,9 +6652,6 @@
 			"modifier_item_horn_of_the_underworld_active"
 			{
 				"Duration"              	"%duration"
-				"Passive"					"0"
-				"IsHidden"					"0"
-				"IsBuff"					"1"
 				"IsPurgable"				"1"
 				"StatusEffectName" 			"particles/status_fx/status_effect_ghost.vpcf"
 				"StatusEffectPriority" 		"15"
