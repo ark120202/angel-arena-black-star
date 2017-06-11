@@ -676,11 +676,34 @@ DOTA_Tooltip_ability_item_blink_staff_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_blink_staff_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_modifier_item_blink_staff_unobstructed_movement: Blink Staff Movement
 DOTA_Tooltip_modifier_item_blink_staff_unobstructed_movement_Description: You have unobstructed movement.
+
 DOTA_Tooltip_ability_item_hand_of_midas_arena: Hand of Midas
-DOTA_Tooltip_ability_item_hand_of_midas_arena_Description: 'Active: Transmute - Kills a non-hero target for %bonus_gold% gold and %xp_multiplier%x experience.  Cannot be used on Ancient Creeps.'
+DOTA_Tooltip_ability_item_hand_of_midas_arena_Description: |-
+  Active: Transmute - Kills a non-hero target for %bonus_gold% gold and %xp_multiplier%x experience.
+  Cannot be used on Ancient Creeps.
+  First level also can't be used on champions.
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Note0: The gold given is reliable gold (you do not get the normal creep bounty).
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Note1: Experience gained by using Transmute is not shared.
 DOTA_Tooltip_ability_item_hand_of_midas_arena_bonus_attack_speed: +$attack
+
+DOTA_Tooltip_ability_item_hand_of_midas_2_arena: Hand of Midas
+DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Description: |-
+  Active: Transmute - Kills a non-hero target for %bonus_gold% gold and %xp_multiplier%x experience.
+  Cannot be used on Ancient Creeps.
+  First level also can't be used on champions.
+DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note0: The gold given is reliable gold (you do not get the normal creep bounty).
+DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note1: Experience gained by using Transmute is not shared.
+DOTA_Tooltip_ability_item_hand_of_midas_2_arena_bonus_attack_speed: +$attack
+
+DOTA_Tooltip_ability_item_hand_of_midas_3_arena: Hand of Midas
+DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Description: |-
+  Active: Transmute - Kills a non-hero target for %bonus_gold% gold and %xp_multiplier%x experience.
+  Cannot be used on Ancient Creeps.
+  First level also can't be used on champions.
+DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note0: The gold given is reliable gold (you do not get the normal creep bounty).
+DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note1: Experience gained by using Transmute is not shared.
+DOTA_Tooltip_ability_item_hand_of_midas_3_arena_bonus_attack_speed: +$attack
+
 DOTA_Tooltip_ability_item_skull_of_midas: Skull of Midas
 DOTA_Tooltip_ability_item_skull_of_midas_Description: 'Passive: Touch of Midas - Each killed unit will give you some more gold and experience.'
 DOTA_Tooltip_ability_item_skull_of_midas_bonus_damage: +$damage
@@ -707,16 +730,6 @@ DOTA_Tooltip_ability_item_bloodstone_arena_bonus_health: +$health
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana_regen_percentage: '%+$mana_regen'
-DOTA_Tooltip_ability_item_hand_of_midas_2_arena: Hand of Midas
-DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Description: 'Active: Transmute - Kills a non-hero target for %bonus_gold% gold and %xp_multiplier%x experience.  Cannot be used on Ancient Creeps.'
-DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note0: The gold given is reliable gold (you do not get the normal creep bounty).
-DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note1: Experience gained by using Transmute is not shared.
-DOTA_Tooltip_ability_item_hand_of_midas_2_arena_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_hand_of_midas_3_arena: Hand of Midas
-DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Description: 'Active: Transmute - Kills a non-hero target for %bonus_gold% gold and %xp_multiplier%x experience.  Cannot be used on Ancient Creeps.'
-DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note0: The gold given is reliable gold (you do not get the normal creep bounty).
-DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note1: Experience gained by using Transmute is not shared.
-DOTA_Tooltip_ability_item_hand_of_midas_3_arena_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_team_changer: Traitor's Flag
 DOTA_Tooltip_ability_item_team_changer_Description: |-
   Change your team to the opposite team. Can be used only if another team has less players than your. If damage is taken from an enemy hero or boss, this ability is disabled for %attacked_cooldown% seconds

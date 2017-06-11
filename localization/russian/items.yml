@@ -676,11 +676,34 @@ DOTA_Tooltip_ability_item_blink_staff_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_blink_staff_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_modifier_item_blink_staff_unobstructed_movement: Передвижение от Blink Staff
 DOTA_Tooltip_modifier_item_blink_staff_unobstructed_movement_Description: У вас есть свободное передвижение.
+
 DOTA_Tooltip_ability_item_hand_of_midas_arena: Hand of Midas
-DOTA_Tooltip_ability_item_hand_of_midas_arena_Description: 'Активируемая: Transmute — мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта. Невозможно использовать на древних крипах.'
+DOTA_Tooltip_ability_item_hand_of_midas_arena_Description: |-
+  Активируемая: Transmute — мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
+  Невозможно использовать на древних крипах.
+  Первый уровень также нельзя использовать на чемпионах.
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Note0: Получаемое золото идет в надежный запас (при этом за убийство крипа стандартная награда не дается).
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Note1: Опыт от превращения не делится с другими героями.
 DOTA_Tooltip_ability_item_hand_of_midas_arena_bonus_attack_speed: +$attack
+
+DOTA_Tooltip_ability_item_hand_of_midas_2_arena: Hand of Midas
+DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Description: |-
+  Активируемая: Transmute — мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
+  Невозможно использовать на древних крипах.
+  Первый уровень также нельзя использовать на чемпионах.
+DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note0: Получаемое золото идет в надежный запас (при этом за убийство крипа стандартная награда не дается).
+DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note1: Опыт от превращения не делится с другими героями.
+DOTA_Tooltip_ability_item_hand_of_midas_2_arena_bonus_attack_speed: +$attack
+
+DOTA_Tooltip_ability_item_hand_of_midas_3_arena: Hand of Midas
+DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Description: |-
+  Активируемая: Transmute — мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
+  Невозможно использовать на древних крипах.
+  Первый уровень также нельзя использовать на чемпионах.
+DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note0: Получаемое золото идет в надежный запас (при этом за убийство крипа стандартная награда не дается).
+DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note1: Опыт от превращения не делится с другими героями.
+DOTA_Tooltip_ability_item_hand_of_midas_3_arena_bonus_attack_speed: +$attack
+
 DOTA_Tooltip_ability_item_skull_of_midas: Skull of Midas
 DOTA_Tooltip_ability_item_skull_of_midas_Description: 'Пассивная: Touch of Midas - Каждый убитый юнит будет превращен в золото, что принесет вам дополнительные золото и опыт.'
 DOTA_Tooltip_ability_item_skull_of_midas_bonus_damage: +$damage
@@ -707,16 +730,6 @@ DOTA_Tooltip_ability_item_bloodstone_arena_bonus_health: +$health
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana_regen_percentage: '%+$mana_regen'
-DOTA_Tooltip_ability_item_hand_of_midas_2_arena: Hand of Midas
-DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Description: 'Активируемая: Transmute — мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта. Невозможно использовать на древних крипах.'
-DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note0: Получаемое золото идет в надежный запас (при этом за убийство крипа стандартная награда не дается).
-DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note1: Опыт от превращения не делится с другими героями.
-DOTA_Tooltip_ability_item_hand_of_midas_2_arena_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_hand_of_midas_3_arena: Hand of Midas
-DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Description: 'Активируемая: Transmute — мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта. Невозможно использовать на древних крипах.'
-DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note0: Получаемое золото идет в надежный запас (при этом за убийство крипа стандартная награда не дается).
-DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note1: Опыт от превращения не делится с другими героями.
-DOTA_Tooltip_ability_item_hand_of_midas_3_arena_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_team_changer: Traitor's Flag
 DOTA_Tooltip_ability_item_team_changer_Description: |-
   Меняет вашу команду на противоположную. Может быть использовано только если в другой команде меньше игроков чем в вашей. Если владелец получит урон от вражеского героя или босса, способность отключается на %attacked_cooldown% сек.
