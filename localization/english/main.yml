@@ -388,3 +388,14 @@ DOTA_Tooltip_ability_filler_ability_hp_heal_growth: 'HEALTH REGEN / MIN:'
 DOTA_Tooltip_ability_filler_ability_mp_heal_growth: 'MANA REGEN / MIN:'
 DOTA_Tooltip_ability_filler_ability_hp_heal_pct: '%HEALTH REGEN:'
 DOTA_Tooltip_ability_filler_ability_mp_heal_pct: '%MANA REGEN:'
+
+
+DOTA_Tooltip_modifier_fountain_aura_arena: Fountain Rejuvenation
+DOTA_Tooltip_modifier_fountain_aura_arena_Description: 'Heals %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% HP and %dMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% mana per second.'
+
+DOTA_Tooltip_modifier_fountain_aura_invulnerability: Fountain Invulnerability
+DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Takes no damage from any sources. Works only until %dMODIFIER_PROPERTY_TOOLTIP% minute.'
+
+
+
+
