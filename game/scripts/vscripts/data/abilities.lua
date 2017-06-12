@@ -87,7 +87,6 @@ REFRESH_LIST_IGNORE_REARM = {
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
 
-	item_hand_of_midas = true,
 	item_black_king_bar_arena = true,
 	item_black_king_bar_2 = true,
 	item_black_king_bar_3 = true,
@@ -95,7 +94,9 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_black_king_bar_5 = true,
 	item_black_king_bar_6 = true,
 
-	--[[item_pipe = true,
+	destroyer_body_reconstruction = true,
+
+	item_pipe = true,
 	item_arcane_boots = true,
 	item_helm_of_the_dominator = true,
 	item_sphere = true,
@@ -106,14 +107,8 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_hand_of_midas_3_arena = true,
 	item_mekansm_arena = true,
 	item_mekansm_2 = true,
-	item_guardian_greaves_arena = true,
-	item_sunray_dagon_arena = true,
-	item_sunray_dagon_2_arena = true,
-	item_sunray_dagon_3_arena = true,
-	item_sunray_dagon_4_arena = true,
-	item_sunray_dagon_5_arena = true,]]
 
-	--[[earthshaker_echo_slam = true,
+	earthshaker_echo_slam = true,
 	juggernaut_omni_slash = true,
 	warlock_rain_of_chaos_arena = true,
 	skeleton_king_reincarnation_arena = true,
@@ -158,7 +153,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	doom_bringer_devour_arena = true,
 	magnataur_reverse_polarity = true,
 	queenofblades_alter_ego = true,
-	saber_excalibur = true,]]
+	saber_excalibur = true,
 }
 
 

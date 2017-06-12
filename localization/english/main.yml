@@ -365,11 +365,8 @@ DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura: Blazing Blood
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura_Description: Applies Burning Spear stacks to all enemies around
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff: Burning Spear
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff_Description: 'YOU ARE ON FIRE! Taking periodic damage. Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, magic damage resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%'
-DOTA_Tooltip_ability_tinker_rearm_arena: Rearming Strike
-DOTA_Tooltip_ability_tinker_rearm_arena_Description: 'Tinker shoots a ball of pure energy, refreshing cooldowns of all non unit-target abilities and items with some chance, or decreasing enemy''s magic damage resistance and causing each unit-target ability or item used on it to have a chance to immediately reset it''s cooldown.'
-DOTA_Tooltip_ability_tinker_rearm_arena_debuff_duration: 'DURATION:'
-DOTA_Tooltip_ability_tinker_rearm_arena_refresh_chance_pct: '%REFRESH CHANCE:'
-DOTA_Tooltip_ability_tinker_rearm_arena_magical_resistanse_pct: '%MAGIC DAMAGE RESISTANCE REDUCTION:'
+DOTA_Tooltip_ability_tinker_rearm_arena: Rearm
+DOTA_Tooltip_ability_tinker_rearm_arena_Description: 'Resets the cooldown on most of Tinker''s items and abilities.'
 
 DOTA_Tooltip_ability_life_stealer_feast_arena: Feast
 DOTA_Tooltip_ability_life_stealer_feast_arena_Description: Lifestealer's attacks damage enemies and heal himself for a percentage of his target's current health.
