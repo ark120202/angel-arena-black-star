@@ -10990,7 +10990,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"silence_damage_pct"	"25"
+				"silence_damage_pct"	"20"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"08"
