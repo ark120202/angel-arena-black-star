@@ -394,8 +394,7 @@ DOTA_Tooltip_modifier_fountain_aura_arena: Fountain Rejuvenation
 DOTA_Tooltip_modifier_fountain_aura_arena_Description: 'Heals %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% HP and %dMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% mana per second.'
 
 DOTA_Tooltip_modifier_fountain_aura_invulnerability: Fountain Invulnerability
-DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Takes no damage from any sources. Works only until %dMODIFIER_PROPERTY_TOOLTIP% minute.'
+DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Takes no damage from any sources. Works only until %dMODIFIER_PROPERTY_TOOLTIP% minute. After that time, fountain stops killing enemy units, but instead applies on them ''Fountain Weakness'' debuff, that decreases their outgoing damage.'
 
-
-
-
+DOTA_Tooltip_modifier_fountain_aura_enemy: Fountain Weakness
+DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'All outgoing damage reduced by %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%. Damage reduction decreases by 5%% each 5 minutes.'

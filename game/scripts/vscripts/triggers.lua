@@ -27,17 +27,21 @@ function FountainOnStartTouch(trigger, team)
 	elseif not unit:IsBoss() then
 		local unitName = unit:GetUnitName()
 		if unitName ~= "" and unitName ~= "npc_dota_thinker" and unitName ~= "npc_dummy_unit" then
-			Timers:CreateTimer(0.1, function()
-				local fountain = FindFountain(team)
-				fountain:EmitSound("Ability.LagunaBlade")
-				if IsValidEntity(unit) then
-					unit:EmitSound("Ability.LagunaBladeImpact")
-					local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_ABSORIGIN, fountain)
-					ParticleManager:SetParticleControl(pfx, 0, fountain:GetAbsOrigin() + Vector(0,0,224))
-					ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
-				end
-			end)
-			unit:TrueKill()
+			if GameRules:GetDOTATime(false, true) < FOUNTAIN_EFFECTIVE_TIME_THRESHOLD then
+				Timers:CreateTimer(0.1, function()
+					local fountain = FindFountain(team)
+					fountain:EmitSound("Ability.LagunaBlade")
+					if IsValidEntity(unit) then
+						unit:EmitSound("Ability.LagunaBladeImpact")
+						local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_ABSORIGIN, fountain)
+						ParticleManager:SetParticleControl(pfx, 0, fountain:GetAbsOrigin() + Vector(0,0,224))
+						ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
+					end
+				end)
+				unit:TrueKill()
+			else
+				unit:AddNewModifier(unit, nil, "modifier_fountain_aura_enemy", nil)
+			end
 		end
 	end
 end
@@ -57,13 +61,17 @@ end
 -- TODO remove these team numbers
 function Fountain2OnEndTouch(trigger)
 	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
+	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
 end
 function Fountain3OnEndTouch(trigger)
 	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
+	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
 end
 function Fountain6OnEndTouch(trigger)
 	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
+	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
 end
 function Fountain7OnEndTouch(trigger)
 	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
+	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
 end
