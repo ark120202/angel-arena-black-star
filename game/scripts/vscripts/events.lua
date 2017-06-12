@@ -144,10 +144,13 @@ function GameMode:OnAbilityChannelFinished(keys)
 	--local interrupted = keys.interrupted == 1
 end
 
--- A player leveled up
 function GameMode:OnPlayerLevelUp(keys)
-	--[[local player = EntIndexToHScript(keys.player)
-	local level = keys.level]]
+	local player = EntIndexToHScript(keys.player)
+	local level = keys.level
+	local hero = player:GetAssignedHero()
+	if LEVELS_WITHOUT_ABILITY_POINTS[level] and IsValidEntity(hero) then
+		hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
+	end
 end
 
 -- A player last hit a creep, a tower, or a hero
