@@ -172,6 +172,7 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"damage_per_second_pct"		"5"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
