@@ -112,6 +112,7 @@ if IsServer() then
 				victim = parent,
 				damage = damage,
 				damage_type = ability:GetAbilityDamageType(),
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 				ability = ability
 			})
 		end
