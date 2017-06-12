@@ -113,3 +113,5 @@ abaddoned_panel_ranked: Ваш рейтинг будет сильно пониж
 
 ranked_top_players: Лучшие игроки
 ranked_top_more: Открыть топ 100...
+
+teams_kill_weight_tooltip: Убийство героев этой команды принесет {d:kill_weight} очков

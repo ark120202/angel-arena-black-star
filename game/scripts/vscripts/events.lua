@@ -11,18 +11,6 @@ end
 function GameMode:OnGameRulesStateChange(keys)
 	local newState = GameRules:State_Get()
 	if newState == DOTA_GAMERULES_STATE_PRE_GAME then
-		local Counters = {}
-		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-			if PlayerResource:IsValidPlayerID(i) then
-				local team = PlayerResource:GetTeam(i)
-				if PLAYERS_COLORS[team] then
-					Counters[team] = (Counters[team] or 0) + 1
-					local color = PLAYERS_COLORS[team][Counters[team]]
-					PLAYER_DATA[i].Color = color
-					PlayerResource:SetCustomPlayerColor(i, color[1], color[2], color[3])
-				end
-			end
-		end
 		HeroSelection:CollectPD()
 		HeroSelection:HeroSelectionStart()
 		GameMode:OnHeroSelectionStart()
@@ -144,10 +132,13 @@ function GameMode:OnAbilityChannelFinished(keys)
 	--local interrupted = keys.interrupted == 1
 end
 
--- A player leveled up
 function GameMode:OnPlayerLevelUp(keys)
-	--[[local player = EntIndexToHScript(keys.player)
-	local level = keys.level]]
+	local player = EntIndexToHScript(keys.player)
+	local level = keys.level
+	local hero = player:GetAssignedHero()
+	if LEVELS_WITHOUT_ABILITY_POINTS[level] and IsValidEntity(hero) then
+		hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
+	end
 end
 
 -- A player last hit a creep, a tower, or a hero

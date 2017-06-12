@@ -58,8 +58,8 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_attack_damage = {
 		icon = "talents/damage",
-		cost = 3,
-		group = 4,
+		cost = 5,
+		group = 9,
 		max_level = 7,
 		special_values = {
 			damage = {100, 200, 300, 400, 500, 600, 700}
@@ -204,7 +204,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 5,
 		max_level = 7,
 		special_values = {
-			cooldown_reduction_pct = {7, 10, 13, 16, 19, 22, 25}
+			cooldown_reduction_pct = {5, 7, 9, 11, 13, 15, 18}
 		},
 		effect = {
 			modifiers = {
@@ -1058,7 +1058,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 3,
 		requirement = "pugna_nether_ward",
-		special_values = {value = 5},
+		special_values = {value = 3},
 		effect = {abilities = "special_bonus_unique_pugna_3"}
 	},
 	talent_hero_pugna_life_drain_heal = {
@@ -2271,9 +2271,9 @@ TALENT_GROUP_TO_LEVEL = {
 	-- [1] = 5, exp;gold_creep;
 	-- [2] = 10, mana;regen;gold_min;exp_min;
 	-- [3] = 15, armor;mag_resist;
-	-- [4] = 20, movespeed;spell_amp;damage;
+	-- [4] = 20, movespeed;spell_amp;
 	-- [5] = 25, cd;evasion;
 	-- [6] = 30, ms_limit;
 	-- [7] = 35, day;night;
 	-- [8] = 40, respawn_time;
-	-- [9] = 45, truestrike;
+	-- [9] = 45, truestrike;damage;

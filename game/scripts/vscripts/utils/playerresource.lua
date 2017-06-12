@@ -141,6 +141,7 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 		--end
 		PLAYER_DATA[iPlayerID].IsAbandoned = true
 		PlayerTables:SetTableValue("players_abandoned", iPlayerID, true)
+		Teams:RecalculateKillWeight(PlayerResource:GetTeam(iPlayerID))
 		if not GameRules:IsCheatMode() then
 			local teamLeft = GetOneRemainingTeam()
 			if teamLeft then

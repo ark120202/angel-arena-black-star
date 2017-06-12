@@ -74,7 +74,7 @@ function Snippet_TopBarPlayerSlot_Update(panel) {
 
 function Snippet_DotaTeamBar(team) {
 	if (TeamPanels[team] == null) {
-		var isRight = team % 2 != 0;
+		var isRight = team % 2 !== 0;
 		var rootPanel = $(isRight ? '#TopBarRightPlayers' : '#TopBarLeftPlayers');
 		var panel = $.CreatePanel('Panel', rootPanel, '');
 		panel.BLoadLayoutSnippet('DotaTeamBar');
@@ -91,8 +91,11 @@ function Snippet_DotaTeamBar(team) {
 function Snippet_DotaTeamBar_Update(panel) {
 	var team = panel.team;
 	panel.SetHasClass('EnemyTeam', team !== Players.GetTeam(Game.GetLocalPlayerID()));
-	var teamDetails = Game.GetTeamDetails(team);
-	panel.SetDialogVariableInt('team_score', teamDetails.team_score);
+	var teamInfo = GetTeamInfo(team);
+	panel.SetDialogVariableInt('team_score', teamInfo.score);
+
+	panel.SetHasClass('KillWeightUnchanged', teamInfo.kill_weight === 1);
+	panel.SetDialogVariableInt('kill_weight', teamInfo.kill_weight);
 }
 
 function Update() {

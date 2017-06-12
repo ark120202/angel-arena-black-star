@@ -390,6 +390,14 @@ function JoinUrlParams(params) {
 	}).join('&');
 }
 
+function GetTeamInfo(team) {
+	var t = PlayerTables.GetTableValue('teams', team) || {};
+	return {
+		score: t.score || 0,
+		kill_weight: t.kill_weight || 1,
+	};
+}
+
 function SetPagePlayerLevel(ProfileBadge, level) {
 	var levelbg = Math.floor(level / 100);
 	ProfileBadge.FindChildTraverse('BackgroundImage').SetImage('file://{images}/profile_badges/bg_' + ('0' + (levelbg + 1)).slice(-2) + '.psd');

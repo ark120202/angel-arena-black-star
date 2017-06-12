@@ -1153,6 +1153,7 @@
 				"var_type"	"FIELD_FLOAT"
 				"ghostship_absorb"	"50"
 			}
+
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
@@ -9861,7 +9862,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_units"	"1 2 3 4 5 6 7"
+				"max_units"	"1 2 3 4 7 11 15"
 				"LinkedSpecialBonus"	"special_bonus_unique_chen_1"
 			}
 
@@ -18726,7 +18727,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.25 0.2"
-		"AbilityCooldown"	"2.25"
+		"AbilityCooldown"	"3"
 		"AbilityCastRange"	"850"
 		"AbilityManaCost"	"80 85 90 95 100 105 110"
 		"AbilitySpecial"
@@ -18734,7 +18735,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"90 180 270 360 450 540 650"
+				"damage"	"90 160 230 300 370 440 510"
 			}
 
 			"02"

@@ -527,12 +527,12 @@ function SetItemStock(item, ItemStock) {
 		if ($('#ShopBase').BHasClass('ShopBaseOpen')) ShowItemInShop(data);
 	});
 	DynamicSubscribePTListener('panorama_shop_data', function(tableName, changesObject, deletionsObject) {
-		if (changesObject.ShopList != null) {
+		if (changesObject.ShopList) {
 			LoadItemsFromTable(changesObject);
 			SetQuickbuyStickyItem('item_shard_level');
 		};
 		var stocksChanges = changesObject['ItemStocks_team' + Players.GetTeam(Game.GetLocalPlayerID())];
-		if (stocksChanges != null) {
+		if (stocksChanges) {
 			for (var item in stocksChanges) {
 				var ItemStock = stocksChanges[item];
 				SetItemStock(item, ItemStock);

@@ -104,4 +104,5 @@
 	"special_bonus_unique_bane_1"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"300"}}}
 	"special_bonus_unique_ember_spirit_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"1"}}}
 	"special_bonus_unique_magnus_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"15"}}}
+	"special_bonus_unique_pugna_3"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"3"}}}
 }

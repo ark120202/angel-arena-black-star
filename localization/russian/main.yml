@@ -337,10 +337,7 @@ DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura: Blazing Blood
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura_Description: Applies Burning Spear stacks to all enemies around
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff: Burning Spear
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff_Description: 'ВЫ ГОРИТЕ! Вам периодически наносится урон. Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, сопротивление магическому урону уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%'
-DOTA_Tooltip_ability_tinker_rearm_arena_Description: 'Tinker выпускает в цель энергетический шар, при использовании на союзников перезаряжая не нпаправленные на юнитов способности с некоторым шансом, либо временно снижающий магическое сопротивление противников и давая каждой применённой на цели способности шанс на мгновенную перезарядку.'
-DOTA_Tooltip_ability_tinker_rearm_arena_debuff_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_ability_tinker_rearm_arena_refresh_chance_pct: '%ШАНС ПЕРЕЗАРЯДИТЬ СПОСОБНОСТЬ:'
-DOTA_Tooltip_ability_tinker_rearm_arena_magical_resistanse_pct: '%СНИЖЕНИЕ СОПРОТИВЛЕНИЯ МАГИЧЕСКОМУ УРОНУ:'
+DOTA_Tooltip_ability_tinker_rearm_arena_Description: 'Сбрасывает время перезарядки способностей и большинства предметов героя.'
 
 DOTA_Tooltip_ability_life_stealer_feast_arena_Description: Каждая атака лечит вас на долю от текущего здоровья противника и наносит равноценное количество урона.
 DOTA_Tooltip_ability_life_stealer_feast_arena_Note0: Не действует на боссов.
@@ -364,4 +361,7 @@ DOTA_Tooltip_modifier_fountain_aura_arena: Восстановление от ф�
 DOTA_Tooltip_modifier_fountain_aura_arena_Description: 'Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% здоровья и %dMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% маны в секунду.'
 
 DOTA_Tooltip_modifier_fountain_aura_invulnerability: Неуязвимость от фонтана
-DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Не получает урона. Эффект работает только до %dMODIFIER_PROPERTY_TOOLTIP% минуты.'
+DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Не получает урона. Эффект работает только до %dMODIFIER_PROPERTY_TOOLTIP% минуты. После этого фонтан перестанет убивать противников, но будет накладывать на них эффект слабости, снижающий наносимый ими урон.'
+
+DOTA_Tooltip_modifier_fountain_aura_enemy: Слабость от фонтана
+DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'Весь наносимый урон уменьшен на %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%. Снижение урона уменьшается на 5%% каждые 5 минут.'

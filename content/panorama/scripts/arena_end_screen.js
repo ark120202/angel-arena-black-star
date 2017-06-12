@@ -89,8 +89,7 @@ function Snippet_Team(team) {
 	panel.BLoadLayoutSnippet('Team');
 	panel.SetHasClass('IsRight', isRight);
 	panel.SetDialogVariable('team_name', GameUI.CustomUIConfig().team_names[team]);
-	var teamDetails = Game.GetTeamDetails(team);
-	panel.SetDialogVariableInt('team_score', teamDetails.team_score);
+	panel.SetDialogVariableInt('team_score', GetTeamInfo(team).score);
 	panel.SetHasClass('IsWinner', GAME_RESULT.winner === team);
 
 	var teamColor = GameUI.CustomUIConfig().team_colors[team];

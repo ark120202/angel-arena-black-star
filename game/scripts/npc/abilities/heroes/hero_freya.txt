@@ -172,6 +172,7 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"damage_per_second_pct"		"5"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
@@ -265,6 +266,7 @@
 						"Function"		"PercentDamage"
 						"MaxHealthPercent"	"%damage_per_second_pct"
 						"multiplier"		"%damage_interval"
+						"CalculateSpellDamageTooltip"	"0"
 					}
 				}
 
