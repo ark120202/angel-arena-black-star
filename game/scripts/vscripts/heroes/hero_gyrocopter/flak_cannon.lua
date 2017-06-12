@@ -39,7 +39,7 @@ function CreateProjectiles(keys)
 	end
 	local split_shot_targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
 	for _,v in ipairs(split_shot_targets) do
-		if v ~= attack_target and not v:IsAttackImmune() then
+		if v ~= target and not v:IsAttackImmune() then
 			local projectile_info = GenerateAttackProjectile(caster, ability)
 			projectile_info["Target"] = v
 			projectile_info["iMoveSpeed"] = ability:GetLevelSpecialValueFor("projectile_speed", ability:GetLevel() - 1)
