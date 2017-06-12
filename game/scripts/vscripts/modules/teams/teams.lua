@@ -175,7 +175,7 @@ function Teams:RecalculateKillWeight(team)
 		--local abandoned = GetTeamAbandonedPlayerCount(team)
 		local desired = Teams:GetDesiredPlayerCount(team)
 		local missing = desired - remaining
-		value = missing + 1
+		value = missing <= 1 and 1 or missing
 	end
 	Teams:SetTeamKillWeight(team, value)
 end
