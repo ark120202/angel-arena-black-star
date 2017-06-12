@@ -266,6 +266,7 @@
 						"Function"		"PercentDamage"
 						"MaxHealthPercent"	"%damage_per_second_pct"
 						"multiplier"		"%damage_interval"
+						"CalculateSpellDamageTooltip"	"0"
 					}
 				}
 
