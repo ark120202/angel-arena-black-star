@@ -10905,6 +10905,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"hex_damage_pct"		"25"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"13"
 			{
