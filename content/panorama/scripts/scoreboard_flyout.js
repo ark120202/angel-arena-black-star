@@ -156,10 +156,9 @@ function Snippet_Team(team) {
 
 function Snippet_Team_Update(panel) {
 	var team = panel.team;
-	var teamDetails = Game.GetTeamDetails(team);
 	var isAlly = team === Players.GetTeam(Game.GetLocalPlayerID());
 	panel.SetHasClass('EnemyTeam', !isAlly);
-	panel.SetDialogVariableInt('score', teamDetails.team_score);
+	panel.SetDialogVariableInt('score', GetTeamInfo(team).score);
 	if (isAlly) {
 		$('#SharedUnitControl').style.marginTop = Math.max(parseInt(panel.actualyoffset, 10), 0) + 'px';
 		$('#SharedUnitControl').style.height = panel.actuallayoutheight + 'px';

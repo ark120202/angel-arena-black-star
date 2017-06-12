@@ -77,7 +77,7 @@ function StatsClient:OnGameEnd(winner)
 				data.teamsInfo[tostring(i)] = {
 					duelsWon = (Duel.TimesTeamWins[i] or 0),
 					isGameWinner = i == winner,
-					kills = GetTeamHeroKills(i),
+					kills = Teams:GetScore(i),
 				}
 			end
 		end

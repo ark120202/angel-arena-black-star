@@ -13,15 +13,6 @@ function GameMode:_OnGameRulesStateChange(keys)
 		GameMode:OnAllPlayersLoaded()
 	elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
 		GameMode:PostLoadPrecache()
-
-		if USE_CUSTOM_TEAM_COLORS_FOR_PLAYERS then
-			for i=0,9 do
-				if PlayerResource:IsValidPlayer(i) then
-					local color = TEAM_COLORS[PlayerResource:GetTeam(i)]
-					PlayerResource:SetCustomPlayerColor(i, color[1], color[2], color[3])
-				end
-			end
-		end
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		GameMode:OnGameInProgress()
 	end
@@ -67,16 +58,12 @@ function GameMode:_OnEntityKilled( keys )
 	if killedUnit:IsRealHero() then
 		if killerEntity then
 			local team = killerEntity:GetTeam()
-			if END_GAME_ON_KILLS and GetTeamHeroKills(team) >= KILLS_TO_END_GAME_FOR_TEAM then
-				self:OnKillGoalReached(team)
+			if Teams:IsEnabled(team) then
+				Teams:ModifyScore(team, Teams:GetTeamKillWeight(killedUnit:GetTeam()))
+				if END_GAME_ON_KILLS and Teams:GetScore(team) >= KILLS_TO_END_GAME_FOR_TEAM then
+					self:OnKillGoalReached(team)
+				end
 			end
-		end
-
-		if SHOW_KILLS_ON_TOPBAR then
-			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_BADGUYS, GetTeamHeroKills(DOTA_TEAM_BADGUYS))
-			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_GOODGUYS, GetTeamHeroKills(DOTA_TEAM_GOODGUYS))
-			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_CUSTOM_1, GetTeamHeroKills(DOTA_TEAM_CUSTOM_1))
-			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_CUSTOM_2, GetTeamHeroKills(DOTA_TEAM_CUSTOM_2))
 		end
 	end
 

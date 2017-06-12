@@ -16,7 +16,12 @@
 				<Panel class="TopBarBackground" />
 				<Panel id="TeamScorePlayersMainFlow">
 					<Panel id="TopBarPlayersContainer" class="LeftRightFlow" />
-					<Label id="TopBarScore" text="{d:team_score}" hittest="true" />
+					<Label id="TopBarScore" text="{d:team_score}" hittest="true">
+						<Panel id="TopBarKillWeight" onmouseout="UIHideTextTooltip()" onmouseover="UIShowTextTooltip(#teams_kill_weight_tooltip)">
+							<Label id="TopBarKillWeightX" text="x" hittest="true" />
+							<Label id="TopBarKillWeightValue" text="{d:kill_weight}" hittest="true" />
+						</Panel>
+					</Label>
 				</Panel>
 			</Panel>
 		</snippet>

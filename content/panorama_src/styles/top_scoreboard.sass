@@ -151,8 +151,11 @@
 
 
 	#TopBarScore
-		horizontal-align: right
 		margin-right: 8px
+		horizontal-align: right
+
+	#TopBarKillWeight
+		flow-children: left
 
 	#TeamScorePlayersMainFlow
 		flow-children: left
@@ -188,12 +191,22 @@
 
 
 	#TopBarScore
-		horizontal-align: left
 		margin-left: 4px
+		horizontal-align: left
+
+	#TopBarKillWeight
+		horizontal-align: right
+		flow-children: right
+
+		> #TopBarKillWeightX
+			margin-left: 7px
+
+		> Label
+			margin-left: -6px
 
 	#TeamScorePlayersMainFlow
-		flow-children: right
 		overflow: noclip
+		flow-children: right
 
 
 .PlayerContainer
@@ -267,15 +280,31 @@
 	height: 66px
 
 #TopBarScore
-	color: rgb(255, 255, 255)
+	z-index: 5
+	width: 50px
+	height: 38px
+	margin-top: 6px
+	font-family: 'RadianceM'
 	font-size: 22px
 	font-weight: bold
-	font-family: 'RadianceM'
-	height: 38px
-	width: 50px
+	color: rgb(255, 255, 255)
 	text-align: center
-	margin-top: 7px
-	z-index: 5
+
+#TopBarKillWeight
+	width: 26px
+	margin-bottom: -2px
+	vertical-align: bottom
+	tooltip-position: bottom
+	tooltip-body-position: 70%
+
+	.KillWeightUnchanged &
+		visibility: collapse
+
+	> Label
+		font-size: 16px
+		font-weight: bold
+		color: #fff
+	//visibility: collapse
 
 .TeamScorePlayers
 	height: 66px
@@ -285,7 +314,7 @@
 	.Dead #RespawnTimer
 		z-index: 5
 		opacity: 1
-		transform: translateY(0px)
+		transform: translateY(0)
 
 
 #TeamScorePlayersMainFlow

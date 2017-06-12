@@ -11,14 +11,9 @@ function GetAllPlayers(bOnlyWithHeroes)
 	return Players
 end
 
-function CreateTeamNotificationSettings(iTeam, bSecVar)
-	local textColor = ColorTableToCss(TEAM_COLORS[iTeam])
-	local text = TEAM_NAMES[iTeam]
-	if bSecVar then
-		text = TEAM_NAMES2[iTeam]
-	end
-	local output = {text=text, continue=true, style={color=textColor}}
-	return output
+function CreateTeamNotificationSettings(team, bSecond)
+	local textColor = ColorTableToCss(Teams:GetColor(team))
+	return {text = Teams:GetName(team, bSecond), continue = true, style = {color = textColor}}
 end
 
 function CreateItemNotificationSettings(sItemName)
@@ -442,6 +437,16 @@ function GetTeamPlayerCount(iTeam)
 	local counter = 0
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) and PlayerResource:GetTeam(i) == iTeam then
+			counter = counter + 1
+		end
+	end
+	return counter
+end
+
+function GetTeamAbandonedPlayerCount(iTeam)
+	local counter = 0
+	for i = 0, 23 do
+		if PlayerResource:IsValidPlayerID(i) and IsPlayerAbandoned(i) and PlayerResource:GetTeam(i) == iTeam then
 			counter = counter + 1
 		end
 	end

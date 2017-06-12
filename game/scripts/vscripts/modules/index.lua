@@ -19,6 +19,7 @@ local modules = {
 	"attributes",
 	"antiafk",
 	"events_helper",
+	"teams",
 	"meepo_fixes" -- until rewrite
 }
 
