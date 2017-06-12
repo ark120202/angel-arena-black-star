@@ -3393,7 +3393,7 @@
 		"ItemResult"					"item_blink_staff"
 		"ItemRequirements"
 		{
-			"01"						"item_blink_arena;item_force_staff"
+			"01"						"item_blink_arena;item_force_staff;item_moon_dust"
 		}
 
 	}
@@ -3424,7 +3424,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"max_blink_range"				"1550"
+				"max_blink_range"				"1400"
 			}
 			"02"
 			{
