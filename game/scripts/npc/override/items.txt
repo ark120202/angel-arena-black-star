@@ -642,7 +642,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_damage_melee"	"50"
+				"block_damage_melee"	"40"
 			}
 			"04"
 			{

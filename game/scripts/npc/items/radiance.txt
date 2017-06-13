@@ -189,7 +189,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blind_pct"					""17 19 21"
+				"blind_pct"					"17 19 21"
 			}
 			"04"
 			{

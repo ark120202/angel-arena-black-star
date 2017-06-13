@@ -10913,7 +10913,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hex_damage_pct"		"25"
+				"hex_damage_pct"		"20"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"13"
@@ -10999,7 +10999,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"silence_damage_pct"	"20"
+				"silence_damage_pct"	"30"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"08"
