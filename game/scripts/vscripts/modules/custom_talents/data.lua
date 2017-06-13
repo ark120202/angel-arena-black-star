@@ -100,11 +100,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_health = {
 		icon = "talents/health",
-		cost = 1,
+		cost = 2,
 		group = 3,
-		max_level = 11,
+		max_level = 6,
 		special_values = {
-			health = {300, 500, 800, 900, 1100, 1300, 1500, 1800, 2100, 2300, 2500}
+			health = {400, 800, 1200, 1600, 2000, 2500}
 		},
 		effect = {
 			calculate_stat_bonus = true,
@@ -115,11 +115,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_mana = {
 		icon = "talents/mana",
-		cost = 1,
+		cost = 2,
 		group = 3,
-		max_level = 11,
+		max_level = 6,
 		special_values = {
-			mana = {300, 500, 800, 900, 1100, 1300, 1500, 1800, 2100, 2300, 2500}
+			mana = {400, 800, 1200, 1600, 2000, 2500}
 		},
 		effect = {
 			calculate_stat_bonus = true,
@@ -132,9 +132,9 @@ CUSTOM_TALENTS_DATA = {
 		icon = "talents/health_regen",
 		cost = 1,
 		group = 2,
-		max_level = 8,
+		max_level = 5,
 		special_values = {
-			health_regen = {10, 14, 18, 22, 26, 30, 36, 42}
+			health_regen = {10, 17, 24, 31, 38}
 		},
 		effect = {
 			modifiers = {
@@ -144,11 +144,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_armor = {
 		icon = "talents/armor",
-		cost = 3,
+		cost = 2,
 		group = 3,
-		max_level = 12,
+		max_level = 8,
 		special_values = {
-			armor = {10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32}
+			armor = {5, 8, 11, 14, 17, 20, 23, 26}
 		},
 		effect = {
 			modifiers = {
@@ -214,11 +214,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_movespeed_pct = {
 		icon = "talents/movespeed",
-		cost = 1,
+		cost = 2,
 		group = 4,
 		max_level = 7,
 		special_values = {
-			movespeed_pct = {6, 8, 10, 12, 14, 16, 18}
+			movespeed_pct = {10, 13, 16, 19, 22, 25, 28}
 		},
 		effect = {
 			modifiers = {
