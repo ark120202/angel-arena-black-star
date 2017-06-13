@@ -3583,12 +3583,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.5 5 7"
+				"xp_multiplier"			"2.0 4.0 6.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"250 900 1600"
+				"bonus_gold"			"250 500 1000"
 			}
 		}
 
@@ -3625,12 +3625,12 @@
 		"ID"							"10137"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1100"
+		"ItemCost"						"160"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_skull_of_midas"
 		"ItemRequirements"
 		{
-			"01"						"item_blades_of_attack"
+			"01"						"item_blades_of_attack;item_blades_of_attack"
 		}
 	}
 
@@ -3650,12 +3650,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"32"
+				"bonus_damage"			"24"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"kill_xp"				"4"
+				"kill_xp"				"10"
 			}
 			"03"
 			{
@@ -3711,7 +3711,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"10"
+				"bonus_armor"			"6"
 			}
 			"02"
 			{
@@ -3721,7 +3721,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold"					"10"
+				"gold"					"20"
 			}
 		}
 
@@ -3830,7 +3830,7 @@
 		"ID"							"10143"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"6600"
+		"ItemCost"						"1600"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_rune_keeper"
 		"ItemRequirements"
@@ -3856,17 +3856,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"75"
+				"bonus_all_stats"		"25"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"45"
+				"bonus_movement_speed"	"25"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"rune_multiplier"		"2.5"
+				"rune_multiplier"		"2.0"
 			}
 			"04"
 			{
@@ -4168,7 +4168,7 @@
 		"ID"							"10147"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2500"
+		"ItemCost"						"2050"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_hand_of_midas_2_arena"
 		"ItemRequirements"
@@ -4190,7 +4190,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"90.0"
 		"AbilityManaCost"				"0"
@@ -4212,12 +4212,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.5 5 7"
+				"xp_multiplier"			"2.0 4.0 6.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"250 900 2200"
+				"bonus_gold"			"250 500 1000"
 			}
 		}
 
@@ -4254,7 +4254,7 @@
 		"ID"							"10149"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"4000"
+		"ItemCost"						"2550"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_hand_of_midas_3_arena"
 		"ItemRequirements"
@@ -4276,7 +4276,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"90.0"
 		"AbilityManaCost"				"0"
@@ -4298,12 +4298,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.5 5 7"
+				"xp_multiplier"			"2.0 4.0 6.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"250 900 2200"
+				"bonus_gold"			"250 500 1000"
 			}
 		}
 
@@ -5417,7 +5417,7 @@
 		"ItemResult"					"item_refresher_core"
 		"ItemRequirements"
 		{
-			"01"						"item_octarine_core_arena;item_refresher_arena"
+			"01"						"item_octarine_core_arena;item_refresher_arena;item_moon_dust"
 		}
 	}
 
@@ -8592,13 +8592,13 @@
 		"ID"							"10266"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"5350"
+		"ItemCost"						"5500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_phantom_cuirass"
 		"ItemRequirements"
 		{
-			"01"						"item_assault;item_platemail;item_hyperstone"
+			"01"						"item_assault;item_platemail;item_hyperstone;item_ring_of_health"
 		}
 	}
 
@@ -8610,7 +8610,7 @@
 		"AbilityTextureName"			"item_arena/phantom_cuirass"
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemAliases"					"ac;assault cuirass"
+		"ItemAliases"					"ac;assault cuirass;phantom;pc"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		// Special
@@ -8620,7 +8620,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"30"
+				"bonus_armor"		"25"
 			}
 			"02"
 			{
@@ -8645,7 +8645,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_positive_armor"	"15"
+				"aura_positive_armor"	"20"
 			}
 			"07"
 			{
@@ -9943,12 +9943,12 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1200"
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_wand_of_midas"
 		"ItemRequirements"
 		{
-			"01"						"item_magic_wand;item_circlet;item_circlet;item_circlet"
+			"01"						"item_magic_wand;item_magic_wand;item_magic_wand"
 		}
 	}
 
@@ -9966,7 +9966,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_all"			"12"
+				"bonus_all"			"20"
 			}
 			"02"
 			{
@@ -9976,17 +9976,17 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"restore_per_charge"	"15"
+				"restore_per_charge"	"30"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_charges"		"50"
+				"max_charges"		"30"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"1200"
+				"radius"			"1500"
 			}
 		}
 	}
@@ -10837,7 +10837,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityDamage"					"600"
+		"AbilityDamage"					"1000"
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"19"
 		"AbilityManaCost"				"250"
@@ -10926,7 +10926,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1000"
+		"ItemCost"						"3000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_bloodthorn_2"
@@ -10949,7 +10949,7 @@
 
 		"AbilitySharedCooldown"			"orchid"
 		"AbilityCastRange"				"900"
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"120"
 		"ItemAliases"					"orchid malevolence;bloodthorn 2"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"

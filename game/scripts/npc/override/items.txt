@@ -165,10 +165,36 @@
 	"item_recipe_magic_wand"
 	{
 		"SecretShop"					"0"
+
 	}
 	"item_magic_wand"
 	{
 		"SecretShop"					"0"
+		"AbilityCooldown"				"10.0"
+		"AbilityCastRange"				"1300"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"			"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_radius"			"1300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"restore_per_charge"	"20"
+			}
+		}
 	}
 	"item_ghost"
 	{
@@ -182,7 +208,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"total_mana"			"370"
+				"total_mana"			"400"
 			}
 			"02"
 			{

@@ -3309,28 +3309,25 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"gods_strength_damage"	"80 120 160 200 240 280 350"
+				"var_type"						"FIELD_INTEGER"
+				"gods_strength_damage"			"80 110 140 170 200 230 260"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"						"FIELD_INTEGER"
 				"gods_strength_bonus_str"		"12 24 36 44 52 60 68"
 			}
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"radius_scepter"	"0"
+				"var_type"						"FIELD_INTEGER"
+				"radius_scepter"				"99999"
 			}
-
 			"04"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"gods_strength_damage_scepter"	"75 100 125 150 175 200 225"
+				"var_type"						"FIELD_INTEGER"
+				"gods_strength_damage_scepter"	"50 75 100 125 150 175 200"
 			}
-
 		}
-
 	}
 
 	"storm_spirit_static_remnant"

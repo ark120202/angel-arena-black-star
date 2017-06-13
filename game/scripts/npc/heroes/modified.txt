@@ -451,7 +451,7 @@
 		"AttackRate"	"1.7"
 		"ArmorPhysical"	"2"
 		"AttributeStrengthGain"	"2.2"
-		"AttributeAgilityGain"	"2.91"
+		"AttributeAgilityGain"	"2.0"
 		"MovementSpeed"	"320"
 		"AttributeIntelligenceGain"	"1.9"
 		"Ability6"	""
