@@ -816,7 +816,7 @@
 		"ID"							"10205"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"23075"
+		"ItemCost"						"13075"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_titanium_bar"
 		"ItemRequirements"

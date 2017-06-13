@@ -3641,6 +3641,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/skull_of_midas"
 
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"common"
 		"ItemAliases"					"skull of midas"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -3702,6 +3703,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/chest_of_midas"
 
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"common"
 		"ItemAliases"					"chest of midas"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -3779,6 +3781,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/blood_of_midas"
 
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"common"
 		"ItemAliases"					"blood of midas"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -4187,6 +4190,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityTextureName"			"item_arena/hand_of_midas_2_arena"
 		"AbilitySharedCooldown"			"midas"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4273,6 +4277,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityTextureName"			"item_arena/hand_of_midas_3_arena"
 		"AbilitySharedCooldown"			"midas"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6074,7 +6079,7 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10215"
-		"ItemCost"						"500"
+		"ItemCost"						"250"
 		"AbilityTextureName"			"item_arena/coffee_bean"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
@@ -6082,14 +6087,14 @@
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
 
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"40"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"			"20"
+				"duration"			"10"
 			}
 		}
 
@@ -6335,12 +6340,12 @@
 		"ID"							"10218"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"8800"
+		"ItemCost"						"3800"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_demon_king_bar"
 		"ItemRequirements"
 		{
-			"01"						"item_monkey_king_bar;item_demon_edge;item_demon_edge"
+			"01"						"item_monkey_king_bar;item_demon_edge;item_demon_edge;item_gloves"
 		}
 	}
 
@@ -6499,7 +6504,7 @@
 		"ID"							"10222"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1600"
+		"ItemCost"						"600"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_horn_of_the_underworld"
 		"ItemRequirements"
@@ -6518,7 +6523,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"              "0"
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"0"
 		"AbilitySharedCooldown"			"ethereal"
 		"ItemShopTags"					"int;agi;str;hard_to_tag"
@@ -6535,27 +6540,27 @@
 			"02"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"bonus_damage"							"3"
+				"bonus_damage"							"6"
 			}
 			"03"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"aura_bonus_attack_speed"				"15"
+				"aura_bonus_attack_speed"				"30"
 			}
 			"04"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"aura_bonus_movement_speed_pct"			"10"
+				"aura_bonus_movement_speed_pct"			"15"
 			}
 			"05"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"endurance_bonus_attack_speed"			"30"
+				"endurance_bonus_attack_speed"			"40"
 			}
 			"06"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"endurance_bonus_movement_speed_pct"	"15"
+				"endurance_bonus_movement_speed_pct"	"20"
 			}
 			"08"
 			{
@@ -7382,6 +7387,7 @@
 		"ID"							"10249"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/book_of_the_keeper"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemShopTags"					"int;regen_mana;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -7848,7 +7854,7 @@
 		"ID"							"10258"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"60300"	//100270 - Requirements Cost
+		"ItemCost"						"10000"	//50800 - Requirements Cost
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_haganemushi"
 		"ItemRequirements"
@@ -8717,7 +8723,7 @@
 		"ID"							"10268"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"16000"
+		"ItemCost"						"6000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_demonic_cuirass"
@@ -9008,7 +9014,7 @@
 		"ID"							"10270"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"26000"
+		"ItemCost"						"6000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_awakened_cursed_eye"
@@ -9042,7 +9048,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_night_vision"		"1000"
+				"bonus_night_vision"		"500"
 			}
 		}
 
@@ -9157,7 +9163,7 @@
 		"ID"							"10272"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"7000"
+		"ItemCost"						"6100"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_shard_of_true_sight"
 		"ItemRequirements"
@@ -9732,6 +9738,7 @@
 		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_ultimate_scepter"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemAliases"					"aghanim's scepter;aghanims scepter;ultimate scepter;aghs"
 
@@ -9960,6 +9967,7 @@
 		"AbilityTextureName"			"item_arena/wand_of_midas"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"ItemDisplayCharges"			"1"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
 		{
@@ -10234,6 +10242,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_quelling_fury"
@@ -10406,7 +10415,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"3000"
+		"ItemCost"						"1350"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_elemental_fury"
 		"ItemRequirements"
@@ -10709,7 +10718,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"6050"
+		"ItemCost"						"2050"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_book_of_the_guardian"
 		"ItemRequirements"

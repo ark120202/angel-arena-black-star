@@ -372,6 +372,7 @@
 	{
 		"SecretShop"					"0"
 		"ItemCost"						"0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"
@@ -565,6 +566,7 @@
 	"item_recipe_force_staff"
 	{
 		"SecretShop"					"0"
+		"AbilityCooldown"				"16.0"
 	}
 	"item_force_staff"
 	{
@@ -815,6 +817,7 @@
 	{
 		"SecretShop"					"0"
 		"AbilityCooldown"				"20.0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"
@@ -937,7 +940,6 @@
 	"item_recipe_tranquil_boots"
 	{
 		"SecretShop"					"0"
-		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
 		"ItemRequirements"
 		{
 			"01"						"item_boots;item_ring_of_regen;item_ring_of_protection"
@@ -947,6 +949,7 @@
 	{
 		"SecretShop"					"0"
 		"ItemCost"						"0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilityCooldown"				"5"
 		"AbilitySpecial"
 		{
@@ -1049,12 +1052,13 @@
 		"SecretShop"					"0"
 		"AbilityCastRange"				"500"
 		"AbilityCooldown"				"10.0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"35"
+				"damage_bonus"			"30"
 			}
 			"02"
 			{
@@ -1074,12 +1078,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"creep_damage_pct"			"70"
+				"creep_damage_pct"			"50"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"4"
+				"bonus_armor"				"3"
 			}
 		}
 	}
