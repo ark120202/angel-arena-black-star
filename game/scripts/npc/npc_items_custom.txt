@@ -1792,7 +1792,7 @@
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"150"
 		"AbilityCastPoint"              "0"
-		"AbilitySharedCooldown"			"item_sheepstick;item_auto_sheepstick;item_silver_edge"
+		"AbilitySharedCooldown"			"hex"
 		"ItemShopTags"					"damage;attack_speed;movespeed;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"sb;invis;shadow blade;hex;sheepstick;scythe of vyse"
@@ -10844,6 +10844,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilitySharedCooldown"			"hex"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityDamage"					"1000"

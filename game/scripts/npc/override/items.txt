@@ -546,6 +546,7 @@
 	"item_sheepstick"
 	{
 		"SecretShop"					"0"
+		"AbilitySharedCooldown"			"hex"
 	}
 	"item_recipe_orchid"
 	{
