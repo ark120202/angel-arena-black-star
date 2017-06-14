@@ -122,12 +122,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"24 28 32 26 30 34"
+				"bonus_damage"					"24 36 48 60 72 84"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"5 6 7 8 9 10"
+				"duration"						"5.0 5.5 6.0 6.5 7.0 7.5"
 			}
 			"04"
 			{
@@ -242,12 +242,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"24 28 32 26 30 34"
+				"bonus_damage"					"24 36 48 60 72 84"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"5 6 7 8 9 10"
+				"duration"						"5.0 5.5 6.0 6.5 7.0 7.5"
 			}
 			"04"
 			{
@@ -362,12 +362,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"24 28 32 26 30 34"
+				"bonus_damage"					"24 36 48 60 72 84"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"5 6 7 8 9 10"
+				"duration"						"5.0 5.5 6.0 6.5 7.0 7.5"
 			}
 			"04"
 			{
@@ -482,12 +482,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"24 28 32 26 30 34"
+				"bonus_damage"					"24 36 48 60 72 84"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"5 6 7 8 9 10"
+				"duration"						"5.0 5.5 6.0 6.5 7.0 7.5"
 			}
 			"04"
 			{
@@ -602,12 +602,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"24 28 32 26 30 34"
+				"bonus_damage"					"24 36 48 60 72 84"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"5 6 7 8 9 10"
+				"duration"						"5.0 5.5 6.0 6.5 7.0 7.5"
 			}
 			"04"
 			{
@@ -722,12 +722,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"24 28 32 26 30 34"
+				"bonus_damage"					"24 36 48 60 72 84"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"5 6 7 8 9 10"
+				"duration"						"5.0 5.5 6.0 6.5 7.0 7.5"
 			}
 			"04"
 			{
@@ -836,7 +836,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"              "0"
-		"AbilityCooldown"				"70"
+		"AbilityCooldown"				"60"
 		"AbilityManaCost"				"0"
 		"ItemShopTags"					"str;damage;hard_to_tag"
 		"ItemQuality"					"legendary"
@@ -864,12 +864,12 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"50"
+				"bonus_damage"					"100"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"7.5"
+				"duration"						"8.0"
 			}
 			"06"
 			{
@@ -879,12 +879,12 @@
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"active_bonus_strength"			"50"
+				"active_bonus_strength"			"60"
 			}
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"active_bonus_attackspeed"		"150"
+				"active_bonus_attackspeed"		"200"
 			}
 		}
 
