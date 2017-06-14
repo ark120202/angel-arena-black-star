@@ -32,13 +32,13 @@
 		{
 			"01"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"damage_percent"					"35"
+				"var_type"						"FIELD_INTEGER"
+				"damage_percent"				"35"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"300"
+				"var_type"						"FIELD_INTEGER"
+				"range"							"300"
 			}
 			"03"
 			{
@@ -47,58 +47,58 @@
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"25"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_strength"				"16"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intelligence"	"3"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_intelligence"			"3"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"15"
+				"bonus_attack_speed"			"16"
 			}
 			"08"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_damage"						"35"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"32"
 			}
 			"09"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_health_regen"				"5"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_health_regen"			"5"
 			}
 			"10"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"		"125"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_mana_regen_percentage"	"125"
 			}
 			"11"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"maim_chance"			"50"
+				"var_type"						"FIELD_INTEGER"
+				"maim_chance"					"40"
 			}
 			"12"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_movement_speed"	"-8"
+				"var_type"						"FIELD_INTEGER"
+				"maim_movement_speed"			"-6"
 			}
 			"13"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_slow_attack"		"-7"
+				"var_type"						"FIELD_INTEGER"
+				"maim_slow_attack"				"-6"
 			}
 			"14"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"maim_duration"			"4.5"
+				"var_type"						"FIELD_FLOAT"
+				"maim_duration"					"4.5"
 			}
 			"15"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_max_stacks"		"8"
+				"var_type"						"FIELD_INTEGER"
+				"maim_max_stacks"				"5"
 			}
 		}
 
@@ -248,7 +248,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"25"
+				"bonus_agility"					"16"
 			}
 			"04"
 			{
@@ -263,47 +263,47 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"25"
+				"bonus_attack_speed"			"16"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"15"
+				"movement_speed_percent_bonus"	"16"
 			}
 			"08"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_damage"						"15"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"16"
 			}
 			"09"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_health_regen"				"5"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_health_regen"			"5"
 			}
 			"10"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"		"125"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_mana_regen_percentage"	"125"
 			}
 			"11"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed_buff"		"7"
+				"bonus_attack_speed_buff"		"3"
 			}
 			"12"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"6"
+				"movement_speed_percent_bonus_buff"		"2"
 			}
 			"13"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"fast_attack_duration"			"8"
+				"var_type"						"FIELD_FLOAT"
+				"fast_attack_duration"			"4.5"
 			}
 			"14"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"			"8"
+				"fast_attack_max_stacks"			"5"
 			}
 		}
 
@@ -453,17 +453,17 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intelligence"	"25"
+				"bonus_intelligence"	"16"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"15"
+				"bonus_attack_speed"			"16"
 			}
 			"08"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_damage"						"15"
+				"bonus_damage"						"16"
 			}
 			"09"
 			{
@@ -483,7 +483,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cooldown_reduction"			"0.75"
+				"cooldown_reduction"			"0.35"
 			}
 		}
 
@@ -673,7 +673,7 @@
 			"17"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maim_max_stacks"				"8"
+				"maim_max_stacks"				"6"
 			}
 			"18"
 			{
@@ -693,7 +693,7 @@
 			"21"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"		"8"
+				"fast_attack_max_stacks"		"6"
 			}
 			"22"
 			{
