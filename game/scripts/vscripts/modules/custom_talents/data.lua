@@ -256,8 +256,8 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_true_strike = {
 		icon = "talents/true_strike",
-		cost = 55,
-		group = 9,
+		cost = 40,
+		group = 10,
 		effect = {
 			modifiers = {
 				"modifier_talent_true_strike"
@@ -2276,4 +2276,5 @@ TALENT_GROUP_TO_LEVEL = {
 	-- [6] = 30, ms_limit;
 	-- [7] = 35, day;night;
 	-- [8] = 40, respawn_time;
-	-- [9] = 45, truestrike;damage;
+	-- [9] = 45, damage;
+	-- [10] = 50, truestrike
