@@ -49,6 +49,7 @@ REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
 	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_titanium_bar = true,
+	item_coffee_bean = true,
 
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
@@ -65,6 +66,7 @@ REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 	item_black_king_bar_4 = true,
 	item_black_king_bar_5 = true,
 	item_black_king_bar_6 = true,
+	item_coffee_bean = true,
 
 	destroyer_body_reconstruction = true,
 }
@@ -176,6 +178,7 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	skywrath_mage_arcane_bolt = true,
 	elder_titan_earth_splitter = true,
 	necrolyte_reapers_scythe = true,
+	item_recipe_ethereal_blade = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

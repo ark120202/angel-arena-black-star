@@ -15749,7 +15749,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"polarity_damage"	"50 125 200 300 400 500 600"
+				"polarity_damage"	"100 150 200 300 400 500 600"
 			}
 
 			"03"
