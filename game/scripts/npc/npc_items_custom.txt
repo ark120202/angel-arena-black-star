@@ -3148,7 +3148,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_range"	"120"
+				"bonus_attack_range"	"50"
 			}
 			"07"
 			{
@@ -3163,12 +3163,12 @@
 			"09"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_outgoing"			"-50"
+				"illusion_damage_percent_outgoing"			"-60"
 			}
 			"10"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_outgoing_tooltip"	"50"
+				"illusion_damage_percent_outgoing_tooltip"	"40"
 			}
 			"11"
 			{
@@ -3183,12 +3183,12 @@
 			"13"
 			{
 				"var_type"											"FIELD_FLOAT"
-				"invulnerability_duration"							"0.1"
+				"invulnerability_duration"					"0.1"
 			}
 			"14"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"vision_radius"										"1000"
+				"vision_radius"								"1000"
 			}
 			"15"
 			{
@@ -3218,7 +3218,7 @@
 			"20"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_drain_pct"	"40"
+				"feedback_mana_drain_pct"	"25"
 			}
 			"21"
 			{
@@ -3243,7 +3243,7 @@
 			"25"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_burn_pct"		"100"
+				"damage_per_burn_pct"		"50"
 			}
 		}
 
