@@ -22,7 +22,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_mult"			"245"
+				"crit_mult"			"200"
 			}
 		}
 
@@ -103,8 +103,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCooldown"				"20"
-		"AbilityManaCost"				"200"
-		"LevelsBetweenUpgrades" 		"4"
+		"AbilityManaCost"				"50"
 
 		"AbilitySpecial"
 		{
@@ -131,7 +130,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"600"
+				"bonus_attack_range"	"400"
 			}
 			"06"
 			{
