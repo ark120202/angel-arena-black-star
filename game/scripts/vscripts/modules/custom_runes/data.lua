@@ -51,7 +51,7 @@ RUNE_SETTINGS = {
 		particle = "particles/generic_gameplay/rune_haste.vpcf",
 		sound = "Rune.Haste",
 		duration = 25,
-		movespeed = 750,
+		movespeed = 625,
 	},
 	[ARENA_RUNE_ILLUSION] = {
 		model = "models/props_gameplay/rune_illusion01.vmdl",
@@ -79,7 +79,7 @@ RUNE_SETTINGS = {
 		sound = "Rune.Bounty",
 		GetValues = function(unit)
 			local m = GetDOTATimeInMinutesFull()
-			local gold = 50 + (m * 2)^2 / 2
+			local gold = 50 + (m * 2)^2 / 2.5
 			local xp = 50 + m^2.2
 			local gold_multiplier = 1
 			local xp_multiplier = 1
@@ -122,7 +122,7 @@ RUNE_SETTINGS = {
 		particle = "particles/arena/generic_gameplay/rune_acceleration.vpcf",
 		color = {20, 20, 255},
 		duration = 35,
-		attackspeed = 90, --Tooltip
+		attackspeed = 50, --Tooltip
 		xp_multiplier = 3,
 	},
 	[ARENA_RUNE_VIBRATION] = {
@@ -152,7 +152,7 @@ RUNE_SETTINGS = {
 		particle_attach = PATTACH_ABSORIGIN,
 		z_modify = 64,
 		duration = 25,
-		damage_reflection_pct = 75,
+		damage_reflection_pct = 50,
 		angles = {0, 270, 0},
 	}
 }
