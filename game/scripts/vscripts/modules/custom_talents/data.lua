@@ -269,10 +269,10 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_pudge_hook_splitter = {
 		icon = "talents/heroes/pudge_hook_splitter",
 		cost = 1,
-		group = 7,
+		group = 9,
 		requirement = "pudge_meat_hook_lua",
 		special_values = {
-			hook_amount = 4
+			hook_amount = 3
 		}
 	},
 	talent_hero_arthas_vsolyanova_bunus_chance = {
