@@ -146,7 +146,7 @@
 	"item_gem"
 	{
 		"SecretShop"					"0"
-		"ItemStockTime"					"300.0"
+		"ItemStockTime"					"180.0"
 		"ItemStockMax"					"3"
 		"ItemKillable"					"1"
 	}
