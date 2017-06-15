@@ -71,7 +71,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"ranged_evasion_pct"	"20 25 30 35 40 45 50"
+				"ranged_evasion_pct"	"10 15 20 25 30 35 40"
 			}
 			"02"
 			{
@@ -80,8 +80,8 @@
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"melee_damage_pct"	"20 25 30 35 40 45 50"
+				"var_type"			"FIELD_FLOAT"
+				"melee_damage_pct"	"10.0 12.5 15.0 17.5 20.0 22.5 25.0"
 			}
 		}
 	}
@@ -99,7 +99,7 @@
 		"AbilityCastRange"				"%forward_offset"
 		"AbilityCastPoint"				"0.45"
 		"AbilityCooldown"				"5"
-		"AbilityManaCost"				"100 200 300 350 400 450 500"
+		"AbilityManaCost"				"100"
 		"AbilitySpecial"
 		{
 			"01"
@@ -111,7 +111,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_max"		"200 500 800 1100 1800 2600 3500"
+				"damage_max"		"200 300 400 500 600 700 800"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
