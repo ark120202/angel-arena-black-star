@@ -698,7 +698,7 @@
 			"22"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"global_attack_chance"			"50"
+				"global_attack_chance"			"1"
 			}
 		}
 

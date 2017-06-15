@@ -75,12 +75,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_slow_pct"		"-35"
+				"debuff_slow_pct"		"-5 -10 -15 -20 -25 -30 -35"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_miss_pct"		"35"
+				"debuff_miss_pct"		"5 10 15 20 25 30 35"
 			}
 			"08"
 			{
