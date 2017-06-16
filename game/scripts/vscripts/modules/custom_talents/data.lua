@@ -58,11 +58,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_attack_damage = {
 		icon = "talents/damage",
-		cost = 5,
+		cost = 4,
 		group = 9,
 		max_level = 7,
 		special_values = {
-			damage = {100, 200, 300, 400, 500, 600, 700}
+			damage = {70, 140, 210, 280, 350, 420, 490}
 		},
 		effect = {
 			modifiers = {
@@ -232,7 +232,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 2,
 		max_level = 5,
 		special_values = {
-			gold_per_minute = {400, 500, 600, 700, 800}
+			gold_per_minute = {240, 360, 480, 600, 720}
 		},
 		effect = {
 			unit_keys = {
@@ -256,7 +256,7 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_true_strike = {
 		icon = "talents/true_strike",
-		cost = 40,
+		cost = 30,
 		group = 10,
 		effect = {
 			modifiers = {
@@ -928,7 +928,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_sniper_shrapnel_charges = {
 		icon = "sniper_shrapnel",
 		cost = 1,
-		group = 5,
+		group = 8,
 		requirement = "sniper_shrapnel",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_sniper_2"}
