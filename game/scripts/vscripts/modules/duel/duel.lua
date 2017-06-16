@@ -89,10 +89,8 @@ function Duel:StartDuel()
 	if heroes_to_fight_n > 0 and table.count(heroes_in_teams) > 1 then
 		EmitAnnouncerSound("announcer_ann_custom_mode_20")
 		Duel.IsFirstDuel = Duel.DuelCounter == 0
-		Timers:CreateTimer(function()
-			Duel:SetDuelTimer(DUEL_SETTINGS.DurationBase + DUEL_SETTINGS.DurationForPlayer * heroes_to_fight_n)
-			Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
-		end)
+		Duel:SetDuelTimer(DUEL_SETTINGS.DurationBase + DUEL_SETTINGS.DurationForPlayer * heroes_to_fight_n)
+		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
 		local rndtbl = {}
 		table.merge(rndtbl, Duel.heroes_teams_for_duel)
 		for i,v in pairs(rndtbl) do
