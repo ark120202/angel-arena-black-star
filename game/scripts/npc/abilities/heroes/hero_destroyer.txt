@@ -220,6 +220,7 @@
 		"ScriptFile"					"heroes/hero_destroyer/frenzy.lua"
 		"AbilityTextureName"			"arena/destroyer_frenzy"
 		"MaxLevel" 						"7"
+		"LevelsBetweenUpgrades"			"5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 
