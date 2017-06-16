@@ -50,6 +50,9 @@ REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
 	item_refresher_core = true,
 	item_titanium_bar = true,
 	item_coffee_bean = true,
+	item_hand_of_midas_arena = true,
+	item_hand_of_midas_2_arena = true,
+	item_hand_of_midas_3_arena = true,
 
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
@@ -67,6 +70,9 @@ REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 	item_black_king_bar_5 = true,
 	item_black_king_bar_6 = true,
 	item_coffee_bean = true,
+	item_hand_of_midas_arena = true,
+	item_hand_of_midas_2_arena = true,
+	item_hand_of_midas_3_arena = true,
 
 	destroyer_body_reconstruction = true,
 }
