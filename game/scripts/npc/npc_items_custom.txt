@@ -4196,7 +4196,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"90.0"
+		"AbilityCooldown"				"80.0"
 		"AbilityManaCost"				"0"
 		"ItemShopTags"					"attack_speed;hard_to_tag"
 		"ItemQuality"					"common"
@@ -4283,7 +4283,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"90.0"
+		"AbilityCooldown"				"70.0"
 		"AbilityManaCost"				"0"
 		"ItemShopTags"					"attack_speed;hard_to_tag"
 		"ItemQuality"					"common"
@@ -6087,14 +6087,14 @@
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
 
-		"AbilityCooldown"				"40"
+		"AbilityCooldown"				"70"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"			"10"
+				"duration"			"15"
 			}
 		}
 
