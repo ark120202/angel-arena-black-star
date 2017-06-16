@@ -13,7 +13,7 @@ var console = {
 	error: function() {
 		var args = Array.prototype.slice.call(arguments);
 		_.each(args, function(arg) {
-			throw typeof arg === 'string' ? new Error(arg) : arg;
+			console.log(arg instanceof Error ? arg.stack : new Error(arg).stack);
 		});
 	}
 };
