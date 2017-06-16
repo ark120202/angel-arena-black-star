@@ -2130,7 +2130,7 @@
 		"AbilityCastPoint"	"1.67 1.67 1.67 1.67 1.67 1.37 1.07"
 		"AbilityCooldown"	"100 95 90 85 80 75 70"
 		"AbilityDuration"	"5.0"
-		"AbilityDamage"		"80 110 140 170 200 230 260"
+		"AbilityDamage"		"80 120 160 200 240 280 320"
 		"AbilityManaCost"	"150 175 200 275 375 485 565"
 		"AbilitySpecial"
 		{
@@ -9998,13 +9998,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_reflection_pct"	"10 12 14 16 18 20 22"
+				"damage_reflection_pct"	"3 6 9 12 15 18 21"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"min_radius"	"300"
+				"min_radius"	"350"
 			}
 
 			"03"
@@ -10119,6 +10119,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"burn_damage"	"25 30 35 40 45 50 65"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"02"
@@ -10126,6 +10127,7 @@
 				"var_type"	"FIELD_FLOAT"
 				"burn_damage_pct"	"1 1.5 2 2.5 3 3.5 4"
 				"LinkedSpecialBonus"	"special_bonus_unique_doom_1"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"03"
@@ -16866,7 +16868,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"hp_threshold"	"400 400 400 400 400 1000 1500"
+				"hp_threshold"	"400 400 400 600 800 1200 2000"
 			}
 
 			"02"
@@ -18435,24 +18437,28 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"base_damage"	"14 20 26 32 38 44 50"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"hp_perc_damage"	"1.5 1.75 2.0 2.25 2.50 2.75 3.0"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"base_heal"	"7 10 13 16 19 25 40"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"hp_perc_heal"	"0.625 1.0 1.4 1.8 2.2 2.6 3.0"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"06"

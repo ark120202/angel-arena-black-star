@@ -168,6 +168,8 @@ PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_arena_hero_sara"] = true,
 }
 
+-- "CalculateSpellDamageTooltip"	"0"
+
 SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	zuus_static_field = true,
 	enigma_midnight_pulse = true,
@@ -179,6 +181,8 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	elder_titan_earth_splitter = true,
 	necrolyte_reapers_scythe = true,
 	item_recipe_ethereal_blade = true,
+	doom_bringer_infernal_blade = true,
+	phoenix_sun_ray = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
