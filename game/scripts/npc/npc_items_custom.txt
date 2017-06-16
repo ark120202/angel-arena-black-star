@@ -6358,9 +6358,9 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"			"item_arena/demon_king_bar"
 
-		"AbilityCooldown"				"180"
+		"AbilityCooldown"				"90"
 		"AbilityManaCost"				"400"
-		"AbilityCastRange"				"225"
+		"AbilityCastRange"				"300"
 
 		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
 		"ItemQuality"					"legendary"
