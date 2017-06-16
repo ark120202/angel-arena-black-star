@@ -2576,7 +2576,7 @@
 			"02"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_agility"										"36"
+				"bonus_agility"										"26"
 			}
 			"03"
 			{
@@ -2586,12 +2586,12 @@
 			"04"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_attack_speed"								"20"
+				"bonus_attack_speed"								"15"
 			}
 			"05"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_movement_speed_percentage"					"14"
+				"bonus_movement_speed_percentage"					"10"
 			}
 			"06"
 			{
@@ -2601,7 +2601,7 @@
 			"07"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_duration"									"25"
+				"illusion_duration"									"20"
 			}
 			"08"
 			{
@@ -2636,22 +2636,22 @@
 			"14"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed_buff"		"7"
+				"bonus_attack_speed_buff"		"4"
 			}
 			"15"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"6"
+				"movement_speed_percent_bonus_buff"		"2"
 			}
 			"16"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"fast_attack_duration"			"8"
+				"var_type"						"FIELD_FLOAT"
+				"fast_attack_duration"			"4.5"
 			}
 			"17"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"			"8"
+				"fast_attack_max_stacks"			"5"
 			}
 		}
 
@@ -6710,13 +6710,13 @@
 		"ID"							"10234"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"2500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_thunder_musket"
 		"ItemRequirements"
 		{
-			"01"						"item_dragon_lance;item_lesser_crit"
+			"01"						"item_dragon_lance;item_greater_crit"
 		}
 	}
 
@@ -6728,44 +6728,44 @@
 		"AbilityTextureName"			"item_arena/thunder_musket"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCooldown"				"6"
+		"AbilityCooldown"				"3"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"10"
+				"bonus_strength"		"12"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"15"
+				"bonus_agility"			"12"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"35"
+				"bonus_damage"			"80"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"160"
+				"bonus_attack_range"	"140"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20"
+				"crit_chance"			"30"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"190"
+				"crit_multiplier"		"235"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"thunderstruck_cooldown"		"6"
+				"thunderstruck_cooldown"		"3"
 			}
 			"08"
 			{
@@ -9455,7 +9455,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"11"
 		"AbilityManaCost"				"125"
 
 		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
@@ -9483,7 +9483,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_hp_regen_pct"	"3"
+				"bonus_hp_regen_pct"	"2"
 			}
 			"05"
 			{
@@ -9503,7 +9503,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_night_vision"	"200"
+				"bonus_night_vision"	"250"
 			}
 		}
 
@@ -10942,7 +10942,7 @@
 		"ItemResult"					"item_bloodthorn_2"
 		"ItemRequirements"
 		{
-			"01"						"item_bloodthorn;item_greater_crit"
+			"01"						"item_bloodthorn;item_greater_crit;item_dark_blade"
 		}
 	}
 
@@ -10960,7 +10960,7 @@
 		"AbilitySharedCooldown"			"orchid"
 		"AbilityCastRange"				"900"
 		"AbilityCooldown"				"15"
-		"AbilityManaCost"				"120"
+		"AbilityManaCost"				"200"
 		"ItemAliases"					"orchid malevolence;bloodthorn 2"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -10979,7 +10979,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"150"
+				"bonus_damage"			"250"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"04"
