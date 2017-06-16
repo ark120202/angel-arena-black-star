@@ -874,7 +874,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"active_damage_reduction_pct"	"-40"
+				"active_damage_reduction_pct"	"-30"
 			}
 			"07"
 			{
