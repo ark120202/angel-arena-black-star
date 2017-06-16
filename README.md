@@ -10,7 +10,7 @@
 1. Удостоверьтесь что у вас установлены **[Node.js](https://nodejs.org/en/)** и **Dota 2 Workshop Tools DLC**
 2. Клонируйте репозиторий используя **[SourceTree](https://www.sourcetreeapp.com/)** или другую вариацию git
 3. Создайте файл **settings.yml**, основываясь на файле **default_settings.yml** в директории **generator**
-4. Откройте консоль в директории **generator** и выполните команду `npm install && node install.js && node node_modules/gulp/bin/gulp.js --build`
+4. Откройте консоль в директории **generator** и выполните команду `npm run i`
 5. Запускайте Dota 2 Workshop Tools используя файл **Start tools.bat** и начинайте матч через `dota_launch_custom_game angelarenablackstar 5v5` в vconsole
 
 ## Linters
