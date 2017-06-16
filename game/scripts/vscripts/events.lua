@@ -191,8 +191,12 @@ function GameMode:OnEntityKilled(keys)
 		if killedUnit:IsHero() then
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
 			if killedUnit:IsRealHero() then
+				local respawnTime = killedUnit:CalculateRespawnTime()
+				killedUnit:SetTimeUntilRespawn(respawnTime)
+				MeepoFixes:ShareRespawnTime(killedUnit, respawnTime)
+
 				if killedUnit.OnDuel and Duel:IsDuelOngoing() then
-					killedUnit.OnDuel = false
+					killedUnit.OnDuel = nil
 					killedUnit.ArenaBeforeTpLocation = nil
 					if Duel:GetWinner() ~= nil then
 						Duel:EndDuel()
@@ -204,9 +208,6 @@ function GameMode:OnEntityKilled(keys)
 					local player = killedUnit:GetPlayerOwner()
 					Kills:OnEntityKilled(player, player)
 				end
-				local respawnTime = killedUnit:CalculateRespawnTime()
-				killedUnit:SetTimeUntilRespawn(respawnTime)
-				MeepoFixes:ShareRespawnTime(killedUnit, respawnTime)
 			end
 		end
 
