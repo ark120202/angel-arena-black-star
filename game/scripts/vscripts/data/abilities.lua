@@ -183,6 +183,7 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	item_recipe_ethereal_blade = true,
 	doom_bringer_infernal_blade = true,
 	phoenix_sun_ray = true,
+	silencer_glaives_of_wisdom = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

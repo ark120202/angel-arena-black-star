@@ -356,6 +356,7 @@
 		"Ability6"	""
 		"Changed"	"1"
 		"AttackRate"	"1.6"
+		"MovementSpeed"	"325"
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""

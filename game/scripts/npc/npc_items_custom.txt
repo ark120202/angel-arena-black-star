@@ -5887,7 +5887,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"1.0 1.0"
+				"slow_duration"			"0.7 1.0"
 			}
 		}
 
@@ -6021,7 +6021,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"1.0 1.0"
+				"slow_duration"			"0.7 1.0"
 			}
 		}
 
