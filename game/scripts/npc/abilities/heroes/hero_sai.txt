@@ -7,7 +7,6 @@
 		"ScriptFile"					"heroes/hero_sai/rage_of_pain.lua"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"LevelsBetweenUpgrades"			"4"
 		"AbilitySpecial"
 		{
 			"01"
@@ -33,8 +32,6 @@
 		"AbilityTextureName"			"arena/sai_divine_flesh"
 		"ScriptFile"					"heroes/hero_sai/divine_flesh.lua"
 		"MaxLevel" 						"7"
-		"RequiredLevel"					"5"
-		"LevelsBetweenUpgrades"			"10"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilitySpecial"
 		{
@@ -69,11 +66,9 @@
 	{
 		"BaseClass"             		"ability_lua"
 		"AbilityTextureName"			"arena/sai_immortal"
-		//"ScriptFile"					"heroes/hero_sai/immortal.lua"
+		"ScriptFile"					"heroes/hero_sai/immortal.lua"
 		"MaxLevel" 						"7"
-		"RequiredLevel"					"2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"LevelsBetweenUpgrades"			"2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -100,10 +95,16 @@
 	}
 	"sai_release_of_forge"
 	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"arena/sai_release_of_forge"
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"arena/release_of_forge"
+		"ScriptFile"					"heroes/hero_sai/release_of_forge.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel" 						"7"
-		"RequiredLevel"					"6"
-		"LevelsBetweenUpgrades"			"10"
+
+		"AbilitySpecial"
+		{
+
+		}
 	}
 }
