@@ -581,26 +581,37 @@ $gameModeInfoPanelWidth: 200px;
 		margin-top: 0
 		margin-bottom: -6px
 		margin-right: 4px
-		transform: translateY(2px )
+		transform: translateY(2px)
 		border: 1px solid rgb(0, 0, 0)
 
 
 #AdsBanner
 	padding: 2px
 	width: 100%
-	//384 visibility: visible
 	transition-property: pre-transform-scale2d, brightness
-	transition-duration: 0.15s
+	transition-duration: .15s
 	brightness: .8
 
 	&:hover
-		pre-transform-scale2d: 0.98
+		pre-transform-scale2d: .98
 		brightness: 1
 
 	&:active
 		pre-transform-scale2d: 1.04
 		brightness: 1.2
 
+	> Label
+		margin-right: 6px
+		margin-bottom: -2px
+		font-size: 48px
+		font-weight: bold
+		color: #ffd700
+		transition-duration: .2s
+		transition-property: saturation
+		align: right bottom
+
+		.AdsClicked &
+			saturation: 0
 
 #LockedIcon
 	align: right bottom

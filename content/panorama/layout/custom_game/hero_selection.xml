@@ -355,7 +355,9 @@
 					</Panel>
 				</Panel>
 				<!--  ExternalBrowserGoToURL  BrowserGoToURL = DOTADisplayURL -->
-				<Image id="AdsBanner" src="https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection.png" onactivate="OnAdsClicked()"/>
+				<Image id="AdsBanner" onactivate="OnAdsClicked()">
+					<Label text="+25" />
+				</Image>
 				<Panel id="SelectionChatBox">
 					<Panel id="SelectionChat">
 						<Panel id="SelectionChatMessagesPanel">

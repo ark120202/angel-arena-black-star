@@ -5,7 +5,9 @@ function GameMode:RegisterCustomListeners()
 	CustomGameEventManager:RegisterListener("options_vote", Dynamic_Wrap(Options, "OnVote"))
 	CustomGameEventManager:RegisterListener("team_select_host_set_player_team", Dynamic_Wrap(GameMode, "TeamSelectHostSetPlayerTeam"))
 	CustomGameEventManager:RegisterListener("set_help_disabled", Dynamic_Wrap(GameMode, "SetHelpDisabled"))
+	CustomGameEventManager:RegisterListener("on_ads_clicked", Dynamic_Wrap(GameMode, "OnAdsClicked"))
 end
+
 function GameMode:MetamorphosisElixirCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local elixirItem = FindItemInInventoryByName(hero, "item_metamorphosis_elixir", false)
@@ -129,5 +131,12 @@ function CustomChatSay(playerId, teamonly, data)
 		else
 			CustomGameEventManager:Send_ServerToAllClients("custom_chat_recieve_message", args)
 		end
+	end
+end
+
+function GameMode:OnAdsClicked(data)
+	local playerID = data.PlayerID
+	if not PLAYER_DATA[playerID].adsClicked then
+		PLAYER_DATA[playerID].adsClicked = true
 	end
 end
