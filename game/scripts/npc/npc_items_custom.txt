@@ -3173,12 +3173,12 @@
 			"11"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming"			"150"
+				"illusion_damage_percent_incoming"			"250"
 			}
 			"12"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming_tooltip"	"250"
+				"illusion_damage_percent_incoming_tooltip"	"350"
 			}
 			"13"
 			{
