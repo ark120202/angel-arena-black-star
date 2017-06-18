@@ -41,7 +41,7 @@ function GameMode:_OnNPCSpawned(keys)
 end
 
 -- An entity died
-function GameMode:_OnEntityKilled( keys )
+function GameMode:_OnEntityKilled(keys)
 	if GameMode._reentrantCheck then
 		return
 	end
@@ -57,11 +57,12 @@ function GameMode:_OnEntityKilled( keys )
 
 	if killedUnit:IsRealHero() then
 		if killerEntity then
-			local team = killerEntity:GetTeam()
-			if Teams:IsEnabled(team) then
-				Teams:ModifyScore(team, Teams:GetTeamKillWeight(killedUnit:GetTeam()))
-				if END_GAME_ON_KILLS and Teams:GetScore(team) >= KILLS_TO_END_GAME_FOR_TEAM then
-					self:OnKillGoalReached(team)
+			local killerTeam = killerEntity:GetTeam()
+			local killedTeam = killedUnit:GetTeam()
+			if killerTeam ~= killedTeam and Teams:IsEnabled(killerTeam) then
+				Teams:ModifyScore(killerTeam, Teams:GetTeamKillWeight(killedTeam))
+				if END_GAME_ON_KILLS and Teams:GetScore(killerTeam) >= KILLS_TO_END_GAME_FOR_TEAM then
+					self:OnKillGoalReached(killerTeam)
 				end
 			end
 		end
