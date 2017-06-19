@@ -105,11 +105,11 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange"				"600 650 700 750 800 850 900"
-		"AbilityCastPoint"				"1.2"
+		"AbilityCastPoint"				"0.6 0.6 0.6 0.6 0.6 0.5 0.4"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCooldown"				"8.0"
 		"AbilityManaCost"				"100 140 180 220 260 300 340"
-		"AbilityDamage"					"150 250 350 450 550 650 750"
+		"AbilityDamage"					"150 225 300 375 450 525 600"
 		"AOERadius"						"%radius"
 		"LevelsBetweenUpgrades"	"3"
 
