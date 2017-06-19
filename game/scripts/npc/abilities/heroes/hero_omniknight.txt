@@ -81,12 +81,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0 4.5 5.0 5.5 6.0 6.5 7.0"
+				"duration"				"4.0 4.25 4.5 4.75 5.0 5.25 5.5"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_resistance_reduction_scepter"	"-60"
+				"magic_resistance_reduction_scepter"	"-50"
 			}
 		}
 
@@ -116,7 +116,7 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"40"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.4 0.3"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.45 0.4"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -129,7 +129,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.0 3.25 3.5 3.75 4.0 4.5 5.0"
+				"duration"					"3.0 3.25 3.5 3.75 4.0 4.25 4.5"
 			}
 			"02"
 			{
@@ -175,12 +175,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_bonus_per_stack"	"-1 -2 -3 -4 -5 -6 -8 -10"
+				"attack_bonus_per_stack"	"-1 -2 -3 -4 -5 -6 -7"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_per_stack"	"-1 -2 -3 -4 -5 -6 -7"
+				"var_type"				"FIELD_FLOAT"
+				"damage_bonus_per_stack"	"-1.0 -1.5 -2.0 -2.5 -3.0 -3.5 -4.0"
 			}
 			"04"
 			{
@@ -205,12 +205,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stack_growth_interval"	"1"
+				"stack_growth_interval"	"1.5"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stack_duration"		"1.5"
+				"stack_duration"		"5.0"
 			}
 		}
 
@@ -311,8 +311,8 @@
 		"MaxLevel" 						"7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 
-		"AbilityCooldown"				"180 175 170 165 160 155 150"
-		"AbilityManaCost"				"300 600 900 1200 1500 1800 2100"
+		"AbilityCooldown"				"160"
+		"AbilityManaCost"				"200 400 600 800 1000 1200 1400"
 		"HasScepterUpgrade"				"1"
 
 		"AbilitySpecial"
@@ -320,7 +320,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"5 5.5 6 6.5 7 7.5 8"
+				"duration"			"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
 			}
 		}
 
@@ -392,15 +392,15 @@
 		"MaxLevel" 						"7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 
-		"AbilityCooldown"				"180 175 170 165 160 155 150"
-		"AbilityManaCost"				"300 600 900 1200 1500 1800 2100"
+		"AbilityCooldown"				"160"
+		"AbilityManaCost"				"200 400 600 800 1000 1200 1400"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"5 5.5 6 6.5 7 7.5 8"
+				"duration"			"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
 			}
 		}
 

@@ -1626,7 +1626,7 @@ CUSTOM_TALENTS_DATA = {
  		cost = 1,
   		group = 7,
   		requirement = "invoker_tornado",
-  		special_values = {value = 18},
+  		special_values = {value = 14},
  		effect = {abilities = "special_bonus_unique_invoker_3"}
  	},
 	talent_hero_silencer_curse_of_the_silent_slow = {

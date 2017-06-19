@@ -9232,13 +9232,13 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"attack_rate"	"1.25 1.15 1.05 0.95 0.85 0.75 0.65"
+				"attack_rate"	"1.25 1.1 0.95 0.8 0.65 0.5 0.35"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"count"	"12 14 16 18 20 22 24"
+				"count"	"12 12 12 12 15 18 21"
 			}
 
 			"04"
@@ -9256,7 +9256,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"destroy_attacks"	"8 8 8 10 12 14 16"
+				"destroy_attacks"	"8 8 8 8 10 12 14"
 			}
 
 			"07"
@@ -9268,7 +9268,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"speed"	"800 800 800 800 800 900 1000"
+				"speed"	"600 600 600 600 700 800 900"
 			}
 
 			"09"
@@ -9291,19 +9291,19 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"75 100 125 150 175 250 375"
+				"damage"	"100 125 150 175 200 250 350"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"200"
+				"radius"	"175"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"fade_time"	"0.25 0.25 0.25 0.25 0.25 0.2 0.1"
+				"fade_time"	"0.25 0.25 0.25 0.25 0.25 0.2 0.15"
 			}
 
 			"04"
@@ -9325,7 +9325,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"delay"	"0.25 0.25 0.25 0.25 0.25 0.15 0.1"
+				"delay"	"0.25 0.25 0.25 0.25 0.25 0.2 0.15"
 			}
 
 		}
@@ -9364,7 +9364,7 @@
 		"AbilityDuration"	"5.0"
 		"AbilityCastPoint"	"0.65 0.65 0.65 0.65 0.65 0.55 0.4"
 		"AbilityCooldown"	"10"
-		"AbilityManaCost"	"135 140 155 170 185 200 225"
+		"AbilityManaCost"	"135 140 155 170 185 200 215"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9395,7 +9395,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"burn_damage"	"20 40 60 80 100 125 150"
+				"burn_damage"	"20 40 60 80 100 120 140"
 			}
 			"07"
 			{
@@ -9430,7 +9430,7 @@
 		"AbilityCastRange"	"1200"
 		"AbilityCastPoint"	"0.65 0.65 0.65 0.65 0.65 0.55 0.4"
 		"AbilityCooldown"	"10"
-		"AbilityManaCost"	"90 160 190 240 280 340 480"
+		"AbilityManaCost"	"90"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9454,7 +9454,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"50 90 150 200 240 290 350"
+				"damage"	"50 90 130 170 210 250 300"
 			}
 		}
 
@@ -9481,7 +9481,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"12 16 20 24 30 40 55"
+				"damage"	"12 16 20 24 28 34 40"
 			}
 			"04"
 			{
@@ -9496,7 +9496,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"1400"
-		"AbilityCastPoint"	"0.65 0.65 0.65 0.65 0.65 0.55 0.4"
+		"AbilityCastPoint"	"0.65 0.65 0.65 0.65 0.65 0.55 0.45"
 		"AbilityCooldown"	"60"
 		"AbilityManaCost"	"220 330 440 550 660 770 880"
 		"AbilitySpecial"
@@ -10954,13 +10954,13 @@
 	{
 		"AbilityCooldown"	"0"
 		"AbilityManaCost"	"0"
-		"LevelsBetweenUpgrades"	"5"
+		"LevelsBetweenUpgrades"	"6"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"health_regen_per_instance"	"3 9 15 20 26 31 35"
+				"health_regen_per_instance"	"3 8 13 18 23 28 33 45"
 			}
 
 		}
@@ -10971,19 +10971,19 @@
 	{
 		"AbilityCooldown"	"0"
 		"AbilityManaCost"	"0"
-		"LevelsBetweenUpgrades"	"5"
+		"LevelsBetweenUpgrades"	"6"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_speed_per_instance" "5 10 15 20 25 30 35 60"
+				"attack_speed_per_instance" "10 15 20 25 30 35 40 60"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"move_speed_per_instance"	"1 2 3 4 5 7 9 11"
+				"move_speed_per_instance"	"1 2 3 4 7 9 11 13"
 			}
 
 		}
@@ -10994,7 +10994,7 @@
 	{
 		"AbilityCooldown"	"0"
 		"AbilityManaCost"	"0"
-		"LevelsBetweenUpgrades"	"5"
+		"LevelsBetweenUpgrades"	"6"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11019,7 +11019,7 @@
 
 	"invoker_invoke"
 	{
-		"AbilityCooldown"	"6"
+		"AbilityCooldown"	"4"
 		"AbilityManaCost"	"60"
 		"AbilitySpecial"
 		{
@@ -11108,7 +11108,7 @@
 	"invoker_ghost_walk"
 	{
 		"MaxLevel"	"1"
-		"AbilityCooldown"	"45"
+		"AbilityCooldown"	"30"
 		"AbilityManaCost"	"200"
 		"AbilityCastPoint"	"0"
 		"AbilitySpecial"
@@ -11152,7 +11152,7 @@
 	"invoker_tornado"
 	{
 		"MaxLevel"	"1"
-		"AbilityCastRange"	"2000"
+		"AbilityCastRange"	"3000"
 		"AbilityCastPoint"	"0.05"
 		"AbilityCooldown"	"30"
 		"AbilityManaCost"	"150"
@@ -11205,14 +11205,14 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"quas_damage"	"100 200 300 400 500 600 700 800"
+				"quas_damage"	"25 50 100 150 200 250 300 400"
 				"levelkey"	"quaslevel"
 			}
 
 			"09"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"wex_damage"	"50 150 270 360 420 500 570 700"
+				"wex_damage"	"75 150 270 360 420 500 570 800"
 				"levelkey"	"wexlevel"
 			}
 
@@ -11233,7 +11233,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"delay"	"3.0"
+				"delay"	"3.1"
 				"levelkey"	"wexlevel"
 			}
 
@@ -11317,7 +11317,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"travel_distance"	"465 615 780 930 1095 1245 1410 1600"
+				"travel_distance"	"465 615 780 930 1095 1245 1410 1675"
 				"levelkey"	"wexlevel"
 			}
 
@@ -11349,7 +11349,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"main_damage"	"60 90 125 162 200 260 320"
+				"main_damage"	"52.5 68.3 88.5 105 127.5 150 182.5 260"
 				"levelkey"	"exortlevel"
 			}
 
@@ -11376,14 +11376,14 @@
 		"MaxLevel"	"1"
 		"AbilityCastRange"	"0"
 		"AbilityCastPoint"	"0.05"
-		"AbilityCooldown"	"25"
+		"AbilityCooldown"	"20"
 		"AbilityManaCost"	"175"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"delay"	"1.5"
+				"delay"	"1.7"
 			}
 
 			"02"
@@ -11395,7 +11395,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage"	"200 300 450 600 750 900 1100 1400"
+				"damage"	"200 350 500 650 800 950 1200 2000"
 				"levelkey"	"exortlevel"
 			}
 
@@ -11565,7 +11565,7 @@
 		"MaxLevel"	"1"
 		"AbilityCastRange"	"1000"
 		"AbilityCastPoint"	"0.05"
-		"AbilityCooldown"	"40"
+		"AbilityCooldown"	"35"
 		"AbilityManaCost"	"300"
 		"AbilitySpecial"
 		{
