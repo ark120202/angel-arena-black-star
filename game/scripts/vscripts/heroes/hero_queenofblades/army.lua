@@ -16,9 +16,6 @@ function SpawnSummons(keys)
 		unit:SetBaseDamageMin(ability:GetAbilitySpecial("summon_damage"))
 		unit:SetBaseDamageMax(ability:GetAbilitySpecial("summon_damage"))
 		unit:SetBaseAttackTime(ability:GetAbilitySpecial("summon_bat"))
-		unit:SetMinimumGoldBounty(ability:GetAbilitySpecial("summon_bounty"))
-		unit:SetMaximumGoldBounty(ability:GetAbilitySpecial("summon_bounty"))
-		unit:SetDeathXP(ability:GetAbilitySpecial)("summon_xp")
 	end
 end
 

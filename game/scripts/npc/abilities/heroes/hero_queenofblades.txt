@@ -49,16 +49,6 @@
 				"var_type"			"FIELD_FLOAT"
 				"radius"			"100 200 250 300 350 400 450"
 			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"summon_bounty"		"600 1200 1800 2400 3200 3600 4000"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"summon_xp"			"150 300 600 1200 2400 4800 10000"
-			}
 		}
 
 		"precache"
