@@ -1170,6 +1170,7 @@ DOTA_Tooltip_ability_item_thunder_musket_Description: |-
 DOTA_Tooltip_ability_item_thunder_musket_bonus_strength: +$str
 DOTA_Tooltip_ability_item_thunder_musket_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_thunder_musket_bonus_damage: +$damage
+DOTA_tooltip_ability_item_thunder_musket_bonus_attackspeed: +$attack
 DOTA_Tooltip_ability_item_thunder_musket_bonus_attack_range: +$attack_range
 DOTA_Tooltip_ability_item_thunder_musket_crit_chance: '%CRITICAL CHANCE:'
 DOTA_Tooltip_ability_item_thunder_musket_crit_multiplier: '%CRITICAL DAMAGE:'

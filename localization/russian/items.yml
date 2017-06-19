@@ -1085,7 +1085,7 @@ DOTA_Tooltip_ability_item_thunder_musket_Description: |-
 
   Пассивная: Critical Strike — дает шанс нанести дополнительный урон при каждой атаке.
 
-  Пассивная: Increases attack range of ranged heroes by %bonus_attack_range%.
+  Пассивная: Увеличивает дальность атаки героев дальнего боя на %bonus_attack_range%.
 DOTA_Tooltip_ability_item_thunder_musket_crit_chance: '%ШАНС КРИТА:'
 DOTA_Tooltip_ability_item_thunder_musket_crit_multiplier: '%КРИТИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_thunder_musket_thunderstruck_cooldown: |-

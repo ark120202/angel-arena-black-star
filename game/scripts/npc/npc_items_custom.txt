@@ -6716,11 +6716,11 @@
 		"ItemResult"					"item_thunder_musket"
 		"ItemRequirements"
 		{
-			"01"						"item_dragon_lance;item_greater_crit"
+			"01"						"item_dragon_lance;item_greater_crit;item_maelstrom"
 		}
 	}
 
-	"item_thunder_musket"
+	"item_thunder_musket"	
 	{
 		"BaseClass"						"item_datadriven"
 		"ID"							"10235"
@@ -6728,7 +6728,7 @@
 		"AbilityTextureName"			"item_arena/thunder_musket"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCooldown"				"3"
+		"AbilityCooldown"				"1.5"
 
 		"AbilitySpecial"
 		{
@@ -6745,34 +6745,39 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"80"
+				"bonus_damage"			"104"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"140"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_attackspeed"		"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"30"
+				"bonus_attack_range"	"140"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"235"
+				"crit_chance"			"30"
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"thunderstruck_cooldown"		"3"
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"235"
 			}
 			"08"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"thunderstruck_bonus_attack_range"		"120"
+				"var_type"				"FIELD_FLOAT"
+				"thunderstruck_cooldown"		"1.5"
 			}
 			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"thunderstruck_bonus_attack_range"		"100"
+			}
+			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"thunderstruck_magical_damage"		"200"
@@ -6789,9 +6794,10 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_strength"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attackspeed"
 				}
 			}
 			"modifier_item_thunder_musket_unique"
