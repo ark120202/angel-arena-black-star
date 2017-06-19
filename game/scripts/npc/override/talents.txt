@@ -39,6 +39,7 @@
 	"special_bonus_unique_pugna_4"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"2"}}}
 	"special_bonus_unique_pugna_1"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"200"}}}
 	"special_bonus_unique_pugna_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"400"}}}
+	"special_bonus_unique_pugna_3"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"2"}}}
 	"special_bonus_unique_templar_assassin_2"		{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"15"}}}
 	"special_bonus_unique_viper_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"400"}}}
 	"special_bonus_unique_luna_1"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"250"}}}

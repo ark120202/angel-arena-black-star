@@ -40,8 +40,6 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	dazzle_shallow_grave = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
-	poseidon_dark_whale = true,
-	faceless_void_time_freeze = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
@@ -163,13 +161,11 @@ BOSS_BANNED_ABILITIES = {
 
 PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_dota_hero_wisp"] = true,
-	["npc_dota_hero_invoker"] = true,
 	["npc_dota_hero_meepo"] = true,
 	["npc_arena_hero_sara"] = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
-
 SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	zuus_static_field = true,
 	enigma_midnight_pulse = true,

@@ -114,14 +114,14 @@
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"HasInnateModifiers"			"1"
-		"AbilityCastRange"				"1000"
+		"AbilityCastRange"				"940"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000" // Only one value
+				"radius"			"940" // Only one value
 			}
 			"02"
 			{
@@ -251,7 +251,7 @@
 		"AbilityManaCost"				"105"
 		"MaxLevel"						"7"
 		"AbilityChannelTime"			"2"
-		"AbilityDamage"					"400 700 900 1100 1300 1500 1700"
+		"AbilityDamage"					"200 300 400 500 600 700 800"
 
 		"AbilitySpecial"
 		{
@@ -278,7 +278,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2.0 2.25 2.5 2.75 3.0 3.25 3.5"
+				"stun_duration"			"2.0"
 			}
 			"06"
 			{
@@ -288,7 +288,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration_scepter"	"4.5"
+				"stun_duration_scepter"	"4.0"
 			}
 			"08"
 			{
