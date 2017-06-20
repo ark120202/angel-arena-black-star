@@ -17,7 +17,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"60"
+		"ArmorPhysical"				"45"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -75,7 +75,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"65"
+		"ArmorPhysical"				"50"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -131,7 +131,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"100"
+		"ArmorPhysical"				"80"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -189,7 +189,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"90"
+		"ArmorPhysical"				"80"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -246,7 +246,7 @@
 		"Ability1"					"boss_armor"
 		"Ability2"					"boss_central_passive"
 
-		"ArmorPhysical"				"150"
+		"ArmorPhysical"				"125"
 		"MagicalResistance"			"50"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
