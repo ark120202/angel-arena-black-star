@@ -305,7 +305,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_skeleton_king_reincarnation_notime_stun = {
 		icon = "talents/heroes/skeleton_king_reincarnation_notime_stun",
 		cost = 1,
-		group = 7,
+		group = 10,
 		requirement = "skeleton_king_reincarnation_arena",
 	},
 
