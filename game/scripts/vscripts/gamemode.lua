@@ -50,7 +50,7 @@ local modifiers = {
 	modifier_item_demon_king_bar_curse = "items/modifier_item_demon_king_bar_curse",
 	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game",
 
-	modifier_item_shard_attackspeed_stack = "items/modifier_item_shard_attackspeed_stack",
+	modifier_item_shard_attackspeed_stack = "modifiers/modifier_item_shard_attackspeed_stack",
 	modifier_item_casino_drug_pill1_addiction = "modifiers/modifier_item_casino_drug_pill1_addiction",
 	modifier_item_casino_drug_pill2_addiction = "modifiers/modifier_item_casino_drug_pill2_addiction",
 	modifier_item_casino_drug_pill3_addiction = "modifiers/modifier_item_casino_drug_pill3_addiction",

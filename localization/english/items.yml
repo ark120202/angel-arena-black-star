@@ -57,7 +57,7 @@ DOTA_Tooltip_ability_item_shard_primal_medium: Medium Primal Shard
 DOTA_Tooltip_ability_item_shard_primal_medium_bonus_stats: +$all
 DOTA_Tooltip_ability_item_shard_primal_large: Large Primal Shard
 DOTA_Tooltip_ability_item_shard_primal_large_bonus_stats: +$all
-DOTA_Tooltip_ability_item_shard_attackspeed: Attackspeed Shard
+DOTA_Tooltip_ability_item_shard_attackspeed: Attack Speed Shard
 DOTA_Tooltip_ability_item_shard_attackspeed_bonus_attackspeed: +$attack
 'Active: Consume - consumes shard and gives hero permanent bonus.':
   - DOTA_Tooltip_ability_item_shard_str_small_Description
