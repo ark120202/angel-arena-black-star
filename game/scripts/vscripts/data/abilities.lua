@@ -148,6 +148,10 @@ REFRESH_LIST_IGNORE_REARM = {
 	saber_excalibur = true,
 }
 
+COFFEE_BEAN_NOT_REFRESHABLE = {
+	destroyer_body_reconstruction = true
+}
+
 
 BOSS_BANNED_ABILITIES = {
 	item_heart_cyclone = true,

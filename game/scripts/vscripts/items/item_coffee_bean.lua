@@ -1,7 +1,10 @@
 function RefreshAbility(keys)
 	local caster = keys.caster
 	local event_ability = keys.event_ability
-	if event_ability and not event_ability:IsItem() and not IsUltimateAbility(event_ability) then
+	if event_ability and
+		not event_ability:IsItem() and
+		not IsUltimateAbility(event_ability) and
+		not COFFEE_BEAN_NOT_REFRESHABLE[event_ability:GetAbilityName()] then
 		Timers:CreateTimer(function()
 			event_ability:EndCooldown()
 			caster:EmitSound("DOTA_Item.Refresher.Activate")
