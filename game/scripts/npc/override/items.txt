@@ -1132,7 +1132,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"creep_damage_pct"			"50"
+				"creep_damage_pct"			"80"
 			}
 			"06"
 			{
