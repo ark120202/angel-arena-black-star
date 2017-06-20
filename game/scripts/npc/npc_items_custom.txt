@@ -6720,7 +6720,7 @@
 		}
 	}
 
-	"item_thunder_musket"	
+	"item_thunder_musket"
 	{
 		"BaseClass"						"item_datadriven"
 		"ID"							"10235"
@@ -7589,7 +7589,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"debuff_stats_multiplier"	"1.5"
+				"debuff_stats_multiplier"	"1.0"
 			}
 			"12"
 			{
@@ -10921,7 +10921,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hex_damage_pct"		"20"
+				"hex_damage_pct"		"10"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"13"

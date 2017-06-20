@@ -1487,7 +1487,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"arrow_speed"	"1000"
+				"arrow_speed"	"1000 1000 1000 1000 1000 1100 1200"
 			}
 
 			"02"
@@ -3129,7 +3129,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"spirits"	"8 14 20 26 32 40 48"
+				"spirits"	"8 13 18 23 28 33 38"
 				"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
 			}
 
@@ -11616,7 +11616,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"disarm_duration"	"2.0 2.75 3.5 4.25 5.0 5.75 6.5 7.0"
+				"disarm_duration"	"2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5"
 				"levelkey"	"wexlevel"
 			}
 
@@ -14324,7 +14324,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"1000 1075 1150 1225 1300 1375 0"
+				"radius"	"1000 1075 1150 1225 1300 1375 99999"
 			}
 
 			"02"
@@ -18705,14 +18705,14 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityCastRange"	"500 550 600 650 700 750 800"
-		"AbilityCooldown"	"16 15 14 13 11 9 7"
+		"AbilityCooldown"	"16 15 14 13 12 11 10"
 		"AbilityManaCost"	"50"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"3.0 3.25 3.5 3.75 4.0 4.25 4.5"
+				"duration"	"2.5 2.75 3.0 3.25 3.5 3.75 4.0"
 			}
 
 			"02"
@@ -18797,7 +18797,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"7.0 7.5 8.0 8.5 9.0 9.5 10.0"
+				"duration"	"5.0 5.5 6.0 6.5 7.0 7.5 8.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_oracle"
 			}
 
@@ -19083,7 +19083,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"100"
-		"AbilityCooldown"	"10"
+		"AbilityCooldown"	"11 10 9 8 7 6 5"
 		"AbilityManaCost"	"110 130 150 170 190 210 230"
 		"AbilitySpecial"
 		{
@@ -19313,7 +19313,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"damage_from_current_health_pct" "1.0 2.0 3.0 4.0 5.0 6.0 7.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
