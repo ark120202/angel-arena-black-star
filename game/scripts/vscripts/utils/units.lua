@@ -70,7 +70,7 @@ function CDOTA_BaseNPC:TrueKill(ability, killer)
 	self.IsMarkedForTrueKill = true
 	self:Kill(ability, killer)
 	if IsValidEntity(self) and self:IsAlive() then
-		RemoveDeathPreventingModifiers(self)
+		self:RemoveDeathPreventingModifiers()
 		self:Kill(ability, killer)
 	end
 	self.IsMarkedForTrueKill = false
