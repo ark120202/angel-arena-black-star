@@ -203,6 +203,7 @@
 	"item_clarity"
 	{
 		"SecretShop"					"0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"
@@ -220,6 +221,7 @@
 	"item_flask"
 	{
 		"SecretShop"					"0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"
