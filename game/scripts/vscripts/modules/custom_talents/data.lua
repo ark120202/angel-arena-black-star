@@ -1386,7 +1386,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 6,
 		requirement = "weaver_shukuchi",
-		special_values = {value = 300},
+		special_values = {value = 200},
 		effect = {abilities = "special_bonus_unique_weaver_2"}
 	},
 	talent_hero_jakiro_dual_breath_dmg = {

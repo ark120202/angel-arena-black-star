@@ -14,14 +14,14 @@
 		"MaxLevel"						"7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
-		"AbilityCastRange"				"1100"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 
 		"AbilityCooldown"				"25"
 
-		"AbilityDamage"					"600 1200 1800 2400 3000 3600 4500"
+		"AbilityDamage"					"600 800 1000 1200 1400 1600 2000"
 
-		"AbilityManaCost"				"100 200 300 400 500 600 700"
+		"AbilityManaCost"				"100 150 200 250 300 350 400"
 		"AOERadius"						"%radius"
 
 		"AbilitySpecial"
@@ -34,7 +34,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_missile_stun"	"2.5"
+				"magic_missile_stun"	"2.0"
 			}
 			"03"
 			{
@@ -151,10 +151,10 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 
-		"AbilityCastRange"				"525"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"22"
 
 		"AbilityManaCost"				"115 125 140 150 160 170 180"
 
@@ -166,7 +166,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"3.5"
+				"duration"			"2.5"
 			}
 			"02"
 			{
@@ -288,17 +288,17 @@
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-		"AbilityCooldown"				"20.0"
-		"AbilityManaCost"				"100 140 180 220 260 300 340"
+		"AbilityCooldown"				"18.0"
+		"AbilityManaCost"				"150"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_return_pct"	"70 90 110 120 130 140 150"
+				"damage_return_pct"	"70 75 80 95 90 105 110"
 				"CalculateSpellDamageTooltip" "0"
 			}
 			"02"
@@ -309,7 +309,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"3 3.5 4 4.5 5 5.5 6"
+				"duration"			"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
 			}
 		}
 	}
@@ -326,7 +326,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"arena/freya_frozen_strike"
 		"MaxLevel"						"7"
-		"AbilityCastPoint"				"0.6"
+		"AbilityCastPoint"				"0.6 0.6 0.6 0.6 0.6 0.5 0.4"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"60.0 50.0 40.0 30.0 20.0 18.0 16.0"
 		"AbilityManaCost"				"80 100 120 140 160 180 200"
