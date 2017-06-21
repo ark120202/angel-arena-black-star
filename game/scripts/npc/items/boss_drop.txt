@@ -167,12 +167,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_day_vision"			"-500"
+				"bonus_day_vision"			"250"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_night_vision"		"1500"
+				"bonus_night_vision"		"200"
 			}
 		}
 

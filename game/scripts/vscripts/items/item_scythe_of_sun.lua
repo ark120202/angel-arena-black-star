@@ -32,9 +32,11 @@ if IsServer() then
 end
 
 
-modifier_item_scythe_of_sun = class({})
-function modifier_item_scythe_of_sun:IsHidden() return true end
-function modifier_item_scythe_of_sun:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+modifier_item_scythe_of_sun = class({
+	IsHidden      = function() return true end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable    = function() return false end,
+})
 
 function modifier_item_scythe_of_sun:DeclareFunctions()
 	return {

@@ -50,14 +50,14 @@ function AddStacksLua(ability, caster, unit, modifier, stack_amount, refresh, da
 	end
 end
 
-function RemoveDeathPreventingModifiers(unit)
+function CDOTA_BaseNPC:RemoveDeathPreventingModifiers()
 	for _,v in ipairs(MODIFIERS_DEATH_PREVENTING) do
-		unit:RemoveModifierByName(v)
+		self:RemoveModifierByName(v)
 	end
 end
 
 function CDOTA_BaseNPC:PurgeTruesightModifiers()
 	for _,v in ipairs(MODIFIERS_TRUESIGHT) do
-		unit:RemoveModifierByName(v)
+		self:RemoveModifierByName(v)
 	end
 end

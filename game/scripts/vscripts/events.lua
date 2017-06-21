@@ -49,7 +49,7 @@ function GameMode:OnNPCSpawned(keys)
 							npc.PocketItem = nil
 							npc.PocketHostEntity = nil
 						end
-						if Duel:IsDuelOngoing() then
+						if not npc.OnDuel and Duel:IsDuelOngoing() then
 							Duel:SetUpVisitor(npc)
 						end
 					end
@@ -132,15 +132,6 @@ function GameMode:OnAbilityChannelFinished(keys)
 	--local interrupted = keys.interrupted == 1
 end
 
-function GameMode:OnPlayerLevelUp(keys)
-	local player = EntIndexToHScript(keys.player)
-	local level = keys.level
-	local hero = player:GetAssignedHero()
-	if LEVELS_WITHOUT_ABILITY_POINTS[level] and IsValidEntity(hero) then
-		hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
-	end
-end
-
 -- A player last hit a creep, a tower, or a hero
 function GameMode:OnLastHit(keys)
 	--[[local isFirstBlood = keys.FirstBlood == 1
@@ -191,8 +182,12 @@ function GameMode:OnEntityKilled(keys)
 		if killedUnit:IsHero() then
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
 			if killedUnit:IsRealHero() then
+				local respawnTime = killedUnit:CalculateRespawnTime()
+				killedUnit:SetTimeUntilRespawn(respawnTime)
+				MeepoFixes:ShareRespawnTime(killedUnit, respawnTime)
+
 				if killedUnit.OnDuel and Duel:IsDuelOngoing() then
-					killedUnit.OnDuel = false
+					killedUnit.OnDuel = nil
 					killedUnit.ArenaBeforeTpLocation = nil
 					if Duel:GetWinner() ~= nil then
 						Duel:EndDuel()
@@ -204,9 +199,6 @@ function GameMode:OnEntityKilled(keys)
 					local player = killedUnit:GetPlayerOwner()
 					Kills:OnEntityKilled(player, player)
 				end
-				local respawnTime = killedUnit:CalculateRespawnTime()
-				killedUnit:SetTimeUntilRespawn(respawnTime)
-				MeepoFixes:ShareRespawnTime(killedUnit, respawnTime)
 			end
 		end
 

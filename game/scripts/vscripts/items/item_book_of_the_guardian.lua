@@ -52,9 +52,10 @@ item_book_of_the_guardian = class(item_book_of_the_guardian_baseclass)
 
 
 modifier_item_book_of_the_guardian = class({
-	IsHidden = function() return true end,
-	IsAura = function() return true end,
+	IsHidden      = function() return true end,
+	IsAura        = function() return true end,
 	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable    = function() return false end,
 })
 
 function modifier_item_book_of_the_guardian:DeclareFunctions()

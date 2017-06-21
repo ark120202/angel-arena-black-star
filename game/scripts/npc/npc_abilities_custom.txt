@@ -579,7 +579,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"reincarnate_time"		"3.0 3.0 3.0 3.0 3.0 2.5 2.0"
+				"reincarnate_time"		"3.0"
 			}
 			"02"
 			{
@@ -1349,7 +1349,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"5 10 15 20 25 30 40"
+				"damage"				"10 15 20 25 30 35 45"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"10"
@@ -1504,8 +1504,8 @@
 		"MaxLevel"						"7"
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"3.0 2.5 2.0 1.75 1.5 1.25 1.0"
-		"AbilityManaCost"				"300 600 900 1200 1500 1800 2100"
+		"AbilityCooldown"				"3.0 2.75 2.5 2.25 2.0 1.75 1.5"
+		"AbilityManaCost"				"100 200 300 350 450 500 550"
 
 		"precache"
 		{

@@ -265,16 +265,22 @@ function OnMinimapClickSpawnBox(team, level, index) {
 	});
 }
 
-var adsEnabledLangs = [
+var russianLangs = [
 	'russian',
 	'ukrainian',
-	'bulgarian',
-	'english'
+	'bulgarian'
 ];
 
 function OnAdsClicked() {
-	$.DispatchEvent('ExternalBrowserGoToURL', 'https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection_redirect');
-	//$.DispatchEvent("DOTADisplayURL", adsurl)
+	var context = $.GetContextPanel();
+	$.Schedule(context.BHasClass('AdsClicked') ? 0 : .35, function() {
+		$.DispatchEvent('ExternalBrowserGoToURL', 'https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection/go');
+	});
+	if (!context.BHasClass('AdsClicked')){
+		context.AddClass('AdsClicked');
+		Game.EmitSound('General.CoinsBig');
+		GameEvents.SendCustomGameEventToServer('on_ads_clicked', {});
+	}
 }
 
 function StartStrategyTime() {
@@ -335,7 +341,6 @@ function ShowHeroPreviewTab(tabID) {
 (function() {
 	$.GetContextPanel().RemoveClass('LocalPlayerPicked');
 	$('#HeroListPanel').RemoveAndDeleteChildren();
-	//if (Players.GetTeam(Game.GetLocalPlayerID()) !== DOTA_TEAM_SPECTATOR) {
 	var localPlayerId = Game.GetLocalPlayerID();
 	if (!Players.IsSpectator(localPlayerId)) {
 		console.log('Is Player');
@@ -344,7 +349,6 @@ function ShowHeroPreviewTab(tabID) {
 		});
 		DynamicSubscribePTListener('hero_selection_available_heroes', UpdateMainTable);
 		$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
-		//$.GetContextPanel().SetHasClass('FailedRankedGame', Options.IsEquals('FailedRankedGame'));
 		var gamemodeType = Options.IsEquals('FailedRankedGame') ? 'ranked_failed' : Options.GetMapInfo().gamemode;
 		if (gamemodeType === 'custom_abilities') gamemodeType =
 			Options.IsEquals('EnableAbilityShop') ? 'ability_shop' : Options.IsEquals('EnableRandomAbilities') ? 'random_omg' : '';
@@ -369,7 +373,7 @@ function ShowHeroPreviewTab(tabID) {
 
 		var bglist = Players.GetStatsData(localPlayerId).Backgrounds;
 		if (bglist) $('#HeroSelectionCustomBackground').SetImage(bglist[Math.floor(Math.random() * bglist.length)]);
-		$('#AdsBanner').visible = adsEnabledLangs.indexOf($.Language()) > -1;
+		$('#AdsBanner').SetImage('https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection/' + (russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png'));
 	} else {
 		HeroSelectionEnd(true);
 	}

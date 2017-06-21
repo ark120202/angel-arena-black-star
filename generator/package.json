@@ -4,6 +4,10 @@
   "description": "",
   "main": "gulpfile.js",
   "author": "ark120202",
+  "scripts": {
+    "i": "npm install && node install.js && gulp --build",
+    "start": "node start_tools.js && gulp"
+  },
   "dependencies": {
     "bluebird": "^3.5.0",
     "fs-extra": "^3.0.1",
@@ -14,7 +18,7 @@
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
     "js-yaml": "^3.8.4",
-    "lodash.merge": "^4.6.0",
+    "lodash": "^4.17.4",
     "through2": "^2.0.3",
     "vdf-extra": "^1.0.1",
     "yargs": "^8.0.1"

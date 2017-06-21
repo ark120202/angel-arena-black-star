@@ -14,3 +14,8 @@ Pipe of Insight:
 	Upped
 Vanguard:
 	Upped
+
+Gyrocopter:
+	BAT 1.7 => 1.6
+	AttributeBaseAgility 24 => 16
+	AttributeAgilityGain 2.8 => 2.0

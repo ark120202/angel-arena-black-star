@@ -27,8 +27,9 @@ item_mekansm_2.recipient_pfx = "particles/econ/events/ti6/mekanism_recipient_ti6
 
 
 modifier_item_mekansm_arena = class({
-	IsHidden = function() return true end,
+	IsHidden      = function() return true end,
 	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable    = function() return false end,
 })
 
 function modifier_item_mekansm_arena:DeclareFunctions()

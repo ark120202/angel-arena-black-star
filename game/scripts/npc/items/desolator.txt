@@ -79,16 +79,11 @@
 
 				"OnAttackLanded"
 				{
-					"ApplyModifier"
+					"RunScript"
 					{
-						"Target"			"TARGET"
-						"ModifierName"		"modifier_item_desolator2_arena_corruption"
-					}
-
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
+						"ScriptFile"	"items/item_desolator.lua"
+						"Function"		"ApplyArmorReduction"
+						"modifier"		"modifier_item_desolator2_arena_corruption"
 					}
 				}
 			}
@@ -112,7 +107,7 @@
 		"ID"							"10226"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
-		"ItemCost"						"0"
+		"ItemCost"						"1000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_desolator3"
@@ -186,16 +181,11 @@
 
 				"OnAttackLanded"
 				{
-					"ApplyModifier"
+					"RunScript"
 					{
-						"Target"			"TARGET"
-						"ModifierName"		"modifier_item_desolator3_arena_corruption"
-					}
-
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
+						"ScriptFile"	"items/item_desolator.lua"
+						"Function"		"ApplyArmorReduction"
+						"modifier"		"modifier_item_desolator3_arena_corruption"
 					}
 				}
 			}
@@ -219,7 +209,7 @@
 		"ID"							"10228"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
-		"ItemCost"						"20250"
+		"ItemCost"						"10250"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_desolator4"
@@ -303,16 +293,11 @@
 
 				"OnAttackLanded"
 				{
-					"ApplyModifier"
+					"RunScript"
 					{
-						"Target"			"TARGET"
-						"ModifierName"		"modifier_item_desolator4_arena_corruption"
-					}
-
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
+						"ScriptFile"	"items/item_desolator.lua"
+						"Function"		"ApplyArmorReduction"
+						"modifier"		"modifier_item_desolator4_arena_corruption"
 					}
 				}
 			}
@@ -466,16 +451,11 @@
 
 				"OnAttackLanded"
 				{
-					"ApplyModifier"
+					"RunScript"
 					{
-						"Target"			"TARGET"
-						"ModifierName"		"modifier_item_desolator5_arena_corruption"
-					}
-
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
+						"ScriptFile"	"items/item_desolator.lua"
+						"Function"		"ApplyArmorReduction"
+						"modifier"		"modifier_item_desolator5_arena_corruption"
 					}
 				}
 			}
@@ -521,7 +501,7 @@
 		"ID"							"10232"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
-		"ItemCost"						"40000"
+		"ItemCost"						"20000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_desolator6"
@@ -640,16 +620,11 @@
 
 				"OnAttackLanded"
 				{
-					"ApplyModifier"
+					"RunScript"
 					{
-						"Target"			"TARGET"
-						"ModifierName"		"modifier_item_desolator6_arena_corruption"
-					}
-
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
+						"ScriptFile"	"items/item_desolator.lua"
+						"Function"		"ApplyArmorReduction"
+						"modifier"		"modifier_item_desolator6_arena_corruption"
 					}
 				}
 			}

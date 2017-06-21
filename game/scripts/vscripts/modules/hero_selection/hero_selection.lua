@@ -1,6 +1,8 @@
 CUSTOM_STARTING_GOLD = 625
 CUSTOM_GOLD_FOR_RANDOM_TOTAL = 1000
-CUSTOM_GOLD_REPICK_COST = 100
+ADS_CLICKED_BONUS_GOLD = 25
+CUSTOM_GOLD_REPICK_COST = 200
+
 MAX_SPAWNBOXES_SELECTED = 3
 
 HERO_SELECTION_PICK_TIME = 80
@@ -222,6 +224,12 @@ end
 
 function HeroSelection:StartStateInGame(toPrecache)
 	HeroSelection:DismissTimers()
+
+	for i = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+		if PLAYER_DATA[i].adsClicked then
+			Gold:ModifyGold(i, ADS_CLICKED_BONUS_GOLD)
+		end
+	end
 	--If for some reason even after that time heroes weren't precached
 	Timers:CreateTimer({
 		useGameTime = false,

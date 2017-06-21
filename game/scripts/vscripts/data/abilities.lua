@@ -40,16 +40,6 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	dazzle_shallow_grave = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
-	poseidon_dark_whale = true,
-	faceless_void_time_freeze = true,
-
-	item_titanium_bar = true,
-	item_black_king_bar_arena = true,
-	item_black_king_bar_2 = true,
-	item_black_king_bar_3 = true,
-	item_black_king_bar_4 = true,
-	item_black_king_bar_5 = true,
-	item_black_king_bar_6 = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
@@ -57,6 +47,7 @@ REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
 	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_titanium_bar = true,
+	item_coffee_bean = true,
 
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
@@ -73,6 +64,7 @@ REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 	item_black_king_bar_4 = true,
 	item_black_king_bar_5 = true,
 	item_black_king_bar_6 = true,
+	item_coffee_bean = true,
 
 	destroyer_body_reconstruction = true,
 }
@@ -156,27 +148,28 @@ REFRESH_LIST_IGNORE_REARM = {
 	saber_excalibur = true,
 }
 
+COFFEE_BEAN_NOT_REFRESHABLE = {
+	destroyer_body_reconstruction = true
+}
+
 
 BOSS_BANNED_ABILITIES = {
 	item_heart_cyclone = true,
 	item_blink_staff = true,
 	huskar_life_break = true,
-	necrolyte_reapers_scythe = true,
 	death_prophet_spirit_siphon = true,
 	rubick_personality_steal = true,
 	item_urn_of_demons = true,
-	apocalypse_king_slayer = true,
-	apocalypse_armor_tear = true,
 	razor_static_link = true,
 }
 
 PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_dota_hero_wisp"] = true,
-	["npc_dota_hero_invoker"] = true,
 	["npc_dota_hero_meepo"] = true,
 	["npc_arena_hero_sara"] = true,
 }
 
+-- "CalculateSpellDamageTooltip"	"0"
 SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	zuus_static_field = true,
 	enigma_midnight_pulse = true,
@@ -187,6 +180,9 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	skywrath_mage_arcane_bolt = true,
 	elder_titan_earth_splitter = true,
 	necrolyte_reapers_scythe = true,
+	doom_bringer_infernal_blade = true,
+	phoenix_sun_ray = true,
+	silencer_glaives_of_wisdom = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

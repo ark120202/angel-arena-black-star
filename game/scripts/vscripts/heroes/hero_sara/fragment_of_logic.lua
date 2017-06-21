@@ -14,7 +14,8 @@ end
 
 
 modifier_sara_fragment_of_logic = class({
-	IsHidden = function() return true end,
+	IsHidden   = function() return true end,
+	IsPurgable = function() return false end,
 })
 
 if IsServer() then

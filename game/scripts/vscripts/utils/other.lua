@@ -308,19 +308,28 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	end
 
 	illusion:SetAbilityPoints(0)
-	--For perfomance
-	if Options:IsEquals("MainHeroList", "NoAbilities") or unit:HasAbility("rubick_personality_steal") or heroname ~= unitname then
-		for ability_slot = 0, unit:GetAbilityCount()-1 do
-			local i_ability = illusion:GetAbilityByIndex(ability_slot)
-			if i_ability then
-				illusion:RemoveAbility(i_ability:GetAbilityName())
+	for slot_ability = 0, unit:GetAbilityCount()-1 do
+		local illusion_ability = illusion:GetAbilityByIndex(slot_ability)
+		local unit_ability = unit:GetAbilityByIndex(slot_ability)
+
+		if unit_ability then
+			local newName = unit_ability:GetAbilityName()
+			if illusion_ability then
+				if illusion_ability:GetAbilityName() ~= newName then
+					illusion:RemoveAbility(illusion_ability:GetAbilityName())
+					illusion_ability = illusion:AddAbility(newName)
+				end
+				print('Apply level ', slot_ability, unit_ability:GetLevel())
+			else
+				print('add', slot_ability, newName)
+				illusion_ability = illusion:AddAbility(newName)
 			end
 
-			local individual_ability = unit:GetAbilityByIndex(ability_slot)
-			if individual_ability then
-				local illusion_ability = illusion:AddAbility(individual_ability:GetName())
-				illusion_ability:SetLevel(individual_ability:GetLevel())
-			end
+			illusion_ability:SetLevel(unit_ability:GetLevel())
+			illusion_ability:SetHidden(unit_ability:IsHidden())
+		elseif illusion_ability then
+			print('remove (null)', slot_ability, illusion_ability:GetAbilityName())
+			illusion:RemoveAbility(illusion_ability:GetAbilityName())
 		end
 	end
 	for item_slot = 0, 5 do

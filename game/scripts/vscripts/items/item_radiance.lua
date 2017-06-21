@@ -36,8 +36,8 @@ item_radiance_frozen.particle_owner = "particles/arena/items_fx/radiance_frozen_
 
 modifier_item_radiance_lua = class({
 	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
-	IsPurgable =    function() return false end,
-	IsHidden =      function() return true end,
+	IsPurgable    = function() return false end,
+	IsHidden      = function() return true end,
 })
 
 function modifier_item_radiance_lua:DeclareFunctions()

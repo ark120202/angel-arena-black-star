@@ -31,7 +31,7 @@
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"900"
 
-		"BountyXP"					"30000"
+		"BountyXP"					"27500"
 
 		"HealthBarOffset"			"400"
 
@@ -40,7 +40,7 @@
 		"StatusHealth"				"500000"
 		"StatusHealthRegen"			"600"
 		"StatusMana"				"50000"
-		"StatusManaRegen"			"50"
+		"StatusManaRegen"			"100"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
@@ -75,7 +75,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"55"
+		"ArmorPhysical"				"50"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -87,16 +87,16 @@
 		"AttackAcquisitionRange"	"450"
 		"AttackRange"				"250"
 
-		"BountyXP"					"36000"
+		"BountyXP"					"30000"
 
 		"HealthBarOffset"			"400"
 
 		"MovementSpeed"				"522"
 
-		"StatusHealth"				"550000"
+		"StatusHealth"				"500000"
 		"StatusHealthRegen"			"500"
 		"StatusMana"				"50000"
-		"StatusManaRegen"			"50"
+		"StatusManaRegen"			"100"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
@@ -117,7 +117,7 @@
 	"npc_arena_boss_l2_v1"
 	{
 		//Bosses
-		"Bosses_GoldToAll"			"12500"
+		"Bosses_GoldToAll"			"15000"
 		"Bosses_RespawnDuration"	"300"
 
 		// General
@@ -125,13 +125,13 @@
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/heroes/visage/visage_familiar.vmdl"
 		"ModelScale"				"3"
-		"Level"						"100"
+		"Level"						"90"
 
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"100"
+		"ArmorPhysical"				"80"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -151,7 +151,7 @@
 
 		"MovementSpeed"				"422"
 
-		"StatusHealth"				"650000"
+		"StatusHealth"				"600000"
 		"StatusHealthRegen"			"800"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"50"
@@ -189,7 +189,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"90"
+		"ArmorPhysical"				"80"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -210,7 +210,7 @@
 		"StatusHealth"				"750000"
 		"StatusHealthRegen"			"800"
 		"StatusMana"				"50000"
-		"StatusManaRegen"			"50"
+		"StatusManaRegen"			"150"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
@@ -246,7 +246,7 @@
 		"Ability1"					"boss_armor"
 		"Ability2"					"boss_central_passive"
 
-		"ArmorPhysical"				"150"
+		"ArmorPhysical"				"125"
 		"MagicalResistance"			"50"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"

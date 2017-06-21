@@ -58,11 +58,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_attack_damage = {
 		icon = "talents/damage",
-		cost = 5,
+		cost = 4,
 		group = 9,
 		max_level = 7,
 		special_values = {
-			damage = {100, 200, 300, 400, 500, 600, 700}
+			damage = {70, 140, 210, 280, 350, 420, 490}
 		},
 		effect = {
 			modifiers = {
@@ -100,11 +100,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_health = {
 		icon = "talents/health",
-		cost = 1,
+		cost = 2,
 		group = 3,
-		max_level = 11,
+		max_level = 6,
 		special_values = {
-			health = {300, 500, 800, 900, 1100, 1300, 1500, 1800, 2100, 2300, 2500}
+			health = {400, 800, 1200, 1600, 2000, 2500}
 		},
 		effect = {
 			calculate_stat_bonus = true,
@@ -115,11 +115,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_mana = {
 		icon = "talents/mana",
-		cost = 1,
+		cost = 2,
 		group = 3,
-		max_level = 11,
+		max_level = 6,
 		special_values = {
-			mana = {300, 500, 800, 900, 1100, 1300, 1500, 1800, 2100, 2300, 2500}
+			mana = {400, 800, 1200, 1600, 2000, 2500}
 		},
 		effect = {
 			calculate_stat_bonus = true,
@@ -132,9 +132,9 @@ CUSTOM_TALENTS_DATA = {
 		icon = "talents/health_regen",
 		cost = 1,
 		group = 2,
-		max_level = 8,
+		max_level = 5,
 		special_values = {
-			health_regen = {10, 14, 18, 22, 26, 30, 36, 42}
+			health_regen = {10, 17, 24, 31, 38}
 		},
 		effect = {
 			modifiers = {
@@ -144,11 +144,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_armor = {
 		icon = "talents/armor",
-		cost = 3,
+		cost = 2,
 		group = 3,
-		max_level = 12,
+		max_level = 8,
 		special_values = {
-			armor = {10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32}
+			armor = {5, 8, 11, 14, 17, 20, 23, 26}
 		},
 		effect = {
 			modifiers = {
@@ -214,11 +214,11 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_movespeed_pct = {
 		icon = "talents/movespeed",
-		cost = 1,
+		cost = 2,
 		group = 4,
 		max_level = 7,
 		special_values = {
-			movespeed_pct = {6, 8, 10, 12, 14, 16, 18}
+			movespeed_pct = {10, 13, 16, 19, 22, 25, 28}
 		},
 		effect = {
 			modifiers = {
@@ -232,7 +232,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 2,
 		max_level = 5,
 		special_values = {
-			gold_per_minute = {400, 500, 600, 700, 800}
+			gold_per_minute = {240, 360, 480, 600, 720}
 		},
 		effect = {
 			unit_keys = {
@@ -256,8 +256,8 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_true_strike = {
 		icon = "talents/true_strike",
-		cost = 55,
-		group = 9,
+		cost = 30,
+		group = 10,
 		effect = {
 			modifiers = {
 				"modifier_talent_true_strike"
@@ -269,10 +269,10 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_pudge_hook_splitter = {
 		icon = "talents/heroes/pudge_hook_splitter",
 		cost = 1,
-		group = 7,
+		group = 9,
 		requirement = "pudge_meat_hook_lua",
 		special_values = {
-			hook_amount = 4
+			hook_amount = 3
 		}
 	},
 	talent_hero_arthas_vsolyanova_bunus_chance = {
@@ -305,7 +305,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_skeleton_king_reincarnation_notime_stun = {
 		icon = "talents/heroes/skeleton_king_reincarnation_notime_stun",
 		cost = 1,
-		group = 7,
+		group = 10,
 		requirement = "skeleton_king_reincarnation_arena",
 	},
 
@@ -928,7 +928,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_sniper_shrapnel_charges = {
 		icon = "sniper_shrapnel",
 		cost = 1,
-		group = 5,
+		group = 8,
 		requirement = "sniper_shrapnel",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_sniper_2"}
@@ -1056,9 +1056,9 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_pugna_nether_ward_damage_mana = {
 		icon = "pugna_nether_ward",
 		cost = 1,
-		group = 3,
+		group = 8,
 		requirement = "pugna_nether_ward",
-		special_values = {value = 3},
+		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_pugna_3"}
 	},
 	talent_hero_pugna_life_drain_heal = {
@@ -1626,7 +1626,7 @@ CUSTOM_TALENTS_DATA = {
  		cost = 1,
   		group = 7,
   		requirement = "invoker_tornado",
-  		special_values = {value = 18},
+  		special_values = {value = 14},
  		effect = {abilities = "special_bonus_unique_invoker_3"}
  	},
 	talent_hero_silencer_curse_of_the_silent_slow = {
@@ -2276,4 +2276,5 @@ TALENT_GROUP_TO_LEVEL = {
 	-- [6] = 30, ms_limit;
 	-- [7] = 35, day;night;
 	-- [8] = 40, respawn_time;
-	-- [9] = 45, truestrike;damage;
+	-- [9] = 45, damage;
+	-- [10] = 50, truestrike

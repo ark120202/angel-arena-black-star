@@ -20,28 +20,21 @@ function ArenaZoneOnEndTouch(trigger)
 	end
 end
 
+local OUT_OF_GAME_UNITS = {
+	[""] = true,
+	npc_dota_thinker = true,
+	npc_dummy_unit = true,
+	npc_dota_looping_sound = true,
+	npc_dota_invisible_vision_source = true,
+}
 function FountainOnStartTouch(trigger, team)
 	local unit = trigger.activator
 	if unit and unit:GetTeam() == team then
 		unit:AddNewModifier(unit, nil, "modifier_fountain_aura_arena", nil)
 	elseif not unit:IsBoss() then
 		local unitName = unit:GetUnitName()
-		if unitName ~= "" and unitName ~= "npc_dota_thinker" and unitName ~= "npc_dummy_unit" then
-			if GameRules:GetDOTATime(false, true) < FOUNTAIN_EFFECTIVE_TIME_THRESHOLD then
-				Timers:CreateTimer(0.1, function()
-					local fountain = FindFountain(team)
-					fountain:EmitSound("Ability.LagunaBlade")
-					if IsValidEntity(unit) then
-						unit:EmitSound("Ability.LagunaBladeImpact")
-						local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_ABSORIGIN, fountain)
-						ParticleManager:SetParticleControl(pfx, 0, fountain:GetAbsOrigin() + Vector(0,0,224))
-						ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
-					end
-				end)
-				unit:TrueKill()
-			else
-				unit:AddNewModifier(unit, nil, "modifier_fountain_aura_enemy", nil)
-			end
+		if not OUT_OF_GAME_UNITS[unitName] then
+			unit:AddNewModifier(unit, nil, "modifier_fountain_aura_enemy", {team = team})
 		end
 	end
 end

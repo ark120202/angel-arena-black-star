@@ -27,7 +27,8 @@ end
 
 
 modifier_item_wand_of_midas = class({
-	IsHidden = function() return true end,
+	IsHidden   = function() return true end,
+	IsPurgable = function() return false end,
 })
 
 function modifier_item_wand_of_midas:DeclareFunctions()

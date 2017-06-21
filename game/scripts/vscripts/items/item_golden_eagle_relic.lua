@@ -20,8 +20,9 @@ end
 
 
 modifier_item_golden_eagle_relic = class({
-	IsHidden =      function() return true end,
+	IsHidden      = function() return true end,
 	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable    = function() return false end,
 })
 
 function modifier_item_golden_eagle_relic:DeclareFunctions()

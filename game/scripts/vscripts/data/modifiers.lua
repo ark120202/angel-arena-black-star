@@ -136,4 +136,11 @@ MODIFIER_PROC_PRIORITY = {
 		modifier_item_splitshot_ultimate_unique = 7,
 		modifier_item_elemental_fury_unique = 8,
 	},
+	desolator = {
+		modifier_item_desolator2_arena = 1,
+		modifier_item_desolator3_arena = 2,
+		modifier_item_desolator4_arena = 3,
+		modifier_item_desolator5_arena = 4,
+		modifier_item_desolator6_arena = 5,
+	}
 }

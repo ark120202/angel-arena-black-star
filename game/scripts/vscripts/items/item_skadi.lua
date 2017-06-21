@@ -13,9 +13,11 @@ item_skadi_4 = class(item_skadi_baseclass)
 item_skadi_8 = class(item_skadi_baseclass)
 
 
-modifier_item_skadi_arena = class({})
-function modifier_item_skadi_arena:IsHidden() return true end
-function modifier_item_skadi_arena:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+modifier_item_skadi_arena = class({
+	IsHidden      = function() return true end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable    = function() return false end,
+})
 
 function modifier_item_skadi_arena:DeclareFunctions()
 	return {
@@ -69,9 +71,10 @@ if IsServer() then
 	end
 end
 
-modifier_item_skadi_arena_cold_attack = class({})
-function modifier_item_skadi_arena_cold_attack:IsDebuff() return true end
-function modifier_item_skadi_arena_cold_attack:GetStatusEffectName() return "particles/status_fx/status_effect_frost_lich.vpcf" end
+modifier_item_skadi_arena_cold_attack = class({
+	IsDebuff =            function() return true end,
+	GetStatusEffectName = function() return "particles/status_fx/status_effect_frost_lich.vpcf" end,
+})
 
 function modifier_item_skadi_arena_cold_attack:DeclareFunctions()
 	return {

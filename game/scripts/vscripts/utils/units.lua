@@ -70,7 +70,7 @@ function CDOTA_BaseNPC:TrueKill(ability, killer)
 	self.IsMarkedForTrueKill = true
 	self:Kill(ability, killer)
 	if IsValidEntity(self) and self:IsAlive() then
-		RemoveDeathPreventingModifiers(self)
+		self:RemoveDeathPreventingModifiers()
 		self:Kill(ability, killer)
 	end
 	self.IsMarkedForTrueKill = false
@@ -162,8 +162,8 @@ end
 
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
-	if Duel:IsDuelOngoing() then return 1 end
-	local time = (5 + self:GetLevel() * 0.1) + (self.RespawnTimeModifier or 0)
+	if self.OnDuel then return 1 end
+	local time = (5 + self:GetLevel() * 0.2) + (self.RespawnTimeModifier or 0)
 	if self.talent_keys and self.talent_keys.respawn_time_reduction then
 		time = time + self.talent_keys.respawn_time_reduction
 	end

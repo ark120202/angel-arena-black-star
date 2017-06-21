@@ -8,11 +8,11 @@ modifier_item_shard_attackspeed_stack = class({
 })
 
 function modifier_item_shard_attackspeed_stack:DeclareFunctions()
-    return {
+	return {
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
 	}
 end
 
 function modifier_item_shard_attackspeed_stack:GetModifierAttackSpeedBonus_Constant()
-    return 50 * self:GetStackCount()
+	return 50 * self:GetStackCount()
 end

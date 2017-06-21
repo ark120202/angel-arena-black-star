@@ -331,14 +331,26 @@ SHOP_LIST_STATUS_TO_BUY = 2
 SHOP_LIST_STATUS_NO_STOCK = 3
 SHOP_LIST_STATUS_NO_BOSS = 4
 
+function PanoramaShop:GetAllItemsByNameInInventory(unit, itemname, bBackpack)
+	local items = {}
+	for slot = 0, bBackpack and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
+		local item = unit:GetItemInSlot(slot)
+		if item and item:GetAbilityName() == itemname and item:GetPurchaser() == unit then
+			table.insert(items, item)
+		end
+	end
+	return items
+end
+
 function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName, baseItemName)
 	local primary_items = {}
 	local itemData = PanoramaShop.FormattedData[childItemName]
 	local _tempItemCounter = {}
 	_tempItemCounter[childItemName] = (_tempItemCounter[childItemName] or 0) + 1
 
-	--local itemcount_all = #GetAllItemsByNameInInventory(unit, childItemName, true)
-	local itemcount = #GetAllItemsByNameInInventory(unit, childItemName, true) --isInShop and itemcount_all or itemcount_all - #GetAllItemsByNameInInventory(unit, childItemName, false)
+	--local itemcount_all = #PanoramaShop:GetAllItemsByNameInInventory(unit, childItemName, true)
+	local itemcount = #PanoramaShop:GetAllItemsByNameInInventory(unit, childItemName, true)
+	--isInShop and itemcount_all or itemcount_all - #PanoramaShop:GetAllItemsByNameInInventory(unit, childItemName, false)
 	if (childItemName == baseItemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
 		for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
 			local subitems, newCounter = PanoramaShop:GetAllPrimaryRecipeItems(unit, newchilditem, baseItemName)
@@ -397,8 +409,8 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 			InsertItemChildrenToCheck(name)
 		else
 			itemCounter[name] = (itemCounter[name] or 0) + 1
-			local itemcount_inv = #GetAllItemsByNameInInventory(unit, name, false)
-			local itemcount_stash = #GetAllItemsByNameInInventory(unit, name, true) - itemcount_inv
+			local itemcount_inv = #PanoramaShop:GetAllItemsByNameInInventory(unit, name, false)
+			local itemcount_stash = #PanoramaShop:GetAllItemsByNameInInventory(unit, name, true) - itemcount_inv
 			local stocks = PanoramaShop:GetItemStockCount(team, name)
 			if name ~= itemName and itemcount_stash >= itemCounter[name] then
 				ProbablyPurchasable[name .. "_index_" .. itemCounter[name]] = SHOP_LIST_STATUS_IN_STASH

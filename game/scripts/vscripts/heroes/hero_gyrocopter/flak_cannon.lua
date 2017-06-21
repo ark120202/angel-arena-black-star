@@ -18,7 +18,14 @@ function DealDamage(keys)
 	local target = keys.target
 	local ability = keys.ability
 	local damage = caster:GetAverageTrueAttackDamage(target)
-	ApplyDamage({victim = target, attacker = caster, damage = damage, damage_type = ability:GetAbilityDamageType(), ability = ability})
+	ApplyDamage({
+		victim = target,
+		attacker = caster,
+		damage = damage,
+		damage_type = ability:GetAbilityDamageType(),
+		damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+		ability = ability
+	})
 end
 
 --[[Author: YOLOSPAGHETTI

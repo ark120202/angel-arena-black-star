@@ -146,7 +146,7 @@
 	"item_gem"
 	{
 		"SecretShop"					"0"
-		"ItemStockTime"					"300.0"
+		"ItemStockTime"					"180.0"
 		"ItemStockMax"					"3"
 		"ItemKillable"					"1"
 	}
@@ -165,10 +165,36 @@
 	"item_recipe_magic_wand"
 	{
 		"SecretShop"					"0"
+
 	}
 	"item_magic_wand"
 	{
 		"SecretShop"					"0"
+		"AbilityCooldown"				"10.0"
+		"AbilityCastRange"				"1300"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"			"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_radius"			"1300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"restore_per_charge"	"20"
+			}
+		}
 	}
 	"item_ghost"
 	{
@@ -177,12 +203,13 @@
 	"item_clarity"
 	{
 		"SecretShop"					"0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"total_mana"			"370"
+				"total_mana"			"400"
 			}
 			"02"
 			{
@@ -194,6 +221,7 @@
 	"item_flask"
 	{
 		"SecretShop"					"0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"
@@ -346,6 +374,7 @@
 	{
 		"SecretShop"					"0"
 		"ItemCost"						"0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"
@@ -519,6 +548,7 @@
 	"item_sheepstick"
 	{
 		"SecretShop"					"0"
+		"AbilitySharedCooldown"			"hex"
 	}
 	"item_recipe_orchid"
 	{
@@ -539,6 +569,7 @@
 	"item_recipe_force_staff"
 	{
 		"SecretShop"					"0"
+		"AbilityCooldown"				"16.0"
 	}
 	"item_force_staff"
 	{
@@ -614,7 +645,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_damage_melee"	"50"
+				"block_damage_melee"	"35"
 			}
 			"04"
 			{
@@ -759,7 +790,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"berserk_bonus_attack_speed"	"150"
+				"berserk_bonus_attack_speed"	"120"
 			}
 			"05"
 			{
@@ -780,6 +811,59 @@
 	"item_ethereal_blade"
 	{
 		"SecretShop"					"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_movement_slow"	"-80"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_agility_multiplier"			"1.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_damage_base"			"100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_ally"				"4.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ethereal_damage_bonus"	"-40"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"	"1200"
+			}
+		}
 	}
 	"item_recipe_soul_ring"
 	{
@@ -789,6 +873,7 @@
 	{
 		"SecretShop"					"0"
 		"AbilityCooldown"				"20.0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"
@@ -911,7 +996,6 @@
 	"item_recipe_tranquil_boots"
 	{
 		"SecretShop"					"0"
-		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
 		"ItemRequirements"
 		{
 			"01"						"item_boots;item_ring_of_regen;item_ring_of_protection"
@@ -921,6 +1005,7 @@
 	{
 		"SecretShop"					"0"
 		"ItemCost"						"0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilityCooldown"				"5"
 		"AbilitySpecial"
 		{
@@ -1023,12 +1108,13 @@
 		"SecretShop"					"0"
 		"AbilityCastRange"				"500"
 		"AbilityCooldown"				"10.0"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"35"
+				"damage_bonus"			"30"
 			}
 			"02"
 			{
@@ -1048,12 +1134,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"creep_damage_pct"			"70"
+				"creep_damage_pct"			"80"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"4"
+				"bonus_armor"				"3"
 			}
 		}
 	}

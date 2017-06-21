@@ -21,9 +21,9 @@ function TimeLock(keys)
 					delayed:StartCooldown(bonus_cooldown)
 				end
 			end
-			ability:ApplyDataDrivenModifier(caster, target, "modifier_time_lock_stun_arena", { duration = ability:GetLevelSpecialValueFor("duration", ability:GetLevel() - 1) })
+			ability:ApplyDataDrivenModifier(caster, target, keys.modifier, { duration = ability:GetLevelSpecialValueFor("duration", ability:GetLevel() - 1) })
 		else
-			ability:ApplyDataDrivenModifier(caster, target, "modifier_time_lock_stun_arena", { duration = ability:GetLevelSpecialValueFor("duration_creep", ability:GetLevel() - 1) })
+			ability:ApplyDataDrivenModifier(caster, target, keys.modifier, { duration = ability:GetLevelSpecialValueFor("duration_creep", ability:GetLevel() - 1) })
 		end
 	end
 end

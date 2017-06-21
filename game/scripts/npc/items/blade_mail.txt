@@ -207,7 +207,7 @@
 		"ID"							"1000000009"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"20000"
+		"ItemCost"						"5000"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_sacred_blade_mail"
 		"ItemRequirements"

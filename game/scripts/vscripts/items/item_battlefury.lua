@@ -25,10 +25,11 @@ item_battlefury_arena = class(item_battlefury_baseclass)
 item_battlefury_arena.cleave_pfx = "particles/items_fx/battlefury_cleave.vpcf"
 
 
-modifier_item_battlefury_arena = class({})
-
-function modifier_item_battlefury_arena:IsHidden() return true end
-function modifier_item_battlefury_arena:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+modifier_item_battlefury_arena = class({
+	IsHidden      = function() return true end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable    = function() return false end,
+})
 
 function modifier_item_battlefury_arena:DeclareFunctions()
 	return {

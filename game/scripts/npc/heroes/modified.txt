@@ -355,7 +355,8 @@
 		"Ability5"	""
 		"Ability6"	""
 		"Changed"	"1"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
+		"MovementSpeed"	"325"
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""
@@ -374,6 +375,8 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
+		"AttributeBaseAgility"	"16"
+		"AttributeAgilityGain"	"2.0"
 	}
 
 	"npc_dota_hero_omniknight"
@@ -451,7 +454,7 @@
 		"AttackRate"	"1.7"
 		"ArmorPhysical"	"2"
 		"AttributeStrengthGain"	"2.2"
-		"AttributeAgilityGain"	"2.91"
+		"AttributeAgilityGain"	"2.0"
 		"MovementSpeed"	"320"
 		"AttributeIntelligenceGain"	"1.9"
 		"Ability6"	""
