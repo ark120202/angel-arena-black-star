@@ -3560,7 +3560,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"600 700 800"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"90 80 70"
 		"AbilityManaCost"				"0"
@@ -4194,7 +4194,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"600 700 800"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"90 80 70"
 		"AbilityManaCost"				"0"
@@ -4281,7 +4281,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
+		"AbilityCastRange"				"600 700 800"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"90 80 70"
 		"AbilityManaCost"				"0"
