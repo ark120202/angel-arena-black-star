@@ -22,16 +22,18 @@ DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl1: |-
   • HEALTH TO TRIGGER:
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl1: '%• ДОПОЛНИТЕЛЬНЫЙ УРОН:'
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl1: '%• БОНУСНАЯ БРОНЯ:'
-DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl1: '• ДОПОЛНИТЕЛЬНАЯ СКОРОСТЬ БЕГА:'
+DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl1: '• МАКСИМАЛЬНАЯ СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl2: |-
   %Level 2
   • HEALTH TO TRIGGER:
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl2: '%• ДОПОЛНИТЕЛЬНЫЙ УРОН:'
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl2: '%• БОНУСНАЯ БРОНЯ:'
-DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl2: '• ДОПОЛНИТЕЛЬНАЯ СКОРОСТЬ БЕГА:'
+DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl2: '• МАКСИМАЛЬНАЯ СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl3: |-
   %Level 3
   • HEALTH TO TRIGGER:
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl3: '%• ДОПОЛНИТЕЛЬНЫЙ УРОН:'
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl3: '%• БОНУСНАЯ БРОНЯ:'
-DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl3: '• ДОПОЛНИТЕЛЬНАЯ СКОРОСТЬ БЕГА:'
+DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl3: '• МАКСИМАЛЬНАЯ СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_modifier_destroyer_frenzy_Description: Максимальная скорость передвижения равна %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%, урон увеличен на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%, броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
+
