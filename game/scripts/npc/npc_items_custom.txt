@@ -7449,18 +7449,6 @@
 		}
 	}
 
-	// "item_soul_gem"
-	// {
-	// 	// General
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"BaseClass"						"item_lua"
-	// 	"ID"							"10198"
-	// 	"AbilityTextureName"			"item_arena/soul_gem"
-	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	// 	"ScriptFile"					"items/soul_gems/item_soul_gem"
-	// 	"ItemPurchasable"				"0"
-	// }
-
 	"item_radio_car"
 	{
 		"BaseClass"						"item_datadriven"
