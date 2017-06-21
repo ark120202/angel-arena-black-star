@@ -3641,7 +3641,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/skull_of_midas"
 
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"common"
 		"ItemAliases"					"skull of midas"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -3703,7 +3702,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/chest_of_midas"
 
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"common"
 		"ItemAliases"					"chest of midas"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -3781,7 +3779,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/blood_of_midas"
 
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"common"
 		"ItemAliases"					"blood of midas"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -4190,7 +4187,6 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityTextureName"			"item_arena/hand_of_midas_2_arena"
 		"AbilitySharedCooldown"			"midas"
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4277,7 +4273,6 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityTextureName"			"item_arena/hand_of_midas_3_arena"
 		"AbilitySharedCooldown"			"midas"
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4381,91 +4376,6 @@
 						"ScriptFile"	"items/item_team_changer.lua"
 						"Function"		"OnAttacked"
 						"Damage"		"%attack_damage"
-					}
-				}
-			}
-		}
-	}
-
-	"item_sacrificial_dagger"
-	{
-		"BaseClass"						"item_datadriven"
-		"ID"							"10175"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilityTextureName"			"item_arena/sacrificial_dagger"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemPurchasableFilter"			"0"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"self_damage"		"120"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"karma_decreasement" "1"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_sacrificial_dagger"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_karma.lua"
-						"Function"		"SacrificialDaggerOnAttack"
-					}
-				}
-			}
-		}
-	}
-
-	"item_consecrated_sword"
-	{
-		"BaseClass"						"item_datadriven"
-		"ID"							"10176"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_arena/consecrated_sword"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemPurchasableFilter"			"0"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"enemy_heal"		"250"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"karma_increasement" "1"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_consecrated_sword"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_karma.lua"
-						"Function"		"ConsecratedSwordOnAttack"
 					}
 				}
 			}
@@ -7393,7 +7303,6 @@
 		"ID"							"10249"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/book_of_the_keeper"
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemShopTags"					"int;regen_mana;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -7707,7 +7616,6 @@
 		"AbilityCastRange"				"250"
 		"AbilityCastPoint"				"0.0"
 
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemCost"						"125"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"1"
@@ -8610,7 +8518,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/phantom_cuirass"
 		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemAliases"					"ac;assault cuirass;phantom;pc"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -9557,7 +9464,6 @@
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"bottle"
 		"ItemStackable"					"0"
-		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"3"
 		"ItemDisplayCharges"			"1"
@@ -9733,7 +9639,6 @@
 		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_ultimate_scepter"
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemAliases"					"aghanim's scepter;aghanims scepter;ultimate scepter;aghs"
 
@@ -9962,7 +9867,6 @@
 		"AbilityTextureName"			"item_arena/wand_of_midas"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"ItemDisplayCharges"			"1"
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
 		{
@@ -10238,7 +10142,6 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_quelling_fury"
