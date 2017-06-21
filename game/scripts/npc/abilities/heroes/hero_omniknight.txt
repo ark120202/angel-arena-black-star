@@ -205,7 +205,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stack_growth_interval"	"1.5"
+				"stack_growth_interval"	"1"
 			}
 			"09"
 			{
