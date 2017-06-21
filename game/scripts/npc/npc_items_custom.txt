@@ -6728,7 +6728,7 @@
 		"AbilityTextureName"			"item_arena/thunder_musket"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCooldown"				"1.5"
+		"AbilityCooldown"				"2.0"
 
 		"AbilitySpecial"
 		{
@@ -6770,7 +6770,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"thunderstruck_cooldown"		"1.5"
+				"thunderstruck_cooldown"		"2.0"
 			}
 			"09"
 			{
@@ -10145,7 +10145,7 @@
 		"ItemResult"					"item_guardian_greaves_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_mekansm_2;item_arcane_boots"
+			"01"						"item_mekansm_2;item_arcane_boots;item_moon_dust"
 		}
 	}
 
@@ -10159,6 +10159,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mechanism;mekansm;guardian greaves"
@@ -10171,17 +10172,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"55"
+				"bonus_movement"		"70"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"600"
+				"bonus_mana"			"1000"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"50"
+				"bonus_all_stats"		"75"
 			}
 			"04"
 			{
@@ -10196,37 +10197,37 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_health_regen"		"15"
+				"aura_health_regen"		"40"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_armor"			"10"
+				"aura_armor"			"20"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_threshold_pct"	"20"
+				"aura_bonus_threshold_pct"	"25"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_health_regen_bonus"	"25"
+				"aura_health_regen_bonus"	"50"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_armor_bonus"		"20"
+				"aura_armor_bonus"		"30"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"replenish_health"		"2000"
+				"replenish_health"		"3000"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"replenish_mana"		"1000"
+				"replenish_mana"		"2000"
 			}
 		}
 	}

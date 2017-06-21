@@ -5528,7 +5528,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"laser_damage"	"80 160 240 320 400 500 600"
+				"laser_damage"	"80 160 240 320 400 480 560"
 				"LinkedSpecialBonus"	"special_bonus_unique_tinker"
 			}
 
@@ -5598,11 +5598,10 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"300"
-		"AbilityCastPoint"	"0.53 0.53 0.53 0.53 0.33 0.13"
+		"AbilityCastPoint"	"0.53 0.53 0.53 0.53 0.40 0.27"
 		"AbilityCooldown"	"35.0 35.0 35.0 35.0 35.0 35.0 35.0"
-		"AbilityDamage"		"20 28 36 42 50 60 80"
+		"AbilityDamage"		"20 28 36 44 52 60 72"
 		"AbilityManaCost"	"145 150 165 180 195 215 250"
-		"LevelsBetweenUpgrades"	"2"
 		"AbilitySpecial"
 		{
 			"05"
@@ -5674,7 +5673,7 @@
 			"99"
 			{
 			 "var_type" "FIELD_FLOAT"
-			 "damage_from_current_health_pct" "3"
+			 "damage_from_current_health_pct" "2.5"
 			 "CalculateSpellDamageTooltip" "0"
 			}
 			"99"
@@ -5761,7 +5760,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"total_cast_time_tooltip"	"2 2 2 2 2 2 1.5"
+				"total_cast_time_tooltip"	"2 2 2 2 2 1.75 1.5"
 			}
 
 			"04"
@@ -11108,7 +11107,7 @@
 	"invoker_ghost_walk"
 	{
 		"MaxLevel"	"1"
-		"AbilityCooldown"	"30"
+		"AbilityCooldown"	"35"
 		"AbilityManaCost"	"200"
 		"AbilityCastPoint"	"0"
 		"AbilitySpecial"
@@ -11205,7 +11204,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"quas_damage"	"25 50 100 150 200 250 300 400"
+				"quas_damage"	"0"
 				"levelkey"	"quaslevel"
 			}
 
@@ -11272,14 +11271,14 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_attack_speed"	"15 40 70 100 130 150 180 250"
+				"bonus_attack_speed"	"15 40 65 80 105 130 155 220"
 				"levelkey"	"wexlevel"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_damage"	"15 40 70 100 130 150 180 250"
+				"bonus_damage"	"15 40 65 80 105 130 155 220"
 				"levelkey"	"exortlevel"
 			}
 
@@ -14380,19 +14379,19 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_per_second"	"100 130 160 190 220 250 280"
+				"damage_per_second"	"100 120 140 160 180 200 240"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"max_channel_time"	"2.0 2.4 2.8 3.2 3.6 4.0 4.2"
+				"max_channel_time"	"2.0 2.4 2.8 3.2 3.6 4.0 4.4"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"375 375 375 375 375 375 400"
+				"radius"	"375"
 			}
 
 			"04"
@@ -14422,7 +14421,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"channel_vision_radius"	"375 375 375 375 375 375 400"
+				"channel_vision_radius"	"375"
 			}
 
 			"09"
@@ -14446,7 +14445,7 @@
 			"12"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"total_damage"	"200 312 448 608 792 1000 1176"
+				"total_damage"	"200 288 392 512 648 800 968"
 				"LinkedSpecialBonus"	"special_bonus_unique_keeper_of_the_light"
 			}
 
@@ -14503,7 +14502,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"mana_restore"	"100 200 300 400 500 650 800"
+				"mana_restore"	"150 250 350 450 550 700 900"
 			}
 
 			"02"
@@ -14561,7 +14560,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"teleport_delay"	"5.0 4.5 4.0 3.5 3.0 2.5 2.0"
+				"teleport_delay"	"4.5 4.0 3.5 3.0 2.5 2.0 1.5 1.0"
 			}
 
 		}
@@ -14627,21 +14626,21 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"1800"
-		"AbilityCastPoint"	"0.3"
+		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityCooldown"	"10.0"
-		"AbilityManaCost"	"150 160 170 180 200 220 240"
+		"AbilityManaCost"	"150 160 170 180 190 200 210"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_per_second"	"100.0 140.0 180.0 220.0 260.0 300.0 340.0"
+				"damage_per_second"	"100 120 140 160 180 200 240"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"max_channel_time"	"2.0 3.0 4.0 5.0 6.0 7.0 8.0"
+				"max_channel_time"	"2.0 2.4 2.8 3.2 3.6 4.0 4.4"
 			}
 
 			"03"
@@ -14653,13 +14652,13 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"range"	"1550"
+				"range"	"1550 1550 1550 1550 1550 1750 2000"
 			}
 
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"speed"	"1050.0"
+				"speed"	"1050.0 1050.0 1050.0 1050.0 1050.0 1150.0 1250.0"
 			}
 
 			"06"
@@ -14701,7 +14700,7 @@
 			"12"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"total_damage"	"200 300 400 500 600 700 800"
+				"total_damage"	"200 288 392 512 648 800 968"
 				"LinkedSpecialBonus"	"special_bonus_unique_keeper_of_the_light"
 			}
 
@@ -16539,7 +16538,7 @@
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"400"
+				"damage"	"1000"
 			}
 
 		}

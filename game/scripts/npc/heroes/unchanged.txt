@@ -901,6 +901,7 @@
 		"Ability3"	"sniper_assassinate"
 		"Ability4"	"sniper_take_aim"
 		"AttackRate"	"1.7"
+		"MovementSpeed"	"275"
 		"Ability5"	""
 		"Ability6"	""
 		"Ability7"	""

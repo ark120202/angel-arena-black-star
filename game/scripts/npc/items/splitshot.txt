@@ -6,7 +6,7 @@
 		"ID"							"10050"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"350"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_splitshot_str"
@@ -33,7 +33,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_percent"				"35"
+				"damage_percent"				"30"
 			}
 			"02"
 			{
@@ -211,7 +211,7 @@
 		"ID"							"10052"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_splitshot_agi"
@@ -238,7 +238,7 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"damage_percent"					"35"
+				"damage_percent"					"30"
 			}
 			"02"
 			{
@@ -406,7 +406,7 @@
 		"ID"							"10054"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"350"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_splitshot_int"
@@ -433,7 +433,7 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"damage_percent"					"35"
+				"damage_percent"					"30"
 			}
 			"02"
 			{
@@ -593,7 +593,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_percent"				"80"
+				"damage_percent"				"70"
 			}
 			"02"
 			{
