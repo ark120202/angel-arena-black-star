@@ -40,6 +40,7 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	dazzle_shallow_grave = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
+	destroyer_body_reconstruction = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
