@@ -373,8 +373,7 @@ function ShowHeroPreviewTab(tabID) {
 
 		var bglist = Players.GetStatsData(localPlayerId).Backgrounds;
 		if (bglist) $('#HeroSelectionCustomBackground').SetImage(bglist[Math.floor(Math.random() * bglist.length)]);
-		$('#AdsBanner').SetImage('https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection/' + russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png');
-		//$('#AdsBanner').SetImage('https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection.png');
+		$('#AdsBanner').SetImage('https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection/' + (russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png'));
 	} else {
 		HeroSelectionEnd(true);
 	}
