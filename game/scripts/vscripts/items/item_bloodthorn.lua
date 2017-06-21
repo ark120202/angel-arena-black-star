@@ -20,9 +20,11 @@ end
 item_bloodthorn_2 = class(item_bloodthorn_baseclass)
 
 
-modifier_item_bloodthorn_arena = class({})
-function modifier_item_bloodthorn_arena:IsHidden() return true end
-function modifier_item_bloodthorn_arena:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+modifier_item_bloodthorn_arena = class({
+	IsHidden      = function() return true end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable    = function() return false end,
+})
 
 function modifier_item_bloodthorn_arena:DeclareFunctions()
 	return {

@@ -13,15 +13,11 @@ item_aether_lens_4 = class(item_aether_lens_baseclass)
 item_aether_lens_5 = class(item_aether_lens_baseclass)
 
 
-modifier_item_aether_lens_arena = class({})
-
-function modifier_item_aether_lens_arena:GetAttributes()
-	return MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
-function modifier_item_aether_lens_arena:IsHidden()
-	return true
-end
+modifier_item_aether_lens_arena = class({
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsHidden      = function() return true end,
+	IsPurgable    = function() return false end,
+})
 
 function modifier_item_aether_lens_arena:DeclareFunctions()
 	return {

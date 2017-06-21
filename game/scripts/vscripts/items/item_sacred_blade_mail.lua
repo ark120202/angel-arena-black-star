@@ -17,7 +17,8 @@ end
 
 
 modifier_item_sacred_blade_mail = class({
-	IsHidden = function() return true end,
+	IsHidden =   function() return true end,
+	IsPurgable = function() return false end,
 })
 
 function modifier_item_sacred_blade_mail:DeclareFunctions()

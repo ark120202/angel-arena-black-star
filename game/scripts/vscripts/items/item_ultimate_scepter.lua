@@ -8,6 +8,7 @@ modifier_item_ultimate_scepter_arena = class({
 	RemoveOnDeath = function() return false end,
 	IsHidden      = function() return true end,
 	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable    = function() return false end,
 })
 
 function modifier_item_ultimate_scepter_arena:DeclareFunctions()
