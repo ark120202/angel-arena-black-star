@@ -807,6 +807,10 @@
 	"item_recipe_ethereal_blade"
 	{
 		"SecretShop"					"0"
+	}
+	"item_ethereal_blade"
+	{
+		"SecretShop"					"0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -860,10 +864,6 @@
 				"projectile_speed"	"1200"
 			}
 		}
-	}
-	"item_ethereal_blade"
-	{
-		"SecretShop"					"0"
 	}
 	"item_recipe_soul_ring"
 	{
