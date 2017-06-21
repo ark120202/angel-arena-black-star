@@ -20,6 +20,7 @@ MEEPO_SHARED_ITEMS = {
 	item_echo_sabre_2 = true,
 	item_chest_of_midas = true,
 	item_quelling_fury = true,
+	item_manta_arena = true,
 
 	item_heart_cyclone = true,
 	item_edge_of_vyse = true,
