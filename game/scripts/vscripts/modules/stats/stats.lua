@@ -77,7 +77,7 @@ function StatsClient:OnGameEnd(winner)
 				data.teamsInfo[tostring(i)] = {
 					duelsWon = (Duel.TimesTeamWins[i] or 0),
 					isGameWinner = i == winner,
-					kills = Teams:GetScore(i),
+					score = Teams:GetScore(i),
 				}
 			end
 		end
@@ -170,7 +170,7 @@ function StatsClient:OnGameEnd(winner)
 	if not status then
 		print(nextCall)
 		CPrint(nextCall)
-		PlayerTables:CreateTable("stats_game_result", {error = status}, AllPlayersInterval)
+		PlayerTables:CreateTable("stats_game_result", {error = nextCall}, AllPlayersInterval)
 	end
 end
 
