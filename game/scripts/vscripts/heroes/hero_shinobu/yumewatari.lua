@@ -1,8 +1,8 @@
 shinobu_yumewatari_lua = class({})
-LinkLuaModifier("modifier_shinobu_yumewatari_lua", "heroes/hero_shinobu/modifier_yumewatari_lua.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_shinobu_yumewatari", "heroes/hero_shinobu/yumewatari.lua", LUA_MODIFIER_MOTION_NONE)
 
 function shinobu_yumewatari_lua:GetIntrinsicModifierName()
-	return "modifier_shinobu_yumewatari_lua"
+	return "modifier_shinobu_yumewatari"
 end
 
 function shinobu_yumewatari_lua:OnSpellStart() if IsServer() then
@@ -38,7 +38,7 @@ function shinobu_yumewatari_lua:CastFilterResultTarget(hTarget)
 	local max_ghost_level = self:GetSpecialValueFor("max_ghost_level")
 	return hTarget:GetUnitName() == "npc_shinobu_soul" and hTarget:GetTeamNumber() == DOTA_TEAM_NEUTRALS and (hTarget:GetLevel() <= max_ghost_level or max_ghost_level == 0) and UF_SUCCESS or UF_FAIL_CUSTOM
 end
- 
+
 function shinobu_yumewatari_lua:GetCustomCastErrorTarget(hTarget)
 	local max_ghost_level = self:GetSpecialValueFor("max_ghost_level")
 	if hTarget:GetUnitName() == "npc_shinobu_soul" and hTarget:GetTeamNumber() == DOTA_TEAM_NEUTRALS then
@@ -46,4 +46,20 @@ function shinobu_yumewatari_lua:GetCustomCastErrorTarget(hTarget)
 	else
 		return "#arena_dota_hud_error_must_target_soul"
 	end
+end
+
+
+modifier_shinobu_yumewatari = class({
+	IsHidden   = function() return true end,
+	IsPurgable = function() return false end,
+})
+
+function modifier_shinobu_yumewatari:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
+	}
+end
+
+function modifier_shinobu_yumewatari:GetModifierPreAttack_BonusDamage()
+	return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end

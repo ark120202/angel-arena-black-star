@@ -7,7 +7,7 @@ sara_evolution = class({
 })
 
 modifier_sara_evolution = class({
-	IsPurgable = function() return false end,
+	IsPurgable      = function() return false end,
 	DestroyOnExpire = function() return false end,
 })
 
