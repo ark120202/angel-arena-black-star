@@ -1,7 +1,9 @@
-item_book_of_the_guardian_baseclass = {}
 LinkLuaModifier("modifier_item_book_of_the_guardian", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_book_of_the_guardian_effect", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_book_of_the_guardian_blast", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+item_book_of_the_guardian_baseclass = {
+	GetIntrinsicModifierName = function() return "modifier_item_book_of_the_guardian" end
+}
 
 if IsServer() then
 	function item_book_of_the_guardian_baseclass:OnSpellStart()
