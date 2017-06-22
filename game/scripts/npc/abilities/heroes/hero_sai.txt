@@ -12,20 +12,31 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_pct"			"6 12 18 24 30 36 42"
+				"health_per_stack_pct"			"10"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_stack_pct"			"6 12 18 24 30 36 42"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"crit_chance_pct"		"10"
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance_per_stack_pct"		"2"
+			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_pct"				"6 15 24 33 42 51 60"
+				"crit_mult_pre_stack_pct"		"6 15 24 33 42 51 60"
 			}
 		}
 	}
+
 	"sai_divine_flesh"
 	{
 		"BaseClass"             		"ability_lua"
@@ -40,30 +51,26 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"heal_pct"			"0.3 0.6 0.9 1.2 1.5 1.8 2.1"
+				"health_regeneration_pct"			"0.3 0.6 0.9 1.2 1.5 1.8 2.1"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_pct"		"0.8 1.5 2.2 2.9 3.6 4.3 5.0"
+				"active_self_damage_pct"		"0.8 1.5 2.2 2.9 3.6 4.3 5.0"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor"				"5 10 15 20 25 30 35"
+				"active_bonus_armor"				"5 10 15 20 25 30 35"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"resistange" 		"4 8 12 16 20 24 28"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"think_interval"	"0.1"
+				"active_magic_resistance_pct" 		"4 8 12 16 20 24 28"
 			}
 		}
 	}
+
 	"sai_immortal"
 	{
 		"BaseClass"             		"ability_lua"
@@ -71,12 +78,14 @@
 		"ScriptFile"					"heroes/hero_sai/immortal.lua"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityManaCost"			"%mana_per_second"
+
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"debuff_pct"			"50"
+				"decreasement_pct"			"-50"
 			}
 			"02"
 			{
@@ -85,22 +94,23 @@
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"mana_second"		"10 30 50 70 90 110 130"
-			}
-			"04"
-			{
 				"var_type"			"FIELD_FLOAT"
 				"bonus_regen_pct"	"3 6 9 12 15 18 25 30"
 			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_per_second"		"10 30 50 70 90 110 130"
+			}
 		}
 	}
+
 	"sai_release_of_forge"
 	{
 		"BaseClass"             		"ability_lua"
 		"AbilityTextureName"			"arena/release_of_forge"
 		"ScriptFile"					"heroes/hero_sai/release_of_forge.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown"				"120 110 100 90 80 70 60"
 		"MaxLevel" 						"7"
@@ -110,32 +120,32 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"time_to_death"		"3 4 5 6 7 8 9" 
+				"duration"		"3 4 5 6 7 8 9"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_pct"		"4 8 12 16 20 24 28"
+				"pure_damage_pct"		"4 8 12 16 20 24 28"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_movement_cpt"		"25"
+				"aura_movement_speed_slow_pct"	"-25"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"vision_radius"		"-300"
+				"var_type"			"FIELD_INTEGER"
+				"aura_vision_decrease"		"-300"
 			}
 			"05"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"respawn_time"		"90 75 60 45 30 15 0"
+				"var_type"			"FIELD_INTEGER"
+				"bonus_respawn_time"		"90 75 60 45 30 15 0"
 			}
 			"06"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"global_radius"		"9999"
+				"var_type"			"FIELD_INTEGER"
+				"global_radius"		"99999"
 			}
 		}
 	}

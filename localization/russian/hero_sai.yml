@@ -1,25 +1,31 @@
 npc_arena_hero_sai: Sai
 
 DOTA_Tooltip_ability_sai_rage_of_pain: Rage of pain
-DOTA_Tooltip_ability_sai_rage_of_pain_Description: 'Чем больше увечий на теле Сая, тем сильнее он становится. На каждые 10% отсутствующего хп дает Саю %damage_pct%%% дополнительного урона с атаки. Также дает криты, шанс которых растет на каждые 10% отсутствующих у Сая хп на 2% на всех уровнях. Множитель крита растет на %crit_pct%%% на каждые 10% отсутствующего хп.'
+DOTA_Tooltip_ability_sai_rage_of_pain_Description: 'Чем больше увечий на теле Сая, тем сильнее он становится. Каждые %health_per_stack_pct%%% отсутствующего здоровья увеличивают урон. Также Сай пассивно получает возможность нанести дополнительный урон при атаке, шанс срабатывания и урон которого увеличивается с каждым стаком.'
+DOTA_Tooltip_ability_sai_rage_of_pain_damage_per_stack_pct: '%УРОН ЗА СТАК:'
+DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_pct: '%ШАНС КРИТА:'
+DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_per_stack_pct: '%ШАНС КРИТА ЗА СТАК:'
+DOTA_Tooltip_ability_sai_rage_of_pain_crit_mult_pre_stack_pct: '%КРИТИЧЕСКИЙ УРОН ЗА СТАК:'
 
 DOTA_Tooltip_ability_sai_divine_flesh: Divine flesh
-DOTA_Tooltip_ability_sai_divine_flesh_Description: 'Невероятная сила Сая способна как разрушать его тело, так и исцелять его. При выключении восстанавливает %heal_pct%%% хп в секунду. При включении сжигает %damage_pct%%% ЧИСТЫМ уроном в секунду, дает %armor%%% брони и %resistange%%% магического резиста.'
-DOTA_Tooltip_ability_sai_divine_flesh_heal_pct: 'ВОССТАНАВЛИВАЕТ ЗДОРОВЬЕ:'
-DOTA_Tooltip_ability_sai_divine_flesh_damage_pct: 'УВЕЛИЧЕНИЕ УРОНА:'
-DOTA_Tooltip_ability_sai_divine_flesh_armor: 'ДОПОЛНИТЕЛЬНАЯ БРОНЯ:'
-DOTA_Tooltip_ability_sai_divine_flesh_resistange: 'УВЕЛИЧЕНИЕ МАГ.РЕЗИСТА:'
+DOTA_Tooltip_ability_sai_divine_flesh_Description: 'Невероятная сила Сая способна как разрушать его тело, так и исцелять его. Когда способность включена, Сай получает чистый урон каждую секунду, но в замен получает дополнительную броню и споротивление магическому урону. Когда способность не активна, увеличивает регенерацию здоровья.'
+DOTA_Tooltip_ability_sai_divine_flesh_health_regeneration_pct: 'ДОП. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'
+DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: '%УРОН ОТ МКАС. ЗДОРОВЬЯ:'
+DOTA_Tooltip_ability_sai_divine_flesh_bonus_armor: 'ДОПОЛНИТЕЛЬНАЯ БРОНЯ:'
+DOTA_Tooltip_ability_sai_divine_flesh_bonus_magic_resistance: 'СОПРОТИВЛЕНИЕ МАГ. УРОНУ:'
 
 DOTA_Tooltip_ability_sai_immortal: Immortal
-DOTA_Tooltip_ability_sai_immortal_Description: 'При включении уменьшает урон, скорость атаки и передвижения Сая на %debuff_pct%%%, взамен же уменьшает весь получаемый урон на %damage_reduction_pct%%% и увеличивая регенерацию хп в %bonus_regen_pct%%% раза. Потребляет %mana_second%%% маны в секунду.'
-DOTA_Tooltip_ability_sai_immortal_damage_reduction_pct: 'УМЕНЬШЕНИЕ ПОЛУЧАЕМОГО УРОНА:'
-DOTA_Tooltip_ability_sai_immortal_mana_second: 'МАНАЗАТРА В СЕКУНДУ:'
-DOTA_Tooltip_ability_sai_immortal_bonus_regen_pct: 'БОНУС РЕГЕН ХР:'
+DOTA_Tooltip_ability_sai_immortal_Description: 'Пока способность включена, урон, скорость атаки и скорость передвижения Сая уменьшаются, но взамен уменьшается весь получаемый урон, а регенерация здоровья увеличивается.'
+DOTA_Tooltip_ability_sai_immortal_decreasement_pct: '%СНИЖ. УРОНА, СКОР. АТАКИ И ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_sai_immortal_damage_reduction_pct: '%СНИЖЕНИЕ УРОНА:'
+DOTA_Tooltip_ability_sai_immortal_bonus_regen_pct: 'ДОП. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'
+DOTA_Tooltip_ability_sai_immortal_mana_per_second: 'МАНЫ В СЕКУНДУ:'
 
 
-DOTA_Tooltip_ability_sai_release_of_forge: Release of forge
-DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Солнце меркнет, когда Сай высвобождает свою истинную сущность. Герой не может умереть в течении %time_to_death%%% секунд, его здоровье падает до единицы и не может восстановиться, также наносит %damage_pct%%% своего урона с автоатак в чистом виде, передвигается с максимальной скоростью и невосприимчив к замедлению, замедляет ВСЕХ героев на карте на 25% и снижает их обзор на 300 а также в течении его ультимейта длится ночь. После окончания ультимейта умирает и время воскрешения увеличивается на %respawn_time%%% секунд.'
-DOTA_Tooltip_ability_sai_release_of_forge_time_to_death: 'ВРЕМЯ ДО СМЕРТИ:'
-DOTA_Tooltip_ability_sai_release_of_forge_damage_pct: 'ДОПОЛНИТЕЛЬНЫЙ УРОН:'
-DOTA_Tooltip_ability_sai_release_of_forge_vision_radius: 'УМЕНЬШЕНИЕ ВИЗУАЛЬНОГО РАДИУСА:'
-DOTA_Tooltip_ability_sai_release_of_forge_espawn_time: 'ДОПОЛНИТЕЛЬНОЕ ВРЕМЯ ВОЗРОЖДЕНИЯ:'
+DOTA_Tooltip_ability_sai_release_of_forge: Release of Forge
+DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Солнце меркнет, когда Сай высвобождает свою истинную сущность. Герой становится бессмертным на некоторое время, его здоровье падает до единицы и не может восстановиться, а также часть его урона становится чистым, скорость передвижения становится максимальной и не может быть снижена, а все прочие герои на карте замедляются на %aura_movement_speed_slow_pct%%% и теряют %aura_vision_decrease% единиц радиуса обзора. После окончания действия способности Сай погибнет, а время его воскрешения будет увеличено.'
+DOTA_Tooltip_ability_sai_release_of_forge_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_sai_release_of_forge_pure_damage_pct: '%ЧИСТЫЙ УРОН ОТ АТАК:'
+DOTA_Tooltip_ability_sai_release_of_forge_aura_movement_speed_slow_pct: '%СНИЖЕНИЕ СКОРОСТИ ПЕРЕДВИЖЕНИЯ:'
+DOTA_Tooltip_ability_sai_release_of_forge_aura_vision_decrease: 'СНИЖЕНИЕ РАДИУСА ОБЗОРА:'
+DOTA_Tooltip_ability_sai_release_of_forge_bonus_respawn_time: 'ДОП. ВРЕМЯ ВОЗРОЖДЕНИЯ:'
