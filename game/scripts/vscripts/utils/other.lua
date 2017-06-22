@@ -324,7 +324,7 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 			end
 			illusion_ability:SetHidden(unit_ability:IsHidden())
 			local ualevel = unit_ability:GetLevel()
-			if ualevel > 0 then
+			if ualevel > 0 and illusion_ability:GetAbilityName() ~= "meepo_divided_we_stand" then
 				illusion_ability:SetLevel(ualevel)
 			end
 		elseif illusion_ability then
