@@ -9464,6 +9464,7 @@
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"bottle"
 		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"3"
 		"ItemDisplayCharges"			"1"
