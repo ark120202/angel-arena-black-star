@@ -62,3 +62,9 @@ function MeepoFixes:GetFilteredInventoryHash(unit, list)
 	end
 	return hash:sub(1, -2)
 end
+
+function MeepoFixes:UpgradeTalent(unit, name)
+	for _,v in pairs(MeepoFixes:FindMeepos(unit)) do
+		v:SetAbilityPoints(v:GetAbilityPoints() - CustomTalents:Talent_GetCost(name))
+	end
+end
