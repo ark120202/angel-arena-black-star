@@ -5422,7 +5422,7 @@
 			"14"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_cooldown"			"3"
+				"bash_cooldown"			"10"
 			}
 		}
 

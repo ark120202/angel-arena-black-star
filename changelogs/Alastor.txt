@@ -1,12 +1,12 @@
-BOSS_DAMAGE_ABILITY_MODIFIERS 
+BOSS DAMAGE ABILITY MODIFIERS 
 add abilities
-doom_bringer_infernal_blade = 10
-winter_wyvern_arctic_burn = 10
-freya_ice_cage = 10
+doom bringer infernal blade = 10
+winter wyvern arctic burn = 10
+freya ice cage = 10
 nerfed abilities
-zuus_static_field = 15 => zuus_static_field = 10,
+zuus static field = 15 => zuus static field = 10,
 
-COFFEE_BEAN_NOT_REFRESHABLE
+COFFEE BEAN NOT REFRESHABLE
 add abilities
-zuus_cloud
+zuus cloud
 
