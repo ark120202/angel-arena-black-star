@@ -151,6 +151,7 @@ REFRESH_LIST_IGNORE_REARM = {
 
 COFFEE_BEAN_NOT_REFRESHABLE = {
 	destroyer_body_reconstruction = true
+	zuus_cloud = true
 }
 
 

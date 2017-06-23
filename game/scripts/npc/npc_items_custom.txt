@@ -4393,7 +4393,7 @@
 		"ItemResult"					"item_essential_orb_fire_1"
 		"ItemRequirements"
 		{
-			"01"						"item_mystic_staff;item_mystic_staff;item_staff_of_wizardry;item_moon_dust"
+			"01"						"item_mystic_staff;item_mystic_staff;item_staff_of_wizardry"
 		}
 	}
 
@@ -9474,12 +9474,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_restore"		"150"
+				"health_restore"		"100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_restore"			"125"
+				"mana_restore"			"90"
 			}
 			"03"
 			{
@@ -9851,7 +9851,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"105"
+		"ItemCost"						"505"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_wand_of_midas"
 		"ItemRequirements"
