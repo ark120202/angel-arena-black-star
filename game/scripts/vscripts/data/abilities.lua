@@ -158,6 +158,7 @@ BOSS_BANNED_ABILITIES = {
 	item_heart_cyclone = true,
 	item_blink_staff = true,
 	huskar_life_break = true,
+	necrolyte_reapers_scythe = true,
 	death_prophet_spirit_siphon = true,
 	rubick_personality_steal = true,
 	item_urn_of_demons = true,

@@ -317,18 +317,17 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 			if illusion_ability then
 				if illusion_ability:GetAbilityName() ~= newName then
 					illusion:RemoveAbility(illusion_ability:GetAbilityName())
-					illusion_ability = illusion:AddAbility(newName)
+					illusion_ability = illusion:AddNewAbility(newName, true)
 				end
-				print('Apply level ', slot_ability, unit_ability:GetLevel())
 			else
-				print('add', slot_ability, newName)
-				illusion_ability = illusion:AddAbility(newName)
+				illusion_ability = illusion:AddNewAbility(newName, true)
 			end
-
-			illusion_ability:SetLevel(unit_ability:GetLevel())
 			illusion_ability:SetHidden(unit_ability:IsHidden())
+			local ualevel = unit_ability:GetLevel()
+			if ualevel > 0 and illusion_ability:GetAbilityName() ~= "meepo_divided_we_stand" then
+				illusion_ability:SetLevel(ualevel)
+			end
 		elseif illusion_ability then
-			print('remove (null)', slot_ability, illusion_ability:GetAbilityName())
 			illusion:RemoveAbility(illusion_ability:GetAbilityName())
 		end
 	end

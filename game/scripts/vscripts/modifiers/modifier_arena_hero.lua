@@ -1,5 +1,10 @@
 if IsClient() then require("utils/shared") end
-modifier_arena_hero = class({})
+modifier_arena_hero = class({
+	IsPurgable    = function() return false end,
+	IsHidden      = function() return true end,
+	RemoveOnDeath = function() return false end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_PERMANENT end,
+})
 
 function modifier_arena_hero:DeclareFunctions()
 	return {
@@ -11,22 +16,6 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_PROPERTY_ABILITY_LAYOUT,
 		MODIFIER_EVENT_ON_RESPAWN
 	}
-end
-
-function modifier_arena_hero:IsPurgable()
-	return false
-end
-
-function modifier_arena_hero:IsHidden()
-	return true
-end
-
-function modifier_arena_hero:RemoveOnDeath()
-	return false
-end
-
-function modifier_arena_hero:GetAttributes()
-	return MODIFIER_ATTRIBUTE_PERMANENT
 end
 
 function modifier_arena_hero:GetModifierAbilityLayout()
