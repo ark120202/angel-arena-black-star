@@ -148,94 +148,99 @@ end
 
 function CDOTA_BaseNPC:UpgradeTalent(name)
 	if CustomTalents:Talent_Verify(name) and self:CanUpgradeTalent(name) then
+		if self:IsMainHero() then MeepoFixes:UpgradeTalent(self, name) end
 		self:SetAbilityPoints(self:GetAbilityPoints() - CustomTalents:Talent_GetCost(name))
 		if not self.talents then self.talents = {} end
 		if not self.talents[name] then self.talents[name] = {level = 0, modifiers = {}, abilities = {}, ability_multicast = {}, unit_keys = {}} end
 		self.talents[name].level = self.talents[name].level + 1
-		local effect = CUSTOM_TALENTS_DATA[name].effect
 
 		local t = self:GetNetworkableEntityInfo("LearntTalents") or {}
 		if not t[name] then t[name] = {} end
 		t[name].level = self.talents[name].level
 		self:SetNetworkableEntityInfo("LearntTalents", t)
-		if effect then
-			if effect.abilities then
-				if type(effect.abilities) == "string" then
-					effect.abilities = {effect.abilities}
-				end
-				for _,v in ipairs(effect.abilities) do
-					local ability = self:FindAbilityByName(v) or self:AddNewAbility(v)
-					ability:SetLevel(self.talents[name].level)
-					if not table.contains(self.talents[name].abilities, ability) then
-						table.insert(self.talents[name].abilities, ability)
-					end
+		self:ApplyTalentEffects(name)
+	end
+end
+
+function CDOTA_BaseNPC:ApplyTalentEffects(name)
+	local effect = CUSTOM_TALENTS_DATA[name].effect
+	if effect then
+		if effect.abilities then
+			if type(effect.abilities) == "string" then
+				effect.abilities = {effect.abilities}
+			end
+			for _,v in ipairs(effect.abilities) do
+				local ability = self:FindAbilityByName(v) or self:AddNewAbility(v)
+				ability:SetLevel(self.talents[name].level)
+				if not table.contains(self.talents[name].abilities, ability) then
+					table.insert(self.talents[name].abilities, ability)
 				end
 			end
-			if effect.modifiers then
-				for _,v in ipairs(self.talents[name].modifiers) do
-					v:Destroy()
-				end
-				self.talents[name].modifiers = {}
-				if type(effect.modifiers) == "string" then
-					effect.modifiers = {effect.modifiers}
-				end
-				for k,v in pairs(effect.modifiers) do
-					local modifier
-					if type(k) == "string" then
-						if type(v) == "string" then
-							v = self:GetTalentSpecial(name, v)
-						end
-						if effect.use_modifier_applier then
-							CustomTalents.ModifierApplier:ApplyDataDrivenModifier(self, self, k, nil)
-							modifier = self:FindModifierByNameAndCaster(k, self) --TODO: Find newest modifier
-						else
-							modifier = self:AddNewModifier(self, nil, k, nil)
-						end
-						if modifier then
-							modifier:SetStackCount(v)
-						else
-							print("[CustomTalents] Attempt to create unknown modifier named " .. k .. "!")
-						end
-					else
-						modifier = effect.use_modifier_applier and CustomTalents.ModifierApplier:ApplyDataDrivenModifier(self, self, v, nil) or self:AddNewModifier(self, nil, v, nil)
-					end
-					table.insert(self.talents[name].modifiers, modifier)
-				end
+		end
+		if effect.modifiers then
+			for _,v in ipairs(self.talents[name].modifiers) do
+				v:Destroy()
 			end
-			if effect.unit_keys then
-				for k,v in pairs(self.talents[name].unit_keys) do
-					if self.talent_keys and self.talent_keys[k] then
-						self.talent_keys[k] = self.talent_keys[k] - v
-					end
-				end
-				self.talents[name].unit_keys = {}
-				for k,v in pairs(effect.unit_keys) do
+			self.talents[name].modifiers = {}
+			if type(effect.modifiers) == "string" then
+				effect.modifiers = {effect.modifiers}
+			end
+			for k,v in pairs(effect.modifiers) do
+				local modifier
+				if type(k) == "string" then
 					if type(v) == "string" then
 						v = self:GetTalentSpecial(name, v)
 					end
-					if not self.talent_keys then self.talent_keys = {} end
-					if not self.talent_keys[k] then self.talent_keys[k] = 0 end
-					self.talent_keys[k] = self.talent_keys[k] + v
-					self.talents[name].unit_keys[k] = v
-				end
-			end
-			if effect.multicast_abilities then
-				for k,v in pairs(self.talents[name].ability_multicast) do
-					if self.talents_ability_multicast and self.talents_ability_multicast[k] then
-						self.talents_ability_multicast[k] = self.talents_ability_multicast[k] - v + 1
+					if effect.use_modifier_applier then
+						CustomTalents.ModifierApplier:ApplyDataDrivenModifier(self, self, k, nil)
+						modifier = self:FindModifierByNameAndCaster(k, self) --TODO: Find newest modifier
+					else
+						modifier = self:AddNewModifier(self, nil, k, nil)
 					end
+					if modifier then
+						modifier:SetStackCount(v)
+					else
+						print("[CustomTalents] Attempt to create unknown modifier named " .. k .. "!")
+					end
+				else
+					modifier = effect.use_modifier_applier and CustomTalents.ModifierApplier:ApplyDataDrivenModifier(self, self, v, nil) or self:AddNewModifier(self, nil, v, nil)
 				end
-				self.talents[name].multicast_abilities = {}
-				for k,v in pairs(effect.multicast_abilities) do
-					if not self.talents_ability_multicast then self.talents_ability_multicast = {} end
-					if not self.talents_ability_multicast[k] then self.talents_ability_multicast[k] = 1 end
-					self.talents_ability_multicast[k] = self.talents_ability_multicast[k] + v - 1
-					self.talents[name].ability_multicast[k] = v
+				table.insert(self.talents[name].modifiers, modifier)
+			end
+		end
+		if effect.unit_keys then
+			for k,v in pairs(self.talents[name].unit_keys) do
+				if self.talent_keys and self.talent_keys[k] then
+					self.talent_keys[k] = self.talent_keys[k] - v
 				end
 			end
-			if effect.calculate_stat_bonus and self.CalculateStatBonus then
-				self:CalculateStatBonus()
+			self.talents[name].unit_keys = {}
+			for k,v in pairs(effect.unit_keys) do
+				if type(v) == "string" then
+					v = self:GetTalentSpecial(name, v)
+				end
+				if not self.talent_keys then self.talent_keys = {} end
+				if not self.talent_keys[k] then self.talent_keys[k] = 0 end
+				self.talent_keys[k] = self.talent_keys[k] + v
+				self.talents[name].unit_keys[k] = v
 			end
+		end
+		if effect.multicast_abilities then
+			for k,v in pairs(self.talents[name].ability_multicast) do
+				if self.talents_ability_multicast and self.talents_ability_multicast[k] then
+					self.talents_ability_multicast[k] = self.talents_ability_multicast[k] - v + 1
+				end
+			end
+			self.talents[name].multicast_abilities = {}
+			for k,v in pairs(effect.multicast_abilities) do
+				if not self.talents_ability_multicast then self.talents_ability_multicast = {} end
+				if not self.talents_ability_multicast[k] then self.talents_ability_multicast[k] = 1 end
+				self.talents_ability_multicast[k] = self.talents_ability_multicast[k] + v - 1
+				self.talents[name].ability_multicast[k] = v
+			end
+		end
+		if effect.calculate_stat_bonus and self.CalculateStatBonus then
+			self:CalculateStatBonus()
 		end
 	end
 end
