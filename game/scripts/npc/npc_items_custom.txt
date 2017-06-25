@@ -7402,7 +7402,7 @@
 		"ID"							"10253"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1060"
+		"ItemCost"						"4750"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_blade_of_discord"
 		"ItemRequirements"
@@ -7421,7 +7421,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 
-		"AbilityCooldown"				"20"
+		"AbilityCooldown"				"30"
 		"AbilityCastRange"				"900"
 		"AbilityManaCost"				"150"
 		"AOEradius"						"%debuff_radius"
