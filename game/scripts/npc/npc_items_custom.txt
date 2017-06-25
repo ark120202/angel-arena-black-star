@@ -7731,7 +7731,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"7"
+				"attack_damage_to_pure_pct"	"10"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -7806,7 +7806,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"10"
+				"attack_damage_to_pure_pct"	"15"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
