@@ -10,3 +10,35 @@ COFFEE BEAN NOT REFRESHABLE
 add abilities
 zuus cloud
 
+MEEPO_SHARED_ITEMS
+delete item's 
+titanium bar
+echo saber 1 and 2
+heart cyclone
+edge of vyse
+radiance arena
+radiance 1
+radiance 2
+radiance frozen
+desolator 2
+desolator 3
+desolator 4
+desolator 5
+desolator 6
+dark flow
+skadi arena
+skadi 2 
+skadi 4
+skadi 8
+
+REFRESH_LIST_IGNORE_REARM
+add item's
+item_blade_of_discord
+scythe_of_sun
+blink_staff
+item_essential_orb_fire_1
+item_essential_orb_fire_2
+item_essential_orb_fire_3
+item_essential_orb_fire_4
+item_essential_orb_fire_5
+item_essential_orb_fire_6
