@@ -20,12 +20,10 @@ MEEPO_SHARED_ITEMS = {
 	item_manta_arena = true,
 
 	item_refresher_core = true,
-	item_thunder_musket = true,
 	item_golden_eagle_relic = true,
 	item_elemental_fury = true,
 	item_heavy_war_axe_of_rage_damage = true,
 	item_holy_knight_shield = true,
-	item_dark_flow = true,
 	item_sange_arena = true,
 	item_sange_and_yasha_arena = true,
 	item_nightshadow = true,

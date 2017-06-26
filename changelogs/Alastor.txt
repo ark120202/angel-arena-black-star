@@ -1,17 +1,17 @@
 BOSS DAMAGE ABILITY MODIFIERS 
-add abilities
+add abilities:
 doom bringer infernal blade = 10
 winter wyvern arctic burn = 10
 freya ice cage = 10
-nerfed abilities
+nerfed abilities:
 zuus static field = 15 => zuus static field = 10,
 
 COFFEE BEAN NOT REFRESHABLE
-add abilities
+add abilities:
 zuus cloud
 
 MEEPO_SHARED_ITEMS
-delete item's 
+delete items:
 titanium bar
 echo saber 1 and 2
 heart cyclone
@@ -30,15 +30,5 @@ skadi arena
 skadi 2 
 skadi 4
 skadi 8
-
-REFRESH_LIST_IGNORE_REARM
-add item's
-item_blade_of_discord
-scythe_of_sun
-blink_staff
-item_essential_orb_fire_1
-item_essential_orb_fire_2
-item_essential_orb_fire_3
-item_essential_orb_fire_4
-item_essential_orb_fire_5
-item_essential_orb_fire_6
+thunder musket
+dark flow
