@@ -893,7 +893,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_gain"				"350"
+				"mana_gain"				"300"
 			}
 			"05"
 			{

@@ -7402,7 +7402,7 @@
 		"ID"							"10253"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"4750"
+		"ItemCost"						"3750"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_blade_of_discord"
 		"ItemRequirements"
@@ -7419,11 +7419,11 @@
 		"AbilityTextureName"			"item_arena/blade_of_discord"
 		"AbilitySharedCooldown"			"ethereal"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
-		"AbilityCooldown"				"30"
-		"AbilityCastRange"				"900"
-		"AbilityManaCost"				"150"
+		"AbilityCooldown"				"20"
+		"AbilityCastRange"				"700"
+		"AbilityManaCost"				"300"
 		"AOEradius"						"%debuff_radius"
 
 		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
@@ -7471,12 +7471,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_radius"			"600"
+				"debuff_radius"			"400"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"debuff_duration"		"3.0"
+				"debuff_duration"		"2.0"
 			}
 			"10"
 			{
@@ -7491,7 +7491,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_damage_base"	"120"
+				"debuff_damage_base"	"125"
 			}
 		}
 
@@ -10639,7 +10639,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityCastRange"				"%aura_radius"
 		"AbilityCooldown"				"26"
-		"AbilityManaCost"				"260"
+		"AbilityManaCost"				"350"
 
 		"AbilitySpecial"
 		{
@@ -10747,9 +10747,9 @@
 		"AbilitySharedCooldown"			"hex"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityDamage"					"1000"
-		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"19"
+		"AbilityDamage"					"800"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"250"
 		"ItemAliases"					"hex;sheepstick;scythe of vyse;scythe of sun"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"

@@ -1504,8 +1504,8 @@
 		"MaxLevel"						"7"
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"3.6 3.4 3.2 3.0 2.8 2.4 2.2"
-		"AbilityManaCost"				"175 300 475 600 765 800 975"
+		"AbilityCooldown"				"3.0 2.8 2.6 2.4 2.2 2.0 1.8"
+		"AbilityManaCost"				"150 250 350 450 550 650 750"
 
 		"precache"
 		{
