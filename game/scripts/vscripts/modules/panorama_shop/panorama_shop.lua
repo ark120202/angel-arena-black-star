@@ -140,7 +140,7 @@ function PanoramaShop:InitializeItemTable()
 				ItemStockMax = kv.ItemStockMax or -1,
 				ItemStockTime = kv.ItemStockTime or 0,
 				current_stock = kv.ItemStockInitial,
-				current_cooldown = kv.ItemInitialStockTime or kv.ItemStockTime or 0,
+				current_cooldown = kv.ItemInitialStockTime or 0,
 				current_last_purchased_time = -1,
 			}
 			if not stocks.current_stock then
