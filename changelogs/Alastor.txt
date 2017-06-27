@@ -11,24 +11,26 @@ add abilities:
 zuus cloud
 
 MEEPO_SHARED_ITEMS
-delete items:
-titanium bar
-echo saber 1 and 2
-heart cyclone
-edge of vyse
-radiance arena
-radiance 1
-radiance 2
-radiance frozen
-desolator 2
-desolator 3
-desolator 4
-desolator 5
-desolator 6
-dark flow
-skadi arena
-skadi 2 
-skadi 4
-skadi 8
-thunder musket
-dark flow
+	Removed:
+		titanium bar
+		echo saber 1 and 2
+		heart cyclone
+		edge of vyse
+		radiance arena
+		radiance 1
+		radiance 2
+		radiance frozen
+		desolator 2
+		desolator 3
+		desolator 4
+		desolator 5
+		desolator 6
+		dark flow
+		skadi arena
+		skadi 2 
+		skadi 4
+		skadi 8
+		thunder musket
+		dark flow
+		guardian greaves
+		manta style

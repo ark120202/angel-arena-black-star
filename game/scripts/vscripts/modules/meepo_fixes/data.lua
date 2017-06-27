@@ -5,7 +5,6 @@ MEEPO_SHARED_ITEMS = {
 	item_travel_boots_2 = true,
 	item_tranquil_boots = true,
 	item_arcane_boots = true,
-	item_guardian_greaves_arena = true,
 	item_steam_footgear = true,
 	item_power_treads = true,
 	item_angel_wings = true,
@@ -17,7 +16,6 @@ MEEPO_SHARED_ITEMS = {
 	item_black_king_bar_6 = true,
 	item_chest_of_midas = true,
 	item_quelling_fury = true,
-	item_manta_arena = true,
 
 	item_refresher_core = true,
 	item_golden_eagle_relic = true,
