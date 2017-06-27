@@ -4043,19 +4043,19 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"cloud_duration"	"30"
+				"cloud_duration"	"35"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"cloud_bolt_interval"	"1.7"
+				"cloud_bolt_interval"	"2.25"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"cloud_radius"	"650"
+				"cloud_radius"	"600"
 			}
 
 		}
@@ -19401,6 +19401,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"percent_damage"	"8"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"04"

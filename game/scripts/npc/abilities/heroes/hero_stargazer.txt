@@ -172,7 +172,7 @@
 		"BaseClass"             		"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"90"
 		"AbilityTextureName"			"arena/stargazer_cosmic_countdown"
 		"MaxLevel"						"7"
 
