@@ -190,6 +190,8 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	doom_bringer_infernal_blade = true,
 	phoenix_sun_ray = true,
 	silencer_glaives_of_wisdom = true,
+	winter_wyvern_arctic_burn = true,
+	obsidian_destroyer_sanity_eclipse = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
