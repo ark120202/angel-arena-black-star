@@ -43,7 +43,7 @@ ATTACHMENTS_VERSION = "1.00"
   -See https://www.youtube.com/watch?v=PS1XmHGP3sw for an example of how to generally use the GUI
   -The Load button will reload the database from disk and update the current attach point/prop model if values are stored therein.
   -The Hide button will hide/remove the current atatach point/prop model being displayed
-  -The Save button will save the current properties as well as any other adjusted properties in the attachment database to disk.  
+  -The Save button will save the current properties as well as any other adjusted properties in the attachment database to disk.
   -Databases will be saved to the scripts/attachments.txt file of the addon you set when calling the attachment_configure <ADDON_NAME> command.
   -More detail to come...
 
@@ -66,7 +66,7 @@ LinkLuaModifier( "modifier_animation_freeze_stun", "libraries/attachments.lua", 
 
 modifier_animation_freeze_stun = class({})
 
-function modifier_animation_freeze_stun:OnCreated(keys) 
+function modifier_animation_freeze_stun:OnCreated(keys)
 
 end
 
@@ -78,15 +78,15 @@ function modifier_animation_freeze_stun:IsHidden()
   return true
 end
 
-function modifier_animation_freeze_stun:IsDebuff() 
+function modifier_animation_freeze_stun:IsDebuff()
   return false
 end
 
-function modifier_animation_freeze_stun:IsPurgable() 
+function modifier_animation_freeze_stun:IsPurgable()
   return false
 end
 
-function modifier_animation_freeze_stun:CheckState() 
+function modifier_animation_freeze_stun:CheckState()
   local state = {
     [MODIFIER_STATE_FROZEN] = true,
     [MODIFIER_STATE_STUNNED] = true,
@@ -173,7 +173,7 @@ function Attachments:start()
       end
     else
       print("[attachments] RELOADING")
-      SendToServerConsole("script_reload_code " .. src:sub(2))
+      SendToServerConsole("script_reload_code " .. src:gsub("@scripts\\vscripts\\", ""))
     end
   else
     self.initialized = true
@@ -281,7 +281,7 @@ function Attachments:Attachment_UpdateAttach(args)
     Notify(args.PlayerID, "Invalid Unit.")
     return
   end
-  
+
   local properties = args.properties
   local unitModel = unit:GetModelName()
   local attach = properties.attach
@@ -312,7 +312,7 @@ function Attachments:Attachment_UpdateAttach(args)
 
   properties = oldProperties
   db[unitModel][attach][model] = properties
-  
+
 
   if not Attachments.currentAttach[args.index] then Attachments.currentAttach[args.index] = {} end
   local prop = Attachments.currentAttach[args.index][attach]
@@ -333,7 +333,7 @@ function Attachments:Attachment_SaveAttach(args)
     Notify(args.PlayerID, "Invalid Unit.")
     return
   end
-  
+
   local properties = args.properties
   local unitModel = unit:GetModelName()
   local attach = properties.attach
@@ -403,7 +403,7 @@ function Attachments:Attachment_HideAttach(args)
     Notify(args.PlayerID, "Invalid Unit.")
     return
   end
-  
+
   local properties = args.properties
   local attach = properties.attach
 
@@ -452,7 +452,7 @@ function Attachments:Attachment_HideCosmetic(args)
   end
 
   local model = args.model;
-  
+
   local cosmetics = {}
   for i,child in ipairs(unit:GetChildren()) do
     if child:GetClassname() == "dota_item_wearable" and child:GetModelName() == model then
@@ -510,7 +510,7 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
     --local angleSpace = QAngle(properties.QX, properties.QY, properties.QZ)
     local offset = Vector(tonumber(properties.XPos), tonumber(properties.YPos), tonumber(properties.ZPos)) * scale * unit:GetModelScale()
     local animation = properties.Animation
-    
+
     --offset = RotatePosition(Vector(0,0,0), RotationDelta(angleSpace, QAngle(0,0,0)), offset)
 
     --local new_prop = Entities:CreateByClassname("prop_dynamic")
@@ -524,7 +524,7 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
 
     local angles = unit:GetAttachmentAngles(attach)
 
-    
+
     angles = QAngle(angles.x, angles.y, angles.z)
     --angles = RotationDelta(angles,QAngle(pitch, yaw, roll))
     --print(prop:GetAngles())
@@ -548,7 +548,7 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
     if Attachments.doAttach then
       if attachPoint == "attach_origin" then
         prop:SetParent(unit, "")
-      else        
+      else
         prop:SetParent(unit, attachPoint)
       end
     end
@@ -565,7 +565,7 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
         for k,ent_point in pairs(control_points) do
           ParticleManager:SetParticleControlEnt(prop.fx, tonumber(k), prop, PATTACH_POINT_FOLLOW, ent_point, prop:GetAbsOrigin(), true)
         end
-      end    
+      end
     end
 
 
