@@ -11931,6 +11931,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"damage_multiplier"	"7.0 7.5 8.0 8.5 9.0 9.5 10"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"02"
