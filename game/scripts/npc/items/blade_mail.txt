@@ -251,7 +251,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"120"
+				"bonus_armor"			"100"
 			}
 			"05"
 			{
@@ -271,7 +271,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reduced_damage_pct"	"35"
+				"reduced_damage_pct"	"22"
 			}
 			"09"
 			{

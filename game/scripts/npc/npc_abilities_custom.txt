@@ -1158,7 +1158,7 @@
 		"MaxLevel"					"7"
 		"AbilityCastPoint"			"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityCastRange"			"300"
-		"AbilityCooldown"			"70 65 60 55 50 45 40"
+		"AbilityCooldown"			"70"
 		"AbilityManaCost"			"40 50 60 70 80 90 100"
 
 		"precache"
@@ -1172,7 +1172,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"min_bonus_gold"		"150 300 450 600 800 1100 1500"
+				"min_bonus_gold"		"100 200 300 400 500 600 700"
 			}
 			"02"
 			{
@@ -1182,7 +1182,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"15"
+				"duration"				"15 20 25 30 35 40 45"
 			}
 			"04"
 			{
@@ -1504,8 +1504,8 @@
 		"MaxLevel"						"7"
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"3.0 2.75 2.5 2.25 2.0 1.75 1.5"
-		"AbilityManaCost"				"100 200 300 350 450 500 550"
+		"AbilityCooldown"				"3.0 2.8 2.6 2.4 2.2 2.0 1.8"
+		"AbilityManaCost"				"150 250 350 450 550 650 750"
 
 		"precache"
 		{

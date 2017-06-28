@@ -140,8 +140,8 @@ if IsServer() then
 	function modifier_arena_hero:GetReflectSpell(keys)
 		local parent = self:GetParent()
 		local originalAbility = keys.ability
+		self.absorb_without_check = false
 		if originalAbility:GetCaster():GetTeam() ~= parent:GetTeam() then
-			self.absorb_without_check = false
 			local item_lotus_sphere = FindItemInInventoryByName(parent, "item_lotus_sphere", false, false, true)
 			if not self.absorb_without_check and parent:HasModifier("modifier_antimage_spell_shield_arena_reflect") then
 				parent:EmitSound("Hero_Antimage.SpellShield.Reflect")

@@ -64,7 +64,7 @@ panorama_shop_itembuilds_new_group: NEW GROUP
 panorama_shop_guide_youtube_open: Open in Browser
 panorama_shop_guide_publish: Publish
 panorama_shop_guide_cancel: Cancel
-panorama_shop_stackable_purchase: Купленный назодится на базе, так как в инвентаре героя находится такой же стакающийся предмет
+panorama_shop_stackable_purchase: Purchased item was dropped on the base, because your hero has same stackable item in inventory
 
 error_panorama_shop_publish_guide_title: Title.
 server_error_panorama_shop_youtube_no_tags: Make sure your video has 'Angel Arena Black Star' tag

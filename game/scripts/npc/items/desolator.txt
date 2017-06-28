@@ -237,12 +237,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"320"
+				"bonus_damage"			"300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-30"
+				"corruption_armor"		"-35"
 			}
 			"03"
 			{
@@ -385,7 +385,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-45"
+				"corruption_armor"		"-55"
 			}
 			"06"
 			{
@@ -507,7 +507,7 @@
 		"ItemResult"					"item_desolator6"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator5;item_rapier;item_demons_paw;item_moon_dust"
+			"01"						"item_desolator5;item_rapier;item_demons_paw"
 		}
 	}
 
@@ -529,7 +529,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"800"
+				"bonus_damage"			"760"
 			}
 			"02"
 			{
@@ -554,7 +554,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-70"
+				"corruption_armor"		"-80"
 			}
 			"07"
 			{

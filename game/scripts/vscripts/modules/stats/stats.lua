@@ -253,12 +253,13 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 				debugp("StatsClient:Send", response.StatusCode .. ": " .. response.Body)
 			end
 			local currentRetry = (_currentRetry or 0) + 1
-			if currentRetry < retryCount then
+			if not StatsClient.Debug and currentRetry < retryCount then
 				Timers:CreateTimer(self.RetryDelay, function()
 					debugp("StatsClient:Send", "Retry (" .. currentRetry .. ")")
 					StatsClient:Send(path, data, callback, retryCount, protocol, onerror, currentRetry)
 				end)
 			elseif onerror then
+				debugp("StatsClient:Send", "Retries for " .. path .." just stopped.")
 				if onerror == true then onerror = callback end
 				onerror(response.Body)
 			end

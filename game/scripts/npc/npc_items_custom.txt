@@ -3625,12 +3625,12 @@
 		"ID"							"10137"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"160"
+		"ItemCost"						"180"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_skull_of_midas"
 		"ItemRequirements"
 		{
-			"01"						"item_blades_of_attack;item_blades_of_attack"
+			"01"						"item_blades_of_attack"
 		}
 	}
 
@@ -3650,7 +3650,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"24"
+				"bonus_damage"			"12"
 			}
 			"02"
 			{
@@ -3660,7 +3660,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"10"
+				"kill_gold"				"5"
 			}
 		}
 
@@ -4393,7 +4393,7 @@
 		"ItemResult"					"item_essential_orb_fire_1"
 		"ItemRequirements"
 		{
-			"01"						"item_mystic_staff;item_mystic_staff;item_staff_of_wizardry;item_moon_dust"
+			"01"						"item_mystic_staff;item_mystic_staff;item_staff_of_wizardry"
 		}
 	}
 
@@ -5422,7 +5422,7 @@
 			"14"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_cooldown"			"3"
+				"bash_cooldown"			"10"
 			}
 		}
 
@@ -7402,7 +7402,7 @@
 		"ID"							"10253"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1060"
+		"ItemCost"						"3750"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_blade_of_discord"
 		"ItemRequirements"
@@ -7419,11 +7419,11 @@
 		"AbilityTextureName"			"item_arena/blade_of_discord"
 		"AbilitySharedCooldown"			"ethereal"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
 		"AbilityCooldown"				"20"
-		"AbilityCastRange"				"900"
-		"AbilityManaCost"				"150"
+		"AbilityCastRange"				"700"
+		"AbilityManaCost"				"300"
 		"AOEradius"						"%debuff_radius"
 
 		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
@@ -7471,12 +7471,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_radius"			"600"
+				"debuff_radius"			"400"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"debuff_duration"		"3.0"
+				"debuff_duration"		"2.0"
 			}
 			"10"
 			{
@@ -7491,7 +7491,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_damage_base"	"120"
+				"debuff_damage_base"	"125"
 			}
 		}
 
@@ -7616,6 +7616,7 @@
 		"AbilityCastRange"				"250"
 		"AbilityCastPoint"				"0.0"
 
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemCost"						"125"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"1"
@@ -7628,7 +7629,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen_per_stack"	"4.5"
+				"hp_regen_per_stack"	"4.0"
 			}
 			"02"
 			{
@@ -7731,7 +7732,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"7"
+				"attack_damage_to_pure_pct"	"10"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -7806,7 +7807,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"10"
+				"attack_damage_to_pure_pct"	"15"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
@@ -8533,7 +8534,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_hp_regen_pct" "2"
+				"bonus_hp_regen_pct" "1"
 			}
 			"03"
 			{
@@ -8664,7 +8665,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"60"
+				"bonus_armor"			"50"
 			}
 			"03"
 			{
@@ -8699,7 +8700,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_positive_armor"	"60"
+				"aura_positive_armor"	"50"
 			}
 			"10"
 			{
@@ -8709,7 +8710,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_bonus_hp_regen_pct" "2.5"
+				"aura_bonus_hp_regen_pct" "1.5"
 			}
 			"12"
 			{
@@ -9380,12 +9381,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"80"
+				"bonus_armor"			"70"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_hp_regen_pct"	"2"
+				"bonus_hp_regen_pct"	"1.0"
 			}
 			"05"
 			{
@@ -9474,12 +9475,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_restore"		"150"
+				"health_restore"		"100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_restore"			"125"
+				"mana_restore"			"90"
 			}
 			"03"
 			{
@@ -9851,7 +9852,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"105"
+		"ItemCost"						"505"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_wand_of_midas"
 		"ItemRequirements"
@@ -10639,7 +10640,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityCastRange"				"%aura_radius"
 		"AbilityCooldown"				"26"
-		"AbilityManaCost"				"260"
+		"AbilityManaCost"				"350"
 
 		"AbilitySpecial"
 		{
@@ -10688,7 +10689,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blast_damage_int_mult"	"4"
+				"blast_damage_int_mult"	"3"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"10"
@@ -10747,9 +10748,9 @@
 		"AbilitySharedCooldown"			"hex"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityDamage"					"1000"
-		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"19"
+		"AbilityDamage"					"800"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"250"
 		"ItemAliases"					"hex;sheepstick;scythe of vyse;scythe of sun"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"

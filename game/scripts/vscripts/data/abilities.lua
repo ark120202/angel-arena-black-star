@@ -40,6 +40,7 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	dazzle_shallow_grave = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
+	destroyer_body_reconstruction = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
@@ -149,7 +150,8 @@ REFRESH_LIST_IGNORE_REARM = {
 }
 
 COFFEE_BEAN_NOT_REFRESHABLE = {
-	destroyer_body_reconstruction = true
+	destroyer_body_reconstruction = true,
+	zuus_cloud = true
 }
 
 
@@ -171,6 +173,7 @@ PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_dota_hero_necrolyte"] = true,
 	["npc_dota_hero_storm_spirit"] = true,
 	["npc_dota_hero_tidehunter"] = true,
+	["npc_dota_hero_arc_warden"] = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
@@ -187,6 +190,8 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	doom_bringer_infernal_blade = true,
 	phoenix_sun_ray = true,
 	silencer_glaives_of_wisdom = true,
+	winter_wyvern_arctic_burn = true,
+	obsidian_destroyer_sanity_eclipse = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

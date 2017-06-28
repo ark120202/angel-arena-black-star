@@ -1,5 +1,5 @@
 BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
-	zuus_static_field = 15,
+	zuus_static_field = 10,
 	item_blade_mail = 0,
 	centaur_return = 0,
 	enigma_midnight_pulse = 0,
@@ -20,7 +20,10 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,
 	antimage_mana_void_arena = 0,
-	ancient_apparition_ice_blast = 0
+	ancient_apparition_ice_blast = 0,
+	doom_bringer_infernal_blade = 10,
+	winter_wyvern_arctic_burn = 10,
+	freya_ice_cage = 10
 }
 
 local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)

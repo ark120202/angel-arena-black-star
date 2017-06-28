@@ -73,19 +73,16 @@ end
 
 function PanoramaShop:InitializeItemTable()
 	local RecipesToCheck = {}
-	--загрузка всех предметов, разделение на предмет/рецепт
+	-- loading all items and splitting them by item/recipe
 	for name, kv in pairs(KeyValues.ItemKV) do
 		if type(kv) == "table" and (kv.ItemPurchasable or 1) == 1 then
-			if name == "item_blink" then
-				PrintTable(kv)
-			end
 			if kv.ItemRecipe == 1 then
 				RecipesToCheck[kv.ItemResult] = name
 			end
 			PanoramaShop._RawItemData[name] = kv
 		end
 	end
-	--заполнение данных для каждого предмета
+	-- adding data for each item
 	local itemsBuldsInto = {}
 	for name, kv in pairs(PanoramaShop._RawItemData) do
 		local itemdata = {
@@ -182,7 +179,7 @@ function PanoramaShop:InitializeItemTable()
 			PanoramaShop.FormattedData[name].BuildsInto = items
 		end
 	end
-	--распределение данных по вкладкам и группам
+	-- checking all items in shop list
 	local Items = {}
 	for shopName, shopData in pairs(PANORAMA_SHOP_ITEMS) do
 		Items[shopName] = {}

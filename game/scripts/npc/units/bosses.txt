@@ -17,7 +17,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"45"
+		"ArmorPhysical"				"55"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -75,7 +75,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"50"
+		"ArmorPhysical"				"55"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -131,7 +131,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"80"
+		"ArmorPhysical"				"85"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -189,7 +189,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"80"
+		"ArmorPhysical"				"85"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -305,7 +305,7 @@
 		"Ability1"					"boss_freya_sharp_ice_shards"
 		"Ability5"					"boss_armor"
 
-		"ArmorPhysical"				"90"
+		"ArmorPhysical"				"100"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

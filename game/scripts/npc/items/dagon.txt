@@ -666,7 +666,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_arena"
 
-		"AbilityCastRange"				"825 850 875 900 950"
+		"AbilityCastRange"				"810 820 830 840 850"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
 		"AbilityManaCost"				"200 220 240 260 280"
@@ -707,7 +707,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"825 850 875 900 950"
+				"range_tooltip"			"810 820 830 840 850"
 			}
 			"06"
 			{
@@ -756,7 +756,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_2_arena"
 
-		"AbilityCastRange"				"825 850 875 900 950"
+		"AbilityCastRange"				"810 820 830 840 850"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
 		"AbilityManaCost"				"200 220 240 260 280"
@@ -797,7 +797,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"825 850 875 900 950"
+				"range_tooltip"			"810 820 830 840 850"
 			}
 			"06"
 			{
@@ -846,7 +846,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_3_arena"
 
-		"AbilityCastRange"				"825 850 875 900 950"
+		"AbilityCastRange"				"810 820 830 840 850"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
 		"AbilityManaCost"				"200 220 240 260 280"
@@ -887,7 +887,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"825 850 875 900 950"
+				"range_tooltip"			"810 820 830 840 850"
 			}
 			"06"
 			{
@@ -936,7 +936,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_4_arena"
 
-		"AbilityCastRange"				"825 850 875 900 950"
+		"AbilityCastRange"				"810 820 830 840 850"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
 		"AbilityManaCost"				"200 220 240 260 280"
@@ -977,7 +977,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"825 850 875 900 950"
+				"range_tooltip"			"810 820 830 840 850"
 			}
 			"06"
 			{
@@ -1026,7 +1026,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_5_arena"
 
-		"AbilityCastRange"				"825 850 875 900 950"
+		"AbilityCastRange"				"810 820 830 840 850"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
 		"AbilityManaCost"				"200 220 240 260 280"
@@ -1064,7 +1064,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"825 850 875 900 950"
+				"range_tooltip"			"810 820 830 840 850"
 			}
 			"06"
 			{
@@ -1113,7 +1113,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_arena"
 
-		"AbilityCastRange"				"2500"
+		"AbilityCastRange"				"860 870 880 890 900"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
 		"AbilityManaCost"				"300 350 400 450 500"
@@ -1169,7 +1169,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"2500"
+				"range_tooltip"			"860 870 880 890 900"
 			}
 		}
 
@@ -1235,7 +1235,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_2_arena"
 
-		"AbilityCastRange"				"2500"
+		"AbilityCastRange"				"860 870 880 890 900"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
 		"AbilityManaCost"				"300 350 400 450 500"
@@ -1291,7 +1291,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"2500"
+				"range_tooltip"			"860 870 880 890 900"
 			}
 		}
 
@@ -1357,7 +1357,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_3_arena"
 
-		"AbilityCastRange"				"2500"
+		"AbilityCastRange"				"860 870 880 890 900"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
 		"AbilityManaCost"				"300 350 400 450 500"
@@ -1413,7 +1413,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"2500"
+				"range_tooltip"			"860 870 880 890 900"
 			}
 		}
 
@@ -1479,7 +1479,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_4_arena"
 
-		"AbilityCastRange"				"2500"
+		"AbilityCastRange"				"860 870 880 890 900"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
 		"AbilityManaCost"				"300 350 400 450 500"
@@ -1535,7 +1535,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"2500"
+				"range_tooltip"			"860 870 880 890 900"
 			}
 		}
 
@@ -1601,7 +1601,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_5_arena"
 
-		"AbilityCastRange"				"2500"
+		"AbilityCastRange"				"860 870 880 890 900"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
 		"AbilityManaCost"				"300 350 400 450 500"
@@ -1654,7 +1654,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"2500"
+				"range_tooltip"			"860 870 880 890 900"
 			}
 		}
 

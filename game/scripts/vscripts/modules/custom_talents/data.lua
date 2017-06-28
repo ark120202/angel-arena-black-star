@@ -46,9 +46,9 @@ CUSTOM_TALENTS_DATA = {
 		icon = "talents/respawn_time_reduction",
 		cost = 3,
 		group = 8,
-		max_level = 5,
+		max_level = 10,
 		special_values = {
-			respawn_time_reduction = {-10, -15, -20, -25, -30}
+			respawn_time_reduction = {-10, -15, -20, -25, -30, -35, -40, -45, -50, -55}
 		},
 		effect = {
 			unit_keys = {
@@ -86,7 +86,7 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_movespeed_limit = {
 		icon = "talents/movespeed",
-		cost = 5,
+		cost = 3,
 		group = 6,
 		max_level = 3,
 		special_values = {
@@ -1386,7 +1386,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 6,
 		requirement = "weaver_shukuchi",
-		special_values = {value = 300},
+		special_values = {value = 200},
 		effect = {abilities = "special_bonus_unique_weaver_2"}
 	},
 	talent_hero_jakiro_dual_breath_dmg = {
@@ -2240,16 +2240,16 @@ CUSTOM_TALENTS_DATA = {
 }
 
 TALENT_GROUP_TO_LEVEL = {
-	[1] = 5,
-	[2] = 10,
-	[3] = 15,
-	[4] = 20,
-	[5] = 25,
-	[6] = 30,
-	[7] = 35,
-	[8] = 40,
-	[9] = 45,
-	[10] = 50,
+	[1] = 10,
+	[2] = 15,
+	[3] = 20,
+	[4] = 25,
+	[5] = 30,
+	[6] = 35,
+	[7] = 40,
+	[8] = 45,
+	[9] = 50,
+	[10] = 55,
 	[11] = 60,
 	[13] = 70,
 	[14] = 80,
@@ -2268,13 +2268,13 @@ TALENT_GROUP_TO_LEVEL = {
 	[28] = 490,
 	[29] = 550,
 }
-	-- [1] = 5, exp;gold_creep;
-	-- [2] = 10, mana;regen;gold_min;exp_min;
-	-- [3] = 15, armor;mag_resist;
-	-- [4] = 20, movespeed;spell_amp;
-	-- [5] = 25, cd;evasion;
-	-- [6] = 30, ms_limit;
-	-- [7] = 35, day;night;
-	-- [8] = 40, respawn_time;
-	-- [9] = 45, damage;
-	-- [10] = 50, truestrike
+	-- [1] = 10, exp;gold_creep;
+	-- [2] = 15, mana;regen;gold_min;exp_min;
+	-- [3] = 20, armor;mag_resist;
+	-- [4] = 25, movespeed;spell_amp;
+	-- [5] = 30, cd;evasion;
+	-- [6] = 35, ms_limit;
+	-- [7] = 40, day;night;
+	-- [8] = 45, respawn_time;
+	-- [9] = 50, damage;
+	-- [10] = 55, truestrike

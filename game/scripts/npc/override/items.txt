@@ -872,13 +872,12 @@
 	{
 		"SecretShop"					"0"
 		"AbilityCooldown"				"20.0"
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_regen"			"10"
+				"health_regen"			"5"
 			}
 			"02"
 			{
@@ -888,12 +887,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_sacrifice"		"200"
+				"health_sacrifice"		"150"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_gain"				"350"
+				"mana_gain"				"200"
 			}
 			"05"
 			{
@@ -1133,7 +1132,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"creep_damage_pct"			"80"
+				"creep_damage_pct"			"70"
 			}
 			"06"
 			{

@@ -4043,19 +4043,19 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"cloud_duration"	"30"
+				"cloud_duration"	"35"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"cloud_bolt_interval"	"1.7"
+				"cloud_bolt_interval"	"2.25"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"cloud_radius"	"650"
+				"cloud_radius"	"600"
 			}
 
 		}
@@ -4245,7 +4245,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"0.7"
+				"duration"	"0.35"
 			}
 
 			"04"
@@ -5564,7 +5564,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"2500 2600 2700 2800 2900 3000 3200"
+				"radius"	"2500"
 			}
 
 			"02"
@@ -5576,7 +5576,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"speed"	"900 900 900 900 900 1000 1100"
+				"speed"	"900 900 900 900 900 950 1000"
 			}
 
 			"04"
@@ -5598,10 +5598,10 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"300"
-		"AbilityCastPoint"	"0.53 0.53 0.53 0.53 0.40 0.27"
+		"AbilityCastPoint"	"0.53 0.53 0.53 0.53 0.43 0.33"
 		"AbilityCooldown"	"35.0 35.0 35.0 35.0 35.0 35.0 35.0"
-		"AbilityDamage"		"20 28 36 44 52 60 72"
-		"AbilityManaCost"	"145 150 165 180 195 215 250"
+		"AbilityDamage"		"16 24 32 40 48 56 64"
+		"AbilityManaCost"	"145 150 165 190 225 270 325"
 		"AbilitySpecial"
 		{
 			"05"
@@ -11931,6 +11931,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"damage_multiplier"	"7.0 7.5 8.0 8.5 9.0 9.5 10"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"02"
@@ -15105,7 +15106,7 @@
 	"slark_shadow_dance"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"60.0"
+		"AbilityCooldown"	"40.0"
 		"AbilityManaCost"	"120"
 		"AbilitySpecial"
 		{
@@ -19401,6 +19402,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"percent_damage"	"8"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"04"

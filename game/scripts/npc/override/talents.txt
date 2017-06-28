@@ -60,7 +60,7 @@
 	"special_bonus_unique_bounty_hunter_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"300"}}}
 	"special_bonus_unique_bounty_hunter"			{"AbilitySpecial"{"01"{ "var_type""FIELD_FLOAT""value"		"3.5"}}}
 	"special_bonus_unique_weaver_1"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"200"}}}
-	"special_bonus_unique_weaver_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"300"}}}
+	"special_bonus_unique_weaver_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"200"}}}
 	"special_bonus_unique_jakiro_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"100"}}}
 	"special_bonus_unique_chen_3"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"8"}}}
 	"special_bonus_unique_chen_4"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"7500"}}}
