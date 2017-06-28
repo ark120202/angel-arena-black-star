@@ -1,0 +1,3 @@
+Heroes:
+	Centaur's Stampede now not scalable by spell amplify
+	Outworld Devourer's Arcane Orb now not scalable by spell amplify

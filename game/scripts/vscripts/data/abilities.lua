@@ -192,6 +192,8 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	silencer_glaives_of_wisdom = true,
 	winter_wyvern_arctic_burn = true,
 	obsidian_destroyer_sanity_eclipse = true,
+	centaur_stampede = true,
+	obsidian_destroyer_arcane_orb = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

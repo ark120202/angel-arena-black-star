@@ -11031,7 +11031,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"cooldown_scepter"	"0.5"
+				"cooldown_scepter"	"1.0"
 			}
 
 			"03"
@@ -11677,7 +11677,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"intellect_damage_pct"	"40.0 42.5 45.0 47.5 50.0 52.5 55.0"
+				"intellect_damage_pct"	"20.0 22.5 25.0 27.5 30.0 32.5 35.0"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 
@@ -11752,13 +11752,15 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"mana_pool_damage_pct"	"1 1.5 2 2.5 3 3.25 3.5"
+				"mana_pool_damage_pct"	"1.0 1.25 1.5 1.75 2.0 2.25 2.5"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"illusion_damage"	"100 200 300 400 500 600 700"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"03"
@@ -15505,8 +15507,8 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"strength_damage"	"1.0 2.0 3.0 4.0 5.0 6.0 7.0"
-				"CalculateSpellDamageTooltip"	"1"
+				"strength_damage"	"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"04"
