@@ -2,7 +2,6 @@ modifier_sai_divine_flesh_on = class({})
 function modifier_sai_divine_flesh_on:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
 	}
 end
@@ -13,10 +12,6 @@ end
 function modifier_sai_divine_flesh_on:GetModifierMagicalResistanceBonus()
 	local ability = self:GetAbility()
 	return ability:GetSpecialValueFor("active_magic_resistance_pct")
-end
-function modifier_sai_divine_flesh_on:GetModifierAttackSpeedBonus_Constant()
-	local ability = self:GetAbility()
-	return ability:GetSpecialValueFor("attack_speed_bonus")
 end
 
 modifier_sai_divine_flesh_off = class({})
@@ -29,9 +24,9 @@ function modifier_sai_divine_flesh_off:GetModifierHealthRegenPercentage()
 	local ability = self:GetAbility()
 	local unit = self:GetParent()
 	if unit:FindAbilityByName("sai_immortal"):GetToggleState()==true and
-		self:GetParent():GetMana() >= unit:FindAbilityByName("sai_immortal"):GetSpecialValueFor("mana_second") then
-		return ability:GetSpecialValueFor("heal_pct") * 
-		unit:FindAbilityByName("sai_immortal"):GetSpecialValueFor("bonus_regen_pct")
+		self:GetParent():GetMana() >= unit:FindAbilityByName("sai_immortal"):GetSpecialValueFor("mana_per_second") then
+		return ability:GetSpecialValueFor("health_regeneration_pct") * 
+		unit:FindAbilityByName("sai_immortal"):GetSpecialValueFor("bonus_regen")
 	else
 		return ability:GetSpecialValueFor("health_regeneration_pct")
 	end

@@ -9,10 +9,10 @@ DOTA_Tooltip_ability_sai_rage_of_pain_crit_mult_pre_stack_pct: '%КРИТИЧЕ�
 
 DOTA_Tooltip_ability_sai_divine_flesh: Divine flesh
 DOTA_Tooltip_ability_sai_divine_flesh_Description: 'Невероятная сила Сая способна как разрушать его тело, так и исцелять его. Когда способность включена, Сай получает чистый урон каждую секунду, но в замен получает дополнительную броню и споротивление магическому урону. Когда способность не активна, увеличивает регенерацию здоровья.'
-DOTA_Tooltip_ability_sai_divine_flesh_health_regeneration_pct: 'ДОП. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'
-DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: '%УРОН ОТ МКАС. ЗДОРОВЬЯ:'
+DOTA_Tooltip_ability_sai_divine_flesh_health_regeneration_pct: '%ДОП. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'
+DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: '%УРОН ОТ МАКС. ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_sai_divine_flesh_bonus_armor: 'ДОПОЛНИТЕЛЬНАЯ БРОНЯ:'
-DOTA_Tooltip_ability_sai_divine_flesh_bonus_magic_resistance: 'СОПРОТИВЛЕНИЕ МАГ. УРОНУ:'
+DOTA_Tooltip_ability_sai_divine_flesh_bonus_magic_resistance: '%СОПРОТИВЛЕНИЕ МАГ. УРОНУ:'
 
 DOTA_Tooltip_ability_sai_immortal: Immortal
 DOTA_Tooltip_ability_sai_immortal_Description: 'Пока способность включена, урон, скорость атаки и скорость передвижения Сая уменьшаются, но взамен уменьшается весь получаемый урон, а регенерация здоровья увеличивается.'

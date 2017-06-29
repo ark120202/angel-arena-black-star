@@ -32,7 +32,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_mult_pre_stack_pct"		"4 8 12 16 20 24 28"
+				"crit_mult_pre_stack_pct"		"5 10 15 20 25 30 35"
 			}
 		}
 	}
@@ -51,7 +51,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"health_regeneration_pct"			"0.3 0.6 0.9 1.2 1.5 1.8 2.1"
+				"health_regeneration_pct"			"0.2 0.4 0.6 0.8 1.0 1.2 1.4"
 			}
 			"02"
 			{
@@ -66,17 +66,12 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"active_magic_resistance_pct" 		"4 8 12 16 20 24 28"
+				"active_magic_resistance_pct" 		"16 20 24 28 32 36 40"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"think_interval"	"0.1"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"attack_speed_bonus"	"40 80 120 160 200 240 280"
 			}
 		}
 	}
@@ -105,7 +100,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_regen_pct"	"3 6 9 12 15 18 25 30"
+				"bonus_regen"	"0.3 0.6 0.9 1.2 1.5 1.8 2.1"
 			}
 			"04"
 			{
@@ -115,12 +110,17 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_speed_debuff"	"280"
+				"attack_speed_debuff"	"-280"
 			}
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"think_interval"	"0.1"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"decreasement_ms_pct"			"-25"
 			}
 		}
 	}

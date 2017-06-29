@@ -15,15 +15,15 @@ end
 
 function modifier_sai_immortal:GetModifierAttackSpeedBonus_Constant()
 	if self:GetParent():GetMana() >= self:GetAbility():GetSpecialValueFor("mana_per_second") then
-		return -self:GetAbility():GetSpecialValueFor("attack_speed_debuff")
+		return self:GetAbility():GetSpecialValueFor("attack_speed_debuff")
 	end
 end
 
 function modifier_sai_immortal:GetModifierMoveSpeedBonus_Percentage()
 	local ability = self:GetAbility()
-	local debuff = ability:GetSpecialValueFor("decreasement_pct")
+	local debuff = ability:GetSpecialValueFor("decreasement_ms_pct")
 	if self:GetParent():GetMana() >= self:GetAbility():GetSpecialValueFor("mana_per_second") then
-		return -debuff
+		return debuff
 	end
 end
 
@@ -31,7 +31,7 @@ function modifier_sai_immortal:GetModifierTotalDamageOutgoing_Percentage()
 	local ability = self:GetAbility()
 	local debuff = ability:GetSpecialValueFor("decreasement_pct")
 	if self:GetParent():GetMana() >= self:GetAbility():GetSpecialValueFor("mana_per_second") then
-		return -debuff
+		return debuff
 	end
 end
 
