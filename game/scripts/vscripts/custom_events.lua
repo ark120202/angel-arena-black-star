@@ -136,7 +136,8 @@ end
 
 function GameMode:OnAdsClicked(data)
 	local playerID = data.PlayerID
-	if not PLAYER_DATA[playerID].adsClicked then
-		PLAYER_DATA[playerID].adsClicked = true
+	local key = data.source == "loading_screen" and "adsClickedLoading" or "adsClicked"
+	if not PLAYER_DATA[playerID][key] then
+		PLAYER_DATA[playerID][key] = true
 	end
 end
