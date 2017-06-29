@@ -232,3 +232,29 @@
 	transition-duration: .2s
 	transition-property: color
 	horizontal-align: center
+
+#AdsBanner
+	padding: 2px
+	margin: 4px 0
+	width: 100%
+	vertical-align: bottom;
+	transition-property: pre-transform-scale2d, brightness
+	transition-duration: .07s
+	brightness: .98
+
+	&:active
+		pre-transform-scale2d: 1.02
+		brightness: 1.3
+
+	> Label
+		margin-right: 6px
+		margin-bottom: -2px
+		font-size: 48px
+		font-weight: bold
+		color: #ffd700
+		transition-duration: .2s
+		transition-property: saturation
+		align: right bottom
+
+		.AdsClicked &
+			saturation: 0

@@ -140,16 +140,31 @@ function CheckStartable() {
 	}
 }
 
-
-var adsEnabledLangs = [
+var russianLangs = [
 	'russian',
 	'ukrainian',
-	'bulgarian',
-	'english'
+	'bulgarian'
 ];
+function OnAdsClicked() {
+	var context = $.GetContextPanel();
+	$.Schedule(context.BHasClass('AdsClicked') ? 0 : .35, function() {
+		$.DispatchEvent('ExternalBrowserGoToURL', 'https://angelarenablackstar-ark120202.rhcloud.com/ads/loading_screen/go');
+	});
+	if (!context.BHasClass('AdsClicked')){
+		context.AddClass('AdsClicked');
+		Game.EmitSound('General.CoinsBig');
+		GameEvents.SendCustomGameEventToServer('on_ads_clicked', {
+			source: 'loading_screen'
+		});
+	}
+}
+
+
 (function() {
+	$('#AdsBanner').SetImage('https://angelarenablackstar-ark120202.rhcloud.com/ads/loading_screen/' + (russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png'));
+
 	$('#OptionVotings').RemoveAndDeleteChildren();
-	$('#loading-alastor').visible = adsEnabledLangs.indexOf($.Language()) > -1;
+	$('#loading-alastor').visible = russianLangs.indexOf($.Language()) > -1;
 	CheckStartable();
 	FillTips();
 	$('#TipsPanel').visible = TipList.length > 0;
