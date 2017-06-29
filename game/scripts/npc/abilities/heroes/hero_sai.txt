@@ -12,27 +12,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_per_stack_pct"			"10"
+				"health_per_stack_pct"			"21"
 			}
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_stack_pct"			"6 12 18 24 30 36 42"
+				"damage_per_stack_pct"			"3 6 9 12 15 18 21"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance_pct"		"10"
+				"crit_chance_pct"		"5"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance_per_stack_pct"		"2"
+				"crit_chance_per_stack_pct"		"1"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_mult_pre_stack_pct"		"6 15 24 33 42 51 60"
+				"crit_mult_pre_stack_pct"		"4 8 12 16 20 24 28"
 			}
 		}
 	}
@@ -45,7 +45,7 @@
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"3.0"
+		"AbilityCooldown"				"1.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -61,12 +61,22 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"active_bonus_armor"				"5 10 15 20 25 30 35"
+				"active_bonus_armor"				"5 15 25 35 45 55 65"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"active_magic_resistance_pct" 		"4 8 12 16 20 24 28"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"think_interval"	"0.1"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_speed_bonus"	"40 80 120 160 200 240 280"
 			}
 		}
 	}
@@ -101,6 +111,16 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"mana_per_second"		"10 30 50 70 90 110 130"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_speed_debuff"	"280"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"think_interval"	"0.1"
 			}
 		}
 	}
