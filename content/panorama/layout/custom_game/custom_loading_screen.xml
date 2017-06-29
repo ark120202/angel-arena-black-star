@@ -140,7 +140,9 @@
 				<Panel id="OptionVotings" hittest="true" />
 			</Panel>
 			<Panel id="TeamSelectionColumn" />
-			<Panel hittest="false" id="SettingsColumn" />
+			<Panel hittest="false" id="SettingsColumn">
+				<Image id="AdsBanner" onactivate="OnAdsClicked()" />
+			</Panel>
 		</Panel>
 	</Panel>
 </root>
