@@ -130,7 +130,8 @@
 		</Panel>
 		<Panel id="afterload_panel" hittest="true">
 			<Panel hittest="false" id="GCColumn" >
-				<Panel id="LocalPlayerData" />
+				<!-- <Panel id="LocalPlayerData" /> -->
+				<Image id="AdsBanner" onactivate="OnAdsClicked()" />
 				<Panel id="TopPlayers">
 					<Label id="TopPlayersTitle" text="#ranked_top_players" />
 					<Panel class="Spinner" />
@@ -140,9 +141,7 @@
 				<Panel id="OptionVotings" hittest="true" />
 			</Panel>
 			<Panel id="TeamSelectionColumn" />
-			<Panel hittest="false" id="SettingsColumn">
-				<Image id="AdsBanner" onactivate="OnAdsClicked()" />
-			</Panel>
+			<Panel hittest="false" id="SettingsColumn" />
 		</Panel>
 	</Panel>
 </root>
