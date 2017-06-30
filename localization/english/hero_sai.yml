@@ -1,25 +1,31 @@
 npc_arena_hero_sai: Sai
 
 DOTA_Tooltip_ability_sai_rage_of_pain: Rage of pain
-DOTA_Tooltip_ability_sai_rage_of_pain_Description: 'The more mutilations on the body of Sai, the stronger he becomes. On every 10% missing hp gives Sai %damage_pct%%% bonus damage. Critical chance bonus gain on 10% on every missing 2% of hp. Critical multiplier bonus gain on %crit_pct%%% on every missing hp.'
+DOTA_Tooltip_ability_sai_rage_of_pain_Description: 'The more mutilations on the body of Sai, the stronger he becomes. On every 20% missing hp gives Sai %damage_per_stack_pct%%% bonus damage. Critical chance bonus gain on %crit_chance_pct%%% on every missing %crit_chance_per_stack_pct%%% of hp. Critical multiplier bonus gain on %crit_mult_pre_stack_pct%%% on every missing hp.
+'
+DOTA_Tooltip_ability_sai_rage_of_pain_damage_per_stack_pct: '%DAMAGE FOR STACK:'
+DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_pct: '%CRIT CHANCE:'
+DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_per_stack_pct: '%CRIT CHANCE FOR STACK:'
+DOTA_Tooltip_ability_sai_rage_of_pain_crit_mult_pre_stack_pct: '%CRIT DAMAGE FOR STACK:'
 
 DOTA_Tooltip_ability_sai_divine_flesh: Divine flesh
-DOTA_Tooltip_ability_sai_divine_flesh_Description: 'Incredible streatht of Say can destroy his body and heal him. If diacctived gain %heal_pct%%% hp per second. If acctived consume %damage_pct%%% hp per second, gain %armor%%% armor and %resistange%%% magic resistance.'
-DOTA_Tooltip_ability_sai_divine_flesh_health_regeneration_pct: 'BONUS HP REGENIRATION:'
-DOTA_Tooltip_ability_sai_divine_flesh_damage_pct: 'BONUS DAMAGE:'
+DOTA_Tooltip_ability_sai_divine_flesh_Description: 'Incredible streatht of Say can destroy his body and heal him. If diacctived gain %health_regeneration_pct%%% hp per second. If acctived consume %active_self_damage_pct%%% hp per second, gain %active_bonus_armor%%% armor and %active_magic_resistance_pct%%% magic resistance.'
+DOTA_Tooltip_ability_sai_divine_flesh_health_regeneration_pct: '%BONUS HP REGENIRATION:'
+DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: 'BONUS DAMAGE:'
 DOTA_Tooltip_ability_sai_divine_flesh_bonus_armor: 'BONUS ARMOR:'
 DOTA_Tooltip_ability_sai_divine_flesh_bonus_magic_resistance: 'BONUS MAGIC RESSISTANCE:'
 
 DOTA_Tooltip_ability_sai_immortal: Immortal
-DOTA_Tooltip_ability_sai_immortal_Description: 'If acctived reduces damage, attack speed and movement speed of Sai on %debuff_pct%%%, but reduces all taking damage on %damage_reduction_pct%%% and give bonus regeniration of hp in %bonus_regen_pct%%% times. It consume %mana_second%%% mp per second.'
+DOTA_Tooltip_ability_sai_immortal_Description: 'If acctived reduces damage, attack speed and movement speed of Sai increases, but reduces all taking damage on %damage_reduction_pct%%% and give bonus regeniration of hp in %bonus_regen%%% times. It consume %mana_per_second%%% mp per second.'
 DOTA_Tooltip_ability_sai_immortal_damage_reduction_pct: 'REDUCESED ALL DAMAGE:'
-DOTA_Tooltip_ability_sai_immortal_mana_second: 'MP PER SECOND:'
-DOTA_Tooltip_ability_sai_immortal_bonus_regen_pct: 'BONUS HP REGENIRATION:'
+DOTA_Tooltip_ability_sai_immortal_mana_per_second: 'MP PER SECOND:'
+DOTA_Tooltip_ability_sai_immortal_bonus_regen: 'BONUS HP REGENIRATION:'
 
 
-DOTA_Tooltip_ability_sai_release_of_forge: Release of forge
-DOTA_Tooltip_ability_sai_release_of_forge_Description: 'If Sai take his true form even sun fade away. Hero can't die in %time_to_death%%% seconds, his hp falls to one unit and can't added no one way, else gives %damage_pct%%% on his autoattacks damage in PURE damage, his movement speed is becomes to max and immnunity to slow, else given debuff on slow on ALL heroes on 25% and reduces his vision on 300 and also it set night. On end of ultimate hero die and time to respawn increases on %respawn_time%%% seconds.'
-DOTA_Tooltip_ability_sai_release_of_forge_time_to_death: 'TIME TO DIE:'
-DOTA_Tooltip_ability_sai_release_of_forge_damage_pct: 'BONUS DAMAGE:'
-DOTA_Tooltip_ability_sai_release_of_forge_vision_radius: 'REDUSE VISION:'
-DOTA_Tooltip_ability_sai_release_of_forge_espawn_time: 'INCREASES RESPAWN TIME:'
+DOTA_Tooltip_ability_sai_release_of_forge: Release of Forge
+DOTA_Tooltip_ability_sai_release_of_forge_Description: 'If Sai take his true form even sun fade away. Hero can't die in %duration% seconds, his hp falls to one unit and can't added no one way, else gives %pure_damage_pct%%% on his autoattacks damage in PURE damage, his movement speed is becomes to max and immnunity to slow, else given debuff on slow on ALL heroes on 25% and reduces his vision on 300 and also it set night. On end of ultimate hero die and time to respawn increases on %bonus_respawn_time% seconds.'
+DOTA_Tooltip_ability_sai_release_of_forge_duration: 'DURATION:'
+DOTA_Tooltip_ability_sai_release_of_forge_pure_damage_pct: '%BONUS PURE DAMAGE:'
+DOTA_Tooltip_ability_sai_release_of_forge_aura_movement_speed_slow_pct: '%INCREASES MOVEMENT SPEED:'
+DOTA_Tooltip_ability_sai_release_of_forge_aura_vision_decrease: 'REDUSE VISION:'
+DOTA_Tooltip_ability_sai_release_of_forge_bonus_respawn_time: 'INCREASES RESPAWN TIME:'

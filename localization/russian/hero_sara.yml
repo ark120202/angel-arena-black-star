@@ -15,11 +15,12 @@ DOTA_Tooltip_modifier_sara_evolution: Evolution
 DOTA_Tooltip_modifier_sara_evolution_Description: Увеличивает максимальную энергию за каждый цикл на %dMODIFIER_PROPERTY_TOOLTIP%
 
 DOTA_Tooltip_ability_sara_space_dissection: Space Dissection
-DOTA_Tooltip_ability_sara_space_dissection_Description: 'Клинок Сары рассекает пространство, время и души врагов.Когда способность не вперезарядке, она мгновенно убивает крипа и снижает броню боссам и героям. Когда способность убивает крипа, вы не получаете за него золото и опыт, но прирост максимальной энергии увеличивается вдвое. Снижение брони зависит от потребления энергии этой способностью. Снижение брони стакается. При атаке боссов или героев отнимается %energy_pct%%% максимальной энергии Сары.'
+DOTA_Tooltip_ability_sara_space_dissection_Description: 'Когда способность не на перезарядке, она мгновенно убивает крипа и снижает броню боссам и героям (снижение брони боссам уменьшено). Когда способность убивает крипа, вы не получаете за него золото и опыт, но прирост энергии увеличивается вдвое. Снижение брони зависит от потребления энергии этой способностью. Снижение брони стакается. При атаке боссов или героев отнимается %energy_pct%%% максимальной энергии Сары.'
 DOTA_Tooltip_ability_sara_space_dissection_aghanim_description: 'Теперь убийство крипов дает золото и опыт, множитель маны также увеличен до 4. Теперь количество стаков не ограничено.'
 DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier: 'МНОЖИТЕЛЬ:'
 DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier_scepter: 'МНОЖИТЕЛЬ СО СКИПЕТРОМ:'
-DOTA_Tooltip_ability_sara_space_dissection_energy_to_disarmor_pct: '%ЭНЕРГИИ В СНИЖЕНИЕ БРОНИ:'
+DOTA_Tooltip_ability_sara_space_dissection_energy_to_disarmor_pct: '%ЭНЕРГИИ В СНИЖ. БРОНИ:'
+DOTA_Tooltip_ability_sara_space_dissection_energy_to_disarmor_bosses_pct: '%ЭНЕРГИИ В СНИЖ. БРОНИ БОССУ:'
 DOTA_Tooltip_ability_sara_space_dissection_disarmor_duration: 'ДЛИТЕЛЬНОСТЬ СНИЖЕНИЯ:'
 DOTA_Tooltip_ability_sara_space_dissection_energy_pct: '%МАНАКОСТ:'
 DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction: Space Dissection
@@ -31,7 +32,7 @@ DOTA_Tooltip_ability_sara_dark_blink_blink_range: 'ДАЛЬНОСТЬ:'
 DOTA_Tooltip_ability_sara_dark_blink_energy_to_blink_range: '%ЭНЕРГИИ В ДАЛЬНОСТЬ:'
 
 DOTA_Tooltip_ability_sara_fragment_of_hate: Fragment of Hate
-DOTA_Tooltip_ability_sara_fragment_of_hate_Description: 'Фрагмент души Сары, олицетворяющий ее жестокость и силу. Добавляет атакам шанс критического удара. Множитель крита основан на ее текущей энергии. Также увеличивает ее урон, основываясь на текущей энергии.'
+DOTA_Tooltip_ability_sara_fragment_of_hate_Description: 'Добавляет атакам шанс критического удара. Множитель крита основан на ее текущей энергии. Также увеличивает урон героя, основываясь на текущей энергии.'
 DOTA_Tooltip_ability_sara_fragment_of_hate_aghanim_description: Активная способность; Временно увеличивает бонус к урону.
 DOTA_Tooltip_ability_sara_fragment_of_hate_crit_chance_pct: '%ШАНС КРИТА:'
 DOTA_Tooltip_ability_sara_fragment_of_hate_energy_to_crit_pct: '%ЭНЕРГИИ В КРИТ:'

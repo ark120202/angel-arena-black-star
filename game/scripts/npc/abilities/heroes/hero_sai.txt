@@ -12,27 +12,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_per_stack_pct"			"21"
+				"health_per_stack_pct"			"20"
 			}
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_stack_pct"			"3 6 9 12 15 18 21"
+				"damage_per_stack_pct"			"2 4 6 8 10 12 14"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance_pct"		"5"
+				"crit_chance_pct"		"10"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance_per_stack_pct"		"1"
+				"var_type"				"FIELD_FLOAT"
+				"crit_chance_per_stack_pct"		"0.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_mult_pre_stack_pct"		"5 10 15 20 25 30 35"
+				"crit_mult_pre_stack_pct"		"15 20 25 30 35 40 45"
 			}
 		}
 	}
@@ -43,7 +43,7 @@
 		"AbilityTextureName"			"arena/sai_divine_flesh"
 		"ScriptFile"					"heroes/hero_sai/divine_flesh.lua"
 		"MaxLevel" 						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"1.0"
 		"AbilitySpecial"
@@ -82,7 +82,7 @@
 		"AbilityTextureName"			"arena/sai_immortal"
 		"ScriptFile"					"heroes/hero_sai/immortal.lua"
 		"MaxLevel" 						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityManaCost"			"%mana_per_second"
 
 		"AbilitySpecial"
@@ -122,6 +122,10 @@
 				"var_type"			"FIELD_INTEGER"
 				"decreasement_ms_pct"			"-25"
 			}
+		}
+		"precache"
+		{
+			"particle"	"particles/arena/units/heroes/hero_sai/immortal.vpcf"
 		}
 	}
 

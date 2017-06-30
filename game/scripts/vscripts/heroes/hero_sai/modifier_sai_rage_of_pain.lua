@@ -20,7 +20,7 @@ end
 function modifier_sai_rage_of_pain:OnIntervalThink()
 	local ability = self:GetAbility()
 	local parent = self:GetParent()
-	self:SetStackCount(ability:GetSpecialValueFor("health_per_stack_pct") - math.ceil(parent:GetHealth() / parent:GetMaxHealth() * ability:GetSpecialValueFor("health_per_stack_pct")))
+	self:SetStackCount(ability:GetSpecialValueFor("health_per_stack_pct")+1 - math.ceil(parent:GetHealth() / parent:GetMaxHealth() * ability:GetSpecialValueFor("health_per_stack_pct")+1))
 end
 
 function modifier_sai_rage_of_pain:GetModifierPreAttack_CriticalStrike(keys)
