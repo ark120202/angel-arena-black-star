@@ -7,13 +7,15 @@ DOTA_Tooltip_ability_sai_rage_of_pain_damage_per_stack_pct: '%УРОН ЗА СТ
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_pct: '%ШАНС КРИТА:'
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_per_stack_pct: '%ШАНС КРИТА ЗА СТАК:'
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_mult_pre_stack_pct: '%КРИТИЧЕСКИЙ УРОН ЗА СТАК:'
+DOTA_Tooltip_modifier_sai_rage_of_pain: Rage of pain
+DOTA_Tooltip_modifier_sai_rage_of_pain_Description:  Урон увеличен на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%
 
 DOTA_Tooltip_ability_sai_divine_flesh: Divine flesh
 DOTA_Tooltip_ability_sai_divine_flesh_Description: 'Когда способность включена, Сай получает чистый урон каждую секунду, но в замен получает дополнительную броню и споротивление магическому урону. Когда способность не активна, увеличивает регенерацию здоровья.'
 DOTA_Tooltip_ability_sai_divine_flesh_health_regeneration_pct: '%ДОП. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: '%УРОН ОТ МАКС. ЗДОРОВЬЯ:'
-DOTA_Tooltip_ability_sai_divine_flesh_bonus_armor: 'ДОП. БРОНЯ:'
-DOTA_Tooltip_ability_sai_divine_flesh_bonus_magic_resistance: '%СОПР. МАГ. УРОНУ:'
+DOTA_Tooltip_ability_sai_divine_flesh_active_bonus_armor: 'ДОП. БРОНЯ:'
+DOTA_Tooltip_ability_sai_divine_flesh_active_magic_resistance_pct: '%СОПР. МАГ. УРОНУ:'
 
 DOTA_Tooltip_ability_sai_immortal: Immortal
 DOTA_Tooltip_ability_sai_immortal_Description: 'Пока способность включена, урон, скорость атаки и скорость передвижения Сая уменьшаются, но взамен уменьшается весь получаемый урон, а регенерация здоровья увеличивается.'

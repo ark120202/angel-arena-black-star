@@ -9,11 +9,3 @@ Sara:
 	Space Dissection use current energy now (Older max energy)
 	Space Dissection now use 1% of manacost for disarmoring bosses
 	Space Dissection cost changed from 15% to 10%.
-
-Sai:
-	Rage of Pain:
-		Bonus damage: 3 6 9 12 15 18 21 => 2 4 6 8 10 12 14
-		Critical chance: 5 => 10
-		Critical chance per stack: 1 => 0.5
-		Critical damage: 5 10 15 20 25 30 35 => 15 20 25 30 35 40 45
-	Now 2-th and 3-th spells can use in disables.

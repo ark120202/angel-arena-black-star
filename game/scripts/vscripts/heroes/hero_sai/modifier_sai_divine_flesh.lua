@@ -33,10 +33,10 @@ function modifier_sai_divine_flesh_off:GetModifierHealthRegenPercentage()
 end
 
 function modifier_sai_divine_flesh_on:IsHidden()
-	return false
+	return true
 end
 function modifier_sai_divine_flesh_off:IsHidden()
-	return false
+	return true
 end
 
 if IsServer() then

@@ -11,9 +11,3 @@ if IsServer() then
 		end
 	end
 end
-
-modifier_sai_immortal = class({
-	IsHidden = function() return true end,
-	GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end,
-	GetEffectName = function() return "particles/arena/units/heroes/hero_sai/immortal.vpcf" end,
-})

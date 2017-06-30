@@ -20,17 +20,17 @@ end
 function modifier_sai_rage_of_pain:OnIntervalThink()
 	local ability = self:GetAbility()
 	local parent = self:GetParent()
-	self:SetStackCount(ability:GetSpecialValueFor("health_per_stack_pct")+1 - math.ceil(parent:GetHealth() / parent:GetMaxHealth() * ability:GetSpecialValueFor("health_per_stack_pct")+1))
+	self:SetStackCount((ability:GetSpecialValueFor("health_per_stack_pct")+1) - math.ceil(parent:GetHealth() / parent:GetMaxHealth() * (ability:GetSpecialValueFor("health_per_stack_pct")+1)))
 end
 
 function modifier_sai_rage_of_pain:GetModifierPreAttack_CriticalStrike(keys)
 	local ability = self:GetAbility()
 	local stacks = self:GetStackCount()
-	if RollPercentage(ability:GetSpecialValueFor("crit_chance_pct") * stacks) then
-		return 100 + ability:GetSpecialValueFor("crit_chance_per_stack_pct") * stacks
+	if RollPercentage(ability:GetSpecialValueFor("crit_chance_per_stack_pct") * stacks) then
+		return (100 + self:GetAbility():GetSpecialValueFor("crit_mult_pre_stack_pct") * self:GetStackCount())
 	end
 end
 
 function modifier_sai_rage_of_pain:GetModifierBaseDamageOutgoing_Percentage(keys)
-	return self:GetAbility():GetSpecialValueFor("damage_per_stack_pct") * self:GetStackCount()
+	return (self:GetAbility():GetSpecialValueFor("damage_per_stack_pct") * self:GetStackCount())
 end

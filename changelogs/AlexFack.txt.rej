@@ -1,0 +1,22 @@
+diff a/changelogs/AlexFack.txt b/changelogs/AlexFack.txt	(rejected hunks)
+@@ -0,0 +1,19 @@
++Sara:
++	Dark Blink:
++		Default range: 600 700 800 900 1000 1100 1200 => 600
++	Fragment of logic:
++		Manacost pct: 33% on all levels
++		Manacost const: 500 450 400 350 300 250 200 => 300 250 200 150 100 50 0
++	Fragment of Armor: 
++		Damage per energy: 2 => 1.25
++	Space Dissection use current energy now (Older max energy)
++	Space Dissection now use 1% of manacost for disarmoring bosses
++	Space Dissection cost changed from 15% to 10%.
++
++Sai:
++	Rage of Pain:
++		Bonus damage: 3 6 9 12 15 18 21 => 2 4 6 8 10 12 14
++		Critical chance: 5 => 10
++		Critical chance per stack: 1 => 0.5
++		Critical damage: 5 10 15 20 25 30 35 => 15 20 25 30 35 40 45
++	Now 2-th and 3-th spells can use in disables.
+\ No newline at end of file
