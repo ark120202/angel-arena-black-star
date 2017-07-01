@@ -17,7 +17,7 @@ DOTA_Tooltip_modifier_sara_evolution: Evolution
 DOTA_Tooltip_modifier_sara_evolution_Description: Increases maximal energy with each cycle by %dMODIFIER_PROPERTY_TOOLTIP%
 
 DOTA_Tooltip_ability_sara_space_dissection: Space Dissection
-DOTA_Tooltip_ability_sara_space_dissection_Description: 'Sara''s cursed blade splits time space and enemy solus. When ability is not on coolodwn it can immediately kill creep or decrease hero''s or bosses armor. When ability kills a creep you won''t get gold and experience from this creep, but instead you will get %creep_energy_multiplier%x max energy. Decreased armor will be based on Sara''s wasted energy. Armor decreasing debuff stacks. Attacking hero or boss with this ability will waste %energy_pct%%% of Sara''s max energy.'
+DOTA_Tooltip_ability_sara_space_dissection_Description: 'Sara''s cursed blade splits time space and enemy solus. When ability is not on coolodwn it can immediately kill creep or decrease hero''s or bosses armor. When ability kills a creep you won''t get gold and experience from this creep, but instead you will get %creep_energy_multiplier%x max energy and this ability won''t waste Sata''s energy. Decreased armor will be based on Sara''s wasted energy. Armor decreasing debuff stacks.'
 DOTA_Tooltip_ability_sara_space_dissection_aghanim_description: 'Killed creeps now will grant gold and experience, energy multiplier also increased. Now applying armor reduction debuff also refreshes duration of previous effects'
 DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier: '%CREEP ENERGY MULTIPLIER:'
 DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier_scepter: '%CREEP ENERGY MULTIPLIER WITH SCEPTER:'
@@ -28,13 +28,14 @@ DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction: Space Dissection
 DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 
 DOTA_Tooltip_ability_sara_dark_blink: Dark Blink
-DOTA_Tooltip_ability_sara_dark_blink_Description: 'Sara instantly moves to the selected point. The distance increases with the amount of energy.'
+DOTA_Tooltip_ability_sara_dark_blink_Description: 'Sara instantly moves to the selected point. The distance increases with the amount of energy. Each %range_energy_step% range additionally wastes %max_energy_per_step_pct%%% of Sara''s max energt, but this energy is''t required to cast this ability.'
 DOTA_Tooltip_ability_sara_dark_blink_blink_range: 'RANGE:'
 DOTA_Tooltip_ability_sara_dark_blink_energy_to_blink_range: 'ENERGY IN RANGE:'
+DOTA_Tooltip_ability_sara_dark_blink_energy_to_min_cost_pct: '%BASE ENERGY COST:'
 
 DOTA_Tooltip_ability_sara_fragment_of_hate: Fragment of Hate
 DOTA_Tooltip_ability_sara_fragment_of_hate_Description: 'The Fragment of Sara''s soul, embodying her violence and power. Gives each her attack a chance to deal critical strike. Critical strike damage will be based on current energy. Additionally passively increases her attack damage, based on current energy.'
-DOTA_Tooltip_ability_sara_fragment_of_hate_aghanim_description: Added active; Temporary increases damage granted by this ability
+DOTA_Tooltip_ability_sara_fragment_of_hate_aghanim_description: Becomes active ability, temporary increasing damage granted by this ability
 DOTA_Tooltip_ability_sara_fragment_of_hate_crit_chance_pct: '%CRIT CHANCE:'
 DOTA_Tooltip_ability_sara_fragment_of_hate_energy_to_crit_pct: '%ENERGY TO CRIT:'
 DOTA_Tooltip_ability_sara_fragment_of_hate_energy_to_damage_pct: '%ENERGY TO DAMAGE:'
@@ -52,10 +53,10 @@ DOTA_Tooltip_ability_sara_fragment_of_armor_reflected_damage_pct_scepter: '%DAMA
 
 DOTA_Tooltip_ability_sara_fragment_of_logic: Fragment of Logic
 DOTA_Tooltip_ability_sara_fragment_of_logic_Description: 'The Fragment of Sara''s soul, embodying her trickery and intelligence. When her health drops to zero, she wastes %energy_const% + %energy_pct%%% of her energy, to fully recover her health. Within some time after health recover, Sara won''t be able to recover energy.'
+DOTA_Tooltip_ability_sara_fragment_of_logic_aghanim_description: Decreases ability cooldown
 DOTA_Tooltip_ability_sara_fragment_of_logic_energy_const: 'CONSTANT ENERGY COST:'
 DOTA_Tooltip_ability_sara_fragment_of_logic_energy_pct: '%ENERGY COST:'
 DOTA_Tooltip_ability_sara_fragment_of_logic_debuff_duration: 'DEBUFF DURATION:'
+DOTA_Tooltip_ability_sara_fragment_of_logic_cooldown_scepter: 'COOLDOWN WITH SCEPTER:'
 DOTA_Tooltip_modifier_sara_fragment_of_logic_debuff: Fragment of Logic
 DOTA_Tooltip_modifier_sara_fragment_of_logic_debuff_Description: Can't restore energy
-DOTA_Tooltip_modifier_sara_fragment_of_logic_buff_scepter: Fragment of Logic
-DOTA_Tooltip_modifier_sara_fragment_of_logic_buff_scepter_Description: Max energy increased by %dMODIFIER_PROPERTY_TOOLTIP%

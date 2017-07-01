@@ -144,12 +144,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_per_to_cost"		"50"
+				"range_energy_step"		"50"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"energy_to_range_per_pct"	"0.5"
+				"max_energy_per_step_pct"	"0.5"
 			}
 			"05"
 			{
@@ -271,17 +271,17 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"energy_pct"		"35 32.5 30 27.5 25 22.5 20 15"
+				"energy_pct"		"35 32.5 30 27.5 25 22.5 20"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"			"FIELD_FLOAT"
 				"debuff_duration"	"10"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"scepter_cooldown"	"1"
+				"var_type"			"FIELD_FLOAT"
+				"cooldown_scepter"	"1"
 			}
 		}
 
