@@ -141,8 +141,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"energy_to_blink_range"	"6 7 8 9 10 11 12"
 			}
-<<<<<<< Updated upstream
-=======
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -158,7 +156,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"min_cost_pct"			"5"
 			}
->>>>>>> Stashed changes
 		}
 
 		"precache"
