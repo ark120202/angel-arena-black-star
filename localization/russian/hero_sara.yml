@@ -26,9 +26,10 @@ DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction: Space Dissection
 DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction_Description: Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 
 DOTA_Tooltip_ability_sara_dark_blink: Dark Blink
-DOTA_Tooltip_ability_sara_dark_blink_Description: 'Сара мгновенно перемещается из одной точки пространства в другую. Дальность применения зависит от количества текущей энергии.'
-DOTA_Tooltip_ability_sara_dark_blink_blink_range: 'ДАЛЬНОСТЬ:'
+DOTA_Tooltip_ability_sara_dark_blink_Description: 'Сара мгновенно перемещается из одной точки пространства в другую. Дальность применения зависит от количества текущей энергии. На каждые %range_per_to_cost% единиц перемещения герой теряет %energy_to_range_per_pct%%% своей максимальной энергии.'
+DOTA_Tooltip_ability_sara_dark_blink_blink_range: 'СТАНДАРТНАЯ ДАЛЬНОСТЬ:'
 DOTA_Tooltip_ability_sara_dark_blink_energy_to_blink_range: '%ЭНЕРГИИ В ДАЛЬНОСТЬ:'
+DOTA_Tooltip_ability_sara_dark_blink_energy_to_min_cost_pct: '%МАНАКОСТ:'
 
 DOTA_Tooltip_ability_sara_fragment_of_hate: Fragment of Hate
 DOTA_Tooltip_ability_sara_fragment_of_hate_Description: 'Фрагмент души Сары, олицетворяющий ее жестокость и силу. Добавляет атакам шанс критического удара. Множитель крита основан на ее текущей энергии. Также увеличивает ее урон, основываясь на текущей энергии.'

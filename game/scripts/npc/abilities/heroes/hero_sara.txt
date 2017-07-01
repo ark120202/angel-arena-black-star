@@ -141,6 +141,24 @@
 				"var_type"				"FIELD_INTEGER"
 				"energy_to_blink_range"	"6 7 8 9 10 11 12"
 			}
+<<<<<<< Updated upstream
+=======
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_per_to_cost"		"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"energy_to_range_per_pct"	"0.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_cost_pct"			"5"
+			}
+>>>>>>> Stashed changes
 		}
 
 		"precache"
