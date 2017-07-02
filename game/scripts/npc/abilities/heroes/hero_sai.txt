@@ -100,7 +100,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_regen"	"0.3 0.6 0.9 1.2 1.5 1.8 2.1"
+				"bonus_regen"	"1.4 1.5 1.6 1.7 1.8 1.9 2.0"
 			}
 			"04"
 			{
@@ -133,7 +133,7 @@
 	"sai_release_of_forge"
 	{
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"arena/release_of_forge"
+		"AbilityTextureName"			"arena/sai_release_of_forge"
 		"ScriptFile"					"heroes/hero_sai/release_of_forge.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -155,12 +155,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_movement_speed_slow_pct"	"-25"
+				"aura_movement_speed_slow_pct"	"25"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aura_vision_decrease"		"-300"
+				"aura_vision_decrease"		"300"
 			}
 			"05"
 			{
