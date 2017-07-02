@@ -4,18 +4,21 @@ npc_arena_hero_zen_gehraz_bio: 'Multidimensional essence Xena strives for knowle
 
 DOTA_Tooltip_ability_zen_gehraz_divine_intervention: Divine Intervention
 DOTA_Tooltip_ability_zen_gehraz_divine_intervention_Description: 'Interrupts the target and traps them in place, preventing movement or blinking. The ensnare lasts for as long as the ability is channeled.'
+DOTA_Tooltip_ability_zen_gehraz_divine_intervention_Lore: Ability specifically designed to hold Stargaizer at one point in space.
 DOTA_Tooltip_ability_zen_gehraz_divine_intervention_channel_time: 'MAX CHANNEL TIME:'
 DOTA_Tooltip_modifier_zen_gehraz_divine_intervention: Divine Intervention
 DOTA_Tooltip_modifier_zen_gehraz_divine_intervention_Description: 'Trapped in this place, can''t move or blink'
 
 DOTA_Tooltip_ability_zen_gehraz_mystic_twister: Mystic Twister
 DOTA_Tooltip_ability_zen_gehraz_mystic_twister_Description: Deals damage over time at the target location. Also grants True Sight on enemies inside the area. The area of effect lasts for as long as the ability is channeled.
+DOTA_Tooltip_ability_zen_gehraz_mystic_twister_Lore: A cloud of particles that decompose physical bodies into their elemental constituents.
 DOTA_Tooltip_ability_zen_gehraz_mystic_twister_channel_time: 'MAX CHANNEL TIME:'
 DOTA_Tooltip_ability_zen_gehraz_mystic_twister_damage_per_second: 'DAMAGE PER SECOND:'
 DOTA_Tooltip_ability_zen_gehraz_mystic_twister_radius: 'RADIUS:'
 
 DOTA_Tooltip_ability_zen_gehraz_vow_of_silence: Vow of Silence
 DOTA_Tooltip_ability_zen_gehraz_vow_of_silence_Description: 'Whenever an enemy unit within a %radius% radius casts a spell, that unit is Silenced for %debuff_duration% seconds and all other units within the radius are Stunned. The aura lasts for as long as the ability is channeled.'
+DOTA_Tooltip_ability_zen_gehraz_vow_of_silence_Lore: Powerful electromagnetic radiation, blocking the ability of the magical powers of living beings.
 DOTA_Tooltip_ability_zen_gehraz_vow_of_silence_channel_time: 'MAX CHANNEL TIME:'
 DOTA_Tooltip_ability_zen_gehraz_vow_of_silence_debuff_duration: 'SILENCE / STUN DURATION:'
 DOTA_Tooltip_ability_zen_gehraz_vow_of_silence_radius: 'RADIUS:'
@@ -24,6 +27,7 @@ DOTA_Tooltip_modifier_zen_gehraz_vow_of_silence_effect_Description: 'When execut
 
 DOTA_Tooltip_ability_zen_gehraz_superposition: Superposition
 DOTA_Tooltip_ability_zen_gehraz_superposition_Description: 'Teleport to a target point up to %distance% units away, leaving behind an illusion of yourself. If Superposition interrupts a channeled ability the illusion will continue to channel that ability in your stead, but it can''t be interrupted. Has %max_charges% charges and generates one charge every %charge_replenish_time% seconds. Abilities channeled by illusions have full effect.'
+DOTA_Tooltip_ability_zen_gehraz_superposition_Lore: Essence Xena splits into an infinite number of copies throughout eternity to fully explore the universe.
 DOTA_Tooltip_ability_zen_gehraz_superposition_aghanim_description: Increases max charges amount.
 DOTA_Tooltip_ability_zen_gehraz_superposition_distance: 'MAX BLINK DISTANCE:'
 DOTA_Tooltip_ability_zen_gehraz_superposition_max_charges: 'MAX CHARGES:'

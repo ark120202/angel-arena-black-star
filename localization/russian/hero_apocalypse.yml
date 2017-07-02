@@ -4,6 +4,7 @@ npc_arena_hero_apocalypse_bio: 'Апокалипсис - извечная спу
 DOTA_Tooltip_ability_apocalypse_agnis_touch_Description: |-
   Apocalypse вореут часть брони противника с каждой атакой. Украденная броня теряется при смерти. Не ворует броню боссов, иллюзий и крипов. С уменьшением здоровья Apocalypse'а он начинает пылать, нанося урон всем противникам рядом; чем меньше здоровья - тем сильнее эффекты.
   Apocalypse начинает пылать, когда его здоровье опускается ниже определенной отметки.
+DOTA_Tooltip_ability_apocalypse_agnis_touch_Lore: Жажда к разрушеню Апокалипсис неутолима, и враги познают ее на себе с каждым касанием клинка.
 DOTA_Tooltip_ability_apocalypse_agnis_touch_armor_per_attack: 'БРОНИ ЗА АТАКУ:'
 DOTA_Tooltip_ability_apocalypse_agnis_touch_ablaze_radius: 'РАДИУС ПЫЛАНИЯ:'
 DOTA_Tooltip_ability_apocalypse_agnis_touch_ablaze_max_damage_per_second: 'УРОН ОТ ПЫЛАНИЯ В СЕКУНДУ:'
@@ -16,6 +17,7 @@ DOTA_Tooltip_modifier_apocalypse_agnis_touch_ablaze: Agni's Touch Ablaze
 DOTA_Tooltip_modifier_apocalypse_agnis_touch_ablaze_Description: Apocalypse пылает и наносит урон всем противникам рядом. Урон зависит от процента отсутствующего здоровья Apocalypse
 
 DOTA_Tooltip_ability_apocalypse_king_slayer_Description: 'Apocalypse наносит сокрушительный удар цели, нанося урон. Броня юнита оплавится и он потеряет часть базовой брони. Урон наносится за каждую единицу потерянной брони.'
+DOTA_Tooltip_ability_apocalypse_king_slayer_Lore: Неважно, кем ты являешься, королем или плебеем...
 DOTA_Tooltip_ability_apocalypse_king_slayer_damage_per_armor: 'УРОНА ЗА ЕДИНИЦУ БРОНИ:'
 DOTA_Tooltip_ability_apocalypse_king_slayer_armor_reduction_pct: '%СНИЖЕНИЕ БАЗОВОЙ БРОНИ:'
 DOTA_Tooltip_ability_apocalypse_king_slayer_disarmor_duration: 'ДЛИТЕЛЬНОСТЬ СНИЖЕНИЯ БРОНИ:'
@@ -26,6 +28,7 @@ DOTA_Tooltip_modifier_apocalypse_king_slayer_knockback_Description: Броня �
 DOTA_Tooltip_ability_apocalypse_weapon_break_Description: |-
   Apocalypse ударяет оружие противника, нанося урон и обезоруживая его.
   При использовании Weapon Break, Armor Tear тоже станет перезаряжаться.
+DOTA_Tooltip_ability_apocalypse_weapon_break_Lore: Неважно, сколь мощное оружие ты держишь в руках...
 DOTA_Tooltip_ability_apocalypse_weapon_break_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_modifier_apocalypse_weapon_break: Weapon Break Disarm
 DOTA_Tooltip_modifier_apocalypse_weapon_break_Description: Не может атаковать
@@ -33,6 +36,7 @@ DOTA_Tooltip_modifier_apocalypse_weapon_break_Description: Не может ат�
 DOTA_Tooltip_ability_apocalypse_armor_tear_Description: |-
   Apocalypse ударяет противника по броне, нанося урон и временно снижая его базовую броню на определённый процент.
   При использовании Armor Tear, Weapon Break тоже станет перезаряжаться.
+DOTA_Tooltip_ability_apocalypse_armor_tear_Lore: Неважно, в сколь мощную броню ты закован...
 DOTA_Tooltip_ability_apocalypse_armor_tear_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_apocalypse_armor_tear_armor_cut_pct: '%СНИЖЕНИЕ БАЗОВОЙ БРОНИ:'
 DOTA_Tooltip_modifier_apocalypse_armor_tear: Armor Tear
@@ -41,6 +45,7 @@ DOTA_Tooltip_modifier_apocalypse_armor_tear_Description: Броня уменьш
 DOTA_Tooltip_ability_apocalypse_apocalypse_Description: |-
   Древним ритуалом Apocalypse выпускает тёмное существо из глубин своей души, становяь ужасным демоном разрушения. Существо получает сопротивление к магии, урон и скорость передвижения, увеличивающиеся с течением времени, атаку по площади и постоянно снимает с себя все эффекты.
   Когда время действия заклинания истечёт, Apocalypse погибнет, но это будет засчитано как самоубийство.
+DOTA_Tooltip_ability_apocalypse_apocalypse_Lore: Зверь все равно доберется до тебя.
 DOTA_Tooltip_ability_apocalypse_apocalypse_magic_resistance_per_second_pct: '%СОПРОТИВЛЕНИЕ МАГИИ ЗА СЕКУНДУ:'
 DOTA_Tooltip_ability_apocalypse_apocalypse_damage_per_second_pct: 'ДОП. УРОН ЗА СЕКУНДУ:'
 DOTA_Tooltip_ability_apocalypse_apocalypse_movespeed_per_second_pct: '%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ЗА СЕКУНДУ:'

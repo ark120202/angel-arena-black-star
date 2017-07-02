@@ -5,6 +5,7 @@ npc_arena_hero_cherub_bio: 'A forest child, a creature of pure natural energy, C
 
 DOTA_Tooltip_ability_cherub_sleep_cloud: Sleep Cloud
 DOTA_Tooltip_ability_cherub_sleep_cloud_Description: Creates a cloud of soothing aromas which put enemies to sleep if they are inside its radius for some time. Enemies will wake up when the cloud duration ends or when they take a certain amount of damage.
+DOTA_Tooltip_ability_cherub_sleep_cloud_Lore: Sleeping enemies are helpless enemies.
 DOTA_Tooltip_ability_cherub_sleep_cloud_Note0: 'If awoken by damage, the sleep timer restarts.'
 DOTA_Tooltip_ability_cherub_sleep_cloud_radius: 'CLOUD RADIUS:'
 DOTA_Tooltip_ability_cherub_sleep_cloud_duration: 'CLOUD DURATION:'
@@ -17,6 +18,7 @@ DOTA_Tooltip_modifier_cherub_sleep_cloud_sleep_Description: Spleeping. Wakes up 
 
 DOTA_Tooltip_ability_cherub_synthesis: Synthesis
 DOTA_Tooltip_ability_cherub_synthesis_Description: 'While Toggled, converts Cherub''s mana into health or health into mana, depending on the day/night cycle. During the day cycle, converts her health into mana. During the night cycle, converts her mana into health.'
+DOTA_Tooltip_ability_cherub_synthesis_Lore: Cherub is very close to plants - so much that it has adopted some of their properties.
 DOTA_Tooltip_ability_cherub_synthesis_base_conversion_rate: 'BASE CONVERSION RATE:'
 DOTA_Tooltip_ability_cherub_synthesis_mana_to_hp_pct: '%MANA TO HEALTH (DAY):'
 DOTA_Tooltip_ability_cherub_synthesis_hp_to_mana_pct: '%HEALTH TO MANA (NIGHT):'
@@ -25,6 +27,7 @@ DOTA_Tooltip_ability_cherub_explosive_spore: Explosive Spore
 DOTA_Tooltip_ability_cherub_explosive_spore_Description: |-
   Creates a floating spore with free pathing. Spores will grow over time and explode after %explode_delay% seconds, dealing magical damage in an area of effect and lifestealing based on damage dealt.
   Cherub controls Spores individually and gains lifesteal from them. Spores have 0 armor and 0 magic resistance, and give %spore_bounty_gold% gold and %spore_bounty_exp% exp if killed.
+DOTA_Tooltip_ability_cherub_explosive_spore_Lore: Although mushrooms are not plants, they are also subject to the power of Cherub.
 DOTA_Tooltip_ability_cherub_explosive_spore_explode_delay: 'EXPLODE DELAY:'
 DOTA_Tooltip_ability_cherub_explosive_spore_explode_radius: 'EXPLODE RADIUS:'
 DOTA_Tooltip_ability_cherub_explosive_spore_lifesteel_heroes_pct: '%LIFESTEEL (HEROES):'
@@ -36,6 +39,7 @@ DOTA_Tooltip_ability_cherub_explosive_spore_spore_vision_range: 'SPORE VISION RA
 DOTA_Tooltip_ability_cherub_flower_garden: Flower Garden
 DOTA_Tooltip_ability_cherub_flower_garden_Description: |-
   Fertilizes a plot of land for %life_time_min_tooltip% minutes, turning it into a garden plot. Cherub can plant any one of six different flowers on her garden plots, which have increased stats based on the level of this ability.
+DOTA_Tooltip_ability_cherub_flower_garden_Lore: Time to dig up a couple of beds
 DOTA_Tooltip_ability_cherub_flower_garden_aghanim_description: 'Adds a thorny barrier to plants, increasing the plant''s health and returning magical damage when an enemy attacks.'
 DOTA_Tooltip_ability_cherub_flower_garden_channel_time: 'CHANNEL DURATION:'
 DOTA_Tooltip_ability_cherub_flower_garden_flower_health: 'FLOWER HEALTH:'

@@ -25,6 +25,7 @@ DOTA_Tooltip_ability_shinobu_vampire_blood_Description: |-
   ~LIFESTEAL:%lifesteal_pct_lvl4%%
   ~ATTACK SPEED: %bonus_attack_speed_lvl4%
   ~MOVEMENT SPEED: %bonus_move_speed_lvl4%
+DOTA_Tooltip_ability_shinobu_vampire_blood_Lore: Vampiric blood has its drawbacks, but there are many more advantages.
 DOTA_Tooltip_ability_shinobu_vampire_blood_Note0: Shinobu respawns and starts duel with 50% health
 DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl1: Vampire Blood - Level 1
 DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl1_Description: |-
@@ -45,6 +46,7 @@ DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl4_Description: |-
 
 DOTA_Tooltip_ability_shinobu_eat_oddity: Eat Oddity
 DOTA_Tooltip_ability_shinobu_eat_oddity_Description: 'Shinobu jumps to a unit, eats it and gains part of it''s health for some time and increased gold.'
+DOTA_Tooltip_ability_shinobu_eat_oddity_Lore: Vampires never averse to sucking all the juices out of an appetizing creep.
 DOTA_Tooltip_ability_shinobu_eat_oddity_bonus_gold_pct: '%BONUS GOLD:'
 DOTA_Tooltip_ability_shinobu_eat_oddity_buff_duration: 'BUFF DURATION:'
 DOTA_Tooltip_ability_shinobu_eat_oddity_buff_health_pct: '%BONUS HEALTH:'
@@ -53,6 +55,7 @@ DOTA_Tooltip_modifier_shinobu_eat_oddity_buff_Description: Max Health increased 
 
 DOTA_Tooltip_ability_shinobu_kokorowatari: Kokorowatari
 DOTA_Tooltip_ability_shinobu_kokorowatari_Description: 'When Shinobu kills non-hero unit, she creates a soul of this unit. This soul is invulnerable and lasts %soul_duration% seconds. Also, increases Shinobu''s attack range and gives her chance to kill creep with one hit.'
+DOTA_Tooltip_ability_shinobu_kokorowatari_Lore: Shinobu can turn a victim into a servant and make him obey his orders, but prefers not to use it.
 DOTA_Tooltip_ability_shinobu_kokorowatari_bonus_attack_range: 'BONUS ATTACK RANGE:'
 DOTA_Tooltip_ability_shinobu_kokorowatari_chance_to_kill: '%CHANCE TO KILL CREEP:'
 DOTA_Tooltip_ability_shinobu_kokorowatari_soul_duration: 'SOUL DURATION:'
@@ -60,11 +63,13 @@ npc_shinobu_soul: Soul
 
 DOTA_Tooltip_ability_shinobu_yumewatari_lua: Yumewatari
 DOTA_Tooltip_ability_shinobu_yumewatari_lua_Description: 'Shinobu ressurects selected soul with level below %max_ghost_level%. Also, increases Shinobu''s attack damage.'
+DOTA_Tooltip_ability_shinobu_yumewatari_lua_Lore: Although Shinoba looks like a loli, in fact she is incredibly strong.
 DOTA_Tooltip_ability_shinobu_yumewatari_lua_bonus_damage: +$damage
 DOTA_Tooltip_ability_shinobu_yumewatari_lua_max_ghost_level: 'MAX SOUL LEVEL:'
 
 DOTA_Tooltip_ability_shinobu_hide_in_shadows: Hide in Shadows
 DOTA_Tooltip_ability_shinobu_hide_in_shadows_Description: 'Shinobu hides herself in shadows of ally heroes, becoming immune to detection. Attacking will reveal Shinobu. If nearby ally dies, while she is hidden, Shinobu recoveres all her health, becomes magic immune, gets bonus damage, movespeed and evasion chance.'
+DOTA_Tooltip_ability_shinobu_hide_in_shadows_Lore: Despite his incredible abilities, Shinobu prefers to stay behind the Allies. However, do not kill them if life is dear to you ...
 DOTA_Tooltip_ability_shinobu_hide_in_shadows_ally_radius: 'ALLY RADIUS:'
 DOTA_Tooltip_ability_shinobu_hide_in_shadows_fade_time: 'FADE TIME:'
 DOTA_Tooltip_ability_shinobu_hide_in_shadows_rage_duration: 'RAGE DURATION:'

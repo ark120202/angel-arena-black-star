@@ -15,6 +15,7 @@ DOTA_Tooltip_ability_sara_evolution_aghanim_description: Multiplies passive ener
 DOTA_Tooltip_ability_sara_evolution_per_sec_multiplier_scepter: 'PASSIVE REGENERATION MULTIPLIER WITH SCEPTER:'
 DOTA_Tooltip_modifier_sara_evolution: Evolution
 DOTA_Tooltip_modifier_sara_evolution_Description: Increases maximal energy with each cycle by %dMODIFIER_PROPERTY_TOOLTIP%
+DOTA_Tooltip_ability_sara_evolution_Lore: Killing, Sarah destroys the soul of the victim, transforming it into her power.
 
 DOTA_Tooltip_ability_sara_space_dissection: Space Dissection
 DOTA_Tooltip_ability_sara_space_dissection_Description: 'Sara''s cursed blade splits time space and enemy solus. When ability is not on coolodwn it can immediately kill creep or decrease hero''s or bosses armor. When ability kills a creep you won''t get gold and experience from this creep, but instead you will get %creep_energy_multiplier%x max energy and this ability won''t waste Sata''s energy. Decreased armor will be based on Sara''s wasted energy. Armor decreasing debuff stacks.'
@@ -26,12 +27,14 @@ DOTA_Tooltip_ability_sara_space_dissection_disarmor_duration: 'REDUCTION DURATIO
 DOTA_Tooltip_ability_sara_space_dissection_energy_pct: '%ENERGY COST:'
 DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction: Space Dissection
 DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+DOTA_Tooltip_ability_sara_space_dissection_Lore: This blade contains a particle of pure Darkness. To someone other than the owner, it's even dangerous to take it without risk losing them.
 
 DOTA_Tooltip_ability_sara_dark_blink: Dark Blink
 DOTA_Tooltip_ability_sara_dark_blink_Description: 'Sara instantly moves to the selected point. The distance increases with the amount of energy. Each %range_energy_step% range additionally wastes %max_energy_per_step_pct%%% of Sara''s max energt, but this energy is''t required to cast this ability.'
 DOTA_Tooltip_ability_sara_dark_blink_blink_range: 'RANGE:'
 DOTA_Tooltip_ability_sara_dark_blink_energy_to_blink_range: 'ENERGY IN RANGE:'
 DOTA_Tooltip_ability_sara_dark_blink_energy_to_min_cost_pct: '%BASE ENERGY COST:'
+DOTA_Tooltip_ability_sara_dark_blink_Lore: Space - something like a piece of paper. To get from point A to point B, it needs to be bent correctly.
 
 DOTA_Tooltip_ability_sara_fragment_of_hate: Fragment of Hate
 DOTA_Tooltip_ability_sara_fragment_of_hate_Description: 'The Fragment of Sara''s soul, embodying her violence and power. Gives each her attack a chance to deal critical strike. Critical strike damage will be based on current energy. Additionally passively increases her attack damage, based on current energy.'
@@ -43,6 +46,7 @@ DOTA_Tooltip_ability_sara_fragment_of_hate_damage_pct_scepter: '%SCEPTER BUFF DA
 DOTA_Tooltip_ability_sara_fragment_of_hate_buff_duration_scepter: 'SCEPTER BUFF DURATION:'
 DOTA_Tooltip_modifier_sara_fragment_of_hate_buff_scepter: Fragment of Hate
 DOTA_Tooltip_modifier_sara_fragment_of_hate_buff_scepter_Description: Bonus damage temporary increased by %dMODIFIER_PROPERTY_TOOLTIP%%%
+DOTA_Tooltip_ability_sara_fragment_of_hate_Lore: Someday I will interrupt the existence of this senseless world with one stroke.
 
 DOTA_Tooltip_ability_sara_fragment_of_armor: Fragment of Armor
 DOTA_Tooltip_ability_sara_fragment_of_armor_Description: 'The Fragment of Sara''s soul, embodying her stamina and inflexibility. Creates a shield that absorbs %blocked_damage_pct%%% of the incoming damage in exchange for Sara''s energy.'
@@ -50,6 +54,7 @@ DOTA_Tooltip_ability_sara_fragment_of_armor_aghanim_description: Part of taken d
 DOTA_Tooltip_ability_sara_fragment_of_armor_damage_per_energy: 'DAMAGE PER ENERGY:'
 DOTA_Tooltip_ability_sara_fragment_of_armor_blocked_damage_pct: '%BLOCKED DAMAGE:'
 DOTA_Tooltip_ability_sara_fragment_of_armor_reflected_damage_pct_scepter: '%DAMAGE REFLECT WITH SCEPTER:'
+DOTA_Tooltip_ability_sara_fragment_of_armor_Lore: Sarah compensates her natural fragility with a mental shield that blocks the damage at the expense of her soul's energy.
 
 DOTA_Tooltip_ability_sara_fragment_of_logic: Fragment of Logic
 DOTA_Tooltip_ability_sara_fragment_of_logic_Description: 'The Fragment of Sara''s soul, embodying her trickery and intelligence. When her health drops to zero, she wastes %energy_const% + %energy_pct%%% of her energy, to fully recover her health. Within some time after health recover, Sara won''t be able to recover energy.'
@@ -60,3 +65,4 @@ DOTA_Tooltip_ability_sara_fragment_of_logic_debuff_duration: 'DEBUFF DURATION:'
 DOTA_Tooltip_ability_sara_fragment_of_logic_cooldown_scepter: 'COOLDOWN WITH SCEPTER:'
 DOTA_Tooltip_modifier_sara_fragment_of_logic_debuff: Fragment of Logic
 DOTA_Tooltip_modifier_sara_fragment_of_logic_debuff_Description: Can't restore energy
+DOTA_Tooltip_ability_sara_fragment_of_logic_Lore: No matter how strong your blow is, you will need more to kill me.

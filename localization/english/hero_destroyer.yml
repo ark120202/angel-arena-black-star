@@ -1,14 +1,16 @@
 npc_arena_hero_destroyer: Destroyer
-npc_arena_hero_destroyer_hype: ''
-npc_arena_hero_destroyer_bio: ''
+npc_arena_hero_destroyer_hype: 'The destroyer is always glad of the new battle. Having full control of his own body, he completely restores or destroys it. Crushing armor and stunning the enemies of the Column of Crush, the Destroyer gladly accepts blows, becoming all the stronger, the more damage he has received.'
+npc_arena_hero_destroyer_bio: 'Despite its formidable nickname, the Destroyer, or Kronshak, lived a peaceful and quiet life in the Third Dimension. Kronshak was a native of the old and mighty race of gods and celestials, by right the strongest representative and head of the local Pantheon. The destroyer was worshiped by the lower beings of the nearby worlds, which always amused him. One day, korotaya his eternal and carefree life in one of them, Kronshak felt wrong - something vicious and bloodthirsty invaded his domain. However, he came too late - Stegius, an ancient and powerful demon who escaped from Desolus, destroyed the native world of Kronshak to the ground. None of the divine Pantheon could not withstand it: everything happened lightning fast. After casting a menacing glance at the smoking ruins of his dimension, Kronshak vowed to stop the monster at any cost. Pulling out the Collum of Crush from the ruins of the Pantheon, he laid it on his shoulder and followed the trail of Stegius. The demon did not go far - Kronshak found it when he destroyed the fourth dimension, one of the worlds in submission to God. After a short struggle, Stegius retreated, however, before he escaped into another world, the Destroyer Kronshak imposed a seal on Ash-Lagor on the demon, sealing the demon where he had fled - in the world of Allden. The seal deprived the demon of his former destructive power. The people of Allden could overcome the weakened demon and sealed it deep underground. But, even despite his victory, Kronshak was depressed and broken, like his world. His spirit is weakened. He fell into stasis for many millennia, waiting for the Universe to once again need to stop the Master of Death. It is not known how long he slept when there was a split that awakened him. The router felt that Stegius had escaped from his prison. Following his old oath, he followed him and got to the Arena of the Angels, where he was to clash in a bloody battle, not only with Stegius, but with all the other creatures of Chaos, depressing many worlds and their inhabitants.'
 
 DOTA_Tooltip_ability_destroyer_armor_crush: Armor Crush
-DOTA_Tooltip_ability_destroyer_armor_crush_Description: 'Destroyer strikes enemy unit with his hammer, dealing damage, stunning enemy and decreasing target''s armor'
+DOTA_Tooltip_ability_destroyer_armor_crush_Description: 'The Destroyer crushes the enemy, inflicting damage, stunning and temporarily reducing armor.'
+DOTA_Tooltip_ability_destroyer_armor_crush_Lore: Despite the size, the Collum of Crush weighs thousands of tons.
 DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'DURATION:'
 DOTA_Tooltip_ability_destroyer_armor_crush_armor_reduction: 'ARMOR REDUCTION:'
 
-DOTA_Tooltip_ability_destroyer_seal_of_limit: Seal of Limit
-DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: 'Destroyer seals his infinity power, limiting his max health to %max_health_pct%%%, but instead that seal gives him bonus movement speed, attack speed, armor and health regeneration.'
+DOTA_Tooltip_ability_destroyer_seal_of_limit: Seal of Ash-Lagor
+DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: 'The Destroyer imposes the seal of Ash Lagor upon himself, limiting his maximum health to %max_health_pct%%%, while at the same time increasing the speed of movement, attack speed, armor and health regeneration.'
+DOTA_Tooltip_ability_destroyer_seal_of_limit_Lore: Seal is fatal to all creatures from the flesh, but it has the opposite effect for the steel body of Kronshak.
 DOTA_Tooltip_ability_destroyer_seal_of_limit_duration: 'DURATION:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_max_health_pct: '%HEALTH LIMIT:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_movement_speed: 'MOVEMENT SPEED:'
@@ -20,9 +22,11 @@ DOTA_Tooltip_modifier_destroyer_seal_of_limit_Description: Max health is limited
 
 DOTA_Tooltip_ability_destroyer_body_reconstruction: Body Reconstruction
 DOTA_Tooltip_ability_destroyer_body_reconstruction_Description: 'Destroyer rebuilds his body, immediatly recovering all his health and mana points and refreshing all items in his inventory'
+DOTA_Tooltip_ability_destroyer_body_reconstruction_Lore: Creatures from the Kronshak race are immortal in their way and have a unique ability to update their life cycle.
 
 DOTA_Tooltip_ability_destroyer_frenzy: Frenzy
-DOTA_Tooltip_ability_destroyer_frenzy_Description: 'Destroyer releases his morale, increasing his damage, armor and max movement speed, based on current health percentage.'
+DOTA_Tooltip_ability_destroyer_frenzy_Description: 'The Spirit of the Destroyer grows stronger from wounds, increasing damage, armor and movement speed, based on current health.'
+DOTA_Tooltip_ability_destroyer_frenzy_Lore: The more bloody and harder the battle, the stronger the spirit of Kronshak.
 DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl1: |-
   %Level 1
   • HEALTH TO TRIGGER:

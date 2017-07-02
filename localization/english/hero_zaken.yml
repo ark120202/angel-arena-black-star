@@ -7,6 +7,7 @@ npc_arena_hero_zaken_bio: |-
 
 DOTA_Tooltip_ability_zaken_stitching_strikes: Stitching Strikes
 DOTA_Tooltip_ability_zaken_stitching_strikes_Description: 'Zaken rushes his blades towards target unit, perventing it from moving and dealing it damage within %duration% seconds.'
+DOTA_Tooltip_ability_zaken_stitching_strikes_Lore: 'In addition to mastery in fencing, Zaken also masterfully throws knives.'
 DOTA_Tooltip_ability_zaken_stitching_strikes_duration: 'DURATION:'
 DOTA_Tooltip_ability_zaken_stitching_strikes_max_helath_damage_pct: '%MAX HELATH DAMAGE:'
 DOTA_Tooltip_modifier_zaken_stitching_strikes: Stitching Strikes
@@ -14,6 +15,7 @@ DOTA_Tooltip_modifier_zaken_stitching_strikes_Description: Recieves damage over 
 
 DOTA_Tooltip_ability_zaken_last_chance: Last Chance
 DOTA_Tooltip_ability_zaken_last_chance_Description: 'When Zaken attacks, he has a chance to deal critical damage, stun, root or silence enemy, if it''s health is below required percent.'
+DOTA_Tooltip_ability_zaken_last_chance_Lore: 'The weaker the enemy, the easier it is to finish ...'
 DOTA_Tooltip_ability_zaken_last_chance_crit_chance_pct: '%CRIT CHANCE:'
 DOTA_Tooltip_ability_zaken_last_chance_crit_damage_pct: '%CRITICAL STRIKE:'
 DOTA_Tooltip_ability_zaken_last_chance_crit_health_pct: '%CRIT TRIGGER HEALTH:'
@@ -40,6 +42,7 @@ npc_arena_zaken_sailor: Sailor
 
 DOTA_Tooltip_ability_zaken_sword_control: Sword Control
 DOTA_Tooltip_ability_zaken_sword_control_Description: 'Zaken commands all his swords to float around him, so he will be disarmed, but instead he will attack all enemies around him within %radius_tooltip% radius. Also, these swords will protect him from incoming damage.'
+DOTA_Tooltip_ability_zaken_sword_control_Lore: Masterly possession of seven swords at once makes Zaken unbeatable ... in a fair fight.
 DOTA_Tooltip_ability_zaken_sword_control_duration: 'DURATION:'
 DOTA_Tooltip_ability_zaken_sword_control_incoming_damage_reduction: '%INCOMING DAMAGE REDUCTION:'
 DOTA_Tooltip_ability_zaken_sword_control_attack_time: 'TIME BETWEEN ATTACKS:'
