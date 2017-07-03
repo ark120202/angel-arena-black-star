@@ -44,7 +44,7 @@ end
 function modifier_sai_divine_flesh_off:GetModifierHealthRegenPercentage()
 	local ability = self:GetAbility()
 	local unit = self:GetParent()
-	if unit:FindAbilityByName("sai_immortal"):GetToggleState()==true and
+	if unit:FindAbilityByName("sai_immortal"):GetToggleState() and
 		self:GetParent():GetMana() >= unit:FindAbilityByName("sai_immortal"):GetSpecialValueFor("mana_per_second") then
 		return ability:GetSpecialValueFor("health_regeneration_pct") * 
 		unit:FindAbilityByName("sai_immortal"):GetSpecialValueFor("bonus_regen")
