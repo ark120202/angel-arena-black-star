@@ -12,7 +12,7 @@ DOTA_Tooltip_ability_pudge_meat_hook_lua_damage_scepter: 'УРОН СО СКИП
 DOTA_Tooltip_ability_pudge_meat_hook_lua_cooldown_scepter: 'ПЕРЕЗАРЯДКА СО СКИПЕТРОМ:'
 DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance_per_stack: 'РАДИУС ЗА СТАК:'
 
-DOTA_Tooltip_ability_pudge_rot_arena_Description: "Токсичное облако, которое постоянно наносит урон и замедляет противников,\_ранит не только вражеских юнитов, но и самого Pudge. Каждый стак способности Flesh Heap увеличивает радиус Rot."
+DOTA_Tooltip_ability_pudge_rot_arena_Description: Токсичное облако, которое постоянно наносит урон и замедляет противников, ранит не только вражеских юнитов, но и самого Pudge. Каждый стак способности Flesh Heap увеличивает радиус Rot.
 DOTA_Tooltip_ability_pudge_rot_arena_Note0: Не прерывает прочтение других заклинаний.
 DOTA_Tooltip_ability_pudge_rot_arena_Note1: Действует на невидимых врагов.
 DOTA_Tooltip_ability_pudge_rot_arena_Note2: 'Если ваш герой обезмолвлен, то выключить способность Rot нельзя.'
