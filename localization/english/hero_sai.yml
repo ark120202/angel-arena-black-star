@@ -1,4 +1,6 @@
 npc_arena_hero_sai: Sai
+npc_arena_hero_sai_hype: 'Sai becomes stronger from his wounds, reveling in the battle. He is not afraid of wounds, quickly restoring them, and in extreme cases he releases his true essence - an ancient, powerful demon that will get the enemy anywhere ... '
+npc_arena_hero_sai_bio: 'The Mighty Warrior plowed a multitude of worlds in search of worthy opponents. Nobody knew where He came from and what He was capable of: those who wanted to fight with Him could not even scratch His skin, and He only had to move his sword a little to knock the enemy dead. In the worlds He did not stay long - after making sure of the weakness of the creatures, He walked further along his unknown path. It used to happen that the opponents could give Him a more or less worthy fight, but only until the Warrior received a deep wound - shedding his blood, an unknown force filled Him, and His punches grew all the stronger than the more serious wounds He received. And when the battle was over, the damage was delayed, as if they were not there. But one day a stranger happened to encounter Kadash. He challenged him, and a bloody battle began. Never before had he had to fight with such an enemy - his blade, reaching the goal, could not injure the thick armor of the Immortal Horseman. Again and again the Warrior took strikes, and became stronger and stronger. Sometimes he himself waved his sword to experience more pain, but still he did not have the strength to repel Kadash is pressure. No one was inferior. And now, it seemed, the end - His body was covered with horrific wounds, it seemed incompatible with life. 'It was a worthy duel ... Ive never met such an artful enemy ...' croaked the Warrior, leaning on the blade. "You will be the second one to whom I will show my true face ..." The warrior struck himself with the sword to the very heart, and some awesome power tore him from the inside - before Kadash appeared a fiery, demonic monster, exuding huge waves of strength and destruction. With one wave of his hand, he killed the Immortal Horseman, then it was decayed ... Kadash did not perish, but paid tribute to his powerful rival, after continuing his journey. The warrior also did not die definitively - it took many years for Him to restore his body from the dust. Restoring the body, He found a new goal of his journey - again to find the rider, and again to challenge him. This path led him to the arena of the Angels, where besides Kadash the strongest warriors from all over the Universe gathered. This match promised him a glorious victory, or a glorious death.'
 
 DOTA_Tooltip_ability_sai_rage_of_pain: Rage of pain
 DOTA_Tooltip_ability_sai_rage_of_pain_Description: 'The more mutilations on the body of Sai, the stronger he becomes. On every 20% missing hp gives Sai %damage_per_stack_pct%%% bonus damage. Critical chance bonus gain on %crit_chance_pct%%% on every missing %crit_chance_per_stack_pct%%% of hp. Critical multiplier bonus gain on %crit_mult_pre_stack_pct%%% on every missing hp.'
@@ -7,28 +9,34 @@ DOTA_Tooltip_ability_sai_rage_of_pain_damage_per_stack_pct: '%DAMAGE FOR STACK:'
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_pct: '%CRIT CHANCE:'
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_per_stack_pct: '%CRIT CHANCE FOR STACK:'
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_mult_pre_stack_pct: '%CRIT DAMAGE FOR STACK:'
+DOTA_Tooltip_modifier_sai_rage_of_pain: Rage of pain
+DOTA_Tooltip_modifier_sai_rage_of_pain_Description: Damage increased by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%
 
 DOTA_Tooltip_ability_sai_divine_flesh: Divine flesh
-DOTA_Tooltip_ability_sai_divine_flesh_Description: 'Incredible streatht of Say can destroy his body and heal him. If diacctived gain %health_regeneration_pct%%% hp per second. If acctived consume %active_self_damage_pct%%% hp per second, gain %active_bonus_armor%%% armor and %active_magic_resistance_pct%%% magic resistance.'
-DOTA_Tooltip_ability_sai_divine_flesh_Lore: Sai has a unique, extremely powerful regeneration, but even it does not help if you give the demon the will...
-DOTA_Tooltip_ability_sai_divine_flesh_health_regeneration_pct: '%BONUS HP REGENIRATION:'
-DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: 'BONUS DAMAGE:'
-DOTA_Tooltip_ability_sai_divine_flesh_bonus_armor: 'BONUS ARMOR:'
-DOTA_Tooltip_ability_sai_divine_flesh_bonus_magic_resistance: 'BONUS MAGIC RESSISTANCE:'
+DOTA_Tooltip_ability_sai_divine_flesh_Description: 'When the ability is turned on, the hero gains pure damage every second, but in return receives additional armor and spores magic damage. When the ability is not active, it increases the regeneration of health. '
+DOTA_Tooltip_ability_sai_divine_flesh_Lore: Sai has a unique, extremely powerful regeneration, but even it does not help if you give the demon the will ...
+DOTA_Tooltip_ability_sai_divine_flesh_health_regeneration_pct: '%ADD. HEALTH REGENERATION:'
+DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: '%DAMAGE FROM MAX. HEALTH:'
+DOTA_Tooltip_ability_sai_divine_flesh_active_bonus_armor: 'ADD ARMOR:'
+DOTA_Tooltip_ability_sai_divine_flesh_active_magic_resistance_pct: '%MAGIC RESIST.:'
 
 DOTA_Tooltip_ability_sai_immortal: Invulnerability
 DOTA_Tooltip_ability_sai_immortal_Description: 'If acctived reduces damage, attack speed and movement speed of Sai increases, but reduces all taking damage on %damage_reduction_pct%%% and give bonus regeniration of hp in %bonus_regen%%% times. It consume %mana_per_second%%% mp per second.'
 DOTA_Tooltip_ability_sai_immortal_Lore: Sacrificing combat potential and concentrating on defense, the warrior becomes truly invulnerable.
-DOTA_Tooltip_ability_sai_immortal_damage_reduction_pct: 'REDUCESED ALL DAMAGE:'
+DOTA_Tooltip_ability_sai_immortal_damage_reduction_pct: 'REDUCESED DAMAGE AND MS:'
 DOTA_Tooltip_ability_sai_immortal_mana_per_second: 'MP PER SECOND:'
 DOTA_Tooltip_ability_sai_immortal_bonus_regen: 'BONUS HP REGENIRATION:'
 
 
 DOTA_Tooltip_ability_sai_release_of_forge: Release of Forge
-DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Hero cant die in %duration% seconds, his hp falls to one unit and cant added no one way, else gives %pure_damage_pct%%% on his autoattacks damage in PURE damage, his movement speed is becomes to max and immnunity to slow, else given debuff on slow on ALL heroes on %aura_movement_speed_slow_pct%%% and reduces his vision on %aura_vision_decrease% and also it set night. On end of ultimate hero die and time to respawn increases on %bonus_respawn_time% seconds.'
+DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Hero cant die in %duration% seconds, his hp falls to one unit and cant added no one way, else gives %pure_damage_pct%%% on his autoattacks damage in PURE damage, his movement speed is becomes to max and immnunity to slow, else given debuff on slow on enemy heroes on %aura_movement_speed_slow_pct%%% and reduces his vision, cast time and turn rate. On end of ultimate hero die and time to respawn increases on %bonus_respawn_time% seconds.'
 DOTA_Tooltip_ability_sai_release_of_forge_Lore: The sun's rays fade in front of the Lord of Darkness.
 DOTA_Tooltip_ability_sai_release_of_forge_duration: 'DURATION:'
-DOTA_Tooltip_ability_sai_release_of_forge_pure_damage_pct: '%BONUS PURE DAMAGE:'
-DOTA_Tooltip_ability_sai_release_of_forge_aura_movement_speed_slow_pct: '%INCREASES MOVEMENT SPEED:'
-DOTA_Tooltip_ability_sai_release_of_forge_aura_vision_decrease: 'REDUSE VISION:'
 DOTA_Tooltip_ability_sai_release_of_forge_bonus_respawn_time: 'INCREASES RESPAWN TIME:'
+DOTA_Tooltip_ability_sai_release_of_forge_aura_movement_speed_slow_pct: '%REDUCE MOVEMENT SPEED:'
+DOTA_Tooltip_ability_sai_release_of_forge_aura_vision_decrease_pct: '%REDUCTION OF THE REVIEW OF THE REVIEW:'
+DOTA_Tooltip_ability_sai_release_of_forge_aura_casttime_decrease_pct: '%REDUCE CAST SPEED:'
+DOTA_Tooltip_ability_sai_release_of_forge_aura_turn_decrease_pct: '%REDUCE SPEED RATE:'
+DOTA_Tooltip_ability_sai_release_of_forge_bonus_respawn_time_pct: 'ADD. TIME OF REVIVAL:'
+DOTA_Tooltip_modifier_sai_release_of_forge_mass_debuff: Release of Forge
+DOTA_Tooltip_modifier_sai_release_of_forge_mass_debuff_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, viewing distance reduced by %dMODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE%%%, casting speed reduced by %MODIFIER_PROPERTY_CASTTIME_PERCENTAGE%%%, the rotation speed is reduced to %MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE%%% '.

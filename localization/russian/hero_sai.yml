@@ -1,10 +1,10 @@
 npc_arena_hero_sai: Sai
-npc_arena_hero_sai_hype: ''
-npc_arena_hero_sai_bio: ''
+npc_arena_hero_sai_hype: 'Сай становится сильнее от полученных ран, упиваясь сражением. Он не боится ранений, быстро восстанавливая их, а в крайнем случае он высвобождает свою истинную сущность - древнего, могущественного демона, который достанет врага где угодно...'
+npc_arena_hero_sai_bio: 'Могучий Воин бороздил множество миров в поисках достойных оппонентов. Никто не знал, откуда Он пришел и на что был способен: желающие сразиться с Ним не могли даже поцарапать его кожу, а Ему стоило лишь немного шевельнуть мечом, чтобы повалить противника замертво. В мирах Он долго не задерживался - убедившись в слабости существ, Он шел дальше по своему неведомому пути. Бывало, что противники могли дать Ему более-менее достойный бой, однако лишь до той поры, пока Воин не получал глубокую рану - проливая свою кровь, неведомая сила наполняла Его, и удары Его становились тем сильнее, чем более серьезные раны Он получал. А когда бой заканчивался, повреждения затягивались, будто их и не было. Но однажды страннику довелось столкнуться с Кадашем. Он бросил ему вызов, и началась кровопролитная схватка. Никогда прежде Ему не приходилось сражаться с таким врагом - его клинок, достигая цели, не мог поранить толстый доспех Бессмертного Всадника. Снова и снова Воин принимал удары, и становился все сильнее и сильнее. Иногда он сам себя разил мечом, чтобы испытать больше боли, но все равно ему не хватало силы, чтобы дать отпор напору Кадаша. Никто не уступал. И вот, казалось, конец - Его тело было покрыто ужасающими ранами, казалось, несовместимыми с жизнью. "Это был достойный поединок... Никогда мне не доводилось встречать столь искуссного врага..." - прохрипел Воин, опираясь на клинок. "Ты будешь вторым, кому я покажу свой истинный лик..." Воин поразил себя мечом в самое сердце, и некая устрашающая мощь разорвала его изнутри - пред Кадашем предстало огненное, демоническое чудовище, источавшее из себя огромные волны силы и разрушения. Одним взмахом руки оно прикончило Бессмертного Всадника, после чего истлело... Кадаш не погиб, но отдал дань уважения могучему сопернику, после продолжив свой путь. Воин также не умер окончательно - много лет потребовалось Ему, чтобы восстановить свое тело воедино из праха. Восстановив тело, Он нашел новую цель своего странствия - вновь отыскать всадника, и вновь бросить ему вызов. Этот путь привел Его на арену Ангелов, где помимо Кадаша собрались сильнейшие воины со всего Мироздания. Это состязание обещало Ему славную победу, либо славную смерть.'
 
 DOTA_Tooltip_ability_sai_rage_of_pain: Rage of pain
-DOTA_Tooltip_ability_sai_rage_of_pain_Description: 'За некоторый процент отсутсвующего здоровья герой получает стаки способности, дающие доп. урон. Также Сай пассивно получает возможность нанести дополнительный критический урон при атаке, шанс срабатывания и урон которого увеличивается с каждым стаком.'
-DOTA_Tooltip_ability_sai_rage_of_pain_Lore: Демон, обитающий глубоко в душе Сая, все дальше выбирается на ружу с каждой пролитой каплей крови хозяина.
+DOTA_Tooltip_ability_sai_rage_of_pain_Description: 'За некоторый процент отсутсвующего здоровья герой получает стаки способности, дающие доп. урон. Также герой пассивно получает возможность нанести дополнительный критический урон при атаке, шанс срабатывания и урон которого увеличивается с каждым стаком.'
+DOTA_Tooltip_ability_sai_rage_of_pain_Lore: Демону, обитающему глубоко в душе Воина, все проще выбираться наружу с каждой пролитой каплей крови хозяина. 
 DOTA_Tooltip_ability_sai_rage_of_pain_health_per_stack_pct:  'МАКСИМУМ СТАКОВ:'
 DOTA_Tooltip_ability_sai_rage_of_pain_damage_per_stack_pct: '%УРОН ЗА СТАК:'
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_pct: '%ШАНС КРИТА:'
@@ -14,7 +14,7 @@ DOTA_Tooltip_modifier_sai_rage_of_pain: Rage of pain
 DOTA_Tooltip_modifier_sai_rage_of_pain_Description:  Урон увеличен на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%
 
 DOTA_Tooltip_ability_sai_divine_flesh: Divine flesh
-DOTA_Tooltip_ability_sai_divine_flesh_Description: 'Когда способность включена, Сай получает чистый урон каждую секунду, но в замен получает дополнительную броню и споротивление магическому урону. Когда способность не активна, увеличивает регенерацию здоровья.'
+DOTA_Tooltip_ability_sai_divine_flesh_Description: 'Когда способность включена, герой получает чистый урон каждую секунду, но в замен получает дополнительную броню и споротивление магическому урону. Когда способность не активна, увеличивает регенерацию здоровья.'
 DOTA_Tooltip_ability_sai_divine_flesh_Lore: Сай обладает уникальной, чрезвычайно мощной регенерацией, но даже она не помогает, если дать демону волю...
 DOTA_Tooltip_ability_sai_divine_flesh_health_regeneration_pct: '%ДОП. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: '%УРОН ОТ МАКС. ЗДОРОВЬЯ:'
@@ -22,8 +22,8 @@ DOTA_Tooltip_ability_sai_divine_flesh_active_bonus_armor: 'ДОП. БРОНЯ:'
 DOTA_Tooltip_ability_sai_divine_flesh_active_magic_resistance_pct: '%СОПР. МАГ. УРОНУ:'
 
 DOTA_Tooltip_ability_sai_immortal: Invulnerability
-DOTA_Tooltip_ability_sai_immortal_Description: 'Пока способность включена, урон, скорость атаки и скорость передвижения Сая уменьшаются, но взамен уменьшается весь получаемый урон, а регенерация здоровья увеличивается.'
-DOTA_Tooltip_ability_sai_immortal_Lore: Жертвуя боевым потенциалом и концентрируясь на обороне, воин становится поистенне неуязвимым.
+DOTA_Tooltip_ability_sai_immortal_Description: 'Пока способность включена, урон, скорость атаки и скорость передвижения героя уменьшаются, но взамен уменьшается весь получаемый урон, а регенерация увеличивается в %bonus_regen% раз/а.'
+DOTA_Tooltip_ability_sai_immortal_Lore: Жертвуя боевым потенциалом и концентрируясь на обороне, Воин становится поистине неуязвимым.
 DOTA_Tooltip_ability_sai_immortal_decreasement_pct: '%СНИЖ. УРОНА:'
 DOTA_Tooltip_ability_sai_immortal_decreasement_ms_pct: '%СНИЖ. СКОР. ПЕРЕДВИЖ.'
 DOTA_Tooltip_ability_sai_immortal_damage_reduction_pct: '%СНИЖ. ВХОДЯЩЕГО УРОНА:'
@@ -32,10 +32,14 @@ DOTA_Tooltip_ability_sai_immortal_mana_per_second: 'МАНЫ В СЕКУНДУ:'
 
 
 DOTA_Tooltip_ability_sai_release_of_forge: Release of Forge
-DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Герой становится бессмертным на некоторое время, его здоровье падает до единицы и не может восстановиться, а также часть его урона становится чистым, скорость передвижения становится максимальной и не может быть снижена, а все прочие герои на карте замедляются на %aura_movement_speed_slow_pct%%% и теряют %aura_vision_decrease% единиц радиуса обзора. После окончания действия способности Сай погибнет, а время его воскрешения будет увеличено.'
-DOTA_Tooltip_ability_sai_release_of_forge_Lore: Солнечные лучи меркнут пред ликом Повелителя Тьмы. 
+DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Герой становится бессмертным на некоторое время, его здоровье падает до единицы и не может восстановиться, а также часть его урона становится чистым, дальность атаки становится неограниченной, а все вражеские герои на карте замедляются на %aura_movement_speed_slow_pct%%%, а их скорость поворота и каста снижается. После окончания действия способности Сай погибнет, а время его воскрешения будет увеличено.'
+DOTA_Tooltip_ability_sai_release_of_forge_Lore: Воздух тяжелеет... 
 DOTA_Tooltip_ability_sai_release_of_forge_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_sai_release_of_forge_pure_damage_pct: '%ЧИСТЫЙ УРОН ОТ АТАК:'
 DOTA_Tooltip_ability_sai_release_of_forge_aura_movement_speed_slow_pct: '%СНИЖЕНИЕ СКОРОСТИ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_sai_release_of_forge_aura_vision_decrease: 'СНИЖЕНИЕ РАДИУСА ОБЗОРА:'
-DOTA_Tooltip_ability_sai_release_of_forge_bonus_respawn_time: 'ДОП. ВРЕМЯ ВОЗРОЖДЕНИЯ:'
+DOTA_Tooltip_ability_sai_release_of_forge_aura_vision_decrease_pct: '%СНИЖЕНИЕ РАДИУСА ОБЗОРА:'
+DOTA_Tooltip_ability_sai_release_of_forge_aura_casttime_decrease_pct: '%СНИЖЕНИЕ СКОРОСТИ КАСТА'
+DOTA_Tooltip_ability_sai_release_of_forge_aura_turn_decrease_pct: '%СНИЖЕНИЕ СКОРОСТИ ПОВОРОТА'
+DOTA_Tooltip_ability_sai_release_of_forge_bonus_respawn_time_pct: 'ДОП. ВРЕМЯ ВОЗРОЖДЕНИЯ:'
+DOTA_Tooltip_modifier_sai_release_of_forge_mass_debuff: Release of Forge
+DOTA_Tooltip_modifier_sai_release_of_forge_mass_debuff_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, дальность обзора снижена на %dMODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE%%%, скорость каста снижена на %MODIFIER_PROPERTY_CASTTIME_PERCENTAGE%%%, скорость поворота снижена на %MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE%%%.
