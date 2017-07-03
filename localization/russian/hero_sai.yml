@@ -42,4 +42,4 @@ DOTA_Tooltip_ability_sai_release_of_forge_aura_casttime_decrease_pct: '%СНИЖ
 DOTA_Tooltip_ability_sai_release_of_forge_aura_turn_decrease_pct: '%СНИЖЕНИЕ СКОРОСТИ ПОВОРОТА'
 DOTA_Tooltip_ability_sai_release_of_forge_bonus_respawn_time_pct: 'ДОП. ВРЕМЯ ВОЗРОЖДЕНИЯ:'
 DOTA_Tooltip_modifier_sai_release_of_forge_mass_debuff: Release of Forge
-DOTA_Tooltip_modifier_sai_release_of_forge_mass_debuff_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, дальность обзора снижена на %dMODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE%%%, скорость каста снижена на %MODIFIER_PROPERTY_CASTTIME_PERCENTAGE%%%, скорость поворота снижена на %MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE%%%.
+DOTA_Tooltip_modifier_sai_release_of_forge_mass_debuff_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, дальность обзора снижена на %dMODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE%%%, скорость каста снижена на %dMODIFIER_PROPERTY_CASTTIME_PERCENTAGE%%%, скорость поворота снижена на %dMODIFIER_PROPERTY_TURN_RATE_PERCENTAGE%%%.
