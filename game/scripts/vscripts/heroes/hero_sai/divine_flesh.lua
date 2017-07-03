@@ -74,7 +74,7 @@ function modifier_sai_divine_flesh_on:OnIntervalThink()
 	local damage = parent:GetMaxHealth()/100*ability:GetSpecialValueFor("active_self_damage_pct") *
 			ability:GetSpecialValueFor("think_interval")
 
-	if unit:FindAbilityByName("sai_immortal"):GetToggleState()==true and
+	if unit:FindAbilityByName("sai_immortal"):GetToggleState() and
 	self:GetParent():GetMana() >= unit:FindAbilityByName("sai_immortal"):GetSpecialValueFor("mana_second") then
 		damage = damage/100*unit:FindAbilityByName("sai_immortal"):GetSpecialValueFor("damage_reduction_pct")
 
