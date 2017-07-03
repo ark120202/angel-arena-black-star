@@ -1,8 +1,8 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
-	m_meshList =
+	m_meshList = 
 	{
-		m_meshList =
+		m_meshList = 
 		[
 			{
 				m_meshName = "saitama"
@@ -19,7 +19,7 @@
 			},
 		]
 	}
-	m_clothProxyMeshList =
+	m_clothProxyMeshList = 
 	{
 		_class = "CVClothProxyMeshList"
 		m_flClothEnableThreshold = 0.05
@@ -36,36 +36,36 @@
 		m_bReservedBool4 = false
 		m_clothProxyMeshList = [  ]
 	}
-	m_physicsMeshList =
+	m_physicsMeshList = 
 	{
 		m_meshList = [  ]
 	}
 	m_pModelInfo = null
-	m_pBoneFlagList =
+	m_pBoneFlagList = 
 	{
 		m_pObject = null
 	}
 	m_pHitBoxSetLists = [  ]
 	m_pAttachmentLists = [  ]
-	m_pAnimGroup =
+	m_pAnimGroup = 
 	{
-		m_pObject =
+		m_pObject = 
 		{
 			m_Name = ""
-			m_pReferenceSkeleton =
+			m_pReferenceSkeleton = 
 			{
 				m_pObject = null
 			}
-			m_pBoneFlagList =
+			m_pBoneFlagList = 
 			{
 				m_pObject = null
 			}
-			m_pSeqGroup =
+			m_pSeqGroup = 
 			{
 				m_pObject = null
 			}
 			m_pAnimGroups = [  ]
-			m_Vanim =
+			m_Vanim = 
 			[
 				{
 					m_Animationname = "Stand"
@@ -73,13 +73,13 @@
 					m_nStartframe = 10
 					m_nEndframe = 70
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -93,13 +93,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -113,13 +113,13 @@
 					m_nStartframe = 90
 					m_nEndframe = 135
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -133,13 +133,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -153,13 +153,13 @@
 					m_nStartframe = 155
 					m_nEndframe = 185
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -173,13 +173,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -193,13 +193,13 @@
 					m_nStartframe = 205
 					m_nEndframe = 235
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -213,13 +213,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -233,13 +233,13 @@
 					m_nStartframe = 255
 					m_nEndframe = 285
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -253,13 +253,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -273,13 +273,13 @@
 					m_nStartframe = 305
 					m_nEndframe = 353
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -293,13 +293,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -313,13 +313,13 @@
 					m_nStartframe = 373
 					m_nEndframe = 409
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -333,13 +333,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -353,13 +353,13 @@
 					m_nStartframe = 429
 					m_nEndframe = 460
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -373,13 +373,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -393,13 +393,13 @@
 					m_nStartframe = 480
 					m_nEndframe = 543
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -413,13 +413,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -433,13 +433,13 @@
 					m_nStartframe = 563
 					m_nEndframe = 593
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -453,13 +453,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -473,13 +473,13 @@
 					m_nStartframe = 613
 					m_nEndframe = 643
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -493,13 +493,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -513,13 +513,13 @@
 					m_nStartframe = 663
 					m_nEndframe = 683
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -533,13 +533,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -553,13 +553,13 @@
 					m_nStartframe = 703
 					m_nEndframe = 713
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -573,13 +573,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -593,13 +593,13 @@
 					m_nStartframe = 733
 					m_nEndframe = 737
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -613,13 +613,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -633,13 +633,13 @@
 					m_nStartframe = 757
 					m_nEndframe = 787
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -653,13 +653,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -673,13 +673,13 @@
 					m_nStartframe = 807
 					m_nEndframe = 818
 					m_flFps = 30.0
-					m_Loop =
+					m_Loop = 
 					{
 						m_bLoop = false
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -693,13 +693,13 @@
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
 						m_translation = [ 0.0, 0.0, 0.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
-					m_sequenceParams =
+					m_sequenceParams = 
 					{
 						m_flFadeInTime = 0.2
 						m_flFadeOutTime = 0.2
@@ -713,23 +713,23 @@
 			m_sCompileScripts = [  ]
 		}
 	}
-	m_pMaterialGroupList =
+	m_pMaterialGroupList = 
 	{
 		m_pObject = null
 	}
-	m_pMeshGroupList =
+	m_pMeshGroupList = 
 	{
 		m_pObject = null
 	}
-	m_pLodGroupList =
+	m_pLodGroupList = 
 	{
 		m_pObject = null
 	}
-	m_pPropBreakableList =
+	m_pPropBreakableList = 
 	{
 		m_pObject = null
 	}
-	m_pPropDataList =
+	m_pPropDataList = 
 	{
 		m_pObject = null
 	}
@@ -740,7 +740,20 @@
 	m_sOffsetHitboxSets = [  ]
 	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
 	m_scriptFiles = [  ]
-	m_pMaterialRemapList = null
+	m_pMaterialRemapList = 
+	{
+		m_vMaterialRemapList = 
+		[
+			{
+				m_sSearchMaterial = "imported_material_01.vmat"
+				m_sReplaceMaterial = "materials/models/units/saitama/saitama2.vmat"
+			},
+			{
+				m_sSearchMaterial = "imported_material_02.vmat"
+				m_sReplaceMaterial = "materials/models/units/saitama/saitama1.vmat"
+			},
+		]
+	}
 	m_flFbxScale = 1.0
 	m_flQCScale = 1.0
 	m_vOrigin = [ 0.0, 0.0, 0.0 ]
