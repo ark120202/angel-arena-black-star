@@ -51,6 +51,10 @@ end
 
 function StatsClient:OnGameEnd(winner)
 	local status, nextCall = xpcall(function()
+		if GameMode.Broken then
+			PlayerTables:CreateTable("stats_game_result", {error = "arena_end_screen_error_broken"}, AllPlayersInterval)
+			return
+		end
 		if not IsInToolsMode() and StatsClient.GameEndScheduled then return end
 		StatsClient.GameEndScheduled = true
 		local time = GameRules:GetDOTATime(false, true)

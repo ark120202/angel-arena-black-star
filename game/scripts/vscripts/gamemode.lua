@@ -130,6 +130,18 @@ function GameMode:OnHeroSelectionEnd()
 	--Timers:CreateTimer(1/30, Dynamic_Wrap(GameMode, "QuickGameModeThink"))
 	PanoramaShop:StartItemStocks()
 	Duel:CreateGlobalTimer()
+
+	Timers:CreateTimer(10, function()
+		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+			if PlayerResource:IsValidPlayerID(playerID) and GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
+				local heroName = HeroSelection:GetSelectedHeroName(playerID) or ""
+				if heroName == "" or heroName == FORCE_PICKED_HERO then
+					GameMode:BreakGame()
+					return
+				end
+			end
+		end
+	end)
 end
 
 function GameMode:OnHeroInGame(hero)
@@ -204,4 +216,10 @@ function GameMode:GameModeThink()
 		end
 	end
 	return CUSTOM_GOLD_TICK_TIME
+end
+
+function GameMode:BreakGame()
+	GameMode.Broken = true
+	Tutorial:ForceGameStart()
+	GameMode:OnOneTeamLeft(-1)
 end

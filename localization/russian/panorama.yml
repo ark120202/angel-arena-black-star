@@ -102,6 +102,7 @@ arena_end_screen_victory: Победа
 arena_end_screen_defeat: Поражение
 arena_end_screen_legend_boss_damage: ПБОС
 arena_end_screen_legend_boss_damage_tooltip: Урон по боссам
+arena_end_screen_error_broken: Что-то пошло не так. Вероятно, причиной является возможность хоста лобби делать больше вещей, чем они должны.
 
 abaddoned_panel_title: Игра была покинута
 abaddoned_panel_reason: Герой был удален так как вы находились вне игры слишком долго
