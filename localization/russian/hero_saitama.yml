@@ -1,3 +1,40 @@
 npc_arena_hero_saitama: Saitama
-npc_arena_hero_saitama_hype: ''
-npc_arena_hero_saitama_bio: ''
+npc_arena_hero_saitama_hype: 'Внешность бывает обманчива. Проходя через жестокие тренировки, Сайтама разрушает лимит своих сил, что позволяет ему преумножать их. Хватит ли у вас воли, чтобы пройти их до конца?'
+npc_arena_hero_saitama_bio: 'По словам Сайтамы, ещё в детстве, он проводил много времени за просмотром супергеройских шоу, и мечтал что когда-нибудь сможет стать таким же героем как и они. Сайтама был обычным офисным планктоном, который постоянно встраивался на работу, но получал отказ. Однажды, после очередного собеседования Сайтама возвращался одной из улиц домой услышав при этом людские крики о том, что впереди опасность и чтобы все спасали, однако он идет дальше и встречает огромного краба-монстра. “Я хотел стать супергероем, который уделывает таких штампованных злодеев, как ты… Одним ударом“. Он с яростным криком говорит, что закончил поиск работы и сам отвлекает краба к себе, Крабинатор лишь избивает Сайтаму несколько раз, говоря, что он не герой, а лишь смешит его и что у него нет шансов против него, однако стоило Крабинатору только расслабиться, как Сайтама хватает того за глаз и вырывает его, тем самым побеждая крабового монстра. После этой схватки Сайтама решает стать могучим супергероем, он начинает ежедневный график обучения, который состоял из 100 отжиманий, 100 приседаний и 10 км бега каждый день. Он так же ел три раза в день, но только бананы в качестве завтрака, а также не использовал кондиционер, чтобы укрепить его моральное сопротивление. Эти ежедневные мероприятия были очень жестокими и вызывали у него мучительные боли, такие как мышечные боли и внутренние кровотечения. Однако Сайтама не сдавался и продолжал тренировки днем за днем, чтобы стать супергероем.'
+
+DOTA_Tooltip_ability_saitama_push_ups: Push ups
+DOTA_Tooltip_ability_saitama_push_ups_Description: 'Сайтама делает сотню отжиманий, становясь сильнее. По окончании действия способности он навсегда увеличивает силу и получает %stacks_amount% стак/ов лимитера.'
+DOTA_Tooltip_ability_saitama_push_ups_bonus_strenght: 'ДОП СИЛА:'
+DOTA_Tooltip_ability_saitama_push_ups_Lore: Сотня отжиманий...
+
+DOTA_Tooltip_ability_saitama_squats: Squarts
+DOTA_Tooltip_ability_saitama_squats_Description: 'Сайтама делает сотню приседаний, становясь сильнее. По окончании действия способностион навсегда увеличивает силу и получает и %stacks_amount% стак/ов лимитера.'
+DOTA_Tooltip_ability_saitama_squats_bonus_strenght: 'ДОП СИЛА:'
+DOTA_Tooltip_ability_saitama_squats_Lore: Сотня приседаний...
+
+DOTA_Tooltip_ability_saitama_press: Press
+DOTA_Tooltip_ability_saitama_press_Description: 'Сайтама делает сотню упражнений на пресс, становясь сильнее. По окончании действия способности он навсегда увеличивает силу и получает и %stacks_amount% стак/ов лимитера.'
+DOTA_Tooltip_ability_saitama_press_bonus_strenght: 'ДОП СИЛА:'
+DOTA_Tooltip_ability_saitama_press_Lore: Сотня на пресс...
+
+DOTA_Tooltip_ability_saitama_joggin: Joggin
+DOTA_Tooltip_ability_saitama_joggin_Description: 'Когда Сайтама пробегает некоторую дистанцию, он получает %bonus_strenght% силу и %stacks_amount% стак/ов лимитера.'
+DOTA_Tooltip_ability_saitama_joggin_range: 'ДИСТАНЦИЯ:'
+DOTA_Tooltip_modifier_saitama_joggin: Joggin
+DOTA_Tooltip_modifier_saitama_joggin_Description: Чтобы стать сильным героем, вам нужно быстро бегать!
+DOTA_Tooltip_ability_saitama_joggin_Lore: И десятикилометровая пробежка...
+
+DOTA_Tooltip_ability_saitama_limiter: Limiter
+DOTA_Tooltip_ability_saitama_limiter_Description: 'Докажите, что у вас достаточно воли, чтобы разрушить свой лимитер. Каждый стак лимитера навсегда увеличивает вашу силу на некоторый процент от ее максимального кол-ва, расходуя %manacost_pct%%% маны от ее максимального значения. Также добавляется стак при убийстве вражеского героя. При смерти теряется %loss_stacks_pct%%% стаков.'
+Dota_Tooltip_ability_saitama_limiter_bonus_strenght_pct: '%ПРОЦЕНТ СИЛЫ:'
+DOTA_Tooltip_ability_saitama_limiter_description: Добавляет новую способность - Serious Punch
+DOTA_Tooltip_ability_saitama_limiter_Lore: КАЖДЫЙ БОЖИЙ ДЕНЬ!!!!!
+
+
+DOTA_Tooltip_ability_saitama_serios_punch: Serious Punch
+DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Сайтама прилагает к удару чуть больше усилий, нанося критический урон и получая сплеш в радиусе %radius%. За каждый стак лимитера критический урон растет на %bonus_ctitical_damage_pct%%%.'
+DOTA_Tooltip_ability_saitama_serios_punch_default_critical_damage_pct: '%НАЧАЛЬНЫЙ КРИТИЧЕСКИЙ УРОН:'
+DOTA_Tooltip_ability_saitama_serios_punch_Lore: Позволь мне стать немного серьезнее, чтобы ты вложил в эту битву всего себя...
+
+Dota_Tooltip_modifier_saitama_limiter: Limiter
+Dota_Tooltip_modifier_saitama_limiter_Description: Лимитер.
