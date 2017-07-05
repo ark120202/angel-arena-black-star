@@ -33,7 +33,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_mult_pre_stack_pct"		"5 9 13 17 21 25 29"
+				"crit_mult_pre_stack_pct"		"10 12 14 16 18 20 22"
 			}
 		}
 	}
@@ -159,7 +159,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"		"10"
+				"duration"		"6"
 			}
 			"02"
 			{
