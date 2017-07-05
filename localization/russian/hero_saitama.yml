@@ -14,10 +14,10 @@ DOTA_Tooltip_ability_saitama_press_Description: 'Сайтама делает с�
 DOTA_Tooltip_ability_saitama_press_Lore: Сотня на пресс...
 DOTA_Tooltip_ability_saitama_press_bonus_strength: 'УВЕЛИЧЕНИЕ СИЛЫ:'
 
-DOTA_Tooltip_ability_saitama_joggin_Description: 'Когда Сайтама пробегает некоторую дистанцию, он получает %bonus_strength% силу и %stacks_amount% стак лимитера.'
-DOTA_Tooltip_ability_saitama_joggin_Lore: И десятикилометровая пробежка...
-DOTA_Tooltip_ability_saitama_joggin_range: 'ДИСТАНЦИЯ:'
-DOTA_Tooltip_modifier_saitama_joggin_Description: Чтобы стать сильным героем, вам нужно быстро бегать!
+DOTA_Tooltip_ability_saitama_jogging_Description: 'Когда Сайтама пробегает некоторую дистанцию, он получает %bonus_strength% силу и %stacks_amount% стак лимитера.'
+DOTA_Tooltip_ability_saitama_jogging_Lore: И десятикилометровая пробежка...
+DOTA_Tooltip_ability_saitama_jogging_range: 'ДИСТАНЦИЯ:'
+DOTA_Tooltip_modifier_saitama_jogging_Description: Чтобы стать сильным героем, вам нужно быстро бегать!
 
 DOTA_Tooltip_ability_saitama_limiter_Description: 'Докажите, что у вас достаточно воли, чтобы разрушить свой лимитер. Каждый стак лимитера навсегда увеличивает вашу силу на некоторый процент от ее максимального кол-ва, расходуя %manacost_pct%%% маны от ее максимального значения. Также добавляется стак при убийстве вражеского героя. При смерти теряется %loss_stacks_pct%%% стаков.'
 DOTA_Tooltip_ability_saitama_limiter_aghanim_description: Добавляет новую способность - Serious Punch

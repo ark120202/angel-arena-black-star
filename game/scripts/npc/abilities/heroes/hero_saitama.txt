@@ -75,16 +75,16 @@
 		}
 	}
 
-	"saitama_joggin"
+	"saitama_jogging"
 	{
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"arena/saitama_joggin"
-		"ScriptFile"					"heroes/hero_saitama/joggin.lua"
+		"AbilityTextureName"			"arena/saitama_jogging"
+		"ScriptFile"					"heroes/hero_saitama/jogging.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityChannelTime"			"10"
 		"LevelsBetweenUpgrades"			"3"
 		"RequiredLevel"                 "4"
 		"MaxLevel"						"7"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -101,6 +101,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"range"					"2000 1800 1600 1400 1200 1000 800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_limit"					"400"
 			}
 		}
 	}

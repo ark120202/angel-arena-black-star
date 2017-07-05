@@ -491,7 +491,7 @@
 		"Ability1"	"saitama_push_ups"
 		"Ability2"	"saitama_squats"
 		"Ability3"	"saitama_press"
-		"Ability4"	"saitama_joggin"
+		"Ability4"	"saitama_jogging"
 		"Ability6"	"saitama_limiter"
 		"Ability5"	"saitama_serios_punch"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
