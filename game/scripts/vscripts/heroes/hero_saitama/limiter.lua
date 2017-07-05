@@ -11,13 +11,14 @@ end
 if IsServer() then
 	function saitama_limiter:OnSpellStart()
 		local caster = self:GetCaster()
-		caster:ModifyStrength(caster:GetStrength() * self:GetSpecialValueFor("bonus_strenght_pct") * caster:GetModifierStackCount("modifier_saitama_limiter", caster) * 0.01)
+		caster:ModifyStrength(caster:GetStrength() * self:GetSpecialValueFor("bonus_strength_pct") * caster:GetModifierStackCount("modifier_saitama_limiter", caster) * 0.01)
 	end
 end
 
 modifier_saitama_limiter_autocast = class({
 	IsHidden = function() return true end,
 })
+
 if IsServer() then
 	function modifier_saitama_limiter_autocast:OnCreated()
 		self:StartIntervalThink(0.1)

@@ -4,37 +4,37 @@ npc_arena_hero_saitama_bio: 'According to Saitama, back in his childhood, he spe
 
 DOTA_Tooltip_ability_saitama_push_ups: Push ups
 DOTA_Tooltip_ability_saitama_push_ups_Description: 'Saitama does a hundred push-ups, becoming stronger. At the end of the ability, it permanently increases strength and receives %stacks_amount% of limiter stakes.'
-DOTA_Tooltip_ability_saitama_push_ups_bonus_strenght: 'POWER SUPPLY:'
 DOTA_Tooltip_ability_saitama_push_ups_Lore: One hundred push-ups...
+DOTA_Tooltip_ability_saitama_push_ups_bonus_strength: 'BONUS STRENGTH:'
 
 DOTA_Tooltip_ability_saitama_squats: Squarts
 DOTA_Tooltip_ability_saitama_squats_Description: 'Saitama does a hundred squats, becoming stronger. Upon completion of the action, it permanently increases the strength and receives and %stacks_amount% of the limiter stakes. '
-DOTA_Tooltip_ability_saitama_squats_bonus_strenght: 'POWER SUPPLY:'
 DOTA_Tooltip_ability_saitama_squats_Lore: Hundreds of sit-ups...
+DOTA_Tooltip_ability_saitama_squats_bonus_strength: 'BONUS STRENGTH:'
 
 DOTA_Tooltip_ability_saitama_press: Press
 DOTA_Tooltip_ability_saitama_press_Description: 'Saitama does a hundred exercises on the press, becoming stronger. At the end of the ability, it permanently increases the strength and receives and %stacks_amount% of the limiter stacks.'
-DOTA_Tooltip_ability_saitama_press_bonus_strenght: 'POWER SUPPLY:'
 DOTA_Tooltip_ability_saitama_press_Lore: Hundred per press...
+DOTA_Tooltip_ability_saitama_press_bonus_strength: 'BONUS STRENGTH:'
 
 DOTA_Tooltip_ability_saitama_joggin: Joggin
-DOTA_Tooltip_ability_saitama_joggin_Description: 'When Saitama runs, someone is a distance, he gets %bonus_strenght% strength and %stacks_amount% of limiter stakes.'
+DOTA_Tooltip_ability_saitama_joggin_Description: 'When Saitama runs, someone is a distance, he gets %bonus_strength% strength and %stacks_amount% of limiter stakes.'
 DOTA_Tooltip_ability_saitama_joggin_range: 'DISTANCE:'
+DOTA_Tooltip_ability_saitama_joggin_Lore: And a ten kilometer run...
 DOTA_Tooltip_modifier_saitama_joggin: Joggin
 DOTA_Tooltip_modifier_saitama_joggin_Description: To become a strong hero, you need to run fast!
-DOTA_Tooltip_ability_saitama_joggin_Lore: And a ten kilometer run...
 
 DOTA_Tooltip_ability_saitama_limiter: Limiter
 DOTA_Tooltip_ability_saitama_limiter_Description: 'Prove that you have enough will to destroy your limiter. Each limiter stack permanently increases its strength by some percentage of its turn count, consuming %manacost_pct%%% mana from its trigger value. Also adds a stack when killing an enemy hero. At death, %loss_stacks_pct%%% stacks is lost.'
-DOTA_Tooltip_ability_saitama_limiter_bonus_strenght_pct: '%PERCENT OF POWER:'
+DOTA_Tooltip_ability_saitama_limiter_bonus_strength_pct: '%PERCENT OF POWER:'
 DOTA_Tooltip_ability_saitama_limiter_description: Adds a new ability - Serious Punch
 DOTA_Tooltip_ability_saitama_limiter_Lore: EVERY GOD'S DAY !!!!!
 
 
 DOTA_Tooltip_ability_saitama_serios_punch: Serious Impact
 DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Saitama is putting a bit more effort into the attack, causing critical damage and getting splash within a radius of% radius%. For each Limiter stack, the critical damage increases by %bonus_ctitical_damage_pct%%%.'
-DOTA_Tooltip_ability_saitama_serios_punch_default_critical_damage_pct: '%INITIAL CRITICAL HEATER:'
 DOTA_Tooltip_ability_saitama_serios_punch_Lore: Let me become a bit more serious, so that you put all of yourself into this battle...
+DOTA_Tooltip_ability_saitama_serios_punch_default_critical_damage_pct: '%INITIAL CRITICAL HEATER:'
 
 Dota_Tooltip_modifier_saitama_limiter: Limiter
 Dota_Tooltip_modifier_saitama_limiter_Description: Limiter.

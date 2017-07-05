@@ -15,7 +15,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strenght"		"1 1 1 2 2 2 3"
+				"bonus_strength"		"1 1 1 2 2 2 3"
 			}
 			"02"
 			{
@@ -40,7 +40,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strenght"		"1 1 1 2 2 2 3"
+				"bonus_strength"		"1 1 1 2 2 2 3"
 			}
 			"02"
 			{
@@ -65,7 +65,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strenght"		"1 1 1 2 2 2 3"
+				"bonus_strength"		"1 1 1 2 2 2 3"
 			}
 			"02"
 			{
@@ -90,7 +90,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strenght"		"1"
+				"bonus_strength"		"1"
 			}
 			"02"
 			{
@@ -104,6 +104,7 @@
 			}
 		}
 	}
+
 	"saitama_serios_punch"
 	{
 		"BaseClass"             		"ability_lua"
@@ -112,7 +113,7 @@
 		"MaxLevel" 						"1"
 		"IsGrantedByScepter"			"1"
 		"HasInnateModifiers"			"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET" 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
@@ -134,6 +135,7 @@
 			}
 		}
 	}
+
 	"saitama_limiter"
 	{
 		"BaseClass"             		"ability_lua"
@@ -149,7 +151,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_strenght_pct"	"0.001 0.003 0.005 0.007 0.009 0.011 0.013"
+				"bonus_strength_pct"	"0.001 0.003 0.005 0.007 0.009 0.011 0.013"
 			}
 			"02"
 			{
@@ -171,7 +173,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"manacost"				"50 100 150 200 250 300 350"
 			}
-
 		}
 	}
 }
