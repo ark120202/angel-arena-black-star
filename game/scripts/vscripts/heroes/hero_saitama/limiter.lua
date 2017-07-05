@@ -22,7 +22,12 @@ modifier_saitama_limiter_autocast = class({
 if IsServer() then
 	function modifier_saitama_limiter_autocast:OnCreated()
 		self:StartIntervalThink(0.1)
+		local parent = self:GetParent()
+		if not parent:HasModifier("modifier_saitama_limiter") then
+			parent:AddNewModifier(parent, self:GetAbility(), "modifier_saitama_limiter", nil)
+		end
 	end
+
 	function modifier_saitama_limiter_autocast:OnIntervalThink()
 		local ability = self:GetAbility()
 		local parent = self:GetParent()

@@ -30,11 +30,11 @@ DOTA_Tooltip_ability_saitama_limiter_bonus_strength_pct: '%PERCENT OF POWER:'
 DOTA_Tooltip_ability_saitama_limiter_description: Adds a new ability - Serious Punch
 DOTA_Tooltip_ability_saitama_limiter_Lore: EVERY GOD'S DAY !!!!!
 
+Dota_Tooltip_modifier_saitama_limiter: Limiter
+Dota_Tooltip_modifier_saitama_limiter_Description: Limiter.
+
 
 DOTA_Tooltip_ability_saitama_serios_punch: Serious Impact
 DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Saitama is putting a bit more effort into the attack, causing critical damage and getting splash within a radius of% radius%. For each Limiter stack, the critical damage increases by %bonus_ctitical_damage_pct%%%.'
 DOTA_Tooltip_ability_saitama_serios_punch_Lore: Let me become a bit more serious, so that you put all of yourself into this battle...
 DOTA_Tooltip_ability_saitama_serios_punch_default_critical_damage_pct: '%INITIAL CRITICAL HEATER:'
-
-Dota_Tooltip_modifier_saitama_limiter: Limiter
-Dota_Tooltip_modifier_saitama_limiter_Description: Limiter.

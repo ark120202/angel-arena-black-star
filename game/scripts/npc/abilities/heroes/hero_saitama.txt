@@ -151,6 +151,8 @@
 		"AbilityCooldown"				"5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"HasScepterUpgrade"				"1"
+		"HasInnateModifiers"			"1"
+		"AbilityCastPoint"				"0.1"
 		"AbilitySpecial"
 		{
 			"01"
