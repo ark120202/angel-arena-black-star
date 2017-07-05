@@ -1,13 +1,10 @@
 modifier_saitama_limiter = class({
-	IsHidden   = function() return false end,
-	GetTexture = function() return "arena/modifier_saitama_limiter" end,
+	GetTexture    = function() return "arena/modifier_saitama_limiter" end,
 	RemoveOnDeath = function() return false end,
 })
 
 function modifier_saitama_limiter:DeclareFunctions()
-	return {
-	MODIFIER_EVENT_ON_DEATH,
-	}	
+	return {MODIFIER_EVENT_ON_DEATH}
 end
 
 if IsServer() then
@@ -16,10 +13,8 @@ if IsServer() then
 		local ability = caster:FindAbilityByName("saitama_limiter")
 		if keys.attacker == caster and keys.unit:IsTrueHero() then
 			self:SetStackCount(self:GetStackCount() + ability:GetLevelSpecialValueFor("stacks_for_kill", math.max(ability:GetLevel(), 1)))
-		end
-		if keys.unit == caster then
-			local loss = math.round(caster:GetModifierStackCount("modifier_saitama_limiter", caster) * ability:GetLevelSpecialValueFor("loss_stacks_pct", math.max(ability:GetLevel(), 1)) * 0.01)
-			self:SetStackCount(self:GetStackCount()-loss)
+		elseif keys.unit == caster then
+			self:SetStackCount(math.ceil(self:GetStackCount() * (1 - ability:GetLevelSpecialValueFor("loss_stacks_pct", math.max(ability:GetLevel(), 1)) * 0.01)))
 		end
 	end
 end

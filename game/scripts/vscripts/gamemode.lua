@@ -42,7 +42,7 @@ local requirements = {
 
 local modifiers = {
 	modifier_apocalypse_apocalypse = "heroes/hero_apocalypse/modifier_apocalypse_apocalypse",
-	modifier_saitama_limiter = "heroes/hero_saitama/modifier_limiter",
+	modifier_saitama_limiter = "heroes/hero_saitama/modifier_saitama_limiter",
 	modifier_set_attack_range = "modifiers/modifier_set_attack_range",
 	modifier_charges = "modifiers/modifier_charges",
 	modifier_hero_selection_transformation = "modifiers/modifier_hero_selection_transformation",
