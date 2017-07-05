@@ -8,6 +8,16 @@ function saitama_limiter:GetManaCost()
 	return self:GetCaster():GetMaxMana() * self:GetSpecialValueFor("manacost_pct") * 0.01 + self:GetSpecialValueFor("manacost")
 end
 
+function saitama_limiter:CastFilterResult()
+	local parent = self:GetCaster()
+	return parent:GetModifierStackCount("modifier_saitama_limiter", parent) == 0 and UF_FAIL_CUSTOM or UF_SUCCESS
+end
+
+function saitama_limiter:GetCustomCastError()
+	local parent = self:GetCaster()
+	return parent:GetModifierStackCount("modifier_saitama_limiter", parent) == 0 and "#dota_hud_error_no_charges" or ""
+end
+
 if IsServer() then
 	function saitama_limiter:OnSpellStart()
 		local caster = self:GetCaster()
@@ -37,7 +47,7 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local parent = self:GetParent()
 		if parent:IsAlive() then
-			if ability:GetAutoCastState() and parent:GetMana() >= ability:GetManaCost() then
+			if ability:GetAutoCastState() and parent:GetModifierStackCount("modifier_saitama_limiter", parent) > 0 and parent:GetMana() >= ability:GetManaCost() then
 				parent:CastAbilityNoTarget(ability, parent:GetPlayerID())
 			end
 		end
