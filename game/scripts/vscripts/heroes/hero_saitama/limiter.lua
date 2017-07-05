@@ -4,13 +4,18 @@ saitama_limiter = class({
 	GetIntrinsicModifierName = function() return "modifier_saitama_limiter_autocast" end,
 })
 
-function saitama_limiter:GetManaCost(iLevel)
-	return (self:GetCaster():GetMaxMana() * self:GetSpecialValueFor("manacost_pct") * 0.01) + self:GetSpecialValueFor("manacost")
+function saitama_limiter:GetManaCost()
+	return self:GetCaster():GetMaxMana() * self:GetSpecialValueFor("manacost_pct") * 0.01 + self:GetSpecialValueFor("manacost")
 end
 
 if IsServer() then
 	function saitama_limiter:OnSpellStart()
 		local caster = self:GetCaster()
+		StartAnimation(caster, {
+			duration = 1.2, -- 36 / 30
+			activity = ACT_DOTA_CAST_ABILITY_6
+		})
+
 		caster:ModifyStrength(caster:GetStrength() * self:GetSpecialValueFor("bonus_strength_pct") * caster:GetModifierStackCount("modifier_saitama_limiter", caster) * 0.01)
 	end
 end
@@ -32,7 +37,7 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local parent = self:GetParent()
 		if parent:IsAlive() then
-			if ability:GetAutoCastState() and ability:GetManaCost() < parent:GetMana() then
+			if ability:GetAutoCastState() and parent:GetMana() >= ability:GetManaCost() then
 				parent:CastAbilityNoTarget(ability, parent:GetPlayerID())
 			end
 		end

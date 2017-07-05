@@ -10,6 +10,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"70"
 		"AbilityManaCost"				"100"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -35,6 +36,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"70"
 		"AbilityManaCost"				"100"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -60,6 +62,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"70"
 		"AbilityManaCost"				"100"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -126,6 +129,7 @@
 		"AbilityCooldown"				"20"
 		"AbilityCastRange"				"10"
 		"AbilityCastPoint"				"1"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -152,7 +156,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"HasScepterUpgrade"				"1"
 		"HasInnateModifiers"			"1"
-		"AbilityCastPoint"				"0.1"
+
 		"AbilitySpecial"
 		{
 			"01"
