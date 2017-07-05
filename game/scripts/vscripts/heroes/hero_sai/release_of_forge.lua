@@ -61,7 +61,9 @@ if IsServer() then
 	function modifier_sai_release_of_forge:OnDestroy()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-		parent.RespawnTimeModifieSaiReleaseOfForge = ability:GetSpecialValueFor("bonus_respawn_time_pct")
+		local bonus_rt = ability:GetSpecialValueFor("bonus_respawn_time_pct")
+		local discrease = (parent:GetTalentSpecial("talent_hero_sai_release_of_forge_discrease_bonus_respawn_time", "discrease_bonus_respawn_time_pct") or 0)
+		parent.RespawnTimeModifieSaiReleaseOfForge = bonus_rt - discrease * bonus_rt * 0.01
 		parent:TrueKill(ability, self:GetCaster())
 	end
 end
