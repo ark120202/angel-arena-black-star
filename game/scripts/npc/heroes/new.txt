@@ -428,7 +428,7 @@
 		"ModelScale"	"1.1"
 		"Ability1"	"sai_rage_of_pain"
 		"Ability2"	"sai_divine_flesh"
-		"Ability3"	"sai_immortal"
+		"Ability3"	"sai_invulnerability"
 		"Ability4"	"sai_release_of_forge"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"

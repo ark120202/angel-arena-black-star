@@ -45,9 +45,9 @@ if IsServer() then
 		local parent = self:GetParent()
 		local damage = parent:GetMaxHealth() * ability:GetSpecialValueFor("active_self_damage_pct") * 0.01 * ability:GetSpecialValueFor("think_interval")
 		--[[
-		local sai_immortal = parent:FindAbilityByName("sai_immortal")
-		if sai_immortal and sai_immortal:GetToggleState() then
-			damage = damage * (1 + sai_immortal:GetSpecialValueFor("incoming_damage_reduction_pct") * 0.01)
+		local sai_invulnerability = parent:FindAbilityByName("sai_invulnerability")
+		if sai_invulnerability and sai_invulnerability:GetToggleState() then
+			damage = damage * (1 + sai_invulnerability:GetSpecialValueFor("incoming_damage_reduction_pct") * 0.01)
 		end
 		]]
 		ApplyDamage({
@@ -73,6 +73,6 @@ end
 function modifier_sai_divine_flesh_off:GetModifierHealthRegenPercentage()
 	local ability = self:GetAbility()
 	local parent = self:GetParent()
-	local sai_immortal = parent:FindAbilityByName("sai_immortal")
-	return sai_immortal and sai_immortal:GetToggleState() and ability:GetSpecialValueFor("health_regeneration_pct") * sai_immortal:GetSpecialValueFor("divine_flesh_regen_mult") or ability:GetSpecialValueFor("health_regeneration_pct")
+	local sai_invulnerability = parent:FindAbilityByName("sai_invulnerability")
+	return sai_invulnerability and sai_invulnerability:GetToggleState() and ability:GetSpecialValueFor("health_regeneration_pct") * sai_invulnerability:GetSpecialValueFor("divine_flesh_regen_mult") or ability:GetSpecialValueFor("health_regeneration_pct")
 end

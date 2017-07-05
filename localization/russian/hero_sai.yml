@@ -18,14 +18,14 @@ DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: '%УРОН ОТ М
 DOTA_Tooltip_ability_sai_divine_flesh_active_bonus_armor: 'ДОП. БРОНЯ:'
 DOTA_Tooltip_ability_sai_divine_flesh_active_magic_resistance_pct: '%СОПРОТИВЛЕНИЕ МАГ. УРОНУ:'
 
-DOTA_Tooltip_ability_sai_immortal_Description: 'Пока способность включена, урон, скорость атаки и скорость передвижения героя уменьшаются, но взамен уменьшается весь получаемый урон, а регенерация здоровья, даруемая способностью Divine Flesh, увеличивается в несколько раз.'
-DOTA_Tooltip_ability_sai_immortal_Lore: Жертвуя боевым потенциалом и концентрируясь на обороне, Воин становится поистине неуязвимым.
-DOTA_Tooltip_ability_sai_immortal_outgoing_damage_reduction_pct: '%СНИЖ. НАНОСИМОГО УРОНА:'
-DOTA_Tooltip_ability_sai_immortal_incoming_damage_reduction_pct: '%СНИЖ. ПОЛУЧАЕМОГО УРОНА:'
-DOTA_Tooltip_ability_sai_immortal_divine_flesh_regen_mult: 'МНОЖИТЕЛЬ РЕГЕН. DIVINE FLESH:'
-DOTA_Tooltip_ability_sai_immortal_mana_per_second: 'МАНЫ В СЕКУНДУ:'
-DOTA_Tooltip_ability_sai_immortal_attack_speed_reduction_pct: '%СНИЖ. СКОР. АТАКИ'
-DOTA_Tooltip_ability_sai_immortal_movement_speed_reduction_pct: '%СНИЖ. СКОР. ПЕРЕДВИЖ.'
+DOTA_Tooltip_ability_sai_invulnerability_Description: 'Пока способность включена, урон, скорость атаки и скорость передвижения героя уменьшаются, но взамен уменьшается весь получаемый урон, а регенерация здоровья, даруемая способностью Divine Flesh, увеличивается в несколько раз.'
+DOTA_Tooltip_ability_sai_invulnerability_Lore: Жертвуя боевым потенциалом и концентрируясь на обороне, Воин становится поистине неуязвимым.
+DOTA_Tooltip_ability_sai_invulnerability_outgoing_damage_reduction_pct: '%СНИЖ. НАНОСИМОГО УРОНА:'
+DOTA_Tooltip_ability_sai_invulnerability_incoming_damage_reduction_pct: '%СНИЖ. ПОЛУЧАЕМОГО УРОНА:'
+DOTA_Tooltip_ability_sai_invulnerability_divine_flesh_regen_mult: 'МНОЖИТЕЛЬ РЕГЕН. DIVINE FLESH:'
+DOTA_Tooltip_ability_sai_invulnerability_mana_per_second: 'МАНЫ В СЕКУНДУ:'
+DOTA_Tooltip_ability_sai_invulnerability_attack_speed_reduction_pct: '%СНИЖ. СКОР. АТАКИ'
+DOTA_Tooltip_ability_sai_invulnerability_movement_speed_reduction_pct: '%СНИЖ. СКОР. ПЕРЕДВИЖ.'
 
 DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Герой становится бессмертным на некоторое время, его здоровье падает до единицы и не может восстановиться, часть его урона становится чистым, дальность атаки становится неограниченной, а все вражеские герои на карте замедляются на %aura_movement_speed_slow_pct%%%, а их скорость поворота и время произношения заклинаний снижается. После окончания действия способности Сай погибнет, а время его воскрешения будет увеличено.'
 DOTA_Tooltip_ability_sai_release_of_forge_Lore: Воздух тяжелеет...

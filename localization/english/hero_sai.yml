@@ -20,15 +20,15 @@ DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: '%DAMAGE BASED ON 
 DOTA_Tooltip_ability_sai_divine_flesh_active_bonus_armor: 'BONUS ARMOR:'
 DOTA_Tooltip_ability_sai_divine_flesh_active_magic_resistance_pct: '%BONUS MAGIC DAMAGE RESISTANCE:'
 
-DOTA_Tooltip_ability_sai_immortal: Invulnerability
-DOTA_Tooltip_ability_sai_immortal_Description: 'When ability is activated, Sai''s damage, attack speed and movement speed will be reduced, yet it reduces all incoming damage and increases Divine Flesh granted health regeneration.'
-DOTA_Tooltip_ability_sai_immortal_Lore: Sacrificing combat potential and concentrating on defense, the warrior becomes truly invulnerable.
-DOTA_Tooltip_ability_sai_immortal_outgoing_damage_reduction_pct: '%OUTGOING DAMAGE REDUCTION:'
-DOTA_Tooltip_ability_sai_immortal_incoming_damage_reduction_pct: '%INCOMING DAMAGE REDUCTION:'
-DOTA_Tooltip_ability_sai_immortal_divine_flesh_regen_mult: 'DIVINE FLESH REGENERATION MULT.:'
-DOTA_Tooltip_ability_sai_immortal_mana_per_second: 'MANA PER SECOND:'
-DOTA_Tooltip_ability_sai_immortal_attack_speed_reduction_pct: '%ATTACK SPEED REDUCTION:'
-DOTA_Tooltip_ability_sai_immortal_movement_speed_reduction_pct: '%MOVEMENT SPEED REDUCTION:'
+DOTA_Tooltip_ability_sai_invulnerability: Invulnerability
+DOTA_Tooltip_ability_sai_invulnerability_Description: 'When ability is activated, Sai''s damage, attack speed and movement speed will be reduced, yet it reduces all incoming damage and increases Divine Flesh granted health regeneration.'
+DOTA_Tooltip_ability_sai_invulnerability_Lore: Sacrificing combat potential and concentrating on defense, the warrior becomes truly invulnerable.
+DOTA_Tooltip_ability_sai_invulnerability_outgoing_damage_reduction_pct: '%OUTGOING DAMAGE REDUCTION:'
+DOTA_Tooltip_ability_sai_invulnerability_incoming_damage_reduction_pct: '%INCOMING DAMAGE REDUCTION:'
+DOTA_Tooltip_ability_sai_invulnerability_divine_flesh_regen_mult: 'DIVINE FLESH REGENERATION MULT.:'
+DOTA_Tooltip_ability_sai_invulnerability_mana_per_second: 'MANA PER SECOND:'
+DOTA_Tooltip_ability_sai_invulnerability_attack_speed_reduction_pct: '%ATTACK SPEED REDUCTION:'
+DOTA_Tooltip_ability_sai_invulnerability_movement_speed_reduction_pct: '%MOVEMENT SPEED REDUCTION:'
 
 DOTA_Tooltip_ability_sai_release_of_forge: Release of Forge
 DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Hero becomes immortal for %duration% seconds, his health drops to one and can''t be increased, a part of his attack damage deals pure damage, instead of physical, attack range becomes unlimmited, yet all enemy heroes will lose %aura_movement_speed_slow_pct%%% movement speed and their ability cast time, turn rate and vision radius will be reduced. When ability time runs out, Sai dies and his respawn time will be increased.'

@@ -78,11 +78,11 @@
 		}
 	}
 
-	"sai_immortal"
+	"sai_invulnerability"
 	{
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"arena/sai_immortal"
-		"ScriptFile"					"heroes/hero_sai/immortal.lua"
+		"AbilityTextureName"			"arena/sai_invulnerability"
+		"ScriptFile"					"heroes/hero_sai/invulnerability.lua"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityCooldown"				"1.0"
@@ -128,7 +128,7 @@
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
-			"particle"	"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_wings.vpcf"
+			"particle"	"particles/arena/units/heroes/hero_sai/sai_invulnerability.vpcf"
 		}
 	}
 
