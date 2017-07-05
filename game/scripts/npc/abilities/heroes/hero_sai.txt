@@ -76,6 +76,11 @@
 				"think_interval"	"0.1"
 			}
 		}
+
+		"precache"
+		{
+			"particle"		"particles/arena/units/heroes/hero_sai/sai_divine_flesh.vpcf"
+		}
 	}
 
 	"sai_invulnerability"

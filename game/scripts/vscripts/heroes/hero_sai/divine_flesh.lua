@@ -18,7 +18,9 @@ if IsServer() then
 	end
 end
 
-modifier_sai_divine_flesh_on = class({})
+modifier_sai_divine_flesh_on = class({
+	GetEffectName = function() return "particles/arena/units/heroes/hero_sai/sai_divine_flesh.vpcf" end,
+})
 function modifier_sai_divine_flesh_on:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
