@@ -911,11 +911,11 @@
 					m_Animationname = "Spell Blink"
 					m_Filepath = "models/units/saitama/saitama.fbx"
 					m_nStartframe = 703
-					m_nEndframe = 713
-					m_flFps = 30.0
+					m_nEndframe = 712
+					m_flFps = 15.0
 					m_Loop = 
 					{
-						m_bLoop = false
+						m_bLoop = true
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
@@ -928,7 +928,13 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities = [  ]
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CHANNEL_ABILITY_2"
+							m_nWeight = 1
+						},
+					]
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
@@ -955,7 +961,7 @@
 					m_flFps = 30.0
 					m_Loop = 
 					{
-						m_bLoop = false
+						m_bLoop = true
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
@@ -968,7 +974,13 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities = [  ]
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CHANNEL_ABILITY_3"
+							m_nWeight = 1
+						},
+					]
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
@@ -988,11 +1000,11 @@
 					m_MotionFramesRootBone = ""
 				},
 				{
-					m_Animationname = "Spell Slam"
+					m_Animationname = "Spell Slam Start"
 					m_Filepath = "models/units/saitama/saitama.fbx"
 					m_nStartframe = 757
-					m_nEndframe = 787
-					m_flFps = 30.0
+					m_nEndframe = 767
+					m_flFps = 25.0
 					m_Loop = 
 					{
 						m_bLoop = false
@@ -1008,7 +1020,13 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities = [  ]
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAST_ABILITY_1"
+							m_nWeight = 1
+						},
+					]
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
@@ -1049,6 +1067,98 @@
 					m_bHidden = false
 					m_bDisable = false
 					m_Activities = [  ]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "Spell Slam Channeling"
+					m_Filepath = "models/units/saitama/saitama.fbx"
+					m_nStartframe = 767
+					m_nEndframe = 784
+					m_flFps = 7.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = true
+						m_nSmoothLoopStart = 2
+						m_nSmoothLoopEnd = 2
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CHANNEL_ABILITY_1"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "Spell Slam End"
+					m_Filepath = "models/units/saitama/saitama.fbx"
+					m_nStartframe = 784
+					m_nEndframe = 787
+					m_flFps = 15.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CHANNEL_END_ABILITY_1"
+							m_nWeight = 1
+						},
+					]
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
