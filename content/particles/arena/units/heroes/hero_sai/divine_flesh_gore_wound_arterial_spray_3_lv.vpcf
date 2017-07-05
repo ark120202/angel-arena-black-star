@@ -147,10 +147,10 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/arena/units/heroes/hero_sai/sai_divine_flesh_gore_wound_drips_generic_lv.vpcf"
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_sai/divine_flesh_gore_wound_drips_generic_lv.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/arena/units/heroes/hero_sai/sai_divine_flesh_blood_gore_arterial_drip_lv.vpcf"
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_sai/divine_flesh_blood_gore_arterial_drip_lv.vpcf"
 		},
 	]
 	m_controlPointConfigurations = 

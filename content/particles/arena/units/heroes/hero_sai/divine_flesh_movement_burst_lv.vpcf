@@ -3,7 +3,6 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 12
-	m_hLowViolenceDef = resource:"particles/arena/units/heroes/hero_sai/sai_divine_flesh_movement_burst_b_lv.vpcf"
 	m_flMaxDrawDistance = 2000.0
 	m_bShouldSort = false
 	m_Renderers = 
@@ -14,11 +13,7 @@
 			m_flStartFadeSize = 0.675
 			m_flEndFadeSize = 0.75
 			m_flMaxSize = 0.85
-			m_flOverbrightFactor = 1.5
-			m_flAddSelfAmount = 2.0
-			m_bBlendFramesSeq0 = false
-			m_bSaturateColorPreAlphaBlend = false
-			m_hTexture = resource:"materials/particle/spray1/spray1.vtex"
+			m_hTexture = resource:"materials/particle/water_splash/water_splash.vtex"
 			m_flOpStrengthMinScale = 0.0
 			m_flOpTimeOffsetMax = 1.0
 			m_flAnimationRate = 1.45
@@ -60,12 +55,12 @@
 			m_flOpStrengthMinScale = 0.0
 			m_flOpTimeOffsetMax = 1.0
 			m_flBias = 0.6
-			m_flEndScale = 2.0
+			m_flEndScale = 3.0
 		},
 		{
 			_class = "C_OP_PositionLock"
-			m_flStartTime_max = -1.0
 			m_flStartTime_min = -1.0
+			m_flStartTime_max = -1.0
 		},
 	]
 	m_Initializers = 
@@ -74,8 +69,8 @@
 			_class = "C_INIT_RandomRadius"
 			m_flOpStrengthMinScale = 0.0
 			m_flOpTimeOffsetMax = 1.0
-			m_flRadiusMax = 14.0
-			m_flRadiusMin = 8.0
+			m_flRadiusMax = 15.0
+			m_flRadiusMin = 6.0
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -99,8 +94,8 @@
 			m_flOpStrengthMinScale = 0.0
 			m_flOpTimeOffsetMax = 1.0
 			m_TintMax = [ 32, 0, 0, 255 ]
-			m_ColorMax = [ 221, 0, 0, 255 ]
-			m_ColorMin = [ 154, 14, 14, 255 ]
+			m_ColorMax = [ 32, 110, 14, 255 ]
+			m_ColorMin = [ 36, 127, 34, 255 ]
 		},
 		{
 			_class = "C_INIT_RandomYawFlip"
@@ -108,21 +103,31 @@
 			m_flOpTimeOffsetMax = 1.0
 		},
 		{
+			_class = "C_INIT_RandomColor"
+			m_flOpStrengthMinScale = 0.0
+			m_flOpTimeOffsetMax = 1.0
+			m_nFieldOutput = 22
+			m_TintMax = [ 48, 0, 0, 255 ]
+			m_TintMin = [ 14, 76, 4, 255 ]
+			m_ColorMax = [ 21, 101, 0, 255 ]
+			m_ColorMin = [ 41, 157, 0, 255 ]
+		},
+		{
 			_class = "C_INIT_InitialVelocityNoise"
-			m_flNoiseScale = 7.0
+			m_flNoiseScale = 5.0
 			m_flNoiseScaleLoc = 25.0
-			m_vecOutputMin = [ -100.0, 0.0, 150.0 ]
+			m_vecOutputMin = [ 0.0, 0.0, 150.0 ]
 			m_vecOutputMax = [ 100.0, 0.0, 200.0 ]
-			m_flOffset = 355.0
+			m_bLocalSpace = true
 		},
 		{
 			_class = "C_INIT_CreateOnModel"
-			m_vecDirectionBias = [ 0.0, 0.0, 0.5 ]
+			m_vecDirectionBias = [ 0.0, 0.0, 1.0 ]
 		},
 		{
 			_class = "C_INIT_RemapCPtoScalar"
 			m_flInputMin = 0.2
-			m_flOutputMax = 3.0
+			m_flOutputMax = 2.0
 			m_bScaleInitialRange = true
 			m_flOutputMin = 0.1
 		},
@@ -133,6 +138,12 @@
 			_class = "C_OP_ContinuousEmitter"
 			m_flEmitRate = 400.0
 			m_nScaleControlPoint = 1
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_sai/divine_flesh_movement_burst_b.vpcf"
 		},
 	]
 	m_controlPointConfigurations = 

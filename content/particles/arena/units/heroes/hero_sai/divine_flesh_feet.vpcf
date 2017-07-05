@@ -2,17 +2,30 @@
 {
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
-	m_nMaxParticles = 512
-	m_hLowViolenceDef = resource:"particles/arena/units/heroes/hero_sai/sai_divine_flesh_b_lv.vpcf"
-	m_nConstantSequenceNumber = 3
+	m_nMaxParticles = 64
+	m_hLowViolenceDef = resource:"particles/arena/units/heroes/hero_sai/divine_flesh_feet_lv.vpcf"
+	m_flConstantRadius = 52.0
+	m_ConstantColor = [ 97, 13, 13, 255 ]
 	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderTrails"
+			VisibilityInputs = 
+			{
+				m_flCameraBias = -4.0
+			}
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_hTexture = resource:"materials/particle/water_splash/water_splash.vtex"
-			m_flAnimationRate = 1.0
-			m_flLengthFadeInTime = 0.2
+			m_flStartFadeSize = 0.675
+			m_flEndFadeSize = 0.75
+			m_flMaxSize = 0.85
+			m_flOverbrightFactor = 2.0
+			m_flAddSelfAmount = 1.0
+			m_bBlendFramesSeq0 = false
+			m_bSaturateColorPreAlphaBlend = false
+			m_hTexture = resource:"materials/particle/spray1/spray1.vtex"
+			m_flAnimationRate = 1.5
+			m_flLengthFadeInTime = 0.5
+			m_bIgnoreDT = true
 			m_flRadiusScale = 0.5
 			m_flFinalTextureScaleV = -1.0
 			m_flFinalTextureOffsetV = 1.0
@@ -21,73 +34,59 @@
 	m_Operators = 
 	[
 		{
-			_class = "C_OP_BasicMovement"
-			m_Gravity = [ 0.0, 0.0, -550.0 ]
-		},
-		{
-			_class = "C_OP_InterpolateRadius"
-			m_flEndScale = 0.0
-			m_flBias = 0.7
-		},
-		{
 			_class = "C_OP_LockToBone"
-			m_flLifeTimeFadeStart = 1.0
-			m_flLifeTimeFadeEnd = 1.0
+			m_HitboxSetName = "feet"
+			m_flPrevPosScale = 0.125
 		},
 		{
 			_class = "C_OP_Decay"
 		},
 		{
 			_class = "C_OP_FadeInSimple"
-			m_flFadeInTime = 0.8
+			m_flFadeInTime = 0.2
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 190, 0, 0, 255 ]
-			m_flFadeStartTime = 0.5
+			m_flFadeStartTime = 0.7
+			m_ColorFade = [ 197, 16, 16, 255 ]
 		},
 		{
 			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.4
+		},
+		{
+			_class = "C_OP_LerpEndCapScalar"
+			m_flLerpTime = 0.25
+			m_nFieldOutput = 16
+			m_flOutput = 0.0
 		},
 	]
 	m_Initializers = 
 	[
 		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 224, 7, 7, 255 ]
-			m_ColorMax = [ 255, 0, 0, 255 ]
-		},
-		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 0.8
-			m_fLifetimeMax = 0.8
-		},
-		{
-			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 80.0
-			m_flRadiusMax = 240.0
-		},
-		{
-			_class = "C_INIT_RandomAlpha"
+			m_fLifetimeMax = 1.0
+			m_fLifetimeMin = 0.4
 		},
 		{
 			_class = "C_INIT_CreateOnModel"
+			m_HitboxSetName = "feet"
 		},
 		{
 			_class = "C_INIT_RandomTrailLength"
-			m_flMinLength = 0.3
-			m_flMaxLength = 0.3
+			m_flMinLength = 1.0
+			m_flMaxLength = 1.0
 		},
 		{
 			_class = "C_INIT_RandomSequence"
-			m_nSequenceMax = 1
+			m_nSequenceMax = 2
 		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 350.0
+			m_flEmitRate = 64.0
 		},
 	]
 	m_controlPointConfigurations = 

@@ -19,7 +19,7 @@ if IsServer() then
 end
 
 modifier_sai_divine_flesh_on = class({
-	GetEffectName = function() return "particles/arena/units/heroes/hero_sai/sai_divine_flesh.vpcf" end,
+	GetEffectName = function() return "particles/arena/units/heroes/hero_sai/divine_flesh.vpcf" end,
 })
 function modifier_sai_divine_flesh_on:DeclareFunctions()
 	return {

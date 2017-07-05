@@ -79,7 +79,7 @@
 
 		"precache"
 		{
-			"particle"		"particles/arena/units/heroes/hero_sai/sai_divine_flesh.vpcf"
+			"particle"		"particles/arena/units/heroes/hero_sai/divine_flesh.vpcf"
 		}
 	}
 
@@ -133,7 +133,7 @@
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
-			"particle"	"particles/arena/units/heroes/hero_sai/sai_invulnerability.vpcf"
+			"particle"	"particles/arena/units/heroes/hero_sai/invulnerability.vpcf"
 		}
 	}
 

@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 256
-	m_hLowViolenceDef = resource:"particles/arena/units/heroes/hero_sai/sai_divine_flesh_trail03_lv.vpcf"
+	m_hLowViolenceDef = resource:"particles/arena/units/heroes/hero_sai/divine_flesh_trail03_lv.vpcf"
 	m_flConstantRadius = 80.0
 	m_flConstantLifespan = 2.5
 	m_ConstantColor = [ 224, 0, 0, 255 ]

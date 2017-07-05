@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 12
-	m_hLowViolenceDef = resource:"particles/arena/units/heroes/hero_sai/sai_divine_flesh_movement_burst_lv.vpcf"
+	m_hLowViolenceDef = resource:"particles/arena/units/heroes/hero_sai/divine_flesh_movement_burst_lv.vpcf"
 	m_flMaxDrawDistance = 2000.0
 	m_bShouldSort = false
 	m_Renderers = 
@@ -144,7 +144,7 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/arena/units/heroes/hero_sai/sai_divine_flesh_movement_burst_b.vpcf"
+			m_ChildRef = resource:"particles/arena/units/heroes/hero_sai/divine_flesh_movement_burst_b.vpcf"
 		},
 	]
 	m_controlPointConfigurations = 
