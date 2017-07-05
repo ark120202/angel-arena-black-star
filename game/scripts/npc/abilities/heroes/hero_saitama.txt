@@ -3,7 +3,7 @@
 	"saitama_push_ups"
 	{
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"arena/saitama_1_skill"
+		"AbilityTextureName"			"arena/saitama_push_ups"
 		"ScriptFile"					"heroes/hero_saitama/push_ups.lua"
 		"MaxLevel" 						"7"
 		"AbilityChannelTime"			"5"
@@ -24,10 +24,11 @@
 			}
 		}
 	}
+
 	"saitama_squats"
 	{
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"arena/saitama_2_skill"
+		"AbilityTextureName"			"arena/saitama_squats"
 		"ScriptFile"					"heroes/hero_saitama/squats.lua"
 		"MaxLevel" 						"7"
 		"AbilityChannelTime"			"5"
@@ -48,10 +49,11 @@
 			}
 		}
 	}
+
 	"saitama_press"
 	{
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"arena/saitama_3_skill"
+		"AbilityTextureName"			"arena/saitama_press"
 		"ScriptFile"					"heroes/hero_saitama/press.lua"
 		"MaxLevel" 						"7"
 		"AbilityChannelTime"			"5"
@@ -72,10 +74,11 @@
 			}
 		}
 	}
+
 	"saitama_joggin"
 	{
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"arena/saitama_4_skill"
+		"AbilityTextureName"			"arena/saitama_joggin"
 		"ScriptFile"					"heroes/hero_saitama/joggin.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityChannelTime"			"10"
