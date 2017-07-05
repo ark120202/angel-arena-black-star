@@ -1,0 +1,240 @@
+""
+{
+	"item_recipe_mekansm_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"900"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mekansm_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_headdress;item_buckler;item_ultimate_orb"
+		}
+	}
+
+	"item_mekansm_arena"
+	{
+		"ID"							"-1"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_mekansm_arena.lua"
+		"AbilityTextureName"			"item_mekansm"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"ItemAliases"					"mechanism;mekansm"
+		"AbilityCooldown"				"50 40"
+		"AbilityCastRange"				"1000"
+		"AbilityManaCost"				"225 325"
+
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"20 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"7 10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"6 12"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_armor"		"4 8"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"400 800"
+			}
+		}
+	}
+
+	"item_recipe_mekansm_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mekansm_2"
+		"ItemRequirements"
+		{
+			"01"						"item_mekansm_arena;item_ultimate_orb;item_ultimate_orb"
+		}
+	}
+
+	"item_mekansm_2"
+	{
+		"ID"							"-1"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_mekansm_arena.lua"
+		"AbilityTextureName"			"item_arena/mekansm_2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"ItemAliases"					"mechanism;mekansm"
+		"AbilityCooldown"				"50 40"
+		"AbilityCastRange"				"1000"
+		"AbilityManaCost"				"225 325"
+
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"20 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"7 10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"6 12"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_armor"		"4 8"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"400 800"
+			}
+		}
+	}
+
+	"item_recipe_guardian_greaves_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"100"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_guardian_greaves_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_mekansm_2;item_arcane_boots;item_moon_dust"
+		}
+	}
+
+	"item_guardian_greaves_arena"
+	{
+		"ID"							"-1"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_guardian_greaves_arena.lua"
+		"AbilityTextureName"			"item_guardian_greaves"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"ItemAliases"					"mechanism;mekansm;guardian greaves"
+		"AbilityCooldown"				"35"
+		"AbilityCastRange"				"1000"
+		"AbilityManaCost"				"300"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement"		"70"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"12"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_health_regen"		"40"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_armor"			"20"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_threshold_pct"	"25"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_health_regen_bonus"	"50"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_armor_bonus"		"30"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_health"		"3000"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_mana"		"2000"
+			}
+		}
+	}
+}
