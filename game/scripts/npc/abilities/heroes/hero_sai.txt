@@ -86,24 +86,23 @@
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityCooldown"				"1.0"
-		"AbilityManaCost"				"%mana_per_second"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"decreasement_pct"			"-50"
+				"outgoing_damage_reduction_pct"			"-50"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_reduction_pct"		"8 15 22 29 36 43 50"
+				"incoming_damage_reduction_pct"		"-8 -15 -22 -29 -36 -43 -50"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_regen"	"1.4 1.5 1.6 1.7 1.8 1.9 2.0"
+				"divine_flesh_regen_mult"	"1.4 1.5 1.6 1.7 1.8 1.9 2.0"
 			}
 			"04"
 			{
@@ -117,13 +116,13 @@
 			}
 			"06"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"think_interval"	"0.1"
+				"var_type"			"FIELD_INTEGER"
+				"movement_speed_reduction_pct"			"-25"
 			}
 			"07"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"decreasement_ms_pct"			"-25"
+				"var_type"			"FIELD_FLOAT"
+				"think_interval"	"0.1"
 			}
 		}
 		"precache"
@@ -139,8 +138,8 @@
 		"AbilityTextureName"			"arena/sai_release_of_forge"
 		"ScriptFile"					"heroes/hero_sai/release_of_forge.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY" 
-		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO" 
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -166,29 +165,28 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_movement_speed_slow_pct"	"25"
+				"aura_movement_speed_pct"	"25"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aura_vision_decrease_pct"		"50"
+				"aura_vision_pct"		"-50"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aura_casttime_decrease_pct"		"75"
+				"aura_cast_time_pct"		"-75"
 			}
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aura_turn_decrease_pct"		"75"
+				"aura_turn_rate_pct"		"-75"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_respawn_time_pct"	"60"
 			}
-
 		}
 		"precache"
 			{

@@ -1,16 +1,13 @@
-sai_rage_of_pain = class({})
 LinkLuaModifier("modifier_sai_rage_of_pain", "heroes/hero_sai/rage_of_pain.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_sai_rage_of_pain_mass_debuff", "heroes/hero_sai/rage_of_pain.lua", LUA_MODIFIER_MOTION_NONE)
 
-function sai_rage_of_pain:GetIntrinsicModifierName()
-	return "modifier_sai_rage_of_pain"
-end
+sai_rage_of_pain = class({
+	GetIntrinsicModifierName = function() return "modifier_sai_rage_of_pain" end,
+})
+
 
 modifier_sai_rage_of_pain = class({})
 
-function modifier_sai_rage_of_pain:IsHidden()
-	return false
-end
 function modifier_sai_rage_of_pain:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
@@ -28,17 +25,18 @@ end
 function modifier_sai_rage_of_pain:OnIntervalThink()
 	local ability = self:GetAbility()
 	local parent = self:GetParent()
-	self:SetStackCount((ability:GetSpecialValueFor("health_per_stack_pct")+1) - math.ceil(parent:GetHealth() / parent:GetMaxHealth() * (ability:GetSpecialValueFor("health_per_stack_pct")+1)))
+	local health_per_stack_pct = ability:GetSpecialValueFor("health_per_stack_pct")
+	self:SetStackCount(health_per_stack_pct - math.ceil(parent:GetHealth() / parent:GetMaxHealth() * health_per_stack_pct))
 end
 
 function modifier_sai_rage_of_pain:GetModifierPreAttack_CriticalStrike(keys)
 	local ability = self:GetAbility()
 	local stacks = self:GetStackCount()
 	if RollPercentage(ability:GetSpecialValueFor("crit_chance_per_stack_pct") * stacks) then
-		return (100 + self:GetAbility():GetSpecialValueFor("crit_mult_pre_stack_pct") * self:GetStackCount())
+		return 100 + self:GetAbility():GetSpecialValueFor("crit_mult_pre_stack_pct") * stacks
 	end
 end
 
 function modifier_sai_rage_of_pain:GetModifierBaseDamageOutgoing_Percentage(keys)
-	return (self:GetAbility():GetSpecialValueFor("damage_per_stack_pct") * self:GetStackCount())
+	return self:GetAbility():GetSpecialValueFor("damage_per_stack_pct") * self:GetStackCount()
 end

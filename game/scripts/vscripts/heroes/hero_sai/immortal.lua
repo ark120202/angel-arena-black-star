@@ -1,5 +1,6 @@
-sai_immortal = class({})
 LinkLuaModifier("modifier_sai_immortal", "heroes/hero_sai/immortal.lua", LUA_MODIFIER_MOTION_NONE)
+
+sai_immortal = class({})
 
 if IsServer() then
 	function sai_immortal:OnToggle()
@@ -12,13 +13,11 @@ if IsServer() then
 	end
 end
 
-modifier_sai_immortal = class({
-	GetEffectName = function() return "particles/units/heroes/hero_omniknight/omniknight_guardian_angel_wings.vpcf" end,
-	})
 
-function modifier_sai_immortal:IsHidden()
-	return true
-end
+modifier_sai_immortal = class({
+	IsHidden      = function() return true end,
+	GetEffectName = function() return "particles/units/heroes/hero_omniknight/omniknight_guardian_angel_wings.vpcf" end,
+})
 
 function modifier_sai_immortal:DeclareFunctions()
 	return {
@@ -30,23 +29,19 @@ function modifier_sai_immortal:DeclareFunctions()
 end
 
 function modifier_sai_immortal:GetModifierAttackSpeedBonus_Constant()
-		return self:GetAbility():GetSpecialValueFor("attack_speed_debuff")
+		return self:GetAbility():GetSpecialValueFor("attack_speed_reduction_pct")
 end
 
 function modifier_sai_immortal:GetModifierMoveSpeedBonus_Percentage()
-	local ability = self:GetAbility()
-	local debuff = ability:GetSpecialValueFor("decreasement_ms_pct")
-	return debuff
+	return self:GetAbility():GetSpecialValueFor("movement_speed_reduction_pct")
 end
 
 function modifier_sai_immortal:GetModifierTotalDamageOutgoing_Percentage()
-	local ability = self:GetAbility()
-	local debuff = ability:GetSpecialValueFor("decreasement_pct")
-	return debuff
+	return self:GetAbility():GetSpecialValueFor("outgoing_damage_reduction_pct")
 end
 
 function modifier_sai_immortal:GetModifierIncomingDamage_Percentage()
-		return -self:GetAbility():GetSpecialValueFor("damage_reduction_pct")
+		return self:GetAbility():GetSpecialValueFor("incoming_damage_reduction_pct")
 end
 
 if IsServer() then
@@ -54,17 +49,16 @@ if IsServer() then
 		self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("think_interval"))
 		self:OnIntervalThink()
 	end
-end
 
-function modifier_sai_immortal:OnIntervalThink()
-	local ability = self:GetAbility()
-	local parent = self:GetParent()
-	local caster = self:GetCaster()
-	if parent:GetMana() > ability:GetSpecialValueFor("mana_per_second") and ability:GetToggleState() then
-		parent:SpendMana(self:GetAbility():GetSpecialValueFor("mana_per_second") *
-		ability:GetSpecialValueFor("think_interval"), ability)
-	else 
-		ability:ToggleAbility()
-		caster:RemoveModifierByName("modifier_sai_immortal")
+	function modifier_sai_immortal:OnIntervalThink()
+		local ability = self:GetAbility()
+		local parent = self:GetParent()
+		local caster = self:GetCaster()
+		local manaPerTick = ability:GetSpecialValueFor("mana_per_second") * ability:GetSpecialValueFor("think_interval")
+		if parent:GetMana() >= manaPerTick and ability:GetToggleState() then
+			parent:SpendMana(manaPerTick, ability)
+		else
+			ability:ToggleAbility()
+		end
 	end
 end
