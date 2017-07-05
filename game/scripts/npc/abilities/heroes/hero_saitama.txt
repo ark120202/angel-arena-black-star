@@ -124,10 +124,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityCooldown"				"20"
-		"AbilityCastRange"				"10"
+		"AbilityCastRange"				"1"
 		"AbilityCastPoint"				"1"
 
 		"AbilitySpecial"
@@ -140,7 +140,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"default_critical_damage_pct" 	"200"
+				"default_critical_damage_pct" 	"300"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"used_damage_pct"				"100"
 			}
 		}
 	}

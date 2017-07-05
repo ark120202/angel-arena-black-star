@@ -24,7 +24,7 @@ DOTA_Tooltip_ability_saitama_limiter_aghanim_description: Добавляет н�
 DOTA_Tooltip_ability_saitama_limiter_Lore: Каждый божий день!!
 Dota_Tooltip_ability_saitama_limiter_bonus_strength_pct: '%ПРОЦЕНТ СИЛЫ:'
 
-DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Сайтама прилагает к удару чуть больше усилий, нанося критический урон и получая сплеш в радиусе %radius%. За каждый стак лимитера критический урон растет на %bonus_ctitical_damage_pct%%%.'
+DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Сайтама прилагает к удару чуть больше усилий, нанося критический урон. За каждый стак лимитера критический урон растет на %bonus_ctitical_damage_pct%%%. Способность использует %used_damage_pct%%% урона.'
 DOTA_Tooltip_ability_saitama_serios_punch_default_critical_damage_pct: '%НАЧАЛЬНЫЙ КРИТИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_saitama_serios_punch_Lore: Позволь мне стать немного серьезнее, чтобы ты вложил в эту битву всего себя...
 
