@@ -117,7 +117,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_speed_debuff"	"-280"
+				"attack_speed_debuff"	"280"
 			}
 			"06"
 			{

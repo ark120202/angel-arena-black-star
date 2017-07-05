@@ -24,7 +24,7 @@ DOTA_Tooltip_ability_sai_invulnerability_outgoing_damage_reduction_pct: '%СНИ
 DOTA_Tooltip_ability_sai_invulnerability_incoming_damage_reduction_pct: '%СНИЖ. ПОЛУЧАЕМОГО УРОНА:'
 DOTA_Tooltip_ability_sai_invulnerability_divine_flesh_regen_mult: 'МНОЖИТЕЛЬ РЕГЕН. DIVINE FLESH:'
 DOTA_Tooltip_ability_sai_invulnerability_mana_per_second: 'МАНЫ В СЕКУНДУ:'
-DOTA_Tooltip_ability_sai_invulnerability_attack_speed_reduction_pct: '%СНИЖ. СКОР. АТАКИ'
+DOTA_Tooltip_ability_sai_invulnerability_attack_speed_debuff: 'СНИЖ. СКОР. АТАКИ'
 DOTA_Tooltip_ability_sai_invulnerability_movement_speed_reduction_pct: '%СНИЖ. СКОР. ПЕРЕДВИЖ.'
 
 DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Герой становится бессмертным на некоторое время, его здоровье падает до единицы и не может восстановиться, часть его урона становится чистым, дальность атаки становится неограниченной, а все вражеские герои на карте замедляются на %aura_movement_speed_slow_pct%%%, а их скорость поворота и время произношения заклинаний снижается. После окончания действия способности Сай погибнет, а время его воскрешения будет увеличено.'
