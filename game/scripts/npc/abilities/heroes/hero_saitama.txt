@@ -6,10 +6,10 @@
 		"AbilityTextureName"			"arena/saitama_push_ups"
 		"ScriptFile"					"heroes/hero_saitama/push_ups.lua"
 		"MaxLevel" 						"7"
-		"AbilityChannelTime"			"5"
+		"AbilityChannelTime"			"2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"				"70"
-		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"100"
+		"AbilityManaCost"				"200 180 160 140 120 100 80"
 
 		"AbilitySpecial"
 		{
@@ -32,10 +32,10 @@
 		"AbilityTextureName"			"arena/saitama_squats"
 		"ScriptFile"					"heroes/hero_saitama/squats.lua"
 		"MaxLevel" 						"7"
-		"AbilityChannelTime"			"5"
+		"AbilityChannelTime"			"2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"				"70"
-		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"100"
+		"AbilityManaCost"				"200 180 160 140 120 100 80"
 
 		"AbilitySpecial"
 		{
@@ -58,10 +58,10 @@
 		"AbilityTextureName"			"arena/saitama_press"
 		"ScriptFile"					"heroes/hero_saitama/press.lua"
 		"MaxLevel" 						"7"
-		"AbilityChannelTime"			"5"
+		"AbilityChannelTime"			"2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"				"70"
-		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"100"
+		"AbilityManaCost"				"200 180 160 140 120 100 80"
 
 		"AbilitySpecial"
 		{
@@ -103,7 +103,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range"					"2000 1800 1600 1400 1200 1000 800"
+				"range"					"10000 9500 9000 8500 8000 7500 7000"
 			}
 			"04"
 			{
@@ -152,7 +152,7 @@
 		"ScriptFile"					"heroes/hero_saitama/limiter.lua"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"2.5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"HasScepterUpgrade"				"1"
 		"HasInnateModifiers"			"1"
@@ -167,22 +167,22 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"manacost_pct"			"5"
+				"manacost_pct"			"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"loss_stacks_pct"		"33"
+				"loss_stacks_pct"		"25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stacks_for_kill"		"1"
+				"stacks_for_kill"		"3"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"manacost"				"50 100 150 200 250 300 350"
+				"manacost"				"300 250 200 150 100 50 0"
 			}
 		}
 	}
