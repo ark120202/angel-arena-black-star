@@ -148,6 +148,10 @@
 				"used_damage_pct"				"100"
 			}
 		}
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
+		}
 	}
 
 	"saitama_limiter"
