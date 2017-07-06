@@ -496,7 +496,7 @@
 		"Ability5"	"saitama_serios_punch"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-		"AttackRange"			"150"
+		"AttackRange"			"80"
 		"AttackRate"			"1"
 		"AttributeBaseStrength"	"27"
 		"AttributeBaseIntelligence"	"14"
