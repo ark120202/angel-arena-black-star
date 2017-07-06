@@ -8,7 +8,7 @@ if IsServer() then
 		local radius = damage * 0.1
 
 		target:EmitSound("Hero_Earthshaker.EchoSlam")
-		ParticleManager:CreateParticle("particles/arena/units/heroes/hero_saitama/serios_punch.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+		ParticleManager:CreateParticle("particles/arena/units/heroes/hero_saitama/serios_punch.vpcf", PATTACH_ABSORIGIN, target)
 
 		ApplyDamage({
 			attacker = caster,
