@@ -195,8 +195,9 @@
 		}
 		"precache"
 			{
-			"model"	"models/items/invoker/forge_spirit/sempiternal_revelations_forged_spirits/sempiternal_revelations_forged_spirits.vmdl"
-			"particle"  "particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl_fire.vpcf"
+			"model"			"models/items/invoker/forge_spirit/sempiternal_revelations_forged_spirits/sempiternal_revelations_forged_spirits.vmdl"
+			"particle"  	"particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl_fire.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
 		}
 	}
 }

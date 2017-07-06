@@ -6,6 +6,7 @@ sai_release_of_forge = class({})
 if IsServer() then
 	function sai_release_of_forge:OnSpellStart()
 		local caster = self:GetCaster()
+		caster:EmitSound("Hero_Spectre.Haunt")
 		caster:AddNewModifier(caster, self, "modifier_sai_release_of_forge", {duration = self:GetSpecialValueFor("duration")})
 		caster:SetHealth(1)
 	end
