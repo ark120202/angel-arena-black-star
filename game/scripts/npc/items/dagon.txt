@@ -707,6 +707,16 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-4 -8 -12 -16 -20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.5 0.6 0.7 0.8 0.9"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"810 820 830 840 850"
 			}
 		}
@@ -718,6 +728,7 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
+				"modifier"			"modifier_item_enchanted_dagon_arena_debuff"
 			}
 		}
 
@@ -736,6 +747,17 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			}
+
+			"modifier_item_enchanted_dagon_arena_debuff"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 			}
 		}
@@ -791,6 +813,16 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-4 -8 -12 -16 -20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.5 0.6 0.7 0.8 0.9"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"810 820 830 840 850"
 			}
 		}
@@ -802,6 +834,7 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
+				"modifier"			"modifier_item_enchanted_dagon_arena_debuff"
 			}
 		}
 
@@ -820,6 +853,17 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			}
+
+			"modifier_item_enchanted_dagon_arena_debuff"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 			}
 		}
@@ -875,6 +919,16 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-4 -8 -12 -16 -20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.5 0.6 0.7 0.8 0.9"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"810 820 830 840 850"
 			}
 		}
@@ -886,6 +940,7 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
+				"modifier"			"modifier_item_enchanted_dagon_arena_debuff"
 			}
 		}
 
@@ -904,6 +959,17 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			}
+
+			"modifier_item_enchanted_dagon_arena_debuff"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 			}
 		}
@@ -959,6 +1025,16 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-4 -8 -12 -16 -20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.5 0.6 0.7 0.8 0.9"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"810 820 830 840 850"
 			}
 		}
@@ -970,6 +1046,7 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
+				"modifier"			"modifier_item_enchanted_dagon_arena_debuff"
 			}
 		}
 
@@ -988,6 +1065,17 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			}
+
+			"modifier_item_enchanted_dagon_arena_debuff"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 			}
 		}
@@ -1040,6 +1128,16 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-4 -8 -12 -16 -20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.5 0.6 0.7 0.8 0.9"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"810 820 830 840 850"
 			}
 		}
@@ -1051,6 +1149,7 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
+				"modifier"			"modifier_item_enchanted_dagon_arena_debuff"
 			}
 		}
 
@@ -1069,6 +1168,17 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			}
+
+			"modifier_item_enchanted_dagon_arena_debuff"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 			}
 		}
@@ -1133,10 +1243,15 @@
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-20"
 			}
 			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"860 870 880 890 900"
@@ -1151,7 +1266,7 @@
 				"Function"			"SunrayDagon"
 				"Damage"			"%damage"
 				"DamagePct"			"%damage_percent"
-				"modifier"			"modifier_item_sunray_dagon_arena_blind"
+				"modifier"			"modifier_item_sunray_dagon_arena_debuff"
 			}
 		}
 
@@ -1173,12 +1288,10 @@
 				}
 			}
 
-			"modifier_item_sunray_dagon_arena_blind"
+			"modifier_item_sunray_dagon_arena_debuff"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"Duration"			"%blind_duration"
+				"Duration"			"%debuff_duration"
 
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -1186,6 +1299,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 
 				"States"
@@ -1255,10 +1369,15 @@
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-20"
 			}
 			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"860 870 880 890 900"
@@ -1273,7 +1392,7 @@
 				"Function"			"SunrayDagon"
 				"Damage"			"%damage"
 				"DamagePct"			"%damage_percent"
-				"modifier"			"modifier_item_sunray_dagon_arena_blind"
+				"modifier"			"modifier_item_sunray_dagon_arena_debuff"
 			}
 		}
 
@@ -1295,12 +1414,10 @@
 				}
 			}
 
-			"modifier_item_sunray_dagon_arena_blind"
+			"modifier_item_sunray_dagon_arena_debuff"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"Duration"			"%blind_duration"
+				"Duration"			"%debuff_duration"
 
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -1308,6 +1425,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 
 				"States"
@@ -1377,10 +1495,15 @@
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-20"
 			}
 			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"860 870 880 890 900"
@@ -1395,7 +1518,7 @@
 				"Function"			"SunrayDagon"
 				"Damage"			"%damage"
 				"DamagePct"			"%damage_percent"
-				"modifier"			"modifier_item_sunray_dagon_arena_blind"
+				"modifier"			"modifier_item_sunray_dagon_arena_debuff"
 			}
 		}
 
@@ -1417,12 +1540,10 @@
 				}
 			}
 
-			"modifier_item_sunray_dagon_arena_blind"
+			"modifier_item_sunray_dagon_arena_debuff"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"Duration"			"%blind_duration"
+				"Duration"			"%debuff_duration"
 
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -1430,6 +1551,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 
 				"States"
@@ -1499,10 +1621,15 @@
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-20"
 			}
 			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"860 870 880 890 900"
@@ -1517,7 +1644,7 @@
 				"Function"			"SunrayDagon"
 				"Damage"			"%damage"
 				"DamagePct"			"%damage_percent"
-				"modifier"			"modifier_item_sunray_dagon_arena_blind"
+				"modifier"			"modifier_item_sunray_dagon_arena_debuff"
 			}
 		}
 
@@ -1539,12 +1666,10 @@
 				}
 			}
 
-			"modifier_item_sunray_dagon_arena_blind"
+			"modifier_item_sunray_dagon_arena_debuff"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"Duration"			"%blind_duration"
+				"Duration"			"%debuff_duration"
 
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -1552,6 +1677,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 
 				"States"
@@ -1618,10 +1744,15 @@
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-20"
 			}
 			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"860 870 880 890 900"
@@ -1636,7 +1767,7 @@
 				"Function"			"SunrayDagon"
 				"Damage"			"%damage"
 				"DamagePct"			"%damage_percent"
-				"modifier"			"modifier_item_sunray_dagon_arena_blind"
+				"modifier"			"modifier_item_sunray_dagon_arena_debuff"
 			}
 		}
 
@@ -1658,12 +1789,10 @@
 				}
 			}
 
-			"modifier_item_sunray_dagon_arena_blind"
+			"modifier_item_sunray_dagon_arena_debuff"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"Duration"			"%blind_duration"
+				"Duration"			"%debuff_duration"
 
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -1671,6 +1800,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 
 				"States"
