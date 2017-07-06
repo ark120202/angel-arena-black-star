@@ -132,20 +132,25 @@
 
 		"AbilitySpecial"
 		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_ctitical_damage_pct"		"5"
-			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"default_critical_damage_pct" 	"300"
+				"base_damage_multiplier_pct"	"300"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"used_damage_pct"				"100"
+				"damage_multiplier_per_stack_pct" 	"5"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"knockback_duration"			"1.5"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"knockback_distance"			"2000"
 			}
 		}
 		"precache"
