@@ -578,7 +578,6 @@ DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_range_tooltip: 'CAST RANGE:'
-DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_damage_percent: '%HP TO DAMAGE:'
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena: Enchanted Dagon
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_Description: 'Active: Energy Burst - Emits a powerful burst of magical damage, which depends on targets max health, upon a targeted enemy unit. Upgradable.'
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_damage: 'BURST DAMAGE:'
@@ -1377,6 +1376,11 @@ DOTA_Tooltip_ability_item_haganemushi_Description: |-
   Passive: Metal-Eater - With each attack that legendary sword decreases enemy armor and attack damage. This effect is permanent, not purgable and not works on bosses.
   Active: Shadow Walk - Makes you invisible until the duration ends, or until you attack or cast a spell. While Shadow Walk is active, you move %windwalk_movement_speed_pct%%% faster and can move through units. If attacking to end the invisibility, you gain %windwalk_bonus_damage% bonus damage on that attack. Lasts %windwalk_duration% seconds.
   Passive: Soul Piercing - %attack_damage_to_pure_pct%%% of your attack damage will deal pure damage, instead of physical.
+  Passive: Elder Aura - Decreases armor of nearby enemies.
+DOTA_Tooltip_ability_item_haganemushi_armor_reduction: 'ARMOR REDUCTION:'
+DOTA_Tooltip_ability_item_haganemushi_radius: 'RADIUS:'
+DOTA_Tooltip_modifier_item_haganemushi_effect: Haganemushi's Armor Reduction
+DOTA_Tooltip_modifier_item_haganemushi_effect_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_haganemushi_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_haganemushi_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_haganemushi_damage_per_hit: 'DAMAGE DECREASE:'

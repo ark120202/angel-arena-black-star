@@ -91,7 +91,7 @@
 		"SoundSet"	"n_creep_Ranged"
 		"Level"	"1"
 		"IsAncient"	"1"
-		"MagicalResistance"			"85"
+		"MagicalResistance"			"80"
 		"ModelScale"	"1"
 		"IsNeutralUnitType"	"1"
 		"Ability1"	"black_dragon_splash_attack"

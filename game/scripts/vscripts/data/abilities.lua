@@ -76,6 +76,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_titanium_bar = true,
+	item_guardian_greaves_arena = true,
 
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
@@ -94,7 +95,6 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_helm_of_the_dominator = true,
 	item_sphere = true,
 	item_necronomicon = true,
-	item_heart_cyclone = true,
 	item_hand_of_midas_arena = true,
 	item_hand_of_midas_2_arena = true,
 	item_hand_of_midas_3_arena = true,

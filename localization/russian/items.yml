@@ -578,7 +578,6 @@ DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
-DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena: Enchanted Dagon
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели. Улучшаемая.'
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_damage: 'МГНОВЕННЫЙ УРОН:'
@@ -1227,6 +1226,11 @@ DOTA_Tooltip_ability_item_haganemushi_Description: |-
   Пассивная: Metal-Eater - С каждой атакой этот легендарный меч снижает броню и урон противника. Этот эффект вечен, не снимается очищением и не работает на боссов.
   Активируемая: Shadow Walk — делает вас невидимым на время действия или до момента вашей атаки или использования заклинания. Пока Shadow Walk активна, вы движетесь на %windwalk_movement_speed_pct%%% быстрее и можете проходить сквозь юнитов. Атака, раскрывающая невидимость, нанесет %windwalk_bonus_damage% дополнительного урона. Длится %windwalk_duration% секунд.
   Пассивная: Soul Piercing - %attack_damage_to_pure_pct%%% урона ваших атак будут наносить чистый урон, вместо физического.
+  Пассивная: Elder Aura - Снижает броню всех противников, находящихся рядом.
+DOTA_Tooltip_ability_item_haganemushi_armor_reduction: 'СНИЖЕНИЕ БРОНИ:'
+DOTA_Tooltip_ability_item_haganemushi_radius: 'РАДИУС:'
+DOTA_Tooltip_modifier_item_haganemushi_effect: Снижение брони от Haganemushi
+DOTA_Tooltip_modifier_item_haganemushi_effect_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_haganemushi_damage_per_hit: 'СНИЖЕНИЕ УРОНА:'
 DOTA_Tooltip_ability_item_haganemushi_armor_per_hit: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_haganemushi_attack_damage_to_pure_pct: '%ЧИСТЫЙ УРОН ОТ АТАК:'

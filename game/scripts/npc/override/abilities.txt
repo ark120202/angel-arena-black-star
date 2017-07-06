@@ -11,7 +11,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"300 300 300 300 300 325 350"
+				"radius"	"300 300 300 300 300 300 325"
 			}
 
 			"02"
@@ -83,7 +83,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"0.45 0.4 0.35 0.3 0.25 0.2 0.15"
-		"AbilityDamage"		"65 100 135 170 205 230 280"
+		"AbilityDamage"		"45 55 65 80 100 120 150"
 		"AbilitySpecial"
 		{
 			"01"
@@ -4077,7 +4077,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_health_pct"	"4 6 8 10 12 14 16"
+				"damage_health_pct"	"6 7 8 9 10 11 12"
 				"LinkedSpecialBonus"	"special_bonus_unique_zeus"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -4349,7 +4349,7 @@
 	"tidehunter_kraken_shell"
 	{
 		"MaxLevel"	"7"
-		"LevelsBetweenUpgrades"	"3"
+		"LevelsBetweenUpgrades"		"3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9225,13 +9225,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"14 16 18 20 25 30 40"
+				"damage"	"14 16 18 20 24 28 32"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"attack_rate"	"1.25 1.1 0.95 0.8 0.65 0.5 0.35"
+				"attack_rate"	"1.25 1.15 1.05 0.95 0.85 0.75 0.65"
 			}
 
 			"03"

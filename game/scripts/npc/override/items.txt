@@ -543,6 +543,13 @@
 	"item_recipe_sheepstick"
 	{
 		"SecretShop"					"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"sheep_duration"		"3.0"
+			}
 	}
 	"item_sheepstick"
 	{
@@ -892,7 +899,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_gain"				"200"
+				"mana_gain"				"300"
 			}
 			"05"
 			{

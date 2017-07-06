@@ -1496,6 +1496,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"250"
 		"AbilityCooldown"				"22"
 		"AbilityCastRange"				"700"
 		"ItemShopTags"					"str;regen_health;health_pool;mana_regen;mana_restore;mana;int;ms;move_speed;movespeed"
@@ -5989,10 +5990,13 @@
 	{
 		"BaseClass"             		"item_datadriven"
 		"ID"							"10215"
-		"ItemCost"						"250"
+		"ItemCost"						"300"
 		"AbilityTextureName"			"item_arena/coffee_bean"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemStockMax"					"3"
+		"ItemStockTime"					"120.0"	
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
@@ -7402,7 +7406,7 @@
 		"ID"							"10253"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"3750"
+		"ItemCost"						"2960"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_blade_of_discord"
 		"ItemRequirements"
@@ -7491,7 +7495,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_damage_base"	"125"
+				"debuff_damage_base"	"140"
 			}
 		}
 
@@ -7704,12 +7708,12 @@
 		"ID"							"10256"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"3000"
+		"ItemCost"						"2500"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_piercing_blade"
 		"ItemRequirements"
 		{
-			"01"						"item_javelin;item_relic;item_relic"
+			"01"						"item_javelin;item_rapier"
 		}
 	}
 
@@ -7727,7 +7731,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"			"150"
+				"bonus_damage"			"350"
 			}
 			"02"
 			{
@@ -7779,13 +7783,14 @@
 
 		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"80"
+		"AbilityCastRange"				"800"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"400"
+				"bonus_damage"		"600"
 				"CalculateSpellDamageTooltip" "0"
 			}
 			"02"
@@ -7830,6 +7835,16 @@
 				"var_type"				"FIELD_INTEGER"
 				"windwalk_bonus_damage"	"2000"
 			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"		"-30"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"800"
+			}
 		}
 
 		"OnSpellStart"
@@ -7860,11 +7875,34 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				
+				"Aura"          	"modifier_item_haganemushi_effect"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+				}
+			}
+
+
+
+			"modifier_item_haganemushi_effect"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsPurgable"		"0"
+				"IsDebuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_reduction"
 				}
 			}
 
@@ -10800,23 +10838,22 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"275"
+				"cast_range_bonus"		"250"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"40"
+				"spell_amp_pct"			"25"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hex_duration"			"3.5"
+				"hex_duration"			"3.0"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"hex_damage_pct"		"10"
-				"CalculateSpellDamageTooltip"	"0"
 			}
 			"13"
 			{

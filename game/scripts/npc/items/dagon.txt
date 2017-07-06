@@ -709,11 +709,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"810 820 830 840 850"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"2 2.25 2.5 2.75 3"
-			}
 		}
 
 		"OnSpellStart"
@@ -723,7 +718,6 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
-				"DamagePct"			"%damage_percent"
 			}
 		}
 
@@ -799,11 +793,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"810 820 830 840 850"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"2 2.25 2.5 2.75 3"
-			}
 		}
 
 		"OnSpellStart"
@@ -813,7 +802,6 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
-				"DamagePct"			"%damage_percent"
 			}
 		}
 
@@ -889,11 +877,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"810 820 830 840 850"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"2 2.25 2.5 2.75 3"
-			}
 		}
 
 		"OnSpellStart"
@@ -903,7 +886,6 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
-				"DamagePct"			"%damage_percent"
 			}
 		}
 
@@ -979,11 +961,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"810 820 830 840 850"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"2 2.25 2.5 2.75 3"
-			}
 		}
 
 		"OnSpellStart"
@@ -993,7 +970,6 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
-				"DamagePct"			"%damage_percent"
 			}
 		}
 
@@ -1066,11 +1042,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"810 820 830 840 850"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"2 2.25 2.5 2.75 3"
-			}
 		}
 
 		"OnSpellStart"
@@ -1080,7 +1051,6 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
-				"DamagePct"			"%damage_percent"
 			}
 		}
 
@@ -1149,17 +1119,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"32"
+				"spell_amp_pct"			"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400 1500 1600 1700 1800"
+				"damage"				"1100 1150 1200 1250 1300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 3.75 4 4.25 4.5"
+				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
 			}
 			"07"
 			{
@@ -1271,17 +1241,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"32"
+				"spell_amp_pct"			"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400 1500 1600 1700 1800"
+				"damage"				"1100 1150 1200 1250 1300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 3.75 4 4.25 4.5"
+				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
 			}
 			"07"
 			{
@@ -1393,17 +1363,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"32"
+				"spell_amp_pct"			"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400 1500 1600 1700 1800"
+				"damage"				"1100 1150 1200 1250 1300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 3.75 4 4.25 4.5"
+				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
 			}
 			"07"
 			{
@@ -1515,17 +1485,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"32"
+				"spell_amp_pct"			"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400 1500 1600 1700 1800"
+				"damage"				"1100 1150 1200 1250 1300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 3.75 4 4.25 4.5"
+				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
 			}
 			"07"
 			{
@@ -1634,17 +1604,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"32"
+				"spell_amp_pct"			"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400 1500 1600 1700 1800"
+				"damage"				"1100 1150 1200 1250 1300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 3.75 4 4.25 4.5"
+				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
 			}
 			"07"
 			{
