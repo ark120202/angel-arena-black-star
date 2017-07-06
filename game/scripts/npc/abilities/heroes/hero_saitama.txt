@@ -151,6 +151,7 @@
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
+			"particle"  "particles/arena/units/heroes/hero_saitama/serios_punch.vpcf"
 		}
 	}
 
@@ -181,7 +182,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"loss_stacks_pct"		"25"
+				"loss_stacks_pct"		"50"
 			}
 			"04"
 			{
