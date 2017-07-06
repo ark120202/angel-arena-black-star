@@ -128,7 +128,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityCooldown"				"20"
 		"AbilityCastRange"				"1"
-		"AbilityCastPoint"				"1"
+		"AbilityCastPoint"				"0.4"
 
 		"AbilitySpecial"
 		{
