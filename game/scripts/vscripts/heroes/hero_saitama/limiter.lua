@@ -25,8 +25,8 @@ if IsServer() then
 			duration = 1.2, -- 36 / 30
 			activity = ACT_DOTA_CAST_ABILITY_6
 		})
-
 		caster:EmitSound("Arena.Hero_Saitama.Limiter")
+
 		caster:ModifyStrength(caster:GetStrength() * self:GetSpecialValueFor("bonus_strength_pct") * caster:GetModifierStackCount("modifier_saitama_limiter", caster) * 0.01)
 	end
 end
