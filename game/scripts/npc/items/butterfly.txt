@@ -98,7 +98,7 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"450"
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"475"
 				}
 			}
 		}
@@ -137,12 +137,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"80"
+				"bonus_agility"					"70"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"70"
+				"bonus_damage"					"60"
 			}
 			"03"
 			{
@@ -152,7 +152,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"70"
+				"bonus_attack_speed"			"60"
 			}
 			"05"
 			{
@@ -167,12 +167,12 @@
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility_active"			"70"
+				"bonus_agility_active"			"60"
 			}
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_active"			"525"
+				"movement_speed_active"			"550"
 			}
 			"09"
 			{
@@ -354,7 +354,7 @@
 				{
 					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion_active_pct"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility_active"
-					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"1500"
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"				"1000"
 				}
 			}
 		}

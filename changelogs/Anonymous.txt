@@ -60,3 +60,5 @@ Talents:
 		800/1000/1200/1400/1600 => 600/1000/1400/1800/2200
 	True strike:
 		group 10 => 8
+	Pugna's ward:
+		Bonus dmg per mana 2 => 0.75

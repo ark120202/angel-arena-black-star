@@ -1058,7 +1058,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 8,
 		requirement = "pugna_nether_ward",
-		special_values = {value = 2},
+		special_values = {value = 0.75},
 		effect = {abilities = "special_bonus_unique_pugna_3"}
 	},
 	talent_hero_pugna_life_drain_heal = {

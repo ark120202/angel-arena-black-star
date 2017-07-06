@@ -6837,7 +6837,7 @@
 		"ID"							"10236"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"12000"
+		"ItemCost"						"425"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_golden_eagle_relic"
@@ -6861,39 +6861,39 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"60"
+				"bonus_damage"			"40"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attackspeed"		"20"
+				"bonus_attackspeed"		"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"kill_xp"				"8"
+				"kill_xp"				"20"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"20"
+				"kill_gold"				"15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_pct"			"28"
+				"lifesteal_pct"			"30"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_gold_as_damage_pct"	"0.75"
+				"active_gold_as_damage_pct"	"0.25"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_bonus_attackspeed" "225"
+				"active_bonus_attackspeed" "300"
 			}
 			"08"
 			{
@@ -6903,7 +6903,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_gold_lost_per_sec_pct" "1"
+				"active_gold_lost_per_sec_pct" "0.5"
 			}
 			"10"
 			{
