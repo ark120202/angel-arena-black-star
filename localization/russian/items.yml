@@ -1222,22 +1222,24 @@ DOTA_Tooltip_modifier_item_heavens_halberd_arena_lesser_maim: Maim
 DOTA_Tooltip_modifier_item_heavens_halberd_arena_lesser_maim_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 DOTA_Tooltip_modifier_item_heavens_halberd_arena_disarm: Бессилие
 DOTA_Tooltip_modifier_item_heavens_halberd_arena_disarm_Description: Не может атаковать
+
 DOTA_Tooltip_ability_item_haganemushi_Description: |-
   Пассивная: Metal-Eater - С каждой атакой этот легендарный меч снижает броню и урон противника. Этот эффект вечен, не снимается очищением и не работает на боссов.
   Активируемая: Shadow Walk — делает вас невидимым на время действия или до момента вашей атаки или использования заклинания. Пока Shadow Walk активна, вы движетесь на %windwalk_movement_speed_pct%%% быстрее и можете проходить сквозь юнитов. Атака, раскрывающая невидимость, нанесет %windwalk_bonus_damage% дополнительного урона. Длится %windwalk_duration% секунд.
   Пассивная: Soul Piercing - %attack_damage_to_pure_pct%%% урона ваших атак будут наносить чистый урон, вместо физического.
   Пассивная: Elder Aura - Снижает броню всех противников, находящихся рядом.
-DOTA_Tooltip_ability_item_haganemushi_armor_reduction: 'СНИЖЕНИЕ БРОНИ:'
-DOTA_Tooltip_ability_item_haganemushi_radius: 'РАДИУС:'
-DOTA_Tooltip_modifier_item_haganemushi_effect: Снижение брони от Haganemushi
-DOTA_Tooltip_modifier_item_haganemushi_effect_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_haganemushi_damage_per_hit: 'СНИЖЕНИЕ УРОНА:'
 DOTA_Tooltip_ability_item_haganemushi_armor_per_hit: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_haganemushi_attack_damage_to_pure_pct: '%ЧИСТЫЙ УРОН ОТ АТАК:'
+DOTA_Tooltip_ability_item_haganemushi_aura_armor_reduction: 'СНИЖЕНИЕ БРОНИ В АУРЕ:'
+DOTA_Tooltip_ability_item_haganemushi_aura_radius: 'РАДИУС АУРЫ:'
 DOTA_Tooltip_ability_item_haganemushi_windwalk_duration: 'ДЛИТЕЛЬНОСТЬ НЕВИДИМОСТИ:'
 DOTA_Tooltip_ability_item_haganemushi_windwalk_bonus_damage: 'УРОН ИЗ НЕВИДИМОСТИ:'
+DOTA_Tooltip_modifier_item_haganemushi_aura_effect: Снижение брони от Haganemushi
+DOTA_Tooltip_modifier_item_haganemushi_aura_effect_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_modifier_item_haganemushi_stack_Description: 'Урон уменьшен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%, броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'
 DOTA_Tooltip_modifier_item_haganemushi_active_Description: Невидим. Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%; можно проходить сквозь юнитов. Атака снимет невидимость и нанесет дополнительный урон.
+
 DOTA_Tooltip_ability_item_slot_locked: Заблокированный Слот
 DOTA_Tooltip_ability_item_slot_locked_Description: Эта ячейка инвентаря заблокирована.
 DOTA_Tooltip_ability_item_phantom_bone_Description: Этот предмет выпадает с боссов и не может быть куплен в лавке.

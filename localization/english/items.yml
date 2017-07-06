@@ -1371,27 +1371,29 @@ DOTA_Tooltip_modifier_item_heavens_halberd_arena_lesser_maim: Maim
 DOTA_Tooltip_modifier_item_heavens_halberd_arena_lesser_maim_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
 DOTA_Tooltip_modifier_item_heavens_halberd_arena_disarm: Disarmed
 DOTA_Tooltip_modifier_item_heavens_halberd_arena_disarm_Description: Can't attack
+
 DOTA_Tooltip_ability_item_haganemushi: Haganemushi
 DOTA_Tooltip_ability_item_haganemushi_Description: |-
   Passive: Metal-Eater - With each attack that legendary sword decreases enemy armor and attack damage. This effect is permanent, not purgable and not works on bosses.
   Active: Shadow Walk - Makes you invisible until the duration ends, or until you attack or cast a spell. While Shadow Walk is active, you move %windwalk_movement_speed_pct%%% faster and can move through units. If attacking to end the invisibility, you gain %windwalk_bonus_damage% bonus damage on that attack. Lasts %windwalk_duration% seconds.
   Passive: Soul Piercing - %attack_damage_to_pure_pct%%% of your attack damage will deal pure damage, instead of physical.
   Passive: Elder Aura - Decreases armor of nearby enemies.
-DOTA_Tooltip_ability_item_haganemushi_armor_reduction: 'ARMOR REDUCTION:'
-DOTA_Tooltip_ability_item_haganemushi_radius: 'RADIUS:'
-DOTA_Tooltip_modifier_item_haganemushi_effect: Haganemushi's Armor Reduction
-DOTA_Tooltip_modifier_item_haganemushi_effect_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_haganemushi_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_haganemushi_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_haganemushi_damage_per_hit: 'DAMAGE DECREASE:'
 DOTA_Tooltip_ability_item_haganemushi_armor_per_hit: 'ARMOR DECREASE:'
 DOTA_Tooltip_ability_item_haganemushi_attack_damage_to_pure_pct: '%PURE ATTACK DAMAGE:'
+DOTA_Tooltip_ability_item_haganemushi_aura_armor_reduction: 'AURA ARMOR REDUCTION:'
+DOTA_Tooltip_ability_item_haganemushi_aura_radius: 'AURA RADIUS:'
 DOTA_Tooltip_ability_item_haganemushi_windwalk_duration: 'SHADOW WALK DURATION:'
 DOTA_Tooltip_ability_item_haganemushi_windwalk_bonus_damage: 'SHADOW WALK DAMAGE:'
+DOTA_Tooltip_modifier_item_haganemushi_aura_effect: Haganemushi's Armor Reduction
+DOTA_Tooltip_modifier_item_haganemushi_aura_effect_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_modifier_item_haganemushi_stack: Haganemushi
 DOTA_Tooltip_modifier_item_haganemushi_stack_Description: 'Attack damage decreased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%, armor decreased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'
 DOTA_Tooltip_modifier_item_haganemushi_active: Shadow Walk
 DOTA_Tooltip_modifier_item_haganemushi_active_Description: Invisible. Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and you can move through units. Attacking to break invisibility will deal bonus damage.
+
 DOTA_Tooltip_ability_item_slot_locked: Locked Item Slot
 DOTA_Tooltip_ability_item_slot_locked_Description: This item slot is locked.
 DOTA_Tooltip_ability_item_phantom_bone: Phantom Bone

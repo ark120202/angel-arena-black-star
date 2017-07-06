@@ -5996,7 +5996,7 @@
 
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStockMax"					"3"
-		"ItemStockTime"					"120.0"	
+		"ItemStockTime"					"120.0"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
@@ -7789,8 +7789,8 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"600"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"600"
 				"CalculateSpellDamageTooltip" "0"
 			}
 			"02"
@@ -7800,50 +7800,50 @@
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_per_hit"	"-6"
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_hit"		"-6"
 				"CalculateSpellDamageTooltip" "0"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"armor_per_hit"		"-0.5"
+				"var_type"				"FIELD_FLOAT"
+				"armor_per_hit"			"-0.5"
 			}
 			"05"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"attack_damage_to_pure_pct"	"15"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"windwalk_duration"		"17"
+				"var_type"				"FIELD_INTEGER"
+				"aura_armor_reduction"	"-30"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"windwalk_movement_speed_pct"	"25"
+				"aura_radius"			"800"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"windwalk_fade_time"	"0.2"
+				"windwalk_duration"		"17"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"windwalk_bonus_damage"	"2000"
+				"windwalk_movement_speed_pct"	"25"
 			}
 			"10"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-30"
+				"var_type"				"FIELD_FLOAT"
+				"windwalk_fade_time"	"0.2"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"800"
+				"windwalk_bonus_damage"	"2000"
 			}
 		}
 
@@ -7875,9 +7875,9 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-				
-				"Aura"          	"modifier_item_haganemushi_effect"
-				"Aura_Radius"   	"%radius"
+
+				"Aura"          	"modifier_item_haganemushi_aura_effect"
+				"Aura_Radius"   	"%aura_radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
@@ -7891,18 +7891,14 @@
 				}
 			}
 
-
-
-			"modifier_item_haganemushi_effect"
+			"modifier_item_haganemushi_aura_effect"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
 				"IsPurgable"		"0"
 				"IsDebuff"			"1"
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_reduction"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%aura_armor_reduction"
 				}
 			}
 
