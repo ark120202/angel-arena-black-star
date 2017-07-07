@@ -26,7 +26,7 @@ Dota_Tooltip_ability_saitama_limiter_bonus_strength_pct: '%ПРОЦЕНТ СИЛ
 
 Dota_Tooltip_modifier_saitama_limiter_Description: Только настоящий герой сможет преодолеть свои лимиты. Сайтама получает стаки за тренировки и убийство вражеских героев.
 
-DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Сайтама прилагает к удару чуть больше усилий, нанося огромное колличество урона, основываясь на своем уроне. За каждый стак лимитера множитель урона растет на %damage_multiplier_per_stack_pct%%%.'
+DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Сайтама прилагает к удару чуть больше усилий, нанося критический урон в чистом виде. За каждый стак лимитера множитель урона растет на %damage_multiplier_per_stack_pct%%%. Способность отталкивает цель и оглушает в зависимости от нанесенного урона.'
 DOTA_Tooltip_ability_saitama_serios_punch_Lore: Позволь мне стать немного серьезнее, чтобы ты вложил в эту битву всего себя...
 DOTA_Tooltip_ability_saitama_serios_punch_base_damage_multiplier_pct: '%НАЧАЛЬНЫЙ МНОЖИТЕЛЬ УРОНА:'
 DOTA_Tooltip_ability_saitama_serios_punch_damage_multiplier_per_stack_pct: '%ДОП. МНОЖИТЕЛЬ УРОНА ЗА СТАК:'

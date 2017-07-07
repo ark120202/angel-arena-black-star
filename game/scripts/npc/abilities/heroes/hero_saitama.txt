@@ -136,21 +136,13 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"base_damage_multiplier_pct"	"300"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
-				"var_type"						"FIELD_INTEGER"
+				"var_type"							"FIELD_INTEGER"
 				"damage_multiplier_per_stack_pct" 	"5"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"knockback_duration"			"1.5"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"knockback_distance"			"2000"
+				"CalculateSpellDamageTooltip"		"0"
 			}
 		}
 		"precache"

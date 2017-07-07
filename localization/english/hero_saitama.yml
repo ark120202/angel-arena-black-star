@@ -34,7 +34,7 @@ Dota_Tooltip_modifier_saitama_limiter: Limiter
 Dota_Tooltip_modifier_saitama_limiter_Description: Limiter.
 
 DOTA_Tooltip_ability_saitama_serios_punch: Serious Punch
-DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Saitama is putting a bit more effort into the attack, dealing lots of damage, based on his attack damage. For each Limiter stack, the damage multiplier increases by %damage_multiplier_per_stack_pct%%%.'
+DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Saitama is putting a bit more effort into the attack, dealing lots of damage, based on his attack damage. For each Limiter stack, the damage multiplier increases by %damage_multiplier_per_stack_pct%%%. The ability repels the target and stuns depending on the damage dealt.'
 DOTA_Tooltip_ability_saitama_serios_punch_Lore: Let me become a bit more serious, so that you put all of yourself into this battle...
 DOTA_Tooltip_ability_saitama_serios_punch_base_damage_multiplier_pct: '%BASE DAMAGE MULTIPLIER:'
 DOTA_Tooltip_ability_saitama_serios_punch_damage_multiplier_per_stack_pct: '%BONUS DAMAGE MULTIPLIER PER STACK:'
