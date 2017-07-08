@@ -388,7 +388,7 @@
 		"AttributeStrengthGain"	"2.8"
 		"AttributeIntelligenceGain"	"3.0"
 		"AttributeAgilityGain"	"2.2"
-		"MagicalResistance"		"80"
+		"MagicalResistance"		"45"
 		"AttackDamageMin"		"22"
 		"AttackDamageMax"		"32"
 	}
