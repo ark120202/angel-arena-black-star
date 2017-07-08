@@ -9069,24 +9069,37 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"bonus_damage"	"150 225 300 375 450 525 600"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"150 225 300 375 450 525 600"
+				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_2"
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"speed"	"1000 1000 1000 1000 1000 1100 1200"
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1000 1000 1000 1000 1000 1050 1100"
 			}
-
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"bounce_aoe"	"1200 1200 1200 1200 1200 1350 1500"
+				"var_type"				"FIELD_INTEGER"
+				"bounce_aoe"			"1200 1200 1200 1200 1200 1250 1300"
 			}
-
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ministun"				"0.1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"scepter_ministun"		"0.75"
+			}
+			"99"
+			{
+				"var_type" "FIELD_FLOAT"
+				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"CalculateSpellDamageTooltip" "0"
+			}
 		}
-
 	}
 
 	"bounty_hunter_jinada"
@@ -10892,8 +10905,8 @@
 			}
 			"05"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"bounty_multiplier_tooltip"	"2 2 2 3 4 5 6"
+				"var_type"	"FIELD_FLOAT"
+				"bounty_multiplier_tooltip"	"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
 			}
 
 		}
@@ -12335,38 +12348,36 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"400 400 400 400 400 425 450"
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"400"
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"damage"	"100 175 250 300 350 450 550"
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"100 175 250 300 350 450 550"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_2"
 			}
-
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"movement_slow"	"25 30 35 40 45 50 55"
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow"				"25 30 35 40 45 50 55"
 			}
-
 			"04"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"attack_speed_slow"	"25 35 45 55 65 75 85"
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_slow"			"25 35 45 55 65 75 85"
 			}
-
 			"05"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"4.0"
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_3"
 			}
-
 			"06"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"duration_creeps"	"8.0"
+				"var_type"					"FIELD_FLOAT"
+				"duration_creeps"			"8.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_3"
 			}
 			"99"
 			{
@@ -16747,7 +16758,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"800"
-		"AbilityCastPoint"	"0.25 0.25 0.25 0.25 0.25 0.15 0.5"
+		"AbilityCastPoint"	"0.25 0.25 0.25 0.25 0.25 0.15 0.05"
 		"AbilityCooldown"	"4.5"
 		"AbilityManaCost"	"50 60 70 80 90 100 110"
 		"AbilitySpecial"
@@ -16755,7 +16766,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"self_damage"	"75 100 125 150 175 200 225"
+				"self_damage"	"50 65 80 95 110 125 150"
 			}
 
 			"02"
@@ -16773,16 +16784,9 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"missile_speed"	"1600 1600 1600 1600 1600 1800 2000"
-			}
-			"99"
-			{
-				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
-				"CalculateSpellDamageTooltip" "0"
+				"missile_speed"	"1600 1600 1600 1600 1600 2100 2600"
 			}
 		}
-
 	}
 
 	"abaddon_aphotic_shield"
@@ -16811,6 +16815,12 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"675"
+			}
+			"99"
+			{
+				"var_type" "FIELD_FLOAT"
+				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"CalculateSpellDamageTooltip" "0"
 			}
 
 		}
@@ -19315,7 +19325,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "1.0 2.0 3.0 4.0 5.0 6.0 7.0"
+				"damage_from_current_health_pct" "1.0 1.5 2.0 2.5 3.0 3.5 4.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}

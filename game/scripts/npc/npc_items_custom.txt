@@ -3656,7 +3656,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"kill_xp"				"10"
+				"kill_xp"				"15"
 			}
 			"03"
 			{
@@ -6843,7 +6843,7 @@
 		"ItemResult"					"item_golden_eagle_relic"
 		"ItemRequirements"
 		{
-			"01"						"item_skull_of_midas;item_mask_of_madness"
+			"01"						"item_skull_of_midas;item_mask_of_madness;item_lifesteal"
 		}
 	}
 
@@ -6861,28 +6861,28 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"40"
+				"bonus_damage"			"42"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attackspeed"		"40"
+				"bonus_attackspeed"		"30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"kill_xp"				"20"
+				"kill_xp"				"40"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"15"
+				"kill_gold"				"20"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_pct"			"30"
+				"lifesteal_pct"			"35"
 			}
 			"06"
 			{
@@ -6908,7 +6908,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_gold_lost_per_sec_min" "10"
+				"active_gold_lost_per_sec_min" "5"
 			}
 		}
 	}
@@ -6971,7 +6971,7 @@
 			"05"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_health"				"1800"
+				"bonus_toggle_health"				"3200"
 			}
 			"06"
 			{
@@ -8067,7 +8067,7 @@
 		"AbilityCooldown"				"7.0"
 		"AbilitySharedCooldown"			"medallion;basher"
 
-		"AbilityCooldown"				"2.2"
+		"AbilityCooldown"				"2.5"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"echo sabre 2;fallhammer;skull basher;medallion of courage;valor"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -8129,12 +8129,12 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"valor_armor_reduction"	"-40"
+				"valor_armor_reduction"	"-30"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"valor_armor_bonus"		"40"
+				"valor_armor_bonus"		"30"
 			}
 			"13"
 			{

@@ -218,7 +218,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 4,
 		max_level = 7,
 		special_values = {
-			movespeed_pct = {10, 13, 16, 19, 22, 25, 28}
+			movespeed_pct = {15, 17.5, 20, 22.5, 25, 27.5, 30}
 		},
 		effect = {
 			modifiers = {
@@ -1456,9 +1456,9 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_chen_hand_of_god_heal = {
 		icon = "chen_hand_of_god",
 		cost = 1,
-		group = 7,
+		group = 9,
 		requirement = "chen_hand_of_god",
-		special_values = {value = 10000},
+		special_values = {value = 15000},
 		effect = {abilities = "special_bonus_unique_chen_2"}
 	},
 	talent_hero_spectre_spectral_dagger_cd = {

@@ -64,7 +64,7 @@
 	"special_bonus_unique_jakiro_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"100"}}}
 	"special_bonus_unique_chen_3"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"8"}}}
 	"special_bonus_unique_chen_4"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"7500"}}}
-	"special_bonus_unique_chen_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"1000"}}}
+	"special_bonus_unique_chen_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"15000"}}}
 	"special_bonus_unique_spectre"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"7"}}}
 	"special_bonus_unique_doom_4"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"130"}}}
 	"special_bonus_unique_doom_5"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"100"}}}
