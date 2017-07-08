@@ -3,6 +3,7 @@ Heroes:
 	Outworld Devourer's Arcane Orb now not scalable by spell amplify
 	Tinker now can't rearm guardian greaves
 	Tinker now can rearm tarrasque scepter
+	Added percent damage to BH's shuriken toss and Abaddon's aphotic shield
 Talents:
 	Exp bonus:
 		10/15/20/25 => 15/20/25/30
@@ -62,3 +63,15 @@ Talents:
 		group 10 => 8
 	Pugna's ward:
 		Bonus dmg per mana 2 => 0.75
+	Movespeed bonus:
+		10/13/16/19/22/25/28 => 15/17.5/20/22.5/25/27.5/30
+	Chen's Hand of God:
+		bonus heal 1000 => 15000
+		group 7 => 9
+Runes:
+	Acceleration:
+		xp multiplier 3 => 2
+	Vibration:
+		duration 25 => 20
+	Soul Steal:
+		damage heal 15 => 30
