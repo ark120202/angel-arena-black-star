@@ -135,13 +135,13 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"base_damage_multiplier_pct"	"300"
+				"base_damage_multiplier_pct"	"200"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"damage_multiplier_per_stack_pct" 	"5"
+				"damage_multiplier_per_stack_pct" 	"3"
 				"CalculateSpellDamageTooltip"		"0"
 			}
 		}
