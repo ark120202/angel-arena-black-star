@@ -151,7 +151,8 @@ REFRESH_LIST_IGNORE_REARM = {
 
 COFFEE_BEAN_NOT_REFRESHABLE = {
 	destroyer_body_reconstruction = true,
-	zuus_cloud = true
+	zuus_cloud = true,
+	monkey_king_boundless_strike = true,
 }
 
 
@@ -164,6 +165,7 @@ BOSS_BANNED_ABILITIES = {
 	rubick_personality_steal = true,
 	item_urn_of_demons = true,
 	razor_static_link = true,
+	item_demon_king_bar = true,
 }
 
 PERSONALITY_STEAL_BANNED_HEROES = {

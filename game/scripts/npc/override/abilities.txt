@@ -376,6 +376,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"damage"	"120 160 200 240 280 320 360"
+				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_2"
 			}
 
 			"04"
@@ -464,6 +465,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"movement_damage_pct"	"30 45 60 75 90 105 120"
+				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_3"
 			}
 
 			"03"
@@ -663,6 +665,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"fissure_range"	"1400"
+				"LinkedSpecialBonus"		"special_bonus_unique_earthshaker_3"
 			}
 
 			"02"
@@ -793,6 +796,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"echo_slam_echo_damage"	"40 55 70 90 110 135 180"
+				"LinkedSpecialBonus"		"special_bonus_unique_earthshaker_2"
 			}
 			"99"
 			{
@@ -1150,7 +1154,7 @@
 			"10"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"ghostship_absorb"	"40.0 42.5 45.0 47.5 50.0 52.5 55.0"
+				"ghostship_absorb"	"40.0 41.5 43.0 44.5 46.0 47.5 49.0"
 			}
 
 			"99"
@@ -1254,19 +1258,21 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"fiery_soul_attack_speed_bonus"	"40 55 70 85 100 115 130"
+				"LinkedSpecialBonus"			"special_bonus_unique_lina_2"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"fiery_soul_move_speed_bonus"	"4 5 6 7 8 9 10"
+				"LinkedSpecialBonus"			"special_bonus_unique_lina_2"
+				"LinkedSpecialBonusField"		"value2"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"fiery_soul_max_stacks"	"3"
-				"LinkedSpecialBonus"	"special_bonus_unique_lina_2"
 			}
 
 			"04"
@@ -3264,9 +3270,9 @@
 	"sven_warcry"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"26 24 22 20 18 16 14"
+		"AbilityCooldown"	"34 31 28 25 22 19 16"
 		"AbilityDuration"	"8.0"
-		"AbilityManaCost"	"20 25 30 35 40 45 50"
+		"AbilityManaCost"	"25"
 		"AbilitySpecial"
 		{
 			"01"
@@ -3278,13 +3284,13 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"warcry_movespeed"	"15"
+				"warcry_movespeed"	"12"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"warcry_radius"	"900"
+				"warcry_radius"	"99999"
 			}
 
 			"04"
@@ -3853,7 +3859,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"stun_duration"	"0.5 0.6 0.7 0.8 0.9 1.0 1.1"
+				"stun_duration"	"0.4 0.5 0.6 0.7 0.8 0.9 1.0"
 			}
 
 			"03"
@@ -3867,9 +3873,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"damage"	"60 80 100 120 140 160 180"
 			}
-
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"grow_chance"				"6 8 10"
+			}
 		}
-
 	}
 
 	"tiny_grow"
@@ -4232,7 +4241,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"chance"	"10 12 14 18 20 22 25"
+				"chance"	"10 12 14 18 20 22 24"
 				"LinkedSpecialBonus"	"special_bonus_unique_slardar"
 			}
 
@@ -4245,7 +4254,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"0.3"
+				"duration"	"0.25"
 			}
 
 			"04"
@@ -4380,7 +4389,7 @@
 		"AbilityCastRange"	"375"
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
 		"AbilityCooldown"	"7 6.5 6 5.5 5 4.5 4"
-		"AbilityDamage"		"65 95 145 200 250 300 375"
+		"AbilityDamage"		"65 100 135 170 205 240 275"
 		"AbilityManaCost"	"30 40 50 60 70 80 90"
 		"AbilitySpecial"
 		{
@@ -5330,6 +5339,8 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"tooltip_stuns"	"3"
+				"LinkedSpecialBonus"	"special_bonus_unique_enigma_2"
+				"LinkedSpecialBonusField"	"value2"
 			}
 
 		}
@@ -8167,6 +8178,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"250 325 400 475 525 575 625"
+				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_2"
 			}
 			"02"
 			{
@@ -8442,6 +8454,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"slow_attack_speed"	"-40 -70 -100 -130 -170 -210 -250"
+				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_3"
 			}
 
 			"02"
@@ -8535,6 +8548,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"distance_damage_pct"	"14 18 22 30 40 50 60"
+				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_4"
 			}
 
 			"02"
@@ -8862,6 +8876,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"damage"	"70 140 210 280 320 380 420"
+				"LinkedSpecialBonus"	"special_bonus_unique_broodmother_3"
 			}
 
 			"04"
@@ -9408,6 +9423,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"burn_damage"	"20 40 60 80 100 120 140"
+				"LinkedSpecialBonus"	"special_bonus_unique_jakiro_2"
 			}
 			"07"
 			{
@@ -9877,6 +9893,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"health_min"	"700 1000 1300 1600 1900 2200 2500"
+				"LinkedSpecialBonus"	"special_bonus_unique_chen_4"
 			}
 
 		}
@@ -10095,6 +10112,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"damage_per_second"	"16 24 32 40 50 60 70"
+				"LinkedSpecialBonus"	"special_bonus_unique_doom_4"
 			}
 
 			"02"
@@ -10175,7 +10193,8 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"25 40 55 70 90 115 160"
+				"damage"	"25 40 55 70 85 100 115"
+				"LinkedSpecialBonus"	"special_bonus_unique_doom_5"
 			}
 			"03"
 			{
@@ -10185,12 +10204,12 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_scepter"	"30 45 60 80 100 140 200"
+				"damage_scepter"	"30 45 60 75 90 110 140"
 			}
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"deniable_pct"	"25 25 25 25 25 25 25"
+				"deniable_pct"	"25"
 			}
 
 		}
@@ -10461,7 +10480,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_movespeed_pct"	"4 5 6 7 8 9 10"
+				"bonus_movespeed_pct"	"6 8 10 12 14 16 18"
 			}
 
 			"02"
@@ -10803,6 +10822,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"max_damage"	"150 220 290 360 430 500 570"
+				"LinkedSpecialBonus"		"special_bonus_unique_alchemist_2"
 			}
 
 			"07"
@@ -12033,6 +12053,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_hp_regen"		"2 5 8 12 18 24 32"
+				"LinkedSpecialBonus"	"special_bonus_unique_lycan_3"
 			}
 		}
 
@@ -14517,6 +14538,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"mana_restore"	"150 250 350 450 550 700 900"
+				"LinkedSpecialBonus"	"special_bonus_unique_keeper_of_the_light_2"
 			}
 
 			"02"
@@ -15640,12 +15662,14 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_damage_pct"	"20 25 30 35 40 45 50"
+				"LinkedSpecialBonus"	"special_bonus_unique_magnus_2"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"cleave_damage_pct"	"20 25 30 35 40 45 50"
+				"LinkedSpecialBonus"	"special_bonus_unique_magnus_2"
 			}
 
 			"04"
@@ -15706,6 +15730,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"range"	"900 1000 1100 1200 1300 1400 1500"
+				"LinkedSpecialBonus"	"special_bonus_unique_magnus_3"
 			}
 
 			"03"
@@ -16113,6 +16138,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"stack_limit"	"6"
+				"LinkedSpecialBonus"	"special_bonus_unique_bristleback"
 			}
 
 			"07"
@@ -16948,7 +16974,8 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"stomp_damage"	"70 100 130 160 200 250 300"
+				"stomp_damage"	"70 100 130 160 190 220 250"
+				"LinkedSpecialBonus"			"special_bonus_unique_elder_titan_2"
 			}
 
 			"05"
@@ -17311,7 +17338,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"5 5 5 5 5 6 7"
+				"duration"	"5.0 5.5 6.0 6.5 7.0 7.5 8.0"
 			}
 
 			"02"
@@ -17323,7 +17350,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"hp_regen"	"30 40 50 60 70 90 110"
+				"hp_regen"	"30 40 50 60 70 90 100"
 			}
 
 		}
@@ -17340,6 +17367,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"trigger_chance"	"25"
+				"LinkedSpecialBonus"        "special_bonus_unique_legion_commander_3"
 			}
 
 			"02"
@@ -17351,7 +17379,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"hp_leech_percent"	"55 60 65 70 75 80 85"
+				"hp_leech_percent"	"55 65 75 85 95 105 115"
 			}
 
 		}
@@ -17381,7 +17409,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"reward_damage"	"10 14 18 26 32 40 48"
+				"reward_damage"	"10 14 18 22 26 30 34"
 				"LinkedSpecialBonus"	"special_bonus_unique_legion_commander"
 			}
 
@@ -18836,7 +18864,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
 		"AbilityCastRange"	"1200"
-		"AbilityCooldown"	"25"
+		"AbilityCooldown"	"50"
 		"AbilityManaCost"	"100"
 		"AbilitySpecial"
 		{
@@ -18849,7 +18877,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"strike_crit_mult"	"140 150 160 170 180 190 200"
+				"strike_crit_mult"	"90 100 110 120 130 140 150"
 				"LinkedSpecialBonus"		"special_bonus_unique_monkey_king"
 			}
 

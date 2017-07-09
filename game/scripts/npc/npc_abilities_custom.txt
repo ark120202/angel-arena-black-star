@@ -1324,7 +1324,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_trigger_health_pct"	"30"
+				"aura_trigger_health_pct"	"25"
 			}
 			"05"
 			{

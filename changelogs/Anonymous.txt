@@ -1,9 +1,12 @@
+Items:
+	Demon king bar now can't be used on boss
 Heroes:
 	Centaur's Stampede now not scalable by spell amplify
 	Outworld Devourer's Arcane Orb now not scalable by spell amplify
 	Tinker now can't rearm guardian greaves
 	Tinker now can rearm tarrasque scepter
 	Added percent damage to BH's shuriken toss and Abaddon's aphotic shield
+	Monkey King's Boundless Strike now not refreshable by coffee bean
 Talents:
 	Exp bonus:
 		10/15/20/25 => 15/20/25/30
@@ -75,3 +78,5 @@ Runes:
 		duration 25 => 20
 	Soul Steal:
 		damage heal 15 => 30
+Fixes:
+	Fixed all broken spells by valve's update
