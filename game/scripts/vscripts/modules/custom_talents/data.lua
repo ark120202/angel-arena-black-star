@@ -308,14 +308,14 @@ CUSTOM_TALENTS_DATA = {
 		group = 7,
 		requirement = "skeleton_king_reincarnation_arena",
 	},
-	talent_hero_sai_release_of_forge_discrease_bonus_respawn_time = {
+	talent_hero_sai_release_of_forge_bonus_respawn_time_reduction = {
 		icon = "arena/sai_release_of_forge",
 		cost = 5,
 		group = 8,
 		max_level = 4,
 		requirement = "sai_release_of_forge",
 		special_values = {
-			discrease_bonus_respawn_time_pct = {25, 50, 75, 100}
+			reduction_pct = {25, 50, 75, 100}
 		}
 	},
 
