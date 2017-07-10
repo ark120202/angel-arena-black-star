@@ -66,5 +66,5 @@ Layer0
 
 	//---- Translucency ----
 	g_flAlphaTestReference "0.010"
-	TextureTranslucency "materials/models/units/saitama/saitama1_color.png"
+	TextureTranslucency "materials/models/units/saitama/saitama1_trans.png"
 }
