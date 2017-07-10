@@ -52,28 +52,28 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_FLOAT"
+				"var_type"				"FIELD_FLOAT"
 				"health_regeneration_pct"			"0.2 0.4 0.6 0.8 1.0 1.2 1.4"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"active_self_damage_pct"		"0.8 1.5 2.2 2.9 3.6 4.3 5.0"
+				"var_type"				"FIELD_FLOAT"
+				"active_self_damage_pct"	"0.8 1.5 2.2 2.9 3.6 4.3 5.0"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"active_bonus_armor"				"5 15 25 35 45 55 65"
+				"var_type"				"FIELD_INTEGER"
+				"active_bonus_armor"	"5 15 25 35 45 55 65"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"active_magic_resistance_pct" 		"16 20 24 28 32 36 40"
+				"var_type"				"FIELD_INTEGER"
+				"active_magic_resistance_pct"	"16 20 24 28 32 36 40"
 			}
 			"05"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"think_interval"	"0.1"
+				"var_type"				"FIELD_FLOAT"
+				"think_interval"		"0.1"
 			}
 		}
 
@@ -96,40 +96,41 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"outgoing_damage_reduction_pct"			"-50"
+				"var_type"				"FIELD_INTEGER"
+				"outgoing_damage_reduction_pct"	"-50"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"incoming_damage_reduction_pct"		"-8 -15 -22 -29 -36 -43 -50"
+				"var_type"				"FIELD_INTEGER"
+				"incoming_damage_reduction_pct"	"-8 -15 -22 -29 -36 -43 -50"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_FLOAT"
+				"var_type"				"FIELD_FLOAT"
 				"divine_flesh_regen_mult"	"1.4 1.5 1.6 1.7 1.8 1.9 2.0"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"mana_per_second"		"10 30 50 70 90 110 130"
 			}
 			"05"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"attack_speed_debuff"	"280"
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_reduction"	"-280"
 			}
 			"06"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"movement_speed_reduction_pct"			"-25"
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed_reduction_pct"	"-25"
 			}
 			"07"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"think_interval"	"0.1"
+				"var_type"				"FIELD_FLOAT"
+				"think_interval"		"0.1"
 			}
 		}
+
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
@@ -158,12 +159,12 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"		"6"
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"6"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"pure_damage_pct"		"4 8 12 16 20 24 28"
 				"CalculateSpellDamageTooltip" "0"
 			}
@@ -174,27 +175,28 @@
 			}
 			"04"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"aura_vision_pct"		"-50"
 			}
 			"05"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"aura_cast_time_pct"		"-75"
+				"var_type"				"FIELD_INTEGER"
+				"aura_cast_time_pct"	"-75"
 			}
 			"06"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"aura_turn_rate_pct"		"-75"
+				"var_type"				"FIELD_INTEGER"
+				"aura_turn_rate_pct"	"-75"
 			}
 			"07"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"bonus_respawn_time_pct"	"60"
 			}
 		}
+
 		"precache"
-			{
+		{
 			"model"			"models/items/invoker/forge_spirit/sempiternal_revelations_forged_spirits/sempiternal_revelations_forged_spirits.vmdl"
 			"particle"  	"particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl_fire.vpcf"
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
