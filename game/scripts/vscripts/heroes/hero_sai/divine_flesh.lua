@@ -46,12 +46,6 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local parent = self:GetParent()
 		local damage = parent:GetMaxHealth() * ability:GetSpecialValueFor("active_self_damage_pct") * 0.01 * ability:GetSpecialValueFor("think_interval")
-		--[[
-		local sai_invulnerability = parent:FindAbilityByName("sai_invulnerability")
-		if sai_invulnerability and sai_invulnerability:GetToggleState() then
-			damage = damage * (1 + sai_invulnerability:GetSpecialValueFor("incoming_damage_reduction_pct") * 0.01)
-		end
-		]]
 		ApplyDamage({
 			victim = parent,
 			attacker = parent,
