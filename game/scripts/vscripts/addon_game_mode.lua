@@ -144,6 +144,10 @@ function Precache(context)
 		end
 	end
 
+	for _,v in pairs(WEATHER_EFFECTS) do
+		table.add(particles, v.particles or {})
+	end
+
 	for _,v in ipairs(particles) do
 		PrecacheResource("particle", v, context)
 	end

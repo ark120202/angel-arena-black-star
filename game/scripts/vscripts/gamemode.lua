@@ -92,6 +92,7 @@ function GameMode:InitGameMode()
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("players_abandoned", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("gold", {}, AllPlayersInterval)
+	PlayerTables:CreateTable("weather", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
 end
 
@@ -130,6 +131,7 @@ function GameMode:OnHeroSelectionEnd()
 	--Timers:CreateTimer(1/30, Dynamic_Wrap(GameMode, "QuickGameModeThink"))
 	PanoramaShop:StartItemStocks()
 	Duel:CreateGlobalTimer()
+	Weather:Init()
 
 	Timers:CreateTimer(10, function()
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do

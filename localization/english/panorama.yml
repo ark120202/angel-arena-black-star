@@ -119,3 +119,5 @@ ranked_top_players: Best Players
 ranked_top_more: Open Top 100...
 
 teams_kill_weight_tooltip: Killing heroes of that team gives {d:kill_weight} points
+
+weather_current_status: '{s:current_weather} ({s:weather_duration})'
