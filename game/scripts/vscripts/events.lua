@@ -194,6 +194,8 @@ function GameMode:OnEntityKilled(keys)
 				local respawnTime = killedUnit:CalculateRespawnTime()
 				killedUnit:SetTimeUntilRespawn(respawnTime)
 				MeepoFixes:ShareRespawnTime(killedUnit, respawnTime)
+				killedUnit.RespawnTimeModifierBloodstone = nil
+				killedUnit.RespawnTimeModifierSaiReleaseOfForge = nil
 
 				if killedUnit.OnDuel and Duel:IsDuelOngoing() then
 					killedUnit.OnDuel = nil
