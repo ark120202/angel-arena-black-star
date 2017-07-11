@@ -6899,12 +6899,12 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_gold_lost_per_sec_pct" "0.5"
+				"active_gold_lost_per_sec_pct" "0.8"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_gold_lost_per_sec_min" "5"
+				"active_gold_lost_per_sec_min" "3"
 			}
 		}
 	}

@@ -614,7 +614,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ally_cooldown_scepter"	"180 170 160 150 140 130 120"
+				"ally_cooldown_scepter"	"180"
 			}
 		}
 
