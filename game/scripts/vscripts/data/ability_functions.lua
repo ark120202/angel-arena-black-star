@@ -16,6 +16,7 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	centaur_hoof_stomp = 40,
 	centaur_double_edge = 40,
 	kunkka_ghostship = 40,
+	kunkka_torrent = 40,
 	slark_dark_pact = 40,
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,

@@ -18,11 +18,6 @@ SPAWNER_CHAMPION_LEVELS = {
 		chance = 3,
 		minute = 20,
 		model_scale = 0.45,
-	},
-	[6] = {
-		chance = 2,
-		minute = 28,
-		model_scale = 0.5,
 	}
 }
 
@@ -72,7 +67,7 @@ CREEP_UPGRADE_FUNCTIONS = {
 SPAWNER_SETTINGS = {
 	Cooldown = 60,
 	easy = {
-		SpawnedPerSpawn = 4,
+		SpawnedPerSpawn = 5,
 		MaxUnits = 40,
 		SpawnTypes = {
 			[0] ={
