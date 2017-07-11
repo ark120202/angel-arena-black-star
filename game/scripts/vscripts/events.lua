@@ -44,11 +44,6 @@ function GameMode:OnNPCSpawned(keys)
 							UTIL_Remove(npc.BloodstoneDummies)
 							npc.BloodstoneDummies = nil
 						end
-						if npc.PocketHostEntity ~= nil then
-							UTIL_Remove(npc.PocketItem)
-							npc.PocketItem = nil
-							npc.PocketHostEntity = nil
-						end
 						if not npc.OnDuel and Duel:IsDuelOngoing() then
 							Duel:SetUpVisitor(npc)
 						end
