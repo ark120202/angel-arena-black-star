@@ -133,7 +133,7 @@ function GameMode:OnHeroSelectionEnd()
 
 	Timers:CreateTimer(10, function()
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-			if PlayerResource:IsValidPlayerID(playerID) and GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
+			if PlayerResource:IsValidPlayerID(playerID) and not PlayerResource:IsFakeClient(playerID) and GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
 				local heroName = HeroSelection:GetSelectedHeroName(playerID) or ""
 				if heroName == "" or heroName == FORCE_PICKED_HERO then
 					GameMode:BreakGame()
