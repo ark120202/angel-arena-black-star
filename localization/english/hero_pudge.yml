@@ -1,7 +1,7 @@
 DOTA_Tooltip_ability_pudge_meat_hook_lua: Meat Hook
 DOTA_Tooltip_ability_pudge_meat_hook_lua_Description: |-
   Launches a bloody hook toward a unit or location. The hook will snag the all units it encounters, dragging units back to Pudge and dealing damage if it is an enemy. Drags units even while hook is coming back to Pudge.
-  When Pudge kills enemy using hook he gains Bloodstained Stack. Each stack increases Hook Range and Speed.
+  When Pudge kills enemy using hook he gains Bloodstained Stack. Each stack increases Hook cast range.
 DOTA_Tooltip_ability_pudge_meat_hook_lua_aghanim_description: 'Reduces cooldown, increases damage and removes delay after using Meat Hook.'
 DOTA_Tooltip_ability_pudge_meat_hook_lua_Note0: Interrupts channeling spells of the primary target if it's an enemy.
 DOTA_Tooltip_ability_pudge_meat_hook_lua_Note1: Meat Hook hits invisible units.
@@ -12,6 +12,8 @@ DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance: 'RANGE:'
 DOTA_Tooltip_ability_pudge_meat_hook_lua_damage_scepter: 'SCEPTER DAMAGE:'
 DOTA_Tooltip_ability_pudge_meat_hook_lua_cooldown_scepter: 'SCEPTER COOLDOWN:'
 DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance_per_stack: 'RANGE PER STACK:'
+DOTA_Tooltip_modifier_meat_hook_bloodstained_lua: Bloodstained Hook
+DOTA_Tooltip_modifier_meat_hook_bloodstained_lua_Description: Meat Hook cast range increased by %dMODIFIER_PROPERTY_TOOLTIP%
 
 DOTA_Tooltip_ability_pudge_rot_arena: Rot
 DOTA_Tooltip_ability_pudge_rot_arena_Description: A toxic cloud that deals intense damage and slows movement--harming not only enemy units but Pudge himself. Each Flesh Heap stack increases Rot radius.

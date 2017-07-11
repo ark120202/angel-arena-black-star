@@ -285,6 +285,14 @@ modifier_meat_hook_bloodstained_lua = class({
 	IsPurgable    = function() return false end,
 })
 
+function modifier_meat_hook_bloodstained_lua:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+
+function modifier_meat_hook_bloodstained_lua:OnTooltip()
+	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("hook_distance_per_stack")
+end
+
 modifier_meat_hook_followthrough_lua = class({
 	IsHidden   = function() return true end,
 	CheckState = function() return {[MODIFIER_STATE_STUNNED] = true} end,
