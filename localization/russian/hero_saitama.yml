@@ -19,10 +19,12 @@ DOTA_Tooltip_ability_saitama_jogging_Lore: И десятикилометрова
 DOTA_Tooltip_ability_saitama_jogging_range: 'ДИСТАНЦИЯ:'
 DOTA_Tooltip_modifier_saitama_jogging_Description: Настоящему герою нужно быть быстрым и выносливым.
 
-DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Сайтама прилагает к удару чуть больше усилий, нанося критический урон в чистом виде. За каждый стак лимитера множитель урона растет на %damage_multiplier_per_stack_pct%%%. Способность отталкивает цель и оглушает в зависимости от нанесенного урона.'
+DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Сайтама прилагает к удару чуть больше усилий, нанося огромное колличество урона, основываясь на своем уроне, а также отталкивая и оглушая её. За каждый стак лимитера множитель урона растет на %damage_multiplier_per_stack_pct%%%. Длительность и дальность отталкивниая зависят от нанесенного урона.'
 DOTA_Tooltip_ability_saitama_serios_punch_Lore: Позволь мне стать немного серьезнее, чтобы ты вложил в эту битву всего себя...
 DOTA_Tooltip_ability_saitama_serios_punch_base_damage_multiplier_pct: '%НАЧАЛЬНЫЙ МНОЖИТЕЛЬ УРОНА:'
 DOTA_Tooltip_ability_saitama_serios_punch_damage_multiplier_per_stack_pct: '%ДОП. МНОЖИТЕЛЬ УРОНА ЗА СТАК:'
+DOTA_Tooltip_ability_saitama_serios_punch_knockback_duration_step: 'УРОНА НА СЕКУНДУ ОТТАЛКИВАНИЯ:'
+DOTA_Tooltip_ability_saitama_serios_punch_knockback_distance_step: 'УРОНА НА ЕДИНИЦУ ДАЛЬНОСТИ ОТТАЛКИВАНИЯ:'
 
 DOTA_Tooltip_ability_saitama_limiter_Description: 'Докажите, что у вас достаточно воли, чтобы разрушить свой лимитер. Каждый стак лимитера навсегда увеличивает вашу силу на некоторый процент от ее максимального кол-ва, расходуя %manacost_pct%%% маны от ее максимального значения. Также добавляется стак при убийстве вражеского героя. При смерти теряется %loss_stacks_pct%%% стаков.'
 DOTA_Tooltip_ability_saitama_limiter_aghanim_description: Добавляет новую способность - Serious Punch

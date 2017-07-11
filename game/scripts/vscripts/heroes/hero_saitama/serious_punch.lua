@@ -21,12 +21,12 @@ if IsServer() then
 			})
 			if damage > 0 then
 				local sourcePos = caster:GetAbsOrigin()
-				local duration =  damage/12000
+				local duration =  damage / self:GetSpecialValueFor("knockback_duration_step")
 				target:RemoveModifierByName("modifier_knockback")
 				target:AddNewModifier(caster, self, "modifier_knockback", {
 					knockback_duration = duration,
-					knockback_distance = damage/10,
-					knockback_height = damage/100,
+					knockback_distance = damage / self:GetSpecialValueFor("knockback_distance_step"),
+					knockback_height = damage / self:GetSpecialValueFor("knockback_height_step"),
 					should_stun = 1,
 					duration = duration,
 					center_x = sourcePos.x,

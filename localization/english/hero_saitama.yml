@@ -25,10 +25,12 @@ DOTA_Tooltip_modifier_saitama_jogging: Jogging
 DOTA_Tooltip_modifier_saitama_jogging_Description: To become a strong hero, you need to run fast!
 
 DOTA_Tooltip_ability_saitama_serios_punch: Serious Punch
-DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Saitama is putting a bit more effort into the attack, dealing lots of damage, based on his attack damage. For each Limiter stack, the damage multiplier increases by %damage_multiplier_per_stack_pct%%%. The ability repels the target and stuns depending on the damage dealt.'
+DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Saitama is putting a bit more effort into the attack, pusing target and dealing lots of damage, based on his attack damage. Each Limiter stack increases damage multiplier by %damage_multiplier_per_stack_pct%%%. Knockback duration and range depends on dealt damage.'
 DOTA_Tooltip_ability_saitama_serios_punch_Lore: Let me become a bit more serious, so that you put all of yourself into this battle...
 DOTA_Tooltip_ability_saitama_serios_punch_base_damage_multiplier_pct: '%BASE DAMAGE MULTIPLIER:'
 DOTA_Tooltip_ability_saitama_serios_punch_damage_multiplier_per_stack_pct: '%BONUS DAMAGE MULTIPLIER PER STACK:'
+DOTA_Tooltip_ability_saitama_serios_punch_knockback_duration_step: 'DAMAGE PER KNOCKBACK SECOND:'
+DOTA_Tooltip_ability_saitama_serios_punch_knockback_distance_step: 'DAMAGE PER KNOCKBACK RANGE UNIT:'
 
 DOTA_Tooltip_ability_saitama_limiter: Limiter
 DOTA_Tooltip_ability_saitama_limiter_Description: 'Prove that you have enough will to destroy your limiter. Each limiter stack permanently increases its strength by some percentage of its turn count, consuming %manacost_pct%%% mana from its trigger value. Also adds a stack when killing an enemy hero. At death, %loss_stacks_pct%%% stacks is lost.'
