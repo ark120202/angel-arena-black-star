@@ -506,6 +506,7 @@
 		"AttributeAgilityGain"	"2.2"
 		"AttackDamageMin"		"23"
 		"AttackDamageMax"		"30"
+		"MagicalResistance"		"40"
 	}
 
 	"npc_arena_hero_murzik"

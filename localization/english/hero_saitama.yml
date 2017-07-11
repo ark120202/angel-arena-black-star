@@ -29,8 +29,6 @@ DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Saitama is putting a bit
 DOTA_Tooltip_ability_saitama_serios_punch_Lore: Let me become a bit more serious, so that you put all of yourself into this battle...
 DOTA_Tooltip_ability_saitama_serios_punch_base_damage_multiplier_pct: '%BASE DAMAGE MULTIPLIER:'
 DOTA_Tooltip_ability_saitama_serios_punch_damage_multiplier_per_stack_pct: '%BONUS DAMAGE MULTIPLIER PER STACK:'
-DOTA_Tooltip_ability_saitama_serios_punch_knockback_duration_step: 'DAMAGE PER KNOCKBACK SECOND:'
-DOTA_Tooltip_ability_saitama_serios_punch_knockback_distance_step: 'DAMAGE PER KNOCKBACK RANGE UNIT:'
 
 DOTA_Tooltip_ability_saitama_limiter: Limiter
 DOTA_Tooltip_ability_saitama_limiter_Description: 'Prove that you have enough will to destroy your limiter. Each limiter stack permanently increases its strength by some percentage of its turn count, consuming %manacost_pct%%% mana from its trigger value. Also adds a stack when killing an enemy hero. At death, %loss_stacks_pct%%% stacks is lost.'
