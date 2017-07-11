@@ -509,10 +509,10 @@ DOTA_Tooltip_ability_item_ray_of_fate_Description: 'Active: True Prophecy - Reva
 DOTA_Tooltip_ability_item_ray_of_fate_radius: 'AREA OF EFFECT:'
 DOTA_Tooltip_ability_item_ray_of_fate_duration: 'DURATION:'
 DOTA_Tooltip_ability_item_titanium_fruit: Titanium Fruit
-DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Active: Invulnerability - Makes you invulnerable for some time.'
+DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Active: Grants Spell Immunity, 100% Magic Damage Resistance.'
 DOTA_Tooltip_ability_item_titanium_fruit_duration: 'DURATION:'
-DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit Invulnerability
-DOTA_Tooltip_modifier_item_titanium_fruit_Description: You are invulnerable.
+DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit
+DOTA_Tooltip_modifier_item_titanium_fruit_Description: Spell Immune, 100% resistant to magic damage type.
 DOTA_Tooltip_ability_item_diffusal_style: Diffusal Style
 DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   Active: Mirror Image - Creates %images_count% images of your hero that last %illusion_duration% seconds. Images deal %illusion_damage_percent_outgoing_tooltip%%% damage and take %illusion_damage_percent_incoming_tooltip%%% damage.
@@ -1645,6 +1645,8 @@ DOTA_Tooltip_ability_item_mekansm_arena_Description: |-
   Multiple instances of Mekansm Aura do not stack.
 DOTA_Tooltip_ability_item_mekansm_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_mekansm_arena_bonus_armor: +$armor
+DOTA_Tooltip_ability_item_mekansm_arena_bonus_health: +$health
+DOTA_Tooltip_ability_item_mekansm_arena_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_mekansm_arena_radius: 'AURA/RESTORE RADIUS:'
 DOTA_Tooltip_ability_item_mekansm_arena_aura_health_regen: 'AURA HEALTH REGEN:'
 DOTA_Tooltip_ability_item_mekansm_arena_aura_bonus_armor: 'AURA ARMOR:'
@@ -1660,6 +1662,8 @@ DOTA_Tooltip_ability_item_mekansm_2_Description: |-
   Multiple instances of Mekansm Aura do not stack.
 DOTA_Tooltip_ability_item_mekansm_2_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_mekansm_2_bonus_armor: +$armor
+DOTA_Tooltip_ability_item_mekansm_2_bonus_health: +$health
+DOTA_Tooltip_ability_item_mekansm_2_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_mekansm_2_radius: 'AURA/RESTORE RADIUS:'
 DOTA_Tooltip_ability_item_mekansm_2_aura_health_regen: 'AURA HEALTH REGEN:'
 DOTA_Tooltip_ability_item_mekansm_2_aura_bonus_armor: 'AURA ARMOR:'
@@ -1673,6 +1677,7 @@ DOTA_Tooltip_ability_item_guardian_greaves_arena_Description: |-
   DISPEL TYPE: Basic Dispel
 DOTA_Tooltip_ability_item_guardian_greaves_arena_Note0: Can be activated while stunned
 DOTA_Tooltip_ability_item_guardian_greaves_arena_bonus_movement: +$move_speed
+DOTA_Tooltip_ability_item_guardian_greaves_arena_bonus_health: +$health
 DOTA_Tooltip_ability_item_guardian_greaves_arena_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_guardian_greaves_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_guardian_greaves_arena_bonus_armor: +$armor

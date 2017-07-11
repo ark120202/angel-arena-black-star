@@ -21,7 +21,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1000"
+		"ItemCost"						"750"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_aether_lens_2"
 		"ItemRequirements"
@@ -36,7 +36,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1500"
+		"ItemCost"						"1000"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_aether_lens_3"
 		"ItemRequirements"
@@ -51,7 +51,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2000"
+		"ItemCost"						"1250"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_aether_lens_4"
 		"ItemRequirements"
@@ -66,7 +66,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2500"
+		"ItemCost"						"1500"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_aether_lens_5"
 		"ItemRequirements"
@@ -104,12 +104,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"175 200 215 230 245"
+				"cast_range_bonus"		"175 190 205 220 235"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"6 8 10 11 12"
+				"spell_amp_pct"			"6 8 10 12 14"
 			}
 		}
 	}
@@ -143,12 +143,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"175 200 215 230 245"
+				"cast_range_bonus"		"175 190 205 220 235"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"6 8 10 11 12"
+				"spell_amp_pct"			"6 8 10 12 14"
 			}
 		}
 	}
@@ -182,12 +182,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"175 200 215 230 245"
+				"cast_range_bonus"		"175 190 205 220 235"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"6 8 10 11 12"
+				"spell_amp_pct"			"6 8 10 12 14"
 			}
 		}
 	}
@@ -221,12 +221,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"175 200 215 230 245"
+				"cast_range_bonus"		"175 190 205 220 235"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"6 8 10 11 12"
+				"spell_amp_pct"			"6 8 10 12 14"
 			}
 		}
 	}
@@ -260,12 +260,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"175 200 215 230 245"
+				"cast_range_bonus"		"175 190 205 220 235"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"6 8 10 11 12"
+				"spell_amp_pct"			"6 8 10 12 14"
 			}
 		}
 	}

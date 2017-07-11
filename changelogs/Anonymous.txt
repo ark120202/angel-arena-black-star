@@ -78,3 +78,14 @@ Runes:
 		damage heal 15 => 30
 Fixes:
 	Fixed all broken spells by valve's update
+Items:
+	Haganemushi:
+		Fixed attack speed (now bonus attack speed works)
+		Added aura of reduce armor because of soul of titan
+	Mekansm & Mekansm_2:
+		Changed requirments and cost
+		Added bonus health and mana from soul booster
+	Guardian Greaves:
+		Added bonus health
+	Titanium fruit:
+		Now gives just spell immune from magic not invulnerability

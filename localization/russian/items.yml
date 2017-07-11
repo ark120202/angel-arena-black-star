@@ -514,10 +514,10 @@ DOTA_Tooltip_ability_item_ray_of_fate_Description: 'Активируемая: Tr
 DOTA_Tooltip_ability_item_ray_of_fate_radius: 'ОБЛАСТЬ ДЕЙСТВИЯ:'
 DOTA_Tooltip_ability_item_ray_of_fate_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_titanium_fruit: Titanium Fruit
-DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Активируемая: Invulnerability - Делает вас неуязвимым на некоторое время.'
+DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Активируемая: Avatar - дает невосприимчивость к заклинаниям, полное сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_titanium_fruit_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_modifier_item_titanium_fruit: Неуязвимость от Titanium Fruit
-DOTA_Tooltip_modifier_item_titanium_fruit_Description: Вы неуязвимы.
+DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit
+DOTA_Tooltip_modifier_item_titanium_fruit_Description: Вы невосприимчивы к магическим заклинаниям.
 DOTA_Tooltip_ability_item_diffusal_style: Diffusal Style
 DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   Активируемая: Mirror Image — создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
@@ -1433,7 +1433,7 @@ DOTA_Tooltip_ability_item_guardian_greaves_arena_Description: |-
   Пассивная: Guardian Aura — дарует окружающим союзникам +%aura_health_regen% к восстановлению здоровья и +%aura_armor% к броне. Если в радиусе действия есть союзный герой, уровень здоровья которого ниже %aura_bonus_threshold_pct%%%, то на него действует усиленная аура, восстанавливающая %aura_health_regen_bonus% здоровья в секунду и увеличивающая броню на %aura_armor_bonus%.
 
   ТИП РАЗВЕИВАНИЯ: Нормальное
-DOTA_Tooltip_ability_item_guardian_greaves_arena_Note0: Может быть активирована ао аремя оглушения
+DOTA_Tooltip_ability_item_guardian_greaves_arena_Note0: Может быть активирована во аремя оглушения
 DOTA_Tooltip_ability_item_guardian_greaves_arena_radius: 'РАДИУС ДЕЙСТВИЯ:'
 DOTA_Tooltip_ability_item_guardian_greaves_arena_aura_health_regen: |-
   ДЕЙСТВИЕ АУРЫ:

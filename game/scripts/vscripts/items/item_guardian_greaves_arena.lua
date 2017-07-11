@@ -32,9 +32,13 @@ function modifier_item_guardian_greaves_arena:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_HEALTH_BONUS,
 		MODIFIER_PROPERTY_MANA_BONUS,
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE
 	}
+end
+function modifier_item_guardian_greaves_arena:GetModifierHealthBonus()
+	return self:GetAbility():GetSpecialValueFor("bonus_health")
 end
 function modifier_item_guardian_greaves_arena:GetModifierManaBonus()
 	return self:GetAbility():GetSpecialValueFor("bonus_mana")

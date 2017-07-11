@@ -3015,12 +3015,11 @@
 		"ID"							"10100"
 		"AbilityTextureName"			"item_arena/titanium_fruit"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityCooldown"				"300"
-		"ItemStockTime"					"300"
-		"ItemInitialStockTime"			"450.0"
-		"ItemStockMax"					"6"
-		"ItemStockInitial"				"0"
+		"AbilityCooldown"				"70"
 		"ItemCost"						"450"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
 		"AbilitySharedCooldown"			"titanium_fruit"
 
 		"AbilitySpecial"
@@ -3028,7 +3027,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"3.0"
+				"duration"			"5.0"
 			}
 		}
 
@@ -3070,14 +3069,11 @@
 				"States"
 				{
 					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"		"1"
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"		"1"
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE"			"1"
 					"MODIFIER_PROPERTY_MIN_HEALTH"						"1"
 				}
 			}
@@ -9610,7 +9606,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1000"
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_orb_of_essences"
 		"ItemRequirements"
@@ -9631,7 +9627,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_all"				"45"
+				"bonus_all"				"35"
 			}
 		}
 
@@ -9945,7 +9941,7 @@
 		"ItemResult"					"item_mekansm_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_headdress;item_buckler;item_ultimate_orb"
+			"01"						"item_headdress;item_buckler"
 		}
 	}
 
@@ -9974,32 +9970,42 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"20 40"
+				"bonus_all_stats"		"6 12"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"7 10"
+				"bonus_armor"			"6 12"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1000"
+				"bonus_health"			"0 500"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_health_regen"		"6 12"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"0 500"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"4 8"
+				"radius"				"1000"
 			}
 			"06"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"6 12"
+			}
+			"07"
+			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"400 800"
+				"aura_bonus_armor"		"4 12"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"350 1000"
 			}
 		}
 	}
@@ -10010,12 +10016,12 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"950"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mekansm_2"
 		"ItemRequirements"
 		{
-			"01"						"item_mekansm_arena;item_ultimate_orb;item_ultimate_orb"
+			"01"						"item_mekansm_arena;item_headdress;item_buckler;item_soul_booster"
 		}
 	}
 
@@ -10044,33 +10050,44 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"20 40"
+				"bonus_all_stats"		"6 12"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"7 10"
+				"bonus_armor"			"6 12"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1000"
+				"bonus_health"			"0 500"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_health_regen"		"6 12"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"0 500"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"4 8"
+				"radius"				"1000"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"400 800"
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"6 12"
 			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_armor"		"4 12"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"350 1000"
+			}
+
 		}
 	}
 
@@ -10112,49 +10129,54 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"70"
+				"bonus_movement"		"75"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"1000"
+				"bonus_health"			"1250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"75"
+				"bonus_mana"			"2000"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"12"
+				"bonus_all_stats"		"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1000"
+				"bonus_armor"			"20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_health_regen"		"40"
+				"radius"				"1000"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_armor"			"20"
+				"aura_health_regen"		"60"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_threshold_pct"	"25"
+				"aura_armor"			"20"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_health_regen_bonus"	"50"
+				"aura_bonus_threshold_pct"	"25"
 			}
 			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_health_regen_bonus"	"80"
+			}
+			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"aura_armor_bonus"		"30"
