@@ -14,6 +14,8 @@ Heroes:
 		Boundless Strike now not refreshable by coffee bean
 	Kunkka:
 		Torrent now deal 40% dmg to bosses
+	Rubick:
+		Now can't steal timbersaw's spells
 Talents:
 	Exp bonus:
 		10/15/20/25 => 15/20/25/30

@@ -175,6 +175,7 @@ PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_dota_hero_storm_spirit"] = true,
 	["npc_dota_hero_tidehunter"] = true,
 	["npc_dota_hero_arc_warden"] = true,
+	["npc_dota_hero_shredder"] = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
