@@ -584,7 +584,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_radius"			"900 900 900 900 900 1000 1100"
+				"slow_radius"			"700"
 			}
 			"03"
 			{
@@ -599,7 +599,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"5.0"
+				"slow_duration"			"2.0"
 			}
 			"06"
 			{
@@ -609,7 +609,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius_scepter"		"900"
+				"radius_scepter"		"700"
 			}
 			"08"
 			{
