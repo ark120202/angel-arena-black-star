@@ -4,6 +4,15 @@ saitama_jogging = class({
 	GetIntrinsicModifierName = function() return "modifier_saitama_jogging" end,
 })
 
+if IsServer() then
+	function saitama_jogging:OnUpgrade()
+		local modifier = self:GetCaster():FindModifierByName(self:GetIntrinsicModifierName())
+		if modifier then
+			modifier:UpdatePercentage()
+		end
+	end
+end
+
 modifier_saitama_jogging = class({})
 
 function modifier_saitama_jogging:DeclareFunctions()
@@ -13,10 +22,6 @@ end
 if IsServer() then
 	function modifier_saitama_jogging:OnCreated()
 		self.range = 0
-	end
-
-	function modifier_saitama_jogging:OnUpgrade()
-		self:UpdatePercentage()
 	end
 
 	function modifier_saitama_jogging:OnUnitMoved()
