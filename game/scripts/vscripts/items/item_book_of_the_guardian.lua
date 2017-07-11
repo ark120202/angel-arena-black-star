@@ -1,6 +1,8 @@
 LinkLuaModifier("modifier_item_book_of_the_guardian", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_book_of_the_guardian_effect", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_book_of_the_guardian_blast", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_book_of_the_guardian_aura", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+
 item_book_of_the_guardian_baseclass = {
 	GetIntrinsicModifierName = function() return "modifier_item_book_of_the_guardian" end
 }
@@ -112,7 +114,7 @@ function modifier_item_book_of_the_guardian:GetAuraSearchTeam()
 end
 
 function modifier_item_book_of_the_guardian:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO
+	return DOTA_UNIT_TARGET_ALL
 end
 
 
