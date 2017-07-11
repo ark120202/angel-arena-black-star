@@ -550,7 +550,7 @@
 		"AbilitySharedCooldown"			"hex"
 		"AbilitySpecial"
 		{
-			"01"
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"sheep_duration"		"3.0"
