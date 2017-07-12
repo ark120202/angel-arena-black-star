@@ -65,7 +65,6 @@ REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 	item_black_king_bar_4 = true,
 	item_black_king_bar_5 = true,
 	item_black_king_bar_6 = true,
-	item_coffee_bean = true,
 
 	destroyer_body_reconstruction = true,
 }

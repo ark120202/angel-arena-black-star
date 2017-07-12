@@ -16,6 +16,8 @@ Heroes:
 		Torrent now deal 40% dmg to bosses
 	Rubick:
 		Now can't steal timbersaw's spells
+	Destroyer:
+		Body reconstruction now can refresh coffee bean
 Talents:
 	Exp bonus:
 		10/15/20/25 => 15/20/25/30
@@ -108,6 +110,7 @@ Bosses:
 		Soul of titan2 drop chance changed 30 => 25
 		Demons paw1 drop chance changed 25 => 90
 		Demons paw2 drop chance changed 25 => 20
+	All bosses now not anymore considered hero (nerf dazzle's ult)
 Game changes:
 	MAXIMUM ATTACK SPEED now is 725
 	Spell Amplify:
