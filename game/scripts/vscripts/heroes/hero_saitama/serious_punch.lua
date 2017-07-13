@@ -9,7 +9,7 @@ if IsServer() then
 			local damage = caster:GetAverageTrueAttackDamage(target) * (self:GetSpecialValueFor("base_damage_multiplier_pct") + self:GetSpecialValueFor("damage_multiplier_per_stack_pct") * caster:GetModifierStackCount("modifier_saitama_limiter", caster)) * 0.01
 
 			target:EmitSound("Hero_Earthshaker.EchoSlam")
-			ParticleManager:CreateParticle("particles/arena/units/heroes/hero_saitama/serios_punch.vpcf", PATTACH_ABSORIGIN, target)
+			ParticleManager:CreateParticle("particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_fallback_mid_egset.vpcf", PATTACH_ABSORIGIN, target)
 
 			ApplyDamage({
 				attacker = caster,

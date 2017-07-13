@@ -163,7 +163,7 @@
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
-			"particle"  "particles/arena/units/heroes/hero_saitama/serios_punch.vpcf"
+			"particle"  "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_fallback_mid_egset.vpcf"
 		}
 	}
 
