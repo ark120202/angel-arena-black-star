@@ -12,6 +12,8 @@ end
 
 function ClearDebuffs(keys)
 	local caster = keys.caster
+	caster:RemoveModifierByName("modifier_dazzle_weave_armor")
+
 	if not caster:PassivesDisabled() then
 		local ability = keys.ability
 		caster:Purge(false, true, false, false, false)
