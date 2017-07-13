@@ -127,7 +127,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCooldown"				"20"
-		"AbilityCastRange"				"1"
+		"AbilityCastRange"				"25"
 		"AbilityCastPoint"				"0.4"
 
 		"AbilitySpecial"
