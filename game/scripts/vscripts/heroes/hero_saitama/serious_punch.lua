@@ -19,10 +19,11 @@ if IsServer() then
 				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 				ability = self
 			})
+
+			target:RemoveModifierByName("modifier_knockback")
 			if damage > 0 then
 				local sourcePos = caster:GetAbsOrigin()
 				local duration =  damage / self:GetSpecialValueFor("knockback_duration_step")
-				target:RemoveModifierByName("modifier_knockback")
 				target:AddNewModifier(caster, self, "modifier_knockback", {
 					knockback_duration = duration,
 					knockback_distance = damage / self:GetSpecialValueFor("knockback_distance_step"),
