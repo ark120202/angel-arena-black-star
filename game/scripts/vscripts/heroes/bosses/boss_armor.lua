@@ -17,9 +17,6 @@ function ClearDebuffs(keys)
 	if not caster:PassivesDisabled() then
 		local ability = keys.ability
 		caster:Purge(false, true, false, false, false)
-		caster:RemoveModifierByName("modifier_item_skadi_slow")
-		caster:RemoveModifierByName("modifier_item_skadi_arena_cold_attack")
-		caster:RemoveModifierByName("modifier_item_rapier_of_pain_debuff")
 		caster:RemoveModifierByName("modifier_ursa_fury_swipes_damage_increase")
 		caster:RemoveModifierByName("modifier_maledict")
 		caster:RemoveModifierByName("modifier_ice_blast")
