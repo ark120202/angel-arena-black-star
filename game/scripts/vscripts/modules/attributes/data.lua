@@ -10,7 +10,7 @@ DOTA_DEFAULT_ATTRIBUTES = {
 	-- Per int
 	mana = 11,
 	mana_regen = 0.04,
-	spell_amplify = 1/16,
+	spell_amplify = 1/14,
 }
 
 GLOBAL_ATTRIBUTE_ADJUSTMENTS = {
