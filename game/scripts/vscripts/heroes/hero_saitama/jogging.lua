@@ -16,7 +16,14 @@ end
 modifier_saitama_jogging = class({})
 
 function modifier_saitama_jogging:DeclareFunctions()
-	return {MODIFIER_EVENT_ON_UNIT_MOVED}
+	return {
+		MODIFIER_PROPERTY_TOOLTIP,
+		MODIFIER_EVENT_ON_UNIT_MOVED
+	}
+end
+
+function modifier_saitama_jogging:OnTooltip()
+	return self:GetStackCount()
 end
 
 if IsServer() then
