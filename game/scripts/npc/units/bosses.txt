@@ -305,8 +305,8 @@
 		"Ability1"					"boss_freya_sharp_ice_shards"
 		"Ability5"					"boss_armor"
 
-		"ArmorPhysical"				"100"
-		"MagicalResistance"			"40"
+		"ArmorPhysical"				"130"
+		"MagicalResistance"			"65"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"5200"
@@ -324,9 +324,9 @@
 		"MovementSpeed"				"550"
 
 		"StatusHealth"				"800000"
-		"StatusHealthRegen"			"850"
+		"StatusHealthRegen"			"1000"
 		"StatusMana"				"50000"
-		"StatusManaRegen"			"50"
+		"StatusManaRegen"			"200"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"

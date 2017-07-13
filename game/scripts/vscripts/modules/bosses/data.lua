@@ -57,7 +57,7 @@ DROP_TABLE = {
 
 	["npc_arena_boss_l1_v1"] = {
 		{ Item = "item_dark_blade", DropChance = 20, DamageWeightPct = 25, },
-		{ Item = "item_dark_blade", DropChance = 20, DamageWeightPct = 25, },
+		{ Item = "item_dark_blade", DropChance = 10, DamageWeightPct = 25, },
 		{ Item = "item_phantom_bone", DropChance = 15, DamageWeightPct = 20, },
 		{ Item = "item_moon_dust", DropChance = 20, DamageWeightPct = 25, },
 		{ Item = "item_moon_dust", DropChance = 20, DamageWeightPct = 25, },
@@ -73,7 +73,7 @@ DROP_TABLE = {
 	},
 	["npc_arena_boss_l1_v2"] = {
 		{ Item = "item_dark_blade", DropChance = 20, DamageWeightPct = 25, },
-		{ Item = "item_dark_blade", DropChance = 20, DamageWeightPct = 25, },
+		{ Item = "item_dark_blade", DropChance = 10, DamageWeightPct = 25, },
 		{ Item = "item_phantom_bone", DropChance = 15, DamageWeightPct = 20, },
 		{ Item = "item_moon_dust", DropChance = 25, DamageWeightPct = 25, },
 		{ Item = "item_moon_dust", DropChance = 25, DamageWeightPct = 25, },

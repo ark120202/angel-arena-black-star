@@ -18,6 +18,10 @@ Heroes:
 		Now can't steal timbersaw's spells
 	Destroyer:
 		Body reconstruction now can refresh coffee bean
+	Dazzle:
+		Weave now can't be used on bosses
+	Ancient Apparation:
+		Ice blast now can't be used on bosses
 Talents:
 	Exp bonus:
 		10/15/20/25 => 15/20/25/30
@@ -102,15 +106,19 @@ Items:
 		Added bonus health
 	Titanium fruit:
 		Now gives just spell immune from magic not invulnerability
+	Refresher:
+		Coffee bean now can't be refreshed by refresher & refresher core
 Bosses:
 	Boss lvl1:
-		now can be droped 2 dark blades, chance changed 25 => 20
+		now can be droped 2 dark blades
+		Dark Blade1 chance changed 25 => 20%
+		Dark Blade2 chance set to 10%
 	Boss lvl2:
-		Soul of titan1 drop chance changed 40 => 90
-		Soul of titan2 drop chance changed 30 => 25
-		Demons paw1 drop chance changed 25 => 90
-		Demons paw2 drop chance changed 25 => 20
-	All bosses now not anymore considered hero (nerf dazzle's ult)
+		Soul of titan1 drop chance changed 40 => 90%
+		Soul of titan2 drop chance changed 30 => 25%
+		Demons paw1 drop chance changed 25 => 90%
+		Demons paw2 drop chance changed 25 => 20%
+	All bosses now not anymore considered hero
 Game changes:
 	MAXIMUM ATTACK SPEED now is 725
 	Spell Amplify:

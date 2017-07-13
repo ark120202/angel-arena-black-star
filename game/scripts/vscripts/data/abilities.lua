@@ -41,6 +41,7 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
 	destroyer_body_reconstruction = true,
+	item_coffee_bean = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
