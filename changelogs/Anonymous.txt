@@ -20,8 +20,6 @@ Heroes:
 		Body reconstruction now can refresh coffee bean
 	Dazzle:
 		Weave now can't be used on bosses
-	Ancient Apparation:
-		Ice blast now can't be used on bosses
 Talents:
 	Exp bonus:
 		10/15/20/25 => 15/20/25/30
@@ -118,7 +116,6 @@ Bosses:
 		Soul of titan2 drop chance changed 30 => 25%
 		Demons paw1 drop chance changed 25 => 90%
 		Demons paw2 drop chance changed 25 => 20%
-	All bosses now not anymore considered hero
 Game changes:
 	MAXIMUM ATTACK SPEED now is 725
 	Spell Amplify:
