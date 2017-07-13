@@ -22,6 +22,7 @@ if IsServer() then
 
 			target:RemoveModifierByName("modifier_knockback")
 			if damage > 0 then
+				SendOverheadEventMessage(nil, OVERHEAD_ALERT_DAMAGE, target, damage, nil)
 				local sourcePos = caster:GetAbsOrigin()
 				local duration =  damage / self:GetSpecialValueFor("knockback_duration_step")
 				target:AddNewModifier(caster, self, "modifier_knockback", {
