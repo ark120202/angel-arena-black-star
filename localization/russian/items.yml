@@ -514,7 +514,7 @@ DOTA_Tooltip_ability_item_ray_of_fate_Description: 'Активируемая: Tr
 DOTA_Tooltip_ability_item_ray_of_fate_radius: 'ОБЛАСТЬ ДЕЙСТВИЯ:'
 DOTA_Tooltip_ability_item_ray_of_fate_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_titanium_fruit: Titanium Fruit
-DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Активируемая: Avatar - дает невосприимчивость к заклинаниям, полное сопротивление магическому урону.'
+DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Активируемая: Avatar - дает невосприимчивость к заклинаниям и полное сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_titanium_fruit_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit
 DOTA_Tooltip_modifier_item_titanium_fruit_Description: Вы невосприимчивы к магическим заклинаниям.

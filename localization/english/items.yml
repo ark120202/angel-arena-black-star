@@ -509,10 +509,10 @@ DOTA_Tooltip_ability_item_ray_of_fate_Description: 'Active: True Prophecy - Reva
 DOTA_Tooltip_ability_item_ray_of_fate_radius: 'AREA OF EFFECT:'
 DOTA_Tooltip_ability_item_ray_of_fate_duration: 'DURATION:'
 DOTA_Tooltip_ability_item_titanium_fruit: Titanium Fruit
-DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Active: Grants Spell Immunity, 100% Magic Damage Resistance.'
+DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Active: Grants Spell Immunity and 100% Magic Damage Resistance.'
 DOTA_Tooltip_ability_item_titanium_fruit_duration: 'DURATION:'
 DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit
-DOTA_Tooltip_modifier_item_titanium_fruit_Description: Spell Immune, 100% resistant to magic damage type.
+DOTA_Tooltip_modifier_item_titanium_fruit_Description: Spell Immune and 100% resistant to magic damage type.
 DOTA_Tooltip_ability_item_diffusal_style: Diffusal Style
 DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   Active: Mirror Image - Creates %images_count% images of your hero that last %illusion_duration% seconds. Images deal %illusion_damage_percent_outgoing_tooltip%%% damage and take %illusion_damage_percent_incoming_tooltip%%% damage.
