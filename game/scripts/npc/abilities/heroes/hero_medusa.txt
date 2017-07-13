@@ -13,7 +13,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"medusa_split_shot"
 		"MaxLevel"						"7"
-		"RequiredLevel"					"2"
+		"RequiredLevel"					"3"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -35,12 +35,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"arrow_count"				"1 2 3 4 5 7 10"
+				"arrow_count"				"1 2 3 4 5 8 14"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"total_arrow_count"			"1 2 3 4 5 7 10"
+				"total_arrow_count"			"1 2 3 4 5 8 14"
 			}
 		}
 

@@ -66,7 +66,7 @@
 			"11"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"per_sec_multiplier_scepter"	"4"
+				"per_sec_multiplier_scepter"	"2"
 			}
 		}
 	}
@@ -109,7 +109,12 @@
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"energy_pct"		"15"
+				"energy_pct"		"10"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"energy_to_disarmor_bosses_pct"	"1"
 			}
 		}
 
@@ -134,7 +139,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blink_range"			"600 700 800 900 1000 1100 1200"
+				"blink_range"			"600"
 			}
 			"02"
 			{
@@ -224,7 +229,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_energy"		"2"
+				"damage_per_energy"		"1.25"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
@@ -266,7 +271,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"energy_const"		"500 450 400 350 300 250 200"
+				"energy_const"		"300 250 200 150 100 50 0"
 			}
 			"02"
 			{

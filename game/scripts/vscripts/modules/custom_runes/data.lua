@@ -123,13 +123,13 @@ RUNE_SETTINGS = {
 		color = {20, 20, 255},
 		duration = 35,
 		attackspeed = 50, --Tooltip
-		xp_multiplier = 3,
+		xp_multiplier = 2,
 	},
 	[ARENA_RUNE_VIBRATION] = {
 		model = "models/props_gameplay/rune_invisibility01.vmdl",
 		particle = "particles/arena/generic_gameplay/rune_vibration.vpcf",
 		color = {0, 0, 255},
-		duration = 25,
+		duration = 20,
 		interval = 0.8,
 		minRadius = 150,
 		fullRadius = 350,
@@ -143,7 +143,7 @@ RUNE_SETTINGS = {
 		color = {0, 0, 0},
 		duration = 45,
 		aura_radius = 1200,
-		damage_heal_pct = 15,
+		damage_heal_pct = 30,
 		angles = {0, 270, 0},
 	},
 	[ARENA_RUNE_SPIKES] = {

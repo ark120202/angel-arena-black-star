@@ -50,6 +50,8 @@ custom_talents_talent_passive_experience_income: Experience Income
 custom_talents_talent_passive_experience_income_description: '+{xp_per_minute} experience per minute'
 custom_talents_talent_true_strike: True Strike
 custom_talents_talent_true_strike_description: Prevents your attacks from missing
+custom_talents_talent_hero_sai_release_of_forge_discrease_bonus_respawn_time: Release of Forge
+custom_talents_talent_hero_sai_release_of_forge_discrease_bonus_respawn_time_description: 'Reduces respawn time increasement, caused by dying from Release of Forge by {%reduction_pct%}.'
 
 
 

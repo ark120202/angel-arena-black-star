@@ -514,10 +514,10 @@ DOTA_Tooltip_ability_item_ray_of_fate_Description: 'Активируемая: Tr
 DOTA_Tooltip_ability_item_ray_of_fate_radius: 'ОБЛАСТЬ ДЕЙСТВИЯ:'
 DOTA_Tooltip_ability_item_ray_of_fate_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_titanium_fruit: Titanium Fruit
-DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Активируемая: Invulnerability - Делает вас неуязвимым на некоторое время.'
+DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Активируемая: Avatar - дает невосприимчивость к заклинаниям и полное сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_titanium_fruit_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_modifier_item_titanium_fruit: Неуязвимость от Titanium Fruit
-DOTA_Tooltip_modifier_item_titanium_fruit_Description: Вы неуязвимы.
+DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit
+DOTA_Tooltip_modifier_item_titanium_fruit_Description: Вы невосприимчивы к магическим заклинаниям.
 DOTA_Tooltip_ability_item_diffusal_style: Diffusal Style
 DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   Активируемая: Mirror Image — создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
@@ -537,136 +537,152 @@ DOTA_Tooltip_modifier_item_diffusal_style_root_Description: Прикован к 
 DOTA_Tooltip_modifier_item_diffusal_style_slow: Очищение от Diffusal Style
 DOTA_Tooltip_modifier_item_diffusal_style_slow_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
 DOTA_Tooltip_ability_item_dagon_arena: Dagon
-DOTA_Tooltip_ability_item_dagon_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту. Улучшаемая.'
+DOTA_Tooltip_ability_item_dagon_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_dagon_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_dagon_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_dagon_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dagon_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_dagon_2_arena: Dagon
-DOTA_Tooltip_ability_item_dagon_2_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту. Улучшаемая.'
+DOTA_Tooltip_ability_item_dagon_2_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_2_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_dagon_2_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_dagon_2_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_dagon_2_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dagon_2_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_dagon_3_arena: Dagon
-DOTA_Tooltip_ability_item_dagon_3_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту. Улучшаемая.'
+DOTA_Tooltip_ability_item_dagon_3_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_3_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_dagon_3_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_dagon_3_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_dagon_3_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dagon_3_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_dagon_4_arena: Dagon
-DOTA_Tooltip_ability_item_dagon_4_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту. Улучшаемая.'
+DOTA_Tooltip_ability_item_dagon_4_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_4_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_dagon_4_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_dagon_4_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_dagon_4_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dagon_4_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_dagon_5_arena: Dagon
-DOTA_Tooltip_ability_item_dagon_5_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту. Улучшаемая.'
+DOTA_Tooltip_ability_item_dagon_5_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_5_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_dagon_5_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_dagon_5_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_dagon_5_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dagon_5_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели. Улучшаемая.'
-DOTA_Tooltip_ability_item_enchanted_dagon_arena_damage: 'МГНОВЕННЫЙ УРОН:'
+DOTA_Tooltip_ability_item_enchanted_dagon_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_enchanted_dagon_arena_damage: 'МГНОВЕННЫЙ УРОН:'
+DOTA_Tooltip_ability_item_enchanted_dagon_arena_magic_resist_reduction_pct: '%УМЕНЬШЕНИЕ СОПР. МАГ. УРОНУ:'
+DOTA_Tooltip_ability_item_enchanted_dagon_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
-DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
+DOTA_Tooltip_modifier_item_enchanted_dagon_arena_debuff: Enchanted Dagon
+DOTA_Tooltip_modifier_item_enchanted_dagon_arena_debuff_Description: Сопротивление магическому урону уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%.
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели. Улучшаемая.'
-DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_damage: 'МГНОВЕННЫЙ УРОН:'
+DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_damage: 'МГНОВЕННЫЙ УРОН:'
+DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_magic_resist_reduction_pct: '%УМЕНЬШЕНИЕ СОПР. МАГ. УРОНУ:'
+DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели. Улучшаемая.'
-DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_damage: 'МГНОВЕННЫЙ УРОН:'
+DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_damage: 'МГНОВЕННЫЙ УРОН:'
+DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_magic_resist_reduction_pct: '%УМЕНЬШЕНИЕ СОПР. МАГ. УРОНУ:'
+DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели. Улучшаемая.'
-DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_damage: 'МГНОВЕННЫЙ УРОН:'
+DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_damage: 'МГНОВЕННЫЙ УРОН:'
+DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_magic_resist_reduction_pct: '%УМЕНЬШЕНИЕ СОПР. МАГ. УРОНУ:'
+DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели. Улучшаемая.'
-DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_damage: 'МГНОВЕННЫЙ УРОН:'
+DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_damage: 'МГНОВЕННЫЙ УРОН:'
+DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_magic_resist_reduction_pct: '%УМЕНЬШЕНИЕ СОПР. МАГ. УРОНУ:'
+DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
+  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
-DOTA_Tooltip_ability_item_sunray_dagon_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_sunray_dagon_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_sunray_dagon_arena_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_sunray_dagon_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
-DOTA_Tooltip_ability_item_sunray_dagon_arena_blind_duration: 'ДЛИТЕЛЬНОСТЬ ПРОМАХОВ:'
+DOTA_Tooltip_ability_item_sunray_dagon_arena_magic_resist_reduction_pct: '%УМЕНЬШЕНИЕ СОПР. МАГ. УРОНУ:'
+DOTA_Tooltip_ability_item_sunray_dagon_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
-DOTA_Tooltip_modifier_item_sunray_dagon_arena_blind: Ослепление от Sunray Dagon
-DOTA_Tooltip_modifier_item_sunray_dagon_arena_blind_Description: Промахивается в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% атак.
+DOTA_Tooltip_modifier_item_sunray_dagon_arena_debuff: Sunray Dagon
+DOTA_Tooltip_modifier_item_sunray_dagon_arena_debuff_Description: Сопротивление магическому урону уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%, промахивается в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% атак.
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
+  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
-DOTA_Tooltip_ability_item_sunray_dagon_2_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_sunray_dagon_2_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
-DOTA_Tooltip_ability_item_sunray_dagon_2_arena_blind_duration: 'ДЛИТЕЛЬНОСТЬ ПРОМАХОВ:'
+DOTA_Tooltip_ability_item_sunray_dagon_2_arena_magic_resist_reduction_pct: '%УМЕНЬШЕНИЕ СОПР. МАГ. УРОНУ:'
+DOTA_Tooltip_ability_item_sunray_dagon_2_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 DOTA_Tooltip_ability_item_sunray_dagon_2_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
+  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
-DOTA_Tooltip_ability_item_sunray_dagon_3_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_sunray_dagon_3_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
-DOTA_Tooltip_ability_item_sunray_dagon_3_arena_blind_duration: 'ДЛИТЕЛЬНОСТЬ ПРОМАХОВ:'
+DOTA_Tooltip_ability_item_sunray_dagon_3_arena_magic_resist_reduction_pct: '%УМЕНЬШЕНИЕ СОПР. МАГ. УРОНУ:'
+DOTA_Tooltip_ability_item_sunray_dagon_3_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени. Улучшаемая.
+  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
-DOTA_Tooltip_ability_item_sunray_dagon_4_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_sunray_dagon_4_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
-DOTA_Tooltip_ability_item_sunray_dagon_4_arena_blind_duration: 'ДЛИТЕЛЬНОСТЬ ПРОМАХОВ:'
+DOTA_Tooltip_ability_item_sunray_dagon_4_arena_magic_resist_reduction_pct: '%УМЕНЬШЕНИЕ СОПР. МАГ. УРОНУ:'
+DOTA_Tooltip_ability_item_sunray_dagon_4_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели и ослепляет цель на небольшой промежуток времени.
+  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
-DOTA_Tooltip_ability_item_sunray_dagon_5_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_sunray_dagon_5_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_damage_percent: '%ЗДОРОВЬЯ В УРОН:'
-DOTA_Tooltip_ability_item_sunray_dagon_5_arena_blind_duration: 'ДЛИТЕЛЬНОСТЬ ПРОМАХОВ:'
+DOTA_Tooltip_ability_item_sunray_dagon_5_arena_magic_resist_reduction_pct: '%УМЕНЬШЕНИЕ СОПР. МАГ. УРОНУ:'
+DOTA_Tooltip_ability_item_sunray_dagon_5_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_blink_staff: Blink Staff
@@ -1223,17 +1239,24 @@ DOTA_Tooltip_modifier_item_heavens_halberd_arena_lesser_maim: Maim
 DOTA_Tooltip_modifier_item_heavens_halberd_arena_lesser_maim_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 DOTA_Tooltip_modifier_item_heavens_halberd_arena_disarm: Бессилие
 DOTA_Tooltip_modifier_item_heavens_halberd_arena_disarm_Description: Не может атаковать
+
 DOTA_Tooltip_ability_item_haganemushi_Description: |-
   Пассивная: Metal-Eater - С каждой атакой этот легендарный меч снижает броню и урон противника. Этот эффект вечен, не снимается очищением и не работает на боссов.
   Активируемая: Shadow Walk — делает вас невидимым на время действия или до момента вашей атаки или использования заклинания. Пока Shadow Walk активна, вы движетесь на %windwalk_movement_speed_pct%%% быстрее и можете проходить сквозь юнитов. Атака, раскрывающая невидимость, нанесет %windwalk_bonus_damage% дополнительного урона. Длится %windwalk_duration% секунд.
   Пассивная: Soul Piercing - %attack_damage_to_pure_pct%%% урона ваших атак будут наносить чистый урон, вместо физического.
+  Пассивная: Elder Aura - Снижает броню всех противников, находящихся рядом.
 DOTA_Tooltip_ability_item_haganemushi_damage_per_hit: 'СНИЖЕНИЕ УРОНА:'
 DOTA_Tooltip_ability_item_haganemushi_armor_per_hit: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_haganemushi_attack_damage_to_pure_pct: '%ЧИСТЫЙ УРОН ОТ АТАК:'
+DOTA_Tooltip_ability_item_haganemushi_aura_armor_reduction: 'СНИЖЕНИЕ БРОНИ В АУРЕ:'
+DOTA_Tooltip_ability_item_haganemushi_aura_radius: 'РАДИУС АУРЫ:'
 DOTA_Tooltip_ability_item_haganemushi_windwalk_duration: 'ДЛИТЕЛЬНОСТЬ НЕВИДИМОСТИ:'
 DOTA_Tooltip_ability_item_haganemushi_windwalk_bonus_damage: 'УРОН ИЗ НЕВИДИМОСТИ:'
+DOTA_Tooltip_modifier_item_haganemushi_aura_effect: Снижение брони от Haganemushi
+DOTA_Tooltip_modifier_item_haganemushi_aura_effect_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_modifier_item_haganemushi_stack_Description: 'Урон уменьшен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%, броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'
 DOTA_Tooltip_modifier_item_haganemushi_active_Description: Невидим. Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%; можно проходить сквозь юнитов. Атака снимет невидимость и нанесет дополнительный урон.
+
 DOTA_Tooltip_ability_item_slot_locked: Заблокированный Слот
 DOTA_Tooltip_ability_item_slot_locked_Description: Эта ячейка инвентаря заблокирована.
 DOTA_Tooltip_ability_item_phantom_bone_Description: Этот предмет выпадает с боссов и не может быть куплен в лавке.
@@ -1378,8 +1401,8 @@ DOTA_Tooltip_ability_item_aether_lens_4_spell_amp_pct: '%ДОП. УРОН СПО
 DOTA_Tooltip_ability_item_aether_lens_5_Description: 'Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus% и их урон на %spell_amp_pct%%%'
 DOTA_Tooltip_ability_item_aether_lens_5_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 
-DOTA_Tooltip_ability_item_wand_of_midas_Description: 'Активируемая: Gold Charge - восстанавливает здоровье и ману в зависимости от количества имеющихся зарядов (максимум: %max_charges%). За каждое использование способности врагом, который видим и находится неподалеку, добавляется один заряд, а владелец получает золото.'
-DOTA_Tooltip_ability_item_wand_of_midas_gold: 'ЗОЛОТА ЗА СПОСОБНОСТЬ:'
+DOTA_Tooltip_ability_item_wand_of_midas_Description: 'Активируемая: Gold Charge - владелец получает золото и восстанавливает здоровье и ману в зависимости от количества имеющихся зарядов (максимум: %max_charges%). За каждое использование способности врагом, который видим и находится неподалеку, добавляется один заряд.'
+DOTA_Tooltip_ability_item_wand_of_midas_gold: 'ЗОЛОТА ЗА ЗАРЯД:'
 DOTA_Tooltip_ability_item_wand_of_midas_restore_per_charge: 'ЗДОРОВЬЯ/МАНЫ ЗА ЗАРЯД:'
 DOTA_Tooltip_ability_item_wand_of_midas_radius: 'РАДИУС:'
 
@@ -1410,7 +1433,7 @@ DOTA_Tooltip_ability_item_guardian_greaves_arena_Description: |-
   Пассивная: Guardian Aura — дарует окружающим союзникам +%aura_health_regen% к восстановлению здоровья и +%aura_armor% к броне. Если в радиусе действия есть союзный герой, уровень здоровья которого ниже %aura_bonus_threshold_pct%%%, то на него действует усиленная аура, восстанавливающая %aura_health_regen_bonus% здоровья в секунду и увеличивающая броню на %aura_armor_bonus%.
 
   ТИП РАЗВЕИВАНИЯ: Нормальное
-DOTA_Tooltip_ability_item_guardian_greaves_arena_Note0: Может быть активирована ао аремя оглушения
+DOTA_Tooltip_ability_item_guardian_greaves_arena_Note0: Может быть активирована во аремя оглушения
 DOTA_Tooltip_ability_item_guardian_greaves_arena_radius: 'РАДИУС ДЕЙСТВИЯ:'
 DOTA_Tooltip_ability_item_guardian_greaves_arena_aura_health_regen: |-
   ДЕЙСТВИЕ АУРЫ:

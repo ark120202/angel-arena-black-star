@@ -104,7 +104,7 @@ function OnGameResult(gameResult) {
 	if (!gameResult.players) {
 		$('#LoadingPanel').visible = false;
 		$('#ErrorPanel').visible = true;
-		$('#ErrorMessage').text = gameResult.error || 'Unknown error';
+		$('#ErrorMessage').text = $.Localize(gameResult.error || 'Unknown error');
 	} else {
 		$('#LoadingPanel').visible = false;
 		$('#EndScreenWindow').visible = true;

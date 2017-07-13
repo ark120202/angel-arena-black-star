@@ -6,7 +6,7 @@ sara_space_dissection = class({
 
 if IsClient() then
 	function sara_space_dissection:GetManaCost()
-		return self:GetCaster():GetMaxMana() * self:GetSpecialValueFor("energy_pct") * 0.01
+		return self:GetCaster():GetMana() * self:GetSpecialValueFor("energy_pct") * 0.01
 	end
 end
 
@@ -32,13 +32,13 @@ if IsServer() then
 				ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true)
 				ParticleManager:SetParticleControlEnt(pfx, 5, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true)
 				unit:EmitSound("Hero_Centaur.DoubleEdge")
-				if (unit:IsConsideredHero() or unit:IsBoss()) and not unit:IsIllusion() then
+				if unit:IsConsideredHero() and not unit:IsIllusion() then
 					local energy = parent:GetEnergy()
-					local cost = parent:GetMaxEnergy() * ability:GetSpecialValueFor("energy_pct") * 0.01
+					local cost = energy * ability:GetSpecialValueFor("energy_pct") * 0.01
 					if energy >= cost then
 						local duration = ability:GetSpecialValueFor("disarmor_duration")
 						local modifier = unit:AddNewModifier(parent, ability, "modifier_sara_space_dissection_armor_reduction", {duration = duration})
-						local stacks = math.round(cost * ability:GetSpecialValueFor("energy_to_disarmor_pct") * 0.01)
+						local stacks = math.round(cost * ability:GetSpecialValueFor(unit:IsBoss() and "energy_to_disarmor_bosses_pct" or "energy_to_disarmor_pct") * 0.01)
 						modifier:SetStackCount(modifier:GetStackCount() + stacks)
 						if not parent:HasScepter() then
 							Timers:CreateTimer(duration, function()
@@ -47,7 +47,7 @@ if IsServer() then
 								end
 							end)
 						end
-						parent:ModifyEnergy(cost)
+						parent:ModifyEnergy(-cost)
 					end
 				elseif unit:IsRealCreep() then
 					unit.SpaceDissectionMultiplier = ability:GetSpecialValueFor(parent:HasScepter() and "creep_energy_multiplier_scepter" or "creep_energy_multiplier")

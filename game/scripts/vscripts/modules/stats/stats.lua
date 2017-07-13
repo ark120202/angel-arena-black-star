@@ -44,13 +44,17 @@ function StatsClient:FetchPreGameData()
 
 		for team, values in pairs(teamRatings) do
 			debugp("StatsClient:FetchPreGameData", "Set team #" .. tostring(team) .. "'s average rating to " .. table.average(values))
-			PlayerTables:SetTableValue("stats_team_rating", team, table.average(values))
+			PlayerTables:SetTableValue("stats_team_rating", team, math.round(table.average(values)))
 		end
 	end, math.huge)
 end
 
 function StatsClient:OnGameEnd(winner)
 	local status, nextCall = xpcall(function()
+		if GameMode.Broken then
+			PlayerTables:CreateTable("stats_game_result", {error = "arena_end_screen_error_broken"}, AllPlayersInterval)
+			return
+		end
 		if not IsInToolsMode() and StatsClient.GameEndScheduled then return end
 		StatsClient.GameEndScheduled = true
 		local time = GameRules:GetDOTATime(false, true)

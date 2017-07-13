@@ -13,17 +13,17 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"mana_wasted_pct"	"10"
+				"mana_wasted_pct"	"8"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_mana"	"0.08 0.1 0.12 0.14 0.16 0.18 0.2"
+				"damage_per_mana"	"0.12 0.13 0.14 0.15 0.16 0.17 0.18"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"armor_per_mana"	"0.01 0.01 0.02 0.02 0.02 0.03 0.035"
+				"armor_per_mana"	"0.02 0.022.5 0.025 0.027.5 0.030 0.032.5 0.35"
 			}
 			"04"
 			{

@@ -548,6 +548,14 @@
 	{
 		"SecretShop"					"0"
 		"AbilitySharedCooldown"			"hex"
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"sheep_duration"		"3.0"
+			}
+		}
 	}
 	"item_recipe_orchid"
 	{
@@ -568,11 +576,11 @@
 	"item_recipe_force_staff"
 	{
 		"SecretShop"					"0"
-		"AbilityCooldown"				"16.0"
 	}
 	"item_force_staff"
 	{
 		"SecretShop"					"0"
+		"AbilityCooldown"				"16.0"
 	}
 	"item_recipe_necronomicon"
 	{
@@ -892,7 +900,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_gain"				"200"
+				"mana_gain"				"300"
 			}
 			"05"
 			{
@@ -1141,7 +1149,6 @@
 			}
 		}
 	}
-	//6.87
 	"item_recipe_bloodthorn"
 	{
 		"SecretShop"					"0"

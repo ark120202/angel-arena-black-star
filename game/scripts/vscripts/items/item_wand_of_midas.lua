@@ -14,11 +14,14 @@ if IsServer() then
 	end
 
 	function item_wand_of_midas:OnSpellStart()
+		local caster = self:GetCaster()
 		local charges = self:GetCurrentCharges()
 		local restore = charges * self:GetSpecialValueFor("restore_per_charge")
-		local caster = self:GetCaster()
+
+		Gold:AddGoldWithMessage(caster, charges * self:GetSpecialValueFor("gold"))
 		SafeHeal(caster, restore, self, true)
 		caster:GiveMana(restore)
+
 		ParticleManager:SetParticleControl(ParticleManager:CreateParticle("particles/arena/items_fx/wand_of_midas.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster), 1, Vector(charges))
 		caster:EmitSound("DOTA_Item.MagicWand.Activate")
 		self:SetCurrentCharges(0)
@@ -27,8 +30,9 @@ end
 
 
 modifier_item_wand_of_midas = class({
-	IsHidden   = function() return true end,
-	IsPurgable = function() return false end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsHidden      = function() return true end,
+	IsPurgable    = function() return false end,
 })
 
 function modifier_item_wand_of_midas:DeclareFunctions()
@@ -58,10 +62,18 @@ if IsServer() then
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		if parent:IsAlive() and parent:GetRangeToUnit(unit) <= ability:GetSpecialValueFor("radius") and unit:GetTeamNumber() ~= parent:GetTeamNumber() and keys.ability:ProcsMagicStick() then
-			Gold:AddGoldWithMessage(parent, ability:GetSpecialValueFor("gold"))
-			local charges = ability:GetCurrentCharges()
-			if charges < ability:GetSpecialValueFor("max_charges") then
-				ability:SetCurrentCharges(charges + 1)
+			local maxCharges = ability:GetSpecialValueFor("max_charges")
+			for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_6 do
+				local itemInSlot = parent:GetItemInSlot(i)
+				if itemInSlot and itemInSlot:GetAbilityName() == "item_wand_of_midas" then
+					local charges = itemInSlot:GetCurrentCharges()
+					if charges < maxCharges then
+						if itemInSlot == ability then
+							ability:SetCurrentCharges(charges + 1)
+						end
+						break
+					end
+				end
 			end
 		end
 	end

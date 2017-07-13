@@ -1,6 +1,6 @@
 DOTA_Tooltip_ability_pudge_meat_hook_lua_Description: |-
   Бросает окровавленный крюк в указанную цель или в выбранном направлении. Крюк будет цеплять всех существ, в которых попадет, притащит их к Pudge и нанесет урон, если это враг. Цепляет юнитов, даже когда крюк вовзращается к Pudge
-  Когда Pudge убивает противника при помощи Meat Hook он получает стак Bloodstained. Каждый стак повышает радиус применения Hook и его скорость.
+  Когда Pudge убивает противника при помощи Meat Hook он получает стак Bloodstained. Каждый стак повышает радиус применения Hook.
 DOTA_Tooltip_ability_pudge_meat_hook_lua_aghanim_description: 'Уменьшает время перезарядки, увеличивает урон и убирает задержку после применения Meat Hook.'
 DOTA_Tooltip_ability_pudge_meat_hook_lua_Note0: Прерывает прочтение врагом заклинания.
 DOTA_Tooltip_ability_pudge_meat_hook_lua_Note1: Действует на невидимых юнитов.
@@ -11,6 +11,8 @@ DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance: 'РАДИУС:'
 DOTA_Tooltip_ability_pudge_meat_hook_lua_damage_scepter: 'УРОН СО СКИПЕТРОМ:'
 DOTA_Tooltip_ability_pudge_meat_hook_lua_cooldown_scepter: 'ПЕРЕЗАРЯДКА СО СКИПЕТРОМ:'
 DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance_per_stack: 'РАДИУС ЗА СТАК:'
+DOTA_Tooltip_modifier_meat_hook_bloodstained_lua: Bloodstained Hook
+DOTA_Tooltip_modifier_meat_hook_bloodstained_lua_Description: Радиус применения Meat Hook увеличен на %dMODIFIER_PROPERTY_TOOLTIP%
 
 DOTA_Tooltip_ability_pudge_rot_arena_Description: Токсичное облако, которое постоянно наносит урон и замедляет противников, ранит не только вражеских юнитов, но и самого Pudge. Каждый стак способности Flesh Heap увеличивает радиус Rot.
 DOTA_Tooltip_ability_pudge_rot_arena_Note0: Не прерывает прочтение других заклинаний.

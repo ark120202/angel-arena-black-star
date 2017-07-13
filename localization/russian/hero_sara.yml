@@ -22,7 +22,8 @@ DOTA_Tooltip_ability_sara_space_dissection_Description: 'Когда способ
 DOTA_Tooltip_ability_sara_space_dissection_aghanim_description: 'Теперь убийство крипов дает золото и опыт, множитель маны также увеличен до 4. Теперь количество стаков не ограничено.'
 DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier: 'МНОЖИТЕЛЬ:'
 DOTA_Tooltip_ability_sara_space_dissection_creep_energy_multiplier_scepter: 'МНОЖИТЕЛЬ СО СКИПЕТРОМ:'
-DOTA_Tooltip_ability_sara_space_dissection_energy_to_disarmor_pct: '%ЭНЕРГИИ В СНИЖЕНИЕ БРОНИ:'
+DOTA_Tooltip_ability_sara_space_dissection_energy_to_disarmor_pct: '%ЭНЕРГИИ В СНИЖ. БРОНИ:'
+DOTA_Tooltip_ability_sara_space_dissection_energy_to_disarmor_bosses_pct: '%ЭНЕРГИИ В СНИЖ. БРОНИ БОССУ:'
 DOTA_Tooltip_ability_sara_space_dissection_disarmor_duration: 'ДЛИТЕЛЬНОСТЬ СНИЖЕНИЯ:'
 DOTA_Tooltip_ability_sara_space_dissection_energy_pct: '%ЗАТРАТЫ ЭНЕРГИИ:'
 DOTA_Tooltip_modifier_sara_space_dissection_armor_reduction: Space Dissection
@@ -57,7 +58,7 @@ DOTA_Tooltip_ability_sara_fragment_of_armor_reflected_damage_pct_scepter: '%ОТ
 DOTA_Tooltip_ability_sara_fragment_of_armor_Lore: Сара компенсирует свою природную хрупкость ментальным щитом, который блокирует урон за счет энергии ее души.
 
 DOTA_Tooltip_ability_sara_fragment_of_logic: Fragment of Logic
-DOTA_Tooltip_ability_sara_fragment_of_logic_Description: 'Фрагмент души Сары, олицетворяющий ее хитрость и интеллект. Когда Сара получает летальный урон, она тратит %energy_const% + %energy_pct%%% своей энергии и полностью. восстанавливает свое тело. После срабатывания способности, Сара не может восстанавливать энергию 10 секунд. При срабатывании способности с Сары сбрасываются все дебаффы и станы.'
+DOTA_Tooltip_ability_sara_fragment_of_logic_Description: 'Фрагмент души Сары, олицетворяющий ее хитрость и интеллект. Когда Сара получает летальный урон, она тратит %energy_const% + %energy_pct%%% своей энергии и полностью восстанавливает свое тело. После срабатывания способности, Сара не может восстанавливать энергию 10 секунд. При срабатывании способности с Сары сбрасываются все дебаффы и станы.'
 DOTA_Tooltip_ability_sara_fragment_of_logic_aghanim_description: Снижает длительность перезарядки способности
 DOTA_Tooltip_ability_sara_fragment_of_logic_energy_const: 'ЗНАЧЕНИЕ ЭНЕРГИИ:'
 DOTA_Tooltip_ability_sara_fragment_of_logic_energy_pct: '%ПРОЦЕНТ ЭНЕРГИИ:'

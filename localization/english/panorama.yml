@@ -108,6 +108,7 @@ arena_end_screen_victory: Victory
 arena_end_screen_defeat: Defeat
 arena_end_screen_legend_boss_damage: BSD
 arena_end_screen_legend_boss_damage_tooltip: Damage done to Bosses
+arena_end_screen_error_broken: Something gone wrong. Perhaps it was caused by Valve's feature/bug that allows host to do some bad things.
 
 abaddoned_panel_title: Game was abandoned
 abaddoned_panel_reason: Your hero was removed because you was disconnected for a long time
