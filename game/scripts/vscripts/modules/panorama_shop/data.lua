@@ -216,6 +216,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_horn_of_the_underworld",
 			"item_blink_staff",
 			"item_urn_of_demons",
+			"item_runic_mekansm",
 			"item_orb_of_essences",
 			"item_aegis_arena",
 			"item_angel_wings",
