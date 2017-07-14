@@ -28,7 +28,7 @@ function AntiAFK:ThinkPlayerInGame(playerId)
 		playerData.AutoAbandonGameTime = nil
 		--Anti-AFK
 		if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS and not GameRules:IsCheatMode() then
-			local timeLeft = (playerData.AntiAFKLastXP or PLAYER_ANTI_AFK_TIME) - GameRules:GetGameTime()
+			local timeLeft = (playerData.AntiAFKLastXP or (GameRules:GetGameTime() + PLAYER_ANTI_AFK_TIME)) - GameRules:GetGameTime()
 			if timeLeft <= PLAYER_ANTI_AFK_NOTIFY_TIME and (not playerData.AntiAFKLastLeftNotify or timeLeft < playerData.AntiAFKLastLeftNotify - 60) then
 				playerData.AntiAFKLastLeftNotify = timeLeft
 				CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
@@ -51,6 +51,7 @@ function AntiAFK:ThinkPlayerInGame(playerId)
 		end
 	elseif GetConnectionState(playerId) == DOTA_CONNECTION_STATE_DISCONNECTED then
 		playerData.AntiAFKLastLeftNotify = nil
+		playerData.AntiAFKLastXP = nil
 		--Auto Abandon
 		if not playerData.AutoAbandonGameTime then
 			playerData.AutoAbandonGameTime = GameRules:GetGameTime() + PLAYER_AUTOABANDON_TIME

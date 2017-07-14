@@ -1,5 +1,4 @@
-CUSTOM_RUNE_SPAWN_TIME = 120
-
+ModuleRequire(..., "data")
 if not CustomRunes then
 	CustomRunes = class({})
 	CustomRunes.ModifierApplier = CreateItem("item_dummy", nil, nil)
@@ -25,161 +24,6 @@ for k,v in pairs(modifiers) do
 	end
 	ModuleLinkLuaModifier(..., "modifier_arena_rune_" .. v, "modifiers/modifier_arena_rune_" .. (k or v))
 end
-
-ARENA_RUNE_BOUNTY = 0
-ARENA_RUNE_TRIPLEDAMAGE = 1
-ARENA_RUNE_HASTE = 2
-ARENA_RUNE_ILLUSION = 3
-ARENA_RUNE_INVISIBILITY = 4
-ARENA_RUNE_REGENERATION = 5
-ARENA_RUNE_ARCANE = 6
-ARENA_RUNE_FLAME = 7
-ARENA_RUNE_ACCELERATION = 8
-ARENA_RUNE_VIBRATION = 9
-ARENA_RUNE_SOUL_STEAL = 10
-ARENA_RUNE_SPIKES = 11
-
-ARENA_RUNE_FIRST = 1
-ARENA_RUNE_LAST = ARENA_RUNE_SPIKES
---[[
-Growing Rates:
-	models/props_gameplay/gold_bag.vmdl
-	Multiplies all incoming and reduced gold by 1.5 for 25 seconds
-Curse:
-	models/props_gameplay/gem01.vmdl
-	139, 0, 139
-	Each attack applies a debuff that will suffer enemy until it purges it or kills any hero (damage will grow with each second: X^1.5)
-Mystic Candy:
-	models/props_gameplay/halloween_candy.vmdl
-	color random
-	Applies 3 random buffs/debuffs
-Ghost From:
-	models/props_gameplay/pig_blue.vmdl
-	Gives unobstructed movement, disarm, silence, invisibility, 550 movement speed
-Imitator:
-	particles/generic_gameplay/generic_electrified_beam_b.vpcf
-	Copies all features from another rune, but additionaly has.
-	When picked up spawns
-]]
-RUNE_SETTINGS = {
-	[ARENA_RUNE_TRIPLEDAMAGE] = {
-		model = "models/props_gameplay/rune_doubledamage01.vmdl",
-		particle = "particles/arena/generic_gameplay/rune_tripledamage.vpcf",
-		sound = "Rune.DD",
-		color = {255,125,0},
-		duration = 45,
-		damage_pct = 200,
-	},
-	[ARENA_RUNE_HASTE] = {
-		model = "models/props_gameplay/rune_haste01.vmdl",
-		particle = "particles/generic_gameplay/rune_haste.vpcf",
-		sound = "Rune.Haste",
-		duration = 25,
-		movespeed = 750,
-	},
-	[ARENA_RUNE_ILLUSION] = {
-		model = "models/props_gameplay/rune_illusion01.vmdl",
-		particle = "particles/generic_gameplay/rune_illusion.vpcf",
-		sound = "Rune.Illusion",
-		duration = 75,
-		illusion_count = 2,
-		illusion_outgoing_damage = 35,
-		illusion_incoming_damage = 200,
-	},
-	[ARENA_RUNE_INVISIBILITY] = {
-		model = "models/props_gameplay/rune_invisibility01.vmdl",
-		particle = "particles/generic_gameplay/rune_invisibility.vpcf",
-		sound = "Rune.Invis",
-		duration = 60
-	},
-	[ARENA_RUNE_REGENERATION] = {
-		model = "models/props_gameplay/rune_regeneration01.vmdl",
-		particle = "particles/generic_gameplay/rune_regeneration.vpcf",
-		sound = "Rune.Regen"
-	},
-	[ARENA_RUNE_BOUNTY] = {
-		model = "models/props_gameplay/rune_goldxp.vmdl",
-		particle = "particles/generic_gameplay/rune_bounty.vpcf",
-		sound = "Rune.Bounty",
-		GetValues = function(unit)
-			local m = GetDOTATimeInMinutesFull()
-			local gold = 100 + (m * 2)^2
-			local xp = 50 + m^2.2
-			local gold_multiplier = 1
-			local xp_multiplier = 1
-
-			local ability_plus_morality = unit:FindAbilityByName("arthas_plus_morality")
-			if ability_plus_morality and ability_plus_morality:GetLevel() > 0 then
-				gold_multiplier = gold_multiplier + ability_plus_morality:GetAbilitySpecial("bounty_multiplier") - 1
-				ModifyStacks(ability_plus_morality, unit, unit, "modifier_arthas_plus_morality_buff", 1, false)
-			end
-			local ability_goblins_greed = unit:FindAbilityByName("alchemist_goblins_greed")
-			if ability_goblins_greed and ability_goblins_greed:GetLevel() > 0 then
-				gold_multiplier = gold_multiplier + ability_goblins_greed:GetAbilitySpecial("bounty_multiplier_tooltip") - 1
-			end
-			if unit:HasModifier("modifier_item_blood_of_midas") then
-				gold_multiplier = gold_multiplier + GetAbilitySpecial("item_blood_of_midas", "gold_multiplier") - 1
-				xp_multiplier = xp_multiplier + GetAbilitySpecial("item_blood_of_midas", "xp_multiplier") - 1
-			end
-			return gold * gold_multiplier, xp * xp_multiplier
-		end,
-		special_value_multiplier = 1,
-	},
-	[ARENA_RUNE_ARCANE] = {
-		model = "models/props_gameplay/rune_arcane.vmdl",
-		particle = "particles/generic_gameplay/rune_arcane.vpcf",
-		sound = "Rune.Arcane",
-		duration = 50,
-		cooldown_reduction = 30, --Tooltip
-		spell_amplify = 50, --Tooltip
-	},
-	[ARENA_RUNE_FLAME] = {
-		model = "models/props_gameplay/rune_illusion01.vmdl",
-		particle = "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf",
-		color = {255, 30, 0},
-		duration = 30,
-		damage_per_second_max_hp_pct = 4,
-		radius = 350, --Tooltip
-	},
-	[ARENA_RUNE_ACCELERATION] = {
-		model = "models/props_gameplay/rune_goldxp.vmdl",
-		particle = "particles/arena/generic_gameplay/rune_acceleration.vpcf",
-		color = {20, 20, 255},
-		duration = 35,
-		attackspeed = 90, --Tooltip
-		xp_multiplier = 3,
-	},
-	[ARENA_RUNE_VIBRATION] = {
-		model = "models/props_gameplay/rune_invisibility01.vmdl",
-		particle = "particles/arena/generic_gameplay/rune_vibration.vpcf",
-		color = {0, 0, 255},
-		duration = 25,
-		interval = 0.8,
-		minRadius = 150,
-		fullRadius = 350,
-		minForce = 375,
-		fullForce = 700,
-	},
-	[ARENA_RUNE_SOUL_STEAL] = {
-		model = "models/props_gameplay/heart001.vmdl",
-		particle = "particles/neutral_fx/prowler_shaman_stomp_debuff_glow.vpcf",
-		z_modify = 64,
-		color = {0, 0, 0},
-		duration = 45,
-		aura_radius = 1200,
-		damage_heal_pct = 15,
-		angles = {0, 270, 0},
-	},
-	[ARENA_RUNE_SPIKES] = {
-		model = "models/props_gameplay/heart001.vmdl",
-		particle = "particles/items_fx/blademail.vpcf",
-		particle_attach = PATTACH_ABSORIGIN,
-		z_modify = 64,
-		duration = 25,
-		damage_reflection_pct = 75,
-		angles = {0, 270, 0},
-	}
-}
 
 function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 	local settings = {}
@@ -314,6 +158,7 @@ function CustomRunes:ExecuteOrderFilter(order)
 
 							local bottle
 							local runeKeeper
+							local runic_mekansm
 							for i = 0, 5 do
 								local item = unit:GetItemInSlot(i)
 								if item then
@@ -321,11 +166,15 @@ function CustomRunes:ExecuteOrderFilter(order)
 										runeKeeper = item
 									elseif not bottle and item:GetAbilityName() == "item_bottle_arena" and not item.RuneStorage then
 										bottle = item
+									elseif not runic_mekansm and item:GetAbilityName() == "item_runic_mekansm" and not item.RuneStorage then
+										runic_mekansm = item
 									end
 								end
 							end
 
-							if runeKeeper and runeKeeper.RuneContainer then
+							if runic_mekansm then
+								runic_mekansm:SetStorageRune(runeType)
+							elseif runeKeeper and runeKeeper.RuneContainer then
 								table.insert(runeKeeper.RuneContainer, {rune=runeType, expireGameTime = GameRules:GetGameTime() + runeKeeper:GetAbilitySpecial("store_duration")})
 								Notifications:Bottom(issuerID, {text="#item_rune_keeper_rune_picked_up", duration = 8})
 								Notifications:Bottom(issuerID, {text="#custom_runes_rune_" .. runeType .. "_title", continue=true})

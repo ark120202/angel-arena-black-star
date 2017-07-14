@@ -1,10 +1,15 @@
-npc_arena_hero_sara_bio: 'Сара родилась в неблагополучной семье. У нее не было отца, а мать была проституткой-алкоголичкой. Девочка не посещала школы, не общалась ни с кем, кроме нетрезвой матери и получила психологическую травму, стала социопаткой. В один прекрасный день она прикончила свою мать и семью по соседству. После этой бойни в ней пробудилось нечто. Она ощутила в себе странную и темную силу. Позже она познакомилась с кем-то, называвшим себя Жрецом Пустоты. Он  помог развить ей свои способности. Сара становилась сильнее с каждым днем, с каждым убийством. До тех пор, пока ее родной мир не опустел. Так она и путешествовала по измерениям, оставляя за собой руины, подпитывая свои силы убийствами и агониями своих жертв. Так она и попала на арену Ангелов - место, где слехстнулись сильнейшие создания Вселенной. Возможно, хотябы здесь найдутся противники, с которыми она сможет поиграть немножко дольше...'
-npc_arena_hero_sara_hype: 'Хрупкая Сара становится сильнее с каждым убитым крипом, получая за него энергию. Слабая в начале, она становится тем сильнее, чем дольше длится игра. В грамотных руках в поздней игре ей никто не сможет противостоять.'
+hero_selection_phase_0: Загрузка...
+hero_selection_phase_1: Запрет героев
+hero_selection_phase_2: Выбор героев
+hero_selection_phase_3: Время на стратегию
+hero_selection_phase_4: Загрузка...
 
-addonname: Angel Arena Black Star
-addon_game_name: Angel Arena Black Star
-addon_game_name_p1: Angel Arena
-addon_game_name_p2: Black Star
+arena_game_mode_type_: Полный выбор
+arena_game_mode_type_ranked_failed: <font color='red'>Полный выбор</font>
+arena_game_mode_type_ranked: Рейтинговый полный выбор
+arena_game_mode_type_ability_shop: Покупка способностей
+arena_game_mode_type_random_omg: Случайные способности
+
 game_player_abandoned_game: "\_покинул игру."
 notifications_gold: "\_золота"
 bosses_respawn: "\_возродился!"
@@ -37,6 +42,7 @@ hero_selection_lock: Закрепить
 hero_selection_unlock: Открепить
 hero_selection_heroes_default: Стандартные
 hero_selection_heroes_new: Новые
+hero_selection_repick_tooltip: За смену героя вы потеряете 200 начального золота
 
 item_rune_keeper_no_runes_left: Rune Keeper теперь пуст.
 item_rune_keeper_contains: "Rune Keeper содержит руны:\_"
@@ -54,13 +60,14 @@ panorama_shop_itembuilds_new_group: НОВАЯ ГРУППА
 panorama_shop_guide_youtube_open: Открыть в браузере
 panorama_shop_guide_publish: Опубликовать
 panorama_shop_guide_cancel: Отменить
-panorama_shop_stackable_purchase: Purchased item was dropped on the base, because your hero has same stackable item in inventory
+panorama_shop_stackable_purchase: Купленный назодится на базе, так как в инвентаре героя находится такой же стакающийся предмет
 
 error_panorama_shop_publish_guide_title: Название.
 server_error_panorama_shop_youtube_no_tags: Проверьте наличие тега 'Angel Arena Black Star' у этого видео
 server_error_panorama_shop_youtube_not_found: Видео не найдено
 
 hud_modifier_click_to_remove: Нажмите чтобы снять
+
 ability_shop_shift_no: ЛКМ/ПКМ - Купить способность. Для перехода в режим продажи удерживайте SHIFT.
 ability_shop_shift_yes: 'ЛКМ - Продать способность, ПКМ - Понизить уровень способности. Для покупки отпустите SHIFT.'
 ability_shop_purchased_only: Только приобретенные способности
@@ -72,6 +79,7 @@ custom_toast_PlayerDenied: '{killer_name} {denied_icon} не отдает вра
 custom_toast_KillStreak_Ended: '{victim_name} Серия из {kill_streak} убийств прервана'
 custom_toast_ActivatedRune: '{player_name} использовал руну {rune_name}'
 custom_toast_BottledRune: '{player_name} помещает в бутыль {rune_name}'
+custom_toast_RunicMekansmRune: '{player_name} помещает в Runic Mekansm {rune_name}'
 custom_toast_DuelStarted: '{time_dota}: {duel_index}ая общая дуэль началась!'
 custom_toast_AntiAFKTime: '{player_name} должен получить опыт, или будет удален из игры через {minutes} минут'
 custom_toast_AntiAFKNoTime: '{player_name} удаляется из игры из-за бездействия'
@@ -89,3 +97,20 @@ option_no: Нет
 
 option_voting_kill_limit: 'Кол-во убийств:'
 option_voting_custom_abilities: 'Режим выбора способностей:'
+
+arena_end_screen_score: 'СЧЕТ: '
+arena_end_screen_victory: Победа
+arena_end_screen_defeat: Поражение
+arena_end_screen_legend_boss_damage: ПБОС
+arena_end_screen_legend_boss_damage_tooltip: Урон по боссам
+arena_end_screen_error_broken: Что-то пошло не так. Вероятно, причиной является возможность хоста лобби делать больше вещей, чем они должны.
+
+abaddoned_panel_title: Игра была покинута
+abaddoned_panel_reason: Герой был удален так как вы находились вне игры слишком долго
+abaddoned_panel_redistribution: Все предметы героя были проданы, а ваше золато было распределено между союзниками
+abaddoned_panel_ranked: Ваш рейтинг будет сильно понижен
+
+ranked_top_players: Лучшие игроки
+ranked_top_more: Открыть топ 100...
+
+teams_kill_weight_tooltip: Убийство героев этой команды принесет {d:kill_weight} очков

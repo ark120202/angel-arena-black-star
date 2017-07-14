@@ -33,5 +33,11 @@
 		<Button id="SwitchDynamicMinimapButton" onactivate="SetDynamicMinimapVisible()"/>
 		<Panel id="CustomToastManager" hittest="false" hittestchildren="false" />
 		<Panel id="CustomModifiersList" />
+		<Panel id="AbandonedPanel">
+			<Label id="AbandonedTitle" text="#abaddoned_panel_title" />
+			<Label id="AbandonedReason" text="#abaddoned_panel_reason" />
+			<Label id="AbandonedRedistribution" text="#abaddoned_panel_redistribution" />
+			<Label id="AbandonedRanked" text="#abaddoned_panel_ranked" />
+		</Panel>
 	</Panel>
 </root>

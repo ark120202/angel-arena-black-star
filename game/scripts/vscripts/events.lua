@@ -11,22 +11,9 @@ end
 function GameMode:OnGameRulesStateChange(keys)
 	local newState = GameRules:State_Get()
 	if newState == DOTA_GAMERULES_STATE_PRE_GAME then
-		local Counters = {}
-		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-			if PlayerResource:IsValidPlayerID(i) then
-				local team = PlayerResource:GetTeam(i)
-				if PLAYERS_COLORS[team] then
-					Counters[team] = (Counters[team] or 0) + 1
-					local color = PLAYERS_COLORS[team][Counters[team]]
-					PLAYER_DATA[i].Color = color
-					PlayerResource:SetCustomPlayerColor(i, color[1], color[2], color[3])
-				end
-			end
-		end
 		HeroSelection:CollectPD()
-		Options:CalculateVotes()
-		StatsClient:FetchPreGameData()
 		HeroSelection:HeroSelectionStart()
+		GameMode:OnHeroSelectionStart()
 	end
 end
 
@@ -52,15 +39,13 @@ function GameMode:OnNPCSpawned(keys)
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if npc:IsTrueHero() then
 						PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
-						AbilityShop:RandomOMGRollAbilities(npc)
+						CustomAbilities:RandomOMGRollAbilities(npc)
 						if IsValidEntity(npc.BloodstoneDummies) then
 							UTIL_Remove(npc.BloodstoneDummies)
 							npc.BloodstoneDummies = nil
 						end
-						if npc.PocketHostEntity ~= nil then
-							UTIL_Remove(npc.PocketItem)
-							npc.PocketItem = nil
-							npc.PocketHostEntity = nil
+						if not npc.OnDuel and Duel:IsDuelOngoing() then
+							Duel:SetUpVisitor(npc)
 						end
 					end
 				end
@@ -142,12 +127,6 @@ function GameMode:OnAbilityChannelFinished(keys)
 	--local interrupted = keys.interrupted == 1
 end
 
--- A player leveled up
-function GameMode:OnPlayerLevelUp(keys)
-	--[[local player = EntIndexToHScript(keys.player)
-	local level = keys.level]]
-end
-
 -- A player last hit a creep, a tower, or a hero
 function GameMode:OnLastHit(keys)
 	--[[local isFirstBlood = keys.FirstBlood == 1
@@ -198,8 +177,14 @@ function GameMode:OnEntityKilled(keys)
 		if killedUnit:IsHero() then
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
 			if killedUnit:IsRealHero() then
+				local respawnTime = killedUnit:CalculateRespawnTime()
+				killedUnit:SetTimeUntilRespawn(respawnTime)
+				MeepoFixes:ShareRespawnTime(killedUnit, respawnTime)
+				killedUnit.RespawnTimeModifierBloodstone = nil
+				killedUnit.RespawnTimeModifierSaiReleaseOfForge = nil
+
 				if killedUnit.OnDuel and Duel:IsDuelOngoing() then
-					killedUnit.OnDuel = false
+					killedUnit.OnDuel = nil
 					killedUnit.ArenaBeforeTpLocation = nil
 					if Duel:GetWinner() ~= nil then
 						Duel:EndDuel()
@@ -211,9 +196,6 @@ function GameMode:OnEntityKilled(keys)
 					local player = killedUnit:GetPlayerOwner()
 					Kills:OnEntityKilled(player, player)
 				end
-				local respawnTime = killedUnit:CalculateRespawnTime()
-				killedUnit:SetTimeUntilRespawn(respawnTime)
-				MeepoFixes:ShareRespawnTime(killedUnit, respawnTime)
 			end
 		end
 

@@ -14,6 +14,7 @@ MODIFIERS_DEATH_PREVENTING = {
 	"modifier_fountain_aura_arena",
 	"modifier_mana_shield_arena",
 	"modifier_saber_avalon_invulnerability",
+	"modifier_fountain_aura_invulnerability"
 }
 
 DUEL_PURGED_MODIFIERS = {
@@ -22,6 +23,8 @@ DUEL_PURGED_MODIFIERS = {
 	"modifier_tether_ally_aghanims",
 	"modifier_life_stealer_assimilate",
 	"modifier_life_stealer_assimilate_effect",
+	"modifier_item_black_king_bar_arena_active",
+	"modifier_item_titanium_bar_active"
 }
 
 ABILITY_INVULNERABLE_UNITS = {
@@ -37,6 +40,37 @@ MODIFIERS_TRUESIGHT = {
 ONCLICK_PURGABLE_MODIFIERS = {
 	"modifier_rubick_personality_steal",
 	"modifier_tether_ally_aghanims"
+}
+
+MOVEMENT_SPEED_MODIFIERS = {
+	modifier_lycan_shapeshift_speed = function(unit)
+		local ability = unit:FindAbilityByName("lycan_shapeshift")
+		return ability and ability:GetSpecialValueFor("speed") or 0
+	end,
+
+	modifier_bloodseeker_thirst_speed = function(unit)
+		return math.huge
+	end,
+	modifier_weaver_shukuchi = function(unit)
+		return math.huge
+	end,
+
+	modifier_talent_movespeed_limit = function(unit)
+		return unit:GetModifierStackCount("modifier_talent_movespeed_limit", unit)
+	end,
+	modifier_arena_rune_haste = function(unit)
+		return unit:GetModifierStackCount("modifier_arena_rune_haste", unit)
+	end,
+
+	modifier_item_scythe_of_sun_hex = function(unit)
+		return unit:FindModifierByName("modifier_item_scythe_of_sun_hex"):GetModifierMoveSpeed_Limit()
+	end,
+	modifier_chronosphere_speed_lua = function(unit)
+		return unit:FindModifierByName("modifier_chronosphere_speed_lua"):GetModifierMoveSpeed_Limit()
+	end,
+	modifier_destroyer_frenzy = function(unit)
+		return unit:FindModifierByName("modifier_destroyer_frenzy"):GetModifierMoveSpeed_Limit()
+	end,
 }
 
 COOLDOWN_REDUCTION_MODIFIERS = {
@@ -133,4 +167,11 @@ MODIFIER_PROC_PRIORITY = {
 		modifier_item_splitshot_ultimate_unique = 7,
 		modifier_item_elemental_fury_unique = 8,
 	},
+	desolator = {
+		modifier_item_desolator2_arena = 1,
+		modifier_item_desolator3_arena = 2,
+		modifier_item_desolator4_arena = 3,
+		modifier_item_desolator5_arena = 4,
+		modifier_item_desolator6_arena = 5,
+	}
 }

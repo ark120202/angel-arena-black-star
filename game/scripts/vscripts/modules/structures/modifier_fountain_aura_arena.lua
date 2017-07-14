@@ -1,35 +1,30 @@
-modifier_fountain_aura_arena = class({})
-function modifier_fountain_aura_arena:IsPurgable() return false end
-function modifier_fountain_aura_arena:IsHidden() return true end
+local FOUNTAIN_EFFECTIVE_TIME_THRESHOLD = 2700
 
 local FOUNTAIN_PERCENTAGE_MANA_REGEN = 20
 local FOUNTAIN_PERCENTAGE_HEALTH_REGEN = 20
 
+modifier_fountain_aura_arena = class({
+	IsPurgable =                          function() return false end,
+	GetModifierHealthRegenPercentage =    function() return FOUNTAIN_PERCENTAGE_MANA_REGEN end,
+	GetModifierTotalPercentageManaRegen = function() return FOUNTAIN_PERCENTAGE_HEALTH_REGEN end,
+	GetTexture =                          function() return "fountain_heal" end,
+})
+
 function modifier_fountain_aura_arena:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_MIN_HEALTH,
 		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
-		MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
+		MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE
 	}
 end
 
-function modifier_fountain_aura_arena:GetModifierHealthRegenPercentage()
-	return FOUNTAIN_PERCENTAGE_MANA_REGEN
-end
-
-function modifier_fountain_aura_arena:GetModifierTotalPercentageManaRegen()
-	return FOUNTAIN_PERCENTAGE_HEALTH_REGEN
-end
-
-
 if IsServer() then
 	function modifier_fountain_aura_arena:OnCreated()
-		self:GetParent():AddNewModifier(self:GetCaster(), nil, "modifier_fountain_aura_buff", nil)
 		self:StartIntervalThink(0.25)
+		self:OnIntervalThink()
 	end
 
 	function modifier_fountain_aura_arena:OnDestroy()
-		self:GetParent():RemoveModifierByName("modifier_fountain_aura_buff")
+		self:GetParent():RemoveModifierByName("modifier_fountain_aura_invulnerability")
 	end
 
 	function modifier_fountain_aura_arena:OnIntervalThink()
@@ -43,5 +38,33 @@ if IsServer() then
 				item:SetCurrentCharges(3)
 			end
 		end
+
+		local okTime = GameRules:GetDOTATime(false, true) < FOUNTAIN_EFFECTIVE_TIME_THRESHOLD
+		local hasMod = parent:HasModifier("modifier_fountain_aura_invulnerability")
+		if okTime and not hasMod then
+			parent:AddNewModifier(parent, nil, "modifier_fountain_aura_invulnerability", nil)
+		elseif not okTime and hasMod then
+			parent:RemoveModifierByName("modifier_fountain_aura_invulnerability")
+		end
 	end
+end
+
+modifier_fountain_aura_invulnerability = class({
+	IsPurgable =                  function() return false end,
+	GetMinHealth =                function() return 1 end,
+	GetAbsoluteNoDamagePhysical = function() return 1 end,
+	GetAbsoluteNoDamageMagical =  function() return 1 end,
+	GetAbsoluteNoDamagePure =     function() return 1 end,
+	OnTooltip =                   function() return FOUNTAIN_EFFECTIVE_TIME_THRESHOLD / 60 end,
+	GetTexture =                  function() return "modifier_invulnerable" end,
+})
+
+function modifier_fountain_aura_invulnerability:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MIN_HEALTH,
+		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
+		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
+		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
+		MODIFIER_PROPERTY_TOOLTIP
+	}
 end

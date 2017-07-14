@@ -1,4 +1,5 @@
 $mainPanelHeight: 960px;
+$gameModeInfoPanelWidth: 200px;
 
 .base
 	height: 100%
@@ -86,10 +87,16 @@ $mainPanelHeight: 960px;
 	height: 120px
 	width: 100%
 
+#Header
+	width: 100%;
+	height: 100%
+
+
 #GameModeInfoPanel
-	flow-children: down
+	width: $gameModeInfoPanelWidth
 	margin: 0 12px
-	width: 200px
+	flow-children: down
+	horizontal-align: center
 
 #HeroSelectionTimer
 	horizontal-align: center
@@ -121,15 +128,67 @@ $mainPanelHeight: 960px;
 	text-transform: uppercase
 	width: 100%
 
-#TeamSelectionStatusPanel
+#LeftTeams
+	width: 50%
 	height: 100%
-	flow-children: right
-	horizontal-align: center
+	padding-right: $gameModeInfoPanelWidth / 2
+	flow-children: left
 
-.TeamSelectionPanel
-	margin: 4px
+	#TeamBarPlayers
+		flow-children: left
+
+	#TeamBarRating
+		background-color: gradient(linear, 100% 0%, 0% 0%, from(rgba(83, 46, 53, .86)), color-stop(.65, rgba(83, 46, 53, .86)), to(transparent));
+		horizontal-align: right
+		flow-children: right
+
+	.TeamAverageMMRValue
+		padding-right: 6px;
+		padding-left: 0;
+
+
+#RightTeams
+	width: 50%
 	height: 100%
+	padding-left: $gameModeInfoPanelWidth / 2
+	horizontal-align: right
 	flow-children: right
+
+	#TeamBarPlayers
+		flow-children: right
+
+	#TeamBarRating
+		background-color: gradient(linear, 0% 0%, 100% 0%, from(rgba(83, 46, 53, .86)), color-stop(.65, rgba(83, 46, 53, .86)), to(transparent));
+		horizontal-align: left
+		flow-children: left
+
+.TeamBar
+	height: 100%
+	margin-top: 4px
+
+	#TeamBarPlayers
+		height: 100%
+
+	#TeamBarRating
+		margin-bottom: -6px
+		vertical-align: bottom
+		visibility: collapse
+
+		.ShowMMR &
+			visibility: visible
+
+	.TeamAverageMMRLabel
+		padding-top: 3px
+		font-size: 14px;
+		color: gradient(linear, 0% 0%, 0% 100%, from(#c5a97a), to(rgba(197, 169, 122, .26)));
+		text-transform: uppercase;
+
+	.TeamAverageMMRValue
+		padding-top: -1px
+		padding-left: 6px;
+		font-size: 18px;
+		color: #8e745a;
+
 
 #SelectedHeroSelectButton
 	width: 78%
@@ -143,6 +202,7 @@ $mainPanelHeight: 960px;
 	box-shadow: rgba(0, 0, 0, 0.56078) -6px -6px 12px 12px
 	transition-property: opacity, background-color
 	transition-duration: 0.18s
+
 	&:hover
 		brightness: 1.2
 
@@ -203,8 +263,6 @@ $mainPanelHeight: 960px;
 
 	#SelectedHeroUnlockLabel
 		visibility: visible
-
-
 
 	visibility: collapse
 	visibility: visible
@@ -383,6 +441,14 @@ $mainPanelHeight: 960px;
 		height: 82px
 
 
+.map_landscape_4v4v4v4
+	#RightTeams #TeamBarPlayers
+		padding-left: 5px
+
+	#LeftTeams #TeamBarPlayers
+		padding-right: 5px
+
+
 .DisconnectionIndicator
 	opacity: 0
 	width: 100%
@@ -515,25 +581,37 @@ $mainPanelHeight: 960px;
 		margin-top: 0
 		margin-bottom: -6px
 		margin-right: 4px
-		transform: translateY(2px )
+		transform: translateY(2px)
 		border: 1px solid rgb(0, 0, 0)
 
 
 #AdsBanner
 	padding: 2px
 	width: 100%
-	//384 visibility: visible
 	transition-property: pre-transform-scale2d, brightness
-	transition-duration: 0.15s
-	brightness: 0.8
+	transition-duration: .15s
+	brightness: .8
+
 	&:hover
-		pre-transform-scale2d: 0.98
+		pre-transform-scale2d: .98
 		brightness: 1
 
 	&:active
 		pre-transform-scale2d: 1.04
 		brightness: 1.2
 
+	> Label
+		margin-right: 6px
+		margin-bottom: -2px
+		font-size: 48px
+		font-weight: bold
+		color: #ffd700
+		transition-duration: .2s
+		transition-property: saturation
+		align: right bottom
+
+		.AdsClicked &
+			saturation: 0
 
 #LockedIcon
 	align: right bottom
@@ -545,34 +623,13 @@ $mainPanelHeight: 960px;
 	background-image: url('file://{images}/control_icons/lock_small.png')
 	background-size: 100% 100%
 
-.PickButton
-	height: 100%
-	padding: 8px
-	background-color: gradient(linear, 0 0, 0 100%, from(rgba(64, 77, 101, 0.86667) ), to(rgba(43, 52, 69, 0.86667) ) )
-	border-top: 1px solid rgb(111, 129, 155)
-	border-left: 1px solid rgba(111, 129, 155, 0.13333)
-	border-right: 1px solid rgba(111, 129, 155, 0.06667)
-	border-bottom: 1px solid rgba(63, 65, 75, 0.2)
-	box-shadow: rgba(0, 0, 0, 0.56078) -6px -6px 12px 12px
-	transition-property: opacity, background-color
-	transition-duration: 0.18s
-	&:hover
-		brightness: 1.2
-
-	&:active
-		brightness: 1.5
-
-	Label
-		color: rgb(204, 204, 204)
-		text-transform: uppercase
-
-
 #RandomButton
 	width: 20%
 	height: 70%
 	align: right center
-	saturation: 0.0
-	brightness: 0.2
+	saturation: 0
+	brightness: .2
+
 	> Label
 		width: 100%
 		font-size: 14px
@@ -598,46 +655,6 @@ $mainPanelHeight: 960px;
 	margin-top: -5px
 	margin-right: -17px
 	text-shadow: 1px 1px 3px 2 rgb(0, 0, 0)
-
-#SwitchHeroesButton
-	width: 100px
-	height: 75%
-	align: right center
-	margin-left: 4px
-	margin-right: 15px
-	margin-top: 10px
-	&:hover
-		brightness: 2.0
-		margin-top: 12px
-
-	&:active
-		brightness: 1.5
-		margin-top: 14px
-
-	> Label
-		width: 100%
-		font-size: 14px
-		text-align: center
-		text-overflow: shrink
-		margin-bottom: -6px
-		vertical-align: bottom
-		transition-property: color
-		transition-duration: 0.1s
-
-	> Panel
-		background-image: url('file://{resources}/images/custom_game/hero_selection/hero_swich.png')
-		background-position: center
-		background-size: contain
-		background-repeat: no-repeat
-		width: 34px
-		height: 38px
-		margin-top: -4px
-		align: center center
-
-	> #SwitchHeroesDefault
-		margin-top: -6px
-		vertical-align: top
-
 
 .HoveredHeroHasLinked #SelectedHeroLinkedHeroPanel
 	visibility: visible
@@ -674,12 +691,3 @@ $mainPanelHeight: 960px;
 
 	&:active
 		brightness: 1.5
-
-
-.ActiveTab1 > #SwitchHeroesDefault
-	color: rgb(0, 255, 0)
-	font-weight: bold
-
-.ActiveTab2 > #SwitchHeroesNew
-	color: rgb(0, 255, 0)
-	font-weight: bold

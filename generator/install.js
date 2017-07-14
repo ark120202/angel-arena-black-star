@@ -19,8 +19,8 @@ try {
 }
 
 
-const game = path.join(settings.dota, 'game/dota_addons/angelarenablackstar');
-const content = path.join(settings.dota, 'content/dota_addons/angelarenablackstar');
+const game = path.join(settings.dota, 'game/dota_addons', settings.name);
+const content = path.join(settings.dota, 'content/dota_addons', settings.name);
 fs.removeSync(game);
 fs.removeSync(content);
 fs.symlinkSync(path.resolve(__dirname, '../game'), game, 'junction');

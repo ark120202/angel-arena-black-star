@@ -21,11 +21,10 @@ function ApplyDrugModifers(keys)
 	local modifier_buff = keys.modifier_buff
 	local modifier_debuff = keys.modifier_debuff
 
-	LinkLuaModifier(modifier_addiction, "items/lua/modifiers/" .. modifier_addiction .. ".lua", LUA_MODIFIER_MOTION_NONE)
 	local multiplier = target:GetModifierStackCount(modifier_addiction, target) / 2
 	if multiplier < 1 then multiplier = 1 end
 	local duration_debuff = multiplier * ability:GetSpecialValueFor("duration_debuff_multiplier")
-	ModifyStacksLua(ability, target, target, modifier_addiction, 1, true, {keys=keys})
+	ModifyStacksLua(ability, target, target, modifier_addiction, 1, true)
 	ability:ApplyDataDrivenModifier(target, target, modifier_debuff, {duration=duration_debuff})
 	ability:ApplyDataDrivenModifier(target, target, modifier_buff, {})
 end

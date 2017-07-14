@@ -2,7 +2,7 @@
 	"folders":
 	[
 		{
-			"path": "../aabs-server"
+			"path": "../node/aabs-server"
 		},
 		{
 			"path": ".",

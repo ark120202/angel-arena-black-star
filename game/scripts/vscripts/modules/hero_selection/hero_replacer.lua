@@ -11,7 +11,7 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 						local oldhero = PlayerResource:GetSelectedHeroEntity(playerId)
 						local hero
 						local baseNewHero = heroTableCustom.base_hero or heroName
-						
+
 						if oldhero then
 							Timers:CreateTimer(0.03, function()
 								oldhero:ClearNetworkableEntityInfo()
@@ -66,6 +66,7 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 end
 
 function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item, callback)
+	PlayerResource:ModifyPlayerStat(playerId, "ChangedHeroAmount", 1)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	hero.ChangingHeroProcessRunning = true
 	if hero.PocketItem then
@@ -80,7 +81,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 	local location = hero:GetAbsOrigin()
 	if fountatin then location = location or fountatin:GetAbsOrigin() end
 	local items = {}
-	for i = 0, 11 do
+	for i = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
 		local citem  = hero:GetItemInSlot(i)
 		if citem and citem ~= item then
 			local newItem = CreateItem(citem:GetName(), nil, nil)
@@ -118,12 +119,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			end
 			newHero:AddItem(v)
 		end
-		for i = 0, 11 do
-			local citem = newHero:GetItemInSlot(i)
-			if citem and citem:GetName() == "item_dummy" then
-				UTIL_Remove(citem)
-			end
-		end
+		ClearSlotsFromDummy(newHero)
 		Timers:CreateTimer(startTime + duration - GameRules:GetDOTATime(true, true), function()
 			if IsValidEntity(newHero) then
 				newHero:RemoveModifierByName("modifier_hero_selection_transformation")

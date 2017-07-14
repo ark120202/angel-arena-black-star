@@ -227,11 +227,11 @@
 			"12"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"1"
+				"movement_speed_percent_bonus_buff"		"2"
 			}
 			"13"
 			{
-				"var_type"						"FIELD_INTEGER"
+				"var_type"						"FIELD_FLOAT"
 				"fast_attack_duration"			"4.5"
 			}
 			"14"
@@ -665,7 +665,7 @@
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"1"
+				"movement_speed_percent_bonus_buff"		"2"
 			}
 			"09"
 			{
@@ -810,7 +810,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"16"
+				"movement_speed_percent_bonus"	"20"
 			}
 			"06"
 			{
@@ -849,8 +849,8 @@
 			}
 			"13"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_max_stacks"		"5"
+				"var_type"						"FIELD_INTEGER"
+				"maim_max_stacks"				"5"
 			}
 			"14"
 			{
@@ -860,7 +860,7 @@
 			"15"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"2"
+				"movement_speed_percent_bonus_buff"		"3"
 			}
 			"16"
 			{

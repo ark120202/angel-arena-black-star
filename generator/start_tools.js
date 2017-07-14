@@ -23,8 +23,8 @@ try {
 const game = path.join(settings.dota, 'game/dota_addons');
 const content = path.join(settings.dota, 'content/dota_addons');
 try {
-	fs.renameSync(path.join(game, 'angelarenablackstar'), path.join(game, '___angelarenablackstar'));
-	fs.renameSync(path.join(content, 'angelarenablackstar'), path.join(content, '___angelarenablackstar'));
+	fs.renameSync(path.join(game, settings.name), path.join(game, '___custom_game___'));
+	fs.renameSync(path.join(content, settings.name), path.join(content, '___custom_game___'));
 } catch (err) {
 	console.error('Make sure you have access to dota directory and you have executed install.js before');
 	console.error(err);
@@ -32,14 +32,14 @@ try {
 }
 
 process.chdir(path.join(settings.dota, 'game/bin/win64'));
-child_process.spawn(path.join(settings.dota, 'game/bin/win64/dota2cfg.exe'), ['-addon', 'angelarenablackstar'], {detached: true});
+child_process.spawn(path.join(settings.dota, 'game/bin/win64/dota2cfg.exe'), ['-addon', settings.name], {detached: true});
 
-fs.ensureDirSync(path.join(game, 'angelarenablackstar'));
-fs.ensureDirSync(path.join(content, 'angelarenablackstar'));
+fs.ensureDirSync(path.join(game, settings.name));
+fs.ensureDirSync(path.join(content, settings.name));
 
 setTimeout(() => {
-	fs.removeSync(path.join(game, 'angelarenablackstar'));
-	fs.removeSync(path.join(content, 'angelarenablackstar'));
-	fs.renameSync(path.join(game, '___angelarenablackstar'), path.join(game, 'angelarenablackstar'));
-	fs.renameSync(path.join(content, '___angelarenablackstar'), path.join(content, 'angelarenablackstar'));
+	fs.removeSync(path.join(game, settings.name));
+	fs.removeSync(path.join(content, settings.name));
+	fs.renameSync(path.join(game, '___custom_game___'), path.join(game, settings.name));
+	fs.renameSync(path.join(content, '___custom_game___'), path.join(content, settings.name));
 }, settings.delay || 1600);

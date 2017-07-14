@@ -143,12 +143,12 @@ function UpdateTimer() {
 
 	var playerInfo = Game.GetLocalPlayerInfo();
 	if (playerInfo != null) {
-		$.GetContextPanel().SetHasClass('player_has_host_privileges', playerInfo.player_has_host_privileges);
+		$.GetContextPanel().SetHasClass('player_has_host_privileges', playerInfo.player_has_host_privileges && Options.GetMapInfo().gamemode !== 'ranked');
 	}
 	if (transitionTime >= 0) {
 		$('#StartGameCountdownTimer').SetDialogVariableInt('countdown_timer_seconds', Math.max(0, Math.floor(transitionTime - gameTime)));
 	}
-	
+
 	$('#StartGameCountdownTimer').SetHasClass('countdown_active', transitionTime >= 0);
 	$('#StartGameCountdownTimer').SetHasClass('countdown_inactive', transitionTime < 0);
 

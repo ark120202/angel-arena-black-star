@@ -64,6 +64,9 @@ function CDOTA_PlayerResource:SetPlayerTeam(playerID, newTeam)
 
 	CustomGameEventManager:Send_ServerToPlayer(player, "arena_team_changed_update", {})
 	PlayerResource:RefreshSelection()
+
+	Teams:RecalculateKillWeight(oldTeam)
+	Teams:RecalculateKillWeight(newTeam)
 end
 
 function CDOTA_PlayerResource:SetDisableHelpForPlayerID(nPlayerID, nOtherPlayerID, disabled)
@@ -101,26 +104,8 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 		RemoveAllOwnedUnits(iPlayerID)
 		local hero = PlayerResource:GetSelectedHeroEntity(iPlayerID)
 		if IsValidEntity(hero) then
-			PLAYER_DATA[iPlayerID].BeforeAbandon_Level = hero:GetLevel()
-			PLAYER_DATA[iPlayerID].BeforeAbandon_HeroInventorySnapshot = {}
 			hero:ClearNetworkableEntityInfo()
 			hero:Stop()
-			for i = 0, DOTA_STASH_SLOT_6 do
-				local item = hero:GetItemInSlot(i)
-				if item then
-					local charges = item:GetCurrentCharges()
-					local toWriteCharges
-					if item:GetInitialCharges() ~= charges then
-						toWriteCharges = charges
-					end
-					PLAYER_DATA[iPlayerID].BeforeAbandon_HeroInventorySnapshot[i] = {
-						name = item:GetAbilityName(),
-						stacks = toWriteCharges
-					}
-					hero:SellItem(item)
-				end
-			end
-
 
 			for i = 0, hero:GetAbilityCount() - 1 do
 				local ability = hero:GetAbilityByIndex(i)
@@ -135,6 +120,7 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 			hero:AddNewModifier(hero, nil, "modifier_hero_out_of_game", nil)
 
 			-- Crashes game for Earth/Ember/Storm spirits
+			-- Also allows us to get hero's data even after abandon
 			--[[Timers:CreateTimer(20, function()
 				UTIL_Remove(hero)
 			end)]]
@@ -157,9 +143,8 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 			HeroSelection:UpdateStatusForPlayer(iPlayerID, "hover", "npc_dota_hero_abaddon")
 		--end
 		PLAYER_DATA[iPlayerID].IsAbandoned = true
-		local ptd = PlayerTables:GetTableValue("arena", "players_abandoned")
-		table.insert(ptd, iPlayerID)
-		PlayerTables:SetTableValue("arena", "players_abandoned", ptd)
+		PlayerTables:SetTableValue("players_abandoned", iPlayerID, true)
+		Teams:RecalculateKillWeight(PlayerResource:GetTeam(iPlayerID))
 		if not GameRules:IsCheatMode() then
 			local teamLeft = GetOneRemainingTeam()
 			if teamLeft then
@@ -172,4 +157,9 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 			end
 		end
 	end
+end
+
+function CDOTA_PlayerResource:GetRealSteamID(PlayerID)
+	local id = tostring(PlayerResource:GetSteamID(PlayerID))
+	return id == "0" and tostring(PlayerID) or id
 end

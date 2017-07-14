@@ -5,6 +5,8 @@ ModuleRequire(..., "shops")
 ModuleLinkLuaModifier(..., "modifier_arena_healer")
 ModuleLinkLuaModifier(..., "modifier_arena_courier")
 ModuleLinkLuaModifier(..., "modifier_fountain_aura_arena")
+ModuleLinkLuaModifier(..., "modifier_fountain_aura_invulnerability", "modifier_fountain_aura_arena")
+ModuleLinkLuaModifier(..., "modifier_fountain_aura_enemy")
 
 function Structures:AddHealers()
 	for _,v in ipairs(Entities:FindAllByClassname("npc_dota_healer")) do

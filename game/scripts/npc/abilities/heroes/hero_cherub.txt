@@ -293,7 +293,7 @@
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"arena/cherub_explosive_spore"
 		"MaxLevel" 						"7"
-		"LevelsBetweenUpgrades"			"0"
+		"LevelsBetweenUpgrades"			"1"
 
 		"AbilityCastRange"				"distance"
 		"AbilityCastPoint"				"0.3"
@@ -303,9 +303,9 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
-		"AbilityCooldown"				"5.0 4.5 4.0 3.5 3.0 2.5 2.0"
+		"AbilityCooldown"				"5 4.5 4 3.5 3 2.5 2"
 		"AbilityManaCost"				"60 80 100 120 140 160 180"
-		"AbilityDamage"					"150 300 450 600 750 900 1050"
+		"AbilityDamage"					"100 175 250 325 400 475 550"
 
 		"AbilitySpecial"
 		{
@@ -347,7 +347,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spore_bounty_gold"		"150 300 450 900 1500 2500 3500"
+				"spore_bounty_gold"		"100 150 200 300 450 600 800"
 			}
 			"09"
 			{
@@ -472,12 +472,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"flower_health_scepter"	"2500 5000 7500 10000 12500 15000 20000"
+				"flower_health_scepter"	"2000 3000 4000 5000 6000 7000 8000"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_return_scepter"	"150 500 1000 1500 3000 6000 10000"
+				"damage_return_scepter"	"30 60 90 120 150 180 210"
 			}
 			"05"
 			{
@@ -521,12 +521,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_range"		"600 800 1000 1200 1400 1600 2000"
+				"attack_range"		"300 350 450 550 650 750 850"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"80 190 310 600 1200 2400 4800"
+				"damage"			"50 100 150 200 250 300 350"
 			}
 			"03"
 			{
@@ -562,12 +562,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_range"		"600 800 1000 1200 1400 1600 2000"
+				"attack_range"		"300 350 450 550 650 750 850"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"80 190 310 600 1200 2400 4800"
+				"damage"			"50 100 150 200 250 300 350"
 			}
 			"03"
 			{
@@ -609,12 +609,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_range"		"250 350 450 550 650 750 850"
+				"attack_range"		"130 160 190 220 240 270 300"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"100 150 230 350 480 560 620"
+				"damage"			"35 65 95 125 150 175 200"
 			}
 			"03"
 			{
@@ -650,12 +650,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_range"		"250 350 450 550 650 750 850"
+				"attack_range"		"130 160 190 220 240 270 300"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"100 150 230 350 480 560 620"
+				"damage"			"35 65 95 125 150 175 200"
 			}
 			"03"
 			{
@@ -702,7 +702,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"heal_amount"		"35 70 150 190 210 260 300"
+				"heal_amount"		"10 20 30 40 50 60 70"
 			}
 			"03"
 			{
@@ -748,7 +748,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"heal_amount"		"35 70 150 190 210 260 300"
+				"heal_amount"		"10 20 30 40 50 60 70"
 			}
 			"03"
 			{
@@ -804,7 +804,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"restore_amount"	"35 70 150 190 210 260 300"
+				"restore_amount"	"5 10 15 20 25 30 35"
 			}
 			"03"
 			{
@@ -845,7 +845,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"restore_amount"	"35 70 150 190 210 260 300"
+				"restore_amount"	"5 10 15 20 25 30 35"
 			}
 			"03"
 			{
@@ -986,7 +986,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"magic_resistance_reduction"	"-30 -35 -40 -45 -50 -55 -60"
+				"magic_resistance_reduction"	"-10 -15 -25 -30 -40 -45 -50"
 			}
 			"03"
 			{
@@ -1022,7 +1022,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"magic_resistance_reduction"	"-30 -35 -40 -45 -50 -55 -60"
+				"magic_resistance_reduction"	"-10 -15 -25 -30 -40 -45 -50"
 			}
 			"03"
 			{

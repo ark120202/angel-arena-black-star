@@ -2,3 +2,5 @@
 dota: 'C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta'
 # Delay before symlink will be returned to original value
 delay: 1600
+# Custom game name
+name: angelarenablackstar

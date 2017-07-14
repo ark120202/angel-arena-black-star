@@ -4,22 +4,21 @@
 	{
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"arena/shinobu_vampire_blood"
-		"MaxLevel" 						"5"
+		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"HasInnateModifiers"			"1"
-		"LevelsBetweenUpgrades"			"10"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"lifesteal_pct_lvl1"		"5 10 15 20 25"
+				"lifesteal_pct_lvl1"		"30"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed_lvl1" "-20 -30 -40 -50 -60"
+				"bonus_attack_speed_lvl1" "0"
 			}
 			"03"
 			{
@@ -34,17 +33,17 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"lifesteal_pct_lvl2"		"10 15 20 25 30"
+				"lifesteal_pct_lvl2"		"35"
 			}
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed_lvl2" "0"
+				"bonus_attack_speed_lvl2" "15 25 35 45 55 65 75"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_move_speed_lvl2" "10"
+				"bonus_move_speed_lvl2" "0"
 			}
 			"08"
 			{
@@ -54,37 +53,37 @@
 			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"lifesteal_pct_lvl3"		"15 20 25 30 35"
+				"lifesteal_pct_lvl3"		"40"
 			}
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed_lvl3" "90 100 110 120 125"
+				"bonus_attack_speed_lvl3" "35 45 55 65 75 85 95"
 			}
 			"11"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_move_speed_lvl3" "50"
+				"bonus_move_speed_lvl3" "25"
 			}
 			"12"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"hp_mark_pct_lvl4"	"80"
+				"hp_mark_pct_lvl4"	"75"
 			}
 			"13"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"lifesteal_pct_lvl4"	"20 25 30 35 40"
+				"lifesteal_pct_lvl4"	"45"
 			}
 			"14"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed_lvl4"	"160 170 180 190 200"
+				"bonus_attack_speed_lvl4"	"45 60 75 90 105 120 135"
 			}
 			"15"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_move_speed_lvl4"	"80"
+				"bonus_move_speed_lvl4"	"60"
 			}
 		}
 
@@ -262,9 +261,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityCastRange"				"400 450 500 550 600 650 675"
-		"AbilityCooldown"				"80 75 70 65 60 55 50"
+		"AbilityCooldown"				"50"
 		"AbilityManaCost"				"120"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		"AbilitySpecial"
@@ -277,7 +276,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"12.5 15 17.5 20 22.5 25 30"
+				"buff_duration"			"20.0 22.5 25.0 27.5 30.0 32.5 35.0"
 			}
 			"03"
 			{
@@ -327,12 +326,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"chance_to_kill"	"5 7 9 11 13 15 17"
+				"chance_to_kill"	"5"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"soul_duration"		"15 20 25 30 30 30 30"
+				"soul_duration"		"10"
 			}
 		}
 
@@ -412,21 +411,20 @@
 		"AbilityTextureName"			"arena/shinobu_yumewatari_lua"
 		"ScriptFile"					"heroes/hero_shinobu/yumewatari.lua"
 		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"1"
-		"RequiredLevel"					"5"
+		"RequiredLevel"					"2"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK2"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityCooldown"				"50"
-		"AbilityManaCost"				"130"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"50"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"50 80 120 140 160 185 200"
+				"bonus_damage"		"20 30 40 50 60 75 90"
 			}
 			"02"
 			{
@@ -449,7 +447,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"ally_radius"		"300 400 500 550 600 650 700"
+				"ally_radius"		"300 350 400 450 500 550 600"
 			}
 			"02"
 			{
@@ -459,7 +457,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"rage_duration"		"8 10 12 14 16 18 20"
+				"rage_duration"		"4"
 			}
 			"04"
 			{
@@ -474,7 +472,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"rage_bonus_evasion_chance" "40"
+				"rage_bonus_evasion_chance" "15"
 			}
 		}
 

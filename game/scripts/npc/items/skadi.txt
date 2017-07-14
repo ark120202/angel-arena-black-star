@@ -19,7 +19,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"500"
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_skadi_2"
 		"ItemRequirements"
@@ -33,7 +33,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"2000"
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_skadi_4"
 		"ItemRequirements"
@@ -48,7 +48,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"6000"
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_skadi_8"
 		"ItemRequirements"
@@ -91,17 +91,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed_pct"	"-35 -40 -45 -50"
+				"cold_movement_speed_pct"	"-30 -35 -40 -45"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-45 -55 -60 -70"
+				"cold_attack_speed"		"-45 -65 -90 -120"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cold_duration"			"5.1 5.4 5.7 6"
+				"cold_duration"			"3.0"
 			}
 		}
 	}
@@ -139,17 +139,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed_pct"	"-35 -40 -45 -50"
+				"cold_movement_speed_pct"	"-30 -35 -40 -45"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-45 -55 -60 -70"
+				"cold_attack_speed"		"-45 -65 -90 -120"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cold_duration"			"5.1 5.4 5.7 6"
+				"cold_duration"			"3.0"
 			}
 		}
 	}
@@ -187,17 +187,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed_pct"	"-35 -40 -45 -50"
+				"cold_movement_speed_pct"	"-30 -35 -40 -45"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-45 -55 -60 -70"
+				"cold_attack_speed"		"-45 -65 -90 -120"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cold_duration"			"5.1 5.4 5.7 6"
+				"cold_duration"			"3.0"
 			}
 		}
 	}
@@ -235,17 +235,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed_pct"	"-35 -40 -45 -50"
+				"cold_movement_speed_pct"	"-30 -35 -40 -45"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-45 -55 -60 -70"
+				"cold_attack_speed"		"-45 -65 -90 -120"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cold_duration"			"5.1 5.4 5.7 6"
+				"cold_duration"			"3.0"
 			}
 		}
 	}

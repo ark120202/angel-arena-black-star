@@ -1,4 +1,4 @@
-const dcgt = require('dota-custom-game-toolkit');
+const localizationBuilder = require('./localization-builder');
 const path = require('path'),
 	vdf = require('vdf-extra'),
 	fs = require('fs-extra'),
@@ -25,8 +25,8 @@ const paths = {
 	content: path.resolve(__dirname, '../content'),
 	localization: path.resolve(__dirname, '../localization'),
 	resourcecompiler: path.join(settings.dota, 'bin/win64/resourcecompiler.exe'),
-	addon_game: path.join(settings.dota, 'game/dota_addons/angelarenablackstar'),
-	addon_content: path.join(settings.dota, 'content/dota_addons/angelarenablackstar'),
+	addon_game: path.join(settings.dota, 'game/dota_addons', settings.name),
+	addon_content: path.join(settings.dota, 'content/dota_addons', settings.name),
 };
 
 const gulp = require('gulp'),
@@ -45,13 +45,13 @@ gulp.task('maps', () =>
 
 // L10n
 gulp.task('localization', () =>
-	dcgt.ParseLocalesFromDirectory(paths.localization)
+	localizationBuilder.ParseLocalesFromDirectory(paths.localization)
 		.then(tokensByLanguages => {
 			return Promise.map(Object.keys(tokensByLanguages), language => {
 				let lang = {Language: language, Tokens: tokensByLanguages[language]};
 				let minified = '\ufeff' + vdf.stringify({lang}, 0);
 				return Promise.map([path.join(paths.game, 'resource/addon_' + language + '.txt'), path.join(paths.game, 'panorama/localization/addon_' + language + '.txt')], path => {
-					return fs.ensureFile(path).then(() => fs.writeFile(path, minified, 'ucs2'));
+					return fs.outputFile(path, minified, 'ucs2');
 				});
 			});
 		})
@@ -79,6 +79,7 @@ gulp.task('src_sass', () =>
 		.pipe(shouldWatch ? watch(path.join(paths.content, 'panorama_src/styles/**/*.sass')) : gutil.noop())
 		.pipe(plumber())
 		.pipe(sass())
+		.pipe(replace(/ {2}/g, ''))
 		.pipe(gulp.dest(path.join(paths.content, 'panorama/styles')))
 		//.pipe(resourcecompiler())
 		//.pipe(gulp.dest(path.join(paths.game, 'panorama/styles')))
@@ -88,6 +89,7 @@ gulp.task('src_css', () =>
 	gulp.src(path.join(paths.content, 'panorama_src/styles/**/*.css'))
 		.pipe(shouldWatch ? watch(path.join(paths.content, 'panorama_src/styles/**/*.css')) : gutil.noop())
 		.pipe(plumber())
+		.pipe(replace(/ {2}/g, ''))
 		.pipe(gulp.dest(path.join(paths.content, 'panorama/styles')))
 );
 gulp.task('panorama', ['src_sass', 'src_css']);

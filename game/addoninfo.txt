@@ -1,7 +1,7 @@
 "AddonInfo"
 {
-	"maps"          "5v5 5v5_ranked 4v4v4v4"
-	// 5v5_custom_abilities 4v4v4v4_custom_abilities
+	"version"		"1.5.5"
+	"maps"          "5v5_ranked 5v5 4v4v4v4 5v5_custom_abilities 4v4v4v4_custom_abilities"
 	"5v5"
 	{
 		"MaxPlayers"		"10"

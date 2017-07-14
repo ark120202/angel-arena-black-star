@@ -17,15 +17,18 @@ function RecieveMessage(data) {
 	//data.gold = 123;
 	if (playerID != null && !Game.IsPlayerMuted(playerID)) {
 		//var localPlayerId = Game.GetLocalPlayerID()
-		var SenderHero = GetPlayerHeroName(playerID);
-		var html = '';
 		var rootPanel = CustomChatLinesPanel || $('#SelectionChatMessages');
-		var playerColor = GetHEXPlayerColor(playerID);
-		if (SenderHero !== 'npc_dota_hero_target_dummy')
-			html = '<img src="' + TransformTextureToPath(SenderHero) + '" class="HeroIcon" style="vertical-align: top;"/> ';
-		html += data.teamonly === 1 ? '<font color="lime">[T]</font>' : '<font color="darkred">[A]</font>';
-		html += " <font color='" + playerColor + "'>" + Players.GetPlayerName(playerID).encodeHTML() + '</font>: ';
-		if (data.text != null) {
+		var html = '';
+		if (playerID !== -1) {
+			var SenderHero = GetPlayerHeroName(playerID);
+			var playerColor = GetHEXPlayerColor(playerID);
+			if (SenderHero && SenderHero !== 'npc_dota_hero_target_dummy')
+				html = '<img src="' + TransformTextureToPath(SenderHero) + '" class="HeroIcon" style="vertical-align: top;"/> ';
+			html += data.teamonly === 1 ? '<font color="lime">[T]</font>' : '<font color="darkred">[A]</font>';
+			html += " <font color='" + playerColor + "'>" + Players.GetPlayerName(playerID).encodeHTML() + '</font>: ';
+		}
+
+		if (data.text) {
 			html += AddSmiles(String(data.text).encodeHTML());
 		} else if (data.gold != null && data.player != null) {
 			html += "<img src='file://{images}/control_icons/chat_wheel_icon.png' class='ChatWheelIcon' />";
@@ -33,7 +36,7 @@ function RecieveMessage(data) {
 			localized = localized.replace('{gold}', '<font color="gold">' + FormatGold(data.gold) + '</font>');
 			localized = localized.replace('{player}', '<font color="' + GetHEXPlayerColor(data.player) + '"">' + $.Localize(GetPlayerHeroName(data.player)) + '</font>');
 			html += localized;
-		} else if (data.ability != null && data.player != null && data.unit != null) {
+		} else if (data.ability && data.player != null && data.unit) {
 			html += '<img src="file://{images}/control_icons/chat_wheel_icon.png" class="ChatWheelIcon" />';
 			var localized;
 			var cooldown = Abilities.GetCooldownTimeRemaining(data.ability);
@@ -65,16 +68,16 @@ function RecieveMessage(data) {
 			localized = localized.replace('{mana_need}', Math.round(Abilities.GetManaCost(data.ability) - Entities.GetMana(data.unit)));
 			localized = localized.replace('{player}', "<font color='" + GetHEXPlayerColor(data.player) + "'>" + $.Localize(GetPlayerHeroName(data.player)) + '</font>');
 			html += localized;
-		} else if (data.shop_item_name != null) {
+		} else if (data.shop_item_name) {
 			html += '<img src="file://{images}/control_icons/chat_wheel_icon.png" class="ChatWheelIcon" />';
 			var localized = data.boss_drop ? 'chat_message_shop_purchase_boss' : data.stock_time != null ? 'chat_message_shop_purchase_no_stock' : data.gold != null ? (data.isQuickbuy ? 'chat_message_shop_purchase_quickbuy_no_gold' : 'chat_message_shop_purchase_no_gold') : (data.isQuickbuy ? 'chat_message_shop_purchase_quickbuy' : 'chat_message_shop_purchase');
-			
+
 			localized = $.Localize(localized);
 			localized = localized.replace('{item_name}', $.Localize('DOTA_Tooltip_ability_' + data.shop_item_name));
 			localized = localized.replace('{gold}', data.gold);
 			localized = localized.replace('{stock_time}', data.stock_time);
 			html += localized;
-		} else if (data.level != null) {
+		} else if (data.level) {
 			html += '<img src="file://{images}/control_icons/chat_wheel_icon.png" class="ChatWheelIcon" />';
 			var localized = ((data.xpToNextLevel == null && !data.isNeutral) ? 'chat_message_level_side_capped' : 'chat_message_level_side');
 			var unitSide = data.unit === Players.GetPlayerHeroEntityIndex(playerID) ? 'self' : Entities.GetTeamNumber(data.unit) === Players.GetTeam(playerID) ? 'ally' : 'enemy';
@@ -86,6 +89,13 @@ function RecieveMessage(data) {
 			localized = localized.replace('{xp}', data.xpToNextLevel);
 			localized = localized.replace('{player}', "<font color='" + (data.player === -1 ? '#FFFFFF' : GetHEXPlayerColor(data.player)) + "'>" + $.Localize(GetHeroName(data.unit)) + '</font>');
 			html += localized;
+		} else if (data.localizable) {
+			var localized = $.Localize(data.localizable);
+			if (data.variables) for (var k in data.variables) {
+				localized = localized.replace(k, $.Localize(data.variables[k]));
+			}
+			if (data.player != null) localized = localized.replace('{player}', "<font color='" + (data.player === -1 ? '#FFFFFF' : GetHEXPlayerColor(data.player)) + "'>" + $.Localize(Players.GetPlayerName(data.player)) + '</font>');
+			html += localized;
 		}
 
 		var lastLine = rootPanel.GetChild(0);
@@ -96,11 +106,26 @@ function RecieveMessage(data) {
 		$.Schedule(7.5, function() {
 			msgBox.AddClass('Expired');
 		});
-		if (lastLine != null) {
-			rootPanel.MoveChildBefore(msgBox, lastLine);
-		}
+		if (lastLine) rootPanel.MoveChildBefore(msgBox, lastLine);
 		msgBox.text = html;
 	}
+}
+
+function RedirectMessage(label) {
+	var lastLine = CustomChatLinesPanel.GetChild(0);
+	label.style.transform = 'scaleY(-1)';
+	label.SetParent(CustomChatLinesPanel);
+	label.RemoveClass('Expired');
+	$.Schedule(7.5, function() {
+		label.AddClass('Expired');
+	});
+	if (lastLine) CustomChatLinesPanel.MoveChildBefore(label, lastLine);
+	/*
+		RecieveMessage({
+			playerId: -1,
+			text: label.text
+		});
+	*/
 }
 
 var twitchRegExp = new RegExp('\\b(' + escapeRegExp(Object.keys(twitchSmileMap).join('|')) + ')\\b', 'g');

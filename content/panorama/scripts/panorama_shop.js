@@ -48,6 +48,7 @@ function SearchItems() {
 					}
 				}
 			}
+
 			FoundItems.sort(function(x1, x2) {
 				return ItemData[x1].cost - ItemData[x2].cost;
 			});
@@ -97,7 +98,7 @@ function FillShopTable(panel, shopData) {
 		_.each(shopData[groupName], function(itemName) {
 			var itemPanel = $.CreatePanel('Panel', groupPanel, groupPanel.id + '_item_' + itemName);
 			SnippetCreate_SmallItem(itemPanel, itemName);
-				//groupPanel.AddClass("ShopItemGroup")
+			//groupPanel.AddClass("ShopItemGroup")
 		});
 	}
 }
@@ -294,7 +295,7 @@ function LoadItemsFromTable(panorama_shop_data) {
 function UpdateSmallItem(panel, gold) {
 	try {
 		var notpurchasable = !ItemData[panel.itemName].purchasable;
-		panel.SetHasClass('CanBuy', GetRemainingPrice(panel.itemName, {}) <= (gold || PlayerTables.GetTableValue('arena', 'gold')[Game.GetLocalPlayerID()]) || notpurchasable);
+		panel.SetHasClass('CanBuy', GetRemainingPrice(panel.itemName, {}) <= (gold || PlayerTables.GetTableValue('gold', Game.GetLocalPlayerID())) || notpurchasable);
 		panel.SetHasClass('NotPurchasableItem', notpurchasable);
 		if (ItemStocks[panel.itemName] != null) {
 			var CurrentTime = Game.GetGameTime();
@@ -310,6 +311,7 @@ function UpdateSmallItem(panel, gold) {
 			}
 		}
 	} catch (err) {
+		console.error(err);
 		var index = SmallItems.indexOf(panel);
 		if (index > -1)
 			SmallItems.splice(index, 1);
@@ -526,12 +528,12 @@ function SetItemStock(item, ItemStock) {
 		if ($('#ShopBase').BHasClass('ShopBaseOpen')) ShowItemInShop(data);
 	});
 	DynamicSubscribePTListener('panorama_shop_data', function(tableName, changesObject, deletionsObject) {
-		if (changesObject.ShopList != null) {
+		if (changesObject.ShopList) {
 			LoadItemsFromTable(changesObject);
 			SetQuickbuyStickyItem('item_shard_level');
 		};
 		var stocksChanges = changesObject['ItemStocks_team' + Players.GetTeam(Game.GetLocalPlayerID())];
-		if (stocksChanges != null) {
+		if (stocksChanges) {
 			for (var item in stocksChanges) {
 				var ItemStock = stocksChanges[item];
 				SetItemStock(item, ItemStock);

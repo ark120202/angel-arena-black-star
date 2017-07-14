@@ -2,21 +2,25 @@ npc_arena_hero_zen_gehraz_hype: 'Коварный и неуловимый Зен
 npc_arena_hero_zen_gehraz_bio: 'Многомерная сущность Зена стремится к знаниям, стремится к познанию бытия. По крайней мере, такой задачей он мотивирует свои исследования пространственно-временного континуума. На самом деле, все куда банальнее:  Зен стремится превзойти Старгейзера. Он не всегда был таким: когда-то давно он был существом из рассы Иш''Кафэля (Dark Seer). Он был выдающейся личностью, и его родное измерение стало ему слишком тесным. Потому Зен разработал способ дробления своей сущности на несколько частей, чтобы сделать возможным ее существование сразу в нескольких измерениях. Так он обрел невиданное доселе могущество. Благодаря этому он мог расширить область своих исследований и их скорость, а также поднять свой боевой потенциал. Многие века он гонится за Старгейзером, жаждя узнать секрет его способностей. В этой погоне он потерял себя и окончательно растворился в своих копиях. Его желание превзойти Старгейзера превратилось в одержимость, и он ни перед чем не остановится для достижения своих целей.'
 
 DOTA_Tooltip_ability_zen_gehraz_divine_intervention_Description: 'Прерывает действия цели, а также опутывает ее сетью, не давая двигаться и телепортироваться. Опутывание будет длиться пока способность применяется.'
+DOTA_Tooltip_ability_zen_gehraz_divine_intervention_Lore: Способность, специально разработанная для удержания Старгейзер в одной точке пространства. 
 DOTA_Tooltip_ability_zen_gehraz_divine_intervention_channel_time: 'МАКС. ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_modifier_zen_gehraz_divine_intervention_Description: 'Опутан сетью, не может двигаться и телепортироваться'
 
 DOTA_Tooltip_ability_zen_gehraz_mystic_twister_Description: Наносит урон по области в течении времени и раскрывает невидимых юнитов в области применения. Способность будет длиться пока способность применяется.
+DOTA_Tooltip_ability_zen_gehraz_mystic_twister_Lore: Облако частиц, разлагающих физические тела на их элементраные составляющие.
 DOTA_Tooltip_ability_zen_gehraz_mystic_twister_channel_time: 'МАКС. ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_zen_gehraz_mystic_twister_damage_per_second: 'УРОН В СЕКУНДУ:'
 DOTA_Tooltip_ability_zen_gehraz_mystic_twister_radius: 'ОБЛАСТЬ ПРИМЕНЕИЯ:'
 
 DOTA_Tooltip_ability_zen_gehraz_vow_of_silence_Description: 'Когда противник в радиусе %radius% применяет способность, то он будет обезмолвен на %debuff_duration% секунд, а все остальные юниты в радиусе будут оглушены. Эффект будет длиться пока способность применяется.'
+DOTA_Tooltip_ability_zen_gehraz_vow_of_silence_Lore: Мощное электромагнитое излучение, блокирующее способности магические способности живых существ.
 DOTA_Tooltip_ability_zen_gehraz_vow_of_silence_channel_time: 'МАКС. ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_zen_gehraz_vow_of_silence_debuff_duration: 'ДЛИТЕЛЬНОСТЬ ОБЕЗМОЛВИЯ / ОГЛУШЕНИЯ:'
 DOTA_Tooltip_ability_zen_gehraz_vow_of_silence_radius: 'РАДИУС:'
 DOTA_Tooltip_modifier_zen_gehraz_vow_of_silence_effect_Description: 'При использовании способность получит обезмолвие, а юниты рядом будут оглушены.'
 
 DOTA_Tooltip_ability_zen_gehraz_superposition_Description: 'Телепортирует вас в любую точку в радиусе не более %distance%, оставляя позади иллюзию самого себя. Если способность прерывает любую другую способность, то иллюзия продолжит применять ту же спозобность за вас, но она не может быть прервана. Имеет %max_charges% зарядов, восстанавливая заряд каждые %charge_replenish_time% секунд. Способности применяемые иллюзиями имеют полную силу.'
+DOTA_Tooltip_ability_zen_gehraz_superposition_Lore: Сущность Зена раскалывается на бесконечное количество копий в течении вечности, чтобы полностью изучить Вселенную.
 DOTA_Tooltip_ability_zen_gehraz_superposition_aghanim_description: Увеличивает максимальное число зарядов.
 DOTA_Tooltip_ability_zen_gehraz_superposition_distance: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_zen_gehraz_superposition_max_charges: 'МАКС. ЗАРЯДОВ:'

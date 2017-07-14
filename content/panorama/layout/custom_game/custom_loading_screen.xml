@@ -15,6 +15,13 @@
 				<Panel id="OptionVotingVariants" />
 			</Panel>
 		</snippet>
+		<snippet name="TopPlayer">
+			<Panel class="TopPlayer">
+				<DOTAAvatarImage id="PlayerAvatar" />
+				<DOTAUserName id="PlayerName" />
+				<Label id="PlayerRating" text="{d:rating}"/>
+			</Panel>
+		</snippet>
 	</snippets>
 	<Panel class="AddonLoadingRoot">
 		<!-- Precache -->
@@ -102,6 +109,10 @@
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_sai.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_sai.png" />
 
+			<Image src="file://{images}/heroes/npc_arena_hero_saitama.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_saitama.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_saitama.png" />
+
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_central.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l1_v1.png" />
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l1_v2.png" />
@@ -123,7 +134,14 @@
 		</Panel>
 		<Panel id="afterload_panel" hittest="true">
 			<Panel hittest="false" id="GCColumn" >
-				<Panel id="LocalPlayerData" />
+				<!-- <Panel id="LocalPlayerData" /> -->
+				<Image id="AdsBanner" onactivate="OnAdsClicked()" />
+				<Panel id="TopPlayers">
+					<Label id="TopPlayersTitle" text="#ranked_top_players" />
+					<Panel class="Spinner" />
+					<Panel id="TopPlayersList" />
+					<Label id="TopPlayersMore" text="#ranked_top_more" onactivate="ExternalBrowserGoToURL(https://dota-aabs.com/tops/rating)" allowtextselection="false" />
+				</Panel>
 				<Panel id="OptionVotings" hittest="true" />
 			</Panel>
 			<Panel id="TeamSelectionColumn" />

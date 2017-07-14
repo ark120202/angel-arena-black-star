@@ -1,5 +1,5 @@
 BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
-	zuus_static_field = 15,
+	zuus_static_field = 10,
 	item_blade_mail = 0,
 	centaur_return = 0,
 	enigma_midnight_pulse = 0,
@@ -16,11 +16,15 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	centaur_hoof_stomp = 40,
 	centaur_double_edge = 40,
 	kunkka_ghostship = 40,
+	kunkka_torrent = 40,
 	slark_dark_pact = 40,
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,
 	antimage_mana_void_arena = 0,
-	ancient_apparition_ice_blast = 0
+	ancient_apparition_ice_blast = 0,
+	doom_bringer_infernal_blade = 10,
+	winter_wyvern_arctic_burn = 10,
+	freya_ice_cage = 10
 }
 
 local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
@@ -137,6 +141,25 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			return 1 - pct
 		end
 	},
+	modifier_sai_release_of_forge = {
+
+		condition = function(_, _, inflictor)
+			return not inflictor
+		end,
+		multiplier = function(attacker, victim, _, damage, damagetype)
+			local ability = attacker:FindAbilityByName("sai_release_of_forge")
+			local pct = ability:GetSpecialValueFor("pure_damage_pct") * 0.01
+			ApplyDamage({
+				victim = victim,
+				attacker = attacker,
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
+				damage_type = ability:GetAbilityDamageType(),
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+				ability = ability
+			})
+			return 1 - pct
+		end
+	},
 	modifier_anakim_wisps = {
 		condition = function(_, _, inflictor)
 			return not inflictor
@@ -205,7 +228,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 						})
 					end
 					victim:SpendMana(mana_needed, medusa_mana_shield_arena)
-					local particleName = "particles/arena/units/heroes/hero_sara/fragment_of_armor_impact.vpcf"
+					local particleName = "particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
 					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
 					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
 					ParticleManager:SetParticleControl(particle, 1, Vector(mana_needed,0,0))

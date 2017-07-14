@@ -13,6 +13,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"medusa_split_shot"
 		"MaxLevel"						"7"
+		"RequiredLevel"					"3"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -34,12 +35,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"arrow_count"				"1 2 3 4 6 9 12"
+				"arrow_count"				"1 2 3 4 5 8 14"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"total_arrow_count"			"1 2 3 4 6 9 12"
+				"total_arrow_count"			"1 2 3 4 5 8 14"
 			}
 		}
 
@@ -244,12 +245,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stone_chance_pct"			"3.5 4 4.5 5 6 7 8"
+				"stone_chance_pct"			"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stone_duration"			"0.8 0.9 1 1.05 1.1 1.15 1.2"
+				"stone_duration"			"1.0"
 			}
 			"03"
 			{

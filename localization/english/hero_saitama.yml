@@ -1,0 +1,40 @@
+npc_arena_hero_saitama: Saitama
+npc_arena_hero_saitama_hype: 'Appearance is deceptive. Passing through brutal training, Saitama destroys the limit of his strength, which allows him to multiply them. Do you have enough will to go through them?'
+npc_arena_hero_saitama_bio: 'According to Saitama, back in his childhood, he spent a lot of time watching the superhero shows, and he dreamed that one day he could become the same hero like them. Saitama was an ordinary office plankton, which was constantly built in to work, but was refused. Once, after another interview, Saitama was returning home from one of the streets when he heard people shouting that there was a danger ahead and that everyone was saving, but he was moving on and was meeting a huge monster crab. «I wanted to become a superhero who makes such stamped villains like you ... With one stroke.» He angrily says that he has finished his job search and is distracting the crab himself, Krabinator only beats Saitama several times, saying that he is not a hero, but only a budget, and that he has no chance against him, but it only cost Krabinator to relax, As Saitama grabs one by the eye and pulls it out, thereby defeating the crab monster. After this battle Saitama decides to become a mighty superhero, he starts a daily training schedule, which consisted of 100 push-ups, 100 sit-ups and 10 km of running every day. He also ate three meals a day, but only bananas as tomorrow, and also do not use air conditioning to strengthen his moral resistance. These daily activities were very cruel and caused him painful pains, such as muscle pains and internal bleeding. However, Saitama did not give up and continued training day after day to become a superhero.'
+
+DOTA_Tooltip_ability_saitama_push_ups: Push-ups
+DOTA_Tooltip_ability_saitama_push_ups_Description: 'Saitama does a hundred push-ups, becoming stronger. At the end of the ability, Saitama permanently gains some strength and receives %stacks_amount% limiter stack.'
+DOTA_Tooltip_ability_saitama_push_ups_Lore: One hundred of push-ups...
+DOTA_Tooltip_ability_saitama_push_ups_bonus_strength: 'BONUS STRENGTH:'
+
+DOTA_Tooltip_ability_saitama_squats: Squats
+DOTA_Tooltip_ability_saitama_squats_Description: 'Saitama does a hundred squats, becoming stronger. At the end of the ability, Saitama permanently gains some strength and receives %stacks_amount% limiter stack. '
+DOTA_Tooltip_ability_saitama_squats_Lore: One hundred of squats...
+DOTA_Tooltip_ability_saitama_squats_bonus_strength: 'BONUS STRENGTH:'
+
+DOTA_Tooltip_ability_saitama_press: Press
+DOTA_Tooltip_ability_saitama_press_Description: 'Saitama does a hundred exercises on the press, becoming stronger. At the end of the ability, Saitama permanently gains some strength and receives %stacks_amount% limiter stack.'
+DOTA_Tooltip_ability_saitama_press_Lore: One hundred on press...
+DOTA_Tooltip_ability_saitama_press_bonus_strength: 'BONUS STRENGTH:'
+
+DOTA_Tooltip_ability_saitama_jogging: Jogging
+DOTA_Tooltip_ability_saitama_jogging_Description: 'When Saitama runs, someone is a distance, he gets %bonus_strength% strength and %stacks_amount% of limiter stakes.'
+DOTA_Tooltip_ability_saitama_jogging_range: 'DISTANCE:'
+DOTA_Tooltip_ability_saitama_jogging_Lore: And a ten-kilometer run...
+DOTA_Tooltip_modifier_saitama_jogging: Jogging
+DOTA_Tooltip_modifier_saitama_jogging_Description: Each 100%% (now %dMODIFIER_PROPERTY_TOOLTIP%%%) Saitama gains Jogging ability effect.
+
+DOTA_Tooltip_ability_saitama_serios_punch: Serious Punch
+DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Saitama is putting a bit more effort into the attack, pusing target and dealing it lots of damage, based on his current attack damage. Each Limiter stack increases damage multiplier by %damage_multiplier_per_stack_pct%%%. Knockback duration and range depends on dealt damage.'
+DOTA_Tooltip_ability_saitama_serios_punch_Lore: Let me become a bit more serious, so that you put all of yourself into this battle...
+DOTA_Tooltip_ability_saitama_serios_punch_base_damage_multiplier_pct: '%BASE DAMAGE MULTIPLIER:'
+DOTA_Tooltip_ability_saitama_serios_punch_damage_multiplier_per_stack_pct: '%BONUS DAMAGE MULTIPLIER PER STACK:'
+DOTA_Tooltip_ability_saitama_serios_punch_knockback_duration_step: 'DAMAGE PER KNOCKBACK SECOND:'
+
+DOTA_Tooltip_ability_saitama_limiter: Limiter
+DOTA_Tooltip_ability_saitama_limiter_Description: 'Prove that you have enough will to destroy your limiter! Each limiter stack permanently increases Saitama''s strength by some percentage of it''s current amount, consuming %manacost_pct%%% of Saitama''s max mana. Also Saitama gains a stack for each killed enemy hero. At death, %loss_stacks_pct%%% stacks will be lost.'
+DOTA_Tooltip_ability_saitama_limiter_bonus_strength_pct: '%PERCENT OF STRENGTH:'
+DOTA_Tooltip_ability_saitama_limiter_aghanim_description: Adds a new ability - Serious Punch
+DOTA_Tooltip_ability_saitama_limiter_Lore: EVERY GOD'S DAY!!
+Dota_Tooltip_modifier_saitama_limiter: Limiter
+Dota_Tooltip_modifier_saitama_limiter_Description: Saitama gains stacks while exercising and killing enemy heroes. Each Limiter stack affects Limiter and Serious Punch abilities

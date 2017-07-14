@@ -105,11 +105,11 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange"				"600 650 700 750 800 850 900"
-		"AbilityCastPoint"				"1.2"
+		"AbilityCastPoint"				"0.6 0.6 0.6 0.6 0.6 0.5 0.4"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCooldown"				"8.0"
 		"AbilityManaCost"				"100 140 180 220 260 300 340"
-		"AbilityDamage"					"150 250 350 450 550 650 750"
+		"AbilityDamage"					"150 225 300 375 450 525 600"
 		"AOERadius"						"%radius"
 		"LevelsBetweenUpgrades"	"3"
 
@@ -213,7 +213,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"health_regen"	"2.0 4.0 6.0 8.0 12.0 16.0 20.0"
+				"health_regen"	"2 4 6 8 12 16 20"
 			}
 			"02"
 			{
@@ -237,12 +237,18 @@
 			"modifier_anakim_divine_gift"
 			{
 				"Passive"				"1"
-				"IsPurgable"			"0"
-				"Aura"					"modifier_anakim_divine_gift"
+				"IsHidden"				"1"
+
+				"Aura"					"modifier_anakim_divine_gift_effect"
 				"Aura_Radius"			"%global_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
-				"Aura_ApplyToCaster"	"0"
+				"Aura_ApplyToCaster"	"1"
+			}
+
+			"modifier_anakim_divine_gift_effect"
+			{
+				"IsPurgable"			"0"
 
 				"Properties"
 				{
@@ -265,8 +271,7 @@
 		"AbilityManaCost"				"100 200 300 400 500 600 700"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-
-		"LevelsBetweenUpgrades"	"15"
+		"LevelsBetweenUpgrades"			"15"
 
 		"AbilitySpecial"
 		{
@@ -382,22 +387,4 @@
 			}
 		}
 	}
- //
- //	"anakim_stats_heroes"
- //	{
- //		"BaseClass"             		"ability_datadriven"
- //		"AbilityTextureName"			"arena/anakim_stats_heroes"
- //		"MaxLevel" 						"7"
- //		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
- //		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
- //
- //		"AbilitySpecial"
- //		{
- //			"01"
- //			{
- //				"var_type"			"FIELD_INTEGER"
- //				"stats_pct"			"30.0 40.0 50.0 60.0 70.0 80.0 95.0"
- //			}
- //		}
- //	}
 }

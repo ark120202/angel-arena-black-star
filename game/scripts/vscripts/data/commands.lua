@@ -148,7 +148,7 @@ CHAT_COMMANDS = {
 					playerinfo[pID] = {
 						nick = PlayerResource:GetPlayerName(pID),
 						team = PlayerResource:GetTeam(pID),
-						steamID32 = PlayerResource:GetSteamAccountID(pID),
+						steamid = PlayerResource:GetRealSteamID(pID),
 						hero = "nil",
 					}
 					local tempHero = PlayerResource:GetSelectedHeroEntity(pID)
@@ -246,6 +246,15 @@ CHAT_COMMANDS = {
 					source = source,
 					duration = duration
 				})
+			end
+		end
+	},
+	["end"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
+		f = function(args, hero, playerID)
+			local team = tonumber(args[1])
+			if team then
+				GameMode:OnKillGoalReached(team)
 			end
 		end
 	},

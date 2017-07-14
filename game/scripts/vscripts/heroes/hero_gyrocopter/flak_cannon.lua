@@ -5,7 +5,7 @@ function ApplyModifier(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local stacks = ability:GetLevelSpecialValueFor( "max_attacks", ability:GetLevel() - 1 )
-	
+
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_gyrocopter_flak_cannon_arena", {})
 	caster:SetModifierStackCount("modifier_gyrocopter_flak_cannon_arena", ability, stacks)
 end
@@ -18,7 +18,14 @@ function DealDamage(keys)
 	local target = keys.target
 	local ability = keys.ability
 	local damage = caster:GetAverageTrueAttackDamage(target)
-	ApplyDamage({victim = target, attacker = caster, damage = damage, damage_type = ability:GetAbilityDamageType(), ability = ability})
+	ApplyDamage({
+		victim = target,
+		attacker = caster,
+		damage = damage,
+		damage_type = ability:GetAbilityDamageType(),
+		damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+		ability = ability
+	})
 end
 
 --[[Author: YOLOSPAGHETTI
@@ -29,7 +36,7 @@ function CreateProjectiles(keys)
 	local target = keys.target
 	local ability = keys.ability
 	local stacks = caster:GetModifierStackCount("modifier_gyrocopter_flak_cannon_arena", ability)
-	
+
 	ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_suicide_base.vpcf", PATTACH_ABSORIGIN, target)
 	ApplyDamage({victim = target, attacker = caster, damage = ability:GetLevelSpecialValueFor("postattack_magic_damage", ability:GetLevel() - 1), damage_type = DAMAGE_TYPE_MAGICAL, ability = ability})
 	if stacks == 1 then
@@ -39,7 +46,7 @@ function CreateProjectiles(keys)
 	end
 	local split_shot_targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
 	for _,v in ipairs(split_shot_targets) do
-		if v ~= attack_target and not v:IsAttackImmune() then
+		if v ~= target and not v:IsAttackImmune() then
 			local projectile_info = GenerateAttackProjectile(caster, ability)
 			projectile_info["Target"] = v
 			projectile_info["iMoveSpeed"] = ability:GetLevelSpecialValueFor("projectile_speed", ability:GetLevel() - 1)

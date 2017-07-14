@@ -73,45 +73,6 @@
 		}
 	}
 
-	"npc_dota_arena_statue"
-	{
-		// General
-		//
-		"BaseClass"					"npc_dota_building"
-		"Model"						"models/items/courier/mok/mok.vmdl"
-		"ModelScale"				"2"
-		"Level"						"50"
-		"IsAncient"					"1"
-
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"arena_statue"
-		"Ability2"					""
-		"Ability3"					""
-		"Ability4"					""
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"0"		// Speed
-		"MovementTurnRate"			"0"		// Turning rate.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"	"100000"	// Base health.
-		"StatusHealthRegen"	"0"	// Health regeneration rate.
-		"StatusMana"	"0"	// Base mana.
-		"StatusManaRegen"	"0"	// Mana regeneration rate.
-	}
-
 	"npc_arena_healer"
 	{
 		"BaseClass"					"npc_dota_healer"

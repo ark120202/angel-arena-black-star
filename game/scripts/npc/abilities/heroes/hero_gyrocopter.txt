@@ -377,6 +377,22 @@
 
 		"Modifiers"
 		{
+			"modifier_gyrocopter_flak_cannon_arena_scepter"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"ThinkInterval"		"%fire_rate_scepter"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_gyrocopter/flak_cannon.lua"
+						"Function"		"ThinkScepter"
+					}
+				}
+			}
+
 			"modifier_gyrocopter_flak_cannon_arena"
 			{
 				"OnAttack"
@@ -391,46 +407,6 @@
 					{
 						"ScriptFile"	"heroes/hero_gyrocopter/flak_cannon.lua"
 						"Function"		"CreateProjectiles"
-					}
-
-					"ActOnTargets"
-					{
-						"Target"
-						{
-							"Center"  				"CASTER"
-							"Radius" 				"%radius"
-							"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-						}
-
-						"Action"
-						{
-							"TrackingProjectile"
-							{
-								"Target"           	"TARGET"
-								"EffectName"       	"particles/units/heroes/hero_gyrocopter/gyro_base_attack.vpcf"
-								"Dodgeable"        	"1"
-								"ProvidesVision"   	"0"
-								"MoveSpeed"        	"%projectile_speed"
-								"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
-								"TargetTypes"    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
-						}
-					}
-				}
-			}
-
-			"modifier_gyrocopter_flak_cannon_scepter"
-			{
-				"IsHidden"			"1"
-				"Passive"			"1"
-				"ThinkInterval"		"%fire_rate_scepter"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_gyrocopter/flak_cannon.lua"
-						"Function"		"ThinkScepter"
 					}
 				}
 			}

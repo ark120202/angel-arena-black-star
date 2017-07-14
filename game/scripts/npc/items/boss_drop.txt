@@ -167,12 +167,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_day_vision"			"-500"
+				"bonus_day_vision"			"250"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_night_vision"		"1500"
+				"bonus_night_vision"		"200"
 			}
 		}
 
@@ -206,11 +206,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityDamage"					"4000"
-		"AbilityManaCost"				"175"
-		"AbilityCooldown"				"60"
-		"AbilityCastPoint"				"0.2"
-		"AbilityCastRange"				"3000"
+		"AbilityDamage"					"600"
+		"AbilityManaCost"				"300"
+		"AbilityCooldown"				"15"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"2000"
 
 		"precache"
 		{
@@ -228,7 +228,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"spell_amp_pct"				"30"
+				"spell_amp_pct"				"15"
 			}
 			"03"
 			{
@@ -307,7 +307,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_range"	"120"
+				"bonus_attack_range"	"50"
 			}
 		}
 

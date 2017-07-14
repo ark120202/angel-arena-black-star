@@ -8,8 +8,8 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange"				"500"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"AbilityCooldown"				"20 18 16 14 12 10 8"
-		"AbilityManaCost"				"50 80 110 140 170 200 230"
+		"AbilityCooldown"				"14"
+		"AbilityManaCost"				"50 60 70 80 90 100 110"
 		"AbilityCastPoint"				"0.15"
 		"MaxLevel"						"7"
 
@@ -18,7 +18,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"base_damage"		"100 200 300 400 500 600 700"
+				"base_damage"		"100 180 260 340 420 500 580"
 			}
 			"02"
 			{
@@ -33,7 +33,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"int_to_radius_pct"	"0 30 60 90 120 150 180"
+				"int_to_radius_pct"	"0 15 30 45 60 75 90"
 			}
 			"05"
 			{
@@ -68,9 +68,9 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"arena/stargazer_warp"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityCooldown"				"32 28 24 20 16 12 10"
+		"AbilityCooldown"				"24 22 20 18 16 14 12"
 		"AbilityManaCost"				"135 110 85 60 35 10 0"
-		"AbilityCastPoint"				"1.2 1.0 0.8 0.6 0.4 0.2 0.0"
+		"AbilityCastPoint"				"0.6 0.5 0.4 0.3 0.2 0.1 0"
 		"MaxLevel"						"7"
 
 		"precache"
@@ -84,7 +84,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"base_range"		"700"
+				"base_range"		"500"
 			}
 			"02"
 			{
@@ -133,12 +133,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"base_reflection" 			"2 4 6 8 10 12 14"
+				"base_reflection" 			"10 12 14 16 18 20 22"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"str_to_reflection_pct"		"0.3 0.5 0.8 1.2 1.5 2.0 2.5"
+				"str_to_reflection_pct"		"0.6 0.7 0.8 0.9 1.0 1.1 1.2"
 			}
 		}
 
@@ -172,7 +172,7 @@
 		"BaseClass"             		"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityCooldown"				"90 85 80 75 70 65 60"
+		"AbilityCooldown"				"90"
 		"AbilityTextureName"			"arena/stargazer_cosmic_countdown"
 		"MaxLevel"						"7"
 
@@ -181,7 +181,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stats_per_cycle"		"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
+				"stats_per_cycle"		"2 3 4 5 6 7 8"
 			}
 		}
 

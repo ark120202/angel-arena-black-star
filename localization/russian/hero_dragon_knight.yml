@@ -1,4 +1,5 @@
 DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena_Description: 'Извергает огненное дыхание на вражеских юнитов в линии перед Dragon Knight, поджигая их, уменьшая урон от их атак, замедляя, увеличивая шанс на промах и нанося им урон в течении вресени.'
+DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena_Lore: Визитная карточка рыцаря Дейвиона - огненное дыхание, жертвам которого не припомнит счета даже сам дракон Слайрак. 
 DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena_aghanim_description: Dragon Knight будет извергать огненное дыхание во все направления вокруг него.
 DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena_range: 'РАДИУС:'
 DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena_debuff_dmg_reduction_pct: '%СНИЖЕНИЕ УРОНА:'
@@ -9,11 +10,13 @@ DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena_debuff_duration: 'ДЛИТ
 DOTA_Tooltip_modifier_dragon_knight_breathe_fire_arena_debuff_Description: 'ВЫ ГОРИТЕ! Вы промахиваетесь в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% атак, базовый урон уменьшен на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%, скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, периодически получает урон.'
 
 DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_Description: 'Dragon Knight поражает своим щитом врага в радиусе ближнего боя, оглушая его, нанося урон и, после небольшой задержки, ударяя юнита несколько раз. На эти удары воздействуют все модификаторы атаки и критический урон. Когда рыцарь находится в форме дракона, он может применять заклинание с расстояния в 400 единиц.'
+DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_Lore: Комбинируя способности дракона и навыки рыцаря, Дейвион становится опасным противником в ближнем бою. 
 DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_stun_duration: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
 DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_attack_amount: 'КОЛ-ВО АТАК:'
 DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_attack_delay: 'ЗАДЕРЖКА АТАК:'
 
 DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_Description: 'Текущая в жилах Dragon Knight кровь дракона улучшает его регенерацию здоровья, броню и сопротивление магическому урону. Также, когда Dragon Knight атакуют, атакующий может получить разоружение. Эта способность имеет время перезарядки.'
+DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_Lore: Кровь Слайрака все еще течет в венах Дейвиона, делая его намного выносливее других рыцарей. 
 DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_aghanim_description: 'Атакующий получает Hex, вместо разоружения.'
 DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_bonus_health_regen: 'РЕГЕН ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_bonus_armor: 'БРОНЯ:'
@@ -33,6 +36,7 @@ DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_arena_Description: |-
   [5] Двухголовый Дракон - Атаки имеют шанс %breath_chance%%% запустить волну огня и льда, наносящую %breath_damage% урона юнитам, задевшим её, и понижает их скорость передвижения на %breath_debuff_slow_pct%%% на %breath_debuff_duration% сек.
   [6] Ледяной Дракон - Каждая атака понижает скорость передвижения противника на %cold_bonus_movement_speed_pct%%%, скорость атаки на %cold_bonus_attack_speed% и нанаосит %cold_damage_pct%%% от текущего здоровья юнита в виде магического урона в течении %cold_duration% секунд.
   [7] Король Драконов - Dragon Knight создаёт %illusion_amount% иллюзий случайных драконов. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
+DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_arena_Lore: Сила дракона, дремлющая внутри Дейвиона, вырывается наружу, совмещая мощь легендарного рыцаря с могуществом легендарного дракона.
 DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_poison: Poison
 DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_poison_Description: Вы периодически получаете урон.
 DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_cold: Cold

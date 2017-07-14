@@ -1,126 +1,132 @@
-LVL SHARD:
-	Cost 1250 => 1000
-TOME OF KNOWLEDGE:
-	InitialStockTime 600 => 150
-	StockTime 60 => 60
-	Xp bonus 500 => 250
-	Xp per use 135 => 100
-CLARITY:
-	Total Mana 190 => 370
-	Buff Duration: 50 => 35
-SCROLL TP:
-	ManaCost: 75 => 25
-	Cooldown: 80 => 45.0
-WARD OBS:
-	Cost 150 => 70
-FLASK:
-	Buff Duration: 8 => 12
-	Total health 400 => 1200
-GEM:
-	Killable 0 => 1
-TALON:
-	Cooldown: 16 => 10.0
-	Damage: bonus Rangerd 40 => 30
-CHARON:
-	Active health regen percent per second 5.75 => 4.25
-	Health regen percent per second 6.25 => 5.25
-	Duration: 4 => 3.0
-	Cooldown: melee 2.5 => 3.5
-	Cooldown: Rangerd tooltip 4 => 5
-	Cooldown: 25 => 22
-SMOKE:
-	StockMax 3 => 6
-	StockTime 660 => 60
-POOR MAN SHIELD:
-	Block chance hero 80 => 65
-	Block chance 25 => 51
-ARCANE BOOTS:
-	CastRanger: 900 => 1000
-	Bonus movement 50 => 60
-	Replenish amount 135 => 250
-	Bonus mana 250 => 350
-MOM:
-	Cooldown: 12 => 15
-TRANQUIL:
-	Removed wind lace and added ring of protection
-	Cooldown: 13 => 6
-	Bonus Armor 0 => 5
-	Broken movement Speed 65 => 75
-	Bonus health regen 14 => 25
-ANGEL WINGS:
-	Cooldown: 22 => 18
-	Bonus Attack Ranger 325 => 25
-	Steam footgear
-	Cooldown: 12 => 14
-	Pass Duration: 5.5 => 3.5
-	Bonus movement Speed 55 => 60
-	Pass movement Speed 20 => 25
-	ManaCost: 5 => 50
-SOUL RING:
-	Cooldown: 30 => 20.0
-	Mana regen 50 => 75
-	Health regen 3 => 10
-	Duration: 10 => 12
-	Mana gain 150 => 350
-	Health sacrifice 150 => 200
-SACRED BLADE MALE:
-	Buff Duration: 3.2 => 1.5
-	Bonus hp regen pct 2.4 => 1
-	HOLY KNIGHT SHIELD
-	Buff Duration: 3 => 1
-	Buff chance 20 => 15
-	Bonus Armor 25 => 10
-BOTTLE:
-	ItemInitialStockTime 150.0 => 0
-ECHO SABRE:
-	Reworked passive ability and now the double attacks apply for 1 second -100% movement slow and -100 attack speed slow instead of root and disarm
-ELEMENTAL FURY:
-	Now not require Moon Dust for purchase
- 				TALENTS:
-Rebalanced talent's cost, groups, max levels of all talents. Reworked require lvl for each group and now for
-1-st group is available at 5 lvl (old => 2)
-2-nd => 10
-3-rd => 15
-4 => 20
-5 => 25
-6 => 30
-7 => 35
-8 => 40
-9 => 45
-and etc.
-
-				OTHER:
-
-DUEL WinGold Base - 300 => 100,
- WinGold PerDuel - 2000 => 400,
- Kills.GoldForStreaks
- [0] = 0,
- [1] = 100 => 75
- [2] = 220 => 250
- [3] = 450 => 550
- [4] = 750 => 1250
- [5] = 3000 => 2350
- [6] = 4500 => 3330
- [7] = 7500 => 5000
- [8] = 12000 => 6500
- [9] = 18000 => 8500
- [10] = 22500 => 10000
- [11] = 30000 => 12000
- [12] = 33000 => 15000
- [13] = 39000 => 18000
- [14] = 48000 => 25000
- [15] = 60000 => 30000
- 						HEROES CHANGES:
-
-ALL HEROES CHANGED BAT => 1.7 some heroes 1.4 1.5 1.6 1.8
-
-Invoker - Invoke:
-	now have only one lvl
-	Cooldown: changed => 6
-	ManaCost: changed => 60
-	Cooldown: Scepter changed 0.1 => 0.5
-	
-SPELL AMPLIFY NOT SCALABLE:
-	huskar life break
-	ember spirit sleight of fist
-	shadow demon soul catcher
+Heroes:
+	Centaur:
+		Stampede now not scalable by spell amplify
+	Outworld Devourer:
+		Arcane Orb now not scalable by spell amplify
+	Tinker:
+		Guardian greaves now can't be rearmed
+		Tarrasque scepter now can be rearmed
+	Bounty Hunter:
+		Shuriken toss added percent damage
+	Abaddon:
+		Aphotic shield added percent damage
+	Monkey King:
+		Boundless Strike now not refreshable by coffee bean
+	Kunkka:
+		Torrent now deal 40% dmg to bosses
+	Rubick:
+		Now can't steal timbersaw's spells
+	Destroyer:
+		Body reconstruction now can refresh coffee bean
+	Dazzle:
+		Weave now can't be used on bosses
+Talents:
+	Exp bonus:
+		10/15/20/25 => 15/20/25/30
+	Gold for creep:
+		10/18/26/34 => 8/14/20/26
+	Spell amplify:
+		5/8/11/15/18/21/24/27/30 => 10/15/20/25/30/35/40
+		cost 3 => 5
+		group 4 => 7
+		max level 9 => 7
+	Respawn time reduction:
+		-10/-15/-20/-25/-30/-35/-40/-45/-50/-55 => -10/-15/-20/-25/-30/-35/-40/-45/-50/-55/-60/-65/-70/-75
+		cost 3 => 5
+		group 8 => 9
+		max level 10 => 14
+	Attack damage:
+		cost 4 => 5
+		group 9 => 7
+	Evasion:
+		group 4 => 4
+	Health bonus:
+		400/800/1200/1600/2000/2500 => 350/700/1050/1400/1750/2100/2450/2800
+		cost 2 => 3
+		group 3 => 5
+		max level 6 => 8
+	Mana:
+		400/800/1200/1600/2000/2500 => 250/500/750/1000/1250/1500
+		cost 2 => 1
+	Health regen:
+		group 2 => 3
+	Armor:
+		5/8/11/14/17/20/23/26 => 4/8/12/16/20/24/28/32
+		cost 2 => 3
+		group 3 => 5
+	Magic resist:
+		8/12/16/20/24/28/32/36 => 4/8/12/16/20/24/28/32
+		cost 2 => 3
+		group 3 => 5
+	Vision day:
+		50/100/150/200/250/300 => 100/200/300
+		cost 1 => 3
+		group 7 => 6
+		max level 6 => 3
+	Vision night:
+		50/100/150/200/250/300 => 100/200/300
+		cost 1 => 3
+		group 7 => 6
+		max level 6 => 3
+	Cooldown reduction:
+		5/7/9/11/13/15/18 => 5/7.5/10/12.5/15/17.5/20
+		group 5 => 4
+	Gold per minute:
+		240/360/480/600/720 => 180/240/300/360/420
+	XP per minute:
+		800/1000/1200/1400/1600 => 600/1000/1400/1800/2200
+	True strike:
+		group 10 => 8
+	Pugna's ward:
+		Bonus dmg per mana 2 => 0.75
+	Movespeed bonus:
+		10/13/16/19/22/25/28 => 15/17.5/20/22.5/25/27.5/30
+	Chen's Hand of God:
+		bonus heal 1000 => 15000
+		group 7 => 9
+Runes:
+	Acceleration:
+		xp multiplier 3 => 2
+	Vibration:
+		duration 25 => 20
+	Soul Steal:
+		damage heal 15 => 30
+Fixes:
+	Fixed all broken spells by valve's update
+Items:
+	Haganemushi:
+		Fixed attack speed (now bonus attack speed works)
+		Added aura of reduce armor because of soul of titan
+	Mekansm & Mekansm_2:
+		Changed requirments and cost
+		Added bonus health and mana from soul booster
+	Guardian Greaves:
+		Added bonus health
+	Titanium fruit:
+		Now gives just spell immune from magic not invulnerability
+	Refresher:
+		Coffee bean now can't be refreshed by refresher & refresher core
+Bosses:
+	Boss lvl1:
+		now can be droped 2 dark blades
+		Dark Blade1 chance changed 25 => 20%
+		Dark Blade2 chance set to 10%
+	Boss lvl2:
+		Soul of titan1 drop chance changed 40 => 90%
+		Soul of titan2 drop chance changed 30 => 25%
+		Demons paw1 drop chance changed 25 => 90%
+		Demons paw2 drop chance changed 25 => 20%
+Game changes:
+	MAXIMUM ATTACK SPEED now is 725
+	Spell Amplify:
+		now for every 1% of spell amplify damage needed 16 intellect points instead of 14
+	Duel:
+		Duration of duel for every player rescaled 20 => 10
+		Win gold base 100 => 50
+		Win gold per duel 400 => 250
+		Item dust of appearance cost 900 => 360
+		Item ward sentry cost 1800 => 300
+		Item tango cost 550 => 240
+	Creeps:
+		X6 champion was deleted
+		Maximum creeps to spawn on easy camp 4 => 5

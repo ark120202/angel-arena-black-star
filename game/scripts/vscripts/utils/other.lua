@@ -11,14 +11,9 @@ function GetAllPlayers(bOnlyWithHeroes)
 	return Players
 end
 
-function CreateTeamNotificationSettings(iTeam, bSecVar)
-	local textColor = ColorTableToCss(TEAM_COLORS[iTeam])
-	local text = TEAM_NAMES[iTeam]
-	if bSecVar then
-		text = TEAM_NAMES2[iTeam]
-	end
-	local output = {text=text, continue=true, style={color=textColor}}
-	return output
+function CreateTeamNotificationSettings(team, bSecond)
+	local textColor = ColorTableToCss(Teams:GetColor(team))
+	return {text = Teams:GetName(team, bSecond), continue = true, style = {color = textColor}}
 end
 
 function CreateItemNotificationSettings(sItemName)
@@ -313,19 +308,27 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	end
 
 	illusion:SetAbilityPoints(0)
-	--For perfomance
-	if Options:IsEquals("MainHeroList", "NoAbilities") or unit:HasAbility("rubick_personality_steal") or heroname ~= unitname then
-		for ability_slot = 0, unit:GetAbilityCount()-1 do
-			local i_ability = illusion:GetAbilityByIndex(ability_slot)
-			if i_ability then
-				illusion:RemoveAbility(i_ability:GetAbilityName())
-			end
+	for slot_ability = 0, unit:GetAbilityCount()-1 do
+		local illusion_ability = illusion:GetAbilityByIndex(slot_ability)
+		local unit_ability = unit:GetAbilityByIndex(slot_ability)
 
-			local individual_ability = unit:GetAbilityByIndex(ability_slot)
-			if individual_ability then
-				local illusion_ability = illusion:AddAbility(individual_ability:GetName())
-				illusion_ability:SetLevel(individual_ability:GetLevel())
+		if unit_ability then
+			local newName = unit_ability:GetAbilityName()
+			if illusion_ability then
+				if illusion_ability:GetAbilityName() ~= newName then
+					illusion:RemoveAbility(illusion_ability:GetAbilityName())
+					illusion_ability = illusion:AddNewAbility(newName, true)
+				end
+			else
+				illusion_ability = illusion:AddNewAbility(newName, true)
 			end
+			illusion_ability:SetHidden(unit_ability:IsHidden())
+			local ualevel = unit_ability:GetLevel()
+			if ualevel > 0 and illusion_ability:GetAbilityName() ~= "meepo_divided_we_stand" then
+				illusion_ability:SetLevel(ualevel)
+			end
+		elseif illusion_ability then
+			illusion:RemoveAbility(illusion_ability:GetAbilityName())
 		end
 	end
 	for item_slot = 0, 5 do
@@ -442,6 +445,16 @@ function GetTeamPlayerCount(iTeam)
 	local counter = 0
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) and PlayerResource:GetTeam(i) == iTeam then
+			counter = counter + 1
+		end
+	end
+	return counter
+end
+
+function GetTeamAbandonedPlayerCount(iTeam)
+	local counter = 0
+	for i = 0, 23 do
+		if PlayerResource:IsValidPlayerID(i) and IsPlayerAbandoned(i) and PlayerResource:GetTeam(i) == iTeam then
 			counter = counter + 1
 		end
 	end
@@ -614,8 +627,8 @@ function CreateGlobalParticle(name, callback, pattach)
 end
 
 function WorldPosToMinimap(vec)
-	local pct1 = ((vec.x + MAP_LENGTH) / (MAP_LENGTH * 2))
-	local pct2 = ((MAP_LENGTH - vec.y) / (MAP_LENGTH * 2))
+	local pct1 = (vec.x + MAP_LENGTH) / (MAP_LENGTH * 2)
+	local pct2 = (MAP_LENGTH - vec.y) / (MAP_LENGTH * 2)
 	return pct1*100 .. "% " .. pct2*100 .. "%"
 end
 
@@ -790,4 +803,12 @@ end
 
 function ModuleLinkLuaModifier(this, className, fileName, LuaModifierType)
 	return LinkLuaModifier(className, GetDirectoryFromPath(this) .. (fileName or className), LuaModifierType or LUA_MODIFIER_MOTION_NONE)
+end
+
+function pluralize(n, one, many)
+	return n == 1 and one or (many or one .. "s")
+end
+
+function iif(cond, yes, no)
+	if cond then return yes else return no end
 end

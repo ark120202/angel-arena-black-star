@@ -7,9 +7,7 @@ function Gold:UpdatePlayerGold(unitvar)
 	local playerID = UnitVarToPlayerID(unitvar)
 	if playerID and playerID > -1 then
 		PlayerResource:SetGold(playerID, 0, false)
-		local allgold = PlayerTables:GetTableValue("arena", "gold")
-		allgold[playerID] = PLAYER_DATA[playerID].SavedGold
-		PlayerTables:SetTableValue("arena", "gold", allgold)
+		PlayerTables:SetTableValue("gold", playerID, PLAYER_DATA[playerID].SavedGold)
 	end
 end
 

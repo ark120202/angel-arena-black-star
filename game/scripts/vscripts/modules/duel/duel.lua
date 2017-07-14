@@ -88,7 +88,6 @@ function Duel:StartDuel()
 	local heroes_to_fight_n = math.min(unpack(table.iterate(heroes_in_teams)))
 	if heroes_to_fight_n > 0 and table.count(heroes_in_teams) > 1 then
 		EmitAnnouncerSound("announcer_ann_custom_mode_20")
-		GameRules:SetHeroRespawnEnabled(false)
 		Duel.IsFirstDuel = Duel.DuelCounter == 0
 		Duel:SetDuelTimer(DUEL_SETTINGS.DurationBase + DUEL_SETTINGS.DurationForPlayer * heroes_to_fight_n)
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
@@ -128,7 +127,9 @@ function Duel:StartDuel()
 						unit:SetModifierStackCount("modifier_item_tango_arena", unit, math.round(unit:GetModifierStackCount("modifier_item_tango_arena", unit) * 0.5))
 					end
 					if unit.PocketItem then
+						unit.PocketHostEntity = nil
 						UTIL_Remove(unit.PocketItem)
+						unit.PocketItem = nil
 					end
 					if _unit.OnDuel then
 						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
@@ -211,7 +212,6 @@ function Duel:SetUpVisitor(unit)
 end
 
 function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
-	GameRules:SetHeroRespawnEnabled(true)
 	Duel.EntIndexer = {}
 	Duel.DuelStatus = DOTA_DUEL_STATUS_WATING
 	Duel.heroes_teams_for_duel = {}
@@ -219,7 +219,7 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
 			if PlayerResource:IsValidPlayerID(playerID) then
 				local _hero = PlayerResource:GetSelectedHeroEntity(playerID)
-				if IsValidEntity(_hero) then
+				if not PlayerResource:IsPlayerAbandoned(playerID) and IsValidEntity(_hero) then
 					for _,hero in ipairs(_hero:GetFullName() == "npc_dota_hero_meepo" and MeepoFixes:FindMeepos(_hero, true) or {_hero}) do
 						Duel:EndDuelForUnit(hero)
 					end
@@ -259,9 +259,6 @@ function Duel:EndDuelForUnit(unit)
 		end
 	end)
 
-	if not unit:IsAlive() then
-		unit:RespawnHero(false, false, false)
-	end
 	if unit.FindClearSpaceForUnitAndSetCamera then
 		local pos = unit.ArenaBeforeTpLocation
 		if not pos then

@@ -2,17 +2,18 @@ npc_arena_hero_anakim: Anakim
 npc_arena_hero_maka: Maka Albarn
 npc_arena_hero_soul_eater: Soul Evans
 
-addon_game_name_p1: Angel Arena
-addon_game_name_p2: Black Star
-arena_game_mode_type_100: All Pick
-arena_game_mode_type_101: Ranked All Pick
-arena_game_mode_type_102: Random OMG
-arena_game_mode_type_103: Ability Shop
 hero_selection_phase_0: Loading...
 hero_selection_phase_1: Hero Banning
 hero_selection_phase_2: Hero Selection
 hero_selection_phase_3: Strategy Time
 hero_selection_phase_4: Loading...
+
+arena_game_mode_type_: All Pick
+arena_game_mode_type_ranked_failed: <font color='red'>All Pick</font>
+arena_game_mode_type_ranked: Ranked All Pick
+arena_game_mode_type_ability_shop: Ability Shop
+arena_game_mode_type_random_omg: Random OMG
+
 game_player_abandoned_game: "\_has abandoned the game."
 notifications_gold: "\_gold"
 bosses_respawn: "\_was resurrected!"
@@ -45,6 +46,7 @@ hero_selection_lock: Lock
 hero_selection_unlock: Unlock
 hero_selection_heroes_default: Default
 hero_selection_heroes_new: New
+hero_selection_repick_tooltip: You forfeit 200 of your starting gold for repicking
 
 item_rune_keeper_no_runes_left: Rune Keeper is empty now.
 item_rune_keeper_contains: "Rune Keeper contains:\_"
@@ -62,13 +64,14 @@ panorama_shop_itembuilds_new_group: NEW GROUP
 panorama_shop_guide_youtube_open: Open in Browser
 panorama_shop_guide_publish: Publish
 panorama_shop_guide_cancel: Cancel
-panorama_shop_stackable_purchase: Купленный назодится на базе, так как в инвентаре героя находится такой же стакающийся предмет
+panorama_shop_stackable_purchase: Purchased item was dropped on the base, because your hero has same stackable item in inventory
 
 error_panorama_shop_publish_guide_title: Title.
 server_error_panorama_shop_youtube_no_tags: Make sure your video has 'Angel Arena Black Star' tag
 server_error_panorama_shop_youtube_not_found: Video wasn't found
 
 hud_modifier_click_to_remove: Click to remove
+
 ability_shop_shift_no: LMB/RMB - Buy Ability. Hold SHIFT to enter selling mode.
 ability_shop_shift_yes: 'LMB - Sell ability, RMB - Downgrade ability. Release SHIFT to enter purchase mode.'
 ability_shop_purchased_only: Show purchased abilities
@@ -79,6 +82,7 @@ custom_toast_PlayerDenied: '{killer_name} {denied_icon} Denied {victim_name}'
 custom_toast_KillStreak_Ended: '{victim_name} {kill_streak}x Kill Streak ended'
 custom_toast_ActivatedRune: '{player_name} has activated {rune_name}'
 custom_toast_BottledRune: '{player_name} bottled {rune_name}'
+custom_toast_RunicMekansmRune: '{player_name} putted {rune_name} into Runic Mekansm'
 custom_toast_DuelStarted: '{time_dota}: {duel_index}th duel has started!'
 custom_toast_BossKilled: '{team_name} {killed_icon} {victim_name} {gold}'
 custom_toast_AntiAFKTime: '{player_name} should get some experience, or will be kicked in {minutes} minutes'
@@ -99,3 +103,20 @@ option_voting_kill_limit: 'Kill Limit:'
 option_voting_custom_abilities: 'Custom Abilities Mode:'
 option_voting_custom_abilities_random_omg: Random OMG
 option_voting_custom_abilities_ability_shop: Ability Shop
+
+arena_end_screen_score: 'SCORE: '
+arena_end_screen_victory: Victory
+arena_end_screen_defeat: Defeat
+arena_end_screen_legend_boss_damage: BSD
+arena_end_screen_legend_boss_damage_tooltip: Damage done to Bosses
+arena_end_screen_error_broken: Something gone wrong. Perhaps it was caused by Valve's feature/bug that allows host to do some bad things.
+
+abaddoned_panel_title: Game was abandoned
+abaddoned_panel_reason: Your hero was removed because you was disconnected for a long time
+abaddoned_panel_redistribution: All your items were sold and gold was redistributed among your allies
+abaddoned_panel_ranked: Your rating will be reduced highly
+
+ranked_top_players: Best Players
+ranked_top_more: Open Top 100...
+
+teams_kill_weight_tooltip: Killing heroes of that team gives {d:kill_weight} points

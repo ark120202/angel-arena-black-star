@@ -73,19 +73,16 @@ end
 
 function PanoramaShop:InitializeItemTable()
 	local RecipesToCheck = {}
-	--загрузка всех предметов, разделение на предмет/рецепт
+	-- loading all items and splitting them by item/recipe
 	for name, kv in pairs(KeyValues.ItemKV) do
 		if type(kv) == "table" and (kv.ItemPurchasable or 1) == 1 then
-			if name == "item_blink" then
-				PrintTable(kv)
-			end
 			if kv.ItemRecipe == 1 then
 				RecipesToCheck[kv.ItemResult] = name
 			end
 			PanoramaShop._RawItemData[name] = kv
 		end
 	end
-	--заполнение данных для каждого предмета
+	-- adding data for each item
 	local itemsBuldsInto = {}
 	for name, kv in pairs(PanoramaShop._RawItemData) do
 		local itemdata = {
@@ -182,7 +179,7 @@ function PanoramaShop:InitializeItemTable()
 			PanoramaShop.FormattedData[name].BuildsInto = items
 		end
 	end
-	--распределение данных по вкладкам и группам
+	-- checking all items in shop list
 	local Items = {}
 	for shopName, shopData in pairs(PANORAMA_SHOP_ITEMS) do
 		Items[shopName] = {}
@@ -226,23 +223,29 @@ function PanoramaShop:OnItemBuy(data)
 end
 
 function PanoramaShop:SellItem(unit, item)
+	local itemname = item:GetAbilityName()
 	local cost = item:GetCost()
-	--GetStackCount()
+	local playerID = UnitVarToPlayerID(unit)
+	if not item:IsSellable() or MeepoFixes:IsMeepoClone(unit) then
+		Containers:DisplayError(playerID, "dota_hud_error_cant_sell_item")
+		return
+	end
 	if GameRules:GetGameTime() - item:GetPurchaseTime() > 10 then
 		cost = cost / 2
 	end
 	if itemname == "item_pocket_riki" then
 		cost = Kills:GetGoldForKill(item.RikiContainer)
-		item.RikiContainer:TrueKill(item, units[1])
-		Kills:ClearStreak(item.RikiContainer:GetPlayerID())
+		item.RikiContainer:TrueKill(item, unit)
+		Kills:SetKillStreak(item.RikiContainer:GetPlayerID(), 0)
 		unit:RemoveItem(item)
 		unit:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
 		unit:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
 		unit:RemoveModifierByName("modifier_invisible")
-		GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber())
+		-- TODO
+		-- GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber())
 	end
 	UTIL_Remove(item)
-	Gold:AddGoldWithMessage(unit, cost, PlayerID)
+	Gold:AddGoldWithMessage(unit, cost, playerID)
 	GameMode:TrackInventory(unit)
 end
 
@@ -327,17 +330,29 @@ SHOP_LIST_STATUS_TO_BUY = 2
 SHOP_LIST_STATUS_NO_STOCK = 3
 SHOP_LIST_STATUS_NO_BOSS = 4
 
-function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName)
+function PanoramaShop:GetAllItemsByNameInInventory(unit, itemname, bBackpack)
+	local items = {}
+	for slot = 0, bBackpack and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
+		local item = unit:GetItemInSlot(slot)
+		if item and item:GetAbilityName() == itemname and item:GetPurchaser() == unit then
+			table.insert(items, item)
+		end
+	end
+	return items
+end
+
+function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName, baseItemName)
 	local primary_items = {}
 	local itemData = PanoramaShop.FormattedData[childItemName]
 	local _tempItemCounter = {}
 	_tempItemCounter[childItemName] = (_tempItemCounter[childItemName] or 0) + 1
 
-	--local itemcount_all = #GetAllItemsByNameInInventory(unit, childItemName, true)
-	local itemcount = #GetAllItemsByNameInInventory(unit, childItemName, true) --isInShop and itemcount_all or itemcount_all - #GetAllItemsByNameInInventory(unit, childItemName, false)
-	if (childItemName == itemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
+	--local itemcount_all = #PanoramaShop:GetAllItemsByNameInInventory(unit, childItemName, true)
+	local itemcount = #PanoramaShop:GetAllItemsByNameInInventory(unit, childItemName, true)
+	--isInShop and itemcount_all or itemcount_all - #PanoramaShop:GetAllItemsByNameInInventory(unit, childItemName, false)
+	if (childItemName == baseItemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
 		for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
-			local subitems, newCounter = PanoramaShop:GetAllPrimaryRecipeItems(unit, newchilditem)
+			local subitems, newCounter = PanoramaShop:GetAllPrimaryRecipeItems(unit, newchilditem, baseItemName)
 			table.add(primary_items, subitems)
 			for k,v in pairs(newCounter) do
 				_tempItemCounter[k] = (_tempItemCounter[k] or 0) + v
@@ -352,11 +367,10 @@ function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName)
 	return primary_items, _tempItemCounter
 end
 
-function PanoramaShop:HasAnyOfItemChildren(unit, team, childItemName)
+function PanoramaShop:HasAnyOfItemChildren(unit, team, childItemName, baseItemName)
 	if not PanoramaShop.FormattedData[childItemName].Recipe then return false end
-	local primary_items = PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName)
+	local primary_items = PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName, baseItemName)
 	table.removeByValue(primary_items, childItemName)
-
 	for _,v in ipairs(primary_items) do
 		local stocks = PanoramaShop:GetItemStockCount(team, v)
 		if FindItemInInventoryByName(unit, v, true) or GetKeyValue(v, "ItemPurchasableFilter") == 0 or GetKeyValue(v, "ItemPurchasable") == 0 or stocks then
@@ -388,14 +402,14 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 	local ProbablyPurchasable = {}
 
 	function DefineItemState(name)
-		local has = PanoramaShop:HasAnyOfItemChildren(unit, team, name)
+		local has = PanoramaShop:HasAnyOfItemChildren(unit, team, name, itemName)
 		--print(name, has)
 		if has then
 			InsertItemChildrenToCheck(name)
 		else
 			itemCounter[name] = (itemCounter[name] or 0) + 1
-			local itemcount_inv = #GetAllItemsByNameInInventory(unit, name, false)
-			local itemcount_stash = #GetAllItemsByNameInInventory(unit, name, true) - itemcount_inv
+			local itemcount_inv = #PanoramaShop:GetAllItemsByNameInInventory(unit, name, false)
+			local itemcount_stash = #PanoramaShop:GetAllItemsByNameInInventory(unit, name, true) - itemcount_inv
 			local stocks = PanoramaShop:GetItemStockCount(team, name)
 			if name ~= itemName and itemcount_stash >= itemCounter[name] then
 				ProbablyPurchasable[name .. "_index_" .. itemCounter[name]] = SHOP_LIST_STATUS_IN_STASH

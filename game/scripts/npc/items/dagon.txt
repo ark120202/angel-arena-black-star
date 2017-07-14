@@ -86,7 +86,7 @@
 		"ID"							"10110"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1750"
+		"ItemCost"						"2250"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_enchanted_dagon_arena"
@@ -166,7 +166,7 @@
 		"ID"							"10115"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2250"
+		"ItemCost"						"3000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_sunray_dagon_arena"
@@ -248,12 +248,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
 
@@ -335,12 +332,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_2_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
 
@@ -422,12 +416,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_3_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
 
@@ -509,12 +500,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_4_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
 
@@ -596,12 +584,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/dagon_5_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 650 700 750 800"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0 15.0"
 		"AbilityManaCost"				"180"
 
@@ -680,14 +665,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 950 1000 1050 1100"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastRange"				"810 820 830 840 850"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
+		"AbilityManaCost"				"200 220 240 260 280"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -720,17 +702,22 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1000 1100 1200 1300"
+				"damage"				"850 900 950 1000 1050"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"900 950 1000 1050 1100"
+				"magic_resist_reduction_pct"	"-4 -8 -12 -16 -20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
+				"debuff_duration"		"0.5 0.6 0.7 0.8 0.9"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"810 820 830 840 850"
 			}
 		}
 
@@ -741,7 +728,7 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
-				"DamagePct"			"%damage_percent"
+				"modifier"			"modifier_item_enchanted_dagon_arena_debuff"
 			}
 		}
 
@@ -762,6 +749,17 @@
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 			}
+
+			"modifier_item_enchanted_dagon_arena_debuff"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
+				}
+			}
 		}
 	}
 
@@ -773,14 +771,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_2_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 950 1000 1050 1100"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastRange"				"810 820 830 840 850"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
+		"AbilityManaCost"				"200 220 240 260 280"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -813,17 +808,22 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1000 1100 1200 1300"
+				"damage"				"850 900 950 1000 1050"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"900 950 1000 1050 1100"
+				"magic_resist_reduction_pct"	"-4 -8 -12 -16 -20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
+				"debuff_duration"		"0.5 0.6 0.7 0.8 0.9"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"810 820 830 840 850"
 			}
 		}
 
@@ -834,7 +834,7 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
-				"DamagePct"			"%damage_percent"
+				"modifier"			"modifier_item_enchanted_dagon_arena_debuff"
 			}
 		}
 
@@ -855,6 +855,17 @@
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 			}
+
+			"modifier_item_enchanted_dagon_arena_debuff"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
+				}
+			}
 		}
 	}
 
@@ -866,14 +877,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_3_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 950 1000 1050 1100"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastRange"				"810 820 830 840 850"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
+		"AbilityManaCost"				"200 220 240 260 280"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -906,17 +914,22 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1000 1100 1200 1300"
+				"damage"				"850 900 950 1000 1050"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"900 950 1000 1050 1100"
+				"magic_resist_reduction_pct"	"-4 -8 -12 -16 -20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
+				"debuff_duration"		"0.5 0.6 0.7 0.8 0.9"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"810 820 830 840 850"
 			}
 		}
 
@@ -927,7 +940,7 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
-				"DamagePct"			"%damage_percent"
+				"modifier"			"modifier_item_enchanted_dagon_arena_debuff"
 			}
 		}
 
@@ -948,6 +961,17 @@
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 			}
+
+			"modifier_item_enchanted_dagon_arena_debuff"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
+				}
+			}
 		}
 	}
 
@@ -959,14 +983,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_4_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 950 1000 1050 1100"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastRange"				"810 820 830 840 850"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
+		"AbilityManaCost"				"200 220 240 260 280"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -999,17 +1020,22 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1000 1100 1200 1300"
+				"damage"				"850 900 950 1000 1050"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"900 950 1000 1050 1100"
+				"magic_resist_reduction_pct"	"-4 -8 -12 -16 -20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
+				"debuff_duration"		"0.5 0.6 0.7 0.8 0.9"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"810 820 830 840 850"
 			}
 		}
 
@@ -1020,7 +1046,7 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
-				"DamagePct"			"%damage_percent"
+				"modifier"			"modifier_item_enchanted_dagon_arena_debuff"
 			}
 		}
 
@@ -1041,6 +1067,17 @@
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 			}
+
+			"modifier_item_enchanted_dagon_arena_debuff"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
+				}
+			}
 		}
 	}
 
@@ -1052,14 +1089,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/enchanted_dagon_5_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 950 1000 1050 1100"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14.0 13.0 12.0 11.0 10.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastRange"				"810 820 830 840 850"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"14.5 14.0 13.5 13.0 12.0"
+		"AbilityManaCost"				"200 220 240 260 280"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1089,17 +1123,22 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1000 1100 1200 1300"
+				"damage"				"850 900 950 1000 1050"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"900 950 1000 1050 1100"
+				"magic_resist_reduction_pct"	"-4 -8 -12 -16 -20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"3.5 4.5 5.5 6.5 7.5"
+				"debuff_duration"		"0.5 0.6 0.7 0.8 0.9"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"810 820 830 840 850"
 			}
 		}
 
@@ -1110,7 +1149,7 @@
 				"ScriptFile"		"items/items_dagon.lua"
 				"Function"			"BetterDagon"
 				"Damage"			"%damage"
-				"DamagePct"			"%damage_percent"
+				"modifier"			"modifier_item_enchanted_dagon_arena_debuff"
 			}
 		}
 
@@ -1131,6 +1170,17 @@
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 			}
+
+			"modifier_item_enchanted_dagon_arena_debuff"
+			{
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
+				}
+			}
 		}
 	}
 
@@ -1142,13 +1192,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastRange"				"860 870 880 890 900"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"300 350 400 450 500"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1181,22 +1229,32 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"32"
+				"spell_amp_pct"			"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400 1500 1600 1700 1800"
+				"damage"				"1100 1150 1200 1250 1300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"8.0 8.25 8.5 8.75 9.0"
+				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
 			}
 			"07"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-20"
+			}
+			"08"
+			{
 				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+				"debuff_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"860 870 880 890 900"
 			}
 		}
 
@@ -1208,7 +1266,7 @@
 				"Function"			"SunrayDagon"
 				"Damage"			"%damage"
 				"DamagePct"			"%damage_percent"
-				"modifier"			"modifier_item_sunray_dagon_arena_blind"
+				"modifier"			"modifier_item_sunray_dagon_arena_debuff"
 			}
 		}
 
@@ -1230,12 +1288,10 @@
 				}
 			}
 
-			"modifier_item_sunray_dagon_arena_blind"
+			"modifier_item_sunray_dagon_arena_debuff"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"Duration"			"%blind_duration"
+				"Duration"			"%debuff_duration"
 
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -1243,6 +1299,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 
 				"States"
@@ -1261,13 +1318,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_2_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastRange"				"860 870 880 890 900"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"300 350 400 450 500"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1300,22 +1355,32 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"32"
+				"spell_amp_pct"			"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400 1500 1600 1700 1800"
+				"damage"				"1100 1150 1200 1250 1300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"8.0 8.25 8.5 8.75 9.0"
+				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
 			}
 			"07"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-20"
+			}
+			"08"
+			{
 				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+				"debuff_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"860 870 880 890 900"
 			}
 		}
 
@@ -1327,7 +1392,7 @@
 				"Function"			"SunrayDagon"
 				"Damage"			"%damage"
 				"DamagePct"			"%damage_percent"
-				"modifier"			"modifier_item_sunray_dagon_arena_blind"
+				"modifier"			"modifier_item_sunray_dagon_arena_debuff"
 			}
 		}
 
@@ -1349,12 +1414,10 @@
 				}
 			}
 
-			"modifier_item_sunray_dagon_arena_blind"
+			"modifier_item_sunray_dagon_arena_debuff"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"Duration"			"%blind_duration"
+				"Duration"			"%debuff_duration"
 
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -1362,6 +1425,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 
 				"States"
@@ -1380,13 +1444,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_3_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastRange"				"860 870 880 890 900"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"300 350 400 450 500"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1419,22 +1481,32 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"32"
+				"spell_amp_pct"			"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400 1500 1600 1700 1800"
+				"damage"				"1100 1150 1200 1250 1300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"8.0 8.25 8.5 8.75 9.0"
+				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
 			}
 			"07"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-20"
+			}
+			"08"
+			{
 				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+				"debuff_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"860 870 880 890 900"
 			}
 		}
 
@@ -1446,7 +1518,7 @@
 				"Function"			"SunrayDagon"
 				"Damage"			"%damage"
 				"DamagePct"			"%damage_percent"
-				"modifier"			"modifier_item_sunray_dagon_arena_blind"
+				"modifier"			"modifier_item_sunray_dagon_arena_debuff"
 			}
 		}
 
@@ -1468,12 +1540,10 @@
 				}
 			}
 
-			"modifier_item_sunray_dagon_arena_blind"
+			"modifier_item_sunray_dagon_arena_debuff"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"Duration"			"%blind_duration"
+				"Duration"			"%debuff_duration"
 
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -1481,6 +1551,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 
 				"States"
@@ -1499,13 +1570,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_4_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastRange"				"860 870 880 890 900"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"300 350 400 450 500"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1538,22 +1607,32 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"32"
+				"spell_amp_pct"			"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400 1500 1600 1700 1800"
+				"damage"				"1100 1150 1200 1250 1300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"8.0 8.25 8.5 8.75 9.0"
+				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
 			}
 			"07"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-20"
+			}
+			"08"
+			{
 				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+				"debuff_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"860 870 880 890 900"
 			}
 		}
 
@@ -1565,7 +1644,7 @@
 				"Function"			"SunrayDagon"
 				"Damage"			"%damage"
 				"DamagePct"			"%damage_percent"
-				"modifier"			"modifier_item_sunray_dagon_arena_blind"
+				"modifier"			"modifier_item_sunray_dagon_arena_debuff"
 			}
 		}
 
@@ -1587,12 +1666,10 @@
 				}
 			}
 
-			"modifier_item_sunray_dagon_arena_blind"
+			"modifier_item_sunray_dagon_arena_debuff"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"Duration"			"%blind_duration"
+				"Duration"			"%debuff_duration"
 
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -1600,6 +1677,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 
 				"States"
@@ -1618,13 +1696,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_arena/sunray_dagon_5_arena"
-		"FightRecapLevel"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10.0 9.75 9.5 9.25 9.0"
-		"AbilityManaCost"				"180"
+		"AbilityCastRange"				"860 870 880 890 900"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0"
+		"AbilityManaCost"				"300 350 400 450 500"
 
 		"AbilitySharedCooldown"			"dagon"
 		"MaxUpgradeLevel"				"5"
@@ -1654,22 +1730,32 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"32"
+				"spell_amp_pct"			"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400 1500 1600 1700 1800"
+				"damage"				"1100 1150 1200 1250 1300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"8.0 8.25 8.5 8.75 9.0"
+				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
 			}
 			"07"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_reduction_pct"	"-20"
+			}
+			"08"
+			{
 				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"0.6 1.0 1.4 1.8 2.2"
+				"debuff_duration"		"0.6 1.0 1.4 1.8 2.2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"860 870 880 890 900"
 			}
 		}
 
@@ -1681,7 +1767,7 @@
 				"Function"			"SunrayDagon"
 				"Damage"			"%damage"
 				"DamagePct"			"%damage_percent"
-				"modifier"			"modifier_item_sunray_dagon_arena_blind"
+				"modifier"			"modifier_item_sunray_dagon_arena_debuff"
 			}
 		}
 
@@ -1703,12 +1789,10 @@
 				}
 			}
 
-			"modifier_item_sunray_dagon_arena_blind"
+			"modifier_item_sunray_dagon_arena_debuff"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
 				"IsDebuff"			"1"
-				"Duration"			"%blind_duration"
+				"Duration"			"%debuff_duration"
 
 				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -1716,6 +1800,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE" 	"100"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_reduction_pct"
 				}
 
 				"States"

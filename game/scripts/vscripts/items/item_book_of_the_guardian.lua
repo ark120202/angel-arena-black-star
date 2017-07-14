@@ -1,7 +1,11 @@
-item_book_of_the_guardian_baseclass = {}
-LinkLuaModifier("modifier_item_book_of_the_guardian", "items/modifier_item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_book_of_the_guardian_effect", "items/modifier_item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_book_of_the_guardian_blast", "items/modifier_item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_book_of_the_guardian", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_book_of_the_guardian_effect", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_book_of_the_guardian_blast", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_book_of_the_guardian_aura", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+
+item_book_of_the_guardian_baseclass = {
+	GetIntrinsicModifierName = function() return "modifier_item_book_of_the_guardian" end
+}
 
 if IsServer() then
 	function item_book_of_the_guardian_baseclass:OnSpellStart()
@@ -32,6 +36,7 @@ if IsServer() then
 						victim = v,
 						damage = caster:GetIntellect() * blast_damage_int_mult,
 						damage_type = self:GetAbilityDamageType(),
+						damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 						ability = self
 					})
 
@@ -48,3 +53,93 @@ if IsServer() then
 end
 
 item_book_of_the_guardian = class(item_book_of_the_guardian_baseclass)
+
+
+modifier_item_book_of_the_guardian = class({
+	IsHidden      = function() return true end,
+	IsAura        = function() return true end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable    = function() return false end,
+})
+
+function modifier_item_book_of_the_guardian:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
+		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+	}
+end
+
+function modifier_item_book_of_the_guardian:GetModifierBonusStats_Intellect()
+	return self:GetAbility():GetSpecialValueFor("bonus_intellect")
+end
+
+function modifier_item_book_of_the_guardian:GetModifierConstantHealthRegen()
+	return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
+end
+
+function modifier_item_book_of_the_guardian:GetModifierPercentageManaRegen()
+	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
+end
+
+function modifier_item_book_of_the_guardian:GetModifierPreAttack_BonusDamage()
+	return self:GetAbility():GetSpecialValueFor("bonus_damage")
+end
+
+function modifier_item_book_of_the_guardian:GetModifierPhysicalArmorBonus()
+	return self:GetAbility():GetSpecialValueFor("bonus_armor")
+end
+
+function modifier_item_book_of_the_guardian:GetModifierSpellAmplify_Percentage()
+	return self:GetAbility():GetSpecialValueFor("spell_amp_pct")
+end
+
+function modifier_item_book_of_the_guardian:GetModifierAura()
+	return "modifier_item_book_of_the_guardian_aura"
+end
+
+function modifier_item_book_of_the_guardian:GetAuraRadius()
+	return self:GetAbility():GetSpecialValueFor("aura_radius")
+end
+
+function modifier_item_book_of_the_guardian:GetAuraDuration()
+	return 0.5
+end
+
+function modifier_item_book_of_the_guardian:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
+
+function modifier_item_book_of_the_guardian:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_ALL
+end
+
+
+modifier_item_book_of_the_guardian_aura = class({
+	IsPurgable = function() return false end,
+})
+
+function modifier_item_book_of_the_guardian_aura:DeclareFunctions()
+	return {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT}
+end
+
+function modifier_item_book_of_the_guardian_aura:GetModifierAttackSpeedBonus_Constant()
+	return self:GetAbility():GetSpecialValueFor("aura_attack_speed")
+end
+
+
+modifier_item_book_of_the_guardian_blast = class({
+	GetEffectName = function() return "particles/econ/events/ti7/shivas_guard_slow.vpcf" end,
+	GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end,
+})
+
+function modifier_item_book_of_the_guardian_blast:DeclareFunctions()
+	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}
+end
+
+function modifier_item_book_of_the_guardian_blast:GetModifierMoveSpeedBonus_Percentage()
+	return self:GetAbility():GetSpecialValueFor("blast_movement_speed_pct")
+end

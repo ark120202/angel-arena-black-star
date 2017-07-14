@@ -1,0 +1,69 @@
+#SwitchHeroesButton
+	width: 100px
+	height: 75%
+	margin-top: 10px
+	margin-right: 15px
+	margin-left: 4px
+	align: right center
+
+	&:hover
+		margin-top: 12px
+		brightness: 2
+
+	&:active
+		margin-top: 14px
+		brightness: 1.5
+
+	> Label
+		width: 100%
+		margin-bottom: -6px
+		font-size: 14px
+		text-align: center
+		text-overflow: shrink
+		vertical-align: bottom
+		transition-duration: .1s
+		transition-property: color
+
+	> Panel
+		width: 34px
+		height: 38px
+		margin-top: -4px
+		background-image: url('file://{resources}/images/custom_game/hero_selection/hero_swich.png')
+		background-position: center
+		background-repeat: no-repeat
+		background-size: contain
+		align: center center
+
+	> #SwitchHeroesDefault
+		margin-top: -6px
+		vertical-align: top
+
+.PickButton
+	height: 100%
+	padding: 8px
+	background-color: gradient(linear, 0 0, 0 100%, from(rgba(64, 77, 101, .86667)), to(rgba(43, 52, 69, .86667)))
+	border-top: 1px solid rgb(111, 129, 155)
+	border-right: 1px solid rgba(111, 129, 155, .06667)
+	border-bottom: 1px solid rgba(63, 65, 75, .2)
+	border-left: 1px solid rgba(111, 129, 155, .13333)
+	box-shadow: rgba(0, 0, 0, .56078) -6px -6px 12px 12px
+	transition-duration: .18s
+	transition-property: opacity, background-color
+
+	&:hover
+		brightness: 1.2
+
+	&:active
+		brightness: 1.5
+
+	Label
+		color: rgb(204, 204, 204)
+		text-transform: uppercase
+
+.ActiveTab1 > #SwitchHeroesDefault
+	font-weight: bold
+	color: #0f0
+
+.ActiveTab2 > #SwitchHeroesNew
+	font-weight: bold
+	color: #0f0

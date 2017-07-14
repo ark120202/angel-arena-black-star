@@ -37,12 +37,11 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	item_refresher_arena = true,
 	item_aegis_arena = true,
 	item_refresher_core = true,
-	item_titanium_bar = true,
 	dazzle_shallow_grave = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
-	poseidon_dark_whale = true,
-	faceless_void_time_freeze =true,
+	destroyer_body_reconstruction = true,
+	item_coffee_bean = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
@@ -50,6 +49,7 @@ REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
 	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_titanium_bar = true,
+	item_coffee_bean = true,
 
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
@@ -60,6 +60,12 @@ REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_titanium_bar = true,
+	item_black_king_bar_arena = true,
+	item_black_king_bar_2 = true,
+	item_black_king_bar_3 = true,
+	item_black_king_bar_4 = true,
+	item_black_king_bar_5 = true,
+	item_black_king_bar_6 = true,
 
 	destroyer_body_reconstruction = true,
 }
@@ -70,11 +76,11 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_titanium_bar = true,
+	item_guardian_greaves_arena = true,
 
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
 
-	item_hand_of_midas = true,
 	item_black_king_bar_arena = true,
 	item_black_king_bar_2 = true,
 	item_black_king_bar_3 = true,
@@ -82,25 +88,20 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_black_king_bar_5 = true,
 	item_black_king_bar_6 = true,
 
-	--[[item_pipe = true,
+	destroyer_body_reconstruction = true,
+
+	item_pipe = true,
 	item_arcane_boots = true,
 	item_helm_of_the_dominator = true,
 	item_sphere = true,
 	item_necronomicon = true,
-	item_heart_cyclone = true,
 	item_hand_of_midas_arena = true,
 	item_hand_of_midas_2_arena = true,
 	item_hand_of_midas_3_arena = true,
 	item_mekansm_arena = true,
 	item_mekansm_2 = true,
-	item_guardian_greaves_arena = true,
-	item_sunray_dagon_arena = true,
-	item_sunray_dagon_2_arena = true,
-	item_sunray_dagon_3_arena = true,
-	item_sunray_dagon_4_arena = true,
-	item_sunray_dagon_5_arena = true,]]
 
-	--[[earthshaker_echo_slam = true,
+	earthshaker_echo_slam = true,
 	juggernaut_omni_slash = true,
 	warlock_rain_of_chaos_arena = true,
 	skeleton_king_reincarnation_arena = true,
@@ -145,7 +146,13 @@ REFRESH_LIST_IGNORE_REARM = {
 	doom_bringer_devour_arena = true,
 	magnataur_reverse_polarity = true,
 	queenofblades_alter_ego = true,
-	saber_excalibur = true,]]
+	saber_excalibur = true,
+}
+
+COFFEE_BEAN_NOT_REFRESHABLE = {
+	destroyer_body_reconstruction = true,
+	zuus_cloud = true,
+	monkey_king_boundless_strike = true,
 }
 
 
@@ -157,18 +164,21 @@ BOSS_BANNED_ABILITIES = {
 	death_prophet_spirit_siphon = true,
 	rubick_personality_steal = true,
 	item_urn_of_demons = true,
-	apocalypse_king_slayer = true,
-	apocalypse_armor_tear = true,
 	razor_static_link = true,
 }
 
 PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_dota_hero_wisp"] = true,
-	["npc_dota_hero_invoker"] = true,
 	["npc_dota_hero_meepo"] = true,
 	["npc_arena_hero_sara"] = true,
+	["npc_dota_hero_necrolyte"] = true,
+	["npc_dota_hero_storm_spirit"] = true,
+	["npc_dota_hero_tidehunter"] = true,
+	["npc_dota_hero_arc_warden"] = true,
+	["npc_dota_hero_shredder"] = true,
 }
 
+-- "CalculateSpellDamageTooltip"	"0"
 SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	zuus_static_field = true,
 	enigma_midnight_pulse = true,
@@ -178,8 +188,14 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	nyx_assassin_mana_burn = true,
 	skywrath_mage_arcane_bolt = true,
 	elder_titan_earth_splitter = true,
-	ember_spirit_sleight_of_fist = true,
-	shadow_demon_soul_catcher = true,
+	necrolyte_reapers_scythe = true,
+	doom_bringer_infernal_blade = true,
+	phoenix_sun_ray = true,
+	silencer_glaives_of_wisdom = true,
+	winter_wyvern_arctic_burn = true,
+	obsidian_destroyer_sanity_eclipse = true,
+	centaur_stampede = true,
+	obsidian_destroyer_arcane_orb = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

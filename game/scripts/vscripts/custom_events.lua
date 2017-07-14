@@ -5,12 +5,20 @@ function GameMode:RegisterCustomListeners()
 	CustomGameEventManager:RegisterListener("options_vote", Dynamic_Wrap(Options, "OnVote"))
 	CustomGameEventManager:RegisterListener("team_select_host_set_player_team", Dynamic_Wrap(GameMode, "TeamSelectHostSetPlayerTeam"))
 	CustomGameEventManager:RegisterListener("set_help_disabled", Dynamic_Wrap(GameMode, "SetHelpDisabled"))
+	CustomGameEventManager:RegisterListener("on_ads_clicked", Dynamic_Wrap(GameMode, "OnAdsClicked"))
 end
+
 function GameMode:MetamorphosisElixirCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local elixirItem = FindItemInInventoryByName(hero, "item_metamorphosis_elixir", false)
 	local newHeroName = tostring(data.hero)
-	if IsValidEntity(hero) and hero:GetFullName() ~= newHeroName and not HeroSelection:IsHeroSelected(newHeroName) and not Duel:IsDuelOngoing() and not hero:HasModifier("modifier_shredder_chakram_disarm") and HeroSelection:VerifyHeroGroup(newHeroName) and (elixirItem or hero.ForcedHeroChange) then
+	if IsValidEntity(hero) and
+		hero:GetFullName() ~= newHeroName and
+		HeroSelection:IsHeroPickAvaliable(newHeroName) and
+		not Duel:IsDuelOngoing() and
+		not hero:HasModifier("modifier_shredder_chakram_disarm") and
+		(elixirItem or hero.ForcedHeroChange) and
+		(hero.ForcedHeroChange or Options:IsEquals("EnableRatingAffection", false) or PlayerResource:GetPlayerStat(data.PlayerID, "ChangedHeroAmount") == 0) then
 		HeroSelection:ChangeHero(data.PlayerID, newHeroName, true, elixirItem and elixirItem:GetSpecialValueFor("transformation_time") or 0, elixirItem)
 	end
 end
@@ -60,61 +68,76 @@ function CustomChatSay(playerId, teamonly, data)
 		if data.text then
 			args.text = data.text
 		else
-			teamonly = true
-			if data.GoldUnit then
-				local unit = EntIndexToHScript(tonumber(data.GoldUnit))
-				if IsValidEntity(unit) and unit:GetTeam() == PlayerResource:GetTeam(playerId) then
-					args.gold = Gold:GetGold(unit)
-					args.player = UnitVarToPlayerID(unit)
-				else
-					return
-				end
-			elseif data.ability then
-				local ability = EntIndexToHScript(data.ability)
-				if IsValidEntity(ability) then
-					args.ability = data.ability
-					args.unit = ability:GetCaster():GetEntityIndex()
-					args.player = UnitVarToPlayerID(ability:GetCaster())
-				else
-					return
-				end
-			elseif data.shop_item_name then
-				local item = data.shop_item_name
-				if item then
-					local team = PlayerResource:GetTeam(playerId)
-					local stocks = PanoramaShop:GetItemStockCount(team, item)
-					if GetKeyValue(item, "ItemPurchasableFilter") == 0 or GetKeyValue(item, "ItemPurchasable") == 0 then
-						args.boss_drop = true
-					elseif stocks and stocks < 1 then
-						args.stock_time = math.round(PanoramaShop:GetItemStockCooldown(team, item))
-					elseif data.gold then --relying on client for that
-						local gold_required = data.gold - Gold:GetGold(playerId)
-						if gold_required > 0 then
-							args.gold = gold_required
-						end
+			if type(teamonly) ~= "boolean" and data.localizable then
+				args.localizable = data.localizable
+				args.variables = data.variables
+				args.player = data.player
+			else
+				teamonly = true
+				if data.GoldUnit then
+					local unit = EntIndexToHScript(tonumber(data.GoldUnit))
+					if IsValidEntity(unit) and unit:GetTeam() == PlayerResource:GetTeam(playerId) then
+						args.gold = Gold:GetGold(unit)
+						args.player = UnitVarToPlayerID(unit)
+					else
+						return
 					end
-					args.shop_item_name = item
-					args.isQuickbuy = data.isQuickbuy == 1
-				end
-			elseif data.xpunit then
-				local unit = EntIndexToHScript(data.xpunit)
-				if IsValidEntity(unit) then
-					args.unit = data.xpunit
-					args.level = unit:GetLevel()
-					args.player = UnitVarToPlayerID(unit)
-					args.isNeutral = args.player == -1
-					if unit.GetCurrentXP and XP_PER_LEVEL_TABLE[args.level + 1] then
-						args.xpToNextLevel = (XP_PER_LEVEL_TABLE[args.level + 1] or 0) - unit:GetCurrentXP()
+				elseif data.ability then
+					local ability = EntIndexToHScript(data.ability)
+					if IsValidEntity(ability) then
+						args.ability = data.ability
+						args.unit = ability:GetCaster():GetEntityIndex()
+						args.player = UnitVarToPlayerID(ability:GetCaster())
+					else
+						return
+					end
+				elseif data.shop_item_name then
+					local item = data.shop_item_name
+					if item then
+						local team = PlayerResource:GetTeam(playerId)
+						local stocks = PanoramaShop:GetItemStockCount(team, item)
+						if GetKeyValue(item, "ItemPurchasableFilter") == 0 or GetKeyValue(item, "ItemPurchasable") == 0 then
+							args.boss_drop = true
+						elseif stocks and stocks < 1 then
+							args.stock_time = math.round(PanoramaShop:GetItemStockCooldown(team, item))
+						elseif data.gold then --relying on client for that
+							local gold_required = data.gold - Gold:GetGold(playerId)
+							if gold_required > 0 then
+								args.gold = gold_required
+							end
+						end
+						args.shop_item_name = item
+						args.isQuickbuy = data.isQuickbuy == 1
+					end
+				elseif data.xpunit then
+					local unit = EntIndexToHScript(data.xpunit)
+					if IsValidEntity(unit) then
+						args.unit = data.xpunit
+						args.level = unit:GetLevel()
+						args.player = UnitVarToPlayerID(unit)
+						args.isNeutral = args.player == -1
+						if unit.GetCurrentXP and XP_PER_LEVEL_TABLE[args.level + 1] then
+							args.xpToNextLevel = (XP_PER_LEVEL_TABLE[args.level + 1] or 0) - unit:GetCurrentXP()
+						end
 					end
 				end
 			end
 		end
-		args.teamonly = teamonly
-		if teamonly then
-			CustomGameEventManager:Send_ServerToTeam(PlayerResource:GetTeam(playerId), "custom_chat_recieve_message", args)
+		local team = type(teamonly) == "number" and teamonly or PlayerResource:GetTeam(playerId)
+		args.teamonly = type(teamonly) == "boolean" and teamonly
+		if args.teamonly then
+			CustomGameEventManager:Send_ServerToTeam(team, "custom_chat_recieve_message", args)
 			--CustomGameEventManager:Send_ServerToTeam(1, "custom_chat_recieve_message", args) --TODO: Spect, need test
 		else
 			CustomGameEventManager:Send_ServerToAllClients("custom_chat_recieve_message", args)
 		end
+	end
+end
+
+function GameMode:OnAdsClicked(data)
+	local playerID = data.PlayerID
+	local key = data.source == "loading_screen" and "adsClickedLoading" or "adsClicked"
+	if not PLAYER_DATA[playerID][key] then
+		PLAYER_DATA[playerID][key] = true
 	end
 end

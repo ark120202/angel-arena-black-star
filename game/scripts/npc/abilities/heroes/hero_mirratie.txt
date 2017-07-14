@@ -6,10 +6,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"			"arena/mirratie_smoke_out"
 
-		"AbilityCastPoint"				"0.4"
-		"AbilityCastRange"				"500 600 700 800 900 900 900"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
+		"AbilityCastRange"				"700 750 800 850 900 950 1000"
 
-		"AbilityCooldown"				"25 22 19 17 15 13 11"
+		"AbilityCooldown"				"14"
 
 		"AbilityManaCost"				"105"
 		"MaxLevel"						"7"
@@ -19,7 +19,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"450"
+				"radius"				"250 275 300 325 350 375 400 425"
 			}
 			"02"
 			{
@@ -29,12 +29,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"move_slow_pct"			"-15 -20 -25 -30 -35 -40 -45"
+				"move_slow_pct"			"-10 -15 -20 -25 -30 -35 -40"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"miss_chance_pct"		"15 20 30 35 45 50 60"
+				"miss_chance_pct"		"10 15 20 25 30 35 40"
 			}
 		}
 
@@ -111,28 +111,27 @@
 	{
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"arena/mirratie_sixth_sense"
-		"MaxLevel" 						"8"
-		"LevelsBetweenUpgrades" 		"5"
+		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"HasInnateModifiers"			"1"
-		"AbilityCastRange"				"1200"
+		"AbilityCastRange"				"940"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"1200"
+				"radius"			"940" // Only one value
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_evasion"		"0 10 20 30 40 45 50 55"
+				"bonus_evasion"		"0 10 15 20 25 30 35"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"dodge_chance_pct"	"0 5 10 15 20 20 25 30"
+				"var_type"			"FIELD_FLOAT"
+				"dodge_chance_pct"	"0 5 7.5 10 12.5 15 18"
 			}
 		}
 		"precache"
@@ -191,12 +190,12 @@
 		"MaxLevel"						"7"
 		"BaseClass"						"meepo_earthbind"
 		"AbilityTextureName"			"arena/mirratie_snagshot"
-		"AbilityCastRange"				"500 750 1000 1250 1500 1750 2000"
+		"AbilityCastRange"				"500 650 800 950 1100 1250 1500"
 		"AbilityCooldown"				"10"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityManaCost"				"100"
-		"AbilityCastPoint"				"0.2"
+		"AbilityManaCost"				"50"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -205,7 +204,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.0"
+				"duration"				"2.0 2.25 2.5 2.75 3.0 3.25 3.5"
 			}
 			"02"
 			{
@@ -220,7 +219,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_range"			"500 750 1000 1250 1500 1750 2000"
+				"tooltip_range"			"500 650 800 950 1100 1250 1500"
 			}
 		}
 
@@ -244,15 +243,15 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"HasScepterUpgrade"				"1"
 
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4 0.4 0.35 0.3"
 		"AbilityCastRange"				"1000 1200 1400 1600 1800 2000 2200"
 
-		"AbilityCooldown"				"25 22 19 17 15 13 11"
+		"AbilityCooldown"				"20"
 
 		"AbilityManaCost"				"105"
 		"MaxLevel"						"7"
 		"AbilityChannelTime"			"2"
-		"AbilityDamage"					"400 700 900 1100 1300 1500 1700"
+		"AbilityDamage"					"200 300 400 500 600 700 800"
 
 		"AbilitySpecial"
 		{
@@ -279,7 +278,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2 2.5 3 3.5 4 4.5 5"
+				"stun_duration"			"2.0"
 			}
 			"06"
 			{
@@ -289,7 +288,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration_scepter"	"6"
+				"stun_duration_scepter"	"4.0"
 			}
 			"08"
 			{

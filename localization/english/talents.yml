@@ -50,6 +50,8 @@ custom_talents_talent_passive_experience_income: Experience Income
 custom_talents_talent_passive_experience_income_description: '+{xp_per_minute} experience per minute'
 custom_talents_talent_true_strike: True Strike
 custom_talents_talent_true_strike_description: Prevents your attacks from missing
+custom_talents_talent_hero_sai_release_of_forge_discrease_bonus_respawn_time: Release of Forge
+custom_talents_talent_hero_sai_release_of_forge_discrease_bonus_respawn_time_description: 'Reduces respawn time increasement, caused by dying from Release of Forge by {%reduction_pct%}.'
 
 
 
@@ -215,7 +217,7 @@ custom_talents_talent_hero_ancient_apparition_chilling_touch_dmg: +{value} Chill
 custom_talents_talent_hero_ursa_fury_swipes_dmg: +{value} Fury Swipes Damage
 custom_talents_talent_hero_spirit_breaker_greater_bash_dmg: +{%value%} Greater Bash Damage
 custom_talents_talent_hero_spirit_breaker_greater_bash_chance: +{%value%} Greater Bash Chance
-custom_talents_talent_hero_spirit_breaker_empowering_haste_speed: +{value} Charge Speed
+custom_talents_talent_hero_spirit_breaker_charge_of_darkness_charge: +{value} Charge Speed
 # custom_talents_talent_hero_special_bonus_unique_gyrocopter_1: '{value} Homing Missile Charges'
 # custom_talents_talent_hero_special_bonus_unique_gyrocopter_2: +{value} Flak Cannon Attacks
 custom_talents_talent_hero_alchemist_unstable_concoction_dmg: +{value} Unstable Concoction Damage
@@ -229,7 +231,7 @@ custom_talents_talent_hero_lycan_feral_impulse_regen: +{value} Feral HP Regen
 custom_talents_talent_hero_lycan_shapeshift_duration: +{value} Shapeshift Duration
 # custom_talents_talent_hero_special_bonus_unique_lycan_2: +{value} Wolves Summoned
 custom_talents_talent_hero_brewmaster_thunder_clap_dmg: +{value} Thunder Clap Damage
-custom_talents_talent_hero_brewmaster_thunder_clap_slow: +{value} Thunderlap Slow
+custom_talents_talent_hero_brewmaster_thunder_clap_slow: +{value} Thunder Clap Slow
 custom_talents_talent_hero_brewmaster_primal_split_health: +{value} Health to Primal Split Units
 custom_talents_talent_hero_shadow_demon_shadow_poison_cd: -{value} Shadow Poison Cooldown
 custom_talents_talent_hero_shadow_demon_demonic_purge_dmg: +{value} Demonic Purge Damage
@@ -237,7 +239,7 @@ custom_talents_talent_hero_shadow_demon_soul_catcher_cd: -{value} Soul Catcher C
 custom_talents_talent_hero_lone_druid_spirit_bear_dmg: +{value} Spirit Bear Damage
 custom_talents_talent_hero_lone_druid_spirit_bear_armor: +{value} Spirit Bear Armor
 custom_talents_talent_hero_lone_druid_spirit_bear_resist: +{%value%} Spirit Bear Magic Resistance
-custom_talents_talent_hero_lone_druid_spirit_bear_entangle_duration: +{value} Entangle Duration
+custom_talents_talent_hero_lone_druid_spirit_bear_duration: +{value} Entangle Duration
 custom_talents_talent_hero_lone_druid_savage_roar_cd: -{value} Savage Roar Cooldown
 custom_talents_talent_hero_chaos_knight_reality_rift_immune: Reality Rift Pierces Spell Immune
 custom_talents_talent_hero_meepo_poof_cd: -{value} Poof Cooldown
