@@ -20,12 +20,12 @@
 #base "abilities/heroes/hero_saber.txt"
 #base "abilities/heroes/hero_sara.txt"
 #base "abilities/heroes/hero_destroyer.txt"
-#base "abilities/heroes/hero_maka.txt"
-#base "abilities/heroes/hero_soul_eater.txt"
 #base "abilities/heroes/hero_anakim.txt"
 #base "abilities/heroes/hero_sai.txt"
-#base "abilities/heroes/hero_murzik.txt"
 #base "abilities/heroes/hero_saitama.txt"
+
+//#base "abilities/heroes/hero_maka.txt"
+//#base "abilities/heroes/hero_soul_eater.txt"
 
 #base "abilities/heroes/hero_wisp.txt"
 #base "abilities/heroes/hero_warlock.txt"

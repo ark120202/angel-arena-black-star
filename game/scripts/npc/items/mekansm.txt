@@ -11,7 +11,7 @@
 		"ItemResult"					"item_mekansm_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_headdress;item_buckler;item_ultimate_orb"
+			"01"						"item_headdress;item_buckler"
 		}
 	}
 
@@ -40,32 +40,42 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"20 40"
+				"bonus_all_stats"		"6 12"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"7 10"
+				"bonus_armor"			"6 12"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1000"
+				"bonus_health"			"0 500"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_health_regen"		"6 12"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"0 500"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"4 8"
+				"radius"				"1000"
 			}
 			"06"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"6 12"
+			}
+			"07"
+			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"400 800"
+				"aura_bonus_armor"		"4 12"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"350 1000"
 			}
 		}
 	}
@@ -76,12 +86,12 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"950"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mekansm_2"
 		"ItemRequirements"
 		{
-			"01"						"item_mekansm_arena;item_ultimate_orb;item_ultimate_orb"
+			"01"						"item_mekansm_arena;item_headdress;item_buckler;item_soul_booster"
 		}
 	}
 
@@ -110,32 +120,42 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"20 40"
+				"bonus_all_stats"		"6 12"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"7 10"
+				"bonus_armor"			"6 12"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1000"
+				"bonus_health"			"0 500"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_health_regen"		"6 12"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"0 500"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"4 8"
+				"radius"				"1000"
 			}
 			"06"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"6 12"
+			}
+			"07"
+			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"400 800"
+				"aura_bonus_armor"		"4 12"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"350 1000"
 			}
 		}
 	}
@@ -178,49 +198,54 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"70"
+				"bonus_movement"		"75"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"1000"
+				"bonus_health"			"1250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"75"
+				"bonus_mana"			"2000"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"12"
+				"bonus_all_stats"		"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1000"
+				"bonus_armor"			"20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_health_regen"		"40"
+				"radius"				"1000"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_armor"			"20"
+				"aura_health_regen"		"60"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_threshold_pct"	"25"
+				"aura_armor"			"20"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_health_regen_bonus"	"50"
+				"aura_bonus_threshold_pct"	"25"
 			}
 			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_health_regen_bonus"	"80"
+			}
+			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"aura_armor_bonus"		"30"
@@ -275,34 +300,44 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"40"
+				"bonus_all_stats"		"20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"10"
+				"bonus_armor"			"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1000"
+				"bonus_health"			"600"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_health_regen"		"12"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"600"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"8"
+				"radius"				"1000"
 			}
 			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"12"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_armor"		"8"
+			}
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"heal_amount"			"800"
 			}
-			"07"
+			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"rune_multiplier"		"0.5"

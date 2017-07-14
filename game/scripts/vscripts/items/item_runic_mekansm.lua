@@ -62,6 +62,8 @@ function modifier_item_runic_mekansm:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_HEALTH_BONUS,
+		MODIFIER_PROPERTY_MANA_BONUS,
 	}
 end
 function modifier_item_runic_mekansm:GetModifierBonusStats_Strength()
@@ -75,6 +77,12 @@ function modifier_item_runic_mekansm:GetModifierBonusStats_Intellect()
 end
 function modifier_item_runic_mekansm:GetModifierPhysicalArmorBonus()
 	return self:GetAbility():GetSpecialValueFor("bonus_armor")
+end
+function modifier_item_runic_mekansm:GetModifierHealthBonus()
+	return self:GetAbility():GetSpecialValueFor("bonus_health")
+end
+function modifier_item_runic_mekansm:GetModifierManaBonus()
+	return self:GetAbility():GetSpecialValueFor("bonus_mana")
 end
 function modifier_item_runic_mekansm:GetModifierAura()
 	return "modifier_item_runic_mekansm_effect"
