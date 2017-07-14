@@ -114,3 +114,9 @@ ranked_top_players: Лучшие игроки
 ranked_top_more: Открыть топ 100...
 
 teams_kill_weight_tooltip: Убийство героев этой команды принесет {d:kill_weight} очков
+
+weather_sunny: Солнечно
+weather_rain: Дождливо
+weather_storm: Шторм
+weather_snow: Снег
+weather_blizzard: Метель

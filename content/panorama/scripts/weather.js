@@ -1,5 +1,3 @@
-var ToggleParticles = $('#ToggleParticles');
-ToggleParticles.checked = true;
 var changeTime = -1;
 var ParticleList = [];
 var currentParticles = [];
@@ -24,11 +22,10 @@ function CreateParticleForWeather() {
 	}
 }
 
-function SetParticlesEnabled(enabled) {
-	if (particlesEnabled !== enabled) {
-		enabled ? CreateParticleForWeather() : RemoveParticles();
-		particlesEnabled = enabled;
-	}
+function ToggleWeatherParticles() {
+	particlesEnabled = !particlesEnabled;
+	$('#CurrentWeatherIcon').SetHasClass('Disabled', !particlesEnabled);
+	particlesEnabled ? CreateParticleForWeather() : RemoveParticles();
 }
 
 function StopSounds() {
@@ -53,15 +50,10 @@ function EmitSoundsForWeather() {
 }
 
 (function() {
-	(function Update() {
-		$.Schedule(0.1, Update);
-		ToggleParticles.SetDialogVariable('weather_duration', secondsToMS(Math.ceil(Game.GetDOTATime(false, true) - changeTime)));
-		EmitSoundsForWeather();
-	})();
-
 	DynamicSubscribePTListener('weather', function(tableName, changesObject, deletionsObject) {
 		if (changesObject.current) {
-			ToggleParticles.SetDialogVariable('current_weather', changesObject.current);
+			$('#CurrentWeatherIcon').SetImage(TransformTextureToPath('weather/' + changesObject.current));
+			$('#WeatherTime').SetDialogVariable('current_weather', $.Localize('weather_' + changesObject.current));
 		}
 		if (changesObject.particles) {
 			currentParticles = _.values(changesObject.particles);

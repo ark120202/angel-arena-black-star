@@ -123,7 +123,12 @@ function Update() {
 		Snippet_DotaTeamBar_Update(TeamPanels[i]);
 	}
 
-	$.GetContextPanel().SetDialogVariable('duel_timer', secondsToMS(DuelTimerEndTime == null ? time : Math.max(Math.ceil(DuelTimerEndTime - Game.GetGameTime()), 0)));
+	context.SetDialogVariable('duel_timer', secondsToMS(DuelTimerEndTime == null ? time : Math.max(Math.ceil(DuelTimerEndTime - Game.GetGameTime()), 0)));
+
+
+	$('#WeatherTime').SetDialogVariable('weather_duration', secondsToMS(Math.ceil(Game.GetDOTATime(false, true) - changeTime)));
+	EmitSoundsForWeather();
+
 	context.SetHasClass('AltPressed', GameUI.IsAltDown());
 }
 
@@ -137,7 +142,6 @@ function Update() {
 	DynamicSubscribePTListener('arena', function(tableName, changesObject, deletionsObject) {
 		if (changesObject.kill_goal != null) {
 			$.GetContextPanel().SetDialogVariableInt('kill_goal', Number(changesObject.kill_goal));
-			//$("#KillGoalLabel").text = changesObject.kill_goal;
 		}
 		if (changesObject.duel_end_time != null) {
 			DuelTimerEndTime = Number(changesObject.duel_end_time);

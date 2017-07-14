@@ -8,6 +8,7 @@
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/weather.js" />
 		<include src="file://{resources}/scripts/top_scoreboard.js" />
 	</scripts>
 	<snippets>
@@ -59,6 +60,7 @@
 			<Panel id="DayTime" class="TimeOfDayIcon DayIcon"/>
 			<Panel id="NightTime" class="TimeOfDayIcon NightIcon"/>
 			<DOTAHeroImage id="NightstalkerNight" class="TimeOfDayIcon" heroname="npc_dota_hero_night_stalker" heroimagestyle="icon"/>
+			<Image id="CurrentWeatherIcon" onactivate="ToggleWeatherParticles()" />
 			<Label id="GameTime" text="{s:time_of_day}" hittest="false"/>
 			<Panel id="GamemodeVariablePanel">
 				<Label id="KillGoal" text="{d:kill_goal}" />
@@ -68,6 +70,7 @@
 		<Panel id="DayGlow" hittest="false"/>
 		<Panel id="NightGlow" hittest="false"/>
 		<Label id="TimeUntil" text="#DOTA_HUD_TimeUntil" hittest="false"/>
+		<Label id="WeatherTime" text="#weather_current_status" hittest="false"/>
 
 		<Panel id="TeamsPanel" hittest="false">
 			<Panel id="TopBarLeftTeams" hittest="false">
