@@ -63,7 +63,7 @@ function Verify:Levels()
 
 	for className, classEntry in pairs(Verify:_GetChangedAbilities()) do
 		if type(classEntry) == "table" then
-			local maxLevel = classEntry.MaxLevel or GetKeyValue(className, "MaxLevel") or 4
+			local maxLevel = classEntry.MaxLevel or GetKeyValue(className, "MaxLevel") or classEntry.MaxUpgradeLevel or GetKeyValue(className, "MaxUpgradeLevel") or 4
 			for k,v in pairs(classEntry) do
 				if type(v) ~= "table" then
 					Check(className, maxLevel, k, tostring(v))
