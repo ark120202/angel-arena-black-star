@@ -1,11 +1,11 @@
 .AddonLoadingRoot
 	width: 100%
 	height: 100%
+	overflow: clip
 	background-color: rgb(0, 0, 0)
 	background-position: 100% 100%
-	background-size: 100% 100%
 	background-repeat: no-repeat
-	overflow: clip
+	background-size: 100% 100%
 
 #loading-ratings
 	align: right top
@@ -41,21 +41,21 @@
 	width: 100%
 	height: 100%
 	//margin-left: 42px
-	flow-children: right
 	visibility: collapse
+	flow-children: right
 
 #loading_base
 	width: 100%
 	height: 100%
 
 #TipsPanel
-	align: right bottom
-	min-height: 84px
-	background-color: rgba(20, 20, 20, 0.97)
-	box-shadow: -4px -4px 8px 8px rgba(20, 20, 20, 0.97)
-	margin-bottom: 70px
-	margin-right: 270px
 	width: 39%
+	min-height: 84px
+	margin-right: 270px
+	margin-bottom: 70px
+	background-color: rgba(20, 20, 20, .97)
+	box-shadow: -4px -4px 8px 8px rgba(20, 20, 20, .97)
+	align: right bottom
 
 .AspectRatio16x9
 	#TipsPanel
@@ -67,49 +67,50 @@
 
 
 #TipLabel
-	align: center center
-	color: rgb(255, 255, 255)
-	font-size: 22px
 	margin: 8px 20px
+	font-size: 22px
+	color: rgb(255, 255, 255)
 	text-align: center
+	align: center center
 
 #LocalPlayerData
-	vertical-align: top
 	width: 100%
+	height: 500px
+	margin-top: 55px
 	margin-left: 4px
 	//margin-right: -82%
+	vertical-align: top
 	horizontal-align: right
-	margin-top: 55px
-	height: 500px
 
 #PlayerInfoLoading
-	align: center center
 	width: 40px
 	height: 40px
-	animation-name: PlayerLoadingAnim
-	animation-duration: 1s
-	animation-timing-function: linear
-	animation-iteration-count: infinite
 	background-image: url('file://{images}/status_icons/loadingthrobber_round.png')
-	background-repeat: no-repeat
 	background-position: 50% 50%
+	background-repeat: no-repeat
 	background-size: 100% 100%
 	visibility: collapse
+	animation-duration: 1s
+	animation-iteration-count: infinite
+	animation-name: PlayerLoadingAnim
+	animation-timing-function: linear
+	align: center center
 
 #OptionVotings
 	width: 550px
-	vertical-align: bottom
+	padding: 4px
 	margin: 4px
-	margin-left: 20px
 	margin-bottom: 290px
-	background-color: rgba(0, 0, 0, 0.7)
+	margin-left: 20px
+	vertical-align: bottom
+	background-color: rgba(0, 0, 0, .7)
 	border: 2px solid rgb(211, 211, 211)
 	border-radius: 5px
-	flow-children: down
-	padding: 4px
-	transition-property: opacity
-	transition-duration: 0.2s
 	opacity: 0
+	transition-duration: .2s
+	transition-property: opacity
+	flow-children: down
+
 	&.Loaded
 		opacity: 1
 
@@ -118,33 +119,37 @@
 	width: 100%
 	margin: 3px 0
 	flow-children: down
-	&:not(.ShouldGroup) .OptionVotingVariant
-		width: 100%
-		margin: 3px 10px
 
-	&.Voted .OptionVotingVariant
-		wash-color: rgb(153, 153, 153)
-		saturation: 0
-		> Label
-			wash-color: rgb(136, 136, 136)
+	&:not(.ShouldGroup)
+		.OptionVotingVariant
+			width: 100%
+			margin: 3px 10px
+
+	&.Voted
+		.OptionVotingVariant
+			wash-color: rgb(153, 153, 153)
+			saturation: 0
+
+			> Label
+				wash-color: rgb(136, 136, 136)
 
 
 
 #OptionVotingTitle
 	width: 100%
 	height: 41px
-	horizontal-align: center
-	color: rgb(255, 255, 255)
-	text-align: center
-	text-overflow: shrink
 	font-size: 30px
 	font-weight: bold
 	letter-spacing: 1px
+	color: rgb(255, 255, 255)
+	text-align: center
+	text-overflow: shrink
 	text-shadow: 0 0 3 rgb(0, 0, 0)
+	horizontal-align: center
 
 #OptionVotingVariants
-	flow-children: down
 	width: 100%
+	flow-children: down
 
 .OptionVotingVariantRow
 	width: 100%
@@ -152,9 +157,10 @@
 
 .OptionVotingVariant
 	width: 49%
+
 	> Label
-		color: rgb(255, 255, 255)
 		font-size: 20px
+		color: rgb(255, 255, 255)
 		horizontal-align: left
 
 
@@ -237,8 +243,8 @@
 	padding: 2px
 	margin: 4px 0
 	margin-left: 54px
-	transition-property: pre-transform-scale2d, brightness
 	transition-duration: .07s
+	transition-property: pre-transform-scale2d, brightness
 	brightness: .98
 
 	&:active

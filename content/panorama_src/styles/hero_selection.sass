@@ -2,18 +2,19 @@ $mainPanelHeight: 960px;
 $gameModeInfoPanelWidth: 200px;
 
 .base
-	height: 100%
 	width: 100%
+	height: 100%
 	opacity: 1
-	transition-property: opacity
 	transition-duration: 1.5s
+	transition-property: opacity
+
 	#HeroListPanel
 		margin-left: 50px
 
 
 #HeroSelectionBox
-	height: 100%
 	width: 100%
+	height: 100%
 
 #HeroSelectionBackground
 	width: 100%
@@ -25,67 +26,67 @@ $gameModeInfoPanelWidth: 200px;
 	height: 100%
 
 #SelectedHeroPanel
-	margin-left: 4px
-	margin-right: 4px
-	margin-top: 5px
-	margin-bottom: 5px
-	height: 100%
 	width: 20%
-	flow-children: down
+	height: 100%
+	margin-top: 5px
+	margin-right: 4px
+	margin-bottom: 5px
+	margin-left: 4px
 	visibility: collapse
+	flow-children: down
 
 #SelectedHeroLabelPanel
 	width: 100%
 	height: 4.5%
-	margin-left: 4px
-	margin-right: 4px
 	margin-top: 4px
+	margin-right: 4px
 	margin-bottom: 4px
+	margin-left: 4px
 
 #SelectedHeroLabel
+	font-size: 40px
+	font-weight: bold
+	color: rgb(255, 255, 255)
 	vertical-align: center
 	horizontal-align: center
-	color: rgb(255, 255, 255)
-	font-weight: bold
-	font-size: 40px
 
 #HeroListBasePanel
-	height: $mainPanelHeight
 	width: 80%
+	height: $mainPanelHeight
 	vertical-align: bottom
-	flow-children: down
-	transition-duration: 0.4s
+	transition-duration: .4s
 	transition-property: transform, opacity
 	transition-timing-function: ease-in-out
+	flow-children: down
 
 #SelectedHeroPreview
-	height: $mainPanelHeight
 	width: 80%
+	height: $mainPanelHeight
 	vertical-align: bottom
-	flow-children: down
-	transition-duration: 0.4s
+	transition-duration: .4s
 	transition-property: transform, opacity
 	transition-timing-function: ease-in-out
+	flow-children: down
 
 #HeroListTabsPanel
-	margin-left: 6px
-	margin-right: 6px
-	height: 5%
 	width: 100%
+	height: 5%
+	margin-right: 6px
+	margin-left: 6px
 	horizontal-align: center
 	flow-children: right
 
 #HeroListPanel
-	margin-top: -1px
-	margin-left: 6px
-	margin-right: 6px
-	height: 100%
 	width: 100%
+	height: 100%
+	margin-top: -1px
+	margin-right: 6px
+	margin-left: 6px
 	flow-children: down
 
 #SelectionStatusPanel
-	height: 120px
 	width: 100%
+	height: 120px
 
 #Header
 	width: 100%;
@@ -99,34 +100,34 @@ $gameModeInfoPanelWidth: 200px;
 	horizontal-align: center
 
 #HeroSelectionTimer
-	horizontal-align: center
-	font-size: 64px
-	color: rgb(255, 255, 255)
-	font-weight: thin
-	text-align: center
-	transition-property: transform, opacity, pre-transform-scale2d
-	transition-duration: 0.4s
-	transition-timing-function: ease-in-out
-	margin-bottom: -20px
 	width: 100%
+	margin-bottom: -20px
+	font-size: 64px
+	font-weight: thin
+	color: rgb(255, 255, 255)
+	text-align: center
+	transition-duration: .4s
+	transition-property: transform, opacity, pre-transform-scale2d
+	transition-timing-function: ease-in-out
+	horizontal-align: center
 
 #GameModeInfoCurrentPhase
-	align: center bottom
-	color: rgb(255, 255, 255)
-	text-shadow: 0 0 6px 1.0 rgba(158, 248, 255, 0.27059)
-	font-size: 20px
-	text-align: center
-	text-transform: uppercase
 	width: 100%
+	font-size: 20px
+	color: rgb(255, 255, 255)
+	text-align: center
+	text-shadow: 0 0 6px 1 rgba(158, 248, 255, .27059)
+	text-transform: uppercase
+	align: center bottom
 
 #GameModeInfoGamemodeLabel
-	align: center bottom
-	color: rgb(255, 255, 255)
-	text-shadow: 0 0 6px 1.0 rgba(158, 248, 255, 0.27059)
-	font-size: 20px
-	text-align: center
-	text-transform: uppercase
 	width: 100%
+	font-size: 20px
+	color: rgb(255, 255, 255)
+	text-align: center
+	text-shadow: 0 0 6px 1 rgba(158, 248, 255, .27059)
+	text-transform: uppercase
+	align: center bottom
 
 #LeftTeams
 	width: 50%
@@ -193,15 +194,15 @@ $gameModeInfoPanelWidth: 200px;
 #SelectedHeroSelectButton
 	width: 78%
 	height: 70%
-	align: left center
-	background-color: gradient(linear, 0 0, 0 100%, from(rgba(64, 77, 101, 0.86667) ), to(rgba(43, 52, 69, 0.86667) ) )
+	background-color: gradient(linear, 0 0, 0 100%, from(rgba(64, 77, 101, .86667)), to(rgba(43, 52, 69, .86667)))
 	border-top: 1px solid rgb(111, 129, 155)
-	border-left: 1px solid rgba(111, 129, 155, 0.13333)
-	border-right: 1px solid rgba(111, 129, 155, 0.06667)
-	border-bottom: 1px solid rgba(63, 65, 75, 0.2)
-	box-shadow: rgba(0, 0, 0, 0.56078) -6px -6px 12px 12px
+	border-right: 1px solid rgba(111, 129, 155, .06667)
+	border-bottom: 1px solid rgba(63, 65, 75, .2)
+	border-left: 1px solid rgba(111, 129, 155, .13333)
+	box-shadow: rgba(0, 0, 0, .56078) -6px -6px 12px 12px
+	transition-duration: .18s
 	transition-property: opacity, background-color
-	transition-duration: 0.18s
+	align: left center
 
 	&:hover
 		brightness: 1.2
@@ -210,14 +211,14 @@ $gameModeInfoPanelWidth: 200px;
 		brightness: 1.5
 
 	&:disabled
-		saturation: 0.4
+		saturation: .4
 		wash-color: rgb(128, 128, 128)
 		pre-transform-scale2d: 1
 
 
 .LocalHeroBanButton
 	#SelectedHeroSelectButton
-		background-color: gradient(linear, 0 0, 0 100%, from(rgba(26, 2, 2, 0.86667) ), to(rgba(125, 54, 54, 0.86667) ) )
+		background-color: gradient(linear, 0 0, 0 100%, from(rgba(26, 2, 2, .86667)), to(rgba(125, 54, 54, .86667)))
 
 	#SelectedHeroSelectLabel
 		visibility: collapse
@@ -227,27 +228,27 @@ $gameModeInfoPanelWidth: 200px;
 
 
 #SelectedHeroSelectLabel
-	align: center top
 	font-size: 24px
 	color: rgb(178, 218, 37)
+	align: center top
 
 #SelectedHeroLockLabel
-	align: center top
 	font-size: 24px
 	color: rgb(178, 218, 37)
 	visibility: collapse
+	align: center top
 
 #SelectedHeroUnlockLabel
-	align: center top
 	font-size: 24px
 	color: rgb(178, 218, 37)
 	visibility: collapse
+	align: center top
 
 #SelectedHeroBanLabel
-	align: center top
 	font-size: 24px
 	color: rgb(178, 218, 37)
 	visibility: collapse
+	align: center top
 
 .LocalHeroLockButton
 	#SelectedHeroSelectLabel
@@ -258,45 +259,48 @@ $gameModeInfoPanelWidth: 200px;
 
 
 .LocalHeroUnlockButton
+	sound: "ui.pick_play"
+
 	#SelectedHeroSelectLabel
 		visibility: collapse
 
 	#SelectedHeroUnlockLabel
 		visibility: visible
 
-	visibility: collapse
-	visibility: visible
-	sound: "ui.pick_play"
 
 #SelectedHeroSelectHeroName
-	align: center bottom
+	margin-bottom: -7px
 	font-size: 32px
 	color: rgb(178, 218, 37)
 	text-transform: uppercase
-	margin-bottom: -7px
+	align: center bottom
 
 #SelectedHeroLinkedHeroPanel
-	align: left center
-	visibility: collapse
 	margin-left: 12px
+	visibility: collapse
 	flow-children: right
+	align: left center
+
 	Label
 		font-size: 20px
 		color: rgb(197, 209, 153)
 
+	.HoveredHeroHasLinked &
+		visibility: visible
 
 #ExitButton
-	transform: rotatez(180deg)
-	background-image: url('file://{images}/control_icons/return_to_game.png')
 	width: 38.75px
 	height: 36.25px
 	margin: 9px
-	background-size: 38.75px
+	background-image: url('file://{images}/control_icons/return_to_game.png')
 	background-position: 50% 50%
 	background-repeat: no-repeat
-	wash-color: rgb(68, 74, 85)
+	background-size: 38.75px
+	transform: rotatez(180deg)
+	transition-duration: .15s
 	transition-property: wash-color
-	transition-duration: 0.15s
+	wash-color: rgb(68, 74, 85)
+
 	&:hover
 		wash-color: rgb(204, 204, 204)
 
@@ -306,49 +310,51 @@ $gameModeInfoPanelWidth: 200px;
 
 #HeroListControls
 	width: 100%
-	vertical-align: bottom
 	height: 112px
 	margin: 4px
+	vertical-align: bottom
 
 #HeroSearchTextEntry
 	width: 320px
 	height: 100%
 	margin: 4px 12px
-	border-radius: 10px
 	font-size: 20px
 	color: rgb(255, 255, 255)
+	border-radius: 10px
 	align: right center
 
 #SelectedHeroAttributesPanel
-	horizontal-align: right
 	height: 100%
-	flow-children: right
 	margin-right: 12px
+	horizontal-align: right
+	flow-children: right
 
 .SelectedHeroAttributesColumn
 	width: 125px
 	flow-children: down
 
 .SelectedHeroAttributesElement
-	flow-children: right
-	height: 37px
 	width: 105px
+	height: 37px
 	horizontal-align: right
+	flow-children: right
+
 	> Image
 		vertical-align: center
 
 
 .DotaAttributePic
-	vertical-align: center
 	width: 24px
 	height: 24px
-	margin-left: 5px
 	margin-right: 8px
+	margin-left: 5px
+	vertical-align: center
 	background-repeat: no-repeat
 	background-size: contain
 	border-radius: 50%
+
 	&.PrimaryAttribute
-		box-shadow: -1.5px -1.5px 3px 3px rgba(255, 255, 255, 0.6)
+		box-shadow: -1.5px -1.5px 3px 3px rgba(255, 255, 255, .6)
 
 
 #DotaAttributePic_1
@@ -361,14 +367,14 @@ $gameModeInfoPanelWidth: 200px;
 	background-image: url('s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_intelligence_psd.vtex')
 
 .AttributeValueText
-	color: rgb(255, 255, 255)
-	align: center center
 	font-size: 20px
+	color: rgb(255, 255, 255)
 	horizontal-align: right
+	align: center center
 
 #ChatAndMapPanel
-	height: $mainPanelHeight
 	width: 20%
+	height: $mainPanelHeight
 	horizontal-align: right
 	align: right bottom
 	flow-children: down
@@ -397,13 +403,13 @@ $gameModeInfoPanelWidth: 200px;
 .AbilitiesLineSplitter
 	width: 42%
 	height: 2px
-	background-color: rgb(204, 204, 204)
 	vertical-align: center
+	background-color: rgb(204, 204, 204)
 
 .SelectedHeroAbility
 	height: 50px
-	margin-left: 4px
 	margin-right: 4px
+	margin-left: 4px
 	border-radius: 2px
 
 #HeroListControlsGroup1
@@ -412,8 +418,8 @@ $gameModeInfoPanelWidth: 200px;
 
 #HeroListControlsGroup2
 	width: 30%
-	align: center center
 	margin-left: 10%
+	align: center center
 
 #HeroListControlsGroup3
 	align: right center
@@ -425,9 +431,9 @@ $gameModeInfoPanelWidth: 200px;
 		align: center center
 
 	.HeroListElement
-		margin-left: 15px
-		margin-right: -5px
 		height: 80px
+		margin-right: -5px
+		margin-left: 15px
 
 
 .AspectRatio5x4
@@ -436,10 +442,15 @@ $gameModeInfoPanelWidth: 200px;
 		align: center center
 
 	.HeroListElement
-		margin-left: 15px
-		margin-right: -5px
 		height: 82px
+		margin-right: -5px
+		margin-left: 15px
 
+.AspectRatio16x10
+	.HeroListElement
+		height: 84px
+		margin-right: -8px
+		margin-left: 15px
 
 .map_landscape_4v4v4v4
 	#RightTeams #TeamBarPlayers
@@ -448,21 +459,26 @@ $gameModeInfoPanelWidth: 200px;
 	#LeftTeams #TeamBarPlayers
 		padding-right: 5px
 
+	.PlayerInTeamHeroImage
+		width: 69px
+
+	.PlayerInTeamPanel
+		width: 77px
+		margin: 2px
+
+	.PlayerInTeamNickname
+		font-size: 17px
 
 .DisconnectionIndicator
-	opacity: 0
 	width: 100%
 	height: 18px
 	vertical-align: center
+	opacity: 0
 
-.player_connection_abandoned
-	.PlayerInTeamHeroImage
-		wash-color: rgb(255, 0, 0)
-		saturation: 0
-
-	.DisconnectionIndicator
+	.player_connection_failed &,
+	.player_connection_disconnected &,
+	.player_connection_abandoned &
 		opacity: 1
-
 
 #MinimapPanel
 	width: 350px
@@ -474,6 +490,7 @@ $gameModeInfoPanelWidth: 200px;
 	width: 32px
 	height: 32px
 	flow-children: right-wrap
+
 	&.SpawnBoxUnitPanelChildren2
 		width: 64px
 		transform: translateX(-16px)
@@ -488,13 +505,19 @@ $gameModeInfoPanelWidth: 200px;
 		height: 75px
 		transform: translateX(-9px) translateY(-21.5px)
 
+	.Debug &
+		border: 1px solid rgb(255, 0, 0)
 
 .SpawnBoxUnitPanel
 	width: 32px
 	height: 32px
+
 	&.hero_selection_hover
 		saturation: 0
 
+	.SpawnBoxUnitPanelChildren3 &
+		width: 25px
+		height: 25px
 
 .MinimapSpawnBoxes
 	width: 100%
@@ -511,23 +534,14 @@ $gameModeInfoPanelWidth: 200px;
 .only_map_landscape_4v4v4v4
 	visibility: collapse
 
+	.map_landscape_4v4v4v4 &
+		visibility: visible
+
 .only_map_landscape_5v5
 	visibility: collapse
 
-.map_landscape_4v4v4v4
-	.only_map_landscape_4v4v4v4
+	.map_landscape_5v5 &
 		visibility: visible
-
-	.PlayerInTeamHeroImage
-		width: 69px
-
-	.PlayerInTeamPanel
-		margin: 2px
-		width: 77px
-
-	.PlayerInTeamNickname
-		font-size: 17px
-
 
 #SelectionChatBox
 	width: 100%
@@ -536,27 +550,27 @@ $gameModeInfoPanelWidth: 200px;
 #SelectionChat
 	width: 100%
 	height: 100%
-	margin: 4px
 	padding: 10px
+	margin: 4px
 	background-color:
 	border-radius: 12px
 
 #SelectionChatMessagesPanel
 	width: 100%
-	vertical-align: bottom
 	margin-bottom: 17%
+	vertical-align: bottom
 
 #SelectionChatMessages
-	flow-children: down
 	transform: scaleY(-1)
 	overflow: squish clip
+	flow-children: down
 
 #SelectionChatEntryPanel
-	margin-left: 4px
-	margin-right: 4px
-	margin-top: 4px
 	width: 100%
 	height: 15%
+	margin-top: 4px
+	margin-right: 4px
+	margin-left: 4px
 	vertical-align: bottom
 	border-top: 1px solid rgb(128, 128, 128)
 
@@ -568,28 +582,29 @@ $gameModeInfoPanelWidth: 200px;
 	border-width: 0
 
 .ChatLine
-	vertical-align: bottom
-	color: rgb(255, 255, 255)
-	font-size: 18px
-	font-weight: thin
+	padding-top: 2px
 	margin-top: -2px
 	margin-left: 5px
-	padding-top: 2px
+	font-size: 18px
+	font-weight: thin
+	color: rgb(255, 255, 255)
+	vertical-align: bottom
+
 	.HeroIcon
 		width: 40px
 		height: 23px
 		margin-top: 0
-		margin-bottom: -6px
 		margin-right: 4px
-		transform: translateY(2px)
+		margin-bottom: -6px
 		border: 1px solid rgb(0, 0, 0)
+		transform: translateY(2px)
 
 
 #AdsBanner
-	padding: 2px
 	width: 100%
-	transition-property: pre-transform-scale2d, brightness
+	padding: 2px
 	transition-duration: .15s
+	transition-property: pre-transform-scale2d, brightness
 	brightness: .8
 
 	&:hover
@@ -614,14 +629,14 @@ $gameModeInfoPanelWidth: 200px;
 			saturation: 0
 
 #LockedIcon
-	align: right bottom
-	margin: 2px
-	wash-color: rgb(177, 216, 224)
 	width: 22px
 	height: 22px
-	visibility: collapse
+	margin: 2px
 	background-image: url('file://{images}/control_icons/lock_small.png')
 	background-size: 100% 100%
+	visibility: collapse
+	wash-color: rgb(177, 216, 224)
+	align: right bottom
 
 #RandomButton
 	width: 20%
@@ -632,62 +647,43 @@ $gameModeInfoPanelWidth: 200px;
 
 	> Label
 		width: 100%
+		margin-bottom: -6px
 		font-size: 14px
 		text-align: center
 		text-overflow: shrink
-		margin-bottom: -6px
 		vertical-align: bottom
 
 	> Panel
-		background-image: url('s2r://panorama/images/control_icons/random_dice_psd.vtex')
-		background-position: center
-		background-size: contain
-		background-repeat: no-repeat
 		width: 34px
 		height: 38px
+		background-image: url('s2r://panorama/images/control_icons/random_dice_psd.vtex')
+		background-position: center
+		background-repeat: no-repeat
+		background-size: contain
 		horizontal-align: center
 
+	.RandomingEnabled &
+		saturation: 1
+		brightness: 1
+
+		&.Activated
+			sound: 'ui.pick_play'
+
+		&:hover
+			brightness: 2
+
+		&:active
+			brightness: 1.5
 
 #SelectedHeroOverview
-	color: rgb(255, 255, 255)
 	height: 130%
-	margin-bottom: -30px
 	margin-top: -5px
 	margin-right: -17px
+	margin-bottom: -30px
+	color: rgb(255, 255, 255)
 	text-shadow: 1px 1px 3px 2 rgb(0, 0, 0)
 
-.HoveredHeroHasLinked #SelectedHeroLinkedHeroPanel
-	visibility: visible
-
-.player_connection_failed .DisconnectionIndicator
-	opacity: 1
-
-.player_connection_disconnected .DisconnectionIndicator
-	opacity: 1
-
-.Debug .MinimapSpawnBox
-	border: 1px solid rgb(255, 0, 0)
-
-.SpawnBoxUnitPanelChildren3 .SpawnBoxUnitPanel
-	width: 25px
-	height: 25px
-
-.map_landscape_5v5 .only_map_landscape_5v5
-	visibility: visible
-
-.AspectRatio16x10 .HeroListElement
-	margin-left: 15px
-	margin-right: -8px
-	height: 84px
-
-.RandomingEnabled #RandomButton
-	saturation: 1.0
-	brightness: 1.0
-	&.Activated
-		sound: "ui.pick_play"
-
-	&:hover
-		brightness: 2.0
-
-	&:active
-		brightness: 1.5
+.player_connection_abandoned
+	.PlayerInTeamHeroImage
+		wash-color: rgb(255, 0, 0)
+		saturation: 0
