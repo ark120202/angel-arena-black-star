@@ -196,9 +196,6 @@ PANORAMA_SHOP_ITEMS = {
 	},
 	{
 		{
-			--"item_consecrated_sword",
-			--"item_sacrificial_dagger",
-
 			"item_moon_dust",
 			"item_dark_blade",
 			"item_demons_paw",
