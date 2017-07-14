@@ -192,7 +192,6 @@ DOTA_Tooltip_ability_item_lucifers_claw_Note2: Has a 4 second cooldown on Trees.
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_armor: +$armor
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_all_stats: +$all
-DOTA_Tooltip_ability_item_lucifers_claw_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_lucifers_claw_lifesteal_percent: '%LIFESTEAL:'
 DOTA_Tooltip_ability_item_lucifers_claw_damage_bonus: '%QUELL MELEE DAMAGE:'
 DOTA_Tooltip_ability_item_lucifers_claw_damage_bonus_ranged: '%QUELL RANGED DAMAGE:'
@@ -1030,7 +1029,6 @@ DOTA_Tooltip_ability_item_echo_sabre_2: Echo Sabre 2
 DOTA_Tooltip_ability_item_echo_sabre_2_Description: 'Passive: Double Hit - Causes melee attacks to attack twice after a short delay. The double attacks apply a %slow_duration% second %movement_slow%%% movement slow and %attack_speed_slow% attack speed slow on each strike. Second attack isn''t affected by attack point and will be done instantly.'
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_strength: +$str
-DOTA_Tooltip_ability_item_echo_sabre_2_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_mana_regen: '%+$mana_regen'
@@ -1351,7 +1349,6 @@ DOTA_Tooltip_ability_item_fallhammer_Description: |-
   Passive: Double Hit - Causes melee attacks to attack twice after a short delay. Second attack isn't affected by attack point and will be done instantly. Also, this attack will stun enemy for %bash_duration% seconds and deal %bash_damage% bonus damage. Bashes will proc anyway, no matter are you melee or ranged hero.
 DOTA_Tooltip_ability_item_fallhammer_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_fallhammer_bonus_strength: +$str
-DOTA_Tooltip_ability_item_fallhammer_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_fallhammer_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_fallhammer_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_fallhammer_bonus_armor: +$armor

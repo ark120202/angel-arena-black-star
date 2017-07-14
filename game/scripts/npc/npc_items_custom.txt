@@ -731,13 +731,13 @@
 		"ID"							"10058"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"500"
+		"ItemCost"						"25"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_lucifers_claw"
 		"ItemRequirements"
 		{
-			"01"						"item_wraith_band;item_iron_talon;item_helm_of_the_dominator"
+			"01"						"item_iron_talon;item_helm_of_the_dominator"
 		}
 	}
 
@@ -751,9 +751,9 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"AbilityTextureName"			"item_arena/lucifers_claw"
 
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"60.0"
+		"AbilityCooldown"				"20.0"
 		"AbilityManaCost"				"50"
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"common"
@@ -768,74 +768,69 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"3"
+				"bonus_health_regen"	"12"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"10"
+				"bonus_armor"			"5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"12"
+				"bonus_all_stats"		"5"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"20"
+				"lifesteal_percent"		"15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_percent"		"15"
+				"damage_bonus"			"180"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"180"
+				"damage_bonus_ranged"	"140"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"140"
+				"quelling_range_tooltip" "600"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_range_tooltip" "600"
+				"alternative_cooldown"	"4"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"alternative_cooldown"	"4"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"doomling_health"		"1500"
 			}
-			"11"
+			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"doomling_health_regen"	"15.0"
 			}
-			"12"
+			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"doomling_mana"			"350"
 			}
-			"13"
+			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"doomling_mana_regen"	"7.0"
 			}
-			"14"
+			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"doomling_damage_min"	"57"
 			}
-			"15"
+			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"doomling_damage_max"	"63"
@@ -866,7 +861,6 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 			}
 
@@ -3382,7 +3376,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.0 4.0 6.0"
+				"xp_multiplier"			"2.0 3.5 5.0"
 			}
 			"03"
 			{
@@ -4011,7 +4005,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.0 4.0 6.0"
+				"xp_multiplier"			"2.0 3.5 5.0"
 			}
 			"03"
 			{
@@ -4097,7 +4091,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.0 4.0 6.0"
+				"xp_multiplier"			"2.0 3.5 5.0"
 			}
 			"03"
 			{
@@ -5561,39 +5555,34 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"0 30"
+				"bonus_attack_speed"	"15 130"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"15 80"
+				"bonus_damage"			"20 30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"20 40"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_mana_regen"		"100 200"
 			}
-			"07"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"attack_delay"			"0.2 0.15"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"movement_slow"			"-100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"attack_speed_slow"		"-100 -150"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"slow_duration"			"0.7 1.0"
@@ -5655,12 +5644,12 @@
 		"ID"							"10213"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"550"
+		"ItemCost"						"1350"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_echo_sabre_2"
 		"ItemRequirements"
 		{
-			"01"						"item_echo_sabre_arena;item_eagle;item_hyperstone"
+			"01"						"item_echo_sabre_arena;item_shard_attackspeed;item_hyperstone"
 		}
 	}
 
@@ -5695,39 +5684,34 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"0 30"
+				"bonus_attack_speed"	"15 130"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"15 70"
+				"bonus_damage"			"20 30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"20 40"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_mana_regen"		"100 200"
 			}
-			"07"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"attack_delay"			"0.2 0.15"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"movement_slow"			"-100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"attack_speed_slow"		"-100 -150"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"slow_duration"			"0.7 1.0"
@@ -5746,7 +5730,6 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
@@ -6472,12 +6455,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"30"
+				"crit_chance"			"25"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"235"
+				"crit_multiplier"		"220"
 			}
 			"08"
 			{
@@ -7841,12 +7824,12 @@
 		"ID"							"10260"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"9800"
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_fallhammer"
 		"ItemRequirements"
 		{
-			"01"						"item_echo_sabre_2;item_basher;item_medallion_of_courage;item_dark_blade"
+			"01"						"item_echo_sabre_2;item_basher;item_medallion_of_courage;item_platemail"
 		}
 	}
 
@@ -7887,54 +7870,49 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"30"
+				"bonus_attack_speed"	"130"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"80"
+				"bonus_damage"			"50"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"120"
+				"bonus_armor"			"20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"20"
+				"bonus_mana_regen_pct"	"250"
 			}
 			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"325"
-			}
-			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"attack_delay"			"0.1"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"bash_duration"			"1"
 			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bash_damage"			"170"
+			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_damage"			"210"
+				"valor_armor_reduction"	"-20"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"valor_armor_reduction"	"-30"
+				"valor_armor_bonus"		"20"
 			}
 			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"valor_armor_bonus"		"30"
-			}
-			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"valor_duration"		"9"
@@ -7961,7 +7939,6 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
@@ -10489,7 +10466,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier_pct"	"250"
+				"crit_multiplier_pct"	"275"
 			}
 			"07"
 			{
