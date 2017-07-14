@@ -1639,7 +1639,7 @@ DOTA_Tooltip_ability_item_wand_of_midas_radius: 'RADIUS:'
 
 DOTA_Tooltip_ability_item_mekansm_arena: Mekansm
 DOTA_Tooltip_ability_item_mekansm_arena_Description: |-
-  Active: Restore - Heals %heal_amount% health and gives +%heal_bonus_armor% armor to allied units in a %radius% radius.
+  Active: Restore - Heals %heal_amount% health and gives +%aura_bonus_armor% armor to allied units in a %radius% radius.
   Passive: Mekansm Aura - Grants %aura_health_regen% health regeneration to allied units in a %radius% radius.
 
   Multiple instances of Mekansm Aura do not stack.
@@ -1656,7 +1656,7 @@ DOTA_Tooltip_modifier_item_mekansm_arena_effect_Description: Regenerating %dMODI
 
 DOTA_Tooltip_ability_item_mekansm_2: Mekansm II
 DOTA_Tooltip_ability_item_mekansm_2_Description: |-
-  Active: Restore - Heals %heal_amount% health and gives +%heal_bonus_armor% armor to allied units in a %radius% radius.
+  Active: Restore - Heals %heal_amount% health and gives +%aura_bonus_armor% armor to allied units in a %radius% radius.
   Passive: Mekansm Aura - Grants %aura_health_regen% health regeneration to allied units in a %radius% radius.
 
   Multiple instances of Mekansm Aura do not stack.
