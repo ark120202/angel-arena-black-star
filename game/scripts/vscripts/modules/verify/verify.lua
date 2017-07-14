@@ -65,14 +65,15 @@ function Verify:Levels()
 		if type(classEntry) == "table" then
 			local maxLevel = classEntry.MaxLevel or GetKeyValue(className, "MaxLevel") or classEntry.MaxUpgradeLevel or GetKeyValue(className, "MaxUpgradeLevel") or 4
 			for k,v in pairs(classEntry) do
-				if type(v) ~= "table" then
+				if type(v) ~= "table" and
+					k ~= "ItemAliases" then
 					Check(className, maxLevel, k, tostring(v))
 				end
 			end
 
 			for specialIndex,specialValues in pairs(classEntry.AbilitySpecial or {}) do
 				for k,v in pairs(specialValues) do
-					Check(className, maxLevel, "AbilitySpecial/" .. specialIndex .. "/" .. k, tostring(v))
+					Check(className, specialValues.levelkey and 8 or maxLevel, "AbilitySpecial/" .. specialIndex .. "/" .. k, tostring(v))
 				end
 			end
 		end
