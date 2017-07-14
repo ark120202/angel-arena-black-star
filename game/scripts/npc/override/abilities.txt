@@ -12526,7 +12526,6 @@
 	"brewmaster_earth_spell_immunity"
 	{
 		"MaxLevel"	"7"
-		"AbilitySpecial"	""
 	}
 
 	"brewmaster_earth_pulverize"
