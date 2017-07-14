@@ -43,17 +43,6 @@ var RUNES_COLOR_MAP = {
 	11: 'B35F5F',
 };
 
-Entities.GetHeroPlayerOwner = function(unit) {
-	for (var i = 0; i < 24; i++) {
-		if (Players.IsValidPlayerID(i)) {
-			if (SafeGetPlayerHeroEntityIndex(i) === unit) {
-				return i;
-			}
-		}
-	}
-	return -1;
-};
-
 String.prototype.encodeHTML = function() {
 	return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 };

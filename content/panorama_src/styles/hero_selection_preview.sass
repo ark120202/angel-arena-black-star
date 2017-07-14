@@ -4,53 +4,58 @@
 		transform: none
 
 	#HeroListBasePanel
-		transform: translateX(-100px) translateY(100px)
 		opacity: 0
+		transform: translateX(-100px) translateY(100px)
 
 
 #HeroPreviewReturnButton
-	transition-property: transform, opacity
-	transition-duration: 0.05s, 0.1s
-	opacity: 0.7
-	align: left bottom
-	transform: rotateZ(45deg)
 	width: 64px
 	height: 64px
+	opacity: .7
+	transform: rotateZ(45deg)
+	transition-duration: .05s, .1s
+	transition-property: transform, opacity
+	align: left bottom
+
 	&:hover
-		transform: rotateZ(45deg) translateX(-3px) translateY(3px) scaleX(1.04) scaleY(1.04)
 		opacity: 1
+		transform: rotateZ(45deg) translateX(-3px) translateY(3px) scaleX(1.04) scaleY(1.04)
 
 	&:active
-		transform: rotateZ(45deg) scaleX(0.96) scaleY(0.96)
+		transform: rotateZ(45deg) scaleX(.96) scaleY(.96)
 
 
 #HeroPreviewEnterButton
-	transition-property: transform, opacity
-	transition-duration: 0.05s, 0.1s
-	opacity: 0.7
-	transform: rotateZ(-135deg)
 	width: 48px
 	height: 48px
 	margin-left: 12px
 	vertical-align: center
+	opacity: .7
 	visibility: collapse
+	transform: rotateZ(-135deg)
+	transition-duration: .05s, .1s
+	transition-property: transform, opacity
+
 	&:hover
-		transform: rotateZ(-135deg) translateX(3px) translateY(-3px) scaleX(1.04) scaleY(1.04)
 		opacity: 1
+		transform: rotateZ(-135deg) translateX(3px) translateY(-3px) scaleX(1.04) scaleY(1.04)
 
 	&:active
-		transform: rotateZ(-135deg) scaleX(0.96) scaleY(0.96)
+		transform: rotateZ(-135deg) scaleX(.96) scaleY(.96)
 
+	.LocalPlayerPicked &
+		visibility: visible
 
 #HeroPreviewSceneRoot
-	height: 100%
 	width: 50%
+	height: 100%
 
 #HeroPreviewScene
+	width: 100%
 	height: 100%
 	margin-bottom: 20px
-	width: 100%
 	opacity-mask: url('s2r://panorama/images/masks/hero_model_opacity_mask_png.vtex')
+
 	Image
 		width: 100%
 		height: 100%
@@ -60,10 +65,6 @@
 		height: 100%
 
 
-
-	width: 100%
-	height: 100%
-
 #PreviewRays
 	margin-left: -40px
 
@@ -71,61 +72,68 @@
 	width: 64px
 	height: 70px
 	padding: 2px
-	background-color: gradient(linear, 0 0, 0 100%, from(rgba(64, 77, 101, 0.86667) ), to(rgba(43, 52, 69, 0.86667) ) )
+	background-color: gradient(linear, 0 0, 0 100%, from(rgba(64, 77, 101, .86667)), to(rgba(43, 52, 69, .86667)))
 	border-top: 1px solid rgb(111, 129, 155)
-	border-left: 1px solid rgba(111, 129, 155, 0.13333)
-	border-right: 1px solid rgba(111, 129, 155, 0.06667)
-	border-bottom: 1px solid rgba(63, 65, 75, 0.2)
-	box-shadow: rgba(0, 0, 0, 0.56078) -6px -6px 12px 12px
+	border-right: 1px solid rgba(111, 129, 155, .06667)
+	border-bottom: 1px solid rgba(63, 65, 75, .2)
+	border-left: 1px solid rgba(111, 129, 155, .13333)
+	box-shadow: rgba(0, 0, 0, .56078) -6px -6px 12px 12px
+	transition-duration: .18s
 	transition-property: opacity, background-color
-	transition-duration: 0.18s
 	horizontal-align: center
+
 	> Panel
 		width: 32px
 		height: 32px
-		wash-color: rgb(204, 204, 204)
 		vertical-align: middle
 		horizontal-align: center
+		wash-color: rgb(204, 204, 204)
 
 
 #RepickButton
 	&.Activated
-		sound: "ui.pick_repick"
+		sound: 'ui.pick_repick'
 
-	&:hover .RepickIcon
-		wash-color: rgb(255, 0, 0)
+	&:hover
+		.RepickIcon
+			wash-color: rgb(255, 0, 0)
 
 
 #EnterGameRepickButton
 	margin-bottom: 230px
-	&.Activated
-		sound: "ui.pick_repick"
 
-	&:hover .RepickIcon
-		wash-color: rgb(255, 0, 0)
+	&.Activated
+		sound: 'ui.pick_repick'
+
+	&:hover
+		.RepickIcon
+			wash-color: rgb(255, 0, 0)
+
+	.CanRepick &
+		visibility: visible
 
 
 .RandomIcon
 	background-image: url('s2r://panorama/images/control_icons/random_dice_psd.vtex')
 	background-position: center
-	background-size: contain
 	background-repeat: no-repeat
+	background-size: contain
 
 .RepickIcon
 	background-image: url('s2r://panorama/images/control_icons/x_close_png.vtex')
 	background-position: center
-	background-size: contain
 	background-repeat: no-repeat
+	background-size: contain
 
 #HeroPreviewHeader
 	margin-top: 4px
 	flow-children: down
 
 #HeroPreviewName
-	color: rgb(255, 255, 255)
 	font-size: 54px
 	font-weight: Bold
 	letter-spacing: 1px
+	color: rgb(255, 255, 255)
 	text-transform: uppercase
 
 #HeroPreviewInformation
@@ -134,57 +142,55 @@
 	flow-children: down
 
 #HeroPreviewAbilitiesAndAttributes
-	margin-top: -12px
 	width: 100%
-	height: 115px
-	//37*3 +4:
+	height: 37px * 3 + 4px
+	margin-top: -12px
 
 #HeroPreviewAttributes
-	flow-children: right
 	height: 100%
-	align: right center
 	margin-right: 12px
+	align: right center
+	flow-children: right
 
 #HeroPreviewAbilities
+	margin-left: 12px
 	vertical-align: center
 	flow-children: right
-	margin-left: 12px
 
 .HeroPreviewAbility
 	height: 64px
-	margin-left: 4px
 	margin-right: 4px
+	margin-left: 4px
 	border-radius: 6px
 
 #HeroPreviewTabs
-	flow-children: right-wrap
 	margin-top: 10px
 	margin-bottom: 4px
+	flow-children: right-wrap
 
 .HeroPreviewTab
 	.RadioBox
 		visibility: collapse
 
 	Label
+		margin-left: 0
 		font-size: 19px
 		letter-spacing: 1px
 		color: rgb(142, 151, 149)
 		text-transform: uppercase
-		margin-left: 0
+
+	&:hover,
+	&:selected
+		Label
+			color: #fff
 
 	&:disabled
 		Label
-			color: rgba(170, 170, 170, 0.06667)
+			color: rgba(170, 170, 170, .06667)
 
-		&:hover Label
-			color: rgba(170, 170, 170, 0.06667)
-
-
-	&:hover Label
-		color: rgb(255, 255, 255)
-
-	&:selected Label
-		color: rgb(255, 255, 255)
+		&:hover
+			Label
+				color: rgba(170, 170, 170, .06667)
 
 
 .HeroPreviewTabSeparator
@@ -210,67 +216,62 @@
 	margin-top: 34px
 
 .LoadoutCategoryTitle
+	font-size: 16px
+	letter-spacing: 2px
 	color: rgb(255, 255, 255)
 	text-transform: uppercase
-	letter-spacing: 2px
-	font-size: 16px
 
 .LoadoutPanelHeader
+	width: 100%
+	padding: 8px 8px 4px 14px
 	background-color: rgb(0, 0, 0)
 	flow-children: right
-	padding: 8px 8px 4px 14px
-	width: 100%
 
 #AboutTabContents
-	background-color: rgba(0, 0, 0, 0.93725)
 	padding: 10px 12px 12px
+	background-color: rgba(0, 0, 0, .93725)
 
 .HeroDescriptionHeader
-	text-transform: uppercase
+	margin-top: 16px
 	font-size: 24px
 	font-weight: bold
 	color: rgb(204, 204, 204)
-	margin-top: 16px
+	text-transform: uppercase
 
 .HeroDescriptionText
-	color: rgb(153, 153, 153)
+	width: 100%
+	max-height: 500px
 	padding-right: 10px
 	overflow: squish scroll
-	max-height: 500px
-	width: 100%
+	color: rgb(153, 153, 153)
 
 #SelectedHeroPreview
 	opacity: 0
 	transform: translateX(100px) translateY(-100px)
 	flow-children: right
 
-.LocalPlayerPicked #HeroPreviewEnterButton
-	visibility: visible
-
-.PickButton.EnterGameButton
-	height: 108px
-	width: 140px
-	vertical-align: bottom
-	background-color: none
-	border: 0 solid transparent
-	box-shadow: none
-	visibility: collapse
-	padding: 0
-	transition-property: wash-color, opacity
-	transition-duration: .4s
-	transition-delay: .95s
-	transition-timing-function: ease-in-out
-	> Label
+.PickButton
+	&.EnterGameButton
+		width: 140px
+		height: 108px
+		padding: 0
 		vertical-align: bottom
-		width: 100%
-		text-align: center
-		color: rgb(204, 204, 204)
-		height: 26px
-		text-overflow: shrink
-		letter-spacing: 2px
-		margin-bottom: 8px
-		text-shadow: 1px 1px 3px 2 rgb(0, 0, 0)
+		background-color: none
+		border: 0 solid transparent
+		visibility: collapse
+		box-shadow: none
+		transition-delay: .95s
+		transition-duration: .4s
+		transition-property: wash-color, opacity
+		transition-timing-function: ease-in-out
 
-
-.CanRepick #EnterGameRepickButton
-	visibility: visible
+		> Label
+			width: 100%
+			height: 26px
+			margin-bottom: 8px
+			letter-spacing: 2px
+			color: rgb(204, 204, 204)
+			text-align: center
+			text-overflow: shrink
+			text-shadow: 1px 1px 3px 2 rgb(0, 0, 0)
+			vertical-align: bottom

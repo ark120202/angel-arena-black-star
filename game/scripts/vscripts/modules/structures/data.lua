@@ -27,8 +27,8 @@ ShopsData = {
 		"item_casino_coin",
 	},
 	Duel = {
-		{ item = "item_dust", cost = 900 },
-		{ item = "item_ward_sentry", cost = 1800 },
-		{ item = "item_tango_arena", cost = 550 },
+		{ item = "item_dust", cost = 360 },
+		{ item = "item_ward_sentry", cost = 300 },
+		{ item = "item_tango_arena", cost = 240 },
 	}
 }

@@ -1,28 +1,28 @@
-$mainPanelWidth: 310px;
-$guidesPanelWidth: 208px;
+$mainPanelWidth: 310px
+$guidesPanelWidth: 208px
 
-$fullPanelHeight: 840px;
-$fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
+$fullPanelHeight: 840px
+$fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 
 .base
-	align: right center
 	width: 100%
 	height: 100%
+	align: right center
 
 #ShopBase
-	align: right bottom
-	transition-duration: 0.01s
-	transition-timing-function: ease-in
-	transition-property: transform, opacity
-	margin-bottom: 196px
 	margin-right: 0
-	flow-children: right
-	transform: translateX($fullPanelWidth)
+	margin-bottom: 196px
 	opacity: 0
+	transform: translateX($fullPanelWidth)
+	transition-duration: .01s
+	transition-property: transform, opacity
+	transition-timing-function: ease-in
+	align: right bottom
+	flow-children: right
 
 	&.ShopBaseOpen
-		transform: translateX(0)
 		opacity: 1
+		transform: translateX(0)
 
 	&:not(.ShopBaseOpen) #ItembuildsPanel
 		width: 0
@@ -39,10 +39,10 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 	background-image: url('s2r://panorama/images/hud/reborn/bg_shop_guide_psd.vtex')
 	background-position: bottom
 	background-size: cover
-	flow-children: down
+	transition-duration: .2s
 	transition-property: opacity, width
-	transition-duration: 0.2s
 	transition-timing-function: ease-in-out
+	flow-children: down
 
 .ItembuildsHidden
 	#ItembuildsPanel
@@ -51,7 +51,8 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 
 	#ShowHideItemguidesButton
 		background-image: url('s2r://panorama/images/hud/reborn/bg_item_build_psd.vtex')
-		opacity: 0.8
+		opacity: .8
+
 		&:hover
 			opacity: 1
 
@@ -62,16 +63,17 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 
 #ItembuildHeader
 	width: 100%
-	background-color: rgba(0, 0, 0, 0.93333)
-	padding: 12px
 	height: 58px
-	font-size: 13px
-	color: rgb(97, 111, 123)
-	font-weight: bold
-	text-transform: uppercase
+	padding: 12px
 	padding-top: 20px
+	font-size: 13px
+	font-weight: bold
+	color: rgb(97, 111, 123)
+	text-transform: uppercase
+	background-color: rgba(0, 0, 0, .93333)
+	transition-duration: .15s
 	transition-property: color, text-decoration
-	transition-duration: 0.15s
+
 	&:hover
 		color: rgb(141, 161, 177)
 		text-decoration: underline
@@ -87,28 +89,29 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 	flow-children: right
 
 #Itembuild_title
-	font-size: 14px
-	color: rgb(97, 111, 123)
-	font-weight: semi-bold
-	vertical-align: center
 	width: 88%
 	height: 20px
+	font-size: 14px
+	font-weight: semi-bold
+	color: rgb(97, 111, 123)
 	text-overflow: shrink
+	vertical-align: center
 
 #EditButton
 	width: 22px
 	height: 22px
-	horizontal-align: right
+	margin-right: -4px
 	vertical-align: center
 	background-image: url('s2r://panorama/images/control_icons/edit_pencil_psd.vtex')
-	background-size: 72%
 	background-position: 50% 50%
 	background-repeat: no-repeat
+	background-size: 72%
+	horizontal-align: right
 	wash-color: rgb(121, 139, 153)
 	tooltip-position: top
-	margin-right: -4px
+
 	&:hover
-		brightness: 2.0
+		brightness: 2
 
 	&:active
 		wash-color: rgb(121, 139, 153)
@@ -116,12 +119,12 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 
 .EditMode
 	#EditButton
-		background-color: rgba(87, 100, 109, 0.46667)
+		background-color: rgba(87, 100, 109, .46667)
 		border-radius: 3px
 		wash-color: rgb(255, 255, 255)
 
 	#ItembuildPanelsContainer
-		box-shadow: inset rgba(11, 147, 190, 0.2) 6px 6px 12px 12px
+		box-shadow: inset rgba(11, 147, 190, .2) 6px 6px 12px 12px
 
 	#ItembuildAddGroupButton
 		visibility: visible
@@ -132,50 +135,52 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 
 #ItembuildTitleSubitleRow
 	width: 100%
-	flow-children: right
-	margin-top: -2px
 	height: 20px
+	margin-top: -2px
+	flow-children: right
 
 #Itembuild_author_player
 	width: 80%
+
 	> Label
-		text-overflow: shrink
 		font-size: 14px
 		font-weight: semi-bold
+		text-overflow: shrink
 
 
 #Itembuild_version
 	width: 20%
-	text-align: right
-	horizontal-align: right
-	text-overflow: shrink
 	font-size: 14px
-	color: rgb(139, 158, 176)
 	font-weight: semi-bold
+	color: rgb(139, 158, 176)
+	text-align: right
+	text-overflow: shrink
+	horizontal-align: right
 
 #ItembuildPanelsContainer
 	width: 100%
-	flow-children: down
 	min-height: 100%
 	overflow: squish scroll
+	flow-children: down
 
 #ItembuildAddGroupButton
 	width: 100%
 	padding-left: 24px
-	color: rgb(255, 255, 255)
 	font-weight: bold
+	color: rgb(255, 255, 255)
 	text-transform: uppercase
-	opacity: 0.6
-	transition-property: opacity
-	transition-duration: 0.2s
+	opacity: .6
 	visibility: collapse
+	transition-duration: .2s
+	transition-property: opacity
+
 	&:hover
-		opacity: 0.8
+		opacity: .8
 
 	&:active
-		transition-duration: 0.1s
-		opacity: 1
 		margin-top: 1px
+		opacity: 1
+		transition-duration: .1s
 
 
 #ItembuildPanelsRoot
@@ -184,56 +189,58 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 
 .ItembuildItemGroup
 	width: 100%
-	flow-children: down
+	transition-duration: .1s
 	transition-property: position
-	transition-duration: 0.1s
+	flow-children: down
 
 #ItembuildItemGroupTitle
-	margin-left: 4px
 	width: 100%
+	height: 26px
+	margin-left: 4px
+	font-size: 14px
+	letter-spacing: 2px
+	color: rgb(255, 255, 255)
 	text-overflow: shrink
 	text-transform: uppercase
-	color: rgb(255, 255, 255)
-	letter-spacing: 2px
-	font-size: 14px
-	height: 26px
+
 	&:disabled
+		color: rgb(255, 255, 255)
 		background-color: transparent
 		border-color: transparent
-		color: rgb(255, 255, 255)
 
 
 #ItembuildItemGroupItemRoot
+	width: 100%
 	padding-top: 6px
 	padding-left: 5px
-	width: 100%
 	flow-children: right-wrap
 
 #ShopItemList
 	width: 100%
-	horizontal-align: right
 	height: 86%
-	flow-children: down
 	background-image: url('s2r://panorama/images/hud/reborn/bg_mainshop_psd.vtex')
-	background-size: 100% 100%
 	background-repeat: no-repeat
+	background-size: 100% 100%
+	horizontal-align: right
+	flow-children: down
 
 #ItemRecipeBox
 	width: 100%
-	align: right bottom
 	height: 14%
 	background-image: url('s2r://panorama/images/hud/reborn/bg_item_breakdown_recessed_psd.vtex')
 	background-size: cover
+	align: right bottom
 
 #ItemRecipeBoxRows
 	width: 100%
-	flow-children: down
 	vertical-align: center
+	flow-children: down
 
 .ItemRecipeBoxRow
 	height: 36.715px
 	horizontal-align: center
 	flow-children: right
+
 	&.ItemRecipeBoxRowLength7 .SmallItemPanel
 		margin: -1px
 
@@ -243,80 +250,83 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 
 	&.ItemRecipeBoxRowLength9 .SmallItemPanel
 		width: 39px
-		margin-left: -3px
 		margin-right: -3px
+		margin-left: -3px
 
 
 #ShopTabs
-	align: center top
-	height: 28px
-	horizontal-align: center
-	flow-children: right
 	width: 100%
-	margin-left: 6px
+	height: 28px
 	margin-right: 6px
+	margin-left: 6px
 	background-size: cover
+	border: 1px solid rgba(91, 104, 114, .46667)
 	border-radius: 3px
-	border: 1px solid rgba(91, 104, 114, 0.46667)
+	horizontal-align: center
+	align: center top
+	flow-children: right
 
 .ShopTabButton
 	height: 100%
-	padding-left: 1px
-	padding-right: 1px
 	padding-top: 2px
+	padding-right: 1px
 	padding-bottom: 2px
+	padding-left: 1px
 	background-color: rgb(0, 0, 0)
+
 	.RadioBox
 		visibility: collapse
 
 	Label
 		margin: 4px
-		align: center center
 		font-size: 14px
-		color: rgb(91, 104, 114)
 		font-weight: bold
+		color: rgb(91, 104, 114)
+		align: center center
 
 	&:selected
-		background-color: rgba(87, 100, 109, 0.46667)
+		background-color: rgba(87, 100, 109, .46667)
+
 		Label
 			color: rgb(255, 255, 255)
 
 
 
 #ShopSearch
-	align: center top
-	height: 49px
 	width: 100%
+	height: 49px
+	align: center top
 	flow-children: right
 
 #ShopSearchEntry
-	height: 100%
 	width: 100%
+	height: 100%
+	padding: 5px 7px 3px
 	margin: 10px
 	margin-bottom: 6px
 	margin-left: 4px
 	font-family: 'Radiance', 'FZLanTingHei-R-GBK', 'TH Sarabun New', 'YDYGO 540', 'Gulim', 'MingLiU'
-	background-color: rgb(0, 0, 0)
-	padding: 5px 7px 3px
-	color: rgb(255, 255, 255)
 	font-size: 20px
+	color: #fff
 	text-overflow: clip
 	white-space: nowrap
-	border-radius: 3px
+	background-color: rgb(0, 0, 0)
 	border: 1px solid rgb(61, 70, 76)
+	border-radius: 3px
+
 	#PlaceholderText
-		opacity: 1
-		transition-property: opacity
-		transition-duration: 0.2s
 		margin-top: -2px
-		color: rgb(87, 100, 109)
 		font-size: 18px
+		color: rgb(87, 100, 109)
+		opacity: 1
+		transition-duration: .2s
+		transition-property: opacity
 
 	&:focus #PlaceholderText
-		opacity: 0.0
+		opacity: 0
 
 	&.HasInput #PlaceholderText
-		opacity: 0.0
+		opacity: 0
 
 
 #ShowHideItemguidesButton
@@ -325,12 +335,13 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 	margin-top: 10px
 	margin-bottom: 6px
 	margin-left: 4px
-	transition-property: brightness, opacity
-	transition-duration: 0.24s
 	background-image: url('s2r://panorama/images/hud/reborn/bg_item_build_psd.vtex')
-	opacity: 0.8
+	opacity: .8
+	transition-duration: .24s
+	transition-property: brightness, opacity
+
 	&:hover
-		brightness: 2.0
+		brightness: 2
 
 	&:active
 		wash-color: rgb(153, 153, 153)
@@ -340,30 +351,30 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 	width: 100%
 	height: 100%
 	background-image: url('s2r://panorama/images/hud/reborn/close_guide_btn_psd.vtex')
-	background-repeat: no-repeat
 	background-position: center
+	background-repeat: no-repeat
 	background-size: 80%
+	transition-duration: .24s
 	transition-property: transform
-	transition-duration: 0.24s
 
 #ShopItems
-	height: 100%
 	width: 100%
+	height: 100%
 
 #ShopItemsBase
-	margin-top: 9px
-	height: 100%
 	width: 100%
+	height: 100%
+	margin-top: 9px
 	visibility: visible
 
 #ShopSearchOverlay
+	width: 100%
+	height: 100%
 	margin-top: 1px
 	margin-left: 2px
-	height: 100%
-	width: 100%
+	overflow: squish scroll
 	visibility: collapse
 	flow-children: right-wrap
-	overflow: squish scroll
 
 .InSearchMode
 	#ShopItemsBase
@@ -385,65 +396,67 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 
 .SmallItemPanel
 	width: 45px
-	height: width-percentage(72.7% )
+	height: width-percentage(72.7%)
 	margin: 2px
 	border-radius: 3px
+	transition-duration: .1s
 	transition-property: position
-	transition-duration: 0.1s
+
 	&.CanBuy
 		&:hover #SmallItemImage
 			brightness: 1.6
 
 		& #SmallItemButton:active #SmallItemImage
-			brightness: 0.8
+			brightness: .8
 
 
 
 #SmallItemButton
-	align: center center
 	width: 100%
 	height: 100%
+	align: center center
 
 #SmallItemImage
-	align: center center
 	width: 100%
 	height: 100%
+	transition-duration: .2s
 	transition-property: brightness
-	transition-duration: 0.2s
+	align: center center
 
 #SmallItemStock
-	color: rgb(255, 255, 255)
+	margin-right: .5px
+	margin-bottom: -3px
 	font-size: 15px
 	font-weight: bold
+	color: rgb(255, 255, 255)
 	text-shadow: 0 0 6px 3 rgb(64, 0, 64)
-	margin-right: 0.5px
-	margin-bottom: -3px
 	align: right bottom
 
 #QuickBuyClearButtonPanel
-	background-image: url('file://{images}/control_icons/x_close.png')
-	background-size: cover
-	background-position: 50% 50%
-	align: right bottom
-	height: 20px
 	width: 16px
+	height: 20px
 	margin: 2px
-	brightness: 0.4
+	background-image: url('file://{images}/control_icons/x_close.png')
+	background-position: 50% 50%
+	background-size: cover
+	transition-duration: .15s
 	transition-property: brightness
-	transition-duration: 0.15s
+	brightness: .4
+	align: right bottom
+
 	&:hover
-		brightness: 1.0
+		brightness: 1
 
 	&:active
-		brightness: 0.6
+		brightness: .6
 
 
 #QuickBuyPanelItems
-	align: left center
-	height: 100%
 	width: 232px
-	margin-left: 2px
+	height: 100%
 	margin-top: 2px
+	margin-left: 2px
+	align: left center
 	flow-children: right-wrap
 
 .DropDownValidTarget
@@ -451,27 +464,27 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 	height: 100%
 
 #QuickBuyPanel
-	background-image: url('s2r://panorama/images/hud/reborn/quickbuy_bg_psd.vtex')
-	align: right bottom
-	margin-bottom: 60px
-	margin-right: 0
-	height: 65px
 	width: 262px
-	transition-property: transform
-	transition-duration: 0s
+	height: 65px
+	margin-right: 0
+	margin-bottom: 60px
+	background-image: url('s2r://panorama/images/hud/reborn/quickbuy_bg_psd.vtex')
 	transition-delay: 0s
+	transition-duration: 0s
+	transition-property: transform
 	transition-timing-function: ease-in-out
+	align: right bottom
 
 #QuickBuyStickyButtonPanel
-	align: right top
 	margin: 2px
 	margin-top: 4px
+	align: right top
 
 .QuickBuyStickyItem
-	align: center center
-	margin: 0
 	width: 47px
+	margin: 0
 	border-width: 2px
+	align: center center
 
 .QuickbuyItemPanel
 	width: 40px
@@ -480,34 +493,35 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 
 #StockOverlay
 	height: 100%
-	background-color: rgba(0, 0, 0, 0.86667)
+	background-color: rgba(0, 0, 0, .86667)
 
 #StockTimer
-	color: rgb(255, 255, 255)
 	font-size: 20px
+	color: rgb(255, 255, 255)
 	text-shadow: 0 0 6px 6 rgb(0, 0, 0)
-	horizontal-align: center
 	vertical-align: center
+	horizontal-align: center
 
 .UnitItemlikeRecipePanel
-	height: width-percentage(60.8% )
 	width: 57.6px
-	flow-children: down
+	height: width-percentage(60.8%)
 	border-radius: 2px
+	flow-children: down
+
 	&:disabled
 		saturation: 0
 		wash-color: rgb(217, 250, 249)
-		blur: gaussian(1.1 )
+		blur: gaussian(1.1)
 
 
 .UnitItemlikeRecipePanelChance
-	horizontal-align: right
-	margin-bottom: -7px
-	color: rgb(255, 255, 255)
 	margin-top: -2px
+	margin-bottom: -7px
 	font-size: 16px
 	font-weight: bold
+	color: rgb(255, 255, 255)
 	text-shadow: 0 0 6px 6 rgb(0, 0, 0)
+	horizontal-align: right
 
 #ItemRecipeBoxDrops
 	width: 100%
@@ -516,22 +530,23 @@ $fullPanelWidth: 518px; /* $mainPanelWidth + $guidesPanelWidth */
 
 .ItemsPageInnerContainer
 	height: 100%
+	opacity: 0
+	transition-duration: .15s
+	transition-property: opacity
 	horizontal-align: center
 	flow-children: right-wrap
-	opacity: 0
-	transition-property: opacity
-	transition-duration: 0.15s
+
 	&.SelectedPage
 		opacity: 1
 
 
 .DropDownMode .DropDownValidTarget
-	box-shadow: inset rgba(11, 147, 190, 0.74902) 20px 20px 40px 40px
+	box-shadow: inset rgba(11, 147, 190, .74902) 20px 20px 40px 40px
 
 DOTAHud.IsBeforeGameplay #QuickBuyPanel
 	transform: translateY(230px)
-	transition-duration: 1s
 	transition-delay: 2s
+	transition-duration: 1s
 
 .HUDFlipped #QuickBuyPanel
 	horizontal-align: left

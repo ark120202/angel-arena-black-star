@@ -1,6 +1,7 @@
 DOTAHud DOTAAbilityDetails
 {
-    width: 99.6%;  /* This fixes some cutted off descriptions */
+    /* This fixes some cutted off descriptions */
+    width: 99.6%;
 }
 
 /* Original file: ability_details.css */
@@ -198,7 +199,7 @@ DOTAGameItemsPage #AbilityCoreDetails
 	visibility: visible;
 }
 
-#NotEnoughGoldlabel
+#NotEnoughGoldLabel
 {
 	font-size: 17px;
 	color: red;
@@ -366,44 +367,71 @@ DOTAGameItemsPage #AbilityCoreDetails
     border-bottom-width: 1px;
     border-bottom-style: solid;
     margin-bottom: 5px;
+    visibility: collapse;
+}
+
+.HasBuildComment #AbilityBuildHeader,
+.BuildCommentEditMode #AbilityBuildHeader
+{
+    visibility: visible;
 }
 
 #AbilityBuildComment
 {
+    visibility: collapse;
     color: #ffffff;
 }
 
-/* DOTA_ITEM_QUALITY_CONSUMABLE
-DOTA_ITEM_QUALITY_PLAIN */
+.HasBuildComment #AbilityBuildComment
+{
+    visibility: visible;
+}
+
+#AbilityBuildCommentEdit
+{
+    height: fill-parent-flow( 1.0 );
+    font-size: 16px;
+    white-space: normal;
+    overflow: squish scroll;
+    visibility: collapse;
+}
+
+.BuildCommentEditMode #AbilityBuildCommentEdit
+{
+    visibility: visible;
+}
+
+// DOTA_ITEM_QUALITY_CONSUMABLE
+// DOTA_ITEM_QUALITY_PLAIN
 .ItemColor0, .ItemColor1
 {
 }
 
-/* DOTA_ITEM_QUALITY_COMMON */
+// DOTA_ITEM_QUALITY_COMMON
 .ItemColor2
 {
     wash-color: #2BAD00;
 }
 
-/* DOTA_ITEM_QUALITY_RARE   Color( 26, 137, 253, 255 );   rare blue */
+// DOTA_ITEM_QUALITY_RARE   Color( 26, 137, 253, 255 );  // rare blue
 .ItemColor3
 {
     wash-color: #1A89FD;
 }
 
-/* DOTA_ITEM_QUALITY_EPIC   Color( 187, 17, 254, 255 );  epic purpz */
+// DOTA_ITEM_QUALITY_EPIC   Color( 187, 17, 254, 255 );  // epic purpz
 .ItemColor4
 {
     wash-color: #BB11FE;
 }
 
-/* DOTA_ITEM_QUALITY_ARTIFACT   Color( 230, 158, 0, 255 );   orange artifact/orb */
+// DOTA_ITEM_QUALITY_ARTIFACT   Color( 230, 158, 0, 255 );   // orange artifact/orb
 .ItemColor5
 {
     wash-color: #E69E00;
 }
 
-/* DOTA_ITEM_QUALITY_SECRET_SHOP    Color( 48, 207, 207, 255 );      teal secret shop */
+// DOTA_ITEM_QUALITY_SECRET_SHOP    Color( 48, 207, 207, 255 );      // teal secret shop
 .ItemColor6
 {
     wash-color: #30CFCF;
@@ -450,4 +478,3 @@ DOTA_ITEM_QUALITY_PLAIN */
 {
 	background-image: url("s2r://panorama/images/control_icons/shop_icon_side_psd.vtex");
 }
-

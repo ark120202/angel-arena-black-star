@@ -627,8 +627,8 @@ function CreateGlobalParticle(name, callback, pattach)
 end
 
 function WorldPosToMinimap(vec)
-	local pct1 = ((vec.x + MAP_LENGTH) / (MAP_LENGTH * 2))
-	local pct2 = ((MAP_LENGTH - vec.y) / (MAP_LENGTH * 2))
+	local pct1 = (vec.x + MAP_LENGTH) / (MAP_LENGTH * 2)
+	local pct2 = (MAP_LENGTH - vec.y) / (MAP_LENGTH * 2)
 	return pct1*100 .. "% " .. pct2*100 .. "%"
 end
 

@@ -1,0 +1,11 @@
+Sara:
+	Dark Blink:
+		Default range: 600 700 800 900 1000 1100 1200 => 600
+	Fragment of logic:
+		Manacost pct: 33% on all levels
+		Manacost const: 500 450 400 350 300 250 200 => 300 250 200 150 100 50 0
+	Fragment of Armor: 
+		Damage per energy: 2 => 1.25
+	Space Dissection use current energy now (Older max energy)
+	Space Dissection now use 1% of manacost for disarmoring bosses
+	Space Dissection cost changed from 15% to 10%.

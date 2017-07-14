@@ -16,6 +16,7 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	centaur_hoof_stomp = 40,
 	centaur_double_edge = 40,
 	kunkka_ghostship = 40,
+	kunkka_torrent = 40,
 	slark_dark_pact = 40,
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,
@@ -136,6 +137,25 @@ OUTGOING_DAMAGE_MODIFIERS = {
 				damage_type = _G[GetKeyValue("item_haganemushi", "AbilityUnitDamageType")],
 				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 				ability = FindItemInInventoryByName(attacker, "item_haganemushi", false)
+			})
+			return 1 - pct
+		end
+	},
+	modifier_sai_release_of_forge = {
+
+		condition = function(_, _, inflictor)
+			return not inflictor
+		end,
+		multiplier = function(attacker, victim, _, damage, damagetype)
+			local ability = attacker:FindAbilityByName("sai_release_of_forge")
+			local pct = ability:GetSpecialValueFor("pure_damage_pct") * 0.01
+			ApplyDamage({
+				victim = victim,
+				attacker = attacker,
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
+				damage_type = ability:GetAbilityDamageType(),
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+				ability = ability
 			})
 			return 1 - pct
 		end

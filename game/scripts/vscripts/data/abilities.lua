@@ -41,6 +41,7 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
 	destroyer_body_reconstruction = true,
+	item_coffee_bean = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
@@ -65,7 +66,6 @@ REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 	item_black_king_bar_4 = true,
 	item_black_king_bar_5 = true,
 	item_black_king_bar_6 = true,
-	item_coffee_bean = true,
 
 	destroyer_body_reconstruction = true,
 }
@@ -151,7 +151,8 @@ REFRESH_LIST_IGNORE_REARM = {
 
 COFFEE_BEAN_NOT_REFRESHABLE = {
 	destroyer_body_reconstruction = true,
-	zuus_cloud = true
+	zuus_cloud = true,
+	monkey_king_boundless_strike = true,
 }
 
 
@@ -174,6 +175,7 @@ PERSONALITY_STEAL_BANNED_HEROES = {
 	["npc_dota_hero_storm_spirit"] = true,
 	["npc_dota_hero_tidehunter"] = true,
 	["npc_dota_hero_arc_warden"] = true,
+	["npc_dota_hero_shredder"] = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"

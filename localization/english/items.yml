@@ -509,10 +509,10 @@ DOTA_Tooltip_ability_item_ray_of_fate_Description: 'Active: True Prophecy - Reva
 DOTA_Tooltip_ability_item_ray_of_fate_radius: 'AREA OF EFFECT:'
 DOTA_Tooltip_ability_item_ray_of_fate_duration: 'DURATION:'
 DOTA_Tooltip_ability_item_titanium_fruit: Titanium Fruit
-DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Active: Invulnerability - Makes you invulnerable for some time.'
+DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Active: Grants Spell Immunity and 100% Magic Damage Resistance.'
 DOTA_Tooltip_ability_item_titanium_fruit_duration: 'DURATION:'
-DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit Invulnerability
-DOTA_Tooltip_modifier_item_titanium_fruit_Description: You are invulnerable.
+DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit
+DOTA_Tooltip_modifier_item_titanium_fruit_Description: Spell Immune and 100% resistant to magic damage type.
 DOTA_Tooltip_ability_item_diffusal_style: Diffusal Style
 DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   Active: Mirror Image - Creates %images_count% images of your hero that last %illusion_duration% seconds. Images deal %illusion_damage_percent_outgoing_tooltip%%% damage and take %illusion_damage_percent_incoming_tooltip%%% damage.
@@ -1631,20 +1631,22 @@ DOTA_Tooltip_ability_item_aether_lens_5_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_aether_lens_5_spell_amp_pct: '%SPELL DAMAGE AMP:'
 
 DOTA_Tooltip_ability_item_wand_of_midas: Wand of Midas
-DOTA_Tooltip_ability_item_wand_of_midas_Description: 'Active: Gold Charge - Instantly restores health and mana based on the number of charges stored. Gains a charge (max %max_charges%) and gives owner some gold whenever whenever a nearby enemy uses an ability.'
+DOTA_Tooltip_ability_item_wand_of_midas_Description: 'Active: Gold Charge - Gives you some gold and instantly restores health and mana based on the number of charges stored. Gains a charge (max %max_charges%) whenever whenever a nearby enemy uses an ability.'
 DOTA_Tooltip_ability_item_wand_of_midas_bonus_all: +$all
-DOTA_Tooltip_ability_item_wand_of_midas_gold: 'GOLD PER CAST:'
+DOTA_Tooltip_ability_item_wand_of_midas_gold: 'GOLD PER CHARGE:'
 DOTA_Tooltip_ability_item_wand_of_midas_restore_per_charge: 'HEALTH/MANA PER CHARGE:'
 DOTA_Tooltip_ability_item_wand_of_midas_radius: 'RADIUS:'
 
 DOTA_Tooltip_ability_item_mekansm_arena: Mekansm
 DOTA_Tooltip_ability_item_mekansm_arena_Description: |-
-  Active: Restore - Heals %heal_amount% health and gives +%heal_bonus_armor% armor to allied units in a %radius% radius.
+  Active: Restore - Heals %heal_amount% health and gives +%aura_bonus_armor% armor to allied units in a %radius% radius.
   Passive: Mekansm Aura - Grants %aura_health_regen% health regeneration to allied units in a %radius% radius.
 
   Multiple instances of Mekansm Aura do not stack.
 DOTA_Tooltip_ability_item_mekansm_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_mekansm_arena_bonus_armor: +$armor
+DOTA_Tooltip_ability_item_mekansm_arena_bonus_health: +$health
+DOTA_Tooltip_ability_item_mekansm_arena_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_mekansm_arena_radius: 'AURA/RESTORE RADIUS:'
 DOTA_Tooltip_ability_item_mekansm_arena_aura_health_regen: 'AURA HEALTH REGEN:'
 DOTA_Tooltip_ability_item_mekansm_arena_aura_bonus_armor: 'AURA ARMOR:'
@@ -1654,12 +1656,14 @@ DOTA_Tooltip_modifier_item_mekansm_arena_effect_Description: Regenerating %dMODI
 
 DOTA_Tooltip_ability_item_mekansm_2: Mekansm II
 DOTA_Tooltip_ability_item_mekansm_2_Description: |-
-  Active: Restore - Heals %heal_amount% health and gives +%heal_bonus_armor% armor to allied units in a %radius% radius.
+  Active: Restore - Heals %heal_amount% health and gives +%aura_bonus_armor% armor to allied units in a %radius% radius.
   Passive: Mekansm Aura - Grants %aura_health_regen% health regeneration to allied units in a %radius% radius.
 
   Multiple instances of Mekansm Aura do not stack.
 DOTA_Tooltip_ability_item_mekansm_2_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_mekansm_2_bonus_armor: +$armor
+DOTA_Tooltip_ability_item_mekansm_2_bonus_health: +$health
+DOTA_Tooltip_ability_item_mekansm_2_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_mekansm_2_radius: 'AURA/RESTORE RADIUS:'
 DOTA_Tooltip_ability_item_mekansm_2_aura_health_regen: 'AURA HEALTH REGEN:'
 DOTA_Tooltip_ability_item_mekansm_2_aura_bonus_armor: 'AURA ARMOR:'
@@ -1673,6 +1677,7 @@ DOTA_Tooltip_ability_item_guardian_greaves_arena_Description: |-
   DISPEL TYPE: Basic Dispel
 DOTA_Tooltip_ability_item_guardian_greaves_arena_Note0: Can be activated while stunned
 DOTA_Tooltip_ability_item_guardian_greaves_arena_bonus_movement: +$move_speed
+DOTA_Tooltip_ability_item_guardian_greaves_arena_bonus_health: +$health
 DOTA_Tooltip_ability_item_guardian_greaves_arena_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_guardian_greaves_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_guardian_greaves_arena_bonus_armor: +$armor
@@ -1800,3 +1805,20 @@ DOTA_Tooltip_modifier_item_bloodthorn_arena_silence: Bloodthorn 2
 DOTA_Tooltip_modifier_item_bloodthorn_arena_silence_Description: |-
   Silenced and taking increased damage, dealt at the end of the duration of the debuff as magic damage.
   Causes all incoming attacks to crit for %dMODIFIER_PROPERTY_TOOLTIP%%% damage.
+
+DOTA_Tooltip_ability_item_runic_mekansm: Runic Mekansm
+DOTA_Tooltip_ability_item_runic_mekansm_Description: |-
+  Active: Restore - Heals %heal_amount% health and gives +%aura_bonus_armor% armor to allied units in a %radius% radius. Runes can be stored in the Runic Mekansm for later use. If Runic Mekansm contains a rune, it's effect will be shared with these allied units and it will have %rune_multiplier%x effect of normal rune.
+  Passive: Mekansm Aura - Grants %aura_health_regen% health regeneration to allied units in a %radius% radius.
+
+  Multiple instances of Mekansm Aura do not stack.
+DOTA_Tooltip_ability_item_runic_mekansm_bonus_all_stats: +$all
+DOTA_Tooltip_ability_item_runic_mekansm_bonus_armor: +$armor
+DOTA_Tooltip_ability_item_runic_mekansm_bonus_health: +$health
+DOTA_Tooltip_ability_item_runic_mekansm_bonus_mana: +$mana
+DOTA_Tooltip_ability_item_runic_mekansm_radius: 'AURA/RESTORE RADIUS:'
+DOTA_Tooltip_ability_item_runic_mekansm_aura_health_regen: 'AURA HEALTH REGEN:'
+DOTA_Tooltip_ability_item_runic_mekansm_aura_bonus_armor: 'AURA ARMOR:'
+DOTA_Tooltip_ability_item_runic_mekansm_heal_amount: 'RESTORE HEAL:'
+DOTA_Tooltip_modifier_item_runic_mekansm_effect: Mekansm Aura
+DOTA_Tooltip_modifier_item_runic_mekansm_effect_Description: Regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health per second. Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%

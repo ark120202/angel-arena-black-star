@@ -514,10 +514,10 @@ DOTA_Tooltip_ability_item_ray_of_fate_Description: 'Активируемая: Tr
 DOTA_Tooltip_ability_item_ray_of_fate_radius: 'ОБЛАСТЬ ДЕЙСТВИЯ:'
 DOTA_Tooltip_ability_item_ray_of_fate_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_titanium_fruit: Titanium Fruit
-DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Активируемая: Invulnerability - Делает вас неуязвимым на некоторое время.'
+DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Активируемая: Avatar - дает невосприимчивость к заклинаниям и полное сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_titanium_fruit_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_modifier_item_titanium_fruit: Неуязвимость от Titanium Fruit
-DOTA_Tooltip_modifier_item_titanium_fruit_Description: Вы неуязвимы.
+DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit
+DOTA_Tooltip_modifier_item_titanium_fruit_Description: Вы невосприимчивы к магическим заклинаниям.
 DOTA_Tooltip_ability_item_diffusal_style: Diffusal Style
 DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   Активируемая: Mirror Image — создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
@@ -1401,13 +1401,13 @@ DOTA_Tooltip_ability_item_aether_lens_4_spell_amp_pct: '%ДОП. УРОН СПО
 DOTA_Tooltip_ability_item_aether_lens_5_Description: 'Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus% и их урон на %spell_amp_pct%%%'
 DOTA_Tooltip_ability_item_aether_lens_5_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 
-DOTA_Tooltip_ability_item_wand_of_midas_Description: 'Активируемая: Gold Charge - восстанавливает здоровье и ману в зависимости от количества имеющихся зарядов (максимум: %max_charges%). За каждое использование способности врагом, который видим и находится неподалеку, добавляется один заряд, а владелец получает золото.'
-DOTA_Tooltip_ability_item_wand_of_midas_gold: 'ЗОЛОТА ЗА СПОСОБНОСТЬ:'
+DOTA_Tooltip_ability_item_wand_of_midas_Description: 'Активируемая: Gold Charge - владелец получает золото и восстанавливает здоровье и ману в зависимости от количества имеющихся зарядов (максимум: %max_charges%). За каждое использование способности врагом, который видим и находится неподалеку, добавляется один заряд.'
+DOTA_Tooltip_ability_item_wand_of_midas_gold: 'ЗОЛОТА ЗА ЗАРЯД:'
 DOTA_Tooltip_ability_item_wand_of_midas_restore_per_charge: 'ЗДОРОВЬЯ/МАНЫ ЗА ЗАРЯД:'
 DOTA_Tooltip_ability_item_wand_of_midas_radius: 'РАДИУС:'
 
 DOTA_Tooltip_ability_item_mekansm_arena_Description: |-
-  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%heal_bonus_armor% брони в радиусе %radius% вокруг владельца.
+  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца.
   Пассивная: Mekansm Aura — увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
 
   Эффекты от нескольких Mekansm Aura не складываются.
@@ -1415,11 +1415,10 @@ DOTA_Tooltip_ability_item_mekansm_arena_radius: 'РАДИУС АУРЫ/СПОС�
 DOTA_Tooltip_ability_item_mekansm_arena_aura_health_regen: 'ЛЕЧЕНИЕ ОТ АУРЫ:'
 DOTA_Tooltip_ability_item_mekansm_arena_aura_bonus_armor: 'ДОП. БРОНЯ ОТ АУРЫ:'
 DOTA_Tooltip_ability_item_mekansm_arena_heal_amount: 'ЛЕЧЕНИЕ ОТ RESTORE:'
-DOTA_Tooltip_modifier_item_mekansm_arena_effect: Mekansm Aura
 DOTA_Tooltip_modifier_item_mekansm_arena_effect_Description: Восстановление здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%. Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 
 DOTA_Tooltip_ability_item_mekansm_2_Description: |-
-  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%heal_bonus_armor% брони в радиусе %radius% вокруг владельца.
+  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца.
   Пассивная: Mekansm Aura — увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
 
   Эффекты от нескольких Mekansm Aura не складываются.
@@ -1433,7 +1432,7 @@ DOTA_Tooltip_ability_item_guardian_greaves_arena_Description: |-
   Пассивная: Guardian Aura — дарует окружающим союзникам +%aura_health_regen% к восстановлению здоровья и +%aura_armor% к броне. Если в радиусе действия есть союзный герой, уровень здоровья которого ниже %aura_bonus_threshold_pct%%%, то на него действует усиленная аура, восстанавливающая %aura_health_regen_bonus% здоровья в секунду и увеличивающая броню на %aura_armor_bonus%.
 
   ТИП РАЗВЕИВАНИЯ: Нормальное
-DOTA_Tooltip_ability_item_guardian_greaves_arena_Note0: Может быть активирована ао аремя оглушения
+DOTA_Tooltip_ability_item_guardian_greaves_arena_Note0: Может быть активирована во аремя оглушения
 DOTA_Tooltip_ability_item_guardian_greaves_arena_radius: 'РАДИУС ДЕЙСТВИЯ:'
 DOTA_Tooltip_ability_item_guardian_greaves_arena_aura_health_regen: |-
   ДЕЙСТВИЕ АУРЫ:
@@ -1444,3 +1443,14 @@ DOTA_Tooltip_ability_item_guardian_greaves_arena_aura_health_regen_bonus: '• �
 DOTA_Tooltip_ability_item_guardian_greaves_arena_aura_armor_bonus: '• УСИЛЕННАЯ ДОП. БРОНЯ:'
 DOTA_Tooltip_ability_item_guardian_greaves_arena_replenish_health: 'ЛЕЧЕНИЕ ОТ MEND:'
 DOTA_Tooltip_ability_item_guardian_greaves_arena_replenish_mana: 'МАНЫ ОТ MEND:'
+
+DOTA_Tooltip_ability_item_runic_mekansm_Description: |-
+  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца. Также может хранить руны для последующего использования. При использовании эффект этих рун будет наложен на всех союзников рядом, но он будет ослаблен до %rune_multiplier% раз.
+  Пассивная: Mekansm Aura — увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
+
+  Эффекты от нескольких Mekansm Aura не складываются.
+DOTA_Tooltip_ability_item_runic_mekansm_radius: 'РАДИУС АУРЫ/СПОСОБНОСТИ:'
+DOTA_Tooltip_ability_item_runic_mekansm_aura_health_regen: 'ЛЕЧЕНИЕ ОТ АУРЫ:'
+DOTA_Tooltip_ability_item_runic_mekansm_aura_bonus_armor: 'ДОП. БРОНЯ ОТ АУРЫ:'
+DOTA_Tooltip_ability_item_runic_mekansm_heal_amount: 'ЛЕЧЕНИЕ ОТ RESTORE:'
+DOTA_Tooltip_modifier_item_runic_mekansm_effect_Description: Восстановление здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%. Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%

@@ -39,19 +39,22 @@
 	align: right top
 
 #MainContainer
-	align: center center
 	width: 1550px
 	height: 800px
 	background-color: rgba(30, 30, 70, .94)
 	border: 3px solid #fff
-	flow-children: down
-	transition-property: opacity
-	transition-duration: .15s
 	opacity: 1
+	transition-duration: .15s
+	transition-property: opacity
+	align: center center
+	flow-children: down
+
+	.MainHidden &
+		opacity: 0
 
 #InfoToolbar
-	height: 40px
 	width: 100%
+	height: 40px
 	background-color: #282828
 	flow-children: right
 
@@ -81,11 +84,11 @@
 	width: 100%
 	height: 100%
 	margin: 6px
-	margin-left: 32px
 	margin-right: 12px
+	margin-left: 32px
+	overflow: squish scroll
 	visibility: collapse
 	flow-children: right-wrap
-	overflow: squish scroll
 
 .InSearchMode
 	#MainHeroesRoot
@@ -125,6 +128,12 @@
 	width: 100%
 	height: 100%
 
+	.MaxUpgraded &
+		saturation: 0
+
+	.NoPoints &
+		saturation: .1
+
 #PointCost
 	margin-bottom: -3px
 	margin-left: 3px
@@ -133,30 +142,31 @@
 	align: left bottom
 
 #SellReturn
-	align: left bottom
 	margin-bottom: -1px
 	margin-left: 2px
-	color: #ffd700
 	font-size: 22px
 	color: #0f0
 	visibility: collapse
+	align: left bottom
 
 #SellCost
-	align: left top
 	margin-top: 2px
 	margin-left: 2px
-	color: #ffd700
 	font-size: 20px
+	color: #ffd700
 	visibility: collapse
+	align: left top
 
 #AbilityLevel
-	align: right top
 	margin-top: 2px
 	margin-right: 1px
-	color: #0ff
 	font-size: 20px
+	color: #0ff
 	visibility: collapse
+	align: right top
 
+	.Purchased &
+		visibility: visible
 
 .CanDelete
 	#AbilityImage
@@ -175,6 +185,9 @@
 
 #BannedOverlay
 	visibility: collapse
+
+	.Banned &
+		visibility: visible
 
 .HeroListElement
 	width: 96px
@@ -223,25 +236,15 @@
 	color: #fff
 	vertical-align: center
 
-DOTAHud.IsBeforeGameplay #InfoContainer
-	transform: translateY(230px)
-	transition-delay: 2s
-	transition-duration: 1s
+#SwitchHeroesButton
+	align: left center
 
-.MainHidden #MainContainer
-	opacity: 0
-
-.MaxUpgraded #AbilityImage
-	saturation: 0
-
-.NoPoints #AbilityImage
-	saturation: .1
-
-.Banned #BannedOverlay
-	visibility: visible
-
-.Purchased #AbilityLevel
-	visibility: visible
+DOTAHud
+	&.IsBeforeGameplay
+		#InfoContainer
+			transform: translateY(230px)
+			transition-delay: 2s
+			transition-duration: 1s
 
 .AspectRatio5x4
 	.HeroListElement
@@ -252,6 +255,3 @@ DOTAHud.IsBeforeGameplay #InfoContainer
 	.HeroListElement
 		width: 86.4px
 		height: 48.6px
-
-#SwitchHeroesButton
-	align: left center

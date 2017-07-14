@@ -543,18 +543,19 @@
 	"item_recipe_sheepstick"
 	{
 		"SecretShop"					"0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"3.0"
-			}
 	}
 	"item_sheepstick"
 	{
 		"SecretShop"					"0"
 		"AbilitySharedCooldown"			"hex"
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"sheep_duration"		"3.0"
+			}
+		}
 	}
 	"item_recipe_orchid"
 	{
@@ -575,11 +576,11 @@
 	"item_recipe_force_staff"
 	{
 		"SecretShop"					"0"
-		"AbilityCooldown"				"16.0"
 	}
 	"item_force_staff"
 	{
 		"SecretShop"					"0"
+		"AbilityCooldown"				"16.0"
 	}
 	"item_recipe_necronomicon"
 	{
@@ -1148,7 +1149,6 @@
 			}
 		}
 	}
-	//6.87
 	"item_recipe_bloodthorn"
 	{
 		"SecretShop"					"0"

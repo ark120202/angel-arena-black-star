@@ -1,8 +1,25 @@
 Heroes:
-	Centaur's Stampede now not scalable by spell amplify
-	Outworld Devourer's Arcane Orb now not scalable by spell amplify
-	Tinker now can't rearm guardian greaves
-	Tinker now can rearm tarrasque scepter
+	Centaur:
+		Stampede now not scalable by spell amplify
+	Outworld Devourer:
+		Arcane Orb now not scalable by spell amplify
+	Tinker:
+		Guardian greaves now can't be rearmed
+		Tarrasque scepter now can be rearmed
+	Bounty Hunter:
+		Shuriken toss added percent damage
+	Abaddon:
+		Aphotic shield added percent damage
+	Monkey King:
+		Boundless Strike now not refreshable by coffee bean
+	Kunkka:
+		Torrent now deal 40% dmg to bosses
+	Rubick:
+		Now can't steal timbersaw's spells
+	Destroyer:
+		Body reconstruction now can refresh coffee bean
+	Dazzle:
+		Weave now can't be used on bosses
 Talents:
 	Exp bonus:
 		10/15/20/25 => 15/20/25/30
@@ -62,3 +79,54 @@ Talents:
 		group 10 => 8
 	Pugna's ward:
 		Bonus dmg per mana 2 => 0.75
+	Movespeed bonus:
+		10/13/16/19/22/25/28 => 15/17.5/20/22.5/25/27.5/30
+	Chen's Hand of God:
+		bonus heal 1000 => 15000
+		group 7 => 9
+Runes:
+	Acceleration:
+		xp multiplier 3 => 2
+	Vibration:
+		duration 25 => 20
+	Soul Steal:
+		damage heal 15 => 30
+Fixes:
+	Fixed all broken spells by valve's update
+Items:
+	Haganemushi:
+		Fixed attack speed (now bonus attack speed works)
+		Added aura of reduce armor because of soul of titan
+	Mekansm & Mekansm_2:
+		Changed requirments and cost
+		Added bonus health and mana from soul booster
+	Guardian Greaves:
+		Added bonus health
+	Titanium fruit:
+		Now gives just spell immune from magic not invulnerability
+	Refresher:
+		Coffee bean now can't be refreshed by refresher & refresher core
+Bosses:
+	Boss lvl1:
+		now can be droped 2 dark blades
+		Dark Blade1 chance changed 25 => 20%
+		Dark Blade2 chance set to 10%
+	Boss lvl2:
+		Soul of titan1 drop chance changed 40 => 90%
+		Soul of titan2 drop chance changed 30 => 25%
+		Demons paw1 drop chance changed 25 => 90%
+		Demons paw2 drop chance changed 25 => 20%
+Game changes:
+	MAXIMUM ATTACK SPEED now is 725
+	Spell Amplify:
+		now for every 1% of spell amplify damage needed 16 intellect points instead of 14
+	Duel:
+		Duration of duel for every player rescaled 20 => 10
+		Win gold base 100 => 50
+		Win gold per duel 400 => 250
+		Item dust of appearance cost 900 => 360
+		Item ward sentry cost 1800 => 300
+		Item tango cost 550 => 240
+	Creeps:
+		X6 champion was deleted
+		Maximum creeps to spawn on easy camp 4 => 5

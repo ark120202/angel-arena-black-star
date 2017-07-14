@@ -31,21 +31,18 @@
 	align: right top
 
 	&.countdown_inactive
-		#TeamSelectTimer
-			opacity: 0
-
-		#TimerLabelAutoStart
-			opacity: 0
-
+		#TeamSelectTimer,
+		#TimerLabelAutoStart,
 		#TimerLabelGameStart
 			opacity: 0
 
+	&.auto_start
+		#TimerLabelAutoStart
+			visibility: visible
 
-	&.auto_start #TimerLabelAutoStart
-		visibility: visible
-
-	&.forced_start #TimerLabelGameStart
-		visibility: visible
+	&.forced_start
+		#TimerLabelGameStart
+			visibility: visible
 
 
 #TeamSelectTimer
@@ -60,58 +57,56 @@
 	margin-top: 32px
 
 #TimerLabelGameStart
-	color: #d6d6d6
 	font-size: 16px
+	color: #d6d6d6
 	text-transform: uppercase
-	horizontal-align: center
 	visibility: collapse
-	transition-property: opacity
 	transition-duration: .2s
+	transition-property: opacity
+	horizontal-align: center
 
 #TimerLabelAutoStart
-	color: #d6d6d6
 	font-size: 16px
+	color: #d6d6d6
 	text-transform: uppercase
-	horizontal-align: center
 	visibility: collapse
+	transition-duration: .2s
 	transition-property: opacity
-	transition-duration: 0.2s
+	horizontal-align: center
 
 .TeamSelectTeam
 	width: 518px
-	horizontal-align: center
 	margin: 4px
+	transition-duration: .1s
 	//border: 2px solid gtey
 	transition-property: brightness, saturation
 	transition-timing-function: linear
-	transition-duration: 0.1s
+	horizontal-align: center
+
 	&.potential_drop_target
 		brightness: 2
 		saturation: 1.1
 
-	&.team_is_full #JoinTeamLabel
-		opacity: 0
-
-	&.local_player_on_this_team #JoinTeamLabel
-		opacity: 0
-
-	&.local_player_is_ready #JoinTeamLabel
-		opacity: 0
+	&.team_is_full,
+	&.local_player_on_this_team,
+	&.local_player_is_ready
+		#JoinTeamLabel
+			opacity: 0
 
 
 #TeamBackgroundGradientHighlight
-	visibility: collapse
 	width: 100%
 	height: 100%
+	visibility: collapse
 
 #TeamBackgroundGradient
 	width: 100%
 	height: 100%
 
 #TeamGroup
-	background-color: transparent
 	width: 100%
 	padding: 4px
+	background-color: transparent
 	flow-children: down
 
 #TeamHeader
@@ -119,191 +114,187 @@
 	flow-children: right
 
 #TeamNameLabel
-	font-size: 20px
-	vertical-align: top
-	text-shadow: 2px 2px 2px #000
-	margin-left: 1px
 	margin-top: 1px
+	margin-left: 1px
+	font-size: 20px
+	color: #fff
+	text-shadow: 2px 2px 2px #000
 	text-transform: uppercase
 	white-space: nowrap
-	color: #fff
+	vertical-align: top
 
 #JoinTeamLabel
+	margin-top: 4px
+	font-size: 20px
+	letter-spacing: 2px
 	color: #444
 	text-transform: uppercase
-	letter-spacing: 2px
-	font-size: 20px
-	horizontal-align: right
 	vertical-align: center
-	margin-top: 4px
+	transition-duration: .2s
 	transition-property: color
-	transition-duration: 0.2s
+	horizontal-align: right
 
 #TeamPlayerDivider
 	width: 100%
-	margin: 2px
 	height: 1px
-	background-color: rgba(73, 82, 85, 0.33333)
+	margin: 2px
+	background-color: rgba(73, 82, 85, .33333)
 
 #PlayerList
-	flow-children: down
 	width: 100%
+	flow-children: down
 
 .player_slot
-	height: 32px
 	width: 100%
-	flow-children: right
+	height: 32px
 	margin-top: 2px
+	flow-children: right
 
 .PlayerSlot
 	width: 100%
 	height: 32px
-	flow-children: right
+	transition-duration: .2s
 	transition-property: brightness, saturation, background-color
 	transition-timing-function: linear
-	transition-duration: 0.2s
+	flow-children: right
+
 	&:hover
-		background-color: rgba(0, 0, 0, 0.15)
+		background-color: rgba(0, 0, 0, .15)
 
 	&.player_dragged
-		background-color: rgba(0, 0, 0, 0.45)
-		brightness: 0.3
+		background-color: rgba(0, 0, 0, .45)
+		brightness: .3
 
 	&.potential_drop_target
-		background-color: rgba(255, 255, 255, 0.05)
+		background-color: rgba(255, 255, 255, .05)
 		saturation: 1.5
 
-	&.player_has_host_privileges #PlayerIsHostPanel
-		visibility: visible
+	&.player_has_host_privileges
+		#PlayerIsHostPanel
+			visibility: visible
 
 
 DOTAAvatarImage
 	width: 32px
 	height: 32px
-	background-color: #000
 	vertical-align: middle
+	background-color: #000
 
 #PlayerIsHostPanel
-	background-image: url('s2r://panorama/images/icon_star_png.vtex')
-	background-repeat: no-repeat
-	background-size: contain
-	overflow: noclip
 	width: 24px
 	height: 24px
 	margin-top: 2px
 	margin-right: 4px
 	margin-left: 4px
+	overflow: noclip
+	background-image: url('s2r://panorama/images/icon_star_png.vtex')
+	background-repeat: no-repeat
+	background-size: contain
 	visibility: collapse
 
 #PlayerName
-	color: #fff
-	vertical-align: middle
+	width: fill-parent-flow(1)
 	margin: 3px
+	color: #fff
 	text-shadow: 2px 2px 2px #000
-	width: fill-parent-flow(1 )
 	white-space: nowrap
+	vertical-align: middle
 
 #PlayerLeaveTeamButton
 	width: 24px
 	height: 24px
-	wash-color: rgba(170, 0, 0, .93333)
-	background-image: url('s2r://panorama/images/control_icons/x_close_png.vtex')
-	background-size: 24px 24px
-	background-repeat: no-repeat
-	background-position: 50% 50%
 	margin: 4px
+	background-image: url('s2r://panorama/images/control_icons/x_close_png.vtex')
+	background-position: 50% 50%
+	background-repeat: no-repeat
+	background-size: 24px 24px
 	visibility: collapse
+	wash-color: rgba(170, 0, 0, .93333)
+
 	&:hover
 		wash-color: #f00
 
 
 #UnassignedPlayerPanel
 	width: 100%
-	flow-children: down
 	margin: 2px
+	flow-children: down
 
 #UnassignedPlayersButton
-	flow-children: down
-	min-height: 50%
 	width: 100%
+	min-height: 50%
 	background-color: gradient(linear, 100% 0, 100% 100%, from(rgba(17, 17, 17, .35294)), color-stop(0, #272b30), color-stop(.6, rgba(24, 26, 30, .35294)), to(rgba(24, 26, 30, .35294)))
+	border-bottom: 1px solid rgba(64, 75, 74, .06667)
 	box-shadow: inset #000 0 2px 6px 3px
-	border-bottom: 1px solid rgba(64, 75, 74, 0.06667)
+	transition-duration: .1s
 	transition-property: brightness, saturation
 	transition-timing-function: linear
-	transition-duration: 0.1s
+	flow-children: down
+
 	&.potential_drop_target
 		brightness: 2
 		saturation: 1.1
 
-	&:hover #UnassignedPlayersHeader Label
-		font-size: 20px
-		letter-spacing: 1px
-		color: #fff
+	&:hover
+		#UnassignedPlayersHeader
+			Label
+				font-size: 20px
+				letter-spacing: 1px
+				color: #fff
 
 
 #UnassignedPlayersHeader
-	horizontal-align: left
 	margin-top: 16px
 	margin-left: 16px
+	horizontal-align: left
+
 	Label
 		font-size: 20px
 		letter-spacing: 1px
 		color: #c8c8c8
 		text-transform: uppercase
+		transition-duration: .2s
 		transition-property: color
-		transition-duration: 0.2s
 
 
 #UnassignedPlayersDivider
 	width: 100%
 	height: 2px
-	margin-left: 8px
 	margin-right: 8px
-	background-color: rgba(73, 82, 85, 0.33333)
+	margin-left: 8px
+	background-color: rgba(73, 82, 85, .33333)
 
 #UnassignedPlayersContainer
 	width: 100%
-	flow-children: down
-	overflow: clip scroll
 	margin: 16px
+	overflow: clip scroll
+	flow-children: down
 
 #AutoAssignButton
 	height: 32px
 	margin-top: 8px
 	margin-right: 8px
 	vertical-align: top
+	visibility: collapse
 	horizontal-align: left
 	flow-children: right
-	visibility: collapse
+
+	.player_has_host_privileges &
+		visibility: visible
+
 	Label
-		font-size: 24px
-		text-transform: uppercase
 		margin-top: 2px
 		margin-left: 5px
+		font-size: 24px
 		color: #6e6f6f
+		text-transform: uppercase
 		vertical-align: center
 
 	Image
 		width: 24px
 		height: 24px
-		wash-color: #888
 		vertical-align: center
-
-
-.player_has_host_privileges
-	#AutoAssignButton
-		visibility: visible
-
-	#ShuffleTeamAssignmentButton
-		visibility: visible
-
-	#LockAndStartButton
-		visibility: visible
-
-	&.teams_locked #CancelAndUnlockButton
-		visibility: visible
-
+		wash-color: #888
 
 .unassigned_players
 	#AutoAssignButton
@@ -316,17 +307,17 @@ DOTAAvatarImage
 
 
 		&:active
-			sound: "ui_team_select_auto_assign"
+			sound: 'ui_team_select_auto_assign'
 
 
 	#LockAndStartButton
 		background-color: gradient(linear, 0 0, 0 100%, from(#14161a), to(#23262b))
-		box-shadow: fill rgba(0, 0, 0, 0) 0 0 0 0
 		border-top: 1px solid rgba(255, 255, 255, .01176)
 		border-left: 1px solid rgba(255, 255, 255, .01176)
+		box-shadow: fill rgba(0, 0, 0, 0) 0 0 0 0
 
 		Label
-			opacity: 0.1
+			opacity: .1
 
 
 
@@ -334,16 +325,19 @@ DOTAAvatarImage
 	height: 32px
 	margin-top: 8px
 	margin-left: 6px
-	horizontal-align: left
-	flow-children: right
 	visibility: collapse
+	flow-children: right
+	horizontal-align: left
+
+	.player_has_host_privileges &
+		visibility: visible
 
 	Label
-		font-size: 24px
-		text-transform: uppercase
 		margin-top: 2px
 		margin-right: 5px
+		font-size: 24px
 		color: #6e6f6f
+		text-transform: uppercase
 		vertical-align: center
 
 	&:hover
@@ -355,7 +349,7 @@ DOTAAvatarImage
 
 
 	&:active
-		sound: "ui_team_select_shuffle"
+		sound: 'ui_team_select_shuffle'
 
 	Image
 		width: 24px
@@ -375,38 +369,45 @@ DOTAAvatarImage
 	box-shadow: fill rgba(72, 108, 169, .13333) -4px -4px 8px 8px
 	horizontal-align: right
 
+	.player_has_host_privileges &
+		visibility: visible
+
 	Label
 		transition-duration: .2s
 		transition-property: opacity
 
 
 #CancelAndUnlockButton
-	horizontal-align: right
 	//background-color: gradient(linear, 0 0, 0 100%, from(#722217 ), to(#dd4a29 ) )
 	//box-shadow: fill rgba(221, 74, 41, 0.13333) -4px -4px 8px 8px
 	//border-top: 1px solid rgba(255, 255, 255, 0.01176)
 	//border-left: 1px solid rgba(255, 255, 255, 0.01176)
-	visibility: collapse
-	background-color: gradient(linear, 0 0, 0 100%, from(#2c1b1b ), to(#482e2f ) )
-	box-shadow: fill rgba(85, 46, 47, 0) -4px -4px 8px 9px
-	border-top: 1px solid #3d2929
-	border-right: 1px solid #372121
-	border-left: 1px solid #372121
-	border-bottom: 1px solid #2e1f21
 	width: 100%
 	margin: 0
 	margin-top: 2px
+	background-color: gradient(linear, 0 0, 0 100%, from(#2c1b1b), to(#482e2f))
+	border-top: 1px solid #3d2929
+	border-right: 1px solid #372121
+	border-bottom: 1px solid #2e1f21
+	border-left: 1px solid #372121
+	visibility: collapse
+	box-shadow: fill rgba(85, 46, 47, 0) -4px -4px 8px 9px
+	horizontal-align: right
+
+	.player_has_host_privileges.teams_locked & // sass-lint:disable-block force-element-nesting
+		visibility: visible
+
 	&:hover
-		background-color: gradient(linear, 0 0, 0 100%, from(#492121 ), to(#9d4c4f ) )
+		background-color: gradient(linear, 0 0, 0 100%, from(#492121), to(#9d4c4f))
 		border-top: 1px solid #7d4141
 		border-right: 1px solid #7a3535
 		border-bottom: 1px solid #2e1f21
 		border-left: 1px solid #7a3535
-		box-shadow: fill rgba(85, 46, 47, 0.4) -4px -4px 8px 9px
+		box-shadow: fill rgba(85, 46, 47, .4) -4px -4px 8px 9px
 
 	&:active
 		//sound: "ui_custom_lobby_quit"
-		sound: "ui_team_select_cancel_and_lock"
+		sound: 'ui_team_select_cancel_and_lock'
 
 
 .teams_unlocked .TeamSelectTeam
