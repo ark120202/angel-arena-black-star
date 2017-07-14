@@ -13,3 +13,4 @@ rules:
   class-name-format: 0 # Fix it
   no-url-domains: 0
   nesting-depth: 0
+  no-qualifying-elements: 0
