@@ -1639,7 +1639,7 @@ DOTA_Tooltip_ability_item_wand_of_midas_radius: 'RADIUS:'
 
 DOTA_Tooltip_ability_item_mekansm_arena: Mekansm
 DOTA_Tooltip_ability_item_mekansm_arena_Description: |-
-  Active: Restore - Heals %heal_amount% health and gives +%heal_bonus_armor% armor to allied units in a %radius% radius.
+  Active: Restore - Heals %heal_amount% health and gives +%aura_bonus_armor% armor to allied units in a %radius% radius.
   Passive: Mekansm Aura - Grants %aura_health_regen% health regeneration to allied units in a %radius% radius.
 
   Multiple instances of Mekansm Aura do not stack.
@@ -1656,7 +1656,7 @@ DOTA_Tooltip_modifier_item_mekansm_arena_effect_Description: Regenerating %dMODI
 
 DOTA_Tooltip_ability_item_mekansm_2: Mekansm II
 DOTA_Tooltip_ability_item_mekansm_2_Description: |-
-  Active: Restore - Heals %heal_amount% health and gives +%heal_bonus_armor% armor to allied units in a %radius% radius.
+  Active: Restore - Heals %heal_amount% health and gives +%aura_bonus_armor% armor to allied units in a %radius% radius.
   Passive: Mekansm Aura - Grants %aura_health_regen% health regeneration to allied units in a %radius% radius.
 
   Multiple instances of Mekansm Aura do not stack.
@@ -1805,3 +1805,20 @@ DOTA_Tooltip_modifier_item_bloodthorn_arena_silence: Bloodthorn 2
 DOTA_Tooltip_modifier_item_bloodthorn_arena_silence_Description: |-
   Silenced and taking increased damage, dealt at the end of the duration of the debuff as magic damage.
   Causes all incoming attacks to crit for %dMODIFIER_PROPERTY_TOOLTIP%%% damage.
+
+DOTA_Tooltip_ability_item_runic_mekansm: Runic Mekansm
+DOTA_Tooltip_ability_item_runic_mekansm_Description: |-
+  Active: Restore - Heals %heal_amount% health and gives +%aura_bonus_armor% armor to allied units in a %radius% radius. Runes can be stored in the Runic Mekansm for later use. If Runic Mekansm contains a rune, it's effect will be shared with these allied units and it will have %rune_multiplier%x effect of normal rune.
+  Passive: Mekansm Aura - Grants %aura_health_regen% health regeneration to allied units in a %radius% radius.
+
+  Multiple instances of Mekansm Aura do not stack.
+DOTA_Tooltip_ability_item_runic_mekansm_bonus_all_stats: +$all
+DOTA_Tooltip_ability_item_runic_mekansm_bonus_armor: +$armor
+DOTA_Tooltip_ability_item_runic_mekansm_bonus_health: +$health
+DOTA_Tooltip_ability_item_runic_mekansm_bonus_mana: +$mana
+DOTA_Tooltip_ability_item_runic_mekansm_radius: 'AURA/RESTORE RADIUS:'
+DOTA_Tooltip_ability_item_runic_mekansm_aura_health_regen: 'AURA HEALTH REGEN:'
+DOTA_Tooltip_ability_item_runic_mekansm_aura_bonus_armor: 'AURA ARMOR:'
+DOTA_Tooltip_ability_item_runic_mekansm_heal_amount: 'RESTORE HEAL:'
+DOTA_Tooltip_modifier_item_runic_mekansm_effect: Mekansm Aura
+DOTA_Tooltip_modifier_item_runic_mekansm_effect_Description: Regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health per second. Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%

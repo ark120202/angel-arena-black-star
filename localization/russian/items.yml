@@ -1407,7 +1407,7 @@ DOTA_Tooltip_ability_item_wand_of_midas_restore_per_charge: 'ЗДОРОВЬЯ/М
 DOTA_Tooltip_ability_item_wand_of_midas_radius: 'РАДИУС:'
 
 DOTA_Tooltip_ability_item_mekansm_arena_Description: |-
-  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%heal_bonus_armor% брони в радиусе %radius% вокруг владельца.
+  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца.
   Пассивная: Mekansm Aura — увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
 
   Эффекты от нескольких Mekansm Aura не складываются.
@@ -1415,11 +1415,10 @@ DOTA_Tooltip_ability_item_mekansm_arena_radius: 'РАДИУС АУРЫ/СПОС�
 DOTA_Tooltip_ability_item_mekansm_arena_aura_health_regen: 'ЛЕЧЕНИЕ ОТ АУРЫ:'
 DOTA_Tooltip_ability_item_mekansm_arena_aura_bonus_armor: 'ДОП. БРОНЯ ОТ АУРЫ:'
 DOTA_Tooltip_ability_item_mekansm_arena_heal_amount: 'ЛЕЧЕНИЕ ОТ RESTORE:'
-DOTA_Tooltip_modifier_item_mekansm_arena_effect: Mekansm Aura
 DOTA_Tooltip_modifier_item_mekansm_arena_effect_Description: Восстановление здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%. Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 
 DOTA_Tooltip_ability_item_mekansm_2_Description: |-
-  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%heal_bonus_armor% брони в радиусе %radius% вокруг владельца.
+  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца.
   Пассивная: Mekansm Aura — увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
 
   Эффекты от нескольких Mekansm Aura не складываются.
@@ -1444,3 +1443,14 @@ DOTA_Tooltip_ability_item_guardian_greaves_arena_aura_health_regen_bonus: '• �
 DOTA_Tooltip_ability_item_guardian_greaves_arena_aura_armor_bonus: '• УСИЛЕННАЯ ДОП. БРОНЯ:'
 DOTA_Tooltip_ability_item_guardian_greaves_arena_replenish_health: 'ЛЕЧЕНИЕ ОТ MEND:'
 DOTA_Tooltip_ability_item_guardian_greaves_arena_replenish_mana: 'МАНЫ ОТ MEND:'
+
+DOTA_Tooltip_ability_item_runic_mekansm_Description: |-
+  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца. Также может хранить руны для последующего использования. При использовании эффект этих рун будет наложен на всех союзников рядом, но он будет ослаблен до %rune_multiplier% раз.
+  Пассивная: Mekansm Aura — увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
+
+  Эффекты от нескольких Mekansm Aura не складываются.
+DOTA_Tooltip_ability_item_runic_mekansm_radius: 'РАДИУС АУРЫ/СПОСОБНОСТИ:'
+DOTA_Tooltip_ability_item_runic_mekansm_aura_health_regen: 'ЛЕЧЕНИЕ ОТ АУРЫ:'
+DOTA_Tooltip_ability_item_runic_mekansm_aura_bonus_armor: 'ДОП. БРОНЯ ОТ АУРЫ:'
+DOTA_Tooltip_ability_item_runic_mekansm_heal_amount: 'ЛЕЧЕНИЕ ОТ RESTORE:'
+DOTA_Tooltip_modifier_item_runic_mekansm_effect_Description: Восстановление здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%. Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%

@@ -158,6 +158,7 @@ function CustomRunes:ExecuteOrderFilter(order)
 
 							local bottle
 							local runeKeeper
+							local runic_mekansm
 							for i = 0, 5 do
 								local item = unit:GetItemInSlot(i)
 								if item then
@@ -165,11 +166,15 @@ function CustomRunes:ExecuteOrderFilter(order)
 										runeKeeper = item
 									elseif not bottle and item:GetAbilityName() == "item_bottle_arena" and not item.RuneStorage then
 										bottle = item
+									elseif not runic_mekansm and item:GetAbilityName() == "item_runic_mekansm" and not item.RuneStorage then
+										runic_mekansm = item
 									end
 								end
 							end
 
-							if runeKeeper and runeKeeper.RuneContainer then
+							if runic_mekansm then
+								runic_mekansm:SetStorageRune(runeType)
+							elseif runeKeeper and runeKeeper.RuneContainer then
 								table.insert(runeKeeper.RuneContainer, {rune=runeType, expireGameTime = GameRules:GetGameTime() + runeKeeper:GetAbilitySpecial("store_duration")})
 								Notifications:Bottom(issuerID, {text="#item_rune_keeper_rune_picked_up", duration = 8})
 								Notifications:Bottom(issuerID, {text="#custom_runes_rune_" .. runeType .. "_title", continue=true})
