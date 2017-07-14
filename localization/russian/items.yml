@@ -1445,7 +1445,7 @@ DOTA_Tooltip_ability_item_guardian_greaves_arena_replenish_health: 'ЛЕЧЕНИ
 DOTA_Tooltip_ability_item_guardian_greaves_arena_replenish_mana: 'МАНЫ ОТ MEND:'
 
 DOTA_Tooltip_ability_item_runic_mekansm_Description: |-
-  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца. Также может хранить руны для последующего использования. При использовании эффект этих рун будет наложен на всех союзников рядом, но он будет ослаблен до %rune_multiplier% раза.
+  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца. Также может хранить руны для последующего использования. При использовании эффект этих рун будет наложен на всех союзников рядом, но он будет ослаблен до %rune_multiplier% раз.
   Пассивная: Mekansm Aura — увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
 
   Эффекты от нескольких Mekansm Aura не складываются.
