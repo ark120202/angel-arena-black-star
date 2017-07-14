@@ -1,3 +1,4 @@
+if IsClient() then require("utils/shared") end
 LinkLuaModifier("modifier_item_runic_mekansm", "items/item_runic_mekansm.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_runic_mekansm_effect", "items/item_runic_mekansm.lua", LUA_MODIFIER_MOTION_NONE)
 
@@ -5,16 +6,46 @@ item_runic_mekansm = class({
 	GetIntrinsicModifierName = function() return "modifier_item_runic_mekansm" end,
 })
 
+function item_runic_mekansm:GetAbilityTextureName()
+	return self:GetNetworkableEntityInfo("ability_texture") or "item_arena/runic_mekansm"
+end
+
 if IsServer() then
 	function item_runic_mekansm:OnSpellStart()
 		local caster = self:GetCaster()
+		local rune_multiplier = self:GetSpecialValueFor("rune_multiplier")
+		local heal_amount = self:GetSpecialValueFor("heal_amount")
+
 		caster:EmitSound("DOTA_Item.Mekansm.Activate")
 		ParticleManager:CreateParticle("particles/econ/events/ti6/mekanism_ti6.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+
 		for _,v in ipairs(FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, self:GetSpecialValueFor("radius"), self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
-			SafeHeal(v, self:GetSpecialValueFor("heal_amount"), self)
 			ParticleManager:CreateParticle("particles/econ/events/ti6/mekanism_recipient_ti6.vpcf", PATTACH_ABSORIGIN_FOLLOW, v, caster)
 			v:EmitSound("DOTA_Item.Mekansm.Target")
+
+			SafeHeal(v, heal_amount, self)
+			if self.RuneStorage then
+				CustomRunes:ActivateRune(v, self.RuneStorage, rune_multiplier)
+			end
 		end
+
+		self.RuneStorage = nil
+		self:SetNetworkableEntityInfo("ability_texture", "item_arena/runic_mekansm")
+	end
+
+	function item_runic_mekansm:SetStorageRune(type)
+		self:GetCaster():EmitSound("Bottle.Cork")
+		if self:GetCaster().GetPlayerID then
+			CustomGameEventManager:Send_ServerToTeam(self:GetCaster():GetTeam(), "create_custom_toast", {
+				type = "generic",
+				text = "#custom_toast_BottledRune",
+				player = self:GetCaster():GetPlayerID(),
+				runeType = type
+			})
+		end
+		self.RuneStorage = type
+
+		self:SetNetworkableEntityInfo("ability_texture", "item_arena/runic_mekansm_rune_" .. type)
 	end
 end
 
