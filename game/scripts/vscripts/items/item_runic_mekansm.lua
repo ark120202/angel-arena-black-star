@@ -38,7 +38,7 @@ if IsServer() then
 		if self:GetCaster().GetPlayerID then
 			CustomGameEventManager:Send_ServerToTeam(self:GetCaster():GetTeam(), "create_custom_toast", {
 				type = "generic",
-				text = "#custom_toast_BottledRune",
+				text = "#custom_toast_RunicMekansmRune",
 				player = self:GetCaster():GetPlayerID(),
 				runeType = type
 			})

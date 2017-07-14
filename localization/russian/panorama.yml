@@ -79,6 +79,7 @@ custom_toast_PlayerDenied: '{killer_name} {denied_icon} не отдает вра
 custom_toast_KillStreak_Ended: '{victim_name} Серия из {kill_streak} убийств прервана'
 custom_toast_ActivatedRune: '{player_name} использовал руну {rune_name}'
 custom_toast_BottledRune: '{player_name} помещает в бутыль {rune_name}'
+custom_toast_RunicMekansmRune: '{player_name} помещает в Runic Mekansm {rune_name}'
 custom_toast_DuelStarted: '{time_dota}: {duel_index}ая общая дуэль началась!'
 custom_toast_AntiAFKTime: '{player_name} должен получить опыт, или будет удален из игры через {minutes} минут'
 custom_toast_AntiAFKNoTime: '{player_name} удаляется из игры из-за бездействия'
