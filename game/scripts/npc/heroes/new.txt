@@ -87,6 +87,18 @@
 //		"Ability2"				"soul_eater_human_form"
 //	}
 
+	"npc_arena_hero_debug"
+	{
+		"base_hero"	"npc_dota_hero_sven"
+		"Enabled"	"0"
+		"Ability1"	"boss_kel_thuzad_immortality"
+		"Ability2"	"boss_kel_thuzad_presence_of_death"
+		"Ability3"	"boss_kel_thuzad_invulnerability"
+		"Ability4"	"boss_kel_thuzad_shadows"
+		"Ability5"	"boss_kel_thuzad_summon_undead"
+		"Ability6"	"boss_kel_thuzad_erebus"
+	}
+
 	"npc_arena_hero_arthas"
 	{
 		"base_hero"	"npc_dota_hero_skeleton_king"
@@ -150,28 +162,6 @@
 		"ArmorPhysical"	"2"
 		"MagicalResistance"	"10"
 		"RenderColor"	"165 0 255"
-	}
-
-	"npc_arena_hero_zen_gehraz"
-	{
-		"base_hero"	"npc_dota_hero_dark_seer"
-		"Ability1"	"zen_gehraz_divine_intervention"
-		"Ability2"	"zen_gehraz_mystic_twister"
-		"Ability3"	"zen_gehraz_vow_of_silence"
-		"Ability4"	"zen_gehraz_superposition"
-		"AttackRate"	"1.7"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-	}
-
-	"npc_arena_hero_mirratie"
-	{
-		"base_hero"	"npc_dota_hero_templar_assassin"
-		"Ability1"	"mirratie_snagshot"
-		"Ability2"	"mirratie_smoke_out"
-		"Ability3"	"mirratie_sixth_sense"
-		"Ability4"	"mirratie_impaling_shot"
-		"AttackRange"	"700"
-		"AttackRate"	"1.7"
 	}
 
 	"npc_arena_hero_apocalypse"
@@ -238,6 +228,17 @@
 		// }
 	}
 
+	"npc_arena_hero_zen_gehraz"
+	{
+		"base_hero"	"npc_dota_hero_dark_seer"
+		"Ability1"	"zen_gehraz_divine_intervention"
+		"Ability2"	"zen_gehraz_mystic_twister"
+		"Ability3"	"zen_gehraz_vow_of_silence"
+		"Ability4"	"zen_gehraz_superposition"
+		"AttackRate"	"1.7"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	}
+
 	"npc_arena_hero_stegius"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
@@ -261,6 +262,17 @@
 		"AttributeAgilityGain"	"2.1"
 		"AttackDamageMin"	"20"
 		"AttackDamageMax"	"22"
+	}
+
+	"npc_arena_hero_mirratie"
+	{
+		"base_hero"	"npc_dota_hero_templar_assassin"
+		"Ability1"	"mirratie_snagshot"
+		"Ability2"	"mirratie_smoke_out"
+		"Ability3"	"mirratie_sixth_sense"
+		"Ability4"	"mirratie_impaling_shot"
+		"AttackRange"	"700"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_arena_hero_freya"
@@ -340,32 +352,6 @@
 		"AttackDamageMax"	"25"
 	}
 
-	"npc_arena_hero_anakim"
-	{
-		"base_hero"		"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_anakim"
-		"Model"			"models/units/anakim/anakim.vmdl"
-		"ModelScale"	"0.9"
-		"Ability1"		"anakim_wisps"
-		"Ability2"		"anakim_solar_flare"
-		"Ability3"		"anakim_divine_gift"
-		"Ability4"		"anakim_transfer_pain"
-		"Ability5"		"anakim_summon_divine_knight"
-		"Enabled"		"1"
-		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-		"AttackRange"			"400"
-		"ProjectileModel"		""
-		"AttributeBaseStrength"	"10"
-		"AttributeBaseIntelligence"	"24"
-		"AttributeBaseAgility"	"10"
-		"AttributeStrengthGain"	"2.0"
-		"AttributeIntelligenceGain"	"3.1"
-		"AttributeAgilityGain"	"1.5"
-		"AttackDamageMin"	"22"
-		"AttackDamageMax"	"26"
-	}
-
 	"npc_arena_hero_saber"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
@@ -420,42 +406,6 @@
 		"AttackDamageMax"	"41"
 	}
 
-	"npc_arena_hero_sai"
-	{
-		"base_hero"	"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_sai"
-		"Model"	"models/units/sai/sai.vmdl"
-		"ModelScale"	"1.1"
-		"Ability1"	"sai_rage_of_pain"
-		"Ability2"	"sai_divine_flesh"
-		"Ability3"	"sai_invulnerability"
-		"Ability4"	"sai_release_of_forge"
-		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-		"AttackRange"			"300"
-		"AttackRate"			"1.7"
-		"AttributeBaseStrength"	"24"
-		"AttributeBaseIntelligence"	"28"
-		"AttributeBaseAgility"	"20"
-		"AttributeStrengthGain"	"2.8"
-		"AttributeIntelligenceGain"	"3.0"
-		"AttributeAgilityGain"	"2.2"
-		"AttackDamageMin"		"30"
-		"AttackDamageMax"		"35"
-	}
-
-	"npc_arena_hero_debug"
-	{
-		"base_hero"	"npc_dota_hero_sven"
-		"Enabled"	"0"
-		"Ability1"	"boss_kel_thuzad_immortality"
-		"Ability2"	"boss_kel_thuzad_presence_of_death"
-		"Ability3"	"boss_kel_thuzad_invulnerability"
-		"Ability4"	"boss_kel_thuzad_shadows"
-		"Ability5"	"boss_kel_thuzad_summon_undead"
-		"Ability6"	"boss_kel_thuzad_erebus"
-	}
-
 	"npc_arena_hero_destroyer"
 	{
 		"base_hero"		"npc_dota_hero_arena_base"
@@ -479,6 +429,56 @@
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"		"26"
 		"AttackDamageMax"		"28"
+	}
+
+	"npc_arena_hero_anakim"
+	{
+		"base_hero"		"npc_dota_hero_arena_base"
+		"SceneCamera"	"custom_scene_hero_anakim"
+		"Model"			"models/units/anakim/anakim.vmdl"
+		"ModelScale"	"0.9"
+		"Ability1"		"anakim_wisps"
+		"Ability2"		"anakim_solar_flare"
+		"Ability3"		"anakim_divine_gift"
+		"Ability4"		"anakim_transfer_pain"
+		"Ability5"		"anakim_summon_divine_knight"
+		"Enabled"		"1"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttackRange"			"400"
+		"ProjectileModel"		""
+		"AttributeBaseStrength"	"10"
+		"AttributeBaseIntelligence"	"24"
+		"AttributeBaseAgility"	"10"
+		"AttributeStrengthGain"	"2.0"
+		"AttributeIntelligenceGain"	"3.1"
+		"AttributeAgilityGain"	"1.5"
+		"AttackDamageMin"	"22"
+		"AttackDamageMax"	"26"
+	}
+
+	"npc_arena_hero_sai"
+	{
+		"base_hero"	"npc_dota_hero_arena_base"
+		"SceneCamera"	"custom_scene_hero_sai"
+		"Model"	"models/units/sai/sai.vmdl"
+		"ModelScale"	"1.1"
+		"Ability1"	"sai_rage_of_pain"
+		"Ability2"	"sai_divine_flesh"
+		"Ability3"	"sai_invulnerability"
+		"Ability4"	"sai_release_of_forge"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttackRange"			"300"
+		"AttackRate"			"1.7"
+		"AttributeBaseStrength"	"24"
+		"AttributeBaseIntelligence"	"28"
+		"AttributeBaseAgility"	"20"
+		"AttributeStrengthGain"	"2.8"
+		"AttributeIntelligenceGain"	"3.0"
+		"AttributeAgilityGain"	"2.2"
+		"AttackDamageMin"		"30"
+		"AttackDamageMax"		"35"
 	}
 
 	"npc_arena_hero_saitama"
