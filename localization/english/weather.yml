@@ -1,0 +1,13 @@
+weather_current_status: '{s:current_weather} ({s:weather_duration})'
+weather_sunny: Sunny
+weather_rain: Rain
+weather_storm: Storm
+weather_snow: Snow
+weather_blizzard: Blizzard
+
+DOTA_Tooltip_modifier_weather_sunny_aura_normal: Sunny
+DOTA_Tooltip_modifier_weather_sunny_aura_normal_Description: ''
+DOTA_Tooltip_modifier_weather_rain_aura_normal: Rain
+DOTA_Tooltip_modifier_weather_rain_aura_normal_Description: ''
+DOTA_Tooltip_modifier_weather_snow_aura_normal: Snow
+DOTA_Tooltip_modifier_weather_snow_aura_normal_Description: ''

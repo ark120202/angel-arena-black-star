@@ -1,11 +1,12 @@
-LinkLuaModifier("modifier_weather_snow_aura_effect", "modules/weather/modifiers/modifier_weather_snow", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_weather_snow_aura", "modules/weather/modifiers/modifier_weather_snow", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_weather_snow_aura_normal", "modules/weather/modifiers/modifier_weather_snow", LUA_MODIFIER_MOTION_NONE)
 
 modifier_weather_snow = class({
 	IsHidden           = function() return true end,
 	IsPurgable         = function() return false end,
 
 	IsAura             = function() return true end,
-	GetModifierAura    = function() return "modifier_weather_snow_aura_effect" end,
+	GetModifierAura    = function() return "modifier_weather_snow_aura" end,
 	GetAuraRadius      = function() return 99999 end,
 	GetAuraDuration    = function() return 0.1 end,
 	GetAuraSearchTeam  = function() return DOTA_UNIT_TARGET_TEAM_BOTH end,
@@ -13,9 +14,44 @@ modifier_weather_snow = class({
 	GetAuraSearchFlags = function() return DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES end,
 })
 
-modifier_weather_snow_aura_effect = class({
+
+modifier_weather_snow_aura = class({
+	IsPurgable = function() return false end,
+	IsHidden   = function() return true end,
+})
+
+function modifier_weather_snow_aura:IsHidden() return true end
+if IsServer() then
+	function modifier_weather_snow_aura:OnCreated()
+		local modifierName = "modifier_weather_snow_aura_normal"
+		self.modifier = self:GetParent():AddNewModifier(self:GetCaster(), nil, modifierName, nil)
+	end
+
+	function modifier_weather_snow_aura:OnDestroy()
+		self.modifier:Destroy()
+	end
+end
+
+
+modifier_weather_snow_aura_normal = class({
 	IsPurgable          = function() return false end,
 	GetTexture          = function() return "weather/snow" end,
 	GetStatusEffectName = function() return "particles/status_fx/status_effect_frost_lich.vpcf" end,
 })
+
+function modifier_weather_snow_aura_normal:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+	}
+end
+
+function modifier_weather_snow_aura_normal:GetModifierMoveSpeedBonus_Percentage()
+	return -20
+end
+
+function modifier_weather_snow_aura_normal:GetModifierAttackSpeedBonus_Constant()
+	return -30
+end
+
 --particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf

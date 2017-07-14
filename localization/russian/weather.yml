@@ -1,0 +1,12 @@
+weather_sunny: Солнечно
+weather_rain: Дождливо
+weather_storm: Шторм
+weather_snow: Снег
+weather_blizzard: Метель
+
+DOTA_Tooltip_modifier_weather_sunny_aura_effect: Солнечно
+DOTA_Tooltip_modifier_weather_sunny_aura_effect_Description: ''
+DOTA_Tooltip_modifier_weather_rain_aura_effect: Дождливо
+DOTA_Tooltip_modifier_weather_rain_aura_effect_Description: ''
+DOTA_Tooltip_modifier_weather_snow_aura_effect: Снег
+DOTA_Tooltip_modifier_weather_snow_aura_effect_Description: ''
