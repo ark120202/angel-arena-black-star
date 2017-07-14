@@ -370,17 +370,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"100"
+				"bonus_all_stats"		"220"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"1200"
+				"bonus_health"			"2200"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"1200"
+				"bonus_mana"			"2300"
 			}
 			"05"
 			{
@@ -395,12 +395,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed"	"-30"
+				"cold_movement_speed"	"-40"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-150"
+				"cold_attack_speed"		"-200"
 			}
 			"09"
 			{
@@ -534,7 +534,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"150"
+				"bonus_all_stats"		"250"
 			}
 			"03"
 			{
@@ -544,7 +544,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"2000"
+				"bonus_mana"			"3000"
 			}
 			"05"
 			{
@@ -564,12 +564,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed"	"-40"
+				"cold_movement_speed"	"-45"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-300"
+				"cold_attack_speed"		"-400"
 			}
 			"10"
 			{

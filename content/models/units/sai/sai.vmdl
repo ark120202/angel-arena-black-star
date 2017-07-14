@@ -45,7 +45,384 @@
 	{
 		m_pObject = null
 	}
-	m_pHitBoxSetLists = [  ]
+	m_pHitBoxSetLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "Default"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Default"
+								m_vMinBounds = [ -12.498393, -8.046383, -6.295792 ]
+								m_vMaxBounds = [ 13.287982, 8.585716, 10.414932 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Chest"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Chest"
+								m_vMinBounds = [ -10.338153, -5.033042, -0.835037 ]
+								m_vMaxBounds = [ 10.243482, 6.836574, 12.998947 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Chest2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Chest2"
+								m_vMinBounds = [ -12.687791, -6.159544, -1.232605 ]
+								m_vMaxBounds = [ 10.650727, 8.233908, 15.469536 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "R_arm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "R_arm"
+								m_vMinBounds = [ -8.452769, -4.046306, -23.005379 ]
+								m_vMaxBounds = [ -1.320237, 3.940722, 3.136703 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "R_elbow"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "R_elbow"
+								m_vMinBounds = [ -4.34527, -3.097233, -16.377411 ]
+								m_vMaxBounds = [ 2.610985, 3.74464, 0.26799 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "R_hand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "R_hand"
+								m_vMinBounds = [ -3.889502, -8.641623, -12.126499 ]
+								m_vMaxBounds = [ 3.680332, 11.428995, 3.705978 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip1"
+								m_vMinBounds = [ -0.035177, -3.000771, -2.983072 ]
+								m_vMaxBounds = [ 10.128006, 2.981113, 3.001225 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip2"
+								m_vMinBounds = [ 0.067695, -3.001286, -2.99003 ]
+								m_vMaxBounds = [ 10.230863, 2.980598, 2.994266 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip3"
+								m_vMinBounds = [ 0.107638, -3.001957, -2.787046 ]
+								m_vMaxBounds = [ 10.314248, 2.979927, 3.19725 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip4"
+								m_vMinBounds = [ 0.065443, -3.002705, -2.989747 ]
+								m_vMaxBounds = [ 10.228678, 2.979179, 2.994549 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip5"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip5"
+								m_vMinBounds = [ -0.315907, -3.003578, -2.759661 ]
+								m_vMaxBounds = [ 9.982887, 2.978306, 3.224635 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip6"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip6"
+								m_vMinBounds = [ 0.031944, -3.004585, -2.71868 ]
+								m_vMaxBounds = [ 10.195129, 2.977299, 3.265616 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip7"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip7"
+								m_vMinBounds = [ 0.18906, -3.005745, -2.767813 ]
+								m_vMaxBounds = [ 10.395664, 2.976139, 3.216483 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip8"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip8"
+								m_vMinBounds = [ 0.143456, -3.007133, -2.822086 ]
+								m_vMaxBounds = [ 10.306648, 2.974751, 3.16221 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip9"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip9"
+								m_vMinBounds = [ -0.356682, -3.008812, -2.727942 ]
+								m_vMaxBounds = [ 10.673241, 2.973072, 3.256354 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip10"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip10"
+								m_vMinBounds = [ -0.427452, -3.010864, -2.737263 ]
+								m_vMaxBounds = [ 9.73568, 2.97102, 3.247033 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip11"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip11"
+								m_vMinBounds = [ -0.226753, -3.013447, -2.736745 ]
+								m_vMaxBounds = [ 9.979851, 2.968437, 3.247551 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip12"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip12"
+								m_vMinBounds = [ -0.253914, -3.016781, -2.736072 ]
+								m_vMaxBounds = [ 9.909203, 2.965103, 3.248224 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip13"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip13"
+								m_vMinBounds = [ -0.267502, -3.021259, -2.735167 ]
+								m_vMaxBounds = [ 10.031342, 2.960625, 3.249129 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Head"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Head"
+								m_vMinBounds = [ -9.522815, -7.577079, -5.63208 ]
+								m_vMaxBounds = [ 9.526673, 8.818119, 13.819359 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "L_arm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "L_arm"
+								m_vMinBounds = [ 1.151109, -4.026988, -23.113663 ]
+								m_vMaxBounds = [ 8.304864, 3.960041, 4.041061 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip14"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip14"
+								m_vMinBounds = [ 0.118744, -3.027622, -2.73388 ]
+								m_vMaxBounds = [ 10.281937, 2.954262, 3.250416 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Hair1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Hair1"
+								m_vMinBounds = [ -10.141094, -2.74639, -4.413948 ]
+								m_vMaxBounds = [ 9.641689, 3.967095, 0.309769 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "R_leg"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "R_leg"
+								m_vMinBounds = [ -4.51051, -5.223903, -27.556782 ]
+								m_vMaxBounds = [ 4.592658, 4.880193, 0.583656 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "L_leg"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "L_leg"
+								m_vMinBounds = [ -4.322437, -5.186104, -27.398594 ]
+								m_vMaxBounds = [ 4.780729, 4.917992, 0.741844 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "L_elbow"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "L_elbow"
+								m_vMinBounds = [ -2.54844, -3.090732, -16.58844 ]
+								m_vMaxBounds = [ 4.407806, 3.75114, 0.056946 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip15"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip15"
+								m_vMinBounds = [ -0.017441, -3.037365, -2.731905 ]
+								m_vMaxBounds = [ 10.189117, 2.944519, 3.25239 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Hair2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Hair2"
+								m_vMinBounds = [ -9.089815, -1.898686, -5.739113 ]
+								m_vMaxBounds = [ 8.537378, 2.760711, 0.363464 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "R_knee"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "R_knee"
+								m_vMinBounds = [ -5.260006, -6.937407, -36.443035 ]
+								m_vMaxBounds = [ 4.020027, 5.99615, 0.026875 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "L_knee"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "L_knee"
+								m_vMinBounds = [ -4.020032, -6.937407, -36.442993 ]
+								m_vMaxBounds = [ 5.26, 5.99615, 0.026917 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "L_hand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "L_hand"
+								m_vMinBounds = [ -3.704431, -4.149535, -12.163315 ]
+								m_vMaxBounds = [ 3.8654, 5.861278, 3.872345 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Whip16"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Whip16"
+								m_vMinBounds = [ -0.236923, -17.949177, -16.450264 ]
+								m_vMaxBounds = [ 40.977448, 12.500553, 17.390583 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Blade"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Blade"
+								m_vMinBounds = [ -1.60062, -56.144135, -15.377144 ]
+								m_vMaxBounds = [ 0.395521, 1.035828, 1.055866 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Hair3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Hair3"
+								m_vMinBounds = [ -7.456903, -3.312737, -13.5812 ]
+								m_vMaxBounds = [ 7.508405, 1.929943, 0.051758 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "R_foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "R_foot"
+								m_vMinBounds = [ -3.453049, -18.780128, -5.58321 ]
+								m_vMaxBounds = [ 3.4473, 4.144617, 0.947779 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "L_foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "L_foot"
+								m_vMinBounds = [ -3.447313, -18.78013, -5.583199 ]
+								m_vMaxBounds = [ 3.453051, 4.144617, 0.94779 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
 	m_pAttachmentLists = 
 	[
 		{

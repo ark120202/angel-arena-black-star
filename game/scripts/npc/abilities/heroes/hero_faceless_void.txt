@@ -324,7 +324,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.35"
+				"duration"				"0.25"
 			}
 			"02"
 			{
@@ -344,7 +344,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_cooldown"			"2.0"
+				"bonus_cooldown"			"0.5"
 			}
 		}
 

@@ -1,5 +1,71 @@
 ""
 {
+	"item_titanium_fruit"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"AbilityTextureName"			"item_arena/titanium_fruit"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCooldown"				"70"
+		"ItemCost"						"450"
+		"ItemStackable"					"1"
+		"ItemInitialCharges"			"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"5.0"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_item_titanium_fruit"
+				"Target" 		"CASTER"
+				"Duration"		"%duration"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_titanium_fruit"
+			{
+				"IsBuff"			"1"
+				"TextureName"		"item_arena/titanium_fruit"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/econ/courier/courier_greevil_orange/courier_greevil_orange_ambient_3.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"		"1"
+				}
+			}
+		}
+	}
+
 	"item_recipe_black_king_bar_arena"
 	{
 		"BaseClass"						"item_datadriven"
@@ -200,6 +266,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%active_bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%active_bonus_attackspeed"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
 				}
 
 				"States"
@@ -320,6 +387,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%active_bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%active_bonus_attackspeed"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
 				}
 
 				"States"
@@ -440,6 +508,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%active_bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%active_bonus_attackspeed"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
 				}
 
 				"States"
@@ -560,6 +629,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%active_bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%active_bonus_attackspeed"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
 				}
 
 				"States"
@@ -680,6 +750,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%active_bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%active_bonus_attackspeed"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
 				}
 
 				"States"
@@ -800,6 +871,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%active_bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%active_bonus_attackspeed"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
 				}
 
 				"States"
@@ -950,6 +1022,7 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%active_bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%active_bonus_attackspeed"
 					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%active_damage_reduction_pct"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
 				}
 
 				"States"

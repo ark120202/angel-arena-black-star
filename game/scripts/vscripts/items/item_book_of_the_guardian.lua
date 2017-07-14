@@ -1,6 +1,8 @@
 LinkLuaModifier("modifier_item_book_of_the_guardian", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_book_of_the_guardian_effect", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_book_of_the_guardian_blast", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_book_of_the_guardian_aura", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+
 item_book_of_the_guardian_baseclass = {
 	GetIntrinsicModifierName = function() return "modifier_item_book_of_the_guardian" end
 }
@@ -66,6 +68,7 @@ function modifier_item_book_of_the_guardian:DeclareFunctions()
 		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 	}
 end
@@ -84,6 +87,10 @@ end
 
 function modifier_item_book_of_the_guardian:GetModifierPreAttack_BonusDamage()
 	return self:GetAbility():GetSpecialValueFor("bonus_damage")
+end
+
+function modifier_item_book_of_the_guardian:GetModifierPhysicalArmorBonus()
+	return self:GetAbility():GetSpecialValueFor("bonus_armor")
 end
 
 function modifier_item_book_of_the_guardian:GetModifierSpellAmplify_Percentage()
@@ -107,7 +114,7 @@ function modifier_item_book_of_the_guardian:GetAuraSearchTeam()
 end
 
 function modifier_item_book_of_the_guardian:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO
+	return DOTA_UNIT_TARGET_ALL
 end
 
 

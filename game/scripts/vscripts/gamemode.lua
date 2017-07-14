@@ -42,6 +42,7 @@ local requirements = {
 
 local modifiers = {
 	modifier_apocalypse_apocalypse = "heroes/hero_apocalypse/modifier_apocalypse_apocalypse",
+	modifier_saitama_limiter = "heroes/hero_saitama/modifier_saitama_limiter",
 	modifier_set_attack_range = "modifiers/modifier_set_attack_range",
 	modifier_charges = "modifiers/modifier_charges",
 	modifier_hero_selection_transformation = "modifiers/modifier_hero_selection_transformation",
@@ -133,7 +134,7 @@ function GameMode:OnHeroSelectionEnd()
 
 	Timers:CreateTimer(10, function()
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-			if PlayerResource:IsValidPlayerID(playerID) and GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
+			if PlayerResource:IsValidPlayerID(playerID) and not PlayerResource:IsFakeClient(playerID) and GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
 				local heroName = HeroSelection:GetSelectedHeroName(playerID) or ""
 				if heroName == "" or heroName == FORCE_PICKED_HERO then
 					GameMode:BreakGame()

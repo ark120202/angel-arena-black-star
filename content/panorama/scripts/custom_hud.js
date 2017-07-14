@@ -53,7 +53,8 @@ function UpdatePanoramaHUD() {
 
 	var GoldLabel = FindDotaHudElement('ShopButton').FindChildTraverse('GoldLabel');
 	if (Players.GetTeam(Game.GetLocalPlayerID()) === Entities.GetTeamNumber(unit)) {
-		GoldLabel.text = FormatGold(GetPlayerGold(Entities.GetHeroPlayerOwner(unit)));
+		var ownerId = Entities.GetPlayerOwnerID(unit);
+		GoldLabel.text = FormatGold(GetPlayerGold(ownerId === -1 ? Game.GetLocalPlayerID() : ownerId));
 	} else {
 		GoldLabel.text = '';
 	}

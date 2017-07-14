@@ -127,7 +127,9 @@ function Duel:StartDuel()
 						unit:SetModifierStackCount("modifier_item_tango_arena", unit, math.round(unit:GetModifierStackCount("modifier_item_tango_arena", unit) * 0.5))
 					end
 					if unit.PocketItem then
+						unit.PocketHostEntity = nil
 						UTIL_Remove(unit.PocketItem)
+						unit.PocketItem = nil
 					end
 					if _unit.OnDuel then
 						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
