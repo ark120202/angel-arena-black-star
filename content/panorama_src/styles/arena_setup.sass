@@ -31,21 +31,18 @@
 	align: right top
 
 	&.countdown_inactive
-		#TeamSelectTimer
-			opacity: 0
-
-		#TimerLabelAutoStart
-			opacity: 0
-
+		#TeamSelectTimer,
+		#TimerLabelAutoStart,
 		#TimerLabelGameStart
 			opacity: 0
 
+	&.auto_start
+		#TimerLabelAutoStart
+			visibility: visible
 
-	&.auto_start #TimerLabelAutoStart
-		visibility: visible
-
-	&.forced_start #TimerLabelGameStart
-		visibility: visible
+	&.forced_start
+		#TimerLabelGameStart
+			visibility: visible
 
 
 #TeamSelectTimer
@@ -90,14 +87,11 @@
 		brightness: 2
 		saturation: 1.1
 
-	&.team_is_full #JoinTeamLabel
-		opacity: 0
-
-	&.local_player_on_this_team #JoinTeamLabel
-		opacity: 0
-
-	&.local_player_is_ready #JoinTeamLabel
-		opacity: 0
+	&.team_is_full,
+	&.local_player_on_this_team,
+	&.local_player_is_ready
+		#JoinTeamLabel
+			opacity: 0
 
 
 #TeamBackgroundGradientHighlight
@@ -175,8 +169,9 @@
 		background-color: rgba(255, 255, 255, .05)
 		saturation: 1.5
 
-	&.player_has_host_privileges #PlayerIsHostPanel
-		visibility: visible
+	&.player_has_host_privileges
+		#PlayerIsHostPanel
+			visibility: visible
 
 
 DOTAAvatarImage
@@ -240,10 +235,12 @@ DOTAAvatarImage
 		brightness: 2
 		saturation: 1.1
 
-	&:hover #UnassignedPlayersHeader Label
-		font-size: 20px
-		letter-spacing: 1px
-		color: #fff
+	&:hover
+		#UnassignedPlayersHeader
+			Label
+				font-size: 20px
+				letter-spacing: 1px
+				color: #fff
 
 
 #UnassignedPlayersHeader
@@ -282,6 +279,9 @@ DOTAAvatarImage
 	horizontal-align: left
 	flow-children: right
 
+	.player_has_host_privileges &
+		visibility: visible
+
 	Label
 		margin-top: 2px
 		margin-left: 5px
@@ -296,21 +296,6 @@ DOTAAvatarImage
 		vertical-align: center
 		wash-color: #888
 
-
-.player_has_host_privileges
-	#AutoAssignButton
-		visibility: visible
-
-	#ShuffleTeamAssignmentButton
-		visibility: visible
-
-	#LockAndStartButton
-		visibility: visible
-
-	&.teams_locked #CancelAndUnlockButton
-		visibility: visible
-
-
 .unassigned_players
 	#AutoAssignButton
 		&:hover
@@ -322,7 +307,7 @@ DOTAAvatarImage
 
 
 		&:active
-			sound: "ui_team_select_auto_assign"
+			sound: 'ui_team_select_auto_assign'
 
 
 	#LockAndStartButton
@@ -344,6 +329,9 @@ DOTAAvatarImage
 	flow-children: right
 	horizontal-align: left
 
+	.player_has_host_privileges &
+		visibility: visible
+
 	Label
 		margin-top: 2px
 		margin-right: 5px
@@ -361,7 +349,7 @@ DOTAAvatarImage
 
 
 	&:active
-		sound: "ui_team_select_shuffle"
+		sound: 'ui_team_select_shuffle'
 
 	Image
 		width: 24px
@@ -380,6 +368,9 @@ DOTAAvatarImage
 	visibility: collapse
 	box-shadow: fill rgba(72, 108, 169, .13333) -4px -4px 8px 8px
 	horizontal-align: right
+
+	.player_has_host_privileges &
+		visibility: visible
 
 	Label
 		transition-duration: .2s
@@ -403,6 +394,9 @@ DOTAAvatarImage
 	box-shadow: fill rgba(85, 46, 47, 0) -4px -4px 8px 9px
 	horizontal-align: right
 
+	.player_has_host_privileges.teams_locked & // sass-lint:disable-block force-element-nesting
+		visibility: visible
+
 	&:hover
 		background-color: gradient(linear, 0 0, 0 100%, from(#492121), to(#9d4c4f))
 		border-top: 1px solid #7d4141
@@ -413,7 +407,7 @@ DOTAAvatarImage
 
 	&:active
 		//sound: "ui_custom_lobby_quit"
-		sound: "ui_team_select_cancel_and_lock"
+		sound: 'ui_team_select_cancel_and_lock'
 
 
 .teams_unlocked .TeamSelectTeam
