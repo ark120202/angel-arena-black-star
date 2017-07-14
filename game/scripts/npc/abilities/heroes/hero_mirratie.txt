@@ -11,7 +11,7 @@
 
 		"AbilityCooldown"				"14"
 
-		"AbilityManaCost"				"105"
+		"AbilityManaCost"				"105 105 105 105 105 105 105"
 		"MaxLevel"						"7"
 
 		"AbilitySpecial"

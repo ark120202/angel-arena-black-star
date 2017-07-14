@@ -187,7 +187,7 @@
 			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_dragon_tail.vpcf"
 		}
 
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 		"AbilityCooldown"				"11"
 		"AbilityDamage"					"25 50 75 100 125 150 175"
 		"AbilityManaCost"				"100 100 100 100 100 100 100"

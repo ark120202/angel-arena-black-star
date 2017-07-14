@@ -2101,7 +2101,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"necromastery_max_souls_scepter"	"22 30 38 46 58 76 90 120"
+				"necromastery_max_souls_scepter"	"22 30 38 46 58 76 90"
 			}
 
 		}
@@ -2318,7 +2318,7 @@
 	"puck_phase_shift"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0 0 0 0"
+		"AbilityCastPoint"	"0 0 0 0 0 0 0"
 		"AbilityCooldown"	"8"
 		"AbilitySpecial"
 		{
@@ -2519,7 +2519,7 @@
 	{
 		"MaxLevel"	"3"
 		"AbilityCastRange"	"550"
-		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
+		"AbilityCastPoint"	"0.3 0.3 0.3"
 		"AbilityCooldown"	"100 80 60"
 		"AbilityManaCost"	"200 350 600"
 		"AbilitySpecial"
@@ -2556,9 +2556,9 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"0"
-		"AbilityCastPoint"	"0 0 0 0"
+		"AbilityCastPoint"	"0 0 0 0 0 0 0"
 		"AbilityCooldown"	"14"
-		"AbilityManaCost"	"125 125 125 125"
+		"AbilityManaCost"	"125 125 125 125 125 125 125"
 		"AbilitySpecial"
 		{
 			"01"
@@ -2870,7 +2870,7 @@
 			"07"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"spawn_duration"	"25 30 35 40"
+				"spawn_duration"	"25 30 35 40 55 60 65"
 			}
 
 		}
@@ -3491,7 +3491,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"ball_lightning_aoe"	"125 200 275"
+				"ball_lightning_aoe"	"125 150 175 200 225 250 275"
 			}
 
 			"05"
@@ -3870,7 +3870,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"grow_chance"				"6 8 10"
+				"grow_chance"				"6 8 10 12 14 16 18"
 			}
 		}
 	}
@@ -4038,7 +4038,7 @@
 
 	"zuus_cloud"
 	{
-		"AbilityCastPoint"	"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+		"AbilityCastPoint"	"0.1 0.1 0.1 0.1 0.1 0.1 0.1"
 		"AbilityCooldown"	"35"
 		"AbilityManaCost"	"450"
 		"AbilitySpecial"
@@ -4880,13 +4880,13 @@
 		"AbilityCastRange"	"400"
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
 		"AbilityCooldown"	"5"
-		"AbilityManaCost"	"25 25 25 25"
+		"AbilityManaCost"	"25 25 25 25 25 25 25"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"health_conversion"	"30 50 70 90"
+				"health_conversion"	"30 50 70 90 110 130 150"
 			}
 
 		}
@@ -5004,7 +5004,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bounce_range"	"575 575 575 575"
+				"bounce_range"	"575 575 575 575 575 575 575"
 			}
 
 			"05"
@@ -5028,7 +5028,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bounces_tooltip"	"2 4 6 8 10 12 14 16"
+				"bounces_tooltip"	"2 4 6 8 10 12 14"
 			}
 			"99"
 			{
@@ -5252,7 +5252,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"fade_time"	"0.0 0.0 0.0 0.0"
+				"fade_time"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 			}
 
 			"04"
@@ -5269,7 +5269,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"1000"
-		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.25 0.2"
+		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.25 0.2 0.15"
 		"AbilityCooldown"	"35"
 		"AbilityManaCost"	"100"
 		"AbilitySpecial"
@@ -5396,9 +5396,9 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"700"
-		"AbilityCastPoint"	"0.1 0.1 0.1 0.1 0.1 0.1 0.05 0"
+		"AbilityCastPoint"	"0.1 0.1 0.1 0.1 0.1 0.1 0.05"
 		"AbilityCooldown"	"30"
-		"AbilityManaCost"	"95 110 125 140 160 180 200 220"
+		"AbilityManaCost"	"95 110 125 140 160 180 200"
 		"AbilitySpecial"
 		{
 			"01"
@@ -5603,7 +5603,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"300"
-		"AbilityCastPoint"	"0.53 0.53 0.53 0.53 0.43 0.33"
+		"AbilityCastPoint"	"0.53 0.53 0.53 0.53 0.43 0.33 0.23"
 		"AbilityCooldown"	"35.0 35.0 35.0 35.0 35.0 35.0 35.0"
 		"AbilityDamage"		"16 24 32 40 48 56 64"
 		"AbilityManaCost"	"145 150 165 190 225 270 325"
@@ -5914,7 +5914,7 @@
 	"necrolyte_sadist_stop"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 	}
 
 	"necrolyte_reapers_scythe"
@@ -6268,7 +6268,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"800"
-		"AbilityCooldown"	"21 20 19 18 17 16 15 14"
+		"AbilityCooldown"	"21 20 19 18 17 16 15"
 		"AbilityManaCost"	"125 150 200 250 275 300 350"
 		"AbilitySpecial"
 		{
@@ -6673,7 +6673,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"1000"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.15 0"
-		"AbilityCooldown"	"12 11 9 8 7 5"
+		"AbilityCooldown"	"12 11 9 8 7 6 5"
 		"AbilityDuration"	"3 4 5 6 7 8 9"
 		"AbilityManaCost"	"50 55 60 65 70 75 80"
 		"AbilitySpecial"
@@ -6859,7 +6859,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"trap_fade_time"	"2.0 2.0 2.0"
+				"trap_fade_time"	"2.0 2.0 2.0 2.0 2.0 2.0 2.0"
 			}
 
 			"03"
@@ -7617,13 +7617,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"latch_radius"	"125 125 125"
+				"latch_radius"	"125 125 125 125 125 125 125"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"stun_radius"	"175 175 175"
+				"stun_radius"	"175 175 175 175 175 175 175"
 			}
 
 			"03"
@@ -7738,7 +7738,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"jump_count"	"4 6 8 10 12 14 16 18"
+				"jump_count"	"4 6 8 10 12 14 16"
 			}
 
 			"02"
@@ -7782,7 +7782,7 @@
 	"leshrac_pulse_nova"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0 0 0 0"
+		"AbilityCastPoint"	"0 0 0 0 0 0 0"
 		"AbilityCooldown"	"1.0"
 		"AbilityManaCost"	"70 90 110 130 150 170 190"
 		"AbilitySpecial"
@@ -7999,7 +7999,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"slow_steps"	"-70 -70 -60 -50 -30 -10 -10 -10"
+				"slow_steps"	"-70 -70 -60 -50 -30 -10 -10"
 			}
 
 			"02"
@@ -8080,7 +8080,7 @@
 	"life_stealer_assimilate"
 	{
 		"AbilityCastRange"	"150"
-		"AbilityCastPoint"	"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+		"AbilityCastPoint"	"0.1 0.1 0.1 0.1 0.1 0.1 0.1"
 		"AbilityCooldown"	"50"
 		"AbilityManaCost"	"350"
 		"AbilitySpecial"
@@ -8136,7 +8136,7 @@
 	"life_stealer_control"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 	}
 
 	"life_stealer_empty_1"
@@ -8567,7 +8567,7 @@
 		"AbilityCastRange"	"800"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.15 0"
 		"AbilityDuration"	"16"
-		"AbilityCooldown"	"22 20 18 16 14 12"
+		"AbilityCooldown"	"22 20 18 16 14 12 10"
 		"AbilityManaCost"	"170"
 		"AbilitySpecial"
 		{
@@ -8979,7 +8979,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"invis_movespeed_tooltip"	"40 50 60 70"
+				"invis_movespeed_tooltip"	"40 45 50 55 60 65 70"
 			}
 
 			"06"
@@ -10044,7 +10044,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
-		"AbilityCooldown"	"140 130 120 110 100 90 80 70"
+		"AbilityCooldown"	"140 130 120 110 100 90 80"
 		"AbilityManaCost"	"150"
 		"AbilitySpecial"
 		{
@@ -10563,8 +10563,8 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"1.2 1.2 1.2 1.2 1.2 1.0 0.8"
 		"AbilityCastRange"	"700"
-		"AbilityCooldown"	"70 65 60 55 50 45 40"
-		"AbilityManaCost"	"125 150 175 200 225 250"
+		"AbilityCooldown"	"70 65 60 55 50 45 40 35"
+		"AbilityManaCost"	"125 150 175 200 225 250 275"
 		"AbilitySpecial"
 		{
 			"01"
@@ -10986,7 +10986,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"health_regen_per_instance"	"3 8 13 18 23 28 33 45"
+				"health_regen_per_instance"	"3 8 13 18 23 28 33"
 			}
 
 		}
@@ -11003,13 +11003,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_speed_per_instance" "10 15 20 25 30 35 40 60"
+				"attack_speed_per_instance" "10 15 20 25 30 35 40"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"move_speed_per_instance"	"1 2 3 4 7 9 11 13"
+				"move_speed_per_instance"	"1 2 3 4 7 9 11"
 			}
 
 		}
@@ -11026,7 +11026,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_damage_per_instance"	"7 16 28 35 43 52 60 90"
+				"bonus_damage_per_instance"	"7 16 28 35 43 52 60"
 			}
 
 		}
@@ -11388,7 +11388,7 @@
 			"10"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"burn_dps"	"15 22 35 43 55 70 100"
+				"burn_dps"	"15 22 35 43 55 70 100 135"
 				"levelkey"	"exortlevel"
 				"CalculateSpellDamageTooltip"	"1"
 			}
@@ -11487,7 +11487,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"spirit_duration"	"30 40 50 60 70 80 90 100 110"
+				"spirit_duration"	"30 40 50 60 70 80 90 100"
 				"levelkey"	"quaslevel"
 			}
 
@@ -12234,8 +12234,8 @@
 	"lone_druid_true_form_druid"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0 0 0"
-		"AbilityCooldown"	"0.0 0.0 0.0"
+		"AbilityCastPoint"	"0 0 0 0 0 0 0"
+		"AbilityCooldown"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 		"AbilityManaCost"	"75"
 		"AbilitySpecial"
 		{
@@ -12358,7 +12358,7 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"13"
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
-		"AbilityManaCost"	"90 105 130 150 170 190"
+		"AbilityManaCost"	"90 110 130 150 170 190 210"
 		"AbilitySpecial"
 		{
 			"01"
@@ -12546,10 +12546,10 @@
 	"brewmaster_storm_dispel_magic"
 	{
 		"MaxLevel"	"3"
-		"AbilityCastRange"	"500 500 500 500"
+		"AbilityCastRange"	"500 500 500"
 		"AbilityCooldown"	"4"
 		"AbilityCastPoint"	"0.4 0.3 0.2"
-		"AbilityManaCost"	"75 75 75 75"
+		"AbilityManaCost"	"75 75 75"
 		"AbilitySpecial"
 		{
 			"01"
@@ -12571,10 +12571,10 @@
 	"brewmaster_storm_cyclone"
 	{
 		"MaxLevel"	"3"
-		"AbilityCastRange"	"600 600 600 600"
+		"AbilityCastRange"	"600 600 600 600 600 600 600"
 		"AbilityCooldown"	"8.0"
 		"AbilityCastPoint"	"0.4"
-		"AbilityManaCost"	"150 150 150 150"
+		"AbilityManaCost"	"150 150 150 150 150 150 150"
 		"AbilitySpecial"
 		{
 			"01"
@@ -12597,7 +12597,7 @@
 	{
 		"MaxLevel"	"3"
 		"AbilityCooldown"	"5"
-		"AbilityManaCost"	"75 75 75 75"
+		"AbilityManaCost"	"75 75 75"
 		"AbilitySpecial"
 		{
 			"01"
@@ -12609,19 +12609,19 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_movement_speeed"	"50 50 50 50"
+				"bonus_movement_speeed"	"50 50 50"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"20.0 20.0 20.0 20.0"
+				"duration"	"20.0 20.0 20.0"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"fade_time"	"0.6 0.6 0.6 0.6"
+				"fade_time"	"0.6 0.6 0.6"
 			}
 
 		}
@@ -12735,7 +12735,7 @@
 	"shadow_demon_shadow_poison"
 	{
 		"MaxLevel"	"7"
-		"AbilityDuration"	"10.0 10.0 10.0 10.0"
+		"AbilityDuration"	"10.0 10.0 10.0 10.0 10.0 10.0 10.0"
 		"AbilityCooldown"	"2.5"
 		"AbilityCastRange"	"1500"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
@@ -12802,7 +12802,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"slow_rate"	"5 3 2"
+				"slow_rate"	"7 6 5 4 3 2 1"
 			}
 
 			"02"
@@ -13354,7 +13354,7 @@
 	"ogre_magi_unrefined_fireblast"
 	{
 		"AbilityCastRange"	"500"
-		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
+		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.4 0.4"
 		"AbilityCooldown"	"8"
 		"AbilityDamage"		"400"
 		"AbilitySpecial"
@@ -13627,7 +13627,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tombstone_heal"	"2 4 6 8 12 14 18 20"
+				"tombstone_heal"	"2 4 6 8 12 14 18"
 			}
 
 		}
@@ -14103,7 +14103,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"70 65 60 55 50 45 40"
-		"AbilityManaCost"	"160 210 260 300 340 380"
+		"AbilityManaCost"	"160 210 260 300 340 380 420"
 		"AbilitySpecial"
 		{
 			"01"
@@ -14589,7 +14589,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"teleport_delay"	"4.5 4.0 3.5 3.0 2.5 2.0 1.5 1.0"
+				"teleport_delay"	"4.5 4.0 3.5 3.0 2.5 2.0 1.5"
 			}
 
 		}
@@ -14648,7 +14648,7 @@
 	"keeper_of_the_light_illuminate_end"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 	}
 
 	"keeper_of_the_light_spirit_form_illuminate"
@@ -14740,7 +14740,7 @@
 	"keeper_of_the_light_spirit_form_illuminate_end"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 	}
 
 	"visage_grave_chill"
@@ -15387,7 +15387,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_speed"	"15 20 25 30 35 40 45 50"
+				"attack_speed"	"15 20 25 30 35 40 45"
 			}
 
 		}
@@ -16006,7 +16006,7 @@
 	"shredder_chakram_2"
 	{
 		"AbilityCastRange"	"1200"
-		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.25 0.2"
+		"AbilityCastPoint"	"0.3 0.3 0.3"
 		"AbilityCooldown"	"8.0"
 		"AbilityManaCost"	"200"
 		"AbilitySpecial"
@@ -16014,7 +16014,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"speed"	"900 900 900 900 900 1000 1100"
+				"speed"	"900 1000 1100"
 			}
 
 			"02"
@@ -16026,13 +16026,13 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"pass_damage"	"100 140 180 220 260 300 360"
+				"pass_damage"	"100 140 180"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_second"	"50 75 100 125 150 200 250"
+				"damage_per_second"	"50 75 100"
 			}
 
 			"05"
@@ -16056,7 +16056,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"mana_per_second"	"20 25 30 35 40 45 50"
+				"mana_per_second"	"20 25 30"
 			}
 
 			"09"
@@ -16077,14 +16077,14 @@
 	"shredder_return_chakram"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
-		"AbilityCooldown"	"0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+		"AbilityCooldown"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 	}
 
 	"shredder_return_chakram_2"
 	{
 		"MaxLevel"	"3"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0"
 		"AbilityCooldown"	"0.0 0.0 0.0"
 	}
 
@@ -16246,7 +16246,7 @@
 	"bristleback_warpath"
 	{
 		"MaxLevel"	"7"
-		"AbilityDuration"	"10.0 10.0 10.0"
+		"AbilityDuration"	"10.0 10.0 10.0 10.0 10.0 10.0 10.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -16358,7 +16358,7 @@
 	"tusk_ice_shards_stop"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 	}
 
 	"tusk_snowball"
@@ -16442,7 +16442,7 @@
 	"tusk_launch_snowball"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 	}
 
 	"tusk_frozen_sigil"
@@ -16656,7 +16656,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"speed"	"800 800 800 800"
+				"speed"	"800 800 800 800 800 800 800"
 			}
 
 			"04"
@@ -17106,8 +17106,8 @@
 	"elder_titan_return_spirit"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
-		"AbilityCooldown"	"0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+		"AbilityCooldown"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 	}
 
 	"elder_titan_natural_order"
@@ -18147,7 +18147,7 @@
 	"abyssal_underlord_cancel_dark_rift"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 	}
 
 	"terrorblade_reflection"
@@ -18383,7 +18383,7 @@
 	"phoenix_icarus_dive_stop"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 	}
 
 	"phoenix_fire_spirits"
@@ -18544,13 +18544,13 @@
 	"phoenix_sun_ray_stop"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0"
+		"AbilityCastPoint"	"0 0 0 0 0 0 0"
 	}
 
 	"phoenix_sun_ray_toggle_move"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0"
+		"AbilityCastPoint"	"0 0 0 0 0 0 0"
 	}
 
 	"phoenix_sun_ray_toggle_move_empty"
@@ -18563,9 +18563,9 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"500"
 		"AbilityCastPoint"	"0.01"
-		"AbilityCooldown"	"110.0 110.0 110.0"
+		"AbilityCooldown"	"110.0 110.0 110.0 110.0 110.0 110.0"
 		"AbilityDuration"	"6.0"
-		"AbilityManaCost"	"200 200 200"
+		"AbilityManaCost"	"200 200 200 200 200 200 200"
 		"AbilitySpecial"
 		{
 			"01"
@@ -19414,7 +19414,7 @@
 	"winter_wyvern_arctic_burn"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 		"AbilityCooldown"	"40 37 34 31 28 24 20"
 		"AbilityManaCost"	"200 180 160 140 120 100 80"
 		"AbilitySpecial"
