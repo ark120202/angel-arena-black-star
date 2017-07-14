@@ -15,6 +15,7 @@ modifier_weather_rain = class({
 
 modifier_weather_rain_aura_effect = class({
 	IsPurgable = function() return false end,
+	GetTexture = function() return "weather/rain" end,
 })
 
 if IsServer() then

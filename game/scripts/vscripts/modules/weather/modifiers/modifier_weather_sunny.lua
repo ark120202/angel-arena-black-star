@@ -15,4 +15,5 @@ modifier_weather_sunny = class({
 
 modifier_weather_sunny_aura_effect = class({
 	IsPurgable          = function() return false end,
+	GetTexture          = function() return "weather/sunny" end,
 })

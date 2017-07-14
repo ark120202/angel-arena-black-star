@@ -15,6 +15,7 @@ modifier_weather_snow = class({
 
 modifier_weather_snow_aura_effect = class({
 	IsPurgable          = function() return false end,
+	GetTexture          = function() return "weather/snow" end,
 	GetStatusEffectName = function() return "particles/status_fx/status_effect_frost_lich.vpcf" end,
 })
 --particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf
