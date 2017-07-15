@@ -77,6 +77,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_refresher_core = true,
 	item_titanium_bar = true,
 	item_guardian_greaves_arena = true,
+	item_demon_king_bar = true,
 
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
