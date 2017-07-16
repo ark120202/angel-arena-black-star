@@ -200,26 +200,37 @@ CHAT_COMMANDS = {
 	["a_createhero"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
 		f = function(args, hero, playerID)
-			--playerID = 6
 			local heroName = args[1]
+			local optPlayerID
+			if tonumber(args[2]) then optPlayerID = tonumber(args[2]) end
 			local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
 			local baseNewHero = heroTableCustom.base_hero or heroName
-			local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
-			--local h = PlayerResource:ReplaceHeroWith(playerID, baseNewHero, 0, 0)
+			local heroEntity = optPlayerID and
+				PlayerResource:ReplaceHeroWith(optPlayerID, baseNewHero, 0, 0) or
+				CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
+
 			local team = 2
-			if PlayerResource:GetTeam(playerID) == team and table.contains(args, "enemy") then
+			if PlayerResource:GetTeam(optPlayerID or playerID) == team and table.contains(args, "enemy") then
 				team = 3
 			end
-			h:SetTeam(team)
-			h:SetAbsOrigin(hero:GetAbsOrigin())
-			h:SetControllableByPlayer(playerID, true)
-			for i = 1, 300 do
-				h:HeroLevelUp(false)
-			end
+			heroEntity:SetTeam(team)
+			heroEntity:SetAbsOrigin(hero:GetAbsOrigin())
 
-			if heroTableCustom.base_hero then
-				TransformUnitClass(h, heroTableCustom)
-				h.UnitName = heroName
+			heroEntity:SetControllableByPlayer(playerID, true)
+			if optPlayerID then
+				heroEntity:SetControllableByPlayer(optPlayerID, true)
+			end
+			for i = 1, 300 do
+				heroEntity:HeroLevelUp(false)
+			end
+			if optPlayerID then
+				HeroSelection:ChangeHero(optPlayerID, heroName, true, 0)
+			else
+				HeroSelection:InitializeHeroClass(heroEntity, heroTableCustom)
+				if heroTableCustom.base_hero then
+					TransformUnitClass(h, heroTableCustom)
+					h.UnitName = heroName
+				end
 			end
 		end
 	},

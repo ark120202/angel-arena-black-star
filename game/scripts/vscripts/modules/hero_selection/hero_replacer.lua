@@ -1,11 +1,11 @@
 function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 	HeroSelection:UpdateStatusForPlayer(playerId, "picked", heroName)
 	Timers:CreateTimer(function()
-		local connectionState = PlayerResource:GetConnectionState(playerId)
+		local connectionState = GetConnectionState(playerId)
 		if connectionState == DOTA_CONNECTION_STATE_CONNECTED then
 			local function SpawnHero()
 				Timers:CreateTimer(function()
-					connectionState = PlayerResource:GetConnectionState(playerId)
+					connectionState = GetConnectionState(playerId)
 					if connectionState == DOTA_CONNECTION_STATE_CONNECTED then
 						local heroTableCustom = NPC_HEROES_CUSTOM[heroName] or NPC_HEROES[heroName]
 						local oldhero = PlayerResource:GetSelectedHeroEntity(playerId)
