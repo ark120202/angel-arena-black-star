@@ -7,6 +7,8 @@
 		"AbilityTextureName"			"arena/soul_eater_demon_weapon_from"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.1"
 
 		"AbilitySpecial"
 		{
