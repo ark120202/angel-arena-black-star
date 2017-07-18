@@ -7,14 +7,13 @@
 		"AbilityTextureName"			"arena/maka_soul_resonance"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityChannelTime"			"%channel_time"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"0.6"
+				"duration"			"15"
 			}
 		}
 	}

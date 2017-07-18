@@ -496,7 +496,7 @@
 		"LinkedHero"			"npc_arena_hero_soul_eater"
 		"Model"					"models/units/maka/maka.vmdl"
 		"ModelScale"			"0.9"
-		"Ability1"				""
+		"Ability1"				"maka_soul_resonance"
 		"Ability2"				""
 		"Ability3"				""
 		"Ability4"				""
@@ -509,8 +509,9 @@
 		"Model"					"models/units/soul_eater/soul_eater.vmdl"
 		"ModelScale"			"1"
 		"Ability1"				"soul_eater_demon_weapon_from"
-		"Ability2"				"soul_eater_human_form"
+		"Ability2"				"soul_eater_soul_resonance"
 		"Ability3"				""
 		"Ability4"				""
+		"Ability5"				"soul_eater_human_form"
 	}
 }

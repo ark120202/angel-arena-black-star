@@ -40,11 +40,12 @@
 
 	"soul_eater_soul_resonance"
 	{
-		"BaseClass"						"ability_datadriven"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_soul_eater/soul_resonance.lua"
 		"AbilityTextureName"			"arena/soul_eater_soul_resonance"
 		"MaxLevel" 						"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityChannelTime"			"%channel_time"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime"			"0.6"
 
 		"AbilitySpecial"
 		{
@@ -52,45 +53,6 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"channel_time"		"0.6"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_soul_eater_soul_resonance_channel"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnChannelFinish"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_soul_eater_soul_resonance_channel"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnChannelInterrupted"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_soul_eater_soul_resonance_channel"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_soul_eater_soul_resonance_channel"
-			{
-				"IsPurgable"		"0"
-				"Duration"			"%channel_time"
-
-				"EffectName"		"particle_name"
-				"EffectAttachType"	"follow_origin"
 			}
 		}
 	}
