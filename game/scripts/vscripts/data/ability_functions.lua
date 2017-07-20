@@ -332,14 +332,16 @@ INCOMING_DAMAGE_MODIFIERS = {
 }
 
 CREEP_BONUSES_MODIFIERS = {
-	modifier_item_golden_eagle_relic_unique = {gold = GetAbilitySpecial("item_golden_eagle_relic", "kill_gold"), xp = GetAbilitySpecial("item_golden_eagle_relic", "kill_xp")},
-	modifier_say_demonic_power = function(self)
-		local ability = self:FindAbilityByName("say_demonic_power")
-		if abiltiy then
-			return {gold = ability:GetLevelSpecialValueFor("bonus_creep_gold", ability:GetLevel() - 1)}
-		end
-	end,
-	modifier_item_skull_of_midas = {gold = GetAbilitySpecial("item_skull_of_midas", "kill_gold"), xp = GetAbilitySpecial("item_skull_of_midas", "kill_xp")},
+	modifier_item_golden_eagle_relic_unique = {
+		gold = GetAbilitySpecial("item_golden_eagle_relic", "kill_gold"),
+		xp = GetAbilitySpecial("item_golden_eagle_relic", "kill_xp")
+	},
+
+	modifier_item_skull_of_midas = {
+		gold = GetAbilitySpecial("item_skull_of_midas", "kill_gold"),
+		xp = GetAbilitySpecial("item_skull_of_midas", "kill_xp")
+	},
+
 	modifier_talent_creep_gold = function(self)
 		local modifier = self:FindModifierByName("modifier_talent_creep_gold")
 		if modifier then
