@@ -208,6 +208,12 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 	["techies_stasis_trap"] = GetAbilitySpecial("techies_stasis_trap", "activation_radius"),
 	["techies_remote_mines"] = GetAbilitySpecial("techies_land_mines", "radius"),
 	["invoker_chaos_meteor"] = 1100,
+	["disruptor_thunder_strike"] = GetAbilitySpecial("disruptor_thunder_strike", "radius"),
+	["pugna_nether_blast"] = GetAbilitySpecial("pugna_nether_blast", "radius"),
+	["enigma_midnight_pulse"] = GetAbilitySpecial("enigma_midnight_pulse", "radius"),
+	["abyssal_underlord_firestorm"] = GetAbilitySpecial("abyssal_underlord_firestorm", "radius"),
+	["skywrath_mage_mystic_flare"] = GetAbilitySpecial("skywrath_mage_mystic_flare", "radius"),
+	["warlock_upheaval_arena"] = GetAbilitySpecial("warlock_upheaval_arena", "aoe"),
 }
 
 PERCENT_DAMAGE_MODIFIERS = {
