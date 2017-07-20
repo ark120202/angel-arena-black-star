@@ -1,3 +1,5 @@
+LinkLuaModifier("modifier_maka_soul_resonance", "heroes/hero_maka/soul_resonance.lua", LUA_MODIFIER_MOTION_NONE)
+
 maka_soul_resonance = class({})
 
 if IsServer() then
@@ -16,9 +18,14 @@ if IsServer() then
 		local soul = maka:GetLinkedHeroEntities()[1]
 		if soul:HasModifier("modifier_soul_eater_soul_resonance_channel") then
 			local duration = self:GetSpecialValueFor("duration")
-			print("RESONANCE!")
-			maka:AddNewModifier(maka, self, "", {duration = duration})
-			soul:AddNewModifier(maka, self, "", {duration = duration})
+			maka:AddNewModifier(maka, self, "modifier_maka_soul_resonance", {duration = duration})
+			soul:AddNewModifier(maka, self, "modifier_maka_soul_resonance", {duration = duration})
 		end
 	end
 end
+
+
+modifier_maka_soul_resonance = class({
+	IsPurgable     = function() return false end,
+	GetEffectName  = function() return "particles/arena/units/heroes/hero_maka/soul_resonance.vpcf" end,
+})

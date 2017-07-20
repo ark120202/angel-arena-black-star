@@ -16,5 +16,10 @@
 				"duration"			"15"
 			}
 		}
+
+		"precache"
+		{
+			"particle"				"particles/arena/units/heroes/hero_maka/soul_resonance.vpcf"
+		}
 	}
 }
