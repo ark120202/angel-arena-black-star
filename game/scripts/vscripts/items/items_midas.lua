@@ -7,7 +7,7 @@ function MidasCreep(keys)
 		caster:AddExperience(target:GetDeathXP() * keys.XPMultiplier, false, false)
 	end
 	target:EmitSound("DOTA_Item.Hand_Of_Midas")
-	local midas_particle = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)	
+	local midas_particle = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 	ParticleManager:SetParticleControlEnt(midas_particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
 
 	target:SetDeathXP(0)
@@ -18,7 +18,7 @@ end
 
 function GiveOnAttackedGold(keys)
 	local caster = keys.caster
-	if keys.attacker:IsConsideredHero() then
+	if keys.attacker:IsConsideredHero() and not caster:IsIllusion() then
 		Gold:ModifyGold(caster, keys.Gold)
 		caster:AddExperience(keys.Xp, false, false)
 		local particle = ParticleManager:CreateParticleForPlayer("particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf", PATTACH_ABSORIGIN, caster, caster:GetPlayerOwner())
