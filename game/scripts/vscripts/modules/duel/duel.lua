@@ -93,6 +93,9 @@ function Duel:StartDuel()
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
 		local rndtbl = {}
 		table.merge(rndtbl, Duel.heroes_teams_for_duel)
+
+		RemoveAllUnitsByName("npc_dota_pugna_nether_ward_%d")
+
 		for i,v in pairs(rndtbl) do
 			if #v > 0 then
 				table.shuffle(v)
@@ -228,6 +231,9 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 		end
 	end
 	Events:Emit("Duel/end")
+
+	RemoveAllUnitsByName("npc_dota_pugna_nether_ward_%d")
+
 	if timeUpdate then
 		local delay = table.nearestOrLowerKey(DUEL_SETTINGS.DelaysFromLast, GetDOTATimeInMinutesFull())
 		Timers:CreateTimer(2, function()
