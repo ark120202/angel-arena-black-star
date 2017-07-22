@@ -369,11 +369,6 @@ DOTA_Tooltip_ability_item_gem_of_pure_soul_Description: |-
 DOTA_Tooltip_ability_item_gem_of_pure_soul_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Note0: 'Не действует, пока находится у курьера.'
 
-DOTA_Tooltip_ability_item_tree_banana: Банан
-DOTA_Tooltip_ability_item_tree_banana_Description: 'Банан. Увеличивает ваш интеллект на 10, силу на 4 и ловкость на 2.'
-DOTA_Tooltip_ability_item_tree_banana_slide_distance: 'SLIDE DISTANCE:'
-DOTA_Tooltip_ability_item_tree_banana_slide_duration: 'SLIDE DURATION:'
-DOTA_Tooltip_ability_item_tree_banana_radius: 'RADIUS:'
 DOTA_Tooltip_ability_item_aegis_arena: Aegis of the Immortal
 DOTA_Tooltip_ability_item_aegis_arena_Description: '<h1>Пассивная: Reincarnation</h1> Возвращает вас к жизни с полными здоровьем и маной через %reincarnate_time% секунд после смерти на том же месте, где вы погибли. Во время реинкарнации вы видите в радиусе %vision_radius% вокруг точки смерти. Должно быть использовано в течение %disappear_time_minutes_tooltip% минут, иначе Aegis of the Immortal исчезнет. Если это случилось, то вы мгновенно полностью излечитесь.'
 DOTA_Tooltip_ability_item_refresher_arena: Refresher Orb
@@ -1453,3 +1448,6 @@ DOTA_Tooltip_ability_item_runic_mekansm_aura_health_regen: 'ЛЕЧЕНИЕ ОТ 
 DOTA_Tooltip_ability_item_runic_mekansm_aura_bonus_armor: 'ДОП. БРОНЯ ОТ АУРЫ:'
 DOTA_Tooltip_ability_item_runic_mekansm_heal_amount: 'ЛЕЧЕНИЕ ОТ RESTORE:'
 DOTA_Tooltip_modifier_item_runic_mekansm_effect_Description: Восстановление здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%. Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+
+DOTA_Tooltip_ability_item_tree_banana: Банан
+DOTA_Tooltip_ability_item_tree_banana_Description: '<h1>Использование: Банан</h1> Увеличивает ваш интеллект на %intellect%.<br>При поглощении выбрасывается банановая кожура, которая заставляет наступившего на неё врага скользить, двигаясь на %slide_distance% единиц в направлении взгляда противника в течении %slide_duration% секунды. Кожура исчезает сразу как только враг наступит на неё.'

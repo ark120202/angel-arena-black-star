@@ -15,3 +15,15 @@ function CEntityInstance:IsCustomWard()
 	local n = self:GetUnitName()
 	return n == "npc_dota_sentry_wards" or n == "npc_dota_observer_wards" or string.starts(n, "npc_arena_ward_")
 end
+
+function CDOTA_Buff:StoreAbilitySpecials(specials)
+	local ability = self:GetAbility()
+	self.specials = {}
+	for _,v in ipairs(specials) do
+		self.specials[v] = ability:GetSpecialValueFor(v)
+	end
+end
+
+function CDOTA_Buff:GetSpecialValueFor(name)
+	return self.specials[name]
+end

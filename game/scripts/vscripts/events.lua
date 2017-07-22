@@ -145,11 +145,11 @@ end
 
 -- A tree was cut down by tango, quelling blade, etc
 function GameMode:OnTreeCut(keys)
-	--[[local treeX = keys.tree_x
+	local treeX = keys.tree_x
 	local treeY = keys.tree_y
-	if RollPercentage(10) then
+	if RollPercentage(GetAbilitySpecial("item_tree_banana", "drop_chance_pct")) then
 		GameMode:CreateTreeDrop(Vector(treeX, treeY, 0), "item_tree_banana")
-	end]]
+	end
 end
 
 function GameMode:CreateTreeDrop(location, item)

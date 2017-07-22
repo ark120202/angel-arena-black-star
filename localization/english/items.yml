@@ -360,12 +360,6 @@ DOTA_Tooltip_ability_item_gem_of_pure_soul_Description: |-
 DOTA_Tooltip_ability_item_gem_of_pure_soul_radius: 'PURE SOUL RADIUS:'
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Note0: Disabled while on a courier.
 
-DOTA_Tooltip_ability_item_tree_banana: Banana
-DOTA_Tooltip_ability_item_tree_banana_Description: 'Banana. Increases your Intelligence by 10, Strength by 4 and Agility by 2.'
-DOTA_Tooltip_ability_item_tree_banana_slide_distance: 'SLIDE DISTANCE:'
-DOTA_Tooltip_ability_item_tree_banana_slide_duration: 'SLIDE DURATION:'
-DOTA_Tooltip_ability_item_tree_banana_radius: 'RADIUS:'
-
 DOTA_Tooltip_ability_item_aegis_arena: Aegis of the Immortal
 DOTA_Tooltip_ability_item_aegis_arena_Description: '<h1>Passive: Reincarnation</h1> Brings you to life with full health and mana %reincarnate_time% seconds after you die, at the location where you died. While reincarnating you gain %vision_radius% vision around the location of death. Reincarnation must be used within %disappear_time_minutes_tooltip% minutes or Aegis of the Immortal disappears. If it expires, it instantly heal you.'
 
@@ -1818,3 +1812,6 @@ DOTA_Tooltip_ability_item_runic_mekansm_aura_bonus_armor: 'AURA ARMOR:'
 DOTA_Tooltip_ability_item_runic_mekansm_heal_amount: 'RESTORE HEAL:'
 DOTA_Tooltip_modifier_item_runic_mekansm_effect: Mekansm Aura
 DOTA_Tooltip_modifier_item_runic_mekansm_effect_Description: Regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health per second. Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+
+DOTA_Tooltip_ability_item_tree_banana: Banana
+DOTA_Tooltip_ability_item_tree_banana_Description: '<h1>Use: Banana</h1> Increases your Intelligence by %intellect%.<br>Drops a banana peel when consumed, which causes the next enemy which step on it to slip, moving %slide_distance% range at the direction it faced within %slide_duration% second. The peel disappears once an enemy slipped on it.'

@@ -2079,60 +2079,6 @@
 		}
 	}
 
-	// "item_tree_banana"
-	// {
-	// 	"BaseClass"             		"item_datadriven"
-	// 	"AbilityTextureName"			"item_arena/banana"
-	// 	// General
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"ID"							"10077"
-	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	// 	"Model"							"models/props_gameplay/banana_prop_closed.vmdl"
-	// 	"AbilityCastPoint"				"0"
-	// 	//"AbilityCastRange"				"800"
-	// 	"AbilityCooldown"				"1.0"
-
-	// 	// Item Info
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"ItemCost"						"25"
-	// 	"ItemQuality"					"component"
-	// 	"ItemAliases"					"banana"
-	// 	"SideShop"						"0"
-	// 	"ItemStackable"					"1"
-	// 	"ItemPurchasable"				"0"
-	// 	"ItemPermanent"					"0"
-	// 	"ItemInitialCharges"			"1"
-	// 	"ItemDisplayCharges"			"1"
-	// 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-
-	// 	// Sounden
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"UIPickupSound"					"Item.PickUpRingShop"
-	// 	"UIDropSound"					"Item.DropRingShop"
-	// 	"WorldDropSound"				"Item.DropRingWorld"
-
-	// 	// Special
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"AbilitySpecial"
-	// 	{
-	// 		"01"
-	// 		{
-	// 			"var_type"			"FIELD_INTEGER"
-	// 			"slide_distance"		"400"
-	// 		}
-	// 		"02"
-	// 		{
-	// 			"var_type"			"FIELD_FLOAT"
-	// 			"slide_duration"		"1.0"
-	// 		}
-	// 		"03"
-	// 		{
-	// 			"var_type"			"FIELD_INTEGER"
-	// 			"radius"			"100"
-	// 		}
-	// 	}
-	// }
-
 	"item_recipe_aegis_arena"
 	{
 		"BaseClass"						"item_datadriven"
@@ -10483,6 +10429,59 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"target_crit_multiplier_pct"	"200"
+			}
+		}
+	}
+
+	"item_tree_banana"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/item_tree_banana"
+		"ID"							"-1"
+		"AbilityTextureName"			"item_arena/banana"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"Model"							"models/props_gameplay/banana_prop_closed.vmdl"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"1"
+
+		"ItemCost"						"50"
+		"ItemQuality"					"component"
+		"ItemAliases"					"banana"
+		"SideShop"						"0"
+		"ItemStackable"					"1"
+		"ItemPurchasable"				"0"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slide_distance"		"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slide_duration"		"1.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"drop_chance_pct"		"10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect"				"3"
 			}
 		}
 	}
