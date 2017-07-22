@@ -169,14 +169,23 @@ BOSS_BANNED_ABILITIES = {
 }
 
 PERSONALITY_STEAL_BANNED_HEROES = {
-	["npc_dota_hero_wisp"] = true,
-	["npc_dota_hero_meepo"] = true,
-	["npc_arena_hero_sara"] = true,
-	["npc_dota_hero_necrolyte"] = true,
-	["npc_dota_hero_storm_spirit"] = true,
-	["npc_dota_hero_tidehunter"] = true,
-	["npc_dota_hero_arc_warden"] = true,
-	["npc_dota_hero_shredder"] = true,
+	npc_arena_hero_sara = true,
+}
+
+PERSONALITY_STEAL_BANNED_ABILITIES = {
+	storm_spirit_ball_lightning = true,
+	tidehunter_ravage = true,
+	arc_warden_tempest_double = true,
+	necrolyte_reapers_scythe = true,
+	meepo_divided_we_stand = true,
+	shredder_chakram_2 = true,
+	shredder_return_chakram_2 = true,
+	shredder_chakram = true,
+	shredder_return_chakram = true,
+	wisp_spirits_aghanims = true,
+	wisp_overcharge_aghanims = true,
+	disruptor_thunder_strike = true,
+	lion_impale = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"

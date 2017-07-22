@@ -67,13 +67,13 @@ function SpellSteal(keys)
 		if hc then
 			for k,v in pairsByKeys(hc) do
 				if string.starts(k, "Ability") and v ~= "" then
-					caster:AddNewAbility(v, true)
+					caster:AddNewAbility(PERSONALITY_STEAL_BANNED_ABILITIES[v] and "rubick_empty1" or v, true)
 				end
 			end
 		end
 		caster:CalculateStatBonus()
 	end)
-	
+
 	caster:ResetAbilityPoints()
 end
 
