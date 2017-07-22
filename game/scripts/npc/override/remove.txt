@@ -19,7 +19,6 @@
 	"item_recipe_sange"				"REMOVE"
 	"item_sange"					"REMOVE"
 	"item_cheese"					"REMOVE"
-	"item_banana"					"REMOVE"
 	"item_aegis"					"REMOVE"
 	"item_recipe_refresher"			"REMOVE"
 	"item_refresher"				"REMOVE"

@@ -2,8 +2,6 @@
 {
 	"dragon_knight_breathe_fire_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -16,35 +14,12 @@
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
-			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-			"particle"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
-		}
-
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12.0 12.0 12.0 12.0 12.0 12.0 12.0"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12"
 		"AbilityDamage"					"90 150 200 240 270 310 350"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100 110 120 130 140 150 160"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -97,6 +72,13 @@
 				"var_type"				"FIELD_FLOAT"
 				"debuff_duration"		"6.0"
 			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+			"particle"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
 		}
 
 		"OnSpellStart"
@@ -166,8 +148,6 @@
 
 	"dragon_knight_dragon_tail_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_dragon_knight/dragon_tail_lua.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -179,21 +159,11 @@
 		"AbilityTextureName"			"dragon_knight_dragon_tail"
 		"MaxLevel"	"7"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
-			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_dragon_tail.vpcf"
-		}
-
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"11"
 		"AbilityDamage"					"25 50 75 100 125 150 175"
-		"AbilityManaCost"				"100 100 100 100 100 100 100"
+		"AbilityManaCost"				"100"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -221,6 +191,12 @@
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"150"
 			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_dragon_tail.vpcf"
 		}
 	}
 
@@ -368,8 +344,8 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"115.0 115.0 115.0 115.0 115.0 115.0 115.0"
-		"AbilityManaCost"				"50 50 50 50 50 50 50"
+		"AbilityCooldown"				"115"
+		"AbilityManaCost"				"50"
 		"AbilityModifierSupportValue"	"0.35"
 
 		// Special

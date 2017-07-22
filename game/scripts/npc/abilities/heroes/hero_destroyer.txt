@@ -239,7 +239,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor_pct_lvl1"	"20 25 30 35 40"
+				"bonus_armor_pct_lvl1"	"20 25 30 35 40 45 50"
 			}
 			"04"
 			{
