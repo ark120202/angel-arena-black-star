@@ -4133,11 +4133,6 @@
 				"damage"	"225 325 425 525 650 775 900"
 			}
 
-			"07"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"damage_scepter"	"500 800 1110 1400 1700 2100 2500"
-			}
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
@@ -7873,7 +7868,6 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"max_treants"	"2 3 4 5"
-				"LinkedSpecialBonus"	"special_bonus_unique_furion"
 			}
 
 			"03"
@@ -18541,13 +18535,7 @@
 
 	"phoenix_sun_ray_toggle_move"
 	{
-		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0"
-	}
-
-	"phoenix_sun_ray_toggle_move_empty"
-	{
-		"MaxLevel"	"7"
 	}
 
 	"phoenix_supernova"
