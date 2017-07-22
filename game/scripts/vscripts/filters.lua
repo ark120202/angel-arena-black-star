@@ -46,10 +46,12 @@ function GameMode:ExecuteOrderFilter(filterTable)
 								local ent1len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team2"):GetAbsOrigin()):Length2D()
 								local ent2len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team3"):GetAbsOrigin()):Length2D()
 								if ent1len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 or ent2len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 then
+									Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
 									return false
 								end
 							end
 							if IsInBox(orderVector, Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()) then
+								Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
 								return false
 							end
 						end

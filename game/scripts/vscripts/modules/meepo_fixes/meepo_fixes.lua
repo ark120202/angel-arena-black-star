@@ -24,7 +24,6 @@ function MeepoFixes:IsMeepoClone(unit)
 	return unit:GetFullName() == "npc_dota_hero_meepo" and unit:IsTrueHero() and not unit:IsMainHero()
 end
 
-
 function MeepoFixes:ShareItems(unit)
 	if unit:GetFullName() == "npc_dota_hero_meepo" then
 		local mainItemHash = MeepoFixes:GetFilteredInventoryHash(unit, MEEPO_SHARED_ITEMS)

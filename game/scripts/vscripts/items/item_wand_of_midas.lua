@@ -61,7 +61,11 @@ if IsServer() then
 		local unit = keys.unit
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-		if parent:IsAlive() and parent:GetRangeToUnit(unit) <= ability:GetSpecialValueFor("radius") and unit:GetTeamNumber() ~= parent:GetTeamNumber() and keys.ability:ProcsMagicStick() then
+		if parent:IsAlive() and
+			parent:GetRangeToUnit(unit) <= ability:GetSpecialValueFor("radius") and
+			unit:GetTeamNumber() ~= parent:GetTeamNumber() and
+			keys.ability:ProcsMagicStick() then
+
 			local maxCharges = ability:GetSpecialValueFor("max_charges")
 			for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_6 do
 				local itemInSlot = parent:GetItemInSlot(i)

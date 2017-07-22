@@ -1241,58 +1241,6 @@
 		}
 	}
 
-	"say_fury_of_pain"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"say_fury_of_pain"
-		"MaxLevel" 						"7"
-		"LevelsBetweenUpgrades"	"4"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"			"900"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"		"3.0 4.0 5.0"
-			}
-		}
-	}
-
-	"say_demonic_power"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"say_demonic_power"
-		"MaxLevel" 						"7"
-		"RequiredLevel"					"2"
-		//"LevelsBetweenUpgrades"			"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"creep_lifesteal_pct"	"5 10 15 20 25 30 35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_creep_gold"	"10 20 30 40 50 60 70"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_say_demonic_power"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-			}
-		}
-	}
-
 	"huskar_burning_spear_arena"
 	{
 		"BaseClass"						"ability_datadriven"

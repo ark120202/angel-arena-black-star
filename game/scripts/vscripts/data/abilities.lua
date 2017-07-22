@@ -77,6 +77,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_refresher_core = true,
 	item_titanium_bar = true,
 	item_guardian_greaves_arena = true,
+	item_demon_king_bar = true,
 
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
@@ -168,14 +169,23 @@ BOSS_BANNED_ABILITIES = {
 }
 
 PERSONALITY_STEAL_BANNED_HEROES = {
-	["npc_dota_hero_wisp"] = true,
-	["npc_dota_hero_meepo"] = true,
-	["npc_arena_hero_sara"] = true,
-	["npc_dota_hero_necrolyte"] = true,
-	["npc_dota_hero_storm_spirit"] = true,
-	["npc_dota_hero_tidehunter"] = true,
-	["npc_dota_hero_arc_warden"] = true,
-	["npc_dota_hero_shredder"] = true,
+	npc_arena_hero_sara = true,
+}
+
+PERSONALITY_STEAL_BANNED_ABILITIES = {
+	storm_spirit_ball_lightning = true,
+	tidehunter_ravage = true,
+	arc_warden_tempest_double = true,
+	necrolyte_reapers_scythe = true,
+	meepo_divided_we_stand = true,
+	shredder_chakram_2 = true,
+	shredder_return_chakram_2 = true,
+	shredder_chakram = true,
+	shredder_return_chakram = true,
+	wisp_spirits_aghanims = true,
+	wisp_overcharge_aghanims = true,
+	disruptor_thunder_strike = true,
+	lion_impale = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
@@ -207,6 +217,12 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 	["techies_stasis_trap"] = GetAbilitySpecial("techies_stasis_trap", "activation_radius"),
 	["techies_remote_mines"] = GetAbilitySpecial("techies_land_mines", "radius"),
 	["invoker_chaos_meteor"] = 1100,
+	["disruptor_thunder_strike"] = GetAbilitySpecial("disruptor_thunder_strike", "radius"),
+	["pugna_nether_blast"] = GetAbilitySpecial("pugna_nether_blast", "radius"),
+	["enigma_midnight_pulse"] = GetAbilitySpecial("enigma_midnight_pulse", "radius"),
+	["abyssal_underlord_firestorm"] = GetAbilitySpecial("abyssal_underlord_firestorm", "radius"),
+	["skywrath_mage_mystic_flare"] = GetAbilitySpecial("skywrath_mage_mystic_flare", "radius"),
+	["warlock_upheaval_arena"] = GetAbilitySpecial("warlock_upheaval_arena", "aoe"),
 }
 
 PERCENT_DAMAGE_MODIFIERS = {

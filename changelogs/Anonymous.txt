@@ -6,6 +6,7 @@ Heroes:
 	Tinker:
 		Guardian greaves now can't be rearmed
 		Tarrasque scepter now can be rearmed
+		Demon King Bar now can't be rearmed
 	Bounty Hunter:
 		Shuriken toss added percent damage
 	Abaddon:
@@ -20,6 +21,8 @@ Heroes:
 		Body reconstruction now can refresh coffee bean
 	Dazzle:
 		Weave now can't be used on bosses
+	Slark:
+		Dark parct removed percent damage
 Talents:
 	Exp bonus:
 		10/15/20/25 => 15/20/25/30
@@ -84,6 +87,11 @@ Talents:
 	Chen's Hand of God:
 		bonus heal 1000 => 15000
 		group 7 => 9
+	Alchemist:
+		Acid spray:
+			group 5 => 8
+		Unstable concotion:
+			group 6 => 5
 Runes:
 	Acceleration:
 		xp multiplier 3 => 2

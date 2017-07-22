@@ -1965,7 +1965,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.55 0.55 0.55 0.55 0.55 0.45 0.35"
 		"AbilityCooldown"	"10"
-		"AbilityDamage"		"100 145 190 235 280 325 370"
+		"AbilityDamage"		"75 150 225 300 375 450 525"
 		"AbilityManaCost"	"90"
 		"AbilitySpecial"
 		{
@@ -2001,7 +2001,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.55 0.55 0.55 0.55 0.55 0.45 0.35"
 		"AbilityCooldown"	"10"
-		"AbilityDamage"		"100 145 190 235 280 325 370"
+		"AbilityDamage"		"75 150 225 300 375 450 525"
 		"AbilityManaCost"	"90"
 		"AbilitySpecial"
 		{
@@ -2037,7 +2037,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.55 0.55 0.55 0.55 0.55 0.45 0.35"
 		"AbilityCooldown"	"10"
-		"AbilityDamage"		"100 145 190 235 280 325 370"
+		"AbilityDamage"		"75 150 225 300 375 450 525"
 		"AbilityManaCost"	"90"
 		"AbilitySpecial"
 		{
@@ -2083,7 +2083,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"necromastery_max_souls"	"18 24 30 36 44 66 90"
+				"necromastery_max_souls"	"18 24 30 36 42 48 54"
 			}
 
 			"03"
@@ -2101,7 +2101,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"necromastery_max_souls_scepter"	"22 30 38 46 58 76 90"
+				"necromastery_max_souls_scepter"	"32 42 52 62 72 82 92"
 			}
 
 		}
@@ -2117,7 +2117,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"presence_armor_reduction"	"-3 -5 -7 -9 -11 -13 -16"
+				"presence_armor_reduction"	"-3 -4 -5 -6 -8 -10 -12"
 			}
 
 			"02"
@@ -9305,7 +9305,7 @@
 	"weaver_shukuchi"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"12 11 10 9 8 7 6"
+		"AbilityCooldown"	"9.0 8.5 8.0 7.5 7.0 6.5 6.0"
 		"AbilityManaCost"	"60"
 		"AbilitySpecial"
 		{
@@ -10765,7 +10765,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"armor_reduction"	"4 5 6 7 9 11 13"
+				"armor_reduction"	"4 5 6 7 9 10 11"
 				"LinkedSpecialBonus"	"special_bonus_unique_alchemist"
 			}
 
@@ -10949,7 +10949,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"base_attack_time"	"1.4 1.35 1.3 1.25 1.2 1.1 1.0"
+				"base_attack_time"	"1.4 1.35 1.3 1.25 1.2 1.15 1.1"
 			}
 			"04"
 			{
@@ -13099,8 +13099,8 @@
 
 	"meepo_divided_we_stand"
 	{
-		"MaxLevel"						"5"
-		"LevelsBetweenUpgrades"			"7"
+		"MaxLevel"						"3"
+		"LevelsBetweenUpgrades"			"9"
 		"RequiredLevel"					"3"
 		"HasScepterUpgrade"				"0"
 
@@ -13109,7 +13109,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_clones"		"1 2 3 4 5" // Just a tooltip, always equals level
+				"tooltip_clones"		"1 2 3" // Just a tooltip, always equals level
 			}
 			// Not used
 			// "02"
@@ -15032,14 +15032,7 @@
 				"var_type"	"FIELD_FLOAT"
 				"pulse_interval"	"0.1"
 			}
-			"99"
-			{
-				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.2 0.4 0.6 0.8 1.0 1.2 1.4"
-				"CalculateSpellDamageTooltip" "0"
-			}
 		}
-
 	}
 
 	"slark_pounce"
@@ -15491,13 +15484,13 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"return_damage"	"16 18 20 22 26 30 40"
+				"return_damage"	"16 18 20 22 24 26 28"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"strength_pct"	"30 40 50 60 70 80 90"
+				"strength_pct"	"30 35 40 45 50 55 60"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 
@@ -15521,7 +15514,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"4 4 4 4 4 5 6"
+				"duration"	"4"
 			}
 
 			"02"

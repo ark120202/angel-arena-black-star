@@ -1602,7 +1602,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_alchemist_unstable_concoction_dmg = {
 		icon = "alchemist_unstable_concoction",
 		cost = 1,
-		group = 6,
+		group = 5,
 		requirement = "alchemist_unstable_concoction",
 		special_values = {value = 300},
 		effect = {abilities = "special_bonus_unique_alchemist_2"}
@@ -1610,7 +1610,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_alchemist_acid_spray_armor = {
 		icon = "alchemist_acid_spray",
 		cost = 1,
-		group = 5,
+		group = 8,
 		requirement = "alchemist_acid_spray",
 		special_values = {value = 12},
 		effect = {abilities = "special_bonus_unique_alchemist"}

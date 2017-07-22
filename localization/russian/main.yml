@@ -14,6 +14,7 @@ dota_hud_error_ability_cant_target_champion: Способность не мож�
 arena_hud_error_team_changer_players: В другой команде уже больше игроков чем в вашей
 arena_hud_error_panorama_shop_dropped_items_limit: Достигнут лимит выброшенных предметов
 arena_hud_error_metamorphosis_elixir_ranked: В рейтинговом режиме сменить героя можно лишь один раз
+arena_hud_error_cant_target_duel: Способность нельзя использовать на арене для дуэли
 
 DOTA_Tooltip_modifier_neutral_champion: Чемпион
 DOTA_Tooltip_modifier_neutral_champion_Description: 'Этот нейтрал - чемпион, он в %dMODIFIER_PROPERTY_TOOLTIP% раз сильнее обычного, но награда за него также увеличена'
