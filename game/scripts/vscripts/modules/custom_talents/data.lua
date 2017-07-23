@@ -76,7 +76,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 4,
 		max_level = 7,
 		special_values = {
-			evasion = {5.0, 7.5, 10.0, 12.5, 15.0, 17.5, 20}
+			evasion = {5, 7.5, 10, 12.5, 15, 17.5, 20}
 		},
 		effect = {
 			modifiers = {
@@ -732,7 +732,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 6,
 		requirement = "zuus_static_field",
-		special_values = {value = 2.0},
+		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_zeus"}
 	},
 	talent_hero_kunkka_torrent_damage = {
