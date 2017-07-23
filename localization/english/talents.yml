@@ -152,7 +152,7 @@ custom_talents_talent_hero_death_prophet_exorcism_spirits: +{value} Exorcism Spi
 custom_talents_talent_hero_phantom_assassin_stifling_dagger_double: Double Strike Stifling Dagger
 custom_talents_talent_hero_pugna_decrepify_duration: +{value} Decrepify Duration
 custom_talents_talent_hero_pugna_netherblast_cooldown: +{value} Netherblast Cooldown
-custom_talents_talent_hero_pugna_nethe_rward_damage_mana: +{value} Netherward Damage Per Mana
+custom_talents_talent_hero_pugna_nether_ward_damage_mana: +{value} Netherward Damage Per Mana
 custom_talents_talent_hero_pugna_life_drain_heal: +{%value%} Life Drain Heal
 custom_talents_talent_hero_pugna_nether_blast_damage: +{value} Nether Blast Damage
 custom_talents_talent_hero_templar_assassin_meld_armor: +{value} Meld Armor Reduction
