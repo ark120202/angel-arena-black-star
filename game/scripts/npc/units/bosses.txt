@@ -29,7 +29,7 @@
 		"AttackRate"				"1.2"
 		"AttackAnimationPoint"		"0.2"
 		"AttackAcquisitionRange"	"600"
-		"AttackRange"				"900"
+		"AttackRange"				"800"
 
 		"BountyXP"					"27500"
 
@@ -37,10 +37,10 @@
 
 		"MovementSpeed"				"420"
 
-		"StatusHealth"				"500000"
-		"StatusHealthRegen"			"600"
+		"StatusHealth"				"400000"
+		"StatusHealthRegen"			"1000"
 		"StatusMana"				"50000"
-		"StatusManaRegen"			"100"
+		"StatusManaRegen"			"200"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
@@ -93,10 +93,10 @@
 
 		"MovementSpeed"				"522"
 
-		"StatusHealth"				"500000"
-		"StatusHealthRegen"			"500"
+		"StatusHealth"				"400000"
+		"StatusHealthRegen"			"1000"
 		"StatusMana"				"50000"
-		"StatusManaRegen"			"100"
+		"StatusManaRegen"			"200"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
@@ -151,10 +151,10 @@
 
 		"MovementSpeed"				"422"
 
-		"StatusHealth"				"600000"
-		"StatusHealthRegen"			"800"
+		"StatusHealth"				"500000"
+		"StatusHealthRegen"			"1000"
 		"StatusMana"				"50000"
-		"StatusManaRegen"			"50"
+		"StatusManaRegen"			"200"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
@@ -207,10 +207,10 @@
 
 		"MovementSpeed"				"522"
 
-		"StatusHealth"				"750000"
-		"StatusHealthRegen"			"800"
+		"StatusHealth"				"600000"
+		"StatusHealthRegen"			"1000"
 		"StatusMana"				"50000"
-		"StatusManaRegen"			"150"
+		"StatusManaRegen"			"250"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"
@@ -305,8 +305,8 @@
 		"Ability1"					"boss_freya_sharp_ice_shards"
 		"Ability5"					"boss_armor"
 
-		"ArmorPhysical"				"100"
-		"MagicalResistance"			"40"
+		"ArmorPhysical"				"130"
+		"MagicalResistance"			"65"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"5200"
@@ -324,9 +324,9 @@
 		"MovementSpeed"				"550"
 
 		"StatusHealth"				"800000"
-		"StatusHealthRegen"			"850"
+		"StatusHealthRegen"			"1000"
 		"StatusMana"				"50000"
-		"StatusManaRegen"			"50"
+		"StatusManaRegen"			"200"
 
 		"MovementTurnRate"			"1.0"
 		"IsAncient"					"1"

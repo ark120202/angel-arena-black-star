@@ -20,11 +20,12 @@
 #base "abilities/heroes/hero_saber.txt"
 #base "abilities/heroes/hero_sara.txt"
 #base "abilities/heroes/hero_destroyer.txt"
-#base "abilities/heroes/hero_maka.txt"
-#base "abilities/heroes/hero_soul_eater.txt"
 #base "abilities/heroes/hero_anakim.txt"
 #base "abilities/heroes/hero_sai.txt"
-#base "abilities/heroes/hero_murzik.txt"
+#base "abilities/heroes/hero_saitama.txt"
+
+//#base "abilities/heroes/hero_maka.txt"
+//#base "abilities/heroes/hero_soul_eater.txt"
 
 #base "abilities/heroes/hero_wisp.txt"
 #base "abilities/heroes/hero_warlock.txt"
@@ -447,10 +448,8 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hawk_duration"				"60 60 60 60 60 60 60"
+				"hawk_duration"				"60"
 			}
-
-			// Extra
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -459,7 +458,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"distance"				"150" // The distance in front of the target at which units will be created
+				"distance"				"150"
 			}
 		}
 
@@ -584,7 +583,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_radius"			"900 900 900 900 900 1000 1100"
+				"slow_radius"			"700"
 			}
 			"03"
 			{
@@ -599,7 +598,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"5.0"
+				"slow_duration"			"2.0"
 			}
 			"06"
 			{
@@ -609,12 +608,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius_scepter"		"900"
+				"radius_scepter"		"700"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ally_cooldown_scepter"	"180 170 160 150 140 130 120"
+				"ally_cooldown_scepter"	"180"
 			}
 		}
 
@@ -802,87 +801,6 @@
 					"MODIFIER_STATE_NO_TEAM_SELECT"			"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
-	"meepo_divided_we_stand_arena"
-	{
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"DisplayAdditionalHeroes"	"1"
-		"LevelsBetweenUpgrades"		"7"
-		"RequiredLevel"			"3"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_clones"		"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_share_percentage"		"30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_share_percentage_scepter"		"100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"respawn"		"0.1 0.2 0.3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_respawn"		"10 20 30"
-			}
-		}
-
-		"OnUpgrade"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_meepo/divided_we_stand.lua"
-				"Function"		"CreateMeepo"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_divided_we_stand_arena"
-			{
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
-
-				"ThinkInterval"  "0.1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_meepo/divided_we_stand.lua"
-						"Function"		"TrackMeepos"
-					}
-				}
-			}
-
-			"modifier_divided_we_stand_clone"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_meepo/divided_we_stand.lua"
-						"Function"		"KillMeepos"
-					}
 				}
 			}
 		}
@@ -1240,58 +1158,6 @@
 		}
 	}
 
-	"say_fury_of_pain"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"say_fury_of_pain"
-		"MaxLevel" 						"7"
-		"LevelsBetweenUpgrades"	"4"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"			"900"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"		"3.0 4.0 5.0"
-			}
-		}
-	}
-
-	"say_demonic_power"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"say_demonic_power"
-		"MaxLevel" 						"7"
-		"RequiredLevel"					"2"
-		//"LevelsBetweenUpgrades"			"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"creep_lifesteal_pct"	"5 10 15 20 25 30 35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_creep_gold"	"10 20 30 40 50 60 70"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_say_demonic_power"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-			}
-		}
-	}
-
 	"huskar_burning_spear_arena"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -1324,17 +1190,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_trigger_health_pct"	"30"
+				"aura_trigger_health_pct"	"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"600"
+				"aura_radius"			"450"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_think_interval"	"0.9"
+				"aura_think_interval"	"1.6 1.5 1.4 1.3 1.2 1.1 1.0"
 			}
 			"07"
 			{
@@ -1349,7 +1215,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"10 15 20 25 30 35 45"
+				"damage"				"5 10 15 20 25 30 35"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"10"

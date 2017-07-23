@@ -169,7 +169,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"illusion_gather_radius"	"900"
+				"illusion_gather_radius"	"525"
 			}
 			"03"
 			{
@@ -184,7 +184,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"illusion_count"		"2 2 2 3 3 3 4"
+				"illusion_count"		"2"
 			}
 			"06"
 			{
@@ -199,7 +199,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"illusion_incoming_damage"	"150"
+				"illusion_incoming_damage"	"200"
 			}
 		}
 
@@ -303,12 +303,13 @@
 	"phantom_lancer_juxtapose_arena"
 	{
 		"BaseClass"				"ability_datadriven"
-		"MaxLevel"						"7"
+		"MaxLevel"						"3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityTextureName"			"phantom_lancer_juxtapose"
 		"HasScepterUpgrade"				"1"
 		"AbilityCooldown"				"1.5"
+		"LevelsBetweenUpgrades"			"10"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -317,7 +318,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hero_proc_chance"			"40 40 40 40 40 45 50"
+				"hero_proc_chance"			"40 45 50"
 			}
 			"02"
 			{
@@ -327,17 +328,17 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_illusions"				"3 3 3 4 4 4 5"
+				"max_illusions"				"3 4 5"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_incoming_damage"	"500 475 450 425 400 375 350"
+				"illusion_incoming_damage"	"500 425 350"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"illusion_outgoing_damage"	"17.5 20 22.5 27.5 32.5 37.5 40"
+				"illusion_outgoing_damage"	"15 25 35"
 			}
 			"06"
 			{

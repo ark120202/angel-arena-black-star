@@ -7,13 +7,15 @@ But a quiet laugh sounded behind the backs of the illusions of Chaos Knight. The
 For a moment, the hand of Chaos Knight flinched, but he again clashed with him in a fight. The ringing of the crossed blades, the cackling of horses, the sparks from the blades, gliding over the armor of knights. The apocalypse swung again with the blade, re-melted the armor of the Immortal Horseman, and again he fell from the blow with the sword of Chaos Knight, and again rose, as if nothing had happened, continuing the battle. This battle lasted long, many times Kadash died. But now, he died finally. And the Knight of Chaos, in broken armor, barely holding on to the saddle, paid tribute to his enemy and set off. But Kadash did not die. Stargaizer found his lifeless body and dipped into the streams of energy that pierced the Universe, which brought him back to life. Kadash vowed to take revenge from Chaos Knight. And he had such an opportunity. The universe split, and clashed in the grasp of the forces of Order and Chaos in the arena of the Angels. Responding to the call of Order, Kadash went there to fight in his honor, and at the same time get even with his enemy.'
 
 DOTA_Tooltip_ability_kadash_assasins_skills: Assasins Skills
-DOTA_Tooltip_ability_kadash_assasins_skills_Description: 'Kadash uses his skills, increasing his damage from all sources and granting him critical strike.'
+DOTA_Tooltip_ability_kadash_assasins_skills_Description: 'Uses his skills, increasing his damage from all sources and granting him critical strike.'
+DOTA_Tooltip_ability_kadash_assasins_skills_Lore: Kadash's experience in battles with the servants of Chaos makes him a dangerous opponent.
 DOTA_Tooltip_ability_kadash_assasins_skills_all_damage_bonus_pct: '%DAMAGE INCREASE:'
 DOTA_Tooltip_ability_kadash_assasins_skills_crit_chance: '%CRIT CHANCE:'
 DOTA_Tooltip_ability_kadash_assasins_skills_crit_mult: '%CRIT DAMAGE:'
 
 DOTA_Tooltip_ability_kadash_strike_from_shadows: Strike From Shadows
-DOTA_Tooltip_ability_kadash_strike_from_shadows_Description: 'Kadash becomes invisible and gains +%bonus_attack_range% attack range for one attack. This attack will deal increased damage and will decrease enemy armor. Instead of physical dmaage, that attack will deal magical damage.'
+DOTA_Tooltip_ability_kadash_strike_from_shadows_Description: 'Becomes invisible and gains +%bonus_attack_range% attack range for one attack. This attack will deal increased damage and will decrease enemy armor. Instead of physical dmaage, that attack will deal magical damage.'
+DOTA_Tooltip_ability_kadash_strike_from_shadows_Lore: Kadash, once dead completely, learned the value of stealth.
 DOTA_Tooltip_ability_kadash_strike_from_shadows_duration: 'DURATION:'
 DOTA_Tooltip_ability_kadash_strike_from_shadows_fade_time: 'FADE TIME:'
 DOTA_Tooltip_ability_kadash_strike_from_shadows_armor_reduction: 'ARMOR REDUCTION:'
@@ -28,7 +30,8 @@ DOTA_Tooltip_modifier_kadash_strike_from_shadows_debuff: Strike From Shadows
 DOTA_Tooltip_modifier_kadash_strike_from_shadows_debuff_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 
 DOTA_Tooltip_ability_kadash_survival_skills: Survival Skills
-DOTA_Tooltip_ability_kadash_survival_skills_Description: 'Kadash becomes elusive, gaining additional armor, magic resistance, evasion and damage block.'
+DOTA_Tooltip_ability_kadash_survival_skills_Description: 'Gains additional armor, resistance to magical damage, blocking damage and chance to dodge.'
+DOTA_Tooltip_ability_kadash_survival_skills_Lore: For many eras in the service of Order Kadash, in addition to immortality, has received resistance to damage.
 DOTA_Tooltip_ability_kadash_survival_skills_bonus_evasion: '%BONUS EVASION:'
 DOTA_Tooltip_ability_kadash_survival_skills_bonus_armor: 'BONUS ARMOR:'
 DOTA_Tooltip_ability_kadash_survival_skills_bonus_magic_resist_pct: '%BONUS MAGIC RESISTANCE:'
@@ -37,6 +40,7 @@ DOTA_Tooltip_ability_kadash_survival_skills_block_damage: 'DAMAGE BLOCK:'
 DOTA_Tooltip_ability_kadash_immortality: Immortality
 DOTA_Tooltip_ability_kadash_immortality_Description: |-
   When killed, instead of death, Kadash respawns with decreased maximum health and without mana. If Kadash can't respawn (health reduction more then 100%) he dies and, after respawn, he will have his normal health.
+DOTA_Tooltip_ability_kadash_immortality_Lore: Let's see how you are obstinate in your aspirations ...
 DOTA_Tooltip_ability_kadash_immortality_aghanim_description: Decreases health decrease and makes Kadash invulnerable and unable to attack for some time after reincarnation.
 DOTA_Tooltip_ability_kadash_immortality_reincarnate_time: 'REINCARNATION TIME:'
 DOTA_Tooltip_ability_kadash_immortality_vision_radius: 'VISION RADIUS:'

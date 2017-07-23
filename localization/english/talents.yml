@@ -50,6 +50,8 @@ custom_talents_talent_passive_experience_income: Experience Income
 custom_talents_talent_passive_experience_income_description: '+{xp_per_minute} experience per minute'
 custom_talents_talent_true_strike: True Strike
 custom_talents_talent_true_strike_description: Prevents your attacks from missing
+custom_talents_talent_hero_sai_release_of_forge_discrease_bonus_respawn_time: Release of Forge
+custom_talents_talent_hero_sai_release_of_forge_discrease_bonus_respawn_time_description: 'Reduces respawn time increasement, caused by dying from Release of Forge by {%reduction_pct%}.'
 
 
 
@@ -150,7 +152,7 @@ custom_talents_talent_hero_death_prophet_exorcism_spirits: +{value} Exorcism Spi
 custom_talents_talent_hero_phantom_assassin_stifling_dagger_double: Double Strike Stifling Dagger
 custom_talents_talent_hero_pugna_decrepify_duration: +{value} Decrepify Duration
 custom_talents_talent_hero_pugna_netherblast_cooldown: +{value} Netherblast Cooldown
-custom_talents_talent_hero_pugna_nethe_rward_damage_mana: +{value} Netherward Damage Per Mana
+custom_talents_talent_hero_pugna_nether_ward_damage_mana: +{value} Netherward Damage Per Mana
 custom_talents_talent_hero_pugna_life_drain_heal: +{%value%} Life Drain Heal
 custom_talents_talent_hero_pugna_nether_blast_damage: +{value} Nether Blast Damage
 custom_talents_talent_hero_templar_assassin_meld_armor: +{value} Meld Armor Reduction

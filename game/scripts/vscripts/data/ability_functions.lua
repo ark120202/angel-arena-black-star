@@ -16,6 +16,7 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	centaur_hoof_stomp = 40,
 	centaur_double_edge = 40,
 	kunkka_ghostship = 40,
+	kunkka_torrent = 40,
 	slark_dark_pact = 40,
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,
@@ -140,6 +141,25 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			return 1 - pct
 		end
 	},
+	modifier_sai_release_of_forge = {
+
+		condition = function(_, _, inflictor)
+			return not inflictor
+		end,
+		multiplier = function(attacker, victim, _, damage, damagetype)
+			local ability = attacker:FindAbilityByName("sai_release_of_forge")
+			local pct = ability:GetSpecialValueFor("pure_damage_pct") * 0.01
+			ApplyDamage({
+				victim = victim,
+				attacker = attacker,
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
+				damage_type = ability:GetAbilityDamageType(),
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+				ability = ability
+			})
+			return 1 - pct
+		end
+	},
 	modifier_anakim_wisps = {
 		condition = function(_, _, inflictor)
 			return not inflictor
@@ -166,7 +186,7 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
-	modifier_item_golden_eagle_relic_unique = function(_, _, inflictor)
+	modifier_item_golden_eagle_relic = function(_, _, inflictor)
 		if not IsValidEntity(inflictor) then
 			return {
 				LifestealPercentage = GetAbilitySpecial("item_golden_eagle_relic", "lifesteal_pct")
@@ -278,18 +298,6 @@ INCOMING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
-	modifier_murzik_neo_style = {
-		multiplier = function(attacker, victim, inflictor, damage)
-			local murzik_neo_style = victim:FindAbilityByName("murzik_neo_style")
-			if murzik_neo_style and victim:IsAlive() then
-				if RollPercentage(murzik_neo_style:GetAbilitySpecial("neo_evision_pct")) then
-					PopupEvadeMiss(victim, attacker)
-					ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
-					return false
-				end
-			end
-		end
-	},
 	modifier_arena_healer = {damage = 1},
 	modifier_anakim_transfer_pain = {
 		multiplier = function(attacker, victim, inflictor, damage)
@@ -324,14 +332,16 @@ INCOMING_DAMAGE_MODIFIERS = {
 }
 
 CREEP_BONUSES_MODIFIERS = {
-	modifier_item_golden_eagle_relic_unique = {gold = GetAbilitySpecial("item_golden_eagle_relic", "kill_gold"), xp = GetAbilitySpecial("item_golden_eagle_relic", "kill_xp")},
-	modifier_say_demonic_power = function(self)
-		local ability = self:FindAbilityByName("say_demonic_power")
-		if abiltiy then
-			return {gold = ability:GetLevelSpecialValueFor("bonus_creep_gold", ability:GetLevel() - 1)}
-		end
-	end,
-	modifier_item_skull_of_midas = {gold = GetAbilitySpecial("item_skull_of_midas", "kill_gold"), xp = GetAbilitySpecial("item_skull_of_midas", "kill_xp")},
+	modifier_item_golden_eagle_relic_unique = {
+		gold = GetAbilitySpecial("item_golden_eagle_relic", "kill_gold"),
+		xp = GetAbilitySpecial("item_golden_eagle_relic", "kill_xp")
+	},
+
+	modifier_item_skull_of_midas = {
+		gold = GetAbilitySpecial("item_skull_of_midas", "kill_gold"),
+		xp = GetAbilitySpecial("item_skull_of_midas", "kill_xp")
+	},
+
 	modifier_talent_creep_gold = function(self)
 		local modifier = self:FindModifierByName("modifier_talent_creep_gold")
 		if modifier then

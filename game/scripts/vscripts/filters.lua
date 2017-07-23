@@ -31,7 +31,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 	end
 
 	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability and not units[1]:IsIllusion() and not units[1]:IsTempestDouble() then
-		PanoramaShop:SellItem(units[1], ability)
+		PanoramaShop:SellItem(PlayerID, units[1], ability)
 		return false
 	end
 	for _,unit in ipairs(units) do
@@ -46,10 +46,12 @@ function GameMode:ExecuteOrderFilter(filterTable)
 								local ent1len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team2"):GetAbsOrigin()):Length2D()
 								local ent2len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team3"):GetAbsOrigin()):Length2D()
 								if ent1len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 or ent2len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 then
+									Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
 									return false
 								end
 							end
 							if IsInBox(orderVector, Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()) then
+								Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
 								return false
 							end
 						end

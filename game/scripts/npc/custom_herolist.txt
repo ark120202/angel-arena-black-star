@@ -134,7 +134,7 @@
 		"npc_arena_hero_destroyer"						"1"
 		"npc_arena_hero_anakim"							"1"
 		"npc_arena_hero_sai"							"0"
-		"npc_arena_hero_murzik"							"0"
+		"npc_arena_hero_saitama"						"0"
 
 		"npc_arena_hero_maka"							"0"
 		"npc_arena_hero_soul_eater"						"0"

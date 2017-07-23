@@ -4,11 +4,13 @@ npc_arena_hero_poseidon_bio: 'Once upon a time, the three oldest sons of Kronos 
 
 DOTA_Tooltip_ability_poseidon_wave: Wave
 DOTA_Tooltip_ability_poseidon_wave_Description: 'Poseidon sneds a wave of sea water, that will deal damage and stun everyone who touches it.'
+DOTA_Tooltip_ability_poseidon_wave_Lore: It is impossible to resist the pressure of the lord of the oceans.
 DOTA_Tooltip_ability_poseidon_wave_stun_duration: 'STUN DURATION:'
 DOTA_Tooltip_ability_poseidon_wave_range: 'RANGE:'
 
 DOTA_Tooltip_ability_poseidon_trident: Trident
 DOTA_Tooltip_ability_poseidon_trident_Description: 'Poseidon enchants his trident, gaining movement speed, cleave and additional damage.'
+DOTA_Tooltip_ability_poseidon_trident_Lore: The trident in its power can compete even with the lightning of Zeus.
 DOTA_Tooltip_ability_poseidon_trident_duration: 'DURATION:'
 DOTA_Tooltip_ability_poseidon_trident_movement_speed_pct: '%MOVEMENT SPEED:'
 DOTA_Tooltip_ability_poseidon_trident_cleave_damage_pct: '%CLEAVE DAMAGE:'
@@ -18,6 +20,7 @@ DOTA_Tooltip_modifier_poseidon_trident_Description: 'Movement speed increased by
 
 DOTA_Tooltip_ability_poseidon_sea_hole: Sea Hole
 DOTA_Tooltip_ability_poseidon_sea_hole_Description: 'Creates whirlpool in the ground, that will pull all enemies into it''s center and slow them for a percent, that will be based on distance between enemy and whirlpool''s center. If distance to target is less than %mute_radius% it will also mute enemy.'
+DOTA_Tooltip_ability_poseidon_sea_hole_Lore: 'It does not matter how great you are, the wizard or warrior: in the sea depths all are equal.'
 DOTA_Tooltip_ability_poseidon_sea_hole_duration: 'DURATION:'
 DOTA_Tooltip_ability_poseidon_sea_hole_aoe_radius: 'RADIUS:'
 DOTA_Tooltip_ability_poseidon_sea_hole_pull_per_second: 'PULL SPEED:'
@@ -30,6 +33,7 @@ DOTA_Tooltip_modifier_poseidon_sea_hole_slow_Description: Movement speed reduced
 
 DOTA_Tooltip_ability_poseidon_dark_whale: Dark Whale
 DOTA_Tooltip_ability_poseidon_dark_whale_Description: 'Poseidon summons ancient whale from the depths of the sea. That whale will deal damage and stun all enemies in radius. Damage and stun duration will be based on victim''s distance to whale.'
+DOTA_Tooltip_ability_poseidon_dark_whale_Lore: The sea element along with all its horrors always accompanies Poseidon.
 DOTA_Tooltip_ability_poseidon_dark_whale_aoe_radius: 'RADIUS:'
 DOTA_Tooltip_ability_poseidon_dark_whale_damage_min: 'MIN DAMAGE:'
 DOTA_Tooltip_ability_poseidon_dark_whale_damage_max: 'MAX DAMAGE:'

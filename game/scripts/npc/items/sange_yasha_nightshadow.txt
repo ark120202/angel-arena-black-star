@@ -137,6 +137,134 @@
 		}
 	}
 
+	"item_recipe_yasha_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"10036"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"600"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_yasha_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_blade_of_alacrity;item_boots_of_elves"
+		}
+	}
+
+	"item_yasha_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"10037"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_yasha"
+		"ItemShopTags"					"agi;attack_speed;move_speed"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"yasha"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility"					"16"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"10"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"movement_speed_percent_bonus"	"8"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed_buff"		"5"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"movement_speed_percent_bonus_buff"		"1"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"fast_attack_duration"			"4"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"fast_attack_max_stacks"			"4"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_yasha_arena"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"							"%bonus_agility"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%movement_speed_percent_bonus"
+				}
+			}
+
+			"modifier_item_yasha_arena_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"AllowIllusionDuplicate"     "0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"IllusionModifierCleaner"
+						"modifier"		"modifier_item_yasha_arena_unique"
+					}
+				}
+
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/items_SYNS.lua"
+						"Function"		"yasha_fast_attack_stacks"
+						"modifier"		"modifier_item_yasha_arena_fast_attack"
+					}
+				}
+			}
+
+			"modifier_item_yasha_arena_fast_attack"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"1"
+				"Duration"			"%fast_attack_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
+				}
+			}
+		}
+	}
+
 	"item_recipe_sange_and_yasha_arena"
 	{
 		"BaseClass"						"item_datadriven"

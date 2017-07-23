@@ -25,8 +25,8 @@ const paths = {
 	content: path.resolve(__dirname, '../content'),
 	localization: path.resolve(__dirname, '../localization'),
 	resourcecompiler: path.join(settings.dota, 'bin/win64/resourcecompiler.exe'),
-	addon_game: path.join(settings.dota, 'game/dota_addons/angelarenablackstar'),
-	addon_content: path.join(settings.dota, 'content/dota_addons/angelarenablackstar'),
+	addon_game: path.join(settings.dota, 'game/dota_addons', settings.name),
+	addon_content: path.join(settings.dota, 'content/dota_addons', settings.name),
 };
 
 const gulp = require('gulp'),

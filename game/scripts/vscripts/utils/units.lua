@@ -163,7 +163,7 @@ end
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	if self.OnDuel then return 1 end
-	local time = (5 + self:GetLevel() * 0.2) + (self.RespawnTimeModifier or 0)
+	local time = (5 + self:GetLevel() * 0.2) + (self.RespawnTimeModifierBloodstone or 0) + (self.RespawnTimeModifierSaiReleaseOfForge or 0)
 	if self.talent_keys and self.talent_keys.respawn_time_reduction then
 		time = time + self.talent_keys.respawn_time_reduction
 	end
@@ -197,4 +197,25 @@ end
 
 function CDOTA_BaseNPC_Hero:ResetAbilityPoints()
 	self:SetAbilityPoints(self:GetLevel() - self:GetAbilityPointsWastedAllOnTalents())
+end
+
+function CDOTA_BaseNPC_Hero:GetMaxMovementSpeed()
+	local max = MAX_MOVEMENT_SPEED
+
+	for k,v in pairs(MOVEMENT_SPEED_MODIFIERS) do
+		if self:HasModifier(k) then
+			max = math.max(max, v(self))
+		end
+	end
+
+	--[[ TODO Works only for custom lua modifiers
+	for _,v in ipairs(self:FindAllModifiers()) do
+		if v.GetModifierMoveSpeed_Max or v.GetModifierMoveSpeed_Limit then
+			max = math.max(max,
+				(v:GetName() == "modifier_talent_movespeed_limit" and v:GetStackCount()) or
+				v:GetModifierMoveSpeed_Limit() or
+				v:GetModifierMoveSpeed_Max() or 0)
+		end
+	end]]
+	return max
 end

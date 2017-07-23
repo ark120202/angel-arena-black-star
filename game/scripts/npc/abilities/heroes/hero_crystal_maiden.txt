@@ -199,7 +199,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_per_second_tooltip"			"150 175 200 225 250 275 300"
+				"damage_per_second_tooltip"			"100 150 175 200 225 250 275"
 			}
 			"02"
 			{
@@ -593,12 +593,12 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"105 170 250 340 440 550 670"
+				"damage"				"90 155 220 285 350 415 480"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_scepter"		"170 250 340 440 550 670 800"
+				"damage_scepter"		"220 285 350 415 480 545 610"
 			}
 			"12"
 			{
@@ -613,7 +613,7 @@
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_to_frostbite_pct"	"10"
+				"chance_to_frostbite_pct"	"5"
 			}
 			"15"
 			{

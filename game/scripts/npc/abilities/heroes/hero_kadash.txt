@@ -130,7 +130,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"400"
+				"bonus_attack_range"	"300"
 			}
 			"06"
 			{
@@ -251,6 +251,7 @@
 		"AbilityTextureName"			"arena/kadash_survival_skills"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"LevelsBetweenUpgrades"			"3"
 
 		"AbilitySpecial"
 		{

@@ -106,20 +106,20 @@ function modifier_item_bloodstone_arena_aura_emitter_on_death(keys)
 			if current_item and current_item:GetAbilityName() == "item_bloodstone_arena" then
 				local current_charges = current_item:GetCurrentCharges()
 				total_charge_count = total_charge_count + current_charges
-				
+
 				--Reduce the number of charges left on this Bloodstone.
 				local charges_left = math.floor(current_charges * keys.OnDeathChargePercent * 0.01)
 				current_item:SetCurrentCharges(math.max(charges_left, 0))
 			end
 		end
-		
+
 		local nearby_allied_units = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, keys.HealOnDeathRange,
 			DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for i, nearby_ally in ipairs(nearby_allied_units) do
 			SafeHeal(nearby_ally, keys.HealOnDeathBase + (keys.HealOnDeathPerCharge * total_charge_count), caster)
 			ParticleManager:CreateParticle("particles/items_fx/bloodstone_heal.vpcf", PATTACH_ABSORIGIN_FOLLOW, nearby_ally)
 		end
-		
+
 		local bloodstone_glyph = ParticleManager:CreateParticle("particles/items_fx/bloodstone_glyph.vpcf", PATTACH_ABSORIGIN, caster)
 		ParticleManager:SetParticleControl(bloodstone_glyph, 1, Vector(new_time_until_respawn))
 
@@ -130,7 +130,7 @@ function modifier_item_bloodstone_arena_aura_emitter_on_death(keys)
 		modelDummy:SetNightTimeVisionRange(caster:GetNightTimeVisionRange())
 		caster.BloodstoneDummies = modelDummy
 
-		caster.RespawnTimeModifier = -(total_charge_count * keys.RespawnTimeReductionPerCharge)
+		caster.RespawnTimeModifierBloodstone = -(total_charge_count * keys.RespawnTimeReductionPerCharge)
 		item_bloodstone_arena_recalculate_charge_bonuses(keys)
 	end
 end

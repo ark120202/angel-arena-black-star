@@ -63,7 +63,6 @@ function Snippet_PlayerSlot(playerId, root) {
 			var playerInfo = Game.GetPlayerInfo(playerId);
 			panel.FindChildTraverse('PlayerName').text = playerInfo.player_name;
 			panel.FindChildTraverse('PlayerAvatar').steamid = playerInfo.player_steamid;
-			panel.FindChildTraverse('PlayerAvatar').ClearPanelEvent('onactivate');
 			panel.SetHasClass('player_is_local', playerInfo.player_is_local);
 			panel.SetHasClass('player_has_host_privileges', playerInfo.player_has_host_privileges);
 		}

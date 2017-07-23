@@ -1,5 +1,6 @@
 DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena: Breathe Fire
 DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena_Description: 'Unleashes a breath of fire in front of Dragon Knight that burns enemies and give them debuff. Debuff reduces the damage their attacks deal, slows their move speed, gives them chance to miss their attacks and deals damage over time.'
+DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena_Lore: The card of the knight of Devion is a fiery breath, even the dragon Slayrak himself will not remember the accounts.
 DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena_aghanim_description: Dragon Knight will breath to every direction around him.
 DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena_range: 'RANGE:'
 DOTA_Tooltip_ability_dragon_knight_breathe_fire_arena_debuff_dmg_reduction_pct: '%DAMAGE REDUCTION:'
@@ -12,6 +13,7 @@ DOTA_Tooltip_modifier_dragon_knight_breathe_fire_arena_debuff_Description: 'YOU 
 
 DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena: Dragon Tail
 DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_Description: 'Dragon Knight smites an enemy unit in melee range with his shield, stunning it, dealing damage and preforming attacks after delay which interact with all attack modifiers, orbs and critical damage. When in Elder Dragon Form, the cast range increases to %dragon_cast_range%.'
+DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_Lore: Combining dragon abilities and knight skills, Daveion becomes a dangerous opponent in close combat.
 DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_stun_duration: 'STUN DURATION:'
 DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_attack_amount: 'ATTACK COUNT:'
 DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_attack_delay: 'ATTACK DELAY:'
@@ -19,6 +21,7 @@ DOTA_Tooltip_ability_dragon_knight_dragon_tail_arena_attack_delay: 'ATTACK DELAY
 DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena: Dragon Blood
 DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_Description: |-
   The life blood of the Dragon improves health regeneration, strengthens armor and increases magic damage resistance. Also, when attacked, attacker have chance to get disarm, but this ability have cooldown.
+DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_Lore: The blood of Slirak still flows in Davion's veins, making him much more enduring than the other knights.
 DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_aghanim_description: 'Applies Hex on attacker, instead of disarm.'
 DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_bonus_health_regen: 'HEALTH REGEN:'
 DOTA_Tooltip_ability_dragon_knight_dragon_blood_arena_bonus_armor: 'ARMOR:'
@@ -39,6 +42,7 @@ DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_arena_Description: |-
   [5] Twin Headed Dragon - On each attack there is %breath_chance%%% chance to lauch a wave of fire and ice in front of the dragon that deals %breath_damage% damage to any unit that touched it and reduces its move speed by %breath_debuff_slow_pct%%% for %breath_debuff_duration% seconds.
   [6] Frost Dragon - Each attack reduces move speed by %cold_bonus_movement_speed_pct%%%, reduces attack speed by %cold_bonus_attack_speed% and deals it %cold_damage_pct%%% of current health as magic damage for %cold_duration% seconds.
   [7] Dragon King - Dragon Knight creates %illusion_amount% illusions of random dragons. Illusions deals %illusion_damage_percent_outgoing_tooltip%%% damage and get %illusion_damage_percent_incoming_tooltip%%% damage.
+DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_arena_Lore: The power of the dragon, slumbering inside of Devion, breaks out, combining the power of the legendary knight with the power of the legendary dragon.
 DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_poison: Poison
 DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_poison_Description: Get pereodic damage.
 DOTA_Tooltip_modifier_dragon_knight_elder_dragon_form_arena_cold: Cold

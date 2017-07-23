@@ -1,15 +1,17 @@
 npc_arena_hero_mirratie: Mirratie
 npc_arena_hero_mirratie_hype: 'Natural talent and athletic skills are the secret of Mirratie''s skill. She feels enemies around her, even if they are invisible or on a hill. Instantly reducing the distance, she deprives the victim of sight, and thanks to the huge range of attack, she will get the enemy anywhere.'
-npc_arena_hero_mirratie_bio: 'Mirratie was blind from birth. Her father was a rich and powerful man in the criminal world, and he helped her develop her talents. Despite the blindness, it is incredibly sensitive to the vibrations of the air and vibrations. Through training, she was able to develop this and learned to use firearms. My father arranged it for a corporation that deals with contract killers. Mirratie became an outstanding sniper, largely due to the fact that she does not need to see the goal: she subconsciously feels it, so no one can hide from her sight. She also mastered the skill temporarily dazzling her enemies, giving her an additional advantage.'
+npc_arena_hero_mirratie_bio: 'Mirratie was blind from birth. Her father was a rich and powerful man in the criminal world, and he helped her develop her talents. Despite the blindness, it is incredibly sensitive to the vibrations of the air and vibrations. Through training, she was able to develop this and learned to use firearms. My father arranged it for a corporation that deals with contract killers. Mirratie became an outstanding sniper, largely due to the fact that she does not need to see the goal: she subconsciously feels it, so no one can hide from her sight.'
 
 DOTA_Tooltip_ability_mirratie_snagshot: Snagshot
 DOTA_Tooltip_ability_mirratie_snagshot_Description: 'Fires a net at the target location, trapping enemy units in the area for some time, preventing them from going invisible, moving or blinking. Also interrupts any channeled spells.'
+DOTA_Tooltip_ability_mirratie_snagshot_Lore: No one will go live.
 DOTA_Tooltip_ability_mirratie_snagshot_duration: 'DURATION:'
 DOTA_Tooltip_ability_mirratie_snagshot_radius: 'RADIUS:'
 DOTA_Tooltip_ability_mirratie_snagshot_tooltip_range: 'RANGE:'
 
 DOTA_Tooltip_ability_mirratie_smoke_out: Smoke Out
 DOTA_Tooltip_ability_mirratie_smoke_out_Description: 'Mirratie leaps to the target point while leaving a smoke screen that slows, blinds and causing units in it to miss most attacks.'
+DOTA_Tooltip_ability_mirratie_smoke_out_Lore: Mirratie compensates for his flaw in order to fight enemies in equal conditions.
 DOTA_Tooltip_ability_mirratie_smoke_out_radius: 'SMOKE RADIUS:'
 DOTA_Tooltip_ability_mirratie_smoke_out_duration: 'DURATION:'
 DOTA_Tooltip_ability_mirratie_smoke_out_move_slow_pct: '%SLOW:'
@@ -20,8 +22,7 @@ DOTA_Tooltip_modifier_mirratie_smoke_out_debuff_Description: Blind. Missing %dMO
 DOTA_Tooltip_ability_mirratie_sixth_sense: Sixth Sense
 DOTA_Tooltip_ability_mirratie_sixth_sense_Description: |-
   Mirratie concentrates on her senses, allowing her to feel enemies, without seeing them, evade enemy attacks and dodge enemy spells.
-
-  This ability 
+DOTA_Tooltip_ability_mirratie_sixth_sense_Lore: Mirratie does not need to see a threat to avoid it.
 DOTA_Tooltip_ability_mirratie_sixth_sense_radius: 'RADIUS:'
 DOTA_Tooltip_ability_mirratie_sixth_sense_bonus_evasion: '%+$evasion'
 DOTA_Tooltip_ability_mirratie_sixth_sense_dodge_chance_pct: '%DODGE CHANCE:'
@@ -29,6 +30,7 @@ DOTA_Tooltip_ability_mirratie_sixth_sense_dodge_chance_pct: '%DODGE CHANCE:'
 DOTA_Tooltip_ability_mirratie_impaling_shot: Impaling Shot
 DOTA_Tooltip_ability_mirratie_impaling_shot_Description: |-
   Mirratie fires her arbalest at her target, dealing massive damage as well as stunning them. The shot will hit any other enemy hero unit behind her target dealing reduced damage and stunning for decreased time.
+DOTA_Tooltip_ability_mirratie_impaling_shot_Lore: Murder is also an art.
 DOTA_Tooltip_ability_mirratie_impaling_shot_aghanim_description: 'Changes damage type to Pure, and allows it to slice through spell immunity, increases cast range, stun duration and damage.'
 DOTA_Tooltip_ability_mirratie_impaling_shot_channel_time: 'CHANNEL DURATION:'
 DOTA_Tooltip_ability_mirratie_impaling_shot_cast_range: 'RANGE:'

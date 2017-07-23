@@ -47,3 +47,5 @@ if #errors > 0 then
 	print("##############################")
 	error("Found " .. #errors .. " errors while loading modules")
 end
+
+require("modules/verify/verify")

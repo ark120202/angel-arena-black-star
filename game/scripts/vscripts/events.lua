@@ -38,16 +38,18 @@ function GameMode:OnNPCSpawned(keys)
 				if not npc:IsWukongsSummon() then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if npc:IsTrueHero() then
+						for name,v in pairs(npc.talents or {}) do
+							if v.delayed then
+								v.delayed = nil
+								npc:ApplyTalentEffects(name)
+							end
+						end
+
 						PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
 						CustomAbilities:RandomOMGRollAbilities(npc)
 						if IsValidEntity(npc.BloodstoneDummies) then
 							UTIL_Remove(npc.BloodstoneDummies)
 							npc.BloodstoneDummies = nil
-						end
-						if npc.PocketHostEntity ~= nil then
-							UTIL_Remove(npc.PocketItem)
-							npc.PocketItem = nil
-							npc.PocketHostEntity = nil
 						end
 						if not npc.OnDuel and Duel:IsDuelOngoing() then
 							Duel:SetUpVisitor(npc)
@@ -143,11 +145,11 @@ end
 
 -- A tree was cut down by tango, quelling blade, etc
 function GameMode:OnTreeCut(keys)
-	--[[local treeX = keys.tree_x
+	local treeX = keys.tree_x
 	local treeY = keys.tree_y
-	if RollPercentage(10) then
+	if RollPercentage(GetAbilitySpecial("item_tree_banana", "drop_chance_pct")) then
 		GameMode:CreateTreeDrop(Vector(treeX, treeY, 0), "item_tree_banana")
-	end]]
+	end
 end
 
 function GameMode:CreateTreeDrop(location, item)
@@ -185,6 +187,8 @@ function GameMode:OnEntityKilled(keys)
 				local respawnTime = killedUnit:CalculateRespawnTime()
 				killedUnit:SetTimeUntilRespawn(respawnTime)
 				MeepoFixes:ShareRespawnTime(killedUnit, respawnTime)
+				killedUnit.RespawnTimeModifierBloodstone = nil
+				killedUnit.RespawnTimeModifierSaiReleaseOfForge = nil
 
 				if killedUnit.OnDuel and Duel:IsDuelOngoing() then
 					killedUnit.OnDuel = nil

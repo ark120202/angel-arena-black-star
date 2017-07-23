@@ -50,3 +50,5 @@ custom_talents_talent_passive_experience_income: Прирост опыта
 custom_talents_talent_passive_experience_income_description: '+{xp_per_minute} опыта в минуту'
 custom_talents_talent_true_strike: True Strike
 custom_talents_talent_true_strike_description: Исключает шанс промаха при атаке
+custom_talents_talent_hero_sai_release_of_forge_bonus_respawn_time_reduction: Release of Forge
+custom_talents_talent_hero_sai_release_of_forge_bonus_respawn_time_reduction_description: 'Уменьшает увеличение времени возрождения после смерти от способности Release of Forge на {%reduction_pct%}.'

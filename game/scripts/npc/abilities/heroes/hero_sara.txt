@@ -66,7 +66,7 @@
 			"11"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"per_sec_multiplier_scepter"	"4"
+				"per_sec_multiplier_scepter"	"2"
 			}
 		}
 	}
@@ -109,7 +109,12 @@
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"energy_pct"		"15"
+				"energy_pct"		"10"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"energy_to_disarmor_bosses_pct"	"1"
 			}
 		}
 
@@ -134,12 +139,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blink_range"			"600 700 800 900 1000 1100 1200"
+				"blink_range"			"600"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"energy_to_blink_range"	"6 7 8 9 10 11 12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_energy_step"		"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_energy_per_step_pct"	"0.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_cost_pct"			"5"
 			}
 		}
 
@@ -209,7 +229,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_energy"		"2"
+				"damage_per_energy"		"1.25"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
@@ -251,22 +271,22 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"energy_const"		"500 450 400 350 300 250 200"
+				"energy_const"		"300 250 200 150 100 50 0"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"energy_pct"		"35 32.5 30 27.5 25 22.5 20 15"
+				"energy_pct"		"35 32.5 30 27.5 25 22.5 20"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"			"FIELD_FLOAT"
 				"debuff_duration"	"10"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"scepter_cooldown"	"1"
+				"var_type"			"FIELD_FLOAT"
+				"cooldown_scepter"	"1"
 			}
 		}
 

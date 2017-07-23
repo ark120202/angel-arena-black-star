@@ -1,6 +1,5 @@
 LinkLuaModifier("modifier_sara_fragment_of_logic", "heroes/hero_sara/fragment_of_logic.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_sara_fragment_of_logic_debuff", "heroes/hero_sara/fragment_of_logic.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_sara_fragment_of_logic_buff_scepter", "heroes/hero_sara/fragment_of_logic.lua", LUA_MODIFIER_MOTION_NONE)
 
 sara_fragment_of_logic = class({
 	GetIntrinsicModifierName = function() return "modifier_sara_fragment_of_logic" end,
@@ -33,7 +32,7 @@ if IsServer() then
 			local toWaste = ability:GetSpecialValueFor("energy_const") + parent:GetMaxEnergy() * ability:GetSpecialValueFor("energy_pct") * 0.01
 			if ability:IsCooldownReady() and parent:GetEnergy() >= toWaste then
 				if parent:HasScepter() then
-					ability:StartCooldown(ability:GetSpecialValueFor("scepter_cooldown"))
+					ability:StartCooldown(ability:GetSpecialValueFor("cooldown_scepter"))
 				else
 					ability:AutoStartCooldown()
 				end

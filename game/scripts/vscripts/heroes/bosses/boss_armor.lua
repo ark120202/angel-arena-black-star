@@ -12,15 +12,14 @@ end
 
 function ClearDebuffs(keys)
 	local caster = keys.caster
+	caster:RemoveModifierByName("modifier_dazzle_weave_armor")
+	caster:RemoveModifierByName("modifier_ice_blast")
+
 	if not caster:PassivesDisabled() then
 		local ability = keys.ability
 		caster:Purge(false, true, false, false, false)
-		caster:RemoveModifierByName("modifier_item_skadi_slow")
-		caster:RemoveModifierByName("modifier_item_skadi_arena_cold_attack")
-		caster:RemoveModifierByName("modifier_item_rapier_of_pain_debuff")
 		caster:RemoveModifierByName("modifier_ursa_fury_swipes_damage_increase")
 		caster:RemoveModifierByName("modifier_maledict")
-		caster:RemoveModifierByName("modifier_ice_blast")
 
 		local modifier_razor_eye_of_the_storm_armor = caster:FindModifierByName("modifier_razor_eye_of_the_storm_armor")
 		if modifier_razor_eye_of_the_storm_armor and modifier_razor_eye_of_the_storm_armor:GetStackCount() > 50 then

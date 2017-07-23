@@ -82,6 +82,7 @@ custom_toast_PlayerDenied: '{killer_name} {denied_icon} Denied {victim_name}'
 custom_toast_KillStreak_Ended: '{victim_name} {kill_streak}x Kill Streak ended'
 custom_toast_ActivatedRune: '{player_name} has activated {rune_name}'
 custom_toast_BottledRune: '{player_name} bottled {rune_name}'
+custom_toast_RunicMekansmRune: '{player_name} putted {rune_name} into Runic Mekansm'
 custom_toast_DuelStarted: '{time_dota}: {duel_index}th duel has started!'
 custom_toast_BossKilled: '{team_name} {killed_icon} {victim_name} {gold}'
 custom_toast_AntiAFKTime: '{player_name} should get some experience, or will be kicked in {minutes} minutes'
@@ -108,6 +109,7 @@ arena_end_screen_victory: Victory
 arena_end_screen_defeat: Defeat
 arena_end_screen_legend_boss_damage: BSD
 arena_end_screen_legend_boss_damage_tooltip: Damage done to Bosses
+arena_end_screen_error_broken: Something gone wrong. Perhaps it was caused by Valve's feature/bug that allows host to do some bad things.
 
 abaddoned_panel_title: Game was abandoned
 abaddoned_panel_reason: Your hero was removed because you was disconnected for a long time

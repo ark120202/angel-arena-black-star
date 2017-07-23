@@ -222,25 +222,30 @@ function PanoramaShop:OnItemBuy(data)
 	end
 end
 
-function PanoramaShop:SellItem(unit, item)
+function PanoramaShop:SellItem(playerID, unit, item)
+	local itemname = item:GetAbilityName()
 	local cost = item:GetCost()
-	local playerID = UnitVarToPlayerID(unit)
 	if not item:IsSellable() or MeepoFixes:IsMeepoClone(unit) then
 		Containers:DisplayError(playerID, "dota_hud_error_cant_sell_item")
 		return
+	end
+	if item:IsStackable() then
+		local chargesRate = item:GetCurrentCharges() / item:GetInitialCharges()
+		cost = cost * chargesRate
 	end
 	if GameRules:GetGameTime() - item:GetPurchaseTime() > 10 then
 		cost = cost / 2
 	end
 	if itemname == "item_pocket_riki" then
 		cost = Kills:GetGoldForKill(item.RikiContainer)
-		item.RikiContainer:TrueKill(item, units[1])
-		Kills:ClearStreak(item.RikiContainer:GetPlayerID())
+		item.RikiContainer:TrueKill(item, unit)
+		Kills:SetKillStreak(item.RikiContainer:GetPlayerID(), 0)
 		unit:RemoveItem(item)
 		unit:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
 		unit:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
 		unit:RemoveModifierByName("modifier_invisible")
-		GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber())
+		-- TODO
+		-- GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber())
 	end
 	UTIL_Remove(item)
 	Gold:AddGoldWithMessage(unit, cost, playerID)
@@ -266,6 +271,9 @@ function PanoramaShop:PushItem(playerID, unit, itemName, bOnlyStash)
 
 	--Try to add item to hero's stash
 	if not itemPushed then
+		if unit == FindCourier(team) then
+			unit = hero
+		end
 		-- Stackable item abuse fix, not very good, but that's all I can do without smth like SetStackable
 		local hasSameStackableItem = item:IsStackable() and unit:HasItemInInventory(itemName)
 		if hasSameStackableItem then
