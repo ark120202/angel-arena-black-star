@@ -4871,6 +4871,7 @@
 
 	"lich_dark_ritual"
 	{
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"400"
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
