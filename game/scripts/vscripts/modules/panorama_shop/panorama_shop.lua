@@ -230,6 +230,10 @@ function PanoramaShop:SellItem(unit, item)
 		Containers:DisplayError(playerID, "dota_hud_error_cant_sell_item")
 		return
 	end
+	if item:IsStackable() then
+		local chargesRate = item:GetCurrentCharges() / item:GetInitialCharges()
+		cost = cost * chargesRate
+	end
 	if GameRules:GetGameTime() - item:GetPurchaseTime() > 10 then
 		cost = cost / 2
 	end
