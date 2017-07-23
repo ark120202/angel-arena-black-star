@@ -186,7 +186,7 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
-	modifier_item_golden_eagle_relic_unique = function(_, _, inflictor)
+	modifier_item_golden_eagle_relic = function(_, _, inflictor)
 		if not IsValidEntity(inflictor) then
 			return {
 				LifestealPercentage = GetAbilitySpecial("item_golden_eagle_relic", "lifesteal_pct")
