@@ -13,16 +13,21 @@
 		"AbilityCastPoint"				"0.4 0.4 0.4 0.4 0.4 0.35 0.3"
 		"AbilityCooldown"				"16.0"
 		"AbilityManaCost"				"100"
-		"AbilityDamage"					"100 150 200 250 300 350 400"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_reduction"	"-3 -5 -7 -9 -11 -13 -15"
+				"damage"			"100 150 200 250 300 350 400"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_reduction"	"-3 -5 -7 -9 -11 -13 -15"
+			}
+			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"duration"			"1 1.2 1.4 1.6 1.8 2.0 2.2"
@@ -47,11 +52,12 @@
 				"EffectAttachType"	"follow_origin"
 				"Target"			"TARGET"
 			}
-			"Damage"
+			"RunScript"
 			{
-				"Target"			"TARGET"
-				"Type"				"DAMAGE_TYPE_PHYSICAL"
-				"Damage"			"%AbilityDamage"
+				"ScriptFile"	"kv.lua"
+				"Function"		"PercentDamage"
+				"Damage"		"%damage"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"ApplyModifier"
 			{

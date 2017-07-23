@@ -4,8 +4,9 @@ npc_arena_hero_destroyer_bio: 'Не смотря на свое грозное п
 DOTA_Tooltip_ability_destroyer_armor_crush: Armor crush
 DOTA_Tooltip_ability_destroyer_armor_crush_Description: 'Разрушитель сокрушает врага, нанося ему урон, оглушая и временно уменьшая броню.'
 DOTA_Tooltip_ability_destroyer_armor_crush_Lore: Не смотря на размеры, Колонна Сокрушения весит тысячи тонн.
-DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_destroyer_armor_crush_damage: 'УРОН:'
 DOTA_Tooltip_ability_destroyer_armor_crush_armor_reduction: 'СНИЖЕНИЕ БРОНИ:'
+DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'ДЛИТЕЛЬНОСТЬ:'
 
 DOTA_Tooltip_ability_destroyer_seal_of_limit: Seal of Ash-Lagor
 DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: 'Разрушитель накладывает печать Аш-Лагора на себя, ограничивая своё максимальное здоровье до %max_health_pct%%%, в то же время увеличивая скорость передвижения, скорость атаки, броню и регенерацию здоровья.'
