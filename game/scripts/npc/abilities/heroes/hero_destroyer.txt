@@ -52,17 +52,17 @@
 				"EffectAttachType"	"follow_origin"
 				"Target"			"TARGET"
 			}
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_destroyer_armor_crush"
+				"Target" 			"TARGET"
+			}
 			"RunScript"
 			{
 				"ScriptFile"	"kv.lua"
 				"Function"		"PercentDamage"
 				"Damage"		"%damage"
 				"CalculateSpellDamageTooltip"	"0"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"		"modifier_destroyer_armor_crush"
-				"Target" 			"TARGET"
 			}
 		}
 
