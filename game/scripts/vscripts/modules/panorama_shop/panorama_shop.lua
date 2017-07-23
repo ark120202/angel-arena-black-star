@@ -271,6 +271,9 @@ function PanoramaShop:PushItem(playerID, unit, itemName, bOnlyStash)
 
 	--Try to add item to hero's stash
 	if not itemPushed then
+		if unit == FindCourier(team) then
+			unit = hero
+		end
 		-- Stackable item abuse fix, not very good, but that's all I can do without smth like SetStackable
 		local hasSameStackableItem = item:IsStackable() and unit:HasItemInInventory(itemName)
 		if hasSameStackableItem then
