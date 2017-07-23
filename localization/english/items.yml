@@ -1200,9 +1200,9 @@ DOTA_Tooltip_ability_item_golden_eagle_relic_kill_xp: 'KILL XP:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_kill_gold: 'KILL GOLD:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_lifesteal_pct: '%LIFESTEAL:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_as_damage_pct: |-
-
+  %
   Swift Strike
-  • %GOLD AS DAMAGE:
+  • GOLD AS DAMAGE:
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_bonus_attackspeed: '• BONUS ATTACKSPEED:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_bonus_movespeed_pct: '%• MOVEMENT SPEED:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_lost_per_sec_pct: '%• GOLD PER SECOND:'
