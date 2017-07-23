@@ -31,7 +31,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 	end
 
 	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability and not units[1]:IsIllusion() and not units[1]:IsTempestDouble() then
-		PanoramaShop:SellItem(units[1], ability)
+		PanoramaShop:SellItem(PlayerID, units[1], ability)
 		return false
 	end
 	for _,unit in ipairs(units) do

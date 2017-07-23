@@ -222,10 +222,9 @@ function PanoramaShop:OnItemBuy(data)
 	end
 end
 
-function PanoramaShop:SellItem(unit, item)
+function PanoramaShop:SellItem(playerID, unit, item)
 	local itemname = item:GetAbilityName()
 	local cost = item:GetCost()
-	local playerID = UnitVarToPlayerID(unit)
 	if not item:IsSellable() or MeepoFixes:IsMeepoClone(unit) then
 		Containers:DisplayError(playerID, "dota_hud_error_cant_sell_item")
 		return
