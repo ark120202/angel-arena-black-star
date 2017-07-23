@@ -138,6 +138,7 @@ function Duel:StartDuel()
 						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 						ProjectileManager:ProjectileDodge(unit)
 						unit:FindClearSpaceForUnitAndSetCamera(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
+						unit:AddNewModifier(unit, nil, "modifier_magic_immune", {duration = DUEL_SETTINGS.MagicImmunityDuration})
 					elseif unit:IsAlive() then
 						Duel:SetUpVisitor(unit)
 					end
