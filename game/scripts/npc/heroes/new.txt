@@ -459,6 +459,7 @@
 
 	"npc_arena_hero_sai"
 	{
+		"Enabled"		"0"
 		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	"custom_scene_hero_sai"
 		"Model"	"models/units/sai/sai.vmdl"
@@ -483,6 +484,7 @@
 
 	"npc_arena_hero_saitama"
 	{
+		"Enabled"		"0"
 		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	"custom_scene_hero_saitama"
 		"Model"	"models/units/saitama/saitama.vmdl"
