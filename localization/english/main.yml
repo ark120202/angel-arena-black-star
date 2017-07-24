@@ -318,13 +318,7 @@ DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_chance_to_frostbite_pct
 
 DOTA_Tooltip_ability_ability_empty: Empty Ability Slot
 DOTA_Tooltip_ability_ability_empty_Description: ''
-DOTA_Tooltip_ability_rubick_personality_steal: Personality Steal
-DOTA_Tooltip_ability_rubick_personality_steal_Description: 'Rubick studies the trace magical essence of one enemy hero, learning the secrets of all the spells the hero has and copying it''s model. Rubick can use that spells as his own until he dies or removes it, clicking on the buff icon in status bar.'
-DOTA_Tooltip_modifier_rubick_personality_steal: Personality Steal
-DOTA_Tooltip_modifier_rubick_personality_steal_Description: |-
-  Rubick has stolen abilities and model.
 
-  Click to remove.
 DOTA_Tooltip_ability_item_god_transform_freya: 'Select Hero: Freya'
 DOTA_Tooltip_ability_item_god_transform_freya_Description: |-
   Transforms your hero to Freya.

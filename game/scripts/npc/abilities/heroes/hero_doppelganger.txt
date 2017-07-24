@@ -1,0 +1,36 @@
+""
+{
+	"doppelganger_mimic"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"arena/doppelganger_mimic"
+		"ScriptFile"					"heroes/hero_doppelganger/mimic.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"						"1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"CastFilterRejectCaster"		"1"
+
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"100"
+		"AbilityCastRange"				"1000"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"900"
+			}
+		}
+
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_rubick/rubick_spell_steal.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
+		}
+	}
+}
