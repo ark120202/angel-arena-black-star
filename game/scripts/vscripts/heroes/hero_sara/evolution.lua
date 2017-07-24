@@ -85,7 +85,7 @@ if IsServer() then
 	function modifier_sara_evolution:OnDestroy()
 		local parent = self:GetParent()
 		if IsValidEntity(parent) then
-			--For RecreateAbility function
+			--For illusions and RecreateAbility function
 			parent.SavedEnergyStates = {
 				Energy = self.Energy,
 				MaxEnergy = self.MaxEnergy
