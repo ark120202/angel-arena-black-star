@@ -342,8 +342,8 @@ function ShowHeroPreviewTab(tabID) {
 	$.GetContextPanel().RemoveClass('LocalPlayerPicked');
 	$('#HeroListPanel').RemoveAndDeleteChildren();
 	var localPlayerId = Game.GetLocalPlayerID();
-	if (!Players.IsSpectator(localPlayerId)) {
-		console.log('Is Player');
+	if (Players.IsValidPlayerID(localPlayerId) && !Players.IsSpectator(localPlayerId)) {
+		console.log('Player (' + localPlayerId + ')');
 		_DynamicMinimapSubscribe($('#MinimapDynamicIcons'), function(ptid) {
 			MinimapPTIDs.push(ptid);
 		});
