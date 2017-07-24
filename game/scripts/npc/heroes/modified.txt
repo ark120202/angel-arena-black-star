@@ -479,37 +479,6 @@
 		"Ability24"	""
 	}
 
-	"npc_dota_hero_rubick"
-	{
-		"override_hero"	"npc_dota_hero_rubick"
-		"Ability1"	"rubick_personality_steal"
-		"Ability2"	""
-		"Ability3"	""
-		"Ability4"	""
-		"Ability5"	""
-		"Ability6"	""
-		"Ability7"	""
-		"Ability8"	""
-		"Ability9"	""
-		"Ability10"	""
-		"Ability11"	""
-		"Ability12"	""
-		"Ability13"	""
-		"Ability14"	""
-		"Ability15"	""
-		"Ability16"	""
-		"Ability17"	""
-		"Changed"	"1"
-		"AttackRate"	"1.7"
-		"Ability18"	""
-		"Ability19"	""
-		"Ability20"	""
-		"Ability21"	""
-		"Ability22"	""
-		"Ability23"	""
-		"Ability24"	""
-	}
-
 	"npc_dota_hero_phantom_lancer"
 	{
 		"override_hero"	"npc_dota_hero_phantom_lancer"
