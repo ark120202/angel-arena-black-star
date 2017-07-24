@@ -27,7 +27,7 @@ if IsServer() then
 
 	function modifier_sara_fragment_of_logic:OnTakeDamage(keys)
 		local parent = keys.unit
-		if parent == self:GetParent() and parent:GetHealth() <= 1 and parent.GetEnergy then
+		if parent == self:GetParent() and parent:GetHealth() <= 1 and not parent:IsIllusion() and parent.GetEnergy then
 			local ability = self:GetAbility()
 			local toWaste = ability:GetSpecialValueFor("energy_const") + parent:GetMaxEnergy() * ability:GetSpecialValueFor("energy_pct") * 0.01
 			if ability:IsCooldownReady() and parent:GetEnergy() >= toWaste then
@@ -48,7 +48,7 @@ if IsServer() then
 
 	function modifier_sara_fragment_of_logic:GetMinHealth(keys)
 		local parent = self:GetParent()
-		if parent.GetEnergy then
+		if not parent:IsIllusion() and parent.GetEnergy then
 			local ability = self:GetAbility()
 			if ability:IsCooldownReady() and parent:GetEnergy() >= ability:GetSpecialValueFor("energy_const") + parent:GetMaxEnergy() * ability:GetSpecialValueFor("energy_pct") * 0.01 then
 				return 1

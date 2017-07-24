@@ -306,6 +306,12 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	for i = 1, caster_level - 1 do
 		illusion:HeroLevelUp(false)
 	end
+	if unit.GetEnergy and unit.GetMaxEnergy then
+		illusion.SavedEnergyStates = {
+			Energy = unit:GetEnergy(),
+			MaxEnergy = unit:GetMaxEnergy()
+		}
+	end
 
 	illusion:SetAbilityPoints(0)
 	for slot_ability = 0, unit:GetAbilityCount()-1 do
