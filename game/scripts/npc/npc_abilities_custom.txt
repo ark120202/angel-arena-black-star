@@ -23,6 +23,7 @@
 #base "abilities/heroes/hero_anakim.txt"
 #base "abilities/heroes/hero_sai.txt"
 #base "abilities/heroes/hero_saitama.txt"
+#base "abilities/heroes/hero_doppelganger.txt"
 
 //#base "abilities/heroes/hero_maka.txt"
 //#base "abilities/heroes/hero_soul_eater.txt"
