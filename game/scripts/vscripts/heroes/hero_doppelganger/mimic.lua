@@ -25,7 +25,7 @@ if IsServer() then
 			Target = caster,
 			Source = target,
 			Ability = self,
-			EffectName = "particles/units/heroes/hero_rubick/rubick_spell_steal.vpcf",
+			EffectName = "particles/arena/units/heroes/hero_doppelganger/mimic.vpcf",
 			bDodgeable = false,
 			bProvidesVision = false,
 			iMoveSpeed = self:GetSpecialValueFor("projectile_speed"),

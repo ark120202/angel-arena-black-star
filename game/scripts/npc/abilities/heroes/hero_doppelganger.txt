@@ -29,7 +29,7 @@
 
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_rubick/rubick_spell_steal.vpcf"
+			"particle"			"particles/arena/units/heroes/hero_doppelganger/mimic.vpcf"
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
 		}
 	}
