@@ -10689,6 +10689,7 @@
 				"var_type"	"FIELD_INTEGER"
 				"damage_per_stack"	"15 20 25 30 35 40 45"
 				"LinkedSpecialBonus"	"special_bonus_unique_ursa"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 		}
