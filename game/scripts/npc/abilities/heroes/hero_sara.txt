@@ -8,7 +8,7 @@
 		"MaxLevel" 						"4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"HasInnateModifiers"			"1"
-		"LevelsBetweenUpgrades"			"2"
+		"LevelsBetweenUpgrades"			"6"
 		"HasScepterUpgrade"				"1"
 
 		"AbilitySpecial"
@@ -61,7 +61,7 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_health"		"350 700 1050 1400"
+				"bonus_health"		"500 850 1200 1550"
 			}
 			"11"
 			{
@@ -81,9 +81,8 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCooldown"				"25 20 17.5 15 12.5 10 7.5"
+		"AbilityCooldown"				"25 20 17.5 15 12.5 10 7"
 		"HasScepterUpgrade"				"1"
-		"LevelsBetweenUpgrades"			"0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -99,12 +98,12 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"energy_to_disarmor_pct"	"0.5 0.75 1 1.25 1.5 1.75 2.0"
+				"energy_to_disarmor_pct"	"1.0 1.25 1.5 1.75 2.0 2.25 2.5"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"disarmor_duration"	"15"
+				"disarmor_duration"	"7"
 			}
 			"05"
 			{
@@ -114,7 +113,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"energy_to_disarmor_bosses_pct"	"1"
+				"energy_to_disarmor_bosses_pct"	"1.5"
 			}
 		}
 
@@ -132,8 +131,8 @@
 		"AbilityTextureName"			"arena/sara_dark_blink"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-		"AbilityCooldown"				"30 27 24 21 18 15 12"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"24 22 20 18 16 14 12"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -177,8 +176,6 @@
 		"ScriptFile"					"heroes/hero_sara/fragment_of_hate.lua"
 		"AbilityTextureName"			"arena/sara_fragment_of_hate"
 		"MaxLevel" 						"7"
-		"RequiredLevel"					"6"
-		"LevelsBetweenUpgrades"			"10"
 		"AbilityCooldown"				"40"
 		"HasScepterUpgrade"				"1"
 
@@ -187,22 +184,22 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance_pct"	"4 5 6 7 8 9 10"
+				"crit_chance_pct"	"15"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"energy_to_crit_pct" "5"
+				"energy_to_crit_pct" "2"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"energy_to_damage_pct" "8 11 14 17 20 23 26"
+				"energy_to_damage_pct" "3 5 7 9 11 13 15"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_pct_scepter" "130 160 190 220 250 280 310"
+				"damage_pct_scepter" "200"
 			}
 			"05"
 			{
@@ -220,8 +217,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"MaxLevel"						"7"
-		"RequiredLevel"					"6"
-		"LevelsBetweenUpgrades"			"4"
 		"HasScepterUpgrade"				"1"
 
 		"AbilitySpecial"
@@ -229,19 +224,19 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_energy"		"1.25"
+				"damage_per_energy"		"0.5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blocked_damage_pct"	"20 30 40 50 60 70 80"
+				"blocked_damage_pct"	"20 25 30 35 40 45 50"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reflected_damage_pct_scepter"	"10 12 14 16 18 20 22"
+				"reflected_damage_pct_scepter"	"20"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -262,8 +257,7 @@
 		"AbilityTextureName"			"arena/sara_fragment_of_logic"
 		"MaxLevel" 						"7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityCooldown"				"30"
-		"LevelsBetweenUpgrades"			"10"
+		"AbilityCooldown"				"20"
 		"HasScepterUpgrade"				"1"
 
 		"AbilitySpecial"
@@ -271,7 +265,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"energy_const"		"300 250 200 150 100 50 0"
+				"energy_const"		"300 275 250 225 200 175 150"
 			}
 			"02"
 			{
@@ -286,7 +280,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"cooldown_scepter"	"1"
+				"cooldown_scepter"	"3"
 			}
 		}
 
