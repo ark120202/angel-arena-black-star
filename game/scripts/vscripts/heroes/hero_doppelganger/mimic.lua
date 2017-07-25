@@ -59,12 +59,26 @@ modifier_doppelganger_mimic = class({
 	IsHidden   = function() return true end,
 	IsPurgable = function() return false end,
 	GetTexture = function() return "doppelganger_mimic" end,
+	RemoveOnDeath = function() return false end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_PERMANENT end,
 })
 
 if IsServer() then
-	function modifier_doppelganger_mimic:OnDestroy()
-		HeroSelection:ChangeHero(self:GetParent():GetPlayerID(), "npc_arena_hero_doppelganger", true, 0, nil, function(newHero)
+	function modifier_doppelganger_mimic:DeclareFunctions()
+		return {MODIFIER_EVENT_ON_RESPAWN}
+	end
 
-		end)
+	function modifier_doppelganger_mimic:OnDestroy()
+		local parent = self:GetParent()
+		if parent:IsAlive() then
+			HeroSelection:ChangeHero(parent:GetPlayerID(), "npc_arena_hero_doppelganger", true, 0)
+		end
+	end
+
+	function modifier_doppelganger_mimic:OnRespawn(k)
+		local parent = self:GetParent()
+		if k.unit == parent then
+			HeroSelection:ChangeHero(parent:GetPlayerID(), "npc_arena_hero_doppelganger", true, 0)
+		end
 	end
 end
