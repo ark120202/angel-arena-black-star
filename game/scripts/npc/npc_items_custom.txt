@@ -1309,7 +1309,7 @@
 		"ID"							"10064"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityTextureName"			"item_arena/metamorphosis_elixir"
-		"ItemCost"						"3000"
+		"ItemCost"						"2500"
 		"ItemQuality"					"epic"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStockTime"					"300"
