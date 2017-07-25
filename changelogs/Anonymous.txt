@@ -1,0 +1,10 @@
+Talents:
+	respawn reduction:
+		group 9 => 8
+	true strike:
+		group 8 => 9
+Bosses:
+	Boss lvl1:
+		dark blade2 drop chance 10 => 5
+		phantom bone drop chance 15 => 20
+		moon dust2 drop chance 20 => 5

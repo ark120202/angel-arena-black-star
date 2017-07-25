@@ -10,7 +10,6 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	shredder_chakram_2 = 40,
 	shredder_chakram = 40,
 	sniper_shrapnel = 40,
-	abaddon_death_coil = 40,
 	abyssal_underlord_firestorm = 20,
 	bristleback_quill_spray = 40,
 	centaur_hoof_stomp = 40,

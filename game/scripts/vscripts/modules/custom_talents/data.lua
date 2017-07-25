@@ -45,7 +45,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_respawn_time_reduction = {
 		icon = "talents/respawn_time_reduction",
 		cost = 5,
-		group = 9,
+		group = 8,
 		max_level = 14,
 		special_values = {
 			respawn_time_reduction = {-10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75}
@@ -257,7 +257,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_true_strike = {
 		icon = "talents/true_strike",
 		cost = 30,
-		group = 8,
+		group = 9,
 		effect = {
 			modifiers = {
 				"modifier_talent_true_strike"
