@@ -3,8 +3,9 @@ LinkLuaModifier("modifier_doppelganger_mimic", "heroes/hero_doppelganger/mimic.l
 doppelganger_mimic = class({})
 
 if IsServer() then
-	function doppelganger_mimic:OnUpgrade()
+	function doppelganger_mimic:Spawn()
 		self.bannedHeroes = self:GetKeyValue("BannedHeroes") or {}
+		self:SetLevel(1)
 	end
 
 	function doppelganger_mimic:CastFilterResultTarget(hTarget)

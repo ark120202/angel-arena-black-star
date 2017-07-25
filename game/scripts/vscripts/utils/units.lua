@@ -157,6 +157,9 @@ function CDOTA_BaseNPC:AddNewAbility(ability_name, skipLinked)
 			table.insert(linked, h)
 		end
 	end
+	if hAbility.Spawn then
+		hAbility:Spawn()
+	end
 	return hAbility, linked
 end
 
