@@ -105,7 +105,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 		ArenaBeforeTpLocation = hero.ArenaBeforeTpLocation,
 		DuelChecked = hero.DuelChecked,
 	}
-	for team,tab in pairs(Duel.heroes_teams_for_duel) do
+	for team,tab in pairs(Duel.heroes_teams_for_duel or {}) do
 		for i,unit in pairs(tab) do
 			if unit == hero then
 				duelData.path = {team, i}
