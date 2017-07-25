@@ -56,11 +56,14 @@ end
 
 
 modifier_doppelganger_mimic = class({
-	IsHidden   = function() return true end,
-	IsPurgable = function() return false end,
-	GetTexture = function() return "doppelganger_mimic" end,
-	RemoveOnDeath = function() return false end,
-	GetAttributes = function() return MODIFIER_ATTRIBUTE_PERMANENT end,
+	IsHidden            = function() return true end,
+	IsPurgable          = function() return false end,
+	RemoveOnDeath       = function() return false end,
+	GetAttributes       = function() return MODIFIER_ATTRIBUTE_PERMANENT end,
+	GetTexture          = function() return "doppelganger_mimic" end,
+	GetEffectName       = function() return "particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf" end,
+	GetStatusEffectName = function() return "particles/status_fx/status_effect_arc_warden_tempest.vpcf" end,
+	GetPriority         = function() return 100 end,
 })
 
 if IsServer() then
