@@ -23,6 +23,7 @@ arena_hud_error_team_changer_players: Other team already has more players than y
 arena_hud_error_panorama_shop_dropped_items_limit: Dropped items limit was reached
 arena_hud_error_metamorphosis_elixir_ranked: In ranked mode you can change your hero only once
 arena_hud_error_cant_target_duel: Can't Target Duel Area
+arena_hud_error_cant_mimic: Cannot mimic this hero
 
 DOTA_Tooltip_modifier_neutral_champion: Champion
 DOTA_Tooltip_modifier_neutral_champion_Description: 'This neutral is a champion, so it''s %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death'

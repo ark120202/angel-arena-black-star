@@ -18,6 +18,11 @@
 		"AbilityManaCost"				"100"
 		"AbilityCastRange"				"1000"
 
+		"BannedHeroes"
+		{
+
+		}
+
 		"AbilitySpecial"
 		{
 			"01"

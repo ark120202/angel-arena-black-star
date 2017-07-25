@@ -2,17 +2,21 @@ LinkLuaModifier("modifier_doppelganger_mimic", "heroes/hero_doppelganger/mimic.l
 
 doppelganger_mimic = class({})
 
---[[
-	function doppelganger_mimic:CastFilterResultTarget(hTarget)
-		return mimic_BANNED_HEROES[hTarget:GetFullName()] and UF_FAIL_CUSTOM or UF_SUCCESS
-	end
-
-	function doppelganger_mimic:GetCustomCastError(hTarget)
-		return mimic_BANNED_HEROES[hTarget:GetFullName()] and "#dota_hud_error_cant_steal_spell" or ""
-	end
-]]
-
 if IsServer() then
+	function doppelganger_mimic:OnUpgrade()
+		self.bannedHeroes = self:GetKeyValue("BannedHeroes") or {}
+	end
+
+	function doppelganger_mimic:CastFilterResultTarget(hTarget)
+		return (hTarget:IsBoss() or self.bannedHeroes[hTarget:GetFullName()]) and UF_FAIL_CUSTOM or UF_SUCCESS
+	end
+
+	function doppelganger_mimic:GetCustomCastErrorTarget(hTarget)
+		return (hTarget:IsBoss() and "#dota_hud_error_ability_cant_target_boss") or
+			(self.bannedHeroes[hTarget:GetFullName()] and "#arena_hud_error_cant_mimic") or
+			""
+	end
+
 	function doppelganger_mimic:OnSpellStart()
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
