@@ -1285,7 +1285,6 @@
 		"SideShop"						"0"
 		"AbilityCastRange"				"500"
 		"AbilityCooldown"				"10.0"
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"

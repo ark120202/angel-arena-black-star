@@ -1195,7 +1195,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"450"
+				"aura_radius"			"400"
 			}
 			"06"
 			{
@@ -1368,10 +1368,9 @@
 		"AbilityTextureName"			"tinker_rearm"
 		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_4"
 		"MaxLevel"						"7"
-		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"3.0 2.8 2.6 2.4 2.2 2.0 1.8"
-		"AbilityManaCost"				"150 250 350 450 550 650 750"
+		"AbilityCooldown"				"3.0 2.85 2.7 2.55 2.3 2.15 2.0"
+		"AbilityManaCost"				"200 300 400 500 600 700 800"
 
 		"precache"
 		{

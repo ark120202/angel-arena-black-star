@@ -9624,6 +9624,7 @@
 		"AbilityTextureName"			"item_arena/wand_of_midas"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"ItemDisplayCharges"			"1"
+		"AbilityCooldown"				"6"
 
 		"AbilitySpecial"
 		{
