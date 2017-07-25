@@ -1,0 +1,3 @@
+Heroes:
+	Ursa:
+		Fury swipes now don't spell amplify
