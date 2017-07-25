@@ -3,6 +3,8 @@ Talents:
 		group 9 => 8
 	true strike:
 		group 8 => 9
+	Jakiro
+		ice path duration 1.25 => 0.5
 Bosses:
 	Boss lvl1:
 		dark blade2 drop chance 10 => 5

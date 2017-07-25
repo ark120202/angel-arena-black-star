@@ -3301,7 +3301,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"90 80 70"
+		"AbilityCooldown"				"90 85 80"
 		"AbilityManaCost"				"0"
 		"AbilitySharedCooldown"			"midas"
 		"ItemShopTags"					"attack_speed;hard_to_tag"
@@ -3931,7 +3931,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"90 80 70"
+		"AbilityCooldown"				"90 85 80"
 		"AbilityManaCost"				"0"
 		"ItemShopTags"					"attack_speed;hard_to_tag"
 		"ItemQuality"					"common"
@@ -4017,7 +4017,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"90 80 70"
+		"AbilityCooldown"				"90 85 80"
 		"AbilityManaCost"				"0"
 		"ItemShopTags"					"attack_speed;hard_to_tag"
 		"ItemQuality"					"common"
@@ -6414,7 +6414,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"104"
+				"bonus_damage"			"100"
 			}
 			"04"
 			{
@@ -6424,7 +6424,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"140"
+				"bonus_attack_range"	"120"
 			}
 			"06"
 			{
@@ -6444,12 +6444,12 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"thunderstruck_bonus_attack_range"		"100"
+				"thunderstruck_bonus_attack_range"		"50"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"thunderstruck_magical_damage"		"200"
+				"thunderstruck_magical_damage"		"120"
 			}
 		}
 
@@ -7003,7 +7003,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"				"%bonus_magical_armor"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_armor"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"					"%bonus_armor"
 				}
 			}
 

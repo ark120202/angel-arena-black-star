@@ -1420,7 +1420,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 4,
 		requirement = "jakiro_ice_path",
-		special_values = {value = 1.25},
+		special_values = {value = 0.5},
 		effect = {abilities = "special_bonus_unique_jakiro"}
 	},
 	talent_hero_batrider_firefly_duration = {
