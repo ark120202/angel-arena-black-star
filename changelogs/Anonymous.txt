@@ -10,3 +10,5 @@ Bosses:
 		moon dust2 drop chance 20 => 5
 		cursed eye drop chance 10 => 20
 		fallen star drop chance 10 => 20
+Other changes:
+	gold for random hero 1000 => 800
