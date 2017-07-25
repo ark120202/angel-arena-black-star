@@ -8,3 +8,5 @@ Bosses:
 		dark blade2 drop chance 10 => 5
 		phantom bone drop chance 15 => 20
 		moon dust2 drop chance 20 => 5
+		cursed eye drop chance 10 => 20
+		fallen star drop chance 10 => 20
