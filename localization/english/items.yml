@@ -978,7 +978,12 @@ DOTA_Tooltip_ability_item_vermillion_robe: Vermillion Robe
 DOTA_Tooltip_ability_item_vermillion_robe_Description: |-
   <h1>Active: True Flame</h1> Deal half the caster's current health as damage to itself, then, after %damage_delay% seconds, deals damage in an area around the caster, based on the difference between max and current health.
   <h1>Passive: Vermillion Dust</h1> Gain increasing bonuses based on missing HP.
-DOTA_Tooltip_ability_item_vermillion_robe_bonus_all_stats: +$all
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_health: +$health
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_mana: +$mana
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_health_regen: +$hp_regen
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_mana_regen: '%+$mana_regen'
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_armor: +$armor
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_movement: +$move_speed
 DOTA_Tooltip_ability_item_vermillion_robe_hp_as_damage_pct: '%CURRENT HEALTH AS SELF DAMAGE:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_radius: 'DAMAGE RADIUS:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_delay: 'DAMAGE DELAY:'

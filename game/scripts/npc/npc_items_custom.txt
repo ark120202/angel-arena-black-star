@@ -5224,12 +5224,12 @@
 		"ID"							"10207"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"600"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_vermillion_robe"
 		"ItemRequirements"
 		{
-			"01"						"item_reaver;item_eagle;item_mystic_staff;item_cloak"
+			"01"						"item_soul_booster;item_soul_ring;item_tranquil_boots;item_cloak"
 		}
 	}
 
@@ -5241,7 +5241,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange"				"350"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"24"
@@ -5251,37 +5251,62 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"25"
+				"bonus_health"			"500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_as_damage_pct"		"30"
+				"bonus_mana"			"500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_radius"			"350"
+				"bonus_mana_regen"		"100"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_delay"			"1.6"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dust_mana_regen_pct"	"25"
+				"bonus_armor"			"7"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dust_move_speed"		"3"
+				"move_speed"			"75"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dust_damage"			"6"
+				"hp_as_damage_pct"		"15"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_radius"			"350"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_delay"			"1.2"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dust_mana_regen_pct"	"20"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dust_move_speed"		"1"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dust_damage"			"2"
 			}
 		}
 
@@ -5303,9 +5328,12 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
+					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%move_speed"
 				}
 
 				"ThinkInterval"  "0.1"
