@@ -14,3 +14,6 @@ Bosses:
 		fallen star drop chance 10 => 20
 Other changes:
 	gold for random hero 1000 => 800
+Items:
+	Demon king bar:
+		Curse - nerfed dmg 1.25 => 1.15
