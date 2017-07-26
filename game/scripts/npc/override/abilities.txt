@@ -10704,7 +10704,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_reduction"	"70"
+				"damage_reduction"	"80"
 			}
 
 			"03"
