@@ -18,7 +18,9 @@ function GameMode:MetamorphosisElixirCast(data)
 		not Duel:IsDuelOngoing() and
 		not hero:HasModifier("modifier_shredder_chakram_disarm") and
 		(elixirItem or hero.ForcedHeroChange) and
-		(hero.ForcedHeroChange or Options:IsEquals("EnableRatingAffection", false) or PlayerResource:GetPlayerStat(data.PlayerID, "ChangedHeroAmount") == 0) then
+		(hero.ForcedHeroChange or Options:IsEquals("EnableRatingAffection", false) or
+			PlayerResource:GetPlayerStat(data.PlayerID, "ChangedHeroAmount") == 0) then
+		PlayerResource:ModifyPlayerStat(data.PlayerID, "ChangedHeroAmount", 1)
 		HeroSelection:ChangeHero(data.PlayerID, newHeroName, true, elixirItem and elixirItem:GetSpecialValueFor("transformation_time") or 0, elixirItem)
 	end
 end

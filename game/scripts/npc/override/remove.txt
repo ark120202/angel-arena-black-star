@@ -71,6 +71,8 @@
 	"item_guardian_greaves"			"REMOVE"
 	"item_recipe_bfury"				"REMOVE"
 	"item_bfury"					"REMOVE"
+	"item_recipe_rapier"			"REMOVE"
+	"item_rapier"					"REMOVE"
 
 	//"item_halloween_candy_corn"	"REMOVE"
 	//"item_mystery_hook"	"REMOVE"

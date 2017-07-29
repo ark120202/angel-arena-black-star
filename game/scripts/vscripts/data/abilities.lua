@@ -37,11 +37,9 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	item_refresher_arena = true,
 	item_aegis_arena = true,
 	item_refresher_core = true,
-	dazzle_shallow_grave = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
 	destroyer_body_reconstruction = true,
-	item_coffee_bean = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
@@ -154,38 +152,17 @@ COFFEE_BEAN_NOT_REFRESHABLE = {
 	destroyer_body_reconstruction = true,
 	zuus_cloud = true,
 	monkey_king_boundless_strike = true,
+	dazzle_shallow_grave = true,
 }
 
 
 BOSS_BANNED_ABILITIES = {
 	item_heart_cyclone = true,
 	item_blink_staff = true,
-	huskar_life_break = true,
-	necrolyte_reapers_scythe = true,
-	death_prophet_spirit_siphon = true,
-	rubick_personality_steal = true,
 	item_urn_of_demons = true,
 	razor_static_link = true,
-}
-
-PERSONALITY_STEAL_BANNED_HEROES = {
-	npc_arena_hero_sara = true,
-}
-
-PERSONALITY_STEAL_BANNED_ABILITIES = {
-	storm_spirit_ball_lightning = true,
-	tidehunter_ravage = true,
-	arc_warden_tempest_double = true,
-	necrolyte_reapers_scythe = true,
-	meepo_divided_we_stand = true,
-	shredder_chakram_2 = true,
-	shredder_return_chakram_2 = true,
-	shredder_chakram = true,
-	shredder_return_chakram = true,
-	wisp_spirits_aghanims = true,
-	wisp_overcharge_aghanims = true,
-	disruptor_thunder_strike = true,
-	lion_impale = true,
+	tusk_walrus_kick = true,
+	death_prophet_spirit_siphon = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"

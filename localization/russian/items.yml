@@ -944,7 +944,7 @@ DOTA_Tooltip_ability_item_vermillion_robe_hp_as_damage_pct: '%ТЕКУЩЕЕ З�
 DOTA_Tooltip_ability_item_vermillion_robe_damage_radius: 'РАДИУС УРОНА:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_delay: 'ЗАДЕРЖКА ПЕРЕД УРОНОМ:'
 DOTA_Tooltip_ability_item_vermillion_robe_dust_mana_regen_pct: '%РЕГЕНЕРАЦИЯ МАНЫ ЗА ПРОЦЕНТ:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_move_speed: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ЗА ПРОЦЕНТ:'
+DOTA_Tooltip_ability_item_vermillion_robe_dust_bonus_movement_speed: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ЗА ПРОЦЕНТ:'
 DOTA_Tooltip_ability_item_vermillion_robe_dust_damage: 'УРОН ЗА ПРОЦЕНТ:'
 DOTA_Tooltip_modifier_item_vermillion_robe_delay: True Flame Delay от Vermillion Robe
 DOTA_Tooltip_modifier_item_vermillion_robe_delay_Description: 'Когда закончится, нанесёт урон по площади.'
@@ -984,7 +984,7 @@ DOTA_Tooltip_ability_item_echo_sabre_2_slow_duration: 'ДЛИТЕЛЬНОСТЬ 
 DOTA_Tooltip_modifier_item_echo_sabre_2_debuff: Echo Sabre 2
 DOTA_Tooltip_modifier_item_echo_sabre_2_debuff_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_coffee_bean: Coffee Bean
-DOTA_Tooltip_ability_item_coffee_bean_Description: '<h1>Активируемая: Caffeinated</h1> В течение %duration% секунд ваша следующая применённая не-ультимативная способность будет мгновенно перезаряжена.'
+DOTA_Tooltip_ability_item_coffee_bean_Description: '<h1>Использование: Caffeinated</h1> В течение %duration% секунд ваша следующая применённая не-ультимативная способность будет мгновенно перезаряжена.'
 DOTA_Tooltip_ability_item_coffee_bean_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_modifier_item_coffee_bean: Coffee Bean
 DOTA_Tooltip_modifier_item_coffee_bean_Description: Следующая применённая не-ультимативная способность будет мгновенно перезаряжена.
@@ -1451,3 +1451,8 @@ DOTA_Tooltip_modifier_item_runic_mekansm_effect_Description: Восстанов�
 
 DOTA_Tooltip_ability_item_tree_banana: Банан
 DOTA_Tooltip_ability_item_tree_banana_Description: '<h1>Использование: Банан</h1> Увеличивает ваш интеллект на %intellect%.<br>При поглощении выбрасывается банановая кожура, которая заставляет наступившего на неё врага скользить, двигаясь на %slide_distance% единиц в направлении взгляда противника в течении %slide_duration% секунды. Кожура исчезает сразу как только враг наступит на неё.'
+
+DOTA_Tooltip_ability_item_rapier_arena_Description: |-
+  <h1>Пассивная: Everlasting</h1> <font color='#e03e2e'>Предмет выпадает при смерти и не может быть уничтожен.</font><br><br>Если выпавший предмет поднимет союзник владельца, то Divine Rapier потеряет свои свойства, пока его не вернут бывшему владельцу. Если предмет подберёт враг, то после его смерти бонусы от Divine Rapier сможет получить кто угодно. Курьер не может подобрать этот предмет, если он выпал при смерти.
+DOTA_Tooltip_ability_item_rapier_arena_Note0: Если Divine Rapier поднимет враг её первого владельца, то она выпадет только при смерти этого врага.
+DOTA_Tooltip_ability_item_rapier_arena_Lore: Настолько могущественное, что у него даже не может быть единственного владельца.

@@ -189,6 +189,7 @@ function HeroSelection:InitializeHeroClass(unit, classTable)
 end
 
 function HeroSelection:ForceChangePlayerHeroMenu(playerID)
+	PlayerResource:ModifyPlayerStat(playerID, "ChangedHeroAmount", 1)
 	HeroSelection:ChangeHero(playerID, FORCE_PICKED_HERO, true, 0, nil, function(hero)
 		hero:AddNoDraw()
 		FindClearSpaceForUnit(hero, FindFountain(PlayerResource:GetTeam(playerID)):GetAbsOrigin(), true)

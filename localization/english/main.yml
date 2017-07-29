@@ -23,6 +23,7 @@ arena_hud_error_team_changer_players: Other team already has more players than y
 arena_hud_error_panorama_shop_dropped_items_limit: Dropped items limit was reached
 arena_hud_error_metamorphosis_elixir_ranked: In ranked mode you can change your hero only once
 arena_hud_error_cant_target_duel: Can't Target Duel Area
+arena_hud_error_cant_mimic: Cannot mimic this hero
 
 DOTA_Tooltip_modifier_neutral_champion: Champion
 DOTA_Tooltip_modifier_neutral_champion_Description: 'This neutral is a champion, so it''s %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death'
@@ -318,13 +319,7 @@ DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_chance_to_frostbite_pct
 
 DOTA_Tooltip_ability_ability_empty: Empty Ability Slot
 DOTA_Tooltip_ability_ability_empty_Description: ''
-DOTA_Tooltip_ability_rubick_personality_steal: Personality Steal
-DOTA_Tooltip_ability_rubick_personality_steal_Description: 'Rubick studies the trace magical essence of one enemy hero, learning the secrets of all the spells the hero has and copying it''s model. Rubick can use that spells as his own until he dies or removes it, clicking on the buff icon in status bar.'
-DOTA_Tooltip_modifier_rubick_personality_steal: Personality Steal
-DOTA_Tooltip_modifier_rubick_personality_steal_Description: |-
-  Rubick has stolen abilities and model.
 
-  Click to remove.
 DOTA_Tooltip_ability_item_god_transform_freya: 'Select Hero: Freya'
 DOTA_Tooltip_ability_item_god_transform_freya_Description: |-
   Transforms your hero to Freya.

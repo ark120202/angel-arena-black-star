@@ -14,7 +14,7 @@
 		"MaxLevel"						"7"
 		"AOERadius"						"%aoe"
 		"HasScepterUpgrade"				"1"
-		"LevelsBetweenUpgrades" "20"
+		"LevelsBetweenUpgrades" "9"
 
 		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.45 0.4"
 		"AbilityCooldown"				"160 150 140 130 120 100 90"
@@ -56,12 +56,12 @@
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"golem_regen_tooltip"	"25 50 75 100 150 200 250"
+				"golem_regen_tooltip"		"25 50 75 100 150 200 250"
 			}
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bounty"					"100 300 500 900 1200 1500 3500"
+				"bounty"					"100 300 500 900 1200 1500 2000"
 			}
 			"09"
 			{
@@ -81,7 +81,7 @@
 			"12"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bounty_scepter"			"25 50 75 100 125 150 174"
+				"bounty_scepter"			"300 500 900 1200 1500 2000 3000"
 			}
 		}
 
@@ -212,7 +212,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"count"						"3 4 5 6 8 10 12"
+				"count"						"3 4 5 6 9 12 18"
 			}
 			"02"
 			{
@@ -597,7 +597,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_rate"				"12.5 10.5 8.5 6.5 4.5 3.5 2.5"
+				"slow_rate"				"2.0 3.0 4.0 5.0 6.0 7.0 8.0"
 			}
 			"03"
 			{

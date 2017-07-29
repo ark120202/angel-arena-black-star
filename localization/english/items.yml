@@ -978,12 +978,18 @@ DOTA_Tooltip_ability_item_vermillion_robe: Vermillion Robe
 DOTA_Tooltip_ability_item_vermillion_robe_Description: |-
   <h1>Active: True Flame</h1> Deal half the caster's current health as damage to itself, then, after %damage_delay% seconds, deals damage in an area around the caster, based on the difference between max and current health.
   <h1>Passive: Vermillion Dust</h1> Gain increasing bonuses based on missing HP.
-DOTA_Tooltip_ability_item_vermillion_robe_bonus_all_stats: +$all
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_health: +$health
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_mana: +$mana
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_health_regen: +$hp_regen
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_mana_regen: '%+$mana_regen'
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_armor: +$armor
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_movement: +$move_speed
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_magical_damage_resistance_pct: '%+$spell_resist'
 DOTA_Tooltip_ability_item_vermillion_robe_hp_as_damage_pct: '%CURRENT HEALTH AS SELF DAMAGE:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_radius: 'DAMAGE RADIUS:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_delay: 'DAMAGE DELAY:'
 DOTA_Tooltip_ability_item_vermillion_robe_dust_mana_regen_pct: '%MANA REGEN PER HP PERCENT:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_move_speed: 'MOVE SPEED PER HP PERCENT:'
+DOTA_Tooltip_ability_item_vermillion_robe_dust_bonus_movement_speed: 'MOVE SPEED PER HP PERCENT:'
 DOTA_Tooltip_ability_item_vermillion_robe_dust_damage: 'DAMAGE PER HP PERCENT:'
 DOTA_Tooltip_modifier_item_vermillion_robe_delay: Vermillion Robe True Flame Delay
 DOTA_Tooltip_modifier_item_vermillion_robe_delay_Description: Will deal AoE damage when buff ends.
@@ -1033,7 +1039,7 @@ DOTA_Tooltip_ability_item_echo_sabre_2_slow_duration: 'DEBUFF DURATION:'
 DOTA_Tooltip_modifier_item_echo_sabre_2_debuff: Echo Sabre 2
 DOTA_Tooltip_modifier_item_echo_sabre_2_debuff_Description: 'Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_coffee_bean: Coffee Bean
-DOTA_Tooltip_ability_item_coffee_bean_Description: '<h1>Active: Caffeinated</h1> Within %duration% seconds your next executed non-ultimate ability will be refreshed.'
+DOTA_Tooltip_ability_item_coffee_bean_Description: '<h1>Use: Caffeinated</h1> Within %duration% seconds your next executed non-ultimate ability will be refreshed.'
 DOTA_Tooltip_ability_item_coffee_bean_duration: 'DURATION:'
 DOTA_Tooltip_modifier_item_coffee_bean: Coffee Bean
 DOTA_Tooltip_modifier_item_coffee_bean_Description: Next executed non-ultimate ability will be refreshed.
@@ -1411,7 +1417,6 @@ DOTA_Tooltip_ability_item_phantom_bone_bonus_hp_regen_pct: '%+$hp_regen'
 DOTA_Tooltip_ability_item_phantom_cuirass: Phantom Cuirass
 DOTA_Tooltip_ability_item_phantom_cuirass_Description: '<h1>Passive: Assault Aura</h1> Grants attack speed and armor to nearby allied units, and decreases the armor of nearby enemies.'
 DOTA_Tooltip_ability_item_phantom_cuirass_bonus_armor: +$armor
-DOTA_Tooltip_ability_item_phantom_cuirass_bonus_hp_regen_pct: '%+$hp_regen'
 DOTA_Tooltip_ability_item_phantom_cuirass_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_phantom_cuirass_aura_attack_speed: 'AURA ATTACK SPEED:'
 DOTA_Tooltip_ability_item_phantom_cuirass_aura_positive_armor: 'AURA ALLY BONUS ARMOR:'
@@ -1815,3 +1820,10 @@ DOTA_Tooltip_modifier_item_runic_mekansm_effect_Description: Regenerating %dMODI
 
 DOTA_Tooltip_ability_item_tree_banana: Banana
 DOTA_Tooltip_ability_item_tree_banana_Description: '<h1>Use: Banana</h1> Increases your Intelligence by %intellect%.<br>Drops a banana peel when consumed, which causes the next enemy which step on it to slip, moving %slide_distance% range at the direction it faced within %slide_duration% second. The peel disappears once an enemy slipped on it.'
+
+DOTA_Tooltip_ability_item_rapier_arena: Divine Rapier
+DOTA_Tooltip_ability_item_rapier_arena_Description: |-
+  <h1>Passive: Everlasting</h1> <font color='#e03e2e'>Dropped on death, and cannot be destroyed.</font> <br><br>Becomes unusable if picked up by an ally of its owner until it is returned to its owner. It is immediately usable by anybody if an enemy of the owner picks it up and is killed. A dropped Rapier cannot be picked up by a courier.
+DOTA_Tooltip_ability_item_rapier_arena_Note0: If Divine Rapier is dropped and picked up by an enemy of its original owner, it cannot be dropped again except by death.
+DOTA_Tooltip_ability_item_rapier_arena_Lore: So powerful, it cannot have a single owner.
+DOTA_Tooltip_ability_item_rapier_arena_bonus_damage: +$damage

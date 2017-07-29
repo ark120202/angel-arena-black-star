@@ -38,7 +38,7 @@ MODIFIERS_TRUESIGHT = {
 }
 
 ONCLICK_PURGABLE_MODIFIERS = {
-	"modifier_rubick_personality_steal",
+	"modifier_doppelganger_mimic",
 	"modifier_tether_ally_aghanims"
 }
 

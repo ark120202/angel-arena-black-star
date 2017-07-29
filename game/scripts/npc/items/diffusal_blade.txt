@@ -86,7 +86,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14 12 10 8 6"
+		"AbilityCooldown"				"6"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -112,7 +112,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"40 60 80 100 120"
+				"feedback_mana_burn"	"50 60 70 80 90"
 			}
 			"04"
 			{
@@ -137,7 +137,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"purge_slow_movespeed_pct"	"-20 -40 -60 -80 -100"
+				"purge_slow_movespeed_pct"	"-60 -70 -80 -90 -100"
 			}
 			"09"
 			{
@@ -240,7 +240,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14 12 10 8 6"
+		"AbilityCooldown"				"6"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -266,7 +266,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"40 60 80 100 120"
+				"feedback_mana_burn"	"50 60 70 80 90"
 			}
 			"04"
 			{
@@ -291,7 +291,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"purge_slow_movespeed_pct"	"-20 -40 -60 -80 -100"
+				"purge_slow_movespeed_pct"	"-60 -70 -80 -90 -100"
 			}
 			"09"
 			{
@@ -394,7 +394,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14 12 10 8 6"
+		"AbilityCooldown"				"6"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -420,7 +420,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"40 60 80 100 120"
+				"feedback_mana_burn"	"50 60 70 80 90"
 			}
 			"04"
 			{
@@ -445,7 +445,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"purge_slow_movespeed_pct"	"-20 -40 -60 -80 -100"
+				"purge_slow_movespeed_pct"	"-60 -70 -80 -90 -100"
 			}
 			"09"
 			{
@@ -548,7 +548,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14 12 10 8 6"
+		"AbilityCooldown"				"6"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -574,7 +574,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"40 60 80 100 120"
+				"feedback_mana_burn"	"50 60 70 80 90"
 			}
 			"04"
 			{
@@ -599,7 +599,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"purge_slow_movespeed_pct"	"-20 -40 -60 -80 -100"
+				"purge_slow_movespeed_pct"	"-60 -70 -80 -90 -100"
 			}
 			"09"
 			{
@@ -702,7 +702,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14 12 10 8 6"
+		"AbilityCooldown"				"6"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -728,7 +728,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"40 60 80 100 120"
+				"feedback_mana_burn"	"50 60 70 80 90"
 			}
 			"04"
 			{
@@ -753,7 +753,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"purge_slow_movespeed_pct"	"-20 -40 -60 -80 -100"
+				"purge_slow_movespeed_pct"	"-60 -70 -80 -90 -100"
 			}
 			"09"
 			{
