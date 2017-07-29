@@ -23,6 +23,7 @@
 #base "abilities/heroes/hero_anakim.txt"
 #base "abilities/heroes/hero_sai.txt"
 #base "abilities/heroes/hero_saitama.txt"
+#base "abilities/heroes/hero_doppelganger.txt"
 
 //#base "abilities/heroes/hero_maka.txt"
 //#base "abilities/heroes/hero_soul_eater.txt"
@@ -974,90 +975,6 @@
 					"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
-	"rubick_personality_steal"
-	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"rubick_spell_steal"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel"						"1"
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"CastFilterRejectCaster" 		"1"
-
-		"AbilityCastPoint"				"0.1"
-		"AbilityManaCost"				"100"
-		"AbilityCastRange"				"1000"
-
-		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_rubick/rubick_spell_steal.vpcf"
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"900"
-			}
-		}
-
-		"OnCreated"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SetMaxLevel"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_rubick/personality_steal.lua"
-				"Function"		"SpellCheck"
-				"particle"		"particles/units/heroes/hero_rubick/rubick_spell_steal.vpcf"
-			}
-		}
-
-		"OnProjectileHitUnit"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_rubick/personality_steal.lua"
-				"Function"		"SpellSteal"
-			}
-
-			"FireSound"
-			{
-				"EffectName"	"Hero_Rubick.SpellSteal.Complete"
-				"Target"		"CASTER"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_rubick_personality_steal"
-			{
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_rubick/personality_steal.lua"
-						"Function"		"RemoveSpell"
-					}
 				}
 			}
 		}

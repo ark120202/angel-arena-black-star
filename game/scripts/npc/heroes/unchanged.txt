@@ -382,6 +382,36 @@
 		"DisableWearables" "0"
 	}
 
+	"npc_dota_hero_rubick"
+	{
+		"override_hero"	"npc_dota_hero_rubick"
+		"Ability1"	"rubick_telekinesis"
+		"Ability2"	"rubick_telekinesis_land"
+		"Ability3"	"rubick_fade_bolt"
+		"Ability4"	"rubick_null_field"
+		"Ability5"	"rubick_empty1"
+		"Ability6"	"rubick_empty2"
+		"Ability7"	"rubick_spell_steal"
+		"Ability8"	"rubick_hidden1"
+		"Ability9"	"rubick_hidden2"
+		"Ability10"	"rubick_hidden3"
+		"Ability11"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+		"Ability17"	""
+		"AttackRate"	"1.7"
+		"Ability18"	""
+		"Ability19"	""
+		"Ability20"	""
+		"Ability21"	""
+		"Ability22"	""
+		"Ability23"	""
+		"Ability24"	""
+	}
+
 	"npc_dota_hero_sand_king"
 	{
 		"override_hero"	"npc_dota_hero_sand_king"

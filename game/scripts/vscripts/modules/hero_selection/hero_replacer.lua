@@ -66,7 +66,6 @@ function HeroSelection:SelectHero(playerId, heroName, callback, bSkipPrecache)
 end
 
 function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item, callback)
-	PlayerResource:ModifyPlayerStat(playerId, "ChangedHeroAmount", 1)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	hero.ChangingHeroProcessRunning = true
 	if hero.PocketItem then
@@ -99,6 +98,19 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			table.insert(items, CreateItem("item_dummy", hero, hero))
 		end
 	end
+	local duelData = {
+		StatusBeforeArena = hero.StatusBeforeArena,
+		OnDuel = hero.OnDuel,
+		ArenaBeforeTpLocation = hero.ArenaBeforeTpLocation,
+		DuelChecked = hero.DuelChecked,
+	}
+	for team,tab in pairs(Duel.heroes_teams_for_duel or {}) do
+		for i,unit in pairs(tab) do
+			if unit == hero then
+				duelData.path = {team, i}
+			end
+		end
+	end
 	RemoveAllOwnedUnits(playerId)
 	local startTime = GameRules:GetDOTATime(true, true)
 	HeroSelection:SelectHero(playerId, newHeroName, function(newHero)
@@ -120,6 +132,14 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			newHero:AddItem(v)
 		end
 		ClearSlotsFromDummy(newHero)
+
+		for k,v in pairs(duelData) do
+			if k ~= "path" then
+				newHero[k] = v
+			else
+				Duel.heroes_teams_for_duel[v[1]][v[1]] = newHero
+			end
+		end
 		Timers:CreateTimer(startTime + duration - GameRules:GetDOTATime(true, true), function()
 			if IsValidEntity(newHero) then
 				newHero:RemoveModifierByName("modifier_hero_selection_transformation")

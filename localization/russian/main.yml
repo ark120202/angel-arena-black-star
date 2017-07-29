@@ -15,6 +15,7 @@ arena_hud_error_team_changer_players: В другой команде уже бо
 arena_hud_error_panorama_shop_dropped_items_limit: Достигнут лимит выброшенных предметов
 arena_hud_error_metamorphosis_elixir_ranked: В рейтинговом режиме сменить героя можно лишь один раз
 arena_hud_error_cant_target_duel: Способность нельзя использовать на арене для дуэли
+arena_hud_error_cant_mimic: Невозможно скопировать этого героя
 
 DOTA_Tooltip_modifier_neutral_champion: Чемпион
 DOTA_Tooltip_modifier_neutral_champion_Description: 'Этот нейтрал - чемпион, он в %dMODIFIER_PROPERTY_TOOLTIP% раз сильнее обычного, но награда за него также увеличена'
@@ -293,13 +294,7 @@ DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_attack_slow_scepter: '�
 DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_chance_to_frostbite_pct: '%ШАНС НА FROSTBITE:'
 
 DOTA_Tooltip_ability_ability_empty: Слот для способности
-DOTA_Tooltip_ability_rubick_personality_steal: Personality Steal
-DOTA_Tooltip_ability_rubick_personality_steal_Description: 'Rubick изучает остатки магической сущности вражеского героя, обучаясь секретам всех заклинаний, которыми владеет этот герой и копируя его модель. Маг сможет использовать это заклинание как свое собственное пока он не умрет, или пока не снимет эффект, нажав на него в списке эффектов.'
-DOTA_Tooltip_modifier_rubick_personality_steal: Personality Steal
-DOTA_Tooltip_modifier_rubick_personality_steal_Description: |-
-  Украл заклинания и модель.
 
-  Нажмите сюда, чтобы снять этот эффект.
 DOTA_Tooltip_ability_item_god_transform_freya_Description: |-
   Превращает вашего героя в Freya.
 
