@@ -786,16 +786,6 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
-	"item_recipe_rapier"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-	}
-	"item_rapier"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-	}
 	"item_recipe_monkey_king_bar"
 	{
 		"SecretShop"					"0"

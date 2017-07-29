@@ -173,7 +173,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_monkey_king_bar",
 			"item_greater_crit",
 			"item_butterfly_arena",
-			"item_rapier",
+			"item_rapier_arena",
 			"item_abyssal_blade",
 			"item_bloodthorn_2",
 			"item_radiance_3",

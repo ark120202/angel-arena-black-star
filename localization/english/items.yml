@@ -1820,3 +1820,10 @@ DOTA_Tooltip_modifier_item_runic_mekansm_effect_Description: Regenerating %dMODI
 
 DOTA_Tooltip_ability_item_tree_banana: Banana
 DOTA_Tooltip_ability_item_tree_banana_Description: '<h1>Use: Banana</h1> Increases your Intelligence by %intellect%.<br>Drops a banana peel when consumed, which causes the next enemy which step on it to slip, moving %slide_distance% range at the direction it faced within %slide_duration% second. The peel disappears once an enemy slipped on it.'
+
+DOTA_Tooltip_ability_item_rapier_arena: Divine Rapier
+DOTA_Tooltip_ability_item_rapier_arena_Description: |-
+  <h1>Passive: Everlasting</h1> <font color='#e03e2e'>Dropped on death, and cannot be destroyed.</font> <br><br>Becomes unusable if picked up by an ally of its owner until it is returned to its owner. It is immediately usable by anybody if an enemy of the owner picks it up and is killed. A dropped Rapier cannot be picked up by a courier.
+DOTA_Tooltip_ability_item_rapier_arena_Note0: If Divine Rapier is dropped and picked up by an enemy of its original owner, it cannot be dropped again except by death.
+DOTA_Tooltip_ability_item_rapier_arena_Lore: So powerful, it cannot have a single owner.
+DOTA_Tooltip_ability_item_rapier_arena_bonus_damage: +$damage

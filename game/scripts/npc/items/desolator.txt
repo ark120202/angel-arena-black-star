@@ -507,7 +507,7 @@
 		"ItemResult"					"item_desolator6"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator5;item_rapier;item_demons_paw"
+			"01"						"item_desolator5;item_rapier_arena;item_demons_paw"
 		}
 	}
 

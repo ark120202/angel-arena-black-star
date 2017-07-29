@@ -7463,7 +7463,7 @@
 		"ItemResult"					"item_piercing_blade"
 		"ItemRequirements"
 		{
-			"01"						"item_javelin;item_rapier"
+			"01"						"item_javelin;item_rapier_arena"
 		}
 	}
 
@@ -10500,6 +10500,73 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"intellect"				"3"
+			}
+		}
+	}
+
+	"item_recipe_rapier_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_rapier_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_relic;item_demon_edge"
+		}
+	}
+
+	"item_rapier_arena"
+	{
+		"BaseClass"             		"item_datadriven"
+		"AbilityTextureName"			"item_rapier"
+		"ID"							"-1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+
+		"ItemAliases"					"divine rapier"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		"ItemContributesToNetWorthWhenDropped"	"0"
+		"AllowedInBackpack"				"0"
+		"IsTempestDoubleClonable"		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"330"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_rapier_arena"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"DropItem"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+				}
 			}
 		}
 	}

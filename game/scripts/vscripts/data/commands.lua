@@ -31,7 +31,7 @@ CHAT_COMMANDS = {
 					break
 				end
 			end
-			hero:AddItem(CreateItem("item_rapier", hero, hero))
+			hero:AddItem(CreateItem("item_rapier_arena", hero, hero))
 			hero:AddItem(CreateItem("item_blink_arena", hero, hero))
 			SendToServerConsole("dota_ability_debug 1")
 		end
