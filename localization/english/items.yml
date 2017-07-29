@@ -1039,7 +1039,7 @@ DOTA_Tooltip_ability_item_echo_sabre_2_slow_duration: 'DEBUFF DURATION:'
 DOTA_Tooltip_modifier_item_echo_sabre_2_debuff: Echo Sabre 2
 DOTA_Tooltip_modifier_item_echo_sabre_2_debuff_Description: 'Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_coffee_bean: Coffee Bean
-DOTA_Tooltip_ability_item_coffee_bean_Description: '<h1>Active: Caffeinated</h1> Within %duration% seconds your next executed non-ultimate ability will be refreshed.'
+DOTA_Tooltip_ability_item_coffee_bean_Description: '<h1>Use: Caffeinated</h1> Within %duration% seconds your next executed non-ultimate ability will be refreshed.'
 DOTA_Tooltip_ability_item_coffee_bean_duration: 'DURATION:'
 DOTA_Tooltip_modifier_item_coffee_bean: Coffee Bean
 DOTA_Tooltip_modifier_item_coffee_bean_Description: Next executed non-ultimate ability will be refreshed.
