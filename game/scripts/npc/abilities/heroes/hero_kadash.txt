@@ -251,7 +251,7 @@
 		"AbilityTextureName"			"arena/kadash_survival_skills"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"LevelsBetweenUpgrades"			"3"
+		"LevelsBetweenUpgrades"			"4"
 
 		"AbilitySpecial"
 		{

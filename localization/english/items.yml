@@ -984,6 +984,7 @@ DOTA_Tooltip_ability_item_vermillion_robe_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_mana_regen: '%+$mana_regen'
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_armor: +$armor
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_movement: +$move_speed
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_magical_armor: '%+$spell_resist'
 DOTA_Tooltip_ability_item_vermillion_robe_hp_as_damage_pct: '%CURRENT HEALTH AS SELF DAMAGE:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_radius: 'DAMAGE RADIUS:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_delay: 'DAMAGE DELAY:'
@@ -1416,7 +1417,6 @@ DOTA_Tooltip_ability_item_phantom_bone_bonus_hp_regen_pct: '%+$hp_regen'
 DOTA_Tooltip_ability_item_phantom_cuirass: Phantom Cuirass
 DOTA_Tooltip_ability_item_phantom_cuirass_Description: '<h1>Passive: Assault Aura</h1> Grants attack speed and armor to nearby allied units, and decreases the armor of nearby enemies.'
 DOTA_Tooltip_ability_item_phantom_cuirass_bonus_armor: +$armor
-DOTA_Tooltip_ability_item_phantom_cuirass_bonus_hp_regen_pct: '%+$hp_regen'
 DOTA_Tooltip_ability_item_phantom_cuirass_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_phantom_cuirass_aura_attack_speed: 'AURA ATTACK SPEED:'
 DOTA_Tooltip_ability_item_phantom_cuirass_aura_positive_armor: 'AURA ALLY BONUS ARMOR:'

@@ -25,7 +25,7 @@ function TrueFlameDamage(keys)
 	local ability = keys.ability
 	local damage = ability.OldHealth - caster:GetHealth()
 	ability.OldHealth = nil
-	
+
 	ParticleManager:CreateParticle("particles/arena/items_fx/vermillion_robe_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	for _,v in ipairs(FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, ability:GetAbilitySpecial("damage_radius"), ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
 		ApplyDamage({
@@ -33,6 +33,7 @@ function TrueFlameDamage(keys)
 			attacker = caster,
 			damage = damage,
 			damage_type = ability:GetAbilityDamageType(),
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 			ability = ability
 		})
 	end

@@ -14,22 +14,21 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_per_attack"	"1"
+				"armor_per_attack"	"0 0 0 0 1 1 1"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"ablaze_radius"		"360 375 390 405 420 435 450"
-			}
+				"ablaze_radius"		"400 415 430 445 460 475 500"
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"ablaze_max_damage_per_second"	"50 80 110 140 170 200 230"
+				"ablaze_max_damage_per_second"	"110 140 170 200 230 260 290"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"ablaze_threshold_pct"	"50 55 60 65 70 75 80"
+				"ablaze_threshold_pct"	"45 50 55 60 65 70 75"
 			}
 		}
 

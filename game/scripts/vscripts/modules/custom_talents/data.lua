@@ -277,8 +277,8 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_hero_arthas_vsolyanova_bunus_chance = {
 		icon = "talents/heroes/arthas_vsolyanova_bunus_chance",
-		cost = 25,
-		group = 5,
+		cost = 10,
+		group = 9,
 		max_level = 5,
 		requirement = "arthas_vsolyanova",
 		special_values = {
@@ -305,7 +305,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_skeleton_king_reincarnation_notime_stun = {
 		icon = "talents/heroes/skeleton_king_reincarnation_notime_stun",
 		cost = 1,
-		group = 10,
+		group = 9,
 		requirement = "skeleton_king_reincarnation_arena",
 	},
 	talent_hero_sai_release_of_forge_bonus_respawn_time_reduction = {
@@ -434,7 +434,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_drow_ranger_precision_aura_damage = {
 		icon = "drow_ranger_trueshot",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "drow_ranger_trueshot",
 		special_values = {value = 16},
 		effect = {abilities = "special_bonus_unique_drow_ranger_1"}
@@ -442,7 +442,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_drow_ranger_gust_distance = {
 		icon = "drow_ranger_silence",
 		cost = 1,
-		group = 3,
+		group = 7,
 		requirement = "drow_ranger_silence",
 		special_values = {value = 400},
 		effect = {abilities = "special_bonus_unique_drow_ranger_2"}
@@ -922,7 +922,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_tinker_laser_damage = {
 		icon = "tinker_laser",
 		cost = 1,
-		group = 7,
+		group = 9,
 		requirement = "tinker_laser",
 		special_values = {value = 400},
 		effect = {abilities = "special_bonus_unique_tinker"}
@@ -1242,7 +1242,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_dark_seer_vacuum_aoe = {
 		icon = "dark_seer_vacuum",
 		cost = 1,
-		group = 3,
+		group = 7,
 		requirement = "dark_seer_vacuum",
 		special_values = {value = 75},
 		effect = {abilities = "special_bonus_unique_dark_seer_2"}
@@ -1250,7 +1250,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_dark_seer_ion_shell_dmg = {
 		icon = "dark_seer_ion_shell",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "dark_seer_ion_shell",
 		special_values = {value = 220},
 		effect = {abilities = "special_bonus_unique_dark_seer"}
@@ -1258,7 +1258,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_clinkz_searing_arrows_dmg = {
 		icon = "clinkz_searing_arrows",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "clinkz_searing_arrows",
 		special_values = {value = 110},
 		effect = {abilities = "special_bonus_unique_clinkz_1"}
@@ -1266,7 +1266,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_clinkz_strafe_as = {
 		icon = "clinkz_strafe",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "clinkz_strafe",
 		special_values = {value = 70},
 		effect = {abilities = "special_bonus_unique_clinkz_2"}
@@ -1554,7 +1554,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_ursa_fury_swipes_dmg = {
 		icon = "ursa_fury_swipes",
 		cost = 1,
-		group = 6,
+		group = 9,
 		requirement = "ursa_fury_swipes",
 		special_values = {value = 35},
 		effect = {abilities = "special_bonus_unique_ursa"}
@@ -1618,7 +1618,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_invoker_forge_spirit_summon = {
 		icon = "invoker_forge_spirit",
 		cost = 1,
-		group = 4,
+		group = 7,
 		requirement = "invoker_forge_spirit",
 		special_values = {value = 3},
 		effect = {abilities = "special_bonus_unique_invoker_1"}
@@ -1626,7 +1626,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_invoker_deafening_blast_aoe = {
 		icon = "invoker_deafening_blast",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "invoker_deafening_blast",
 		special_values = {value = 0},
 		effect = {abilities = "special_bonus_unique_invoker_2"}
@@ -1634,7 +1634,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_invoker_tornado_cd = {
   		icon = "invoker_tornado",
  		cost = 1,
-  		group = 7,
+  		group = 9,
   		requirement = "invoker_tornado",
   		special_values = {value = 14},
  		effect = {abilities = "special_bonus_unique_invoker_3"}
@@ -1642,7 +1642,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_silencer_curse_of_the_silent_slow = {
 		icon = "silencer_curse_of_the_silent",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "silencer_curse_of_the_silent",
 		special_values = {value = -10},
 		effect = {abilities = "special_bonus_unique_silencer"}
@@ -1658,7 +1658,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_lycan_feral_impulse_regen = {
 		icon = "lycan_feral_impulse",
 		cost = 1,
-		group = 6,
+		group = 7,
 		requirement = "lycan_feral_impulse",
 		special_values = {value = 32},
 		effect = {abilities = "special_bonus_unique_lycan_3"}
@@ -1682,7 +1682,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_brewmaster_thunder_clap_dmg = {
 		icon = "brewmaster_thunder_clap",
 		cost = 1,
-		group = 6,
+		group = 7,
 		requirement = "brewmaster_thunder_clap",
 		special_values = {value = 400},
 		effect = {abilities = "special_bonus_unique_brewmaster_2"}
@@ -1690,7 +1690,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_brewmaster_thunder_clap_slow = {
 		icon = "brewmaster_thunder_clap",
 		cost = 1,
-		group = 5,
+		group = 6,
 		requirement = "brewmaster_thunder_clap",
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_brewmaster_3"}
@@ -1698,7 +1698,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_brewmaster_primal_split_health = {
 		icon = "brewmaster_primal_split",
 		cost = 1,
-		group = 7,
+		group = 8,
 		requirement = "brewmaster_primal_split",
 		special_values = {value = 2000},
 		effect = {abilities = "special_bonus_unique_brewmaster"}
