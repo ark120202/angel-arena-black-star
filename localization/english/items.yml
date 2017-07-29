@@ -989,7 +989,7 @@ DOTA_Tooltip_ability_item_vermillion_robe_hp_as_damage_pct: '%CURRENT HEALTH AS 
 DOTA_Tooltip_ability_item_vermillion_robe_damage_radius: 'DAMAGE RADIUS:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_delay: 'DAMAGE DELAY:'
 DOTA_Tooltip_ability_item_vermillion_robe_dust_mana_regen_pct: '%MANA REGEN PER HP PERCENT:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_move_speed: 'MOVE SPEED PER HP PERCENT:'
+DOTA_Tooltip_ability_item_vermillion_robe_dust_bonus_movement_speed: 'MOVE SPEED PER HP PERCENT:'
 DOTA_Tooltip_ability_item_vermillion_robe_dust_damage: 'DAMAGE PER HP PERCENT:'
 DOTA_Tooltip_modifier_item_vermillion_robe_delay: Vermillion Robe True Flame Delay
 DOTA_Tooltip_modifier_item_vermillion_robe_delay_Description: Will deal AoE damage when buff ends.

@@ -5261,7 +5261,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"move_speed"			"75"
+				"bonus_movement_speed"	"75"
 			}
 			"07"
 			{
@@ -5327,7 +5327,7 @@
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%move_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_movement_speed"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_damage_resistance_pct"
 				}
 

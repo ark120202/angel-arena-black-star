@@ -944,7 +944,7 @@ DOTA_Tooltip_ability_item_vermillion_robe_hp_as_damage_pct: '%ТЕКУЩЕЕ З�
 DOTA_Tooltip_ability_item_vermillion_robe_damage_radius: 'РАДИУС УРОНА:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_delay: 'ЗАДЕРЖКА ПЕРЕД УРОНОМ:'
 DOTA_Tooltip_ability_item_vermillion_robe_dust_mana_regen_pct: '%РЕГЕНЕРАЦИЯ МАНЫ ЗА ПРОЦЕНТ:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_move_speed: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ЗА ПРОЦЕНТ:'
+DOTA_Tooltip_ability_item_vermillion_robe_dust_bonus_movement_speed: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ЗА ПРОЦЕНТ:'
 DOTA_Tooltip_ability_item_vermillion_robe_dust_damage: 'УРОН ЗА ПРОЦЕНТ:'
 DOTA_Tooltip_modifier_item_vermillion_robe_delay: True Flame Delay от Vermillion Robe
 DOTA_Tooltip_modifier_item_vermillion_robe_delay_Description: 'Когда закончится, нанесёт урон по площади.'
