@@ -68,6 +68,7 @@ end
 function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item, callback)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	hero.ChangingHeroProcessRunning = true
+	ProjectileManager:ProjectileDodge(hero)
 	if hero.PocketItem then
 		hero.PocketHostEntity = nil
 		UTIL_Remove(hero.PocketItem)
