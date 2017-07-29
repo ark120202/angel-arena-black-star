@@ -34,6 +34,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		PanoramaShop:SellItem(PlayerID, units[1], ability)
 		return false
 	end
+
 	for _,unit in ipairs(units) do
 		if unit:IsHero() or unit:IsConsideredHero() then
 			GameMode:TrackInventory(unit)
@@ -56,6 +57,10 @@ function GameMode:ExecuteOrderFilter(filterTable)
 							end
 						end
 					elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
+						if abilityname == "rubick_spell_steal" and target:HasAbility("doppelganger_mimic") then
+							Containers:DisplayError(PlayerID, "#dota_hud_error_cant_steal_spell")
+							return false
+						end
 						if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
 							Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_champion")
 							return false
