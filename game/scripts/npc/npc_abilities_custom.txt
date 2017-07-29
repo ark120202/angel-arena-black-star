@@ -1221,6 +1221,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"missing_hp_damage_pct"	"0.5"
+				"CalculateSpellDamageTooltip" "1"
 			}
 		}
 
