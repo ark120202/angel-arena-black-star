@@ -4,8 +4,13 @@ doppelganger_mimic = class({})
 
 if IsServer() then
 	function doppelganger_mimic:Spawn()
-		self.bannedHeroes = self:GetKeyValue("BannedHeroes") or {}
 		self:SetLevel(1)
+	end
+
+	function doppelganger_mimic:OnUpgrade()
+		if not self.bannedHeroes then
+			self.bannedHeroes = self:GetKeyValue("BannedHeroes") or {}
+		end
 	end
 
 	function doppelganger_mimic:CastFilterResultTarget(hTarget)
