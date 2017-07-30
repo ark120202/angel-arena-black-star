@@ -44,7 +44,7 @@ if IsServer() then
 			abilityCooldownCache = GenerateAbilityCooldownCache(caster)
 		}
 
-		HeroSelection:ChangeHero(caster:GetPlayerID(), targetName, true, 0, nil, function(newHero)
+		HeroSelection:ChangeHero(caster:GetPlayerID(), targetName, true, nil, nil, function(newHero)
 			ApplyAbilityCooldownsFromCache(newHero, state.abilityCooldownCache)
 			if state.Additional_str then
 				newHero.Additional_str = state.Additional_str
@@ -72,7 +72,7 @@ if IsServer() then
 			if callback then
 				callback(newHero)
 			end
-		end)
+		end, false)
 	end
 end
 
