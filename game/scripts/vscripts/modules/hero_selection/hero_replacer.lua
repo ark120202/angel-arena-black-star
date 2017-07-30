@@ -75,6 +75,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 		hero.PocketItem = nil
 	end
 	hero:DestroyAllModifiers()
+	hero:InterruptMotionControllers(false)
 	hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
 	local xp = hero:GetCurrentXP()
 	local fountatin = FindFountain(PlayerResource:GetTeam(playerId))
