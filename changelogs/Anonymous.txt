@@ -14,3 +14,57 @@ Bosses:
 		Shard str extreme drop chance: 40 => 10
 		Shard agi extreme drop chance: 40 => 10
 		Shard int extreme drop chance: 40 => 10
+Talents:
+	Jakiro:
+		Ice path:
+			group 4 => 6
+		Dual Breath:
+			group 6 => 7
+	Arthas:
+		Vsolyanova bonus chance:
+			cost 25 => 10
+			group 5 => 9
+	Wraith King:
+		Reincarnation:
+			group 10 => 9
+	Drow Ranger:
+		Precision aura damage:
+			group 6 => 8
+		Gust:
+			group 3 => 7
+	Tinker:
+		Laser:
+			group 7 => 9
+	Dark Seer:
+		Vacuum:
+			group 3 => 7
+		Ion shell:
+			group 6 => 8
+	Clinkz
+		Searing Arrows:
+			group 6 => 8
+		Strafe as
+			group 5 => 7
+	Ursa:
+		Fury Swipes:
+			group 6 => 9
+	Invoker:
+		Forge Spirits:
+			group 4 => 7
+		Deafening Blast:
+			group 6 => 8
+		Tornado:
+			group 7 => 9
+	Silencer:
+		Curse of the silent:
+			group 5 => 7
+	Lycan:
+		Feral Impulse:
+			group 6 => 7
+	Brewmaster:
+		Thunder clap dmg:
+			group 6 => 7
+		Thunder clap slow:
+			group 5 => 6
+		Primal Split:
+			group 7 => 8
