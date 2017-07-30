@@ -1,6 +1,7 @@
 LinkLuaModifier("modifier_doppelganger_mimic", "heroes/hero_doppelganger/mimic.lua", LUA_MODIFIER_MOTION_NONE)
 if IsServer() then
 	function ChangeHero(caster, targetName, callback)
+		if caster.ChangingHeroProcessRunning then return end
 		-- Save hero's state to give same state to new hero
 		local state = {
 			health = caster:GetHealth() / caster:GetMaxHealth(),
