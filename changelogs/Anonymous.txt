@@ -1,0 +1,16 @@
+Bosses:
+	The Netherdrake:
+		Shard primal large drop chance: 30 => 10
+		Shard str extreme drop chance: 40 => 10
+		Shard agi extreme drop chance: 40 => 10
+		Shard int extreme drop chance: 40 => 10
+	Freya:
+		Shard primal large drop chance: 30 => 10
+		Shard str extreme drop chance: 40 => 10
+		Shard agi extreme drop chance: 40 => 10
+		Shard int extreme drop chance: 40 => 10
+	Zaken:
+		Shard primal large drop chance: 30 => 10
+		Shard str extreme drop chance: 40 => 10
+		Shard agi extreme drop chance: 40 => 10
+		Shard int extreme drop chance: 40 => 10

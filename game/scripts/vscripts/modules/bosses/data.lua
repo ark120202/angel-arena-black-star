@@ -6,10 +6,10 @@ DROP_TABLE = {
 		{ Item = "item_demons_paw", DropChance = 90, DamageWeightPct = 30, },
 		{ Item = "item_demons_paw", DropChance = 10, DamageWeightPct = 30, },
 
-		{ Item = "item_shard_primal_large", DropChance = 30, },
-		{ Item = "item_shard_str_extreme", DropChance = 40, },
-		{ Item = "item_shard_agi_extreme", DropChance = 40, },
-		{ Item = "item_shard_int_extreme", DropChance = 40, },
+		{ Item = "item_shard_primal_large", DropChance = 10, },
+		{ Item = "item_shard_str_extreme", DropChance = 10, },
+		{ Item = "item_shard_agi_extreme", DropChance = 10, },
+		{ Item = "item_shard_int_extreme", DropChance = 10, },
 	},
 	["npc_arena_boss_zaken"] = {
 		hero = "npc_arena_hero_zaken",
@@ -18,10 +18,10 @@ DROP_TABLE = {
 		{ Item = "item_demons_paw", DropChance = 90, DamageWeightPct = 30, },
 		{ Item = "item_demons_paw", DropChance = 10, DamageWeightPct = 30, },
 
-		{ Item = "item_shard_primal_large", DropChance = 30, },
-		{ Item = "item_shard_str_extreme", DropChance = 40, },
-		{ Item = "item_shard_agi_extreme", DropChance = 40, },
-		{ Item = "item_shard_int_extreme", DropChance = 40, },
+		{ Item = "item_shard_primal_large", DropChance = 10, },
+		{ Item = "item_shard_str_extreme", DropChance = 10, },
+		{ Item = "item_shard_agi_extreme", DropChance = 10, },
+		{ Item = "item_shard_int_extreme", DropChance = 10, },
 	},
 	["npc_arena_boss_central"] = {
 		{ Item = "item_soul_of_titan", DropChance = 50, DamageWeightPct = 30, },
@@ -29,10 +29,10 @@ DROP_TABLE = {
 		{ Item = "item_demons_paw", DropChance = 90, DamageWeightPct = 30, },
 		{ Item = "item_demons_paw", DropChance = 10, DamageWeightPct = 30, },
 
-		{ Item = "item_shard_primal_large", DropChance = 30, },
-		{ Item = "item_shard_str_extreme", DropChance = 40, },
-		{ Item = "item_shard_agi_extreme", DropChance = 40, },
-		{ Item = "item_shard_int_extreme", DropChance = 40, },
+		{ Item = "item_shard_primal_large", DropChance = 10, },
+		{ Item = "item_shard_str_extreme", DropChance = 10, },
+		{ Item = "item_shard_agi_extreme", DropChance = 10, },
+		{ Item = "item_shard_int_extreme", DropChance = 10, },
 	},
 
 	["npc_arena_boss_l1_v1"] = {
