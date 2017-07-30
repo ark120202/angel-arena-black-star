@@ -14,3 +14,45 @@ Bosses:
 		Shard str extreme drop chance: 40 => 10
 		Shard agi extreme drop chance: 40 => 10
 		Shard int extreme drop chance: 40 => 10
+Talents:
+	+0.5 Ice path:
+		Required level: 25 => 35
+	+100 Dual Breath:
+		Required level: 35 => 40
+	Mega Solyara:
+		Cost: 25 => 10
+		Required level: 30 => 50
+	Reincarnation:
+		Required level: 55 => 50
+	+16% Precision Aura Damage:
+		Required level: 35 => 45
+	+400 Distance/Knockback Gust:
+		Required level: 20 => 40
+	+400 Laser Damage:
+		Required level: 40 => 50
+	+75 Vacuum AOE:
+		Required level: 20 => 40
+	+220 Ion shell Damage:
+		Required level: 35 => 45
+	+110 Searing Arrows Damage:
+		Required level: 35 => 45
+	+70 Strafe Attack Speed
+		Required level: 30 => 40
+	+35 Fury Swipes Damage:
+		Required level: 35 => 50
+	+3 Forge Spirits Summoned:
+		Required level: 25 => 40
+	Aoe Deafening Blast:
+		Required level: 35 => 45
+	-14 Tornado Cooldown:
+		Required level: 40 => 50
+	+10% Curse of the Silent Slow:
+		Required level: 30 => 40
+	+32 Feral Impulse HP Regen:
+		Required level: 35 => 40
+	+400 Thunder Clap Damage:
+		Required level: 35 => 40
+	+2 Thunder Clap Slow:
+		Required level: 30 => 35
+	+2000 Health to Primal Split Units:
+		Required level: 40 => 45
