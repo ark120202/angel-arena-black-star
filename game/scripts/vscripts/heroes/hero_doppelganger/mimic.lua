@@ -1,4 +1,81 @@
 LinkLuaModifier("modifier_doppelganger_mimic", "heroes/hero_doppelganger/mimic.lua", LUA_MODIFIER_MOTION_NONE)
+if IsServer() then
+	function GenerateAbilityCooldownCache(caster)
+		local cache = caster.abilityCooldownCache or {}
+		for i = 0, caster:GetAbilityCount() - 1 do
+			local ability = caster:GetAbilityByIndex(i)
+			if ability then
+				local remainingCooldown = ability:GetCooldownTimeRemaining()
+				if remainingCooldown > 0 then
+					cache[ability:GetAbilityName()] = GameRules:GetGameTime() + remainingCooldown
+				end
+			end
+		end
+		return cache
+	end
+
+	function ApplyAbilityCooldownsFromCache(caster, cache)
+		caster.abilityCooldownCache = cache or {}
+		for i = 0, caster:GetAbilityCount() - 1 do
+			local ability = caster:GetAbilityByIndex(i)
+			if ability then
+				local abilityname = ability:GetAbilityName()
+				if cache[abilityname] then
+					local remainingCooldown = cache[abilityname] - GameRules:GetGameTime()
+					if remainingCooldown > 0 then
+						ability:StartCooldown(remainingCooldown)
+					end
+					cache[abilityname] = nil
+				end
+			end
+		end
+	end
+
+	function ChangeHero(caster, targetName, callback)
+		if caster.ChangingHeroProcessRunning then return end
+		-- Save hero's state to give same state to new hero
+		local state = {
+			health = caster:GetHealth() / caster:GetMaxHealth(),
+			mana = caster:GetMana() / caster:GetMaxMana(),
+			Additional_str = caster.Additional_str,
+			Additional_agi = caster.Additional_agi,
+			Additional_int = caster.Additional_int,
+			Additional_attackspeed = caster.Additional_attackspeed,
+			abilityCooldownCache = GenerateAbilityCooldownCache(caster)
+		}
+
+		HeroSelection:ChangeHero(caster:GetPlayerID(), targetName, true, 0, nil, function(newHero)
+			ApplyAbilityCooldownsFromCache(newHero, state.abilityCooldownCache)
+			if state.Additional_str then
+				newHero.Additional_str = state.Additional_str
+				newHero:ModifyStrength(state.Additional_str)
+			end
+			if state.Additional_agi then
+				newHero.Additional_agi = state.Additional_agi
+				newHero:ModifyAgility(state.Additional_agi)
+			end
+			if state.Additional_int then
+				newHero.Additional_int = state.Additional_int
+				newHero:ModifyIntellect(state.Additional_int)
+			end
+			if state.Additional_attackspeed then
+				newHero.Additional_attackspeed = state.Additional_attackspeed
+				if not newHero:HasModifier("modifier_item_shard_attackspeed_stack") then
+					newHero:AddNewModifier(caster, nil, "modifier_item_shard_attackspeed_stack", {})
+				end
+				newHero:SetModifierStackCount("modifier_item_shard_attackspeed_stack", newHero, state.Additional_attackspeed)
+			end
+
+			newHero:SetHealth(state.health * newHero:GetMaxHealth())
+			newHero:SetMana(state.mana * newHero:GetMaxMana())
+
+			if callback then
+				callback(newHero)
+			end
+		end)
+	end
+end
+
 
 doppelganger_mimic = class({})
 
@@ -49,7 +126,8 @@ if IsServer() then
 		local target = self.new_steal_target
 		if IsValidEntity(target) then
 			caster:EmitSound("Hero_Rubick.SpellSteal.Complete")
-			HeroSelection:ChangeHero(caster:GetPlayerID(), target:GetFullName(), true, 0, nil, function(newHero)
+
+			ChangeHero(caster, target:GetFullName(), function(newHero)
 				newHero:AddNewModifier(newHero, self, "modifier_doppelganger_mimic", nil)
 				if not newHero:HasModifier("modifier_doppelganger_mimic") then
 					HeroSelection:ChangeHero(newHero:GetPlayerID(), "npc_arena_hero_doppelganger", true, 0)
@@ -79,14 +157,14 @@ if IsServer() then
 	function modifier_doppelganger_mimic:OnDestroy()
 		local parent = self:GetParent()
 		if parent:IsAlive() then
-			HeroSelection:ChangeHero(parent:GetPlayerID(), "npc_arena_hero_doppelganger", true, 0)
+			ChangeHero(parent, "npc_arena_hero_doppelganger")
 		end
 	end
 
 	function modifier_doppelganger_mimic:OnRespawn(k)
 		local parent = self:GetParent()
 		if k.unit == parent then
-			HeroSelection:ChangeHero(parent:GetPlayerID(), "npc_arena_hero_doppelganger", true, 0)
+			ChangeHero(parent, "npc_arena_hero_doppelganger")
 		end
 	end
 end
