@@ -44,7 +44,7 @@ if IsServer() then
 			abilityCooldownCache = GenerateAbilityCooldownCache(caster)
 		}
 
-		HeroSelection:ChangeHero(caster:GetPlayerID(), targetName, true, 0, nil, function(newHero)
+		HeroSelection:ChangeHero(caster:GetPlayerID(), targetName, true, nil, nil, function(newHero)
 			ApplyAbilityCooldownsFromCache(newHero, state.abilityCooldownCache)
 			if state.Additional_str then
 				newHero.Additional_str = state.Additional_str
@@ -72,7 +72,7 @@ if IsServer() then
 			if callback then
 				callback(newHero)
 			end
-		end)
+		end, false)
 	end
 end
 
@@ -146,7 +146,6 @@ modifier_doppelganger_mimic = class({
 	GetTexture          = function() return "doppelganger_mimic" end,
 	GetEffectName       = function() return "particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf" end,
 	GetStatusEffectName = function() return "particles/status_fx/status_effect_arc_warden_tempest.vpcf" end,
-	GetPriority         = function() return 100 end,
 })
 
 if IsServer() then
