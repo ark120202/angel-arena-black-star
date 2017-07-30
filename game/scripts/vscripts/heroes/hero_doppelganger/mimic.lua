@@ -1,5 +1,36 @@
 LinkLuaModifier("modifier_doppelganger_mimic", "heroes/hero_doppelganger/mimic.lua", LUA_MODIFIER_MOTION_NONE)
 if IsServer() then
+	function GenerateAbilityCooldownCache(caster)
+		local cache = caster.abilityCooldownCache or {}
+		for i = 0, caster:GetAbilityCount() - 1 do
+			local ability = caster:GetAbilityByIndex(i)
+			if ability then
+				local remainingCooldown = ability:GetCooldownTimeRemaining()
+				if remainingCooldown > 0 then
+					cache[ability:GetAbilityName()] = GameRules:GetGameTime() + remainingCooldown
+				end
+			end
+		end
+		return cache
+	end
+
+	function ApplyAbilityCooldownsFromCache(caster, cache)
+		caster.abilityCooldownCache = cache or {}
+		for i = 0, caster:GetAbilityCount() - 1 do
+			local ability = caster:GetAbilityByIndex(i)
+			if ability then
+				local abilityname = ability:GetAbilityName()
+				if cache[abilityname] then
+					local remainingCooldown = cache[abilityname] - GameRules:GetGameTime()
+					if remainingCooldown > 0 then
+						ability:StartCooldown(remainingCooldown)
+					end
+					cache[abilityname] = nil
+				end
+			end
+		end
+	end
+
 	function ChangeHero(caster, targetName, callback)
 		if caster.ChangingHeroProcessRunning then return end
 		-- Save hero's state to give same state to new hero
@@ -10,9 +41,11 @@ if IsServer() then
 			Additional_agi = caster.Additional_agi,
 			Additional_int = caster.Additional_int,
 			Additional_attackspeed = caster.Additional_attackspeed,
+			abilityCooldownCache = GenerateAbilityCooldownCache(caster)
 		}
 
 		HeroSelection:ChangeHero(caster:GetPlayerID(), targetName, true, 0, nil, function(newHero)
+			ApplyAbilityCooldownsFromCache(newHero, state.abilityCooldownCache)
 			if state.Additional_str then
 				newHero.Additional_str = state.Additional_str
 				newHero:ModifyStrength(state.Additional_str)
