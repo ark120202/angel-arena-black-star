@@ -23,7 +23,7 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	doom_bringer_infernal_blade = 10,
 	winter_wyvern_arctic_burn = 10,
 	freya_ice_cage = 10,
-	tinker_march_of_the_machines = 20,
+	tinker_march_of_the_machines = 2000,
 	necrolyte_reapers_scythe = 5,
 	huskar_life_break = 15,
 }
