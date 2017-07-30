@@ -146,7 +146,6 @@ modifier_doppelganger_mimic = class({
 	GetTexture          = function() return "doppelganger_mimic" end,
 	GetEffectName       = function() return "particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf" end,
 	GetStatusEffectName = function() return "particles/status_fx/status_effect_arc_warden_tempest.vpcf" end,
-	GetPriority         = function() return 100 end,
 })
 
 if IsServer() then
