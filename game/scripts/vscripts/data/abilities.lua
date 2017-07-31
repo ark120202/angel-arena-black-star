@@ -163,6 +163,7 @@ BOSS_BANNED_ABILITIES = {
 	razor_static_link = true,
 	tusk_walrus_kick = true,
 	death_prophet_spirit_siphon = true,
+	item_force_staff = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"

@@ -56,3 +56,5 @@ Talents:
 		Required level: 30 => 35
 	+2000 Health to Primal Split Units:
 		Required level: 40 => 45
+Items:
+	Force Staff now is don't usable on bosses
