@@ -71,4 +71,7 @@ Heroes:
 		Golden Eagle Relic no longer shareble on meepo's clones
 		Holy Knight Shield no longer shareble on meepo's clones
 	Destroyer - Body Reconstruction now is refreshable by Refresher and Coffee Bean
-
+Other:
+	Spell Amplify 1% by 14 intelligence => 1% by 15 intelligence
+	Maximum Attack Speed 725 => 750
+	Minimum Attack Speed 20 => 60

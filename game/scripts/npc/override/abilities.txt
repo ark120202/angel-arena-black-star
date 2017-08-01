@@ -10994,15 +10994,16 @@
 
 	"invoker_quas"
 	{
+		"MaxLevel"			"7"
 		"AbilityCooldown"	"0"
 		"AbilityManaCost"	"0"
-		"LevelsBetweenUpgrades"	"7"
+		"LevelsBetweenUpgrades"	"5"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"health_regen_per_instance"	"3 8 13 18 23 28 33"
+				"health_regen_per_instance"	"2 5 8 11 14 17 20"
 			}
 
 		}
@@ -11011,21 +11012,22 @@
 
 	"invoker_wex"
 	{
+		"MaxLevel"			"7"
 		"AbilityCooldown"	"0"
 		"AbilityManaCost"	"0"
-		"LevelsBetweenUpgrades"	"7"
+		"LevelsBetweenUpgrades"	"5"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_speed_per_instance" "10 15 20 25 30 35 40"
+				"attack_speed_per_instance" "5 10 15 20 25 30 35"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"move_speed_per_instance"	"1 2 3 4 7 9 11"
+				"move_speed_per_instance"	"1 2 3 4 5 6 7"
 			}
 
 		}
@@ -11034,15 +11036,16 @@
 
 	"invoker_exort"
 	{
+		"MaxLevel"			"7"
 		"AbilityCooldown"	"0"
 		"AbilityManaCost"	"0"
-		"LevelsBetweenUpgrades"	"7"
+		"LevelsBetweenUpgrades"	"5"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_damage_per_instance"	"7 16 28 35 43 52 60"
+				"bonus_damage_per_instance"	"5 11 17 26 32 38 44"
 			}
 
 		}
@@ -11051,12 +11054,12 @@
 
 	"invoker_empty1"
 	{
-		"MaxLevel"	"7"
+		"MaxLevel"	"1"
 	}
 
 	"invoker_empty2"
 	{
-		"MaxLevel"	"7"
+		"MaxLevel"	"1"
 	}
 
 	"invoker_invoke"
@@ -11074,7 +11077,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"cooldown_scepter"	"1.0"
+				"cooldown_scepter"	"1.25"
 			}
 
 			"03"
@@ -11127,14 +11130,14 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"freeze_cooldown"	"0.77 0.74 0.71 0.69 0.66 0.63 0.60 0.57"
+				"freeze_cooldown"	"0.77 0.75 0.73 0.71 0.69 0.67 0.65 0.63"
 				"levelkey"	"quaslevel"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"freeze_damage"	"15 30 50 80 110 140 170 250"
+				"freeze_damage"	"10 20 30 40 50 60 70 140"
 				"levelkey"	"quaslevel"
 			}
 
@@ -11170,14 +11173,14 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"enemy_slow"	"-20 -25 -30 -35 -40 -45 -50 -60"
+				"enemy_slow"	"-20 -25 -30 -35 -40 -45 -50 -55"
 				"levelkey"	"quaslevel"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"self_slow"	"-30 -20 0 10 20 30 40 60"
+				"self_slow"	"-30 -20 -10 0 10 20 30 40"
 				"levelkey"	"wexlevel"
 			}
 
@@ -11203,14 +11206,14 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"travel_distance"	"1000 1600 2200 2900 3500 4000 4500 5200"
+				"travel_distance"	"800 1300 1800 2300 2800 3200 3800 4800"
 				"levelkey"	"wexlevel"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"travel_speed"	"1200"
+				"travel_speed"	"1100"
 			}
 
 			"03"
@@ -11234,7 +11237,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"lift_duration"	"0.8 1.2 1.5 1.8 2.2 2.5 2.7 3"
+				"lift_duration"	"0.8 1.2 1.5 1.8 2.2 2.5 2.7 3.0"
 				"levelkey"	"quaslevel"
 			}
 
@@ -11254,7 +11257,7 @@
 			"09"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"wex_damage"	"75 150 270 360 420 500 570 800"
+				"wex_damage"	"60 115 180 245 310 375 440 600"
 				"levelkey"	"wexlevel"
 			}
 
@@ -11282,20 +11285,20 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"area_of_effect"	"700"
+				"area_of_effect"	"675"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"mana_burned"	"150 300 450 600 750 900 1050 1300"
+				"mana_burned"	"125 225 325 425 525 625 725 1000"
 				"levelkey"	"wexlevel"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_mana_pct"	"40"
+				"damage_per_mana_pct"	"45"
 			}
 
 		}
@@ -11314,14 +11317,14 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_attack_speed"	"15 40 65 80 105 130 155 220"
+				"bonus_attack_speed"	"10 30 50 70 90 110 130 190"
 				"levelkey"	"wexlevel"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_damage"	"15 40 65 80 105 130 155 220"
+				"bonus_damage"	"10 30 50 70 90 110 130 190"
 				"levelkey"	"exortlevel"
 			}
 
@@ -11372,7 +11375,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_interval"	"0.3"
+				"damage_interval"	"0.5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 
@@ -11391,7 +11394,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"main_damage"	"52.5 68.3 88.5 105 127.5 150 182.5 260"
+				"main_damage"	"60 82 100 130 150 175 200 280"
 				"levelkey"	"exortlevel"
 			}
 
@@ -11404,7 +11407,7 @@
 			"10"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"burn_dps"	"15 22 35 43 55 70 100 135"
+				"burn_dps"	"12 18 24 30 36 42 48 72"
 				"levelkey"	"exortlevel"
 				"CalculateSpellDamageTooltip"	"1"
 			}
@@ -11431,13 +11434,13 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"area_of_effect"	"200"
+				"area_of_effect"	"175"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage"	"200 350 500 650 800 950 1200 2000"
+				"damage"	"150 225 300 375 450 525 600 1200"
 				"levelkey"	"exortlevel"
 			}
 
@@ -11550,7 +11553,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"4.5 6.0 7.5 9.0 10.5 12.0 13.5 14.0"
+				"duration"	"3.0 4.5 6.0 7.5 9.0 10.5 12.0 13.5"
 				"levelkey"	"quaslevel"
 			}
 
@@ -11570,7 +11573,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_per_second"	"10 20 50 70 100 130 170 250"
+				"damage_per_second"	"8 18 28 38 48 58 68 112"
 				"levelkey"	"exortlevel"
 			}
 
@@ -11607,20 +11610,20 @@
 		"MaxLevel"	"1"
 		"AbilityCastRange"	"1000"
 		"AbilityCastPoint"	"0.05"
-		"AbilityCooldown"	"35"
+		"AbilityCooldown"	"40"
 		"AbilityManaCost"	"300"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"travel_distance"	"1200"
+				"travel_distance"	"1000"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"travel_speed"	"1200"
+				"travel_speed"	"1100"
 			}
 
 			"03"
@@ -11644,21 +11647,21 @@
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage"	"60 120 220 310 400 490 600 750"
+				"damage"	"50 100 150 200 250 300 350 600"
 				"levelkey"	"exortlevel"
 			}
 
 			"07"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"knockback_duration"	"0.5 0.75 1.0 1.25 1.5 1.75 2.0 2.25"
+				"knockback_duration"	"0.25 0.5 0.75 1.0 1.25 1.5 1.75 2.0"
 				"levelkey"	"quaslevel"
 			}
 
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"disarm_duration"	"2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5"
+				"disarm_duration"	"1.25 1.75 2.25 2.75 3.25 3.75 4.25 4.75"
 				"levelkey"	"wexlevel"
 			}
 

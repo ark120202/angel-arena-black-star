@@ -6023,7 +6023,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"			"item_arena/demon_king_bar"
 
-		"AbilityCooldown"				"120"
+		"AbilityCooldown"				"180"
 		"AbilityManaCost"				"600"
 		"AbilityCastRange"				"300"
 
