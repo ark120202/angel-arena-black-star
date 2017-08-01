@@ -1332,7 +1332,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 8,
 		requirement = "night_stalker_crippling_fear",
-		special_values = {value = 8},
+		special_values = {value = 6},
 		effect = {abilities = "special_bonus_unique_night_stalker"}
 	},
 	talent_hero_broodmother_spawn_spiderlings_dmg = {

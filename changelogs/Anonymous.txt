@@ -4,16 +4,19 @@ Bosses:
 		Shard str extreme drop chance: 40 => 10
 		Shard agi extreme drop chance: 40 => 10
 		Shard int extreme drop chance: 40 => 10
+		Demons Paw2 drop chance: 10 => 5
 	Freya:
 		Shard primal large drop chance: 30 => 10
 		Shard str extreme drop chance: 40 => 10
 		Shard agi extreme drop chance: 40 => 10
 		Shard int extreme drop chance: 40 => 10
+		Demons Paw2 drop chance: 10 => 5
 	Zaken:
 		Shard primal large drop chance: 30 => 10
 		Shard str extreme drop chance: 40 => 10
 		Shard agi extreme drop chance: 40 => 10
 		Shard int extreme drop chance: 40 => 10
+		Demons Paw2 drop chance: 10 => 5
 Talents:
 	+0.5 Ice path:
 		Required level: 25 => 35
@@ -56,5 +59,16 @@ Talents:
 		Required level: 30 => 35
 	+2000 Health to Primal Split Units:
 		Required level: 40 => 45
+	+8 Crippling Fear Duration => +6 Crippling Fear Duration
 Items:
 	Force Staff now is don't usable on bosses
+	Coffe Bean no longer refreshable by Body Reconstruction
+Heroes:
+	Meepo:
+		Titanium Fruit now is shareble on meepo's clones
+		Monkey King Bar now is shareble on meepo's clones
+		Demon King Bar now is shareble on meepo's clones
+		Golden Eagle Relic no longer shareble on meepo's clones
+		Holy Knight Shield no longer shareble on meepo's clones
+	Destroyer - Body Reconstruction now is refreshable by Refresher and Coffee Bean
+

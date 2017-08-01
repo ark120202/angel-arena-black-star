@@ -251,29 +251,28 @@
 		"AbilityTextureName"			"arena/kadash_survival_skills"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"LevelsBetweenUpgrades"			"4"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_evasion"		"10 15 20 25 30 35 40"
+				"var_type"			"FIELD_FLOAT"
+				"bonus_evasion"		"5.0 7.5 10.0 12.5 15.0 17.5 20.0"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"4 6 8 10 12 14 16"
+				"bonus_armor"		"2 4 6 8 10 12 14"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_magic_resist_pct"	"5 10 15 20 25 30 35"
+				"var_type"			"FIELD_FLOAT"
+				"bonus_magic_resist_pct"	"5.0 7.5 10.0 12.5 15.0 17.5 20.0"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"block_damage"		"16 28 42 58 70 90 120"
+				"block_damage"		"10 18 26 34 42 50 58"
 			}
 		}
 
