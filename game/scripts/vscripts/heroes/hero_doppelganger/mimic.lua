@@ -1,4 +1,5 @@
 LinkLuaModifier("modifier_doppelganger_mimic", "heroes/hero_doppelganger/mimic.lua", LUA_MODIFIER_MOTION_NONE)
+
 if IsServer() then
 	function GenerateAbilityCooldownCache(caster)
 		local cache = caster.abilityCooldownCache or {}
@@ -155,15 +156,6 @@ if IsServer() then
 
 	function modifier_doppelganger_mimic:OnDestroy()
 		local parent = self:GetParent()
-		if parent:IsAlive() then
-			ChangeHero(parent, "npc_arena_hero_doppelganger")
-		end
-	end
-
-	function modifier_doppelganger_mimic:OnRespawn(k)
-		local parent = self:GetParent()
-		if k.unit == parent then
-			ChangeHero(parent, "npc_arena_hero_doppelganger")
-		end
+		ChangeHero(parent, "npc_arena_hero_doppelganger")
 	end
 end

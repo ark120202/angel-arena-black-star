@@ -25,6 +25,7 @@ function FinishGame() {
 function Snippet_Player(playerID, rootPanel, index) {
 	var panel = $.CreatePanel('Panel', rootPanel, '');
 	panel.BLoadLayoutSnippet('Player');
+	panel.SetHasClass('IsLocalPlayer', playerID === Game.GetLocalPlayerID());
 	var playerData = GAME_RESULT.players[playerID];
 	var playerInfo = Game.GetPlayerInfo(playerID);
 	panel.FindChildTraverse('PlayerAvatar').steamid = playerInfo.player_steamid;
@@ -111,9 +112,7 @@ function OnGameResult(gameResult) {
 		gameResult.winner = Game.GetGameWinner();
 		GAME_RESULT = gameResult;
 		$('#TeamsContainer').RemoveAndDeleteChildren();
-		_.each(Game.GetAllTeamIDs(), function(team) {
-			Snippet_Team(team);
-		});
+		_.each(Game.GetAllTeamIDs(), Snippet_Team);
 		var localData = gameResult.players[Game.GetLocalPlayerID()];
 
 		var experienceNew = localData.experienceNew || 0;
