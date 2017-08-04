@@ -324,10 +324,6 @@ $window-height: 900px
 				horizontal-align: right
 
 
-.IsRight
-	.Player
-		animation-name: EndPlayerFadeRight
-
 .Player
 	width: $window-width
 	height: 60px
@@ -341,6 +337,12 @@ $window-height: 900px
 	animation-timing-function: ease-in-out
 	flow-children: right
 	horizontal-align: center
+
+	&.IsLocalPlayer
+		background-color: rgba(75, 75, 75, .7)
+
+	.IsRight &
+		animation-name: EndPlayerFadeRight
 
 	&.AnimationEnd
 		opacity: 1
