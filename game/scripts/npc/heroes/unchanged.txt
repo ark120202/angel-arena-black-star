@@ -806,7 +806,7 @@
 		"Ability2"	"slardar_slithereen_crush"
 		"Ability3"	"slardar_bash"
 		"Ability4"	"slardar_amplify_damage"
-		"AttackRate"	"1.8"
+		"AttackRate"	"1.7"
 		"Ability5"	""
 		"Ability6"	""
 		"Ability7"	""

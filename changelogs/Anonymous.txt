@@ -60,6 +60,7 @@ Talents:
 	+2000 Health to Primal Split Units:
 		Required level: 40 => 45
 	+8 Crippling Fear Duration => +6 Crippling Fear Duration
+	+10% Bash of the Deep Chance => +5% Bash of the Deep Chance
 Items:
 	Force Staff now is don't usable on bosses
 	Coffe Bean no longer refreshable by Body Reconstruction

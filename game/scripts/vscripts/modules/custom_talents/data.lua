@@ -852,7 +852,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 7,
 		requirement = "slardar_bash",
-		special_values = {value = 10},
+		special_values = {value = 5},
 		effect = {abilities = "special_bonus_unique_slardar"}
 	},
 	talent_hero_tidehunter_gush_armor = {

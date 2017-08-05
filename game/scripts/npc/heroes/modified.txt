@@ -324,7 +324,7 @@
 		"Ability5"	"faceless_void_time_freeze"
 		"Ability6"	""
 		"Changed"	"1"
-		"AttackRate"	"1.8"
+		"AttackRate"	"1.7"
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""
