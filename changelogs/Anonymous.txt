@@ -17,6 +17,7 @@ Bosses:
 		Shard agi extreme drop chance: 40 => 10
 		Shard int extreme drop chance: 40 => 10
 		Demons Paw2 drop chance: 10 => 5
+	Illusions now don't die when attacking Bosses
 Talents:
 	+0.5 Ice path:
 		Required level: 25 => 35
