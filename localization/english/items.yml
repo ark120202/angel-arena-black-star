@@ -249,62 +249,53 @@ DOTA_Tooltip_ability_item_metamorphosis_elixir_Description: |-
   <font color='cyan'>Ranked: can be used only once.</font>
 DOTA_Tooltip_ability_item_metamorphosis_elixir_transformation_time: 'TRANSFORMATION TIME:'
 
-DOTA_Tooltip_ability_item_splitshot_str: Enchanted Trident
-DOTA_Tooltip_ability_item_splitshot_str_Description: |-
-  <h1>Passive: Attack Split</h1> Deals a percent of attack damage in a %range% area around the target. Melee units cannot Split Attack.
-  {lc:item_sange_Description}
-DOTA_Tooltip_ability_item_splitshot_str_Note0: 'Illusions will fire attack projectiles, but they won''t deal any damage.'
-DOTA_Tooltip_ability_item_splitshot_str_damage_percent: '%SPLASH DAMAGE:'
-DOTA_Tooltip_ability_item_splitshot_str_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_splitshot_str_bonus_strength: +$str
-DOTA_Tooltip_ability_item_splitshot_str_bonus_intelligence: +$int
-DOTA_Tooltip_ability_item_splitshot_str_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_splitshot_str_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_splitshot_str_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_str_bonus_mana_regen_percentage: '%+$mana_regen'
-DOTA_Tooltip_ability_item_splitshot_str_maim_chance: '%MAIM CHANCE:'
-DOTA_Tooltip_ability_item_splitshot_str_maim_movement_speed: '%MAIM MOVEMENT SLOW:'
-DOTA_Tooltip_ability_item_splitshot_str_maim_slow_attack: 'MAIM ATTACK SLOW:'
-DOTA_Tooltip_ability_item_splitshot_str_maim_duration: 'MAIM DURATION:'
-DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim: '{lc:modifier_item_sange_maim}'
-DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
+# DOTA_Tooltip_ability_item_splitshot_str: Enchanted Trident
+# DOTA_Tooltip_ability_item_splitshot_str_Description: |-
+#   <h1>Passive: Attack Split</h1> Deals a percent of attack damage in a %range% area around the target. Melee units cannot Split Attack.
+#   {lc:item_sange_Description}
+# DOTA_Tooltip_ability_item_splitshot_str_Note0: 'Illusions will fire attack projectiles, but they won''t deal any damage.'
+# DOTA_Tooltip_ability_item_splitshot_str_damage_percent: '%SPLASH DAMAGE:'
+# DOTA_Tooltip_ability_item_splitshot_str_bonus_agility: +$agi
+# DOTA_Tooltip_ability_item_splitshot_str_bonus_strength: +$str
+# DOTA_Tooltip_ability_item_splitshot_str_bonus_intelligence: +$int
+# DOTA_Tooltip_ability_item_splitshot_str_bonus_attack_speed: +$attack
+# DOTA_Tooltip_ability_item_splitshot_str_bonus_damage: +$damage
+# DOTA_Tooltip_ability_item_splitshot_str_bonus_health_regen: +$hp_regen
+# DOTA_Tooltip_ability_item_splitshot_str_bonus_mana_regen_percentage: '%+$mana_regen'
+# DOTA_Tooltip_ability_item_splitshot_str_maim_chance: '%MAIM CHANCE:'
+# DOTA_Tooltip_ability_item_splitshot_str_maim_movement_speed: '%MAIM MOVEMENT SLOW:'
+# DOTA_Tooltip_ability_item_splitshot_str_maim_slow_attack: 'MAIM ATTACK SLOW:'
+# DOTA_Tooltip_ability_item_splitshot_str_maim_duration: 'MAIM DURATION:'
+# DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim: '{lc:modifier_item_sange_maim}'
+# DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
 
-DOTA_Tooltip_ability_item_splitshot_agi: Nagascale Bow
-DOTA_Tooltip_ability_item_splitshot_agi_Description: |-
+DOTA_Tooltip_ability_item_splitshot: Nagascale Bow
+DOTA_Tooltip_ability_item_splitshot_Description: |-
   <h1>Passive: Attack Split</h1> Deals a percent of attack damage in a %range% area around the target. Melee units cannot Split Attack.
   {lc:item_yasha_Description}
   {lc:item_yasha_movespeed_note}
-DOTA_Tooltip_ability_item_splitshot_agi_Note0: 'Illusions will fire attack projectiles, but they won''t deal any damage.'
-DOTA_Tooltip_ability_item_splitshot_agi_damage_percent: '%SPLASH DAMAGE:'
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_strength: +$str
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_intelligence: +$int
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_splitshot_agi_movement_speed_percent_bonus: '%+$move_speed'
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_mana_regen_percentage: '%+$mana_regen'
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_attack_speed_buff: 'FAST ATTACK ATTACK SPEED:'
-DOTA_Tooltip_ability_item_splitshot_agi_movement_speed_percent_bonus_buff: '%FAST ATTACK MOVEMENT SPEED:'
-DOTA_Tooltip_ability_item_splitshot_agi_fast_attack_duration: 'FAST ATTACK DURATION:'
-DOTA_Tooltip_modifier_item_splitshot_agi_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_splitshot_agi_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
+DOTA_Tooltip_ability_item_splitshot_Note0: 'Illusions will fire attack projectiles, but they won''t deal any damage.'
+DOTA_Tooltip_ability_item_splitshot_damage_percent: '%SPLASH DAMAGE:'
+DOTA_Tooltip_ability_item_splitshot_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_splitshot_bonus_intelligence: +$int
+DOTA_Tooltip_ability_item_splitshot_bonus_strength: +$str
+DOTA_Tooltip_ability_item_splitshot_bonus_agility: +$agi
 
-DOTA_Tooltip_ability_item_splitshot_int: Staff of Splitted Sunray
-DOTA_Tooltip_ability_item_splitshot_int_Description: |-
-  <h1>Passive: Attack Split</h1> Deals a percent of attack damage in a %range% area around the target. Melee units cannot Split Attack.
-  {lc:item_nightshadow_Description}
-DOTA_Tooltip_ability_item_splitshot_int_Note0: 'Illusions will fire attack projectiles, but they won''t deal any damage.'
-DOTA_Tooltip_ability_item_splitshot_int_damage_percent: '%SPLASH DAMAGE:'
-DOTA_Tooltip_ability_item_splitshot_int_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_splitshot_int_bonus_strength: +$str
-DOTA_Tooltip_ability_item_splitshot_int_bonus_intelligence: +$int
-DOTA_Tooltip_ability_item_splitshot_int_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_splitshot_int_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_splitshot_int_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_int_bonus_mana_regen_percentage: '%+$mana_regen'
-DOTA_Tooltip_ability_item_splitshot_int_nightshadow_chance: '%REDUCTION CHANCE:'
-DOTA_Tooltip_ability_item_splitshot_int_cooldown_reduction: 'COOLDOWN REDUCTION:'
+# DOTA_Tooltip_ability_item_splitshot_int: Staff of Splitted Sunray
+# DOTA_Tooltip_ability_item_splitshot_int_Description: |-
+#   <h1>Passive: Attack Split</h1> Deals a percent of attack damage in a %range% area around the target. Melee units cannot Split Attack.
+#   {lc:item_nightshadow_Description}
+# DOTA_Tooltip_ability_item_splitshot_int_Note0: 'Illusions will fire attack projectiles, but they won''t deal any damage.'
+# DOTA_Tooltip_ability_item_splitshot_int_damage_percent: '%SPLASH DAMAGE:'
+# DOTA_Tooltip_ability_item_splitshot_int_bonus_agility: +$agi
+# DOTA_Tooltip_ability_item_splitshot_int_bonus_strength: +$str
+# DOTA_Tooltip_ability_item_splitshot_int_bonus_intelligence: +$int
+# DOTA_Tooltip_ability_item_splitshot_int_bonus_attack_speed: +$attack
+# DOTA_Tooltip_ability_item_splitshot_int_bonus_damage: +$damage
+# DOTA_Tooltip_ability_item_splitshot_int_bonus_health_regen: +$hp_regen
+# DOTA_Tooltip_ability_item_splitshot_int_bonus_mana_regen_percentage: '%+$mana_regen'
+# DOTA_Tooltip_ability_item_splitshot_int_nightshadow_chance: '%REDUCTION CHANCE:'
+# DOTA_Tooltip_ability_item_splitshot_int_cooldown_reduction: 'COOLDOWN REDUCTION:'
 
 DOTA_Tooltip_ability_item_splitshot_ultimate: Ultimate Enchanted Tactical Magical Big Bow Of Integrated Blades
 DOTA_Tooltip_ability_item_splitshot_ultimate_Description: |-
@@ -1050,7 +1041,7 @@ DOTA_Tooltip_ability_item_urn_of_souls_Description: |-
 DOTA_Tooltip_ability_item_urn_of_souls_Note0: Empty urns gain 2 charges.
 DOTA_Tooltip_ability_item_urn_of_souls_Note1: 'If used on a hero with Shadow Release already active on them, it will refresh its duration.'
 DOTA_Tooltip_ability_item_urn_of_souls_mana_regen_percent: '%+$mana_regen'
-DOTA_Tooltip_ability_item_urn_of_souls_bonus_intelligence: +$int
+DOTA_Tooltip_ability_item_urn_of_souls_bonus_all: +$all
 DOTA_Tooltip_ability_item_urn_of_souls_soul_mana_heal_amount: 'RELEASE ALLY TOTAL MANA:'
 DOTA_Tooltip_ability_item_urn_of_souls_soul_mana_burn_amount: 'RELEASE ENEMY TOTAL MANA BURN:'
 DOTA_Tooltip_ability_item_urn_of_souls_soul_heal_duration: 'SOUL RELEASE DURATION:'

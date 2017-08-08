@@ -5811,12 +5811,12 @@
 		"ID"							"10216"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"250"
+		"ItemCost"						"220"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_urn_of_souls"
 		"ItemRequirements"
 		{
-			"01"						"item_sobi_mask;item_mantle;item_mantle"
+			"01"						"item_sobi_mask;item_circlet;item_circlet"
 		}
 	}
 
@@ -5831,9 +5831,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
+		"AbilityCastRange"				"950"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"7.0"
 		"ItemShopTags"					"regen_mana;int;boost_mana"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"urn of souls"
@@ -5857,12 +5857,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intelligence"	"8"
+				"bonus_all"				"4"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"soul_radius"			"1500"
+				"soul_radius"			"1400"
 			}
 			"04"
 			{
@@ -5877,22 +5877,22 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"soul_heal_interval"	"0.1"
+				"soul_heal_interval"	"0.25"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"soul_damage_interval"	"0.2"
+				"soul_damage_interval"	"0.25"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"soul_mana_heal_amount"	"200"
+				"soul_mana_heal_amount"	"300"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"soul_mana_burn_amount"	"150"
+				"soul_mana_burn_amount"	"200"
 			}
 			"10"
 			{
@@ -5925,7 +5925,9 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen_percent"
 				}
 			}
@@ -6422,7 +6424,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"120"
+				"bonus_attack_range"	"140"
 			}
 			"06"
 			{
@@ -6442,7 +6444,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"thunderstruck_bonus_attack_range"		"50"
+				"thunderstruck_bonus_attack_range"		"60"
 			}
 			"10"
 			{
@@ -9952,7 +9954,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"30"
+				"bonus_attack_speed"	"20"
 			}
 			"07"
 			{
@@ -10017,7 +10019,7 @@
 			"19"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"maim_duration"			"5"
+				"maim_duration"			"4"
 			}
 			"20"
 			{
@@ -10032,12 +10034,12 @@
 			"22"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"3"
+				"movement_speed_percent_bonus_buff"		"2"
 			}
 			"23"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"fast_attack_duration"	"5"
+				"fast_attack_duration"	"6"
 			}
 			"24"
 			{
