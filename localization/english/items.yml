@@ -1099,7 +1099,7 @@ DOTA_Tooltip_ability_item_horn_of_the_underworld_extra_spell_damage_percent: '%G
 DOTA_Tooltip_modifier_item_horn_of_the_underworld_aura: Swiftness Aura
 DOTA_Tooltip_modifier_item_horn_of_the_underworld_aura_Description: |-
   Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%
-  Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY%
+  Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
 DOTA_Tooltip_modifier_item_horn_of_the_underworld_active: Phantom Warsong
 DOTA_Tooltip_modifier_item_horn_of_the_underworld_active_Description: 'Immune to physical damage, has unobstructed movement, unable to attack and taking %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% extra magic damage.'
 DOTA_Tooltip_modifier_item_horn_of_the_underworld_active_endurance: Phantom Warsong Aura
@@ -1452,13 +1452,22 @@ DOTA_Tooltip_ability_summoned_unit_return: Return
 DOTA_Tooltip_ability_summoned_unit_return_Description: Immediately teleports the Spirit back to his summoner. The Spirit cannot teleport if it has taken damage from a player unit in the last %return_damage_cooldown% seconds.
 DOTA_Tooltip_ability_item_summoned_unit: Spirital Scepter
 DOTA_Tooltip_ability_item_summoned_unit_Description: Summons Mystic Spirit companion that can equip items. Spirit has only %item_slots% slots for items. Spirit does not benefit from attributes.
-DOTA_Tooltip_ability_item_summoned_unit_bonus_intellect: +$int
+DOTA_Tooltip_ability_item_summoned_unit_bonus_all: +$all
+DOTA_Tooltip_ability_item_summoned_unit_aura_bonus_attack_speed: 'AURA ATTACK SPEED:'
+DOTA_Tooltip_ability_item_summoned_unit_aura_bonus_movement_speed_pct: '%AURA MOVE SPEED:'
+DOTA_Tooltip_ability_item_summoned_unit_aura_health_regen: 'AURA HEALTH REGEN:'
+DOTA_Tooltip_ability_item_summoned_unit_aura_radius: 'AURA RADIUS:'
 DOTA_Tooltip_ability_item_summoned_unit_health: 'SPIRIT HP:'
 DOTA_Tooltip_ability_item_summoned_unit_health_regen: 'SPIRIT HP REGEN:'
 DOTA_Tooltip_ability_item_summoned_unit_damage: 'SPIRIT ATTACK DAMAGE:'
 DOTA_Tooltip_ability_item_summoned_unit_mana_pool_tooltip: 'SPIRIT MANAPOOL:'
 DOTA_Tooltip_ability_item_summoned_unit_armor: 'SPIRIT ARMOR:'
 DOTA_Tooltip_ability_item_summoned_unit_item_slots: 'SPIRIT ITEM SLOTS AMOUNT:'
+DOTA_Tooltip_modifier_item_summoned_unit_aura: Mystic Aura
+DOTA_Tooltip_modifier_item_summoned_unit_aura_Description: |-
+  Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%
+  Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
+  Regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health per second.
 npc_arena_item_summoned_unit: Mystic Spirit
 DOTA_Tooltip_ability_item_moon_dust: Moon Dust
 DOTA_Tooltip_ability_item_moon_dust_Description: This item is dropped by bosses and you can't buy it in the shop.

@@ -2716,9 +2716,10 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCastPoint"              "0.1"
 		"AbilityCooldown"				"35"
-		"AbilityManaCost"				"55"
+		"AbilityManaCost"				"0"
 		"AOERadius"                     "800"
 
 		"ItemStackable"					"1"
@@ -2782,9 +2783,10 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCastPoint"              "0.1"
 		"AbilityCooldown"				"40"
-		"AbilityManaCost"				"95"
+		"AbilityManaCost"				"0"
 		"AOERadius"                     "625"
 
 		"ItemStackable"					"1"
@@ -8178,13 +8180,13 @@
 		"ID"							"10264"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"30000"
+		"ItemCost"						"125"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_summoned_unit"
 		"ItemRequirements"
 		{
-			"01"						"item_staff_of_wizardry;item_staff_of_wizardry;item_staff_of_wizardry;item_staff_of_wizardry;item_moon_dust"
+			"01"						"item_helm_of_the_dominator;item_necronomicon_3;item_ghost"
 		}
 	}
 
@@ -8196,42 +8198,62 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
-		"AbilityCooldown"				"200"
-		"AbilityManaCost"				"400"
+		"AbilityCooldown"				"90"
+		"AbilityManaCost"				"100"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_intellect"				"60"
+				"bonus_all_stats"				"30"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"health"						"4500"
+				"aura_radius"					"900"
 			}
 			"03"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"health_regen"					"16"
+				"var_type"						"FIELD_INTEGER"
+				"aura_bonus_attack_speed"		"40"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage"						"300"
+				"aura_bonus_movement_speed_pct"	"10"
 			}
 			"05"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"mana_pool_tooltip"				"300"
+				"var_type"						"FIELD_FLOAT"
+				"aura_health_regen"				"20"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"armor"							"12"
+				"health"						"3000"
 			}
 			"07"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"health_regen"					"15"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"150"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"mana_pool_tooltip"				"900"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"armor"							"12"
+			}
+			"11"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"item_slots"					"3"
@@ -8267,9 +8289,30 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 
+				"Aura" 					"modifier_item_summoned_unit_aura"
+				"Aura_Radius" 			"%aura_radius"
+				"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"Aura_ApplyToCaster" 	"1"
+
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_intellect"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all_stats"
+				}
+			}
+			"modifier_item_summoned_unit_aura"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%aura_bonus_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%aura_bonus_movement_speed_pct"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"			"%aura_health_regen"
 				}
 			}
 		}

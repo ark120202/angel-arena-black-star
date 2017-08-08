@@ -1292,6 +1292,11 @@ DOTA_Tooltip_ability_item_summoned_unit_armor: 'БРОНЯ ДУХА:'
 DOTA_Tooltip_ability_item_summoned_unit_item_slots: 'СЛОТЫ ДЛЯ ПРЕДМЕТОВ ДУХА:'
 DOTA_Tooltip_ability_summoned_unit_return: Return
 DOTA_Tooltip_ability_summoned_unit_return_Description: 'Мгновенно перемещает Духа назад к хозяину. Дух не сможет использовать способность, если он получал урон от юнитов, находящихся под контролем игрока, в последние %return_damage_cooldown% секунды.'
+DOTA_Tooltip_modifier_item_summoned_unit_aura: Mystic Aura
+DOTA_Tooltip_modifier_item_summoned_unit_aura_Description: |-
+  Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%
+  Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
+  Восстановление здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%.
 DOTA_Tooltip_ability_item_moon_dust: Moon Dust
 DOTA_Tooltip_ability_item_moon_dust_Description: Этот предмет выпадает с боссов и не может быть куплен в лавке.
 DOTA_Tooltip_ability_item_cursed_eye: Cursed Eye
