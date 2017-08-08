@@ -20,7 +20,7 @@ Bosses:
 	Illusions now don't die when attacking Bosses
 Talents:
 	+0.5 Ice path:
-		Required level: 25 => 35
+		Required level: 35 => 45
 	+100 Dual Breath:
 		Required level: 35 => 40
 	Mega Solyara:
@@ -62,6 +62,123 @@ Talents:
 		Required level: 40 => 45
 	+8 Crippling Fear Duration => +6 Crippling Fear Duration
 	+10% Bash of the Deep Chance => +5% Bash of the Deep Chance
+	+400 Waveform Range:
+		Required Level: 30 => 45
+	-3 Waning Rift Cooldown:
+		Required level: 30 => 40
+	+75% Illusory Orb Distance/Speed:
+		Required level: 25 => 45
+	+1.2 Electric Vortex Duration:
+		Required level: 30 => 50
+	-8 Storm Hammer Cooldown:
+		Required level: 30 => 50
+	+20% Vengeance Aura Damage:
+		Required level: 40 => 45
+	Magic Missile Pierces Spell Immunity:
+		Required level: 45 => 50
+	+30% Windrun Slow:
+		Required level: 25 => 35
+	Windrun Grants Invisibility:
+		Required level: 30 => 50
+	+434 Powershot Damage:
+		Required level: 35 => 40
+	+160 Arc Lightning Damage:
+		Required level: 30 => 35
+	+0.5 Lightning Bolt Ministun:
+		Required level: 25 => 45
+	+2% Static Field Damage:
+		Required level: 35 => 50
+	+200 Torrent AOE:
+		Required level: 45 => 50
+	+300 Light Strike Array Damage:
+		Required level: 30 => 35
+	-4 Dragon Slave Cooldown:
+		Required level: 35 => 45
+	-9 Gush Armor => -18 Gush Armor:
+		Required level: 30 => 50
+	+40% Backstab Multiplier:
+		Required level: 35 => 40
+	-4 Smokescreen Cooldown:
+		Required level: 30 => 45
+	+100 Shrapnel DPS:
+		Required level: 35 => 45
+	+4 Shrapnel Charges:
+		Required level: 45 => 50
+	+600 AOE Shadow Strike:
+		Required level: 30 => 45
+	-14% Poison Sting Slow:
+		Required level: 30 => 40
+	+15% Vampiric Aura Lifesteal:
+		Required level: 35 => 45
+	-1.5 Crypt Swarm Cooldown:
+		Required level: 30 => 40
+	Double Strike Stifling Dagger:
+		Required level: 30 => 45
+	+1 Decripify Duration:
+		Required level: 25 => 40
+	-2 Netherblast Cooldown:
+		Required level: 30 => 45
+	+0.75 Nether Ward Damage per Mana:
+		Required level: 45 => 35
+	-15 Meld Armor Reduction => 25 Meld Armor Reduction:
+		Required level: 35 => 55
+	+3 Refraction Instances => +5 Refraction Instances:
+		Required level: 30 => 50
+	+250 Lucent Beam Damage:
+		Required level: 30 => 40
+	-4 Lucent Beam Cooldown:
+		Required level: 35 => 45
+	+40 Poison Touch DPS:
+		Required level: 25 => 40
+	+5 Battery Assault Duration:
+		Required level: 40 => 50
+	+1 Lightning Storm Slow Duration:
+		Required level: 35 => 45
+	+8 Natures Attendants Wisps => +24 Natures Attendants Wisps:
+		Required level: 25 => 45
+	-350 Untouchoble Slow Attackspeed:
+		Required level: 40 => 50
+	+20% Impetus Damage:
+		Required level: 35 => 55
+	Enchant Ancients:
+		Required level: 30 => 40
+	+500 Life Break Cast Range:
+		Required level: 35 => 45
+	+300 Spawn Spiderlings Damage => +400 Spawn Spiderlings Damage
+		Required level: 30 => 35
+	+19 Spin Web Count:
+		Required level: 45 => 50
+	+200 Shukuchi Damage => +250 Shukuchi Damage:
+		Required level: 30 => 25
+	+200 Shukuchi Speed:
+		Required level: 35 => 50
+	+8 Firefly Duration:
+		Required level: 30 => 40
+	-8 Test of Faith Cooldown:
+		Required level: 25 => 40
+	-7 Spectral Dagger Cooldown:
+		Required level: 35 => 45
+	+100 Doom DPS:
+		Required level: 35 => 50
+	+2% Infernal Blade Damage:
+		Required level: 30 => 40
+	+17 Greater Bash Chance:
+		Required level: 45 => 50
+	+500 Charge of Darkness Speed:
+		Required level: 30 => 40
+	-2 Decay Cooldown:
+		Required level: 35 => 45
+Added new talents for Broodmother:
+	+40 Spiders Attack Damage:
+		Cost: 1
+		Required Level: 25
+	+1250 Spiders Health:
+		Cost: 1
+		Required Level: 20
+Added new talent for Lycan:
+	+6 Wolves Summoned:
+		Cost: 1
+		Required Level: 10
 Items:
 	Force Staff now is don't usable on bosses
 	Coffe Bean no longer refreshable by Body Reconstruction
@@ -77,3 +194,4 @@ Other:
 	Spell Amplify 1% by 14 intelligence => 1% by 15 intelligence
 	Maximum Attack Speed 725 => 750
 	Minimum Attack Speed 20 => 60
+	Fixed talents wrong tooltip

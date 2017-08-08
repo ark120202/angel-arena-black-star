@@ -530,7 +530,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_morphling_waveform_range = {
 		icon = "morphling_waveform",
 		cost = 1,
-		group = 5,
+		group = 8,
 		requirement = "morphling_waveform",
 		special_values = {value = 400},
 		effect = {abilities = "special_bonus_unique_morphling_1"}
@@ -562,7 +562,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_puck_waning_rift_cd = {
 		icon = "puck_waning_rift",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "puck_waning_rift",
 		special_values = {value = 3},
 		effect = {abilities = "special_bonus_unique_puck_2"}
@@ -570,7 +570,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_puck_illusory_orb_distance = {
 		icon = "puck_illusory_orb",
 		cost = 1,
-		group = 4,
+		group = 8,
 		requirement = "puck_illusory_orb",
 		special_values = {value = 75},
 		effect = {abilities = "special_bonus_unique_puck"}
@@ -642,7 +642,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_storm_spirit_electric_vortex_duration = {
 		icon = "storm_spirit_electric_vortex",
 		cost = 1,
-		group = 5,
+		group = 9,
 		requirement = "storm_spirit_electric_vortex",
 		special_values = {value = 1.2},
 		effect = {abilities = "special_bonus_unique_storm_spirit"}
@@ -650,7 +650,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_sven_storm_bolt_cd = {
 		icon = "sven_storm_bolt",
 		cost = 1,
-		group = 5,
+		group = 9,
 		requirement = "sven_storm_bolt",
 		special_values = {value = 8},
 		effect = {abilities = "special_bonus_unique_sven"}
@@ -674,7 +674,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_vengefulspirit_command_aura_damage = {
 		icon = "vengefulspirit_command_aura",
 		cost = 1,
-		group = 7,
+		group = 8,
 		requirement = "vengefulspirit_command_aura",
 		special_values = {value = 20},
 		effect = {abilities = "special_bonus_unique_vengeful_spirit_2"}
@@ -682,7 +682,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_vengefulspirit_magic_missile_immune = {
 		icon = "vengefulspirit_magic_missile",
 		cost = 1,
-		group = 8,
+		group = 9,
 		requirement = "vengefulspirit_magic_missile",
 		special_values = {value = 0},
 		effect = {abilities = "special_bonus_unique_vengeful_spirit_3"}
@@ -690,7 +690,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_windrunner_windrun_slow = {
 		icon = "windrunner_windrun",
 		cost = 1,
-		group = 4,
+		group = 6,
 		requirement = "windrunner_windrun",
 		special_values = {value = 30},
 		effect = {abilities = "special_bonus_unique_windranger_2"}
@@ -698,7 +698,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_windrunner_windrun_invis = {
 		icon = "windrunner_windrun",
 		cost = 1,
-		group = 5,
+		group = 9,
 		requirement = "windrunner_windrun",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_windranger"}
@@ -706,7 +706,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_windrunner_powershot_damage = {
 		icon = "windrunner_powershot",
 		cost = 1,
-		group = 6,
+		group = 7,
 		requirement = "windrunner_powershot",
 		special_values = {value = 434},
 		effect = {abilities = "special_bonus_unique_windranger_3"}
@@ -714,7 +714,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_zuus_arc_lightning_dmg = {
 		icon = "zuus_arc_lightning",
 		cost = 1,
-		group = 5,
+		group = 6,
 		requirement = "zuus_arc_lightning",
 		special_values = {value = 160},
 		effect = {abilities = "special_bonus_unique_zeus_2"}
@@ -722,7 +722,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_zuus_lightning_bolt_ministun = {
 		icon = "zuus_lightning_bolt",
 		cost = 1,
-		group = 4,
+		group = 8,
 		requirement = "zuus_lightning_bolt",
 		special_values = {value = 0.5},
 		effect = {abilities = "special_bonus_unique_zeus_3"}
@@ -730,7 +730,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_zuus_static_field_damage = {
 		icon = "zuus_static_field",
 		cost = 1,
-		group = 6,
+		group = 9,
 		requirement = "zuus_static_field",
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_zeus"}
@@ -746,7 +746,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_kunkka_torrent_aoe = {
 		icon = "kunkka_torrent",
 		cost = 1,
-		group = 8,
+		group = 9,
 		requirement = "kunkka_torrent",
 		special_values = {value = 200},
 		effect = {abilities = "special_bonus_unique_kunkka"}
@@ -754,7 +754,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_lina_light_strike_array_damage = {
 		icon = "lina_light_strike_array",
 		cost = 1,
-		group = 5,
+		group = 6,
 		requirement = "lina_light_strike_damage",
 		special_values = {value = 300},
 		effect = {abilities = "special_bonus_unique_lina_3"}
@@ -762,7 +762,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_lina_dragon_slave_cooldown = {
 		icon = "lina_dragon_slave",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "lina_dragon_slave",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_lina_1"}
@@ -858,9 +858,9 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_tidehunter_gush_armor = {
 		icon = "tidehunter_gush",
 		cost = 1,
-		group = 5,
+		group = 9,
 		requirement = "tidehunter_gush",
-		special_values = {value = 9},
+		special_values = {value = 18},
 		effect = {abilities = "special_bonus_unique_tidehunter"}
 	},
 	talent_hero_witch_doctor_paralyzing_cask_bounces = {
@@ -890,7 +890,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_riki_permanent_invisibility_multiplier = {
 		icon = "riki_permanent_invisibility",
 		cost = 1,
-		group = 6,
+		group = 7,
 		requirement = "riki_permanent_invisibility",
 		special_values = {value = 40},
 		effect = {abilities = "special_bonus_unique_riki_1"}
@@ -898,7 +898,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_riki_smoke_screen_cooldown = {
 		icon = "riki_smoke_screen",
 		cost = 1,
-		group = 5,
+		group = 8,
 		requirement = "riki_smoke_screen",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_riki_2"}
@@ -930,7 +930,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_sniper_shrapnel_dps = {
 		icon = "sniper_shrapnel",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "sniper_shrapnel",
 		special_values = {value = 100},
 		effect = {abilities = "special_bonus_unique_sniper_1"}
@@ -938,7 +938,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_sniper_shrapnel_charges = {
 		icon = "sniper_shrapnel",
 		cost = 1,
-		group = 8,
+		group = 9,
 		requirement = "sniper_shrapnel",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_sniper_2"}
@@ -962,7 +962,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_queenofpain_shadow_strike_aoe = {
 		icon = "queenofpain_shadow_strike",
 		cost = 1,
-		group = 5,
+		group = 8,
 		requirement = "queenofpain_shadow_strike",
 		special_values = {value = 600},
 		effect = {abilities = "special_bonus_unique_queen_of_pain"}
@@ -970,7 +970,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_venomancer_poison_sting_slow = {
 		icon = "venomancer_poison_sting",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "venomancer_poison_sting",
 		special_values = {value = -14},
 		effect = {abilities = "special_bonus_unique_venomancer_2"}
@@ -1002,7 +1002,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_skeleton_king_vampiric_aura_lifesteal = {
 		icon = "skeleton_king_vampiric_aura",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "skeleton_king_vampiric_aura",
 		special_values = {value = 15},
 		effect = {abilities = "special_bonus_unique_wraith_king_2"}
@@ -1026,7 +1026,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_death_prophet_carrion_swarm_cooldown = {
 		icon = "death_prophet_carrion_swarm",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "death_prophet_carrion_swarm",
 		special_values = {value = 1.5},
 		effect = {abilities = "special_bonus_unique_death_prophet_2"}
@@ -1042,7 +1042,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_phantom_assassin_stifling_dagger_double = {
 		icon = "phantom_assassin_stifling_dagger",
 		cost = 1,
-		group = 5,
+		group = 8,
 		requirement = "phantom_assassin_stifling_dagger",
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_phantom_assassin"}
@@ -1050,7 +1050,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_pugna_decrepify_duration = {
 		icon = "pugna_decrepify",
 		cost = 1,
-		group = 4,
+		group = 7,
 		requirement = "pugna_decrepify",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_pugna_5"}
@@ -1058,7 +1058,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_pugna_netherblast_cooldown = {
 		icon = "pugna_nether_blast",
 		cost = 1,
-		group = 5,
+		group = 8,
 		requirement = "pugna_nether_blast",
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_pugna_4"}
@@ -1066,7 +1066,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_pugna_nether_ward_damage_mana = {
 		icon = "pugna_nether_ward",
 		cost = 1,
-		group = 8,
+		group = 6,
 		requirement = "pugna_nether_ward",
 		special_values = {value = 0.75},
 		effect = {abilities = "special_bonus_unique_pugna_3"}
@@ -1090,17 +1090,17 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_templar_assassin_meld_armor = {
 		icon = "templar_assassin_meld",
 		cost = 1,
-		group = 6,
+		group = 10,
 		requirement = "templar_assassin_meld",
-		special_values = {value = -15},
+		special_values = {value = -25},
 		effect = {abilities = "special_bonus_unique_templar_assassin_2"}
 	},
 	talent_hero_templar_assassin_refraction_instances = {
 		icon = "templar_assassin_refraction",
 		cost = 1,
-		group = 5,
+		group = 9,
 		requirement = "templar_assassin_refraction",
-		special_values = {value = 3},
+		special_values = {value = 5},
 		effect = {abilities = "special_bonus_unique_templar_assassin"}
 	},
 	talent_hero_viper_poison_attack_buildings = {
@@ -1122,7 +1122,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_luna_lucent_beam_damage = {
 		icon = "luna_lucent_beam",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "luna_lucent_beam",
 		special_values = {value = 250},
 		effect = {abilities = "special_bonus_unique_luna_1"}
@@ -1130,7 +1130,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_luna_lucent_beam_cooldown = {
 		icon = "luna_lucent_beam",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "luna_lucent_beam",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_luna_2"}
@@ -1146,7 +1146,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_dazzle_poison_touch_dps = {
 		icon = "dazzle_poison_touch",
 		cost = 1,
-		group = 4,
+		group = 7,
 		requirement = "dazzle_poison_touch",
 		special_values = {value = 40},
 		effect = {abilities = "special_bonus_unique_dazzle_3"}
@@ -1186,7 +1186,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_rattletrap_battery_assault_duration = {
 		icon = "rattletrap_battery_assault",
 		cost = 1,
-		group = 7,
+		group = 9,
 		requirement = "rattletrap_battery_assault",
 		special_values = {value = 5},
 		effect = {abilities = "special_bonus_unique_clockwerk"}
@@ -1202,7 +1202,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_leshrac_lightning_storm_duration = {
 		icon = "leshrac_lightning_storm",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "leshrac_lightning_storm",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_leshrac_2"}
@@ -1290,23 +1290,23 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_enchantress_natures_attendants_wisps = {
 		icon = "enchantress_natures_attendants",
 		cost = 1,
-		group = 4,
+		group = 8,
 		requirement = "enchantress_natures_attendants",
-		special_values = {value = 8},
+		special_values = {value = 24},
 		effect = {abilities = "special_bonus_unique_enchantress_2"}
 	},
 	talent_hero_enchantress_untouchable_slow = {
 		icon = "enchantress_untouchable",
 		cost = 1,
-		group = 7,
+		group = 9,
 		requirement = "enchantress_untouchable",
-		special_values = {value = 350},
+		special_values = {value = -350},
 		effect = {abilities = "special_bonus_unique_enchantress_3"}
 	},
 	talent_hero_enchantress_impetus_dmg = {
 		icon = "enchantress_impetus",
 		cost = 1,
-		group = 6,
+		group = 10,
 		requirement = "enchantress_impetus",
 		special_values = {value = 20},
 		effect = {abilities = "special_bonus_unique_enchantress_4"}
@@ -1314,7 +1314,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_enchantress_enchant_ancients = {
 		icon = "enchantress_enchant",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "enchantress_enchant",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_enchantress_1"}
@@ -1322,7 +1322,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_huskar_life_break_castrange = {
 		icon = "huskar_life_break",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "huskar_life_break",
 		special_values = {value = 500},
 		effect = {abilities = "special_bonus_unique_huskar"}
@@ -1338,33 +1338,33 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_broodmother_spawn_spiderlings_dmg = {
 		icon = "broodmother_spawn_spiderlings",
 		cost = 1,
-		group = 5,
+		group = 6,
 		requirement = "broodmother_spawn_spiderlings",
-		special_values = {value = 300},
+		special_values = {value = 400},
 		effect = {abilities = "special_bonus_unique_broodmother_3"}
 	},
-	talent_hero_broodmother_spawn_spiderite_dmg = {
-		icon = "broodmother_spawn_spiderite",
+	talent_hero_broodmother_spawn_spiderlings_spiderdmg = {
+		icon = "broodmother_spawn_spiderlings",
 		cost = 1,
-		group = 6,
-		requirement = "broodmother_spawn_spiderite",
-		special_values = {value = 12},
+		group = 4,
+		requirement = "broodmother_spawn_spiderlings",
+		special_values = {value = 40},
 		effect = {abilities = "special_bonus_unique_broodmother_4"}
 	},
 	talent_hero_broodmother_spin_web_count = {
 		icon = "broodmother_spin_web",
 		cost = 1,
-		group = 8,
+		group = 9,
 		requirement = "broodmother_spin_web",
 		special_values = {value = 19},
 		effect = {abilities = "special_bonus_unique_broodmother_1"}
 	},
-	talent_hero_broodmother_spawn_spiderite_hp = {
-		icon = "broodmother_spawn_spiderite",
+	talent_hero_broodmother_spawn_spiderlings_spiderhp = {
+		icon = "broodmother_spawn_spiderlings",
 		cost = 1,
 		group = 3,
-		requirement = "broodmother_spawn_spiderite",
-		special_values = {value = 225},
+		requirement = "broodmother_spawn_spiderlings",
+		special_values = {value = 1250},
 		effect = {abilities = "special_bonus_unique_broodmother_2"}
 	},
 	talent_hero_bounty_hunter_shuriken_toss_dmg = {
@@ -1386,15 +1386,15 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_weaver_shukuchi_dmg = {
 		icon = "weaver_shukuchi",
 		cost = 1,
-		group = 5,
+		group = 4,
 		requirement = "weaver_shukuchi",
-		special_values = {value = 200},
+		special_values = {value = 250},
 		effect = {abilities = "special_bonus_unique_weaver_1"}
 	},
 	talent_hero_weaver_shukuchi_speed = {
 		icon = "weaver_shukuchi",
 		cost = 1,
-		group = 6,
+		group = 9,
 		requirement = "weaver_shukuchi",
 		special_values = {value = 200},
 		effect = {abilities = "special_bonus_unique_weaver_2"}
@@ -1418,7 +1418,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_jakiro_ice_path_duration = {
 		icon = "jakiro_ice_path",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "jakiro_ice_path",
 		special_values = {value = 0.5},
 		effect = {abilities = "special_bonus_unique_jakiro"}
@@ -1426,7 +1426,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_batrider_firefly_duration = {
 		icon = "batrider_firefly",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "batrider_firefly",
 		special_values = {value = 8},
 		effect = {abilities = "special_bonus_unique_batrider_1"}
@@ -1442,7 +1442,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_chen_test_of_faith_cd = {
 		icon = "chen_test_of_faith",
 		cost = 1,
-		group = 4,
+		group = 7,
 		requirement = "chen_test_of_faith",
 		special_values = {value = 8},
 		effect = {abilities = "special_bonus_unique_chen_3"}
@@ -1474,7 +1474,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_spectre_spectral_dagger_cd = {
 		icon = "spectre_spectral_dagger",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "spectre_spectral_dagger",
 		special_values = {value = 7},
 		effect = {abilities = "special_bonus_unique_spectre"}
@@ -1498,7 +1498,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_doom_bringer_doom_dps = {
 		icon = "doom_bringer_doom",
 		cost = 1,
-		group = 6,
+		group = 9,
 		requirement = "doom_bringer_doom",
 		special_values = {value = 100},
 		effect = {abilities = "special_bonus_unique_doom_5"}
@@ -1514,7 +1514,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_doom_bringer_infernal_blade_dmg = {
 		icon = "doom_bringer_infernal_blade",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "doom_bringer_infernal_blade",
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_doom_1"}
@@ -1570,7 +1570,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_spirit_breaker_greater_bash_chance = {
 		icon = "spirit_breaker_greater_bash",
 		cost = 1,
-		group = 8,
+		group = 9,
 		requirement = "spirit_breaker_greater_bash",
 		special_values = {value = 17},
 		effect = {abilities = "special_bonus_unique_spirit_breaker_1"}
@@ -1578,7 +1578,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_spirit_breaker_charge_of_darkness_charge = {
 		icon = "spirit_breaker_charge_of_darkness",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "spirit_breaker_charge_of_darkness",
 		special_values = {value = 500},
 		effect = {abilities = "special_bonus_unique_spirit_breaker_2"}
@@ -1671,14 +1671,14 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = 10},
 		effect = {abilities = "special_bonus_unique_lycan_1"}
 	},
-	-- talent_hero_special_bonus_unique_lycan_2 = {
-	-- 	icon = "special_bonus_unique_lycan_2",
-	-- 	cost = 1,
-	-- 	group = 1,
-	-- 	requirement = "special_bonus_unique_lycan_2",
-	-- 	special_values = {value = 2},
-	-- 	effect = {abilities = "special_bonus_unique_lycan_2"}
-	-- },
+	talent_hero_lycan_summon_wolves_count = {
+		icon = "lycan_summon_wolves",
+		cost = 1,
+		group = 1,
+		requirement = "lycan_summon_wolves",
+		special_values = {value = 6},
+		effect = {abilities = "special_bonus_unique_lycan_2"}
+	},
 	talent_hero_brewmaster_thunder_clap_dmg = {
 		icon = "brewmaster_thunder_clap",
 		cost = 1,
@@ -1818,7 +1818,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_undying_decay_cd = {
 		icon = "undying_decay",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "undying_decay",
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_undying_2"}
@@ -1834,7 +1834,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_disruptor_kinetic_field_cd = {
 		icon = "disruptor_kinetic_field",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "disruptor_kinetic_field",
 		special_values = {value = 3},
 		effect = {abilities = "special_bonus_unique_disruptor_2"}
@@ -1850,7 +1850,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_disruptor_thunder_strike_hits = {
 		icon = "disruptor_thunder_strike",
 		cost = 1,
-		group = 7,
+		group = 8,
 		requirement = "disruptor_thunder_strike",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_disruptor"}
@@ -1866,7 +1866,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_nyx_assassin_spiked_carapace_dmg = {
 		icon = "nyx_assassin_spiked_carapace",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "nyx_assassin_spiked_carapace",
 		special_values = {value = 200},
 		effect = {abilities = "special_bonus_unique_nyx"}
@@ -1874,7 +1874,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_naga_siren_ensnare_cd = {
 		icon = "naga_siren_ensnare",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "naga_siren_ensnare",
 		special_values = {value = 3},
 		effect = {abilities = "special_bonus_unique_naga_siren_2"}
@@ -1898,7 +1898,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_keeper_of_the_light_illuminate_dmg = {
 		icon = "keeper_of_the_light_illuminate",
 		cost = 1,
-		group = 8,
+		group = 7,
 		requirement = "keeper_of_the_light_illuminate",
 		special_values = {value = 500},
 		effect = {abilities = "special_bonus_unique_keeper_of_the_light"}
@@ -1938,7 +1938,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_slark_pounce_duration = {
 		icon = "slark_pounce",
 		cost = 1,
-		group = 5,
+		group = 8,
 		requirement = "slark_pounce",
 		special_values = {value = 1.5},
 		effect = {abilities = "special_bonus_unique_slark"}
@@ -1962,7 +1962,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_troll_warlord_whirling_axes_melee_cd = {
 		icon = "troll_warlord_whirling_axes_melee",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "troll_warlord_whirling_axes_melee",
 		special_values = {value = 7},
 		effect = {abilities = "special_bonus_unique_troll_warlord"}
@@ -1978,7 +1978,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_centaur_hoof_stomp_duration = {
 		icon = "centaur_hoof_stomp",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "centaur_hoof_stomp",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_centaur_2"}
@@ -1986,7 +1986,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_magnataur_empower_dmg = {
 		icon = "magnataur_empower",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "magnataur_empower",
 		special_values = {value = 15},
 		effect = {abilities = "special_bonus_unique_magnus_2"}
@@ -1994,7 +1994,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_magnataur_skewer_range = {
 		icon = "magnataur_skewer",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "magnataur_skewer",
 		special_values = {value = 500},
 		effect = {abilities = "special_bonus_unique_magnus_3"}
@@ -2002,7 +2002,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_shredder_whirling_death_attribute = {
 		icon = "shredder_whirling_death",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "shredder_whirling_death",
 		special_values = {value = 6},
 		effect = {abilities = "special_bonus_unique_timbersaw"}
@@ -2034,7 +2034,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_tusk_walrus_punch_crit = {
 		icon = "tusk_walrus_punch",
 		cost = 1,
-		group = 9,
+		group = 8,
 		requirement = "tusk_walrus_punch",
 		special_values = {value = 150},
 		effect = {abilities = "special_bonus_unique_tusk"}
@@ -2042,7 +2042,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_skywrath_mage_ancient_seal_cd = {
 		icon = "skywrath_mage_ancient_seal",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "skywrath_mage_ancient_seal",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_skywrath"}
@@ -2066,7 +2066,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_elder_titan_ancestral_spirit_attack = {
 		icon = "elder_titan_ancestral_spirit",
 		cost = 1,
-		group = 4,
+		group = 6,
 		requirement = "elder_titan_ancestral_spirit",
 		special_values = {value = 100},
 		effect = {abilities = "special_bonus_unique_elder_titan"}
@@ -2074,7 +2074,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_legion_commander_moment_of_courage_chance = {
 		icon = "legion_commander_moment_of_courage",
 		cost = 1,
-		group = 5,
+		group = 8,
 		requirement = "legion_commander_moment_of_courage",
 		special_values = {value = 10},
 		effect = {abilities = "special_bonus_unique_legion_commander_3"}
@@ -2106,7 +2106,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_ember_spirit_searing_chains_count = {
 		icon = "ember_spirit_searing_chains",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "ember_spirit_searing_chains",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_ember_spirit_2"}
@@ -2114,7 +2114,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_earth_spirit_geomagnetic_grip_allies = {
 		icon = "earth_spirit_geomagnetic_grip",
 		cost = 1,
-		group = 6,
+		group = 8,
 		requirement = "earth_spirit_geomagnetic_grip",
 		special_values = {value = 0},
 		effect = {abilities = "special_bonus_unique_earth_spirit_2"}
@@ -2122,7 +2122,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_earth_spirit_boulder_smash_dmg = {
 		icon = "earth_spirit_boulder_smash",
 		cost = 1,
-		group = 7,
+		group = 6,
 		requirement = "earth_spirit_boulder_smash",
 		special_values = {value = 450},
 		effect = {abilities = "special_bonus_unique_earth_spirit"}
@@ -2154,7 +2154,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_phoenix_supernova_duration = {
 		icon = "phoenix_supernova",
 		cost = 5,
-		group = 9,
+		group = 10,
 		requirement = "phoenix_supernova",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_phoenix_2"}
@@ -2162,7 +2162,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_oracle_fortunes_end_duration = {
 		icon = "oracle_fortunes_end",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "oracle_fortunes_end",
 		special_values = {value = 0.75},
 		effect = {abilities = "special_bonus_unique_oracle_2"}
@@ -2186,7 +2186,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_winter_wyvern_cold_embrace_duration = {
 		icon = "winter_wyvern_cold_embrace",
 		cost = 1,
-		group = 4,
+		group = 8,
 		requirement = "winter_wyvern_cold_embrace",
 		special_values = {value = 1},
 		effect = {abilities = "special_bonus_unique_winter_wyvern_3"}
@@ -2194,7 +2194,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_winter_wyvern_arctic_burn_slow = {
 		icon = "winter_wyvern_arctic_burn",
 		cost = 1,
-		group = 5,
+		group = 7,
 		requirement = "winter_wyvern_arctic_burn",
 		special_values = {value = 15},
 		effect = {abilities = "special_bonus_unique_winter_wyvern_1"}
@@ -2226,7 +2226,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_abyssal_underlord_pit_of_malice_duration = {
 		icon = "abyssal_underlord_pit_of_malice",
 		cost = 1,
-		group = 5,
+		group = 8,
 		requirement = "abyssal_underlord_pit_of_malice",
 		special_values = {value = 0.4},
 		effect = {abilities = "special_bonus_unique_underlord"}
@@ -2234,7 +2234,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_monkey_king_jingu_mastery_dmg = {
 		icon = "monkey_king_jingu_mastery",
 		cost = 1,
-		group = 6,
+		group = 7,
 		requirement = "monkey_king_jingu_mastery",
 		special_values = {value = 150},
 		effect = {abilities = "special_bonus_unique_monkey_king_2"}
