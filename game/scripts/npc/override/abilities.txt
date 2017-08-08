@@ -18413,7 +18413,7 @@
 	"terrorblade_conjure_image"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.15 0.15 0.15 0.15 0.15 0.1 0.5"
+		"AbilityCastPoint"	"0.15 0.15 0.15 0.15 0.15 0.1 0.05"
 		"AbilityCooldown"	"16"
 		"AbilityManaCost"	"70"
 		"AbilitySpecial"
@@ -18455,7 +18455,7 @@
 	"terrorblade_metamorphosis"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"	"0.2 0.2 0.2 0.2 0.2 0.1 0"
+		"AbilityCastPoint"	"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
 		"AbilityCooldown"	"100"
 		"AbilityManaCost"	"100"
 		"AbilitySpecial"
@@ -18469,7 +18469,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"transformation_time"	"0.35"
+				"transformation_time"	"0.35 0.30 0.25 0.20 0.15 0.1 0.05"
 			}
 
 			"03"
@@ -18487,7 +18487,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tooltip_attack_range"	"400"
+				"tooltip_attack_range"	"550"
 			}
 
 			"06"
@@ -18505,7 +18505,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"metamorph_aura_tooltip"	"0"
+				"metamorph_aura_tooltip"	"900"
 			}
 
 		}

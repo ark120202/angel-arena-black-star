@@ -319,6 +319,7 @@
 		"SideShop"						"0"
 		"AbilityManaCost"				"25"
 		"AbilityCooldown"				"45.0"
+		"ItemCost"						"25"
 	}
 	"item_recipe_travel_boots"
 	{
