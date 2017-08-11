@@ -921,7 +921,7 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 		"AbilityManaCost"				"0"
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"17"
 		"AbilitySpecial"
 		{
 			"03"
@@ -932,7 +932,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"berserk_bonus_attack_speed"	"120"
+				"berserk_bonus_attack_speed"	"110"
 			}
 			"05"
 			{
@@ -1168,8 +1168,7 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 		"ItemCost"						"0"
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"7"
 		"AbilitySpecial"
 		{
 			"02"

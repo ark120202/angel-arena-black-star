@@ -364,7 +364,7 @@
 		"Ability4"	"saber_avalon"
 		"Ability5"	"saber_excalibur"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
 		"AttackRange"			"150"
 		"ProjectileModel"		""
 		"AttackRate"			"1.7"

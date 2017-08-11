@@ -19,6 +19,16 @@ Bosses:
 		Demons Paw2 drop chance: 10 => 5
 	Illusions now don't die when attacking Bosses
 Talents:
+	Bonus gold for creep:
+		8/14/20/26 => 8/16/24/32
+	Bonus movespeed:
+		15/17.5/20/22.5/25/27.5/30 => 5/10/15/20/25/30/35
+	Bonus gold per minute:
+		180/240/300/380/420 => 180/300/420/540/660
+	Bonus XP per minute:
+		600/1000/1400/1800/2200 => 600/1100/1700/2200/2700
+	True Strike:
+		Cost: 30 => 20
 	+0.5 Ice path:
 		Required level: 35 => 45
 	+100 Dual Breath:
@@ -168,6 +178,8 @@ Talents:
 		Required level: 30 => 40
 	-2 Decay Cooldown:
 		Required level: 35 => 45
+	+500 Illuminate Damage => +2000 Illuminate Damage:
+		Required Level: 40 => 55
 Added new talents for Broodmother:
 	+40 Spiders Attack Damage:
 		Cost: 1
@@ -179,6 +191,22 @@ Added new talent for Lycan:
 	+6 Wolves Summoned:
 		Cost: 1
 		Required Level: 10
+Added new talent for Gyrocopter:
+	+11 Flak Cannon Attacks:
+		Cost: 1
+		Required Level: 50
+Added new talent for Faceless Void:
+	+600 Time Walk Range:
+		Cost: 1
+		Required Level: 50
+Added new talent for Pudge:
+	+120 Rot Damage:
+		Cost: 1
+		Required Level: 45
+Added new talent for Rubick:
+	+400 Telekinesis Distance:
+		Cost: 1
+		Required Level: 50
 Items:
 	Force Staff now is don't usable on bosses
 	Coffe Bean no longer refreshable by Body Reconstruction
@@ -195,3 +223,50 @@ Other:
 	Maximum Attack Speed 725 => 750
 	Minimum Attack Speed 20 => 60
 	Fixed talents wrong tooltip
+	Kill Streak Gold
+		[0] = 0
+		[1] = 75
+		[2] = 250 => 150
+		[3] = 550 => 250
+		[4] = 1250 => 600
+		[5] = 2350 => 1000
+		[6] = 3330 => 1400
+		[7] = 5000 => 2200
+		[8] = 6500 => 3800
+		[9] = 8500 => 5100
+		[10] = 10000 => 6500
+		[11] = 12000 => 8000
+		[12] = 15000 => 9700
+		[13] = 18000 => 11000
+		[14] = 25000 => 12800
+		[15] = 30000 => 14200
+		[16] = 6500
+		[17] = 8000
+		[18] = 9700
+		[19] = 11000
+		[20] = 12800
+		[21] = 14200
+		[22] = 16500
+		[23] = 18800
+		[24] = 21100
+		[25] = 24000
+		[26] = 26800
+		[27] = 29200
+		[28] = 32000
+		[29] = 34500
+		[30] = 37000
+		[31] = 40000
+		[32] = 43800
+		[33] = 46200
+Creeps:
+	Champion x3:
+		Chance: 4 => 3
+		Minute:	8 => 10
+	Champion x4:
+		Chance: 4 => 2
+		Minute:	8 => 15
+	Champion x5:
+		Chance: 4 => 1
+	Deacreased the growth of creeps per every minute for:
+		GoldBounty, XPBounty, HP, Armor, Damage
+	Medium creeps (2 spawns at bot and 2 spawns at top) - now spawn 5 creeps per minute instead of 4

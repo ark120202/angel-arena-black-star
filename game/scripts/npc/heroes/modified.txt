@@ -286,7 +286,7 @@
 	"npc_dota_hero_faceless_void"
 	{
 		"override_hero"	"npc_dota_hero_faceless_void"
-		"Ability1"	"faceless_void_time_walk_arena"
+		"Ability1"	"faceless_void_time_walk"
 		"Ability2"	"faceless_void_time_dilation_arena"
 		"Ability3"	"faceless_void_time_lock_arena"
 		"Ability4"	"faceless_void_backtrack_arena"
@@ -319,7 +319,7 @@
 		"override_hero"	"npc_dota_hero_gyrocopter"
 		"Ability1"	"gyrocopter_rocket_barrage_arena"
 		"Ability2"	"gyrocopter_homing_missile_arena"
-		"Ability3"	"gyrocopter_flak_cannon_arena"
+		"Ability3"	"gyrocopter_flak_cannon"
 		"Ability4"	"gyrocopter_call_down_arena"
 		"Ability5"	""
 		"Ability6"	""
@@ -384,7 +384,7 @@
 	{
 		"override_hero"	"npc_dota_hero_pudge"
 		"Ability1"	"pudge_meat_hook_lua"
-		"Ability2"	"pudge_rot_arena"
+		"Ability2"	"pudge_rot"
 		"Ability3"	"pudge_flesh_heap_arena"
 		"Ability4"	"pudge_dismember_arena"
 		"Changed"	"1"

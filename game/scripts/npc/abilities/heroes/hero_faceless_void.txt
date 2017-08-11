@@ -431,7 +431,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dodge_chance_pct"		"10 12.5 15 17.5 20 22.5 25"
+				"dodge_chance_pct"		"5.0 7.5 10.0 12.5 15.0 17.5 20.0"
 			}
 		}
 

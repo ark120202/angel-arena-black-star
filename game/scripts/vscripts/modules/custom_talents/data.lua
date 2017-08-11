@@ -19,7 +19,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 1,
 		max_level = 4,
 		special_values = {
-			gold_for_creep = {8, 14, 20, 26}
+			gold_for_creep = {8, 16, 24, 32}
 		},
 		effect = {
 			modifiers = {
@@ -218,7 +218,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 4,
 		max_level = 7,
 		special_values = {
-			movespeed_pct = {15, 17.5, 20, 22.5, 25, 27.5, 30}
+			movespeed_pct = {5, 10, 15, 20, 25, 30, 35}
 		},
 		effect = {
 			modifiers = {
@@ -232,7 +232,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 2,
 		max_level = 5,
 		special_values = {
-			gold_per_minute = {180, 240, 300, 360, 420}
+			gold_per_minute = {180, 300, 420, 540, 660}
 		},
 		effect = {
 			unit_keys = {
@@ -246,7 +246,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 2,
 		max_level = 5,
 		special_values = {
-			xp_per_minute = {600, 1000, 1400, 1800, 2200}
+			xp_per_minute = {600, 1100, 1700, 2200, 2700}
 		},
 		effect = {
 			unit_keys = {
@@ -256,7 +256,7 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_true_strike = {
 		icon = "talents/true_strike",
-		cost = 30,
+		cost = 20,
 		group = 9,
 		effect = {
 			modifiers = {
@@ -591,14 +591,14 @@ CUSTOM_TALENTS_DATA = {
 	-- 	special_values = {value = 1.75},
 	-- 	effect = {abilities = "special_bonus_unique_pudge_1"}
 	-- },
-	-- talent_hero_pudge_rot_damage = {
-	-- 	icon = "pudge_rot",
-	-- 	cost = 1,
-	-- 	group = 1,
-	-- 	requirement = "pudge_rot",
-	-- 	special_values = {value = 120},
-	-- 	effect = {abilities = "special_bonus_unique_pudge_2"}
-	-- },
+	talent_hero_pudge_rot_damage = {
+		icon = "pudge_rot",
+		cost = 1,
+		group = 8,
+		requirement = "pudge_rot",
+		special_values = {value = 120},
+		effect = {abilities = "special_bonus_unique_pudge_2"}
+	},
 	talent_hero_razor_unstable_current_damage = {
 		icon = "razor_unstable_current",
 		cost = 1,
@@ -983,14 +983,14 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = 3},
 		effect = {abilities = "special_bonus_unique_venomancer"}
 	},
-	-- talent_hero_faceless_void_time_walk_range = {
-	-- 	icon = "faceless_void_time_walk",
-	-- 	cost = 1,
-	-- 	group = 1,
-	-- 	requirement = "faceless_void_time_walk",
-	-- 	special_values = {value = 600},
-	-- 	effect = {abilities = "special_bonus_unique_faceless_void"}
-	-- },
+	talent_hero_faceless_void_time_walk_range = {
+		icon = "faceless_void_time_walk",
+		cost = 1,
+		group = 9,
+		requirement = "faceless_void_time_walk",
+		special_values = {value = 600},
+		effect = {abilities = "special_bonus_unique_faceless_void"}
+	},
 	talent_hero_skeleton_king_hellfire_blast_dps = {
 		icon = "skeleton_king_hellfire_blast",
 		cost = 1,
@@ -1591,14 +1591,14 @@ CUSTOM_TALENTS_DATA = {
 	-- 	special_values = {value = 3},
 	-- 	effect = {abilities = "special_bonus_unique_gyrocopter_1"}
 	-- },
-	-- talent_hero_special_bonus_unique_gyrocopter_2 = {
-	-- 	icon = "special_bonus_unique_gyrocopter_2",
-	-- 	cost = 1,
-	-- 	group = 1,
-	-- 	requirement = "special_bonus_unique_gyrocopter_2",
-	-- 	special_values = {value = 4},
-	-- 	effect = {abilities = "special_bonus_unique_gyrocopter_2"}
-	-- },
+	talent_hero_gyrocopter_flak_cannon_attacks = {
+		icon = "gyrocopter_flak_cannon",
+		cost = 1,
+		group = 9,
+		requirement = "gyrocopter_flak_cannon",
+		special_values = {value = 11},
+		effect = {abilities = "special_bonus_unique_gyrocopter_2"}
+	},
 	talent_hero_alchemist_unstable_concoction_dmg = {
 		icon = "alchemist_unstable_concoction",
 		cost = 1,
@@ -1823,14 +1823,14 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_undying_2"}
 	},
-	-- talent_hero_special_bonus_unique_rubick = {
-	-- 	icon = "special_bonus_unique_rubick",
-	-- 	cost = 1,
-	-- 	group = 1,
-	-- 	requirement = "special_bonus_unique_rubick",
-	-- 	special_values = {value = 400},
-	-- 	effect = {abilities = "special_bonus_unique_rubick"}
-	-- },
+	talent_hero_rubick_telekinesis_distance = {
+		icon = "rubick_telekinesis",
+		cost = 1,
+		group = 9,
+		requirement = "rubick_telekinesis",
+		special_values = {value = 400},
+		effect = {abilities = "special_bonus_unique_rubick"}
+	},
 	talent_hero_disruptor_kinetic_field_cd = {
 		icon = "disruptor_kinetic_field",
 		cost = 1,
@@ -1898,9 +1898,9 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_keeper_of_the_light_illuminate_dmg = {
 		icon = "keeper_of_the_light_illuminate",
 		cost = 1,
-		group = 7,
+		group = 10,
 		requirement = "keeper_of_the_light_illuminate",
-		special_values = {value = 500},
+		special_values = {value = 2000},
 		effect = {abilities = "special_bonus_unique_keeper_of_the_light"}
 	},
 	-- talent_hero_special_bonus_unique_wisp_2 = {

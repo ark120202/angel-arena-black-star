@@ -3386,7 +3386,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"5"
+				"kill_gold"				"7"
 			}
 		}
 
@@ -5228,10 +5228,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange"				"350"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"20"
+		"AbilityCooldown"				"30"
 
 		"AbilitySpecial"
 		{
@@ -5274,13 +5274,13 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_as_damage_pct"		"25"
+				"hp_as_damage_pct"		"30"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_radius"			"350"
+				"damage_radius"			"300"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"10"
@@ -5301,8 +5301,8 @@
 			}
 			"13"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"dust_damage"			"2"
+				"var_type"				"FIELD_FLOAT"
+				"dust_damage"			"2.5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -6028,7 +6028,7 @@
 		"AbilityTextureName"			"item_arena/demon_king_bar"
 
 		"AbilityCooldown"				"180"
-		"AbilityManaCost"				"600"
+		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"300"
 
 		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
@@ -6653,7 +6653,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_bonus_movespeed_pct" "50"
+				"active_bonus_movespeed_pct" "30"
 			}
 			"09"
 			{
@@ -7491,7 +7491,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"10"
+				"attack_damage_to_pure_pct"	"15"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -7556,18 +7556,18 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_hit"		"-6"
+				"damage_per_hit"		"-2"
 				"CalculateSpellDamageTooltip" "0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"armor_per_hit"			"-0.5"
+				"armor_per_hit"			"-0.25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"15"
+				"attack_damage_to_pure_pct"	"20"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
@@ -8975,7 +8975,7 @@
 		"ItemResult"					"item_urn_of_demons"
 		"ItemRequirements"
 		{
-			"01"						"item_urn_of_shadows;item_urn_of_souls;item_blade_of_alacrity;item_ultimate_orb"
+			"01"						"item_urn_of_shadows;item_urn_of_souls;item_pers"
 		}
 	}
 
@@ -9009,27 +9009,37 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all"				"28"
-			}
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_regen_percent"	"200"
+				"bonus_damage"			"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all"				"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"soul_radius"			"1800"
+				"mana_regen_percent"	"200"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"soul_initial_charge"	"2"
+				"bonus_health_regen"	"15"
 			}
 			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_radius"			"1600"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_initial_charge"	"2"
+			}
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"soul_additional_charges"	"1"
@@ -9040,7 +9050,7 @@
 				"soul_hp_total_pct" 	"22"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"08"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"soul_mana_total_pct" 	"25"
@@ -9048,12 +9058,12 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"soul_effect_duration"	"10"
+				"soul_effect_duration"	"8"
 			}
-			"06"
+			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"soul_effect_interval"	"0.2"
+				"soul_effect_interval"	"0.25"
 			}
 		}
 
@@ -9076,8 +9086,12 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen_percent"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
 				}
 			}
 			"modifier_item_urn_of_demons_aura_emitter"
