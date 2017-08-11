@@ -234,12 +234,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"disarm_chance"				"10"
+				"disarm_chance"				"9"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"disarm_duration"			"0.4 0.5 0.6 0.7 0.8 0.9 1.0"
+				"disarm_duration"			"0.1 0.2 0.3 0.4 0.5 0.6 0.7"
 			}
 			"06"
 			{
@@ -393,18 +393,18 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"silence_chance"			"15"
+				"silence_chance"			"9"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"silence_duration"			"1.25"
+				"silence_duration"			"1.0"
 			}
 			//4
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"flame_duration"			"15"
+				"flame_duration"			"5"
 			}
 			"11"
 			{
@@ -415,7 +415,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"breath_chance"				"15"
+				"breath_chance"				"9"
 			}
 			"13"
 			{
@@ -440,7 +440,7 @@
 			"17"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"breath_debuff_duration"	"3.0"
+				"breath_debuff_duration"	"2.0"
 			}
 			"18"
 			{
@@ -466,7 +466,7 @@
 			"22"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"cold_duration"					"3.0"
+				"cold_duration"					"2.0"
 			}
 			"23"
 			{

@@ -36,6 +36,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"heal"					"100 170 240 310 380 450 520"
+				"CalculateSpellDamageTooltip" "1"
 			}
 			"02"
 			{
@@ -69,8 +70,8 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.35 0.35 0.35 0.35 0.35 0.25 0.15"
-		"AbilityCooldown"				"30 28 26 24 22 20 18"
+		"AbilityCastPoint"				"0.35 0.30 0.25 0.20 0.15 0.1 0.5"
+		"AbilityCooldown"				"25.0 22.5 20.0 17.5 15.0 12.5 10.0"
 		"AbilityManaCost"				"50"
 
 
@@ -81,7 +82,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0 4.25 4.5 4.75 5.0 5.25 5.5"
+				"duration"				"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
 			}
 			"02"
 			{
@@ -116,7 +117,7 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"40"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.45 0.4"
+		"AbilityCastPoint"				"0.5 0.45 0.4 0.35 0.3 0.25 0.2"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -129,7 +130,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.0 3.25 3.5 3.75 4.0 4.25 4.5"
+				"duration"					"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
 			}
 			"02"
 			{
@@ -308,11 +309,11 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"MaxLevel" 						"7"
+		"MaxLevel" 						"1"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 
 		"AbilityCooldown"				"160"
-		"AbilityManaCost"				"200 400 600 800 1000 1200 1400"
+		"AbilityManaCost"				"400"
 		"HasScepterUpgrade"				"1"
 
 		"AbilitySpecial"
@@ -320,7 +321,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
+				"duration"			"3.0"
 			}
 		}
 
@@ -389,18 +390,18 @@
 		"ScepterGrantedLevel"			"0"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"MaxLevel" 						"7"
+		"MaxLevel" 						"1"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 
 		"AbilityCooldown"				"160"
-		"AbilityManaCost"				"200 400 600 800 1000 1200 1400"
+		"AbilityManaCost"				"600"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
+				"duration"			"3.0"
 			}
 		}
 
