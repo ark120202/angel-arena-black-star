@@ -2889,7 +2889,7 @@
 			"06"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"images_count"										"3"
+				"images_count"										"2"
 			}
 			"07"
 			{
@@ -5748,7 +5748,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemStockMax"					"3"
+		"ItemStockMax"					"5"
 		"ItemStockTime"					"120.0"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
@@ -6192,7 +6192,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"              "0"
-		"AbilityCooldown"				"20"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"0"
 		"AbilitySharedCooldown"			"ethereal"
 		"ItemShopTags"					"int;agi;str;hard_to_tag"
@@ -6244,7 +6244,7 @@
 			"10"
 			{
 				"var_type"								"FIELD_FLOAT"
-				"duration"								"3"
+				"duration"								"2"
 			}
 			"11"
 			{
@@ -8970,7 +8970,7 @@
 		"ID"							"10274"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"3600"
+		"ItemCost"						"200"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_urn_of_demons"
 		"ItemRequirements"
@@ -9213,7 +9213,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"70"
+				"bonus_armor"			"60"
 			}
 			"04"
 			{

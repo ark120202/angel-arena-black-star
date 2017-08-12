@@ -5649,7 +5649,7 @@
 	"tinker_rearm"
 	{
 		"MaxLevel"				"7"
-		"AbilityCastPoint"		"0.5"
+		"AbilityCastPoint"		"0.53 0.43 0.33 0.23 0.13 0.03 0.0"
 		"AbilityChannelTime"	"3.0 2.65 2.3 1.95 1.6 1.25 0.9"
 		"AbilityCooldown"		"0.0"
 		"AbilityManaCost"		"200 300 400 500 600 700 800"
@@ -10862,7 +10862,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"fire_rate"						"0.6"
+				"fire_rate"						"0.3"
 			}
 			"05"
 			{
@@ -11412,14 +11412,14 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"mana_burned"	"125 225 325 425 525 625 725 1000"
+				"mana_burned"	"125 225 325 425 525 625 725 2000"
 				"levelkey"	"wexlevel"
 			}
 
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_mana_pct"	"45"
+				"damage_per_mana_pct"	"40"
 			}
 
 		}

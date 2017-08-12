@@ -115,7 +115,7 @@
 		"Ability2"	"stargazer_warp"
 		"Ability3"	"stargazer_inverse_field"
 		"Ability4"	"stargazer_cosmic_countdown"
-		"AttributePrimary"	"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributePrimary"	"DOTA_ATTRIBUTE_STRENGTH"
 		"AttackRate"	"1.7"
 		"MovementTurnRate"	"0.7"
 		"MagicalResistance"	"20"
