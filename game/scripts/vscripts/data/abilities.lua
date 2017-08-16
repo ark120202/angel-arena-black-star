@@ -39,6 +39,7 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	item_refresher_core = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
+	sai_release_of_forge = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
@@ -146,6 +147,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	magnataur_reverse_polarity = true,
 	queenofblades_alter_ego = true,
 	saber_excalibur = true,
+	sai_release_of_forge = true,
 }
 
 COFFEE_BEAN_NOT_REFRESHABLE = {
