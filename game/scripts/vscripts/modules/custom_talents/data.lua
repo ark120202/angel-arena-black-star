@@ -310,12 +310,12 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_hero_sai_release_of_forge_bonus_respawn_time_reduction = {
 		icon = "arena/sai_release_of_forge",
-		cost = 5,
+		cost = 10,
 		group = 8,
 		max_level = 4,
 		requirement = "sai_release_of_forge",
 		special_values = {
-			reduction_pct = {25, 50, 75, 100}
+			reduction_pct = {12.5, 25, 37.5, 50}
 		}
 	},
 
