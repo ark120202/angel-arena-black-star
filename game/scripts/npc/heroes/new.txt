@@ -475,9 +475,9 @@
 		"AttributeBaseStrength"	"24"
 		"AttributeBaseIntelligence"	"28"
 		"AttributeBaseAgility"	"20"
-		"AttributeStrengthGain"	"2.8"
-		"AttributeIntelligenceGain"	"3.0"
-		"AttributeAgilityGain"	"2.2"
+		"AttributeStrengthGain"	"1.7"
+		"AttributeIntelligenceGain"	"2.2"
+		"AttributeAgilityGain"	"1.9"
 		"AttackDamageMin"		"30"
 		"AttackDamageMax"		"35"
 	}
