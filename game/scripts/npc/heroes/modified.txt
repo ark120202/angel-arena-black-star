@@ -521,7 +521,7 @@
 		"Ability2"	"antimage_blink_arena"
 		"Ability3"	"antimage_spell_shield_arena"
 		"Ability4"	"antimage_mana_void_arena"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 		"Changed"	"1"
 		"Ability5"	""
 		"Ability6"	""

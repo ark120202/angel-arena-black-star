@@ -404,7 +404,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 6,
 		requirement = "bloodseeker_blood_bath",
-		special_values = {value = 7},
+		special_values = {value = 5},
 		effect = {abilities = "special_bonus_unique_bloodseeker"}
 	},
 	-- talent_hero_crystal_maiden_freezing_field_damage = {
@@ -652,7 +652,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 9,
 		requirement = "sven_storm_bolt",
-		special_values = {value = 8},
+		special_values = {value = 6},
 		effect = {abilities = "special_bonus_unique_sven"}
 	},
 	talent_hero_tiny_avalanche_dmg = {
@@ -828,7 +828,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 7,
 		requirement = "shadow_shaman_shackles",
-		special_values = {value = 1.5},
+		special_values = {value = 1.0},
 		effect = {abilities = "special_bonus_unique_shadow_shaman_2"}
 	},
 	talent_hero_shadow_shaman_mass_serpent_ward_attacks = {
@@ -1028,7 +1028,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 7,
 		requirement = "death_prophet_carrion_swarm",
-		special_values = {value = 1.5},
+		special_values = {value = 1.0},
 		effect = {abilities = "special_bonus_unique_death_prophet_2"}
 	},
 	talent_hero_death_prophet_exorcism_spirits = {
@@ -1610,9 +1610,9 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_alchemist_acid_spray_armor = {
 		icon = "alchemist_acid_spray",
 		cost = 1,
-		group = 8,
+		group = 9,
 		requirement = "alchemist_acid_spray",
-		special_values = {value = 12},
+		special_values = {value = 10},
 		effect = {abilities = "special_bonus_unique_alchemist"}
 	},
 	talent_hero_invoker_forge_spirit_summon = {
@@ -1836,7 +1836,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 1,
 		group = 7,
 		requirement = "disruptor_kinetic_field",
-		special_values = {value = 3},
+		special_values = {value = 2},
 		effect = {abilities = "special_bonus_unique_disruptor_2"}
 	},
 	talent_hero_disruptor_thunder_strike_dmg = {
@@ -1962,7 +1962,7 @@ CUSTOM_TALENTS_DATA = {
 	talent_hero_troll_warlord_whirling_axes_melee_cd = {
 		icon = "troll_warlord_whirling_axes_melee",
 		cost = 1,
-		group = 7,
+		group = 9,
 		requirement = "troll_warlord_whirling_axes_melee",
 		special_values = {value = 7},
 		effect = {abilities = "special_bonus_unique_troll_warlord"}
@@ -2103,7 +2103,7 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = 900},
 		effect = {abilities = "special_bonus_unique_ember_spirit_1"}
 	},
-	talent_hero_ember_spirit_searing_chains_count = {
+	talent_hero_ember_spirit_searing_chains_duration = {
 		icon = "ember_spirit_searing_chains",
 		cost = 1,
 		group = 8,

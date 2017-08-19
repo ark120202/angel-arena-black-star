@@ -321,7 +321,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"3.0"
+				"duration"			"5.0"
 			}
 		}
 
@@ -401,7 +401,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"3.0"
+				"duration"			"5.0"
 			}
 		}
 

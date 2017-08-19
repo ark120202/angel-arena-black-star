@@ -3,6 +3,7 @@
 	"special_bonus_unique_invoker_1"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"3"}}}
 	"special_bonus_unique_invoker_3"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"14"}}}
 	"special_bonus_unique_bloodseeker_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"150"}}}
+	"special_bonus_unique_bloodseeker"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"5"}}}
 	"special_bonus_unique_drow_ranger_1"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"16"}}}
 	"special_bonus_unique_drow_ranger_3"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"100"}}}
 	"special_bonus_unique_earthshaker_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"175"}}}
@@ -24,7 +25,7 @@
 	"special_bonus_unique_kunkka_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"400"}}}
 	"special_bonus_unique_lina_3"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"300"}}}
 	"special_bonus_unique_lion_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"300"}}}
-	"special_bonus_unique_shadow_shaman_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_FLOAT""value"		"1.5"}}}
+	"special_bonus_unique_shadow_shaman_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_FLOAT""value"		"1.0"}}}
 	"special_bonus_unique_tidehunter"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"18"}}}
 	"special_bonus_unique_witch_doctor_3"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"6"}}}
 	"special_bonus_unique_witch_doctor_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"80"}}}
@@ -36,6 +37,7 @@
 	"special_bonus_unique_wraith_king_3"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"300"}}}
 	"special_bonus_unique_wraith_king_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"15"}}}
 	"special_bonus_unique_death_prophet"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"22"}}}
+	"special_bonus_unique_death_prophet_2"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"1.0"}}}
 	"special_bonus_unique_pugna_4"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"2"}}}
 	"special_bonus_unique_pugna_1"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"200"}}}
 	"special_bonus_unique_pugna_2"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"400"}}}
@@ -77,7 +79,7 @@
 	"special_bonus_unique_ancient_apparition_2"		{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"300"}}}
 	"special_bonus_unique_ursa"						{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"35"}}}
 	"special_bonus_unique_alchemist_2"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"300"}}}
-	"special_bonus_unique_alchemist"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"12"}}}
+	"special_bonus_unique_alchemist"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"10"}}}
 	"special_bonus_unique_silencer"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"10"}}}
 	"special_bonus_unique_lycan_3"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"32"}}}
 	"special_bonus_unique_lycan_1"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"10"}}}
@@ -115,4 +117,6 @@
 	"special_bonus_unique_night_stalker"			{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"6"}}}
 	"special_bonus_unique_slardar"					{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"5"}}}
 	"special_bonus_unique_gyrocopter_2"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"11"}}}
+	"special_bonus_unique_sven"						{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"6"}}}
+	"special_bonus_unique_disruptor_2"				{"AbilitySpecial"{"01"{ "var_type""FIELD_INTEGER""value"	"2"}}}
 }

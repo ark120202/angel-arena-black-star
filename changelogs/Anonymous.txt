@@ -180,6 +180,15 @@ Talents:
 		Required level: 35 => 45
 	+500 Illuminate Damage => +2000 Illuminate Damage:
 		Required Level: 40 => 55
+	-7 Blood Bath Cooldown => -5 Blood Bath Cooldown
+	-8 Storm Bolt Cooldown => -6 Storm Bolt Cooldown
+	+1.5 Shackles Duration => +1.0 Shackles Duration
+	-1.5 Carrion Swarm => -1 Carrion Swarm
+	-12 Acid Spray => -10 Acid Spray:
+		Required Level: 45 => 50
+	-3 Kinetic Field Cooldown => -2 Kinetic Field Cooldown
+	-7 Whirling Axes Cooldown:
+		Required level: 50 => 40
 Added new talents for Broodmother:
 	+40 Spiders Attack Damage:
 		Cost: 1
@@ -217,6 +226,7 @@ Heroes:
 		Demon King Bar now is shareble on meepo's clones
 		Golden Eagle Relic no longer shareble on meepo's clones
 		Holy Knight Shield no longer shareble on meepo's clones
+		Heavy War Axe of Rage Health now shareble on meep's clones
 	Destroyer - Body Reconstruction now is refreshable by Refresher and Coffee Bean
 Other:
 	Spell Amplify 1% by 14 intelligence => 1% by 15 intelligence

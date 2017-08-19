@@ -283,7 +283,7 @@ custom_talents_talent_hero_legion_commander_moment_of_courage_chance: +{%value%}
 custom_talents_talent_hero_legion_commander_duel_bonus: +{value} Duel Damage Bonus
 custom_talents_talent_hero_legion_commander_press_the_attack_cd: -{value} Press The Attack Cooldown
 custom_talents_talent_hero_ember_spirit_flame_guard_absorb: +{value} Flame Guard Absorption
-custom_talents_talent_hero_ember_spirit_searing_chains_count: +{value} Searing Chains
+custom_talents_talent_hero_ember_spirit_searing_chains_duration: +{value} Searing Chains Duration
 custom_talents_talent_hero_earth_spirit_geomagnetic_grip_allies: Geomagnetic Grip Targets Allies
 custom_talents_talent_hero_earth_spirit_boulder_smash_dmg: +{value} Rolling Boulder Damage
 custom_talents_talent_hero_terrorblade_sunder_cd: -{value} Sunder Cooldown
