@@ -8001,7 +8001,6 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"jump_delay"	"0.25"
-
 			}
 
 			"05"
