@@ -1818,7 +1818,8 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"mana_cost"	"mana_cost"	"30 25 20 15 10 5 0"			}
+				"mana_cost"	"30 25 20 15 10 5 0"
+			}
 
 			"02"
 			{
@@ -1836,7 +1837,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_attributes"	"3 5 7 9 11 13 15"
-
+			}
 		}
 
 	}
