@@ -355,7 +355,7 @@
 			"12"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"1"
+				"movement_speed_percent_bonus_buff"		"2"
 			}
 			"13"
 			{
@@ -793,7 +793,7 @@
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"1"
+				"movement_speed_percent_bonus_buff"		"2"
 			}
 			"09"
 			{
@@ -922,8 +922,8 @@
 			}
 			"02"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_intellect"				"24"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"24"
 			}
 			"03"
 			{
@@ -938,17 +938,17 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"18"
+				"movement_speed_percent_bonus"	"20"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"18"
+				"bonus_attack_speed"			"24"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"nightshadow_chance"			"18"
+				"nightshadow_chance"			"16"
 			}
 			"08"
 			{
@@ -988,7 +988,7 @@
 			"15"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"2"
+				"movement_speed_percent_bonus_buff"		"3"
 			}
 			"16"
 			{

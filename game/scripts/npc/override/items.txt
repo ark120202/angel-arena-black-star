@@ -613,20 +613,6 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-
-		"AbilitySpecial"
-		{
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"soul_heal_amount"		"600"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"soul_damage_amount"	"220"
-			}
-		}
 	}
 	"item_recipe_headdress"
 	{
@@ -1342,42 +1328,6 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"ItemInitialStockTime"			"60.0"
-		"AbilityCooldown"				"5.0"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_armor"			"0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_magical_armor"	"0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_damage_block"	"150"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"min_damage"			"50"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"initial_charges"		"5"
-			}
-		}
 	}
 	"item_blight_stone"
 	{
