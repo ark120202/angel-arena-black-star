@@ -36,12 +36,3 @@ function OnTakeDamage(keys)
 
 	attacker:AddNewModifier(caster, ability, "modifier_max_attack_range", {AttackRange = ability:GetAbilitySpecial("attack_range_limit"), duration = 3})
 end
-
-function OnBossDeath(keys)
-	local caster = keys.caster
-	local attacker = keys.attacker
-
-	if attacker and not caster.IsDominatedBoss then
-		Bosses:RegisterKilledBoss(caster, attacker:GetTeam())
-	end
-end

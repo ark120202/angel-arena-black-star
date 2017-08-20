@@ -206,6 +206,14 @@ function GameMode:OnEntityKilled(keys)
 			end
 		end
 
+		if killedUnit:IsBoss() and not killedUnit.IsDominatedBoss then
+			local team = DOTA_TEAM_NEUTRALS
+			if killerEntity then
+				team = killerEntity:GetTeam()
+			end
+			Bosses:RegisterKilledBoss(killedUnit, team)
+		end
+
 		if killedUnit:IsRealCreep() then
 			Spawner.Creeps[killedUnit.SSpawner] = Spawner.Creeps[killedUnit.SSpawner] - 1
 		end
