@@ -2408,37 +2408,6 @@
 
 	}
 
-	"pudge_rot"
-	{
-		"MaxLevel"						"7"
-		"AbilityCastPoint"				"0"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"rot_radius"			"250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"rot_tick"				"0.2"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"rot_slow"				"-30"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"rot_damage"			"30 60 90 120 150 180 210"
-				"LinkedSpecialBonus"	"special_bonus_unique_pudge_2"
-			}
-		}
-	}
-
 	"shadow_shaman_ether_shock"
 	{
 		"MaxLevel"	"7"
@@ -6475,40 +6444,6 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"speed"	"500 525 550 575 600 625 650"
-			}
-		}
-	}
-
-	"faceless_void_time_walk"
-	{
-		"MaxLevel"						"7"
-		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
-		"AbilityCooldown"				"24 21 18 15 12 9 6"
-		"AbilityManaCost"				"40"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"3000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"675"
-				"LinkedSpecialBonus"	"special_bonus_unique_faceless_void"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"backtrack_duration"	"2.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
 			}
 		}
 	}
@@ -10835,45 +10770,6 @@
 
 		}
 
-	}
-
-	"gyrocopter_flak_cannon"
-	{
-		"MaxLevel"						"7"
-		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"30.0 27.5 25.0 22.5 20.0 17.5 15.0"
-		"AbilityManaCost"				"50"
-		"AbilityDuration"				"15"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"1250"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"max_attacks"					"3 4 5 6 7 8 9"
-				"LinkedSpecialBonus"			"special_bonus_unique_gyrocopter_2"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"projectile_speed"				"800"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"fire_rate"						"0.3"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"scepter_radius"				"650"
-			}
-		}
 	}
 
 	"alchemist_acid_spray"

@@ -591,14 +591,14 @@ CUSTOM_TALENTS_DATA = {
 	-- 	special_values = {value = 1.75},
 	-- 	effect = {abilities = "special_bonus_unique_pudge_1"}
 	-- },
-	talent_hero_pudge_rot_damage = {
-		icon = "pudge_rot",
-		cost = 1,
-		group = 8,
-		requirement = "pudge_rot",
-		special_values = {value = 120},
-		effect = {abilities = "special_bonus_unique_pudge_2"}
-	},
+	-- talent_hero_pudge_rot_damage = {
+	-- 	icon = "pudge_rot",
+	-- 	cost = 1,
+	-- 	group = 1,
+	-- 	requirement = "pudge_rot",
+	-- 	special_values = {value = 120},
+	-- 	effect = {abilities = "special_bonus_unique_pudge_2"}
+	-- },
 	talent_hero_razor_unstable_current_damage = {
 		icon = "razor_unstable_current",
 		cost = 1,
@@ -983,14 +983,14 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = 3},
 		effect = {abilities = "special_bonus_unique_venomancer"}
 	},
-	talent_hero_faceless_void_time_walk_range = {
-		icon = "faceless_void_time_walk",
-		cost = 1,
-		group = 9,
-		requirement = "faceless_void_time_walk",
-		special_values = {value = 600},
-		effect = {abilities = "special_bonus_unique_faceless_void"}
-	},
+	-- talent_hero_faceless_void_time_walk_range = {
+	-- 	icon = "faceless_void_time_walk",
+	-- 	cost = 1,
+	-- 	group = 1,
+	-- 	requirement = "faceless_void_time_walk",
+	-- 	special_values = {value = 600},
+	-- 	effect = {abilities = "special_bonus_unique_faceless_void"}
+	-- },
 	talent_hero_skeleton_king_hellfire_blast_dps = {
 		icon = "skeleton_king_hellfire_blast",
 		cost = 1,
@@ -1591,14 +1591,14 @@ CUSTOM_TALENTS_DATA = {
 	-- 	special_values = {value = 3},
 	-- 	effect = {abilities = "special_bonus_unique_gyrocopter_1"}
 	-- },
-	talent_hero_gyrocopter_flak_cannon_attacks = {
-		icon = "gyrocopter_flak_cannon",
-		cost = 1,
-		group = 9,
-		requirement = "gyrocopter_flak_cannon",
-		special_values = {value = 11},
-		effect = {abilities = "special_bonus_unique_gyrocopter_2"}
-	},
+	-- talent_hero_special_bonus_unique_gyrocopter_2 = {
+	-- 	icon = "special_bonus_unique_gyrocopter_2",
+	-- 	cost = 1,
+	-- 	group = 1,
+	-- 	requirement = "special_bonus_unique_gyrocopter_2",
+	-- 	special_values = {value = 4},
+	-- 	effect = {abilities = "special_bonus_unique_gyrocopter_2"}
+	-- },
 	talent_hero_alchemist_unstable_concoction_dmg = {
 		icon = "alchemist_unstable_concoction",
 		cost = 1,

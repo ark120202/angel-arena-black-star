@@ -142,11 +142,11 @@ custom_talents_talent_hero_beastmaster_wild_axes_damage: +{value} Wild Axes Dama
 custom_talents_talent_hero_queenofpain_shadow_strike_aoe: +{value} AoE Shadow Strike
 custom_talents_talent_hero_venomancer_poison_sting_slow: '{%value%} Poison Sting Slow'
 custom_talents_talent_hero_venomancer_plague_ward_hpdamage: +{value} Plague Ward HP/Damage
-custom_talents_talent_hero_faceless_void_time_walk_range: +{value} Timewalk Cast Range
+# custom_talents_talent_hero_faceless_void_time_walk_range: +{value} Timewalk Cast Range
 custom_talents_talent_hero_skeleton_king_hellfire_blast_dps: +{value} Wraithfire Blast DPS
 custom_talents_talent_hero_skeleton_king_vampiric_aura_lifesteal: +{%value%} Vampiric Aura Lifesteal
-custom_talents_talent_hero_skeleton_king_reincarnation_manacost: No Reincarnation Manacost
-custom_talents_talent_hero_skeleton_king_reincarnation_blast: Reincarnation Casts Wraithfire Blast
+# custom_talents_talent_hero_skeleton_king_reincarnation_manacost: No Reincarnation Manacost
+# custom_talents_talent_hero_skeleton_king_reincarnation_blast: Reincarnation Casts Wraithfire Blast
 custom_talents_talent_hero_death_prophet_carrion_swarm_cooldown: -{value} Crypt Swarm Cooldown
 custom_talents_talent_hero_death_prophet_exorcism_spirits: +{value} Exorcism Spirits
 custom_talents_talent_hero_phantom_assassin_stifling_dagger_double: Double Strike Stifling Dagger
@@ -219,7 +219,7 @@ custom_talents_talent_hero_spirit_breaker_greater_bash_dmg: +{%value%} Greater B
 custom_talents_talent_hero_spirit_breaker_greater_bash_chance: +{%value%} Greater Bash Chance
 custom_talents_talent_hero_spirit_breaker_charge_of_darkness_charge: +{value} Charge Speed
 # custom_talents_talent_hero_special_bonus_unique_gyrocopter_1: '{value} Homing Missile Charges'
-# custom_talents_talent_hero_gyrocopter_flak_cannon_attacks: +{value} Flak Cannon Attacks
+# custom_talents_talent_hero_special_bonus_unique_gyrocopter_2: +{value} Flak Cannon Attacks
 custom_talents_talent_hero_alchemist_unstable_concoction_dmg: +{value} Unstable Concoction Damage
 custom_talents_talent_hero_alchemist_acid_spray_armor: -{value} Acid Spray Armor
 custom_talents_talent_hero_invoker_forge_spirit_summon: +{value} Forged Spirit Summoned
