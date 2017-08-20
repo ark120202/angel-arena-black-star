@@ -16,7 +16,8 @@ function RemoveParticles() {
 
 function CreateParticleForWeather() {
 	for (var i = 0; i < currentParticles.length; i++) {
-		var index = Particles.CreateParticle(currentParticles[i], ParticleAttachment_t.PATTACH_EYES_FOLLOW, Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()));
+		var fountain = FindFountain(Players.GetTeam(Game.GetLocalPlayerID()));
+		var index = Particles.CreateParticle(currentParticles[i], ParticleAttachment_t.PATTACH_EYES_FOLLOW, fountain);
 		console.log('Just created particle (' + index + ', ' + currentParticles[i] + ')');
 		ParticleList.push(index);
 	}
