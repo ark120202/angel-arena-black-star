@@ -1,4 +1,5 @@
-BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
+-- Percentage
+BOSS_DAMAGE_ABILITY_MODIFIERS = {
 	zuus_static_field = 10,
 	item_blade_mail = 0,
 	centaur_return = 0,
@@ -10,21 +11,21 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	shredder_chakram_2 = 40,
 	shredder_chakram = 40,
 	sniper_shrapnel = 40,
-	abaddon_death_coil = 40,
 	abyssal_underlord_firestorm = 20,
 	bristleback_quill_spray = 40,
 	centaur_hoof_stomp = 40,
 	centaur_double_edge = 40,
 	kunkka_ghostship = 40,
 	kunkka_torrent = 40,
-	slark_dark_pact = 40,
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,
 	antimage_mana_void_arena = 0,
-	ancient_apparition_ice_blast = 0,
 	doom_bringer_infernal_blade = 10,
 	winter_wyvern_arctic_burn = 10,
-	freya_ice_cage = 10
+	freya_ice_cage = 10,
+	tinker_march_of_the_machines = 2000,
+	necrolyte_reapers_scythe = 7,
+	huskar_life_break = 15,
 }
 
 local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
@@ -186,7 +187,7 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
-	modifier_item_golden_eagle_relic_unique = function(_, _, inflictor)
+	modifier_item_golden_eagle_relic = function(_, _, inflictor)
 		if not IsValidEntity(inflictor) then
 			return {
 				LifestealPercentage = GetAbilitySpecial("item_golden_eagle_relic", "lifesteal_pct")
@@ -332,14 +333,16 @@ INCOMING_DAMAGE_MODIFIERS = {
 }
 
 CREEP_BONUSES_MODIFIERS = {
-	modifier_item_golden_eagle_relic_unique = {gold = GetAbilitySpecial("item_golden_eagle_relic", "kill_gold"), xp = GetAbilitySpecial("item_golden_eagle_relic", "kill_xp")},
-	modifier_say_demonic_power = function(self)
-		local ability = self:FindAbilityByName("say_demonic_power")
-		if abiltiy then
-			return {gold = ability:GetLevelSpecialValueFor("bonus_creep_gold", ability:GetLevel() - 1)}
-		end
-	end,
-	modifier_item_skull_of_midas = {gold = GetAbilitySpecial("item_skull_of_midas", "kill_gold"), xp = GetAbilitySpecial("item_skull_of_midas", "kill_xp")},
+	modifier_item_golden_eagle_relic_unique = {
+		gold = GetAbilitySpecial("item_golden_eagle_relic", "kill_gold"),
+		xp = GetAbilitySpecial("item_golden_eagle_relic", "kill_xp")
+	},
+
+	modifier_item_skull_of_midas = {
+		gold = GetAbilitySpecial("item_skull_of_midas", "kill_gold"),
+		xp = GetAbilitySpecial("item_skull_of_midas", "kill_xp")
+	},
+
 	modifier_talent_creep_gold = function(self)
 		local modifier = self:FindModifierByName("modifier_talent_creep_gold")
 		if modifier then

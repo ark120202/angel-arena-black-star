@@ -30,10 +30,17 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		return false
 	end
 
-	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability and not units[1]:IsIllusion() and not units[1]:IsTempestDouble() then
-		PanoramaShop:SellItem(units[1], ability)
+	if units[1] and
+		order_type == DOTA_UNIT_ORDER_SELL_ITEM and
+		ability then
+		if not units[1]:IsIllusion() and
+			not units[1]:IsTempestDouble() and
+			not units[1]:IsStunned() then
+			PanoramaShop:SellItem(PlayerID, units[1], ability)
+		end
 		return false
 	end
+
 	for _,unit in ipairs(units) do
 		if unit:IsHero() or unit:IsConsideredHero() then
 			GameMode:TrackInventory(unit)
@@ -46,14 +53,20 @@ function GameMode:ExecuteOrderFilter(filterTable)
 								local ent1len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team2"):GetAbsOrigin()):Length2D()
 								local ent2len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team3"):GetAbsOrigin()):Length2D()
 								if ent1len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 or ent2len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 then
+									Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
 									return false
 								end
 							end
 							if IsInBox(orderVector, Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()) then
+								Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
 								return false
 							end
 						end
 					elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
+						if abilityname == "rubick_spell_steal" and target:HasAbility("doppelganger_mimic") then
+							Containers:DisplayError(PlayerID, "#dota_hud_error_cant_steal_spell")
+							return false
+						end
 						if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
 							Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_champion")
 							return false

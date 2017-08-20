@@ -271,7 +271,7 @@ function PercentDamage(keys)
 			attacker = keys.caster,
 			damage = damage,
 			damage_type = ability:GetAbilityDamageType(),
-			damage_flags = keys.CalculateSpellDamageTooltip == 1 and DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION or DOTA_DAMAGE_FLAG_NONE,
+			damage_flags = keys.CalculateSpellDamageTooltip == 0 and DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION or DOTA_DAMAGE_FLAG_NONE,
 			ability = ability
 		})
 	end

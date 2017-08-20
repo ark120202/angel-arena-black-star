@@ -94,9 +94,10 @@ function modifier_item_scythe_of_sun:GetModifierSpellAmplify_Percentage()
 end
 
 
-modifier_item_scythe_of_sun_hex = class({})
-function modifier_item_scythe_of_sun_hex:IsDebuff() return true end
-function modifier_item_scythe_of_sun_hex:IsPurgable() return false end
+modifier_item_scythe_of_sun_hex = class({
+	IsDebuff      = function() return true end,
+	IsPurgable    = function() return false end,
+})
 
 function modifier_item_scythe_of_sun_hex:CheckState()
 	return {

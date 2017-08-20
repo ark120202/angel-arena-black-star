@@ -5,8 +5,9 @@ npc_arena_hero_destroyer_bio: 'Despite its formidable nickname, the Destroyer, o
 DOTA_Tooltip_ability_destroyer_armor_crush: Armor Crush
 DOTA_Tooltip_ability_destroyer_armor_crush_Description: 'The Destroyer crushes the enemy, inflicting damage, stunning and temporarily reducing armor.'
 DOTA_Tooltip_ability_destroyer_armor_crush_Lore: Despite the size, the Collum of Crush weighs thousands of tons.
-DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'DURATION:'
+DOTA_Tooltip_ability_destroyer_armor_crush_damage: 'DAMAGE:'
 DOTA_Tooltip_ability_destroyer_armor_crush_armor_reduction: 'ARMOR REDUCTION:'
+DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'DURATION:'
 
 DOTA_Tooltip_ability_destroyer_seal_of_limit: Seal of Ash-Lagor
 DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: 'The Destroyer imposes the seal of Ash Lagor upon himself, limiting his maximum health to %max_health_pct%%%, while at the same time increasing the speed of movement, attack speed, armor and health regeneration.'

@@ -306,6 +306,12 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 	for i = 1, caster_level - 1 do
 		illusion:HeroLevelUp(false)
 	end
+	if unit.GetEnergy and unit.GetMaxEnergy then
+		illusion.SavedEnergyStates = {
+			Energy = unit:GetEnergy(),
+			MaxEnergy = unit:GetMaxEnergy()
+		}
+	end
 
 	illusion:SetAbilityPoints(0)
 	for slot_ability = 0, unit:GetAbilityCount()-1 do
@@ -811,4 +817,15 @@ end
 
 function iif(cond, yes, no)
 	if cond then return yes else return no end
+end
+
+function RemoveAllUnitsByName(name)
+	local units = FindUnitsInRadius(DOTA_TEAM_NEUTRALS, Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
+	for _,v in ipairs(units) do
+		if v:GetUnitName():match(name) then
+			v:ClearNetworkableEntityInfo()
+			v:ForceKill(false)
+			UTIL_Remove(v)
+		end
+	end
 end

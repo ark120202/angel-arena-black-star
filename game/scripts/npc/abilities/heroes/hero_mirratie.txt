@@ -19,12 +19,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"250 275 300 325 350 375 400 425"
+				"radius"				"275 300 325 350 375 400 425"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0"
+				"duration"				"6"
 			}
 			"03"
 			{

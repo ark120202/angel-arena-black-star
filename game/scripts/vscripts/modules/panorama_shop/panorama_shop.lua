@@ -222,13 +222,16 @@ function PanoramaShop:OnItemBuy(data)
 	end
 end
 
-function PanoramaShop:SellItem(unit, item)
+function PanoramaShop:SellItem(playerID, unit, item)
 	local itemname = item:GetAbilityName()
 	local cost = item:GetCost()
-	local playerID = UnitVarToPlayerID(unit)
 	if not item:IsSellable() or MeepoFixes:IsMeepoClone(unit) then
 		Containers:DisplayError(playerID, "dota_hud_error_cant_sell_item")
 		return
+	end
+	if item:IsStackable() then
+		local chargesRate = item:GetCurrentCharges() / item:GetInitialCharges()
+		cost = cost * chargesRate
 	end
 	if GameRules:GetGameTime() - item:GetPurchaseTime() > 10 then
 		cost = cost / 2
@@ -268,6 +271,9 @@ function PanoramaShop:PushItem(playerID, unit, itemName, bOnlyStash)
 
 	--Try to add item to hero's stash
 	if not itemPushed then
+		if unit == FindCourier(team) then
+			unit = hero
+		end
 		-- Stackable item abuse fix, not very good, but that's all I can do without smth like SetStackable
 		local hasSameStackableItem = item:IsStackable() and unit:HasItemInInventory(itemName)
 		if hasSameStackableItem then

@@ -2,8 +2,8 @@ function GoToThePocket(keys)
 	local ability = keys.ability
 	local caster = keys.caster
 	local target = keys.target
-	
-	if target ~= caster and target:UnitHasSlotForItem("item_pocket_riki", false) and target:IsTrueHero() then
+
+	if target ~= caster and target:UnitHasSlotForItem("item_pocket_riki", false) and target:IsMainHero() then
 		local item = CreateItem("item_pocket_riki", target, target)
 		item.RikiContainer = caster
 		target:AddItem(item)

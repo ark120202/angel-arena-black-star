@@ -8,5 +8,6 @@ DUEL_SETTINGS = {
 	DurationForPlayer = 10,
 	Duel1x1Duration = 90,
 	WinGold_Base = 50,
-	WinGold_PerDuel = 250
+	WinGold_PerDuel = 250,
+	MagicImmunityDuration = 3,
 }

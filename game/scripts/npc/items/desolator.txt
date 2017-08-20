@@ -242,7 +242,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-35"
+				"corruption_armor"		"-31"
 			}
 			"03"
 			{
@@ -343,7 +343,7 @@
 		"ItemResult"					"item_desolator5"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator4;item_skadi_4;item_soul_of_titan"
+			"01"						"item_desolator4;item_skadi_8;item_soul_of_titan"
 		}
 	}
 
@@ -370,22 +370,22 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"220"
+				"bonus_all_stats"		"250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"2200"
+				"bonus_health"			"2500"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"2300"
+				"bonus_mana"			"2500"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-55"
+				"corruption_armor"		"-50"
 			}
 			"06"
 			{
@@ -507,7 +507,7 @@
 		"ItemResult"					"item_desolator6"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator5;item_rapier;item_demons_paw"
+			"01"						"item_desolator5;item_rapier_arena;item_demons_paw"
 		}
 	}
 

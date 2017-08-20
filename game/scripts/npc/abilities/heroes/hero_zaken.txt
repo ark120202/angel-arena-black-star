@@ -9,11 +9,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilityCastRange"				"225"
+		"AbilityCastRange"				"300"
 		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityChannelTime"			"%duration"
-		"AbilityDamage"					"100 200 300 400 500 600 700"
+		"AbilityDamage"					"300 400 500 600 700 800 900"
 		"AbilityCooldown"				"30 26 24 20 16 15 12"
 
 		"AbilitySpecial"
@@ -31,7 +31,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_helath_damage_pct"	"0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"max_health_damage_pct"	"0.5 1.0 1.5 2.0 2.5 3.0 3.5"
 			}
 		}
 
@@ -63,7 +63,7 @@
 			"modifier_zaken_stitching_strikes"
 			{
 				"IsDebuff"			"1"
-				"IsPurgable"		"0"
+				"IsPurgable"		"1"
 				"Duration"			"%duration"
 				"EffectName"		"particles/arena/units/heroes/hero_zaken/stitching_strikes.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -91,7 +91,7 @@
 						"ScriptFile"	"kv.lua"
 						"Function"		"PercentDamage"
 						"Damage"			"%AbilityDamage"
-						"MaxHealthPercent"	"%max_helath_damage_pct"
+						"MaxHealthPercent"	"%max_health_damage_pct"
 						"multiplier"		"%damage_interval"
 					}
 				}
@@ -105,14 +105,15 @@
 		"AbilityTextureName"			"arena/zaken_last_chance"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCooldown"				"2.4"
+		"AbilityCooldown"				"1.0"
+		"LevelsBetweenUpgrades"			"30"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance_pct"	"10 12 14 16 18 20 22"
+				"crit_chance_pct"	"10 15 20 25 30 35 40"
 			}
 			"02"
 			{
@@ -122,52 +123,52 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_health_pct"	"50"
+				"crit_health_pct"	"70 75 80 85 90 95 100"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stun_chance_pct"	"10 12 14 16 18 20 22"
+				"stun_chance_pct"	"5"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stun_health_pct"	"15 20 25 30 35 40 45"
+				"stun_health_pct"	"40 50 60 70 80 90 100"
 			}
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"0.6 0.8 1.0 1.2 1.4 1.6 1.8"
+				"stun_duration"		"0.1 0.2 0.3 0.4 0.5 0.6 0.7"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"root_chance_pct"	"10 12 14 16 18 20 22"
+				"root_chance_pct"	"5"
 			}
 			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"root_health_pct"	"30"
+				"root_health_pct"	"40 50 60 70 80 90 100"
 			}
 			"09"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"root_duration"		"0.6 0.8 1.0 1.2 1.4 1.6 1.8"
+				"root_duration"		"0.1 0.2 0.3 0.4 0.5 0.6 0.7"
 			}
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"silence_chance_pct"	"10 12 14 16 18 20 22"
+				"silence_chance_pct"	"5"
 			}
 			"11"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"silence_health_pct"	"40"
+				"silence_health_pct"	"40 50 60 70 80 90 100"
 			}
 			"12"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"silence_duration"	"0.6 0.8 1.0 1.2 1.4 1.6 1.8"
+				"silence_duration"	"0.0 0.15 0.3 0.45 0.6 0.75 1.0"
 			}
 		}
 
@@ -253,7 +254,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"100 200 300 400 500 600 700"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilitySpecial"
 		{
@@ -275,7 +276,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"sailor_damage"				"200 400 600 800 1200 1400 1600"
+				"sailor_damage"				"200 350 500 650 800 950 1100"
 			}
 			"05"
 			{
@@ -331,8 +332,8 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityCastRange"				"250 300 350 400 450 500 550"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"200 225 250 275 300 325 350"
+		"AbilityCastPoint"				"0.2"
 
 		"AbilitySpecial"
 		{
@@ -350,12 +351,12 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"attack_time"		"0.6 0.6 0.5 0.5 0.4 0.4 0.3"
+				"attack_time"		"0.6 0.55 0.5 0.45 0.4 0.35 0.3"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius_tooltip"	"250 300 350 400 450 500 550"
+				"radius_tooltip"	"200 225 250 275 300 325 350"
 			}
 		}
 

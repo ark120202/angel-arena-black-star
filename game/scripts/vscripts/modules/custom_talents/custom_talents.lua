@@ -158,7 +158,12 @@ function CDOTA_BaseNPC:UpgradeTalent(name)
 		if not t[name] then t[name] = {} end
 		t[name].level = self.talents[name].level
 		self:SetNetworkableEntityInfo("LearntTalents", t)
-		self:ApplyTalentEffects(name)
+
+		if self:IsAlive() then
+			self:ApplyTalentEffects(name)
+		else
+			self.talents[name].delayed = true
+		end
 	end
 end
 

@@ -325,17 +325,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_health_regen"		"12"
+				"aura_health_regen"		"16"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"8"
+				"aura_bonus_armor"		"16"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"800"
+				"heal_amount"			"1500"
 			}
 			"09"
 			{

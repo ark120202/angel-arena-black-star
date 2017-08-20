@@ -23,6 +23,7 @@
 #base "abilities/heroes/hero_anakim.txt"
 #base "abilities/heroes/hero_sai.txt"
 #base "abilities/heroes/hero_saitama.txt"
+#base "abilities/heroes/hero_doppelganger.txt"
 
 //#base "abilities/heroes/hero_maka.txt"
 //#base "abilities/heroes/hero_soul_eater.txt"
@@ -448,10 +449,8 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hawk_duration"				"60 60 60 60 60 60 60"
+				"hawk_duration"				"60"
 			}
-
-			// Extra
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -460,7 +459,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"distance"				"150" // The distance in front of the target at which units will be created
+				"distance"				"150"
 			}
 		}
 
@@ -610,12 +609,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius_scepter"		"700"
+				"radius_scepter"		"500"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ally_cooldown_scepter"	"180"
+				"ally_cooldown_scepter"	"360"
 			}
 		}
 
@@ -808,87 +807,6 @@
 		}
 	}
 
-	"meepo_divided_we_stand_arena"
-	{
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"DisplayAdditionalHeroes"	"1"
-		"LevelsBetweenUpgrades"		"7"
-		"RequiredLevel"			"3"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_clones"		"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_share_percentage"		"30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_share_percentage_scepter"		"100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"respawn"		"0.1 0.2 0.3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_respawn"		"10 20 30"
-			}
-		}
-
-		"OnUpgrade"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_meepo/divided_we_stand.lua"
-				"Function"		"CreateMeepo"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_divided_we_stand_arena"
-			{
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
-
-				"ThinkInterval"  "0.1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_meepo/divided_we_stand.lua"
-						"Function"		"TrackMeepos"
-					}
-				}
-			}
-
-			"modifier_divided_we_stand_clone"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_meepo/divided_we_stand.lua"
-						"Function"		"KillMeepos"
-					}
-				}
-			}
-		}
-	}
-
 	"summoned_unit_return"
 	{
 		"AbilityBehavior"		 	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -1062,90 +980,6 @@
 		}
 	}
 
-	"rubick_personality_steal"
-	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"rubick_spell_steal"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel"						"1"
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"CastFilterRejectCaster" 		"1"
-
-		"AbilityCastPoint"				"0.1"
-		"AbilityManaCost"				"100"
-		"AbilityCastRange"				"1000"
-
-		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_rubick/rubick_spell_steal.vpcf"
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"900"
-			}
-		}
-
-		"OnCreated"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SetMaxLevel"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_rubick/personality_steal.lua"
-				"Function"		"SpellCheck"
-				"particle"		"particles/units/heroes/hero_rubick/rubick_spell_steal.vpcf"
-			}
-		}
-
-		"OnProjectileHitUnit"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_rubick/personality_steal.lua"
-				"Function"		"SpellSteal"
-			}
-
-			"FireSound"
-			{
-				"EffectName"	"Hero_Rubick.SpellSteal.Complete"
-				"Target"		"CASTER"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_rubick_personality_steal"
-			{
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_rubick/personality_steal.lua"
-						"Function"		"RemoveSpell"
-					}
-				}
-			}
-		}
-	}
-
 	"doom_bringer_devour_arena"
 	{
 		// General
@@ -1193,7 +1027,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stolen_health_to_damage"		"0.1 0.2 0.3 0.35 0.4 0.45 0.5"
+				"stolen_health_to_damage"		"0.05 0.1 0.15 0.2 0.25 0.3 0.35"
 			}
 		}
 
@@ -1241,58 +1075,6 @@
 		}
 	}
 
-	"say_fury_of_pain"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"say_fury_of_pain"
-		"MaxLevel" 						"7"
-		"LevelsBetweenUpgrades"	"4"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"			"900"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"		"3.0 4.0 5.0"
-			}
-		}
-	}
-
-	"say_demonic_power"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"say_demonic_power"
-		"MaxLevel" 						"7"
-		"RequiredLevel"					"2"
-		//"LevelsBetweenUpgrades"			"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"creep_lifesteal_pct"	"5 10 15 20 25 30 35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_creep_gold"	"10 20 30 40 50 60 70"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_say_demonic_power"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-			}
-		}
-	}
-
 	"huskar_burning_spear_arena"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -1302,7 +1084,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastRange"				"450"
+		"AbilityCastRange"				"400"
 		"MaxLevel"						"7"
 
 		"AbilitySpecial"
@@ -1330,7 +1112,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"450"
+				"aura_radius"			"400"
 			}
 			"06"
 			{
@@ -1351,13 +1133,12 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"5 10 15 20 25 30 35"
-				"CalculateSpellDamageTooltip"	"0"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"missing_hp_damage_pct"	"0.5"
-				"CalculateSpellDamageTooltip"	"0"
+				"CalculateSpellDamageTooltip" "1"
 			}
 		}
 
@@ -1503,10 +1284,9 @@
 		"AbilityTextureName"			"tinker_rearm"
 		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_4"
 		"MaxLevel"						"7"
-		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"3.0 2.8 2.6 2.4 2.2 2.0 1.8"
-		"AbilityManaCost"				"150 250 350 450 550 650 750"
+		"AbilityCooldown"				"3.5 3.25 3.0 2.75 2.5 2.25 2.0"
+		"AbilityManaCost"				"200 300 400 500 600 700 800"
 
 		"precache"
 		{

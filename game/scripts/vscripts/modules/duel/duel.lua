@@ -93,6 +93,9 @@ function Duel:StartDuel()
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
 		local rndtbl = {}
 		table.merge(rndtbl, Duel.heroes_teams_for_duel)
+
+		RemoveAllUnitsByName("npc_dota_pugna_nether_ward_%d")
+
 		for i,v in pairs(rndtbl) do
 			if #v > 0 then
 				table.shuffle(v)
@@ -135,6 +138,7 @@ function Duel:StartDuel()
 						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 						ProjectileManager:ProjectileDodge(unit)
 						unit:FindClearSpaceForUnitAndSetCamera(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
+						unit:AddNewModifier(unit, nil, "modifier_magic_immune", {duration = DUEL_SETTINGS.MagicImmunityDuration})
 					elseif unit:IsAlive() then
 						Duel:SetUpVisitor(unit)
 					end
@@ -228,6 +232,9 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 		end
 	end
 	Events:Emit("Duel/end")
+
+	RemoveAllUnitsByName("npc_dota_pugna_nether_ward_%d")
+
 	if timeUpdate then
 		local delay = table.nearestOrLowerKey(DUEL_SETTINGS.DelaysFromLast, GetDOTATimeInMinutesFull())
 		Timers:CreateTimer(2, function()

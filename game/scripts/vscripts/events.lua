@@ -38,6 +38,13 @@ function GameMode:OnNPCSpawned(keys)
 				if not npc:IsWukongsSummon() then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if npc:IsTrueHero() then
+						for name,v in pairs(npc.talents or {}) do
+							if v.delayed then
+								v.delayed = nil
+								npc:ApplyTalentEffects(name)
+							end
+						end
+
 						PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
 						CustomAbilities:RandomOMGRollAbilities(npc)
 						if IsValidEntity(npc.BloodstoneDummies) then
@@ -138,11 +145,11 @@ end
 
 -- A tree was cut down by tango, quelling blade, etc
 function GameMode:OnTreeCut(keys)
-	--[[local treeX = keys.tree_x
+	local treeX = keys.tree_x
 	local treeY = keys.tree_y
-	if RollPercentage(10) then
+	if RollPercentage(GetAbilitySpecial("item_tree_banana", "drop_chance_pct")) then
 		GameMode:CreateTreeDrop(Vector(treeX, treeY, 0), "item_tree_banana")
-	end]]
+	end
 end
 
 function GameMode:CreateTreeDrop(location, item)
@@ -197,6 +204,14 @@ function GameMode:OnEntityKilled(keys)
 					Kills:OnEntityKilled(player, player)
 				end
 			end
+		end
+
+		if killedUnit:IsBoss() and not killedUnit.IsDominatedBoss then
+			local team = DOTA_TEAM_NEUTRALS
+			if killerEntity then
+				team = killerEntity:GetTeam()
+			end
+			Bosses:RegisterKilledBoss(killedUnit, team)
 		end
 
 		if killedUnit:IsRealCreep() then

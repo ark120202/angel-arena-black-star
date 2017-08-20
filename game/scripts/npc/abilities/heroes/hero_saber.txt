@@ -13,17 +13,17 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"mana_wasted_pct"	"8"
+				"mana_wasted_pct"	"10"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_mana"	"0.12 0.13 0.14 0.15 0.16 0.17 0.18"
+				"damage_per_mana"	"0.8 0.9 0.10 0.11 0.12 0.13 0.14"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"armor_per_mana"	"0.02 0.022.5 0.025 0.027.5 0.030 0.032.5 0.35"
+				"armor_per_mana"	"0.01 0.015 0.02 0.025 0.03 0.035 0.04"
 			}
 			"04"
 			{
@@ -38,7 +38,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"purge_stun_health_pct"	"15"
+				"purge_stun_health_pct"	"20"
 			}
 			"07"
 			{
@@ -153,7 +153,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_health_regen_max"	"10 16 24 32 48 96 148"
+				"bonus_health_regen_max"	"6 10 14 20 26 34 48"
 			}
 			"02"
 			{

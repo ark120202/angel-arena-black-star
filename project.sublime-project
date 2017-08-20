@@ -1,11 +1,18 @@
 {
+	"build_systems":
+	[
+		{
+			"cmd": "node node_modules/gulp/bin/gulp.js --build",
+			"name": "Angel Arena Black Star",
+			"working_dir": "${$project_path}/generator"
+		}
+	],
 	"folders":
 	[
 		{
 			"path": "../node/aabs-server"
 		},
 		{
-			"path": ".",
 			"file_exclude_patterns":
 			[
 				"game/*.bin",
@@ -33,21 +40,14 @@
 				"content/panorama/styles",
 				".git",
 				"node_modules"
-			]
+			],
+			"path": "."
 		}
 	],
 	"settings":
 	{
-		"translate_tabs_to_spaces": false,
 		"ensure_newline_at_eof_on_save": true,
-		"trim_trailing_white_space_on_save": true,
-	},
-	"build_systems":
-	[
-		{
-			"name": "Angel Arena Black Star",
-			"working_dir": "${$project_path}/generator",
-			"cmd": "node node_modules/gulp/bin/gulp.js --build"
-		}
-	]
+		"translate_tabs_to_spaces": false,
+		"trim_trailing_white_space_on_save": true
+	}
 }

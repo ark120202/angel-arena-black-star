@@ -188,7 +188,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AOERadius"						"%aoe_radius"
 
-		"AbilityCooldown"				"40 37.5 35 32.5 30 27.5 25"
+		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"80 90 100 110 120 130 140"
 		"AbilityCastRange"				"900"
 
@@ -217,7 +217,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"slow_min_pct"		"-10"
+				"slow_min_pct"		"-20"
 			}
 			"05"
 			{

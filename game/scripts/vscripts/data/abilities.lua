@@ -37,11 +37,9 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	item_refresher_arena = true,
 	item_aegis_arena = true,
 	item_refresher_core = true,
-	dazzle_shallow_grave = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
-	destroyer_body_reconstruction = true,
-	item_coffee_bean = true,
+	sai_release_of_forge = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
@@ -66,6 +64,7 @@ REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 	item_black_king_bar_4 = true,
 	item_black_king_bar_5 = true,
 	item_black_king_bar_6 = true,
+	item_coffee_bean = true,
 
 	destroyer_body_reconstruction = true,
 }
@@ -77,6 +76,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_refresher_core = true,
 	item_titanium_bar = true,
 	item_guardian_greaves_arena = true,
+	item_demon_king_bar = true,
 
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
@@ -147,35 +147,24 @@ REFRESH_LIST_IGNORE_REARM = {
 	magnataur_reverse_polarity = true,
 	queenofblades_alter_ego = true,
 	saber_excalibur = true,
+	sai_release_of_forge = true,
 }
 
 COFFEE_BEAN_NOT_REFRESHABLE = {
-	destroyer_body_reconstruction = true,
 	zuus_cloud = true,
 	monkey_king_boundless_strike = true,
+	dazzle_shallow_grave = true,
 }
 
 
 BOSS_BANNED_ABILITIES = {
 	item_heart_cyclone = true,
 	item_blink_staff = true,
-	huskar_life_break = true,
-	necrolyte_reapers_scythe = true,
-	death_prophet_spirit_siphon = true,
-	rubick_personality_steal = true,
 	item_urn_of_demons = true,
 	razor_static_link = true,
-}
-
-PERSONALITY_STEAL_BANNED_HEROES = {
-	["npc_dota_hero_wisp"] = true,
-	["npc_dota_hero_meepo"] = true,
-	["npc_arena_hero_sara"] = true,
-	["npc_dota_hero_necrolyte"] = true,
-	["npc_dota_hero_storm_spirit"] = true,
-	["npc_dota_hero_tidehunter"] = true,
-	["npc_dota_hero_arc_warden"] = true,
-	["npc_dota_hero_shredder"] = true,
+	tusk_walrus_kick = true,
+	death_prophet_spirit_siphon = true,
+	item_force_staff = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
@@ -207,6 +196,12 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 	["techies_stasis_trap"] = GetAbilitySpecial("techies_stasis_trap", "activation_radius"),
 	["techies_remote_mines"] = GetAbilitySpecial("techies_land_mines", "radius"),
 	["invoker_chaos_meteor"] = 1100,
+	["disruptor_thunder_strike"] = GetAbilitySpecial("disruptor_thunder_strike", "radius"),
+	["pugna_nether_blast"] = GetAbilitySpecial("pugna_nether_blast", "radius"),
+	["enigma_midnight_pulse"] = GetAbilitySpecial("enigma_midnight_pulse", "radius"),
+	["abyssal_underlord_firestorm"] = GetAbilitySpecial("abyssal_underlord_firestorm", "radius"),
+	["skywrath_mage_mystic_flare"] = GetAbilitySpecial("skywrath_mage_mystic_flare", "radius"),
+	["warlock_upheaval_arena"] = GetAbilitySpecial("warlock_upheaval_arena", "aoe"),
 }
 
 PERCENT_DAMAGE_MODIFIERS = {

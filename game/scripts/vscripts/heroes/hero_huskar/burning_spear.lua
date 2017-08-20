@@ -7,7 +7,6 @@ function DealDamage(keys)
 		victim = target,
 		damage_type = ability:GetAbilityDamageType(),
 		damage = (keys.damage + (caster:GetMaxHealth() - caster:GetHealth()) * keys.missing_hp_damage_pct * 0.01) * target:GetModifierStackCount("modifier_huskar_burning_spear_arena_debuff", caster),
-		damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 		ability = ability
 	})
 end

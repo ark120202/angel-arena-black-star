@@ -22,6 +22,8 @@ dota_hud_error_ability_cant_target_champion: Ability can't target champions
 arena_hud_error_team_changer_players: Other team already has more players than yours
 arena_hud_error_panorama_shop_dropped_items_limit: Dropped items limit was reached
 arena_hud_error_metamorphosis_elixir_ranked: In ranked mode you can change your hero only once
+arena_hud_error_cant_target_duel: Can't Target Duel Area
+arena_hud_error_cant_mimic: Cannot mimic this hero
 
 DOTA_Tooltip_modifier_neutral_champion: Champion
 DOTA_Tooltip_modifier_neutral_champion_Description: 'This neutral is a champion, so it''s %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death'
@@ -55,9 +57,6 @@ npc_dota_arena_statue: Statue
 npc_dota_lucifers_claw_doomling: Lucifer's Doomling
 npc_dota_beastmaster_boar_base: Boar
 npc_dota_beastmaster_hawk_base: Hawk
-npc_dota_warlock_golem_base: Warlock Golem
-npc_dota_warlock_golem_scepter_base: Warlock Golem
-npc_dota_warlock_minigolem: Mini Golem
 npc_arena_healer: Shrine
 
 DOTA_Tooltip_modifier_casino_bitch_lina_effect: Lina Buff
@@ -184,43 +183,7 @@ DOTA_Tooltip_ability_call_of_the_wild_boar_arena_poison_duration_tooltip: 'BOAR 
 DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_attackslow_tooltip: 'BOAR ATTACK SLOW:'
 DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_duration: 'BOAR DURATION:'
 DOTA_Tooltip_ability_call_of_the_wild_boar_arena_unit_count: 'BOAR COUNT:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena: Chaotic Offering
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Description: 'Summons a Golem from the depths, stunning enemies for one second. The Golem lives 60 seconds, takes reduced damage from spells, has Permanent Immolation and Flaming Fists on attack.'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Lore: 'Demnok unleashes the captive spirit in his Dreadwood staff, causing destruction in enemy ranks.'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Note0: Spell Immune units will be stunned.
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Note1: This ability destroys trees in its area of effect.
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_stun_duration: 'STUN DURATION:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_aoe: 'SUMMON BLAST RADIUS:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_hp_tooltip: 'GOLEM HEALTH:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_dmg_tooltip: 'GOLEM DAMAGE:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_armor_tooltip: 'GOLEM ARMOR:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_regen_tooltip: 'GOLEM HEALTH REGEN:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_bounty_reduction_scepter: 'SCEPTER GOLEM BOUNTY:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_number_of_golems_scepter: 'SCEPTER NUMBER OF GOLEMS:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_hp_tooltip_scepter: 'SCEPTER GOLEM HEALTH:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_dmg_tooltip_scepter: 'SCEPTER GOLEM DAMAGE:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_aghanim_description: Calls several changed Golems.
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena: Fatal Bonds
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Description: 'Binds several enemy units together, causing %damage_share_percentage%%% of the damage dealt to one of them to be felt by the others. Also causes enemies to take %bonus_damage_taken%%% more damage from all sources.'
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Lore: An ancient incantation that links the vital energies of multiple lifeforms into one collective body.
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Note0: Damage will disable abilities and items like Blink Dagger.
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_count: 'ENEMIES BOUND:'
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_duration: 'DURATION:'
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_bonus_damage_taken: '%BONUS DAMAGE TAKEN:'
-DOTA_Tooltip_ability_warlock_shadow_word_arena: Shadow Word
-DOTA_Tooltip_ability_warlock_shadow_word_arena_Description: |-
-  Warlock whispers an incantation, healing a friendly unit or damaging an enemy unit over time. When casted on self healing is multiplied by 2. When casted on any another unit Warlock will get healing divided by 2.
-  When casted on enemy additionally to damage has small chance to spawn Mini Golem, that is weaker version of golem from Chaotic Offering. Golem will attack enemy which has debuff that caused Mini Golem to spawn.
-DOTA_Tooltip_ability_warlock_shadow_word_arena_Lore: 'Demnok''s arcane arts have a myriad of uses, allowing them to be powerful friendly enchantments or damaging curses.'
-DOTA_Tooltip_ability_warlock_shadow_word_arena_Note0: Warlock can't control Mini Golem.
-DOTA_Tooltip_ability_warlock_shadow_word_arena_duration: 'DURATION:'
-DOTA_Tooltip_ability_warlock_shadow_word_arena_minigolem_chance: '%GOLEM SPAWN CHANCE:'
-DOTA_Tooltip_ability_warlock_shadow_word_arena_minigolem_duration: 'GOLEM DURATION:'
-DOTA_Tooltip_ability_warlock_upheaval_arena: Upheaval
-DOTA_Tooltip_ability_warlock_upheaval_arena_Description: Warlock places a powerful slowing current that grows stronger with time. Lasts up to %cast_duration% seconds. Enemies are slowed for %debuff_duration% seconds after leaving the area or the spell ends.
-DOTA_Tooltip_ability_warlock_upheaval_arena_Lore: 'Demnok manipulates space-time, impairing entire armies.'
-DOTA_Tooltip_ability_warlock_upheaval_arena_aoe: 'RADIUS:'
-DOTA_Tooltip_ability_warlock_upheaval_arena_slow_rate: '%SLOW PER SECOND:'
+
 DOTA_Tooltip_ability_wisp_tether_aghanims: Aghanim's Tether
 DOTA_Tooltip_ability_wisp_tether_aghanims_Description: 'Tethers Io to ally unit, granting it bonus movement speed. When Io restores health or mana, tethered units target gain 1.5x the amount. Any enemy unit that crosses the tether is slowed. The tether breaks when the allied unit moves too far away, or Io cancels the tether.'
 DOTA_Tooltip_ability_wisp_tether_aghanims_aghanim_description: Allows you to Tether all allies in cast range.
@@ -317,13 +280,7 @@ DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_chance_to_frostbite_pct
 
 DOTA_Tooltip_ability_ability_empty: Empty Ability Slot
 DOTA_Tooltip_ability_ability_empty_Description: ''
-DOTA_Tooltip_ability_rubick_personality_steal: Personality Steal
-DOTA_Tooltip_ability_rubick_personality_steal_Description: 'Rubick studies the trace magical essence of one enemy hero, learning the secrets of all the spells the hero has and copying it''s model. Rubick can use that spells as his own until he dies or removes it, clicking on the buff icon in status bar.'
-DOTA_Tooltip_modifier_rubick_personality_steal: Personality Steal
-DOTA_Tooltip_modifier_rubick_personality_steal_Description: |-
-  Rubick has stolen abilities and model.
 
-  Click to remove.
 DOTA_Tooltip_ability_item_god_transform_freya: 'Select Hero: Freya'
 DOTA_Tooltip_ability_item_god_transform_freya_Description: |-
   Transforms your hero to Freya.
