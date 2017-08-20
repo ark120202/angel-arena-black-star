@@ -59,10 +59,12 @@ function UpdateSelectionButton() {
 	var selectedHeroData = HeroesData[SelectedHeroName];
 	$.GetContextPanel().SetHasClass('RandomingEnabled', !IsLocalHeroPicked() && !IsLocalHeroLocked() && HeroSelectionState > HERO_SELECTION_PHASE_BANNING);
 
-	var canPick = !IsLocalHeroPicked()
-		&& !IsHeroPicked(SelectedHeroName)
-		&& !IsHeroBanned(SelectedHeroName)
-		&& (!IsLocalHeroLocked() || SelectedHeroName === LocalPlayerStatus.hero);
+	var canPick = !IsLocalHeroPicked() &&
+		!IsHeroPicked(SelectedHeroName) &&
+		!IsHeroBanned(SelectedHeroName) &&
+		!IsHeroUnreleased(SelectedHeroName) &&
+		!IsHeroDisabledInRanked(SelectedHeroName) &&
+		(!IsLocalHeroLocked() || SelectedHeroName === LocalPlayerStatus.hero);
 
 	var context = $.GetContextPanel();
 	var mode = 'pick';
