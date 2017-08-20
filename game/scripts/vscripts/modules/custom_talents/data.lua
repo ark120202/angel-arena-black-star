@@ -148,7 +148,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 3,
 		max_level = 5,
 		special_values = {
-			mana_regen = {1, 2, 3, 4, 5}
+			mana_regen = {1, 3, 5, 7, 9}
 		},
 		effect = {
 			modifiers = {
@@ -159,10 +159,10 @@ CUSTOM_TALENTS_DATA = {
 	talent_lifesteal = {
 		icon = "talents/lifesteal",
 		cost = 1,
-		group = 3,
-		max_level = 5,
+		group = 8,
+		max_level = 1,
 		special_values = {
-			lifesteal = {1, 2, 3, 4, 5}
+			lifesteal = {15}
 		},
 		effect = {
 			modifiers = {
