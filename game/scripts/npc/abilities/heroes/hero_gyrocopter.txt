@@ -13,8 +13,8 @@
 		"HasScepterUpgrade"				"1"
 
 		"AbilityCastRange"				"400"
-		"AbilityCooldown"				"0.5"
-		"AbilityDamage"					"8 13 18 23 28 34 50"
+		"AbilityCooldown"				"1.0"
+		"AbilityDamage"					"7 11 15 19 23 30 37"
 		"AbilityManaCost"				"3.0 3.25 3.5 3.75 4.0 4.25 4.5" // %mana_per_second * %interval
 
 		"AbilitySpecial"

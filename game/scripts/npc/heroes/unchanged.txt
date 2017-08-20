@@ -1553,7 +1553,7 @@
 		"Ability2"	"weaver_shukuchi"
 		"Ability3"	"weaver_geminate_attack"
 		"Ability4"	"weaver_time_lapse"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 		"Ability5"	""
 		"Ability6"	""
 		"Ability7"	""
