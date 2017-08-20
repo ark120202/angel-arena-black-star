@@ -1,4 +1,5 @@
-BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
+-- Percentage
+BOSS_DAMAGE_ABILITY_MODIFIERS = {
 	zuus_static_field = 10,
 	item_blade_mail = 0,
 	centaur_return = 0,
