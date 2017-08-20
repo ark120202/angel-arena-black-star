@@ -271,7 +271,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reduced_damage_pct"	"22"
+				"reduced_damage_pct"	"14"
 			}
 			"09"
 			{
