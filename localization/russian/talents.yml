@@ -20,8 +20,12 @@ custom_talents_talent_health: Здоровье
 custom_talents_talent_health_description: '+{health} к здоровью'
 custom_talents_talent_mana: Мана
 custom_talents_talent_mana_description: '+{mana} к мане'
-custom_talents_talent_health_regen: Регенерация Здоровья
+custom_talents_talent_health_regen: Регенерация здоровья
 custom_talents_talent_health_regen_description: '+{health_regen} к регенерации здоровья'
+custom_talents_talent_mana_regen: Регенерация маны
+custom_talents_talent_mana_regen_description: '+{mana_regen} к регенерации маны'
+custom_talents_talent_lifesteal: Вампиризм
+custom_talents_talent_lifesteal_description: 'ВАМПИРИЗМ: {%lifesteal%}'
 custom_talents_talent_armor: Броня
 custom_talents_talent_armor_description: '+{armor} к броне'
 custom_talents_talent_magic_resistance_pct: Сопротивление магии

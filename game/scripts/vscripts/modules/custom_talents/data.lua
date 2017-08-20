@@ -142,6 +142,34 @@ CUSTOM_TALENTS_DATA = {
 			},
 		}
 	},
+	talent_mana_regen = {
+		icon = "talents/mana_regen",
+		cost = 1,
+		group = 3,
+		max_level = 5,
+		special_values = {
+			mana_regen = {1, 2, 3, 4, 5}
+		},
+		effect = {
+			modifiers = {
+				modifier_talent_mana_regen = "mana_regen",
+			},
+		}
+	},
+	talent_lifesteal = {
+		icon = "talents/lifesteal",
+		cost = 1,
+		group = 3,
+		max_level = 5,
+		special_values = {
+			lifesteal = {1, 2, 3, 4, 5}
+		},
+		effect = {
+			modifiers = {
+				modifier_talent_lifesteal = "lifesteal",
+			},
+		}
+	},
 	talent_armor = {
 		icon = "talents/armor",
 		cost = 3,
