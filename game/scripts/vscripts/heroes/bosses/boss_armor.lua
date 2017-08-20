@@ -13,7 +13,6 @@ end
 function ClearDebuffs(keys)
 	local caster = keys.caster
 	caster:RemoveModifierByName("modifier_dazzle_weave_armor")
-	caster:RemoveModifierByName("modifier_ice_blast")
 
 	if not caster:PassivesDisabled() then
 		local ability = keys.ability
