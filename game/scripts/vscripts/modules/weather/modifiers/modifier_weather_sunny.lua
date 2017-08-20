@@ -20,7 +20,6 @@ modifier_weather_sunny_aura = class({
 	IsHidden   = function() return true end,
 })
 
-function modifier_weather_sunny_aura:IsHidden() return true end
 if IsServer() then
 	function modifier_weather_sunny_aura:OnCreated()
 		local modifierName = "modifier_weather_sunny_aura_normal"
@@ -28,7 +27,7 @@ if IsServer() then
 	end
 
 	function modifier_weather_sunny_aura:OnDestroy()
-		self.modifier:Destroy()
+		if not self.modifier:IsNull() then self.modifier:Destroy() end
 	end
 end
 
