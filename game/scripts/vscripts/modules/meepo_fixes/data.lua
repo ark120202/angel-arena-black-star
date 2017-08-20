@@ -21,7 +21,7 @@ MEEPO_SHARED_ITEMS = {
 	item_refresher_core = true,
 	item_elemental_fury = true,
 	item_heavy_war_axe_of_rage_damage = true,
-	item_heavy_war_axe_of_rage_health,
+	item_heavy_war_axe_of_rage_health = true,
 	item_sange_arena = true,
 	item_sange_and_yasha_arena = true,
 	item_nightshadow = true,
