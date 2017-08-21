@@ -20,6 +20,28 @@ function CreateLightningBlot(position)
 	end
 end
 
+function CreateCrystalNova(position)
+	local aoe = 325
+	CreateGlobalParticle("particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf", function(particle)
+		ParticleManager:SetParticleControl(particle, 0, position)
+		ParticleManager:SetParticleControl(particle, 1, Vector(aoe, 2, aoe * 2))
+	end)
+	EmitSoundOnLocationWithCaster(position, "Hero_Crystal.CrystalNova", nil)
+	local damage = 100 + GetDOTATimeInMinutesFull() * RandomInt(40, 90)
+	local duration = 0.4 + ( RandomInt(2, 7) / 10 )
+	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)) do
+		ApplyDamage({
+			attacker = GLOBAL_DUMMY,
+			victim = v,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage = damage
+		})
+		v:AddNewModifier(v, nil, "modifier_weather_blizzard_debuff", {
+			duration = duration + RandomInt(1, 6) / 10
+		})
+	end
+end
+
 WEATHER_EFFECTS = {
 	sunny = {
 		minDuration = 120,
@@ -83,7 +105,9 @@ WEATHER_EFFECTS = {
 		},
 		dummyModifier = "modifier_weather_snow",
 		Think = function()
-
+			if RollPercentage(40) then
+				CreateCrystalNova(GetGroundPosition(Vector(RandomInt(-MAP_LENGTH, MAP_LENGTH), RandomInt(-MAP_LENGTH, MAP_LENGTH), 0), nil))
+			end
 		end,
 	}
 	-- particles/rain_fx/econ_weather_sirocco.vpcf

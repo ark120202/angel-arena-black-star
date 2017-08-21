@@ -1,5 +1,6 @@
 LinkLuaModifier("modifier_weather_snow_aura", "modules/weather/modifiers/modifier_weather_snow", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_weather_snow_aura_normal", "modules/weather/modifiers/modifier_weather_snow", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_weather_blizzard_debuff", "modules/weather/modifiers/modifier_weather_snow", LUA_MODIFIER_MOTION_NONE)
 
 modifier_weather_snow = class({
 	IsHidden           = function() return true end,
@@ -34,6 +35,7 @@ end
 
 modifier_weather_snow_aura_normal = class({
 	IsPurgable          = function() return false end,
+	IsDebuff            = function() return true end,
 	GetTexture          = function() return "weather/snow" end,
 	GetStatusEffectName = function() return "particles/status_fx/status_effect_frost_lich.vpcf" end,
 })
@@ -53,4 +55,25 @@ function modifier_weather_snow_aura_normal:GetModifierAttackSpeedBonus_Constant(
 	return -30
 end
 
---particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf
+modifier_weather_blizzard_debuff = class({
+	IsPurgable    = function() return false end,
+	IsDebuff      = function() return true end,
+	GetTexture    = function() return "weather/blizzard" end,
+	GetEffectName = function() return "particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf" end,
+})
+
+function modifier_weather_blizzard_debuff:CheckState()
+	return {
+		[MODIFIER_STATE_ROOTED] = true,
+		[MODIFIER_STATE_INVISIBLE] = false,
+	}
+end
+
+function modifier_weather_blizzard_debuff:DeclareFunctions()
+	return { MODIFIER_PROPERTY_TOOLTIP }
+end
+
+function modifier_weather_blizzard_debuff:OnTooltip()
+	return self:GetDuration()
+end
+

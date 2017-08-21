@@ -34,7 +34,7 @@ end
 
 modifier_weather_sunny_aura_normal = class({
 	IsPurgable = function() return false end,
-	IsDebuff = function() return false end,
+	IsDebuff   = function() return false end,
 	GetTexture = function() return "weather/sunny" end,
 })
 

@@ -34,6 +34,7 @@ end
 
 modifier_weather_rain_aura_normal = class({
 	IsPurgable = function() return false end,
+	IsDebuff   = function() return true end,
 	GetTexture = function() return "weather/rain" end,
 })
 
