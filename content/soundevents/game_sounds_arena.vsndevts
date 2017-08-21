@@ -1371,7 +1371,7 @@
 						}
 					}
 
-					"volume"			{ "value"	"10" }
+					"volume"			{ "value"	"6" }
 				}
 			}
 		}
@@ -1398,7 +1398,7 @@
 						}
 					}
 
-					"volume"			{ "value"	"30" }
+					"volume"			{ "value"	"5" }
 				}
 			}
 		}
@@ -1427,7 +1427,7 @@
 						}
 					}
 
-					"volume"			{ "value"	"15" }
+					"volume"			{ "value"	"3" }
 				}
 			}
 		}
