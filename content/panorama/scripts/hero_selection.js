@@ -228,7 +228,7 @@ function OnLocalPlayerPicked() {
 
 	$('#HeroPreviewAbilities').RemoveAndDeleteChildren();
 	FillAbilitiesUI($('#HeroPreviewAbilities'), localHeroData.abilities, 'HeroPreviewAbility');
-	FillAttributeUI($('#HeroPreviewAttributes'), localHeroData);
+	FillAttributeUI($('#HeroPreviewAttributes'), localHeroData.attributes);
 
 	var GlobalLoadoutItems = FindDotaHudElement('GlobalLoadoutItems');
 	if (GlobalLoadoutItems) {
