@@ -430,16 +430,11 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"ItemRequirements"
-		{
-			"01"						"item_slippers;item_slippers;item_stout_shield"
-		}
 	}
 	"item_poor_mans_shield"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"ItemCost"						"0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -460,7 +455,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"51"
+				"block_chance"			"50"
 			}
 			"05"
 			{
