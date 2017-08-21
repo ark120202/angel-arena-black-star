@@ -60,7 +60,7 @@ function CheckDistance( event )
 
 		end
 	end
-	
+
 end
 
 --[[
@@ -94,10 +94,12 @@ function HealAlly( event )
 
 	local healthGained = caster:GetHealth() - caster.tether_lastHealth
 
-	if healthGained > 0 then
+	if healthGained > 0 and not caster.preventTeatherHealing then
 		local heal = healthGained * event.tether_heal_amp
 		for _,v in ipairs(ability.tether_allies) do
-			SafeHeal(v, heal, ability)
+			v.preventTeatherHealing = true
+			SafeHeal(v, heal, ability, true)
+			v.preventTeatherHealing = nil
 		end
 	end
 end
@@ -186,12 +188,12 @@ end
 ]]
 function LevelUpAbility( event )
 	local caster = event.caster
-	local this_ability = event.ability		
+	local this_ability = event.ability
 	local this_abilityLevel = this_ability:GetLevel()
 
 	-- The ability to level up
 	local ability_name = event.ability_name
-	local ability_handle = caster:FindAbilityByName(ability_name)	
+	local ability_handle = caster:FindAbilityByName(ability_name)
 	local ability_level = ability_handle:GetLevel()
 
 	-- Check to not enter a level up loop
@@ -225,7 +227,7 @@ function EndTether( event )
 		end)
 	end
 	caster:RemoveModifierByName("modifier_spirits_caster_aghanims")
-	
+
 	ability.tether_allies = nil
 
 	caster:SwapAbilities( ability:GetAbilityName(), event.sub_ability_name, true, false )
