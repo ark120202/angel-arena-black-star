@@ -122,6 +122,7 @@
 							<Label id="SelectedHeroUnlockLabel" text="#hero_selection_unlock" />
 							<Label id="SelectedHeroBanLabel" text="#DOTA_Hero_Selection_BanTitle" />
 							<Label id="SelectedHeroSelectHeroName" />
+							<Label id="SelectedHeroDisabledReason" />
 							<Panel id="SelectedHeroLinkedHeroPanel" >
 								<Label id="SelectedHeroLinkedLabel" text="#hero_selection_linked_hero" />
 								<Label id="SelectedHeroLinkedHero" />

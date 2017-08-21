@@ -201,6 +201,13 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			}
 		end
 	end,
+	modifier_talent_lifesteal = function(attacker, _, inflictor)
+		if not IsValidEntity(inflictor) then
+			return {
+				LifestealPercentage = attacker:GetModifierStackCount("modifier_talent_lifesteal", caster)
+			}
+		end
+	end,
 	modifier_soul_eater_demon_weapon_from = function(attacker, victim, inflictor)
 		if not inflictor then
 			return 0

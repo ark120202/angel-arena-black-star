@@ -33,11 +33,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 	if units[1] and
 		order_type == DOTA_UNIT_ORDER_SELL_ITEM and
 		ability then
-		if not units[1]:IsIllusion() and
-			not units[1]:IsTempestDouble() and
-			not units[1]:IsStunned() then
-			PanoramaShop:SellItem(PlayerID, units[1], ability)
-		end
+		PanoramaShop:SellItem(PlayerID, units[1], ability)
 		return false
 	end
 

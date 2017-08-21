@@ -268,7 +268,9 @@ end
 function HeroSelection:PreformPlayerRandom(playerId)
 	while true do
 		local hero = HeroSelection.RandomableHeroes[RandomInt(1, #HeroSelection.RandomableHeroes)]
-		if not HeroSelection:IsHeroSelected(hero) and not HeroSelection:IsHeroBanned(hero) then
+		if not HeroSelection:IsHeroSelected(hero) and
+			not HeroSelection:IsHeroBanned(hero) and
+			not HeroSelection:IsHeroDisabledInRanked(hero) then
 			HeroSelection:UpdateStatusForPlayer(playerId, "picked", hero)
 			CustomChatSay(-1, PlayerResource:GetTeam(playerId), {
 				localizable = "DOTA_Chat_Random",
@@ -302,6 +304,18 @@ function HeroSelection:IsHeroBanned(hero)
 	return PlayerTables:GetTableValueForReadOnly("hero_selection_banning_phase", hero) ~= nil
 end
 
+function HeroSelection:IsHeroDisabledInRanked(hero)
+	return Options:IsEquals("EnableRatingAffection") and GetKeyValue(hero, "DisabledInRanked") == 1
+end
+
+function HeroSelection:IsHeroUnreleased(hero)
+	return GetKeyValue(hero, "Unreleased") == 1
+end
+
 function HeroSelection:IsHeroPickAvaliable(hero)
-	return not HeroSelection:IsHeroSelected(hero) and not HeroSelection:IsHeroBanned(hero) and HeroSelection:VerifyHeroGroup(hero)
+	return not HeroSelection:IsHeroSelected(hero) and
+		not HeroSelection:IsHeroBanned(hero) and
+		not HeroSelection:IsHeroDisabledInRanked() and
+		not HeroSelection:IsHeroUnreleased() and
+		HeroSelection:VerifyHeroGroup(hero)
 end
