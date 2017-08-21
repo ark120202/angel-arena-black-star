@@ -63,7 +63,7 @@
 			"modifier_zaken_stitching_strikes"
 			{
 				"IsDebuff"			"1"
-				"IsPurgable"		"0"
+				"IsPurgable"		"1"
 				"Duration"			"%duration"
 				"EffectName"		"particles/arena/units/heroes/hero_zaken/stitching_strikes.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -105,14 +105,15 @@
 		"AbilityTextureName"			"arena/zaken_last_chance"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCooldown"				"2.0"
+		"AbilityCooldown"				"1.0"
 		"LevelsBetweenUpgrades"			"30"
+
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance_pct"	"10 12 14 16 18 20 22"
+				"crit_chance_pct"	"10 15 20 25 30 35 40"
 			}
 			"02"
 			{
@@ -127,7 +128,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stun_chance_pct"	"10 12 14 16 18 20 22"
+				"stun_chance_pct"	"5"
 			}
 			"05"
 			{
@@ -137,12 +138,12 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"0.2 0.4 0.6 0.8 1.0 1.2 1.4"
+				"stun_duration"		"0.1 0.2 0.3 0.4 0.5 0.6 0.7"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"root_chance_pct"	"10 12 14 16 18 20 22"
+				"root_chance_pct"	"5"
 			}
 			"08"
 			{
@@ -152,12 +153,12 @@
 			"09"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"root_duration"		"0.2 0.4 0.6 0.8 1.0 1.2 1.4"
+				"root_duration"		"0.1 0.2 0.3 0.4 0.5 0.6 0.7"
 			}
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"silence_chance_pct"	"10 12 14 16 18 20 22"
+				"silence_chance_pct"	"5"
 			}
 			"11"
 			{
@@ -167,7 +168,7 @@
 			"12"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"silence_duration"	"0.8 1.0 1.2 1.4 1.6 1.8 2.0"
+				"silence_duration"	"0.0 0.15 0.3 0.45 0.6 0.75 1.0"
 			}
 		}
 
@@ -253,7 +254,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"100 200 300 400 500 600 700"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilitySpecial"
 		{
@@ -275,7 +276,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"sailor_damage"				"200 400 600 800 1200 1400 1600"
+				"sailor_damage"				"200 350 500 650 800 950 1100"
 			}
 			"05"
 			{
@@ -331,7 +332,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityCastRange"				"250 300 350 400 450 500 550"
+		"AbilityCastRange"				"200 225 250 275 300 325 350"
 		"AbilityCastPoint"				"0.2"
 
 		"AbilitySpecial"
@@ -350,12 +351,12 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"attack_time"		"0.6 0.6 0.5 0.5 0.4 0.4 0.3"
+				"attack_time"		"0.6 0.55 0.5 0.45 0.4 0.35 0.3"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius_tooltip"	"250 300 350 400 450 500 550"
+				"radius_tooltip"	"200 225 250 275 300 325 350"
 			}
 		}
 

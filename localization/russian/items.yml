@@ -278,42 +278,10 @@ DOTA_Tooltip_ability_item_splitshot_str_maim_duration: 'ДЛИТЕЛЬНОСТЬ
 DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim: '{lc:modifier_item_sange_maim}'
 DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
 
-DOTA_Tooltip_ability_item_splitshot_agi: Nagascale Bow
-DOTA_Tooltip_ability_item_splitshot_agi_Description: |-
-  <h1>Пассивная: Разделение атаки</h1> Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.
-  {lc:item_yasha_Description}
-  {lc:item_yasha_movespeed_note}
-DOTA_Tooltip_ability_item_splitshot_agi_Note0: 'Иллюзии будут создавать эффекты атаки, но не будут наносить урон.'
-DOTA_Tooltip_ability_item_splitshot_agi_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_strength: +$str
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_intelligence: +$int
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_splitshot_agi_movement_speed_percent_bonus: '%+$move_speed'
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_mana_regen_percentage: '%+$mana_regen'
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_attack_speed_buff: 'СКОРОСТЬ АТАКИ FAST ATTACK:'
-DOTA_Tooltip_ability_item_splitshot_agi_movement_speed_percent_bonus_buff: '%СКОРОСТЬ ПЕРЕДВИЖЕНИЯ FAST ATTACK:'
-DOTA_Tooltip_ability_item_splitshot_agi_fast_attack_duration: 'ДЛИТЕЛЬНОСТЬ FAST ATTACK:'
-DOTA_Tooltip_modifier_item_splitshot_agi_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_splitshot_agi_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
-
-DOTA_Tooltip_ability_item_splitshot_int: Staff of Splitted Sunray
-DOTA_Tooltip_ability_item_splitshot_int_Description: |-
-  <h1>Пассивная: Разделение атаки</h1> Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.
-  {lc:item_nightshadow_Description}
-DOTA_Tooltip_ability_item_splitshot_int_Note0: 'Иллюзии будут создавать эффекты атаки, но не будут наносить урон.'
-DOTA_Tooltip_ability_item_splitshot_int_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
-DOTA_Tooltip_ability_item_splitshot_int_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_splitshot_int_bonus_strength: +$str
-DOTA_Tooltip_ability_item_splitshot_int_bonus_intelligence: +$int
-DOTA_Tooltip_ability_item_splitshot_int_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_splitshot_int_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_splitshot_int_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_int_bonus_mana_regen_percentage: '%+$mana_regen'
-DOTA_Tooltip_ability_item_splitshot_int_proc_chance: '%ШАНС УМЕНЬШЕНИЯ:'
-DOTA_Tooltip_ability_item_splitshot_int_cooldown_reduction: УМЕНЬШЕНИЕ ПЕРЕЗАРЯДКИ
+DOTA_Tooltip_ability_item_nagascale_bow: Nagascale Bow
+DOTA_Tooltip_ability_item_nagascale_bow_Description: '<h1>Пассивная: Разделение атаки</h1> Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.'
+DOTA_Tooltip_ability_item_nagascale_bow_Note0: Иллюзии будут создавать эффекты атаки, но не будут наносить урон.
+DOTA_Tooltip_ability_item_nagascale_bow_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
 
 DOTA_Tooltip_ability_item_splitshot_ultimate: Идеальный Зачарованный Тактический Волшебный Лук Встроенных Клинков
 DOTA_Tooltip_ability_item_splitshot_ultimate_Description: |-
@@ -1292,6 +1260,11 @@ DOTA_Tooltip_ability_item_summoned_unit_armor: 'БРОНЯ ДУХА:'
 DOTA_Tooltip_ability_item_summoned_unit_item_slots: 'СЛОТЫ ДЛЯ ПРЕДМЕТОВ ДУХА:'
 DOTA_Tooltip_ability_summoned_unit_return: Return
 DOTA_Tooltip_ability_summoned_unit_return_Description: 'Мгновенно перемещает Духа назад к хозяину. Дух не сможет использовать способность, если он получал урон от юнитов, находящихся под контролем игрока, в последние %return_damage_cooldown% секунды.'
+DOTA_Tooltip_modifier_item_summoned_unit_aura: Mystic Aura
+DOTA_Tooltip_modifier_item_summoned_unit_aura_Description: |-
+  Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%
+  Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
+  Восстановление здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%.
 DOTA_Tooltip_ability_item_moon_dust: Moon Dust
 DOTA_Tooltip_ability_item_moon_dust_Description: Этот предмет выпадает с боссов и не может быть куплен в лавке.
 DOTA_Tooltip_ability_item_cursed_eye: Cursed Eye

@@ -44,11 +44,13 @@ function ChooseHeroPanelHero() {
 }
 
 function UpdateSelectionButton() {
-	var currentHero = Players.GetHeroSelectionPlayerInfo(Game.GetLocalPlayerID()).hero;
 	var selectedHeroData = HeroesData[SelectedHeroName];
+	var currentHero = Players.GetHeroSelectionPlayerInfo(Game.GetLocalPlayerID()).hero;
 
 	var canPick = !IsHeroPicked(SelectedHeroName) &&
 		!IsHeroBanned(SelectedHeroName) &&
+		!IsHeroUnreleased(SelectedHeroName) &&
+		!IsHeroDisabledInRanked(SelectedHeroName) &&
 		(!IsLocalHeroLocked() || SelectedHeroName === currentHero);
 
 	var context = $.GetContextPanel();

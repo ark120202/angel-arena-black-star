@@ -395,5 +395,8 @@ function SetPagePlayerLevel(ProfileBadge, level) {
 	ProfileBadge.FindChildTraverse('ProfileLevel').GetChild(0).text = level;
 }
 
-var hud = GetDotaHud();
+function FindFountain(team) {
+	return Entities.GetAllEntitiesByName('npc_arena_fountain_' + team)[0];
+}
 
+var hud = GetDotaHud();

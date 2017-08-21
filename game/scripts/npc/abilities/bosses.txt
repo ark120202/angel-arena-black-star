@@ -65,15 +65,6 @@
 						"Function"		"OnTakeDamage"
 					}
 				}
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/bosses/boss_armor.lua"
-						"Function"		"OnBossDeath"
-					}
-				}
 			}
 		}
 	}

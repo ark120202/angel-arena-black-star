@@ -1,4 +1,5 @@
-BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
+-- Percentage
+BOSS_DAMAGE_ABILITY_MODIFIERS = {
 	zuus_static_field = 10,
 	item_blade_mail = 0,
 	centaur_return = 0,
@@ -19,12 +20,11 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,
 	antimage_mana_void_arena = 0,
-	ancient_apparition_ice_blast = 0,
 	doom_bringer_infernal_blade = 10,
 	winter_wyvern_arctic_burn = 10,
 	freya_ice_cage = 10,
 	tinker_march_of_the_machines = 2000,
-	necrolyte_reapers_scythe = 5,
+	necrolyte_reapers_scythe = 7,
 	huskar_life_break = 15,
 }
 
@@ -198,6 +198,13 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		if not IsValidEntity(inflictor) then
 			return {
 				LifestealPercentage = GetAbilitySpecial("item_lucifers_claw", "lifesteal_percent")
+			}
+		end
+	end,
+	modifier_talent_lifesteal = function(attacker, _, inflictor)
+		if not IsValidEntity(inflictor) then
+			return {
+				LifestealPercentage = attacker:GetModifierStackCount("modifier_talent_lifesteal", caster)
 			}
 		end
 	end,

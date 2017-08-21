@@ -35,12 +35,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"arrow_count"				"1 2 3 4 5 8 14"
+				"arrow_count"				"1 2 3 4 5 8 16"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"total_arrow_count"			"1 2 3 4 5 8 14"
+				"total_arrow_count"			"1 2 3 4 5 8 16"
 			}
 		}
 
@@ -93,7 +93,7 @@
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"medusa_mystic_snake"
 		"MaxLevel"						"7"
-		"AbilityCooldown"				"7 6 5 4 3 2 1"
+		"AbilityCooldown"				"4.0 3.5 3.0 2.5 2.0 1.5 1.0"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -118,7 +118,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"snake_mana_steal"		"10 12 14 16 18 20 22"
+				"snake_mana_steal"		"10 14 18 22 26 30 34"
 			}
 			"03"
 			{

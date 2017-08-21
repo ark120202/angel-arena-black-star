@@ -59,10 +59,12 @@ function UpdateSelectionButton() {
 	var selectedHeroData = HeroesData[SelectedHeroName];
 	$.GetContextPanel().SetHasClass('RandomingEnabled', !IsLocalHeroPicked() && !IsLocalHeroLocked() && HeroSelectionState > HERO_SELECTION_PHASE_BANNING);
 
-	var canPick = !IsLocalHeroPicked()
-		&& !IsHeroPicked(SelectedHeroName)
-		&& !IsHeroBanned(SelectedHeroName)
-		&& (!IsLocalHeroLocked() || SelectedHeroName === LocalPlayerStatus.hero);
+	var canPick = !IsLocalHeroPicked() &&
+		!IsHeroPicked(SelectedHeroName) &&
+		!IsHeroBanned(SelectedHeroName) &&
+		!IsHeroUnreleased(SelectedHeroName) &&
+		!IsHeroDisabledInRanked(SelectedHeroName) &&
+		(!IsLocalHeroLocked() || SelectedHeroName === LocalPlayerStatus.hero);
 
 	var context = $.GetContextPanel();
 	var mode = 'pick';
@@ -160,8 +162,10 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 				PlayerPanel.SetDialogVariable('dota_hero_name', $.Localize(playerData.hero));
 			}
 			var heroPanel = $('#HeroListPanel_element_' + playerData.hero);
-			heroPanel.SetHasClass('AlreadyPicked', IsHeroPicked(playerData.hero));
-			heroPanel.SetHasClass('Locked', IsHeroLocked(playerData.hero));
+			if (heroPanel) {
+				heroPanel.SetHasClass('AlreadyPicked', IsHeroPicked(playerData.hero));
+				heroPanel.SetHasClass('Locked', IsHeroLocked(playerData.hero));
+			}
 			if (isLocalTeam) {
 				if (playerData.SpawnBoxes != null) {
 					if (PlayerSpawnBoxes[playerIdInTeam] == null)
@@ -224,7 +228,7 @@ function OnLocalPlayerPicked() {
 
 	$('#HeroPreviewAbilities').RemoveAndDeleteChildren();
 	FillAbilitiesUI($('#HeroPreviewAbilities'), localHeroData.abilities, 'HeroPreviewAbility');
-	FillAttributeUI($('#HeroPreviewAttributes'), localHeroData);
+	FillAttributeUI($('#HeroPreviewAttributes'), localHeroData.attributes);
 
 	var GlobalLoadoutItems = FindDotaHudElement('GlobalLoadoutItems');
 	if (GlobalLoadoutItems) {
@@ -343,7 +347,7 @@ function ShowHeroPreviewTab(tabID) {
 	$('#HeroListPanel').RemoveAndDeleteChildren();
 	var localPlayerId = Game.GetLocalPlayerID();
 	if (Players.IsValidPlayerID(localPlayerId) && !Players.IsSpectator(localPlayerId)) {
-		console.log('Player (' + localPlayerId + ')');
+		$('#AdsBanner').SetImage('https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection/' + (russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png'))
 		_DynamicMinimapSubscribe($('#MinimapDynamicIcons'), function(ptid) {
 			MinimapPTIDs.push(ptid);
 		});
@@ -373,7 +377,6 @@ function ShowHeroPreviewTab(tabID) {
 
 		var bglist = Players.GetStatsData(localPlayerId).Backgrounds;
 		if (bglist) $('#HeroSelectionCustomBackground').SetImage(bglist[Math.floor(Math.random() * bglist.length)]);
-		$('#AdsBanner').SetImage('https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection/' + (russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png'));
 	} else {
 		HeroSelectionEnd(true);
 	}

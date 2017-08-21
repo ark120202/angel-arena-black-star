@@ -311,7 +311,6 @@ function UpdateSmallItem(panel, gold) {
 			}
 		}
 	} catch (err) {
-		console.error(err);
 		var index = SmallItems.indexOf(panel);
 		if (index > -1)
 			SmallItems.splice(index, 1);

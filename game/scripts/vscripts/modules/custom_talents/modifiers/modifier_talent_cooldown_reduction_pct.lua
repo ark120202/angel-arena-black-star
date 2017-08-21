@@ -1,9 +1,10 @@
-modifier_talent_cooldown_reduction_pct = class({})
-function modifier_talent_cooldown_reduction_pct:IsHidden() return true end
-function modifier_talent_cooldown_reduction_pct:IsPermanent() return true end
-function modifier_talent_cooldown_reduction_pct:IsPurgable() return false end
-function modifier_talent_cooldown_reduction_pct:DestroyOnExpire() return false end
-function modifier_talent_cooldown_reduction_pct:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+modifier_talent_cooldown_reduction_pct = class({
+	IsHidden        = function() return true end,
+	IsPermanent     = function() return true end,
+	IsPurgable      = function() return false end,
+	DestroyOnExpire = function() return false end,
+	GetAttributes   = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+})
 
 function modifier_talent_cooldown_reduction_pct:DeclareFunctions()
 	return {MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE}

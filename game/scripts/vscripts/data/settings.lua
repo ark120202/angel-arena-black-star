@@ -39,8 +39,8 @@ SHOW_ONLY_PLAYER_INVENTORY = false      -- Should we only allow players to see t
 DISABLE_STASH_PURCHASING = false        -- Should we prevent players from being able to buy items into their stash when not at a shop?
 DISABLE_ANNOUNCER = false               -- Should we disable the announcer from working in the game?
 
-MAXIMUM_ATTACK_SPEED = 725              -- What should we use for the maximum attack speed?
-MINIMUM_ATTACK_SPEED = 20               -- What should we use for the minimum attack speed?
+MAXIMUM_ATTACK_SPEED = 750              -- What should we use for the maximum attack speed?
+MINIMUM_ATTACK_SPEED = 60               -- What should we use for the minimum attack speed?
 
 GAME_END_DELAY = -1                     -- How long should we wait after the game winner is set to display the victory banner and End Screen?  Use -1 to keep the default (about 10 seconds)
 VICTORY_MESSAGE_DURATION = 3            -- How long should we wait after the victory message displays to show the End Screen?  Use

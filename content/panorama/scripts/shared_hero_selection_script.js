@@ -39,6 +39,14 @@ function IsHeroBanned(name) {
 	return BannedHeroes.indexOf(name) !== -1;
 }
 
+function IsHeroUnreleased(name) {
+	return HeroesData[name] && HeroesData[name].Unreleased;
+}
+
+function IsHeroDisabledInRanked(name) {
+	return HeroesData[name] && HeroesData[name].DisabledInRanked && Options.IsEquals('EnableRatingAffection');
+}
+
 function IsLocalHeroPicked() {
 	return (LocalPlayerStatus || Players.GetHeroSelectionPlayerInfo(Game.GetLocalPlayerID())).status === 'picked';
 }
@@ -155,8 +163,12 @@ function ChooseHeroUpdatePanels() {
 		$('#SelectedHeroLinkedHero').text = linked.join(', ');
 	}
 	$('#SelectedHeroAbilitiesPanelInner').RemoveAndDeleteChildren();
+
+	$('#SelectedHeroDisabledReason').text = IsHeroUnreleased(SelectedHeroName) ?
+		$.Localize('hero_selection_disabled_reason_unreleased') : IsHeroDisabledInRanked(SelectedHeroName) ?
+			$.Localize('hero_selection_disabled_reason_disabled_in_ranked') : '';
 	FillAbilitiesUI($('#SelectedHeroAbilitiesPanelInner'), selectedHeroData.abilities, 'SelectedHeroAbility');
-	FillAttributeUI($('#HeroListControlsGroup3'), selectedHeroData);
+	FillAttributeUI($('#HeroListControlsGroup3'), selectedHeroData.attributes);
 }
 
 function FillAbilitiesUI(rootPanel, abilities, className) {
@@ -173,15 +185,15 @@ function FillAbilitiesUI(rootPanel, abilities, className) {
 	});
 }
 
-function FillAttributeUI(rootPanel, SelectedHeroData) {
+function FillAttributeUI(rootPanel, attributesData) {
 	for (var i = 2; i >= 0; i--) {
-		rootPanel.FindChildTraverse('DotaAttributePic_' + (i + 1)).SetHasClass('PrimaryAttribute', Number(SelectedHeroData.attributes.attribute_primary) === i);
-		rootPanel.FindChildTraverse('HeroAttributes_' + (i + 1)).text = SelectedHeroData.attributes['attribute_base_' + i] + ' + ' + Number(SelectedHeroData.attributes['attribute_gain_' + i]).toFixed(1);
+		rootPanel.FindChildTraverse('DotaAttributePic_' + (i + 1)).SetHasClass('PrimaryAttribute', Number(attributesData.attribute_primary) === i);
+		rootPanel.FindChildTraverse('HeroAttributes_' + (i + 1)).text = attributesData['attribute_base_' + i] + ' + ' + Number(attributesData['attribute_gain_' + i]).toFixed(1);
 	}
-	rootPanel.FindChildTraverse('HeroAttributes_damage').text = SelectedHeroData.attributes.damage_min + ' - ' + SelectedHeroData.attributes.damage_max;
-	rootPanel.FindChildTraverse('HeroAttributes_speed').text = SelectedHeroData.attributes.movespeed;
-	rootPanel.FindChildTraverse('HeroAttributes_armor').text = SelectedHeroData.attributes.armor;
-	rootPanel.FindChildTraverse('HeroAttributes_bat').text = Number(SelectedHeroData.attributes.attackrate).toFixed(1);
+	rootPanel.FindChildTraverse('HeroAttributes_damage').text = attributesData.damage_min + ' - ' + attributesData.damage_max;
+	rootPanel.FindChildTraverse('HeroAttributes_speed').text = attributesData.movespeed;
+	rootPanel.FindChildTraverse('HeroAttributes_armor').text = attributesData.armor;
+	rootPanel.FindChildTraverse('HeroAttributes_bat').text = Number(attributesData.attackrate).toFixed(1);
 }
 
 function SwitchTab() {

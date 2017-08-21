@@ -47,6 +47,8 @@ hero_selection_unlock: Unlock
 hero_selection_heroes_default: Default
 hero_selection_heroes_new: New
 hero_selection_repick_tooltip: You forfeit 200 of your starting gold for repicking
+hero_selection_disabled_reason_disabled_in_ranked: this hero is disabled in ranked all pick
+hero_selection_disabled_reason_unreleased: this hero is unreleased
 
 item_rune_keeper_no_runes_left: Rune Keeper is empty now.
 item_rune_keeper_contains: "Rune Keeper contains:\_"
