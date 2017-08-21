@@ -258,4 +258,13 @@ CHAT_COMMANDS = {
 			end
 		end
 	},
+	["weather"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
+		f = function(args)
+			local weather = tostring(args[1])
+			if weather then
+				Weather:Start(weather)
+			end
+		end
+	},
 }

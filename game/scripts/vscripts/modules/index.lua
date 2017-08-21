@@ -20,7 +20,8 @@ local modules = {
 	"antiafk",
 	"events_helper",
 	"teams",
-	"meepo_fixes" -- until rewrite
+	"meepo_fixes", -- until rewrite
+	"weather",
 }
 
 local errors = {}

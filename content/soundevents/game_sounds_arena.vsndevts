@@ -1350,3 +1350,86 @@
 		}
 	}
 }
+
+"Arena.Weather.Rain.Ambient"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/ambient/soundscapes/light_rain_lp.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"6" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Weather.Snow.Ambient"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/ambient/soundscapes/snowy_wind_lp.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"5" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Weather.Snow.Gust"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_2d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/ambient/soundscapes/snowy_gust01.vsnd"
+							"value1"	"sounds/ambient/soundscapes/snowy_gust02.vsnd"
+							"value2"	"sounds/ambient/soundscapes/snowy_gust03.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"3" }
+				}
+			}
+		}
+	}
+}
