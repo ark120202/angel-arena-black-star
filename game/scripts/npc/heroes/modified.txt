@@ -416,7 +416,7 @@
 		"override_hero"	"npc_dota_hero_medusa"
 		"Ability1"	"medusa_split_shot_arena"
 		"Ability2"	"medusa_mystic_snake_arena"
-		"Ability3"	"medusa_mana_shield"
+		"Ability3"	"medusa_mana_shield_arena"
 		"Ability4"	"medusa_stone_gaze_arena"
 		"Ability5"	""
 		"Changed"	"1"

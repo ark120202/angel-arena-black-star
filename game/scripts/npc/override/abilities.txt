@@ -15385,26 +15385,6 @@
 
 	}
 
-	"medusa_mana_shield"
-	{
-		"MaxLevel"						"7"
-		"AbilityCastPoint"				"0.4 0.35 0.3 0.25 0.2 0.15 0.1"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_mana"		"1.6 1.8 2.0 2.2 2.4 2.6 2.8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"absorption_tooltip"		"60"
-			}
-		}
-	}
-
 
 	"troll_warlord_berserkers_rage"
 	{
