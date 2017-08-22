@@ -11,12 +11,14 @@ function CreateLightningBlot(position)
 	GridNav:DestroyTreesAroundPoint(position, aoe, true)
 	local damage = GetDOTATimeInMinutesFull() * RandomInt(50, 100)
 	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
-		ApplyDamage({
-			attacker = GLOBAL_DUMMY,
-			victim = v,
-			damage_type = DAMAGE_TYPE_PURE,
-			damage = damage
-		})
+		if not v:IsMagicImmune() then
+			ApplyDamage({
+				attacker = GLOBAL_DUMMY,
+				victim = v,
+				damage_type = DAMAGE_TYPE_PURE,
+				damage = damage
+			})
+		end
 	end
 end
 
@@ -30,15 +32,17 @@ function CreateCrystalNova(position)
 	local damage = 100 + GetDOTATimeInMinutesFull() * RandomInt(40, 90)
 	local duration = 0.4 + ( RandomInt(2, 7) / 10 )
 	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
-		ApplyDamage({
-			attacker = GLOBAL_DUMMY,
-			victim = v,
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			damage = damage
-		})
-		v:AddNewModifier(v, nil, "modifier_weather_blizzard_debuff", {
-			duration = duration + RandomInt(1, 6) / 10
-		})
+		if not v:IsMagicImmune() then
+			ApplyDamage({
+				attacker = GLOBAL_DUMMY,
+				victim = v,
+				damage_type = DAMAGE_TYPE_MAGICAL,
+				damage = damage
+			})
+			v:AddNewModifier(v, nil, "modifier_weather_blizzard_debuff", {
+				duration = duration + RandomInt(1, 6) / 10
+			})
+		end
 	end
 end
 
