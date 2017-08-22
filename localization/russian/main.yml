@@ -294,7 +294,9 @@ DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura: Blazing Blood
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura_Description: Applies Burning Spear stacks to all enemies around
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff: Burning Spear
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff_Description: 'ВЫ ГОРИТЕ! Вам периодически наносится урон. Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, сопротивление магическому урону уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%'
-DOTA_Tooltip_ability_tinker_rearm_arena_Description: 'Сбрасывает время перезарядки способностей и большинства предметов героя.'
+
+DOTA_Tooltip_ability_tinker_rearm_arena_Description: ПРЕРЫВАЕМАЯ — сбрасывает время перезарядки способностей и большинства предметов героя.
+DOTA_Tooltip_ability_tinker_rearm_arena_channel_time: 'ДЛИТЕЛЬНОСТЬ ПРОИЗНЕСЕНИЯ:'
 
 DOTA_Tooltip_ability_life_stealer_feast_arena_Description: Каждая атака лечит вас на долю от текущего здоровья противника и наносит равноценное количество урона.
 DOTA_Tooltip_ability_life_stealer_feast_arena_Note0: Не действует на боссов.
