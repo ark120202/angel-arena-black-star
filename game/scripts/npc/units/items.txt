@@ -179,4 +179,31 @@
 		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
+
+	"npc_arena_sentry_wards"
+	{
+		"BaseClass"					"npc_dota_ward_base"
+		"Model"						"models/props_gameplay/default_ward.vmdl"
+		"Level"						"0"
+		"ModelScale"				"1"
+		"MinimapIcon"				"minimap_ward_invis"
+		"MinimapIconSize"			"300"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+		"HealthBarOffset"			"140"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+
+		"StatusHealth"				"1"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+	}
 }
