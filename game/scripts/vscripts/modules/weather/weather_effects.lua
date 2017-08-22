@@ -10,7 +10,7 @@ function CreateLightningBlot(position)
 
 	GridNav:DestroyTreesAroundPoint(position, aoe, true)
 	local damage = GetDOTATimeInMinutesFull() * RandomInt(50, 100)
-	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)) do
+	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
 		ApplyDamage({
 			attacker = GLOBAL_DUMMY,
 			victim = v,
@@ -29,7 +29,7 @@ function CreateCrystalNova(position)
 	EmitSoundOnLocationWithCaster(position, "Hero_Crystal.CrystalNova", nil)
 	local damage = 100 + GetDOTATimeInMinutesFull() * RandomInt(40, 90)
 	local duration = 0.4 + ( RandomInt(2, 7) / 10 )
-	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)) do
+	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
 		ApplyDamage({
 			attacker = GLOBAL_DUMMY,
 			victim = v,
