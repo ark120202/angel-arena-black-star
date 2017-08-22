@@ -1,10 +1,22 @@
 -- particles/rain_fx/
 
 function CreateLightningBlot(position)
+	local originalPosition
+	local lightningRodRadius = GetAbilitySpecial("item_lightning_rod", "protection_radius")
+	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, lightningRodRadius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)) do
+		if v:HasModifier("modifier_item_lightning_rod_ward") then
+			originalPosition = position
+			position = v:GetAbsOrigin() + Vector(0, 0, 150)
+		end
+	end
+
+
 	local aoe = 100
 	CreateGlobalParticle("particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", function(particle)
+		local lightningSourcePosition = originalPosition and (originalPosition + Vector(0, 0, 1200)) or
+			(position + Vector(RandomInt(-250, 250), RandomInt(-250, 250), 1200))
 		ParticleManager:SetParticleControl(particle, 0, position)
-		ParticleManager:SetParticleControl(particle, 1, position + Vector(RandomInt(-250, 250), RandomInt(-250, 250), 1200))
+		ParticleManager:SetParticleControl(particle, 1, lightningSourcePosition)
 	end, PATTACH_WORLDORIGIN)
 	EmitSoundOnLocationWithCaster(position, "Hero_Zuus.LightningBolt", nil)
 

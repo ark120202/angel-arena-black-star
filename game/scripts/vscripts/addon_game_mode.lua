@@ -96,6 +96,7 @@ function Precache(context)
 
 		"npc_dota_lucifers_claw_doomling",
 		"npc_queenofblades_alter_ego",
+		"npc_arena_lightning_rod",
 	}
 
 	local soundevents = {
