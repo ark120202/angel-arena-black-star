@@ -11,9 +11,14 @@ modifier_weather_rain = class({
 	GetAuraDuration    = function() return 0.1 end,
 	GetAuraSearchTeam  = function() return DOTA_UNIT_TARGET_TEAM_BOTH end,
 	GetAuraSearchType  = function() return DOTA_UNIT_TARGET_ALL end,
-	GetAuraSearchFlags = function() return DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES end,
+	GetAuraSearchFlags = function() return DOTA_UNIT_TARGET_FLAG_NONE end,
 })
 
+if IsServer() then
+	function modifier_weather_rain:GetAuraEntityReject(hEntity)
+		return hEntity:IsBoss()
+	end
+end
 
 modifier_weather_rain_aura = class({
 	IsPurgable = function() return false end,
