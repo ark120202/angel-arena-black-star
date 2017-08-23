@@ -1,4 +1,6 @@
 ModuleRequire(..., "weather_effects")
+MINIMAL_CATASTROPHE_TIME = 900
+
 FALLBACK_WEATHER_TYPES = {}
 
 for k,v in pairs(WEATHER_EFFECTS) do
@@ -65,10 +67,19 @@ function Weather:Start(new)
 	})
 end
 
+function Weather:CanStartCatastrophe()
+	return GameRules:GetDOTATime(false, true) >= MINIMAL_CATASTROPHE_TIME
+end
+
 function Weather:SelectRandomRecipient(new)
 	local info = Weather:GetWeatherInfo(new)
 	local recipients = info and info.recipients or FALLBACK_WEATHER_TYPES
-	return recipients[RandomInt(1, #recipients)]
+	local canStartCatastrophe = Weather:CanStartCatastrophe()
+	for _,v in shuffledPairs(recipients) do
+		if canStartCatastrophe or not Weather:GetWeatherInfo(v).isCatastrophe then
+			return v
+		end
+	end
 end
 
 function Weather:Think()
