@@ -69,6 +69,37 @@ REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 	destroyer_body_reconstruction = true,
 }
 
+REFRESH_LIST_IGNORE_REARM = {
+	tinker_rearm_arena = true,
+	item_refresher_arena = true,
+	item_aegis_arena = true,
+	item_refresher_core = true,
+	item_titanium_bar = true,
+	item_guardian_greaves_arena = true,
+	item_demon_king_bar = true,
+	item_pipe = true,
+	item_arcane_boots = true,
+	item_helm_of_the_dominator = true,
+	item_sphere = true,
+	item_necronomicon = true,
+	item_hand_of_midas_arena = true,
+	item_hand_of_midas_2_arena = true,
+	item_hand_of_midas_3_arena = true,
+	item_mekansm_arena = true,
+	item_mekansm_2 = true,
+	item_black_king_bar_arena = true,
+	item_black_king_bar_2 = true,
+	item_black_king_bar_3 = true,
+	item_black_king_bar_4 = true,
+	item_black_king_bar_5 = true,
+	item_black_king_bar_6 = true,
+
+	omniknight_select_allies = true,
+	omniknight_select_enemies = true,
+
+	destroyer_body_reconstruction = true,
+}
+
 COFFEE_BEAN_NOT_REFRESHABLE = {
 	zuus_cloud = true,
 	monkey_king_boundless_strike = true,

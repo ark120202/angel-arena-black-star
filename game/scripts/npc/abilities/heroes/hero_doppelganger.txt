@@ -17,26 +17,26 @@
 		"AbilityManaCost"				"25"
 		"AbilityCastRange"				"1000"
 
-		"BannedHeroes"
-		{
-
-		}
-
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"1000"
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1000"
 			}
 		}
 
 		"precache"
 		{
-			"particle"			"particles/arena/units/heroes/hero_doppelganger/mimic.vpcf"
-			"particle"			"particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
-			"particle"			"particles/status_fx/status_effect_arc_warden_tempest.vpcf"
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
+			"particle"					"particles/arena/units/heroes/hero_doppelganger/mimic.vpcf"
+			"particle"					"particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
+			"particle"					"particles/status_fx/status_effect_arc_warden_tempest.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
+		}
+
+		"BannedHeroes"
+		{
+			"npc_dota_hero_necrolyte"	"1"
 		}
 	}
 }

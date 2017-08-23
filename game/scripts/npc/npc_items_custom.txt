@@ -10630,4 +10630,54 @@
 			}
 		}
 	}
+
+	"item_lightning_rod"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_lightning_rod"
+		"AbilityTextureName"			"item_arena/lightning_rod"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+
+		"AbilityCastRange"				"500"
+		"AbilityCooldown"				"1"
+		"ItemCost"						"1600"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+		"ItemSupport"					"1"
+		"IsTempestDoubleClonable"		"0"
+
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+
+		"ItemStockMax"					"5"
+		"ItemStockTime"					"60"
+		"ItemInitialStockTime"			"120"
+
+		"AOERadius"						"%protection_radius"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_minutes"		"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"protection_radius"		"1200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"			"500"
+			}
+		}
+	}
 }

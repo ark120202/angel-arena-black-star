@@ -5616,22 +5616,6 @@
 		}
 	}
 
-	"tinker_rearm"
-	{
-		"MaxLevel"				"7"
-		"AbilityCastPoint"		"0.53 0.43 0.33 0.23 0.13 0.03 0.0"
-		"AbilityChannelTime"	"3.0 2.65 2.3 1.95 1.6 1.25 0.9"
-		"AbilityCooldown"		"0.0"
-		"AbilityManaCost"		"200 300 400 500 600 700 800"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"channel_tooltip"		"3.0 2.65 2.3 1.95 1.6 1.25 0.9"
-			}
-		}
-	}
 	"sniper_shrapnel"
 	{
 		"MaxLevel"	"7"
