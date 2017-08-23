@@ -54,11 +54,11 @@ function modifier_weather_snow_aura_normal:DeclareFunctions()
 end
 
 function modifier_weather_snow_aura_normal:GetModifierMoveSpeedBonus_Percentage()
-	return -20
+	return -10
 end
 
 function modifier_weather_snow_aura_normal:GetModifierAttackSpeedBonus_Constant()
-	return -30
+	return -15
 end
 
 modifier_weather_blizzard_debuff = class({
