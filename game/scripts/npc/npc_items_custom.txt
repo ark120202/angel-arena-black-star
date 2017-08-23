@@ -10650,7 +10650,6 @@
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
 
-		"ItemStockInitial"				"2"
 		"ItemStockMax"					"5"
 		"ItemStockTime"					"60"
 		"ItemInitialStockTime"			"120"
