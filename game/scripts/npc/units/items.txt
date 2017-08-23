@@ -183,7 +183,7 @@
 	"npc_arena_lightning_rod"
 	{
 		"BaseClass"					"npc_dota_ward_base"
-		"Model"						"models/items/wards/drow_ward/drow_ward.vmdl"
+		"Model"						"models/items/wards/eyeofforesight/eyeofforesight.vmdl"
 		"Level"						"0"
 		"ModelScale"				"1"
 		"MinimapIcon"				"minimap_ward_invis"
