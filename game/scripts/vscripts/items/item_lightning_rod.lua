@@ -9,7 +9,10 @@ if IsServer() then
 		local lifetime = self:GetSpecialValueFor("duration_minutes") * 60
 
 		local ward = CreateUnitByName("npc_arena_lightning_rod", position, true, caster, caster, caster:GetTeamNumber())
-		ward:SetHealth(self:GetSpecialValueFor("health"))
+		local health = self:GetSpecialValueFor("health")
+		ward:SetBaseMaxHealth(health)
+		ward:SetMaxHealth(health)
+		ward:SetHealth(health)
 		ward:SetRenderColor(30, 50, 127)
 
 		ward:EmitSound("DOTA_Item.ObserverWard.Activate")
