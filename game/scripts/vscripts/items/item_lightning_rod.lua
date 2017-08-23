@@ -27,12 +27,13 @@ end
 
 
 modifier_item_lightning_rod_ward = class({
-	IsPurgable = function() return false end,
-	GetTexture = function() return "item_arena/lightning_rod" end,
+	GetTexture                   = function() return "item_arena/lightning_rod" end,
+	IsPurgable                   = function() return false end,
 })
 
 function modifier_item_lightning_rod_ward:CheckState()
 	return {
 		[MODIFIER_STATE_MAGIC_IMMUNE] = true,
+		[MODIFIER_STATE_INVISIBLE] = true,
 	}
 end
