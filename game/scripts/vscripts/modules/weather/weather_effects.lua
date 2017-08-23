@@ -1,5 +1,3 @@
--- particles/rain_fx/
-
 function CreateLightningBlot(position)
 	local originalPosition
 	local lightningRodRadius = GetAbilitySpecial("item_lightning_rod", "protection_radius")
@@ -114,7 +112,11 @@ WEATHER_EFFECTS = {
 		recipients = {"snow", "rain"},
 
 		isCatastrophe = true,
-		particles = {"particles/rain_fx/econ_weather_aurora.vpcf", "particles/rain_fx/econ_snow.vpcf", "particles/rain_fx/econ_snow.vpcf"},
+		particles = {
+			"particles/rain_fx/econ_weather_aurora.vpcf",
+			"particles/rain_fx/econ_snow.vpcf",
+			"particles/rain_fx/econ_snow.vpcf"
+		},
 		sounds = {
 			{"Arena.Weather.Snow.Ambient"},
 			{"Arena.Weather.Snow.Gust", 1},
