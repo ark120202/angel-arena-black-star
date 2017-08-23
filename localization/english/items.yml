@@ -1786,3 +1786,7 @@ DOTA_Tooltip_ability_item_rapier_arena_Description: |-
 DOTA_Tooltip_ability_item_rapier_arena_Note0: If Divine Rapier is dropped and picked up by an enemy of its original owner, it cannot be dropped again except by death.
 DOTA_Tooltip_ability_item_rapier_arena_Lore: So powerful, it cannot have a single owner.
 DOTA_Tooltip_ability_item_rapier_arena_bonus_damage: +$damage
+
+DOTA_Tooltip_ability_item_lightning_rod: Lightning Rod
+DOTA_Tooltip_ability_item_lightning_rod_Description: '<h1>Use: Place</h1> Places a Lightning Rod, an invisible watcher, that causes all lightning bolts, creating during Storm weather, within %protection_radius% radius to strike into it.<br>Duration: %duration_minutes% minutes.<br><br>Range: %tooltip_range%'
+npc_dota_sentry_wards: Lightning Rod
