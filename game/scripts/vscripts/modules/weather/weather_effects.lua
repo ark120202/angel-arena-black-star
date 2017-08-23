@@ -1,22 +1,37 @@
 -- particles/rain_fx/
 
 function CreateLightningBlot(position)
+	local originalPosition
+	local lightningRodRadius = GetAbilitySpecial("item_lightning_rod", "protection_radius")
+	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, lightningRodRadius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)) do
+		if v:HasModifier("modifier_item_lightning_rod_ward") then
+			originalPosition = position
+			position = v:GetAbsOrigin() + Vector(0, 0, 150)
+			break
+		end
+	end
+
+
 	local aoe = 100
 	CreateGlobalParticle("particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", function(particle)
+		local lightningSourcePosition = originalPosition and (originalPosition + Vector(0, 0, 1200)) or
+			(position + Vector(RandomInt(-250, 250), RandomInt(-250, 250), 1200))
 		ParticleManager:SetParticleControl(particle, 0, position)
-		ParticleManager:SetParticleControl(particle, 1, position + Vector(RandomInt(-250, 250), RandomInt(-250, 250), 1200))
+		ParticleManager:SetParticleControl(particle, 1, lightningSourcePosition)
 	end, PATTACH_WORLDORIGIN)
 	EmitSoundOnLocationWithCaster(position, "Hero_Zuus.LightningBolt", nil)
 
 	GridNav:DestroyTreesAroundPoint(position, aoe, true)
 	local damage = GetDOTATimeInMinutesFull() * RandomInt(50, 100)
-	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)) do
-		ApplyDamage({
-			attacker = GLOBAL_DUMMY,
-			victim = v,
-			damage_type = DAMAGE_TYPE_PURE,
-			damage = damage
-		})
+	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
+		if not v:IsMagicImmune() then
+			ApplyDamage({
+				attacker = GLOBAL_DUMMY,
+				victim = v,
+				damage_type = DAMAGE_TYPE_PURE,
+				damage = damage
+			})
+		end
 	end
 end
 
@@ -29,16 +44,18 @@ function CreateCrystalNova(position)
 	EmitSoundOnLocationWithCaster(position, "Hero_Crystal.CrystalNova", nil)
 	local damage = 100 + GetDOTATimeInMinutesFull() * RandomInt(40, 90)
 	local duration = 0.4 + ( RandomInt(2, 7) / 10 )
-	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)) do
-		ApplyDamage({
-			attacker = GLOBAL_DUMMY,
-			victim = v,
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			damage = damage
-		})
-		v:AddNewModifier(v, nil, "modifier_weather_blizzard_debuff", {
-			duration = duration + RandomInt(1, 6) / 10
-		})
+	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
+		if not v:IsMagicImmune() then
+			ApplyDamage({
+				attacker = GLOBAL_DUMMY,
+				victim = v,
+				damage_type = DAMAGE_TYPE_MAGICAL,
+				damage = damage
+			})
+			v:AddNewModifier(v, nil, "modifier_weather_blizzard_debuff", {
+				duration = duration + RandomInt(1, 6) / 10
+			})
+		end
 	end
 end
 

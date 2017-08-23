@@ -1429,3 +1429,5 @@ DOTA_Tooltip_ability_item_rapier_arena_Description: |-
   <h1>Пассивная: Everlasting</h1> <font color='#e03e2e'>Предмет выпадает при смерти и не может быть уничтожен.</font><br><br>Если выпавший предмет поднимет союзник владельца, то Divine Rapier потеряет свои свойства, пока его не вернут бывшему владельцу. Если предмет подберёт враг, то после его смерти бонусы от Divine Rapier сможет получить кто угодно. Курьер не может подобрать этот предмет, если он выпал при смерти.
 DOTA_Tooltip_ability_item_rapier_arena_Note0: Если Divine Rapier поднимет враг её первого владельца, то она выпадет только при смерти этого врага.
 DOTA_Tooltip_ability_item_rapier_arena_Lore: Настолько могущественное, что у него даже не может быть единственного владельца.
+
+DOTA_Tooltip_ability_item_lightning_rod_Description: '<h1>Использование: Place</h1> Устанавливает невидимого дозорного — Lightning Rod, из-за которого все молнии, созданные во время Шторма, находящиеся в радиусе %protection_radius% будут ударять в него.<br>Действует %duration_minutes% мин.<br><br>Дальность применения: %tooltip_range%'
