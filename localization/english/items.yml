@@ -1789,4 +1789,5 @@ DOTA_Tooltip_ability_item_rapier_arena_bonus_damage: +$damage
 
 DOTA_Tooltip_ability_item_lightning_rod: Lightning Rod
 DOTA_Tooltip_ability_item_lightning_rod_Description: '<h1>Use: Place</h1> Places a Lightning Rod, an invisible watcher, that causes all lightning bolts, creating during Storm weather, within %protection_radius% radius to strike into it.<br>Duration: %duration_minutes% minutes.<br><br>Range: %tooltip_range%'
+DOTA_Tooltip_modifier_item_lightning_rod_ward: Lightning Rod
 npc_dota_sentry_wards: Lightning Rod
