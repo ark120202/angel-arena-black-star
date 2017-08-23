@@ -209,6 +209,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_titanium_fruit",
 			"item_urn_of_souls",
 			"item_homemade_cheese",
+			"item_lightning_rod",
 			"item_steam_footgear",
 			"item_horn_of_the_underworld",
 			"item_urn_of_demons",
