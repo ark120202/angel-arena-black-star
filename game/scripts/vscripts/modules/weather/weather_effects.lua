@@ -7,6 +7,7 @@ function CreateLightningBlot(position)
 		if v:HasModifier("modifier_item_lightning_rod_ward") then
 			originalPosition = position
 			position = v:GetAbsOrigin() + Vector(0, 0, 150)
+			break
 		end
 	end
 
