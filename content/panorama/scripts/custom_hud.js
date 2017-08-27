@@ -64,8 +64,13 @@ function UpdatePanoramaHUD() {
 	$('#DynamicMinimapRoot').style.height = ((minimap.actuallayoutheight + 16) / sh * 100) + '%';
 	$('#DynamicMinimapRoot').style.width = ((minimap.actuallayoutwidth + 16) / sw * 100) + '%';
 	var glyphpos = FindDotaHudElement('RadarButton').GetPositionWithinWindow();
-	if (glyphpos != null && !isNaN(glyphpos.x) && !isNaN(glyphpos.y))
-		$('#SwitchDynamicMinimapButton').style.position = (glyphpos.x / sw * 100) + '% ' + (glyphpos.y / sh * 100) + '% 0';
+	if (glyphpos != null && !isNaN(glyphpos.x) && !isNaN(glyphpos.y)) {
+		var hpct = glyphpos.x / sw;
+		var wpct = glyphpos.y / sh;
+		if (isFinite(hpct) && isFinite(wpct)) {
+			$('#SwitchDynamicMinimapButton').style.position = (hpct * 100) + '% ' + (wpct * 100) + '% 0';
+		}
+	}
 	var pcs = FindDotaHudElement('PortraitContainer').GetPositionWithinWindow();
 	if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
 		CustomModifiersList.style.position = (pcs.x / sw * 100) + '% ' + (pcs.y / sh * 100) + '% 0';
