@@ -19,7 +19,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-25"
+				"armor_reduction"		"-15"
 			}
 			"02"
 			{
@@ -113,7 +113,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"44"
+				"bonus_armor"		"30"
 			}
 			"02"
 			{
@@ -167,12 +167,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_day_vision"			"250"
+				"bonus_day_vision"			"400"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_night_vision"		"200"
+				"bonus_night_vision"		"300"
 			}
 		}
 

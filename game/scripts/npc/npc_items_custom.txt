@@ -5263,7 +5263,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"75"
+				"bonus_movement_speed"	"80"
 			}
 			"07"
 			{
@@ -5274,7 +5274,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_as_damage_pct"		"30"
+				"hp_as_damage_pct"		"35"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"09"
@@ -7486,7 +7486,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"			"350"
+				"bonus_damage"			"400"
 			}
 			"02"
 			{
@@ -7573,7 +7573,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_armor_reduction"	"-30"
+				"aura_armor_reduction"	"-20"
 			}
 			"07"
 			{
@@ -8523,7 +8523,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_negative_armor"	"-40"
+				"aura_negative_armor"	"-30"
 			}
 			"11"
 			{
@@ -8735,7 +8735,7 @@
 		"ID"							"10270"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"6000"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_awakened_cursed_eye"
@@ -9213,7 +9213,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"60"
+				"bonus_armor"			"40"
 			}
 			"04"
 			{
@@ -9684,7 +9684,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"505"
+		"ItemCost"						"50"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_wand_of_midas"
 		"ItemRequirements"
@@ -9708,17 +9708,17 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_all"			"20"
+				"bonus_all"			"15"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"gold"				"30"
+				"gold"				"40"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"restore_per_charge"	"30"
+				"restore_per_charge"	"25"
 			}
 			"04"
 			{
@@ -9998,7 +9998,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_ending_width"	"350"
+				"cleave_ending_width"	"375"
 			}
 			"13"
 			{
@@ -10247,7 +10247,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"30"
+				"bonus_armor"			"35"
 			}
 			"03"
 			{

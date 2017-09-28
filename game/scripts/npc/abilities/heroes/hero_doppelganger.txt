@@ -14,7 +14,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		"AbilityCastPoint"				"0.1"
-		"AbilityManaCost"				"25"
+		"AbilityManaCost"				"0"
 		"AbilityCastRange"				"1000"
 
 		"AbilitySpecial"

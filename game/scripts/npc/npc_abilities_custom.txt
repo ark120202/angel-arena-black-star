@@ -1284,7 +1284,7 @@
 		"AbilityTextureName"			"tinker_rearm"
 		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_4"
 		"MaxLevel"						"7"
-		"AbilityCastPoint"				"0.53 0.43 0.33 0.23 0.13 0.03 0.01"
+		"AbilityCastPoint"				"0.53"
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"200 300 400 500 600 700 800"
 
@@ -1299,7 +1299,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"channel_time"			"3.0 2.65 2.3 1.95 1.6 1.25 0.9"
+				"channel_time"			"3.0 2.6 2.2 1.8 1.4 1.0 0.6"
 			}
 		}
 	}
@@ -1318,7 +1318,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_leech_percent"		"4.0 4.5 5.0 5.5 6.0 6.5 7.0"
+				"hp_leech_percent"		"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
 			}
 		}
 

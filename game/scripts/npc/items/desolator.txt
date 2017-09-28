@@ -5,7 +5,7 @@
 		"ID"							"10224"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
-		"ItemCost"						"25"
+		"ItemCost"						"500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_desolator2"
@@ -38,7 +38,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-14"
+				"corruption_armor"		"-12"
 			}
 			"03"
 			{
@@ -107,7 +107,7 @@
 		"ID"							"10226"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
-		"ItemCost"						"1000"
+		"ItemCost"						"500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_desolator3"
@@ -385,7 +385,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-50"
+				"corruption_armor"		"-45"
 			}
 			"06"
 			{
@@ -529,7 +529,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"760"
+				"bonus_damage"			"700"
 			}
 			"02"
 			{
@@ -554,7 +554,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-80"
+				"corruption_armor"		"-70"
 			}
 			"07"
 			{

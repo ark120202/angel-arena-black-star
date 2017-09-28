@@ -13,7 +13,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"lifesteal_pct_lvl1"		"15"
+				"lifesteal_pct_lvl1"		"30"
 			}
 			"02"
 			{
@@ -33,7 +33,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"lifesteal_pct_lvl2"		"20"
+				"lifesteal_pct_lvl2"		"30"
 			}
 			"06"
 			{
@@ -53,7 +53,7 @@
 			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"lifesteal_pct_lvl3"		"25"
+				"lifesteal_pct_lvl3"		"30"
 			}
 			"10"
 			{

@@ -206,31 +206,6 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"AbilityCooldown"				"10.0"
-		"AbilityCastRange"				"1300"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"charge_radius"			"1300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"6"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"restore_per_charge"	"20"
-			}
-		}
 	}
 	"item_ghost"
 	{
@@ -1282,7 +1257,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"AbilityCastRange"				"500"
+		"AbilityCastRange"				"525"
 		"AbilityCooldown"				"10.0"
 		"AbilitySpecial"
 		{
@@ -1299,7 +1274,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_range_tooltip"	"500"
+				"quelling_range_tooltip"	"525"
 			}
 			"04"
 			{
@@ -1314,7 +1289,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"3"
+				"bonus_armor"				"2"
 			}
 		}
 	}
