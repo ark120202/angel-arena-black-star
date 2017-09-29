@@ -98,6 +98,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	omniknight_select_enemies = true,
 
 	destroyer_body_reconstruction = true,
+	stargazer_cosmic_countdown = true,
 }
 
 COFFEE_BEAN_NOT_REFRESHABLE = {

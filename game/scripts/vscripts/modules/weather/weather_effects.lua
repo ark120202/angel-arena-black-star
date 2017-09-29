@@ -10,7 +10,7 @@ function CreateLightningBlot(position)
 	end
 
 
-	local aoe = 100
+	local aoe = 125
 	CreateGlobalParticle("particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", function(particle)
 		local lightningSourcePosition = originalPosition and (originalPosition + Vector(0, 0, 1200)) or
 			(position + Vector(RandomInt(-250, 250), RandomInt(-250, 250), 1200))
@@ -95,8 +95,8 @@ WEATHER_EFFECTS = {
 		end,
 	},
 	snow = {
-		minDuration = 120,
-		maxDuration = 600,
+		minDuration = 90,
+		maxDuration = 180,
 		recipients = {"rain", "blizzard"},
 
 		particles = {"particles/rain_fx/econ_snow.vpcf"},
@@ -107,8 +107,8 @@ WEATHER_EFFECTS = {
 		dummyModifier = "modifier_weather_snow",
 	},
 	blizzard = {
-		minDuration = 120,
-		maxDuration = 240,
+		minDuration = 90,
+		maxDuration = 180,
 		recipients = {"snow", "rain"},
 
 		isCatastrophe = true,

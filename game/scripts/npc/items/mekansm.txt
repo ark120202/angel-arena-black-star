@@ -75,7 +75,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"350 1000"
+				"heal_amount"			"400 1500"
 			}
 		}
 	}
@@ -155,7 +155,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"350 1000"
+				"heal_amount"			"400 1500"
 			}
 		}
 	}
@@ -253,12 +253,12 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"replenish_health"		"3000"
+				"replenish_health"		"5000"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"replenish_mana"		"2000"
+				"replenish_mana"		"3500"
 			}
 		}
 	}

@@ -1228,13 +1228,13 @@
 		"ID"							"10062"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"300"
+		"ItemCost"						"1000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_homemade_cheese"
 		"ItemRequirements"
 		{
-			"01"						"item_bottle_arena;item_enchanted_mango;item_tango_arena;item_faerie_fire"
+			"01"						"item_bottle_arena"
 		}
 	}
 
@@ -1252,7 +1252,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"180.0"
+		"AbilityCooldown"				"40.0"
 		"ItemShopTags"								"health_restore"
 		"ItemQuality"								"epic"
 		"ItemStackable"								"1"
@@ -1267,12 +1267,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_restore"		"1500"
+				"health_restore"		"5000"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_restore"			"750"
+				"mana_restore"			"4000"
 			}
 			"03"
 			{
@@ -1309,7 +1309,7 @@
 		"ID"							"10064"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityTextureName"			"item_arena/metamorphosis_elixir"
-		"ItemCost"						"2500"
+		"ItemCost"						"1000"
 		"ItemQuality"					"epic"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStockTime"					"300"
@@ -1322,7 +1322,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"transformation_time"			"5.0"
+				"transformation_time"			"1.0"
 			}
 		}
 
@@ -6592,7 +6592,7 @@
 		"ID"							"10236"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"3425"
+		"ItemCost"						"2825"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_golden_eagle_relic"
@@ -9317,7 +9317,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"restore_time"			"2.5"
+				"restore_time"			"2.0"
 			}
 			"04"
 			{
