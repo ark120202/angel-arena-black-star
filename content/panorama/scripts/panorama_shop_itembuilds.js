@@ -207,12 +207,10 @@ function GuideVote(vote) {
 	if (vote >= 0) {
 		var i = CurrentPageGuide.votes_down.indexOf(localSteamId);
 		if (i > -1) CurrentPageGuide.votes_down.splice(i, 1);
-	}
-	if (vote <= 0) {
+	} else if (vote <= 0) {
 		var i = CurrentPageGuide.votes_up.indexOf(localSteamId);
 		if (i > -1) CurrentPageGuide.votes_up.splice(i, 1);
-	}
-	if (vote !== 0) {
+	} else if (vote !== 0) {
 		var a = CurrentPageGuide[vote > 0 ? 'votes_up' : 'votes_down'];
 		if (a.indexOf(localSteamId) === -1) a.push(localSteamId);
 	}
@@ -230,13 +228,13 @@ function GuideVote(vote) {
 function GuidesBrowserLoadBuild(build) {
 	var steamID = build.steamID;
 	CurrentPageGuide = build;
-	var localSteamId = Game.GetLocalPlayerInfo().player_steamid;
+	var localSteamId = (Game.GetLocalPlayerInfo() || {}).player_steamid;
 	$.GetContextPanel().SetHasClass('ShowVoteAndFavorite', typeof steamID === 'string');
 	$.GetContextPanel().SetHasClass('HasYouTubeVideo', build.youtube != null);
 	$.GetContextPanel().SetHasClass('CanPublishBuild', steamID === -1);
 
-	$.GetContextPanel().SetHasClass('VotedYes', _.includes(build.votes_up, localSteamId));
-	$.GetContextPanel().SetHasClass('VotedNo', _.includes(build.votes_down, localSteamId));
+	$.GetContextPanel().SetHasClass('VotedYes', localSteamId != null && _.includes(build.votes_up, localSteamId));
+	$.GetContextPanel().SetHasClass('VotedNo', localSteamId != null && _.includes(build.votes_down, localSteamId));
 	$.GetContextPanel().SetDialogVariable('guide_player_rating', build.votes || 0);
 
 	if (steamID !== -1) TogglePublishMode(false);
