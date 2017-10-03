@@ -988,7 +988,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"AbilityCooldown"				"20.0"
+		"AbilityCooldown"				"30.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -1082,7 +1082,8 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 		"ItemStockMax"					"3"
-		"ItemStockTime"					"60"
+		"ItemStockTime"					"30"
+		"AbilityCooldown"				"20.0"
 	}
 	"item_recipe_veil_of_discord"
 	{

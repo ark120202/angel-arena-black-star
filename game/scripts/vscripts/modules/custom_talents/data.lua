@@ -3,9 +3,9 @@ CUSTOM_TALENTS_DATA = {
 		icon = "talents/experience",
 		cost = 1,
 		group = 1,
-		max_level = 4,
+		max_level = 3,
 		special_values = {
-			experience_pct = {15, 20, 25, 30}
+			experience_pct = {10, 20, 30}
 		},
 		effect = {
 			unit_keys = {
@@ -17,9 +17,9 @@ CUSTOM_TALENTS_DATA = {
 		icon = "talents/gold",
 		cost = 1,
 		group = 1,
-		max_level = 4,
+		max_level = 3,
 		special_values = {
-			gold_for_creep = {8, 16, 24, 32}
+			gold_for_creep = {10, 20, 30}
 		},
 		effect = {
 			modifiers = {
@@ -46,9 +46,9 @@ CUSTOM_TALENTS_DATA = {
 		icon = "talents/respawn_time_reduction",
 		cost = 5,
 		group = 8,
-		max_level = 14,
+		max_level = 15,
 		special_values = {
-			respawn_time_reduction = {-10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75}
+			respawn_time_reduction = {-10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75, -80}
 		},
 		effect = {
 			unit_keys = {
@@ -76,7 +76,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 4,
 		max_level = 7,
 		special_values = {
-			evasion = {5, 7.5, 10, 12.5, 15, 17.5, 20}
+			evasion = {5, 10, 15, 20. 25. 30, 35}
 		},
 		effect = {
 			modifiers = {
@@ -117,9 +117,9 @@ CUSTOM_TALENTS_DATA = {
 		icon = "talents/mana",
 		cost = 1,
 		group = 3,
-		max_level = 6,
+		max_level = 5,
 		special_values = {
-			mana = {250, 500, 750, 1000, 1250, 1500}
+			mana = {300, 600, 900, 1200, 1500}
 		},
 		effect = {
 			calculate_stat_bonus = true,
@@ -134,7 +134,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 3,
 		max_level = 5,
 		special_values = {
-			health_regen = {10, 17, 24, 31, 38}
+			health_regen = {10, 20, 30, 40, 50}
 		},
 		effect = {
 			modifiers = {
@@ -148,7 +148,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 3,
 		max_level = 5,
 		special_values = {
-			mana_regen = {1, 3, 5, 7, 9}
+			mana_regen = {3, 6, 9, 12, 15}
 		},
 		effect = {
 			modifiers = {
@@ -258,9 +258,9 @@ CUSTOM_TALENTS_DATA = {
 		icon = "talents/gold",
 		cost = 1,
 		group = 2,
-		max_level = 5,
+		max_level = 3,
 		special_values = {
-			gold_per_minute = {180, 300, 420, 540, 660}
+			gold_per_minute = {180, 420, 660}
 		},
 		effect = {
 			unit_keys = {
@@ -272,9 +272,9 @@ CUSTOM_TALENTS_DATA = {
 		icon = "talents/experience",
 		cost = 1,
 		group = 2,
-		max_level = 5,
+		max_level = 3,
 		special_values = {
-			xp_per_minute = {600, 1100, 1700, 2200, 2700}
+			xp_per_minute = {700, 1700, 2700}
 		},
 		effect = {
 			unit_keys = {
@@ -305,7 +305,7 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_hero_arthas_vsolyanova_bunus_chance = {
 		icon = "talents/heroes/arthas_vsolyanova_bunus_chance",
-		cost = 10,
+		cost = 5,
 		group = 9,
 		max_level = 5,
 		requirement = "arthas_vsolyanova",
@@ -326,8 +326,8 @@ CUSTOM_TALENTS_DATA = {
 	},
 	talent_hero_apocalypse_apocalypse_no_death = {
 		icon = "talents/heroes/apocalypse_apocalypse_no_death",
-		cost = 20,
-		group = 6,
+		cost = 1,
+		group = 9,
 		requirement = "apocalypse_apocalypse",
 	},
 	talent_hero_skeleton_king_reincarnation_notime_stun = {

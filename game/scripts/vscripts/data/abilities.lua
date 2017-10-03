@@ -116,6 +116,7 @@ BOSS_BANNED_ABILITIES = {
 	tusk_walrus_kick = true,
 	death_prophet_spirit_siphon = true,
 	item_force_staff = true,
+	item_hurricane_pike = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
