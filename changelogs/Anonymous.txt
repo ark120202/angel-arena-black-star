@@ -56,6 +56,14 @@ Abilities:
 			Ultimate Desolator
 			Skull of Midas
 			Wand of Midas
+		Deleted to shared items:
+			Titanium Fruit
+			Black King Bar
+			Black King Bar (2)
+			Black King Bar (3)
+			Black King Bar (4)
+			Black King Bar (5)
+			Black King Bar (6)
 	Dragon Knight - Breathe Fire:
 		Count of fire with Aghanim's Scepter: 18 => 8
 	Stargazer - Cosmic Countdown:
