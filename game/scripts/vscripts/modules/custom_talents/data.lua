@@ -10,7 +10,7 @@ CUSTOM_TALENTS_DATA = {
 		effect = {
 			unit_keys = {
 				bonus_experience_percentage = "experience_pct",
-			},
+			}
 		}
 	},
 	talent_experience_pct2 = {
@@ -24,7 +24,7 @@ CUSTOM_TALENTS_DATA = {
 		effect = {
 			unit_keys = {
 				bonus_experience_percentage = "experience_pct",
-			},
+			}
 		}
 	},
 	talent_experience_pct3 = {
@@ -38,7 +38,7 @@ CUSTOM_TALENTS_DATA = {
 		effect = {
 			unit_keys = {
 				bonus_experience_percentage = "experience_pct",
-			},
+			}
 		}
 	},
 	talent_bonus_creep_gold1 = {
@@ -109,7 +109,7 @@ CUSTOM_TALENTS_DATA = {
 		effect = {
 			unit_keys = {
 				respawn_time_reduction = "respawn_time_reduction",
-			},
+			}
 		}
 	},
 	talent_attack_damage = {
@@ -132,7 +132,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 4,
 		max_level = 7,
 		special_values = {
-			evasion = {5, 10, 15, 20. 25. 30, 35}
+			evasion = {5, 10, 15, 20, 25, 30, 35}
 		},
 		effect = {
 			modifiers = {
