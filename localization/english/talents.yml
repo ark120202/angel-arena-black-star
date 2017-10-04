@@ -2,22 +2,18 @@ custom_talents_cost: 'Cost:'
 custom_talents_requirements: 'Requirements:'
 custom_talents_level: 'Level: '
 custom_talents_hide_requirement_errors: Hide unavaliable talents
-
 custom_talents_talent_experience_pct1: Bonus Experience
 custom_talents_talent_experience_pct1_description: '+{%experience_pct%} experience'
-custom_talents_talent_bonus_creep_gold1: Bonus Creep Gold
-custom_talents_talent_bonus_creep_gold1_description: 'Each killed creep grants {gold_for_creep} more gold'
-
 custom_talents_talent_experience_pct2: Bonus Experience
 custom_talents_talent_experience_pct2_description: '+{%experience_pct%} experience'
-custom_talents_talent_bonus_creep_gold2: Bonus Creep Gold
-custom_talents_talent_bonus_creep_gold2_description: 'Each killed creep grants {gold_for_creep} more gold'
-
 custom_talents_talent_experience_pct3: Bonus Experience
 custom_talents_talent_experience_pct3_description: '+{%experience_pct%} experience'
+custom_talents_talent_bonus_creep_gold1: Bonus Creep Gold
+custom_talents_talent_bonus_creep_gold1_description: 'Each killed creep grants {gold_for_creep} more gold'
+custom_talents_talent_bonus_creep_gold2: Bonus Creep Gold
+custom_talents_talent_bonus_creep_gold2_description: 'Each killed creep grants {gold_for_creep} more gold'
 custom_talents_talent_bonus_creep_gold3: Bonus Creep Gold
 custom_talents_talent_bonus_creep_gold3_description: 'Each killed creep grants {gold_for_creep} more gold'
-
 custom_talents_talent_spell_amplify: Spell Damage Amplify
 custom_talents_talent_spell_amplify_description: '+{%spell_amplify%} spell damage amplify'
 custom_talents_talent_respawn_time_reduction: Respawn Time
