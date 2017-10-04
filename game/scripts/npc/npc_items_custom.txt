@@ -6632,7 +6632,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"32"
+				"kill_gold"				"40"
 			}
 			"05"
 			{

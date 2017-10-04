@@ -22,6 +22,7 @@ Talents:
 	Apocalypse No Death:
 		Cost: 20 => 1
 		Group: 6 => 9
+	Cold Feet Charges disabled
 Bosses:
 	Stone Statue:
 		Soul of Titan (1) drop chance: 90% => 100%

@@ -1619,14 +1619,14 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {value = -12},
 		effect = {abilities = "special_bonus_unique_ancient_apparition_4"}
 	},
-	talent_hero_ancient_apparition_cold_feet_charges = {
+--[[	talent_hero_ancient_apparition_cold_feet_charges = {
 		icon = "ancient_apparition_cold_feet",
 		cost = 1,
 		group = 5,
 		requirement = "ancient_apparition_cold_feet",
 		special_values = {value = 4},
 		effect = {abilities = "special_bonus_unique_ancient_apparition_1"}
-	},
+	},--]]
 	talent_hero_ancient_apparition_chilling_touch_dmg = {
 		icon = "ancient_apparition_chilling_touch",
 		cost = 1,
