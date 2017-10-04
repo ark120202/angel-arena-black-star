@@ -157,8 +157,6 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 }
 
 PERCENT_DAMAGE_MODIFIERS = {
-	["ember_spirit_flame_guard"] = GetAbilitySpecial("ember_spirit_flame_guard", "tick_interval"),
-	["ember_spirit_searing_chains"] = GetAbilitySpecial("ember_spirit_searing_chains", "tick_interval"),
 }
 
 DISABLE_HELP_ABILITIES = {

@@ -1,0 +1,71 @@
+Talents:
+	Respawn Time Reduction:
+		-10/-15/-20/-25/-30/-35/-40/-45/-50/-55/-60/-65/-70/-75 => -10/-15/-20/-25/-30/-35/-40/-45/-50/-55/-60/-65/-70/-75/-80
+		Max Level: 14 => 15
+	Evasion:
+		5/7.5/10/12.5/15/17.5/20 => 5/10/15/20/25/30/35
+	Mana:
+		250/500/750/100/1250/1500 => 300/600/900/1200/1500
+		Max Level: 6 => 5
+	Health Regen:
+		10/17/24/31/38 => 10/20/30/40/50
+	Mana Regen:
+		1/3/5/7/9 => 3/6/9/12/15
+	Gold Per Minute:
+		180/300/420/540/660 => 180/420/660
+		Max Level 5 => 3
+	XP Per Minute:
+		600/1100/1700/2200/2700
+		Max Level 5 => 3
+	Vsolyanova Bonus Chance:
+		Cost: 10 => 5
+	Apocalypse No Death:
+		Cost: 20 => 1
+		Group: 6 => 9
+Bosses:
+	Stone Statue:
+		Soul of Titan (1) drop chance: 90% => 100%
+	Ancient Beast:
+		Soul of Titan (1) drop chance: 90% => 100%
+	Hurricane Pike:
+		No longer usable on bosses
+Balance:
+	Kill Streak Gold:
+		[0] = 0
+		[1] = 0
+		[2] = 0
+Abilities:
+	Meepo - Divided we Stand:
+		Added to shared items:
+			Battlefury
+			Octarine Core
+			Echo Sabre
+			Echo Sabre (2)
+			Morbid Mask
+			Mask of Madness
+			Golden Mask of Madness
+			Radiance
+			Radiance (2)
+			Radiance (3)
+			Radiance Frozen
+			Skadi
+			Skadi (2)
+			Skadi (4)
+			Skadi (8)
+			Frozen Frozen Desolator
+			Ultimate Desolator
+			Skull of Midas
+			Wand of Midas
+	Dragon Knight - Breathe Fire:
+		Count of fire with Aghanim's Scepter: 18 => 8
+	Stargazer - Cosmic Countdown:
+		No longer refreshable by Tinker's Rearm
+Weather:
+	Lightning Bolt:
+		Aoe: 100 => 125
+	Snow:
+		Min Duration: 120 => 90
+		Max Duration: 600 => 180
+	Blizzard (snow and rain together):
+		Min Duration: 120 => 90
+		Max Duration: 240 => 180
