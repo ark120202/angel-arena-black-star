@@ -1,11 +1,11 @@
 CUSTOM_TALENTS_DATA = {
-	talent_experience_pct = {
+	talent_experience_pct1 = {
 		icon = "talents/experience",
 		cost = 1,
 		group = 1,
-		max_level = 3,
+		max_level = 1,
 		special_values = {
-			experience_pct = {10, 20, 30}
+			experience_pct = {10}
 		},
 		effect = {
 			unit_keys = {
@@ -13,13 +13,69 @@ CUSTOM_TALENTS_DATA = {
 			}
 		}
 	},
-	talent_bonus_creep_gold = {
+	talent_bonus_creep_gold1 = {
 		icon = "talents/gold",
 		cost = 1,
 		group = 1,
-		max_level = 3,
+		max_level = 1,
 		special_values = {
-			gold_for_creep = {10, 20, 30}
+			gold_for_creep = {10}
+		},
+		effect = {
+			modifiers = {
+				modifier_talent_creep_gold = "gold_for_creep",
+			},
+		}
+	},
+	talent_experience_pct2 = {
+		icon = "talents/experience",
+		cost = 1,
+		group = 2,
+		max_level = 1,
+		special_values = {
+			experience_pct = {20}
+		},
+		effect = {
+			unit_keys = {
+				bonus_experience_percentage = "experience_pct",
+			}
+		}
+	},
+	talent_bonus_creep_gold2 = {
+		icon = "talents/gold",
+		cost = 1,
+		group = 2,
+		max_level = 1,
+		special_values = {
+			gold_for_creep = {20}
+		},
+		effect = {
+			modifiers = {
+				modifier_talent_creep_gold = "gold_for_creep",
+			},
+		}
+	},
+	talent_experience_pct3 = {
+		icon = "talents/experience",
+		cost = 1,
+		group = 3,
+		max_level = 1,
+		special_values = {
+			experience_pct = {30}
+		},
+		effect = {
+			unit_keys = {
+				bonus_experience_percentage = "experience_pct",
+			}
+		}
+	},
+	talent_bonus_creep_gold3 = {
+		icon = "talents/gold",
+		cost = 1,
+		group = 3,
+		max_level = 1,
+		special_values = {
+			gold_for_creep = {30}
 		},
 		effect = {
 			modifiers = {
