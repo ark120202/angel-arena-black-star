@@ -3802,7 +3802,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -5650,7 +5650,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -5716,7 +5716,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.2 0.4 0.6 0.8 1.0 1.2 1.4"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -6125,7 +6125,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.4 0.5 0.6 0.7 0.8 0.9 10.0"
+				"damage_from_current_health_pct" "4.0 5.0 6.0 7.0 8.0 9.0 10.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -6293,7 +6293,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.4 0.5 0.6 0.7 0.8 0.9 10.0"
+				"damage_from_current_health_pct" "4.0 5.0 6.0 7.0 8.0 9.0 10.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -6672,7 +6672,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -7589,7 +7589,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -7758,7 +7758,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.4 0.5 0.6 0.7 0.8 0.9 10.0"
+				"damage_from_current_health_pct" "4.0 5.0 6.0 7.0 8.0 9.0 10.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -7835,7 +7835,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.1"
+				"damage_from_current_health_pct" "0.5"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -9614,7 +9614,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.1 0.15 0.2 0.25 0.3 0.35 0.4"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -9695,7 +9695,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.1 0.15 0.2 0.25 0.3 0.35 0.4"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -10349,7 +10349,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -10434,7 +10434,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -10650,7 +10650,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -11034,7 +11034,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -11408,7 +11408,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -11669,7 +11669,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"main_damage"	"60 82 100 130 150 175 200 280"
+				"main_damage"	"60 82 100 130 150 175 200 300"
 				"levelkey"	"exortlevel"
 			}
 
@@ -11682,14 +11682,14 @@
 			"10"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"burn_dps"	"12 18 24 30 36 42 48 72"
+				"burn_dps"	"12 18 24 30 36 42 48 84"
 				"levelkey"	"exortlevel"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.25"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -11890,7 +11890,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -12010,7 +12010,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -13797,7 +13797,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -14505,7 +14505,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -17326,7 +17326,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -18565,7 +18565,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -18987,7 +18987,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -20307,7 +20307,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 

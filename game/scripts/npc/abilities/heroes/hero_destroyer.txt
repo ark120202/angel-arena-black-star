@@ -133,6 +133,11 @@
 				"var_type"			"FIELD_INTEGER"
 				"health_regen"		"10 15 20 25 30 35 40"
 			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_magical_damage_resistance_pct"	"10 15 20 25 30 35 40"
+			}
 		}
 
 		"precache"
@@ -179,6 +184,7 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%health_regen"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_damage_resistance_pct"
 				}
 			}
 		}

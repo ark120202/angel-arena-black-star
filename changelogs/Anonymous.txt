@@ -1,4 +1,10 @@
 Talents:
+	Bonus Creep Gold:
+		8/16/24/32 => 10/20/30
+		Max Level: 4 => 3
+	Experience Procent:
+		15/20/25/30 => 10/20/30
+		Max Level: 4 => 3
 	Respawn Time Reduction:
 		-10/-15/-20/-25/-30/-35/-40/-45/-50/-55/-60/-65/-70/-75 => -10/-15/-20/-25/-30/-35/-40/-45/-50/-55/-60/-65/-70/-75/-80
 		Max Level: 14 => 15
@@ -32,9 +38,8 @@ Bosses:
 		No longer usable on bosses
 Balance:
 	Kill Streak Gold:
-		[0] = 0
-		[1] = 0
-		[2] = 0
+		[1] = 75 => 0
+		[2] = 150 => 0
 Abilities:
 	Meepo - Divided we Stand:
 		Added to shared items:

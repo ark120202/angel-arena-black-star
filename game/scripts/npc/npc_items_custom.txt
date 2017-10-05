@@ -1388,35 +1388,40 @@
 			}
 			"03"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"health_regen_percent_per_second"	"5.25"
+				"var_type"							"FIELD_INTEGER"
+				"bonus_mana_regen"					"250"
 			}
 			"04"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"active_health_regen_percent_per_second"	"4.25"
+				"health_regen_percent_per_second"	"5.25"
 			}
 			"05"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"active_damage_percent_per_second"	"5"
+				"active_health_regen_percent_per_second"	"4.25"
 			}
 			"06"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"duration"							"3.0"
+				"active_damage_percent_per_second"	"5"
 			}
 			"07"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"cooldown_melee"					"3.5"
+				"duration"							"3.0"
 			}
 			"08"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"cooldown_melee"					"3.5"
+			}
+			"09"
 			{
 				"var_type"	                		"FIELD_FLOAT"
 				"heal_interval"						".03"
 			}
-			"09"
+			"10"
 			{
 				"var_type"							"FIELD_INTEGER"
 				"cooldown_ranged_tooltip"			"5"
@@ -1449,6 +1454,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
 				}
 
 				"OnTakeDamage"

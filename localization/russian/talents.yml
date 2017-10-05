@@ -2,18 +2,10 @@ custom_talents_cost: 'Цена:'
 custom_talents_requirements: 'Условие:'
 custom_talents_level: 'Уровень: '
 custom_talents_hide_requirement_errors: Скрывать недоступные таланты
-custom_talents_talent_experience_pct1: Дополнительный опыт
-custom_talents_talent_experience_pct1_description: '+{%experience_pct%} опыта'
-custom_talents_talent_experience_pct2: Дополнительный опыт
-custom_talents_talent_experience_pct2_description: '+{%experience_pct%} опыта'
-custom_talents_talent_experience_pct3: Дополнительный опыт
-custom_talents_talent_experience_pct3_description: '+{%experience_pct%} опыта'
-custom_talents_talent_bonus_creep_gold1: Дополнительное золото с крипов
-custom_talents_talent_bonus_creep_gold1_description: 'Каждый добитый крип дает на {gold_for_creep} золота больше'
-custom_talents_talent_bonus_creep_gold2: Дополнительное золото с крипов
-custom_talents_talent_bonus_creep_gold2_description: 'Каждый добитый крип дает на {gold_for_creep} золота больше'
-custom_talents_talent_bonus_creep_gold3: Дополнительное золото с крипов
-custom_talents_talent_bonus_creep_gold3_description: 'Каждый добитый крип дает на {gold_for_creep} золота больше'
+custom_talents_talent_experience_pct: Дополнительный опыт
+custom_talents_talent_experience_pct_description: '+{%experience_pct%} опыта'
+custom_talents_talent_bonus_creep_gold: Дополнительное золото с крипов
+custom_talents_talent_bonus_creep_gold_description: 'Каждый добитый крип дает на {gold_for_creep} золота больше'
 custom_talents_talent_spell_amplify: Урон от способностей
 custom_talents_talent_spell_amplify_description: '+{%spell_amplify%} к урону от способностей'
 custom_talents_talent_respawn_time_reduction: Время возрождения
