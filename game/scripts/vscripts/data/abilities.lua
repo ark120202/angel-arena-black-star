@@ -117,6 +117,7 @@ BOSS_BANNED_ABILITIES = {
 	death_prophet_spirit_siphon = true,
 	item_force_staff = true,
 	item_hurricane_pike = true,
+	rubick_telekinesis = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
