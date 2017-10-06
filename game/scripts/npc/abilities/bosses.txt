@@ -75,6 +75,14 @@
 		"AbilityTextureName"			"windrunner_focusfire"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed"	"150"
+			}
+		}
 
 		"OnProjectileHitUnit"
 		{

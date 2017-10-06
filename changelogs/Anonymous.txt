@@ -40,6 +40,8 @@ Balance:
 	Kill Streak Gold:
 		[1] = 75 => 0
 		[2] = 150 => 0
+	Kill Gold For Kill:
+		150 + Kills:GetKillStreakGold(killedUnit:GetPlayerID()) + (killedUnit:GetLevel() * 30) => 150 + Kills:GetKillStreakGold(killedUnit:GetPlayerID()) + (killedUnit:GetLevel() * 40)
 Abilities:
 	Meepo - Divided we Stand:
 		Added to shared items:

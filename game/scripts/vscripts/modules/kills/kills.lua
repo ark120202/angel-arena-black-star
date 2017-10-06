@@ -4,7 +4,7 @@ if not Kills then
 end
 
 function Kills:GetGoldForKill(killedUnit)
-	local gold = 150 + Kills:GetKillStreakGold(killedUnit:GetPlayerID()) + (killedUnit:GetLevel() * 30) --100 + streakGold + (killedUnit:GetLevel() * 9.9)
+	local gold = 150 + Kills:GetKillStreakGold(killedUnit:GetPlayerID()) + (killedUnit:GetLevel() * 50) --100 + streakGold + (killedUnit:GetLevel() * 9.9)
 	return (Duel.IsFirstDuel and Duel:IsDuelOngoing()) and 0 or gold
 end
 

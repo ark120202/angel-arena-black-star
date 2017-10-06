@@ -108,7 +108,6 @@ function Duel:StartDuel()
 							unit.OnDuel = true
 							Duel:FillPreduelUnitData(unit)
 							local health = unit:GetMaxHealth()
-							unit:SetHealth(unit:HasAbility("shinobu_vampire_blood") and health * 0.5 or health)
 							unit:SetMana(unit:GetMaxMana())
 							count = count + 1
 						end
