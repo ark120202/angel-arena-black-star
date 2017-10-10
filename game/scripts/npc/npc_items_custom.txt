@@ -5237,7 +5237,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange"				"350"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"20"
 
 		"AbilitySpecial"
 		{
@@ -5259,7 +5259,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"25"
+				"bonus_health_regen"	"20"
 			}
 			"05"
 			{
@@ -5280,7 +5280,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_as_damage_pct"		"35"
+				"hp_as_damage_pct"		"50"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"09"

@@ -107,7 +107,7 @@ function Duel:StartDuel()
 						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 							unit.OnDuel = true
 							Duel:FillPreduelUnitData(unit)
-							local health = unit:GetMaxHealth()
+							unit:SetHealth(unit:GetMaxHealth())
 							unit:SetMana(unit:GetMaxMana())
 							count = count + 1
 						end

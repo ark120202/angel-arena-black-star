@@ -80,7 +80,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed"	"150"
+				"bonus_attack_speed"	"100"
 			}
 		}
 
@@ -129,6 +129,11 @@
 				"States"
 				{
 					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%bonus_attack_speed"
 				}
 			}
 		}
