@@ -642,7 +642,7 @@
 		"ID"							"10024"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_primal_large"
-		"ItemCost"						"45000"
+		"ItemCost"						"40000"
 		"ItemShopTags"					"stats;stat;shard"
 		"ItemQuality"					"rare"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -689,7 +689,7 @@
 		"ID"							"10025"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_level"
-		"ItemCost"						"1000"
+		"ItemCost"						"900"
 		"ItemShopTags"					"experience;level;shard"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -703,7 +703,8 @@
 			"RunScript"
 			{
 				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddLevel"
+				"Function"		"AddLevels"
+				"Amount"		"1"
 			}
 			"RunScript"
 			{
@@ -721,7 +722,7 @@
 		"ID"							"10026"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_attackspeed"
-		"ItemCost"						"4000"
+		"ItemCost"						"3000"
 		"ItemShopTags"					"as;attackspeed;shard"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -747,6 +748,39 @@
 			{
 				"ScriptFile"	"items/items_shards.lua"
 				"Function"		"AddAttackspeedModifier"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_level10"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10027"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_level"
+		"ItemCost"						"900"
+		"ItemShopTags"					"experience;level;shard"
+		"ItemQuality"					"rare"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddLevels"
+				"Amount"		"10"
 			}
 			"RunScript"
 			{
