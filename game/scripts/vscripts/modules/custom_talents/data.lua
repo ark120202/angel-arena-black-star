@@ -1,11 +1,39 @@
 CUSTOM_TALENTS_DATA = {
-	talent_experience_pct = {
+	talent_experience_pct1 = {
 		icon = "talents/experience",
 		cost = 1,
 		group = 1,
-		max_level = 3,
+		max_level = 1,
 		special_values = {
-			experience_pct = {10, 20, 30}
+			experience_pct = {10}
+		},
+		effect = {
+			unit_keys = {
+				bonus_experience_percentage = "experience_pct",
+			}
+		}
+	},
+	talent_experience_pct2 = {
+		icon = "talents/experience",
+		cost = 1,
+		group = 2,
+		max_level = 1,
+		special_values = {
+			experience_pct = {20}
+		},
+		effect = {
+			unit_keys = {
+				bonus_experience_percentage = "experience_pct",
+			}
+		}
+	},
+	talent_experience_pct3 = {
+		icon = "talents/experience",
+		cost = 1,
+		group = 3,
+		max_level = 1,
+		special_values = {
+			experience_pct = {30}
 		},
 		effect = {
 			unit_keys = {
@@ -14,17 +42,101 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 	talent_bonus_creep_gold = {
-		icon = "talents/gold",
+		icon = "talents/gold10",
 		cost = 1,
 		group = 1,
-		max_level = 3,
+		max_level = 1,
 		special_values = {
-			gold_for_creep = {10, 20, 30}
+			gold_for_creep = {10}
 		},
 		effect = {
 			modifiers = {
 				modifier_talent_creep_gold = "gold_for_creep",
 			},
+		}
+	},
+	talent_passive_experience_income1 = {
+		icon = "talents/experience_per_minute",
+		cost = 1,
+		group = 1,
+		max_level = 1,
+		special_values = {
+			xp_per_minute = {800}
+		},
+		effect = {
+			unit_keys = {
+				bonus_xp_per_minute = "xp_per_minute",
+			}
+		}
+	},
+	talent_passive_experience_income2 = {
+		icon = "talents/experience_per_minute",
+		cost = 1,
+		group = 2,
+		max_level = 1,
+		special_values = {
+			xp_per_minute = {1900}
+		},
+		effect = {
+			unit_keys = {
+				bonus_xp_per_minute = "xp_per_minute",
+			}
+		}
+	},
+	talent_passive_experience_income3 = {
+		icon = "talents/experience_per_minute",
+		cost = 1,
+		group = 3,
+		max_level = 1,
+		special_values = {
+			xp_per_minute = {3000}
+		},
+		effect = {
+			unit_keys = {
+				bonus_xp_per_minute = "xp_per_minute",
+			}
+		}
+	},
+	talent_passive_gold_income1 = {
+		icon = "talents/gold_per_minute",
+		cost = 1,
+		group = 1,
+		max_level = 1,
+		special_values = {
+			gold_per_minute = {180}
+		},
+		effect = {
+			unit_keys = {
+				bonus_gold_per_minute = "gold_per_minute",
+			}
+		}
+	},
+	talent_passive_gold_income2 = {
+		icon = "talents/gold_per_minute",
+		cost = 1,
+		group = 2,
+		max_level = 1,
+		special_values = {
+			gold_per_minute = {420}
+		},
+		effect = {
+			unit_keys = {
+				bonus_gold_per_minute = "gold_per_minute",
+			}
+		}
+	},
+	talent_passive_gold_income3 = {
+		icon = "talents/gold_per_minute",
+		cost = 1,
+		group = 3,
+		max_level = 1,
+		special_values = {
+			gold_per_minute = {660}
+		},
+		effect = {
+			unit_keys = {
+				bonus_gold_per_minute = "gold_per_minute",
+			}
 		}
 	},
 	talent_spell_amplify = {
@@ -252,34 +364,6 @@ CUSTOM_TALENTS_DATA = {
 			modifiers = {
 				modifier_talent_movespeed_pct = "movespeed_pct",
 			},
-		}
-	},
-	talent_passive_gold_income = {
-		icon = "talents/gold",
-		cost = 1,
-		group = 2,
-		max_level = 3,
-		special_values = {
-			gold_per_minute = {180, 420, 660}
-		},
-		effect = {
-			unit_keys = {
-				bonus_gold_per_minute = "gold_per_minute",
-			}
-		}
-	},
-	talent_passive_experience_income = {
-		icon = "talents/experience",
-		cost = 1,
-		group = 2,
-		max_level = 3,
-		special_values = {
-			xp_per_minute = {700, 1700, 2700}
-		},
-		effect = {
-			unit_keys = {
-				bonus_xp_per_minute = "xp_per_minute",
-			}
 		}
 	},
 	talent_true_strike = {

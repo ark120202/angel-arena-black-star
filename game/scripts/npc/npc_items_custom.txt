@@ -3357,7 +3357,7 @@
 		"ID"							"10137"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"180"
+		"ItemCost"						"30"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_skull_of_midas"
 		"ItemRequirements"
@@ -3392,7 +3392,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"7"
+				"kill_gold"				"5"
 			}
 		}
 

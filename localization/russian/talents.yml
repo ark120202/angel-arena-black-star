@@ -2,10 +2,26 @@ custom_talents_cost: 'Цена:'
 custom_talents_requirements: 'Условие:'
 custom_talents_level: 'Уровень: '
 custom_talents_hide_requirement_errors: Скрывать недоступные таланты
-custom_talents_talent_experience_pct: Дополнительный опыт
-custom_talents_talent_experience_pct_description: '+{%experience_pct%} опыта'
+custom_talents_talent_experience_pct1: Дополнительный опыт
+custom_talents_talent_experience_pct1_description: '+{%experience_pct%} опыта'
+custom_talents_talent_experience_pct2: Дополнительный опыт
+custom_talents_talent_experience_pct2_description: '+{%experience_pct%} опыта'
+custom_talents_talent_experience_pct3: Дополнительный опыт
+custom_talents_talent_experience_pct3_description: '+{%experience_pct%} опыта'
 custom_talents_talent_bonus_creep_gold: Дополнительное золото с крипов
 custom_talents_talent_bonus_creep_gold_description: 'Каждый добитый крип дает на {gold_for_creep} золота больше'
+custom_talents_talent_passive_experience_income1: Прирост опыта
+custom_talents_talent_passive_experience_income1_description: '+{xp_per_minute} опыта в минуту'
+custom_talents_talent_passive_experience_income2: Прирост опыта
+custom_talents_talent_passive_experience_income2_description: '+{xp_per_minute} опыта в минуту'
+custom_talents_talent_passive_experience_income3: Прирост опыта
+custom_talents_talent_passive_experience_income3_description: '+{xp_per_minute} опыта в минуту'
+custom_talents_talent_passive_gold_income1: Прирост золота
+custom_talents_talent_passive_gold_income1_description: '+{gold_per_minute} золота в минуту'
+custom_talents_talent_passive_gold_income2: Прирост золота
+custom_talents_talent_passive_gold_income2_description: '+{gold_per_minute} золота в минуту'
+custom_talents_talent_passive_gold_income3: Прирост золота
+custom_talents_talent_passive_gold_income3_description: '+{gold_per_minute} золота в минуту'
 custom_talents_talent_spell_amplify: Урон от способностей
 custom_talents_talent_spell_amplify_description: '+{%spell_amplify%} к урону от способностей'
 custom_talents_talent_respawn_time_reduction: Время возрождения
@@ -36,8 +52,6 @@ custom_talents_talent_vision_night: Ночное зрение
 custom_talents_talent_vision_night_description: '+{vision_night} к радиусу обзора ночью'
 custom_talents_talent_cooldown_reduction_pct: Уменьшение перезарядки
 custom_talents_talent_cooldown_reduction_pct_description: 'Уменьшает время перезарядки всех способностей и предметов на {%cooldown_reduction_pct%}'
-custom_talents_talent_passive_gold_income: Прирост золота
-custom_talents_talent_passive_gold_income_description: '+{gold_per_minute} золота в минуту'
 custom_talents_talent_hero_pudge_hook_splitter: Hook Splitter
 custom_talents_talent_hero_pudge_hook_splitter_description: 'Pudge бросает {hook_amount} крюков, а не 1'
 custom_talents_talent_hero_arthas_vsolyanova_bunus_chance: Mega Solyara
@@ -50,8 +64,6 @@ custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun: Reincarnatio
 custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun_description: 'Убирает задержку перед возрождением. При воскрешении оглушает противников, вместо замедления'
 custom_talents_talent_movespeed_pct: Скорость передвижения
 custom_talents_talent_movespeed_pct_description: '+{%movespeed_pct%} к скорости передвижения'
-custom_talents_talent_passive_experience_income: Прирост опыта
-custom_talents_talent_passive_experience_income_description: '+{xp_per_minute} опыта в минуту'
 custom_talents_talent_true_strike: True Strike
 custom_talents_talent_true_strike_description: Исключает шанс промаха при атаке
 custom_talents_talent_hero_sai_release_of_forge_bonus_respawn_time_reduction: Release of Forge
