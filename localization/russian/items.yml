@@ -660,7 +660,6 @@ DOTA_Tooltip_ability_item_hand_of_midas_arena: Hand of Midas
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Description: |-
   <h1>Активируемая: Transmute</h1> Мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
   Невозможно использовать на древних крипах.
-  Первый уровень также нельзя использовать на чемпионах.
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Note0: Получаемое золото идет в надежный запас (при этом за убийство крипа стандартная награда не дается).
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Note1: Опыт от превращения не делится с другими героями.
 DOTA_Tooltip_ability_item_hand_of_midas_arena_bonus_attack_speed: +$attack
@@ -669,7 +668,6 @@ DOTA_Tooltip_ability_item_hand_of_midas_2_arena: Hand of Midas
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Description: |-
   <h1>Активируемая: Transmute</h1> Мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
   Невозможно использовать на древних крипах.
-  Первый уровень также нельзя использовать на чемпионах.
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note0: Получаемое золото идет в надежный запас (при этом за убийство крипа стандартная награда не дается).
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note1: Опыт от превращения не делится с другими героями.
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_bonus_attack_speed: +$attack
@@ -678,7 +676,6 @@ DOTA_Tooltip_ability_item_hand_of_midas_3_arena: Hand of Midas
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Description: |-
   <h1>Активируемая: Transmute</h1> Мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
   Невозможно использовать на древних крипах.
-  Первый уровень также нельзя использовать на чемпионах.
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note0: Получаемое золото идет в надежный запас (при этом за убийство крипа стандартная награда не дается).
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note1: Опыт от превращения не делится с другими героями.
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_bonus_attack_speed: +$attack

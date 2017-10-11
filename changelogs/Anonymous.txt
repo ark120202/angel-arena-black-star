@@ -85,3 +85,7 @@ Weather:
 	Blizzard (snow and rain together):
 		Min Duration: 120 => 90
 		Max Duration: 240 => 180
+Items:
+	Hand of Midas now usable on champions
+Creeps:
+	Dragons and Centaurs now spawns 5 units per minute instead of 4

@@ -640,7 +640,6 @@ DOTA_Tooltip_ability_item_hand_of_midas_arena: Hand of Midas
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Description: |-
   <h1>Active: Transmute</h1> Kills a non-hero target for %bonus_gold% gold and %xp_multiplier%x experience.
   Cannot be used on Ancient Creeps.
-  First level also can't be used on champions.
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Note0: The gold given is reliable gold (you do not get the normal creep bounty).
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Note1: Experience gained by using Transmute is not shared.
 DOTA_Tooltip_ability_item_hand_of_midas_arena_bonus_attack_speed: +$attack
@@ -649,7 +648,6 @@ DOTA_Tooltip_ability_item_hand_of_midas_2_arena: Hand of Midas
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Description: |-
   <h1>Active: Transmute</h1> Kills a non-hero target for %bonus_gold% gold and %xp_multiplier%x experience.
   Cannot be used on Ancient Creeps.
-  First level also can't be used on champions.
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note0: The gold given is reliable gold (you do not get the normal creep bounty).
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note1: Experience gained by using Transmute is not shared.
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_bonus_attack_speed: +$attack
@@ -658,7 +656,6 @@ DOTA_Tooltip_ability_item_hand_of_midas_3_arena: Hand of Midas
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Description: |-
   <h1>Active: Transmute</h1> Kills a non-hero target for %bonus_gold% gold and %xp_multiplier%x experience.
   Cannot be used on Ancient Creeps.
-  First level also can't be used on champions.
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note0: The gold given is reliable gold (you do not get the normal creep bounty).
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note1: Experience gained by using Transmute is not shared.
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_bonus_attack_speed: +$attack
