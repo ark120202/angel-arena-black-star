@@ -765,7 +765,7 @@
 		"ID"							"10027"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_level"
-		"ItemCost"						"900"
+		"ItemCost"						"9000"
 		"ItemShopTags"					"experience;level;shard"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"

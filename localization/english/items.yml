@@ -26,7 +26,9 @@ DOTA_Tooltip_ability_item_casino_coin: Casino Coin
 DOTA_Tooltip_ability_item_casino_coin_Description: Can be used to play slotmachine or to pay for various services
 
 DOTA_Tooltip_ability_item_shard_level: Level Up Shard
-DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero.'
+DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero by 1.'
+DOTA_Tooltip_ability_item_shard_level10: Level Up Shard
+DOTA_Tooltip_ability_item_shard_level10_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero by 10.'
 DOTA_Tooltip_ability_item_shard_str_small: Small Strength Shard
 DOTA_Tooltip_ability_item_shard_str_small_bonus_str: +$str
 DOTA_Tooltip_ability_item_shard_str_medium: Medium Strength Shard

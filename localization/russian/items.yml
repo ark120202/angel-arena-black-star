@@ -26,7 +26,9 @@ DOTA_Tooltip_ability_item_casino_coin: Casino Coin
 DOTA_Tooltip_ability_item_casino_coin_Description: Может быть использовано в слотмашине или для оплаты различных услуг.
 
 DOTA_Tooltip_ability_item_shard_level: Level Up Shard
-DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Активируемая: Поглотить</h1> Поглощает предмет и увеличивает уровень вашего героя.'
+DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Активируемая: Поглотить</h1> Поглощает предмет и увеличивает уровень вашего героя на 1.'
+DOTA_Tooltip_ability_item_shard_level10: Level Up Shard
+DOTA_Tooltip_ability_item_shard_level10_Description: '<h1>Активируемая: Поглотить</h1> Поглощает предмет и увеличивает уровень вашего героя на 10.'
 DOTA_Tooltip_ability_item_shard_str_small: Small Strength Shard
 DOTA_Tooltip_ability_item_shard_str_small_bonus_str: +$str
 DOTA_Tooltip_ability_item_shard_str_medium: Medium Strength Shard
