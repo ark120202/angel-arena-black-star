@@ -26,6 +26,7 @@ DOTA_Tooltip_ability_shinobu_vampire_blood_Description: |-
   ~ATTACK SPEED: %bonus_attack_speed_lvl4%
   ~MOVEMENT SPEED: %bonus_move_speed_lvl4%
 DOTA_Tooltip_ability_shinobu_vampire_blood_Lore: Vampiric blood has its drawbacks, but there are many more advantages.
+DOTA_Tooltip_ability_shinobu_vampire_blood_Note0: Shinobu respawns with 50% health
 DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl1: Vampire Blood - Level 1
 DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl1_Description: |-
   +%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack speed
