@@ -704,7 +704,7 @@
 			{
 				"ScriptFile"	"items/items_shards.lua"
 				"Function"		"AddLevels"
-				"Amount"		"1"
+				"amount"		"1"
 			}
 			"RunScript"
 			{
@@ -780,7 +780,7 @@
 			{
 				"ScriptFile"	"items/items_shards.lua"
 				"Function"		"AddLevels"
-				"Amount"		"10"
+				"amount"		"10"
 			}
 			"RunScript"
 			{
