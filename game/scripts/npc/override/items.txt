@@ -213,13 +213,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"total_mana"			"400"
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen"			"9.6"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"35"
+				"buff_duration"			"50"
 			}
 		}
 	}
@@ -233,12 +233,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"12"
+				"buff_duration"			"8"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"total_health"			"1200"
+				"health_regen"			"100"
 			}
 		}
 	}
@@ -540,15 +540,15 @@
 
 		"AbilitySpecial"
 		{
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_heal_amount"		"70"
+			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"soul_heal_amount"		"600"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"soul_damage_amount"	"220"
+				"soul_damage_amount"	"35"
 			}
 		}
 	}
@@ -945,16 +945,6 @@
 		"AbilityCooldown"				"25.0"
 		"AbilitySpecial"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regen"			"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen"			"75"
-			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -963,12 +953,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_gain"				"300"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"12"
+				"mana_gain"				"200"
 			}
 		}
 	}
