@@ -1235,11 +1235,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"creep_damage_pct"			"70"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"2"
-			}
 		}
 	}
 	"item_recipe_bloodthorn"
