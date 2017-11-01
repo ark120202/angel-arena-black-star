@@ -202,6 +202,16 @@ function CDOTA_BaseNPC_Hero:ResetAbilityPoints()
 	self:SetAbilityPoints(self:GetLevel() - self:GetAbilityPointsWastedAllOnTalents())
 end
 
+function CDOTA_BaseNPC_Hero:GetAttribute(attribute)
+	if attribute == DOTA_ATTRIBUTE_STRENGTH then
+		return self:GetStrength()
+	elseif attribute == DOTA_ATTRIBUTE_AGILITY then
+		return self:GetAgility()
+	elseif attribute == DOTA_ATTRIBUTE_INTELLECT then
+		return self:GetIntellect()
+	end
+end
+
 function CDOTA_BaseNPC_Hero:GetMaxMovementSpeed()
 	local max = MAX_MOVEMENT_SPEED
 

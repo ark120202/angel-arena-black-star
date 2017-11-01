@@ -1,32 +1,59 @@
 DOTA_DEFAULT_ATTRIBUTES = {
-	-- Per str
-	hp = 20,
-	hp_regen_pct = 0.7,
-	-- perk_status_resistance_pct = 0.15,
-
-	-- Per agi
-	armor = 1 / 6,
-	attackspeed = 1,
-	-- perk_movement_speed_pct = 0.06,
-
-	-- Per int
-	mana = 12,
-	mana_regen_pct = 2,
-	spell_amplify = 1 / 14,
-	-- perk_magic_resistance_pct = 0.15,
+	health = {
+		attribute = DOTA_ATTRIBUTE_STRENGTH,
+		default = 20,
+	},
+	health_regen_pct = {
+		attribute = DOTA_ATTRIBUTE_STRENGTH,
+		stack = 0.01,
+		default = 0.7,
+	},
+	-- TODO
+	perk_status_resistance_pct = {
+		attribute = DOTA_ATTRIBUTE_STRENGTH,
+		primary = true,
+		stack = 0.01,
+		default = 0.15,
+	},
+	armor = {
+		attribute = DOTA_ATTRIBUTE_AGILITY,
+		default = 1 / 6,
+		recalculate = function(hero, attribute)
+			local adjustment = Attributes:GetAdjustmentForProp(hero, "armor")
+			local armor = agility * adjustment
+			hero:SetPhysicalArmorBaseValue(hero:GetKeyValue("ArmorPhysical") + armor)
+		end,
+	},
+	attackspeed = {
+		attribute = DOTA_ATTRIBUTE_AGILITY,
+		default = 1,
+	},
+	perk_movement_speed_pct = {
+		attribute = DOTA_ATTRIBUTE_AGILITY,
+		primary = true,
+		stack = 0.01,
+		default = 0.06,
+	},
+	mana = {
+		attribute = DOTA_ATTRIBUTE_INTELLECT,
+		default = 12,
+	},
+	mana_regen_pct = {
+		attribute = DOTA_ATTRIBUTE_INTELLECT,
+		stack = 0.01,
+		default = 2,
+	},
+	spell_amplify_pct = {
+		attribute = DOTA_ATTRIBUTE_INTELLECT,
+		stack = 0.01,
+		default = 1 / 14,
+	},
+	perk_magic_resistance_pct = {
+		attribute = DOTA_ATTRIBUTE_INTELLECT,
+		primary = true,
+		stack = 0.01,
+		default = 0.15,
+	},
 }
 
-GLOBAL_ATTRIBUTE_ADJUSTMENTS = {
-	-- Per str
-	hp = 0,
-	hp_regen_pct = 0,
-
-	-- Per agi
-	armor = 0,
-	attackspeed = 0,
-
-	-- Per int
-	mana = 0,
-	mana_regen_pct = 0,
-	spell_amplify = 0,
-}
+GLOBAL_ATTRIBUTE_ADJUSTMENTS = {}
