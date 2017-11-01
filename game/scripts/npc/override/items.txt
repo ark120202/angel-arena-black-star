@@ -1253,6 +1253,13 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"IsObsolete"					"0"
+		"ItemPurchasable"				"1"
+		"ItemResult"					"item_iron_talon"
+		"ItemRequirements"
+		{
+			"01"						"item_quelling_blade;item_ring_of_regen"
+		}
 	}
 	"item_iron_talon"
 	{
@@ -1260,6 +1267,8 @@
 		"SideShop"						"0"
 		"AbilityCastRange"				"525"
 		"AbilityCooldown"				"10.0"
+		"IsObsolete"					"0"
+		"ItemPurchasable"				"1"
 		"AbilitySpecial"
 		{
 			"01"
