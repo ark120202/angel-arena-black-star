@@ -731,13 +731,13 @@
 		"ID"							"10058"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"25"
+		"ItemCost"						"100"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_lucifers_claw"
 		"ItemRequirements"
 		{
-			"01"						"item_iron_talon;item_helm_of_the_dominator"
+			"01"						"item_quelling_blade;item_helm_of_the_dominator"
 		}
 	}
 
@@ -3650,13 +3650,13 @@
 		"ID"							"10145"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"800"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_bloodstone_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_soul_ring;item_soul_booster"
+			"01"						"item_pers;item_soul_booster"
 		}
 	}
 
@@ -3677,7 +3677,7 @@
 		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		"ItemInitialCharges"			"10"
+		"ItemInitialCharges"			"14"
 		"ItemDisplayCharges"			"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -5402,7 +5402,7 @@
 		"ItemResult"					"item_dark_flow"
 		"ItemRequirements"
 		{
-			"01"						"item_blight_stone;item_mithril_hammer;item_broadsword;item_demon_edge"
+			"01"						"item_blight_stone;item_mithril_hammer;item_demon_edge"
 		}
 	}
 
@@ -5419,7 +5419,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"100"
+				"bonus_damage"		"66"
 			}
 			"02"
 			{
@@ -6015,12 +6015,12 @@
 		"ID"							"10218"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"8800"
+		"ItemCost"						"600"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_demon_king_bar"
 		"ItemRequirements"
 		{
-			"01"						"item_monkey_king_bar;item_demon_edge;item_demon_edge;item_gloves"
+			"01"						"item_monkey_king_bar;item_javelin;item_hyperstone"
 		}
 	}
 
@@ -6033,9 +6033,9 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"			"item_arena/demon_king_bar"
 
-		"AbilityCooldown"				"180"
+		"AbilityCooldown"				"240"
 		"AbilityManaCost"				"200"
-		"AbilityCastRange"				"300"
+		"AbilityCastRange"				"250"
 
 		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
 		"ItemQuality"					"legendary"
@@ -6049,24 +6049,19 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"280"
+				"bonus_attack_speed"	"120"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"70"
+				"bash_chance"			"75"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_chance"			"40"
+				"bash_damage"			"150"
 			}
 			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bash_damage"			"200"
-			}
-			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"bash_stun"				"0.05"
@@ -6100,7 +6095,6 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
 				}
 
@@ -6136,7 +6130,7 @@
 							"Damage"
 							{
 								"Target"		"TARGET"
-								"Type"			"DAMAGE_TYPE_MAGICAL"
+								"Type"			"DAMAGE_TYPE_PURE"
 								"Damage"		"%bash_damage"
 							}
 
@@ -9468,7 +9462,7 @@
 		"ItemResult"					"item_ultimate_scepter_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_orb_of_essences;item_aether_lens_5"
+			"01"						"item_orb_of_essences;item_aether_lens_arena"
 		}
 	}
 
@@ -9523,7 +9517,7 @@
 		"ItemResult"					"item_angel_wings"
 		"ItemRequirements"
 		{
-			"01"						"item_steam_footgear;item_aether_lens_5;item_ultimate_orb"
+			"01"						"item_steam_footgear;item_aether_lens_arena;item_ultimate_orb"
 		}
 	}
 
@@ -9765,7 +9759,7 @@
 		"ItemResult"					"item_battlefury_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_broadsword;item_claymore;item_quelling_fury"
+			"01"						"item_demon_edge;item_quelling_fury"
 		}
 	}
 
@@ -9795,7 +9789,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15 55"
+				"bonus_damage"			"15 50"
 			}
 			"02"
 			{
@@ -9866,7 +9860,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15 55"
+				"bonus_damage"			"15 50"
 			}
 			"02"
 			{
@@ -9896,12 +9890,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_ending_width"	"300"
+				"cleave_ending_width"	"330"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_distance"		"570"
+				"cleave_distance"		"625"
 			}
 			"09"
 			{
@@ -10333,7 +10327,7 @@
 		"ItemResult"					"item_scythe_of_sun"
 		"ItemRequirements"
 		{
-			"01"						"item_solar_crest;item_sheepstick;item_aether_lens_5;item_fallen_star"
+			"01"						"item_solar_crest;item_sheepstick;item_aether_lens_arena;item_fallen_star"
 		}
 	}
 
@@ -10401,7 +10395,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"250"
+				"cast_range_bonus"		"275"
 			}
 			"10"
 			{

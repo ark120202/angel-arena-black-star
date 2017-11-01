@@ -89,14 +89,6 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"4"
-			}
-		}
 	}
 	"item_mantle"
 	{
@@ -400,44 +392,6 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-	}
-	"item_recipe_poor_mans_shield"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-	}
-	"item_poor_mans_shield"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"6"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_block_melee"	"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_block_ranged"	"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance_hero"		"100"
-			}
-		}
 	}
 	"item_recipe_bracer"
 	{
@@ -988,7 +942,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"AbilityCooldown"				"30.0"
+		"AbilityCooldown"				"25.0"
 		"AbilitySpecial"
 		{
 			"01"
