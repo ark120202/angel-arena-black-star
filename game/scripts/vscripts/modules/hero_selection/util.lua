@@ -69,7 +69,9 @@ function HeroSelection:ExtractHeroStats(heroTable)
 	}
 	attributes.damage_min = attributes.damage_min + attributes["attribute_base_" .. attributes.attribute_primary]
 	attributes.damage_max = attributes.damage_max + attributes["attribute_base_" .. attributes.attribute_primary]
-	attributes.armor = attributes.armor + math.round(attributes["attribute_base_1"] * DOTA_DEFAULT_ATTRIBUTES.armor) --TODO: Get hero's unique growth
+	--TODO: Get hero's unique growth
+	local armorForFirstLevel = Attributes:GetTotalPropValue(attributes["attribute_base_1"], "armor")
+	attributes.armor = attributes.armor + math.round(armorForFirstLevel)
 	return attributes
 end
 

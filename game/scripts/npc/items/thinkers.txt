@@ -48,7 +48,6 @@
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Properties"
 				{
-
 					"MODIFIER_PROPERTY_HEALTH_BONUS"	"1"
 				}
 			}
@@ -59,7 +58,6 @@
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Properties"
 				{
-
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"0.01"
 				}
 			}
@@ -70,7 +68,6 @@
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Properties"
 				{
-
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"1"
 				}
 			}
@@ -81,7 +78,6 @@
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Properties"
 				{
-
 					"MODIFIER_PROPERTY_MANA_BONUS"	"1"
 				}
 			}
@@ -92,19 +88,37 @@
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Properties"
 				{
-
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"0.01"
 				}
 			}
 
-			"modifier_attribute_spell_amplify"
+			"modifier_attribute_spell_amplify_pct"
 			{
 				"IsHidden"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Properties"
 				{
-
 					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"0.01"
+				}
+			}
+
+			"modifier_attribute_perk_movement_speed_pct"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"0.01"
+				}
+			}
+
+			"modifier_attribute_perk_magic_resistance_pct"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"0.01"
 				}
 			}
 		}
