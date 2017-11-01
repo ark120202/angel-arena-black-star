@@ -9,8 +9,8 @@ function Attributes:SetHealthPerStr(hero, value)
 	Attributes:SetHeroXPerY(hero, "hp", value)
 end
 
-function Attributes:SetHealthRegenPerStr(hero, value)
-	Attributes:SetHeroXPerY(hero, "hp_regen", value)
+function Attributes:SetHealthRegenPercentagePerStr(hero, value)
+	Attributes:SetHeroXPerY(hero, "hp_regen_pct", value)
 end
 
 function Attributes:SetArmorPerAgi(hero, value)
@@ -25,8 +25,8 @@ function Attributes:SetManaPerInt(hero, value)
 	Attributes:SetHeroXPerY(hero, "mana", value)
 end
 
-function Attributes:SetManaRegenPerInt(hero, value)
-	Attributes:SetHeroXPerY(hero, "mana_regen", value)
+function Attributes:SetManaRegenPercentagePerInt(hero, value)
+	Attributes:SetHeroXPerY(hero, "mana_regen_pct", value)
 end
 
 function Attributes:SetSpellAmplifyPerInt(hero, value)
@@ -43,8 +43,8 @@ function Attributes:GetTotalGrantedHealth(hero)
 	return Attributes:GetHeroTotalGrantedX(hero, "hp", hero:GetStrength())
 end
 
-function Attributes:GetTotalGrantedHealthRegen(hero)
-	return Attributes:GetHeroTotalGrantedX(hero, "hp_regen", hero:GetStrength())
+function Attributes:GetTotalGrantedHealthRegenPercentage(hero)
+	return Attributes:GetHeroTotalGrantedX(hero, "hp_regen_pct", hero:GetStrength())
 end
 
 function Attributes:GetTotalGrantedArmor(hero)
@@ -59,8 +59,8 @@ function Attributes:GetTotalGrantedMana(hero)
 	return Attributes:GetHeroTotalGrantedX(hero, "mana", hero:GetIntellect())
 end
 
-function Attributes:GetTotalGrantedManaRegen(hero)
-	return Attributes:GetHeroTotalGrantedX(hero, "mana_regen", hero:GetIntellect())
+function Attributes:GetTotalGrantedManaRegenPercentage(hero)
+	return Attributes:GetHeroTotalGrantedX(hero, "mana_regen_pct", hero:GetIntellect())
 end
 
 function Attributes:GetTotalGrantedSpellAmplify(hero)
@@ -100,9 +100,9 @@ function Attributes:CalculateStatBonus(hero)
 		local health_stacks = math.abs(strength * adjustments.hp)
 		hero:SetModifierStackCount("modifier_attribute_health", hero, health_stacks)
 
-		if not hero:HasModifier("modifier_attribute_health_regen") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_health_regen", {}) end
-		local health_regen_stacks = math.abs(strength * adjustments.hp_regen * 100)
-		hero:SetModifierStackCount("modifier_attribute_health_regen", hero, health_regen_stacks)
+		if not hero:HasModifier("modifier_attribute_health_regen_pct") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_health_regen_pct", {}) end
+		local health_regen_stacks = math.abs(strength * adjustments.hp_regen_pct * 100)
+		hero:SetModifierStackCount("modifier_attribute_health_regen_pct", hero, health_regen_stacks)
 	end
 
 	if agility ~= hero.agility then
@@ -115,14 +115,13 @@ function Attributes:CalculateStatBonus(hero)
 	end
 
 	if intellect ~= hero.intellect then
-
 		if not hero:HasModifier("modifier_attribute_mana") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_mana", {}) end
 		local mana_stacks = math.abs(intellect * adjustments.mana)
 		hero:SetModifierStackCount("modifier_attribute_mana", hero, mana_stacks)
 
-		if not hero:HasModifier("modifier_attribute_mana_regen") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_mana_regen", {}) end
-		local mana_regen_stacks = math.abs(intellect * adjustments.mana_regen * 100)
-		hero:SetModifierStackCount("modifier_attribute_mana_regen", hero, mana_regen_stacks)
+		if not hero:HasModifier("modifier_attribute_mana_regen_pct") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_mana_regen_pct", {}) end
+		local mana_regen_stacks = math.abs(intellect * adjustments.mana_regen_pct * 100)
+		hero:SetModifierStackCount("modifier_attribute_mana_regen_pct", hero, mana_regen_stacks)
 
 		if not hero:HasModifier("modifier_attribute_spell_amplify") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_spell_amplify", {}) end
 		local spell_amplify_stacks = math.abs(intellect * adjustments.spell_amplify * 100)

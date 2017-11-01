@@ -53,14 +53,14 @@
 				}
 			}
 
-			"modifier_attribute_health_regen"
+			"modifier_attribute_health_regen_pct"
 			{
 				"IsHidden"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Properties"
 				{
 
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"0.01"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"0.01"
 				}
 			}
 
@@ -86,14 +86,14 @@
 				}
 			}
 
-			"modifier_attribute_mana_regen"
+			"modifier_attribute_mana_regen_pct"
 			{
 				"IsHidden"			"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Properties"
 				{
 
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"0.01"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"0.01"
 				}
 			}
 
