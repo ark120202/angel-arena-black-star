@@ -1,10 +1,30 @@
 Talents:
-	Bonus Creep Gold:
-		8/16/24/32 => 10/20/30
-		Max Level: 4 => 3
-	Experience Procent:
-		15/20/25/30 => 10/20/30
-		Max Level: 4 => 3
+	Bonus Creep Gold - now have only 1 level of upgrade and only on 10 lvl
+		8/16/24/32 => 10 Gold
+	Experience Procent - now have only 1 level of upgrade, but now able on 10, 15 and 20 lvls
+		Old:
+			15/20/25/30 on 10 lvl
+		New:
+			10 lvl: 10%
+			15 lvl: 20%
+			20 lvl: 30%
+	XP Per Minute - now have only 1 level of upgrade, but now able on 10, 15 and 20 lvls
+		Old:
+			600/1100/1700/2200/2700 on 15 lvl
+		New:
+			10 lvl: 800 XP
+			15 lvl:	1900 XP
+			20 lvl:	3000 XP
+	Gold Per Minute - now have only 1 level of upgrade, but now able on 10, 15 and 20 lvls
+		Old:
+			180/300/420/540/660 on 15 lvl
+		New:
+			10 lvl: 180 Gold
+			15 lvl:	420 Gold
+			20 lvl:	660	Gold
+	Mana Regen:
+		1/3/5/7/9 => 3/6/9/12/15
+		Group: 3 => 2
 	Respawn Time Reduction:
 		-10/-15/-20/-25/-30/-35/-40/-45/-50/-55/-60/-65/-70/-75 => -10/-15/-20/-25/-30/-35/-40/-45/-50/-55/-60/-65/-70/-75/-80
 		Max Level: 14 => 15
@@ -15,14 +35,6 @@ Talents:
 		Max Level: 6 => 5
 	Health Regen:
 		10/17/24/31/38 => 10/20/30/40/50
-	Mana Regen:
-		1/3/5/7/9 => 3/6/9/12/15
-	Gold Per Minute:
-		180/300/420/540/660 => 180/420/660
-		Max Level 5 => 3
-	XP Per Minute:
-		600/1100/1700/2200/2700
-		Max Level 5 => 3
 	Vsolyanova Bonus Chance:
 		Cost: 10 => 5
 	Apocalypse No Death:
@@ -31,10 +43,59 @@ Talents:
 	Cold Feet Charges disabled
 Bosses:
 	Stone Statue:
-		Soul of Titan (1) drop chance: 90% => 100%
+			Soul of Titan (1) drop chance: 90% => 100%
+		Following items was deleted from drop:
+			Shard Primal Medium
+			Shard Strength Large
+			Shard Agility Large
+			Shard intelligence Large
+			Shard Primal Large
+			Shard Strength Extreme
+			Shard Agility Extreme
+			Shard intelligence Extreme
+		Added items to drop:
+			Shard Strength Medium drop chance: 12%
+			Shard Agility Medium drop chance: 12%
+			Shard intelligence Medium drop chance: 12%
 	Ancient Beast:
 		Soul of Titan (1) drop chance: 90% => 100%
+		Following items was deleted from drop:
+			Shard Primal Medium
+			Shard Strength Large
+			Shard Agility Large
+			Shard intelligence Large
+			Shard Primal Large
+			Shard Strength Extreme
+			Shard Agility Extreme
+			Shard intelligence Extreme
+		Added items to drop:
+			Shard Strength Medium drop chance: 12%
+			Shard Agility Medium drop chance: 12%
+			Shard intelligence Medium drop chance: 12%
+	Zaken:
+		Following items was replaced from drop:
+			Shard Primal Large => Deleted
+			Shard Strength Extreme => Shard Strength Large
+			Shard Agility Extreme => Shard Agility Large
+			Shard intelligence Extreme => Shard Intelligence Large
+	Freya:
+		Following items was replaced from drop:
+			Shard Primal Large => Deleted
+			Shard Strength Extreme => Shard Strength Large
+			Shard Agility Extreme => Shard Agility Large
+			Shard intelligence Extreme => Shard Intelligence Large
+	Central:
+		Added to drop: Phantom bone drop chance: 100%
+			Soul of Titan drop chance: 50% => 100%
+			Dark Blade drop chance: 50% => 100%
+			Demons Paw drop chance: 90% => 100%
+		Following items was replaced from drop:
+			Shard Strength Extreme => Shard Strength Large
+			Shard Agility Extreme => Shard Agility Large
+			Shard intelligence Extreme => Shard Intelligence Large
 	Hurricane Pike:
+		No longer usable on bosses
+	Rubick - Telekinesis:
 		No longer usable on bosses
 Balance:
 	Kill Streak Gold:
@@ -89,3 +150,18 @@ Items:
 	Hand of Midas now usable on champions
 Creeps:
 	Dragons and Centaurs now spawns 5 units per minute instead of 4
+Heroes:
+	Shinobu - Vampire Blood:
+		Now starts duel with 100% hp
+	Following heroes was added percent damage:
+		Pugna,
+Other:
+	Courirer:
+		Health Growth: 200 => 50
+		Health Base: 20 => 50
+	Fountain:
+		Now turn off after 35 minute of game instead of 45
+		Percentage mana regen: 20 => 15
+		Percentage health regen: 20 => 15
+	Kill Limit:
+		Now for x2 bonus kills need 3 leavers, for x3 bonus kills need 4 leavers
