@@ -104,7 +104,6 @@ PANORAMA_SHOP_ITEMS = {
 			"item_magic_wand",
 			"item_null_talisman",
 			"item_wraith_band",
-			"item_poor_mans_shield",
 			"item_bracer",
 			"item_soul_ring",
 			"item_phase_boots",
