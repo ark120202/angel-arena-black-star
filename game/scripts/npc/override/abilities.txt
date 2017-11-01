@@ -20430,4 +20430,423 @@
 			}
 		}
 	}
+
+	"pangolier_swashbuckle"
+	{
+		"MaxLevel"						"7"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"20 16 12 8"
+		"AbilityManaCost"				"70 80 90 100"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_range"			"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"900"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"24 42 60 78"
+				"LinkedSpecialBonus"	"special_bonus_unique_pangolier_3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_speed"			"2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_interval"		"0.1 0.1 0.1 0.1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"125"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"125"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strikes"				"4"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_restore_time"	"15 12 9 6"
+			}
+		}
+	}
+
+	"pangolier_shield_crash"
+	{
+		"MaxLevel"						"7"
+		"AbilityCooldown"				"13.0"
+		"AbilityManaCost"				"90 100 110 120"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"75 150 225 300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hero_stacks"			"8 10 12 14"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"10.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"jump_duration"			"0.4"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"jump_duration_gyroshell"	"0.75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_height"			"250"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_height_gyroshell"	"350"
+			}
+		}
+	}
+
+	"pangolier_heartpiercer"
+	{
+		"MaxLevel"						"7"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance_pct"			"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2 3 4 5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_pct"			"-35 -40 -45 -50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_delay"			"2"
+			}
+		}
+	}
+
+	"pangolier_gyroshell"
+	{
+		"MaxLevel"						"7"
+		"AbilityCastRange"				"0"
+		"AbilityChannelTime"			"1.2"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"50 45 40"
+		"AbilityDuration"				"8.0"
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"200 250 300"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time_tooltip"		"1.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_interval"			"0.05"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"forward_move_speed"	"550 575 600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT" // used after any break in the roll (start/jump/bounce)
+				"turn_rate_boosted"		"165"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"turn_rate"				"105 110 115"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hit_radius"			"150"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bounce_duration"		"0.4"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0 1.25 1.5"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_radius"		"150"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6.0 7.0 8.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"jump_recover_time"		"0.25"
+			}
+		}
+	}
+
+	"pangolier_gyroshell_stop"
+	{
+		"MaxLevel"						"7"
+	}
+
+
+	"dark_willow_bramble_maze"
+	{
+		"MaxLevel"						"7"
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCooldown"				"40 35 30 25"
+		"AbilityManaCost"				"140 150 160 170"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"placement_range"		"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"placement_count"			"8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"placement_duration"		"15"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"latch_duration"		"1 1.5 2 2.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"latch_range"		"90"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"latch_damage"		"100 150 200 250"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"latch_creation_interval"		"0.075"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"latch_creation_delay"		"0.1"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"initial_creation_delay"		"0.5"
+			}
+		}
+	}
+
+	"dark_willow_bedlam"
+	{
+		"MaxLevel"						"7"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"100 150 200"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_damage"			"75 150 225"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_interval"		"0.25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_radius"			"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_targets"			"1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"roaming_radius"			"200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"roaming_seconds_per_rotation"				"1.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"roaming_duration"		"4.0"
+			}
+		}
+	}
+
+	"dark_willow_terrorize"
+	{
+		"MaxLevel"						"7"
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.8"
+		"AbilityCooldown"				"100 80 60"
+		"AbilityManaCost"				"150"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"destination_travel_speed"	"2000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"destination_radius"		"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"destination_status_duration"	"4"
+				"LinkedSpecialBonus"		"special_bonus_unique_dark_willow_2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"return_travel_speed"	"500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"initial_delay"			"0.8"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"starting_height"		"300"
+			}
+		}
+	}
+
+	"dark_willow_shadow_realm"
+	{
+		"MaxLevel"						"7"
+		"AbilityCooldown"				"30 24 18 12"
+		"AbilityManaCost"				"70 80 90 100"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"5"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"120 200 280 360"
+				"LinkedSpecialBonus"			"special_bonus_unique_dark_willow_1"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"attack_range_bonus"			"600"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"max_damage_duration"			"3"
+			}
+		}
+	}
+
+	"dark_willow_cursed_crown"
+	{
+		"MaxLevel"						"7"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"18 16 14 12"
+		"AbilityManaCost"				"100 120 140 160"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"2 2.5 3 3.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun_radius"			"325"
+			}
+		}
+	}
 }
