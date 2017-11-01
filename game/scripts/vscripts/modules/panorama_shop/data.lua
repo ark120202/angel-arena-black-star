@@ -141,7 +141,6 @@ PANORAMA_SHOP_ITEMS = {
 			"item_refresher_arena",
 			"item_sheepstick",
 			"item_octarine_core_arena",
-			"item_aether_lens_5",
 			"item_ultimate_scepter_arena",
 			"item_sunray_dagon_5_arena",
 		},

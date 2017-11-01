@@ -1556,34 +1556,6 @@ DOTA_Tooltip_ability_item_aether_lens_arena_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_aether_lens_arena_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_aether_lens_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
 
-DOTA_Tooltip_ability_item_aether_lens_2: Aether Lens II
-DOTA_Tooltip_ability_item_aether_lens_2_Description: 'Passive: Increases spell cast range by %cast_range_bonus% and spell damage output by %spell_amp_pct%%%'
-DOTA_Tooltip_ability_item_aether_lens_2_bonus_mana: +$mana
-DOTA_Tooltip_ability_item_aether_lens_2_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_aether_lens_2_cast_range_bonus: +$cast_range
-DOTA_Tooltip_ability_item_aether_lens_2_spell_amp_pct: '%SPELL DAMAGE AMP:'
-
-DOTA_Tooltip_ability_item_aether_lens_3: Aether Lens III
-DOTA_Tooltip_ability_item_aether_lens_3_Description: 'Passive: Increases spell cast range by %cast_range_bonus% and spell damage output by %spell_amp_pct%%%'
-DOTA_Tooltip_ability_item_aether_lens_3_bonus_mana: +$mana
-DOTA_Tooltip_ability_item_aether_lens_3_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_aether_lens_3_cast_range_bonus: +$cast_range
-DOTA_Tooltip_ability_item_aether_lens_3_spell_amp_pct: '%SPELL DAMAGE AMP:'
-
-DOTA_Tooltip_ability_item_aether_lens_4: Aether Lens IV
-DOTA_Tooltip_ability_item_aether_lens_4_Description: 'Passive: Increases spell cast range by %cast_range_bonus% and spell damage output by %spell_amp_pct%%%'
-DOTA_Tooltip_ability_item_aether_lens_4_bonus_mana: +$mana
-DOTA_Tooltip_ability_item_aether_lens_4_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_aether_lens_4_cast_range_bonus: +$cast_range
-DOTA_Tooltip_ability_item_aether_lens_4_spell_amp_pct: '%SPELL DAMAGE AMP:'
-
-DOTA_Tooltip_ability_item_aether_lens_5: Aether Lens V
-DOTA_Tooltip_ability_item_aether_lens_5_Description: 'Passive: Increases spell cast range by %cast_range_bonus% and spell damage output by %spell_amp_pct%%%'
-DOTA_Tooltip_ability_item_aether_lens_5_bonus_mana: +$mana
-DOTA_Tooltip_ability_item_aether_lens_5_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_aether_lens_5_cast_range_bonus: +$cast_range
-DOTA_Tooltip_ability_item_aether_lens_5_spell_amp_pct: '%SPELL DAMAGE AMP:'
-
 DOTA_Tooltip_ability_item_wand_of_midas: Wand of Midas
 DOTA_Tooltip_ability_item_wand_of_midas_Description: '<h1>Active: Gold Charge</h1> Gives you some gold and instantly restores health and mana based on the number of charges stored. Gains a charge (max %max_charges%) whenever whenever a nearby enemy uses an ability.'
 DOTA_Tooltip_ability_item_wand_of_midas_bonus_all: +$all
