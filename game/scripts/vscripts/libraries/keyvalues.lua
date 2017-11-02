@@ -194,25 +194,46 @@ function GetItemKV(itemName, key, level)
 	return GetKeyValue(itemName, key, level, KeyValues.ItemKV[itemName])
 end
 
-function GetAbilitySpecial(name, key, level)
-	local t = KeyValues.All[name]
-	if key and t then
-		local tspecial = t["AbilitySpecial"]
-		if tspecial then
-			-- Find the key we are looking for
-			for _,values in pairs(tspecial) do
-				if values[key] then
-					if not level then return values[key]
-					else
-						local s = string.split(values[key])
-						if s[level] then return tonumber(s[level]) -- If we match the level, return that one
-						else return tonumber(s[#s]) end -- Otherwise, return the max
+function GetAbilitySpecial(name, key, level, t)
+	if not t then t = KeyValues.All[name] end
+	if t then
+		local AbilitySpecial = t.AbilitySpecial
+		if AbilitySpecial then
+			if key then
+				-- Find the key we are looking for
+				for _,values in pairs(AbilitySpecial) do
+					if values[key] then
+						return GetValueInStringForLevel(values[key], level)
 					end
-					break
 				end
+			else
+				local o = {}
+				for _,values in pairs(AbilitySpecial) do
+					for k,v in pairs(values) do
+						if k ~= 'var_type' and k ~= 'CalculateSpellDamageTooltip' and k ~= 'levelkey' then
+						  o[k] = v
+						end
+					end
+				end
+				return o
 			end
 		end
-	else return t end
+	end
+end
+
+function GetValueInStringForLevel(str, level)
+	if not level then
+		return str
+	else
+		local s = string.split(str)
+		if s[level] then
+			-- If we match the level, return that one
+			return tonumber(s[level])
+		else
+			-- Otherwise, return the max
+			return tonumber(s[#s])
+		end
+	end
 end
 
 function GetItemNameById(itemid)
