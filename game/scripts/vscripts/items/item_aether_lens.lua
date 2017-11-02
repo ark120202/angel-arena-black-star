@@ -1,12 +1,8 @@
-item_aether_lens_baseclass = {}
-
 LinkLuaModifier("modifier_item_aether_lens_arena", "items/item_aether_lens.lua", LUA_MODIFIER_MOTION_NONE)
 
-function item_aether_lens_baseclass:GetIntrinsicModifierName()
-	return "modifier_item_aether_lens_arena"
-end
-
-item_aether_lens_arena = class(item_aether_lens_baseclass)
+item_aether_lens_arena = class({
+	GetIntrinsicModifierName = function() return "modifier_item_aether_lens_arena" end
+})
 
 
 modifier_item_aether_lens_arena = class({
