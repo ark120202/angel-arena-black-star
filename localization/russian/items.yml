@@ -1336,8 +1336,7 @@ DOTA_Tooltip_ability_item_ultimate_scepter_arena: Ultimate Scepter
 DOTA_Tooltip_ability_item_ultimate_scepter_arena_Description: '<h1>Пассивная: Ultimate Upgrade</h1> Улучшает ульт, а также некоторые способности части героев.'
 DOTA_Tooltip_ability_item_ultimate_scepter_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 
-DOTA_Tooltip_ability_item_aether_lens_arena_Description: 'Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus% и их урон на %spell_amp_pct%%%'
-DOTA_Tooltip_ability_item_aether_lens_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
+DOTA_Tooltip_ability_item_aether_lens_arena_Description: '<h1>Пассивная: Aethereal Focus</h1> Увеличивает дальность применения способностей и предметов на %cast_range_bonus%.'
 
 DOTA_Tooltip_ability_item_wand_of_midas_Description: '<h1>Активируемая: Gold Charge</h1> Владелец получает золото и восстанавливает здоровье и ману в зависимости от количества имеющихся зарядов (максимум: %max_charges%). За каждое использование способности врагом, который видим и находится неподалеку, добавляется один заряд.'
 DOTA_Tooltip_ability_item_wand_of_midas_gold: 'ЗОЛОТА ЗА ЗАРЯД:'

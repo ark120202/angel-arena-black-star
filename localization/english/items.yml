@@ -1548,11 +1548,10 @@ DOTA_Tooltip_ability_item_ultimate_scepter_arena_spell_amp_pct: '%SPELL DAMAGE A
 DOTA_Tooltip_ability_item_orb_of_essences: Orb of Essences
 DOTA_Tooltip_ability_item_orb_of_essences_bonus_all: +$all
 
-DOTA_Tooltip_ability_item_aether_lens_arena: Aether Lens I
-DOTA_Tooltip_ability_item_aether_lens_arena_Description: 'Passive: Increases spell cast range by %cast_range_bonus% and spell damage output by %spell_amp_pct%%%'
+DOTA_Tooltip_ability_item_aether_lens_arena: Aether Lens
+DOTA_Tooltip_ability_item_aether_lens_arena_Description: '<h1>Passive: Aethereal Focus</h1> Increases targeted spell and item cast range by %cast_range_bonus%.'
 DOTA_Tooltip_ability_item_aether_lens_arena_bonus_mana: +$mana
-DOTA_Tooltip_ability_item_aether_lens_arena_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_aether_lens_arena_cast_range_bonus: +$cast_range
+DOTA_Tooltip_ability_item_aether_lens_arena_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_aether_lens_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
 
 DOTA_Tooltip_ability_item_wand_of_midas: Wand of Midas
