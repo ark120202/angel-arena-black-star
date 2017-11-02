@@ -16920,7 +16920,7 @@
 				"var_type"	"FIELD_INTEGER"
 				"damage_per_stack"	"20 25 30 35 40 45 50"
 				"LinkedSpecialBonus"	"special_bonus_unique_bristleback_3"
-			}			}
+			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
