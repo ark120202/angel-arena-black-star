@@ -37,6 +37,7 @@
 		"BannedHeroes"
 		{
 			"npc_dota_hero_necrolyte"	"1"
+			"npc_dota_hero_target_dummy"	"1"
 		}
 	}
 }
