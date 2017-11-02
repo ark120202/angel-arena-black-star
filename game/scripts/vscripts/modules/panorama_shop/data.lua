@@ -125,6 +125,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_arcane_boots",
 			"item_ancient_janggo",
 			"item_vladmir",
+			"item_spirit_vessel",
 			"item_pipe",
 			"item_mekansm_2",
 			"item_guardian_greaves_arena",
@@ -138,6 +139,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_solar_crest",
 			"item_rod_of_atos",
 			"item_orchid",
+			"item_nullifier",
 			"item_refresher_arena",
 			"item_sheepstick",
 			"item_octarine_core_arena",
@@ -149,6 +151,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_vanguard",
 			"item_soul_booster",
 			"item_crimson_guard",
+			"item_combo_breaker",
 			"item_lotus_orb",
 			"item_shivas_guard",
 			"item_bloodstone_arena",
@@ -163,6 +166,7 @@ PANORAMA_SHOP_ITEMS = {
 		{
 			"item_lesser_crit",
 			"item_armlet",
+			"item_meteor_hammer",
 			"item_invis_sword",
 			"item_basher",
 			"item_ethereal_blade",
@@ -176,7 +180,6 @@ PANORAMA_SHOP_ITEMS = {
 			"item_bloodthorn_2",
 			"item_radiance_3",
 		},
-
 		{
 			"item_mask_of_madness",
 			"item_helm_of_the_dominator",
