@@ -23,12 +23,12 @@ function modifier_item_aether_lens_arena:DeclareFunctions()
 	}
 end
 
-function modifier_item_aether_lens_arena:GetModifierConstantManaRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
-end
-
 function modifier_item_aether_lens_arena:GetModifierManaBonus()
 	return self:GetAbility():GetSpecialValueFor("bonus_mana")
+end
+
+function modifier_item_aether_lens_arena:GetModifierConstantManaRegen()
+	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
 
 function modifier_item_aether_lens_arena:GetModifierCastRangeBonus()
