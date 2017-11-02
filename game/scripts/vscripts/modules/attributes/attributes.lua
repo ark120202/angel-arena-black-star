@@ -1,8 +1,24 @@
 ModuleRequire(..., "data")
 
+local modifiers = {
+	"damage",
+	"evasion",
+	"movespeed_pct",
+	"lifesteal",
+	"creep_gold",
+	"movespeed_limit",
+	"health",
+	"health_regen",
+}
+for propName, propValue in pairs(DOTA_DEFAULT_ATTRIBUTES) do
+	if propValue.recalculate == nil then
+		ModuleLinkLuaModifier(..., "modifier_attribute_" .. propName, "modifiers")
+	end
+end
+
 if not Attributes then
 	Attributes = class({})
-	Attributes.Applier = CreateItem("item_attributes_modifier_applier", nil, nil)
+	Attributes.Applier = CreateItem("item_dummy", nil, nil)
 end
 
 function Attributes:SetPropValue(hero, prop, value)
@@ -36,7 +52,7 @@ end
 
 function Attributes:CheckAttributeModifier(hero, modifier)
 	if not hero:HasModifier(modifier) then
-		self.Applier:ApplyDataDrivenModifier(hero, hero, modifier, nil)
+		hero:AddNewModifier(hero, self.Applier, modifier, nil)
 	end
 end
 
@@ -48,27 +64,30 @@ function Attributes:CalculateStatBonus(hero)
 		[DOTA_ATTRIBUTE_AGILITY] = hero:GetAgility(),
 		[DOTA_ATTRIBUTE_INTELLECT] = hero:GetIntellect(),
 	}
+	local recalculated = false
 
 	for propName, propValue in pairs(DOTA_DEFAULT_ATTRIBUTES) do
 		local attribute = propValue.attribute
 		local attributeValue = attributeValues[attribute]
 		-- Don't recalculate props, which attributes aren't changed since last check
-		if hero.attributeCache[attribute] == attributeValue then return end
-
-		if propValue.recalculate then
-			propValue.recalculate(hero)
-		else
-			local modifierName = propValue.modifier or ("modifier_attribute_" .. propName)
-			local adjustment = Attributes:GetAdjustmentForProp(hero, propName)
-			self:CheckAttributeModifier(hero, modifierName)
-			local wrongPerkAttribute = propValue.primary and propValue.attribute ~= primaryAttribute
-			local stacks = wrongPerkAttribute and 0 or
-				(attributeValue * adjustment) / (propValue.stack or 1)
-			hero:SetModifierStackCount(modifierName, hero, stacks)
+		if hero.attributeCache[attribute] ~= attributeValue then
+			recalculated = true
+			if propValue.recalculate ~= nil then
+				if propValue.recalculate then propValue.recalculate(hero, attributeValue) end
+			else
+				local modifierName = propValue.modifier or ("modifier_attribute_" .. propName)
+				local adjustment = Attributes:GetAdjustmentForProp(hero, propName)
+				self:CheckAttributeModifier(hero, modifierName)
+				local wrongPerkAttribute = propValue.primary and propValue.attribute ~= primaryAttribute
+				local stacks = wrongPerkAttribute and 0 or
+					math.round((attributeValue * adjustment) / (propValue.stack or 1))
+				hero:SetModifierStackCount(modifierName, hero, stacks)
+			end
 		end
 	end
 
 	hero.attributeCache = attributeValues
-
-	hero:CalculateStatBonus()
+	if recalculated then
+		hero:CalculateStatBonus()
+	end
 end
