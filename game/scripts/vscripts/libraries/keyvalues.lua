@@ -94,15 +94,6 @@ function LoadGameKeyValues()
 				for k,v in pairs(custom_file) do
 					if not file[k] then
 						file[k] = {}
-						local override_hero = v.override_hero
-						if override_hero then
-							if file[override_hero] then
-								table.deepmerge(file[k], file[override_hero])
-							end
-							if custom_file[override_hero] then
-								table.deepmerge(file[k], custom_file[override_hero])
-							end
-						end
 						table.deepmerge(file[k], v)
 					else
 						table.deepmerge(file[k], v)
@@ -119,6 +110,7 @@ function LoadGameKeyValues()
 			table.deepmerge(file, LoadKeyValues(scriptPath .. KVFilePaths.new .. ".txt"))
 		end
 
+		file.Version = nil
 		KeyValues[KVType] = file
 	end
 
@@ -136,6 +128,14 @@ function LoadGameKeyValues()
 			KeyValues.UnitKV[key] = value
 		elseif type(KeyValues.All[key]) == "table" then
 			table.deepmerge(KeyValues.UnitKV[key], value)
+		end
+	end
+	KeyValues.HeroKV = nil
+
+	for k,v in pairs(KeyValues.UnitKV) do
+		local override_hero = v.override_hero or v.base_hero
+		if override_hero and KeyValues.UnitKV[override_hero] then
+			table.deepmerge(v, KeyValues.UnitKV[override_hero])
 		end
 	end
 end
