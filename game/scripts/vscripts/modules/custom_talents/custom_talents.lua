@@ -1,4 +1,11 @@
 ModuleRequire(..., "data")
+
+local nativeTalents = ModuleRequire(..., "native")
+for name, override in pairs(NATIVE_TALENTS_OVERRIDE) do
+	table.merge(nativeTalents[name], override)
+end
+table.merge(CUSTOM_TALENTS_DATA, nativeTalents)
+
 if not CustomTalents then
 	CustomTalents = class({})
 	CustomTalents.ModifierApplier = CreateItem("item_talent_modifier_applier", nil, nil)
@@ -24,6 +31,7 @@ local modifiers = {
 	"lifesteal",
 	--rune multiplier
 }
+
 for _,v in pairs(modifiers) do
 	ModuleLinkLuaModifier(..., "modifier_talent_" .. v, "modifiers/modifier_talent_" .. v)
 end
@@ -35,7 +43,7 @@ function CustomTalents:Init()
 	end)
 	local talentList = {}
 	for k,v in pairs(CUSTOM_TALENTS_DATA) do
-		local t = PlayerTables:copy(v)
+		local t = table.deepcopy(v)
 		if not talentList[t.group] then talentList[t.group] = {} end
 		t.name = k
 		t.effect = nil
