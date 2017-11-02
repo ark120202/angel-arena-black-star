@@ -50,9 +50,6 @@ function getTalentTitle(talent) {
 		});
 	}, $.Localize('DOTA_Tooltip_ability_' + talent.name))
 
-	if (line.indexOf('value') === -1) {
-		console.log(line, talent.original_values)
-	}
 	return line;
 }
 
