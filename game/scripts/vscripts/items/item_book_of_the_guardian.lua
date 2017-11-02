@@ -66,7 +66,7 @@ function modifier_item_book_of_the_guardian:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
@@ -81,7 +81,7 @@ function modifier_item_book_of_the_guardian:GetModifierConstantHealthRegen()
 	return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
 end
 
-function modifier_item_book_of_the_guardian:GetModifierPercentageManaRegen()
+function modifier_item_book_of_the_guardian:GetModifierConstantManaRegen()
 	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
 

@@ -281,7 +281,6 @@ DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_splitshot_ultimate_movement_speed_percent_bonus: '%+$move_speed'
 DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_mana_regen_percentage: '%+$mana_regen'
 DOTA_Tooltip_ability_item_splitshot_ultimate_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
 DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim: '{lc:modifier_item_sange_maim}'
 DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
@@ -297,7 +296,7 @@ DOTA_Tooltip_ability_item_edge_of_vyse_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_edge_of_vyse_bonus_strength: +$str
 DOTA_Tooltip_ability_item_edge_of_vyse_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_edge_of_vyse_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_edge_of_vyse_bonus_mana_regen: '%+$mana_regen'
+DOTA_Tooltip_ability_item_edge_of_vyse_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_edge_of_vyse_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_edge_of_vyse_windwalk_duration: 'ДЛИТЕЛЬНОСТЬ НЕВИДИМОСТИ:'
 DOTA_Tooltip_ability_item_edge_of_vyse_windwalk_bonus_damage: 'УРОН ИЗ НЕВИДИМОСТИ:'
@@ -326,7 +325,7 @@ DOTA_Tooltip_ability_item_refresher_arena_Description: |-
   <h1>Активируемая: Reset Cooldowns</h1> Сбрасывает время перезарядки всех ваших предметов и способностей.
   <h1>Пассивная: Dynamical Cooldown</h1> Время перезарядки Refresher Orb равно времени перезарядки вашей способности с наибольшим временем перезарядки. Время перезарядки не может быть менее %cooldown_min% секунд и более %cooldown_max% секунд.
 DOTA_Tooltip_ability_item_refresher_arena_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_refresher_arena_bonus_mana_regen_percentage: '%+$mana_regen'
+DOTA_Tooltip_ability_item_refresher_arena_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_refresher_arena_bonus_damage: +$damage
 
 DOTA_Tooltip_ability_item_casino_drug_pill1: Blue Pill
@@ -687,7 +686,7 @@ DOTA_Tooltip_ability_item_bloodstone_arena_bonus_Note0: Pocket Deny не вли�
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_health: +$health
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana_regen_percentage: '%+$mana_regen'
+DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_team_changer: Traitor's Flag
 DOTA_Tooltip_ability_item_team_changer_Description: |-
   Меняет вашу команду на противоположную. Может быть использовано только если в другой команде меньше игроков чем в вашей. Если владелец получит урон от вражеского героя или босса, способность отключается на %attacked_cooldown% сек.
@@ -890,13 +889,13 @@ DOTA_Tooltip_ability_item_vermillion_robe_Description: |-
 DOTA_Tooltip_ability_item_vermillion_robe_hp_as_damage_pct: '%ТЕКУЩЕЕ ЗДОРОВЬЕ В УРОН ПО СЕБЕ:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_radius: 'РАДИУС УРОНА:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_delay: 'ЗАДЕРЖКА ПЕРЕД УРОНОМ:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_mana_regen_pct: '%РЕГЕНЕРАЦИЯ МАНЫ ЗА ПРОЦЕНТ:'
+DOTA_Tooltip_ability_item_vermillion_robe_dust_mana_regen: 'РЕГЕНЕРАЦИЯ МАНЫ ЗА ПРОЦЕНТ:'
 DOTA_Tooltip_ability_item_vermillion_robe_dust_bonus_movement_speed: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ЗА ПРОЦЕНТ:'
 DOTA_Tooltip_ability_item_vermillion_robe_dust_damage: 'УРОН ЗА ПРОЦЕНТ:'
 DOTA_Tooltip_modifier_item_vermillion_robe_delay: True Flame Delay от Vermillion Robe
 DOTA_Tooltip_modifier_item_vermillion_robe_delay_Description: 'Когда закончится, нанесёт урон по площади.'
 DOTA_Tooltip_modifier_item_vermillion_robe_dust: Vermillion Dust
-DOTA_Tooltip_modifier_item_vermillion_robe_dust_Description: 'Регенерация маны увеличена на %dMODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE%%%, скорость передвидения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'
+DOTA_Tooltip_modifier_item_vermillion_robe_dust_Description: 'Регенерация маны увеличена на %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, скорость передвидения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'
 DOTA_Tooltip_ability_item_soul_of_titan: Soul of Titan
 DOTA_Tooltip_ability_item_soul_of_titan_Description: |-
   <h1>Пассивная: Elder Aura</h1> Снижает броню всех противников, находящихся рядом.

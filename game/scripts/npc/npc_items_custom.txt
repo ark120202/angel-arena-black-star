@@ -1388,8 +1388,8 @@
 			}
 			"03"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_mana_regen"					"250"
+				"var_type"							"FIELD_FLOAT"
+				"bonus_mana_regen"					"2.5"
 			}
 			"04"
 			{
@@ -1454,7 +1454,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 
 				"OnTakeDamage"
@@ -1697,7 +1697,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"200"
+				"bonus_mana_regen"		"2"
 			}
 			"06"
 			{
@@ -1764,7 +1764,7 @@
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
@@ -2300,8 +2300,8 @@
 			}
 			"02"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"		"250"
+				"var_type"							"FIELD_FLOAT"
+				"bonus_mana_regen"					"2.5"
 			}
 			"03"
 			{
@@ -2345,7 +2345,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"			"%bonus_mana_regen_percentage"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"				"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"			"%bonus_health_regen"
 				}
 			}
@@ -3700,8 +3700,8 @@
 			}
 			"04"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"		"200"
+				"var_type"							"FIELD_FLOAT"
+				"bonus_mana_regen"					"2"
 			}
 			"05"
 			{
@@ -3782,7 +3782,7 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 				"OnCreated"
 				{
@@ -4978,8 +4978,8 @@
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"50"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"0.5"
 			}
 			"06"
 			{
@@ -5028,7 +5028,7 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_EXTRA_MANA_BONUS"			"%bonus_mana"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_pct"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 			}
 
@@ -5113,8 +5113,8 @@
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"400"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"4"
 			}
 			"07"
 			{
@@ -5186,7 +5186,7 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_EXTRA_MANA_BONUS"			"%bonus_mana"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_pct"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 			}
@@ -5253,8 +5253,8 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"100"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1"
 			}
 			"04"
 			{
@@ -5297,8 +5297,8 @@
 			}
 			"11"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"dust_mana_regen_pct"	"20"
+				"var_type"				"FIELD_FLOAT"
+				"dust_mana_regen"		"0.2"
 			}
 			"12"
 			{
@@ -5333,7 +5333,7 @@
 				{
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_movement_speed"
@@ -5383,7 +5383,7 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%dust_mana_regen_pct"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%dust_mana_regen"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%dust_move_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dust_damage"
 				}
@@ -5542,8 +5542,8 @@
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"100 200"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1 2"
 			}
 			"06"
 			{
@@ -5582,7 +5582,7 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 			}
 
@@ -5671,8 +5671,8 @@
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"100 200"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1 2"
 			}
 			"06"
 			{
@@ -5711,7 +5711,7 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 			}
 
@@ -5857,8 +5857,8 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen_percent"	"100"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1"
 			}
 			"02"
 			{
@@ -5934,7 +5934,7 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen_percent"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 			}
 			"modifier_item_urn_of_souls_aura_emitter"
@@ -7082,8 +7082,8 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"225"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2.25"
 			}
 			"04"
 			{
@@ -7109,7 +7109,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intellect"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"				"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"				"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"					"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
 					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"			"%spell_amp_pct"
 				}
@@ -7858,8 +7858,8 @@
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"250"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2.5"
 			}
 			"07"
 			{
@@ -7916,7 +7916,7 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
 				}
 			}
@@ -9021,8 +9021,8 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen_percent"	"200"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2"
 			}
 			"04"
 			{
@@ -9090,7 +9090,7 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen_percent"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
 				}
 			}
@@ -9222,8 +9222,8 @@
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"300"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3"
 			}
 			"06"
 			{
@@ -9257,7 +9257,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%bonus_mana_regen_pct"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_MANA_BONUS"				"%bonus_mana"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"%bonus_hp_regen_pct"
 				}
@@ -9798,8 +9798,8 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"150 250"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.5 2.5"
 			}
 			"04"
 			{
@@ -9869,8 +9869,8 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"150 250"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.5 2.5"
 			}
 			"04"
 			{
@@ -9977,8 +9977,8 @@
 			}
 			"08"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"250"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2.5"
 			}
 			"09"
 			{
@@ -10100,7 +10100,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"						"%bonus_agility"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"		"%movement_speed_percent_bonus"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"					"%bonus_mana_regen_pct"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"						"%bonus_mana_regen"
 				}
 				"OnAttackLanded"
 				{
@@ -10256,8 +10256,8 @@
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"300"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3"
 			}
 			"05"
 			{
@@ -10384,8 +10384,8 @@
 			}
 			"07"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"350"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3.5"
 			}
 			"08"
 			{
@@ -10479,8 +10479,8 @@
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"200"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2"
 			}
 			"05"
 			{
