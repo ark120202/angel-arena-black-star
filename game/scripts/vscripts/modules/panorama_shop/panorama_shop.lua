@@ -99,18 +99,6 @@ function PanoramaShop:InitializeItemTable()
 				end
 			end
 		end
-		local translated_english = LANG_ENGLISH["DOTA_Tooltip_Ability_" .. name] or LANG_ENGLISH["DOTA_Tooltip_ability_" .. name]
-		if translated_english then
-			if not table.contains(itemdata.names, translated_english:lower()) then
-				table.insert(itemdata.names, translated_english:lower())
-			end
-		end
-		local translated_russian = LANG_RUSSIAN["DOTA_Tooltip_Ability_" .. name] or LANG_RUSSIAN["DOTA_Tooltip_ability_" .. name]
-		if translated_russian then
-			if not table.contains(itemdata.names, translated_russian:lower()) then
-				table.insert(itemdata.names, translated_russian:lower())
-			end
-		end
 
 		if RecipesToCheck[name] then
 			local recipedata = {
