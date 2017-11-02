@@ -260,26 +260,6 @@ DOTA_Tooltip_ability_item_metamorphosis_elixir_Description: |-
   <font color='cyan'>Рейтинговая игра: может быть использовано лишь один раз.</font>
 DOTA_Tooltip_ability_item_metamorphosis_elixir_transformation_time: 'ДЛИТЕЛЬНОСТЬ ТРАНСФОРМАЦИИ:'
 
-DOTA_Tooltip_ability_item_splitshot_str: Enchanted Trident
-DOTA_Tooltip_ability_item_splitshot_str_Description: |-
-  <h1>Пассивная: Разделение атаки</h1> Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.
-  {lc:item_sange_Description}
-DOTA_Tooltip_ability_item_splitshot_str_Note0: 'Иллюзии будут создавать эффекты атаки, но не будут наносить урон.'
-DOTA_Tooltip_ability_item_splitshot_str_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
-DOTA_Tooltip_ability_item_splitshot_str_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_splitshot_str_bonus_strength: +$str
-DOTA_Tooltip_ability_item_splitshot_str_bonus_intelligence: +$int
-DOTA_Tooltip_ability_item_splitshot_str_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_splitshot_str_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_splitshot_str_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_str_bonus_mana_regen_percentage: '%+$mana_regen'
-DOTA_Tooltip_ability_item_splitshot_str_maim_chance: '%ШАНС НАНЕСТИ ТРАВМУ:'
-DOTA_Tooltip_ability_item_splitshot_str_maim_movement_speed: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_item_splitshot_str_maim_slow_attack: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_ability_item_splitshot_str_maim_duration: 'ДЛИТЕЛЬНОСТЬ ТРАВМЫ:'
-DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim: '{lc:modifier_item_sange_maim}'
-DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
-
 DOTA_Tooltip_ability_item_nagascale_bow: Nagascale Bow
 DOTA_Tooltip_ability_item_nagascale_bow_Description: '<h1>Пассивная: Разделение атаки</h1> Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.'
 DOTA_Tooltip_ability_item_nagascale_bow_Note0: Иллюзии будут создавать эффекты атаки, но не будут наносить урон.
