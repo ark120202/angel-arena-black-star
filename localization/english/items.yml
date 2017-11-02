@@ -274,7 +274,6 @@ DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_splitshot_ultimate_movement_speed_percent_bonus: '%+$move_speed'
 DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_splitshot_ultimate_damage_percent: '%SPLASH DAMAGE:'
 DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim: '{lc:modifier_item_sange_maim}'
 DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
