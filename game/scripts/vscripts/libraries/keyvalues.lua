@@ -72,8 +72,7 @@ function LoadGameKeyValues()
 		HeroKV = {base = "npc_heroes", custom = "npc_heroes_custom", new = "heroes/new"}
 	}
 	if not override then
-		print("[KeyValues] Critical Error on "..override..".txt")
-		return
+		error("[KeyValues] Critical Error on "..override..".txt")
 	end
 	-- Load and validate the files
 	for KVType,KVFilePaths in pairs(files) do
@@ -103,8 +102,7 @@ function LoadGameKeyValues()
 				table.deepmerge(file, custom_file)
 			end
 		else
-			print("[KeyValues] Critical Error on " .. KVFilePaths.custom .. ".txt")
-			return
+			error("[KeyValues] Critical Error on " .. KVFilePaths.custom .. ".txt")
 		end
 		if KVFilePaths.new then
 			table.deepmerge(file, LoadKeyValues(scriptPath .. KVFilePaths.new .. ".txt"))
