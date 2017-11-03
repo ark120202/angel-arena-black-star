@@ -494,6 +494,7 @@
 				"value"				"110"
 			}
 		}
+	}
 	"special_bonus_unique_ogre_magi_2"
 	{
 		"AbilitySpecial"
