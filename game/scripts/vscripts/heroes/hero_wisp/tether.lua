@@ -11,7 +11,8 @@ function CastTether( event )
 	local target = event.target
 	local PlayerID = UnitVarToPlayerID(caster)
 
-	local targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false)
+	local radius = ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1)
+	local targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false)
 
 	TrackCurrentHealth(event)
 	TrackCurrentMana(event)
@@ -48,7 +49,7 @@ function CheckDistance( event )
 
 	if ability.tether_allies then
 		for i,v in ipairs(ability.tether_allies) do
-			local distance = ( v:GetAbsOrigin() - caster:GetAbsOrigin() ):Length2D()
+			local distance = ( v:GetAbsOrigin() - caster:GetAbsOrigin() ):Length2D() - caster:GetPaddedCollisionRadius() - v:GetPaddedCollisionRadius()
 			if distance > event.radius then
 				v:RemoveModifierByName("modifier_tether_ally_aghanims")
 				v:RemoveModifierByName("modifier_overcharge_buff_aghanims")
