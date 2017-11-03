@@ -5795,6 +5795,7 @@
 			"modifier_item_coffee_bean"
 			{
 				"IsPurgable"		"0"
+				"TextureName"		"item_arena/coffee_bean"
 				"EffectName"        "particles/units/heroes/hero_doom_bringer/doom_bringer_scorched_earth_buff.vpcf"
 				"EffectAttachType"  "follow_origin"
 				"Duration"			"%duration"
