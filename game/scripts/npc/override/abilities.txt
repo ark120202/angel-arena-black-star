@@ -856,7 +856,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"blade_fury_damage"	"80 105 130 155 180 205 230"
-				"LinkedSpecialBonus"	"special_bonus_unique_juggernaut"
+				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_3"
 			}
 			"04"
 			{
@@ -16037,7 +16037,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"stun_duration"	"2.0 2.1 2.2 2.3 2.4 2.5 2.6"
-				"LinkedSpecialBonus"	"special_bonus_unique_centaur_1"
+				"LinkedSpecialBonus"			"special_bonus_unique_centaur_2"
 			}
 
 			"03"
