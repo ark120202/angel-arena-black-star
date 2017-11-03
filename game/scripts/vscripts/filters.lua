@@ -59,9 +59,15 @@ function GameMode:ExecuteOrderFilter(filterTable)
 							end
 						end
 					elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
-						if abilityname == "rubick_spell_steal" and target:HasAbility("doppelganger_mimic") then
-							Containers:DisplayError(PlayerID, "#dota_hud_error_cant_steal_spell")
-							return false
+						if abilityname == "rubick_spell_steal" then
+							if target == unit then
+								Containers:DisplayError(PlayerID, "#dota_hud_error_cant_cast_on_self")
+								return false
+							end
+							if target:HasAbility("doppelganger_mimic") then
+								Containers:DisplayError(PlayerID, "#dota_hud_error_cant_steal_spell")
+								return false
+							end
 						end
 						if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
 							Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_champion")
