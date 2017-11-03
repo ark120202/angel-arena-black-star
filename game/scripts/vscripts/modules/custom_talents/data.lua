@@ -756,7 +756,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		cost = 1,
 	},
 	special_bonus_unique_tidehunter_3 = {
-		group = 11,
+		group = 10,
 		cost = 1,
 	},
 	special_bonus_unique_tidehunter_4 = {
@@ -884,7 +884,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		cost = 1,
 	},
 	special_bonus_unique_ember_spirit_4 = {
-		group = 11,
+		group = 10,
 		cost = 1,
 	},
 	special_bonus_unique_ember_spirit_5 = {
@@ -1796,11 +1796,11 @@ NATIVE_TALENTS_OVERRIDE = {
 		cost = 1,
 	},
 	special_bonus_unique_morphling_4 = {
-		group = 12,
+		group = 11,
 		cost = 1,
 	},
 	special_bonus_unique_morphling_5 = {
-		group = 13,
+		group = 12,
 		cost = 1,
 	},
 	special_bonus_unique_leshrac_1 = {
