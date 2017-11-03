@@ -567,10 +567,6 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 6,
 		cost = 1,
 	},
-	special_bonus_unique_luna_4 = {
-		group = 8,
-		cost = 1,
-	},
 	special_bonus_unique_luna_5 = {
 		group = 8,
 		cost = 1,
@@ -815,10 +811,6 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 10,
 		cost = 1,
 	},
-	special_bonus_reincarnation_200 = {
-		group = 10,
-		cost = 1,
-	},
 	special_bonus_unique_undying = {
 		group = 4,
 		cost = 1,
@@ -955,10 +947,6 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 8,
 		cost = 1,
 	},
-	special_bonus_unique_ogre_magi_3 = {
-		group = 6,
-		cost = 1,
-	},
 	special_bonus_unique_silencer = {
 		group = 6,
 		cost = 1,
@@ -973,10 +961,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_silencer_4 = {
 		group = 10,
-		cost = 1,
-	},
-	special_bonus_unique_silencer_5 = {
-		group = 8,
 		cost = 1,
 	},
 	special_bonus_unique_death_prophet = {
@@ -1054,17 +1038,13 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_sniper_2 = {
 		group = 7,
 		cost = 1,
-	}
+	},
 	special_bonus_unique_sniper_3 = {
 		group = 9,
 		cost = 1,
 	},
 	special_bonus_unique_sniper_4 = {
 		group = 10,
-		cost = 1,
-	},
-	special_bonus_unique_magnus = {
-		group = 6,
 		cost = 1,
 	},
 	special_bonus_unique_magnus_2 = {
@@ -1205,10 +1185,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_lina_3 = {
 		group = 7,
-		cost = 1,
-	},
-	special_bonus_unique_lina_4 = {
-		group = 6,
 		cost = 1,
 	},
 	special_bonus_unique_ancient_apparition_1 = {
@@ -1387,16 +1363,8 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 6,
 		cost = 1,
 	},
-	special_bonus_unique_lone_druid_1 = {
-		group = 6,
-		cost = 1,
-	},
 	special_bonus_unique_lone_druid_4 = {
 		group = 9,
-		cost = 1,
-	},
-	special_bonus_unique_lone_druid_5 = {
-		group = 6,
 		cost = 1,
 	},
 	special_bonus_unique_lone_druid_6 = {
@@ -1417,10 +1385,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_techies = {
 		group = 8,
-		cost = 1,
-	},
-	special_bonus_unique_techies_2 = {
-		group = 6,
 		cost = 1,
 	},
 	special_bonus_unique_techies_3 = {
@@ -1641,10 +1605,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_razor_4 = {
 		group = 10,
-		cost = 1,
-	},
-	special_bonus_unique_visage_1 = {
-		group = 6,
 		cost = 1,
 	},
 	special_bonus_unique_visage_2 = {
@@ -2113,10 +2073,10 @@ TALENT_GROUP_TO_LEVEL = {
 	[9] = 50,
 	[10] = 55,
 	[11] = 60,
+	[12] = 65,
 	[13] = 70,
-	[14] = 80,
-	[15] = 90,
-	[17] = 100,
+	[14] = 75,
+	[15] = 80,
 	[18] = 140,
 	[19] = 180,
 	[20] = 245,
