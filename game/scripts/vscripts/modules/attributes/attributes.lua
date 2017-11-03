@@ -1,15 +1,5 @@
 ModuleRequire(..., "data")
 
-local modifiers = {
-	"damage",
-	"evasion",
-	"movespeed_pct",
-	"lifesteal",
-	"creep_gold",
-	"movespeed_limit",
-	"health",
-	"health_regen",
-}
 for propName, propValue in pairs(DOTA_DEFAULT_ATTRIBUTES) do
 	if propValue.recalculate == nil then
 		ModuleLinkLuaModifier(..., "modifier_attribute_" .. propName, "modifiers")
