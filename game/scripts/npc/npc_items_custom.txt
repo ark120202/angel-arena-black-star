@@ -731,13 +731,13 @@
 		"ID"							"10058"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"25"
+		"ItemCost"						"100"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_lucifers_claw"
 		"ItemRequirements"
 		{
-			"01"						"item_iron_talon;item_helm_of_the_dominator"
+			"01"						"item_quelling_blade;item_helm_of_the_dominator"
 		}
 	}
 
@@ -1388,8 +1388,8 @@
 			}
 			"03"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_mana_regen"					"250"
+				"var_type"							"FIELD_FLOAT"
+				"bonus_mana_regen"					"2.5"
 			}
 			"04"
 			{
@@ -1454,7 +1454,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 
 				"OnTakeDamage"
@@ -1697,7 +1697,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"200"
+				"bonus_mana_regen"		"2"
 			}
 			"06"
 			{
@@ -1764,7 +1764,7 @@
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
@@ -2300,8 +2300,8 @@
 			}
 			"02"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"		"250"
+				"var_type"							"FIELD_FLOAT"
+				"bonus_mana_regen"					"2.5"
 			}
 			"03"
 			{
@@ -2345,7 +2345,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"			"%bonus_mana_regen_percentage"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"				"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"			"%bonus_health_regen"
 				}
 			}
@@ -3650,13 +3650,13 @@
 		"ID"							"10145"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"800"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_bloodstone_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_soul_ring;item_soul_booster"
+			"01"						"item_pers;item_soul_booster"
 		}
 	}
 
@@ -3677,7 +3677,7 @@
 		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		"ItemInitialCharges"			"10"
+		"ItemInitialCharges"			"14"
 		"ItemDisplayCharges"			"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -3700,8 +3700,8 @@
 			}
 			"04"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"		"200"
+				"var_type"							"FIELD_FLOAT"
+				"bonus_mana_regen"					"2"
 			}
 			"05"
 			{
@@ -3782,7 +3782,7 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 				"OnCreated"
 				{
@@ -4978,8 +4978,8 @@
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"50"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"0.5"
 			}
 			"06"
 			{
@@ -5028,7 +5028,7 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_EXTRA_MANA_BONUS"			"%bonus_mana"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_pct"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 			}
 
@@ -5113,8 +5113,8 @@
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"400"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"5"
 			}
 			"07"
 			{
@@ -5186,7 +5186,7 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_EXTRA_MANA_BONUS"			"%bonus_mana"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_pct"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 			}
@@ -5253,8 +5253,8 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"100"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3"
 			}
 			"04"
 			{
@@ -5297,8 +5297,8 @@
 			}
 			"11"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"dust_mana_regen_pct"	"20"
+				"var_type"				"FIELD_FLOAT"
+				"dust_mana_regen"		"0.4"
 			}
 			"12"
 			{
@@ -5308,7 +5308,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dust_damage"			"2.5"
+				"dust_damage"			"3.0"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -5333,7 +5333,7 @@
 				{
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_movement_speed"
@@ -5383,7 +5383,7 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%dust_mana_regen_pct"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%dust_mana_regen"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%dust_move_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dust_damage"
 				}
@@ -5402,7 +5402,7 @@
 		"ItemResult"					"item_dark_flow"
 		"ItemRequirements"
 		{
-			"01"						"item_blight_stone;item_mithril_hammer;item_broadsword;item_demon_edge"
+			"01"						"item_blight_stone;item_mithril_hammer;item_demon_edge"
 		}
 	}
 
@@ -5419,7 +5419,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"100"
+				"bonus_damage"		"66"
 			}
 			"02"
 			{
@@ -5542,8 +5542,8 @@
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"100 200"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1 2"
 			}
 			"06"
 			{
@@ -5582,7 +5582,7 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 			}
 
@@ -5671,8 +5671,8 @@
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"100 200"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1 2"
 			}
 			"06"
 			{
@@ -5711,7 +5711,7 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 			}
 
@@ -5857,8 +5857,8 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen_percent"	"100"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1"
 			}
 			"02"
 			{
@@ -5934,7 +5934,7 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen_percent"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 				}
 			}
 			"modifier_item_urn_of_souls_aura_emitter"
@@ -6015,12 +6015,12 @@
 		"ID"							"10218"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"8800"
+		"ItemCost"						"600"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_demon_king_bar"
 		"ItemRequirements"
 		{
-			"01"						"item_monkey_king_bar;item_demon_edge;item_demon_edge;item_gloves"
+			"01"						"item_monkey_king_bar;item_javelin;item_hyperstone"
 		}
 	}
 
@@ -6033,9 +6033,9 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"			"item_arena/demon_king_bar"
 
-		"AbilityCooldown"				"180"
+		"AbilityCooldown"				"240"
 		"AbilityManaCost"				"200"
-		"AbilityCastRange"				"300"
+		"AbilityCastRange"				"250"
 
 		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
 		"ItemQuality"					"legendary"
@@ -6049,24 +6049,19 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"280"
+				"bonus_attack_speed"	"120"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"70"
+				"bash_chance"			"75"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_chance"			"40"
+				"bash_damage"			"150"
 			}
 			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bash_damage"			"200"
-			}
-			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"bash_stun"				"0.05"
@@ -6100,7 +6095,6 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
 				}
 
@@ -6136,7 +6130,7 @@
 							"Damage"
 							{
 								"Target"		"TARGET"
-								"Type"			"DAMAGE_TYPE_MAGICAL"
+								"Type"			"DAMAGE_TYPE_PURE"
 								"Damage"		"%bash_damage"
 							}
 
@@ -7053,12 +7047,12 @@
 		"ID"							"10248"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"9300"
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_book_of_the_keeper"
 		"ItemRequirements"
 		{
-			"01"						"item_mystic_staff;item_pers"
+			"01"						"item_mystic_staff;item_pers;item_energy_booster"
 		}
 	}
 
@@ -7084,22 +7078,22 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"18"
+				"bonus_health_regen"	"8"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"225"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2.25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"50"
+				"bonus_mana"			"300"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"20"
+				"spell_amp_pct"			"10"
 			}
 		}
 
@@ -7115,8 +7109,8 @@
 				{
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intellect"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"				"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"				"%bonus_mana_regen"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"					"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_BONUS"							"%bonus_mana"
 					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"			"%spell_amp_pct"
 				}
 			}
@@ -7864,8 +7858,8 @@
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"250"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2.5"
 			}
 			"07"
 			{
@@ -7922,7 +7916,7 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
 				}
 			}
@@ -8359,7 +8353,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"20"
+				"bonus_armor"		"15"
 			}
 			"02"
 			{
@@ -8384,7 +8378,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_negative_armor"	"-10"
+				"aura_negative_armor"	"-8"
 			}
 		}
 
@@ -9027,8 +9021,8 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen_percent"	"200"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2"
 			}
 			"04"
 			{
@@ -9096,7 +9090,7 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen_percent"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
 				}
 			}
@@ -9228,8 +9222,8 @@
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"300"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"10"
 			}
 			"06"
 			{
@@ -9263,7 +9257,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%bonus_mana_regen_pct"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_MANA_BONUS"				"%bonus_mana"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"%bonus_hp_regen_pct"
 				}
@@ -9468,7 +9462,7 @@
 		"ItemResult"					"item_ultimate_scepter_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_orb_of_essences;item_aether_lens_5"
+			"01"						"item_point_booster;item_blade_of_alacrity;item_ogre_axe;item_staff_of_wizardry;item_book_of_the_keeper;item_aether_lens_arena"
 		}
 	}
 
@@ -9486,28 +9480,48 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_all"				"65"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"1800"
+				"bonus_agility"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"50"
+				"bonus_intellect"		"50"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"300"
+				"bonus_health"			"200"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"16"
+				"bonus_mana"			"1200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"10"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"4.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"300"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"12"
 			}
 		}
 	}
@@ -9523,7 +9537,7 @@
 		"ItemResult"					"item_angel_wings"
 		"ItemRequirements"
 		{
-			"01"						"item_steam_footgear;item_aether_lens_5;item_ultimate_orb"
+			"01"						"item_steam_footgear;item_aether_lens_arena;item_ultimate_orb"
 		}
 	}
 
@@ -9765,7 +9779,7 @@
 		"ItemResult"					"item_battlefury_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_broadsword;item_claymore;item_quelling_fury"
+			"01"						"item_demon_edge;item_quelling_fury"
 		}
 	}
 
@@ -9795,7 +9809,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15 55"
+				"bonus_damage"			"15 50"
 			}
 			"02"
 			{
@@ -9804,8 +9818,8 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"150 250"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.5 2.5"
 			}
 			"04"
 			{
@@ -9866,7 +9880,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15 55"
+				"bonus_damage"			"15 50"
 			}
 			"02"
 			{
@@ -9875,8 +9889,8 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"150 250"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.5 2.5"
 			}
 			"04"
 			{
@@ -9896,12 +9910,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_ending_width"	"300"
+				"cleave_ending_width"	"330"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_distance"		"570"
+				"cleave_distance"		"625"
 			}
 			"09"
 			{
@@ -9983,8 +9997,8 @@
 			}
 			"08"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"250"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3.0"
 			}
 			"09"
 			{
@@ -10106,7 +10120,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"						"%bonus_agility"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"		"%movement_speed_percent_bonus"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"					"%bonus_mana_regen_pct"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"						"%bonus_mana_regen"
 				}
 				"OnAttackLanded"
 				{
@@ -10220,7 +10234,7 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2050"
+		"ItemCost"						"1950"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_book_of_the_guardian"
 		"ItemRequirements"
@@ -10240,7 +10254,7 @@
 		"ItemShopTags"					"int;regen_mana;hard_to_tag"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityCastRange"				"%aura_radius"
-		"AbilityCooldown"				"26"
+		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"350"
 
 		"AbilitySpecial"
@@ -10248,72 +10262,65 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"80"
+				"bonus_intellect"		"70"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"35"
+				"bonus_armor"			"20"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"25"
+				"bonus_health_regen"	"12"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"300"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"6"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"50"
-				"CalculateSpellDamageTooltip"	"0"
+				"spell_amp_pct"			"15"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"25"
+				"aura_radius"			"900"
 			}
-
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"900"
+				"aura_attack_speed"		"-60"
 			}
 			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_attack_speed"		"-45"
-			}
-			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"blast_damage_int_mult"	"3"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"blast_movement_speed_pct"	"-50"
 			}
-			"11"
+			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"blast_debuff_duration"	"4.0"
 			}
-			"12"
+			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"blast_radius"			"1200"
 			}
-			"13"
+			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"blast_speed"			"350"
 			}
-			"14"
+			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"blast_vision_duration"	"3.5"
@@ -10333,7 +10340,7 @@
 		"ItemResult"					"item_scythe_of_sun"
 		"ItemRequirements"
 		{
-			"01"						"item_solar_crest;item_sheepstick;item_aether_lens_5;item_fallen_star"
+			"01"						"item_solar_crest;item_sheepstick;item_aether_lens_arena;item_fallen_star"
 		}
 	}
 
@@ -10390,8 +10397,8 @@
 			}
 			"07"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"350"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"5"
 			}
 			"08"
 			{
@@ -10401,7 +10408,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"250"
+				"cast_range_bonus"		"275"
 			}
 			"10"
 			{
@@ -10485,8 +10492,8 @@
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"200"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3"
 			}
 			"05"
 			{

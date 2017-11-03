@@ -56,19 +56,6 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"28"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"14"
-			}
-		}
 	}
 	"item_ring_of_protection"
 	{
@@ -89,14 +76,6 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"4"
-			}
-		}
 	}
 	"item_mantle"
 	{
@@ -221,13 +200,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"total_mana"			"400"
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen"			"9.6"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"35"
+				"buff_duration"			"50"
 			}
 		}
 	}
@@ -241,12 +220,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"12"
+				"buff_duration"			"8"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"total_health"			"1200"
+				"health_regen"			"100"
 			}
 		}
 	}
@@ -305,6 +284,8 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityCooldown"				"30.0"
+		"AbilityChannelTime"			"2.5"
 	}
 	"item_recipe_phase_boots"
 	{
@@ -400,44 +381,6 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-	}
-	"item_recipe_poor_mans_shield"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-	}
-	"item_poor_mans_shield"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"6"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_block_melee"	"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_block_ranged"	"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance_hero"		"100"
-			}
-		}
 	}
 	"item_recipe_bracer"
 	{
@@ -586,15 +529,15 @@
 
 		"AbilitySpecial"
 		{
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_heal_amount"		"70"
+			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"soul_heal_amount"		"600"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"soul_damage_amount"	"220"
+				"soul_damage_amount"	"35"
 			}
 		}
 	}
@@ -988,19 +931,9 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"AbilityCooldown"				"30.0"
+		"AbilityCooldown"				"25.0"
 		"AbilitySpecial"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regen"			"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen"			"75"
-			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -1009,12 +942,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_gain"				"300"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"12"
+				"mana_gain"				"200"
 			}
 		}
 	}
@@ -1183,6 +1111,8 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityCooldown"				"30.0"
+		"AbilityChannelTime"			"2.5"
 	}
 	"item_recipe_lotus_orb"
 	{
@@ -1253,6 +1183,13 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"IsObsolete"					"0"
+		"ItemPurchasable"				"1"
+		"ItemResult"					"item_iron_talon"
+		"ItemRequirements"
+		{
+			"01"						"item_quelling_blade;item_ring_of_regen"
+		}
 	}
 	"item_iron_talon"
 	{
@@ -1260,6 +1197,8 @@
 		"SideShop"						"0"
 		"AbilityCastRange"				"525"
 		"AbilityCooldown"				"10.0"
+		"IsObsolete"					"0"
+		"ItemPurchasable"				"1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -1286,11 +1225,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"creep_damage_pct"			"70"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"2"
 			}
 		}
 	}

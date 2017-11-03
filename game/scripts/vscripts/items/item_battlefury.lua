@@ -35,7 +35,7 @@ function modifier_item_battlefury_arena:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
 	}
 end
@@ -48,8 +48,8 @@ function modifier_item_battlefury_arena:GetModifierConstantHealthRegen()
 	return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
 end
 
-function modifier_item_battlefury_arena:GetModifierPercentageManaRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen_pct")
+function modifier_item_battlefury_arena:GetModifierConstantManaRegen()
+	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
 
 if IsServer() then

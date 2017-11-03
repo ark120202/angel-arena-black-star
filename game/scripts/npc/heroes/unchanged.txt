@@ -59,7 +59,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_bane"
@@ -69,8 +68,8 @@
 		"Ability2"	"bane_brain_sap"
 		"Ability3"	"bane_nightmare"
 		"Ability4"	"bane_fiends_grip"
-		"Ability5"	""
-		"Ability6"	"bane_nightmare_end"
+		"Ability5"	"bane_nightmare_end"
+		"Ability6"	""
 		"AttackRate"	"1.7"
 		"Ability7"	""
 		"Ability8"	""
@@ -90,7 +89,36 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
+	}
+
+	"npc_dota_hero_beastmaster"
+	{
+		"override_hero"	"npc_dota_hero_beastmaster"
+		"Ability1"	"beastmaster_wild_axes"
+		"Ability2"	"beastmaster_call_of_the_wild"
+		"Ability3"	"beastmaster_inner_beast"
+		"Ability4"	"beastmaster_primal_roar"
+		"AttackRate"	"1.7"
+		"Ability5"	""
+		"Ability6"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+		"Ability17"	""
+		"Ability18"	""
+		"Ability19"	""
+		"Ability20"	""
+		"Ability21"	""
+		"Ability22"	""
+		"Ability23"	""
+		"Ability24"	""
 	}
 
 	"npc_dota_hero_bloodseeker"
@@ -121,7 +149,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_drow_ranger"
@@ -152,7 +179,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_earthshaker"
@@ -183,7 +209,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_juggernaut"
@@ -214,7 +239,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_mirana"
@@ -245,7 +269,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_nevermore"
@@ -281,23 +304,22 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_morphling"
 	{
 		"override_hero"	"npc_dota_hero_morphling"
 		"Ability1"	"morphling_waveform"
-		"Ability2"	"morphling_adaptive_strike"
-		"Ability3"	"morphling_morph_agi"
-		"Ability4"	"morphling_morph_str"
-		"Ability5"	"morphling_hybrid"
-		"Ability6"	"morphling_replicate"
-		"Ability7"	"morphling_morph"
-		"Ability8"	"morphling_morph_replicate"
-		"Ability9"	""
+		"Ability2"	"morphling_adaptive_strike_agi"
+		"Ability3"	"morphling_adaptive_strike_str"
+		"Ability4"	"morphling_morph_agi"
+		"Ability5"	"morphling_morph_str"
+		"Ability6"	"morphling_morph"
+		"Ability7"	"rubick_hidden1"
+		"Ability8"	"rubick_hidden2"
+		"Ability9"	"morphling_replicate"
+		"Ability10"	"morphling_morph_replicate"
 		"AttackRate"	"1.55"
-		"Ability10"	""
 		"Ability11"	""
 		"Ability12"	""
 		"Ability13"	""
@@ -312,7 +334,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_puck"
@@ -343,7 +364,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_razor"
@@ -379,7 +399,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_rubick"
@@ -440,7 +459,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_storm_spirit"
@@ -471,7 +489,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_sven"
@@ -507,7 +524,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_tiny"
@@ -543,7 +559,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_vengefulspirit"
@@ -574,7 +589,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_windrunner"
@@ -605,7 +619,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_zuus"
@@ -636,7 +649,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_kunkka"
@@ -672,7 +684,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_lina"
@@ -703,7 +714,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_lich"
@@ -734,7 +744,36 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
+	}
+
+	"npc_dota_hero_life_stealer"
+	{
+		"override_hero"	"npc_dota_hero_life_stealer"
+		"Ability1"	"life_stealer_rage"
+		"Ability2"	"life_stealer_feast"
+		"Ability3"	"life_stealer_open_wounds"
+		"Ability4"	"life_stealer_assimilate"
+		"Ability5"	"life_stealer_assimilate_eject"
+		"Ability6"	"life_stealer_infest"
+		"Ability7"	"life_stealer_control"
+		"Ability8"	"life_stealer_consume"
+		"AttackRate"	"1.9"
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+		"Ability17"	""
+		"Ability18"	""
+		"Ability19"	""
+		"Ability20"	""
+		"Ability21"	""
+		"Ability22"	""
+		"Ability23"	""
+		"Ability24"	""
 	}
 
 	"npc_dota_hero_lion"
@@ -765,7 +804,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_shadow_shaman"
@@ -796,7 +834,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_slardar"
@@ -827,7 +864,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_tidehunter"
@@ -858,7 +894,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_witch_doctor"
@@ -889,7 +924,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_enigma"
@@ -920,7 +954,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_sniper"
@@ -952,7 +985,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_necrolyte"
@@ -983,7 +1015,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_queenofpain"
@@ -1014,7 +1045,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_venomancer"
@@ -1045,7 +1075,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_death_prophet"
@@ -1076,7 +1105,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_phantom_assassin"
@@ -1107,7 +1135,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_pugna"
@@ -1139,7 +1166,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_templar_assassin"
@@ -1170,7 +1196,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 		"AttackRange"		"200"
 	}
 
@@ -1202,7 +1227,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_luna"
@@ -1233,7 +1257,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_dazzle"
@@ -1264,7 +1287,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_rattletrap"
@@ -1295,7 +1317,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_leshrac"
@@ -1326,7 +1347,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_furion"
@@ -1357,7 +1377,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_dark_seer"
@@ -1388,7 +1407,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_clinkz"
@@ -1419,7 +1437,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_enchantress"
@@ -1450,7 +1467,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_night_stalker"
@@ -1481,7 +1497,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_broodmother"
@@ -1512,7 +1527,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_bounty_hunter"
@@ -1543,7 +1557,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_weaver"
@@ -1574,7 +1587,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_jakiro"
@@ -1605,7 +1617,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_batrider"
@@ -1636,7 +1647,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_chen"
@@ -1667,7 +1677,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_spectre"
@@ -1698,7 +1707,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_ancient_apparition"
@@ -1729,7 +1737,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_ursa"
@@ -1760,7 +1767,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_spirit_breaker"
@@ -1791,7 +1797,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_alchemist"
@@ -1822,7 +1827,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_invoker"
@@ -1853,7 +1857,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_silencer"
@@ -1886,7 +1889,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_obsidian_destroyer"
@@ -1919,7 +1921,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_lycan"
@@ -1950,7 +1951,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_brewmaster"
@@ -1981,7 +1981,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_shadow_demon"
@@ -2012,7 +2011,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_lone_druid"
@@ -2043,7 +2041,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_chaos_knight"
@@ -2078,7 +2075,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_meepo"
@@ -2112,7 +2108,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_treant"
@@ -2144,7 +2139,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_undying"
@@ -2180,7 +2174,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_disruptor"
@@ -2211,7 +2204,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_nyx_assassin"
@@ -2242,7 +2234,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_naga_siren"
@@ -2278,7 +2269,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_keeper_of_the_light"
@@ -2309,7 +2299,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_visage"
@@ -2340,7 +2329,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_slark"
@@ -2371,7 +2359,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_troll_warlord"
@@ -2402,7 +2389,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_centaur"
@@ -2433,7 +2419,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_magnataur"
@@ -2464,7 +2449,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_shredder"
@@ -2495,7 +2479,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_bristleback"
@@ -2526,7 +2509,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_tusk"
@@ -2557,7 +2539,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_skywrath_mage"
@@ -2588,7 +2569,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_abaddon"
@@ -2619,7 +2599,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_elder_titan"
@@ -2650,7 +2629,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_legion_commander"
@@ -2681,7 +2659,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_ember_spirit"
@@ -2717,7 +2694,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_earth_spirit"
@@ -2748,7 +2724,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_terrorblade"
@@ -2779,7 +2754,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_phoenix"
@@ -2810,7 +2784,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_oracle"
@@ -2841,7 +2814,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_techies"
@@ -2872,7 +2844,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_winter_wyvern"
@@ -2903,7 +2874,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_arc_warden"
@@ -2934,7 +2904,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_abyssal_underlord"
@@ -2965,7 +2934,6 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
 	}
 
 	"npc_dota_hero_monkey_king"
@@ -2996,6 +2964,63 @@
 		"Ability22"	""
 		"Ability23"	""
 		"Ability24"	""
-		"DisableWearables" "0"
+	}
+
+	"npc_dota_hero_pangolier"
+	{
+		"override_hero"	"npc_dota_hero_pangolier"
+		"Ability1"	"pangolier_swashbuckle"
+		"Ability2"	"pangolier_shield_crash"
+		"Ability3"	"pangolier_heartpiercer"
+		"Ability4"	"pangolier_gyroshell"
+		"Ability5"	"pangolier_gyroshell_stop"
+		"Ability6"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+		"Ability17"	""
+		"Ability18"	""
+		"Ability19"	""
+		"Ability20"	""
+		"Ability21"	""
+		"Ability22"	""
+		"Ability23"	""
+		"Ability24"	""
+	}
+
+	"npc_dota_hero_dark_willow"
+	{
+		"override_hero"	"npc_dota_hero_dark_willow"
+		"Ability1"	"dark_willow_bramble_maze"
+		"Ability2"	"dark_willow_shadow_realm"
+		"Ability3"	"dark_willow_cursed_crown"
+		"Ability4"	"dark_willow_bedlam"
+		"Ability5"	"dark_willow_terrorize"
+		"Ability6"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+		"Ability17"	""
+		"Ability18"	""
+		"Ability19"	""
+		"Ability20"	""
+		"Ability21"	""
+		"Ability22"	""
+		"Ability23"	""
+		"Ability24"	""
 	}
 }

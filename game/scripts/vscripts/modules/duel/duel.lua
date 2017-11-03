@@ -77,7 +77,7 @@ function Duel:StartDuel()
 		for _,unit in pairs(v) do
 			local pid = unit:GetPlayerOwnerID()
 			if not unit:IsAlive() then
-				unit:RespawnHero(false, false, false)
+				unit:RespawnHero(false, false)
 			end
 			if PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 				heroes_in_teams[i] = (heroes_in_teams[i] or 0) + 1

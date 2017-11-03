@@ -32,7 +32,6 @@ function Structures:GiveCourier(hero)
 				courier:UpgradeToFlyingCourier()
 
 				courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
-				courier:RemoveAbility("courier_burst")
 
 				TEAMS_COURIERS[tn] = courier
 			end
