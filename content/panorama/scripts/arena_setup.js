@@ -74,17 +74,17 @@ function Snippet_Team(team) {
 	if (TeamPanels[team] == null) {
 		var panel = $.CreatePanel('Panel', $('#TeamList'), '');
 		panel.BLoadLayoutSnippet('Team');
+		panel.AddClass('Team_' + team)
 		panel.SetPanelEvent('onactivate', function() {
 			Game.PlayerJoinTeam(team);
 		});
-		var teamDetails = Game.GetTeamDetails(team);
-		var teamColor = GameUI.CustomUIConfig().team_colors[team];
-		panel.SetDialogVariable('team_name', $.Localize(teamDetails.team_name));
-		panel.FindChildTraverse('TeamBackgroundGradient').style.backgroundColor = 'gradient(linear, 0% 0%, 100% 100%, from(#000000AA), to(' + teamColor + '80));';
-		panel.FindChildTraverse('TeamBackgroundGradientHighlight').style.backgroundColor = 'gradient(linear, 0% 0%, 100% 100%, from(#000000AA), to(' + teamColor + 'A0));';
-		// var rgb = hexToRgb(teamColor)
 
+		var teamColor = GameUI.CustomUIConfig().team_colors[team];
 		panel.FindChildTraverse('TeamNameLabel').style.color = shadeColor2(teamColor, 0.75);
+
+		var teamDetails = Game.GetTeamDetails(team);
+		panel.SetDialogVariable('team_name', $.Localize(teamDetails.team_name));
+
 		panel.EmptySlots = [];
 		for (var i = 0; i < teamDetails.team_max_players; ++i) {
 			var slot = $.CreatePanel('Panel', panel.FindChildTraverse('PlayerList'), '');

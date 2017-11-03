@@ -164,7 +164,6 @@ function OnAdsClicked() {
 	$('#AdsBanner').SetImage('https://angelarenablackstar-ark120202.rhcloud.com/ads/loading_screen/' + (russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png'));
 
 	$('#OptionVotings').RemoveAndDeleteChildren();
-	$('#loading-alastor').visible = russianLangs.indexOf($.Language()) > -1;
 	CheckStartable();
 	FillTips();
 	$('#TipsPanel').visible = TipList.length > 0;
