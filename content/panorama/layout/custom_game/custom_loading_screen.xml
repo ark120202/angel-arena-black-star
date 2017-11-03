@@ -17,9 +17,10 @@
 		</snippet>
 		<snippet name="TopPlayer">
 			<Panel class="TopPlayer">
+				<Label id="PlayerPlace" text="{s:place}"/>
 				<DOTAAvatarImage id="PlayerAvatar" />
 				<DOTAUserName id="PlayerName" />
-				<Label id="PlayerRating" text="{d:rating}"/>
+				<Label id="PlayerRating" text="{s:rating}"/>
 			</Panel>
 		</snippet>
 	</snippets>

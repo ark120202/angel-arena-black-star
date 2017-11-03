@@ -169,7 +169,7 @@
 		margin-right: 325px
 
 #TopPlayers
-	width: 350px
+	width: 360px
 	padding: 12px
 	margin-top: 8px
 	margin-left: 4px
@@ -201,6 +201,22 @@
 	margin: 2px 0
 	background-color: rgba(0, 0, 0, .7)
 	flow-children: right
+
+	&.LocalPlayer
+		background-color: rgba(63, 63, 63, .7)
+
+#PlayerPlace
+	min-width: 42px
+	font-size: 24px
+	font-weight: bold
+	color: #fb0
+	text-align: center
+	align: right center
+
+	.NotInTop &
+		font-size: 18px
+		font-weight: normal
+		color: #fff
 
 #PlayerAvatar
 	vertical-align: center

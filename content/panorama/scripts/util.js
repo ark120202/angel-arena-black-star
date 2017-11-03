@@ -18,7 +18,7 @@ var console = {
 	}
 };
 
-var ServerAddress = 'https://stats.dota-aabs.com/';
+var ServerAddress = false ? 'http://127.0.0.1:6502/' : 'https://stats.dota-aabs.com/';
 
 var HERO_SELECTION_PHASE_NOT_STARTED = 0;
 var HERO_SELECTION_PHASE_BANNING = 1;
