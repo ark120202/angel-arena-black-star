@@ -11,8 +11,8 @@ DOTA_DEFAULT_ATTRIBUTES = {
 		stack = 0.01,
 		default = 0.7,
 
-		property = MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-		getter = "GetModifierConstantHealthRegen",
+		-- property = MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+		-- getter = "GetModifierHealthRegenPercentage",
 	},
 	perk_status_resistance_pct = {
 		attribute = DOTA_ATTRIBUTE_STRENGTH,
@@ -20,9 +20,8 @@ DOTA_DEFAULT_ATTRIBUTES = {
 		stack = 0.01,
 		default = 0.15,
 
-		-- TODO: Not works now
-		property = MODIFIER_PROPERTY_STATUS_RESISTANCE,
-		getter = "GetModifierStatusResistance",
+		-- property = MODIFIER_PROPERTY_STATUS_RESISTANCE,
+		-- getter = "GetModifierStatusResistance",
 	},
 	armor = {
 		attribute = DOTA_ATTRIBUTE_AGILITY,
@@ -61,8 +60,8 @@ DOTA_DEFAULT_ATTRIBUTES = {
 		stack = 0.01,
 		default = 2,
 
-		property = MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
-		getter = "GetModifierPercentageManaRegen",
+		-- property = MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
+		-- getter = "GetModifierPercentageManaRegen",
 	},
 	spell_amplify_pct = {
 		attribute = DOTA_ATTRIBUTE_INTELLECT,

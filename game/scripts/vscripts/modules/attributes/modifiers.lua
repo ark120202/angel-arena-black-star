@@ -15,7 +15,7 @@ local function createModifier(property, getter, step)
 end
 
 for propName, propValue in pairs(DOTA_DEFAULT_ATTRIBUTES) do
-	if propValue.recalculate == nil then
+	if propValue.recalculate == nil and propValue.property then
 		local modifierName = propValue.modifier or ("modifier_attribute_" .. propName)
 		_G[modifierName] = createModifier(propValue.property, propValue.getter, propValue.step or 1)
 	end

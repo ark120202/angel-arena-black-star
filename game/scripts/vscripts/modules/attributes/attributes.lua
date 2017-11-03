@@ -64,7 +64,7 @@ function Attributes:CalculateStatBonus(hero)
 			recalculated = true
 			if propValue.recalculate ~= nil then
 				if propValue.recalculate then propValue.recalculate(hero, attributeValue) end
-			else
+			elseif propValue.property then
 				local modifierName = propValue.modifier or ("modifier_attribute_" .. propName)
 				local adjustment = Attributes:GetAdjustmentForProp(hero, propName)
 				self:CheckAttributeModifier(hero, modifierName)
