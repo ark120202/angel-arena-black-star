@@ -231,6 +231,7 @@ DOTA_Tooltip_ability_item_heart_cyclone_Note0: Target is invulnerable during Shi
 DOTA_Tooltip_ability_item_heart_cyclone_Note1: Shift can purge some buffs and debuffs.
 DOTA_Tooltip_ability_item_heart_cyclone_bonus_strength: +$str
 DOTA_Tooltip_ability_item_heart_cyclone_bonus_health: +$health
+DOTA_Tooltip_ability_item_heart_cyclone_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_heart_cyclone_health_regen_percent_per_second: '%HEALTH RESTORED PER SECOND:'
 DOTA_Tooltip_ability_item_heart_cyclone_active_health_regen_percent_per_second: '%HEALTH RESTORED PER SECOND IN SHIFT:'
 DOTA_Tooltip_ability_item_heart_cyclone_active_damage_percent_per_second: '%DAMAGE PER SECOND IN SHIFT:'

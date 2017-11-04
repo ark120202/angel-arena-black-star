@@ -238,8 +238,6 @@ DOTA_Tooltip_ability_item_heart_cyclone_Description: |-
   <h1>Пассивная: Health Regeneration</h1> Восстанавливает определенный процент максимального здоровья в секунду. Если владелец получит урон от вражеского героя или Рошана, способность отключается на %cooldown_melee% сек. для героев ближнего боя, или на %cooldown_ranged_tooltip% сек. для героев дальнего боя.
 DOTA_Tooltip_ability_item_heart_cyclone_Note0: Во время действия этой способности цель не получает урона.
 DOTA_Tooltip_ability_item_heart_cyclone_Note1: Shift может снимать некоторые положительные и отрицательные эффекты.
-DOTA_Tooltip_ability_item_heart_cyclone_bonus_strength: +$str
-DOTA_Tooltip_ability_item_heart_cyclone_bonus_health: +$health
 DOTA_Tooltip_ability_item_heart_cyclone_health_regen_percent_per_second: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
 DOTA_Tooltip_ability_item_heart_cyclone_active_health_regen_percent_per_second: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ В SHIFT:'
 DOTA_Tooltip_ability_item_heart_cyclone_active_damage_percent_per_second: '%УРОН В СЕКУНДУ В SHIFT:'
