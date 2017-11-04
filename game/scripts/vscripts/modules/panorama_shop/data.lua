@@ -184,6 +184,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_mask_of_madness",
 			"item_helm_of_the_dominator",
 			"item_dragon_lance",
+			"item_trident",
 			"item_maelstrom",
 			"item_heavens_halberd_arena",
 			"item_mjollnir",
