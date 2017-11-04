@@ -1,7 +1,7 @@
 function CreateLightningBlot(position)
 	local originalPosition
 	local lightningRodRadius = GetAbilitySpecial("item_lightning_rod", "protection_radius")
-	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, lightningRodRadius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)) do
+	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, lightningRodRadius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)) do
 		if v:HasModifier("modifier_item_lightning_rod_ward") then
 			originalPosition = position
 			position = v:GetAbsOrigin() + Vector(0, 0, 150)
@@ -21,7 +21,7 @@ function CreateLightningBlot(position)
 
 	GridNav:DestroyTreesAroundPoint(position, aoe, true)
 	local damage = GetDOTATimeInMinutesFull() * RandomInt(50, 100)
-	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
+	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
 		if not v:IsMagicImmune() then
 			ApplyDamage({
 				attacker = GLOBAL_DUMMY,
@@ -42,7 +42,7 @@ function CreateCrystalNova(position)
 	EmitSoundOnLocationWithCaster(position, "Hero_Crystal.CrystalNova", nil)
 	local damage = 100 + GetDOTATimeInMinutesFull() * RandomInt(40, 90)
 	local duration = 0.4 + ( RandomInt(2, 7) / 10 )
-	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
+	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
 		if not v:IsMagicImmune() then
 			ApplyDamage({
 				attacker = GLOBAL_DUMMY,
