@@ -125,10 +125,12 @@ function Kills:_GiveKillGold(killerEntity, killedUnit, goldChange)
 end
 
 function Kills:CreateKillTooltip(killer, killed, gold)
-	CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {
+	local toastData = {
 		type = "kill",
 		killerPlayer = killer,
 		victimPlayer = killed,
 		gold = gold,
-	})
+	}
+	CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", toastData)
+	CustomGameEventManager:Send_ServerToTeam(1, "create_custom_toast", toastData)
 end
