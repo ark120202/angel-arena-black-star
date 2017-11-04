@@ -188,7 +188,7 @@ function GameMode:OnEntityKilled(keys)
 
 				local killedUnits = killedUnit:GetFullName() == "npc_dota_hero_meepo" and
 					MeepoFixes:FindMeepos(PlayerResource:GetSelectedHeroEntity(killedUnit:GetPlayerID()), true) or
-					{ unit }
+					{ killedUnit }
 				for _,v in ipairs(killedUnits) do
 					v:SetTimeUntilRespawn(respawnTime)
 					v.RespawnTimeModifierBloodstone = nil
