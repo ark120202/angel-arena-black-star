@@ -3865,28 +3865,28 @@
 
 	"tiny_grow"
 	{
-		"MaxLevel"	"7"
+		"MaxLevel"	"3"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"status_resistance"			"20 25 30 35 40 45 50"
+				"status_resistance"			"20 30 40"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"40 75 110 145 180 215 250"
+				"bonus_damage"				"40 80 120"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed_reduction"	"30 40 50 60 70 80 90"
+				"attack_speed_reduction"	"30"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movement_speed"			"40 45 50 55 60 65 70"
+				"movement_speed"			"40 50 60"
 			}
 		}
 	}
