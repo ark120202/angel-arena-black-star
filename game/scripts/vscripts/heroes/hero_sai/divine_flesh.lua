@@ -63,12 +63,29 @@ modifier_sai_divine_flesh_off = class({
 })
 
 function modifier_sai_divine_flesh_off:DeclareFunctions()
-	return {MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE}
+	return { MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE }
 end
 
 function modifier_sai_divine_flesh_off:GetModifierHealthRegenPercentage()
-	local ability = self:GetAbility()
-	local parent = self:GetParent()
-	local sai_invulnerability = parent:FindAbilityByName("sai_invulnerability")
-	return sai_invulnerability and sai_invulnerability:GetToggleState() and ability:GetSpecialValueFor("health_regeneration_pct") * sai_invulnerability:GetSpecialValueFor("divine_flesh_regen_mult") or ability:GetSpecialValueFor("health_regeneration_pct")
+	return self.health_regeneration_pct or self:GetSharedKey("health_regeneration_pct") or 0
+end
+
+if IsServer() then
+	function modifier_sai_divine_flesh_off:OnCreated()
+		self:StartIntervalThink(0.1)
+		self:OnIntervalThink()
+	end
+
+	function modifier_sai_divine_flesh_off:OnIntervalThink()
+		local ability = self:GetAbility()
+		local parent = self:GetParent()
+		local sai_invulnerability = parent:FindAbilityByName("sai_invulnerability")
+		local isUnderInvulnerability = sai_invulnerability and sai_invulnerability:GetToggleState()
+
+		self.health_regeneration_pct = ability:GetSpecialValueFor("health_regeneration_pct")
+		if isUnderInvulnerability then
+			self.health_regeneration_pct = self.health_regeneration_pct * sai_invulnerability:GetSpecialValueFor("divine_flesh_regen_mult")
+		end
+		self:SetSharedKey("health_regeneration_pct", self.health_regeneration_pct)
+	end
 end
