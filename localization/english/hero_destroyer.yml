@@ -10,13 +10,14 @@ DOTA_Tooltip_ability_destroyer_armor_crush_armor_reduction: 'ARMOR REDUCTION:'
 DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'DURATION:'
 
 DOTA_Tooltip_ability_destroyer_seal_of_limit: Seal of Limit
-DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: Destroyer imposes the seal of Ash Lagor upon himself, limiting his maximum health to %max_health_pct%%%, while at the same time increasing the speed of movement, attack speed, armor and health regeneration.
+DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: Destroyer imposes the seal of Ash Lagor upon himself, limiting his maximum health to %max_health_pct%%%, while at the same time increasing the speed of movement, attack speed, armor, magic damage resistance and health regeneration.
 DOTA_Tooltip_ability_destroyer_seal_of_limit_Lore: Seal is fatal to all creatures from the flesh, but it has the opposite effect for the steel body of Kronshak.
 DOTA_Tooltip_ability_destroyer_seal_of_limit_duration: 'DURATION:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_max_health_pct: '%HEALTH LIMIT:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_movement_speed: 'MOVEMENT SPEED:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_attack_speed: 'ATTACK SPEED:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_bonus_armor: 'BONUS ARMOR:'
+DOTA_Tooltip_ability_destroyer_seal_of_limit_bonus_magical_damage_resistance_pct: '%BONUS MAGIC DAMAGE RESISTANCE:'
 DOTA_Tooltip_ability_destroyer_seal_of_limit_health_regen: 'HEALTH REGEN:'
 DOTA_Tooltip_modifier_destroyer_seal_of_limit: Seal of Limit
 DOTA_Tooltip_modifier_destroyer_seal_of_limit_Description: Max health is limited, yet movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, health regeneration increased by %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%

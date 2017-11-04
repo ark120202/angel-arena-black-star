@@ -128,15 +128,15 @@
 				"var_type"			"FIELD_INTEGER"
 				"bonus_armor"		"8 12 16 20 24 30 36"
 			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"health_regen"		"10 15 20 25 30 35 40"
-			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_magical_damage_resistance_pct"	"10 15 20 25 30 35 40"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health_regen"		"10 15 20 25 30 35 40"
 			}
 		}
 
