@@ -12,7 +12,7 @@ function ManaBreak(keys)
 		if caster:HasScepter() then
 			ParticleManager:CreateParticle("particles/arena/units/heroes/hero_antimage/mana_break_cleave.vpcf", PATTACH_ABSORIGIN, keys.target)
 		end
-		for _,target in ipairs(caster:HasScepter() and FindUnitsInRadius(caster:GetTeamNumber(), keys.target:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("aoe_radius_scepter", level), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MANA_ONLY, FIND_ANY_ORDER, false) or {keys.target}) do
+		for _,target in ipairs(caster:HasScepter() and FindUnitsInRadius(caster:GetTeamNumber(), keys.target:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("aoe_radius_scepter", level), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MANA_ONLY, FIND_ANY_ORDER, false) or {keys.target}) do
 			if not target:IsMagicImmune() then
 				local manaBurn = baseManaBurn + (target:GetMaxMana() * baseManaBurnPct)
 				manaBurn = target == keys.target and manaBurn or manaBurn * mana_to_secondary_targets
