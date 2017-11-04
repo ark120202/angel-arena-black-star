@@ -6,7 +6,7 @@ function RocketBarrage(keys)
 		ability:ToggleAbility()
 		caster:RemoveModifierByName("modifier_gyrocopter_rocket_barrage_arena")
 	end
-	local units = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_ANY_ORDER, false)
+	local units = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_ANY_ORDER, false)
 	if #units > 0 then
 		if not caster:HasModifier("modifier_gyrocopter_flak_cannon_arena") or not caster:HasScepter() then
 			units = {units[RandomInt(1, #units)]}
