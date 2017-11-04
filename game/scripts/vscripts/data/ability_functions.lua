@@ -194,13 +194,6 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			}
 		end
 	end,
-	modifier_item_lucifers_claw_unique = function(_, _, inflictor)
-		if not IsValidEntity(inflictor) then
-			return {
-				LifestealPercentage = GetAbilitySpecial("item_lucifers_claw", "lifesteal_percent")
-			}
-		end
-	end,
 	modifier_talent_lifesteal = function(attacker, _, inflictor)
 		if not IsValidEntity(inflictor) then
 			return {

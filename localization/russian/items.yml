@@ -194,18 +194,12 @@ DOTA_Tooltip_modifier_item_three_spirits_blades_fast_attack_Description: '{lc:mo
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
   <h1>Активируемая: Unwilling Ritual</h1> Используется на крипов. Цель приносится в жертву для Думлинга. Думлинг перенемает способности принесенного в жертву существа и добавляет его здоровье, урон и запас маны к характеристикам Думлинга. Изначальные характеристики Думлинга: %doomling_health% здоровья, %doomling_mana% маны, %doomling_damage_min%-%doomling_damage_max% урона, %doomling_health_regen% регенерации здоровья, %doomling_mana_regen% регенерации маны. Герой получает обычное золото и опыт за убийство жертвы.
-  <h1>Пассивная: Quell</h1> Увеличивает урон от атак по юнитам, не являющимися героями, в зависимости от типа атаки владельца. Не увеличивает урон по Боссам.
-DOTA_Tooltip_ability_item_lucifers_claw_Note0: У Думлинга есть вампиризм и Quell
-DOTA_Tooltip_ability_item_lucifers_claw_Note1: Думлинг - крип-герой с бесконечным временем жизни. На него может быть направлено большинство способностей.
-DOTA_Tooltip_ability_item_lucifers_claw_Note2: 'Перезарядка при использовании на дереве: 4 секунды.'
+  <h1>Пассивная: Quell</h1> Увеличивает урон от атак по существам, не являющимися героями, на %damage_bonus% для героев ближнего боя или на %damage_bonus_ranged% — для дальнего.
+DOTA_Tooltip_ability_item_lucifers_claw_Note0: Думлинг - крип-герой с бесконечным временем жизни. На него может быть направлено большинство способностей.
+DOTA_Tooltip_ability_item_lucifers_claw_Note1: 'Перезарядка при использовании на дереве: 4 секунды.'
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_lucifers_claw_bonus_armor: +$armor
-DOTA_Tooltip_ability_item_lucifers_claw_bonus_all_stats: +$all
+DOTA_Tooltip_ability_item_lucifers_claw_bonus_all: +$all
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_lucifers_claw_lifesteal_percent: '%ВАМПИРИЗМ:'
-DOTA_Tooltip_ability_item_lucifers_claw_damage_bonus: '%ДОП. УРОН В БЛИЖНЕМ БОЮ:'
-DOTA_Tooltip_ability_item_lucifers_claw_damage_bonus_ranged: '%ДОП. УРОН В ДАЛЬНЕМ БОЮ:'
-DOTA_Tooltip_ability_item_lucifers_claw_quelling_range_tooltip: 'РАДИУС ИСПОЛЬЗОВАНИЯ:'
 
 DOTA_Tooltip_ability_item_pocket_riki: Pocket Riki
 DOTA_Tooltip_ability_item_pocket_riki_Description: |-

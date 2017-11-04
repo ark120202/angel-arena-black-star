@@ -737,7 +737,7 @@
 		"ItemResult"					"item_lucifers_claw"
 		"ItemRequirements"
 		{
-			"01"						"item_quelling_blade;item_helm_of_the_dominator"
+			"01"						"item_iron_talon;item_helm_of_the_dominator"
 		}
 	}
 
@@ -768,17 +768,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"5"
+				"bonus_health_regen"	"6"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"5"
+				"bonus_attack_speed"	"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all"		"5"
 			}
 			"04"
 			{
@@ -788,17 +788,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"180"
+				"damage_bonus"			"80"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"140"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"quelling_range_tooltip" "600"
+				"damage_bonus_ranged"	"60"
 			}
 			"08"
 			{
@@ -858,9 +853,9 @@
 				{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
 				}
 			}
 
@@ -874,7 +869,6 @@
 					{
 						"ScriptFile"	"kv.lua"
 						"Function"		"ModifyCreepDamage"
-						"damage"		"%attack_damage"
 						"damage_bonus"	"%damage_bonus"
 						"damage_bonus_ranged"	"%damage_bonus_ranged"
 					}
