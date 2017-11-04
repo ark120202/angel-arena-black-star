@@ -134,6 +134,7 @@ function Duel:StartDuel()
 						unit.PocketItem = nil
 					end
 					if _unit.OnDuel then
+						unit.OnDuel = true
 						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 						ProjectileManager:ProjectileDodge(unit)
 						unit:FindClearSpaceForUnitAndSetCamera(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
