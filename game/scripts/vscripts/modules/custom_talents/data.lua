@@ -453,1611 +453,1209 @@ CUSTOM_TALENTS_DATA = {
 NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_abaddon = {
 		group = 5,
-		cost = 1,
 	},
 	special_bonus_unique_abaddon_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_abaddon_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_alchemist = {
 		group = 5,
-		cost = 1,
 	},
 	special_bonus_unique_alchemist_2 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_alchemist_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_axe = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_axe_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_axe_3 = {
 		group = 3,
-		cost = 1,
 	},
 	special_bonus_unique_beastmaster = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_beastmaster_2 = {
 		group = 5,
-		cost = 1,
 	},
 	special_bonus_unique_beastmaster_3 = {
 		group = 4,
-		cost = 1,
 	},
 	special_bonus_unique_beastmaster_4 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_clinkz_1 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_clinkz_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_clinkz_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_juggernaut = {
 		group = 4,
-		cost = 1,
 	},
 	special_bonus_unique_juggernaut_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_juggernaut_3 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_winter_wyvern_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_winter_wyvern_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_winter_wyvern_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_winter_wyvern_4 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_terrorblade = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_terrorblade_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_terrorblade_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_luna_1 = {
 		group = 5,
-		cost = 1,
 	},
 	special_bonus_unique_luna_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_luna_3 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_luna_5 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_night_stalker = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_night_stalker_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_nyx = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_nyx_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_nyx_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_weaver_1 = {
 		group = 5,
-		cost = 1,
 	},
 	special_bonus_unique_weaver_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_weaver_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_weaver_4 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_weaver_5 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_ursa = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_ursa_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_ursa_3 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_ursa_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_ursa_5 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_chaos_knight = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_chaos_knight_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_chaos_knight_3 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_lycan_1 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_lycan_2 = {
 		group = 1,
-		cost = 1,
 	},
 	special_bonus_unique_lycan_3 = {
 		group = 5,
-		cost = 1,
 	},
 	special_bonus_unique_lycan_4 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_lycan_5 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_windranger = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_windranger_2 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_windranger_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_windranger_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_windranger_5 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_slark = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_slark_2 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_slark_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_slark_4 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_spectre = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_spectre_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_spectre_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_spectre_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_spectre_5 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_spirit_breaker_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_spirit_breaker_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_spirit_breaker_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_storm_spirit = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_storm_spirit_3 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_storm_spirit_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_storm_spirit_5 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_tidehunter = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_tidehunter_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_tidehunter_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_tidehunter_4 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_tinker = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_tinker_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_tinker_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_tiny = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_tiny_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_tiny_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_tiny_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_tiny_5 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_troll_warlord = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_troll_warlord_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_troll_warlord_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_troll_warlord_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_undying = {
 		group = 4,
-		cost = 1,
 	},
 	special_bonus_unique_undying_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_undying_3 = {
 		group = 5,
-		cost = 1,
 	},
 	special_bonus_unique_undying_4 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_undying_5 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_viper_1 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_viper_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_viper_3 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_viper_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_zeus = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_zeus_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_zeus_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_elder_titan = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_elder_titan_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_elder_titan_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_ember_spirit_1 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_ember_spirit_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_ember_spirit_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_ember_spirit_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_ember_spirit_5 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_lifestealer = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_lifestealer_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_lifestealer_3 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_lion = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_lion_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_lion_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_lion_4 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_skywrath = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_skywrath_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_skywrath_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_skywrath_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_skywrath_5 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_ogre_magi = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_ogre_magi_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_silencer = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_silencer_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_silencer_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_silencer_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_death_prophet = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_death_prophet_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_death_prophet_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_death_prophet_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_phantom_assassin = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_phantom_assassin_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_phantom_assassin_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_riki_1 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_riki_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_riki_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_riki_4 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_riki_5 = {
 		group = 12,
-		cost = 1,
 	},
 	special_bonus_unique_tusk = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_tusk_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_tusk_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_tusk_4 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_tusk_5 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_sniper_1 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_sniper_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_sniper_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_sniper_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_magnus_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_magnus_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_magnus_4 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_magnus_5 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_drow_ranger_1 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_drow_ranger_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_drow_ranger_3 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_drow_ranger_4 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_earth_spirit = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_earth_spirit_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_earth_spirit_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_huskar = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_huskar_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_naga_siren = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_naga_siren_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_naga_siren_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_oracle = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_oracle_2 = {
 		group = 4,
-		cost = 1,
 	},
 	special_bonus_unique_oracle_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_oracle_4 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_sand_king = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_sand_king_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_sand_king_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_sand_king_4 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_shadow_demon_1 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_shadow_demon_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_shadow_demon_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_shadow_demon_4 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_shadow_demon_5 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_slardar = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_slardar_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_slardar_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_lina_1 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_lina_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_lina_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_ancient_apparition_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_ancient_apparition_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_ancient_apparition_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_ancient_apparition_4 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_ancient_apparition_5 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_disruptor = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_disruptor_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_disruptor_3 = {
 		group = 5,
-		cost = 1,
 	},
 	special_bonus_unique_disruptor_4 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_disruptor_5 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_outworld_devourer = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_outworld_devourer_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_outworld_devourer_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_keeper_of_the_light = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_keeper_of_the_light_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_keeper_of_the_light_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_legion_commander = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_legion_commander_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_legion_commander_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_legion_commander_4 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_puck = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_puck_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_puck_3 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_pugna_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_pugna_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_pugna_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_pugna_4 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_pugna_5 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_pugna_6 = {
 		group = 5,
-		cost = 1,
 	},
 	special_bonus_unique_timbersaw = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_timbersaw_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_timbersaw_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_bloodseeker = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_bloodseeker_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_bloodseeker_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_bloodseeker_4 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_broodmother_1 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_broodmother_2 = {
 		group = 2,
-		cost = 1,
 	},
 	special_bonus_unique_broodmother_3 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_broodmother_4 = {
 		group = 3,
-		cost = 1,
 	},
 	special_bonus_unique_chen_1 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_chen_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_chen_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_chen_4 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_lone_druid_4 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_lone_druid_6 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_lone_druid_7 = {
 		group = 12,
-		cost = 1,
 	},
 	special_bonus_unique_lone_druid_8 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_lone_druid_9 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_techies = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_techies_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_techies_4 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_arc_warden = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_arc_warden_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_meepo = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_meepo_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_monkey_king = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_monkey_king_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_monkey_king_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_monkey_king_4 = {
 		group = 12,
-		cost = 1,
 	},
 	special_bonus_unique_monkey_king_5 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_monkey_king_6 = {
 		group = 13,
-		cost = 1,
 	},
 	special_bonus_unique_monkey_king_7 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_pangolier_2 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_pangolier_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_pangolier_4 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_pangolier_5 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_dark_willow_1 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_dark_willow_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_clockwerk = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_clockwerk_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_clockwerk_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_clockwerk_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_centaur_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_centaur_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_centaur_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_centaur_4 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_witch_doctor_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_witch_doctor_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_witch_doctor_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_witch_doctor_4 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_witch_doctor_5 = {
 		group = 12,
-		cost = 1,
 	},
 	special_bonus_unique_necrophos = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_necrophos_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_mirana_1 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_mirana_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_mirana_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_mirana_4 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_bounty_hunter = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_bounty_hunter_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_bounty_hunter_3 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_queen_of_pain = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_queen_of_pain_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_underlord = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_underlord_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_underlord_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_treant = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_treant_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_treant_3 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_treant_4 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_treant_5 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_razor = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_razor_2 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_razor_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_razor_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_visage_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_visage_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_visage_4 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_visage_5 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_visage_6 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_earthshaker = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_earthshaker_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_earthshaker_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_lich_1 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_lich_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_lich_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_rubick = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_rubick_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_rubick_3 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_rubick_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_rubick_5 = {
 		group = 12,
-		cost = 1,
 	},
 	special_bonus_unique_sven = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_sven_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_sven_3 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_dark_seer = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_dark_seer_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_dark_seer_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_dark_seer_4 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_dazzle_1 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_dazzle_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_dazzle_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_dazzle_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_shadow_shaman_1 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_shadow_shaman_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_shadow_shaman_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_shadow_shaman_4 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_shadow_shaman_5 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_vengeful_spirit_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_vengeful_spirit_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_vengeful_spirit_3 = {
 		group = 12,
-		cost = 1,
 	},
 	special_bonus_unique_vengeful_spirit_4 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_vengeful_spirit_5 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_vengeful_spirit_6 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_venomancer = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_venomancer_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_venomancer_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_venomancer_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_venomancer_5 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_venomancer_6 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_morphling_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_morphling_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_morphling_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_morphling_4 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_morphling_5 = {
 		group = 12,
-		cost = 1,
 	},
 	special_bonus_unique_leshrac_1 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_leshrac_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_leshrac_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_jakiro = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_jakiro_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_jakiro_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_jakiro_4 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_enigma = {
 		group = 5,
-		cost = 1,
 	},
 	special_bonus_unique_enigma_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_enigma_3 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_bane_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_bane_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_bane_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_bane_4 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_nevermore_1 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_nevermore_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_templar_assassin = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_templar_assassin_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_templar_assassin_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_templar_assassin_4 = {
 		group = 13,
-		cost = 1,
 	},
 	special_bonus_unique_templar_assassin_5 = {
 		group = 12,
-		cost = 1,
 	},
 	special_bonus_unique_doom_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_doom_4 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_doom_5 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_brewmaster = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_brewmaster_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_brewmaster_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_brewmaster_4 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_bristleback = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_bristleback_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_bristleback_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_furion = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_furion_2 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_furion_3 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_furion_4 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_phoenix_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_phoenix_2 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_phoenix_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_phoenix_4 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_phoenix_5 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_enchantress_1 = {
 		group = 4,
-		cost = 1,
 	},
 	special_bonus_unique_enchantress_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_enchantress_3 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_enchantress_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_enchantress_5 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_batrider_1 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_batrider_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_batrider_3 = {
 		group = 7,
-		cost = 1,
 	},
 	special_bonus_unique_wraith_king_2 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_wraith_king_3 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_wraith_king_5 = {
 		group = 1,
-		cost = 1,
 	},
 	special_bonus_unique_wraith_king_6 = {
 		group = 2,
-		cost = 1,
 	},
 	special_bonus_unique_kunkka = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_kunkka_2 = {
 		group = 8,
-		cost = 1,
 	},
 	special_bonus_unique_kunkka_3 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_kunkka_4 = {
 		group = 10,
-		cost = 1,
 	},
 	special_bonus_unique_invoker_1 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_invoker_2 = {
 		group = 6,
-		cost = 1,
 	},
 	special_bonus_unique_invoker_3 = {
 		group = 13,
-		cost = 1,
 	},
 	special_bonus_unique_invoker_4 = {
 		group = 12,
-		cost = 1,
 	},
 	special_bonus_unique_invoker_5 = {
 		group = 11,
-		cost = 1,
 	},
 	special_bonus_unique_invoker_6 = {
 		group = 14,
-		cost = 1,
 	},
 	special_bonus_unique_invoker_7 = {
 		group = 9,
-		cost = 1,
 	},
 	special_bonus_unique_invoker_8 = {
 		group = 10,
-		cost = 1,
 	},
 }
 
