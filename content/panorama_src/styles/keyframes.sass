@@ -110,3 +110,18 @@
 	100%
 		opacity: 1
 		transform: translateX(0)
+
+=randomMoving($disp)
+	0%
+	  transform: translateX(0) translateY(0)
+	100%
+	  transform: translateX(0) translateY(0)
+	@for $i from 1 through 49
+		#{$i * 2}%
+	  	transform: translateX(random($disp * 2) - $disp + px) translateY(random($disp * 2) - $disp + px)
+
+@keyframes 'LoadingScreenAngelArena'
+	+randomMoving(10)
+
+@keyframes 'LoadingScreenBlackStar'
+	+randomMoving(15)
