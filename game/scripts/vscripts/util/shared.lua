@@ -1,4 +1,4 @@
-require("utils/string")
+require("util/string")
 
 function CEntityInstance:GetNetworkableEntityInfo(key)
 	local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}

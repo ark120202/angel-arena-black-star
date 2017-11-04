@@ -1,3 +1,3 @@
 if IsServer() then return end
 
-require("utils/shared")
+require("util/shared")
