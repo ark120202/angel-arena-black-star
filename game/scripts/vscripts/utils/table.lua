@@ -233,3 +233,17 @@ function table.average(t)
 	end
 	return sum/#t
 end
+
+function table.uniq(t)
+	local seen = {}
+	local o = {}
+
+	for _,v in ipairs(t) do
+		if not seen[v] then
+			seen[v] = true
+			table.insert(o, v)
+		end
+	end
+
+	return o
+end
