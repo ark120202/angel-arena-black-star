@@ -450,6 +450,25 @@ CUSTOM_TALENTS_DATA = {
 	--Tinker - Rearm = Purge
 }
 
+-- A list of heroes, which have Changed flag, but some native talents for them are still relevant
+-- Value should be a table, where irrelevant talents should have a `true` value
+PARTIALLY_CHANGED_HEROES = {
+	npc_dota_hero_riki = {},
+	npc_dota_hero_ogre_magi = {},
+	npc_dota_hero_tinker = {},
+	npc_dota_hero_skeleton_king = {
+		special_bonus_unique_wraith_king_1 = true,
+		special_bonus_unique_wraith_king_4 = true,
+	},
+	npc_dota_hero_huskar = {
+		special_bonus_unique_huskar_2 = true,
+	},
+	npc_dota_hero_doom_bringer = {
+		special_bonus_unique_doom_2 = true,
+		special_bonus_unique_doom_3 = true,
+	},
+}
+
 NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_abaddon = {
 		group = 5,
