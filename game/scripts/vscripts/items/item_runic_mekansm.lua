@@ -1,4 +1,3 @@
-if IsClient() then require("utils/shared") end
 LinkLuaModifier("modifier_item_runic_mekansm", "items/item_runic_mekansm.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_runic_mekansm_effect", "items/item_runic_mekansm.lua", LUA_MODIFIER_MOTION_NONE)
 

@@ -1,5 +1,3 @@
-if IsClient() then require("utils/shared") end
-
 LinkLuaModifier("modifier_sara_evolution", "heroes/hero_sara/evolution.lua", LUA_MODIFIER_MOTION_NONE)
 
 sara_evolution = class({
