@@ -17,7 +17,7 @@ DOTA_Tooltip_modifier_saber_mana_burst_active: Mana Burst
 DOTA_Tooltip_modifier_saber_mana_burst_active_Description: 'Damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%, armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%'
 
 DOTA_Tooltip_ability_saber_instinct: Instinct
-DOTA_Tooltip_ability_saber_instinct_Description: 'Saber has a chance to dodge ranged hero attacks and block some of the melee hero damage.'
+DOTA_Tooltip_ability_saber_instinct_Description: 'Saber has a chance to evade ranged attack and block some part of melee attacks.'
 DOTA_Tooltip_ability_saber_instinct_Lore: Saber's instinct is extremely sharp due to the many battles that have been fought.
 DOTA_Tooltip_ability_saber_instinct_ranged_evasion_pct: '%RANGED EVASION:'
 DOTA_Tooltip_ability_saber_instinct_melee_block_chance: '%MELEE BLOCK CHANCE:'
