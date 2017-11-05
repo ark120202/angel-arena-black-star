@@ -69,23 +69,34 @@
 
 .TeamSelectTeam
 	$width: 480px
+	=team($lr-padding)
+		width: $width + $lr-padding * 2
+		padding: 6px ($lr-padding + 8px) 16px
+
 	padding-bottom: 12px
 	background-size: 100% 100%
 	transition-duration: .1s
-	//border: 2px solid gtey
 	transition-property: brightness, saturation
 	transition-timing-function: linear
 	horizontal-align: center
 
 	&.Team_2
-		width: $width + 195px
-		padding: 6px (195px / 2 + 8px) 16px
+		+team(195px / 2)
 		background-image: url('file://{images}/custom_game/loading_screen/team_2.png')
 
 	&.Team_3
-		width: $width + 195px
-		padding: 6px (195px / 2 + 8px) 16px
+		+team(195px / 2)
 		background-image: url('file://{images}/custom_game/loading_screen/team_3.png')
+
+	&.Team_6
+		+team(0)
+		background-color: rgba(201, 123, 191, .1)
+		border-radius: 5px
+
+	&.Team_7
+		+team(0)
+		background-color: rgba(242, 177, 177, .1)
+		border-radius: 5px
 
 	&.potential_drop_target
 		brightness: 2

@@ -119,7 +119,7 @@ function GetActualTalentGroup(unit) {
 }
 
 function Update() {
-	$.Schedule(0.2, Update);
+	$.Schedule(0.35, Update);
 	var unit = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID());
 	var points = Entities.GetAbilityPoints(unit);
 	$('#AbilityPointsLabel').text = points;
