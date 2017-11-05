@@ -1,4 +1,3 @@
-if IsClient() then require("utils/shared") end
 modifier_arena_hero = class({
 	IsPurgable    = function() return false end,
 	IsHidden      = function() return true end,
@@ -30,6 +29,7 @@ if IsServer() then
 
 	function modifier_arena_hero:OnIntervalThink()
 		local parent = self:GetParent()
+		Attributes:CalculateStatBonus(parent)
 		local hl = parent:GetLevel()
 		if hl > self.HeroLevel  then
 			if not parent:IsIllusion() then

@@ -185,18 +185,25 @@ function GameMode:OnEntityKilled(keys)
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
 			if killedUnit:IsRealHero() then
 				local respawnTime = killedUnit:CalculateRespawnTime()
-				killedUnit:SetTimeUntilRespawn(respawnTime)
-				MeepoFixes:ShareRespawnTime(killedUnit, respawnTime)
-				killedUnit.RespawnTimeModifierBloodstone = nil
-				killedUnit.RespawnTimeModifierSaiReleaseOfForge = nil
 
-				if killedUnit.OnDuel and Duel:IsDuelOngoing() then
-					killedUnit.OnDuel = nil
-					killedUnit.ArenaBeforeTpLocation = nil
-					if Duel:GetWinner() ~= nil then
-						Duel:EndDuel()
+				local killedUnits = killedUnit:GetFullName() == "npc_dota_hero_meepo" and
+					MeepoFixes:FindMeepos(PlayerResource:GetSelectedHeroEntity(killedUnit:GetPlayerID()), true) or
+					{ killedUnit }
+				for _,v in ipairs(killedUnits) do
+					v:SetTimeUntilRespawn(respawnTime)
+					v.RespawnTimeModifierBloodstone = nil
+					v.RespawnTimeModifierSaiReleaseOfForge = nil
+
+					if v.OnDuel then
+						v.OnDuel = nil
+						v.ArenaBeforeTpLocation = nil
 					end
 				end
+
+				if Duel:IsDuelOngoing() and Duel:GetWinner() ~= nil then
+					Duel:EndDuel()
+				end
+
 				if not IsValidEntity(killerEntity) or not killerEntity.GetPlayerOwner or not IsValidEntity(killerEntity:GetPlayerOwner()) then
 					Kills:OnEntityKilled(killedUnit:GetPlayerOwner(), nil)
 				elseif killerEntity == killedUnit then

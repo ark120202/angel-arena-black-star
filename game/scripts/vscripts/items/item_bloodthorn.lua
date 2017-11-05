@@ -48,8 +48,8 @@ function modifier_item_bloodthorn_arena:GetModifierPreAttack_BonusDamage()
 	return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end
 
-function modifier_item_bloodthorn_arena:GetModifierPercentageManaRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen_pct")
+function modifier_item_bloodthorn_arena:GetModifierConstantManaRegen()
+	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
 
 if IsServer() then

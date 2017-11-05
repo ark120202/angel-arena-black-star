@@ -202,7 +202,7 @@
 		"Ability3"	"shinobu_kokorowatari"
 		"Ability4"	"shinobu_yumewatari_lua"
 		"Ability5"	"shinobu_hide_in_shadows"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttackRange"			"150"
@@ -395,13 +395,13 @@
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttackRange"			"150"
 		"ProjectileModel"		""
-		"AttackRate"			"1.7"
+		"AttackRate"			"1.5"
 		"AttributeBaseStrength"	"24"
 		"AttributeBaseIntelligence"	"18"
 		"AttributeBaseAgility"	"21"
 		"AttributeStrengthGain"	"3.0"
 		"AttributeIntelligenceGain"	"2.1"
-		"AttributeAgilityGain"	"2.5"
+		"AttributeAgilityGain"	"3.0"
 		"AttackDamageMin"	"40"
 		"AttackDamageMax"	"41"
 	}
@@ -459,7 +459,7 @@
 
 	"npc_arena_hero_sai"
 	{
-		"Unreleased"	"1"
+		"DisabledInRanked"	"1"
 		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	"custom_scene_hero_sai"
 		"Model"	"models/units/sai/sai.vmdl"

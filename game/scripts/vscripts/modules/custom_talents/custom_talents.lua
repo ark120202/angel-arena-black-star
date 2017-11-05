@@ -1,4 +1,34 @@
 ModuleRequire(..., "data")
+
+local nativeTalents = ModuleRequire(..., "native")
+;(function()
+	local overridenTalents = LoadKeyValues("scripts/npc/override/talents.txt")
+	local brokenTalents = {}
+
+	for name, override in pairs(NATIVE_TALENTS_OVERRIDE) do
+		if nativeTalents[name] then
+			table.merge(nativeTalents[name], override)
+		else
+			table.insert(brokenTalents, name .. ": presents in native talents override, but not found in native talents list")
+		end
+	end
+
+	for name in pairs(overridenTalents) do
+		if not nativeTalents[name] then
+			table.insert(brokenTalents, name .. ": presents in ability override, but not found in native talents list")
+		end
+	end
+
+	if IsInToolsMode() and #brokenTalents > 0 then
+		for _,v in ipairs(brokenTalents) do
+			print(v)
+		end
+		error("Found " .. #brokenTalents .. " incorrect talents")
+	end
+
+	table.merge(CUSTOM_TALENTS_DATA, nativeTalents)
+end)()
+
 if not CustomTalents then
 	CustomTalents = class({})
 	CustomTalents.ModifierApplier = CreateItem("item_talent_modifier_applier", nil, nil)
@@ -24,6 +54,7 @@ local modifiers = {
 	"lifesteal",
 	--rune multiplier
 }
+
 for _,v in pairs(modifiers) do
 	ModuleLinkLuaModifier(..., "modifier_talent_" .. v, "modifiers/modifier_talent_" .. v)
 end
@@ -35,7 +66,7 @@ function CustomTalents:Init()
 	end)
 	local talentList = {}
 	for k,v in pairs(CUSTOM_TALENTS_DATA) do
-		local t = PlayerTables:copy(v)
+		local t = table.deepcopy(v)
 		if not talentList[t.group] then talentList[t.group] = {} end
 		t.name = k
 		t.effect = nil

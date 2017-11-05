@@ -8,12 +8,6 @@ function StatsClient:Init()
 	CustomGameEventManager:RegisterListener("stats_client_vote_guide", Dynamic_Wrap(StatsClient, "VoteGuide"))
 end
 
-function StatsClient:FetchTopPlayers()
-	StatsClient:Send("fetchTopPlayers", nil, function(response)
-		PlayerTables:CreateTable("loading_top_players", response, AllPlayersInterval)
-	end, nil, "GET")
-end
-
 function StatsClient:FetchPreGameData()
 	local data = {
 		matchid = tostring(GameRules:GetMatchID()),

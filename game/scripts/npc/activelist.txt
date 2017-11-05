@@ -1,5 +1,6 @@
-"CustomHeroList"
+"whitelist"
 {
+	"npc_dota_hero_target_dummy"	"1"
 	"npc_dota_hero_ancient_apparition" "1"
 	"npc_dota_hero_antimage" "1"
 	"npc_dota_hero_axe" "1"
@@ -112,5 +113,7 @@
 	"npc_dota_hero_winter_wyvern" "1"
 	"npc_dota_hero_arc_warden" "1"
 	"npc_dota_hero_abyssal_underlord" "1"
-	"npc_dota_hero_target_dummy"	"1"
+	"npc_dota_hero_monkey_king" "1"
+	"npc_dota_hero_pangolier"	"1"
+	"npc_dota_hero_dark_willow" "1"
 }

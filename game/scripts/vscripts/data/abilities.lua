@@ -98,6 +98,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	omniknight_select_enemies = true,
 
 	destroyer_body_reconstruction = true,
+	stargazer_cosmic_countdown = true,
 }
 
 COFFEE_BEAN_NOT_REFRESHABLE = {
@@ -115,13 +116,15 @@ BOSS_BANNED_ABILITIES = {
 	tusk_walrus_kick = true,
 	death_prophet_spirit_siphon = true,
 	item_force_staff = true,
+	item_hurricane_pike = true,
+	rubick_telekinesis = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
 SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	zuus_static_field = true,
 	enigma_midnight_pulse = true,
-	morphling_adaptive_strike = true,
+	morphling_adaptive_strike_agi = true,
 	nyx_assassin_spiked_carapace = true,
 	huskar_life_break = true,
 	nyx_assassin_mana_burn = true,
@@ -155,8 +158,6 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 }
 
 PERCENT_DAMAGE_MODIFIERS = {
-	["ember_spirit_flame_guard"] = GetAbilitySpecial("ember_spirit_flame_guard", "tick_interval"),
-	["ember_spirit_searing_chains"] = GetAbilitySpecial("ember_spirit_searing_chains", "tick_interval"),
 }
 
 DISABLE_HELP_ABILITIES = {

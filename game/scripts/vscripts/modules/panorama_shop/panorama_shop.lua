@@ -91,6 +91,7 @@ function PanoramaShop:InitializeItemTable()
 			cost = GetTrueItemCost(name),
 			names = {name:lower()},
 		}
+
 		if kv.ItemAliases then
 			for _,v in ipairs(string.split(kv.ItemAliases, ";")) do
 				if not table.contains(itemdata.names, v:lower()) then
@@ -98,18 +99,7 @@ function PanoramaShop:InitializeItemTable()
 				end
 			end
 		end
-		local translated_english = LANG_ENGLISH["DOTA_Tooltip_Ability_" .. name] or LANG_ENGLISH["DOTA_Tooltip_ability_" .. name]
-		if translated_english then
-			if not table.contains(itemdata.names, translated_english:lower()) then
-				table.insert(itemdata.names, translated_english:lower())
-			end
-		end
-		local translated_russian = LANG_RUSSIAN["DOTA_Tooltip_Ability_" .. name] or LANG_RUSSIAN["DOTA_Tooltip_ability_" .. name]
-		if translated_russian then
-			if not table.contains(itemdata.names, translated_russian:lower()) then
-				table.insert(itemdata.names, translated_russian:lower())
-			end
-		end
+
 		if RecipesToCheck[name] then
 			local recipedata = {
 				visible = GetTrueItemCost(RecipesToCheck[name]) > 0,
@@ -135,6 +125,7 @@ function PanoramaShop:InitializeItemTable()
 			end
 			itemdata.Recipe = recipedata
 		end
+
 		if kv.ItemStockMax or kv.ItemStockTime or kv.ItemInitialStockTime or kv.ItemStockInitial then
 			local stocks = {
 				ItemStockMax = kv.ItemStockMax or -1,
@@ -157,6 +148,7 @@ function PanoramaShop:InitializeItemTable()
 		end
 		PanoramaShop.FormattedData[name] = itemdata
 	end
+
 	for unit,itemlist in pairs(DROP_TABLE) do
 		for _,v in ipairs(itemlist) do
 			local iteminfo = PanoramaShop.FormattedData[v.Item]
@@ -174,11 +166,13 @@ function PanoramaShop:InitializeItemTable()
 			end
 		end
 	end
+
 	for name,items in pairs(itemsBuldsInto) do
 		if PanoramaShop.FormattedData[name] then
 			PanoramaShop.FormattedData[name].BuildsInto = items
 		end
 	end
+
 	-- checking all items in shop list
 	local Items = {}
 	for shopName, shopData in pairs(PANORAMA_SHOP_ITEMS) do
@@ -194,6 +188,7 @@ function PanoramaShop:InitializeItemTable()
 			end
 		end
 	end
+
 	PanoramaShop._ItemData = Items
 	CustomGameEventManager:RegisterListener("panorama_shop_item_buy", Dynamic_Wrap(PanoramaShop, "OnItemBuy"))
 	PlayerTables:CreateTable("panorama_shop_data", {ItemData = PanoramaShop.FormattedData, ShopList = Items}, AllPlayersInterval)

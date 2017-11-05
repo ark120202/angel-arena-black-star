@@ -10,7 +10,7 @@ modifier_weather_rain = class({
 	GetAuraRadius      = function() return 99999 end,
 	GetAuraDuration    = function() return 0.1 end,
 	GetAuraSearchTeam  = function() return DOTA_UNIT_TARGET_TEAM_BOTH end,
-	GetAuraSearchType  = function() return DOTA_UNIT_TARGET_ALL end,
+	GetAuraSearchType  = function() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end,
 	GetAuraSearchFlags = function() return DOTA_UNIT_TARGET_FLAG_NONE end,
 })
 

@@ -96,32 +96,30 @@ function Snippet_OptionVoting_Recalculate(votePanel, voteData) {
 	}
 }
 
-function Snippet_TopPlayer(player) {
+function Snippet_TopPlayer(localSteamID, player, index) {
 	var panel = $.CreatePanel('Panel', $('#TopPlayersList'), '');
 	panel.BLoadLayoutSnippet('TopPlayer');
+	panel.SetHasClass('LocalPlayer', localSteamID === player.steamid);
+	panel.SetHasClass('NotInTop', index >= 5);
+
 	panel.FindChildTraverse('PlayerAvatar').steamid = player.steamid;
 	panel.FindChildTraverse('PlayerName').steamid = player.steamid;
-	panel.SetDialogVariableInt('rating', player.Rating);
+	panel.SetDialogVariable('place', player.place || '?');
+	panel.SetDialogVariable('rating', player.Rating || 'TBD');
 }
 
 function CheckStartable() {
 	var player = Game.GetLocalPlayerInfo();
-	if (player == null)
+	if (player == null) {
 		$.Schedule(0.2, CheckStartable);
-	else {
+	} else {
 		$('#afterload_panel').visible = true;
-		// var LocalPlayerData = $('#LocalPlayerData');
-		// LocalPlayerData.BLoadLayout('file://{resources}/layout/custom_game/player_profiles.xml', false, false);
-		// LocalPlayerData.FindChildTraverse('CloseButton').vislbe = false;
-		// LocalPlayerData.LoadPanelForPlayer(Game.GetLocalPlayerID());
 		PlayerTables = GameUI.CustomUIConfig().PlayerTables;
 
 		$('#TopPlayersList').RemoveAndDeleteChildren();
-		DynamicSubscribePTListener('loading_top_players', function(tableName, changesObject) {
+		GetDataFromServer('fetchTopPlayers', { steamid: player.player_steamid }, function(topPlayers) {
 			$('#TopPlayers').AddClass('Loaded');
-			for(var i in changesObject) {
-				Snippet_TopPlayer(changesObject[i]);
-			}
+			topPlayers.forEach(Snippet_TopPlayer.bind(null, player.player_steamid));
 		});
 
 		DynamicSubscribePTListener('option_votings', function(tableName, changesObject, deletionsObject) {
@@ -164,7 +162,6 @@ function OnAdsClicked() {
 	$('#AdsBanner').SetImage('https://angelarenablackstar-ark120202.rhcloud.com/ads/loading_screen/' + (russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png'));
 
 	$('#OptionVotings').RemoveAndDeleteChildren();
-	$('#loading-alastor').visible = russianLangs.indexOf($.Language()) > -1;
 	CheckStartable();
 	FillTips();
 	$('#TipsPanel').visible = TipList.length > 0;

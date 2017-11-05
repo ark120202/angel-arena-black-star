@@ -1,5 +1,3 @@
-if IsClient() then require("utils/shared") end
-
 modifier_talent_movespeed_limit = class({
 	IsHidden        = function() return true end,
 	IsPermanent     = function() return true end,

@@ -77,7 +77,7 @@ function Duel:StartDuel()
 		for _,unit in pairs(v) do
 			local pid = unit:GetPlayerOwnerID()
 			if not unit:IsAlive() then
-				unit:RespawnHero(false, false, false)
+				unit:RespawnHero(false, false)
 			end
 			if PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 				heroes_in_teams[i] = (heroes_in_teams[i] or 0) + 1
@@ -107,8 +107,7 @@ function Duel:StartDuel()
 						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 							unit.OnDuel = true
 							Duel:FillPreduelUnitData(unit)
-							local health = unit:GetMaxHealth()
-							unit:SetHealth(unit:HasAbility("shinobu_vampire_blood") and health * 0.5 or health)
+							unit:SetHealth(unit:GetMaxHealth())
 							unit:SetMana(unit:GetMaxMana())
 							count = count + 1
 						end
@@ -135,6 +134,7 @@ function Duel:StartDuel()
 						unit.PocketItem = nil
 					end
 					if _unit.OnDuel then
+						unit.OnDuel = true
 						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 						ProjectileManager:ProjectileDodge(unit)
 						unit:FindClearSpaceForUnitAndSetCamera(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())

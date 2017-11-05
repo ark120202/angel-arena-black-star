@@ -116,14 +116,9 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 					--UTIL_Remove(ability)
 				end
 			end
+			hero:InterruptMotionControllers(false)
 			hero:DestroyAllModifiers()
 			hero:AddNewModifier(hero, nil, "modifier_hero_out_of_game", nil)
-
-			-- Crashes game for Earth/Ember/Storm spirits
-			-- Also allows us to get hero's data even after abandon
-			--[[Timers:CreateTimer(20, function()
-				UTIL_Remove(hero)
-			end)]]
 		end
 		local heroname = HeroSelection:GetSelectedHeroName(iPlayerID)
 		--local notLinked = true

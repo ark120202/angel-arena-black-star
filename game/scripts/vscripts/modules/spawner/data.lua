@@ -6,17 +6,17 @@ SPAWNER_CHAMPION_LEVELS = {
 	},
 	[3] = {
 		chance = 3,
-		minute = 10,
+		minute = 8,
 		model_scale = 0.35,
 	},
 	[4] = {
 		chance = 2,
-		minute = 15,
+		minute = 11,
 		model_scale = 0.4,
 	},
 	[5] = {
 		chance = 1,
-		minute = 20,
+		minute = 14,
 		model_scale = 0.45,
 	}
 }
@@ -28,16 +28,15 @@ CHAMPIONS_BANNED_ABILITIES = {
 	doom_bringer_devour_arena = true,
 	shinobu_eat_oddity = true,
 	clinkz_death_pact = true,
-	item_hand_of_midas_arena = true,
 }
 
 CREEP_UPGRADE_FUNCTIONS = {
 			   --[[ goldbounty  hp          damage      attackspeed movespeed   armor       xpbounty    ]]--
 	easy = {
-		[0]     = { 2,          20,         1,          1,          0.8,        1.0,        18          },
+		[0]     = { 2,          20,         1,          1,          0.8,        0,	        18          },
 		[5]     = { 2,          20,         1,          1,          1,          0,          20          },
-		[10]    = { 3,          20,         2,          2,          1.0,        0.5,        25          },
-		[15]    = { 4,          25,         3,          2,          1.0,        0.5,        30          },
+		[10]    = { 5,          25,         2,          2,          1.0,        0.5,        30          },
+		[15]    = { 4,          25,         3,          2,          1.0,        0.5,        40          },
 		[20]    = { 7,          30,         4,          0.4,        1.3,        0.5,        50          },
 		[30]    = { 11,         45,         6,          0.45,       0.45,       0.5,        90          },
 		[40]    = { 15,         60,         10,         0.6,        0.5,        0.5,        150         },
@@ -135,7 +134,7 @@ SPAWNER_SETTINGS = {
 		},
 	},
 	hard = {
-		SpawnedPerSpawn = 4,
+		SpawnedPerSpawn = 5,
 		MaxUnits = 40,
 		SpawnTypes = {
 			[0] ={

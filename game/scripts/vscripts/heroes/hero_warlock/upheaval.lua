@@ -23,7 +23,7 @@ function ApplyStacks(keys)
 	local dummy = keys.target
 	local ability = keys.ability
 	local slow_rate = ability:GetLevelSpecialValueFor("slow_rate", ability:GetLevel() - 1)
-	local units = FindUnitsInRadius(dummy:GetTeamNumber(), dummy:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("aoe", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+	local units = FindUnitsInRadius(dummy:GetTeamNumber(), dummy:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("aoe", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 	for _,v in ipairs(units) do
 		ability:ApplyDataDrivenModifier(caster, v, keys.modifier, {})
 		local stacks = math.floor(dummy.elapsed_cast_time) * slow_rate

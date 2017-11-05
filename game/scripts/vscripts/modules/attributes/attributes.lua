@@ -1,138 +1,83 @@
---Based on MNoya's lib
 ModuleRequire(..., "data")
+
+for propName, propValue in pairs(DOTA_DEFAULT_ATTRIBUTES) do
+	if propValue.recalculate == nil then
+		ModuleLinkLuaModifier(..., "modifier_attribute_" .. propName, "modifiers")
+	end
+end
+
 if not Attributes then
 	Attributes = class({})
-	Attributes.Applier = CreateItem("item_attributes_modifier_applier", nil, nil)
+	Attributes.Applier = CreateItem("item_dummy", nil, nil)
 end
 
-function Attributes:SetHealthPerStr(hero, value)
-	Attributes:SetHeroXPerY(hero, "hp", value)
-end
-
-function Attributes:SetHealthRegenPerStr(hero, value)
-	Attributes:SetHeroXPerY(hero, "hp_regen", value)
-end
-
-function Attributes:SetArmorPerAgi(hero, value)
-	Attributes:SetHeroXPerY(hero, "armor", value)
-end
-
-function Attributes:SetAttackspeedPerAgi(hero, value)
-	Attributes:SetHeroXPerY(hero, "attackspeed", value)
-end
-
-function Attributes:SetManaPerInt(hero, value)
-	Attributes:SetHeroXPerY(hero, "mana", value)
-end
-
-function Attributes:SetManaRegenPerInt(hero, value)
-	Attributes:SetHeroXPerY(hero, "mana_regen", value)
-end
-
-function Attributes:SetSpellAmplifyPerInt(hero, value)
-	Attributes:SetHeroXPerY(hero, "spell_amplify", value)
-end
-
-function Attributes:SetHeroXPerY(hero, x, y)
+function Attributes:SetPropValue(hero, prop, value)
 	if not hero.attributes_adjustments then hero.attributes_adjustments = {} end
-	hero.attributes_adjustments[x] = y - DOTA_DEFAULT_ATTRIBUTES[x]
+	local propValue = DOTA_DEFAULT_ATTRIBUTES[prop]
+	if not propValue then error('Not found property named "' .. prop .. '"') end
+	hero.attributes_adjustments[prop] = value - propValue.default
 end
 
+function Attributes:GetTotalPropValue(arg1, prop)
+	local hero = type(arg1) == "table" and arg1
+	local attributeValue = type(arg1) == "number" and arg1
+	local propValue = DOTA_DEFAULT_ATTRIBUTES[prop]
+	if not propValue then error('Not found property named "' .. prop .. '"') end
 
-function Attributes:GetTotalGrantedHealth(hero)
-	return Attributes:GetHeroTotalGrantedX(hero, "hp", hero:GetStrength())
-end
-
-function Attributes:GetTotalGrantedHealthRegen(hero)
-	return Attributes:GetHeroTotalGrantedX(hero, "hp_regen", hero:GetStrength())
-end
-
-function Attributes:GetTotalGrantedArmor(hero)
-	return Attributes:GetHeroTotalGrantedX(hero, "armor", hero:GetAgility())
-end
-
-function Attributes:GetTotalGrantedAttackspeed(hero)
-	return Attributes:GetHeroTotalGrantedX(hero, "attackspeed", hero:GetAgility())
-end
-
-function Attributes:GetTotalGrantedMana(hero)
-	return Attributes:GetHeroTotalGrantedX(hero, "mana", hero:GetIntellect())
-end
-
-function Attributes:GetTotalGrantedManaRegen(hero)
-	return Attributes:GetHeroTotalGrantedX(hero, "mana_regen", hero:GetIntellect())
-end
-
-function Attributes:GetTotalGrantedSpellAmplify(hero)
-	return Attributes:GetHeroTotalGrantedX(hero, "spell_amplify", hero:GetIntellect())
-end
-
-function Attributes:GetHeroTotalGrantedX(hero, x, stat)
-	local adjustment = GLOBAL_ATTRIBUTE_ADJUSTMENTS[x]
-	if hero.attributes_adjustments and hero.attributes_adjustments[x] then
-		adjustment = hero.attributes_adjustments[x]
+	if not attributeValue then
+		attributeValue = hero:GetAttribute(propValue.attribute)
 	end
-	local xPerStat = adjustment + DOTA_DEFAULT_ATTRIBUTES[x]
-	return stat * xPerStat
+
+	local adjustment = Attributes:GetAdjustmentForProp(hero, prop)
+	local perPoint = adjustment + propValue.default
+	return attributeValue * perPoint
 end
 
+function Attributes:GetAdjustmentForProp(hero, prop)
+	if hero and hero.attributes_adjustments and hero.attributes_adjustments[prop] then
+		return hero.attributes_adjustments[prop]
+	end
+	return GLOBAL_ATTRIBUTE_ADJUSTMENTS[prop] or 0
+end
+
+function Attributes:CheckAttributeModifier(hero, modifier)
+	if not hero:HasModifier(modifier) then
+		hero:AddNewModifier(hero, self.Applier, modifier, nil)
+	end
+end
 
 function Attributes:CalculateStatBonus(hero)
-	if not hero.custom_stats then
-		hero.custom_stats = true
-		hero.strength = 0
-		hero.agility = 0
-		hero.intellect = 0
-	end
+	if not hero.attributeCache then hero.attributeCache = {} end
+	local primaryAttribute = hero:GetPrimaryAttribute()
+	local attributeValues = {
+		[DOTA_ATTRIBUTE_STRENGTH] = hero:GetStrength(),
+		[DOTA_ATTRIBUTE_AGILITY] = hero:GetAgility(),
+		[DOTA_ATTRIBUTE_INTELLECT] = hero:GetIntellect(),
+	}
+	local recalculated = false
 
-	local strength = hero:GetStrength()
-	local agility = hero:GetAgility()
-	local intellect = hero:GetIntellect()
-	local adjustments = table.deepcopy(GLOBAL_ATTRIBUTE_ADJUSTMENTS)
-	if hero.attributes_adjustments then
-		for k,v in pairs(hero.attributes_adjustments) do
-			adjustments[k] = v
+	for propName, propValue in pairs(DOTA_DEFAULT_ATTRIBUTES) do
+		local attribute = propValue.attribute
+		local attributeValue = attributeValues[attribute]
+		-- Don't recalculate props, which attributes aren't changed since last check
+		if hero.attributeCache[attribute] ~= attributeValue then
+			recalculated = true
+			if propValue.recalculate ~= nil then
+				if propValue.recalculate then propValue.recalculate(hero, attributeValue) end
+			elseif propValue.property then
+				local modifierName = propValue.modifier or ("modifier_attribute_" .. propName)
+				local adjustment = Attributes:GetAdjustmentForProp(hero, propName)
+				self:CheckAttributeModifier(hero, modifierName)
+				local wrongPerkAttribute = propValue.primary and propValue.attribute ~= primaryAttribute
+				local stacks = wrongPerkAttribute and 0 or
+					math.round((attributeValue * adjustment) / (propValue.stack or 1))
+				hero:SetModifierStackCount(modifierName, hero, stacks)
+			end
 		end
 	end
 
-	if strength ~= hero.strength then
-		if not hero:HasModifier("modifier_attribute_health") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_health", {}) end
-		local health_stacks = math.abs(strength * adjustments.hp)
-		hero:SetModifierStackCount("modifier_attribute_health", hero, health_stacks)
-
-		if not hero:HasModifier("modifier_attribute_health_regen") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_health_regen", {}) end
-		local health_regen_stacks = math.abs(strength * adjustments.hp_regen * 100)
-		hero:SetModifierStackCount("modifier_attribute_health_regen", hero, health_regen_stacks)
+	hero.attributeCache = attributeValues
+	if recalculated then
+		hero:CalculateStatBonus()
 	end
-
-	if agility ~= hero.agility then
-		local armor = agility * adjustments.armor
-		hero:SetPhysicalArmorBaseValue(hero:GetKeyValue("ArmorPhysical") + armor)
-
-		if not hero:HasModifier("modifier_attribute_attackspeed") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_attackspeed", {}) end
-		local attackspeed_stacks = math.abs(agility * adjustments.attackspeed)
-		hero:SetModifierStackCount("modifier_attribute_attackspeed", hero, attackspeed_stacks)
-	end
-
-	if intellect ~= hero.intellect then
-
-		if not hero:HasModifier("modifier_attribute_mana") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_mana", {}) end
-		local mana_stacks = math.abs(intellect * adjustments.mana)
-		hero:SetModifierStackCount("modifier_attribute_mana", hero, mana_stacks)
-
-		if not hero:HasModifier("modifier_attribute_mana_regen") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_mana_regen", {}) end
-		local mana_regen_stacks = math.abs(intellect * adjustments.mana_regen * 100)
-		hero:SetModifierStackCount("modifier_attribute_mana_regen", hero, mana_regen_stacks)
-
-		if not hero:HasModifier("modifier_attribute_spell_amplify") then self.Applier:ApplyDataDrivenModifier(hero, hero, "modifier_attribute_spell_amplify", {}) end
-		local spell_amplify_stacks = math.abs(intellect * adjustments.spell_amplify * 100)
-		hero:SetModifierStackCount("modifier_attribute_spell_amplify", hero, spell_amplify_stacks)
-
-	end
-
-	hero.strength = strength
-	hero.agility = agility
-	hero.intellect = intellect
-
-	hero:CalculateStatBonus()
 end

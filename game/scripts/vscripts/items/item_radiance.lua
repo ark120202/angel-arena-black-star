@@ -1,4 +1,3 @@
-if IsClient() then require("utils/shared") end
 LinkLuaModifier("modifier_item_radiance_lua", "items/item_radiance.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_radiance_lua_effect", "items/item_radiance.lua", LUA_MODIFIER_MOTION_NONE)
 

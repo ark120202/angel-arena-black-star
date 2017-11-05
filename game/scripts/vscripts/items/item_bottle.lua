@@ -1,4 +1,3 @@
-if IsClient() then require("utils/shared") end
 LinkLuaModifier("modifier_item_bottle_arena_heal", "items/item_bottle.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_bottle_arena = class({})

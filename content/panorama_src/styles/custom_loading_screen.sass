@@ -2,40 +2,8 @@
 	width: 100%
 	height: 100%
 	overflow: clip
-	background-color: rgb(0, 0, 0)
-	background-position: 100% 100%
-	background-repeat: no-repeat
+	background-image: url('file://{images}/custom_game/loading_screen/background.png')
 	background-size: 100% 100%
-
-#loading-ratings
-	align: right top
-
-#loading-heroes
-	width: 1000px
-	height: width-percentage(73.97%)
-	align: left bottom
-
-#loading-shrine
-	width: height-percentage(85.38%)
-	height: 400px
-	align: right bottom
-
-#loading-aabs
-	width: 1400px
-	height: width-percentage(23.38%)
-
-#loading-au
-	width: 700px
-	height: width-percentage(45.11%)
-	align: right center
-
-#loading-alastor
-	visibility: collapse
-	align: center center
-
-#loading-l2
-	margin-right: 120px
-	align: center center
 
 #afterload_panel
 	width: 100%
@@ -48,12 +16,44 @@
 	width: 100%
 	height: 100%
 
+#loading-angel-arena
+	margin-top: 18%
+	margin-left: 70px
+	animation-duration: 300s
+	animation-iteration-count: infinite
+	animation-name: LoadingScreenAngelArena
+	animation-timing-function: linear
+	align: center top
+	flow-children: down
+
+	> Image
+		horizontal-align: center
+
+#loading-black-star
+	margin-top: 10%
+	margin-left: 90px
+	animation-duration: 300s
+	animation-iteration-count: infinite
+	animation-name: LoadingScreenBlackStar
+	animation-timing-function: linear
+	align: center center
+	flow-children: down
+
+	> Image
+		horizontal-align: center
+
+#loading-author
+	margin: 8px
+	align: right bottom
+
 #TipsPanel
-	width: 39%
+	width: 42%
 	min-height: 84px
+	padding: 20px
 	margin-right: 270px
 	margin-bottom: 70px
-	background-color: rgba(20, 20, 20, .97)
+	background-image: url('file://{images}/custom_game/loading_screen/tips.png')
+	background-size: 100% 100%
 	box-shadow: -4px -4px 8px 8px rgba(20, 20, 20, .97)
 	align: right bottom
 
@@ -65,9 +65,18 @@
 	#TipLabel
 		font-size: 25px
 
+#TipSaitama
+	width: 110px
+	height: 150px
+	margin-top: -100px
+	margin-bottom: -10px
+	margin-left: -20px
+	vertical-align: bottom
+	background-image: url('file://{images}/custom_game/loading_screen/saitama.png')
+	background-size: 100% 100%
 
 #TipLabel
-	margin: 8px 20px
+	margin-left: 100px
 	font-size: 22px
 	color: rgb(255, 255, 255)
 	text-align: center
@@ -97,15 +106,13 @@
 	align: center center
 
 #OptionVotings
-	width: 550px
-	padding: 4px
-	margin: 4px
-	margin-bottom: 290px
-	margin-left: 20px
+	width: 530px + 135px * 2
+	padding: 110px 135px
+	margin-bottom: 220px
+	margin-left: -70px
 	vertical-align: bottom
-	background-color: rgba(0, 0, 0, .7)
-	border: 2px solid rgb(211, 211, 211)
-	border-radius: 5px
+	background-image: url('file://{images}/custom_game/loading_screen/option-votings.png')
+	background-size: 100% 100%
 	opacity: 0
 	transition-duration: .2s
 	transition-property: opacity
@@ -157,6 +164,7 @@
 
 .OptionVotingVariant
 	width: 49%
+	background-color: #1e1e1e
 
 	> Label
 		font-size: 20px
@@ -169,7 +177,7 @@
 		margin-right: 325px
 
 #TopPlayers
-	width: 350px
+	width: 360px
 	padding: 12px
 	margin-top: 8px
 	margin-left: 4px
@@ -201,6 +209,22 @@
 	margin: 2px 0
 	background-color: rgba(0, 0, 0, .7)
 	flow-children: right
+
+	&.LocalPlayer
+		background-color: rgba(63, 63, 63, .7)
+
+#PlayerPlace
+	min-width: 42px
+	font-size: 24px
+	font-weight: bold
+	color: #fb0
+	text-align: center
+	align: right center
+
+	.NotInTop &
+		font-size: 18px
+		font-weight: normal
+		color: #fff
 
 #PlayerAvatar
 	vertical-align: center

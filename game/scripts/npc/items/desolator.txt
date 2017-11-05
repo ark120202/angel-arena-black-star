@@ -5,13 +5,13 @@
 		"ID"							"10224"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
-		"ItemCost"						"25"
+		"ItemCost"						"1000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_desolator2"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator;item_demon_edge;item_medallion_of_courage"
+			"01"						"item_desolator;item_desolator"
 		}
 	}
 
@@ -33,12 +33,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"110"
+				"bonus_damage"			"100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-14"
+				"corruption_armor"		"-10"
 			}
 			"03"
 			{
@@ -107,7 +107,7 @@
 		"ID"							"10226"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
-		"ItemCost"						"1000"
+		"ItemCost"						"500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_desolator3"
@@ -135,12 +135,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"180"
+				"bonus_damage"			"170"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-21"
+				"corruption_armor"		"-19"
 			}
 			"03"
 			{
@@ -385,7 +385,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-50"
+				"corruption_armor"		"-45"
 			}
 			"06"
 			{
@@ -529,7 +529,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"760"
+				"bonus_damage"			"700"
 			}
 			"02"
 			{
@@ -554,7 +554,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-80"
+				"corruption_armor"		"-70"
 			}
 			"07"
 			{

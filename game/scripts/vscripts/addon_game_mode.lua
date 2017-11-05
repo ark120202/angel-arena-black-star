@@ -1,4 +1,4 @@
-require('utils/init')
+require('util/init')
 require('gamemode')
 
 function Precache(context)

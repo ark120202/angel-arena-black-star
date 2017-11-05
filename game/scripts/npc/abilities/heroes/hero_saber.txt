@@ -18,7 +18,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_mana"	"0.8 0.9 0.10 0.11 0.12 0.13 0.14"
+				"damage_per_mana"	"0.08 0.09 0.10 0.11 0.12 0.13 0.14"
 			}
 			"03"
 			{

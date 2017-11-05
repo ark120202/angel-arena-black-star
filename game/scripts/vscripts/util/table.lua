@@ -172,7 +172,7 @@ function table.deepmerge(t1, t2)
 	for k,v in pairs(t2) do
 		if type(v) == "table" then
 			if type(t1[k] or false) == "table" then
-				tableMerge(t1[k] or {}, t2[k] or {})
+				table.deepmerge(t1[k] or {}, t2[k] or {})
 			else
 				t1[k] = v
 			end
@@ -232,4 +232,18 @@ function table.average(t)
 		sum = sum + v
 	end
 	return sum/#t
+end
+
+function table.uniq(t)
+	local seen = {}
+	local o = {}
+
+	for _,v in ipairs(t) do
+		if not seen[v] then
+			seen[v] = true
+			table.insert(o, v)
+		end
+	end
+
+	return o
 end

@@ -17,8 +17,10 @@ function modifier_item_ultimate_scepter_arena:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+		MODIFIER_PROPERTY_HEALTH_BONUS,
 		MODIFIER_PROPERTY_MANA_BONUS,
 		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_CAST_RANGE_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
 	}
@@ -29,15 +31,15 @@ function modifier_item_ultimate_scepter_arena:GetModifierScepter()
 end
 
 function modifier_item_ultimate_scepter_arena:GetModifierBonusStats_Strength()
-	return self:GetAbility():GetSpecialValueFor("bonus_all")
+	return self:GetAbility():GetSpecialValueFor("bonus_strength")
 end
 
 function modifier_item_ultimate_scepter_arena:GetModifierBonusStats_Agility()
-	return self:GetAbility():GetSpecialValueFor("bonus_all")
+	return self:GetAbility():GetSpecialValueFor("bonus_agility")
 end
 
 function modifier_item_ultimate_scepter_arena:GetModifierBonusStats_Intellect()
-	return self:GetAbility():GetSpecialValueFor("bonus_all")
+	return self:GetAbility():GetSpecialValueFor("bonus_intellect")
 end
 
 function modifier_item_ultimate_scepter_arena:GetModifierSpellAmplify_Percentage()
@@ -48,8 +50,16 @@ function modifier_item_ultimate_scepter_arena:GetModifierConstantHealthRegen()
 	return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
 end
 
+function modifier_item_ultimate_scepter_arena:GetModifierHealthBonus()
+	return self:GetAbility():GetSpecialValueFor("bonus_health")
+end
+
 function modifier_item_ultimate_scepter_arena:GetModifierManaBonus()
 	return self:GetAbility():GetSpecialValueFor("bonus_mana")
+end
+
+function modifier_item_ultimate_scepter_arena:GetModifierConstantManaRegen()
+	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
 
 function modifier_item_ultimate_scepter_arena:GetModifierCastRangeBonus()
