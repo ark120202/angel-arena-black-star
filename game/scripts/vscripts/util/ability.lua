@@ -1,5 +1,6 @@
 function CDOTABaseAbility:HasBehavior(behavior)
-	return bit.band(self:GetBehavior(), behavior) == behavior
+	local abilityBehavior = tonumber(tostring(self:GetBehavior()))
+	return bit.band(abilityBehavior, behavior) == behavior
 end
 
 function AbilityHasBehaviorByName(ability_name, behaviorString)
