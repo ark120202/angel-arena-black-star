@@ -20595,11 +20595,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"strikes"				"4"
 			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"charge_restore_time"	"16 14 12 10 8 6 4"
-			}
 		}
 	}
 
