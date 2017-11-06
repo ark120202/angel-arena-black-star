@@ -33,5 +33,10 @@ function OnTakeDamage(keys)
 	local ability = keys.ability
 	attacker:RemoveModifierByName("modifier_smoke_of_deceit")
 
-	attacker:AddNewModifier(caster, ability, "modifier_max_attack_range", {AttackRange = ability:GetAbilitySpecial("attack_range_limit"), duration = 3})
+	attacker:AddNewModifier(caster, ability, "modifier_max_attack_range", {
+		duration = 3,
+		AttackRange = ability:GetSpecialValueFor("attack_range_limit"),
+	})
+
+	ability:ApplyDataDrivenModifier(caster ,attacker, "modifier_boss_armor_no_invisibility", { duration = 3 })
 end
