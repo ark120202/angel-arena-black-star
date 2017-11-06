@@ -129,24 +129,12 @@ DOTA_Tooltip_ability_riki_pocket_riki_Note1: 'Illusions will play Backstab anima
 DOTA_Tooltip_ability_riki_pocket_riki_Note2: Bonus damage from Backstab can't be evaded.
 DOTA_Tooltip_ability_riki_pocket_riki_fade_time: 'FADE DELAY:'
 DOTA_Tooltip_ability_riki_pocket_riki_stat_damage: '%ATTRIBUTE DAMAGE:'
-DOTA_Tooltip_ability_boss_water_illusions_of_the_deep: Illusions Of The Deep
-DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_Description: Creates %images_count% illusions of the Guardian of the Deep under her control.
-DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_illusion_duration: 'ILLUSION DURATION:'
-DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_outgoing_damage_tooltip: '%ILLUSION DAMAGE:'
-DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_tooltip_incoming_damage_total_pct: '%IMAGE DAMAGE TAKEN:'
-DOTA_Tooltip_ability_boss_water_splash: Splash
-DOTA_Tooltip_ability_boss_water_splash_Description: Each attack cleaves a large area of effect in front of the Guardian of the Deep
-DOTA_Tooltip_ability_boss_water_splash_radius: 'RADIUS:'
-DOTA_Tooltip_ability_boss_earth_grow: Construct's Grow
-DOTA_Tooltip_ability_boss_earth_grow_Description: 'Each 100 taken damage points increases damage, attack speed and move speed by 1. Also increases its size a little bit.'
-DOTA_Tooltip_ability_boss_wind_windwalk: Windy Soul
-DOTA_Tooltip_ability_boss_wind_windwalk_Description: Made from pure wind she will have 100% evasion chance.
-DOTA_Tooltip_ability_boss_wind_splitshot: Splitshot
-DOTA_Tooltip_ability_boss_wind_splitshot_Description: Materialized Wind has splitshot and maximum attack speed.
 DOTA_Tooltip_ability_boss_armor: Boss Armor
 DOTA_Tooltip_ability_boss_armor_Description: |-
   Boss is immune from most debuffs, unless boss has passives disabled.
-  When boss recieves damage, it limit's attacker's attack range to %attack_range_limit% for some time.
+  When boss recieves damage, it limit's attacker's attack range to %attack_range_limit% for some time and prevents it from getting invisible.
+DOTA_Tooltip_modifier_boss_armor_no_invisibility: No Invisibility
+DOTA_Tooltip_modifier_boss_armor_no_invisibility_Description: Can't get invisible, because recently attacked a boss.
 DOTA_Tooltip_ability_ogre_magi_multicast_arena: Multicast
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: |-
   Enables Ogre Magi to cast his spells multiple times with each use (on ultimates multicast proc chance decreased by 50%), while also granting his spells greater potency:
@@ -164,26 +152,6 @@ DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_aoe: 'BLOODLUST RADIUS:
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_cooldown: 'BLOODLUST COOLDOWN REDUCTION:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally: 'MULTICAST ALLY DURATION:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: Adds the Unrefined Fireblast ability. Multicast can be used on allies to give them chance to multicast for some time.
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena: 'Call of the Wild: Hawk'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_Description: 'Beastmaster calls forth watchful Hawks to scout the battlefield. At level 3 and beyond, the hawk can become invisible after being still for 4 seconds.'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_Lore: 'After befriending the strange beast of his childhood, Beastmaster has learned to call to animals in times of need.'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_hp_tooltip: 'HAWK HEALTH:'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_speed_tooltip: 'HAWK MOVEMENT SPEED:'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_daysight_tooltip: 'HAWK DAY SIGHT RANGE:'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_nightsight_tooltip: 'HAWK NIGHT SIGHT RANGE:'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_duration: 'HAWK DURATION:'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_unit_count: 'HAWK COUNT:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena: 'Call of the Wild: Boar'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_Description: 'Beastmaster calls powerful Boars to stalk the battlefield, capable of spitting poison at enemies to slow their movement and attack speed.'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_Lore: 'After befriending the strange beast of his childhood, Beastmaster has learned to call to animals in times of need.'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_hp_tooltip: 'BOAR HEALTH:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_damage_tooltip: 'BOAR ATTACK DAMAGE:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_moveslow_tooltip: '%BOAR MOVEMENT SLOW:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_poison_duration_tooltip: 'BOAR POISON DURATION:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_attackslow_tooltip: 'BOAR ATTACK SLOW:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_duration: 'BOAR DURATION:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_unit_count: 'BOAR COUNT:'
-
 DOTA_Tooltip_ability_wisp_tether_aghanims: Aghanim's Tether
 DOTA_Tooltip_ability_wisp_tether_aghanims_Description: 'Tethers Io to ally unit, granting it bonus movement speed. When Io restores health or mana, tethered units target gain 1.5x the amount. Any enemy unit that crosses the tether is slowed. The tether breaks when the allied unit moves too far away, or Io cancels the tether.'
 DOTA_Tooltip_ability_wisp_tether_aghanims_aghanim_description: Allows you to Tether all allies in cast range.
