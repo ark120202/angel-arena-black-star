@@ -587,7 +587,7 @@
 		"override_hero"	"npc_dota_hero_life_stealer"
 		"Changed"	"1"
 		"Ability1"	"life_stealer_rage"
-		"Ability2"	"life_stealer_feast"
+		"Ability2"	"life_stealer_feast_arena"
 		"Ability3"	"life_stealer_open_wounds"
 		"Ability4"	"life_stealer_assimilate"
 		"Ability5"	"life_stealer_assimilate_eject"
