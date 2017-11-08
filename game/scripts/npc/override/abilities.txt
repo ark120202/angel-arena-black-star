@@ -822,7 +822,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"blade_dance_crit_mult"	"200"
+				"blade_dance_crit_mult"	"200 205 210 215 220 225 230"
 			}
 			"02"
 			{
@@ -6912,6 +6912,7 @@
 	"templar_assassin_psi_blades"
 	{
 		"MaxLevel"	"7"
+		"RequiredLevel"	"4"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6931,9 +6932,7 @@
 				"var_type"	"FIELD_INTEGER"
 				"attack_spill_width"	"120"
 			}
-
 		}
-
 	}
 
 	"templar_assassin_psionic_trap"
@@ -7097,34 +7096,34 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastRange"				"900"
-		"AbilityCooldown"				"5.0"
+		"AbilityCooldown"				"30.0"
 		"AbilityManaCost"				"75"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"			"20 30 40 50 60 70 80"
+				"damage"				"30 60 90 120 150 180 210"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"		"300"
+				"radius"				"300"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_resistance"	"-10 -15 -20 -25 -30 -35 -40"
+				"magic_resistance"		"-5 -10 -15 -20 -25 -30 -35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"			"8"
+				"duration"				"6"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"	"2000"
+				"projectile_speed"		"2000"
 			}
 
 		}
@@ -12794,7 +12793,6 @@
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
-
 	}
 
 	"brewmaster_drunken_haze"
@@ -12823,7 +12821,6 @@
 				"var_type"	"FIELD_INTEGER"
 				"miss_chance"	"70"
 			}
-
 		}
 
 	}
@@ -12857,11 +12854,8 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"last_proc"	"13 12 11 10 9 8 7"
-				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_4"
 			}
-
 		}
-
 	}
 
 	"brewmaster_primal_split"
