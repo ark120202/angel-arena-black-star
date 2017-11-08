@@ -7,7 +7,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"600"
+				"value"				"250"
 			}
 		}
 	}
@@ -18,7 +18,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"600"
+				"value"				"200"
 			}
 		}
 	}
@@ -29,7 +29,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"400"
+				"value"				"350"
 			}
 		}
 	}
@@ -194,7 +194,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"18"
+				"value"				"20"
 			}
 		}
 	}
@@ -205,7 +205,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"1600"
+				"value"				"1300"
 			}
 		}
 	}
@@ -414,7 +414,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"90"
+				"value"				"60"
 			}
 		}
 	}
@@ -425,7 +425,18 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"250"
+				"value"				"150"
+			}
+		}
+	}
+	"special_bonus_unique_elder_titan_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"60"
 			}
 		}
 	}
@@ -612,7 +623,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"450"
+				"value"				"250"
 			}
 		}
 	}
@@ -766,7 +777,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"150"
+				"value"				"100"
 			}
 		}
 	}
@@ -1023,6 +1034,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_centaur_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"1"
+			}
+		}
+	}
 	"special_bonus_unique_witch_doctor_2"
 	{
 		"AbilitySpecial"
@@ -1173,7 +1195,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"200"
+				"value"				"150"
 			}
 		}
 	}
@@ -1470,7 +1492,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"100"
+				"value"				"50"
 			}
 		}
 	}
@@ -1481,7 +1503,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"100"
+				"value"				"40"
 			}
 		}
 	}
@@ -1602,7 +1624,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"300"
+				"value"				"200"
 			}
 		}
 	}
