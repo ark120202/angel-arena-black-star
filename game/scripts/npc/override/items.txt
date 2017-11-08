@@ -1320,4 +1320,44 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
+	"item_recipe_spirit_vessel"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_spirit_vessel"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_combo_breaker"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_combo_breaker"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_nullifier"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_nullifier"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_trident"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_trident"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 }
