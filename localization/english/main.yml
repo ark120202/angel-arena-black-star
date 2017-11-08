@@ -295,6 +295,14 @@ DOTA_Tooltip_ability_tinker_rearm_arena: Rearm
 DOTA_Tooltip_ability_tinker_rearm_arena_Description: CHANNELED - Resets the cooldown on most of Tinker's items and abilities.
 DOTA_Tooltip_ability_tinker_rearm_arena_channel_time: 'TIME TO REARM:'
 
+DOTA_Tooltip_ability_life_stealer_feast_arena: Feast
+DOTA_Tooltip_ability_life_stealer_feast_arena_Description: Lifestealer's attacks damage enemies and heal himself for a percentage of his target's current health.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note0: Does not affect bosses.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note1: Affects Spell Immune units.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note2: The heal is independent of the damage.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note3: Stacks additively with other sources of Lifesteal.
+DOTA_Tooltip_ability_life_stealer_feast_arena_hp_leech_percent: '%LIFE LEECH:'
+
 DOTA_Tooltip_ability_meepo_divided_we_stand_Description: 'Meepo summons an imperfect, semi-autonomous duplicate of himself, which can gain gold and experience as he does and shares his experience, attributes and abilities. However, the clones cannot purchase any items, but they share some items Meepo himself has. If any of the clones die, they all die.'
 DOTA_Tooltip_ability_meepo_divided_we_stand_Note0: Clones can't use Arcane Boots.
 
