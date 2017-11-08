@@ -746,36 +746,6 @@
 		"Ability24"	""
 	}
 
-	"npc_dota_hero_life_stealer"
-	{
-		"override_hero"	"npc_dota_hero_life_stealer"
-		"Ability1"	"life_stealer_rage"
-		"Ability2"	"life_stealer_feast"
-		"Ability3"	"life_stealer_open_wounds"
-		"Ability4"	"life_stealer_assimilate"
-		"Ability5"	"life_stealer_assimilate_eject"
-		"Ability6"	"life_stealer_infest"
-		"Ability7"	"life_stealer_control"
-		"Ability8"	"life_stealer_consume"
-		"AttackRate"	"1.9"
-		"Ability9"	""
-		"Ability10"	""
-		"Ability11"	""
-		"Ability12"	""
-		"Ability13"	""
-		"Ability14"	""
-		"Ability15"	""
-		"Ability16"	""
-		"Ability17"	""
-		"Ability18"	""
-		"Ability19"	""
-		"Ability20"	""
-		"Ability21"	""
-		"Ability22"	""
-		"Ability23"	""
-		"Ability24"	""
-	}
-
 	"npc_dota_hero_lion"
 	{
 		"override_hero"	"npc_dota_hero_lion"
