@@ -985,4 +985,29 @@
 			}
 		}
 	}
+
+	"life_stealer_feast_arena"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_life_stealer/feast.lua"
+		"AbilityTextureName"            "life_stealer_feast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"						"7"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hp_leech_percent"		"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+			"particle"					"particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
+		}
+	}
 }
