@@ -1360,4 +1360,37 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
+	"item_recipe_meteor_hammer"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_meteor_hammer"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"2.25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_duration"		"1.5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_dps_units"		"180"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_damage_units"		"300"
+			}
+		}
+	}
 }
