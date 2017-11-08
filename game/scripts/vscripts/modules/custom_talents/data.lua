@@ -467,6 +467,9 @@ PARTIALLY_CHANGED_HEROES = {
 		special_bonus_unique_doom_2 = true,
 		special_bonus_unique_doom_3 = true,
 	},
+	npc_dota_hero_life_stealer = {
+		special_bonus_unique_lifestealer_3 = true,
+	},
 }
 
 NATIVE_TALENTS_OVERRIDE = {
@@ -805,9 +808,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_lifestealer_2 = {
 		group = 9,
-	},
-	special_bonus_unique_lifestealer_3 = {
-		group = 11,
 	},
 	special_bonus_unique_lion = {
 		group = 6,
