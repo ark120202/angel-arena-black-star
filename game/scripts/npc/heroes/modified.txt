@@ -6,6 +6,65 @@
 		"MagicalResistance"		"25"
 	}
 
+	"npc_dota_hero_ogre_magi"
+	{
+		"override_hero"	"npc_dota_hero_ogre_magi"
+		"Changed"	"1"
+		"Ability5"	"ogre_magi_multicast_arena"
+		"AttackRate"	"1.7"
+		"ArmorPhysical"	"4"
+		"AttributeStrengthGain"	"2.5"
+		"AttributeAgilityGain"	"2.5"
+		"MovementSpeed"	"305"
+		"AttributeIntelligenceGain"	"2.5"
+	}
+
+	"npc_dota_hero_skeleton_king"
+	{
+		"override_hero"	"npc_dota_hero_skeleton_king"
+		"Changed"	"1"
+		"Ability4"	"skeleton_king_reincarnation_arena"
+		"AttackRate"	"1.7"
+	}
+
+	"npc_dota_hero_tinker"
+	{
+		"override_hero"	"npc_dota_hero_tinker"
+		"Changed"	"1"
+		"Ability4"	"tinker_rearm_arena"
+		"AttackRate"	"1.7"
+	}
+
+	"npc_dota_hero_doom_bringer"
+	{
+		"override_hero"	"npc_dota_hero_doom_bringer"
+		"Changed"	"1"
+		"Ability1"	"doom_bringer_devour_arena"
+		"AttackRate"	"1.7"
+		"ArmorPhysical"	"3"
+		"AttributeStrengthGain"	"2.8"
+		"AttributeAgilityGain"	"2.4"
+		"MovementSpeed"	"300"
+		"AttributeIntelligenceGain"	"2.3"
+	}
+
+	"npc_dota_hero_huskar"
+	{
+		"override_hero"	"npc_dota_hero_huskar"
+		"Changed"	"1"
+		"Ability2"	"huskar_burning_spear_arena"
+		"AttackRate"	"1.8"
+		"ArmorPhysical"	"-2"
+	}
+
+	"npc_dota_hero_life_stealer"
+	{
+		"override_hero"	"npc_dota_hero_life_stealer"
+		"Changed"	"1"
+		"Ability2"	"life_stealer_feast_arena"
+		"AttackRate"	"1.9"
+	}
+
 	"npc_dota_hero_wisp"
 	{
 		"override_hero"	"npc_dota_hero_wisp"
@@ -52,19 +111,6 @@
 		"AttackRate"	"1.7"
 	}
 
-	"npc_dota_hero_ogre_magi"
-	{
-		"override_hero"	"npc_dota_hero_ogre_magi"
-		"Changed"	"1"
-		"Ability5"	"ogre_magi_multicast_arena"
-		"AttackRate"	"1.7"
-		"ArmorPhysical"	"4"
-		"AttributeStrengthGain"	"2.5"
-		"AttributeAgilityGain"	"2.5"
-		"MovementSpeed"	"305"
-		"AttributeIntelligenceGain"	"2.5"
-	}
-
 	"npc_dota_hero_warlock"
 	{
 		"override_hero"	"npc_dota_hero_warlock"
@@ -85,22 +131,6 @@
 		"Ability14"	""
 		"Ability15"	""
 		"Ability16"	""
-		"AttackRate"	"1.7"
-	}
-
-	"npc_dota_hero_skeleton_king"
-	{
-		"override_hero"	"npc_dota_hero_skeleton_king"
-		"Changed"	"1"
-		"Ability4"	"skeleton_king_reincarnation_arena"
-		"AttackRate"	"1.7"
-	}
-
-	"npc_dota_hero_tinker"
-	{
-		"override_hero"	"npc_dota_hero_tinker"
-		"Changed"	"1"
-		"Ability4"	"tinker_rearm_arena"
 		"AttackRate"	"1.7"
 	}
 
@@ -297,19 +327,6 @@
 		"AttackRate"	"1.7"
 	}
 
-	"npc_dota_hero_doom_bringer"
-	{
-		"override_hero"	"npc_dota_hero_doom_bringer"
-		"Changed"	"1"
-		"Ability1"	"doom_bringer_devour_arena"
-		"AttackRate"	"1.7"
-		"ArmorPhysical"	"3"
-		"AttributeStrengthGain"	"2.8"
-		"AttributeAgilityGain"	"2.4"
-		"MovementSpeed"	"300"
-		"AttributeIntelligenceGain"	"2.3"
-	}
-
 	"npc_dota_hero_antimage"
 	{
 		"override_hero"	"npc_dota_hero_antimage"
@@ -336,22 +353,5 @@
 		"AttributeBaseAgility"			"14"
 		"StatusMana"					"0"
 		"StatusManaRegen"				"0"
-	}
-
-	"npc_dota_hero_huskar"
-	{
-		"override_hero"	"npc_dota_hero_huskar"
-		"Changed"	"1"
-		"Ability2"	"huskar_burning_spear_arena"
-		"AttackRate"	"1.8"
-		"ArmorPhysical"	"-2"
-	}
-
-	"npc_dota_hero_life_stealer"
-	{
-		"override_hero"	"npc_dota_hero_life_stealer"
-		"Changed"	"1"
-		"Ability2"	"life_stealer_feast_arena"
-		"AttackRate"	"1.9"
 	}
 }
