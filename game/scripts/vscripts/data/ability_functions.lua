@@ -143,7 +143,6 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		end
 	},
 	modifier_sai_release_of_forge = {
-
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
