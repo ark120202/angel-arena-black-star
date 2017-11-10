@@ -300,7 +300,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 		end
 	},
 	modifier_arena_healer = {
-		damage = function (attacker, victim, inflictor, damage)
+		damage = function (_, _, inflictor)
 			if not inflictor or inflictor:GetAbilityName() ~= "item_meteor_hammer" then
 				return 1
 			end
