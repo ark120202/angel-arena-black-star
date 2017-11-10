@@ -176,8 +176,16 @@ function GameMode:DamageFilter(filterTable)
 						LifestealPercentage = math.max(LifestealPercentage, multiplier.LifestealPercentage)
 					end
 					if multiplier.damage then
-						filterTable.damage = multiplier.damage
-						return true
+						if type(multiplier.damage) == "function" then
+							local damage = multiplier.damage(attacker, victim, inflictor, damage, damagetype_const)
+							if damage then
+								filterTable.damage = damage
+								return true
+							end
+						else
+							filterTable.damage = multiplier.damage
+							return true
+						end
 					end
 					if multiplier.multiplier then
 						multiplier = multiplier.multiplier
