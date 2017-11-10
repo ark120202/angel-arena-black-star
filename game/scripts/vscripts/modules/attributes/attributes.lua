@@ -54,39 +54,3 @@ function Attributes:CheckAttributeModifier(hero, modifier)
 		hero:AddNewModifier(hero, self.Applier, modifier, nil)
 	end
 end
-
-function Attributes:CalculateStatBonus(hero)
-	if not hero.attributeCache then hero.attributeCache = {} end
-	local primaryAttribute = hero:GetPrimaryAttribute()
-	local attributeValues = {
-		[DOTA_ATTRIBUTE_STRENGTH] = hero:GetStrength(),
-		[DOTA_ATTRIBUTE_AGILITY] = hero:GetAgility(),
-		[DOTA_ATTRIBUTE_INTELLECT] = hero:GetIntellect(),
-	}
-	local recalculated = false
-
-	for propName, propValue in pairs(ATTRIBUTE_LIST) do
-		local attribute = propValue.attribute
-		local attributeValue = attributeValues[attribute]
-		-- Don't recalculate props, which attributes aren't changed since last check
-		if hero.attributeCache[attribute] ~= attributeValue then
-			recalculated = true
-			if propValue.recalculate ~= nil then
-				if propValue.recalculate then propValue.recalculate(hero, attributeValue) end
-			elseif propValue.property then
-				local modifierName = propValue.modifier or ("modifier_attribute_" .. propName)
-				local adjustment = Attributes:GetAdjustmentForProp(hero, propName)
-				self:CheckAttributeModifier(hero, modifierName)
-				local wrongPerkAttribute = propValue.primary and propValue.attribute ~= primaryAttribute
-				local stacks = wrongPerkAttribute and 0 or
-					math.round((attributeValue * adjustment) / (propValue.stack or 1))
-				hero:SetModifierStackCount(modifierName, hero, stacks)
-			end
-		end
-	end
-
-	hero.attributeCache = attributeValues
-	if recalculated then
-		hero:CalculateStatBonus()
-	end
-end
