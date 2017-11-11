@@ -1,3 +1,13 @@
+db.players.remove({steamid: 'ID'})    -  сделать TBD челику
+db.players.update({steamid: 'ID'}, {$set: {Rating: Рейтинг}})  -  Дать или убрать рейтинг
+db.players.update({steamid: 'ID'}, {$push: {inventory: "wearable_developer"}})  -  забрать 1 ечейку инвенторя ( дать читы )
+
+
+
+
+
+
+
 Глобальные читы арка ( ГАЙД )
 
 СПРОСИТЬ ПЛЕР ID  -  !!!!!-cprint !!!! потом  !!!!  -printplayers !!!!!

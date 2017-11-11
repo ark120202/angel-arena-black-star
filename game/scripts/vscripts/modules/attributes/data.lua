@@ -11,7 +11,7 @@ ATTRIBUTE_LIST = {
 		attribute = DOTA_ATTRIBUTE_STRENGTH,
 		attributeDerivedStat = DOTA_ATTRIBUTE_STRENGTH_HP_REGEN_PERCENT,
 		stack = 0.01,
-		default = 0.007,
+		default = 0.006,
 
 		-- property = MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
 		-- getter = "GetModifierHealthRegenPercentage",
@@ -21,7 +21,7 @@ ATTRIBUTE_LIST = {
 		attributeDerivedStat = DOTA_ATTRIBUTE_STRENGTH_STATUS_RESISTANCE_PERCENT,
 		primary = true,
 		stack = 0.01,
-		default = 0.0015,
+		default = 0.0005,
 
 		-- property = MODIFIER_PROPERTY_STATUS_RESISTANCE,
 		-- getter = "GetModifierStatusResistance",
@@ -85,7 +85,7 @@ ATTRIBUTE_LIST = {
 		attributeDerivedStat = DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESISTANCE_PERCENT,
 		primary = true,
 		stack = 0.01,
-		default = 0.0015,
+		default = 0.0005,
 
 		property = MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
 		getter = "GetModifierMagicalResistanceBonus",
