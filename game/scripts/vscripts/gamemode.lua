@@ -153,7 +153,6 @@ function GameMode:OnHeroInGame(hero)
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
 				Structures:GiveCourier(hero)
 			end
-			HeroVoice:OnHeroInGame(hero)
 		end
 	end)
 end
