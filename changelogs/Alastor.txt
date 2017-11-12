@@ -15,13 +15,13 @@ talents
   * Group: _5_ => **4**
 * #### _+18_ Shapeshift Duration
   * Group: _9_ => **7**
-* #### _+160_0 Howl Hero Health => **+130**0 Howl Hero Health
+* #### _+160_0 Howl Hero Health => **+1300** Howl Hero Health
   * Group: _8_ => **6**
-* #### _+90 _Astral Spirit Hero Attack => **+60**Astral Spirit Hero Attack
+* #### _+90 _Astral Spirit Hero Attack => **+60** Astral Spirit Hero Attack
   * Group: _9_ => **6**
 * #### _+250_ Echo Stomp Damage => **+150** Echo Stomp Damage
   * Group: _7_ => **5**
-* #### _+75_ Earth Splitter Cooldown => **+60**Earth Splitter Cooldown
+* #### _+75_ Earth Splitter Cooldown => **+60** Earth Splitter Cooldown
   * Group: _1_  => **8**
 * #### _+50%_ Open Wounds Lifesteal
   * Group: _9_ => **5**
@@ -45,7 +45,7 @@ talents
   * Group: _9_ => **6**
 * #### _+150_ Overwhelming Odds Hero Damage => **+100** Overwhelming Odds Hero Damage
   * Group: _7_ => **5**
-* #### _+1.5_ Hoof Stomp Duration 2 => **+1 H**oof Stomp Duration
+* #### _+1.5_ Hoof Stomp Duration 2 => **+1%** Hoof Stomp Duration
   * Group: _1_  => **5**
 * #### _+0.8s_ Pit of Malice Root
   * Group: _8_ => **6**
@@ -59,9 +59,9 @@ talents
   * Group: _9_ => **6**
 * #### _+400_ Fissure Range
   * Group: _8_ => **4**
-* #### _+100_ Scorched Earth Damage/Heal => **+50**Scorched Earth Damage/Heal
+* #### _+100_ Scorched Earth Damage/Heal => **+50** Scorched Earth Damage/Heal
   * Group: _7_ => **4**
-* #### _+100_ Doom DPS => **+40**Doom DPS
+* #### _+100_ Doom DPS => **+40** Doom DPS
   * Group: _8_ => **6**
 * #### _+6 M_ax Goo Stacks
   * Group: _8_ => **6**
