@@ -661,7 +661,7 @@ DOTA_Tooltip_ability_item_skull_of_midas_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_skull_of_midas_kill_xp: 'ОПЫТ ЗА ЮНИТА:'
 DOTA_Tooltip_ability_item_skull_of_midas_kill_gold: 'ЗОЛОТО ЗА ЮНИТА:'
 DOTA_Tooltip_ability_item_chest_of_midas: Chest of Midas
-DOTA_Tooltip_ability_item_chest_of_midas_Description: '<h1>Пассивная: Golden Chest</h1> Каждый раз, когда вас атакует вражеский герой вы, получите золото и опыт.'
+DOTA_Tooltip_ability_item_chest_of_midas_Description: '<h1>Пассивная: Golden Chest</h1> Каждый раз, когда вас атакует вражеский герой вы, получите золото и опыт.<br><br>Атаки боссов не дают опыта и забирают ваше золото.'
 DOTA_Tooltip_ability_item_chest_of_midas_bonus_armor: +$armor
 DOTA_Tooltip_ability_item_chest_of_midas_xp: 'ОПЫТ:'
 DOTA_Tooltip_ability_item_chest_of_midas_gold: 'ЗОЛОТО:'
