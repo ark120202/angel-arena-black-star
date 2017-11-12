@@ -1,32 +1,6 @@
 WEARABLES_ATTACH_METHOD_DOTA = 0
 WEARABLES_ATTACH_METHOD_ATTACHMENTS = 1
 
-CUSTOM_WEARABLES_PLAYER_ITEMS = {
-	--ark120202
-	[109792606] = {
-		--"wearable_hero_stargazer_helmet_of_the_sunray",
-		--"wearable_hero_omniknight_frozen_sword",
-		--"wearable_item_summoned_unit_kyuubey",
-		"shinobu_umbrella",
-		"wearable_developer"
-	},
-	--Murzik
-	[82292900] = {
-		--"wearable_hero_stargazer_helmet_of_the_sunray",
-		--"wearable_hero_omniknight_frozen_sword",
-		--"wearable_item_summoned_unit_kyuubey"
-	},
-	--Dimka
-	[103166883] = {
-		"wearable_developer",
-		"shinobu_umbrella",
-	},
-	--Alastor
-	[354150989] = {
-		"wearable_developer",
-	}
-}
-
 CUSTOM_WEARABLES = {
 	--Default
 	saber_excalibur = {
