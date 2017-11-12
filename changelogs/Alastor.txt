@@ -1,75 +1,75 @@
 talents
-* #### +600 Aphotic Shield Health => +250 Aphotic Shield Health
-  * Group:  5  => **4**
-* #### +600 Mist Coil Heal/Damage => +200 Mist Coil Heal/Damage
-  * Group:  8  => **4**
-* #### +400 Curse of Avernus MS Slow => +350 Curse of Avernus MS Slow
-  * Group:  9  => **6**
-* #### Berserker's Call AoE
-  * Group:  9  => **5**
-* #### Crippling Fear Cooldown
-  * Group:  9  => **7**
-* #### Max Chaos Bolt Duration
-  * Group:  11  => **9**
-* #### +18 Feral Impulse Damage => +20 Feral Impulse Damage
-  * Group:  5  => **4**
-* #### Shapeshift Duration
-  * Group:  9  => **7**
-* #### +1600 Howl Hero Health => +1300 Howl Hero Health
-  * Group:  8  => **6**
-* #### +90 Astral Spirit Hero Attack => +60 Astral Spirit Hero Attack
-  * Group:  9  => **6**
-* #### +250 Echo Stomp Damage => +150 Echo Stomp Damage
-  * Group:  7  => **5**
-* #### +75 Earth Splitter Cooldown => +60 Earth Splitter Cooldown
-  * Group:  10  => **8**
-* #### Open Wounds Lifesteal
-  * Group:  9  => **5**
-* #### Empower Damage/Cleave
-  * Group:  9  => **10**
-* #### Skewer Range
-  * Group:  8  => **6**
-* #### Shockwave Damage
-  * Group:  7  => **5**
-* #### Reverse Polarity Stun Duration
-  * Group:  10  => **7**
-* #### +450 Rolling Boulder Damage => +250 Rolling Boulder Damage
-  * Group:  7  => **5**
-* #### Geomagnetic Grip Targets Allies
-  * Group:  9  => **8**
-* #### Boulder Smash Stun Duration
-  * Group:  8  => **6**
-* #### Duel Damage Bonus
-  * Group:  10  => **9**
-* #### Press The Attack Cooldown
-  * Group:  9  => **6**
-* #### +150 Overwhelming Odds Hero Damage => 100 Overwhelming Odds Hero Damage
-  * Group:  7  => **5**
-* #### +1.5 Hoof Stomp Duration 2 => +1 Hoof Stomp Duration
-  * Group:  10  => **5**
-* #### Pit of Malice Root
-  * Group:  8  => **6**
-* #### Firestorm Wave Damage
-  * Group:  7  => **5**
-* #### Atrophy Attack Bonus Damage From Heroes
-  * Group:  9  => **3**
-* #### Enchant Totem Cooldown
-  * Group:  10  => **8**
-* #### +250 Echo Damage => +150 Echo Damage
-  * Group:  9  => **6**
-* #### Fissure Range
-  * Group:  8  => **4**
-* #### +100 Scorched Earth Damage/Heal => +50 Scorched Earth Damage/Heal
-  * Group:  7  => **4**
-* #### +100 Doom DPS => +40 Doom DPS
-  * Group:  8  => **6**
-* #### Max Goo Stacks
-  * Group:  8  => **6**
-* #### Quill Stack Damage
-  * Group:  9  => **8**
-* #### Warpath Damage Per Stack
-  * Group:  10  => **9**
-* #### Torrent AoE
-  * Group:  9  => **7**
-* #### +300 Torrent Damage => +200 Torrent Damage
-  * Group:  8  => **5**
+* #### _+600_ Aphotic Shield Health => **+250** Aphotic Shield Health
+  * Group: _5_ => **4**
+* #### _+600_ Mist Coil Heal/Damage => **+200** Mist Coil Heal/Damage
+  * Group: _8_ => **4**
+* #### _+400_ Curse of Avernus MS Slow => **+350** Curse of Avernus MS Slow
+  * Group: _9_ => **6**
+* #### _+200_ Berserker's Call AoE
+  * Group: _9_ => **5**
+* #### _+16%_ Crippling Fear Cooldown
+  * Group: _9_ => **7**
+* #### _+2_ Max Chaos Bolt Duration
+  * Group: _1_ => **9**
+* #### _+18_ Feral Impulse Damage => **+20** Feral Impulse Damage
+  * Group: _5_ => **4**
+* #### _+18_ Shapeshift Duration
+  * Group: _9_ => **7**
+* #### _+160_0 Howl Hero Health => **+130**0 Howl Hero Health
+  * Group: _8_ => **6**
+* #### _+90 _Astral Spirit Hero Attack => **+60**Astral Spirit Hero Attack
+  * Group: _9_ => **6**
+* #### _+250_ Echo Stomp Damage => **+150** Echo Stomp Damage
+  * Group: _7_ => **5**
+* #### _+75_ Earth Splitter Cooldown => **+60**Earth Splitter Cooldown
+  * Group: _1_  => **8**
+* #### _+50%_ Open Wounds Lifesteal
+  * Group: _9_ => **5**
+* #### _+15 _Empower Damage/Cleave
+  * Group: _9_ => **10**
+* #### _+500_ Skewer Range
+  * Group: _8_ => **6**
+* #### _+275_ Shockwave Damage
+  * Group: _7_ => **5**
+* #### _+0.7_5s Reverse Polarity Stun Duration
+  * Group: _1_  => **7**
+* #### _+450_ Rolling Boulder Damage => **+250** Rolling Boulder Damage
+  * Group: _7_ => **5**
+* #### _Geom_agnetic Grip Targets Allies
+  * Group: _9_ => **8**
+* #### _+1.0s_ Boulder Smash Stun Duration
+  * Group: _8_ => **6**
+* #### _+100_ Duel Damage Bonus
+  * Group: _1_  => **9**
+* #### _10s _Press The Attack Cooldown
+  * Group: _9_ => **6**
+* #### _+150_ Overwhelming Odds Hero Damage => **+100** Overwhelming Odds Hero Damage
+  * Group: _7_ => **5**
+* #### _+1.5_ Hoof Stomp Duration 2 => **+1 H**oof Stomp Duration
+  * Group: _1_  => **5**
+* #### _+0.8s_ Pit of Malice Root
+  * Group: _8_ => **6**
+* #### _+85_ Firestorm Wave Damage
+  * Group: _7_ => **5**
+* #### _+15_ Atrophy Attack Bonus Damage From Heroes
+  * Group: _9_ => **3**
+* #### _-2s_ Enchant Totem Cooldown
+  * Group: _1_  => **8**
+* #### _+250_ Echo Damage => **+150** Echo Damage
+  * Group: _9_ => **6**
+* #### _+400_ Fissure Range
+  * Group: _8_ => **4**
+* #### _+100_ Scorched Earth Damage/Heal => **+50**Scorched Earth Damage/Heal
+  * Group: _7_ => **4**
+* #### _+100_ Doom DPS => **+40**Doom DPS
+  * Group: _8_ => **6**
+* #### _+6 M_ax Goo Stacks
+  * Group: _8_ => **6**
+* #### _+130_ Quill Stack Damage
+  * Group: _9_ => **8**
+* #### _+46_ Warpath Damage Per Stack
+  * Group: _1_  => **9**
+* #### _+100_ Torrent AoE
+  * Group: _9_ => **7**
+* #### _+300_ Torrent Damage => **+200** Torrent Damage
+  * Group: _8_ => **5**
