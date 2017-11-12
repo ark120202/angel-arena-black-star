@@ -2,7 +2,7 @@ WEARABLES_ATTACH_METHOD_DOTA = 0
 WEARABLES_ATTACH_METHOD_ATTACHMENTS = 1
 
 CUSTOM_WEARABLES = {
-	--Default
+	-- Default
 	saber_excalibur = {
 		particles = {
 			{
@@ -111,12 +111,12 @@ CUSTOM_WEARABLES = {
 		end
 	},
 
-	--Premium
+	-- Premium
 	shinobu_umbrella = {
 		model = "models/custom/umbrella_rainbow.vmdl",
 		used_by_heroes = {"npc_arena_hero_shinobu"},
 		attach_method = WEARABLES_ATTACH_METHOD_ATTACHMENTS,
 		attachment = "attach_hitloc",
-		--scale = 1.5
+		-- scale = 1.5
 	},
 }
