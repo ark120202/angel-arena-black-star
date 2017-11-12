@@ -1,75 +1,75 @@
 talents
-* #### +600 Aphotic Shield Damage => +250 Aphotic Shield Damage
+* #### +600 Aphotic Shield Health => +250 Aphotic Shield Health
   * Group:  5  => **4**
-* #### +600 Abaddon Mist Coil => +200 Abaddon Mist Coil
+* #### +600 Mist Coil Heal/Damage => +200 Mist Coil Heal/Damage
   * Group:  8  => **4**
-* #### +400 Abaddon Curse Of Avernus => +350 Abaddon Curse Of Avernus
+* #### +400 Curse of Avernus MS Slow => +350 Curse of Avernus MS Slow
   * Group:  9  => **6**
-* #### Axe Berserkers call
+* #### Berserker's Call AoE
   * Group:  9  => **5**
-* #### Crippling Fear
+* #### Crippling Fear Cooldown
   * Group:  9  => **7**
-* #### Chaos Knight Chaos Bolt
+* #### Max Chaos Bolt Duration
   * Group:  11  => **9**
-* #### +18 lycan feral impulse => +20 lycan Feral Impulse
+* #### +18 Feral Impulse Damage => +20 Feral Impulse Damage
   * Group:  5  => **4**
-* #### lycan Feral Impulse
+* #### Shapeshift Duration
   * Group:  9  => **7**
-* #### +1600 lycan howl => +1300 lycan howl
+* #### +1600 Howl Hero Health => +1300 Howl Hero Health
   * Group:  8  => **6**
-* #### +90 Astral Spirit => +60 Astral Spirit
+* #### +90 Astral Spirit Hero Attack => +60 Astral Spirit Hero Attack
   * Group:  9  => **6**
-* #### +250 Echo Stomp => +150 Echo Stomp
+* #### +250 Echo Stomp Damage => +150 Echo Stomp Damage
   * Group:  7  => **5**
-* #### +75 Earth Splitter => +60 Earth Splitter
+* #### +75 Earth Splitter Cooldown => +60 Earth Splitter Cooldown
   * Group:  10  => **8**
-* #### Open Wounds
+* #### Open Wounds Lifesteal
   * Group:  9  => **5**
-* #### Empower
+* #### Empower Damage/Cleave
   * Group:  9  => **10**
-* #### Skewer
+* #### Skewer Range
   * Group:  8  => **6**
-* #### Shockwave
+* #### Shockwave Damage
   * Group:  7  => **5**
-* #### Reverse Polarity
+* #### Reverse Polarity Stun Duration
   * Group:  10  => **7**
-* #### +450 Rolling Boulder => +250 Rolling Boulder
+* #### +450 Rolling Boulder Damage => +250 Rolling Boulder Damage
   * Group:  7  => **5**
-* #### Geomagnetic Grip
+* #### Geomagnetic Grip Targets Allies
   * Group:  9  => **8**
-* #### Boulder Smash
+* #### Boulder Smash Stun Duration
   * Group:  8  => **6**
-* #### Legion Commander Duel
+* #### Duel Damage Bonus
   * Group:  10  => **9**
-* #### Press The Attack
+* #### Press The Attack Cooldown
   * Group:  9  => **6**
-* #### +150 Overwhelming Odds => 100 Overwhelming Odds
+* #### +150 Overwhelming Odds Hero Damage => 100 Overwhelming Odds Hero Damage
   * Group:  7  => **5**
-* #### +1.5 Hoof Stomp 2 => +1 Hoof Stomp
+* #### +1.5 Hoof Stomp Duration 2 => +1 Hoof Stomp Duration
   * Group:  10  => **5**
-* #### Pit Of Malice
+* #### Pit of Malice Root
   * Group:  8  => **6**
-* #### Firestorm
+* #### Firestorm Wave Damage
   * Group:  7  => **5**
-* #### Atrophy Aura
+* #### Atrophy Attack Bonus Damage From Heroes
   * Group:  9  => **3**
-* #### Enchant Totem
+* #### Enchant Totem Cooldown
   * Group:  10  => **8**
-* #### +250 Echo Slam => +150 Echo Slam
+* #### +250 Echo Damage => +150 Echo Damage
   * Group:  9  => **6**
-* #### Fissure
+* #### Fissure Range
   * Group:  8  => **4**
-* #### +100 Scorched Earth => +50 Scorched Earth
+* #### +100 Scorched Earth Damage/Heal => +50 Scorched Earth Damage/Heal
   * Group:  7  => **4**
-* #### +100 Doom => +40 Doom
+* #### +100 Doom DPS => +40 Doom DPS
   * Group:  8  => **6**
-* #### Viscous Nasal Goo
+* #### Max Goo Stacks
   * Group:  8  => **6**
-* #### Quill Spray
+* #### Quill Stack Damage
   * Group:  9  => **8**
-* #### Warpath
+* #### Warpath Damage Per Stack
   * Group:  10  => **9**
-* #### Torrent
+* #### Torrent AoE
   * Group:  9  => **7**
-* #### +300 Torrent => +200 Torrent
+* #### +300 Torrent Damage => +200 Torrent Damage
   * Group:  8  => **5**
