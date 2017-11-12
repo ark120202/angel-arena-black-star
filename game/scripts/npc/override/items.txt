@@ -1371,10 +1371,20 @@
 		"SideShop"						"0"
 		"AbilitySpecial"
 		{
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_dps_buildings"		"5"
+			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"burn_dps_units"		"180"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"burn_duration"		"6"
 			}
 			"08"
 			{
@@ -1383,8 +1393,13 @@
 			}
 			"12"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"max_duration"		"1.5"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_damage_buildings"		"20"
 			}
 			"14"
 			{
