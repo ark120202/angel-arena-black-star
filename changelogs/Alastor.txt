@@ -1,75 +1,75 @@
 talents
 * #### +600 Aphotic Shield Damage => +250 Aphotic Shield Damage
   * Group:  5  => **4**
-* #### +600 Abaddon Death Coil => +200 Abaddon Death Coil
+* #### +600 Abaddon Mist Coil => +200 Abaddon Mist Coil
   * Group:  8  => **4**
-* #### +400 Abaddon Frostmourne => +350 Abaddon Frostmourne
+* #### +400 Abaddon Curse Of Avernus => +350 Abaddon Curse Of Avernus
   * Group:  9  => **6**
 * #### Axe Berserkers call
   * Group:  9  => **5**
-* #### night stalker hunter in the night
+* #### Crippling Fear
   * Group:  9  => **7**
-* #### chaos knight chaos bolt
+* #### Chaos Knight Chaos Bolt
   * Group:  11  => **9**
-* #### +18 lycan feral impulse => +20 lycan feral impulse
+* #### +18 lycan feral impulse => +20 lycan Feral Impulse
   * Group:  5  => **4**
-* #### lycan feral impulse
+* #### lycan Feral Impulse
   * Group:  9  => **7**
 * #### +1600 lycan howl => +1300 lycan howl
   * Group:  8  => **6**
-* #### +90 elder titan ancestral spirit => +60 elder titan ancestral spirit
+* #### +90 Astral Spirit => +60 Astral Spirit
   * Group:  9  => **6**
-* #### +250 elder titan echo stomp => +150 elder titan echo stomp
+* #### +250 Echo Stomp => +150 Echo Stomp
   * Group:  7  => **5**
-* #### +75 elder titan earth splitter => +60 elder titan earth splitter
+* #### +75 Earth Splitter => +60 Earth Splitter
   * Group:  10  => **8**
-* #### life stealer open wounds
+* #### Open Wounds
   * Group:  9  => **5**
-* #### magnataur empower
+* #### Empower
   * Group:  9  => **10**
-* #### magnataur skewer
+* #### Skewer
   * Group:  8  => **6**
-* #### magnataur shockwave
+* #### Shockwave
   * Group:  7  => **5**
-* #### magnataur reverse polarity
+* #### Reverse Polarity
   * Group:  10  => **7**
-* #### +450 earth spirit rolling boulder => +250 Aphotic Shield Damage
+* #### +450 Rolling Boulder => +250 Rolling Boulder
   * Group:  7  => **5**
-* #### earth spirit geomagnetic grip
+* #### Geomagnetic Grip
   * Group:  9  => **8**
-* #### earth spirit boulder smash
+* #### Boulder Smash
   * Group:  8  => **6**
-* #### legion commander duel
+* #### Legion Commander Duel
   * Group:  10  => **9**
-* #### legion commander press the attack
+* #### Press The Attack
   * Group:  9  => **6**
-* #### +150 legion commander overwhelming odds => 100 legion commander overwhelming odds
+* #### +150 Overwhelming Odds => 100 Overwhelming Odds
   * Group:  7  => **5**
-* #### +1.5 special bonus unique centaur 2 => +1 centaur hoof stomp
+* #### +1.5 Hoof Stomp 2 => +1 Hoof Stomp
   * Group:  10  => **5**
-* #### abyssal underlord pit of malice
+* #### Pit Of Malice
   * Group:  8  => **6**
-* #### abyssal underlord firestorm
+* #### Firestorm
   * Group:  7  => **5**
-* #### abyssal underlord atrophy aura
+* #### Atrophy Aura
   * Group:  9  => **3**
-* #### special bonus unique earthshaker
+* #### Enchant Totem
   * Group:  10  => **8**
-* #### +250 earthshaker echo slam => +150 Aphotic Shield Damage
+* #### +250 Echo Slam => +150 Echo Slam
   * Group:  9  => **6**
-* #### earthshaker fissure
+* #### Fissure
   * Group:  8  => **4**
-* #### +100 doom bringer scorched earth => +50 doom bringer scorched earth
+* #### +100 Scorched Earth => +50 Scorched Earth
   * Group:  7  => **4**
-* #### +100 sdoom bringer doom => +40 doom bringer doom
+* #### +100 Doom => +40 Doom
   * Group:  8  => **6**
-* #### bristleback viscous nasal goo
+* #### Viscous Nasal Goo
   * Group:  8  => **6**
-* #### bristleback quill spray
+* #### Quill Spray
   * Group:  9  => **8**
-* #### bristleback warpath
+* #### Warpath
   * Group:  10  => **9**
-* #### kunkka torrent
+* #### Torrent
   * Group:  9  => **7**
-* #### +300 kunkka torrent => +200 kunkka torrent
+* #### +300 Torrent => +200 Torrent
   * Group:  8  => **5**
