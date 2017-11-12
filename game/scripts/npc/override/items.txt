@@ -1383,7 +1383,7 @@
 			}
 			"12"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"				"FIELD_FLOAT"
 				"max_duration"		"1.5"
 			}
 			"14"
