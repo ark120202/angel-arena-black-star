@@ -8,7 +8,6 @@ local modules = {
 	"dynamic_wearables",
 	"gold",
 	"hero_selection",
-	"herovoice",
 	"kills",
 	"options",
 	"panorama_shop",

@@ -89,6 +89,7 @@ function GameMode:InitGameMode()
 	Containers:UsePanoramaInventory(false)
 	StatsClient:Init()
 	Teams:Initialize()
+	Attributes:Init()
 	PlayerTables:CreateTable("arena", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("players_abandoned", {}, AllPlayersInterval)
@@ -152,7 +153,6 @@ function GameMode:OnHeroInGame(hero)
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
 				Structures:GiveCourier(hero)
 			end
-			HeroVoice:OnHeroInGame(hero)
 		end
 	end)
 end

@@ -467,17 +467,20 @@ PARTIALLY_CHANGED_HEROES = {
 		special_bonus_unique_doom_2 = true,
 		special_bonus_unique_doom_3 = true,
 	},
+	npc_dota_hero_life_stealer = {
+		special_bonus_unique_lifestealer_3 = true,
+	},
 }
 
 NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_abaddon = {
-		group = 5,
+		group = 4,
 	},
 	special_bonus_unique_abaddon_2 = {
-		group = 8,
+		group = 4,
 	},
 	special_bonus_unique_abaddon_3 = {
-		group = 9,
+		group = 6,
 	},
 	special_bonus_unique_alchemist = {
 		group = 5,
@@ -492,7 +495,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 6,
 	},
 	special_bonus_unique_axe_2 = {
-		group = 9,
+		group = 5,
 	},
 	special_bonus_unique_axe_3 = {
 		group = 3,
@@ -561,10 +564,10 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 8,
 	},
 	special_bonus_unique_night_stalker = {
-		group = 9,
+		group = 7,
 	},
 	special_bonus_unique_night_stalker_2 = {
-		group = 8,
+		group = 6,
 	},
 	special_bonus_unique_nyx = {
 		group = 8,
@@ -609,10 +612,10 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 10,
 	},
 	special_bonus_unique_chaos_knight_2 = {
-		group = 9,
+		group = 6,
 	},
 	special_bonus_unique_chaos_knight_3 = {
-		group = 11,
+		group = 9,
 	},
 	special_bonus_unique_lycan_1 = {
 		group = 10,
@@ -621,13 +624,13 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 1,
 	},
 	special_bonus_unique_lycan_3 = {
-		group = 5,
+		group = 4,
 	},
 	special_bonus_unique_lycan_4 = {
-		group = 9,
+		group = 7,
 	},
 	special_bonus_unique_lycan_5 = {
-		group = 8,
+		group = 6,
 	},
 	special_bonus_unique_windranger = {
 		group = 9,
@@ -777,13 +780,13 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 9,
 	},
 	special_bonus_unique_elder_titan = {
-		group = 9,
+		group = 6,
 	},
 	special_bonus_unique_elder_titan_2 = {
-		group = 7,
+		group = 5,
 	},
 	special_bonus_unique_elder_titan_3 = {
-		group = 10,
+		group = 8,
 	},
 	special_bonus_unique_ember_spirit_1 = {
 		group = 10,
@@ -804,10 +807,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 10,
 	},
 	special_bonus_unique_lifestealer_2 = {
-		group = 9,
-	},
-	special_bonus_unique_lifestealer_3 = {
-		group = 11,
+		group = 5,
 	},
 	special_bonus_unique_lion = {
 		group = 6,
@@ -918,16 +918,16 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 10,
 	},
 	special_bonus_unique_magnus_2 = {
-		group = 9,
+		group = 10,
 	},
 	special_bonus_unique_magnus_3 = {
-		group = 8,
+		group = 6,
 	},
 	special_bonus_unique_magnus_4 = {
-		group = 7,
+		group = 5,
 	},
 	special_bonus_unique_magnus_5 = {
-		group = 10,
+		group = 7,
 	},
 	special_bonus_unique_drow_ranger_1 = {
 		group = 10,
@@ -942,13 +942,13 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 9,
 	},
 	special_bonus_unique_earth_spirit = {
-		group = 7,
+		group = 5,
 	},
 	special_bonus_unique_earth_spirit_2 = {
-		group = 9,
+		group = 8,
 	},
 	special_bonus_unique_earth_spirit_3 = {
-		group = 8,
+		group = 6,
 	},
 	special_bonus_unique_huskar = {
 		group = 9,
@@ -1071,16 +1071,16 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 8,
 	},
 	special_bonus_unique_legion_commander = {
-		group = 10,
-	},
-	special_bonus_unique_legion_commander_2 = {
-		group = 8,
-	},
-	special_bonus_unique_legion_commander_3 = {
 		group = 9,
 	},
-	special_bonus_unique_legion_commander_4 = {
+	special_bonus_unique_legion_commander_2 = {
 		group = 7,
+	},
+	special_bonus_unique_legion_commander_3 = {
+		group = 6,
+	},
+	special_bonus_unique_legion_commander_4 = {
+		group = 5,
 	},
 	special_bonus_unique_puck = {
 		group = 9,
@@ -1245,7 +1245,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 9,
 	},
 	special_bonus_unique_centaur_2 = {
-		group = 10,
+		group = 5,
 	},
 	special_bonus_unique_centaur_3 = {
 		group = 8,
@@ -1302,13 +1302,13 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 9,
 	},
 	special_bonus_unique_underlord = {
-		group = 8,
+		group = 6,
 	},
 	special_bonus_unique_underlord_2 = {
-		group = 7,
+		group = 5,
 	},
 	special_bonus_unique_underlord_3 = {
-		group = 9,
+		group = 3,
 	},
 	special_bonus_unique_treant = {
 		group = 8,
@@ -1353,13 +1353,13 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 6,
 	},
 	special_bonus_unique_earthshaker = {
-		group = 10,
+		group = 8,
 	},
 	special_bonus_unique_earthshaker_2 = {
-		group = 9,
+		group = 6,
 	},
 	special_bonus_unique_earthshaker_3 = {
-		group = 8,
+		group = 4,
 	},
 	special_bonus_unique_lich_1 = {
 		group = 8,
@@ -1551,10 +1551,10 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 9,
 	},
 	special_bonus_unique_doom_4 = {
-		group = 7,
+		group = 4,
 	},
 	special_bonus_unique_doom_5 = {
-		group = 8,
+		group = 6,
 	},
 	special_bonus_unique_brewmaster = {
 		group = 9,
@@ -1569,13 +1569,13 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 11,
 	},
 	special_bonus_unique_bristleback = {
-		group = 8,
+		group = 6,
 	},
 	special_bonus_unique_bristleback_2 = {
-		group = 9,
+		group = 8,
 	},
 	special_bonus_unique_bristleback_3 = {
-		group = 10,
+		group = 9,
 	},
 	special_bonus_unique_furion = {
 		group = 6,
@@ -1641,10 +1641,10 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 2,
 	},
 	special_bonus_unique_kunkka = {
-		group = 9,
+		group = 7,
 	},
 	special_bonus_unique_kunkka_2 = {
-		group = 8,
+		group = 5,
 	},
 	special_bonus_unique_kunkka_3 = {
 		group = 11,

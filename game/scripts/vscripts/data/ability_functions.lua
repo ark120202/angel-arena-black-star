@@ -143,7 +143,6 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		end
 	},
 	modifier_sai_release_of_forge = {
-
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
@@ -299,7 +298,13 @@ INCOMING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
-	modifier_arena_healer = {damage = 1},
+	modifier_arena_healer = {
+		damage = function (_, _, inflictor)
+			if not inflictor or inflictor:GetAbilityName() ~= "item_meteor_hammer" then
+				return 1
+			end
+		end
+	},
 	modifier_anakim_transfer_pain = {
 		multiplier = function(attacker, victim, inflictor, damage)
 			local anakim_transfer_pain = victim:FindAbilityByName("anakim_transfer_pain")

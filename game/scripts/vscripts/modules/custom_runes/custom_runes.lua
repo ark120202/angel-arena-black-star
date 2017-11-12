@@ -35,7 +35,6 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 			player = unit:GetPlayerID(),
 			runeType = runeType
 		})
-		HeroVoice:OnRuneActivated(unit:GetPlayerID(), runeType)
 	end
 	if rune_multiplier then
 		for k, v in pairs(settings) do

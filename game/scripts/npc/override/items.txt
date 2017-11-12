@@ -1320,4 +1320,92 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
+	"item_recipe_spirit_vessel"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_spirit_vessel"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_combo_breaker"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_combo_breaker"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_nullifier"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_nullifier"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_trident"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_trident"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_meteor_hammer"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_meteor_hammer"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_dps_buildings"		"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_dps_units"		"180"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"burn_duration"		"6"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"2.25"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_duration"		"1.5"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_damage_buildings"		"20"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_damage_units"		"300"
+			}
+		}
+	}
 }

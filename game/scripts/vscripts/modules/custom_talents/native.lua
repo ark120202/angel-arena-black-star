@@ -1,7 +1,7 @@
 local nativeTalents = {}
 
 local npc_heroes = LoadKeyValues("scripts/npc/npc_heroes.txt")
-local npc_abilities = LoadKeyValues("scripts/npc/npc_heroes.txt")
+local npc_abilities = LoadKeyValues("scripts/npc/npc_abilities.txt")
 
 local function addTalent(talentName, heroName)
 	-- Get original value, before npc_abilities_override affection

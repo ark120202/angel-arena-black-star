@@ -29,8 +29,8 @@
 						<DOTAUserName id="GuideEntryAuthor" />
 						<Label id="GuideEntryVersion" />
 					</Panel>
-                    <TextButton id="SelectGuideButton" text="#DOTA_Guide_Select" />
-                    <Label id="SelectedGuideLabel" text="#DOTA_Guide_Selected" />
+					<TextButton id="SelectGuideButton" text="#DOTA_Guide_Select" />
+					<Label id="SelectedGuideLabel" text="#DOTA_Guide_Selected" />
 				</Panel>
 				<Panel id="GuideEntryRightColumn">
 					<Label id="GuideEntryRating" text="{s:guide_entry_rating}" />
