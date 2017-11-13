@@ -20548,6 +20548,7 @@
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"20 18 16 14 12 10 8"
 		"AbilityManaCost"				"70 80 90 100 110 120 130"
+		"RequiredLevel"					"4"
 		"AbilitySpecial"
 		{
 			"01"
