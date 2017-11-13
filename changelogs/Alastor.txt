@@ -1,0 +1,10 @@
++* _+200_ Mist Coil Heal/Damage
+    * Group:  _4_  => **5**
++* _+15_ Atrophy Attack Bonus Damage From Heroes
+    * Group:  _3_  => **4**
++* _+20_ Feral HP Regen
+    * Group:  _4_  => **5**
++* _-110_ Epicenter Attack Slow
+ * Group:  _9_  => **5**
++* _50%_ Sand Storm Slow and Blind
+    * Group:  _6_  => **4**
