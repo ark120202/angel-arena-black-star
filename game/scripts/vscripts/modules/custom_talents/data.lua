@@ -624,7 +624,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 1,
 	},
 	special_bonus_unique_lycan_3 = {
-		group = 4,
+		group = 5,
 	},
 	special_bonus_unique_lycan_4 = {
 		group = 7,
@@ -984,10 +984,10 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 7,
 	},
 	special_bonus_unique_sand_king_3 = {
-		group = 9,
+		group = 5,
 	},
 	special_bonus_unique_sand_king_4 = {
-		group = 6,
+		group = 4,
 	},
 	special_bonus_unique_shadow_demon_1 = {
 		group = 11,

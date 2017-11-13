@@ -338,7 +338,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 }
 
 CREEP_BONUSES_MODIFIERS = {
-	modifier_item_golden_eagle_relic_unique = {
+	modifier_item_golden_eagle_relic = {
 		gold = GetAbilitySpecial("item_golden_eagle_relic", "kill_gold"),
 		xp = GetAbilitySpecial("item_golden_eagle_relic", "kill_xp")
 	},
