@@ -39,7 +39,9 @@ function GiveOnAttackedGold(keys)
 		ParticleManager:SetParticleControl(particle, 2, Vector(2, string.len(math.abs(gold)) + 1, 0))
 		ParticleManager:SetParticleControl(particle, 3, Vector(255, 200, 33))
 
-		caster:AddExperience(xp, false, false)
+		if caster.AddExperience then
+			caster:AddExperience(xp, false, false)
+		end
 		Gold:ModifyGold(caster, gold)
 	end
 end
