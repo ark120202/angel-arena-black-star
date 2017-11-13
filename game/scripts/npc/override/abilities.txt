@@ -6913,7 +6913,7 @@
 	"templar_assassin_psi_blades"
 	{
 		"MaxLevel"	"7"
-		"RequiredLevel"	"4"
+		"RequiredLevel"	"2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -8419,7 +8419,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "0.1"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -20548,7 +20548,7 @@
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"20 18 16 14 12 10 8"
 		"AbilityManaCost"				"70 80 90 100 110 120 130"
-		"RequiredLevel"					"4"
+		"RequiredLevel"					"3"
 		"AbilitySpecial"
 		{
 			"01"
