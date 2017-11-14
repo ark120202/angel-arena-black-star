@@ -17,13 +17,31 @@ function MidasCreep(keys)
 end
 
 function GiveOnAttackedGold(keys)
+	local attacker = keys.attacker
 	local caster = keys.caster
-	if keys.attacker:IsConsideredHero() and not caster:IsIllusion() then
-		Gold:ModifyGold(caster, keys.Gold)
-		caster:AddExperience(keys.Xp, false, false)
+
+	if attacker:IsConsideredHero() and
+		not caster:IsIllusion() and
+		caster:GetTeamNumber() ~= attacker:GetTeamNumber() then
+		local gold = keys.Gold
+		local xp = keys.Xp
+
+		local presymbol = POPUP_SYMBOL_PRE_PLUS
 		local particle = ParticleManager:CreateParticleForPlayer("particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf", PATTACH_ABSORIGIN, caster, caster:GetPlayerOwner())
-		ParticleManager:SetParticleControl(particle, 1, Vector(0, keys.Gold, 0))
-		ParticleManager:SetParticleControl(particle, 2, Vector(2, string.len(keys.Gold) + 1, 0))
+
+		if attacker:IsBoss() then
+			gold = -gold
+			presymbol = POPUP_SYMBOL_PRE_MINUS
+			xp = 0
+		end
+
+		ParticleManager:SetParticleControl(particle, 1, Vector(presymbol, math.abs(gold), 0))
+		ParticleManager:SetParticleControl(particle, 2, Vector(2, string.len(math.abs(gold)) + 1, 0))
 		ParticleManager:SetParticleControl(particle, 3, Vector(255, 200, 33))
+
+		if caster.AddExperience then
+			caster:AddExperience(xp, false, false)
+		end
+		Gold:ModifyGold(caster, gold)
 	end
 end

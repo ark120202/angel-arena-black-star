@@ -218,7 +218,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"bonus_strength"	"5 10 15 20 25 30 35"
+				"bonus_strength"	"5 8 11 15 18 21 25"
 			}
 			"03"
 			{

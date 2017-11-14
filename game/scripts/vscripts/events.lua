@@ -25,7 +25,6 @@ function GameMode:OnNPCSpawned(keys)
 			--npc:AddNoDraw()
 			return
 		end
-		--HeroVoice:OnNPCSpawned(npc)
 		Timers:CreateTimer(function()
 			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
 				Physics:Unit(npc)
@@ -98,7 +97,6 @@ function GameMode:OnAbilityUsed(keys)
 		if abilityname == "night_stalker_darkness" and ability then
 			CustomGameEventManager:Send_ServerToAllClients("time_nightstalker_darkness", {duration = ability:GetLevelSpecialValueFor("duration", ability:GetLevel()-1)})
 		end
-		--HeroVoice:OnAbilityUsed(hero, ability)
 		if hero:HasModifier("modifier_item_pocket_riki_permanent_invisibility") or hero:HasModifier("modifier_item_pocket_riki_consumed_permanent_invisibility") then
 			local item = FindItemInInventoryByName(hero, "item_pocket_riki", false)
 			if not item then

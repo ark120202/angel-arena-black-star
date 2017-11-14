@@ -1369,12 +1369,23 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"ItemCost"						"1000"
 		"AbilitySpecial"
 		{
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_dps_buildings"		"5"
+			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"burn_dps_units"		"180"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"burn_duration"		"6"
 			}
 			"08"
 			{
@@ -1383,13 +1394,18 @@
 			}
 			"12"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"max_duration"		"3.0"
+			}
+			"13"
+			{
 				"var_type"				"FIELD_INTEGER"
-				"max_duration"		"1.5"
+				"impact_damage_buildings"		"10"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"impact_damage_units"		"300"
+				"impact_damage_units"		"280"
 			}
 		}
 	}

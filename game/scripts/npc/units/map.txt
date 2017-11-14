@@ -27,42 +27,24 @@
 
 	"npc_dota_casino_slotmachine"
 	{
-		// General
-		//
 		"BaseClass"	"npc_dota_creature"
 		"Model"	"models/items/earthshaker/totem_dragon_wall/fissure_head.vmdl"
-		"ModelScale"			"1.0"
-		"Level"	"1000"
+		"ModelScale"			"1"
+		"Level"	"0"
 		"IsAncient"					"1"
 
-		// Abilities
-		//----------------------------------------------------------------
-
 		"Ability1"	"slotmachine_passive"
-		"Ability2"	""
-		"Ability3"	""
-		"Ability4"	""
 
-		// Attack
-		//----------------------------------------------------------------
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
-
-		// Bounds
-		//----------------------------------------------------------------
 		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
-
-		// Movement
-		//----------------------------------------------------------------
 		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"	"0"	// Speed
-		"MovementTurnRate"	"0"	// Turning rate.
+		"MovementSpeed"	"0"
+		"MovementTurnRate"	"0"
 
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"	"100000"	// Base health.
-		"StatusHealthRegen"	"0"	// Health regeneration rate.
-		"StatusMana"	"0"	// Base mana.
-		"StatusManaRegen"	"0"	// Mana regeneration rate.
+		"StatusHealth"	"1"
+		"StatusHealthRegen"	"0"
+		"StatusMana"	"0"
+		"StatusManaRegen"	"0"
 
 		"Creature"
 		{

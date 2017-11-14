@@ -46,10 +46,10 @@ function SimpleAI:new( unit, profile, params )
 
 		ai.spawnPos = params.spawnPos or unit:GetAbsOrigin()
 		ai.aggroRange = unit:GetAttackRange()
-		ai.leashRange = ai.aggroRange 
+		ai.leashRange = ai.aggroRange
 		ai.abilityCastCallback = params.abilityCastCallback
 	end
-	
+
 	unit:AddNewModifier(unit, nil, "modifier_simple_ai", {})
 	Timers:CreateTimer( ai.GlobalThink, ai )
 	if unit.ai then
@@ -113,6 +113,8 @@ end
 			self:SwitchState(AI_STATE_RETURNING)
 			return
 		else
+			-- Pretty dirty hack to forecefully update target
+			self.unit:MoveToTargetToAttack(self.unit)
 			self.unit:MoveToTargetToAttack(self.aggroTarget)
 		end
 	end
@@ -126,7 +128,7 @@ end
 	end
 
 	function SimpleAI:CastingThink()
-		
+
 	end
 
 	function SimpleAI:OrderThink()
