@@ -1,12 +1,12 @@
-
-
-
-
-fix alastor
-
-Пофиксить Вайпера 3 скил описание
-мипо стики
-сфа пофиксить
-пофиксить голду за убийства
-пофиксить годен мом
-пофиксить таланты на экспу / голду
+* #### Meepo - Divided we Stand
+  * No longer sharable between clones
+ 	*Wand Of Midas
+ 	*Heavy War Axe Of Rage Damage
+ 	*Heavy War Axe Of Rage Health
+ 	*Octarine Core Arena
+ 	*Refresher Core
+ 	*Chest Of Midas
+ 	*Radiance Arena
+	*Radiance 2
+	*Radiance 3
+	*Radiance Frozen

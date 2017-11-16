@@ -6617,12 +6617,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"kill_xp"				"90"
+				"kill_xp"				"50"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"40"
+				"kill_gold"				"25"
 			}
 			"05"
 			{
