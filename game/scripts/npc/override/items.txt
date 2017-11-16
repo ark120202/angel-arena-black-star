@@ -6,6 +6,7 @@
 		"SideShop"						"0"
 		"ItemCost"						"90"
 		"ItemInitialCharges"			"1"
+		"AbilityCooldown"				"15.0"
 	}
 	"item_blades_of_attack"
 	{
@@ -1364,12 +1365,12 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"ItemCost"						"1000"
 	}
 	"item_meteor_hammer"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"ItemCost"						"1000"
 		"AbilitySpecial"
 		{
 			"05"
