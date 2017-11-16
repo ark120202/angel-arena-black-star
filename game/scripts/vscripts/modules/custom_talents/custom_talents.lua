@@ -5,17 +5,21 @@ local nativeTalents = ModuleRequire(..., "native")
 	local overridenTalents = LoadKeyValues("scripts/npc/override/talents.txt")
 	local brokenTalents = {}
 
-	for name, override in pairs(NATIVE_TALENTS_OVERRIDE) do
-		if nativeTalents[name] then
-			table.merge(nativeTalents[name], override)
-		else
-			table.insert(brokenTalents, name .. ": presents in native talents override, but not found in native talents list")
-		end
-	end
-
 	for name in pairs(overridenTalents) do
 		if not nativeTalents[name] then
 			table.insert(brokenTalents, name .. ": presents in ability override, but not found in native talents list")
+		end
+	end
+
+	for name, override in pairs(NATIVE_TALENTS_OVERRIDE) do
+		if nativeTalents[name] then
+			if override then
+				table.merge(nativeTalents[name], override)
+			else
+				nativeTalents[name] = nil
+			end
+		else
+			table.insert(brokenTalents, name .. ": presents in native talents override, but not found in native talents list")
 		end
 	end
 
