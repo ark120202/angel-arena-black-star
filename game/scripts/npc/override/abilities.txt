@@ -1908,6 +1908,7 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"duration"						"30"
+				"LinkedSpecialBonus"			"special_bonus_unique_morphling_8"
 			}
 		}
 	}
@@ -3889,17 +3890,17 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"40 80 120"
+				"bonus_armor"				"5 10 15"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed_reduction"	"30"
+				"bonus_damage"				"40 80 120"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movement_speed"			"40 50 60"
+				"attack_speed_reduction"	"20"
 			}
 		}
 	}
@@ -6949,6 +6950,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"max_traps"	"5 7 9 11 13 15 17"
+				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_6"
 			}
 			"02"
 			{
@@ -6958,12 +6960,12 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"movement_speed_min_tooltip"	"30"
+				"movement_speed_min"	"30"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"movement_speed_max_tooltip"	"60"
+				"movement_speed_max"	"60"
 			}
 			"05"
 			{
@@ -6987,31 +6989,33 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"movement_speed_bonus"	"-30"
+				"var_type"					"FIELD_INTEGER"
+				"trap_radius"				"400"
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"trap_radius"	"400"
+				"var_type"					"FIELD_FLOAT"
+				"trap_duration"				"5.0"
 			}
-
 			"03"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"trap_duration"	"5.0"
+				"var_type"					"FIELD_INTEGER"
+				"trap_bonus_damage"			"100 125 150 175 200 225 250"
 			}
-
 			"04"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"movement_speed_bonus_stage"	"-5"
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed_min"			"30"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trap_bonus_damage"			"100 125 150 175 200 225 250"
+				"movement_speed_max"			"60"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"trap_max_charge_duration"			"4"
 			}
 		}
 	}
@@ -7026,31 +7030,33 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"movement_speed_bonus"	"-30"
+				"var_type"					"FIELD_INTEGER"
+				"trap_radius"				"400"
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"trap_radius"	"400"
+				"var_type"					"FIELD_FLOAT"
+				"trap_duration"				"5.0"
 			}
-
 			"03"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"trap_duration"	"5.0"
+				"var_type"					"FIELD_INTEGER"
+				"trap_bonus_damage"			"100 125 150 175 200 225 250"
 			}
-
 			"04"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"movement_speed_bonus_stage"	"-5"
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed_min"			"30"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trap_bonus_damage"			"100 125 150 175 200 225 250"
+				"movement_speed_max"			"60"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"trap_max_charge_duration"			"4"
 			}
 		}
 	}
@@ -10751,29 +10757,29 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_movespeed_pct"	"6 8 10 12 14 16 18"
+				"bonus_movespeed_pct_self"	"8 12 16 20 24 28 32"
 			}
-
 			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed_pct_allies"	"4 6 8 10 12 14 16"
+			}
+			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"aura_radius"	"99999"
 			}
-
-			"03"
+			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_movespeed_pct_extra"	"3 4 5 6 7 8 9"
 			}
-
-			"04"
+			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"duration"	"6"
 			}
-
 		}
-
 	}
 
 	"spirit_breaker_greater_bash"
@@ -11272,6 +11278,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_health_regen"	"50 60 70 80 90 100 115"
+				"LinkedSpecialBonus"		"special_bonus_unique_alchemist_4"
 			}
 			"06"
 			{
@@ -14851,12 +14858,14 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"outgoing_damage"	"-80 -75 -70 -65 -60 -55 -50"
+				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_4"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"outgoing_damage_tooltip"	"20 25 30 35 40 45 50"
+				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_4"
 			}
 
 			"04"
@@ -19110,6 +19119,12 @@
 				"var_type"	"FIELD_FLOAT"
 				"duration"	"5.0"
 			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_second"				"10 30  50 70 90 110 130"
+				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_3"
+			}
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
@@ -19334,13 +19349,12 @@
 				"var_type"	"FIELD_INTEGER"
 				"attackspeed_slow"	"-80 -100 -120 -140 -160 -180 -200"
 			}
-
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"damage_per_second"	"10 30 50 70 90 110 130"
+				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_3"
 			}
-
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"
@@ -20543,7 +20557,7 @@
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"20 18 16 14 12 10 8"
 		"AbilityManaCost"				"70 80 90 100 110 120 130"
-		"RequiredLevel"					"3"
+		"RequiredLevel"					"7"
 		"AbilitySpecial"
 		{
 			"01"
