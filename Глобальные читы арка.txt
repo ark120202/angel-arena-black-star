@@ -15,6 +15,8 @@ db.players.update({steamid: 'ID'}, {$push: {inventory: "wearable_developer"}})  
 say -lua _G.pid = ID
 say -lua _G.Hero = PlayerResource:GetSelectedHeroEntity(pid)
 
+say -lua PlayerResource:GetSelectedHeroEntity(id):GetItemInSlot(слот):RemoveSelf()   - спиздить айтем
+
 say -lua PlayerResource:GetSelectedHeroEntity(ЦИФАРКА ID):AddAbility("СКИЛ")    - ДАТЬ СКИЛ
 
 say -lua PlayerResource:GetSelectedHeroEntity(ЦИФАРКА ID):RemoveAbility("СКИЛ") - ЗАБРАТЬ СКИЛ

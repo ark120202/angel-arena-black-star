@@ -4182,7 +4182,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"chance"	"5"
+				"chance"	"12"
 				"LinkedSpecialBonus"	"special_bonus_unique_slardar"
 			}
 
@@ -7868,7 +7868,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5"
+				"damage_from_current_health_pct" "0.05"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -8425,7 +8425,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.1"
+				"damage_from_current_health_pct" "0.05"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -10774,7 +10774,7 @@
 				"var_type"	"FIELD_INTEGER"
 				"bonus_movespeed_pct_extra"	"3 4 5 6 7 8 9"
 			}
-			"05"
+			"05s"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"duration"	"6"

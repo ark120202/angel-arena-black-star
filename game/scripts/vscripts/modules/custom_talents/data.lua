@@ -1113,7 +1113,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 9,
 	},
 	special_bonus_unique_timbersaw_2 = {
-		group = 8,
+		group = 4,
 	},
 	special_bonus_unique_timbersaw_3 = {
 		group = 10,
@@ -1233,13 +1233,13 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 9,
 	},
 	special_bonus_unique_clockwerk_2 = {
-		group = 7,
+		group = 5,
 	},
 	special_bonus_unique_clockwerk_3 = {
-		group = 8,
+		group = 7,
 	},
 	special_bonus_unique_clockwerk_4 = {
-		group = 10,
+		group = 6,
 	},
 	special_bonus_unique_centaur_1 = {
 		group = 9,
@@ -1472,9 +1472,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_morphling_1 = {
 		group = 9,
 	},
-	special_bonus_unique_morphling_2 = {
-		group = 10,
-	},
 	special_bonus_unique_morphling_3 = {
 		group = 8,
 	},
@@ -1632,7 +1629,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 9,
 	},
 	special_bonus_unique_wraith_king_3 = {
-		group = 8,
+		group = 6,
 	},
 	special_bonus_unique_wraith_king_5 = {
 		group = 1,
