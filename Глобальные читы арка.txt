@@ -34,10 +34,9 @@ CUSTOM_GOLD_PER_TICK = 100 Тик Денег
 
 ------------------------------------------------------
 say -lua for i = 0, 9 do PlayerResource:GetSelectedHeroEntity(i):ModifyAgility(10000) end
-AttributeIntelligenceGain
+ModifyIntellect
 ModifyStrength
 ModifyAgility
-ModifyIntelligence
 say -lua PlayerResource:GetSelectedHeroEntity(7):ModifyStrength(1000000)
 ------------------------------------------------------  СТАТЫ
 

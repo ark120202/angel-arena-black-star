@@ -293,7 +293,6 @@
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"arena/cherub_explosive_spore"
 		"MaxLevel" 						"7"
-		"LevelsBetweenUpgrades"			"1"
 
 		"AbilityCastRange"				"distance"
 		"AbilityCastPoint"				"0.3"

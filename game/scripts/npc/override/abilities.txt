@@ -72,7 +72,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"damage_from_current_health_pct" "0.3 0.5 0.8 1.1 1.4 1.7 2.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -85,6 +85,7 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"0.4 0.35 0.3 0.25 0.2 0.15 0.1"
 		"AbilityDamage"		"45 60 75 90 110 130 150"
+		"RequiredLevel"		"2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -108,7 +109,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"damage_from_current_health_pct" "0.3 0.5 0.8 1.1 1.4 1.7 2.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -215,7 +216,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"cooldown_scepter"				"4"
+				"cooldown_scepter"				"5"
 			}
 			"99"
 			{
@@ -1952,7 +1953,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stack_bonus_damage" "60"
+				"stack_bonus_damage" "25"
 			}
 			"06"
 			{
@@ -2001,7 +2002,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stack_bonus_damage" "60"
+				"stack_bonus_damage" "25"
 			}
 			"06"
 			{
@@ -2050,7 +2051,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stack_bonus_damage" "60"
+				"stack_bonus_damage" "25"
 			}
 			"06"
 			{
@@ -10417,7 +10418,6 @@
 				"var_type"	"FIELD_FLOAT"
 				"burn_damage_pct"	"1 1.5 2 2.5 3 3.5 4"
 				"LinkedSpecialBonus"	"special_bonus_unique_doom_1"
-				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
