@@ -15756,6 +15756,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"duration"	"4.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_slark_3"
 			}
 
 			"02"
@@ -19634,11 +19635,13 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"ground_jump_distance"		"1000"
+				"LinkedSpecialBonus"		"special_bonus_unique_monkey_king_7"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"perched_jump_distance"		"1000"
+				"LinkedSpecialBonus"		"special_bonus_unique_monkey_king_7"
 			}
 			"06"
 			{
