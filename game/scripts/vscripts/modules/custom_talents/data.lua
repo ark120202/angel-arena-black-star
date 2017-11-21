@@ -692,9 +692,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_storm_spirit_4 = {
 		group = 10,
 	},
-	special_bonus_unique_storm_spirit_5 = {
-		group = 8,
-	},
+	special_bonus_unique_storm_spirit_5 = false,
 	special_bonus_unique_tidehunter = {
 		group = 7,
 	},
@@ -719,14 +717,12 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_tiny = {
 		group = 7,
 	},
-	special_bonus_unique_tiny_2 = {
-		group = 9,
-	},
+	special_bonus_unique_tiny_2 = false,
 	special_bonus_unique_tiny_3 = {
-		group = 8,
+		group = 5,
 	},
 	special_bonus_unique_tiny_4 = {
-		group = 10,
+		group = 5,
 	},
 	special_bonus_unique_tiny_5 = {
 		group = 6,
@@ -744,13 +740,13 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 10,
 	},
 	special_bonus_unique_undying = {
-		group = 4,
+		group = 3,
 	},
 	special_bonus_unique_undying_2 = {
 		group = 9,
 	},
 	special_bonus_unique_undying_3 = {
-		group = 5,
+		group = 4,
 	},
 	special_bonus_unique_undying_4 = {
 		group = 8,
@@ -797,9 +793,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_ember_spirit_3 = {
 		group = 7,
 	},
-	special_bonus_unique_ember_spirit_4 = {
-		group = 10,
-	},
+	special_bonus_unique_ember_spirit_4 = false,
 	special_bonus_unique_ember_spirit_5 = {
 		group = 9,
 	},
@@ -894,10 +888,10 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 10,
 	},
 	special_bonus_unique_tusk_2 = {
-		group = 7,
+		group = 5,
 	},
 	special_bonus_unique_tusk_3 = {
-		group = 8,
+		group = 7,
 	},
 	special_bonus_unique_tusk_4 = {
 		group = 11,
@@ -1311,10 +1305,10 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 3,
 	},
 	special_bonus_unique_treant = {
-		group = 8,
+		group = 6,
 	},
 	special_bonus_unique_treant_2 = {
-		group = 7,
+		group = 5,
 	},
 	special_bonus_unique_treant_3 = {
 		group = 6,
@@ -1323,7 +1317,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 9,
 	},
 	special_bonus_unique_treant_5 = {
-		group = 10,
+		group = 8,
 	},
 	special_bonus_unique_razor = {
 		group = 9,
@@ -1476,11 +1470,13 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 8,
 	},
 	special_bonus_unique_morphling_4 = {
-		group = 11,
+		group = 10,
 	},
 	special_bonus_unique_morphling_5 = {
-		group = 12,
+		group = 11,
 	},
+	special_bonus_unique_morphling_6 = false,
+	special_bonus_unique_morphling_8 = false,
 	special_bonus_unique_leshrac_1 = {
 		group = 8,
 	},

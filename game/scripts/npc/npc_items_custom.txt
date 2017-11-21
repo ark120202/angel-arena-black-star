@@ -3725,12 +3725,12 @@
 			"11"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_mana_regen_per_charge"		"1.0"
+				"bonus_mana_regen_per_charge"		"0.8"
 			}
 			"12"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_health_regen_per_charge"		"1.5"
+				"bonus_health_regen_per_charge"		"1.2"
 			}
 			"13"
 			{
@@ -10557,7 +10557,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"drop_chance_pct"		"5"
+				"drop_chance_pct"		"10"
 			}
 			"05"
 			{

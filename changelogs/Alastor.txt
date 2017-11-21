@@ -15,25 +15,90 @@
 talents
 
 
-* _+300_ special_bonus_unique_clockwerk_2 => **+220** special_bonus_unique_clockwerk_2
+* _Toss Charges_ was removed
+* _Waveform Charges_ was removed
+* _Morph Duration_ was removed
+* _Sleight of Fist Charges_ was removed
+
+* _+300_ Rocket Flare Damage => **+220** Rocket Flare Damage
   * Group:  _7_  => **5**
-* +100 special_bonus_unique_clockwerk_3
+* +100 Battery Assault Damage
   * Group:  _8_  => **7**
-* special_bonus_unique_clockwerk_4
+* Rocket Flare Truesight
   * Group:  _10_  => **6**
-* +12 special_bonus_unique_timbersaw_2
+* +12 Reactive Armor Stacks
   * Group:  _8_  => **4**
-* _+120_ special_bonus_unique_wraith_king_3
+* _+120_ Wraithfire Blast DPS
   * Group:  _8_  => **6**
-
-
-
-
-* _+300_ ТАЛАНТ => **+220** ТАЛАНТ
+* +400 Charge Speed
+  * Group:  _8_  => **5**
+* +30% Greater Bash Damage
+  * Group:  _7_  => **6**
+* _+380_ Gush Damage => **+190** Gush Damage
+  * Group:  _9_  => **5**
+* Morph Targets Allies
+  * Group:  _12_  => **11**
+* Waveform Attacks Targets
+  * Group:  _11_  => **10**
+* _-7s_ Tree Grab CD => **-10s** Tree Grab CD
+  * Group:  _10_  => **5**
+* _-12s_ Avalanche Cooldown => **-5s** Avalanche Cooldown
+  * Group:  _8_  => **5**
+* Eyes and Overgrowth AoE
+  * Group:  _10_  => **8**
+* _+12_ Living Armor Block Instances => **+8** Living Armor Block Instances
+  * Group:  _8_  => **6**
+* _+100_ Leech Seed Damage/Heal => **+50** Leech Seed Damage/Heal
   * Group:  _7_  => **5**
-
-* _+300_ ТАЛАНТ => **+220** ТАЛАНТ
+* _+280_ Snowball Damage
   * Group:  _7_  => **5**
+* _+300_ Snowball Speed
+  * Group:  _8_  => **7**
+* _+12%_ Chance Walrus Punch => **+10%** Chance Walrus Punch
+* _+30_ Tombstone Zombie Damage
+  * Group:  _4_  => **3**
+* Tombstone On Death
+  * Group:  _5_  => **4**
+* _+3_ Tombstone Attacks
+  * Group:  _7_  => **2**
 
-* _+300_ ТАЛАНТ => **+220** ТАЛАНТ
-  * Group:  _7_  => **5**
+
+
+
+
+
+
+
+
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
