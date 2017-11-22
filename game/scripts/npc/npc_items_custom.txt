@@ -7378,17 +7378,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen_per_stack"	"4.0"
+				"hp_regen_per_stack"	"2.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movespeed_per_stack"	"2"
+				"movespeed_per_stack"	"3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"300"
+				"aoe"					"250"
 			}
 			"04"
 			{

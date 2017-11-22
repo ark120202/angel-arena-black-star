@@ -957,7 +957,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 8,
 	},
 	special_bonus_unique_naga_siren_3 = {
-		group = 7,
+		group = 6,
 	},
 	special_bonus_unique_oracle = {
 		group = 9,
@@ -1113,10 +1113,10 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 10,
 	},
 	special_bonus_unique_bloodseeker = {
-		group = 9,
+		group = 6,
 	},
 	special_bonus_unique_bloodseeker_2 = {
-		group = 8,
+		group = 7,
 	},
 	special_bonus_unique_bloodseeker_3 = {
 		group = 10,
@@ -1173,10 +1173,10 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 9,
 	},
 	special_bonus_unique_arc_warden = {
-		group = 9,
+		group = 6,
 	},
 	special_bonus_unique_arc_warden_2 = {
-		group = 8,
+		group = 4,
 	},
 	special_bonus_unique_meepo = {
 		group = 10,
@@ -1269,22 +1269,22 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 9,
 	},
 	special_bonus_unique_mirana_1 = {
-		group = 8,
+		group = 6,
 	},
 	special_bonus_unique_mirana_2 = {
-		group = 10,
-	},
-	special_bonus_unique_mirana_3 = {
 		group = 9,
 	},
+	special_bonus_unique_mirana_3 = {
+		group = 5,
+	},
 	special_bonus_unique_mirana_4 = {
-		group = 11,
+		group = 10,
 	},
 	special_bonus_unique_bounty_hunter = {
 		group = 10,
 	},
 	special_bonus_unique_bounty_hunter_2 = {
-		group = 9,
+		group = 6,
 	},
 	special_bonus_unique_bounty_hunter_3 = {
 		group = 11,
@@ -1525,6 +1525,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_nevermore_2 = {
 		group = 8,
 	},
+	special_bonus_unique_nevermore_3 = false
 	special_bonus_unique_templar_assassin = {
 		group = 11,
 	},

@@ -1539,7 +1539,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"arrow_range"	"10000"
+				"arrow_range"	"15000"
 			}
 
 			"04"
@@ -9271,7 +9271,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"150 225 300 375 450 525 600"
+				"bonus_damage"			"100 150 225 300 375 450 525"
 				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_2"
 			}
 			"02"
@@ -9287,12 +9287,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ministun"				"0.1"
+				"ministun"				"0.3"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"scepter_ministun"		"0.75"
+				"scepter_ministun"		"0.85"
 			}
 			"99"
 			{
@@ -14638,6 +14638,11 @@
 				"var_type"	"FIELD_INTEGER"
 				"cooldown_upgrade"	"7"
 			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impale_damage"			"80 160 240 320 400 480 560"
+				"LinkedSpecialBonus"	"special_bonus_unique_nyx_2"
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
@@ -14716,7 +14721,6 @@
 				"var_type"	"FIELD_INTEGER"
 				"damage_reflect_pct"	"80 100 120 140 160 180 200"
 				"LinkedSpecialBonus"	"special_bonus_unique_nyx"
-				"CalculateSpellDamageTooltip" "0"
 			}
 
 		}
@@ -20480,7 +20484,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"2000"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
-		"AbilityCooldown"	"4.0"
+		"AbilityCooldown"	"6.0"
 		"AbilityManaCost"	"100"
 		"AbilitySpecial"
 		{

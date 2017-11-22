@@ -15,10 +15,10 @@
 talents
 
 
-* _Toss Charges_ was removed
-* _Waveform Charges_ was removed
-* _Morph Duration_ was removed
-* _Sleight of Fist Charges_ was removed
+* _+6 Toss Charges_ was removed
+* _+2 Waveform Charges_ was removed
+* _+15 Morph Duration_ was removed
+* _+2 Sleight of Fist Charges_ was removed
 
 * _+300_ Rocket Flare Damage => **+220** Rocket Flare Damage
   * Group:  _7_  => **5**
@@ -28,7 +28,7 @@ talents
   * Group:  _10_  => **6**
 * +12 Reactive Armor Stacks
   * Group:  _8_  => **4**
-* _+120_ Wraithfire Blast DPS
+* +120 Wraithfire Blast DPS
   * Group:  _8_  => **6**
 * +400 Charge Speed
   * Group:  _8_  => **5**
@@ -50,22 +50,48 @@ talents
   * Group:  _8_  => **6**
 * _+100_ Leech Seed Damage/Heal => **+50** Leech Seed Damage/Heal
   * Group:  _7_  => **5**
-* _+280_ Snowball Damage
+* +280 Snowball Damage
   * Group:  _7_  => **5**
-* _+300_ Snowball Speed
+* +300 Snowball Speed
   * Group:  _8_  => **7**
 * _+12%_ Chance Walrus Punch => **+10%** Chance Walrus Punch
-* _+30_ Tombstone Zombie Damage
+* +30 Tombstone Zombie Damage
   * Group:  _4_  => **3**
 * Tombstone On Death
   * Group:  _5_  => **4**
-* _+3_ Tombstone Attacks
+* +3 Tombstone Attacks
   * Group:  _7_  => **2**
 
 
 
 
 
+* +2 special_bonus_unique_arc_warden_2
+  * Group:  _8_  => **4**
+* _+350_ special_bonus_unique_arc_warden => **+240** special_bonus_unique_arc_warden
+  * Group:  _9_  => **6**
+* +200 special_bonus_unique_bloodseeker_2
+  * Group:  _8_  => **7**
+* _-5_ special_bonus_unique_bloodseeker => **-4** special_bonus_unique_bloodseeker
+  * Group:  _9_  => **6**
+* _+400_ special_bonus_unique_bounty_hunter_2 => **+200** special_bonus_unique_bounty_hunter_2
+  * Group:  _9_  => **6**
+* _+75_ special_bonus_unique_broodmother_3 => **+180** special_bonus_unique_broodmother_3
+* +4 special_bonus_unique_clinkz_2
+  * Group:  _9_  => **5**
+* +100 special_bonus_unique_mirana_1
+  * Group:  _8_  => **6**
+* -5 special_bonus_unique_mirana_3
+  * Group:  _9_  => **5**
+* special_bonus_unique_mirana_2
+  * Group:  _10_  => **9**
+* -70 special_bonus_unique_mirana_4
+  * Group:  _11_  => **10**
+* _-10_ special_bonus_unique_naga_siren_3
+  * Group:  _7_  => **6**
+* _+300_ special_bonus_unique_nyx_2 => **+240** special_bonus_unique_nyx_2
+  * Group:  _9_  => **5**
+
 
 
 
@@ -78,21 +104,6 @@ talents
 
 
 
-* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
-  * Group:  _9_  => **5**
-
-
-* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
-  * Group:  _9_  => **5**
-
-
-* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
-  * Group:  _9_  => **5**
-
-
-
-* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
-  * Group:  _9_  => **5**
 
 
 * _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
@@ -100,5 +111,40 @@ talents
 
 
 
+
+
 * _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
   * Group:  _9_  => **5**
+
+
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+
+
