@@ -24,7 +24,7 @@ function Attributes:SetPropValue(hero, prop, value)
 	if not hero.attributes_adjustments then hero.attributes_adjustments = {} end
 	local propValue = ATTRIBUTE_LIST[prop]
 	if not propValue then error('Not found property named "' .. prop .. '"') end
-	hero.attributes_adjustments[prop] = value - (propValue.default / (propValue.stack or 1))
+	hero.attributes_adjustments[prop] = value - propValue.default
 end
 
 function Attributes:GetTotalPropValue(arg1, prop)
@@ -38,7 +38,7 @@ function Attributes:GetTotalPropValue(arg1, prop)
 	end
 
 	local adjustment = Attributes:GetAdjustmentForProp(hero, prop)
-	local perPoint = adjustment + (propValue.default / (propValue.stack or 1))
+	local perPoint = adjustment + propValue.default
 	return attributeValue * perPoint
 end
 
