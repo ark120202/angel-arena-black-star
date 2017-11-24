@@ -20,6 +20,20 @@ talents
 * _+15 Morph Duration_ was removed
 * _+2 Sleight of Fist Charges_ was removed
 
+
+experience per minute (1)
+* _+800_ experience per minute => **+600** experience per minute
+experience per minute (2)
+* _+1900_ experience per minute => **+1500** experience per minute
+experience per minute (3)
+* _+3000_ experience per minute => **+2500** experience per minute
+* Gold Income (2)
+* _+380_ gold per minute => **+190** gold per minute
+* Gold Income (3)
+* _+660_ gold per minute => **+460** gold per minute
+
+
+* _+75_ Spawn Spiderling Damage => **+180** Spawn Spiderling Damage
 * _+300_ Rocket Flare Damage => **+220** Rocket Flare Damage
   * Group:  _7_  => **5**
 * +100 Battery Assault Damage
@@ -61,73 +75,29 @@ talents
   * Group:  _5_  => **4**
 * +3 Tombstone Attacks
   * Group:  _7_  => **2**
-
-
-
-
-
-* +2 special_bonus_unique_arc_warden_2
+* +2s Flux Duration
   * Group:  _8_  => **4**
-* _+350_ special_bonus_unique_arc_warden => **+240** special_bonus_unique_arc_warden
+* _+350_ park Wraith Damage => **+240** park Wraith Damage
   * Group:  _9_  => **6**
-* +200 special_bonus_unique_bloodseeker_2
+* +200 Blood Rite Damage
   * Group:  _8_  => **7**
-* _-5_ special_bonus_unique_bloodseeker => **-4** special_bonus_unique_bloodseeker
+* _-5s_ Blood Rite Cooldown => **-4** Blood Rite Cooldown
   * Group:  _9_  => **6**
-* _+400_ special_bonus_unique_bounty_hunter_2 => **+200** special_bonus_unique_bounty_hunter_2
+* _+400_ Shuriken Toss Damage => **+200** Shuriken Toss Damage
   * Group:  _9_  => **6**
-* _+75_ special_bonus_unique_broodmother_3 => **+180** special_bonus_unique_broodmother_3
-* +4 special_bonus_unique_clinkz_2
+* +4s Strafe Stacks/Duration
   * Group:  _9_  => **5**
-* +100 special_bonus_unique_mirana_1
+* +100 Leap Attack Speed
   * Group:  _8_  => **6**
-* -5 special_bonus_unique_mirana_3
+* -5s Sacred Arrow cooldown
   * Group:  _9_  => **5**
-* special_bonus_unique_mirana_2
+* Multishot Sacred Arrows
   * Group:  _10_  => **9**
-* -70 special_bonus_unique_mirana_4
+* -70 Moonlight Shadow Cooldown
   * Group:  _11_  => **10**
-* _-10_ special_bonus_unique_naga_siren_3
+* _-10_ Rip Tide Armor
   * Group:  _7_  => **6**
-* _+300_ special_bonus_unique_nyx_2 => **+240** special_bonus_unique_nyx_2
-  * Group:  _9_  => **5**
-
-
-
-
-
-
-
-
-* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
-  * Group:  _9_  => **5**
-
-
-
-
-
-* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
-  * Group:  _9_  => **5**
-
-
-
-
-
-* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
-  * Group:  _9_  => **5**
-
-
-
-
-
-* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
-  * Group:  _9_  => **5**
-
-
-
-
-
-* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+* _+300_ Impale Damage => **+240** Impale Damage
   * Group:  _9_  => **5**
 
 

@@ -61,7 +61,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 1,
 		max_level = 1,
 		special_values = {
-			xp_per_minute = {800}
+			xp_per_minute = {600}
 		},
 		effect = {
 			unit_keys = {
@@ -89,7 +89,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 3,
 		max_level = 1,
 		special_values = {
-			xp_per_minute = {3000}
+			xp_per_minute = {2500}
 		},
 		effect = {
 			unit_keys = {
@@ -117,7 +117,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 2,
 		max_level = 1,
 		special_values = {
-			gold_per_minute = {420}
+			gold_per_minute = {220}
 		},
 		effect = {
 			unit_keys = {
@@ -131,7 +131,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 3,
 		max_level = 1,
 		special_values = {
-			gold_per_minute = {660}
+			gold_per_minute = {460}
 		},
 		effect = {
 			unit_keys = {
@@ -1525,7 +1525,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_nevermore_2 = {
 		group = 8,
 	},
-	special_bonus_unique_nevermore_3 = false
+	special_bonus_unique_nevermore_3 = false,
 	special_bonus_unique_templar_assassin = {
 		group = 11,
 	},
