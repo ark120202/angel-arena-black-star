@@ -15,13 +15,16 @@ function GameMode:MetamorphosisElixirCast(data)
 	if IsValidEntity(hero) and
 		hero:GetFullName() ~= newHeroName and
 		HeroSelection:IsHeroPickAvaliable(newHeroName) and
-		not Duel:IsDuelOngoing() and
-		not hero:HasModifier("modifier_shredder_chakram_disarm") and
 		(elixirItem or hero.ForcedHeroChange) and
 		(hero.ForcedHeroChange or Options:IsEquals("EnableRatingAffection", false) or
-			PlayerResource:GetPlayerStat(data.PlayerID, "ChangedHeroAmount") == 0) then
-		PlayerResource:ModifyPlayerStat(data.PlayerID, "ChangedHeroAmount", 1)
-		HeroSelection:ChangeHero(data.PlayerID, newHeroName, true, elixirItem and elixirItem:GetSpecialValueFor("transformation_time") or 0, elixirItem)
+		PlayerResource:GetPlayerStat(data.PlayerID, "ChangedHeroAmount") == 0) then
+		if not Duel:IsDuelOngoing() then
+			if HeroSelection:ChangeHero(data.PlayerID, newHeroName, true, elixirItem and elixirItem:GetSpecialValueFor("transformation_time") or 0, elixirItem) then
+				PlayerResource:ModifyPlayerStat(data.PlayerID, "ChangedHeroAmount", 1)
+			end
+		else
+			Containers:DisplayError(data.PlayerID, "#arena_hud_error_cant_change_hero")
+		end
 	end
 end
 

@@ -76,6 +76,15 @@ end
 
 function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item, callback, bUpdateStatus)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+
+	if not hero.ForcedHeroChange and (
+		hero:HasModifier("modifier_shredder_chakram_disarm") or
+		hero:HasModifier("modifier_razor_link_vision")
+	) then
+		Containers:DisplayError(playerId, "#arena_hud_error_cant_change_hero")
+		return false
+	end
+
 	hero.ChangingHeroProcessRunning = true
 	ProjectileManager:ProjectileDodge(hero)
 	if hero.PocketItem then
@@ -158,4 +167,6 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 		end)
 		if callback then callback(newHero) end
 	end, nil, bUpdateStatus)
+
+	return true
 end
