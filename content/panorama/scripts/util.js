@@ -399,4 +399,16 @@ function FindFountain(team) {
 	return Entities.GetAllEntitiesByName('npc_arena_fountain_' + team)[0];
 }
 
+function GetVisibleAbilityInSlot(unit, slot) {
+	var j = 0;
+	for (var i = 0; i < Entities.GetAbilityCount(unit); i++) {
+		var ability = Entities.GetAbility(unit, i);
+		if (!Abilities.IsHidden(ability)) {
+			if (j++ === slot) {
+				return ability;
+			}
+		}
+	}
+}
+
 var hud = GetDotaHud();
