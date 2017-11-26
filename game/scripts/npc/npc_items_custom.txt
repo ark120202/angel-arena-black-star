@@ -3357,7 +3357,8 @@
 
 	"item_skull_of_midas"
 	{
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_skull_of_midas.lua"
 		"ID"							"10138"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/skull_of_midas"
@@ -3382,21 +3383,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"kill_gold"				"5"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_skull_of_midas"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
 			}
 		}
 	}
