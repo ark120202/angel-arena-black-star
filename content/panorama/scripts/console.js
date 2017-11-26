@@ -35,6 +35,14 @@ Console.prototype.isVisible = function() {
 
 Console.prototype.setVisible = function(visible) {
 	this.panel.SetHasClass('console_visible', visible);
+	if (visible && !this.opened) {
+		this.opened = true;
+		$.Schedule(1 / 30, (function() {
+			// Save center position and reset it to fix dragging offset
+			this.panel.style.position = this.panel.actualxoffset + 'px ' + this.panel.actualyoffset + 'px 0';
+			this.panel.style.align = 'left top';
+		}).bind(this));
+	}
 };
 
 Console.prototype.setStack = function(stack) {

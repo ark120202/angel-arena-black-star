@@ -236,4 +236,10 @@ CHAT_COMMANDS = {
 			end
 		end
 	},
+	["console"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_PUBLIC,
+		f = function(_, _, playerID)
+			Console:SetVisible(PlayerResource:GetPlayer(playerID))
+		end
+	},
 }

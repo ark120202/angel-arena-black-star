@@ -78,7 +78,7 @@ function UpdatePanoramaHUD() {
 				if (GameUI.IsAltDown()) {
 					var unit = Players.GetLocalPlayerPortraitUnit();
 					GameEvents.SendCustomGameEventToServer('custom_chat_send_message', {
-						ability: Entities.GetAbility(unit, index)
+						ability: GetVisibleAbilityInSlot(unit, index)
 					});
 				}
 			});
