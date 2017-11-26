@@ -597,7 +597,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 8,
 	},
 	special_bonus_unique_ursa_2 = {
-		group = 9,
+		group = 5,
 	},
 	special_bonus_unique_ursa_3 = {
 		group = 6,
@@ -606,7 +606,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 10,
 	},
 	special_bonus_unique_ursa_5 = {
-		group = 7,
+		group = 5,
 	},
 	special_bonus_unique_chaos_knight = {
 		group = 10,
@@ -903,7 +903,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 8,
 	},
 	special_bonus_unique_sniper_2 = {
-		group = 7,
+		group = 5,
 	},
 	special_bonus_unique_sniper_3 = {
 		group = 9,
@@ -1428,22 +1428,22 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 10,
 	},
 	special_bonus_unique_vengeful_spirit_1 = {
-		group = 9,
-	},
-	special_bonus_unique_vengeful_spirit_2 = {
-		group = 10,
-	},
-	special_bonus_unique_vengeful_spirit_3 = {
-		group = 12,
-	},
-	special_bonus_unique_vengeful_spirit_4 = {
 		group = 8,
 	},
+	special_bonus_unique_vengeful_spirit_2 = {
+		group = 7,
+	},
+	special_bonus_unique_vengeful_spirit_3 = {
+		group = 9,
+	},
+	special_bonus_unique_vengeful_spirit_4 = {
+		group = 6,
+	},
 	special_bonus_unique_vengeful_spirit_5 = {
-		group = 11,
+		group = 5,
 	},
 	special_bonus_unique_vengeful_spirit_6 = {
-		group = 7,
+		group = 5,
 	},
 	special_bonus_unique_venomancer = {
 		group = 6,

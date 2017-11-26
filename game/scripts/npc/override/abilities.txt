@@ -4402,7 +4402,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"550"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
-		"AbilityCooldown"	"13 12.5 12 11.5 11 10.5 10"
+		"AbilityCooldown"	"15 14.5 14 13.5 13 12.5 12 11"
 		"AbilityManaCost"	"110 120 130 140 150 160 170"
 		"AbilitySpecial"
 		{
@@ -4421,7 +4421,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"magic_missile_damage"	"100 175 250 325 400 475 525"
+				"magic_missile_damage"	"100 150 200 250 300 350 400"
 				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_1"
 			}
 			"99"
@@ -6914,7 +6914,7 @@
 	"templar_assassin_psi_blades"
 	{
 		"MaxLevel"	"7"
-		"RequiredLevel"	"3"
+		"RequiredLevel"	"2"
 		"AbilitySpecial"
 		{
 			"01"

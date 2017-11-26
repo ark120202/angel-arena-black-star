@@ -21,11 +21,11 @@ talents
 * _+2 Sleight of Fist Charges_ was removed
 
 
-experience per minute (1)
+Experience Income (1)
 * _+800_ experience per minute => **+600** experience per minute
-experience per minute (2)
+Experience Income (2)
 * _+1900_ experience per minute => **+1500** experience per minute
-experience per minute (3)
+Experience Income (3)
 * _+3000_ experience per minute => **+2500** experience per minute
 * Gold Income (2)
 * _+380_ gold per minute => **+190** gold per minute
@@ -35,6 +35,7 @@ experience per minute (3)
 
 * _+75_ Spawn Spiderling Damage => **+180** Spawn Spiderling Damage
 * _+300_ Rocket Flare Damage => **+220** Rocket Flare Damage
+* _+12%_ Chance Walrus Punch => **+10%** Chance Walrus Punch
   * Group:  _7_  => **5**
 * +100 Battery Assault Damage
   * Group:  _8_  => **7**
@@ -68,7 +69,6 @@ experience per minute (3)
   * Group:  _7_  => **5**
 * +300 Snowball Speed
   * Group:  _8_  => **7**
-* _+12%_ Chance Walrus Punch => **+10%** Chance Walrus Punch
 * +30 Tombstone Zombie Damage
   * Group:  _4_  => **3**
 * Tombstone On Death
@@ -98,6 +98,67 @@ experience per minute (3)
 * _-10_ Rip Tide Armor
   * Group:  _7_  => **6**
 * _+300_ Impale Damage => **+240** Impale Damage
+  * Group:  _9_  => **5**
+* +6 Shrapnel Charges
+  * Group:  _7_  => **5**
+* +600 AoE Earthshock
+  * Group:  _7_  => **5**
+* -1s Earthshock Cooldown
+  * Group:  _9_  => **5**
+* -6s Wave of Terror Cooldown
+  * Group:  _7_  => **5**
+* -10 Wave of Terror Armor
+  * Group:  _8_  => **6**
+* +400 Magic Missile Damage
+  * Group:  _9_  => **8**
+* +15% Vengeance Aura Damage
+  * Group:  _10_  => **7**
+* -5s Magic Missile Cooldown
+  * Group:  _11_  => **5**
+* Magic Missile Pierces Spell Immunity
+  * Group:  _12_  => **9**
+* _+56_ Corrosive Skin Stats => **+15** Corrosive Skin Stats
+
+
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
+  * Group:  _9_  => **5**
+
+
+
+
+
+* _+380_ special_bonus_unique_tidehunter_2 => **+190** special_bonus_unique_tidehunter_2
   * Group:  _9_  => **5**
 
 

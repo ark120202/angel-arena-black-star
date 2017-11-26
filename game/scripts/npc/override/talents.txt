@@ -392,7 +392,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"56"
+				"value"				"15"
 			}
 		}
 	}
@@ -976,6 +976,17 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"value"				"100"
+			}
+		}
+	}
+	"special_bonus_unique_techies_4"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"550"
 			}
 		}
 	}
