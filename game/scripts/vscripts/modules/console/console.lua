@@ -6,7 +6,7 @@ function Console:Init()
 	Convars:RegisterCommand("arena_console", function()
 		local player = Convars:GetCommandClient()
 		Console:SetVisible(player)
-	end, "Toggle Angel Arena Black Star debug console", 0)
+	end, "Toggle Angel Arena Black Star debug console", FCVAR_NOTIFY)
 end
 
 function Console:SetVisible(player, value)
