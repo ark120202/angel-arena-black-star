@@ -90,6 +90,8 @@ function GameMode:InitGameMode()
 	StatsClient:Init()
 	Teams:Initialize()
 	Attributes:Init()
+	Console:Init()
+
 	PlayerTables:CreateTable("arena", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("players_abandoned", {}, AllPlayersInterval)

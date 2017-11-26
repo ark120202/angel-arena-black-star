@@ -578,7 +578,7 @@ function FindCourier(team)
 end
 
 function GetNotScaledDamage(damage, unit)
-	return math.floor(damage/(1 + Attributes:GetTotalPropValue(unit, "spell_amplify_pct") / 100) + 0.5)
+	return damage / (1 + Attributes:GetTotalPropValue(unit, "spell_amplify_pct") * 0.01)
 end
 
 function IsUltimateAbility(ability)

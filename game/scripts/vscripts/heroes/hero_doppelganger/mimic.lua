@@ -45,7 +45,7 @@ if IsServer() then
 			abilityCooldownCache = GenerateAbilityCooldownCache(caster)
 		}
 
-		HeroSelection:ChangeHero(caster:GetPlayerID(), targetName, true, nil, nil, function(newHero)
+		return HeroSelection:ChangeHero(caster:GetPlayerID(), targetName, true, nil, nil, function(newHero)
 			ApplyAbilityCooldownsFromCache(newHero, state.abilityCooldownCache)
 			if state.Additional_str then
 				newHero.Additional_str = state.Additional_str
@@ -156,6 +156,11 @@ if IsServer() then
 
 	function modifier_doppelganger_mimic:OnDestroy()
 		local parent = self:GetParent()
-		ChangeHero(parent, "npc_arena_hero_doppelganger")
+		if not ChangeHero(parent, "npc_arena_hero_doppelganger") then
+			-- Can't change hero now
+			Timers:CreateTimer(function()
+				parent:AddNewModifier(parent, self, "modifier_doppelganger_mimic", nil)
+			end)
+		end
 	end
 end

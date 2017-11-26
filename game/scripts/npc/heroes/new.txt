@@ -467,7 +467,6 @@
 		"Ability4"		"anakim_transfer_pain"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"anakim_summon_divine_knight"
-		"Enabled"		"1"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
 		"AttackRange"			"400"

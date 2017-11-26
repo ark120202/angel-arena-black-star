@@ -3357,7 +3357,8 @@
 
 	"item_skull_of_midas"
 	{
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_skull_of_midas.lua"
 		"ID"							"10138"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/skull_of_midas"
@@ -3382,21 +3383,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"kill_gold"				"5"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_skull_of_midas"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
 			}
 		}
 	}
@@ -3725,12 +3711,12 @@
 			"11"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_mana_regen_per_charge"		"1.0"
+				"bonus_mana_regen_per_charge"		"0.8"
 			}
 			"12"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_health_regen_per_charge"		"1.5"
+				"bonus_health_regen_per_charge"		"1.2"
 			}
 			"13"
 			{
@@ -6617,12 +6603,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"kill_xp"				"90"
+				"kill_xp"				"50"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"40"
+				"kill_gold"				"25"
 			}
 			"05"
 			{
@@ -6643,7 +6629,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_bonus_movespeed_pct" "30"
+				"active_bonus_movespeed_pct" "40"
 			}
 			"09"
 			{
@@ -7378,17 +7364,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen_per_stack"	"4.0"
+				"hp_regen_per_stack"	"2.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movespeed_per_stack"	"2"
+				"movespeed_per_stack"	"3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"300"
+				"aoe"					"250"
 			}
 			"04"
 			{
@@ -10557,7 +10543,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"drop_chance_pct"		"5"
+				"drop_chance_pct"		"10"
 			}
 			"05"
 			{

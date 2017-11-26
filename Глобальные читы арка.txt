@@ -15,6 +15,8 @@ db.players.update({steamid: 'ID'}, {$push: {inventory: "wearable_developer"}})  
 say -lua _G.pid = ID
 say -lua _G.Hero = PlayerResource:GetSelectedHeroEntity(pid)
 
+say -lua PlayerResource:GetSelectedHeroEntity(id):GetItemInSlot(слот):RemoveSelf()   - спиздить айтем
+
 say -lua PlayerResource:GetSelectedHeroEntity(ЦИФАРКА ID):AddAbility("СКИЛ")    - ДАТЬ СКИЛ
 
 say -lua PlayerResource:GetSelectedHeroEntity(ЦИФАРКА ID):RemoveAbility("СКИЛ") - ЗАБРАТЬ СКИЛ
@@ -32,10 +34,10 @@ CUSTOM_GOLD_PER_TICK = 100 Тик Денег
 
 ------------------------------------------------------
 say -lua for i = 0, 9 do PlayerResource:GetSelectedHeroEntity(i):ModifyAgility(10000) end
-AttributeIntelligenceGain
+ModifyIntellect
 ModifyStrength
 ModifyAgility
-ModifyIntelligence
+ModifyIntellect
 say -lua PlayerResource:GetSelectedHeroEntity(7):ModifyStrength(1000000)
 ------------------------------------------------------  СТАТЫ
 
@@ -72,8 +74,6 @@ say -lua for i = 0, 9 do PlayerResource:SetPlayerTeam(i, 2) end
 say -lua for i = 0, 9 do Gold:AddGold(i, 11111111111) end
 
 say -lua for I = 0, 9 do CHAT_COMMANDS.kick({I}) end - кик всех
-
-GameRules:SetKillGoal(iGoal) - Дать КЛ
 
 ИДИАЛЬНАЯ КОМАНДА ПИЗДЕЦ
 for team in pairs(TEAM_COLORS) do GameRules:SetCustomGameTeamMaxPlayers(team, 10) end
@@ -200,3 +200,67 @@ XJ_RGDAjS9E
 h ЕСТЬ WEB
 v ЕСЛИ ВИДЕО
 i
+
+
+СОЗДАНИЕ БОТОВ
+НАЧИНАЕМ
+"расширить тиму 3"
+_G.bts = "function alastor_bot(hero, te)\nlocal pid=PlayerResource:GetPlayerCount();Tutorial:AddBot(hero, ''"
+bts=bts..", '', false);PlayerResource:SetCustomTeamAssignment(pid, te) end"
+DebugCallFunction(loadstring(bts))
+alastor_bot("npc_dota_hero_tiny", 3)
+
+
+
+создать героя который заменить втоего героя 
+-a_createhero npc_arena_hero_doppelganger enemy
+создать героя  который земенит твоего чужого героя
+CHAT_COMMANDS.a_createhero.f("npc_dota_hero_doppelganger", PlayerResource:GetSelectedHeroEntity(pid), pid)
+ 
+спиздить таланты
+PlayerResource:GetSelectedHeroEntity(pid):ClearTalents()
+спиздить лвл абилки
+CHAT_COMMANDS.reset.f(nil, PlayerResource:GetSelectedHeroEntity(pid))
+
+дать кучу рун
+CHAT_COMMANDS.runetest.f(nil, PlayerResource:GetSelectedHeroEntity(pid))
+
+дать кучу рун всем
+
+say -lua for i = 0, 9 do CHAT_COMMANDS.runetest.f(nil, PlayerResource:GetSelectedHeroEntity(i))
+
+
+
+GameRules:SetKillGoal(iGoal) - Дать КЛ
+
+Увеличить число килов за челика
+Teams:SetTeamKillWeight(team, value)
+
+
+
+дождь из рун
+say -lua _G.RANDVECT = function() return Vector(RandomInt(-MAP_LENGTH,MAP_LENGTH),RandomInt(-MAP_LENGTH,MAP_LENGTH),0) end
+say -lua _G.runerain = "function RuneRain()\nTimers:CreateTimer(function()\nCustomRunes:CreateRune(GetGroundPosition(RANDVECT(),"
+say -lua runerain=runerain.." nil), RandomInt(ARENA_RUNE_FIRST, ARENA_RUNE_LAST))\nreturn 0.4\nend)\nend"
+say -lua DebugCallFunction(loadstring(runerain))
+say -lua RuneRain()
+
+остановить дождь из рун
+Timers:RemoveTimers(true)
+
+
+включить читы всем
+
+say -lua IsInToolsMode = function() return true end
+say -lua GameRules.IsCheatMode = function() return true end
+
+супер мега агр от боссов
+say -lua _G.aggresiveBosses = "function AggresiveBosses()\nfor _,v in ipairs(Entities:FindAllByClassname('npc_dota_creature'))"
+say -lua aggresiveBosses=aggresiveBosses.." do\nif string.starts(v:GetUnitName(), 'npc_arena_boss_') then\n"
+say -lua aggresiveBosses=aggresiveBosses.."v.ai.aggroRange = 60000\nv.ai.leashRange = 60000\nend end end"
+say -lua DebugCallFunction(loadstring(aggresiveBosses))
+say -lua AggresiveBosses()
+
+
+закинуть порно
+-ccreate ID h pornhub.com ВРЕМЯ

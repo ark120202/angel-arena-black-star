@@ -282,7 +282,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"380"
+				"value"				"190"
 			}
 		}
 	}
@@ -352,6 +352,28 @@
 			}
 		}
 	}
+	"special_bonus_unique_tiny_4"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"10"
+			}
+		}
+	}
+	"special_bonus_unique_tiny_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"5"
+			}
+		}
+	}
 	"special_bonus_unique_troll_warlord_3"
 	{
 		"AbilitySpecial"
@@ -370,7 +392,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"56"
+				"value"				"15"
 			}
 		}
 	}
@@ -558,6 +580,17 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"value"				"280"
+			}
+		}
+	}
+	"special_bonus_unique_tusk_4"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"10"
 			}
 		}
 	}
@@ -843,7 +876,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"5"
+				"value"				"4"
 			}
 		}
 	}
@@ -891,6 +924,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_broodmother_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"180"
+			}
+		}
+	}
 	"special_bonus_unique_broodmother_4"
 	{
 		"AbilitySpecial"
@@ -932,6 +976,17 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"value"				"100"
+			}
+		}
+	}
+	"special_bonus_unique_techies_4"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"550"
 			}
 		}
 	}
@@ -1008,7 +1063,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"300"
+				"value"				"220"
 			}
 		}
 	}
@@ -1096,7 +1151,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"400"
+				"value"				"200"
 			}
 		}
 	}
@@ -1140,7 +1195,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"100"
+				"value"				"50"
 			}
 		}
 	}
@@ -1658,6 +1713,17 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"value"				"200"
+			}
+		}
+	}
+	"special_bonus_unique_arc_warden"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"240"
 			}
 		}
 	}
