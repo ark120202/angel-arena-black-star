@@ -35,6 +35,8 @@
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/libraries/modmaker/modmaker.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/libraries/barebones_attachments.xml" />
 
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/console.xml" />
+
 		<!-- From Overthrow.
 			<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/overthrow_item_notification.xml" />
 			<CustomUIElement type="HeroSelection"       layoutfile="file://{resources}/layout/custom_game/multiteam_hero_select_overlay.xml" />

@@ -247,3 +247,13 @@ function table.uniq(t)
 
 	return o
 end
+
+function table.filterValues(t, predicate)
+	local new = {}
+	for k, v in pairs(t) do
+		if predicate(v, k) then
+			new[k] = v
+		end
+	end
+	return new
+end

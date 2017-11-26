@@ -21,6 +21,7 @@ local modules = {
 	"teams",
 	"meepo_fixes", -- until rewrite
 	"weather",
+	"console",
 }
 
 local errors = {}
