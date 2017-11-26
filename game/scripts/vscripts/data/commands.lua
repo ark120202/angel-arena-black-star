@@ -173,16 +173,6 @@ CHAT_COMMANDS = {
 			hero:SetOriginalModel(args[1])
 		end
 	},
-	["lua"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
-		f = function(args)
-			local str = ""
-			for _,v in ipairs(args) do
-				str = str .. v .. " "
-			end
-			EvalString(str)
-		end
-	},
 	["pick"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
 		f = function(args, hero, playerID)
