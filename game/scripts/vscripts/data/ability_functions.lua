@@ -46,6 +46,7 @@ local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype
 		end
 	end
 end
+
 ON_DAMAGE_MODIFIER_PROCS = {
 	modifier_item_octarine_core_arena = function(attacker, victim, inflictor, damage, damagetype_const)
 		OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, "item_octarine_core_arena", "modifier_octarine_bash_cooldown")
