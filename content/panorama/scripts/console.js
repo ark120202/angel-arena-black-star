@@ -12,6 +12,7 @@ function Console(panel) {
 	think();
 
 	this.setPinned(false);
+	this.alignCenter();
 
 	$.RegisterEventHandler('DragStart', this.header, this.onDragStart.bind(this));
 	$.RegisterEventHandler('DragEnd', this.header, this.onDragEnd.bind(this));
@@ -24,6 +25,16 @@ function Console(panel) {
 		this.setVisible(event.value != null ? event.value : !this.isVisible());
 	}.bind(this));
 }
+
+Console.prototype.alignCenter = function() {
+	var screenWidth = Game.GetScreenWidth();
+	var screenHeight = Game.GetScreenHeight();
+	var panelWidth = this.panel.actuallayoutwidth;
+	var panelHeight = this.panel.actuallayoutheight;
+	var positionX = screenWidth / 2 - panelWidth / 2;
+	var positionY = screenHeight / 2 - panelHeight / 2 - 100;
+	this.panel.style.position = positionX + 'px ' + positionY + 'px 0';
+};
 
 Console.prototype.setPinned = function(pinned) {
 	this.header.SetDraggable(!pinned);
