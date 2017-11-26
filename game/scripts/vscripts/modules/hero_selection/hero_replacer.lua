@@ -77,12 +77,23 @@ end
 function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item, callback, bUpdateStatus)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 
-	if not hero.ForcedHeroChange and (
-		hero:HasModifier("modifier_shredder_chakram_disarm") or
-		hero:HasModifier("modifier_razor_link_vision")
-	) then
-		Containers:DisplayError(playerId, "#arena_hud_error_cant_change_hero")
-		return false
+	if not hero.ForcedHeroChange then
+		if hero:HasModifier("modifier_shredder_chakram_disarm") or
+			hero:HasModifier("modifier_razor_link_vision") then
+			Containers:DisplayError(playerId, "#arena_hud_error_cant_change_hero")
+			return false
+		end
+		if hero:HasAbility("centaur_stampede") then
+			local heroTeam = PlayerResource:GetTeam(playerId)
+			local allyHas = false
+			for i = 0, 23 do
+				local playerHero = PlayerResource:GetSelectedHeroEntity(i)
+				if playerHero and PlayerResource:GetTeam(i) == heroTeam and playerHero:HasModifier("modifier_centaur_stampede") then
+					Containers:DisplayError(playerId, "#arena_hud_error_cant_change_hero")
+					return false
+				end
+			end
+		end
 	end
 
 	hero.ChangingHeroProcessRunning = true
