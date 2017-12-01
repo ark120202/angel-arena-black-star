@@ -99,6 +99,10 @@ end
 			self:SwitchState(AI_STATE_AGGRESSIVE)
 			return
 		end
+		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > 10 then
+			self:SwitchState(AI_STATE_RETURNING)
+			return
+		end
 	end
 
 	function SimpleAI:AggressiveThink()
