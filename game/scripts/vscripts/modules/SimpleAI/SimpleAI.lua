@@ -124,7 +124,6 @@ end
 	end
 
 	function SimpleAI:ReturningThink()
-		self.unit:MoveToPosition(self.spawnPos) -- If movement order was interrupted for some reason (Force Staff)
 		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() < 10 then
 			self:SwitchState(AI_STATE_IDLE)
 			return
