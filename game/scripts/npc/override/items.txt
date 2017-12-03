@@ -1331,7 +1331,12 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
-	"item_combo_breaker"
+	"item_recipe_aeon_disk"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_aeon_disk"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
@@ -1346,7 +1351,12 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
-	"item_trident"
+	"item_recipe_kaya"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_kaya"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
