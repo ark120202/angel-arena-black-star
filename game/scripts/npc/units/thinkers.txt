@@ -223,9 +223,9 @@
 		"MovementTurnRate"			"0.5"
 
 		"StatusHealth"				"200"
-		"StatusHealthRegen"			"0.25"
+		"StatusHealthRegen"			"1.5"
 		"StatusMana"				"75"
-		"StatusManaRegen"			"0.01"
+		"StatusManaRegen"			"0.9"
 
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
