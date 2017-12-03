@@ -1008,31 +1008,29 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 10,
 	},
 	special_bonus_unique_lina_1 = {
-		group = 8,
+		group = 5,
 	},
 	special_bonus_unique_lina_2 = {
-		group = 9,
+		group = 6,
 	},
 	special_bonus_unique_lina_3 = {
-		group = 7,
+		group = 5,
 	},
-	special_bonus_unique_ancient_apparition_1 = {
-		group = 9,
-	},
+	special_bonus_unique_ancient_apparition_1 = false,
 	special_bonus_unique_ancient_apparition_2 = {
-		group = 10,
+		group = 6,
 	},
 	special_bonus_unique_ancient_apparition_3 = {
-		group = 8,
+		group = 5,
 	},
 	special_bonus_unique_ancient_apparition_4 = {
-		group = 7,
+		group = 4,
 	},
 	special_bonus_unique_ancient_apparition_5 = {
-		group = 11,
+		group = 9,
 	},
 	special_bonus_unique_disruptor = {
-		group = 7,
+		group = 6,
 	},
 	special_bonus_unique_disruptor_2 = {
 		group = 9,
@@ -1140,7 +1138,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 7,
 	},
 	special_bonus_unique_chen_2 = {
-		group = 10,
+		group = 9,
 	},
 	special_bonus_unique_chen_3 = {
 		group = 8,
@@ -1508,13 +1506,13 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 6,
 	},
 	special_bonus_unique_bane_1 = {
-		group = 9,
+		group = 6,
 	},
 	special_bonus_unique_bane_2 = {
 		group = 8,
 	},
 	special_bonus_unique_bane_3 = {
-		group = 10,
+		group = 9,
 	},
 	special_bonus_unique_bane_4 = {
 		group = 7,

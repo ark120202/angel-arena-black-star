@@ -265,7 +265,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"damage_from_current_health_pct" "1.5"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -824,15 +824,14 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"blade_dance_crit_mult"	"200"
+				"blade_dance_crit_chance"	"20.0 22.5 25.0 27.5 30.0 32.5 35.0"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"blade_dance_crit_chance"	"20.0 22.5 25.0 27.5 30.0 32.5 35.0"
+				"blade_dance_crit_mult"	"200"
 			}
 		}
-
 	}
 
 	"juggernaut_blade_fury"
@@ -1963,7 +1962,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "1.0 1.5 2.0 2.5 3.0 3.5 4.0"
+				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -2012,7 +2011,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "1.0 1.5 2.0 2.5 3.0 3.5 4.0"
+				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -2061,7 +2060,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "1.0 1.5 2.0 2.5 3.0 3.5 4.0"
+				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -6038,6 +6037,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"boar_damage_tooltip"	"20 30 40 50"
+				"LinkedSpecialBonus"	"special_bonus_unique_beastmaster_2"
 			}
 			"04"
 			{
@@ -6830,18 +6830,15 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"crit_bonus"	"230 280 320 360 400 440 480"
-			}
-
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
 				"crit_chance"	"15"
 				"LinkedSpecialBonus"		"special_bonus_unique_phantom_assassin_2"
 			}
-
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"crit_bonus"	"230 280 320 360 400 440 480"
+			}
 		}
-
 	}
 
 	"templar_assassin_refraction"
@@ -8560,6 +8557,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"disjoint_count"			"3 3 4 4 5 5 6"
+				"LinkedSpecialBonus"		"special_bonus_unique_clinkz_2"
 			}
 		}
 
@@ -19125,7 +19123,7 @@
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_per_second"				"10 30  50 70 90 110 130"
+				"damage_per_second"				"10 30 50 70 90 110 130"
 				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_3"
 			}
 			"06"
@@ -20107,7 +20105,7 @@
 
 	"techies_focused_detonate"
 	{
-		"MaxLevel"	"7"
+		"MaxLevel"	"1"
 		"AbilityCastRange"	"0"
 		"AbilityCooldown"	"1.0"
 		"AbilitySpecial"
@@ -20140,7 +20138,7 @@
 
 	"techies_minefield_sign"
 	{
-		"MaxLevel"	"7"
+		"MaxLevel"	"1"
 		"AbilityCastRange"	"10"
 		"AbilityCastPoint"	"0"
 		"AbilityCooldown"	"360"

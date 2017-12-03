@@ -220,7 +220,7 @@ function GameMode:OnEntityKilled(keys)
 		end
 
 		if killedUnit:IsRealCreep() then
-			Spawner.Creeps[killedUnit.SSpawner] = Spawner.Creeps[killedUnit.SSpawner] - 1
+			Spawner:OnCreepDeath(killedUnit)
 		end
 
 		if killerEntity then

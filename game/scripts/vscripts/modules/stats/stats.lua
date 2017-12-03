@@ -53,7 +53,6 @@ function StatsClient:OnGameEnd(winner)
 		StatsClient.GameEndScheduled = true
 		local time = GameRules:GetDOTATime(false, true)
 		local matchID = tostring(GameRules:GetMatchID())
-		local debug = true
 		if (GameRules:IsCheatMode() and not StatsClient.Debug) or time < 0 then
 			return
 		end

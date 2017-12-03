@@ -116,7 +116,11 @@ function Bosses:GivePlayerSelectedDrop(playerId, entry)
 		local newHero = entry.hero
 		function ActuallyReplaceHero()
 			if PlayerResource:GetSelectedHeroEntity(playerId) and not HeroSelection:IsHeroSelected(newHero) then
-				HeroSelection:ChangeHero(playerId, newHero, true, 0)
+				Timers:CreateTimer(function()
+					if not HeroSelection:ChangeHero(playerId, newHero, true, 0) then
+						return 0.1
+					end
+				end)
 			else
 				Notifications:Bottom(playerId, {text="hero_selection_change_hero_selected"})
 			end

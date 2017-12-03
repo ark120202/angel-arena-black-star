@@ -43,8 +43,8 @@ CREEP_UPGRADE_FUNCTIONS = {
 		[60]    = { 20,         80.5,       15,         0.5,        0.5,        0.5,        300         },
 	},
 	medium = {
-		[0]     = { 2,          25,         2,          0,          2,          0,          3           },
-		[5]     = { 2,          30,         2,          0,          2,          0,          6           },
+		[0]     = { 2,          25,         2,          0,          2,          0,          4           },
+		[5]     = { 2,          30,         2,          0,          2,          0,          7           },
 		[10]    = { 2,          50,         3,          0.2,        2,          0.2,        9           },
 		[15]    = { 3,          60,         4,          0.3,        2,          0.2,        15          },
 		[20]    = { 4,          70,         5,          0.3,        2,          0.2,        30          },
@@ -53,10 +53,10 @@ CREEP_UPGRADE_FUNCTIONS = {
 		[60]    = { 16,         200,        20,         0.5,        2,          0.4,        250         },
 	},
 	hard = {
-		[0]     = { 2,          55,         2.3,        0,          2,          0.1,        15          },
-		[10]    = { 2,          70,         6,          0.5,        2,          0.1,        20          },
-		[15]    = { 3,          90,         7,          0.5,        2,          0.1,        30          },
-		[20]    = { 4,          120,        8,          0.6,        2,          0.2,        50          },
+		[0]     = { 2,          55,         2.3,        0,          2,          0.1,        10          },
+		[10]    = { 2,          70,         6,          0.5,        2,          0.1,        15          },
+		[15]    = { 3,          90,         7,          0.5,        2,          0.1,        25          },
+		[20]    = { 4,          120,        8,          0.6,        2,          0.2,        40          },
 		[30]    = { 8,          180,        11,         0.7,        2,          0.3,        80          },
 		[40]    = { 12,         230,        16,         0.7,        2,          0.4,        130         },
 		[60]    = { 25,         400,        25,         0.8,        2,          0.4,        200         },
@@ -158,6 +158,23 @@ SPAWNER_SETTINGS = {
 					[60] = "models/heroes/centaur/centaur.vmdl",
 				}
 
+			},
+		},
+	},
+	jungle = {
+		SpawnedPerSpawn = 3,
+		SpawnTypes = {
+			[0] ={
+				{
+					[-1] = "npc_dota_neutral_jungle_variant1",
+					[0] = "models/heroes/lone_druid/spirit_bear.vmdl",
+					--[10] = "models/items/lone_druid/bear/dark_wood_bear_brown/dark_wood_bear_brown.vmdl",
+					--[20] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
+					[20] = "models/items/lone_druid/bear/dark_wood_bear/dark_wood_bear.vmdl",
+					--[40] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
+					[40] = "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl",
+					[60] = "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl",
+				}
 			},
 		},
 	},

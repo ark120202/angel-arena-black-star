@@ -203,6 +203,13 @@ function GameMode:GameModeThink()
 			if hero then
 				hero:SetNetworkableEntityInfo("unit_name", hero:GetFullName())
 				MeepoFixes:ShareItems(hero)
+				local position = hero:GetAbsOrigin()
+				if position.x > MAP_LENGTH or
+					position.x < -MAP_LENGTH or
+					position.y > MAP_LENGTH or
+					position.y < -MAP_LENGTH then
+					hero:TrueKill()
+				end
 			end
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 				local gold_per_tick = CUSTOM_GOLD_PER_TICK

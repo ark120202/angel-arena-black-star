@@ -85,7 +85,6 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 		end
 		if hero:HasAbility("centaur_stampede") then
 			local heroTeam = PlayerResource:GetTeam(playerId)
-			local allyHas = false
 			for i = 0, 23 do
 				local playerHero = PlayerResource:GetSelectedHeroEntity(i)
 				if playerHero and PlayerResource:GetTeam(i) == heroTeam and playerHero:HasModifier("modifier_centaur_stampede") then
@@ -94,6 +93,18 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 				end
 			end
 		end
+
+		if hero:HasAbility("necrolyte_reapers_scythe") and AnyUnitHasModifier("modifier_necrolyte_reapers_scythe", hero) then
+			Containers:DisplayError(playerId, "#arena_hud_error_cant_change_hero")
+			return false
+		end
+	end
+	local preDuration = 0
+	if hero:HasAbility("disruptor_thunder_strike") then
+		local disruptor_thunder_strike = hero:FindAbilityByName("disruptor_thunder_strike")
+		preDuration =
+			disruptor_thunder_strike:GetSpecialValueFor("strikes") *
+			disruptor_thunder_strike:GetSpecialValueFor("strike_interval")
 	end
 
 	hero.ChangingHeroProcessRunning = true
@@ -144,40 +155,42 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 	end
 	RemoveAllOwnedUnits(playerId)
 	local startTime = GameRules:GetDOTATime(true, true)
-	HeroSelection:SelectHero(playerId, newHeroName, function(newHero)
-		newHero:AddNewModifier(newHero, nil, "modifier_hero_selection_transformation", nil)
-		FindClearSpaceForUnit(newHero, location, true)
-		if keepExp then
-			newHero:AddExperience(xp, 0, true, true)
-		end
-		for _,v in ipairs(items) do
-			v:SetOwner(newHero)
-			if not v.NotPurchasedByOwner then
-				v:SetPurchaser(newHero)
-				v.NotPurchasedByOwner = nil
+	Timers:CreateTimer(preDuration, function()
+		HeroSelection:SelectHero(playerId, newHeroName, function(newHero)
+			newHero:AddNewModifier(newHero, nil, "modifier_hero_selection_transformation", nil)
+			FindClearSpaceForUnit(newHero, location, true)
+			if keepExp then
+				newHero:AddExperience(xp, 0, true, true)
 			end
-			if v.SavedCooldown then
-				v:StartCooldown(v.SavedCooldown)
-				v.SavedCooldown = nil
+			for _,v in ipairs(items) do
+				v:SetOwner(newHero)
+				if not v.NotPurchasedByOwner then
+					v:SetPurchaser(newHero)
+					v.NotPurchasedByOwner = nil
+				end
+				if v.SavedCooldown then
+					v:StartCooldown(v.SavedCooldown)
+					v.SavedCooldown = nil
+				end
+				newHero:AddItem(v)
 			end
-			newHero:AddItem(v)
-		end
-		ClearSlotsFromDummy(newHero)
+			ClearSlotsFromDummy(newHero)
 
-		for k,v in pairs(duelData) do
-			if k ~= "path" then
-				newHero[k] = v
-			else
-				Duel.heroes_teams_for_duel[v[1]][v[1]] = newHero
+			for k,v in pairs(duelData) do
+				if k ~= "path" then
+					newHero[k] = v
+				else
+					Duel.heroes_teams_for_duel[v[1]][v[1]] = newHero
+				end
 			end
-		end
-		Timers:CreateTimer(startTime + (duration or 0) - GameRules:GetDOTATime(true, true), function()
-			if IsValidEntity(newHero) then
-				newHero:RemoveModifierByName("modifier_hero_selection_transformation")
-			end
-		end)
-		if callback then callback(newHero) end
-	end, nil, bUpdateStatus)
+			Timers:CreateTimer(startTime + (duration or 0) - GameRules:GetDOTATime(true, true), function()
+				if IsValidEntity(newHero) then
+					newHero:RemoveModifierByName("modifier_hero_selection_transformation")
+				end
+			end)
+			if callback then callback(newHero) end
+		end, nil, bUpdateStatus)
+	end)
 
 	return true
 end
