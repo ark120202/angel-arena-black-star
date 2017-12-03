@@ -1,18 +1,23 @@
 "AddonInfo"
 {
 	"version"		"1.11.1"
-	"maps"          "5v5_ranked 5v5 4v4v4v4 5v5_custom_abilities 4v4v4v4_custom_abilities"
+	"maps"          "5v5_ranked war3_ranked 5v5 4v4v4v4 5v5_custom_abilities 4v4v4v4_custom_abilities"
+	"5v5_ranked"
+	{
+		"MaxPlayers"		"10"
+		"TeamCount"			"2"
+	}
+	"war3_ranked"
+	{
+		"MaxPlayers"		"12"
+		"TeamCount"			"2"
+	}
 	"5v5"
 	{
 		"MaxPlayers"		"10"
 		"TeamCount"			"2"
 	}
 	"5v5_custom_abilities"
-	{
-		"MaxPlayers"		"10"
-		"TeamCount"			"2"
-	}
-	"5v5_ranked"
 	{
 		"MaxPlayers"		"10"
 		"TeamCount"			"2"
