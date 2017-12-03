@@ -20122,7 +20122,7 @@
 
 	"techies_remote_mines_self_detonate"
 	{
-		"MaxLevel"	"1"
+		"MaxLevel"	"7"
 		"AbilityCastRange"	"0"
 		"AbilitySpecial"
 		{
