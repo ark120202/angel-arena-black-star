@@ -1331,11 +1331,6 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
-	"item_recipe_combo_breaker"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-	}
 	"item_combo_breaker"
 	{
 		"SecretShop"					"0"
@@ -1347,11 +1342,6 @@
 		"SideShop"						"0"
 	}
 	"item_nullifier"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-	}
-	"item_recipe_trident"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"

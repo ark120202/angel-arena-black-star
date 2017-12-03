@@ -6598,17 +6598,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attackspeed"		"60"
+				"bonus_attackspeed"		"65"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"kill_xp"				"50"
+				"kill_xp"				"35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"25"
+				"kill_gold"				"15"
 			}
 			"05"
 			{
@@ -6629,7 +6629,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_bonus_movespeed_pct" "40"
+				"active_bonus_movespeed_pct" "50"
 			}
 			"09"
 			{
@@ -7850,17 +7850,17 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_damage"			"170"
+				"bash_damage"			"200"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"valor_armor_reduction"	"-20"
+				"valor_armor_reduction"	"-35"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"valor_armor_bonus"		"20"
+				"valor_armor_bonus"		"25"
 			}
 			"12"
 			{
