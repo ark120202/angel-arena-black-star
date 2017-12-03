@@ -94,6 +94,11 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 				end
 			end
 		end
+
+		if hero:HasAbility("necrolyte_reapers_scythe") and AnyUnitHasModifier("modifier_necrolyte_reapers_scythe", hero) then
+			Containers:DisplayError(playerId, "#arena_hud_error_cant_change_hero")
+			return false
+		end
 	end
 
 	hero.ChangingHeroProcessRunning = true

@@ -829,3 +829,13 @@ function RemoveAllUnitsByName(name)
 		end
 	end
 end
+
+function AnyUnitHasModifier(name, caster)
+	local units = FindUnitsInRadius(DOTA_TEAM_NEUTRALS, Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
+	for _,v in ipairs(units) do
+		if v:FindModifierByNameAndCaster(name, caster) then
+			return true
+		end
+	end
+	return false
+end
