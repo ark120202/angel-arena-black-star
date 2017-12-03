@@ -1,0 +1,23 @@
+* _+8_ special_bonus_unique_ancient_apparition_4
+  * Group:  _7_  => **4**
+* _-1.5_ special_bonus_unique_ancient_apparition_3
+  * Group:  _8_  => **5**
+* _+160_ special_bonus_unique_ancient_apparition_2
+  * Group:  _9_  => **5**
+* _+4_ special_bonus_unique_ancient_apparition_5
+  * Group:  _11_  => **9**
+* _-290_ special_bonus_unique_bane_1 =>  **190** special_bonus_unique_bane_3
+  * Group:  _9_  => **6**
+* _+7_ special_bonus_unique_bane_3 => **4** special_bonus_unique_bane_3
+  * Group:  _10_  => **9**
+* _+22000_ special_bonus_unique_chen_2
+  * Group:  _10_  => **9**
+* _+4_ special_bonus_unique_disruptor
+  * Group:  _7_  => **6**
+* _+3000_ special_bonus_unique_keeper_of_the_light => **1500** special_bonus_unique_keeper_of_the_light
+* _+280_ special_bonus_unique_lina_3
+  * Group:  _7_  => **5**
+* _-6_ special_bonus_unique_lina_1
+  * Group:  _8_  => **5**
+* _+25%2_ special_bonus_unique_lina_2
+  * Group:  _9_  => **6**

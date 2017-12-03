@@ -1492,7 +1492,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"290"
+				"value"				"190"
 			}
 		}
 	}
@@ -1504,6 +1504,17 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"value"				"500"
+			}
+		}
+	}
+	"special_bonus_unique_bane_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"4"
 			}
 		}
 	}
