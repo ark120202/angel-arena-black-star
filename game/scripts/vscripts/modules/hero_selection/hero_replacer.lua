@@ -85,7 +85,6 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 		end
 		if hero:HasAbility("centaur_stampede") then
 			local heroTeam = PlayerResource:GetTeam(playerId)
-			local allyHas = false
 			for i = 0, 23 do
 				local playerHero = PlayerResource:GetSelectedHeroEntity(i)
 				if playerHero and PlayerResource:GetTeam(i) == heroTeam and playerHero:HasModifier("modifier_centaur_stampede") then
