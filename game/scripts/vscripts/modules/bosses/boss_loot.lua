@@ -118,7 +118,7 @@ function Bosses:GivePlayerSelectedDrop(playerId, entry)
 			if PlayerResource:GetSelectedHeroEntity(playerId) and not HeroSelection:IsHeroSelected(newHero) then
 				Timers:CreateTimer(function()
 					if not HeroSelection:ChangeHero(playerId, newHero, true, 0) then
-						return 1
+						return 0.1
 					end
 				end)
 			else
