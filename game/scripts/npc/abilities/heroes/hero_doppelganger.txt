@@ -39,6 +39,10 @@
 		{
 			"npc_dota_hero_necrolyte"	"1"
 			"npc_dota_hero_target_dummy"	"1"
+			"npc_dota_lone_druid_bear1"	"1"
+			"npc_dota_lone_druid_bear2"	"1"
+			"npc_dota_lone_druid_bear3"	"1"
+			"npc_dota_lone_druid_bear4"	"1"
 		}
 	}
 }
