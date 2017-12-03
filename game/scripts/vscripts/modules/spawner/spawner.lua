@@ -1,3 +1,5 @@
+-- TODO: Refactor this
+
 ModuleRequire(..., "data")
 ModuleLinkLuaModifier(..., "modifier_neutral_upgrade_attackspeed")
 ModuleLinkLuaModifier(..., "modifier_neutral_champion")
@@ -39,6 +41,7 @@ function Spawner:RegisterTimers()
 		end
 		return 0.5
 	end)
+	Spawner:MakeJungleStacks()
 end
 
 function Spawner:SpawnStacks()
@@ -49,7 +52,7 @@ function Spawner:SpawnStacks()
 		local SpawnerType = tonumber(string.sub(entname, string.find(entname, "_type") + 5))
 		local entid = entity:GetEntityIndex()
 		local coords = entity:GetAbsOrigin()
-		if Spawner:CanSpawnUnits(sName, entid) then
+		if sName ~= "jungle" and Spawner:CanSpawnUnits(sName, entid) then
 			for i = 1, SPAWNER_SETTINGS[sName].SpawnedPerSpawn do
 				local unitRootTable = SPAWNER_SETTINGS[sName].SpawnTypes[SpawnerType]
 				local unitName = unitRootTable[1][-1]
@@ -73,7 +76,7 @@ end
 function Spawner:InitializeStack(id)
 	if not Spawner.Creeps[id] then
 		Spawner.Creeps[id] = 0
-	end	
+	end
 end
 
 function Spawner:RollChampion(minute)
@@ -127,8 +130,82 @@ function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
 	end
 
 	unit:SetModelScale(modelScale)
-	
+
 	local model = table.nearestOrLowerKey(SPAWNER_SETTINGS[spawnerType].SpawnTypes[spawnerIndex][1], minutelevel)
+	if model then
+		unit:SetModel(model)
+		unit:SetOriginalModel(model)
+	end
+end
+
+function Spawner:OnCreepDeath(unit)
+	Spawner.Creeps[unit.SSpawner] = Spawner.Creeps[unit.SSpawner] - 1
+	if unit.SpawnerType == "jungle" then
+		Spawner:SpawnJungleStacks(unit.SSpawner, unit.SpawnerIndex, unit.SpawnerType)
+	end
+end
+
+function Spawner:MakeJungleStacks()
+	for _,entity in ipairs(Spawner.SpawnerEntities) do
+		DynamicMinimap:SetVisibleGlobal(Spawner.MinimapPoints[entity], true)
+		local entname = entity:GetName()
+		local sName = string.gsub(string.gsub(entname, "target_mark_spawner_", ""), "_type%d+", "")
+		if sName == "jungle" then
+			local SpawnerType = tonumber(string.sub(entname, string.find(entname, "_type") + 5))
+			local entid = entity:GetEntityIndex()
+			local coords = entity:GetAbsOrigin()
+
+			Spawner:InitializeStack(entid)
+			Spawner:SpawnJungleStacks(entid, SpawnerType, sName)
+		end
+	end
+end
+
+function Spawner:SpawnJungleStacks(entid, SpawnerType, sName)
+	if Spawner.Creeps[entid] > 0 then return end
+
+	local entity = EntIndexToHScript(entid)
+	entity.cycle = (entity.cycle or 0) + 1
+
+	DynamicMinimap:SetVisibleGlobal(Spawner.MinimapPoints[entity], true)
+	local coords = entity:GetAbsOrigin()
+	for i = 1, SPAWNER_SETTINGS[sName].SpawnedPerSpawn do
+		local unitRootTable = SPAWNER_SETTINGS[sName].SpawnTypes[SpawnerType]
+		local unitName = unitRootTable[1][-1]
+		local unit = CreateUnitByName(unitName, coords, true, nil, nil, DOTA_TEAM_NEUTRALS)
+		unit.SpawnerIndex = SpawnerType
+		unit.SpawnerType = sName
+		unit.SSpawner = entid
+		unit.SLevel = entity.cycle
+		Spawner.Creeps[entid] = Spawner.Creeps[entid] + 1
+		Spawner:UpgradeJungleCreep(unit, unit.SLevel, unit.SpawnerIndex)
+	end
+end
+
+function Spawner:UpgradeJungleCreep(unit, cycle, spawnerIndex)
+	local modelScale = 1 + (0.005 * cycle)
+	if cycle > 1 then
+		unit:CreatureLevelUp(cycle - 1)
+	end
+
+	unit:SetDeathXP(unit:GetDeathXP() * cycle)
+	unit:SetMinimumGoldBounty(unit:GetMinimumGoldBounty() * cycle)
+	unit:SetMaximumGoldBounty(unit:GetMaximumGoldBounty() * cycle)
+	unit:SetMaxHealth(unit:GetMaxHealth() * cycle)
+	unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * cycle)
+	unit:SetHealth(unit:GetMaxHealth() * cycle)
+	unit:SetBaseDamageMin(unit:GetBaseDamageMin() * cycle)
+	unit:SetBaseDamageMax(unit:GetBaseDamageMax() * cycle)
+	unit:SetBaseMoveSpeed(unit:GetBaseMoveSpeed() * cycle)
+	unit:SetPhysicalArmorBaseValue(unit:GetPhysicalArmorBaseValue() * cycle)
+	unit:AddNewModifier(unit, nil, "modifier_neutral_upgrade_attackspeed", {})
+	local modifier = unit:FindModifierByNameAndCaster("modifier_neutral_upgrade_attackspeed", unit)
+	if modifier then
+		modifier:SetStackCount(cycle)
+	end
+
+	unit:SetModelScale(modelScale)
+	local model = table.nearestOrLowerKey(SPAWNER_SETTINGS.jungle.SpawnTypes[spawnerIndex][1], cycle)
 	if model then
 		unit:SetModel(model)
 		unit:SetOriginalModel(model)

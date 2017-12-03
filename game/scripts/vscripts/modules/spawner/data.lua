@@ -161,4 +161,21 @@ SPAWNER_SETTINGS = {
 			},
 		},
 	},
+	jungle = {
+		SpawnedPerSpawn = 3,
+		SpawnTypes = {
+			[0] ={
+				{
+					[-1] = "npc_dota_neutral_jungle_variant1",
+					[0] = "models/heroes/lone_druid/spirit_bear.vmdl",
+					--[10] = "models/items/lone_druid/bear/dark_wood_bear_brown/dark_wood_bear_brown.vmdl",
+					--[20] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
+					[20] = "models/items/lone_druid/bear/dark_wood_bear/dark_wood_bear.vmdl",
+					--[40] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
+					[40] = "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl",
+					[60] = "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl",
+				}
+			},
+		},
+	},
 }
