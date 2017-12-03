@@ -9,18 +9,10 @@ function GameMode:_OnGameRulesStateChange(keys)
 		self.bSeenWaitForPlayers = true
 	elseif newState == DOTA_GAMERULES_STATE_INIT then
 		--Timers:RemoveTimer("alljointimer")
+	elseif newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+		GameMode:OnAllPlayersLoaded()
 	elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
 		GameMode:PostLoadPrecache()
-		GameMode:OnAllPlayersLoaded()
-
-		if USE_CUSTOM_TEAM_COLORS_FOR_PLAYERS then
-			for i=0,9 do
-				if PlayerResource:IsValidPlayer(i) then
-					local color = TEAM_COLORS[PlayerResource:GetTeam(i)]
-					PlayerResource:SetCustomPlayerColor(i, color[1], color[2], color[3])
-				end
-			end
-		end
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		GameMode:OnGameInProgress()
 	end
@@ -49,7 +41,7 @@ function GameMode:_OnNPCSpawned(keys)
 end
 
 -- An entity died
-function GameMode:_OnEntityKilled( keys )
+function GameMode:_OnEntityKilled(keys)
 	if GameMode._reentrantCheck then
 		return
 	end
@@ -63,19 +55,16 @@ function GameMode:_OnEntityKilled( keys )
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
 
-	if killedUnit:IsRealHero() then 
+	if killedUnit:IsRealHero() then
 		if killerEntity then
-			local team = killerEntity:GetTeam()
-			if END_GAME_ON_KILLS and GetTeamHeroKills(team) >= KILLS_TO_END_GAME_FOR_TEAM then
-				self:OnKillGoalReached(team)
+			local killerTeam = killerEntity:GetTeam()
+			local killedTeam = killedUnit:GetTeam()
+			if killerTeam ~= killedTeam and Teams:IsEnabled(killerTeam) then
+				Teams:ModifyScore(killerTeam, Teams:GetTeamKillWeight(killedTeam))
+				if END_GAME_ON_KILLS and Teams:GetScore(killerTeam) >= KILLS_TO_END_GAME_FOR_TEAM then
+					self:OnKillGoalReached(killerTeam)
+				end
 			end
-		end
-		
-		if SHOW_KILLS_ON_TOPBAR then
-			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_BADGUYS, GetTeamHeroKills(DOTA_TEAM_BADGUYS))
-			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_GOODGUYS, GetTeamHeroKills(DOTA_TEAM_GOODGUYS))
-			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_CUSTOM_1, GetTeamHeroKills(DOTA_TEAM_CUSTOM_1))
-			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_CUSTOM_2, GetTeamHeroKills(DOTA_TEAM_CUSTOM_2))
 		end
 	end
 
@@ -97,7 +86,7 @@ function GameMode:_OnConnectFull(keys)
 	local entIndex = keys.index+1
 	-- The Player entity of the joining user
 	local ply = EntIndexToHScript(entIndex)
-	
+
 	local userID = keys.userid
 
 	self.vUserIds = self.vUserIds or {}

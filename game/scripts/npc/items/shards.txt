@@ -8,7 +8,7 @@
 		"ID"							"10010"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_str_small"
-		"ItemCost"						"2000"
+		"ItemCost"						"1500"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"uncommon"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -53,7 +53,7 @@
 		"ID"							"10011"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_str_medium"
-		"ItemCost"						"10000"
+		"ItemCost"						"7500"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"rare"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -98,7 +98,7 @@
 		"ID"							"10012"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_str_large"
-		"ItemCost"						"20000"
+		"ItemCost"						"15000"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"rare"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -143,7 +143,7 @@
 		"ID"							"10013"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_str_extreme"
-		"ItemCost"						"40000"
+		"ItemCost"						"30000"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -188,7 +188,7 @@
 		"ID"							"10014"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_agi_small"
-		"ItemCost"						"2000"
+		"ItemCost"						"1500"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"uncommon"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -233,7 +233,7 @@
 		"ID"							"10015"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_agi_medium"
-		"ItemCost"						"10000"
+		"ItemCost"						"7500"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"rare"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -278,7 +278,7 @@
 		"ID"							"10016"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_agi_large"
-		"ItemCost"						"20000"
+		"ItemCost"						"15000"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"rare"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -323,7 +323,7 @@
 		"ID"							"10017"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_agi_extreme"
-		"ItemCost"						"40000"
+		"ItemCost"						"30000"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -368,7 +368,7 @@
 		"ID"							"10018"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_int_small"
-		"ItemCost"						"2000"
+		"ItemCost"						"1500"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"uncommon"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -413,7 +413,7 @@
 		"ID"							"10019"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_int_medium"
-		"ItemCost"						"10000"
+		"ItemCost"						"7500"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"rare"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -458,7 +458,7 @@
 		"ID"							"10020"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_int_large"
-		"ItemCost"						"20000"
+		"ItemCost"						"15000"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"rare"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -503,7 +503,7 @@
 		"ID"							"10021"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_int_extreme"
-		"ItemCost"						"40000"
+		"ItemCost"						"30000"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -548,7 +548,7 @@
 		"ID"							"10022"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_primal_small"
-		"ItemCost"						"6000"
+		"ItemCost"						"4500"
 		"ItemShopTags"					"stats;stat;shard"
 		"ItemQuality"					"uncommon"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -595,7 +595,7 @@
 		"ID"							"10023"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_primal_medium"
-		"ItemCost"						"30000"
+		"ItemCost"						"22500"
 		"ItemShopTags"					"stats;stat;shard"
 		"ItemQuality"					"rare"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -642,7 +642,7 @@
 		"ID"							"10024"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_primal_large"
-		"ItemCost"						"60000"
+		"ItemCost"						"40000"
 		"ItemShopTags"					"stats;stat;shard"
 		"ItemQuality"					"rare"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -689,7 +689,7 @@
 		"ID"							"10025"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_level"
-		"ItemCost"						"1000"
+		"ItemCost"						"900"
 		"ItemShopTags"					"experience;level;shard"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -703,7 +703,8 @@
 			"RunScript"
 			{
 				"ScriptFile"	"items/items_shards.lua"
-				"Function"		"AddLevel"
+				"Function"		"AddLevels"
+				"amount"		"1"
 			}
 			"RunScript"
 			{
@@ -721,7 +722,7 @@
 		"ID"							"10026"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_attackspeed"
-		"ItemCost"						"1500"
+		"ItemCost"						"3000"
 		"ItemShopTags"					"as;attackspeed;shard"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -737,7 +738,7 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_attackspeed"							"50"
+				"bonus_attackspeed"							"55"
 			}
 		}
 
@@ -747,6 +748,39 @@
 			{
 				"ScriptFile"	"items/items_shards.lua"
 				"Function"		"AddAttackspeedModifier"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"kv.lua"
+				"Function"		"SpendChargeRight"
+			}
+		}
+	}
+
+	"item_shard_level10"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"10027"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/shard_level"
+		"ItemCost"						"9000"
+		"ItemShopTags"					"experience;level;shard"
+		"ItemQuality"					"rare"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/items_shards.lua"
+				"Function"		"AddLevels"
+				"amount"		"10"
 			}
 			"RunScript"
 			{

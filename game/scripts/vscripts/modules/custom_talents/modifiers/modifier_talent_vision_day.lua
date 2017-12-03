@@ -1,9 +1,10 @@
-modifier_talent_vision_day = class({})
-function modifier_talent_vision_day:IsHidden() return true end
-function modifier_talent_vision_day:IsPermanent() return true end
-function modifier_talent_vision_day:IsPurgable() return false end
-function modifier_talent_vision_day:DestroyOnExpire() return false end
-function modifier_talent_vision_day:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+modifier_talent_vision_day = class({
+	IsHidden        = function() return true end,
+	IsPermanent     = function() return true end,
+	IsPurgable      = function() return false end,
+	DestroyOnExpire = function() return false end,
+	GetAttributes   = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+})
 
 function modifier_talent_vision_day:DeclareFunctions()
 	return {MODIFIER_PROPERTY_BONUS_DAY_VISION}

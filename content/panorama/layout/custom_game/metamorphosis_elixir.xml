@@ -1,6 +1,7 @@
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/hero_selection_shared.css" />
 		<include src="file://{resources}/styles/hero_selection.css" />
 		<include src="file://{resources}/styles/hero_selection_hero_card.css" />
 		<include src="file://{resources}/styles/metamorphosis_elixir.css" />
@@ -8,7 +9,7 @@
 	<scripts>
 		<include src="file://{resources}/scripts/util.js" />
 		<include src="file://{resources}/scripts/shared_hero_selection_script.js" />
-		<include src="file://{resources}/scripts/metamorphosis_elixir.js" /> 
+		<include src="file://{resources}/scripts/metamorphosis_elixir.js" />
 	</scripts>
 	<snippets>
 		<snippet name="HeroesPanel">
@@ -66,6 +67,7 @@
 							<Label id="SelectedHeroUnlockLabel" text="#hero_selection_unlock" />
 							<Label id="SelectedHeroBanLabel" text="#DOTA_Hero_Selection_BanTitle" />
 							<Label id="SelectedHeroSelectHeroName" />
+							<Label id="SelectedHeroDisabledReason" />
 							<Panel id="SelectedHeroLinkedHeroPanel" >
 								<Label id="SelectedHeroLinkedLabel" text="#hero_selection_linked_hero" />
 								<Label id="SelectedHeroLinkedHero" />

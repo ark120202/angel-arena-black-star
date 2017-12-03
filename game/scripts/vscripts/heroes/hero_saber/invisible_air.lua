@@ -1,8 +1,9 @@
-saber_invisible_air = class({})
-LinkLuaModifier("modifier_saber_invisible_air", "heroes/hero_saber/modifier_saber_invisible_air.lua", LUA_MODIFIER_MOTION_NONE)
-function saber_invisible_air:GetIntrinsicModifierName()
-	return "modifier_saber_invisible_air"
-end
+LinkLuaModifier("modifier_saber_invisible_air", "heroes/hero_saber/invisible_air.lua", LUA_MODIFIER_MOTION_NONE)
+
+saber_invisible_air = class({
+	GetIntrinsicModifierName = function() return "modifier_saber_invisible_air" end,
+})
+
 if IsServer() then
 	function saber_invisible_air:OnSpellStart()
 		local caster = self:GetCaster()
@@ -37,5 +38,29 @@ if IsServer() then
 		local pfx = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_saber/invisible_air.vpcf", PATTACH_ABSORIGIN, caster)
 		ParticleManager:SetParticleControl(pfx, 0, position)
 		ParticleManager:SetParticleControl(pfx, 1, Vector(radius))
+	end
+end
+
+
+modifier_saber_invisible_air = class({
+	IsPurgable = function() return false end,
+})
+
+if IsServer() then
+	function modifier_saber_invisible_air:OnCreated()
+		self:StartIntervalThink(0.1)
+	end
+
+	function modifier_saber_invisible_air:OnIntervalThink()
+		local ability = self:GetAbility()
+		self.stacks = math.min((self.stacks or 0) + ability:GetSpecialValueFor("damage_per_second") * 0.1, ability:GetSpecialValueFor("damage_max"))
+		self:SetStackCount(self.stacks)
+	end
+else
+	function modifier_saber_invisible_air:DeclareFunctions()
+		return {MODIFIER_PROPERTY_TOOLTIP}
+	end
+	function modifier_saber_invisible_air:OnTooltip()
+		return self:GetStackCount()
 	end
 end

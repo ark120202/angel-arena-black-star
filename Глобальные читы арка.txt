@@ -1,103 +1,96 @@
+db.players.remove({steamid: 'ID'})    -  сделать TBD челику
+db.players.update({steamid: 'ID'}, {$set: {Rating: Рейтинг}})  -  Дать или убрать рейтинг
+db.players.update({steamid: 'ID'}, {$push: {inventory: "wearable_developer"}})  -  забрать 1 ечейку инвенторя ( дать читы )
+
+
+
+
+
+
+
 Глобальные читы арка ( ГАЙД )
-
-say -lua PlayerResource:GetSelectedHeroEntity(ЦИФАРКА ID):AddAbility("СКИЛ")    - ДАТЬ СКИЛ
-
-say -lua PlayerResource:GetSelectedHeroEntity(ЦИФАРКА ID):RemoveAbility("СКИЛ") - ЗАБРАТЬ СКИЛ
-
--lua HeroSelection:ChangeHero(playerId, newHeroName, true, 0)
-
-PlayerResource:SetPlayerTeam(playerID, newTeam)
-
-say -lua  Kills:SetKillStreak(i, 100000)
-
-
-say -lua Gold:AddGold(pid, gold)
-
-
-for i = 0, 9 do PlayerResource:GetSelectedHeroEntity(i):ModifyAgility(10000) end
-AttributeIntelligenceGain
-
-PlayerResource:GetLevelValue(i):level(120)
-
-while(true) do Notifications:TopToAll({text="ALASTOR PIDOR"}) end
-
-
--kick <pid>			-ban <pid>
-
-PlayerResource:GetSelectedHeroEntity(pid):SetLevel(11111)
-
-PlayerResource:GetSelectedHeroEntity(pid):AddItemByName("item_ward_observer")
-
-PlayerResource:GetSelectedHeroEntity(pid):SetModel("models/units/zaken/zaken.vmdl")
-
-PlayerResource:GetSelectedHeroEntity(pid):SetModelScale(2.5)
-
-большой кот мурзика models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl
-Hero:SetModel("models/props_gameplay/pig_blue.vmdl")
-Hero:SetOriginalModel("models/props_gameplay/pig_blue.vmdl")
-
-`
-Hero:SetOriginalModel("models/items/courier/virtus_werebear_t1/virtus_werebear_t1.vmdl")
-
-
-Hero:SetModel("models/items/courier/shibe_dog_cat/shibe_dog_cat_flying.vmdl")
-Hero:SetOriginalModel("models/items/courier/shibe_dog_cat/shibe_dog_cat_flying.vmdl")
-
-Hero:SetModel("models/items/courier/virtus_werebear_t1/virtus_werebear_t1.vmdl")
-Hero:SetOriginalModel("models/items/courier/virtus_werebear_t1/virtus_werebear_t1.vmdl")
-
-Hero:SetModel("models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl")
-Hero:SetOriginalModel("models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl")
-
-Hero:SetModel("models/heroes/mirana/mount.vmdl")
-Hero:SetOriginalModel("models/heroes/mirana/mount.vmdl")
-
-Hero:SetModel(models/items/courier/onibi_lvl_15/onibi_lvl_15.vmdl)
-Hero:SetOriginalModel(models/items/courier/onibi_lvl_15/onibi_lvl_15.vmdl)
-
-ПАТИКЛЫ
-ParticleManager:CreateParticle("string_1", PATTACH_ABSORIGIN_FOLLOW, Hero)
-ParticleManager:CreateParticle("particles/world_tower/tower_upgrade/ti7_dire_tower_ambient_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, Hero)
-
-particles/world_tower/tower_upgrade/ti7_dire_tower_ambient_core.vpcf
-
-say -lua for i = 0, 9 do HeroSelection:ChangeHero(i, "npc_arena_hero_destroyer", true, 0) end
-
-say -lua for i = 0, 9 do CustomUI:DynamicHud_Create(PID, "CRASHDOTA", "file://c:/$mft/123321", nil) end
-
-say -lua Hero:SetBaseDamageMin(-111) УРОН
-
-
-
-say -lua GetSelectedHeroEntity(0):ModifyIntelligence(10000)
-
-say -lua PlayerResource:GetSelectedHeroEntity(7):ModifyStrength(1000000)								ModifyStrength(1000000)			:ModifyIntellect(1000000)
-
-say -lua for i = 0, 9 do PlayerResource:SetPlayerTeam(i, 2) end
-
-say -lua for i = 0, 9 do Kills:SetKillStreak(i, 100000) end
-
-say -lua for i = 0, 9 do Gold:AddGold(i, 11111111111) end
-
-
-say -lua for I = 0, 9 do CHAT_COMMANDS.kick({I}) end
-
-GameRules:SetKillGoal(iGoal)
-
-ИДИАЛЬНАЯ КОМАНДА ПИЗДЕЦ
-for team in pairs(TEAM_COLORS) do GameRules:SetCustomGameTeamMaxPlayers(team, 10) end
-
-for i = 0, 9 do Gold:AddGold(i, gold) end
-
-Gold:AddGold(i, gold)
 
 СПРОСИТЬ ПЛЕР ID  -  !!!!!-cprint !!!! потом  !!!!  -printplayers !!!!!
 ГЛОБАЛ ШТУКА
 say -lua _G.pid = ID
 say -lua _G.Hero = PlayerResource:GetSelectedHeroEntity(pid)
 
+say -lua PlayerResource:GetSelectedHeroEntity(id):GetItemInSlot(слот):RemoveSelf()   - спиздить айтем
+
+say -lua PlayerResource:GetSelectedHeroEntity(ЦИФАРКА ID):AddAbility("СКИЛ")    - ДАТЬ СКИЛ
+
+say -lua PlayerResource:GetSelectedHeroEntity(ЦИФАРКА ID):RemoveAbility("СКИЛ") - ЗАБРАТЬ СКИЛ
+
+-lua HeroSelection:ChangeHero(playerId, newHeroName, true, 0) - новый герой			say -lua for i = 0, 9 do HeroSelection:ChangeHero(i, "npc_arena_hero_destroyer", true, 0) end
+
+say -lua PlayerResource:SetPlayerTeam(playerID, newTeam) - новая тима
+
+say -lua  Kills:SetKillStreak(i, 100000) -килл стрик		say -lua for i = 0, 9 do Kills:SetKillStreak(i, 100000) end
 
 
+say -lua Gold:AddGold(pid, gold) - дать голду			for i = 0, 9 do Gold:AddGold(i, gold) end
+
+CUSTOM_GOLD_PER_TICK = 100 Тик Денег
+
+------------------------------------------------------
+say -lua for i = 0, 9 do PlayerResource:GetSelectedHeroEntity(i):ModifyAgility(10000) end
+ModifyIntellect
+ModifyStrength
+ModifyAgility
+ModifyIntellect
+say -lua PlayerResource:GetSelectedHeroEntity(7):ModifyStrength(1000000)
+------------------------------------------------------  СТАТЫ
+
+PlayerResource:GetLevelValue(i):level(120) - дать лвл
+
+PlayerResource:GetSelectedHeroEntity(pid):SetLevel(11111) - дать лвл
+
+PlayerResource:GetSelectedHeroEntity(pid):AddItemByName("item_ward_observer") - дать айтем
+
+while(true) do Notifications:TopToAll({text="ALASTOR PIDOR"}) end - аластор ПИДР
+
+PlayerResource:GetSelectedHeroEntity(pid):SetModelScale(2.5) - размер модельки
+
+-----------------------------
+Hero:SetModel(Model) -сначала это
+Hero:SetOriginalModel(model) -потом это
+----------------------------- дать модельку
+
+-----------------------------------------------------------------------
+ParticleManager:CreateParticle("string_1", PATTACH_ABSORIGIN_FOLLOW, Hero)
+ParticleManager:CreateParticle("particles/world_tower/tower_upgrade/ti7_dire_tower_ambient_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, Hero)
+----------------------------------------------------------------------  Дать патиклы
+
+say -lua for i = 0, 9 do CustomUI:DynamicHud_Create(PID, "CRASHDOTA", "file://c:/$mft/123321", nil) end - минус ебало
+
+----------------------------------------------------------------------
+GameRules:GetGameModeEntity():SetMaximumAttackSpeed(1)-минимум
+GameRules:GetGameModeEntity():SetMinimumAttackSpeed( 99999 )
+GameRules:GetGameModeEntity():SetMaximumAttackSpeed( 99999 ) МНОГО
+----------------------------------------------------------------------  Урон
+
+say -lua for i = 0, 9 do PlayerResource:SetPlayerTeam(i, 2) end
+
+say -lua for i = 0, 9 do Gold:AddGold(i, 11111111111) end
+
+say -lua for I = 0, 9 do CHAT_COMMANDS.kick({I}) end - кик всех
+
+ИДИАЛЬНАЯ КОМАНДА ПИЗДЕЦ
+for team in pairs(TEAM_COLORS) do GameRules:SetCustomGameTeamMaxPlayers(team, 10) end
+
+function PanoramaShop:BuyItem(playerID) Notifications:Top(playerID, {text="АЛАСТОР ПИДОР!"}) end - аластор на экран
+
+Hero:AddNewModifier(Hero,nil,"modifier_fountain_aura_arena",nil) - дать бесмертие
+
+GameRules:GetGameModeEntity():SetFogOfWarDisabled(true) - all vision
+
+
+
+
+
+
+-----------------------------------------------
+Димка
 
 
 Наркотики
@@ -207,3 +200,67 @@ XJ_RGDAjS9E
 h ЕСТЬ WEB
 v ЕСЛИ ВИДЕО
 i
+
+
+СОЗДАНИЕ БОТОВ
+НАЧИНАЕМ
+"расширить тиму 3"
+_G.bts = "function alastor_bot(hero, te)\nlocal pid=PlayerResource:GetPlayerCount();Tutorial:AddBot(hero, ''"
+bts=bts..", '', false);PlayerResource:SetCustomTeamAssignment(pid, te) end"
+DebugCallFunction(loadstring(bts))
+alastor_bot("npc_dota_hero_tiny", 3)
+
+
+
+создать героя который заменить втоего героя 
+-a_createhero npc_arena_hero_doppelganger enemy
+создать героя  который земенит твоего чужого героя
+CHAT_COMMANDS.a_createhero.f("npc_dota_hero_doppelganger", PlayerResource:GetSelectedHeroEntity(pid), pid)
+ 
+спиздить таланты
+PlayerResource:GetSelectedHeroEntity(pid):ClearTalents()
+спиздить лвл абилки
+CHAT_COMMANDS.reset.f(nil, PlayerResource:GetSelectedHeroEntity(pid))
+
+дать кучу рун
+CHAT_COMMANDS.runetest.f(nil, PlayerResource:GetSelectedHeroEntity(pid))
+
+дать кучу рун всем
+
+say -lua for i = 0, 9 do CHAT_COMMANDS.runetest.f(nil, PlayerResource:GetSelectedHeroEntity(i))
+
+
+
+GameRules:SetKillGoal(iGoal) - Дать КЛ
+
+Увеличить число килов за челика
+Teams:SetTeamKillWeight(team, value)
+
+
+
+дождь из рун
+say -lua _G.RANDVECT = function() return Vector(RandomInt(-MAP_LENGTH,MAP_LENGTH),RandomInt(-MAP_LENGTH,MAP_LENGTH),0) end
+say -lua _G.runerain = "function RuneRain()\nTimers:CreateTimer(function()\nCustomRunes:CreateRune(GetGroundPosition(RANDVECT(),"
+say -lua runerain=runerain.." nil), RandomInt(ARENA_RUNE_FIRST, ARENA_RUNE_LAST))\nreturn 0.4\nend)\nend"
+say -lua DebugCallFunction(loadstring(runerain))
+say -lua RuneRain()
+
+остановить дождь из рун
+Timers:RemoveTimers(true)
+
+
+включить читы всем
+
+say -lua IsInToolsMode = function() return true end
+say -lua GameRules.IsCheatMode = function() return true end
+
+супер мега агр от боссов
+say -lua _G.aggresiveBosses = "function AggresiveBosses()\nfor _,v in ipairs(Entities:FindAllByClassname('npc_dota_creature'))"
+say -lua aggresiveBosses=aggresiveBosses.." do\nif string.starts(v:GetUnitName(), 'npc_arena_boss_') then\n"
+say -lua aggresiveBosses=aggresiveBosses.."v.ai.aggroRange = 60000\nv.ai.leashRange = 60000\nend end end"
+say -lua DebugCallFunction(loadstring(aggresiveBosses))
+say -lua AggresiveBosses()
+
+
+закинуть порно
+-ccreate ID h pornhub.com ВРЕМЯ

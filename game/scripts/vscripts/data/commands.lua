@@ -31,7 +31,7 @@ CHAT_COMMANDS = {
 					break
 				end
 			end
-			hero:AddItem(CreateItem("item_rapier", hero, hero))
+			hero:AddItem(CreateItem("item_rapier_arena", hero, hero))
 			hero:AddItem(CreateItem("item_blink_arena", hero, hero))
 			SendToServerConsole("dota_ability_debug 1")
 		end
@@ -139,27 +139,6 @@ CHAT_COMMANDS = {
 			_G.SendDebugInfoToClient = not SendDebugInfoToClient
 		end
 	},
-	["printplayers"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
-		f = function(args, hero)
-			local playerinfo = {}
-			for pID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-				if PlayerResource:IsValidPlayerID(pID) then
-					playerinfo[pID] = {
-						nick = PlayerResource:GetPlayerName(pID),
-						team = PlayerResource:GetTeam(pID),
-						steamID32 = PlayerResource:GetSteamAccountID(pID),
-						hero = "nil",
-					}
-					local tempHero = PlayerResource:GetSelectedHeroEntity(pID)
-					if tempHero then
-						playerinfo[pID].hero = tempHero:GetFullName()
-					end
-				end
-			end
-			CPrintTable(playerinfo)
-		end
-	},
 	["kick"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
 		f = function(args)
@@ -171,16 +150,6 @@ CHAT_COMMANDS = {
 		f = function(args, hero)
 			hero:SetModel(args[1])
 			hero:SetOriginalModel(args[1])
-		end
-	},
-	["lua"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
-		f = function(args)
-			local str = ""
-			for _,v in ipairs(args) do
-				str = str .. v .. " "
-			end
-			EvalString(str)
 		end
 	},
 	["pick"] = {
@@ -247,6 +216,30 @@ CHAT_COMMANDS = {
 					duration = duration
 				})
 			end
+		end
+	},
+	["end"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
+		f = function(args, hero, playerID)
+			local team = tonumber(args[1])
+			if team then
+				GameMode:OnKillGoalReached(team)
+			end
+		end
+	},
+	["weather"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
+		f = function(args)
+			local weather = tostring(args[1])
+			if weather then
+				Weather:Start(weather)
+			end
+		end
+	},
+	["console"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_PUBLIC,
+		f = function(_, _, playerID)
+			Console:SetVisible(PlayerResource:GetPlayer(playerID))
 		end
 	},
 }

@@ -1,5 +1,9 @@
-if IsClient() then require("utils/shared") end
-modifier_arena_hero = class({})
+modifier_arena_hero = class({
+	IsPurgable    = function() return false end,
+	IsHidden      = function() return true end,
+	RemoveOnDeath = function() return false end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_PERMANENT end,
+})
 
 function modifier_arena_hero:DeclareFunctions()
 	return {
@@ -11,22 +15,6 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_PROPERTY_ABILITY_LAYOUT,
 		MODIFIER_EVENT_ON_RESPAWN
 	}
-end
-
-function modifier_arena_hero:IsPurgable()
-	return false
-end
-
-function modifier_arena_hero:IsHidden()
-	return true
-end
-
-function modifier_arena_hero:RemoveOnDeath()
-	return false
-end
-
-function modifier_arena_hero:GetAttributes()
-	return MODIFIER_ATTRIBUTE_PERMANENT
 end
 
 function modifier_arena_hero:GetModifierAbilityLayout()
@@ -43,6 +31,13 @@ if IsServer() then
 		local parent = self:GetParent()
 		local hl = parent:GetLevel()
 		if hl > self.HeroLevel  then
+			if not parent:IsIllusion() then
+				for i = self.HeroLevel + 1, hl do
+					if LEVELS_WITHOUT_ABILITY_POINTS[i] then
+						parent:SetAbilityPoints(parent:GetAbilityPoints() + 1)
+					end
+				end
+			end
 			local diff = hl - self.HeroLevel
 			self.HeroLevel = hl
 			--print("Adding str, agi, int, times: ", parent.CustomGain_Strength, parent.CustomGain_Agility, parent.CustomGain_Intelligence, diff)
@@ -144,8 +139,8 @@ if IsServer() then
 	function modifier_arena_hero:GetReflectSpell(keys)
 		local parent = self:GetParent()
 		local originalAbility = keys.ability
+		self.absorb_without_check = false
 		if originalAbility:GetCaster():GetTeam() ~= parent:GetTeam() then
-			self.absorb_without_check = false
 			local item_lotus_sphere = FindItemInInventoryByName(parent, "item_lotus_sphere", false, false, true)
 			if not self.absorb_without_check and parent:HasModifier("modifier_antimage_spell_shield_arena_reflect") then
 				parent:EmitSound("Hero_Antimage.SpellShield.Reflect")

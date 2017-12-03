@@ -155,18 +155,20 @@ function UpdateAbilities() {
 	$.Schedule(0.1, UpdateAbilities);
 }
 
+function SwitchTab() {
+	SelectHeroTab(SelectedTabIndex === 1 ? 2 : 1);
+}
+
 function SelectHeroTab(tabIndex) {
 	if (SelectedTabIndex !== tabIndex) {
 		if (SelectedTabIndex != null) {
 			$('#HeroListPanel_tabPanels_' + SelectedTabIndex).visible = false;
 		}
 		$('#HeroListPanel_tabPanels_' + tabIndex).visible = true;
+		$('#SwitchHeroesButton').RemoveClass('ActiveTab' + SelectedTabIndex);
+		$('#SwitchHeroesButton').AddClass('ActiveTab' + tabIndex);
 		SelectedTabIndex = tabIndex;
 	}
-}
-
-function SwitchTab() {
-	SelectHeroTab(SelectedTabIndex === 1 ? 2 : 1);
 }
 
 function UpdateHeroAbilityList(hero, abilities) {

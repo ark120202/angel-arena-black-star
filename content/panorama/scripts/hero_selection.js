@@ -12,7 +12,6 @@ var SelectedHeroPanel,
 	PlayerSpawnBoxes = {},
 	HeroSelectionState = -1,
 	PlayerPanels = [],
-	LocalPlayerStatus = {},
 	InitializationStates = {},
 	HasBanPoint = true;
 
@@ -60,10 +59,12 @@ function UpdateSelectionButton() {
 	var selectedHeroData = HeroesData[SelectedHeroName];
 	$.GetContextPanel().SetHasClass('RandomingEnabled', !IsLocalHeroPicked() && !IsLocalHeroLocked() && HeroSelectionState > HERO_SELECTION_PHASE_BANNING);
 
-	var canPick = !IsLocalHeroPicked()
-		&& !IsHeroPicked(SelectedHeroName)
-		&& !IsHeroBanned(SelectedHeroName)
-		&& (!IsLocalHeroLocked() || SelectedHeroName === LocalPlayerStatus.hero);
+	var canPick = !IsLocalHeroPicked() &&
+		!IsHeroPicked(SelectedHeroName) &&
+		!IsHeroBanned(SelectedHeroName) &&
+		!IsHeroUnreleased(SelectedHeroName) &&
+		!IsHeroDisabledInRanked(SelectedHeroName) &&
+		(!IsLocalHeroLocked() || SelectedHeroName === LocalPlayerStatus.hero);
 
 	var context = $.GetContextPanel();
 	var mode = 'pick';
@@ -114,35 +115,24 @@ function Snippet_PlayerPanel(pid, rootPanel) {
 		var panel = $.CreatePanel('Panel', rootPanel, '');
 		panel.BLoadLayoutSnippet('PlayerPanel');
 		panel.SetDialogVariable('player_name', Players.GetPlayerName(pid));
-		panel.SetDialogVariable('player_mmr', Players.GetStatsData(pid).Rating || 'TBD');
+		var statsData = Players.GetStatsData(pid);
 		panel.FindChildTraverse('SlotColor').style.backgroundColor = GetHEXPlayerColor(pid);
 		PlayerPanels[pid] = panel;
 	}
 	return PlayerPanels[pid];
 }
 
-function IsLocalHeroPicked() {
-	return LocalPlayerStatus.status === 'picked';
-}
-
-function IsLocalHeroLocked() {
-	return LocalPlayerStatus.status === 'locked';
-}
-
-function IsLocalHeroLockedOrPicked() {
-	return IsLocalHeroPicked() || IsLocalHeroLocked();
-}
 
 function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 	_.each(changesObject, function(teamPlayers, teamNumber) {
 		if ($('#team_selection_panels_team' + teamNumber) == null) {
 			var isRight = teamNumber % 2 !== 0;
 			var TeamSelectionPanel = $.CreatePanel('Panel', $(isRight ? '#RightTeams' : '#LeftTeams'), 'team_selection_panels_team' + teamNumber);
-			TeamSelectionPanel.AddClass('TeamSelectionPanel');
+			TeamSelectionPanel.BLoadLayoutSnippet('TeamBar');
 			var color = GameUI.CustomUIConfig().team_colors[teamNumber];
 			TeamSelectionPanel.style.backgroundColor = 'gradient(linear, 100% 100%, 0% 100%, from(transparent), color-stop(0.15, ' + color + '4D), to(transparent))';
 		}
-		var TeamSelectionPanel = $('#team_selection_panels_team' + teamNumber);
+		var TeamSelectionPanel = $('#team_selection_panels_team' + teamNumber).FindChildTraverse('TeamBarPlayers');
 		_.each(teamPlayers, function(playerData, playerIdInTeam) {
 			var PlayerPanel = Snippet_PlayerPanel(Number(playerIdInTeam), TeamSelectionPanel);
 
@@ -172,8 +162,10 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
 				PlayerPanel.SetDialogVariable('dota_hero_name', $.Localize(playerData.hero));
 			}
 			var heroPanel = $('#HeroListPanel_element_' + playerData.hero);
-			heroPanel.SetHasClass('AlreadyPicked', IsHeroPicked(playerData.hero));
-			heroPanel.SetHasClass('Locked', IsHeroLocked(playerData.hero));
+			if (heroPanel) {
+				heroPanel.SetHasClass('AlreadyPicked', IsHeroPicked(playerData.hero));
+				heroPanel.SetHasClass('Locked', IsHeroLocked(playerData.hero));
+			}
 			if (isLocalTeam) {
 				if (playerData.SpawnBoxes != null) {
 					if (PlayerSpawnBoxes[playerIdInTeam] == null)
@@ -236,7 +228,7 @@ function OnLocalPlayerPicked() {
 
 	$('#HeroPreviewAbilities').RemoveAndDeleteChildren();
 	FillAbilitiesUI($('#HeroPreviewAbilities'), localHeroData.abilities, 'HeroPreviewAbility');
-	FillAttributeUI($('#HeroPreviewAttributes'), localHeroData);
+	FillAttributeUI($('#HeroPreviewAttributes'), localHeroData.attributes);
 
 	var GlobalLoadoutItems = FindDotaHudElement('GlobalLoadoutItems');
 	if (GlobalLoadoutItems) {
@@ -277,16 +269,22 @@ function OnMinimapClickSpawnBox(team, level, index) {
 	});
 }
 
-var adsEnabledLangs = [
+var russianLangs = [
 	'russian',
 	'ukrainian',
-	'bulgarian',
-	'english'
+	'bulgarian'
 ];
 
 function OnAdsClicked() {
-	$.DispatchEvent('ExternalBrowserGoToURL', 'https://angelarenablackstar-ark120202.rhcloud.com/ads/hero_selection_redirect');
-	//$.DispatchEvent("DOTADisplayURL", adsurl)
+	var context = $.GetContextPanel();
+	$.Schedule(context.BHasClass('AdsClicked') ? 0 : .35, function() {
+		$.DispatchEvent('ExternalBrowserGoToURL', 'https://www.dota-aabs.com/ads/hero_selection/go');
+	});
+	if (!context.BHasClass('AdsClicked')){
+		context.AddClass('AdsClicked');
+		Game.EmitSound('General.CoinsBig');
+		GameEvents.SendCustomGameEventToServer('on_ads_clicked', {});
+	}
 }
 
 function StartStrategyTime() {
@@ -303,6 +301,7 @@ function UpdateMainTable(tableName, changesObject, deletionsObject) {
 				FillHeroesTable(tabContent, TabHeroesPanel);
 				TabHeroesPanel.visible = false;
 			});
+			ListenToBanningPhase();
 			SelectHeroTab(1);
 		}
 	}
@@ -346,25 +345,38 @@ function ShowHeroPreviewTab(tabID) {
 (function() {
 	$.GetContextPanel().RemoveClass('LocalPlayerPicked');
 	$('#HeroListPanel').RemoveAndDeleteChildren();
-	//if (Players.GetTeam(Game.GetLocalPlayerID()) !== DOTA_TEAM_SPECTATOR) {
 	var localPlayerId = Game.GetLocalPlayerID();
-	if (!Players.IsSpectator(localPlayerId)) {
-		console.log('Is Player');
+	if (Players.IsValidPlayerID(localPlayerId) && !Players.IsSpectator(localPlayerId)) {
+		$('#AdsBanner').SetImage('https://www.dota-aabs.com/ads/hero_selection/' + (russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png'))
 		_DynamicMinimapSubscribe($('#MinimapDynamicIcons'), function(ptid) {
 			MinimapPTIDs.push(ptid);
 		});
 		DynamicSubscribePTListener('hero_selection_available_heroes', UpdateMainTable);
 		$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
-		//$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + DOTA_ACTIVE_GAMEMODE_TYPE);
+		var gamemodeType = Options.IsEquals('FailedRankedGame') ? 'ranked_failed' : Options.GetMapInfo().gamemode;
+		if (gamemodeType === 'custom_abilities') gamemodeType =
+			Options.IsEquals('EnableAbilityShop') ? 'ability_shop' : Options.IsEquals('EnableRandomAbilities') ? 'random_omg' : '';
+		$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + gamemodeType);
+
 		if ($.GetContextPanel().PTID_hero_selection) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_selection);
 		DynamicSubscribePTListener('hero_selection', UpdateHeroesSelected, function(ptid) {
 			$.GetContextPanel().PTID_hero_selection = ptid;
+		});
+
+		DynamicSubscribePTListener('stats_team_rating', function(tableName, changesObject, deletionsObject) {
+			for (var teamNumber in changesObject) {
+				$('#team_selection_panels_team' + teamNumber).SetDialogVariable('team_rating', changesObject[teamNumber]);
+			}
+		});
+		DynamicSubscribePTListener('stats_client', function(tableName, changesObject, deletionsObject) {
+			for (var playerID in changesObject) {
+				Snippet_PlayerPanel(+playerID).SetDialogVariable('player_mmr', changesObject[playerID].Rating || 'TBD');
+			}
 		});
 		UpdateTimer();
 
 		var bglist = Players.GetStatsData(localPlayerId).Backgrounds;
 		if (bglist) $('#HeroSelectionCustomBackground').SetImage(bglist[Math.floor(Math.random() * bglist.length)]);
-		$('#AdsBanner').visible = adsEnabledLangs.indexOf($.Language()) > -1;
 	} else {
 		HeroSelectionEnd(true);
 	}

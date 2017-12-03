@@ -49,42 +49,6 @@
 		}
 	}
 
-	"arena_statue"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"MaxLevel" 						"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-
-		"OnCreated"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SetMaxLevel"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_arena_statue_passive"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"States"
-				{
-					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
 	"fountain_passive"
 	{
 		"BaseClass"             		"ability_datadriven"

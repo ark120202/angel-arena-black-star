@@ -7,6 +7,7 @@ game_mode_15: Angel Arena Black Star
 ADDON_GAME_NAME: Angel Arena Black Star
 addon_game_name: Angel Arena Black Star
 addonname: Angel Arena Black Star
+
 npc_dota_hero_arena_base: Hero
 DOTA_Chat_GlyphUsedGood: ''
 DOTA_Chat_GlyphUsedBad: ''
@@ -20,6 +21,10 @@ dota_hud_error_ability_cant_target_boss: Ability can't target bosses
 dota_hud_error_ability_cant_target_champion: Ability can't target champions
 arena_hud_error_team_changer_players: Other team already has more players than yours
 arena_hud_error_panorama_shop_dropped_items_limit: Dropped items limit was reached
+arena_hud_error_metamorphosis_elixir_ranked: In ranked mode you can change your hero only once
+arena_hud_error_cant_target_duel: Can't Target Duel Area
+arena_hud_error_cant_mimic: Cannot mimic this hero
+arena_hud_error_cant_change_hero: Changing hero is not possible now
 
 DOTA_Tooltip_modifier_neutral_champion: Champion
 DOTA_Tooltip_modifier_neutral_champion_Description: 'This neutral is a champion, so it''s %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death'
@@ -53,9 +58,6 @@ npc_dota_arena_statue: Statue
 npc_dota_lucifers_claw_doomling: Lucifer's Doomling
 npc_dota_beastmaster_boar_base: Boar
 npc_dota_beastmaster_hawk_base: Hawk
-npc_dota_warlock_golem_base: Warlock Golem
-npc_dota_warlock_golem_scepter_base: Warlock Golem
-npc_dota_warlock_minigolem: Mini Golem
 npc_arena_healer: Shrine
 
 DOTA_Tooltip_modifier_casino_bitch_lina_effect: Lina Buff
@@ -128,24 +130,12 @@ DOTA_Tooltip_ability_riki_pocket_riki_Note1: 'Illusions will play Backstab anima
 DOTA_Tooltip_ability_riki_pocket_riki_Note2: Bonus damage from Backstab can't be evaded.
 DOTA_Tooltip_ability_riki_pocket_riki_fade_time: 'FADE DELAY:'
 DOTA_Tooltip_ability_riki_pocket_riki_stat_damage: '%ATTRIBUTE DAMAGE:'
-DOTA_Tooltip_ability_boss_water_illusions_of_the_deep: Illusions Of The Deep
-DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_Description: Creates %images_count% illusions of the Guardian of the Deep under her control.
-DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_illusion_duration: 'ILLUSION DURATION:'
-DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_outgoing_damage_tooltip: '%ILLUSION DAMAGE:'
-DOTA_Tooltip_ability_boss_water_illusions_of_the_deep_tooltip_incoming_damage_total_pct: '%IMAGE DAMAGE TAKEN:'
-DOTA_Tooltip_ability_boss_water_splash: Splash
-DOTA_Tooltip_ability_boss_water_splash_Description: Each attack cleaves a large area of effect in front of the Guardian of the Deep
-DOTA_Tooltip_ability_boss_water_splash_radius: 'RADIUS:'
-DOTA_Tooltip_ability_boss_earth_grow: Construct's Grow
-DOTA_Tooltip_ability_boss_earth_grow_Description: 'Each 100 taken damage points increases damage, attack speed and move speed by 1. Also increases its size a little bit.'
-DOTA_Tooltip_ability_boss_wind_windwalk: Windy Soul
-DOTA_Tooltip_ability_boss_wind_windwalk_Description: Made from pure wind she will have 100% evasion chance.
-DOTA_Tooltip_ability_boss_wind_splitshot: Splitshot
-DOTA_Tooltip_ability_boss_wind_splitshot_Description: Materialized Wind has splitshot and maximum attack speed.
 DOTA_Tooltip_ability_boss_armor: Boss Armor
 DOTA_Tooltip_ability_boss_armor_Description: |-
   Boss is immune from most debuffs, unless boss has passives disabled.
-  When boss recieves damage, it limit's attacker's attack range to %attack_range_limit% for some time.
+  When boss recieves damage, it limit's attacker's attack range to %attack_range_limit% for some time and prevents it from getting invisible.
+DOTA_Tooltip_modifier_boss_armor_no_invisibility: No Invisibility
+DOTA_Tooltip_modifier_boss_armor_no_invisibility_Description: Can't get invisible, because recently attacked a boss.
 DOTA_Tooltip_ability_ogre_magi_multicast_arena: Multicast
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: |-
   Enables Ogre Magi to cast his spells multiple times with each use (on ultimates multicast proc chance decreased by 50%), while also granting his spells greater potency:
@@ -163,62 +153,6 @@ DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_aoe: 'BLOODLUST RADIUS:
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_cooldown: 'BLOODLUST COOLDOWN REDUCTION:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally: 'MULTICAST ALLY DURATION:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: Adds the Unrefined Fireblast ability. Multicast can be used on allies to give them chance to multicast for some time.
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena: 'Call of the Wild: Hawk'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_Description: 'Beastmaster calls forth watchful Hawks to scout the battlefield. At level 3 and beyond, the hawk can become invisible after being still for 4 seconds.'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_Lore: 'After befriending the strange beast of his childhood, Beastmaster has learned to call to animals in times of need.'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_hp_tooltip: 'HAWK HEALTH:'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_speed_tooltip: 'HAWK MOVEMENT SPEED:'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_daysight_tooltip: 'HAWK DAY SIGHT RANGE:'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_nightsight_tooltip: 'HAWK NIGHT SIGHT RANGE:'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_hawk_duration: 'HAWK DURATION:'
-DOTA_Tooltip_ability_call_of_the_wild_hawk_arena_unit_count: 'HAWK COUNT:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena: 'Call of the Wild: Boar'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_Description: 'Beastmaster calls powerful Boars to stalk the battlefield, capable of spitting poison at enemies to slow their movement and attack speed.'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_Lore: 'After befriending the strange beast of his childhood, Beastmaster has learned to call to animals in times of need.'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_hp_tooltip: 'BOAR HEALTH:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_damage_tooltip: 'BOAR ATTACK DAMAGE:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_moveslow_tooltip: '%BOAR MOVEMENT SLOW:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_poison_duration_tooltip: 'BOAR POISON DURATION:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_attackslow_tooltip: 'BOAR ATTACK SLOW:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_boar_duration: 'BOAR DURATION:'
-DOTA_Tooltip_ability_call_of_the_wild_boar_arena_unit_count: 'BOAR COUNT:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena: Chaotic Offering
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Description: 'Summons a Golem from the depths, stunning enemies for one second. The Golem lives 60 seconds, takes reduced damage from spells, has Permanent Immolation and Flaming Fists on attack.'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Lore: 'Demnok unleashes the captive spirit in his Dreadwood staff, causing destruction in enemy ranks.'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Note0: Spell Immune units will be stunned.
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Note1: This ability destroys trees in its area of effect.
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_stun_duration: 'STUN DURATION:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_aoe: 'SUMMON BLAST RADIUS:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_hp_tooltip: 'GOLEM HEALTH:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_dmg_tooltip: 'GOLEM DAMAGE:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_armor_tooltip: 'GOLEM ARMOR:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_regen_tooltip: 'GOLEM HEALTH REGEN:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_bounty_reduction_scepter: 'SCEPTER GOLEM BOUNTY:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_number_of_golems_scepter: 'SCEPTER NUMBER OF GOLEMS:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_hp_tooltip_scepter: 'SCEPTER GOLEM HEALTH:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_dmg_tooltip_scepter: 'SCEPTER GOLEM DAMAGE:'
-DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_aghanim_description: Calls several changed Golems.
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena: Fatal Bonds
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Description: 'Binds several enemy units together, causing %damage_share_percentage%%% of the damage dealt to one of them to be felt by the others. Also causes enemies to take %bonus_damage_taken%%% more damage from all sources.'
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Lore: An ancient incantation that links the vital energies of multiple lifeforms into one collective body.
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Note0: Damage will disable abilities and items like Blink Dagger.
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_count: 'ENEMIES BOUND:'
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_duration: 'DURATION:'
-DOTA_Tooltip_ability_warlock_fatal_bonds_arena_bonus_damage_taken: '%BONUS DAMAGE TAKEN:'
-DOTA_Tooltip_ability_warlock_shadow_word_arena: Shadow Word
-DOTA_Tooltip_ability_warlock_shadow_word_arena_Description: |-
-  Warlock whispers an incantation, healing a friendly unit or damaging an enemy unit over time. When casted on self healing is multiplied by 2. When casted on any another unit Warlock will get healing divided by 2.
-  When casted on enemy additionally to damage has small chance to spawn Mini Golem, that is weaker version of golem from Chaotic Offering. Golem will attack enemy which has debuff that caused Mini Golem to spawn.
-DOTA_Tooltip_ability_warlock_shadow_word_arena_Lore: 'Demnok''s arcane arts have a myriad of uses, allowing them to be powerful friendly enchantments or damaging curses.'
-DOTA_Tooltip_ability_warlock_shadow_word_arena_Note0: Warlock can't control Mini Golem.
-DOTA_Tooltip_ability_warlock_shadow_word_arena_duration: 'DURATION:'
-DOTA_Tooltip_ability_warlock_shadow_word_arena_minigolem_chance: '%GOLEM SPAWN CHANCE:'
-DOTA_Tooltip_ability_warlock_shadow_word_arena_minigolem_duration: 'GOLEM DURATION:'
-DOTA_Tooltip_ability_warlock_upheaval_arena: Upheaval
-DOTA_Tooltip_ability_warlock_upheaval_arena_Description: Warlock places a powerful slowing current that grows stronger with time. Lasts up to %cast_duration% seconds. Enemies are slowed for %debuff_duration% seconds after leaving the area or the spell ends.
-DOTA_Tooltip_ability_warlock_upheaval_arena_Lore: 'Demnok manipulates space-time, impairing entire armies.'
-DOTA_Tooltip_ability_warlock_upheaval_arena_aoe: 'RADIUS:'
-DOTA_Tooltip_ability_warlock_upheaval_arena_slow_rate: '%SLOW PER SECOND:'
 DOTA_Tooltip_ability_wisp_tether_aghanims: Aghanim's Tether
 DOTA_Tooltip_ability_wisp_tether_aghanims_Description: 'Tethers Io to ally unit, granting it bonus movement speed. When Io restores health or mana, tethered units target gain 1.5x the amount. Any enemy unit that crosses the tether is slowed. The tether breaks when the allied unit moves too far away, or Io cancels the tether.'
 DOTA_Tooltip_ability_wisp_tether_aghanims_aghanim_description: Allows you to Tether all allies in cast range.
@@ -315,13 +249,7 @@ DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_chance_to_frostbite_pct
 
 DOTA_Tooltip_ability_ability_empty: Empty Ability Slot
 DOTA_Tooltip_ability_ability_empty_Description: ''
-DOTA_Tooltip_ability_rubick_personality_steal: Personality Steal
-DOTA_Tooltip_ability_rubick_personality_steal_Description: 'Rubick studies the trace magical essence of one enemy hero, learning the secrets of all the spells the hero has and copying it''s model. Rubick can use that spells as his own until he dies or removes it, clicking on the buff icon in status bar.'
-DOTA_Tooltip_modifier_rubick_personality_steal: Personality Steal
-DOTA_Tooltip_modifier_rubick_personality_steal_Description: |-
-  Rubick has stolen abilities and model.
 
-  Click to remove.
 DOTA_Tooltip_ability_item_god_transform_freya: 'Select Hero: Freya'
 DOTA_Tooltip_ability_item_god_transform_freya_Description: |-
   Transforms your hero to Freya.
@@ -363,11 +291,10 @@ DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura: Blazing Blood
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura_Description: Applies Burning Spear stacks to all enemies around
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff: Burning Spear
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff_Description: 'YOU ARE ON FIRE! Taking periodic damage. Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, magic damage resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%'
-DOTA_Tooltip_ability_tinker_rearm_arena: Rearming Strike
-DOTA_Tooltip_ability_tinker_rearm_arena_Description: 'Tinker shoots a ball of pure energy, refreshing cooldowns of all non unit-target abilities and items with some chance, or decreasing enemy''s magic damage resistance and causing each unit-target ability or item used on it to have a chance to immediately reset it''s cooldown.'
-DOTA_Tooltip_ability_tinker_rearm_arena_debuff_duration: 'DURATION:'
-DOTA_Tooltip_ability_tinker_rearm_arena_refresh_chance_pct: '%REFRESH CHANCE:'
-DOTA_Tooltip_ability_tinker_rearm_arena_magical_resistanse_pct: '%MAGIC DAMAGE RESISTANCE REDUCTION:'
+
+DOTA_Tooltip_ability_tinker_rearm_arena: Rearm
+DOTA_Tooltip_ability_tinker_rearm_arena_Description: CHANNELED - Resets the cooldown on most of Tinker's items and abilities.
+DOTA_Tooltip_ability_tinker_rearm_arena_channel_time: 'TIME TO REARM:'
 
 DOTA_Tooltip_ability_life_stealer_feast_arena: Feast
 DOTA_Tooltip_ability_life_stealer_feast_arena_Description: Lifestealer's attacks damage enemies and heal himself for a percentage of his target's current health.
@@ -386,3 +313,13 @@ DOTA_Tooltip_ability_filler_ability_hp_heal_growth: 'HEALTH REGEN / MIN:'
 DOTA_Tooltip_ability_filler_ability_mp_heal_growth: 'MANA REGEN / MIN:'
 DOTA_Tooltip_ability_filler_ability_hp_heal_pct: '%HEALTH REGEN:'
 DOTA_Tooltip_ability_filler_ability_mp_heal_pct: '%MANA REGEN:'
+
+
+DOTA_Tooltip_modifier_fountain_aura_arena: Fountain Rejuvenation
+DOTA_Tooltip_modifier_fountain_aura_arena_Description: 'Heals %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% HP and %dMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% mana per second.'
+
+DOTA_Tooltip_modifier_fountain_aura_invulnerability: Fountain Invulnerability
+DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Takes no damage from any sources. Works only until %dMODIFIER_PROPERTY_TOOLTIP% minute. After that time, fountain stops killing enemy units, but instead applies on them ''Fountain Weakness'' debuff.'
+
+DOTA_Tooltip_modifier_fountain_aura_enemy: Fountain Weakness
+DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'Each second takes %dMODIFIER_PROPERTY_TOOLTIP%%% of max health as damage. Prevents health from from going up. All outgoing damage reduced by %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%. Damage reduction decreases by 5%% each 5 minutes (until 0%%).'

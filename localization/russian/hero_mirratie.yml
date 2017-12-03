@@ -1,14 +1,16 @@
 npc_arena_hero_mirratie_hype: 'Природный талант и атлетические навыки - секрет мастерства Мирати. Она чувствует врагов вокруг себя, даже если они невидимы или находятся на возвышенности. Мгновенно сокращая дистанцию, она лишает жертву зрения, а благодаря огромной дальности атаки она достанет врага где угодно.'
-npc_arena_hero_mirratie_bio: 'Мирати с рождения была слепа. Ее отец был богатым и влиятельным человеком в криминальном мире, и он помог ей развить свои таланты. Не смотря на слепоту, она невероятно чувствительна к колебниям воздуха и вибрациям. Благодаря тренировкам, она смогла развить это и научилась пользоваться огнестрельным оружием. Отец устроил ее в корпорацию, занимающуюся заказными убийстами. Мирати стала выдающимся снайпером, во многом благодаря тому, что ей не требуется видеть цель: она подсознательно ощущает ее, поэтому никто не может скрыться от ее прицела. Также она освоила навык, временно ослепляющий ее врагов, что дает ей дополнительное преимущество.'
+npc_arena_hero_mirratie_bio: 'Мирати с рождения была слепа. Ее отец был богатым и влиятельным человеком в криминальном мире, и он помог ей развить свои таланты. Не смотря на слепоту, она невероятно чувствительна к колебниям воздуха и вибрациям. Благодаря тренировкам, она смогла развить это и научилась пользоваться огнестрельным оружием. Отец устроил ее в корпорацию, занимающуюся заказными убийстами. Мирати стала выдающимся снайпером, во многом благодаря тому, что ей не требуется видеть цель: она подсознательно ощущает ее, поэтому никто не может скрыться от ее прицела.'
 
 DOTA_Tooltip_ability_mirratie_snagshot: Snagshot
 DOTA_Tooltip_ability_mirratie_snagshot_Description: 'Бросает сеть в указанную область, приковывая врагов к земле, предотвращая уход в невидимость и телепортацию. Прерывает используемые заклинания.'
+DOTA_Tooltip_ability_mirratie_snagshot_Lore: Никто не уйдет живым.
 DOTA_Tooltip_ability_mirratie_snagshot_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_mirratie_snagshot_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_mirratie_snagshot_tooltip_range: 'ДАЛЬНОСТЬ:'
 
 DOTA_Tooltip_ability_mirratie_smoke_out: Smoke Out
 DOTA_Tooltip_ability_mirratie_smoke_out_Description: 'Mirratie телепортируется к выбранной точке, оставляя дымовую бомбу, замедляющую, ослепляющую и заставляющую противников часто промахиваться атаками.'
+DOTA_Tooltip_ability_mirratie_smoke_out_Lore: Мирати компенсирует свой недостаток, чтобы сразиться с врагами в равных условиях.
 DOTA_Tooltip_ability_mirratie_smoke_out_radius: 'РАДИУС ДЫМА:'
 DOTA_Tooltip_ability_mirratie_smoke_out_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_mirratie_smoke_out_move_slow_pct: '%ЗАМЕДЛЕНИЕ:'
@@ -17,13 +19,15 @@ DOTA_Tooltip_modifier_mirratie_smoke_out_debuff: Smoke Out
 DOTA_Tooltip_modifier_mirratie_smoke_out_debuff_Description: Ослеплен. Промахивается в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% случаев. Скорость передвижения уменьшена.
 
 DOTA_Tooltip_ability_mirratie_sixth_sense: Sixth Sense
-DOTA_Tooltip_ability_mirratie_sixth_sense_Description: 'Mirratie концентрируется на своих чувствах, позволяя ей чувствовать врагов, не видя их, уклоняться от атак, и уворачиваться от вражеских заклинаний.'
+DOTA_Tooltip_ability_mirratie_sixth_sense_Description: 'Mirratie концентрируется на своих чувствах, позволяя ей ощущать врагов, не видя их, уклоняться от атак и уворачиваться от вражеских заклинаний.'
+DOTA_Tooltip_ability_mirratie_sixth_sense_Lore: Мирати не надо видеть угрозу, чтобы избежать ее.
 DOTA_Tooltip_ability_mirratie_sixth_sense_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_mirratie_sixth_sense_bonus_evasion: '%+$evasion'
 DOTA_Tooltip_ability_mirratie_sixth_sense_dodge_chance_pct: '%ШАНС УКЛОНИТЬСЯ ОТ ЛЮБОГО УРОНА:'
 
 DOTA_Tooltip_ability_mirratie_impaling_shot: Impaling Shot
-DOTA_Tooltip_ability_mirratie_impaling_shot_Description: 'Mirratie выстреливает в цель из арбалета, нанося огромный урон и оглушая цель. Выстрел также попадет по всем противникам, находящимся позади цели, нанося уменьшенный урон и оглушая их на меньшее время.'
+DOTA_Tooltip_ability_mirratie_impaling_shot_Description: 'Mirratie выстреливает в цель, нанося огромный урон и оглушая. Выстрел также попадет по всем противникам, находящимся позади цели, нанося уменьшенный урон и оглушая их на меньшее время.'
+DOTA_Tooltip_ability_mirratie_impaling_shot_Lore: Убийство - это тоже искусство.
 DOTA_Tooltip_ability_mirratie_impaling_shot_aghanim_description: 'Изменяет тип урона на чистый и позволяет проходить сквозь невосприимчивость к заклинаниям, увеличивает дальность применения, длительность оглушения и урон.'
 DOTA_Tooltip_ability_mirratie_impaling_shot_channel_time: 'ДЛИТЕЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_mirratie_impaling_shot_cast_range: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'

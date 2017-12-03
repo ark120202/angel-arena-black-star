@@ -1,12 +1,10 @@
-item_bloodthorn_baseclass = {}
 LinkLuaModifier("modifier_item_bloodthorn_arena", "items/item_bloodthorn", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_bloodthorn_arena_silence", "items/item_bloodthorn", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_bloodthorn_arena_crit", "items/item_bloodthorn", LUA_MODIFIER_MOTION_NONE)
 
-
-function item_bloodthorn_baseclass:GetIntrinsicModifierName()
-	return "modifier_item_bloodthorn_arena"
-end
+item_bloodthorn_baseclass = {
+	GetIntrinsicModifierName = function() return "modifier_item_bloodthorn_arena" end,
+}
 
 if IsServer() then
 	function item_bloodthorn_baseclass:OnSpellStart()
@@ -22,10 +20,11 @@ end
 item_bloodthorn_2 = class(item_bloodthorn_baseclass)
 
 
-
-modifier_item_bloodthorn_arena = class({})
-function modifier_item_bloodthorn_arena:IsHidden() return true end
-function modifier_item_bloodthorn_arena:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+modifier_item_bloodthorn_arena = class({
+	IsHidden      = function() return true end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable    = function() return false end,
+})
 
 function modifier_item_bloodthorn_arena:DeclareFunctions()
 	return {
@@ -49,8 +48,8 @@ function modifier_item_bloodthorn_arena:GetModifierPreAttack_BonusDamage()
 	return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end
 
-function modifier_item_bloodthorn_arena:GetModifierPercentageManaRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen_pct")
+function modifier_item_bloodthorn_arena:GetModifierConstantManaRegen()
+	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
 
 if IsServer() then
@@ -62,16 +61,11 @@ if IsServer() then
 	end
 end
 
-modifier_item_bloodthorn_arena_silence = class({})
-function modifier_item_bloodthorn_arena_silence:IsDebuff() return true end
-
-function modifier_item_bloodthorn_arena_silence:GetEffectName()
-	return "particles/items2_fx/orchid.vpcf"
-end
-
-function modifier_item_bloodthorn_arena_silence:GetEffectAttachType()
-	return PATTACH_OVERHEAD_FOLLOW
-end
+modifier_item_bloodthorn_arena_silence = class({
+	IsDebuff =            function() return true end,
+	GetEffectAttachType = function() return PATTACH_OVERHEAD_FOLLOW end,
+	GetEffectName =       function() return "particles/items2_fx/orchid.vpcf" end,
+})
 
 function modifier_item_bloodthorn_arena_silence:CheckState()
 	return {
@@ -111,14 +105,16 @@ if IsServer() then
 
 	function modifier_item_bloodthorn_arena_silence:OnDestroy()
 		local ability = self:GetAbility()
+		local parent = self:GetParent()
 		local damage = (self.damage or 0) * ability:GetSpecialValueFor("silence_damage_pct") * 0.01
-		ParticleManager:SetParticleControl(ParticleManager:CreateParticle("particles/items2_fx/orchid_pop.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.unit), 1, Vector(damage))
+		ParticleManager:SetParticleControl(ParticleManager:CreateParticle("particles/items2_fx/orchid_pop.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent), 1, Vector(damage))
 		if damage > 0 then
 			ApplyDamage({
 				attacker = self:GetCaster(),
-				victim = self:GetParent(),
+				victim = parent,
 				damage = damage,
 				damage_type = ability:GetAbilityDamageType(),
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 				ability = ability
 			})
 		end
@@ -126,9 +122,10 @@ if IsServer() then
 end
 
 
-modifier_item_bloodthorn_arena_crit = class({})
-function modifier_item_bloodthorn_arena_crit:IsHidden() return true end
-function modifier_item_bloodthorn_arena_crit:IsPurgable() return false end
+modifier_item_bloodthorn_arena_crit = class({
+	IsHidden =   function() return true end,
+	IsPurgable = function() return false end,
+})
 
 if IsServer() then
 	function modifier_item_bloodthorn_arena_crit:DeclareFunctions()

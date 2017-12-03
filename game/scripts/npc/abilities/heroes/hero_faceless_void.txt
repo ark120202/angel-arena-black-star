@@ -324,17 +324,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.0"
+				"duration"				"0.4 0.5 0.6 0.7 0.8 0.9 1.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_creep"		"3.0"
+				"duration_creep"		"0.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"10.0 12.5 15.0 17.5 20.0 22.5 25.0"
+				"chance_pct"			"8"
 			}
 			"04"
 			{
@@ -344,7 +344,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_cooldown"			"2.0"
+				"bonus_cooldown"			"0.5"
 			}
 		}
 
@@ -431,7 +431,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dodge_chance_pct"		"10 12.5 15 17.5 20 22.5 25"
+				"dodge_chance_pct"		"5.0 7.5 10.0 12.5 15.0 17.5 20.0"
 			}
 		}
 
@@ -483,9 +483,9 @@
 		}
 
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.35 0.35 0.35 0.35 0.35 0.3 0.25"
-		"AbilityCooldown"				"140 130 120 115 110 105 100"
-		"AbilityManaCost"				"150 225 300 400 500 600 700"
+		"AbilityCastPoint"				"0.65 0.65 0.65 0.65 0.65 0.60 0.55"
+		"AbilityCooldown"				"220 210 200 190 180 170 160"
+		"AbilityManaCost"				"150 250 350 450 550 650 750"
 		"HasScepterUpgrade"				"1"
 
 		"AbilitySpecial"
@@ -493,7 +493,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.0 2.25 2.5 2.75 3.0 3.25 3.5"
+				"duration"				"3.0"
 			}
 			"02"
 			{
@@ -503,7 +503,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius_pfx"				"256"
+				"radius_pfx"				"512"
 			}
 			"04"
 			{

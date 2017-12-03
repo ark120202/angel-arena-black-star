@@ -11,20 +11,19 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
-		"AbilityCooldown"				"20"
-		"AbilityManaCost"				"90 140 190 240 290 340 390"
-		"LevelsBetweenUpgrades"			"2"
-		"AbilityDamage"					"100 200 300 400 500 600 700"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"90"
+		"AbilityDamage"					"100 150 200 250 300 350 450"
 
 		"AbilityCastRange"				"%range"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.2 1.6 2 2.4 2.8 3 3.2"
+				"stun_duration"		"0.8 1.0 1.2 1.4 1.6 1.8 2.0"
 			}
 			"02"
 			{
@@ -98,10 +97,9 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
-		"AbilityCooldown"				"120 110 100 90 80 70 60"
-		"AbilityManaCost"				"80 120 200 300 400 500 600"
-		"AbilityDamage"					"50 100 150 250 350 450 550"
-		"LevelsBetweenUpgrades"			"6"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"80"
+		"AbilityDamage"					"20 40 60 80 100 120 140"
 
 		"AbilitySpecial"
 		{
@@ -113,12 +111,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"movement_speed_pct" "5 10 15 20 25 30 35"
+				"movement_speed_pct" "5 7 9 11 13 15 18"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"cleave_damage_pct"	"10 12 15 20 25 30 35"
+				"cleave_damage_pct"	"10.0 12.5 15.0 17.5 20.0 22.5 25.0"
 			}
 			"04"
 			{
@@ -190,9 +188,9 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AOERadius"						"%aoe_radius"
 
-		"AbilityCooldown"				"40 37.5 35 32.5 30 27.5 25"
-		"AbilityManaCost"				"80 120 160 200 240 280 320"
-		"AbilityCastRange"				"1500"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"80 90 100 110 120 130 140"
+		"AbilityCastRange"				"900"
 
 		"precache"
 		{
@@ -204,27 +202,27 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"4 4.5 5 5.5 6 6.5 7"
+				"duration"			"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aoe_radius"		"600"
+				"aoe_radius"		"400"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"pull_per_second"	"150 170 190 210 230 250 270"
+				"pull_per_second"	"200"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"slow_min_pct"		"-10"
+				"slow_min_pct"		"-20"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"slow_max_pct"		"-60 -65 -70 -70 -75 -75 -80"
+				"slow_max_pct"		"-40 -45 -50 -55 -60 -65 -70"
 			}
 			"06"
 			{
@@ -340,10 +338,10 @@
 		"AOERadius"						"%aoe_radius"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 
-		"AbilityCooldown"				"120 110 100 90 85 80 75"
-		"AbilityManaCost"				"200 300 400 500 600 700 800"
-		"AbilityCastPoint"				"0.4"
-		"AbilityCastRange"				"3000"
+		"AbilityCooldown"				"100"
+		"AbilityManaCost"				"100 200 300 400 500 600 700"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4 0.4 0.35 0.3"
+		"AbilityCastRange"				"800 900 1000 1100 1200 1300 1400"
 
 		"precache"
 		{
@@ -355,27 +353,27 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aoe_radius"		"500"
+				"aoe_radius"		"410"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_min"		"200 400 600 700 800 900 1000"
+				"damage_min"		"150 225 300 375 450 625 700"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_max"		"400 800 1200 1400 1600 1800 2000"
+				"damage_max"		"250 350 450 550 650 750 850"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_min"			"1 1 2 2 2 3 3"
+				"stun_min"			"0 0.25 0.5 0.75 1.0 1.25 1.5"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_max"			"2 3 3 4 4 5 5"
+				"stun_max"			"1.0 1.25 1.5 1.75 2.0 2.25 2.5"
 			}
 		}
 

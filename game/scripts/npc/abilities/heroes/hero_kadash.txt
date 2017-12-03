@@ -6,7 +6,6 @@
 		"AbilityTextureName"			"arena/kadash_assasins_skills"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel" 						"7"
-		"LevelsBetweenUpgrades" 		"4"
 
 		"AbilitySpecial"
 		{
@@ -23,7 +22,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_mult"			"130 160 190 220 250 280 310"
+				"crit_mult"			"200"
 			}
 		}
 
@@ -103,9 +102,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCooldown"				"60 50 45 40 35 30 25"
-		"AbilityManaCost"				"200"
-		"LevelsBetweenUpgrades" 		"4"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"50"
 
 		"AbilitySpecial"
 		{
@@ -117,27 +115,27 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fade_time"				"0.2"
+				"fade_time"				"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-5 -10 -15 -20 -25 -30 -35"
+				"armor_reduction"		"-5 -7 -9 -11 -13 -15 -17"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"armor_reduction_duration"	"3"
+				"armor_reduction_duration"	"5"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"600"
+				"bonus_attack_range"	"300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magical_damage_pct" 	"90 100 110 120 130 140 150"
+				"magical_damage_pct" 	"100"
 			}
 		}
 		"precache"
@@ -253,29 +251,28 @@
 		"AbilityTextureName"			"arena/kadash_survival_skills"
 		"MaxLevel" 						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"LevelsBetweenUpgrades" 		"4"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_evasion"		"10 20 30 35 45 50 55"
+				"var_type"			"FIELD_FLOAT"
+				"bonus_evasion"		"5.0 7.5 10.0 12.5 15.0 17.5 20.0"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"4 8 12 16 20 24 28"
+				"bonus_armor"		"2 4 6 8 10 12 14"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_magic_resist_pct"	"5 10 15 20 25 30 35"
+				"var_type"			"FIELD_FLOAT"
+				"bonus_magic_resist_pct"	"5.0 7.5 10.0 12.5 15.0 17.5 20.0"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"block_damage"		"12 24 36 80 150 200 220"
+				"block_damage"		"10 18 26 34 42 50 58"
 			}
 		}
 
@@ -306,14 +303,14 @@
 		"AbilityTextureName"			"arena/kadash_immortality"
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
-		"LevelsBetweenUpgrades" 		"15"
+		"LevelsBetweenUpgrades" 		"7"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"reincarnate_time"		"1"
+				"reincarnate_time"		"2.0"
 			}
 			"02"
 			{
@@ -323,17 +320,17 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_per_reincarnation_pct"	"60 50 45 40 40 35 30"
+				"health_per_reincarnation_pct"	"55 50 45 40 35 30 25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_per_reincarnation_pct_scepter"	"50 40 30 25 20 20 15"
+				"health_per_reincarnation_pct_scepter"	"45 40 35 30 25 20 15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ghostform_duration_scepter"	"2"
+				"ghostform_duration_scepter"	"1.0"
 			}
 		}
 

@@ -11,7 +11,8 @@ function CastTether( event )
 	local target = event.target
 	local PlayerID = UnitVarToPlayerID(caster)
 
-	local targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false)
+	local radius = ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1)
+	local targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false)
 
 	TrackCurrentHealth(event)
 	TrackCurrentMana(event)
@@ -48,7 +49,7 @@ function CheckDistance( event )
 
 	if ability.tether_allies then
 		for i,v in ipairs(ability.tether_allies) do
-			local distance = ( v:GetAbsOrigin() - caster:GetAbsOrigin() ):Length2D()
+			local distance = ( v:GetAbsOrigin() - caster:GetAbsOrigin() ):Length2D() - caster:GetPaddedCollisionRadius() - v:GetPaddedCollisionRadius()
 			if distance > event.radius then
 				v:RemoveModifierByName("modifier_tether_ally_aghanims")
 				v:RemoveModifierByName("modifier_overcharge_buff_aghanims")
@@ -60,7 +61,7 @@ function CheckDistance( event )
 
 		end
 	end
-	
+
 end
 
 --[[
@@ -94,10 +95,12 @@ function HealAlly( event )
 
 	local healthGained = caster:GetHealth() - caster.tether_lastHealth
 
-	if healthGained > 0 then
+	if healthGained > 0 and not caster.preventTeatherHealing then
 		local heal = healthGained * event.tether_heal_amp
 		for _,v in ipairs(ability.tether_allies) do
-			SafeHeal(v, heal, ability)
+			v.preventTeatherHealing = true
+			SafeHeal(v, heal, ability, true)
+			v.preventTeatherHealing = nil
 		end
 	end
 end
@@ -186,12 +189,12 @@ end
 ]]
 function LevelUpAbility( event )
 	local caster = event.caster
-	local this_ability = event.ability		
+	local this_ability = event.ability
 	local this_abilityLevel = this_ability:GetLevel()
 
 	-- The ability to level up
 	local ability_name = event.ability_name
-	local ability_handle = caster:FindAbilityByName(ability_name)	
+	local ability_handle = caster:FindAbilityByName(ability_name)
 	local ability_level = ability_handle:GetLevel()
 
 	-- Check to not enter a level up loop
@@ -225,7 +228,7 @@ function EndTether( event )
 		end)
 	end
 	caster:RemoveModifierByName("modifier_spirits_caster_aghanims")
-	
+
 	ability.tether_allies = nil
 
 	caster:SwapAbilities( ability:GetAbilityName(), event.sub_ability_name, true, false )

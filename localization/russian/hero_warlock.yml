@@ -1,0 +1,50 @@
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena: Fatal Bonds
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Description: 'Соединяет несколько врагов магической связью, в результате чего %damage_share_percentage%%% от урона, полученного любым из них, наносится и остальным. Все связанные враги получают от всех источников на %bonus_damage_taken%%% урона больше.'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Lore: 'Древнее заклятие, которое объединяет жизненные силы различных существ в единую сущность.'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_Note0: 'Урон запрещает использование способностей или предметов, зависящих от урона (например, Blink Dagger).'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_count: 'СВЯЗЫВАЕТ ВРАГОВ:'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_warlock_fatal_bonds_arena_bonus_damage_taken: '%УВЕЛИЧЕНИЕ УРОНА:'
+DOTA_Tooltip_modifier_warlock_fatal_bonds_arena_Description: Распределяет %dMODIFIER_PROPERTY_TOOLTIP%%% всего урона по связанным юнитам. Увеличивает весь получаемый урон на %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%.
+
+DOTA_Tooltip_ability_warlock_shadow_word_arena: Shadow Word
+DOTA_Tooltip_ability_warlock_shadow_word_arena_Description: |-
+  Warlock шепчет заклинание, излечивая дружественных юнитов или нанося урон вражеским на протяжении времени. При использованиии на себе эффект лечения в два раза больше. При спользовании на других юнитов Warlock тоже получает эффект излечивания, но в два раза слабее обычного.
+  При использовании на противника появляется небольшой шанс создать Mini Golem, который является ослабленной версией голема от способности Chaotic Offering. Голем будет атаковать противника, на котором был дебафф, из-за которого голем был создан.
+DOTA_Tooltip_ability_warlock_shadow_word_arena_Lore: Тайные искусства Демнока могут найти множество применений — будь то мощные исцеляющие чары либо страшное уничтожающее проклятье.
+DOTA_Tooltip_ability_warlock_shadow_word_arena_Note0: Warlock не может контроллировать Mini Golem.
+DOTA_Tooltip_ability_warlock_shadow_word_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_warlock_shadow_word_arena_minigolem_chance: '%ШАНС СОЗДАНИЯ ГОЛЕМА:'
+DOTA_Tooltip_ability_warlock_shadow_word_arena_minigolem_duration: 'ДЛИТЕЛЬНОСТЬ ЖИЗНИ ГОЛЕМА:'
+DOTA_Tooltip_modifier_modifier_shadow_word_self_secondary_Description: Исцеляется со временем.
+DOTA_Tooltip_modifier_modifier_shadow_word_self_Description: Исцеляется со временем.
+DOTA_Tooltip_modifier_modifier_shadow_word_buff_Description: Исцеляется со временем.
+DOTA_Tooltip_modifier_modifier_shadow_word_debuff_Description: Получает периодический урон. Имеет шанс создать вражеского голема
+npc_dota_warlock_minigolem: Mini Golem
+
+DOTA_Tooltip_ability_warlock_upheaval_arena: Upheaval
+DOTA_Tooltip_ability_warlock_upheaval_arena_Description: 'Warlock создает на площади мощный замедляющий поток энергии, со временем становящийся сильнее. Действует до 16 секунд. Эффект сохраняется в течение 3 секунд после того, как враг покинул зону действия или заклинание прервалось.'
+DOTA_Tooltip_ability_warlock_upheaval_arena_Lore: 'Демнок управляет пространством и временем, смешивая с грязью целые армии.'
+DOTA_Tooltip_ability_warlock_upheaval_arena_aoe: 'РАДИУС:'
+DOTA_Tooltip_ability_warlock_upheaval_arena_slow_rate: '%ЗАМЕДЛЕНИЕ В СЕК.:'
+DOTA_Tooltip_modifier_modifier_upheaval_arena_debuff: Upheaval
+DOTA_Tooltip_modifier_modifier_upheaval_arena_debuff_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%
+
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena: Chaotic Offering
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Description: 'Вызывает из пучин Голема, оглушающего врагов на 1 секунду. Время жизни голема - 60 секунд, он получает меньше урона от заклинаний и при атаке накладывает на жертву Permanent Immolation и Flaming Fists.'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Lore: 'Демнок выпускает из своего дредвудского посоха плененного духа, который разрушает вражеские ряды.'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Note0: 'Оглушает врагов, невосприимчивых к заклинаниям.'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_Note1: Уничтожает деревья в области действия.
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_stun_duration: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_aoe: 'РАДИУС ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_hp_tooltip: 'ЗДОРОВЬЕ ГОЛЕМА:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_dmg_tooltip: 'УРОН ГОЛЕМА:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_armor_tooltip: 'БРОНЯ ГОЛЕМА:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_regen_tooltip: 'ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ ГОЛЕМА:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_bounty_reduction_scepter: 'НАГРАДЫ ЗА УБИЙСТВО СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_number_of_golems_scepter: 'ГОЛЕМОВ СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_hp_tooltip_scepter: 'ЗДОРОВЬЕ ГОЛЕМА СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_golem_dmg_tooltip_scepter: 'УРОН ГОЛЕМА СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_warlock_rain_of_chaos_arena_aghanim_description: Призывает несколько изменённых големов.
+npc_dota_warlock_golem_base: Warlock Golem
+npc_dota_warlock_golem_scepter_base: Warlock Golem

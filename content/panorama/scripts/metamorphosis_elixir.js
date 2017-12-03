@@ -16,6 +16,7 @@ function OpenMenu(data) {
 				FillHeroesTable(tabContent, TabHeroesPanel);
 				TabHeroesPanel.visible = false;
 			});
+			ListenToBanningPhase();
 		}
 		MainPanel.SetHasClass('ForcedHeroChange', data.forced === true);
 		MainPanel.visible = true;
@@ -43,7 +44,25 @@ function ChooseHeroPanelHero() {
 }
 
 function UpdateSelectionButton() {
-	$('#SelectedHeroSelectButton').enabled = HeroesData[SelectedHeroName] == null || !IsHeroPicked(SelectedHeroName);
+	var selectedHeroData = HeroesData[SelectedHeroName];
+	var currentHero = Players.GetHeroSelectionPlayerInfo(Game.GetLocalPlayerID()).hero;
+
+	var canPick = !IsHeroPicked(SelectedHeroName) &&
+		!IsHeroBanned(SelectedHeroName) &&
+		!IsHeroUnreleased(SelectedHeroName) &&
+		!IsHeroDisabledInRanked(SelectedHeroName) &&
+		(!IsLocalHeroLocked() || SelectedHeroName === currentHero);
+
+	var context = $.GetContextPanel();
+	var mode = 'pick';
+	if (selectedHeroData && selectedHeroData.linked_heroes) {
+		mode = IsLocalHeroLocked() && selectedHeroData.heroKey === currentHero ? 'unlock' : 'lock';
+	}
+	context.SetHasClass('LocalHeroLockButton', mode === 'lock');
+	context.SetHasClass('LocalHeroUnlockButton', mode === 'unlock');
+	context.SetHasClass('LocalHeroBanButton', mode === 'ban');
+
+	$('#SelectedHeroSelectButton').enabled = canPick;
 }
 
 function SelectHero() {

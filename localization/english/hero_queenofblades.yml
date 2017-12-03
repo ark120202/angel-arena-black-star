@@ -11,6 +11,8 @@ DOTA_Tooltip_ability_queenofblades_army_summon_bat: 'ATTACK SPEED:'
 DOTA_Tooltip_ability_queenofblades_army_summon_duration: 'DURATION:'
 DOTA_Tooltip_ability_queenofblades_army_cleave_radius: 'CLEAVE RADIUS:'
 DOTA_Tooltip_ability_queenofblades_army_radius: 'RADIUS:'
+DOTA_Tooltip_ability_queenofblades_army_summon_bounty: 'GOLD FOR KILL:'
+DOTA_Tooltip_ability_queenofblades_army_summon_xp: 'EXPERIENCE FOR KILL:'
 
 DOTA_Tooltip_ability_queenofblades_darkness_aura: Darkness Aura
 DOTA_Tooltip_ability_queenofblades_darkness_aura_Description: 'Kerrigan, deals crushing critical strikes, no one cam resist against. In addition, when critical strike procs, enemy will have a decreased movement speed and vision range.'

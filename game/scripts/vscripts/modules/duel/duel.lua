@@ -77,7 +77,7 @@ function Duel:StartDuel()
 		for _,unit in pairs(v) do
 			local pid = unit:GetPlayerOwnerID()
 			if not unit:IsAlive() then
-				unit:RespawnHero(false, false, false)
+				unit:RespawnHero(false, false)
 			end
 			if PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 				heroes_in_teams[i] = (heroes_in_teams[i] or 0) + 1
@@ -88,12 +88,14 @@ function Duel:StartDuel()
 	local heroes_to_fight_n = math.min(unpack(table.iterate(heroes_in_teams)))
 	if heroes_to_fight_n > 0 and table.count(heroes_in_teams) > 1 then
 		EmitAnnouncerSound("announcer_ann_custom_mode_20")
-		GameRules:SetHeroRespawnEnabled(false)
 		Duel.IsFirstDuel = Duel.DuelCounter == 0
 		Duel:SetDuelTimer(DUEL_SETTINGS.DurationBase + DUEL_SETTINGS.DurationForPlayer * heroes_to_fight_n)
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
 		local rndtbl = {}
 		table.merge(rndtbl, Duel.heroes_teams_for_duel)
+
+		RemoveAllUnitsByName("npc_dota_pugna_nether_ward_%d")
+
 		for i,v in pairs(rndtbl) do
 			if #v > 0 then
 				table.shuffle(v)
@@ -105,8 +107,7 @@ function Duel:StartDuel()
 						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 							unit.OnDuel = true
 							Duel:FillPreduelUnitData(unit)
-							local health = unit:GetMaxHealth()
-							unit:SetHealth(unit:HasAbility("shinobu_vampire_blood") and health * 0.5 or health)
+							unit:SetHealth(unit:GetMaxHealth())
 							unit:SetMana(unit:GetMaxMana())
 							count = count + 1
 						end
@@ -128,12 +129,16 @@ function Duel:StartDuel()
 						unit:SetModifierStackCount("modifier_item_tango_arena", unit, math.round(unit:GetModifierStackCount("modifier_item_tango_arena", unit) * 0.5))
 					end
 					if unit.PocketItem then
+						unit.PocketHostEntity = nil
 						UTIL_Remove(unit.PocketItem)
+						unit.PocketItem = nil
 					end
 					if _unit.OnDuel then
+						unit.OnDuel = true
 						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 						ProjectileManager:ProjectileDodge(unit)
 						unit:FindClearSpaceForUnitAndSetCamera(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
+						unit:AddNewModifier(unit, nil, "modifier_magic_immune", {duration = DUEL_SETTINGS.MagicImmunityDuration})
 					elseif unit:IsAlive() then
 						Duel:SetUpVisitor(unit)
 					end
@@ -211,7 +216,6 @@ function Duel:SetUpVisitor(unit)
 end
 
 function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
-	GameRules:SetHeroRespawnEnabled(true)
 	Duel.EntIndexer = {}
 	Duel.DuelStatus = DOTA_DUEL_STATUS_WATING
 	Duel.heroes_teams_for_duel = {}
@@ -219,7 +223,7 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
 			if PlayerResource:IsValidPlayerID(playerID) then
 				local _hero = PlayerResource:GetSelectedHeroEntity(playerID)
-				if IsValidEntity(_hero) then
+				if not PlayerResource:IsPlayerAbandoned(playerID) and IsValidEntity(_hero) then
 					for _,hero in ipairs(_hero:GetFullName() == "npc_dota_hero_meepo" and MeepoFixes:FindMeepos(_hero, true) or {_hero}) do
 						Duel:EndDuelForUnit(hero)
 					end
@@ -228,6 +232,9 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 		end
 	end
 	Events:Emit("Duel/end")
+
+	RemoveAllUnitsByName("npc_dota_pugna_nether_ward_%d")
+
 	if timeUpdate then
 		local delay = table.nearestOrLowerKey(DUEL_SETTINGS.DelaysFromLast, GetDOTATimeInMinutesFull())
 		Timers:CreateTimer(2, function()
@@ -259,9 +266,6 @@ function Duel:EndDuelForUnit(unit)
 		end
 	end)
 
-	if not unit:IsAlive() then
-		unit:RespawnHero(false, false, false)
-	end
 	if unit.FindClearSpaceForUnitAndSetCamera then
 		local pos = unit.ArenaBeforeTpLocation
 		if not pos then

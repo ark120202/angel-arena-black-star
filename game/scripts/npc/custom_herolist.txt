@@ -101,6 +101,8 @@
 		"npc_dota_hero_abyssal_underlord"				"1"
 		"npc_dota_hero_magnataur"						"1"
 		"npc_dota_hero_monkey_king"						"1"
+		"npc_dota_hero_pangolier"						"1"
+		"npc_dota_hero_dark_willow"						"1"
 
 		"npc_dota_hero_kunkka"							"1"
 		"npc_dota_hero_ogre_magi"						"1"
@@ -133,8 +135,9 @@
 		"npc_arena_hero_sara"							"1"
 		"npc_arena_hero_destroyer"						"1"
 		"npc_arena_hero_anakim"							"1"
-		"npc_arena_hero_sai"							"0"
-		"npc_arena_hero_murzik"							"0"
+		"npc_arena_hero_sai"							"1"
+		"npc_arena_hero_saitama"						"1"
+		"npc_arena_hero_doppelganger"					"1"
 
 		"npc_arena_hero_maka"							"0"
 		"npc_arena_hero_soul_eater"						"0"
@@ -244,6 +247,8 @@
 		"npc_dota_hero_abyssal_underlord"				"1"
 		"npc_dota_hero_magnataur"						"1"
 		"npc_dota_hero_monkey_king"						"1"
+		"npc_dota_hero_pangolier"						"1"
+		"npc_dota_hero_dark_willow"						"1"
 
 		"npc_dota_hero_kunkka"							"1"
 		"npc_dota_hero_ogre_magi"						"1"
@@ -269,5 +274,9 @@
 		"npc_arena_hero_saber"							"1"
 		"npc_arena_hero_sara"							"1"
 		"npc_arena_hero_destroyer"						"1"
+		"npc_arena_hero_anakim"							"1"
+		"npc_arena_hero_sai"							"0"
+		"npc_arena_hero_saitama"						"0"
+		"npc_arena_hero_doppelganger"					"1"
 	}
 }

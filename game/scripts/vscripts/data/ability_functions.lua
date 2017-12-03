@@ -1,5 +1,6 @@
-BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
-	zuus_static_field = 15,
+-- Percentage
+BOSS_DAMAGE_ABILITY_MODIFIERS = {
+	zuus_static_field = 10,
 	item_blade_mail = 0,
 	centaur_return = 0,
 	enigma_midnight_pulse = 0,
@@ -10,17 +11,21 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = { -- в процентах
 	shredder_chakram_2 = 40,
 	shredder_chakram = 40,
 	sniper_shrapnel = 40,
-	abaddon_death_coil = 40,
 	abyssal_underlord_firestorm = 20,
 	bristleback_quill_spray = 40,
 	centaur_hoof_stomp = 40,
 	centaur_double_edge = 40,
 	kunkka_ghostship = 40,
-	slark_dark_pact = 40,
+	kunkka_torrent = 40,
 	ember_spirit_flame_guard = 30,
 	sandking_sand_storm = 40,
 	antimage_mana_void_arena = 0,
-	ancient_apparition_ice_blast = 0
+	doom_bringer_infernal_blade = 10,
+	winter_wyvern_arctic_burn = 10,
+	freya_ice_cage = 10,
+	tinker_march_of_the_machines = 2000,
+	necrolyte_reapers_scythe = 7,
+	huskar_life_break = 15,
 }
 
 local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
@@ -41,6 +46,7 @@ local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype
 		end
 	end
 end
+
 ON_DAMAGE_MODIFIER_PROCS = {
 	modifier_item_octarine_core_arena = function(attacker, victim, inflictor, damage, damagetype_const)
 		OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, "item_octarine_core_arena", "modifier_octarine_bash_cooldown")
@@ -137,6 +143,24 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			return 1 - pct
 		end
 	},
+	modifier_sai_release_of_forge = {
+		condition = function(_, _, inflictor)
+			return not inflictor
+		end,
+		multiplier = function(attacker, victim, _, damage, damagetype)
+			local ability = attacker:FindAbilityByName("sai_release_of_forge")
+			local pct = ability:GetSpecialValueFor("pure_damage_pct") * 0.01
+			ApplyDamage({
+				victim = victim,
+				attacker = attacker,
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
+				damage_type = ability:GetAbilityDamageType(),
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+				ability = ability
+			})
+			return 1 - pct
+		end
+	},
 	modifier_anakim_wisps = {
 		condition = function(_, _, inflictor)
 			return not inflictor
@@ -163,17 +187,17 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
-	modifier_item_golden_eagle_relic_unique = function(_, _, inflictor)
+	modifier_item_golden_eagle_relic = function(_, _, inflictor)
 		if not IsValidEntity(inflictor) then
 			return {
 				LifestealPercentage = GetAbilitySpecial("item_golden_eagle_relic", "lifesteal_pct")
 			}
 		end
 	end,
-	modifier_item_lucifers_claw_unique = function(_, _, inflictor)
+	modifier_talent_lifesteal = function(attacker, _, inflictor)
 		if not IsValidEntity(inflictor) then
 			return {
-				LifestealPercentage = GetAbilitySpecial("item_lucifers_claw", "lifesteal_percent")
+				LifestealPercentage = attacker:GetModifierStackCount("modifier_talent_lifesteal", caster)
 			}
 		end
 	end,
@@ -205,7 +229,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 						})
 					end
 					victim:SpendMana(mana_needed, medusa_mana_shield_arena)
-					local particleName = "particles/arena/units/heroes/hero_sara/fragment_of_armor_impact.vpcf"
+					local particleName = "particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
 					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
 					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
 					ParticleManager:SetParticleControl(particle, 1, Vector(mana_needed,0,0))
@@ -275,19 +299,13 @@ INCOMING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
-	modifier_murzik_neo_style = {
-		multiplier = function(attacker, victim, inflictor, damage)
-			local murzik_neo_style = victim:FindAbilityByName("murzik_neo_style")
-			if murzik_neo_style and victim:IsAlive() then
-				if RollPercentage(murzik_neo_style:GetAbilitySpecial("neo_evision_pct")) then
-					PopupEvadeMiss(victim, attacker)
-					ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
-					return false
-				end
+	modifier_arena_healer = {
+		damage = function (_, _, inflictor)
+			if not inflictor or inflictor:GetAbilityName() ~= "item_meteor_hammer" then
+				return 1
 			end
 		end
 	},
-	modifier_arena_healer = {damage = 1},
 	modifier_anakim_transfer_pain = {
 		multiplier = function(attacker, victim, inflictor, damage)
 			local anakim_transfer_pain = victim:FindAbilityByName("anakim_transfer_pain")
@@ -321,14 +339,16 @@ INCOMING_DAMAGE_MODIFIERS = {
 }
 
 CREEP_BONUSES_MODIFIERS = {
-	modifier_item_golden_eagle_relic_unique = {gold = GetAbilitySpecial("item_golden_eagle_relic", "kill_gold"), xp = GetAbilitySpecial("item_golden_eagle_relic", "kill_xp")},
-	modifier_say_demonic_power = function(self)
-		local ability = self:FindAbilityByName("say_demonic_power")
-		if abiltiy then
-			return {gold = ability:GetLevelSpecialValueFor("bonus_creep_gold", ability:GetLevel() - 1)}
-		end
-	end,
-	modifier_item_skull_of_midas = {gold = GetAbilitySpecial("item_skull_of_midas", "kill_gold"), xp = GetAbilitySpecial("item_skull_of_midas", "kill_xp")},
+	modifier_item_golden_eagle_relic = {
+		gold = GetAbilitySpecial("item_golden_eagle_relic", "kill_gold"),
+		xp = GetAbilitySpecial("item_golden_eagle_relic", "kill_xp")
+	},
+
+	modifier_item_skull_of_midas = {
+		gold = GetAbilitySpecial("item_skull_of_midas", "kill_gold"),
+		xp = GetAbilitySpecial("item_skull_of_midas", "kill_xp")
+	},
+
 	modifier_talent_creep_gold = function(self)
 		local modifier = self:FindModifierByName("modifier_talent_creep_gold")
 		if modifier then

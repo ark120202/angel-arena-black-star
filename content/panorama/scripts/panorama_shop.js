@@ -37,21 +37,19 @@ function SearchItems() {
 		});
 		$.GetContextPanel().SetHasClass('InSearchMode', searchStr.length > 0);
 		if (searchStr.length > 0) {
-			var FoundItems = [];
-			for (var itemName in ItemData) {
-				if (itemName.lastIndexOf('item_recipe_')) {
-					for (var key in ItemData[itemName].names) {
-						if (ItemData[itemName].names[key].search(new RegExp(searchStr, 'i')) > -1) {
-							FoundItems.push(itemName);
-							break;
-						}
-					}
-				}
-			}
-			FoundItems.sort(function(x1, x2) {
+			var searchRegExp = new RegExp(_.escapeRegExp(searchStr), 'i');
+			var foundItems = _.filter(_.keys(ItemData), function (itemName) {
+				var localizedName = $.Localize('DOTA_Tooltip_ability_' + itemName);
+				return !_.startsWith(itemName, 'item_recipe_') &&
+					_.some(_.values(ItemData[itemName].names).concat(localizedName), function (title) {
+						return title.search(searchRegExp) > -1;
+					});
+			});
+
+			foundItems.sort(function(x1, x2) {
 				return ItemData[x1].cost - ItemData[x2].cost;
 			});
-			_.each(FoundItems, function(itemName) {
+			_.each(foundItems, function(itemName) {
 				SnippetCreate_SmallItem($.CreatePanel('Panel', ShopSearchOverlay, 'ShopSearchOverlay_item_' + itemName), itemName);
 			});
 		}
@@ -97,7 +95,7 @@ function FillShopTable(panel, shopData) {
 		_.each(shopData[groupName], function(itemName) {
 			var itemPanel = $.CreatePanel('Panel', groupPanel, groupPanel.id + '_item_' + itemName);
 			SnippetCreate_SmallItem(itemPanel, itemName);
-				//groupPanel.AddClass("ShopItemGroup")
+			//groupPanel.AddClass("ShopItemGroup")
 		});
 	}
 }
@@ -294,7 +292,7 @@ function LoadItemsFromTable(panorama_shop_data) {
 function UpdateSmallItem(panel, gold) {
 	try {
 		var notpurchasable = !ItemData[panel.itemName].purchasable;
-		panel.SetHasClass('CanBuy', GetRemainingPrice(panel.itemName, {}) <= (gold || PlayerTables.GetTableValue('arena', 'gold')[Game.GetLocalPlayerID()]) || notpurchasable);
+		panel.SetHasClass('CanBuy', GetRemainingPrice(panel.itemName, {}) <= (gold || PlayerTables.GetTableValue('gold', Game.GetLocalPlayerID())) || notpurchasable);
 		panel.SetHasClass('NotPurchasableItem', notpurchasable);
 		if (ItemStocks[panel.itemName] != null) {
 			var CurrentTime = Game.GetGameTime();
@@ -526,12 +524,12 @@ function SetItemStock(item, ItemStock) {
 		if ($('#ShopBase').BHasClass('ShopBaseOpen')) ShowItemInShop(data);
 	});
 	DynamicSubscribePTListener('panorama_shop_data', function(tableName, changesObject, deletionsObject) {
-		if (changesObject.ShopList != null) {
+		if (changesObject.ShopList) {
 			LoadItemsFromTable(changesObject);
 			SetQuickbuyStickyItem('item_shard_level');
 		};
 		var stocksChanges = changesObject['ItemStocks_team' + Players.GetTeam(Game.GetLocalPlayerID())];
-		if (stocksChanges != null) {
+		if (stocksChanges) {
 			for (var item in stocksChanges) {
 				var ItemStock = stocksChanges[item];
 				SetItemStock(item, ItemStock);

@@ -3,14 +3,14 @@ KEYVALUES_VERSION = "1.00"
 --[[
 	Simple Lua KeyValues library, modified version
 	Author: Martin Noya // github.com/MNoya
-	
+
 	Installation:
 	- require this file inside your code
 
 	Usage:
 	- Your npc custom files will be validated on require, error will occur if one is missing or has faulty syntax.
 	- This allows to safely grab key-value definitions in npc custom abilities/items/units/heroes
-	
+
 		"some_custom_entry"
 		{
 			"CustomName" "Barbarian"
@@ -24,7 +24,7 @@ KEYVALUES_VERSION = "1.00"
 			handle:GetKeyValue("CustomKey")  -- returns 1 (number)
 			handle:GetKeyValue("CustomStat") -- returns "100 200" (string)
 			handle:GetKeyValue("CustomStat", 2) -- returns 200 (number)
-		
+
 		Same results with strings:
 			GetKeyValue("some_custom_entry")
 			GetKeyValue("some_custom_entry", "CustomName")
@@ -72,8 +72,7 @@ function LoadGameKeyValues()
 		HeroKV = {base = "npc_heroes", custom = "npc_heroes_custom", new = "heroes/new"}
 	}
 	if not override then
-		print("[KeyValues] Critical Error on "..override..".txt")
-		return
+		error("[KeyValues] Critical Error on "..override..".txt")
 	end
 	-- Load and validate the files
 	for KVType,KVFilePaths in pairs(files) do
@@ -94,15 +93,6 @@ function LoadGameKeyValues()
 				for k,v in pairs(custom_file) do
 					if not file[k] then
 						file[k] = {}
-						local override_hero = v.override_hero
-						if override_hero then
-							if file[override_hero] then
-								table.deepmerge(file[k], file[override_hero])
-							end
-							if custom_file[override_hero] then
-								table.deepmerge(file[k], custom_file[override_hero])
-							end
-						end
 						table.deepmerge(file[k], v)
 					else
 						table.deepmerge(file[k], v)
@@ -112,15 +102,15 @@ function LoadGameKeyValues()
 				table.deepmerge(file, custom_file)
 			end
 		else
-			print("[KeyValues] Critical Error on " .. KVFilePaths.custom .. ".txt")
-			return
+			error("[KeyValues] Critical Error on " .. KVFilePaths.custom .. ".txt")
 		end
 		if KVFilePaths.new then
 			table.deepmerge(file, LoadKeyValues(scriptPath .. KVFilePaths.new .. ".txt"))
 		end
-		
+
+		file.Version = nil
 		KeyValues[KVType] = file
-	end   
+	end
 
 	-- Merge All KVs
 	KeyValues.All = {}
@@ -135,8 +125,15 @@ function LoadGameKeyValues()
 		if not KeyValues.UnitKV[key] then
 			KeyValues.UnitKV[key] = value
 		elseif type(KeyValues.All[key]) == "table" then
-			print("[KeyValues] Warning: Duplicated unit/hero entry for " .. key)
 			table.deepmerge(KeyValues.UnitKV[key], value)
+		end
+	end
+	KeyValues.HeroKV = nil
+
+	for k,v in pairs(KeyValues.UnitKV) do
+		local override_hero = v.override_hero or v.base_hero
+		if override_hero and KeyValues.UnitKV[override_hero] then
+			table.deepmerge(v, KeyValues.UnitKV[override_hero])
 		end
 	end
 end
@@ -195,25 +192,46 @@ function GetItemKV(itemName, key, level)
 	return GetKeyValue(itemName, key, level, KeyValues.ItemKV[itemName])
 end
 
-function GetAbilitySpecial(name, key, level)
-	local t = KeyValues.All[name]
-	if key and t then
-		local tspecial = t["AbilitySpecial"]
-		if tspecial then
-			-- Find the key we are looking for
-			for _,values in pairs(tspecial) do
-				if values[key] then
-					if not level then return values[key]
-					else
-						local s = string.split(values[key])
-						if s[level] then return tonumber(s[level]) -- If we match the level, return that one
-						else return tonumber(s[#s]) end -- Otherwise, return the max
+function GetAbilitySpecial(name, key, level, t)
+	if not t then t = KeyValues.All[name] end
+	if t then
+		local AbilitySpecial = t.AbilitySpecial
+		if AbilitySpecial then
+			if key then
+				-- Find the key we are looking for
+				for _,values in pairs(AbilitySpecial) do
+					if values[key] then
+						return GetValueInStringForLevel(values[key], level)
 					end
-					break
 				end
+			else
+				local o = {}
+				for _,values in pairs(AbilitySpecial) do
+					for k,v in pairs(values) do
+						if k ~= 'var_type' and k ~= 'CalculateSpellDamageTooltip' and k ~= 'levelkey' then
+						  o[k] = v
+						end
+					end
+				end
+				return o
 			end
 		end
-	else return t end
+	end
+end
+
+function GetValueInStringForLevel(str, level)
+	if not level then
+		return str
+	else
+		local s = string.split(str)
+		if s[level] then
+			-- If we match the level, return that one
+			return tonumber(s[level])
+		else
+			-- Otherwise, return the max
+			return tonumber(s[#s])
+		end
+	end
 end
 
 function GetItemNameById(itemid)

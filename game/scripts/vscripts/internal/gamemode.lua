@@ -36,27 +36,11 @@ function GameMode:_InitGameMode()
 		GameRules:EnableCustomGameSetupAutoLaunch( ENABLE_AUTO_LAUNCH )
 	end
 
-
-	-- This is multiteam configuration stuff
-	local mapinfo = LoadKeyValues("addoninfo.txt")[GetMapName()]
-	local num = math.floor(mapinfo.MaxPlayers / mapinfo.TeamCount)
-	local count = 0
-	for team in pairsByKeys(TEAM_COLORS) do
-		GameRules:SetCustomGameTeamMaxPlayers(team, count < mapinfo.TeamCount and num or 0)
-		count = count + 1
-	end
-
-	if USE_CUSTOM_TEAM_COLORS then
-		for team,color in pairs(TEAM_COLORS) do
-			SetTeamCustomHealthbarColor(team, color[1], color[2], color[3])
-		end
-	end
-
 	-- Event Hooks
 	-- All of these events can potentially be fired by the game, though only the uncommented ones have had
 	-- Functions supplied for them.  If you are interested in the other events, you can uncomment the
 	-- ListenToGameEvent line and add a function to handle the event
-	ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(GameMode, 'OnPlayerLevelUp'), self)
+	--ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(GameMode, 'OnPlayerLevelUp'), self)
 	ListenToGameEvent('dota_ability_channel_finished', Dynamic_Wrap(GameMode, 'OnAbilityChannelFinished'), self)
 	ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(GameMode, 'OnPlayerLearnedAbility'), self)
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(GameMode, '_OnEntityKilled'), self)
@@ -144,5 +128,5 @@ function GameMode:_CaptureGameMode()
 		mode:SetStickyItemDisabled( DISABLE_STICKY_ITEM )
 
 		self:OnFirstPlayerLoaded()
-	end 
+	end
 end

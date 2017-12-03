@@ -1,0 +1,298 @@
+""
+{
+	"item_recipe_blade_mail_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_blade_mail_arena"
+		"ItemRequirements"
+		{
+			"01"						"item_broadsword;item_chainmail;item_robe"
+		}
+	}
+
+	"item_recipe_blade_mail_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"4000"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_blade_mail_2"
+		"ItemRequirements"
+		{
+			"01"						"item_blade_mail_arena"
+		}
+	}
+
+	"item_recipe_blade_mail_3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"-1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"12000"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_blade_mail_3"
+		"ItemRequirements"
+		{
+			"01"						"item_blade_mail_2"
+		}
+	}
+
+	"item_blade_mail_arena"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_blade_mail.lua"
+		"AbilityTextureName"			"item_blade_mail"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"20 18 16"
+		"AbilityManaCost"				"25 50 100"
+		"ItemShopTags"					"damage;armor;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"blade mail;blademail"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySharedCooldown"			"blademail"
+
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"22 44 88"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"6 12 24"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"10 20 40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reflected_damage_pct"	"100 110 120"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reduced_damage_pct"	"5 10 15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4"
+			}
+		}
+	}
+
+	"item_blade_mail_2"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_blade_mail.lua"
+		"AbilityTextureName"			"item_arena/blade_mail_2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"20 18 16"
+		"AbilityManaCost"				"25 50 100"
+		"ItemShopTags"					"damage;armor;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"blade mail;blademail"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySharedCooldown"			"blademail"
+
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"22 44 88"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"6 12 24"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"10 20 40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reflected_damage_pct"	"100 110 120"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reduced_damage_pct"	"5 10 15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4"
+			}
+		}
+	}
+
+	"item_blade_mail_3"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_blade_mail.lua"
+		"AbilityTextureName"			"item_arena/blade_mail_3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"20 18 16"
+		"AbilityManaCost"				"25 50 100"
+		"ItemShopTags"					"damage;armor;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"blade mail;blademail"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySharedCooldown"			"blademail"
+
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"22 44 88"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"6 12 24"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"10 20 40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reflected_damage_pct"	"100 110 120"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reduced_damage_pct"	"5 10 15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4"
+			}
+		}
+	}
+
+	"item_recipe_sacred_blade_mail"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"1000000009"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"5000"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_sacred_blade_mail"
+		"ItemRequirements"
+		{
+			"01"						"item_blade_mail_3;item_holy_knight_shield;item_reaver;item_relic;item_phantom_bone"
+		}
+	}
+
+
+	"item_sacred_blade_mail"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_sacred_blade_mail.lua"
+		"AbilityTextureName"			"item_arena/sacred_blade_mail"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"150"
+		"ItemShopTags"					"damage;armor;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"sacred blade mail;sacred blademail"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySharedCooldown"			"blademail"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"215"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"35"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"60"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_magical_armor"	"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_hp_regen_pct" 	"1"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reflected_damage_pct"	"150"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reduced_damage_pct"	"18"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_chance"			"15"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"1"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_cooldown"			"6"
+			}
+		}
+	}
+}

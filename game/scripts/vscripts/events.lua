@@ -11,22 +11,9 @@ end
 function GameMode:OnGameRulesStateChange(keys)
 	local newState = GameRules:State_Get()
 	if newState == DOTA_GAMERULES_STATE_PRE_GAME then
-		local Counters = {}
-		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-			if PlayerResource:IsValidPlayerID(i) then
-				local team = PlayerResource:GetTeam(i)
-				if PLAYERS_COLORS[team] then
-					Counters[team] = (Counters[team] or 0) + 1
-					local color = PLAYERS_COLORS[team][Counters[team]]
-					PLAYER_DATA[i].Color = color
-					PlayerResource:SetCustomPlayerColor(i, color[1], color[2], color[3])
-				end
-			end
-		end
 		HeroSelection:CollectPD()
-		Options:CalculateVotes()
-		StatsClient:FetchPreGameData()
 		HeroSelection:HeroSelectionStart()
+		GameMode:OnHeroSelectionStart()
 	end
 end
 
@@ -38,7 +25,6 @@ function GameMode:OnNPCSpawned(keys)
 			--npc:AddNoDraw()
 			return
 		end
-		--HeroVoice:OnNPCSpawned(npc)
 		Timers:CreateTimer(function()
 			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
 				Physics:Unit(npc)
@@ -51,16 +37,21 @@ function GameMode:OnNPCSpawned(keys)
 				if not npc:IsWukongsSummon() then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if npc:IsTrueHero() then
+						for name,v in pairs(npc.talents or {}) do
+							if v.delayed then
+								v.delayed = nil
+								npc:ApplyTalentEffects(name)
+							end
+						end
+
 						PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
-						AbilityShop:RandomOMGRollAbilities(npc)
+						CustomAbilities:RandomOMGRollAbilities(npc)
 						if IsValidEntity(npc.BloodstoneDummies) then
 							UTIL_Remove(npc.BloodstoneDummies)
 							npc.BloodstoneDummies = nil
 						end
-						if npc.PocketHostEntity ~= nil then
-							UTIL_Remove(npc.PocketItem)
-							npc.PocketItem = nil
-							npc.PocketHostEntity = nil
+						if not npc.OnDuel and Duel:IsDuelOngoing() then
+							Duel:SetUpVisitor(npc)
 						end
 					end
 				end
@@ -106,7 +97,6 @@ function GameMode:OnAbilityUsed(keys)
 		if abilityname == "night_stalker_darkness" and ability then
 			CustomGameEventManager:Send_ServerToAllClients("time_nightstalker_darkness", {duration = ability:GetLevelSpecialValueFor("duration", ability:GetLevel()-1)})
 		end
-		--HeroVoice:OnAbilityUsed(hero, ability)
 		if hero:HasModifier("modifier_item_pocket_riki_permanent_invisibility") or hero:HasModifier("modifier_item_pocket_riki_consumed_permanent_invisibility") then
 			local item = FindItemInInventoryByName(hero, "item_pocket_riki", false)
 			if not item then
@@ -142,12 +132,6 @@ function GameMode:OnAbilityChannelFinished(keys)
 	--local interrupted = keys.interrupted == 1
 end
 
--- A player leveled up
-function GameMode:OnPlayerLevelUp(keys)
-	--[[local player = EntIndexToHScript(keys.player)
-	local level = keys.level]]
-end
-
 -- A player last hit a creep, a tower, or a hero
 function GameMode:OnLastHit(keys)
 	--[[local isFirstBlood = keys.FirstBlood == 1
@@ -159,11 +143,11 @@ end
 
 -- A tree was cut down by tango, quelling blade, etc
 function GameMode:OnTreeCut(keys)
-	--[[local treeX = keys.tree_x
+	local treeX = keys.tree_x
 	local treeY = keys.tree_y
-	if RollPercentage(10) then
+	if RollPercentage(GetAbilitySpecial("item_tree_banana", "drop_chance_pct")) then
 		GameMode:CreateTreeDrop(Vector(treeX, treeY, 0), "item_tree_banana")
-	end]]
+	end
 end
 
 function GameMode:CreateTreeDrop(location, item)
@@ -198,23 +182,41 @@ function GameMode:OnEntityKilled(keys)
 		if killedUnit:IsHero() then
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
 			if killedUnit:IsRealHero() then
-				if killedUnit.OnDuel and Duel:IsDuelOngoing() then
-					killedUnit.OnDuel = false
-					killedUnit.ArenaBeforeTpLocation = nil
-					if Duel:GetWinner() ~= nil then
-						Duel:EndDuel()
+				local respawnTime = killedUnit:CalculateRespawnTime()
+
+				local killedUnits = killedUnit:GetFullName() == "npc_dota_hero_meepo" and
+					MeepoFixes:FindMeepos(PlayerResource:GetSelectedHeroEntity(killedUnit:GetPlayerID()), true) or
+					{ killedUnit }
+				for _,v in ipairs(killedUnits) do
+					v:SetTimeUntilRespawn(respawnTime)
+					v.RespawnTimeModifierBloodstone = nil
+					v.RespawnTimeModifierSaiReleaseOfForge = nil
+
+					if v.OnDuel then
+						v.OnDuel = nil
+						v.ArenaBeforeTpLocation = nil
 					end
 				end
+
+				if Duel:IsDuelOngoing() and Duel:GetWinner() ~= nil then
+					Duel:EndDuel()
+				end
+
 				if not IsValidEntity(killerEntity) or not killerEntity.GetPlayerOwner or not IsValidEntity(killerEntity:GetPlayerOwner()) then
 					Kills:OnEntityKilled(killedUnit:GetPlayerOwner(), nil)
 				elseif killerEntity == killedUnit then
 					local player = killedUnit:GetPlayerOwner()
 					Kills:OnEntityKilled(player, player)
 				end
-				local respawnTime = killedUnit:CalculateRespawnTime()
-				killedUnit:SetTimeUntilRespawn(respawnTime)
-				MeepoFixes:ShareRespawnTime(killedUnit, respawnTime)
 			end
+		end
+
+		if killedUnit:IsBoss() and not killedUnit.IsDominatedBoss then
+			local team = DOTA_TEAM_NEUTRALS
+			if killerEntity then
+				team = killerEntity:GetTeam()
+			end
+			Bosses:RegisterKilledBoss(killedUnit, team)
 		end
 
 		if killedUnit:IsRealCreep() then

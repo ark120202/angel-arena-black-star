@@ -5,6 +5,8 @@ ModuleRequire(..., "shops")
 ModuleLinkLuaModifier(..., "modifier_arena_healer")
 ModuleLinkLuaModifier(..., "modifier_arena_courier")
 ModuleLinkLuaModifier(..., "modifier_fountain_aura_arena")
+ModuleLinkLuaModifier(..., "modifier_fountain_aura_invulnerability", "modifier_fountain_aura_arena")
+ModuleLinkLuaModifier(..., "modifier_fountain_aura_enemy")
 
 function Structures:AddHealers()
 	for _,v in ipairs(Entities:FindAllByClassname("npc_dota_healer")) do
@@ -30,7 +32,6 @@ function Structures:GiveCourier(hero)
 				courier:UpgradeToFlyingCourier()
 
 				courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
-				courier:RemoveAbility("courier_burst")
 
 				TEAMS_COURIERS[tn] = courier
 			end

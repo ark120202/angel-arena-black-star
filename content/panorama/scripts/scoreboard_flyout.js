@@ -156,10 +156,9 @@ function Snippet_Team(team) {
 
 function Snippet_Team_Update(panel) {
 	var team = panel.team;
-	var teamDetails = Game.GetTeamDetails(team);
 	var isAlly = team === Players.GetTeam(Game.GetLocalPlayerID());
 	panel.SetHasClass('EnemyTeam', !isAlly);
-	panel.SetDialogVariableInt('score', teamDetails.team_score);
+	panel.SetDialogVariableInt('score', GetTeamInfo(team).score);
 	if (isAlly) {
 		$('#SharedUnitControl').style.marginTop = Math.max(parseInt(panel.actualyoffset, 10), 0) + 'px';
 		$('#SharedUnitControl').style.height = panel.actuallayoutheight + 'px';
@@ -189,11 +188,9 @@ function SetFlyoutScoreboardVisible(visible) {
 
 (function() {
 	var LocalPlayerID = Game.GetLocalPlayerID();
-	DynamicSubscribePTListener('arena', function(tableName, changesObject, deletionsObject) {
-		if (changesObject.players_abandoned != null) {
-			for (var k in changesObject.players_abandoned) {
-				players_abandoned.push(Number(changesObject.players_abandoned[k]));
-			}
+	DynamicSubscribePTListener('players_abandoned', function(tableName, changesObject, deletionsObject) {
+		for (var k in changesObject) {
+			players_abandoned.push(Number(k));
 		}
 	});
 	DynamicSubscribePTListener('disable_help_data', function(tableName, changesObject, deletionsObject) {

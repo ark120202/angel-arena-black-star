@@ -26,14 +26,17 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		end
 	end
 	if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and Options:IsEquals("EnableAbilityShop") then
-		AbilityShop:OnAbilityBuy(PlayerID, abilityname)
+		CustomAbilities:OnAbilityBuy(PlayerID, abilityname)
 		return false
 	end
 
-	if units[1] and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability and not units[1]:IsIllusion() and not units[1]:IsTempestDouble() then
-		PanoramaShop:SellItem(units[1], ability)
+	if units[1] and
+		order_type == DOTA_UNIT_ORDER_SELL_ITEM and
+		ability then
+		PanoramaShop:SellItem(PlayerID, units[1], ability)
 		return false
 	end
+
 	for _,unit in ipairs(units) do
 		if unit:IsHero() or unit:IsConsideredHero() then
 			GameMode:TrackInventory(unit)
@@ -46,14 +49,26 @@ function GameMode:ExecuteOrderFilter(filterTable)
 								local ent1len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team2"):GetAbsOrigin()):Length2D()
 								local ent2len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team3"):GetAbsOrigin()):Length2D()
 								if ent1len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 or ent2len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 then
+									Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
 									return false
 								end
 							end
 							if IsInBox(orderVector, Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()) then
+								Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
 								return false
 							end
 						end
 					elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
+						if abilityname == "rubick_spell_steal" then
+							if target == unit then
+								Containers:DisplayError(PlayerID, "#dota_hud_error_cant_cast_on_self")
+								return false
+							end
+							if target:HasAbility("doppelganger_mimic") then
+								Containers:DisplayError(PlayerID, "#dota_hud_error_cant_steal_spell")
+								return false
+							end
+						end
 						if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
 							Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_champion")
 							return false
@@ -161,8 +176,16 @@ function GameMode:DamageFilter(filterTable)
 						LifestealPercentage = math.max(LifestealPercentage, multiplier.LifestealPercentage)
 					end
 					if multiplier.damage then
-						filterTable.damage = multiplier.damage
-						return true
+						if type(multiplier.damage) == "function" then
+							local damage = multiplier.damage(attacker, victim, inflictor, damage, damagetype_const)
+							if damage then
+								filterTable.damage = damage
+								return true
+							end
+						else
+							filterTable.damage = multiplier.damage
+							return true
+						end
 					end
 					if multiplier.multiplier then
 						multiplier = multiplier.multiplier
@@ -218,9 +241,10 @@ function GameMode:DamageFilter(filterTable)
 			local attackerpid = attacker:GetPlayerOwnerID()
 			if attackerpid > -1 then
 				if victim:IsRealHero() then
-					attacker:ModifyPlayerStat("DamageToEnemyHeroes", filterTable.damage)
+					attacker:ModifyPlayerStat("heroDamage", filterTable.damage)
 				end
 				if victim:IsBoss() then
+					attacker:ModifyPlayerStat("bossDamage", filterTable.damage)
 					victim.DamageReceived = victim.DamageReceived or {}
 					victim.DamageReceived[attackerpid] = (victim.DamageReceived[attackerpid] or 0) + filterTable.damage
 				end

@@ -1,6 +1,8 @@
 CUSTOM_STARTING_GOLD = 625
-CUSTOM_GOLD_FOR_RANDOM_TOTAL = 1000
-CUSTOM_GOLD_REPICK_COST = 100
+CUSTOM_GOLD_FOR_RANDOM_TOTAL = 800
+ADS_CLICKED_BONUS_GOLD = 25
+CUSTOM_GOLD_REPICK_COST = 200
+
 MAX_SPAWNBOXES_SELECTED = 3
 
 HERO_SELECTION_PICK_TIME = 80
@@ -78,10 +80,12 @@ function HeroSelection:PrepareTables()
 				tabIndex = tabIndex
 			}
 
-			if Options:IsEquals("EnableAbilityShop", false) and Options:IsEquals("EnableRandomAbilities", false) then
+			if not Options:IsEquals("MainHeroList", "NoAbilities") then
 				heroData.abilities = HeroSelection:ParseAbilitiesFromTable(heroTable)
 				heroData.isChanged = heroTable.Changed == 1 and tabIndex == 1
 				heroData.linkedColorGroup = heroTable.LinkedColorGroup
+				heroData.DisabledInRanked = heroTable.DisabledInRanked == 1
+				heroData.Unreleased = heroTable.Unreleased == 1
 
 				if heroTable.LinkedHero then
 					heroData.linked_heroes = string.split(heroTable.LinkedHero, " | ")
@@ -102,7 +106,9 @@ function HeroSelection:PrepareTables()
 	end
 	for _,tab in pairs(data.HeroTabs) do
 		for _,name in ipairs(tab) do
-			if heroesData[name] and not heroesData[name].linked_heroes then
+			if heroesData[name] and
+				not heroesData[name].linked_heroes and
+				not HeroSelection:IsHeroUnreleased(name) then
 				table.insert(HeroSelection.RandomableHeroes, name)
 			end
 		end
@@ -164,7 +170,22 @@ function HeroSelection:StartStateHeroPick()
 		table.remove(notBanned, RandomInt(1, #notBanned))
 	end
 	PlayerTables:DeleteTableKeys("hero_selection_banning_phase", notBanned)
-	--local banned = PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")
+	local banned = PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")
+	local bannedCount = table.count(banned)
+	CustomChatSay(-1, -1, {
+		localizable = pluralize(bannedCount, "DOTA_Chat_AD_BanCount1", "DOTA_Chat_AD_BanCount"),
+		variables = {
+			["%s1"] = bannedCount
+		}
+	})
+	for hero in pairs(banned) do
+		CustomChatSay(-1, -1, {
+			localizable = "DOTA_Chat_AD_Ban",
+			variables = {
+				["%s1"] = hero
+			}
+		})
+	end
 
 	HeroSelection:DismissTimers()
 	EmitAnnouncerSound("announcer_ann_custom_draft_01")
@@ -207,6 +228,15 @@ end
 
 function HeroSelection:StartStateInGame(toPrecache)
 	HeroSelection:DismissTimers()
+
+	for i = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+		if PLAYER_DATA[i].adsClicked then
+			Gold:ModifyGold(i, ADS_CLICKED_BONUS_GOLD)
+		end
+		if PLAYER_DATA[i].adsClickedLoading then
+			Gold:ModifyGold(i, ADS_CLICKED_BONUS_GOLD)
+		end
+	end
 	--If for some reason even after that time heroes weren't precached
 	Timers:CreateTimer({
 		useGameTime = false,

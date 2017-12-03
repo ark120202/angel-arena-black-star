@@ -2,7 +2,7 @@
 	Date: February 4, 2016
 	Checks if Riki is behind his target
 	Borrows heavily from bristleback.lua]]
-	
+
 function CheckBackstab(params)
 	local attacker = params.attacker
 	local ability = params.ability
@@ -26,12 +26,12 @@ function CheckBackstab(params)
 	attacker_angle = attacker_angle + 180.0
 	local result_angle = attacker_angle - victim_angle
 	result_angle = math.abs(result_angle)
-	
+
 	-- Check for the backstab angle.
-	if result_angle >= (180 - (ability:GetSpecialValueFor("backstab_angle") / 2)) and result_angle <= (180 + (ability:GetSpecialValueFor("backstab_angle") / 2)) then 
+	if result_angle >= (180 - (ability:GetSpecialValueFor("backstab_angle") / 2)) and result_angle <= (180 + (ability:GetSpecialValueFor("backstab_angle") / 2)) then
 		EmitSoundOn(params.sound, params.target)
-		local particle = ParticleManager:CreateParticle(params.particle, PATTACH_ABSORIGIN_FOLLOW, params.target) 
-		ParticleManager:SetParticleControlEnt(particle, 1, params.target, PATTACH_POINT_FOLLOW, "attach_hitloc", params.target:GetAbsOrigin(), true) 
+		local particle = ParticleManager:CreateParticle(params.particle, PATTACH_ABSORIGIN_FOLLOW, params.target)
+		ParticleManager:SetParticleControlEnt(particle, 1, params.target, PATTACH_POINT_FOLLOW, "attach_hitloc", params.target:GetAbsOrigin(), true)
 		ApplyDamage({victim = params.target, attacker = attacker, damage = damage, damage_type = ability:GetAbilityDamageType(), ability = ability})
 	end
 end
@@ -39,19 +39,23 @@ end
 function ConsumeRiki(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	ability.RikiContainer:TrueKill(ability, ability.RikiContainer)
-	local buffsTime = ability.RikiContainer:GetRespawnTime()
+	local riki = ability.RikiContainer
+	local buffsTime = riki:CalculateRespawnTime()
 	local newItem = CreateItem("item_pocket_riki_consumed", caster, caster)
+
+	riki:TrueKill(ability, riki)
 	swap_to_item(caster, ability, newItem)
 	caster:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
 	caster:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
 	caster:RemoveModifierByName("modifier_invisible")
+
 	newItem:ApplyDataDrivenModifier(caster, caster, "modifier_item_pocket_riki_consumed_str", {duration=buffsTime})
-	ModifyStacks(newItem, caster, caster, "modifier_item_pocket_riki_consumed_str", ability.RikiContainer:GetStrength(), true)
+	ModifyStacks(newItem, caster, caster, "modifier_item_pocket_riki_consumed_str", riki:GetStrength(), true)
 	newItem:ApplyDataDrivenModifier(caster, caster, "modifier_item_pocket_riki_consumed_agi", {duration=buffsTime})
-	ModifyStacks(newItem, caster, caster, "modifier_item_pocket_riki_consumed_agi", ability.RikiContainer:GetAgility(), true)
+	ModifyStacks(newItem, caster, caster, "modifier_item_pocket_riki_consumed_agi", riki:GetAgility(), true)
 	newItem:ApplyDataDrivenModifier(caster, caster, "modifier_item_pocket_riki_consumed_int", {duration=buffsTime})
-	ModifyStacks(newItem, caster, caster, "modifier_item_pocket_riki_consumed_int", ability.RikiContainer:GetIntellect(), true)
+	ModifyStacks(newItem, caster, caster, "modifier_item_pocket_riki_consumed_int", riki:GetIntellect(), true)
+
 	Timers:CreateTimer(buffsTime, function()
 		UTIL_Remove(newItem)
 		caster:RemoveModifierByName("modifier_item_pocket_riki_consumed_invisibility_fade")

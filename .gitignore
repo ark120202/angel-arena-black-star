@@ -1,3 +1,6 @@
+# Ignore thumbnails created by windows
+Thumbs.db
+
 # Compiled files
 *.vpcf_c
 *.vtex_c
@@ -12,6 +15,7 @@
 *.vmesh_c
 *.vagrp_c
 *.vmdl_c
+*.vmorf_c
 
 # Preprocessed
 content/panorama/styles/*
@@ -37,12 +41,9 @@ game/rich_presence_persistent_data.txt
 
 # npm
 npm-debug.log
-package-lock.json
 
 generator/settings.yml
 generator/node_modules/*
-!generator/node_modules/vdf-extra
-!generator/node_modules/dota-custom-game-toolkit
 
 changelogs/!ideas.txt
 changelogs/!local.txt

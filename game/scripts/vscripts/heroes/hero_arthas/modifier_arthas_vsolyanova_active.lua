@@ -1,20 +1,9 @@
-modifier_arthas_vsolyanova_active = class({})
-
-function modifier_arthas_vsolyanova_active:IsHidden()
-	return true
-end
-
-function modifier_arthas_vsolyanova_active:GetEffectName()
-	return "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis.vpcf"
-end
-
-function modifier_arthas_vsolyanova_active:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
-end
-
-function modifier_arthas_vsolyanova_active:AllowIllusionDuplicate()
-	return false
-end
+modifier_arthas_vsolyanova_active = class({
+	IsPurgable          = function() return false end,
+	IsHidden            = function() return true end,
+	GetEffectName       = function() return "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis.vpcf" end,
+	GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end,
+})
 
 function modifier_arthas_vsolyanova_active:DeclareFunctions()
 	return {
@@ -25,8 +14,6 @@ function modifier_arthas_vsolyanova_active:DeclareFunctions()
 	}
 end
 
-
-for i = 0, GameRules:NumDroppedItems() - 1 do UTIL_Remove(GameRules:GetDroppedItem(i)) end
 function modifier_arthas_vsolyanova_active:GetModifierPreAttack_BonusDamage()
 	return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end

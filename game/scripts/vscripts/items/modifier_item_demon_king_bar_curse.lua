@@ -38,5 +38,5 @@ if IsServer() then
 end
 
 function modifier_item_demon_king_bar_curse:OnTooltip()
-	return 1.1 ^ math.ceil(self:GetElapsedTime())/2
+	return 1.15 ^ math.ceil(self:GetElapsedTime())/2
 end

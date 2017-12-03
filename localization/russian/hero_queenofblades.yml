@@ -9,6 +9,8 @@ DOTA_Tooltip_ability_queenofblades_army_summon_bat: 'СКОРОСТЬ АТАКИ
 DOTA_Tooltip_ability_queenofblades_army_summon_duration: 'ВРЕМЯ ЖИЗНИ:'
 DOTA_Tooltip_ability_queenofblades_army_cleave_radius: 'РАДИУС УРОНА:'
 DOTA_Tooltip_ability_queenofblades_army_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_queenofblades_army_summon_bounty: 'ЗОЛОТО ЗА УБИЙСТВО:'
+DOTA_Tooltip_ability_queenofblades_army_summon_xp: 'ОПЫТ ЗА УБИЙСТВО:'
 
 DOTA_Tooltip_ability_queenofblades_darkness_aura_Description: 'Керриган, уповаясь боем, наносит сокрушительные критические удары, против которых никто не устоит. В добавок, при выпадении критического урона, у противника на время будет снижена скорость передвижения и радиус видимости.'
 DOTA_Tooltip_ability_queenofblades_darkness_aura_crit_mult: '%КРИТИЧЕСКИЙ УРОН:'

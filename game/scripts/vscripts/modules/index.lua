@@ -8,7 +8,6 @@ local modules = {
 	"dynamic_wearables",
 	"gold",
 	"hero_selection",
-	"herovoice",
 	"kills",
 	"options",
 	"panorama_shop",
@@ -19,7 +18,10 @@ local modules = {
 	"attributes",
 	"antiafk",
 	"events_helper",
-	"meepo_fixes" -- until rewrite
+	"teams",
+	"meepo_fixes", -- until rewrite
+	"weather",
+	"console",
 }
 
 local errors = {}
@@ -46,3 +48,5 @@ if #errors > 0 then
 	print("##############################")
 	error("Found " .. #errors .. " errors while loading modules")
 end
+
+require("modules/verify/verify")

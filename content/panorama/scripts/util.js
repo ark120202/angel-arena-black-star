@@ -8,17 +8,17 @@ var Options = GameUI.CustomUIConfig().Options;
 var console = {
 	log: function() {
 		var args = Array.prototype.slice.call(arguments);
-		return $.Msg(args.map(function(x) {return typeof x === 'object' ? JSON.stringify(x) : x;}).join('\t'));
+		return $.Msg(args.map(function(x) {return typeof x === 'object' ? JSON.stringify(x, null, 4) : x;}).join('\t'));
 	},
 	error: function() {
 		var args = Array.prototype.slice.call(arguments);
 		_.each(args, function(arg) {
-			throw typeof arg === 'string' ? new Error(arg) : arg;
+			console.log(arg instanceof Error ? arg.stack : new Error(arg).stack);
 		});
 	}
 };
 
-var ServerAddress = 'https://stats.dota-aabs.com/';
+var ServerAddress = false ? 'http://127.0.0.1:6502/' : 'https://stats.dota-aabs.com/';
 
 var HERO_SELECTION_PHASE_NOT_STARTED = 0;
 var HERO_SELECTION_PHASE_BANNING = 1;
@@ -43,17 +43,6 @@ var RUNES_COLOR_MAP = {
 	11: 'B35F5F',
 };
 
-Entities.GetHeroPlayerOwner = function(unit) {
-	for (var i = 0; i < 24; i++) {
-		if (Players.IsValidPlayerID(i)) {
-			if (SafeGetPlayerHeroEntityIndex(i) === unit) {
-				return i;
-			}
-		}
-	}
-	return -1;
-};
-
 String.prototype.encodeHTML = function() {
 	return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 };
@@ -71,6 +60,10 @@ Entities.GetNetworkableEntityInfo = function(ent, key) {
 
 Players.GetStatsData = function(playerId) {
 	return PlayerTables.GetTableValue('stats_client', playerId) || {};
+};
+
+Players.GetHeroSelectionPlayerInfo = function(playerId) {
+	return Players.IsValidPlayerID(playerId) ? PlayerTables.GetTableValue('hero_selection', Players.GetTeam(playerId))[playerId] : {};
 };
 
 function GetDataFromServer(path, params, resolve, reject) {
@@ -152,8 +145,7 @@ function GetPlayerHeroName(playerId) {
 }
 
 function GetPlayerGold(iPlayerID) {
-	var goldTable = PlayerTables.GetTableValue('arena', 'gold');
-	return goldTable == null ? 0 : Number(goldTable[iPlayerID] || 0);
+	return +PlayerTables.GetTableValue('gold', iPlayerID);
 }
 
 function dynamicSort(property) {
@@ -387,5 +379,36 @@ function JoinUrlParams(params) {
 	}).join('&');
 }
 
-var hud = GetDotaHud();
+function GetTeamInfo(team) {
+	var t = PlayerTables.GetTableValue('teams', team) || {};
+	return {
+		score: t.score || 0,
+		kill_weight: t.kill_weight || 1,
+	};
+}
 
+function SetPagePlayerLevel(ProfileBadge, level) {
+	var levelbg = Math.floor(level / 100);
+	ProfileBadge.FindChildTraverse('BackgroundImage').SetImage('file://{images}/profile_badges/bg_' + ('0' + (levelbg + 1)).slice(-2) + '.psd');
+	ProfileBadge.FindChildTraverse('ItemImage').SetImage('file://{images}/profile_badges/level_' + ('0' + (level - levelbg * 100)).slice(-2) + '.png');
+	ProfileBadge.FindChildTraverse('ProfileLevel').SetImage('file://{images}/profile_badges/bg_number_01.psd');
+	ProfileBadge.FindChildTraverse('ProfileLevel').GetChild(0).text = level;
+}
+
+function FindFountain(team) {
+	return Entities.GetAllEntitiesByName('npc_arena_fountain_' + team)[0];
+}
+
+function GetVisibleAbilityInSlot(unit, slot) {
+	var j = 0;
+	for (var i = 0; i < Entities.GetAbilityCount(unit); i++) {
+		var ability = Entities.GetAbility(unit, i);
+		if (!Abilities.IsHidden(ability)) {
+			if (j++ === slot) {
+				return ability;
+			}
+		}
+	}
+}
+
+var hud = GetDotaHud();

@@ -2,8 +2,6 @@
 {
 	"dragon_knight_breathe_fire_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -16,35 +14,12 @@
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
-			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-			"particle"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
-		}
-
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12.0 12.0 12.0 12.0 12.0 12.0 12.0"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"90 150 200 240 270 310 350"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12"
+		"AbilityDamage"					"90 170 250 330 410 490 570"
 		"AbilityManaCost"				"100 110 120 130 140 150 160"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -74,13 +49,13 @@
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"debuff_slow_pct"		"-35"
+				"var_type"				"FIELD_FLOAT"
+				"debuff_slow_pct"		"-5.0 -7.5 -10.0 -12.5 -15.0 -17.5 -20.0"
 			}
 			"07"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"debuff_miss_pct"		"35"
+				"var_type"				"FIELD_FLOAT"
+				"debuff_miss_pct"		"-5.0 -7.5 -10.0 -12.5 -15.0 -17.5 -20.0"
 			}
 			"08"
 			{
@@ -97,6 +72,13 @@
 				"var_type"				"FIELD_FLOAT"
 				"debuff_duration"		"6.0"
 			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+			"particle"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
 		}
 
 		"OnSpellStart"
@@ -166,8 +148,6 @@
 
 	"dragon_knight_dragon_tail_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_dragon_knight/dragon_tail_lua.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -179,27 +159,17 @@
 		"AbilityTextureName"			"dragon_knight_dragon_tail"
 		"MaxLevel"	"7"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
-			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_dragon_tail.vpcf"
-		}
-
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"11"
 		"AbilityDamage"					"25 50 75 100 125 150 175"
-		"AbilityManaCost"				"100 100 100 100 100 100 100"
+		"AbilityManaCost"				"100"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2.5 2.6 2.7 2.8 2.9 3.0 3.25"
+				"stun_duration"			"1.5 1.65 1.8 1.95 2.1 2.25 2.4"
 			}
 			"02"
 			{
@@ -214,13 +184,19 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_delay"			"1 0.9 0.7 0.5 0.3 0.1 0.0"
+				"attack_delay"			"0.0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"150"
 			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_dragon_tail.vpcf"
 		}
 	}
 
@@ -243,12 +219,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_health_regen"		"4 8 12 16 20 25 30"
+				"bonus_health_regen"		"3 6 9 12 15 18 21"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"4 8 12 16 20 25 30"
+				"bonus_armor"				"3 6 9 12 15 18 21"
 			}
 			"03"
 			{
@@ -258,12 +234,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"disarm_chance"				"10"
+				"disarm_chance"				"8"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"disarm_duration"			"0.4 0.5 0.6 0.7 0.8 0.9 1.0"
+				"disarm_duration"			"0.5"
 			}
 			"06"
 			{
@@ -368,8 +344,8 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"115.0 115.0 115.0 115.0 115.0 115.0 115.0"
-		"AbilityManaCost"				"50 50 50 50 50 50 50"
+		"AbilityCooldown"				"115"
+		"AbilityManaCost"				"50"
 		"AbilityModifierSupportValue"	"0.35"
 
 		// Special
@@ -417,18 +393,18 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"silence_chance"			"15"
+				"silence_chance"			"9"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"silence_duration"			"1.25"
+				"silence_duration"			"1.0"
 			}
 			//4
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"flame_duration"			"15"
+				"flame_duration"			"5"
 			}
 			"11"
 			{
@@ -439,7 +415,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"breath_chance"				"15"
+				"breath_chance"				"9"
 			}
 			"13"
 			{
@@ -464,7 +440,7 @@
 			"17"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"breath_debuff_duration"	"3.0"
+				"breath_debuff_duration"	"2.0"
 			}
 			"18"
 			{
@@ -490,7 +466,7 @@
 			"22"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"cold_duration"					"3.0"
+				"cold_duration"					"2.0"
 			}
 			"23"
 			{

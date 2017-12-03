@@ -52,8 +52,8 @@ function ExplodeSpore(keys)
 	spore:EmitSound("Arena.Hero_Cherub.ExplosiveSpore.Explode")
 	spore:StopSound("Arena.Hero_Cherub.ExplosiveSpore.Plant")
 	spore:AddNoDraw()
-	
-	for _,v in ipairs(FindUnitsInRadius(spore:GetTeam(), spore:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("explode_radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
+
+	for _,v in ipairs(FindUnitsInRadius(spore:GetTeam(), spore:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("explode_radius", ability:GetLevel() - 1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
 		local hp = v:GetHealth()
 		ApplyDamage({
 			victim = v,

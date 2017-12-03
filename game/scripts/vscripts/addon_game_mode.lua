@@ -1,9 +1,9 @@
-require('utils/init')
+require('util/init')
 require('gamemode')
---do return end
+
 function Precache(context)
 	local particles = {
-		--items
+		-- items
 		"particles/arena/items_fx/gem_of_clear_mind_illusion.vpcf",
 		"particles/prototype_fx/item_linkens_buff_explosion_wave.vpcf",
 		"particles/arena/units/arena_statue/statue_eye.vpcf",
@@ -58,11 +58,11 @@ function Precache(context)
 		"particles/econ/events/ti7/shivas_guard_active_ti7.vpcf",
 		"particles/econ/events/ti7/shivas_guard_impact_ti7.vpcf",
 		"particles/econ/events/ti7/shivas_guard_slow.vpcf",
-		--Heroes
+		-- Heroes
 		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press.vpcf",
-		--Runes
+		-- Runes
 		"particles/arena/generic_gameplay/rune_tripledamage.vpcf",
 		"particles/arena/generic_gameplay/rune_tripledamage_owner.vpcf",
 		"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf",
@@ -72,11 +72,14 @@ function Precache(context)
 		"particles/arena/generic_gameplay/rune_soul_steal_owner_effect.vpcf",
 		"particles/neutral_fx/prowler_shaman_stomp_debuff_glow.vpcf",
 		"particles/items_fx/blademail.vpcf",
+		-- Weather
+		"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf",
+		"particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf",
 	}
 	local models = {
 		"models/items/meepo/diggers_divining_rod/diggers_divining_rod_gem_saphire.vmdl",
 		"models/heroes/earthshaker/totem.vmdl",
-		--Neutrals
+		-- Neutrals
 		"models/heroes/centaur/centaur.vmdl",
 		"models/custom/umbrella_rainbow.vmdl",
 	}
@@ -93,20 +96,36 @@ function Precache(context)
 
 		"npc_dota_lucifers_claw_doomling",
 		"npc_queenofblades_alter_ego",
+		"npc_arena_lightning_rod",
 	}
 
 	local soundevents = {
-		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
 		"soundevents/game_sounds_arena.vsndevts",
 	}
 
 	for _, handle in pairs(CUSTOM_WEARABLES) do
 		DynamicWearables:PrecacheUnparsedWearable(context, handle)
+	end
+
+	for _, spawner in pairs(SPAWNER_SETTINGS) do
+		if type(spawner) == "table" and spawner.SpawnTypes then
+			for _, spawnType in pairs(spawner.SpawnTypes) do
+				for _,minutes in pairs(spawnType) do
+					for minute,model in pairs(minutes) do
+						if minute ~= -1 then
+							table.insert(models, model)
+						end
+					end
+				end
+			end
+		end
 	end
 
 	for k, v in pairs(NPC_HEROES_CUSTOM) do
@@ -128,6 +147,10 @@ function Precache(context)
 				table.insert(particles, pfx)
 			end
 		end
+	end
+
+	for _,v in pairs(WEATHER_EFFECTS) do
+		table.add(particles, v.particles or {})
 	end
 
 	for _,v in ipairs(particles) do

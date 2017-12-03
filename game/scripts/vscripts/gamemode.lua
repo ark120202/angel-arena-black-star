@@ -1,7 +1,7 @@
-ARENA_VERSION = "1.5"
-GAMEMODE_INITIALIZATION_STATUS = {}
-
 GameMode = GameMode or class({})
+ARENA_VERSION = LoadKeyValues("addoninfo.txt").version
+
+GAMEMODE_INITIALIZATION_STATUS = {}
 
 local requirements = {
 	"libraries/keyvalues",
@@ -13,8 +13,8 @@ local requirements = {
 	"libraries/attachments",
 	"libraries/playertables",
 	"libraries/containers",
-	"libraries/modmaker",
-	"libraries/pathgraph",
+	-- "libraries/modmaker",
+	-- "libraries/pathgraph",
 	"libraries/selection",
 	"libraries/worldpanels",
 	"libraries/CosmeticLib",
@@ -41,15 +41,20 @@ local requirements = {
 }
 
 local modifiers = {
-	modifier_item_shard_attackspeed_stack = "items/lua/modifiers/modifier_item_shard_attackspeed_stack",
 	modifier_apocalypse_apocalypse = "heroes/hero_apocalypse/modifier_apocalypse_apocalypse",
+	modifier_saitama_limiter = "heroes/hero_saitama/modifier_saitama_limiter",
 	modifier_set_attack_range = "modifiers/modifier_set_attack_range",
 	modifier_charges = "modifiers/modifier_charges",
 	modifier_hero_selection_transformation = "modifiers/modifier_hero_selection_transformation",
 	modifier_max_attack_range = "modifiers/modifier_max_attack_range",
 	modifier_arena_hero = "modifiers/modifier_arena_hero",
 	modifier_item_demon_king_bar_curse = "items/modifier_item_demon_king_bar_curse",
-	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game"
+	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game",
+
+	modifier_item_shard_attackspeed_stack = "modifiers/modifier_item_shard_attackspeed_stack",
+	modifier_item_casino_drug_pill1_addiction = "modifiers/modifier_item_casino_drug_pill1_addiction",
+	modifier_item_casino_drug_pill2_addiction = "modifiers/modifier_item_casino_drug_pill2_addiction",
+	modifier_item_casino_drug_pill3_addiction = "modifiers/modifier_item_casino_drug_pill3_addiction",
 }
 
 for k,v in pairs(modifiers) do
@@ -80,16 +85,18 @@ function GameMode:InitGameMode()
 	PanoramaShop:InitializeItemTable()
 	Structures:AddHealers()
 	Structures:CreateShops()
-
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
 	StatsClient:Init()
-	PlayerTables:CreateTable("arena", {
-		gold = {},
-		players_abandoned = {},
-	}, AllPlayersInterval)
+	Teams:Initialize()
+	Attributes:Init()
+	Console:Init()
+
+	PlayerTables:CreateTable("arena", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
-	PlayerTables:CreateTable("stats_client", {}, AllPlayersInterval)
+	PlayerTables:CreateTable("players_abandoned", {}, AllPlayersInterval)
+	PlayerTables:CreateTable("gold", {}, AllPlayersInterval)
+	PlayerTables:CreateTable("weather", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
 end
 
@@ -99,7 +106,7 @@ end
 
 function GameMode:OnFirstPlayerLoaded()
 	if Options:IsEquals("MainHeroList", "NoAbilities") then
-		AbilityShop:PrepareData()
+		CustomAbilities:PrepareData()
 	end
 end
 
@@ -108,6 +115,13 @@ function GameMode:OnAllPlayersLoaded()
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[4] = true
+	StatsClient:FetchPreGameData()
+	Events:Emit("AllPlayersLoaded")
+end
+
+function GameMode:OnHeroSelectionStart()
+	Teams:PostInitialize()
+	Options:CalculateVotes()
 	DynamicMinimap:Init()
 	Spawner:PreloadSpawners()
 	Bosses:InitAllBosses()
@@ -120,6 +134,19 @@ function GameMode:OnHeroSelectionEnd()
 	--Timers:CreateTimer(1/30, Dynamic_Wrap(GameMode, "QuickGameModeThink"))
 	PanoramaShop:StartItemStocks()
 	Duel:CreateGlobalTimer()
+	Weather:Init()
+
+	Timers:CreateTimer(10, function()
+		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+			if PlayerResource:IsValidPlayerID(playerID) and not PlayerResource:IsFakeClient(playerID) and GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
+				local heroName = HeroSelection:GetSelectedHeroName(playerID) or ""
+				if heroName == "" or heroName == FORCE_PICKED_HERO then
+					GameMode:BreakGame()
+					return
+				end
+			end
+		end
+	end)
 end
 
 function GameMode:OnHeroInGame(hero)
@@ -128,7 +155,6 @@ function GameMode:OnHeroInGame(hero)
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
 				Structures:GiveCourier(hero)
 			end
-			HeroVoice:OnHeroInGame(hero)
 		end
 	end)
 end
@@ -194,4 +220,10 @@ function GameMode:GameModeThink()
 		end
 	end
 	return CUSTOM_GOLD_TICK_TIME
+end
+
+function GameMode:BreakGame()
+	GameMode.Broken = true
+	Tutorial:ForceGameStart()
+	GameMode:OnOneTeamLeft(-1)
 end

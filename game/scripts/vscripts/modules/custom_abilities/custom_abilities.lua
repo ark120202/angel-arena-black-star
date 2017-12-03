@@ -1,14 +1,17 @@
-if AbilityShop == nil then
-	_G.AbilityShop = class({})
-	AbilityShop.AbilityInfo = {}
-	AbilityShop.ClientData = {{}, {}}
-	AbilityShop.RandomOMG = {
+if CustomAbilities == nil then
+	_G.CustomAbilities = class({})
+	CustomAbilities.AbilityInfo = {}
+	CustomAbilities.ClientData = {{}, {}}
+	CustomAbilities.RandomOMG = {
 		Ultimates = {},
 		Abilities = {},
 	}
 end
 
-function AbilityShop:PrepareData()
+ModuleRequire(..., "ability_shop")
+ModuleRequire(..., "random_omg")
+
+function CustomAbilities:PrepareData()
 	for a,vs in pairs(ABILITY_SHOP_BANNED) do
 		if not ABILITY_SHOP_DATA[a] then
 			ABILITY_SHOP_DATA[a] = {}
@@ -62,8 +65,8 @@ function AbilityShop:PrepareData()
 						banned_with = abitb["banned_with"] or banned_with
 					end
 					table.insert(abilityTbl, {ability = at, cost = cost, banned_with = banned_with})
-					AbilityShop.AbilityInfo[at] = {cost = cost, banned_with = banned_with, hero = name}
-					table.insert(AbilityShop.RandomOMG[is_ultimate and "Ultimates" or "Abilities"], {ability = at, hero = name})
+					CustomAbilities.AbilityInfo[at] = {cost = cost, banned_with = banned_with, hero = name}
+					table.insert(CustomAbilities.RandomOMG[is_ultimate and "Ultimates" or "Abilities"], {ability = at, hero = name})
 				end
 			end
 			local heroData = {
@@ -72,161 +75,7 @@ function AbilityShop:PrepareData()
 				isChanged = heroTable.Changed == 1 and tabIndex == 1,
 				attribute_primary = _G[heroTable.AttributePrimary]
 			}
-			table.insert(AbilityShop.ClientData[tabIndex], heroData)
+			table.insert(CustomAbilities.ClientData[tabIndex], heroData)
 		end
-	end
-end
-
-function AbilityShop:PostAbilityData()
-	CustomGameEventManager:RegisterListener("ability_shop_buy", function(_, data)
-		AbilityShop:OnAbilityBuy(data.PlayerID, data.ability)
-	end)
-	CustomGameEventManager:RegisterListener("ability_shop_sell", Dynamic_Wrap(AbilityShop, "OnAbilitySell"))
-	CustomGameEventManager:RegisterListener("ability_shop_downgrade", Dynamic_Wrap(AbilityShop, "OnAbilityDowngrade"))
-	PlayerTables:CreateTable("ability_shop_data", AbilityShop.ClientData, AllPlayersInterval)
-end
-
-function AbilityShop:GetAbilityListInfo(abilityname)
-	return AbilityShop.AbilityInfo[abilityname]
-end
-
-function AbilityShop:OnAbilityBuy(PlayerID, abilityname)
-	local hero = PlayerResource:GetSelectedHeroEntity(PlayerID)
-	local abilityInfo = AbilityShop:GetAbilityListInfo(abilityname)
-	if not abilityInfo then
-		return
-	end
-	local cost = abilityInfo.cost
-	local banned_with =  abilityInfo.banned_with
-	for _,v in ipairs(banned_with) do
-		if hero:HasAbility(v) then
-			return
-		end
-	end
-	if hero and cost and hero:GetAbilityPoints() >= cost then
-		local function Buy()
-			if IsValidEntity(hero) and hero:GetAbilityPoints() >= cost then
-				local abilityh = hero:FindAbilityByName(abilityname)
-				if abilityh and not abilityh:IsHidden() then
-					if abilityh:GetLevel() < abilityh:GetMaxLevel() then
-						hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
-						abilityh:SetLevel(abilityh:GetLevel() + 1)
-					end
-				elseif hero:HasAbility("ability_empty") then
-					if abilityh and abilityh:IsHidden() then
-						RemoveAbilityWithModifiers(hero, abilityh)
-					end
-					hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
-					hero:RemoveAbility("ability_empty")
-					GameMode:PrecacheUnitQueueed(abilityInfo.hero)
-					local a, linked = hero:AddNewAbility(abilityname)
-					a:SetLevel(1)
-					if linked then
-						for _,v in ipairs(linked) do
-							if v:GetAbilityName() == "phoenix_launch_fire_spirit" then
-								v:SetLevel(1)
-							end
-						end
-					end
-					hero:CalculateStatBonus()
-					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(PlayerID), "dota_ability_changed", {})
-				end
-			end
-		end
-		if hero:HasAbility(abilityname) then
-			Buy()
-		else
-			PrecacheItemByNameAsync(abilityname, Buy)
-		end
-	end
-end
-
-function AbilityShop:OnAbilitySell(data)
-	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-	local listDataInfo = AbilityShop:GetAbilityListInfo(data.ability)
-	if hero and hero:HasAbility(data.ability) and not hero:IsChanneling() and listDataInfo then
-		local cost = listDataInfo.cost
-		local abilityh = hero:FindAbilityByName(data.ability)
-		local gold = AbilityShop:CalculateDowngradeCost(data.ability, cost) * abilityh:GetLevel()
-		if Gold:GetGold(data.PlayerID) >= gold and not abilityh:IsHidden() then
-			Gold:RemoveGold(data.PlayerID, gold)
-			hero:SetAbilityPoints(hero:GetAbilityPoints() + cost*abilityh:GetLevel())
-			RemoveAbilityWithModifiers(hero, abilityh)
-			local link = LINKED_ABILITIES[data.ability]
-			if link then
-				for _,v in ipairs(link) do
-					hero:RemoveAbility(v)
-				end
-			end
-			hero:AddAbility("ability_empty")
-		end
-	end
-	CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(data.PlayerID), "dota_ability_changed", {})
-end
-
-function AbilityShop:OnAbilityDowngrade(data)
-	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-	local listDataInfo = AbilityShop:GetAbilityListInfo(data.ability)
-	if hero and hero:HasAbility(data.ability) and listDataInfo then
-		local cost = listDataInfo.cost
-		local abilityh = hero:FindAbilityByName(data.ability)
-		if abilityh:GetLevel() <= 1 then
-			AbilityShop:OnAbilitySell(data)
-		else
-			local gold = AbilityShop:CalculateDowngradeCost(data.ability, cost)
-			if Gold:GetGold(data.PlayerID) >= gold and not abilityh:IsHidden() then
-				Gold:RemoveGold(data.PlayerID, gold)
-				abilityh:SetLevel(abilityh:GetLevel() - 1)
-				hero:SetAbilityPoints(hero:GetAbilityPoints() + cost)
-			end
-		end
-
-	end
-	CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(data.PlayerID), "dota_ability_changed", {})
-end
-
-function AbilityShop:CalculateDowngradeCost(abilityname, upgradecost)
-	return (upgradecost*60) + (upgradecost*10*GetDOTATimeInMinutesFull())
-end
-
-function AbilityShop:RandomOMGRollAbilities(unit)
-	if Options:IsEquals("EnableRandomAbilities") then
-		local ability_count = 6
-		local ultimate_count = 2
-		for i = 0, unit:GetAbilityCount() - 1 do
-			local ability = unit:GetAbilityByIndex(i)
-			if ability then
-				for _,v in ipairs(unit:FindAllModifiers()) do
-					if v:GetAbility() and v:GetAbility() == ability then
-						v:Destroy()
-					end
-				end
-				unit:RemoveAbility(ability:GetName())
-			end
-		end
-		
-		local has_abilities = 0
-		while has_abilities < ability_count - ultimate_count do
-			local abilityTable = AbilityShop.RandomOMG.Abilities[RandomInt(1, #AbilityShop.RandomOMG.Abilities)]
-			local ability = abilityTable.ability
-			if ability and not unit:HasAbility(ability) then
-				PrecacheItemByNameAsync(ability, function() end)
-				GameMode:PrecacheUnitQueueed(abilityTable.hero)
-				unit:AddNewAbility(ability)
-				has_abilities = has_abilities + 1
-			end
-		end
-		local has_ultimates = 0
-		while has_ultimates < ultimate_count do
-			local abilityTable = AbilityShop.RandomOMG.Ultimates[RandomInt(1, #AbilityShop.RandomOMG.Ultimates)]
-			local ability = abilityTable.ability
-			if ability and not unit:HasAbility(ability) then
-				PrecacheItemByNameAsync(ability, function() end)
-				GameMode:PrecacheUnitQueueed(abilityTable.hero)
-				unit:AddNewAbility(ability)
-				has_ultimates = has_ultimates + 1
-			end
-		end
-		unit:ResetAbilityPoints()
 	end
 end
