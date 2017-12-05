@@ -1,6 +1,6 @@
 "AddonInfo"
 {
-	"version"		"1.12.1"
+	"version"		"1.12.2"
 	"maps"          "5v5_ranked war3_ranked 5v5 4v4v4v4 5v5_custom_abilities 4v4v4v4_custom_abilities"
 	"5v5_ranked"
 	{
