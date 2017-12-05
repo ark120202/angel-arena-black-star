@@ -107,14 +107,10 @@ function Teams:PostInitialize()
 
 		local playerCounter = 0
 		for _,playerID in ipairs(Teams:GetPlayerIDs(team, true, true)) do
-			if false then
-				PlayerResource:SetCustomPlayerColor(playerID, data.color[1], data.color[2], data.color[3])
-			else
-				playerCounter = playerCounter + 1
-				local color = data.playerColors[playerCounter]
-				PLAYER_DATA[playerID].Color = color
-				PlayerResource:SetCustomPlayerColor(playerID, color[1], color[2], color[3])
-			end
+			playerCounter = playerCounter + 1
+			local color = data.playerColors[playerCounter]
+			PLAYER_DATA[playerID].Color = color
+			PlayerResource:SetCustomPlayerColor(playerID, color[1], color[2], color[3])
 		end
 	end
 end
