@@ -2691,7 +2691,7 @@
 		"ID"							"10096"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"465"
+		"ItemCost"						"730"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_eye_of_the_prophet"
 		"ItemUseCharges"				"item_ward_observer"
@@ -2713,25 +2713,25 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCastPoint"              "0.1"
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"0"
-		"AOERadius"                     "800"
+		"AOERadius"                     "1500"
 
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
+		"ItemInitialCharges"			"2"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"800"
+				"radius"			"1500"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"12.0"
+				"duration"			"6.0"
 			}
 		}
 
@@ -6608,7 +6608,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"15"
+				"kill_gold"				"20"
 			}
 			"05"
 			{
@@ -7374,12 +7374,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"250"
+				"aoe"					"300"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"16.0"
+				"buff_duration"			"20.0"
 			}
 			"05"
 			{

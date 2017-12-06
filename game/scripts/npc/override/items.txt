@@ -226,7 +226,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_regen"			"100"
+				"health_regen"			"120"
 			}
 		}
 	}
@@ -254,7 +254,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"200"
+				"health"				"2000"
 			}
 			"04"
 			{
@@ -267,6 +267,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"ItemCost"						"99"
 	}
 	"item_tpscroll"
 	{
