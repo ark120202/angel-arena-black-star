@@ -5007,6 +5007,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bounces_tooltip"	"2 4 6 8 10 12 14"
+				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_3"
 			}
 			"99"
 			{
@@ -5074,6 +5075,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"duration_tooltip"	"12"
+				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_4"
 			}
 
 			"03"
@@ -5111,6 +5113,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"damage"	"60 105 150 195 240 285 330"
+				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_5"
 			}
 
 			"02"
@@ -5786,6 +5789,8 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"total_cast_time_tooltip"	"2 2 2 2 2 1.8 1.6"
+				"LinkedSpecialBonus"	"special_bonus_unique_sniper_4"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
 			}
 
 			"04"
@@ -6440,12 +6445,16 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"ward_hp_tooltip"	"75 200 325 450"
+				"LinkedSpecialBonus"	"special_bonus_unique_venomancer"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"ward_damage_tooltip"	"13 22 31 40"
+				"LinkedSpecialBonus"	"special_bonus_unique_venomancer"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 
 			"04"
@@ -6946,8 +6955,8 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"max_traps"	"5 7 9 11 13 15 17"
+				"var_type"					"FIELD_INTEGER"
+				"max_traps"					"5 7 9 11 13 15 17"
 				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_6"
 			}
 			"02"
@@ -6958,7 +6967,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"movement_speed_min"	"30"
+				"movement_speed_min"		"30"
 			}
 			"04"
 			{
@@ -6974,6 +6983,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"trap_bonus_damage"			"100 125 150 175 200 225 250"
+				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_3"
 			}
 		}
 	}
@@ -8036,6 +8046,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"max_treants"	"2 3 4 5"
+				"LinkedSpecialBonus"	"special_bonus_unique_furion_2"
 			}
 
 			"03"
@@ -9452,6 +9463,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"armor_reduction"	"1"
+				"LinkedSpecialBonus"	"special_bonus_unique_weaver_3"
 			}
 
 			"05"
@@ -11019,6 +11031,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"duration"	"5"
+				"LinkedSpecialBonus"	"special_bonus_unique_ursa_3"
 			}
 
 			"04"
@@ -15509,6 +15522,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"recovery_time"	"6.0 5.5 5.0 4.5 4.0 3.0 2.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_visage_5"
 			}
 
 			"04"
@@ -18971,6 +18985,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"tooltip_attack_range"	"550"
+				"LinkedSpecialBonus"	"special_bonus_unique_terrorblade_3"
 			}
 
 			"06"
@@ -19404,6 +19419,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"maximum_purge_duration"	"2.5 2.5 2.5 2.5 2.5 2.25 2.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_oracle_2"
 			}
 
 			"05"
@@ -20377,6 +20393,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"duration"	"3.25 3.50 3.75 4.0 4.25 4.50 4.75"
+				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_3"
 			}
 
 		}
