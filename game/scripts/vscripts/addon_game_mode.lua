@@ -56,6 +56,7 @@ function Precache(context)
 		"particles/econ/events/ti6/mekanism_recipient_ti6.vpcf",
 		"particles/arena/items_fx/scythe_of_sun.vpcf",
 		"particles/econ/events/ti7/shivas_guard_active_ti7.vpcf",
+		"particles/arena/items_fx/book_of_the_guardian_2_active.vpcf",
 		"particles/econ/events/ti7/shivas_guard_impact_ti7.vpcf",
 		"particles/econ/events/ti7/shivas_guard_slow.vpcf",
 		-- Heroes

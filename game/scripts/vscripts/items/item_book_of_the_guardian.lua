@@ -55,7 +55,7 @@ end
 item_book_of_the_guardian = class(item_book_of_the_guardian_baseclass)
 item_book_of_the_guardian.pfx = "particles/econ/events/ti7/shivas_guard_active_ti7.vpcf"
 item_book_of_the_guardian_2 = class(item_book_of_the_guardian_baseclass)
-item_book_of_the_guardian_2.pfx = "particles/econ/events/ti7/shivas_guard_active_ti7.vpcf"
+item_book_of_the_guardian_2.pfx = "particles/arena/items_fx/book_of_the_guardian_2_active.vpcf"
 
 modifier_item_book_of_the_guardian = class({
 	IsHidden      = function() return true end,
