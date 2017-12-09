@@ -18,7 +18,7 @@ if IsServer() then
 		local startTime = GameRules:GetGameTime()
 		local affectedUnits = {}
 
-		local pfx = ParticleManager:CreateParticle("particles/econ/events/ti7/shivas_guard_active_ti7.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+		local pfx = ParticleManager:CreateParticle(self.pfx, PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControl(pfx, 1, Vector(blast_radius, blast_radius / blast_speed * 1.5, blast_speed))
 		caster:EmitSound("DOTA_Item.ShivasGuard.Activate")
 
@@ -53,7 +53,9 @@ if IsServer() then
 end
 
 item_book_of_the_guardian = class(item_book_of_the_guardian_baseclass)
-
+item_book_of_the_guardian.pfx = "particles/econ/events/ti7/shivas_guard_active_ti7.vpcf"
+item_book_of_the_guardian_2 = class(item_book_of_the_guardian_baseclass)
+item_book_of_the_guardian_2.pfx = "particles/econ/events/ti7/shivas_guard_active_ti7.vpcf"
 
 modifier_item_book_of_the_guardian = class({
 	IsHidden      = function() return true end,
