@@ -21,12 +21,12 @@
 		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1000"
+		"ItemCost"						"5000"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_book_of_the_guardian_2"
 		"ItemRequirements"
 		{
-			"01"						"item_book_of_the_guardian;item_phantom_bone"
+			"01"						"item_book_of_the_guardian;item_phantom_bone;item_moon_dust"
 		}
 	}
 
