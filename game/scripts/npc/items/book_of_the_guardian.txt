@@ -41,8 +41,8 @@
 		"ItemShopTags"					"int;regen_mana;hard_to_tag"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityCastRange"				"%aura_radius"
-		"AbilityCooldown"				"25 22"
-		"AbilityManaCost"				"350 500"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"350"
 
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"1"
@@ -134,8 +134,8 @@
 		"ItemShopTags"					"int;regen_mana;hard_to_tag"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityCastRange"				"%aura_radius"
-		"AbilityCooldown"				"25 22"
-		"AbilityManaCost"				"350 500"
+		"AbilityCooldown"				"22"
+		"AbilityManaCost"				"500"
 
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"2"
