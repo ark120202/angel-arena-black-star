@@ -5002,7 +5002,6 @@
 				"var_type"	"FIELD_FLOAT"
 				"bounce_delay"	"0.3"
 			}
-
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"

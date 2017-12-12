@@ -254,7 +254,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"2000"
+				"health"				"200"
 			}
 			"04"
 			{
@@ -267,7 +267,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"ItemCost"						"99"
+		"ItemCost"						"80"
 	}
 	"item_tpscroll"
 	{
