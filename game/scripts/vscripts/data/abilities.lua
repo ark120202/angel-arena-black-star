@@ -39,7 +39,6 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 	item_refresher_core = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
-	sai_release_of_forge = true,
 }
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
