@@ -429,6 +429,17 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {
 			reduction_pct = {12.5, 25, 37.5, 50}
 		}
+
+	},
+	talent_hero_sai_invulnerability_bonus_multiplier = {
+		icon = "arena/sai_invulnerability",
+		cost = 15,
+		group = 10,
+		max_level = 4,
+		requirement = "sai_invulnerability",
+		special_values = {
+			bonus_multiplayer = {1.25, 1.5, 1.75, 2}
+		}
 	},
 
 	--[[talent_hero_sara_evolution_bonus_health = {

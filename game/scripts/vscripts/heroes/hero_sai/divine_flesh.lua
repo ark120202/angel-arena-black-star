@@ -84,7 +84,7 @@ if IsServer() then
 
 		self.health_regeneration_pct = ability:GetSpecialValueFor("health_regeneration_pct")
 		if isUnderInvulnerability then
-			self.health_regeneration_pct = self.health_regeneration_pct * sai_invulnerability:GetSpecialValueFor("divine_flesh_regen_mult")
+			self.health_regeneration_pct = self.health_regeneration_pct * (sai_invulnerability:GetSpecialValueFor("divine_flesh_regen_mult") + (parent:GetTalentSpecial("talent_hero_sai_invulnerability_bonus_multiplier", "bonus_multiplayer") or 0))
 		end
 		self:SetSharedKey("health_regeneration_pct", self.health_regeneration_pct)
 	end
