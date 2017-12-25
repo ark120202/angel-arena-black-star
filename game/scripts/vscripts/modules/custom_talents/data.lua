@@ -427,7 +427,7 @@ CUSTOM_TALENTS_DATA = {
 		max_level = 4,
 		requirement = "sai_release_of_forge",
 		special_values = {
-			reduction_pct = {12.5, 25, 37.5, 50}
+			reduction_pct = {25, 50, 75, 100}
 		}
 	},
 
