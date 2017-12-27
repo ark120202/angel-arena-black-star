@@ -35,6 +35,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"crit_mult_pre_stack_pct"		"11 12 13 14 15 16 17"
 			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_for_bonus_damage"	"1080"
+			}
 		}
 	}
 
