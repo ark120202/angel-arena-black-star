@@ -4,7 +4,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"ItemCost"						"90"
+		"ItemCost"						"50"
 		"ItemInitialCharges"			"1"
 		"AbilityCooldown"				"15.0"
 	}

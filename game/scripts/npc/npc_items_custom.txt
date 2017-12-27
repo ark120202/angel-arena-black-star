@@ -2758,7 +2758,7 @@
 		"ID"							"10098"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"180"
+		"ItemCost"						"30"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_ray_of_fate"
 		"ItemUseCharges"				"item_dust"
@@ -2780,7 +2780,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCastPoint"              "0.1"
-		"AbilityCooldown"				"40"
+		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"0"
 		"AOERadius"                     "625"
 
@@ -2798,7 +2798,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"8.0"
+				"duration"			10.0"
 			}
 		}
 
