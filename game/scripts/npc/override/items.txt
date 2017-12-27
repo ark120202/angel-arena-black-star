@@ -994,6 +994,29 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"poison_damage"			"8.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"poison_movement_speed_melee"		"-22"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"poison_movement_speed_range"		"-10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"poison_duration"		"2.5"
+			}			
+		}
 	}
 	"item_recipe_ancient_janggo"
 	{
