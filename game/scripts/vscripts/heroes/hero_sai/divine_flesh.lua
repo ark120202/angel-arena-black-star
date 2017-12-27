@@ -81,10 +81,11 @@ if IsServer() then
 		local parent = self:GetParent()
 		local sai_invulnerability = parent:FindAbilityByName("sai_invulnerability")
 		local isUnderInvulnerability = sai_invulnerability and sai_invulnerability:GetToggleState()
+		local bonus_multiplayer = parent:GetTalentSpecial("talent_hero_sai_invulnerability_bonus_multiplier", "bonus_multiplayer") or 1
 
 		self.health_regeneration_pct = ability:GetSpecialValueFor("health_regeneration_pct")
 		if isUnderInvulnerability then
-			self.health_regeneration_pct = self.health_regeneration_pct * (sai_invulnerability:GetSpecialValueFor("divine_flesh_regen_mult") + (parent:GetTalentSpecial("talent_hero_sai_invulnerability_bonus_multiplier", "bonus_multiplayer") or 0))
+			self.health_regeneration_pct = self.health_regeneration_pct * sai_invulnerability:GetSpecialValueFor("divine_flesh_regen_mult") * bonus_multiplayer
 		end
 		self:SetSharedKey("health_regeneration_pct", self.health_regeneration_pct)
 	end

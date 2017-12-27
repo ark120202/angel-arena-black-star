@@ -69,4 +69,4 @@ custom_talents_talent_true_strike_description: Исключает шанс пр�
 custom_talents_talent_hero_sai_release_of_forge_bonus_respawn_time_reduction: Release of Forge
 custom_talents_talent_hero_sai_release_of_forge_bonus_respawn_time_reduction_description: 'Уменьшает увеличение времени возрождения после смерти от способности Release of Forge на {%reduction_pct%}.'
 custom_talents_talent_hero_sai_invulnerability_bonus_multiplier: Invulnerability
-custom_talents_talent_hero_sai_invulnerability_bonus_multiplier_description: 'Увеличивает множитель регенерации способности Divine Flesh на {bonus_multiplayer}.'
+custom_talents_talent_hero_sai_invulnerability_bonus_multiplier_description: 'Увеличивает множитель регенерации способности Divine Flesh в {bonus_multiplayer}.'
