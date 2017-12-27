@@ -441,6 +441,16 @@ CUSTOM_TALENTS_DATA = {
 			bonus_multiplayer = {1.25, 1.5, 1.75, 2}
 		}
 	},
+	talent_hero_sai_divine_flesh_lifesteal = {
+		icon = "arena/sai_divine_flesh",
+		cost = 1,
+		group = 8,
+		max_level = 1,
+		requirement = "sai_divine_flesh",
+		special_values = {
+			lifesteal = {15}
+		}
+	},
 
 	--[[talent_hero_sara_evolution_bonus_health = {
 		icon = "talents/heroes/sara_evolution_bonus_health",

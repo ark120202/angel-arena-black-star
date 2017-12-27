@@ -63,7 +63,10 @@ modifier_sai_divine_flesh_off = class({
 })
 
 function modifier_sai_divine_flesh_off:DeclareFunctions()
-	return { MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE }
+	return { 
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE, 
+		MODIFIER_EVENT_ON_ATTACK_LANDED
+	}
 end
 
 function modifier_sai_divine_flesh_off:GetModifierHealthRegenPercentage()
@@ -88,5 +91,19 @@ if IsServer() then
 			self.health_regeneration_pct = self.health_regeneration_pct * sai_invulnerability:GetSpecialValueFor("divine_flesh_regen_mult") * bonus_multiplayer
 		end
 		self:SetSharedKey("health_regeneration_pct", self.health_regeneration_pct)
+	end
+
+	function modifier_sai_divine_flesh_off:OnAttackLanded(keys)
+		local caster = self:GetParent()
+		local ability =self:GetAbility()
+		local parent = self:GetParent()
+
+		if parent:HasTalent("talent_hero_sai_divine_flesh_lifesteal") and keys.attacker == parent and  then
+			local pct = self:GetParent():GetTalentSpecial("talent_hero_sai_divine_flesh_lifesteal", "lifesteal")
+			local amount = keys.damage * pct * 0.01
+			caster:SetHealth(caster:GetHealth() + amount)
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, caster, amount, nil)
+			ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sai/lifesteal", PATTACH_ABSORIGIN_FOLLOW, caster)
+		end
 	end
 end

@@ -70,3 +70,5 @@ custom_talents_talent_hero_sai_release_of_forge_bonus_respawn_time_reduction: Re
 custom_talents_talent_hero_sai_release_of_forge_bonus_respawn_time_reduction_description: 'Уменьшает увеличение времени возрождения после смерти от способности Release of Forge на {%reduction_pct%}.'
 custom_talents_talent_hero_sai_invulnerability_bonus_multiplier: Invulnerability
 custom_talents_talent_hero_sai_invulnerability_bonus_multiplier_description: 'Увеличивает множитель регенерации способности Divine Flesh в {bonus_multiplayer}.'
+custom_talents_talent_hero_sai_divine_flesh_lifesteal: Lifesteal from Divine Flesh
+custom_talents_talent_hero_sai_divine_flesh_lifesteal_description: 'При выключении способности герой получает вампиризм в размере {%lifesteal%}.'
