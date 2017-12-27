@@ -10515,7 +10515,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"Model"							"models/props_gameplay/banana_prop_closed.vmdl"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"0.5"
+		"AbilityCooldown"				"0.1"
 
 		"ItemCost"						"50"
 		"ItemQuality"					"component"
