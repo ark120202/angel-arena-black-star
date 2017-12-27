@@ -186,6 +186,14 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"		"2.5"
+			}
+		}
 	}
 	"item_ghost"
 	{
@@ -1103,6 +1111,19 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hp_regen"		"2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_amount"		"250"
+			}	
+		}
 	}
 	"item_recipe_travel_boots_2"
 	{

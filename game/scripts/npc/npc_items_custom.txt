@@ -9709,7 +9709,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"		"6.5"
+				"bonus_health_regen"		"8.5"
 			}
 			"03"
 			{
