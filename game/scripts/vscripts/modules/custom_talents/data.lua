@@ -451,6 +451,13 @@ CUSTOM_TALENTS_DATA = {
 			lifesteal = {15}
 		}
 	},
+	talent_hero_sai_release_of_forge_vision = {
+		icon = "talents/heroes/release_of_forge_vision",
+		cost = 25,
+		group = 11,
+		requirement = "sai_release_of_forge",	
+	},
+
 
 	--[[talent_hero_sara_evolution_bonus_health = {
 		icon = "talents/heroes/sara_evolution_bonus_health",

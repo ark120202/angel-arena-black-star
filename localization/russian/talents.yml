@@ -72,3 +72,5 @@ custom_talents_talent_hero_sai_invulnerability_bonus_multiplier: Invulnerability
 custom_talents_talent_hero_sai_invulnerability_bonus_multiplier_description: 'Увеличивает множитель регенерации способности Divine Flesh в {bonus_multiplayer}.'
 custom_talents_talent_hero_sai_divine_flesh_lifesteal: Lifesteal from Divine Flesh
 custom_talents_talent_hero_sai_divine_flesh_lifesteal_description: 'При выключении способности герой получает вампиризм в размере {%lifesteal%}.'
+custom_talents_talent_hero_sai_release_of_forge_vision: Обзор врагов во время Release Of Forge
+custom_talents_talent_hero_sai_release_of_forge_vision_description: 'Во время ультимейта герой видит всех врагов на карте.'
