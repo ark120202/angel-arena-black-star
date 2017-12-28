@@ -99,8 +99,10 @@ function modifier_sai_release_of_forge_mass_debuff:GetModifierTurnRate_Percentag
 	return self:GetAbility():GetSpecialValueFor("aura_turn_rate_pct")
 end
 
-function modifier_sai_release_of_forge_mass_debuff:GetModifierProvidesFOWVision()
-	if self:GetCaster():HasTalent("talent_hero_sai_release_of_forge_vision") then
-		return 1
+if IsServer() then
+	function modifier_sai_release_of_forge_mass_debuff:GetModifierProvidesFOWVision()
+		if self:GetCaster():HasTalent("talent_hero_sai_release_of_forge_vision") then
+			return 1
+		end
 	end
 end
