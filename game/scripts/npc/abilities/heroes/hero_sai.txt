@@ -133,6 +133,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"think_interval"		"0.1"
 			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_per_second_pct"	"12"
+			}
 		}
 
 		"precache"
