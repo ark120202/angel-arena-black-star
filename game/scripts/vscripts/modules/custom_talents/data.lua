@@ -457,6 +457,16 @@ CUSTOM_TALENTS_DATA = {
 		group = 11,
 		requirement = "sai_release_of_forge",	
 	},
+	talent_hero_shinobu_hide_in_shadows_heal_from_allies = {
+		icon = "arena/shinobu_hide_in_shadows",
+		cost = 20,
+		group = 9,
+		max_level = 1,
+		requirement = "shinobu_hide_in_shadows",	
+		special_values = {
+			talent_regeneration_pct = {17}
+		}
+	},
 
 
 	--[[talent_hero_sara_evolution_bonus_health = {
