@@ -98,7 +98,7 @@ if IsServer() then
 		local ability =self:GetAbility()
 		local parent = self:GetParent()
 
-		if parent:HasTalent("talent_hero_sai_divine_flesh_lifesteal") and keys.attacker == parent and  then
+		if parent:HasTalent("talent_hero_sai_divine_flesh_lifesteal") and keys.attacker == parent then
 			local pct = self:GetParent():GetTalentSpecial("talent_hero_sai_divine_flesh_lifesteal", "lifesteal")
 			local amount = keys.damage * pct * 0.01
 			caster:SetHealth(caster:GetHealth() + amount)
