@@ -15,7 +15,7 @@ end
 
 modifier_sai_release_of_forge = class({
 	IsPurgable            = function() return false end,
-	IsHidden              = function() return true end,
+	IsHidden              = function() return false end,
 	GetEffectName         = function() return "particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl_fire.vpcf" end,
 
 	GetModifierAttackRangeBonus = function() return 99700 end,
