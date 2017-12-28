@@ -33,6 +33,7 @@ DOTA_Tooltip_ability_sai_invulnerability_movement_speed_reduction_pct: '%MOVEMEN
 
 DOTA_Tooltip_ability_sai_release_of_forge: Release of Forge
 DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Hero becomes immortal for %duration% seconds, his health drops to one and can''t be increased, a part of his attack damage deals pure damage, instead of physical, attack range becomes unlimmited, yet all enemy heroes will lose %aura_movement_speed_pct%%% movement speed and their ability cast time, turn rate and vision radius will be reduced. When ability time runs out, Sai dies and his respawn time will be increased.'
+DOTA_Tooltip_ability_sai_release_of_forge_aghanim_description: Have a chance to survive after the ult and completely restores health.
 DOTA_Tooltip_ability_sai_release_of_forge_Lore: The sun's rays fade in front of the Lord of Darkness.
 DOTA_Tooltip_ability_sai_release_of_forge_duration: 'DURATION:'
 DOTA_Tooltip_ability_sai_release_of_forge_pure_damage_pct: '%ATTACK PURE DAMAGE:'
@@ -41,5 +42,6 @@ DOTA_Tooltip_ability_sai_release_of_forge_aura_vision_pct: '%VISION REDUCTION:'
 DOTA_Tooltip_ability_sai_release_of_forge_aura_cast_time_pct: '%ABILITY CAST TIME REDUCTION:'
 DOTA_Tooltip_ability_sai_release_of_forge_aura_turn_rate_pct: '%TURN RATE REDUCTION:'
 DOTA_Tooltip_ability_sai_release_of_forge_bonus_respawn_time_pct: 'BONUS RESPAWN TIME:'
+DOTA_Tooltip_ability_sai_release_of_forge_chance_to_live: '%CHANCE TO LIVE WITH SCEPTER:'
 DOTA_Tooltip_modifier_sai_release_of_forge_mass_debuff: Release of Forge
 DOTA_Tooltip_modifier_sai_release_of_forge_mass_debuff_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, viewing distance reduced by %dMODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE%%%, casting speed reduced by %MODIFIER_PROPERTY_CASTTIME_PERCENTAGE%%%, the rotation speed is reduced to %MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE%%%'.

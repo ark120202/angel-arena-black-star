@@ -29,6 +29,7 @@ DOTA_Tooltip_ability_sai_invulnerability_attack_speed_reduction: 'СНИЖ. СК
 DOTA_Tooltip_ability_sai_invulnerability_movement_speed_reduction_pct: '%СНИЖ. СКОР. ПЕРЕДВИЖ:'
 
 DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Герой становится бессмертным на некоторое время, его здоровье падает до единицы и не может восстановиться, часть его урона становится чистым, дальность атаки становится неограниченной, а все вражеские герои на карте замедляются на %aura_movement_speed_pct%%%, а их скорость поворота и время произношения заклинаний снижается. После окончания действия способности Сай погибнет, а время его воскрешения будет увеличено.'
+DOTA_Tooltip_ability_sai_release_of_forge_aghanim_description: С некоторым шансом выживает после ультимейта и полностью восстанавливает здоровье.
 DOTA_Tooltip_ability_sai_release_of_forge_Lore: Воздух тяжелеет...
 DOTA_Tooltip_ability_sai_release_of_forge_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_sai_release_of_forge_pure_damage_pct: '%ЧИСТЫЙ УРОН ОТ АТАК:'
@@ -37,4 +38,5 @@ DOTA_Tooltip_ability_sai_release_of_forge_aura_vision_pct: '%СНИЖЕНИЕ Р
 DOTA_Tooltip_ability_sai_release_of_forge_aura_cast_time_pct: '%СНИЖЕНИЕ СКОР. ПРОИЗНОШЕНИЯ ЗАКЛ.:'
 DOTA_Tooltip_ability_sai_release_of_forge_aura_turn_rate_pct: '%СНИЖЕНИЕ СКОРОСТИ ПОВОРОТА:'
 DOTA_Tooltip_ability_sai_release_of_forge_bonus_respawn_time_pct: 'ДОП. ВРЕМЯ ВОЗРОЖДЕНИЯ:'
+DOTA_Tooltip_ability_sai_release_of_forge_chance_to_live: '%ШАНС ВЫЖИТЬ СО СКИПЕТРОМ:'
 DOTA_Tooltip_modifier_sai_release_of_forge_mass_debuff_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, дальность обзора снижена на %dMODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE%%%, скорость каста снижена на %dMODIFIER_PROPERTY_CASTTIME_PERCENTAGE%%%, скорость поворота снижена на %dMODIFIER_PROPERTY_TURN_RATE_PERCENTAGE%%%.

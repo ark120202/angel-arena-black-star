@@ -195,6 +195,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_respawn_time_pct"	"30 35 40 45 50 55 60"
 			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance_to_live"		"20"
+			}
 		}
 
 		"precache"
