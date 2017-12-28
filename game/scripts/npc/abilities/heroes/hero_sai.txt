@@ -153,7 +153,7 @@
 		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilityCooldown"				"120 110 100 90 80 70 60"
+		"AbilityCooldown"				"120"
 		"MaxLevel" 						"7"
 		"AbilityManaCost"				"100 150 200 250 300 350 400"
 
