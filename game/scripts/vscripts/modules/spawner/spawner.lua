@@ -96,7 +96,7 @@ end
 CDOTA_BaseNPC_Creature.IsChampion = CDOTA_BaseNPC.IsChampion
 
 function Spawner:UpgradeCreep(unit, spawnerType, minutelevel, spawnerIndex)
-	local modelScale = 1 + (0.005 * minutelevel)
+	local modelScale = 1 + (0.004 * minutelevel)
 	if minutelevel > 1 then
 		unit:CreatureLevelUp(minutelevel - 1)
 	end
@@ -183,7 +183,7 @@ function Spawner:SpawnJungleStacks(entid, SpawnerType, sName)
 end
 
 function Spawner:UpgradeJungleCreep(unit, cycle, spawnerIndex)
-	local modelScale = 1 + (0.005 * cycle)
+	local modelScale = 1 + (0.0015 * cycle)
 	if cycle > 1 then
 		unit:CreatureLevelUp(cycle - 1)
 	end
