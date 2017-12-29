@@ -63,6 +63,8 @@ for _,v in pairs(modifiers) do
 	ModuleLinkLuaModifier(..., "modifier_talent_" .. v, "modifiers/modifier_talent_" .. v)
 end
 
+LinkLuaModifier("modifier_shinobu_devouring", "heroes/hero_shinobu/devouring.lua", LUA_MODIFIER_MOTION_NONE)
+
 function CustomTalents:Init()
 	CustomGameEventManager:RegisterListener("custom_talents_upgrade", function(_, keys)
 		local hero = PlayerResource:GetSelectedHeroEntity(keys.PlayerID)

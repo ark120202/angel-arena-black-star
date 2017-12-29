@@ -467,6 +467,24 @@ CUSTOM_TALENTS_DATA = {
 			talent_regeneration_pct = {17}
 		}
 	},
+	talent_hero_shinobu_devouring = {
+		icon = "talents/heroes/shinobu_devouring",
+		cost = 35,
+		group = 10,
+		max_level = 1,
+		requirement = "npc_arena_hero_shinobu",	
+		effect = {
+			modifiers = {
+				"modifier_shinobu_devouring"
+			},
+		},
+		special_values = {
+			damage_pct = {7.0},
+			duration = {2},
+			damage_to_heal_pct = {100},
+		}
+	},
+
 
 
 	--[[talent_hero_sara_evolution_bonus_health = {
