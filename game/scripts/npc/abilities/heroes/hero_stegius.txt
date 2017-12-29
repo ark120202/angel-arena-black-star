@@ -185,6 +185,15 @@
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
 				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movement_speed_pct"
 				}
+				"ThinkInterval"		"0.1"
+				"OnIntervalThink"
+				{
+						"RunScript"
+						{
+						"ScriptFile"	"heroes/hero_stegius/modifier_stegius_rage_of_desolus.lua"
+						"Function"		"BaseAttackTime"
+						}
+				}
 			}
 		}
 	}
@@ -339,7 +348,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_per_hit"		"-1 -2 -3"
+				"armor_per_hit"		"1 2 3"
 			}
 			"02"
 			{

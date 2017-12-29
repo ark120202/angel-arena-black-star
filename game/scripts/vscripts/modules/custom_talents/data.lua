@@ -515,6 +515,17 @@ CUSTOM_TALENTS_DATA = {
 			armor_per_hit_pct = {3}
 		}
 	},
+	talent_hero_stegius_rage_of_desolus = {
+		icon = "arena/stegius_rage_of_desolus",
+		cost = 20,
+		group = 9,
+		max_level = 1,
+		requirement = "stegius_rage_of_desolus",	
+		special_values = {
+			base_attack_time = {1.0}
+		}
+	},
+
 
 
 	--[[talent_hero_sara_evolution_bonus_health = {
