@@ -22,8 +22,8 @@ function modifier_shinobu_devouring:OnAttackLanded(keys)
 end
 
 modifier_shinobu_devouring_debuff = class({
-	IsHidden              = function() return true end,
-	IsPurgable            = function() return false end,
+	IsHidden   = function() return true end,
+	IsPurgable = function() return false end,
 })
 
 if IsServer() then
