@@ -525,6 +525,23 @@ CUSTOM_TALENTS_DATA = {
 			base_attack_time = {1.0}
 		}
 	},
+	talent_wisp_tether_aghanim_effect = {
+		icon = "talents/heroes/wisp_aghanim",
+		cost = 5,
+		group = 7,
+		requirement = "wisp_tether_aghanims",	
+	},
+	--[[talent_hero_stegius_brightness_of_desolate_bonus_health_decrease = {
+		icon = "arena/stegius_rage_of_desolus",
+		cost = 2,
+		group = 4,
+		max_level = 1,
+		requirement = "stegius_brightness_of_desolate",	
+		special_values = {
+			bonus_health_decrease = {5}
+		}
+	},]]--
+
 
 
 

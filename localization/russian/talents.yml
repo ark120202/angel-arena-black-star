@@ -86,3 +86,5 @@ custom_talents_talent_hero_stegius_desolating_touch: 'Истинное каса�
 custom_talents_talent_hero_stegius_desolating_touch_description: 'Desolating Touch за каждый удар снижает {%armor_per_hit_pct%} базовой брони цели. '
 custom_talents_talent_hero_stegius_rage_of_desolus: 'Ярость Дезолуса'
 custom_talents_talent_hero_stegius_rage_of_desolus_description: 'Базовое время атаки героя под действием способности "Rage Of Desolus" становится равным {base_attack_time}.'
+custom_talents_talent_wisp_tether_aghanim_effect: 'Tether дает эффект аганима'
+custom_talents_talent_wisp_tether_aghanim_effect_description: 'Герои, связанные с вами, получают эффект аганима.'

@@ -53,9 +53,11 @@ function CheckDistance( event )
 			if distance > event.radius then
 				v:RemoveModifierByName("modifier_tether_ally_aghanims")
 				v:RemoveModifierByName("modifier_overcharge_buff_aghanims")
+				v:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
 				if not ability.tether_allies or #ability.tether_allies <= 0 then
 					caster:RemoveModifierByName( event.caster_modifier )
 					caster:RemoveModifierByName("modifier_spirits_caster_aghanims")
+					caster:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
 				end
 			end
 
@@ -225,9 +227,13 @@ function EndTether( event )
 	for _,v in ipairs(ability.tether_allies) do
 		Timers:CreateTimer(0.03, function()
 			v:RemoveModifierByName( event.ally_modifier )
+			v:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
+			v:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
 		end)
 	end
 	caster:RemoveModifierByName("modifier_spirits_caster_aghanims")
+	caster:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
+	caster:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
 
 	ability.tether_allies = nil
 
@@ -241,10 +247,26 @@ function RemoveFromTable( keys )
 	if ability.tether_allies then
 		target:RemoveModifierByName("modifier_spirits_spirit_aghanims")
 		target:RemoveModifierByName("modifier_overcharge_buff_aghanims")
+		target:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
 		table.removeByValue(ability.tether_allies, target)
 		if #ability.tether_allies <= 0 then
 			caster:RemoveModifierByName( keys.caster_modifier )
 			caster:RemoveModifierByName("modifier_spirits_caster_aghanims")
+			caster:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
 		end
 	end
 end
+
+LinkLuaModifier("modifier_wisp_tether_aghanim_buff", "heroes/hero_wisp/modifier_tether_talent.lua", LUA_MODIFIER_MOTION_NONE)
+
+function BuffScepter(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local ability = keys.ability
+	local duration = ability:GetSpecialValueFor("tether_duration")
+
+	if caster:HasTalent("talent_wisp_tether_aghanim_effect") then
+		target:AddNewModifier(caster, ability, "modifier_wisp_tether_aghanim_buff", {duration = duration})
+	end
+end
+
