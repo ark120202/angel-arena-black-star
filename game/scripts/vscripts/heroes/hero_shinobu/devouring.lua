@@ -22,7 +22,7 @@ function modifier_shinobu_devouring:OnAttackLanded(keys)
 end
 
 modifier_shinobu_devouring_debuff = class({
-	IsHidden   = function() return true end,
+	IsHidden   = function() return false end,
 	IsPurgable = function() return false end,
 	GetTexture = function () return "talents/heroes/shinobu_devouring" end,
 })
