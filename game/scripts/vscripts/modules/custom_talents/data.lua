@@ -505,7 +505,16 @@ CUSTOM_TALENTS_DATA = {
 			creep_start_mult = {2}
 		}
 	},
-
+	talent_hero_stegius_desolating_touch = {
+		icon = "arena/stegius_desolating_touch",
+		cost = 20,
+		group = 9,
+		max_level = 1,
+		requirement = "stegius_desolating_touch",	
+		special_values = {
+			armor_per_hit_pct = {3}
+		}
+	},
 
 
 	--[[talent_hero_sara_evolution_bonus_health = {
