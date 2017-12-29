@@ -485,6 +485,17 @@ CUSTOM_TALENTS_DATA = {
 		}
 	},
 
+	talent_hero_shinobu_yumewatari_mult = {
+		icon = "arena/shinobu_yumewatari_lua",
+		cost = 2,
+		group = 1,
+		max_level = 1,
+		requirement = "shinobu_yumewatari_lua",	
+		special_values = {
+			creep_start_mult = {2}
+		}
+	},
+
 
 
 	--[[talent_hero_sara_evolution_bonus_health = {
