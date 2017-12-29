@@ -78,5 +78,7 @@ custom_talents_talent_hero_shinobu_hide_in_shadows_heal_from_allies: Лечен�
 custom_talents_talent_hero_shinobu_hide_in_shadows_heal_from_allies_description: 'За каждого героя, около которого находится Шинобу, восстанавливает здоровье, равное {%talent_regeneration_pct%} от их регенерации.'
 custom_talents_talent_hero_shinobu_devouring: Пожирание
 custom_talents_talent_hero_shinobu_devouring_description: 'Атаки накладывают кровотечение, которое наносит чистый урон в размере {%damage_pct%} от текущего здоровья и исцеляет Шинобу.'
+custom_talents_talent_hero_shinobu_kokorowatari: 'Kokorowatari действует на героев'
+custom_talents_talent_hero_shinobu_kokorowatari_description: 'При срабатывании шанса убийства крипа на герое, снижает максимальное здоровье и весь урон на {%decrease_pct%}.'
 custom_talents_talent_hero_shinobu_yumewatari_mult: 'Yumewatari x2'
 custom_talents_talent_hero_shinobu_yumewatari_mult_description: 'Характеристики воскрешенной души увеличиваются в {creep_start_mult} раз(а).'

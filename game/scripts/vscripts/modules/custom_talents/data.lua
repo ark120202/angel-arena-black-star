@@ -484,7 +484,17 @@ CUSTOM_TALENTS_DATA = {
 			damage_to_heal_pct = {100},
 		}
 	},
-
+	talent_hero_shinobu_kokorowatari = {
+		icon = "arena/shinobu_kokorowatari",
+		cost = 50,
+		group = 11,
+		max_level = 1,
+		requirement = "shinobu_kokorowatari",	
+		special_values = {
+			decrease_pct = {50},
+			duration = {4},
+		}
+	},
 	talent_hero_shinobu_yumewatari_mult = {
 		icon = "arena/shinobu_yumewatari_lua",
 		cost = 2,
