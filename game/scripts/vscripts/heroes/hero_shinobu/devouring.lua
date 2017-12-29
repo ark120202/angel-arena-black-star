@@ -24,6 +24,7 @@ end
 modifier_shinobu_devouring_debuff = class({
 	IsHidden   = function() return true end,
 	IsPurgable = function() return false end,
+	GetTexture = function () return "talents/heroes/shinobu_devouring" end,
 })
 
 if IsServer() then
