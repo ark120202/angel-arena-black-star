@@ -339,7 +339,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_per_hit"		"1 2 3"
+				"armor_per_hit"		"-1 -2 -3"
 			}
 			"02"
 			{
