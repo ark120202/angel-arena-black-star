@@ -5983,7 +5983,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"1500"
-		"AbilityCooldown"	"13"
+		"AbilityCooldown"	"12"
 		"AbilityManaCost"	"105 110 115 120 125 130 135"
 		"AbilitySpecial"
 		{
@@ -5992,24 +5992,31 @@
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"140"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"spread"	"353"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"range"	"1500"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"axe_damage"	"70 100 130 160 200 250 300"
+				"axe_damage"	"50 70 100 130 160 190 220"
 				"LinkedSpecialBonus"	"special_bonus_unique_beastmaster"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"						"15"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_amp"				"3 4 5 6 7 8 9"
 			}
 			"99"
 			{
