@@ -46,7 +46,7 @@ function modifier_item_scythe_of_sun:DeclareFunctions()
 		MODIFIER_PROPERTY_MANA_BONUS,
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_EVASION_CONSTANT,
 		MODIFIER_PROPERTY_CAST_RANGE_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
@@ -77,8 +77,8 @@ function modifier_item_scythe_of_sun:GetModifierConstantHealthRegen()
 	return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
 end
 
-function modifier_item_scythe_of_sun:GetModifierPercentageManaRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen_pct")
+function modifier_item_scythe_of_sun:GetModifierConstantManaRegen()
+	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
 
 function modifier_item_scythe_of_sun:GetModifierEvasion_Constant()
@@ -94,9 +94,10 @@ function modifier_item_scythe_of_sun:GetModifierSpellAmplify_Percentage()
 end
 
 
-modifier_item_scythe_of_sun_hex = class({})
-function modifier_item_scythe_of_sun_hex:IsDebuff() return true end
-function modifier_item_scythe_of_sun_hex:IsPurgable() return false end
+modifier_item_scythe_of_sun_hex = class({
+	IsDebuff      = function() return true end,
+	IsPurgable    = function() return false end,
+})
 
 function modifier_item_scythe_of_sun_hex:CheckState()
 	return {

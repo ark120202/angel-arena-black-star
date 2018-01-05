@@ -65,14 +65,17 @@
 						"Function"		"OnTakeDamage"
 					}
 				}
+			}
 
-				"OnDeath"
+			"modifier_boss_armor_no_invisibility"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Priority"			"MODIFIER_PRIORITY_HIGH"
+
+				"States"
 				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/bosses/boss_armor.lua"
-						"Function"		"OnBossDeath"
-					}
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_DISABLED"
 				}
 			}
 		}
@@ -84,6 +87,14 @@
 		"AbilityTextureName"			"windrunner_focusfire"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed"	"100"
+			}
+		}
 
 		"OnProjectileHitUnit"
 		{
@@ -130,6 +141,11 @@
 				"States"
 				{
 					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%bonus_attack_speed"
 				}
 			}
 		}

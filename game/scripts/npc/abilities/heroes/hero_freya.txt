@@ -17,9 +17,9 @@
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 
-		"AbilityCooldown"				"25"
+		"AbilityCooldown"				"20"
 
-		"AbilityDamage"					"600 800 1000 1200 1400 1600 2000"
+		"AbilityDamage"					"600 1000 1400 1800 2200 2600 3000"
 
 		"AbilityManaCost"				"100 150 200 250 300 350 400"
 		"AOERadius"						"%radius"
@@ -29,7 +29,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
+				"radius"				"350"
 			}
 			"02"
 			{
@@ -166,12 +166,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"2.5"
+				"duration"			"1.6"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_second_pct"		"5"
+				"damage_per_second_pct"		"10"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
@@ -298,7 +298,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_return_pct"	"70 75 80 95 90 105 110"
+				"damage_return_pct"	"100 105 110 115 120 125 130"
 				"CalculateSpellDamageTooltip" "0"
 			}
 			"02"
@@ -326,9 +326,9 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"arena/freya_frozen_strike"
 		"MaxLevel"						"7"
-		"AbilityCastPoint"				"0.6 0.6 0.6 0.6 0.6 0.5 0.4"
+		"AbilityCastPoint"				"0.6 0.5 0.4 0.3 0.2 0.1 0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCooldown"				"60.0 50.0 40.0 30.0 20.0 18.0 16.0"
+		"AbilityCooldown"				"60.0 50.0 40.0 30.0 20.0 15.0 10.0"
 		"AbilityManaCost"				"80 100 120 140 160 180 200"
 
 		"AbilitySpecial"
@@ -351,12 +351,12 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"knockback_range"	"300"
+				"knockback_range"	"150"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"knockback_duration"	"1.5"
+				"knockback_duration"	"1.0"
 			}
 		}
 

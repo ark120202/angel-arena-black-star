@@ -5,18 +5,18 @@ SPAWNER_CHAMPION_LEVELS = {
 		model_scale = 0.3,
 	},
 	[3] = {
-		chance = 4,
+		chance = 3,
 		minute = 8,
 		model_scale = 0.35,
 	},
 	[4] = {
-		chance = 4,
-		minute = 13,
+		chance = 2,
+		minute = 11,
 		model_scale = 0.4,
 	},
 	[5] = {
-		chance = 3,
-		minute = 20,
+		chance = 1,
+		minute = 14,
 		model_scale = 0.45,
 	}
 }
@@ -28,39 +28,39 @@ CHAMPIONS_BANNED_ABILITIES = {
 	doom_bringer_devour_arena = true,
 	shinobu_eat_oddity = true,
 	clinkz_death_pact = true,
-	item_hand_of_midas_arena = true,
+	enchantress_enchant = true,
 }
 
 CREEP_UPGRADE_FUNCTIONS = {
 			   --[[ goldbounty  hp          damage      attackspeed movespeed   armor       xpbounty    ]]--
 	easy = {
-		[0]     = { 5,          20,         1,          5,          0.8,        1.0,        18          },
-		[5]     = { 5,          20,         2,          1,          1,          0,          20          },
-		[10]    = { 5,          25,         3,          2,          1.0,        0.5,        25          },
-		[15]    = { 6,          35,         4,          2,          1.0,        0.5,        25          },
-		[20]    = { 8,          45,         5,          0.4,        1.3,        1.0,        70          },
-		[30]    = { 15,         85,         10,         0.45,       0.45,       1.0,        250         },
-		[40]    = { 20,         100,        15,         0.6,        0.5,        1.0,        350         },
-		[60]    = { 35,         120.5,      20,         0.5,        0.5,        0.5,        700         },
+		[0]     = { 2,          20,         1,          1,          0.8,        0,	        18          },
+		[5]     = { 2,          20,         1,          1,          1,          0,          20          },
+		[10]    = { 5,          25,         2,          2,          1.0,        0.5,        30          },
+		[15]    = { 4,          25,         3,          2,          1.0,        0.5,        40          },
+		[20]    = { 7,          30,         4,          0.4,        1.3,        0.5,        50          },
+		[30]    = { 11,         45,         6,          0.45,       0.45,       0.5,        90          },
+		[40]    = { 15,         60,         10,         0.6,        0.5,        0.5,        150         },
+		[60]    = { 20,         80.5,       15,         0.5,        0.5,        0.5,        300         },
 	},
 	medium = {
-		[0]     = { 3,          25,         2,          0,          2,          0,          5           },
-		[5]     = { 3,          30,         3,          0,          2,          0,          10          },
-		[10]    = { 3,          50,         5,          0.2,        2,          0.2,        15          },
-		[15]    = { 4,          60,         7,          0.3,        2,          0.3,        30          },
-		[20]    = { 6,          100,        7,          0.3,        2,          0.4,        40          },
-		[30]    = { 12,         200,        12,         0.4,        2,          0.5,        200         },
-		[40]    = { 20,         275,        15,         0.4,        2,          0.6,        300         },
-		[60]    = { 40,         350,        30,         0.5,        2,          0.8,        500         },
+		[0]     = { 2,          25,         2,          0,          2,          0,          4           },
+		[5]     = { 2,          30,         2,          0,          2,          0,          7           },
+		[10]    = { 2,          50,         3,          0.2,        2,          0.2,        9           },
+		[15]    = { 3,          60,         4,          0.3,        2,          0.2,        15          },
+		[20]    = { 4,          70,         5,          0.3,        2,          0.2,        30          },
+		[30]    = { 8,          90,         7,          0.4,        2,          0.3,        70          },
+		[40]    = { 11,         120,        10,         0.4,        2,          0.4,        130         },
+		[60]    = { 16,         200,        20,         0.5,        2,          0.4,        250         },
 	},
 	hard = {
-		[0]     = { 3,          55,         2.3,        0,          2,          0.1,        15          },
-		[10]    = { 4,          70,         6,          0.5,        2,          0.2,        20          },
-		[15]    = { 5,          100,        7,          0.5,        2,          0.3,        30          },
-		[20]    = { 7,          150,        8,          0.6,        2,          0.4,        50          },
-		[30]    = { 20,         250,        15,         0.7,        2,          0.5,        250         },
-		[40]    = { 30,         350,        20,         0.7,        2,          0.6,        350         },
-		[60]    = { 60,         500,        40,         0.8,        2,          0.7,        600         },
+		[0]     = { 2,          55,         2.3,        0,          2,          0.1,        10          },
+		[10]    = { 2,          70,         6,          0.5,        2,          0.1,        15          },
+		[15]    = { 3,          90,         7,          0.5,        2,          0.1,        25          },
+		[20]    = { 4,          120,        8,          0.6,        2,          0.2,        40          },
+		[30]    = { 8,          180,        11,         0.7,        2,          0.3,        80          },
+		[40]    = { 12,         230,        16,         0.7,        2,          0.4,        130         },
+		[60]    = { 25,         400,        25,         0.8,        2,          0.4,        200         },
 	},
 }
 
@@ -85,7 +85,7 @@ SPAWNER_SETTINGS = {
 		},
 	},
 	medium = {
-		SpawnedPerSpawn = 4,
+		SpawnedPerSpawn = 5,
 		MaxUnits = 40,
 		SpawnTypes = {
 			[0] ={
@@ -135,7 +135,7 @@ SPAWNER_SETTINGS = {
 		},
 	},
 	hard = {
-		SpawnedPerSpawn = 4,
+		SpawnedPerSpawn = 5,
 		MaxUnits = 40,
 		SpawnTypes = {
 			[0] ={
@@ -159,6 +159,23 @@ SPAWNER_SETTINGS = {
 					[60] = "models/heroes/centaur/centaur.vmdl",
 				}
 
+			},
+		},
+	},
+	jungle = {
+		SpawnedPerSpawn = 3,
+		SpawnTypes = {
+			[0] ={
+				{
+					[-1] = "npc_dota_neutral_jungle_variant1",
+					[0] = "models/heroes/lone_druid/spirit_bear.vmdl",
+					--[10] = "models/items/lone_druid/bear/dark_wood_bear_brown/dark_wood_bear_brown.vmdl",
+					--[20] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
+					[20] = "models/items/lone_druid/bear/dark_wood_bear/dark_wood_bear.vmdl",
+					--[40] = "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl",
+					[40] = "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl",
+					[60] = "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl",
+				}
 			},
 		},
 	},

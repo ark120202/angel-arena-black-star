@@ -4,7 +4,7 @@ function FireProjectile(keys)
 	local point = keys.target_points[1]
 	local count = 1
 	if caster:HasScepter() then
-		count = 18
+		count = 8
 	end
 	for i = 1, count do
 		local pos = point

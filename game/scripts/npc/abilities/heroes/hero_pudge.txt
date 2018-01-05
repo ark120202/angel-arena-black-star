@@ -13,7 +13,7 @@
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 		"AbilityCooldown"				"14.0 13.5 13.0 12.5 12.0 11.5 11.0"
-		"AbilityManaCost"				"120 150 180 220 240 280"
+		"AbilityManaCost"				"120 150 180 220 240 280 320"
 		"AbilityDamage"					"90 140 190 240 290 340 390"
 
 		// Precache

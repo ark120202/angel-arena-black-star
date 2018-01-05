@@ -1,6 +1,7 @@
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/keyframes.css" />
 		<include src="file://{resources}/styles/arena_setup.css" />
 		<include src="file://{resources}/styles/custom_loading_screen.css" />
 	</styles>
@@ -17,9 +18,10 @@
 		</snippet>
 		<snippet name="TopPlayer">
 			<Panel class="TopPlayer">
+				<Label id="PlayerPlace" text="{s:place}"/>
 				<DOTAAvatarImage id="PlayerAvatar" />
 				<DOTAUserName id="PlayerName" />
-				<Label id="PlayerRating" text="{d:rating}"/>
+				<Label id="PlayerRating" text="{s:rating}"/>
 			</Panel>
 		</snippet>
 	</snippets>
@@ -109,6 +111,10 @@
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_saitama.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_saitama.png" />
 
+			<Image src="file://{images}/heroes/npc_arena_hero_doppelganger.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_doppelganger.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_doppelganger.png" />
+
 			<!-- <Image src="file://{images}/heroes/npc_arena_hero_maka.png" />
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_maka.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_maka.png" /> -->
@@ -120,16 +126,19 @@
 			<Image src="file://{images}/custom_game/units/npc_arena_boss_l2_v2.png" />
 		</Panel>
 		<Panel id="loading_base">
-			<Image id="loading-aabs" src="file://{images}/custom_game/loading_screen/Angel Arena Black Star.png" />
-			<Image id="loading-au" src="file://{images}/custom_game/loading_screen/Anniversary Update.png" />
-			<Image id="loading-heroes" src="file://{images}/custom_game/loading_screen/Heroes.png" />
-			<Image id="loading-shrine" src="file://{images}/custom_game/loading_screen/Shrine.png" />
-			<Image id="loading-ratings" src="file://{images}/custom_game/loading_screen/volvo-1.png" />
-			<Image id="loading-alastor" src="file://{images}/custom_game/loading_screen/alastor.png" />
-			<Image id="loading-l2" src="file://{images}/custom_game/loading_screen/l2.png" />
+			<Panel id="loading-angel-arena">
+				<Image id="loading-angel" src="file://{images}/custom_game/loading_screen/angel.png" />
+				<Image id="loading-arena" src="file://{images}/custom_game/loading_screen/arena.png" />
+			</Panel>
+			<Panel id="loading-black-star">
+				<Image id="loading-black" src="file://{images}/custom_game/loading_screen/black.png" />
+				<Image id="loading-star" src="file://{images}/custom_game/loading_screen/star.png" />
+			</Panel>
+			<Image id="loading-author" src="file://{images}/custom_game/loading_screen/author.png" />
 		</Panel>
 
 		<Panel id="TipsPanel" hittest="true" onactivate="NextTip()">
+			<Panel id="TipSaitama" />
 			<Label id="TipLabel" />
 		</Panel>
 		<Panel id="afterload_panel" hittest="true">

@@ -122,6 +122,7 @@
 							<Label id="SelectedHeroUnlockLabel" text="#hero_selection_unlock" />
 							<Label id="SelectedHeroBanLabel" text="#DOTA_Hero_Selection_BanTitle" />
 							<Label id="SelectedHeroSelectHeroName" />
+							<Label id="SelectedHeroDisabledReason" />
 							<Panel id="SelectedHeroLinkedHeroPanel" >
 								<Label id="SelectedHeroLinkedLabel" text="#hero_selection_linked_hero" />
 								<Label id="SelectedHeroLinkedHero" />
@@ -281,6 +282,7 @@
 				<Panel id="MinimapPanel" class="">
 					<Image class="MinimapImage only_map_landscape_5v5" src="file://{images}/custom_game/hero_selection/5v5.tga" />
 					<Image class="MinimapImage only_map_landscape_4v4v4v4" id="MinimapImage4v4v4v4" src="file://{images}/custom_game/hero_selection/4v4v4v4.tga" />
+					<Image class="MinimapImage only_map_landscape_war3" src="file://{images}/custom_game/hero_selection/war3.tga" />
 
 					<Panel id="MinimapDynamicIcons" />
 					<Panel class="MinimapSpawnBoxes only_map_landscape_5v5">
@@ -352,6 +354,26 @@
 							<!-- hard -->
 								<Panel id="MinimapSpawnBox_7_3_0" onactivate="OnMinimapClickSpawnBox(7, 3, 0)" class="MinimapSpawnBox" style="position: 117px 68px 0;"/>
 								<Panel id="MinimapSpawnBox_7_3_1" onactivate="OnMinimapClickSpawnBox(7, 3, 1)" class="MinimapSpawnBox" style="position: 203px 68px 0;"/>
+					</Panel>
+					<Panel class="MinimapSpawnBoxes only_map_landscape_war3">
+						<!-- Radiant -->
+							<!-- easy -->
+								<Panel id="MinimapSpawnBox_2_1_0" onactivate="OnMinimapClickSpawnBox(2, 1, 0)" class="MinimapSpawnBox" style="position: 78px 160px 0;"/>
+							<!-- medium -->
+								<Panel id="MinimapSpawnBox_2_2_0" onactivate="OnMinimapClickSpawnBox(2, 2, 0)" class="MinimapSpawnBox" style="position: 83px 112px 0;"/>
+								<Panel id="MinimapSpawnBox_2_2_1" onactivate="OnMinimapClickSpawnBox(2, 2, 1)" class="MinimapSpawnBox" style="position: 85px 210px 0;"/>
+							<!-- hard -->
+								<Panel id="MinimapSpawnBox_2_3_0" onactivate="OnMinimapClickSpawnBox(2, 3, 0)" class="MinimapSpawnBox" style="position: 138px 209px 0;"/>
+								<Panel id="MinimapSpawnBox_2_3_1" onactivate="OnMinimapClickSpawnBox(2, 3, 1)" class="MinimapSpawnBox" style="position: 138px 108px 0;"/>
+						<!-- Dire -->
+							<!-- easy -->
+								<Panel id="MinimapSpawnBox_3_1_0" onactivate="OnMinimapClickSpawnBox(3, 1, 0)" class="MinimapSpawnBox" style="position: 253px 160px 0;"/>
+							<!-- medium -->
+								<Panel id="MinimapSpawnBox_3_2_0" onactivate="OnMinimapClickSpawnBox(3, 2, 0)" class="MinimapSpawnBox" style="position: 243px 114px 0;"/>
+								<Panel id="MinimapSpawnBox_3_2_1" onactivate="OnMinimapClickSpawnBox(3, 2, 1)" class="MinimapSpawnBox" style="position: 242px 206px 0;"/>
+							<!-- hard -->
+								<Panel id="MinimapSpawnBox_3_3_0" onactivate="OnMinimapClickSpawnBox(3, 3, 0)" class="MinimapSpawnBox" style="position: 193px 208px 0;"/>
+								<Panel id="MinimapSpawnBox_3_3_1" onactivate="OnMinimapClickSpawnBox(3, 3, 1)" class="MinimapSpawnBox" style="position: 193px 108px 0;"/>
 					</Panel>
 				</Panel>
 				<!--  ExternalBrowserGoToURL  BrowserGoToURL = DOTADisplayURL -->

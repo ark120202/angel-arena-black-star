@@ -1,5 +1,5 @@
 CUSTOM_STARTING_GOLD = 625
-CUSTOM_GOLD_FOR_RANDOM_TOTAL = 1000
+CUSTOM_GOLD_FOR_RANDOM_TOTAL = 800
 ADS_CLICKED_BONUS_GOLD = 25
 CUSTOM_GOLD_REPICK_COST = 200
 
@@ -84,6 +84,8 @@ function HeroSelection:PrepareTables()
 				heroData.abilities = HeroSelection:ParseAbilitiesFromTable(heroTable)
 				heroData.isChanged = heroTable.Changed == 1 and tabIndex == 1
 				heroData.linkedColorGroup = heroTable.LinkedColorGroup
+				heroData.DisabledInRanked = heroTable.DisabledInRanked == 1
+				heroData.Unreleased = heroTable.Unreleased == 1
 
 				if heroTable.LinkedHero then
 					heroData.linked_heroes = string.split(heroTable.LinkedHero, " | ")
@@ -104,7 +106,9 @@ function HeroSelection:PrepareTables()
 	end
 	for _,tab in pairs(data.HeroTabs) do
 		for _,name in ipairs(tab) do
-			if heroesData[name] and not heroesData[name].linked_heroes then
+			if heroesData[name] and
+				not heroesData[name].linked_heroes and
+				not HeroSelection:IsHeroUnreleased(name) then
 				table.insert(HeroSelection.RandomableHeroes, name)
 			end
 		end

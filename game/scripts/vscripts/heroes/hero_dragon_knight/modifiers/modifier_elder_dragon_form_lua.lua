@@ -86,12 +86,10 @@ function modifier_elder_dragon_form_lua:OnAttackLanded(keys)
 				ability = ability
 			}
 			if not attacker:IsIllusion() then
-				for i,v in ipairs(FindUnitsInRadius(attacker:GetTeam(), target:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("splash_radius", self.level), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)) do
+				for i,v in ipairs(FindUnitsInRadius(attacker:GetTeam(), target:GetAbsOrigin(), nil, ability:GetLevelSpecialValueFor("splash_radius", self.level), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)) do
 					if v ~= target then
-						Timers:CreateTimer(0.03 * i, function()
-							dmgTable.victim = v
-							ApplyDamage(dmgTable)
-						end)
+						dmgTable.victim = v
+						ApplyDamage(dmgTable)
 					end
 				end
 			end
@@ -166,7 +164,7 @@ function modifier_elder_dragon_form_lua:OnAttackLanded(keys)
 	end
 end
 
-function modifier_elder_dragon_form_lua:IsHidden() 
+function modifier_elder_dragon_form_lua:IsHidden()
 	return false
 end
 

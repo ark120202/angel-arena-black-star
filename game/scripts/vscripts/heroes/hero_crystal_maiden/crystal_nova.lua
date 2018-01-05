@@ -16,7 +16,7 @@ function crystal_nova( keys )
 		modelDummy:SetHullRadius(hullRadius)
 		modelDummy:SetAbsOrigin(GetGroundPosition(p, modelDummy))
 		modelDummy:SetForwardVector(point - p)
-		for _,v in ipairs(FindUnitsInRadius(caster:GetTeamNumber(), modelDummy:GetAbsOrigin(), nil, hullRadius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)) do
+		for _,v in ipairs(FindUnitsInRadius(caster:GetTeamNumber(), modelDummy:GetAbsOrigin(), nil, hullRadius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)) do
 			FindClearSpaceForUnit(v, v:GetAbsOrigin(), true)
 		end
 		Timers:CreateTimer(ability:GetLevelSpecialValueFor( "block_duration", ability:GetLevel() - 1), function()

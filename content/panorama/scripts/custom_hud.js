@@ -1,5 +1,5 @@
 var ONCLICK_PURGABLE_MODIFIERS = [
-	'modifier_rubick_personality_steal',
+	'modifier_doppelganger_mimic',
 	'modifier_tether_ally_aghanims'
 ];
 var CustomChatLinesPanel,
@@ -78,7 +78,7 @@ function UpdatePanoramaHUD() {
 				if (GameUI.IsAltDown()) {
 					var unit = Players.GetLocalPlayerPortraitUnit();
 					GameEvents.SendCustomGameEventToServer('custom_chat_send_message', {
-						ability: Entities.GetAbility(unit, index)
+						ability: GetVisibleAbilityInSlot(unit, index)
 					});
 				}
 			});
@@ -126,8 +126,6 @@ function HookPanoramaPanels() {
 	FindDotaHudElement('combat_events').visible = false;
 	FindDotaHudElement('ChatEmoticonButton').visible = false;
 	FindDotaHudElement('StatBranchDrawer').visible = false;
-	FindDotaHudElement('CourierHasteButton').visible = false;
-	FindDotaHudElement('CourierUpgradeButton').visible = false;
 	FindDotaHudElement('topbar').visible = false;
 	FindDotaHudElement('DeliverItemsButton').style.horizontalAlign = 'right';
 	FindDotaHudElement('LevelLabel').style.width = '100%';

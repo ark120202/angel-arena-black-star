@@ -214,7 +214,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"armor_decrease"				"-3 -9 -15"
+				"armor_decrease"				"-4 -8 -12"
 			}
 			"03"
 			{
@@ -224,12 +224,12 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage_from_hero"		"20 55 90"
+				"bonus_damage_from_hero"		"20 40 60"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage_duration"			"20 55 90"
+				"bonus_damage_duration"			"20 50 80"
 			}
 			"06"
 			{
@@ -239,7 +239,7 @@
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"stolen_armor"					"1 2 3"
+				"stolen_armor"					"1"
 			}
 		}
 
@@ -339,12 +339,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_per_hit"		"-1 -2 -3"
+				"armor_per_hit"		"1 2 3"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"boss_armor_reduction_chance_pct"	"15 20 25"
+				"boss_armor_reduction_chance_pct"	"5 10 15"
 			}
 			"03"
 			{
@@ -373,7 +373,7 @@
 			"modifier_stegius_desolating_touch_debuff"
 			{
 				"IsDebuff"			"1"
-				"IsPurgable"		"0"
+				"IsPurgable"		"1"
 				"Duration"			"%duration"
 
 				"Properties"

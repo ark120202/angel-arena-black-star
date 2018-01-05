@@ -20,6 +20,7 @@ function AddStat(keys)
 		caster.Additional_int = (caster.Additional_int or 0) + int
 	end
 end
+
 function AddAttackspeedModifier(keys)
 	local caster = keys.caster
 	if not caster:IsTrueHero() then
@@ -36,12 +37,13 @@ function AddAttackspeedModifier(keys)
 	caster.Additional_attackspeed = mod:GetStackCount()
 end
 
-function AddLevel(keys)
-	local caster = keys.caster
-	local level = caster:GetLevel()
-	if not caster:IsTrueHero() or not XP_PER_LEVEL_TABLE[level + 1] then
-		return
-	end
+function AddLevels(keys)
 	local ability = keys.ability
-	caster:AddExperience(XP_PER_LEVEL_TABLE[level + 1] - XP_PER_LEVEL_TABLE[level], 0, false, false)
+	local caster = keys.caster
+	if not caster:IsTrueHero() then return end
+
+	local level = caster:GetLevel()
+	local newLevel = math.min(level + keys.amount, #XP_PER_LEVEL_TABLE)
+
+	caster:AddExperience(XP_PER_LEVEL_TABLE[newLevel] - XP_PER_LEVEL_TABLE[level], 0, false, false)
 end

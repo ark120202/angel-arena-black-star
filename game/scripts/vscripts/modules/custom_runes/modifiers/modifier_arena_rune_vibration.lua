@@ -23,7 +23,7 @@ if IsServer() then
 
 	function modifier_arena_rune_vibration:OnIntervalThink()
 		local parent = self:GetParent()
-		CreateExplosion(parent:GetAbsOrigin(), self.minRadius, self.fullRadius, self.minForce, self.fullForce, parent:GetTeamNumber(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_DAMAGE_FLAG_NONE)
+		CreateExplosion(parent:GetAbsOrigin(), self.minRadius, self.fullRadius, self.minForce, self.fullForce, parent:GetTeamNumber(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE)
 		ParticleManager:CreateParticle("particles/arena/generic_gameplay/rune_vibration_owner_wave.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
 	end
 end

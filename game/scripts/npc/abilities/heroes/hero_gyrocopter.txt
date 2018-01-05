@@ -12,15 +12,10 @@
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 
-		"precache"
-		{
-			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_rocket_barrage.vpcf"
-			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
-		}
 		"AbilityCastRange"				"400"
-		"AbilityCooldown"				"0.5"
-		"AbilityDamage"					"8 13 18 23 28 34 50"
-		"AbilityManaCost"				"2.0 2.25 2.5 2.75 3.0 3.25 3.5" // %mana_per_second * %interval
+		"AbilityCooldown"				"1.0"
+		"AbilityDamage"					"4 8 11 15 19 25 30"
+		"AbilityManaCost"				"3.0 3.25 3.5 3.75 4.0 4.25 4.5" // %mana_per_second * %interval
 
 		"AbilitySpecial"
 		{
@@ -44,6 +39,12 @@
 				"var_type"					"FIELD_FLOAT"
 				"interval"					"0.1"
 			}
+		}
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_rocket_barrage.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
 		}
 
 		"OnToggleOn"
@@ -129,34 +130,12 @@
 		"AbilityTextureName"			"gyrocopter_homing_missile"
 		"MaxLevel"						"7"
 
-		"precache"
-		{
-			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_target.vpcf"
-			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_death.vpcf"
-			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
-			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_homing_missile_fuse.vpcf"
-			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
-		}
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1050"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20 19 18 17 15 13 11"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"120 130 140 150 160 170 180"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"125 250 375 500 625 750 875"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -219,6 +198,15 @@
 				"var_type"					"FIELD_INTEGER"
 				"explosion_radius"			"350"
 			}
+		}
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_target.vpcf"
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_death.vpcf"
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_homing_missile_fuse.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
 		}
 
 		"OnSpellStart"
@@ -291,8 +279,6 @@
 
 	"gyrocopter_flak_cannon_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
@@ -303,26 +289,10 @@
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 
-		"precache"
-		{
-			"particle"		"particles/units/heroes/hero_techies/techies_suicide_base.vpcf"
-			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
-		}
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"20"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -355,6 +325,12 @@
 				"var_type"						"FIELD_INTEGER"
 				"scepter_radius_scepter"				"600"
 			}
+		}
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_techies/techies_suicide_base.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
 		}
 
 		"OnSpellStart"
@@ -428,31 +404,11 @@
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 
-		"precache"
-		{
-			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_calldown_marker.vpcf"
-			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_call_down_explosion_impact_b.vpcf"
-			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_calldown_explosion_flash_c.vpcf"
-			"particle"		"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_first.vpcf"
-			"particle"		"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_second.vpcf"
-			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
-		}
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.25 0.2"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"50"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"125"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -500,6 +456,16 @@
 				"var_type"					"FIELD_FLOAT"
 				"vision_duration"			"4.0"
 			}
+		}
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_calldown_marker.vpcf"
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_call_down_explosion_impact_b.vpcf"
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_calldown_explosion_flash_c.vpcf"
+			"particle"		"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_first.vpcf"
+			"particle"		"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_second.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
 		}
 
 		"OnSpellStart"

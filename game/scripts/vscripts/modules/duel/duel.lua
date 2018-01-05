@@ -77,7 +77,7 @@ function Duel:StartDuel()
 		for _,unit in pairs(v) do
 			local pid = unit:GetPlayerOwnerID()
 			if not unit:IsAlive() then
-				unit:RespawnHero(false, false, false)
+				unit:RespawnHero(false, false)
 			end
 			if PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 				heroes_in_teams[i] = (heroes_in_teams[i] or 0) + 1
@@ -93,6 +93,9 @@ function Duel:StartDuel()
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
 		local rndtbl = {}
 		table.merge(rndtbl, Duel.heroes_teams_for_duel)
+
+		RemoveAllUnitsByName("npc_dota_pugna_nether_ward_%d")
+
 		for i,v in pairs(rndtbl) do
 			if #v > 0 then
 				table.shuffle(v)
@@ -104,8 +107,7 @@ function Duel:StartDuel()
 						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
 							unit.OnDuel = true
 							Duel:FillPreduelUnitData(unit)
-							local health = unit:GetMaxHealth()
-							unit:SetHealth(unit:HasAbility("shinobu_vampire_blood") and health * 0.5 or health)
+							unit:SetHealth(unit:GetMaxHealth())
 							unit:SetMana(unit:GetMaxMana())
 							count = count + 1
 						end
@@ -132,9 +134,11 @@ function Duel:StartDuel()
 						unit.PocketItem = nil
 					end
 					if _unit.OnDuel then
+						unit.OnDuel = true
 						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 						ProjectileManager:ProjectileDodge(unit)
 						unit:FindClearSpaceForUnitAndSetCamera(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
+						unit:AddNewModifier(unit, nil, "modifier_magic_immune", {duration = DUEL_SETTINGS.MagicImmunityDuration})
 					elseif unit:IsAlive() then
 						Duel:SetUpVisitor(unit)
 					end
@@ -228,6 +232,9 @@ function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
 		end
 	end
 	Events:Emit("Duel/end")
+
+	RemoveAllUnitsByName("npc_dota_pugna_nether_ward_%d")
+
 	if timeUpdate then
 		local delay = table.nearestOrLowerKey(DUEL_SETTINGS.DelaysFromLast, GetDOTATimeInMinutesFull())
 		Timers:CreateTimer(2, function()

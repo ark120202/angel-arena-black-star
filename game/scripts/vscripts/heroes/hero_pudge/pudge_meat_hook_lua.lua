@@ -306,7 +306,7 @@ modifier_meat_hook_lua = class({
 if IsServer() then
 	function modifier_meat_hook_lua:OnCreated(kv)
 		self.Projectile = self:GetAbility().projectile
-		if self:ApplyHorizontalMotionController() == false then
+		if not self:ApplyHorizontalMotionController() then
 			self:Destroy()
 		end
 	end
@@ -319,7 +319,6 @@ if IsServer() then
 			end
 		end
 	end
-
 
 	function modifier_meat_hook_lua:UpdateHorizontalMotion(me, dt)
 		local abs = self.Projectile:GetPosition()

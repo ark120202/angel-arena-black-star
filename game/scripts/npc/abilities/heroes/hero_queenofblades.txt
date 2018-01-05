@@ -114,7 +114,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_mult"					"250"
+				"crit_mult"					"225"
 			}
 			"02"
 			{
@@ -129,12 +129,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"debuff_vision_reduction"	"-200 -250 -300 -350 -400 -450 -500"
+				"debuff_vision_reduction"	"-200 -300 -400 -500 -600 -700 -800"
 			}
 			"05"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"debuff_movespeed_slow_pct"	"-18 -21 -24 -27 -30 -33 -36"
+				"var_type"					"FIELD_FLOAT"
+				"debuff_movespeed_slow_pct"	"-10.0 -12.5 -15.0 -17.5 -20.0 -22.5 -25.0"
 			}
 
 		}
@@ -247,7 +247,7 @@
 			"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_end.vpcf"
 		}
 
-		"AbilityCastRange"				"900"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"90"
@@ -259,7 +259,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.5 0.75 1.0 1.25 1.5 1.75 2.25"
+				"stun_duration"			"0.5 0.75 1.0 1.25 1.5 1.75 2.0"
 			}
 			"02"
 			{
@@ -274,7 +274,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_range"			"1000"
+				"tooltip_range"			"600"
 			}
 		}
 
@@ -353,12 +353,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage"		"80 100 120 150 175 200 250"
+				"attack_damage"		"80 100 120 150 175 200 225"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_scepter"	"180 250 320 400 460 500 540"
+				"attack_damage_scepter"	"125 200 275 350 425 500 575"
 			}
 			"03"
 			{
@@ -368,12 +368,12 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"hp_scepter"		"2000 2500 2900 3400 3800 4300 5000"
+				"hp_scepter"		"1500 3000 4500 6000 7500 9000 10500"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor"				"4 8 12 16 20 25 30"
+				"armor"				"4 8 12 16 20 24 28"
 			}
 			"06"
 			{
@@ -388,12 +388,12 @@
 			"08"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"30 35 40 45 50 55 60"
+				"duration"			"60"
 			}
 			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"tooltip_soul_breaker_damage_scepter"		"500 900 1400 1800 2200 2600 3000"
+				"tooltip_soul_breaker_damage_scepter"		"1000 1500 2000 2500 3000 3500 4000"
 			}
 		}
 
@@ -434,7 +434,7 @@
 		"AbilityTextureName"			"arena/queenofblades_alter_ego_chains"
 
 		"AbilityCastPoint"				"0.65 0.65 0.65 0.65 0.65 0.55 0.45"
-		"AbilityCooldown"				"18"
+		"AbilityCooldown"				"10"
 		"AbilityCastRange"				"800"
 		"MaxLevel" 						"7"
 
@@ -539,7 +539,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attackspeed"	"50 80 110 150 180 220 300"
+				"bonus_attackspeed"	"50 70 90 110 130 150 170"
 			}
 			"02"
 			{
@@ -549,7 +549,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"10"
+				"duration"			"20"
 			}
 		}
 
@@ -610,9 +610,9 @@
 			"particle"			"particles/arena/units/heroes/hero_queenofblades/alter_ego_soul_breaker.vpcf"
 		}
 
-		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.3"
-		"AbilityDamage"					"1000 1300 1600 1900 2200 2500 2800"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.1"
+		"AbilityDamage"					"1000 1500 2000 2500 3000 3500 4000"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

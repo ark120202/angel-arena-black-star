@@ -1,7 +1,7 @@
-local FOUNTAIN_EFFECTIVE_TIME_THRESHOLD = 2700
+local FOUNTAIN_EFFECTIVE_TIME_THRESHOLD = 2100
 
-local FOUNTAIN_PERCENTAGE_MANA_REGEN = 20
-local FOUNTAIN_PERCENTAGE_HEALTH_REGEN = 20
+local FOUNTAIN_PERCENTAGE_MANA_REGEN = 15
+local FOUNTAIN_PERCENTAGE_HEALTH_REGEN = 15
 
 modifier_fountain_aura_arena = class({
 	IsPurgable =                          function() return false end,

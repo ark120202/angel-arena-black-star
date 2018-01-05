@@ -24,7 +24,7 @@ DOTA_Tooltip_ability_shinobu_vampire_blood_Description: |-
   ~СКОРОСТЬ АТАКИ: %bonus_attack_speed_lvl4%
   ~СКОРОСТЬ ПЕРЕДВИЖЕНИЯ: %bonus_move_speed_lvl4%
 DOTA_Tooltip_ability_shinobu_vampire_blood_Lore: Вампирская кровь имеет свои недостатки, но преимуществ гораздо больше.
-DOTA_Tooltip_ability_shinobu_vampire_blood_Note0: Shinobu воскресает и попадает на дуэли с 50% здоровья
+DOTA_Tooltip_ability_shinobu_vampire_blood_Note0: Shinobu воскресает с 50% здоровья
 DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl1: Vampire Blood - Уровень 1
 DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl1_Description: |-
   +%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% к скорости атаки

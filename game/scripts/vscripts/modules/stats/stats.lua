@@ -8,12 +8,6 @@ function StatsClient:Init()
 	CustomGameEventManager:RegisterListener("stats_client_vote_guide", Dynamic_Wrap(StatsClient, "VoteGuide"))
 end
 
-function StatsClient:FetchTopPlayers()
-	StatsClient:Send("fetchTopPlayers", nil, function(response)
-		PlayerTables:CreateTable("loading_top_players", response, AllPlayersInterval)
-	end, nil, "GET")
-end
-
 function StatsClient:FetchPreGameData()
 	local data = {
 		matchid = tostring(GameRules:GetMatchID()),
@@ -59,7 +53,6 @@ function StatsClient:OnGameEnd(winner)
 		StatsClient.GameEndScheduled = true
 		local time = GameRules:GetDOTATime(false, true)
 		local matchID = tostring(GameRules:GetMatchID())
-		local debug = true
 		if (GameRules:IsCheatMode() and not StatsClient.Debug) or time < 0 then
 			return
 		end

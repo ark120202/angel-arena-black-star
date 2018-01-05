@@ -1,4 +1,3 @@
-if IsClient() then require("utils/shared") end
 LinkLuaModifier("modifier_item_radiance_lua", "items/item_radiance.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_radiance_lua_effect", "items/item_radiance.lua", LUA_MODIFIER_MOTION_NONE)
 
@@ -142,7 +141,6 @@ if IsServer() then
 			attacker = self:GetCaster(),
 			damage = self:GetAbility():GetSpecialValueFor("aura_damage_per_second") * self.interval_think,
 			damage_type = DAMAGE_TYPE_MAGICAL,
-			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 			ability = self:GetAbility()
 		})
 	end

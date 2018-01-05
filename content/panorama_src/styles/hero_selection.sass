@@ -259,7 +259,7 @@ $gameModeInfoPanelWidth: 200px;
 
 
 .LocalHeroUnlockButton
-	sound: "ui.pick_play"
+	sound: 'ui.pick_play'
 
 	#SelectedHeroSelectLabel
 		visibility: collapse
@@ -287,6 +287,12 @@ $gameModeInfoPanelWidth: 200px;
 
 	.HoveredHeroHasLinked &
 		visibility: visible
+
+#SelectedHeroDisabledReason
+	margin-top: 24px
+	font-size: 18px
+	color: #ddd
+	align: center top
 
 #ExitButton
 	width: 38.75px
@@ -541,6 +547,12 @@ $gameModeInfoPanelWidth: 200px;
 	visibility: collapse
 
 	.map_landscape_5v5 &
+		visibility: visible
+
+.only_map_landscape_war3
+	visibility: collapse
+
+	.map_landscape_war3 &
 		visibility: visible
 
 #SelectionChatBox

@@ -11,8 +11,6 @@
 	<snippets>
 		<snippet name="Team">
 			<Button class="TeamSelectTeam" >
-				<Panel id="TeamBackgroundGradient" />
-				<Panel id="TeamBackgroundGradientHighlight" />
 				<Panel id="TeamGroup" >
 					<Panel id="TeamHeader">
 						<!-- <Panel id="TeamLogo" /> -->
@@ -34,10 +32,7 @@
 		</snippet>
 	</snippets>
 	<Panel hittest="false" class="TeamSelect">
-		<Panel hittest="false" id="GCColumn" />
-		<Panel hittest="false" id="TeamSelectionColumn" >
-			<Panel id="TeamList" />
-		</Panel>
+		<Panel id="TeamList" />
 		<Panel hittest="false" id="SettingsColumn" >
 			<Panel id="UnassignedPlayerPanel" >
 				<Button id="UnassignedPlayersButton" onactivate="Game.PlayerJoinTeam(DOTATeam_t.DOTA_TEAM_NOTEAM)">
@@ -47,7 +42,7 @@
 					<Panel id="UnassignedPlayersDivider" />
 					<Panel id="UnassignedPlayersContainer" />
 				</Button>
-			
+
 				<Button id="AutoAssignButton" onactivate="OnAutoAssignPressed()">
 					<Image src="s2r://panorama/images/control_icons/double_arrow_left_png.vtex" />
 					<Label text="#custom_game_team_select_auto_assign" />

@@ -9,7 +9,7 @@ DOTA_Tooltip_ability_zaken_stitching_strikes: Stitching Strikes
 DOTA_Tooltip_ability_zaken_stitching_strikes_Description: 'Zaken rushes his blades towards target unit, perventing it from moving and dealing it damage within %duration% seconds.'
 DOTA_Tooltip_ability_zaken_stitching_strikes_Lore: 'In addition to mastery in fencing, Zaken also masterfully throws knives.'
 DOTA_Tooltip_ability_zaken_stitching_strikes_duration: 'DURATION:'
-DOTA_Tooltip_ability_zaken_stitching_strikes_max_helath_damage_pct: '%MAX HELATH DAMAGE:'
+DOTA_Tooltip_ability_zaken_stitching_strikes_max_health_damage_pct: '%MAX HEALTH DAMAGE:'
 DOTA_Tooltip_modifier_zaken_stitching_strikes: Stitching Strikes
 DOTA_Tooltip_modifier_zaken_stitching_strikes_Description: Recieves damage over time. Can't move or blink
 

@@ -47,7 +47,7 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"10155"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"5000"
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_radiance_frozen"
 		"ItemRequirements"
@@ -81,8 +81,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_damage_per_second"	"50 120 225"
-				"CalculateSpellDamageTooltip"	"0"
+				"aura_damage_per_second"	"60 120 225"
 			}
 			"03"
 			{
@@ -92,17 +91,17 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"move_speed_slow_pct"		"-10 -15 -20"
+				"move_speed_slow_pct"		"-5 -10 -15"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed_slow"			"-20 -40 -60"
+				"attack_speed_slow"			"-20 -50 -80"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_radius"				"650 700 750"
+				"aura_radius"				"700 725 750"
 			}
 		}
 	}
@@ -132,8 +131,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_damage_per_second"	"50 120 225"
-				"CalculateSpellDamageTooltip"	"0"
+				"aura_damage_per_second"	"60 120 225"
 			}
 			"03"
 			{
@@ -143,17 +141,17 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"move_speed_slow_pct"		"-10 -15 -20"
+				"move_speed_slow_pct"		"-5 -10 -15"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed_slow"			"-20 -40 -60"
+				"attack_speed_slow"			"-20 -50 -80"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_radius"				"650 700 750"
+				"aura_radius"				"700 725 750"
 			}
 		}
 	}
@@ -183,8 +181,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_damage_per_second"	"50 120 225"
-				"CalculateSpellDamageTooltip"	"0"
+				"aura_damage_per_second"	"60 120 225"
 			}
 			"03"
 			{
@@ -194,17 +191,17 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"move_speed_slow_pct"		"-10 -15 -20"
+				"move_speed_slow_pct"		"-5 -10 -15"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed_slow"			"-20 -40 -60"
+				"attack_speed_slow"			"-20 -50 -80"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_radius"				"650 700 750"
+				"aura_radius"				"700 725 750"
 			}
 		}
 	}
@@ -247,7 +244,6 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"aura_damage_per_second"	"500"
-				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
 			{
@@ -257,22 +253,22 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_radius"				"800"
+				"aura_radius"				"775"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cold_movement_speed_pct"		"-25"
+				"cold_movement_speed_pct"		"-20"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cold_attack_speed"			"-75"
+				"cold_attack_speed"			"-150"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_duration"			"8"
+				"aura_duration"			"4"
 			}
 		}
 	}

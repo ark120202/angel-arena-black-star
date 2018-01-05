@@ -32,11 +32,16 @@ end
 function modifier_sai_rage_of_pain:GetModifierPreAttack_CriticalStrike(keys)
 	local ability = self:GetAbility()
 	local stacks = self:GetStackCount()
-	if RollPercentage(ability:GetSpecialValueFor("crit_chance_per_stack_pct") * stacks) then
+	local chance = ability:GetSpecialValueFor("crit_chance_pct") +
+		ability:GetSpecialValueFor("crit_chance_per_stack_pct") * stacks
+
+	if RollPercentage(chance) then
 		return 100 + self:GetAbility():GetSpecialValueFor("crit_mult_pre_stack_pct") * stacks
 	end
 end
 
 function modifier_sai_rage_of_pain:GetModifierBaseDamageOutgoing_Percentage(keys)
-	return self:GetAbility():GetSpecialValueFor("damage_per_stack_pct") * self:GetStackCount()
+	local ability = self:GetAbility()
+
+	return (ability:GetSpecialValueFor("damage_per_stack_pct") + self:GetParent():GetMaxMana() / ability:GetSpecialValueFor("mana_for_bonus_damage")) * self:GetStackCount()
 end

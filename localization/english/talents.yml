@@ -2,10 +2,26 @@ custom_talents_cost: 'Cost:'
 custom_talents_requirements: 'Requirements:'
 custom_talents_level: 'Level: '
 custom_talents_hide_requirement_errors: Hide unavaliable talents
-custom_talents_talent_experience_pct: Bonus Experience
-custom_talents_talent_experience_pct_description: '+{%experience_pct%} experience'
+custom_talents_talent_experience_pct1: Bonus Experience
+custom_talents_talent_experience_pct1_description: '+{%experience_pct%} experience'
+custom_talents_talent_experience_pct2: Bonus Experience
+custom_talents_talent_experience_pct2_description: '+{%experience_pct%} experience'
+custom_talents_talent_experience_pct3: Bonus Experience
+custom_talents_talent_experience_pct3_description: '+{%experience_pct%} experience'
 custom_talents_talent_bonus_creep_gold: Bonus Creep Gold
 custom_talents_talent_bonus_creep_gold_description: 'Each killed creep grants {gold_for_creep} more gold'
+custom_talents_talent_passive_experience_income1: Experience Income
+custom_talents_talent_passive_experience_income1_description: '+{xp_per_minute} experience per minute'
+custom_talents_talent_passive_experience_income2: Experience Income
+custom_talents_talent_passive_experience_income2_description: '+{xp_per_minute} experience per minute'
+custom_talents_talent_passive_experience_income3: Experience Income
+custom_talents_talent_passive_experience_income3_description: '+{xp_per_minute} experience per minute'
+custom_talents_talent_passive_gold_income1: Gold Income
+custom_talents_talent_passive_gold_income1_description: '+{gold_per_minute} gold per minute'
+custom_talents_talent_passive_gold_income2: Gold Income
+custom_talents_talent_passive_gold_income2_description: '+{gold_per_minute} gold per minute'
+custom_talents_talent_passive_gold_income3: Gold Income
+custom_talents_talent_passive_gold_income3_description: '+{gold_per_minute} gold per minute'
 custom_talents_talent_spell_amplify: Spell Damage Amplify
 custom_talents_talent_spell_amplify_description: '+{%spell_amplify%} spell damage amplify'
 custom_talents_talent_respawn_time_reduction: Respawn Time
@@ -22,6 +38,10 @@ custom_talents_talent_mana: Mana
 custom_talents_talent_mana_description: '+{mana} mana'
 custom_talents_talent_health_regen: Health Regeneration
 custom_talents_talent_health_regen_description: '+{health_regen} health regeneration'
+custom_talents_talent_mana_regen: Mana Regeneration
+custom_talents_talent_mana_regen_description: '+{mana_regen} mana regeneration'
+custom_talents_talent_lifesteal: Lifesteal
+custom_talents_talent_lifesteal_description: 'LIFESTEAL: {%lifesteal%}'
 custom_talents_talent_armor: Armor
 custom_talents_talent_armor_description: '+{armor} armor'
 custom_talents_talent_magic_resistance_pct: Magic Damage Resistance
@@ -32,8 +52,6 @@ custom_talents_talent_vision_night: Night Vision
 custom_talents_talent_vision_night_description: '+{vision_night} night vision range'
 custom_talents_talent_cooldown_reduction_pct: Cooldown Reduction
 custom_talents_talent_cooldown_reduction_pct_description: 'Reduces ability cooldown by {%cooldown_reduction_pct%}'
-custom_talents_talent_passive_gold_income: Gold Income
-custom_talents_talent_passive_gold_income_description: '+{gold_per_minute} gold per minute'
 custom_talents_talent_hero_pudge_hook_splitter: Hook Splitter
 custom_talents_talent_hero_pudge_hook_splitter_description: 'Pudge will launch {hook_amount} hooks, instead of 1'
 custom_talents_talent_hero_arthas_vsolyanova_bunus_chance: Mega Solyara
@@ -42,262 +60,11 @@ custom_talents_talent_hero_arc_warden_double_spark: Double Spark Wraith
 custom_talents_talent_hero_arc_warden_double_spark_description: Each cast of Spark Wraith creates two sparks
 custom_talents_talent_hero_apocalypse_apocalypse_no_death: Protection from Apocalypse
 custom_talents_talent_hero_apocalypse_apocalypse_no_death_description: Apocalypse will not die when ultimate effect ends
-custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun: Reincarnation
-custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun_description: 'Removes respawn delay. When Skeleton King ressurects he stuns enemies, instead of slowing them'
+# custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun: Reincarnation
+# custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun_description: 'Removes respawn delay. When Skeleton King ressurects he stuns enemies, instead of slowing them'
 custom_talents_talent_movespeed_pct: Movement speed
 custom_talents_talent_movespeed_pct_description: '+{%movespeed_pct%} movement speed'
-custom_talents_talent_passive_experience_income: Experience Income
-custom_talents_talent_passive_experience_income_description: '+{xp_per_minute} experience per minute'
 custom_talents_talent_true_strike: True Strike
 custom_talents_talent_true_strike_description: Prevents your attacks from missing
 custom_talents_talent_hero_sai_release_of_forge_discrease_bonus_respawn_time: Release of Forge
 custom_talents_talent_hero_sai_release_of_forge_discrease_bonus_respawn_time_description: 'Reduces respawn time increasement, caused by dying from Release of Forge by {%reduction_pct%}.'
-
-
-
-
-
-custom_talents_talent_hero_anitmage_blink_cd_reduction: -{value} Blink Cooldown
-custom_talents_talent_hero_special_bonus_unique_antimage_2: -{value} Mana Void Cooldown
-custom_talents_talent_hero_axe_battle_hunger_dps: +{value} Battle Hunger DPS
-custom_talents_talent_hero_bane_enfeeble_reduction: +{value} Enfeeble Damage Reduction
-custom_talents_talent_hero_bane_brain_sap_dmg: +{value} Brain Sap Damage/Heal
-custom_talents_talent_hero_bloodseeker_blood_bath_dmg: +{value} Blood Rite Damage
-custom_talents_talent_hero_bloodseeker_rupture_damage: +{%value%} Rupture Damage
-custom_talents_talent_hero_bloodseeker_blood_bath_cooldown: +{value} Blood Rite Cooldown
-# custom_talents_talent_hero_crystal_maiden_freezing_field_damage: +{value} Freezing Field Damage
-# custom_talents_talent_hero_crystal_maiden_frostbite_duration: +{value} Frostbite Duration
-# custom_talents_talent_hero_crystal_maiden_crystal_nova_damage: +{value} Crystal Nova Damage
-custom_talents_talent_hero_drow_ranger_precision_aura_damage: +{%value%} Precision Aura Damage
-custom_talents_talent_hero_drow_ranger_gust_distance: +{value} Gust Distance/Knockback
-custom_talents_talent_hero_drow_ranger_marksmanship_agility: +{value} Marksmanship Agility
-custom_talents_talent_hero_earthshaker_echo_slam_damage: +{value} Echo Damage
-custom_talents_talent_hero_earthshaker_fissure_range: +{value} Fissure Range
-custom_talents_talent_hero_earthshaker_enchant_totem_cooldown: -{value} Enchant Totem Cooldown
-custom_talents_talent_hero_juggernaut_blade_fury_dps: +{value} Blade Fury DPS
-custom_talents_talent_hero_mirana_arrow_cooldown: +{value} Sacred Arrow cooldown
-custom_talents_talent_hero_mirana_leap_attackspeed: +{value} Leap Attack Speed
-custom_talents_talent_hero_mirana_arrow_multi: +{value} Multishot Sacred Arrows
-custom_talents_talent_hero_nevermore_necromastery_dmg: +{value} Damage Per Soul
-custom_talents_talent_hero_nevermore_shadowraze_dmg: +{value} Shadow Raze Damage
-custom_talents_talent_hero_morphling_waveform_range: +{value} Waveform Range
-custom_talents_talent_hero_morphling_replicate_dmg: +{%value%} Replicate Damage
-# custom_talents_talent_hero_phantom_lancer_spirit_lance_dmg: +{value} Spirit Lance Damage
-# custom_talents_talent_hero_phantom_lancer_phantom_edge_range: +{value} Phantom Rush Range
-custom_talents_talent_hero_puck_waning_rift_cd: +{value} Waning Rift Cooldown
-custom_talents_talent_hero_puck_illusory_orb_distance: +{%value%} Illusory Orb Distance/Speed
-# custom_talents_talent_hero_pudge_dismember_duration: +{value} Dismember Duration
-# custom_talents_talent_hero_pudge_flesh_heap_str: +{value} Flesh Heap Stack Str
-# custom_talents_talent_hero_pudge_rot_damage: +{value} Rot Damage
-custom_talents_talent_hero_razor_unstable_current_damage: +{value} Unstable Current Damage
-custom_talents_talent_hero_razor_static_link_damage: +{value} Static Link Damage Steal
-custom_talents_talent_hero_sand_king_sand_storm_dps: +{value} Sand Storm DPS
-custom_talents_talent_hero_sand_king_epicenter_attackslow: +{value} Epicenter Attack Slow
-custom_talents_talent_hero_sand_king_epicenter_pulses: +{value} Epicenter Pulses
-custom_talents_talent_hero_storm_spirit_electric_vortex_duration: +{value} Electric Vortex
-custom_talents_talent_hero_sven_storm_bolt_cd: +{value} Storm Hammer Cooldown
-custom_talents_talent_hero_tiny_avalanche_dmg: +{value} Avalanche Damage
-custom_talents_talent_hero_vengefulspirit_magic_missile_damage: +{value} Magic Missile Damage
-custom_talents_talent_hero_vengefulspirit_command_aura_damage: +{%value%} Vengeance Aura Damage
-custom_talents_talent_hero_vengefulspirit_magic_missile_immune: Magic Missile Pierces Spell Immunity
-custom_talents_talent_hero_windrunner_windrun_slow: +{%value%} Windrun Slow
-custom_talents_talent_hero_windrunner_windrun_invis: Windrun Grants Invisibility
-custom_talents_talent_hero_windrunner_powershot_damage: +{value} Powershot Damage
-custom_talents_talent_hero_zuus_arc_lightning_dmg: +{value} Arc Lightning Damage
-custom_talents_talent_hero_zuus_lightning_bolt_ministun: +{value} Lightning Bolt Ministun
-custom_talents_talent_hero_zuus_static_field_damage: +{%value%} Static Field Damage
-custom_talents_talent_hero_kunkka_torrent_damage: +{value} Torrent Damage
-custom_talents_talent_hero_kunkka_torrent_aoe: +{value} Torrent AoE
-custom_talents_talent_hero_lina_light_strike_array_damage: +{value} Light Strike Array Damage
-custom_talents_talent_hero_lina_dragon_slave_cooldown: +{value} Dragon Slave Cooldown
-custom_talents_talent_hero_lina_fiery_soul_stack: +40/4% Fiery Soul Per Stack
-custom_talents_talent_hero_lich_frost_nova_cd: +{value} Frost Blast Cooldown
-custom_talents_talent_hero_lich_frost_armor_structure: +{value} Frost Armor Structure Armor
-custom_talents_talent_hero_npc_dota_hero_lich_slow: Attacks Apply +{%value%} MS and AS Slow
-custom_talents_talent_hero_lion_impale_damage: +{value} Earth Spike Damage
-custom_talents_talent_hero_lion_mana_drain_multi: +{value} mana Drain Multi Target
-custom_talents_talent_hero_shadow_shaman_mass_serpent_ward_summon: +{value} Wards Summoned
-custom_talents_talent_hero_shadow_shaman_shackles_duration: +{value} Shackles Duration
-custom_talents_talent_hero_shadow_shaman_mass_serpent_ward_attacks: +{value} Serpent Wards Attacks HP
-custom_talents_talent_hero_shadow_shaman_ether_shock_damage: +{value} Ether Shock Damage
-custom_talents_talent_hero_slardar_bash_chance: +{%value%} Bash Chance
-custom_talents_talent_hero_tidehunter_gush_armor: +{value} Gush Armor
-custom_talents_talent_hero_witch_doctor_paralyzing_cask_bounces: +{value} Cask Bounces
-custom_talents_talent_hero_witch_doctor_death_ward_atkrange: +{value} Death Ward Attack Range
-custom_talents_talent_hero_witch_doctor_voodoo_restoration_heal: +{value} Voodoo Restoration Heal
-custom_talents_talent_hero_riki_permanent_invisibility_multiplier: +{%value%} Backstab Multiplier
-custom_talents_talent_hero_riki_smoke_screen_cooldown: +{value} Smokescreen Cooldown
-custom_talents_talent_hero_enigma_malefice_instance: +{value} Malefice Instance
-custom_talents_talent_hero_enigma_demonic_conversion_eidolons: +{value} Demonic Conversion Eidolons
-custom_talents_talent_hero_tinker_laser_damage: +{value} Laser Damage
-custom_talents_talent_hero_sniper_shrapnel_dps: +{value} Shrapnel DPS
-custom_talents_talent_hero_sniper_shrapnel_charges: +{value} Shrapnel Charges
-custom_talents_talent_hero_necrolyte_death_pulse_cooldown: +{value} Death Pulse Cooldown
-# custom_talents_talent_hero_warlock_shadow_word_cooldown: +{value} Shadow Word Cooldown
-# custom_talents_talent_hero_warlock_rain_of_chaos_death: Summons a Golem on death
-# custom_talents_talent_hero_warlock_rain_of_chaos_immune: Magic Immunity for Chaotic Offering Golems
-# custom_talents_talent_hero_warlock_rain_of_chaos_armor: +{value} Chaotic Offering Golems Armor
-# custom_talents_talent_hero_beastmaster_boar_summoned: +{value} Boar Summoned
-custom_talents_talent_hero_beastmaster_wild_axes_damage: +{value} Wild Axes Damage
-custom_talents_talent_hero_queenofpain_shadow_strike_aoe: +{value} AoE Shadow Strike
-custom_talents_talent_hero_venomancer_poison_sting_slow: '{%value%} Poison Sting Slow'
-custom_talents_talent_hero_venomancer_plague_ward_hpdamage: +{value} Plague Ward HP/Damage
-# custom_talents_talent_hero_faceless_void_time_walk_range: +{value} Timewalk Cast Range
-custom_talents_talent_hero_skeleton_king_hellfire_blast_dps: +{value} Wraithfire Blast DPS
-custom_talents_talent_hero_skeleton_king_vampiric_aura_lifesteal: +{%value%} Vampiric Aura Lifesteal
-# custom_talents_talent_hero_skeleton_king_reincarnation_manacost: No Reincarnation Manacost
-# custom_talents_talent_hero_skeleton_king_reincarnation_blast: Reincarnation Casts Wraithfire Blast
-custom_talents_talent_hero_death_prophet_carrion_swarm_cooldown: +{value} Crypt Swarm Cooldown
-custom_talents_talent_hero_death_prophet_exorcism_spirits: +{value} Exorcism Spirits
-custom_talents_talent_hero_phantom_assassin_stifling_dagger_double: Double Strike Stifling Dagger
-custom_talents_talent_hero_pugna_decrepify_duration: +{value} Decrepify Duration
-custom_talents_talent_hero_pugna_netherblast_cooldown: +{value} Netherblast Cooldown
-custom_talents_talent_hero_pugna_nethe_rward_damage_mana: +{value} Netherward Damage Per Mana
-custom_talents_talent_hero_pugna_life_drain_heal: +{%value%} Life Drain Heal
-custom_talents_talent_hero_pugna_nether_blast_damage: +{value} Nether Blast Damage
-custom_talents_talent_hero_templar_assassin_meld_armor: +{value} Meld Armor Reduction
-custom_talents_talent_hero_templar_assassin_refraction_instances: +{value} Refraction Instances
-custom_talents_talent_hero_viper_poison_attack_buildings: Poison Attack Affects Buildings
-custom_talents_talent_hero_viper_viper_strike_dps: +{value} Viper Strike DPS
-custom_talents_talent_hero_luna_lucent_beam_damage: +{value} Lucent Beam Damage
-custom_talents_talent_hero_luna_lucent_beam_cooldown: +{value} Lucent Beam Cooldown
-# custom_talents_talent_hero_dragon_knight_dragon_blood_hp_regen_armor: +{value} Dragon Blood HP Regen/Armor
-custom_talents_talent_hero_dazzle_poison_touch_dps: +{value} Poison Touch DPS
-custom_talents_talent_hero_dazzle_poison_touch_cooldown: +{value} Poison Touch Cooldown
-custom_talents_talent_hero_dazzle_weave_heal: +{value} Shadow Wave Heal
-custom_talents_talent_hero_rattletrap_rocket_flare_damage: +{value} Rocket Flare Damage
-custom_talents_talent_hero_rattletrap_battery_assault_damage: +{value} Battery Assault Damage
-custom_talents_talent_hero_rattletrap_battery_assault_duration: +{value} Battery Assault Duration
-custom_talents_talent_hero_leshrac_diabolic_edict_explosions: +{value} Diabolic Edict Explosions
-custom_talents_talent_hero_leshrac_lightning_storm_duration: +{value} Lightning Storm Slow Duration
-# custom_talents_talent_hero_furion_force_of_nature_summon: +{value} Treants Summoned
-custom_talents_talent_hero_furion_teleportation_nocd: Removed Teleportation Cooldown
-# custom_talents_talent_hero_furion_force_of_nature_treants: +{value} Treant HP/Damage
-custom_talents_talent_hero_life_stealer_rage_duration: +{value} Rage Duration
-custom_talents_talent_hero_dark_seer_vacuum_aoe: +{value} Vacuum AoE
-custom_talents_talent_hero_dark_seer_ion_shell_dmg: +{value} Ion Shell Damage
-custom_talents_talent_hero_clinkz_searing_arrows_dmg: +{value} Searing Arrows Damage
-custom_talents_talent_hero_clinkz_strafe_as: +{value} Strafe Attack Speed
-# custom_talents_talent_hero_omniknight_purification_dmg: +{value} Purification Damage/Heal
-# custom_talents_talent_hero_omniknight_degen_aura_slow: -{%value%} Degen Aura
-custom_talents_talent_hero_enchantress_natures_attendants_wisps: +{value} Nature's Attendants Wisps
-custom_talents_talent_hero_enchantress_untouchable_slow: +{value} Untouchable Slow
-custom_talents_talent_hero_enchantress_impetus_dmg: +{%value%} Impetus Damage
-custom_talents_talent_hero_enchantress_enchant_ancients: Enchant Affects Ancients
-# custom_talents_talent_hero_special_bonus_unique_huskar_2: +{value} Burning Spears DPS
-custom_talents_talent_hero_huskar_life_break_castrange: +{value} Life Break Cast Range
-custom_talents_talent_hero_night_stalker_crippling_fear_cd: +{value} Crippling Fear Cooldown
-custom_talents_talent_hero_broodmother_spawn_spiderlings_dmg: +{value} Spawn Spiderling Damage
-custom_talents_talent_hero_broodmother_spawn_spiderite_dmg: +{value} Spiders Attack Damage
-custom_talents_talent_hero_broodmother_spin_web_count: +{value} Max Webs
-custom_talents_talent_hero_broodmother_spawn_spiderite_hp: +{value} Spiders Health
-custom_talents_talent_hero_bounty_hunter_shuriken_toss_dmg: +{value} Shuriken Toss Damage
-custom_talents_talent_hero_bounty_hunter_jinada_cd: +{value} Jinada Cooldown
-custom_talents_talent_hero_weaver_shukuchi_dmg: +{value} Shukuchi Damage
-custom_talents_talent_hero_weaver_shukuchi_speed: +{value} Shukuchi Movement Speed
-custom_talents_talent_hero_jakiro_dual_breath_dmg: +{value} Dual Breath Burn Damage
-custom_talents_talent_hero_jakiro_macropyre_pure: Macropyre Pure and Pierces Immunity
-custom_talents_talent_hero_jakiro_ice_path_duration: +{value} Ice Path Duration
-custom_talents_talent_hero_batrider_firefly_duration: +{value} Firefly Duration
-custom_talents_talent_talent_hero_batrider_flamebreak_aoe: +{value} Flamebreak AoE/Knockback
-custom_talents_talent_hero_chen_test_of_faith_cd: +{value} Test of Faith Cooldown
-custom_talents_talent_hero_chen_holy_persuasion_hp: +{value} Creep Health
-custom_talents_talent_hero_chen_holy_persuasion_count: +{value} Holy Persuation Max Count
-custom_talents_talent_hero_chen_hand_of_god_heal: +{value} Hand of God Heal
-custom_talents_talent_hero_spectre_spectral_dagger_cd: -{value} Spectral Dagger Cooldown
-# custom_talents_talent_hero_special_bonus_unique_doom_3: +{value} Devour Bonus Gold
-custom_talents_talent_hero_doom_bringer_scorched_earth_dmg: +{value} Scorched Earth Damage/Heal
-custom_talents_talent_hero_doom_bringer_doom_dps: +{value} Doom DPS
-# custom_talents_talent_hero_special_bonus_unique_doom_2: Devour Can Target Ancients
-custom_talents_talent_hero_doom_bringer_infernal_blade_dmg: +{%value%} Infernal Blade Damage
-custom_talents_talent_hero_ancient_apparition_ice_vortex_cd: -{value} Ice Vortex Cooldown
-custom_talents_talent_hero_ancient_apparition_ice_vortex_slow: +{%value%} Ice Vortex Slow/Resistance
-custom_talents_talent_hero_ancient_apparition_cold_feet_charges: '{value} Charges of Cold Feet'
-custom_talents_talent_hero_ancient_apparition_chilling_touch_dmg: +{value} Chilling Touch Damage
-custom_talents_talent_hero_ursa_fury_swipes_dmg: +{value} Fury Swipes Damage
-custom_talents_talent_hero_spirit_breaker_greater_bash_dmg: +{%value%} Greater Bash Damage
-custom_talents_talent_hero_spirit_breaker_greater_bash_chance: +{%value%} Greater Bash Chance
-custom_talents_talent_hero_spirit_breaker_charge_of_darkness_charge: +{value} Charge Speed
-# custom_talents_talent_hero_special_bonus_unique_gyrocopter_1: '{value} Homing Missile Charges'
-# custom_talents_talent_hero_special_bonus_unique_gyrocopter_2: +{value} Flak Cannon Attacks
-custom_talents_talent_hero_alchemist_unstable_concoction_dmg: +{value} Unstable Concoction Damage
-custom_talents_talent_hero_alchemist_acid_spray_armor: -{value} Acid Spray Armor
-custom_talents_talent_hero_invoker_forge_spirit_summon: +{value} Forged Spirit Summoned
-custom_talents_talent_hero_invoker_deafening_blast_aoe: AoE Deafening Blast
-custom_talents_talent_hero_invoker_tornado_cd: -{value} Tornado Cooldown
-custom_talents_talent_hero_silencer_curse_of_the_silent_slow: +{%value%} Curse Slow
-custom_talents_talent_hero_obsidian_destroyer_arcane_orb_steal: +{value} Arcane Orb Int Steal
-custom_talents_talent_hero_lycan_feral_impulse_regen: +{value} Feral HP Regen
-custom_talents_talent_hero_lycan_shapeshift_duration: +{value} Shapeshift Duration
-# custom_talents_talent_hero_special_bonus_unique_lycan_2: +{value} Wolves Summoned
-custom_talents_talent_hero_brewmaster_thunder_clap_dmg: +{value} Thunder Clap Damage
-custom_talents_talent_hero_brewmaster_thunder_clap_slow: +{value} Thunder Clap Slow
-custom_talents_talent_hero_brewmaster_primal_split_health: +{value} Health to Primal Split Units
-custom_talents_talent_hero_shadow_demon_shadow_poison_cd: -{value} Shadow Poison Cooldown
-custom_talents_talent_hero_shadow_demon_demonic_purge_dmg: +{value} Demonic Purge Damage
-custom_talents_talent_hero_shadow_demon_soul_catcher_cd: -{value} Soul Catcher Cooldown
-custom_talents_talent_hero_lone_druid_spirit_bear_dmg: +{value} Spirit Bear Damage
-custom_talents_talent_hero_lone_druid_spirit_bear_armor: +{value} Spirit Bear Armor
-custom_talents_talent_hero_lone_druid_spirit_bear_resist: +{%value%} Spirit Bear Magic Resistance
-custom_talents_talent_hero_lone_druid_spirit_bear_duration: +{value} Entangle Duration
-custom_talents_talent_hero_lone_druid_savage_roar_cd: -{value} Savage Roar Cooldown
-custom_talents_talent_hero_chaos_knight_reality_rift_immune: Reality Rift Pierces Spell Immune
-custom_talents_talent_hero_meepo_poof_cd: -{value} Poof Cooldown
-custom_talents_talent_hero_treant_leech_seed_dmg: +{value} Leech Seed Damage/Heal
-custom_talents_talent_hero_treant_living_armor_instances: +{value} Living Armor Block Instances
-custom_talents_talent_hero_ogre_magi_bloodlust_as: +{value} Bloodlust AS
-custom_talents_talent_hero_undying_tombstone_dmg: +{value} Tombstone Zombie Damage
-custom_talents_talent_hero_undying_decay_cd : -{value} Decay Cooldown
-# custom_talents_talent_hero_special_bonus_unique_rubick: +{value} Telekinesis Land Distance
-custom_talents_talent_hero_disruptor_kinetic_field_cd: -{value} Kinetic Field Cooldown
-custom_talents_talent_hero_disruptor_thunder_strike_dmg: +{value} Thunder Strike Damage
-custom_talents_talent_hero_disruptor_thunder_strike_hits: +{value} Thunder Strike Hits
-custom_talents_talent_hero_nyx_assassin_impale_dmg: +{value} Impale Damage
-custom_talents_talent_hero_nyx_assassin_spiked_carapace_dmg: +{%value%} Spiked Carapace Damage
-custom_talents_talent_hero_naga_siren_ensnare_cd: -{value} Ensnare Cooldown
-custom_talents_talent_hero_naga_siren_mirror_image_illu: +{value} Mirror Image Illusion
-custom_talents_talent_hero_keeper_of_the_light_chakra_magic_mana: +{value} Chakra Magic Mana
-custom_talents_talent_hero_keeper_of_the_light_illuminate_dmg: +{value} Illuminate Damage/Heal
-# custom_talents_talent_hero_special_bonus_unique_wisp_2: Tether Stuns
-# custom_talents_talent_hero_special_bonus_unique_wisp: +{value} Spirits Damage
-custom_talents_talent_hero_visage_soul_assumption_double: Soul Assumption Double Strike
-custom_talents_talent_hero_visage_summon_familiars_speed: +{value} Familiars Movement Speed
-custom_talents_talent_hero_slark_pounce_duration: +{value} Pounce Leash
-# custom_talents_talent_hero_special_bonus_unique_medusa_2: +{value} Split Shot target
-# custom_talents_talent_hero_special_bonus_unique_medusa: +{value} Stone Gaze Stun
-custom_talents_talent_hero_troll_warlord_whirling_axes_melee_cd: -{value} Whirling Axes Cooldown
-custom_talents_talent_hero_centaur_return_aura: Gains Return Aura
-custom_talents_centaur_hoof_stomp_duration: +{value} Hoof Stomp Duration
-custom_talents_talent_hero_magnataur_empower_dmg: +{%value%} Empower Damage/Cleave
-custom_talents_talent_hero_magnataur_skewer_range: +{value} Skewer Range
-custom_talents_talent_hero_shredder_whirling_death_attribute: +{%value%} Whirling Death Attribute Reduction
-custom_talents_talent_hero_bristleback_viscous_nasal_goo_count: +{value} Max Goo Stacks
-custom_talents_talent_hero_bristleback_quill_spray_dmg: +{value} Quill Stack Damage
-custom_talents_talent_hero_tusk_snowball_dmg: +{value} Snowball Damage
-custom_talents_talent_hero_tusk_walrus_punch_crit: +{%value%} Walrus Punch Crit
-custom_talents_talent_hero_skywrath_mage_ancient_seal_cd: -{value} Ancient Seal Cooldown
-custom_talents_talent_hero_abaddon_aphotic_shield_dmg: +{value} Aphotic Shield Health
-custom_talents_talent_hero_elder_titan_echo_stomp_dmg: +{value} Echo Stomp Damage
-custom_talents_talent_hero_elder_titan_ancestral_spirit_attack: +{value} Astral Spirit Hero Attack
-custom_talents_talent_hero_legion_commander_moment_of_courage_chance: +{%value%} Moment Proc Chance
-custom_talents_talent_hero_legion_commander_duel_bonus: +{value} Duel Damage Bonus
-custom_talents_talent_hero_legion_commander_press_the_attack_cd: -{value} Press The Attack Cooldown
-custom_talents_talent_hero_ember_spirit_flame_guard_absorb: +{value} Flame Guard Absorption
-custom_talents_talent_hero_ember_spirit_searing_chains_count: +{value} Searing Chains
-custom_talents_talent_hero_earth_spirit_geomagnetic_grip_allies: Geomagnetic Grip Targets Allies
-custom_talents_talent_hero_earth_spirit_boulder_smash_dmg: +{value} Rolling Boulder Damage
-custom_talents_talent_hero_terrorblade_sunder_cd: -{value} Sunder Cooldown
-custom_talents_talent_hero_phoenix_fire_spirits_dps: +{value} Fire Spirits DPS
-custom_talents_talent_hero_phoenix_supernova_count: +{value} Supernova Hit Count
-custom_talents_talent_hero_phoenix_supernova_duration: +{value} Supernova Stun Duration
-custom_talents_talent_hero_oracle_fortunes_end_duration: +{value} Fortune's End Max Duration
-custom_talents_talent_hero_oracle_false_promise_duration: +{value} False Promise Duration
-custom_talents_talent_hero_techies_suicide_dmg: +{value} Blast Off Damage
-custom_talents_talent_hero_winter_wyvern_cold_embrace_duration: +{value} Cold Embrace Duration
-custom_talents_talent_hero_winter_wyvern_arctic_burn_slow: +{%value%} Arctic Burn Slow
-custom_talents_talent_hero_winter_wyvern_splinter_blast_cd: -{value} Splinter Blast Cooldown
-custom_talents_talent_hero_arc_warden_flux_dps: +{value} Flux DPS
-custom_talents_talent_hero_arc_warden_spark_wraith_dmg: +{value} Spark Wraith Damage
-custom_talents_talent_hero_abyssal_underlord_pit_of_malice_duration: +{value} Pit of Malice Root
-custom_talents_talent_hero_monkey_king_jingu_mastery_dmg: +{value} Jingu Mastery Damage
-custom_talents_talent_hero_monkey_king_boundless_strike_crit: +{%value%} Boundless Strike Crit

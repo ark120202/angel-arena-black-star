@@ -35,7 +35,6 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 			player = unit:GetPlayerID(),
 			runeType = runeType
 		})
-		HeroVoice:OnRuneActivated(unit:GetPlayerID(), runeType)
 	end
 	if rune_multiplier then
 		for k, v in pairs(settings) do
@@ -47,7 +46,9 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 	if runeType == ARENA_RUNE_BOUNTY then
 		local gold, xp = settings.GetValues(unit)
 		Gold:AddGoldWithMessage(unit, gold * settings.special_value_multiplier)
-		unit:AddExperience(xp * settings.special_value_multiplier, DOTA_ModifyXP_Unspecified, false, true)
+		if unit.AddExperience then
+			unit:AddExperience(xp * settings.special_value_multiplier, DOTA_ModifyXP_Unspecified, false, true)
+		end
 	elseif runeType == ARENA_RUNE_TRIPLEDAMAGE then
 		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_tripledamage", {duration = settings.duration}):SetStackCount(settings.damage_pct)
 	elseif runeType == ARENA_RUNE_HASTE then

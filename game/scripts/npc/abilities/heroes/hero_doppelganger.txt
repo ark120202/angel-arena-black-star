@@ -1,0 +1,48 @@
+""
+{
+	"doppelganger_mimic"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"arena/doppelganger_mimic"
+		"ScriptFile"					"heroes/hero_doppelganger/mimic.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"						"1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"0"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"300"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1000"
+			}
+		}
+
+		"precache"
+		{
+			"particle"					"particles/arena/units/heroes/hero_doppelganger/mimic.vpcf"
+			"particle"					"particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
+			"particle"					"particles/status_fx/status_effect_arc_warden_tempest.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
+		}
+
+		"BannedHeroes"
+		{
+			"npc_dota_hero_necrolyte"	"1"
+			"npc_dota_hero_target_dummy"	"1"
+			"npc_dota_lone_druid_bear1"	"1"
+			"npc_dota_lone_druid_bear2"	"1"
+			"npc_dota_lone_druid_bear3"	"1"
+			"npc_dota_lone_druid_bear4"	"1"
+		}
+	}
+}

@@ -69,7 +69,9 @@ function HeroSelection:ExtractHeroStats(heroTable)
 	}
 	attributes.damage_min = attributes.damage_min + attributes["attribute_base_" .. attributes.attribute_primary]
 	attributes.damage_max = attributes.damage_max + attributes["attribute_base_" .. attributes.attribute_primary]
-	attributes.armor = attributes.armor + math.round(attributes["attribute_base_1"] * DOTA_DEFAULT_ATTRIBUTES.armor) --TODO: Get hero's unique growth
+	--TODO: Get hero's unique growth
+	local armorForFirstLevel = Attributes:GetTotalPropValue(attributes["attribute_base_1"], "armor")
+	attributes.armor = attributes.armor + math.round(armorForFirstLevel)
 	return attributes
 end
 
@@ -189,6 +191,7 @@ function HeroSelection:InitializeHeroClass(unit, classTable)
 end
 
 function HeroSelection:ForceChangePlayerHeroMenu(playerID)
+	PlayerResource:ModifyPlayerStat(playerID, "ChangedHeroAmount", 1)
 	HeroSelection:ChangeHero(playerID, FORCE_PICKED_HERO, true, 0, nil, function(hero)
 		hero:AddNoDraw()
 		FindClearSpaceForUnit(hero, FindFountain(PlayerResource:GetTeam(playerID)):GetAbsOrigin(), true)
@@ -216,7 +219,10 @@ function HeroSelection:ParseAbilitiesFromTable(t)
 	local abilities = {}
 	for i = 1, 24 do
 		local ability = t["Ability" .. i]
-		if ability and ability ~= "" and not AbilityHasBehaviorByName(ability, "DOTA_ABILITY_BEHAVIOR_HIDDEN") then
+		if ability and
+			ability ~= "" and
+			not string.starts(ability, "special_bonus_") and
+			not AbilityHasBehaviorByName(ability, "DOTA_ABILITY_BEHAVIOR_HIDDEN") then
 			table.insert(abilities, ability)
 		end
 	end
@@ -267,7 +273,9 @@ end
 function HeroSelection:PreformPlayerRandom(playerId)
 	while true do
 		local hero = HeroSelection.RandomableHeroes[RandomInt(1, #HeroSelection.RandomableHeroes)]
-		if not HeroSelection:IsHeroSelected(hero) and not HeroSelection:IsHeroBanned(hero) then
+		if not HeroSelection:IsHeroSelected(hero) and
+			not HeroSelection:IsHeroBanned(hero) and
+			not HeroSelection:IsHeroDisabledInRanked(hero) then
 			HeroSelection:UpdateStatusForPlayer(playerId, "picked", hero)
 			CustomChatSay(-1, PlayerResource:GetTeam(playerId), {
 				localizable = "DOTA_Chat_Random",
@@ -301,6 +309,18 @@ function HeroSelection:IsHeroBanned(hero)
 	return PlayerTables:GetTableValueForReadOnly("hero_selection_banning_phase", hero) ~= nil
 end
 
+function HeroSelection:IsHeroDisabledInRanked(hero)
+	return Options:IsEquals("EnableRatingAffection") and GetKeyValue(hero, "DisabledInRanked") == 1
+end
+
+function HeroSelection:IsHeroUnreleased(hero)
+	return GetKeyValue(hero, "Unreleased") == 1
+end
+
 function HeroSelection:IsHeroPickAvaliable(hero)
-	return not HeroSelection:IsHeroSelected(hero) and not HeroSelection:IsHeroBanned(hero) and HeroSelection:VerifyHeroGroup(hero)
+	return not HeroSelection:IsHeroSelected(hero) and
+		not HeroSelection:IsHeroBanned(hero) and
+		not HeroSelection:IsHeroDisabledInRanked() and
+		not HeroSelection:IsHeroUnreleased() and
+		HeroSelection:VerifyHeroGroup(hero)
 end

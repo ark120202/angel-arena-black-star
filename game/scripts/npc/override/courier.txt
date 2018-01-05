@@ -10,12 +10,6 @@
 		"ItemCastOnPickup"				"1"
 	}
 
-	"item_flying_courier"
-	{
-		"SecretShop"					"0"
-		"ItemPurchasable"				"0"
-	}
-
 	"courier_go_to_secretshop"
 	{
 		"BaseClass"             		"courier_go_to_secretshop"

@@ -1,5 +1,3 @@
-if IsClient() then require("utils/shared") end
-
 modifier_arena_rune_haste = class({
 	GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end,
 	IsPurgable          = function() return false end,

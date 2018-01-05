@@ -3,21 +3,21 @@ Variables:
   modifier_item_yasha_arena_fast_attack_Description: 'Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
   modifier_item_sange_maim: Maim
   modifier_item_sange_maim_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-  item_yasha_Description: 'Пассивная: Fast Attack - каждая атака повышает скорость атаки и передвижения на %fast_attack_duration% секунд. Эффект может складываться до %fast_attack_max_stacks% стаков.'
-  item_sange_Description: 'Пассивная: Maim - Каждая атака получает шанс нанести травму, уменьшающую скорость передвижения и атаки врага на %maim_duration% сек. Эффект может складываться до %maim_max_stacks% стаков.'
-  item_nightshadow_Description: 'Пассивная: Магическое Искусство - Каждая атака имеет шанс уменьшеть перезарядку всех способностей на %cooldown_reduction% секунд.'
+  item_yasha_Description: '<h1>Пассивная: Fast Attack</h1> Каждая атака повышает скорость атаки и передвижения на %fast_attack_duration% секунд. Эффект может складываться до %fast_attack_max_stacks% стаков.'
+  item_sange_Description: '<h1>Пассивная: Maim</h1> Каждая атака получает шанс нанести травму, уменьшающую скорость передвижения и атаки врага на %maim_duration% сек. Эффект может складываться до %maim_max_stacks% стаков.'
+  item_nightshadow_Description: '<h1>Пассивная: Магическое Искусство</h1> Каждая атака имеет шанс уменьшеть перезарядку всех способностей на %cooldown_reduction% секунд.'
   item_yasha_movespeed_note: |-
 
     Бонусы к скорости передвижения от нескольких предметов на основе Yasha не складываются.
 
 DOTA_Tooltip_ability_item_heart_arena: Heart of Tarrasque
-DOTA_Tooltip_ability_item_heart_arena_Description: 'Пассивная: Health Regeneration — восстанавливает определенный процент максимального здоровья в секунду. Если владелец получит урон от вражеского героя или Босса, способность отключается на определенное время.'
+DOTA_Tooltip_ability_item_heart_arena_Description: '<h1>Пассивная: Health Regeneration</h1> Восстанавливает определенный процент максимального здоровья в секунду. Если владелец получит урон от вражеского героя или Босса, способность отключается на определенное время.'
 DOTA_Tooltip_ability_item_heart_arena_Lore: 'Сохранившееся сердце вымершего монстра, с которым его владелец становится мужественнее.'
 DOTA_Tooltip_ability_item_heart_arena_bonus_strength: +$str
 DOTA_Tooltip_ability_item_heart_arena_bonus_health: +$health
 DOTA_Tooltip_ability_item_heart_arena_health_regen_percent_per_second: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
 DOTA_Tooltip_ability_item_blink_arena: Blink Dagger
-DOTA_Tooltip_ability_item_blink_arena_Description: 'Активируемая: Blink — телепортирует к указанной точке на расстоянии до %blink_range% единиц. Если вы получите урон, то не сможете использовать Blink Dagger в течение %blink_damage_cooldown% сек.'
+DOTA_Tooltip_ability_item_blink_arena_Description: '<h1>Активируемая: Blink</h1> Телепортирует к указанной точке на расстоянии до %blink_range% единиц. Если вы получите урон, то не сможете использовать Blink Dagger в течение %blink_damage_cooldown% сек.'
 DOTA_Tooltip_ability_item_blink_arena_Lore: 'Легендарный кинжал, использовавшийся самым быстрым убийцей, когда-либо ходившим по земле.'
 DOTA_Tooltip_ability_item_blink_arena_Note0: Применение на себя переместит вас в сторону фонтана вашей команды.
 DOTA_Tooltip_ability_item_blink_arena_Note1: 'Если использовать Blink для скачка на дистанцию больше максимальной, его дальность сократится до 80% от максимальной.'
@@ -26,7 +26,11 @@ DOTA_Tooltip_ability_item_casino_coin: Casino Coin
 DOTA_Tooltip_ability_item_casino_coin_Description: Может быть использовано в слотмашине или для оплаты различных услуг.
 
 DOTA_Tooltip_ability_item_shard_level: Level Up Shard
-DOTA_Tooltip_ability_item_shard_level_Description: 'Активируемая: Поглотить - поглощает предмет и увеличивает уровень вашего героя.'
+DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Активируемая: Поглотить</h1> Поглощает предмет и увеличивает уровень вашего героя на 1.'
+
+DOTA_Tooltip_ability_item_shard_level10: Level Up Shard x10
+DOTA_Tooltip_ability_item_shard_level10_Description: '<h1>Активируемая: Поглотить</h1> Поглощает предмет и увеличивает уровень вашего героя на 10.'
+
 DOTA_Tooltip_ability_item_shard_str_small: Small Strength Shard
 DOTA_Tooltip_ability_item_shard_str_small_bonus_str: +$str
 DOTA_Tooltip_ability_item_shard_str_medium: Medium Strength Shard
@@ -59,7 +63,7 @@ DOTA_Tooltip_ability_item_shard_primal_large: Large Primal Shard
 DOTA_Tooltip_ability_item_shard_primal_large_bonus_stats: +$all
 DOTA_Tooltip_ability_item_shard_attackspeed: Attackspeed Shard
 DOTA_Tooltip_ability_item_shard_attackspeed_bonus_attackspeed: +$attack
-'Активируемая: Поглотить - поглощает предмет и дает герою постоянный бонус.':
+'<h1>Использование: Поглотить</h1> Поглощает предмет и дает герою постоянный бонус.':
   - DOTA_Tooltip_ability_item_shard_str_small_Description
   - DOTA_Tooltip_ability_item_shard_str_medium_Description
   - DOTA_Tooltip_ability_item_shard_str_large_Description
@@ -167,7 +171,7 @@ DOTA_Tooltip_modifier_item_nightshadow_and_yasha_fast_attack_Description: '{lc:m
 
 DOTA_Tooltip_ability_item_three_spirits_blades: Three Spirits Blades
 DOTA_Tooltip_ability_item_three_spirits_blades_Description: |-
-  Пассивная: Greater Maim - Каждая атака получает шанс %maim_chance%% нанести травму, уменьшающую скорость передвижения и атаки врага на %maim_duration% сек. Эффект может складываться до %maim_max_stacks% стаков.
+  <h1>Пассивная: Greater Maim</h1> Каждая атака получает шанс %maim_chance%% нанести травму, уменьшающую скорость передвижения и атаки врага на %maim_duration% сек. Эффект может складываться до %maim_max_stacks% стаков.
   {lc:item_yasha_Description}
   {lc:item_nightshadow_Description}
   {lc:item_yasha_movespeed_note}
@@ -189,24 +193,18 @@ DOTA_Tooltip_modifier_item_three_spirits_blades_fast_attack_Description: '{lc:mo
 
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
-  Активируемая: Unwilling Ritual - Используется на крипов. Цель приносится в жертву для Думлинга. Думлинг перенемает способности принесенного в жертву существа и добавляет его здоровье, урон и запас маны к характеристикам Думлинга. Изначальные характеристики Думлинга: %doomling_health% здоровья, %doomling_mana% маны, %doomling_damage_min% - %doomling_damage_max% урона, %doomling_health_regen% регенерации здоровья, %doomling_mana_regen% регенерации маны. Герой получает обычное золото и опыт за убийство жертвы.
-  Пассивная: Quell — увеличивает урон от атак по юнитам, не являющимися героями, в зависимости от типа атаки владельца. Не увеличивает урон по Боссам.
-DOTA_Tooltip_ability_item_lucifers_claw_Note0: У Думлинга есть вампиризм и Quell
-DOTA_Tooltip_ability_item_lucifers_claw_Note1: Думлинг - крип-герой с бесконечным временем жизни. На него может быть направлено большинство способностей.
-DOTA_Tooltip_ability_item_lucifers_claw_Note2: 'Перезарядка при использовании на дереве: 4 секунды.'
+  <h1>Активируемая: Unwilling Ritual</h1> Используется на крипов. Цель приносится в жертву для Думлинга. Думлинг перенемает способности принесенного в жертву существа и добавляет его здоровье, урон и запас маны к характеристикам Думлинга. Изначальные характеристики Думлинга: %doomling_health% здоровья, %doomling_mana% маны, %doomling_damage_min%-%doomling_damage_max% урона, %doomling_health_regen% регенерации здоровья, %doomling_mana_regen% регенерации маны. Герой получает обычное золото и опыт за убийство жертвы.
+  <h1>Пассивная: Quell</h1> Увеличивает урон от атак по существам, не являющимися героями, на %damage_bonus% для героев ближнего боя или на %damage_bonus_ranged% — для дальнего.
+DOTA_Tooltip_ability_item_lucifers_claw_Note0: Думлинг - крип-герой с бесконечным временем жизни. На него может быть направлено большинство способностей.
+DOTA_Tooltip_ability_item_lucifers_claw_Note1: 'Перезарядка при использовании на дереве: 4 секунды.'
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_lucifers_claw_bonus_armor: +$armor
-DOTA_Tooltip_ability_item_lucifers_claw_bonus_all_stats: +$all
+DOTA_Tooltip_ability_item_lucifers_claw_bonus_all: +$all
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_lucifers_claw_lifesteal_percent: '%ВАМПИРИЗМ:'
-DOTA_Tooltip_ability_item_lucifers_claw_damage_bonus: '%ДОП. УРОН В БЛИЖНЕМ БОЮ:'
-DOTA_Tooltip_ability_item_lucifers_claw_damage_bonus_ranged: '%ДОП. УРОН В ДАЛЬНЕМ БОЮ:'
-DOTA_Tooltip_ability_item_lucifers_claw_quelling_range_tooltip: 'РАДИУС ИСПОЛЬЗОВАНИЯ:'
 
 DOTA_Tooltip_ability_item_pocket_riki: Pocket Riki
 DOTA_Tooltip_ability_item_pocket_riki_Description: |-
   В вашем кармане находится Рики. Вы получаете эффект от способности Cloak and Dagger, но дополнительный урон бутет основан на вашей основной характеристике. Находясь в кармане Рики может использовать предметы и способность Smoke Screen.
-  Активируемая: Поглотить - вы поглощаете Рики, убивая его, но при этом Рики дарует вам его характеристики до того как он возродится.
+  <h1>Активируемая: Поглотить</h1> Вы поглощаете Рики, убивая его, но при этом Рики дарует вам его характеристики до того как он возродится.
   Рики может быть продан за деньги, которые мог получить враг за убийство Рики. При продаже Рики умирает.
 DOTA_Tooltip_ability_item_pocket_riki_Lore: 'Тяжело поверить, что такое милое существо может быть убийцей.'
 DOTA_Tooltip_ability_item_pocket_riki_Note0: 'Пока ваш герой невидим, он не будет атаковать автоматически.'
@@ -225,19 +223,17 @@ DOTA_Tooltip_ability_item_pocket_riki_consumed_fade_time: 'ЗАДЕРЖКА ДО
 DOTA_Tooltip_ability_item_pocket_riki_consumed_stat_damage: '%МНОЖИТЕЛЬ ХАРАКТЕРИСТИКИ:'
 
 DOTA_Tooltip_ability_item_homemade_cheese: Homemade Cheese
-DOTA_Tooltip_ability_item_homemade_cheese_Description: 'Использование: исчезает и мгновенно восстанавливает здоровье и ману. При использовании на союзниках длительность перезарядки составляет %alternative_cooldown% секунд.'
+DOTA_Tooltip_ability_item_homemade_cheese_Description: '<h1>Использование: Fondue</h1> Исчезает и мгновенно восстанавливает здоровье и ману. При использовании на союзниках длительность перезарядки составляет %alternative_cooldown% секунд.'
 DOTA_Tooltip_ability_item_homemade_cheese_Note0: Можно передавать союзникам.
 DOTA_Tooltip_ability_item_homemade_cheese_health_restore: 'ПОПОЛНЯЕТ ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_item_homemade_cheese_mana_restore: 'ПОПОЛНЯЕТ МАНЫ:'
 
 DOTA_Tooltip_ability_item_heart_cyclone: Tarrasque's Scepter of Divinity
 DOTA_Tooltip_ability_item_heart_cyclone_Description: |-
-  Активируемая: Shift - смещает вас, союзника или противника в другое измерение, защищающее от любых атак, а также дающее союзникам %active_health_regen_percent_per_second%% регенерации здоровья и наносящее врагам %active_damage_percent_per_second%% урона в секунду от их макс. здоровья.
-  Пассивная: Health Regeneration — восстанавливает определенный процент максимального здоровья в секунду. Если владелец получит урон от вражеского героя или Рошана, способность отключается на %cooldown_melee% сек. для героев ближнего боя, или на %cooldown_ranged_tooltip% сек. для героев дальнего боя.
+  <h1>Активируемая: Shift</h1> Смещает вас, союзника или противника в другое измерение, защищающее от любых атак, а также дающее союзникам %active_health_regen_percent_per_second%% регенерации здоровья и наносящее врагам %active_damage_percent_per_second%% урона в секунду от их макс. здоровья.
+  <h1>Пассивная: Health Regeneration</h1> Восстанавливает определенный процент максимального здоровья в секунду. Если владелец получит урон от вражеского героя или Рошана, способность отключается на %cooldown_melee% сек. для героев ближнего боя, или на %cooldown_ranged_tooltip% сек. для героев дальнего боя.
 DOTA_Tooltip_ability_item_heart_cyclone_Note0: Во время действия этой способности цель не получает урона.
 DOTA_Tooltip_ability_item_heart_cyclone_Note1: Shift может снимать некоторые положительные и отрицательные эффекты.
-DOTA_Tooltip_ability_item_heart_cyclone_bonus_strength: +$str
-DOTA_Tooltip_ability_item_heart_cyclone_bonus_health: +$health
 DOTA_Tooltip_ability_item_heart_cyclone_health_regen_percent_per_second: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
 DOTA_Tooltip_ability_item_heart_cyclone_active_health_regen_percent_per_second: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ В SHIFT:'
 DOTA_Tooltip_ability_item_heart_cyclone_active_damage_percent_per_second: '%УРОН В СЕКУНДУ В SHIFT:'
@@ -258,70 +254,18 @@ DOTA_Tooltip_ability_item_metamorphosis_elixir_Description: |-
   <font color='cyan'>Рейтинговая игра: может быть использовано лишь один раз.</font>
 DOTA_Tooltip_ability_item_metamorphosis_elixir_transformation_time: 'ДЛИТЕЛЬНОСТЬ ТРАНСФОРМАЦИИ:'
 
-DOTA_Tooltip_ability_item_splitshot_str: Enchanted Trident
-DOTA_Tooltip_ability_item_splitshot_str_Description: |-
-  Пассивная: Разделение атаки - Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.
-  {lc:item_sange_Description}
-DOTA_Tooltip_ability_item_splitshot_str_Note0: 'Иллюзии будут создавать эффекты атаки, но не будут наносить урон.'
-DOTA_Tooltip_ability_item_splitshot_str_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
-DOTA_Tooltip_ability_item_splitshot_str_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_splitshot_str_bonus_strength: +$str
-DOTA_Tooltip_ability_item_splitshot_str_bonus_intelligence: +$int
-DOTA_Tooltip_ability_item_splitshot_str_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_splitshot_str_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_splitshot_str_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_str_bonus_mana_regen_percentage: '%+$mana_regen'
-DOTA_Tooltip_ability_item_splitshot_str_maim_chance: '%ШАНС НАНЕСТИ ТРАВМУ:'
-DOTA_Tooltip_ability_item_splitshot_str_maim_movement_speed: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_item_splitshot_str_maim_slow_attack: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_ability_item_splitshot_str_maim_duration: 'ДЛИТЕЛЬНОСТЬ ТРАВМЫ:'
-DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim: '{lc:modifier_item_sange_maim}'
-DOTA_Tooltip_modifier_item_splitshot_str_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
-
-DOTA_Tooltip_ability_item_splitshot_agi: Nagascale Bow
-DOTA_Tooltip_ability_item_splitshot_agi_Description: |-
-  Пассивная: Разделение атаки - Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.
-  {lc:item_yasha_Description}
-  {lc:item_yasha_movespeed_note}
-DOTA_Tooltip_ability_item_splitshot_agi_Note0: 'Иллюзии будут создавать эффекты атаки, но не будут наносить урон.'
-DOTA_Tooltip_ability_item_splitshot_agi_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_strength: +$str
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_intelligence: +$int
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_splitshot_agi_movement_speed_percent_bonus: '%+$move_speed'
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_mana_regen_percentage: '%+$mana_regen'
-DOTA_Tooltip_ability_item_splitshot_agi_bonus_attack_speed_buff: 'СКОРОСТЬ АТАКИ FAST ATTACK:'
-DOTA_Tooltip_ability_item_splitshot_agi_movement_speed_percent_bonus_buff: '%СКОРОСТЬ ПЕРЕДВИЖЕНИЯ FAST ATTACK:'
-DOTA_Tooltip_ability_item_splitshot_agi_fast_attack_duration: 'ДЛИТЕЛЬНОСТЬ FAST ATTACK:'
-DOTA_Tooltip_modifier_item_splitshot_agi_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_splitshot_agi_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
-
-DOTA_Tooltip_ability_item_splitshot_int: Staff of Splitted Sunray
-DOTA_Tooltip_ability_item_splitshot_int_Description: |-
-  Пассивная: Разделение атаки - Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.
-  {lc:item_nightshadow_Description}
-DOTA_Tooltip_ability_item_splitshot_int_Note0: 'Иллюзии будут создавать эффекты атаки, но не будут наносить урон.'
-DOTA_Tooltip_ability_item_splitshot_int_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
-DOTA_Tooltip_ability_item_splitshot_int_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_splitshot_int_bonus_strength: +$str
-DOTA_Tooltip_ability_item_splitshot_int_bonus_intelligence: +$int
-DOTA_Tooltip_ability_item_splitshot_int_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_splitshot_int_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_splitshot_int_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_int_bonus_mana_regen_percentage: '%+$mana_regen'
-DOTA_Tooltip_ability_item_splitshot_int_proc_chance: '%ШАНС УМЕНЬШЕНИЯ:'
-DOTA_Tooltip_ability_item_splitshot_int_cooldown_reduction: УМЕНЬШЕНИЕ ПЕРЕЗАРЯДКИ
+DOTA_Tooltip_ability_item_nagascale_bow: Nagascale Bow
+DOTA_Tooltip_ability_item_nagascale_bow_Description: '<h1>Пассивная: Разделение атаки</h1> Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.'
+DOTA_Tooltip_ability_item_nagascale_bow_Note0: Иллюзии будут создавать эффекты атаки, но не будут наносить урон.
+DOTA_Tooltip_ability_item_nagascale_bow_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
 
 DOTA_Tooltip_ability_item_splitshot_ultimate: Идеальный Зачарованный Тактический Волшебный Лук Встроенных Клинков
 DOTA_Tooltip_ability_item_splitshot_ultimate_Description: |-
-  Пассивная: Разделение атаки - Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.
-  Пассивная: Global Attack - Ваши атаки с шансом %global_attack_chance%%% наносят процент от урона случайному противнику на карте.
-  Пассивная: Greater Maim - Каждая атака получает %maim_chance%% шанс нанести травму, уменьшающую скорость передвижения на %maim_slow_movement%% и скорость атаки на %slow_attack% а %maim_duration% сек. Эффект может складываться до %maim_max_stacks% стаков.
-  Пассивная: Fast Attack - каждая атака повышает скорость передвижения на %movement_speed_percent_bonus_buff%% и скорость атаки на %bonus_attack_speed_buff% на %fast_attack_duration% секунд. Эффект может складываться до %fast_attack_max_stacks% стаков.
-  Пассивная: Магическое Искусство - Каждая атака имеет %proc_chance%%% шанс уменьшеть перезарядку всех способностей на %cooldown_reduction% секунд.
+  <h1>Пассивная: Разделение атаки</h1> Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.
+  <h1>Пассивная: Global Attack</h1> Ваши атаки с шансом %global_attack_chance%%% наносят процент от урона случайному противнику на карте.
+  <h1>Пассивная: Greater Maim</h1> Каждая атака получает %maim_chance%% шанс нанести травму, уменьшающую скорость передвижения на %maim_slow_movement%% и скорость атаки на %slow_attack% а %maim_duration% сек. Эффект может складываться до %maim_max_stacks% стаков.
+  <h1>Пассивная: Fast Attack</h1> Каждая атака повышает скорость передвижения на %movement_speed_percent_bonus_buff%% и скорость атаки на %bonus_attack_speed_buff% на %fast_attack_duration% секунд. Эффект может складываться до %fast_attack_max_stacks% стаков.
+  <h1>Пассивная: Магическое Искусство</h1> Каждая атака имеет %proc_chance%%% шанс уменьшеть перезарядку всех способностей на %cooldown_reduction% секунд.
   {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_splitshot_ultimate_Note0: 'Иллюзии будут создавать эффекты атаки, но не будут наносить урон.'
 DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_agility: +$agi
@@ -331,7 +275,6 @@ DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_splitshot_ultimate_movement_speed_percent_bonus: '%+$move_speed'
 DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_mana_regen_percentage: '%+$mana_regen'
 DOTA_Tooltip_ability_item_splitshot_ultimate_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
 DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim: '{lc:modifier_item_sange_maim}'
 DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
@@ -339,7 +282,7 @@ DOTA_Tooltip_modifier_item_splitshot_ultimate_fast_attack: '{lc:modifier_item_ya
 DOTA_Tooltip_modifier_item_splitshot_ultimate_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
 
 DOTA_Tooltip_ability_item_edge_of_vyse: Edge Of Vyse
-DOTA_Tooltip_ability_item_edge_of_vyse_Description: 'Активируемая: Vyse Walk - делает вас невидимым на время действия или до момента вашей атаки или использования заклинания. Пока Vyse Walk активна, вы движетесь на %windwalk_bonus_movement_speed_percentage%%% быстрее и можете проходить сквозь юнитов. Атака, раскрывающая невидимость, нанесет цели %windwalk_bonus_damage% дополнительного урона и превращает её в безобидную зверушку на %sheep_duration% секунд.'
+DOTA_Tooltip_ability_item_edge_of_vyse_Description: '<h1>Активируемая: Vyse Walk</h1> Делает вас невидимым на время действия или до момента вашей атаки или использования заклинания. Пока Vyse Walk активна, вы движетесь на %windwalk_bonus_movement_speed_percentage%%% быстрее и можете проходить сквозь юнитов. Атака, раскрывающая невидимость, нанесет цели %windwalk_bonus_damage% дополнительного урона и превращает её в безобидную зверушку на %sheep_duration% секунд.'
 DOTA_Tooltip_ability_item_edge_of_vyse_Note0: 'Удар, раскрывающий невидимость, никогда не промахивается.'
 DOTA_Tooltip_ability_item_edge_of_vyse_Note1: Отрицательные эффекты не проходят сквозь невосприимчивость к заклинаниям.
 DOTA_Tooltip_ability_item_edge_of_vyse_Note2: 'Цель будет иметь базовую скорость в 100 единиц в секунду, но эффекты, дающие максимальную скорость, сняты не будут.'
@@ -347,7 +290,7 @@ DOTA_Tooltip_ability_item_edge_of_vyse_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_edge_of_vyse_bonus_strength: +$str
 DOTA_Tooltip_ability_item_edge_of_vyse_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_edge_of_vyse_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_edge_of_vyse_bonus_mana_regen: '%+$mana_regen'
+DOTA_Tooltip_ability_item_edge_of_vyse_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_edge_of_vyse_bonus_attack_speed: +$attack
 DOTA_Tooltip_ability_item_edge_of_vyse_windwalk_duration: 'ДЛИТЕЛЬНОСТЬ НЕВИДИМОСТИ:'
 DOTA_Tooltip_ability_item_edge_of_vyse_windwalk_bonus_damage: 'УРОН ИЗ НЕВИДИМОСТИ:'
@@ -357,35 +300,30 @@ DOTA_Tooltip_modifier_item_edge_of_vyse_active_Description: 'Невидим. С�
 
 DOTA_Tooltip_ability_item_gem_of_clear_mind: Gem of Clear Mind
 DOTA_Tooltip_ability_item_gem_of_clear_mind_Description: |-
-  Пассивная: Clear Mind - дает носителю и его союзникам возможность различать иллюзии и настоящих героев.
+  <h1>Пассивная: Clear Mind</h1> Дает носителю и его союзникам возможность различать иллюзии и настоящих героев.
   Выпадает при смерти и не может быть уничтожен.
 DOTA_Tooltip_ability_item_gem_of_clear_mind_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_item_gem_Note0: 'Не действует, пока находится у курьера.'
 
 DOTA_Tooltip_ability_item_gem_of_pure_soul: Gem of Pure Soul
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Description: |-
-  Пассивная: Pure Soul - дает носителю и его союзникам возможность видеть длительность перезарядки способностей у противников.
+  <h1>Пассивная: Pure Soul</h1> Дает носителю и его союзникам возможность видеть длительность перезарядки способностей у противников.
   Выпадает при смерти и не может быть уничтожен.
 DOTA_Tooltip_ability_item_gem_of_pure_soul_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Note0: 'Не действует, пока находится у курьера.'
 
-DOTA_Tooltip_ability_item_tree_banana: Банан
-DOTA_Tooltip_ability_item_tree_banana_Description: 'Банан. Увеличивает ваш интеллект на 10, силу на 4 и ловкость на 2.'
-DOTA_Tooltip_ability_item_tree_banana_slide_distance: 'SLIDE DISTANCE:'
-DOTA_Tooltip_ability_item_tree_banana_slide_duration: 'SLIDE DURATION:'
-DOTA_Tooltip_ability_item_tree_banana_radius: 'RADIUS:'
 DOTA_Tooltip_ability_item_aegis_arena: Aegis of the Immortal
-DOTA_Tooltip_ability_item_aegis_arena_Description: 'Пассивная: Reincarnation — возвращает вас к жизни с полными здоровьем и маной через %reincarnate_time% секунд после смерти на том же месте, где вы погибли. Во время реинкарнации вы видите в радиусе %vision_radius% вокруг точки смерти. Должно быть использовано в течение %disappear_time_minutes_tooltip% минут, иначе Aegis of the Immortal исчезнет. Если это случилось, то вы мгновенно полностью излечитесь.'
+DOTA_Tooltip_ability_item_aegis_arena_Description: '<h1>Пассивная: Reincarnation</h1> Возвращает вас к жизни с полными здоровьем и маной через %reincarnate_time% секунд после смерти на том же месте, где вы погибли. Во время реинкарнации вы видите в радиусе %vision_radius% вокруг точки смерти. Должно быть использовано в течение %disappear_time_minutes_tooltip% минут, иначе Aegis of the Immortal исчезнет. Если это случилось, то вы мгновенно полностью излечитесь.'
 DOTA_Tooltip_ability_item_refresher_arena: Refresher Orb
 DOTA_Tooltip_ability_item_refresher_arena_Description: |-
-  Активируемая: Reset Cooldowns — сбрасывает время перезарядки всех ваших предметов и способностей.
-  Пассивная: Dynamical Cooldown - время перезарядки Refresher Orb равно времени перезарядки вашей способности с наибольшим временем перезарядки. Время перезарядки не может быть менее %cooldown_min% секунд и более %cooldown_max% секунд.
+  <h1>Активируемая: Reset Cooldowns</h1> Сбрасывает время перезарядки всех ваших предметов и способностей.
+  <h1>Пассивная: Dynamical Cooldown</h1> Время перезарядки Refresher Orb равно времени перезарядки вашей способности с наибольшим временем перезарядки. Время перезарядки не может быть менее %cooldown_min% секунд и более %cooldown_max% секунд.
 DOTA_Tooltip_ability_item_refresher_arena_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_refresher_arena_bonus_mana_regen_percentage: '%+$mana_regen'
+DOTA_Tooltip_ability_item_refresher_arena_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_refresher_arena_bonus_damage: +$damage
 
 DOTA_Tooltip_ability_item_casino_drug_pill1: Blue Pill
-DOTA_Tooltip_ability_item_casino_drug_pill1_Description: 'Активируемая: Съесть - съесть эту таблетку чтобы получить положительные и отрицательные эффекты на время. Каждый раз, когда вы используете эту способность вы получаете стак зависимости. Каждый стак зависимости увеличивает длительность отрицательных эффектов. Если у вас более 8 стаков зависимости вы получите постоенный отрицательный эффект, когда у вас нет основного, если у вас более 16 стаков зависимости вы получите постоянный усиленный debuff.'
+DOTA_Tooltip_ability_item_casino_drug_pill1_Description: '<h1>Активируемая: Съесть</h1> Съесть эту таблетку чтобы получить положительные и отрицательные эффекты на время. Каждый раз, когда вы используете эту способность вы получаете стак зависимости. Каждый стак зависимости увеличивает длительность отрицательных эффектов. Если у вас более 8 стаков зависимости вы получите постоенный отрицательный эффект, когда у вас нет основного, если у вас более 16 стаков зависимости вы получите постоянный усиленный debuff.'
 DOTA_Tooltip_modifier_item_casino_drug_pill1_buff: Blue Pill Buff
 DOTA_Tooltip_modifier_item_casino_drug_pill1_buff_Description: Что-то хорошее от этого.
 DOTA_Tooltip_modifier_item_casino_drug_pill1_debuff: Blue Pill Debuff
@@ -394,7 +332,7 @@ DOTA_Tooltip_modifier_item_casino_drug_pill1_addiction: Blue Pill Addiction
 DOTA_Tooltip_modifier_item_casino_drug_pill1_addiction_Description: 'Кажется, что тебе стоит завязать с этим.'
 
 DOTA_Tooltip_ability_item_casino_drug_pill2: Red Pill
-DOTA_Tooltip_ability_item_casino_drug_pill2_Description: 'Активируемая: Съесть - съесть эту таблетку чтобы получить положительные и отрицательные эффекты на время. Каждый раз, когда вы используете эту способность вы получаете стак зависимости. Каждый стак зависимости увеличивает длительность отрицательных эффектов. Если у вас более 8 стаков зависимости вы получите постоенный отрицательный эффект, когда у вас нет основного, если у вас более 16 стаков зависимости вы получите постоянный усиленный debuff.'
+DOTA_Tooltip_ability_item_casino_drug_pill2_Description: '<h1>Активируемая: Съесть</h1> Съесть эту таблетку чтобы получить положительные и отрицательные эффекты на время. Каждый раз, когда вы используете эту способность вы получаете стак зависимости. Каждый стак зависимости увеличивает длительность отрицательных эффектов. Если у вас более 8 стаков зависимости вы получите постоенный отрицательный эффект, когда у вас нет основного, если у вас более 16 стаков зависимости вы получите постоянный усиленный debuff.'
 DOTA_Tooltip_modifier_item_casino_drug_pill2_buff: Red Pill Buff
 DOTA_Tooltip_modifier_item_casino_drug_pill2_buff_Description: Что-то хорошее от этого.
 DOTA_Tooltip_modifier_item_casino_drug_pill2_debuff: Red Pill Debuff
@@ -403,7 +341,7 @@ DOTA_Tooltip_modifier_item_casino_drug_pill2_addiction: Red Pill Addiction
 DOTA_Tooltip_modifier_item_casino_drug_pill2_addiction_Description: 'Кажется, что тебе стоит завязать с этим.'
 
 DOTA_Tooltip_ability_item_casino_drug_pill3: Black Pill
-DOTA_Tooltip_ability_item_casino_drug_pill3_Description: 'Активируемая: Съесть - съесть эту таблетку чтобы получить положительные и отрицательные эффекты на время. Каждый раз, когда вы используете эту способность вы получаете стак зависимости. Каждый стак зависимости увеличивает длительность отрицательных эффектов. Если у вас более 8 стаков зависимости вы получите постоенный отрицательный эффект, когда у вас нет основного, если у вас более 16 стаков зависимости вы получите постоянный усиленный debuff.'
+DOTA_Tooltip_ability_item_casino_drug_pill3_Description: '<h1>Активируемая: Съесть</h1> Съесть эту таблетку чтобы получить положительные и отрицательные эффекты на время. Каждый раз, когда вы используете эту способность вы получаете стак зависимости. Каждый стак зависимости увеличивает длительность отрицательных эффектов. Если у вас более 8 стаков зависимости вы получите постоенный отрицательный эффект, когда у вас нет основного, если у вас более 16 стаков зависимости вы получите постоянный усиленный debuff.'
 DOTA_Tooltip_modifier_item_casino_drug_pill3_buff: Black Pill Buff
 DOTA_Tooltip_modifier_item_casino_drug_pill3_buff_Description: Что-то хорошее от этого.
 DOTA_Tooltip_modifier_item_casino_drug_pill3_debuff: Black Pill Debuff
@@ -413,7 +351,7 @@ DOTA_Tooltip_modifier_item_casino_drug_pill3_addiction_Description: 'Кажет�
 
 DOTA_Tooltip_ability_item_manta_arena: Manta Style
 DOTA_Tooltip_ability_item_manta_arena_Description: |-
-  Активируемая: Mirror Image — создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
+  <h1>Активируемая: Mirror Image</h1> Создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
   {lc:item_yasha_Description}
   {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_manta_arena_Note0: 'Тратит 0,1 секунды на произношение заклинания, во время которого вы неуязвимы.'
@@ -434,8 +372,8 @@ DOTA_Tooltip_modifier_item_manta_arena_fast_attack_Description: '{lc:modifier_it
 
 DOTA_Tooltip_ability_item_diffusal_blade_arena: Diffusal Blade I
 DOTA_Tooltip_ability_item_diffusal_blade_arena_Description: |-
-  Активируемая: Purge — снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
-  Пассивная: Manabreak — каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
+  <h1>Активируемая: Purge</h1> Снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
+  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
 DOTA_Tooltip_ability_item_diffusal_blade_arena_bonus_agility: +$agi
@@ -450,8 +388,8 @@ DOTA_Tooltip_modifier_item_diffusal_blade_arena_slow: Очищение от Diff
 DOTA_Tooltip_modifier_item_diffusal_blade_arena_slow_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2: Diffusal Blade II
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_Description: |-
-  Активируемая: Purge — снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
-  Пассивная: Manabreak — каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
+  <h1>Активируемая: Purge</h1> Снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
+  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_bonus_agility: +$agi
@@ -462,8 +400,8 @@ DOTA_Tooltip_ability_item_diffusal_blade_arena_2_damage_per_burn_pct: '%СОЖЖ
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_cast_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3: Diffusal Blade III
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_Description: |-
-  Активируемая: Purge — снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
-  Пассивная: Manabreak — каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
+  <h1>Активируемая: Purge</h1> Снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
+  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_bonus_agility: +$agi
@@ -474,8 +412,8 @@ DOTA_Tooltip_ability_item_diffusal_blade_arena_3_damage_per_burn_pct: '%СОЖЖ
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_cast_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4: Diffusal Blade IV
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_Description: |-
-  Активируемая: Purge — снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
-  Пассивная: Manabreak — каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
+  <h1>Активируемая: Purge</h1> Снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
+  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_bonus_agility: +$agi
@@ -486,8 +424,8 @@ DOTA_Tooltip_ability_item_diffusal_blade_arena_4_damage_per_burn_pct: '%СОЖЖ
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_cast_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5: Diffusal Blade V
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_Description: |-
-  Активируемая: Purge — снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
-  Пассивная: Manabreak — каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
+  <h1>Активируемая: Purge</h1> Снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
+  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_feedback_mana_burn_illusion_pct: '%СЖИГАЕТ НА ИЛЛЮЗИЯХ:'
@@ -495,7 +433,7 @@ DOTA_Tooltip_ability_item_diffusal_blade_arena_5_feedback_mana_drain_pct: '%ВО
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_damage_per_burn_pct: '%СОЖЖЕННАЯ МАНА В УРОН:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_cast_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_steam_footgear: Steam Footgear
-DOTA_Tooltip_ability_item_steam_footgear_Description: 'Активируемая: Passability - Даёт владельцу свободное передвижение.'
+DOTA_Tooltip_ability_item_steam_footgear_Description: '<h1>Активируемая: Passability</h1> Даёт владельцу свободное передвижение.'
 DOTA_Tooltip_ability_item_steam_footgear_bonus_movement_speed: +$move_speed
 DOTA_Tooltip_ability_item_steam_footgear_bonus_all: +$all
 DOTA_Tooltip_ability_item_steam_footgear_bonus_damage: +$damage
@@ -505,24 +443,24 @@ DOTA_Tooltip_modifier_item_steam_footgear_active: Steam Footgear
 DOTA_Tooltip_modifier_item_steam_footgear_active_Description: У вас есть свободное передвижение.
 DOTA_Tooltip_ability_item_eye_of_the_prophet: Eye of the Prophet
 DOTA_Tooltip_ability_item_eye_of_the_prophet_Description: |-
-  Активируемая: Prediction - Раскрывает область в любой точке карты.
+  <h1>Активируемая: Prediction</h1> Раскрывает область в любой точке карты.
   Не раскрывает невидимых юнитов.
 DOTA_Tooltip_ability_item_eye_of_the_prophet_radius: 'ОБЛАСТЬ ДЕЙСТВИЯ:'
 DOTA_Tooltip_ability_item_eye_of_the_prophet_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_ray_of_fate: Ray of Fate
-DOTA_Tooltip_ability_item_ray_of_fate_Description: 'Активируемая: True Prophecy - Раскрывает невидимых юнитов в любой точке карты.'
+DOTA_Tooltip_ability_item_ray_of_fate_Description: '<h1>Активируемая: True Prophecy</h1> Раскрывает невидимых юнитов в любой точке карты.'
 DOTA_Tooltip_ability_item_ray_of_fate_radius: 'ОБЛАСТЬ ДЕЙСТВИЯ:'
 DOTA_Tooltip_ability_item_ray_of_fate_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_titanium_fruit: Titanium Fruit
-DOTA_Tooltip_ability_item_titanium_fruit_Description: 'Активируемая: Avatar - дает невосприимчивость к заклинаниям и полное сопротивление магическому урону.'
+DOTA_Tooltip_ability_item_titanium_fruit_Description: '<h1>Использование: Avatar</h1> Дает невосприимчивость к заклинаниям и полное сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_titanium_fruit_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit
 DOTA_Tooltip_modifier_item_titanium_fruit_Description: Вы невосприимчивы к магическим заклинаниям.
 DOTA_Tooltip_ability_item_diffusal_style: Diffusal Style
 DOTA_Tooltip_ability_item_diffusal_style_Description: |-
-  Активируемая: Mirror Image — создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
-  Пассивная: Manabreak — каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn_pct%%% сожженной маны в виде чистого урона. Также восстанавливает вам %feedback_mana_drain_pct%%% маны от сожженной маны противника.
-  Пассивная: Purge - Каждая атака имеет %purge_chance_pct%%% шанс снять положительные эффекты, приковать к земле на %purge_root_duration% сек. и замедлить противника на %purge_slow_duration% секунд.
+  <h1>Активируемая: Mirror Image</h1> Создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
+  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn_pct%%% сожженной маны в виде чистого урона. Также восстанавливает вам %feedback_mana_drain_pct%%% маны от сожженной маны противника.
+  <h1>Пассивная: Purge</h1> Каждая атака имеет %purge_chance_pct%%% шанс снять положительные эффекты, приковать к земле на %purge_root_duration% сек. и замедлить противника на %purge_slow_duration% секунд.
   {lc:item_yasha_Description}
   {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_diffusal_style_Note0: 'Тратит 0,1 секунды на произношение заклинания, во время которого вы неуязвимы.'
@@ -537,42 +475,42 @@ DOTA_Tooltip_modifier_item_diffusal_style_root_Description: Прикован к 
 DOTA_Tooltip_modifier_item_diffusal_style_slow: Очищение от Diffusal Style
 DOTA_Tooltip_modifier_item_diffusal_style_slow_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
 DOTA_Tooltip_ability_item_dagon_arena: Dagon
-DOTA_Tooltip_ability_item_dagon_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
+DOTA_Tooltip_ability_item_dagon_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_dagon_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_dagon_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_dagon_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dagon_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_dagon_2_arena: Dagon
-DOTA_Tooltip_ability_item_dagon_2_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
+DOTA_Tooltip_ability_item_dagon_2_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_2_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_dagon_2_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_dagon_2_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_dagon_2_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dagon_2_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_dagon_3_arena: Dagon
-DOTA_Tooltip_ability_item_dagon_3_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
+DOTA_Tooltip_ability_item_dagon_3_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_3_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_dagon_3_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_dagon_3_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_dagon_3_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dagon_3_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_dagon_4_arena: Dagon
-DOTA_Tooltip_ability_item_dagon_4_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
+DOTA_Tooltip_ability_item_dagon_4_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_4_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_dagon_4_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_dagon_4_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_dagon_4_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dagon_4_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_dagon_5_arena: Dagon
-DOTA_Tooltip_ability_item_dagon_5_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
+DOTA_Tooltip_ability_item_dagon_5_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_5_arena_damage: 'МГНОВЕННЫЙ УРОН:'
 DOTA_Tooltip_ability_item_dagon_5_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_dagon_5_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_dagon_5_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dagon_5_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
+DOTA_Tooltip_ability_item_enchanted_dagon_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_damage: +$damage
@@ -583,7 +521,7 @@ DOTA_Tooltip_ability_item_enchanted_dagon_arena_range_tooltip: 'ДАЛЬНОСТ
 DOTA_Tooltip_modifier_item_enchanted_dagon_arena_debuff: Enchanted Dagon
 DOTA_Tooltip_modifier_item_enchanted_dagon_arena_debuff_Description: Сопротивление магическому урону уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%.
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
+DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_bonus_damage: +$damage
@@ -592,7 +530,7 @@ DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_magic_resist_reduction_pct: '%
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
+DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_bonus_damage: +$damage
@@ -601,7 +539,7 @@ DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_magic_resist_reduction_pct: '%
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
+DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_bonus_damage: +$damage
@@ -610,7 +548,7 @@ DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_magic_resist_reduction_pct: '%
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_debuff_duration: 'ДЛИТЕЛЬННОСТЬ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_Description: 'Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
+DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, уменьшая его сопротивление магическому урону.'
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_bonus_damage: +$damage
@@ -620,7 +558,7 @@ DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_debuff_duration: 'ДЛИТЕЛ
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
+  <h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_sunray_dagon_arena_bonus_all_stats: +$all
@@ -635,7 +573,7 @@ DOTA_Tooltip_modifier_item_sunray_dagon_arena_debuff: Sunray Dagon
 DOTA_Tooltip_modifier_item_sunray_dagon_arena_debuff_Description: Сопротивление магическому урону уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%, промахивается в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% атак.
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
+  <h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_sunray_dagon_2_arena_bonus_all_stats: +$all
@@ -648,7 +586,7 @@ DOTA_Tooltip_ability_item_sunray_dagon_2_arena_spell_amp_pct: '%ДОП. УРОН
 DOTA_Tooltip_ability_item_sunray_dagon_2_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
+  <h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_sunray_dagon_3_arena_bonus_all_stats: +$all
@@ -661,7 +599,7 @@ DOTA_Tooltip_ability_item_sunray_dagon_3_arena_spell_amp_pct: '%ДОП. УРОН
 DOTA_Tooltip_ability_item_sunray_dagon_3_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
+  <h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_sunray_dagon_4_arena_bonus_all_stats: +$all
@@ -674,7 +612,7 @@ DOTA_Tooltip_ability_item_sunray_dagon_4_arena_spell_amp_pct: '%ДОП. УРОН
 DOTA_Tooltip_ability_item_sunray_dagon_4_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena: Sunray Dagon
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_Description: |-
-  Активируемая: Energy Burst — выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
+  <h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту, который зависит от максимального здоровья цели, уменьшая сопротивление магическому урону и ослепляя цель на небольшой промежуток времени.
   Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_bonus_all_stats: +$all
@@ -695,43 +633,40 @@ DOTA_Tooltip_modifier_item_blink_staff_unobstructed_movement_Description: У в�
 
 DOTA_Tooltip_ability_item_hand_of_midas_arena: Hand of Midas
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Description: |-
-  Активируемая: Transmute — мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
+  <h1>Активируемая: Transmute</h1> Мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
   Невозможно использовать на древних крипах.
-  Первый уровень также нельзя использовать на чемпионах.
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Note0: Получаемое золото идет в надежный запас (при этом за убийство крипа стандартная награда не дается).
 DOTA_Tooltip_ability_item_hand_of_midas_arena_Note1: Опыт от превращения не делится с другими героями.
 DOTA_Tooltip_ability_item_hand_of_midas_arena_bonus_attack_speed: +$attack
 
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena: Hand of Midas
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Description: |-
-  Активируемая: Transmute — мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
+  <h1>Активируемая: Transmute</h1> Мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
   Невозможно использовать на древних крипах.
-  Первый уровень также нельзя использовать на чемпионах.
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note0: Получаемое золото идет в надежный запас (при этом за убийство крипа стандартная награда не дается).
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_Note1: Опыт от превращения не делится с другими героями.
 DOTA_Tooltip_ability_item_hand_of_midas_2_arena_bonus_attack_speed: +$attack
 
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena: Hand of Midas
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Description: |-
-  Активируемая: Transmute — мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
+  <h1>Активируемая: Transmute</h1> Мгновенно убивает цель (не героя), давая %bonus_gold% золота и в %xp_multiplier% раза больше опыта.
   Невозможно использовать на древних крипах.
-  Первый уровень также нельзя использовать на чемпионах.
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note0: Получаемое золото идет в надежный запас (при этом за убийство крипа стандартная награда не дается).
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_Note1: Опыт от превращения не делится с другими героями.
 DOTA_Tooltip_ability_item_hand_of_midas_3_arena_bonus_attack_speed: +$attack
 
 DOTA_Tooltip_ability_item_skull_of_midas: Skull of Midas
-DOTA_Tooltip_ability_item_skull_of_midas_Description: 'Пассивная: Touch of Midas - Каждый убитый юнит будет превращен в золото, что принесет вам дополнительные золото и опыт.'
+DOTA_Tooltip_ability_item_skull_of_midas_Description: '<h1>Пассивная: Touch of Midas</h1> Каждый убитый юнит будет превращен в золото, что принесет вам дополнительные золото и опыт.'
 DOTA_Tooltip_ability_item_skull_of_midas_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_skull_of_midas_kill_xp: 'ОПЫТ ЗА ЮНИТА:'
 DOTA_Tooltip_ability_item_skull_of_midas_kill_gold: 'ЗОЛОТО ЗА ЮНИТА:'
 DOTA_Tooltip_ability_item_chest_of_midas: Chest of Midas
-DOTA_Tooltip_ability_item_chest_of_midas_Description: 'Пассивная: Golden Chest - Каждый раз, когда вас атакует вражеский герой вы, получите золото и опыт.'
+DOTA_Tooltip_ability_item_chest_of_midas_Description: '<h1>Пассивная: Golden Chest</h1> Каждый раз, когда вас атакует вражеский герой вы, получите золото и опыт.<br><br>Атаки боссов не дают опыта и забирают ваше золото.'
 DOTA_Tooltip_ability_item_chest_of_midas_bonus_armor: +$armor
 DOTA_Tooltip_ability_item_chest_of_midas_xp: 'ОПЫТ:'
 DOTA_Tooltip_ability_item_chest_of_midas_gold: 'ЗОЛОТО:'
 DOTA_Tooltip_ability_item_blood_of_midas: Blood of Midas
-DOTA_Tooltip_ability_item_blood_of_midas_Description: 'Пассивная: Rune Enchant - Каждая поднятая руна богатства даст вам больше золота и опыта.'
+DOTA_Tooltip_ability_item_blood_of_midas_Description: '<h1>Пассивная: Rune Enchant</h1> Каждая поднятая руна богатства даст вам больше золота и опыта.'
 DOTA_Tooltip_ability_item_blood_of_midas_arena_Note0: Складывается с любым другим усилением руны.
 DOTA_Tooltip_ability_item_blood_of_midas_bonus_attackspeed: +$attack
 DOTA_Tooltip_ability_item_blood_of_midas_bonus_regen: +$hp_regen
@@ -740,12 +675,12 @@ DOTA_Tooltip_ability_item_blood_of_midas_gold_multiplier: 'МНОЖИТЕЛЬ З
 DOTA_Tooltip_ability_item_bloodstone_arena: Bloodstone
 DOTA_Tooltip_ability_item_bloodstone_arena_Description: |-
   Активная: Pocket Deny - мгновенно убивает вас. Пока ваш герой мертв вы будете видеть всё всё происходящее рядом с точкой смерти. Если у вас достаточно зарядов для мгновенного воскрешения, то вы воскреснете на месте вашей смерти.
-  Пассивная: Bloodpact - изначально имеет 10 зарядов и получает 1 дополнительный заряд каждый раз, когда в радиусе %charge_range% умирает вражеский герой. Каждый заряд увеличивает регенерацию маны на %bonus_mana_regen_per_charge%, регенерацию здоровья на %bonus_health_regen_per_charge%, максимальный запас здоровья на %bonus_health_per_charge%, максимальный запас маны на %bonus_mana_per_charge% и уменьшает время возрождения на %respawn_time_reduction_per_charge% сек. Если владелец Bloodstone умирает, предмет потеряет %on_death_charge_percent_tooltip%%% зарядов и восстановит %heal_on_death_base% здоровья + %heal_on_death_per_charge% здоровья за каждый заряд всем союзникам в радиусе %heal_on_death_range%.
+  <h1>Пассивная: Bloodpact</h1> Изначально имеет 10 зарядов и получает 1 дополнительный заряд каждый раз, когда в радиусе %charge_range% умирает вражеский герой. Каждый заряд увеличивает регенерацию маны на %bonus_mana_regen_per_charge%, регенерацию здоровья на %bonus_health_regen_per_charge%, максимальный запас здоровья на %bonus_health_per_charge%, максимальный запас маны на %bonus_mana_per_charge% и уменьшает время возрождения на %respawn_time_reduction_per_charge% сек. Если владелец Bloodstone умирает, предмет потеряет %on_death_charge_percent_tooltip%%% зарядов и восстановит %heal_on_death_base% здоровья + %heal_on_death_per_charge% здоровья за каждый заряд всем союзникам в радиусе %heal_on_death_range%.
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_Note0: Pocket Deny не влияет на серии убийств
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_health: +$health
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_bloodstone_arena_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana_regen_percentage: '%+$mana_regen'
+DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_team_changer: Traitor's Flag
 DOTA_Tooltip_ability_item_team_changer_Description: |-
   Меняет вашу команду на противоположную. Может быть использовано только если в другой команде меньше игроков чем в вашей. Если владелец получит урон от вражеского героя или босса, способность отключается на %attacked_cooldown% сек.
@@ -755,7 +690,7 @@ DOTA_Tooltip_ability_item_team_changer_Description: |-
   <font color='cyan'>Рейтинговая игра: отключено.</font>
 
 DOTA_Tooltip_ability_item_skadi_arena: Eye of Skadi
-DOTA_Tooltip_ability_item_skadi_arena_Description: 'Пассивная: Cold Attack — каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
+DOTA_Tooltip_ability_item_skadi_arena_Description: '<h1>Пассивная: Cold Attack</h1> Каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
 DOTA_Tooltip_ability_item_skadi_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_arena_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_arena_bonus_mana: +$mana
@@ -764,21 +699,21 @@ DOTA_Tooltip_ability_item_skadi_arena_cold_attack_speed: 'ЗАМЕДЛЕНИЕ �
 DOTA_Tooltip_modifier_item_skadi_arena_cold_attack: Eye of Skadi Cold Attack
 DOTA_Tooltip_modifier_item_skadi_arena_cold_attack_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 DOTA_Tooltip_ability_item_skadi_2: Eye of Skadi X2
-DOTA_Tooltip_ability_item_skadi_2_Description: 'Пассивная: Cold Attack — каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
+DOTA_Tooltip_ability_item_skadi_2_Description: '<h1>Пассивная: Cold Attack</h1> Каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
 DOTA_Tooltip_ability_item_skadi_2_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_2_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_2_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_skadi_2_cold_movement_speed_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_skadi_2_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_skadi_4: Eye of Skadi X4
-DOTA_Tooltip_ability_item_skadi_4_Description: 'Пассивная: Cold Attack — каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
+DOTA_Tooltip_ability_item_skadi_4_Description: '<h1>Пассивная: Cold Attack</h1> Каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
 DOTA_Tooltip_ability_item_skadi_4_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_4_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_4_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_skadi_4_cold_movement_speed_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_skadi_4_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_skadi_8: Eye of Skadi X8
-DOTA_Tooltip_ability_item_skadi_8_Description: 'Пассивная: Cold Attack — каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
+DOTA_Tooltip_ability_item_skadi_8_Description: '<h1>Пассивная: Cold Attack</h1> Каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
 DOTA_Tooltip_ability_item_skadi_8_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_8_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_8_bonus_mana: +$mana
@@ -790,7 +725,7 @@ DOTA_Tooltip_ability_item_skadi_4_Note0: Cold Attack не замедляет б�
 DOTA_Tooltip_ability_item_skadi_8_Note0: Cold Attack не замедляет боссов
 
 DOTA_Tooltip_ability_item_radiance_arena: Radiance
-DOTA_Tooltip_ability_item_radiance_arena_Description: 'Активируемая: Toggle Burn — когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
+DOTA_Tooltip_ability_item_radiance_arena_Description: '<h1>Активируемая: Toggle Burn</h1> Когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
 DOTA_Tooltip_ability_item_radiance_arena_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_arena_blind_pct: '%ШАНС ПРОМАХА:'
 DOTA_Tooltip_ability_item_radiance_arena_aura_radius: 'РАДИУС:'
@@ -799,28 +734,28 @@ DOTA_Tooltip_ability_item_radiance_arena_attack_speed_slow: 'ЗАМЕДЛЕНИ�
 DOTA_Tooltip_modifier_item_radiance_lua_effect: Burn Damage
 DOTA_Tooltip_modifier_item_radiance_lua_effect_Description: 'Получает урон, скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% и промахивается в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% случаев.'
 DOTA_Tooltip_ability_item_radiance_2: Radiance
-DOTA_Tooltip_ability_item_radiance_2_Description: 'Активируемая: Toggle Burn — когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
+DOTA_Tooltip_ability_item_radiance_2_Description: '<h1>Активируемая: Toggle Burn</h1> Когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
 DOTA_Tooltip_ability_item_radiance_2_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_2_blind_pct: '%ШАНС ПРОМАХА:'
 DOTA_Tooltip_ability_item_radiance_2_aura_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_item_radiance_2_move_speed_slow_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_radiance_2_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_radiance_3: Radiance
-DOTA_Tooltip_ability_item_radiance_3_Description: 'Активируемая: Toggle Burn — когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
+DOTA_Tooltip_ability_item_radiance_3_Description: '<h1>Активируемая: Toggle Burn</h1> Когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
 DOTA_Tooltip_ability_item_radiance_3_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_3_blind_pct: '%ШАНС ПРОМАХА:'
 DOTA_Tooltip_ability_item_radiance_3_aura_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_item_radiance_3_move_speed_slow_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_radiance_3_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_radiance_frozen: Frozen Radiance
-DOTA_Tooltip_ability_item_radiance_frozen_Description: 'Активируемая: Toggle Burn — когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %cold_movement_speed_pct%%%, скорость атаки на %cold_attack_speed% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
+DOTA_Tooltip_ability_item_radiance_frozen_Description: '<h1>Активируемая: Toggle Burn</h1> Когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %cold_movement_speed_pct%%%, скорость атаки на %cold_attack_speed% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
 DOTA_Tooltip_ability_item_radiance_frozen_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_frozen_blind_pct: '%ШАНС ПРОМАХА:'
 DOTA_Tooltip_ability_item_radiance_frozen_aura_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_item_radiance_frozen_move_speed_slow_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_radiance_frozen_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_1: Fire Orb
-DOTA_Tooltip_ability_item_essential_orb_fire_1_Description: 'Активируемая: Fireball - Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
+DOTA_Tooltip_ability_item_essential_orb_fire_1_Description: '<h1>Активируемая: Fireball</h1> Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
 DOTA_Tooltip_ability_item_essential_orb_fire_1_range: 'РАДИУС ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_1_speed: 'СКОРОСТЬ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_1_damage_hit_growth: 'УРОН ЗА ЮНИТА:'
@@ -830,7 +765,7 @@ DOTA_Tooltip_ability_item_essential_orb_fire_1_burn_armor: 'ПОНИЖЕНИЕ �
 DOTA_Tooltip_modifier_item_essential_orb_fire_burn: Fire Orb Burn
 DOTA_Tooltip_modifier_item_essential_orb_fire_burn_Description: 'Вам периодически наносится урон, броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'
 DOTA_Tooltip_ability_item_essential_orb_fire_2: Fire Orb
-DOTA_Tooltip_ability_item_essential_orb_fire_2_Description: 'Активируемая: Fireball - Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
+DOTA_Tooltip_ability_item_essential_orb_fire_2_Description: '<h1>Активируемая: Fireball</h1> Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
 DOTA_Tooltip_ability_item_essential_orb_fire_2_range: 'РАДИУС ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_2_speed: 'СКОРОСТЬ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_2_damage_hit_growth: 'УРОН ЗА ЮНИТА:'
@@ -838,7 +773,7 @@ DOTA_Tooltip_ability_item_essential_orb_fire_2_burn_duration: 'ДЛИТЕЛЬН�
 DOTA_Tooltip_ability_item_essential_orb_fire_2_burn_damage_per_sec: 'УРОН В СЕКУНДУ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_2_burn_armor: 'ПОНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_3: Fire Orb
-DOTA_Tooltip_ability_item_essential_orb_fire_3_Description: 'Активируемая: Fireball - Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
+DOTA_Tooltip_ability_item_essential_orb_fire_3_Description: '<h1>Активируемая: Fireball</h1> Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
 DOTA_Tooltip_ability_item_essential_orb_fire_3_range: 'РАДИУС ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_3_speed: 'СКОРОСТЬ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_3_damage_hit_growth: 'УРОН ЗА ЮНИТА:'
@@ -846,7 +781,7 @@ DOTA_Tooltip_ability_item_essential_orb_fire_3_burn_duration: 'ДЛИТЕЛЬН�
 DOTA_Tooltip_ability_item_essential_orb_fire_3_burn_damage_per_sec: 'УРОН В СЕКУНДУ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_3_burn_armor: 'ПОНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_4: Fire Orb
-DOTA_Tooltip_ability_item_essential_orb_fire_4_Description: 'Активируемая: Fireball - Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
+DOTA_Tooltip_ability_item_essential_orb_fire_4_Description: '<h1>Активируемая: Fireball</h1> Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
 DOTA_Tooltip_ability_item_essential_orb_fire_4_range: 'РАДИУС ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_4_speed: 'СКОРОСТЬ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_4_damage_hit_growth: 'УРОН ЗА ЮНИТА:'
@@ -854,7 +789,7 @@ DOTA_Tooltip_ability_item_essential_orb_fire_4_burn_duration: 'ДЛИТЕЛЬН�
 DOTA_Tooltip_ability_item_essential_orb_fire_4_burn_damage_per_sec: 'УРОН В СЕКУНДУ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_4_burn_armor: 'ПОНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_5: Fire Orb
-DOTA_Tooltip_ability_item_essential_orb_fire_5_Description: 'Активируемая: Fireball - Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
+DOTA_Tooltip_ability_item_essential_orb_fire_5_Description: '<h1>Активируемая: Fireball</h1> Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
 DOTA_Tooltip_ability_item_essential_orb_fire_5_range: 'РАДИУС ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_5_speed: 'СКОРОСТЬ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_5_damage_hit_growth: 'УРОН ЗА ЮНИТА:'
@@ -862,7 +797,7 @@ DOTA_Tooltip_ability_item_essential_orb_fire_5_burn_duration: 'ДЛИТЕЛЬН�
 DOTA_Tooltip_ability_item_essential_orb_fire_5_burn_damage_per_sec: 'УРОН В СЕКУНДУ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_5_burn_armor: 'ПОНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_6: Fire Orb
-DOTA_Tooltip_ability_item_essential_orb_fire_6_Description: 'Активируемая: Fireball - Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
+DOTA_Tooltip_ability_item_essential_orb_fire_6_Description: '<h1>Активируемая: Fireball</h1> Создать огненный шар, который наносит урон и поджигает всех противников, которых заденет. Урон растёт от числа задетых юнитов. Подожженные юниты будут получать урон со временем и получат понижение брони.'
 DOTA_Tooltip_ability_item_essential_orb_fire_6_range: 'РАДИУС ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_6_speed: 'СКОРОСТЬ:'
 DOTA_Tooltip_ability_item_essential_orb_fire_6_damage_hit_growth: 'УРОН ЗА ЮНИТА:'
@@ -871,9 +806,9 @@ DOTA_Tooltip_ability_item_essential_orb_fire_6_burn_damage_per_sec: 'УРОН В
 DOTA_Tooltip_ability_item_essential_orb_fire_6_burn_armor: 'ПОНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_octarine_core_arena: Octarine Core
 DOTA_Tooltip_ability_item_octarine_core_arena_Description: |-
-  Пассивная: Cooldown Reduction - уменьшает время перезарядки всех способностей и предметов на %bonus_cooldown_pct%%%.
-  Пассивная: Spell Lifesteal - дает магический вампиризм, который восстанавливает здоровье в размере доли от нанесенного способностями урона.
-  Пассивная: Mental Strike - весь нанесенный способностями урон имеет шанс оглушить противника.
+  <h1>Пассивная: Cooldown Reduction</h1> Уменьшает время перезарядки всех способностей и предметов на %bonus_cooldown_pct%%%.
+  <h1>Пассивная: Spell Lifesteal</h1> Дает магический вампиризм, который восстанавливает здоровье в размере доли от нанесенного способностями урона.
+  <h1>Пассивная: Mental Strike</h1> Весь нанесенный способностями урон имеет шанс оглушить противника.
 DOTA_Tooltip_ability_item_octarine_core_arena_bonus_cooldown_pct: '%УМЕНЬШЕНИЕ ПЕРЕЗАРЯДКИ:'
 DOTA_Tooltip_ability_item_octarine_core_arena_hero_lifesteal: '%ВАМПИРИЗМ ОТ ГЕРОЕВ:'
 DOTA_Tooltip_ability_item_octarine_core_arena_creep_lifesteal: '%ВАМПИРИЗМ ОТ КРИПОВ:'
@@ -884,10 +819,10 @@ DOTA_Tooltip_modifier_octarine_bash_cooldown: Перезарядка Mental Stri
 DOTA_Tooltip_modifier_octarine_bash_cooldown_Description: Mental Strike находится на перезарядке и временно не может выпасть.
 DOTA_Tooltip_ability_item_refresher_core: Refresher Core
 DOTA_Tooltip_ability_item_refresher_core_Description: |-
-  Активируемая: Reset Cooldowns — сбрасывает время перезарядки всех ваших предметов и способностей.
-  Пассивная: Dynamical Cooldown - время перезарядки Refresher Orb равно времени перезарядки вашей способности с наибольшим временем перезарядки. Время перезарядки не может быть менее %cooldown_min% секунд и более %cooldown_max% секунд.
-  Пассивная: Cooldown Reduction - уменьшает время перезарядки всех способностей и предметов на %bonus_cooldown_pct%%%.
-  Пассивная: Spell Lifesteal - дает магический вампиризм, который восстанавливает здоровье в размере доли от нанесенного способностями урона.
+  <h1>Активируемая: Reset Cooldowns</h1> Сбрасывает время перезарядки всех ваших предметов и способностей.
+  <h1>Пассивная: Dynamical Cooldown</h1> Время перезарядки Refresher Orb равно времени перезарядки вашей способности с наибольшим временем перезарядки. Время перезарядки не может быть менее %cooldown_min% секунд и более %cooldown_max% секунд.
+  <h1>Пассивная: Cooldown Reduction</h1> Уменьшает время перезарядки всех способностей и предметов на %bonus_cooldown_pct%%%.
+  <h1>Пассивная: Spell Lifesteal</h1> Дает магический вампиризм, который восстанавливает здоровье в размере доли от нанесенного способностями урона.
   Passive: Mental Strike - весь нанесенный способностями урон имеет шанс оглушить противника.
 DOTA_Tooltip_ability_item_refresher_core_bonus_cooldown_pct: '%УМЕНЬШЕНИЕ ПЕРЕЗАРЯДКИ:'
 DOTA_Tooltip_ability_item_refresher_core_hero_lifesteal: '%ВАМПИРИЗМ ОТ ГЕРОЕВ:'
@@ -896,7 +831,7 @@ DOTA_Tooltip_ability_item_refresher_core_bash_chance: '%ШАНС НА STRIKE:'
 DOTA_Tooltip_ability_item_refresher_core_bash_duration: 'ДЛИТЕЛЬНОСТЬ STRIKE:'
 DOTA_Tooltip_ability_item_refresher_core_bash_cooldown: 'ВРЕМЯ ПЕРЕЗАРЯДКИ STRIKE:'
 DOTA_Tooltip_ability_item_black_king_bar_arena: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_arena_Description: 'Активируемая: Avatar — дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
+DOTA_Tooltip_ability_item_black_king_bar_arena_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
 DOTA_Tooltip_ability_item_black_king_bar_arena_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
 DOTA_Tooltip_ability_item_black_king_bar_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_black_king_bar_arena_active_bonus_strength: 'ДОП. СИЛА:'
@@ -904,37 +839,37 @@ DOTA_Tooltip_ability_item_black_king_bar_arena_active_bonus_attackspeed: 'ДОП
 DOTA_Tooltip_modifier_item_black_king_bar_arena_active: Black King Bar
 DOTA_Tooltip_modifier_item_black_king_bar_arena_active_Description: 'Невосприимчив к заклинаниям, имеет полное сопротивление магическому урону, сила увеличена на %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 DOTA_Tooltip_ability_item_black_king_bar_2: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_2_Description: 'Активируемая: Avatar — дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
+DOTA_Tooltip_ability_item_black_king_bar_2_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
 DOTA_Tooltip_ability_item_black_king_bar_2_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
 DOTA_Tooltip_ability_item_black_king_bar_2_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_black_king_bar_2_active_bonus_strength: 'ДОП. СИЛА:'
 DOTA_Tooltip_ability_item_black_king_bar_2_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
 DOTA_Tooltip_ability_item_black_king_bar_3: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_3_Description: 'Активируемая: Avatar — дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
+DOTA_Tooltip_ability_item_black_king_bar_3_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
 DOTA_Tooltip_ability_item_black_king_bar_3_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
 DOTA_Tooltip_ability_item_black_king_bar_3_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_black_king_bar_3_active_bonus_strength: 'ДОП. СИЛА:'
 DOTA_Tooltip_ability_item_black_king_bar_3_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
 DOTA_Tooltip_ability_item_black_king_bar_4: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_4_Description: 'Активируемая: Avatar — дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
+DOTA_Tooltip_ability_item_black_king_bar_4_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
 DOTA_Tooltip_ability_item_black_king_bar_4_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
 DOTA_Tooltip_ability_item_black_king_bar_4_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_black_king_bar_4_active_bonus_strength: 'ДОП. СИЛА:'
 DOTA_Tooltip_ability_item_black_king_bar_4_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
 DOTA_Tooltip_ability_item_black_king_bar_5: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_5_Description: 'Активируемая: Avatar — дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
+DOTA_Tooltip_ability_item_black_king_bar_5_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
 DOTA_Tooltip_ability_item_black_king_bar_5_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
 DOTA_Tooltip_ability_item_black_king_bar_5_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_black_king_bar_5_active_bonus_strength: 'ДОП. СИЛА:'
 DOTA_Tooltip_ability_item_black_king_bar_5_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
 DOTA_Tooltip_ability_item_black_king_bar_6: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_6_Description: 'Активируемая: Avatar — дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
+DOTA_Tooltip_ability_item_black_king_bar_6_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
 DOTA_Tooltip_ability_item_black_king_bar_6_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
 DOTA_Tooltip_ability_item_black_king_bar_6_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_black_king_bar_6_active_bonus_strength: 'ДОП. СИЛА:'
 DOTA_Tooltip_ability_item_black_king_bar_6_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
 DOTA_Tooltip_ability_item_titanium_bar: Titanium Bar
-DOTA_Tooltip_ability_item_titanium_bar_Description: 'Активируемая: Avatar - дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки, а также уменьшение всего получаемого урона на %active_damage_reduction_pct%%%.'
+DOTA_Tooltip_ability_item_titanium_bar_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки, а также уменьшение всего получаемого урона на %active_damage_reduction_pct%%%.'
 DOTA_Tooltip_ability_item_titanium_bar_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_titanium_bar_active_damage_reduction_pct: '%СНИЖЕНИЕ УРОНА:'
 DOTA_Tooltip_ability_item_titanium_bar_active_bonus_strength: 'ДОП. СИЛА:'
@@ -943,21 +878,21 @@ DOTA_Tooltip_modifier_item_titanium_bar_active: Titanium Bar
 DOTA_Tooltip_modifier_item_titanium_bar_active_Description: 'Невосприимчив к заклинаниям, имеет полное сопротивление магическому урону, весь получаемый урон уменьшен на %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, сила увеличена на %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 DOTA_Tooltip_ability_item_vermillion_robe: Vermillion Robe
 DOTA_Tooltip_ability_item_vermillion_robe_Description: |-
-  Активируемая: True Flame - Наносит половинный урон заклинателю как урон по себе, затем, после %damage_delay% секунд, наносит урон по площади вокруг заклинателя, основываясь на разнице максимального и текущего здоровья.
-  Пассивная: Vermillion Dust - Добавляет бонусы основываясь на отсутствующем здоровье.
+  <h1>Активируемая: True Flame</h1> Наносит половинный урон заклинателю как урон по себе, затем, после %damage_delay% секунд, наносит урон по площади вокруг заклинателя, основываясь на разнице максимального и текущего здоровья.
+  <h1>Пассивная: Vermillion Dust</h1> Добавляет бонусы основываясь на отсутствующем здоровье.
 DOTA_Tooltip_ability_item_vermillion_robe_hp_as_damage_pct: '%ТЕКУЩЕЕ ЗДОРОВЬЕ В УРОН ПО СЕБЕ:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_radius: 'РАДИУС УРОНА:'
 DOTA_Tooltip_ability_item_vermillion_robe_damage_delay: 'ЗАДЕРЖКА ПЕРЕД УРОНОМ:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_mana_regen_pct: '%РЕГЕНЕРАЦИЯ МАНЫ ЗА ПРОЦЕНТ:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_move_speed: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ЗА ПРОЦЕНТ:'
+DOTA_Tooltip_ability_item_vermillion_robe_dust_mana_regen: 'РЕГЕНЕРАЦИЯ МАНЫ ЗА ПРОЦЕНТ:'
+DOTA_Tooltip_ability_item_vermillion_robe_dust_bonus_movement_speed: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ЗА ПРОЦЕНТ:'
 DOTA_Tooltip_ability_item_vermillion_robe_dust_damage: 'УРОН ЗА ПРОЦЕНТ:'
 DOTA_Tooltip_modifier_item_vermillion_robe_delay: True Flame Delay от Vermillion Robe
 DOTA_Tooltip_modifier_item_vermillion_robe_delay_Description: 'Когда закончится, нанесёт урон по площади.'
 DOTA_Tooltip_modifier_item_vermillion_robe_dust: Vermillion Dust
-DOTA_Tooltip_modifier_item_vermillion_robe_dust_Description: 'Регенерация маны увеличена на %dMODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE%%%, скорость передвидения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'
+DOTA_Tooltip_modifier_item_vermillion_robe_dust_Description: 'Регенерация маны увеличена на %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, скорость передвидения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'
 DOTA_Tooltip_ability_item_soul_of_titan: Soul of Titan
 DOTA_Tooltip_ability_item_soul_of_titan_Description: |-
-  Пассивная: Elder Aura - Снижает броню всех противников, находящихся рядом.
+  <h1>Пассивная: Elder Aura</h1> Снижает броню всех противников, находящихся рядом.
 
   Этот предмет выпадает с боссов и не может быть куплен в лавке.
 DOTA_Tooltip_ability_item_soul_of_titan_armor_reduction: 'СНИЖЕНИЕ БРОНИ:'
@@ -965,7 +900,7 @@ DOTA_Tooltip_ability_item_soul_of_titan_radius: 'РАДИУС:'
 DOTA_Tooltip_modifier_item_soul_of_titan_effect: Снижение брони от Soul of Titan
 DOTA_Tooltip_modifier_item_soul_of_titan_effect_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_dark_flow: Dark Flow
-DOTA_Tooltip_ability_item_dark_flow_Description: 'Пассивная: Armor Flow - Каждая атака снижает броню противника.'
+DOTA_Tooltip_ability_item_dark_flow_Description: '<h1>Пассивная: Armor Flow</h1> Каждая атака снижает броню противника.'
 DOTA_Tooltip_ability_item_dark_flow_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dark_flow_armor_per_hit: 'СНИЖЕНИЕ БРОНИ ЗА УДАР:'
 DOTA_Tooltip_ability_item_dark_flow_max_stacks: 'МАКС. СТАКОВ:'
@@ -973,7 +908,7 @@ DOTA_Tooltip_ability_item_dark_flow_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_modifier_item_dark_flow_stack: Dark Flow
 DOTA_Tooltip_modifier_item_dark_flow_stack_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_echo_sabre_arena: Echo Sabre
-DOTA_Tooltip_ability_item_echo_sabre_arena_Description: 'Пассивная: Double Hit - Позволяет героям ближнего боя совершать двойную атаку, которая на %slow_duration% секунды замедляет скорость передвижения на %movement_slow%%% и скорость атаки на %attack_speed_slow%.'
+DOTA_Tooltip_ability_item_echo_sabre_arena_Description: '<h1>Пассивная: Double Hit</h1> Позволяет героям ближнего боя совершать двойную атаку, которая на %slow_duration% секунды замедляет скорость передвижения на %movement_slow%%% и скорость атаки на %attack_speed_slow%.'
 DOTA_Tooltip_ability_item_echo_sabre_arena_attack_delay: 'ЗАДЕРЖКА ПЕРЕД ВТОРОЙ АТАКОЙ:'
 DOTA_Tooltip_ability_item_echo_sabre_arena_movement_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_echo_sabre_arena_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
@@ -981,7 +916,7 @@ DOTA_Tooltip_ability_item_echo_sabre_arena_slow_duration: 'ДЛИТЕЛЬНОС�
 DOTA_Tooltip_modifier_item_echo_sabre_arena_debuff: Echo Sabre
 DOTA_Tooltip_modifier_item_echo_sabre_arena_debuff_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_echo_sabre_2: Echo Sabre 2
-DOTA_Tooltip_ability_item_echo_sabre_2_Description: 'Пассивная: Double Hit - Позволяет героям ближнего боя совершать двойную атаку, которая на %slow_duration% секунды замедляет скорость передвижения на %movement_slow%%% и скорость атаки на %attack_speed_slow%.'
+DOTA_Tooltip_ability_item_echo_sabre_2_Description: '<h1>Пассивная: Double Hit</h1> Позволяет героям ближнего боя совершать двойную атаку, которая на %slow_duration% секунды замедляет скорость передвижения на %movement_slow%%% и скорость атаки на %attack_speed_slow%.'
 DOTA_Tooltip_ability_item_echo_sabre_2_attack_delay: 'ЗАДЕРЖКА ПЕРЕД ВТОРОЙ АТАКОЙ:'
 DOTA_Tooltip_ability_item_echo_sabre_2_movement_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_echo_sabre_2_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
@@ -989,13 +924,13 @@ DOTA_Tooltip_ability_item_echo_sabre_2_slow_duration: 'ДЛИТЕЛЬНОСТЬ 
 DOTA_Tooltip_modifier_item_echo_sabre_2_debuff: Echo Sabre 2
 DOTA_Tooltip_modifier_item_echo_sabre_2_debuff_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_coffee_bean: Coffee Bean
-DOTA_Tooltip_ability_item_coffee_bean_Description: 'Активируемая: Caffeinated - в течение %duration% секунд ваша следующая применённая не-ультимативная способность будет мгновенно перезаряжена.'
+DOTA_Tooltip_ability_item_coffee_bean_Description: '<h1>Использование: Caffeinated</h1> В течение %duration% секунд ваша следующая применённая не-ультимативная способность будет мгновенно перезаряжена.'
 DOTA_Tooltip_ability_item_coffee_bean_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_modifier_item_coffee_bean: Coffee Bean
 DOTA_Tooltip_modifier_item_coffee_bean_Description: Следующая применённая не-ультимативная способность будет мгновенно перезаряжена.
 DOTA_Tooltip_ability_item_urn_of_souls: Urn of Souls
 DOTA_Tooltip_ability_item_urn_of_souls_Description: |-
-  Активируемая: Shadow Release - постепенно восстанавливает ману дружественным юнитам, либо постепенно сжигает ману вражеским юнитам.
+  <h1>Активируемая: Shadow Release</h1> Постепенно восстанавливает ману дружественным юнитам, либо постепенно сжигает ману вражеским юнитам.
   Получает заряды каждый раз, когда вражеский герой умирает в радиусе %soul_radius%.
 DOTA_Tooltip_ability_item_urn_of_souls_Note0: Пустая урна получает 2 заряда.
 DOTA_Tooltip_ability_item_urn_of_souls_Note1: 'Использование этой способности на противнике, который уже находится под ее действием, обновит длительность ее действия.'
@@ -1008,16 +943,16 @@ DOTA_Tooltip_modifier_item_urn_of_souls_damage: Shadow Release
 DOTA_Tooltip_modifier_item_urn_of_souls_damage_Description: Сжигает ману со временем.
 DOTA_Tooltip_ability_item_demon_king_bar: Demon King Bar
 DOTA_Tooltip_ability_item_demon_king_bar_Description: |-
-  Активируемая: <font color='#b44ce3'>Curse</font> - Проклинает вражеского героя, из-за чего он будет непрерывно получать урон, увеличивающийся с каждой секундой. Этот эффект может быть сброшен.
-  Пассивная: Mini-Bash — дает шанс нанести дополнительный урон и кратковременно оглушить цель при каждой атаке.
-  Пассивная: True Strike — исключает шанс промаха при атаке.
+  <h1>Активируемая: <font color='#b44ce3'>Curse</font></h1> Проклинает вражеского героя, из-за чего он будет непрерывно получать урон, увеличивающийся с каждой секундой. Этот эффект может быть сброшен.
+  <h1>Пассивная: Mini-Bash</h1> Дает шанс нанести дополнительный урон и кратковременно оглушить цель при каждой атаке.
+  <h1>Пассивная: True Strike</h1> Исключает шанс промаха при атаке.
 DOTA_Tooltip_ability_item_demon_king_bar_bash_chance: '%ШАНС МИНИ-ОГЛУШЕНИЯ:'
 DOTA_Tooltip_ability_item_demon_king_bar_bash_damage: 'УРОН МИНИ-ОГЛУШЕНИЯ:'
 DOTA_Tooltip_modifier_item_demon_king_bar_curse: 'Проклятье'
 DOTA_Tooltip_modifier_item_demon_king_bar_curse_Description: 'Непрерывно получает урон, который увеличивается с каждой секундой (сейчас %dMODIFIER_PROPERTY_TOOLTIP%). Снимается очищением.'
 DOTA_Tooltip_ability_item_butterfly_arena: Butterfly
 DOTA_Tooltip_ability_item_butterfly_arena_Description: |-
-  Активируемая: Flutter - Даёт владельцу максимальную скорость передвижения на %duration% секунд.
+  <h1>Активируемая: Flutter</h1> Даёт владельцу максимальную скорость передвижения на %duration% секунд.
 
   Сочетается по закону убывающей полезности с другими источниками уклонения.
 DOTA_Tooltip_ability_item_butterfly_arena_duration: 'ДЛИТЕЛЬНОСТЬ FLUTTER:'
@@ -1025,8 +960,8 @@ DOTA_Tooltip_modifier_item_butterfly_arena_evasion: Flutter
 DOTA_Tooltip_modifier_item_butterfly_arena_evasion_Description: Имеет максимальную скорость передвижения
 DOTA_Tooltip_ability_item_horn_of_the_underworld: Horn of the Underworld
 DOTA_Tooltip_ability_item_horn_of_the_underworld_Description: |-
-  Активируемая: Phantom Warsong - придает вашему герою фантомную форму, в которой он полностью защищен от физического урона и получает неограниченное передвижение, но не может атаковать и получает на %extra_spell_damage_percent%%% больше магического урона. В фантомной форме, создаёт ауру, которая дает %endurance_bonus_attack_speed% к скорости атаки и %endurance_bonus_movement_speed_pct%%% к скорости передвижения союзников в радиусе %endurance_radius%.
-  Пассивная: Swiftness Aura - увеличивает скорость атаки и передвижения союзников в радиусе %aura_radius%.
+  <h1>Активируемая: Phantom Warsong</h1> Придает вашему герою фантомную форму, в которой он полностью защищен от физического урона и получает неограниченное передвижение, но не может атаковать и получает на %extra_spell_damage_percent%%% больше магического урона. В фантомной форме, создаёт ауру, которая дает %endurance_bonus_attack_speed% к скорости атаки и %endurance_bonus_movement_speed_pct%%% к скорости передвижения союзников в радиусе %endurance_radius%.
+  <h1>Пассивная: Swiftness Aura</h1> Увеличивает скорость атаки и передвижения союзников в радиусе %aura_radius%.
 
   Эффекты нескольких Swiftness Aura не складываются.
 DOTA_Tooltip_ability_item_horn_of_the_underworld_aura_bonus_attack_speed: 'УСКОРЕНИЕ АТАКИ:'
@@ -1047,20 +982,20 @@ DOTA_Tooltip_modifier_item_horn_of_the_underworld_active_endurance_Description: 
   Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%
   Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
 DOTA_Tooltip_ability_item_desolator2: Desolator II
-DOTA_Tooltip_ability_item_desolator2_Description: 'Пассивная: Corruption — ваши атаки уменьшают броню цели на %corruption_duration% секунд.'
+DOTA_Tooltip_ability_item_desolator2_Description: '<h1>Пассивная: Corruption</h1> Ваши атаки уменьшают броню цели на %corruption_duration% секунд.'
 DOTA_Tooltip_ability_item_desolator2_corruption_armor: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_modifier_item_desolator2_arena_corruption: Desolator II Corruption
 DOTA_Tooltip_modifier_item_desolator2_arena_corruption_Description: Атака с Desolator II уменьшила броню этого существа на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 DOTA_Tooltip_ability_item_desolator3: Desolator III
-DOTA_Tooltip_ability_item_desolator3_Description: 'Пассивная: Corruption — ваши атаки уменьшают броню цели на %corruption_duration% секунд.'
+DOTA_Tooltip_ability_item_desolator3_Description: '<h1>Пассивная: Corruption</h1> Ваши атаки уменьшают броню цели на %corruption_duration% секунд.'
 DOTA_Tooltip_ability_item_desolator3_corruption_armor: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_modifier_item_desolator3_arena_corruption: Desolator III Corruption
 DOTA_Tooltip_modifier_item_desolator3_arena_corruption_Description: Атака с Desolator III уменьшила броню этого существа на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 DOTA_Tooltip_ability_item_desolator4: Venomus Desolator
 DOTA_Tooltip_ability_item_desolator4_Description: |-
-  Пассивная: Poison Attack — отравляет атакованную цель, нанося ей периодический урон.
+  <h1>Пассивная: Poison Attack</h1> Отравляет атакованную цель, нанося ей периодический урон.
 
-  Пассивная: Corruption — ваши атаки уменьшают броню цели на %corruption_duration% секунд.
+  <h1>Пассивная: Corruption</h1> Ваши атаки уменьшают броню цели на %corruption_duration% секунд.
 DOTA_Tooltip_ability_item_desolator4_corruption_armor: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_desolator4_poison_duration: 'ДЛИТЕЛЬНОСТЬ ОТРАВЛЕНИЯ:'
 DOTA_Tooltip_ability_item_desolator4_poison_damage_per_second: 'УРОН В СЕКУНДУ:'
@@ -1068,11 +1003,11 @@ DOTA_Tooltip_modifier_item_desolator4_arena_corruption: Venomus Desolator Corrup
 DOTA_Tooltip_modifier_item_desolator4_arena_corruption_Description: Атака с Venomus Desolator уменьшила броню этого существа на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% и получает урон от яда
 DOTA_Tooltip_ability_item_desolator5: Frozen Desolator
 DOTA_Tooltip_ability_item_desolator5_Description: |-
-  Пассивная: Cold Attack — каждая атака замедляет скорость передвижения и атаки цели на %corruption_duration% секунд.
+  <h1>Пассивная: Cold Attack</h1> Каждая атака замедляет скорость передвижения и атаки цели на %corruption_duration% секунд.
 
-  Пассивная: Poison Attack — отравляет атакованную цель, нанося ей периодический урон.
+  <h1>Пассивная: Poison Attack</h1> Отравляет атакованную цель, нанося ей периодический урон.
 
-  Пассивная: Corruption — ваши атаки уменьшают броню цели на %corruption_duration% секунд.
+  <h1>Пассивная: Corruption</h1> Ваши атаки уменьшают броню цели на %corruption_duration% секунд.
 DOTA_Tooltip_ability_item_desolator5_corruption_armor: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_desolator5_cold_movement_speed: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_desolator5_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
@@ -1082,11 +1017,11 @@ DOTA_Tooltip_modifier_item_desolator5_arena_corruption: Frozen Desolator Corrupt
 DOTA_Tooltip_modifier_item_desolator5_arena_corruption_Description: 'Атака с Frozen Desolator уменьшила броню этого существа на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, получает урон от яда, скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_desolator6: Ultimate Desolator
 DOTA_Tooltip_ability_item_desolator6_Description: |-
-  Пассивная: Cold Attack — каждая атака замедляет скорость передвижения и атаки цели на %corruption_duration% секунд.
+  <h1>Пассивная: Cold Attack</h1> Каждая атака замедляет скорость передвижения и атаки цели на %corruption_duration% секунд.
 
-  Пассивная: Poison Attack — отравляет атакованную цель, нанося ей периодический урон.
+  <h1>Пассивная: Poison Attack</h1> Отравляет атакованную цель, нанося ей периодический урон.
 
-  Пассивная: Corruption — ваши атаки уменьшают броню цели на %corruption_duration% секунд.
+  <h1>Пассивная: Corruption</h1> Ваши атаки уменьшают броню цели на %corruption_duration% секунд.
 DOTA_Tooltip_ability_item_desolator6_bonus_attack_range: +к радиусу атаки
 DOTA_Tooltip_ability_item_desolator6_corruption_armor: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_desolator6_cold_movement_speed: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
@@ -1097,9 +1032,9 @@ DOTA_Tooltip_modifier_item_desolator6_arena_corruption: Ultimate Desolator Corru
 DOTA_Tooltip_modifier_item_desolator6_arena_corruption_Description: 'Атака с Ultimate Desolator уменьшила броню этого существа на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, получает урон от яда, скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_thunder_musket: Thunder Musket
 DOTA_Tooltip_ability_item_thunder_musket_Description: |-
-  Пассивная: Thunderstruck - Каждые %thunderstruck_cooldown% секунд, ваша атака получит дополнительные %thunderstruck_bonus_attack_range% к радиусу атаки и нанесёт %thunderstruck_magical_damage% магического урона.
+  <h1>Пассивная: Thunderstruck</h1> Каждые %thunderstruck_cooldown% секунд, ваша атака получит дополнительные %thunderstruck_bonus_attack_range% к радиусу атаки и нанесёт %thunderstruck_magical_damage% магического урона.
 
-  Пассивная: Critical Strike — дает шанс нанести дополнительный урон при каждой атаке.
+  <h1>Пассивная: Critical Strike</h1> Дает шанс нанести дополнительный урон при каждой атаке.
 
   Пассивная: Увеличивает дальность атаки героев дальнего боя на %bonus_attack_range%.
 DOTA_Tooltip_ability_item_thunder_musket_crit_chance: '%ШАНС КРИТА:'
@@ -1112,17 +1047,17 @@ DOTA_Tooltip_ability_item_thunder_musket_thunderstruck_bonus_attack_range: '• 
 DOTA_Tooltip_ability_item_thunder_musket_thunderstruck_magical_damage: '• УРОН:'
 DOTA_Tooltip_ability_item_golden_eagle_relic: Golden Eagle Relic
 DOTA_Tooltip_ability_item_golden_eagle_relic_Description: |-
-  Активируемая: Toggle Wealth Strike - Когда активен, Wealth Strike наносит %active_gold_as_damage_pct%%% золота владельца в виде дополнительного чистого урона, увеличивает скорость атаки на %active_bonus_attackspeed% и скорость передвижения на %active_bonus_movespeed_pct%%%, но вы будете постоянно терять золото и не будете получать золото за убийства.
-  Пассивная: Touch of Midas - Каждый убитый юнит будет превращен в золото, что принесет вам дополнительные золото и опыт.
-  Пассивная: Lifesteal — дает владельцу вампиризм, который с каждой атакой восстанавливает его здоровье на часть нанесенного урона.
+  <h1>Активируемая: Toggle Wealth Strike</h1> Когда активен, Wealth Strike наносит %active_gold_as_damage_pct%%% золота владельца в виде дополнительного чистого урона, увеличивает скорость атаки на %active_bonus_attackspeed% и скорость передвижения на %active_bonus_movespeed_pct%%%, но вы будете постоянно терять золото и не будете получать золото за убийства.
+  <h1>Пассивная: Touch of Midas</h1> Каждый убитый юнит будет превращен в золото, что принесет вам дополнительные золото и опыт.
+  <h1>Пассивная: Lifesteal</h1> Дает владельцу вампиризм, который с каждой атакой восстанавливает его здоровье на часть нанесенного урона.
 DOTA_Tooltip_ability_item_golden_eagle_relic_Note0: Wealth Strike не наносит урон по боссам
 DOTA_Tooltip_ability_item_golden_eagle_relic_kill_xp: 'ОПЫТ ЗА ЮНИТА:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_kill_gold: 'ЗОЛОТО ЗА ЮНИТА:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_lifesteal_pct: '%ВАМПИРИЗМ:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_as_damage_pct: |-
-
+  %
   Swift Strike
-  • %ЗОЛОТА В УРОН:
+  • ЗОЛОТА В УРОН:
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_bonus_attackspeed: '• СКОРОСТЬ АТАКИ:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_bonus_movespeed_pct: '%• СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_golden_eagle_relic_active_gold_lost_per_sec_pct: '%• ЗОЛОТА В СЕКУНДУ:'
@@ -1131,7 +1066,7 @@ DOTA_Tooltip_modifier_item_golden_eagle_relic_enabled: Swift Strike
 DOTA_Tooltip_modifier_item_golden_eagle_relic_enabled_Description: 'Непрерывно тепряет золото, Wealth Approach наносит чистый урон, скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 
 DOTA_Tooltip_ability_item_butterfly_of_wind_Description: |-
-  Активируемая: Flutter - Увеличивает скорость передвижения владельца до %movement_speed_active%, %bonus_evasion_active_pct%%% уклонения и %bonus_agility_active% ловкости на %duration% секунд.
+  <h1>Активируемая: Flutter</h1> Увеличивает скорость передвижения владельца до %movement_speed_active%, %bonus_evasion_active_pct%%% уклонения и %bonus_agility_active% ловкости на %duration% секунд.
 
   Сочетается по закону убывающей полезности с другими источниками уклонения.
 DOTA_Tooltip_ability_item_butterfly_of_wind_bonus_evasion_active_pct: |-
@@ -1143,8 +1078,8 @@ DOTA_Tooltip_ability_item_butterfly_of_wind_duration: '• ДЛИТЕЛЬНОС�
 DOTA_Tooltip_modifier_item_butterfly_of_wind_evasion_Description: 'Скорость передвижения увеличена до %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, уклонение увеличено на %dMODIFIER_PROPERTY_EVASION_CONSTANT%%%, ловкость увеличена на %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%'
 
 DOTA_Tooltip_ability_item_timelords_butterfly_Description: |-
-  Активируемая: Flutter - Даёт владельцу максимальную скорость передвижения, %bonus_evasion_active_pct%%% уклонения и %bonus_agility_active% ловкости на %duration% секунд.
-  Пассивная: Timelord - Даёт владельцу %dodge_chance_pct%%% шанс уклониться от любого типа урона.
+  <h1>Активируемая: Flutter</h1> Даёт владельцу максимальную скорость передвижения, %bonus_evasion_active_pct%%% уклонения и %bonus_agility_active% ловкости на %duration% секунд.
+  <h1>Пассивная: Timelord</h1> Даёт владельцу %dodge_chance_pct%%% шанс уклониться от любого типа урона.
 
   Сочетается по закону убывающей полезности с другими источниками уклонения.
 DOTA_Tooltip_ability_item_timelords_butterfly_dodge_chance_pct: '%ШАНС СРАБАТЫВАНИЯ TIMELORD'
@@ -1157,20 +1092,20 @@ DOTA_Tooltip_modifier_item_timelords_butterfly_evasion_Description: 'Движе�
 
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health: Heavy War Axe of Rage - Здоровье
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health_Description: |-
-  Активируемая: Switch Mode (Урон) - В режиме Урона увеличивает ваш урон, основываясь на вашем базовом уроне. В режиме Здоровья увеличивает ваше максимальное здоровье.
-  Пассивная: Health Regeneration — восстанавливает определенный процент максимального здоровья в секунду. Если владелец получит урон от вражеского героя или Босса, способность отключается на некоторое время.
+  <h1>Активируемая: Switch Mode (Урон)</h1> В режиме Урона увеличивает ваш урон, основываясь на вашем базовом уроне. В режиме Здоровья увеличивает ваше максимальное здоровье.
+  <h1>Пассивная: Health Regeneration</h1> Восстанавливает определенный процент максимального здоровья в секунду. Если владелец получит урон от вражеского героя или Босса, способность отключается на некоторое время.
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health_bonus_toggle_damage_pct: '%РЕЖИМ УРОНА - УВЕЛИЧЕНИЕ БАЗОВОГО УРОНА:'
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health_bonus_toggle_health: 'РЕЖИМ ЗДОРОВЬЯ - ДОП. ЗДОРОВЬЕ:'
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_health_health_regen_percent_per_second: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_damage: Heavy War Axe Of Rage - Урон
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_damage_Description: |-
-  Активируемая: Switch Mode (Здоровье) - В режиме Урона увеличивает ваш урон, основываясь на вашем базовом уроне. В режиме Здоровья увеличивает ваше максимальное здоровье.
-  Пассивная: Health Regeneration — восстанавливает определенный процент максимального здоровья в секунду. Если владелец получит урон от вражеского героя или Босса, способность отключается на некоторое время.
+  <h1>Активируемая: Switch Mode (Здоровье)</h1> В режиме Урона увеличивает ваш урон, основываясь на вашем базовом уроне. В режиме Здоровья увеличивает ваше максимальное здоровье.
+  <h1>Пассивная: Health Regeneration</h1> Восстанавливает определенный процент максимального здоровья в секунду. Если владелец получит урон от вражеского героя или Босса, способность отключается на некоторое время.
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_damage_bonus_toggle_damage_pct: '%РЕЖИМ УРОНА - УВЕЛИЧЕНИЕ БАЗОВОГО УРОНА:'
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_damage_bonus_toggle_health: 'РЕЖИМ ЗДОРОВЬЯ - ДОП. ЗДОРОВЬЕ:'
 DOTA_Tooltip_ability_item_heavy_war_axe_of_rage_damage_health_regen_percent_per_second: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
 DOTA_Tooltip_ability_item_holy_knight_shield: Holy Knight Shield
-DOTA_Tooltip_ability_item_holy_knight_shield_Description: 'Пассивная: Holy Warrior - При получении урона от любой способности есть шанс получить иммунитет к заклинаниям на небольшое время.'
+DOTA_Tooltip_ability_item_holy_knight_shield_Description: '<h1>Пассивная: Holy Warrior</h1> При получении урона от любой способности есть шанс получить иммунитет к заклинаниям на небольшое время.'
 DOTA_Tooltip_ability_item_holy_knight_shield_buff_chance: '%ШАНС HOLY WARRIOR:'
 DOTA_Tooltip_ability_item_holy_knight_shield_buff_duration: 'ДЛИТЕЛЬНОСТЬ HOLY WARRIOR:'
 DOTA_Tooltip_modifier_item_holy_knight_shield_buff: Holy Warrior
@@ -1180,7 +1115,7 @@ DOTA_Tooltip_ability_item_book_of_the_keeper_Description: 'Пассивная: �
 DOTA_Tooltip_ability_item_book_of_the_keeper_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 DOTA_Tooltip_ability_item_angel_wings: Angel Wings
 DOTA_Tooltip_ability_item_angel_wings_Description: |-
-  Активируемая: Flight - Дает вам возможность свободно перемещаться через препятствия и увеличивает радиус атаки. Можно использовать во время произнесения заклинаний.
+  <h1>Активируемая: Flight</h1> Дает вам возможность свободно перемещаться через препятствия и увеличивает радиус атаки. Можно использовать во время произнесения заклинаний.
   Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus% и их урон на %spell_amp_pct%%%.
 DOTA_Tooltip_ability_item_angel_wings_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_angel_wings_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
@@ -1188,7 +1123,7 @@ DOTA_Tooltip_ability_item_angel_wings_bonus_attack_range: 'ДОП. РАДИУС 
 DOTA_Tooltip_modifier_item_angel_wings_active: Flight
 DOTA_Tooltip_modifier_item_angel_wings_active_Description: 'Имеет возможность свободно перемещаться через препятствия, радиус атаки увеличен на %dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS%'
 DOTA_Tooltip_ability_item_blade_of_discord: Blade of Discord
-DOTA_Tooltip_ability_item_blade_of_discord_Description: 'Активируемая: Ether Weakness — ослабляет врагов, придавая им бесплотную форму. В этой форме цель не может атаковать, получает увеличенный магический урон, но полностью защищена от физического урона. При применении на противников они будут замедлены и получат магический урон в размере %debuff_stats_multiplier%х всех ваших атрибутов + %debuff_damage_base% ед. Эффект длится %debuff_duration% секунд.'
+DOTA_Tooltip_ability_item_blade_of_discord_Description: '<h1>Активируемая: Ether Weakness</h1> Ослабляет врагов, придавая им бесплотную форму. В этой форме цель не может атаковать, получает увеличенный магический урон, но полностью защищена от физического урона. При применении на противников они будут замедлены и получат магический урон в размере %debuff_stats_multiplier%х всех ваших атрибутов + %debuff_damage_base% ед. Эффект длится %debuff_duration% секунд.'
 DOTA_Tooltip_ability_item_blade_of_discord_debuff_resist: '%ДОП. МАГИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_blade_of_discord_debuff_radius: 'РАДИУС ДЕЙСТВИЯ:'
 DOTA_Tooltip_ability_item_blade_of_discord_debuff_duration: 'ДЛИТЕЛЬНОСТЬ:'
@@ -1197,7 +1132,7 @@ DOTA_Tooltip_modifier_item_blade_of_discord_magic_weakness: Ether Weakness
 DOTA_Tooltip_modifier_item_blade_of_discord_magic_weakness_Description: 'Находится в призрачной форме. Получает увеличенный на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE%%% магический урон, скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%, не может атаковать и быть атакован'
 DOTA_Tooltip_ability_item_tango_arena: Tango
 DOTA_Tooltip_ability_item_tango_arena_Description: |-
-  Использование: съедает все деревья и варды в зоне применения, постепенно восстанавливая здоровье и получая дополнительную скорость передвижения. Поедание вардов даёт в %stacks_per_ward% раза более сильный эффект.
+  <h1>Использование: Devour</h1> Съедает все деревья и варды в зоне применения, постепенно восстанавливая здоровье и получая дополнительную скорость передвижения. Поедание вардов даёт в %stacks_per_ward% раза более сильный эффект.
   При начале дуэли будут сняты 50%% стаков.
 
   Можно использовать 2 раза. Эти эффекты стакаются.
@@ -1208,12 +1143,12 @@ DOTA_Tooltip_ability_item_tango_arena_buff_duration: 'ДЛИТЕЛЬНОСТЬ �
 DOTA_Tooltip_modifier_item_tango_arena: Tango
 DOTA_Tooltip_modifier_item_tango_arena_Description: 'Регенерация здоровья увеличена на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%, скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_piercing_blade: Piercing Blade
-DOTA_Tooltip_ability_item_piercing_blade_Description: 'Пассивная: Soul Piercing - %attack_damage_to_pure_pct%%% урона ваших атак будут наносить чистый урон, вместо физического.'
+DOTA_Tooltip_ability_item_piercing_blade_Description: '<h1>Пассивная: Soul Piercing</h1> %attack_damage_to_pure_pct%%% урона ваших атак будут наносить чистый урон, вместо физического.'
 DOTA_Tooltip_ability_item_piercing_blade_attack_damage_to_pure_pct: '%ЧИСТЫЙ УРОН ОТ АТАК:'
 DOTA_Tooltip_ability_item_fallhammer: Fallhammer
 DOTA_Tooltip_ability_item_fallhammer_Description: |-
-  Активируемая: Valor — при использовании на союзника увеличивает его броню и снижает вашу. При использовании на противника снижает броню и у вас, и у цели.
-  Пассивная: Double Hit - Позволяет героям ближнего боя совершать двойную атаку, которая оглушит врага на %bash_duration% секунд и нанесет %bash_damage% дополнительного урона. Оглушение сработает в любом случае, даже если ваш герой дальнего боя.
+  <h1>Активируемая: Valor</h1> При использовании на союзника увеличивает его броню и снижает вашу. При использовании на противника снижает броню и у вас, и у цели.
+  <h1>Пассивная: Double Hit</h1> Позволяет героям ближнего боя совершать двойную атаку, которая оглушит врага на %bash_duration% секунд и нанесет %bash_damage% дополнительного урона. Оглушение сработает в любом случае, даже если ваш герой дальнего боя.
 DOTA_Tooltip_ability_item_fallhammer_attack_delay: 'ЗАДЕРЖКА ПЕРЕД ВТОРОЙ АТАКОЙ:'
 DOTA_Tooltip_ability_item_fallhammer_bash_duration: 'ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:'
 DOTA_Tooltip_ability_item_fallhammer_valor_armor_reduction: 'СНИЖЕНИЕ БРОНИ ОТ VALOR:'
@@ -1226,7 +1161,7 @@ DOTA_Tooltip_modifier_item_fallhammer_valor_debuff: Fallhammer Valor
 DOTA_Tooltip_modifier_item_fallhammer_valor_debuff_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_dark_blade_Description: Этот предмет выпадает с боссов и не может быть куплен в лавке.
 DOTA_Tooltip_ability_item_heavens_halberd_arena_Description: |-
-  Активируемая: Disarm — запрещает цели атаковать. Длится %disarm_duration% секунд.
+  <h1>Активируемая: Disarm</h1> Запрещает цели атаковать. Длится %disarm_duration% секунд.
   {lc:item_sange_Description}
 
   Сочетается по закону убывающей полезности с другими источниками уклонения.
@@ -1241,10 +1176,10 @@ DOTA_Tooltip_modifier_item_heavens_halberd_arena_disarm: Бессилие
 DOTA_Tooltip_modifier_item_heavens_halberd_arena_disarm_Description: Не может атаковать
 
 DOTA_Tooltip_ability_item_haganemushi_Description: |-
-  Пассивная: Metal-Eater - С каждой атакой этот легендарный меч снижает броню и урон противника. Этот эффект вечен, не снимается очищением и не работает на боссов.
-  Активируемая: Shadow Walk — делает вас невидимым на время действия или до момента вашей атаки или использования заклинания. Пока Shadow Walk активна, вы движетесь на %windwalk_movement_speed_pct%%% быстрее и можете проходить сквозь юнитов. Атака, раскрывающая невидимость, нанесет %windwalk_bonus_damage% дополнительного урона. Длится %windwalk_duration% секунд.
-  Пассивная: Soul Piercing - %attack_damage_to_pure_pct%%% урона ваших атак будут наносить чистый урон, вместо физического.
-  Пассивная: Elder Aura - Снижает броню всех противников, находящихся рядом.
+  <h1>Пассивная: Metal-Eater</h1> С каждой атакой этот легендарный меч снижает броню и урон противника. Этот эффект вечен, не снимается очищением и не работает на боссов.
+  <h1>Активируемая: Shadow Walk</h1> Делает вас невидимым на время действия или до момента вашей атаки или использования заклинания. Пока Shadow Walk активна, вы движетесь на %windwalk_movement_speed_pct%%% быстрее и можете проходить сквозь юнитов. Атака, раскрывающая невидимость, нанесет %windwalk_bonus_damage% дополнительного урона. Длится %windwalk_duration% секунд.
+  <h1>Пассивная: Soul Piercing</h1> %attack_damage_to_pure_pct%%% урона ваших атак будут наносить чистый урон, вместо физического.
+  <h1>Пассивная: Elder Aura</h1> Снижает броню всех противников, находящихся рядом.
 DOTA_Tooltip_ability_item_haganemushi_damage_per_hit: 'СНИЖЕНИЕ УРОНА:'
 DOTA_Tooltip_ability_item_haganemushi_armor_per_hit: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_haganemushi_attack_damage_to_pure_pct: '%ЧИСТЫЙ УРОН ОТ АТАК:'
@@ -1260,7 +1195,7 @@ DOTA_Tooltip_modifier_item_haganemushi_active_Description: Невидим. Ск�
 DOTA_Tooltip_ability_item_slot_locked: Заблокированный Слот
 DOTA_Tooltip_ability_item_slot_locked_Description: Эта ячейка инвентаря заблокирована.
 DOTA_Tooltip_ability_item_phantom_bone_Description: Этот предмет выпадает с боссов и не может быть куплен в лавке.
-DOTA_Tooltip_ability_item_phantom_cuirass_Description: 'Пассивная: Assault Aura — увеличивает скорость атаки и броню союзных существ, при этом снижая броню врагов поблизости.'
+DOTA_Tooltip_ability_item_phantom_cuirass_Description: '<h1>Пассивная: Assault Aura</h1> Увеличивает скорость атаки и броню союзных существ, при этом снижая броню врагов поблизости.'
 DOTA_Tooltip_ability_item_phantom_cuirass_aura_attack_speed: |-
   ДЕЙСТВИЕ АУРЫ:
   • ДОП. СКОРОСТЬ АТАКИ:
@@ -1271,10 +1206,10 @@ DOTA_Tooltip_modifier_item_phantom_cuirass_ally_aura_Description: |-
   Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
 DOTA_Tooltip_modifier_item_phantom_cuirass_enemy_aura_Description: Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 DOTA_Tooltip_ability_item_demonic_cuirass_Description: |-
-  Активируемая: <font color='#b44ce3'>Area Curse</font> - Прокленает всех вражеских героев поблизости, из-за чего они будут непрерывно получать урон, увеличивающийся с каждой секундой. Этот эффект может быть сброшен.
-  Пассивная: Demonic Aura - увеличивает скорость атаки, броню, восстановление здоровья, даёт True Strike и шанс на Mini-Bash союзным существам, при этом снижая броню врагов поблизости.
-  Пассивная: Mini-Bash — дает шанс нанести дополнительный урон и кратковременно оглушить цель при каждой атаке.
-  Пассивная: True Strike — исключает шанс промаха при атаке.
+  <h1>Активируемая: <font color='#b44ce3'>Area Curse</font></h1> Прокленает всех вражеских героев поблизости, из-за чего они будут непрерывно получать урон, увеличивающийся с каждой секундой. Этот эффект может быть сброшен.
+  <h1>Пассивная: Demonic Aura</h1> Увеличивает скорость атаки, броню, восстановление здоровья, даёт True Strike и шанс на Mini-Bash союзным существам, при этом снижая броню врагов поблизости.
+  <h1>Пассивная: Mini-Bash</h1> Дает шанс нанести дополнительный урон и кратковременно оглушить цель при каждой атаке.
+  <h1>Пассивная: True Strike</h1> Исключает шанс промаха при атаке.
 DOTA_Tooltip_ability_item_demonic_cuirass_self_bash_chance: '%ШАНС МИНИ-ОГЛУШЕНИЯ:'
 DOTA_Tooltip_ability_item_demonic_cuirass_self_bash_damage: 'УРОН МИНИ-ОГЛУШЕНИЯ:'
 DOTA_Tooltip_ability_item_demonic_cuirass_aura_attack_speed: |-
@@ -1297,6 +1232,11 @@ DOTA_Tooltip_ability_item_summoned_unit_armor: 'БРОНЯ ДУХА:'
 DOTA_Tooltip_ability_item_summoned_unit_item_slots: 'СЛОТЫ ДЛЯ ПРЕДМЕТОВ ДУХА:'
 DOTA_Tooltip_ability_summoned_unit_return: Return
 DOTA_Tooltip_ability_summoned_unit_return_Description: 'Мгновенно перемещает Духа назад к хозяину. Дух не сможет использовать способность, если он получал урон от юнитов, находящихся под контролем игрока, в последние %return_damage_cooldown% секунды.'
+DOTA_Tooltip_modifier_item_summoned_unit_aura: Mystic Aura
+DOTA_Tooltip_modifier_item_summoned_unit_aura_Description: |-
+  Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%
+  Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%
+  Восстановление здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%.
 DOTA_Tooltip_ability_item_moon_dust: Moon Dust
 DOTA_Tooltip_ability_item_moon_dust_Description: Этот предмет выпадает с боссов и не может быть куплен в лавке.
 DOTA_Tooltip_ability_item_cursed_eye: Cursed Eye
@@ -1320,20 +1260,20 @@ DOTA_Tooltip_ability_item_demons_paw_Description: |-
   Этот предмет выпадает с боссов и не может быть куплен в лавке.
 DOTA_Tooltip_ability_item_demons_paw_bonus_attack_range: 'ДОП. РАДИУС АТАКИ:'
 DOTA_Tooltip_ability_item_awakened_cursed_eye: Awakened Cursed Eye
-DOTA_Tooltip_ability_item_awakened_cursed_eye_Description: 'Пассивная: Cursed Sight - дает носителю и его союзникам возможность видеть невидимых существ и варды, различать иллюзии и настоящих героев, возможность видеть длительность перезарядки способностей у противников и увеличивает радиус обзора владельца.'
+DOTA_Tooltip_ability_item_awakened_cursed_eye_Description: '<h1>Пассивная: Cursed Sight</h1> Дает носителю и его союзникам возможность видеть невидимых существ и варды, различать иллюзии и настоящих героев, возможность видеть длительность перезарядки способностей у противников и увеличивает радиус обзора владельца.'
 DOTA_Tooltip_ability_item_awakened_cursed_eye_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_item_awakened_cursed_eye_bonus_day_vision: 'УВЕЛИЧЕНИЕ ОБЗОРА ДНЕМ:'
 DOTA_Tooltip_ability_item_awakened_cursed_eye_bonus_night_vision: 'УВЕЛИЧЕНИЕ ОБЗОРА НОЧЬЮ:'
 DOTA_Tooltip_ability_item_shard_of_true_sight: Shard of True Sight
 DOTA_Tooltip_ability_item_shard_of_true_sight_Description: |-
-  Активируемая: Поглотить - поглощает предмет и дает владельцу и его союзникам возможность видеть невидимых существ и варды в определенном радиусе.
+  <h1>Активируемая: Поглотить</h1> Поглощает предмет и дает владельцу и его союзникам возможность видеть невидимых существ и варды в определенном радиусе.
   При смерти эффект будет потерян.
 DOTA_Tooltip_ability_item_shard_of_true_sight_radius: 'РАДИУС:'
 DOTA_Tooltip_modifier_shard_of_true_sight: Shard of True Sight
 DOTA_Tooltip_modifier_shard_of_true_sight_Description: Дает возможность видеть невидимых существ и варды. Эффект пропадает при смерти.
 DOTA_Tooltip_ability_item_urn_of_demons: Urn of Demons
 DOTA_Tooltip_ability_item_urn_of_demons_Description: |-
-  Активируемая: Demon Release - постепенно восстанавливает часть максиматьного здоровья и маны цели в течении времени, либо постепенно наносит урон и сжигает ману вражеским юнитам.
+  <h1>Активируемая: Demon Release</h1> Постепенно восстанавливает часть максиматьного здоровья и маны цели в течении времени, либо постепенно наносит урон и сжигает ману вражеским юнитам.
   Получает заряды каждый раз, когда вражеский герой умирает в радиусе %soul_radius%.
 DOTA_Tooltip_ability_item_urn_of_demons_Note0: Пустая урна получает 2 заряда.
 DOTA_Tooltip_ability_item_urn_of_demons_soul_hp_total_pct: '%СУММАРНОЕ ИЗМЕНЕНИЕ ЗДОРОВЬЯ:'
@@ -1344,21 +1284,21 @@ DOTA_Tooltip_modifier_item_urn_of_demons_ally_Description: Восстанавл�
 DOTA_Tooltip_modifier_item_urn_of_demons_enemy: Demon Release
 DOTA_Tooltip_modifier_item_urn_of_demons_enemy_Description: Сжигает ману и получает урон со временем
 DOTA_Tooltip_ability_item_lotus_sphere: Lotus Sphere
-DOTA_Tooltip_ability_item_lotus_sphere_Description: 'Пассивная: Spellblocking Shell - блокирует и отражает большинство направленных заклинаний обратно во врага.'
+DOTA_Tooltip_ability_item_lotus_sphere_Description: '<h1>Пассивная: Spellblocking Shell</h1> Блокирует и отражает большинство направленных заклинаний обратно во врага.'
 DOTA_Tooltip_ability_item_lotus_sphere_bonus_day_vision: 'УВЕЛИЧЕНИЕ ОБЗОРА ДНЕМ:'
 DOTA_Tooltip_ability_item_lotus_sphere_bonus_night_vision: 'УВЕЛИЧЕНИЕ ОБЗОРА НОЧЬЮ:'
 DOTA_Tooltip_ability_item_rune_keeper: Rune Keeper
 DOTA_Tooltip_ability_item_rune_keeper_Description: |-
-  Пассивная: Keep Rune - Каждый раз, когда вы подбираете руну Rune Keeper сохранит её в себе. При использовании эти руны будут иметь в %rune_multiplier% раз более сильный эффект. Руны хранятся не более %store_duration% секунд. Если время руны истекло, то она будет автоматически использована.
-  Активируемая: Consume Rune - Использует самую старую руну, находящуюся в Rune Keeper.
+  <h1>Пассивная: Keep Rune</h1> Каждый раз, когда вы подбираете руну Rune Keeper сохранит её в себе. При использовании эти руны будут иметь в %rune_multiplier% раз более сильный эффект. Руны хранятся не более %store_duration% секунд. Если время руны истекло, то она будет автоматически использована.
+  <h1>Активируемая: Consume Rune</h1> Использует самую старую руну, находящуюся в Rune Keeper.
 DOTA_Tooltip_ability_item_rune_keeper_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_rune_keeper_bonus_movement_speed: +$move_speed
 DOTA_Tooltip_ability_item_bottle_arena: Bottle
-DOTA_Tooltip_ability_item_bottle_arena_Description: 'Использование: теряет один заряд и постепенно восстанавливает вам здоровье и ману. Пустую бутыль можно пополнить возле союзного фонтана. В ней также можно хранить руны для последующего использования. При использовании эти руны будут иметь в %rune_multiplier% раз более сильный эффект.'
+DOTA_Tooltip_ability_item_bottle_arena_Description: '<h1>Использование:</h1> Теряет один заряд и постепенно восстанавливает вам здоровье и ману. Пустую бутыль можно пополнить возле союзного фонтана. В ней также можно хранить руны для последующего использования. При использовании эти руны будут иметь в %rune_multiplier% раз более сильный эффект.'
 DOTA_Tooltip_ability_item_bottle_arena_health_restore: 'ПОПОЛНЯЕТ ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_item_bottle_arena_mana_restore: 'ПОПОЛНЯЕТ МАНЫ:'
 DOTA_Tooltip_ability_item_bottle_arena_restore_time: 'ДЛИТЕЛЬНОСТЬ:'
-'Активируемая: Damage Return - отражает любой получаемый урон наносящему его врагу и уменьшает его. Длится %duration% сек.':
+'<h1>Активируемая: Damage Return</h1> Отражает любой получаемый урон наносящему его врагу и уменьшает его. Длится %duration% сек.':
   - DOTA_Tooltip_ability_item_blade_mail_arena_Description
   - DOTA_Tooltip_ability_item_blade_mail_2_Description
   - DOTA_Tooltip_ability_item_blade_mail_3_Description
@@ -1374,8 +1314,8 @@ DOTA_Tooltip_ability_item_blade_mail_3_reduced_damage_pct: '%УМЕНЬШЕНИ�
 DOTA_Tooltip_ability_item_blade_mail_3_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_item_sacred_blade_mail: Sacred Blade Mail
 DOTA_Tooltip_ability_item_sacred_blade_mail_Description: |-
-  Активируемая: Damage Return - отражает любой получаемый урон наносящему его врагу и уменьшает его. Длится %duration% сек.
-  Пассивная: Holy Warrior - При получении урона от любой способности есть шанс получить иммунитет к заклинаниям на небольшое время.
+  <h1>Активируемая: Damage Return</h1> Отражает любой получаемый урон наносящему его врагу и уменьшает его. Длится %duration% сек.
+  <h1>Пассивная: Holy Warrior</h1> При получении урона от любой способности есть шанс получить иммунитет к заклинаниям на небольшое время.
 DOTA_Tooltip_ability_item_sacred_blade_mail_reflected_damage_pct: '%ОТРАЖЕНИЕ УРОНА:'
 DOTA_Tooltip_ability_item_sacred_blade_mail_reduced_damage_pct: '%УМЕНЬШЕНИЕ УРОНА:'
 DOTA_Tooltip_ability_item_sacred_blade_mail_duration: 'ДЛИТЕЛЬНОСТЬ:'
@@ -1387,28 +1327,19 @@ DOTA_Tooltip_modifier_item_sacred_blade_mail_buff_cooldown: Перезарядк
 DOTA_Tooltip_modifier_item_sacred_blade_mail_buff_cooldown_Description: Holy Warrior перезаряжается и сейчас не может сработать
 
 DOTA_Tooltip_ability_item_ultimate_scepter_arena: Ultimate Scepter
-DOTA_Tooltip_ability_item_ultimate_scepter_arena_Description: 'Пассивная: Ultimate Upgrade — улучшает ульт, а также некоторые способности части героев.'
+DOTA_Tooltip_ability_item_ultimate_scepter_arena_Description: '<h1>Пассивная: Ultimate Upgrade</h1> Улучшает ульт, а также некоторые способности части героев.'
 DOTA_Tooltip_ability_item_ultimate_scepter_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 
-DOTA_Tooltip_ability_item_aether_lens_arena_Description: 'Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus% и их урон на %spell_amp_pct%%%'
-DOTA_Tooltip_ability_item_aether_lens_arena_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
-DOTA_Tooltip_ability_item_aether_lens_2_Description: 'Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus% и их урон на %spell_amp_pct%%%'
-DOTA_Tooltip_ability_item_aether_lens_2_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
-DOTA_Tooltip_ability_item_aether_lens_3_Description: 'Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus% и их урон на %spell_amp_pct%%%'
-DOTA_Tooltip_ability_item_aether_lens_3_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
-DOTA_Tooltip_ability_item_aether_lens_4_Description: 'Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus% и их урон на %spell_amp_pct%%%'
-DOTA_Tooltip_ability_item_aether_lens_4_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
-DOTA_Tooltip_ability_item_aether_lens_5_Description: 'Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus% и их урон на %spell_amp_pct%%%'
-DOTA_Tooltip_ability_item_aether_lens_5_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
+DOTA_Tooltip_ability_item_aether_lens_arena_Description: '<h1>Пассивная: Aethereal Focus</h1> Увеличивает дальность применения способностей и предметов на %cast_range_bonus%.'
 
-DOTA_Tooltip_ability_item_wand_of_midas_Description: 'Активируемая: Gold Charge - владелец получает золото и восстанавливает здоровье и ману в зависимости от количества имеющихся зарядов (максимум: %max_charges%). За каждое использование способности врагом, который видим и находится неподалеку, добавляется один заряд.'
+DOTA_Tooltip_ability_item_wand_of_midas_Description: '<h1>Активируемая: Gold Charge</h1> Владелец получает золото и восстанавливает здоровье и ману в зависимости от количества имеющихся зарядов (максимум: %max_charges%). За каждое использование способности врагом, который видим и находится неподалеку, добавляется один заряд.'
 DOTA_Tooltip_ability_item_wand_of_midas_gold: 'ЗОЛОТА ЗА ЗАРЯД:'
 DOTA_Tooltip_ability_item_wand_of_midas_restore_per_charge: 'ЗДОРОВЬЯ/МАНЫ ЗА ЗАРЯД:'
 DOTA_Tooltip_ability_item_wand_of_midas_radius: 'РАДИУС:'
 
 DOTA_Tooltip_ability_item_mekansm_arena_Description: |-
-  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца.
-  Пассивная: Mekansm Aura — увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
+  <h1>Активируемая: Restore</h1> Восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца.
+  <h1>Пассивная: Mekansm Aura</h1> Увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
 
   Эффекты от нескольких Mekansm Aura не складываются.
 DOTA_Tooltip_ability_item_mekansm_arena_radius: 'РАДИУС АУРЫ/СПОСОБНОСТИ:'
@@ -1418,8 +1349,8 @@ DOTA_Tooltip_ability_item_mekansm_arena_heal_amount: 'ЛЕЧЕНИЕ ОТ RESTOR
 DOTA_Tooltip_modifier_item_mekansm_arena_effect_Description: Восстановление здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%. Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 
 DOTA_Tooltip_ability_item_mekansm_2_Description: |-
-  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца.
-  Пассивная: Mekansm Aura — увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
+  <h1>Активируемая: Restore</h1> Восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца.
+  <h1>Пассивная: Mekansm Aura</h1> Увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
 
   Эффекты от нескольких Mekansm Aura не складываются.
 DOTA_Tooltip_ability_item_mekansm_2_radius: 'РАДИУС АУРЫ/СПОСОБНОСТИ:'
@@ -1428,8 +1359,8 @@ DOTA_Tooltip_ability_item_mekansm_2_aura_bonus_armor: 'ДОП. БРОНЯ ОТ �
 DOTA_Tooltip_ability_item_mekansm_2_heal_amount: 'ЛЕЧЕНИЕ ОТ RESTORE:'
 
 DOTA_Tooltip_ability_item_guardian_greaves_arena_Description: |-
-  Активируемая: Mend — восстанавливает %replenish_health% здоровья и %replenish_mana% маны всем окружающим союзникам, а также рассеивает большинство отрицательных эффектов и оглушений на них.
-  Пассивная: Guardian Aura — дарует окружающим союзникам +%aura_health_regen% к восстановлению здоровья и +%aura_armor% к броне. Если в радиусе действия есть союзный герой, уровень здоровья которого ниже %aura_bonus_threshold_pct%%%, то на него действует усиленная аура, восстанавливающая %aura_health_regen_bonus% здоровья в секунду и увеличивающая броню на %aura_armor_bonus%.
+  <h1>Активируемая: Mend</h1> Восстанавливает %replenish_health% здоровья и %replenish_mana% маны всем окружающим союзникам, а также рассеивает большинство отрицательных эффектов и оглушений на них.
+  <h1>Пассивная: Guardian Aura</h1> Дарует окружающим союзникам +%aura_health_regen% к восстановлению здоровья и +%aura_armor% к броне. Если в радиусе действия есть союзный герой, уровень здоровья которого ниже %aura_bonus_threshold_pct%%%, то на него действует усиленная аура, восстанавливающая %aura_health_regen_bonus% здоровья в секунду и увеличивающая броню на %aura_armor_bonus%.
 
   ТИП РАЗВЕИВАНИЯ: Нормальное
 DOTA_Tooltip_ability_item_guardian_greaves_arena_Note0: Может быть активирована во аремя оглушения
@@ -1445,12 +1376,21 @@ DOTA_Tooltip_ability_item_guardian_greaves_arena_replenish_health: 'ЛЕЧЕНИ
 DOTA_Tooltip_ability_item_guardian_greaves_arena_replenish_mana: 'МАНЫ ОТ MEND:'
 
 DOTA_Tooltip_ability_item_runic_mekansm_Description: |-
-  Активируемая: Restore — восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца. Также может хранить руны для последующего использования. При использовании эффект этих рун будет наложен на всех союзников рядом, но он будет ослаблен до %rune_multiplier% раз.
-  Пассивная: Mekansm Aura — увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
-
-  Эффекты от нескольких Mekansm Aura не складываются.
+  <h1>Активируемая: Restore</h1> Восстанавливает %heal_amount% здоровья и дает +%aura_bonus_armor% брони в радиусе %radius% вокруг владельца. Также может хранить руны для последующего использования. При использовании эффект этих рун будет наложен на всех союзников рядом, но он будет ослаблен до %rune_multiplier% раз.
+  <h1>Пассивная: Mekansm Aura</h1> Увеличивает скорость восстановления здоровья на %aura_health_regen% у союзников в радиусе %radius% вокруг владельца.
+DOTA_Tooltip_ability_item_runic_mekansm_Note0: Эффекты от нескольких Mekansm Aura не складываются.
 DOTA_Tooltip_ability_item_runic_mekansm_radius: 'РАДИУС АУРЫ/СПОСОБНОСТИ:'
 DOTA_Tooltip_ability_item_runic_mekansm_aura_health_regen: 'ЛЕЧЕНИЕ ОТ АУРЫ:'
 DOTA_Tooltip_ability_item_runic_mekansm_aura_bonus_armor: 'ДОП. БРОНЯ ОТ АУРЫ:'
 DOTA_Tooltip_ability_item_runic_mekansm_heal_amount: 'ЛЕЧЕНИЕ ОТ RESTORE:'
 DOTA_Tooltip_modifier_item_runic_mekansm_effect_Description: Восстановление здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%. Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+
+DOTA_Tooltip_ability_item_tree_banana: Банан
+DOTA_Tooltip_ability_item_tree_banana_Description: '<h1>Использование: Банан</h1> Увеличивает ваш интеллект на %intellect%.<br>При поглощении выбрасывается банановая кожура, которая заставляет наступившего на неё врага скользить, двигаясь на %slide_distance% единиц в направлении взгляда противника в течении %slide_duration% секунды. Кожура исчезает сразу как только враг наступит на неё.'
+
+DOTA_Tooltip_ability_item_rapier_arena_Description: |-
+  <h1>Пассивная: Everlasting</h1> <font color='#e03e2e'>Предмет выпадает при смерти и не может быть уничтожен.</font><br><br>Если выпавший предмет поднимет союзник владельца, то Divine Rapier потеряет свои свойства, пока его не вернут бывшему владельцу. Если предмет подберёт враг, то после его смерти бонусы от Divine Rapier сможет получить кто угодно. Курьер не может подобрать этот предмет, если он выпал при смерти.
+DOTA_Tooltip_ability_item_rapier_arena_Note0: Если Divine Rapier поднимет враг её первого владельца, то она выпадет только при смерти этого врага.
+DOTA_Tooltip_ability_item_rapier_arena_Lore: Настолько могущественное, что у него даже не может быть единственного владельца.
+
+DOTA_Tooltip_ability_item_lightning_rod_Description: '<h1>Использование: Place</h1> Устанавливает невидимого дозорного — Lightning Rod, из-за которого все молнии, созданные во время Шторма, находящиеся в радиусе %protection_radius% будут ударять в него.<br>Действует %duration_minutes% мин.<br><br>Дальность применения: %tooltip_range%'

@@ -9,7 +9,8 @@ Teams.Data = Teams.Data or {
 			{102, 255, 191},
 			{191, 0, 191},
 			{243, 240, 11},
-			{255, 107, 0}
+			{255, 107, 0},
+			{130, 129, 178}
 		}
 	},
 	[DOTA_TEAM_BADGUYS] = {
@@ -21,7 +22,8 @@ Teams.Data = Teams.Data or {
 			{161, 180, 71},
 			{101, 217, 247},
 			{0, 131, 33},
-			{164, 105, 0}
+			{164, 105, 0},
+			{204, 139, 85}
 		}
 	},
 	[DOTA_TEAM_CUSTOM_1] = {
@@ -32,8 +34,7 @@ Teams.Data = Teams.Data or {
 			{178, 121, 90},
 			{147, 255, 120},
 			{255, 91, 0},
-			{26, 20, 204},
-			{130, 129, 178}
+			{26, 20, 204}
 		}
 	},
 	[DOTA_TEAM_CUSTOM_2] = {
@@ -44,8 +45,7 @@ Teams.Data = Teams.Data or {
 			{71, 204, 131},
 			{255, 255, 255},
 			{255, 241, 96},
-			{195, 86, 255},
-			{204, 139, 85}
+			{195, 86, 255}
 		}
 	},
 	[DOTA_TEAM_CUSTOM_3] = {
@@ -107,14 +107,10 @@ function Teams:PostInitialize()
 
 		local playerCounter = 0
 		for _,playerID in ipairs(Teams:GetPlayerIDs(team, true, true)) do
-			if false then
-				PlayerResource:SetCustomPlayerColor(playerID, data.color[1], data.color[2], data.color[3])
-			else
-				playerCounter = playerCounter + 1
-				local color = data.playerColors[playerCounter]
-				PLAYER_DATA[playerID].Color = color
-				PlayerResource:SetCustomPlayerColor(playerID, color[1], color[2], color[3])
-			end
+			playerCounter = playerCounter + 1
+			local color = data.playerColors[playerCounter]
+			PLAYER_DATA[playerID].Color = color
+			PlayerResource:SetCustomPlayerColor(playerID, color[1], color[2], color[3])
 		end
 	end
 end
@@ -172,10 +168,9 @@ function Teams:RecalculateKillWeight(team)
 	if remaining == 0 then
 		value = 0
 	else
-		--local abandoned = GetTeamAbandonedPlayerCount(team)
 		local desired = Teams:GetDesiredPlayerCount(team)
 		local missing = desired - remaining
-		value = missing <= 1 and 1 or missing
+		value = math.max(missing, 1)
 	end
 	Teams:SetTeamKillWeight(team, value)
 end

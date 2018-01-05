@@ -52,7 +52,11 @@ function CustomAbilities:PrepareData()
 			local abilityTbl = {}
 			for i = 1, 24 do
 				local at = heroTable["Ability" .. i]
-				if at and at ~= "" and not AbilityHasBehaviorByName(at, "DOTA_ABILITY_BEHAVIOR_HIDDEN") and not table.contains(ABILITY_SHOP_SKIP_ABILITIES, at) then
+				if at and
+					at ~= "" and
+					not string.starts(at, "special_bonus_") and
+					not AbilityHasBehaviorByName(at, "DOTA_ABILITY_BEHAVIOR_HIDDEN") and
+					not table.contains(ABILITY_SHOP_SKIP_ABILITIES, at) then
 					local cost = 1
 					local banned_with = {}
 					local is_ultimate = IsUltimateAbilityKV(at)

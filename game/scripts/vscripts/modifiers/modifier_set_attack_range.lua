@@ -1,4 +1,3 @@
-if IsClient() then require("utils/shared") end
 modifier_set_attack_range = class({})
 
 function modifier_set_attack_range:DeclareFunctions()

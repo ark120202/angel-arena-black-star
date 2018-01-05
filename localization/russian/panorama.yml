@@ -43,6 +43,8 @@ hero_selection_unlock: Открепить
 hero_selection_heroes_default: Стандартные
 hero_selection_heroes_new: Новые
 hero_selection_repick_tooltip: За смену героя вы потеряете 200 начального золота
+hero_selection_disabled_reason_disabled_in_ranked: этот герой отключен в рейтинговых играх
+hero_selection_disabled_reason_unreleased: этот герой ещё не выпущен
 
 item_rune_keeper_no_runes_left: Rune Keeper теперь пуст.
 item_rune_keeper_contains: "Rune Keeper содержит руны:\_"

@@ -1,0 +1,47 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/keyframes.css" />
+		<include src="file://{resources}/styles/console.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/console.js" />
+	</scripts>
+	<Panel hittest="false" class="base">
+		<Panel id="console" class="console console_theme_dracula">
+			<Panel class="header">
+				<Panel class="header__top">
+					<Label class="header__icon" />
+					<Label class="header__title" text="Debug" />
+					<Label
+						class="header__close"
+						text="✖"
+						allowtextselection="false"
+						onmouseactivate="con.setVisible(false)"
+						onmouseover="con.setPinned(true)"
+						onmouseout="con.setPinned(false)"
+					/>
+				</Panel>
+
+				<Panel class="header__toolbar">
+					<Panel class="header__buttons">
+						<Label class="command command_label" text="Lua:" />
+						<TextButton class="command command_button" onmouseactivate="con.sendLua()" text="Server" />
+						<Label class="command command_label" text="JS:" />
+						<TextButton class="command command_button" onmouseactivate="con.sendJS('self')" text="Local" />
+						<TextButton class="command command_button" onmouseactivate="con.sendJS('everyone')" text="Everyone" />
+						<TextButton class="command command_button" onmouseactivate="con.sendJS('allies')" text="Allies" />
+						<TextButton class="command command_button" onmouseactivate="con.sendJS('enemies')" text="Enemies" />
+						<TextButton class="command command_button" onmouseactivate="con.sendJS('player')" text="Player ->" />
+						<DropDown class="header__js-player command" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="content">
+				<Label class="content__stack" text=">>>" />
+				<TextEntry class="content__entry" multiline="true" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

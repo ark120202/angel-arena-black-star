@@ -13,7 +13,6 @@ end
 function ClearDebuffs(keys)
 	local caster = keys.caster
 	caster:RemoveModifierByName("modifier_dazzle_weave_armor")
-	caster:RemoveModifierByName("modifier_ice_blast")
 
 	if not caster:PassivesDisabled() then
 		local ability = keys.ability
@@ -33,18 +32,11 @@ function OnTakeDamage(keys)
 	local attacker = keys.attacker
 	local ability = keys.ability
 	attacker:RemoveModifierByName("modifier_smoke_of_deceit")
-	if attacker:IsIllusion() then
-		attacker:TrueKill(ability, caster)
-	end
 
-	attacker:AddNewModifier(caster, ability, "modifier_max_attack_range", {AttackRange = ability:GetAbilitySpecial("attack_range_limit"), duration = 3})
-end
+	attacker:AddNewModifier(caster, ability, "modifier_max_attack_range", {
+		duration = 3,
+		AttackRange = ability:GetSpecialValueFor("attack_range_limit"),
+	})
 
-function OnBossDeath(keys)
-	local caster = keys.caster
-	local attacker = keys.attacker
-
-	if attacker and not caster.IsDominatedBoss then
-		Bosses:RegisterKilledBoss(caster, attacker:GetTeam())
-	end
+	ability:ApplyDataDrivenModifier(caster ,attacker, "modifier_boss_armor_no_invisibility", { duration = 3 })
 end

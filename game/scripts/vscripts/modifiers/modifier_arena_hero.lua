@@ -1,4 +1,3 @@
-if IsClient() then require("utils/shared") end
 modifier_arena_hero = class({
 	IsPurgable    = function() return false end,
 	IsHidden      = function() return true end,

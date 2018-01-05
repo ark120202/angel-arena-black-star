@@ -1,28 +1,27 @@
 ""
 {
-	"item_recipe_splitshot_str"
+	"item_recipe_nagascale_bow"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10050"
+		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"350"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_splitshot_str"
+		"ItemResult"					"item_nagascale_bow"
 		"ItemRequirements"
 		{
-			"01"						"item_sange_arena;item_pers;item_bracer"
+			"01"						"item_ogre_axe;item_staff_of_wizardry;item_blade_of_alacrity;item_wraith_band;item_null_talisman;item_bracer"
 		}
 	}
 
-	"item_splitshot_str"
+	"item_nagascale_bow"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10051"
+		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_arena/splitshot_str"
-		"ItemShopTags"					"splash;split shot;str;strength"
+		"AbilityTextureName"			"item_arena/nagascale_bow"
 		"ItemQuality"					"legendary"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -32,73 +31,23 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_percent"				"20"
+				"var_type"				"FIELD_INTEGER"
+				"damage_percent"		"30"
 			}
 			"02"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"range"							"300"
+				"var_type"				"FIELD_INTEGER"
+				"range"					"275"
 			}
 			"03"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"3"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all"				"22"
 			}
 			"04"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_strength"				"16"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_intelligence"			"3"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"16"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"32"
-			}
-			"09"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"5"
-			}
-			"10"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"	"125"
-			}
-			"11"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"maim_chance"					"40"
-			}
-			"12"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"maim_movement_speed"			"-6"
-			}
-			"13"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"maim_slow_attack"				"-6"
-			}
-			"14"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"maim_duration"					"4.5"
-			}
-			"15"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"maim_max_stacks"				"5"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"16"
 			}
 		}
 
@@ -123,7 +72,7 @@
 		"Modifiers"
 		{
 
-			"modifier_item_splitshot_str"
+			"modifier_item_nagascale_bow"
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
@@ -132,17 +81,13 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%movement_speed_percent_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
 				}
 			}
 
-			"modifier_item_splitshot_str_unique"
+			"modifier_item_nagascale_bow_unique"
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
@@ -153,7 +98,7 @@
 					{
 						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_splitshot_str_unique"
+						"modifier"		"modifier_item_nagascale_bow_unique"
 					}
 				}
 
@@ -163,397 +108,6 @@
 					{
 						"ScriptFile"	"items/items_splitshots.lua"
 						"Function"		"SplitShotLaunch"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"Random"
-					{
-						"Chance"			"%maim_chance"
-						"OnSuccess"
-						{
-							"RunScript"
-							{
-								"ScriptFile"			"items/items_SYNS.lua"
-								"Function"				"sange_lesser_maim_stacks"
-								"modifier"				"modifier_item_splitshot_str_lesser_maim"
-							}
-						}
-					}
-				}
-			}
-
-			"modifier_item_splitshot_str_lesser_maim"
-			{
-				"Duration"				"%maim_duration"
-				"Passive"				"0"
-				"IsHidden"				"0"
-				"IsBuff"				"0"
-				"IsDebuff"				"1"
-				"IsPurgable"			"1"
-
-				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "follow_origin"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_movement_speed"
-				}
-			}
-		}
-	}
-
-	"item_recipe_splitshot_agi"
-	{
-		"BaseClass"						"item_datadriven"
-		"ID"							"10052"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"350"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_splitshot_agi"
-		"ItemRequirements"
-		{
-			"01"						"item_yasha_arena;item_pers;item_wraith_band"
-		}
-	}
-
-	"item_splitshot_agi"
-	{
-		"BaseClass"						"item_datadriven"
-		"ID"							"10053"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_arena/splitshot_agi"
-		"ItemShopTags"					"splash;split shot;agi;agility"
-		"ItemQuality"					"legendary"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"damage_percent"					"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"300"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"16"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intelligence"	"3"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"16"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"16"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"16"
-			}
-			"09"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"5"
-			}
-			"10"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"	"125"
-			}
-			"11"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed_buff"		"3"
-			}
-			"12"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"2"
-			}
-			"13"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"fast_attack_duration"			"4.5"
-			}
-			"14"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"			"5"
-			}
-		}
-
-		"OnProjectileHitUnit"
-		{
-			"DeleteOnHit"	"1"
-
-			"FireSound"
-			{
-				"EffectName"	"Hero_Medusa.AttackSplit"
-				"Target" 		"TARGET"
-			}
-
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_splitshots.lua"
-				"Function"		"SplitShotDamage"
-				"Damage_percent"	"%damage_percent"
-			}
-		}
-
-		"Modifiers"
-		{
-
-			"modifier_item_splitshot_agi"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%movement_speed_percent_bonus"
-				}
-			}
-
-			"modifier_item_splitshot_agi_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_splitshot_agi_unique"
-					}
-				}
-
-				"OnAttack"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_splitshots.lua"
-						"Function"		"SplitShotLaunch"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_SYNS.lua"
-						"Function"		"yasha_fast_attack_stacks"
-						"modifier"		"modifier_item_splitshot_agi_fast_attack"
-					}
-				}
-			}
-
-			"modifier_item_splitshot_agi_fast_attack"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"IsBuff"			"1"
-				"IsPurgable"		"1"
-				"Duration"			"%fast_attack_duration"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
-				}
-			}
-		}
-	}
-
-	"item_recipe_splitshot_int"
-	{
-		"BaseClass"						"item_datadriven"
-		"ID"							"10054"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"350"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_splitshot_int"
-		"ItemRequirements"
-		{
-			"01"						"item_nightshadow;item_pers;item_null_talisman"
-		}
-	}
-
-	"item_splitshot_int"
-	{
-		"BaseClass"						"item_datadriven"
-		"ID"							"10055"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_arena/splitshot_int"
-		"ItemShopTags"					"splash;split shot;int;intelligence"
-		"ItemQuality"					"legendary"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"damage_percent"					"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"300"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intelligence"	"16"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"16"
-			}
-			"08"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_damage"						"16"
-			}
-			"09"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_health_regen"				"5"
-			}
-			"10"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"		"125"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"nightshadow_chance"			"10"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown_reduction"			"0.35"
-			}
-		}
-
-		"OnProjectileHitUnit"
-		{
-			"DeleteOnHit"	"1"
-
-			"FireSound"
-			{
-				"EffectName"	"Hero_Medusa.AttackSplit"
-				"Target" 		"TARGET"
-			}
-
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_splitshots.lua"
-				"Function"		"SplitShotDamage"
-				"Damage_percent"	"%damage_percent"
-			}
-		}
-
-		"Modifiers"
-		{
-
-			"modifier_item_splitshot_int"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%movement_speed_percent_bonus"
-				}
-			}
-
-			"modifier_item_splitshot_int_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"OnAttack"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_splitshots.lua"
-						"Function"		"SplitShotLaunch"
-						"force_attack_projectile"	"particles/econ/items/enchantress/enchantress_virgas/ench_impetus_virgas.vpcf"
-					}
-				}
-
-				"Random"
-				{
-					"Chance"			"%nightshadow_chance"
-					"OnSuccess"
-					{
-						"RunScript"
-						{
-							"ScriptFile"			"items/items_SYNS.lua"
-							"Function"				"CooldownReduction"
-							"cooldown_reducted"		"%cooldown_reduction"
-							"modifier"				"modifier_item_splitshot_int_unique"
-						}
 					}
 				}
 			}
@@ -563,26 +117,25 @@
 	"item_recipe_splitshot_ultimate"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10056"
+		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"1405"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_splitshot_ultimate"
 		"ItemRequirements"
 		{
-			"01"						"item_splitshot_str;item_splitshot_agi;item_splitshot_int"
+			"01"						"item_nagascale_bow;item_three_spirits_blades"
 		}
 	}
 
 	"item_splitshot_ultimate"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10057"
+		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/splitshot_ultimate"
-		"ItemShopTags"					"splash;split shot;int;intelligence"
 		"ItemQuality"					"legendary"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -593,112 +146,102 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_percent"				"60"
+				"damage_percent"				"50"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"range"							"450"
+				"range"							"375"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"30"
+				"bonus_damage"					"50"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_strength"				"30"
+				"bonus_intellect"				"50"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_intelligence"			"30"
+				"bonus_strength"				"50"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"60"
+				"bonus_agility"					"50"
 			}
-			"05"
+			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"20"
+				"bonus_attack_speed"			"20"
 			}
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"80"
+				"movement_speed_percent_bonus"	"20"
 			}
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"20"
-			}
-			"10"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"	"400"
-			}
-			"11"
-			{
-				"var_type"						"FIELD_INTEGER"
 				"nightshadow_chance"			"20"
 			}
-			"12"
+			"10"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"cooldown_reduction"			"0.65"
 			}
-			"13"
+			"11"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"maim_chance"					"50"
 			}
-			"14"
+			"12"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"maim_slow_movement"			"-6"
 			}
-			"15"
+			"13"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"maim_slow_attack"				"-8"
 			}
-			"16"
+			"14"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"maim_duration"					"5"
+				"maim_duration"					"4"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maim_max_stacks"				"8"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed_buff"		"8"
 			}
 			"17"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maim_max_stacks"				"6"
+				"movement_speed_percent_bonus_buff"		"2"
 			}
 			"18"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed_buff"		"9"
+				"fast_attack_duration"			"6"
 			}
 			"19"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"3"
+				"fast_attack_max_stacks"		"8"
 			}
 			"20"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fast_attack_duration"			"5"
-			}
-			"21"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"		"6"
-			}
-			"22"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"global_attack_chance"			"1"
+				"global_attack_chance"			"5"
 			}
 		}
 
@@ -733,10 +276,9 @@
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%movement_speed_percent_bonus"
 				}

@@ -12,18 +12,9 @@ function MeepoFixes:FindMeepos(main, includeMain)
 	return meepos
 end
 
-function MeepoFixes:ShareRespawnTime(unit, respawnTime)
-	if unit:GetFullName() == "npc_dota_hero_meepo" then
-		for _,clone in ipairs(MeepoFixes:FindMeepos(unit)) do
-			clone:SetTimeUntilRespawn(respawnTime)
-		end
-	end
-end
-
 function MeepoFixes:IsMeepoClone(unit)
 	return unit:GetFullName() == "npc_dota_hero_meepo" and unit:IsTrueHero() and not unit:IsMainHero()
 end
-
 
 function MeepoFixes:ShareItems(unit)
 	if unit:GetFullName() == "npc_dota_hero_meepo" then

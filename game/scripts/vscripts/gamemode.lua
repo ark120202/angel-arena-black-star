@@ -89,10 +89,14 @@ function GameMode:InitGameMode()
 	Containers:UsePanoramaInventory(false)
 	StatsClient:Init()
 	Teams:Initialize()
+	Attributes:Init()
+	Console:Init()
+
 	PlayerTables:CreateTable("arena", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("players_abandoned", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("gold", {}, AllPlayersInterval)
+	PlayerTables:CreateTable("weather", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
 end
 
@@ -104,7 +108,6 @@ function GameMode:OnFirstPlayerLoaded()
 	if Options:IsEquals("MainHeroList", "NoAbilities") then
 		CustomAbilities:PrepareData()
 	end
-	StatsClient:FetchTopPlayers()
 end
 
 function GameMode:OnAllPlayersLoaded()
@@ -131,6 +134,7 @@ function GameMode:OnHeroSelectionEnd()
 	--Timers:CreateTimer(1/30, Dynamic_Wrap(GameMode, "QuickGameModeThink"))
 	PanoramaShop:StartItemStocks()
 	Duel:CreateGlobalTimer()
+	Weather:Init()
 
 	Timers:CreateTimer(10, function()
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
@@ -151,7 +155,6 @@ function GameMode:OnHeroInGame(hero)
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
 				Structures:GiveCourier(hero)
 			end
-			HeroVoice:OnHeroInGame(hero)
 		end
 	end)
 end
@@ -200,6 +203,13 @@ function GameMode:GameModeThink()
 			if hero then
 				hero:SetNetworkableEntityInfo("unit_name", hero:GetFullName())
 				MeepoFixes:ShareItems(hero)
+				local position = hero:GetAbsOrigin()
+				if position.x > MAP_LENGTH or
+					position.x < -MAP_LENGTH or
+					position.y > MAP_LENGTH or
+					position.y < -MAP_LENGTH then
+					hero:TrueKill()
+				end
 			end
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 				local gold_per_tick = CUSTOM_GOLD_PER_TICK

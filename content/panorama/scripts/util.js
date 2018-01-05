@@ -18,7 +18,7 @@ var console = {
 	}
 };
 
-var ServerAddress = 'https://stats.dota-aabs.com/';
+var ServerAddress = false ? 'http://127.0.0.1:6502/' : 'https://stats.dota-aabs.com/';
 
 var HERO_SELECTION_PHASE_NOT_STARTED = 0;
 var HERO_SELECTION_PHASE_BANNING = 1;
@@ -395,5 +395,20 @@ function SetPagePlayerLevel(ProfileBadge, level) {
 	ProfileBadge.FindChildTraverse('ProfileLevel').GetChild(0).text = level;
 }
 
-var hud = GetDotaHud();
+function FindFountain(team) {
+	return Entities.GetAllEntitiesByName('npc_arena_fountain_' + team)[0];
+}
 
+function GetVisibleAbilityInSlot(unit, slot) {
+	var j = 0;
+	for (var i = 0; i < Entities.GetAbilityCount(unit); i++) {
+		var ability = Entities.GetAbility(unit, i);
+		if (!Abilities.IsHidden(ability)) {
+			if (j++ === slot) {
+				return ability;
+			}
+		}
+	}
+}
+
+var hud = GetDotaHud();

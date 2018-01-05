@@ -33,14 +33,34 @@ function SpecialValuesArrayToString(values, level, percent) {
 	}
 }
 
+function getTalentTitle(talent) {
+	if (!_.startsWith(talent.name, 'special_bonus_unique_')) return $.Localize('custom_talents_' + talent.name);
+	var line = _.reduce(talent.original_values, function (line, originalValue, key) {
+		var value = talent.special_values[key];
+		var number = _.escapeRegExp(Math.abs(originalValue)).replace('\\.', '(\\.|\\,)')
+		var regexp = new RegExp('(\\+|\\-)?' + number + '%?');
+		return line.replace(regexp, function(match) {
+			var requiresSign = _.startsWith(match, '+');
+			var percentage = match.endsWith('%');
+			var text = percentage ? '{%' + key + '%}' : '{' + key + '}';
+			if (value > 0 && requiresSign) {
+				text = '+' + text;
+			}
+			return text
+		});
+	}, $.Localize('DOTA_Tooltip_ability_' + talent.name))
+
+	return line;
+}
+
 function CreateTalent(talent, root) {
 	var panel = $.CreatePanel('Image', root, 'talent_icon_' + talent.name);
 	panel.AddClass('TalentIcon');
-	panel.SetImage(TransformTextureToPath(talent.icon));
+	panel.SetImage(TransformTextureToPath(talent.icon, 'icon'));
 	var CreateTooltip = function() {
 		var description = $.Localize('custom_talents_' + talent.name + '_description');
 		if (description === 'custom_talents_' + talent.name + '_description') description = undefined;
-		var title = $.Localize('custom_talents_' + talent.name);
+		var title = getTalentTitle(talent);
 		if (talent.special_values != null)
 			_.each(talent.special_values, function(values, key) {
 				if (description) description = description
@@ -99,7 +119,7 @@ function GetActualTalentGroup(unit) {
 }
 
 function Update() {
-	$.Schedule(0.2, Update);
+	$.Schedule(0.35, Update);
 	var unit = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID());
 	var points = Entities.GetAbilityPoints(unit);
 	$('#AbilityPointsLabel').text = points;
@@ -112,7 +132,9 @@ function Update() {
 			var Error_Requirement = false;
 			if (TalentsInfo[tn].requirement) {
 				var requirement = TalentsInfo[tn].requirement;
-				Error_Requirement = (IsHeroName(requirement) && GetHeroName(unit) !== requirement) || Entities.GetAbilityByName(unit, requirement) === -1;
+				Error_Requirement = IsHeroName(requirement) ?
+					GetHeroName(unit) !== requirement :
+					Entities.GetAbilityByName(unit, requirement) === -1;
 			}
 			var Error_Points = points < TalentsInfo[tn].cost;
 			var level = GetTalentLevel(unit, tn);

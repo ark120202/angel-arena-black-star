@@ -1,5 +1,3 @@
-if IsClient() then require("utils/shared") end
-
 LinkLuaModifier("modifier_sara_evolution", "heroes/hero_sara/evolution.lua", LUA_MODIFIER_MOTION_NONE)
 
 sara_evolution = class({
@@ -85,7 +83,7 @@ if IsServer() then
 	function modifier_sara_evolution:OnDestroy()
 		local parent = self:GetParent()
 		if IsValidEntity(parent) then
-			--For RecreateAbility function
+			--For illusions and RecreateAbility function
 			parent.SavedEnergyStates = {
 				Energy = self.Energy,
 				MaxEnergy = self.MaxEnergy
