@@ -197,8 +197,8 @@ CHAT_COMMANDS = {
 			else
 				HeroSelection:InitializeHeroClass(heroEntity, heroTableCustom)
 				if heroTableCustom.base_hero then
-					TransformUnitClass(h, heroTableCustom)
-					h.UnitName = heroName
+					TransformUnitClass(heroEntity, heroTableCustom)
+					heroEntity.UnitName = heroName
 				end
 			end
 		end
