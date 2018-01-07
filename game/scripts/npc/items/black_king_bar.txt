@@ -3,7 +3,6 @@
 	"item_titanium_fruit"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"AbilityTextureName"			"item_arena/titanium_fruit"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCooldown"				"80"
@@ -69,7 +68,6 @@
 	"item_recipe_black_king_bar_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10193"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"1375"
@@ -84,7 +82,6 @@
 	"item_recipe_black_king_bar_2"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10194"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"1375"
@@ -99,7 +96,6 @@
 	"item_recipe_black_king_bar_3"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10195"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"1375"
@@ -114,7 +110,6 @@
 	"item_recipe_black_king_bar_4"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10196"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"1375"
@@ -129,7 +124,6 @@
 	"item_recipe_black_king_bar_5"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10197"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"1375"
@@ -144,7 +138,6 @@
 	"item_recipe_black_king_bar_6"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10198"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"1375"
@@ -159,7 +152,6 @@
 	"item_black_king_bar_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10199"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/black_king_bar_arena"
 		"FightRecapLevel"				"2"
@@ -280,7 +272,6 @@
 	"item_black_king_bar_2"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10200"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/black_king_bar_2"
 		"FightRecapLevel"				"2"
@@ -401,7 +392,6 @@
 	"item_black_king_bar_3"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10201"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/black_king_bar_3"
 		"FightRecapLevel"				"2"
@@ -522,7 +512,6 @@
 	"item_black_king_bar_4"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10202"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/black_king_bar_4"
 		"FightRecapLevel"				"2"
@@ -643,7 +632,6 @@
 	"item_black_king_bar_5"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10203"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/black_king_bar_5"
 		"FightRecapLevel"				"2"
@@ -764,7 +752,6 @@
 	"item_black_king_bar_6"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10204"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/black_king_bar_6"
 		"FightRecapLevel"				"2"
@@ -885,7 +872,6 @@
 	"item_recipe_titanium_bar"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10205"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"13075"
@@ -900,7 +886,6 @@
 	"item_titanium_bar"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10206"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/titanium_bar"
 		"FightRecapLevel"				"2"
