@@ -3,7 +3,6 @@
 	"item_recipe_sange_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10038"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"600"
@@ -19,7 +18,6 @@
 	"item_sange_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10039"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_sange"
 		"ItemShopTags"					"damage;str;unique"
@@ -140,7 +138,6 @@
 	"item_recipe_yasha_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10036"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"600"
@@ -156,7 +153,6 @@
 	"item_yasha_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10037"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_yasha"
 		"ItemShopTags"					"agi;attack_speed;move_speed"
@@ -268,7 +264,6 @@
 	"item_recipe_sange_and_yasha_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10040"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -284,7 +279,6 @@
 	"item_sange_and_yasha_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10041"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_sange_and_yasha"
 		"ItemShopTags"					"damage;str;agi;attack_speed;unique"
@@ -467,7 +461,6 @@
 	"item_recipe_nightshadow"
 	{
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10042"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"600"
 		"ItemShopTags"					""
@@ -482,7 +475,6 @@
 	"item_nightshadow"
 	{
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10043"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "item_arena/nightshadow"
 		"ItemShopTags"					"int;cooldown_reduction"
@@ -562,7 +554,6 @@
 	"item_recipe_nightshadow_and_sange"
 	{
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10044"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"0"
 		"ItemShopTags"					""
@@ -577,7 +568,6 @@
 	"item_nightshadow_and_sange"
 	{
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10045"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "item_arena/nightshadow_and_sange"
 		"ItemShopTags"					"int;cooldown_reduction;damage;str;unique"
@@ -727,7 +717,6 @@
 	"item_recipe_nightshadow_and_yasha"
 	{
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10046"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"0"
 		"ItemShopTags"					""
@@ -742,7 +731,6 @@
 	"item_nightshadow_and_yasha"
 	{
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10047"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "item_arena/nightshadow_and_yasha"
 		"ItemShopTags"					"int;cooldown_reduction;agi;attack_speed;move_speed"
@@ -884,7 +872,6 @@
 	"item_recipe_three_spirits_blades"
 	{
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10048"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"0"
 		"ItemShopTags"					""
@@ -902,7 +889,6 @@
 	"item_three_spirits_blades"
 	{
 		"BaseClass"                     "item_datadriven"
-		"ID"							"10049"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "item_arena/three_spirits_blades"
 		"ItemShopTags"					"int;cooldown_reduction;agi;attack_speed;move_speed;damage;str;unique"

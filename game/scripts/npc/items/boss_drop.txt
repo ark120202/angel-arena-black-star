@@ -3,7 +3,6 @@
 	"item_soul_of_titan"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"-1"
 		"AbilityTextureName"			"item_arena/soul_of_titan"
 		"ItemPurchasableFilter"			"0"
 
@@ -60,7 +59,6 @@
 	"item_dark_blade"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/dark_blade"
 		"ItemCost"						"2000"
@@ -98,7 +96,6 @@
 	"item_phantom_bone"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_winter_greevil_chewy"
 		"ItemCost"						"2000"
@@ -142,7 +139,6 @@
 	"item_moon_dust"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/moon_dust"
 		"ItemCost"						"1000"
@@ -154,7 +150,6 @@
 	"item_cursed_eye"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/cursed_eye"
 		"ItemCost"						"2000"
@@ -195,7 +190,6 @@
 	"item_fallen_star"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"AbilityTextureName"			"item_arena/fallen_star"
 		"ItemCost"						"3000"
 		"ItemQuality"					"legendary"
@@ -294,7 +288,6 @@
 	"item_demons_paw"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/demons_paw"
 		"ItemCost"						"20000"
