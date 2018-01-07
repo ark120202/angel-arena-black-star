@@ -3,7 +3,6 @@
 	"item_recipe_dagon_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10105"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"1250"
@@ -19,7 +18,6 @@
 	"item_recipe_dagon_2_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10106"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -35,7 +33,6 @@
 	"item_recipe_dagon_3_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10107"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -51,7 +48,6 @@
 	"item_recipe_dagon_4_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10108"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -67,7 +63,6 @@
 	"item_recipe_dagon_5_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10109"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -83,7 +78,6 @@
 	"item_recipe_enchanted_dagon_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10110"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"2250"
@@ -99,7 +93,6 @@
 	"item_recipe_enchanted_dagon_2_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10111"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -115,7 +108,6 @@
 	"item_recipe_enchanted_dagon_3_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10112"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -131,7 +123,6 @@
 	"item_recipe_enchanted_dagon_4_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10113"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -147,7 +138,6 @@
 	"item_recipe_enchanted_dagon_5_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10114"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -163,7 +153,6 @@
 	"item_recipe_sunray_dagon_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10115"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"3000"
@@ -179,7 +168,6 @@
 	"item_recipe_sunray_dagon_2_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10116"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -195,7 +183,6 @@
 	"item_recipe_sunray_dagon_3_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10117"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -211,7 +198,6 @@
 	"item_recipe_sunray_dagon_4_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10118"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -227,7 +213,6 @@
 	"item_recipe_sunray_dagon_5_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10119"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -243,7 +228,6 @@
 	"item_dagon_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10120"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -327,7 +311,6 @@
 	"item_dagon_2_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10121"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -411,7 +394,6 @@
 	"item_dagon_3_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10122"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -495,7 +477,6 @@
 	"item_dagon_4_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10123"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -579,7 +560,6 @@
 	"item_dagon_5_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10124"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -660,7 +640,6 @@
 	"item_enchanted_dagon_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10125"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -766,7 +745,6 @@
 	"item_enchanted_dagon_2_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10126"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -872,7 +850,6 @@
 	"item_enchanted_dagon_3_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10127"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -978,7 +955,6 @@
 	"item_enchanted_dagon_4_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10128"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1084,7 +1060,6 @@
 	"item_enchanted_dagon_5_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10129"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1187,7 +1162,6 @@
 	"item_sunray_dagon_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10130"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1313,7 +1287,6 @@
 	"item_sunray_dagon_2_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10131"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1439,7 +1412,6 @@
 	"item_sunray_dagon_3_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10132"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1565,7 +1537,6 @@
 	"item_sunray_dagon_4_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10133"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1691,7 +1662,6 @@
 	"item_sunray_dagon_5_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10134"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"

@@ -2,7 +2,6 @@
 {
 	"item_dummy"
 	{
-		"ID"							"10000"
 		"BaseClass"                     "item_datadriven"
 		"ItemPurchasable"				"0"
 		"ItemCost"						"0"
@@ -37,7 +36,6 @@
 	"item_containers_lua_pack"
 	{
 		"BaseClass"						"item_lua"
-		"ID"							"10001"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_present"
 		"ScriptFile"					"libraries/abilities/item_containers_lua_pack.lua"
@@ -51,7 +49,6 @@
 	"item_slot_locked"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10002"
 		"AbilityTextureName"			"item_arena/slot_locked"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemKillable"            		"0"

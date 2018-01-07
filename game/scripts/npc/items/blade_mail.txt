@@ -3,7 +3,6 @@
 	"item_recipe_blade_mail_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
@@ -18,7 +17,6 @@
 	"item_recipe_blade_mail_2"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"4000"
@@ -33,7 +31,6 @@
 	"item_recipe_blade_mail_3"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"12000"
@@ -204,7 +201,6 @@
 	"item_recipe_sacred_blade_mail"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"1000000009"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"5000"

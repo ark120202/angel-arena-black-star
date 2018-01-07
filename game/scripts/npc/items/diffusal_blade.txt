@@ -3,7 +3,6 @@
 	"item_recipe_diffusal_blade_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10084"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"800"
 		"ItemRecipe"					"1"
@@ -17,7 +16,6 @@
 	"item_recipe_diffusal_blade_arena_2"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10085"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"1200"
 		"ItemRecipe"					"1"
@@ -31,7 +29,6 @@
 	"item_recipe_diffusal_blade_arena_3"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10086"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"1200"
 		"ItemRecipe"					"1"
@@ -45,7 +42,6 @@
 	"item_recipe_diffusal_blade_arena_4"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10087"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"1200"
 		"ItemRecipe"					"1"
@@ -59,7 +55,6 @@
 	"item_recipe_diffusal_blade_arena_5"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10088"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"1200"
 		"ItemRecipe"					"1"
@@ -73,7 +68,6 @@
 	"item_diffusal_blade_arena"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10089"
 		"AbilityTextureName"			"item_arena/diffusal_blade_arena"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -227,7 +221,6 @@
 	"item_diffusal_blade_arena_2"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10090"
 		"AbilityTextureName"			"item_arena/diffusal_blade_arena_2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -381,7 +374,6 @@
 	"item_diffusal_blade_arena_3"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10091"
 		"AbilityTextureName"			"item_arena/diffusal_blade_arena_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -535,7 +527,6 @@
 	"item_diffusal_blade_arena_4"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10092"
 		"AbilityTextureName"			"item_arena/diffusal_blade_arena_4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -689,7 +680,6 @@
 	"item_diffusal_blade_arena_5"
 	{
 		"BaseClass"             		"item_datadriven"
-		"ID"							"10093"
 		"AbilityTextureName"			"item_arena/diffusal_blade_arena_5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
