@@ -5,12 +5,12 @@ soul_eater_soul_resonance = class({})
 if IsServer() then
 	function soul_eater_soul_resonance:CastFilterResult()
 		local soul = self:GetCaster()
-		return soul:HasModifier("modifier_soul_eater_demon_weapon_from") and UF_SUCCESS or UF_FAIL_CUSTOM
+		return soul:HasModifier("modifier_soul_eater_transform_to_scythe") and UF_SUCCESS or UF_FAIL_CUSTOM
 	end
 
 	function soul_eater_soul_resonance:GetCustomCastError()
 		local soul = self:GetCaster()
-		return soul:HasModifier("modifier_soul_eater_demon_weapon_from") and "" or "arena_hud_error_todo"
+		return soul:HasModifier("modifier_soul_eater_transform_to_scythe") or "arena_hud_error_todo"
 	end
 
 	function soul_eater_soul_resonance:OnSpellStart()
@@ -20,6 +20,10 @@ if IsServer() then
 
 	function soul_eater_soul_resonance:OnChannelFinish(bInterrupted)
 		self:GetCaster():RemoveModifierByName("modifier_soul_eater_soul_resonance_channel")
+	end
+
+	function soul_eater_soul_resonance:Spawn()
+		self:SetLevel(1)
 	end
 end
 

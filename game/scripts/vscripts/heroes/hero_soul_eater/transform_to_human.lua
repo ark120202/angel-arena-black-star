@@ -1,19 +1,17 @@
-LinkLuaModifier("modifier_soul_eater_human_form_transformation", "heroes/hero_soul_eater/human_form.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_soul_eater_transform_to_human_projectile", "heroes/hero_soul_eater/soul_resonance.lua", LUA_MODIFIER_MOTION_NONE)
 
-soul_eater_human_form = class({})
+soul_eater_transform_to_human = class({})
 
 if IsServer() then
-	function soul_eater_human_form:OnSpellStart()
+	function soul_eater_transform_to_human:OnSpellStart()
 		local soul = self:GetCaster()
 		local point = self:GetCursorPosition()
 		local soulPos = soul:GetAbsOrigin()
-		local modifier = soul:FindModifierByName("modifier_soul_eater_demon_weapon_from")
-		modifier:Destroy()
 
 		local team = soul:GetTeamNumber()
 		self.dummy = CreateUnitByName("npc_dummy_unit", point, false, soul, soul, team)
 
-		soul:AddNewModifier(soul, self, "modifier_soul_eater_human_form_transformation", nil)
+		soul:AddNewModifier(soul, self, "modifier_soul_eater_transform_to_human_projectile", nil)
 		ProjectileManager:CreateTrackingProjectile({
 			Target = self.dummy,
 			Source = soul,
@@ -27,21 +25,30 @@ if IsServer() then
 		})
 	end
 
-	function soul_eater_human_form:OnProjectileHit(hTarget, vLocation)
+	function soul_eater_transform_to_human:OnProjectileHit(hTarget, vLocation)
 		local soul = self:GetCaster()
+		local maka = soul:GetLinkedHeroEntities()[1]
+		local modifier  = soul:FindModifierByName("modifier_soul_eater_transform_to_scythe") 
+		local modifier2 = maka:FindModifierByName("modifier_soul_eater_transform_to_scythe_buff") 
+		modifier:Destroy()
+		modifier2:Destroy()
 		UTIL_Remove(self.dummy)
-		soul:RemoveModifierByName("modifier_soul_eater_human_form_transformation")
+		soul:RemoveModifierByName("modifier_soul_eater_transform_to_human_projectile")
 		FindClearSpaceForUnit(soul, vLocation, true)
+	end
+
+	function soul_eater_transform_to_human:Spawn()
+		self:SetLevel(1)
 	end
 end
 
 
-modifier_soul_eater_human_form_transformation = class({
+modifier_soul_eater_transform_to_human_projectile = class({
 	IsPurgable = function() return false end,
 	IsHidden   = function() return true end,
 })
 
-function modifier_soul_eater_human_form_transformation:CheckState()
+function modifier_soul_eater_transform_to_human_projectile:CheckState()
 	return {
 		[MODIFIER_STATE_STUNNED] = true,
 		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
@@ -54,11 +61,11 @@ function modifier_soul_eater_human_form_transformation:CheckState()
 end
 
 if IsServer() then
-	function modifier_soul_eater_human_form_transformation:OnCreated()
+	function modifier_soul_eater_transform_to_human_projectile:OnCreated()
 		self:GetParent():AddNoDraw()
 	end
 
-	function modifier_soul_eater_human_form_transformation:OnDestroy()
+	function modifier_soul_eater_transform_to_human_projectile:OnDestroy()
 		self:GetParent():RemoveNoDraw()
 	end
 end
