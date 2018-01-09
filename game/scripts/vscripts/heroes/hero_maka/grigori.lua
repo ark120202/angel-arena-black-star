@@ -15,12 +15,6 @@ if IsServer() then
 	end
 end
 
-function modifier_maka_grigori:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-	}
-end
-
 function modifier_maka_grigori:CheckState()
 	return {
 		[MODIFIER_STATE_FLYING] = true,
@@ -28,9 +22,31 @@ function modifier_maka_grigori:CheckState()
 	}
 end
 
-function modifier_maka_grigori:GetModifierMoveSpeedBonus_Percentage()
+function modifier_maka_grigori:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MOVESPEED_MAX,
+		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
+	}
+end
+
+function modifier_maka_grigori:GetModifierMoveSpeed_Limit()
 	local parent = self:GetParent()
 	if parent:HasModifier("modifier_maka_soul_resonance") then
-		return self:GetAbility():GetSpecialValueFor("bonus_speed_pct")
+		return self:GetAbility():GetSpecialValueFor("speed")
+	end
+end
+
+function modifier_maka_grigori:GetModifierMoveSpeed_Max()
+	local parent = self:GetParent()
+	if parent:HasModifier("modifier_maka_soul_resonance") then
+		return self:GetAbility():GetSpecialValueFor("speed")
+	end
+end
+
+function modifier_maka_grigori:GetModifierMoveSpeed_Absolute()
+	local parent = self:GetParent()
+	if parent:HasModifier("modifier_maka_soul_resonance") then
+		return self:GetAbility():GetSpecialValueFor("speed")
 	end
 end
