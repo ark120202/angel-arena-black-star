@@ -76,7 +76,6 @@ if IsServer() then
         if maka:HasModifier("modifier_maka_soul_resonance") then
             self:SetStackCount(self:GetStackCount() + soul:GetAverageTrueAttackDamage(maka) * self:GetAbility():GetSpecialValueFor("attack_to_damage_pct") * 0.01)
         end
-        print(self:GetStackCount())
 	end
 end
 
