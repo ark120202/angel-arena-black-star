@@ -167,4 +167,8 @@
 		"HasInnateModifiers"			"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	}
+	"precache"
+	{
+		"particle"						"particles/generic_gameplay/generic_disarm.vpcf"
+	}
 }

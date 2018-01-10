@@ -29,14 +29,25 @@ if IsServer() then
 
 	function modifier_maka_passive:OnIntervalThink()
 		local maka = self:GetParent()
-		if maka:HasModifier("modifier_soul_eater_transform_to_scythe_buff") then 
+		if maka:HasModifier("modifier_soul_eater_transform_to_scythe_buff") then
 			maka:RemoveModifierByName("modifier_maka_disarm")
-		else 
+		else
 			maka:AddNewModifier(maka, self:GetAbility(), "modifier_maka_disarm", nil)
 		end
 	end
 
 	function maka_disarm:Spawn()
 		self:SetLevel(1)
+	end
+
+	function modifier_maka_disarm:OnCreated()
+		local maka = self:GetParent()
+		self.pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_disarm.vpcf", PATTACH_ABSORIGIN_FOLLOW, maka)
+		ParticleManager:SetParticleControlEnt(self.pfx, 0, maka, PATTACH_POINT_FOLLOW, "attach_hitloc", maka:GetAbsOrigin(), true)
+	end
+
+	function modifier_maka_disarm:OnDestroy()
+		ParticleManager:DestroyParticle(self.pfx, false)
+		self.pfx = nil
 	end
 end
