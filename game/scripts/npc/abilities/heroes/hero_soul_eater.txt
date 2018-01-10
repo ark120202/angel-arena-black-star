@@ -9,7 +9,7 @@
 		"HasInnateModifiers"			"1"
 		"AbilityChannelTime"			"0.5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"20"
 		"AbilityManacost"				"75"
 
 		"AbilitySpecial"
