@@ -90,27 +90,29 @@
 		"ScriptFile"					"heroes/hero_maka/scythe_form.lua"
 		"AbilityTextureName"			"arena/maka_scythe_form"
 		"MaxLevel" 						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastRange"				"700 750 800 850 900 950 1000"
-		"AbilityManacost"				"100 110 120 130 140 150 160"
-		"AbilityCooldown"				"18 17 16 15 14 13 12"
-		"AbilityCastPoint"				"0.4"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCastRange"				"%range"
+		"AbilityManacost"				"40 50 60 70 80 90 100"
+		"AbilityCooldown"				"6 5.75 5.5 5.25 5 4.75 4.5"
+		"AbilityCastPoint"				"0.1"
+		"AOERadius"						"300"
+		"LevelsBetweenUpgrades"			"2"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"projectile_speed"	"900"
+				"projectile_speed"	"1200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_to_damage_pct"	"20 25 30 35 40 45 50"
+				"attack_to_damage_pct"	"30 35 40 45 50 55 60"
 			}
 			"03"
 			{
@@ -124,9 +126,28 @@
 			}
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"stun"					"1.25 1.5 1.75 2 2.25 2.5 2.75"
+				"var_type"				"FIELD_INTEGER"
+				"aoe_radius"			"250"
 			}
+			"06"
+			{
+				"var_type"				"FIEL_INTEGER"
+				"range"					"700 750 800 850 900 950 1000"	
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"25 35 45 55 65 75 85"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lvl_for_orbs"			"7"
+			}
+		}
+		"precache"
+		{
+			"particle"				"particles/arena/units/heroes/hero_maka/scythe_form.vpcf"
 		}
 	}
 	"maka_hunter"
