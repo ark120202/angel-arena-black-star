@@ -10587,7 +10587,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_pct"					"8.5"
+				"damage_pct"					"11"
 				"CalculateSpellDamageTooltip" 	"0"
 			}
 			"07"
