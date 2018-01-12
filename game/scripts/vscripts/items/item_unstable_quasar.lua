@@ -72,12 +72,14 @@ if IsServer() then
                 })
                 
                 local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-                ParticleManager:SetParticleControl(particle, 1, v:GetAbsOrigin())
+                ParticleManager:SetParticleControl(particle, 1, enemyPos)
 
-                v:AddNewModifier(caster, ability, "modifier_item_unstable_quasar_slow", {duration = value("slow_duration")})
+                v:AddNewModifier(caster, ability, "modifier_item_unstable_quasar_slow", {duration = ability:GetSpecialValueFor("slow_duration")})
 
-                local abs = GetGroundPosition(v:GetAbsOrigin() + (pos - v:GetAbsOrigin()):Normalized() * value("offset_distance"), caster)
-                v:SetAbsOrigin(abs)
+                local distance = pos - enemyPos
+                local offset = ability:GetSpecialValueFor("offset_distance")
+
+                FindClearSpaceForUnit(v, GetGroundPosition(enemyPos + distance:Normalized() * offset, caster), true)
 
                 --caster:EmitSound("Hero_Pugna.NetherWard")
             end
