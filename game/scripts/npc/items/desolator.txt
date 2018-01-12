@@ -571,6 +571,11 @@
 				"var_type"							"FIELD_FLOAT"
 				"poison_damage_interval"			"1.0"
 			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+			   	"all_damage_bonus_pct"      "5"
+			}
 		}
 
 		"Modifiers"

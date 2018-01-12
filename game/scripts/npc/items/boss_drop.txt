@@ -302,6 +302,12 @@
 				"var_type"			"FIELD_INTEGER"
 				"bonus_attack_range"	"50"
 			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+			   	"all_damage_bonus_pct"      "10"
+
+			}
 		}
 
 		"Modifiers"
