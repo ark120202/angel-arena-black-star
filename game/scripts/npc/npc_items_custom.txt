@@ -10635,8 +10635,18 @@
 			"15"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"manacost_pct"					"5"
+				"manacost_pct"					"10"
 			}
+			"16"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"discrease_damage_pct"			"50"
+			}
+			"17"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"increase_all_damage_pct"		"7.5"
+				}
 		}
 		"precache"
 		{
