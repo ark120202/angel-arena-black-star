@@ -13,6 +13,7 @@ modifier_item_unstable_quasar_passive = class({
         MODIFIER_PROPERTY_BONUS_NIGHT_VISION,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
     } end,
     IsHidden   = function() return true end,
     IsPurgable = function() return false end,
@@ -106,6 +107,9 @@ function modifier_item_unstable_quasar_passive:GetModifierSpellAmplify_Percentag
     return self:GetAbility():GetSpecialValueFor("spell_amp_pct")
 end
 
+function modifier_item_unstable_quasar_passive:GetModifierTotalDamageOutgoing_Percentage()
+    return self:GetAbility():GetSpecialValueFor("increase_all_damage_pct")
+end
 
 function modifier_item_unstable_quasar_passive:GetModifierAura()
 	return "modifier_item_unstable_quasar_aura"
