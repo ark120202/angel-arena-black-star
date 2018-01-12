@@ -10610,7 +10610,7 @@
 			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"slow_pct"						"100"
+				"speed"							"50"
 			}
 			"11"
 			{
