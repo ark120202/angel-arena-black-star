@@ -10625,7 +10625,7 @@
 			"13"
 			{
 				"var_type"						 "FIELD_INTEGER"
-				"aura_descrease_resistange_pct"  "30"
+				"aura_descrease_resistange_pct"  "20"
 			}
 			"14"
 			{
