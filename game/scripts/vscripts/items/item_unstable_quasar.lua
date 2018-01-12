@@ -50,6 +50,10 @@ if IsServer() then
             caster:SetMana(caster:GetMana() - manacost)
             for _,v in ipairs(FindUnitsInRadius(team, pos, nil, value("damage_radius"), ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
                 local damage = v:GetHealth() * value("damage_pct") * 0.01 + value("base_damage")
+                if caster:GetPrimaryAttribute() ~= 2 then
+                    damage = damage * ability:GetSpecialValueFor("discrease_damage_pct") * 0.01
+                end
+
                 ApplyDamage({
                     attacker = caster,
                     victim = v,
