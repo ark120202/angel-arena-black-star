@@ -141,14 +141,15 @@ function modifier_item_unstable_quasar_passive:GetAuraSearchType()
 end
 
 modifier_item_unstable_quasar_aura = class({
-    DeclareFunctions = function() return {MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS} end,      
+    DeclareFunctions = function() return { MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS } end,
+    GetPriority = function() return { MODIFIER_PRIORITY_HIGH } end,     
 })
 
 function modifier_item_unstable_quasar_aura:GetModifierMagicalResistanceBonus()
     return -self:GetAbility():GetSpecialValueFor("aura_descrease_resistange_pct")
 end
 
-function modifier_item_unstable_quasar_passive:CheckState()
+function modifier_item_unstable_quasar_aura:CheckState()
     return {
         [MODIFIER_STATE_INVISIBLE] = false,
     }
