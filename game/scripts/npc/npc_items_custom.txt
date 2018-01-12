@@ -10599,7 +10599,7 @@
 			"08"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"min_ability_cooldown"		"2"
+				"min_ability_cooldown"		"1.6"
 			}
 			"09"
 			{
@@ -10630,12 +10630,12 @@
 			"14"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"manacost"						"0"
+				"manacost"						"100"
 			}
 			"15"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"manacost_pct"					"5"
+				"manacost_pct"					"10"
 			}
 			"16"
 			{
