@@ -1405,5 +1405,7 @@ DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: 'УВЕЛИЧЕНИ�
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: 'УВЕЛИЧЕНИЕ ОБЗОРА НОЧЬЮ:'
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
+DOTA_Tooltip_ability_item_unstable_quasar_manacost: '%БАЗОВАЯ СТОИМОСТЬ:'
+DOTA_Tooltip_ability_item_unstable_quasar_manacost_pct: '%СТОИМОСТЬ ОТ МАКСИМАЛЬНОЙ МАНЫ:'
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Только мудрецам дано полностью овладеть сингулярностью.
 
