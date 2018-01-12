@@ -1396,17 +1396,14 @@ DOTA_Tooltip_ability_item_rapier_arena_Lore: Настолько могущест
 DOTA_Tooltip_ability_item_lightning_rod_Description: '<h1>Использование: Place</h1> Устанавливает невидимого дозорного — Lightning Rod, из-за которого все молнии, созданные во время Шторма, находящиеся в радиусе %protection_radius% будут ударять в него.<br>Действует %duration_minutes% мин.<br><br>Дальность применения: %tooltip_range%'
 
 DOTA_Tooltip_ability_item_unstable_quasar: Unstable Quasar
-DOTA_Tooltip_ability_item_unstable_quasar_Description: '<h1>Пассивная: Singularity</h1> При использовании способности или предмета наносит урон всем противникам в радиусе %damage_radius% в размере от их текущего здоровья и кратковременно замедляет и притягивает к кастеру, а также создает ауру с эффектом True Sight и снижением магического сопротивления в радиусе %aura_radius%.'
+DOTA_Tooltip_ability_item_unstable_quasar_Description: '<h1>Пассивная: Singularity</h1> При использовании способности или предмета с манакостом наносит урон всем противникам в размере от их текущего здоровья, притягивая к кастеру и кратковременно уменьшая скорость передвижения до 100 ед в радиусе %damage_radius%, расходуя %manacost% + %manacost_pct%%% макс. маны. также создает ауру с эффектом True Sight и снижением магического сопротивления в радиусе %aura_radius%. Урон артефакта снижен на %discrease_damage_pct%%%, если основным атрибутом кастера не является Интеллект. 
+<h1>Аура: Decomposition</h1> Создает ауру с эффектом True Sight и снижением магического сопротивления %descrease_resistange_pct%%% в радиусе %aura_radius%.'
 DOTA_Tooltip_ability_item_unstable_quasar_Note0: Эффекты от нескольких Unstable Quasar не складываются.
 DOTA_Tooltip_ability_item_unstable_quasar_damage_pct: '%УРОН ОТ ТЕКУЩЕГО ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_item_unstable_quasar_base_damage: 'БАЗОВЫЙ УРОН:'
-DOTA_Tooltip_ability_item_unstable_quasar_min_ability_cooldown: 'МИН. КУЛДАУН СПОСОБ. ДЛЯ СРАБАТЫВАНИЯ:'
-DOTA_Tooltip_ability_item_unstable_quasar_damage_radius: 'РАДИУС:'
-DOTA_Tooltip_ability_item_unstable_quasar_aura_descrease_resistange_pct: 'СНИЖЕНИЕ СОПРОТИВЛЕНИЯ:'
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: 'УВЕЛИЧЕНИЕ ОБЗОРА ДНЕМ:'
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: 'УВЕЛИЧЕНИЕ ОБЗОРА НОЧЬЮ:'
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
-DOTA_Tooltip_ability_item_unstable_quasar_manacost_pct: '%РАСХОД МАКС. МАНЫ:'
-DOTA_Tooltip_ability_item_unstable_quasar_Lore: Даже предвечные не способны контролировать такую мощь...
+DOTA_Tooltip_ability_item_unstable_quasar_Lore: Только мудрецам дано полностью овладеть сингулярностью.
 
