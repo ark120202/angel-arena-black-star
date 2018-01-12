@@ -33,7 +33,10 @@ modifier_item_unstable_quasar_slow = class({
 })
 
 function item_unstable_quasar:GetManaCost(iLevel)
-	return self:GetSpecialValueFor("manacost") + self:GetCaster():GetMaxMana() * self:GetSpecialValueFor("manacost_pct") * 0.01
+    local caster = self:GetCaster()
+    if caster then 
+        return self:GetSpecialValueFor("manacost") + caster:GetMaxMana() * self:GetSpecialValueFor("manacost_pct") * 0.01
+    end
 end
 
 if IsServer() then
@@ -46,11 +49,15 @@ if IsServer() then
         local value = function(v)
             return ability:GetSpecialValueFor(v)
         end
-        local manacost = value("manacost") + caster:GetMaxMana() * value("manacost_pct") * 0.01
-        if usedAbility:GetCooldown(usedAbility:GetLevel()) >= value("min_ability_cooldown") and caster == keys.unit and caster:GetMana() >= manacost then
+        local manacost = ability:GetSpecialValueFor("manacost") + caster:GetMaxMana() * ability:GetSpecialValueFor("manacost_pct") * 0.01
+        local radius = ability:GetSpecialValueFor("damage_radius")
+
+        if usedAbility:GetCooldown(usedAbility:GetLevel()) >= ability:GetSpecialValueFor("min_ability_cooldown") and caster == keys.unit and caster:GetMana() >= manacost and usedAbility:GetManaCost(usedAbility:GetLevel() or nil) ~= 0 or nil then
             caster:SetMana(caster:GetMana() - manacost)
-            for _,v in ipairs(FindUnitsInRadius(team, pos, nil, value("damage_radius"), ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
-                local damage = v:GetHealth() * value("damage_pct") * 0.01 + value("base_damage")
+            for _,v in ipairs(FindUnitsInRadius(team, pos, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
+                local enemyPos = v:GetAbsOrigin()
+                local damage = v:GetHealth() * ability:GetSpecialValueFor("damage_pct") * 0.01 + ability:GetSpecialValueFor("base_damage")
+
                 if caster:GetPrimaryAttribute() ~= 2 then
                     damage = damage * ability:GetSpecialValueFor("discrease_damage_pct") * 0.01
                 end
