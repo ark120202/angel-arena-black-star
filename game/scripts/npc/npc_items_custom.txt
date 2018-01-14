@@ -10551,6 +10551,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"ItemStackable"					"0"
+		"IsTempestDoubleClonable"		"0"
 
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"legendary"
