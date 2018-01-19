@@ -10195,7 +10195,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"75 125 175 225 300 375 450"
+				"damage"	"75 100 125 150 175 200 225"
 			}
 
 			"02"
@@ -10288,7 +10288,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"5.0"
+				"blind_duration"		"2.5"
 			}
 		}
 	}
@@ -10303,7 +10303,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_reflection_pct"	"1 2 3 4 5 10 20"
+				"damage_reflection_pct"	"8 10 12 14 16 18 20"
 				"LinkedSpecialBonus"			"special_bonus_unique_spectre_5"
 				"CalculateSpellDamageTooltip"	"0"
 			}

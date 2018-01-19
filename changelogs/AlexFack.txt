@@ -13,16 +13,22 @@ Sai
 	-now "Release Of Forge" can refresh.
 	-Sai: now mana give bonus damage to "Rage Of Pain"
 	-attribute growth changed: 
-
 		Strength: 1.7 => 2.2 
-		
-Agility: 1.8 => 2.9
+		Agility: 1.8 => 2.9
 		Intellect: 2.2 => 1.7
 	-Added aghanim: have a chance to live 20% after ult.
 	-Buff from Sai ultimate visible.
 
 Specrtre
 	-"Dispertion" has not spell amplification
+	-"Dispertion" damage discrease from 1 2 3 4 5 10 20 to 8 10 12 14 16 18 20 percents
+	-attribute growth changed: 
+		Strength: 2.3 => 1.8 
+		Agility: 1.8 => 1.5
+		Intellect: 1.9 => 1.7
+	-"Spectral Dagger" damage changed from 75 125 175 225 300 375 450 to 75 100 125 150 175 200 225
+	-"Desolate": blind duration changed from 5.0 to 2.5 seconds
+	
 
 Items:
 	-Added new item - Scythe of the Ancients
