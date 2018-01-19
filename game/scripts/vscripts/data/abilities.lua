@@ -135,6 +135,7 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	obsidian_destroyer_sanity_eclipse = true,
 	centaur_stampede = true,
 	obsidian_destroyer_arcane_orb = true,
+	spectre_dispersion = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

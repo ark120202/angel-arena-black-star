@@ -5955,6 +5955,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"damage_per_health"	"0.6 0.65 0.7 0.75 0.8 0.85 0.9"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"02"
@@ -10302,7 +10303,8 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"damage_reflection_pct"	"1 2 3 4 5 10 20"
-				"LinkedSpecialBonus"		"special_bonus_unique_spectre_5"
+				"LinkedSpecialBonus"			"special_bonus_unique_spectre_5"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"02"
