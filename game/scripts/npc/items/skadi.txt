@@ -3,7 +3,6 @@
 	"item_recipe_skadi_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"0"
 		"ItemRecipe"					"1"
@@ -17,7 +16,6 @@
 	"item_recipe_skadi_2"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"0"
 		"ItemRecipe"					"1"
@@ -31,7 +29,6 @@
 	"item_recipe_skadi_4"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"0"
 		"ItemRecipe"					"1"
@@ -46,7 +43,6 @@
 	"item_recipe_skadi_8"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"0"
 		"ItemRecipe"					"1"
@@ -62,7 +58,6 @@
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_skadi"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/skadi_arena"
 		"ItemAliases"					"eos;eye of skadi"
@@ -110,7 +105,6 @@
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_skadi"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/skadi_2"
 		"ItemAliases"					"eos;eye of skadi"
@@ -158,7 +152,6 @@
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_skadi"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/skadi_4"
 		"ItemAliases"					"eos;eye of skadi"
@@ -206,7 +199,6 @@
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_skadi"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/skadi_8"
 		"ItemAliases"					"eos;eye of skadi"

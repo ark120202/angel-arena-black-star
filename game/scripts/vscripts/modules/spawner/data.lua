@@ -28,6 +28,7 @@ CHAMPIONS_BANNED_ABILITIES = {
 	doom_bringer_devour_arena = true,
 	shinobu_eat_oddity = true,
 	clinkz_death_pact = true,
+	enchantress_enchant = true,
 }
 
 CREEP_UPGRADE_FUNCTIONS = {

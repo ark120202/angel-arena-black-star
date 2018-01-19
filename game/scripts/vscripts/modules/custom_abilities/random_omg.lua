@@ -16,26 +16,28 @@ function CustomAbilities:RandomOMGRollAbilities(unit)
 
 		local has_abilities = 0
 		while has_abilities < ability_count - ultimate_count do
-			local abilityTable = CustomAbilities.RandomOMG.Abilities[RandomInt(1, #CustomAbilities.RandomOMG.Abilities)]
-			local ability = abilityTable.ability
-			if ability and not unit:HasAbility(ability) then
-				PrecacheItemByNameAsync(ability, function() end)
-				GameMode:PrecacheUnitQueueed(abilityTable.hero)
-				unit:AddNewAbility(ability)
+			if CustomAbilities:GiveRandomOMGAbility(unit, CustomAbilities.RandomOMG.Abilities) then
 				has_abilities = has_abilities + 1
 			end
 		end
 		local has_ultimates = 0
 		while has_ultimates < ultimate_count do
-			local abilityTable = CustomAbilities.RandomOMG.Ultimates[RandomInt(1, #CustomAbilities.RandomOMG.Ultimates)]
-			local ability = abilityTable.ability
-			if ability and not unit:HasAbility(ability) then
-				PrecacheItemByNameAsync(ability, function() end)
-				GameMode:PrecacheUnitQueueed(abilityTable.hero)
-				unit:AddNewAbility(ability)
+			if CustomAbilities:GiveRandomOMGAbility(unit, CustomAbilities.RandomOMG.Ultimates) then
 				has_ultimates = has_ultimates + 1
 			end
 		end
 		unit:ResetAbilityPoints()
 	end
+end
+
+function CustomAbilities:GiveRandomOMGAbility(unit, abilityList)
+	local abilityTable = abilityList[RandomInt(1, #abilityList)]
+	local ability = abilityTable.ability
+	if not ability or unit:HasAbility(ability) then
+		return false
+	end
+	PrecacheItemByNameAsync(ability, function() end)
+	GameMode:PrecacheUnitQueueed(abilityTable.hero)
+	unit:AddNewAbility(ability)
+	return true
 end

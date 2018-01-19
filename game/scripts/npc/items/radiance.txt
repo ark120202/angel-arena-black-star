@@ -3,7 +3,6 @@
 	"item_recipe_radiance_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10152"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"1350"
 		"ItemRecipe"					"1"
@@ -17,7 +16,6 @@
 	"item_recipe_radiance_2"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10153"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"4300"
 		"ItemRecipe"					"1"
@@ -31,7 +29,6 @@
 	"item_recipe_radiance_3"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10154"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"15000"
 		"ItemRecipe"					"1"
@@ -45,7 +42,6 @@
 	"item_recipe_radiance_frozen"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"10155"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"0"
 		"ItemRecipe"					"1"
@@ -60,7 +56,6 @@
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_radiance.lua"
-		"ID"							"10159"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_arena/radiance_arena"
 		"ItemShopTags"					"damage"
@@ -110,7 +105,6 @@
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_radiance.lua"
-		"ID"							"10161"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_arena/radiance_2"
 		"ItemShopTags"					"damage"
@@ -160,7 +154,6 @@
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_radiance.lua"
-		"ID"							"10163"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_arena/radiance_3"
 		"ItemShopTags"					"damage"
@@ -210,7 +203,6 @@
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_radiance.lua"
-		"ID"							"10165"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"item_arena/radiance_frozen"
 		"ItemShopTags"					"damage"

@@ -2,7 +2,6 @@
 {
 	"item_recipe_desolator2"
 	{
-		"ID"							"10224"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"ItemCost"						"1000"
@@ -17,7 +16,6 @@
 
 	"item_desolator2"
 	{
-		"ID"							"10225"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"arena/desolator2"
@@ -104,7 +102,6 @@
 
 	"item_recipe_desolator3"
 	{
-		"ID"							"10226"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
 		"ItemCost"						"500"
@@ -119,7 +116,6 @@
 
 	"item_desolator3"
 	{
-		"ID"							"10227"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "arena/desolator3"
@@ -206,7 +202,6 @@
 
 	"item_recipe_desolator4"
 	{
-		"ID"							"10228"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
 		"ItemCost"						"10250"
@@ -221,7 +216,6 @@
 
 	"item_desolator4"
 	{
-		"ID"							"10229"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "arena/desolator4"
@@ -334,7 +328,6 @@
 
 	"item_recipe_desolator5"
 	{
-		"ID"							"10230"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
 		"ItemCost"						"1250"
@@ -349,7 +342,6 @@
 
 	"item_desolator5"
 	{
-		"ID"							"10231"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "arena/desolator5"
@@ -498,7 +490,6 @@
 
 	"item_recipe_desolator6"
 	{
-		"ID"							"10232"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
 		"ItemCost"						"20000"
@@ -513,7 +504,6 @@
 
 	"item_desolator6"
 	{
-		"ID"							"10233"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "arena/desolator6"
@@ -580,6 +570,11 @@
 			{
 				"var_type"							"FIELD_FLOAT"
 				"poison_damage_interval"			"1.0"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+			   	"all_damage_bonus_pct"      "10"
 			}
 		}
 

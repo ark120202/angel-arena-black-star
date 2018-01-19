@@ -1028,6 +1028,7 @@ DOTA_Tooltip_ability_item_desolator6_cold_movement_speed: '%ЗАМЕДЛЕНИЕ
 DOTA_Tooltip_ability_item_desolator6_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_desolator6_poison_duration: 'ДЛИТЕЛЬНОСТЬ ОТРАВЛЕНИЯ:'
 DOTA_Tooltip_ability_item_desolator6_poison_damage_per_second: 'УРОН В СЕКУНДУ:'
+DOTA_Tooltip_ability_item_desolator6_all_damage_bonus_pct: '%УВЕЛИЧЕНИЕ ВСЕГО УРОНА:'
 DOTA_Tooltip_modifier_item_desolator6_arena_corruption: Ultimate Desolator Corruption
 DOTA_Tooltip_modifier_item_desolator6_arena_corruption_Description: 'Атака с Ultimate Desolator уменьшила броню этого существа на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, получает урон от яда, скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_thunder_musket: Thunder Musket
@@ -1259,6 +1260,7 @@ DOTA_Tooltip_ability_item_demons_paw_Description: |-
 
   Этот предмет выпадает с боссов и не может быть куплен в лавке.
 DOTA_Tooltip_ability_item_demons_paw_bonus_attack_range: 'ДОП. РАДИУС АТАКИ:'
+DOTA_Tooltip_ability_item_demons_paw_all_damage_bonus_pct: '%УВЕЛИЧЕНИЕ ВСЕГО УРОНА:'
 DOTA_Tooltip_ability_item_awakened_cursed_eye: Awakened Cursed Eye
 DOTA_Tooltip_ability_item_awakened_cursed_eye_Description: '<h1>Пассивная: Cursed Sight</h1> Дает носителю и его союзникам возможность видеть невидимых существ и варды, различать иллюзии и настоящих героев, возможность видеть длительность перезарядки способностей у противников и увеличивает радиус обзора владельца.'
 DOTA_Tooltip_ability_item_awakened_cursed_eye_radius: 'РАДИУС:'
