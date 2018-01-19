@@ -228,11 +228,9 @@ function EndTether( event )
 		Timers:CreateTimer(0.03, function()
 			v:RemoveModifierByName( event.ally_modifier )
 			v:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
-			v:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
 		end)
 	end
 	caster:RemoveModifierByName("modifier_spirits_caster_aghanims")
-	caster:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
 	caster:RemoveModifierByName("modifier_wisp_tether_aghanim_buff")
 
 	ability.tether_allies = nil
