@@ -38,6 +38,10 @@ Brewmaster
 	-"Drunken Brawler" dodge chance changed from 10 15 20 25 30 35 40 to 23 25 27 29 31 33 35 percents
 	-"Drunken Brawler" crit multiplier changed from 230 to 190 percents and crit chance changed from 10 15 20 25 30 35 40 to 18 20 22 24 26 28 30 percents
 	
+Pangolier 
+	-"Swashbuckle" cooldown changed from 20 18 16 14 12 10 8 to 25 seconds
+	-"Swashbuckle" damage changed to from 100% from attack to 20 40 60 80 100 120 140 
+	-"Swashbuckle" strikes changed from 4 to 3
 
 Items:
 	-Added new item - Scythe of the Ancients
