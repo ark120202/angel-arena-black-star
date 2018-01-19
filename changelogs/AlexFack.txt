@@ -28,6 +28,15 @@ Specrtre
 		Intellect: 1.9 => 1.7
 	-"Spectral Dagger" damage changed from 75 125 175 225 300 375 450 to 75 100 125 150 175 200 225
 	-"Desolate": blind duration changed from 5.0 to 2.5 seconds
+
+Brewmaster
+	-attribute growth changed: 
+		Strength: 3.2 => 2.6 
+		Agility: 1.95 => 1.5
+		Intellect: 1.25 => 1.0
+	-"Drunken Haze" miss chance changed from 70 to 40 45 50 55 60 65 70 percents
+	-"Drunken Brawler" dodge chance changed from 10 15 20 25 30 35 40 to 23 25 27 29 31 33 35 percents
+	-"Drunken Brawler" crit multiplier changed from 230 to 190 percents and crit chance changed from 10 15 20 25 30 35 40 to 18 20 22 24 26 28 30 percents
 	
 
 Items:

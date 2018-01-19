@@ -12846,7 +12846,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"miss_chance"	"70"
+				"miss_chance"	"40 45 50 55 60 65 70"
 			}
 		}
 
@@ -12860,21 +12860,21 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"dodge_chance"	"10 15 20 25 30 35 40"
+				"dodge_chance"	"23 25 27 29 31 33 35"
 				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_4"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"crit_chance"	"10 15 20 25 30 35 40"
+				"crit_chance"	"18 20 22 24 26 28 30"
 				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_4"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"crit_multiplier"	"230"
+				"crit_multiplier"	"190"
 			}
 
 			"04"
