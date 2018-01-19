@@ -136,6 +136,9 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	centaur_stampede = true,
 	obsidian_destroyer_arcane_orb = true,
 	spectre_dispersion = true,
+	skywrath_mage_arcane_bolt = true,
+	centaur_return = true,
+	huskar_life_break = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

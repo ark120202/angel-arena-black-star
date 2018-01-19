@@ -8898,7 +8898,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"tooltip_health_cost_percent"	"35"
-				"CalculateSpellDamageTooltip"	"1"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"07"
@@ -8917,6 +8917,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"tooltip_health_damage_scepter"	"60"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"10"
@@ -16142,7 +16143,7 @@
 				"var_type"	"FIELD_INTEGER"
 				"strength_pct"	"30 35 40 45 50 55 60"
 				"LinkedSpecialBonus"			"special_bonus_unique_centaur_3"
-				"CalculateSpellDamageTooltip"	"1"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"03"
@@ -17251,7 +17252,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"int_multiplier"	"1.6"
-				"CalculateSpellDamageTooltip"	"1"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"05"
