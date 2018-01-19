@@ -357,6 +357,9 @@
 	{
 		"override_hero"	"npc_dota_hero_spectre"
 		"AttackRate"	"1.7"
+		"AttributeStrengthGain"	"1.8"
+		"AttributeAgilityGain"	"1.5"
+		"AttributeIntelligenceGain"	"1.7"
 	}
 
 	"npc_dota_hero_ancient_apparition"
