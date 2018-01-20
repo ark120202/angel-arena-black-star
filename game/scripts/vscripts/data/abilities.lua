@@ -143,6 +143,7 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
 	["freya_pain_reflection"] = true,
+	["spectre_dispersion"] = true,
 }
 
 ARENA_NOT_CASTABLE_ABILITIES = {
