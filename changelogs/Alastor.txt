@@ -3,7 +3,6 @@
         item desolator3
         item desolator4
         item desolator5
-        item haganemushi
         item butterfly arena
         item butterfly of wind
         item timelords butterfly
