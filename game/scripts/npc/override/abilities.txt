@@ -11234,23 +11234,23 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"duration"	"30"
+				"duration"	"0"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_gold"	"4 4 4 4 4 6 8"
+				"bonus_gold"	"0"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_bonus_gold"	"4 4 4 6 8 10 12"
+				"bonus_bonus_gold"	"0"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_gold_cap"	"8 14 20 26 32 38 44"
+				"bonus_gold_cap"	"0"
 			}
 			"05"
 			{
