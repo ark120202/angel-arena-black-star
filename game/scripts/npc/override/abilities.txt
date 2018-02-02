@@ -14123,6 +14123,7 @@
 
 	"undying_tombstone"
 	{
+		"NoAbandonCleanup" 	"1"
 		"MaxLevel"	"4"
 		"AbilityCastRange"	"600"
 		"AbilityCastPoint"	"0.45 0.40 0.35 0.25"
