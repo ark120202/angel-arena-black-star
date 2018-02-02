@@ -644,9 +644,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_windranger_4 = {
 		group = 10,
 	},
-	special_bonus_unique_windranger_5 = {
-		group = 8,
-	},
 	special_bonus_unique_slark = {
 		group = 9,
 	},
