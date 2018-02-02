@@ -35,4 +35,4 @@ DOTA_Tooltip_ability_stegius_desolating_touch_Lore: Хозяин Смерти р
 DOTA_Tooltip_ability_stegius_desolating_touch_armor_per_hit: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_stegius_desolating_touch_boss_armor_reduction_chance_pct: '%ШАНС СНИЗИТЬ БРОНЮ БОССАМ:'
 DOTA_Tooltip_ability_stegius_desolating_touch_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_modifier_stegius_desolating_touch_debuff_Description: Броня снажена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
+DOTA_Tooltip_modifier_stegius_desolating_touch_debuff_Description: Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
