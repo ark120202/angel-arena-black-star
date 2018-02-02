@@ -17,87 +17,85 @@ function GameMode:ExecuteOrderFilter(filterTable)
 	if ability and ability.GetAbilityName then
 		abilityname = ability:GetAbilityName()
 	end
-	local entindexes_units = filterTable.units
-	local units = {}
-	for _, v in pairs(entindexes_units) do
-		local u = EntIndexToHScript(v)
-		if u then
-			table.insert(units, u)
-		end
-	end
 	if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and Options:IsEquals("EnableAbilityShop") then
 		CustomAbilities:OnAbilityBuy(PlayerID, abilityname)
 		return false
 	end
 
-	if units[1] and
-		order_type == DOTA_UNIT_ORDER_SELL_ITEM and
-		ability then
-		PanoramaShop:SellItem(PlayerID, units[1], ability)
+	local unit = EntIndexToHScript(filterTable.units["0"])
+
+	if unit and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability then
+		PanoramaShop:SellItem(PlayerID, unit, ability)
 		return false
 	end
 
-	for _,unit in ipairs(units) do
-		if unit:IsConsideredHero() then
-			GameMode:TrackInventory(unit)
-			if ability then
-				if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
-					if not Duel:IsDuelOngoing() and ARENA_NOT_CASTABLE_ABILITIES[abilityname] then
-						local orderVector = Vector(filterTable.position_x, filterTable.position_y, 0)
-						if type(ARENA_NOT_CASTABLE_ABILITIES[abilityname]) == "number" then
-							local ent1len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team2"):GetAbsOrigin()):Length2D()
-							local ent2len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team3"):GetAbsOrigin()):Length2D()
-							if ent1len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 or ent2len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 then
-								Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
-								return false
-							end
-						end
-						if IsInBox(orderVector, Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()) then
-							Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
-							return false
-						end
-					end
-				elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
-					if abilityname == "rubick_spell_steal" then
-						if target == unit then
-							Containers:DisplayError(PlayerID, "#dota_hud_error_cant_cast_on_self")
-							return false
-						end
-						if target:HasAbility("doppelganger_mimic") then
-							Containers:DisplayError(PlayerID, "#dota_hud_error_cant_steal_spell")
-							return false
-						end
-					end
-					if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
-						Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_champion")
-						return false
-					end
-					if target:IsBoss() and BOSS_BANNED_ABILITIES[abilityname] then
-						Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_boss")
-						return false
-					end
-					if PlayerResource:IsDisableHelpSetForPlayerID(UnitVarToPlayerID(target), UnitVarToPlayerID(unit)--[[PlayerID]]) and DISABLE_HELP_ABILITIES[abilityname] then
-						Containers:DisplayError(PlayerID, "#dota_hud_error_target_has_disable_help")
-						return false
-					end
-					if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then
-						filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
-						return true
-					end
+	if not unit:IsConsideredHero() then return true end
+
+	GameMode:TrackInventory(unit)
+	if not ability then return true end
+
+	if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
+		if not Duel:IsDuelOngoing() and ARENA_NOT_CASTABLE_ABILITIES[abilityname] then
+			local orderVector = Vector(filterTable.position_x, filterTable.position_y, 0)
+			if type(ARENA_NOT_CASTABLE_ABILITIES[abilityname]) == "number" then
+				local ent1len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team2"):GetAbsOrigin()):Length2D()
+				local ent2len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team3"):GetAbsOrigin()):Length2D()
+				if ent1len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 or ent2len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 then
+					Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
+					return false
 				end
 			end
-			if filterTable.position_x ~= 0 and filterTable.position_y ~= 0 then
-				if (RandomInt(0, 1) == 1 and (unit:HasModifier("modifier_item_casino_drug_pill3_debuff") or unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 8)) or unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 16 then
-					local heroVector = unit:GetAbsOrigin()
-					local orderVector = Vector(filterTable.position_x, filterTable.position_y, 0)
-					local diff = orderVector - heroVector
-					local newVector = heroVector + (diff * -1)
-					filterTable.position_x = newVector.x
-					filterTable.position_y = newVector.y
-				end
+			if IsInBox(orderVector, Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()) then
+				Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
+				return false
 			end
 		end
+	elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
+		if abilityname == "rubick_spell_steal" then
+			if target == unit then
+				Containers:DisplayError(PlayerID, "#dota_hud_error_cant_cast_on_self")
+				return false
+			end
+			if target:HasAbility("doppelganger_mimic") then
+				Containers:DisplayError(PlayerID, "#dota_hud_error_cant_steal_spell")
+				return false
+			end
+		end
+		if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
+			Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_champion")
+			return false
+		end
+		if target:IsBoss() and BOSS_BANNED_ABILITIES[abilityname] then
+			Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_boss")
+			return false
+		end
+		if PlayerResource:IsDisableHelpSetForPlayerID(UnitVarToPlayerID(target), UnitVarToPlayerID(unit)--[[PlayerID]]) and DISABLE_HELP_ABILITIES[abilityname] then
+			Containers:DisplayError(PlayerID, "#dota_hud_error_target_has_disable_help")
+			return false
+		end
+		if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then
+			filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
+			return true
+		end
 	end
+
+	if filterTable.position_x ~= 0 and filterTable.position_y ~= 0 then
+		local hasLightEffect =
+			unit:HasModifier("modifier_item_casino_drug_pill3_debuff") or
+			unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 8
+		local applyEffect =
+			(RandomInt(0, 1) == 1 and hasLightEffect) or
+			unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 16
+		if applyEffect then
+			local heroVector = unit:GetAbsOrigin()
+			local orderVector = Vector(filterTable.position_x, filterTable.position_y, 0)
+			local diff = orderVector - heroVector
+			local newVector = heroVector + (diff * -1)
+			filterTable.position_x = newVector.x
+			filterTable.position_y = newVector.y
+		end
+	end
+
 	return true
 end
 
