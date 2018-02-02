@@ -305,8 +305,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-			   	"all_damage_bonus_pct"      "5"
-
+				"all_damage_bonus_pct"		"5"
 			}
 		}
 
