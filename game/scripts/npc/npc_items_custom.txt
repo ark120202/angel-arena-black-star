@@ -6674,17 +6674,6 @@
 				}
 			}
 
-			"modifier_item_heavy_war_axe_of_rage_damage_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%bonus_toggle_damage_pct"
-				}
-			}
-
 			"modifier_item_heavy_war_axe_of_rage_regen"
 			{
 				"Passive"			"1"
