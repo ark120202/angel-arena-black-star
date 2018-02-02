@@ -315,6 +315,18 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%all_damage_bonus_pct"
+				}
+			}
+
+			"modifier_item_demons_paw_unique"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
 
 				"Properties"
 				{
