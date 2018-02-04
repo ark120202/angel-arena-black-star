@@ -31,6 +31,11 @@ CHAMPIONS_BANNED_ABILITIES = {
 	enchantress_enchant = true,
 }
 
+JUNGLE_ALLOWED_ABILITIES = {
+	item_iron_talon = true,
+	item_lucifers_claw = true,
+}
+
 CREEP_UPGRADE_FUNCTIONS = {
 			   --[[ goldbounty  hp          damage      attackspeed movespeed   armor       xpbounty    ]]--
 	easy = {
