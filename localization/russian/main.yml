@@ -11,6 +11,7 @@ dota_hud_error_phantom_swap_no_illusions: Способность требует 
 dota_hud_error_item_from_bosses: Этот предмет или один из его компонентов выпадает только с боссов
 dota_hud_error_ability_cant_target_boss: Способность не может быть использована на боссов
 dota_hud_error_ability_cant_target_champion: Способность не может быть использована на чемпионов
+dota_hud_error_ability_cant_target_jungle: Способность не может быть использована на этих крипов
 arena_hud_error_team_changer_players: В другой команде уже больше игроков чем в вашей
 arena_hud_error_panorama_shop_dropped_items_limit: Достигнут лимит выброшенных предметов
 arena_hud_error_metamorphosis_elixir_ranked: В рейтинговом режиме сменить героя можно лишь один раз
