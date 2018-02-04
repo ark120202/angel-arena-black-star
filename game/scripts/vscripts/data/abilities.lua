@@ -118,6 +118,7 @@ BOSS_BANNED_ABILITIES = {
 	item_hurricane_pike = true,
 	rubick_telekinesis = true,
 	item_demon_king_bar = true,
+	morphling_adaptive_strike_str = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
