@@ -37,6 +37,12 @@
 			{
 				"Passive"   "1"
 				"IsHidden"  "1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%all_damage_bonus_pct"
+				}
+
 				"OnAttackStart"
 				{
 					"RemoveModifier"

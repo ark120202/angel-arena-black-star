@@ -3,7 +3,6 @@
 	"item_recipe_butterfly_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						""
@@ -18,7 +17,6 @@
 	"item_butterfly_arena"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_butterfly"
 
@@ -107,7 +105,6 @@
 	"item_recipe_butterfly_of_wind"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"500"
@@ -122,7 +119,6 @@
 	"item_butterfly_of_wind"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/butterfly_of_wind"
 		"AbilityCooldown"				"25"
@@ -232,7 +228,6 @@
 	"item_recipe_timelords_butterfly"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"200"
@@ -247,7 +242,6 @@
 	"item_timelords_butterfly"
 	{
 		"BaseClass"						"item_datadriven"
-		"ID"							"-1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/timelords_butterfly"
 		"AbilityCooldown"				"25"

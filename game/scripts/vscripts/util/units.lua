@@ -153,7 +153,7 @@ function CDOTA_BaseNPC:AddNewAbility(ability_name, skipLinked)
 	if link and not skipLinked then
 		linked = {}
 		for _,v in ipairs(link) do
-			local h = AddNewAbility(self, v)
+			local h = self:AddNewAbility(v)
 			table.insert(linked, h)
 		end
 	end

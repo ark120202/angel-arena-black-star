@@ -1112,6 +1112,7 @@ DOTA_Tooltip_ability_item_desolator6_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_desolator6_bonus_health: +$health
 DOTA_Tooltip_ability_item_desolator6_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_desolator6_bonus_attack_range: +attack range
+DOTA_Tooltip_ability_item_desolator6_all_damage_bonus_pct: '%DAMAGE INCREASE:'
 DOTA_Tooltip_ability_item_desolator6_corruption_armor: 'ARMOR REDUCTION:'
 DOTA_Tooltip_ability_item_desolator6_cold_movement_speed: '%COLD MOVE SLOW:'
 DOTA_Tooltip_ability_item_desolator6_cold_attack_speed: 'COLD ATTACK SLOW:'
@@ -1436,6 +1437,7 @@ DOTA_Tooltip_ability_item_demons_paw_Description: |-
 
   This item is dropped by bosses and you can't buy it in the shop.
 DOTA_Tooltip_ability_item_demons_paw_bonus_attack_range: 'BONUS ATTACK RANGE:'
+DOTA_Tooltip_ability_item_demons_paw_all_damage_bonus_pct: '%DAMAGE INCREASE:'
 DOTA_Tooltip_ability_item_awakened_cursed_eye: Awakened Cursed Eye
 DOTA_Tooltip_ability_item_awakened_cursed_eye_Description: '<h1>Passive: Cursed Sight</h1> Adds the ability to see invisible units and wards, differentiate illusions and real heroes and see enemies ability cooldowns to any allied vision within its carrier''s range and increases owner''s vision range.'
 DOTA_Tooltip_ability_item_awakened_cursed_eye_radius: 'CURSED SIGHT RADIUS:'
@@ -1557,6 +1559,7 @@ DOTA_Tooltip_ability_item_aether_lens_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
 DOTA_Tooltip_ability_item_wand_of_midas: Wand of Midas
 DOTA_Tooltip_ability_item_wand_of_midas_Description: '<h1>Active: Gold Charge</h1> Gives you some gold and instantly restores health and mana based on the number of charges stored. Gains a charge (max %max_charges%) whenever whenever a nearby enemy uses an ability.'
 DOTA_Tooltip_ability_item_wand_of_midas_bonus_all: +$all
+DOTA_Tooltip_ability_item_wand_of_midas_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_wand_of_midas_gold: 'GOLD PER CHARGE:'
 DOTA_Tooltip_ability_item_wand_of_midas_restore_per_charge: 'HEALTH/MANA PER CHARGE:'
 DOTA_Tooltip_ability_item_wand_of_midas_radius: 'RADIUS:'

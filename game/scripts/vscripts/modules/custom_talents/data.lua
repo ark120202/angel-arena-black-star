@@ -427,7 +427,7 @@ CUSTOM_TALENTS_DATA = {
 		max_level = 4,
 		requirement = "sai_release_of_forge",
 		special_values = {
-			reduction_pct = {12.5, 25, 37.5, 50}
+			reduction_pct = {25, 50, 75, 100}
 		}
 	},
 
@@ -643,9 +643,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_windranger_4 = {
 		group = 10,
-	},
-	special_bonus_unique_windranger_5 = {
-		group = 8,
 	},
 	special_bonus_unique_slark = {
 		group = 9,
@@ -1207,7 +1204,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 6,
 	},
 	special_bonus_unique_pangolier_3 = {
-		group = 7,
+		group = 10,
 	},
 	special_bonus_unique_pangolier_4 = {
 		group = 9,

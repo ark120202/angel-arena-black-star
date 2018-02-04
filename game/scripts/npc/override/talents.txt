@@ -220,17 +220,6 @@
 			}
 		}
 	}
-	"special_bonus_unique_windranger_5"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"4"
-			}
-		}
-	}
 	"special_bonus_unique_slark_2"
 	{
 		"AbilitySpecial"
@@ -1041,7 +1030,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"120"
+				"value"				"-80"
 			}
 		}
 	}

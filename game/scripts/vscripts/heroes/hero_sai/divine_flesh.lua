@@ -38,6 +38,7 @@ end
 
 if IsServer() then
 	function modifier_sai_divine_flesh_on:OnCreated()
+		self:GetAbility():AutoStartCooldown()
 		self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("think_interval"))
 		self:OnIntervalThink()
 	end

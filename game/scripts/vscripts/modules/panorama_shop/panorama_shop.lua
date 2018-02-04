@@ -226,6 +226,10 @@ function PanoramaShop:SellItem(playerID, unit, item)
 		unit:IsStunned() then
 		return
 	end
+	if GameRules:IsGamePaused() then
+		Containers:DisplayError(playerID, "#dota_hud_error_game_is_paused")
+		return
+	end
 	if not item:IsSellable() or MeepoFixes:IsMeepoClone(unit) then
 		Containers:DisplayError(playerID, "dota_hud_error_cant_sell_item")
 		return
@@ -390,6 +394,11 @@ end
 function PanoramaShop:BuyItem(playerID, unit, itemName)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	local team = PlayerResource:GetTeam(playerID)
+	if GameRules:IsGamePaused() then
+		Containers:DisplayError(playerID, "#dota_hud_error_game_is_paused")
+		return
+	end
+
 	if Duel:IsDuelOngoing() then
 		Containers:DisplayError(playerID, "#dota_hud_error_cant_purchase_duel_ongoing")
 		return

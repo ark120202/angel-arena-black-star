@@ -1,9 +1,0 @@
-* #### Meepo - Divided we Stand
-  * Now are sharable between clones
-        item_desolator3
-        item_desolator4
-        item_desolator5
-        item_haganemushi
-        item_butterfly_arena
-        item_butterfly_of_wind
-        item_timelords_butterfly
