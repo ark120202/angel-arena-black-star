@@ -32,7 +32,9 @@ end
 
 function CDOTA_BaseNPC:DestroyAllModifiers()
 	for _,v in ipairs(self:FindAllModifiers()) do
-		v:Destroy()
+		if not UNDESTROYABLE_MODIFIERS[v:GetName()] then
+			v:Destroy()
+		end
 	end
 end
 
