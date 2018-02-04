@@ -1026,9 +1026,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_ancient_apparition_5 = {
 		group = 9,
 	},
-	special_bonus_unique_disruptor = {
-		group = 6,
-	},
 	special_bonus_unique_disruptor_2 = {
 		group = 9,
 	},
