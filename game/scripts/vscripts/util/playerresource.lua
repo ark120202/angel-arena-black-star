@@ -110,7 +110,9 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 			for i = 0, hero:GetAbilityCount() - 1 do
 				local ability = hero:GetAbilityByIndex(i)
 				if ability then
-					ability:SetLevel(0)
+					if ability:GetKeyValue("NoAbandonCleanup") ~= 1 then
+						ability:SetLevel(0)
+					end
 					ability:SetHidden(true)
 					ability:SetActivated(false)
 					--UTIL_Remove(ability)

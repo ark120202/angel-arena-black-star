@@ -339,7 +339,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_per_hit"		"-1 -2 -3"
+				"armor_per_hit"		"1 2 3"
 			}
 			"02"
 			{
@@ -373,7 +373,7 @@
 			"modifier_stegius_desolating_touch_debuff"
 			{
 				"IsDebuff"			"1"
-				"IsPurgable"		"0"
+				"IsPurgable"		"1"
 				"Duration"			"%duration"
 
 				"Properties"

@@ -1023,6 +1023,7 @@ DOTA_Tooltip_ability_item_desolator6_Description: |-
 
   <h1>Пассивная: Corruption</h1> Ваши атаки уменьшают броню цели на %corruption_duration% секунд.
 DOTA_Tooltip_ability_item_desolator6_bonus_attack_range: +к радиусу атаки
+DOTA_Tooltip_ability_item_desolator6_all_damage_bonus_pct: '%УВЕЛИЧЕНИЕ ВСЕГО УРОНА:'
 DOTA_Tooltip_ability_item_desolator6_corruption_armor: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_desolator6_cold_movement_speed: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_desolator6_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
@@ -1259,6 +1260,7 @@ DOTA_Tooltip_ability_item_demons_paw_Description: |-
 
   Этот предмет выпадает с боссов и не может быть куплен в лавке.
 DOTA_Tooltip_ability_item_demons_paw_bonus_attack_range: 'ДОП. РАДИУС АТАКИ:'
+DOTA_Tooltip_ability_item_demons_paw_all_damage_bonus_pct: '%УВЕЛИЧЕНИЕ ВСЕГО УРОНА:'
 DOTA_Tooltip_ability_item_awakened_cursed_eye: Awakened Cursed Eye
 DOTA_Tooltip_ability_item_awakened_cursed_eye_Description: '<h1>Пассивная: Cursed Sight</h1> Дает носителю и его союзникам возможность видеть невидимых существ и варды, различать иллюзии и настоящих героев, возможность видеть длительность перезарядки способностей у противников и увеличивает радиус обзора владельца.'
 DOTA_Tooltip_ability_item_awakened_cursed_eye_radius: 'РАДИУС:'

@@ -42,6 +42,10 @@ ONCLICK_PURGABLE_MODIFIERS = {
 	"modifier_tether_ally_aghanims"
 }
 
+UNDESTROYABLE_MODIFIERS = {
+	modifier_razor_static_link_debuff = true,
+}
+
 MOVEMENT_SPEED_MODIFIERS = {
 	modifier_lycan_shapeshift_speed = function(unit)
 		local ability = unit:FindAbilityByName("lycan_shapeshift")

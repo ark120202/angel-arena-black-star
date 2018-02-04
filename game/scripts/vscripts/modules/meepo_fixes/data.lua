@@ -29,7 +29,13 @@ MEEPO_SHARED_ITEMS = {
 	item_skadi_2 = true,
 	item_skadi_4 = true,
 	item_skadi_8 = true,
+	item_desolator3 = true,
+	item_desolator4 = true,
 	item_desolator5 = true,
 	item_desolator6 = true,
 	item_skull_of_midas = true,
+	item_butterfly_arena  = true,
+	item_butterfly_of_wind  = true,
+	item_timelords_butterfly  = true,
+
 }

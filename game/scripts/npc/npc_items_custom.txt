@@ -13,6 +13,7 @@
 #base "items/blade_mail.txt"
 #base "items/radiance.txt"
 #base "items/mekansm.txt"
+#base "items/book_of_the_guardian.txt"
 
 "DOTAAbilities"
 {
@@ -1205,7 +1206,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1000"
+		"ItemCost"						"700"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_homemade_cheese"
@@ -1977,7 +1978,7 @@
 		"Model"							"models/items/meepo/diggers_divining_rod/diggers_divining_rod_gem_saphire.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_gem.vpcf"
 		"AbilityTextureName"			"item_arena/gem_of_pure_soul"
-		"ItemCost"						"9350"
+		"ItemCost"						"2125"
 		"ItemShopTags"					"see_cooldown"
 		"ItemQuality"					"component"
 		"ItemAliases"					"gem of true sight; gem of pure soul"
@@ -2059,7 +2060,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"12000"
+		"ItemCost"						"8000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_aegis_arena"
@@ -2662,7 +2663,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"465"
+		"ItemCost"						"730"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_eye_of_the_prophet"
 		"ItemUseCharges"				"item_ward_observer"
@@ -2683,25 +2684,25 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCastPoint"              "0.1"
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"0"
-		"AOERadius"                     "800"
+		"AOERadius"                     "1500"
 
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
+		"ItemInitialCharges"			"2"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"800"
+				"radius"			"1500"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"12.0"
+				"duration"			"6.0"
 			}
 		}
 
@@ -2727,7 +2728,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"180"
+		"ItemCost"						"30"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_ray_of_fate"
 		"ItemUseCharges"				"item_dust"
@@ -2748,7 +2749,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCastPoint"              "0.1"
-		"AbilityCooldown"				"40"
+		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"0"
 		"AOERadius"                     "625"
 
@@ -2766,7 +2767,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"8.0"
+				"duration"			"10.0"
 			}
 		}
 
@@ -3266,7 +3267,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.0 3.5 5.0"
+				"xp_multiplier"			"3.0 4.5 6.0"
 			}
 			"03"
 			{
@@ -3381,12 +3382,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"xp"					"15"
+				"xp"					"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold"					"25"
+				"gold"					"18"
 			}
 		}
 
@@ -3869,7 +3870,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.0 3.5 5.0"
+				"xp_multiplier"			"3.0 4.5 6.0"
 			}
 			"03"
 			{
@@ -3953,7 +3954,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.0 3.5 5.0"
+				"xp_multiplier"			"3.0 4.5 5.0"
 			}
 			"03"
 			{
@@ -5163,7 +5164,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"20"
+				"bonus_health_regen"	"18"
 			}
 			"05"
 			{
@@ -5173,7 +5174,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"80"
+				"bonus_movement_speed"	"60"
 			}
 			"07"
 			{
@@ -6520,7 +6521,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"15"
+				"kill_gold"				"20"
 			}
 			"05"
 			{
@@ -6671,17 +6672,6 @@
 						"Function"						"UpdateCooldownModifiers"
 						"modifier"						"modifier_item_heavy_war_axe_of_rage_regen"
 					}
-				}
-			}
-
-			"modifier_item_heavy_war_axe_of_rage_damage_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%bonus_toggle_damage_pct"
 				}
 			}
 
@@ -7275,12 +7265,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"250"
+				"aoe"					"300"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"16.0"
+				"buff_duration"			"20.0"
 			}
 			"05"
 			{
@@ -7693,7 +7683,7 @@
 		"AbilityCooldown"				"7.0"
 		"AbilitySharedCooldown"			"medallion;basher"
 
-		"AbilityCooldown"				"2.5"
+		"AbilityCooldown"				"3.8"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"echo sabre 2;fallhammer;skull basher;medallion of courage;valor"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -7740,7 +7730,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"1"
+				"bash_duration"			"0.9"
 			}
 			"09"
 			{
@@ -9578,20 +9568,25 @@
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"gold"				"40"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"		"8.5"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"restore_per_charge"	"25"
+				"gold"				"30"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_charges"		"30"
+				"restore_per_charge"	"30"
 			}
 			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_charges"		"50"
+			}
+			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"radius"			"1500"
@@ -10068,104 +10063,6 @@
 		}
 	}
 
-	"item_recipe_book_of_the_guardian"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1950"
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_book_of_the_guardian"
-		"ItemRequirements"
-		{
-			"01"						"item_book_of_the_keeper;item_shivas_guard"
-		}
-	}
-
-	"item_book_of_the_guardian"
-	{
-		"BaseClass"						"item_lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_AURA"
-		"ScriptFile"					"items/item_book_of_the_guardian.lua"
-		"AbilityTextureName"			"item_arena/book_of_the_guardian"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"ItemShopTags"					"int;regen_mana;hard_to_tag"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilityCastRange"				"%aura_radius"
-		"AbilityCooldown"				"25"
-		"AbilityManaCost"				"350"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"12"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"6"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"900"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_attack_speed"		"-60"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_damage_int_mult"	"3"
-				"CalculateSpellDamageTooltip"	"0"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_movement_speed_pct"	"-50"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_debuff_duration"	"4.0"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_radius"			"1200"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_speed"			"350"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_vision_duration"	"3.5"
-			}
-		}
-	}
-
 	"item_recipe_scythe_of_sun"
 	{
 		"BaseClass"						"item_datadriven"
@@ -10367,7 +10264,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"Model"							"models/props_gameplay/banana_prop_closed.vmdl"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"0.5"
+		"AbilityCooldown"				"0.1"
 
 		"ItemCost"						"50"
 		"ItemQuality"					"component"

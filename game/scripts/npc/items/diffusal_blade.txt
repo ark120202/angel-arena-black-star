@@ -106,7 +106,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"50 60 70 80 90"
+				"feedback_mana_burn"	"30 40 50 60 70"
 			}
 			"04"
 			{
@@ -259,7 +259,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"50 60 70 80 90"
+				"feedback_mana_burn"	"30 40 50 60 70"
 			}
 			"04"
 			{
@@ -412,7 +412,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"50 60 70 80 90"
+				"feedback_mana_burn"	"30 40 50 60 70"
 			}
 			"04"
 			{
@@ -539,7 +539,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"6"
+		"AbilityCooldown"				"7"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -565,7 +565,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"50 60 70 80 90"
+				"feedback_mana_burn"	"30 40 50 60 70"
 			}
 			"04"
 			{
@@ -692,7 +692,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500 550 600 650 700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"6"
+		"AbilityCooldown"				"8"
 		"AbilitySharedCooldown"			"diffusal"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -718,7 +718,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"50 60 70 80 90"
+				"feedback_mana_burn"	"30 40 50 60 70"
 			}
 			"04"
 			{

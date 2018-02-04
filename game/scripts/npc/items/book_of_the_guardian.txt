@@ -1,0 +1,214 @@
+""
+{
+	"item_recipe_book_of_the_guardian"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1950"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_book_of_the_guardian"
+		"ItemRequirements"
+		{
+			"01"						"item_book_of_the_keeper;item_shivas_guard"
+		}
+	}
+
+	"item_recipe_book_of_the_guardian_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"5000"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_book_of_the_guardian_2"
+		"ItemRequirements"
+		{
+			"01"						"item_book_of_the_guardian;item_phantom_bone;item_moon_dust"
+		}
+	}
+
+	"item_book_of_the_guardian"
+	{
+		"BaseClass"						"item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_AURA"
+		"ScriptFile"					"items/item_book_of_the_guardian.lua"
+		"AbilityTextureName"			"item_arena/book_of_the_guardian"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"ItemShopTags"					"int;regen_mana;hard_to_tag"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityCastRange"				"%aura_radius"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"350"
+
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"70 120"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"20 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"12 15"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_hp_regen_pct"	"0 1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3 8"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"15 18"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"900 1000"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_attack_speed"		"-60 -120"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_damage_int_mult"	"3 5"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_movement_speed_pct"	"-40 -60"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_debuff_duration"	"4.0 5.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_radius"			"1200"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_speed"			"350 500"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_vision_duration"	"3.5"
+			}
+		}
+	}
+
+	"item_book_of_the_guardian_2"
+	{
+		"BaseClass"						"item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_AURA"
+		"ScriptFile"					"items/item_book_of_the_guardian.lua"
+		"AbilityTextureName"			"item_arena/book_of_the_guardian_2"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"ItemShopTags"					"int;regen_mana;hard_to_tag"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityCastRange"				"%aura_radius"
+		"AbilityCooldown"				"22"
+		"AbilityManaCost"				"500"
+
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"70 120"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"20 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"12 15"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_hp_regen_pct"	"0 1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3 8"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"15 18"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"900 1000"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_attack_speed"		"-60 -120"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_damage_int_mult"	"3 5"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_movement_speed_pct"	"-40 -60"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_debuff_duration"	"4.0 5.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_radius"			"1200"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_speed"			"350 500"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_vision_duration"	"3.5"
+			}
+		}
+	}
+}

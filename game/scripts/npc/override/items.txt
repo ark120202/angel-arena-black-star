@@ -4,7 +4,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"ItemCost"						"90"
+		"ItemCost"						"50"
 		"ItemInitialCharges"			"1"
 		"AbilityCooldown"				"15.0"
 	}
@@ -186,6 +186,14 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"		"2.5"
+			}
+		}
 	}
 	"item_ghost"
 	{
@@ -226,7 +234,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_regen"			"100"
+				"health_regen"			"120"
 			}
 		}
 	}
@@ -267,6 +275,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"ItemCost"						"80"
 	}
 	"item_tpscroll"
 	{
@@ -985,6 +994,29 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"poison_damage"			"8.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"poison_movement_speed_melee"		"-22"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"poison_movement_speed_range"		"-10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"poison_duration"		"2.5"
+			}			
+		}
 	}
 	"item_recipe_ancient_janggo"
 	{
@@ -1102,6 +1134,19 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hp_regen"		"2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_amount"		"250"
+			}	
+		}
 	}
 	"item_recipe_travel_boots_2"
 	{

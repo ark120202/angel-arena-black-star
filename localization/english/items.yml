@@ -1112,6 +1112,7 @@ DOTA_Tooltip_ability_item_desolator6_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_desolator6_bonus_health: +$health
 DOTA_Tooltip_ability_item_desolator6_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_desolator6_bonus_attack_range: +attack range
+DOTA_Tooltip_ability_item_desolator6_all_damage_bonus_pct: '%DAMAGE INCREASE:'
 DOTA_Tooltip_ability_item_desolator6_corruption_armor: 'ARMOR REDUCTION:'
 DOTA_Tooltip_ability_item_desolator6_cold_movement_speed: '%COLD MOVE SLOW:'
 DOTA_Tooltip_ability_item_desolator6_cold_attack_speed: 'COLD ATTACK SLOW:'
@@ -1436,6 +1437,7 @@ DOTA_Tooltip_ability_item_demons_paw_Description: |-
 
   This item is dropped by bosses and you can't buy it in the shop.
 DOTA_Tooltip_ability_item_demons_paw_bonus_attack_range: 'BONUS ATTACK RANGE:'
+DOTA_Tooltip_ability_item_demons_paw_all_damage_bonus_pct: '%DAMAGE INCREASE:'
 DOTA_Tooltip_ability_item_awakened_cursed_eye: Awakened Cursed Eye
 DOTA_Tooltip_ability_item_awakened_cursed_eye_Description: '<h1>Passive: Cursed Sight</h1> Adds the ability to see invisible units and wards, differentiate illusions and real heroes and see enemies ability cooldowns to any allied vision within its carrier''s range and increases owner''s vision range.'
 DOTA_Tooltip_ability_item_awakened_cursed_eye_radius: 'CURSED SIGHT RADIUS:'
@@ -1557,6 +1559,7 @@ DOTA_Tooltip_ability_item_aether_lens_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
 DOTA_Tooltip_ability_item_wand_of_midas: Wand of Midas
 DOTA_Tooltip_ability_item_wand_of_midas_Description: '<h1>Active: Gold Charge</h1> Gives you some gold and instantly restores health and mana based on the number of charges stored. Gains a charge (max %max_charges%) whenever whenever a nearby enemy uses an ability.'
 DOTA_Tooltip_ability_item_wand_of_midas_bonus_all: +$all
+DOTA_Tooltip_ability_item_wand_of_midas_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_wand_of_midas_gold: 'GOLD PER CHARGE:'
 DOTA_Tooltip_ability_item_wand_of_midas_restore_per_charge: 'HEALTH/MANA PER CHARGE:'
 DOTA_Tooltip_ability_item_wand_of_midas_radius: 'RADIUS:'
@@ -1698,6 +1701,7 @@ DOTA_Tooltip_ability_item_book_of_the_guardian_Note1: The Arctic Blast follows i
 DOTA_Tooltip_ability_item_book_of_the_guardian_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_book_of_the_guardian_bonus_armor: +$armor
 DOTA_Tooltip_ability_item_book_of_the_guardian_bonus_health_regen: +$hp_regen
+DOTA_Tooltip_ability_item_book_of_the_guardian_bonus_hp_regen_pct: '%+$hp_regen'
 DOTA_Tooltip_ability_item_book_of_the_guardian_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_book_of_the_guardian_spell_amp_pct: '%SPELL DAMAGE AMP:'
 DOTA_Tooltip_ability_item_book_of_the_guardian_aura_attack_speed: 'AURA ATTACK SLOW:'
@@ -1709,6 +1713,27 @@ DOTA_Tooltip_modifier_item_book_of_the_guardian_aura: Freezing Aura
 DOTA_Tooltip_modifier_item_book_of_the_guardian_aura_Description: Attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
 DOTA_Tooltip_modifier_item_book_of_the_guardian_blast: Arctic Blast
 DOTA_Tooltip_modifier_item_book_of_the_guardian_blast_Description: Movement speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
+
+DOTA_Tooltip_ability_item_book_of_the_guardian_2: Book of the Guardian II
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_Description: |-
+  <h1>Active: Arctic Blast</h1> Emits a freezing wave that deals %blast_damage_int_mult%x your intelligence magical damage to enemies and slows their movement by %blast_movement_speed_pct%%% for %blast_debuff_duration% seconds.
+  <h1>Passive: Freezing Aura</h1> Reduces the attack speed of all enemies in a %aura_radius% radius.
+  Passive: Increases spell damage output by %spell_amp_pct%%%
+
+  Multiple instances of Freezing Aura do not stack.
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_Note0: The wave extends at a speed of 350 to a max size of 900.
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_Note1: The Arctic Blast follows its caster.
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_bonus_intellect: +$int
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_bonus_armor: +$armor
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_bonus_health_regen: +$hp_regen
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_bonus_hp_regen_pct: '%+$hp_regen'
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_bonus_mana_regen: +$mana_regen
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_spell_amp_pct: '%SPELL DAMAGE AMP:'
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_aura_attack_speed: 'AURA ATTACK SLOW:'
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_blast_damage_int_mult: 'INTELLIGENCE DAMAGE MULTIPLIER:'
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_blast_movement_speed_pct: '%BLAST MOVEMENT SLOW:'
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_blast_debuff_duration: 'BLAST SLOW DURATION:'
+DOTA_Tooltip_ability_item_book_of_the_guardian_2_blast_radius: 'BLAST RADIUS:'
 
 DOTA_Tooltip_ability_item_bloodthorn_2: Bloodthorn 2
 DOTA_Tooltip_ability_item_bloodthorn_2_Description: |-

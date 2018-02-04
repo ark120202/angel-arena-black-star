@@ -32,7 +32,9 @@ end
 
 function CDOTA_BaseNPC:DestroyAllModifiers()
 	for _,v in ipairs(self:FindAllModifiers()) do
-		v:Destroy()
+		if not UNDESTROYABLE_MODIFIERS[v:GetName()] then
+			v:Destroy()
+		end
 	end
 end
 
@@ -153,7 +155,7 @@ function CDOTA_BaseNPC:AddNewAbility(ability_name, skipLinked)
 	if link and not skipLinked then
 		linked = {}
 		for _,v in ipairs(link) do
-			local h = AddNewAbility(self, v)
+			local h = self:AddNewAbility(v)
 			table.insert(linked, h)
 		end
 	end

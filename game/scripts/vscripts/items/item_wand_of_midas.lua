@@ -40,7 +40,8 @@ function modifier_item_wand_of_midas:DeclareFunctions()
 		MODIFIER_EVENT_ON_ABILITY_EXECUTED,
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 	}
 end
 
@@ -54,6 +55,10 @@ end
 
 function modifier_item_wand_of_midas:GetModifierBonusStats_Intellect()
 	return self:GetAbility():GetSpecialValueFor("bonus_all")
+end
+
+function modifier_item_wand_of_midas:GetModifierConstantHealthRegen()
+	return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
 end
 
 if IsServer() then

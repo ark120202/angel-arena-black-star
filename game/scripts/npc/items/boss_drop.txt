@@ -302,11 +302,28 @@
 				"var_type"			"FIELD_INTEGER"
 				"bonus_attack_range"	"50"
 			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"all_damage_bonus_pct"		"5"
+			}
 		}
 
 		"Modifiers"
 		{
 			"modifier_item_demons_paw"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%all_damage_bonus_pct"
+				}
+			}
+
+			"modifier_item_demons_paw_unique"
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"

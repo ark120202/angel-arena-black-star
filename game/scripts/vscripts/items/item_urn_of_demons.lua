@@ -28,7 +28,14 @@ function modifier_item_urn_of_demons_damage_on_interval_think(keys)
 	local target = keys.target
 	local damage_to_deal = keys.TotalHealthPct * 0.01 * target:GetMaxHealth() / keys.TotalDuration * keys.Interval
 	local mana_to_burn = keys.TotalManaPct * 0.01 * target:GetMaxMana() / keys.TotalDuration * keys.Interval
-	ApplyDamage({victim = target, attacker = keys.caster, damage = damage_to_deal, damage_type = ability:GetAbilityDamageType(), ability = ability})
+	ApplyDamage({
+		victim = target,
+		attacker = keys.caster,
+		damage = damage_to_deal,
+		damage_type = ability:GetAbilityDamageType(),
+		damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+		ability = ability
+	})
 	target:SetMana(target:GetMana() - mana_to_burn)
 end
 
@@ -46,7 +53,7 @@ function item_urn_of_demons_on_spell_start(keys)
 	local ability = keys.ability
 
 	target:EmitSound("DOTA_Item.UrnOfShadows.Activate")
-	
+
 	if caster:GetTeam() == target:GetTeam() then
 		ability:ApplyDataDrivenModifier(caster, target, "modifier_item_urn_of_demons_ally", nil)
 	else

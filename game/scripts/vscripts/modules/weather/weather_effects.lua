@@ -20,7 +20,7 @@ function CreateLightningBlot(position)
 	EmitSoundOnLocationWithCaster(position, "Hero_Zuus.LightningBolt", nil)
 
 	GridNav:DestroyTreesAroundPoint(position, aoe, true)
-	local damage = GetDOTATimeInMinutesFull() * RandomInt(50, 100)
+	local damage = GetDOTATimeInMinutesFull() * RandomInt(150, 250)
 	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
 		if not v:IsMagicImmune() then
 			ApplyDamage({
@@ -40,8 +40,8 @@ function CreateCrystalNova(position)
 		ParticleManager:SetParticleControl(particle, 1, Vector(aoe, 2, aoe * 2))
 	end)
 	EmitSoundOnLocationWithCaster(position, "Hero_Crystal.CrystalNova", nil)
-	local damage = 100 + GetDOTATimeInMinutesFull() * RandomInt(40, 90)
-	local duration = 0.4 + ( RandomInt(2, 7) / 10 )
+	local damage = 100 + GetDOTATimeInMinutesFull() * RandomInt(50, 180)
+	local duration = 0.4 + ( RandomInt(4, 9) / 10 )
 	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
 		if not v:IsMagicImmune() then
 			ApplyDamage({
@@ -79,7 +79,7 @@ WEATHER_EFFECTS = {
 	},
 	storm = {
 		minDuration = 120,
-		maxDuration = 240,
+		maxDuration = 180,
 		recipients = {"rain", "sunny"},
 
 		isCatastrophe = true,
@@ -107,8 +107,8 @@ WEATHER_EFFECTS = {
 		dummyModifier = "modifier_weather_snow",
 	},
 	blizzard = {
-		minDuration = 90,
-		maxDuration = 180,
+		minDuration = 60,
+		maxDuration = 120,
 		recipients = {"snow", "rain"},
 
 		isCatastrophe = true,

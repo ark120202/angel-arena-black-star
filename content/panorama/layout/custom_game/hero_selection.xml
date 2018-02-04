@@ -288,26 +288,28 @@
 					<Panel class="MinimapSpawnBoxes only_map_landscape_5v5">
 						<!-- Radiant -->
 							<!-- easy -->
-								<Panel id="MinimapSpawnBox_2_1_0" onactivate="OnMinimapClickSpawnBox(2, 1, 0)" class="MinimapSpawnBox" style="position: 96px 160px 0;"/>
+								<Panel id="MinimapSpawnBox_2_1_0" onactivate="OnMinimapClickSpawnBox(2, 1, 0)" class="MinimapSpawnBox" style="position: 99px 160px 0;"/>
 							<!-- medium -->
-								<Panel id="MinimapSpawnBox_2_2_0" onactivate="OnMinimapClickSpawnBox(2, 2, 0)" class="MinimapSpawnBox" style="position: 15px 198px 0;"/>
-								<Panel id="MinimapSpawnBox_2_2_1" onactivate="OnMinimapClickSpawnBox(2, 2, 1)" class="MinimapSpawnBox" style="position: 50px 198px 0;"/>
-								<Panel id="MinimapSpawnBox_2_2_2" onactivate="OnMinimapClickSpawnBox(2, 2, 2)" class="MinimapSpawnBox" style="position: 53px 74px 0;"/>
-								<Panel id="MinimapSpawnBox_2_2_3" onactivate="OnMinimapClickSpawnBox(2, 2, 3)" class="MinimapSpawnBox" style="position: 53px 123px 0;"/>
+								<Panel id="MinimapSpawnBox_2_2_0" onactivate="OnMinimapClickSpawnBox(2, 2, 0)" class="MinimapSpawnBox" style="position: 47px 194px 0;"/>
+								<Panel id="MinimapSpawnBox_2_2_1" onactivate="OnMinimapClickSpawnBox(2, 2, 1)" class="MinimapSpawnBox" style="position: 15px 194px 0;"/>
+								<Panel id="MinimapSpawnBox_2_2_2" onactivate="OnMinimapClickSpawnBox(2, 2, 2)" class="MinimapSpawnBox" style="position: 46px 121px 0;"/>
+								<Panel id="MinimapSpawnBox_2_2_3" onactivate="OnMinimapClickSpawnBox(2, 2, 3)" class="MinimapSpawnBox" style="position: 16px 121px 0;"/>
 							<!-- hard -->
 								<Panel id="MinimapSpawnBox_2_3_0" onactivate="OnMinimapClickSpawnBox(2, 3, 0)" class="MinimapSpawnBox" style="position: 94px 224px 0;"/>
-								<Panel id="MinimapSpawnBox_2_3_1" onactivate="OnMinimapClickSpawnBox(2, 3, 1)" class="MinimapSpawnBox" style="position: 100px 89px 0;"/>
+								<Panel id="MinimapSpawnBox_2_3_1" onactivate="OnMinimapClickSpawnBox(2, 3, 1)" class="MinimapSpawnBox" style="position: 100px 94px 0;"/>
+								<Panel id="MinimapSpawnBox_2_3_2" onactivate="OnMinimapClickSpawnBox(2, 3, 2)" class="MinimapSpawnBox" style="position: 139px 301px 0;"/>
 						<!-- Dire -->
 							<!-- easy -->
 								<Panel id="MinimapSpawnBox_3_1_0" onactivate="OnMinimapClickSpawnBox(3, 1, 0)" class="MinimapSpawnBox" style="position: 220px 160px 0;"/>
 							<!-- medium -->
-								<Panel id="MinimapSpawnBox_3_2_0" onactivate="OnMinimapClickSpawnBox(3, 2, 0)" class="MinimapSpawnBox" style="position: 306px 202px 0;"/>
-								<Panel id="MinimapSpawnBox_3_2_1" onactivate="OnMinimapClickSpawnBox(3, 2, 1)" class="MinimapSpawnBox" style="position: 272px 202px 0;"/>
-								<Panel id="MinimapSpawnBox_3_2_2" onactivate="OnMinimapClickSpawnBox(3, 2, 2)" class="MinimapSpawnBox" style="position: 268px 116px 0;"/>
-								<Panel id="MinimapSpawnBox_3_2_3" onactivate="OnMinimapClickSpawnBox(3, 2, 3)" class="MinimapSpawnBox" style="position: 268px 75px 0;"/>
+								<Panel id="MinimapSpawnBox_3_2_0" onactivate="OnMinimapClickSpawnBox(3, 2, 0)" class="MinimapSpawnBox" style="position: 307px 196px 0;"/>
+								<Panel id="MinimapSpawnBox_3_2_1" onactivate="OnMinimapClickSpawnBox(3, 2, 1)" class="MinimapSpawnBox" style="position: 275px 196px 0;"/>
+								<Panel id="MinimapSpawnBox_3_2_2" onactivate="OnMinimapClickSpawnBox(3, 2, 2)" class="MinimapSpawnBox" style="position: 275px 121px 0;"/>
+								<Panel id="MinimapSpawnBox_3_2_3" onactivate="OnMinimapClickSpawnBox(3, 2, 3)" class="MinimapSpawnBox" style="position: 307px 121px 0;"/>
 							<!-- hard -->
 								<Panel id="MinimapSpawnBox_3_3_0" onactivate="OnMinimapClickSpawnBox(3, 3, 0)" class="MinimapSpawnBox" style="position: 225px 224px 0;"/>
-								<Panel id="MinimapSpawnBox_3_3_1" onactivate="OnMinimapClickSpawnBox(3, 3, 1)" class="MinimapSpawnBox" style="position: 220px 89px 0;"/>
+								<Panel id="MinimapSpawnBox_3_3_1" onactivate="OnMinimapClickSpawnBox(3, 3, 1)" class="MinimapSpawnBox" style="position: 220px 94px 0;"/>
+								<Panel id="MinimapSpawnBox_3_3_2" onactivate="OnMinimapClickSpawnBox(3, 3, 2)" class="MinimapSpawnBox" style="position: 181px 301px 0;"/>
 					</Panel>
 					<Panel class="MinimapSpawnBoxes only_map_landscape_4v4v4v4">
 						<!-- Radiant -->

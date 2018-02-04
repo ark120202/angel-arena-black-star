@@ -21,7 +21,17 @@ function Verify:Override()
 									table.insert(errors, name .. ": override has AbilitySpecial/" .. specialIndex .. "/" .. k .. ", default hasn't")
 								end
 							end
-							if originalValues.LinkedSpecialBonus ~= specialValues.LinkedSpecialBonus then
+							for k,v in pairs(originalValues) do
+								if specialValues[k] then
+									-- Good!
+								elseif k ~= "CalculateSpellDamageTooltip" then
+									table.insert(errors, name .. ": default has AbilitySpecial/" .. specialIndex .. "/" .. k .. ", override hasn't")
+								end
+							end
+
+							if originalValues.LinkedSpecialBonus and
+								specialValues.LinkedSpecialBonus and
+								originalValues.LinkedSpecialBonus ~= specialValues.LinkedSpecialBonus then
 								table.insert(errors, name .. ": override's AbilitySpecial/" .. specialIndex .. "/LinkedSpecialBonus not equals to default")
 							end
 						elseif specialIndex ~= "99" then

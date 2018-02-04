@@ -15,7 +15,7 @@ end
 
 modifier_sai_release_of_forge = class({
 	IsPurgable            = function() return false end,
-	IsHidden              = function() return true end,
+	IsHidden              = function() return false end,
 	GetEffectName         = function() return "particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl_fire.vpcf" end,
 
 	GetModifierAttackRangeBonus = function() return 99700 end,
@@ -63,8 +63,16 @@ if IsServer() then
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local respawn_time_decreasement_reduction = parent:GetTalentSpecial("talent_hero_sai_release_of_forge_bonus_respawn_time_reduction", "reduction_pct") or 0
+		local chance = ability:GetSpecialValueFor("chance_to_live")
 		parent.RespawnTimeModifierSaiReleaseOfForge = ability:GetSpecialValueFor("bonus_respawn_time_pct") * (1 - respawn_time_decreasement_reduction * 0.01)
-		parent:TrueKill(ability, self:GetCaster())
+
+		if parent:HasScepter() and RollPercentage(chance) then
+			parent:SetHealth(parent:GetMaxHealth())
+			ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sara/fragment_of_logic.vpcf", PATTACH_ABSORIGIN, parent)
+			parent:EmitSound("Hero_Chen.HandOfGodHealHero")
+		else
+			parent:TrueKill(ability, self:GetCaster())
+		end
 	end
 end
 
