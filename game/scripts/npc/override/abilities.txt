@@ -6703,20 +6703,18 @@
 			}
 			"04"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"health_drain_scepter"	"150 200 250 300 350 400 450"
-				"CalculateSpellDamageTooltip"	"1"
+				"var_type"					"FIELD_FLOAT"
+				"scepter_cooldown"			"2.0"
 			}
 			"05"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"scepter_cooldown"	"2"
+				"var_type"					"FIELD_FLOAT"
+				"tick_rate"					"0.25"
 			}
-
 			"06"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"tick_rate"	"0.25"
+				"var_type"					"FIELD_INTEGER"
+				"drain_buffer"				"200"
 			}
 			"99"
 			{
@@ -17532,6 +17530,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"attack_slow_tooltip"	"8 14 20 26 32 41 50"
+				"LinkedSpecialBonus"	"special_bonus_unique_abaddon_3"
 			}
 
 			"05"
@@ -18261,6 +18260,8 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"charge_restore_time"	"35"
+				"LinkedSpecialBonus"		"special_bonus_unique_ember_spirit_5"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
 			}
 
 			"04"
@@ -20880,6 +20881,7 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"max_damage_duration"			"3 3 3 3 3 2 1"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 	}
