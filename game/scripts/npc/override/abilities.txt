@@ -20736,7 +20736,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_interval"			"0.05"
+				"tick_interval"			"0.03"
 			}
 			"03"
 			{

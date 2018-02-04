@@ -1204,7 +1204,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 6,
 	},
 	special_bonus_unique_pangolier_3 = {
-		group = 7,
+		group = 10,
 	},
 	special_bonus_unique_pangolier_4 = {
 		group = 9,
