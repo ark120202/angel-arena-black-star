@@ -119,6 +119,7 @@ BOSS_BANNED_ABILITIES = {
 	rubick_telekinesis = true,
 	item_demon_king_bar = true,
 	morphling_adaptive_strike_str = true,
+	item_spirit_helix = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
@@ -140,6 +141,7 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	skywrath_mage_arcane_bolt = true,
 	centaur_return = true,
 	huskar_life_break = true,
+	item_spirit_helix = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
