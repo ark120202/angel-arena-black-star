@@ -163,7 +163,13 @@ SPAWNER_SETTINGS = {
 					[30] = "models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl",
 					[60] = "models/heroes/centaur/centaur.vmdl",
 				}
-
+			},
+			[2] ={
+				{
+					[-1] = "npc_dota_neutral_hard_variant3",
+					[0] = "models/creeps/roshan/roshan.vmdl",
+					[30] = "models/heroes/tidehunter/tidehunter.vmdl",
+				}
 			},
 		},
 	},
