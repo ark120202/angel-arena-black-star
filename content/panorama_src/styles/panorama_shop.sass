@@ -2,6 +2,7 @@ $mainPanelWidth: 310px
 $guidesPanelWidth: 208px
 
 $fullPanelHeight: 840px
+$itemsPanelHeight: 800px
 $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 
 .base
@@ -11,13 +12,13 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 
 #ShopBase
 	margin-right: 0
-	margin-bottom: 196px
+	margin-top: 50px
 	opacity: 0
 	transform: translateX($fullPanelWidth)
 	transition-duration: .01s
 	transition-property: transform, opacity
 	transition-timing-function: ease-in
-	align: right bottom
+	align: right top
 	flow-children: right
 
 	&.ShopBaseOpen
@@ -360,10 +361,12 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 #ShopItems
 	width: 100%
 	height: 100%
+	overflow: squish scroll
+	flow-children: down
 
 #ShopItemsBase
 	width: 100%
-	height: 100%
+	height: $itemsPanelHeight
 	margin-top: 9px
 	visibility: visible
 

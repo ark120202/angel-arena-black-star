@@ -39,6 +39,10 @@ DOTA_Tooltip_ability_item_shard_str_large: Large Strength Shard
 DOTA_Tooltip_ability_item_shard_str_large_bonus_str: +$str
 DOTA_Tooltip_ability_item_shard_str_extreme: Extreme Strength Shard
 DOTA_Tooltip_ability_item_shard_str_extreme_bonus_str: +$str
+DOTA_Tooltip_ability_item_shard_str_extreme_1000: Extreme Strength Shard x10
+DOTA_Tooltip_ability_item_shard_str_extreme_1000_bonus_str: +$str
+DOTA_Tooltip_ability_item_shard_str_extreme_10000: Extreme Strength Shard x100
+DOTA_Tooltip_ability_item_shard_str_extreme_10000_bonus_str: +$str
 DOTA_Tooltip_ability_item_shard_agi_small: Small Agility Shard
 DOTA_Tooltip_ability_item_shard_agi_small_bonus_agi: +$agi
 DOTA_Tooltip_ability_item_shard_agi_medium: Medium Agility Shard
@@ -47,6 +51,10 @@ DOTA_Tooltip_ability_item_shard_agi_large: Large Agility Shard
 DOTA_Tooltip_ability_item_shard_agi_large_bonus_agi: +$agi
 DOTA_Tooltip_ability_item_shard_agi_extreme: Extreme Agility Shard
 DOTA_Tooltip_ability_item_shard_agi_extreme_bonus_agi: +$agi
+DOTA_Tooltip_ability_item_shard_agi_extreme_1000: Extreme Agility Shard x10
+DOTA_Tooltip_ability_item_shard_agi_extreme_1000_bonus_agi: +$agi
+DOTA_Tooltip_ability_item_shard_agi_extreme_10000: Extreme Agility Shard x100
+DOTA_Tooltip_ability_item_shard_agi_extreme_10000_bonus_agi: +$agi
 DOTA_Tooltip_ability_item_shard_int_small: Small Intelligence Shard
 DOTA_Tooltip_ability_item_shard_int_small_bonus_int: +$int
 DOTA_Tooltip_ability_item_shard_int_medium: Medium Intelligence Shard
@@ -55,30 +63,46 @@ DOTA_Tooltip_ability_item_shard_int_large: Large Intelligence Shard
 DOTA_Tooltip_ability_item_shard_int_large_bonus_int: +$int
 DOTA_Tooltip_ability_item_shard_int_extreme: Extreme Intelligence Shard
 DOTA_Tooltip_ability_item_shard_int_extreme_bonus_int: +$int
+DOTA_Tooltip_ability_item_shard_int_extreme_1000: Extreme Intelligence Shard x10
+DOTA_Tooltip_ability_item_shard_int_extreme_1000_bonus_int: +$int
+DOTA_Tooltip_ability_item_shard_int_extreme_10000: Extreme Intelligence Shard x100
+DOTA_Tooltip_ability_item_shard_int_extreme_10000_bonus_int: +$int
 DOTA_Tooltip_ability_item_shard_primal_small: Small Primal Shard
 DOTA_Tooltip_ability_item_shard_primal_small_bonus_stats: +$all
 DOTA_Tooltip_ability_item_shard_primal_medium: Medium Primal Shard
 DOTA_Tooltip_ability_item_shard_primal_medium_bonus_stats: +$all
 DOTA_Tooltip_ability_item_shard_primal_large: Large Primal Shard
 DOTA_Tooltip_ability_item_shard_primal_large_bonus_stats: +$all
-DOTA_Tooltip_ability_item_shard_attackspeed: Attack Speed Shard
+DOTA_Tooltip_ability_item_shard_primal_large_500: Large Primal Shard x10
+DOTA_Tooltip_ability_item_shard_primal_large_500_bonus_stats: +$all
+DOTA_Tooltip_ability_item_shard_primal_large_5000: Large Primal Shard x100
+DOTA_Tooltip_ability_item_shard_primal_large_5000_bonus_stats: +$all
+DOTA_Tooltip_ability_item_shard_attackspeed: Attackspeed Shard
 DOTA_Tooltip_ability_item_shard_attackspeed_bonus_attackspeed: +$attack
 '<h1>Use: Consume</h1> Consumes shard and gives hero permanent bonus.':
   - DOTA_Tooltip_ability_item_shard_str_small_Description
   - DOTA_Tooltip_ability_item_shard_str_medium_Description
   - DOTA_Tooltip_ability_item_shard_str_large_Description
   - DOTA_Tooltip_ability_item_shard_str_extreme_Description
+  - DOTA_Tooltip_ability_item_shard_str_extreme_1000_Description
+  - DOTA_Tooltip_ability_item_shard_str_extreme_10000_Description
   - DOTA_Tooltip_ability_item_shard_agi_small_Description
   - DOTA_Tooltip_ability_item_shard_agi_medium_Description
   - DOTA_Tooltip_ability_item_shard_agi_large_Description
   - DOTA_Tooltip_ability_item_shard_agi_extreme_Description
+  - DOTA_Tooltip_ability_item_shard_agi_extreme_1000_Description
+  - DOTA_Tooltip_ability_item_shard_agi_extreme_10000_Description
   - DOTA_Tooltip_ability_item_shard_int_small_Description
   - DOTA_Tooltip_ability_item_shard_int_medium_Description
   - DOTA_Tooltip_ability_item_shard_int_large_Description
   - DOTA_Tooltip_ability_item_shard_int_extreme_Description
+  - DOTA_Tooltip_ability_item_shard_int_extreme_1000_Description
+  - DOTA_Tooltip_ability_item_shard_int_extreme_10000_Description
   - DOTA_Tooltip_ability_item_shard_primal_small_Description
   - DOTA_Tooltip_ability_item_shard_primal_medium_Description
   - DOTA_Tooltip_ability_item_shard_primal_large_Description
+  - DOTA_Tooltip_ability_item_shard_primal_large_500_Description
+  - DOTA_Tooltip_ability_item_shard_primal_large_5000_Description
   - DOTA_Tooltip_ability_item_shard_attackspeed_Description
 
 DOTA_Tooltip_ability_item_yasha_arena: Yasha
