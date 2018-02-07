@@ -72,7 +72,11 @@ function PushItemsToList() {
 		})(shopName));
 		var TabShopItemlistPanel = $.CreatePanel('Panel', $('#ShopItemsBase'), 'shop_panels_tab_' + shopName);
 		TabShopItemlistPanel.AddClass('ItemsPageInnerContainer');
-		FillShopTable(TabShopItemlistPanel, shopContent);
+
+		var TabShopItemlistPanelContainer = $.CreatePanel('Panel', TabShopItemlistPanel, 'shop_panels_tab_' + shopName + '_container');
+		TabShopItemlistPanelContainer.AddClass('ItemsPageInnerContainerColumnContainer');
+
+		FillShopTable(TabShopItemlistPanelContainer, shopContent);
 
 		if (!isTabSelected) {
 			SelectShopTab(shopName);
@@ -86,6 +90,8 @@ function SelectShopTab(tabTitle) {
 	_.each($('#ShopItemsBase').Children(), function(child) {
 		child.SetHasClass('SelectedPage', child.id.replace('shop_panels_tab_', '') === tabTitle);
 	});
+
+	UpdateShop();
 }
 
 function FillShopTable(panel, shopData) {
