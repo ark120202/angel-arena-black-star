@@ -1,7 +1,7 @@
 $mainPanelWidth: 310px
 $guidesPanelWidth: 208px
 
-$fullPanelHeight: 840px
+$fullPanelHeight: 842px
 $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 
 .base
@@ -11,13 +11,13 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 
 #ShopBase
 	margin-right: 0
-	margin-bottom: 196px
+	margin-top: 50px
 	opacity: 0
 	transform: translateX($fullPanelWidth)
 	transition-duration: .01s
 	transition-property: transform, opacity
 	transition-timing-function: ease-in
-	align: right bottom
+	align: right top
 	flow-children: right
 
 	&.ShopBaseOpen
@@ -32,6 +32,7 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 #ShopItemBasePanel
 	width: $mainPanelWidth
 	height: $fullPanelHeight
+	flow-children: down
 
 #ItembuildsPanel
 	width: $guidesPanelWidth
@@ -159,8 +160,7 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 
 #ItembuildPanelsContainer
 	width: 100%
-	min-height: 100%
-	overflow: squish scroll
+	height: 100%
 	flow-children: down
 
 #ItembuildAddGroupButton
@@ -359,7 +359,8 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 
 #ShopItems
 	width: 100%
-	height: 100%
+	min-height: 100%
+	flow-children: down
 
 #ShopItemsBase
 	width: 100%
@@ -372,7 +373,6 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 	height: 100%
 	margin-top: 1px
 	margin-left: 2px
-	overflow: squish scroll
 	visibility: collapse
 	flow-children: right-wrap
 
@@ -385,7 +385,7 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 
 
 .ShopItemGroup
-	height: 100%
+	align: center top
 	flow-children: down
 
 .CanBuy
@@ -529,15 +529,23 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 	visibility: collapse
 
 .ItemsPageInnerContainer
-	height: 100%
 	opacity: 0
 	transition-duration: .15s
 	transition-property: opacity
 	horizontal-align: center
 	flow-children: right-wrap
+	margin-bottom: 15px
+	width: 100%
+	height: 0
+	overflow: squish scroll
 
 	&.SelectedPage
 		opacity: 1
+		height: 100%
+
+.ItemsPageInnerContainerColumnContainer
+	horizontal-align: center
+	flow-children: right-wrap
 
 
 .DropDownMode .DropDownValidTarget
