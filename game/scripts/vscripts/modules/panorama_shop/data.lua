@@ -249,6 +249,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_diffusal_style",
 			"item_haganemushi",
 			"item_radiance_frozen",
+			"item_unstable_quasar,"
 		},
 		{
 			"item_holy_knight_shield",

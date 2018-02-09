@@ -53,14 +53,13 @@ if IsServer() then
         local usedAbility = keys.ability
         local team = caster:GetTeam()
         local pos = caster:GetAbsOrigin()
-        local manacost = ability:GetSpecialValueFor("manacost") + caster:GetMaxMana() * ability:GetSpecialValueFor("manacost_pct") * 0.01
         local radius = ability:GetSpecialValueFor("damage_radius")
 
-        if 
-        usedAbility:GetCooldown(usedAbility:GetLevel()) >= ability:GetSpecialValueFor("min_ability_cooldown") and 
-        caster:GetMana() >= manacost and 
-        usedAbility:GetManaCost(usedAbility:GetLevel()) ~= 0 then
-            caster:SetMana(caster:GetMana() - manacost)
+        if (
+            PreformAbilityPrecastActions(caster, ability) and
+            usedAbility:GetCooldown(usedAbility:GetLevel()) >= ability:GetSpecialValueFor("min_ability_cooldown") and 
+            usedAbility:GetManaCost(usedAbility:GetLevel()) ~= 0
+        ) then           
             for _,v in ipairs(FindUnitsInRadius(team, pos, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
                 local enemyPos = v:GetAbsOrigin()
                 local damage = v:GetHealth() * ability:GetSpecialValueFor(caster:GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT and "intelligence_damage_pct" or "damage_pct") * 0.01 + ability:GetSpecialValueFor("base_damage")
