@@ -7,30 +7,36 @@ item_unstable_quasar = {
 }
 
 modifier_item_unstable_quasar_passive = class({
-    DeclareFunctions = function() return {
+    IsHidden   = function() return true end,
+    IsPurgable = function() return false end,
+    RemoveOnDeath = function() return false end,
+})
+
+function modifier_item_unstable_quasar_passive:DeclareFunctions()
+    return {
         MODIFIER_EVENT_ON_ABILITY_EXECUTED,
         MODIFIER_PROPERTY_BONUS_DAY_VISION,
         MODIFIER_PROPERTY_BONUS_NIGHT_VISION,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
         MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
-    } end,
-    IsHidden   = function() return true end,
-    IsPurgable = function() return false end,
-    RemoveOnDeath = function() return false end,
-})
+    }   
+end
 
 modifier_item_unstable_quasar_slow = class({
     IsHidden   = function() return false end,
     IsPurgable = function() return true end,
     IsDebuff = function() return true end,
     GetEffectName = function() return "particles/items_fx/diffusal_slow.vpcf" end,
-    DeclareFunctions = function() return { 
-        MODIFIER_PROPERTY_MOVESPEED_MAX,
-		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
-		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
-     } end,
 })
+
+function modifier_item_unstable_quasar_slow:DeclareFunctions() 
+    return { 
+        MODIFIER_PROPERTY_MOVESPEED_MAX,
+        MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+        MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
+    } 
+end
 
 function item_unstable_quasar:GetManaCost(iLevel)
     local caster = self:GetCaster()
@@ -56,10 +62,10 @@ if IsServer() then
             caster:SetMana(caster:GetMana() - manacost)
             for _,v in ipairs(FindUnitsInRadius(team, pos, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
                 local enemyPos = v:GetAbsOrigin()
-                local damage = v:GetHealth() * ability:GetSpecialValueFor("damage_pct") * 0.01 + ability:GetSpecialValueFor("base_damage")
+                local damage = v:GetHealth() * ability:GetSpecialValueFor("intelligence_damage_pct") * 0.01 + ability:GetSpecialValueFor("base_damage")
 
                 if caster:GetPrimaryAttribute() ~= 2 then
-                    damage = damage * ability:GetSpecialValueFor("discrease_damage_pct") * 0.01
+                    damage = v:GetHealth() * ability:GetSpecialValueFor("damage_pct") * 0.01 + ability:GetSpecialValueFor("base_damage")
                 end
 
                 ApplyDamage({

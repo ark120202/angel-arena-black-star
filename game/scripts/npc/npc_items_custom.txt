@@ -10588,65 +10588,66 @@
 			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_pct"					"11"
+				"damage_pct"					"5.5"
 				"CalculateSpellDamageTooltip" 	"0"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"base_damage"					"250"
+				"intelligence_damage_pct"		"11"
 				"CalculateSpellDamageTooltip" 	"0"
 			}
 			"08"
 			{
+				"var_type"						"FIELD_FLOAT"
+				"base_damage"					"250"
+				"CalculateSpellDamageTooltip" 	"0"
+			}
+			"09"
+			{
 				"var_type"					"FIELD_FLOAT"
 				"min_ability_cooldown"		"1.6"
 			}
-			"09"
+			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"damage_radius"					"800"
 				"CalculateSpellDamageTooltip" 	"0"
 			}
-			"10"
+			"11"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"speed"							"50"
 			}
-			"11"
+			"12"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"slow_duration"					"0.33"
 			}
-			"12"
+			"13"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"offset_distance"				"30"
 			}
-			"13"
+			"14"
 			{
 				"var_type"						 "FIELD_INTEGER"
 				"aura_descrease_resistange_pct"  "20"
 			}
-			"14"
+			"15"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"manacost"						"100"
 			}
-			"15"
+			"16"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"manacost_pct"					"10"
 			}
-			"16"
-			{
-				"var_type"						"FIELD_INTEGER"
-                "discrease_damage_pct"            "50"
-			}
 			"17"
 			{
                 "var_type"                        "FIELD_INTEGER"
-                "increase_all_damage_pct"         "0"
+                "increase_all_damage_pct"         "5"
 			}
 		}
 		"precache"
