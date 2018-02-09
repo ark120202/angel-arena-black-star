@@ -1399,8 +1399,9 @@ DOTA_Tooltip_ability_item_unstable_quasar: Unstable Quasar
 DOTA_Tooltip_ability_item_unstable_quasar_Description: '<h1>Пассивная: Singularity</h1> При использовании способности или предмета с манакостом наносит урон всем противникам в размере от их текущего здоровья, притягивая к кастеру и кратковременно уменьшая скорость передвижения до 100 ед в радиусе %damage_radius%, расходуя %manacost% + %manacost_pct%%% макс. маны. также создает ауру с эффектом True Sight и снижением магического сопротивления в радиусе %aura_radius%. Урон артефакта снижен на %discrease_damage_pct%%%, если основным атрибутом кастера не является Интеллект. 
 <h1>Аура: Decomposition</h1> Создает ауру с эффектом True Sight и снижением магического сопротивления %descrease_resistange_pct%%% в радиусе %aura_radius%.'
 DOTA_Tooltip_ability_item_unstable_quasar_Note0: Эффекты от нескольких Unstable Quasar не складываются.
-DOTA_Tooltip_ability_item_unstable_quasar_damage_pct: '%УРОН ОТ ТЕКУЩЕГО ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_item_unstable_quasar_base_damage: 'БАЗОВЫЙ УРОН:'
+DOTA_Tooltip_ability_item_unstable_quasar_damage_pct: '%УРОН ОТ ТЕКУЩЕГО ЗДОРОВЬЯ:'
+DOTA_Tooltip_ability_item_unstable_quasar_intelligence_damage_pct: '%УРОН ДЛЯ ГЕРОЕВ С ОСН. АТРИБУТОМ "ИНТЕЛЛЕКТ":'
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: 'УВЕЛИЧЕНИЕ ОБЗОРА ДНЕМ:'
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: 'УВЕЛИЧЕНИЕ ОБЗОРА НОЧЬЮ:'
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_intellect: +$int

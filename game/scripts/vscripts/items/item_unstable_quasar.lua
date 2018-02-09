@@ -48,17 +48,18 @@ end
 if IsServer() then
     function modifier_item_unstable_quasar_passive:OnAbilityExecuted(keys)
         local caster = self:GetParent()
+        if caster ~= keys.unit then return end
         local ability = self:GetAbility()
         local usedAbility = keys.ability
         local team = caster:GetTeam()
         local pos = caster:GetAbsOrigin()
-        local value = function(v)
-            return ability:GetSpecialValueFor(v)
-        end
         local manacost = ability:GetSpecialValueFor("manacost") + caster:GetMaxMana() * ability:GetSpecialValueFor("manacost_pct") * 0.01
         local radius = ability:GetSpecialValueFor("damage_radius")
 
-        if usedAbility:GetCooldown(usedAbility:GetLevel()) >= ability:GetSpecialValueFor("min_ability_cooldown") and caster == keys.unit and caster:GetMana() >= manacost and usedAbility:GetManaCost(usedAbility:GetLevel() or nil) ~= 0 or nil then
+        if 
+        usedAbility:GetCooldown(usedAbility:GetLevel()) >= ability:GetSpecialValueFor("min_ability_cooldown") and 
+        caster:GetMana() >= manacost and 
+        usedAbility:GetManaCost(usedAbility:GetLevel()) ~= 0 then
             caster:SetMana(caster:GetMana() - manacost)
             for _,v in ipairs(FindUnitsInRadius(team, pos, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
                 local enemyPos = v:GetAbsOrigin()
