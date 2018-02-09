@@ -10538,7 +10538,7 @@
 		"ItemResult"					"item_unstable_quasar"
 		"ItemRequirements"
 		{
-			"01"						"item_fallen_star; item_awakened_cursed_eye; item_soul_of_titan"
+			"01"						"item_fallen_star;item_awakened_cursed_eye;item_soul_of_titan"
 		}
 	}
 	"item_unstable_quasar"
