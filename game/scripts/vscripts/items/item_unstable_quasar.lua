@@ -62,11 +62,7 @@ if IsServer() then
             caster:SetMana(caster:GetMana() - manacost)
             for _,v in ipairs(FindUnitsInRadius(team, pos, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
                 local enemyPos = v:GetAbsOrigin()
-                local damage = v:GetHealth() * ability:GetSpecialValueFor("intelligence_damage_pct") * 0.01 + ability:GetSpecialValueFor("base_damage")
-
-                if caster:GetPrimaryAttribute() ~= 2 then
-                    damage = v:GetHealth() * ability:GetSpecialValueFor("damage_pct") * 0.01 + ability:GetSpecialValueFor("base_damage")
-                end
+                local damage = v:GetHealth() * ability:GetSpecialValueFor(caster:GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT and "intelligence_damage_pct" or "damage_pct") * 0.01 + ability:GetSpecialValueFor("base_damage")
 
                 ApplyDamage({
                     attacker = caster,
