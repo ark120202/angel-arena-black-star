@@ -38,7 +38,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_for_bonus_damage"	"1080"
+				"mana_for_bonus_damage"	"3000"
 			}
 		}
 	}
