@@ -10529,6 +10529,7 @@
 			}
 		}
 	}
+
 	"item_recipe_unstable_quasar"
 	{
 		"BaseClass"						"item_datadriven"
@@ -10541,6 +10542,7 @@
 			"01"						"item_fallen_star;item_awakened_cursed_eye;item_soul_of_titan"
 		}
 	}
+
 	"item_unstable_quasar"
 	{
 		"BaseClass"						"item_lua"
@@ -10557,7 +10559,7 @@
 		"ItemQuality"					"legendary"
 		"ItemAliases"					"static"
 		"AOERadius"						"%damage_radius"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
