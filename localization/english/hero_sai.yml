@@ -11,7 +11,6 @@ DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_pct: '%CRIT CHANCE:'
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_per_stack_pct: '%CRIT CHANCE PER STACK:'
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_mult_pre_stack_pct: '%CRIT DAMAGE PER STACK:'
 DOTA_Tooltip_modifier_sai_rage_of_pain_Description: Damage increased by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%, has a chance to deal critical damage.
-DOTA_Tooltip_ability_sai_rage_of_pain_Note0: '1080 mana is equal to 90 units of intelligence.'
 
 DOTA_Tooltip_ability_sai_divine_flesh: Divine Flesh
 DOTA_Tooltip_ability_sai_divine_flesh_Description: 'When the ability is enabled, hero takes some amount of pure damage each second, but instead Sai''s armor and magic damage resistance increases. When the ability is not active, it increases health regeneration.'
