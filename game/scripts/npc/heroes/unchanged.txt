@@ -16,25 +16,25 @@
 	"npc_dota_hero_bane"
 	{
 		"override_hero"	"npc_dota_hero_bane"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_beastmaster"
 	{
 		"override_hero"	"npc_dota_hero_beastmaster"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_bloodseeker"
 	{
 		"override_hero"	"npc_dota_hero_bloodseeker"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_drow_ranger"
 	{
 		"override_hero"	"npc_dota_hero_drow_ranger"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_earthshaker"
@@ -52,13 +52,13 @@
 	"npc_dota_hero_mirana"
 	{
 		"override_hero"	"npc_dota_hero_mirana"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_nevermore"
 	{
 		"override_hero"	"npc_dota_hero_nevermore"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.5"
 		"AttributeAgilityGain"	"2.8"
@@ -69,7 +69,7 @@
 	"npc_dota_hero_morphling"
 	{
 		"override_hero"	"npc_dota_hero_morphling"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_puck"
@@ -104,13 +104,13 @@
 	"npc_dota_hero_storm_spirit"
 	{
 		"override_hero"	"npc_dota_hero_storm_spirit"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_sven"
 	{
 		"override_hero"	"npc_dota_hero_sven"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.8"
 		"AttributeAgilityGain"	"2.1"
@@ -121,7 +121,7 @@
 	"npc_dota_hero_tiny"
 	{
 		"override_hero"	"npc_dota_hero_tiny"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.8"
 		"ArmorPhysical"	"0"
 		"AttributeStrengthGain"	"2.8"
 		"AttributeAgilityGain"	"2.1"
@@ -132,13 +132,13 @@
 	"npc_dota_hero_vengefulspirit"
 	{
 		"override_hero"	"npc_dota_hero_vengefulspirit"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_windrunner"
 	{
 		"override_hero"	"npc_dota_hero_windrunner"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.4"
 	}
 
 	"npc_dota_hero_zuus"
@@ -150,7 +150,7 @@
 	"npc_dota_hero_kunkka"
 	{
 		"override_hero"	"npc_dota_hero_kunkka"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.8"
 		"AttributeAgilityGain"	"2.1"
@@ -167,31 +167,31 @@
 	"npc_dota_hero_lich"
 	{
 		"override_hero"	"npc_dota_hero_lich"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_lion"
 	{
 		"override_hero"	"npc_dota_hero_lion"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_shadow_shaman"
 	{
 		"override_hero"	"npc_dota_hero_shadow_shaman"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_slardar"
 	{
 		"override_hero"	"npc_dota_hero_slardar"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_tidehunter"
 	{
 		"override_hero"	"npc_dota_hero_tidehunter"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_witch_doctor"
@@ -209,20 +209,20 @@
 	"npc_dota_hero_sniper"
 	{
 		"override_hero"	"npc_dota_hero_sniper"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.6"
 		"MovementSpeed"	"275"
 	}
 
 	"npc_dota_hero_necrolyte"
 	{
 		"override_hero"	"npc_dota_hero_necrolyte"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_queenofpain"
 	{
 		"override_hero"	"npc_dota_hero_queenofpain"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_venomancer"
@@ -234,20 +234,20 @@
 	"npc_dota_hero_death_prophet"
 	{
 		"override_hero"	"npc_dota_hero_death_prophet"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_phantom_assassin"
 	{
 		"override_hero"	"npc_dota_hero_phantom_assassin"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_pugna"
 	{
 		"override_hero"	"npc_dota_hero_pugna"
 		"AttackRange"	"630"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_templar_assassin"
@@ -260,13 +260,13 @@
 	"npc_dota_hero_viper"
 	{
 		"override_hero"	"npc_dota_hero_viper"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_luna"
 	{
 		"override_hero"	"npc_dota_hero_luna"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_dazzle"
@@ -284,13 +284,13 @@
 	"npc_dota_hero_leshrac"
 	{
 		"override_hero"	"npc_dota_hero_leshrac"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_furion"
 	{
 		"override_hero"	"npc_dota_hero_furion"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_dark_seer"
@@ -326,13 +326,13 @@
 	"npc_dota_hero_bounty_hunter"
 	{
 		"override_hero"	"npc_dota_hero_bounty_hunter"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_weaver"
 	{
 		"override_hero"	"npc_dota_hero_weaver"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_jakiro"
@@ -344,7 +344,7 @@
 	"npc_dota_hero_batrider"
 	{
 		"override_hero"	"npc_dota_hero_batrider"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_chen"
@@ -356,7 +356,7 @@
 	"npc_dota_hero_spectre"
 	{
 		"override_hero"	"npc_dota_hero_spectre"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 		"AttributeStrengthGain"	"1.8"
 		"AttributeAgilityGain"	"1.5"
 		"AttributeIntelligenceGain"	"1.7"
@@ -365,13 +365,13 @@
 	"npc_dota_hero_ancient_apparition"
 	{
 		"override_hero"	"npc_dota_hero_ancient_apparition"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_ursa"
 	{
 		"override_hero"	"npc_dota_hero_ursa"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_spirit_breaker"
@@ -383,7 +383,7 @@
 	"npc_dota_hero_alchemist"
 	{
 		"override_hero"	"npc_dota_hero_alchemist"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_invoker"
@@ -403,7 +403,7 @@
 	"npc_dota_hero_obsidian_destroyer"
 	{
 		"override_hero"	"npc_dota_hero_obsidian_destroyer"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.7"
 		"ArmorPhysical"	"-5"
 		"AttributeBaseAgility"	"40"
 	}
@@ -411,14 +411,13 @@
 	"npc_dota_hero_lycan"
 	{
 		"override_hero"	"npc_dota_hero_lycan"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_brewmaster"
 	{
 		"override_hero"	"npc_dota_hero_brewmaster"
-		"AttackRate"	"1.6"
-		"AttackRate"	"1.9"
+		"AttackRate"	"1.8"
 		"AttributeStrengthGain"	"2.6"
 		"AttributeAgilityGain"	"1.5"
 		"AttributeIntelligenceGain"	"1.0"
@@ -427,13 +426,13 @@
 	"npc_dota_hero_shadow_demon"
 	{
 		"override_hero"	"npc_dota_hero_shadow_demon"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_lone_druid"
 	{
 		"override_hero"	"npc_dota_hero_lone_druid"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_chaos_knight"
@@ -449,7 +448,7 @@
 	"npc_dota_hero_meepo"
 	{
 		"override_hero"	"npc_dota_hero_meepo"
-		"AttackRate"	"1.8"
+		"AttackRate"	"2"
 		"AttributeStrengthGain"	"1.4"
 		"AttributeIntelligenceGain"	"1.7"
 		"AttributeAgilityGain"	"1.4"
@@ -458,7 +457,7 @@
 	"npc_dota_hero_treant"
 	{
 		"override_hero"	"npc_dota_hero_treant"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.5"
 		"MovementSpeed"	"270"
 	}
 
@@ -482,13 +481,13 @@
 	"npc_dota_hero_nyx_assassin"
 	{
 		"override_hero"	"npc_dota_hero_nyx_assassin"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_naga_siren"
 	{
 		"override_hero"	"npc_dota_hero_naga_siren"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.5"
 		"AttributeAgilityGain"	"2.8"
@@ -505,31 +504,31 @@
 	"npc_dota_hero_visage"
 	{
 		"override_hero"	"npc_dota_hero_visage"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.8"
 	}
 
 	"npc_dota_hero_slark"
 	{
 		"override_hero"	"npc_dota_hero_slark"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_troll_warlord"
 	{
 		"override_hero"	"npc_dota_hero_troll_warlord"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_centaur"
 	{
 		"override_hero"	"npc_dota_hero_centaur"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_magnataur"
 	{
 		"override_hero"	"npc_dota_hero_magnataur"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_shredder"
@@ -541,7 +540,7 @@
 	"npc_dota_hero_bristleback"
 	{
 		"override_hero"	"npc_dota_hero_bristleback"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_tusk"
@@ -588,7 +587,7 @@
 	"npc_dota_hero_earth_spirit"
 	{
 		"override_hero"	"npc_dota_hero_earth_spirit"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.8"
 	}
 
 	"npc_dota_hero_terrorblade"
@@ -606,25 +605,25 @@
 	"npc_dota_hero_oracle"
 	{
 		"override_hero"	"npc_dota_hero_oracle"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.3"
 	}
 
 	"npc_dota_hero_techies"
 	{
 		"override_hero"	"npc_dota_hero_techies"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.4"
 	}
 
 	"npc_dota_hero_winter_wyvern"
 	{
 		"override_hero"	"npc_dota_hero_winter_wyvern"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_arc_warden"
 	{
 		"override_hero"	"npc_dota_hero_arc_warden"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_abyssal_underlord"
@@ -636,18 +635,18 @@
 	"npc_dota_hero_monkey_king"
 	{
 		"override_hero"	"npc_dota_hero_monkey_king"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_pangolier"
 	{
 		"override_hero"	"npc_dota_hero_pangolier"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.3"
 	}
 
 	"npc_dota_hero_dark_willow"
 	{
 		"override_hero"	"npc_dota_hero_dark_willow"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.3"
 	}
 }

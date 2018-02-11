@@ -10,9 +10,8 @@ DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_per_stack_pct: '%ШАНС КР
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_mult_pre_stack_pct: '%КРИТИЧЕСКИЙ УРОН ЗА СТАК:'
 DOTA_Tooltip_modifier_sai_rage_of_pain: Rage of Pain
 DOTA_Tooltip_modifier_sai_rage_of_pain_Description: Урон увеличен на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%, имеет возможность наносить критический урон.
-DOTA_Tooltip_ability_sai_rage_of_pain_Note0: '1080 маны равноценно 90 единицам интеллекта.'
 
-DOTA_Tooltip_ability_sai_divine_flesh_Description: 'Когда способность включена, герой получает чистый урон каждую секунду, но в замен получает дополнительную броню и споротивление магическому урону. Когда способность не активна, увеличивает регенерацию здоровья.'
+DOTA_Tooltip_ability_sai_divine_flesh_Description: 'Когда способность включена, герой получает чистый урон каждую секунду и не может исцелиться, но взамен получает дополнительную броню и сопротивление магическому урону. Когда способность не активна, увеличивает регенерацию здоровья.'
 DOTA_Tooltip_ability_sai_divine_flesh_Lore: Сай обладает уникальной, чрезвычайно мощной регенерацией, но даже она не помогает, если дать демону волю...
 DOTA_Tooltip_ability_sai_divine_flesh_health_regeneration_pct: '%ДОП. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: '%УРОН ОТ МАКС. ЗДОРОВЬЯ:'
