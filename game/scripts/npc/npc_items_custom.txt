@@ -10648,8 +10648,8 @@
 			}
 			"17"
 			{
-                "var_type"                        "FIELD_INTEGER"
-                "increase_all_damage_pct"         "5"
+				"var_type"						"FIELD_INTEGER"
+				"increase_all_damage_pct"		"5"
 			}
 		}
 		"precache"
