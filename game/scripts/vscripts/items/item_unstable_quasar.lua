@@ -6,6 +6,14 @@ item_unstable_quasar = class({
 	GetIntrinsicModifierName = function() return "modifier_item_unstable_quasar_passive" end,
 })
 
+function item_unstable_quasar:GetManaCost(iLevel)
+	local caster = self:GetCaster()
+	if caster then
+		return self:GetSpecialValueFor("manacost") + caster:GetMaxMana() * self:GetSpecialValueFor("manacost_pct") * 0.01
+	end
+end
+
+
 modifier_item_unstable_quasar_passive = class({
 	IsHidden   = function() return true end,
 	IsPurgable = function() return false end,
@@ -21,28 +29,6 @@ function modifier_item_unstable_quasar_passive:DeclareFunctions()
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 		MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
 	}
-end
-
-modifier_item_unstable_quasar_slow = class({
-	IsHidden   = function() return false end,
-	IsPurgable = function() return true end,
-	IsDebuff = function() return true end,
-	GetEffectName = function() return "particles/items_fx/diffusal_slow.vpcf" end,
-})
-
-function modifier_item_unstable_quasar_slow:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_MOVESPEED_MAX,
-		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
-		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
-	}
-end
-
-function item_unstable_quasar:GetManaCost(iLevel)
-	local caster = self:GetCaster()
-	if caster then
-		return self:GetSpecialValueFor("manacost") + caster:GetMaxMana() * self:GetSpecialValueFor("manacost_pct") * 0.01
-	end
 end
 
 if IsServer() then
@@ -89,19 +75,6 @@ if IsServer() then
 	end
 end
 
-function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Limit()
-	return self:GetAbility():GetSpecialValueFor("speed")
-end
-
-function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Max()
-	return self:GetAbility():GetSpecialValueFor("speed")
-end
-
-function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Absolute()
-	return self:GetAbility():GetSpecialValueFor("speed")
-end
-
-
 function modifier_item_unstable_quasar_passive:GetBonusDayVision()
 	return self:GetAbility():GetSpecialValueFor("bonus_day_vision")
 end
@@ -141,6 +114,35 @@ end
 function modifier_item_unstable_quasar_passive:GetAuraSearchType()
 	return self:GetAbility():GetAbilityTargetType()
 end
+
+
+modifier_item_unstable_quasar_slow = class({
+	IsHidden   = function() return false end,
+	IsPurgable = function() return true end,
+	IsDebuff = function() return true end,
+	GetEffectName = function() return "particles/items_fx/diffusal_slow.vpcf" end,
+})
+
+function modifier_item_unstable_quasar_slow:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MOVESPEED_MAX,
+		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
+	}
+end
+
+function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Limit()
+	return self:GetAbility():GetSpecialValueFor("speed")
+end
+
+function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Max()
+	return self:GetAbility():GetSpecialValueFor("speed")
+end
+
+function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Absolute()
+	return self:GetAbility():GetSpecialValueFor("speed")
+end
+
 
 modifier_item_unstable_quasar_aura = class({
 	DeclareFunctions = function() return { MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS } end,
