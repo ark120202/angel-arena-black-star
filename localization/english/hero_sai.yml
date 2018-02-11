@@ -13,7 +13,7 @@ DOTA_Tooltip_ability_sai_rage_of_pain_crit_mult_pre_stack_pct: '%CRIT DAMAGE PER
 DOTA_Tooltip_modifier_sai_rage_of_pain_Description: Damage increased by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%, has a chance to deal critical damage.
 
 DOTA_Tooltip_ability_sai_divine_flesh: Divine Flesh
-DOTA_Tooltip_ability_sai_divine_flesh_Description: 'When the ability is enabled, hero takes some amount of pure damage each second, but instead Sai''s armor and magic damage resistance increases. When the ability is not active, it increases health regeneration.'
+DOTA_Tooltip_ability_sai_divine_flesh_Description: 'When the ability is enabled, hero takes some amount of pure damage each second and prevented from regenerating or healing, yet Sai''s armor and magic damage resistance increased. When the ability is not active, it increases health regeneration.'
 DOTA_Tooltip_ability_sai_divine_flesh_Lore: Sai has a unique, extremely powerful regeneration, but even it does not help if you give the demon the will ...
 DOTA_Tooltip_ability_sai_divine_flesh_health_regeneration_pct: '%BONUS HEALTH REGENERATION:'
 DOTA_Tooltip_ability_sai_divine_flesh_active_self_damage_pct: '%DAMAGE BASED ON MAX. HEALTH:'
