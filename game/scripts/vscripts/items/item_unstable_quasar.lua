@@ -2,9 +2,9 @@ LinkLuaModifier("modifier_item_unstable_quasar_passive", "items/item_unstable_qu
 LinkLuaModifier("modifier_item_unstable_quasar_slow", "items/item_unstable_quasar.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_unstable_quasar_aura", "items/item_unstable_quasar.lua", LUA_MODIFIER_MOTION_NONE)
 
-item_unstable_quasar = {
+item_unstable_quasar = class({
 	GetIntrinsicModifierName = function() return "modifier_item_unstable_quasar_passive" end,
-}
+})
 
 modifier_item_unstable_quasar_passive = class({
 	IsHidden   = function() return true end,
