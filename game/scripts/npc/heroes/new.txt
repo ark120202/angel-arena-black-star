@@ -483,7 +483,6 @@
 
 	"npc_arena_hero_sai"
 	{
-		"DisabledInRanked"	"1"
 		"base_hero"	"npc_dota_hero_arena_base"
 		"SceneCamera"	"custom_scene_hero_sai"
 		"Model"	"models/units/sai/sai.vmdl"
