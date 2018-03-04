@@ -3189,8 +3189,9 @@
 
 			"02"
 			{
-				"var_type"	"FIELD_FLOAT"
+				"var_type"				"FIELD_FLOAT"
 				"bolt_stun_duration"	"2.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_sven_4"
 			}
 
 			"03"
@@ -5535,8 +5536,8 @@
 
 			"06"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"cast_range_scepter"	"800"
+				"var_type"				"FIELD_INTEGER"
+				"scepter_bounce_range"	"400"
 			}
 			"99"
 			{
@@ -5832,6 +5833,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"heal"	"60 90 120 150 180 210 240"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_4"
 			}
 
 			"03"
@@ -5919,6 +5921,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"movement_speed"	"12 16 20 24 26 32 36"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_3"
 			}
 
 			"04"
@@ -13493,6 +13496,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"tooltip_range"			"500 625 750 875 1000 1125 1250"
+				"LinkedSpecialBonus"		"special_bonus_unique_meepo_4"
 			}
 		}
 	}
@@ -18904,16 +18908,9 @@
 
 			"05"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"attack_slow_tooltip"	"25 30 35 40 45 50 55"
+				"var_type"					"FIELD_INTEGER"
+				"range"						"900"
 			}
-
-			"06"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"range"	"900"
-			}
-
 		}
 
 	}
