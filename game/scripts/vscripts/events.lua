@@ -97,15 +97,6 @@ function GameMode:OnAbilityUsed(keys)
 		if abilityname == "night_stalker_darkness" and ability then
 			CustomGameEventManager:Send_ServerToAllClients("time_nightstalker_darkness", {duration = ability:GetLevelSpecialValueFor("duration", ability:GetLevel()-1)})
 		end
-		if hero:HasModifier("modifier_item_pocket_riki_permanent_invisibility") or hero:HasModifier("modifier_item_pocket_riki_consumed_permanent_invisibility") then
-			local item = FindItemInInventoryByName(hero, "item_pocket_riki", false)
-			if not item then
-				item = FindItemInInventoryByName(hero, "item_pocket_riki_consumed", false)
-			end
-			if item then
-				hero:AddNewModifier(hero, item, "modifier_invisible", {})
-			end
-		end
 	end
 end
 

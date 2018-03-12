@@ -201,27 +201,6 @@ DOTA_Tooltip_ability_item_lucifers_claw_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_all: +$all
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_damage: +$damage
 
-DOTA_Tooltip_ability_item_pocket_riki: Pocket Riki
-DOTA_Tooltip_ability_item_pocket_riki_Description: |-
-  В вашем кармане находится Рики. Вы получаете эффект от способности Cloak and Dagger, но дополнительный урон бутет основан на вашей основной характеристике. Находясь в кармане Рики может использовать предметы и способность Smoke Screen.
-  <h1>Активируемая: Поглотить</h1> Вы поглощаете Рики, убивая его, но при этом Рики дарует вам его характеристики до того как он возродится.
-  Рики может быть продан за деньги, которые мог получить враг за убийство Рики. При продаже Рики умирает.
-DOTA_Tooltip_ability_item_pocket_riki_Lore: 'Тяжело поверить, что такое милое существо может быть убийцей.'
-DOTA_Tooltip_ability_item_pocket_riki_Note0: 'Пока ваш герой невидим, он не будет атаковать автоматически.'
-DOTA_Tooltip_ability_item_pocket_riki_Note1: От дополнительного урона в спину невозможно уклониться.
-DOTA_Tooltip_ability_item_pocket_riki_fade_time: 'ЗАДЕРЖКА ДО НЕВИДИМОСТИ:'
-DOTA_Tooltip_ability_item_pocket_riki_stat_damage: '%МНОЖИТЕЛЬ ХАРАКТЕРИСТИКИ:'
-DOTA_Tooltip_ability_item_pocket_riki_consumed: Поглощённый Pocket Riki
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Description: |-
-  Вы получаете эффект от способности Cloak and Dagger, но дополнительный урон бутет основан на вашей основной характеристике.
-
-  Этот предмет будет уничтожен когда Рики возродится.
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Lore: 'Тяжело поверить, что такое милое существо может быть убийцей.'
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Note0: 'Пока ваш герой невидим, он не будет атаковать автоматически.'
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Note1: От дополнительного урона в спину невозможно уклониться.
-DOTA_Tooltip_ability_item_pocket_riki_consumed_fade_time: 'ЗАДЕРЖКА ДО НЕВИДИМОСТИ:'
-DOTA_Tooltip_ability_item_pocket_riki_consumed_stat_damage: '%МНОЖИТЕЛЬ ХАРАКТЕРИСТИКИ:'
-
 DOTA_Tooltip_ability_item_homemade_cheese: Homemade Cheese
 DOTA_Tooltip_ability_item_homemade_cheese_Description: '<h1>Использование: Fondue</h1> Исчезает и мгновенно восстанавливает здоровье и ману. При использовании на союзниках длительность перезарядки составляет %alternative_cooldown% секунд.'
 DOTA_Tooltip_ability_item_homemade_cheese_Note0: Можно передавать союзникам.

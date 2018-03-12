@@ -194,26 +194,7 @@ DOTA_Tooltip_ability_item_lucifers_claw_Note0: The Doomling is summoned Creep-He
 DOTA_Tooltip_ability_item_lucifers_claw_Note1: Has a 4 second cooldown on Trees.
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_all: +$all
-DOTA_Tooltip_ability_item_pocket_riki: Pocket Riki
-DOTA_Tooltip_ability_item_pocket_riki_Description: |-
-  You have Riki in your pocket. Riki grants you Cloak and Dagger passive effect, but with additional damage based on your base attribute. In the pocket Riki can use his items and Smoke Screen spell
-  <h1>Active: Consume</h1> You consume Riki. Riki will be killed, but for respawn time you will get all Riki's attributes and Cloak and Dagger effect.
-  Pocket Riki can be sold for gold, that enemy could get for killing Riki. Riki will be killed.
-DOTA_Tooltip_ability_item_pocket_riki_Lore: It's very hard to believe that such a сute creature can be an assassin.
-DOTA_Tooltip_ability_item_pocket_riki_Note0: You won't auto attack enemies while invisible.
-DOTA_Tooltip_ability_item_pocket_riki_Note1: Bonus damage from Backstab can't be evaded.
-DOTA_Tooltip_ability_item_pocket_riki_fade_time: 'FADE DELAY:'
-DOTA_Tooltip_ability_item_pocket_riki_stat_damage: '%ATTRIBUTE DAMAGE:'
-DOTA_Tooltip_ability_item_pocket_riki_consumed: Consumed Pocket Riki
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Description: |-
-  You have Riki's Cloak and Dagger passive effect, but with additional damage based on your base attribute.
 
-  This will be removed from your inventory when Riki respawns.
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Lore: It's very hard to believe that such a сute creature can be an assassin.
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Note0: You won't auto attack enemies while invisible.
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Note1: Bonus damage from Backstab can't be evaded.
-DOTA_Tooltip_ability_item_pocket_riki_consumed_fade_time: 'FADE DELAY:'
-DOTA_Tooltip_ability_item_pocket_riki_consumed_stat_damage: '%ATTRIBUTE DAMAGE:'
 DOTA_Tooltip_ability_item_homemade_cheese: Homemade Cheese
 DOTA_Tooltip_ability_item_homemade_cheese_Description: '<h1>Use: Fondue</h1> Consume to instantly restore your or ally''s health and mana. Has a %alternative_cooldown% on allies.'
 DOTA_Tooltip_ability_item_homemade_cheese_Note0: Cheese is shareable.

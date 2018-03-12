@@ -453,7 +453,6 @@ CUSTOM_TALENTS_DATA = {
 -- A list of heroes, which have Changed flag, but some native talents for them are still relevant
 -- Value should be a table, where irrelevant talents should have a `true` value
 PARTIALLY_CHANGED_HEROES = {
-	npc_dota_hero_riki = {},
 	npc_dota_hero_ogre_magi = {},
 	npc_dota_hero_tinker = {},
 	npc_dota_hero_skeleton_king = {
