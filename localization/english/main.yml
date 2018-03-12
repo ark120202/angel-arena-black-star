@@ -19,6 +19,7 @@ dota_hud_error_item_from_bosses: This item or one of it's components can be reci
 dota_hud_error_target_health_overflow: Target health is more then trigger point
 dota_hud_error_ability_cant_target_boss: Ability can't target bosses
 dota_hud_error_ability_cant_target_champion: Ability can't target champions
+dota_hud_error_ability_cant_target_jungle: Ability can't target jungle creeps
 arena_hud_error_team_changer_players: Other team already has more players than yours
 arena_hud_error_panorama_shop_dropped_items_limit: Dropped items limit was reached
 arena_hud_error_metamorphosis_elixir_ranked: In ranked mode you can change your hero only once
@@ -51,6 +52,7 @@ npc_dota_neutral_easy_variant1: Easy Camp Creep
 npc_dota_neutral_medium_variant1: Medium Camp Creep
 npc_dota_neutral_hard_variant1: Dragon
 npc_dota_neutral_hard_variant2: Centaur
+npc_dota_neutral_hard_variant3: Tideshan
 npc_arena_fountain: Fountain
 npc_dota_casino_slotmachine: Slotmachine
 npc_dota_casino_lina: Lina

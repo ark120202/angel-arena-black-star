@@ -56,8 +56,11 @@ function Precache(context)
 		"particles/econ/events/ti6/mekanism_recipient_ti6.vpcf",
 		"particles/arena/items_fx/scythe_of_sun.vpcf",
 		"particles/econ/events/ti7/shivas_guard_active_ti7.vpcf",
+		"particles/arena/items_fx/book_of_the_guardian_2_active.vpcf",
 		"particles/econ/events/ti7/shivas_guard_impact_ti7.vpcf",
 		"particles/econ/events/ti7/shivas_guard_slow.vpcf",
+		"particles/arena/items_fx/scythe_of_the_ancients_start.vpcf",
+		"particles/econ/events/ti4/dagon_beam_black_ti4.vpcf",
 		-- Heroes
 		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",
@@ -108,6 +111,7 @@ function Precache(context)
 		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
 		"soundevents/game_sounds_arena.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts",
 	}
 
 	for _, handle in pairs(CUSTOM_WEARABLES) do

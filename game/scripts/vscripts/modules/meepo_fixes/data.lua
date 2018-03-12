@@ -34,7 +34,6 @@ MEEPO_SHARED_ITEMS = {
 	item_desolator5 = true,
 	item_desolator6 = true,
 	item_skull_of_midas = true,
-	item_haganemushi = true,
 	item_butterfly_arena  = true,
 	item_butterfly_of_wind  = true,
 	item_timelords_butterfly  = true,

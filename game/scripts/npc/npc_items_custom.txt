@@ -13,6 +13,7 @@
 #base "items/blade_mail.txt"
 #base "items/radiance.txt"
 #base "items/mekansm.txt"
+#base "items/book_of_the_guardian.txt"
 
 "DOTAAbilities"
 {
@@ -3266,7 +3267,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.0 3.5 5.0"
+				"xp_multiplier"			"3.0 4.5 6.0"
 			}
 			"03"
 			{
@@ -3381,12 +3382,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"xp"					"15"
+				"xp"					"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold"					"25"
+				"gold"					"18"
 			}
 		}
 
@@ -3869,7 +3870,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.0 3.5 5.0"
+				"xp_multiplier"			"3.0 4.5 6.0"
 			}
 			"03"
 			{
@@ -3953,7 +3954,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.0 3.5 5.0"
+				"xp_multiplier"			"3.0 4.5 5.0"
 			}
 			"03"
 			{
@@ -6674,17 +6675,6 @@
 				}
 			}
 
-			"modifier_item_heavy_war_axe_of_rage_damage_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%bonus_toggle_damage_pct"
-				}
-			}
-
 			"modifier_item_heavy_war_axe_of_rage_regen"
 			{
 				"Passive"			"1"
@@ -7693,7 +7683,7 @@
 		"AbilityCooldown"				"7.0"
 		"AbilitySharedCooldown"			"medallion;basher"
 
-		"AbilityCooldown"				"2.5"
+		"AbilityCooldown"				"3.8"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"echo sabre 2;fallhammer;skull basher;medallion of courage;valor"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -7740,7 +7730,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"1"
+				"bash_duration"			"0.9"
 			}
 			"09"
 			{
@@ -9584,17 +9574,17 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"gold"				"40"
+				"gold"				"30"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"restore_per_charge"	"25"
+				"restore_per_charge"	"30"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_charges"		"30"
+				"max_charges"		"50"
 			}
 			"06"
 			{
@@ -10073,104 +10063,6 @@
 		}
 	}
 
-	"item_recipe_book_of_the_guardian"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1950"
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_book_of_the_guardian"
-		"ItemRequirements"
-		{
-			"01"						"item_book_of_the_keeper;item_shivas_guard"
-		}
-	}
-
-	"item_book_of_the_guardian"
-	{
-		"BaseClass"						"item_lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_AURA"
-		"ScriptFile"					"items/item_book_of_the_guardian.lua"
-		"AbilityTextureName"			"item_arena/book_of_the_guardian"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"ItemShopTags"					"int;regen_mana;hard_to_tag"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilityCastRange"				"%aura_radius"
-		"AbilityCooldown"				"25"
-		"AbilityManaCost"				"350"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"12"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"6"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"900"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_attack_speed"		"-60"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_damage_int_mult"	"3"
-				"CalculateSpellDamageTooltip"	"0"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_movement_speed_pct"	"-50"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_debuff_duration"	"4.0"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_radius"			"1200"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_speed"			"350"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_vision_duration"	"3.5"
-			}
-		}
-	}
-
 	"item_recipe_scythe_of_sun"
 	{
 		"BaseClass"						"item_datadriven"
@@ -10527,6 +10419,135 @@
 				"var_type"				"FIELD_INTEGER"
 				"tooltip_range"			"500"
 			}
+		}
+	}
+
+	"item_scythe_of_the_ancients_recipe"
+	{
+		"BaseClass"						"item_lua"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"40000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_scythe_of_the_ancients"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_scepter_arena;item_demons_paw;item_sunray_dagon_5_arena;item_moon_dust"
+		}
+	}
+
+	"item_scythe_of_the_ancients"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_scythe_of_the_ancients"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"item_arena/scythe_of_the_ancients"
+		"AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"80"
+		"AbilityManaCost"				"1000"
+
+		"ItemQuality"					"legendary"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"26"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"26"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"155"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"2400"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"20"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"8.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"300"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"24"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_range"	"50"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"all_damage_bonus_pct"      "10"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"magic_damage_to_pure_pct"	"30"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_damage"				"1400"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cast_damage_pct"			"3"
+			}
+			"15"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"range"						"900"
+			}
+			"16"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.5"
+			}
+			"17"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"delayed_damage_per_health"	"0.3"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/arena/items_fx/scythe_of_the_ancients_start.vpcf"
+			"particle"			"particles/econ/events/ti4/dagon_beam_black_ti4.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 		}
 	}
 

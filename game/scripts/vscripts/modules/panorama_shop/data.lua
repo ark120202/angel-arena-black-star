@@ -230,10 +230,10 @@ PANORAMA_SHOP_ITEMS = {
 			"item_blade_of_discord",
 			"item_book_of_the_keeper",
 			"item_refresher_core",
-			"item_book_of_the_guardian",
 			"item_scythe_of_sun",
 			"item_awakened_cursed_eye",
 			"item_lotus_sphere",
+			"item_book_of_the_guardian_2",
 			"item_essential_orb_fire_6",
 		},
 		{
@@ -249,7 +249,8 @@ PANORAMA_SHOP_ITEMS = {
 			"item_diffusal_style",
 			"item_haganemushi",
 			"item_radiance_frozen",
-			"item_unstable_quasar,"
+			"item_scythe_of_the_ancients",
+			"item_unstable_quasar",
 		},
 		{
 			"item_holy_knight_shield",

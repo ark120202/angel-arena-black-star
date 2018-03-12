@@ -3189,8 +3189,9 @@
 
 			"02"
 			{
-				"var_type"	"FIELD_FLOAT"
+				"var_type"				"FIELD_FLOAT"
 				"bolt_stun_duration"	"2.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_sven_4"
 			}
 
 			"03"
@@ -3838,6 +3839,7 @@
 		"AbilityCastRange"				"165"
 		"AbilityCooldown"				"45 41 37 34 30 26 24"
 		"AbilityManaCost"				"20 30 40 50 60 70 80"
+		"LevelsBetweenUpgrades"	"3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -5534,8 +5536,8 @@
 
 			"06"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"cast_range_scepter"	"800"
+				"var_type"				"FIELD_INTEGER"
+				"scepter_bounce_range"	"400"
 			}
 			"99"
 			{
@@ -5831,6 +5833,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"heal"	"60 90 120 150 180 210 240"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_4"
 			}
 
 			"03"
@@ -5918,6 +5921,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"movement_speed"	"12 16 20 24 26 32 36"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_3"
 			}
 
 			"04"
@@ -5955,6 +5959,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"damage_per_health"	"0.6 0.65 0.7 0.75 0.8 0.85 0.9"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"02"
@@ -6701,20 +6706,18 @@
 			}
 			"04"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"health_drain_scepter"	"150 200 250 300 350 400 450"
-				"CalculateSpellDamageTooltip"	"1"
+				"var_type"					"FIELD_FLOAT"
+				"scepter_cooldown"			"2.0"
 			}
 			"05"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"scepter_cooldown"	"2"
+				"var_type"					"FIELD_FLOAT"
+				"tick_rate"					"0.25"
 			}
-
 			"06"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"tick_rate"	"0.25"
+				"var_type"					"FIELD_INTEGER"
+				"drain_buffer"				"200"
 			}
 			"99"
 			{
@@ -8897,7 +8900,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"tooltip_health_cost_percent"	"35"
-				"CalculateSpellDamageTooltip"	"1"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"07"
@@ -8916,6 +8919,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"tooltip_health_damage_scepter"	"60"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"10"
@@ -10193,7 +10197,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"75 125 175 225 300 375 450"
+				"damage"	"75 100 125 150 175 200 225"
 			}
 
 			"02"
@@ -10286,7 +10290,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"5.0"
+				"blind_duration"		"2.5"
 			}
 		}
 	}
@@ -10301,8 +10305,9 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_reflection_pct"	"1 2 3 4 5 10 20"
-				"LinkedSpecialBonus"		"special_bonus_unique_spectre_5"
+				"damage_reflection_pct"	"4 5 6 14 16 18 20"
+				"LinkedSpecialBonus"			"special_bonus_unique_spectre_5"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"02"
@@ -11231,23 +11236,23 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"duration"	"30"
+				"duration"	"0"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_gold"	"4 4 4 4 4 6 8"
+				"bonus_gold"	"0"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_bonus_gold"	"4 4 4 6 8 10 12"
+				"bonus_bonus_gold"	"0"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_gold_cap"	"8 14 20 26 32 38 44"
+				"bonus_gold_cap"	"0"
 			}
 			"05"
 			{
@@ -12843,7 +12848,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"miss_chance"	"70"
+				"miss_chance"	"40 45 50 55 60 65 70"
 			}
 		}
 
@@ -12857,21 +12862,21 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"dodge_chance"	"10 15 20 25 30 35 40"
+				"dodge_chance"	"23 25 27 29 31 33 35"
 				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_4"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"crit_chance"	"10 15 20 25 30 35 40"
+				"crit_chance"	"18 20 22 24 26 28 30"
 				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_4"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"crit_multiplier"	"230"
+				"crit_multiplier"	"190"
 			}
 
 			"04"
@@ -13491,6 +13496,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"tooltip_range"			"500 625 750 875 1000 1125 1250"
+				"LinkedSpecialBonus"		"special_bonus_unique_meepo_4"
 			}
 		}
 	}
@@ -14120,6 +14126,7 @@
 
 	"undying_tombstone"
 	{
+		"NoAbandonCleanup" 	"1"
 		"MaxLevel"	"4"
 		"AbilityCastRange"	"600"
 		"AbilityCastPoint"	"0.45 0.40 0.35 0.25"
@@ -16140,7 +16147,7 @@
 				"var_type"	"FIELD_INTEGER"
 				"strength_pct"	"30 35 40 45 50 55 60"
 				"LinkedSpecialBonus"			"special_bonus_unique_centaur_3"
-				"CalculateSpellDamageTooltip"	"1"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"03"
@@ -17249,7 +17256,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"int_multiplier"	"1.6"
-				"CalculateSpellDamageTooltip"	"1"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 
 			"05"
@@ -17527,6 +17534,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"attack_slow_tooltip"	"8 14 20 26 32 41 50"
+				"LinkedSpecialBonus"	"special_bonus_unique_abaddon_3"
 			}
 
 			"05"
@@ -18256,6 +18264,8 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"charge_restore_time"	"35"
+				"LinkedSpecialBonus"		"special_bonus_unique_ember_spirit_5"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
 			}
 
 			"04"
@@ -18898,16 +18908,9 @@
 
 			"05"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"attack_slow_tooltip"	"25 30 35 40 45 50 55"
+				"var_type"					"FIELD_INTEGER"
+				"range"						"900"
 			}
-
-			"06"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"range"	"900"
-			}
-
 		}
 
 	}
@@ -20582,9 +20585,9 @@
 	{
 		"MaxLevel"						"7"
 		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"20 18 16 14 12 10 8"
+		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"70 80 90 100 110 120 130"
-		"RequiredLevel"					"7"
+		//"RequiredLevel"				"7"
 		"AbilitySpecial"
 		{
 			"01"
@@ -20610,7 +20613,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"0"
+				"damage"				"20 30 40 50 60 70 80"
 				"LinkedSpecialBonus"	"special_bonus_unique_pangolier_3"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -20627,7 +20630,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"strikes"				"4"
+				"strikes"				"3"
 			}
 		}
 	}
@@ -20730,7 +20733,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_interval"			"0.05"
+				"tick_interval"			"0.03"
 			}
 			"03"
 			{
@@ -20875,6 +20878,7 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"max_damage_duration"			"3 3 3 3 3 2 1"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 	}

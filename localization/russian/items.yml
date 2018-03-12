@@ -193,7 +193,7 @@ DOTA_Tooltip_modifier_item_three_spirits_blades_fast_attack_Description: '{lc:mo
 
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
-  <h1>Активируемая: Unwilling Ritual</h1> Используется на крипов. Цель приносится в жертву для Думлинга. Думлинг перенемает способности принесенного в жертву существа и добавляет его здоровье, урон и запас маны к характеристикам Думлинга. Изначальные характеристики Думлинга: %doomling_health% здоровья, %doomling_mana% маны, %doomling_damage_min%-%doomling_damage_max% урона, %doomling_health_regen% регенерации здоровья, %doomling_mana_regen% регенерации маны. Герой получает обычное золото и опыт за убийство жертвы.
+  <h1>Активируемая: Unwilling Ritual</h1> Используется на крипов. Цель приносится в жертву для Думлинга. Думлинг перенемает способности принесенного в жертву существа и добавляет его здоровье, урон и запас маны к характеристикам Думлинга. Изначальные характеристики Думлинга: %doomling_health% здоровья, %doomling_mana% маны, %doomling_damage_min%-%doomling_damage_max% урона, %doomling_health_regen% регенерации здоровья, %doomling_mana_regen% регенерации маны. Герой не получит золота за убийство жертвы. Юниты, убитые Думлингом не будут приносить герою золото.
   <h1>Пассивная: Quell</h1> Увеличивает урон от атак по существам, не являющимися героями, на %damage_bonus% для героев ближнего боя или на %damage_bonus_ranged% — для дальнего.
 DOTA_Tooltip_ability_item_lucifers_claw_Note0: Думлинг - крип-герой с бесконечным временем жизни. На него может быть направлено большинство способностей.
 DOTA_Tooltip_ability_item_lucifers_claw_Note1: 'Перезарядка при использовании на дереве: 4 секунды.'
@@ -1023,6 +1023,7 @@ DOTA_Tooltip_ability_item_desolator6_Description: |-
 
   <h1>Пассивная: Corruption</h1> Ваши атаки уменьшают броню цели на %corruption_duration% секунд.
 DOTA_Tooltip_ability_item_desolator6_bonus_attack_range: +к радиусу атаки
+DOTA_Tooltip_ability_item_desolator6_all_damage_bonus_pct: '%УВЕЛИЧЕНИЕ ВСЕГО УРОНА:'
 DOTA_Tooltip_ability_item_desolator6_corruption_armor: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_item_desolator6_cold_movement_speed: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_desolator6_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
@@ -1259,6 +1260,7 @@ DOTA_Tooltip_ability_item_demons_paw_Description: |-
 
   Этот предмет выпадает с боссов и не может быть куплен в лавке.
 DOTA_Tooltip_ability_item_demons_paw_bonus_attack_range: 'ДОП. РАДИУС АТАКИ:'
+DOTA_Tooltip_ability_item_demons_paw_all_damage_bonus_pct: '%УВЕЛИЧЕНИЕ ВСЕГО УРОНА:'
 DOTA_Tooltip_ability_item_awakened_cursed_eye: Awakened Cursed Eye
 DOTA_Tooltip_ability_item_awakened_cursed_eye_Description: '<h1>Пассивная: Cursed Sight</h1> Дает носителю и его союзникам возможность видеть невидимых существ и варды, различать иллюзии и настоящих героев, возможность видеть длительность перезарядки способностей у противников и увеличивает радиус обзора владельца.'
 DOTA_Tooltip_ability_item_awakened_cursed_eye_radius: 'РАДИУС:'
@@ -1395,8 +1397,17 @@ DOTA_Tooltip_ability_item_rapier_arena_Lore: Настолько могущест
 
 DOTA_Tooltip_ability_item_lightning_rod_Description: '<h1>Использование: Place</h1> Устанавливает невидимого дозорного — Lightning Rod, из-за которого все молнии, созданные во время Шторма, находящиеся в радиусе %protection_radius% будут ударять в него.<br>Действует %duration_minutes% мин.<br><br>Дальность применения: %tooltip_range%'
 
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_Description: |-
+  <h1>Активируемая: Invoke the Reaper</h1> Призывает Жнеца, выпуская мощный всплеск темной энергии во вражеского героя, нанося %cast_damage% + %cast_damage_pct%%% урона и оглушая на %stun_duration% секунд(ы). По окончанию оглушения Жнец нанесет удар, нанося %delayed_damage_per_health% ед. урона за каждую отсутствующую ед. здоровья.
+  <h1>Пассивная: The Weapon of Darkness</h1> При нанесении магического урона, также наносит бонусный чистый урон в размере %magic_damage_to_pure_pct%%% от него.
+  <h1>Пассивная: Ultimate Upgrade</h1> Улучшает ульт, а также некоторые способности части героев.
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_cast_range_bonus: 'ДОП. ДАЛЬНОСТЬ СПОСОБНОСТЕЙ:'
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_attack_range: 'ДОП. РАДИУС АТАКИ:'
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_all_damage_bonus_pct: '%УВЕЛИЧЕНИЕ УРОНА:'
+
 DOTA_Tooltip_ability_item_unstable_quasar: Unstable Quasar
-DOTA_Tooltip_ability_item_unstable_quasar_Description: '<h1>Пассивная: Singularity</h1> При использовании способности или предмета с манакостом наносит урон всем противникам в размере от их текущего здоровья, притягивая к кастеру и кратковременно уменьшая скорость передвижения до 100 ед в радиусе %damage_radius%, расходуя %manacost% + %manacost_pct%%% макс. маны. также создает ауру с эффектом True Sight и снижением магического сопротивления в радиусе %aura_radius%. Урон артефакта снижен на %discrease_damage_pct%%%, если основным атрибутом кастера не является Интеллект. 
+DOTA_Tooltip_ability_item_unstable_quasar_Description: '<h1>Пассивная: Singularity</h1> При использовании способности или предмета с манакостом наносит урон всем противникам в размере от их текущего здоровья, притягивая к кастеру и кратковременно уменьшая скорость передвижения до 100 ед в радиусе %damage_radius%, расходуя %manacost% + %manacost_pct%%% макс. маны. также создает ауру с эффектом True Sight и снижением магического сопротивления в радиусе %aura_radius%. Урон артефакта снижен на %discrease_damage_pct%%%, если основным атрибутом кастера не является Интеллект.
 <h1>Аура: Decomposition</h1> Создает ауру с эффектом True Sight и снижением магического сопротивления %descrease_resistange_pct%%% в радиусе %aura_radius%.'
 DOTA_Tooltip_ability_item_unstable_quasar_Note0: Эффекты от нескольких Unstable Quasar не складываются.
 DOTA_Tooltip_ability_item_unstable_quasar_base_damage: 'БАЗОВЫЙ УРОН:'
@@ -1409,4 +1420,3 @@ DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%ДОП. УРОН СП
 DOTA_Tooltip_ability_item_unstable_quasar_manacost: '%БАЗОВАЯ СТОИМОСТЬ:'
 DOTA_Tooltip_ability_item_unstable_quasar_manacost_pct: '%СТОИМОСТЬ ОТ МАКСИМАЛЬНОЙ МАНЫ:'
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Только мудрецам дано полностью овладеть сингулярностью.
-

@@ -79,7 +79,7 @@ function Duel:StartDuel()
 			if not unit:IsAlive() then
 				unit:RespawnHero(false, false)
 			end
-			if PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
+			if PlayerResource:IsValidPlayerID(pid) then
 				heroes_in_teams[i] = (heroes_in_teams[i] or 0) + 1
 			end
 		end
@@ -104,7 +104,7 @@ function Duel:StartDuel()
 					local unit = v[1]
 					if IsValidEntity(unit) then
 						local pid = unit:GetPlayerOwnerID()
-						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
+						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) then
 							unit.OnDuel = true
 							Duel:FillPreduelUnitData(unit)
 							unit:SetHealth(unit:GetMaxHealth())

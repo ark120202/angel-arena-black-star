@@ -118,6 +118,8 @@ BOSS_BANNED_ABILITIES = {
 	item_hurricane_pike = true,
 	rubick_telekinesis = true,
 	item_demon_king_bar = true,
+	morphling_adaptive_strike_str = true,
+	item_spirit_helix = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
@@ -135,10 +137,16 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	obsidian_destroyer_sanity_eclipse = true,
 	centaur_stampede = true,
 	obsidian_destroyer_arcane_orb = true,
+	spectre_dispersion = true,
+	skywrath_mage_arcane_bolt = true,
+	centaur_return = true,
+	huskar_life_break = true,
+	item_spirit_helix = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
 	["freya_pain_reflection"] = true,
+	["spectre_dispersion"] = true,
 }
 
 ARENA_NOT_CASTABLE_ABILITIES = {

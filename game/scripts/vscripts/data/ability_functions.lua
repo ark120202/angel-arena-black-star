@@ -74,14 +74,6 @@ ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
 }
 
 OUTGOING_DAMAGE_MODIFIERS = {
-	modifier_kadash_assasins_skills = {
-		multiplier = function(attacker)
-			local kadash_assasins_skills = attacker:FindAbilityByName("kadash_assasins_skills")
-			if kadash_assasins_skills then
-				return 1 + (kadash_assasins_skills:GetAbilitySpecial("all_damage_bonus_pct") * 0.01)
-			end
-		end
-	},
 	modifier_arena_rune_arcane = {
 		condition = function(_, _, inflictor)
 			return inflictor
@@ -205,7 +197,7 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		if not inflictor then
 			return 0
 		end
-	end
+	end,
 }
 
 INCOMING_DAMAGE_MODIFIERS = {

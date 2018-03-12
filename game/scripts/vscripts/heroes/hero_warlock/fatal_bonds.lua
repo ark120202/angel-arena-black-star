@@ -66,7 +66,10 @@ if IsServer() then
 		local target = self:GetParent()
 		local ability = self:GetAbility()
 		if target == keys.unit and
-			not (keys.inflictor and keys.inflictor:GetAbilityName() == ability:GetAbilityName()) then
+			not (keys.inflictor and (
+				keys.inflictor:GetAbilityName() == ability:GetAbilityName() or
+				keys.inflictor:GetAbilityName() == "anakim_transfer_pain"
+			)) then
 			if IsValidEntity(target) and target:IsAlive() then
 				target:EmitSound("Hero_Warlock.FatalBondsDamage")
 				local dmg = keys.damage * self:OnTooltip() * 0.01

@@ -644,9 +644,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_windranger_4 = {
 		group = 10,
 	},
-	special_bonus_unique_windranger_5 = {
-		group = 8,
-	},
 	special_bonus_unique_slark = {
 		group = 9,
 	},
@@ -995,9 +992,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_shadow_demon_4 = {
 		group = 9,
 	},
-	special_bonus_unique_shadow_demon_5 = {
-		group = 7,
-	},
 	special_bonus_unique_slardar = {
 		group = 8,
 	},
@@ -1016,7 +1010,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_lina_3 = {
 		group = 5,
 	},
-	special_bonus_unique_ancient_apparition_1 = false,
 	special_bonus_unique_ancient_apparition_2 = {
 		group = 6,
 	},
@@ -1029,9 +1022,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_ancient_apparition_5 = {
 		group = 9,
 	},
-	special_bonus_unique_disruptor = {
-		group = 6,
-	},
+	special_bonus_unique_disruptor = false,
 	special_bonus_unique_disruptor_2 = {
 		group = 9,
 	},
@@ -1207,7 +1198,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 6,
 	},
 	special_bonus_unique_pangolier_3 = {
-		group = 7,
+		group = 10,
 	},
 	special_bonus_unique_pangolier_4 = {
 		group = 9,
@@ -1625,9 +1616,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_wraith_king_3 = {
 		group = 6,
-	},
-	special_bonus_unique_wraith_king_5 = {
-		group = 1,
 	},
 	special_bonus_unique_wraith_king_6 = {
 		group = 2,
