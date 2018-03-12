@@ -1784,3 +1784,20 @@ DOTA_Tooltip_ability_item_lightning_rod: Lightning Rod
 DOTA_Tooltip_ability_item_lightning_rod_Description: '<h1>Use: Place</h1> Places a Lightning Rod, an invisible watcher, that causes all lightning bolts, creating during Storm weather, within %protection_radius% radius to strike into it.<br>Duration: %duration_minutes% minutes.<br><br>Range: %tooltip_range%'
 DOTA_Tooltip_modifier_item_lightning_rod_ward: Lightning Rod
 npc_arena_lightning_rod: Lightning Rod
+
+DOTA_Tooltip_ability_item_scythe_of_the_ancients: Scythe of the Ancients
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_Description: |-
+  <h1>Active: Invoke the Reaper</h1> Summons the Reaper, firing massive blast of dark energy into enemy hero, dealing %cast_damage% + %cast_damage_pct%%% damage and stunning it for %stun_duration% seconds, then Reaper strikes enemy, dealing %delayed_damage_per_health% for each missing health point.
+  <h1>Passive: The Weapon of Darkness</h1> All dealt magical damage also deals %magic_damage_to_pure_pct%%% as pure damage.
+  <h1>Passive: Ultimate Upgrade</h1>Upgrades the ultimate, and some abilities, of certain heroes.
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_strength: +$str
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_agility: +$agi
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_intellect: +$int
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_health: +$health
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_mana: +$mana
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_health_regen: +$hp_regen
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_mana_regen: +$mana_regen
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_spell_amp_pct: '%SPELL DAMAGE AMP:'
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_cast_range_bonus: 'CAST RANGE:'
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_attack_range: 'BONUS ATTACK RANGE:'
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_all_damage_bonus_pct: '%DAMAGE INCREASE:'
