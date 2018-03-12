@@ -1650,17 +1650,6 @@
 			}
 		}
 	}
-	"special_bonus_unique_wraith_king_5"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"10"
-			}
-		}
-	}
 	"special_bonus_unique_wraith_king_6"
 	{
 		"AbilitySpecial"

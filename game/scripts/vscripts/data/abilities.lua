@@ -27,7 +27,6 @@ NOT_MULTICASTABLE_ABILITIES = {
 	"shredder_chakram",
 	"alchemist_unstable_concoction",
 	"alchemist_unstable_concoction_throw",
-	"riki_pocket_riki",
 	"elder_titan_ancestral_spirit",
 	"elder_titan_return_spirit",
 	"ember_spirit_sleight_of_fist",

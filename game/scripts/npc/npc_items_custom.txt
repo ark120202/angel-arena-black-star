@@ -864,343 +864,6 @@
 		}
 	}
 
-	"item_pocket_riki"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/pocket_riki"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-
-		"ItemPurchasable"				"0"
-		"ItemSellable"          		"1"
-		"ItemDroppable"					"0"
-		"AbilityManaCost"				"0"
-		"ItemShopTags"					"damage"
-		"ItemQuality"					"legendary"
-		"ItemAliases"					"Rikimaru"
-
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
-			"particle"	"particles/units/heroes/hero_riki/riki_backstab.vpcf"
-			"particle"	"particles/generic_hero_status/status_invisibility_start.vpcf"
-		}
-
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_time"					"1.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"stat_damage"			"125"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"backstab_angle"			"105"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"items/item_pocket_riki.lua"
-				"Function"			"ConsumeRiki"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_invisible"
-				"Target" 		"CASTER"
-			}
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_item_pocket_riki_permanent_invisibility"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_pocket_riki_backstab"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_pocket_riki.lua"
-						"Function"			"CheckBackstab"
-						"particle"			"particles/units/heroes/hero_riki/riki_backstab.vpcf"
-						"sound"				"Hero_Riki.Backstab"
-						"sound2"			"Hero_Riki.Attack"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_permanent_invisibility"
-					}
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_invisibility_fade"
-					}
-				}
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_pocket_riki.lua"
-						"Function"			"DropRiki"
-					}
-				}
-			}
-
-			"modifier_item_pocket_riki_invisibility_fade"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-
-				"Duration"	"%fade_time"
-				"EffectName"	"particles/generic_hero_status/status_invisibility_start.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"OnDestroy"
-				{
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_permanent_invisibility"
-					}
-				}
-			}
-
-			"modifier_item_pocket_riki_permanent_invisibility"
-			{
-				"IsHidden"	"1"
-				"States"
-				{
-					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_item_pocket_riki_permanent_invisibility"
-						"Target" 		"CASTER"
-					}
-				}
-			}
-		}
-	}
-
-	"item_pocket_riki_consumed"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_arena/pocket_riki"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityManaCost"				"0"
-		"ItemShopTags"					"damage"
-		"ItemQuality"					"legendary"
-		"ItemAliases"					"Rikimaru"
-
-		"ItemPurchasable"				"0"
-		"ItemSellable"          		"1"
-		"ItemDroppable"					"0"
-
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
-			"particle"	"particles/units/heroes/hero_riki/riki_backstab.vpcf"
-			"particle"	"particles/generic_hero_status/status_invisibility_start.vpcf"
-		}
-
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_time"					"1.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"stat_damage"			"125"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"backstab_angle"			"105"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_pocket_riki_consumed_backstab"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_pocket_riki.lua"
-						"Function"			"CheckBackstab"
-						"particle"			"particles/units/heroes/hero_riki/riki_backstab.vpcf"
-						"sound"				"Hero_Riki.Backstab"
-						"sound2"			"Hero_Riki.Attack"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_consumed_permanent_invisibility"
-					}
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_consumed_invisibility_fade"
-					}
-				}
-			}
-
-			"modifier_item_pocket_riki_consumed_invisibility_fade"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-
-				"Duration"	"%fade_time"
-				"EffectName"	"particles/generic_hero_status/status_invisibility_start.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"OnDestroy"
-				{
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_consumed_permanent_invisibility"
-					}
-				}
-			}
-
-			"modifier_item_pocket_riki_consumed_permanent_invisibility"
-			{
-				"IsHidden"	"1"
-				"States"
-				{
-					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_item_pocket_riki_consumed_permanent_invisibility"
-						"Target" 		"CASTER"
-					}
-				}
-			}
-
-			"modifier_item_pocket_riki_consumed_str"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsPurgable"		"1"
-				"IsBuff"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"1"
-				}
-			}
-
-			"modifier_item_pocket_riki_consumed_agi"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsPurgable"		"1"
-				"IsBuff"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"1"
-				}
-			}
-
-			"modifier_item_pocket_riki_consumed_int"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsPurgable"		"1"
-				"IsBuff"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"1"
-				}
-			}
-		}
-	}
-
 	"item_recipe_homemade_cheese"
 	{
 		"BaseClass"						"item_datadriven"
@@ -10419,6 +10082,135 @@
 				"var_type"				"FIELD_INTEGER"
 				"tooltip_range"			"500"
 			}
+		}
+	}
+
+	"item_recipe_scythe_of_the_ancients"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"40000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_scythe_of_the_ancients"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_scepter_arena;item_demons_paw;item_sunray_dagon_5_arena;item_moon_dust"
+		}
+	}
+
+	"item_scythe_of_the_ancients"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_scythe_of_the_ancients"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"item_arena/scythe_of_the_ancients"
+		"AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"80"
+		"AbilityManaCost"				"1000"
+
+		"ItemQuality"					"legendary"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"26"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"26"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"155"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"2400"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"20"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"8.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"300"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"24"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_range"	"50"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"all_damage_bonus_pct"      "10"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"magic_damage_to_pure_pct"	"30"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_damage"				"1400"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cast_damage_pct"			"3"
+			}
+			"15"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"range"						"900"
+			}
+			"16"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.5"
+			}
+			"17"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"delayed_damage_per_health"	"0.3"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/arena/items_fx/scythe_of_the_ancients_start.vpcf"
+			"particle"			"particles/econ/events/ti4/dagon_beam_black_ti4.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 		}
 	}
 }

@@ -188,32 +188,13 @@ DOTA_Tooltip_modifier_item_three_spirits_blades_fast_attack: '{lc:modifier_item_
 DOTA_Tooltip_modifier_item_three_spirits_blades_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
-  <h1>Active: Unwilling Ritual</h1> Targets non-hero enemy unit. The target gets sacrificed for a Doomling. Doomling possesses the abilities of the sacrificed unit and and adds it's health, damage and mana to Doomling's stats. By default doomling has %doomling_health% health, %doomling_mana% mana, %doomling_damage_min%-%doomling_damage_max% damage, %doomling_health_regen% health regeneration, %doomling_mana_regen% mana regeneration. Normal XP and gold bounty is granted for the target unit.
+  <h1>Active: Unwilling Ritual</h1> Targets non-hero enemy unit. The target gets sacrificed for a Doomling. Doomling possesses the abilities of the sacrificed unit and and adds it's health, damage and mana to Doomling's stats. By default doomling has %doomling_health% health, %doomling_mana% mana, %doomling_damage_min%-%doomling_damage_max% damage, %doomling_health_regen% health regeneration, %doomling_mana_regen% mana regeneration. Gold bounty won't be granted for the target unit. Units killed by Doomling won't grant gold to hero.
   <h1>Passive: Quell</h1>Increases attack damage against non-hero units by %damage_bonus% for melee heroes, and %damage_bonus_ranged% for ranged.
 DOTA_Tooltip_ability_item_lucifers_claw_Note0: The Doomling is summoned Creep-Hero with unlimited duration. It therefore can be targeted by some more spells.
 DOTA_Tooltip_ability_item_lucifers_claw_Note1: Has a 4 second cooldown on Trees.
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_all: +$all
-DOTA_Tooltip_ability_item_pocket_riki: Pocket Riki
-DOTA_Tooltip_ability_item_pocket_riki_Description: |-
-  You have Riki in your pocket. Riki grants you Cloak and Dagger passive effect, but with additional damage based on your base attribute. In the pocket Riki can use his items and Smoke Screen spell
-  <h1>Active: Consume</h1> You consume Riki. Riki will be killed, but for respawn time you will get all Riki's attributes and Cloak and Dagger effect.
-  Pocket Riki can be sold for gold, that enemy could get for killing Riki. Riki will be killed.
-DOTA_Tooltip_ability_item_pocket_riki_Lore: It's very hard to believe that such a сute creature can be an assassin.
-DOTA_Tooltip_ability_item_pocket_riki_Note0: You won't auto attack enemies while invisible.
-DOTA_Tooltip_ability_item_pocket_riki_Note1: Bonus damage from Backstab can't be evaded.
-DOTA_Tooltip_ability_item_pocket_riki_fade_time: 'FADE DELAY:'
-DOTA_Tooltip_ability_item_pocket_riki_stat_damage: '%ATTRIBUTE DAMAGE:'
-DOTA_Tooltip_ability_item_pocket_riki_consumed: Consumed Pocket Riki
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Description: |-
-  You have Riki's Cloak and Dagger passive effect, but with additional damage based on your base attribute.
 
-  This will be removed from your inventory when Riki respawns.
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Lore: It's very hard to believe that such a сute creature can be an assassin.
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Note0: You won't auto attack enemies while invisible.
-DOTA_Tooltip_ability_item_pocket_riki_consumed_Note1: Bonus damage from Backstab can't be evaded.
-DOTA_Tooltip_ability_item_pocket_riki_consumed_fade_time: 'FADE DELAY:'
-DOTA_Tooltip_ability_item_pocket_riki_consumed_stat_damage: '%ATTRIBUTE DAMAGE:'
 DOTA_Tooltip_ability_item_homemade_cheese: Homemade Cheese
 DOTA_Tooltip_ability_item_homemade_cheese_Description: '<h1>Use: Fondue</h1> Consume to instantly restore your or ally''s health and mana. Has a %alternative_cooldown% on allies.'
 DOTA_Tooltip_ability_item_homemade_cheese_Note0: Cheese is shareable.
@@ -1784,3 +1765,20 @@ DOTA_Tooltip_ability_item_lightning_rod: Lightning Rod
 DOTA_Tooltip_ability_item_lightning_rod_Description: '<h1>Use: Place</h1> Places a Lightning Rod, an invisible watcher, that causes all lightning bolts, creating during Storm weather, within %protection_radius% radius to strike into it.<br>Duration: %duration_minutes% minutes.<br><br>Range: %tooltip_range%'
 DOTA_Tooltip_modifier_item_lightning_rod_ward: Lightning Rod
 npc_arena_lightning_rod: Lightning Rod
+
+DOTA_Tooltip_ability_item_scythe_of_the_ancients: Scythe of the Ancients
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_Description: |-
+  <h1>Active: Invoke the Reaper</h1> Summons the Reaper, firing massive blast of dark energy into enemy hero, dealing %cast_damage% + %cast_damage_pct%%% damage and stunning it for %stun_duration% seconds, then Reaper strikes enemy, dealing %delayed_damage_per_health% for each missing health point.
+  <h1>Passive: The Weapon of Darkness</h1> All dealt magical damage also deals %magic_damage_to_pure_pct%%% as pure damage.
+  <h1>Passive: Ultimate Upgrade</h1>Upgrades the ultimate, and some abilities, of certain heroes.
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_strength: +$str
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_agility: +$agi
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_intellect: +$int
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_health: +$health
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_mana: +$mana
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_health_regen: +$hp_regen
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_mana_regen: +$mana_regen
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_spell_amp_pct: '%SPELL DAMAGE AMP:'
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_cast_range_bonus: 'CAST RANGE:'
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_attack_range: 'BONUS ATTACK RANGE:'
+DOTA_Tooltip_ability_item_scythe_of_the_ancients_all_damage_bonus_pct: '%DAMAGE INCREASE:'

@@ -30,14 +30,6 @@ arena_hud_error_cant_change_hero: Changing hero is not possible now
 DOTA_Tooltip_modifier_neutral_champion: Champion
 DOTA_Tooltip_modifier_neutral_champion_Description: 'This neutral is a champion, so it''s %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death'
 
-riki_pocket_riki_chat_notify_text: '%s1 has sold Riki.'
-npc_dota_hero_riki: Rikimaru
-npc_dota_hero_wisp: Wisp
-npc_dota_hero_skeleton_king: Skeleton King
-npc_dota_hero_life_stealer: Naix
-npc_dota_hero_furion: Furion
-npc_dota_hero_phantom_assassin: Mortred
-
 npc_dummy_unit: Dummy
 npc_dummy_blank: Blank Dummy
 npc_dummy_flying: Flying Dummy
@@ -123,15 +115,7 @@ DOTA_Tooltip_ability_casino_bitch_passive_Description: 'Gives you bonuses, if yo
 DOTA_Tooltip_ability_casino_bitch_passive_lina_attack_speed: 'BONUS ATTACK SPEED:'
 DOTA_Tooltip_ability_casino_bitch_passive_lina_movement_speed_percent: '%BONUS MOVEMENT SPEED:'
 DOTA_Tooltip_ability_casino_bitch_passive_lina_health_regen: 'BONUS HEALTH REGEN:'
-DOTA_Tooltip_ability_riki_tricks_of_the_trade_aghanim_Description: 'Increases duration and allows you to target an allied hero, hiding inside them for the duration. Also, grants the Pocket Riki ability, that allows Riki to go to ally''s pocket, granting him Cloak and Dagger passive effect, but additional damage will be based on owner''s base attribute. In the pocket Riki can use his items and Smoke Screen spell. While in pocket Riki can be consumed and owner hero will get all Riki''s stats until Riki respawns. Riki also can be sold, granting owner gold, that enemy could get for killing Riki.'
-DOTA_Tooltip_ability_riki_pocket_riki: Pocket Riki
-DOTA_Tooltip_ability_riki_pocket_riki_Description: 'Riki goes to the ally''s pocket granting him Cloak and Dagger passive effect, but additional damage will be based on owner''s base attribute. In the pocket Riki can use his items and Smoke Screen spell. While in pocket Riki can be consumed and owner hero will get all Riki''s stats until Riki respawns. Riki also can be sold, granting ally gold, that enemy could get for killing Riki.'
-DOTA_Tooltip_ability_riki_pocket_riki_Lore: Good assassins can easily fit in the pocket.
-DOTA_Tooltip_ability_riki_pocket_riki_Note0: Ally won't auto attack enemies while invisible.
-DOTA_Tooltip_ability_riki_pocket_riki_Note1: 'Illusions will play Backstab animations, but not deal any bonus damage.'
-DOTA_Tooltip_ability_riki_pocket_riki_Note2: Bonus damage from Backstab can't be evaded.
-DOTA_Tooltip_ability_riki_pocket_riki_fade_time: 'FADE DELAY:'
-DOTA_Tooltip_ability_riki_pocket_riki_stat_damage: '%ATTRIBUTE DAMAGE:'
+
 DOTA_Tooltip_ability_boss_armor: Boss Armor
 DOTA_Tooltip_ability_boss_armor_Description: |-
   Boss is immune from most debuffs, unless boss has passives disabled.

@@ -3189,8 +3189,9 @@
 
 			"02"
 			{
-				"var_type"	"FIELD_FLOAT"
+				"var_type"				"FIELD_FLOAT"
 				"bolt_stun_duration"	"2.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_sven_4"
 			}
 
 			"03"
@@ -5535,8 +5536,8 @@
 
 			"06"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"cast_range_scepter"	"800"
+				"var_type"				"FIELD_INTEGER"
+				"scepter_bounce_range"	"400"
 			}
 			"99"
 			{
@@ -5832,6 +5833,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"heal"	"60 90 120 150 180 210 240"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_4"
 			}
 
 			"03"
@@ -5919,6 +5921,7 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"movement_speed"	"12 16 20 24 26 32 36"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_3"
 			}
 
 			"04"
@@ -11052,6 +11055,201 @@
 
 	}
 
+	"gyrocopter_rocket_barrage"
+	{
+		"MaxLevel"	"7"
+		"AbilityCooldown"				"7.0 6.5 6 5.5 5.0 4.5 4.0"
+		"AbilityDuration"				"3"
+		"AbilityManaCost"				"90 85 80 75 70 65 60"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"400"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rockets_per_second"		"10"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rocket_damage"				"7 12 17 22 27 32 37"
+				"LinkedSpecialBonus"		"special_bonus_unique_gyrocopter_3"
+			}
+		}
+	}
+
+	"gyrocopter_homing_missile"
+	{
+		"MaxLevel"	"7"
+		"AbilityCastRange"				"1050"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"120 "
+		"AbilityDamage"					"100 175 250 325 400 475 525"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hits_to_kill_tooltip"		"3 3 4 4 5 6 7"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tower_hits_to_kill_tooltip"		"6 6 8 10 12 14 16"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				" 1.5 1.75 2.0 2.25 2.5 2.75 3.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_bonus_pct"	"400"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_damage"				"50"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_distance"				"1500"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"pre_flight_time"			"3"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hero_damage"				"26 35 39 43 48 53 57"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"speed"						"500 550 600 650 700 750 800"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"acceleration"				"20"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"enemy_vision_time"			"4"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_restore_time"	"26 23 21 19 16 11 8"
+			}
+		}
+	}
+
+	"gyrocopter_flak_cannon"
+	{
+		"MaxLevel"	"7"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"50"
+		"AbilityDuration"				"15"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"1250"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_attacks"					"3 4 5 6 7 8 9"
+				"LinkedSpecialBonus"			"special_bonus_unique_gyrocopter_2"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"projectile_speed"				"800"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"fire_rate"						"0.8"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"scepter_radius"				"600"
+			}
+		}
+	}
+
+	"gyrocopter_call_down"
+	{
+		"MaxLevel"	"7"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"30"
+
+		"AbilityManaCost"				"125"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_duration_first"		"2"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_duration_second"		"4"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_first"				"200 275 350 420 470 520 560"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_second"				"100 150 200 250 300 350 400"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_first"				"30"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_second"				"60"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"600"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"range_scepter"					"0"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_second_scepter"		"175 225 275 350 425 475 525"
+			}
+		}
+	}
+
 	"alchemist_acid_spray"
 	{
 		"MaxLevel"	"7"
@@ -13493,6 +13691,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"tooltip_range"			"500 625 750 875 1000 1125 1250"
+				"LinkedSpecialBonus"		"special_bonus_unique_meepo_4"
 			}
 		}
 	}
@@ -18904,16 +19103,9 @@
 
 			"05"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"attack_slow_tooltip"	"25 30 35 40 45 50 55"
+				"var_type"					"FIELD_INTEGER"
+				"range"						"900"
 			}
-
-			"06"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"range"	"900"
-			}
-
 		}
 
 	}

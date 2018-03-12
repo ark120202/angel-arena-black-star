@@ -223,43 +223,43 @@ if IsServer() then
 
 	function pudge_meat_hook_lua:OnProjectileHit(hTarget, vLocation, proj, hook_damage)
 		local caster = self:GetCaster()
-		if hTarget == caster or (hTarget and (not (hTarget:IsCreep() or hTarget:IsConsideredHero()))) then
-			return false
-		end
-		if hTarget then
-			if not proj.hVictim or not table.contains(proj.hVictim, hTarget) then
-				hTarget:EmitSound("Hero_Pudge.AttackHookImpact")
-				self.projectile = proj
-				hTarget:AddNewModifier(caster, self, "modifier_meat_hook_lua", nil)
-				self.projectile = nil
-				if hTarget:GetTeamNumber() ~= caster:GetTeamNumber() then
-					ApplyDamage({
-						victim = hTarget,
-						attacker = caster,
-						damage = hook_damage,
-						damage_type = DAMAGE_TYPE_PURE,
-						ability = self
-					})
+		if not hTarget then return false end
+		if hTarget == caster then return false end
+		if hTarget.SpawnerType == "jungle" then return false end
+		if not hTarget:IsCreep() and not hTarget:IsConsideredHero() then return false end
 
-					if not hTarget:IsAlive() and hTarget:IsRealHero() then
-						local hBuff = caster:FindModifierByName(self:GetIntrinsicModifierName())
-						if hBuff then
-							hBuff:IncrementStackCount()
-							PopupNumbers(caster, "damage", Vector(255, 0, 0), 1.2, 1, POPUP_SYMBOL_PRE_PLUS, POPUP_SYMBOL_POST_LIGHTNING)
-						end
+		if not proj.hVictim or not table.contains(proj.hVictim, hTarget) then
+			hTarget:EmitSound("Hero_Pudge.AttackHookImpact")
+			self.projectile = proj
+			hTarget:AddNewModifier(caster, self, "modifier_meat_hook_lua", nil)
+			self.projectile = nil
+			if hTarget:GetTeamNumber() ~= caster:GetTeamNumber() then
+				ApplyDamage({
+					victim = hTarget,
+					attacker = caster,
+					damage = hook_damage,
+					damage_type = DAMAGE_TYPE_PURE,
+					ability = self
+				})
+
+				if not hTarget:IsAlive() and hTarget:IsRealHero() then
+					local hBuff = caster:FindModifierByName(self:GetIntrinsicModifierName())
+					if hBuff then
+						hBuff:IncrementStackCount()
+						PopupNumbers(caster, "damage", Vector(255, 0, 0), 1.2, 1, POPUP_SYMBOL_PRE_PLUS, POPUP_SYMBOL_POST_LIGHTNING)
 					end
-
-					if not hTarget:IsMagicImmune() then
-						hTarget:Interrupt()
-					end
-
-					local nFXIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf", PATTACH_CUSTOMORIGIN, hTarget)
-					ParticleManager:SetParticleControlEnt(nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetOrigin(), true)
-					ParticleManager:ReleaseParticleIndex(nFXIndex)
 				end
-				if not proj.hVictim then proj.hVictim = {} end
-				table.insert(proj.hVictim, hTarget)
+
+				if not hTarget:IsMagicImmune() then
+					hTarget:Interrupt()
+				end
+
+				local nFXIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf", PATTACH_CUSTOMORIGIN, hTarget)
+				ParticleManager:SetParticleControlEnt(nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetOrigin(), true)
+				ParticleManager:ReleaseParticleIndex(nFXIndex)
 			end
+			if not proj.hVictim then proj.hVictim = {} end
+			table.insert(proj.hVictim, hTarget)
 		end
 
 		return false

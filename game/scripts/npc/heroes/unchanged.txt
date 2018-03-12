@@ -89,6 +89,12 @@
 		"AttributeIntelligenceGain"	"2.0"
 	}
 
+	"npc_dota_hero_riki"
+	{
+		"override_hero"	"npc_dota_hero_riki"
+		"AttackRate"	"1.7"
+	}
+
 	"npc_dota_hero_rubick"
 	{
 		"override_hero"	"npc_dota_hero_rubick"
@@ -648,5 +654,14 @@
 	{
 		"override_hero"	"npc_dota_hero_dark_willow"
 		"AttackRate"	"1.3"
+	}
+
+	"npc_dota_hero_gyrocopter"
+	{
+		"override_hero"	"npc_dota_hero_gyrocopter"
+		"AttackRate"	"1.6"
+		"MovementSpeed"	"325"
+		"AttributeBaseAgility"	"16"
+		"AttributeAgilityGain"	"2.0"
 	}
 }

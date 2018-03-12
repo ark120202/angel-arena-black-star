@@ -453,7 +453,6 @@ CUSTOM_TALENTS_DATA = {
 -- A list of heroes, which have Changed flag, but some native talents for them are still relevant
 -- Value should be a table, where irrelevant talents should have a `true` value
 PARTIALLY_CHANGED_HEROES = {
-	npc_dota_hero_riki = {},
 	npc_dota_hero_ogre_magi = {},
 	npc_dota_hero_tinker = {},
 	npc_dota_hero_skeleton_king = {
@@ -992,9 +991,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_shadow_demon_4 = {
 		group = 9,
 	},
-	special_bonus_unique_shadow_demon_5 = {
-		group = 7,
-	},
 	special_bonus_unique_slardar = {
 		group = 8,
 	},
@@ -1013,7 +1009,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_lina_3 = {
 		group = 5,
 	},
-	special_bonus_unique_ancient_apparition_1 = false,
 	special_bonus_unique_ancient_apparition_2 = {
 		group = 6,
 	},
@@ -1620,9 +1615,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_wraith_king_3 = {
 		group = 6,
-	},
-	special_bonus_unique_wraith_king_5 = {
-		group = 1,
 	},
 	special_bonus_unique_wraith_king_6 = {
 		group = 2,
