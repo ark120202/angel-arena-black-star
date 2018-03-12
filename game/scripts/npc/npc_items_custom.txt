@@ -10422,9 +10422,9 @@
 		}
 	}
 
-	"item_scythe_of_the_ancients_recipe"
+	"item_recipe_scythe_of_the_ancients"
 	{
-		"BaseClass"						"item_lua"
+		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"40000"
