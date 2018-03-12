@@ -11086,9 +11086,9 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"				"1050"
-		"AbilityCooldown"				"26 21 16 11"
-		"AbilityManaCost"				"120 130 140 150"
-		"AbilityDamage"					"100 175 250 325"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"120 "
+		"AbilityDamage"					"100 175 250 325 400 475 525"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11196,7 +11196,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"55 50 45"
+		"AbilityCooldown"				"30"
 
 		"AbilityManaCost"				"125"
 
