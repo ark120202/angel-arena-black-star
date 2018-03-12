@@ -11058,9 +11058,9 @@
 	"gyrocopter_rocket_barrage"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"				"7.0 6.5 6 5.5"
-		"AbilityDuration"				"3 3 3 3"
-		"AbilityManaCost"				"90 90 90 90"
+		"AbilityCooldown"				"7.0 6.5 6 5.5 5.0 4.5 4.0"
+		"AbilityDuration"				"3"
+		"AbilityManaCost"				"90 85 80 75 70 65 60"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11076,7 +11076,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rocket_damage"				"7 12 17 22"
+				"rocket_damage"				"7 12 17 22 27 32 37"
 				"LinkedSpecialBonus"		"special_bonus_unique_gyrocopter_3"
 			}
 		}
@@ -11094,22 +11094,22 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hits_to_kill_tooltip"		"3 3 4 4"
+				"hits_to_kill_tooltip"		"3 3 4 4 5 6 7"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tower_hits_to_kill_tooltip"		"6 6 8 10"
+				"tower_hits_to_kill_tooltip"		"6 6 8 10 12 14 16"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"2.25 2.5 2.75 3.0"
+				"stun_duration"				" 1.5 1.75 2.0 2.25 2.5 2.75 3.0"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed_bonus_pct"	"400 400 400 400"
+				"attack_speed_bonus_pct"	"400"
 			}
 			"05"
 			{
@@ -11129,12 +11129,12 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hero_damage"				"34 34 26 26"
+				"hero_damage"				"26 35 39 43 48 53 57"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"speed"						"500"
+				"speed"						"500 550 600 650 700 750 800"
 			}
 			"10"
 			{
@@ -11149,7 +11149,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_restore_time"	"26 21 16 11"
+				"charge_restore_time"	"26 23 21 19 16 11 8"
 			}
 		}
 	}
@@ -11170,7 +11170,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"max_attacks"					"3 4 5 6"
+				"max_attacks"					"3 4 5 6 7 8 9"
 				"LinkedSpecialBonus"			"special_bonus_unique_gyrocopter_2"
 			}
 			"03"
@@ -11181,7 +11181,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"fire_rate"						"1.1"
+				"fire_rate"						"0.8"
 			}
 			"05"
 			{
@@ -11215,12 +11215,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_first"				"200 275 350"
+				"damage_first"				"200 275 350 420 470 520 560"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_second"				"100 150 200"
+				"damage_second"				"100 150 200 250 300 350 400"
 			}
 			"05"
 			{
@@ -11245,7 +11245,7 @@
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_second_scepter"		"175 225 275"
+				"damage_second_scepter"		"175 225 275 350 425 475 525"
 			}
 		}
 	}
