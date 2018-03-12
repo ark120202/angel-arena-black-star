@@ -33,7 +33,6 @@
 #base "abilities/heroes/hero_dragon_knight.txt"
 #base "abilities/heroes/hero_crystal_maiden.txt"
 #base "abilities/heroes/hero_faceless_void.txt"
-#base "abilities/heroes/hero_gyrocopter.txt"
 #base "abilities/heroes/hero_omniknight.txt"
 #base "abilities/heroes/hero_medusa.txt"
 #base "abilities/heroes/hero_pudge.txt"

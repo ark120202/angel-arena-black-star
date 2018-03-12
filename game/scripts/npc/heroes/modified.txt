@@ -180,32 +180,6 @@
 		"AttackRate"	"1.5"
 	}
 
-	"npc_dota_hero_gyrocopter"
-	{
-		"override_hero"	"npc_dota_hero_gyrocopter"
-		"Changed"	"1"
-		"Ability1"	"gyrocopter_rocket_barrage_arena"
-		"Ability2"	"gyrocopter_homing_missile_arena"
-		"Ability3"	"gyrocopter_flak_cannon_arena"
-		"Ability4"	"generic_hidden"
-		"Ability5"	"generic_hidden"
-		"Ability6"	"gyrocopter_call_down_arena"
-		"Ability7"	""
-		"Ability8"	""
-		"Ability9"	""
-		"Ability10"	""
-		"Ability11"	""
-		"Ability12"	""
-		"Ability13"	""
-		"Ability14"	""
-		"Ability15"	""
-		"Ability16"	""
-		"AttackRate"	"1.6"
-		"MovementSpeed"	"325"
-		"AttributeBaseAgility"	"16"
-		"AttributeAgilityGain"	"2.0"
-	}
-
 	"npc_dota_hero_omniknight"
 	{
 		"override_hero"	"npc_dota_hero_omniknight"
