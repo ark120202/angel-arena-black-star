@@ -29,6 +29,17 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		return false
 	end
 
+	if unit:IsCourier() and (
+		order_type == DOTA_UNIT_ORDER_CAST_POSITION or
+		order_type == DOTA_UNIT_ORDER_CAST_TARGET or
+		order_type == DOTA_UNIT_ORDER_CAST_TARGET_TREE or
+		order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or
+		order_type == DOTA_UNIT_ORDER_CAST_TOGGLE
+	) and ability.IsItem and ability:IsItem() then
+		Containers:DisplayError(PlayerID, "dota_hud_error_courier_cant_use_item")
+		return false
+	end
+
 	if not unit:IsConsideredHero() then return true end
 
 	GameMode:TrackInventory(unit)

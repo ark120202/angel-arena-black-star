@@ -34,14 +34,7 @@ const gulp = require('gulp'),
 	watch = require('gulp-watch'),
 	plumber = require('gulp-plumber'),
 	replace = require('gulp-replace'),
-	gutil = require('gulp-util'),
-	resourcecompiler = require('./gulp-resourcecompiler')(paths.resourcecompiler, p => p.replace(paths.content, paths.addon_content));
-
-gulp.task('maps', () =>
-	gulp.src(path.join(paths.content, 'maps/**/*.vmap'))
-		.pipe(resourcecompiler(['-world -entities -phys -vis -gridnav -breakpad']))
-		.pipe(gulp.dest(path.join(paths.game, 'maps')))
-);
+	gutil = require('gulp-util');
 
 // L10n
 gulp.task('localization', () =>
@@ -61,18 +54,6 @@ gulp.task('localization_watch', ['localization'], () => {
 	gulp.watch(paths.localization + '/**/*.yml', ['localization']);
 });
 
-// Panorama
-// Resource compiler throws error :(
-// gulp.task('xml', () =>
-// 	gulp.src(path.join(paths.content, 'panorama/layout/**/*.xml'))
-// 		.pipe(resourcecompiler())
-// 		.pipe(gulp.dest(path.join(paths.game, 'panorama/layout')))
-// );
-// gulp.task('js', () =>
-// 	gulp.src(path.join(paths.content, 'panorama/scripts/**/*.js'))
-// 		.pipe(resourcecompiler())
-// 		.pipe(gulp.dest(path.join(paths.game, 'panorama/scripts')))
-// );
 const shouldWatch = argv.build == null;
 gulp.task('src_sass', () =>
 	gulp.src(path.join(paths.content, 'panorama_src/styles/**/*.sass'))
@@ -81,8 +62,6 @@ gulp.task('src_sass', () =>
 		.pipe(sass())
 		.pipe(replace(/ {2}/g, ''))
 		.pipe(gulp.dest(path.join(paths.content, 'panorama/styles')))
-		//.pipe(resourcecompiler())
-		//.pipe(gulp.dest(path.join(paths.game, 'panorama/styles')))
 );
 
 gulp.task('src_css', () =>
