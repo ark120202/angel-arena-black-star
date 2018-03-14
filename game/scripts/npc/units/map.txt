@@ -63,7 +63,7 @@
 		"MinimapIcon"				"minimap_miscbuilding"
 
 		"Ability1"					"filler_ability"
-
+		"Ability2"					"healer_armor_aura"
 		"ArmorPhysical"				"20"
 		"MagicalResistance"			"0"
 
@@ -92,5 +92,7 @@
 
 		"VisionDaytimeRange"		"0"
 		"VisionNighttimeRange"		"0"
+
+		
 	}
 }

@@ -81,4 +81,30 @@
 			}
 		}
 	}
+
+	"healer_armor_aura"
+		{
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/structues/healer_armor_aura.lua"
+			"AbilityTextureName"			"omniknight_degen_aura"
+			"MaxLevel" 						"1"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			
+			
+
+			"AbilitySpecial"
+			{
+			
+				{
+					"var_type"				"FIELD_INTEGER"
+					"radius"				"300"
+				}
+				{
+					"var_type" 				"FIELD_INTEGER"
+					"armor_bonus_aura"			"4"
+				}
+			}
+		}
 }
