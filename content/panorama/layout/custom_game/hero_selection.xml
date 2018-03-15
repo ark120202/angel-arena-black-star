@@ -10,7 +10,7 @@
 		<include src="file://{resources}/styles/hero_selection_picking_player.css" />
 	</styles>
 	<scripts>
-		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/arena_util.js" />
 		<include src="file://{resources}/scripts/shared_hero_selection_script.js" />
 		<include src="file://{resources}/scripts/hero_selection.js" />
 		<include src="file://{resources}/scripts/chat_smiles.js" />

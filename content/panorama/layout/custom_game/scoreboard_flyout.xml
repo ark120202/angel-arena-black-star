@@ -7,7 +7,7 @@
 		<include src="file://{resources}/styles/scoreboard_flyout.css" />
 	</styles>
 	<scripts>
-		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/arena_util.js" />
 		<include src="file://{resources}/scripts/scoreboard_flyout.js" />
 	</scripts>
 	<snippets>
@@ -53,7 +53,7 @@
 				</Panel>
 				<Panel id="GoldContainer">
 					<!-- <Panel id="ScoreboardBuybackIndicator" class="ScoreboardBuybackIndicator BuybackReady" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_StatTooltip_Buyback_Ready );"/> -->
-					<Label class="ScoreboardGold MonoNumbersFont" text="{s:gold}"/>		
+					<Label class="ScoreboardGold MonoNumbersFont" text="{s:gold}"/>
 				</Panel>
 				<Label class="KDANumbers KDAKills MonoNumbersFont" text="{d:kills}"/>
 				<Label class="KDANumbers MonoNumbersFont" text="{d:deaths}"/>
@@ -65,7 +65,7 @@
 				<Panel id="ScoreboardMuteButtons" class="LeftRightFlow">
 					<ToggleButton id="VoiceMute" class="ScoreboardMuteButton Voice"/>
 					<!-- <ToggleButton id="TextMute" class="ScoreboardMuteButton Text"/> -->
-				</Panel>	
+				</Panel>
 			</Panel>
 		</snippet>
 		<snippet name="SharedControlPlayer">

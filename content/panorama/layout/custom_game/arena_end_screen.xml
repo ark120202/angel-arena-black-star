@@ -7,7 +7,7 @@
     </styles>
 
     <scripts>
-        <include src="file://{resources}/scripts/util.js" />
+        <include src="file://{resources}/scripts/arena_util.js" />
     	<include src="file://{resources}/scripts/arena_end_screen.js" />
     </scripts>
 
