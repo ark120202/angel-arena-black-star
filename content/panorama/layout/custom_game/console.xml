@@ -5,7 +5,7 @@
 		<include src="file://{resources}/styles/console.css" />
 	</styles>
 	<scripts>
-		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/arena_util.js" />
 		<include src="file://{resources}/scripts/console.js" />
 	</scripts>
 	<Panel hittest="false" class="base">

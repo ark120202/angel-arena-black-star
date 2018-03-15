@@ -4,7 +4,7 @@
 		<include src="file://{resources}/styles/custom_talent_tooltip.css" />
 	</styles>
 	<scripts>
-		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/arena_util.js" />
 	</scripts>
 	<script>
 		function setTooltip() {
