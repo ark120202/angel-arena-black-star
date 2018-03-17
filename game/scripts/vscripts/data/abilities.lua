@@ -8,7 +8,7 @@ LINKED_ABILITIES = {
 	phoenix_icarus_dive = {"phoenix_icarus_dive_stop"},
 	phoenix_fire_spirits = {"phoenix_launch_fire_spirit"},
 	ancient_apparition_ice_blast = {"ancient_apparition_ice_blast_release"},
-	wisp_tether_aghanims = {"wisp_tether_break_aghanims"},
+	wisp_tether = {"wisp_tether_break"},
 	alchemist_unstable_concoction = {"alchemist_unstable_concoction_throw"},
 	monkey_king_mischief = {"monkey_king_untransform"},
 	monkey_king_primal_spring = {"monkey_king_primal_spring_early"},
@@ -165,7 +165,7 @@ PERCENT_DAMAGE_MODIFIERS = {
 }
 
 DISABLE_HELP_ABILITIES = {
-	wisp_tether_aghanims = true,
+	wisp_tether = true,
 	keeper_of_the_light_recall = true,
 	chen_test_of_faith_teleport = true,
 	oracle_purifying_flames = true,

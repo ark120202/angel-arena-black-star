@@ -28,7 +28,6 @@
 //#base "abilities/heroes/hero_maka.txt"
 //#base "abilities/heroes/hero_soul_eater.txt"
 
-#base "abilities/heroes/hero_wisp.txt"
 #base "abilities/heroes/hero_warlock.txt"
 #base "abilities/heroes/hero_dragon_knight.txt"
 #base "abilities/heroes/hero_crystal_maiden.txt"

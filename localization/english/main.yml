@@ -68,22 +68,7 @@ DOTA_Tooltip_modifier_shadow_word_debuff: Shadow Word Debuff
 DOTA_Tooltip_modifier_shadow_word_debuff_Description: 'Taking periodic damage, has chance to spawn Mini Golem.'
 DOTA_Tooltip_modifier_upheaval_arena_debuff: Upheaval
 DOTA_Tooltip_modifier_upheaval_arena_debuff_Description: Movement Speed reduced.
-DOTA_Tooltip_modifier_tether_caster_aghanims: Tethered
-DOTA_Tooltip_modifier_tether_caster_aghanims_Description: Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and giving regen to tethered targets.
-DOTA_Tooltip_modifier_tether_ally_aghanims: Tethered
-DOTA_Tooltip_modifier_tether_ally_aghanims_Description: Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and getting regen from Wisp.
-DOTA_Tooltip_modifier_tether_slow_aghanims: Tether Slow
-DOTA_Tooltip_modifier_tether_slow_aghanims_Description: Move speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed slowed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
-DOTA_Tooltip_modifier_spirits_caster_aghanims: Spirits
-DOTA_Tooltip_modifier_spirits_caster_aghanims_Description: Surrounded by friendly heroes.
-DOTA_Tooltip_modifier_spirits_spirit_aghanims: Spirit
-DOTA_Tooltip_modifier_spirits_spirit_aghanims_Description: Part of Wisp.
-DOTA_Tooltip_modifier_overcharge_buff_aghanims: Overcharged
-DOTA_Tooltip_modifier_overcharge_buff_aghanims_Description: 'Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, incoming damage reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%.'
-DOTA_Tooltip_modifier_relocate_channel_aghanims: Relocating
-DOTA_Tooltip_modifier_relocate_channel_aghanims_Description: Teleports self and tethered units to location.
-DOTA_Tooltip_modifier_relocate_return_aghanims: Return
-DOTA_Tooltip_modifier_relocate_return_aghanims_Description: About to return to previous location.
+
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally: Reincarnation Ally
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally_Description: 'If slain, will reincarnate.'
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown: Reincarnation Cooldown
@@ -139,44 +124,7 @@ DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_aoe: 'BLOODLUST RADIUS:
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_cooldown: 'BLOODLUST COOLDOWN REDUCTION:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally: 'MULTICAST ALLY DURATION:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: Adds the Unrefined Fireblast ability. Multicast can be used on allies to give them chance to multicast for some time.
-DOTA_Tooltip_ability_wisp_tether_aghanims: Aghanim's Tether
-DOTA_Tooltip_ability_wisp_tether_aghanims_Description: 'Tethers Io to ally unit, granting it bonus movement speed. When Io restores health or mana, tethered units target gain 1.5x the amount. Any enemy unit that crosses the tether is slowed. The tether breaks when the allied unit moves too far away, or Io cancels the tether.'
-DOTA_Tooltip_ability_wisp_tether_aghanims_aghanim_description: Allows you to Tether all allies in cast range.
-DOTA_Tooltip_ability_wisp_tether_aghanims_Lore: The benevolent touch of Io brings strength from between the planes.
-DOTA_Tooltip_ability_wisp_tether_aghanims_Note0: The tethered unit will heal 50% faster.
-DOTA_Tooltip_ability_wisp_tether_aghanims_radius: 'MAX TETHER DISTANCE:'
-DOTA_Tooltip_ability_wisp_tether_aghanims_movespeed: '%MOVEMENT SPEED BONUS:'
-DOTA_Tooltip_ability_wisp_tether_aghanims_slow: '%ENEMY MOVEMENT SLOW:'
-DOTA_Tooltip_ability_wisp_tether_aghanims_attackslow_tooltip: 'ENEMY ATTACK SLOW:'
-DOTA_Tooltip_ability_wisp_tether_aghanims_stun_duration: 'ENEMY SLOW DURATION:'
-DOTA_Tooltip_ability_wisp_tether_break_aghanims: Break Tether
-DOTA_Tooltip_ability_wisp_tether_break_aghanims_Description: Break the link to the tethered units.
-DOTA_Tooltip_ability_wisp_spirits_aghanims: Aghanim's Spirits
-DOTA_Tooltip_ability_wisp_spirits_aghanims_Description: 'Transforms tethered units to spirits that dance in a circle around Io. If hero collides with an enemy hero, it explodes, damaging all enemy units in an area around it with his current health amount, but with cost of his live.  Creeps take minor damage from touching a hero, but do not cause them to explode.  Heroes can cast abilities, use items, attack units, but they can''t move.'
-DOTA_Tooltip_ability_wisp_spirits_aghanims_Lore: Io twists the particles of the universe with its unimaginable capabilities.
-DOTA_Tooltip_ability_wisp_spirits_aghanims_Note0: 'Min/Max Range: 100/875.'
-DOTA_Tooltip_ability_wisp_spirits_aghanims_creep_damage: 'CREEP DAMAGE:'
-DOTA_Tooltip_ability_wisp_spirits_aghanims_max_range: 'OSCILLATION RADIUS:'
-DOTA_Tooltip_ability_wisp_spirits_aghanims_explode_radius: 'EXPLOSION RADIUS:'
-DOTA_Tooltip_ability_wisp_spirits_aghanims_spirit_duration: 'DURATION:'
-DOTA_Tooltip_ability_wisp_spirits_in_aghanims: Spirits In
-DOTA_Tooltip_ability_wisp_spirits_in_aghanims_Description: Calls the spirits closer to you. Can be toggled on and off.
-DOTA_Tooltip_ability_wisp_spirits_out_aghanims: Spirits Out
-DOTA_Tooltip_ability_wisp_spirits_out_aghanims_Description: Sends the spirits farther away from you. Can be toggled on and off.
-DOTA_Tooltip_ability_wisp_overcharge_aghanims: Overcharge
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_Lore: 'Drawing on the energy of matter from all worlds, Io begins the unravelling of time.'
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_Description: 'Io gains bonus attack speed and damage reduction, at the cost of draining a percentage of its current health and mana per second.  If Io is Tethered to allies, they also gains the bonuses.'
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_Note0: 'Io''s tethered unit will also benefit from the attack speed and reduction, but only Io pays the drain in HP and mana.'
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_bonus_attack_speed: 'ATTACK SPEED:'
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_bonus_damage_pct: '%INCOMING DAMAGE REDUCTION:'
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_drain_pct_tooltip: '%HEALTH/MANA DRAIN:'
-DOTA_Tooltip_ability_wisp_relocate_aghanims: Relocate
-DOTA_Tooltip_ability_wisp_relocate_aghanims_Description: Teleports Io and all tethered allies to any location. After the spell expires Io and all tethered allies will return to their original location. Double-click to teleport to your team's base fountain.
-DOTA_Tooltip_ability_wisp_relocate_aghanims_Note0: Enemies receive a visual indicator in the world and on the minimap of the target location during the cast delay.
-DOTA_Tooltip_ability_wisp_relocate_aghanims_Note1: 'If Io is disabled during the cast delay, Relocate is cancelled.'
-DOTA_Tooltip_ability_wisp_relocate_aghanims_Note2: 'If allies heroes are Tethered, they will teleported along with you. You can break the tether at any time to prevent they from teleporting with you.'
-DOTA_Tooltip_ability_wisp_relocate_aghanims_cast_delay: 'CAST DELAY:'
-DOTA_Tooltip_ability_wisp_relocate_aghanims_return_time: 'RETURN TIME:'
+
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena: Reincarnation
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_Description: 'Wraith King''s form regroups after death, allowing him to resurrect when killed in battle. While reincarnating you gain %vision_radius% vision around the location of death.  Upon death, enemy units in a %slow_radius% radius will be slowed.'
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_description: 'Reincarnation becomes aura, that affects all nearby ally heroes. Each hero have his own reincarnation cooldown.'

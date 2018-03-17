@@ -51,22 +51,7 @@ DOTA_Tooltip_modifier_shadow_word_debuff: Shadow Word Debuff
 DOTA_Tooltip_modifier_shadow_word_debuff_Description: 'Получает периодический урон, есть шанс на создание Mini Golem.'
 DOTA_Tooltip_modifier_upheaval_arena_debuff: Upheaval
 DOTA_Tooltip_modifier_upheaval_arena_debuff_Description: Скорость передвижения снижена.
-DOTA_Tooltip_modifier_tether_caster_aghanims: Связан
-DOTA_Tooltip_modifier_tether_caster_aghanims_Description: 'Скорость передвижения повышена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, реген связанных союзников увеличен.'
-DOTA_Tooltip_modifier_tether_ally_aghanims: Связан
-DOTA_Tooltip_modifier_tether_ally_aghanims_Description: 'Скорость передвижения повышена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, Wisp увеличивает реген.'
-DOTA_Tooltip_modifier_tether_slow_aghanims: Tether Slow
-DOTA_Tooltip_modifier_tether_slow_aghanims_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, а скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-DOTA_Tooltip_modifier_spirits_caster_aghanims: Духи
-DOTA_Tooltip_modifier_spirits_caster_aghanims_Description: Окружен союзными героями.
-DOTA_Tooltip_modifier_spirits_spirit_aghanims: Дух
-DOTA_Tooltip_modifier_spirits_spirit_aghanims_Description: Часть Wisp.
-DOTA_Tooltip_modifier_overcharge_buff_aghanims: Под действием Overcharge
-DOTA_Tooltip_modifier_overcharge_buff_aghanims_Description: 'Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, получаемый урон снижен на %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%.'
-DOTA_Tooltip_modifier_relocate_channel_aghanims: Телепортируется
-DOTA_Tooltip_modifier_relocate_channel_aghanims_Description: Телепортирует себя и связанных собзников в точку.
-DOTA_Tooltip_modifier_relocate_return_aghanims: Возвращение
-DOTA_Tooltip_modifier_relocate_return_aghanims_Description: Вернется в прежнее место спустя некоторое время.
+
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally: Skeleton King Reincarnation Ally
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally_Description: Реинкарнируется eсли погибнет
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown: Перезарядка Reincarnation
@@ -122,44 +107,7 @@ DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_aoe: 'BLOODLUST AOE:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_cooldown: 'УМЕНЬШЕНИЕ ПЕРЕЗАРЯДКИ BLOODLUST:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally: 'ДЛИТЕЛЬНОСТЬ НА СОЮЗНИКАХ:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: 'Добавляет способность Unrefined Fireblast. Multicast может быть использован на союзниках, временно даруя им шанс на использование заклинаний по нескольку раз за одно применение.'
-DOTA_Tooltip_ability_wisp_tether_aghanims: Aghanim's Tether
-DOTA_Tooltip_ability_wisp_tether_aghanims_Description: 'Связывает вас и союзного юнита, увеличивая его скорость передвижения. Когда Io пополняет здоровье или ману, привязанные герои тоже восстанавливается, но на 50% больше. Любой враг, оказавшийся на пути связи, будет замедлен. Связь разрывается, если вы с целью разойдетесь слишком далеко друг от друга, или если Io отменит заклинание.'
-DOTA_Tooltip_ability_wisp_tether_aghanims_aghanim_description: Позволяет вам привязывать всех союзников в радиусе применения.
-DOTA_Tooltip_ability_wisp_tether_aghanims_Lore: Великодушное прикосновение Ио переносит силу между мирами.
-DOTA_Tooltip_ability_wisp_tether_aghanims_Note0: Связанный с вами союзник восстанавливается на 50% больше.
-DOTA_Tooltip_ability_wisp_tether_aghanims_radius: 'МАКС. РАССТОЯНИЕ СВЯЗКИ:'
-DOTA_Tooltip_ability_wisp_tether_aghanims_movespeed: '%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_wisp_tether_aghanims_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_wisp_tether_aghanims_attackslow_tooltip: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_ability_wisp_tether_aghanims_stun_duration: 'ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ ВРАГОВ:'
-DOTA_Tooltip_ability_wisp_tether_break_aghanims: Break Tether
-DOTA_Tooltip_ability_wisp_tether_break_aghanims_Description: Разорвать связь.
-DOTA_Tooltip_ability_wisp_spirits_aghanims: Aghanim's Spirits
-DOTA_Tooltip_ability_wisp_spirits_aghanims_Description: 'Превращает связанных героев в духов, которые кружатся вокруг героя. При столкновении с вражеским героем герой взрывается, нанося урон всем существам в области вокруг взрыва в количестве текущего здоровья, при этом умирая. При столкновении с крипом дух наносит немного урона, но не взрывается. Герои могут использовать способность, использовать предметы и атакавать, но не могут двигаться.'
-DOTA_Tooltip_ability_wisp_spirits_aghanims_Lore: Своей невообразимой силой Io раскручивает частицы вселенной.
-DOTA_Tooltip_ability_wisp_spirits_aghanims_Note0: 'Мин./макс. радиус: 100/875.'
-DOTA_Tooltip_ability_wisp_spirits_aghanims_creep_damage: 'УРОН КРИПУ:'
-DOTA_Tooltip_ability_wisp_spirits_aghanims_max_range: 'РАДИУС КОЛЕБАНИЙ:'
-DOTA_Tooltip_ability_wisp_spirits_aghanims_explode_radius: 'РАДИУС ВЗРЫВА:'
-DOTA_Tooltip_ability_wisp_spirits_aghanims_spirit_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_ability_wisp_spirits_in_aghanims: Spirits In
-DOTA_Tooltip_ability_wisp_spirits_in_aghanims_Description: Призывает духов ближе к вам. Может быть включено и выключено.
-DOTA_Tooltip_ability_wisp_spirits_out_aghanims: Spirits Out
-DOTA_Tooltip_ability_wisp_spirits_out_aghanims_Description: Отправляет духов дальше от вас. Может быть включено и выключено.
-DOTA_Tooltip_ability_wisp_overcharge_aghanims: Overcharge
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_Lore: 'Привлекая энергию мироздания из всех миров, Ио начинает расплетать время.'
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_Description: 'Ваша скорость атаки, урон и сопротивляемость любому урону повышаются, но при этом каждую секунду вы теряете часть от текущего здоровья и маны. Связанные с вами герои получают такой же бонус, но не теряют здоровье и ману.'
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_Note0: 'Связанный с вами союзник будет получать дополнительную скорость атаки и сопротивление урону, но не будет при этом терять здоровье и ману.'
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_bonus_attack_speed: 'ATTACK SPEED:'
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_bonus_damage_pct: '%INCOMING DAMAGE REDUCTION:'
-DOTA_Tooltip_ability_wisp_overcharge_aghanims_drain_pct_tooltip: '%ПОТЕРИ ЗДОРОВЬЯ/МАНЫ:'
-DOTA_Tooltip_ability_wisp_relocate_aghanims: Relocate
-DOTA_Tooltip_ability_wisp_relocate_aghanims_Description: Телепортирует вас и всех связанных с вами героев в любую точку карты. После телепортации вы вернетесь на первоначальное место спустя некоторое время. Двойное нажатие телепортирует вас к своему фонтану.
-DOTA_Tooltip_ability_wisp_relocate_aghanims_Note0: 'Враги смогут видеть место в игре и на мини-карте, куда вы будете телепортироваться.'
-DOTA_Tooltip_ability_wisp_relocate_aghanims_Note1: 'Если вас оглушат во время подготовки к телепортации, она прервется.'
-DOTA_Tooltip_ability_wisp_relocate_aghanims_Note2: 'Если вы связаны с союзными героями, то вы будете телепортированы вместе с ними. Вы можете разорвать связь в любой момент, чтобы предотвратить телепортацию героев вместе с вами.'
-DOTA_Tooltip_ability_wisp_relocate_aghanims_cast_delay: 'ЗАДЕРЖКА ДО СОЗДАНИЯ:'
-DOTA_Tooltip_ability_wisp_relocate_aghanims_return_time: 'ВРЕМЯ ВОЗВРАТА:'
+
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena: Reincarnation
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_Description: 'После смерти тело Wraith King вновь собирается воедино, воскрешая его на поле боя. Во время реинкарнации вы видите в радиусе %vision_radius% вокруг точки смерти. При этом все враги в радиусе %slow_radius% замедляются.'
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_description: 'Reincarnation становится аурой, воздействующей на всех союзных героев рядом. Перезарядка Reincarnation уникальна для каждого героя.'
