@@ -151,10 +151,6 @@ function GameMode:DamageFilter(filterTable)
 		if victim:IsBoss() and (attacker:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() > 950 then
 			filterTable.damage = filterTable.damage / 2
 		end
-		if (attacker.HasModifier and (attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) or (victim.HasModifier and (victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) then
-			filterTable.damage = 0
-			return false
-		end
 
 		local BlockedDamage = 0
 		local LifestealPercentage = 0

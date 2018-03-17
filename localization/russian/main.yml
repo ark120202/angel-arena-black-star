@@ -58,25 +58,6 @@ DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown: Перезарядк
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown_Description: Reincarnation перезаряжается.
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow: Reincarnate
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow_Description: 'Под действием способности Reincarnation у Wraith King. Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%.'
-DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_buff: Glacier Tranqulity
-DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_buff_Description: Не получает и не наносит урон.
-DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_debuff: Glacier Tranqulity
-DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_debuff_Description: Не получает и не наносит урон.
-
-DOTA_Tooltip_modifier_crystal_nova_slow_arena: Crystal Nova
-DOTA_Tooltip_modifier_crystal_nova_slow_arena_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-DOTA_Tooltip_modifier_frost_bite_root_arena: Frostbite
-DOTA_Tooltip_modifier_frost_bite_root_arena_Description: 'Не может ни двигаться, ни атаковать. Получает урон каждые полсекунды.'
-DOTA_Tooltip_modifier_frost_bite_root_arena_aura_effect: Frostbite slow
-DOTA_Tooltip_modifier_frost_bite_root_arena_aura_effect_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_caster_arena: Brilliance Aura
-DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_caster_arena_Description: 'Увеличивает восстановление маны на %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, интеллект на %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% и скорость предвижения на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.'
-DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_effect_arena: Brilliance Aura
-DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_effect_arena_Description: 'Увеличивает восстановление маны на %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, интеллект на %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% и скорость предвижения на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.'
-DOTA_Tooltip_modifier_freezing_field_debuff_arena: Freezing Field Slow
-DOTA_Tooltip_modifier_freezing_field_debuff_arena_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-DOTA_Tooltip_modifier_freezing_field_debuff_scepter_arena: Freezing Field Slow
-DOTA_Tooltip_modifier_freezing_field_debuff_scepter_arena_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 
 DOTA_Tooltip_ability_casino_bitch_passive: Casino Bitch
 DOTA_Tooltip_ability_casino_bitch_passive_Description: 'Даст вам бонусы, если вы за них заплатите.'
@@ -120,49 +101,6 @@ DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_slow_duration: 'ДЛИТ�
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_vision_radius: 'РАДИУС ВИДИМОСТИ:'
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_radius_scepter: 'РАДИУС РЕИНКАРНАЦИИ:'
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_ally_cooldown_scepter: 'ПЕРЕЗАРЯДКА НА СОЮЗНИКАХ:'
-DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity: Glacier Tranqulity
-DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity_Description: Наполняет выбранный союзный или вражеский юнит ледяным спокойствием. Под его действием юнит не получает и не наносит никакого урона.
-DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity_duration: 'ДЛИТЕЛЬНОСТЬ:'
-
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena: Crystal Nova
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_Description: 'Шквал губительного холода замедляет движение врага и скорость его атаки в выбранной области. Также создаёт ледяную стену, преграждающую проход всем юнитам.'
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_radius: 'РАДИУС:'
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_movespeed_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_attackspeed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_block_duration: 'ДЛИТЕЛЬНОСТЬ ЛЕДЯНОЙ СТЕНЫ:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena: Frostbite
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_Description: 'Заковывает противника в лед, нанося ему %damage_per_second_tooltip% урона каждые полсекунды и запрещая двигаться или атаковать. Действует 10 секунд на крипов 6-го уровня или ниже. Также, юниты, находящиеся рядом с целью Frostbite, получат замедление скорости атаки и передвижения.'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_Note0: Под действием этой способности нельзя телепортироваться.
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_damage_per_second_tooltip: 'УРОН В СЕКУНДУ:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_duration: 'ДЛИТЕЛЬНОСТЬ НА ГЕРОЯХ:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_creep_duration: 'ДЛИТЕЛЬНОСТЬ НА КРИПАХ:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_radius: 'РАДИУС ЗАМЕДЛЕНИЯ:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_attack_speed: 'ЗАМЕДЛЕНИЕ СКОРОСТИ АТАКИ:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_movement_speed_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena: Brilliance Aura
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_Description: 'Увеличивает скорость восстановления маны, интеллект и скорость передвижения всех союзников на карте. Crystal Maiden получает увеличенный бонус.'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_mana_regen: 'РЕГЕН МАНЫ СОЮЗНИКАМ:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_bonus_intellect: 'ИНТЕЛЛЕКТ СОЮЗНИКАМ:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_bonus_movespeed_pct: '%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ СОЮЗНИКАМ:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_mana_regen: 'РЕГЕН МАНЫ СЕБЕ:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_bonus_intellect: 'ИНТЕЛЛЕКТ СЕБЕ:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_bonus_movespeed_pct: '%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ СЕБЕ:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena: Freezing Field
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Description: 'ПРЕРЫВАЕМАЯ — окружает Crystal Maiden случайными ледяными взрывами, замедляющими врагов и наносящими большой урон и, с небольшим шансом, замораживающими врагов Frostbite текущего уровня.  Длится %duration_tooltip% секунд.'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_aghanim_description: 'Прячет Crystal Maiden с карты на всё время использования Freezing Field, делая её неуязвимой. Также увеличивает урон и замедление.'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Note0: 'В первую секунду заклинания замедляются все враги в области действия, даже если взрывы их не задели.'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Note1: 'Взрыв происходит каждую 0,1 секунды; всего их 100.'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_radius: 'РАДИУС:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_explosion_radius: 'РАДИУС ВЗРЫВА:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_movespeed_slow: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_attack_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_slow_duration: 'ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_damage: 'УРОН:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_damage_scepter: 'УРОН СО СКИПЕТРОМ:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_movespeed_slow_scepter: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ СО СКИПЕТРОМ:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_attack_slow_scepter: 'ЗАМЕДЛЕНИЕ АТАКИ СО СКИПЕТРОМ:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_chance_to_frostbite_pct: '%ШАНС НА FROSTBITE:'
 
 DOTA_Tooltip_ability_ability_empty: Слот для способности
 

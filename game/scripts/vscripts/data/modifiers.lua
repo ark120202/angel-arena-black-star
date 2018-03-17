@@ -4,7 +4,6 @@ MODIFIERS_DEATH_PREVENTING = {
 	"modifier_abaddon_aphotic_shield",
 	"modifier_abaddon_borrowed_time",
 	"modifier_nyx_assassin_spiked_carapace",
-	"modifier_crystal_maiden_glacier_tranqulity_buff",
 	"modifier_skeleton_king_reincarnation_life_saver",
 	"modifier_skeleton_king_reincarnation_ally",
 	"modifier_item_aegis_arena",

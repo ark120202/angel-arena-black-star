@@ -75,25 +75,6 @@ DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown: Reincarnation Cooldo
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown_Description: Reincarnation disabled.
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow: Reincarnate
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow_Description: Affected by Wraith King's Reincarnation. Move speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%.
-DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_buff: Glacier Tranqulity
-DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_buff_Description: Can't receive and can't deal any damage.
-DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_debuff: Glacier Tranqulity
-DOTA_Tooltip_modifier_crystal_maiden_glacier_tranqulity_debuff_Description: Can't receive and can't deal any damage.
-
-DOTA_Tooltip_modifier_crystal_nova_slow_arena: Crystal Nova
-DOTA_Tooltip_modifier_crystal_nova_slow_arena_Description: 'Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-DOTA_Tooltip_modifier_frost_bite_root_arena: Frostbite
-DOTA_Tooltip_modifier_frost_bite_root_arena_Description: Cannot move or attack. Taking pereodic damage every half-second.
-DOTA_Tooltip_modifier_frost_bite_root_arena_aura_effect: Frostbite slow
-DOTA_Tooltip_modifier_frost_bite_root_arena_aura_effect_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
-DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_caster_arena: Brilliance Aura
-DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_caster_arena_Description: 'Adds %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regeneration, %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% intellect and %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% movement speed.'
-DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_effect_arena: Brilliance Aura
-DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_effect_arena_Description: 'Adds %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regeneration, %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% intellect and %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% movement speed.'
-DOTA_Tooltip_modifier_freezing_field_debuff_arena: Freezing Field Slow
-DOTA_Tooltip_modifier_freezing_field_debuff_arena_Description: 'Movement speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-DOTA_Tooltip_modifier_freezing_field_debuff_scepter_arena: Freezing Field Slow
-DOTA_Tooltip_modifier_freezing_field_debuff_scepter_arena_Description: 'Movement speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 
 DOTA_Tooltip_ability_casino_bitch_passive: Casino Bitch
 DOTA_Tooltip_ability_casino_bitch_passive_Description: 'Gives you bonuses, if you''ll pay for them.'
@@ -137,49 +118,6 @@ DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_slow_duration: 'SLOW DURA
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_vision_radius: 'VISION RADIUS:'
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_radius_scepter: 'SCEPTER REINCARNATION RADIUS:'
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_ally_cooldown_scepter: 'COOLDOWN ON ALLIES:'
-DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity: Glacier Tranqulity
-DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity_Description: Fills target allied or enemy unit with icy calm. Under it's influence unit can't receive and can't deal any damage.
-DOTA_Tooltip_ability_crystal_maiden_glacier_tranqulity_duration: 'DURATION:'
-
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena: Crystal Nova
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_Description: 'A burst of damaging frost slows enemy movement and attack rate in the targeted area. Also, creates icy wall that prevents everyone from passing through it.'
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_duration: 'DURATION:'
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_radius: 'RADIUS:'
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_movespeed_slow: '%MOVEMENT SLOW:'
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_attackspeed_slow: 'ATTACK SLOW:'
-DOTA_Tooltip_ability_crystal_maiden_crystal_nova_arena_block_duration: 'ICE WALL DURATION:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena: Frostbite
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_Description: 'Encases an enemy unit in ice, prohibiting movement and attack, while dealing %damage_per_second_tooltip% damage every half-second. Lasts 10 seconds on creeps. Also, everyone near affected by frostbite unit will get attack speed and movement speed slow.'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_Note0: Blink abilities cannot be used while under the affects of Frostbite.
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_damage_per_second_tooltip: 'DAMAGE PER SECOND:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_duration: 'HERO DURATION:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_creep_duration: 'CREEP DURATION:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_radius: 'SLOW RADIUS:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_attack_speed: 'ATTACK SPEED SLOW:'
-DOTA_Tooltip_ability_crystal_maiden_frostbite_arena_aura_movement_speed_pct: '%MOVEMENT SPEED SLOW:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena: Brilliance Aura
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_Description: 'Gives additional mana regeneration, intellect and movement speed to all friendly units on the map. This bonus is increased for Crystal Maiden.'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_mana_regen: 'ALLY MANA REGEN:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_bonus_intellect: 'ALLY BONUS INTELLECT:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_bonus_movespeed_pct: '%ALLY BONUS MOVE SPEED:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_mana_regen: 'SELF MANA REGEN:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_bonus_intellect: 'SELF BONUS INTELLECT:'
-DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_arena_self_bonus_movespeed_pct: '%SELF BONUS MOVE SPEED:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena: Freezing Field
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Description: 'CHANNELED - Surrounds Crystal Maiden with random icy explosions that slow enemies and deal massive damage and, with small chance, freeze enemy with Frostbite of it''s current level. Lasts %duration_tooltip% seconds.'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_aghanim_description: 'Hides Crystal Maiden from everyone, making she invulnerable. Also, increases damage and slow.'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Note0: 'The slow is applied on all enemies in the radius, even if they aren''t hit by an explosion (lasts 1 second).'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_Note1: 'Every 0.1 second an explosion occurs, for a total of 100 explosions.'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_radius: 'RADIUS:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_explosion_radius: 'EXPLOSION RADIUS:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_movespeed_slow: '%MOVEMENT SLOW:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_attack_slow: 'ATTACK SLOW:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_slow_duration: 'SLOW DURATION:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_damage: 'DAMAGE:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_damage_scepter: 'SCEPTER DAMAGE:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_movespeed_slow_scepter: '%SCEPTER MOVEMENT SLOW:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_attack_slow_scepter: 'SCEPTER ATTACK SLOW:'
-DOTA_Tooltip_ability_crystal_maiden_freezing_field_arena_chance_to_frostbite_pct: '%CHANCE TO FROSTBITE:'
 
 DOTA_Tooltip_ability_ability_empty: Empty Ability Slot
 DOTA_Tooltip_ability_ability_empty_Description: ''
