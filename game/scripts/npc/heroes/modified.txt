@@ -65,29 +65,6 @@
 		"AttackRate"	"1.8"
 	}
 
-	"npc_dota_hero_warlock"
-	{
-		"override_hero"	"npc_dota_hero_warlock"
-		"Changed"	"1"
-		"Ability1"	"warlock_fatal_bonds_arena"
-		"Ability2"	"warlock_shadow_word_arena"
-		"Ability3"	"warlock_upheaval_arena"
-		"Ability4"	"generic_hidden"
-		"Ability5"	"generic_hidden"
-		"Ability6"	"warlock_rain_of_chaos_arena"
-		"Ability7"	""
-		"Ability8"	""
-		"Ability9"	""
-		"Ability10"	""
-		"Ability11"	""
-		"Ability12"	""
-		"Ability13"	""
-		"Ability14"	""
-		"Ability15"	""
-		"Ability16"	""
-		"AttackRate"	"1.6"
-	}
-
 	"npc_dota_hero_crystal_maiden"
 	{
 		"override_hero"	"npc_dota_hero_crystal_maiden"

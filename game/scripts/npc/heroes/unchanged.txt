@@ -670,4 +670,10 @@
 		"override_hero"	"npc_dota_hero_wisp"
 		"AttackRate"	"1.5"
 	}
+
+	"npc_dota_hero_warlock"
+	{
+		"override_hero"	"npc_dota_hero_warlock"
+		"AttackRate"	"1.6"
+	}
 }

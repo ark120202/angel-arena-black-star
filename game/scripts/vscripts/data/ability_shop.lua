@@ -1,6 +1,6 @@
 ABILITY_SHOP_BANNED = {
 	["obsidian_destroyer_essence_aura"] = { "nevermore_shadowraze3", "nevermore_shadowraze2", "nevermore_shadowraze1", "tinker_rearm_arena", "rocket_barrage_arena", "storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "shadow_demon_shadow_poison", "saber_mana_burst", },
-	["batrider_sticky_napalm"] = { "nevermore_shadowraze3", "nevermore_shadowraze2", "nevermore_shadowraze1", "rocket_barrage_arena", "sandking_sand_storm", "shadow_shaman_shackles", "doom_bringer_scorched_earth", "venomancer_venomous_gale", "venomancer_poison_nova", "ember_spirit_flame_guard", "weaver_the_swarm", "dark_seer_ion_shell", "warlock_fatal_bonds_arena", "spectre_dispersion", "shadow_demon_shadow_poison", },
+	["batrider_sticky_napalm"] = { "nevermore_shadowraze3", "nevermore_shadowraze2", "nevermore_shadowraze1", "rocket_barrage_arena", "sandking_sand_storm", "shadow_shaman_shackles", "doom_bringer_scorched_earth", "venomancer_venomous_gale", "venomancer_poison_nova", "ember_spirit_flame_guard", "weaver_the_swarm", "dark_seer_ion_shell", "spectre_dispersion", "shadow_demon_shadow_poison", },
 	["earthshaker_aftershock"] = { "nevermore_shadowraze3", "nevermore_shadowraze2", "nevermore_shadowraze1", "monkey_king_mischief", "tinker_rearm_arena", "rocket_barrage_arena", "obsidian_destroyer_arcane_orb", "storm_spirit_ball_lightning", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "zuus_arc_lightning", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "bristleback_quill_spray", "bristleback_viscous_nasal_goo", "shadow_demon_shadow_poison", "jakiro_dual_breath", "saber_mana_burst", },
 	["zuus_static_field"] = { "nevermore_shadowraze3", "nevermore_shadowraze2", "nevermore_shadowraze1", "monkey_king_mischief", "tinker_rearm_arena", "rocket_barrage_arena", "storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "bristleback_viscous_nasal_goo", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "shadow_demon_shadow_poison", "jakiro_dual_breath", "saber_mana_burst", },
 	["storm_spirit_overload"] = { "troll_warlord_berserkers_rage", "wisp_spirits_out", "wisp_spirits_in", "wisp_overcharge", "rocket_barrage_arena", "cherub_synthesis", "pudge_rot_arena", "pudge_rot", "skeleton_king_vampiric_aura", "witch_doctor_voodoo_restoration", "leshrac_pulse_nova", "wisp_overcharge", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "bristleback_viscous_nasal_goo", "shadow_demon_shadow_poison", "jakiro_dual_breath", "saber_mana_burst", },
@@ -53,7 +53,6 @@ ABILITY_SHOP_DATA = {
 	["ember_spirit_sleight_of_fist"] = { cost = 8, },
 	["flak_cannon_arena"] = { cost = 4, },
 	["dark_seer_ion_shell"] = { cost = 5, },
-	["warlock_fatal_bonds_arena"] = { cost = 2, },
 	["spectre_dispersion"] = { cost = 3, },
 	["rocket_barrage_arena"] = { cost = 2, },
 	["keeper_of_the_light_illuminate"] = { cost = 2, },
@@ -69,7 +68,6 @@ ABILITY_SHOP_DATA = {
 	["venomancer_venomous_gale"] = { cost = 2, },
 	["techies_land_mines"] = { cost = 2, },
 	["bloodseeker_bloodrage"] = { cost = 2, },
-	["warlock_shadow_wordwarlock"] = { cost = 2, },
 	["tiny_avalanche"] = { cost = 2, },
 	["tiny_toss"] = { cost = 2, },
 	["tiny_craggy_exterior"] = { cost = 2, },

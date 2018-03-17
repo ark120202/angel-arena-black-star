@@ -158,7 +158,6 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 	["enigma_midnight_pulse"] = GetAbilitySpecial("enigma_midnight_pulse", "radius"),
 	["abyssal_underlord_firestorm"] = GetAbilitySpecial("abyssal_underlord_firestorm", "radius"),
 	["skywrath_mage_mystic_flare"] = GetAbilitySpecial("skywrath_mage_mystic_flare", "radius"),
-	["warlock_upheaval_arena"] = GetAbilitySpecial("warlock_upheaval_arena", "aoe"),
 }
 
 PERCENT_DAMAGE_MODIFIERS = {

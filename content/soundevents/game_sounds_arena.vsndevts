@@ -153,36 +153,6 @@
 	}
 }
 
-"Arena.Hero_Warlock.Upheaval"
-{
-	"operator_stacks"
-	{
-		"update_stack"
-		{
-			"reference_operator"
-			{
-				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
-				"operator_variables"
-				{
-					"vsnd_files"
-					{
-						"value"
-						{
-							"value0"	"sounds/weapons/hero/warlock/warlock_upheaval.vsnd"
-						}
-					}
-
-					"volume"			{ "value"	"1.000000" }
-					"pitch"				{ "value"	"1.000000" }
-					"soundlevel"		{ "value"	"100.000000" }
-					"distance_max"		{ "value"	"1600.000000" }
-				}
-			}
-		}
-	}
-}
-
 "Arena.Items.SteamFootgear.Activate"
 {
 	"operator_stacks"
