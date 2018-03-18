@@ -74,7 +74,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_lifesteal",
 			"item_shadow_amulet",
 			"item_ghost",
-			"item_blink_arena",
+			"item_blink",
 			"item_shard_str_extreme",
 			"item_shard_agi_extreme",
 			"item_shard_int_extreme",

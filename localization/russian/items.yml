@@ -16,11 +16,6 @@ DOTA_Tooltip_ability_item_heart_arena_Lore: 'Сохранившееся серд
 DOTA_Tooltip_ability_item_heart_arena_bonus_strength: +$str
 DOTA_Tooltip_ability_item_heart_arena_bonus_health: +$health
 DOTA_Tooltip_ability_item_heart_arena_health_regen_percent_per_second: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
-DOTA_Tooltip_ability_item_blink_arena: Blink Dagger
-DOTA_Tooltip_ability_item_blink_arena_Description: '<h1>Активируемая: Blink</h1> Телепортирует к указанной точке на расстоянии до %blink_range% единиц. Если вы получите урон, то не сможете использовать Blink Dagger в течение %blink_damage_cooldown% сек.'
-DOTA_Tooltip_ability_item_blink_arena_Lore: 'Легендарный кинжал, использовавшийся самым быстрым убийцей, когда-либо ходившим по земле.'
-DOTA_Tooltip_ability_item_blink_arena_Note0: Применение на себя переместит вас в сторону фонтана вашей команды.
-DOTA_Tooltip_ability_item_blink_arena_Note1: 'Если использовать Blink для скачка на дистанцию больше максимальной, его дальность сократится до 80% от максимальной.'
 
 DOTA_Tooltip_ability_item_casino_coin: Casino Coin
 DOTA_Tooltip_ability_item_casino_coin_Description: Может быть использовано в слотмашине или для оплаты различных услуг.

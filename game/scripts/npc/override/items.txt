@@ -1,5 +1,10 @@
 "DOTAAbilities"
 {
+	"item_blink"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 	"item_dust"
 	{
 		"SecretShop"					"0"
@@ -1015,7 +1020,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"poison_duration"		"2.5"
-			}			
+			}
 		}
 	}
 	"item_recipe_ancient_janggo"
@@ -1145,7 +1150,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"replenish_amount"		"250"
-			}	
+			}
 		}
 	}
 	"item_recipe_travel_boots_2"

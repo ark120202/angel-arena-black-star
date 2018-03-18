@@ -7,7 +7,6 @@
 	"item_river_painter5"			"REMOVE"
 	"item_river_painter6"			"REMOVE"
 	"item_river_painter7"			"REMOVE"
-	"item_blink"					"REMOVE"
 	"item_recipe_heart"				"REMOVE"
 	"item_heart"					"REMOVE"
 	"item_recipe_moon_shard"		"REMOVE"

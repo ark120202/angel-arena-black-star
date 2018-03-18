@@ -528,82 +528,6 @@
 		}
 	}
 
-	"item_blink_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityTextureName"			"item_blink"
-		"FightRecapLevel"				"1"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"12.0"
-		"AbilityManaCost"				"0"
-		"ItemCost"						"2250"
-		"ItemShopTags"					"teleport"
-		"ItemQuality"					"component"
-		"ItemAliases"					"blink dagger"
-		"SideShop"						"1"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySharedCooldown" 		"item_blink"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"max_blink_range"				"1200"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"blink_range_clamp"				"960"  //When attempting to blink a distance greater than max_blink_range, the caster blinks this distance in the targeted direction.
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"blink_damage_cooldown"			"3"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"items/item_blink.lua"
-				"Function"				"item_blink_arena_on_spell_start"
-				"Target"				"POINT"
-				"MaxBlinkRange"			"%max_blink_range"
-				"BlinkRangeClamp"		"%blink_range_clamp"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_blink_arena_damage_cooldown"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"OnTakeDamage"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/item_blink.lua"
-						"Function"				"modifier_item_blink_arena_damage_cooldown_on_take_damage"
-						"BlinkDamageCooldown"	"%blink_damage_cooldown"
-						"Damage"				"%attack_damage"
-					}
-				}
-			}
-		}
-	}
-
 	"item_recipe_heart_arena"
 	{
 		"BaseClass"						"item_datadriven"
@@ -2743,9 +2667,8 @@
 		"ItemResult"					"item_blink_staff"
 		"ItemRequirements"
 		{
-			"01"						"item_blink_arena;item_force_staff;item_moon_dust"
+			"01"						"item_blink;item_force_staff;item_moon_dust"
 		}
-
 	}
 
 	"item_blink_staff"
