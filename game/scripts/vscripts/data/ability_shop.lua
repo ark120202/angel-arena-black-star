@@ -18,7 +18,7 @@ ABILITY_SHOP_BANNED_GROUPS = {
 		"troll_warlord_berserkers_rage",
 		"slardar_bash",
 		"spirit_breaker_greater_bash",
-		"faceless_void_time_lock_arena",
+		"faceless_void_time_lock",
 	},
 	{
 		"antimage_blink",
@@ -143,7 +143,6 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"phoenix_sun_ray_toggle_move_empty",
 	"ogre_magi_unrefined_fireblast",
 	"keeper_of_the_light_spirit_form",
-	"faceless_void_time_freeze",
 	"mirratie_sixth_sense",
 	"omniknight_select_allies",
 	"wisp_spirits_in",

@@ -67,9 +67,6 @@ MOVEMENT_SPEED_MODIFIERS = {
 	modifier_item_scythe_of_sun_hex = function(unit)
 		return unit:FindModifierByName("modifier_item_scythe_of_sun_hex"):GetModifierMoveSpeed_Limit()
 	end,
-	modifier_chronosphere_speed_lua = function(unit)
-		return unit:FindModifierByName("modifier_chronosphere_speed_lua"):GetModifierMoveSpeed_Limit()
-	end,
 	modifier_destroyer_frenzy = function(unit)
 		return unit:FindModifierByName("modifier_destroyer_frenzy"):GetModifierMoveSpeed_Limit()
 	end,
