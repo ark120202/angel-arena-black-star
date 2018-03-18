@@ -6651,43 +6651,6 @@
 		}
 	}
 
-	"item_radio_car"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_arena/radio_car"
-		"ItemPurchasable"				"0"
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SummonUnit"
-				"max_units"		"1"
-				"summon_random_radius"	"100"
-				"summoned"				"npc_arena_radio_car"
-				"modifiers_datadriven"	"modifier_item_radio_car"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_radio_car"
-			{
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-
-				"States"
-				{
-					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
 	"item_recipe_blade_of_discord"
 	{
 		"BaseClass"						"item_datadriven"

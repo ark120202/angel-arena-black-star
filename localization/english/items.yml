@@ -1233,9 +1233,6 @@ DOTA_Tooltip_ability_item_angel_wings_abonus_attack_range: 'FLIGHT ATTACK RANGE:
 DOTA_Tooltip_modifier_item_angel_wings_active: Flight
 DOTA_Tooltip_modifier_item_angel_wings_active_Description: 'Has ability to go through obstructions, attack range increased by %dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS%'
 
-DOTA_Tooltip_ability_item_radio_car: Radio Car
-npc_arena_radio_car: Radio Car
-
 DOTA_Tooltip_ability_item_blade_of_discord: Blade of Discord
 DOTA_Tooltip_ability_item_blade_of_discord_Description: '<h1>Active: Ether Weakness</h1> Emits a weakening blast which converts all caught enemies to ethereal form, increasing any incoming magic damage they take, while rendering them immune to physical damage and unable to attack, and dealing them %debuff_stats_multiplier%x your all attributes + %debuff_damage_base% as pure damage. Lasts %debuff_duration% seconds.'
 DOTA_Tooltip_ability_item_blade_of_discord_bonus_health_regen: +$hp_regen
