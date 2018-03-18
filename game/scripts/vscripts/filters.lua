@@ -94,23 +94,6 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		end
 	end
 
-	if filterTable.position_x ~= 0 and filterTable.position_y ~= 0 then
-		local hasLightEffect =
-			unit:HasModifier("modifier_item_casino_drug_pill3_debuff") or
-			unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 8
-		local applyEffect =
-			(RandomInt(0, 1) == 1 and hasLightEffect) or
-			unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 16
-		if applyEffect then
-			local heroVector = unit:GetAbsOrigin()
-			local orderVector = Vector(filterTable.position_x, filterTable.position_y, 0)
-			local diff = orderVector - heroVector
-			local newVector = heroVector + (diff * -1)
-			filterTable.position_x = newVector.x
-			filterTable.position_y = newVector.y
-		end
-	end
-
 	return true
 end
 

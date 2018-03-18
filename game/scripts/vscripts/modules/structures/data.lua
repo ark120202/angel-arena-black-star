@@ -21,9 +21,6 @@ TEAM_HEALER_MODELS = {
 
 ShopsData = {
 	Secret = {
-		"item_casino_drug_pill1",
-		"item_casino_drug_pill2",
-		"item_casino_drug_pill3",
 		"item_casino_coin",
 	},
 	Duel = {

@@ -149,33 +149,6 @@ DOTA_Tooltip_ability_item_refresher_arena_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_refresher_arena_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_refresher_arena_bonus_damage: +$damage
 
-DOTA_Tooltip_ability_item_casino_drug_pill1: Blue Pill
-DOTA_Tooltip_ability_item_casino_drug_pill1_Description: '<h1>Active: Eat</h1> Eat that pill to gain bonuses and debuffs for some time. Each time you use this you will get a stack of addiction. Each stack of addiction increases debuffs duration. If you get more than 8 stack of addiction you will get permanent debuff, if you get more than 8 stack of addiction you will get much greater debuff.'
-DOTA_Tooltip_modifier_item_casino_drug_pill1_buff: Blue Pill Buff
-DOTA_Tooltip_modifier_item_casino_drug_pill1_buff_Description: Something good from it.
-DOTA_Tooltip_modifier_item_casino_drug_pill1_debuff: Blue Pill Debuff
-DOTA_Tooltip_modifier_item_casino_drug_pill1_debuff_Description: Everything bad from it.
-DOTA_Tooltip_modifier_item_casino_drug_pill1_addiction: Blue Pill Addiction
-DOTA_Tooltip_modifier_item_casino_drug_pill1_addiction_Description: It's time to stop.
-
-DOTA_Tooltip_ability_item_casino_drug_pill2: Red Pill
-DOTA_Tooltip_ability_item_casino_drug_pill2_Description: '<h1>Active: Eat</h1> Eat that pill to gain bonuses and debuffs for some time. Each time you use this you will get a stack of addiction. Each stack of addiction increases debuffs duration. If you get more than 8 stack of addiction you will get permanent debuff, if you get more than 8 stack of addiction you will get much greater debuff.'
-DOTA_Tooltip_modifier_item_casino_drug_pill2_buff: Red Pill Buff
-DOTA_Tooltip_modifier_item_casino_drug_pill2_buff_Description: Something good from it.
-DOTA_Tooltip_modifier_item_casino_drug_pill2_debuff: Red Pill Debuff
-DOTA_Tooltip_modifier_item_casino_drug_pill2_debuff_Description: Everything bad from it.
-DOTA_Tooltip_modifier_item_casino_drug_pill2_addiction: Red Pill Addiction
-DOTA_Tooltip_modifier_item_casino_drug_pill2_addiction_Description: It's time to stop.
-
-DOTA_Tooltip_ability_item_casino_drug_pill3: Black Pill
-DOTA_Tooltip_ability_item_casino_drug_pill3_Description: '<h1>Active: Eat</h1> Eat that pill to gain bonuses and debuffs for some time. Each time you use this you will get a stack of addiction. Each stack of addiction increases debuffs duration. If you get more than 8 stack of addiction you will get permanent debuff, if you get more than 8 stack of addiction you will get much greater debuff.'
-DOTA_Tooltip_modifier_item_casino_drug_pill3_buff: Black Pill Buff
-DOTA_Tooltip_modifier_item_casino_drug_pill3_buff_Description: Something good from it.
-DOTA_Tooltip_modifier_item_casino_drug_pill3_debuff: Black Pill Debuff
-DOTA_Tooltip_modifier_item_casino_drug_pill3_debuff_Description: Everything bad from it.
-DOTA_Tooltip_modifier_item_casino_drug_pill3_addiction: Black Pill Addiction
-DOTA_Tooltip_modifier_item_casino_drug_pill3_addiction_Description: It's time to stop.
-
 DOTA_Tooltip_ability_item_manta_arena: Manta Style
 DOTA_Tooltip_ability_item_manta_arena_Description: |-
   <h1>Active: Mirror Image</h1> Creates %images_count% images of your hero that last %illusion_duration% seconds. Images deal %illusion_damage_percent_outgoing_tooltip%%% damage and take %illusion_damage_percent_incoming_tooltip%%% damage.

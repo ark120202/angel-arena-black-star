@@ -140,33 +140,6 @@ DOTA_Tooltip_ability_item_refresher_arena_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_refresher_arena_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_refresher_arena_bonus_damage: +$damage
 
-DOTA_Tooltip_ability_item_casino_drug_pill1: Blue Pill
-DOTA_Tooltip_ability_item_casino_drug_pill1_Description: '<h1>Активируемая: Съесть</h1> Съесть эту таблетку чтобы получить положительные и отрицательные эффекты на время. Каждый раз, когда вы используете эту способность вы получаете стак зависимости. Каждый стак зависимости увеличивает длительность отрицательных эффектов. Если у вас более 8 стаков зависимости вы получите постоенный отрицательный эффект, когда у вас нет основного, если у вас более 16 стаков зависимости вы получите постоянный усиленный debuff.'
-DOTA_Tooltip_modifier_item_casino_drug_pill1_buff: Blue Pill Buff
-DOTA_Tooltip_modifier_item_casino_drug_pill1_buff_Description: Что-то хорошее от этого.
-DOTA_Tooltip_modifier_item_casino_drug_pill1_debuff: Blue Pill Debuff
-DOTA_Tooltip_modifier_item_casino_drug_pill1_debuff_Description: Всё плохое от этого.
-DOTA_Tooltip_modifier_item_casino_drug_pill1_addiction: Blue Pill Addiction
-DOTA_Tooltip_modifier_item_casino_drug_pill1_addiction_Description: 'Кажется, что тебе стоит завязать с этим.'
-
-DOTA_Tooltip_ability_item_casino_drug_pill2: Red Pill
-DOTA_Tooltip_ability_item_casino_drug_pill2_Description: '<h1>Активируемая: Съесть</h1> Съесть эту таблетку чтобы получить положительные и отрицательные эффекты на время. Каждый раз, когда вы используете эту способность вы получаете стак зависимости. Каждый стак зависимости увеличивает длительность отрицательных эффектов. Если у вас более 8 стаков зависимости вы получите постоенный отрицательный эффект, когда у вас нет основного, если у вас более 16 стаков зависимости вы получите постоянный усиленный debuff.'
-DOTA_Tooltip_modifier_item_casino_drug_pill2_buff: Red Pill Buff
-DOTA_Tooltip_modifier_item_casino_drug_pill2_buff_Description: Что-то хорошее от этого.
-DOTA_Tooltip_modifier_item_casino_drug_pill2_debuff: Red Pill Debuff
-DOTA_Tooltip_modifier_item_casino_drug_pill2_debuff_Description: Всё плохое от этого.
-DOTA_Tooltip_modifier_item_casino_drug_pill2_addiction: Red Pill Addiction
-DOTA_Tooltip_modifier_item_casino_drug_pill2_addiction_Description: 'Кажется, что тебе стоит завязать с этим.'
-
-DOTA_Tooltip_ability_item_casino_drug_pill3: Black Pill
-DOTA_Tooltip_ability_item_casino_drug_pill3_Description: '<h1>Активируемая: Съесть</h1> Съесть эту таблетку чтобы получить положительные и отрицательные эффекты на время. Каждый раз, когда вы используете эту способность вы получаете стак зависимости. Каждый стак зависимости увеличивает длительность отрицательных эффектов. Если у вас более 8 стаков зависимости вы получите постоенный отрицательный эффект, когда у вас нет основного, если у вас более 16 стаков зависимости вы получите постоянный усиленный debuff.'
-DOTA_Tooltip_modifier_item_casino_drug_pill3_buff: Black Pill Buff
-DOTA_Tooltip_modifier_item_casino_drug_pill3_buff_Description: Что-то хорошее от этого.
-DOTA_Tooltip_modifier_item_casino_drug_pill3_debuff: Black Pill Debuff
-DOTA_Tooltip_modifier_item_casino_drug_pill3_debuff_Description: Всё плохое от этого.
-DOTA_Tooltip_modifier_item_casino_drug_pill3_addiction: Black Pill Addiction
-DOTA_Tooltip_modifier_item_casino_drug_pill3_addiction_Description: 'Кажется, что тебе стоит завязать с этим.'
-
 DOTA_Tooltip_ability_item_manta_arena: Manta Style
 DOTA_Tooltip_ability_item_manta_arena_Description: |-
   <h1>Активируемая: Mirror Image</h1> Создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
