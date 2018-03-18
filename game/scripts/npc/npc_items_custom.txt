@@ -3,7 +3,6 @@
 #base "items/dagon.txt"
 #base "items/diffusal_blade.txt"
 #base "items/boss_drop.txt"
-#base "items/aether_lens.txt"
 #base "items/sange_yasha_nightshadow.txt"
 #base "items/splitshot.txt"
 #base "items/skadi.txt"
@@ -8736,7 +8735,7 @@
 		"ItemResult"					"item_ultimate_scepter_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_point_booster;item_blade_of_alacrity;item_ogre_axe;item_staff_of_wizardry;item_book_of_the_keeper;item_aether_lens_arena"
+			"01"						"item_point_booster;item_blade_of_alacrity;item_ogre_axe;item_staff_of_wizardry;item_book_of_the_keeper;item_aether_lens"
 		}
 	}
 
@@ -8809,7 +8808,7 @@
 		"ItemResult"					"item_angel_wings"
 		"ItemRequirements"
 		{
-			"01"						"item_steam_footgear;item_aether_lens_arena;item_ultimate_orb"
+			"01"						"item_steam_footgear;item_aether_lens;item_ultimate_orb"
 		}
 	}
 

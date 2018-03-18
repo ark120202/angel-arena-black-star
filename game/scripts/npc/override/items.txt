@@ -605,6 +605,16 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
+	"item_recipe_aether_lens"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_aether_lens"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 	"item_recipe_force_staff"
 	{
 		"SecretShop"					"0"

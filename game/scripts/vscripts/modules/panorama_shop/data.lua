@@ -134,6 +134,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_glimmer_cape",
 			"item_force_staff",
 			"item_veil_of_discord",
+			"item_aether_lens",
 			"item_necronomicon",
 			"item_cyclone",
 			"item_solar_crest",

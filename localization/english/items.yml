@@ -1516,12 +1516,6 @@ DOTA_Tooltip_ability_item_ultimate_scepter_arena_spell_amp_pct: '%SPELL DAMAGE A
 DOTA_Tooltip_ability_item_orb_of_essences: Orb of Essences
 DOTA_Tooltip_ability_item_orb_of_essences_bonus_all: +$all
 
-DOTA_Tooltip_ability_item_aether_lens_arena: Aether Lens
-DOTA_Tooltip_ability_item_aether_lens_arena_Description: '<h1>Passive: Aethereal Focus</h1> Increases targeted spell and item cast range by %cast_range_bonus%.'
-DOTA_Tooltip_ability_item_aether_lens_arena_bonus_mana: +$mana
-DOTA_Tooltip_ability_item_aether_lens_arena_bonus_mana_regen: +$mana_regen
-DOTA_Tooltip_ability_item_aether_lens_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
-
 DOTA_Tooltip_ability_item_wand_of_midas: Wand of Midas
 DOTA_Tooltip_ability_item_wand_of_midas_Description: '<h1>Active: Gold Charge</h1> Gives you some gold and instantly restores health and mana based on the number of charges stored. Gains a charge (max %max_charges%) whenever whenever a nearby enemy uses an ability.'
 DOTA_Tooltip_ability_item_wand_of_midas_bonus_all: +$all
