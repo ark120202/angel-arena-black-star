@@ -27,3 +27,7 @@ end
 function CDOTA_Buff:GetSpecialValueFor(name)
 	return self.specials[name]
 end
+
+function DeclarePassiveAbility(name, modifier)
+	_G[name] = { GetIntrinsicModifierName = function() return modifier end }
+end

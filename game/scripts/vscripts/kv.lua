@@ -320,23 +320,3 @@ function ModifyCreepDamage(keys)
 		})
 	end
 end
-
-function Cleave(keys)
-	if not keys.caster:IsRangedUnit() then
-		DoCleaveAttack(keys.caster, keys.target, keys.ability, keys.damage * keys.cleave_damage_percent * 0.01, keys.cleave_distance or keys.cleave_radius, keys.cleave_starting_width or keys.cleave_radius, keys.cleave_ending_width or keys.cleave_radius, keys.particle)
-	end
-end
-
-function CutTree(keys)
-	keys.target:CutTreeOrWard(keys.caster, keys.ability)
-end
-
---Hardcored now
-function KVCastFilter(keys)
-	local caster = keys.caster
-	local hTarget = keys.target
-	if not (hTarget:GetClassname() == "ent_dota_tree" or hTarget:IsCustomWard()) then
-		caster:Interrupt()
-		Containers:DisplayError(caster:GetPlayerOwnerID(), "dota_hud_error_cant_cast_on_non_tree_ward")
-	end
-end

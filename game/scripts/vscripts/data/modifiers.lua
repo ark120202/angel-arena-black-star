@@ -136,36 +136,6 @@ ATTACK_MODIFIERS = {
 }
 
 MODIFIER_PROC_PRIORITY = {
-	nightshadow = {
-		modifier_item_nightshadow_unique = 1,
-		modifier_item_nightshadow_and_sange = 2,
-		modifier_item_nightshadow_and_yasha_unique = 3,
-		modifier_item_splitshot_int_unique = 4,
-		modifier_item_three_spirits_blades_unique = 5,
-		modifier_item_splitshot_ultimate_unique = 6,
-		modifier_item_elemental_fury_unique = 7,
-	},
-	yasha = {
-		modifier_item_yasha_arena_unique = 1,
-		modifier_item_sange_and_yasha_unique = 2,
-		modifier_item_nightshadow_and_yasha_unique = 3,
-		modifier_item_splitshot_agi_unique = 4,
-		modifier_item_manta_arena_unique = 5,
-		modifier_item_three_spirits_blades_unique = 6,
-		modifier_item_diffusal_style_unique = 7,
-		modifier_item_splitshot_ultimate_unique = 8,
-		modifier_item_elemental_fury_unique = 9,
-	},
-	sange = {
-		modifier_item_sange_arena_unique = 1,
-		modifier_item_sange_and_yasha_unique = 2,
-		modifier_item_nightshadow_and_sange = 3,
-		modifier_item_heavens_halberd_arena_unique = 4,
-		modifier_item_splitshot_str_unique = 5,
-		modifier_item_three_spirits_blades_unique = 6,
-		modifier_item_splitshot_ultimate_unique = 7,
-		modifier_item_elemental_fury_unique = 8,
-	},
 	desolator = {
 		modifier_item_desolator2_arena = 1,
 		modifier_item_desolator3_arena = 2,

@@ -1101,6 +1101,16 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
+	"item_recipe_heavens_halberd"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_heavens_halberd"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 	"item_recipe_ring_of_aquila"
 	{
 		"SecretShop"					"0"
@@ -1417,6 +1427,36 @@
 		"SideShop"						"0"
 	}
 	"item_nullifier"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_sange"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_sange"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_yasha"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_yasha"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_sange_and_yasha"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_sange_and_yasha"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"

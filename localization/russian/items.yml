@@ -1,15 +1,3 @@
-Variables:
-  modifier_item_yasha_arena_fast_attack: Fast Attack
-  modifier_item_yasha_arena_fast_attack_Description: 'Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-  modifier_item_sange_maim: Maim
-  modifier_item_sange_maim_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-  item_yasha_Description: '<h1>Пассивная: Fast Attack</h1> Каждая атака повышает скорость атаки и передвижения на %fast_attack_duration% секунд. Эффект может складываться до %fast_attack_max_stacks% стаков.'
-  item_sange_Description: '<h1>Пассивная: Maim</h1> Каждая атака получает шанс нанести травму, уменьшающую скорость передвижения и атаки врага на %maim_duration% сек. Эффект может складываться до %maim_max_stacks% стаков.'
-  item_nightshadow_Description: '<h1>Пассивная: Магическое Искусство</h1> Каждая атака имеет шанс уменьшеть перезарядку всех способностей на %cooldown_reduction% секунд.'
-  item_yasha_movespeed_note: |-
-
-    Бонусы к скорости передвижения от нескольких предметов на основе Yasha не складываются.
-
 DOTA_Tooltip_ability_item_casino_coin: Casino Coin
 DOTA_Tooltip_ability_item_casino_coin_Description: Может быть использовано в слотмашине или для оплаты различных услуг.
 
@@ -69,116 +57,6 @@ DOTA_Tooltip_ability_item_shard_attackspeed_bonus_attackspeed: +$attack
   - DOTA_Tooltip_ability_item_shard_primal_large_Description
   - DOTA_Tooltip_ability_item_shard_attackspeed_Description
 
-DOTA_Tooltip_ability_item_yasha_arena: Yasha
-DOTA_Tooltip_ability_item_yasha_arena_Description: |-
-  {lc:item_yasha_Description}
-  {lc:item_yasha_movespeed_note}
-DOTA_Tooltip_ability_item_yasha_arena_Lore: Yasha is regarded as the swiftest weapon ever created.
-DOTA_Tooltip_ability_item_yasha_arena_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_yasha_arena_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_yasha_arena_movement_speed_percent_bonus: '%+$move_speed'
-DOTA_Tooltip_ability_item_yasha_arena_bonus_attack_speed_buff: 'СКОРОСТЬ АТАКИ FAST ATTACK:'
-DOTA_Tooltip_ability_item_yasha_arena_movement_speed_percent_bonus_buff: '%СКОРОСТЬ ПЕРЕДВИЖЕНИЯ FAST ATTACK:'
-DOTA_Tooltip_ability_item_yasha_arena_maim_duration: 'ДЛИТЕЛЬНОСТЬ FAST ATTACK:'
-DOTA_Tooltip_modifier_item_yasha_arena_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_yasha_arena_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
-
-DOTA_Tooltip_ability_item_sange_arena: Sange
-DOTA_Tooltip_ability_item_sange_arena_Description: '{lc:item_sange_Description}'
-DOTA_Tooltip_ability_item_sange_arena_Lore: 'Sange is an unusually accurate weapon, seeking weak points automatically.'
-DOTA_Tooltip_ability_item_sange_arena_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_sange_arena_bonus_strength: +$str
-DOTA_Tooltip_ability_item_sange_arena_maim_chance: '%ШАНС НАНЕСТИ ТРАВМУ:'
-DOTA_Tooltip_ability_item_sange_arena_maim_movement_speed: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_item_sange_arena_maim_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_ability_item_sange_arena_maim_duration: 'ДЛИТЕЛЬНОСТЬ ТРАВМЫ:'
-DOTA_Tooltip_modifier_item_sange_arena_lesser_maim: '{lc:modifier_item_sange_maim}'
-DOTA_Tooltip_modifier_item_sange_arena_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
-
-DOTA_Tooltip_ability_item_nightshadow: Nightshadow
-DOTA_Tooltip_ability_item_nightshadow_Description: '{lc:item_nightshadow_Description}'
-DOTA_Tooltip_ability_item_nightshadow_Lore: Nightshadow an ancient weapon used by legendary archmages.
-DOTA_Tooltip_ability_item_nightshadow_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_nightshadow_proc_chance: '%ШАНС УМЕНЬШЕНИЯ:'
-DOTA_Tooltip_ability_item_nightshadow_cooldown_reduction: УМЕНЬШЕНИЕ ПЕРЕЗАРЯДКИ
-
-DOTA_Tooltip_ability_item_sange_and_yasha_arena: Sange & Yasha
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_Description: |-
-  {lc:item_sange_Description}
-  {lc:item_yasha_Description}
-  {lc:item_yasha_movespeed_note}
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_bonus_strength: +$str
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_movement_speed_percent_bonus: '%+$move_speed'
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_maim_chance: '%ШАНС НАНЕСТИ ТРАВМУ:'
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_maim_slow_movement: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_maim_slow_attack: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_maim_duration: 'ДЛИТЕЛЬНОСТЬ ТРАВМЫ:'
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_bonus_attack_speed_buff: 'СКОРОСТЬ АТАКИ FAST ATTACK:'
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_movement_speed_percent_bonus_buff: '%СКОРОСТЬ ПЕРЕДВИЖЕНИЯ FAST ATTACK:'
-DOTA_Tooltip_ability_item_sange_and_yasha_arena_fast_attack_duration: 'ДЛИТЕЛЬНОСТЬ FAST ATTACK:'
-DOTA_Tooltip_modifier_item_sange_and_yasha_lesser_maim: '{lc:modifier_item_sange_maim}'
-DOTA_Tooltip_modifier_item_sange_and_yasha_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
-DOTA_Tooltip_modifier_item_sange_and_yasha_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_sange_and_yasha_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
-
-DOTA_Tooltip_ability_item_nightshadow_and_sange: Nightshadow & Sange
-DOTA_Tooltip_ability_item_nightshadow_and_sange_Description: |-
-  {lc:item_sange_Description}
-  {lc:item_nightshadow_Description}
-DOTA_Tooltip_ability_item_nightshadow_and_sange_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_nightshadow_and_sange_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_nightshadow_and_sange_bonus_strength: +$str
-DOTA_Tooltip_ability_item_nightshadow_and_sange_proc_chance: '%ШАНС УМЕНЬШЕНИЯ:'
-DOTA_Tooltip_ability_item_nightshadow_and_sange_cooldown_reduction: УМЕНЬШЕНИЕ ПЕРЕЗАРЯДКИ
-DOTA_Tooltip_ability_item_nightshadow_and_sange_maim_chance: '%ШАНС НАНЕСТИ ТРАВМУ:'
-DOTA_Tooltip_ability_item_nightshadow_and_sange_maim_slow_movement: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_item_nightshadow_and_sange_maim_slow_attack: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_ability_item_nightshadow_and_sange_maim_duration: 'ДЛИТЕЛЬНОСТЬ ТРАВМЫ:'
-DOTA_Tooltip_modifier_item_nightshadow_and_sange_lesser_maim: '{lc:modifier_item_sange_maim}'
-DOTA_Tooltip_modifier_item_nightshadow_and_sange_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
-
-DOTA_Tooltip_ability_item_nightshadow_and_yasha: Nightshadow & Yasha
-DOTA_Tooltip_ability_item_nightshadow_and_yasha_Description: |-
-  {lc:item_yasha_Description}
-  {lc:item_nightshadow_Description}
-  {lc:item_yasha_movespeed_note}
-DOTA_Tooltip_ability_item_nightshadow_and_yasha_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_nightshadow_and_yasha_proc_chance: '%ШАНС УМЕНЬШЕНИЯ:'
-DOTA_Tooltip_ability_item_nightshadow_and_yasha_cooldown_reduction: УМЕНЬШЕНИЕ ПЕРЕЗАРЯДКИ
-DOTA_Tooltip_ability_item_nightshadow_and_yasha_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_nightshadow_and_yasha_movement_speed_percent_bonus: '%+$move_speed'
-DOTA_Tooltip_ability_item_nightshadow_and_yasha_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_nightshadow_and_yasha_bonus_attack_speed_buff: 'СКОРОСТЬ АТАКИ FAST ATTACK:'
-DOTA_Tooltip_ability_item_nightshadow_and_yasha_movement_speed_percent_bonus_buff: '%СКОРОСТЬ ПЕРЕДВИЖЕНИЯ FAST ATTACK:'
-DOTA_Tooltip_ability_item_nightshadow_and_yasha_fast_attack_duration: 'ДЛИТЕЛЬНОСТЬ FAST ATTACK:'
-DOTA_Tooltip_modifier_item_nightshadow_and_yasha_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_nightshadow_and_yasha_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
-
-DOTA_Tooltip_ability_item_three_spirits_blades: Three Spirits Blades
-DOTA_Tooltip_ability_item_three_spirits_blades_Description: |-
-  <h1>Пассивная: Greater Maim</h1> Каждая атака получает шанс %maim_chance%% нанести травму, уменьшающую скорость передвижения и атаки врага на %maim_duration% сек. Эффект может складываться до %maim_max_stacks% стаков.
-  {lc:item_yasha_Description}
-  {lc:item_nightshadow_Description}
-  {lc:item_yasha_movespeed_note}
-DOTA_Tooltip_ability_item_three_spirits_blades_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_three_spirits_blades_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_three_spirits_blades_bonus_strength: +$str
-DOTA_Tooltip_ability_item_three_spirits_blades_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_three_spirits_blades_movement_speed_percent_bonus: '%+$move_speed'
-DOTA_Tooltip_ability_item_three_spirits_blades_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_three_spirits_blades_proc_chance: '%ШАНС УМЕНЬШЕНИЯ:'
-DOTA_Tooltip_ability_item_three_spirits_blades_maim_slow_movement: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_item_three_spirits_blades_maim_slow_attack: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_ability_item_three_spirits_blades_bonus_attack_speed_buff: 'СКОРОСТЬ АТАКИ FAST ATTACK:'
-DOTA_Tooltip_ability_item_three_spirits_blades_movement_speed_percent_bonus_buff: '%СКОРОСТЬ ПЕРЕДВИЖЕНИЯ FAST ATTACK:'
-DOTA_Tooltip_modifier_item_three_spirits_blades_lesser_maim: '{lc:modifier_item_sange_maim}'
-DOTA_Tooltip_modifier_item_three_spirits_blades_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
-DOTA_Tooltip_modifier_item_three_spirits_blades_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_three_spirits_blades_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
-
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
   <h1>Активируемая: Unwilling Ritual</h1> Используется на крипов. Цель приносится в жертву для Думлинга. Думлинг перенемает способности принесенного в жертву существа и добавляет его здоровье, урон и запас маны к характеристикам Думлинга. Изначальные характеристики Думлинга: %doomling_health% здоровья, %doomling_mana% маны, %doomling_damage_min%-%doomling_damage_max% урона, %doomling_health_regen% регенерации здоровья, %doomling_mana_regen% регенерации маны. Герой не получит награды за убийство жертвы. Юниты, убитые Думлингом не будут приносить герою золото.
@@ -220,33 +98,6 @@ DOTA_Tooltip_ability_item_metamorphosis_elixir_Description: |-
 
   <font color='cyan'>Рейтинговая игра: может быть использовано лишь один раз.</font>
 DOTA_Tooltip_ability_item_metamorphosis_elixir_transformation_time: 'ДЛИТЕЛЬНОСТЬ ТРАНСФОРМАЦИИ:'
-
-DOTA_Tooltip_ability_item_nagascale_bow: Nagascale Bow
-DOTA_Tooltip_ability_item_nagascale_bow_Description: '<h1>Пассивная: Разделение атаки</h1> Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.'
-DOTA_Tooltip_ability_item_nagascale_bow_Note0: Иллюзии будут создавать эффекты атаки, но не будут наносить урон.
-DOTA_Tooltip_ability_item_nagascale_bow_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
-
-DOTA_Tooltip_ability_item_splitshot_ultimate: Идеальный Зачарованный Тактический Волшебный Лук Встроенных Клинков
-DOTA_Tooltip_ability_item_splitshot_ultimate_Description: |-
-  <h1>Пассивная: Разделение атаки</h1> Наносит процент от урона всем врагам в радиусе %range% единиц вокруг цели атаки. Не работает на героях ближнего боя.
-  <h1>Пассивная: Global Attack</h1> Ваши атаки с шансом %global_attack_chance%%% наносят процент от урона случайному противнику на карте.
-  <h1>Пассивная: Greater Maim</h1> Каждая атака получает %maim_chance%% шанс нанести травму, уменьшающую скорость передвижения на %maim_slow_movement%% и скорость атаки на %slow_attack% а %maim_duration% сек. Эффект может складываться до %maim_max_stacks% стаков.
-  <h1>Пассивная: Fast Attack</h1> Каждая атака повышает скорость передвижения на %movement_speed_percent_bonus_buff%% и скорость атаки на %bonus_attack_speed_buff% на %fast_attack_duration% секунд. Эффект может складываться до %fast_attack_max_stacks% стаков.
-  <h1>Пассивная: Магическое Искусство</h1> Каждая атака имеет %proc_chance%%% шанс уменьшеть перезарядку всех способностей на %cooldown_reduction% секунд.
-  {lc:item_yasha_movespeed_note}
-DOTA_Tooltip_ability_item_splitshot_ultimate_Note0: 'Иллюзии будут создавать эффекты атаки, но не будут наносить урон.'
-DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_strength: +$str
-DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_intelligence: +$int
-DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_splitshot_ultimate_movement_speed_percent_bonus: '%+$move_speed'
-DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_splitshot_ultimate_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_splitshot_ultimate_damage_percent: '%УРОН СОСЕДНИМ ЦЕЛЯМ:'
-DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim: '{lc:modifier_item_sange_maim}'
-DOTA_Tooltip_modifier_item_splitshot_ultimate_lesser_maim_Description: '{lc:modifier_item_sange_maim_Description}'
-DOTA_Tooltip_modifier_item_splitshot_ultimate_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_splitshot_ultimate_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
 
 DOTA_Tooltip_ability_item_edge_of_vyse: Edge Of Vyse
 DOTA_Tooltip_ability_item_edge_of_vyse_Description: '<h1>Активируемая: Vyse Walk</h1> Делает вас невидимым на время действия или до момента вашей атаки или использования заклинания. Пока Vyse Walk активна, вы движетесь на %windwalk_bonus_movement_speed_percentage%%% быстрее и можете проходить сквозь юнитов. Атака, раскрывающая невидимость, нанесет цели %windwalk_bonus_damage% дополнительного урона и превращает её в безобидную зверушку на %sheep_duration% секунд.'
@@ -319,23 +170,12 @@ DOTA_Tooltip_modifier_item_casino_drug_pill3_addiction_Description: 'Кажет�
 DOTA_Tooltip_ability_item_manta_arena: Manta Style
 DOTA_Tooltip_ability_item_manta_arena_Description: |-
   <h1>Активируемая: Mirror Image</h1> Создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
-  {lc:item_yasha_Description}
-  {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_manta_arena_Note0: 'Тратит 0,1 секунды на произношение заклинания, во время которого вы неуязвимы.'
 DOTA_Tooltip_ability_item_manta_arena_Note1: Использование снимает многие эффекты.
-DOTA_Tooltip_ability_item_manta_arena_bonus_strength: +$str
-DOTA_Tooltip_ability_item_manta_arena_bonus_agility: +$agi
-DOTA_Tooltip_ability_item_manta_arena_bonus_intelligence: +$int
-DOTA_Tooltip_ability_item_manta_arena_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_manta_arena_bonus_movement_speed_percentage: '%+$move_speed'
 DOTA_Tooltip_ability_item_manta_arena_images_count: 'ЧИСЛО ИЛЛЮЗИЙ:'
 DOTA_Tooltip_ability_item_manta_arena_illusion_duration: 'ВРЕМЯ ЖИЗНИ ИЛЛЮЗИЙ:'
 DOTA_Tooltip_ability_item_manta_arena_illusion_damage_percent_outgoing_tooltip: '%УРОН ИЛЛЮЗИЙ:'
 DOTA_Tooltip_ability_item_manta_arena_illusion_damage_percent_incoming_tooltip: '%УРОН ПО ИЛЛЮЗИЯМ:'
-DOTA_Tooltip_ability_item_manta_arena_bonus_attack_speed_buff: 'СКОРОСТЬ АТАКИ FAST ATTACK:'
-DOTA_Tooltip_ability_item_manta_arena_movement_speed_percent_bonus_buff: '%СКОРОСТЬ ПЕРЕДВИЖЕНИЯ FAST ATTACK:'
-DOTA_Tooltip_modifier_item_manta_arena_fast_attack: '{lc:modifier_item_yasha_arena_fast_attack}'
-DOTA_Tooltip_modifier_item_manta_arena_fast_attack_Description: '{lc:modifier_item_yasha_arena_fast_attack_Description}'
 
 DOTA_Tooltip_ability_item_diffusal_blade_arena: Diffusal Blade I
 DOTA_Tooltip_ability_item_diffusal_blade_arena_Description: |-
@@ -428,15 +268,11 @@ DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   <h1>Активируемая: Mirror Image</h1> Создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
   <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn_pct%%% сожженной маны в виде чистого урона. Также восстанавливает вам %feedback_mana_drain_pct%%% маны от сожженной маны противника.
   <h1>Пассивная: Purge</h1> Каждая атака имеет %purge_chance_pct%%% шанс снять положительные эффекты, приковать к земле на %purge_root_duration% сек. и замедлить противника на %purge_slow_duration% секунд.
-  {lc:item_yasha_Description}
-  {lc:item_yasha_movespeed_note}
 DOTA_Tooltip_ability_item_diffusal_style_Note0: 'Тратит 0,1 секунды на произношение заклинания, во время которого вы неуязвимы.'
 DOTA_Tooltip_ability_item_diffusal_style_Note1: Использование снимает многие эффекты.
 DOTA_Tooltip_ability_item_diffusal_style_bonus_attack_range: +к радиусу атаки
 DOTA_Tooltip_ability_item_diffusal_style_bonus_attack_speed_buff: 'СКОРОСТЬ АТАКИ FAST ATTACK:'
 DOTA_Tooltip_ability_item_diffusal_style_movement_speed_percent_bonus_buff: '%СКОРОСТЬ ПЕРЕДВИЖЕНИЯ FAST ATTACK:'
-DOTA_Tooltip_modifier_item_diffusal_style_fast_attack: Fast Attack
-DOTA_Tooltip_modifier_item_diffusal_style_fast_attack_Description: 'Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 DOTA_Tooltip_modifier_item_diffusal_style_root: Прикован от Diffusal Style
 DOTA_Tooltip_modifier_item_diffusal_style_root_Description: Прикован к земле.
 DOTA_Tooltip_modifier_item_diffusal_style_slow: Очищение от Diffusal Style
@@ -1128,20 +964,6 @@ DOTA_Tooltip_modifier_item_fallhammer_valor_buff_Description: Броня уве�
 DOTA_Tooltip_modifier_item_fallhammer_valor_debuff: Fallhammer Valor
 DOTA_Tooltip_modifier_item_fallhammer_valor_debuff_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_dark_blade_Description: Этот предмет выпадает с боссов и не может быть куплен в лавке.
-DOTA_Tooltip_ability_item_heavens_halberd_arena_Description: |-
-  <h1>Активируемая: Disarm</h1> Запрещает цели атаковать. Длится %disarm_duration% секунд.
-  {lc:item_sange_Description}
-
-  Сочетается по закону убывающей полезности с другими источниками уклонения.
-DOTA_Tooltip_ability_item_heavens_halberd_arena_maim_chance: '%ШАНС НАНЕСТИ ТРАВМУ:'
-DOTA_Tooltip_ability_item_heavens_halberd_arena_maim_movement_speed: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_item_heavens_halberd_arena_maim_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_ability_item_heavens_halberd_arena_maim_duration: 'ДЛИТЕЛЬНОСТЬ ТРАВМЫ:'
-DOTA_Tooltip_ability_item_heavens_halberd_arena_disarm_duration: 'ДЛИТЕЛЬНОСТЬ DISARM:'
-DOTA_Tooltip_modifier_item_heavens_halberd_arena_lesser_maim: Maim
-DOTA_Tooltip_modifier_item_heavens_halberd_arena_lesser_maim_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-DOTA_Tooltip_modifier_item_heavens_halberd_arena_disarm: Бессилие
-DOTA_Tooltip_modifier_item_heavens_halberd_arena_disarm_Description: Не может атаковать
 
 DOTA_Tooltip_ability_item_haganemushi_Description: |-
   <h1>Пассивная: Metal-Eater</h1> С каждой атакой этот легендарный меч снижает броню и урон противника. Этот эффект вечен, не снимается очищением и не работает на боссов.

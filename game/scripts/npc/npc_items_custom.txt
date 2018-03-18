@@ -3,7 +3,6 @@
 #base "items/dagon.txt"
 #base "items/diffusal_blade.txt"
 #base "items/boss_drop.txt"
-#base "items/sange_yasha_nightshadow.txt"
 #base "items/splitshot.txt"
 #base "items/skadi.txt"
 #base "items/butterfly.txt"
@@ -1798,7 +1797,7 @@
 		"ItemResult"					"item_manta_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_yasha_arena;item_ultimate_orb"
+			"01"						"item_yasha;item_ultimate_orb"
 		}
 	}
 
@@ -1835,7 +1834,7 @@
 			"03"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_intelligence"								"10"
+				"bonus_intellect"								"10"
 			}
 			"04"
 			{
@@ -1845,7 +1844,7 @@
 			"05"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_movement_speed_percentage"					"10"
+				"bonus_movement_speed_pct"					"15"
 			}
 			"06"
 			{
@@ -1887,26 +1886,6 @@
 				"var_type"											"FIELD_INTEGER"
 				"vision_radius"										"1000"
 			}
-			"14"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed_buff"		"4"
-			}
-			"15"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"2"
-			}
-			"16"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"fast_attack_duration"			"4.5"
-			}
-			"17"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"			"5"
-			}
 		}
 
 		"OnSpellStart"
@@ -1932,9 +1911,9 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%bonus_strength"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"					"%bonus_agility"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intelligence"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intellect"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%bonus_movement_speed_percentage"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%bonus_movement_speed_pct"
 				}
 			}
 
@@ -1959,48 +1938,6 @@
 						"ScriptFile"		"items/item_manta.lua"
 						"Function"			"modifier_item_manta_arena_invulnerability_on_destroy"
 					}
-				}
-			}
-
-			"modifier_item_manta_arena_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_manta_arena_unique"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_SYNS.lua"
-						"Function"		"yasha_fast_attack_stacks"
-						"modifier"		"modifier_item_manta_arena_fast_attack"
-					}
-				}
-			}
-
-			"modifier_item_manta_arena_fast_attack"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"IsBuff"			"1"
-				"IsPurgable"		"1"
-				"Duration"			"%fast_attack_duration"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
 				}
 			}
 		}
@@ -2306,7 +2243,7 @@
 			"03"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_intelligence"								"100"
+				"bonus_intellect"								"100"
 			}
 			"04"
 			{
@@ -2316,7 +2253,7 @@
 			"05"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_movement_speed_percentage"					"16"
+				"bonus_movement_speed_pct"					"24"
 			}
 			"06"
 			{
@@ -2438,9 +2375,9 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"							"%bonus_agility"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"						"%bonus_intelligence"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"						"%bonus_intellect"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%bonus_movement_speed_percentage"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%bonus_movement_speed_pct"
 				}
 			}
 
@@ -2478,13 +2415,6 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"items/items_SYNS.lua"
-						"Function"		"yasha_fast_attack_stacks"
-						"modifier"		"modifier_item_diffusal_style_fast_attack"
-					}
-
-					"RunScript"
-					{
 						"ScriptFile"	"items/item_diffusal_style.lua"
 						"Function"		"OnAttackLanded"
 						"feedback_mana_burn"				"%feedback_mana_burn"
@@ -2493,22 +2423,6 @@
 						"modifier_root"	"modifier_item_diffusal_style_root"
 						"modifier_slow"	"modifier_item_diffusal_style_slow"
 					}
-				}
-			}
-
-			"modifier_item_diffusal_style_fast_attack"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"IsBuff"			"1"
-				"IsPurgable"		"1"
-				"Duration"			"%fast_attack_duration"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
 				}
 			}
 
@@ -7281,192 +7195,6 @@
 		}
 	}
 
-	"item_recipe_heavens_halberd_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heavens_halberd_arena"
-		"ItemRequirements"
-		{
-			"01"						"item_sange_arena;item_talisman_of_evasion"
-		}
-	}
-
-	"item_heavens_halberd_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_heavens_halberd"
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-
-		"AbilityCooldown"				"18"
-		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"				"80"
-
-		"ItemShopTags"					"str;damage;evasion"
-		"ItemQuality"					"artifact"
-		"ItemAliases"					"heaven's halberd"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"25"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_chance"			"50"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_movement_speed"	"-4"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_attack_speed"		"-7"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"maim_duration"			"4.5"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_max_stacks"		"8"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"disarm_duration"		"4.5"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_item_heavens_halberd_arena_disarm"
-				"Target" 		"TARGET"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_heavens_halberd_arena"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
-					"MODIFIER_PROPERTY_EVASION_CONSTANT"							"%bonus_evasion"
-				}
-			}
-
-			"modifier_item_heavens_halberd_arena_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_heavens_halberd_arena_unique"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"Random"
-					{
-						"Chance"			"%maim_chance"
-						"OnSuccess"
-						{
-							"RunScript"
-							{
-								"ScriptFile"			"items/items_SYNS.lua"
-								"Function"				"sange_lesser_maim_stacks"
-								"modifier"				"modifier_item_heavens_halberd_arena_lesser_maim"
-							}
-						}
-					}
-				}
-			}
-
-			"modifier_item_heavens_halberd_arena_lesser_maim"
-			{
-				"Duration"				"%maim_duration"
-				"IsDebuff"				"1"
-				"IsPurgable"			"1"
-
-				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "follow_origin"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_movement_speed"
-				}
-			}
-
-			"modifier_item_heavens_halberd_arena_disarm"
-			{
-				"IsDebuff"				"1"
-				"IsPurgable"			"0"
-				"Duration"				"%disarm_duration"
-
-				"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
-				"EffectAttachType"      "follow_origin"
-
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target"			"TARGET"
-						"EffectName"		"particles/generic_gameplay/generic_disarm.vpcf"
-						"EffectAttachType"	"follow_overhead"
-					}
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
 	"item_recipe_summoned_unit"
 	{
 		"BaseClass"						"item_datadriven"
@@ -8221,7 +7949,7 @@
 					{
 						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_sange_arena_unique"
+						"modifier"		"modifier_shard_of_true_sight"
 					}
 				}
 
@@ -9204,18 +8932,18 @@
 		"ItemResult"					"item_elemental_fury"
 		"ItemRequirements"
 		{
-			"01"						"item_battlefury_arena;item_three_spirits_blades"
+			"01"						"item_battlefury_arena;item_sange_and_yasha_and_kaya"
 		}
 	}
 
 	"item_elemental_fury"
 	{
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_battlefury.lua"
 		"AbilityTextureName"			"item_arena/elemental_fury"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL | DOTA_UNIT_TARGET_TREE"
-		//"AbilityAffectsOnlyTrees"		"1"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 
@@ -9223,7 +8951,6 @@
 		"AbilityCooldown"				"2"
 
 		"ItemAliases"					"bf;battle fury;cleave;elemental fury"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilitySpecial"
 		{
@@ -9235,262 +8962,107 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"30"
+				"bonus_strength"		"30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"30"
+				"bonus_agility"			"30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"30"
+				"bonus_intellect"		"30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"20"
+				"bonus_attack_speed"	"20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"20"
+				"bonus_movement_speed_pct"	"20"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"16"
+				"spell_amp_pct"			"16"
 			}
 			"08"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3.0"
+				"var_type"				"FIELD_INTEGER"
+				"manacost_reduction_pct"	"16"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"45"
+				"bonus_health_regen"	"16"
 			}
 			"10"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"180"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3.0"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_starting_width"	"150"
+				"cleave_damage_percent"	"45"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_ending_width"	"375"
+				"quelling_bonus_damage_pct"	"180"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_distance"		"600"
+				"cleave_starting_width"	"150"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"nightshadow_chance"	"20"
+				"cleave_ending_width"	"375"
 			}
 			"15"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown_reduction"	"0.65"
+				"var_type"				"FIELD_INTEGER"
+				"cleave_distance"		"600"
 			}
 			"16"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_chance"			"50"
+				"maim_chance_pct"		"50"
 			}
 			"17"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_slow_movement"	"-6"
+				"maim_slow_movement_pct"	"-32"
 			}
 			"18"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_slow_attack"		"-8"
+				"maim_slow_attack"		"-32"
 			}
 			"19"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"maim_duration"			"4"
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_movement_range_pct"	"-16"
 			}
 			"20"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_max_stacks"		"8"
+				"maim_slow_attack_range"	"-16"
 			}
 			"21"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed_buff"	"8"
+				"var_type"				"FIELD_FLOAT"
+				"maim_duration"			"5"
 			}
 			"22"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"2"
-			}
-			"23"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"fast_attack_duration"	"6"
-			}
-			"24"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"fast_attack_max_stacks"	"8"
-			}
-			"25"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"	"500"
-			}
-		}
-
-		"OnAbilityPhaseStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"KVCastFilter"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"CutTree"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_elemental_fury"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"					"%bonus_intellect"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"					"%bonus_damage"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"					"%bonus_strength"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"						"%bonus_agility"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"		"%movement_speed_percent_bonus"
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"						"%bonus_mana_regen"
-				}
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"Cleave"
-						"damage"		"%attack_damage"
-						"cleave_damage_percent"		"%cleave_damage_percent"
-						"cleave_distance"			"%cleave_distance"
-						"cleave_starting_width"		"%cleave_starting_width"
-						"cleave_ending_width"		"%cleave_ending_width"
-						"particle"					"particles/items_fx/battlefury_cleave.vpcf"
-					}
-				}
-			}
-
-			"modifier_item_elemental_fury_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_elemental_fury_unique"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"Random"
-					{
-						"Chance"			"%nightshadow_chance"
-						"OnSuccess"
-						{
-							"RunScript"
-							{
-								"ScriptFile"			"items/items_SYNS.lua"
-								"Function"				"CooldownReduction"
-								"cooldown_reducted"		"%cooldown_reduction"
-								"modifier"				"modifier_item_elemental_fury_unique"
-							}
-						}
-					}
-					"Random"
-					{
-						"Chance"			"%maim_chance"
-						"OnSuccess"
-						{
-							"RunScript"
-							{
-								"ScriptFile"			"items/items_SYNS.lua"
-								"Function"				"sange_lesser_maim_stacks"
-								"modifier"				"modifier_item_elemental_fury_lesser_maim"
-							}
-						}
-					}
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_SYNS.lua"
-						"Function"		"yasha_fast_attack_stacks"
-						"modifier"		"modifier_item_elemental_fury_fast_attack"
-					}
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"ModifyCreepDamage"
-						"damage"		"%attack_damage"
-						"damage_bonus"	"%quelling_bonus_damage_pct"
-					}
-				}
-			}
-
-			"modifier_item_elemental_fury_lesser_maim"
-			{
-				"Duration"				"%maim_duration"
-				"IsDebuff"				"1"
-				"IsPurgable"			"1"
-
-				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "follow_origin"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_slow_attack"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_slow_movement"
-				}
-			}
-
-			"modifier_item_elemental_fury_fast_attack"
-			{
-				"IsPurgable"		"1"
-				"Duration"			"%fast_attack_duration"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
-				}
 			}
 		}
 	}
@@ -9980,6 +9552,104 @@
 			"particle"			"particles/arena/items_fx/scythe_of_the_ancients_start.vpcf"
 			"particle"			"particles/econ/events/ti4/dagon_beam_black_ti4.vpcf"
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+		}
+	}
+
+	"item_recipe_sange_and_yasha_and_kaya"
+	{
+		"BaseClass"                     "item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_sange_and_yasha_and_kaya"
+		"ItemRequirements"
+		{
+			"01"						"item_yasha;item_sange;item_kaya"
+			"02"						"item_sange_and_yasha;item_kaya"
+		}
+	}
+
+	"item_sange_and_yasha_and_kaya"
+	{
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_sange_and_yasha_and_kaya"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "item_arena/sange_and_yasha_and_kaya"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"16"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"16"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"16"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"16"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"16"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed_pct"	"16"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"16"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"manacost_reduction_pct"	"16"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_chance_pct"		"40"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_movement_pct"	"-26"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_attack"		"-26"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_movement_range_pct"	"-13"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_attack_range"	"-13"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"maim_duration"			"5"
+			}
 		}
 	}
 }

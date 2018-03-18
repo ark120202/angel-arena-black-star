@@ -1,3 +1,5 @@
+local factorySYK = require("items/factory_sange_yasha_kaya")
+
 item_battlefury_baseclass = {}
 LinkLuaModifier("modifier_item_battlefury_arena", "items/item_battlefury.lua", LUA_MODIFIER_MOTION_NONE)
 
@@ -23,6 +25,11 @@ item_quelling_fury = class(item_battlefury_baseclass)
 item_quelling_fury.cleave_pfx = "particles/items_fx/battlefury_cleave.vpcf"
 item_battlefury_arena = class(item_battlefury_baseclass)
 item_battlefury_arena.cleave_pfx = "particles/items_fx/battlefury_cleave.vpcf"
+item_elemental_fury = class(item_battlefury_baseclass)
+item_elemental_fury.cleave_pfx = "particles/items_fx/battlefury_cleave.vpcf"
+function item_elemental_fury:GetIntrinsicModifierName()
+	return "modifier_item_elemental_fury"
+end
 
 
 modifier_item_battlefury_arena = class({
@@ -69,8 +76,35 @@ if IsServer() then
 				})
 			end
 			if not attacker:IsRangedUnit() then
-				DoCleaveAttack(attacker, target, ability, keys.damage * ability:GetSpecialValueFor("cleave_damage_percent") * 0.01, ability:GetSpecialValueFor("cleave_distance"), ability:GetSpecialValueFor("cleave_starting_width"), ability:GetSpecialValueFor("cleave_ending_width"), self:GetAbility().cleave_pfx)
+				DoCleaveAttack(
+					attacker,
+					target,
+					ability,
+					keys.damage * ability:GetSpecialValueFor("cleave_damage_percent") * 0.01,
+					ability:GetSpecialValueFor("cleave_distance"),
+					ability:GetSpecialValueFor("cleave_starting_width"),
+					ability:GetSpecialValueFor("cleave_ending_width"),
+					self:GetAbility().cleave_pfx
+				)
 			end
 		end
 	end
+end
+
+
+LinkLuaModifier("modifier_item_elemental_fury", "items/item_battlefury.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_elemental_fury_maim", "items/item_battlefury.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_item_elemental_fury, modifier_item_elemental_fury_maim = factorySYK(
+	{ sange = "modifier_item_elemental_fury_maim", yasha = true, kaya = true },
+	{
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+	}
+)
+modifier_item_elemental_fury.GetModifierConstantHealthRegen = modifier_item_battlefury_arena.GetModifierConstantHealthRegen
+modifier_item_elemental_fury.GetModifierConstantManaRegen = modifier_item_battlefury_arena.GetModifierConstantManaRegen
+local baseOnAttackLanded = modifier_item_elemental_fury.OnAttackLanded
+modifier_item_elemental_fury.OnAttackLanded = function(self, keys)
+	baseOnAttackLanded(self, keys)
+	modifier_item_battlefury_arena.OnAttackLanded(self, keys)
 end
