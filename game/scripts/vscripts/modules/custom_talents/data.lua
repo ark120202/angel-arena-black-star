@@ -387,16 +387,6 @@ CUSTOM_TALENTS_DATA = {
 			hook_amount = 3
 		}
 	},
-	talent_hero_arthas_vsolyanova_bunus_chance = {
-		icon = "talents/heroes/arthas_vsolyanova_bunus_chance",
-		cost = 5,
-		group = 9,
-		max_level = 5,
-		requirement = "arthas_vsolyanova",
-		special_values = {
-			chance_multiplier = {1.1, 1.2, 1.3, 1.4, 1.5}
-		}
-	},
 	talent_hero_arc_warden_double_spark = {
 		icon = "talents/heroes/arc_warden_double_spark",
 		cost = 5,

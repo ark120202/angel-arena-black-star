@@ -7,8 +7,8 @@ ABILITY_SHOP_BANNED = {
 	["pudge_meat_hook_lua"] = { "rocket_barrage_arena", "furion_teleportation", "kunkka_x_marks_the_spot", "ogre_magi_multicast_arena",  "bloodseeker_thirst", "antimage_blink", "queenofpain_blink", },
 	["tusk_walrus_punch"] = { "tiny_grow", "earthshaker_enchant_totem", "drow_ranger_marksmanship", },
 	["bounty_hunter_jinada"] = { "tiny_grow", "earthshaker_enchant_totem", "drow_ranger_marksmanship", },
-	["phantom_lancer_doppelganger_arena"] = { "stegius_desolating_touch", "arthas_vsolyanova", },
-	["phantom_lancer_juxtapose_arena"] = { "stegius_desolating_touch", "arthas_vsolyanova", },
+	["phantom_lancer_doppelganger_arena"] = { "stegius_desolating_touch", },
+	["phantom_lancer_juxtapose_arena"] = { "stegius_desolating_touch", },
 	["obsidian_destroyer_arcane_orb"] = { "earthshaker_aftershock", "zuus_static_field", "obsidian_destroyer_essence_aura", },
 	["lina_fiery_soul"] = { "spectre_reality", "templar_assassin_trap", "shadow_demon_shadow_poison_release", "techies_focused_detonate" },
 }
@@ -113,7 +113,6 @@ ABILITY_SHOP_DATA = {
 	["zaken_summon_sailors"] = { cost = 8, },
 	["zaken_sword_control"] = { cost = 32, },
 	["shinobu_yumewatari_lua"] = { cost = 9, },
-	["arthas_plus_morality"] = { cost = 6, },
 	["saber_mana_burst"] = { cost = 4, },
 	["saber_avalon"] = { cost = 5, },
 	["saber_excalibur"] = { cost = 12, },
