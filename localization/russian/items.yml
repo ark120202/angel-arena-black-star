@@ -10,13 +10,6 @@ Variables:
 
     Бонусы к скорости передвижения от нескольких предметов на основе Yasha не складываются.
 
-DOTA_Tooltip_ability_item_heart_arena: Heart of Tarrasque
-DOTA_Tooltip_ability_item_heart_arena_Description: '<h1>Пассивная: Health Regeneration</h1> Восстанавливает определенный процент максимального здоровья в секунду. Если владелец получит урон от вражеского героя или Босса, способность отключается на определенное время.'
-DOTA_Tooltip_ability_item_heart_arena_Lore: 'Сохранившееся сердце вымершего монстра, с которым его владелец становится мужественнее.'
-DOTA_Tooltip_ability_item_heart_arena_bonus_strength: +$str
-DOTA_Tooltip_ability_item_heart_arena_bonus_health: +$health
-DOTA_Tooltip_ability_item_heart_arena_health_regen_percent_per_second: '%ВОССТ. ЗДОРОВЬЯ В СЕКУНДУ:'
-
 DOTA_Tooltip_ability_item_casino_coin: Casino Coin
 DOTA_Tooltip_ability_item_casino_coin_Description: Может быть использовано в слотмашине или для оплаты различных услуг.
 

@@ -10,13 +10,6 @@ Variables:
 
     Yasha-based movement speed bonuses from multiple items do not stack.
 
-DOTA_Tooltip_ability_item_heart_arena: Heart of Tarrasque
-DOTA_Tooltip_ability_item_heart_arena_Description: '<h1>Passive: Health Regeneration</h1> Restores a percentage of max health per second. If damage is taken from an enemy hero or boss, this ability is disabled for %cooldown_melee% seconds for melee heroes, or %cooldown_ranged_tooltip% seconds for ranged heroes.'
-DOTA_Tooltip_ability_item_heart_arena_Lore: 'Preserved heart of an extinct monster, it bolsters the bearer''s fortitude.'
-DOTA_Tooltip_ability_item_heart_arena_bonus_strength: +$str
-DOTA_Tooltip_ability_item_heart_arena_bonus_health: +$health
-DOTA_Tooltip_ability_item_heart_arena_health_regen_percent_per_second: '%HEALTH RESTORED PER SECOND:'
-
 DOTA_Tooltip_ability_item_casino_coin: Casino Coin
 DOTA_Tooltip_ability_item_casino_coin_Description: Can be used to play slotmachine or to pay for various services
 

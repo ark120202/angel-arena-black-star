@@ -528,121 +528,6 @@
 		}
 	}
 
-	"item_recipe_heart_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1200"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heart_arena"
-		"ItemRequirements"
-		{
-			"01"						"item_reaver;item_vitality_booster"
-		}
-	}
-
-	"item_heart_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_heart"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.0"
-		"ItemShopTags"					"str;regen_health;health_pool"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"hot;heart of tarrasque"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_strength"					"45"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_health"						"250"
-			}
-			"03"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"health_regen_percent_per_second"	"7"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"cooldown_melee"					"5"
-			}
-			"05"
-			{
-				"var_type"	                		"FIELD_FLOAT"
-				"heal_interval"						".03"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"cooldown_ranged_tooltip"			"7"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_heart_arena"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
-				}
-
-				"OnTakeDamage"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_heart.lua"
-						"Function"			"DamageStartCooldown"
-						"CooldownMelee"		"%cooldown_melee"
-						"Damage"			"%attack_damage"
-					}
-				}
-
-				"ThinkInterval" 		"%heal_interval"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/item_heart.lua"
-						"Function"						"UpdateCooldownModifiers"
-						"modifier"						"modifier_item_heart_arena_regen"
-					}
-				}
-			}
-
-			"modifier_item_heart_arena_regen"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" 	"%health_regen_percent_per_second"
-				}
-			}
-		}
-	}
-
 	"item_recipe_lucifers_claw"
 	{
 		"BaseClass"						"item_datadriven"
@@ -910,7 +795,7 @@
 		"ItemResult"					"item_heart_cyclone"
 		"ItemRequirements"
 		{
-			"01"						"item_heart_arena;item_cyclone"
+			"01"						"item_heart;item_cyclone"
 		}
 	}
 
@@ -931,7 +816,6 @@
 		"ItemQuality"					"legendary"
 		"ItemAliases"					"hot;heart of tarrasque; cyclone; eul; eul's scepter of divinity"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySharedCooldown"			"item_cyclone;item_heart_arena"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -6154,7 +6038,7 @@
 		"ItemResult"					"item_heavy_war_axe_of_rage_damage"
 		"ItemRequirements"
 		{
-			"01"						"item_heart_arena;item_heart_arena;item_heart_arena;item_relic"
+			"01"						"item_heart;item_heart;item_heart;item_relic"
 		}
 	}
 

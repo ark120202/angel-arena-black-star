@@ -656,6 +656,16 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
+	"item_recipe_heart"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_heart"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 	"item_recipe_shivas_guard"
 	{
 		"SecretShop"					"0"
