@@ -676,6 +676,16 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
+	"item_recipe_black_king_bar"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_black_king_bar"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 	"item_recipe_shivas_guard"
 	{
 		"SecretShop"					"0"

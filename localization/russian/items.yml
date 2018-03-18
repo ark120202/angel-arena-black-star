@@ -495,44 +495,7 @@ DOTA_Tooltip_ability_item_refresher_core_creep_lifesteal: '%ВАМПИРИЗМ �
 DOTA_Tooltip_ability_item_refresher_core_bash_chance: '%ШАНС НА STRIKE:'
 DOTA_Tooltip_ability_item_refresher_core_bash_duration: 'ДЛИТЕЛЬНОСТЬ STRIKE:'
 DOTA_Tooltip_ability_item_refresher_core_bash_cooldown: 'ВРЕМЯ ПЕРЕЗАРЯДКИ STRIKE:'
-DOTA_Tooltip_ability_item_black_king_bar_arena: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_arena_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
-DOTA_Tooltip_ability_item_black_king_bar_arena_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
-DOTA_Tooltip_ability_item_black_king_bar_arena_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_ability_item_black_king_bar_arena_active_bonus_strength: 'ДОП. СИЛА:'
-DOTA_Tooltip_ability_item_black_king_bar_arena_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
-DOTA_Tooltip_modifier_item_black_king_bar_arena_active: Black King Bar
-DOTA_Tooltip_modifier_item_black_king_bar_arena_active_Description: 'Невосприимчив к заклинаниям, имеет полное сопротивление магическому урону, сила увеличена на %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-DOTA_Tooltip_ability_item_black_king_bar_2: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_2_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
-DOTA_Tooltip_ability_item_black_king_bar_2_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
-DOTA_Tooltip_ability_item_black_king_bar_2_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_ability_item_black_king_bar_2_active_bonus_strength: 'ДОП. СИЛА:'
-DOTA_Tooltip_ability_item_black_king_bar_2_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
-DOTA_Tooltip_ability_item_black_king_bar_3: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_3_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
-DOTA_Tooltip_ability_item_black_king_bar_3_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
-DOTA_Tooltip_ability_item_black_king_bar_3_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_ability_item_black_king_bar_3_active_bonus_strength: 'ДОП. СИЛА:'
-DOTA_Tooltip_ability_item_black_king_bar_3_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
-DOTA_Tooltip_ability_item_black_king_bar_4: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_4_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
-DOTA_Tooltip_ability_item_black_king_bar_4_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
-DOTA_Tooltip_ability_item_black_king_bar_4_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_ability_item_black_king_bar_4_active_bonus_strength: 'ДОП. СИЛА:'
-DOTA_Tooltip_ability_item_black_king_bar_4_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
-DOTA_Tooltip_ability_item_black_king_bar_5: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_5_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
-DOTA_Tooltip_ability_item_black_king_bar_5_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
-DOTA_Tooltip_ability_item_black_king_bar_5_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_ability_item_black_king_bar_5_active_bonus_strength: 'ДОП. СИЛА:'
-DOTA_Tooltip_ability_item_black_king_bar_5_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
-DOTA_Tooltip_ability_item_black_king_bar_6: Black King Bar
-DOTA_Tooltip_ability_item_black_king_bar_6_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки. Некоторые способности могут проходить сквозь невосприимчивость к заклинаниям'
-DOTA_Tooltip_ability_item_black_king_bar_6_Note1: Использование артефакта Black King Bar снимает некоторые положительные эффекты.
-DOTA_Tooltip_ability_item_black_king_bar_6_duration: 'ДЛИТЕЛЬНОСТЬ:'
-DOTA_Tooltip_ability_item_black_king_bar_6_active_bonus_strength: 'ДОП. СИЛА:'
-DOTA_Tooltip_ability_item_black_king_bar_6_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
+
 DOTA_Tooltip_ability_item_titanium_bar: Titanium Bar
 DOTA_Tooltip_ability_item_titanium_bar_Description: '<h1>Активируемая: Avatar</h1> Дает невосприимчивость к заклинаниям, полное сопротивление магическому урону, дополнительную силу и скорость атаки, а также уменьшение всего получаемого урона на %active_damage_reduction_pct%%%.'
 DOTA_Tooltip_ability_item_titanium_bar_duration: 'ДЛИТЕЛЬНОСТЬ:'

@@ -37,8 +37,6 @@
 	"item_radiance"					"REMOVE"
 	"item_recipe_octarine_core"		"REMOVE"
 	"item_octarine_core"			"REMOVE"
-	"item_recipe_black_king_bar"	"REMOVE"
-	"item_black_king_bar"			"REMOVE"
 	"item_recipe_echo_sabre"		"REMOVE"
 	"item_echo_sabre"				"REMOVE"
 	"item_recipe_butterfly"			"REMOVE"
