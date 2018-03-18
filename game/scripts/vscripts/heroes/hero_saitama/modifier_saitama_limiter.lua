@@ -1,6 +1,7 @@
 modifier_saitama_limiter = class({
-	GetTexture    = function() return "arena/modifier_saitama_limiter" end,
+	IsPurgable    = function() return false end,
 	RemoveOnDeath = function() return false end,
+	GetTexture    = function() return "arena/modifier_saitama_limiter" end,
 })
 
 function modifier_saitama_limiter:DeclareFunctions()
