@@ -10,9 +10,6 @@ modifier_healer_taste_of_armor = class({
     IsHidden = function() return true end,
 })
 
-function modifier_healer_taste_of_armor:GetModifierPhysicalArmorBonus()
-    return self:GetAbility():GetSpecialValueFor("bonus_armor_aura")
-end
 function modifier_healer_taste_of_armor:GetAuraRadius()
     return self:GetAbility():GetSpecialValueFor("aura_radius")
 end

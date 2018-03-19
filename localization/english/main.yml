@@ -310,9 +310,9 @@ DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Takes no damag
 DOTA_Tooltip_modifier_fountain_aura_enemy: Fountain Weakness
 DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'Each second takes %dMODIFIER_PROPERTY_TOOLTIP%%% of max health as damage. Prevents health from from going up. All outgoing damage reduced by %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%. Damage reduction decreases by 5%% each 5 minutes (until 0%%).'
 
+DOTA_Tooltip_ability_healer_taste_of_armor: 'Taste of Armor'
+DOTA_Tooltip_modifier_healer_taste_of_armor_effect: 'Taste of Armor'
 DOTA_Tooltip_ability_healer_taste_of_armor_Description: Grants bonus armor to nearby friendly heroes
 DOTA_Tooltip_ability_healer_taste_of_armor_aura_bonus_armor: 'ARMOR:'
 DOTA_Tooltip_ability_healer_taste_of_armor_aura_radius: 'RADIUS:'
-DOTA_Tooltip_ability_healer_taste_of_armor: 'Taste of Armor'
-DOTA_Tooltip_modifier_healer_taste_of_armor_effect: 'Taste of Armor'
 DOTA_Tooltip_modifier_healer_taste_of_armor_effect_Description: 'Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'
