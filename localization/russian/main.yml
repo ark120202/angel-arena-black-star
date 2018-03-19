@@ -289,7 +289,7 @@ DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'Теряет %dMODIFIER_
 
 DOTA_Tooltip_ability_healer_taste_of_armor: Taste of Armor
 DOTA_Tooltip_ability_healer_taste_of_armor_Description: Увеличивает броню дружественным героям в радиусе.
-DOTA_Tooltip_ability_healer_taste_of_armor_aura_bonus_armor: 'БРОНИ:'
+DOTA_Tooltip_ability_healer_taste_of_armor_aura_bonus_armor: 'БРОНЯ:'
 DOTA_Tooltip_ability_healer_taste_of_armor_aura_radius: 'РАДИУС:'
 DOTA_Tooltip_modifier_healer_taste_of_armor_effect: Taste of Armor
 DOTA_Tooltip_modifier_healer_taste_of_armor_effect_Description: 'Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'
