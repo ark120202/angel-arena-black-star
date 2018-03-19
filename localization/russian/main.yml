@@ -288,12 +288,9 @@ DOTA_Tooltip_modifier_fountain_aura_enemy: Слабость от фонтана
 DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'Теряет %dMODIFIER_PROPERTY_TOOLTIP%%% от максимального здоровья каждую секунду. Не может восстанавливать здоровье. Весь наносимый урон уменьшен на %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%. Снижение урона уменьшается на 5%% каждые 5 минут (до 0%%).'
 
 
-DOTA_Tooltip_ability_healer_bonus_armor_Description: 'Все герои вокруг получают дополнительную броню.'
-DOTA_Tooltip_ability_healer_bonus_armor_Note1: ''
-DOTA_Tooltip_ability_healer_bonus_armor_bonus_armor_aura: 'БРОНИ:'
-DOTA_Tooltip_ability_healer_bonus_armor_aura_radius: 'РАДИУС:'
-DOTA_Tooltip_modifier_healer_bonus_armor: 'Taste of Armor'
-DOTA_Tooltip_ability_healer_bonus_armor: 'Taste of Armor'
-DOTA_Tooltip_modifier_healer_bonus_armor_effect: 'Taste of Armor'
-DOTA_Tooltip_modifier_healer_bonus_armor_Description: 'Броня усилена.'
-DOTA_Tooltip_modifier_healer_bonus_armor_effect_Description: 'Броня усилена.'
+DOTA_Tooltip_ability_healer_taste_of_armor_Description: Все герои вокруг получают дополнительную броню.
+DOTA_Tooltip_ability_healer_taste_of_armor_aura_bonus_armor: 'БРОНИ:'
+DOTA_Tooltip_ability_healer_taste_of_armor_aura_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_healer_taste_of_armor: 'Taste of Armor'
+DOTA_Tooltip_modifier_healer_taste_of_armor_effect: 'Taste of Armor'
+DOTA_Tooltip_modifier_healer_taste_of_armor_effect_Description: 'Броня усилена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'

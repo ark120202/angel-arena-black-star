@@ -82,10 +82,10 @@
 		}
 	}
 
-	"healer_bonus_armor"
+	"healer_taste_of_armor"
 	{
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/structures/healer_bonus_armor.lua"
+		"ScriptFile"					"heroes/structures/healer_taste_of_armor.lua"
 		"AbilityTextureName"			"omniknight_degen_aura"
 		"MaxLevel" 						"1"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -102,7 +102,7 @@
 			"02"
 			{
 				"var_type" 				"FIELD_INTEGER"
-				"bonus_armor_aura"			"4"
+				"aura_bonus_armor"			"4"
 			}
 		}
 	}
