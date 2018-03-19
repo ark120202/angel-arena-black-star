@@ -1,42 +1,44 @@
-LinkLuaModifier("modifier_healer_armor_aura", "vscripts/heroes/structures/healer_armor_aura.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_healer_armor_aura_effect", "vscripts/heroes/structures/healer_armor_aura_effect.lua", LUA_MODIFIER_MOTION_NONE)
-healer_armor_aura = class({
-    GetIntrinsicModifierName = function() return "modifier_healer_armor_aura" end,
+LinkLuaModifier("modifier_healer_bonus_armor", "heroes/structures/healer_bonus_armor.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_healer_bonus_armor_effect", "heroes/structures/healer_bonus_armor",LUA_MODIFIER_MOTION_NONE)
+
+healer_bonus_armor = class({
+    GetIntrinsicModifierName = function() return "modifier_healer_bonus_armor" end,
 })
 
-modifier_healer_armor_aura = class({
+modifier_healer_bonus_armor = class({
     IsPurgable = function() return false end,
-    IsHidden = function() return true end,
-    GetModifierPhysicalArmorBonus = function() return 4 end,
-    IsAura = function() return true end,
-    GetAuraRadius = function() return 600 end,
+    IsHidden = function() return false end,
 })
 
+function modifier_healer_bonus_armor:GetModifierPhysicalArmorBonus()
+    return self:GetAbility():GetSpecialValueFor("bonus_armor_aura")
+end
+function modifier_healer_bonus_armor:GetAuraRadius()
+    return self:GetAbility():GetSpecialValueFor("aura_radius")
+end
+function modifier_healer_bonus_armor:GetAuraSearchTeam()
+    return self:GetAbility():GetAbilityTargetTeam()
+end
+function modifier_healer_bonus_armor:GetAuraSearchType()
+    return self:GetAbility():GetAbilityTargetType()
+end
+function modifier_healer_bonus_armor:GetAuraSearchFlags()
+    return self:GetAbility():GetAbilityTargetFlags()
+end
+function modifier_healer_bonus_armor:IsAura()
+	return true
+end
+function modifier_healer_bonus_armor:GetModifierAura()
+    return "modifier_healer_bonus_armor_effect"
+end
 
-function modifier_healer_armor_aura:DeclareFunctions()
-    return { 
+
+modifier_healer_bonus_armor_effect = class({})
+function modifier_healer_bonus_armor_effect:DeclareFunctions()
+    return {
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
     }
 end
-
-function modifier_healer_armor_aura:GetAuraRadius()
-    return self:GetAbility():GetSpecialValueFor("radius")
-end
-
-function modifier_healer_armor_aura:GetAuraSearchTeam()
-    return self:GetAbility():GetAbilityTargetTeam()
-end
-
-function modifier_healer_armor_aura:GetAuraSearchType()
-    return self:GetAbility():GetAbilityTargetType()
-end
-
-function modifier_healer_armor_aura:GetAuraSearchFlags()
-    return self:GetAbility():GetAbilityTargetFlags()
-end
-
-healer_armor_aura_effect = class({})
-
-function modifier_healer_armor_aura_effect:GetModifierPhysicalArmorBonus()
-    return self:GetAbility():GetSpecialValueFor("armor_bonus_aura")
+function modifier_healer_bonus_armor_effect:GetModifierPhysicalArmorBonus()
+    return self:GetAbility():GetSpecialValueFor("bonus_armor_aura")
 end
