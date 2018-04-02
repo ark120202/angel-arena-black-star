@@ -444,7 +444,6 @@ CUSTOM_TALENTS_DATA = {
 -- Value should be a table, where irrelevant talents should have a `true` value
 PARTIALLY_CHANGED_HEROES = {
 	npc_dota_hero_ogre_magi = {},
-	npc_dota_hero_tinker = {},
 	npc_dota_hero_skeleton_king = {
 		special_bonus_unique_wraith_king_1 = true,
 		special_bonus_unique_wraith_king_4 = true,
@@ -455,9 +454,6 @@ PARTIALLY_CHANGED_HEROES = {
 	npc_dota_hero_doom_bringer = {
 		special_bonus_unique_doom_2 = true,
 		special_bonus_unique_doom_3 = true,
-	},
-	npc_dota_hero_life_stealer = {
-		special_bonus_unique_lifestealer_3 = true,
 	},
 }
 
@@ -789,6 +785,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_lifestealer_2 = {
 		group = 5,
 	},
+	special_bonus_unique_lifestealer_3 = false,
 	special_bonus_unique_lion = {
 		group = 6,
 	},

@@ -1,10 +1,9 @@
-LinkLuaModifier("modifier_life_stealer_feast_arena", "heroes/hero_life_stealer/feast.lua", LUA_MODIFIER_MOTION_NONE)
-
 life_stealer_feast_arena = class({
 	GetIntrinsicModifierName = function() return "modifier_life_stealer_feast_arena" end,
 })
 
 
+LinkLuaModifier("modifier_life_stealer_feast_arena", "heroes/rewrites/life_stealer_feast_arena.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_life_stealer_feast_arena = class({
 	IsHidden   = function() return true end,
 	IsPurgable = function() return false end,

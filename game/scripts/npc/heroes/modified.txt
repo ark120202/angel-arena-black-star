@@ -27,14 +27,6 @@
 		"AttackRate"	"2.5"
 	}
 
-	"npc_dota_hero_tinker"
-	{
-		"override_hero"	"npc_dota_hero_tinker"
-		"Changed"	"1"
-		"Ability6"	"tinker_rearm_arena"
-		"AttackRate"	"1.6"
-	}
-
 	"npc_dota_hero_doom_bringer"
 	{
 		"override_hero"	"npc_dota_hero_doom_bringer"
@@ -55,14 +47,6 @@
 		"Ability2"	"huskar_burning_spear_arena"
 		"AttackRate"	"1.7"
 		"ArmorPhysical"	"-2"
-	}
-
-	"npc_dota_hero_life_stealer"
-	{
-		"override_hero"	"npc_dota_hero_life_stealer"
-		"Changed"	"1"
-		"Ability2"	"life_stealer_feast_arena"
-		"AttackRate"	"1.8"
 	}
 
 	"npc_dota_hero_omniknight"

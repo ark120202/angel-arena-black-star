@@ -143,16 +143,6 @@ DOTA_Tooltip_modifier_huskar_burning_spear_arena_aura_Description: Applies Burni
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff: Burning Spear
 DOTA_Tooltip_modifier_huskar_burning_spear_arena_debuff_Description: 'ВЫ ГОРИТЕ! Вам периодически наносится урон. Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, сопротивление магическому урону уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%'
 
-DOTA_Tooltip_ability_tinker_rearm_arena_Description: ПРЕРЫВАЕМАЯ — сбрасывает время перезарядки способностей и большинства предметов героя.
-DOTA_Tooltip_ability_tinker_rearm_arena_channel_time: 'ДЛИТЕЛЬНОСТЬ ПРОИЗНЕСЕНИЯ:'
-
-DOTA_Tooltip_ability_life_stealer_feast_arena_Description: Каждая атака лечит вас на долю от текущего здоровья противника и наносит равноценное количество урона.
-DOTA_Tooltip_ability_life_stealer_feast_arena_Note0: Не действует на боссов.
-DOTA_Tooltip_ability_life_stealer_feast_arena_Note1: Действует на врагов, невосприимчивых к заклинаниям.
-DOTA_Tooltip_ability_life_stealer_feast_arena_Note2: Количество восстановленного здоровья не зависит от нанесенного урона.
-DOTA_Tooltip_ability_life_stealer_feast_arena_Note3: Складывается с другими источниками вампиризма.
-DOTA_Tooltip_ability_life_stealer_feast_arena_hp_leech_percent: '%ВАМПИРИЗМ:'
-
 DOTA_Tooltip_ability_meepo_divided_we_stand_Description: 'Герой создает неидеальную, но почти разумную копию самого себя. Эти клоны получают золото и опыт, а также перенимают способности, характеристики и уровень героя. Клоны не могут покупать предметы, но получают некоторые предметы главного героя. Если умрет хоть один из клонов, то умирают как все остальные клоны, так и сам герой.'
 DOTA_Tooltip_ability_meepo_divided_we_stand_Note0: Клоны не могут использовать артефакт Arcane Boots.
 
