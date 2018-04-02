@@ -16,6 +16,7 @@ if IsServer() then
 			victim = hTarget,
 			damage_type = DAMAGE_TYPE_PHYSICAL,
 			damage = caster:GetAverageTrueAttackDamage(target) * self:GetSpecialValueFor("split_damage_pct") * 0.01 * number,
+			damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
 			ability = ability
 		})
 
