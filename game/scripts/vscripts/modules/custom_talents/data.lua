@@ -1645,6 +1645,8 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_invoker_8 = {
 		group = 10,
 	},
+
+	special_bonus_unique_gyrocopter_2 = false,
 }
 
 TALENT_GROUP_TO_LEVEL = {

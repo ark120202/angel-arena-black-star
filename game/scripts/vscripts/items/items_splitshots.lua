@@ -1,4 +1,5 @@
 local factorySYK = require("items/factory_sange_yasha_kaya")
+local fireSplitshotProjectilesFactory = require("items/helper_splitshot")
 
 item_nagascale_bow = {
 	GetIntrinsicModifierName = function() return "modifier_item_nagascale_bow" end,
@@ -59,43 +60,16 @@ function modifier_item_nagascale_bow:GetModifierBonusStats_Intellect()
 	return self:GetAbility():GetSpecialValueFor("bonus_all")
 end
 
-
-local function fireSplitshotProjectiles(attacker, target, ability, modifierName)
-	if not attacker:IsRangedUnit() then return end
-
-	local lockName = "_lock_" .. modifierName
-	if attacker[lockName] then return end
-	attacker[lockName] = true
-	Timers:CreateTimer(function() attacker[lockName] = false end)
-
-	local radius = ability:GetSpecialValueFor("split_radius")
-	local targets = FindUnitsInRadius(
-		attacker:GetTeam(),
-		target:GetAbsOrigin(),
-		nil,
-		radius,
-		DOTA_UNIT_TARGET_TEAM_ENEMY,
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-		DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
-		FIND_CLOSEST,
-		false
-	)
-
-	local projInfo = GenerateAttackProjectile(attacker, ability)
-	for _,v in ipairs(targets) do
-		if v ~= target and not v:IsAttackImmune() then
-			projInfo.Target = v
-			ProjectileManager:CreateTrackingProjectile(projInfo)
-		end
-	end
-end
-
+local modifier_item_nagascale_bow_projectiles = fireSplitshotProjectilesFactory(
+	"modifier_item_nagascale_bow",
+	"split_radius"
+)
 function modifier_item_nagascale_bow:OnAttack(keys)
 	local target = keys.target
 	local attacker = keys.attacker
 	local ability = self:GetAbility()
 	if attacker ~= self:GetParent() then return end
-	fireSplitshotProjectiles(attacker, target, ability, self:GetName())
+	modifier_item_nagascale_bow_projectiles(attacker, target, ability)
 end
 
 LinkLuaModifier("modifier_item_splitshot_ultimate", "items/items_splitshots.lua", LUA_MODIFIER_MOTION_NONE)
@@ -104,13 +78,18 @@ modifier_item_splitshot_ultimate, modifier_item_splitshot_ultimate_maim = factor
 	{ sange = "modifier_item_splitshot_ultimate_maim", yasha = true, kaya = true },
 	{ MODIFIER_EVENT_ON_ATTACK }
 )
+
+local modifier_item_splitshot_ultimate_projectiles = fireSplitshotProjectilesFactory(
+	"modifier_item_splitshot_ultimate",
+	"split_radius"
+)
 function modifier_item_splitshot_ultimate:OnAttack(keys)
 	local target = keys.target
 	local attacker = keys.attacker
 	local ability = self:GetAbility()
 	if attacker ~= self:GetParent() then return end
 
-	fireSplitshotProjectiles(attacker, target, ability, self:GetName())
+	modifier_item_splitshot_ultimate_projectiles(attacker, target, ability)
 
 	if RollPercentage(ability:GetSpecialValueFor("global_attack_chance_pct")) then
 		local units = FindUnitsInRadius(

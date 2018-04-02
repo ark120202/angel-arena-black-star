@@ -822,4 +822,58 @@
 			"particle"					"particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
 		}
 	}
+
+	"gyrocopter_flak_cannon_arena"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_gyrocopter/flak_cannon.lua"
+		"AbilityTextureName"			"gyrocopter_flak_cannon"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"7"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"50"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"1250"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_attacks"					"3 4 5 6 7 8 9"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_duration"					"15"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"projectile_speed"				"800"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"fire_rate_scepter"				"0.8"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius_scepter"				"600"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+			"particle"					"particles/units/heroes/hero_gyrocopter/gyro_flak_cannon_overhead.vpcf"
+		}
+	}
 }
