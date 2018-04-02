@@ -88,7 +88,6 @@ ABILITY_SHOP_DATA = {
 	["sandking_sand_storm"] = { cost = 2, },
 	["sniper_shrapnel"] = { cost = 3, },
 	["zuus_thundergods_wrath"] = { cost = 6, },
-	["life_stealer_feast"] = { cost = 50, },
 	["kadash_survival_skills"] = { cost = 2, },
 	["stegius_brightness_of_desolate"] = { cost = 3, },
 	["queenofblades_army"] = { cost = 3, },
