@@ -81,4 +81,29 @@
 			}
 		}
 	}
+
+	"healer_taste_of_armor"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/structures/healer_taste_of_armor.lua"
+		"AbilityTextureName"			"omniknight_degen_aura"
+		"MaxLevel" 						"1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"				"700"
+			}
+			"02"
+			{
+				"var_type" 				"FIELD_INTEGER"
+				"aura_bonus_armor"			"4"
+			}
+		}
+	}
 }

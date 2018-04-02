@@ -16,6 +16,7 @@ function Structures:AddHealers()
 		if model.color then v:SetRenderColor(unpack(model.color)) end
 		v:RemoveModifierByName("modifier_invulnerable")
 		v:AddNewModifier(v, nil, "modifier_arena_healer", nil)
+		v:FindAbilityByName("healer_taste_of_armor"):SetLevel(1)
 	end
 end
 
