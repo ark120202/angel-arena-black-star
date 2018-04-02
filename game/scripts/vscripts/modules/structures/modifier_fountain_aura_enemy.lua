@@ -47,7 +47,13 @@ if IsServer() then
 
 	function modifier_fountain_aura_enemy:OnIntervalThink()
 		local parent = self:GetParent()
+
+		-- Fixes possible exploit, when killing summon before they are completely created,
+		-- causes infinty spawning loop
+		if parent:IsWukongsSummon() then return end
+
 		self:CreateFountainPFX()
+
 		if GameRules:GetDOTATime(false, true) < FOUNTAIN_EFFECTIVE_TIME_THRESHOLD then
 			parent:TrueKill()
 		else
