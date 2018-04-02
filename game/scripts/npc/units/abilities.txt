@@ -189,7 +189,8 @@
 		// General
 		//
 		"BaseClass"	"npc_dota_base_additive"
-		"Model"	"models/props_debris/clay_pots_broken001a.vmdl"
+		"Model"	"models/particle/witchdoctor_skull.vmdl"
+		"ModelScale"	"4.5"
 
 		// Abilities
 		//----------------------------------------------------------------
