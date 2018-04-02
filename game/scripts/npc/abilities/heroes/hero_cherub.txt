@@ -264,9 +264,6 @@
 					{
 						"ScriptFile"	"heroes/hero_cherub/synthesis.lua"
 						"Function"		"Transform"
-						"conversion_rate"		"%base_conversion_rate * %think_interval"
-						"mana_to_hp_pct"		"%mana_to_hp_pct"
-						"hp_to_mana_pct"		"%hp_to_mana_pct"
 					}
 				}
 			}
