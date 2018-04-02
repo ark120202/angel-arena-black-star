@@ -17,7 +17,6 @@ local requirements = {
 	-- "libraries/pathgraph",
 	"libraries/selection",
 	"libraries/worldpanels",
-	"libraries/CosmeticLib",
 	"libraries/PopupNumbers",
 	"libraries/statcollection/init",
 	--------------------------------------------------
