@@ -4110,19 +4110,16 @@
 				"var_type"	"FIELD_INTEGER"
 				"bonus_speed"	"20 25 30 35 40 45 50"
 			}
-
 			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"bonus_damage"	"15 13 11 9 7 5 0"
-			}
-
-			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"duration"	"12"
 			}
-
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"river_speed"				"700"
+			}
 		}
 
 	}
@@ -4582,9 +4579,9 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		"AbilityCooldown"				"12 11 10 9"
-		"AbilityManaCost"				"100 120 140 160"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"12 11 10 9 8 7 6"
+		"AbilityManaCost"				"100 120 140 160 170 180 190"
 		"AbilitySpecial"
 		{
 			"01"
@@ -4595,12 +4592,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"movespeed_slow"	"-20 -30 -40 -50"
+				"movespeed_slow"	"-50"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attackspeed_slow"	"-20 -30 -40 -50"
+				"attackspeed_slow"	"-50"
 			}
 			"04"
 			{
@@ -4615,7 +4612,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"nova_damage"			"100 150 200 250"
+				"nova_damage"			"100 150 200 250 300 350 400"
 				"LinkedSpecialBonus"	"special_bonus_unique_crystal_maiden_2"
 			}
 		}
@@ -4625,9 +4622,9 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"				"525"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		"AbilityCooldown"				"9 8 7 6"
-		"AbilityManaCost"				"140 145 150 155"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"140 145 150 155 160 170 180"
 		"AbilitySpecial"
 		{
 			"01"
@@ -4638,18 +4635,18 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.5 2.0 2.5 3.0"
+				"duration"				"1 1.5 2.0 2.5 3.0 3.5 4.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_crystal_maiden_1"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"hero_damage_tooltip"			"150 200 250 300"
+				"hero_damage_tooltip"			"150 200 250 300 350 400 450"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"creep_duration"	"10.0 10.0 10.0 10.0"
+				"creep_duration"	"10.0"
 			}
 			"05"
 			{
@@ -4673,12 +4670,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"mana_regen"		"0.8 1.0 1.2 1.4"
+				"mana_regen"		"0.8 1.0 1.2 1.4 1.6 1.8 2"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"mana_regen_self"	"1 2 3 4"
+				"mana_regen_self"	"1 2 3 4 5 6 7"
 			}
 		}
 	}
@@ -4687,10 +4684,10 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityChannelTime"			"10"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
-		"AbilityCooldown"				"110 100 90"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"110 100 90 80 70 60 50"
 		"AbilityDuration"				"10.0"
-		"AbilityManaCost"				"200 400 600"
+		"AbilityManaCost"				"200 400 600 800 1000 1200 1400"
 		"AbilitySpecial"
 		{
 			"01"
@@ -4736,7 +4733,7 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"105 170 250"
+				"damage"			"105 170 250 300 350 400 450"
 				"LinkedSpecialBonus"	"special_bonus_unique_crystal_maiden_3"
 			}
 			"11"
@@ -5397,7 +5394,7 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"damage_multiplier"	"0.4 0.6 0.8 1.0 1.2 1.4 1.6"
-				"CalculateSpellDamageTooltip" "0"
+				"LinkedSpecialBonus"		"special_bonus_unique_riki_1"
 			}
 
 			"02"
@@ -5437,17 +5434,20 @@
 				"range"	"500"
 				"LinkedSpecialBonus"		"special_bonus_unique_riki_4"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_count"	"4 5 6 7 8 9 10"
+				"attack_rate"				"0.5 0.45 0.4 0.36 0.33 0.3 0.3"
 			}
-
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"scepter_bonus"	"5"
+				"var_type"					"FIELD_INTEGER"
+				"duration_tooltip"				"4 5 6 7 8 9 10"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_bonus"				"5"
 			}
 
 		}
@@ -6162,7 +6162,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"				"0.2"
-		"AbilityCooldown"				"24 22 20 18"
+		"AbilityCooldown"				"24 22 20 18 16 14 12"
 		"AbilityManaCost"				"140"
 		"AbilityCastRange"				"1000"
 		"AbilitySpecial"
@@ -6170,7 +6170,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"count"						"3 4 5 6"
+				"count"						"3 4 5 6 7 8 9"
 			}
 			"02"
 			{
@@ -6194,11 +6194,11 @@
 	"warlock_shadow_word"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"16"
-		"AbilityDamage"					"15 25 35 45"
-		"AbilityManaCost"				"90 110 130 150"
-		"AbilityCastRange"				"525 600 675 750"
+		"AbilityDamage"					"15 25 35 45 65 85 105"
+		"AbilityManaCost"				"90 110 130 150 170 190 210"
+		"AbilityCastRange"				"525 600 675 750 775 800 825"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6214,7 +6214,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"range_tooltip"				"525 600 675 750"
+				"range_tooltip"				"525 600 675 750 775 800 825"
 			}
 		}
 	}
@@ -6222,22 +6222,22 @@
 	"warlock_upheaval"
 	{
 		"MaxLevel"	"7"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.5"
 		"AbilityChannelTime"			"16.0"
-		"AbilityCooldown"				"50 46 42 38"
-		"AbilityManaCost"				"100 110 120 130"
+		"AbilityCooldown"				"50 46 42 38 35 32 28"
+		"AbilityManaCost"				"100 110 120 130 140 150 160"
 		"AbilityCastRange"				"1200"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aoe"					"650 650 650 650"
+				"aoe"					"650"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_rate_duration"	"12.5 6.5 4.5 3.5"
+				"slow_rate_duration"	"12.5 6.5 4.5 3.5 3.0 2.5 2.0"
 			}
 			"03"
 			{
@@ -6254,8 +6254,8 @@
 
 	"warlock_rain_of_chaos"
 	{
-		"MaxLevel"	"7"
-		"AbilityCastPoint"				"0.5 0.5 0.5"
+		"MaxLevel"	"3"
+		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"170"
 		"AbilityManaCost"				"250 375 500"
 		"AbilityCastRange"				"1200"
@@ -6264,7 +6264,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"golem_duration"			"60 60 60"
+				"golem_duration"			"60"
 			}
 			"02"
 			{
@@ -6327,7 +6327,7 @@
 
 	"warlock_golem_flaming_fists"
 	{
-		"MaxLevel"						"3"
+		"MaxLevel"		"3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6338,7 +6338,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"			"300 300 300"
+				"radius"			"300"
 			}
 		}
 	}
@@ -6931,7 +6931,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"24 18 12 6"
+		"AbilityCooldown"				"24 20 18 16 14 12 6"
 		"AbilityManaCost"				"40"
 		"AbilitySpecial"
 		{
@@ -6977,12 +6977,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"10 15 20 25"
+				"chance_pct"			"10 12 15 17 20 25 30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"50 75 100 125"
+				"bonus_damage"			"50 75 100 125 150 175 200"
 				"LinkedSpecialBonus"	"special_bonus_unique_faceless_void_3"
 			}
 		}
@@ -6992,7 +6992,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"40 34 28 22"
+		"AbilityCooldown"				"40 34 28 22 20 18 16"
 		"AbilityManaCost"				"75"
 		"AbilitySpecial"
 		{
@@ -7004,7 +7004,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"6 8 10 12"
+				"duration"				"6 7 8 9 10 12 14 "
 			}
 			"03"
 			{
@@ -7018,9 +7018,9 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.35 0.35 0.35"
-		"AbilityCooldown"				"140.0 125.0 110.0"
-		"AbilityManaCost"				"150 225 300"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"140.0 125.0 110.0 100 90 80 70"
+		"AbilityManaCost"				"150 225 300 325 350 375 400"
 		"AbilitySpecial"
 		{
 			"01"
@@ -7032,12 +7032,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0 4.5 5.0"
+				"duration"				"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_scepter"		"4.0 4.5 5.0"
+				"duration_scepter"		"4.0 4.5 5.0 5.5 6.0 6.5 7.0"
 			}
 			"04"
 			{
@@ -7948,20 +7948,20 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.2"
-		"AbilityCooldown"				"14 13 12 11"
-		"AbilityDamage"					"90 170 240 300"
-		"AbilityManaCost"				"100 110 120 130"
+		"AbilityCooldown"				"16 15 14 13 12 11 10"
+		"AbilityDamage"					"90 170 240 300 360 420 480"
+		"AbilityManaCost"				"100 110 120 130 140 150 160"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"start_radius"			"150 150 150 150"
+				"start_radius"			"150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"end_radius"			"250 250 250 250"
+				"end_radius"			"250"
 			}
 			"03"
 			{
@@ -7991,16 +7991,16 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCastRange"				"150"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-		"AbilityCooldown"				"12 11 10 9"
-		"AbilityDamage"					"25 50 75 100"
-		"AbilityManaCost"				"100 100 100 100"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"14 13 12 11 10 9 8"
+		"AbilityDamage"					"25 50 75 100 125 150 175"
+		"AbilityManaCost"				"100"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2.5 2.75 3.0 3.25"
+				"stun_duration"			"2 2.25 2.5 2.75 3.0 3.25 3.5"
 				"LinkedSpecialBonus"		"special_bonus_unique_dragon_knight_2"
 			}
 			"02"
@@ -8024,14 +8024,14 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"4 6 8 10"
+				"bonus_health_regen"			"4 6 8 10 12 14 16"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"3 6 9 12"
+				"bonus_armor"					"3 6 9 12 12 14 16"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
@@ -8040,8 +8040,9 @@
 
 	"dragon_knight_elder_dragon_form"
 	{
+		"MaxLevel"	"3"
 		"AbilityCooldown"				"115"
-		"AbilityManaCost"				"50 50 50"
+		"AbilityManaCost"				"50"
 		"AbilitySpecial"
 		{
 			"01"
@@ -8052,7 +8053,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"25 25 25"
+				"bonus_movement_speed"		"25"
 			}
 			"03"
 			{
@@ -8067,12 +8068,12 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"corrosive_breath_damage"	"20 20 20"
+				"corrosive_breath_damage"	"20"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"corrosive_breath_duration"	"5.0 5.0 5.0"
+				"corrosive_breath_duration"	"5.0"
 			}
 			"07"
 			{
@@ -8097,7 +8098,7 @@
 			"11"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"frost_duration"				"3.0 3.0 3.0"
+				"frost_duration"				"3.0"
 			}
 			"12"
 			{
@@ -14132,41 +14133,26 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"slow_rate"	"7 6 5 4 3 2 1"
-			}
-
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
 				"purge_damage"	"200 300 400 500 600 700 800"
 				"LinkedSpecialBonus"	"special_bonus_unique_shadow_demon_1"
 			}
-
-			"03"
+			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"tooltip_duration"	"5"
 			}
-
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"creep_root_duration"	"3"
-			}
-
-			"05"
+			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"max_charges"	"4"
 			}
 
-			"06"
+			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"charge_restore_time"	"20"
 			}
-
-			"07"
+			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"charge_restore_time_tooltip_scepter"	"20"
@@ -14856,63 +14842,52 @@
 				"var_type"	"FIELD_FLOAT"
 				"multicast_3_times"	"0 0.2 0.21 0.22 0.23 0.24 0.25"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"multicast_4_times"	"0 0 0.100 0.105 0.110 0.115 0.125"
 			}
-
 			"04"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"fireblast_mana_cost"	"20 40 60 80 100 120 140"
+				"var_type"			"FIELD_FLOAT"
+				"fireblast_cooldown"	"6"
 			}
-
 			"05"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"fireblast_cooldown"	"1 2 3 4 5 6 7"
+				"var_type"			"FIELD_FLOAT"
+				"ignite_aoe"		"150 300 450 500 550 600 650"
 			}
-
 			"06"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"ignite_aoe"	"150 200 250 300 350 400 450"
+				"var_type"			"FIELD_INTEGER"
+				"ignite_cast_range"	"150 300 450 500 550 600 650"
 			}
-
 			"07"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"ignite_cast_range"	"150 200 250 300 350 400 450"
+				"var_type"				"FIELD_FLOAT"
+				"bloodlust_aoe"			"575"
 			}
-
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bloodlust_cooldown"	"10"
+			}
 			"09"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"bloodlust_cooldown"	"5 7 9 11 13 16 19"
+				"var_type"				"FIELD_FLOAT"
+				"multicast_2_times_tooltip"		"30 40 50 60 70 80 90"
 			}
-
 			"10"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"multicast_2_times_tooltip"	"40 45 50 55 60 65 70"
+				"var_type"				"FIELD_FLOAT"
+				"multicast_3_times_tooltip"		"0 20 25 30 35 40 45"
 			}
-
 			"11"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"multicast_3_times_tooltip"	"0 20 21 22 23 24 25"
+				"var_type"				"FIELD_FLOAT"
+				"multicast_4_times_tooltip"		"0 0 12.5 14 16 18 20"
 			}
-
-			"12"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"multicast_4_times_tooltip"	"0 0 10 10.5 11.0 11.5 12.5"
-			}
-
 		}
-
 	}
 
 	"undying_decay"
@@ -15067,35 +15042,27 @@
 
 	"undying_tombstone_zombie_aura"
 	{
-		"MaxLevel"	"4"
+		"MaxLevel"	"7"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"600 800 1000 1200"
+				"radius"	"600 800 1000 1200 1400 1600 1800"
 			}
 
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"health_threshold"	"100 200 300 400"
+				"health_threshold"	"100 200 300 400 500 600 700"
 			}
 
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"zombie_interval"	"3 3 3 2.5"
+				"zombie_interval"	"3 3 3 2.5 2.0 1.5 1"
 			}
-
-			"04"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"bonus_speed"	"50"
-			}
-
 		}
-
 	}
 
 	"undying_tombstone_zombie_deathstrike"
@@ -15108,19 +15075,16 @@
 				"var_type"	"FIELD_INTEGER"
 				"slow"	"-7"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"health_threshold"	"100 200 300 400"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"health_threshold_pct"	"20 25 30 35"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
@@ -15130,17 +15094,19 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_speed"	"50"
+				"bonus_move_speed"	"50"
 			}
-
 			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"			"75"
+			}
+			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"1200"
 			}
-
 		}
-
 	}
 
 	"undying_flesh_golem"
@@ -16528,57 +16494,52 @@
 	"wisp_tether"
 	{
 		"MaxLevel"			"7"
-		"AbilityCastPoint"				"0.001 0.001 0.001 0.001"
-		"AbilityCooldown"				"12.0 12.0 12.0 12.0"
+		"AbilityCastPoint"				"0.001"
+		"AbilityCooldown"				"12.0"
 		"AbilityDuration"				"14"
-		"AbilityManaCost"				"40 40 40 40"
-		"AbilityCastRange"				"1800 1800 1800 1800"
+		"AbilityManaCost"				"40"
+		"AbilityCastRange"				"1800"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"900 900 900 900"
+				"radius"					"1500"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movespeed"					"10 12 14 16"
+				"movespeed"					"10 12 14 16 18 20 22"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"latch_distance"			"700 700 700 700"
+				"latch_distance"			"1000"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"latch_speed"				"1000 1000 1000 1000"
+				"latch_speed"				"1200"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"tether_duration"			"14"
+				"tether_heal_amp"			"1.2 1.3 1.4 1.5 1.6 1.7 1.8"
 			}
 			"06"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"tether_heal_amp"			"1.5"
+				"var_type"					"FIELD_INTEGER"
+				"slow"						"-150"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"			"-100"
+				"attackslow_tooltip"			"-100"
 			}
 			"08"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"attackslow_tooltip"			"-100"
-			}
-			"09"
-			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.75 1.25 1.75 2.25"
+				"stun_duration"				"0.75 1 1.25 1.5 1.75 2.0 2.25"
 			}
 		}
 	}
@@ -16586,31 +16547,31 @@
 	"wisp_spirits"
 	{
 		"MaxLevel"			"7"
-		"AbilityCooldown"				"20.0 18.0 16.0 14.0"
-		"AbilityDuration"				"19.0 19.0 19.0 19.0"
+		"AbilityCooldown"				"20.0 18.0 16.0 14.0 12 10 8"
+		"AbilityDuration"				"19.0"
 		"AbilityManaCost"				"150"
 		"AbilitySpecial"
 		{
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"creep_damage"				"8 14 20 26"
+				"creep_damage"				"8 14 20 26 32 36 40"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hero_damage"				"25 50 75 100"
+				"hero_damage"				"25 50 75 100 125 150 175"
 				"LinkedSpecialBonus"		"special_bonus_unique_wisp"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"revolution_time"			"5.0 5.0 5.0 5.0"
+				"revolution_time"			"5.0"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"min_range"					"100 100 100 100"
+				"min_range"					"100"
 			}
 			"06"
 			{
@@ -16621,17 +16582,17 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hero_hit_radius"			"70 70 70 70"
+				"hero_hit_radius"			"70"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"explode_radius"			"300 300 300 300"
+				"explode_radius"			"300"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hit_radius"				"150 150 150 150"
+				"hit_radius"				"150"
 			}
 			"10"
 			{
@@ -16641,12 +16602,12 @@
 			"11"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"spirit_movement_rate"		"250 250 250 250"
+				"spirit_movement_rate"		"250"
 			}
 			"12"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"spirit_duration"			"19.0 19.0 19.0 19.0"
+				"spirit_duration"			"19.0"
 			}
 		}
 	}
@@ -16660,17 +16621,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"40 50 60 70"
+				"bonus_attack_speed"		"40 50 60 70 80 90 100"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_pct"			"-5 -10 -15 -20"
+				"bonus_damage_pct"			"-5 -10 -15 -20 -25 -30 -35"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"drain_interval"			"0.2 0.2 0.2 0.2"
+				"drain_interval"			"0.2"
 			}
 			"04"
 			{
@@ -16688,19 +16649,19 @@
 	"wisp_relocate"
 	{
 		"MaxLevel"			"7"
-		"AbilityCooldown"				"120.0 100.0 80.0"
-		"AbilityManaCost"				"100 100 100"
+		"AbilityCooldown"				"140.0 120.0 100.0 80.0 60.0 40.0 20.0"
+		"AbilityManaCost"				"100"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cast_delay"				"2.7 2.35 2.0"
+				"cast_delay"				"2.7 2.35 2.0 1.8 1.6 1.4 1.2"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"return_time"				"12.0 12.0 12.0"
+				"return_time"				"12.0"
 			}
 		}
 	}
@@ -22061,11 +22022,6 @@
 				"return_travel_speed"	"500"
 			}
 			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"initial_delay"			"0.8"
-			}
-			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"starting_height"		"300"
