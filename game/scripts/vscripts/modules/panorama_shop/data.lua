@@ -94,9 +94,6 @@ PANORAMA_SHOP_ITEMS = {
 			"item_relic",
 			"__indent__",
 			"item_shard_attackspeed",
-			"item_shard_primal_small",
-			"item_shard_primal_medium",
-			"item_shard_primal_large",
 		},
 	},
 	{

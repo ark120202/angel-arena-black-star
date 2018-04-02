@@ -19,9 +19,6 @@ DOTA_Tooltip_ability_item_shard_int_small: Small Intelligence Shard
 DOTA_Tooltip_ability_item_shard_int_medium: Medium Intelligence Shard
 DOTA_Tooltip_ability_item_shard_int_large: Large Intelligence Shard
 DOTA_Tooltip_ability_item_shard_int_extreme: Extreme Intelligence Shard
-DOTA_Tooltip_ability_item_shard_primal_small: Small Primal Shard
-DOTA_Tooltip_ability_item_shard_primal_medium: Medium Primal Shard
-DOTA_Tooltip_ability_item_shard_primal_large: Large Primal Shard
 DOTA_Tooltip_ability_item_shard_attackspeed: Attackspeed Shard
 '<h1>Использование: Поглотить</h1> Поглощает предмет и дает герою постоянный бонус.':
   - DOTA_Tooltip_ability_item_shard_str_small_Description
@@ -36,9 +33,6 @@ DOTA_Tooltip_ability_item_shard_attackspeed: Attackspeed Shard
   - DOTA_Tooltip_ability_item_shard_int_medium_Description
   - DOTA_Tooltip_ability_item_shard_int_large_Description
   - DOTA_Tooltip_ability_item_shard_int_extreme_Description
-  - DOTA_Tooltip_ability_item_shard_primal_small_Description
-  - DOTA_Tooltip_ability_item_shard_primal_medium_Description
-  - DOTA_Tooltip_ability_item_shard_primal_large_Description
   - DOTA_Tooltip_ability_item_shard_attackspeed_Description
 
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
