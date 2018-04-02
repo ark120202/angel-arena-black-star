@@ -8109,12 +8109,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all"					"95"
+				"bonus_all"					"15"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"50"
+				"bonus_attack_speed"		"20"
 			}
 			"05"
 			{
@@ -8124,7 +8124,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_hp_regen"			"32"
+				"bonus_hp_regen"			"12"
 			}
 			"07"
 			{
@@ -8133,18 +8133,8 @@
 			} //Handled with base modifier
 			"08"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"spell_amp_pct"				"14"
-			}
-			"09"
-			{
 				"var_type"					"FIELD_FLOAT"
 				"duration"					"5"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_range"		"50"
 			}
 		}
 
@@ -8187,7 +8177,6 @@
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_hp_regen"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_armor"
-					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp_pct"
 				}
 
 				"OnCreated"
@@ -8223,11 +8212,6 @@
 
 				"EffectName"		"particles/items3_fx/glimmer_cape_initial.vpcf"
 				"EffectAttachType"	"follow_origin"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_attack_range"
-				}
 
 				"States"
 				{
