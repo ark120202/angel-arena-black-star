@@ -741,7 +741,7 @@ DOTA_Tooltip_ability_item_angel_wings_Description: |-
   Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus%.
 DOTA_Tooltip_ability_item_angel_wings_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_modifier_item_angel_wings_active: Flight
-DOTA_Tooltip_modifier_item_angel_wings_active_Description: 'Имеет возможность свободно перемещаться через препятствия, радиус атаки увеличен на %dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS%'
+DOTA_Tooltip_modifier_item_angel_wings_active_Description: 'Имеет возможность свободно перемещаться через препятствия.'
 DOTA_Tooltip_ability_item_blade_of_discord: Blade of Discord
 DOTA_Tooltip_ability_item_blade_of_discord_Description: '<h1>Активируемая: Ether Weakness</h1> Ослабляет врагов, придавая им бесплотную форму. В этой форме цель не может атаковать, получает увеличенный магический урон, но полностью защищена от физического урона. При применении на противников они будут замедлены и получат магический урон в размере %debuff_stats_multiplier%х всех ваших атрибутов + %debuff_damage_base% ед. Эффект длится %debuff_duration% секунд.'
 DOTA_Tooltip_ability_item_blade_of_discord_debuff_resist: '%ДОП. МАГИЧЕСКИЙ УРОН:'

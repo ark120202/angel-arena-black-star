@@ -633,7 +633,7 @@
 		"ItemResult"					"item_edge_of_vyse"
 		"ItemRequirements"
 		{
-			"01"						"item_silver_edge;item_sheepstick"
+			"01"						"item_silver_edge;item_sheepstick;item_moon_dust"
 		}
 	}
 
@@ -8073,7 +8073,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"5930"
+		"ItemCost"						"1000"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_angel_wings"
 		"ItemRequirements"
@@ -8109,32 +8109,22 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all"					"15"
+				"bonus_all"					"25"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"20"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"1500"
+				"bonus_mana"				"650"
 			} //Handled with base modifier
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_hp_regen"			"12"
-			}
-			"07"
+			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"cast_range_bonus"			"300"
 			} //Handled with base modifier
-			"08"
+			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"5"
+				"duration"					"6"
 			}
 		}
 
@@ -8174,8 +8164,6 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_hp_regen"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_armor"
 				}
 
