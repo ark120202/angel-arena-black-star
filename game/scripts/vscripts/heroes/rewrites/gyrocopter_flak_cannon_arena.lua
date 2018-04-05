@@ -38,7 +38,7 @@ if IsServer() then
 end
 
 
-LinkLuaModifier("modifier_gyrocopter_flak_cannon_arena", "heroes/rewrites/gyrocopter_flak_cannon.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_gyrocopter_flak_cannon_arena", "heroes/rewrites/gyrocopter_flak_cannon_arena.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_gyrocopter_flak_cannon_arena = {
 	GetEffectAttachType = function() return PATTACH_OVERHEAD_FOLLOW end,
 	GetEffectName = function() return "particles/units/heroes/hero_gyrocopter/gyro_flak_cannon_overhead.vpcf" end,
@@ -69,7 +69,7 @@ if IsServer() then
 end
 
 
-LinkLuaModifier("modifier_gyrocopter_flak_cannon_arena_scepter", "heroes/rewrites/gyrocopter_flak_cannon.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_gyrocopter_flak_cannon_arena_scepter", "heroes/rewrites/gyrocopter_flak_cannon_arena.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_gyrocopter_flak_cannon_arena_scepter = {
 	IsHidden = function() return true end,
 	IsPurgable = function() return false end,
