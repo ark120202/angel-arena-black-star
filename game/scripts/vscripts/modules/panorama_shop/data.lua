@@ -154,7 +154,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_lotus_orb",
 			"item_hurricane_pike",
 			"item_shivas_guard",
-			"item_bloodstone_arena",
+			"item_bloodstone",
 			"item_manta_arena",
 			"item_sphere",
 			"item_heart",

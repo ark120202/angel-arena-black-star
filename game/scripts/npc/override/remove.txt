@@ -29,8 +29,6 @@
 	"item_dagon_5"					"REMOVE"
 	"item_recipe_hand_of_midas"		"REMOVE"
 	"item_hand_of_midas"			"REMOVE"
-	"item_recipe_bloodstone"		"REMOVE"
-	"item_bloodstone"				"REMOVE"
 	"item_recipe_skadi"				"REMOVE"
 	"item_skadi"					"REMOVE"
 	"item_recipe_radiance"			"REMOVE"

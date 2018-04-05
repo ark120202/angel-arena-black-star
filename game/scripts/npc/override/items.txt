@@ -696,6 +696,16 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
+	"item_recipe_bloodstone"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_bloodstone"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 	"item_recipe_sphere"
 	{
 		"SecretShop"					"0"

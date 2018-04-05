@@ -459,15 +459,7 @@ DOTA_Tooltip_ability_item_blood_of_midas_bonus_regen: +$hp_regen
 DOTA_Tooltip_ability_item_blood_of_midas_bonus_attackspeed: +$attack
 DOTA_Tooltip_ability_item_blood_of_midas_xp_multiplier: 'XP BONUS MULTIPLIER:'
 DOTA_Tooltip_ability_item_blood_of_midas_gold_multiplier: 'GOLD BONUS MULTIPLIER:'
-DOTA_Tooltip_ability_item_bloodstone_arena: Bloodstone
-DOTA_Tooltip_ability_item_bloodstone_arena_Description: |-
-  <h1>Active: Pocket Deny</h1> Instantly causes you to die. While dead you will get vision around death point. If you have enough charges to resurrect instantly, you will be teleported to your death point.
-  <h1>Passive: Bloodpact</h1> Begins with 10 charges, and gains a charge each time an enemy hero dies within %charge_range% range. Each charge grants %bonus_mana_regen_per_charge% mana regeneration per second, %bonus_health_regen_per_charge% health regeneration per second, %bonus_health_per_charge% max health, increases manapool by %bonus_mana_per_charge% and reduces respawn time by %respawn_time_reduction_per_charge% seconds. If the bearer dies, %heal_on_death_base% + %heal_on_death_per_charge% health per charge is restored to all allies within a %heal_on_death_range% radius, while the Bloodstone loses a %on_death_charge_percent_tooltip%%% of its charges.
-DOTA_Tooltip_ability_item_bloodstone_arena_bonus_Note0: Pocket Deny not affects your kill streak
-DOTA_Tooltip_ability_item_bloodstone_arena_bonus_health: +$health
-DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana: +$mana
-DOTA_Tooltip_ability_item_bloodstone_arena_bonus_health_regen: +$hp_regen
-DOTA_Tooltip_ability_item_bloodstone_arena_bonus_mana_regen: +$mana_regen
+
 DOTA_Tooltip_ability_item_team_changer: Traitor's Flag
 DOTA_Tooltip_ability_item_team_changer_Description: |-
   Change your team to the opposite team. Can be used only if another team has less players than your. If damage is taken from an enemy hero or boss, this ability is disabled for %attacked_cooldown% seconds

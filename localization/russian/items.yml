@@ -347,11 +347,7 @@ DOTA_Tooltip_ability_item_blood_of_midas_Description: '<h1>Пассивная: R
 DOTA_Tooltip_ability_item_blood_of_midas_arena_Note0: Складывается с любым другим усилением руны.
 DOTA_Tooltip_ability_item_blood_of_midas_xp_multiplier: 'МНОЖИТЕЛЬ ОПЫТА:'
 DOTA_Tooltip_ability_item_blood_of_midas_gold_multiplier: 'МНОЖИТЕЛЬ ЗОЛОТА:'
-DOTA_Tooltip_ability_item_bloodstone_arena: Bloodstone
-DOTA_Tooltip_ability_item_bloodstone_arena_Description: |-
-  Активная: Pocket Deny - мгновенно убивает вас. Пока ваш герой мертв вы будете видеть всё всё происходящее рядом с точкой смерти. Если у вас достаточно зарядов для мгновенного воскрешения, то вы воскреснете на месте вашей смерти.
-  <h1>Пассивная: Bloodpact</h1> Изначально имеет 10 зарядов и получает 1 дополнительный заряд каждый раз, когда в радиусе %charge_range% умирает вражеский герой. Каждый заряд увеличивает регенерацию маны на %bonus_mana_regen_per_charge%, регенерацию здоровья на %bonus_health_regen_per_charge%, максимальный запас здоровья на %bonus_health_per_charge%, максимальный запас маны на %bonus_mana_per_charge% и уменьшает время возрождения на %respawn_time_reduction_per_charge% сек. Если владелец Bloodstone умирает, предмет потеряет %on_death_charge_percent_tooltip%%% зарядов и восстановит %heal_on_death_base% здоровья + %heal_on_death_per_charge% здоровья за каждый заряд всем союзникам в радиусе %heal_on_death_range%.
-DOTA_Tooltip_ability_item_bloodstone_arena_bonus_Note0: Pocket Deny не влияет на серии убийств
+
 DOTA_Tooltip_ability_item_team_changer: Traitor's Flag
 DOTA_Tooltip_ability_item_team_changer_Description: |-
   Меняет вашу команду на противоположную. Может быть использовано только если в другой команде меньше игроков чем в вашей. Если владелец получит урон от вражеского героя или босса, способность отключается на %attacked_cooldown% сек.
