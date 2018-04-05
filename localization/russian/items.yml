@@ -1000,3 +1000,28 @@ DOTA_Tooltip_ability_item_scythe_of_the_ancients_spell_amp_pct: '%ДОП. УРО
 DOTA_Tooltip_ability_item_scythe_of_the_ancients_cast_range_bonus: 'ДОП. ДАЛЬНОСТЬ СПОСОБНОСТЕЙ:'
 DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_attack_range: 'ДОП. РАДИУС АТАКИ:'
 DOTA_Tooltip_ability_item_scythe_of_the_ancients_all_damage_bonus_pct: '%УВЕЛИЧЕНИЕ УРОНА:'
+
+DOTA_Tooltip_ability_item_unstable_quasar_Description: >-
+  <h1>Пассивная: Singularity</h1> При использовании способности или предмета,
+  имеющего ненулевой расход маны, наносит %base_damage% + %damage_pct%%%
+  (%intelligence_damage_pct%%% для героев с основной характеристикой -
+  интеллект) от максимального здоровья всем противникам, притягивая их и
+  уменьшая их скорость передвижения до %slow_speed% единиц на %slow_duration%
+  секунды.
+
+
+  Срабатывание расходует %manacost% + %manacost_pct%%% от максимальной маны.
+
+
+  Радиус: %singularity_radius%
+
+  <h1>Пассивная: Decomposition Aura</h1> Дает возможность видеть невидимых
+  существ и варды и снижает сопротивление магическому урону противников на
+  %aura_resist_debuff_pct%%%.
+
+
+  Радиус: %aura_radius%
+DOTA_Tooltip_ability_item_unstable_quasar_Note0: Эффекты от нескольких Unstable Quasar не складываются.
+DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: +к радиусу обзора днем
+DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +к радиусу обзора ночью
+DOTA_Tooltip_ability_item_unstable_quasar_Lore: Только мудрецам дано полностью овладеть сингулярностью.

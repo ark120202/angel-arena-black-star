@@ -247,6 +247,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_haganemushi",
 			"item_radiance_frozen",
 			"item_scythe_of_the_ancients",
+			"item_unstable_quasar",
 		},
 		{
 			"item_holy_knight_shield",
