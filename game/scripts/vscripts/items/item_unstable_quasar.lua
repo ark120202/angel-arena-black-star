@@ -61,6 +61,15 @@ if IsServer() then
 				})
 
 				local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+				ParticleManager:SetParticleControlEnt(
+					particle,
+					0,
+					caster,
+					PATTACH_POINT_FOLLOW,
+					"attach_attack1",
+					caster:GetAbsOrigin(),
+					true
+				)
 				ParticleManager:SetParticleControl(particle, 1, enemyPos)
 
 				v:AddNewModifier(caster, ability, "modifier_item_unstable_quasar_slow", {duration = ability:GetSpecialValueFor("slow_duration")})
