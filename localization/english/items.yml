@@ -1533,3 +1533,30 @@ DOTA_Tooltip_ability_item_sange_and_yasha_and_kaya_spell_amp_pct: '%+Spell Ampli
 DOTA_Tooltip_ability_item_sange_and_yasha_and_kaya_manacost_reduction_pct: '%+Manacost and Manaloss Reduction'
 DOTA_Tooltip_modifier_item_sange_and_yasha_and_kaya_maim: '{lc:modifier_item_sange_maim}'
 DOTA_Tooltip_modifier_item_sange_and_yasha_and_kaya_maim_Description: '{lc:modifier_item_sange_maim_Description}'
+
+DOTA_Tooltip_ability_item_unstable_quasar: Unstable Quasar
+DOTA_Tooltip_ability_item_unstable_quasar_Description: >-
+  <h1>Passive: Singularity</h1> Usage of any ability or item with non-zero mana
+  cost, deals %base_damage% + %damage_pct%%% (%intelligence_damage_pct%%% for
+  heroes with intelligence being their primary attribute) of max health of
+  nearby enemies, pulling them to your hero and reducing their movement speed to
+  %slow_speed% for %slow_duration% second.
+
+
+  Triggering the Singularity spends %manacost% + %manacost_pct%%% of max mana.
+
+
+  Радиус: %singularity_radius%
+
+  <h1>Passive: Decomposition Aura</h1> Grants the ability to see invisible units
+  and wards and reduces Magical Damage Resistance of enemy uses by
+  %aura_resist_debuff_pct%%%.
+
+
+  Radius: %aura_radius%
+DOTA_Tooltip_ability_item_unstable_quasar_Note0: Effects of multiple Unstable Quasar do not stack.
+DOTA_Tooltip_ability_item_unstable_quasar_bonus_intellect: +$int
+DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: +Day Vision
+DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +Night Vision
+DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%+$spell_amp'
+DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize the singularity.
