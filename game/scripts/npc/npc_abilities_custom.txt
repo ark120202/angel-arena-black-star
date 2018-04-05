@@ -32,7 +32,6 @@
 #base "abilities/heroes/hero_medusa.txt"
 #base "abilities/heroes/hero_pudge.txt"
 #base "abilities/heroes/hero_phantom_lancer.txt"
-#base "abilities/heroes/hero_antimage.txt"
 
 "DOTAAbilities"
 {

@@ -1,5 +1,93 @@
 "DOTAAbilities"
 {
+	"antimage_mana_break"
+	{
+		"MaxLevel"	"7"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_burn"		"0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_per_hit"			"28 40 52 64"
+			}
+		}
+	}
+
+	"antimage_blink"
+	{
+		"MaxLevel"	"7"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		"AbilityCooldown"				"15 12 9 6"
+		"AbilityManaCost"				"60"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range"			"925 1000 1075 1150"
+				"LinkedSpecialBonus"		"special_bonus_unique_antimage_3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_blink_range"		"200"
+			}
+		}
+	}
+
+	"antimage_spell_shield"
+	{
+		"MaxLevel"	"7"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"spell_shield_resistance"		"20 30 40 50"
+				"LinkedSpecialBonus"		"special_bonus_unique_antimage_4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_cooldown"		"12"
+			}
+		}
+	}
+
+	"antimage_mana_void"
+	{
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"70.0"
+		"AbilityManaCost"				"125 200 275"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"mana_void_damage_per_mana"		"0.8 0.95 1.1"
+			}
+
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"mana_void_ministun"			"0.3"
+			}
+
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"mana_void_aoe_radius"			"500"
+			}
+		}
+	}
+
 	"axe_berserkers_call"
 	{
 		"MaxLevel"	"7"
