@@ -1642,17 +1642,17 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_invoker_8 = {
 		group = 10,
 	},
-	special_bonus_unique_gyrocopter_5 = {
-		group = 4,
+	special_bonus_unique_gyrocopter_1 = false,
+	special_bonus_unique_gyrocopter_2 = false,
+	special_bonus_unique_gyrocopter_3 = {
+		group = 6,
 	},
 	special_bonus_unique_gyrocopter_4 = {
 		group = 5,
 	},
-	special_bonus_unique_gyrocopter_3 = {
-		group = 6,
+	special_bonus_unique_gyrocopter_5 = {
+		group = 4,
 	},
-	special_bonus_unique_gyrocopter_1 = false,
-	special_bonus_unique_gyrocopter_2 = false,
 }
 
 TALENT_GROUP_TO_LEVEL = {
