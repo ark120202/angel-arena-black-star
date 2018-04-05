@@ -39,7 +39,7 @@ if IsServer() then
 		local usedAbility = keys.ability
 		local team = caster:GetTeam()
 		local pos = caster:GetAbsOrigin()
-		local radius = ability:GetSpecialValueFor("damage_radius")
+		local radius = ability:GetSpecialValueFor("singularity_radius")
 
 		if (
 			PreformAbilityPrecastActions(caster, ability) and
@@ -64,12 +64,10 @@ if IsServer() then
 
 				v:AddNewModifier(caster, ability, "modifier_item_unstable_quasar_slow", {duration = ability:GetSpecialValueFor("slow_duration")})
 
-				local distance = pos - enemyPos
-				local offset = ability:GetSpecialValueFor("offset_distance")
+				local direction = (pos - enemyPos):Normalized()
+				local distance = ability:GetSpecialValueFor("offset_range")
 
-				FindClearSpaceForUnit(v, GetGroundPosition(enemyPos + distance:Normalized() * offset, caster), true)
-
-				--caster:EmitSound("Hero_Pugna.NetherWard")
+				FindClearSpaceForUnit(v, GetGroundPosition(enemyPos + direction * distance, caster), true)
 			end
 		end
 	end
@@ -132,15 +130,15 @@ function modifier_item_unstable_quasar_slow:DeclareFunctions()
 end
 
 function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Limit()
-	return self:GetAbility():GetSpecialValueFor("speed")
+	return self:GetAbility():GetSpecialValueFor("slow_speed")
 end
 
 function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Max()
-	return self:GetAbility():GetSpecialValueFor("speed")
+	return self:GetAbility():GetSpecialValueFor("slow_speed")
 end
 
 function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Absolute()
-	return self:GetAbility():GetSpecialValueFor("speed")
+	return self:GetAbility():GetSpecialValueFor("slow_speed")
 end
 
 
@@ -150,7 +148,7 @@ modifier_item_unstable_quasar_aura = class({
 })
 
 function modifier_item_unstable_quasar_aura:GetModifierMagicalResistanceBonus()
-	return -self:GetAbility():GetSpecialValueFor("aura_descrease_resistange_pct")
+	return -self:GetAbility():GetSpecialValueFor("aura_resist_debuff_pct")
 end
 
 function modifier_item_unstable_quasar_aura:CheckState()

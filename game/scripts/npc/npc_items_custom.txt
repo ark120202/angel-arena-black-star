@@ -8784,61 +8784,56 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_day_vision"			"500"
+				"bonus_intellect"			"100"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_night_vision"		"500"
+				"bonus_day_vision"			"500"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_radius"				"1400"
+				"bonus_night_vision"		"500"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_intellect"			"100"
+				"spell_amp_pct"				"30"
 			}
 			"05"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"spell_amp_pct"				"30"
+				"var_type"						"FIELD_INTEGER"
+				"singularity_radius"			"800"
+				"CalculateSpellDamageTooltip" 	"0"
 			}
 			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"damage_pct"					"5.5"
-				"CalculateSpellDamageTooltip" 	"0"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"intelligence_damage_pct"		"11"
-				"CalculateSpellDamageTooltip" 	"0"
-			}
-			"08"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"base_damage"					"250"
 				"CalculateSpellDamageTooltip" 	"0"
 			}
+			"07"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"damage_pct"					"5.5"
+				"CalculateSpellDamageTooltip" 	"0"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"intelligence_damage_pct"		"11"
+				"CalculateSpellDamageTooltip" 	"0"
+			}
 			"09"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"min_ability_cooldown"		"1.6"
-			}
-			"10"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_radius"					"800"
-				"CalculateSpellDamageTooltip" 	"0"
+				"var_type"						"FIELD_FLOAT"
+				"min_ability_cooldown"			"1.6"
 			}
 			"11"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"speed"							"50"
+				"slow_speed"					"100"
 			}
 			"12"
 			{
@@ -8848,12 +8843,17 @@
 			"13"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"offset_distance"				"30"
+				"offset_range"					"30"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"1400"
 			}
 			"14"
 			{
-				"var_type"						 "FIELD_INTEGER"
-				"aura_descrease_resistange_pct"  "20"
+				"var_type"						"FIELD_INTEGER"
+				"aura_resist_debuff_pct"		"20"
 			}
 			"15"
 			{
