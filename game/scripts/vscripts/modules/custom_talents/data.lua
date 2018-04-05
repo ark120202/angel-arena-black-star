@@ -1651,9 +1651,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_gyrocopter_3 = {
 		group = 6,
 	},
-	special_bonus_unique_gyrocopter_1 = {
-		group = 7,
-	},
+	special_bonus_unique_gyrocopter_1 = false,
 	special_bonus_unique_gyrocopter_2 = false,
 }
 
