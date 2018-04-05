@@ -129,9 +129,6 @@ DOTA_Tooltip_ability_item_gem_of_pure_soul_Description: |-
 DOTA_Tooltip_ability_item_gem_of_pure_soul_radius: 'PURE SOUL RADIUS:'
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Note0: Disabled while on a courier.
 
-DOTA_Tooltip_ability_item_aegis_arena: Aegis of the Immortal
-DOTA_Tooltip_ability_item_aegis_arena_Description: '<h1>Passive: Reincarnation</h1> Brings you to life with full health and mana %reincarnate_time% seconds after you die, at the location where you died. While reincarnating you gain %vision_radius% vision around the location of death. Reincarnation must be used within %disappear_time_minutes_tooltip% minutes or Aegis of the Immortal disappears. If it expires, it instantly heal you.'
-
 DOTA_Tooltip_ability_item_refresher_arena: Refresher Orb
 DOTA_Tooltip_ability_item_refresher_arena_Description: |-
   <h1>Active: Reset Cooldowns</h1> Resets the cooldowns of all your items and abilities.

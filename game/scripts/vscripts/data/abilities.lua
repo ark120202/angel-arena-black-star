@@ -34,7 +34,6 @@ NOT_MULTICASTABLE_ABILITIES = {
 
 REFRESH_LIST_IGNORE_REFRESHER = {
 	item_refresher_arena = true,
-	item_aegis_arena = true,
 	item_refresher_core = true,
 	omniknight_select_allies = true,
 	omniknight_select_enemies = true,
@@ -42,7 +41,6 @@ REFRESH_LIST_IGNORE_REFRESHER = {
 
 REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
 	item_refresher_arena = true,
-	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_titanium_bar = true,
 	item_coffee_bean = true,
@@ -53,7 +51,6 @@ REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
 
 REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 	item_refresher_arena = true,
-	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_black_king_bar = true,
 	item_titanium_bar = true,
@@ -65,7 +62,6 @@ REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 REFRESH_LIST_IGNORE_REARM = {
 	tinker_rearm_arena = true,
 	item_refresher_arena = true,
-	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_titanium_bar = true,
 	item_guardian_greaves_arena = true,

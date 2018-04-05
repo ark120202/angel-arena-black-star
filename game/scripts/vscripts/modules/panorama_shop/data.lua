@@ -217,7 +217,6 @@ PANORAMA_SHOP_ITEMS = {
 			"item_summoned_unit",
 			"item_runic_mekansm",
 			"item_orb_of_essences",
-			"item_aegis_arena",
 			"item_angel_wings",
 		},
 		{

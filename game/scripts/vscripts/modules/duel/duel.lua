@@ -295,7 +295,7 @@ function Duel:FillPreduelUnitData(unit)
 	end
 	for i = 0, 5 do
 		local item = unit:GetItemInSlot(i)
-		if item and item:GetAbilityName() ~= "item_aegis_arena" then
+		if item then
 			unit.StatusBeforeArena.ItemCooldowns[item] = item:GetCooldownTimeRemaining()
 			item:EndCooldown()
 		end
