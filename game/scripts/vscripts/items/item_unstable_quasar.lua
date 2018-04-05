@@ -6,11 +6,12 @@ item_unstable_quasar = class({
 	GetIntrinsicModifierName = function() return "modifier_item_unstable_quasar_passive" end,
 })
 
-function item_unstable_quasar:GetManaCost(iLevel)
+function item_unstable_quasar:GetManaCost()
 	local caster = self:GetCaster()
-	if caster then
-		return self:GetSpecialValueFor("manacost") + caster:GetMaxMana() * self:GetSpecialValueFor("manacost_pct") * 0.01
-	end
+	if not caster then return end
+
+	local percentage = caster:GetMaxMana() * self:GetSpecialValueFor("manacost_pct") * 0.01
+	return self:GetSpecialValueFor("manacost") + percentage
 end
 
 
