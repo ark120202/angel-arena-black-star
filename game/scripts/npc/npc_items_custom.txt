@@ -3,8 +3,6 @@
 #base "items/dagon.txt"
 #base "items/diffusal_blade.txt"
 #base "items/boss_drop.txt"
-#base "items/aether_lens.txt"
-#base "items/sange_yasha_nightshadow.txt"
 #base "items/splitshot.txt"
 #base "items/skadi.txt"
 #base "items/butterfly.txt"
@@ -65,655 +63,6 @@
 				{
 					"MODIFIER_STATE_NIGHTMARED"		"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
-	"item_casino_drug_pill1"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/casino_drug_pill1"
-		"AbilityCastPoint"        		"0.6"
-		"AbilityCastAnimation"			"ACT_DOTA_DISABLED"
-
-		"ItemCost"						"1500"
-		"ItemShopTags"					"casino;drug"
-		"ItemQuality"					"rare"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-		"ItemPurchasableFilter"			"0"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"					"25"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration_debuff_multiplier"	"15"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"strange_moving_amplitude"	"50"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"strange_moving_addiction_amplitude"	"75"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed"	"100"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_movement_speed_pct"	"25"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"95"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"think_interval"	"0.1"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_drugs.lua"
-				"Function"		"ApplyDrugModifers"
-				"modifier_addiction"	"modifier_item_casino_drug_pill1_addiction"
-				"modifier_buff"			"modifier_item_casino_drug_pill1_buff"
-				"modifier_debuff"		"modifier_item_casino_drug_pill1_debuff"
-			}
-			"DelayedAction"
-			{
-				"Delay"     "0.06"
-				"Action"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"SpendChargeRight"
-					}
-				}
-			}
-		}
-
-		"precache"
-		{
-			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone.vpcf"
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_casino_drug_pill1_buff"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsPurgable"		"0"
-				"IsBuff"			"1"
-				"Duration"			"%duration"
-				"StatusEffectName"	"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone.vpcf"
-				"StatusEffectPriority"	"7"
-				"TextureName"		"item_arena/casino_drug_pill1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movement_speed_pct"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			}
-
-			"modifier_item_casino_drug_pill1_debuff"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsPurgable"		"0"
-				"IsDebuff"			"1"
-				"TextureName"		"item_arena/casino_drug_pill1"
-
-				"ThinkInterval"  "%think_interval"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_drugs.lua"
-						"Function"		"DrugEffectStrangeMoveKV"
-						"amplitude"		"%strange_moving_amplitude"
-					}
-				}
-			}
-		}
-	}
-
-	"item_casino_drug_pill2"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/casino_drug_pill2"
-		"AbilityCastPoint"        		"0.6"
-		"AbilityCastAnimation"			"ACT_DOTA_DISABLED"
-
-		"ItemCost"						"1500"
-		"ItemShopTags"					"casino;drug"
-		"ItemQuality"					"rare"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-		"ItemPurchasableFilter"			"0"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"					"25"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration_debuff_multiplier"	"15"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"strange_moving_amplitude"	"65"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"strange_moving_addiction_amplitude"	"120"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"random_particles_duration"	"1"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"random_particles_addiction_duration"	"1.5"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed"	"150"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_movement_speed_pct"	"40"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"125"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_evasion"		"40"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_health_regen_pct"	"2"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"think_interval"	"0.1"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_drugs.lua"
-				"Function"		"ApplyDrugModifers"
-				"modifier_addiction"	"modifier_item_casino_drug_pill2_addiction"
-				"modifier_buff"			"modifier_item_casino_drug_pill2_buff"
-				"modifier_debuff"		"modifier_item_casino_drug_pill2_debuff"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-
-		"precache"
-		{
-			"particle"  "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_casino_drug_pill2_buff"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsPurgable"		"0"
-				"IsBuff"			"1"
-				"Duration"			"%duration"
-				"StatusEffectName"	"particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
-				"StatusEffectPriority"	"8"
-				"TextureName"		"item_arena/casino_drug_pill2"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movement_speed_pct"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"%bonus_evasion"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"		"%bonus_health_regen_pct"
-				}
-			}
-
-			"modifier_item_casino_drug_pill2_debuff"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsPurgable"		"0"
-				"IsDebuff"			"1"
-				"TextureName"		"item_arena/casino_drug_pill2"
-
-				"ThinkInterval"  "%think_interval"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_drugs.lua"
-						"Function"		"DrugEffectStrangeMoveKV"
-						"amplitude"		"%strange_moving_amplitude"
-					}
-
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_drugs.lua"
-						"Function"		"DrugEffectRandomParticlesKV"
-						"duration"		"%random_particles_duration"
-					}
-				}
-			}
-		}
-	}
-
-	"item_casino_drug_pill3"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/casino_drug_pill3"
-		"AbilityCastPoint"        		"0.6"
-		"AbilityCastAnimation"			"ACT_DOTA_DISABLED"
-
-		"ItemCost"						"1500"
-		"ItemShopTags"					"casino;drug"
-		"ItemQuality"					"rare"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-		"ItemPurchasableFilter"			"0"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"					"25"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration_debuff_multiplier"	"15"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"strange_moving_amplitude"	"80"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"strange_moving_addiction_amplitude"	"160"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"random_particles_duration"	"5"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"random_particles_addiction_duration"	"10"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed"	"180"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_movement_speed_pct"	"100"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"125"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_evasion"		"60"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_health_regen_pct"	"3.25"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_inc_dmg_recuction"	"-25"
-			}
-			"13"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_range"	"150"
-			}
-			"14"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"think_interval"	"0.1"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/items_drugs.lua"
-				"Function"		"ApplyDrugModifers"
-				"modifier_addiction"	"modifier_item_casino_drug_pill3_addiction"
-				"modifier_buff"			"modifier_item_casino_drug_pill3_buff"
-				"modifier_debuff"		"modifier_item_casino_drug_pill3_debuff"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-
-		"precache"
-		{
-			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_statue_compendium_2014_dire.vpcf"
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_casino_drug_pill3_buff"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsPurgable"		"0"
-				"IsBuff"			"1"
-				"Duration"			"%duration"
-				"StatusEffectName"	"particles/econ/items/effigies/status_fx_effigies/status_effect_statue_compendium_2014_dire.vpcf"
-				"StatusEffectPriority"	"9"
-				"TextureName"		"item_arena/casino_drug_pill3"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movement_speed_pct"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"%bonus_evasion"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"		"%bonus_health_regen_pct"
-					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%bonus_inc_dmg_recuction"
-					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"			"%bonus_attack_range"
-				}
-			}
-
-			"modifier_item_casino_drug_pill3_debuff"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsPurgable"		"0"
-				"IsDebuff"			"1"
-				"TextureName"		"item_arena/casino_drug_pill3"
-
-				"ThinkInterval"  "%think_interval"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_drugs.lua"
-						"Function"		"DrugEffectStrangeMoveKV"
-						"amplitude"		"%strange_moving_amplitude"
-					}
-
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_drugs.lua"
-						"Function"		"DrugEffectRandomParticlesKV"
-						"duration"		"%random_particles_duration"
-					}
-				}
-			}
-		}
-	}
-
-	"item_blink_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityTextureName"			"item_blink"
-		"FightRecapLevel"				"1"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"12.0"
-		"AbilityManaCost"				"0"
-		"ItemCost"						"2250"
-		"ItemShopTags"					"teleport"
-		"ItemQuality"					"component"
-		"ItemAliases"					"blink dagger"
-		"SideShop"						"1"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySharedCooldown" 		"item_blink"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"max_blink_range"				"1200"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"blink_range_clamp"				"960"  //When attempting to blink a distance greater than max_blink_range, the caster blinks this distance in the targeted direction.
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"blink_damage_cooldown"			"3"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"items/item_blink.lua"
-				"Function"				"item_blink_arena_on_spell_start"
-				"Target"				"POINT"
-				"MaxBlinkRange"			"%max_blink_range"
-				"BlinkRangeClamp"		"%blink_range_clamp"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_blink_arena_damage_cooldown"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"OnTakeDamage"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/item_blink.lua"
-						"Function"				"modifier_item_blink_arena_damage_cooldown_on_take_damage"
-						"BlinkDamageCooldown"	"%blink_damage_cooldown"
-						"Damage"				"%attack_damage"
-					}
-				}
-			}
-		}
-	}
-
-	"item_recipe_heart_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1200"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heart_arena"
-		"ItemRequirements"
-		{
-			"01"						"item_reaver;item_vitality_booster"
-		}
-	}
-
-	"item_heart_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_heart"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.0"
-		"ItemShopTags"					"str;regen_health;health_pool"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"hot;heart of tarrasque"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_strength"					"45"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_health"						"250"
-			}
-			"03"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"health_regen_percent_per_second"	"7"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"cooldown_melee"					"5"
-			}
-			"05"
-			{
-				"var_type"	                		"FIELD_FLOAT"
-				"heal_interval"						".03"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"cooldown_ranged_tooltip"			"7"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_heart_arena"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
-				}
-
-				"OnTakeDamage"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_heart.lua"
-						"Function"			"DamageStartCooldown"
-						"CooldownMelee"		"%cooldown_melee"
-						"Damage"			"%attack_damage"
-					}
-				}
-
-				"ThinkInterval" 		"%heal_interval"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"					"items/item_heart.lua"
-						"Function"						"UpdateCooldownModifiers"
-						"modifier"						"modifier_item_heart_arena_regen"
-					}
-				}
-			}
-
-			"modifier_item_heart_arena_regen"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" 	"%health_regen_percent_per_second"
 				}
 			}
 		}
@@ -864,343 +213,6 @@
 		}
 	}
 
-	"item_pocket_riki"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/pocket_riki"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-
-		"ItemPurchasable"				"0"
-		"ItemSellable"          		"1"
-		"ItemDroppable"					"0"
-		"AbilityManaCost"				"0"
-		"ItemShopTags"					"damage"
-		"ItemQuality"					"legendary"
-		"ItemAliases"					"Rikimaru"
-
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
-			"particle"	"particles/units/heroes/hero_riki/riki_backstab.vpcf"
-			"particle"	"particles/generic_hero_status/status_invisibility_start.vpcf"
-		}
-
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_time"					"1.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"stat_damage"			"125"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"backstab_angle"			"105"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"items/item_pocket_riki.lua"
-				"Function"			"ConsumeRiki"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_invisible"
-				"Target" 		"CASTER"
-			}
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_item_pocket_riki_permanent_invisibility"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_pocket_riki_backstab"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_pocket_riki.lua"
-						"Function"			"CheckBackstab"
-						"particle"			"particles/units/heroes/hero_riki/riki_backstab.vpcf"
-						"sound"				"Hero_Riki.Backstab"
-						"sound2"			"Hero_Riki.Attack"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_permanent_invisibility"
-					}
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_invisibility_fade"
-					}
-				}
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_pocket_riki.lua"
-						"Function"			"DropRiki"
-					}
-				}
-			}
-
-			"modifier_item_pocket_riki_invisibility_fade"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-
-				"Duration"	"%fade_time"
-				"EffectName"	"particles/generic_hero_status/status_invisibility_start.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"OnDestroy"
-				{
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_permanent_invisibility"
-					}
-				}
-			}
-
-			"modifier_item_pocket_riki_permanent_invisibility"
-			{
-				"IsHidden"	"1"
-				"States"
-				{
-					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_item_pocket_riki_permanent_invisibility"
-						"Target" 		"CASTER"
-					}
-				}
-			}
-		}
-	}
-
-	"item_pocket_riki_consumed"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_arena/pocket_riki"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityManaCost"				"0"
-		"ItemShopTags"					"damage"
-		"ItemQuality"					"legendary"
-		"ItemAliases"					"Rikimaru"
-
-		"ItemPurchasable"				"0"
-		"ItemSellable"          		"1"
-		"ItemDroppable"					"0"
-
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
-			"particle"	"particles/units/heroes/hero_riki/riki_backstab.vpcf"
-			"particle"	"particles/generic_hero_status/status_invisibility_start.vpcf"
-		}
-
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_time"					"1.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"stat_damage"			"125"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"backstab_angle"			"105"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_pocket_riki_consumed_backstab"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_pocket_riki.lua"
-						"Function"			"CheckBackstab"
-						"particle"			"particles/units/heroes/hero_riki/riki_backstab.vpcf"
-						"sound"				"Hero_Riki.Backstab"
-						"sound2"			"Hero_Riki.Attack"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_consumed_permanent_invisibility"
-					}
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_consumed_invisibility_fade"
-					}
-				}
-			}
-
-			"modifier_item_pocket_riki_consumed_invisibility_fade"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-
-				"Duration"	"%fade_time"
-				"EffectName"	"particles/generic_hero_status/status_invisibility_start.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"OnDestroy"
-				{
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_item_pocket_riki_consumed_permanent_invisibility"
-					}
-				}
-			}
-
-			"modifier_item_pocket_riki_consumed_permanent_invisibility"
-			{
-				"IsHidden"	"1"
-				"States"
-				{
-					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_item_pocket_riki_consumed_permanent_invisibility"
-						"Target" 		"CASTER"
-					}
-				}
-			}
-
-			"modifier_item_pocket_riki_consumed_str"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsPurgable"		"1"
-				"IsBuff"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"1"
-				}
-			}
-
-			"modifier_item_pocket_riki_consumed_agi"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsPurgable"		"1"
-				"IsBuff"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"1"
-				}
-			}
-
-			"modifier_item_pocket_riki_consumed_int"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsPurgable"		"1"
-				"IsBuff"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"1"
-				}
-			}
-		}
-	}
-
 	"item_recipe_homemade_cheese"
 	{
 		"BaseClass"						"item_datadriven"
@@ -1323,7 +335,7 @@
 		"ItemResult"					"item_heart_cyclone"
 		"ItemRequirements"
 		{
-			"01"						"item_heart_arena;item_cyclone"
+			"01"						"item_heart;item_cyclone"
 		}
 	}
 
@@ -1344,7 +356,6 @@
 		"ItemQuality"					"legendary"
 		"ItemAliases"					"hot;heart of tarrasque; cyclone; eul; eul's scepter of divinity"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySharedCooldown"			"item_cyclone;item_heart_arena"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -1622,7 +633,7 @@
 		"ItemResult"					"item_edge_of_vyse"
 		"ItemRequirements"
 		{
-			"01"						"item_silver_edge;item_sheepstick"
+			"01"						"item_silver_edge;item_sheepstick;item_moon_dust"
 		}
 	}
 
@@ -2055,178 +1066,6 @@
 		}
 	}
 
-	"item_recipe_aegis_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"8000"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_aegis_arena"
-		"ItemUseCharges"				"item_homemade_cheese"
-		"ItemChargeAmount"				"1"
-		"ItemRequirements"
-		{
-			"01"						"item_homemade_cheese"
-		}
-	}
-
-	"item_aegis_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Model"							"models/props_gameplay/aegis.vmdl"
-		"AbilityTextureName"			"item_arena/aegis_arena"
-		"FightRecapLevel"				"2"
-
-		"ItemQuality"					"artifact"
-		"ItemDroppable"					"0"
-		"ItemSellable"					"0"
-		"ItemKillable"					"1"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"reincarnate_time"		"3.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_radius"			"650"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"disappear_time"		"240.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"disappear_time_minutes_tooltip"		"4"
-			}
-		}
-
-		"precache"
-		{
-			"particle"	"particles/items_fx/aegis_respawn.vpcf"
-			"particle"	"particles/items_fx/aegis_respawn_timer.vpcf"
-			"model"		"models/props_gameplay/tombstoneb01.vmdl"
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_aegis_arena"
-			{
-				"Passive"					"1"
-				"IsBuff"					"1"
-				"IsHidden"					"1"
-				"IsPurgable"				"0"
-				"Duration"					"%disappear_time"
-				"Attributes"				"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"AllowIllusionDuplicate"     "0"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_aegis_arena"
-					}
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_aegis.lua"
-						"Function"			"StartDurationTooltip"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_aegis.lua"
-						"Function"			"AegisExpire"
-					}
-				}
-
-				"OnTakeDamage"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_aegis.lua"
-						"Function"			"CheckDeath"
-					}
-				}
-			}
-
-			"modifier_item_aegis_arena_life_saver"
-			{
-				"IsHidden"	"1"
-				"Passive"	"1"
-				"IsPurgable"		"0"
-				"AllowIllusionDuplicate"     "0"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MIN_HEALTH"		"1"
-				}
-			}
-
-			"modifier_item_aegis_arena_reincarnation"
-			{
-				"IsHidden"			"1"
-				"Duration"					"%reincarnate_time"
-				"Attributes"				"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_aegis.lua"
-						"Function"			"OnModCreated"
-						"Duration"			"%reincarnate_time"
-						"vision_radius"		"%vision_radius"
-						"particle"			"particles/items_fx/aegis_timer.vpcf"
-						"sound"				"DOTAMusic_Hero.Reincarnate"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_aegis.lua"
-						"Function"			"OnModDestroy"
-						"particle"			"particles/items_fx/aegis_respawn_timer.vpcf"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_DISABLE_HEALING"	"1"
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NOT_ON_MINIMAP"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_ATTACK_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_MAGIC_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_TEAM_MOVE_TO"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_TEAM_SELECT"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
 	"item_recipe_refresher_arena"
 	{
 		"BaseClass"						"item_datadriven"
@@ -2328,7 +1167,7 @@
 		"ItemResult"					"item_manta_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_yasha_arena;item_ultimate_orb"
+			"01"						"item_yasha;item_ultimate_orb"
 		}
 	}
 
@@ -2365,7 +1204,7 @@
 			"03"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_intelligence"								"10"
+				"bonus_intellect"								"10"
 			}
 			"04"
 			{
@@ -2375,7 +1214,7 @@
 			"05"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_movement_speed_percentage"					"10"
+				"bonus_movement_speed_pct"					"15"
 			}
 			"06"
 			{
@@ -2417,26 +1256,6 @@
 				"var_type"											"FIELD_INTEGER"
 				"vision_radius"										"1000"
 			}
-			"14"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed_buff"		"4"
-			}
-			"15"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"2"
-			}
-			"16"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"fast_attack_duration"			"4.5"
-			}
-			"17"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"fast_attack_max_stacks"			"5"
-			}
 		}
 
 		"OnSpellStart"
@@ -2462,9 +1281,9 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%bonus_strength"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"					"%bonus_agility"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intelligence"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intellect"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%bonus_movement_speed_percentage"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%bonus_movement_speed_pct"
 				}
 			}
 
@@ -2489,48 +1308,6 @@
 						"ScriptFile"		"items/item_manta.lua"
 						"Function"			"modifier_item_manta_arena_invulnerability_on_destroy"
 					}
-				}
-			}
-
-			"modifier_item_manta_arena_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_manta_arena_unique"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_SYNS.lua"
-						"Function"		"yasha_fast_attack_stacks"
-						"modifier"		"modifier_item_manta_arena_fast_attack"
-					}
-				}
-			}
-
-			"modifier_item_manta_arena_fast_attack"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"IsBuff"			"1"
-				"IsPurgable"		"1"
-				"Duration"			"%fast_attack_duration"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
 				}
 			}
 		}
@@ -2836,7 +1613,7 @@
 			"03"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_intelligence"								"100"
+				"bonus_intellect"								"100"
 			}
 			"04"
 			{
@@ -2846,7 +1623,7 @@
 			"05"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"bonus_movement_speed_percentage"					"16"
+				"bonus_movement_speed_pct"					"24"
 			}
 			"06"
 			{
@@ -2968,9 +1745,9 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"							"%bonus_agility"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"						"%bonus_intelligence"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"						"%bonus_intellect"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%bonus_movement_speed_percentage"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%bonus_movement_speed_pct"
 				}
 			}
 
@@ -3008,13 +1785,6 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"items/items_SYNS.lua"
-						"Function"		"yasha_fast_attack_stacks"
-						"modifier"		"modifier_item_diffusal_style_fast_attack"
-					}
-
-					"RunScript"
-					{
 						"ScriptFile"	"items/item_diffusal_style.lua"
 						"Function"		"OnAttackLanded"
 						"feedback_mana_burn"				"%feedback_mana_burn"
@@ -3023,22 +1793,6 @@
 						"modifier_root"	"modifier_item_diffusal_style_root"
 						"modifier_slow"	"modifier_item_diffusal_style_slow"
 					}
-				}
-			}
-
-			"modifier_item_diffusal_style_fast_attack"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"IsBuff"			"1"
-				"IsPurgable"		"1"
-				"Duration"			"%fast_attack_duration"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
 				}
 			}
 
@@ -3080,9 +1834,8 @@
 		"ItemResult"					"item_blink_staff"
 		"ItemRequirements"
 		{
-			"01"						"item_blink_arena;item_force_staff;item_moon_dust"
+			"01"						"item_blink;item_force_staff;item_moon_dust"
 		}
-
 	}
 
 	"item_blink_staff"
@@ -3569,254 +2322,6 @@
 						"ScriptFile"	"items/item_rune_keeper.lua"
 						"Function"		"TrackStacks"
 					}
-				}
-			}
-		}
-	}
-
-	"item_recipe_bloodstone_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_bloodstone_arena"
-		"ItemRequirements"
-		{
-			"01"						"item_pers;item_soul_booster"
-		}
-	}
-
-	"item_bloodstone_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityTextureName"			"item_arena/bloodstone_arena"
-		"FightRecapLevel"				"2"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"150"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"200.0"
-		"AbilityManaCost"				"0"
-		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"bs;bloodstone"
-		"ItemInitialCharges"			"14"
-		"ItemDisplayCharges"			"1"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_health"						"125"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_mana"						"150"
-			}
-			"03"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_health_regen"				"10"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_mana_regen"					"2"
-			}
-			"05"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"charge_range"						"1600"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"heal_on_death_range"				"1675"
-			}
-			"07"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"heal_on_death_base"				"500"
-			}
-			"08"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"heal_on_death_per_charge"			"30"
-			}
-			"09"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"respawn_time_reduction_per_charge"	"1.0"
-			}
-			"10"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"on_death_charge_percent"			"66" //33% gone.
-			}
-			"11"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_mana_regen_per_charge"		"0.8"
-			}
-			"12"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_health_regen_per_charge"		"1.2"
-			}
-			"13"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_health_per_charge"			"35"
-			}
-			"14"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_mana_per_charge"				"40"
-			}
-			"15"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"on_death_charge_percent_tooltip"			"33"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"					"items/item_bloodstone.lua"
-				"Function"						"item_bloodstone_arena_on_spell_start"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_bloodstone_arena"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
-					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
-				}
-				"OnCreated"
-				{
-					"DelayedAction"
-					{
-						"Delay"     "0.03"
-						"Action"
-						{
-							"RunScript"
-							{
-								"ScriptFile"			"items/item_bloodstone.lua"
-								"Function"				"item_bloodstone_arena_recalculate_charge_bonuses"
-							}
-						}
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/item_bloodstone.lua"
-						"Function"				"item_bloodstone_arena_recalculate_charge_bonuses"
-					}
-				}
-			}
-			"modifier_item_bloodstone_arena_aura_emitter"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"Aura" 					"modifier_item_bloodstone_arena_aura"
-				"Aura_Radius" 			"%charge_range"
-				"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types" 			"DOTA_UNIT_TARGET_HERO"
-				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
-				"Aura_ApplyToCaster" 	"0"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/item_bloodstone.lua"
-						"Function"				"item_bloodstone_arena_recalculate_charge_bonuses"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/item_bloodstone.lua"
-						"Function"				"item_bloodstone_arena_recalculate_charge_bonuses"
-					}
-				}
-
-				"OnHeroKilled"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/item_bloodstone.lua"
-						"Function"				"modifier_item_bloodstone_arena_aura_emitter_on_hero_kill"
-					}
-				}
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"						"items/item_bloodstone.lua"
-						"Function"							"modifier_item_bloodstone_arena_aura_emitter_on_death"
-						"HealOnDeathRange"					"%heal_on_death_range"
-						"HealOnDeathBase"					"%heal_on_death_base"
-						"HealOnDeathPerCharge"				"%heal_on_death_per_charge"
-						"VisionOnDeathRadius"				"%vision_on_death_radius"
-						"OnDeathChargePercent"				"%on_death_charge_percent"
-						"RespawnTimeReductionPerCharge"		"%respawn_time_reduction_per_charge"
-					}
-				}
-			}
-			"modifier_item_bloodstone_arena_aura"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_bloodstone.lua"
-						"Function"			"modifier_item_bloodstone_arena_aura_on_death"
-					}
-				}
-			}
-			"modifier_item_bloodstone_arena_charge"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen_per_charge"
-					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health_per_charge"
-					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana_per_charge"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen_per_charge"
 				}
 			}
 		}
@@ -6568,7 +5073,7 @@
 		"ItemResult"					"item_heavy_war_axe_of_rage_damage"
 		"ItemRequirements"
 		{
-			"01"						"item_heart_arena;item_heart_arena;item_heart_arena;item_relic"
+			"01"						"item_heart;item_heart;item_heart;item_relic"
 		}
 	}
 
@@ -6983,43 +5488,6 @@
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"					"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_MANA_BONUS"							"%bonus_mana"
 					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"			"%spell_amp_pct"
-				}
-			}
-		}
-	}
-
-	"item_radio_car"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"item_arena/radio_car"
-		"ItemPurchasable"				"0"
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SummonUnit"
-				"max_units"		"1"
-				"summon_random_radius"	"100"
-				"summoned"				"npc_arena_radio_car"
-				"modifiers_datadriven"	"modifier_item_radio_car"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_radio_car"
-			{
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-
-				"States"
-				{
-					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}
@@ -7849,192 +6317,6 @@
 		}
 	}
 
-	"item_recipe_heavens_halberd_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heavens_halberd_arena"
-		"ItemRequirements"
-		{
-			"01"						"item_sange_arena;item_talisman_of_evasion"
-		}
-	}
-
-	"item_heavens_halberd_arena"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_heavens_halberd"
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-
-		"AbilityCooldown"				"18"
-		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"				"80"
-
-		"ItemShopTags"					"str;damage;evasion"
-		"ItemQuality"					"artifact"
-		"ItemAliases"					"heaven's halberd"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"25"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_chance"			"50"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_movement_speed"	"-4"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_attack_speed"		"-7"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"maim_duration"			"4.5"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_max_stacks"		"8"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"disarm_duration"		"4.5"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_item_heavens_halberd_arena_disarm"
-				"Target" 		"TARGET"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_heavens_halberd_arena"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"						"%bonus_strength"
-					"MODIFIER_PROPERTY_EVASION_CONSTANT"							"%bonus_evasion"
-				}
-			}
-
-			"modifier_item_heavens_halberd_arena_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_heavens_halberd_arena_unique"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"Random"
-					{
-						"Chance"			"%maim_chance"
-						"OnSuccess"
-						{
-							"RunScript"
-							{
-								"ScriptFile"			"items/items_SYNS.lua"
-								"Function"				"sange_lesser_maim_stacks"
-								"modifier"				"modifier_item_heavens_halberd_arena_lesser_maim"
-							}
-						}
-					}
-				}
-			}
-
-			"modifier_item_heavens_halberd_arena_lesser_maim"
-			{
-				"Duration"				"%maim_duration"
-				"IsDebuff"				"1"
-				"IsPurgable"			"1"
-
-				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "follow_origin"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_movement_speed"
-				}
-			}
-
-			"modifier_item_heavens_halberd_arena_disarm"
-			{
-				"IsDebuff"				"1"
-				"IsPurgable"			"0"
-				"Duration"				"%disarm_duration"
-
-				"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
-				"EffectAttachType"      "follow_origin"
-
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target"			"TARGET"
-						"EffectName"		"particles/generic_gameplay/generic_disarm.vpcf"
-						"EffectAttachType"	"follow_overhead"
-					}
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
 	"item_recipe_summoned_unit"
 	{
 		"BaseClass"						"item_datadriven"
@@ -8789,7 +7071,7 @@
 					{
 						"ScriptFile"	"kv.lua"
 						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_sange_arena_unique"
+						"modifier"		"modifier_shard_of_true_sight"
 					}
 				}
 
@@ -9303,7 +7585,7 @@
 		"ItemResult"					"item_ultimate_scepter_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_point_booster;item_blade_of_alacrity;item_ogre_axe;item_staff_of_wizardry;item_book_of_the_keeper;item_aether_lens_arena"
+			"01"						"item_point_booster;item_blade_of_alacrity;item_ogre_axe;item_staff_of_wizardry;item_book_of_the_keeper;item_aether_lens"
 		}
 	}
 
@@ -9371,12 +7653,12 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"5930"
+		"ItemCost"						"1000"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_angel_wings"
 		"ItemRequirements"
 		{
-			"01"						"item_steam_footgear;item_aether_lens_arena;item_ultimate_orb"
+			"01"						"item_steam_footgear;item_aether_lens;item_ultimate_orb"
 		}
 	}
 
@@ -9407,42 +7689,22 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all"					"95"
+				"bonus_all"					"25"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"50"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"1500"
+				"bonus_mana"				"650"
 			} //Handled with base modifier
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_hp_regen"			"32"
-			}
-			"07"
+			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"cast_range_bonus"			"300"
 			} //Handled with base modifier
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"spell_amp_pct"				"14"
-			}
-			"09"
+			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"5"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_range"		"50"
+				"duration"					"6"
 			}
 		}
 
@@ -9482,10 +7744,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_hp_regen"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_armor"
-					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp_pct"
 				}
 
 				"OnCreated"
@@ -9521,11 +7780,6 @@
 
 				"EffectName"		"particles/items3_fx/glimmer_cape_initial.vpcf"
 				"EffectAttachType"	"follow_origin"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_attack_range"
-				}
 
 				"States"
 				{
@@ -9772,18 +8026,18 @@
 		"ItemResult"					"item_elemental_fury"
 		"ItemRequirements"
 		{
-			"01"						"item_battlefury_arena;item_three_spirits_blades"
+			"01"						"item_battlefury_arena;item_sange_and_yasha_and_kaya"
 		}
 	}
 
 	"item_elemental_fury"
 	{
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_battlefury.lua"
 		"AbilityTextureName"			"item_arena/elemental_fury"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL | DOTA_UNIT_TARGET_TREE"
-		//"AbilityAffectsOnlyTrees"		"1"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 
@@ -9791,7 +8045,6 @@
 		"AbilityCooldown"				"2"
 
 		"ItemAliases"					"bf;battle fury;cleave;elemental fury"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilitySpecial"
 		{
@@ -9803,262 +8056,107 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"30"
+				"bonus_strength"		"30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"30"
+				"bonus_agility"			"30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"30"
+				"bonus_intellect"		"30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"20"
+				"bonus_attack_speed"	"20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"20"
+				"bonus_movement_speed_pct"	"20"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"16"
+				"spell_amp_pct"			"16"
 			}
 			"08"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3.0"
+				"var_type"				"FIELD_INTEGER"
+				"manacost_reduction_pct"	"16"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"45"
+				"bonus_health_regen"	"16"
 			}
 			"10"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"180"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3.0"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_starting_width"	"150"
+				"cleave_damage_percent"	"45"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_ending_width"	"375"
+				"quelling_bonus_damage_pct"	"180"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_distance"		"600"
+				"cleave_starting_width"	"150"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"nightshadow_chance"	"20"
+				"cleave_ending_width"	"375"
 			}
 			"15"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown_reduction"	"0.65"
+				"var_type"				"FIELD_INTEGER"
+				"cleave_distance"		"600"
 			}
 			"16"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_chance"			"50"
+				"maim_chance_pct"		"50"
 			}
 			"17"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_slow_movement"	"-6"
+				"maim_slow_movement_pct"	"-32"
 			}
 			"18"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_slow_attack"		"-8"
+				"maim_slow_attack"		"-32"
 			}
 			"19"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"maim_duration"			"4"
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_movement_range_pct"	"-16"
 			}
 			"20"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_max_stacks"		"8"
+				"maim_slow_attack_range"	"-16"
 			}
 			"21"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed_buff"	"8"
+				"var_type"				"FIELD_FLOAT"
+				"maim_duration"			"5"
 			}
 			"22"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed_percent_bonus_buff"		"2"
-			}
-			"23"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"fast_attack_duration"	"6"
-			}
-			"24"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"fast_attack_max_stacks"	"8"
-			}
-			"25"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"	"500"
-			}
-		}
-
-		"OnAbilityPhaseStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"KVCastFilter"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"CutTree"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_elemental_fury"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"					"%bonus_intellect"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"					"%bonus_damage"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"					"%bonus_strength"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"						"%bonus_agility"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"		"%movement_speed_percent_bonus"
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"						"%bonus_mana_regen"
-				}
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"Cleave"
-						"damage"		"%attack_damage"
-						"cleave_damage_percent"		"%cleave_damage_percent"
-						"cleave_distance"			"%cleave_distance"
-						"cleave_starting_width"		"%cleave_starting_width"
-						"cleave_ending_width"		"%cleave_ending_width"
-						"particle"					"particles/items_fx/battlefury_cleave.vpcf"
-					}
-				}
-			}
-
-			"modifier_item_elemental_fury_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"AllowIllusionDuplicate"     "0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_elemental_fury_unique"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"Random"
-					{
-						"Chance"			"%nightshadow_chance"
-						"OnSuccess"
-						{
-							"RunScript"
-							{
-								"ScriptFile"			"items/items_SYNS.lua"
-								"Function"				"CooldownReduction"
-								"cooldown_reducted"		"%cooldown_reduction"
-								"modifier"				"modifier_item_elemental_fury_unique"
-							}
-						}
-					}
-					"Random"
-					{
-						"Chance"			"%maim_chance"
-						"OnSuccess"
-						{
-							"RunScript"
-							{
-								"ScriptFile"			"items/items_SYNS.lua"
-								"Function"				"sange_lesser_maim_stacks"
-								"modifier"				"modifier_item_elemental_fury_lesser_maim"
-							}
-						}
-					}
-					"RunScript"
-					{
-						"ScriptFile"	"items/items_SYNS.lua"
-						"Function"		"yasha_fast_attack_stacks"
-						"modifier"		"modifier_item_elemental_fury_fast_attack"
-					}
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"ModifyCreepDamage"
-						"damage"		"%attack_damage"
-						"damage_bonus"	"%quelling_bonus_damage_pct"
-					}
-				}
-			}
-
-			"modifier_item_elemental_fury_lesser_maim"
-			{
-				"Duration"				"%maim_duration"
-				"IsDebuff"				"1"
-				"IsPurgable"			"1"
-
-				"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-				"EffectAttachType"      "follow_origin"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_slow_attack"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_slow_movement"
-				}
-			}
-
-			"modifier_item_elemental_fury_fast_attack"
-			{
-				"IsPurgable"		"1"
-				"Duration"			"%fast_attack_duration"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed_buff"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_percent_bonus_buff"
-				}
 			}
 		}
 	}
@@ -10548,6 +8646,106 @@
 			"particle"			"particles/arena/items_fx/scythe_of_the_ancients_start.vpcf"
 			"particle"			"particles/econ/events/ti4/dagon_beam_black_ti4.vpcf"
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+		}
+	}
+
+
+
+	"item_recipe_sange_and_yasha_and_kaya"
+	{
+		"BaseClass"                     "item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_sange_and_yasha_and_kaya"
+		"ItemRequirements"
+		{
+			"01"						"item_yasha;item_sange;item_kaya"
+			"02"						"item_sange_and_yasha;item_kaya"
+		}
+	}
+
+	"item_sange_and_yasha_and_kaya"
+	{
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_sange_and_yasha_and_kaya"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "item_arena/sange_and_yasha_and_kaya"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"16"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"16"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"16"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"16"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"16"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed_pct"	"16"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"16"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"manacost_reduction_pct"	"16"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_chance_pct"		"40"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_movement_pct"	"-26"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_attack"		"-26"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_movement_range_pct"	"-13"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maim_slow_attack_range"	"-13"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"maim_duration"			"5"
+			}
 		}
 	}
 

@@ -17,7 +17,6 @@ local requirements = {
 	-- "libraries/pathgraph",
 	"libraries/selection",
 	"libraries/worldpanels",
-	"libraries/CosmeticLib",
 	"libraries/PopupNumbers",
 	"libraries/statcollection/init",
 	--------------------------------------------------
@@ -52,9 +51,6 @@ local modifiers = {
 	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game",
 
 	modifier_item_shard_attackspeed_stack = "modifiers/modifier_item_shard_attackspeed_stack",
-	modifier_item_casino_drug_pill1_addiction = "modifiers/modifier_item_casino_drug_pill1_addiction",
-	modifier_item_casino_drug_pill2_addiction = "modifiers/modifier_item_casino_drug_pill2_addiction",
-	modifier_item_casino_drug_pill3_addiction = "modifiers/modifier_item_casino_drug_pill3_addiction",
 }
 
 for k,v in pairs(modifiers) do
@@ -66,7 +62,6 @@ AllPlayersInterval = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
 for i = 1, #requirements do
 	require(requirements[i])
 end
-JSON = require("libraries/json")
 
 Options:Preload()
 
@@ -152,6 +147,7 @@ end
 function GameMode:OnHeroInGame(hero)
 	Timers:CreateTimer(function()
 		if IsValidEntity(hero) and hero:IsTrueHero() then
+			Teams:RecalculateKillWeight(hero:GetTeam())
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
 				Structures:GiveCourier(hero)
 			end

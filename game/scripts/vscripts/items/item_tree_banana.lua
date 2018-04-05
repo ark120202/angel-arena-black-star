@@ -10,7 +10,11 @@ if IsServer() then
 		banana:SetModel("models/props_gameplay/banana_prop_open.vmdl")
 		banana:AddNewModifier(caster, self, "modifier_item_tree_banana_thinker", nil)
 		caster:AddNewModifier(caster, self, "modifier_phased", {duration = 1/30})
-		caster:ModifyIntellect(self:GetSpecialValueFor("intellect"))
+
+		if caster:IsHero() then
+			caster:ModifyIntellect(self:GetSpecialValueFor("intellect"))
+		end
+
 		self:SpendCharge()
 	end
 end

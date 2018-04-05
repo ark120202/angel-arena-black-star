@@ -7,14 +7,6 @@ function SetMaxLevel(keys)
 	ability:SetLevel(ability:GetMaxLevel())
 end
 
-function HideCaster(keys)
-	keys.caster:AddNoDraw()
-end
-
-function ShowCaster(keys)
-	keys.caster:RemoveNoDraw()
-end
-
 function HideTarget(keys)
 	local target = keys.target or keys.caster
 	target:AddNoDraw()
@@ -53,12 +45,6 @@ function StopEndableSound(keys)
 	end
 end
 
-function MeepoCleaner(keys)
-	if keys.modifier and keys.caster.OwnerMeepo then
-		keys.caster:RemoveModifierByName(keys.modifier)
-	end
-end
-
 function SwapToItem(keys)
 	local caster = keys.caster
 	local ability = keys.ability
@@ -84,14 +70,6 @@ function IllusionModifierCleaner(keys)
 	end)
 end
 
-function ReplaceAbilityWith(keys)
-	local caster = keys.caster
-	local ability = keys.ability
-	if keys.new then
-		ReplaceAbilities(caster, ability:GetAbilityName(), keys.new, true, false)
-	end
-end
-
 function LinkedAbilitiesSync(keys)
 	local caster = keys.caster
 	local ability = keys.ability
@@ -102,12 +80,6 @@ function LinkedAbilitiesSync(keys)
 		elseif linked_ability:GetLevel() < ability:GetLevel() then
 			linked_ability:SetLevel(ability:GetLevel())
 		end
-	end
-end
-
-function KillTarget(keys)
-	if keys.target:IsAlive() then
-		keys.target:TrueKill(keys.ability, keys.caster)
 	end
 end
 
@@ -243,10 +215,6 @@ function ApplyModifierWithoutRefresh(keys)
 	end
 end
 
-function SetAbilityActivated(keys)
-	keys.ability:SetActivated(keys.Activated == 1)
-end
-
 function ScepterOnlyPassiveModifierThink(keys)
 	local caster = keys.caster
 	local ability = keys.ability
@@ -274,19 +242,6 @@ function PercentDamage(keys)
 			damage_flags = keys.CalculateSpellDamageTooltip == 0 and DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION or DOTA_DAMAGE_FLAG_NONE,
 			ability = ability
 		})
-	end
-end
-
-function PercentHeal(keys)
-	local ability = keys.ability
-	local target = keys.target
-	local heal = keys.Heal or 0
-	if ability then
-		if keys.MaxHealthPercent then heal = heal + (keys.MaxHealthPercent*0.01*target:GetMaxHealth()) end
-		if keys.CurrnetHealthPercent then heal = heal + (keys.CurrnetHealthPercent*0.01*target:GetHealth()) end
-		if keys.multiplier then heal = heal * keys.multiplier end
-		if keys.multiplier2 then heal = heal * keys.multiplier2 end
-		SafeHeal(target, heal, ability, true)
 	end
 end
 
@@ -318,25 +273,5 @@ function ModifyCreepDamage(keys)
 			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 			ability = keys.ability
 		})
-	end
-end
-
-function Cleave(keys)
-	if not keys.caster:IsRangedUnit() then
-		DoCleaveAttack(keys.caster, keys.target, keys.ability, keys.damage * keys.cleave_damage_percent * 0.01, keys.cleave_distance or keys.cleave_radius, keys.cleave_starting_width or keys.cleave_radius, keys.cleave_ending_width or keys.cleave_radius, keys.particle)
-	end
-end
-
-function CutTree(keys)
-	keys.target:CutTreeOrWard(keys.caster, keys.ability)
-end
-
---Hardcored now
-function KVCastFilter(keys)
-	local caster = keys.caster
-	local hTarget = keys.target
-	if not (hTarget:GetClassname() == "ent_dota_tree" or hTarget:IsCustomWard()) then
-		caster:Interrupt()
-		Containers:DisplayError(caster:GetPlayerOwnerID(), "dota_hud_error_cant_cast_on_non_tree_ward")
 	end
 end

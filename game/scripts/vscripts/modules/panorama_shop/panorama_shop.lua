@@ -241,17 +241,6 @@ function PanoramaShop:SellItem(playerID, unit, item)
 	if GameRules:GetGameTime() - item:GetPurchaseTime() > 10 then
 		cost = cost / 2
 	end
-	if itemname == "item_pocket_riki" then
-		cost = Kills:GetGoldForKill(item.RikiContainer)
-		item.RikiContainer:TrueKill(item, unit)
-		Kills:SetKillStreak(item.RikiContainer:GetPlayerID(), 0)
-		unit:RemoveItem(item)
-		unit:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
-		unit:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
-		unit:RemoveModifierByName("modifier_invisible")
-		-- TODO
-		-- GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber())
-	end
 	UTIL_Remove(item)
 	Gold:AddGoldWithMessage(unit, cost, playerID)
 	GameMode:TrackInventory(unit)

@@ -1,7 +1,8 @@
 modifier_arena_wearable = class({})
 function modifier_arena_wearable:IsHidden() return true end
-function modifier_arena_wearable:CheckState() 
+function modifier_arena_wearable:CheckState()
 	return {
+		[MODIFIER_STATE_OUT_OF_GAME] = true,
 		[MODIFIER_STATE_UNSELECTABLE] = true,
 		[MODIFIER_STATE_INVULNERABLE] = true,
 		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,

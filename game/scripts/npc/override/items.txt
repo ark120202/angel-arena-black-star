@@ -1,5 +1,10 @@
 "DOTAAbilities"
 {
+	"item_blink"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 	"item_dust"
 	{
 		"SecretShop"					"0"
@@ -600,6 +605,16 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
+	"item_recipe_aether_lens"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_aether_lens"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 	"item_recipe_force_staff"
 	{
 		"SecretShop"					"0"
@@ -651,12 +666,42 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
+	"item_recipe_heart"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_heart"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_black_king_bar"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_black_king_bar"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 	"item_recipe_shivas_guard"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
 	"item_shivas_guard"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_bloodstone"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_bloodstone"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
@@ -1015,7 +1060,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"poison_duration"		"2.5"
-			}			
+			}
 		}
 	}
 	"item_recipe_ancient_janggo"
@@ -1072,6 +1117,16 @@
 		"SideShop"						"0"
 	}
 	"item_abyssal_blade"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_heavens_halberd"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_heavens_halberd"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
@@ -1145,7 +1200,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"replenish_amount"		"250"
-			}	
+			}
 		}
 	}
 	"item_recipe_travel_boots_2"
@@ -1392,6 +1447,36 @@
 		"SideShop"						"0"
 	}
 	"item_nullifier"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_sange"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_sange"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_yasha"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_yasha"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_sange_and_yasha"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_sange_and_yasha"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"

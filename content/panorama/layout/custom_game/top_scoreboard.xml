@@ -7,7 +7,7 @@
 		<include src="file://{resources}/styles/top_scoreboard.css" />
 	</styles>
 	<scripts>
-		<include src="file://{resources}/scripts/util.js" />
+		<include src="file://{resources}/scripts/arena_util.js" />
 		<include src="file://{resources}/scripts/weather.js" />
 		<include src="file://{resources}/scripts/top_scoreboard.js" />
 	</scripts>

@@ -89,40 +89,6 @@
 		}
 	}
 
-	"npc_arena_radio_car"
-	{
-		"BaseClass"	"npc_dota_creature"
-		"Model"	"models/custom/car_01.vmdl"
-
-		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
-		"IsSummoned"				"1"
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"	"0"
-		"BountyGoldMin"	"0"
-		"BountyGoldMax"	"0"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"380"
-		"MovementTurnRate"			"0.6"
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"	"1"
-
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"	"0"
-		"VisionNighttimeRange"	"0"
-	}
-
 	"npc_arena_item_summoned_unit"
 	{
 		"BaseClass"	"npc_dota_lone_druid_bear"

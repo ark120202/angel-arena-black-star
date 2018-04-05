@@ -140,8 +140,10 @@ end
 
 function Spawner:OnCreepDeath(unit)
 	Spawner.Creeps[unit.SSpawner] = Spawner.Creeps[unit.SSpawner] - 1
-	if unit.SpawnerType == "jungle" then
-		Spawner:SpawnJungleStacks(unit.SSpawner, unit.SpawnerIndex, unit.SpawnerType)
+	if unit.SpawnerType == "jungle" and Spawner.Creeps[unit.SSpawner] == 0 then
+		Timers:CreateTimer(4, function()
+			Spawner:SpawnJungleStacks(unit.SSpawner, unit.SpawnerIndex, unit.SpawnerType)
+		end)
 	end
 end
 
@@ -162,8 +164,6 @@ function Spawner:MakeJungleStacks()
 end
 
 function Spawner:SpawnJungleStacks(entid, SpawnerType, sName)
-	if Spawner.Creeps[entid] > 0 then return end
-
 	local entity = EntIndexToHScript(entid)
 	entity.cycle = (entity.cycle or 0) + 1
 

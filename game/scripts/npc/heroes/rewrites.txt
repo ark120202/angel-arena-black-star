@@ -1,0 +1,26 @@
+""
+{
+	"npc_dota_hero_tinker"
+	{
+		"override_hero"			"npc_dota_hero_tinker"
+		"Ability6"				"tinker_rearm_arena"
+		"AttackRate"			"1.6"
+	}
+
+	"npc_dota_hero_life_stealer"
+	{
+		"override_hero"			"npc_dota_hero_life_stealer"
+		"Ability2"				"life_stealer_feast_arena"
+		"AttackRate"			"1.8"
+	}
+
+	"npc_dota_hero_gyrocopter"
+	{
+		"override_hero"			"npc_dota_hero_gyrocopter"
+		"Ability3"				"gyrocopter_flak_cannon_arena"
+		"AttackRate"			"1.6"
+		"MovementSpeed"			"325"
+		"AttributeBaseAgility"	"16"
+		"AttributeAgilityGain"	"2.0"
+	}
+}

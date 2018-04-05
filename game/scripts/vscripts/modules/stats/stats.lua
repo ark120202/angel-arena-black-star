@@ -242,7 +242,7 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 	end
 	debugp("StatsClient:Send", "Sent data to " .. path .. "(with current retry of " .. (_currentRetry or 0) .. ")")
 	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path .. (protocol == "GET" and StatsClient:EncodeParams(data) or ""))
-	request:SetHTTPRequestGetOrPostParameter("data", JSON:encode(data))
+	request:SetHTTPRequestGetOrPostParameter("data", json.encode(data))
 	request:Send(function(response)
 		if response.StatusCode ~= 200 or not response.Body then
 			debugp("StatsClient:Send", "Server returned an error, status is " .. response.StatusCode)
@@ -261,7 +261,7 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 				onerror(response.Body)
 			end
 		else
-			local obj, pos, err = JSON:decode(response.Body, 1, nil)
+			local obj, pos, err = json.decode(response.Body, 1, nil)
 			if not obj then
 				debugp("[StatsClient] Critical Error: request to " .. self.ServerAddress .. path .. " returned undefined. Check server configuration")
 			elseif callback then

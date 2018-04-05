@@ -29,6 +29,17 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		return false
 	end
 
+	if unit:IsCourier() and (
+		order_type == DOTA_UNIT_ORDER_CAST_POSITION or
+		order_type == DOTA_UNIT_ORDER_CAST_TARGET or
+		order_type == DOTA_UNIT_ORDER_CAST_TARGET_TREE or
+		order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or
+		order_type == DOTA_UNIT_ORDER_CAST_TOGGLE
+	) and ability.IsItem and ability:IsItem() then
+		Containers:DisplayError(PlayerID, "dota_hud_error_courier_cant_use_item")
+		return false
+	end
+
 	if not unit:IsConsideredHero() then return true end
 
 	GameMode:TrackInventory(unit)
@@ -83,23 +94,6 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		end
 	end
 
-	if filterTable.position_x ~= 0 and filterTable.position_y ~= 0 then
-		local hasLightEffect =
-			unit:HasModifier("modifier_item_casino_drug_pill3_debuff") or
-			unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 8
-		local applyEffect =
-			(RandomInt(0, 1) == 1 and hasLightEffect) or
-			unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 16
-		if applyEffect then
-			local heroVector = unit:GetAbsOrigin()
-			local orderVector = Vector(filterTable.position_x, filterTable.position_y, 0)
-			local diff = orderVector - heroVector
-			local newVector = heroVector + (diff * -1)
-			filterTable.position_x = newVector.x
-			filterTable.position_y = newVector.y
-		end
-	end
-
 	return true
 end
 
@@ -139,10 +133,6 @@ function GameMode:DamageFilter(filterTable)
 		end
 		if victim:IsBoss() and (attacker:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() > 950 then
 			filterTable.damage = filterTable.damage / 2
-		end
-		if (attacker.HasModifier and (attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) or (victim.HasModifier and (victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) then
-			filterTable.damage = 0
-			return false
 		end
 
 		local BlockedDamage = 0

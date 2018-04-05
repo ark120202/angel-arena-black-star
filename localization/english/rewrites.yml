@@ -1,0 +1,26 @@
+DOTA_Tooltip_ability_tinker_rearm_arena: Rearm
+DOTA_Tooltip_ability_tinker_rearm_arena_Description: CHANNELED - Resets the cooldown on most of Tinker's items and abilities.
+DOTA_Tooltip_ability_tinker_rearm_arena_channel_time: 'TIME TO REARM:'
+DOTA_Tooltip_ability_life_stealer_feast_arena: Feast
+DOTA_Tooltip_ability_life_stealer_feast_arena_Description: >-
+  Lifestealer's attacks damage enemies and heal himself for a percentage of his
+  target's current health.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note0: Does not affect bosses.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note1: Affects Spell Immune units.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note2: The heal is independent of the damage.
+DOTA_Tooltip_ability_life_stealer_feast_arena_Note3: Stacks additively with other sources of Lifesteal.
+DOTA_Tooltip_ability_life_stealer_feast_arena_hp_leech_percent: '%LIFE LEECH:'
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena: Flak Cannon
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_Description: >-
+  Gyrocopter's attacks hit all enemy units in an area around it for a limited
+  number of attacks. Only the main target of attacks will receive attack bonuses
+  such as Critical Strike. Lasts %duration% seconds or until the attacks are
+  used.
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_Lore: >-
+  This newly revamped Gyrocopter has attached enough armaments to assault in a
+  360 degree radius.
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_Note0: Attack range for the primary attack is unchanged.
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_radius: 'RADIUS:'
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_max_attacks: 'MAX ATTACKS:'
+DOTA_Tooltip_modifier_gyrocopter_flak_cannon_arena: Flak Cannon
+DOTA_Tooltip_modifier_gyrocopter_flak_cannon_arena_Description: Attacking all nearby targets.

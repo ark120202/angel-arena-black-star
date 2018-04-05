@@ -387,16 +387,6 @@ CUSTOM_TALENTS_DATA = {
 			hook_amount = 3
 		}
 	},
-	talent_hero_arthas_vsolyanova_bunus_chance = {
-		icon = "talents/heroes/arthas_vsolyanova_bunus_chance",
-		cost = 5,
-		group = 9,
-		max_level = 5,
-		requirement = "arthas_vsolyanova",
-		special_values = {
-			chance_multiplier = {1.1, 1.2, 1.3, 1.4, 1.5}
-		}
-	},
 	talent_hero_arc_warden_double_spark = {
 		icon = "talents/heroes/arc_warden_double_spark",
 		cost = 5,
@@ -453,9 +443,7 @@ CUSTOM_TALENTS_DATA = {
 -- A list of heroes, which have Changed flag, but some native talents for them are still relevant
 -- Value should be a table, where irrelevant talents should have a `true` value
 PARTIALLY_CHANGED_HEROES = {
-	npc_dota_hero_riki = {},
 	npc_dota_hero_ogre_magi = {},
-	npc_dota_hero_tinker = {},
 	npc_dota_hero_skeleton_king = {
 		special_bonus_unique_wraith_king_1 = true,
 		special_bonus_unique_wraith_king_4 = true,
@@ -466,9 +454,6 @@ PARTIALLY_CHANGED_HEROES = {
 	npc_dota_hero_doom_bringer = {
 		special_bonus_unique_doom_2 = true,
 		special_bonus_unique_doom_3 = true,
-	},
-	npc_dota_hero_life_stealer = {
-		special_bonus_unique_lifestealer_3 = true,
 	},
 }
 
@@ -800,6 +785,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_lifestealer_2 = {
 		group = 5,
 	},
+	special_bonus_unique_lifestealer_3 = false,
 	special_bonus_unique_lion = {
 		group = 6,
 	},
@@ -1655,6 +1641,17 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_invoker_8 = {
 		group = 10,
+	},
+	special_bonus_unique_gyrocopter_1 = false,
+	special_bonus_unique_gyrocopter_2 = false,
+	special_bonus_unique_gyrocopter_3 = {
+		group = 6,
+	},
+	special_bonus_unique_gyrocopter_4 = {
+		group = 5,
+	},
+	special_bonus_unique_gyrocopter_5 = {
+		group = 4,
 	},
 }
 
