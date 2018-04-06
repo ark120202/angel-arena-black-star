@@ -35,18 +35,6 @@ NOT_MULTICASTABLE_ABILITIES = {
 REFRESH_LIST_IGNORE_REFRESHER = {
 	item_refresher_arena = true,
 	item_refresher_core = true,
-	omniknight_select_allies = true,
-	omniknight_select_enemies = true,
-}
-
-REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
-	item_refresher_arena = true,
-	item_refresher_core = true,
-	item_titanium_bar = true,
-	item_coffee_bean = true,
-
-	omniknight_select_allies = true,
-	omniknight_select_enemies = true,
 }
 
 REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
@@ -82,9 +70,6 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_black_king_bar_4 = true,
 	item_black_king_bar_5 = true,
 	item_black_king_bar_6 = true,
-
-	omniknight_select_allies = true,
-	omniknight_select_enemies = true,
 
 	destroyer_body_reconstruction = true,
 	stargazer_cosmic_countdown = true,

@@ -142,7 +142,6 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"ogre_magi_unrefined_fireblast",
 	"keeper_of_the_light_spirit_form",
 	"mirratie_sixth_sense",
-	"omniknight_select_allies",
 	"wisp_spirits_in",
 	"wisp_spirits_out",
 	"wisp_tether_break",

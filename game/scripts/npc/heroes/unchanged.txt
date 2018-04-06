@@ -692,4 +692,10 @@
 		"AttackRate"	"1.4"
 		"AttributeBaseAgility"			"14"
 	}
+
+	"npc_dota_hero_omniknight"
+	{
+		"override_hero"	"npc_dota_hero_omniknight"
+		"AttackRate"	"1.6"
+	}
 }
