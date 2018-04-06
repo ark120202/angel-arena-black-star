@@ -7698,10 +7698,15 @@
 			} //Handled with base modifier
 			"05"
 			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_mana_regen"			"2.25"
+			} //Handled with base modifier
+			"06"
+			{
 				"var_type"					"FIELD_INTEGER"
 				"cast_range_bonus"			"300"
 			} //Handled with base modifier
-			"06"
+			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"duration"					"6"

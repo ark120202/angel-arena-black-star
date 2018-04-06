@@ -967,6 +967,7 @@ DOTA_Tooltip_ability_item_angel_wings_bonus_movement_speed: +$move_speed
 DOTA_Tooltip_ability_item_angel_wings_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_angel_wings_bonus_all: +$all
 DOTA_Tooltip_ability_item_angel_wings_bonus_mana: +$mana
+DOTA_Tooltip_ability_item_angel_wings_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_angel_wings_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_angel_wings_duration: 'DURATION:'
 DOTA_Tooltip_modifier_item_angel_wings_active: Flight
