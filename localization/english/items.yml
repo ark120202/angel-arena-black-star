@@ -960,18 +960,21 @@ DOTA_Tooltip_ability_item_book_of_the_keeper_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_book_of_the_keeper_spell_amp_pct: '%SPELL DAMAGE AMP:'
 
 DOTA_Tooltip_ability_item_angel_wings: Angel Wings
-DOTA_Tooltip_ability_item_angel_wings_Description: |-
-  <h1>Active: Flight</h1> For some time gives you ability to go through obstructions and increases your attack range. Can be cast while channelling.
-  Passive: Increases spell cast range by %cast_range_bonus%.
+DOTA_Tooltip_ability_item_angel_wings_Description: >-
+  <h1>Active: Flight</h1> Gives you ability to go through obstructions for
+  %duration% seconds. Can be cast while channelling.
+
+  <h1>Passive: Aethereal Focus</h1> Increases spell cast range by
+  %cast_range_bonus%.
 DOTA_Tooltip_ability_item_angel_wings_bonus_movement_speed: +$move_speed
 DOTA_Tooltip_ability_item_angel_wings_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_angel_wings_bonus_all: +$all
 DOTA_Tooltip_ability_item_angel_wings_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_angel_wings_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_angel_wings_cast_range_bonus: +$cast_range
-DOTA_Tooltip_ability_item_angel_wings_duration: 'DURATION:'
 DOTA_Tooltip_modifier_item_angel_wings_active: Flight
-DOTA_Tooltip_modifier_item_angel_wings_active_Description: 'Has ability to go through obstructions.'
+DOTA_Tooltip_modifier_item_angel_wings_active_Description: Has ability to go through obstructions.
+
 
 DOTA_Tooltip_ability_item_blade_of_discord: Blade of Discord
 DOTA_Tooltip_ability_item_blade_of_discord_Description: '<h1>Active: Ether Weakness</h1> Emits a weakening blast which converts all caught enemies to ethereal form, increasing any incoming magic damage they take, while rendering them immune to physical damage and unable to attack, and dealing them %debuff_stats_multiplier%x your all attributes + %debuff_damage_base% as pure damage. Lasts %debuff_duration% seconds.'

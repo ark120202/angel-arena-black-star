@@ -729,13 +729,20 @@ DOTA_Tooltip_modifier_item_holy_knight_shield_buff_Description: Невоспри
 DOTA_Tooltip_ability_item_book_of_the_keeper: Book of the Keeper
 DOTA_Tooltip_ability_item_book_of_the_keeper_Description: 'Пассивная: Увеличивает урон способностей на %spell_amp_pct%%%'
 DOTA_Tooltip_ability_item_book_of_the_keeper_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
+
 DOTA_Tooltip_ability_item_angel_wings: Angel Wings
-DOTA_Tooltip_ability_item_angel_wings_Description: |-
-  <h1>Активируемая: Flight</h1> Дает вам возможность свободно перемещаться через препятствия и увеличивает радиус атаки. Можно использовать во время произнесения заклинаний.
-  Пассивная: Увеличивает дальность применения способностей на %cast_range_bonus%.
-DOTA_Tooltip_ability_item_angel_wings_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_item_angel_wings_Description: >-
+  <h1>Активируемая: Flight</h1> Дает вам возможность свободно перемещаться через
+  препятствия в течение %duration% секунд. Можно использовать во время
+  произнесения заклинаний.
+
+  <h1>Пассивная: Aethereal Focus</h1> Увеличивает дальность применения
+  способностей на %cast_range_bonus%.
 DOTA_Tooltip_modifier_item_angel_wings_active: Flight
-DOTA_Tooltip_modifier_item_angel_wings_active_Description: 'Имеет возможность свободно перемещаться через препятствия.'
+DOTA_Tooltip_modifier_item_angel_wings_active_Description: Имеет возможность свободно перемещаться через препятствия.
+
+
+
 DOTA_Tooltip_ability_item_blade_of_discord: Blade of Discord
 DOTA_Tooltip_ability_item_blade_of_discord_Description: '<h1>Активируемая: Ether Weakness</h1> Ослабляет врагов, придавая им бесплотную форму. В этой форме цель не может атаковать, получает увеличенный магический урон, но полностью защищена от физического урона. При применении на противников они будут замедлены и получат магический урон в размере %debuff_stats_multiplier%х всех ваших атрибутов + %debuff_damage_base% ед. Эффект длится %debuff_duration% секунд.'
 DOTA_Tooltip_ability_item_blade_of_discord_debuff_resist: '%ДОП. МАГИЧЕСКИЙ УРОН:'
