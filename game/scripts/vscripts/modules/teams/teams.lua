@@ -80,7 +80,7 @@ Teams.Data = Teams.Data or {
 	},
 }
 
-function Teams:Initialize()
+Events:Register("activate", "teams", function ()
 	PlayerTables:CreateTable("teams", {}, AllPlayersInterval)
 
 	local mapinfo = LoadKeyValues("addoninfo.txt")[GetMapName()]
@@ -97,7 +97,7 @@ function Teams:Initialize()
 			SetTeamCustomHealthbarColor(team, data.color[1], data.color[2], data.color[3])
 		end
 	end
-end
+end)
 
 function Teams:PostInitialize()
 	for team, data in pairsByKeys(Teams.Data) do

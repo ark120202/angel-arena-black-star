@@ -1,12 +1,12 @@
 StatsClient = StatsClient or class({})
 ModuleRequire(..., "data")
 
-function StatsClient:Init()
+Events:Register("activate", "stats", function ()
 	PlayerTables:CreateTable("stats_client", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("stats_team_rating", {}, AllPlayersInterval)
 	CustomGameEventManager:RegisterListener("stats_client_add_guide", Dynamic_Wrap(StatsClient, "AddGuide"))
 	CustomGameEventManager:RegisterListener("stats_client_vote_guide", Dynamic_Wrap(StatsClient, "VoteGuide"))
-end
+end)
 
 function StatsClient:FetchPreGameData()
 	local data = {

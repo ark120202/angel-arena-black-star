@@ -34,7 +34,7 @@ ModuleRequire(..., "hero_replacer")
 ModuleRequire(..., "client_actions")
 ModuleLinkLuaModifier(..., "modifier_hero_selection_transformation")
 
-function HeroSelection:Initialize()
+Events:Register("activate", "hero_selection", function ()
 	GameRules:SetHeroSelectionTime(-1)
 	local preTime = HERO_SELECTION_PICK_TIME + HERO_SELECTION_STRATEGY_TIME + 3.75 + Options:GetValue("PreGameTime")
 	if Options:GetValue("BanningPhaseBannedPercentage") > 0 then
@@ -60,7 +60,9 @@ function HeroSelection:Initialize()
 			Tutorial:ForceGameStart()
 		end
 	end, "Skips current phase", FCVAR_CHEAT)
-end
+
+	HeroSelection:PrepareTables()
+end)
 
 function HeroSelection:PrepareTables()
 	local data = {

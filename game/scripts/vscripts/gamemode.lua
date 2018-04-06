@@ -32,11 +32,11 @@ local requirements = {
 	"internal/gamemode",
 	"internal/events",
 	--------------------------------------------------
+	"modules/index",
+
 	"events",
 	"custom_events",
 	"filters",
-
-	"modules/index"
 }
 
 local modifiers = {
@@ -72,20 +72,9 @@ function GameMode:InitGameMode()
 	end
 	GAMEMODE_INITIALIZATION_STATUS[2] = true
 
-	GameMode:InitFilters()
-	HeroSelection:Initialize()
-	GameMode:RegisterCustomListeners()
-	DynamicWearables:Init()
-	HeroSelection:PrepareTables()
-	PanoramaShop:InitializeItemTable()
-	Structures:AddHealers()
-	Structures:CreateShops()
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
-	StatsClient:Init()
-	Teams:Initialize()
-	Attributes:Init()
-	Console:Init()
+	Events:Emit("activate")
 
 	PlayerTables:CreateTable("arena", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)

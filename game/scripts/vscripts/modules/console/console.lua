@@ -1,13 +1,13 @@
 Console = Console or {}
 
-function Console:Init()
+Events:Register("activate", "console", function ()
 	CustomGameEventManager:RegisterListener("console-evaluate", Dynamic_Wrap(Console, "ConsoleEvaluate"))
 
 	Convars:RegisterCommand("arena_console", function()
 		local player = Convars:GetCommandClient()
 		Console:SetVisible(player)
 	end, "Toggle Angel Arena Black Star debug console", FCVAR_NOTIFY)
-end
+end)
 
 function Console:SetVisible(player, value)
 	CustomGameEventManager:Send_ServerToPlayer(player, "console-set-visible", {

@@ -17,6 +17,10 @@ DynamicWearables.KVAttachTypeToLua = {
 	worldorigin = PATTACH_WORLDORIGIN
 }
 
+Events:Register("activate", "dynamic_wearables", function ()
+	DynamicWearables:ParseData()
+end)
+
 function DynamicWearables:GetWearableDataById(wearableId)
 	return DynamicWearables.DotaWearablesByIds[wearableId]
 end
@@ -314,10 +318,6 @@ function DynamicWearables:PrecacheUnparsedWearable(context, wearable)
 			PrecacheResource("particle", v.name, context)
 		end
 	end
-end
-
-function DynamicWearables:Init()
-	DynamicWearables:ParseData()
 end
 
 function DynamicWearables:ParseInventory(player)

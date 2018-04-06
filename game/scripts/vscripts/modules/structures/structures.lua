@@ -8,6 +8,11 @@ ModuleLinkLuaModifier(..., "modifier_fountain_aura_arena")
 ModuleLinkLuaModifier(..., "modifier_fountain_aura_invulnerability", "modifier_fountain_aura_arena")
 ModuleLinkLuaModifier(..., "modifier_fountain_aura_enemy")
 
+Events:Register("activate", "structures", function ()
+	Structures:AddHealers()
+	Structures:CreateShops()
+end)
+
 function Structures:AddHealers()
 	for _,v in ipairs(Entities:FindAllByClassname("npc_dota_healer")) do
 		local model = TEAM_HEALER_MODELS[v:GetTeamNumber()]
