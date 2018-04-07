@@ -50,8 +50,6 @@ npc_dota_casino_slotmachine: Slotmachine
 npc_dota_casino_lina: Lina
 npc_dota_arena_statue: Statue
 npc_dota_lucifers_claw_doomling: Lucifer's Doomling
-npc_dota_beastmaster_boar_base: Boar
-npc_dota_beastmaster_hawk_base: Hawk
 npc_arena_healer: Shrine
 
 DOTA_Tooltip_modifier_casino_bitch_lina_effect: Lina Buff
