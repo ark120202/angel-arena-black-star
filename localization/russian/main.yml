@@ -71,23 +71,24 @@ DOTA_Tooltip_ability_boss_armor_Description: |-
   При получении урона от вражеского героя временно снижает его радиус атаки до %attack_range_limit% и не дает ему становиться невидимым.
 DOTA_Tooltip_modifier_boss_armor_no_invisibility: No Invisibility
 DOTA_Tooltip_modifier_boss_armor_no_invisibility_Description: Не может стать невидимым, так как атаковал босса.
-DOTA_Tooltip_ability_ogre_magi_multicast_arena: Multicast
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: |-
-  Позволяет Ogre Magi использовать заклинания по нескольку раз за одно применение (шанс срабатывания на ультимативные способности в два раза меньше) и усиливает каждое из них:
-  <font color='#EEF10D'>Fireblast</font> получает уменьшенное время перезарядки, бóльшую дальность применения и увеличенный расход маны.
-  <font color='#DE8930'>Ignite</font> действует на область вокруг цели, получает увеличенную дальность применения и может срабатывать на случайных врагах неподалеку.
-  <font color='#E34F4F'>Bloodlust</font> получает уменьшенное время перезарядки и шанс сработать на случайных союзниках неподалеку.
+
+# Partial
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: >-
+  Позволяет способностям героя срабатывать по нескольку раз за одно
+  применение и усиливает каждую из них:
+
+  <font color="#EEF10D">Fireblast</font> получает уменьшенное время
+  перезарядки и увеличенную дальность применения.
+
+  <font color="#DE8930">Ignite</font> действует на область вокруг цели,
+  получает увеличенную дальность применения и может сработать на случайных
+  врагов вокруг.
+
+  <font color="#E34F4F">Bloodlust</font> получает уменьшенное время
+  перезарядки и может сработать на случайных союзников вокруг.
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_2_times: '%ШАНС 2Х:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_3_times: '%ШАНС 3X:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_4_times: '%ШАНС 4Х:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_fireblast_mana_cost: 'УВЕЛИЧ. ЗАТРАТ МАНЫ FIREBLAST:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_fireblast_cooldown: 'УМЕНЬШ. ПЕРЕЗАРЯДКИ FIREBLAST:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_ignite_aoe: 'IGNITE AOE:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_ignite_cast_range: 'РАДИУС ИСПОЛЬЗОВАНЯ IGNITE:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_aoe: 'BLOODLUST AOE:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_cooldown: 'УМЕНЬШЕНИЕ ПЕРЕЗАРЯДКИ BLOODLUST:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally: 'ДЛИТЕЛЬНОСТЬ НА СОЮЗНИКАХ:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: 'Добавляет способность Unrefined Fireblast. Multicast может быть использован на союзниках, временно даруя им шанс на использование заклинаний по нескольку раз за одно применение.'
 
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena: Reincarnation
 DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_Description: 'После смерти тело Wraith King вновь собирается воедино, воскрешая его на поле боя. Во время реинкарнации вы видите в радиусе %vision_radius% вокруг точки смерти. При этом все враги в радиусе %slow_radius% замедляются.'
