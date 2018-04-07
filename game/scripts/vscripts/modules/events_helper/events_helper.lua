@@ -6,11 +6,9 @@ function Events:Emit(...)
 	local args = {...}
 	local event = table.remove(args, 1)
 	local callbacks = Events.Callbacks[event]
-	print("EMITTED EVENT " .. event .. " with first arg: ", args[0])
 	if not callbacks then return end
 
 	for i, v in pairs(callbacks) do
-		print(" ... and called callback")
 		v.call(unpack(args))
 		if v.once then callbacks[i] = nil end
 	end
