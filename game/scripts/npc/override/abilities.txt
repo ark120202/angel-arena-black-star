@@ -61,6 +61,7 @@
 
 	"antimage_mana_void"
 	{
+		"MaxLevel"	"7"
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"70.0"
@@ -9500,7 +9501,7 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown"				"180 170 160 150 140 130 120"
 		"AbilityCastPoint"				"0.4"
-		"AbilityManaCost"				"125 175 250 325 400 475"
+		"AbilityManaCost"				"125 175 250 325 400 475 550"
 		"AbilitySpecial"
 		{
 			"01"
