@@ -1550,7 +1550,7 @@ DOTA_Tooltip_ability_item_unstable_quasar_Description: >-
   Triggering the Singularity spends %manacost% + %manacost_pct%%% of max mana.
 
 
-  Радиус: %singularity_radius%
+  Radius: %singularity_radius%
 
   <h1>Passive: Decomposition Aura</h1> Grants the ability to see invisible units
   and wards and reduces Magical Damage Resistance of enemy uses by
