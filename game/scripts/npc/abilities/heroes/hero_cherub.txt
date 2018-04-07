@@ -517,7 +517,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_range"		"130 160 190 220 240 270 300"
+				"attack_range"		"300 350 450 550 650 750 850"
 			}
 			"02"
 			{
@@ -558,7 +558,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_range"		"130 160 190 220 240 270 300"
+				"attack_range"		"300 350 450 550 650 750 850"
 			}
 			"02"
 			{
@@ -605,7 +605,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_range"		"300 350 450 550 650 750 850"
+				"attack_range"		"130 160 190 220 240 270 300"
 			}
 			"02"
 			{
@@ -646,7 +646,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_range"		"300 350 450 550 650 750 850"
+				"attack_range"		"130 160 190 220 240 270 300"
 			}
 			"02"
 			{
