@@ -7800,7 +7800,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"50"
+		"ItemCost"						"100"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_wand_of_midas"
 		"ItemRequirements"
@@ -7823,12 +7823,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_all"			"15"
+				"bonus_all"			"7"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"		"8.5"
+				"bonus_health_regen"		"3.8"
 			}
 			"03"
 			{
