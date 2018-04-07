@@ -186,8 +186,13 @@ end
 function CDOTA_BaseNPC:UpgradeTalent(name)
 	if not CustomTalents:Talent_Verify(name) or not self:CanUpgradeTalent(name) then return end
 
-	if self:IsMainHero() then MeepoFixes:UpgradeTalent(self, name) end
 	self:SetAbilityPoints(self:GetAbilityPoints() - CustomTalents:Talent_GetCost(name))
+
+	if self:IsMainHero() then MeepoFixes:UpgradeTalent(self, name) end
+	self:UpgradeTalentRecord(name)
+end
+
+function CDOTA_BaseNPC:UpgradeTalentRecord(name)
 	if not self.talents then self.talents = {} end
 	if not self.talents[name] then self.talents[name] = {level = 0, modifiers = {}, abilities = {}, ability_multicast = {}, unit_keys = {}} end
 	self.talents[name].level = self.talents[name].level + 1
