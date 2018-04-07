@@ -1,5 +1,5 @@
 local modules = {
-	"events_helper",
+	"events",
 
 	"bosses",
 	"custom_abilities",
