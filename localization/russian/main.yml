@@ -157,10 +157,10 @@ DOTA_Tooltip_modifier_fountain_aura_arena: Восстановление от ф�
 DOTA_Tooltip_modifier_fountain_aura_arena_Description: 'Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% здоровья и %dMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% маны в секунду.'
 
 DOTA_Tooltip_modifier_fountain_aura_invulnerability: Неуязвимость от фонтана
-DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Не получает урона. Эффект работает только до %dMODIFIER_PROPERTY_TOOLTIP% минуты. После этого фонтан перестанет убивать противников, но будет накладывать на них эффект слабости.'
+DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Не получает урона. Эффект работает только когда The Netherdrake жив. Иначе фонтан не будет убивать противников, но будет накладывать на них эффект слабости.'
 
 DOTA_Tooltip_modifier_fountain_aura_enemy: Слабость от фонтана
-DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'Теряет %dMODIFIER_PROPERTY_TOOLTIP%%% от максимального здоровья каждую секунду. Не может восстанавливать здоровье. Весь наносимый урон уменьшен на %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%. Снижение урона уменьшается на 5%% каждые 5 минут (до 0%%).'
+DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'Теряет %dMODIFIER_PROPERTY_TOOLTIP%%% от максимального здоровья каждую секунду. Не может восстанавливать здоровье. Весь наносимый урон уменьшен на %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%.'
 
 DOTA_Tooltip_ability_healer_taste_of_armor: Taste of Armor
 DOTA_Tooltip_ability_healer_taste_of_armor_Description: Увеличивает броню дружественным героям в радиусе.

@@ -115,3 +115,9 @@ ranked_top_players: Лучшие игроки
 ranked_top_more: Открыть топ 100...
 
 teams_kill_weight_tooltip: Убийство героев этой команды принесет {d:kill_weight} очков
+
+structures_fountain_protection_weak_line1: The Netherdrake был убит
+structures_fountain_protection_weak_line2: Защита Фонтанов стала слабее
+
+structures_fountain_protection_strong_line1: The Netherdrake переродится
+structures_fountain_protection_strong_line2: Защита Фонтанов стала сильнее

@@ -1,5 +1,3 @@
-local FOUNTAIN_EFFECTIVE_TIME_THRESHOLD = 2100
-
 local FOUNTAIN_PERCENTAGE_MANA_REGEN = 15
 local FOUNTAIN_PERCENTAGE_HEALTH_REGEN = 15
 
@@ -39,11 +37,11 @@ if IsServer() then
 			end
 		end
 
-		local okTime = GameRules:GetDOTATime(false, true) < FOUNTAIN_EFFECTIVE_TIME_THRESHOLD
+		local centralBossAlive = Bosses:GetAliveCount("central") > 0
 		local hasMod = parent:HasModifier("modifier_fountain_aura_invulnerability")
-		if okTime and not hasMod then
+		if centralBossAlive and not hasMod then
 			parent:AddNewModifier(parent, nil, "modifier_fountain_aura_invulnerability", nil)
-		elseif not okTime and hasMod then
+		elseif not centralBossAlive and hasMod then
 			parent:RemoveModifierByName("modifier_fountain_aura_invulnerability")
 		end
 	end
@@ -55,7 +53,6 @@ modifier_fountain_aura_invulnerability = class({
 	GetAbsoluteNoDamagePhysical = function() return 1 end,
 	GetAbsoluteNoDamageMagical =  function() return 1 end,
 	GetAbsoluteNoDamagePure =     function() return 1 end,
-	OnTooltip =                   function() return FOUNTAIN_EFFECTIVE_TIME_THRESHOLD / 60 end,
 	GetTexture =                  function() return "modifier_invulnerable" end,
 })
 

@@ -1,4 +1,3 @@
-local FOUNTAIN_EFFECTIVE_TIME_THRESHOLD = 2100
 local FOUNTAIN_DAMAGE_PER_SECOND_PCT = 5
 
 modifier_fountain_aura_enemy = class({
@@ -17,11 +16,8 @@ function modifier_fountain_aura_enemy:DeclareFunctions()
 	}
 end
 
--- Each 5m = -5%
 function modifier_fountain_aura_enemy:GetModifierDamageOutgoing_Percentage()
-	local timeLast = GameRules:GetDOTATime(false, true) - FOUNTAIN_EFFECTIVE_TIME_THRESHOLD
-	local b = math.floor(timeLast / 300) * 5
-	return -math.max(50 - b, 0)
+	return -50
 end
 
 if IsServer() then
@@ -48,13 +44,9 @@ if IsServer() then
 	function modifier_fountain_aura_enemy:OnIntervalThink()
 		local parent = self:GetParent()
 
-		-- Fixes possible exploit, when killing summon before they are completely created,
-		-- causes infinty spawning loop
-		if parent:IsWukongsSummon() then return end
-
 		self:CreateFountainPFX()
 
-		if GameRules:GetDOTATime(false, true) < FOUNTAIN_EFFECTIVE_TIME_THRESHOLD then
+		if Bosses:GetAliveCount("central") > 0 then
 			parent:TrueKill()
 		else
 			ApplyDamage({
