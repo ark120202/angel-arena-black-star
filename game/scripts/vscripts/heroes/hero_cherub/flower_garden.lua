@@ -23,6 +23,7 @@ function CreatePlot(keys)
 		health = ability:GetLevelSpecialValueFor("flower_health_scepter", level)
 	end
 
+	plot:SetBaseMaxHealth(health)
 	plot:SetMaxHealth(health)
 	plot:SetHealth(health)
 	plot.level = level
@@ -52,8 +53,11 @@ function ChooseFlower(keys)
 	local attack_rate = ability:GetLevelSpecialValueFor("attack_rate", ability:GetLevel() - 1)
 	local hp = caster:GetMaxHealth()
 	ReplaceAbilities(caster, ability_name, ability_name .. "_enabled", true, false)
+
+	caster:SetBaseMaxHealth(hp)
 	caster:SetMaxHealth(hp)
 	caster:SetHealth(hp)
+
 	if caster == PLAYER_DATA[caster:GetPlayerOwnerID()].Cherub_Flower_Garden.LatestPlotEntity then
 		PLAYER_DATA[caster:GetPlayerOwnerID()].Cherub_Flower_Garden.LatestPlotEntity = nil
 	end
