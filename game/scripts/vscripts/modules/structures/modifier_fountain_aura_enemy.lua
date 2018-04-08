@@ -41,12 +41,20 @@ if IsServer() then
 		end)
 	end
 
+	local centralBossKilled = false
+	Events:Register("bosses/kill/central", "fountain", function ()
+		centralBossKilled = true
+	end)
+	Events:Register("bosses/respawn/central", "fountain", function ()
+		centralBossKilled = false
+	end)
+
 	function modifier_fountain_aura_enemy:OnIntervalThink()
 		local parent = self:GetParent()
 
 		self:CreateFountainPFX()
 
-		if Bosses:GetAliveCount("central") > 0 then
+		if not centralBossKilled then
 			parent:TrueKill()
 		else
 			ApplyDamage({

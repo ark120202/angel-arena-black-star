@@ -25,6 +25,14 @@ if IsServer() then
 		self:GetParent():RemoveModifierByName("modifier_fountain_aura_invulnerability")
 	end
 
+	local centralBossKilled = false
+	Events:Register("bosses/kill/central", "fountain", function ()
+		centralBossKilled = true
+	end)
+	Events:Register("bosses/respawn/central", "fountain", function ()
+		centralBossKilled = false
+	end)
+
 	function modifier_fountain_aura_arena:OnIntervalThink()
 		local parent = self:GetParent()
 		while parent:HasModifier("modifier_saber_mana_burst_active") do
@@ -37,11 +45,10 @@ if IsServer() then
 			end
 		end
 
-		local centralBossAlive = Bosses:GetAliveCount("central") > 0
 		local hasMod = parent:HasModifier("modifier_fountain_aura_invulnerability")
-		if centralBossAlive and not hasMod then
+		if not centralBossKilled and not hasMod then
 			parent:AddNewModifier(parent, nil, "modifier_fountain_aura_invulnerability", nil)
-		elseif not centralBossAlive and hasMod then
+		elseif centralBossKilled and hasMod then
 			parent:RemoveModifierByName("modifier_fountain_aura_invulnerability")
 		end
 	end
