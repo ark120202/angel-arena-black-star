@@ -8177,7 +8177,7 @@
 		"ItemResult"					"item_scythe_of_sun"
 		"ItemRequirements"
 		{
-			"01"						"item_solar_crest;item_sheepstick;item_aether_lens_arena;item_fallen_star"
+			"01"						"item_solar_crest;item_sheepstick;item_aether_lens;item_fallen_star"
 		}
 	}
 
