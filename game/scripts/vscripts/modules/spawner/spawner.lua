@@ -141,7 +141,7 @@ end
 function Spawner:OnCreepDeath(unit)
 	Spawner.Creeps[unit.SSpawner] = Spawner.Creeps[unit.SSpawner] - 1
 	if unit.SpawnerType == "jungle" and Spawner.Creeps[unit.SSpawner] == 0 then
-		Timers:CreateTimer(4, function()
+		Timers:CreateTimer(2, function()
 			Spawner:SpawnJungleStacks(unit.SSpawner, unit.SpawnerIndex, unit.SpawnerType)
 		end)
 	end
