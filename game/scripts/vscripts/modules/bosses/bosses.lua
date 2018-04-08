@@ -1,7 +1,6 @@
 if Bosses == nil then
 	Bosses = class({})
 	Bosses.MinimapPoints = {}
-	Bosses.Counter = {}
 	Bosses.NextVoteID = 0
 end
 ModuleRequire(..., "data")
@@ -9,15 +8,6 @@ ModuleRequire(..., "boss_loot")
 
 function CDOTA_BaseNPC:IsBoss()
 	return self.GetUnitName ~= nil and string.find(self:GetUnitName(), "npc_arena_boss_") ~= nil
-end
-
-function Bosses:ModifyAliveCount(name, delta)
-	Bosses.Counter[name] = (Bosses.Counter[name] or 0) + delta
-end
-
-function Bosses:GetAliveCount(name)
-	if not Bosses.Counter[name] then return 0 end
-	return Bosses.Counter[name]
 end
 
 function Bosses:InitAllBosses()
@@ -45,15 +35,12 @@ function Bosses:SpawnBossUnit(name, spawner)
 	boss.SpawnerEntity = spawner
 	Bosses:MakeBossAI(boss, name)
 
-	Bosses:ModifyAliveCount(name, 1)
-
 	return boss
 end
 
 function Bosses:RegisterKilledBoss(unit, team)
 	local unitname = unit:GetUnitName()
 	local bossname = string.gsub(unitname, "npc_arena_boss_", "")
-	Bosses:ModifyAliveCount(bossname, -1)
 
 	Bosses:CreateBossLoot(unit, team)
 	local amount = unit:GetKeyValue("Bosses_GoldToAll")
