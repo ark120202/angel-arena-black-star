@@ -11,14 +11,15 @@ if not Attributes then
 	Attributes.Applier = CreateItem("item_dummy", nil, nil)
 end
 
-function Attributes:Init()
+
+Events:Register("activate", "attributes", function ()
 	local gameModeEntity = GameRules:GetGameModeEntity()
 	for _, v in pairs(ATTRIBUTE_LIST) do
 		if v.attributeDerivedStat ~= nil then
 			gameModeEntity:SetCustomAttributeDerivedStatValue(v.attributeDerivedStat, v.default)
 		end
 	end
-end
+end)
 
 function Attributes:SetPropValue(hero, prop, value)
 	if not hero.attributes_adjustments then hero.attributes_adjustments = {} end

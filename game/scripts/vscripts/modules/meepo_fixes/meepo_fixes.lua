@@ -57,5 +57,6 @@ end
 function MeepoFixes:UpgradeTalent(unit, name)
 	for _,v in pairs(MeepoFixes:FindMeepos(unit)) do
 		v:SetAbilityPoints(v:GetAbilityPoints() - CustomTalents:Talent_GetCost(name))
+		v:UpgradeTalentRecord(name)
 	end
 end

@@ -1,4 +1,4 @@
-function GameMode:RegisterCustomListeners()
+Events:Register("activate", "custom_events", function ()
 	CustomGameEventManager:RegisterListener("custom_chat_send_message", Dynamic_Wrap(GameMode, "CustomChatSendMessage"))
 	CustomGameEventManager:RegisterListener("metamorphosis_elixir_cast", Dynamic_Wrap(GameMode, "MetamorphosisElixirCast"))
 	CustomGameEventManager:RegisterListener("modifier_clicked_purge", Dynamic_Wrap(GameMode, "ModifierClickedPurge"))
@@ -6,7 +6,7 @@ function GameMode:RegisterCustomListeners()
 	CustomGameEventManager:RegisterListener("team_select_host_set_player_team", Dynamic_Wrap(GameMode, "TeamSelectHostSetPlayerTeam"))
 	CustomGameEventManager:RegisterListener("set_help_disabled", Dynamic_Wrap(GameMode, "SetHelpDisabled"))
 	CustomGameEventManager:RegisterListener("on_ads_clicked", Dynamic_Wrap(GameMode, "OnAdsClicked"))
-end
+end)
 
 function GameMode:MetamorphosisElixirCast(data)
 	local hero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)

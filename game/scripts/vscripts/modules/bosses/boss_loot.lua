@@ -127,7 +127,7 @@ function Bosses:GivePlayerSelectedDrop(playerId, entry)
 		end
 		if Duel:IsDuelOngoing() then
 			Notifications:Bottom(playerId, {text="boss_loot_vote_hero_duel_delayed"})
-			Events:On("Duel/end", ActuallyReplaceHero, true)
+			Events:Once("Duel/end", ActuallyReplaceHero)
 		else
 			ActuallyReplaceHero()
 		end

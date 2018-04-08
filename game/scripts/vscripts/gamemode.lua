@@ -17,7 +17,6 @@ local requirements = {
 	-- "libraries/pathgraph",
 	"libraries/selection",
 	"libraries/worldpanels",
-	"libraries/CosmeticLib",
 	"libraries/PopupNumbers",
 	"libraries/statcollection/init",
 	--------------------------------------------------
@@ -33,11 +32,11 @@ local requirements = {
 	"internal/gamemode",
 	"internal/events",
 	--------------------------------------------------
+	"modules/index",
+
 	"events",
 	"custom_events",
 	"filters",
-
-	"modules/index"
 }
 
 local modifiers = {
@@ -52,9 +51,6 @@ local modifiers = {
 	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game",
 
 	modifier_item_shard_attackspeed_stack = "modifiers/modifier_item_shard_attackspeed_stack",
-	modifier_item_casino_drug_pill1_addiction = "modifiers/modifier_item_casino_drug_pill1_addiction",
-	modifier_item_casino_drug_pill2_addiction = "modifiers/modifier_item_casino_drug_pill2_addiction",
-	modifier_item_casino_drug_pill3_addiction = "modifiers/modifier_item_casino_drug_pill3_addiction",
 }
 
 for k,v in pairs(modifiers) do
@@ -66,7 +62,6 @@ AllPlayersInterval = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
 for i = 1, #requirements do
 	require(requirements[i])
 end
-JSON = require("libraries/json")
 
 Options:Preload()
 
@@ -77,20 +72,9 @@ function GameMode:InitGameMode()
 	end
 	GAMEMODE_INITIALIZATION_STATUS[2] = true
 
-	GameMode:InitFilters()
-	HeroSelection:Initialize()
-	GameMode:RegisterCustomListeners()
-	DynamicWearables:Init()
-	HeroSelection:PrepareTables()
-	PanoramaShop:InitializeItemTable()
-	Structures:AddHealers()
-	Structures:CreateShops()
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
-	StatsClient:Init()
-	Teams:Initialize()
-	Attributes:Init()
-	Console:Init()
+	Events:Emit("activate")
 
 	PlayerTables:CreateTable("arena", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)

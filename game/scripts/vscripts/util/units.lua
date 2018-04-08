@@ -168,10 +168,17 @@ end
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	if self.OnDuel then return 1 end
-	local time = (5 + self:GetLevel() * 0.2) + (self.RespawnTimeModifierBloodstone or 0) + (self.RespawnTimeModifierSaiReleaseOfForge or 0)
+	local time = (5 + self:GetLevel() * 0.2) + (self.RespawnTimeModifierSaiReleaseOfForge or 0)
 	if self.talent_keys and self.talent_keys.respawn_time_reduction then
 		time = time + self.talent_keys.respawn_time_reduction
 	end
+
+	local bloodstone = self:FindItemInInventory("item_bloodstone")
+	if bloodstone then
+		time = time - bloodstone:GetCurrentCharges() * bloodstone:GetSpecialValueFor("respawn_time_reduction")
+		print("Reduced by ", bloodstone:GetCurrentCharges() * bloodstone:GetSpecialValueFor("respawn_time_reduction"))
+	end
+
 	return math.max(time, 3)
 end
 

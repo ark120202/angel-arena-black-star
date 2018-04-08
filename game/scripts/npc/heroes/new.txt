@@ -51,24 +51,6 @@
 //		"ProjectileModel"		""
 //	}
 //
-//	"npc_arena_hero_madoka"
-//	{
-//		"base_hero"					"npc_dota_hero_arena_base"
-//		"SceneCamera"				"custom_scene_hero_madoka"
-//		"Model"						"models/units/madoka/madoka.vmdl"
-//		"ModelScale"				"1.7"
-//		"Ability1"					""
-//		"Ability2"					""
-//		"Ability3"					""
-//		"Ability4"					""
-//		"Ability5"					""
-//		"Ability6"					""
-//		"Enabled"					"0"
-//		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-//		"AttackRange"				"150"
-//		"ProjectileModel"			"particles/arena/units/heroes/hero_madoka/madoka_base_attack.vpcf"
-//	}
-//
 //	"npc_arena_hero_maka"
 //	{
 //		"base_hero"				"npc_dota_hero_arena_base"
@@ -97,17 +79,6 @@
 		"Ability4"	"boss_kel_thuzad_shadows"
 		"Ability5"	"boss_kel_thuzad_summon_undead"
 		"Ability6"	"boss_kel_thuzad_erebus"
-	}
-
-	"npc_arena_hero_arthas"
-	{
-		"base_hero"	"npc_dota_hero_skeleton_king"
-		"Ability1"	"arthas_rage_of_arthas"
-		"Ability2"	"arthas_plus_morality"
-		"Ability3"	"arthas_vikared"
-		"Ability4"	"generic_hidden"
-		"Ability5"	"generic_hidden"
-		"Ability6"	"arthas_vsolyanova"
 	}
 
 	"npc_arena_hero_stargazer"

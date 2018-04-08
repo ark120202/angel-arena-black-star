@@ -37,12 +37,7 @@ function GameMode:OnNPCSpawned(keys)
 				if not npc:IsWukongsSummon() then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if npc:IsTrueHero() then
-						for name,v in pairs(npc.talents or {}) do
-							if v.delayed then
-								v.delayed = nil
-								npc:ApplyTalentEffects(name)
-							end
-						end
+						npc:ApplyDelayedTalents()
 
 						PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
 						CustomAbilities:RandomOMGRollAbilities(npc)

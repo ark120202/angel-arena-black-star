@@ -1,9 +1,9 @@
-function GameMode:InitFilters()
-	GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap(GameMode, 'ExecuteOrderFilter'), self)
-	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, 'DamageFilter'), self)
-	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, 'ModifyGoldFilter'), self)
-	GameRules:GetGameModeEntity():SetModifyExperienceFilter(Dynamic_Wrap(GameMode, 'ModifyExperienceFilter'), self)
-end
+Events:Register("activate", "filters", function ()
+	GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap(GameMode, 'ExecuteOrderFilter'), GameRules)
+	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, 'DamageFilter'), GameRules)
+	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, 'ModifyGoldFilter'), GameRules)
+	GameRules:GetGameModeEntity():SetModifyExperienceFilter(Dynamic_Wrap(GameMode, 'ModifyExperienceFilter'), GameRules)
+end)
 
 function GameMode:ExecuteOrderFilter(filterTable)
 	local order_type = filterTable.order_type
@@ -94,23 +94,6 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		end
 	end
 
-	if filterTable.position_x ~= 0 and filterTable.position_y ~= 0 then
-		local hasLightEffect =
-			unit:HasModifier("modifier_item_casino_drug_pill3_debuff") or
-			unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 8
-		local applyEffect =
-			(RandomInt(0, 1) == 1 and hasLightEffect) or
-			unit:GetModifierStackCount("modifier_item_casino_drug_pill3_addiction", unit) >= 16
-		if applyEffect then
-			local heroVector = unit:GetAbsOrigin()
-			local orderVector = Vector(filterTable.position_x, filterTable.position_y, 0)
-			local diff = orderVector - heroVector
-			local newVector = heroVector + (diff * -1)
-			filterTable.position_x = newVector.x
-			filterTable.position_y = newVector.y
-		end
-	end
-
 	return true
 end
 
@@ -150,10 +133,6 @@ function GameMode:DamageFilter(filterTable)
 		end
 		if victim:IsBoss() and (attacker:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() > 950 then
 			filterTable.damage = filterTable.damage / 2
-		end
-		if (attacker.HasModifier and (attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or attacker:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) or (victim.HasModifier and (victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_buff") or victim:HasModifier("modifier_crystal_maiden_glacier_tranqulity_debuff"))) then
-			filterTable.damage = 0
-			return false
 		end
 
 		local BlockedDamage = 0

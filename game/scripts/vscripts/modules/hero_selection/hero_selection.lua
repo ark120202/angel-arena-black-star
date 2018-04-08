@@ -5,9 +5,9 @@ CUSTOM_GOLD_REPICK_COST = 200
 
 MAX_SPAWNBOXES_SELECTED = 3
 
-HERO_SELECTION_PICK_TIME = 80
-HERO_SELECTION_STRATEGY_TIME = 35
-HERO_SELECTION_BANNING_TIME = 25
+HERO_SELECTION_PICK_TIME = 70
+HERO_SELECTION_STRATEGY_TIME = 20
+HERO_SELECTION_BANNING_TIME = 40
 
 HERO_SELECTION_PHASE_NOT_STARTED = 0
 HERO_SELECTION_PHASE_BANNING = 1
@@ -34,7 +34,7 @@ ModuleRequire(..., "hero_replacer")
 ModuleRequire(..., "client_actions")
 ModuleLinkLuaModifier(..., "modifier_hero_selection_transformation")
 
-function HeroSelection:Initialize()
+Events:Register("activate", "hero_selection", function ()
 	GameRules:SetHeroSelectionTime(-1)
 	local preTime = HERO_SELECTION_PICK_TIME + HERO_SELECTION_STRATEGY_TIME + 3.75 + Options:GetValue("PreGameTime")
 	if Options:GetValue("BanningPhaseBannedPercentage") > 0 then
@@ -60,7 +60,9 @@ function HeroSelection:Initialize()
 			Tutorial:ForceGameStart()
 		end
 	end, "Skips current phase", FCVAR_CHEAT)
-end
+
+	HeroSelection:PrepareTables()
+end)
 
 function HeroSelection:PrepareTables()
 	local data = {

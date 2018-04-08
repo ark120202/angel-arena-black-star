@@ -1,5 +1,3 @@
-FOUNTAIN_EFFECTIVE_TIME_THRESHOLD = 2100
-
 COURIER_HEALTH_BASE = 200
 COURIER_HEALTH_GROWTH = 50
 
@@ -21,9 +19,6 @@ TEAM_HEALER_MODELS = {
 
 ShopsData = {
 	Secret = {
-		"item_casino_drug_pill1",
-		"item_casino_drug_pill2",
-		"item_casino_drug_pill3",
 		"item_casino_coin",
 	},
 	Duel = {

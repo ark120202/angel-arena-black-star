@@ -1,7 +1,7 @@
 function CreateLightningBlot(position)
 	local originalPosition
 	local lightningRodRadius = GetAbilitySpecial("item_lightning_rod", "protection_radius")
-	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, lightningRodRadius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)) do
+	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, lightningRodRadius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_OTHER, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)) do
 		if v:HasModifier("modifier_item_lightning_rod_ward") then
 			originalPosition = position
 			position = v:GetAbsOrigin() + Vector(0, 0, 150)

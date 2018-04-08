@@ -33,7 +33,7 @@ function FountainOnStartTouch(trigger, team)
 		unit:AddNewModifier(unit, nil, "modifier_fountain_aura_arena", nil)
 	elseif not unit:IsBoss() then
 		local unitName = unit:GetUnitName()
-		if not OUT_OF_GAME_UNITS[unitName] then
+		if not OUT_OF_GAME_UNITS[unitName] and not unit:IsWukongsSummon() then
 			unit:AddNewModifier(unit, nil, "modifier_fountain_aura_enemy", {team = team})
 		end
 	end

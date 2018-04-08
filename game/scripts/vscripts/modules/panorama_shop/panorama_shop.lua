@@ -13,6 +13,10 @@ if PanoramaShop == nil then
 	}
 end
 
+Events:Register("activate", "panorama_shop", function ()
+	PanoramaShop:InitializeItemTable()
+end)
+
 function PanoramaShop:PushStockInfoToAllClients()
 	for team,tt in pairs(PanoramaShop.StocksTable) do
 		local ItemStocks = PlayerTables:GetTableValue("panorama_shop_data", "ItemStocks_team" .. team) or {}

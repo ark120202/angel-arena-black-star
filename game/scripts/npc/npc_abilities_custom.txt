@@ -1,10 +1,10 @@
-#base "abilities/thinkers.txt"
 #base "abilities/map.txt"
 #base "abilities/bosses.txt"
+#base "abilities/rewrites.txt"
+#base "abilities/thinkers.txt"
 
 #base "abilities/bosses/kel_thuzad.txt"
 
-#base "abilities/heroes/hero_arthas.txt"
 #base "abilities/heroes/hero_stargazer.txt"
 #base "abilities/heroes/hero_cherub.txt"
 #base "abilities/heroes/hero_queenofblades.txt"
@@ -28,16 +28,9 @@
 //#base "abilities/heroes/hero_maka.txt"
 //#base "abilities/heroes/hero_soul_eater.txt"
 
-#base "abilities/heroes/hero_wisp.txt"
-#base "abilities/heroes/hero_warlock.txt"
-#base "abilities/heroes/hero_dragon_knight.txt"
-#base "abilities/heroes/hero_crystal_maiden.txt"
-#base "abilities/heroes/hero_faceless_void.txt"
-#base "abilities/heroes/hero_omniknight.txt"
 #base "abilities/heroes/hero_medusa.txt"
 #base "abilities/heroes/hero_pudge.txt"
 #base "abilities/heroes/hero_phantom_lancer.txt"
-#base "abilities/heroes/hero_antimage.txt"
 
 "DOTAAbilities"
 {
@@ -76,53 +69,49 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_2_times"		"40 45 50 55 60 65 70"
+				"multicast_2_times"		"30 40 50 60 70 80 90"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_3_times"		"0 20 21 22 23 24 25"
+				"multicast_3_times"		"0 20 25 30 35 40 45"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_4_times"		"0 0 10 10.5 11.0 11.5 12.5"
+				"multicast_4_times"		"0 0 12.5 14 16 18 20"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"fireblast_mana_cost"	"20 40 60 80 100 120 140"
+				"var_type"			"FIELD_FLOAT"
+				"fireblast_cooldown"	"6"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"fireblast_cooldown"	"1 2 3 4 5 6 7"
+				"ignite_aoe"		"150 300 450 500 550 600 650"
 			}
-
 			"06"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"ignite_aoe"	"150 200 250 300 350 400 450"
+				"var_type"			"FIELD_INTEGER"
+				"ignite_cast_range"	"150 300 450 500 550 600 650"
 			}
-
 			"07"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"ignite_cast_range"	"150 200 250 300 350 400 450"
+				"var_type"				"FIELD_FLOAT"
+				"bloodlust_aoe"			"575"
 			}
-
 			"08"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"bloodlust_cooldown"	"5 7 9 11 13 16 19"
+				"var_type"				"FIELD_FLOAT"
+				"bloodlust_cooldown"	"10"
 			}
+			////////////////////////////////////////////////////////
 			"09"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"duration_ally"		"30"
 			}
-
-			////////////////////////////////////////////////////////
 			"10"
 			{
 				"var_type"			"FIELD_FLOAT"
@@ -480,98 +469,6 @@
 		}
 	}
 
-	"madoka_spec" //TODO
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"madoka_spec"
-		"MaxLevel" 						"1"
-		"RequiredLevel"					"300"
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityCastPoint"				"0.2"
-		"AbilityManaCost"				"4000"
-		"AbilityChannelTime"			"%channel_time"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"60"
-			}
-		}
-
-		"OnChannelSucceeded"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_madoka_spec"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_madoka_spec"
-			{
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"HideTarget"
-					}
-
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_madoka/next_stage.lua"
-						"Function"		"Transform"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"ShowTarget"
-					}
-
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_madoka/next_stage.lua"
-						"Function"		"Untransform"
-					}
-				}
-
-				"ThinkInterval"  "0.25"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_madoka/next_stage.lua"
-						"Function"		"CheckPlayers"
-					}
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_ROOTED"					"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_DISARMED"				"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_MUTED"					"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NOT_ON_MINIMAP"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
 	"doom_bringer_devour_arena"
 	{
 		// General
@@ -864,60 +761,6 @@
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_per_stack"
 				}
 			}
-		}
-	}
-
-	"tinker_rearm_arena"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/hero_tinker/rearm.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityTextureName"			"tinker_rearm"
-		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_4"
-		"MaxLevel"						"7"
-		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"17 16 15 14 13 12 11"
-		"AbilityManaCost"				"200 300 400 500 600 700 800"
-
-		"precache"
-		{
-			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
-			"particle"					"particles/units/heroes/hero_tinker/tinker_rearm.vpcf"
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"channel_time"			"0.1"
-			}
-		}
-	}
-
-	"life_stealer_feast_arena"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/hero_life_stealer/feast.lua"
-		"AbilityTextureName"            "life_stealer_feast"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"MaxLevel"						"7"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_leech_percent"		"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
-			}
-		}
-
-		"precache"
-		{
-			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
-			"particle"					"particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
 		}
 	}
 }
