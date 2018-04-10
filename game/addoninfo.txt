@@ -1,6 +1,6 @@
 "AddonInfo"
 {
-	"version"		"1.16.2"
+	"version"		"1.16.3"
 	"maps"          "5v5_ranked war3_ranked 5v5 war3 4v4v4v4 5v5_custom_abilities 4v4v4v4_custom_abilities"
 	"PenaltiesEnabled"	"1"
 	"CheckAFKPlayers"	"0"
