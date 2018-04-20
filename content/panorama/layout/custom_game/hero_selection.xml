@@ -379,7 +379,7 @@
 					</Panel>
 				</Panel>
 				<!--  ExternalBrowserGoToURL  BrowserGoToURL = DOTADisplayURL -->
-				<Image id="AdsBanner" onactivate="OnAdsClicked()">
+				<Image id="AdsBanner" onactivate="OnAdsClicked()" src="file://{images}/custom_game/hero_selection/ads.png">
 					<Label text="+25" />
 				</Image>
 				<Panel id="SelectionChatBox">

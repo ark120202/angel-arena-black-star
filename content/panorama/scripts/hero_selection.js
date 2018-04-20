@@ -269,16 +269,10 @@ function OnMinimapClickSpawnBox(team, level, index) {
 	});
 }
 
-var russianLangs = [
-	'russian',
-	'ukrainian',
-	'bulgarian'
-];
-
 function OnAdsClicked() {
 	var context = $.GetContextPanel();
 	$.Schedule(context.BHasClass('AdsClicked') ? 0 : .35, function() {
-		$.DispatchEvent('ExternalBrowserGoToURL', 'https://www.dota-aabs.com/ads/hero_selection/go');
+		$.DispatchEvent('ExternalBrowserGoToURL', 'https://realdrop.net/?utm_source=banner&utm_campaign=b1');
 	});
 	if (!context.BHasClass('AdsClicked')){
 		context.AddClass('AdsClicked');
@@ -347,7 +341,6 @@ function ShowHeroPreviewTab(tabID) {
 	$('#HeroListPanel').RemoveAndDeleteChildren();
 	var localPlayerId = Game.GetLocalPlayerID();
 	if (Players.IsValidPlayerID(localPlayerId) && !Players.IsSpectator(localPlayerId)) {
-		$('#AdsBanner').SetImage('https://www.dota-aabs.com/ads/hero_selection/' + (russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png'))
 		_DynamicMinimapSubscribe($('#MinimapDynamicIcons'), function(ptid) {
 			MinimapPTIDs.push(ptid);
 		});
