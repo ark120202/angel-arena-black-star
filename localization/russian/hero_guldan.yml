@@ -1,0 +1,51 @@
+npc_arena_hero_guldan: Guldan
+npc_arena_hero_guldan_hype: Изгнанный древний некромант, обещавший вернутся...
+
+DOTA_Tooltip_ability_guldan_curse: Curse
+DOTA_Tooltip_ability_guldan_curse_Lore: Гул`дан всегда выполняет обещания.
+DOTA_Tooltip_ability_guldan_curse_Description: 'Гул`дан проклинает цель: наносит урон, оглушает, после оглушения накладывает немоту.'
+DOTA_Tooltip_ability_guldan_curse_stun_duration: "ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ"
+DOTA_Tooltip_ability_guldan_curse_silence_duration: "ДЛИТЕЛЬНОСТЬ БЕЗМОЛВИЯ"
+DOTA_Tooltip_modifier_guldan_curse_stun: Оглушен
+DOTA_Tooltip_modifier_guldan_curse_silence: Обезмолвлен
+
+
+DOTA_Tooltip_ability_guldan_saving_touch: Saving Touch
+DOTA_Tooltip_ability_guldan_saving_touch_Lore: Послушание похвально.
+DOTA_Tooltip_ability_guldan_saving_touch_Description: Гул`дан временно повышает союзнику броню и накладывает магический иммунитет.
+DOTA_Tooltip_ability_guldan_saving_touch_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_guldan_saving_touch_bonus_armor: 'БРОНЯ:'
+DOTA_Tooltip_modifier_guldan_saving_touch: Saving Touch
+DOTA_Tooltip_modifier_guldan_saving_touch_description: 'Невосприимчив к магии, броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%'
+
+DOTA_Tooltip_ability_guldan_death_impress: Death Impress
+DOTA_Tooltip_ability_guldan_death_impress_Lore: Никому не сбежать.
+DOTA_Tooltip_ability_guldan_death_impress_Description: Гул`дан оковывает цель, обезоруживая её, накладывая немоту и снижая магическую защиту.
+DOTA_Tooltip_ability_guldan_death_impress_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_guldan_death_impress_magic_damage_debuff: '%УМЕНЬШЕНИЕ МАГИЧЕСКОЙ ЗАЩИТЫ'
+DOTA_Tooltip_modifier_guldan_death_impress: Death Impress
+DOTA_Tooltip_modifier_guldan_death_impress_Description: 'Обезоружен, немота, магическая защита уменьшена на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%'
+
+DOTA_Tooltip_ability_guldan_hatred: Hatred
+DOTA_Tooltip_ability_guldan_hatred_Lore: Им слишком рано умирать.
+DOTA_Tooltip_ability_guldan_hatred_Description: Гул`дан дарует жизнь своим союзникам, увеличивая их регенерацию здоровья.
+DOTA_Tooltip_ability_guldan_hatred_aura_percentage_health_regen: '%РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ'
+DOTA_Tooltip_modifier_guldan_hatred_effect: Hatred
+DOTA_Tooltip_modifier_guldan_hatred_effect_Description: 'Регенерация здоровья увеличена на %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% '
+
+DOTA_Tooltip_ability_guldan_shadow_path: Shadow Path
+DOTA_Tooltip_ability_guldan_shadow_path_Description: Гул`дан создает ауру вокруг себя, под действием которой противники периодически получают урон и замедляются.Когда способность кончается или противники покидают радиус, они получают дополнительное замедление.
+DOTA_Tooltip_ability_guldan_shadow_path_Lore: Гул`дан взывает к своей ненавести, заставляя все вокруг пылать.
+DOTA_Tooltip_ability_guldan_shadow_path_aghanim_description: Изменяет урон на чистый, увеличивает урон,радиус и замедление.
+DOTA_Tooltip_ability_guldan_shadow_path_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_ability_guldan_shadow_path_damage_per_second: 'УРОН В СЕКУНДУ:'
+DOTA_Tooltip_ability_guldan_shadow_path_movement_speed_reduce: '%ЗАМЕДЛЕНИЕ:'
+DOTA_Tooltip_ability_guldan_shadow_path_aura_radius_scepter: 'РАДИУС СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_guldan_shadow_path_duration: 'ДЛИТЕЛЬНОСТЬ СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_guldan_shadow_path_movement_speed_reduce_scepter: '%ЗАМЕДЛЕНИЕ СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_guldan_shadow_path_damage_per_second_scepter: 'УРОН В СЕКУНДУ СО СКИПЕТРОМ:'
+DOTA_Tooltip_modifier_guldan_shadow_path: Shadow Path
+DOTA_Tooltip_modifier_guldan_shadow_path_Description: Наносит периодический урон и замедляет вокруг себя.
+DOTA_Tooltip_modifier_guldan_shadow_path_effect: Shadow Path
+DOTA_Tooltip_modifier_guldan_shadow_path_effect_Description: 'Получает урон в секунду, скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%'
+DOTA_Tooltip_modifier_guldan_shadow_path_effect_slow: ЗАМЕДЛЕН
