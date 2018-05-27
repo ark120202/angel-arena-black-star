@@ -32,7 +32,7 @@ function DoSummon(keys)
 			unit:SetModelScale(t.model_scale)
 		end
 	end
-	unit:SetBaseMaxHealth(keys.health)
+ 	unit:SetBaseMaxHealth(keys.health)
 	unit:SetMaxHealth(keys.health)
 	unit:SetHealth(keys.health)
 	unit:SetBaseHealthRegen(keys.health_regen)
@@ -40,6 +40,9 @@ function DoSummon(keys)
 	unit:SetBaseDamageMax(keys.damage)
 	unit:SetPhysicalArmorBaseValue(keys.armor)
 	ParticleManager:CreateParticle("particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+	function OnModifierDestroy(keys)
+		unit:TrueKill(keys.ability , keys.caster)
+	end
 end
 
 function ReturnBack(keys)
@@ -60,3 +63,4 @@ function ReturnDamage(keys)
 		end
 	end
 end
+

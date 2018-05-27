@@ -6422,12 +6422,20 @@
 			{
 				"Passive"			"0"
 				"IsHidden"			"0"
-
+				"IsPurgable"		"0"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%aura_bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%aura_bonus_movement_speed_pct"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"			"%aura_health_regen"
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"items/item_summoned_unit.lua"
+						"Function"			"OnModifierDestroy"
+					}
 				}
 			}
 		}
