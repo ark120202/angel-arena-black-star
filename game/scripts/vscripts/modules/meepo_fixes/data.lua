@@ -11,7 +11,6 @@ MEEPO_SHARED_ITEMS = {
 	item_quelling_fury = true,
 	item_linken_sphere = true,
 
-
 	item_yasha = true,
 	item_sange = true,
 	item_sange_and_yasha = true,
