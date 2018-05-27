@@ -11,8 +11,6 @@ if Duel == nil then
 	Duel.TimesTeamWins = {}
 	Duel.AnnouncerCountdownCooldowns = {}
 	Duel.DuelCounter = 0
-	Duel.DuelBox1 = Vector(0,0,0)
-	Duel.DuelBox2 = Vector(0,0,0)
 end
 
 function Duel:SetDuelTimer(duration)
@@ -25,13 +23,21 @@ function Duel:CreateGlobalTimer()
 	Duel:SetDuelTimer(-GameRules:GetDOTATime(false, true))
 	Timers:CreateTimer(Dynamic_Wrap(Duel, 'GlobalThink'))
 
+	Duel:CreateBlocker()
+end
+
+function Duel:CreateBlocker()
+	local trigger = Entities:FindByName(nil, "trigger_arena_zone")
+	local origin = trigger:GetAbsOrigin()
+	local bounds = trigger:GetBounds()
+	local mins = origin + ExpandVector(bounds.Mins, 96)
+	local maxs = origin + ExpandVector(bounds.Maxs, 96)
+
 	Physics:RemoveCollider("collider_box_blocker_arena")
-	Duel.DuelBox1 = Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin()
-	Duel.DuelBox2 = Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()
-	local collider = Physics:AddCollider("collider_box_blocker_arena", Physics:ColliderFromProfile("boxblocker"))
-	collider.box = CreateSimpleBox(Duel.DuelBox2, Duel.DuelBox1)
+	local collider = Physics:AddCollider("collider_box_blocker_arena", Physics:ColliderFromProfile("aaboxblocker"))
+	collider.box = {mins, maxs}
 	collider.findClearSpace = true
-	--collider.draw = true
+	-- collider.draw = true
 	collider.test = function(self, unit)
 		if not IsPhysicsUnit(unit) and unit.IsConsideredHero and unit:IsConsideredHero() then
 			Physics:Unit(unit)
