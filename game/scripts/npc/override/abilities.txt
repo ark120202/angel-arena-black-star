@@ -21053,6 +21053,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"100"
 		"AbilityCooldown"	"10"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityManaCost"	"110 130 150 170 190 210 230"
 		"AbilitySpecial"
 		{
