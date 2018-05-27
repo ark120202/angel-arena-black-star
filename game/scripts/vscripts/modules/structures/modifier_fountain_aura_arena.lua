@@ -40,7 +40,7 @@ if IsServer() then
 		end
 		for i = 0, 11 do
 			local item = parent:GetItemInSlot(i)
-			if item and item:GetAbilityName() == "item_bottle_arena" then
+			if item and item:GetAbilityName() == "item_bottle_arena" and not parent:IsCourier() then
 				item:SetCurrentCharges(3)
 			end
 		end
