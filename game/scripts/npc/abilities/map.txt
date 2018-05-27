@@ -91,7 +91,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -103,6 +103,11 @@
 			{
 				"var_type" 				"FIELD_INTEGER"
 				"aura_bonus_armor"			"4"
+			}
+			"03"
+			{
+				"var_type" 				"FIELD_FLOAT"
+				"filling_bottle_timer"			"60.0"
 			}
 		}
 	}
