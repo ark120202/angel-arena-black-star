@@ -7527,7 +7527,7 @@
 	"templar_assassin_psi_blades"
 	{
 		"MaxLevel"	"7"
-		"RequiredLevel"	"2"
+		"RequiredLevel"	"3"
 		"AbilitySpecial"
 		{
 			"01"
