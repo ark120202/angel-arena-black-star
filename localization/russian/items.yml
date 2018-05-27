@@ -88,14 +88,14 @@ DOTA_Tooltip_modifier_item_edge_of_vyse_active_Description: 'Невидим. С�
 DOTA_Tooltip_ability_item_gem_of_clear_mind: Gem of Clear Mind
 DOTA_Tooltip_ability_item_gem_of_clear_mind_Description: |-
   <h1>Пассивная: Clear Mind</h1> Дает носителю и его союзникам возможность различать иллюзии и настоящих героев.
-  Выпадает при смерти и не может быть уничтожен.
+
 DOTA_Tooltip_ability_item_gem_of_clear_mind_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_item_gem_Note0: 'Не действует, пока находится у курьера.'
 
 DOTA_Tooltip_ability_item_gem_of_pure_soul: Gem of Pure Soul
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Description: |-
   <h1>Пассивная: Pure Soul</h1> Дает носителю и его союзникам возможность видеть длительность перезарядки способностей у противников.
-  Выпадает при смерти и не может быть уничтожен.
+
 DOTA_Tooltip_ability_item_gem_of_pure_soul_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Note0: 'Не действует, пока находится у курьера.'
 

@@ -909,20 +909,14 @@
 		"ItemShopTags"					"see_illusions"
 		"ItemQuality"					"component"
 		"ItemAliases"					"gem of true sight; gem of clear mind"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemStockMax"					"3"
 		"ItemStockTime"					"200"
 		"ItemSupport"					"1"
-		"ItemKillable"					"0"
-		"ItemContributesToNetWorthWhenDropped"	"0"
+		"ItemKillable"					"1"
 
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------
-		"UIPickupSound"					"Item.PickUpGemShop"
-		"UIDropSound"					"Item.DropGemShop"
-		"WorldDropSound"				"Item.DropGemWorld"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -941,15 +935,6 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"DropItem"
-					}
-				}
 
 				"Aura"          	"modifier_truemind_reveal"
 				"Aura_Radius"   	"%radius"
@@ -993,20 +978,18 @@
 		"ItemShopTags"					"see_cooldown"
 		"ItemQuality"					"component"
 		"ItemAliases"					"gem of true sight; gem of pure soul"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemStockMax"					"3"
 		"ItemStockTime"					"200"
 		"ItemSupport"					"1"
-		"ItemKillable"					"0"
+		"ItemKillable"					"1"
 		"ItemContributesToNetWorthWhenDropped"	"0"
 
 		// Sound
 		//-------------------------------------------------------------------------------------------------------------
-		"UIPickupSound"					"Item.PickUpGemShop"
-		"UIDropSound"					"Item.DropGemShop"
-		"WorldDropSound"				"Item.DropGemWorld"
+
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -1025,15 +1008,6 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"DropItem"
-					}
-				}
 
 				"Aura"          	"modifier_puresoul_reveal"
 				"Aura_Radius"   	"%radius"

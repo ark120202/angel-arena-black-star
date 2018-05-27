@@ -118,14 +118,14 @@ DOTA_Tooltip_modifier_item_edge_of_vyse_active_Description: 'Invisible. Movement
 DOTA_Tooltip_ability_item_gem_of_clear_mind: Gem of Clear Mind
 DOTA_Tooltip_ability_item_gem_of_clear_mind_Description: |-
   <h1>Passive: Clear Mind</h1> Adds the ability to differentiate illusions and real heroes to any allied vision within its carrier's range.
-  Dropped on death, and cannot be destroyed.
+
 DOTA_Tooltip_ability_item_gem_of_clear_mind_radius: 'CLEAR MIND RADIUS:'
 DOTA_Tooltip_ability_item_gem_Note0: Disabled while on a courier.
 
 DOTA_Tooltip_ability_item_gem_of_pure_soul: Gem of Pure Soul
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Description: |-
   <h1>Passive: Pure Soul</h1> Adds the ability to see enemies ability cooldowns to any allied vision within its carrier's range.
-  Dropped on death, and cannot be destroyed.
+
 DOTA_Tooltip_ability_item_gem_of_pure_soul_radius: 'PURE SOUL RADIUS:'
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Note0: Disabled while on a courier.
 
