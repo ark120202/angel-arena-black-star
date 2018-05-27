@@ -22,7 +22,8 @@ function GiveOnAttackedGold(keys)
 
 	if attacker:IsConsideredHero() and
 		not caster:IsIllusion() and
-		caster:GetTeamNumber() ~= attacker:GetTeamNumber() then
+		caster:GetTeamNumber() ~= attacker:GetTeamNumber()
+		and not attacker:IsIllusion() then
 		local gold = keys.Gold
 		local xp = keys.Xp
 
