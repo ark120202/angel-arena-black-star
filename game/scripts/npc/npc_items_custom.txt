@@ -5087,12 +5087,12 @@
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_damage_pct"			"25"
+				"bonus_toggle_damage_pct"			"15"
 			}
 			"05"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_health"				"4000"
+				"bonus_toggle_health"				"2000"
 			}
 			"06"
 			{
@@ -5204,12 +5204,12 @@
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_damage_pct"			"25"
+				"bonus_toggle_damage_pct"			"15"
 			}
 			"05"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_health"				"4000"
+				"bonus_toggle_health"				"2000"
 			}
 			"06"
 			{
