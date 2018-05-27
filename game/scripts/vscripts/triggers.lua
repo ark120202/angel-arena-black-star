@@ -8,15 +8,8 @@ function ArenaZoneOnEndTouch(trigger)
 	table.removeByValue(Heroes_In_Arena_Zone, trigger.activator)
 	local activator = trigger.activator
 	if activator and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS and (not activator.IsWukongsSummon or not activator:IsWukongsSummon()) then
-		Timers:CreateTimer(function()
-			if IsValidEntity(activator) and not table.contains(Heroes_In_Arena_Zone, activator) and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS and activator.OnDuel then
-				activator:InterruptMotionControllers(true)
-				FindClearSpaceForUnit(activator, Entities:FindByName(nil, "target_mark_arena_team" .. activator:GetTeamNumber()):GetAbsOrigin(), false)
-				if activator:HasModifier("modifier_spirits_spirit_aghanims") then
-					return 1/30
-				end
-			end
-		end)
+		local position = Entities:FindByName(nil, "target_mark_arena_team" .. activator:GetTeamNumber()):GetAbsOrigin()
+		activator:Teleport(position)
 	end
 end
 
