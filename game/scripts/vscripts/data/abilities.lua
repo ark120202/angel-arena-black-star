@@ -95,6 +95,7 @@ BOSS_BANNED_ABILITIES = {
 	item_demon_king_bar = true,
 	morphling_adaptive_strike_str = true,
 	item_spirit_helix = true,
+	pugna_life_drain = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
