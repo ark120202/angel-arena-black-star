@@ -106,8 +106,8 @@
 			}
 			"03"
 			{
-				"var_type" 				"FIELD_FLOAT"
-				"filling_bottle_timer"			"60.0"
+				"var_type" 				"FIELD_INTEGER"
+				"bottle_refill_cooldown"			"60"
 			}
 		}
 	}
