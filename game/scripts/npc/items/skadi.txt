@@ -49,7 +49,7 @@
 		"ItemResult"					"item_skadi_8"
 		"ItemRequirements"
 		{
-			"01"						"item_skadi_4;item_skadi_4"
+			"01"						"item_skadi_4;item_skadi_4;item_moon_dust"
 		}
 	}
 
@@ -71,7 +71,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"10 25 50 100"
+				"bonus_all_stats"		"25 50 100 200"
 			}
 			"02"
 			{
@@ -118,7 +118,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"10 25 50 100"
+				"bonus_all_stats"		"25 50 100 200"
 			}
 			"02"
 			{
@@ -165,7 +165,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"10 25 50 100"
+				"bonus_all_stats"		"25 50 100 200"
 			}
 			"02"
 			{
@@ -212,7 +212,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"10 25 50 100"
+				"bonus_all_stats"		"25 50 100 200"
 			}
 			"02"
 			{
