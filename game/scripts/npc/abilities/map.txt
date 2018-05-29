@@ -104,9 +104,29 @@
 				"var_type" 				"FIELD_INTEGER"
 				"aura_bonus_armor"			"4"
 			}
-			"03"
+		}
+	}
+
+	"healer_bottle_filling"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/structures/healer_bottle_filling.lua"
+		"AbilityTextureName"			"omniknight_repel"
+		"MaxLevel" 						"1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+
+		"AbilitySpecial"
+		{
+			"01"
 			{
-				"var_type" 				"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"				"400"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
 				"bottle_refill_cooldown"			"60"
 			}
 		}

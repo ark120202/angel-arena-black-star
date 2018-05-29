@@ -163,11 +163,16 @@ DOTA_Tooltip_modifier_fountain_aura_enemy: Слабость от фонтана
 DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'Теряет %dMODIFIER_PROPERTY_TOOLTIP%%% от максимального здоровья каждую секунду. Не может восстанавливать здоровье. Весь наносимый урон уменьшен на %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%.'
 
 DOTA_Tooltip_ability_healer_taste_of_armor: Taste of Armor
-DOTA_Tooltip_ability_healer_taste_of_armor_Description: Увеличивает броню дружественным героям в радиусе. Может наполнять bottle.
+DOTA_Tooltip_ability_healer_taste_of_armor_Description: Увеличивает броню дружественным героям в радиусе.
 DOTA_Tooltip_ability_healer_taste_of_armor_aura_bonus_armor: 'БРОНЯ:'
 DOTA_Tooltip_ability_healer_taste_of_armor_aura_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_healer_taste_of_armor_aura_bottle_refill_cooldown: 'Задержка между наполнениями bottle'
 DOTA_Tooltip_modifier_healer_taste_of_armor_effect: Taste of Armor
 DOTA_Tooltip_modifier_healer_taste_of_armor_effect_Description: 'Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'
-DOTA_Tooltip_modifier_healer_taste_of_armor_bottle_filling_delay: Taste of Armor
-DOTA_Tooltip_modifier_healer_taste_of_armor_bottle_filling_delay_Description: Не может наполнить Bottle в святыне.
+
+DOTA_Tooltip_ability_healer_bottle_filling: Bottle Filling
+DOTA_Tooltip_ability_healer_bottle_filling_Description: Наполняет bottle в радиусе.
+DOTA_Tooltip_ability_healer_bottle_filling_aura_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_healer_bottle_filling_bottle_refill_cooldown: 'Задержка между наполнениями:'
+DOTA_Tooltip_modifier_healer_bottle_filling_delay: Bottle Filling
+DOTA_Tooltip_modifier_healer_bottle_filling_delay_Description: Не может наполнить Bottle в святыне.
