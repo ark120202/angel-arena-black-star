@@ -6172,7 +6172,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.1"
+				"bash_duration"			"0.9"
 			}
 			"09"
 			{
