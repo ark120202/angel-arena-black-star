@@ -107,10 +107,10 @@
 		}
 	}
 
-	"healer_bottle_filling"
+	"healer_bottle_refill"
 	{
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/structures/healer_bottle_filling.lua"
+		"ScriptFile"					"heroes/structures/healer_bottle_refill.lua"
 		"AbilityTextureName"			"omniknight_repel"
 		"MaxLevel" 						"1"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -122,7 +122,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"				"400"
+				"aura_radius"				"600"
 			}
 			"02"
 			{

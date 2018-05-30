@@ -1,34 +1,34 @@
-LinkLuaModifier("modifier_healer_bottle_filling", "heroes/structures/healer_bottle_filling.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_healer_bottle_filling_delay", "heroes/structures/healer_bottle_filling.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_healer_bottle_refill", "heroes/structures/healer_bottle_refill.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_healer_bottle_refill_delay", "heroes/structures/healer_bottle_refill.lua", LUA_MODIFIER_MOTION_NONE)
 
-healer_bottle_filling = class({
-	GetIntrinsicModifierName = function() return "modifier_healer_bottle_filling" end,
+healer_bottle_refill = class({
+	GetIntrinsicModifierName = function() return "modifier_healer_bottle_refill" end,
 })
 
-modifier_healer_bottle_filling = class({
+modifier_healer_bottle_refill = class({
 	IsPurgable = function() return false end,
 	IsHidden = function() return true end,
 })
 
 if IsServer() then
-	function modifier_healer_bottle_filling:OnCreated()
+	function modifier_healer_bottle_refill:OnCreated()
 		self:StartIntervalThink(1)
 		self:OnIntervalThink()
 	end
 
-	function modifier_healer_bottle_filling:OnIntervalThink()
+	function modifier_healer_bottle_refill:OnIntervalThink()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local radius = ability:GetSpecialValueFor("aura_radius")
 		local delay_duration = ability:GetSpecialValueFor('bottle_refill_cooldown')
 		for _,v in ipairs(FindUnitsInRadius(parent:GetTeamNumber(), parent:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
-			if not v:HasModifier("modifier_healer_bottle_filling_delay") then
+			if not v:HasModifier("modifier_healer_bottle_refill_delay") then
 				for i = 0, 11 do
 					local item = v:GetItemInSlot(i)
 					if item and item:GetAbilityName() == "item_bottle_arena" then
 						item:SetCurrentCharges(3)
 						v:EmitSound("DOTA_Item.MagicWand.Activate")
-						v:AddNewModifier(parent, ability, "modifier_healer_bottle_filling_delay", {duration = delay_duration})
+						v:AddNewModifier(parent, ability, "modifier_healer_bottle_refill_delay", {duration = delay_duration})
 					end
 				end
 			end
@@ -36,7 +36,7 @@ if IsServer() then
 	end
 end
 
-modifier_healer_bottle_filling_delay = class({
+modifier_healer_bottle_refill_delay = class({
 	IsDebuff = function() return true end,
 	IsPurgable = function() return false end,
 })
