@@ -5041,13 +5041,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"1500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_heavy_war_axe_of_rage_damage"
 		"ItemRequirements"
 		{
-			"01"						"item_heart;item_heart;item_heart;item_relic"
+			"01"						"item_heart;item_heart;item_relic"
 		}
 	}
 
@@ -5077,12 +5077,12 @@
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_strength"					"150"
+				"bonus_strength"					"100"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_health"						"1000"
+				"bonus_health"						"1200"
 			}
 			"04"
 			{
@@ -5092,7 +5092,7 @@
 			"05"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_health"				"2000"
+				"bonus_toggle_health"				"1500"
 			}
 			"06"
 			{
@@ -5194,12 +5194,12 @@
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_strength"					"150"
+				"bonus_strength"					"100"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_health"						"1000"
+				"bonus_health"						"1200"
 			}
 			"04"
 			{
@@ -5209,7 +5209,7 @@
 			"05"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_toggle_health"				"2000"
+				"bonus_toggle_health"				"1500"
 			}
 			"06"
 			{
@@ -5771,7 +5771,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2500"
+		"ItemCost"						"7500"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_piercing_blade"
 		"ItemRequirements"
@@ -7805,29 +7805,24 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_all"			"7"
+				"bonus_all"			"10"
 			}
 			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"		"3.8"
-			}
-			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"gold"				"30"
 			}
-			"04"
+			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"restore_per_charge"	"30"
 			}
-			"05"
+			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"max_charges"		"50"
 			}
-			"06"
+			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"radius"			"1500"
