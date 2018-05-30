@@ -38,19 +38,20 @@ if IsServer() then
 		while parent:HasModifier("modifier_saber_mana_burst_active") do
 			parent:RemoveModifierByName("modifier_saber_mana_burst_active")
 		end
-		if parent:IsCourier() then return end
-		for i = 0, 11 do
-			local item = parent:GetItemInSlot(i)
-			if item and item:GetAbilityName() == "item_bottle_arena" then
-				item:SetCurrentCharges(3)
-			end
-		end
 
 		local hasMod = parent:HasModifier("modifier_fountain_aura_invulnerability")
 		if not centralBossKilled and not hasMod then
 			parent:AddNewModifier(parent, nil, "modifier_fountain_aura_invulnerability", nil)
 		elseif centralBossKilled and hasMod then
 			parent:RemoveModifierByName("modifier_fountain_aura_invulnerability")
+		end
+
+		if parent:IsCourier() then return end
+		for i = 0, 11 do
+			local item = parent:GetItemInSlot(i)
+			if item and item:GetAbilityName() == "item_bottle_arena" then
+				item:SetCurrentCharges(3)
+			end
 		end
 	end
 end
