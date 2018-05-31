@@ -1641,6 +1641,74 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_gyrocopter_5 = {
 		group = 4,
 	},
+	special_bonus_unique_underlord_4 = false,
+	special_bonus_unique_dragon_knight_2 = false,
+	special_bonus_unique_dragon_knight_4 = {
+		group = 2,
+	},
+	special_bonus_unique_omniknight_1 = {
+		group = 3,
+	},
+	special_bonus_unique_omniknight_3 = {
+		group = 7,
+	},
+	special_bonus_unique_wisp_6 = {
+		group = 7,
+	},
+	special_bonus_unique_wisp_2 = {
+		group = 2,
+	},
+	special_bonus_unique_wisp_5 = {
+		group = 4,
+	},
+	special_bonus_unique_wisp_4 = {
+		group = 3,
+	},
+	special_bonus_unique_crystal_maiden_2 = {
+		group = 3,
+	},
+	special_bonus_unique_crystal_maiden_3 = {
+		group = 3,
+	},
+	special_bonus_unique_crystal_maiden_4 = {
+		group = 6,
+	},
+	special_bonus_unique_crystal_maiden_1 = {
+		group = 2,
+	},
+	special_bonus_unique_warlock_2 = {
+		group = 2,
+	},
+	special_bonus_unique_warlock_4 = {
+		group = 3,
+	},
+	special_bonus_unique_warlock_5 = {
+		group = 4,
+	},
+	special_bonus_unique_antimage_2 = {
+		group = 2,
+	},
+	special_bonus_unique_antimage_3 = {
+		group = 3,
+	},
+	special_bonus_unique_antimage_2 = {
+		group = 4,
+	},
+	special_bonus_unique_antimage_5 = {
+		group = 3,
+	},
+	special_bonus_unique_faceless_void = {
+		group = 2,
+	},
+	special_bonus_unique_faceless_void_2 = {
+		group = 3,
+	},
+	special_bonus_unique_faceless_void_3 = {
+		group = 3,
+	},
+	special_bonus_unique_faceless_void_4 = {
+		group = 56,
+	},
 }
 
 TALENT_GROUP_TO_LEVEL = {

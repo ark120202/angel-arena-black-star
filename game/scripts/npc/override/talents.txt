@@ -187,6 +187,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_lycan_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"10"
+			}
+		}
+	}
 	"special_bonus_unique_lycan_3"
 	{
 		"AbilitySpecial"
