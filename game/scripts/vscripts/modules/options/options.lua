@@ -153,6 +153,9 @@ function Options:LoadMapValues()
 		MAP_LENGTH = 9216
 		USE_CUSTOM_TEAM_COLORS = true
 	end
+	if landscape == "1v1" then
+		MAP_LENGTH = 3840
+	end
 end
 
 function Options:LoadCheatValues()
