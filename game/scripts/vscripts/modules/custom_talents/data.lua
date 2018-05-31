@@ -1643,9 +1643,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_underlord_4 = false,
 	special_bonus_unique_dragon_knight_2 = false,
-	special_bonus_unique_dragon_knight_4 = {
-		group = 2,
-	},
 	special_bonus_unique_omniknight_1 = {
 		group = 3,
 	},
@@ -1654,9 +1651,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_wisp_6 = {
 		group = 7,
-	},
-	special_bonus_unique_wisp_2 = {
-		group = 2,
 	},
 	special_bonus_unique_wisp_5 = {
 		group = 4,
