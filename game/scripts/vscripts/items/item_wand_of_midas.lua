@@ -57,10 +57,6 @@ function modifier_item_wand_of_midas:GetModifierBonusStats_Intellect()
 	return self:GetAbility():GetSpecialValueFor("bonus_all")
 end
 
-function modifier_item_wand_of_midas:GetModifierConstantHealthRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
-end
-
 if IsServer() then
 	function modifier_item_wand_of_midas:OnAbilityExecuted(keys)
 		local unit = keys.unit
