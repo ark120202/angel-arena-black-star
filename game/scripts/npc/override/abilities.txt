@@ -1606,7 +1606,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"10000"
 		"AbilityCastPoint"	"0.5 0.5 0.5 0.5 0.5 0.4 0.3"
-		"AbilityCooldown"	"17"
+		"AbilityCooldown"	"25"
 		"AbilityDuration"	"3.11"
 		"AbilityDamage"		"50 140 230 320 410 500 590"
 		"AbilityManaCost"	"100"
