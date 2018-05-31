@@ -581,9 +581,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_ursa = {
 		group = 8,
 	},
-	special_bonus_unique_ursa_2 = {
-		group = 5,
-	},
 	special_bonus_unique_ursa_3 = {
 		group = 6,
 	},
@@ -1150,9 +1147,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_arc_warden = {
 		group = 6,
 	},
-	special_bonus_unique_arc_warden_2 = {
-		group = 4,
-	},
 	special_bonus_unique_meepo = {
 		group = 10,
 	},
@@ -1600,9 +1594,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_wraith_king_2 = {
 		group = 9,
 	},
-	special_bonus_unique_wraith_king_3 = {
-		group = 6,
-	},
 	special_bonus_unique_wraith_king_6 = {
 		group = 2,
 	},
@@ -1614,9 +1605,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_kunkka_3 = {
 		group = 11,
-	},
-	special_bonus_unique_kunkka_4 = {
-		group = 10,
 	},
 	special_bonus_unique_invoker_1 = {
 		group = 6,
