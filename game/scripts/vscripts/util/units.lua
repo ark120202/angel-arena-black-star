@@ -52,15 +52,27 @@ function CDOTA_BaseNPC:HasModelChanged()
 	return false
 end
 
-function CDOTA_BaseNPC:FindClearSpaceForUnitAndSetCamera(position)
+local TELEPORT_MAX_COLLISION_RANGE = 256
+function CDOTA_BaseNPC:Teleport(position)
+	self.TeleportPosition = position
 	self:Stop()
-	PlayerResource:SetCameraTarget(self:GetPlayerOwnerID(), self)
+
+	local playerId = self:GetPlayerOwnerID()
+	PlayerResource:SetCameraTarget(playerId, self)
+
 	FindClearSpaceForUnit(self, position, true)
+
 	Timers:CreateTimer(0.1, function()
-		if IsValidEntity(self) then
-			PlayerResource:SetCameraTarget(self:GetPlayerOwnerID(), nil)
-			self:Stop()
+		if not IsValidEntity(self) then return end
+		if self.TeleportPosition ~= position then return end
+		if (self:GetAbsOrigin() - position):Length2D() > TELEPORT_MAX_COLLISION_RANGE then
+			FindClearSpaceForUnit(self, position, true)
+			return 0.1
 		end
+
+		self.TeleportPosition = nil
+		PlayerResource:SetCameraTarget(playerId, nil)
+		self:Stop()
 	end)
 end
 
