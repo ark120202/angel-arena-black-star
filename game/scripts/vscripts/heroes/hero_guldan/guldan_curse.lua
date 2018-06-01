@@ -1,23 +1,28 @@
 LinkLuaModifier("modifier_guldan_curse_stun", "heroes/hero_guldan/guldan_curse.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_guldan_curse_silence", "heroes/hero_guldan/guldan_curse.lua", LUA_MODIFIER_MOTION_NONE)
+
 guldan_curse = class({})
 
 modifier_guldan_curse_stun = class({
 	IsPurgable = function() return false end,
 })
+
 function modifier_guldan_curse_stun:CheckState()
 return {
 	[MODIFIER_STATE_STUNNED] = true,
 }
 end
+
 modifier_guldan_curse_silence = class({
 	IsPurgable = function() return false end,
 })
+
 function modifier_guldan_curse_silence:CheckState()
 	return {
 		[MODIFIER_STATE_SILENCED] = true,
 	}
 end
+
 if IsServer() then
 	function guldan_curse:OnSpellStart()
 		local damage = self:GetAbilityDamage()

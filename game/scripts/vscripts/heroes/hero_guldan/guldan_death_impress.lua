@@ -3,6 +3,7 @@ LinkLuaModifier("modifier_guldan_death_impress", "heroes/hero_guldan/guldan_deat
 guldan_death_impress = class ({
 	GetInstricModifierName = function() return 'modifier_guldan_death_impress' end
 })
+
 if IsServer() then
 	function guldan_death_impress:OnSpellStart()
 		local caster = self:GetCaster()
@@ -18,15 +19,18 @@ end
 modifier_guldan_death_impress = class({
 	IsPurgable = true,
 })
+
 function modifier_guldan_death_impress:CheckState()
 	return {
 		[MODIFIER_STATE_SILENCED] = true,
 		[MODIFIER_STATE_DISARMED] = true,
 	}
 end
+
 function modifier_guldan_death_impress:DeclareFunctions()
 	return {MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS}
 end
+
 function modifier_guldan_death_impress:GetModifierMagicalResistanceBonus()
 	return self:GetAbility():GetSpecialValueFor('magic_damage_debuff')
 end

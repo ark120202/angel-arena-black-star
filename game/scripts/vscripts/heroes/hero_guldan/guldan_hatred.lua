@@ -34,11 +34,13 @@ end
 
 
 modifier_guldan_hatred_effect = class({})
+
 function modifier_guldan_hatred_effect:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
 	}
 end
+
 function modifier_guldan_hatred_effect:GetModifierHealthRegenPercentage()
 	return self:GetAbility():GetSpecialValueFor('aura_percentage_health_regen')
 end
