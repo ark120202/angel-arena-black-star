@@ -272,7 +272,7 @@ function OnMinimapClickSpawnBox(team, level, index) {
 function OnAdsClicked() {
 	var context = $.GetContextPanel();
 	$.Schedule(context.BHasClass('AdsClicked') ? 0 : .35, function() {
-		$.DispatchEvent('ExternalBrowserGoToURL', 'https://realdrop.net/?utm_source=banner&utm_campaign=b1');
+		$.DispatchEvent('ExternalBrowserGoToURL', 'https://sgm-luck.ru/?utm_source=dota2&utm_medium=baner&utm_campaign=Angel_Arena_Black_Star');
 	});
 	if (!context.BHasClass('AdsClicked')){
 		context.AddClass('AdsClicked');
