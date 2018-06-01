@@ -44,7 +44,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_FRIENDLY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_FRIENDLY_YES"
 
-		"AbilityCastRange"				"350 450 500 550 600 650"
+		"AbilityCastRange"				"350 450 500 550 600 650 700"
 		"AbilityCooldown"				"32 29 26 23 20 17"
 		"AbilityManaCost"				"250 350 450 550 650 750 850"
 		"MaxLevel" 						"7"
@@ -82,7 +82,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityCastRange"				"400 550 600 650 700 750 800"
 		"AbilityCooldown"				"25 22 18 16 14 12"
-		"AbilityManaCost"				"100 250 350 450 650 750"
+		"AbilityManaCost"				"100 250 350 450 650 750 900"
 		"MaxLevel" 						"7"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"

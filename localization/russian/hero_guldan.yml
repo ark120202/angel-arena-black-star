@@ -41,7 +41,7 @@ DOTA_Tooltip_ability_guldan_shadow_path_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_guldan_shadow_path_damage_per_second: 'УРОН В СЕКУНДУ:'
 DOTA_Tooltip_ability_guldan_shadow_path_movement_speed_reduce: '%ЗАМЕДЛЕНИЕ:'
 DOTA_Tooltip_ability_guldan_shadow_path_aura_radius_scepter: 'РАДИУС СО СКИПЕТРОМ:'
-DOTA_Tooltip_ability_guldan_shadow_path_duration: 'ДЛИТЕЛЬНОСТЬ СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_guldan_shadow_path_duration_scepter: 'ДЛИТЕЛЬНОСТЬ СО СКИПЕТРОМ:'
 DOTA_Tooltip_ability_guldan_shadow_path_movement_speed_reduce_scepter: '%ЗАМЕДЛЕНИЕ СО СКИПЕТРОМ:'
 DOTA_Tooltip_ability_guldan_shadow_path_damage_per_second_scepter: 'УРОН В СЕКУНДУ СО СКИПЕТРОМ:'
 DOTA_Tooltip_modifier_guldan_shadow_path: Shadow Path
