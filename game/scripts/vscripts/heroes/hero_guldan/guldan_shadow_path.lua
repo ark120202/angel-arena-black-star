@@ -19,7 +19,7 @@ if IsServer() then
 	function guldan_shadow_path:OnSpellStart()
 		local caster = self:GetCaster()
 		caster:EmitSound("DOTA_Item.MagicWand.Activate")
-		local duration = (self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor("duration_scepter") or self:GetAbility():GetSpecialValueFor("duration"))
+		local duration = (caster:HasScepter() and self:GetSpecialValueFor("duration_scepter") or self:GetSpecialValueFor("duration"))
 
 		caster:AddNewModifier(caster, self, "modifier_guldan_shadow_path", {duration = duration})
 	end
@@ -68,8 +68,9 @@ if IsServer() then
 	function modifier_guldan_shadow_path_effect:OnIntervalThink()
 		local parent = self:GetParent()
 		parent:EmitSound("DOTA_Item.MagicWand.Activate")
-		local damage = self:GetAbility():GetSpecialValueFor(self:GetCaster():HasScepter() and 'damage_per_second_scepter' or 'damage_per_second')
-		local damagetype = (self:GetCaster():HasScepter() and DAMAGE_TYPE_PURE or DAMAGE_TYPE_MAGICAL)
+		local ability = self:GetAbility()
+		local damage = self:GetCaster():HasScepter() and ability:GetSpecialValueFor('damage_per_second_scepter') or ability:GetSpecialValueFor('damage_per_second')
+		local damagetype = self:GetCaster():HasScepter() and DAMAGE_TYPE_PURE or DAMAGE_TYPE_MAGICAL
 
 		ApplyDamage({
 			victim = self:GetParent(),
