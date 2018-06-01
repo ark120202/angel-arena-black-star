@@ -25,6 +25,7 @@
 #base "abilities/heroes/hero_saitama.txt"
 #base "abilities/heroes/hero_doppelganger.txt"
 #base "abilities/heroes/hero_guldan.txt"
+
 //#base "abilities/heroes/hero_maka.txt"
 //#base "abilities/heroes/hero_soul_eater.txt"
 

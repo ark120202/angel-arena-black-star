@@ -19,10 +19,9 @@ if IsServer() then
 	function guldan_shadow_path:OnSpellStart()
 		local caster = self:GetCaster()
 		caster:EmitSound("DOTA_Item.MagicWand.Activate")
-		local duration
+		local duration = self:GetSpecialValueFor("duration")
 		if caster:HasScepter() then
 			duration = self:GetSpecialValueFor("duration_scepter")
-		else duration = self:GetSpecialValueFor("duration")
 		end
 		caster:AddNewModifier(caster, self, "modifier_guldan_shadow_path", {duration = duration})
 	end
@@ -35,11 +34,9 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local target = self:GetParent()
 		local ability = self:GetAbility()
-		local radius
+		local radius = self:GetAbility():GetSpecialValueFor("aura_radius")
 		if not caster:HasScepter() then
 			radius = self:GetAbility():GetSpecialValueFor("aura_radius_scepter")
-		else
-			radius = self:GetAbility():GetSpecialValueFor("aura_radius")
 		end
 
 		for _,v in ipairs(FindUnitsInRadius(target:GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)) do
@@ -68,26 +65,22 @@ modifier_guldan_shadow_path_effect = class({
 
 if IsServer() then
 	modifier_guldan_shadow_path_effect.interval_think = 0.13
+
 	function modifier_guldan_shadow_path_effect:OnCreated()
 		self:StartIntervalThink(self.interval_think)
 	end
 
 	function modifier_guldan_shadow_path_effect:OnIntervalThink()
-
 		local parent = self:GetParent()
 		parent:EmitSound("DOTA_Item.MagicWand.Activate")
 		parent:EmitSound("DOTA_Item.MagicWand.Activate")
-		local damage
-		local damagetype
+		local damage = self:GetAbility():GetSpecialValueFor('damage_per_second')
+		local damagetype = DAMAGE_TYPE_MAGICAL
 
 		if self:GetCaster():HasScepter() then
-			damage = self:GetAbility():GetSpecialValueFor('damage_per_second_scepter')
-			damagetype = DAMAGE_TYPE_PURE
-		else
-			damage = self:GetAbility():GetSpecialValueFor('damage_per_second')
-			damagetype = DAMAGE_TYPE_MAGICAL
+			local damage = self:GetAbility():GetSpecialValueFor('damage_per_second_scepter')
+			local damagetype = DAMAGE_TYPE_PURE
 		end
-
 		ApplyDamage({
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
@@ -101,7 +94,6 @@ if IsServer() then
 		local parent = self:GetParent()
 		if not parent:FindModifierByNameAndCaster("modifier_guldan_shadow_path", self:GetAbility():GetCaster()) then
 			parent:AddNewModifier(parent, self:GetAbility(), "modifier_guldan_shadow_path_effect_slow", {duration = self:GetAbility():GetSpecialValueFor("duration_slow_after")})
-
 		end
 	end
 

@@ -8,9 +8,9 @@ modifier_guldan_curse_stun = class({
 })
 
 function modifier_guldan_curse_stun:CheckState()
-return {
-	[MODIFIER_STATE_STUNNED] = true,
-}
+	return {
+		[MODIFIER_STATE_STUNNED] = true,
+	}
 end
 
 modifier_guldan_curse_silence = class({
@@ -35,7 +35,7 @@ if IsServer() then
 			damage = damage,
 			damage_type = self:GetAbilityDamageType(),
 			ability = self,
-			})
+		})
 		target:AddNewModifier(self:GetCaster(), self, "modifier_guldan_curse_stun", {duration = self:GetSpecialValueFor('stun_duration')})
 		local particle = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_guldan/guldan_curse.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 		ParticleManager:SetParticleControlEnt(particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
