@@ -27,12 +27,19 @@ function Options:IsEquals(name, value)
 end
 
 function Options:SetPreGameVoting(name, variants, default, calculation)
-	Options.PreGameVotings[name] = {
-		votes = {},
-		variants = table.deepcopy(variants),
-		default = default,
-		calculation = calculation
-	}
+	if not Options.PreGameVotings[name] then
+		Options.PreGameVotings[name] = {votes = {}}
+	end
+	if variants then
+		Options.PreGameVotings[name].variants = variants
+	end
+	if default then
+		Options.PreGameVotings[name].default = default
+	end
+	if calculation then
+		Options.PreGameVotings[name].calculation = calculation
+	end
+
 	PlayerTables:SetTableValue("option_votings", name, Options.PreGameVotings[name])
 	return Options.PreGameVotings[name]
 end
