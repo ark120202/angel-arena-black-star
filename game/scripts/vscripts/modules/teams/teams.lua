@@ -164,10 +164,8 @@ end
 
 function Teams:RecalculateKillWeight(team)
 	local remaining = GetTeamPlayerCount(team)
-	local value
-	if remaining == 0 then
-		value = 0
-	else
+	local value = remaining == 0 and 0 or 1
+	if Options:GetValue("DynamicKillWeight") then
 		local desired = Teams:GetDesiredPlayerCount(team)
 		local missing = desired - remaining
 		value = math.max(missing, 1)
