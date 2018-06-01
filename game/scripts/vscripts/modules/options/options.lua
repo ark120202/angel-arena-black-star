@@ -102,6 +102,7 @@ function Options:LoadDefaultValues()
 	Options:SetInitialValue("EnableStatisticsCollection", true)
 	Options:SetInitialValue("EnableRatingAffection", false)
 	Options:SetInitialValue("FailedRankedGame", false)
+	Options:SetInitialValue("DynamicKillWeight", true)
 	--Options:SetInitialValue("MapLayout", "5v5")
 
 	Options:SetInitialValue("BanningPhaseBannedPercentage", 0)
