@@ -164,6 +164,7 @@ function Options:LoadMapValues()
 	if landscape == "1v1" then
 		MAP_LENGTH = 3840
 		Options:SetValue("DynamicKillWeight", false)
+		Options:SetPreGameVoting("kill_limit", {10, 15, 20, 25, 30, 35}, 25)
 	end
 end
 
