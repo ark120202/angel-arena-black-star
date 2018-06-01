@@ -19,10 +19,8 @@ if IsServer() then
 	function guldan_shadow_path:OnSpellStart()
 		local caster = self:GetCaster()
 		caster:EmitSound("DOTA_Item.MagicWand.Activate")
-		local duration = self:GetSpecialValueFor("duration")
-		if caster:HasScepter() then
-			duration = self:GetSpecialValueFor("duration_scepter")
-		end
+		local duration = (self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor("duration_scepter") or self:GetAbility():GetSpecialValueFor("duration"))
+
 		caster:AddNewModifier(caster, self, "modifier_guldan_shadow_path", {duration = duration})
 	end
 
@@ -34,10 +32,7 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local target = self:GetParent()
 		local ability = self:GetAbility()
-		local radius = self:GetAbility():GetSpecialValueFor("aura_radius")
-		if not caster:HasScepter() then
-			radius = self:GetAbility():GetSpecialValueFor("aura_radius_scepter")
-		end
+		local radius = (self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor("aura_radius_scepter") or self:GetAbility():GetSpecialValueFor("aura_radius"))
 
 		for _,v in ipairs(FindUnitsInRadius(target:GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)) do
 			local modifier = v:FindModifierByNameAndCaster("modifier_guldan_shadow_path_effect", target)
@@ -73,14 +68,9 @@ if IsServer() then
 	function modifier_guldan_shadow_path_effect:OnIntervalThink()
 		local parent = self:GetParent()
 		parent:EmitSound("DOTA_Item.MagicWand.Activate")
-		parent:EmitSound("DOTA_Item.MagicWand.Activate")
-		local damage = self:GetAbility():GetSpecialValueFor('damage_per_second')
-		local damagetype = DAMAGE_TYPE_MAGICAL
+		local damage = self:GetAbility():GetSpecialValueFor(self:GetCaster():HasScepter() and 'damage_per_second_scepter' or 'damage_per_second')
+		local damagetype = (self:GetCaster():HasScepter() and DAMAGE_TYPE_PURE or DAMAGE_TYPE_MAGICAL)
 
-		if self:GetCaster():HasScepter() then
-			local damage = self:GetAbility():GetSpecialValueFor('damage_per_second_scepter')
-			local damagetype = DAMAGE_TYPE_PURE
-		end
 		ApplyDamage({
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
