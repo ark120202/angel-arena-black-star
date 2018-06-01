@@ -156,6 +156,7 @@ function Options:LoadMapValues()
 	end
 	if landscape == "1v1" then
 		MAP_LENGTH = 3840
+		Options:SetValue("DynamicKillWeight", false)
 	end
 end
 
