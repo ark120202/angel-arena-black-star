@@ -28,7 +28,7 @@ if IsServer() then
 		local damage = self:GetAbilityDamage()
 		local target = self:GetCursorTarget()
 		local caster = self:GetCaster()
-		caster:EmitSound("Arena.Items.SteamFootgear.Activate")
+		caster:EmitSound("Arena.Hero_Guldan.Curse.Cast")
 		ApplyDamage({
 			victim = target,
 			attacker = self:GetCaster(),

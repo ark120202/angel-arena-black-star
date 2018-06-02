@@ -13,7 +13,7 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
 		target:AddNewModifier(caster, self, 'modifier_guldan_saving_touch', {duration = self:GetSpecialValueFor("duration")})
-		target:EmitSound("Hero_Omniknight.Purification")
+		target:EmitSound("Arena.Hero_Guldan.SavingTouch.Cast")
 	end
 
 	function modifier_guldan_saving_touch:OnCreated()

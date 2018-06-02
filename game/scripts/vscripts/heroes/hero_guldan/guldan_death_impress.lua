@@ -8,8 +8,8 @@ if IsServer() then
 	function guldan_death_impress:OnSpellStart()
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
-		target:EmitSound("Hero_Medusa.MysticSnake.Cast")
-		target:AddNewModifier(caster, self, "modifier_guldan_death_impress", {duration = ability:GetSpecialValueFor("duration")})
+		target:EmitSound("Arena.Hero_Guldan.DeathImpress.Cast")
+		target:AddNewModifier(caster, self, "modifier_guldan_death_impress", {duration = self:GetSpecialValueFor("duration")})
 		local particle = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_guldan/guldan_death_impress.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 		ParticleManager:SetParticleControlEnt(particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
 	end

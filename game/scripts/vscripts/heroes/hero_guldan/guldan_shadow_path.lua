@@ -18,7 +18,7 @@ modifier_guldan_shadow_path = class ({})
 if IsServer() then
 	function guldan_shadow_path:OnSpellStart()
 		local caster = self:GetCaster()
-		caster:EmitSound("DOTA_Item.MagicWand.Activate")
+		caster:EmitSound("Arena.Hero_Guldan.ShadowPath.Start")
 		local duration = (caster:HasScepter() and self:GetSpecialValueFor("duration_scepter") or self:GetSpecialValueFor("duration"))
 
 		caster:AddNewModifier(caster, self, "modifier_guldan_shadow_path", {duration = duration})
@@ -32,6 +32,7 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local target = self:GetParent()
 		local ability = self:GetAbility()
+		self:GetParent():EmitSound("Arena.Hero_Guldan.ShadowPath.Cast")
 		local radius = (self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor("aura_radius_scepter") or self:GetAbility():GetSpecialValueFor("aura_radius"))
 
 		for _,v in ipairs(FindUnitsInRadius(target:GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)) do
@@ -67,7 +68,6 @@ if IsServer() then
 
 	function modifier_guldan_shadow_path_effect:OnIntervalThink()
 		local parent = self:GetParent()
-		parent:EmitSound("DOTA_Item.MagicWand.Activate")
 		local ability = self:GetAbility()
 		local damage = self:GetCaster():HasScepter() and ability:GetSpecialValueFor('damage_per_second_scepter') or ability:GetSpecialValueFor('damage_per_second')
 		local damagetype = self:GetCaster():HasScepter() and DAMAGE_TYPE_PURE or DAMAGE_TYPE_MAGICAL
@@ -83,7 +83,7 @@ if IsServer() then
 
 	function modifier_guldan_shadow_path_effect:OnDestroy()
 		local parent = self:GetParent()
-		if not parent:FindModifierByNameAndCaster("modifier_guldan_shadow_path", self:GetAbility():GetCaster()) then
+		if not self:GetCaster():HasModifier("modifier_guldan_shadow_path") then
 			parent:AddNewModifier(parent, self:GetAbility(), "modifier_guldan_shadow_path_effect_slow", {duration = self:GetAbility():GetSpecialValueFor("duration_slow_after")})
 		end
 	end
