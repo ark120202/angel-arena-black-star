@@ -135,6 +135,15 @@ function Teams:GetDesiredPlayerCount(team)
 	return Teams.Data[team].count or 0
 end
 
+function Teams:GetTotalDesiredPlayerCount()
+	local count = 0
+	for _, data in pairs(Teams.Data) do
+		count = count + data.count
+	end
+
+	return count
+end
+
 function Teams:GetName(team, bSecond)
 	return bSecond and Teams.Data[team].name2 or Teams.Data[team].name
 end

@@ -5,7 +5,6 @@ hero_selection_phase_3: Время на стратегию
 hero_selection_phase_4: Загрузка...
 
 arena_game_mode_type_: Полный выбор
-arena_game_mode_type_ranked_failed: <font color='red'>Полный выбор</font>
 arena_game_mode_type_ranked: Рейтинговый полный выбор
 arena_game_mode_type_ability_shop: Покупка способностей
 arena_game_mode_type_random_omg: Случайные способности
@@ -121,3 +120,6 @@ structures_fountain_protection_weak_line2: Защита Фонтанов ста�
 
 structures_fountain_protection_strong_line1: The Netherdrake переродится
 structures_fountain_protection_strong_line2: Защита Фонтанов стала сильнее
+
+arena_setup_loading: Авторизация матча...
+arena_setup_safe_to_leave: Теперь эту игру можно спокойно покинуть.

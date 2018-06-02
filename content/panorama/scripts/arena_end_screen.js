@@ -102,10 +102,15 @@ function Snippet_Team(team) {
 }
 
 function OnGameResult(gameResult) {
+	if (gameResult.error === 1) {
+		Game.FinishGame();
+		return;
+	}
+
 	if (!gameResult.players) {
 		$('#LoadingPanel').visible = false;
 		$('#ErrorPanel').visible = true;
-		$('#ErrorMessage').text = $.Localize(gameResult.error || 'Unknown error');
+		$('#ErrorMessage').text = $.Localize(gameResult.error);
 	} else {
 		$('#LoadingPanel').visible = false;
 		$('#EndScreenWindow').visible = true;

@@ -346,10 +346,10 @@ function ShowHeroPreviewTab(tabID) {
 		});
 		DynamicSubscribePTListener('hero_selection_available_heroes', UpdateMainTable);
 		$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
-		var gamemodeType = Options.IsEquals('FailedRankedGame') ? 'ranked_failed' : Options.GetMapInfo().gamemode;
-		if (gamemodeType === 'custom_abilities') gamemodeType =
+		var gamemode = Options.GetMapInfo().gamemode;
+		if (gamemode === 'custom_abilities') gamemode =
 			Options.IsEquals('EnableAbilityShop') ? 'ability_shop' : Options.IsEquals('EnableRandomAbilities') ? 'random_omg' : '';
-		$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + gamemodeType);
+		$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + gamemode);
 
 		if ($.GetContextPanel().PTID_hero_selection) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_selection);
 		DynamicSubscribePTListener('hero_selection', UpdateHeroesSelected, function(ptid) {
