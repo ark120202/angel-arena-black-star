@@ -25,7 +25,7 @@ if IsServer() then
 			if not v:HasModifier("modifier_healer_bottle_refill_delay") then
 				for i = 0, 11 do
 					local item = v:GetItemInSlot(i)
-					if item and item:GetAbilityName() == "item_bottle_arena" then
+					if item and item:GetAbilityName() == "item_bottle_arena" and item:GetCurrentCharges() ~= 3 then
 						item:SetCurrentCharges(3)
 						v:EmitSound("DOTA_Item.MagicWand.Activate")
 						v:AddNewModifier(parent, ability, "modifier_healer_bottle_refill_delay", {duration = delay_duration})
