@@ -281,7 +281,7 @@
 				<!-- class="Debug" -->
 				<Panel id="MinimapPanel" class="">
 					<Image class="MinimapImage only_map_landscape_5v5" src="file://{images}/custom_game/hero_selection/5v5.tga" />
-					<Image class="MinimapImage only_map_landscape_4v4v4v4" id="MinimapImage4v4v4v4" src="file://{images}/custom_game/hero_selection/4v4v4v4.tga" />
+					<Image class="MinimapImage only_map_landscape_4v4v4v4" src="file://{images}/custom_game/hero_selection/4v4v4v4.tga" />
 					<Image class="MinimapImage only_map_landscape_war3" src="file://{images}/custom_game/hero_selection/war3.tga" />
 					<Image class="MinimapImage only_map_landscape_1v1" src="file://{images}/custom_game/hero_selection/1v1.tga" />
 
