@@ -27,12 +27,19 @@ function Options:IsEquals(name, value)
 end
 
 function Options:SetPreGameVoting(name, variants, default, calculation)
-	Options.PreGameVotings[name] = {
-		votes = {},
-		variants = table.deepcopy(variants),
-		default = default,
-		calculation = calculation
-	}
+	if not Options.PreGameVotings[name] then
+		Options.PreGameVotings[name] = {votes = {}}
+	end
+	if variants then
+		Options.PreGameVotings[name].variants = variants
+	end
+	if default then
+		Options.PreGameVotings[name].default = default
+	end
+	if calculation then
+		Options.PreGameVotings[name].calculation = calculation
+	end
+
 	PlayerTables:SetTableValue("option_votings", name, Options.PreGameVotings[name])
 	return Options.PreGameVotings[name]
 end
@@ -102,6 +109,7 @@ function Options:LoadDefaultValues()
 	Options:SetInitialValue("EnableStatisticsCollection", true)
 	Options:SetInitialValue("EnableRatingAffection", false)
 	Options:SetInitialValue("FailedRankedGame", false)
+	Options:SetInitialValue("DynamicKillWeight", true)
 	--Options:SetInitialValue("MapLayout", "5v5")
 
 	Options:SetInitialValue("BanningPhaseBannedPercentage", 0)
@@ -152,6 +160,11 @@ function Options:LoadMapValues()
 	if landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216
 		USE_CUSTOM_TEAM_COLORS = true
+	end
+	if landscape == "1v1" then
+		MAP_LENGTH = 3840
+		Options:SetValue("DynamicKillWeight", false)
+		Options:SetPreGameVoting("kill_limit", {10, 15, 20, 25, 30, 35}, 25)
 	end
 end
 

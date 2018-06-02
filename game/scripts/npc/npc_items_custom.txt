@@ -5793,7 +5793,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"			"400"
+				"bonus_damage"			"300"
 			}
 			"02"
 			{
