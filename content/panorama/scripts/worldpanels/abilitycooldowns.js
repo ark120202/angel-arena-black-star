@@ -15,7 +15,8 @@ function AbilitiesCooldownCheck() {
 			var EntityAbilitiesNames = [];
 			for (var i = 0; i < Entities.GetAbilityCount(ent); i++) {
 				var ability = Entities.GetAbility(ent, i);
-				if (ability !== -1 && Abilities.GetAbilityName(ability) !== "attribute_bonus" && Abilities.GetAbilityName(ability) !== "attribute_bonus_arena" && !Abilities.IsHidden(ability)) {
+
+				if (ability !== -1 && !_.startsWith(Abilities.GetAbilityName(ability), "special_bonus_") && !Abilities.IsHidden(ability)) {
 					EntityAbilities.push(ability);
 					EntityAbilitiesNames.push(Abilities.GetAbilityName(ability));
 				}
@@ -80,6 +81,7 @@ function AbilitiesCooldownCheck() {
 					abilityPanel.GetChild(1).FindChild("AbilityCooldownOverlay").style.width = cooldownPercent + "%";
 				} else {
 					abilityPanel.GetChild(1).FindChild("AbilityCooldownTimer").text = "";
+					abilityPanel.GetChild(1).FindChild("AbilityCooldownOverlay").style.width = "0%";
 				}
 			}
 
