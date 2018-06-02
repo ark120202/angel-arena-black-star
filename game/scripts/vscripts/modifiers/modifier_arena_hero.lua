@@ -58,6 +58,7 @@ if IsServer() then
 				VisibleAbilitiesCount = VisibleAbilitiesCount + 1
 			end
 		end
+
 		if self.VisibleAbilitiesCount ~= VisibleAbilitiesCount then
 			self.VisibleAbilitiesCount = VisibleAbilitiesCount
 			self:SetSharedKey("VisibleAbilitiesCount", VisibleAbilitiesCount)

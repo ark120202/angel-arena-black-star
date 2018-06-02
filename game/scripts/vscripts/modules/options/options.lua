@@ -108,8 +108,8 @@ function Options:LoadDefaultValues()
 	Options:SetInitialValue("EnableRandomAbilities", false)
 	Options:SetInitialValue("EnableStatisticsCollection", true)
 	Options:SetInitialValue("EnableRatingAffection", false)
-	Options:SetInitialValue("FailedRankedGame", false)
 	Options:SetInitialValue("DynamicKillWeight", true)
+	Options:SetInitialValue("TeamSetupMode", "open")
 	--Options:SetInitialValue("MapLayout", "5v5")
 
 	Options:SetInitialValue("BanningPhaseBannedPercentage", 0)
@@ -145,16 +145,39 @@ function Options:LoadMapValues()
 			end
 		})
 	elseif gamemode == "ranked" then
-		SKIP_TEAM_SETUP = true
+		Options:SetValue("EnableRatingAffection", true)
+		Options:SetValue("BanningPhaseBannedPercentage", 100)
+
+		GameRules:SetCustomGameSetupAutoLaunchDelay(-1)
+		GameRules:LockCustomGameSetupTeamAssignment(true)
+		GameRules:EnableCustomGameSetupAutoLaunch(false)
+		Options:SetValue("TeamSetupMode", "balanced")
+
 		Events:Once("AllPlayersLoaded", function()
-			local failed = (GetInGamePlayerCount() < 10 or matchID == 0) and not StatsClient.Debug
-			if not failed then
-				Options:SetValue("EnableRatingAffection", true)
-				Options:SetValue("BanningPhaseBannedPercentage", 100)
-			else
-				debugp("Options:LoadMapValues", "Ranked disabled because of low amount of players of match id == 0")
-				Options:SetValue("FailedRankedGame", true)
+			local playerCount = GetInGamePlayerCount()
+			local desiredPlayerCount = Teams:GetTotalDesiredPlayerCount()
+			local failed = not StatsClient.Debug and (matchID == 0 or playerCount < desiredPlayerCount)
+
+			if failed then
+				GameMode:BreakSetup("Not enough players. Ranked games are meant to be full.")
+				return
 			end
+
+			StatsClient:AssignTeams(function(response)
+				for i = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+					local player = PlayerResource:GetPlayer(i)
+					if player then player:SetTeam(DOTA_TEAM_NOTEAM) end
+				end
+
+				for team, players in ipairs(response) do
+					for _, player in ipairs(players) do
+						local player = PlayerResource:GetPlayer(player)
+						if player then player:SetTeam(team + 1) end
+					end
+				end
+
+				GameRules:FinishCustomGameSetup()
+			end)
 		end, true)
 	end
 	if landscape == "4v4v4v4" then

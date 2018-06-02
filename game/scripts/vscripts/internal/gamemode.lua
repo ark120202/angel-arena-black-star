@@ -26,15 +26,9 @@ function GameMode:_InitGameMode()
 	GameRules:SetCustomGameEndDelay( GAME_END_DELAY )
 	GameRules:SetCustomVictoryMessageDuration( VICTORY_MESSAGE_DURATION )
 
-	if SKIP_TEAM_SETUP then
-		GameRules:SetCustomGameSetupAutoLaunchDelay( 0 )
-		GameRules:LockCustomGameSetupTeamAssignment( true )
-		GameRules:EnableCustomGameSetupAutoLaunch( true )
-	else
-		GameRules:SetCustomGameSetupAutoLaunchDelay( AUTO_LAUNCH_DELAY )
-		GameRules:LockCustomGameSetupTeamAssignment( LOCK_TEAM_SETUP )
-		GameRules:EnableCustomGameSetupAutoLaunch( ENABLE_AUTO_LAUNCH )
-	end
+	GameRules:SetCustomGameSetupAutoLaunchDelay( AUTO_LAUNCH_DELAY )
+	GameRules:LockCustomGameSetupTeamAssignment( LOCK_TEAM_SETUP )
+	GameRules:EnableCustomGameSetupAutoLaunch( ENABLE_AUTO_LAUNCH )
 
 	-- Event Hooks
 	-- All of these events can potentially be fired by the game, though only the uncommented ones have had
