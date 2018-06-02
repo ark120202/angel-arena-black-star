@@ -36,7 +36,7 @@ DOTA_Tooltip_modifier_guldan_hatred_effect_Description: 'Регенерация 
 DOTA_Tooltip_ability_guldan_shadow_path: Shadow Path
 DOTA_Tooltip_ability_guldan_shadow_path_Description: Гул`дан создает ауру вокруг себя, под действием которой противники периодически получают урон и замедляются.Когда способность кончается или противники покидают радиус, они получают дополнительное замедление.
 DOTA_Tooltip_ability_guldan_shadow_path_Lore: Гул`дан взывает к своей ненавести, заставляя все вокруг пылать.
-DOTA_Tooltip_ability_guldan_shadow_path_aghanim_description: Изменяет урон на чистый, увеличивает урон,радиус и замедление.
+DOTA_Tooltip_ability_guldan_shadow_path_aghanim_description: Изменяет урон на чистый, увеличивает урон,радиус и замедление, увеличивает периодичность нанесения урона.
 DOTA_Tooltip_ability_guldan_shadow_path_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_ability_guldan_shadow_path_damage_per_second: 'УРОН В СЕКУНДУ:'
 DOTA_Tooltip_ability_guldan_shadow_path_movement_speed_reduce: '%ЗАМЕДЛЕНИЕ:'
@@ -44,6 +44,7 @@ DOTA_Tooltip_ability_guldan_shadow_path_aura_radius_scepter: 'РАДИУС СО 
 DOTA_Tooltip_ability_guldan_shadow_path_duration_scepter: 'ДЛИТЕЛЬНОСТЬ СО СКИПЕТРОМ:'
 DOTA_Tooltip_ability_guldan_shadow_path_movement_speed_reduce_scepter: '%ЗАМЕДЛЕНИЕ СО СКИПЕТРОМ:'
 DOTA_Tooltip_ability_guldan_shadow_path_damage_per_second_scepter: 'УРОН В СЕКУНДУ СО СКИПЕТРОМ:'
+DOTA_Tooltip_ability_guldan_shadow_path_interval_scepter: 'ПЕРИОДИЧНОСТЬ СО СКИПЕТРОМ:'
 DOTA_Tooltip_modifier_guldan_shadow_path: Shadow Path
 DOTA_Tooltip_modifier_guldan_shadow_path_Description: Наносит периодический урон и замедляет вокруг себя.
 DOTA_Tooltip_modifier_guldan_shadow_path_effect: Shadow Path

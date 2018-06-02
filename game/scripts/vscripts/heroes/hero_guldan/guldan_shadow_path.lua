@@ -25,22 +25,24 @@ if IsServer() then
 	end
 
 	function modifier_guldan_shadow_path:OnCreated()
-		self:StartIntervalThink(0.1)
+		local interval = self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor("interval_scepter") or self:GetAbility():GetSpecialValueFor("interval")
+		self:StartIntervalThink(interval)
 	end
 
 	function modifier_guldan_shadow_path:OnIntervalThink()
 		local caster = self:GetCaster()
 		local target = self:GetParent()
 		local ability = self:GetAbility()
+		local interval = self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor("interval_scepter") or self:GetAbility():GetSpecialValueFor("interval")
 		self:GetParent():EmitSound("Arena.Hero_Guldan.ShadowPath.Cast")
 		local radius = (self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor("aura_radius_scepter") or self:GetAbility():GetSpecialValueFor("aura_radius"))
 
 		for _,v in ipairs(FindUnitsInRadius(target:GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)) do
 			local modifier = v:FindModifierByNameAndCaster("modifier_guldan_shadow_path_effect", target)
 			if not modifier then
-				v:AddNewModifier(target, ability, "modifier_guldan_shadow_path_effect", {duration = 0.11})
+				v:AddNewModifier(target, ability, "modifier_guldan_shadow_path_effect", {duration = interval + 0.1})
 			else
-				modifier:SetDuration(0.11, false)
+				modifier:SetDuration(interval + 0.1, false)
 			end
 		end
 	end
@@ -60,10 +62,10 @@ modifier_guldan_shadow_path_effect = class({
 })
 
 if IsServer() then
-	modifier_guldan_shadow_path_effect.interval_think = 0.13
 
 	function modifier_guldan_shadow_path_effect:OnCreated()
-		self:StartIntervalThink(self.interval_think)
+		local interval = self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor("interval_scepter") or self:GetAbility():GetSpecialValueFor("interval")
+		self:StartIntervalThink(interval)
 	end
 
 	function modifier_guldan_shadow_path_effect:OnIntervalThink()

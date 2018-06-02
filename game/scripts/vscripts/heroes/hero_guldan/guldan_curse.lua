@@ -25,10 +25,10 @@ end
 
 if IsServer() then
 	function guldan_curse:OnSpellStart()
-		local damage = self:GetAbilityDamage()
 		local target = self:GetCursorTarget()
 		local caster = self:GetCaster()
 		caster:EmitSound("Arena.Hero_Guldan.Curse.Cast")
+		local damage = self:GetAbilityDamage()+target:GetLevel()
 		ApplyDamage({
 			victim = target,
 			attacker = self:GetCaster(),
