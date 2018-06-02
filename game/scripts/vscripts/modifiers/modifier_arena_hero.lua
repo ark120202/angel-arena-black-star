@@ -54,7 +54,7 @@ if IsServer() then
 		local VisibleAbilitiesCount = 0
 		for i = 0, parent:GetAbilityCount() - 1 do
 			local ability = parent:GetAbilityByIndex(i)
-			if ability and not ability:IsHidden() then
+			if ability and not ability:IsHidden() and not ability:GetAbilityName():starts("special_bonus_") then
 				VisibleAbilitiesCount = VisibleAbilitiesCount + 1
 			end
 		end
