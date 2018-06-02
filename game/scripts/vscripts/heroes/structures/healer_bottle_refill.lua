@@ -23,13 +23,18 @@ if IsServer() then
 		local delay_duration = ability:GetSpecialValueFor('bottle_refill_cooldown')
 		for _,v in ipairs(FindUnitsInRadius(parent:GetTeamNumber(), parent:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
 			if not v:HasModifier("modifier_healer_bottle_refill_delay") then
+				local refilled = false
 				for i = 0, 11 do
 					local item = v:GetItemInSlot(i)
 					if item and item:GetAbilityName() == "item_bottle_arena" and item:GetCurrentCharges() ~= 3 then
 						item:SetCurrentCharges(3)
-						v:EmitSound("DOTA_Item.MagicWand.Activate")
-						v:AddNewModifier(parent, ability, "modifier_healer_bottle_refill_delay", {duration = delay_duration})
+						refilled = true
 					end
+				end
+
+				if refilled then
+					v:EmitSound("DOTA_Item.MagicWand.Activate")
+					v:AddNewModifier(parent, ability, "modifier_healer_bottle_refill_delay", {duration = delay_duration})
 				end
 			end
 		end
