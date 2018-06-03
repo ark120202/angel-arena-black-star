@@ -10157,7 +10157,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"scepter_ministun"		"0.85"
+				"scepter_ministun"		"1.05"
 			}
 			"99"
 			{
