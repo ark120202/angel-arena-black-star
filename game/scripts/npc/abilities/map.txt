@@ -126,8 +126,8 @@
 			}
 			"02"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bottle_refill_cooldown"			"60"
+				"var_type"				"FIELD_INTEGER"
+				"cooldown"				"60"
 			}
 		}
 	}

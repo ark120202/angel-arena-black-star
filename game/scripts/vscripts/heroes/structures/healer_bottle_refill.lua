@@ -20,7 +20,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local radius = ability:GetSpecialValueFor("radius")
-		local cooldown = ability:GetSpecialValueFor('bottle_refill_cooldown')
+		local cooldown = ability:GetSpecialValueFor("cooldown")
 
 		for _,v in ipairs(FindUnitsInRadius(parent:GetTeamNumber(), parent:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
 			if not v:HasModifier("modifier_healer_bottle_refill_cooldown") then
