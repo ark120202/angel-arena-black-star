@@ -168,5 +168,5 @@ DOTA_Tooltip_ability_healer_taste_of_armor_aura_radius: 'РАДИУС:'
 DOTA_Tooltip_modifier_healer_taste_of_armor_effect_Description: 'Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'
 
 DOTA_Tooltip_ability_healer_bottle_refill_Description: Наполняет bottle в радиусе.
-DOTA_Tooltip_ability_healer_bottle_refill_aura_radius: 'РАДИУС:'
+DOTA_Tooltip_ability_healer_bottle_refill_radius: 'РАДИУС:'
 DOTA_Tooltip_modifier_healer_bottle_refill_cooldown_Description: Не может наполнить Bottle в святыне.

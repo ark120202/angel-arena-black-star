@@ -202,6 +202,6 @@ DOTA_Tooltip_modifier_healer_taste_of_armor_effect_Description: 'Armor increased
 
 DOTA_Tooltip_ability_healer_bottle_refill: Bottle Refill
 DOTA_Tooltip_ability_healer_bottle_refill_Description: Fills bottle in radius
-DOTA_Tooltip_ability_healer_bottle_refill_aura_radius: 'RADIUS:'
+DOTA_Tooltip_ability_healer_bottle_refill_radius: 'RADIUS:'
 DOTA_Tooltip_modifier_healer_bottle_refill_cooldown: Bottle Refill
 DOTA_Tooltip_modifier_healer_bottle_refill_cooldown_Description: Can`t fill bottle in shrine.
