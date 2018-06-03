@@ -112,7 +112,7 @@ function Options:LoadDefaultValues()
 	Options:SetInitialValue("TeamSetupMode", "open")
 	--Options:SetInitialValue("MapLayout", "5v5")
 
-	Options:SetInitialValue("BanningPhaseBannedPercentage", 0)
+	Options:SetInitialValue("BanningPhaseBannedPercentage", 40)
 	Options:SetInitialValue("MainHeroList", "Selection")
 
 	--Can be not networkable
