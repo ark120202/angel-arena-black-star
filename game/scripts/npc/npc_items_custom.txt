@@ -8089,7 +8089,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"180"
+				"quelling_bonus_damage_pct"	"85"
 			}
 			"13"
 			{
