@@ -16701,12 +16701,12 @@
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hit_radius"				"150\"
+				"hit_radius"				"150"
 			}
 			"11"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"spirit_movement_rate"		"250\"
+				"spirit_movement_rate"		"250"
 			}
 			"12"
 			{
