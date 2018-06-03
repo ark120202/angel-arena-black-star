@@ -48,7 +48,7 @@
 		"ItemResult"					"item_radiance_frozen"
 		"ItemRequirements"
 		{
-			"01"						"item_radiance_3;item_skadi_8"
+			"01"						"item_radiance_3;item_skadi_8;item_skadi_8"
 		}
 	}
 
