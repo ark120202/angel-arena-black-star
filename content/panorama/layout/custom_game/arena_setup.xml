@@ -70,6 +70,7 @@
 		</Panel>
 
 		<Panel id="team-select__balanced">
+			<Label id="PartyWarningPanel" text="#arena_setup_party_warning" />
 			<Panel id="LoadingPanel">
 				<Panel class="Spinner" />
 				<Label id="LoadingMessage" text="#arena_setup_loading"/>

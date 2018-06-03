@@ -127,5 +127,9 @@ structures_fountain_protection_weak_line2: Fountain Protection became weaker
 structures_fountain_protection_strong_line1: The Netherdrake is up
 structures_fountain_protection_strong_line2: Fountain Protection became stronger
 
+arena_setup_party_warning: |-
+  Ranked is a solo gamemode.
+  Your party is not guaranteed to be in your team.
+  Select unranked maps if you want to be in the same team.
 arena_setup_loading: Authorizing the match...
 arena_setup_safe_to_leave: This game is now safe to leave.
