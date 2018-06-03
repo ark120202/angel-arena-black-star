@@ -135,6 +135,15 @@ function Teams:GetDesiredPlayerCount(team)
 	return Teams.Data[team].count or 0
 end
 
+function Teams:GetTotalDesiredPlayerCount()
+	local count = 0
+	for _, data in pairs(Teams.Data) do
+		count = count + data.count
+	end
+
+	return count
+end
+
 function Teams:GetName(team, bSecond)
 	return bSecond and Teams.Data[team].name2 or Teams.Data[team].name
 end
@@ -164,10 +173,8 @@ end
 
 function Teams:RecalculateKillWeight(team)
 	local remaining = GetTeamPlayerCount(team)
-	local value
-	if remaining == 0 then
-		value = 0
-	else
+	local value = remaining == 0 and 0 or 1
+	if value == 1 and Options:GetValue("DynamicKillWeight") then
 		local desired = Teams:GetDesiredPlayerCount(team)
 		local missing = desired - remaining
 		value = math.max(missing, 1)

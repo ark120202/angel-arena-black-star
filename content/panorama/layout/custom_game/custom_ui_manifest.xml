@@ -32,7 +32,6 @@
 
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/player_profiles.xml" />
 
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/libraries/modmaker/modmaker.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/libraries/barebones_attachments.xml" />
 
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/console.xml" />

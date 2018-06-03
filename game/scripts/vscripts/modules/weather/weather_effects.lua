@@ -10,7 +10,7 @@ function CreateLightningBlot(position)
 	end
 
 
-	local aoe = 125
+	local aoe = 200
 	CreateGlobalParticle("particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", function(particle)
 		local lightningSourcePosition = originalPosition and (originalPosition + Vector(0, 0, 1200)) or
 			(position + Vector(RandomInt(-250, 250), RandomInt(-250, 250), 1200))
@@ -20,7 +20,7 @@ function CreateLightningBlot(position)
 	EmitSoundOnLocationWithCaster(position, "Hero_Zuus.LightningBolt", nil)
 
 	GridNav:DestroyTreesAroundPoint(position, aoe, true)
-	local damage = GetDOTATimeInMinutesFull() * RandomInt(150, 250)
+	local damage = GetDOTATimeInMinutesFull() * RandomInt(220, 300)
 	for _,v in ipairs(FindUnitsInRadius(DOTA_TEAM_NEUTRALS, position, nil, aoe, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
 		if not v:IsMagicImmune() then
 			ApplyDamage({
@@ -78,8 +78,8 @@ WEATHER_EFFECTS = {
 		dummyModifier = "modifier_weather_rain",
 	},
 	storm = {
-		minDuration = 120,
-		maxDuration = 180,
+		minDuration = 7,
+		maxDuration = 15,
 		recipients = {"rain", "sunny"},
 
 		isCatastrophe = true,
@@ -91,7 +91,9 @@ WEATHER_EFFECTS = {
 		},
 		dummyModifier = "modifier_weather_rain",
 		Think = function()
-			CreateLightningBlot(GetGroundPosition(Vector(RandomInt(-MAP_LENGTH, MAP_LENGTH), RandomInt(-MAP_LENGTH, MAP_LENGTH), 0), nil))
+			for _ =  1, 18 do
+				CreateLightningBlot(GetGroundPosition(Vector(RandomInt(-MAP_LENGTH, MAP_LENGTH), RandomInt(-MAP_LENGTH, MAP_LENGTH), 0), nil))
+			end
 		end,
 	},
 	snow = {

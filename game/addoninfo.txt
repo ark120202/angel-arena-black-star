@@ -1,10 +1,15 @@
 "AddonInfo"
 {
-	"version"		"1.16.4"
-	"maps"          "5v5_ranked war3_ranked 5v5 war3 4v4v4v4 5v5_custom_abilities 4v4v4v4_custom_abilities"
+	"version"		"1.17.0"
+	"maps"          "1v1 5v5_ranked war3_ranked 5v5 war3 4v4v4v4 5v5_custom_abilities 4v4v4v4_custom_abilities"
 	"PenaltiesEnabled"	"1"
 	"CheckAFKPlayers"	"0"
 
+	"1v1"
+	{
+		"MaxPlayers"		"2"
+		"TeamCount"			"2"
+	}
 	"5v5"
 	{
 		"MaxPlayers"		"10"

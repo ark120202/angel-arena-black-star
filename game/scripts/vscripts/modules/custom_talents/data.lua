@@ -581,9 +581,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_ursa = {
 		group = 8,
 	},
-	special_bonus_unique_ursa_2 = {
-		group = 5,
-	},
 	special_bonus_unique_ursa_3 = {
 		group = 6,
 	},
@@ -984,9 +981,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_slardar_2 = {
 		group = 9,
 	},
-	special_bonus_unique_slardar_3 = {
-		group = 10,
-	},
+	special_bonus_unique_slardar_3 = false,
 	special_bonus_unique_lina_1 = {
 		group = 5,
 	},
@@ -1149,9 +1144,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_arc_warden = {
 		group = 6,
-	},
-	special_bonus_unique_arc_warden_2 = {
-		group = 4,
 	},
 	special_bonus_unique_meepo = {
 		group = 10,
@@ -1600,9 +1592,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_wraith_king_2 = {
 		group = 9,
 	},
-	special_bonus_unique_wraith_king_3 = {
-		group = 6,
-	},
 	special_bonus_unique_wraith_king_6 = {
 		group = 2,
 	},
@@ -1614,9 +1603,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_kunkka_3 = {
 		group = 11,
-	},
-	special_bonus_unique_kunkka_4 = {
-		group = 10,
 	},
 	special_bonus_unique_invoker_1 = {
 		group = 6,
@@ -1652,6 +1638,68 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_gyrocopter_5 = {
 		group = 4,
+	},
+	special_bonus_unique_underlord_4 = false,
+	special_bonus_unique_dragon_knight_2 = false,
+	special_bonus_unique_omniknight_1 = {
+		group = 3,
+	},
+	special_bonus_unique_omniknight_3 = {
+		group = 7,
+	},
+	special_bonus_unique_wisp_6 = {
+		group = 7,
+	},
+	special_bonus_unique_wisp_5 = {
+		group = 4,
+	},
+	special_bonus_unique_wisp_4 = {
+		group = 3,
+	},
+	special_bonus_unique_crystal_maiden_2 = {
+		group = 3,
+	},
+	special_bonus_unique_crystal_maiden_3 = {
+		group = 3,
+	},
+	special_bonus_unique_crystal_maiden_4 = {
+		group = 6,
+	},
+	special_bonus_unique_crystal_maiden_1 = {
+		group = 2,
+	},
+	special_bonus_unique_warlock_2 = {
+		group = 2,
+	},
+	special_bonus_unique_warlock_4 = {
+		group = 3,
+	},
+	special_bonus_unique_warlock_5 = {
+		group = 4,
+	},
+	special_bonus_unique_antimage_2 = {
+		group = 2,
+	},
+	special_bonus_unique_antimage_3 = {
+		group = 3,
+	},
+	special_bonus_unique_antimage_2 = {
+		group = 4,
+	},
+	special_bonus_unique_antimage_5 = {
+		group = 3,
+	},
+	special_bonus_unique_faceless_void = {
+		group = 2,
+	},
+	special_bonus_unique_faceless_void_2 = {
+		group = 3,
+	},
+	special_bonus_unique_faceless_void_3 = {
+		group = 3,
+	},
+	special_bonus_unique_faceless_void_4 = {
+		group = 56,
 	},
 }
 

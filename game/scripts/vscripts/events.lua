@@ -184,9 +184,7 @@ function GameMode:OnEntityKilled(keys)
 					end
 				end
 
-				if Duel:IsDuelOngoing() and Duel:GetWinner() ~= nil then
-					Duel:EndDuel()
-				end
+				Duel:EndIfFinished()
 
 				if not IsValidEntity(killerEntity) or not killerEntity.GetPlayerOwner or not IsValidEntity(killerEntity:GetPlayerOwner()) then
 					Kills:OnEntityKilled(killedUnit:GetPlayerOwner(), nil)

@@ -18,15 +18,10 @@ function StatsClient:FetchPreGameData()
 			data.players[i] = PlayerResource:GetRealSteamID(i)
 		end
 	end
-	--Should return rating table
+
 	StatsClient:Send("fetchPreGameMatchData", data, function(response)
-		local teamRatings = {}
 		for pid, data in pairs(response) do
 			pid = tonumber(pid)
-			local team = PlayerResource:GetTeam(pid)
-
-			teamRatings[team] = teamRatings[team] or {}
-			table.insert(teamRatings[team], data.Rating or (2500 + (data.TBDRating or 0)))
 
 			PLAYER_DATA[pid].serverData = data
 			PLAYER_DATA[pid].Inventory = data.inventory or {}
@@ -35,18 +30,45 @@ function StatsClient:FetchPreGameData()
 			clientData.TBDRating = nil
 			PlayerTables:SetTableValue("stats_client", pid, clientData)
 		end
-
-		for team, values in pairs(teamRatings) do
-			debugp("StatsClient:FetchPreGameData", "Set team #" .. tostring(team) .. "'s average rating to " .. table.average(values))
-			PlayerTables:SetTableValue("stats_team_rating", team, math.round(table.average(values)))
-		end
 	end, math.huge)
+end
+
+function StatsClient:CalculateAverageRating()
+	local teamRatings = {}
+
+	for pid, data in pairs(PLAYER_DATA) do
+		local team = PlayerResource:GetTeam(pid)
+		if data.serverData then
+			teamRatings[team] = teamRatings[team] or {}
+			table.insert(teamRatings[team], data.serverData.Rating or (2500 + (data.serverData.TBDRating or 0)))
+		end
+	end
+
+	for team, values in pairs(teamRatings) do
+		PlayerTables:SetTableValue("stats_team_rating", team, math.round(table.average(values)))
+	end
+end
+
+function StatsClient:AssignTeams(callback)
+	local data = {
+		size = Teams.Data[DOTA_TEAM_GOODGUYS].count,
+		players = {},
+	}
+	for i = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+		if PlayerResource:IsValidPlayerID(i) then
+			table.insert(data.players, { id = i, steamid = PlayerResource:GetRealSteamID(i) })
+		end
+	end
+
+	StatsClient:Send("assignTeams", data, callback, false, nil, function(response)
+		GameMode:BreakSetup(response.error and ("Server error: " .. response.error) or "Unknown server error")
+	end)
 end
 
 function StatsClient:OnGameEnd(winner)
 	local status, nextCall = xpcall(function()
 		if GameMode.Broken then
-			PlayerTables:CreateTable("stats_game_result", {error = "arena_end_screen_error_broken"}, AllPlayersInterval)
+			PlayerTables:CreateTable("stats_game_result", {error = GameMode.Broken}, AllPlayersInterval)
 			return
 		end
 		if not IsInToolsMode() and StatsClient.GameEndScheduled then return end
@@ -132,9 +154,9 @@ function StatsClient:OnGameEnd(winner)
 		local clientData = {players = {}}
 
 		StatsClient:Send("endMatch", data, function(response)
-			PrintTable(response)
 			if not response.players then
-				PlayerTables:CreateTable("stats_game_result", response, AllPlayersInterval)
+				local err = response.error and ("Server error: " .. response.error) or "Unknown server error"
+				PlayerTables:CreateTable("stats_game_result", { error = err }, AllPlayersInterval)
 			else
 				for pid, receivedData in pairs(response.players) do
 					pid = tonumber(pid)
@@ -165,8 +187,6 @@ function StatsClient:OnGameEnd(winner)
 		return msg..'\n'..debug.traceback()..'\n'
 	end)
 	if not status then
-		print(nextCall)
-		CPrint(nextCall)
 		PlayerTables:CreateTable("stats_game_result", {error = nextCall}, AllPlayersInterval)
 	end
 end
@@ -241,6 +261,7 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 		retryCount = 0
 	end
 	debugp("StatsClient:Send", "Sent data to " .. path .. "(with current retry of " .. (_currentRetry or 0) .. ")")
+
 	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path .. (protocol == "GET" and StatsClient:EncodeParams(data) or ""))
 	request:SetHTTPRequestGetOrPostParameter("data", json.encode(data))
 	request:Send(function(response)
@@ -258,10 +279,13 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 			elseif onerror then
 				debugp("StatsClient:Send", "Retries for " .. path .." just stopped.")
 				if onerror == true then onerror = callback end
-				onerror(response.Body)
+
+				local resp = json.decode(response.Body)
+				if type(resp) ~= "table" then resp = {} end
+				onerror(resp, response.StatusCode)
 			end
 		else
-			local obj, pos, err = json.decode(response.Body, 1, nil)
+			local obj, pos, err = json.decode(response.Body)
 			if not obj then
 				debugp("[StatsClient] Critical Error: request to " .. self.ServerAddress .. path .. " returned undefined. Check server configuration")
 			elseif callback then

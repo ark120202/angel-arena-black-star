@@ -9,7 +9,6 @@ hero_selection_phase_3: Strategy Time
 hero_selection_phase_4: Loading...
 
 arena_game_mode_type_: All Pick
-arena_game_mode_type_ranked_failed: <font color='red'>All Pick</font>
 arena_game_mode_type_ranked: Ranked All Pick
 arena_game_mode_type_ability_shop: Ability Shop
 arena_game_mode_type_random_omg: Random OMG
@@ -127,3 +126,10 @@ structures_fountain_protection_weak_line2: Fountain Protection became weaker
 
 structures_fountain_protection_strong_line1: The Netherdrake is up
 structures_fountain_protection_strong_line2: Fountain Protection became stronger
+
+arena_setup_party_warning: |-
+  Ranked is a solo gamemode.
+  Your party is not guaranteed to be in your team.
+  Select unranked maps if you want to be in the same team.
+arena_setup_loading: Authorizing the match...
+arena_setup_safe_to_leave: This game is now safe to leave.

@@ -13,7 +13,6 @@ local requirements = {
 	"libraries/attachments",
 	"libraries/playertables",
 	"libraries/containers",
-	-- "libraries/modmaker",
 	-- "libraries/pathgraph",
 	"libraries/selection",
 	"libraries/worldpanels",
@@ -89,6 +88,7 @@ function GameMode:PostLoadPrecache()
 end
 
 function GameMode:OnFirstPlayerLoaded()
+	StatsClient:FetchPreGameData()
 	if Options:IsEquals("MainHeroList", "NoAbilities") then
 		CustomAbilities:PrepareData()
 	end
@@ -99,11 +99,11 @@ function GameMode:OnAllPlayersLoaded()
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[4] = true
-	StatsClient:FetchPreGameData()
 	Events:Emit("AllPlayersLoaded")
 end
 
 function GameMode:OnHeroSelectionStart()
+	StatsClient:CalculateAverageRating()
 	Teams:PostInitialize()
 	Options:CalculateVotes()
 	DynamicMinimap:Init()
@@ -125,7 +125,7 @@ function GameMode:OnHeroSelectionEnd()
 			if PlayerResource:IsValidPlayerID(playerID) and not PlayerResource:IsFakeClient(playerID) and GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
 				local heroName = HeroSelection:GetSelectedHeroName(playerID) or ""
 				if heroName == "" or heroName == FORCE_PICKED_HERO then
-					GameMode:BreakGame()
+					GameMode:BreakGame("arena_end_screen_error_broken")
 					return
 				end
 			end
@@ -214,8 +214,15 @@ function GameMode:GameModeThink()
 	return CUSTOM_GOLD_TICK_TIME
 end
 
-function GameMode:BreakGame()
-	GameMode.Broken = true
+function GameMode:BreakGame(message)
+	GameMode.Broken = message
 	Tutorial:ForceGameStart()
 	GameMode:OnOneTeamLeft(-1)
+end
+
+function GameMode:BreakSetup(message)
+	GameRules:SetPostGameTime(0)
+	GameRules:SetSafeToLeave(true)
+	PlayerTables:CreateTable("stats_setup_error", message, AllPlayersInterval)
+	Timers:CreateTimer(60, function() GameMode:BreakGame(true) end)
 end

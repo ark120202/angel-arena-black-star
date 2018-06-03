@@ -194,8 +194,14 @@ DOTA_Tooltip_modifier_fountain_aura_enemy: Fountain Weakness
 DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'Each second takes %dMODIFIER_PROPERTY_TOOLTIP%%% of max health as damage. Prevents health from from going up. All outgoing damage reduced by %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%.'
 
 DOTA_Tooltip_ability_healer_taste_of_armor: Taste of Armor
-DOTA_Tooltip_ability_healer_taste_of_armor_Description: Grants bonus armor to nearby friendly heroes
+DOTA_Tooltip_ability_healer_taste_of_armor_Description: Grants bonus armor to nearby friendly heroes.
 DOTA_Tooltip_ability_healer_taste_of_armor_aura_bonus_armor: 'ARMOR:'
 DOTA_Tooltip_ability_healer_taste_of_armor_aura_radius: 'RADIUS:'
 DOTA_Tooltip_modifier_healer_taste_of_armor_effect: Taste of Armor
 DOTA_Tooltip_modifier_healer_taste_of_armor_effect_Description: 'Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'
+
+DOTA_Tooltip_ability_healer_bottle_refill: Bottle Refill
+DOTA_Tooltip_ability_healer_bottle_refill_Description: Automatically refills Bottle's of nearby allies.
+DOTA_Tooltip_ability_healer_bottle_refill_radius: 'RADIUS:'
+DOTA_Tooltip_modifier_healer_bottle_refill_cooldown: Bottle Refill Cooldown
+DOTA_Tooltip_modifier_healer_bottle_refill_cooldown_Description: Temporary can`t fill Bottle's in shrines.

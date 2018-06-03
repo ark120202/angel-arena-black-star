@@ -191,14 +191,6 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"AbilitySpecial"
-		{
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"		"1.2"
-			}
-		}
 	}
 	"item_ghost"
 	{
@@ -1130,6 +1122,19 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"10"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarm_range"	"3.0"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarm_melee"	"3.0"
+			}
+		}
 	}
 	"item_recipe_ring_of_aquila"
 	{

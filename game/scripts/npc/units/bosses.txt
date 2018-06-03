@@ -305,12 +305,12 @@
 		"Ability1"					"boss_freya_sharp_ice_shards"
 		"Ability5"					"boss_armor"
 
-		"ArmorPhysical"				"140"
+		"ArmorPhysical"				"145"
 		"MagicalResistance"			"80"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"5200"
-		"AttackDamageMax"			"6600"
+		"AttackDamageMin"			"8500"
+		"AttackDamageMax"			"10200"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.6"
 		"AttackAnimationPoint"		"0.2"
@@ -362,12 +362,12 @@
 		"Ability1"					""//"boss_zaken_"
 		"Ability5"					"boss_armor"
 
-		"ArmorPhysical"				"110"
+		"ArmorPhysical"				"145"
 		"MagicalResistance"			"80"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"5200"
-		"AttackDamageMax"			"6600"
+		"AttackDamageMin"			"8500"
+		"AttackDamageMax"			"10200"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.6"
 		"AttackAnimationPoint"		"0.2"
