@@ -9155,7 +9155,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"280 345 420 425 525 675 23625"
+				"radius"	"280 345 420 425 525 675 625"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_2"
 			}
 			"02"
