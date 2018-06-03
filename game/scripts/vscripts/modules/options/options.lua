@@ -146,7 +146,7 @@ function Options:LoadMapValues()
 		})
 	elseif gamemode == "ranked" then
 		Options:SetValue("EnableRatingAffection", true)
-		Options:SetValue("BanningPhaseBannedPercentage", 100)
+		Options:SetValue("BanningPhaseBannedPercentage", 80)
 
 		GameRules:SetCustomGameSetupAutoLaunchDelay(-1)
 		GameRules:LockCustomGameSetupTeamAssignment(true)
