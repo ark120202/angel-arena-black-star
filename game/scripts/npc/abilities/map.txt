@@ -114,7 +114,7 @@
 		"AbilityTextureName"			"omniknight_repel"
 		"MaxLevel" 						"1"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 
 		"AbilitySpecial"
