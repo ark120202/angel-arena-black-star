@@ -5,7 +5,6 @@ hero_selection_phase_3: Время на стратегию
 hero_selection_phase_4: Загрузка...
 
 arena_game_mode_type_: Полный выбор
-arena_game_mode_type_ranked_failed: <font color='red'>Полный выбор</font>
 arena_game_mode_type_ranked: Рейтинговый полный выбор
 arena_game_mode_type_ability_shop: Покупка способностей
 arena_game_mode_type_random_omg: Случайные способности
@@ -30,7 +29,6 @@ casino_slotmachine_roll_result_streak322_enemies_p3: "\_ выпало 322 в К�
 casino_slotmachine_roll_result_streak_no: В этот раз вы ничего не выиграли
 containers_shop_secret_name: Магазин в Казино
 containers_shop_duel_name: Дуэльный Магазин
-arthas_vsolyanova_notifiaction: НЫЫЫЫЫЫЫЫАААААААААААААААААААААААА ✓✓✓✓
 
 hero_selection_select_hero: Выберите Героя
 hero_selection_button_select_hero: ВЫБРАТЬ
@@ -116,3 +114,12 @@ ranked_top_players: Лучшие игроки
 ranked_top_more: Открыть топ 100...
 
 teams_kill_weight_tooltip: Убийство героев этой команды принесет {d:kill_weight} очков
+
+structures_fountain_protection_weak_line1: The Netherdrake был убит
+structures_fountain_protection_weak_line2: Защита Фонтанов стала слабее
+
+structures_fountain_protection_strong_line1: The Netherdrake переродится
+structures_fountain_protection_strong_line2: Защита Фонтанов стала сильнее
+
+arena_setup_loading: Авторизация матча...
+arena_setup_safe_to_leave: Теперь эту игру можно спокойно покинуть.

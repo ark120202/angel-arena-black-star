@@ -78,8 +78,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 
 	if not hero.ForcedHeroChange then
-		if hero:HasModifier("modifier_shredder_chakram_disarm") or
-			hero:HasModifier("modifier_razor_link_vision") then
+		if hero:HasModifier("modifier_shredder_chakram_disarm") then
 			Containers:DisplayError(playerId, "#arena_hud_error_cant_change_hero")
 			return false
 		end

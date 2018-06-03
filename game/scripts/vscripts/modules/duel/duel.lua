@@ -11,8 +11,6 @@ if Duel == nil then
 	Duel.TimesTeamWins = {}
 	Duel.AnnouncerCountdownCooldowns = {}
 	Duel.DuelCounter = 0
-	Duel.DuelBox1 = Vector(0,0,0)
-	Duel.DuelBox2 = Vector(0,0,0)
 end
 
 function Duel:SetDuelTimer(duration)
@@ -25,13 +23,21 @@ function Duel:CreateGlobalTimer()
 	Duel:SetDuelTimer(-GameRules:GetDOTATime(false, true))
 	Timers:CreateTimer(Dynamic_Wrap(Duel, 'GlobalThink'))
 
+	Duel:CreateBlocker()
+end
+
+function Duel:CreateBlocker()
+	local trigger = Entities:FindByName(nil, "trigger_arena_zone")
+	local origin = trigger:GetAbsOrigin()
+	local bounds = trigger:GetBounds()
+	local mins = origin + ExpandVector(bounds.Mins, 96)
+	local maxs = origin + ExpandVector(bounds.Maxs, 96)
+
 	Physics:RemoveCollider("collider_box_blocker_arena")
-	Duel.DuelBox1 = Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin()
-	Duel.DuelBox2 = Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()
-	local collider = Physics:AddCollider("collider_box_blocker_arena", Physics:ColliderFromProfile("boxblocker"))
-	collider.box = CreateSimpleBox(Duel.DuelBox2, Duel.DuelBox1)
+	local collider = Physics:AddCollider("collider_box_blocker_arena", Physics:ColliderFromProfile("aaboxblocker"))
+	collider.box = {mins, maxs}
 	collider.findClearSpace = true
-	--collider.draw = true
+	-- collider.draw = true
 	collider.test = function(self, unit)
 		if not IsPhysicsUnit(unit) and unit.IsConsideredHero and unit:IsConsideredHero() then
 			Physics:Unit(unit)
@@ -79,7 +85,7 @@ function Duel:StartDuel()
 			if not unit:IsAlive() then
 				unit:RespawnHero(false, false)
 			end
-			if PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
+			if PlayerResource:IsValidPlayerID(pid) then
 				heroes_in_teams[i] = (heroes_in_teams[i] or 0) + 1
 			end
 		end
@@ -104,7 +110,7 @@ function Duel:StartDuel()
 					local unit = v[1]
 					if IsValidEntity(unit) then
 						local pid = unit:GetPlayerOwnerID()
-						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) and GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
+						if not unit.DuelChecked and unit:IsAlive() and PlayerResource:IsValidPlayerID(pid) then
 							unit.OnDuel = true
 							Duel:FillPreduelUnitData(unit)
 							unit:SetHealth(unit:GetMaxHealth())
@@ -137,7 +143,7 @@ function Duel:StartDuel()
 						unit.OnDuel = true
 						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 						ProjectileManager:ProjectileDodge(unit)
-						unit:FindClearSpaceForUnitAndSetCamera(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
+						unit:Teleport(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
 						unit:AddNewModifier(unit, nil, "modifier_magic_immune", {duration = DUEL_SETTINGS.MagicImmunityDuration})
 					elseif unit:IsAlive() then
 						Duel:SetUpVisitor(unit)
@@ -198,7 +204,11 @@ function Duel:GetWinner()
 	local teams = {}
 	for team,tab in pairs(Duel.heroes_teams_for_duel) do
 		for _,unit in pairs(tab) do
-			if IsValidEntity(unit) and unit:IsAlive() then
+			if (
+				IsValidEntity(unit) and
+				unit:IsAlive() and
+				not PlayerResource:IsPlayerAbandoned(unit:GetPlayerID())
+		 	) then
 				if not table.contains(teams, team) and unit.OnDuel then
 					table.insert(teams, team)
 				end
@@ -266,13 +276,13 @@ function Duel:EndDuelForUnit(unit)
 		end
 	end)
 
-	if unit.FindClearSpaceForUnitAndSetCamera then
+	if unit.Teleport then
 		local pos = unit.ArenaBeforeTpLocation
 		if not pos then
 			pos = FindFountain(unit:GetTeamNumber()):GetAbsOrigin()
 		end
 		ProjectileManager:ProjectileDodge(unit)
-		unit:FindClearSpaceForUnitAndSetCamera(pos)
+		unit:Teleport(pos)
 	end
 	unit.OnDuel = nil
 	unit.ArenaBeforeTpLocation = nil
@@ -295,7 +305,7 @@ function Duel:FillPreduelUnitData(unit)
 	end
 	for i = 0, 5 do
 		local item = unit:GetItemInSlot(i)
-		if item and item:GetAbilityName() ~= "item_aegis_arena" then
+		if item then
 			unit.StatusBeforeArena.ItemCooldowns[item] = item:GetCooldownTimeRemaining()
 			item:EndCooldown()
 		end
@@ -304,4 +314,10 @@ end
 
 function Duel:IsDuelOngoing()
 	return Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS
+end
+
+function Duel:EndIfFinished()
+	if Duel:IsDuelOngoing() and Duel:GetWinner() ~= nil then
+		Duel:EndDuel()
+	end
 end

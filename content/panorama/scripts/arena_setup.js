@@ -255,16 +255,31 @@ function HostSwapPlayers(playerId, playerId2) {
 
 (function() {
 	$('#TeamList').RemoveAndDeleteChildren();
-	var teamIDs = Game.GetAllTeamIDs();
-	for (var i = 0; i < teamIDs.length; i++) {
-		Snippet_Team(teamIDs[i]);
-	}
-	Game.AutoAssignPlayersToTeams();
-	OnTeamPlayerListChanged();
-	$.RegisterForUnhandledEvent('DOTAGame_TeamPlayerListChanged', OnTeamPlayerListChanged);
-	$.RegisterForUnhandledEvent('DOTAGame_PlayerSelectedCustomTeam', OnPlayerSelectedTeam);
-	SetUnassignedTeamDraggable();
-		//$("#TeamSelectContainer").SetAcceptsFocus(true);
-	UpdateTimer();
-		//Game.PlayerJoinTeam(DOTA_TEAM_SPECTATOR)
+	$.GetContextPanel().Children().forEach(function(child) { child.visible = false; });
+
+	Options.Subscribe('TeamSetupMode', function(mode) {
+		$('#team-select__' + mode).visible = true;
+
+		switch (mode) {
+			case 'open':
+				var teamIDs = Game.GetAllTeamIDs();
+				teamIDs.forEach(Snippet_Team);
+				Game.AutoAssignPlayersToTeams();
+				OnTeamPlayerListChanged();
+				$.RegisterForUnhandledEvent('DOTAGame_TeamPlayerListChanged', OnTeamPlayerListChanged);
+				$.RegisterForUnhandledEvent('DOTAGame_PlayerSelectedCustomTeam', OnPlayerSelectedTeam);
+				SetUnassignedTeamDraggable();
+				UpdateTimer();
+				break;
+			case 'balanced':
+				$('#LoadingPanel').visible = true;
+				$('#ErrorPanel').visible = false;
+				DynamicSubscribePTListener('stats_setup_error', function(tableName, error) {
+					$('#LoadingPanel').visible = false;
+					$('#ErrorPanel').visible = true;
+					$('#ErrorMessage').text = $.Localize(error);
+				});
+				break;
+		}
+	});
 })();

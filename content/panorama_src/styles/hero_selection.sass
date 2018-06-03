@@ -537,23 +537,13 @@ $gameModeInfoPanelWidth: 200px;
 	width: 100%
 	height: 100%
 
-.only_map_landscape_4v4v4v4
-	visibility: collapse
+$landscapes: 5v5, war3, 1v1, 4v4v4v4
+@each $landscape in $landscapes
+	.only_map_landscape_#{$landscape}
+		visibility: collapse
 
-	.map_landscape_4v4v4v4 &
-		visibility: visible
-
-.only_map_landscape_5v5
-	visibility: collapse
-
-	.map_landscape_5v5 &
-		visibility: visible
-
-.only_map_landscape_war3
-	visibility: collapse
-
-	.map_landscape_war3 &
-		visibility: visible
+		.map_landscape_#{$landscape} &
+			visibility: visible
 
 #SelectionChatBox
 	width: 100%

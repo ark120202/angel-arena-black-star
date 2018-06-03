@@ -54,8 +54,6 @@ custom_talents_talent_cooldown_reduction_pct: Cooldown Reduction
 custom_talents_talent_cooldown_reduction_pct_description: 'Reduces ability cooldown by {%cooldown_reduction_pct%}'
 custom_talents_talent_hero_pudge_hook_splitter: Hook Splitter
 custom_talents_talent_hero_pudge_hook_splitter_description: 'Pudge will launch {hook_amount} hooks, instead of 1'
-custom_talents_talent_hero_arthas_vsolyanova_bunus_chance: Mega Solyara
-custom_talents_talent_hero_arthas_vsolyanova_bunus_chance_description: 'Multiplies chance to Zalyit Solyaru by {chance_multiplier}'
 custom_talents_talent_hero_arc_warden_double_spark: Double Spark Wraith
 custom_talents_talent_hero_arc_warden_double_spark_description: Each cast of Spark Wraith creates two sparks
 custom_talents_talent_hero_apocalypse_apocalypse_no_death: Protection from Apocalypse
@@ -66,5 +64,5 @@ custom_talents_talent_movespeed_pct: Movement speed
 custom_talents_talent_movespeed_pct_description: '+{%movespeed_pct%} movement speed'
 custom_talents_talent_true_strike: True Strike
 custom_talents_talent_true_strike_description: Prevents your attacks from missing
-custom_talents_talent_hero_sai_release_of_forge_discrease_bonus_respawn_time: Release of Forge
-custom_talents_talent_hero_sai_release_of_forge_discrease_bonus_respawn_time_description: 'Reduces respawn time increasement, caused by dying from Release of Forge by {%reduction_pct%}.'
+custom_talents_talent_hero_sai_release_of_forge_bonus_respawn_time_reduction: Release of Forge
+custom_talents_talent_hero_sai_release_of_forge_bonus_respawn_time_reduction_description: 'Reduces respawn time increasement, caused by dying from Release of Forge by {%reduction_pct%}.'

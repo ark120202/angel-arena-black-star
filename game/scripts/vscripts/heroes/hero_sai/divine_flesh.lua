@@ -24,7 +24,8 @@ modifier_sai_divine_flesh_on = class({
 function modifier_sai_divine_flesh_on:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+		MODIFIER_PROPERTY_DISABLE_HEALING,
 	}
 end
 
@@ -34,6 +35,10 @@ end
 
 function modifier_sai_divine_flesh_on:GetModifierMagicalResistanceBonus()
 	return self:GetAbility():GetSpecialValueFor("active_magic_resistance_pct")
+end
+
+function modifier_sai_divine_flesh_on:GetDisableHealing()
+	return 1
 end
 
 if IsServer() then

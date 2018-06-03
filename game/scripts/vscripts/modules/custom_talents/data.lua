@@ -387,16 +387,6 @@ CUSTOM_TALENTS_DATA = {
 			hook_amount = 3
 		}
 	},
-	talent_hero_arthas_vsolyanova_bunus_chance = {
-		icon = "talents/heroes/arthas_vsolyanova_bunus_chance",
-		cost = 5,
-		group = 9,
-		max_level = 5,
-		requirement = "arthas_vsolyanova",
-		special_values = {
-			chance_multiplier = {1.1, 1.2, 1.3, 1.4, 1.5}
-		}
-	},
 	talent_hero_arc_warden_double_spark = {
 		icon = "talents/heroes/arc_warden_double_spark",
 		cost = 5,
@@ -455,14 +445,14 @@ CUSTOM_TALENTS_DATA = {
 		icon = "talents/heroes/release_of_forge_vision",
 		cost = 25,
 		group = 11,
-		requirement = "sai_release_of_forge",	
+		requirement = "sai_release_of_forge",
 	},
 	talent_hero_shinobu_hide_in_shadows_heal_from_allies = {
 		icon = "arena/shinobu_hide_in_shadows",
 		cost = 20,
 		group = 9,
 		max_level = 1,
-		requirement = "shinobu_hide_in_shadows",	
+		requirement = "shinobu_hide_in_shadows",
 		special_values = {
 			talent_regeneration_pct = {17}
 		}
@@ -472,7 +462,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 35,
 		group = 10,
 		max_level = 1,
-		requirement = "npc_arena_hero_shinobu",	
+		requirement = "npc_arena_hero_shinobu",
 		effect = {
 			modifiers = {
 				"modifier_shinobu_devouring"
@@ -489,7 +479,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 50,
 		group = 11,
 		max_level = 1,
-		requirement = "shinobu_kokorowatari",	
+		requirement = "shinobu_kokorowatari",
 		special_values = {
 			decrease_pct = {50},
 			duration = {4},
@@ -500,7 +490,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 2,
 		group = 1,
 		max_level = 1,
-		requirement = "shinobu_yumewatari_lua",	
+		requirement = "shinobu_yumewatari_lua",
 		special_values = {
 			creep_start_mult = {2}
 		}
@@ -510,7 +500,7 @@ CUSTOM_TALENTS_DATA = {
 		cost = 20,
 		group = 9,
 		max_level = 1,
-		requirement = "stegius_desolating_touch",	
+		requirement = "stegius_desolating_touch",
 		special_values = {
 			armor_per_hit_pct = {3}
 		}
@@ -520,23 +510,17 @@ CUSTOM_TALENTS_DATA = {
 		cost = 20,
 		group = 9,
 		max_level = 1,
-		requirement = "stegius_rage_of_desolus",	
+		requirement = "stegius_rage_of_desolus",
 		special_values = {
 			base_attack_time = {1.0}
 		}
-	},
-	talent_wisp_tether_aghanim_effect = {
-		icon = "talents/heroes/wisp_aghanim",
-		cost = 5,
-		group = 7,
-		requirement = "wisp_tether_aghanims",	
 	},
 	--[[talent_hero_stegius_brightness_of_desolate_bonus_health_decrease = {
 		icon = "arena/stegius_rage_of_desolus",
 		cost = 2,
 		group = 4,
 		max_level = 1,
-		requirement = "stegius_brightness_of_desolate",	
+		requirement = "stegius_brightness_of_desolate",
 		special_values = {
 			bonus_health_decrease = {5}
 		}
@@ -567,9 +551,7 @@ CUSTOM_TALENTS_DATA = {
 -- A list of heroes, which have Changed flag, but some native talents for them are still relevant
 -- Value should be a table, where irrelevant talents should have a `true` value
 PARTIALLY_CHANGED_HEROES = {
-	npc_dota_hero_riki = {},
 	npc_dota_hero_ogre_magi = {},
-	npc_dota_hero_tinker = {},
 	npc_dota_hero_skeleton_king = {
 		special_bonus_unique_wraith_king_1 = true,
 		special_bonus_unique_wraith_king_4 = true,
@@ -580,9 +562,6 @@ PARTIALLY_CHANGED_HEROES = {
 	npc_dota_hero_doom_bringer = {
 		special_bonus_unique_doom_2 = true,
 		special_bonus_unique_doom_3 = true,
-	},
-	npc_dota_hero_life_stealer = {
-		special_bonus_unique_lifestealer_3 = true,
 	},
 }
 
@@ -710,9 +689,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_ursa = {
 		group = 8,
 	},
-	special_bonus_unique_ursa_2 = {
-		group = 5,
-	},
 	special_bonus_unique_ursa_3 = {
 		group = 6,
 	},
@@ -757,9 +733,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_windranger_4 = {
 		group = 10,
-	},
-	special_bonus_unique_windranger_5 = {
-		group = 8,
 	},
 	special_bonus_unique_slark = {
 		group = 9,
@@ -917,6 +890,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_lifestealer_2 = {
 		group = 5,
 	},
+	special_bonus_unique_lifestealer_3 = false,
 	special_bonus_unique_lion = {
 		group = 6,
 	},
@@ -1109,9 +1083,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_shadow_demon_4 = {
 		group = 9,
 	},
-	special_bonus_unique_shadow_demon_5 = {
-		group = 7,
-	},
 	special_bonus_unique_slardar = {
 		group = 8,
 	},
@@ -1130,7 +1101,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_lina_3 = {
 		group = 5,
 	},
-	special_bonus_unique_ancient_apparition_1 = false,
 	special_bonus_unique_ancient_apparition_2 = {
 		group = 6,
 	},
@@ -1143,9 +1113,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_ancient_apparition_5 = {
 		group = 9,
 	},
-	special_bonus_unique_disruptor = {
-		group = 6,
-	},
+	special_bonus_unique_disruptor = false,
 	special_bonus_unique_disruptor_2 = {
 		group = 9,
 	},
@@ -1287,9 +1255,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_arc_warden = {
 		group = 6,
 	},
-	special_bonus_unique_arc_warden_2 = {
-		group = 4,
-	},
 	special_bonus_unique_meepo = {
 		group = 10,
 	},
@@ -1321,7 +1286,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 6,
 	},
 	special_bonus_unique_pangolier_3 = {
-		group = 7,
+		group = 10,
 	},
 	special_bonus_unique_pangolier_4 = {
 		group = 9,
@@ -1737,12 +1702,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_wraith_king_2 = {
 		group = 9,
 	},
-	special_bonus_unique_wraith_king_3 = {
-		group = 6,
-	},
-	special_bonus_unique_wraith_king_5 = {
-		group = 1,
-	},
 	special_bonus_unique_wraith_king_6 = {
 		group = 2,
 	},
@@ -1754,9 +1713,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_kunkka_3 = {
 		group = 11,
-	},
-	special_bonus_unique_kunkka_4 = {
-		group = 10,
 	},
 	special_bonus_unique_invoker_1 = {
 		group = 6,
@@ -1781,6 +1737,79 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_invoker_8 = {
 		group = 10,
+	},
+	special_bonus_unique_gyrocopter_1 = false,
+	special_bonus_unique_gyrocopter_2 = false,
+	special_bonus_unique_gyrocopter_3 = {
+		group = 6,
+	},
+	special_bonus_unique_gyrocopter_4 = {
+		group = 5,
+	},
+	special_bonus_unique_gyrocopter_5 = {
+		group = 4,
+	},
+	special_bonus_unique_underlord_4 = false,
+	special_bonus_unique_dragon_knight_2 = false,
+	special_bonus_unique_omniknight_1 = {
+		group = 3,
+	},
+	special_bonus_unique_omniknight_3 = {
+		group = 7,
+	},
+	special_bonus_unique_wisp_6 = {
+		group = 7,
+	},
+	special_bonus_unique_wisp_5 = {
+		group = 4,
+	},
+	special_bonus_unique_wisp_4 = {
+		group = 3,
+	},
+	special_bonus_unique_crystal_maiden_2 = {
+		group = 3,
+	},
+	special_bonus_unique_crystal_maiden_3 = {
+		group = 3,
+	},
+	special_bonus_unique_crystal_maiden_4 = {
+		group = 6,
+	},
+	special_bonus_unique_crystal_maiden_1 = {
+		group = 2,
+	},
+	special_bonus_unique_warlock_2 = {
+		group = 2,
+	},
+	special_bonus_unique_warlock_4 = {
+		group = 3,
+	},
+	special_bonus_unique_warlock_5 = {
+		group = 4,
+	},
+	special_bonus_unique_antimage_2 = {
+		group = 2,
+	},
+	special_bonus_unique_antimage_3 = {
+		group = 3,
+	},
+	special_bonus_unique_antimage_2 = {
+		group = 4,
+	},
+	special_bonus_unique_antimage_5 = {
+		group = 3,
+	},
+	special_bonus_unique_faceless_void = {
+		group = 2,
+	},
+	special_bonus_unique_faceless_void_2 = {
+		group = 3,
+	},
+	special_bonus_unique_faceless_void_3 = {
+		group = 3,
+	},
+	special_bonus_unique_faceless_void_4 = {
+		group = 56,
 	},
 }
 

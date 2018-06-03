@@ -32,7 +32,9 @@ end
 
 function CDOTA_BaseNPC:DestroyAllModifiers()
 	for _,v in ipairs(self:FindAllModifiers()) do
-		v:Destroy()
+		if not UNDESTROYABLE_MODIFIERS[v:GetName()] then
+			v:Destroy()
+		end
 	end
 end
 
@@ -50,15 +52,27 @@ function CDOTA_BaseNPC:HasModelChanged()
 	return false
 end
 
-function CDOTA_BaseNPC:FindClearSpaceForUnitAndSetCamera(position)
+local TELEPORT_MAX_COLLISION_RANGE = 256
+function CDOTA_BaseNPC:Teleport(position)
+	self.TeleportPosition = position
 	self:Stop()
-	PlayerResource:SetCameraTarget(self:GetPlayerOwnerID(), self)
+
+	local playerId = self:GetPlayerOwnerID()
+	PlayerResource:SetCameraTarget(playerId, self)
+
 	FindClearSpaceForUnit(self, position, true)
+
 	Timers:CreateTimer(0.1, function()
-		if IsValidEntity(self) then
-			PlayerResource:SetCameraTarget(self:GetPlayerOwnerID(), nil)
-			self:Stop()
+		if not IsValidEntity(self) then return end
+		if self.TeleportPosition ~= position then return end
+		if (self:GetAbsOrigin() - position):Length2D() > TELEPORT_MAX_COLLISION_RANGE then
+			FindClearSpaceForUnit(self, position, true)
+			return 0.1
 		end
+
+		self.TeleportPosition = nil
+		PlayerResource:SetCameraTarget(playerId, nil)
+		self:Stop()
 	end)
 end
 
@@ -166,10 +180,17 @@ end
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	if self.OnDuel then return 1 end
-	local time = (5 + self:GetLevel() * 0.2) + (self.RespawnTimeModifierBloodstone or 0) + (self.RespawnTimeModifierSaiReleaseOfForge or 0)
+	local time = (5 + self:GetLevel() * 0.2) + (self.RespawnTimeModifierSaiReleaseOfForge or 0)
 	if self.talent_keys and self.talent_keys.respawn_time_reduction then
 		time = time + self.talent_keys.respawn_time_reduction
 	end
+
+	local bloodstone = self:FindItemInInventory("item_bloodstone")
+	if bloodstone then
+		time = time - bloodstone:GetCurrentCharges() * bloodstone:GetSpecialValueFor("respawn_time_reduction")
+		print("Reduced by ", bloodstone:GetCurrentCharges() * bloodstone:GetSpecialValueFor("respawn_time_reduction"))
+	end
+
 	return math.max(time, 3)
 end
 

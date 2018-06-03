@@ -120,7 +120,6 @@
 		"npc_dota_hero_undying"							"1"
 		"npc_dota_hero_razor"							"1"
 
-		"npc_arena_hero_arthas"							"1"
 		"npc_arena_hero_stargazer"						"1"
 		"npc_arena_hero_cherub"							"1"
 		"npc_arena_hero_queenofblades"					"1"

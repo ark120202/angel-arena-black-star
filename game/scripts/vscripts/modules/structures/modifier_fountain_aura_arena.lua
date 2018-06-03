@@ -1,5 +1,3 @@
-local FOUNTAIN_EFFECTIVE_TIME_THRESHOLD = 2100
-
 local FOUNTAIN_PERCENTAGE_MANA_REGEN = 15
 local FOUNTAIN_PERCENTAGE_HEALTH_REGEN = 15
 
@@ -27,24 +25,33 @@ if IsServer() then
 		self:GetParent():RemoveModifierByName("modifier_fountain_aura_invulnerability")
 	end
 
+	local centralBossKilled = false
+	Events:Register("bosses/kill/central", "modifier_fountain_aura_arena", function ()
+		centralBossKilled = true
+	end)
+	Events:Register("bosses/respawn/central", "modifier_fountain_aura_arena", function ()
+		centralBossKilled = false
+	end)
+
 	function modifier_fountain_aura_arena:OnIntervalThink()
 		local parent = self:GetParent()
 		while parent:HasModifier("modifier_saber_mana_burst_active") do
 			parent:RemoveModifierByName("modifier_saber_mana_burst_active")
 		end
+
+		local hasMod = parent:HasModifier("modifier_fountain_aura_invulnerability")
+		if not centralBossKilled and not hasMod then
+			parent:AddNewModifier(parent, nil, "modifier_fountain_aura_invulnerability", nil)
+		elseif centralBossKilled and hasMod then
+			parent:RemoveModifierByName("modifier_fountain_aura_invulnerability")
+		end
+
+		if parent:IsCourier() then return end
 		for i = 0, 11 do
 			local item = parent:GetItemInSlot(i)
 			if item and item:GetAbilityName() == "item_bottle_arena" then
 				item:SetCurrentCharges(3)
 			end
-		end
-
-		local okTime = GameRules:GetDOTATime(false, true) < FOUNTAIN_EFFECTIVE_TIME_THRESHOLD
-		local hasMod = parent:HasModifier("modifier_fountain_aura_invulnerability")
-		if okTime and not hasMod then
-			parent:AddNewModifier(parent, nil, "modifier_fountain_aura_invulnerability", nil)
-		elseif not okTime and hasMod then
-			parent:RemoveModifierByName("modifier_fountain_aura_invulnerability")
 		end
 	end
 end
@@ -55,7 +62,6 @@ modifier_fountain_aura_invulnerability = class({
 	GetAbsoluteNoDamagePhysical = function() return 1 end,
 	GetAbsoluteNoDamageMagical =  function() return 1 end,
 	GetAbsoluteNoDamagePure =     function() return 1 end,
-	OnTooltip =                   function() return FOUNTAIN_EFFECTIVE_TIME_THRESHOLD / 60 end,
 	GetTexture =                  function() return "modifier_invulnerable" end,
 })
 

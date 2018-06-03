@@ -8,7 +8,7 @@ LINKED_ABILITIES = {
 	phoenix_icarus_dive = {"phoenix_icarus_dive_stop"},
 	phoenix_fire_spirits = {"phoenix_launch_fire_spirit"},
 	ancient_apparition_ice_blast = {"ancient_apparition_ice_blast_release"},
-	wisp_tether_aghanims = {"wisp_tether_break_aghanims"},
+	wisp_tether = {"wisp_tether_break"},
 	alchemist_unstable_concoction = {"alchemist_unstable_concoction_throw"},
 	monkey_king_mischief = {"monkey_king_untransform"},
 	monkey_king_primal_spring = {"monkey_king_primal_spring_early"},
@@ -27,7 +27,6 @@ NOT_MULTICASTABLE_ABILITIES = {
 	"shredder_chakram",
 	"alchemist_unstable_concoction",
 	"alchemist_unstable_concoction_throw",
-	"riki_pocket_riki",
 	"elder_titan_ancestral_spirit",
 	"elder_titan_return_spirit",
 	"ember_spirit_sleight_of_fist",
@@ -35,34 +34,14 @@ NOT_MULTICASTABLE_ABILITIES = {
 
 REFRESH_LIST_IGNORE_REFRESHER = {
 	item_refresher_arena = true,
-	item_aegis_arena = true,
 	item_refresher_core = true,
-	omniknight_select_allies = true,
-	omniknight_select_enemies = true,
-}
-
-REFRESH_LIST_IGNORE_OMNIKNIGHT_SELECT = {
-	item_refresher_arena = true,
-	item_aegis_arena = true,
-	item_refresher_core = true,
-	item_titanium_bar = true,
-	item_coffee_bean = true,
-
-	omniknight_select_allies = true,
-	omniknight_select_enemies = true,
 }
 
 REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 	item_refresher_arena = true,
-	item_aegis_arena = true,
 	item_refresher_core = true,
+	item_black_king_bar = true,
 	item_titanium_bar = true,
-	item_black_king_bar_arena = true,
-	item_black_king_bar_2 = true,
-	item_black_king_bar_3 = true,
-	item_black_king_bar_4 = true,
-	item_black_king_bar_5 = true,
-	item_black_king_bar_6 = true,
 	item_coffee_bean = true,
 
 	destroyer_body_reconstruction = true,
@@ -71,7 +50,6 @@ REFRESH_LIST_IGNORE_BODY_RECONSTRUCTION = {
 REFRESH_LIST_IGNORE_REARM = {
 	tinker_rearm_arena = true,
 	item_refresher_arena = true,
-	item_aegis_arena = true,
 	item_refresher_core = true,
 	item_titanium_bar = true,
 	item_guardian_greaves_arena = true,
@@ -92,9 +70,6 @@ REFRESH_LIST_IGNORE_REARM = {
 	item_black_king_bar_4 = true,
 	item_black_king_bar_5 = true,
 	item_black_king_bar_6 = true,
-
-	omniknight_select_allies = true,
-	omniknight_select_enemies = true,
 
 	destroyer_body_reconstruction = true,
 	stargazer_cosmic_countdown = true,
@@ -118,6 +93,9 @@ BOSS_BANNED_ABILITIES = {
 	item_hurricane_pike = true,
 	rubick_telekinesis = true,
 	item_demon_king_bar = true,
+	morphling_adaptive_strike_str = true,
+	item_spirit_helix = true,
+	pugna_life_drain = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
@@ -136,10 +114,15 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	centaur_stampede = true,
 	obsidian_destroyer_arcane_orb = true,
 	spectre_dispersion = true,
+	skywrath_mage_arcane_bolt = true,
+	centaur_return = true,
+	huskar_life_break = true,
+	item_spirit_helix = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
 	["freya_pain_reflection"] = true,
+	["spectre_dispersion"] = true,
 }
 
 ARENA_NOT_CASTABLE_ABILITIES = {
@@ -152,14 +135,13 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 	["enigma_midnight_pulse"] = GetAbilitySpecial("enigma_midnight_pulse", "radius"),
 	["abyssal_underlord_firestorm"] = GetAbilitySpecial("abyssal_underlord_firestorm", "radius"),
 	["skywrath_mage_mystic_flare"] = GetAbilitySpecial("skywrath_mage_mystic_flare", "radius"),
-	["warlock_upheaval_arena"] = GetAbilitySpecial("warlock_upheaval_arena", "aoe"),
 }
 
 PERCENT_DAMAGE_MODIFIERS = {
 }
 
 DISABLE_HELP_ABILITIES = {
-	wisp_tether_aghanims = true,
+	wisp_tether = true,
 	keeper_of_the_light_recall = true,
 	chen_test_of_faith_teleport = true,
 	oracle_purifying_flames = true,

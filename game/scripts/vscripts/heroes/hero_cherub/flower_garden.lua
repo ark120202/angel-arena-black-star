@@ -23,6 +23,7 @@ function CreatePlot(keys)
 		health = ability:GetLevelSpecialValueFor("flower_health_scepter", level)
 	end
 
+	plot:SetBaseMaxHealth(health)
 	plot:SetMaxHealth(health)
 	plot:SetHealth(health)
 	plot.level = level
@@ -52,8 +53,11 @@ function ChooseFlower(keys)
 	local attack_rate = ability:GetLevelSpecialValueFor("attack_rate", ability:GetLevel() - 1)
 	local hp = caster:GetMaxHealth()
 	ReplaceAbilities(caster, ability_name, ability_name .. "_enabled", true, false)
+
+	caster:SetBaseMaxHealth(hp)
 	caster:SetMaxHealth(hp)
 	caster:SetHealth(hp)
+
 	if caster == PLAYER_DATA[caster:GetPlayerOwnerID()].Cherub_Flower_Garden.LatestPlotEntity then
 		PLAYER_DATA[caster:GetPlayerOwnerID()].Cherub_Flower_Garden.LatestPlotEntity = nil
 	end
@@ -70,6 +74,8 @@ function ChooseFlower(keys)
 			end)
 		end
 	end
+
+	caster:SetModelScale(1)
 	if ability_name == "cherub_flower_white_rose" then
 		caster:SetModel("models/props_debris/lotus_flower001.vmdl")
 		caster:SetOriginalModel("models/props_debris/lotus_flower001.vmdl")
@@ -98,9 +104,9 @@ function ChooseFlower(keys)
 		caster:SetOriginalModel("models/heroes/enchantress/enchantress_flower.vmdl")
 		caster:SetModelScale(4)
 	elseif ability_name == "cherub_flower_purple_lotus" then
-		caster:SetModel("models/props_nature/lily_flower01.vmdl")
-		caster:SetOriginalModel("models/props_nature/lily_flower01.vmdl")
-		caster:SetModelScale(1.5)
+		caster:SetModel("models/props_debris/lotus_flower003.vmdl")
+		caster:SetOriginalModel("models/props_debris/lotus_flower003.vmdl")
+		caster:SetModelScale(0.75)
 		caster:SetRenderColor(220, 0, 255)
 	end
 end

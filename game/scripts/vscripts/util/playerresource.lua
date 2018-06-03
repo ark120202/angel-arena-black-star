@@ -56,7 +56,11 @@ function CDOTA_PlayerResource:SetPlayerTeam(playerID, newTeam)
 		local skill = hero:GetAbilityByIndex(i)
 		if skill then
 			--print(skill.GetIntrinsicModifierName and skill:GetIntrinsicModifierName())
-			if skill.GetIntrinsicModifierName and skill:GetIntrinsicModifierName() then
+			if (
+				skill.GetIntrinsicModifierName and
+				skill:GetIntrinsicModifierName() and
+				skill:GetAbilityName() ~= "meepo_divided_we_stand"
+		 	) then
 				RecreateAbility(hero, skill)
 			end
 		end
@@ -110,7 +114,9 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 			for i = 0, hero:GetAbilityCount() - 1 do
 				local ability = hero:GetAbilityByIndex(i)
 				if ability then
-					ability:SetLevel(0)
+					if ability:GetKeyValue("NoAbandonCleanup") ~= 1 then
+						ability:SetLevel(0)
+					end
 					ability:SetHidden(true)
 					ability:SetActivated(false)
 					--UTIL_Remove(ability)
@@ -151,6 +157,8 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 				end)
 			end
 		end
+
+		Duel:EndIfFinished()
 	end
 end
 

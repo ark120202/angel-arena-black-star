@@ -1,5 +1,10 @@
 "DOTAAbilities"
 {
+	"item_blink"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 	"item_dust"
 	{
 		"SecretShop"					"0"
@@ -186,14 +191,6 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"AbilitySpecial"
-		{
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"		"2.5"
-			}
-		}
 	}
 	"item_ghost"
 	{
@@ -576,7 +573,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"3.0"
+				"sheep_duration"		"1.5"
 			}
 		}
 	}
@@ -596,6 +593,16 @@
 		"SideShop"						"0"
 	}
 	"item_cyclone"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_aether_lens"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_aether_lens"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
@@ -651,12 +658,42 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
+	"item_recipe_heart"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_heart"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_black_king_bar"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_black_king_bar"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
 	"item_recipe_shivas_guard"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
 	"item_shivas_guard"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_bloodstone"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_bloodstone"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
@@ -1015,7 +1052,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"poison_duration"		"2.5"
-			}			
+			}
 		}
 	}
 	"item_recipe_ancient_janggo"
@@ -1075,6 +1112,29 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+	}
+	"item_recipe_heavens_halberd"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_heavens_halberd"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"10"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarm_range"	"2.0"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarm_melee"	"1.5"
+			}
+		}
 	}
 	"item_recipe_ring_of_aquila"
 	{
@@ -1139,13 +1199,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen"		"2.0"
+				"hp_regen"		"1"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"replenish_amount"		"250"
-			}	
+			}
 		}
 	}
 	"item_recipe_travel_boots_2"
@@ -1392,6 +1452,36 @@
 		"SideShop"						"0"
 	}
 	"item_nullifier"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_sange"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_sange"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_yasha"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_yasha"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_recipe_sange_and_yasha"
+	{
+		"SecretShop"					"0"
+		"SideShop"						"0"
+	}
+	"item_sange_and_yasha"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"

@@ -269,16 +269,10 @@ function OnMinimapClickSpawnBox(team, level, index) {
 	});
 }
 
-var russianLangs = [
-	'russian',
-	'ukrainian',
-	'bulgarian'
-];
-
 function OnAdsClicked() {
 	var context = $.GetContextPanel();
 	$.Schedule(context.BHasClass('AdsClicked') ? 0 : .35, function() {
-		$.DispatchEvent('ExternalBrowserGoToURL', 'https://www.dota-aabs.com/ads/hero_selection/go');
+		$.DispatchEvent('ExternalBrowserGoToURL', 'https://sgm-luck.ru/?utm_source=dota2&utm_medium=baner&utm_campaign=Angel_Arena_Black_Star');
 	});
 	if (!context.BHasClass('AdsClicked')){
 		context.AddClass('AdsClicked');
@@ -347,16 +341,15 @@ function ShowHeroPreviewTab(tabID) {
 	$('#HeroListPanel').RemoveAndDeleteChildren();
 	var localPlayerId = Game.GetLocalPlayerID();
 	if (Players.IsValidPlayerID(localPlayerId) && !Players.IsSpectator(localPlayerId)) {
-		$('#AdsBanner').SetImage('https://www.dota-aabs.com/ads/hero_selection/' + (russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png'))
 		_DynamicMinimapSubscribe($('#MinimapDynamicIcons'), function(ptid) {
 			MinimapPTIDs.push(ptid);
 		});
 		DynamicSubscribePTListener('hero_selection_available_heroes', UpdateMainTable);
 		$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
-		var gamemodeType = Options.IsEquals('FailedRankedGame') ? 'ranked_failed' : Options.GetMapInfo().gamemode;
-		if (gamemodeType === 'custom_abilities') gamemodeType =
+		var gamemode = Options.GetMapInfo().gamemode;
+		if (gamemode === 'custom_abilities') gamemode =
 			Options.IsEquals('EnableAbilityShop') ? 'ability_shop' : Options.IsEquals('EnableRandomAbilities') ? 'random_omg' : '';
-		$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + gamemodeType);
+		$('#GameModeInfoGamemodeLabel').text = $.Localize('arena_game_mode_type_' + gamemode);
 
 		if ($.GetContextPanel().PTID_hero_selection) PlayerTables.UnsubscribeNetTableListener($.GetContextPanel().PTID_hero_selection);
 		DynamicSubscribePTListener('hero_selection', UpdateHeroesSelected, function(ptid) {

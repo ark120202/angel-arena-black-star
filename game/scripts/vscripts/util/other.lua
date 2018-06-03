@@ -109,28 +109,6 @@ function HasDamageFlag(damage_flags, flag)
 	return bit.band(damage_flags, flag) == flag
 end
 
-function DrugEffectStrangeMove(target, amplitude)
-	if not target:IsStunned() then
-		FindClearSpaceForUnit(target, target:GetAbsOrigin() + Vector(RandomInt(-amplitude, amplitude), RandomInt(-amplitude, amplitude), 0), false)
-	end
-end
-
-function DrugEffectRandomParticles(target, duration)
-	--TODO Different particles
-	for _,v in ipairs(FindUnitsInRadius(target:GetTeamNumber(), target:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)) do
-		local particle = ParticleManager:CreateParticleForPlayer("particles/dark_smoke_test.vpcf", PATTACH_ABSORIGIN, v, target:GetPlayerOwner())
-		Timers:CreateTimer(duration, function()
-			ParticleManager:DestroyParticle(particle, false)
-		end)
-	end
-end
-
-function GetDrugDummyAbility(itemName)
-	local abilityName = string.gsub(itemName, "item_", "dummy_drug_")
-	local ability = DRUG_DUMMY:AddAbility(abilityName)
-	return ability
-end
-
 function GetLevelValue(value, level)
 	local split = {}
 	for i in string.gmatch(value, "%S+") do
@@ -527,14 +505,6 @@ function UnitVarToPlayerID(unitvar)
 	return -1
 end
 
-function CreateSimpleBox(point1, point2)
-	local hlen = point2.y-point1.y
-	local cen = point1.y+hlen/2
-	local new1 = Vector(point1.x, cen, 0)
-	local new2 = Vector(point2.x, cen, point2.y)
-	return Physics:CreateBox(new2, new1, hlen, true)
-end
-
 function FindUnitsInBox(teamNumber, vStartPos, vEndPos, cacheUnit, teamFilter, typeFilter, flagFilter)
 	local hlen = (vEndPos.y-vStartPos.y) / 2
 	local cen = vStartPos.y+hlen
@@ -838,4 +808,12 @@ function AnyUnitHasModifier(name, caster)
 		end
 	end
 	return false
+end
+
+function ExpandVector(vec, by)
+	return Vector(
+		(math.abs(vec.x) + by) * math.sign(vec.x),
+		(math.abs(vec.y) + by) * math.sign(vec.y),
+		(math.abs(vec.z) + by) * math.sign(vec.z)
+	)
 end

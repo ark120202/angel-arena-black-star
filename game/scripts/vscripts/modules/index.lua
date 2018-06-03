@@ -1,4 +1,6 @@
 local modules = {
+	"events",
+
 	"bosses",
 	"custom_abilities",
 	"custom_runes",
@@ -17,7 +19,6 @@ local modules = {
 	"structures",
 	"attributes",
 	"antiafk",
-	"events_helper",
 	"teams",
 	"meepo_fixes", -- until rewrite
 	"weather",

@@ -4,12 +4,8 @@ MODIFIERS_DEATH_PREVENTING = {
 	"modifier_abaddon_aphotic_shield",
 	"modifier_abaddon_borrowed_time",
 	"modifier_nyx_assassin_spiked_carapace",
-	"modifier_crystal_maiden_glacier_tranqulity_buff",
 	"modifier_skeleton_king_reincarnation_life_saver",
 	"modifier_skeleton_king_reincarnation_ally",
-	"modifier_item_aegis_arena",
-	"modifier_item_aegis_arena_reincarnation",
-	"modifier_item_aegis_arena_life_saver",
 	"modifier_item_titanium_bar_active",
 	"modifier_fountain_aura_arena",
 	"modifier_mana_shield_arena",
@@ -19,7 +15,6 @@ MODIFIERS_DEATH_PREVENTING = {
 
 DUEL_PURGED_MODIFIERS = {
 	"modifier_life_stealer_infest",
-	"modifier_pocket_riki_hide",
 	"modifier_tether_ally_aghanims",
 	"modifier_life_stealer_assimilate",
 	"modifier_life_stealer_assimilate_effect",
@@ -40,6 +35,10 @@ MODIFIERS_TRUESIGHT = {
 ONCLICK_PURGABLE_MODIFIERS = {
 	"modifier_doppelganger_mimic",
 	"modifier_tether_ally_aghanims"
+}
+
+UNDESTROYABLE_MODIFIERS = {
+	modifier_razor_static_link_debuff = true,
 }
 
 MOVEMENT_SPEED_MODIFIERS = {
@@ -64,9 +63,6 @@ MOVEMENT_SPEED_MODIFIERS = {
 
 	modifier_item_scythe_of_sun_hex = function(unit)
 		return unit:FindModifierByName("modifier_item_scythe_of_sun_hex"):GetModifierMoveSpeed_Limit()
-	end,
-	modifier_chronosphere_speed_lua = function(unit)
-		return unit:FindModifierByName("modifier_chronosphere_speed_lua"):GetModifierMoveSpeed_Limit()
 	end,
 	modifier_destroyer_frenzy = function(unit)
 		return unit:FindModifierByName("modifier_destroyer_frenzy"):GetModifierMoveSpeed_Limit()
@@ -137,36 +133,6 @@ ATTACK_MODIFIERS = {
 }
 
 MODIFIER_PROC_PRIORITY = {
-	nightshadow = {
-		modifier_item_nightshadow_unique = 1,
-		modifier_item_nightshadow_and_sange = 2,
-		modifier_item_nightshadow_and_yasha_unique = 3,
-		modifier_item_splitshot_int_unique = 4,
-		modifier_item_three_spirits_blades_unique = 5,
-		modifier_item_splitshot_ultimate_unique = 6,
-		modifier_item_elemental_fury_unique = 7,
-	},
-	yasha = {
-		modifier_item_yasha_arena_unique = 1,
-		modifier_item_sange_and_yasha_unique = 2,
-		modifier_item_nightshadow_and_yasha_unique = 3,
-		modifier_item_splitshot_agi_unique = 4,
-		modifier_item_manta_arena_unique = 5,
-		modifier_item_three_spirits_blades_unique = 6,
-		modifier_item_diffusal_style_unique = 7,
-		modifier_item_splitshot_ultimate_unique = 8,
-		modifier_item_elemental_fury_unique = 9,
-	},
-	sange = {
-		modifier_item_sange_arena_unique = 1,
-		modifier_item_sange_and_yasha_unique = 2,
-		modifier_item_nightshadow_and_sange = 3,
-		modifier_item_heavens_halberd_arena_unique = 4,
-		modifier_item_splitshot_str_unique = 5,
-		modifier_item_three_spirits_blades_unique = 6,
-		modifier_item_splitshot_ultimate_unique = 7,
-		modifier_item_elemental_fury_unique = 8,
-	},
 	desolator = {
 		modifier_item_desolator2_arena = 1,
 		modifier_item_desolator3_arena = 2,

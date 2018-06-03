@@ -543,38 +543,38 @@
 			}
 			"06"
 			{
+				"var_type"					"FIELD_INTEGER"
+				"all_damage_bonus_pct"		"10"
+			}
+			"07"
+			{
 				"var_type"				"FIELD_INTEGER"
 				"corruption_armor"		"-70"
 			}
-			"07"
+			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"corruption_duration"	"5.0"
 			}
-			"08"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cold_movement_speed"	"-45"
 			}
-			"09"
+			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cold_attack_speed"		"-400"
 			}
-			"10"
+			"11"
 			{
 				"var_type"							"FIELD_FLOAT"
 				"poison_damage_per_second"			"350"
 			}
-			"11"
+			"12"
 			{
 				"var_type"							"FIELD_FLOAT"
 				"poison_damage_interval"			"1.0"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-			   	"all_damage_bonus_pct"      "10"
 			}
 		}
 
@@ -605,6 +605,7 @@
 
 				"Properties"
 				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%all_damage_bonus_pct"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
@@ -623,7 +624,7 @@
 					}
 				}
 			}
-			"modifier_item_demons_paw"
+			"modifier_item_demons_paw_unique"
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"

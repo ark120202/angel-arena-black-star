@@ -54,8 +54,6 @@ custom_talents_talent_cooldown_reduction_pct: Уменьшение переза�
 custom_talents_talent_cooldown_reduction_pct_description: 'Уменьшает время перезарядки всех способностей и предметов на {%cooldown_reduction_pct%}'
 custom_talents_talent_hero_pudge_hook_splitter: Hook Splitter
 custom_talents_talent_hero_pudge_hook_splitter_description: 'Pudge бросает {hook_amount} крюков, а не 1'
-custom_talents_talent_hero_arthas_vsolyanova_bunus_chance: Mega Solyara
-custom_talents_talent_hero_arthas_vsolyanova_bunus_chance_description: 'Увеличивает шанс залить соляру в {chance_multiplier} раза'
 custom_talents_talent_hero_arc_warden_double_spark: Double Spark Wraith
 custom_talents_talent_hero_arc_warden_double_spark_description: Каждое применение Spark Wraith призывает две призрачные искры
 custom_talents_talent_hero_apocalypse_apocalypse_no_death: Protection from Apocalypse
@@ -86,5 +84,3 @@ custom_talents_talent_hero_stegius_desolating_touch: 'Истинное каса�
 custom_talents_talent_hero_stegius_desolating_touch_description: 'Desolating Touch за каждый удар снижает {%armor_per_hit_pct%} базовой брони цели. '
 custom_talents_talent_hero_stegius_rage_of_desolus: 'Ярость Дезолуса'
 custom_talents_talent_hero_stegius_rage_of_desolus_description: 'Базовое время атаки героя под действием способности "Rage Of Desolus" становится равным {base_attack_time}.'
-custom_talents_talent_wisp_tether_aghanim_effect: 'Tether дает эффект аганима'
-custom_talents_talent_wisp_tether_aghanim_effect_description: 'Герои, связанные с вами, получают эффект аганима.'

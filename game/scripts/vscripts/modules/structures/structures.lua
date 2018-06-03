@@ -8,6 +8,21 @@ ModuleLinkLuaModifier(..., "modifier_fountain_aura_arena")
 ModuleLinkLuaModifier(..., "modifier_fountain_aura_invulnerability", "modifier_fountain_aura_arena")
 ModuleLinkLuaModifier(..., "modifier_fountain_aura_enemy")
 
+Events:Register("activate", "structures", function ()
+	Structures:AddHealers()
+	Structures:CreateShops()
+end)
+
+Events:Register("bosses/kill/central", "fountain", function ()
+	Notifications:TopToAll({ text="#structures_fountain_protection_weak_line1", duration = 7 })
+	Notifications:TopToAll({ text="#structures_fountain_protection_weak_line2", duration = 7 })
+end)
+
+Events:Register("bosses/respawn/central", "fountain", function ()
+	Notifications:TopToAll({ text="#structures_fountain_protection_strong_line1", duration = 7 })
+	Notifications:TopToAll({ text="#structures_fountain_protection_strong_line2", duration = 7 })
+end)
+
 function Structures:AddHealers()
 	for _,v in ipairs(Entities:FindAllByClassname("npc_dota_healer")) do
 		local model = TEAM_HEALER_MODELS[v:GetTeamNumber()]
@@ -16,6 +31,8 @@ function Structures:AddHealers()
 		if model.color then v:SetRenderColor(unpack(model.color)) end
 		v:RemoveModifierByName("modifier_invulnerable")
 		v:AddNewModifier(v, nil, "modifier_arena_healer", nil)
+		v:FindAbilityByName("healer_taste_of_armor"):SetLevel(1)
+		v:FindAbilityByName("healer_bottle_refill"):SetLevel(1)
 	end
 end
 

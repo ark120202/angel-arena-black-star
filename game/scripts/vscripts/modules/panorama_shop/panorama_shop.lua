@@ -13,6 +13,10 @@ if PanoramaShop == nil then
 	}
 end
 
+Events:Register("activate", "panorama_shop", function ()
+	PanoramaShop:InitializeItemTable()
+end)
+
 function PanoramaShop:PushStockInfoToAllClients()
 	for team,tt in pairs(PanoramaShop.StocksTable) do
 		local ItemStocks = PlayerTables:GetTableValue("panorama_shop_data", "ItemStocks_team" .. team) or {}
@@ -226,6 +230,10 @@ function PanoramaShop:SellItem(playerID, unit, item)
 		unit:IsStunned() then
 		return
 	end
+	if GameRules:IsGamePaused() then
+		Containers:DisplayError(playerID, "#dota_hud_error_game_is_paused")
+		return
+	end
 	if not item:IsSellable() or MeepoFixes:IsMeepoClone(unit) then
 		Containers:DisplayError(playerID, "dota_hud_error_cant_sell_item")
 		return
@@ -236,17 +244,6 @@ function PanoramaShop:SellItem(playerID, unit, item)
 	end
 	if GameRules:GetGameTime() - item:GetPurchaseTime() > 10 then
 		cost = cost / 2
-	end
-	if itemname == "item_pocket_riki" then
-		cost = Kills:GetGoldForKill(item.RikiContainer)
-		item.RikiContainer:TrueKill(item, unit)
-		Kills:SetKillStreak(item.RikiContainer:GetPlayerID(), 0)
-		unit:RemoveItem(item)
-		unit:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
-		unit:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
-		unit:RemoveModifierByName("modifier_invisible")
-		-- TODO
-		-- GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber())
 	end
 	UTIL_Remove(item)
 	Gold:AddGoldWithMessage(unit, cost, playerID)
@@ -390,6 +387,11 @@ end
 function PanoramaShop:BuyItem(playerID, unit, itemName)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	local team = PlayerResource:GetTeam(playerID)
+	if GameRules:IsGamePaused() then
+		Containers:DisplayError(playerID, "#dota_hud_error_game_is_paused")
+		return
+	end
+
 	if Duel:IsDuelOngoing() then
 		Containers:DisplayError(playerID, "#dota_hud_error_cant_purchase_duel_ongoing")
 		return

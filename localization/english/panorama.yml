@@ -9,7 +9,6 @@ hero_selection_phase_3: Strategy Time
 hero_selection_phase_4: Loading...
 
 arena_game_mode_type_: All Pick
-arena_game_mode_type_ranked_failed: <font color='red'>All Pick</font>
 arena_game_mode_type_ranked: Ranked All Pick
 arena_game_mode_type_ability_shop: Ability Shop
 arena_game_mode_type_random_omg: Random OMG
@@ -34,7 +33,6 @@ casino_slotmachine_roll_result_streak322_enemies_p3: "\_ rolled 322."
 casino_slotmachine_roll_result_streak_no: You didn't win anything this time
 containers_shop_secret_name: Casino Shop
 containers_shop_duel_name: Duel Shop
-arthas_vsolyanova_notifiaction: NAAAAAAAAAAAAAAAA ✓✓✓✓
 
 hero_selection_select_hero: Select Hero
 hero_selection_button_select_hero: SELECT
@@ -122,3 +120,12 @@ ranked_top_players: Best Players
 ranked_top_more: Open Top 100...
 
 teams_kill_weight_tooltip: Killing heroes of that team gives {d:kill_weight} points
+
+structures_fountain_protection_weak_line1: The Netherdrake was killed
+structures_fountain_protection_weak_line2: Fountain Protection became weaker
+
+structures_fountain_protection_strong_line1: The Netherdrake is up
+structures_fountain_protection_strong_line2: Fountain Protection became stronger
+
+arena_setup_loading: Authorizing the match...
+arena_setup_safe_to_leave: This game is now safe to leave.

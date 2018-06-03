@@ -187,6 +187,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_lycan_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"25"
+			}
+		}
+	}
 	"special_bonus_unique_lycan_3"
 	{
 		"AbilitySpecial"
@@ -217,17 +228,6 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"value"				"440"
-			}
-		}
-	}
-	"special_bonus_unique_windranger_5"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"4"
 			}
 		}
 	}
@@ -788,7 +788,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"3000"
+				"value"				"1000"
 			}
 		}
 	}
@@ -1041,7 +1041,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"120"
+				"value"				"-80"
 			}
 		}
 	}
@@ -1647,28 +1647,6 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"value"				"50"
-			}
-		}
-	}
-	"special_bonus_unique_wraith_king_3"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"120"
-			}
-		}
-	}
-	"special_bonus_unique_wraith_king_5"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"10"
 			}
 		}
 	}

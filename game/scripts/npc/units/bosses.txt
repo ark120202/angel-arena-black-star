@@ -17,7 +17,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"55"
+		"ArmorPhysical"				"85"
 		"MagicalResistance"			"55"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -75,7 +75,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"55"
+		"ArmorPhysical"				"85"
 		"MagicalResistance"			"55"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -131,7 +131,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"80"
+		"ArmorPhysical"				"110"
 		"MagicalResistance"			"65"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -189,7 +189,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"boss_armor"
 
-		"ArmorPhysical"				"80"
+		"ArmorPhysical"				"110"
 		"MagicalResistance"			"65"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -246,7 +246,7 @@
 		"Ability1"					"boss_armor"
 		"Ability2"					"boss_central_passive"
 
-		"ArmorPhysical"				"125"
+		"ArmorPhysical"				"160"
 		"MagicalResistance"			"80"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -305,12 +305,12 @@
 		"Ability1"					"boss_freya_sharp_ice_shards"
 		"Ability5"					"boss_armor"
 
-		"ArmorPhysical"				"110"
+		"ArmorPhysical"				"145"
 		"MagicalResistance"			"80"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"5200"
-		"AttackDamageMax"			"6600"
+		"AttackDamageMin"			"8500"
+		"AttackDamageMax"			"10200"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.6"
 		"AttackAnimationPoint"		"0.2"
@@ -362,12 +362,12 @@
 		"Ability1"					""//"boss_zaken_"
 		"Ability5"					"boss_armor"
 
-		"ArmorPhysical"				"110"
+		"ArmorPhysical"				"145"
 		"MagicalResistance"			"80"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"5200"
-		"AttackDamageMax"			"6600"
+		"AttackDamageMin"			"8500"
+		"AttackDamageMax"			"10200"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.6"
 		"AttackAnimationPoint"		"0.2"
@@ -419,7 +419,7 @@
 		"Ability1"					"boss_freya_sharp_ice_shards"
 		"Ability5"					"boss_armor"
 
-		"ArmorPhysical"				"120"
+		"ArmorPhysical"				"150"
 		"MagicalResistance"			"60"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -480,7 +480,7 @@
 		"Ability5"	"boss_kel_thuzad_summon_undead"
 		"Ability6"	"boss_kel_thuzad_erebus"
 
-		"ArmorPhysical"				"150"
+		"ArmorPhysical"				"180"
 		"MagicalResistance"			"40"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
