@@ -1,16 +1,26 @@
 function ArenaZoneOnStartTouch(trigger)
-	if Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS then
-		table.insert(Heroes_In_Arena_Zone, trigger.activator)
+	if Duel:IsDuelOngoing() then
+		HEROES_ON_DUEL[trigger.activator] = true
 	end
 end
 
 function ArenaZoneOnEndTouch(trigger)
-	table.removeByValue(Heroes_In_Arena_Zone, trigger.activator)
 	local activator = trigger.activator
-	if activator and Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS and (not activator.IsWukongsSummon or not activator:IsWukongsSummon()) then
+	HEROES_ON_DUEL[activator] = nil
+
+	if not IsValidEntity(activator) then return end
+	if activator.IsWukongsSummon and activator:IsWukongsSummon() then return end
+
+	Timers:CreateTimer(function()
+		if not IsValidEntity(activator) then return end
+		if not Duel:IsDuelOngoing() then return end
+
+		-- Teleports are also triggering OnEndTouch event
+		if HEROES_ON_DUEL[activator] then return end
+
 		local position = Entities:FindByName(nil, "target_mark_arena_team" .. activator:GetTeamNumber()):GetAbsOrigin()
 		activator:Teleport(position)
-	end
+	end)
 end
 
 local OUT_OF_GAME_UNITS = {
