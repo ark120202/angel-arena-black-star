@@ -4,7 +4,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"2100"
+		"ItemCost"						"1200"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena"
 		"ItemRequirements"
@@ -17,7 +17,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"2100"
+		"ItemCost"						"1350"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_2"
 		"ItemRequirements"
@@ -30,7 +30,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"2100"
+		"ItemCost"						"1350"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_3"
 		"ItemRequirements"
@@ -43,7 +43,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"2100"
+		"ItemCost"						"1350"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_4"
 		"ItemRequirements"
@@ -56,7 +56,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"2100"
+		"ItemCost"						"1350"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_5"
 		"ItemRequirements"
