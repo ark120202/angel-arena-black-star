@@ -9,6 +9,7 @@ function ArenaZoneOnEndTouch(trigger)
 	HEROES_ON_DUEL[activator] = nil
 
 	if not IsValidEntity(activator) then return end
+	if not activator.OnDuel then return end
 	if activator.IsWukongsSummon and activator:IsWukongsSummon() then return end
 
 	Timers:CreateTimer(function()
