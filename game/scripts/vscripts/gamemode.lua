@@ -13,7 +13,6 @@ local requirements = {
 	"libraries/attachments",
 	"libraries/playertables",
 	"libraries/containers",
-	-- "libraries/modmaker",
 	-- "libraries/pathgraph",
 	"libraries/selection",
 	"libraries/worldpanels",
