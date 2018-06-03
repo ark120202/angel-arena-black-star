@@ -9155,7 +9155,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"250 325 400 475 525 575 625"
+				"radius"	"280 345 420 425 525 675 23625"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_2"
 			}
 			"02"
@@ -9172,7 +9172,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius_tree"	"250 325 400 475 525 575 625"
+				"radius_tree"	"280 345 420 425 525 675 23625"
 			}
 			"99"
 			{
@@ -9202,7 +9202,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_second"	"30 45 60 75 90 105 120"
+				"damage_per_second"	"30 45 60 65 85 95 110"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer"
 			}
 
@@ -9214,7 +9214,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.05"
+				"damage_from_current_health_pct" "0.03"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
