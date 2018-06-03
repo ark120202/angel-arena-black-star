@@ -8155,7 +8155,7 @@
 		"ItemResult"					"item_scythe_of_sun"
 		"ItemRequirements"
 		{
-			"01"						"item_solar_crest;item_sheepstick;item_aether_lens;item_fallen_star"
+			"01"						"item_solar_crest;item_sheepstick;item_aether_lens;item_fallen_star;item_soul_of_titan"
 		}
 	}
 
@@ -8202,7 +8202,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"20"
+				"bonus_armor"			"40"
 			}
 			"06"
 			{
