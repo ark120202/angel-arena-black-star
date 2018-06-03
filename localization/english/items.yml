@@ -444,6 +444,7 @@ DOTA_Tooltip_ability_item_skull_of_midas_kill_xp: 'KILL XP:'
 DOTA_Tooltip_ability_item_skull_of_midas_kill_gold: 'KILL GOLD:'
 DOTA_Tooltip_ability_item_chest_of_midas: Chest of Midas
 DOTA_Tooltip_ability_item_chest_of_midas_Description: '<h1>Passive: Golden Chest</h1> Each time you get attacked by enemy hero you get some gold and some experience.<br><br>Bosses attacks won''t give you any experience and are reducing your gold.'
+DOTA_Tooltip_ability_item_chest_of_midas_Note0: Illusion's attacks won't give you any gold.
 DOTA_Tooltip_ability_item_chest_of_midas_bonus_armor: +$armor
 DOTA_Tooltip_ability_item_chest_of_midas_xp: 'XP:'
 DOTA_Tooltip_ability_item_chest_of_midas_gold: 'GOLD:'
