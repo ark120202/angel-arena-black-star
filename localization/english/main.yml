@@ -201,7 +201,7 @@ DOTA_Tooltip_modifier_healer_taste_of_armor_effect: Taste of Armor
 DOTA_Tooltip_modifier_healer_taste_of_armor_effect_Description: 'Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'
 
 DOTA_Tooltip_ability_healer_bottle_refill: Bottle Refill
-DOTA_Tooltip_ability_healer_bottle_refill_Description: Fills bottle in radius
+DOTA_Tooltip_ability_healer_bottle_refill_Description: Automatically refills Bottle's of nearby allies.
 DOTA_Tooltip_ability_healer_bottle_refill_radius: 'RADIUS:'
-DOTA_Tooltip_modifier_healer_bottle_refill_cooldown: Bottle Refill
-DOTA_Tooltip_modifier_healer_bottle_refill_cooldown_Description: Can`t fill bottle in shrine.
+DOTA_Tooltip_modifier_healer_bottle_refill_cooldown: Bottle Refill Cooldown
+DOTA_Tooltip_modifier_healer_bottle_refill_cooldown_Description: Temporary can`t fill Bottle's in shrines.
