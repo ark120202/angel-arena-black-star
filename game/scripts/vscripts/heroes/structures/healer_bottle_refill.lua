@@ -5,6 +5,10 @@ healer_bottle_refill = class({
 	GetIntrinsicModifierName = function() return "modifier_healer_bottle_refill" end,
 })
 
+function healer_bottle_refill:GetCooldown()
+	return self:GetSpecialValueFor("cooldown")
+end
+
 modifier_healer_bottle_refill = class({
 	IsPurgable = function() return false end,
 	IsHidden = function() return true end,
