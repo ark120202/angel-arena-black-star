@@ -204,7 +204,11 @@ function Duel:GetWinner()
 	local teams = {}
 	for team,tab in pairs(Duel.heroes_teams_for_duel) do
 		for _,unit in pairs(tab) do
-			if IsValidEntity(unit) and unit:IsAlive() then
+			if (
+				IsValidEntity(unit) and
+				unit:IsAlive() and
+				not PlayerResource:IsPlayerAbandoned(unit:GetPlayerID())
+		 	) then
 				if not table.contains(teams, team) and unit.OnDuel then
 					table.insert(teams, team)
 				end
@@ -310,4 +314,10 @@ end
 
 function Duel:IsDuelOngoing()
 	return Duel.DuelStatus == DOTA_DUEL_STATUS_IN_PROGRESS
+end
+
+function Duel:EndIfFinished()
+	if Duel:IsDuelOngoing() and Duel:GetWinner() ~= nil then
+		Duel:EndDuel()
+	end
 end

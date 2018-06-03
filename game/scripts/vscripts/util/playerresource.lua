@@ -157,6 +157,8 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 				end)
 			end
 		end
+
+		Duel:EndIfFinished()
 	end
 end
 
