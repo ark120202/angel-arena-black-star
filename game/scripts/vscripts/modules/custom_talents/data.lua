@@ -981,9 +981,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_slardar_2 = {
 		group = 9,
 	},
-	special_bonus_unique_slardar_3 = {
-		group = 10,
-	},
+	special_bonus_unique_slardar_3 = false,
 	special_bonus_unique_lina_1 = {
 		group = 5,
 	},
