@@ -112,7 +112,7 @@ function Options:LoadDefaultValues()
 	Options:SetInitialValue("TeamSetupMode", "open")
 	--Options:SetInitialValue("MapLayout", "5v5")
 
-	Options:SetInitialValue("BanningPhaseBannedPercentage", 40)
+	Options:SetInitialValue("BanningPhaseBannedPercentage", 0)
 	Options:SetInitialValue("MainHeroList", "Selection")
 
 	--Can be not networkable
@@ -179,6 +179,8 @@ function Options:LoadMapValues()
 				GameRules:FinishCustomGameSetup()
 			end)
 		end, true)
+	elseif gamemode == "" then
+		Options:SetValue("BanningPhaseBannedPercentage", 40)
 	end
 	if landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216
