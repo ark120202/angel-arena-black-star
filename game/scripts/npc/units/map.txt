@@ -64,6 +64,7 @@
 
 		"Ability1"					"filler_ability"
 		"Ability2"					"healer_taste_of_armor"
+		"Ability3"					"healer_bottle_refill"
 		"ArmorPhysical"				"20"
 		"MagicalResistance"			"0"
 

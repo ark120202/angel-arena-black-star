@@ -573,7 +573,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"3.0"
+				"sheep_duration"		"1.5"
 			}
 		}
 	}
@@ -1122,6 +1122,19 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"10"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarm_range"	"2.0"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarm_melee"	"1.5"
+			}
+		}
 	}
 	"item_recipe_ring_of_aquila"
 	{
