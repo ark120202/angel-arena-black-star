@@ -1,7 +1,6 @@
 LinkLuaModifier("modifier_healer_taste_of_armor", "heroes/structures/healer_taste_of_armor.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_healer_taste_of_armor_effect", "heroes/structures/healer_taste_of_armor.lua", LUA_MODIFIER_MOTION_NONE)
 
-
 healer_taste_of_armor = class({
 	GetIntrinsicModifierName = function() return "modifier_healer_taste_of_armor" end,
 })
@@ -40,5 +39,3 @@ end
 function modifier_healer_taste_of_armor_effect:GetModifierPhysicalArmorBonus()
 	return self:GetAbility():GetSpecialValueFor("aura_bonus_armor")
 end
-
-

@@ -6431,6 +6431,7 @@
 			{
 				"Passive"			"0"
 				"IsHidden"			"0"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%aura_bonus_attack_speed"
