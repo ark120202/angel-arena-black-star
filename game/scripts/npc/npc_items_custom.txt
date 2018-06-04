@@ -8904,24 +8904,19 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_gold"					"180"
+				"gold_per_stack"			"60"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_per_stack"			"60"
+				"stats_debuff_per_stack"		"-3"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stats_debuff_per_stack"		"-3"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"cooldown_per_stack"			"7"
 			}
-			"07"
+			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_stack"			"60"

@@ -1566,7 +1566,7 @@ DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
  <h1>Пассивная: Golden life</h1> After you use this item you get gold, in count %gold_per_stack% for every stack
   and reduce your  %stats_debuff_per_stack% stats per every stack.
-  If count of your stats is near 0,
+  If count of any of your stats is near 0,
   then after use you will get damage in size %damage_per_stack% per stack.
   With every use cooldown increases by %cooldown_per_stack% per stack.
 DOTA_Tooltip_modifier_item_golden_arrow: Golden Arrow Stacks
