@@ -573,7 +573,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"3.0"
+				"sheep_duration"		"1.5"
 			}
 		}
 	}
@@ -1127,12 +1127,12 @@
 			"10"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"disarm_range"	"3.0"
+				"disarm_range"	"1.5"
 			}
 			"11"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"disarm_melee"	"3.0"
+				"disarm_melee"	"2.0"
 			}
 		}
 	}

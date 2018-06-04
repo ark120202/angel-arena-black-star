@@ -6122,7 +6122,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 
 		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"20.0"
+		"AbilityCooldown"				"3.0"
 		"AbilitySharedCooldown"			"medallion;basher"
 
 		"AbilityCooldown"				"3.8"
@@ -6172,7 +6172,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.9"
+				"bash_duration"			"0.1"
 			}
 			"09"
 			{
