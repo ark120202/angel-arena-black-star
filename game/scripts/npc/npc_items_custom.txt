@@ -4438,7 +4438,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_stun"				"0.05"
+				"bash_stun"				"0"
 			}
 		}
 
