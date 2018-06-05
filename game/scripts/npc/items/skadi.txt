@@ -9,7 +9,7 @@
 		"ItemResult"					"item_skadi_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_point_booster;item_orb_of_venom"
+			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster;item_orb_of_venom"
 		}
 	}
 
@@ -49,7 +49,7 @@
 		"ItemResult"					"item_skadi_8"
 		"ItemRequirements"
 		{
-			"01"						"item_skadi_4;item_skadi_4"
+			"01"						"item_skadi_4;item_skadi_4;item_moon_dust"
 		}
 	}
 
@@ -71,12 +71,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"12 25 50 100"
+				"bonus_all_stats"		"25 50 100 200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"350 700 1400 2800"
+				"bonus_health"			"250 500 1000 1500"
 			}
 			"03"
 			{
@@ -118,12 +118,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"12 25 50 100"
+				"bonus_all_stats"		"25 50 100 200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"350 700 1400 2800"
+				"bonus_health"			"250 500 1000 1500"
 			}
 			"03"
 			{
@@ -165,12 +165,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"12 25 50 100"
+				"bonus_all_stats"		"25 50 100 200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"350 700 1400 2800"
+				"bonus_health"			"250 500 1000 1500"
 			}
 			"03"
 			{
@@ -212,12 +212,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"12 25 50 100"
+				"bonus_all_stats"		"25 50 100 200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"350 700 1400 2800"
+				"bonus_health"			"250 500 1000 1500"
 			}
 			"03"
 			{
