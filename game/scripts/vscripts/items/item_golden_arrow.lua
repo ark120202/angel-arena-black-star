@@ -17,12 +17,12 @@ if IsServer() then
 		)
 	end
 
-	function item_golden_arrow:CastFilterResult(hTarget)
+	function item_golden_arrow:CastFilterResult()
 		local caster = self:GetCaster()
 		return self:HasEnoughAttributes() or not caster:HasModifier("modifier_fountain_aura_arena") and UF_SUCCESS or UF_FAIL_CUSTOM
 	end
 
-	function item_golden_arrow:GetCustomCastError(hTarget)
+	function item_golden_arrow:GetCustomCastError()
 		local caster = self:GetCaster()
 		return caster:HasModifier("modifier_fountain_aura_arena") and "#arena_hud_error_cant_cast_on_fountain" or ""
 	end
@@ -30,40 +30,36 @@ if IsServer() then
 	function item_golden_arrow:OnSpellStart()
 		local caster = self:GetCaster()
 		local modifier = caster:FindModifierByName("modifier_item_golden_arrow_counter")
-
 		if not modifier then modifier = caster:AddNewModifier(caster, self, "modifier_item_golden_arrow_counter", nil) end
 		modifier:IncrementStackCount()
-
 		local stacks = modifier:GetStackCount()
-		local stats_debuff_per_stack = stacks * self:GetSpecialValueFor("stats_debuff_per_stack")
-		local damage = stacks * self:GetSpecialValueFor("damage_per_stack")
-		local cooldown = self:GetCooldown(self:GetLevel() ) + ( stacks * (self:GetSpecialValueFor("cooldown_per_stack")))
-		local new_gold = stacks * self:GetSpecialValueFor("gold_per_stack")
-
-		caster:EmitSound("Arena.Items.GoldenArrow.Activate")
 
 		local particle = ParticleManager:CreateParticle("particles/arena/items_fx/coffee_bean_refresh.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+		caster:EmitSound("Arena.Items.GoldenArrow.Activate")
 
-		if caster:IsRealHero() then
-			if self:HasEnoughAttributes() then
-				caster:ModifyStrength(stats_debuff_per_stack)
-				caster:ModifyAgility(stats_debuff_per_stack)
-				caster:ModifyIntellect(stats_debuff_per_stack)
-				Gold:AddGoldWithMessage(caster, new_gold)
-			else
-				ApplyDamage({
-					victim = caster,
-					attacker = caster,
-					damage = damage,
-					damage_type = DAMAGE_TYPE_PURE,
-					ability = self
-				})
-				Gold:AddGoldWithMessage(caster, new_gold)
-			end
-
-			self:StartCooldown(cooldown)
+		if not caster:IsRealHero() then return end
+		if self:HasEnoughAttributes() then
+			local stats_debuff_per_stack = self:GetSpecialValueFor("stats_debuff_per_stack") * stacks
+			caster:ModifyStrength(stats_debuff_per_stack)
+			caster:ModifyAgility(stats_debuff_per_stack)
+			caster:ModifyIntellect(stats_debuff_per_stack)
+		else
+			local damage = self:GetSpecialValueFor("damage_per_stack") * stacks
+			ApplyDamage({
+				victim = caster,
+				attacker = caster,
+				damage = damage,
+				damage_type = DAMAGE_TYPE_PURE,
+				ability = self
+			})
 		end
+
+		local gold = self:GetSpecialValueFor("gold_per_stack") * stacks
+		Gold:AddGoldWithMessage(caster, gold)
+
+		local cooldown = self:GetCooldown(self:GetLevel()) + (self:GetSpecialValueFor("cooldown_per_stack") * stacks)
+		self:StartCooldown(cooldown)
 	end
 end
 
