@@ -8237,11 +8237,6 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hex_damage_pct"		"10"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"hex_movement_speed"	"100"
 			}
 		}

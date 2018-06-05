@@ -1381,9 +1381,8 @@ DOTA_Tooltip_ability_item_scythe_of_sun_bonus_evasion: '%+$evasion'
 DOTA_Tooltip_ability_item_scythe_of_sun_cast_range_bonus: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_scythe_of_sun_spell_amp_pct: '%SPELL DAMAGE AMP:'
 # DOTA_Tooltip_ability_item_scythe_of_sun_hex_duration: 'HEX DURATION:' # Too much specials
-DOTA_Tooltip_ability_item_scythe_of_sun_hex_damage_pct: '%HEX DAMAGE INCREASE:'
 DOTA_Tooltip_modifier_item_scythe_of_sun_hex: Sheeped
-DOTA_Tooltip_modifier_item_scythe_of_sun_hex_Description: You are a sheep. Cannot attack or cast spells. Incoming damage increased by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, movement speed is limited to %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%
+DOTA_Tooltip_modifier_item_scythe_of_sun_hex_Description: You are a sheep. Cannot attack or cast spells. Movement speed is limited to %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%
 
 DOTA_Tooltip_ability_item_book_of_the_guardian: Book of the Guardian
 DOTA_Tooltip_ability_item_book_of_the_guardian_Description: |-
