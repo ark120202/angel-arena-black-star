@@ -97,3 +97,7 @@ function Weather:Think()
 	end
 	return 1/30
 end
+
+function Weather:GetPassedTime()
+	return GameRules:GetDOTATime(false, true) - PlayerTables:GetTableValue("weather", "changeTime")
+end
