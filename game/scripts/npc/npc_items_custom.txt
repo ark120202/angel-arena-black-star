@@ -4438,7 +4438,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_stun"				"0.05"
+				"bash_stun"				"0"
 			}
 		}
 
@@ -6122,7 +6122,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 
 		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"7.0"
+		"AbilityCooldown"				"3.0"
 		"AbilitySharedCooldown"			"medallion;basher"
 
 		"AbilityCooldown"				"3.8"
@@ -6172,7 +6172,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.9"
+				"bash_duration"			"0.1"
 			}
 			"09"
 			{
@@ -8741,7 +8741,7 @@
 		"ItemResult"					"item_unstable_quasar"
 		"ItemRequirements"
 		{
-			"01"						"item_fallen_star;item_awakened_cursed_eye;item_soul_of_titan"
+			"01"						"item_fallen_star;item_awakened_cursed_eye;"
 		}
 	}
 

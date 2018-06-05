@@ -467,7 +467,7 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttackRange"			"300"
-		"AttackRate"			"10"
+		"AttackRate"			"3.6"
 		"AttributeBaseStrength"	"24"
 		"AttributeBaseIntelligence"	"28"
 		"AttributeBaseAgility"	"20"
@@ -476,6 +476,7 @@
 		"AttributeAgilityGain"	"2.9"
 		"AttackDamageMin"		"30"
 		"AttackDamageMax"		"35"
+		"MovementSpeed"			"270"
 	}
 
 	"npc_arena_hero_saitama"

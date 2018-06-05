@@ -9,7 +9,7 @@
 		"ItemResult"					"item_skadi_arena"
 		"ItemRequirements"
 		{
-			"01"						"item_blade_of_alacrity;item_ogre_axe;item_staff_of_wizardry;item_point_booster;item_orb_of_venom"
+			"01"						"item_ultimate_orb;item_point_booster;item_orb_of_venom"
 		}
 	}
 
@@ -49,7 +49,7 @@
 		"ItemResult"					"item_skadi_8"
 		"ItemRequirements"
 		{
-			"01"						"item_skadi_4;item_skadi_4;item_moon_dust"
+			"01"						"item_skadi_4;item_skadi_4"
 		}
 	}
 

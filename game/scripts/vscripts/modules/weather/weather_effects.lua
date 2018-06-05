@@ -91,7 +91,8 @@ WEATHER_EFFECTS = {
 		},
 		dummyModifier = "modifier_weather_rain",
 		Think = function()
-			for _ =  1, 18 do
+			local bolts = math.floor(Weather:GetPassedTime()) - 1
+			for _ =  1, bolts do
 				CreateLightningBlot(GetGroundPosition(Vector(RandomInt(-MAP_LENGTH, MAP_LENGTH), RandomInt(-MAP_LENGTH, MAP_LENGTH), 0), nil))
 			end
 		end,
