@@ -1039,4 +1039,3 @@ DOTA_Tooltip_ability_item_golden_arrow_Description: >-
   то при использовании будет наносится урон в размере %damage_per_stack% за каждый стак.
   При каждом использовании перезарядка увеличивается на %cooldown_per_stack% за каждый стак.
 DOTA_Tooltip_ability_item_golden_arrow_Note0: Ecли в момент использования у вас не будет статов, и вы будете находится под защитой фонтана, способность не сработает.
-DOTA_Tooltip_modifier_item_golden_arrow: Golden Arrow Stacks

@@ -1,14 +1,14 @@
 LinkLuaModifier("modifier_item_golden_arrow", "items/item_golden_arrow.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_golden_arrow_counter", "items/item_golden_arrow.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_golden_arrow = class({
 	GetIntrinsicModifierName = function() return "modifier_item_golden_arrow" end
 })
 
 modifier_item_golden_arrow = class({
-	IsHidden = function() return false end,
+	IsHidden = function() return true end,
 	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
 	IsPurgable = function() return false end,
-	RemoveOnDeath = function() return false end,
 })
 
 function modifier_item_golden_arrow:DeclareFunctions()
@@ -29,9 +29,9 @@ end
 if IsServer() then
 	function item_golden_arrow:OnSpellStart()
 		local caster = self:GetCaster()
-		local modifier = caster:FindModifierByName("modifier_item_golden_arrow")
+		local modifier = caster:FindModifierByName("modifier_item_golden_arrow_counter")
 
-		if not modifier then modifier = caster:AddNewModifier(caster, self, "modifier_item_golden_arrow", nil) end
+		if not modifier then modifier = caster:AddNewModifier(caster, self, "modifier_item_golden_arrow_counter", nil) end
 		modifier:IncrementStackCount()
 
 		local stacks = modifier:GetStackCount()
@@ -66,3 +66,9 @@ if IsServer() then
 		end
 	end
 end
+
+modifier_item_golden_arrow_counter = class({
+	IsHidden = function() return false end,
+	IsPurgable = function() return false end,
+	RemoveOnDeath = function() return false end,
+})

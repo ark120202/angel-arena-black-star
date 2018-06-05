@@ -1569,4 +1569,4 @@ DOTA_Tooltip_ability_item_golden_arrow_Description: >-
   If count of any of your stats is near 0,
   then after use you will get damage in size %damage_per_stack% per stack.
   With every use cooldown increases by %cooldown_per_stack% per stack.
-DOTA_Tooltip_modifier_item_golden_arrow: Golden Arrow Stacks
+DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Stacks
