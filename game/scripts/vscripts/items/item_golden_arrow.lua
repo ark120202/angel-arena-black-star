@@ -5,27 +5,6 @@ item_golden_arrow = class({
 	GetIntrinsicModifierName = function() return "modifier_item_golden_arrow" end
 })
 
-modifier_item_golden_arrow = class({
-	IsHidden = function() return true end,
-	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
-	IsPurgable = function() return false end,
-})
-
-function modifier_item_golden_arrow:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-	}
-end
-
-function modifier_item_golden_arrow:GetModifierPreAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("bonus_damage")
-end
-
-function modifier_item_golden_arrow:GetModifierPhysicalArmorBonus()
-	return self:GetAbility():GetSpecialValueFor("bonus_armor")
-end
-
 if IsServer() then
 	function item_golden_arrow:OnSpellStart()
 		local caster = self:GetCaster()
@@ -65,6 +44,27 @@ if IsServer() then
 			self:StartCooldown(cooldown)
 		end
 	end
+end
+
+modifier_item_golden_arrow = class({
+	IsHidden = function() return true end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable = function() return false end,
+})
+
+function modifier_item_golden_arrow:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+	}
+end
+
+function modifier_item_golden_arrow:GetModifierPreAttack_BonusDamage()
+	return self:GetAbility():GetSpecialValueFor("bonus_damage")
+end
+
+function modifier_item_golden_arrow:GetModifierPhysicalArmorBonus()
+	return self:GetAbility():GetSpecialValueFor("bonus_armor")
 end
 
 modifier_item_golden_arrow_counter = class({
