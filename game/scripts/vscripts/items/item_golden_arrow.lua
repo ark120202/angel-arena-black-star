@@ -31,11 +31,8 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local modifier = caster:FindModifierByName("modifier_item_golden_arrow")
 
-		if not modifier then
-			caster:AddNewModifier(caster, self, "modifier_item_golden_arrow", {duration = duration})
-		else
-			modifier:IncrementStackCount()
-		end
+		if not modifier then modifier = caster:AddNewModifier(caster, self, "modifier_item_golden_arrow", nil) end
+		modifier:IncrementStackCount()
 
 		local stacks = modifier:GetStackCount()
 		local stats_debuff_per_stack = stacks * self:GetSpecialValueFor("stats_debuff_per_stack")
