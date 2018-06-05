@@ -1127,12 +1127,12 @@
 			"10"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"disarm_range"	"1.5"
+				"disarm_range"	"3.0"
 			}
 			"11"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"disarm_melee"	"2.0"
+				"disarm_melee"	"3.0"
 			}
 		}
 	}
