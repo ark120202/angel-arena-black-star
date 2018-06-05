@@ -729,12 +729,12 @@ DOTA_Tooltip_modifier_item_urn_of_souls_damage_Description: Mana is burning over
 DOTA_Tooltip_ability_item_demon_king_bar: Demon King Bar
 DOTA_Tooltip_ability_item_demon_king_bar_Description: |-
   <h1>Active: <font color='#b44ce3'>Curse</font></h1> Curses enemy hero, causing it to continuously receive damage, which grows with each second. This debuff is purgable.
-  <h1>Passive: Mini-Bash</h1> Grants each attack a chance to deal bonus damage and deal a mini-stun.
+  <h1>Passive: Second Chance</h1> Grants each attack a chance to deal bonus damage.
   <h1>Passive: True Strike</h1> Prevents your attacks from missing.
 DOTA_Tooltip_ability_item_demon_king_bar_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_demon_king_bar_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_demon_king_bar_bash_chance: '%MINI-BASH CHANCE:'
-DOTA_Tooltip_ability_item_demon_king_bar_bash_damage: 'MINI-BASH DAMAGE:'
+DOTA_Tooltip_ability_item_demon_king_bar_damage: 'SECOND CHANCE DAMAGE:'
+DOTA_Tooltip_ability_item_demon_king_bar_damage_chance: 'SECOND CHANCE PERCENTAGE'
 DOTA_Tooltip_modifier_item_demon_king_bar_curse: 'Curse'
 DOTA_Tooltip_modifier_item_demon_king_bar_curse_Description: 'Continuously gets damage, which grows with each second (now %dMODIFIER_PROPERTY_TOOLTIP%). Can be purged.'
 DOTA_Tooltip_ability_item_butterfly_arena: Butterfly

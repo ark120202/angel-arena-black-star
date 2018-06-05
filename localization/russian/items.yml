@@ -558,10 +558,10 @@ DOTA_Tooltip_modifier_item_urn_of_souls_damage_Description: Сжигает ма�
 DOTA_Tooltip_ability_item_demon_king_bar: Demon King Bar
 DOTA_Tooltip_ability_item_demon_king_bar_Description: |-
   <h1>Активируемая: <font color='#b44ce3'>Curse</font></h1> Проклинает вражеского героя, из-за чего он будет непрерывно получать урон, увеличивающийся с каждой секундой. Этот эффект может быть сброшен.
-  <h1>Пассивная: Mini-Bash</h1> Дает шанс нанести дополнительный урон и кратковременно оглушить цель при каждой атаке.
+  <h1>Пассивная: Second Chance</h1> Дает шанс нанести дополнительный урон при каждой атаке.
   <h1>Пассивная: True Strike</h1> Исключает шанс промаха при атаке.
-DOTA_Tooltip_ability_item_demon_king_bar_bash_chance: '%ШАНС МИНИ-ОГЛУШЕНИЯ:'
-DOTA_Tooltip_ability_item_demon_king_bar_bash_damage: 'УРОН МИНИ-ОГЛУШЕНИЯ:'
+DOTA_Tooltip_ability_item_demon_king_bar_damage: 'SECOND CHANCE DAMAGE:'
+DOTA_Tooltip_ability_item_demon_king_bar_damage_chance: 'SECOND CHANCE PERCENTAGE'
 DOTA_Tooltip_modifier_item_demon_king_bar_curse: 'Проклятье'
 DOTA_Tooltip_modifier_item_demon_king_bar_curse_Description: 'Непрерывно получает урон, который увеличивается с каждой секундой (сейчас %dMODIFIER_PROPERTY_TOOLTIP%). Снимается очищением.'
 DOTA_Tooltip_ability_item_butterfly_arena: Butterfly
