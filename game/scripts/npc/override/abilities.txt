@@ -3371,6 +3371,8 @@
 	"sven_gods_strength"
 	{
 		"MaxLevel"	"7"
+		"RequiredLevel"			"10"
+		"LevelsBetweenUpgrades"	"10"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.25 0.2"
 		"AbilityCooldown"	"60"
 		"AbilityDuration"	"20"
