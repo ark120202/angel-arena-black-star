@@ -573,7 +573,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"1.5"
+				"sheep_duration"		"3.0"
 			}
 		}
 	}
