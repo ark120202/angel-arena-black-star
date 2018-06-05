@@ -4428,17 +4428,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_chance"			"75"
+				"damage_chance"			"50"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_damage"			"150"
+				"damage"			"150"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"bash_stun"				"0"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"52"
 			}
 		}
 
@@ -4470,6 +4470,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
 				}
 
 				"States"
@@ -4477,6 +4478,7 @@
 					"MODIFIER_STATE_CANNOT_MISS"			"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
+
 			"modifier_item_demon_king_bar_bashes"
 			{
 				"Passive"			"1"
@@ -4497,7 +4499,7 @@
 				{
 					"Random"
 					{
-						"Chance"			"%bash_chance"
+						"Chance"			"%damage_chance"
 						"PseudoRandom"		"DOTA_PSEUDO_RANDOM_ITEM_MKB"
 						"OnSuccess"
 						{
@@ -4505,13 +4507,7 @@
 							{
 								"Target"		"TARGET"
 								"Type"			"DAMAGE_TYPE_PURE"
-								"Damage"		"%bash_damage"
-							}
-
-							"ApplyModifier"
-							{
-								"Target"			"TARGET"
-								"ModifierName"		"modifier_item_demon_king_bar_bash"
+								"Damage"		"%damage"
 							}
 
 							"FireSound"
@@ -4521,21 +4517,6 @@
 							}
 						}
 					}
-				}
-			}
-			"modifier_item_demon_king_bar_bash"
-			{
-				"Duration"              "%bash_stun"
-				"IsHidden"				"1"
-				"IsDebuff"				"1"
-
-				"EffectName"            "particles/generic_gameplay/generic_stunned.vpcf"
-				"EffectAttachType"      "follow_overhead"
-				"OverrideAnimation"     "ACT_DOTA_DISABLED"
-
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED" 		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}
