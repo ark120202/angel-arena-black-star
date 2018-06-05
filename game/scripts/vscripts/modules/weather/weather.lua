@@ -11,8 +11,7 @@ end
 
 Weather = Weather or class({
 	current = nil,
-	endTime = -1,
-	soundMap = {}
+	endTime = -1
 })
 
 for _,v in pairs(WEATHER_EFFECTS) do
