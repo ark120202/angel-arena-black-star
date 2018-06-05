@@ -8,7 +8,13 @@ item_golden_arrow = class({
 if IsServer() then
 	function item_golden_arrow:HasEnoughAttributes()
 		local caster = self:GetCaster()
-		return caster:GetStrength() > 5 and caster:GetAgility() > 5 and caster:GetIntellect() > 5
+		local stacks = caster:GetModifierStackCount("modifier_item_golden_arrow_counter", caster)
+		local requiredAttributes = stacks * -self:GetSpecialValueFor("stats_debuff_per_stack")
+		return (
+			caster:GetStrength() > requiredAttributes and
+			caster:GetAgility() > requiredAttributes and
+			caster:GetIntellect() > requiredAttributes
+		)
 	end
 
 	function item_golden_arrow:CastFilterResult(hTarget)
