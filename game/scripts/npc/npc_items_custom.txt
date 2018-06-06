@@ -6122,10 +6122,10 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 
 		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"3.0"
+		"AbilityCooldown"				"3.8"
 		"AbilitySharedCooldown"			"medallion;basher"
 
-		"AbilityCooldown"				"3.8"
+
 		"ItemQuality"					"rare"
 		"ItemAliases"					"echo sabre 2;fallhammer;skull basher;medallion of courage;valor"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -6172,7 +6172,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.1"
+				"bash_duration"			"0.8"
 			}
 			"09"
 			{
