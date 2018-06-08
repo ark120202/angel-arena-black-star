@@ -73,6 +73,7 @@ function modifier_item_golden_arrow:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
 	}
 end
 
@@ -82,6 +83,10 @@ end
 
 function modifier_item_golden_arrow:GetModifierPhysicalArmorBonus()
 	return self:GetAbility():GetSpecialValueFor("bonus_armor")
+end
+
+function modifier_item_golden_arrow:GetModifierMoveSpeedBonus_Constant()
+	return self:GetAbility():GetSpecialValueFor("bonus_speed")
 end
 
 modifier_item_golden_arrow_counter = class({

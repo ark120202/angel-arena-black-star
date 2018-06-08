@@ -1032,6 +1032,8 @@ DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +к радиусу
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Только мудрецам дано полностью овладеть сингулярностью.
 
 DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
+DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: 'Урон:'
+DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: 'Скорость:'
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
  <h1>Пассивная: Golden life</h1> При использовании вы получаете золото, в количестве %gold_per_stack% за каждый стак
   и отнимает у вас %stats_debuff_per_stack% статов за каждый стак.

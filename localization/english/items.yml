@@ -1563,6 +1563,8 @@ DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%+$spell_amp'
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize the singularity.
 
 DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
+DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: 'Damage:'
+DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: 'Speed:'
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
  <h1>Пассивная: Golden life</h1> After you use this item you get gold, in count %gold_per_stack% for every stack
   and reduce your  %stats_debuff_per_stack% stats per every stack.
