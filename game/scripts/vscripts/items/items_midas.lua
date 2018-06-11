@@ -20,10 +20,12 @@ function GiveOnAttackedGold(keys)
 	local attacker = keys.attacker
 	local caster = keys.caster
 
-	if attacker:IsConsideredHero() and
+	if (
+		attacker:IsConsideredHero() and
+		not attacker:IsIllusion() and
 		not caster:IsIllusion() and
 		caster:GetTeamNumber() ~= attacker:GetTeamNumber()
-		and not attacker:IsIllusion() then
+	) then
 		local gold = keys.Gold
 		local xp = keys.Xp
 

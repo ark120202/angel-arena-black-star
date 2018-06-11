@@ -361,9 +361,14 @@ function ShowHeroPreviewTab(tabID) {
 				$('#team_selection_panels_team' + teamNumber).SetDialogVariable('team_rating', changesObject[teamNumber]);
 			}
 		});
+
 		DynamicSubscribePTListener('stats_client', function(tableName, changesObject, deletionsObject) {
 			for (var playerID in changesObject) {
 				Snippet_PlayerPanel(+playerID).SetDialogVariable('player_mmr', changesObject[playerID].Rating || 'TBD');
+			}
+
+			if (changesObject[localPlayerId] && changesObject[localPlayerId].isBanned) {
+				HeroSelectionEnd(true);
 			}
 		});
 		UpdateTimer();

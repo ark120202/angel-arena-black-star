@@ -927,9 +927,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_huskar = {
 		group = 9,
 	},
-	special_bonus_unique_huskar_3 = {
-		group = 10,
-	},
 	special_bonus_unique_naga_siren = {
 		group = 9,
 	},
@@ -1629,7 +1626,6 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 10,
 	},
 	special_bonus_unique_gyrocopter_1 = false,
-	special_bonus_unique_gyrocopter_2 = false,
 	special_bonus_unique_gyrocopter_3 = {
 		group = 6,
 	},

@@ -33,7 +33,7 @@ DOTA_Tooltip_ability_sai_invulnerability_movement_speed_reduction_pct: '%MOVEMEN
 
 DOTA_Tooltip_ability_sai_release_of_forge: Release of Forge
 DOTA_Tooltip_ability_sai_release_of_forge_Description: 'Hero becomes immortal for %duration% seconds, his health drops to one and can''t be increased, a part of his attack damage deals pure damage, instead of physical, attack range becomes unlimmited, yet all enemy heroes will lose %aura_movement_speed_pct%%% movement speed and their ability cast time, turn rate and vision radius will be reduced. When ability time runs out, Sai dies and his respawn time will be increased.'
-DOTA_Tooltip_ability_sai_release_of_forge_aghanim_description: Have a chance to survive after the ult and completely restores health.
+DOTA_Tooltip_ability_sai_release_of_forge_aghanim_description: Gives hero a chance to survive and completely restore health after ability effect ends.
 DOTA_Tooltip_ability_sai_release_of_forge_Lore: The sun's rays fade in front of the Lord of Darkness.
 DOTA_Tooltip_ability_sai_release_of_forge_duration: 'DURATION:'
 DOTA_Tooltip_ability_sai_release_of_forge_pure_damage_pct: '%ATTACK PURE DAMAGE:'

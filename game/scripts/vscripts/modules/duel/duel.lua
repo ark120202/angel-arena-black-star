@@ -32,6 +32,7 @@ function Duel:CreateBlocker()
 	local bounds = trigger:GetBounds()
 	local mins = origin + ExpandVector(bounds.Mins, 96)
 	local maxs = origin + ExpandVector(bounds.Maxs, 96)
+	Duel.BlockerBox = {mins, maxs}
 
 	Physics:RemoveCollider("collider_box_blocker_arena")
 	local collider = Physics:AddCollider("collider_box_blocker_arena", Physics:ColliderFromProfile("aaboxblocker"))

@@ -163,12 +163,10 @@ function TableFullUpdate(msg) {
 	}
 	var tableIndex = Object.keys(PT.tables).length;
 	if (msg.inputlength != null && tableIndex >= msg.inputlength && !connected) {
-		$.Msg('PT connected with input length ' + msg.inputlength + ' and table index ' + tableIndex);
 		connected = true;
 		_.each(UTPromisedCalls, function(v) {
 			v();
 		});
-		$.Msg('PT preformed initial update, completed ' + UTPromisedCalls.length + ' functions');
 	}
 };
 

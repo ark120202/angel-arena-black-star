@@ -172,6 +172,8 @@ function Teams:GetPlayerIDs(team, bNotAbandoned, bAbandoned)
 end
 
 function Teams:RecalculateKillWeight(team)
+	if not Teams:IsEnabled(team) then return end
+
 	local remaining = GetTeamPlayerCount(team)
 	local value = remaining == 0 and 0 or 1
 	if value == 1 and Options:GetValue("DynamicKillWeight") then

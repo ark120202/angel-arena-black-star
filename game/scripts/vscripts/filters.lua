@@ -56,7 +56,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 					return false
 				end
 			end
-			if IsInBox(orderVector, Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()) then
+			if IsInBox(orderVector, Duel.BlockerBox[1], Duel.BlockerBox[2]) then
 				Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
 				return false
 			end

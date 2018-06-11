@@ -81,7 +81,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"275 550 1100 1700"
+				"bonus_mana"			"350 700 1400 2800"
 			}
 			"04"
 			{
@@ -128,7 +128,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"275 550 1100 1700"
+				"bonus_mana"			"350 700 1400 2800"
 			}
 			"04"
 			{
@@ -175,7 +175,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"275 550 1100 1700"
+				"bonus_mana"			"350 700 1400 2800"
 			}
 			"04"
 			{
@@ -222,7 +222,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"275 550 1100 1700"
+				"bonus_mana"			"350 700 1400 2800"
 			}
 			"04"
 			{
