@@ -651,18 +651,6 @@ function IsInBox(point, point1, point2)
 end
 
 function GetConnectionState(pid)
-	if DebugConnectionStates then
-		local map = {
-			[3] = "DOTA_CONNECTION_STATE_DISCONNECTED",
-			[6] = "DOTA_CONNECTION_STATE_FAILED",
-			[0] = "DOTA_CONNECTION_STATE_UNKNOWN",
-			[1] = "DOTA_CONNECTION_STATE_NOT_YET_CONNECTED",
-			[4] = "DOTA_CONNECTION_STATE_ABANDONED",
-			[2] = "DOTA_CONNECTION_STATE_CONNECTED",
-			[5] = "DOTA_CONNECTION_STATE_LOADING",
-		}
-		CPrint(pid, map[PlayerResource:GetConnectionState(pid)])
-	end
 	return PlayerResource:IsFakeClient(pid) and DOTA_CONNECTION_STATE_CONNECTED or PlayerResource:GetConnectionState(pid)
 end
 

@@ -266,24 +266,17 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 	elseif not retryCount then
 		retryCount = 0
 	end
-	debugp("StatsClient:Send", "Sent data to " .. path .. "(with current retry of " .. (_currentRetry or 0) .. ")")
 
 	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path .. (protocol == "GET" and StatsClient:EncodeParams(data) or ""))
 	request:SetHTTPRequestGetOrPostParameter("data", json.encode(data))
 	request:Send(function(response)
 		if response.StatusCode ~= 200 or not response.Body then
-			debugp("StatsClient:Send", "Server returned an error, status is " .. response.StatusCode)
-			if response.Body then
-				debugp("StatsClient:Send", response.StatusCode .. ": " .. response.Body)
-			end
 			local currentRetry = (_currentRetry or 0) + 1
 			if not StatsClient.Debug and currentRetry < retryCount then
 				Timers:CreateTimer(self.RetryDelay, function()
-					debugp("StatsClient:Send", "Retry (" .. currentRetry .. ")")
 					StatsClient:Send(path, data, callback, retryCount, protocol, onerror, currentRetry)
 				end)
 			elseif onerror then
-				debugp("StatsClient:Send", "Retries for " .. path .." just stopped.")
 				if onerror == true then onerror = callback end
 
 				local resp = json.decode(response.Body)
@@ -292,9 +285,7 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 			end
 		else
 			local obj, pos, err = json.decode(response.Body)
-			if not obj then
-				debugp("[StatsClient] Critical Error: request to " .. self.ServerAddress .. path .. " returned undefined. Check server configuration")
-			elseif callback then
+			if obj and callback then
 				callback(obj)
 			end
 		end

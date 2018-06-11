@@ -133,12 +133,6 @@ CHAT_COMMANDS = {
 			_G.DebugConnectionStates = not DebugConnectionStates
 		end
 	},
-	["cprint"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
-		f = function()
-			_G.SendDebugInfoToClient = not SendDebugInfoToClient
-		end
-	},
 	["kick"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
 		f = function(args)
