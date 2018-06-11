@@ -34,7 +34,7 @@ if IsServer() then
 		modifier:IncrementStackCount()
 		local stacks = modifier:GetStackCount()
 
-		local particle = ParticleManager:CreateParticle("particles/arena/items_fx/coffee_bean_refresh.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+		local particle = ParticleManager:CreateParticle("particles/arena/items_fx/golden_arrow.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
 		caster:EmitSound("Arena.Items.GoldenArrow.Activate")
 
