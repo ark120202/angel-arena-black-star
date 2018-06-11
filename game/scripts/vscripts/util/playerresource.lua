@@ -103,63 +103,69 @@ function CDOTA_PlayerResource:IsPlayerAbandoned(playerID)
 	return IsPlayerAbandoned(playerID)
 end
 
+function CDOTA_PlayerResource:IsBanned(playerID)
+	return PLAYER_DATA[playerID].isBanned == true
+end
+
 function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
-	if not PLAYER_DATA[iPlayerID].IsAbandoned then
-		RemoveAllOwnedUnits(iPlayerID)
-		local hero = PlayerResource:GetSelectedHeroEntity(iPlayerID)
-		if IsValidEntity(hero) then
-			hero:ClearNetworkableEntityInfo()
-			hero:Stop()
+	if PlayerResource:IsPlayerAbandoned(iPlayerID) then return end
+	PlayerResource:RemoveAllUnits(iPlayerID)
+	local heroname = HeroSelection:GetSelectedHeroName(iPlayerID)
+	--local notLinked = true
+	if heroname then
+		Notifications:TopToAll({hero=heroname, duration=10})
+		Notifications:TopToAll({text=PlayerResource:GetPlayerName(iPlayerID), continue=true, style={color=ColorTableToCss(PLAYER_DATA[iPlayerID].Color or {0, 0, 0})}})
+		Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
 
-			for i = 0, hero:GetAbilityCount() - 1 do
-				local ability = hero:GetAbilityByIndex(i)
-				if ability then
-					if ability:GetKeyValue("NoAbandonCleanup") ~= 1 then
-						ability:SetLevel(0)
-					end
-					ability:SetHidden(true)
-					ability:SetActivated(false)
-					--UTIL_Remove(ability)
-				end
-			end
-			hero:InterruptMotionControllers(false)
-			hero:DestroyAllModifiers()
-			hero:AddNewModifier(hero, nil, "modifier_hero_out_of_game", nil)
-		end
-		local heroname = HeroSelection:GetSelectedHeroName(iPlayerID)
-		--local notLinked = true
-		if heroname then
-			Notifications:TopToAll({hero=heroname, duration=10})
-			Notifications:TopToAll({text=PlayerResource:GetPlayerName(iPlayerID), continue=true, style={color=ColorTableToCss(PLAYER_DATA[iPlayerID].Color or {0, 0, 0})}})
-			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
-
-			for _,v in ipairs(GetLinkedHeroNames(heroname)) do
-				local linkedHeroOwner = HeroSelection:GetSelectedHeroPlayer(v)
-				if linkedHeroOwner then
-					HeroSelection:ForceChangePlayerHeroMenu(linkedHeroOwner)
-				end
+		for _,v in ipairs(GetLinkedHeroNames(heroname)) do
+			local linkedHeroOwner = HeroSelection:GetSelectedHeroPlayer(v)
+			if linkedHeroOwner then
+				HeroSelection:ForceChangePlayerHeroMenu(linkedHeroOwner)
 			end
 		end
-		--if notLinked then
-			HeroSelection:UpdateStatusForPlayer(iPlayerID, "hover", "npc_dota_hero_abaddon")
-		--end
-		PLAYER_DATA[iPlayerID].IsAbandoned = true
-		PlayerTables:SetTableValue("players_abandoned", iPlayerID, true)
-		Teams:RecalculateKillWeight(PlayerResource:GetTeam(iPlayerID))
-		if not GameRules:IsCheatMode() then
-			local teamLeft = GetOneRemainingTeam()
-			if teamLeft then
-				Timers:CreateTimer(30, function()
-					local teamLeft = GetOneRemainingTeam()
-					if teamLeft then
-						GameMode:OnOneTeamLeft(teamLeft)
-					end
-				end)
-			end
-		end
-
-		Duel:EndIfFinished()
 	end
+	--if notLinked then
+		HeroSelection:UpdateStatusForPlayer(iPlayerID, "hover", "npc_dota_hero_abaddon")
+	--end
+	PLAYER_DATA[iPlayerID].IsAbandoned = true
+	PlayerTables:SetTableValue("players_abandoned", iPlayerID, true)
+	Teams:RecalculateKillWeight(PlayerResource:GetTeam(iPlayerID))
+	if not GameRules:IsCheatMode() then
+		local teamLeft = GetOneRemainingTeam()
+		if teamLeft then
+			Timers:CreateTimer(30, function()
+				local teamLeft = GetOneRemainingTeam()
+				if teamLeft then
+					GameMode:OnOneTeamLeft(teamLeft)
+				end
+			end)
+		end
+	end
+
+	Duel:EndIfFinished()
+end
+
+function CDOTA_PlayerResource:RemoveAllUnits(playerId)
+	RemoveAllOwnedUnits(playerId)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+	if not IsValidEntity(hero) then return end
+	hero:ClearNetworkableEntityInfo()
+	hero:Stop()
+
+	for i = 0, hero:GetAbilityCount() - 1 do
+		local ability = hero:GetAbilityByIndex(i)
+		if ability then
+			if ability:GetKeyValue("NoAbandonCleanup") ~= 1 then
+				ability:SetLevel(0)
+			end
+			ability:SetHidden(true)
+			ability:SetActivated(false)
+			--UTIL_Remove(ability)
+		end
+	end
+	hero:InterruptMotionControllers(false)
+	hero:DestroyAllModifiers()
+	hero:AddNewModifier(hero, nil, "modifier_hero_out_of_game", nil)
 end
 
 function CDOTA_PlayerResource:GetRealSteamID(PlayerID)

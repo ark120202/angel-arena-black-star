@@ -69,6 +69,7 @@ function GameMode:SetHelpDisabled(data)
 end
 
 function CustomChatSay(playerId, teamonly, data)
+	if PlayerResource:IsValidPlayerID(playerId) and PlayerResource:IsBanned(playerId) then return end
 	if GameMode:CustomChatFilter(playerId, teamonly, data) then
 		local heroName
 		if HeroSelection:GetState() == HERO_SELECTION_PHASE_END then

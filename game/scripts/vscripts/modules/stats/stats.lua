@@ -25,10 +25,16 @@ function StatsClient:FetchPreGameData()
 
 			PLAYER_DATA[pid].serverData = data
 			PLAYER_DATA[pid].Inventory = data.inventory or {}
+			local isBanned = Options:IsEquals("EnableBans") and data.isBanned == true
+			PLAYER_DATA[pid].isBanned = isBanned
 
 			local clientData = table.deepcopy(data)
 			clientData.TBDRating = nil
 			PlayerTables:SetTableValue("stats_client", pid, clientData)
+
+			if isBanned then
+				PlayerResource:MakePlayerAbandoned(pid)
+			end
 		end
 	end, math.huge)
 end
@@ -38,7 +44,7 @@ function StatsClient:CalculateAverageRating()
 
 	for pid, data in pairs(PLAYER_DATA) do
 		local team = PlayerResource:GetTeam(pid)
-		if data.serverData then
+		if data.serverData and not PlayerResource:IsBanned(pid) then
 			teamRatings[team] = teamRatings[team] or {}
 			table.insert(teamRatings[team], data.serverData.Rating or (2500 + (data.serverData.TBDRating or 0)))
 		end

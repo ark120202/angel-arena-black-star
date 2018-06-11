@@ -110,6 +110,7 @@ function Options:LoadDefaultValues()
 	Options:SetInitialValue("EnableRatingAffection", false)
 	Options:SetInitialValue("DynamicKillWeight", true)
 	Options:SetInitialValue("TeamSetupMode", "open")
+	Options:SetInitialValue("EnableBans", true)
 	--Options:SetInitialValue("MapLayout", "5v5")
 
 	Options:SetInitialValue("BanningPhaseBannedPercentage", 0)
@@ -190,11 +191,13 @@ function Options:LoadMapValues()
 		MAP_LENGTH = 3840
 		Options:SetValue("DynamicKillWeight", false)
 		Options:SetPreGameVoting("kill_limit", {10, 15, 20, 25, 30, 35}, 25)
+		-- Would be pretty annoying for enemy
+		Options:SetValue("EnableBans", false)
 	end
 end
 
 function Options:LoadCheatValues()
-
+	Options:SetValue("EnableBans", false)
 end
 
 function Options:LoadToolsValues()

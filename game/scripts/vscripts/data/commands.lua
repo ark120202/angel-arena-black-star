@@ -158,12 +158,29 @@ CHAT_COMMANDS = {
 			HeroSelection:ChangeHero(playerID, args[1], true, 0)
 		end
 	},
-	["ban"] = {
+	["abandon"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
 		f = function(args, hero, playerID)
 			if PlayerResource:IsValidPlayerID(tonumber(args[1])) then
 				PlayerResource:MakePlayerAbandoned(tonumber(args[1]))
 			end
+		end
+	},
+	["ban"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
+		f = function(args, hero, playerID)
+			local pid = tonumber(args[1])
+			if not PlayerResource:IsValidPlayerID(pid) then return end
+
+			PLAYER_DATA[pid].isBanned = true
+
+			local data = PLAYER_DATA[pid].serverData or {}
+			local clientData = table.deepcopy(data)
+			clientData.TBDRating = nil
+			clientData.isBanned = true
+			PlayerTables:SetTableValue("stats_client", pid, clientData)
+
+			PlayerResource:MakePlayerAbandoned(pid)
 		end
 	},
 	["a_createhero"] = {
