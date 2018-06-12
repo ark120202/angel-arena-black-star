@@ -12094,7 +12094,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"armor_reduction"	"4 5 6 7 8 9 10"
+				"armor_reduction"	"4 6 8 10 12 14 16"
 				"LinkedSpecialBonus"		"special_bonus_unique_alchemist_5"
 			}
 
@@ -12102,12 +12102,6 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"tick_rate"	"1.0"
-			}
-			"99"
-			{
-				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "1.0"
-				"CalculateSpellDamageTooltip" "0"
 			}
 
 		}
