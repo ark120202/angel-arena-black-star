@@ -1112,7 +1112,7 @@
 	"kunkka_tidebringer"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"9 8 7 6 5 4 3"
+		"AbilityCooldown"	"10 9 8 7 6 5 4"
 		"AbilityCastRange"	"150"
 		"AbilitySpecial"
 		{
