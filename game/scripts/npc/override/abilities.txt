@@ -16710,7 +16710,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"spirit_duration"			"14.0"
+				"spirit_duration"			"19.0"
 			}
 		}
 	}
