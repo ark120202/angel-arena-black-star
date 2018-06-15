@@ -1599,7 +1599,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 5,
 	},
 	special_bonus_unique_kunkka_3 = {
-		group = 11,
+		group = 10,
 	},
 	special_bonus_unique_invoker_1 = {
 		group = 6,
