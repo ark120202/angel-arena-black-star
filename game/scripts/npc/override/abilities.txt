@@ -16664,7 +16664,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"						"20 40 60 80 100 120 1000"
+				"slow"						"20 40 60 80 100 120 140"
 			}
 			"04"
 			{
@@ -16710,7 +16710,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"spirit_duration"			"19.0"
+				"spirit_duration"			"14.0"
 			}
 		}
 	}
