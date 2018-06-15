@@ -231,6 +231,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_wisp_6"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"10"
+			}
+		}
+	}
 	"special_bonus_unique_slark_2"
 	{
 		"AbilitySpecial"
