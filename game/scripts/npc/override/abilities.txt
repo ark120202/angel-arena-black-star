@@ -21025,10 +21025,11 @@
 	"techies_land_mines"
 	{
 		"MaxLevel"	"7"
+		"LevelsBetweenUpgrades" "3"
 		"AbilityCastRange"	"100"
 		"AbilityCooldown"	"10"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityManaCost"	"110 130 150 170 190 210 230"
+		"AbilityManaCost"	"160 270 340 390 460 560 660"
 		"AbilitySpecial"
 		{
 			"01"
@@ -21069,7 +21070,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"damage_from_current_health_pct" "0.1 0.2 0.3 0.4 0.5 0.6 0.7"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
