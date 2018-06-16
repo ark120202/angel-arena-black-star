@@ -926,7 +926,7 @@
 	"juggernaut_blade_fury"
 	{
 		"MaxLevel"	"7"
-		"LevelCost"	"3"
+		"LevelsBetweenUpgrades"	"3"
 		"AbilityCooldown"	"24 22 20 18 16 14 12"
 		"AbilityManaCost"	"120 110 100 90 80 70 60"
 		"AbilitySpecial"
