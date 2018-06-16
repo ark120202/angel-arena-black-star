@@ -5,6 +5,10 @@ item_golden_arrow = class({
 	GetIntrinsicModifierName = function() return "modifier_item_golden_arrow" end
 })
 
+function item_golden_arrow:GetAbilityTextureName()
+	return self:GetNetworkableEntityInfo("texture") or "item_arena/golden_arrow"
+end
+
 if IsServer() then
 	function item_golden_arrow:HasEnoughAttributes()
 		local caster = self:GetCaster()
@@ -44,6 +48,7 @@ if IsServer() then
 			caster:ModifyStrength(stats_debuff_per_stack)
 			caster:ModifyAgility(stats_debuff_per_stack)
 			caster:ModifyIntellect(stats_debuff_per_stack)
+			self:SetNetworkableEntityInfo("texture", "item_arena/golden_arrow")
 		else
 			local damage = self:GetSpecialValueFor("damage_per_stack") * stacks
 			ApplyDamage({
@@ -53,6 +58,7 @@ if IsServer() then
 				damage_type = DAMAGE_TYPE_PURE,
 				ability = self
 			})
+			self:SetNetworkableEntityInfo("texture", "item_arena/golden_arrow_b")
 		end
 
 		local gold = self:GetSpecialValueFor("gold_per_stack") * stacks
