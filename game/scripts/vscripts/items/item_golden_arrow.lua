@@ -62,7 +62,7 @@ if IsServer() then
 		local gold = self:GetSpecialValueFor("gold_per_stack") * stacks
 		Gold:AddGoldWithMessage(caster, gold)
 
-		local cooldown = self:GetCooldown(self:GetLevel()) + (self:GetSpecialValueFor("cooldown_per_stack") * stacks)
+		local cooldown = self:GetSpecialValueFor("cooldown_base") + self:GetSpecialValueFor("cooldown_per_stack") * stacks
 		self:StartCooldown(cooldown)
 	end
 end

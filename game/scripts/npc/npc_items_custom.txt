@@ -8882,7 +8882,6 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"15"
 
 		"AbilitySpecial"
 		{
@@ -8912,6 +8911,11 @@
 				"damage_per_stack"		"60"
 			}
 			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_base"			"15"
+			}
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cooldown_per_stack"	"7"
