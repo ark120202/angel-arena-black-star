@@ -91,11 +91,8 @@ function modifier_item_golden_arrow:GetModifierMoveSpeedBonus_Constant()
 end
 
 modifier_item_golden_arrow_counter = class({
+	GetTexture = function() return "item_arena/golden_arrow" end,
 	IsHidden = function() return false end,
 	IsPurgable = function() return false end,
 	RemoveOnDeath = function() return false end,
 })
-
-function modifier_item_golden_arrow_counter:GetTextureName()
-	return self:GetNetworkableEntityInfo("texture") or "item_arena/golden_arrow"
-end
