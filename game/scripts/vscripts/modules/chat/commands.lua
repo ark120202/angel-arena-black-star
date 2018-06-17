@@ -2,13 +2,8 @@ CUSTOMCHAT_COMMAND_LEVEL_PUBLIC = 0
 CUSTOMCHAT_COMMAND_LEVEL_CHEAT = 1
 CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER = 2
 CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER = 3
-CHAT_COMMANDS = {
-	["command"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
-		f = function(args, hero, playerID)
 
-		end
-	},
+return {
 	["gold"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
 		f = function(args, hero)

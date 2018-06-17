@@ -174,14 +174,14 @@ function HeroSelection:StartStateHeroPick()
 	PlayerTables:DeleteTableKeys("hero_selection_banning_phase", notBanned)
 	local banned = PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")
 	local bannedCount = table.count(banned)
-	CustomChatSay(-1, -1, {
+	Chat:SendSystemMessage({
 		localizable = pluralize(bannedCount, "DOTA_Chat_AD_BanCount1", "DOTA_Chat_AD_BanCount"),
 		variables = {
 			["%s1"] = bannedCount
 		}
 	})
 	for hero in pairs(banned) do
-		CustomChatSay(-1, -1, {
+		Chat:SendSystemMessage({
 			localizable = "DOTA_Chat_AD_Ban",
 			variables = {
 				["%s1"] = hero

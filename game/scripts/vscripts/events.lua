@@ -228,12 +228,6 @@ function GameMode:OnItemCombined(keys)
 	end
 end
 
-function GameMode:OnPlayerChat(keys)
-	local playerID = keys.playerid
-	local text = keys.text
-	CustomChatSay(playerID, keys.teamonly == 1, {text = text})
-end
-
 function GameMode:TrackInventory(unit)
 	unit.InventorySnapshot = {}
 	for i = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do

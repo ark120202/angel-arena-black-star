@@ -273,26 +273,3 @@ function GameMode:ModifyExperienceFilter(filterTable)
 	end
 	return true
 end
-
-function GameMode:CustomChatFilter(playerID, teamonly, data)
-	if data.text and string.starts(data.text, "-") then
-		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-		local cmd = {}
-		for v in string.gmatch(string.sub(data.text, 2), "%S+") do table.insert(cmd, v) end
-
-		local command = table.remove(cmd, 1)
-		local data = CHAT_COMMANDS[command]
-		if data then
-			local isDev = DynamicWearables:HasWearable(playerID, "wearable_developer") or IsInToolsMode()
-			local isCheat = GameRules:IsCheatMode()
-			if data.level == CUSTOMCHAT_COMMAND_LEVEL_PUBLIC
-				or (data.level == CUSTOMCHAT_COMMAND_LEVEL_CHEAT and isCheat)
-				or (data.level == CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER and isDev)
-				or (data.level == CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER and (isCheat or isDev)) then
-				data.f(cmd, hero, playerID)
-			end
-		end
-		return false
-	end
-	return true
-end
