@@ -1034,8 +1034,8 @@ DOTA_Tooltip_ability_item_unstable_quasar_Lore: Только мудрецам д
 
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
   <h1>Активируемая: Golden Life</h1> Дает вам %gold_per_stack% золота. Если
-  у героя более %stats_debuff_per_stack% каждого атрибута, то способность
-  уменьшит их на %stats_debuff_per_stack%. Иначе, наносит %damage_per_stack%
+  у героя более %attributes_per_stack% каждого атрибута, то способность
+  уменьшит их на %attributes_per_stack%. Иначе, наносит %damage_per_stack%
   урона вашему герою.
 
   Все значения этой способности увеличиваются на 100% с каждым использованием.

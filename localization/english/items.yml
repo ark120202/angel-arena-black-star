@@ -1565,8 +1565,8 @@ DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize 
 DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
   <h1>Active: Golden Life</h1> Gives you %gold_per_stack% gold. If you have more
-  than %stats_debuff_per_stack% of each attribute, this ability will decrease
-  them by %stats_debuff_per_stack%. Otherwise, deals %damage_per_stack% damage
+  than %attributes_per_stack% of each attribute, this ability will decrease
+  them by %attributes_per_stack%. Otherwise, deals %damage_per_stack% damage
   to your hero.
 
 

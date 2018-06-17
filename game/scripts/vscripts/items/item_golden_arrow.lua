@@ -44,10 +44,10 @@ if IsServer() then
 
 		if not caster:IsRealHero() then return end
 		if self:HasEnoughAttributes() then
-			local stats_debuff_per_stack = self:GetSpecialValueFor("stats_debuff_per_stack") * stacks
-			caster:ModifyStrength(stats_debuff_per_stack)
-			caster:ModifyAgility(stats_debuff_per_stack)
-			caster:ModifyIntellect(stats_debuff_per_stack)
+			local attributes = self:GetSpecialValueFor("attributes_per_stack") * stacks
+			caster:ModifyStrength(attributes)
+			caster:ModifyAgility(attributes)
+			caster:ModifyIntellect(attributes)
 		else
 			local damage = self:GetSpecialValueFor("damage_per_stack") * stacks
 			ApplyDamage({

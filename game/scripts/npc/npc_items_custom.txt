@@ -8894,27 +8894,27 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_per_stack"			"60"
+				"bonus_speed"			"55"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stats_debuff_per_stack"		"-3"
+				"gold_per_stack"		"60"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cooldown_per_stack"			"7"
+				"attributes_per_stack"	"-3"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_stack"			"60"
+				"damage_per_stack"		"60"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_speed"				"55"
+				"cooldown_per_stack"	"7"
 			}
 		}
 	}
