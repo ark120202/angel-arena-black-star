@@ -265,8 +265,8 @@ PANORAMA_SHOP_ITEMS = {
 		},
 		{
 			"item_skull_of_midas",
-			"item_chest_of_midas",
 			"item_golden_arrow",
+			"item_chest_of_midas",
 			"item_wand_of_midas",
 			"item_blood_of_midas",
 			"item_nagascale_bow",
