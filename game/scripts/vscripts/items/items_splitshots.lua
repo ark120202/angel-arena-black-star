@@ -108,7 +108,7 @@ function modifier_item_splitshot_ultimate:OnAttack(keys)
 		local projectile_info = GenerateAttackProjectile(attacker, self)
 		projectile_info.Target = unit
 		projectile_info.bProvidesVision = true
-		projectile_info.iVisionRadius = 250
+		projectile_info.iVisionRadius = 50
 		projectile_info.iVisionTeamNumber = attacker:GetTeamNumber()
 		ProjectileManager:CreateTrackingProjectile(projectile_info)
 	end

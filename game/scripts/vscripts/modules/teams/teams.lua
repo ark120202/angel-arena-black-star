@@ -81,6 +81,9 @@ Teams.Data = Teams.Data or {
 }
 
 Events:Register("activate", "teams", function ()
+	local gameMode = GameRules:GetGameModeEntity()
+	gameMode:SetTowerBackdoorProtectionEnabled(false)
+
 	PlayerTables:CreateTable("teams", {}, AllPlayersInterval)
 
 	local mapinfo = LoadKeyValues("addoninfo.txt")[GetMapName()]
@@ -93,7 +96,7 @@ Events:Register("activate", "teams", function ()
 		Teams.Data[team].count = playerCount
 		Teams.Data[team].enabled = playerCount > 0
 
-		if USE_CUSTOM_TEAM_COLORS then
+		if Options:IsEquals("CustomTeamColors") then
 			SetTeamCustomHealthbarColor(team, data.color[1], data.color[2], data.color[3])
 		end
 	end
@@ -150,9 +153,13 @@ end
 
 function Teams:ModifyScore(team, value)
 	local new = Teams:GetScore(team) + value
-	new = math.min(new, KILLS_TO_END_GAME_FOR_TEAM)
+	new = math.min(new, Options:GetValue("KillLimit"))
 	Teams.Data[team].score = new
 	PlayerTables:SetTableValue("teams", team, table.deepcopy(Teams.Data[team]))
+
+	if new >= Options:GetValue("KillLimit") then
+		GameMode:OnKillGoalReached(team)
+	end
 end
 
 function Teams:SetTeamKillWeight(team, value)
@@ -172,6 +179,8 @@ function Teams:GetPlayerIDs(team, bNotAbandoned, bAbandoned)
 end
 
 function Teams:RecalculateKillWeight(team)
+	if not Teams:IsEnabled(team) then return end
+
 	local remaining = GetTeamPlayerCount(team)
 	local value = remaining == 0 and 0 or 1
 	if value == 1 and Options:GetValue("DynamicKillWeight") then

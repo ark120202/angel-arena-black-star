@@ -194,7 +194,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"8"
+				"value"				"3"
 			}
 		}
 	}
@@ -228,6 +228,17 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"value"				"440"
+			}
+		}
+	}
+	"special_bonus_unique_wisp_6"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"10"
 			}
 		}
 	}

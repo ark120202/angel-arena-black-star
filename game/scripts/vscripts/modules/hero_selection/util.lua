@@ -277,14 +277,14 @@ function HeroSelection:PreformPlayerRandom(playerId)
 			not HeroSelection:IsHeroBanned(hero) and
 			not HeroSelection:IsHeroDisabledInRanked(hero) then
 			HeroSelection:UpdateStatusForPlayer(playerId, "picked", hero)
-			CustomChatSay(-1, PlayerResource:GetTeam(playerId), {
+			Chat:SendSystemMessage({
 				localizable = "DOTA_Chat_Random",
 				variables = {
 					["%s1"] = "{player}",
 					["%s2"] = hero
 				},
 				player = playerId
-			})
+			}, PlayerResource:GetTeam(playerId))
 			Gold:ModifyGold(playerId, CUSTOM_GOLD_FOR_RANDOM_TOTAL)
 			break
 		end
@@ -293,7 +293,7 @@ end
 
 function HeroSelection:NominateHeroForBan(playerId, hero)
 	if not HeroSelection:IsHeroBanned(hero) then
-		CustomChatSay(-1, -1, {
+		Chat:SendSystemMessage({
 			localizable = "DOTA_Chat_AD_NominatedBan",
 			variables = {
 				["%s1"] = hero

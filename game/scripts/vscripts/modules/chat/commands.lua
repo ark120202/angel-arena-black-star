@@ -2,13 +2,8 @@ CUSTOMCHAT_COMMAND_LEVEL_PUBLIC = 0
 CUSTOMCHAT_COMMAND_LEVEL_CHEAT = 1
 CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER = 2
 CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER = 3
-CHAT_COMMANDS = {
-	["command"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
-		f = function(args, hero, playerID)
 
-		end
-	},
+return {
 	["gold"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
 		f = function(args, hero)
@@ -133,12 +128,6 @@ CHAT_COMMANDS = {
 			_G.DebugConnectionStates = not DebugConnectionStates
 		end
 	},
-	["cprint"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
-		f = function()
-			_G.SendDebugInfoToClient = not SendDebugInfoToClient
-		end
-	},
 	["kick"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
 		f = function(args)
@@ -158,12 +147,29 @@ CHAT_COMMANDS = {
 			HeroSelection:ChangeHero(playerID, args[1], true, 0)
 		end
 	},
-	["ban"] = {
+	["abandon"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
 		f = function(args, hero, playerID)
 			if PlayerResource:IsValidPlayerID(tonumber(args[1])) then
 				PlayerResource:MakePlayerAbandoned(tonumber(args[1]))
 			end
+		end
+	},
+	["ban"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
+		f = function(args, hero, playerID)
+			local pid = tonumber(args[1])
+			if not PlayerResource:IsValidPlayerID(pid) then return end
+
+			PLAYER_DATA[pid].isBanned = true
+
+			local data = PLAYER_DATA[pid].serverData or {}
+			local clientData = table.deepcopy(data)
+			clientData.TBDRating = nil
+			clientData.isBanned = true
+			PlayerTables:SetTableValue("stats_client", pid, clientData)
+
+			PlayerResource:MakePlayerAbandoned(pid)
 		end
 	},
 	["a_createhero"] = {

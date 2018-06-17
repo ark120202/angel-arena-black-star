@@ -1,6 +1,8 @@
 function HeroSelection:OnHeroSelectHero(data)
 	local hero = tostring(data.hero)
 	local playerID = data.PlayerID
+	if PlayerResource:IsPlayerAbandoned(playerID) then return end
+
 	if HeroSelection:GetState() == HERO_SELECTION_PHASE_BANNING and not PLAYER_DATA[playerID].HeroSelectionBanned and NPC_HEROES_CUSTOM[hero] and NPC_HEROES_CUSTOM[hero].Enabled ~= 0 then
 		HeroSelection:NominateHeroForBan(playerID, data.hero)
 	elseif HeroSelection:GetState() == HERO_SELECTION_PHASE_HERO_PICK and HeroSelection:IsHeroPickAvaliable(hero) then
@@ -49,12 +51,14 @@ function HeroSelection:OnHeroSelectHero(data)
 end
 
 function HeroSelection:OnHeroHover(data)
+	if PlayerResource:IsPlayerAbandoned(data.PlayerID) then return end
 	if HeroSelection:GetState() == HERO_SELECTION_PHASE_HERO_PICK then
 		HeroSelection:UpdateStatusForPlayer(data.PlayerID, "hover", tostring(data.hero), true)
 	end
 end
 
 function HeroSelection:OnHeroRandomHero(data)
+	if PlayerResource:IsPlayerAbandoned(data.PlayerID) then return end
 	local team = PlayerResource:GetTeam(data.PlayerID)
 	if HeroSelection:GetState() == HERO_SELECTION_PHASE_HERO_PICK and HeroSelection:GetPlayerStatus(data.PlayerID).status ~= "picked" then
 		HeroSelection:PreformPlayerRandom(data.PlayerID)
@@ -63,6 +67,7 @@ function HeroSelection:OnHeroRandomHero(data)
 end
 
 function HeroSelection:OnHeroRepick(data)
+	if PlayerResource:IsPlayerAbandoned(data.PlayerID) then return end
 	if HeroSelection:GetState() == HERO_SELECTION_PHASE_HERO_PICK and not PLAYER_DATA[data.PlayerID].HeroSelectionRepicked then
 		PLAYER_DATA[data.PlayerID].HeroSelectionRepicked = true
 		HeroSelection:UpdateStatusForPlayer(data.PlayerID, "hover", tostring(data.hero))
@@ -71,6 +76,7 @@ function HeroSelection:OnHeroRepick(data)
 end
 
 function HeroSelection:OnMinimapSetSpawnbox(data)
+	if PlayerResource:IsPlayerAbandoned(data.PlayerID) then return end
 	local team = PlayerResource:GetTeam(data.PlayerID)
 
 	local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(data.PlayerID))

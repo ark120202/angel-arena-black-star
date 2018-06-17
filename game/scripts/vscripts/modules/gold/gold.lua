@@ -3,6 +3,13 @@ CUSTOM_GOLD_TICK_TIME = 0.5
 
 Gold = Gold or class({})
 
+Events:Register("activate", "gold", function ()
+	GameRules:SetGoldPerTick(0)
+	GameRules:SetGoldTickTime(0)
+	GameRules:SetStartingGold(0)
+	GameRules:SetUseBaseGoldBountyOnHeroes(true)
+end)
+
 function Gold:UpdatePlayerGold(unitvar)
 	local playerID = UnitVarToPlayerID(unitvar)
 	if playerID and playerID > -1 then

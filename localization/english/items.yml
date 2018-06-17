@@ -1381,9 +1381,8 @@ DOTA_Tooltip_ability_item_scythe_of_sun_bonus_evasion: '%+$evasion'
 DOTA_Tooltip_ability_item_scythe_of_sun_cast_range_bonus: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_scythe_of_sun_spell_amp_pct: '%SPELL DAMAGE AMP:'
 # DOTA_Tooltip_ability_item_scythe_of_sun_hex_duration: 'HEX DURATION:' # Too much specials
-DOTA_Tooltip_ability_item_scythe_of_sun_hex_damage_pct: '%HEX DAMAGE INCREASE:'
 DOTA_Tooltip_modifier_item_scythe_of_sun_hex: Sheeped
-DOTA_Tooltip_modifier_item_scythe_of_sun_hex_Description: You are a sheep. Cannot attack or cast spells. Incoming damage increased by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, movement speed is limited to %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%
+DOTA_Tooltip_modifier_item_scythe_of_sun_hex_Description: You are a sheep. Cannot attack or cast spells. Movement speed is limited to %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%
 
 DOTA_Tooltip_ability_item_book_of_the_guardian: Book of the Guardian
 DOTA_Tooltip_ability_item_book_of_the_guardian_Description: |-
@@ -1562,3 +1561,21 @@ DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: +Day Vision
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +Night Vision
 DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%+$spell_amp'
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize the singularity.
+
+DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
+DOTA_Tooltip_ability_item_golden_arrow_Description: >-
+  <h1>Active: Golden Life</h1> Gives you %gold_per_stack% gold. If you have more
+  than %attributes_per_stack% of each attribute, this ability will decrease them
+  by %attributes_per_stack%. Otherwise, deals %damage_per_stack% damage to your
+  hero.
+
+
+  All values of this ability would be increased by 100% with each use. Each use
+  also increases it's cooldown by %cooldown_per_stack%, starting from
+  %cooldown_base%.
+DOTA_Tooltip_ability_item_golden_arrow_Note0: >-
+  You won't be able to use this ability, if the active ability should damage
+  you, Golden Arrow can't be used nearby the fountain.
+DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: +$move_speed
+DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Multiplier

@@ -56,7 +56,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 					return false
 				end
 			end
-			if IsInBox(orderVector, Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()) then
+			if IsInBox(orderVector, Duel.BlockerBox[1], Duel.BlockerBox[2]) then
 				Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
 				return false
 			end
@@ -270,29 +270,6 @@ function GameMode:ModifyExperienceFilter(filterTable)
 	PLAYER_DATA[filterTable.player_id_const].AntiAFKLastXP = GameRules:GetGameTime() + PLAYER_ANTI_AFK_TIME
 	if Duel.IsFirstDuel and Duel:IsDuelOngoing() then
 		filterTable.experience = filterTable.experience * 0.1
-	end
-	return true
-end
-
-function GameMode:CustomChatFilter(playerID, teamonly, data)
-	if data.text and string.starts(data.text, "-") then
-		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-		local cmd = {}
-		for v in string.gmatch(string.sub(data.text, 2), "%S+") do table.insert(cmd, v) end
-
-		local command = table.remove(cmd, 1)
-		local data = CHAT_COMMANDS[command]
-		if data then
-			local isDev = DynamicWearables:HasWearable(playerID, "wearable_developer") or IsInToolsMode()
-			local isCheat = GameRules:IsCheatMode()
-			if data.level == CUSTOMCHAT_COMMAND_LEVEL_PUBLIC
-				or (data.level == CUSTOMCHAT_COMMAND_LEVEL_CHEAT and isCheat)
-				or (data.level == CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER and isDev)
-				or (data.level == CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER and (isCheat or isDev)) then
-				data.f(cmd, hero, playerID)
-			end
-		end
-		return false
 	end
 	return true
 end

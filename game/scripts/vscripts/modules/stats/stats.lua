@@ -25,10 +25,16 @@ function StatsClient:FetchPreGameData()
 
 			PLAYER_DATA[pid].serverData = data
 			PLAYER_DATA[pid].Inventory = data.inventory or {}
+			local isBanned = Options:IsEquals("EnableBans") and data.isBanned == true
+			PLAYER_DATA[pid].isBanned = isBanned
 
 			local clientData = table.deepcopy(data)
 			clientData.TBDRating = nil
 			PlayerTables:SetTableValue("stats_client", pid, clientData)
+
+			if isBanned then
+				PlayerResource:MakePlayerAbandoned(pid)
+			end
 		end
 	end, math.huge)
 end
@@ -38,7 +44,7 @@ function StatsClient:CalculateAverageRating()
 
 	for pid, data in pairs(PLAYER_DATA) do
 		local team = PlayerResource:GetTeam(pid)
-		if data.serverData then
+		if data.serverData and not PlayerResource:IsBanned(pid) then
 			teamRatings[team] = teamRatings[team] or {}
 			table.insert(teamRatings[team], data.serverData.Rating or (2500 + (data.serverData.TBDRating or 0)))
 		end
@@ -260,24 +266,17 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 	elseif not retryCount then
 		retryCount = 0
 	end
-	debugp("StatsClient:Send", "Sent data to " .. path .. "(with current retry of " .. (_currentRetry or 0) .. ")")
 
 	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path .. (protocol == "GET" and StatsClient:EncodeParams(data) or ""))
 	request:SetHTTPRequestGetOrPostParameter("data", json.encode(data))
 	request:Send(function(response)
 		if response.StatusCode ~= 200 or not response.Body then
-			debugp("StatsClient:Send", "Server returned an error, status is " .. response.StatusCode)
-			if response.Body then
-				debugp("StatsClient:Send", response.StatusCode .. ": " .. response.Body)
-			end
 			local currentRetry = (_currentRetry or 0) + 1
 			if not StatsClient.Debug and currentRetry < retryCount then
 				Timers:CreateTimer(self.RetryDelay, function()
-					debugp("StatsClient:Send", "Retry (" .. currentRetry .. ")")
 					StatsClient:Send(path, data, callback, retryCount, protocol, onerror, currentRetry)
 				end)
 			elseif onerror then
-				debugp("StatsClient:Send", "Retries for " .. path .." just stopped.")
 				if onerror == true then onerror = callback end
 
 				local resp = json.decode(response.Body)
@@ -286,9 +285,7 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 			end
 		else
 			local obj, pos, err = json.decode(response.Body)
-			if not obj then
-				debugp("[StatsClient] Critical Error: request to " .. self.ServerAddress .. path .. " returned undefined. Check server configuration")
-			elseif callback then
+			if obj and callback then
 				callback(obj)
 			end
 		end
