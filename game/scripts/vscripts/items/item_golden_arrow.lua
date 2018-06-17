@@ -13,7 +13,7 @@ if IsServer() then
 	function item_golden_arrow:HasEnoughAttributes()
 		local caster = self:GetCaster()
 		local stacks = caster:GetModifierStackCount("modifier_item_golden_arrow_counter", caster)
-		local requiredAttributes = stacks * -self:GetSpecialValueFor("stats_debuff_per_stack")
+		local requiredAttributes = -self:GetSpecialValueFor("attributes_per_stack") * stacks
 		return (
 			caster:GetStrength() > requiredAttributes and
 			caster:GetAgility() > requiredAttributes and
