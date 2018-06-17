@@ -1563,12 +1563,18 @@ DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%+$spell_amp'
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize the singularity.
 
 DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
-DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: 'Damage:'
-DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: 'Speed:'
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
- <h1>Пассивная: Golden life</h1> After you use this item you get gold, in count %gold_per_stack% for every stack
-  and reduce your  %stats_debuff_per_stack% stats per every stack.
-  If count of any of your stats is near 0,
-  then after use you will get damage in size %damage_per_stack% per stack.
-  With every use cooldown increases by %cooldown_per_stack% per stack.
-DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Stacks
+  <h1>Active: Golden Life</h1> Gives you %gold_per_stack% gold. If you have more
+  than %stats_debuff_per_stack% of each attribute, this ability will decrease
+  them by %stats_debuff_per_stack%. Otherwise, deals %damage_per_stack% damage
+  to your hero.
+
+
+  All values of this ability would be increased by 100% with each use. Each use
+  also increases it's cooldown by %cooldown_per_stack%.
+DOTA_Tooltip_ability_item_golden_arrow_Note0: >-
+  You won't be able to use this ability, if the active ability should damage
+  you, Golden Arrow can't be used nearby the fountain.
+DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: +$move_speed
+DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Multiplier
