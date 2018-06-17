@@ -218,7 +218,7 @@ function HeroSelection:StartStateStrategy()
 		end
 	end
 	--CustomGameEventManager:Send_ServerToAllClients("hero_selection_update_precache_progress", toPrecache)
-	GameRules:GetGameModeEntity():SetAnnouncerDisabled(DISABLE_ANNOUNCER)
+	GameRules:GetGameModeEntity():SetAnnouncerDisabled(false)
 	--CustomGameEventManager:Send_ServerToAllClients("hero_selection_show_precache", {})
 
 	HeroSelection:SetTimerDuration(HERO_SELECTION_STRATEGY_TIME)

@@ -65,6 +65,7 @@ end
 Options:Preload()
 
 function GameMode:InitGameMode()
+	GameMode:SetupRules()
 	GameMode = self
 	if GAMEMODE_INITIALIZATION_STATUS[2] then
 		return
@@ -164,15 +165,6 @@ function GameMode:OnGameInProgress()
 	end)
 end
 
-function CDOTAGamerules:SetKillGoal(iGoal)
-	KILLS_TO_END_GAME_FOR_TEAM = iGoal
-	PlayerTables:SetTableValue("arena", "kill_goal", KILLS_TO_END_GAME_FOR_TEAM)
-end
-
-function CDOTAGamerules:GetKillGoal()
-	return KILLS_TO_END_GAME_FOR_TEAM
-end
-
 function GameMode:PrecacheUnitQueueed(name)
 	if not table.contains(RANDOM_OMG_PRECACHED_HEROES, name) then
 		if not IS_PRECACHE_PROCESS_RUNNING then
@@ -220,6 +212,22 @@ function GameMode:GameModeThink()
 		end
 	end
 	return CUSTOM_GOLD_TICK_TIME
+end
+
+function GameMode:SetupRules()
+	GameRules:SetCustomGameSetupAutoLaunchDelay(IsInToolsMode() and 3 or 15)
+	GameRules:LockCustomGameSetupTeamAssignment(false)
+	GameRules:EnableCustomGameSetupAutoLaunch(true)
+	GameRules:SetTreeRegrowTime(60)
+	GameRules:SetUseCustomHeroXPValues(true)
+
+	local gameMode = GameRules:GetGameModeEntity()
+	gameMode:SetBuybackEnabled(false)
+	gameMode:SetTopBarTeamValuesOverride(true)
+	gameMode:SetUseCustomHeroLevels(true)
+	gameMode:SetCustomXPRequiredToReachNextLevel(XP_PER_LEVEL_TABLE)
+	gameMode:SetMaximumAttackSpeed(750)
+	gameMode:SetMinimumAttackSpeed(60)
 end
 
 function GameMode:BreakGame(message)

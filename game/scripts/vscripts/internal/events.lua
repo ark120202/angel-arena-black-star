@@ -61,9 +61,6 @@ function GameMode:_OnEntityKilled(keys)
 			local killedTeam = killedUnit:GetTeam()
 			if killerTeam ~= killedTeam and Teams:IsEnabled(killerTeam) then
 				Teams:ModifyScore(killerTeam, Teams:GetTeamKillWeight(killedTeam))
-				if END_GAME_ON_KILLS and Teams:GetScore(killerTeam) >= KILLS_TO_END_GAME_FOR_TEAM then
-					self:OnKillGoalReached(killerTeam)
-				end
 			end
 		end
 	end
@@ -75,13 +72,17 @@ function GameMode:_OnEntityKilled(keys)
 	GameMode._reentrantCheck = false
 end
 
+local firstPlayerLoaded = false
 -- This function is called once when the player fully connects and becomes "Ready" during Loading
 function GameMode:_OnConnectFull(keys)
 	if GameMode._reentrantCheck then
 		return
 	end
 
-	GameMode:_CaptureGameMode()
+	if not firstPlayerLoaded then
+		self:OnFirstPlayerLoaded()
+		firstPlayerLoaded = true
+	end
 
 	local entIndex = keys.index+1
 	-- The Player entity of the joining user

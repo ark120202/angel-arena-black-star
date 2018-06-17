@@ -5,30 +5,6 @@ function GameMode:_InitGameMode()
 		return
 	end
 	GAMEMODE_INITIALIZATION_STATUS[1] = true
-	-- Setup rules
-	GameRules:SetHeroRespawnEnabled( ENABLE_HERO_RESPAWN )
-	GameRules:SetUseUniversalShopMode( UNIVERSAL_SHOP_MODE )
-	GameRules:SetSameHeroSelectionEnabled( ALLOW_SAME_HERO_SELECTION )
-	GameRules:SetPostGameTime( POST_GAME_TIME )
-	GameRules:SetTreeRegrowTime( TREE_REGROW_TIME )
-	GameRules:SetUseCustomHeroXPValues ( USE_CUSTOM_XP_VALUES )
-	GameRules:SetGoldPerTick(0)
-	GameRules:SetGoldTickTime(0)
-	GameRules:SetStartingGold(0)
-
-	GameRules:SetUseBaseGoldBountyOnHeroes(USE_STANDARD_HERO_GOLD_BOUNTY)
-	GameRules:SetHeroMinimapIconScale( MINIMAP_ICON_SIZE )
-	GameRules:SetCreepMinimapIconScale( MINIMAP_CREEP_ICON_SIZE )
-
-	GameRules:SetFirstBloodActive( ENABLE_FIRST_BLOOD )
-	GameRules:SetHideKillMessageHeaders( HIDE_KILL_BANNERS )
-
-	GameRules:SetCustomGameEndDelay( GAME_END_DELAY )
-	GameRules:SetCustomVictoryMessageDuration( VICTORY_MESSAGE_DURATION )
-
-	GameRules:SetCustomGameSetupAutoLaunchDelay( AUTO_LAUNCH_DELAY )
-	GameRules:LockCustomGameSetupTeamAssignment( LOCK_TEAM_SETUP )
-	GameRules:EnableCustomGameSetupAutoLaunch( ENABLE_AUTO_LAUNCH )
 
 	-- Event Hooks
 	-- All of these events can potentially be fired by the game, though only the uncommented ones have had
@@ -85,42 +61,4 @@ function GameMode:_InitGameMode()
 	GameMode._reentrantCheck = true
 	GameMode:InitGameMode()
 	GameMode._reentrantCheck = false
-end
-
-mode = nil
-
--- This function is called as the first player loads and sets up the GameMode parameters
-function GameMode:_CaptureGameMode()
-	if mode == nil then
-		-- Set GameMode parameters
-		mode = GameRules:GetGameModeEntity()
-		mode:SetBuybackEnabled( BUYBACK_ENABLED )
-		mode:SetTopBarTeamValuesOverride ( USE_CUSTOM_TOP_BAR_VALUES )
-		mode:SetTopBarTeamValuesVisible( TOP_BAR_VISIBLE )
-		mode:SetUseCustomHeroLevels ( USE_CUSTOM_HERO_LEVELS )
-		--mode:SetCustomHeroMaxLevel ( MAX_LEVEL )
-		mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
-		mode:SetTowerBackdoorProtectionEnabled( ENABLE_TOWER_BACKDOOR_PROTECTION )
-
-		mode:SetFogOfWarDisabled(DISABLE_FOG_OF_WAR_ENTIRELY)
-		mode:SetGoldSoundDisabled( DISABLE_GOLD_SOUNDS )
-		mode:SetRemoveIllusionsOnDeath( REMOVE_ILLUSIONS_ON_DEATH )
-
-		mode:SetAlwaysShowPlayerInventory( SHOW_ONLY_PLAYER_INVENTORY )
-		mode:SetAnnouncerDisabled( DISABLE_ANNOUNCER )
-		mode:SetFountainConstantManaRegen(0)
-		mode:SetFountainPercentageHealthRegen(0)
-		mode:SetFountainPercentageManaRegen(0)
-		mode:SetMaximumAttackSpeed( MAXIMUM_ATTACK_SPEED )
-		mode:SetMinimumAttackSpeed( MINIMUM_ATTACK_SPEED )
-		mode:SetStashPurchasingDisabled ( DISABLE_STASH_PURCHASING )
-
-		mode:SetUnseenFogOfWarEnabled( USE_UNSEEN_FOG_OF_WAR )
-
-		mode:SetDaynightCycleDisabled( DISABLE_DAY_NIGHT_CYCLE )
-		mode:SetKillingSpreeAnnouncerDisabled( DISABLE_KILLING_SPREE_ANNOUNCER )
-		mode:SetStickyItemDisabled( DISABLE_STICKY_ITEM )
-
-		self:OnFirstPlayerLoaded()
-	end
 end

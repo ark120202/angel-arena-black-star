@@ -9,6 +9,10 @@ ModuleLinkLuaModifier(..., "modifier_fountain_aura_invulnerability", "modifier_f
 ModuleLinkLuaModifier(..., "modifier_fountain_aura_enemy")
 
 Events:Register("activate", "structures", function ()
+	local gameMode = GameRules:GetGameModeEntity()
+	gameMode:SetFountainConstantManaRegen(0)
+	gameMode:SetFountainPercentageHealthRegen(0)
+	gameMode:SetFountainPercentageManaRegen(0)
 	Structures:AddHealers()
 	Structures:CreateShops()
 end)

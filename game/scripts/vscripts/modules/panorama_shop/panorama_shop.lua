@@ -14,6 +14,7 @@ if PanoramaShop == nil then
 end
 
 Events:Register("activate", "panorama_shop", function ()
+	GameRules:GetGameModeEntity():SetStickyItemDisabled(true)
 	PanoramaShop:InitializeItemTable()
 end)
 

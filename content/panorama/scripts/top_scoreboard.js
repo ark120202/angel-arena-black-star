@@ -139,10 +139,10 @@ function Update() {
 	GameEvents.Subscribe('time_nightstalker_darkness', (function(data) {
 		darknessEndTime = Game.GetDOTATime(false, false) + data.duration;
 	}));
+	Options.Subscribe('KillLimit', function(value) {
+		$.GetContextPanel().SetDialogVariableInt('kill_goal', Number(value));
+	})
 	DynamicSubscribePTListener('arena', function(tableName, changesObject, deletionsObject) {
-		if (changesObject.kill_goal != null) {
-			$.GetContextPanel().SetDialogVariableInt('kill_goal', Number(changesObject.kill_goal));
-		}
 		if (changesObject.duel_end_time != null) {
 			DuelTimerEndTime = Number(changesObject.duel_end_time);
 		}

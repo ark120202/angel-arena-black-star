@@ -111,6 +111,8 @@ function Options:LoadDefaultValues()
 	Options:SetInitialValue("DynamicKillWeight", true)
 	Options:SetInitialValue("TeamSetupMode", "open")
 	Options:SetInitialValue("EnableBans", true)
+	Options:SetInitialValue("CustomTeamColors", false)
+	Options:SetInitialValue("KillLimit", 0)
 	--Options:SetInitialValue("MapLayout", "5v5")
 
 	Options:SetInitialValue("BanningPhaseBannedPercentage", 0)
@@ -122,7 +124,7 @@ function Options:LoadDefaultValues()
 	Options:SetPreGameVoting("kill_limit", {100, 125, 150, 175}, 150, {
 		calculationFunction = "/",
 		callback = function(value)
-			GameRules:SetKillGoal(math.round(value))
+			Options:SetValue("KillLimit", math.round(value))
 		end
 	})
 end
@@ -185,7 +187,7 @@ function Options:LoadMapValues()
 	end
 	if landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216
-		USE_CUSTOM_TEAM_COLORS = true
+		Options:SetValue("CustomTeamColors", true)
 	end
 	if landscape == "1v1" then
 		MAP_LENGTH = 3840
