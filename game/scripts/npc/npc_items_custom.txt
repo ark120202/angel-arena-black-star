@@ -8875,7 +8875,7 @@
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_golden_arrow.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/golden_arrow"
+		"AbilityTextureName"			"item_arena/golden_arrow_attributes"
 
 		"ItemQuality"					"common"
 		"ItemAliases"					"golden arrow"

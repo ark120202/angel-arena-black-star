@@ -6,7 +6,7 @@ item_golden_arrow = class({
 })
 
 function item_golden_arrow:GetAbilityTextureName()
-	return self:GetNetworkableEntityInfo("notEnoughAttributes") == 1 and "item_arena/golden_arrow_b" or "item_arena/golden_arrow"
+	return self:GetNetworkableEntityInfo("notEnoughAttributes") == 1 and "item_arena/golden_arrow_damage" or "item_arena/golden_arrow_attributes"
 end
 
 if IsServer() then
@@ -101,7 +101,7 @@ function modifier_item_golden_arrow:GetModifierMoveSpeedBonus_Constant()
 end
 
 modifier_item_golden_arrow_counter = class({
-	GetTexture = function() return "item_arena/golden_arrow" end,
+	GetTexture = function() return "item_arena/golden_arrow_attributes" end,
 	IsHidden = function() return false end,
 	IsPurgable = function() return false end,
 	RemoveOnDeath = function() return false end,
