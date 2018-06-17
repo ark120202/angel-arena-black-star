@@ -1,12 +1,3 @@
--- This file contains all barebones-registered events and has already set up the passed-in parameters for your use.
-
--- Cleanup a player when they leave
-function GameMode:OnDisconnect(keys)
-	local name = keys.name
-	local networkid = keys.networkid
-	local reason = keys.reason
-	local userid = keys.userid
-end
 -- The overall game state has changed
 function GameMode:OnGameRulesStateChange(keys)
 	local newState = GameRules:State_Get()
@@ -74,12 +65,6 @@ function GameMode:OnItemPickedUp(keys)
 	end]]
 end
 
--- A player has reconnected to the game.	This function can be used to repaint Player-based particles or change
--- state as necessary
-function GameMode:OnPlayerReconnect(keys)
-
-end
-
 -- An ability was used by a player
 function GameMode:OnAbilityUsed(keys)
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
@@ -93,38 +78,6 @@ function GameMode:OnAbilityUsed(keys)
 			CustomGameEventManager:Send_ServerToAllClients("time_nightstalker_darkness", {duration = ability:GetLevelSpecialValueFor("duration", ability:GetLevel()-1)})
 		end
 	end
-end
-
--- A non-player entity (necro-book, chen creep, etc) used an ability
-function GameMode:OnNonPlayerUsedAbility(keys)
-	--local abilityname = keys.abilityname
-end
-
--- A player changed their name
-function GameMode:OnPlayerChangedName(keys)
-	--local newName = keys.newname
-	--local oldName = keys.oldName
-end
-
--- A player leveled up an ability
-function GameMode:OnPlayerLearnedAbility( keys)
-	--local player = EntIndexToHScript(keys.player)
-	--local abilityname = keys.abilityname
-end
-
--- A channelled ability finished by either completing or being interrupted
-function GameMode:OnAbilityChannelFinished(keys)
-	--local abilityname = keys.abilityname
-	--local interrupted = keys.interrupted == 1
-end
-
--- A player last hit a creep, a tower, or a hero
-function GameMode:OnLastHit(keys)
-	--[[local isFirstBlood = keys.FirstBlood == 1
-	local isHeroKill = keys.HeroKill == 1
-	local isTowerKill = keys.TowerKill == 1
-	local player = PlayerResource:GetPlayer(keys.PlayerID)
-	local killedEnt = EntIndexToHScript(keys.EntKilled)]]
 end
 
 -- A tree was cut down by tango, quelling blade, etc
@@ -234,12 +187,6 @@ function GameMode:OnEntityKilled(keys)
 	end
 end
 
--- This function is called 1 to 2 times as the player connects initially but before they
--- have completely connected
-function GameMode:PlayerConnect(keys)
-
-end
-
 -- This function is called once when the player fully connects and becomes "Ready" during Loading
 function GameMode:OnConnectFull(keys)
 	--[[local entIndex = keys.index+1
@@ -279,26 +226,6 @@ function GameMode:OnItemCombined(keys)
 			end
 		end
 	end
-end
-
--- This function is called whenever an ability begins its PhaseStart phase (but before it is actually cast)
-function GameMode:OnAbilityCastBegins(keys)
-	--local player = PlayerResource:GetPlayer(keys.PlayerID)
-	--local abilityName = keys.abilityname
-end
-
--- This function is called whenever a player changes there custom team selection during Game Setup
-function GameMode:OnPlayerSelectedCustomTeam(keys)
-	--[[local player = PlayerResource:GetPlayer(keys.player_id)
-	local success = (keys.success == 1)
-	local team = keys.team_id]]
-end
-
--- This function is called whenever an NPC reaches its goal position/target
-function GameMode:OnNPCGoalReached(keys)
-	--[[local goalEntity = EntIndexToHScript(keys.goal_entindex)
-	local nextGoalEntity = EntIndexToHScript(keys.next_goal_entindex)
-	local npc = EntIndexToHScript(keys.npc_entindex)]]
 end
 
 function GameMode:OnPlayerChat(keys)

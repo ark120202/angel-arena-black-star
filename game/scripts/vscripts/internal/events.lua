@@ -5,14 +5,8 @@ function GameMode:_OnGameRulesStateChange(keys)
 	end
 
 	local newState = GameRules:State_Get()
-	if newState == DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD then
-		self.bSeenWaitForPlayers = true
-	elseif newState == DOTA_GAMERULES_STATE_INIT then
-		--Timers:RemoveTimer("alljointimer")
-	elseif newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+	if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 		GameMode:OnAllPlayersLoaded()
-	elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
-		GameMode:PostLoadPrecache()
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		GameMode:OnGameInProgress()
 	end
@@ -49,7 +43,7 @@ function GameMode:_OnEntityKilled(keys)
 	-- The Unit that was Killed
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
 	-- The Killing entity
-	local killerEntity = nil
+	local killerEntity
 
 	if keys.entindex_attacker ~= nil then
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
@@ -84,17 +78,13 @@ function GameMode:_OnConnectFull(keys)
 		firstPlayerLoaded = true
 	end
 
-	local entIndex = keys.index+1
-	-- The Player entity of the joining user
-	local ply = EntIndexToHScript(entIndex)
-
 	local userID = keys.userid
-
-	self.vUserIds = self.vUserIds or {}
-	self.vUserIds[userID] = ply
+	-- TODO: is keys.index-1 player id?
+	local entIndex = keys.index+1
+	local ply = EntIndexToHScript(entIndex)
 	PLAYER_DATA[ply:GetPlayerID()].UserID = userID
 
 	GameMode._reentrantCheck = true
-	GameMode:OnConnectFull( keys )
+	GameMode:OnConnectFull(keys)
 	GameMode._reentrantCheck = false
 end
