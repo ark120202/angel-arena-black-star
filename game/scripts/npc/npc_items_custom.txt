@@ -8856,4 +8856,70 @@
 			"sound"								"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
 		}
 	}
+
+	"item_recipe_golden_arrow"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_golden_arrow"
+		"ItemRequirements"
+		{
+			"01"						"item_blades_of_attack;item_boots"
+		}
+	}
+
+	"item_golden_arrow"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_golden_arrow.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"item_arena/golden_arrow"
+
+		"ItemQuality"					"common"
+		"ItemAliases"					"golden arrow"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilityCastPoint"				"0.5"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_speed"			"55"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_per_stack"		"60"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attributes_per_stack"	"-3"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_stack"		"60"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_base"			"15"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_per_stack"	"7"
+			}
+		}
+	}
 }
