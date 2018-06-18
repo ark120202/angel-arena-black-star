@@ -1,17 +1,23 @@
 function DoppelgangerEnd( event )
 	local caster = event.caster
 	local target = event.target
-	local ability = event.ability	
+	local ability = event.ability
 	local radius = ability:GetLevelSpecialValueFor( "target_radius", ability:GetLevel() - 1 )
-	
-	target:RemoveNoDraw()	
+
+	target:RemoveNoDraw()
 	target:SetAbsOrigin(target.doppleganger_position)
 	FindClearSpaceForUnit(target, target.doppleganger_position, true)
-	
+
 	if target == caster then
 		for i = 1, ability:GetLevelSpecialValueFor("illusion_count", ability:GetLevel()-1) do
-			local illusion = CreateIllusion(caster, ability, caster:GetAbsOrigin() + RandomVector(RandomInt(0, radius)), ability:GetLevelSpecialValueFor("illusion_incoming_damage", ability:GetLevel()-1) - 100, ability:GetLevelSpecialValueFor("illusion_outgoing_damage", ability:GetLevel()-1) - 100, ability:GetLevelSpecialValueFor("illusion_duration", ability:GetLevel()-1))
-			illusion:SetForwardVector(caster:GetForwardVector())
+			Illusions:create({
+				unit = caster,
+				ability = ability,
+				origin = caster:GetAbsOrigin() + RandomVector(RandomInt(0, radius)),
+				incomingDamage = ability:GetSpecialValueFor("illusion_incoming_damage"),
+				outgoingDamage = ability:GetSpecialValueFor("illusion_outgoing_damage"),
+				duration = ability:GetSpecialValueFor("illusion_duration")
+			})
 		end
 		caster:AddNewModifier(caster, ability, "modifier_invisible", {duration = ability:GetLevelSpecialValueFor("invisibilty_duration", ability:GetLevel()-1)})
 	end

@@ -2,7 +2,7 @@ function ConjureImage(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local original_hero = PlayerResource:GetSelectedHeroEntity(caster:GetPlayerID())
-	
+
 	if original_hero then
 		local original_ability = original_hero:FindAbilityByName(ability:GetAbilityName())
 		if original_ability then
@@ -13,10 +13,17 @@ function ConjureImage(keys)
 			if not original_ability.illusions then original_ability.illusions = 0 end
 			if not target:IsBoss() and RollPercentage(proc_chance) and original_ability.illusions < ability:GetLevelSpecialValueFor("max_illusions", ability:GetLevel() - 1) and original_ability:PreformPrecastActions() then
 				original_ability.illusions = original_ability.illusions + 1
-				local illusion = CreateIllusion(caster, original_ability, target:GetAbsOrigin() + RandomVector(100), ability:GetLevelSpecialValueFor("illusion_incoming_damage", ability:GetLevel() - 1) - 100, ability:GetLevelSpecialValueFor("illusion_outgoing_damage", ability:GetLevel() - 1) - 100, duration)
+				local illusion = Illusions:create({
+					unit = caster,
+					ability = original_ability,
+					origin = target:GetAbsOrigin() + RandomVector(100),
+					damageIncoming = ability:GetSpecialValueFor("illusion_incoming_damage"),
+					damageOutgoing = ability:GetSpecialValueFor("illusion_outgoing_damage"),
+					duration = duration
+				})
 				ability:ApplyDataDrivenModifier(illusion, illusion, "modifier_phantom_lancer_juxtapose_arena_illusion_count", nil)
 				ExecuteOrderFromTable({
-					UnitIndex = illusion:GetEntityIndex(), 
+					UnitIndex = illusion:GetEntityIndex(),
 					OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 					Position = illusion:GetAbsOrigin(),
 				})
@@ -40,7 +47,7 @@ end
 function ScepterEffectCreated(keys)
 	local target = keys.target
 	local ability = keys.ability
-	
+
 	if target:IsIllusion() and keys.caster:GetPlayerOwner() == target:GetPlayerOwner() then
 		for _,v in ipairs(target:FindAllModifiersByName("modifier_illusion")) do
 			v.OldDuration = v:GetRemainingTime()
@@ -52,7 +59,7 @@ end
 function ScepterEffectDestroy(keys)
 	local target = keys.target
 	local ability = keys.ability
-	
+
 	if target:IsIllusion() and keys.caster:GetPlayerOwner() == target:GetPlayerOwner() then
 		for _,v in ipairs(target:FindAllModifiersByName("modifier_illusion")) do
 			v:SetDuration(v.OldDuration or 0, true)
