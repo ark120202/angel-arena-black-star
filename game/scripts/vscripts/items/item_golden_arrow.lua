@@ -1,70 +1,13 @@
 LinkLuaModifier("modifier_item_golden_arrow", "items/item_golden_arrow.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_golden_arrow_counter", "items/item_golden_arrow.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_golden_arrow_target", "items/item_golden_arrow.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_golden_arrow = class({
 	GetIntrinsicModifierName = function() return "modifier_item_golden_arrow" end
 })
 
 function item_golden_arrow:GetAbilityTextureName()
-	return self:GetNetworkableEntityInfo("notEnoughAttributes") == 1 and "item_arena/golden_arrow_damage" or "item_arena/golden_arrow_attributes"
-end
-
-if IsServer() then
-	function item_golden_arrow:HasEnoughAttributes()
-		local caster = self:GetCaster()
-		local stacks = caster:GetModifierStackCount("modifier_item_golden_arrow_counter", caster)
-		local requiredAttributes = -self:GetSpecialValueFor("attributes_per_stack") * stacks
-		return (
-			caster:GetStrength() > requiredAttributes and
-			caster:GetAgility() > requiredAttributes and
-			caster:GetIntellect() > requiredAttributes
-		)
-	end
-
-	function item_golden_arrow:CastFilterResult()
-		local caster = self:GetCaster()
-		return self:HasEnoughAttributes() or not caster:HasModifier("modifier_fountain_aura_arena") and UF_SUCCESS or UF_FAIL_CUSTOM
-	end
-
-	function item_golden_arrow:GetCustomCastError()
-		local caster = self:GetCaster()
-		return caster:HasModifier("modifier_fountain_aura_arena") and "#arena_hud_error_cant_cast_on_fountain" or ""
-	end
-
-	function item_golden_arrow:OnSpellStart()
-		local caster = self:GetCaster()
-		local modifier = caster:FindModifierByName("modifier_item_golden_arrow_counter")
-		if not modifier then modifier = caster:AddNewModifier(caster, self, "modifier_item_golden_arrow_counter", nil) end
-		modifier:IncrementStackCount()
-		local stacks = modifier:GetStackCount()
-
-		local particle = ParticleManager:CreateParticle("particles/arena/items_fx/golden_arrow.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-		ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
-		caster:EmitSound("Arena.Items.GoldenArrow.Activate")
-
-		if not caster:IsRealHero() then return end
-		if self:HasEnoughAttributes() then
-			local attributes = self:GetSpecialValueFor("attributes_per_stack") * stacks
-			caster:ModifyStrength(attributes)
-			caster:ModifyAgility(attributes)
-			caster:ModifyIntellect(attributes)
-		else
-			local damage = self:GetSpecialValueFor("damage_per_stack") * stacks
-			ApplyDamage({
-				victim = caster,
-				attacker = caster,
-				damage = damage,
-				damage_type = DAMAGE_TYPE_PURE,
-				ability = self
-			})
-		end
-
-		local gold = self:GetSpecialValueFor("gold_per_stack") * stacks
-		Gold:AddGoldWithMessage(caster, gold)
-
-		local cooldown = self:GetSpecialValueFor("cooldown_base") + self:GetSpecialValueFor("cooldown_per_stack") * stacks
-		self:StartCooldown(cooldown)
-	end
+	return self:GetNetworkableEntityInfo("texture") or "item_arena/golden_arrow"
 end
 
 modifier_item_golden_arrow = class({
@@ -72,18 +15,6 @@ modifier_item_golden_arrow = class({
 	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
 	IsPurgable = function() return false end,
 })
-
-if IsServer() then
-	function modifier_item_golden_arrow:OnCreated()
-		self:StartIntervalThink(0.1)
-		self:OnIntervalThink()
-	end
-
-	function modifier_item_golden_arrow:OnIntervalThink()
-		local ability = self:GetAbility()
-		ability:SetNetworkableEntityInfo("notEnoughAttributes", not ability:HasEnoughAttributes())
-	end
-end
 
 function modifier_item_golden_arrow:DeclareFunctions()
 	return {
@@ -101,8 +32,69 @@ function modifier_item_golden_arrow:GetModifierMoveSpeedBonus_Constant()
 end
 
 modifier_item_golden_arrow_counter = class({
-	GetTexture = function() return "item_arena/golden_arrow_attributes" end,
+	GetTexture = function() return "item_arena/golden_arrow" end,
 	IsHidden = function() return false end,
 	IsPurgable = function() return false end,
-	RemoveOnDeath = function() return false end,
 })
+
+
+modifier_item_golden_arrow_target = class({
+	IsPurgable = function() return true end,
+	IsHidden = function() return false end,
+})
+
+
+if IsServer() then
+	function item_golden_arrow:OnSpellStart()
+		local caster = self:GetCaster()
+		local target = self:GetCursorTarget()
+		if caster:GetLevel()>= self:GetSpecialValueFor("max_caster_level") then return end
+		target:AddNewModifier(caster, self, "modifier_item_golden_arrow_target", {duration = self:GetSpecialValueFor("duration")})
+	end
+
+	function modifier_item_golden_arrow_target:OnCreated()
+		self:StartIntervalThink(0.6)
+	end
+
+	function modifier_item_golden_arrow_target:OnIntervalThink()
+		local caster = self:GetCaster()
+		local particle = ParticleManager:CreateParticle("particles/arena/items_fx/golden_arrow_target_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+		ParticleManager:SetParticleControlEnt(particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
+	end
+
+	function modifier_item_golden_arrow_target:OnDestroy()
+		local parent = self:GetParent()
+		local caster = self:GetCaster()
+		local ability = self:GetAbility()
+		local modifier = caster:FindModifierByName("modifier_item_golden_arrow_counter")
+		local max_stacks = ability:GetSpecialValueFor("max_stacks")
+		local gold = ability:GetSpecialValueFor("gold_per_stack")*max_stacks
+		local exp = ability:GetSpecialValueFor("xp_per_stack")*max_stacks
+		if caster:GetLevel() >= ability:GetSpecialValueFor("level_to_divine") then
+			gold = gold / 2
+			exp = exp/2
+		end
+
+
+		if not parent:IsAlive() then
+			if not modifier then modifier = caster:AddNewModifier(caster, ability, "modifier_item_golden_arrow_counter", nil) end
+			modifier:IncrementStackCount()
+		else
+			Gold:AddGoldWithMessage(parent, ability:GetSpecialValueFor('target_gold'))
+		end
+
+		if modifier and modifier:GetStackCount() > (max_stacks/2)-1 then
+			ability:SetNetworkableEntityInfo("texture", "item_arena/golden_arrow_streak")
+		else ability:SetNetworkableEntityInfo("texture", "item_arena/golden_arrow")
+		end
+
+		if modifier and modifier:GetStackCount() == max_stacks then
+			caster:RemoveModifierByName("modifier_item_golden_arrow_counter")
+			Gold:AddGoldWithMessage(caster,gold)
+			caster:AddExperience(exp, false, false)
+			caster:EmitSound("Arena.Items.GoldenArrow.Activate")
+			local particle = ParticleManager:CreateParticle("particles/arena/items_fx/golden_arrow.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+			ParticleManager:SetParticleControlEnt(particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
+		end
+	end
+end

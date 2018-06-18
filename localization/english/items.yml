@@ -1564,18 +1564,22 @@ DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize 
 
 DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
-  <h1>Active: Golden Life</h1> Gives you %gold_per_stack% gold. If you have more
-  than %attributes_per_stack% of each attribute, this ability will decrease them
-  by %attributes_per_stack%. Otherwise, deals %damage_per_stack% damage to your
-  hero.
-
-
-  All values of this ability would be increased by 100% with each use. Each use
-  also increases it's cooldown by %cooldown_per_stack%, starting from
-  %cooldown_base%.
+  <h1>Active: Golden Life</h1> Use on enemy. If you`ll
+  kill enemy in %duration%, you will get stack.
+  When you pile maximum stacks count, you get
+  gold and experience per every stack. If you don`t kill enemy
+  in time, enemy will get %target_gold% gold.
+  If your level is more than %max_caster_level%,
+  ability won`t work. If your level is more than
+  %level_to_divine%, you will get in 2 times less gold
+  and experiance, and if more than %max_caster_level%, item
+  won`t work.
 DOTA_Tooltip_ability_item_golden_arrow_Note0: >-
-  You won't be able to use this ability, if the active ability should damage
-  you, Golden Arrow can't be used nearby the fountain.
+  If you die, stacks will be annuled.
 DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: +$move_speed
+DOTA_Tooltip_ability_item_golden_arrow_max_stacks: "MAXIMUM STACKS:"
+DOTA_Tooltip_ability_item_golden_arrow_xp_per_stack: "XP PER STACK:"
+DOTA_Tooltip_ability_item_golden_arrow_gold_per_stack: "GOLD PER STACK:"
+DOTA_Tooltip_ability_item_golden_arrow_duration: "DURATION:"
 DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Multiplier

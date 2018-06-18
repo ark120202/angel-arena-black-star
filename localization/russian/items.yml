@@ -1033,16 +1033,21 @@ DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +к радиусу
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Только мудрецам дано полностью овладеть сингулярностью.
 
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
-  <h1>Активируемая: Golden Life</h1> Дает вам %gold_per_stack% золота. Если
-  у героя более %attributes_per_stack% каждого атрибута, то способность уменьшит
-  их на %attributes_per_stack%. Иначе, наносит %damage_per_stack% урона вашему
-  герою.
-
-
-  Все значения этой способности увеличиваются на 100% с каждым использованием.
-  Также каждое использование увеличивает время перезарядки способности на
-  %cooldown_per_stack%, начиная с %cooldown_base%.
+  <h1>Active: Golden Life</h1> Если вы убьете врага, на которого использовали предмет,
+  то получите стак. Когда вы накопите
+  максимальное количество стаков, то они исчезнут, а вы
+  получите золото и опыт за каждый стак. Если вы не успеете
+  убить выбранного противника за %duration% секунд, он получит
+  %target_gold% золота. Если ваш уровень будет больше чем
+  %level_to_divine%, то вы будете получать в 2 раза меньше
+  опыта и золота, а если больше чем %max_caster_level%, то
+  предмет не будет работать.
 DOTA_Tooltip_ability_item_golden_arrow_Note0: >-
-  Данный предмет не может быть использован, если он должен нанести урон, а ваш
-  герой находится рядом с фонтаном.
-DOTA_Tooltip_modifier_item_golden_arrow_counter: Множитель Golden Arrow
+  Если вы умрете, стаки исчезнут.
+DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: +$move_speed
+DOTA_Tooltip_ability_item_golden_arrow_max_stacks: "МАКСИМУМ СТАКОВ:"
+DOTA_Tooltip_ability_item_golden_arrow_xp_per_stack: "ОПЫТА ЗА СТАК:"
+DOTA_Tooltip_ability_item_golden_arrow_gold_per_stack: "ЗОЛОТА ЗА СТАК:"
+DOTA_Tooltip_ability_item_golden_arrow_duration: "ДЛИТЕЛЬНОСТЬ:"
+DOTA_Tooltip_modifier_item_golden_arrow_counter: Стаки Golden Arrow
