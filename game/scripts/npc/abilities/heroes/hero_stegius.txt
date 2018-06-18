@@ -343,13 +343,13 @@
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"boss_armor_reduction_chance_pct"	"5 10 15"
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"8"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"8"
+				"var_type"			"FIELD_INTEGER"
+				"limit"				"10"
 			}
 		}
 
