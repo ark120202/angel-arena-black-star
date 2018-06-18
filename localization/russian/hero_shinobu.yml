@@ -56,6 +56,8 @@ DOTA_Tooltip_ability_shinobu_kokorowatari_bonus_attack_range: 'ДОП. РАДИ�
 DOTA_Tooltip_ability_shinobu_kokorowatari_chance_to_kill: '%ШАНС НА УБИЙСТВО КРИПА:'
 DOTA_Tooltip_ability_shinobu_kokorowatari_soul_duration: 'ВРЕМЯ ЖИЗНИ ДУШИ:'
 npc_shinobu_soul: Душа
+DOTA_Tooltip_modifier_shinobu_kokorowatari_talent_debuff: Kokorowatari
+DOTA_Tooltip_modifier_shinobu_kokorowatari_talent_debuff_Description: 'Здоровье и весь наносимый урон снижены.'
 
 DOTA_Tooltip_ability_shinobu_yumewatari_lua_Description: Шинобу восстанавливает выбранную душу с уровнем ниже %max_ghost_level%. Также увеличивает урон Шинобу.
 DOTA_Tooltip_ability_shinobu_yumewatari_lua_Lore: Хотя Шиноба выглядит, как лоля, на деле она невероятно сильна.

@@ -419,7 +419,115 @@ CUSTOM_TALENTS_DATA = {
 		special_values = {
 			reduction_pct = {25, 50, 75, 100}
 		}
+
 	},
+	talent_hero_sai_invulnerability_bonus_multiplier = {
+		icon = "arena/sai_invulnerability",
+		cost = 15,
+		group = 10,
+		max_level = 4,
+		requirement = "sai_invulnerability",
+		special_values = {
+			bonus_multiplayer = {1.25, 1.5, 1.75, 2}
+		}
+	},
+	talent_hero_sai_divine_flesh_lifesteal = {
+		icon = "arena/sai_divine_flesh",
+		cost = 1,
+		group = 8,
+		max_level = 1,
+		requirement = "sai_divine_flesh",
+		special_values = {
+			lifesteal = {15}
+		}
+	},
+	talent_hero_sai_release_of_forge_vision = {
+		icon = "talents/heroes/release_of_forge_vision",
+		cost = 25,
+		group = 11,
+		requirement = "sai_release_of_forge",
+	},
+	talent_hero_shinobu_hide_in_shadows_heal_from_allies = {
+		icon = "arena/shinobu_hide_in_shadows",
+		cost = 20,
+		group = 9,
+		max_level = 1,
+		requirement = "shinobu_hide_in_shadows",
+		special_values = {
+			talent_regeneration_pct = {17}
+		}
+	},
+	talent_hero_shinobu_devouring = {
+		icon = "talents/heroes/shinobu_devouring",
+		cost = 35,
+		group = 10,
+		max_level = 1,
+		requirement = "npc_arena_hero_shinobu",
+		effect = {
+			modifiers = {
+				"modifier_shinobu_devouring"
+			},
+		},
+		special_values = {
+			damage_pct = {7.0},
+			duration = {2},
+			damage_to_heal_pct = {100},
+		}
+	},
+	talent_hero_shinobu_kokorowatari = {
+		icon = "arena/shinobu_kokorowatari",
+		cost = 50,
+		group = 11,
+		max_level = 1,
+		requirement = "shinobu_kokorowatari",
+		special_values = {
+			decrease_pct = {50},
+			duration = {4},
+		}
+	},
+	talent_hero_shinobu_yumewatari_mult = {
+		icon = "arena/shinobu_yumewatari_lua",
+		cost = 2,
+		group = 1,
+		max_level = 1,
+		requirement = "shinobu_yumewatari_lua",
+		special_values = {
+			creep_start_mult = {2}
+		}
+	},
+	talent_hero_stegius_desolating_touch = {
+		icon = "arena/stegius_desolating_touch",
+		cost = 20,
+		group = 9,
+		max_level = 1,
+		requirement = "stegius_desolating_touch",
+		special_values = {
+			armor_per_hit_pct = {3}
+		}
+	},
+	talent_hero_stegius_rage_of_desolus = {
+		icon = "arena/stegius_rage_of_desolus",
+		cost = 20,
+		group = 9,
+		max_level = 1,
+		requirement = "stegius_rage_of_desolus",
+		special_values = {
+			base_attack_time = {1.0}
+		}
+	},
+	--[[talent_hero_stegius_brightness_of_desolate_bonus_health_decrease = {
+		icon = "arena/stegius_rage_of_desolus",
+		cost = 2,
+		group = 4,
+		max_level = 1,
+		requirement = "stegius_brightness_of_desolate",
+		special_values = {
+			bonus_health_decrease = {5}
+		}
+	},]]--
+
+
+
 
 	--[[talent_hero_sara_evolution_bonus_health = {
 		icon = "talents/heroes/sara_evolution_bonus_health",

@@ -8,21 +8,24 @@ end
 function shinobu_yumewatari_lua:OnSpellStart() if IsServer() then
 	local old_soul = self:GetCursorTarget()
 	local max_ghost_level = self:GetSpecialValueFor("max_ghost_level")
+	local caster = self:GetCaster()
 
 	if old_soul and old_soul:GetUnitName() == "npc_shinobu_soul" and old_soul:GetTeamNumber() == DOTA_TEAM_NEUTRALS and (old_soul:GetLevel() <= max_ghost_level or max_ghost_level == 0) then
 		old_soul:ForceKill(false)
-		local caster = self:GetCaster()
 		local soul = CreateUnitByName("npc_shinobu_soul", old_soul:GetAbsOrigin(), true, caster, nil, caster:GetTeam())
 		soul:SetModel(old_soul:GetModelName())
 		soul:SetOriginalModel(old_soul:GetModelName())
 		soul:SetModelScale(old_soul:GetModelScale())
-		soul:SetBaseMaxHealth(old_soul:GetMaxHealth())
-		soul:SetMaxHealth(old_soul:GetMaxHealth())
-		soul:SetHealth(old_soul:GetMaxHealth())
-		soul:SetBaseDamageMin(old_soul:GetBaseDamageMin())
-		soul:SetBaseDamageMax(old_soul:GetBaseDamageMax())
-		soul:SetBaseAttackTime(old_soul:GetBaseAttackTime())
-		soul:SetAttackCapability(old_soul:GetAttackCapability())
+
+		local mult = self:GetCaster():GetTalentSpecial("talent_hero_shinobu_yumewatari_mult", "creep_start_mult") or 1
+		soul:SetBaseMaxHealth(old_soul:GetMaxHealth() * mult)
+		soul:SetMaxHealth(old_soul:GetMaxHealth() * mult)
+		soul:SetHealth(old_soul:GetMaxHealth() * mult)
+		soul:SetBaseDamageMin(old_soul:GetBaseDamageMin() * mult)
+		soul:SetBaseDamageMax(old_soul:GetBaseDamageMax() * mult)
+		soul:SetBaseAttackTime(old_soul:GetBaseAttackTime() * mult)
+		soul:SetAttackCapability(old_soul:GetAttackCapability() * mult)
+		
 
 		soul:SetControllableByPlayer(caster:GetPlayerID(), true)
 		soul:SetOwner(caster)

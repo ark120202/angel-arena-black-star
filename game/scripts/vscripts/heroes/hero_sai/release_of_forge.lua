@@ -87,6 +87,7 @@ function modifier_sai_release_of_forge_mass_debuff:DeclareFunctions()
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 		MODIFIER_PROPERTY_CASTTIME_PERCENTAGE,
 		MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE,
+		MODIFIER_PROPERTY_PROVIDES_FOW_POSITION,
 	}
 end
 
@@ -104,4 +105,12 @@ end
 
 function modifier_sai_release_of_forge_mass_debuff:GetModifierTurnRate_Percentage()
 	return self:GetAbility():GetSpecialValueFor("aura_turn_rate_pct")
+end
+
+if IsServer() then
+	function modifier_sai_release_of_forge_mass_debuff:GetModifierProvidesFOWVision()
+		if self:GetCaster():HasTalent("talent_hero_sai_release_of_forge_vision") then
+			return 1
+		end
+	end
 end

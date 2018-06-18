@@ -474,6 +474,11 @@
 				"var_type"			"FIELD_INTEGER"
 				"rage_bonus_evasion_chance" "10 15 20 25 30 35 40"
 			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tick_interval"		"0.1"
+			}
 		}
 
 		"precache"
@@ -497,7 +502,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 
-				"ThinkInterval"  "0.1"
+				"ThinkInterval"  "%tick_interval"
 				"OnIntervalThink"
 				{
 					"RunScript"
