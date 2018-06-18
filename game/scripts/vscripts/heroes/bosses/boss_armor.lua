@@ -29,11 +29,6 @@ function ClearDebuffs(keys)
 		if modifier_razor_eye_of_the_storm_armor and modifier_razor_eye_of_the_storm_armor:GetStackCount() > 10 then
 			modifier_razor_eye_of_the_storm_armor:SetStackCount(10)
 		end
-
-		local modifier_stegius_desolating_touch_debuff = caster:FindModifierByName("modifier_stegius_desolating_touch_debuff")
-		if modifier_stegius_desolating_touch_debuff and modifier_stegius_desolating_touch_debuff:GetStackCount() > 10 then
-			modifier_stegius_desolating_touch_debuff:SetStackCount(10)
-		end
 	end
 end
 
