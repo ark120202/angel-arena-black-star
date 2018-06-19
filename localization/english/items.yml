@@ -1566,20 +1566,16 @@ DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
   <h1>Active: Golden Life</h1> Use on enemy. If you`ll
   kill enemy in %duration%, you will get stack.
-  When you pile maximum stacks count, you get
-  gold and experience per every stack. If you don`t kill enemy
-  in time, enemy will get %target_gold% gold.
+  When you pile %max_stacks% stacks, you get
+  %gold_per_stack% gold and %xp_per_stack% experience per every stack. If you don`t kill enemy
+  in %duration% seconds, enemy will get %target_gold% gold.
   If your level is more than %max_caster_level%,
   ability won`t work. If your level is more than
-  %level_to_divine%, you will get in 2 times less gold
-  and experiance, and if more than %max_caster_level%, item
+  %level_to_divine% , you will get in 2 times less gold
+  and experience, and if more than %max_caster_level%, item
   won`t work.
 DOTA_Tooltip_ability_item_golden_arrow_Note0: >-
   If you die, stacks will be annuled.
 DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: +$move_speed
-DOTA_Tooltip_ability_item_golden_arrow_max_stacks: "Maximum stacks:"
-DOTA_Tooltip_ability_item_golden_arrow_xp_per_stack: "Xp per stack:"
-DOTA_Tooltip_ability_item_golden_arrow_gold_per_stack: "Gold per stack:"
-DOTA_Tooltip_ability_item_golden_arrow_duration: "Duration:"
 DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Multiplier

@@ -1035,8 +1035,8 @@ DOTA_Tooltip_ability_item_unstable_quasar_Lore: Только мудрецам д
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
   <h1>Active: Golden Life</h1> Если вы убьете врага, на которого использовали предмет,
   то получите стак. Когда вы накопите
-  максимальное количество стаков, то они исчезнут, а вы
-  получите золото и опыт за каждый стак. Если вы не успеете
+  %max_stacks% стаков, то они исчезнут, а вы
+  получите %gold_per_stack% золотa и %xp_per_stack% опытa за каждый стак. Если вы не успеете
   убить выбранного противника за %duration% секунд, он получит
   %target_gold% золота. Если ваш уровень будет больше чем
   %level_to_divine%, то вы будете получать в 2 раза меньше
@@ -1046,8 +1046,4 @@ DOTA_Tooltip_ability_item_golden_arrow_Note0: >-
   Если вы умрете, стаки исчезнут.
 DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: +$move_speed
-DOTA_Tooltip_ability_item_golden_arrow_max_stacks: "Максимум стаков:"
-DOTA_Tooltip_ability_item_golden_arrow_xp_per_stack: "Опыта за стак:"
-DOTA_Tooltip_ability_item_golden_arrow_gold_per_stack: "Золота за стак:"
-DOTA_Tooltip_ability_item_golden_arrow_duration: "Длительность:"
 DOTA_Tooltip_modifier_item_golden_arrow_counter: Стаки Golden Arrow
