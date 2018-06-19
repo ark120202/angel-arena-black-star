@@ -27,13 +27,9 @@ if IsServer() then
 	end
 
 	function modifier_item_golden_arrow_target:OnCreated()
-		self:StartIntervalThink(0.6)
-	end
-
-	function modifier_item_golden_arrow_target:OnIntervalThink()
 		local caster = self:GetCaster()
-		local particle = ParticleManager:CreateParticle("particles/arena/items_fx/golden_arrow_target_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-		ParticleManager:SetParticleControlEnt(particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
+		self.pfx = ParticleManager:CreateParticle("particles/arena/items_fx/golden_arrow_target.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+		ParticleManager:SetParticleControlEnt(self.pfx, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
 	end
 
 	function modifier_item_golden_arrow_target:OnDestroy()
@@ -44,6 +40,9 @@ if IsServer() then
 		local max_stacks = ability:GetSpecialValueFor("max_stacks")
 		local gold = ability:GetSpecialValueFor("gold_per_stack") * max_stacks
 		local exp = ability:GetSpecialValueFor("xp_per_stack") * max_stacks
+
+		ParticleManager:DestroyParticle(self.pfx, false)
+
 		if caster:GetLevel() >= ability:GetSpecialValueFor("level_to_divine") then
 			gold = gold / 2
 			exp = exp/2
