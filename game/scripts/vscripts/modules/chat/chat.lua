@@ -2,7 +2,7 @@ local commands = ModuleRequire(..., "commands")
 
 Chat = Chat or {}
 
-Events:Register("activate", "chat", function ()
+Events:Register("activate", function ()
 	CustomGameEventManager:RegisterListener("custom_chat_send_message", function(_, data)
 		Chat:Send(tonumber(data.PlayerID), data.teamOnly == 1, data)
 	end)

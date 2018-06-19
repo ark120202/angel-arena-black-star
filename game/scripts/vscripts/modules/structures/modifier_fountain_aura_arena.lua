@@ -26,10 +26,10 @@ if IsServer() then
 	end
 
 	local centralBossKilled = false
-	Events:Register("bosses/kill/central", "modifier_fountain_aura_arena", function ()
+	Events:Register("bosses/kill/central", function ()
 		centralBossKilled = true
 	end)
-	Events:Register("bosses/respawn/central", "modifier_fountain_aura_arena", function ()
+	Events:Register("bosses/respawn/central", function ()
 		centralBossKilled = false
 	end)
 

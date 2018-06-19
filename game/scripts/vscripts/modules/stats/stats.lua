@@ -1,7 +1,7 @@
 StatsClient = StatsClient or class({})
 ModuleRequire(..., "data")
 
-Events:Register("activate", "stats", function ()
+Events:Register("activate", function ()
 	PlayerTables:CreateTable("stats_client", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("stats_team_rating", {}, AllPlayersInterval)
 	CustomGameEventManager:RegisterListener("stats_client_add_guide", Dynamic_Wrap(StatsClient, "AddGuide"))
