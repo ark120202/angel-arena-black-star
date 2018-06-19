@@ -1033,7 +1033,7 @@ DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +к радиусу
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Только мудрецам дано полностью овладеть сингулярностью.
 
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
-  <h1>Active: Golden Life</h1> Если вы убьете врага, на которого использовали предмет,
+  <h1>Active: Kill Contract</h1> Если вы убьете врага, на которого использовали предмет,
   то получите стак. Когда вы накопите
   %max_stacks% стаков, то они исчезнут, а вы
   получите %gold_per_stack% золотa и %xp_per_stack% опытa за каждый стак. Если вы не успеете

@@ -1564,7 +1564,7 @@ DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize 
 
 DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
 DOTA_Tooltip_ability_item_golden_arrow_Description: >-
-  <h1>Active: Golden Life</h1> Use on enemy. If you`ll
+  <h1>Active: Kill Contract</h1> Use on enemy. If you`ll
   kill enemy in %duration%, you will get stack.
   When you pile %max_stacks% stacks, you get
   %gold_per_stack% gold and %xp_per_stack% experience per every stack. If you don`t kill enemy
