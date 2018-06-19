@@ -45,10 +45,17 @@ modifier_item_golden_arrow_target = class({
 
 
 if IsServer() then
+	function item_golden_arrow:CastFilterResultTarget()
+		return self:GetCaster():GetLevel() >= self:GetSpecialValueFor("max_caster_level") and UF_FAIL_CUSTOM or UF_SUCCESS
+	end
+
+	function item_golden_arrow:GetCustomCastErrorTarget()
+		return self:GetCaster():GetLevel() >= self:GetSpecialValueFor("max_caster_level") and "#arena_hud_too_big_level" or ""
+	end
+
 	function item_golden_arrow:OnSpellStart()
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
-		if caster:GetLevel()>= self:GetSpecialValueFor("max_caster_level") then return end
 		target:AddNewModifier(caster, self, "modifier_item_golden_arrow_target", {duration = self:GetSpecialValueFor("duration")})
 	end
 
