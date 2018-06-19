@@ -144,8 +144,8 @@ function GetPlayerHeroName(playerId) {
 	return '';
 }
 
-function GetPlayerGold(iPlayerID) {
-	return +PlayerTables.GetTableValue('gold', iPlayerID);
+function GetPlayerGold(playerId) {
+	return +PlayerTables.GetTableValue('gold', playerId);
 }
 
 function dynamicSort(property) {
@@ -247,8 +247,8 @@ function GetDotaHud() {
 	}
 }
 
-function GetSteamID(pid, type) {
-	var playerInfo = Game.GetPlayerInfo(pid);
+function GetSteamID(playerId, type) {
+	var playerInfo = Game.GetPlayerInfo(playerId);
 	if (!playerInfo) return 0;
 	var steamID64 = playerInfo.player_steamid,
 		steamID32 = String(Number(steamID64.substring(3)) - 61197960265728);

@@ -27,28 +27,28 @@ function Snippet_SharedControlPlayer_Update(panel) {
 	panel.SetHasClass('LocalPlayer', panel.playerId === Game.GetLocalPlayerID());
 }
 
-function Snippet_Player(pid) {
-	if (PlayerPanels[pid] == null) {
-		var team = Players.GetTeam(pid);
+function Snippet_Player(playerId) {
+	if (PlayerPanels[playerId] == null) {
+		var team = Players.GetTeam(playerId);
 		if (team !== DOTA_TEAM_SPECTATOR) {
-			var playerInfo = Game.GetPlayerInfo(pid);
+			var playerInfo = Game.GetPlayerInfo(playerId);
 			var teamPanel = Snippet_Team(team).FindChildTraverse('TeamPlayersContainer');
 			var panel = $.CreatePanel('Panel', teamPanel, '');
 			panel.BLoadLayoutSnippet('Player');
-			panel.FindChildTraverse('PlayerNameLabel').text = Players.GetPlayerName(pid);
+			panel.FindChildTraverse('PlayerNameLabel').text = Players.GetPlayerName(playerId);
 			panel.FindChildTraverse('AvatarImage').steamid = playerInfo.player_steamid;
 			panel.FindChildTraverse('AvatarImage').SetPanelEvent('onactivate', function() {
-				GameEvents.SendEventClientSide('player_profiles_show_info', {PlayerID: pid});
+				GameEvents.SendEventClientSide('player_profiles_show_info', { playerId: playerId });
 			});
 			var VoiceMute = panel.FindChildTraverse('VoiceMute');
-			panel.playerId = pid;
+			panel.playerId = playerId;
 			panel.SetHasClass('EmptyPlayerRow', false);
-			panel.SetHasClass('LocalPlayer', pid === Game.GetLocalPlayerID());
+			panel.SetHasClass('LocalPlayer', playerId === Game.GetLocalPlayerID());
 			var xpRoot = FindDotaHudElement('ScoreboardXP');
 			_.each([xpRoot.FindChildTraverse('LevelBackground'), xpRoot.FindChildTraverse('CircularXPProgress')/*, xpRoot.FindChildTraverse("XPProgress")*/], function(p) {
 				p.SetPanelEvent('onactivate', function() {
 					if (GameUI.IsAltDown()) {
-						var clientEnt = Players.GetPlayerHeroEntityIndex(pid);
+						var clientEnt = Players.GetPlayerHeroEntityIndex(playerId);
 						GameEvents.SendCustomGameEventToServer('custom_chat_send_message', {
 							xpunit: clientEnt === -1 ? playerInfo.player_selected_hero_entity_index : clientEnt
 						});
@@ -56,11 +56,11 @@ function Snippet_Player(pid) {
 				});
 			});
 			panel.FindChildTraverse('HeroImage').SetPanelEvent('onactivate', function() {
-				Players.PlayerPortraitClicked(pid, GameUI.IsControlDown(), GameUI.IsAltDown());
+				Players.PlayerPortraitClicked(playerId, GameUI.IsControlDown(), GameUI.IsAltDown());
 			});
-			VoiceMute.checked = Game.IsPlayerMuted(pid);
+			VoiceMute.checked = Game.IsPlayerMuted(playerId);
 			VoiceMute.SetPanelEvent('onactivate', function() {
-				Game.SetPlayerMuted(pid, VoiceMute.checked);
+				Game.SetPlayerMuted(playerId, VoiceMute.checked);
 			});
 			panel.Resort = function() {
 				SortPanelChildren(teamPanel, dynamicSort('playerId'), function(child, child2) {
@@ -69,7 +69,7 @@ function Snippet_Player(pid) {
 			};
 			panel.Resort();
 			/*panel.FindChildTraverse("HeroImage").SetPanelEvent("onactivate", function() {
-				Players.PlayerPortraitClicked(pid, GameUI.IsControlDown(), GameUI.IsAltDown());
+				Players.PlayerPortraitClicked(playerId, GameUI.IsControlDown(), GameUI.IsAltDown());
 			});
 			var TopBarUltIndicator = panel.FindChildTraverse("TopBarUltIndicator")
 			TopBarUltIndicator.SetPanelEvent("onmouseover", function() {
@@ -77,17 +77,17 @@ function Snippet_Player(pid) {
 				if (panel.ultimateCooldown != null && panel.ultimateCooldown > 0) {
 					$.DispatchEvent("UIShowTextTooltip", TopBarUltIndicator, panel.ultimateCooldown);
 				}
-				//$.DispatchEvent("UIShowTopBarUltimateTooltip ", panel, pid);
+				//$.DispatchEvent("UIShowTopBarUltimateTooltip ", panel, playerId);
 			});
 			panel.FindChildTraverse("TopBarUltIndicator").SetPanelEvent("onmouseout", function() {
 				$.DispatchEvent("UIHideTextTooltip", panel);
 				//$.DispatchEvent("DOTAHideTopBarUltimateTooltip", panel);
 			});
 			// ="DOTAShowTopBarUltimateTooltip()" onmouseout="DOTAHideTopBarUltimateTooltip()"*/
-			PlayerPanels[pid] = panel;
+			PlayerPanels[playerId] = panel;
 		}
 	}
-	return PlayerPanels[pid];
+	return PlayerPanels[playerId];
 }
 
 function Snippet_Player_Update(panel) {
@@ -195,8 +195,8 @@ function SetFlyoutScoreboardVisible(visible) {
 	});
 	DynamicSubscribePTListener('disable_help_data', function(tableName, changesObject, deletionsObject) {
 		if (changesObject[LocalPlayerID] != null) {
-			_.each(changesObject[LocalPlayerID], function(state, playerID) {
-				Snippet_SharedControlPlayer(playerID).FindChildTraverse('DisableHelpButton').checked = state === 1;
+			_.each(changesObject[LocalPlayerID], function(state, playerId) {
+				Snippet_SharedControlPlayer(playerId).FindChildTraverse('DisableHelpButton').checked = state === 1;
 			});
 		}
 	});

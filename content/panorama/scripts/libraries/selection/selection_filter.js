@@ -6,16 +6,16 @@ var DISPLAY_RANGE_PARTICLE = true; // Uses the main selected entity to update a 
 var rangedParticle
 
 function SelectionFilter( entityList ) {
-    
+
     if (DESELECT_BUILDINGS) {
         if (entityList.length > 1 && IsMixedBuildingSelectionGroup(entityList) ){
-            $.Schedule(1/60, DeselectBuildings) 
+            $.Schedule(1/60, DeselectBuildings)
         }
     }
 
     else if (SELECT_ONLY_BUILDINGS) {
         if (entityList.length > 1 && IsMixedBuildingSelectionGroup(entityList) ){
-            $.Schedule(1/60, SelectOnlyBuildings)   
+            $.Schedule(1/60, SelectOnlyBuildings)
         }
     }
 
@@ -47,9 +47,9 @@ function SelectionFilter( entityList ) {
 }
 
 function DeselectBuildings() {
-    var iPlayerID = Players.GetLocalPlayer();
-    var selectedEntities = Players.GetSelectedEntities( iPlayerID );
-    
+    var playerId = Players.GetLocalPlayer();
+    var selectedEntities = Players.GetSelectedEntities( playerId );
+
     skip = true;
     var first = FirstNonBuildingEntityFromSelection(selectedEntities)
     GameUI.SelectUnit(first, false); // Overrides the selection group
@@ -96,9 +96,9 @@ function IsMixedBuildingSelectionGroup ( entityList ) {
 }
 
 function SelectOnlyBuildings() {
-    var iPlayerID = Players.GetLocalPlayer();
-    var selectedEntities = Players.GetSelectedEntities( iPlayerID );
-    
+    var playerId = Players.GetLocalPlayer();
+    var selectedEntities = Players.GetSelectedEntities( playerId );
+
     skip = true;
     var first = FirstBuildingEntityFromSelection(selectedEntities)
     GameUI.SelectUnit(first, false); // Overrides the selection group

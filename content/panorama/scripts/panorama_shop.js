@@ -265,9 +265,9 @@ function ShowItemRecipe(itemName) {
 }
 
 function SendItemBuyOrder(itemName) {
-	var pid = Game.GetLocalPlayerID();
+	var playerId = Game.GetLocalPlayerID();
 	var unit = Players.GetLocalPlayerPortraitUnit();
-	unit = Entities.IsControllableByPlayer(unit, pid) ? unit : Players.GetPlayerHeroEntityIndex(pid);
+	unit = Entities.IsControllableByPlayer(unit, playerId) ? unit : Players.GetPlayerHeroEntityIndex(playerId);
 	GameEvents.SendCustomGameEventToServer('panorama_shop_item_buy', {
 		itemName: itemName,
 		unit: unit,

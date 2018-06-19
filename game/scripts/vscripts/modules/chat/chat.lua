@@ -95,25 +95,25 @@ function Chat:Send(playerId, teamonly, data)
 	end
 end
 
-function Chat:ApplyCommand(playerID, teamonly, text)
+function Chat:ApplyCommand(playerId, teamonly, text)
 	if not text or not string.starts(text, "-") then
 		return false
 	end
 
-	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	local args = {}
 	for v in string.gmatch(string.sub(text, 2), "%S+") do table.insert(args, v) end
 
 	local commandName = table.remove(args, 1)
 	local data = commands[commandName]
 	if data then
-		local isDev = DynamicWearables:HasWearable(playerID, "wearable_developer") or IsInToolsMode()
+		local isDev = DynamicWearables:HasWearable(playerId, "wearable_developer") or IsInToolsMode()
 		local isCheat = GameRules:IsCheatMode()
 		if data.level == CUSTOMCHAT_COMMAND_LEVEL_PUBLIC
 			or (data.level == CUSTOMCHAT_COMMAND_LEVEL_CHEAT and isCheat)
 			or (data.level == CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER and isDev)
 			or (data.level == CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER and (isCheat or isDev)) then
-			data.f(args, hero, playerID)
+			data.f(args, hero, playerId)
 		end
 	end
 	return true

@@ -52,8 +52,8 @@ function Selection_Remove(msg){
 
 // Fall back to the default selection
 function Selection_Reset(msg){
-	var playerID = Players.GetLocalPlayer();
-	var heroIndex = Players.GetPlayerHeroEntityIndex(playerID);
+	var playerId = Players.GetLocalPlayer();
+	var heroIndex = Players.GetPlayerHeroEntityIndex(playerId);
 	GameUI.SelectUnit(heroIndex, false);
 	OnUpdateSelectedUnit();
 }

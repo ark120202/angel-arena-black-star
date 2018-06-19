@@ -191,7 +191,7 @@ end
 function GameMode:OnConnectFull(keys)
 	--[[local entIndex = keys.index+1
 	local ply = EntIndexToHScript(entIndex)
-	local playerID = ply:GetPlayerID()]]
+	local playerId = ply:GetPlayerID()]]
 end
 
 -- This function is called whenever an item is combined to create a new item

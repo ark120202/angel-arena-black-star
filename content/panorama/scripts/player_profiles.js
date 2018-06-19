@@ -15,8 +15,8 @@ function LoadPanelForPlayer(playerId) {
 	//LoadPanelForPlayer()
 	if ($.GetContextPanel().id !== 'LocalPlayerData') {
 		GameEvents.Subscribe('player_profiles_show_info', function(data) {
-			if (Players.IsValidPlayerID(Number(data.PlayerID))) {
-				LoadPanelForPlayer(Number(data.PlayerID));
+			if (Players.IsValidPlayerID(Number(data.playerId))) {
+				LoadPanelForPlayer(Number(data.playerId));
 			}
 		});
 	}

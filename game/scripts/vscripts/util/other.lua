@@ -1,8 +1,8 @@
 function GetAllPlayers(bOnlyWithHeroes)
 	local Players = {}
-	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
-		if PlayerResource:IsValidPlayerID(playerID) then
-			local player = PlayerResource:GetPlayer(playerID)
+	for playerId = 0, DOTA_MAX_TEAM_PLAYERS-1  do
+		if PlayerResource:IsValidPlayerID(playerId) then
+			local player = PlayerResource:GetPlayer(playerId)
 			if player and ((bOnlyWithHeroes and player:GetAssignedHero()) or not bOnlyWithHeroes) then
 				table.insert(Players, player)
 			end
@@ -78,9 +78,9 @@ end
 
 function GetEnemiesIds(heroteam)
 	local enemies = {}
-	for _,playerID in ipairs(GetAllPlayers(false)) do
-		if PlayerResource:GetTeam(playerID:GetPlayerID()) ~= heroteam then
-			table.insert(enemies, playerID)
+	for _,playerId in ipairs(GetAllPlayers(false)) do
+		if PlayerResource:GetTeam(playerId:GetPlayerID()) ~= heroteam then
+			table.insert(enemies, playerId)
 		end
 	end
 	return enemies
@@ -302,16 +302,16 @@ function ColorTableToCss(color)
 	return "rgb(" .. color[1] .. ',' .. color[2] .. ',' .. color[3] .. ')'
 end
 
-function IsPlayerAbandoned(playerID)
-	return PLAYER_DATA[playerID].IsAbandoned == true
+function IsPlayerAbandoned(playerId)
+	return PLAYER_DATA[playerId].IsAbandoned == true
 end
 
 function FindAllOwnedUnits(player)
 	local summons = {}
-	local pid = type(player) == "number" and player or player:GetPlayerID()
-	local units = FindUnitsInRadius(PlayerResource:GetTeam(pid), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED, FIND_ANY_ORDER, false)
+	local playerId = type(player) == "number" and player or player:GetPlayerID()
+	local units = FindUnitsInRadius(PlayerResource:GetTeam(playerId), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED, FIND_ANY_ORDER, false)
 	for _,v in ipairs(units) do
-		if type(player) == "number" and ((v.GetPlayerID ~= nil and v:GetPlayerID() or v:GetPlayerOwnerID()) == pid) or v:GetPlayerOwner() == player then
+		if type(player) == "number" and ((v.GetPlayerID ~= nil and v:GetPlayerID() or v:GetPlayerOwnerID()) == playerId) or v:GetPlayerOwner() == player then
 			if not (v:HasModifier("modifier_dummy_unit") or v:HasModifier("modifier_containers_shopkeeper_unit") or v:HasModifier("modifier_teleport_passive")) and v ~= hero then
 				table.insert(summons, v)
 			end
@@ -477,9 +477,9 @@ end
 
 function GetPlayersInTeam(team)
 	local players = {}
-	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
-		if PlayerResource:IsValidPlayerID(playerID) and (not team or PlayerResource:GetTeam(playerID) == team) and not PLAYER_DATA[playerID].IsAbandoned then
-			table.insert(players, playerID)
+	for playerId = 0, DOTA_MAX_TEAM_PLAYERS-1  do
+		if PlayerResource:IsValidPlayerID(playerId) and (not team or PlayerResource:GetTeam(playerId) == team) and not PLAYER_DATA[playerId].IsAbandoned then
+			table.insert(players, playerId)
 		end
 	end
 	return players
@@ -558,8 +558,8 @@ function IsInBox(point, point1, point2)
 	return point.x > point1.x and point.y > point1.y and point.x < point2.x and point.y < point2.y
 end
 
-function GetConnectionState(pid)
-	return PlayerResource:IsFakeClient(pid) and DOTA_CONNECTION_STATE_CONNECTED or PlayerResource:GetConnectionState(pid)
+function GetConnectionState(playerId)
+	return PlayerResource:IsFakeClient(playerId) and DOTA_CONNECTION_STATE_CONNECTED or PlayerResource:GetConnectionState(playerId)
 end
 
 function DebugCallFunction(fun)

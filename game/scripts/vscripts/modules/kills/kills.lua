@@ -79,13 +79,13 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 		end
 	else
 		local assistGold = goldChange * 0.6
-		for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
-			if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:GetTeam(playerID) ~= killedUnit:GetTeamNumber() then
-				local player = PlayerResource:GetPlayer(playerID)
+		for playerId = 0, DOTA_MAX_TEAM_PLAYERS-1  do
+			if PlayerResource:IsValidPlayerID(playerId) and PlayerResource:GetTeam(playerId) ~= killedUnit:GetTeamNumber() then
+				local player = PlayerResource:GetPlayer(playerId)
 				if player and player:GetAssignedHero() then
 					SendOverheadEventMessage(player, OVERHEAD_ALERT_GOLD, player:GetAssignedHero(), assistGold, player)
 				end
-				Gold:ModifyGold(playerID, assistGold)
+				Gold:ModifyGold(playerId, assistGold)
 			end
 		end
 		Kills:CreateKillTooltip(nil, killedPlayerID, goldChange)

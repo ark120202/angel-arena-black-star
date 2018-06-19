@@ -15,16 +15,16 @@ function CDOTA_PlayerResource:ModifyPlayerStat(PlayerID, key, value)
 	return v
 end
 
-function CDOTA_PlayerResource:SetPlayerTeam(playerID, newTeam)
-	local oldTeam = self:GetTeam(playerID)
-	local player = self:GetPlayer(playerID)
-	local hero = self:GetSelectedHeroEntity(playerID)
-	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
+function CDOTA_PlayerResource:SetPlayerTeam(playerId, newTeam)
+	local oldTeam = self:GetTeam(playerId)
+	local player = self:GetPlayer(playerId)
+	local hero = self:GetSelectedHeroEntity(playerId)
+	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerId)
 	local playerPickData = {}
 	local tableData = PlayerTables:GetTableValue("hero_selection", oldTeam)
-	if tableData and tableData[playerID] then
-		table.merge(playerPickData, tableData[playerID])
-		tableData[playerID] = nil
+	if tableData and tableData[playerId] then
+		table.merge(playerPickData, tableData[playerId])
+		tableData[playerId] = nil
 		PlayerTables:SetTableValue("hero_selection", oldTeam, tableData)
 	end
 
@@ -33,24 +33,24 @@ function CDOTA_PlayerResource:SetPlayerTeam(playerID, newTeam)
 	end
 	player:SetTeam(newTeam)
 
-	PlayerResource:UpdateTeamSlot(playerID, newTeam, 1)
-	PlayerResource:SetCustomTeamAssignment(playerID, newTeam)
+	PlayerResource:UpdateTeamSlot(playerId, newTeam, 1)
+	PlayerResource:SetCustomTeamAssignment(playerId, newTeam)
 
 	local newTableData = PlayerTables:GetTableValue("hero_selection", newTeam)
 	if newTableData and playerPickData then
-		newTableData[playerID] = playerPickData
+		newTableData[playerId] = playerPickData
 		PlayerTables:SetTableValue("hero_selection", newTeam, newTableData)
 	end
 	--[[for _, v in ipairs(Entities:FindAllByClassname("npc_dota_courier") ) do
-		v:SetControllableByPlayer(playerID, v:GetTeamNumber() == newTeam)
+		v:SetControllableByPlayer(playerId, v:GetTeamNumber() == newTeam)
 	end]]
-	--FindCourier(oldTeam):SetControllableByPlayer(playerID, false)
+	--FindCourier(oldTeam):SetControllableByPlayer(playerId, false)
 	local targetCour = FindCourier(newTeam)
 	if IsValidEntity(targetCour) then
-		targetCour:SetControllableByPlayer(playerID, true)
+		targetCour:SetControllableByPlayer(playerId, true)
 	end
-	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerID)
-	PlayerTables:AddPlayerSubscription("dynamic_minimap_points_" .. newTeam, playerID)
+	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerId)
+	PlayerTables:AddPlayerSubscription("dynamic_minimap_points_" .. newTeam, playerId)
 
 	for i = 0, hero:GetAbilityCount() - 1 do
 		local skill = hero:GetAbilityByIndex(i)
@@ -99,22 +99,22 @@ function CDOTA_PlayerResource:KickPlayer(nPlayerID)
 	return false
 end
 
-function CDOTA_PlayerResource:IsPlayerAbandoned(playerID)
-	return IsPlayerAbandoned(playerID)
+function CDOTA_PlayerResource:IsPlayerAbandoned(playerId)
+	return IsPlayerAbandoned(playerId)
 end
 
-function CDOTA_PlayerResource:IsBanned(playerID)
-	return PLAYER_DATA[playerID].isBanned == true
+function CDOTA_PlayerResource:IsBanned(playerId)
+	return PLAYER_DATA[playerId].isBanned == true
 end
 
-function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
-	if PlayerResource:IsPlayerAbandoned(iPlayerID) then return end
-	PlayerResource:RemoveAllUnits(iPlayerID)
-	local heroname = HeroSelection:GetSelectedHeroName(iPlayerID)
+function CDOTA_PlayerResource:MakePlayerAbandoned(playerId)
+	if PlayerResource:IsPlayerAbandoned(playerId) then return end
+	PlayerResource:RemoveAllUnits(playerId)
+	local heroname = HeroSelection:GetSelectedHeroName(playerId)
 	--local notLinked = true
 	if heroname then
 		Notifications:TopToAll({hero=heroname, duration=10})
-		Notifications:TopToAll({text=PlayerResource:GetPlayerName(iPlayerID), continue=true, style={color=ColorTableToCss(PLAYER_DATA[iPlayerID].Color or {0, 0, 0})}})
+		Notifications:TopToAll({text=PlayerResource:GetPlayerName(playerId), continue=true, style={color=ColorTableToCss(PLAYER_DATA[playerId].Color or {0, 0, 0})}})
 		Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
 
 		for _,v in ipairs(GetLinkedHeroNames(heroname)) do
@@ -125,11 +125,11 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(iPlayerID)
 		end
 	end
 	--if notLinked then
-		HeroSelection:UpdateStatusForPlayer(iPlayerID, "hover", "npc_dota_hero_abaddon")
+		HeroSelection:UpdateStatusForPlayer(playerId, "hover", "npc_dota_hero_abaddon")
 	--end
-	PLAYER_DATA[iPlayerID].IsAbandoned = true
-	PlayerTables:SetTableValue("players_abandoned", iPlayerID, true)
-	Teams:RecalculateKillWeight(PlayerResource:GetTeam(iPlayerID))
+	PLAYER_DATA[playerId].IsAbandoned = true
+	PlayerTables:SetTableValue("players_abandoned", playerId, true)
+	Teams:RecalculateKillWeight(PlayerResource:GetTeam(playerId))
 	if not GameRules:IsCheatMode() then
 		local teamLeft = GetOneRemainingTeam()
 		if teamLeft then

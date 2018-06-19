@@ -11,10 +11,10 @@ Events:Register("activate", function ()
 end)
 
 function Gold:UpdatePlayerGold(unitvar)
-	local playerID = UnitVarToPlayerID(unitvar)
-	if playerID and playerID > -1 then
-		PlayerResource:SetGold(playerID, 0, false)
-		PlayerTables:SetTableValue("gold", playerID, PLAYER_DATA[playerID].SavedGold)
+	local playerId = UnitVarToPlayerID(unitvar)
+	if playerId and playerId > -1 then
+		PlayerResource:SetGold(playerId, 0, false)
+		PlayerTables:SetTableValue("gold", playerId, PLAYER_DATA[playerId].SavedGold)
 	end
 end
 
@@ -23,9 +23,9 @@ function Gold:ClearGold(unitvar)
 end
 
 function Gold:SetGold(unitvar, gold)
-	local playerID = UnitVarToPlayerID(unitvar)
-	PLAYER_DATA[playerID].SavedGold = math.floor(gold)
-	Gold:UpdatePlayerGold(playerID)
+	local playerId = UnitVarToPlayerID(unitvar)
+	PLAYER_DATA[playerId].SavedGold = math.floor(gold)
+	Gold:UpdatePlayerGold(playerId)
 end
 
 function Gold:ModifyGold(unitvar, gold, bReliable, iReason)
@@ -37,15 +37,15 @@ function Gold:ModifyGold(unitvar, gold, bReliable, iReason)
 end
 
 function Gold:RemoveGold(unitvar, gold)
-	local playerID = UnitVarToPlayerID(unitvar)
-	PLAYER_DATA[playerID].SavedGold = math.max((PLAYER_DATA[playerID].SavedGold or 0) - math.ceil(gold), 0)
-	Gold:UpdatePlayerGold(playerID)
+	local playerId = UnitVarToPlayerID(unitvar)
+	PLAYER_DATA[playerId].SavedGold = math.max((PLAYER_DATA[playerId].SavedGold or 0) - math.ceil(gold), 0)
+	Gold:UpdatePlayerGold(playerId)
 end
 
 function Gold:AddGold(unitvar, gold)
-	local playerID = UnitVarToPlayerID(unitvar)
-	PLAYER_DATA[playerID].SavedGold = (PLAYER_DATA[playerID].SavedGold or 0) + math.floor(gold)
-	Gold:UpdatePlayerGold(playerID)
+	local playerId = UnitVarToPlayerID(unitvar)
+	PLAYER_DATA[playerId].SavedGold = (PLAYER_DATA[playerId].SavedGold or 0) + math.floor(gold)
+	Gold:UpdatePlayerGold(playerId)
 end
 
 function Gold:AddGoldWithMessage(unit, gold, optPlayerID)

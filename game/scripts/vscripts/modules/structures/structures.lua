@@ -41,14 +41,14 @@ function Structures:AddHealers()
 end
 
 function Structures:GiveCourier(hero)
-	local pid = hero:GetPlayerID()
+	local playerId = hero:GetPlayerID()
 	local tn = hero:GetTeamNumber()
 	local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
 	TEAMS_COURIERS[hero:GetTeamNumber()] = true
 	Timers:CreateTimer(0.03, function()
 		for _,courier in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
 			local owner = courier:GetOwner()
-			if IsValidEntity(owner) and owner:GetPlayerID() == pid then
+			if IsValidEntity(owner) and owner:GetPlayerID() == playerId then
 				courier:SetOwner(nil)
 				courier:UpgradeToFlyingCourier()
 
