@@ -10,39 +10,11 @@ function item_golden_arrow:GetAbilityTextureName()
 	return self:GetNetworkableEntityInfo("texture") or "item_arena/golden_arrow"
 end
 
-modifier_item_golden_arrow = class({
-	IsHidden = function() return true end,
-	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
-	IsPurgable = function() return false end,
-})
-
-function modifier_item_golden_arrow:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
-	}
-end
-
-function modifier_item_golden_arrow:GetModifierPreAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("bonus_damage")
-end
-
-function modifier_item_golden_arrow:GetModifierMoveSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("bonus_speed")
-end
-
-modifier_item_golden_arrow_counter = class({
-	GetTexture = function() return "item_arena/golden_arrow" end,
-	IsHidden = function() return false end,
-	IsPurgable = function() return false end,
-})
-
 
 modifier_item_golden_arrow_target = class({
 	IsPurgable = function() return true end,
 	IsHidden = function() return false end,
 })
-
 
 if IsServer() then
 	function item_golden_arrow:CastFilterResultTarget()
@@ -75,24 +47,24 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local modifier = caster:FindModifierByName("modifier_item_golden_arrow_counter")
 		local max_stacks = ability:GetSpecialValueFor("max_stacks")
-		local gold = ability:GetSpecialValueFor("gold_per_stack")*max_stacks
-		local exp = ability:GetSpecialValueFor("xp_per_stack")*max_stacks
+		local gold = ability:GetSpecialValueFor("gold_per_stack") * max_stacks
+		local exp = ability:GetSpecialValueFor("xp_per_stack") * max_stacks
 		if caster:GetLevel() >= ability:GetSpecialValueFor("level_to_divine") then
 			gold = gold / 2
 			exp = exp/2
 		end
 
-
 		if not parent:IsAlive() then
 			if not modifier then modifier = caster:AddNewModifier(caster, ability, "modifier_item_golden_arrow_counter", nil) end
 			modifier:IncrementStackCount()
 		else
-			Gold:AddGoldWithMessage(parent, ability:GetSpecialValueFor('target_gold'))
+			Gold:AddGoldWithMessage(parent, ability:GetSpecialValueFor("target_gold"))
 		end
 
-		if modifier and modifier:GetStackCount() > (max_stacks/2)-1 then
+		if modifier and modifier:GetStackCount() > (max_stacks / 2) - 1 then
 			ability:SetNetworkableEntityInfo("texture", "item_arena/golden_arrow_streak")
-		else ability:SetNetworkableEntityInfo("texture", "item_arena/golden_arrow")
+		else
+			ability:SetNetworkableEntityInfo("texture", "item_arena/golden_arrow")
 		end
 
 		if modifier and modifier:GetStackCount() == max_stacks then
@@ -105,3 +77,31 @@ if IsServer() then
 		end
 	end
 end
+
+
+modifier_item_golden_arrow = class({
+	IsHidden = function() return true end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+	IsPurgable = function() return false end,
+})
+
+function modifier_item_golden_arrow:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+	}
+end
+
+function modifier_item_golden_arrow:GetModifierPreAttack_BonusDamage()
+	return self:GetAbility():GetSpecialValueFor("bonus_damage")
+end
+
+function modifier_item_golden_arrow:GetModifierMoveSpeedBonus_Constant()
+	return self:GetAbility():GetSpecialValueFor("bonus_speed")
+end
+
+modifier_item_golden_arrow_counter = class({
+	GetTexture = function() return "item_arena/golden_arrow" end,
+	IsHidden = function() return false end,
+	IsPurgable = function() return false end,
+})

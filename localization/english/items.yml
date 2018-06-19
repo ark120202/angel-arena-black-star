@@ -1578,8 +1578,8 @@ DOTA_Tooltip_ability_item_golden_arrow_Note0: >-
   If you die, stacks will be annuled.
 DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: +$move_speed
-DOTA_Tooltip_ability_item_golden_arrow_max_stacks: "MAXIMUM STACKS:"
-DOTA_Tooltip_ability_item_golden_arrow_xp_per_stack: "XP PER STACK:"
-DOTA_Tooltip_ability_item_golden_arrow_gold_per_stack: "GOLD PER STACK:"
-DOTA_Tooltip_ability_item_golden_arrow_duration: "DURATION:"
+DOTA_Tooltip_ability_item_golden_arrow_max_stacks: "Maximum stacks:"
+DOTA_Tooltip_ability_item_golden_arrow_xp_per_stack: "Xp per stack:"
+DOTA_Tooltip_ability_item_golden_arrow_gold_per_stack: "Gold per stack:"
+DOTA_Tooltip_ability_item_golden_arrow_duration: "Duration:"
 DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Multiplier
