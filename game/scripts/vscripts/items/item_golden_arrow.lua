@@ -6,11 +6,6 @@ item_golden_arrow = class({
 	GetIntrinsicModifierName = function() return "modifier_item_golden_arrow" end
 })
 
-function item_golden_arrow:GetAbilityTextureName()
-	return self:GetNetworkableEntityInfo("texture") or "item_arena/golden_arrow"
-end
-
-
 modifier_item_golden_arrow_target = class({
 	IsPurgable = function() return true end,
 	IsHidden = function() return false end,
@@ -59,12 +54,6 @@ if IsServer() then
 			modifier:IncrementStackCount()
 		else
 			Gold:AddGoldWithMessage(parent, ability:GetSpecialValueFor("target_gold"))
-		end
-
-		if modifier and modifier:GetStackCount() > (max_stacks / 2) - 1 then
-			ability:SetNetworkableEntityInfo("texture", "item_arena/golden_arrow_streak")
-		else
-			ability:SetNetworkableEntityInfo("texture", "item_arena/golden_arrow")
 		end
 
 		if modifier and modifier:GetStackCount() == max_stacks then
