@@ -710,4 +710,10 @@
 		"MovementSpeed"	"310"
 		"AttributeIntelligenceGain"	"2.1"
 	}
+
+	"npc_dota_hero_phantom_lancer"
+	{
+		"override_hero"	"npc_dota_hero_phantom_lancer"
+		"AttackRate"	"1.5"
+	}
 }

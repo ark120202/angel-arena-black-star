@@ -29,7 +29,6 @@
 //#base "abilities/heroes/hero_soul_eater.txt"
 
 #base "abilities/heroes/hero_pudge.txt"
-#base "abilities/heroes/hero_phantom_lancer.txt"
 
 "DOTAAbilities"
 {
