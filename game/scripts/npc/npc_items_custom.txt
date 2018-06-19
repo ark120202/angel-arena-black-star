@@ -8874,7 +8874,7 @@
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_golden_arrow.lua"
-		"AbilityTextureName"			"item_arena/golden_arrow_attributes"
+		"AbilityTextureName"			"item_arena/golden_arrow"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
