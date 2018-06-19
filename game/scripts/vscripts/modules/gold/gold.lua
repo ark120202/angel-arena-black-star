@@ -3,7 +3,7 @@ CUSTOM_GOLD_TICK_TIME = 0.5
 
 Gold = Gold or class({})
 
-Events:Register("activate", "gold", function ()
+Events:Register("activate", function ()
 	GameRules:SetGoldPerTick(0)
 	GameRules:SetGoldTickTime(0)
 	GameRules:SetStartingGold(0)

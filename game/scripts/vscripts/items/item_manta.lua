@@ -29,8 +29,14 @@ function modifier_item_manta_arena_invulnerability_on_destroy(keys)
 	FindClearSpaceForUnit(caster, caster_origin + RandomVector(100), true)
 	caster.MantaIllusions = {}
 	for i = 1, ability:GetLevelSpecialValueFor("images_count", ability:GetLevel()-1) do
-		local illusion = CreateIllusion(caster, ability, caster_origin + RandomVector(100), ability:GetLevelSpecialValueFor("illusion_damage_percent_incoming", ability:GetLevel()-1), ability:GetLevelSpecialValueFor("illusion_damage_percent_outgoing", ability:GetLevel()-1), ability:GetLevelSpecialValueFor("illusion_duration", ability:GetLevel()-1))
-		illusion:SetForwardVector(caster:GetForwardVector())
+		local illusion = Illusions:create({
+			unit = caster,
+			ability = ability,
+			origin = caster_origin + RandomVector(100),
+			damageIncoming = ability:GetSpecialValueFor("illusion_damage_percent_incoming_tooltip"),
+			damageOutgoing = ability:GetSpecialValueFor("illusion_damage_percent_outgoing_tooltip"),
+			duration = ability:GetSpecialValueFor("illusion_duration")
+		})
 		table.insert(caster.MantaIllusions, illusion)
 	end
 

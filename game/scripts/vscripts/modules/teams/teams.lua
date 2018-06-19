@@ -80,7 +80,7 @@ Teams.Data = Teams.Data or {
 	},
 }
 
-Events:Register("activate", "teams", function ()
+Events:Register("activate", function ()
 	local gameMode = GameRules:GetGameModeEntity()
 	gameMode:SetTowerBackdoorProtectionEnabled(false)
 

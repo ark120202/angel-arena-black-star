@@ -1,6 +1,6 @@
 Console = Console or {}
 
-Events:Register("activate", "console", function ()
+Events:Register("activate", function ()
 	CustomGameEventManager:RegisterListener("console-evaluate", Dynamic_Wrap(Console, "ConsoleEvaluate"))
 
 	Convars:RegisterCommand("arena_console", function()

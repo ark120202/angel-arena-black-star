@@ -2318,6 +2318,233 @@
 
 	}
 
+	"phantom_lancer_spirit_lance"
+	{
+		"MaxLevel"	"7"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"7.0"
+		"AbilityManaCost"				"125 130 135 140 160 180 200"
+		"AbilityCastRange"				"750"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lance_damage"				"100 150 200 250 300 350 400"
+				"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer_2"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lance_speed"				"1000"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"3.25"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed_pct"		"-10 -20 -30 -40 -50 -60 -70"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"illusion_duration"			"2.0 4.0 6.0 8.0 10.0 12.0 14.0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_damage_out_pct"	"-80"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_illusion_damage"	"20"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_damage_in_pct"	"300"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_illusion_total_damage_in_pct"	"400"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"fake_lance_distance"		"675"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_radius"			"400"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_jumps"				"5"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lance_speed_bounces"		"700"
+			}
+		}
+	}
+
+	"phantom_lancer_doppelwalk"
+	{
+		"MaxLevel"	"7"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"25 20 15 10 9 8 7"
+		"AbilityManaCost"				"50"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_1_damage_out_pct"	"-100"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_1_damage_in_pct"	"0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_2_damage_out_pct"	"-80"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_2_damage_in_pct"	"500"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"target_aoe"				"325"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"search_radius"				"900"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"delay"						"1"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"illusion_duration"			"8"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"illusion_extended_duration"	"2"
+			}
+		}
+	}
+
+	"phantom_lancer_juxtapose"
+	{
+		"MaxLevel"	"7"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_illusions"				"6 8 10 11 12 13 14"
+				"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer_3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"proc_chance_pct"			"35 40 45 50 55 60 65"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_proc_chance_pct"	"8"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_duration"			"8"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_damage_out_pct"	"-84"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_illusion_damage"	"16"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_damage_in_pct"	"400"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_total_illusion_damage_in_pct"	"500"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_from_illusion_duration"	"4"
+			}
+		}
+	}
+
+	"phantom_lancer_phantom_edge"
+	{
+		"MaxLevel"	"7"
+		"AbilityCooldown"				"18 16 14 12 10 8 6"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_distance"				"250"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_distance"				"600 700 800 900 950 1000 1050"
+				"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_speed"		"800"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_agility"		"6 14 22 30 38 46 54"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"agility_duration"		"2"
+			}
+		}
+	}
+
 	"puck_illusory_orb"
 	{
 		"MaxLevel"	"7"
@@ -16973,6 +17200,170 @@
 
 	}
 
+	"medusa_split_shot"
+	{
+		"MaxLevel"	"7"
+		"RequiredLevel"	"3"
+		"AbilityCastPoint"				"0.4"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"-70 -55 -40 -25 -20 -15 -10"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"30 45 60 75 80 85 90"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"3"
+				"LinkedSpecialBonus"			"special_bonus_unique_medusa_2"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"split_shot_bonus_range"		"100"
+			}
+		}
+	}
+
+	"medusa_mystic_snake"
+	{
+		"MaxLevel"	"7"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"11"
+		"AbilityManaCost"				"140 150 160 170 180 190 200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"475"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"snake_jumps"			"3 4 5 6 7 8 9"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"jump_delay"			"0.25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"snake_damage"			"80 120 160 200 240 280 320"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"snake_mana_steal"		"11 14 17 20 23 26 29"
+				"LinkedSpecialBonus"	"special_bonus_unique_medusa_3"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"snake_scale"			"35"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"initial_speed"			"800"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"return_speed"			"800"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stone_form_scepter_base"		"1.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stone_form_scepter_increment"		"0.3"
+			}
+		}
+	}
+
+	"medusa_mana_shield"
+	{
+		"MaxLevel"	"7"
+		"AbilityCastPoint"				"0.4"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_mana"		"1.6 1.9 2.2 2.5 2.8 3.1 3.4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"absorption_tooltip"		"60"
+			}
+		}
+	}
+
+	"medusa_stone_gaze"
+	{
+		"MaxLevel"	"7"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"90"
+		"AbilityManaCost"				"200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"1000"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4 5 6 7 8 9 10"
+				"LinkedSpecialBonus"		"special_bonus_unique_medusa"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow"						"35"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stone_duration"			"3.0"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"face_duration"				"2.0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"vision_cone"				"0.08715"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_physical_damage"		"50"
+			}
+		}
+	}
 
 	"troll_warlord_berserkers_rage"
 	{
