@@ -17203,6 +17203,7 @@
 	"medusa_split_shot"
 	{
 		"MaxLevel"	"7"
+		"RequiredLevel"	"3"
 		"AbilityCastPoint"				"0.4"
 
 		"AbilitySpecial"
