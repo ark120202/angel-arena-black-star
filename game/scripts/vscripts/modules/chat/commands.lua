@@ -90,14 +90,14 @@ return {
 	["equip"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
 		f = function(args, hero)
-			hero:EquipWearable(tonumber(args[1]))
+			DynamicWearables:EquipWearable(hero, tonumber(args[1]))
 		end
 	},
 	["reattach"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
 		f = function(args, hero)
-			hero:RemoveAllWearables()
-			hero:EquipItemsFromPlayerSelectionOrDefault()
+			DynamicWearables:UnequipAll(hero)
+			DynamicWearables:AutoEquip(hero)
 		end
 	},
 	["maxenergy"] = {

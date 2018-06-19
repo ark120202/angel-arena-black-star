@@ -20,7 +20,7 @@ function GameMode:OnNPCSpawned(keys)
 			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
 				Physics:Unit(npc)
 				npc:SetAutoUnstuck(true)
-				npc:EquipItemsFromPlayerSelectionOrDefault()
+				DynamicWearables:AutoEquip(npc)
 				if npc.ModelOverride then
 					npc:SetModel(npc.ModelOverride)
 					npc:SetOriginalModel(npc.ModelOverride)
