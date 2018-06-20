@@ -18,6 +18,7 @@ local requirements = {
 	"libraries/worldpanels",
 	"libraries/PopupNumbers",
 	"libraries/statcollection/init",
+	"libraries/HealthCapper",
 	--------------------------------------------------
 	"data/constants",
 	"data/globals",
