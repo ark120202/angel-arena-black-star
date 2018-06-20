@@ -349,7 +349,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"limit"				"10"
+				"boss_limit"				"10"
 			}
 		}
 
