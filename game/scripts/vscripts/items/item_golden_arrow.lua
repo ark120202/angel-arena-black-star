@@ -11,6 +11,10 @@ modifier_item_golden_arrow_target = class({
 	IsHidden = function() return false end,
 })
 
+function modifier_item_golden_arrow_target:DeclareFunctions()
+	return {MODIFIER_EVENT_ON_DEATH,}
+end
+
 if IsServer() then
 	function item_golden_arrow:CastFilterResultTarget()
 		return self:GetCaster():GetLevel() >= self:GetSpecialValueFor("max_caster_level") and UF_FAIL_CUSTOM or UF_SUCCESS
@@ -34,25 +38,34 @@ if IsServer() then
 
 	function modifier_item_golden_arrow_target:OnDestroy()
 		local parent = self:GetParent()
-		local caster = self:GetCaster()
 		local ability = self:GetAbility()
-		local modifier = caster:FindModifierByName("modifier_item_golden_arrow_counter")
-		local max_stacks = ability:GetSpecialValueFor("max_stacks")
-		local gold = ability:GetSpecialValueFor("gold_per_stack") * max_stacks
-		local exp = ability:GetSpecialValueFor("xp_per_stack") * max_stacks
 
 		ParticleManager:DestroyParticle(self.pfx, false)
 
-		if caster:GetLevel() >= ability:GetSpecialValueFor("level_to_divine") then
-			gold = gold / 2
-			exp = exp/2
+		if parent:IsAlive() then
+			Gold:AddGoldWithMessage(parent, ability:GetSpecialValueFor("target_gold"))
 		end
 
-		if not parent:IsAlive() then
-			if not modifier then modifier = caster:AddNewModifier(caster, ability, "modifier_item_golden_arrow_counter", nil) end
+	end
+
+	function modifier_item_golden_arrow_target:OnDeath(keys)
+		local caster = self:GetCaster()
+		local parent = self:GetParent()
+		local ability = self:GetAbility()
+		local max_stacks = ability:GetSpecialValueFor("max_stacks")
+		local gold = ability:GetSpecialValueFor("gold_per_stack") * max_stacks
+		local exp = ability:GetSpecialValueFor("xp_per_stack") * max_stacks
+		local modifier = caster:FindModifierByName("modifier_item_golden_arrow_counter")
+
+		if caster:GetLevel() >= ability:GetSpecialValueFor("level_to_divine") then
+			gold = gold / 2
+			exp = exp / 2
+		end
+
+		if not modifier then modifier = caster:AddNewModifier(caster, ability, "modifier_item_golden_arrow_counter", nil) end
+
+		if keys.attacker == caster then
 			modifier:IncrementStackCount()
-		else
-			Gold:AddGoldWithMessage(parent, ability:GetSpecialValueFor("target_gold"))
 		end
 
 		if modifier and modifier:GetStackCount() == max_stacks then
