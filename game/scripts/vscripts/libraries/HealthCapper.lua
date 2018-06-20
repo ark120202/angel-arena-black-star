@@ -9,7 +9,7 @@ function HealthCapper:Think()
 	end
 	
 	local MaxHealth = self:GetMaxHealth()
-	if MaxHealth < 0 or MaxHealth > 2000000000 then
+	if MaxHealth <= 0 or MaxHealth > 2000000000 then
 		self:SetMaxHealth(2000000000)
 		self:SetHealth(2000000000)
 	end
