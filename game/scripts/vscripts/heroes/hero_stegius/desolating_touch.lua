@@ -3,11 +3,10 @@ function ReduceArmor(keys)
 	local unit = keys.target
 	local ability = keys.ability
 	local stacks = ability:GetAbilitySpecial("armor_per_hit")
-	local modifier = unit:FindModifierByName("modifier_stegius_desolating_touch_debuff")
-	ModifyStacks(ability, caster, unit, "modifier_stegius_desolating_touch_debuff", stacks, true)
-	if unit:IsBoss() and modifier and modifier:GetStackCount() > ability:GetAbilitySpecial("boss_limit") then
-		modifier:SetStackCount(ability:GetAbilitySpecial("boss_limit"))
+	if unit:IsBoss() then
+		stacks = math.min(stacks, ability:GetAbilitySpecial("boss_limit") - unit:GetModifierStackCount("modifier_stegius_desolating_touch_debuff", ability))
 	end
+	ModifyStacks(ability, caster, unit, "modifier_stegius_desolating_touch_debuff", stacks, true)
 	unit:EmitSound("Item_Desolator.Target")
 	Timers:CreateTimer(ability:GetAbilitySpecial("duration"), function()
 		if IsValidEntity(caster) and IsValidEntity(unit) then
