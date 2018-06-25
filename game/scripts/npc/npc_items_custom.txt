@@ -1676,23 +1676,23 @@
 			}
 			"21"
 			{
-				"var_type"											"FIELD_INTEGER"
-				"purge_chance_pct"									"10"
-			}
-			"22"
-			{
 				"var_type"											"FIELD_FLOAT"
 				"purge_slow_duration"								"4"
 			}
-			"23"
+			"22"
 			{
 				"var_type"											"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"							"-100"
 			}
-			"24"
+			"23"
 			{
 				"var_type"											"FIELD_INTEGER"
 				"damage_per_burn_pct"								"50"
+			}
+			"24"
+			{
+				"var_type"											"FIELD_INTEGER"
+				"purge_cooldown"									"10"
 			}
 		}
 
@@ -1766,6 +1766,7 @@
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 						"modifier_root"	"modifier_item_diffusal_style_root"
 						"modifier_slow"	"modifier_item_diffusal_style_slow"
+						"modifier_cooldown"	"modifier_item_diffusal_style_purge_cooldown"
 					}
 				}
 			}
@@ -1794,6 +1795,12 @@
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct"
 				}
+			}
+
+			"modifier_item_diffusal_style_purge_cooldown"
+			{
+				"Duration"			"%purge_cooldown"
+				"IsDebuff"			"1"
 			}
 		}
 	}

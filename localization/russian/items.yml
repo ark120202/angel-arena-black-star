@@ -189,7 +189,7 @@ DOTA_Tooltip_ability_item_diffusal_style: Diffusal Style
 DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   <h1>Активируемая: Mirror Image</h1> Создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
   <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn_pct%%% сожженной маны в виде чистого урона. Также восстанавливает вам %feedback_mana_drain_pct%%% маны от сожженной маны противника.
-  <h1>Пассивная: Purge</h1> Каждая атака имеет %purge_chance_pct%%% шанс снять положительные эффекты, приковать к земле на %purge_root_duration% сек. и замедлить противника на %purge_slow_duration% секунд.
+  <h1>Пассивная: Purge</h1> Каждые %purge_cooldown% секунд снимает цели положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% секунд.
 DOTA_Tooltip_ability_item_diffusal_style_Note0: 'Тратит 0,1 секунды на произношение заклинания, во время которого вы неуязвимы.'
 DOTA_Tooltip_ability_item_diffusal_style_Note1: Использование снимает многие эффекты.
 DOTA_Tooltip_ability_item_diffusal_style_bonus_attack_range: +к радиусу атаки
@@ -199,6 +199,8 @@ DOTA_Tooltip_modifier_item_diffusal_style_root: Прикован от Diffusal S
 DOTA_Tooltip_modifier_item_diffusal_style_root_Description: Прикован к земле.
 DOTA_Tooltip_modifier_item_diffusal_style_slow: Очищение от Diffusal Style
 DOTA_Tooltip_modifier_item_diffusal_style_slow_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
+DOTA_Tooltip_modifier_item_diffusal_style_purge_cooldown: Diffusal Style Purge
+DOTA_Tooltip_modifier_item_diffusal_style_purge_cooldown_Description: Can`t purge.
 DOTA_Tooltip_ability_item_dagon_arena: Dagon
 DOTA_Tooltip_ability_item_dagon_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_arena_damage: 'МГНОВЕННЫЙ УРОН:'
