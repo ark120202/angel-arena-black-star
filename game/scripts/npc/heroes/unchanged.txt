@@ -217,6 +217,9 @@
 		"override_hero"	"npc_dota_hero_sniper"
 		"AttackRate"	"1.6"
 		"MovementSpeed"	"275"
+
+		// FIXME: remove once Valve would fix it
+		"AttackDamageMax"		"21"
 	}
 
 	"npc_dota_hero_necrolyte"
