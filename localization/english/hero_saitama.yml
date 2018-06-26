@@ -4,17 +4,17 @@ npc_arena_hero_saitama_bio: 'According to Saitama, back in his childhood, he spe
 
 DOTA_Tooltip_ability_saitama_push_ups: Push-ups
 DOTA_Tooltip_ability_saitama_push_ups_Description: 'Saitama does a hundred push-ups, becoming stronger. At the end of the ability, Saitama permanently gains some strength and receives %stacks_amount% limiter stack.'
-DOTA_Tooltip_ability_saitama_push_ups_Lore: One hundred of push-ups...
+DOTA_Tooltip_ability_saitama_push_ups_Lore: One hundred push-ups...
 DOTA_Tooltip_ability_saitama_push_ups_bonus_strength: 'BONUS STRENGTH:'
 
 DOTA_Tooltip_ability_saitama_squats: Squats
 DOTA_Tooltip_ability_saitama_squats_Description: 'Saitama does a hundred squats, becoming stronger. At the end of the ability, Saitama permanently gains some strength and receives %stacks_amount% limiter stack. '
-DOTA_Tooltip_ability_saitama_squats_Lore: One hundred of squats...
+DOTA_Tooltip_ability_saitama_squats_Lore: One hundred squats...
 DOTA_Tooltip_ability_saitama_squats_bonus_strength: 'BONUS STRENGTH:'
 
-DOTA_Tooltip_ability_saitama_press: Press
-DOTA_Tooltip_ability_saitama_press_Description: 'Saitama does a hundred exercises on the press, becoming stronger. At the end of the ability, Saitama permanently gains some strength and receives %stacks_amount% limiter stack.'
-DOTA_Tooltip_ability_saitama_press_Lore: One hundred on press...
+DOTA_Tooltip_ability_saitama_press: Sit-ups
+DOTA_Tooltip_ability_saitama_press_Description: 'Saitama does a hundred sit-ups, becoming stronger. At the end of the ability, Saitama permanently gains some strength and receives %stacks_amount% limiter stack.'
+DOTA_Tooltip_ability_saitama_press_Lore: One hundred sit-ups...
 DOTA_Tooltip_ability_saitama_press_bonus_strength: 'BONUS STRENGTH:'
 
 DOTA_Tooltip_ability_saitama_jogging: Jogging
@@ -25,7 +25,7 @@ DOTA_Tooltip_modifier_saitama_jogging: Jogging
 DOTA_Tooltip_modifier_saitama_jogging_Description: Each 100%% (now %dMODIFIER_PROPERTY_TOOLTIP%%%) Saitama gains Jogging ability effect.
 
 DOTA_Tooltip_ability_saitama_serios_punch: Serious Punch
-DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Saitama is putting a bit more effort into the attack, pusing target and dealing it lots of damage, based on his current attack damage. Each Limiter stack increases damage multiplier by %damage_multiplier_per_stack_pct%%%. Knockback duration and range depends on dealt damage.'
+DOTA_Tooltip_ability_saitama_serios_punch_Description: 'Saitama puts a bit more effort into his attack, pushing the target and dealing lots of damage, based on his current attack damage. Each Limiter stack increases damage multiplier by %damage_multiplier_per_stack_pct%%%. Knockback duration and range depends on dealt damage.'
 DOTA_Tooltip_ability_saitama_serios_punch_Lore: Let me become a bit more serious, so that you put all of yourself into this battle...
 DOTA_Tooltip_ability_saitama_serios_punch_base_damage_multiplier_pct: '%BASE DAMAGE MULTIPLIER:'
 DOTA_Tooltip_ability_saitama_serios_punch_damage_multiplier_per_stack_pct: '%BONUS DAMAGE MULTIPLIER PER STACK:'
