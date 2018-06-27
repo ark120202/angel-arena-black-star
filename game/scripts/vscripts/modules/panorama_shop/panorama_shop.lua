@@ -273,25 +273,61 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		if unit == FindCourier(team) then
 			unit = hero
 		end
-		-- Stackable item abuse fix, not very good, but that's all I can do without smth like SetStackable
-		local hasSameStackableItem = item:IsStackable() and unit:HasItemInInventory(itemName)
-		if hasSameStackableItem then
-			Notifications:Bottom(playerId, {text="panorama_shop_stackable_purchase", style = {color = "red"}, duration = 4.5})
-		else
-			if not isInShop then SetAllItemSlotsLocked(unit, true, true) end
-			FillSlotsWithDummy(unit, false)
-			for i = DOTA_STASH_SLOT_1 , DOTA_STASH_SLOT_6 do
+		
+		-- Stackable item abuse fix
+		local SameStackableItemId = nil
+		local SameStackableItem = nil
+		
+		if item:IsStackable() then
+			for i = 0, DOTA_STASH_SLOT_1 - 1 do
 				local current_item = unit:GetItemInSlot(i)
-				if current_item and current_item:GetAbilityName() == "item_dummy" then
-					UTIL_Remove(current_item)
-					unit:AddItem(item)
-					itemPushed = true
+				print (current_item, i)
+				if current_item and current_item:GetAbilityName() == itemName then
+					print("YES")
+					SameStackableItemId = i
+					SameStackableItem = current_item
+					unit:DropItemAtPositionImmediate(SameStackableItem, unit:GetAbsOrigin())
 					break
 				end
 			end
-			ClearSlotsFromDummy(unit, false)
-			if not isInShop then SetAllItemSlotsLocked(unit, false, true) end
 		end
+		
+		--[[local hasSameStackableItem = item:IsStackable() and unit:HasItemInInventory(itemName)
+		if hasSameStackableItem then
+			--Notifications:Bottom(playerId, {text="panorama_shop_stackable_purchase", style = {color = "red"}, duration = 4.5})
+		end]]--
+		
+		if not isInShop then SetAllItemSlotsLocked(unit, true, true) end
+		FillSlotsWithDummy(unit, false)
+		for i = DOTA_STASH_SLOT_1 , DOTA_STASH_SLOT_6 do
+			local current_item = unit:GetItemInSlot(i)
+			if current_item and current_item:GetAbilityName() == "item_dummy" then
+				UTIL_Remove(current_item)
+				unit:AddItem(item)
+				itemPushed = true
+				break
+			end
+		end
+		
+		--Stackable item abuse fix part 2
+		if(SameStackableItem) then
+		
+			local dummy_item = unit:GetItemInSlot(SameStackableItemId)
+			print (dummy_item)
+			if dummy_item then
+				UTIL_Remove(dummy_item)
+			end
+			
+			print (SameStackableItem)
+			local container = SameStackableItem:GetContainer()
+			unit:PickupDroppedItem(container)
+			--if container then container:Kill() end
+		end
+		
+		ClearSlotsFromDummy(unit, false)
+		
+		if not isInShop then SetAllItemSlotsLocked(unit, false, true) end
+		
 	end
 	--At last drop an item on fountain
 	if not itemPushed then
