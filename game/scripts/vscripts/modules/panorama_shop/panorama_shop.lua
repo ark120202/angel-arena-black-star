@@ -281,9 +281,7 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		if item:IsStackable() then
 			for i = 0, DOTA_STASH_SLOT_1 - 1 do
 				local current_item = unit:GetItemInSlot(i)
-				print (current_item, i)
 				if current_item and current_item:GetAbilityName() == itemName then
-					print("YES")
 					SameStackableItemId = i
 					SameStackableItem = current_item
 					unit:DropItemAtPositionImmediate(SameStackableItem, unit:GetAbsOrigin())
@@ -313,12 +311,10 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		if(SameStackableItem) then
 		
 			local dummy_item = unit:GetItemInSlot(SameStackableItemId)
-			print (dummy_item)
 			if dummy_item then
 				UTIL_Remove(dummy_item)
 			end
 			
-			print (SameStackableItem)
 			local container = SameStackableItem:GetContainer()
 			unit:PickupDroppedItem(container)
 			--if container then container:Kill() end
