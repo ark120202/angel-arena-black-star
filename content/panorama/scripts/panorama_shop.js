@@ -129,9 +129,11 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 	});
 	panel.SetPanelEvent('oncontextmenu', function() {
 		if (panel.BHasClass('CanBuy')) {
-			SendItemBuyOrder(itemName);
-			if (panel.IsInQuickbuy == true) {
-				panel.DeleteAsync(0);
+			if (!panel.itemBought) {
+				SendItemBuyOrder(itemName);
+				if (panel.IsInQuickbuy == true) {
+					panel.itemBought = true;
+				}
 			}
 		} else {
 			GameEvents.SendEventClientSide('dota_hud_error_message', {
@@ -491,9 +493,12 @@ function SetItemStock(item, ItemStock) {
 				if (!child.BHasClass('DropDownValidTarget')) {
 					UpdateSmallItem(child);
 					if (child.BHasClass('CanBuy')) {
-						SendItemBuyOrder(child.itemName);
-						bought = child;
-						break;
+						bought = true;
+						if (!child.itemBought) {
+							SendItemBuyOrder(child.itemName);
+							child.itemBought = true;
+							break;
+						}
 					}
 				}
 			}
@@ -504,8 +509,6 @@ function SetItemStock(item, ItemStock) {
 					'message': '#dota_hud_error_not_enough_gold'
 				});
 				Game.EmitSound('General.NoGold');
-			} else {
-				bought.DeleteAsync(0);
 			}
 		}
 	});
