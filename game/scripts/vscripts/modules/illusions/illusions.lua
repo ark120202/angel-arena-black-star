@@ -31,7 +31,7 @@ function Illusions:_copyItems(unit, illusion)
 	for slot = 0, 5 do
 		local illusion_item = illusion:GetItemInSlot(slot)
 		if illusion_item then
-			RemoveItem(illusion_item)
+			illusion:RemoveItem(illusion_item)
 		end
 	end
 	
