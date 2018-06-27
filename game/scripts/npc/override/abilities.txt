@@ -5323,20 +5323,15 @@
 			}
 			"02"
 			{
-				"var_type"								"FIELD_INTEGER"
-				"building_armor_bonus_tooltip"			"3 6 9 12 15 18 21"
-			}
-			"03"
-			{
 				"var_type"	"FIELD_FLOAT"
 				"slow_duration"	"2"
 			}
-			"04"
+			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"slow_movement_speed"	"-30"
 			}
-			"05"
+			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"slow_attack_speed"	"-20 -25 -30 -35 -40 -45 -50"
@@ -11229,9 +11224,21 @@
 
 			"02"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"level_req"				"6"
+			}
+
+			"03"
+			{
 				"var_type"	"FIELD_INTEGER"
 				"health_min"	"700 1000 1300 1600 1900 2200 2500"
 				"LinkedSpecialBonus"	"special_bonus_unique_chen_4"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"teleport_delay"	"6.0"
 			}
 
 		}
