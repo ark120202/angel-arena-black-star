@@ -1622,7 +1622,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_invoker_6 = {
 		group = 14,
 	},
-	special_bonus_unique_invoker_7 = {
+	special_bonus_unique_invoker_9 = {
 		group = 9,
 	},
 	special_bonus_unique_invoker_8 = {
