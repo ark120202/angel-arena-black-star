@@ -495,6 +495,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_faceless_void_4"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dodge_chance_pct"					"8"
+			}
+		}
+	}
 	"special_bonus_unique_lion"
 	{
 		"AbilitySpecial"
