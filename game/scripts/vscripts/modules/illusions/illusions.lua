@@ -28,6 +28,13 @@ end
 
 function Illusions:_copyItems(unit, illusion)
 	for slot = 0, 5 do
+		local illusion_item = illusion:GetItemInSlot(slot)
+		if illusion_item then
+			illusion:RemoveItem(illusion_item)
+		end
+	end
+	
+	for slot = 0, 5 do		
 		local item = unit:GetItemInSlot(slot)
 		if item then
 			local illusion_item = illusion:AddItem(CreateItem(item:GetName(), illusion, illusion))
