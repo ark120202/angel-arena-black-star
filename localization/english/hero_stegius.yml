@@ -40,7 +40,7 @@ DOTA_Tooltip_modifier_stegius_brightness_of_desolate_steal_buff: Brightness of D
 DOTA_Tooltip_modifier_stegius_brightness_of_desolate_steal_buff_Description: 'Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%'
 
 DOTA_Tooltip_ability_stegius_desolating_touch: Desolating Touch
-DOTA_Tooltip_ability_stegius_desolating_touch_Description: With each attack Stegius reduces armor. This effect stacks. Each stack has unique duration. Stegius illusions also reduces armor. Can`t reduce boss more than %boss_limit% armor.
+DOTA_Tooltip_ability_stegius_desolating_touch_Description: With each attack Stegius reduces armor. This effect stacks. Each stack has unique duration. Stegius illusions also reduces armor. Can`t reduce more than %boss_limit% armor on bosses.
 DOTA_Tooltip_ability_stegius_desolating_touch_Lore: The Master of Death will destroy any armor to get to your soul ...
 DOTA_Tooltip_ability_stegius_desolating_touch_armor_per_hit: 'ARMOR REDUCTION:'
 DOTA_Tooltip_ability_stegius_desolating_touch_duration: 'DURATION:'
