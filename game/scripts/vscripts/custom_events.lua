@@ -1,4 +1,4 @@
-Events:Register("activate", "custom_events", function ()
+Events:Register("activate", function ()
 	CustomGameEventManager:RegisterListener("custom_chat_send_message", Dynamic_Wrap(GameMode, "CustomChatSendMessage"))
 	CustomGameEventManager:RegisterListener("metamorphosis_elixir_cast", Dynamic_Wrap(GameMode, "MetamorphosisElixirCast"))
 	CustomGameEventManager:RegisterListener("modifier_clicked_purge", Dynamic_Wrap(GameMode, "ModifierClickedPurge"))
@@ -65,9 +65,9 @@ function GameMode:SetHelpDisabled(data)
 end
 
 function GameMode:OnAdsClicked(data)
-	local playerID = data.PlayerID
+	local playerId = data.PlayerID
 	local key = data.source == "loading_screen" and "adsClickedLoading" or "adsClicked"
-	if not PLAYER_DATA[playerID][key] then
-		PLAYER_DATA[playerID][key] = true
+	if not PLAYER_DATA[playerId][key] then
+		PLAYER_DATA[playerId][key] = true
 	end
 end

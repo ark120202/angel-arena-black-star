@@ -80,7 +80,7 @@ Teams.Data = Teams.Data or {
 	},
 }
 
-Events:Register("activate", "teams", function ()
+Events:Register("activate", function ()
 	local gameMode = GameRules:GetGameModeEntity()
 	gameMode:SetTowerBackdoorProtectionEnabled(false)
 
@@ -109,11 +109,11 @@ function Teams:PostInitialize()
 		end
 
 		local playerCounter = 0
-		for _,playerID in ipairs(Teams:GetPlayerIDs(team, true, true)) do
+		for _,playerId in ipairs(Teams:GetPlayerIDs(team, true, true)) do
 			playerCounter = playerCounter + 1
 			local color = data.playerColors[playerCounter]
-			PLAYER_DATA[playerID].Color = color
-			PlayerResource:SetCustomPlayerColor(playerID, color[1], color[2], color[3])
+			PLAYER_DATA[playerId].Color = color
+			PlayerResource:SetCustomPlayerColor(playerId, color[1], color[2], color[3])
 		end
 	end
 end

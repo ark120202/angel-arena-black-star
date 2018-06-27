@@ -20,7 +20,7 @@ function GameMode:OnNPCSpawned(keys)
 			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
 				Physics:Unit(npc)
 				npc:SetAutoUnstuck(true)
-				npc:EquipItemsFromPlayerSelectionOrDefault()
+				DynamicWearables:AutoEquip(npc)
 				if npc.ModelOverride then
 					npc:SetModel(npc.ModelOverride)
 					npc:SetOriginalModel(npc.ModelOverride)
@@ -191,7 +191,7 @@ end
 function GameMode:OnConnectFull(keys)
 	--[[local entIndex = keys.index+1
 	local ply = EntIndexToHScript(entIndex)
-	local playerID = ply:GetPlayerID()]]
+	local playerId = ply:GetPlayerID()]]
 end
 
 -- This function is called whenever an item is combined to create a new item

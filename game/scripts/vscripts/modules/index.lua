@@ -24,6 +24,7 @@ local modules = {
 	"weather",
 	"console",
 	"chat",
+	"illusions"
 }
 
 local errors = {}

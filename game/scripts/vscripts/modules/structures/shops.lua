@@ -30,9 +30,9 @@ function Structures:CreateShop(baseUnit, itemTable, shopName, radius, customItem
 		stocks =      stocks,
 		closeOnOrder= true,
 		range =       radius,
-		OnEntityOrder=function(playerID, container, unit, target)
+		OnEntityOrder=function(playerId, container, unit, target)
 			if unit and unit:IsAlive() and unit:IsTrueHero() then
-				container:Open(playerID)
+				container:Open(playerId)
 				unit:Stop()
 			end
 		end,

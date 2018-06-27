@@ -13,7 +13,7 @@ if PanoramaShop == nil then
 	}
 end
 
-Events:Register("activate", "panorama_shop", function ()
+Events:Register("activate", function ()
 	GameRules:GetGameModeEntity():SetStickyItemDisabled(true)
 	PanoramaShop:InitializeItemTable()
 end)
@@ -222,7 +222,7 @@ function PanoramaShop:OnItemBuy(data)
 	end
 end
 
-function PanoramaShop:SellItem(playerID, unit, item)
+function PanoramaShop:SellItem(playerId, unit, item)
 	local itemname = item:GetAbilityName()
 	local cost = item:GetCost()
 	if unit.ChangingHeroProcessRunning or
@@ -232,11 +232,11 @@ function PanoramaShop:SellItem(playerID, unit, item)
 		return
 	end
 	if GameRules:IsGamePaused() then
-		Containers:DisplayError(playerID, "#dota_hud_error_game_is_paused")
+		Containers:DisplayError(playerId, "#dota_hud_error_game_is_paused")
 		return
 	end
 	if not item:IsSellable() or MeepoFixes:IsMeepoClone(unit) then
-		Containers:DisplayError(playerID, "dota_hud_error_cant_sell_item")
+		Containers:DisplayError(playerId, "dota_hud_error_cant_sell_item")
 		return
 	end
 	if item:IsStackable() then
@@ -247,13 +247,13 @@ function PanoramaShop:SellItem(playerID, unit, item)
 		cost = cost / 2
 	end
 	UTIL_Remove(item)
-	Gold:AddGoldWithMessage(unit, cost, playerID)
+	Gold:AddGoldWithMessage(unit, cost, playerId)
 	GameMode:TrackInventory(unit)
 end
 
-function PanoramaShop:PushItem(playerID, unit, itemName, bOnlyStash)
-	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-	local team = PlayerResource:GetTeam(playerID)
+function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+	local team = PlayerResource:GetTeam(playerId)
 	local item = CreateItem(itemName, hero, hero)
 	local isInShop = unit:HasModifier("modifier_fountain_aura_arena") -- Works only while fontain area === shop area
 	item:SetPurchaseTime(GameRules:GetGameTime())
@@ -276,7 +276,7 @@ function PanoramaShop:PushItem(playerID, unit, itemName, bOnlyStash)
 		-- Stackable item abuse fix, not very good, but that's all I can do without smth like SetStackable
 		local hasSameStackableItem = item:IsStackable() and unit:HasItemInInventory(itemName)
 		if hasSameStackableItem then
-			Notifications:Bottom(playerID, {text="panorama_shop_stackable_purchase", style = {color = "red"}, duration = 4.5})
+			Notifications:Bottom(playerId, {text="panorama_shop_stackable_purchase", style = {color = "red"}, duration = 4.5})
 		else
 			if not isInShop then SetAllItemSlotsLocked(unit, true, true) end
 			FillSlotsWithDummy(unit, false)
@@ -297,17 +297,17 @@ function PanoramaShop:PushItem(playerID, unit, itemName, bOnlyStash)
 	if not itemPushed then
 		local spawnPointName = "info_courier_spawn"
 		local teamCared = true
-		if PlayerResource:GetTeam(playerID) == DOTA_TEAM_GOODGUYS then
+		if PlayerResource:GetTeam(playerId) == DOTA_TEAM_GOODGUYS then
 			spawnPointName = "info_courier_spawn_radiant"
 			teamCared = false
-		elseif PlayerResource:GetTeam(playerID) == DOTA_TEAM_BADGUYS then
+		elseif PlayerResource:GetTeam(playerId) == DOTA_TEAM_BADGUYS then
 			spawnPointName = "info_courier_spawn_dire"
 			teamCared = false
 		end
 		local ent
 		while true do
 			ent = Entities:FindByClassname(ent, spawnPointName)
-			if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerID))) then
+			if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerId))) then
 				CreateItemOnPositionSync(ent:GetAbsOrigin() + RandomVector(RandomInt(0, 300)), item)
 				break
 			end
@@ -315,13 +315,13 @@ function PanoramaShop:PushItem(playerID, unit, itemName, bOnlyStash)
 	end
 end
 
-function PanoramaShop:GetNumDroppedItemsForPlayer(playerID)
+function PanoramaShop:GetNumDroppedItemsForPlayer(playerId)
 	local droppedItems = 0
 	for i = 0, GameRules:NumDroppedItems() - 1 do
 		local item = GameRules:GetDroppedItem(i):GetContainedItem()
 		if IsValidEntity(item) then
 			local owner = item:GetPurchaser()
-			if IsValidEntity(owner) and owner:GetPlayerID() == playerID then
+			if IsValidEntity(owner) and owner:GetPlayerID() == playerId then
 				droppedItems = droppedItems + 1
 			end
 		end
@@ -385,21 +385,21 @@ function PanoramaShop:HasAnyOfItemChildren(unit, team, childItemName, baseItemNa
 	return false
 end
 
-function PanoramaShop:BuyItem(playerID, unit, itemName)
-	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-	local team = PlayerResource:GetTeam(playerID)
+function PanoramaShop:BuyItem(playerId, unit, itemName)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+	local team = PlayerResource:GetTeam(playerId)
 	if GameRules:IsGamePaused() then
-		Containers:DisplayError(playerID, "#dota_hud_error_game_is_paused")
+		Containers:DisplayError(playerId, "#dota_hud_error_game_is_paused")
 		return
 	end
 
 	if Duel:IsDuelOngoing() then
-		Containers:DisplayError(playerID, "#dota_hud_error_cant_purchase_duel_ongoing")
+		Containers:DisplayError(playerId, "#dota_hud_error_cant_purchase_duel_ongoing")
 		return
 	end
 
-	if PanoramaShop:GetNumDroppedItemsForPlayer(playerID) >= PANORAMA_SHOP_DROPPED_ITEMS_LIMIT then
-		Containers:DisplayError(playerID, "#arena_hud_error_panorama_shop_dropped_items_limit")
+	if PanoramaShop:GetNumDroppedItemsForPlayer(playerId) >= PANORAMA_SHOP_DROPPED_ITEMS_LIMIT then
+		Containers:DisplayError(playerId, "#arena_hud_error_panorama_shop_dropped_items_limit")
 		return
 	end
 
@@ -456,10 +456,10 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 	for name,status in pairs(ProbablyPurchasable) do
 		name = string.gsub(name, "_index_%d+", "")
 		if status == SHOP_LIST_STATUS_NO_BOSS then
-			Containers:DisplayError(playerID, "dota_hud_error_item_from_bosses")
+			Containers:DisplayError(playerId, "dota_hud_error_item_from_bosses")
 			return
 		elseif status == SHOP_LIST_STATUS_NO_STOCK then
-			Containers:DisplayError(playerID, "dota_hud_error_item_out_of_stock")
+			Containers:DisplayError(playerId, "dota_hud_error_item_out_of_stock")
 			return
 		elseif status == SHOP_LIST_STATUS_TO_BUY then
 			wastedGold = wastedGold + GetTrueItemCost(name)
@@ -471,9 +471,9 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 		end
 	end
 
-	if Gold:GetGold(playerID) >= wastedGold then
-		Containers:EmitSoundOnClient(playerID, "General.Buy")
-		Gold:RemoveGold(playerID, wastedGold)
+	if Gold:GetGold(playerId) >= wastedGold then
+		Containers:EmitSoundOnClient(playerId, "General.Buy")
+		Gold:RemoveGold(playerId, wastedGold)
 
 		if isInShop then
 			for _,v in ipairs(ItemsInStash) do
@@ -486,7 +486,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 				if not removedItem then removedItem = FindItemInInventoryByName(unit, v, true, true) end
 				unit:RemoveItem(removedItem)
 			end
-			PanoramaShop:PushItem(playerID, unit, itemName)
+			PanoramaShop:PushItem(playerId, unit, itemName)
 			if PanoramaShop.StocksTable[team][itemName] then
 				PanoramaShop:DecreaseItemStock(team, itemName)
 			end
@@ -494,13 +494,13 @@ function PanoramaShop:BuyItem(playerID, unit, itemName)
 			for _,v in ipairs(ItemsInStash) do
 				unit:RemoveItem(FindItemInInventoryByName(unit, v, true, false))
 			end
-			PanoramaShop:PushItem(playerID, unit, itemName, true)
+			PanoramaShop:PushItem(playerId, unit, itemName, true)
 			if PanoramaShop.StocksTable[team][itemName] then
 				PanoramaShop:DecreaseItemStock(team, itemName)
 			end
 		else
 			for _,v in ipairs(ItemsToBuy) do
-				PanoramaShop:PushItem(playerID, unit, v)
+				PanoramaShop:PushItem(playerId, unit, v)
 				if PanoramaShop.StocksTable[team][v] then
 					PanoramaShop:DecreaseItemStock(team, v)
 				end

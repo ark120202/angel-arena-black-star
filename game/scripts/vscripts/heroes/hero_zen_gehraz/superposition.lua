@@ -10,7 +10,14 @@ function Superposition(keys)
 	FindClearSpaceForUnit(caster, point, false)
 	caster:EmitSound("Arena.Hero_ZenGehraz.Superposition")
 	local illusion_duration = ability:GetAbilitySpecial("illusion_duration")
-	local illusion = CreateIllusion(caster, ability, abs, ability:GetAbilitySpecial("illusion_damage_percent_incoming") - 100, ability:GetAbilitySpecial("illusion_damage_percent_outgoing") - 100, illusion_duration)
+	local illusion = Illusions:create({
+		unit = caster,
+		ability = ability,
+		origin = abs,
+		damageIncoming = ability:GetAbilitySpecial("illusion_damage_percent_incoming"),
+		damageOutgoing = ability:GetAbilitySpecial("illusion_damage_percent_outgoing"),
+		duration = illusion_duration,
+	})
 	if ability.LastInterruptedAbilityTime and GameRules:GetGameTime() - ability.LastInterruptedAbilityTime < 0.5 and ability.LastInterruptedAbility and ability.LastInterruptedAbilityCastTime then
 		local name = ability.LastInterruptedAbility:GetAbilityName()
 		local illusion_ability = illusion:FindAbilityByName(name)

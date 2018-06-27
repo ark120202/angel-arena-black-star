@@ -1,4 +1,4 @@
-Events:Register("activate", "filters", function ()
+Events:Register("activate", function ()
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap(GameMode, 'ExecuteOrderFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, 'DamageFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, 'ModifyGoldFilter'), GameRules)
@@ -7,7 +7,7 @@ end)
 
 function GameMode:ExecuteOrderFilter(filterTable)
 	local order_type = filterTable.order_type
-	local PlayerID = filterTable.issuer_player_id_const
+	local playerId = filterTable.issuer_player_id_const
 	if order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
 		return false
 	end
@@ -18,14 +18,14 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		abilityname = ability:GetAbilityName()
 	end
 	if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and Options:IsEquals("EnableAbilityShop") then
-		CustomAbilities:OnAbilityBuy(PlayerID, abilityname)
+		CustomAbilities:OnAbilityBuy(playerId, abilityname)
 		return false
 	end
 
 	local unit = EntIndexToHScript(filterTable.units["0"])
 
 	if unit and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability then
-		PanoramaShop:SellItem(PlayerID, unit, ability)
+		PanoramaShop:SellItem(playerId, unit, ability)
 		return false
 	end
 
@@ -36,7 +36,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or
 		order_type == DOTA_UNIT_ORDER_CAST_TOGGLE
 	) and ability.IsItem and ability:IsItem() then
-		Containers:DisplayError(PlayerID, "dota_hud_error_courier_cant_use_item")
+		Containers:DisplayError(playerId, "dota_hud_error_courier_cant_use_item")
 		return false
 	end
 
@@ -52,40 +52,40 @@ function GameMode:ExecuteOrderFilter(filterTable)
 				local ent1len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team2"):GetAbsOrigin()):Length2D()
 				local ent2len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team3"):GetAbsOrigin()):Length2D()
 				if ent1len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 or ent2len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 then
-					Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
+					Containers:DisplayError(playerId, "#arena_hud_error_cant_target_duel")
 					return false
 				end
 			end
 			if IsInBox(orderVector, Duel.BlockerBox[1], Duel.BlockerBox[2]) then
-				Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
+				Containers:DisplayError(playerId, "#arena_hud_error_cant_target_duel")
 				return false
 			end
 		end
 	elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
 		if abilityname == "rubick_spell_steal" then
 			if target == unit then
-				Containers:DisplayError(PlayerID, "#dota_hud_error_cant_cast_on_self")
+				Containers:DisplayError(playerId, "#dota_hud_error_cant_cast_on_self")
 				return false
 			end
 			if target:HasAbility("doppelganger_mimic") then
-				Containers:DisplayError(PlayerID, "#dota_hud_error_cant_steal_spell")
+				Containers:DisplayError(playerId, "#dota_hud_error_cant_steal_spell")
 				return false
 			end
 		end
 		if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
-			Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_champion")
+			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_champion")
 			return false
 		end
 		if target.SpawnerType == "jungle" and not JUNGLE_ALLOWED_ABILITIES[abilityname] then
-			Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_jungle")
+			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_jungle")
 			return false
 		end
 		if target:IsBoss() and BOSS_BANNED_ABILITIES[abilityname] then
-			Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_boss")
+			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_boss")
 			return false
 		end
-		if PlayerResource:IsDisableHelpSetForPlayerID(UnitVarToPlayerID(target), UnitVarToPlayerID(unit)--[[PlayerID]]) and DISABLE_HELP_ABILITIES[abilityname] then
-			Containers:DisplayError(PlayerID, "#dota_hud_error_target_has_disable_help")
+		if PlayerResource:IsDisableHelpSetForPlayerID(UnitVarToPlayerID(target), UnitVarToPlayerID(unit)--[[playerId]]) and DISABLE_HELP_ABILITIES[abilityname] then
+			Containers:DisplayError(playerId, "#dota_hud_error_target_has_disable_help")
 			return false
 		end
 		if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then

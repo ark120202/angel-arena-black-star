@@ -1,8 +1,8 @@
 function GetAllPlayers(bOnlyWithHeroes)
 	local Players = {}
-	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
-		if PlayerResource:IsValidPlayerID(playerID) then
-			local player = PlayerResource:GetPlayer(playerID)
+	for playerId = 0, DOTA_MAX_TEAM_PLAYERS-1  do
+		if PlayerResource:IsValidPlayerID(playerId) then
+			local player = PlayerResource:GetPlayer(playerId)
 			if player and ((bOnlyWithHeroes and player:GetAssignedHero()) or not bOnlyWithHeroes) then
 				table.insert(Players, player)
 			end
@@ -78,9 +78,9 @@ end
 
 function GetEnemiesIds(heroteam)
 	local enemies = {}
-	for _,playerID in ipairs(GetAllPlayers(false)) do
-		if PlayerResource:GetTeam(playerID:GetPlayerID()) ~= heroteam then
-			table.insert(enemies, playerID)
+	for _,playerId in ipairs(GetAllPlayers(false)) do
+		if PlayerResource:GetTeam(playerId:GetPlayerID()) ~= heroteam then
+			table.insert(enemies, playerId)
 		end
 	end
 	return enemies
@@ -270,98 +270,6 @@ function RefreshItems(unit, tExceptions)
 	end
 end
 
---illusion_incoming_damage = tooltip - 100
---illusion_outgoing_damage = tooltip - 100
-function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage, illusion_outgoing_damage, illusion_duration)
-	local heroname = unit:GetFullName()
-	local unitname = unit:GetUnitName()
-	local illusion = CreateUnitByName(unitname, illusion_origin, true, unit, unit:GetPlayerOwner(), unit:GetTeamNumber())
-	FindClearSpaceForUnit(illusion, illusion_origin, true)
-	illusion:SetModelScale(unit:GetModelScale())
-	illusion:SetControllableByPlayer(unit:GetPlayerID(), true)
-
-	local caster_level = unit:GetLevel()
-	for i = 1, caster_level - 1 do
-		illusion:HeroLevelUp(false)
-	end
-	if unit.GetEnergy and unit.GetMaxEnergy then
-		illusion.SavedEnergyStates = {
-			Energy = unit:GetEnergy(),
-			MaxEnergy = unit:GetMaxEnergy()
-		}
-	end
-
-	illusion:SetAbilityPoints(0)
-	for slot_ability = 0, unit:GetAbilityCount()-1 do
-		local illusion_ability = illusion:GetAbilityByIndex(slot_ability)
-		local unit_ability = unit:GetAbilityByIndex(slot_ability)
-
-		if unit_ability then
-			local newName = unit_ability:GetAbilityName()
-			if illusion_ability then
-				if illusion_ability:GetAbilityName() ~= newName then
-					illusion:RemoveAbility(illusion_ability:GetAbilityName())
-					illusion_ability = illusion:AddNewAbility(newName, true)
-				end
-			else
-				illusion_ability = illusion:AddNewAbility(newName, true)
-			end
-			illusion_ability:SetHidden(unit_ability:IsHidden())
-			local ualevel = unit_ability:GetLevel()
-			if ualevel > 0 and illusion_ability:GetAbilityName() ~= "meepo_divided_we_stand" then
-				illusion_ability:SetLevel(ualevel)
-			end
-		elseif illusion_ability then
-			illusion:RemoveAbility(illusion_ability:GetAbilityName())
-		end
-	end
-	for item_slot = 0, 5 do
-		local item = unit:GetItemInSlot(item_slot)
-		if item then
-			local illusion_item = illusion:AddItem(CreateItem(item:GetName(), illusion, illusion))
-			illusion_item:SetCurrentCharges(item:GetCurrentCharges())
-		end
-	end
-	illusion:SetHealth(unit:GetHealth())
-	illusion:SetMana(unit:GetMana())
-	illusion:AddNewModifier(unit, ability, "modifier_illusion", {duration = illusion_duration, outgoing_damage = illusion_outgoing_damage, incoming_damage = illusion_incoming_damage})
-	illusion:MakeIllusion()
-	if unit.Additional_str then
-		illusion:ModifyStrength(unit.Additional_str)
-	end
-	if unit.Additional_agi then
-		illusion:ModifyAgility(unit.Additional_agi)
-	end
-	if unit.Additional_int then
-		illusion:ModifyIntellect(unit.Additional_int)
-	end
-	if unit.Additional_attackspeed then
-		if not illusion:HasModifier("modifier_item_shard_attackspeed_stack") then
-			illusion:AddNewModifier(caster, nil, "modifier_item_shard_attackspeed_stack", {})
-		end
-		local mod = illusion:FindModifierByName("modifier_item_shard_attackspeed_stack")
-		if mod then
-			mod:SetStackCount(unit.Additional_attackspeed)
-		end
-	end
-	illusion.UnitName = unit.UnitName
-	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
-	if not NPC_HEROES[heroname] and NPC_HEROES_CUSTOM[heroname] then
-		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroname], true)
-	end
-	if unit:GetModelName() ~= illusion:GetModelName() then
-		illusion.ModelOverride = unit:GetModelName()
-		illusion:SetModel(illusion.ModelOverride)
-		illusion:SetOriginalModel(illusion.ModelOverride)
-	end
-	local rc = unit:GetRenderColor()
-	if rc ~= Vector(255, 255, 255) then
-		illusion:SetRenderColor(rc.x, rc.y, rc.z)
-	end
-
-	return illusion
-end
-
 function PerformGlobalAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis, bUseProjectile, bFakeAttack, bNeverMiss, AttackFuncs)
 	local abs = unit:GetAbsOrigin()
 	unit:SetAbsOrigin(hTarget:GetAbsOrigin())
@@ -394,16 +302,16 @@ function ColorTableToCss(color)
 	return "rgb(" .. color[1] .. ',' .. color[2] .. ',' .. color[3] .. ')'
 end
 
-function IsPlayerAbandoned(playerID)
-	return PLAYER_DATA[playerID].IsAbandoned == true
+function IsPlayerAbandoned(playerId)
+	return PLAYER_DATA[playerId].IsAbandoned == true
 end
 
 function FindAllOwnedUnits(player)
 	local summons = {}
-	local pid = type(player) == "number" and player or player:GetPlayerID()
-	local units = FindUnitsInRadius(PlayerResource:GetTeam(pid), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED, FIND_ANY_ORDER, false)
+	local playerId = type(player) == "number" and player or player:GetPlayerID()
+	local units = FindUnitsInRadius(PlayerResource:GetTeam(playerId), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED, FIND_ANY_ORDER, false)
 	for _,v in ipairs(units) do
-		if type(player) == "number" and ((v.GetPlayerID ~= nil and v:GetPlayerID() or v:GetPlayerOwnerID()) == pid) or v:GetPlayerOwner() == player then
+		if type(player) == "number" and ((v.GetPlayerID ~= nil and v:GetPlayerID() or v:GetPlayerOwnerID()) == playerId) or v:GetPlayerOwner() == player then
 			if not (v:HasModifier("modifier_dummy_unit") or v:HasModifier("modifier_containers_shopkeeper_unit") or v:HasModifier("modifier_teleport_passive")) and v ~= hero then
 				table.insert(summons, v)
 			end
@@ -569,9 +477,9 @@ end
 
 function GetPlayersInTeam(team)
 	local players = {}
-	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
-		if PlayerResource:IsValidPlayerID(playerID) and (not team or PlayerResource:GetTeam(playerID) == team) and not PLAYER_DATA[playerID].IsAbandoned then
-			table.insert(players, playerID)
+	for playerId = 0, DOTA_MAX_TEAM_PLAYERS-1  do
+		if PlayerResource:IsValidPlayerID(playerId) and (not team or PlayerResource:GetTeam(playerId) == team) and not PLAYER_DATA[playerId].IsAbandoned then
+			table.insert(players, playerId)
 		end
 	end
 	return players
@@ -650,8 +558,8 @@ function IsInBox(point, point1, point2)
 	return point.x > point1.x and point.y > point1.y and point.x < point2.x and point.y < point2.y
 end
 
-function GetConnectionState(pid)
-	return PlayerResource:IsFakeClient(pid) and DOTA_CONNECTION_STATE_CONNECTED or PlayerResource:GetConnectionState(pid)
+function GetConnectionState(playerId)
+	return PlayerResource:IsFakeClient(playerId) and DOTA_CONNECTION_STATE_CONNECTED or PlayerResource:GetConnectionState(playerId)
 end
 
 function DebugCallFunction(fun)

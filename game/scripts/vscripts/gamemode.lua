@@ -124,9 +124,9 @@ function GameMode:OnHeroSelectionEnd()
 	Weather:Init()
 
 	Timers:CreateTimer(10, function()
-		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-			if PlayerResource:IsValidPlayerID(playerID) and not PlayerResource:IsFakeClient(playerID) and GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
-				local heroName = HeroSelection:GetSelectedHeroName(playerID) or ""
+		for playerId = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+			if PlayerResource:IsValidPlayerID(playerId) and not PlayerResource:IsFakeClient(playerId) and GetConnectionState(playerId) == DOTA_CONNECTION_STATE_CONNECTED then
+				local heroName = HeroSelection:GetSelectedHeroName(playerId) or ""
 				if heroName == "" or heroName == FORCE_PICKED_HERO then
 					GameMode:BreakGame("arena_end_screen_error_broken")
 					return
