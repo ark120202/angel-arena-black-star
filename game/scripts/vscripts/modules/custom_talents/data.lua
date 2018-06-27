@@ -1698,7 +1698,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 3,
 	},
 	special_bonus_unique_faceless_void_4 = {
-		group = 56,
+		group = 6,
 	},
 }
 
