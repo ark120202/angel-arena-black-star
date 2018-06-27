@@ -27,7 +27,6 @@ function Illusions:_copyAbilities(unit, illusion)
 end
 
 function Illusions:_copyItems(unit, illusion)
-	
 	for slot = 0, 5 do
 		local illusion_item = illusion:GetItemInSlot(slot)
 		if illusion_item then
