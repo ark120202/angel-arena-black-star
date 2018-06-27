@@ -504,8 +504,7 @@ function SetItemStock(item, ItemStock) {
 					'message': '#dota_hud_error_not_enough_gold'
 				});
 				Game.EmitSound('General.NoGold');
-			}
-			else{
+			} else {
 				bought.DeleteAsync(0);
 			}
 		}
