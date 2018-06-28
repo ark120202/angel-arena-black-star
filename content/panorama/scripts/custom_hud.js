@@ -261,10 +261,12 @@ function CreateCustomToast(data) {
 		row.SetHasClass('LocalPlayerInvolved', isVictim || isKiller);
 		row.SetHasClass('LocalPlayerKiller', isKiller);
 		row.SetHasClass('LocalPlayerVictim', isVictim);
-		if (isKiller)
-			Game.EmitSound('notification.self.kill');
-		else if (isVictim)
+		if (isVictim) {
 			Game.EmitSound('notification.self.death');
+			FindDotaHudElement('KilledByHeroName').text = $.Localize(GetPlayerHeroName(data.killerPlayer)).toUpperCase();
+		}
+		else if (isKiller)
+			Game.EmitSound('notification.self.kill');
 		else if (teamKiller)
 			Game.EmitSound('notification.teammate.kill');
 		else if (teamVictim)
