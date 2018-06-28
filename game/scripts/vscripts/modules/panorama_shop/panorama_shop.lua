@@ -304,15 +304,8 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		
 		--Stackable item abuse fix part 2
 		if(sameStackableItem) then
-		
-			local dummy_item = unit:GetItemInSlot(sameStackableItemId)
-			if dummy_item then
-				UTIL_Remove(dummy_item)
-			end
-			
 			local container = sameStackableItem:GetContainer()
 			unit:PickupDroppedItem(container)
-			--if container then container:Kill() end
 		end
 		
 		ClearSlotsFromDummy(unit, false)
