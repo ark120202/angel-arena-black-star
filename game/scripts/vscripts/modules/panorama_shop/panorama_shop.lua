@@ -319,8 +319,8 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		ClearSlotsFromDummy(unit, false)
 		
 		if not isInShop then SetAllItemSlotsLocked(unit, false, true) end
-		
 	end
+	
 	--At last drop an item on fountain
 	if not itemPushed then
 		local spawnPointName = "info_courier_spawn"
