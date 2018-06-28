@@ -135,7 +135,7 @@
 		{
 			"default"
 			{
-				"PortraitPosition"		"42.2697 21.6368 106.219"
+				"PortraitPosition"		"42.2697 21.6368 100.219"
 				"PortraitAngles"		"-28.8 213.6 0"
 				"PortraitFOV"		"27.855492"
 				"PortraitFar"		"1500.000000"
