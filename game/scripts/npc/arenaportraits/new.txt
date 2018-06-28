@@ -60,8 +60,47 @@
 		{
 			"default"
 			{
-				"PortraitPosition"		"108.657 -20.0774 108.577"
+				"PortraitPosition"		"108.657 -35.0774 108.577"
 				"PortraitAngles"		"-22.8 164.8 0"
+				"PortraitFOV"		"27.855492"
+				"PortraitFar"		"1500.000000"
+			}
+		}
+	}
+	"models/units/saber/saber.vmdl"
+	{
+		"PortraitLightPosition"		"-55.310989 19.011461 246.363373"
+		"PortraitLightAngles"		"60.217693 -15.310048 -29.990005"
+		"PortraitLightFOV"		"55.026001"
+		"PortraitLightDistance"		"169.199997"
+		"PortraitLightColor"		"153 200 254"
+		"PortraitShadowColor"		"0 97 111"
+		"PortraitShadowScale"		"1.500000"
+		"PortraitAmbientColor"		"123 146 195"
+		"PortraitAmbientScale"		"3.575000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_moon.vmat"
+		"PortraitLightScale"		"5.000000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"27.620 5.440 1.230"
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitBackgroundColor1"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor2"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor3"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor4"		"1.000000 1.000000 1.000000"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitHideParticles"		"0"
+		"PortraitHideDropShadow"		"0"
+		"PortraitDesaturateParticles"		"0"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"63.7152 24.7992 149.05"
+				"PortraitAngles"		"12 199.999 0"
 				"PortraitFOV"		"27.855492"
 				"PortraitFar"		"1500.000000"
 			}
