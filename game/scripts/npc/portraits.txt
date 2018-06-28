@@ -1,9 +1,2 @@
 #base "portraits/unchanged.txt"
 #base "portraits/new.txt"
-"Portraits"
-{
-	"Version"		"1"
-	"PreferModelNames"		"1"
-	"DefaultActivity"		"ACT_DOTA_CAPTURE"
-	"CannotChangeActivity"		"1"
-}
