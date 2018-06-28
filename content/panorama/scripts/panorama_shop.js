@@ -131,8 +131,8 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 	panel.SetPanelEvent('oncontextmenu', function() {
 		if (panel.BHasClass('CanBuy')) {
 			if (!(panel.IsInQuickbuy && panel.itemBought)) {
-				SendItemBuyOrder(itemName);
 				panel.itemBought = true;
+				SendItemBuyOrder(itemName);
 				BoughtQuickbuySmallItem.push(panel);
 			}
 		} else {
@@ -499,8 +499,8 @@ function SetItemStock(item, ItemStock) {
 					if (child.BHasClass('CanBuy')) {
 						bought = true;
 						if (!child.itemBought) {
-							SendItemBuyOrder(child.itemName);
 							child.itemBought = true;
+							SendItemBuyOrder(child.itemName);
 							BoughtQuickbuySmallItem.push(child);
 							break;
 						}
