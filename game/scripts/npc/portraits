@@ -1,5 +1,5 @@
-#base "portraits/unchanged.txt"
-#base "portraits/new.txt"
+#base "arenaportraits/unchanged.txt"
+#base "arenaportraits/new.txt"
 "Portraits"
 {
 	"Version"		"1"
