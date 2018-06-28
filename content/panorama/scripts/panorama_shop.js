@@ -129,11 +129,9 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 	});
 	panel.SetPanelEvent('oncontextmenu', function() {
 		if (panel.BHasClass('CanBuy')) {
-			if (!panel.itemBought) {
-				SendItemBuyOrder(itemName);
-				if (panel.IsInQuickbuy == true) {
-					panel.itemBought = true;
-				}
+			SendItemBuyOrder(itemName);
+			if (!panel.itemBought and panel.IsInQuickbuy == true) {
+				panel.itemBought = true;
 			}
 		} else {
 			GameEvents.SendEventClientSide('dota_hud_error_message', {
