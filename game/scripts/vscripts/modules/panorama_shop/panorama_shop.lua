@@ -290,11 +290,6 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 			end
 		end
 		
-		--[[local hasSameStackableItem = item:IsStackable() and unit:HasItemInInventory(itemName)
-		if hasSameStackableItem then
-			--Notifications:Bottom(playerId, {text="panorama_shop_stackable_purchase", style = {color = "red"}, duration = 4.5})
-		end]]--
-		
 		if not isInShop then SetAllItemSlotsLocked(unit, true, true) end
 		FillSlotsWithDummy(unit, false)
 		for i = DOTA_STASH_SLOT_1 , DOTA_STASH_SLOT_6 do
