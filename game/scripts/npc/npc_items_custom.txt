@@ -1622,12 +1622,12 @@
 			"10"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming"					"250"
+				"illusion_damage_percent_incoming"					"200"
 			}
 			"11"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming_tooltip"			"350"
+				"illusion_damage_percent_incoming_tooltip"			"300"
 			}
 			"12"
 			{
