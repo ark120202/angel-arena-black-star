@@ -5,6 +5,7 @@ var ItemList = {},
 	SearchingFor = null,
 	QuickBuyTarget = null,
 	QuickBuyTargetAmount = 0,
+	BoughtQuickbuySmallItem = [],
 	LastHero = null,
 	ItemStocks = [];
 
@@ -132,6 +133,7 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 			if (!(panel.IsInQuickbuy && panel.itemBought)) {
 				SendItemBuyOrder(itemName);
 				panel.itemBought = true;
+				BoughtQuickbuySmallItem.push(panel);
 			}
 		} else {
 			GameEvents.SendEventClientSide('dota_hud_error_message', {
@@ -451,6 +453,10 @@ function UpdateShop() {
 	_.each(SmallItemsAlwaysUpdated, function(panel) {
 		UpdateSmallItem(panel, gold);
 	});
+	_.each(BoughtQuickbuySmallItem, function(panel) {
+		panel.itemBought = false;
+	});
+	BoughtQuickbuySmallItem.length = 0;
 	if ($('#ShopBase').BHasClass('ShopBaseOpen'))
 		_.each(SmallItems, function(panel) {
 			UpdateSmallItem(panel, gold);
@@ -495,6 +501,7 @@ function SetItemStock(item, ItemStock) {
 						if (!child.itemBought) {
 							SendItemBuyOrder(child.itemName);
 							child.itemBought = true;
+							BoughtQuickbuySmallItem.push(child);
 							break;
 						}
 					}
