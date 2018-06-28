@@ -129,7 +129,7 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 	});
 	panel.SetPanelEvent('oncontextmenu', function() {
 		if (panel.BHasClass('CanBuy')) {
-			if (!panel.IsInQuickbuy or !panel.itemBought) {
+			if (!panel.IsInQuickbuy || !panel.itemBought) {
 				SendItemBuyOrder(itemName);
 				panel.itemBought = true;
 			}
