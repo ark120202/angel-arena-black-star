@@ -284,10 +284,14 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 				local current_item = unit:GetItemInSlot(i)
 				if current_item then
 					if current_item:GetAbilityName() == itemName then
-						sameStackableItemSlot = i
-						sameStackableItem = current_item
-						unit:DropItemAtPositionImmediate(sameStackableItem, unit:GetAbsOrigin())
-						break
+						if not sameStackableItem then
+							sameStackableItemSlot = i
+							sameStackableItem = current_item
+							unit:DropItemAtPositionImmediate(sameStackableItem, unit:GetAbsOrigin())
+						else
+							sameStackableItem:SetCurrentCharges(current_item:GetCurrentCharges() + sameStackableItem:GetCurrentCharges())
+							unit:TakeItem(current_item)
+						end
 					end
 				elseif not firstEmptySlot then
 					firstEmptySlot = i
