@@ -1,15 +1,11 @@
 function CDOTA_BaseNPC:UnitHasSlotForItem(itemname, bBackpack)
-	if self.HasRoomForItem then
-		return self:HasRoomForItem(itemname, bBackpack, true) ~= 4
-	else
-		for i = 0, bBackpack and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
-			local item = self:GetItemInSlot(i)
-			if not IsValidEntity(item) or (item:GetAbilityName() == itemname and item:IsStackable()) then
-				return true
-			end
+	for i = 0, bBackpack and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
+		local item = self:GetItemInSlot(i)
+		if not IsValidEntity(item) or (item:GetAbilityName() == itemname and item:IsStackable()) then
+			return true
 		end
-		return false
 	end
+	return false
 end
 
 function FillSlotsWithDummy(unit, bNoStash)
