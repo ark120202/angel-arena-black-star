@@ -35,7 +35,6 @@ function SetAllItemSlotsLocked(unit, locked, bNoStash)
 	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if current_item then
-		print(locked, " ", current_item.player_locked)
 			if locked or not current_item.player_locked then
 				current_item.auto_lock_order = true
 				ExecuteOrderFromTable({
