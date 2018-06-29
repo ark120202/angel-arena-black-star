@@ -308,6 +308,10 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 				unit:AddItem(item)
 				itemPushed = true
 				break
+			elseif sameStackableItem and current_item:GetAbilityName() == itemName then
+				unit:AddItem(item)
+				itemPushed = true
+				break
 			end
 		end
 		
