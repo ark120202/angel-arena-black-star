@@ -258,18 +258,13 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 	local isInShop = unit:HasModifier("modifier_fountain_aura_arena") -- Works only while fontain area === shop area
 	item:SetPurchaseTime(GameRules:GetGameTime())
 	item:SetPurchaser(hero)
-
-	local itemPushed = false
-	--If unit has slot for that item
+	
+	--If unit is in shop
 	if isInShop and not bOnlyStash then
-		if unit:UnitHasSlotForItem(itemName, true) then
-			unit:AddItem(item)
-			itemPushed = true
-		end
-	end
-
+		unit:AddItem(item)
+		itemPushed = true
 	--Try to add item to hero's stash
-	if not itemPushed then
+	else
 		if unit == FindCourier(team) then
 			unit = hero
 		end
@@ -294,7 +289,7 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 							unit:TakeItem(current_item)
 						end
 					end
-				elseif not firstEmptySlot then
+				elseif not (firstEmptySlot or sameStackableItem)  then
 					firstEmptySlot = i
 				end
 			end
@@ -304,19 +299,11 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		FillSlotsWithDummy(unit, false)
 		for i = DOTA_STASH_SLOT_1 , DOTA_STASH_SLOT_6 do
 			local current_item = unit:GetItemInSlot(i)
-			if current_item then
-				if current_item:GetAbilityName() == "item_dummy" then
-					UTIL_Remove(current_item)
-					unit:AddItem(item)
-					itemPushed = true
-					break
-				elseif isStackable and current_item:GetAbilityName() == itemName then
-					unit:AddItem(item)
-					itemPushed = true
-					break
-				end
+			if current_item and current_item:GetAbilityName() == "item_dummy" then
+				UTIL_Remove(current_item)
 			end
 		end
+		unit:AddItem(item)
 		
 		--Stackable item abuse fix part 2
 		if(sameStackableItem) then
@@ -331,9 +318,14 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		
 		if not isInShop then SetAllItemSlotsLocked(unit, false, true) end
 	end
-	
+	Timers:CreateTimer(PanoramaShop.DropItemOnFailedPush, {item = item, playerId = playerId})
+end
+
+function PanoramaShop.DropItemOnFailedPush (keys)
+	item = keys.item
+	playerId = keys.playerId
+	if not (item:IsNull() or item:GetCaster()) then
 	--At last drop an item on fountain
-	if not itemPushed then
 		local spawnPointName = "info_courier_spawn"
 		local teamCared = true
 		if PlayerResource:GetTeam(playerId) == DOTA_TEAM_GOODGUYS then
