@@ -270,9 +270,9 @@ function ShowItemRecipe(itemName) {
 }
 
 function SendItemBuyOrder(itemName) {
-	var playerId = Game.GetLocalPlayerID();
+	var pid = Game.GetLocalPlayerID();
 	var unit = Players.GetLocalPlayerPortraitUnit();
-	unit = Entities.IsControllableByPlayer(unit, playerId) ? unit : Players.GetPlayerHeroEntityIndex(playerId);
+	unit = Entities.IsControllableByPlayer(unit, pid) ? unit : Players.GetPlayerHeroEntityIndex(pid);
 	GameEvents.SendCustomGameEventToServer('panorama_shop_item_buy', {
 		itemName: itemName,
 		unit: unit,
@@ -373,6 +373,10 @@ function ClearQuickbuyItems() {
 }
 
 function RefreshQuickbuyItem(itemName) {
+	_.each(BoughtQuickbuySmallItem, function(panel) {
+		panel.itemBought = false;
+	});
+	BoughtQuickbuySmallItem.length = 0;
 	MakeQuickbuyCheckItem(itemName, {}, {}, QuickBuyTargetAmount);
 }
 
@@ -453,10 +457,6 @@ function UpdateShop() {
 	_.each(SmallItemsAlwaysUpdated, function(panel) {
 		UpdateSmallItem(panel, gold);
 	});
-	_.each(BoughtQuickbuySmallItem, function(panel) {
-		panel.itemBought = false;
-	});
-	BoughtQuickbuySmallItem.length = 0;
 	if ($('#ShopBase').BHasClass('ShopBaseOpen'))
 		_.each(SmallItems, function(panel) {
 			UpdateSmallItem(panel, gold);
@@ -474,7 +474,6 @@ function AutoUpdateQuickbuy() {
 	if (QuickBuyTarget != null) {
 		RefreshQuickbuyItem(QuickBuyTarget);
 	}
-	$.Schedule(0.15, AutoUpdateQuickbuy);
 }
 
 function SetItemStock(item, ItemStock) {
@@ -526,6 +525,8 @@ function SetItemStock(item, ItemStock) {
 		}
 	});
 
+	GameEvents.Subscribe('dota_inventory_changed', AutoUpdateQuickbuy);
+	GameEvents.Subscribe('dota_inventory_item_changed', AutoUpdateQuickbuy);
 	GameEvents.Subscribe('panorama_shop_show_item', ShowItemInShop);
 	GameEvents.Subscribe('dota_link_clicked', function(data) {
 		if (data != null && data.link != null && data.link.lastIndexOf('dota.item.', 0) === 0) {
@@ -559,7 +560,6 @@ function SetItemStock(item, ItemStock) {
 	});
 
 	AutoUpdateShop();
-	AutoUpdateQuickbuy();
 
 	$.RegisterEventHandler('DragDrop', $('#QuickBuyStickyButtonPanel'), function(panelId, draggedPanel) {
 		if (draggedPanel.itemname != null) {
