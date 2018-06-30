@@ -282,4 +282,3 @@ function GameMode:ItemAddedToInventoryFilter(filterTable)
 	end
 	return true
 end
-
