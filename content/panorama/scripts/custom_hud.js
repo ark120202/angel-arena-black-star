@@ -245,7 +245,7 @@ function HookPanoramaPanels() {
 function OnDeath(data) {	
 	if (data.entindex_killed === SafeGetPlayerHeroEntityIndex(Game.GetLocalPlayerID())) {
 		var killerOwner = Entities.GetPlayerOwnerID(data.entindex_attacker);
-		var attacker = 	Players.IsValidPlayerID(killerOwner) ? SafeGetPlayerHeroEntityIndex(killerOwner) : data.entindex_attacker;
+		var attacker = Players.IsValidPlayerID(killerOwner) ? SafeGetPlayerHeroEntityIndex(killerOwner) : data.entindex_attacker;
 		FindDotaHudElement('KilledByHeroName').text = $.Localize(GetHeroName(attacker)).toUpperCase();
 	}
 }
