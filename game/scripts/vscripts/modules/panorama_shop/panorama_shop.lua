@@ -271,26 +271,21 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		
 		-- Stackable item abuse fix
 		local isStackable = item:IsStackable()
-		local firstEmptySlot = nil
 		local sameStackableItemSlot = nil
 		local sameStackableItem = nil
 		
 		if isStackable then
 			for i = 0, DOTA_STASH_SLOT_1 - 1 do
 				local current_item = unit:GetItemInSlot(i)
-				if current_item then
-					if current_item:GetAbilityName() == itemName then
-						if not sameStackableItem then
-							sameStackableItemSlot = i
-							sameStackableItem = current_item
-							unit:DropItemAtPositionImmediate(sameStackableItem, unit:GetAbsOrigin())
-						else
-							sameStackableItem:SetCurrentCharges(current_item:GetCurrentCharges() + sameStackableItem:GetCurrentCharges())
-							unit:TakeItem(current_item)
-						end
+				if current_item and current_item:GetAbilityName() == itemName then
+					if not sameStackableItem then
+						sameStackableItemSlot = i
+						sameStackableItem = current_item
+						unit:DropItemAtPositionImmediate(sameStackableItem, unit:GetAbsOrigin())
+					else
+						sameStackableItem:SetCurrentCharges(current_item:GetCurrentCharges() + sameStackableItem:GetCurrentCharges())
+						unit:TakeItem(current_item)
 					end
-				elseif not (firstEmptySlot or sameStackableItem)  then
-					firstEmptySlot = i
 				end
 			end
 		end
@@ -307,11 +302,9 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		
 		--Stackable item abuse fix part 2
 		if(sameStackableItem) then
+			sameStackableItem.suggested_slot = sameStackableItemSlot
 			local container = sameStackableItem:GetContainer()
 			unit:PickupDroppedItem(container)
-			if firstEmptySlot then
-				Timers:CreateTimer(function() unit:SwapItems(firstEmptySlot, sameStackableItemSlot) end)
-			end
 		end
 		
 		ClearSlotsFromDummy(unit, false)
