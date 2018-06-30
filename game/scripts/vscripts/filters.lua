@@ -3,6 +3,7 @@ Events:Register("activate", function ()
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, 'DamageFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, 'ModifyGoldFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetModifyExperienceFilter(Dynamic_Wrap(GameMode, 'ModifyExperienceFilter'), GameRules)
+	GameRules:GetGameModeEntity():SetItemAddedToInventoryFilter(Dynamic_Wrap(GameMode, 'ItemAddedToInventoryFilter'), GameRules)
 end)
 
 function GameMode:ExecuteOrderFilter(filterTable)
@@ -273,3 +274,12 @@ function GameMode:ModifyExperienceFilter(filterTable)
 	end
 	return true
 end
+
+function GameMode:ItemAddedToInventoryFilter(filterTable)
+	local item = EntIndexToHScript(filterTable.item_entindex_const)
+	if item.suggested_slot then
+		filterTable.suggested_slot = item.suggested_slot
+	end
+	return true
+end
+

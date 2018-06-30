@@ -167,7 +167,7 @@ function GetItemCountInInventory(nEntityIndex, itemName, bStash) {
 		endPoint = 14;
 	for (var i = endPoint; i >= 0; i--) {
 		var item = Entities.GetItemInSlot(nEntityIndex, i);
-		if (Abilities.GetAbilityName(item) === itemName)
+		if (Abilities.GetAbilityName(item) === itemName && Items.GetPurchaser(item) === nEntityIndex)
 			counter = counter + 1;
 	}
 	return counter;
