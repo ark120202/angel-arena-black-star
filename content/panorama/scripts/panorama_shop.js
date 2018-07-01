@@ -5,6 +5,7 @@ var ItemList = {},
 	SearchingFor = null,
 	QuickBuyTarget = null,
 	QuickBuyTargetAmount = 0,
+	BoughtQuickbuySmallItem = [],
 	LastHero = null,
 	ItemStocks = [];
 
@@ -129,7 +130,11 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 	});
 	panel.SetPanelEvent('oncontextmenu', function() {
 		if (panel.BHasClass('CanBuy')) {
-			SendItemBuyOrder(itemName);
+			if (!(panel.IsInQuickbuy && panel.itemBought)) {
+				panel.itemBought = true;
+				SendItemBuyOrder(itemName);
+				BoughtQuickbuySmallItem.push(panel);
+			}
 		} else {
 			GameEvents.SendEventClientSide('dota_hud_error_message', {
 				'splitscreenplayer': 0,
@@ -265,9 +270,9 @@ function ShowItemRecipe(itemName) {
 }
 
 function SendItemBuyOrder(itemName) {
-	var playerId = Game.GetLocalPlayerID();
+	var pid = Game.GetLocalPlayerID();
 	var unit = Players.GetLocalPlayerPortraitUnit();
-	unit = Entities.IsControllableByPlayer(unit, playerId) ? unit : Players.GetPlayerHeroEntityIndex(playerId);
+	unit = Entities.IsControllableByPlayer(unit, pid) ? unit : Players.GetPlayerHeroEntityIndex(pid);
 	GameEvents.SendCustomGameEventToServer('panorama_shop_item_buy', {
 		itemName: itemName,
 		unit: unit,
@@ -368,6 +373,10 @@ function ClearQuickbuyItems() {
 }
 
 function RefreshQuickbuyItem(itemName) {
+	_.each(BoughtQuickbuySmallItem, function(panel) {
+		panel.itemBought = false;
+	});
+	BoughtQuickbuySmallItem.length = 0;
 	MakeQuickbuyCheckItem(itemName, {}, {}, QuickBuyTargetAmount);
 }
 
@@ -465,7 +474,6 @@ function AutoUpdateQuickbuy() {
 	if (QuickBuyTarget != null) {
 		RefreshQuickbuyItem(QuickBuyTarget);
 	}
-	$.Schedule(0.15, AutoUpdateQuickbuy);
 }
 
 function SetItemStock(item, ItemStock) {
@@ -488,9 +496,13 @@ function SetItemStock(item, ItemStock) {
 				if (!child.BHasClass('DropDownValidTarget')) {
 					UpdateSmallItem(child);
 					if (child.BHasClass('CanBuy')) {
-						SendItemBuyOrder(child.itemName);
 						bought = true;
-						break;
+						if (!child.itemBought) {
+							child.itemBought = true;
+							SendItemBuyOrder(child.itemName);
+							BoughtQuickbuySmallItem.push(child);
+							break;
+						}
 					}
 				}
 			}
@@ -513,6 +525,8 @@ function SetItemStock(item, ItemStock) {
 		}
 	});
 
+	GameEvents.Subscribe('dota_inventory_changed', AutoUpdateQuickbuy);
+	GameEvents.Subscribe('dota_inventory_item_changed', AutoUpdateQuickbuy);
 	GameEvents.Subscribe('panorama_shop_show_item', ShowItemInShop);
 	GameEvents.Subscribe('dota_link_clicked', function(data) {
 		if (data != null && data.link != null && data.link.lastIndexOf('dota.item.', 0) === 0) {
@@ -546,7 +560,6 @@ function SetItemStock(item, ItemStock) {
 	});
 
 	AutoUpdateShop();
-	AutoUpdateQuickbuy();
 
 	$.RegisterEventHandler('DragDrop', $('#QuickBuyStickyButtonPanel'), function(panelId, draggedPanel) {
 		if (draggedPanel.itemname != null) {
