@@ -26,11 +26,15 @@ if IsServer() then
 			self:ToggleAutoCast()
 		end
 	end
-	
+
 	function modifier_sara_space_dissection:OnAttackLanded(keys)
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-		if (ability:GetAutoCastState() or parent:GetCurrentActiveAbility() == ability) and keys.attacker == parent and parent.GetEnergy then
+		if (
+			keys.attacker == parent and
+			parent.GetEnergy and
+			(ability:GetAutoCastState() or parent:GetCurrentActiveAbility() == ability)
+		) then
 			local unit = keys.target
 			if PreformAbilityPrecastActions(parent, ability) then
 				local pfx = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sara/space_dissection.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
