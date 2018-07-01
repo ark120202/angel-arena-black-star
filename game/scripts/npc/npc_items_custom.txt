@@ -8509,7 +8509,7 @@
 		"ItemResult"					"item_scythe_of_the_ancients"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_scepter_arena;item_demons_paw;item_sunray_dagon_5_arena;item_moon_dust"
+			"01"						"item_ultimate_scepter_arena;item_sunray_dagon_5_arena;item_moon_dust;item_irresistable_star"
 		}
 	}
 
