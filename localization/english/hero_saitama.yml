@@ -7,15 +7,15 @@ DOTA_Tooltip_ability_saitama_push_ups_Description: 'Saitama does a hundred push-
 DOTA_Tooltip_ability_saitama_push_ups_Lore: One hundred push-ups...
 DOTA_Tooltip_ability_saitama_push_ups_bonus_strength: 'BONUS STRENGTH:'
 
-DOTA_Tooltip_ability_saitama_squats: Squats
-DOTA_Tooltip_ability_saitama_squats_Description: 'Saitama does a hundred squats, becoming stronger. At the end of the ability, Saitama permanently gains some strength and receives %stacks_amount% limiter stack. '
-DOTA_Tooltip_ability_saitama_squats_Lore: One hundred squats...
-DOTA_Tooltip_ability_saitama_squats_bonus_strength: 'BONUS STRENGTH:'
-
 DOTA_Tooltip_ability_saitama_sit_ups: Sit-ups
 DOTA_Tooltip_ability_saitama_sit_ups_Description: 'Saitama does a hundred sit-ups, becoming stronger. At the end of the ability, Saitama permanently gains some strength and receives %stacks_amount% limiter stack.'
 DOTA_Tooltip_ability_saitama_sit_ups_Lore: One hundred sit-ups...
 DOTA_Tooltip_ability_saitama_sit_ups_bonus_strength: 'BONUS STRENGTH:'
+
+DOTA_Tooltip_ability_saitama_squats: Squats
+DOTA_Tooltip_ability_saitama_squats_Description: 'Saitama does a hundred squats, becoming stronger. At the end of the ability, Saitama permanently gains some strength and receives %stacks_amount% limiter stack. '
+DOTA_Tooltip_ability_saitama_squats_Lore: One hundred squats...
+DOTA_Tooltip_ability_saitama_squats_bonus_strength: 'BONUS STRENGTH:'
 
 DOTA_Tooltip_ability_saitama_jogging: Jogging
 DOTA_Tooltip_ability_saitama_jogging_Description: 'When Saitama runs, someone is a distance, he gets %bonus_strength% strength and %stacks_amount% of limiter stakes.'
