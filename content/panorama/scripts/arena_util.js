@@ -160,6 +160,59 @@ function dynamicSort(property) {
 	};
 }
 
+function ShallowCopy(origin) {
+	var rv = [];
+	for (var key in origin) {
+		rv[key] = origin[key];
+	}
+	return rv;
+}
+
+function isEmpty(array) {
+   var empty = true;
+
+   for(var key in array) {
+      empty = false;
+      break;
+   }
+
+   return empty;
+}
+
+function isEqual(A, B) {
+	for (var key in A) {
+		if(B[key] !== A[key]) {
+			return false;
+		}
+	}
+	for (var key in B) {
+		if(B[key] !== A[key]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+function GetItemsInFlaggedUnits (nEntityIndex, nflaggedEntities, bStash) {
+	var itemCounter = [];
+	var endPoint = 8;
+	if (bStash)
+		endPoint = 14;
+	for (var key in nflaggedEntities) {
+		var entity = nflaggedEntities[key]
+		if (entity !== null) {
+			for (var i = endPoint; i >= 0; i--) {
+				var item = Entities.GetItemInSlot(entity, i);
+				if (Items.GetPurchaser(item) === nEntityIndex) {
+					var itemName = Abilities.GetAbilityName(item);
+					itemCounter[itemName] = itemCounter[itemName] === undefined ? 1 : itemCounter[itemName] + 1;
+				}
+			}
+		}
+	}
+	return itemCounter;
+}
+
 function GetItemCountInInventory(nEntityIndex, itemName, bStash) {
 	var counter = 0;
 	var endPoint = 8;
