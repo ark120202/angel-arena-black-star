@@ -1579,3 +1579,13 @@ DOTA_Tooltip_ability_item_golden_arrow_Note0: >-
 DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: +$move_speed
 DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Multiplier
+
+DOTA_Tooltip_ability_item_irresistable_star: Irresistable Star
+DOTA_Tooltip_ability_item_irresistable_star_Description: >-
+  <h1>Пассивная: Shine</h1> All your abilities deal %magic_damage_to_pure_pct%%% pure damage.
+DOTA_Tooltip_ability_item_irresistable_star_spell_amp_pct: '%+$spell_amp'
+DOTA_Tooltip_ability_item_irresistable_star_cast_range_bonus: +$cast_range
+DOTA_Tooltip_ability_item_irresistable_star_bonus_mana: +$mana
+DOTA_Tooltip_ability_item_irresistable_star_bonus_mana_regen: +$mana_regen
+DOTA_Tooltip_ability_item_irresistable_star_bonus_intellect: +$int
+DOTA_Tooltip_ability_item_irresistable_star_bonus_health_regen: +$hp_regen

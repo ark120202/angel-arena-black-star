@@ -228,6 +228,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_gem_of_clear_mind",
 			"item_gem_of_pure_soul",
 			"item_blade_of_discord",
+			"item_irresistable_star",
 			"item_book_of_the_keeper",
 			"item_refresher_core",
 			"item_scythe_of_sun",

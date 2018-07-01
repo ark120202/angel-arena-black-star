@@ -8627,7 +8627,69 @@
 		}
 	}
 
+	"item_recipe_irresistable_star"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"1000"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_irresistable_star"
+		"ItemRequirements"
+		{
+			"01"						"item_aether_lens;item_book_of_the_keeper"
+		}
+	}
 
+	"item_irresistable_star"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_irresistable_star.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_arena/irresistable_star"
+
+		"ItemQuality"					"legendary"
+		"ItemAliases"					"irresistable star"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp_pct"			"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_damage_to_pure_pct"		"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"	"45"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"		"10"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"			"15"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"	"600"
+			}
+		}
+	}
 
 	"item_recipe_sange_and_yasha_and_kaya"
 	{
