@@ -3,6 +3,7 @@ Events:Register("activate", function ()
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, 'DamageFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, 'ModifyGoldFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetModifyExperienceFilter(Dynamic_Wrap(GameMode, 'ModifyExperienceFilter'), GameRules)
+	GameRules:GetGameModeEntity():SetItemAddedToInventoryFilter(Dynamic_Wrap(GameMode, 'ItemAddedToInventoryFilter'), GameRules)
 end)
 
 function GameMode:ExecuteOrderFilter(filterTable)
@@ -271,5 +272,24 @@ function GameMode:ModifyExperienceFilter(filterTable)
 	if Duel.IsFirstDuel and Duel:IsDuelOngoing() then
 		filterTable.experience = filterTable.experience * 0.1
 	end
+	return true
+end
+
+function GameMode:ItemAddedToInventoryFilter(filterTable)
+	local item = EntIndexToHScript(filterTable.item_entindex_const)
+	--Send info to panorama shops
+	if not item.isNotNew then
+		item.isNotNew = true
+		local abilityName = item:GetAbilityName()
+		local owner = item:GetPurchaser()
+		if owner then
+			local ownerIndex = owner:GetEntityIndex()
+			CustomGameEventManager:Send_ServerToAllClients("arena_new_item", {item = filterTable.item_entindex_const, itemName = abilityName, owner = ownerIndex})
+		end
+	end
+	if item.suggested_slot then
+		filterTable.suggested_slot = item.suggested_slot
+	end
+	
 	return true
 end
