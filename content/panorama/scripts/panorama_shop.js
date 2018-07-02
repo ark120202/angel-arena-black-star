@@ -633,7 +633,7 @@ function OnDotaInventoryChanged() {
 function OnArenaNewItem(args) {
 	var item = args.item;
 	var itemName = args.itemName;
-	var notPurchasable = !ItemData[itemName].purchasable
+	var notPurchasable = !(ItemData[itemName] && ItemData[itemName].purchasable)
 	if (args.stackable || args.isDropped || notPurchasable) AcquireQuickbuyItem(itemName, args.owner);
 }
 
