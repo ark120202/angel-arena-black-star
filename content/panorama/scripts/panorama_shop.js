@@ -631,7 +631,6 @@ function OnDotaInventoryChanged() {
 }
 
 function OnArenaNewItem(args) {
-	$.Msg("newarenaitem")
 	var item = args.item;
 	var itemName = args.itemName;
 	var notPurchasable = !ItemData[itemName].purchasable
@@ -639,8 +638,6 @@ function OnArenaNewItem(args) {
 }
 
 function OnDotaNewInventoryItem(args) {
-	
-	$.Msg("newinventoryitem")
 	var itemIndex = args.entityIndex;
 	var itemName = Abilities.GetAbilityName(itemIndex);
 	var owner = Items.GetPurchaser(itemIndex);
