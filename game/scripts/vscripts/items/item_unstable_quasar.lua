@@ -163,7 +163,7 @@ end
 
 function modifier_item_unstable_quasar_aura:CheckState()
 	return {
-		[MODIFIER_STATE_INVISIBLE] = false,
+		[MODIFIER_STATE_INVISIBLE] = MODIFIER_STATE_VALUE_DISABLED,
 	}
 end
 
