@@ -3,10 +3,11 @@ var ItemList = {},
 	SmallItems = [],
 	SmallItemsAlwaysUpdated = [],
 	SearchingFor = null,
-	QuickBuyTarget = null,
-	QuickBuyTargetAmount = 0,
+	QuickBuyData = [],
+	BoughtQuickbuySmallItem = [],
 	LastHero = null,
 	ItemStocks = [];
+	ItemCount = [];
 
 function OpenCloseShop(newState) {
 	if (typeof newState !== 'boolean') newState = !$('#ShopBase').BHasClass('ShopBaseOpen');
@@ -116,20 +117,28 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 		}
 		if (GameUI.IsAltDown()) {
 			GameEvents.SendCustomGameEventToServer('custom_chat_send_message', {
-				shop_item_name: panel.IsInQuickbuy ? QuickBuyTarget : itemName,
+				shop_item_name: panel.IsInQuickbuy ? panel.QuickBuyTarget : itemName,
 				isQuickbuy: panel.IsInQuickbuy,
-				gold: GetRemainingPrice(panel.IsInQuickbuy ? QuickBuyTarget : itemName, {})
+				gold: GetRemainingPrice(panel.IsInQuickbuy ? panel.QuickBuyTarget : itemName, {})
 			});
 		} else {
 			ShowItemRecipe(itemName);
+			var multibuy = false;
+			if (GameUI.IsControlDown()) {
+				multibuy = true;
+			}
 			if (GameUI.IsShiftDown()) {
-				SetQuickbuyTarget(itemName);
+				SetQuickbuyTarget(itemName, multibuy);
 			}
 		}
 	});
 	panel.SetPanelEvent('oncontextmenu', function() {
 		if (panel.BHasClass('CanBuy')) {
-			SendItemBuyOrder(itemName);
+			if (!(panel.IsInQuickbuy && panel.itemBought)) {
+				panel.itemBought = true;
+				SendItemBuyOrder(itemName);
+				BoughtQuickbuySmallItem.push(panel);
+			}
 		} else {
 			GameEvents.SendEventClientSide('dota_hud_error_message', {
 				'splitscreenplayer': 0,
@@ -345,6 +354,96 @@ function GetRemainingPrice(itemName, ItemCounter, baseItem) {
 	return val;
 }
 
+function NewQuickBuyData(QuickBuyTarget) {
+	var rv = {
+		target : QuickBuyTarget,
+		possibleAmount : ItemCount[QuickBuyTarget] || 0,
+		oldpossibleAmount : ItemCount[QuickBuyTarget] || 0,
+		requirements : [],
+		smallItems : [],
+		
+		RefreshItem : QuickBuyData_RefreshQuickbuyItem,
+		UpdateSmallItems : QuickBuyData_UpdateSmallItems,
+		AcquireQuickbuyItem : QuickBuyData_AcquireQuickbuyItem,
+		ClearItems : QuickBuyData_ClearItems
+		};
+	QuickBuyData.push(rv);
+	return rv;
+}
+
+function QuickBuyData_RefreshQuickbuyItem (ItemCounter) {
+	var target = this.target;
+	this.requirements = [];
+	this.oldpossibleAmount = this.possibleAmount;
+	this.possibleAmount = ItemCount[target] || 0;
+	FindRequiredItems(this.requirements, target, ItemCounter, true, 0);
+	
+	this.UpdateSmallItems();
+}
+
+function QuickBuyData_UpdateSmallItems() {
+	var requirements = ShallowCopy(this.requirements);	
+	var quickBuyPanel = $('#QuickBuyPanelItems');
+	var smallItems = this.smallItems;
+	//unmark small items from RequiredItems/destroy un-needed smallItems
+	var splices = [];
+	for (var x = 0; x < smallItems.length; x++) {
+		var item = smallItems[x];
+		var itemName = item.itemName;
+		if (itemName != null) {
+			if (requirements[itemName] == null) {
+				splices.unshift(smallItems.indexOf(item));
+				item.DestroyItemPanel();
+			} else {
+				requirements[itemName] -= 1;
+				if (requirements[itemName] <= 0) {
+					delete requirements[itemName];
+				}
+			}
+		}
+	}
+	for	(var x = 0; x < splices.length; x++) {
+		smallItems.splice(splices[x], 1);
+	}
+	for (var itemName in requirements) {
+		for (var x = 0; x < requirements[itemName]; x++) {
+			var itemPanel = $.CreatePanel('Panel', quickBuyPanel, "quickbuySmallItem");
+			itemPanel.IsInQuickbuy = true;
+			itemPanel.QuickBuyTarget = this.target;
+			smallItems.push(itemPanel);
+			SnippetCreate_SmallItem(itemPanel, itemName);
+			itemPanel.AddClass('QuickbuyItemPanel');
+			SmallItemsAlwaysUpdated.push(itemPanel);
+		}
+	}
+}
+
+function QuickBuyData_AcquireQuickbuyItem(itemName) {
+	var target = this.target;
+	if (itemName == target || this.possibleAmount > this.oldpossibleAmount) {
+		this.ClearItems();
+		return true;
+	}
+	return false;
+}
+
+function AcquireQuickbuyItem(itemName, owner) {
+	var localPlayer = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID())
+	if (owner == localPlayer) {
+		for (var x = 0; x < QuickBuyData.length; x++) {
+			if (QuickBuyData[x].AcquireQuickbuyItem(itemName)) break;
+		}
+	}
+}
+
+function QuickBuyData_ClearItems() {
+	for(var x = 0; x < this.smallItems.length; x++) {
+		child = this.smallItems[x];
+		child.DestroyItemPanel();
+	}
+	QuickBuyData.splice(QuickBuyData.indexOf(this), 1);
+}
+
 function SetQuickbuyStickyItem(itemName) {
 	_.each($('#QuickBuyStickyButtonPanel').Children(), function(child) {
 		child.DestroyItemPanel();
@@ -356,82 +455,120 @@ function SetQuickbuyStickyItem(itemName) {
 }
 
 function ClearQuickbuyItems() {
-	QuickBuyTarget = null;
-	QuickBuyTargetAmount = null;
-	_.each($('#QuickBuyPanelItems').Children(), function(child) {
-		if (!child.BHasClass('DropDownValidTarget')) {
-			child.DestroyItemPanel();
-		} else {
-			//child.visible = false
+	for	(var x = 0; x < QuickBuyData.length; x++) {
+		QuickBuyData[x].ClearItems();
+	}
+}
+
+//Returns a list of items where everything has combined
+function AssumeCombinedItems(invItemList) {
+	var combinedList = [];
+	//traverse through invItemList
+	for (var x = 0; x < invItemList.length; x++) {
+		var itemName = invItemList[x];
+		AddItemToCombinedItemList(combinedList, itemName);
+	}
+	return combinedList;
+}
+
+function AddItemToCombinedItemList(invCombinedList, itemName) {
+	ObjectIntIncrement(invCombinedList, itemName);
+	var currentItemData = ItemData[itemName];
+	if(currentItemData == null)
+		return;
+	var buildsIntoData = currentItemData.BuildsInto;
+	//traverse through possible combinations
+	var finishedCombining = false;
+	var combinedItem;
+	if (buildsIntoData != null) {
+		for (var y in buildsIntoData) {
+			var buildsIntoName = buildsIntoData[y];
+			var recipeData = ItemData[buildsIntoName].Recipe;
+			//traverse through recipes
+			if (recipeData != null && recipeData.items != null) {
+				for (var z in recipeData.items) {
+					var currentRecipeData = recipeData.items[z];
+					var canComplete = true;
+					var usedComponents = [];
+					var recipeItemName = recipeData.recipeItemName;
+					//check if can complete recipe
+					for (var w in currentRecipeData) {
+						var componentItemName = currentRecipeData[w];
+						ObjectIntIncrement(usedComponents, componentItemName);
+						if (invCombinedList[componentItemName] === undefined || invCombinedList[componentItemName] < usedComponents[componentItemName]) {
+							canComplete = false;
+							break;
+						}
+					}
+					if (recipeData.visible && recipeItemName != null) {
+						ObjectIntIncrement(usedComponents, recipeItemName);
+						if (invCombinedList[recipeItemName] === undefined || invCombinedList[recipeItemName] < usedComponents[recipeItemName]) {
+							canComplete = false;
+							break;
+						}
+					}
+					//if can, remove from list
+					if(canComplete) {
+						for (w in usedComponents) {
+							invCombinedList[w] -= usedComponents[w];
+						}
+						finishedCombining = true;
+						combinedItem = buildsIntoName;
+						break;
+					}
+				}
+				if(finishedCombining)
+					break;
+			}
+			if(finishedCombining)
+				break;
 		}
+	}
+	if (finishedCombining) {
+		AddItemToCombinedItemList(invCombinedList, combinedItem);
+	}
+}
+
+function RefreshQuickbuyItem(IsReset) {
+	_.each(BoughtQuickbuySmallItem, function(panel) {
+		panel.itemBought = false;
 	});
+	BoughtQuickbuySmallItem.length = 0;
+	var ItemCounter = [];
+	for(var x = 0; x < QuickBuyData.length; x++) {
+		QuickBuyData[x].RefreshItem(ItemCounter);
+	}
 }
 
-function RefreshQuickbuyItem(itemName) {
-	MakeQuickbuyCheckItem(itemName, {}, {}, QuickBuyTargetAmount);
-}
-
-function MakeQuickbuyCheckItem(itemName, ItemCounter, ItemIndexer, sourceExpectedCount) {
+//Find the items required to create the next complete item set. Returns RequiredItems.
+function FindRequiredItems(RequiredItems, itemName, ItemCounter, isOriginalTarget) {
 	var RecipeData = ItemData[itemName].Recipe;
-	if (ItemCounter[itemName] == null)
-		ItemCounter[itemName] = 0;
-	if (ItemIndexer[itemName] == null)
-		ItemIndexer[itemName] = 0;
-	ItemCounter[itemName] = ItemCounter[itemName] + 1;
-	ItemIndexer[itemName] = ItemIndexer[itemName] + 1;
-	var itemCount = GetItemCountInCourier(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), itemName, true) + GetItemCountInInventory(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), itemName, true);
-	if ((itemCount < ItemCounter[itemName] || (itemName === QuickBuyTarget && itemCount - (sourceExpectedCount - 1) < ItemCounter[itemName]))) {
+	ObjectIntIncrement(ItemCounter, itemName);
+	var itemCount = ItemCount[itemName] === undefined ? 0 : ItemCount[itemName];
+	
+	if(itemCount < ItemCounter[itemName] || isOriginalTarget) { //Will always check for required items if is original target
 		if (RecipeData != null && RecipeData.items != null) {
-			_.each(RecipeData.items[1], function(childName) {
-				MakeQuickbuyCheckItem(childName, ItemCounter, ItemIndexer);
+			var recipeToUse = 1;
+			if(itemName == "item_sange_and_yasha_and_kaya")
+				recipeToUse = 2
+			_.each(RecipeData.items[recipeToUse], function(childName) {
+				FindRequiredItems(RequiredItems, childName, ItemCounter, false);
 			});
 			if (RecipeData.visible && RecipeData.recipeItemName != null) {
-				MakeQuickbuyCheckItem(RecipeData.recipeItemName, ItemCounter, ItemIndexer);
+				FindRequiredItems(RequiredItems, RecipeData.recipeItemName, ItemCounter, false);
 			}
-		} else if ($('#QuickBuyPanelItems').FindChildTraverse('QuickBuyPanelItems_item_' + itemName + '_id_' + ItemIndexer[itemName]) == null) {
-			var itemPanel = $.CreatePanel('Panel', $('#QuickBuyPanelItems'), 'QuickBuyPanelItems_item_' + itemName + '_id_' + ItemIndexer[itemName]);
-			itemPanel.IsInQuickbuy = true;
-			SnippetCreate_SmallItem(itemPanel, itemName);
-			itemPanel.AddClass('QuickbuyItemPanel');
-			SmallItemsAlwaysUpdated.push(itemPanel);
-		}
-	} else {
-		if (itemName === QuickBuyTarget) {
-			ClearQuickbuyItems();
 		} else {
-			RemoveQuickbuyItemChildren(itemName, ItemIndexer, false);
+			ObjectIntIncrement(RequiredItems, itemName);
 		}
 	}
 }
 
-function RemoveQuickbuyItemChildren(itemName, ItemIndexer, bIncrease) {
-	var RecipeData = ItemData[itemName].Recipe;
-	if (bIncrease)
-		ItemIndexer[itemName] = (ItemIndexer[itemName] || 0) + 1;
-	RemoveQuckbuyPanel(itemName, ItemIndexer[itemName]);
-	if (RecipeData != null && RecipeData.items != null) {
-		_.each(RecipeData.items[1], function(childName) {
-			RemoveQuickbuyItemChildren(childName, ItemIndexer, true);
-		});
-		if (RecipeData.visible && RecipeData.recipeItemName != null) {
-			RemoveQuickbuyItemChildren(RecipeData.recipeItemName, ItemIndexer, true);
-		}
-	}
-}
-
-function RemoveQuckbuyPanel(itemName, index) {
-	var panel = $('#QuickBuyPanelItems').FindChildTraverse('QuickBuyPanelItems_item_' + itemName + '_id_' + index);
-	if (panel != null) {
-		panel.DestroyItemPanel();
-	}
-}
-
-function SetQuickbuyTarget(itemName) {
-	ClearQuickbuyItems();
+function SetQuickbuyTarget(itemName, multibuy) {
+	if (!multibuy)
+		ClearQuickbuyItems();
 	Game.EmitSound('Quickbuy.Confirmation');
-	QuickBuyTarget = itemName;
-	QuickBuyTargetAmount = GetItemCountInCourier(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), itemName, true) + GetItemCountInInventory(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), itemName, true) + 1;
-	RefreshQuickbuyItem(itemName);
+	NewQuickBuyData(itemName);
+	RefreshQuickbuyItem(true);
 }
 
 function ShowItemInShop(data) {
@@ -461,16 +598,42 @@ function AutoUpdateShop() {
 	//OpenCloseShop(FindDotaHudElement("shop").BHasClass("ShopOpen"));
 }
 
-function AutoUpdateQuickbuy() {
-	if (QuickBuyTarget != null) {
-		RefreshQuickbuyItem(QuickBuyTarget);
+function OnInventoryUpdated(shouldAcquireQuickbuyItem, itemName, owner) {
+	
+	var localPlayer = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID());
+	var nflaggedEntities = [localPlayer, FindCourier(localPlayer)];
+	var invItemList = GetItemsInFlaggedUnits (localPlayer, nflaggedEntities, true);
+	var newItemCount = AssumeCombinedItems(invItemList);
+	if (!isEqual(ItemCount, newItemCount)) {
+		delete ItemCount;
+		ItemCount = newItemCount;
+		if (QuickBuyData.length > 0)
+			RefreshQuickbuyItem(false);
+		if(shouldAcquireQuickbuyItem)
+			AcquireQuickbuyItem(itemName, owner);
 	}
-	$.Schedule(0.15, AutoUpdateQuickbuy);
+}
+
+function OnDotaInventoryChanged() {
+	OnInventoryUpdated(false);
+}
+
+function OnArenaNewItem(args) {
+	OnInventoryUpdated(true, args.itemName, args.owner);
+}
+
+function OnDotaNewInventoryItem(args) {
+	
+	var itemName = Abilities.GetAbilityName(args.entityIndex);
+	var owner = Items.GetPurchaser(args.entityIndex);
+	OnInventoryUpdated(true, itemName, owner);
 }
 
 function SetItemStock(item, ItemStock) {
 	ItemStocks[item] = ItemStock;
 }
+
+//todo: end quickbuy if last item insta-combines into an item that will create the target when player walks back to base
 
 (function() {
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP, true);
@@ -479,7 +642,7 @@ function SetItemStock(item, ItemStock) {
 	Game.Events.F4Pressed.push(OpenCloseShop);
 	GameEvents.Subscribe('panorama_shop_open_close', OpenCloseShop);
 	Game.Events.F5Pressed.push(function() {
-		if (QuickBuyTarget != null) {
+		if (QuickBuyData.length > 0) {
 			var bought = false;
 			var QuickBuyPanelItems = $('#QuickBuyPanelItems');
 			var childCount = QuickBuyPanelItems.GetChildCount();
@@ -488,9 +651,13 @@ function SetItemStock(item, ItemStock) {
 				if (!child.BHasClass('DropDownValidTarget')) {
 					UpdateSmallItem(child);
 					if (child.BHasClass('CanBuy')) {
-						SendItemBuyOrder(child.itemName);
 						bought = true;
-						break;
+						if (!child.itemBought) {
+							child.itemBought = true;
+							SendItemBuyOrder(child.itemName);
+							BoughtQuickbuySmallItem.push(child);
+							break;
+						}
 					}
 				}
 			}
@@ -513,6 +680,9 @@ function SetItemStock(item, ItemStock) {
 		}
 	});
 
+	GameEvents.Subscribe('dota_inventory_changed', OnDotaInventoryChanged);
+	GameEvents.Subscribe('dota_inventory_item_changed', OnDotaNewInventoryItem);
+	GameEvents.Subscribe('arena_new_item', OnArenaNewItem);
 	GameEvents.Subscribe('panorama_shop_show_item', ShowItemInShop);
 	GameEvents.Subscribe('dota_link_clicked', function(data) {
 		if (data != null && data.link != null && data.link.lastIndexOf('dota.item.', 0) === 0) {
@@ -546,7 +716,6 @@ function SetItemStock(item, ItemStock) {
 	});
 
 	AutoUpdateShop();
-	AutoUpdateQuickbuy();
 
 	$.RegisterEventHandler('DragDrop', $('#QuickBuyStickyButtonPanel'), function(panelId, draggedPanel) {
 		if (draggedPanel.itemname != null) {
