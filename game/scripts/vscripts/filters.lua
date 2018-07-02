@@ -285,7 +285,7 @@ function GameMode:ItemAddedToInventoryFilter(filterTable)
 		local isStackable = item:IsStackable()
 		if owner then
 			local ownerIndex = owner:GetEntityIndex()
-			local args = {frameDelay = 3, args = {item = filterTable.item_entindex_const, itemName = abilityName, owner = ownerIndex, stackable = isStackable}}
+			local args = {frameDelay = 2, args = {item = filterTable.item_entindex_const, itemName = abilityName, owner = ownerIndex, stackable = isStackable}}
 			Timers:CreateTimer(0, GameMode.SendArenaNewItem, args)
 		end
 	end
