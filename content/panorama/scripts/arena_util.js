@@ -160,39 +160,6 @@ function dynamicSort(property) {
 	};
 }
 
-function ShallowCopy(origin) {
-	var rv = [];
-	for (var key in origin) {
-		rv[key] = origin[key];
-	}
-	return rv;
-}
-
-function isEmpty(array) {
-   var empty = true;
-
-   for(var key in array) {
-      empty = false;
-      break;
-   }
-
-   return empty;
-}
-
-function isEqual(A, B) {
-	for (var key in A) {
-		if(B[key] !== A[key]) {
-			return false;
-		}
-	}
-	for (var key in B) {
-		if(B[key] !== A[key]) {
-			return false;
-		}
-	}
-	return true;
-}
-
 function ObjectIntIncrement (object, key) {
 	object[key] = object[key] === undefined ? 1 : object[key] + 1;
 }
