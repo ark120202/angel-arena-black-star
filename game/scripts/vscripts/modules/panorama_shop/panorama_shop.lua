@@ -311,7 +311,7 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		
 		if not isInShop then SetAllItemSlotsLocked(unit, false, true) end
 	end
-	Timers:CreateTimer(0, PanoramaShop.DropItemOnFailedPush, {frameDelay = 3, item = item, playerId = playerId})
+	Timers:CreateTimer(0, PanoramaShop.DropItemOnFailedPush, {frameDelay = 1, item = item, playerId = playerId})
 end
 
 function PanoramaShop.DropItemOnFailedPush (keys)
