@@ -354,21 +354,18 @@ function GetRemainingPrice(itemName, ItemCounter, baseItem) {
 	return val;
 }
 
-function NewQuickBuyData(QuickBuyTarget) {
-	var rv = {
-		target : QuickBuyTarget,
-		possibleAmount : ItemCount[QuickBuyTarget] || 0,
-		oldpossibleAmount : ItemCount[QuickBuyTarget] || 0,
-		requirements : [],
-		smallItems : [],
-		
-		RefreshItem : QuickBuyData_RefreshQuickbuyItem,
-		UpdateSmallItems : QuickBuyData_UpdateSmallItems,
-		AcquireQuickbuyItem : QuickBuyData_AcquireQuickbuyItem,
-		ClearItems : QuickBuyData_ClearItems
-		};
-	QuickBuyData.push(rv);
-	return rv;
+function QuickBuyInstance(QuickBuyTarget) {
+	this.target = QuickBuyTarget;
+	this.possibleAmount = ItemCount[QuickBuyTarget] || 0;
+	this.oldpossibleAmount = ItemCount[QuickBuyTarget] || 0;
+	this.requirements = [];
+	this.smallItems = [];
+	
+	this.RefreshItem = QuickBuyData_RefreshQuickbuyItem;
+	this.UpdateSmallItems = QuickBuyData_UpdateSmallItems;
+	this.AcquireQuickbuyItem = QuickBuyData_AcquireQuickbuyItem;
+	this.ClearItems = QuickBuyData_ClearItems;
+	QuickBuyData.push(this);
 }
 
 function QuickBuyData_RefreshQuickbuyItem (ItemCounter) {
@@ -382,7 +379,7 @@ function QuickBuyData_RefreshQuickbuyItem (ItemCounter) {
 }
 
 function QuickBuyData_UpdateSmallItems() {
-	var requirements = ShallowCopy(this.requirements);	
+	var requirements = _.clone(this.requirements);	
 	var quickBuyPanel = $('#QuickBuyPanelItems');
 	var smallItems = this.smallItems;
 	//unmark small items from RequiredItems/destroy un-needed smallItems
@@ -567,7 +564,7 @@ function SetQuickbuyTarget(itemName, multibuy) {
 	if (!multibuy)
 		ClearQuickbuyItems();
 	Game.EmitSound('Quickbuy.Confirmation');
-	NewQuickBuyData(itemName);
+	new QuickBuyInstance(itemName);
 	RefreshQuickbuyItem(true);
 }
 
@@ -598,19 +595,17 @@ function AutoUpdateShop() {
 	//OpenCloseShop(FindDotaHudElement("shop").BHasClass("ShopOpen"));
 }
 
-function OnInventoryUpdated(shouldAcquireQuickbuyItem, itemName, owner) {
+function OnInventoryUpdated() {
 	
 	var localPlayer = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID());
 	var nflaggedEntities = [localPlayer, FindCourier(localPlayer)];
 	var invItemList = GetItemsInFlaggedUnits (localPlayer, nflaggedEntities, true);
 	var newItemCount = AssumeCombinedItems(invItemList);
-	if (!isEqual(ItemCount, newItemCount)) {
+	if (!_.isEqual(ItemCount, newItemCount)) {
 		delete ItemCount;
 		ItemCount = newItemCount;
 		if (QuickBuyData.length > 0)
 			RefreshQuickbuyItem(false);
-		if(shouldAcquireQuickbuyItem)
-			AcquireQuickbuyItem(itemName, owner);
 	}
 }
 
@@ -619,14 +614,18 @@ function OnDotaInventoryChanged() {
 }
 
 function OnArenaNewItem(args) {
-	OnInventoryUpdated(true, args.itemName, args.owner);
+	if (args.stackable) AcquireQuickbuyItem(args.itemName, args.owner);
 }
 
 function OnDotaNewInventoryItem(args) {
 	
-	var itemName = Abilities.GetAbilityName(args.entityIndex);
-	var owner = Items.GetPurchaser(args.entityIndex);
-	OnInventoryUpdated(true, itemName, owner);
+	var itemIndex = args.entityIndex;
+	var itemName = Abilities.GetAbilityName(itemIndex);
+	var owner = Items.GetPurchaser(itemIndex);
+	var stackable = Items.IsStackable(itemIndex);
+	OnInventoryUpdated();
+	if (!stackable)
+		AcquireQuickbuyItem(itemName, owner);
 }
 
 function SetItemStock(item, ItemStock) {
