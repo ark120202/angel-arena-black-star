@@ -8656,12 +8656,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp_pct"			"15"
+				"bonus_mana"			"600"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_damage_to_pure_pct"		"20"
+				"bonus_health_regen"		"10"
 			}
 			"03"
 			{
@@ -8671,22 +8671,22 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"	"45"
+				"bonus_intellect"			"45"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"		"10"
+				"bonus_mana_regen"			"15"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"			"15"
+				"magic_damage_to_pure_pct"		"20"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"	"600"
+				"spell_amp_pct"			"15"
 			}
 		}
 	}
