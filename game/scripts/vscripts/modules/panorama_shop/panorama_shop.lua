@@ -311,29 +311,35 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		
 		if not isInShop then SetAllItemSlotsLocked(unit, false, true) end
 	end
-	Timers:CreateTimer(0.04, PanoramaShop.DropItemOnFailedPush, {item = item, playerId = playerId})
+	Timers:CreateTimer(0, PanoramaShop.DropItemOnFailedPush, {frameDelay = 3, item = item, playerId = playerId})
 end
 
 function PanoramaShop.DropItemOnFailedPush (keys)
-	item = keys.item
-	playerId = keys.playerId
-	if not (item:IsNull() or item:GetCaster()) then
-	--At last drop an item on fountain
-		local spawnPointName = "info_courier_spawn"
-		local teamCared = true
-		if PlayerResource:GetTeam(playerId) == DOTA_TEAM_GOODGUYS then
-			spawnPointName = "info_courier_spawn_radiant"
-			teamCared = false
-		elseif PlayerResource:GetTeam(playerId) == DOTA_TEAM_BADGUYS then
-			spawnPointName = "info_courier_spawn_dire"
-			teamCared = false
-		end
-		local ent
-		while true do
-			ent = Entities:FindByClassname(ent, spawnPointName)
-			if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerId))) then
-				CreateItemOnPositionSync(ent:GetAbsOrigin() + RandomVector(RandomInt(0, 300)), item)
-				break
+	if keys.frameDelay > 0 then
+		keys.frameDelay = keys.frameDelay - 1
+		return 0
+	else
+		item = keys.item
+		playerId = keys.playerId
+		if not (item:IsNull() or item:GetCaster()) then
+		--At last drop an item on fountain
+			local spawnPointName = "info_courier_spawn"
+			local teamCared = true
+			if PlayerResource:GetTeam(playerId) == DOTA_TEAM_GOODGUYS then
+				spawnPointName = "info_courier_spawn_radiant"
+				teamCared = false
+			elseif PlayerResource:GetTeam(playerId) == DOTA_TEAM_BADGUYS then
+				spawnPointName = "info_courier_spawn_dire"
+				teamCared = false
+			end
+			local ent
+			while true do
+				ent = Entities:FindByClassname(ent, spawnPointName)
+				if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerId))) then
+					print("DROPPED")
+					CreateItemOnPositionSync(ent:GetAbsOrigin() + RandomVector(RandomInt(0, 300)), item)
+					break
+				end
 			end
 		end
 	end
