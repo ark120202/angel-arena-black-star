@@ -282,9 +282,10 @@ function GameMode:ItemAddedToInventoryFilter(filterTable)
 		item.isNotNew = true
 		local abilityName = item:GetAbilityName()
 		local owner = item:GetPurchaser()
+		local isStackable = item:IsStackable()
 		if owner then
 			local ownerIndex = owner:GetEntityIndex()
-			CustomGameEventManager:Send_ServerToAllClients("arena_new_item", {item = filterTable.item_entindex_const, itemName = abilityName, owner = ownerIndex})
+			CustomGameEventManager:Send_ServerToAllClients("arena_new_item", {item = filterTable.item_entindex_const, itemName = abilityName, owner = ownerIndex, stackable = isStackable})
 		end
 	end
 	if item.suggested_slot then
