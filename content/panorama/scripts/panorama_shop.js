@@ -631,8 +631,10 @@ function OnDotaInventoryChanged() {
 }
 
 function OnArenaNewItem(args) {
-	var item = args.item
-	if (args.stackable || args.isDropped) AcquireQuickbuyItem(args.itemName, args.owner, true);
+	var item = args.item;
+	var itemName = args.itemName;
+	var notPurchasable = !ItemData[itemName].purchasable
+	if (args.stackable || args.isDropped || notPurchasable) AcquireQuickbuyItem(itemName, args.owner, true);
 }
 
 function OnDotaNewInventoryItem(args) {
