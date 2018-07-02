@@ -285,7 +285,8 @@ function GameMode:ItemAddedToInventoryFilter(filterTable)
 		local isStackable = item:IsStackable()
 		if owner then
 			local ownerIndex = owner:GetEntityIndex()
-			CustomGameEventManager:Send_ServerToAllClients("arena_new_item", {item = filterTable.item_entindex_const, itemName = abilityName, owner = ownerIndex, stackable = isStackable})
+			local args = {frameDelay = 3, args = {item = filterTable.item_entindex_const, itemName = abilityName, owner = ownerIndex, stackable = isStackable}}
+			Timers:CreateTimer(0, GameMode.SendArenaNewItem, args)
 		end
 	end
 	if item.suggested_slot then
@@ -293,4 +294,20 @@ function GameMode:ItemAddedToInventoryFilter(filterTable)
 	end
 	
 	return true
+end
+
+function GameMode.SendArenaNewItem(args)
+	if (args.frameDelay > 0) then
+		args.frameDelay = args.frameDelay - 1
+		return 0
+	else
+		local passedArgs = args.args
+		local item = EntIndexToHScript(passedArgs.item)
+		if (item) then
+			passedArgs.isDropped = item:GetContainer() ~= nil
+		else
+			passedArgs.isDropped = false;
+		end
+		CustomGameEventManager:Send_ServerToAllClients("arena_new_item", passedArgs)
+	end
 end
