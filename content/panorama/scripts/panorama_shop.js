@@ -633,8 +633,6 @@ function SetItemStock(item, ItemStock) {
 	ItemStocks[item] = ItemStock;
 }
 
-//todo: end quickbuy if last item insta-combines into an item that will create the target when player walks back to base
-
 (function() {
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP, true);
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, true);
