@@ -336,7 +336,6 @@ function PanoramaShop.DropItemOnFailedPush (keys)
 			while true do
 				ent = Entities:FindByClassname(ent, spawnPointName)
 				if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerId))) then
-					print("DROPPED")
 					CreateItemOnPositionSync(ent:GetAbsOrigin() + RandomVector(RandomInt(0, 300)), item)
 					break
 				end
