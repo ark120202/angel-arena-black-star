@@ -7,7 +7,7 @@ var ItemList = {},
 	QuickBuyData = [],
 	BoughtQuickbuySmallItem = [],
 	LastHero = null,
-	ItemStocks = [];
+	ItemStocks = [],
 	ItemCount = {};
 
 function OpenCloseShop(newState) {
@@ -444,7 +444,7 @@ function AcquireQuickbuyItem(itemName, owner) {
 
 function QuickBuyData_ClearItems(deteteAfter) {
 	for(var x = 0; x < this.smallItems.length; x++) {
-		child = this.smallItems[x];
+		var child = this.smallItems[x];
 		child.DestroyItemPanel();
 	}
 	if (deteteAfter)
@@ -465,7 +465,6 @@ function ClearQuickbuyItems() {
 	for	(var x = 0; x < QuickBuyData.length; x++) {
 		QuickBuyData[x].ClearItems();
 	}
-	delete QuickBuyData;
 	QuickBuyData = [];
 }
 
@@ -538,16 +537,20 @@ function AddItemToCombinedItemList(invCombinedList, itemName) {
 	}
 }
 
-function RefreshQuickbuyItem(IsReset) {
+function ResetBoughtPanels() {
 	var quickBuyPanel = $('#QuickBuyPanelItems');
 	_.each(BoughtQuickbuySmallItem, function(panel) {
 		panel.itemBought = false;
 	});
 	BoughtQuickbuySmallItem.length = 0;
+}
+
+function RefreshQuickbuyItem(IsReset) {
 	var ItemCounter = [];
 	for(var x = 0; x < QuickBuyData.length; x++) {
 		QuickBuyData[x].RefreshItem(ItemCounter);
 	}
+	ResetBoughtPanels();
 }
 
 //Find the items required to create the next complete item set. Returns RequiredItems.
@@ -610,14 +613,12 @@ function AutoUpdateShop() {
 }
 
 function OnInventoryUpdated() {
-	
 	var localPlayer = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID());
 	var nflaggedEntities = [localPlayer, FindCourier(localPlayer)];
 	var invItemList = GetItemsInFlaggedUnits (localPlayer, nflaggedEntities, true);
 	var newItemCount = AssumeCombinedItems(invItemList);
 	if (!_.isEqual(ItemCount, newItemCount)) {
 		QuickBuyAcquireNotCheckedThisTick = true;
-		delete ItemCount;
 		ItemCount = newItemCount;
 		if (QuickBuyData.length > 0)
 			RefreshQuickbuyItem(false);
@@ -634,7 +635,10 @@ function OnArenaNewItem(args) {
 	var item = args.item;
 	var itemName = args.itemName;
 	var notPurchasable = !(ItemData[itemName] && ItemData[itemName].purchasable)
-	if (args.stackable || args.isDropped || notPurchasable) AcquireQuickbuyItem(itemName, args.owner);
+	if (args.stackable || args.isDropped || notPurchasable) {
+		AcquireQuickbuyItem(itemName, args.owner);
+		ResetBoughtPanels();
+	}
 }
 
 function OnDotaNewInventoryItem(args) {
