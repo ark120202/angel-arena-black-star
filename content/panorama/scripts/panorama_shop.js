@@ -124,12 +124,8 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 			});
 		} else {
 			ShowItemRecipe(itemName);
-			var multibuy = false;
-			if (GameUI.IsControlDown()) {
-				multibuy = true;
-			}
 			if (GameUI.IsShiftDown()) {
-				SetQuickbuyTarget(itemName, multibuy);
+				SetQuickbuyTarget(itemName, GameUI.IsControlDown());
 			}
 		}
 	});
