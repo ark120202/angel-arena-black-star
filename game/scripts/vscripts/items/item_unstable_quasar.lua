@@ -188,7 +188,6 @@ function modifier_item_unstable_quasar_true_sight:IsAura()
 end
 
 function modifier_item_unstable_quasar_true_sight:GetAuraRadius()
-print(self:GetAbility():GetSpecialValueFor("aura_radius"))
 	return self:GetAbility():GetSpecialValueFor("aura_radius")
 end
 
