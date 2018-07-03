@@ -48,17 +48,22 @@ end
 if IsServer() then
 	function modifier_item_irresistable_star:OnTakeDamage(keys)
 		local parent = self:GetParent()
-		local damage = keys.original_damage
 		local ability = self:GetAbility()
-		if keys.attacker == parent and not keys.unit:IsMagicImmune() and keys.damage_type == 2 then
-			ApplyDamage({
-				attacker = parent,
-				victim = keys.unit,
-				damage = keys.original_damage * ability:GetSpecialValueFor("magic_damage_to_pure_pct") * 0.01,
-				damage_type = DAMAGE_TYPE_PURE,
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				ability = ability
-			})
-		end
+		local damage = keys.original_damage
+		local caster = ability:GetCaster()
+		if caster:HasModifier("modifier_item_unstable_quasar_passive") then return end
+		Timers:CreateTimer(2, function()
+			if keys.attacker == parent and not keys.unit:IsMagicImmune() and keys.damage_type == 2 then
+				ApplyDamage({
+					attacker = parent,
+					victim = keys.unit,
+					damage = damage * ability:GetSpecialValueFor("magic_damage_to_pure_pct") * 0.01,
+					damage_type = DAMAGE_TYPE_PURE,
+					damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+					ability = ability
+				})
+				SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, keys.unit, damage * ability:GetSpecialValueFor("magic_damage_to_pure_pct") * 0.01, nil)
+			end
+		end)
 	end
 end
