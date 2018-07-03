@@ -1,6 +1,7 @@
 LinkLuaModifier("modifier_item_unstable_quasar_passive", "items/item_unstable_quasar.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_unstable_quasar_slow", "items/item_unstable_quasar.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_unstable_quasar_aura", "items/item_unstable_quasar.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_unstable_quasar_true_sight", "items/item_unstable_quasar.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_unstable_quasar = class({
 	GetIntrinsicModifierName = function() return "modifier_item_unstable_quasar_passive" end,
@@ -20,6 +21,17 @@ modifier_item_unstable_quasar_passive = class({
 	IsPurgable = function() return false end,
 	RemoveOnDeath = function() return false end,
 })
+
+function modifier_item_unstable_quasar_passive:OnCreated()
+	local owner = self:GetParent()
+	local ability = self:GetAbility()
+	owner:AddNewModifier(owner, ability, "modifier_item_unstable_quasar_true_sight", null)
+end
+
+function modifier_item_unstable_quasar_passive:OnDestroy()
+	local owner = self:GetParent()
+	owner:RemoveModifierByName("modifier_item_unstable_quasar_true_sight")
+end
 
 function modifier_item_unstable_quasar_passive:DeclareFunctions()
 	return {
@@ -161,9 +173,29 @@ function modifier_item_unstable_quasar_aura:GetModifierMagicalResistanceBonus()
 	return -self:GetAbility():GetSpecialValueFor("aura_resist_debuff_pct")
 end
 
-function modifier_item_unstable_quasar_aura:CheckState()
-	return {
-		[MODIFIER_STATE_INVISIBLE] = false,
-	}
+modifier_item_unstable_quasar_true_sight = class({
+	IsHidden   = function() return true end,
+	IsPurgable = function() return false end,
+	RemoveOnDeath = function() return false end,
+})
+
+function modifier_item_unstable_quasar_true_sight:GetModifierAura()
+	return "modifier_truesight"
 end
 
+function modifier_item_unstable_quasar_true_sight:IsAura()
+	return true
+end
+
+function modifier_item_unstable_quasar_true_sight:GetAuraRadius()
+print(self:GetAbility():GetSpecialValueFor("aura_radius"))
+	return self:GetAbility():GetSpecialValueFor("aura_radius")
+end
+
+function modifier_item_unstable_quasar_true_sight:GetAuraSearchTeam()
+	return self:GetAbility():GetAbilityTargetTeam()
+end
+
+function modifier_item_unstable_quasar_true_sight:GetAuraSearchType()
+	return self:GetAbility():GetAbilityTargetType()
+end
