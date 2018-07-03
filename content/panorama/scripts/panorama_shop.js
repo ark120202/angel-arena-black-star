@@ -3,7 +3,7 @@ var ItemList = {},
 	SmallItems = [],
 	SmallItemsAlwaysUpdated = [],
 	SearchingFor = null,
-	QuickBuyAcquireNotCheckedThisTick = true,
+	QuickBuyNotFinishedThisTick = true,
 	QuickBuyData = [],
 	BoughtQuickbuySmallItem = [],
 	LastHero = null,
@@ -434,6 +434,7 @@ function AcquireQuickbuyItem(itemName, owner) {
 	if (owner == localPlayer) {
 		for (var x = 0; x < QuickBuyData.length; x++) {
 			if (QuickBuyData[x].AcquireQuickbuyItem(itemName)) {
+				QuickBuyNotFinishedThisTick = false;
 				if (QuickBuyData.length > 0)
 					RefreshQuickbuyItem(false);
 				break;
@@ -618,7 +619,7 @@ function OnInventoryUpdated() {
 	var invItemList = GetItemsInFlaggedUnits (localPlayer, nflaggedEntities, true);
 	var newItemCount = AssumeCombinedItems(invItemList);
 	if (!_.isEqual(ItemCount, newItemCount)) {
-		QuickBuyAcquireNotCheckedThisTick = true;
+		QuickBuyNotFinishedThisTick = true;
 		ItemCount = newItemCount;
 		if (QuickBuyData.length > 0)
 			RefreshQuickbuyItem(false);
@@ -646,8 +647,7 @@ function OnDotaNewInventoryItem(args) {
 	var itemName = Abilities.GetAbilityName(itemIndex);
 	var owner = Items.GetPurchaser(itemIndex);
 	var stackable = Items.IsStackable(itemIndex);
-	if (!stackable && (OnInventoryUpdated() || QuickBuyAcquireNotCheckedThisTick)) {
-		QuickBuyAcquireNotCheckedThisTick = false;
+	if (!stackable && (OnInventoryUpdated() || QuickBuyNotFinishedThisTick)) {
 		AcquireQuickbuyItem(itemName, owner);
 	}
 }
