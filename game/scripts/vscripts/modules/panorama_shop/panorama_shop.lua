@@ -265,7 +265,7 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 	else
 		PanoramaShop:PushToStash (playerId, item)
 	end
-	Timers:CreateTimer(0, PanoramaShop.DropItemOnFailedPush, {frameDelay = 1, item = item, playerId = playerId})
+	Timers:CreateTimer(0, PanoramaShop.DropItemOnFailedPush, {frameDelay = 1, item = item, playerId = playerId, unit = unit, isInShop = isInShop})
 end
 
 function PanoramaShop:PushToStash (playerId, item)
@@ -320,31 +320,39 @@ function PanoramaShop.DropItemOnFailedPush (keys)
 		keys.frameDelay = keys.frameDelay - 1
 		return 0
 	else
-		item = keys.item
-		playerId = keys.playerId
+		local item = keys.item
+		local unit = keys.unit
+		local playerId = keys.playerId
+		local isInShop = keys.isInShop
 		if not (item:IsNull() or item:GetCaster()) then
 			local container = item:GetContainer()
 			if container then
 				container:Destroy()
 				PanoramaShop:PushToStash (playerId, item)
-				Timers:CreateTimer(0, PanoramaShop.DropItemOnFailedPush, {frameDelay = 1, item = item, playerId = playerId})
+				Timers:CreateTimer(0, PanoramaShop.DropItemOnFailedPush, {frameDelay = 1, item = item, playerId = playerId, unit = unit, isInShop = isInShop})
 			else
-			--At last drop an item on fountain
-				local spawnPointName = "info_courier_spawn"
-				local teamCared = true
-				if PlayerResource:GetTeam(playerId) == DOTA_TEAM_GOODGUYS then
-					spawnPointName = "info_courier_spawn_radiant"
-					teamCared = false
-				elseif PlayerResource:GetTeam(playerId) == DOTA_TEAM_BADGUYS then
-					spawnPointName = "info_courier_spawn_dire"
-					teamCared = false
-				end
-				local ent
-				while true do
-					ent = Entities:FindByClassname(ent, spawnPointName)
-					if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerId))) then
-						CreateItemOnPositionSync(ent:GetAbsOrigin() + RandomVector(RandomInt(0, 300)), item)
-						break
+				if isInShop then
+					--Drop item on feet if unit in shop
+					CreateItemOnPositionSync(unit:GetAbsOrigin(), item)
+				else
+					--At last drop an item on fountain
+					local spawnPointName = "info_courier_spawn"
+					local teamCared = true
+					if PlayerResource:GetTeam(playerId) == DOTA_TEAM_GOODGUYS then
+						spawnPointName = "info_courier_spawn_radiant"
+						teamCared = false
+					elseif PlayerResource:GetTeam(playerId) == DOTA_TEAM_BADGUYS then
+						spawnPointName = "info_courier_spawn_dire"
+						teamCared = false
+					end
+					
+					local ent
+					while true do
+						ent = Entities:FindByClassname(ent, spawnPointName)
+						if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerId))) then
+							CreateItemOnPositionSync(ent:GetAbsOrigin() + RandomVector(RandomInt(0, 300)), item)
+							break
+						end
 					end
 				end
 			end
