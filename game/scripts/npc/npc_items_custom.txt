@@ -6907,7 +6907,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 
-				"Aura"          	"modifier_truesight_reveal"
+				"Aura"          	"modifier_truesight"
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"    	"DOTA_UNIT_TARGET_ALL"
@@ -6935,17 +6935,6 @@
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-			}
-
-			"modifier_truesight_reveal"
-			{
-				"IsHidden"			"1"
-				"Duration"			"0.5"
-				"Priority"			"MODIFIER_PRIORITY_HIGH"
-				"States"
-				{
-					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_DISABLED"
-				}
 			}
 
 			"modifier_truemind_reveal"
@@ -7058,22 +7047,11 @@
 					}
 				}
 
-				"Aura"          	"modifier_truesight_reveal"
+				"Aura"          	"modifier_truesight"
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"    	"DOTA_UNIT_TARGET_ALL"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-			}
-
-			"modifier_truesight_reveal"
-			{
-				"IsHidden"			"1"
-				"Duration"			"0.5"
-				"Priority"			"MODIFIER_PRIORITY_HIGH"
-				"States"
-				{
-					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_DISABLED"
-				}
 			}
 		}
 	}
