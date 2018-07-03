@@ -91,8 +91,9 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local damage = keys.original_damage
 		local caster = ability:GetCaster()
+		if caster:HasModifier("modifier_item_scythe_of_the_ancients_passive") then return end
 		Timers:CreateTimer(2, function()
-		if keys.attacker == parent and not keys.unit:IsMagicImmune() and keys.damage_type == 2 then
+		if keys.attacker == parent and not keys.unit:IsMagicImmune() and keys.damage_type == 2 and damage > ability:GetSpecialValueFor("min_damage_to_pure") then
 			ApplyDamage({
 				attacker = parent,
 				victim = keys.unit,

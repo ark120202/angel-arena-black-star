@@ -8618,6 +8618,11 @@
 				"var_type"					"FIELD_FLOAT"
 				"delayed_damage_per_health"	"0.3"
 			}
+			"18"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_damage_to_pure"		"70"
+			}
 		}
 		"precache"
 		{
@@ -8939,6 +8944,11 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"magic_damage_to_pure_pct"			"15"
+			}
+			"22"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_damage_to_pure"		"70"
 			}
 		}
 		"precache"
