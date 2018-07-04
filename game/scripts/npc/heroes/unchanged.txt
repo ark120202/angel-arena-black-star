@@ -33,7 +33,6 @@
 
 	"npc_dota_hero_drow_ranger"
 	{
-		"DisabledInRanked"	"1"
 		"override_hero"	"npc_dota_hero_drow_ranger"
 		"AttackRate"	"1.6"
 	}
