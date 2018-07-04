@@ -74,6 +74,7 @@
 
 	"npc_dota_hero_medusa"
 	{
+		"DisabledInRanked"	"1"
 		"override_hero"	"npc_dota_hero_medusa"
 		"Changed"	"1"
 		"Ability1"	"medusa_split_shot_arena"
