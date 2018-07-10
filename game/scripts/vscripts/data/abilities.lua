@@ -114,6 +114,7 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	zuus_static_field = true,
 	enigma_midnight_pulse = true,
 	enigma_black_hole = true,
+	zaken_stitching_strikes = true,
 	nyx_assassin_mana_burn = true,
 	elder_titan_earth_splitter = true,
 	necrolyte_reapers_scythe = true,
