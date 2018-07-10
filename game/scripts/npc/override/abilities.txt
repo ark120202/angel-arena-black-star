@@ -22122,9 +22122,8 @@
 	{
 		"MaxLevel"						"7"
 		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"25"
+		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"70 80 90 100 110 120 130"
-		//"RequiredLevel"				"7"
 		"AbilitySpecial"
 		{
 			"01"
@@ -22230,12 +22229,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"15"
+				"chance_pct"			"7"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0"
+				"duration"				"2.0"
 			}
 			"03"
 			{
