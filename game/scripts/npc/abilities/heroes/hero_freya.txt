@@ -336,12 +336,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"base_crit_pct"		"250 275 300 325 350 375 400"
+				"base_crit_pct"		"150 175 200 225 250 275 300"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stat_to_crit_pct"	"6 7 8 9 10 11 12"
+				"stat_to_crit_pct"	"1"
 			}
 			"03"
 			{
