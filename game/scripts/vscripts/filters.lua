@@ -84,10 +84,6 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_boss")
 			return false
 		end
-		if PlayerResource:IsDisableHelpSetForPlayerID(UnitVarToPlayerID(target), UnitVarToPlayerID(unit)--[[playerId]]) and DISABLE_HELP_ABILITIES[abilityname] then
-			Containers:DisplayError(playerId, "#dota_hud_error_target_has_disable_help")
-			return false
-		end
 		if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then
 			filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
 			return true

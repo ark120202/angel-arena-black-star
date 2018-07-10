@@ -141,14 +141,3 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 
 PERCENT_DAMAGE_MODIFIERS = {
 }
-
-DISABLE_HELP_ABILITIES = {
-	wisp_tether = true,
-	keeper_of_the_light_recall = true,
-	chen_test_of_faith_teleport = true,
-	oracle_purifying_flames = true,
-	kunkka_x_marks_the_spot = true,
-	bloodseeker_bloodrage = true,
-	bane_nightmare = true,
-	winter_wyvern_cold_embrace = true,
-}
