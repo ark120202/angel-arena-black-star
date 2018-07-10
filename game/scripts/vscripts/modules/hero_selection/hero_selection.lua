@@ -257,7 +257,7 @@ function HeroSelection:StartStateInGame(toPrecache)
 				for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
 					for plyId,v in pairs(_v) do
 						if not PlayerResource:IsPlayerAbandoned(plyId) then
-							HeroSelection:SelectHero(plyId, tostring(v.hero), nil, true)
+							HeroSelection:SelectHero(plyId, tostring(v.hero), nil, nil, true)
 						end
 					end
 				end

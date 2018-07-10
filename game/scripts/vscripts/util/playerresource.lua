@@ -74,20 +74,21 @@ function CDOTA_PlayerResource:SetPlayerTeam(playerID, newTeam)
 end
 
 function CDOTA_PlayerResource:SetDisableHelpForPlayerID(nPlayerID, nOtherPlayerID, disabled)
-	if nPlayerID ~= nOtherPlayerID then
-		if not PLAYER_DATA[nPlayerID].DisableHelp then
-			PLAYER_DATA[nPlayerID].DisableHelp = {}
-		end
-		PLAYER_DATA[nPlayerID].DisableHelp[nOtherPlayerID] = disabled
+	if nPlayerID == nOtherPlayerID then return end
+	-- TODO: Add all other share masks
+	PlayerResource:SetUnitShareMaskForPlayer(nPlayerID, nOtherPlayerID, 4, disabled)
 
-		local disable_help_data = PlayerTables:GetTableValue("disable_help_data", nPlayerID)
-		disable_help_data[nOtherPlayerID] = PLAYER_DATA[nPlayerID][nOtherPlayerID]
-		PlayerTables:SetTableValue("disable_help_data", disable_help_data)
-	end
+	local disable_help_data = PlayerTables:GetTableValue("disable_help_data", nPlayerID)
+	disable_help_data[nOtherPlayerID] = PLAYER_DATA[nPlayerID][nOtherPlayerID]
+	PlayerTables:SetTableValue("disable_help_data", disable_help_data)
 end
 
+-- Unused
 function CDOTA_PlayerResource:IsDisableHelpSetForPlayerID(nPlayerID, nOtherPlayerID)
-	return PLAYER_DATA[nPlayerID] ~= nil and PLAYER_DATA[nPlayerID].DisableHelp ~= nil and PLAYER_DATA[nPlayerID].DisableHelp[nOtherPlayerID] and PlayerResource:GetTeam(nPlayerID) == PlayerResource:GetTeam(nOtherPlayerID)
+	return (
+		PlayerResource:GetTeam(nPlayerID) == PlayerResource:GetTeam(nOtherPlayerID) and
+		bit.band(PlayerResource:GetUnitShareMaskForPlayer(nPlayerID, nOtherPlayerID), 4) == 4
+	)
 end
 
 function CDOTA_PlayerResource:KickPlayer(nPlayerID)
