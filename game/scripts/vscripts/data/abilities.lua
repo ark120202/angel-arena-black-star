@@ -102,6 +102,7 @@ BOSS_BANNED_ABILITIES = {
 SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	zuus_static_field = true,
 	enigma_midnight_pulse = true,
+	zaken_stitching_strikes = true,
 	morphling_adaptive_strike_agi = true,
 	nyx_assassin_mana_burn = true,
 	elder_titan_earth_splitter = true,
