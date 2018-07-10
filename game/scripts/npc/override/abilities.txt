@@ -3050,7 +3050,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"strike_interval_scepter"	"0.5 0.45 0.4 0.35 0.3 0.25 0.2"
+				"strike_interval_scepter"	"0.3"
 				"LinkedSpecialBonus"	"special_bonus_unique_razor_2"
 
 			}
