@@ -79,6 +79,9 @@ COFFEE_BEAN_NOT_REFRESHABLE = {
 	zuus_cloud = true,
 	monkey_king_boundless_strike = true,
 	dazzle_shallow_grave = true,
+	saitama_push_ups = true,
+	saitama_squats = true,
+	saitama_sit_ups = true,
 }
 
 
