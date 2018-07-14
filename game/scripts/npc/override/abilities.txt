@@ -22229,12 +22229,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"7"
+				"chance_pct"			"15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.0"
+				"duration"				"0.8"
 			}
 			"03"
 			{
@@ -22244,7 +22244,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"debuff_delay"			"2"
+				"debuff_delay"			"4"
 			}
 		}
 	}
