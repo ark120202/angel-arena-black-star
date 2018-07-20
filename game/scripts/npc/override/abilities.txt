@@ -9020,7 +9020,7 @@
 		"AbilityManaCost"	"100 125 140 160 180 200 260"
 		"AbilityDamage"		"120 180 240 300 340 380 420"
 		"AbilityDuration"	"2"
-		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH	"
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
 		
 		"AbilitySpecial"
 		{
@@ -16478,7 +16478,7 @@
 		"AbilityCooldown"	"10.0"
 		"AbilityManaCost"	"80 90 100 110 120 130 140"
 		"AbilityDamage"		"120 165 210 255 300 345 390"
-		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_WATER	"
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_WATER"
 		
 		"AbilitySpecial"
 		{
