@@ -125,8 +125,8 @@
 		"AttackRate"	"1.5"
 		"DamgeSubTypeResistance" 
 		{ 
-			"DAMAGE_SUBTYPE_FIRE" 		"-25"
-			"DAMAGE_SUBTYPE_ENERGY" 	"50"
+			"DAMAGE_SUBTYPE_FIRE" 		"0"
+			"DAMAGE_SUBTYPE_WATER" 	"50"
 		}
 	}
 
@@ -187,7 +187,7 @@
 		
 		"DamgeSubTypeResistance" 
 		{ 
-			"DAMAGE_SUBTYPE_DARK" 	"-25"
+			"DAMAGE_SUBTYPE_DARK" 	"0"
 			"DAMAGE_SUBTYPE_LIGHT" 	"50"
 		}
 	}
@@ -244,7 +244,7 @@
 		
 		"DamgeSubTypeResistance" 
 		{ 
-			"DAMAGE_SUBTYPE_DARK" 	"-25"
+			"DAMAGE_SUBTYPE_DARK" 	"0"
 			"DAMAGE_SUBTYPE_LIGHT" 	"50"
 		}
 	}
@@ -277,7 +277,7 @@
 		
 		"DamgeSubTypeResistance" 
 		{ 
-			"DAMAGE_SUBTYPE_DARK" 	"-25"
+			"DAMAGE_SUBTYPE_DARK" 	"0"
 			"DAMAGE_SUBTYPE_LIGHT" 	"50"
 		}
 	}
@@ -325,6 +325,7 @@
 		{ 
 			"DAMAGE_SUBTYPE_WATER" 	"100"
 			"DAMAGE_SUBTYPE_ENERGY" "100"
+			"DAMAGE_SUBTYPE_FIRE" 	"100"
 		}
 	}
 
@@ -357,6 +358,7 @@
 		{ 
 			"DAMAGE_SUBTYPE_EARTH" 	"100"
 			"DAMAGE_SUBTYPE_ENERGY" "100"
+			"DAMAGE_SUBTYPE_WATER"  "100"
 		}
 	}
 
@@ -391,7 +393,7 @@
 		
 		"DamgeSubTypeResistance" 
 		{ 
-			"DAMAGE_SUBTYPE_ICE" 	"-25"
+			"DAMAGE_SUBTYPE_ICE" 	"0"
 			"DAMAGE_SUBTYPE_FIRE" 	"50"
 		}
 	}
@@ -425,7 +427,7 @@
 		
 		"DamgeSubTypeResistance" 
 		{ 
-			"DAMAGE_SUBTYPE_DARK	"50"
+			"DAMAGE_SUBTYPE_DARK	"100"
 		}
 	}
 
@@ -480,6 +482,11 @@
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"		"26"
 		"AttackDamageMax"		"28"
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_EARTH" "50"
+		}
+		
 	}
 
 	"npc_arena_hero_anakim"
@@ -509,8 +516,7 @@
 		
 		"DamgeSubTypeResistance" 
 		{ 
-			"DAMAGE_SUBTYPE_DARK" 	"-25"
-			"DAMAGE_SUBTYPE_LIGHT" 	"50"
+			"DAMAGE_SUBTYPE_DARK" "50"
 		}
 	}
 
