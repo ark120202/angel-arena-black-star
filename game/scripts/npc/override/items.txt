@@ -42,6 +42,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_AIR"
 	}
 	"item_mithril_hammer"
 	{
@@ -533,6 +534,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 
 		"AbilitySpecial"
 		{
@@ -586,6 +588,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 	}
 	"item_recipe_cyclone"
 	{
@@ -770,6 +773,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_EARTH"
 	}
 	"item_recipe_greater_crit"
 	{
@@ -790,6 +794,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_EARTH"
 	}
 	"item_recipe_lesser_crit"
 	{
@@ -820,6 +825,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 	}
 	"item_recipe_satanic"
 	{
@@ -840,6 +846,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ENERGY"
 	}
 	"item_recipe_helm_of_the_dominator"
 	{
@@ -860,6 +867,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ENERGY"
 	}
 	"item_recipe_desolator"
 	{
@@ -915,6 +923,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 		"AbilitySpecial"
 		{
 			"01"
@@ -1031,6 +1040,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_EARTH"
 		"AbilitySpecial"
 		{
 			"01"
@@ -1117,6 +1127,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_EARTH"
 	}
 	"item_recipe_heavens_halberd"
 	{
@@ -1254,6 +1265,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 	}
 	"item_recipe_solar_crest"
 	{
@@ -1348,6 +1360,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 	}
 	"item_wind_lace"
 	{
@@ -1512,6 +1525,7 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 		"ItemCost"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_FIRE"
 		"AbilitySpecial"
 		{
 			"05"
