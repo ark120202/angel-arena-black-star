@@ -113,14 +113,16 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			unit:SetBaseDamageMax(value)
 		elseif key == "AttackRate" then
 			unit:SetBaseAttackTime(value)
+			unit:SetNetworkableEntityInfo("AttackRate", value)
 		elseif key == "AttackAcquisitionRange" then
 			unit:SetAcquisitionRange(value)
 		elseif key == "ProjectileModel" then
 			unit:SetRangedProjectileName(value)
 		elseif key == "AttributePrimary" then
-			Timers:CreateTimer(0.1, function()
+			Timers:CreateTimer(1, function()
 				unit:SetPrimaryAttribute(_G[value])
-			end)
+				unit:CalculateStatBonus()
+			end, nil, true)
 		elseif key == "AttributeBaseStrength" then
 			unit:SetBaseStrength(value)
 		elseif key == "AttributeStrengthGain" then
