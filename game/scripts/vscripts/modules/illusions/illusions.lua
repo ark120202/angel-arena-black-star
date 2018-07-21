@@ -134,12 +134,9 @@ function Illusions:create(info)
 	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
 	Illusions:_copyShards(unit, illusion)
 	
-	desired_health = unit:GetHealth()
-	desired_mana = unit:GetMana()
-	illusion:SetHealth(desired_health)
-	illusion:SetMana(desired_mana)
-	illusion.desired_health = desired_health
-	illusion.desired_mana = desired_mana
+	illusion:SetHealth(unit:GetHealth())
+	illusion:SetMana(unit:GetMana())
+	illusion.illusionSource = unit
 
 	return illusion
 end
