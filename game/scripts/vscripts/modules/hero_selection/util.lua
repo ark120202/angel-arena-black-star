@@ -119,8 +119,8 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			unit:SetRangedProjectileName(value)
 		elseif key == "AttributePrimary" then
 			Timers:CreateTimer({
-				endTime = 2
-				countTicks = true
+				endTime = 2,
+				countTicks = true,
 				callback = function()
 					unit:SetPrimaryAttribute(_G[value])
 					unit:CalculateStatBonus()
@@ -129,7 +129,7 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 						unit:SetHealth(illusionSource:GetHealth())
 						unit:SetMana(illusionSource:GetMana())
 					end
-				end)
+				end})
 		elseif key == "AttributeBaseStrength" then
 			unit:SetBaseStrength(value)
 		elseif key == "AttributeStrengthGain" then
