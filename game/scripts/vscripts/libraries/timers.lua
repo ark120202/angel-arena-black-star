@@ -117,7 +117,7 @@ function Timers:Think()
 
 		if v.endTime == nil then
 			v.endTime = now
-		elseif v.countTicks == true then
+		elseif v.countTicks then
 			v.endTime = v.endTime - 1
 			if v.endTime < 0 then
 				v.countTicks = false
@@ -196,7 +196,7 @@ function Timers:HandleEventError(name, event, err)
 	end
 end
 
-function Timers:CreateTimer(name, args, context, countTicks)
+function Timers:CreateTimer(name, args, context)
 
 	if type(name) == "function" then
 		if args ~= nil then
@@ -224,8 +224,6 @@ function Timers:CreateTimer(name, args, context, countTicks)
 
 	if args.endTime == nil then
 		args.endTime = now
-	elseif countTicks then
-		args.countTicks = true
 	elseif args.useOldStyle == nil or args.useOldStyle == false then
 		args.endTime = now + args.endTime
 	end
