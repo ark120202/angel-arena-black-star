@@ -119,7 +119,7 @@ function Timers:Think()
 			v.endTime = now
 		elseif v.countTicks then
 			v.endTime = v.endTime - 1
-			if v.endTime < 0 then
+			if v.endTime <= 0 then
 				v.countTicks = false
 			end
 		end
