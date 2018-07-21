@@ -122,13 +122,10 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			Timers:CreateTimer(1, function()
 				unit:SetPrimaryAttribute(_G[value])
 				unit:CalculateStatBonus()
-				local desired_health = unit.desired_health
-				local desired_mana = unit.desired_mana
-				if desired_health then
-					unit:SetHealth(desired_health)
-				end
-				if desired_mana then
-					unit:SetMana(desired_mana)
+				local illusionSource = unit.illusionSource
+				if illusionSource then
+					unit:SetHealth(illusionSource:GetHealth())
+					unit:SetMana(illusionSource:GetMana())
 				end
 			end, nil, true)
 		elseif key == "AttributeBaseStrength" then
