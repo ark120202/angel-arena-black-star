@@ -224,7 +224,7 @@ function Timers:CreateTimer(name, args, context)
 
 	if args.endTime == nil then
 		args.endTime = now
-	elseif args.useOldStyle == nil or args.useOldStyle == false then
+	elseif not args.countTicks and (args.useOldStyle == nil or args.useOldStyle == false) then
 		args.endTime = now + args.endTime
 	end
 
