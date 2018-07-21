@@ -109,6 +109,11 @@ function Illusions:create(info)
 		isOwned and unit:GetPlayerOwner() or nil,
 		team
 	)
+	illusion:MakeIllusion()
+	local heroName = unit:GetFullName()
+	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
+		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
+	end
 	if isOwned then illusion:SetControllableByPlayer(unit:GetPlayerID(), true) end
 	FindClearSpaceForUnit(illusion, origin, true)
 	illusion:SetForwardVector(unit:GetForwardVector())
@@ -120,21 +125,22 @@ function Illusions:create(info)
 	Illusions:_copyItems(unit, illusion)
 	Illusions:_copyAppearance(unit, illusion)
 
-	illusion:SetHealth(unit:GetHealth())
-	illusion:SetMana(unit:GetMana())
 	illusion:AddNewModifier(unit, ability, "modifier_illusion", {
 		duration = info.duration,
 		outgoing_damage = info.damageOutgoing - 100,
 		incoming_damage = info.damageIncoming - 100,
 	})
-	illusion:MakeIllusion()
-	Illusions:_copyShards(unit, illusion)
 	illusion.UnitName = unit.UnitName
 	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
-	local heroName = unit:GetFullName()
-	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
-		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
-	end
+	Illusions:_copyShards(unit, illusion)
+	
+	illusion:SetHealth(unit:GetHealth())
+	illusion:SetMana(unit:GetMana())
+	
+	Timers:CreateTimer(2, function()
+		illusion:SetHealth(unit:GetHealth())
+		illusion:SetMana(unit:GetMana())
+	end, nil, true)
 
 	return illusion
 end
