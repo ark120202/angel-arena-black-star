@@ -23,6 +23,8 @@ local modules = {
 	"meepo_fixes", -- until rewrite
 	"weather",
 	"console",
+	"chat",
+	"illusions"
 }
 
 local errors = {}

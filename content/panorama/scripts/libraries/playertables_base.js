@@ -112,16 +112,16 @@ function ProcessTable(newTable, oldTable, changes, dels) {
 }
 
 function SendPID() {
-	var pid = Players.GetLocalPlayer();
-	var spec = Players.IsSpectator(pid);
-	//$.Msg(pid, ' -- ', spec);
-	if (pid == -1 && !spec) {
+	var playerId = Players.GetLocalPlayer();
+	var spec = Players.IsSpectator(playerId);
+	//$.Msg(playerId, ' -- ', spec);
+	if (playerId == -1 && !spec) {
 		$.Schedule(1 / 30, SendPID);
 		return;
 	}
 
 	GameEvents.SendCustomGameEventToServer("PlayerTables_Connected", {
-		pid: pid
+		pid: playerId
 	});
 }
 
@@ -163,12 +163,10 @@ function TableFullUpdate(msg) {
 	}
 	var tableIndex = Object.keys(PT.tables).length;
 	if (msg.inputlength != null && tableIndex >= msg.inputlength && !connected) {
-		$.Msg('PT connected with input length ' + msg.inputlength + ' and table index ' + tableIndex);
 		connected = true;
 		_.each(UTPromisedCalls, function(v) {
 			v();
 		});
-		$.Msg('PT preformed initial update, completed ' + UTPromisedCalls.length + ' functions');
 	}
 };
 

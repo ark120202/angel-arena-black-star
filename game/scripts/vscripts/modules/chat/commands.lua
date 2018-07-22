@@ -2,13 +2,8 @@ CUSTOMCHAT_COMMAND_LEVEL_PUBLIC = 0
 CUSTOMCHAT_COMMAND_LEVEL_CHEAT = 1
 CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER = 2
 CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER = 3
-CHAT_COMMANDS = {
-	["command"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
-		f = function(args, hero, playerID)
 
-		end
-	},
+return {
 	["gold"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
 		f = function(args, hero)
@@ -95,19 +90,19 @@ CHAT_COMMANDS = {
 	["equip"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
 		f = function(args, hero)
-			hero:EquipWearable(tonumber(args[1]))
+			DynamicWearables:EquipWearable(hero, tonumber(args[1]))
 		end
 	},
 	["reattach"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
 		f = function(args, hero)
-			hero:RemoveAllWearables()
-			hero:EquipItemsFromPlayerSelectionOrDefault()
+			DynamicWearables:UnequipAll(hero)
+			DynamicWearables:AutoEquip(hero)
 		end
 	},
 	["maxenergy"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
-		f = function(args, hero, playerID)
+		f = function(args, hero)
 			hero:ModifyMaxEnergy(args[1] - hero:GetMaxEnergy())
 		end
 	},
@@ -133,12 +128,6 @@ CHAT_COMMANDS = {
 			_G.DebugConnectionStates = not DebugConnectionStates
 		end
 	},
-	["cprint"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
-		f = function()
-			_G.SendDebugInfoToClient = not SendDebugInfoToClient
-		end
-	},
 	["kick"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
 		f = function(args)
@@ -154,34 +143,51 @@ CHAT_COMMANDS = {
 	},
 	["pick"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
-		f = function(args, hero, playerID)
-			HeroSelection:ChangeHero(playerID, args[1], true, 0)
+		f = function(args, hero, playerId)
+			HeroSelection:ChangeHero(playerId, args[1], true, 0)
 		end
 	},
-	["ban"] = {
+	["abandon"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
-		f = function(args, hero, playerID)
+		f = function(args, hero)
 			if PlayerResource:IsValidPlayerID(tonumber(args[1])) then
 				PlayerResource:MakePlayerAbandoned(tonumber(args[1]))
 			end
 		end
 	},
+	["ban"] = {
+		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
+		f = function(args, hero)
+			local playerId = tonumber(args[1])
+			if not PlayerResource:IsValidPlayerID(playerId) then return end
+
+			PLAYER_DATA[playerId].isBanned = true
+
+			local data = PLAYER_DATA[playerId].serverData or {}
+			local clientData = table.deepcopy(data)
+			clientData.TBDRating = nil
+			clientData.isBanned = true
+			PlayerTables:SetTableValue("stats_client", playerId, clientData)
+
+			PlayerResource:MakePlayerAbandoned(playerId)
+		end
+	},
 	["a_createhero"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
-		f = function(args, hero, playerID)
-			--playerID = 6
+		f = function(args, hero, playerId)
+			--playerId = 6
 			local heroName = args[1]
 			local heroTableCustom = NPC_HEROES_CUSTOM[heroName]
 			local baseNewHero = heroTableCustom.base_hero or heroName
-			local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerID))
-			--local h = PlayerResource:ReplaceHeroWith(playerID, baseNewHero, 0, 0)
+			local h = CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerId))
+			--local h = PlayerResource:ReplaceHeroWith(playerId, baseNewHero, 0, 0)
 			local team = 2
-			if PlayerResource:GetTeam(playerID) == team and table.contains(args, "enemy") then
+			if PlayerResource:GetTeam(playerId) == team and table.contains(args, "enemy") then
 				team = 3
 			end
 			h:SetTeam(team)
 			h:SetAbsOrigin(hero:GetAbsOrigin())
-			h:SetControllableByPlayer(playerID, true)
+			h:SetControllableByPlayer(playerId, true)
 			for i = 1, 300 do
 				h:HeroLevelUp(false)
 			end
@@ -205,12 +211,12 @@ CHAT_COMMANDS = {
 	["ccreate"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
 		f = function(args)
-			local pid = tonumber(args[1])
+			local playerId = tonumber(args[1])
 			local pType = args[2]
 			local source = args[3]
 			local duration = tonumber(args[4])
-			if PlayerResource:IsValidPlayerID(pid) and pType and source and (args[4] == nil or duration ~= nil) then
-				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(pid), "create_generic_panel", {
+			if PlayerResource:IsValidPlayerID(playerId) and pType and source and (args[4] == nil or duration ~= nil) then
+				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerId), "create_generic_panel", {
 					type = pType,
 					source = source,
 					duration = duration
@@ -220,7 +226,7 @@ CHAT_COMMANDS = {
 	},
 	["end"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
-		f = function(args, hero, playerID)
+		f = function(args, hero)
 			local team = tonumber(args[1])
 			if team then
 				GameMode:OnKillGoalReached(team)
@@ -238,8 +244,8 @@ CHAT_COMMANDS = {
 	},
 	["console"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_PUBLIC,
-		f = function(_, _, playerID)
-			Console:SetVisible(PlayerResource:GetPlayer(playerID))
+		f = function(_, _, playerId)
+			Console:SetVisible(PlayerResource:GetPlayer(playerId))
 		end
 	},
 }

@@ -88,6 +88,36 @@
 	}
 }
 
+"Arena.Items.GoldenArrow.Activate"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/items/golden_arrow.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"10.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
 "Arena.Hero_Cherub.ExplosiveSpore.Plant"
 {
 	"operator_stacks"

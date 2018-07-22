@@ -1,7 +1,7 @@
-saitama_press = class({})
+saitama_sit_ups = class({})
 
 if IsServer() then
-	function saitama_press:OnChannelFinish(bInterrupted)
+	function saitama_sit_ups:OnChannelFinish(bInterrupted)
 		if not bInterrupted then
 			local caster = self:GetCaster()
 			caster:ModifyStrength(self:GetSpecialValueFor("bonus_strength"))

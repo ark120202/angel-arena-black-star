@@ -19,15 +19,15 @@ function FinishGame() {
 /**
  * Creates Panel snippet and sets all player-releated information
  *
- * @param {Number} playerID Player ID
+ * @param {Number} playerId Player ID
  * @param {Panel} rootPanel Panel that will be parent for that player
  */
-function Snippet_Player(playerID, rootPanel, index) {
+function Snippet_Player(playerId, rootPanel, index) {
 	var panel = $.CreatePanel('Panel', rootPanel, '');
 	panel.BLoadLayoutSnippet('Player');
-	panel.SetHasClass('IsLocalPlayer', playerID === Game.GetLocalPlayerID());
-	var playerData = GAME_RESULT.players[playerID];
-	var playerInfo = Game.GetPlayerInfo(playerID);
+	panel.SetHasClass('IsLocalPlayer', playerId === Game.GetLocalPlayerID());
+	var playerData = GAME_RESULT.players[playerId];
+	var playerInfo = Game.GetPlayerInfo(playerId);
 	panel.FindChildTraverse('PlayerAvatar').steamid = playerInfo.player_steamid;
 	panel.FindChildTraverse('PlayerNameScoreboard').steamid = playerInfo.player_steamid;
 
@@ -40,12 +40,12 @@ function Snippet_Player(playerID, rootPanel, index) {
 	});
 
 	panel.FindChildTraverse('HeroIcon').SetImage(TransformTextureToPath(playerData.hero));
-	panel.SetDialogVariableInt('hero_level', Players.GetLevel(playerID));
+	panel.SetDialogVariableInt('hero_level', Players.GetLevel(playerId));
 	panel.SetDialogVariable('hero_name', $.Localize(playerData.hero));
-	panel.SetDialogVariableInt('kills', Players.GetKills(playerID));
-	panel.SetDialogVariableInt('deaths', Players.GetDeaths(playerID));
-	panel.SetDialogVariableInt('assists', Players.GetAssists(playerID));
-	panel.SetDialogVariableInt('last_hits', Players.GetLastHits(playerID));
+	panel.SetDialogVariableInt('kills', Players.GetKills(playerId));
+	panel.SetDialogVariableInt('deaths', Players.GetDeaths(playerId));
+	panel.SetDialogVariableInt('assists', Players.GetAssists(playerId));
+	panel.SetDialogVariableInt('last_hits', Players.GetLastHits(playerId));
 	panel.SetDialogVariableInt('heroDamage', playerData.heroDamage);
 	panel.SetDialogVariableInt('bossDamage', playerData.bossDamage);
 	panel.SetDialogVariableInt('heroHealing', playerData.heroHealing);
@@ -96,8 +96,8 @@ function Snippet_Team(team) {
 	var teamColor = GameUI.CustomUIConfig().team_colors[team];
 	panel.FindChildTraverse('TeamName').style.textShadow = '0px 0px 6px 1.0 ' + teamColor;
 
-	_.each(Game.GetPlayerIDsOnTeam(team), function(playerID, i) {
-		Snippet_Player(playerID, panel, i + 1);
+	_.each(Game.GetPlayerIDsOnTeam(team), function(playerId, i) {
+		Snippet_Player(playerId, panel, i + 1);
 	});
 }
 

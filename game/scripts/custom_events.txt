@@ -13,6 +13,6 @@
 	}
 	"player_profiles_show_info"
 	{
-		"PlayerID"		"short"
+		"playerId"		"short"
 	}
 }

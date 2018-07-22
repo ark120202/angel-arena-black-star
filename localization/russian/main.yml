@@ -18,6 +18,7 @@ arena_hud_error_metamorphosis_elixir_ranked: В рейтинговом режи�
 arena_hud_error_cant_target_duel: Способность нельзя использовать на арене для дуэли
 arena_hud_error_cant_mimic: Невозможно скопировать этого героя
 arena_hud_error_cant_change_hero: Смена героя сейчас невозможна
+arena_hud_error_cant_cast_on_fountain: Способность не может быть использована рядом с фонтаном
 
 DOTA_Tooltip_modifier_neutral_champion: Чемпион
 DOTA_Tooltip_modifier_neutral_champion_Description: 'Этот нейтрал - чемпион, он в %dMODIFIER_PROPERTY_TOOLTIP% раз сильнее обычного, но награда за него также увеличена'
