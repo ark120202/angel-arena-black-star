@@ -41,7 +41,7 @@ function RespawnHealth(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	Timers:CreateTimer(0.1, function()
-		if IsValidEntity(caster) then
+		if IsValidEntity(caster) and not caster:IsIllusion() then
 			caster:SetHealth(caster:GetMaxHealth() * 0.5)
 		end
 	end)

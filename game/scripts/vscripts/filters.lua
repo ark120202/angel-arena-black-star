@@ -85,13 +85,18 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_boss")
 			return false
 		end
-		if PlayerResource:IsDisableHelpSetForPlayerID(UnitVarToPlayerID(target), UnitVarToPlayerID(unit)--[[playerId]]) and DISABLE_HELP_ABILITIES[abilityname] then
-			Containers:DisplayError(playerId, "#dota_hud_error_target_has_disable_help")
-			return false
-		end
 		if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then
 			filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
 			return true
+		end
+	elseif order_type == DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK then
+		local lockType = filterTable.entindex_target
+		if ability.auto_lock_order then
+			ability.auto_lock_order = false
+		elseif lockType == 0 then
+			ability.player_locked = false
+		else
+			ability.player_locked = true
 		end
 	end
 
@@ -276,6 +281,7 @@ function GameMode:ModifyExperienceFilter(filterTable)
 end
 
 function GameMode:ItemAddedToInventoryFilter(filterTable)
+  
 	local item = EntIndexToHScript(filterTable.item_entindex_const)
 	--Send info to panorama shops
 	if not item.isNotNew then
@@ -310,4 +316,10 @@ function GameMode.SendArenaNewItem(args)
 		end
 		CustomGameEventManager:Send_ServerToAllClients("arena_new_item", passedArgs)
 	end
+end
+
+	if item.suggested_slot then
+		filterTable.suggested_slot = item.suggested_slot
+	end
+	return true
 end
