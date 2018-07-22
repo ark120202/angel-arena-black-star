@@ -9,7 +9,6 @@ var CustomChatLinesPanel,
 function UpdatePanoramaHUD() {
 	var unit = Players.GetLocalPlayerPortraitUnit();
 	var unitName = GetHeroName(unit);
-	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
 	var CustomModifiersList = $('#CustomModifiersList');
 	var VisibleModifiers = [];
 	for (var i = 0; i < Entities.GetNumBuffs(unit); ++i) {
@@ -239,9 +238,10 @@ function HookPanoramaPanels() {
 	});
 }
 
-// On update query unit
 function OnUpdateQueryUnit(data) {
-	FindDotaHudElement('UnitNameLabel').text = $.Localize(GetHeroName(Players.GetLocalPlayerPortraitUnit())).toUpperCase();
+	var unitName = GetHeroName(Players.GetLocalPlayerPortraitUnit());
+	FindDotaHudElement('UnitNameLabel').text = $.Localize(unitName).toUpperCase();
+	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
 }
 
 // On Death
@@ -361,9 +361,9 @@ function CreateHeroElements(id) {
 
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe('entity_killed', OnDeath);
+	GameEvents.Subscribe('dota_player_update_selected_unit', OnUpdateQueryUnit);
 	
 	GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
-	GameEvents.Subscribe('dota_player_update_selected_unit', OnUpdateQueryUnit);
 
 
 	GameEvents.Subscribe('create_generic_panel', function(data) {
