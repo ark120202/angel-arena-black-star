@@ -113,7 +113,6 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			unit:SetBaseDamageMax(value)
 		elseif key == "AttackRate" then
 			unit:SetBaseAttackTime(value)
-			unit:SetNetworkableEntityInfo("AttackRate", value)
 		elseif key == "AttackAcquisitionRange" then
 			unit:SetAcquisitionRange(value)
 		elseif key == "ProjectileModel" then
