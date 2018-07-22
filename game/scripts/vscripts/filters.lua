@@ -317,9 +317,3 @@ function GameMode.SendArenaNewItem(args)
 		CustomGameEventManager:Send_ServerToAllClients("arena_new_item", passedArgs)
 	end
 end
-
-	if item.suggested_slot then
-		filterTable.suggested_slot = item.suggested_slot
-	end
-	return true
-end
