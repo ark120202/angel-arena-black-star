@@ -12599,7 +12599,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0.0"
 		"AbilityCooldown"	"24"
-		"AbilityManaCost"	"120
+		"AbilityManaCost"	"120"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
 		
 		"AbilitySpecial"
