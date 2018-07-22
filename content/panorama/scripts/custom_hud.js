@@ -47,8 +47,6 @@ function UpdatePanoramaHUD() {
 		if (VisibleModifiers.indexOf(child.id) === -1) child.DeleteAsync(0);
 	});
 
-	FindDotaHudElement('level_stats_frame').visible = Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
-
 	var GoldLabel = FindDotaHudElement('ShopButton').FindChildTraverse('GoldLabel');
 	if (Players.GetTeam(Game.GetLocalPlayerID()) === Entities.GetTeamNumber(unit)) {
 		var ownerId = Entities.GetPlayerOwnerID(unit);
@@ -116,6 +114,10 @@ function AutoUpdatePanoramaHUD() {
 	UpdatePanoramaHUD();
 }
 
+function ToggleCustomTalentTree() {
+	GameEvents.SendEventClientSide('custom_talents_toggle_tree', {});
+}
+
 function HookPanoramaPanels() {
 	FindDotaHudElement('QuickBuyRows').visible = false;
 	FindDotaHudElement('shop').visible = false;
@@ -148,6 +150,8 @@ function HookPanoramaPanels() {
 			GameEvents.SendEventClientSide('panorama_shop_open_close', {});
 		}
 	});
+	
+	level_stats_frame.canLearn = false;
 
 	StatBranch.ClearPanelEvent('onactivate');
 	StatBranch.ClearPanelEvent('onmouseover');
@@ -158,9 +162,8 @@ function HookPanoramaPanels() {
 	StatsLevelUpTab.ClearPanelEvent('onmouseover');
 	StatsLevelUpTab.ClearPanelEvent('onmouseout');
 	StatsLevelUpTab.ClearPanelEvent('onactivate');
-	StatsLevelUpTab.SetPanelEvent('onactivate', function() {
-		GameEvents.SendEventClientSide('custom_talents_toggle_tree', {});
-	});
+	StatsLevelUpTab.SetPanelEvent('onactivate', ToggleCustomTalentTree);
+	StatBranch.SetPanelEvent('onactivate', ToggleCustomTalentTree);
 	var DebugChat = false;
 
 	chat.FindChildTraverse('ChatLinesPanel').visible = DebugChat;
@@ -242,6 +245,18 @@ function OnUpdateQueryUnit(data) {
 	var unitName = GetHeroName(Players.GetLocalPlayerPortraitUnit());
 	FindDotaHudElement('UnitNameLabel').text = $.Localize(unitName).toUpperCase();
 	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
+	OnSkillPoint();
+}
+
+function OnSkillPoint(data) {
+	var unit = Players.GetLocalPlayerPortraitUnit();
+	level_stats_frame = FindDotaHudElement('level_stats_frame');
+	level_stats_frame.visible = level_stats_frame.canLearn && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
+}
+
+function OnTalentUpdated(data) {
+	FindDotaHudElement('level_stats_frame').canLearn = data.canLearn;
+	OnSkillPoint();
 }
 
 // On Death
@@ -362,6 +377,9 @@ function CreateHeroElements(id) {
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe('entity_killed', OnDeath);
 	GameEvents.Subscribe('dota_player_update_selected_unit', OnUpdateQueryUnit);
+	GameEvents.Subscribe('dota_player_gained_level', OnSkillPoint);
+	GameEvents.Subscribe('dota_player_learned_ability', OnSkillPoint);
+	GameEvents.Subscribe('arena_talent_CanLearn_Updated', OnTalentUpdated);
 	
 	GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
 
