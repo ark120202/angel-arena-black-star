@@ -15,4 +15,8 @@
 	{
 		"playerId"		"short"
 	}
+	"arena_talent_CanLearn_Updated"
+	{
+		"canLearn"		"short"
+	}
 }
