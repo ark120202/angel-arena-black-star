@@ -123,6 +123,7 @@ function Update() {
 	var unit = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID());
 	var points = Entities.GetAbilityPoints(unit);
 	$('#AbilityPointsLabel').text = points;
+	var SendCanLearn = false;
 	_.each($('#TalentListContainer').Children(), function(group, group_index) {
 		var CompletedGroup = true;
 		var GroupAvaliable = Entities.GetLevel(unit) >= group.RequiredLevel && group_index <= GetActualTalentGroup(unit);
@@ -142,7 +143,9 @@ function Update() {
 			icon.SetHasClass('Error_Requirement', Error_Requirement);
 			icon.SetHasClass('Error_Points', Error_Points);
 			icon.SetHasClass('Learnt', Learnt);
-			icon.SetHasClass('CanLearn', !Learnt && !Error_Requirement && !Error_Points && GroupAvaliable);
+			var CanLearn = !Learnt && !Error_Requirement && !Error_Points && GroupAvaliable;
+			SendCanLearn = SendCanLearn || CanLearn;
+			icon.SetHasClass('CanLearn', CanLearn);
 			icon.SetHasClass('Selected', level > 0);
 			if (icon.visible && !icon.BHasClass('Learnt'))
 				CompletedGroup = false;
@@ -150,6 +153,7 @@ function Update() {
 		group.SetHasClass('CompletedColumn', CompletedGroup);
 		group.SetHasClass('EnabledColumn', !CompletedGroup && GroupAvaliable);
 	});
+	GameEvents.SendEventClientSide('arena_talent_CanLearn_Updated', {"canLearn" : SendCanLearn});
 }
 
 (function() {
