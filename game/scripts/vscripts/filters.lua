@@ -89,15 +89,6 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
 			return true
 		end
-	elseif order_type == DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK then
-		local lockType = filterTable.entindex_target
-		if ability.auto_lock_order then
-			ability.auto_lock_order = false
-		elseif lockType == 0 then
-			ability.player_locked = false
-		else
-			ability.player_locked = true
-		end
 	end
 
 	return true
