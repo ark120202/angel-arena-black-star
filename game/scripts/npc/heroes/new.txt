@@ -72,6 +72,7 @@
 	"npc_arena_hero_debug"
 	{
 		"base_hero"	"npc_dota_hero_sven"
+		"internal_name"	"npc_arena_hero_debug"
 		"Enabled"	"0"
 		"Ability1"	"boss_kel_thuzad_immortality"
 		"Ability2"	"boss_kel_thuzad_presence_of_death"
@@ -84,6 +85,7 @@
 	"npc_arena_hero_stargazer"
 	{
 		"base_hero"	"npc_dota_hero_spectre"
+		"internal_name"	"npc_arena_hero_stargazer"
 		"Ability1"	"stargazer_gamma_ray"
 		"Ability2"	"stargazer_warp"
 		"Ability3"	"stargazer_inverse_field"
@@ -106,6 +108,7 @@
 	"npc_arena_hero_cherub"
 	{
 		"base_hero"	"npc_dota_hero_enchantress"
+		"internal_name"	"npc_arena_hero_cherub"
 		"Ability1"	"cherub_sleep_cloud"
 		"Ability2"	"cherub_synthesis"
 		"Ability3"	"cherub_explosive_spore"
@@ -118,6 +121,7 @@
 	"npc_arena_hero_queenofblades"
 	{
 		"base_hero"	"npc_dota_hero_queenofpain"
+		"internal_name"	"npc_arena_hero_queenofblades"
 		"Ability1"	"queenofblades_army"
 		"Ability2"	"queenofblades_darkness_aura"
 		"Ability3"	"queenofblades_harbinger_of_death"
@@ -131,6 +135,7 @@
 	"npc_arena_hero_kadash"
 	{
 		"base_hero"	"npc_dota_hero_chaos_knight"
+		"internal_name"	"npc_arena_hero_kadash"
 		"Ability1"	"kadash_assasins_skills"
 		"Ability2"	"kadash_survival_skills"
 		"Ability3"	"kadash_strike_from_shadows"
@@ -146,6 +151,7 @@
 	"npc_arena_hero_apocalypse"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_apocalypse"
 		"Ability1"	"apocalypse_agnis_touch"
 		"Ability2"	"apocalypse_king_slayer"
 		"Ability3"	"apocalypse_weapon_break"
@@ -174,6 +180,7 @@
 	"npc_arena_hero_shinobu"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_shinobu"
 		"SceneCamera"	"custom_scene_hero_shinobu"
 		"Model"	"models/hero_shinobu/shinobu_01.vmdl"
 		"ModelScale"	"0.75"
@@ -212,6 +219,7 @@
 	"npc_arena_hero_zen_gehraz"
 	{
 		"base_hero"	"npc_dota_hero_dark_seer"
+		"internal_name"	"npc_arena_hero_zen_gehraz"
 		"Ability1"	"zen_gehraz_divine_intervention"
 		"Ability2"	"zen_gehraz_mystic_twister"
 		"Ability3"	"zen_gehraz_vow_of_silence"
@@ -225,6 +233,7 @@
 	"npc_arena_hero_stegius"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_stegius"
 		"Ability1"	"stegius_desolus_wave"
 		"Ability2"	"stegius_rage_of_desolus"
 		"Ability3"	"stegius_brightness_of_desolate"
@@ -252,6 +261,7 @@
 	"npc_arena_hero_mirratie"
 	{
 		"base_hero"	"npc_dota_hero_templar_assassin"
+		"internal_name"	"npc_arena_hero_mirratie"
 		"Ability1"	"mirratie_snagshot"
 		"Ability2"	"mirratie_smoke_out"
 		"Ability3"	"mirratie_sixth_sense"
@@ -265,6 +275,7 @@
 	"npc_arena_hero_freya"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_freya"
 		"Ability1"	"freya_strike_the_ice"
 		"Ability2"	"freya_ice_cage"
 		"Ability3"	"freya_pain_reflection"
@@ -292,6 +303,7 @@
 	"npc_arena_hero_zaken"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_zaken"
 		"Model"	"models/units/zaken/zaken.vmdl"
 		"SceneCamera"	"custom_scene_hero_zaken"
 		"Ability1"		"zaken_stitching_strikes"
@@ -318,6 +330,7 @@
 	"npc_arena_hero_poseidon"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_poseidon"
 		"SceneCamera"	"custom_scene_hero_poseidon"
 		"Model"	"models/units/poseidon/poseidon.vmdl"
 		"ModelScale"	"1.4"
@@ -348,6 +361,7 @@
 	"npc_arena_hero_saber"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_saber"
 		"SceneCamera"	"custom_scene_hero_saber"
 		"Model"	"models/units/saber/saber.vmdl"
 		"ModelScale"	"1.1"
@@ -376,6 +390,7 @@
 	"npc_arena_hero_sara"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_sara"
 		"SceneCamera"	"custom_scene_hero_sara"
 		"Model"	"models/units/sara/sara.vmdl"
 		"ModelScale"	"1"
@@ -403,6 +418,7 @@
 	"npc_arena_hero_destroyer"
 	{
 		"base_hero"		"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_destroyer"
 		"SceneCamera"	"custom_scene_hero_destroyer"
 		"Model"			"models/units/destroyer/destroyer.vmdl"
 		"ModelScale"	"1.2"
@@ -429,6 +445,7 @@
 	"npc_arena_hero_anakim"
 	{
 		"base_hero"		"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_anakim"
 		"SceneCamera"	"custom_scene_hero_anakim"
 		"Model"			"models/units/anakim/anakim.vmdl"
 		"ModelScale"	"0.9"
@@ -455,6 +472,7 @@
 	"npc_arena_hero_sai"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_sai"
 		"SceneCamera"	"custom_scene_hero_sai"
 		"Model"	"models/units/sai/sai.vmdl"
 		"ModelScale"	"1.1"
@@ -483,6 +501,7 @@
 	{
 		"DisabledInRanked"	"1"
 		"base_hero"	"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_saitama"
 		"SceneCamera"	"custom_scene_hero_saitama"
 		"Model"	"models/units/saitama/saitama.vmdl"
 		"ModelScale"	"1"
@@ -510,6 +529,7 @@
 	"npc_arena_hero_doppelganger"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
+		"internal_name"	"npc_arena_hero_doppelganger"
 		"SceneCamera"	"custom_scene_hero_doppelganger"
 		"Model"	"models/units/doppelganger/doppelganger.vmdl"
 		"ModelScale"	"1"
