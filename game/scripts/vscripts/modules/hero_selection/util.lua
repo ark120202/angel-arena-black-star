@@ -125,17 +125,14 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			unit:SetBaseStrength(value)
 		elseif key == "AttributeStrengthGain" then
 			unit.CustomGain_Strength = value
-			unit:SetNetworkableEntityInfo("AttributeStrengthGain", value)
 		elseif key == "AttributeBaseIntelligence" then
 			unit:SetBaseIntellect(value)
 		elseif key == "AttributeIntelligenceGain" then
 			unit.CustomGain_Intelligence = value
-			unit:SetNetworkableEntityInfo("AttributeIntelligenceGain", value)
 		elseif key == "AttributeBaseAgility" then
 			unit:SetBaseAgility(value)
 		elseif key == "AttributeAgilityGain" then
 			unit.CustomGain_Agility = value
-			unit:SetNetworkableEntityInfo("AttributeAgilityGain", value)
 		elseif key == "BountyXP" then
 			unit:SetDeathXP(value)
 		elseif key == "BountyGoldMin" then
@@ -166,8 +163,19 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			unit:SetHasInventory(toboolean(value))
 		elseif key == "AttackRange" then
 			unit:AddNewModifier(unit, nil, "modifier_set_attack_range", {AttackRange = value})
+		elseif key == "internal_name" then
+			unit:SetUnitName(value)
 		end
 	end
+	
+	local str = unit.CustomGain_Strength or unit:GetStrengthGain()
+	local int = unit.CustomGain_Intelligence or unit:GetIntellectGain()
+	local agi = unit.CustomGain_Agility or unit:GetAgilityGain()
+		
+	unit:SetNetworkableEntityInfo("AttributeStrengthGain", str)
+	unit:SetNetworkableEntityInfo("AttributeIntelligenceGain", int)
+	unit:SetNetworkableEntityInfo("AttributeAgilityGain", agi)
+	unit.custom_stats_set = true;
 end
 
 function HeroSelection:InitializeHeroClass(unit, classTable)

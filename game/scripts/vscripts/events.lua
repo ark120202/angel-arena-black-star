@@ -25,6 +25,12 @@ function GameMode:OnNPCSpawned(keys)
 					npc:SetModel(npc.ModelOverride)
 					npc:SetOriginalModel(npc.ModelOverride)
 				end
+				local heroName = npc:GetFullName()
+				if not npc.custom_stats_set and not NPC_HEROES[heroName]then
+					npc:SetNetworkableEntityInfo("AttributeStrengthGain", npc:GetStrengthGain())
+					npc:SetNetworkableEntityInfo("AttributeIntelligenceGain", npc:GetIntellectGain())
+					npc:SetNetworkableEntityInfo("AttributeAgilityGain", npc:GetAgilityGain())
+				end
 				if not npc:IsWukongsSummon() then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if npc:IsTrueHero() then
