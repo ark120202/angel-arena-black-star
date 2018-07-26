@@ -4,5 +4,5 @@
 #base "units/bosses.txt"
 #base "units/items.txt"
 #base "units/abilities.txt"
-#base "units/customheroes.txt"
+#base "heroes/new.txt"
 "DOTAUnits" {}
