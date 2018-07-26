@@ -166,6 +166,8 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			unit:SetHasInventory(toboolean(value))
 		elseif key == "AttackRange" then
 			unit:AddNewModifier(unit, nil, "modifier_set_attack_range", {AttackRange = value})
+		elseif key == "internal_name" then
+			unit:SetUnitName(value)
 		end
 	end
 end
