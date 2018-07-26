@@ -43,6 +43,7 @@ function HeroSelection:SelectHero(playerId, heroName, beforeReplace, afterReplac
 						if heroTableCustom.base_hero then
 							TransformUnitClass(hero, heroTableCustom)
 							hero.UnitName = heroName
+							hero.BaseHeroName = heroTableCustom.base_hero
 						end
 						if Options:IsEquals("EnableAbilityShop") then
 							for i = 0, hero:GetAbilityCount() - 1 do
