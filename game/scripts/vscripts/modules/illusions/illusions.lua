@@ -100,9 +100,11 @@ function Illusions:create(info)
 	local team = info.team or unit:GetTeamNumber()
 	local isOwned = info.isOwned
 	if isOwned == nil then isOwned = true end
+	
+	local unitName = unit.BaseHeroName or unit:GetUnitName()
 
 	local illusion = CreateUnitByName(
-		unit:GetUnitName(),
+		unitName,
 		origin,
 		true,
 		isOwned and unit or nil,
@@ -132,7 +134,7 @@ function Illusions:create(info)
 	illusion.UnitName = unit.UnitName
 	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
 	local heroName = unit:GetFullName()
-	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
+	if unitName ~= heroName then
 		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
 	end
 
