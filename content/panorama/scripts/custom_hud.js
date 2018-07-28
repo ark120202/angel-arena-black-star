@@ -114,10 +114,6 @@ function AutoUpdatePanoramaHUD() {
 	UpdatePanoramaHUD();
 }
 
-function ToggleCustomTalentTree() {
-	GameEvents.SendEventClientSide('custom_talents_toggle_tree', {});
-}
-
 function HookPanoramaPanels() {
 	FindDotaHudElement('QuickBuyRows').visible = false;
 	FindDotaHudElement('shop').visible = false;
@@ -150,8 +146,6 @@ function HookPanoramaPanels() {
 			GameEvents.SendEventClientSide('panorama_shop_open_close', {});
 		}
 	});
-	
-	level_stats_frame.canLearn = false;
 
 	StatBranch.ClearPanelEvent('onactivate');
 	StatBranch.ClearPanelEvent('onmouseover');
@@ -162,8 +156,7 @@ function HookPanoramaPanels() {
 	StatsLevelUpTab.ClearPanelEvent('onmouseover');
 	StatsLevelUpTab.ClearPanelEvent('onmouseout');
 	StatsLevelUpTab.ClearPanelEvent('onactivate');
-	StatsLevelUpTab.SetPanelEvent('onactivate', ToggleCustomTalentTree);
-	StatBranch.SetPanelEvent('onactivate', ToggleCustomTalentTree);
+	StatsLevelUpTab.SetPanelEvent('onactivate', function(){GameEvents.SendEventClientSide('custom_talents_toggle_tree', {})});
 	var DebugChat = false;
 
 	chat.FindChildTraverse('ChatLinesPanel').visible = DebugChat;
@@ -251,12 +244,7 @@ function OnUpdateQueryUnit(data) {
 function OnSkillPoint(data) {
 	var unit = Players.GetLocalPlayerPortraitUnit();
 	level_stats_frame = FindDotaHudElement('level_stats_frame');
-	level_stats_frame.visible = level_stats_frame.canLearn && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
-}
-
-function OnTalentUpdated(data) {
-	FindDotaHudElement('level_stats_frame').canLearn = data.canLearn;
-	OnSkillPoint();
+	level_stats_frame.visible = Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
 }
 
 // On Death
@@ -380,10 +368,8 @@ function CreateHeroElements(id) {
 	GameEvents.Subscribe('dota_player_update_query_unit', OnUpdateQueryUnit);
 	GameEvents.Subscribe('dota_player_gained_level', OnSkillPoint);
 	GameEvents.Subscribe('dota_player_learned_ability', OnSkillPoint);
-	GameEvents.Subscribe('arena_talent_CanLearn_Updated', OnTalentUpdated);
 	
 	GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
-
 
 	GameEvents.Subscribe('create_generic_panel', function(data) {
 		var random = getRandomInt(0, 100000);
