@@ -106,7 +106,7 @@ function Illusions:create(info)
 		origin,
 		true,
 		isOwned and unit or nil,
-		isOwned and unit:GetPlayerOwner() or nil,
+		nil,
 		team
 	)
 	
