@@ -156,7 +156,7 @@ function HookPanoramaPanels() {
 	StatsLevelUpTab.ClearPanelEvent('onmouseover');
 	StatsLevelUpTab.ClearPanelEvent('onmouseout');
 	StatsLevelUpTab.ClearPanelEvent('onactivate');
-	StatsLevelUpTab.SetPanelEvent('onactivate', function (){
+	StatsLevelUpTab.SetPanelEvent('onactivate', function() {
 		GameEvents.SendEventClientSide('custom_talents_toggle_tree', {});
 	});
 	var DebugChat = false;
