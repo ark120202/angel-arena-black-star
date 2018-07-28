@@ -93,6 +93,16 @@ function Illusions:_copyAppearance(unit, illusion)
 	end
 end
 
+function Illusions:_copyEverything(unit, illusion)
+	illusion:SetAbilityPoints(0)
+	Illusions:_copySpecialCustomFields(unit, illusion)
+	Illusions:_copyAbilities(unit, illusion)
+	Illusions:_copyAppearance(unit, illusion)
+	illusion.UnitName = unit.UnitName
+	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
+	Illusions:_copyShards(unit, illusion)
+end
+
 function Illusions:create(info)
 	local ability = info.ability
 	local unit = info.unit
@@ -114,11 +124,8 @@ function Illusions:create(info)
 	illusion:SetForwardVector(unit:GetForwardVector())
 
 	Illusions:_copyLevel(unit, illusion)
-	illusion:SetAbilityPoints(0)
-	Illusions:_copySpecialCustomFields(unit, illusion)
-	Illusions:_copyAbilities(unit, illusion)
+	Illusions:_copyEverything(unit, illusion)
 	Illusions:_copyItems(unit, illusion)
-	Illusions:_copyAppearance(unit, illusion)
 
 	illusion:SetHealth(unit:GetHealth())
 	illusion:SetMana(unit:GetMana())
@@ -128,9 +135,6 @@ function Illusions:create(info)
 		incoming_damage = info.damageIncoming - 100,
 	})
 	illusion:MakeIllusion()
-	Illusions:_copyShards(unit, illusion)
-	illusion.UnitName = unit.UnitName
-	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
 	local heroName = unit:GetFullName()
 	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
 		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
