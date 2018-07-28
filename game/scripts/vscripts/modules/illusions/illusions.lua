@@ -111,7 +111,6 @@ function Illusions:create(info)
 	)
 	
 	illusion:SetPlayerID(unit:GetPlayerID())
-	illusion:SetControllableByPlayer(unit:GetPlayerID(), true)
 	
 	if isOwned then illusion:SetControllableByPlayer(unit:GetPlayerID(), true) end
 	FindClearSpaceForUnit(illusion, origin, true)
