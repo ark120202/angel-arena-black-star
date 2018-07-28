@@ -109,6 +109,10 @@ function Illusions:create(info)
 		isOwned and unit:GetPlayerOwner() or nil,
 		team
 	)
+	
+	illusion:SetPlayerID(unit:GetPlayerID())
+	illusion:SetControllableByPlayer(unit:GetPlayerID(), true)
+	
 	if isOwned then illusion:SetControllableByPlayer(unit:GetPlayerID(), true) end
 	FindClearSpaceForUnit(illusion, origin, true)
 	illusion:SetForwardVector(unit:GetForwardVector())
