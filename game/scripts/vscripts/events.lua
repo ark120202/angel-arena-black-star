@@ -21,6 +21,16 @@ function GameMode:OnNPCSpawned(keys)
 				Physics:Unit(npc)
 				npc:SetAutoUnstuck(true)
 				DynamicWearables:AutoEquip(npc)
+				local id_tracker = npc:FindAbilityByName("id_tracker")
+				if id_tracker then
+					local illusionSource_id = id_tracker:GetLevel()
+					if illusionSource_id ~= 0 then
+						Illusions:_copyEverything(EntIndexToHScript(illusionSource_id), npc)
+					end
+					id_tracker:SetLevel(npc:GetEntityIndex())
+				else
+					print(npc:GetUnitName() .. " does not have id_tracker. This should never happen. Ever.")
+				end	
 				if npc.ModelOverride then
 					npc:SetModel(npc.ModelOverride)
 					npc:SetOriginalModel(npc.ModelOverride)
