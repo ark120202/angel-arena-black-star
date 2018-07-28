@@ -101,6 +101,10 @@ function Illusions:_copyEverything(unit, illusion)
 	illusion.UnitName = unit.UnitName
 	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
 	Illusions:_copyShards(unit, illusion)
+	local heroName = unit:GetFullName()
+	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
+		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
+	end
 end
 
 function Illusions:create(info)
@@ -135,10 +139,6 @@ function Illusions:create(info)
 		incoming_damage = info.damageIncoming - 100,
 	})
 	illusion:MakeIllusion()
-	local heroName = unit:GetFullName()
-	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
-		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
-	end
 
 	return illusion
 end
