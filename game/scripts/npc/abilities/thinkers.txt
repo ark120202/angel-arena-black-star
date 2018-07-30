@@ -201,4 +201,11 @@
 			}
 		}
 	}
+
+	"id_tracker"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"2,147,483,647"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	}
 }

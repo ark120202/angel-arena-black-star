@@ -4,6 +4,7 @@
 	{
 		"override_hero"	"npc_dota_hero_base"
 		"MagicalResistance"		"25"
+		"Ability16"	"id_tracker"
 	}
 
 	"npc_dota_hero_ogre_magi"
@@ -11,6 +12,7 @@
 		"override_hero"	"npc_dota_hero_ogre_magi"
 		"Changed"	"1"
 		"Ability6"	"ogre_magi_multicast_arena"
+		"Ability16"	"id_tracker"
 		"AttackRate"	"1.5"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.5"
@@ -24,6 +26,7 @@
 		"override_hero"	"npc_dota_hero_skeleton_king"
 		"Changed"	"1"
 		"Ability6"	"skeleton_king_reincarnation_arena"
+		"Ability16"	"id_tracker"
 		"AttackRate"	"1.8"
 	}
 
@@ -32,6 +35,7 @@
 		"override_hero"	"npc_dota_hero_doom_bringer"
 		"Changed"	"1"
 		"Ability1"	"doom_bringer_devour_arena"
+		"Ability16"	"id_tracker"
 		"AttackRate"	"1.6"
 		"ArmorPhysical"	"3"
 		"AttributeStrengthGain"	"2.8"
@@ -45,6 +49,7 @@
 		"override_hero"	"npc_dota_hero_huskar"
 		"Changed"	"1"
 		"Ability2"	"huskar_burning_spear_arena"
+		"Ability16"	"id_tracker"
 		"AttackRate"	"1.7"
 		"ArmorPhysical"	"-2"
 	}
@@ -68,7 +73,7 @@
 		"Ability13"	""
 		"Ability14"	""
 		"Ability15"	""
-		"Ability16"	""
+		"Ability16"	"id_tracker"
 		"AttackRate"	"1.6"
 	}
 }

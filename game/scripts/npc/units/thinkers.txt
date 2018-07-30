@@ -191,6 +191,7 @@
 
 		"AbilityLayout"				"4"
 		"Ability1"					""
+		"Ability16"	"id_tracker"
 
 		"ArmorPhysical"				"-1"
 		"MagicalResistance"			"25"

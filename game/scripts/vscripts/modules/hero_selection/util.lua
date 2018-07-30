@@ -78,7 +78,8 @@ end
 function TransformUnitClass(unit, classTable, skipAbilityRemap)
 	if not skipAbilityRemap then
 		for i = 0, unit:GetAbilityCount() - 1 do
-			if unit:GetAbilityByIndex(i) then
+			local abil = unit:GetAbilityByIndex(i)
+			if abil and abil:GetAbilityName() ~= "id_tracker" then
 				unit:RemoveAbility(unit:GetAbilityByIndex(i):GetName())
 			end
 		end
