@@ -4,6 +4,7 @@
 	{
 		"override_hero"			"npc_dota_hero_tinker"
 		"Ability6"				"tinker_rearm_arena"
+		"Ability24"	"id_tracker"
 		"AttackRate"			"1.6"
 	}
 
@@ -11,6 +12,7 @@
 	{
 		"override_hero"			"npc_dota_hero_life_stealer"
 		"Ability2"				"life_stealer_feast_arena"
+		"Ability24"	"id_tracker"
 		"AttackRate"			"1.9"
 	}
 
@@ -18,6 +20,7 @@
 	{
 		"override_hero"			"npc_dota_hero_gyrocopter"
 		"Ability3"				"gyrocopter_flak_cannon_arena"
+		"Ability24"	"id_tracker"
 		"AttackRate"			"1.6"
 		"MovementSpeed"			"325"
 		"AttributeBaseAgility"	"16"
