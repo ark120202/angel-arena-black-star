@@ -88,6 +88,23 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
 			return true
 		end
+	elseif order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET then
+		--invoker IDTracker workaround part 2
+		if not unit.orbsCast then unit.orbsCast = 0
+		elseif unit.orbsCast >= 3 and not unit.sunStrikeRestored and abilityname == "invoker_invoke" then
+			unit:RemoveAbility("invoker_empty2")
+			local exort = unit:FindAbilityByName("invoker_exort")
+			local exort_level = exort:GetLevel()
+			local sunstrike = unit:AddAbility("invoker_sun_strike")
+			--Trick sunstrike ui into thinking it is the correct level
+			for i=1,exort_level do
+				exort:SetLevel(exort_level)
+			end
+			sunstrike:SetLevel(1)
+			unit.sunStrikeRestored = true
+		elseif unit.orbsCast < 3 and (abilityname == "invoker_quas" or abilityname == "invoker_wex" or abilityname == "invoker_exort") then
+			unit.orbsCast = unit.orbsCast + 1
+		end
 	end
 
 	return true
