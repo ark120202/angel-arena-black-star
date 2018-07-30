@@ -457,7 +457,7 @@
 	"npc_dota_hero_invoker"
 	{
 		"override_hero"	"npc_dota_hero_invoker"
-		"Ability16"	"id_tracker"
+		"Ability24"	"id_tracker"
 		"AttackRate"	"1.5"
 	}
 
