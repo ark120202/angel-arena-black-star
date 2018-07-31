@@ -80,6 +80,14 @@ function Illusions:_copySpecialCustomFields(unit, illusion)
 	end
 end
 
+function Illusions:_copyAppearance(unit, illusion)
+	illusion:SetModelScale(unit:GetModelScale())
+	local rc = unit:GetRenderColor()
+	if rc ~= Vector(255, 255, 255) then
+		illusion:SetRenderColor(rc.x, rc.y, rc.z)
+	end
+end
+
 local COPYABLE_BUFFS = {
 	modifier_alchemist_chemical_rage = 1,
 	modifier_arc_warden_tempest_double = 1,
@@ -141,6 +149,7 @@ function Illusions:create(info)
 	Illusions:_copySpecialCustomFields(unit, illusion)
 	Illusions:_copyAbilities(unit, illusion)
 	Illusions:_copyItems(unit, illusion)
+	Illusions:_copyAppearance(unit, illusion)
 	Illusions:_copyBuffs(unit, illusion)
 
 	illusion:SetHealth(unit:GetHealth())
