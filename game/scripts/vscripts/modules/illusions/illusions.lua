@@ -110,7 +110,7 @@ local illusion_getElaspedTime = function(self)
 end
 
 function Illusions:_copyBuffs(unit, illusion)
-	for k, v in pairs(unit:FindAllModifiers()) do
+	for _, v in pairs(unit:FindAllModifiers()) do
 		local buffName = v:GetName()
 		local buffAbility = v:GetAbility()
 		local buff_copyStatus = COPYABLE_BUFFS[buffName]
