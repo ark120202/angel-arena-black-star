@@ -93,6 +93,28 @@ function Illusions:_copyAppearance(unit, illusion)
 	end
 end
 
+local COPIABLE_BUFFS = {
+	modifier_alchemist_chemical_rage = 1,
+	modifier_arc_warden_tempest_double = 1,
+	modifier_troll_warlord_berserkers_rage = 1,
+	modifier_dragon_knight_dragon_form = 1,
+	modifier_lone_druid_true_form = 1,
+	modifier_terrorblade_metamorphosis_transform = 2,
+	modifier_undying_flesh_golem = 1,
+	modifier_lycan_shapeshift = 1,
+}
+
+function Illusions:_copyBuffs(unit, illusion)
+	for k, v in pairs(unit:FindAllModifiers()) do
+		local buffName = v:GetName()
+		local buffAbility = v:GetAbility()
+		local buff_copyStatus = COPIABLE_BUFFS[buffName]
+		if buff_copyStatus == 1 or (buff_copyStatus == 2 and buffAbility:GetMoveParent():GetPlayerOwner() == illusion:GetPlayerOwner()) then
+			illusion:AddNewModifier(illusion, buffAbility, buffName, nil)
+		end
+	end
+end
+
 function Illusions:create(info)
 	local ability = info.ability
 	local unit = info.unit
@@ -118,7 +140,7 @@ function Illusions:create(info)
 	Illusions:_copySpecialCustomFields(unit, illusion)
 	Illusions:_copyAbilities(unit, illusion)
 	Illusions:_copyItems(unit, illusion)
-	Illusions:_copyAppearance(unit, illusion)
+	Illusions:_copyBuffs(unit, illusion)
 
 	illusion:SetHealth(unit:GetHealth())
 	illusion:SetMana(unit:GetMana())
