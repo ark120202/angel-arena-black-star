@@ -93,7 +93,7 @@ function Illusions:_copyAppearance(unit, illusion)
 	end
 end
 
-local COPIABLE_BUFFS = {
+local COPYABLE_BUFFS = {
 	modifier_alchemist_chemical_rage = 1,
 	modifier_arc_warden_tempest_double = 1,
 	modifier_troll_warlord_berserkers_rage = 1,
@@ -113,7 +113,7 @@ function Illusions:_copyBuffs(unit, illusion)
 	for k, v in pairs(unit:FindAllModifiers()) do
 		local buffName = v:GetName()
 		local buffAbility = v:GetAbility()
-		local buff_copyStatus = COPIABLE_BUFFS[buffName]
+		local buff_copyStatus = COPYABLE_BUFFS[buffName]
 		if buff_copyStatus == 1 or (buff_copyStatus == 2 and buffAbility:GetMoveParent():GetPlayerOwner() == illusion:GetPlayerOwner()) then
 			local illuModifier = illusion:AddNewModifier(illusion, buffAbility, buffName, nil)
 			illuModifier:SetStackCount(v:GetStackCount())
