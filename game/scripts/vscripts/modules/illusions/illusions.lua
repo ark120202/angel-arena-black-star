@@ -99,7 +99,7 @@ local COPYABLE_BUFFS = {
 	modifier_troll_warlord_berserkers_rage = 1,
 	modifier_dragon_knight_dragon_form = 1,
 	modifier_lone_druid_true_form = 1,
-	modifier_terrorblade_metamorphosis_transform = 2,
+	modifier_terrorblade_metamorphosis_transform = 1,
 	modifier_undying_flesh_golem = 1,
 	modifier_lycan_shapeshift = 1,
 	modifier_apocalypse_apocalypse = 1,
@@ -115,7 +115,7 @@ function Illusions:_copyBuffs(unit, illusion)
 		local buffName = v:GetName()
 		local buffAbility = v:GetAbility()
 		local buff_copyStatus = COPYABLE_BUFFS[buffName]
-		if buff_copyStatus == 1 or (buff_copyStatus == 2 and buffAbility:GetMoveParent():GetPlayerOwner() == illusion:GetPlayerOwner()) then
+		if buff_copyStatus == 1 then
 			local illuModifier = illusion:AddNewModifier(illusion, buffAbility, buffName, nil)
 			illuModifier:SetStackCount(v:GetStackCount())
 			--Trick ElaspedTime dependent buffs such as Apocalypse
