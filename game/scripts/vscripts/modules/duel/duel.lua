@@ -145,7 +145,11 @@ function Duel:StartDuel()
 						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 						ProjectileManager:ProjectileDodge(unit)
 						local tp_loc = Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin()
-						Timers:CreateTimer(0.3, function() unit:Teleport(tp_loc) end)
+						Timers:CreateTimer(0.3, function()
+							if (unit:IsNull()) then
+								PlayerResource:GetSelectedHeroEntity(playerId):Teleport(tp_loc)
+							end
+						end)
 						unit:Teleport(tp_loc)
 						unit:AddNewModifier(unit, nil, "modifier_magic_immune", {duration = DUEL_SETTINGS.MagicImmunityDuration})
 					elseif unit:IsAlive() then
