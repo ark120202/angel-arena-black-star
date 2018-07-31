@@ -89,19 +89,19 @@ function Illusions:_copyAppearance(unit, illusion)
 end
 
 local COPYABLE_BUFFS = {
-	modifier_alchemist_chemical_rage = 1,
-	modifier_arc_warden_tempest_double = 1,
-	modifier_troll_warlord_berserkers_rage = 1,
-	modifier_dragon_knight_dragon_form = 1,
-	modifier_lone_druid_true_form = 1,
-	modifier_terrorblade_metamorphosis_transform = 1,
-	modifier_invoker_quas_instance = 1,
-	modifier_invoker_wex_instance = 1,
-	modifier_invoker_exort_instance = 1,
-	modifier_undying_flesh_golem = 1,
-	modifier_lycan_shapeshift = 1,
-	modifier_apocalypse_apocalypse = 1,
-	modifier_sai_release_of_forge = 1,
+	modifier_alchemist_chemical_rage = true,
+	modifier_arc_warden_tempest_double = true,
+	modifier_troll_warlord_berserkers_rage = true,
+	modifier_dragon_knight_dragon_form = true,
+	modifier_lone_druid_true_form = true,
+	modifier_terrorblade_metamorphosis_transform = true,
+	modifier_invoker_quas_instance = true,
+	modifier_invoker_wex_instance = true,
+	modifier_invoker_exort_instance = true,
+	modifier_undying_flesh_golem = true,
+	modifier_lycan_shapeshift = true,
+	modifier_apocalypse_apocalypse = true,
+	modifier_sai_release_of_forge = true,
 }
 
 local illusion_getElaspedTime = function(self)
@@ -112,8 +112,7 @@ function Illusions:_copyBuffs(unit, illusion)
 	for _, v in pairs(unit:FindAllModifiers()) do
 		local buffName = v:GetName()
 		local buffAbility = v:GetAbility()
-		local buff_copyStatus = COPYABLE_BUFFS[buffName]
-		if buff_copyStatus == 1 then
+		if COPYABLE_BUFFS[buffName] then
 			local illuModifier = illusion:AddNewModifier(illusion, buffAbility, buffName, nil)
 			illuModifier:SetStackCount(v:GetStackCount())
 			--Trick ElaspedTime dependent buffs such as Apocalypse
