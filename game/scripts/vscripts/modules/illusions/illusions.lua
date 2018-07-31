@@ -104,7 +104,10 @@ local COPYABLE_BUFFS = {
 	modifier_sai_release_of_forge = true,
 }
 
-local illusion_getElaspedTime = function(self)
+--Trick ElaspedTime dependent buffs such as Apocalypse
+CDOTA_Buff.SourceElaspedTime = 0
+CDOTA_Buff.OldGetElaspedTime = CDOTA_Buff.OldGetElaspedTime or CDOTA_Buff.GetElapsedTime
+CDOTA_Buff.GetElapsedTime = function(self)
 	return self:OldGetElaspedTime() + self.SourceElaspedTime
 end
 
@@ -117,8 +120,6 @@ function Illusions:_copyBuffs(unit, illusion)
 			illuModifier:SetStackCount(v:GetStackCount())
 			--Trick ElaspedTime dependent buffs such as Apocalypse
 			illuModifier.SourceElaspedTime = v:GetElapsedTime()
-			illuModifier.OldGetElaspedTime = illuModifier.GetElapsedTime
-			illuModifier.GetElapsedTime = illusion_getElaspedTime
 		end
 	end
 end
