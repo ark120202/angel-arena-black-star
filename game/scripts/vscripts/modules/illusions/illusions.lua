@@ -80,19 +80,6 @@ function Illusions:_copySpecialCustomFields(unit, illusion)
 	end
 end
 
-function Illusions:_copyAppearance(unit, illusion)
-	illusion:SetModelScale(unit:GetModelScale())
-	if unit:GetModelName() ~= illusion:GetModelName() then
-		illusion.ModelOverride = unit:GetModelName()
-		illusion:SetModel(illusion.ModelOverride)
-		illusion:SetOriginalModel(illusion.ModelOverride)
-	end
-	local rc = unit:GetRenderColor()
-	if rc ~= Vector(255, 255, 255) then
-		illusion:SetRenderColor(rc.x, rc.y, rc.z)
-	end
-end
-
 local COPYABLE_BUFFS = {
 	modifier_alchemist_chemical_rage = 1,
 	modifier_arc_warden_tempest_double = 1,
