@@ -38,5 +38,10 @@ if IsServer() then
 		if target then
 			target:RemoveNoDraw()
 		end
+		local tp_dest = target.OnMetaFinishedTeleport
+		if tp_dest then
+			target:Teleport(tp_dest)
+			target.OnMetaFinishedTeleport = nil
+		end
 	end
 end
