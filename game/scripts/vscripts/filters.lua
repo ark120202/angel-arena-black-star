@@ -272,11 +272,9 @@ function GameMode:ModifyExperienceFilter(filterTable)
 end
 
 function GameMode:ItemAddedToInventoryFilter(filterTable)
-  
 	local item = EntIndexToHScript(filterTable.item_entindex_const)
 	if item.suggested_slot then
 		filterTable.suggested_slot = item.suggested_slot
 	end
-	
 	return true
 end
