@@ -103,6 +103,7 @@ local COPYABLE_BUFFS = {
 	modifier_undying_flesh_golem = 1,
 	modifier_lycan_shapeshift = 1,
 	modifier_apocalypse_apocalypse = 1,
+	modifier_sai_release_of_forge = 1,
 }
 
 local illusion_getElaspedTime = function(self)
