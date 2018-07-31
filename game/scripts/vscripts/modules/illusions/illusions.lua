@@ -102,7 +102,12 @@ local COPIABLE_BUFFS = {
 	modifier_terrorblade_metamorphosis_transform = 2,
 	modifier_undying_flesh_golem = 1,
 	modifier_lycan_shapeshift = 1,
+	modifier_apocalypse_apocalypse = 1,
 }
+
+local illusion_getElaspedTime = function(self)
+	return self:OldGetElaspedTime() + self.SourceElaspedTime
+end
 
 function Illusions:_copyBuffs(unit, illusion)
 	for k, v in pairs(unit:FindAllModifiers()) do
@@ -110,7 +115,12 @@ function Illusions:_copyBuffs(unit, illusion)
 		local buffAbility = v:GetAbility()
 		local buff_copyStatus = COPIABLE_BUFFS[buffName]
 		if buff_copyStatus == 1 or (buff_copyStatus == 2 and buffAbility:GetMoveParent():GetPlayerOwner() == illusion:GetPlayerOwner()) then
-			illusion:AddNewModifier(illusion, buffAbility, buffName, nil)
+			local illuModifier = illusion:AddNewModifier(illusion, buffAbility, buffName, nil)
+			illuModifier:SetStackCount(v:GetStackCount())
+			--Trick ElaspedTime dependent buffs such as Apocalypse
+			illuModifier.SourceElaspedTime = v:GetElapsedTime()
+			illuModifier.OldGetElaspedTime = illuModifier.GetElapsedTime
+			illuModifier.GetElapsedTime = illusion_getElaspedTime
 		end
 	end
 end
