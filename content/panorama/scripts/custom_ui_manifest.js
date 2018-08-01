@@ -35,7 +35,6 @@ GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_CUSTOM_6] = $.Localize("
 GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_CUSTOM_7] = $.Localize("#DOTA_Custom7");
 GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_CUSTOM_8] = $.Localize("#DOTA_Custom8");*/
 
-Game.Events = {};
 Game.MouseEvents = {
 	OnLeftPressed: []
 };
