@@ -71,22 +71,25 @@ function CreateItembuildGroup(groupsRoot, title, content) {
 	groupTitle.enabled = $.GetContextPanel().BHasClass('EditMode');
 	var itemsRoot = groupRoot.FindChildTraverse('ItembuildItemGroupItemRoot');
 	var createPanelForGroup = function(item) {
-		var itemPanel = SnippetCreate_SmallItem($.CreatePanel('Panel', itemsRoot, 'shop_itembuild_items_' + item), item, false, function(panel) {
-			if ($.GetContextPanel().BHasClass('EditMode')) panel.visible = false;
-			return true;
-		}, function(panel) {
-			if ($.GetContextPanel().BHasClass('EditMode')) {
-				panel.DeleteAsync(0);
-				UpdateSelectedItembuildAuthorData(-1);
-			}
-		});
-		$.RegisterEventHandler('DragDrop', itemPanel, function(panelId, draggedPanel) {
-			if ($.GetContextPanel().BHasClass('EditMode') && draggedPanel.itemname != null) {
-				itemsRoot.MoveChildBefore(createPanelForGroup(draggedPanel.itemname), itemPanel);
+		if (ItemData[item]) {
+			var itemPanel = SnippetCreate_SmallItem($.CreatePanel('Panel', itemsRoot, 'shop_itembuild_items_' + item), item, false, function(panel) {
+				if ($.GetContextPanel().BHasClass('EditMode')) panel.visible = false;
 				return true;
-			}
-		});
-		return itemPanel;
+			}, function(panel) {
+				if ($.GetContextPanel().BHasClass('EditMode')) {
+					panel.DeleteAsync(0);
+					UpdateSelectedItembuildAuthorData(-1);
+				}
+			});
+			$.RegisterEventHandler('DragDrop', itemPanel, function(panelId, draggedPanel) {
+				if ($.GetContextPanel().BHasClass('EditMode') && draggedPanel.itemname != null) {
+					itemsRoot.MoveChildBefore(createPanelForGroup(draggedPanel.itemname), itemPanel);
+					return true;
+				}
+			});
+			return itemPanel;
+		}
+		return true;
 	};
 
 	$.RegisterEventHandler('DragStart', itemsRoot, function(panelId, dragCallbacks) {
