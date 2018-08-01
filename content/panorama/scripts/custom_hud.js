@@ -237,6 +237,13 @@ function HookPanoramaPanels() {
 }
 
 function OnUpdateQueryUnit(data) {
+	var unitName = GetHeroName(Players.GetQueryUnit(Players.GetLocalPlayer()));
+	FindDotaHudElement('UnitName').text = $.Localize(unitName).toUpperCase();
+	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
+	OnUpdateSelectedUnit(data);
+}
+
+function OnUpdateSelectedUnit(data) {
 	var unitName = GetHeroName(Players.GetLocalPlayerPortraitUnit());
 	FindDotaHudElement('UnitNameLabel').text = $.Localize(unitName).toUpperCase();
 	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
@@ -367,7 +374,7 @@ function CreateHeroElements(id) {
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe('entity_killed', OnDeath);
 	DynamicSubscribeNTListener('custom_entity_values', OnUpdateQueryUnit);
-	GameEvents.Subscribe('dota_player_update_selected_unit', OnUpdateQueryUnit);
+	GameEvents.Subscribe('dota_player_update_selected_unit', OnUpdateSelectedUnit);
 	GameEvents.Subscribe('dota_player_update_query_unit', OnUpdateQueryUnit);
 	GameEvents.Subscribe('dota_player_gained_level', OnSkillPoint);
 	GameEvents.Subscribe('dota_player_learned_ability', OnSkillPoint);
