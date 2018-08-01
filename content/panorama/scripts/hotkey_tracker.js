@@ -1,8 +1,8 @@
-'use strict';
+Game.Events = {};
 
 function GetKeybind(key) {
-	var keyElement = $.GetContextPanel().FindChildTraverse(key)
-	keyElement.visible = false;
+	var keyElement = $('#' + key)
+	keyElement.visibility = "collapse"
 	return keyElement.GetChild(0).text;
 }
 
