@@ -15,16 +15,15 @@ function RegisterKeybind(command) {
 	Game.AddCommand('-' + command, function() {}, '', 0);
 }
 
-function GenerateKeybind(defaultName, sign, command, defaultKey) {
+function GenerateKeybind(defaultName, sign, command) {
 	RegisterKeybind(command);
 	var key = GetKeybind(defaultName)
-	if (key === '')
-		key = defaultKey
-	Game.CreateCustomKeyBind(key, sign + command)
+	if (key !== '')
+		Game.CreateCustomKeyBind(key, sign + command)
 }
 
 (function() {
-	GenerateKeybind("ShopToggle", "+", "F4Pressed", "F4")
-	GenerateKeybind("PurchaseQuickbuy", "+", "F5Pressed", "F5")
-	GenerateKeybind("PurchaseSticky", "+", "F8Pressed", "F8")
+	GenerateKeybind("ShopToggle", "+", "F4Pressed")
+	GenerateKeybind("PurchaseQuickbuy", "+", "F5Pressed")
+	GenerateKeybind("PurchaseSticky", "+", "F8Pressed")
 })();
