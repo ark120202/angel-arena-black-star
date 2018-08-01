@@ -2,7 +2,6 @@ Game.Events = {};
 
 function GetKeybind(key) {
 	var keyElement = $("#" + key);
-	keyElement.visibility = "collapse";
 	return keyElement.GetChild(0).text;
 }
 
@@ -19,9 +18,8 @@ function RegisterKeybind(command) {
 function GenerateKeybind(defaultName, sign, command, defaultKey) {
 	RegisterKeybind(command);
 	var key = GetKeybind(defaultName)
-	if (key === '') {
+	if (key === '')
 		key = defaultKey
-	}
 	Game.CreateCustomKeyBind(key, sign + command)
 }
 
