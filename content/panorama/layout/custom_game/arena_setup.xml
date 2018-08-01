@@ -33,9 +33,9 @@
 		</snippet>
 	</snippets>
 	<Panel hittest="false" class="TeamSelect">
-		<DOTAHotkey id="PurchaseSticky" keybind="PurchaseSticky" hittest="false"/>
-		<DOTAHotkey id="PurchaseQuickbuy" keybind="PurchaseQuickbuy" hittest="false"/>
-		<DOTAHotkey id="ShopToggle" keybind="ShopToggle" hittest="false"/>
+		<DOTAHotkey id="PurchaseSticky" keybind="PurchaseSticky" hittest="false" class="hidden"/>
+		<DOTAHotkey id="PurchaseQuickbuy" keybind="PurchaseQuickbuy" hittest="false" class="hidden"/>
+		<DOTAHotkey id="ShopToggle" keybind="ShopToggle" hittest="false" class="hidden"/>
 		<Panel id="team-select__open">
 			<Panel id="TeamList" />
 			<Panel hittest="false" id="SettingsColumn" >
