@@ -7,6 +7,7 @@
 	<scripts>
 		<include src="file://{resources}/scripts/arena_util.js" />
 		<include src="file://{resources}/scripts/arena_setup.js" />
+		<include src="file://{resources}/scripts/hotkey_tracker.js" />
 	</scripts>
 	<snippets>
 		<snippet name="Team">
@@ -32,6 +33,9 @@
 		</snippet>
 	</snippets>
 	<Panel hittest="false" class="TeamSelect">
+		<DOTAHotkey id="PurchaseSticky" keybind="PurchaseSticky" hittest="false"/>
+		<DOTAHotkey id="PurchaseQuickbuy" keybind="PurchaseQuickbuy" hittest="false"/>
+		<DOTAHotkey id="ShopToggle" keybind="ShopToggle" hittest="false"/>
 		<Panel id="team-select__open">
 			<Panel id="TeamList" />
 			<Panel hittest="false" id="SettingsColumn" >
