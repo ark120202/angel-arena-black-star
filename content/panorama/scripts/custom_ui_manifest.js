@@ -35,16 +35,6 @@ GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_CUSTOM_6] = $.Localize("
 GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_CUSTOM_7] = $.Localize("#DOTA_Custom7");
 GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_CUSTOM_8] = $.Localize("#DOTA_Custom8");*/
 
-function RegisterKeybind(command) {
-	Game.Events[command] = [];
-	Game.AddCommand('+' + command, function() {
-		for (var key in Game.Events[command]) {
-			Game.Events[command][key]();
-		}
-	}, '', 0);
-	Game.AddCommand('-' + command, function() {}, '', 0);
-}
-
 Game.Events = {};
 Game.MouseEvents = {
 	OnLeftPressed: []
@@ -72,9 +62,6 @@ GameUI.SetMouseCallback(function(eventName, arg) {
 	};
 	return result;
 });
-RegisterKeybind('F4Pressed');
-RegisterKeybind('F5Pressed');
-RegisterKeybind('F8Pressed');
 
 GameUI.CustomUIConfig().custom_entity_values = GameUI.CustomUIConfig().custom_entity_values || {};
 DynamicSubscribeNTListener('custom_entity_values', function(tableName, key, value) {
