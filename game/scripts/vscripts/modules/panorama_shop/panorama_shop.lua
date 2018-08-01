@@ -263,12 +263,12 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 		unit:AddItem(item)
 	--Try to add item to hero's stash
 	else
-		PanoramaShop:PushToStash (playerId, item)
+		PanoramaShop:PushToStash (playerId, item, itemName)
 	end
 	Timers:CreateTimer(0, PanoramaShop.DropItemOnFailedPush, {frameDelay = 1, item = item, playerId = playerId, unit = unit, isInShop = isInShop})
 end
 
-function PanoramaShop:PushToStash (playerId, item)
+function PanoramaShop:PushToStash (playerId, item, itemName)
 
 	local unit = PlayerResource:GetSelectedHeroEntity(playerId)
 		
@@ -328,7 +328,7 @@ function PanoramaShop.DropItemOnFailedPush (keys)
 			local container = item:GetContainer()
 			if container then
 				container:Destroy()
-				PanoramaShop:PushToStash (playerId, item)
+				PanoramaShop:PushToStash (playerId, item, itemName)
 				Timers:CreateTimer(0, PanoramaShop.DropItemOnFailedPush, {frameDelay = 1, item = item, playerId = playerId, unit = unit, isInShop = isInShop})
 			else
 				if isInShop then
