@@ -366,6 +366,7 @@ function CreateHeroElements(id) {
 
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe('entity_killed', OnDeath);
+	DynamicSubscribeNTListener('custom_entity_values', OnUpdateQueryUnit);
 	GameEvents.Subscribe('dota_player_update_selected_unit', OnUpdateQueryUnit);
 	GameEvents.Subscribe('dota_player_update_query_unit', OnUpdateQueryUnit);
 	GameEvents.Subscribe('dota_player_gained_level', OnSkillPoint);
