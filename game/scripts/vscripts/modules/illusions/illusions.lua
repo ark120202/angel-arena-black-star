@@ -108,6 +108,8 @@ function Illusions:_copyEverything(unit, illusion)
 	end
 	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
 	Illusions:_copyShards(unit, illusion)
+	illusion:SetHealth(unit:GetHealth())
+	illusion:SetMana(unit:GetMana())
 end
 
 function Illusions:create(info)
@@ -133,8 +135,6 @@ function Illusions:create(info)
 	Illusions:_copyLevel(unit, illusion)
 	Illusions:_copyItems(unit, illusion)
 
-	illusion:SetHealth(unit:GetHealth())
-	illusion:SetMana(unit:GetMana())
 	illusion:AddNewModifier(unit, ability, "modifier_illusion", {
 		duration = info.duration,
 		outgoing_damage = info.damageOutgoing - 100,
