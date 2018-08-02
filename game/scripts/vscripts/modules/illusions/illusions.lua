@@ -141,8 +141,6 @@ function Illusions:create(info)
 		incoming_damage = info.damageIncoming - 100,
 	})
 	illusion:MakeIllusion()
-	Illusions:_copyEverything(unit, illusion)
-	illusion.isCustomIllusion = true
 
 	return illusion
 end
