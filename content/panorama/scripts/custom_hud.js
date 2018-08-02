@@ -125,6 +125,7 @@ function HookPanoramaPanels() {
 	FindDotaHudElement('HUDSkinMinimap').visible = false;
 	FindDotaHudElement('combat_events').visible = false;
 	FindDotaHudElement('ChatEmoticonButton').visible = false;
+	FindDotaHudElement('StatBranchIcon').visible = false;
 	FindDotaHudElement('StatBranchDrawer').visible = false;
 	FindDotaHudElement('topbar').visible = false;
 	FindDotaHudElement('DeliverItemsButton').style.horizontalAlign = 'right';
