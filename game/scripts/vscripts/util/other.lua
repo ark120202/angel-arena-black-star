@@ -50,7 +50,7 @@ function ReplaceAbilities(unit, oldAbility, newAbility, keepLevel, keepCooldown)
 end
 
 function PreformMulticast(caster, ability_cast, multicast, multicast_delay, target)
-	if ability_cast:IsMulticastable() then
+	if ability_cast:IsAbilityMulticastable() then
 		local prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf', PATTACH_OVERHEAD_FOLLOW, caster)
 		ParticleManager:SetParticleControl(prt, 1, Vector(multicast, 0, 0))
 		prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast_b.vpcf', PATTACH_OVERHEAD_FOLLOW, caster:GetCursorCastTarget() or caster)

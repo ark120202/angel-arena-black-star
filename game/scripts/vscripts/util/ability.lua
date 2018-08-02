@@ -22,6 +22,10 @@ function CDOTABaseAbility:PerformPrecastActions()
 	return false
 end
 
+function CDOTABaseAbility:IsAbilityMulticastable()
+	return not self:HasBehavior(DOTA_ABILITY_BEHAVIOR_PASSIVE) and not table.contains(NOT_MULTICASTABLE_ABILITIES, self:GetAbilityName())
+end
+
 function CDOTABaseAbility:ClearFalseInnateModifiers()
 	if self:GetKeyValue("HasInnateModifiers") ~= 1 then
 		for _,v in ipairs(self:GetCaster():FindAllModifiers()) do

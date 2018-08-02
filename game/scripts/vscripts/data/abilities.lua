@@ -30,6 +30,9 @@ NOT_MULTICASTABLE_ABILITIES = {
 	"elder_titan_ancestral_spirit",
 	"elder_titan_return_spirit",
 	"ember_spirit_sleight_of_fist",
+	"monkey_king_tree_dance",
+	"monkey_king_primal_spring",
+	"monkey_king_primal_spring_early",
 }
 
 REFRESH_LIST_IGNORE_REFRESHER = {
