@@ -142,6 +142,7 @@ function Illusions:create(info)
 	})
 	illusion:MakeIllusion()
 	Illusions:_copyEverything(unit, illusion)
+	illusion.isCustomIllusion = true
 
 	return illusion
 end
