@@ -52,24 +52,25 @@ end
 function PreformMulticast(caster, ability_cast, multicast, multicast_delay, target)
 	if ability_cast:IsAbilityMulticastable() then
 		local prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf', PATTACH_OVERHEAD_FOLLOW, caster)
-		ParticleManager:SetParticleControl(prt, 1, Vector(multicast, 0, 0))
-		prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast_b.vpcf', PATTACH_OVERHEAD_FOLLOW, caster:GetCursorCastTarget() or caster)
-		prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast_b.vpcf', PATTACH_OVERHEAD_FOLLOW, caster)
-		prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast_c.vpcf', PATTACH_OVERHEAD_FOLLOW, caster:GetCursorCastTarget() or caster)
-		ParticleManager:SetParticleControl(prt, 1, Vector(multicast, 0, 0))
-		CastMulticastedSpell(caster, ability_cast, target, multicast-1, multicast_delay)
+		CastMulticastedSpell(caster, ability_cast, target, multicast-1, multicast_delay, prt, 2)
 	end
 end
 
-function CastMulticastedSpell(caster, ability, target, multicasts, delay)
+function CastMulticastedSpell(caster, ability, target, multicasts, delay, prt, prtNumber)
 	if multicasts >= 1 then
 		Timers:CreateTimer(delay, function()
+			ParticleManager:DestroyParticle(prt, true)
+			ParticleManager:ReleaseParticleIndex(prt)
+			prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf', PATTACH_OVERHEAD_FOLLOW, caster)
+			ParticleManager:SetParticleControl(prt, 1, Vector(prtNumber, 0, 0))
 			CastAdditionalAbility(caster, ability, target)
 			caster:EmitSound('Hero_OgreMagi.Fireblast.x'.. multicasts)
 			if multicasts >= 2 then
-				CastMulticastedSpell(caster, ability, target, multicasts - 1, delay)
+				CastMulticastedSpell(caster, ability, target, multicasts - 1, delay, prt, prtNumber + 1)
 			end
 		end)
+	else
+		ParticleManager:ReleaseParticleIndex(prt)
 	end
 end
 
