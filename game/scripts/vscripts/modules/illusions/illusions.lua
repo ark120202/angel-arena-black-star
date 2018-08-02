@@ -101,12 +101,18 @@ function Illusions:create(info)
 	local isOwned = info.isOwned
 	if isOwned == nil then isOwned = true end
 
+	local source = unit
+	local replicate_modifier = unit:FindModifierByName("modifier_morphling_replicate")
+	if replicate_modifier then
+		source = replicate_modifier:GetCaster()
+	end
+
 	local illusion = CreateUnitByName(
-		unit:GetUnitName(),
+		source:GetUnitName(),
 		origin,
 		true,
 		isOwned and unit or nil,
-		isOwned and unit:GetPlayerOwner() or nil,
+		isOwned and source:GetPlayerOwner() or nil,
 		team
 	)
 	if isOwned then illusion:SetControllableByPlayer(unit:GetPlayerID(), true) end
