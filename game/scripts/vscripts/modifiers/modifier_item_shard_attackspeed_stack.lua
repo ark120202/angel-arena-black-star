@@ -5,6 +5,7 @@ modifier_item_shard_attackspeed_stack = class({
 	RemoveOnDeath = function() return false end,
 	GetAttributes = function() return MODIFIER_ATTRIBUTE_PERMANENT end,
 	GetTexture =    function() return "arena/shard_attackspeed" end,
+	AllowIllusionDuplicate = function() return true end,
 })
 
 function modifier_item_shard_attackspeed_stack:DeclareFunctions()
