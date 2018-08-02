@@ -26,7 +26,8 @@ function GameMode:OnNPCSpawned(keys)
 					npc:SetOriginalModel(npc.ModelOverride)
 				end
 				for _, v in pairs(npc:FindAllModifiers()) do
-					if v:GetName() == "modifier_illusion" then
+					local buffName = v:GetName()
+					if buffName == "modifier_illusion" or buffName == "modifier_arc_warden_tempest_double" then
 						Illusions:_copyEverything(v:GetCaster(), npc)
 					end
 				end
