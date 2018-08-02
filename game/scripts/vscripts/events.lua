@@ -25,6 +25,11 @@ function GameMode:OnNPCSpawned(keys)
 					npc:SetModel(npc.ModelOverride)
 					npc:SetOriginalModel(npc.ModelOverride)
 				end
+				for _, v in pairs(npc:FindAllModifiers()) do
+					if v:GetName() == "modifier_illusion" then
+						Illusions:_copyEverything(v:GetCaster(), npc)
+					end
+				end
 				if not npc:IsWukongsSummon() then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if npc:IsTrueHero() then
