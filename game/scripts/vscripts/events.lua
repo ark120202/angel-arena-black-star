@@ -16,12 +16,6 @@ function GameMode:OnNPCSpawned(keys)
 			--npc:AddNoDraw()
 			return
 		end
-		for _, v in pairs(npc:FindAllModifiers()) do
-			local buffName = v:GetName()
-			if buffName == "modifier_illusion" or buffName == "modifier_arc_warden_tempest_double" then
-				Illusions:_copyEverything(v:GetCaster(), npc)
-			end
-		end
 		Timers:CreateTimer(function()
 			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
 				Physics:Unit(npc)
@@ -30,6 +24,12 @@ function GameMode:OnNPCSpawned(keys)
 				if npc.ModelOverride then
 					npc:SetModel(npc.ModelOverride)
 					npc:SetOriginalModel(npc.ModelOverride)
+				end
+				for _, v in pairs(npc:FindAllModifiers()) do
+					local buffName = v:GetName()
+					if buffName == "modifier_illusion" or buffName == "modifier_arc_warden_tempest_double" then
+						Illusions:_copyEverything(v:GetCaster(), npc)
+					end
 				end
 				if not npc:IsWukongsSummon() then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
