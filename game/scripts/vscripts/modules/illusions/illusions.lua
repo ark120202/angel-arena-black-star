@@ -46,12 +46,15 @@ end
 function Illusions:_copyShards(unit, illusion)
 	if unit.Additional_str then
 		illusion:ModifyStrength(unit.Additional_str)
+		illusion.Additional_str = unit.Additional_str
 	end
 	if unit.Additional_agi then
 		illusion:ModifyAgility(unit.Additional_agi)
+		illusion.Additional_agi = unit.Additional_agi
 	end
 	if unit.Additional_int then
 		illusion:ModifyIntellect(unit.Additional_int)
+		illusion.Additional_int = unit.Additional_int
 	end
 	if unit.Additional_attackspeed then
 		local modifier = illusion:FindModifierByName("modifier_item_shard_attackspeed_stack")
