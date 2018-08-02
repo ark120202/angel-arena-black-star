@@ -94,6 +94,7 @@ local COPYABLE_BUFFS = {
 	modifier_troll_warlord_berserkers_rage = true,
 	modifier_dragon_knight_dragon_form = true,
 	modifier_lone_druid_true_form = true,
+	modifier_morphling_morph = true,
 	modifier_terrorblade_metamorphosis_transform = true,
 	modifier_invoker_quas_instance = true,
 	modifier_invoker_wex_instance = true,
@@ -102,6 +103,8 @@ local COPYABLE_BUFFS = {
 	modifier_lycan_shapeshift = true,
 	modifier_apocalypse_apocalypse = true,
 	modifier_sai_release_of_forge = true,
+	modifier_item_armlet_unholy_strength = true,
+	modifier_item_moon_shard_consumed = true,
 }
 
 --Trick ElaspedTime dependent buffs such as Apocalypse
@@ -120,6 +123,11 @@ function Illusions:_copyBuffs(unit, illusion)
 			illuModifier:SetStackCount(v:GetStackCount())
 			--Trick ElaspedTime dependent buffs such as Apocalypse
 			illuModifier.SourceElaspedTime = v:GetElapsedTime()
+			--Hack for Morphling
+			if buffName == "modifier_morphling_morph" then
+				illusion:SetBaseStrength(unit:GetBaseStrength() - (unit.Additional_str or 0))
+				illusion:SetBaseAgility(unit:GetBaseAgility() - (unit.Additional_agi or 0))
+			end
 		end
 	end
 end
