@@ -27,7 +27,7 @@ function GameMode:OnNPCSpawned(keys)
 				end
 				for _, v in pairs(npc:FindAllModifiers()) do
 					local buffName = v:GetName()
-					if buffName == "modifier_illusion" or buffName == "modifier_arc_warden_tempest_double" then
+					if not npc.isCustomIllusion and (buffName == "modifier_illusion" or buffName == "modifier_arc_warden_tempest_double") then
 						Illusions:_copyEverything(v:GetCaster(), npc)
 					end
 				end
