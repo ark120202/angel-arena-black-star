@@ -64,6 +64,7 @@ function Illusions:_copyShards(unit, illusion)
 		if modifier then
 			modifier:SetStackCount(unit.Additional_attackspeed)
 		end
+		illusion.Additional_attackspeed = unit.Additional_attackspeed
 	end
 end
 
