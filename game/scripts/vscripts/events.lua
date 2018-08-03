@@ -16,6 +16,24 @@ function GameMode:OnNPCSpawned(keys)
 			--npc:AddNoDraw()
 			return
 		end
+		local tempest_modifier = npc:FindModifierByName("modifier_arc_warden_tempest_double")
+		if tempest_modifier then
+			local caster = tempest_modifier:GetCaster()
+			if npc:GetUnitName() == "npc_dota_hero" or npc.isCustomTempest then
+				npc:SetUnitName("npc_dota_hero_arena_base")
+				npc.isCustomTempest = true
+			end
+			if npc.stats_copied then
+				npc:ModifyStrength(caster:GetStrength() - npc:GetStrength())
+				npc:ModifyIntellect(caster:GetIntellect() - npc:GetIntellect())
+				npc:ModifyAgility(caster:GetAgility() - npc:GetAgility())
+				npc:SetHealth(caster:GetHealth())
+				npc:SetMana(caster:GetMana())
+			else
+				Illusions:_copyEverything(caster, npc)
+				npc.stats_copied = true
+			end
+		end
 		Timers:CreateTimer(function()
 			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
 				Physics:Unit(npc)
@@ -25,12 +43,8 @@ function GameMode:OnNPCSpawned(keys)
 					npc:SetModel(npc.ModelOverride)
 					npc:SetOriginalModel(npc.ModelOverride)
 				end
-				for _, v in pairs(npc:FindAllModifiers()) do
-					local buffName = v:GetName()
-					if buffName == "modifier_illusion" or buffName == "modifier_arc_warden_tempest_double" then
-						Illusions:_copyEverything(v:GetCaster(), npc)
-					end
-				end
+				local illu_modifier = npc:FindModifierByName("modifier_illusion")
+				if illu_modifier then Illusions:_copyEverything(illu_modifier:GetCaster(), npc) end
 				if not npc:IsWukongsSummon() then
 					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 					if npc:IsTrueHero() then
