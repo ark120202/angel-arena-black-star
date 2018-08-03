@@ -22,8 +22,9 @@ function CDOTABaseAbility:PerformPrecastActions()
 	return false
 end
 
-function CDOTABaseAbility:IsAbilityMulticastable()
-	return not self:HasBehavior(DOTA_ABILITY_BEHAVIOR_PASSIVE) and not table.contains(NOT_MULTICASTABLE_ABILITIES, self:GetAbilityName())
+function CDOTABaseAbility:GetMulticastType()
+	if self:HasBehavior(DOTA_ABILITY_BEHAVIOR_PASSIVE) then return MULTICAST_TYPE_NONE end
+	return MULTICAST_ABILITIES[self:GetAbilityName()] or MULTICAST_TYPE_DIFFERENT
 end
 
 function CDOTABaseAbility:ClearFalseInnateModifiers()
