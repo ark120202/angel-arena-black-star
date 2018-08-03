@@ -25,6 +25,8 @@ function GameMode:OnNPCSpawned(keys)
 				npc:AddNewModifier(unit, nil, "modifier_dragon_knight_dragon_form", {duration = 0})
 			end
 			if npc.stats_copied then
+				--Tempest Double resets stats and stuff, so everything needs to be put back where they belong
+				Illusions:_copyAbilities(caster, npc)
 				npc:ModifyStrength(caster:GetStrength() - npc:GetStrength())
 				npc:ModifyIntellect(caster:GetIntellect() - npc:GetIntellect())
 				npc:ModifyAgility(caster:GetAgility() - npc:GetAgility())
