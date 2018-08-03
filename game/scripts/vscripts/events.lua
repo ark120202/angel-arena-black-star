@@ -19,9 +19,10 @@ function GameMode:OnNPCSpawned(keys)
 		local tempest_modifier = npc:FindModifierByName("modifier_arc_warden_tempest_double")
 		if tempest_modifier then
 			local caster = tempest_modifier:GetCaster()
-			if npc:GetUnitName() == "npc_dota_hero" or npc.isCustomTempest then
+			if npc:GetUnitName() == "npc_dota_hero" and not npc.isCustomTempest then
 				npc:SetUnitName("npc_dota_hero_arena_base")
 				npc.isCustomTempest = true
+				npc:AddNewModifier(unit, nil, "modifier_dragon_knight_dragon_form", {duration = 0})
 			end
 			if npc.stats_copied then
 				npc:ModifyStrength(caster:GetStrength() - npc:GetStrength())
