@@ -17,14 +17,14 @@ function modifier_set_attack_range:IsHidden()
 end
 
 function modifier_set_attack_range:GetModifierAttackRangeBonus()
-	return self:GetStackCount()
+	return self.stacks or self:GetStackCount()
 end
 
 if IsServer() then
 	function modifier_set_attack_range:OnCreated(kv)
 		if kv and kv.AttackRange then
-			local stacks = -(self:GetParent():GetKeyValue("AttackRange", nil, true) - kv.AttackRange)
-			self:SetStackCount(stacks)
+			self.stacks = -(self:GetParent():GetAttackRange() - kv.AttackRange)
+			self:SetStackCount(self.stacks)
 			--self:GetParent():SetNetworkableEntityInfo("BaseAttackRange", self:GetParent():GetKeyValue("AttackRange", nil, true))
 			--self:GetParent():SetNetworkableEntityInfo("AttackRangeModify", stacks)
 		end
