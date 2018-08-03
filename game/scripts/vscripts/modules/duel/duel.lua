@@ -287,7 +287,6 @@ function Duel:EndDuelForUnit(unit)
 	end
 	unit.OnDuel = nil
 	unit.ArenaBeforeTpLocation = nil
-	unit.tp_loc = nil
 	unit.DuelChecked = nil
 end
 
