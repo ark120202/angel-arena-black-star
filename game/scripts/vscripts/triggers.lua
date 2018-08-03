@@ -55,20 +55,24 @@ function Fountain7OnStartTouch(trigger)
 	FountainOnStartTouch(trigger, DOTA_TEAM_CUSTOM_2)
 end
 
+function FountainOnEndTouch(trigger)
+	local activator = trigger.activator
+	if trigger.activator then
+		trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
+		trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	end
+end
+
 -- TODO remove these team numbers
 function Fountain2OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end
 function Fountain3OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end
 function Fountain6OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end
 function Fountain7OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end
