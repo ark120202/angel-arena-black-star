@@ -57,9 +57,9 @@ end
 
 function FountainOnEndTouch(trigger)
 	local activator = trigger.activator
-	if trigger.activator then
-		trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-		trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	if activator then
+		activator:RemoveModifierByName("modifier_fountain_aura_arena")
+		activator:RemoveModifierByName("modifier_fountain_aura_enemy")
 	end
 end
 
