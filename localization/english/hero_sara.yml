@@ -35,6 +35,7 @@ DOTA_Tooltip_ability_sara_dark_blink_blink_range: 'RANGE:'
 DOTA_Tooltip_ability_sara_dark_blink_energy_to_blink_range: 'ENERGY IN RANGE:'
 DOTA_Tooltip_ability_sara_dark_blink_energy_to_min_cost_pct: '%BASE ENERGY COST:'
 DOTA_Tooltip_ability_sara_dark_blink_Lore: Space - something like a piece of paper. To get from point A to point B, it needs to be bent correctly.
+DOTA_Tooltip_ability_sara_dark_blink_Note0: 'Has an effective blink range of %blink_range% + %energy_to_blink_range% * 0.01'
 
 DOTA_Tooltip_ability_sara_fragment_of_hate: Fragment of Hate
 DOTA_Tooltip_ability_sara_fragment_of_hate_Description: 'The Fragment of Sara''s soul, embodying her violence and power. Gives each her attack a chance to deal critical strike. Critical strike damage will be based on current energy. Additionally passively increases her attack damage, based on current energy.'
