@@ -167,6 +167,7 @@ function CastAdditionalAbility(caster, ability, target, delay)
 		skill.GetCaster = function() return ability:GetCaster() end
 		if not ability.DOTAold_OnChannelFinish then
 			ability.DOTAold_OnChannelFinish = ability.OnChannelFinish
+			ability.interrupted = true
 			ability.OnChannelFinish = function(self, bInterrupted)
 				self:DOTAold_OnChannelFinish(bInterrupted)
 				self.interrupted = bInterrupted
