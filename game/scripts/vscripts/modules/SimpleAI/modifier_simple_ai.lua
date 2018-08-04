@@ -13,7 +13,8 @@ function modifier_simple_ai:IsPurgable()
 end
 
 function modifier_simple_ai:DeclareFunctions()
-	return {MODIFIER_EVENT_ON_TAKEDAMAGE}
+	return {MODIFIER_EVENT_ON_TAKEDAMAGE,
+			MODIFIER_EVENT_ON_ORDER}
 end
 
 function modifier_simple_ai:OnTakeDamage(keys)
@@ -21,4 +22,8 @@ function modifier_simple_ai:OnTakeDamage(keys)
 		local target = self:GetParent()
 		keys.unit.ai:OnTakeDamage(keys.attacker)
 	end
+end
+
+function modifier_simple_ai:OnOrder(keys)
+	self:GetParent().ai:OnOrder(keys)
 end
