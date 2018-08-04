@@ -221,7 +221,7 @@ function CastAdditionalAbility(caster, ability, target, delay)
 		Timers:CreateTimer(0.03, function()
 			if not caster:IsChanneling() then
 				Timers:CreateTimer(delay or 0, function()
-					skill:EndChannel(true)
+					skill:EndChannel(ability.interrupted)
 					skill:OnChannelFinish(ability.interrupted)
 					Timers:CreateTimer(0.05, function()
 						if skill then UTIL_Remove(skill) end
