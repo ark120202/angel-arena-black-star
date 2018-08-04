@@ -16,11 +16,16 @@ function modifier_set_attack_range:IsHidden()
 	return true
 end
 
-function modifier_set_attack_range:GetModifierAttackRangeBonus()
-	return self.stacks or self:GetStackCount()
+if IsClient() then
+	function modifier_set_attack_range:GetModifierAttackRangeBonus()
+		return 0
+	end
 end
 
 if IsServer() then
+	function modifier_set_attack_range:GetModifierAttackRangeBonus()
+		return self.stacks or self:GetStackCount()
+	end
 	function modifier_set_attack_range:OnCreated(kv)
 		if kv and kv.AttackRange then
 			self.stacks = -(self:GetParent():GetAttackRange() - kv.AttackRange)
