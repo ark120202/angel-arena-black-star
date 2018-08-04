@@ -4,7 +4,7 @@
 	{
 		// General
 		//
-		"BaseClass"	"npc_dota_base_additive"
+		"BaseClass"	"npc_dota_hero"
 		"Model"	"models/development/invisiblebox.vmdl"
 
 		// Abilities
@@ -27,7 +27,7 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_FLY"
 		"MovementTurnRate"	"1.0"	// Turning rate.
 		"FollowRange"	"250"	// Distance to keep when following
 
