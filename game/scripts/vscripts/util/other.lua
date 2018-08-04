@@ -174,7 +174,7 @@ function CastAdditionalAbility(caster, ability, target)
 	local channelled = false
 	if ability:HasBehavior(DOTA_ABILITY_BEHAVIOR_CHANNELLED) then
 		local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
-		--TODO сделать чтобы дамаг от скилла умножался от инты.
+		--TODO сделать чтобы дамаг от скилла умножался от инты. (done)
 		for i = 0, DOTA_ITEM_SLOT_9 do
 			local citem = caster:GetItemInSlot(i)
 			if citem then
@@ -185,15 +185,11 @@ function CastAdditionalAbility(caster, ability, target)
 		dummy:SetControllableByPlayer(caster:GetPlayerID(), true)
 		dummy:SetOwner(caster)
 		dummy:SetAbsOrigin(caster:GetAbsOrigin())
-		dummy.GetStrength = function()
-			return caster:GetStrength()
-		end
-		dummy.GetAgility = function()
-			return caster:GetAgility()
-		end
-		dummy.GetIntellect = function()
-			return caster:GetIntellect()
-		end
+		
+		dummy:ModifyStrength (caster:GetStrength())
+		dummy:ModifyAgility(caster:GetAgility())
+		dummy:ModifyIntellect(caster:GetIntellect())
+		
 		skill = dummy:AddAbility(ability:GetName())
 		unit = dummy
 		skill:SetLevel(ability:GetLevel())
