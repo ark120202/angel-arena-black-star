@@ -168,11 +168,11 @@ function CastMulticastedSpell(caster, ability, target, multicasts, delay)
 	end
 end
 
-function CastAdditionalAbility(caster, ability, target)
+function CastAdditionalAbility(caster, ability, target, delay)
 	local skill = ability
 	local unit = caster
-	local channelled = false
-	if ability:HasBehavior(DOTA_ABILITY_BEHAVIOR_CHANNELLED) then
+	local channelTime = ability:GetKeyValue("AbilityChannelTime")
+	if channelTime then
 		local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
 		--TODO сделать чтобы дамаг от скилла умножался от инты. (done)
 		for i = 0, DOTA_ITEM_SLOT_9 do
@@ -193,26 +193,41 @@ function CastAdditionalAbility(caster, ability, target)
 		skill = dummy:AddAbility(ability:GetName())
 		unit = dummy
 		skill:SetLevel(ability:GetLevel())
-		channelled = true
+		skill.GetCaster = function() return ability:GetCaster() end
+		if not ability.DOTAold_OnChannelFinish then
+			ability.DOTAold_OnChannelFinish = ability.OnChannelFinish
+			ability.interrupted = true
+			ability.OnChannelFinish = function(self, bInterrupted)
+				self:DOTAold_OnChannelFinish(bInterrupted)
+				self.interrupted = bInterrupted
+			end
+		end
 	end
 	if skill:HasBehavior(DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then
 		if target and type(target) == "table" then
 			unit:SetCursorCastTarget(target)
 		end
-	elseif skill:HasBehavior(DOTA_ABILITY_BEHAVIOR_POINT) then
-		if target and target.x and target.y and target.z then
-			unit:SetCursorPosition(target)
+	end
+	if skill:HasBehavior(DOTA_ABILITY_BEHAVIOR_POINT) then
+		if target then
+			if target.x and target.y and target.z then
+				unit:SetCursorPosition(target)
+			elseif target.GetOrigin then
+				unit:SetCursorPosition(target:GetOrigin())
+			end
 		end
 	end
 	skill:OnSpellStart()
-	if channelled then
+	if channelTime then
 		Timers:CreateTimer(0.03, function()
 			if not caster:IsChanneling() then
-				skill:EndChannel(true)
-				skill:OnChannelFinish(true)
-				Timers:CreateTimer(0.03, function()
-					if skill then UTIL_Remove(skill) end
-					if unit then UTIL_Remove(unit) end
+				Timers:CreateTimer(delay or 0, function()
+					skill:EndChannel(ability.interrupted)
+					skill:OnChannelFinish(ability.interrupted)
+					Timers:CreateTimer(0.05, function()
+						if skill then UTIL_Remove(skill) end
+						if unit then UTIL_Remove(unit) end
+					end)
 				end)
 			else
 				return 0.03
