@@ -4,7 +4,7 @@
 		<include src="file://{resources}/styles/libraries/containers/container.css" />
 		<include src="file://{resources}/styles/libraries/containers/container_skins.css" />
 
-		<include src="s2r://panorama/styles/hero_splash.vcss_c" />
+		<!–– <include src="s2r://panorama/styles/hero_splash.vcss_c" /> -->
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/libraries/containers/container_base.js" /> 
