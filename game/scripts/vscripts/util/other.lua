@@ -159,7 +159,7 @@ function CastAdditionalAbility(caster, ability, target, delay)
 			local buffName = v:GetName()
 			local buffAbility = v:GetAbility()
 			local dummyModifier = dummy:AddNewModifier(dummy, buffAbility, buffName, nil)
-			dummyModifierdummyModifier:SetStackCount(v:GetStackCount())
+			dummyModifier:SetStackCount(v:GetStackCount())
 		end
 
 		skill = dummy:AddAbility(ability:GetName())
