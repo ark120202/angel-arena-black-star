@@ -151,14 +151,15 @@ function CastAdditionalAbility(caster, ability, target, delay)
 		dummy:SetControllableByPlayer(caster:GetPlayerID(), true)
 		dummy:SetOwner(caster)
 		dummy:SetAbsOrigin(caster:GetAbsOrigin())
-		dummy.GetStrength = function()
-			return caster:GetStrength()
-		end
-		dummy.GetAgility = function()
-			return caster:GetAgility()
-		end
-		dummy.GetIntellect = function()
-			return caster:GetIntellect()
+
+		dummy:ModifyStrength (caster:GetStrength())
+		dummy:ModifyAgility(caster:GetAgility())
+		dummy:ModifyIntellect(caster:GetIntellect())
+		for _, v in pairs(caster:FindAllModifiers()) do
+			local buffName = v:GetName()
+			local buffAbility = v:GetAbility()
+			local dummyModifier = dummy:AddNewModifier(dummy, buffAbility, buffName, nil)
+			dummyModifierdummyModifier:SetStackCount(v:GetStackCount())
 		end
 
 		skill = dummy:AddAbility(ability:GetName())
