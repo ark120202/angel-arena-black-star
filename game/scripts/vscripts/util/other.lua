@@ -139,41 +139,37 @@ function CastAdditionalAbility(caster, ability, target, delay)
 	local unit = caster
 	local channelTime = ability:GetKeyValue("AbilityChannelTime")
 	if channelTime > 0 then
-		local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
-		--TODO сделать чтобы дамаг от скилла умножался от инты. (done)
+		if not caster.dummyCasters then
+			caster.dummyCasters = caster.dummyCasters or {}
+			caster.nextFreeDummyCaster = caster.nextFreeDummyCaster or 1
+			for i=0,8 do PrecacheDummyCasters(caster) end
+		end
+		local dummy = caster.dummyCasters[caster.nextFreeDummyCaster]--CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+		caster.nextFreeDummyCaster = caster.nextFreeDummyCaster + 1
+		if caster.nextFreeDummyCaster > #caster.dummyCasters then caster.nextFreeDummyCaster = 1 end
+		--TODO сделать чтобы дамаг от скилла умножался от инты.
 		for i = 0, DOTA_ITEM_SLOT_9 do
 			local citem = caster:GetItemInSlot(i)
 			if citem then
 				dummy:AddItem(CopyItem(citem))
 			end
 		end
-		if caster:HasScepter() then dummy:AddNewModifier(caster, nil, "modifier_item_ultimate_scepter", {}) end
-		dummy:SetControllableByPlayer(caster:GetPlayerID(), true)
 		dummy:SetOwner(caster)
 		dummy:SetAbsOrigin(caster:GetAbsOrigin())
-
-		dummy:ModifyStrength (caster:GetStrength())
-		dummy:ModifyAgility(caster:GetAgility())
-		dummy:ModifyIntellect(caster:GetIntellect())
+		dummy:SetBaseStrength (caster:GetStrength())
+		dummy:SetBaseAgility(caster:GetAgility())
+		dummy:SetBaseIntellect(caster:GetIntellect())
 		for _, v in pairs(caster:FindAllModifiers()) do
 			local buffName = v:GetName()
 			local buffAbility = v:GetAbility()
-			local dummyModifier = dummy:AddNewModifier(dummy, buffAbility, buffName, nil)
+			local dummyModifier = dummy:FindModifierByName(buffName) or dummy:AddNewModifier(dummy, buffAbility, buffName, nil)
 			dummyModifier:SetStackCount(v:GetStackCount())
 		end
-
+		Illusions:_copyAbilities(caster, dummy)
 		skill = dummy:AddAbility(ability:GetName())
 		unit = dummy
 		skill:SetLevel(ability:GetLevel())
 		skill.GetCaster = function() return ability:GetCaster() end
-		if not ability.DOTAold_OnChannelFinish then
-			ability.DOTAold_OnChannelFinish = ability.OnChannelFinish
-			ability.interrupted = true
-			ability.OnChannelFinish = function(self, bInterrupted)
-				self:DOTAold_OnChannelFinish(bInterrupted)
-				self.interrupted = bInterrupted
-			end
-		end
 	end
 	if skill:HasBehavior(DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then
 		if target and type(target) == "table" then
