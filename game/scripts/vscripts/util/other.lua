@@ -191,21 +191,24 @@ function CastAdditionalAbility(caster, ability, target, delay)
 	end
 	skill:OnSpellStart()
 	if channelTime > 0 then
-		Timers:CreateTimer(0.03, function()
-			if not caster:IsChanneling() then
-				Timers:CreateTimer(delay or 0, function()
-					skill:EndChannel(ability.interrupted)
-					skill:OnChannelFinish(ability.interrupted)
-					Timers:CreateTimer(0.05, function()
-						if skill then UTIL_Remove(skill) end
-						if unit then UTIL_Remove(unit) end
-					end)
-				end)
-			else
-				return 0.03
+		local AbilityLastEndTime = ability.lastEndTime
+		if ability:IsChanneling() and (not AbilityLastEndTime or AbilityLastEndTime < GameRules:GetGameTime() - delay) then
+			local index = #ability.EndChannelListeners + 1
+			ability.EndChannelListeners[index] = function(bInterrupted)
+				ability.EndChannelListeners[index] = nil
+				EndAdditionalAbilityChannel(skill, bInterrupted, delay)
 			end
-		end)
+		else
+			EndAdditionalAbilityChannel(skill, ability.channelFailed, delay - GameRules:GetGameTime() + AbilityLastEndTime)
+		end
 	end
+end
+
+function EndAdditionalAbilityChannel(skill, bInterrupted, delay)
+	Timers:CreateTimer(delay or 0, function()
+		skill:EndChannel(bInterrupted)
+		skill:OnChannelFinish(bInterrupted)
+	end)
 end
 
 function GetAllAbilitiesCooldowns(unit)
