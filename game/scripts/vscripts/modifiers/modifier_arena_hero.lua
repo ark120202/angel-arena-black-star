@@ -13,6 +13,7 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_EVENT_ON_DEATH,
 		MODIFIER_PROPERTY_ABILITY_LAYOUT,
 		MODIFIER_EVENT_ON_RESPAWN,
+		MODIFIER_EVENT_ON_ABILITY_END_CHANNEL,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
 	}
@@ -182,6 +183,19 @@ if IsServer() then
 			end
 		end
 	end
+
+	function modifier_arena_hero:OnAbilityEndChannel(keys)
+		local ability = keys.ability
+		local channelFailed = (keys.fail_type ~= 32767)
+		ability.channelFailed = channelFailed
+		ability.lastEndTime = GameRules:GetGameTime()
+		if ability.EndChannelListeners then
+			for k, v in pairs(ability.EndChannelListeners) do
+				v(channelFailed)
+			end
+		end
+	end
+
 	function modifier_arena_hero:OnDestroy()
 		if IsValidEntity(self.reflect_stolen_ability) then
 			self.reflect_stolen_ability:RemoveSelf()
