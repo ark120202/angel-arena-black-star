@@ -138,7 +138,7 @@ function CastAdditionalAbility(caster, ability, target, delay)
 	local skill = ability
 	local unit = caster
 	local channelTime = ability:GetKeyValue("AbilityChannelTime")
-	if channelTime then
+	if channelTime > 0 then
 		local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
 		--TODO сделать чтобы дамаг от скилла умножался от инты. (done)
 		for i = 0, DOTA_ITEM_SLOT_9 do
@@ -190,7 +190,7 @@ function CastAdditionalAbility(caster, ability, target, delay)
 		end
 	end
 	skill:OnSpellStart()
-	if channelTime then
+	if channelTime > 0 then
 		Timers:CreateTimer(0.03, function()
 			if not caster:IsChanneling() then
 				Timers:CreateTimer(delay or 0, function()
