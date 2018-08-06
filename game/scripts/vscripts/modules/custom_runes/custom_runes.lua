@@ -98,7 +98,7 @@ function CustomRunes:CreateRune(position, runeType)
 	if settings.z_modify then
 		position.z = position.z + settings.z_modify
 	end
-	local entity = CreateItem(settings.model, nil, nil)
+	local entity = CreateItem(settings.item, nil, nil)
 	local container = CreateItemOnPositionSync(position, entity)
 	entity.RuneType = runeType
 	container:SetAbsOrigin(position)
