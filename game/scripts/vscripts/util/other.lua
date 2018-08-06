@@ -279,8 +279,16 @@ function RemoveAllOwnedUnits(playerId)
 		if v ~= hero and v ~= courier then
 			v:ClearNetworkableEntityInfo()
 			v:ForceKill(false)
+			RemoveDummyCasters(v)
 			UTIL_Remove(v)
 		end
+		RemoveDummyCasters(hero)
+	end
+end
+
+function RemoveDummyCasters(unit)
+	if unit.dummyCasters then
+		for _, dummyCaster in pairs(unit.dummyCasters) do UTIL_Remove(dummyCaster) end
 	end
 end
 
