@@ -220,8 +220,9 @@ function OnLocalPlayerPicked() {
 	$('#HeroPreviewLore').text = bio !== heroName + '_bio' ? bio : '';
 	var hype = $.Localize(heroName + '_hype');
 	$('#HeroPreviewOverview').text = hype !== heroName + '_hype' ? hype : '';
-
-	var heroImageXML = localHeroData.custom_scene_camera != null ? "<DOTAScenePanel particleonly='false' allowrotation='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' map='custom_scenes_map' camera='" + localHeroData.custom_scene_camera + "'/>" : localHeroData.custom_scene_image != null ? "<Image src='" + localHeroData.custom_scene_image + "'/>" : "<DOTAScenePanel particleonly='false' allowrotation='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' unit='" + localHeroData.model + "'/>";
+	
+	var model = localHeroData.model !== 'npc_dota_hero_arena_base' ? localHeroData.model : heroName
+	var heroImageXML = "<DOTAScenePanel particleonly='false' allowrotation='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' unit='" + model + "'/>";
 	var ScenePanel = $('#HeroPreviewScene');
 	ScenePanel.RemoveAndDeleteChildren();
 	ScenePanel.BCreateChildren(heroImageXML);
