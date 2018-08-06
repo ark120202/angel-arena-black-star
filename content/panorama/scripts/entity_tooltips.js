@@ -23,7 +23,8 @@ var Check = function() {
 		CurrentEntityHoveredPanel = null;
 		CurrentEntityHoveredIndex = null;
 	}
-	$.Schedule(0.1, Check);
+	//Dota will NOT call Schedule more than once per frame. This is required to hide the rune tooltip completely.
+	$.Schedule(0, Check);
 };
 Check();
 
