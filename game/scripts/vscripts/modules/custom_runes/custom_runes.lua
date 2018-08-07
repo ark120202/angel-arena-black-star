@@ -130,8 +130,8 @@ function CustomRunes:SpawnRunes()
 	local bountySpawner = RandomInt(1, #spawners)
 	for k,v in ipairs(spawners) do
 		if IsValidEntity(v.RuneEntity) then
+			v.RuneEntity:GetContainer():ClearNetworkableEntityInfo()
 			v.RuneEntity:GetContainer():Destroy()
-			v.RuneEntity:ClearNetworkableEntityInfo()
 			UTIL_Remove(v.RuneEntity)
 		end
 		v.RuneEntity = CustomRunes:CreateRune(v:GetAbsOrigin(), k == bountySpawner and ARENA_RUNE_BOUNTY or RandomInt(ARENA_RUNE_FIRST, ARENA_RUNE_LAST))
@@ -141,7 +141,7 @@ end
 function CustomRunes:PickUpRune(unit, rune)
 	if IsValidEntity(unit) and IsValidEntity(rune) then
 		local runeType = rune.RuneType
-		rune:ClearNetworkableEntityInfo()
+		rune:GetContainer():ClearNetworkableEntityInfo()
 		UTIL_Remove(rune)
 
 		local bottle
