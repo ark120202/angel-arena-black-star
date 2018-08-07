@@ -46,6 +46,7 @@ npc_dota_neutral_medium_variant1: Medium Camp Creep
 npc_dota_neutral_hard_variant1: Dragon
 npc_dota_neutral_hard_variant2: Centaur
 npc_dota_neutral_hard_variant3: Tideshan
+npc_dota_neutral_jungle_variant1: Jungle Bear
 npc_arena_fountain: Fountain
 npc_dota_casino_slotmachine: Slotmachine
 npc_dota_casino_lina: Lina
