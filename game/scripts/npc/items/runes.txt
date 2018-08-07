@@ -3,49 +3,49 @@
 	"item_arena_tripledamage_rune"
 	{
 		"BaseClass"					"item_datadriven"
-   		"Model"						"models/props_gameplay/rune_doubledamage01.vmdl" 
+		"Model"						"models/props_gameplay/rune_doubledamage01.vmdl" 
 		"ItemPurchasable"				"0"
 	}
 	"item_arena_haste_rune"
 	{
 		"BaseClass"					"item_datadriven"
-   		"Model"						"models/props_gameplay/rune_haste01.vmdl"
+		"Model"						"models/props_gameplay/rune_haste01.vmdl"
 		"ItemPurchasable"				"0"
 	}
 	"item_arena_illusion_rune"
 	{
 		"BaseClass"					"item_datadriven"
-   		"Model"						"models/props_gameplay/rune_illusion01.vmdl"
+		"Model"						"models/props_gameplay/rune_illusion01.vmdl"
 		"ItemPurchasable"				"0"
 	}
 	"item_arena_invisibility_rune"
 	{
 		"BaseClass"					"item_datadriven"
-   		"Model"						"models/props_gameplay/rune_invisibility01.vmdl"
+		"Model"						"models/props_gameplay/rune_invisibility01.vmdl"
 		"ItemPurchasable"				"0"
 	}
 	"item_arena_regeneration_rune"
 	{
 		"BaseClass"					"item_datadriven"
-   		"Model"						"models/props_gameplay/rune_regeneration01.vmdl"
+		"Model"						"models/props_gameplay/rune_regeneration01.vmdl"
 		"ItemPurchasable"				"0"
 	}
 	"item_arena_bounty_rune"
 	{
 		"BaseClass"					"item_datadriven"
-   		"Model"						"models/props_gameplay/rune_goldxp.vmdl"
+		"Model"						"models/props_gameplay/rune_goldxp.vmdl"
 		"ItemPurchasable"				"0"
 	}
 	"item_arena_arcane_rune"
 	{
 		"BaseClass"					"item_datadriven"
-   		"Model"						"models/props_gameplay/rune_arcane.vmdl"
+		"Model"						"models/props_gameplay/rune_arcane.vmdl"
 		"ItemPurchasable"				"0"
 	}
 	"item_arena_heart_rune"
 	{
 		"BaseClass"					"item_datadriven"
-   		"Model"						"models/props_gameplay/heart001.vmdl"
+		"Model"						"models/props_gameplay/heart001.vmdl"
 		"ItemPurchasable"				"0"
 	}
 }
