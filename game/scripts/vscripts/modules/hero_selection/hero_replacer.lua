@@ -118,9 +118,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 	hero:InterruptMotionControllers(false)
 	hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
 	local xp = hero:GetCurrentXP()
-	local fountatin = FindFountain(PlayerResource:GetTeam(playerId))
-	local location = hero:GetAbsOrigin()
-	if fountatin then location = location or fountatin:GetAbsOrigin() end
+	local location
 	RemoveAllOwnedUnits(playerId)
 
 	local startTime = GameRules:GetDOTATime(true, true)
@@ -128,6 +126,10 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 	local duelData = {}
 	Timers:CreateTimer(preDuration, function()
 		HeroSelection:SelectHero(playerId, newHeroName, function(oldHero)
+			location = hero:GetAbsOrigin()
+			local fountatin = FindFountain(PlayerResource:GetTeam(playerId))
+			if not location and fountatin then location = fountatin:GetAbsOrigin() end
+
 			for i = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
 				local citem  = hero:GetItemInSlot(i)
 				if citem and citem ~= item then
