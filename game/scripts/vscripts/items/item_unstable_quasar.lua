@@ -160,3 +160,9 @@ modifier_item_unstable_quasar_aura = class({
 function modifier_item_unstable_quasar_aura:GetModifierMagicalResistanceBonus()
 	return -self:GetAbility():GetSpecialValueFor("aura_resist_debuff_pct")
 end
+
+function modifier_item_unstable_quasar_aura:CheckState()
+	return {
+		[MODIFIER_STATE_INVISIBLE] = false,
+	}
+end
