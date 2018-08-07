@@ -109,11 +109,6 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 
 	hero.ChangingHeroProcessRunning = true
 	ProjectileManager:ProjectileDodge(hero)
-	if hero.PocketItem then
-		hero.PocketHostEntity = nil
-		UTIL_Remove(hero.PocketItem)
-		hero.PocketItem = nil
-	end
 	hero:DestroyAllModifiers()
 	hero:InterruptMotionControllers(false)
 	hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
