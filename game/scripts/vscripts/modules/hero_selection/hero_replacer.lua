@@ -150,6 +150,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			duelData.StatusBeforeArena = hero.StatusBeforeArena
 			duelData.OnDuel = hero.OnDuel
 			duelData.ArenaBeforeTpLocation = hero.ArenaBeforeTpLocation
+			duelData.TeleportPosition = hero.TeleportPosition
 			duelData.DuelChecked = hero.DuelChecked
 			for team,tab in pairs(Duel.heroes_teams_for_duel or {}) do
 				for i,unit in pairs(tab) do

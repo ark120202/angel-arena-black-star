@@ -38,5 +38,8 @@ if IsServer() then
 		if target then
 			target:RemoveNoDraw()
 		end
+		if target.TeleportPosition then
+			target:Teleport(target.TeleportPosition)
+		end
 	end
 end
