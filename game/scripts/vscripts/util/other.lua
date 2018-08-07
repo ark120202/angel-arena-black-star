@@ -201,16 +201,17 @@ function CastAdditionalAbility(caster, ability, target, delay)
 			local index = #ability.EndChannelListeners + 1
 			ability.EndChannelListeners[index] = function(bInterrupted)
 				ability.EndChannelListeners[index] = nil
-				EndAdditionalAbilityChannel(skill, bInterrupted, delay)
+				EndAdditionalAbilityChannel(caster, unit, skill, bInterrupted, delay)
 			end
 		else
-			EndAdditionalAbilityChannel(skill, ability.channelFailed, delay - GameRules:GetGameTime() + AbilityLastEndTime)
+			EndAdditionalAbilityChannel(caster, unit, skill, ability.channelFailed, delay - GameRules:GetGameTime() + AbilityLastEndTime)
 		end
 	end
 end
 
-function EndAdditionalAbilityChannel(skill, bInterrupted, delay)
+function EndAdditionalAbilityChannel(caster, unit, skill, bInterrupted, delay)
 	Timers:CreateTimer(delay or 0, function()
+		FindClearSpaceForUnit(unit, caster:GetOrigin() - caster:GetForwardVector(), false)
 		skill:EndChannel(bInterrupted)
 		skill:OnChannelFinish(bInterrupted)
 	end)
