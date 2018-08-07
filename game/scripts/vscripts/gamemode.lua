@@ -49,6 +49,7 @@ local modifiers = {
 	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game",
 
 	modifier_item_shard_attackspeed_stack = "modifiers/modifier_item_shard_attackspeed_stack",
+	modifier_custom_gem = "modifiers/modifier_custom_gem",
 }
 
 for k,v in pairs(modifiers) do
