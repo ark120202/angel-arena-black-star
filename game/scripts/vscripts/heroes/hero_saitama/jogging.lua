@@ -55,7 +55,10 @@ if IsServer() then
 			self.range = 0
 			self:SetStackCount(0)
 			parent:ModifyStrength(ability:GetSpecialValueFor("bonus_strength"))
-			ModifyStacksLua(ability, parent, parent, "modifier_saitama_limiter", ability:GetSpecialValueFor("stacks_amount"))
+
+			local modifier = parent:FindModifierByName("modifier_saitama_limiter")
+			if not modifier then modifier = parent:AddNewModifier(parent, ability, "modifier_saitama_limiter", nil) end
+			modifier:SetStackCount(modifier:GetStackCount() + ability:GetSpecialValueFor("stacks_amount"))
 		end
 	end
 end
