@@ -67,8 +67,6 @@ function CDOTA_PlayerResource:SetPlayerTeam(playerId, newTeam)
 	end
 
 	CustomGameEventManager:Send_ServerToPlayer(player, "arena_team_changed_update", {})
-	PlayerResource:RefreshSelection()
-
 	Teams:RecalculateKillWeight(oldTeam)
 	Teams:RecalculateKillWeight(newTeam)
 end
