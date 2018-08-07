@@ -42,8 +42,8 @@ return {
 	},
 	["duel"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT,
-		f = function()
-			Duel:SetDuelTimer(0)
+		f = function(args)
+			Duel:SetDuelTimer(args[1] or 0)
 		end
 	},
 	["killcreeps"] = {
