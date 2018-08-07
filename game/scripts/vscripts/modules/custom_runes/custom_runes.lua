@@ -178,10 +178,3 @@ function CustomRunes:PickUpRune(unit, rune)
 		end
 	end
 end
-
-function CustomRunes:ExecuteOrderFilter(order) -- Depreciated
-end
-
-function CEntityInstance:IsCustomRune() --Depreciated
-	return self.GetUnitName and self:GetUnitName() == "npc_arena_rune"
-end
