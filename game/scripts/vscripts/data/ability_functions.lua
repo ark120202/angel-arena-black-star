@@ -193,11 +193,6 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			}
 		end
 	end,
-	modifier_soul_eater_demon_weapon_from = function(attacker, victim, inflictor)
-		if not inflictor then
-			return 0
-		end
-	end,
 }
 
 INCOMING_DAMAGE_MODIFIERS = {
@@ -296,16 +291,6 @@ INCOMING_DAMAGE_MODIFIERS = {
 			if victim:IsAlive() and not victim:IsMuted() and RollPercentage(GetAbilitySpecial("item_timelords_butterfly", "dodge_chance_pct")) then
 				ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
 				return false
-			end
-		end
-	},
-	modifier_soul_eater_transform_to_scythe_debuff = {
-		multiplier = function(attacker, victium) 
-			if attacker:HasModifier("modifier_soul_eater_transform_to_scythe_buff") then
-				local soul_eater_transform_to_scythe = attacker:GetLinkedHeroEntities()[1]:FindAbilityByName("soul_eater_transform_to_scythe")
-				if soul_eater_transform_to_scythe then
-					return 1 + (soul_eater_transform_to_scythe:GetSpecialValueFor("bonus_maka_damage_pct") * 0.01)
-				end
 			end
 		end
 	},
