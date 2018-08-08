@@ -299,6 +299,16 @@ INCOMING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
+	modifier_soul_eater_transform_to_scythe_debuff = {
+		multiplier = function(attacker, victium) 
+			if attacker:HasModifier("modifier_soul_eater_transform_to_scythe_buff") then
+				local soul_eater_transform_to_scythe = attacker:GetLinkedHeroEntities()[1]:FindAbilityByName("soul_eater_transform_to_scythe")
+				if soul_eater_transform_to_scythe then
+					return 1 + (soul_eater_transform_to_scythe:GetSpecialValueFor("bonus_maka_damage_pct") * 0.01)
+				end
+			end
+		end
+	},
 }
 
 CREEP_BONUSES_MODIFIERS = {

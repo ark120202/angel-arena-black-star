@@ -50,24 +50,6 @@
 //		"AttackRange"			"150"
 //		"ProjectileModel"		""
 //	}
-//
-//	"npc_arena_hero_maka"
-//	{
-//		"base_hero"				"npc_dota_hero_arena_base"
-//		"LinkedHero"			"npc_arena_hero_soul_eater"
-//		"Model"					"models/units/maka/maka.vmdl"
-//		"ModelScale"			"0.96"
-//	}
-//
-//	"npc_arena_hero_soul_eater"
-//	{
-//		"base_hero"				"npc_dota_hero_arena_base"
-//		"LinkedHero"			"npc_arena_hero_maka"
-//		"Model"					"models/units/soul_eater/soul_eater.vmdl"
-//		"ModelScale"			"1.15"
-//		"Ability1"				"soul_eater_demon_weapon_from"
-//		"Ability2"				"soul_eater_human_form"
-//	}
 
 	"npc_arena_hero_debug"
 	{
@@ -101,8 +83,8 @@
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"	"28"
 		"AttackDamageMax"	"30"
-		"DamgeSubTypeResistance" 
-		{ 	
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_LIGHT"	"30"
 			"DAMAGE_SUBTYPE_DARK"	"30"
 			"DAMAGE_SUBTYPE_EARTH"	"30"
@@ -123,8 +105,8 @@
 		"Ability5"	"generic_hidden"
 		"Ability6"	"cherub_flower_garden"
 		"AttackRate"	"1.5"
-		"DamgeSubTypeResistance" 
-		{ 
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_FIRE" 		"0"
 			"DAMAGE_SUBTYPE_WATER" 	"50"
 		}
@@ -184,9 +166,9 @@
 		"AttributeAgilityGain"	"1.5"
 		"AttackDamageMin"	"23"
 		"AttackDamageMax"	"27"
-		
-		"DamgeSubTypeResistance" 
-		{ 
+
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_DARK" 	"0"
 			"DAMAGE_SUBTYPE_LIGHT" 	"50"
 		}
@@ -241,9 +223,9 @@
 		"Ability6"	"zen_gehraz_superposition"
 		"AttackRate"	"1.5"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-		
-		"DamgeSubTypeResistance" 
-		{ 
+
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_DARK" 	"0"
 			"DAMAGE_SUBTYPE_LIGHT" 	"50"
 		}
@@ -274,9 +256,9 @@
 		"AttributeAgilityGain"	"2.1"
 		"AttackDamageMin"	"20"
 		"AttackDamageMax"	"22"
-		
-		"DamgeSubTypeResistance" 
-		{ 
+
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_DARK" 	"0"
 			"DAMAGE_SUBTYPE_LIGHT" 	"50"
 		}
@@ -320,9 +302,9 @@
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"	"46"
 		"AttackDamageMax"	"50"
-		
-		"DamgeSubTypeResistance" 
-		{ 
+
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_WATER" 	"100"
 			"DAMAGE_SUBTYPE_ENERGY" "100"
 			"DAMAGE_SUBTYPE_FIRE" 	"100"
@@ -353,9 +335,9 @@
 		"AttributeAgilityGain"	"3.0"
 		"AttackDamageMin"	"20"
 		"AttackDamageMax"	"30"
-		
-		"DamgeSubTypeResistance" 
-		{ 
+
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_EARTH" 	"100"
 			"DAMAGE_SUBTYPE_ENERGY" "100"
 			"DAMAGE_SUBTYPE_WATER"  "100"
@@ -390,9 +372,9 @@
 		"AttributeAgilityGain"	"1.5"
 		"AttackDamageMin"	"22"
 		"AttackDamageMax"	"25"
-		
-		"DamgeSubTypeResistance" 
-		{ 
+
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_ICE" 	"0"
 			"DAMAGE_SUBTYPE_FIRE" 	"50"
 		}
@@ -424,9 +406,9 @@
 		"MagicalResistance"		"45"
 		"AttackDamageMin"		"22"
 		"AttackDamageMax"		"32"
-		
-		"DamgeSubTypeResistance" 
-		{ 
+
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_DARK"	"100"
 		}
 	}
@@ -482,11 +464,11 @@
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"		"26"
 		"AttackDamageMax"		"28"
-		"DamgeSubTypeResistance" 
-		{ 
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_EARTH" "50"
 		}
-		
+
 	}
 
 	"npc_arena_hero_anakim"
@@ -513,9 +495,9 @@
 		"AttributeAgilityGain"	"1.5"
 		"AttackDamageMin"	"22"
 		"AttackDamageMax"	"26"
-		
-		"DamgeSubTypeResistance" 
-		{ 
+
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_DARK" "50"
 		}
 	}
@@ -545,9 +527,9 @@
 		"AttackDamageMin"		"30"
 		"AttackDamageMax"		"35"
 		"MovementSpeed"			"270"
-		
-		"DamgeSubTypeResistance" 
-		{ 
+
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_DARK" 	"-25"
 			"DAMAGE_SUBTYPE_LIGHT" 	"50"
 		}
@@ -606,9 +588,9 @@
 		"AttackDamageMin"		"15"
 		"AttackDamageMax"		"15"
 		"MagicalResistance"		"15"
-		
-		"DamgeSubTypeResistance" 
-		{ 	
+
+		"DamgeSubTypeResistance"
+		{
 			"DAMAGE_SUBTYPE_LIGHT"	"15"
 			"DAMAGE_SUBTYPE_DARK"	"15"
 			"DAMAGE_SUBTYPE_EARTH"	"15"
@@ -617,5 +599,59 @@
 			"DAMAGE_SUBTYPE_WATER"	"15"
 			"DAMAGE_SUBTYPE_ENERGY"	"15"
 		}
+	}
+
+
+	"npc_arena_hero_maka"
+	{
+		"base_hero"				"npc_dota_hero_arena_base"
+		"LinkedHero"			"npc_arena_hero_soul_eater"
+		"Model"					"models/units/maka/maka.vmdl"
+		"ModelScale"			"0.9"
+		"Ability1"				"maka_soul_resonance"
+		"Ability2"				"maka_grigori"
+		"Ability3"				"maka_soul_perception"
+		"Ability4"				"maka_scythe_form"
+		"Ability5"				"maka_hunter"
+		"Ability6"				"maka_disarm"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttackRange"			"150"
+		"AttackRate"			"1.2"
+		"AttributeBaseStrength"	"19"
+		"AttributeBaseIntelligence"	"22"
+		"AttributeBaseAgility"	"30"
+		"AttributeStrengthGain"	"1.9"
+		"AttributeIntelligenceGain"	"2.2"
+		"AttributeAgilityGain"	"3.0"
+		"AttackDamageMin"		"30"
+		"AttackDamageMax"		"43"
+		"MagicalResistance"		"25"
+	}
+
+	"npc_arena_hero_soul_eater"
+	{
+		"base_hero"				"npc_dota_hero_arena_base"
+		"LinkedHero"			"npc_arena_hero_maka"
+		"Model"					"models/units/soul_eater/soul_eater.vmdl"
+		"ModelScale"			"1"
+		"Ability1"				"soul_eater_soul_resonance"
+		"Ability2"				"soul_eater_transform_to_scythe"
+		"Ability3"				"soul_eater_black_blood"
+		"Ability4"				"soul_eater_eat_souls"
+		"Ability5"				"soul_eater_transform_to_human"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttackRange"			"150"
+		"AttackRate"			"1.4"
+		"AttributeBaseStrength"	"30"
+		"AttributeBaseIntelligence"	"19"
+		"AttributeBaseAgility"	"19"
+		"AttributeStrengthGain"	"2.8"
+		"AttributeIntelligenceGain"	"1.8"
+		"AttributeAgilityGain"	"1.8"
+		"AttackDamageMin"		"20"
+		"AttackDamageMax"		"30"
+		"MagicalResistance"		"25"
 	}
 }
