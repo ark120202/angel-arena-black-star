@@ -248,6 +248,16 @@ function table.uniq(t)
 	return o
 end
 
+function table.filter(t, predicate)
+	local new = {}
+	for k, v in pairs(t) do
+		if predicate(v, k) then
+			table.insert(new, v)
+		end
+	end
+	return new
+end
+
 function table.filterValues(t, predicate)
 	local new = {}
 	for k, v in pairs(t) do

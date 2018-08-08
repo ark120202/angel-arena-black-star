@@ -148,7 +148,7 @@ function GameMode:OnEntityKilled(keys)
 			end
 		end
 
-		if killedUnit:IsBoss() and not killedUnit.IsDominatedBoss then
+		if killedUnit:IsBoss() and Bosses:IsLastBossEntity(killedUnit) then
 			local team = DOTA_TEAM_NEUTRALS
 			if killerEntity then
 				team = killerEntity:GetTeam()
