@@ -241,6 +241,15 @@ function HookPanoramaPanels() {
 }
 
 
+// On Death
+function OnDeath(data) {	
+	if (data.entindex_killed === SafeGetPlayerHeroEntityIndex(Game.GetLocalPlayerID())) {
+		var killerOwner = Entities.GetPlayerOwnerID(data.entindex_attacker);
+		var attacker = Players.IsValidPlayerID(killerOwner) ? SafeGetPlayerHeroEntityIndex(killerOwner) : data.entindex_attacker;
+		FindDotaHudElement('KilledByHeroName').text = $.Localize(GetHeroName(attacker)).toUpperCase();
+	}
+}
+
 // Toasts
 function CreateCustomToast(data) {
 	var row = $.CreatePanel('Panel', $('#CustomToastManager'), '');
@@ -340,7 +349,16 @@ function CreateHeroElements(id) {
 		if (changesObject[Game.GetLocalPlayerID()]) $.GetContextPanel().AddClass('LocalPlayerAbandoned');
 	});
 
+	DynamicSubscribePTListener('stats_client', function(tableName, changesObject) {
+		var localPlayerId = Game.GetLocalPlayerID();
+		if (changesObject[localPlayerId] && changesObject[localPlayerId].isBanned) {
+			$.GetContextPanel().AddClass('LocalPlayerBanned');
+		}
+	});
+
 	AutoUpdatePanoramaHUD();
+	GameEvents.Subscribe('entity_killed', OnDeath);
+	
 	GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
 
 	GameEvents.Subscribe('create_generic_panel', function(data) {

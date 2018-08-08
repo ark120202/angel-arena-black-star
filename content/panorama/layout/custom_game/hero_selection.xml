@@ -281,8 +281,9 @@
 				<!-- class="Debug" -->
 				<Panel id="MinimapPanel" class="">
 					<Image class="MinimapImage only_map_landscape_5v5" src="file://{images}/custom_game/hero_selection/5v5.tga" />
-					<Image class="MinimapImage only_map_landscape_4v4v4v4" id="MinimapImage4v4v4v4" src="file://{images}/custom_game/hero_selection/4v4v4v4.tga" />
+					<Image class="MinimapImage only_map_landscape_4v4v4v4" src="file://{images}/custom_game/hero_selection/4v4v4v4.tga" />
 					<Image class="MinimapImage only_map_landscape_war3" src="file://{images}/custom_game/hero_selection/war3.tga" />
+					<Image class="MinimapImage only_map_landscape_1v1" src="file://{images}/custom_game/hero_selection/1v1.tga" />
 
 					<Panel id="MinimapDynamicIcons" />
 					<Panel class="MinimapSpawnBoxes only_map_landscape_5v5">
@@ -377,6 +378,7 @@
 								<Panel id="MinimapSpawnBox_3_3_0" onactivate="OnMinimapClickSpawnBox(3, 3, 0)" class="MinimapSpawnBox" style="position: 193px 208px 0;"/>
 								<Panel id="MinimapSpawnBox_3_3_1" onactivate="OnMinimapClickSpawnBox(3, 3, 1)" class="MinimapSpawnBox" style="position: 193px 108px 0;"/>
 					</Panel>
+					<Panel class="MinimapSpawnBoxes only_map_landscape_1v1" />
 				</Panel>
 				<!--  ExternalBrowserGoToURL  BrowserGoToURL = DOTADisplayURL -->
 				<Image id="AdsBanner" onactivate="OnAdsClicked()" src="file://{images}/custom_game/hero_selection/ads.png">

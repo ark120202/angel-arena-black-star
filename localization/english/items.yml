@@ -118,14 +118,12 @@ DOTA_Tooltip_modifier_item_edge_of_vyse_active_Description: 'Invisible. Movement
 DOTA_Tooltip_ability_item_gem_of_clear_mind: Gem of Clear Mind
 DOTA_Tooltip_ability_item_gem_of_clear_mind_Description: |-
   <h1>Passive: Clear Mind</h1> Adds the ability to differentiate illusions and real heroes to any allied vision within its carrier's range.
-  Dropped on death, and cannot be destroyed.
 DOTA_Tooltip_ability_item_gem_of_clear_mind_radius: 'CLEAR MIND RADIUS:'
 DOTA_Tooltip_ability_item_gem_Note0: Disabled while on a courier.
 
 DOTA_Tooltip_ability_item_gem_of_pure_soul: Gem of Pure Soul
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Description: |-
   <h1>Passive: Pure Soul</h1> Adds the ability to see enemies ability cooldowns to any allied vision within its carrier's range.
-  Dropped on death, and cannot be destroyed.
 DOTA_Tooltip_ability_item_gem_of_pure_soul_radius: 'PURE SOUL RADIUS:'
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Note0: Disabled while on a courier.
 
@@ -446,6 +444,7 @@ DOTA_Tooltip_ability_item_skull_of_midas_kill_xp: 'KILL XP:'
 DOTA_Tooltip_ability_item_skull_of_midas_kill_gold: 'KILL GOLD:'
 DOTA_Tooltip_ability_item_chest_of_midas: Chest of Midas
 DOTA_Tooltip_ability_item_chest_of_midas_Description: '<h1>Passive: Golden Chest</h1> Each time you get attacked by enemy hero you get some gold and some experience.<br><br>Bosses attacks won''t give you any experience and are reducing your gold.'
+DOTA_Tooltip_ability_item_chest_of_midas_Note0: Illusion's attacks won't give you any gold.
 DOTA_Tooltip_ability_item_chest_of_midas_bonus_armor: +$armor
 DOTA_Tooltip_ability_item_chest_of_midas_xp: 'XP:'
 DOTA_Tooltip_ability_item_chest_of_midas_gold: 'GOLD:'
@@ -1256,7 +1255,6 @@ DOTA_Tooltip_ability_item_orb_of_essences_bonus_all: +$all
 DOTA_Tooltip_ability_item_wand_of_midas: Wand of Midas
 DOTA_Tooltip_ability_item_wand_of_midas_Description: '<h1>Active: Gold Charge</h1> Gives you some gold and instantly restores health and mana based on the number of charges stored. Gains a charge (max %max_charges%) whenever whenever a nearby enemy uses an ability.'
 DOTA_Tooltip_ability_item_wand_of_midas_bonus_all: +$all
-DOTA_Tooltip_ability_item_wand_of_midas_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_wand_of_midas_gold: 'GOLD PER CHARGE:'
 DOTA_Tooltip_ability_item_wand_of_midas_restore_per_charge: 'HEALTH/MANA PER CHARGE:'
 DOTA_Tooltip_ability_item_wand_of_midas_radius: 'RADIUS:'
@@ -1383,9 +1381,8 @@ DOTA_Tooltip_ability_item_scythe_of_sun_bonus_evasion: '%+$evasion'
 DOTA_Tooltip_ability_item_scythe_of_sun_cast_range_bonus: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_scythe_of_sun_spell_amp_pct: '%SPELL DAMAGE AMP:'
 # DOTA_Tooltip_ability_item_scythe_of_sun_hex_duration: 'HEX DURATION:' # Too much specials
-DOTA_Tooltip_ability_item_scythe_of_sun_hex_damage_pct: '%HEX DAMAGE INCREASE:'
 DOTA_Tooltip_modifier_item_scythe_of_sun_hex: Sheeped
-DOTA_Tooltip_modifier_item_scythe_of_sun_hex_Description: You are a sheep. Cannot attack or cast spells. Incoming damage increased by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, movement speed is limited to %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%
+DOTA_Tooltip_modifier_item_scythe_of_sun_hex_Description: You are a sheep. Cannot attack or cast spells. Movement speed is limited to %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%
 
 DOTA_Tooltip_ability_item_book_of_the_guardian: Book of the Guardian
 DOTA_Tooltip_ability_item_book_of_the_guardian_Description: |-
@@ -1564,3 +1561,21 @@ DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: +Day Vision
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +Night Vision
 DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%+$spell_amp'
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize the singularity.
+
+DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
+DOTA_Tooltip_ability_item_golden_arrow_Description: >-
+  <h1>Active: Golden Life</h1> Gives you %gold_per_stack% gold. If you have more
+  than %attributes_per_stack% of each attribute, this ability will decrease them
+  by %attributes_per_stack%. Otherwise, deals %damage_per_stack% damage to your
+  hero.
+
+
+  All values of this ability would be increased by 100% with each use. Each use
+  also increases it's cooldown by %cooldown_per_stack%, starting from
+  %cooldown_base%.
+DOTA_Tooltip_ability_item_golden_arrow_Note0: >-
+  You won't be able to use this ability, if the active ability should damage
+  you, Golden Arrow can't be used nearby the fountain.
+DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: +$move_speed
+DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Multiplier

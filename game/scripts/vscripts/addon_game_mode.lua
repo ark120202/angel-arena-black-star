@@ -139,9 +139,6 @@ function Precache(context)
 		if v.ProjectileModel then
 			table.insert(particles, v.ProjectileModel)
 		end
-		if v.PrecacheAllWearables == 1 then
-			DynamicWearables:PrecacheAllWearablesForHero(context, k)
-		end
 	end
 
 	local db = LoadKeyValues("scripts/attachments.txt")

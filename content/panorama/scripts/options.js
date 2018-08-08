@@ -5,9 +5,10 @@ var Options = {
 	container: {},
 	callbacks: {},
 	SetValue: function(name, value) {
-		if (this.container[name] !== value && this.callbacks[name])
-			for (var i = 0; i < this.callbacks.length; i++)
-				this.callbacks[i](value);
+		var callbacks = this.callbacks[name];
+		if (this.container[name] !== value && callbacks)
+			for (var i = 0; i < this.callbacks[name].length; i++)
+				this.callbacks[name][i](value);
 		this.container[name] = value;
 	},
 	DeleteValue: function(name) {
@@ -25,6 +26,7 @@ var Options = {
 	Subscribe: function(name, callback) {
 		if (!this.callbacks[name]) this.callbacks[name] = [];
 		this.callbacks[name].push(callback);
+
 		var cv = this.GetValue(name);
 		if (cv) callback(cv);
 	},

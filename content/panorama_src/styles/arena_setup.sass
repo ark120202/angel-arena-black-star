@@ -2,6 +2,10 @@
 	width: 100%
 	height: 100%
 
+	> Panel
+		width: 100%
+		height: 100%
+
 #GCColumn
 	width: 35%
 	height: 100%
@@ -449,3 +453,105 @@ DOTAAvatarImage
 
 	&:active
 		sound: "ui_team_select_lock_and_start"
+
+#PartyWarningPanel
+	align: center top
+	text-align: center
+	margin-top: 50px
+	font-size: 24px
+	font-weight: bold
+	background-color: rgba(#222, 0.8)
+	padding: 8px
+
+#LoadingPanel
+	width: 100%
+	margin-top: -125px
+	align: center center
+	flow-children: down
+
+	.Spinner
+		width: 80px
+		height: 80px
+		horizontal-align: center
+
+	#LoadingMessage
+		width: 100%
+		text-align: center
+		margin-top: 8px
+		font-size: 30px
+
+#ErrorPanel
+	width: 100%
+	margin-top: -110px
+	visibility: collapse
+	align: center center
+	flow-children: down
+
+	> Label
+		width: 100%
+		text-align: center
+		font-size: 30px
+		color: #fff
+		text-overflow: shrink
+
+	#ErrorIcon
+		width: 70px
+		height: 70px
+		margin-bottom: 10px
+		background-image: url('s2r://panorama/images/status_icons/exclamation_psd.vtex')
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		background-size: contain
+		horizontal-align: center
+		wash-color: #f99
+
+	#ErrorMessage
+		max-height: 300px
+
+.PlayButton
+	width: 330px
+	max-height: 49px
+	margin-bottom: 21px
+	margin-right: 58px
+	padding: 4px 12px 4px 12px
+
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(rgba(#5A615E, 204)), to(rgba(#879695, 204)))
+	background-image: url("s2r://panorama/images/backgrounds/background_play_button_2x_png.vtex")
+	background-size: 328px 50px
+
+	box-shadow: fill rgba(#002a66, 68) -4px -4px 8px 9px
+
+	border-top: 1px solid rgba(#ffffff, 68)
+	border-right: 1px solid rgba(#000000, 136)
+	border-left: 1px solid rgba(#ffffff, 68)
+	border-bottom: 1px solid rgba(#000000, 136)
+
+	opacity: 1
+
+	transition-property: box-shadow, background-color, opacity, transform
+	transition-delay: 0.0s
+	transition-duration: 0.2s
+	transition-timing-function: ease-in-out
+
+	&:hover
+		background-color: gradient(linear, 0% 0%, 0% 100%, from(#5A615E), to(#b7c6c5))
+		box-shadow: fill rgba(#414f4d, 170) -4px -4px 8px 8px
+
+	&:active
+		background-color: gradient(linear, 0% 0%, 0% 100%, from(#5A615E), to(#ffffff))
+
+	& Label
+		margin-top: 2px
+		horizontal-align: center
+		font-size: 28px
+		font-weight: bold
+		color: white
+		text-transform: uppercase
+		letter-spacing: 3px
+		text-align: center
+		height: 40px
+		text-overflow: shrink
+
+		transition-property: color
+		transition-delay: 0.0s
+		transition-duration: 0.2s

@@ -29,9 +29,7 @@
 //#base "abilities/heroes/hero_maka.txt"
 //#base "abilities/heroes/hero_soul_eater.txt"
 
-#base "abilities/heroes/hero_medusa.txt"
 #base "abilities/heroes/hero_pudge.txt"
-#base "abilities/heroes/hero_phantom_lancer.txt"
 
 "DOTAAbilities"
 {

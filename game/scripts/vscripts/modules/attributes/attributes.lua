@@ -12,7 +12,7 @@ if not Attributes then
 end
 
 
-Events:Register("activate", "attributes", function ()
+Events:Register("activate", function ()
 	local gameModeEntity = GameRules:GetGameModeEntity()
 	for _, v in pairs(ATTRIBUTE_LIST) do
 		if v.attributeDerivedStat ~= nil then

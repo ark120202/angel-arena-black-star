@@ -76,9 +76,9 @@ function Snippet_OptionVoting_Recalculate(votePanel, voteData) {
 
 	var total = 0;
 	//var leadingKey;
-	for (var pid in voteData.votes) {
+	for (var playerId in voteData.votes) {
 		total += 1;
-		var vote = voteData.votes[pid];
+		var vote = voteData.votes[playerId];
 		amount[vote] += 1;
 		/*if (leadingKey == null || amount[vote] > voteData.votes[leadingKey]) {
 			leadingKey = vote

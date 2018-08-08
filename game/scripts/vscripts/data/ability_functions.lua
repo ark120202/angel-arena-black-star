@@ -201,35 +201,6 @@ OUTGOING_DAMAGE_MODIFIERS = {
 }
 
 INCOMING_DAMAGE_MODIFIERS = {
-	modifier_mana_shield_arena = {
-		multiplier = function(attacker, victim, _, damage)
-			local medusa_mana_shield_arena = victim:FindAbilityByName("medusa_mana_shield_arena")
-			if medusa_mana_shield_arena and not victim:IsIllusion() and victim:IsAlive() and not victim:PassivesDisabled() then
-				local absorption_percent = medusa_mana_shield_arena:GetAbilitySpecial("absorption_tooltip") * 0.01
-				local ndamage = damage * absorption_percent
-				local mana_needed = ndamage / medusa_mana_shield_arena:GetAbilitySpecial("damage_per_mana")
-				if mana_needed <= victim:GetMana() then
-					victim:EmitSound("Hero_Medusa.ManaShield.Proc")
-
-					if RollPercentage(medusa_mana_shield_arena:GetAbilitySpecial("reflect_chance")) then
-						ApplyDamage({
-							attacker = victim,
-							victim = attacker,
-							ability = medusa_mana_shield_arena,
-							damage = ndamage,
-							damage_type = medusa_mana_shield_arena:GetAbilityDamageType(),
-						})
-					end
-					victim:SpendMana(mana_needed, medusa_mana_shield_arena)
-					local particleName = "particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
-					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
-					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
-					ParticleManager:SetParticleControl(particle, 1, Vector(mana_needed,0,0))
-					return 1 - absorption_percent
-				end
-			end
-		end
-	},
 	modifier_mirratie_sixth_sense = {
 		multiplier = function(_, victim)
 			local mirratie_sixth_sense = victim:FindAbilityByName("mirratie_sixth_sense")

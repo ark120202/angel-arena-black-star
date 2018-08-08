@@ -49,7 +49,7 @@
 		"ItemResult"					"item_skadi_8"
 		"ItemRequirements"
 		{
-			"01"						"item_skadi_4;item_skadi_4"
+			"01"						"item_skadi_4;item_skadi_4;item_moon_dust"
 		}
 	}
 
@@ -76,12 +76,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"250 500 1000 2000"
+				"bonus_health"			"250 500 1000 1500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"275 550 1100 2200"
+				"bonus_mana"			"350 700 1400 2800"
 			}
 			"04"
 			{
@@ -123,12 +123,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"250 500 1000 2000"
+				"bonus_health"			"250 500 1000 1500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"275 550 1100 2200"
+				"bonus_mana"			"350 700 1400 2800"
 			}
 			"04"
 			{
@@ -170,12 +170,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"250 500 1000 2000"
+				"bonus_health"			"250 500 1000 1500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"275 550 1100 2200"
+				"bonus_mana"			"350 700 1400 2800"
 			}
 			"04"
 			{
@@ -217,12 +217,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"250 500 1000 2000"
+				"bonus_health"			"250 500 1000 1500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"275 550 1100 2200"
+				"bonus_mana"			"350 700 1400 2800"
 			}
 			"04"
 			{

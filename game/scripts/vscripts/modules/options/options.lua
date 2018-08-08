@@ -27,12 +27,19 @@ function Options:IsEquals(name, value)
 end
 
 function Options:SetPreGameVoting(name, variants, default, calculation)
-	Options.PreGameVotings[name] = {
-		votes = {},
-		variants = table.deepcopy(variants),
-		default = default,
-		calculation = calculation
-	}
+	if not Options.PreGameVotings[name] then
+		Options.PreGameVotings[name] = {votes = {}}
+	end
+	if variants then
+		Options.PreGameVotings[name].variants = variants
+	end
+	if default then
+		Options.PreGameVotings[name].default = default
+	end
+	if calculation then
+		Options.PreGameVotings[name].calculation = calculation
+	end
+
 	PlayerTables:SetTableValue("option_votings", name, Options.PreGameVotings[name])
 	return Options.PreGameVotings[name]
 end
@@ -101,7 +108,11 @@ function Options:LoadDefaultValues()
 	Options:SetInitialValue("EnableRandomAbilities", false)
 	Options:SetInitialValue("EnableStatisticsCollection", true)
 	Options:SetInitialValue("EnableRatingAffection", false)
-	Options:SetInitialValue("FailedRankedGame", false)
+	Options:SetInitialValue("DynamicKillWeight", true)
+	Options:SetInitialValue("TeamSetupMode", "open")
+	Options:SetInitialValue("EnableBans", true)
+	Options:SetInitialValue("CustomTeamColors", false)
+	Options:SetInitialValue("KillLimit", 0)
 	--Options:SetInitialValue("MapLayout", "5v5")
 
 	Options:SetInitialValue("BanningPhaseBannedPercentage", 0)
@@ -113,7 +124,7 @@ function Options:LoadDefaultValues()
 	Options:SetPreGameVoting("kill_limit", {100, 125, 150, 175}, 150, {
 		calculationFunction = "/",
 		callback = function(value)
-			GameRules:SetKillGoal(math.round(value))
+			Options:SetValue("KillLimit", math.round(value))
 		end
 	})
 end
@@ -137,26 +148,58 @@ function Options:LoadMapValues()
 			end
 		})
 	elseif gamemode == "ranked" then
-		SKIP_TEAM_SETUP = true
+		Options:SetValue("EnableRatingAffection", true)
+		Options:SetValue("BanningPhaseBannedPercentage", 80)
+
+		GameRules:SetCustomGameSetupAutoLaunchDelay(-1)
+		GameRules:LockCustomGameSetupTeamAssignment(true)
+		GameRules:EnableCustomGameSetupAutoLaunch(false)
+		Options:SetValue("TeamSetupMode", "balanced")
+
 		Events:Once("AllPlayersLoaded", function()
-			local failed = (GetInGamePlayerCount() < 10 or matchID == 0) and not StatsClient.Debug
-			if not failed then
-				Options:SetValue("EnableRatingAffection", true)
-				Options:SetValue("BanningPhaseBannedPercentage", 100)
-			else
-				debugp("Options:LoadMapValues", "Ranked disabled because of low amount of players of match id == 0")
-				Options:SetValue("FailedRankedGame", true)
+			local playerCount = GetInGamePlayerCount()
+			local desiredPlayerCount = Teams:GetTotalDesiredPlayerCount()
+			local failed = not StatsClient.Debug and (matchID == 0 or playerCount < desiredPlayerCount)
+
+			if failed then
+				GameMode:BreakSetup("Not enough players. Ranked games are meant to be full.")
+				return
 			end
+
+			StatsClient:AssignTeams(function(response)
+				for i = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+					local player = PlayerResource:GetPlayer(i)
+					if player then player:SetTeam(DOTA_TEAM_NOTEAM) end
+				end
+
+				for team, players in ipairs(response) do
+					for _, player in ipairs(players) do
+						local player = PlayerResource:GetPlayer(player)
+						if player then player:SetTeam(team + 1) end
+					end
+				end
+
+				GameRules:FinishCustomGameSetup()
+			end)
 		end, true)
+	elseif gamemode == "" then
+		Options:SetValue("BanningPhaseBannedPercentage", 40)
 	end
 	if landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216
-		USE_CUSTOM_TEAM_COLORS = true
+		Options:SetValue("CustomTeamColors", true)
+	end
+	if landscape == "1v1" then
+		MAP_LENGTH = 3840
+		Options:SetValue("DynamicKillWeight", false)
+		Options:SetPreGameVoting("kill_limit", {10, 15, 20, 25, 30, 35}, 25)
+		-- Would be pretty annoying for enemy
+		Options:SetValue("EnableBans", false)
 	end
 end
 
 function Options:LoadCheatValues()
-
+	Options:SetValue("EnableBans", false)
 end
 
 function Options:LoadToolsValues()

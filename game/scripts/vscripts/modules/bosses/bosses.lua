@@ -2,6 +2,7 @@ if Bosses == nil then
 	Bosses = class({})
 	Bosses.MinimapPoints = {}
 	Bosses.NextVoteID = 0
+	Bosses.aliveStatus = {}
 end
 ModuleRequire(..., "data")
 ModuleRequire(..., "boss_loot")
@@ -30,6 +31,7 @@ function Bosses:SpawnStaticBoss(name)
 end
 
 function Bosses:SpawnBossUnit(name, spawner)
+	Bosses.aliveStatus[name] = true
 	DynamicMinimap:SetVisibleGlobal(Bosses.MinimapPoints[spawner], true)
 	local boss = CreateUnitByName("npc_arena_boss_" .. name, spawner:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
 	boss.SpawnerEntity = spawner
@@ -57,6 +59,7 @@ function Bosses:RegisterKilledBoss(unit, team)
 		Gold:ModifyGold(v, amount)
 	end
 
+	Bosses.aliveStatus[bossname] = false
 	Events:Emit("bosses/kill/" .. bossname)
 	Timers:CreateTimer(unit:GetKeyValue("Bosses_RespawnDuration"), function()
 		Events:Emit("bosses/respawn/" .. bossname)
@@ -135,4 +138,8 @@ function Bosses:MakeBossAI(unit, name)
 		profile = "tower"
 	end
 	local ai = SimpleAI:new(unit, profile, aiTable)
+end
+
+function Bosses:IsAlive(name)
+	return Bosses.aliveStatus[name]
 end

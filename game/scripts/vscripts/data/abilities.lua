@@ -79,6 +79,9 @@ COFFEE_BEAN_NOT_REFRESHABLE = {
 	zuus_cloud = true,
 	monkey_king_boundless_strike = true,
 	dazzle_shallow_grave = true,
+	saitama_push_ups = true,
+	saitama_squats = true,
+	saitama_sit_ups = true,
 }
 
 
@@ -95,12 +98,15 @@ BOSS_BANNED_ABILITIES = {
 	item_demon_king_bar = true,
 	morphling_adaptive_strike_str = true,
 	item_spirit_helix = true,
+	pugna_life_drain = true,
 }
 
 -- "CalculateSpellDamageTooltip"	"0"
 SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	zuus_static_field = true,
 	enigma_midnight_pulse = true,
+	enigma_black_hole = true,
+	zaken_stitching_strikes = true,
 	morphling_adaptive_strike_agi = true,
 	nyx_assassin_mana_burn = true,
 	elder_titan_earth_splitter = true,
@@ -137,15 +143,4 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 }
 
 PERCENT_DAMAGE_MODIFIERS = {
-}
-
-DISABLE_HELP_ABILITIES = {
-	wisp_tether = true,
-	keeper_of_the_light_recall = true,
-	chen_test_of_faith_teleport = true,
-	oracle_purifying_flames = true,
-	kunkka_x_marks_the_spot = true,
-	bloodseeker_bloodrage = true,
-	bane_nightmare = true,
-	winter_wyvern_cold_embrace = true,
 }

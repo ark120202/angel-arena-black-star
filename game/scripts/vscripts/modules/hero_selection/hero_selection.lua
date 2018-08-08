@@ -34,7 +34,7 @@ ModuleRequire(..., "hero_replacer")
 ModuleRequire(..., "client_actions")
 ModuleLinkLuaModifier(..., "modifier_hero_selection_transformation")
 
-Events:Register("activate", "hero_selection", function ()
+Events:Register("activate", function ()
 	GameRules:SetHeroSelectionTime(-1)
 	local preTime = HERO_SELECTION_PICK_TIME + HERO_SELECTION_STRATEGY_TIME + 3.75 + Options:GetValue("PreGameTime")
 	if Options:GetValue("BanningPhaseBannedPercentage") > 0 then
@@ -174,14 +174,14 @@ function HeroSelection:StartStateHeroPick()
 	PlayerTables:DeleteTableKeys("hero_selection_banning_phase", notBanned)
 	local banned = PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")
 	local bannedCount = table.count(banned)
-	CustomChatSay(-1, -1, {
+	Chat:SendSystemMessage({
 		localizable = pluralize(bannedCount, "DOTA_Chat_AD_BanCount1", "DOTA_Chat_AD_BanCount"),
 		variables = {
 			["%s1"] = bannedCount
 		}
 	})
 	for hero in pairs(banned) do
-		CustomChatSay(-1, -1, {
+		Chat:SendSystemMessage({
 			localizable = "DOTA_Chat_AD_Ban",
 			variables = {
 				["%s1"] = hero
@@ -218,7 +218,7 @@ function HeroSelection:StartStateStrategy()
 		end
 	end
 	--CustomGameEventManager:Send_ServerToAllClients("hero_selection_update_precache_progress", toPrecache)
-	GameRules:GetGameModeEntity():SetAnnouncerDisabled(DISABLE_ANNOUNCER)
+	GameRules:GetGameModeEntity():SetAnnouncerDisabled(false)
 	--CustomGameEventManager:Send_ServerToAllClients("hero_selection_show_precache", {})
 
 	HeroSelection:SetTimerDuration(HERO_SELECTION_STRATEGY_TIME)
@@ -256,7 +256,9 @@ function HeroSelection:StartStateInGame(toPrecache)
 				HeroSelection:SetState(HERO_SELECTION_PHASE_END)
 				for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
 					for plyId,v in pairs(_v) do
-						HeroSelection:SelectHero(plyId, tostring(v.hero), nil, true)
+						if not PlayerResource:IsPlayerAbandoned(plyId) then
+							HeroSelection:SelectHero(plyId, tostring(v.hero), nil, nil, true)
+						end
 					end
 				end
 				GameMode:OnHeroSelectionEnd()

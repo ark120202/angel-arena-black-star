@@ -1,34 +1,3 @@
-local DEBUG_ENV = IsInToolsMode() and "."
-
-function debugp( ... )
-	local args = {...}
-	local caller = table.remove(args, 1)
-	if DEBUG_ENV and caller:match(DEBUG_ENV) then
-		print(caller .. ":", unpack(args))
-	end
-end
-
-function CPrint( ... )
-	if SendDebugInfoToClient then
-		local printResult = ""
-		for _,v in ipairs({...}) do
-			printResult = printResult .. tostring(v) .. "\t"
-		end
-		for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-			if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) and DynamicWearables:HasWearable(i, "wearable_developer") then
-				local player = PlayerResource:GetPlayer(i)
-				if player then
-					CustomGameEventManager:Send_ServerToPlayer(player, "debug_cprint", {text = printResult})
-				end
-			end
-		end
-	end
-end
-
-function CPrintTable(t, indent, done)
-	PrintTableCall(t, CPrint, indent, done)
-end
-
 function PrintTable(t, indent, done)
 	PrintTableCall(t, print, indent, done)
 end

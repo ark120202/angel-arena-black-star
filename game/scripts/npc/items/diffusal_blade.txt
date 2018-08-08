@@ -4,7 +4,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"2100"
+		"ItemCost"						"2400"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena"
 		"ItemRequirements"
@@ -17,7 +17,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"2100"
+		"ItemCost"						"2400"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_2"
 		"ItemRequirements"
@@ -30,7 +30,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"2100"
+		"ItemCost"						"2400"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_3"
 		"ItemRequirements"
@@ -43,7 +43,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"2100"
+		"ItemCost"						"2400"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_4"
 		"ItemRequirements"
@@ -56,7 +56,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"2100"
+		"ItemCost"						"2400"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_diffusal_blade_arena_5"
 		"ItemRequirements"
@@ -73,7 +73,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 
 		// Stats
@@ -226,7 +226,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 
 		// Stats
@@ -379,7 +379,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 
 		// Stats
@@ -532,7 +532,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 
 		// Stats
@@ -685,7 +685,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 
 		// Stats

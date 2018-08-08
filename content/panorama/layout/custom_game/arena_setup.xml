@@ -1,7 +1,6 @@
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
-		<include src="s2r://panorama/styles/play.vcss_c" />
 		<include src="file://{resources}/styles/arena_setup.css" />
 	</styles>
 	<scripts>
@@ -32,40 +31,54 @@
 		</snippet>
 	</snippets>
 	<Panel hittest="false" class="TeamSelect">
-		<Panel id="TeamList" />
-		<Panel hittest="false" id="SettingsColumn" >
-			<Panel id="UnassignedPlayerPanel" >
-				<Button id="UnassignedPlayersButton" onactivate="Game.PlayerJoinTeam(DOTATeam_t.DOTA_TEAM_NOTEAM)">
-					<Panel id="UnassignedPlayersHeader">
-						<Label text="#custom_game_team_select_unassigned_players" />
-					</Panel>
-					<Panel id="UnassignedPlayersDivider" />
-					<Panel id="UnassignedPlayersContainer" />
-				</Button>
+		<Panel id="team-select__open">
+			<Panel id="TeamList" />
+			<Panel hittest="false" id="SettingsColumn" >
+				<Panel id="UnassignedPlayerPanel" >
+					<Button id="UnassignedPlayersButton" onactivate="Game.PlayerJoinTeam(DOTATeam_t.DOTA_TEAM_NOTEAM)">
+						<Panel id="UnassignedPlayersHeader">
+							<Label text="#custom_game_team_select_unassigned_players" />
+						</Panel>
+						<Panel id="UnassignedPlayersDivider" />
+						<Panel id="UnassignedPlayersContainer" />
+					</Button>
 
-				<Button id="AutoAssignButton" onactivate="OnAutoAssignPressed()">
-					<Image src="s2r://panorama/images/control_icons/double_arrow_left_png.vtex" />
-					<Label text="#custom_game_team_select_auto_assign" />
-				</Button>
-				<Button id="ShuffleTeamAssignmentButton" onactivate="OnShufflePlayersPressed()">
-					<Label text="#custom_game_team_select_shuffle" />
-					<Image src="s2r://panorama/images/control_icons/shuffle_psd.vtex" />
-				</Button>
-				<Button id="LockAndStartButton" class="PlayButton" onactivate="OnLockAndStartPressed()">
-					<Label text="#custom_game_team_select_lock_start" />
-				</Button>
-				<Button id="CancelAndUnlockButton" class="PlayButton" onactivate="OnCancelAndUnlockPressed()">
-					<Label text="#custom_game_team_select_cancel_unlock" />
-				</Button>
-			</Panel>
-			<Panel id="StartGameCountdownTimer">
-				<Label id="TeamSelectTimer" text="#custom_game_team_select_timer" />
-				<Panel id="TimerLabelBox" >
-					<Label id="TimerLabelAutoStart" text="#custom_game_team_select_auto_start" />
-					<Label id="TimerLabelGameStart" text="#custom_game_team_select_starting" />
+					<Button id="AutoAssignButton" onactivate="OnAutoAssignPressed()">
+						<Image src="s2r://panorama/images/control_icons/double_arrow_left_png.vtex" />
+						<Label text="#custom_game_team_select_auto_assign" />
+					</Button>
+					<Button id="ShuffleTeamAssignmentButton" onactivate="OnShufflePlayersPressed()">
+						<Label text="#custom_game_team_select_shuffle" />
+						<Image src="s2r://panorama/images/control_icons/shuffle_psd.vtex" />
+					</Button>
+					<Button id="LockAndStartButton" class="PlayButton" onactivate="OnLockAndStartPressed()">
+						<Label text="#custom_game_team_select_lock_start" />
+					</Button>
+					<Button id="CancelAndUnlockButton" class="PlayButton" onactivate="OnCancelAndUnlockPressed()">
+						<Label text="#custom_game_team_select_cancel_unlock" />
+					</Button>
 				</Panel>
+				<Panel id="StartGameCountdownTimer">
+					<Label id="TeamSelectTimer" text="#custom_game_team_select_timer" />
+					<Panel id="TimerLabelBox" >
+						<Label id="TimerLabelAutoStart" text="#custom_game_team_select_auto_start" />
+						<Label id="TimerLabelGameStart" text="#custom_game_team_select_starting" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Panel id="team-select__balanced">
+			<Label id="PartyWarningPanel" text="#arena_setup_party_warning" />
+			<Panel id="LoadingPanel">
+				<Panel class="Spinner" />
+				<Label id="LoadingMessage" text="#arena_setup_loading"/>
+			</Panel>
+			<Panel id="ErrorPanel">
+				<Image id="ErrorIcon" />
+				<Label id="ErrorMessage" />
+				<Label id="ErrorSafeToLeave" text="#arena_setup_safe_to_leave" />
 			</Panel>
 		</Panel>
 	</Panel>
 </root>
-

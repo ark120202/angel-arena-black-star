@@ -144,8 +144,8 @@ function GetPlayerHeroName(playerId) {
 	return '';
 }
 
-function GetPlayerGold(iPlayerID) {
-	return +PlayerTables.GetTableValue('gold', iPlayerID);
+function GetPlayerGold(playerId) {
+	return +PlayerTables.GetTableValue('gold', playerId);
 }
 
 function dynamicSort(property) {
@@ -167,7 +167,7 @@ function GetItemCountInInventory(nEntityIndex, itemName, bStash) {
 		endPoint = 14;
 	for (var i = endPoint; i >= 0; i--) {
 		var item = Entities.GetItemInSlot(nEntityIndex, i);
-		if (Abilities.GetAbilityName(item) === itemName)
+		if (Abilities.GetAbilityName(item) === itemName && Items.GetPurchaser(item) === nEntityIndex)
 			counter = counter + 1;
 	}
 	return counter;
@@ -247,8 +247,8 @@ function GetDotaHud() {
 	}
 }
 
-function GetSteamID(pid, type) {
-	var playerInfo = Game.GetPlayerInfo(pid);
+function GetSteamID(playerId, type) {
+	var playerInfo = Game.GetPlayerInfo(playerId);
 	if (!playerInfo) return 0;
 	var steamID64 = playerInfo.player_steamid,
 		steamID32 = String(Number(steamID64.substring(3)) - 61197960265728);

@@ -11,8 +11,7 @@ end
 
 Weather = Weather or class({
 	current = nil,
-	endTime = -1,
-	soundMap = {}
+	endTime = -1
 })
 
 for _,v in pairs(WEATHER_EFFECTS) do
@@ -96,4 +95,8 @@ function Weather:Think()
 		Weather:Start(Weather:SelectRandomRecipient(Weather.current))
 	end
 	return 1/30
+end
+
+function Weather:GetPassedTime()
+	return GameRules:GetDOTATime(false, true) - PlayerTables:GetTableValue("weather", "changeTime")
 end

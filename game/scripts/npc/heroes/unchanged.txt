@@ -28,13 +28,13 @@
 	"npc_dota_hero_bloodseeker"
 	{
 		"override_hero"	"npc_dota_hero_bloodseeker"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.8"
 	}
 
 	"npc_dota_hero_drow_ranger"
 	{
 		"override_hero"	"npc_dota_hero_drow_ranger"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_earthshaker"
@@ -46,7 +46,7 @@
 	"npc_dota_hero_juggernaut"
 	{
 		"override_hero"	"npc_dota_hero_juggernaut"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.3"
 	}
 
 	"npc_dota_hero_mirana"
@@ -217,6 +217,9 @@
 		"override_hero"	"npc_dota_hero_sniper"
 		"AttackRate"	"1.6"
 		"MovementSpeed"	"275"
+
+		// FIXME: remove once Valve would fix it
+		"AttackDamageMax"		"21"
 	}
 
 	"npc_dota_hero_necrolyte"
@@ -246,7 +249,7 @@
 	"npc_dota_hero_phantom_assassin"
 	{
 		"override_hero"	"npc_dota_hero_phantom_assassin"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.4"
 	}
 
 	"npc_dota_hero_pugna"
@@ -259,7 +262,7 @@
 	"npc_dota_hero_templar_assassin"
 	{
 		"override_hero"	"npc_dota_hero_templar_assassin"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 		"AttackRange"		"200"
 	}
 
@@ -389,7 +392,7 @@
 	"npc_dota_hero_alchemist"
 	{
 		"override_hero"	"npc_dota_hero_alchemist"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_invoker"
@@ -697,5 +700,23 @@
 	{
 		"override_hero"	"npc_dota_hero_omniknight"
 		"AttackRate"	"1.6"
+	}
+
+	"npc_dota_hero_medusa"
+	{
+		"override_hero"	"npc_dota_hero_medusa"
+		"AttackRate"	"1.6"
+		"ArmorPhysical"	"1"
+		"AttributeBaseAgility"	"15"
+		"AttributeStrengthGain"	"2.0"
+		"AttributeAgilityGain"	"2.5"
+		"MovementSpeed"	"310"
+		"AttributeIntelligenceGain"	"2.1"
+	}
+
+	"npc_dota_hero_phantom_lancer"
+	{
+		"override_hero"	"npc_dota_hero_phantom_lancer"
+		"AttackRate"	"1.5"
 	}
 }

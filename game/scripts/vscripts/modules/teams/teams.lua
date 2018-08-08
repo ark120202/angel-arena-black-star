@@ -80,7 +80,10 @@ Teams.Data = Teams.Data or {
 	},
 }
 
-Events:Register("activate", "teams", function ()
+Events:Register("activate", function ()
+	local gameMode = GameRules:GetGameModeEntity()
+	gameMode:SetTowerBackdoorProtectionEnabled(false)
+
 	PlayerTables:CreateTable("teams", {}, AllPlayersInterval)
 
 	local mapinfo = LoadKeyValues("addoninfo.txt")[GetMapName()]
@@ -93,7 +96,7 @@ Events:Register("activate", "teams", function ()
 		Teams.Data[team].count = playerCount
 		Teams.Data[team].enabled = playerCount > 0
 
-		if USE_CUSTOM_TEAM_COLORS then
+		if Options:IsEquals("CustomTeamColors") then
 			SetTeamCustomHealthbarColor(team, data.color[1], data.color[2], data.color[3])
 		end
 	end
@@ -106,11 +109,11 @@ function Teams:PostInitialize()
 		end
 
 		local playerCounter = 0
-		for _,playerID in ipairs(Teams:GetPlayerIDs(team, true, true)) do
+		for _,playerId in ipairs(Teams:GetPlayerIDs(team, true, true)) do
 			playerCounter = playerCounter + 1
 			local color = data.playerColors[playerCounter]
-			PLAYER_DATA[playerID].Color = color
-			PlayerResource:SetCustomPlayerColor(playerID, color[1], color[2], color[3])
+			PLAYER_DATA[playerId].Color = color
+			PlayerResource:SetCustomPlayerColor(playerId, color[1], color[2], color[3])
 		end
 	end
 end
@@ -135,15 +138,28 @@ function Teams:GetDesiredPlayerCount(team)
 	return Teams.Data[team].count or 0
 end
 
+function Teams:GetTotalDesiredPlayerCount()
+	local count = 0
+	for _, data in pairs(Teams.Data) do
+		count = count + data.count
+	end
+
+	return count
+end
+
 function Teams:GetName(team, bSecond)
 	return bSecond and Teams.Data[team].name2 or Teams.Data[team].name
 end
 
 function Teams:ModifyScore(team, value)
 	local new = Teams:GetScore(team) + value
-	new = math.min(new, KILLS_TO_END_GAME_FOR_TEAM)
+	new = math.min(new, Options:GetValue("KillLimit"))
 	Teams.Data[team].score = new
 	PlayerTables:SetTableValue("teams", team, table.deepcopy(Teams.Data[team]))
+
+	if new >= Options:GetValue("KillLimit") then
+		GameMode:OnKillGoalReached(team)
+	end
 end
 
 function Teams:SetTeamKillWeight(team, value)
@@ -163,11 +179,11 @@ function Teams:GetPlayerIDs(team, bNotAbandoned, bAbandoned)
 end
 
 function Teams:RecalculateKillWeight(team)
+	if not Teams:IsEnabled(team) then return end
+
 	local remaining = GetTeamPlayerCount(team)
-	local value
-	if remaining == 0 then
-		value = 0
-	else
+	local value = remaining == 0 and 0 or 1
+	if value == 1 and Options:GetValue("DynamicKillWeight") then
 		local desired = Teams:GetDesiredPlayerCount(team)
 		local missing = desired - remaining
 		value = math.max(missing, 1)
