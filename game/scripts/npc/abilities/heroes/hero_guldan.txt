@@ -1,0 +1,238 @@
+"DOTAAbilities"
+{
+	"guldan_curse"
+	{
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"arena/guldan_curse"
+		"ScriptFile"					"heroes/hero_guldan/guldan_curse.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+
+		"AbilityDamage"					"100 200 300 450 550 650 750"
+		"AbilityCastRange"				"300 400 450 500 550 600 700"
+		"AbilityCooldown"				"28 26 24 22 20 18 16"
+		"AbilityManaCost"				"150 250 350 450 550 650 750"
+
+		"MaxLevel" 						"7"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"silence_duration" "2 3 4 5 6 7 8"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.4 0.6 0.8 1 1.2 1.5 1.8"
+			}
+		}
+	}
+
+	"guldan_saving_touch"
+	{
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"arena/guldan_saving_touch"
+		"ScriptFile"					"heroes/hero_guldan/guldan_saving_touch.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_FRIENDLY_YES"
+
+		"AbilityCastRange"				"350 450 500 550 600 650 700"
+		"AbilityCooldown"				"32 29 26 23 20 17 15"
+		"AbilityManaCost"				"250 350 450 550 650 750 850"
+
+		"MaxLevel" 						"7"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"		"3 4 5 6 7 8 9"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_armor"		"5 8 11 14 17 20 23"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		}
+	}
+
+	"guldan_death_impress"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"heroes/hero_guldan/guldan_death_impress.lua"
+		"AbilityTextureName"			"arena/guldan_death_impress"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+
+		"AbilityCastRange"				"400 550 600 650 700 750 800"
+		"AbilityCooldown"				"25 22 18 16 14 12 12"
+		"AbilityManaCost"				"100 250 350 450 650 750 900"
+
+		"MaxLevel" 						"7"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"		"1.5 2 2.5 3.0 4.0 5.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"magic_damage_debuff" 	"-15 -25 -35 -45 -55 -65 -75"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+		}
+	}
+
+	"guldan_hatred"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_guldan/guldan_hatred.lua"
+		"AbilityTextureName"			"arena/guldan_hatred"
+		"MaxLevel" 						"1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"MaxLevel" 						"7"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"600 700 800 900 1000 1100 1200"
+			}
+			"02"
+			{
+				"var_type" 				"FIELD_FLOAT"
+				"aura_percentage_health_regen"			"0.3% 0.6% 1% 1.5% 2.5% 3% 4%"
+			}
+		}
+	}
+
+	"guldan_shadow_path"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_guldan/guldan_shadow_path.lua"
+		"AbilityTextureName"			"arena/guldan_shadow_path"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityType"					"DOTA_ABILITY_ULTIMATE"
+
+		"HasScepterUpgrade"				"1"
+
+		"AbilityCooldown"				"100 80 70 60 50 40 35"
+		"AbilityManaCost"				"200 300 400 500 600 700 800"
+		"MaxLevel" 						"7"
+		"LevelsBetweenUpgrades"			"7"
+		"RequiredLevel"					"7"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"50 100 150 200 250 300 350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed_reduce" "-10% -15% -20% -25% -30% -40% -50%"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius_scepter"	"1500"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed_reduce_scepter" "-20% -30% -50% -60% -75% -85% -90%"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second_scepter"		"450"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed_reduce_after"	"-60% -70% -80% -90% -100% -110% -120%"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed_reduce_after_scepter"	"-170%"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_slow_after"	"2 3 4 5 6 7 8"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_scepter"		"1.9"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval"				"0.33"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval_scepter"		"0.13"
+			}
+		}
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
+		}
+	}
+}

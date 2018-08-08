@@ -1,0 +1,51 @@
+npc_arena_hero_guldan: Guldan
+npc_arena_hero_guldan_hype: The ancient exiled necromancer, who promised to return...
+
+DOTA_Tooltip_ability_guldan_curse: Curse
+DOTA_Tooltip_ability_guldan_curse_Lore: Gul`dan always takes promises.
+DOTA_Tooltip_ability_guldan_curse_Description: 'Gul`dan curses target: deals damage, stuns, after stun silences.'
+DOTA_Tooltip_ability_guldan_curse_stun_duration: "STUN DURATION"
+DOTA_Tooltip_ability_guldan_curse_silence_duration: "SILENCE DURATION"
+DOTA_Tooltip_modifier_guldan_curse_stun: Stunned
+DOTA_Tooltip_modifier_guldan_curse_silence: Silenced
+
+DOTA_Tooltip_ability_guldan_saving_touch: Saving Touch
+DOTA_Tooltip_ability_guldan_saving_touch_Lore: Obedience is laudable.
+DOTA_Tooltip_ability_guldan_saving_touch_Description: Gul`dan increases allies`s armor and gives magic immunity.
+DOTA_Tooltip_ability_guldan_saving_touch_duration: 'DURATION:'
+DOTA_Tooltip_ability_guldan_saving_touch_bonus_armor: 'ARMOR:'
+DOTA_Tooltip_modifier_guldan_saving_touch: Saving Touch
+DOTA_Tooltip_modifier_guldan_saving_touch_description: 'Magic immune, armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%'
+
+DOTA_Tooltip_ability_guldan_death_impress: Death Impress
+DOTA_Tooltip_ability_guldan_death_impress_Lore: Nobody can escape.
+DOTA_Tooltip_ability_guldan_death_impress_Description: Gul`dan fetters target, disarms it, silence and reduce magic resistance.
+DOTA_Tooltip_ability_guldan_death_impress_duration: 'DURATION:'
+DOTA_Tooltip_ability_guldan_death_impress_magic_damage_debuff: '%MAGIC RESISTANCE REDUCE:'
+DOTA_Tooltip_modifier_guldan_death_impress: Death Impress
+DOTA_Tooltip_modifier_guldan_death_impress_Description: 'Disarmed, silenced, magic resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%'
+
+DOTA_Tooltip_ability_guldan_hatred: Hatred
+DOTA_Tooltip_ability_guldan_hatred_Lore: It's too early for them to die.
+DOTA_Tooltip_ability_guldan_hatred_Description: Gul`dan gives life to his allies increasing their health regen.
+DOTA_Tooltip_ability_guldan_hatred_aura_percentage_health_regen: '%HEALTH REGEN'
+DOTA_Tooltip_modifier_guldan_hatred_effect: Hatred
+DOTA_Tooltip_modifier_guldan_hatred_effect_Description: 'Health regen increased by %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% '
+
+DOTA_Tooltip_ability_guldan_shadow_path: Shadow Path
+DOTA_Tooltip_ability_guldan_shadow_path_Description: Gul`dan creates aura,under it`s influnce enemies take periodic damage and slow.If ability ends, or enemies left radius, they get additional slow.
+DOTA_Tooltip_ability_guldan_shadow_path_Lore: Gul`dan appeals to his hate, making all around burn.
+DOTA_Tooltip_ability_guldan_shadow_path_aghanim_description: Makes ability damage pure, increases damage, radius and slow, reduces tick interval.
+DOTA_Tooltip_ability_guldan_shadow_path_duration: 'DURATION:'
+DOTA_Tooltip_ability_guldan_shadow_path_duration_scepter: 'DURATION WITH SCEPTER:'
+DOTA_Tooltip_ability_guldan_shadow_path_damage_per_second: 'DAMAGE PER SECOND:'
+DOTA_Tooltip_ability_guldan_shadow_path_movement_speed_reduce: '%SLOW:'
+DOTA_Tooltip_ability_guldan_shadow_path_aura_radius_scepter: 'RADIUS WITH SCEPTER:'
+DOTA_Tooltip_ability_guldan_shadow_path_movement_speed_reduce_scepter: '%SLOW WITH SCEPTER:'
+DOTA_Tooltip_ability_guldan_shadow_path_damage_per_second_scepter: 'DAMAGE PER SECOND WITH SCEPTER:'
+DOTA_Tooltip_ability_guldan_shadow_path_interval_scepter: 'INTERVAL WITH SCEPTER:'
+DOTA_Tooltip_modifier_guldan_shadow_path: Shadow Path
+DOTA_Tooltip_modifier_guldan_shadow_path_Description: Damages per second and slows units around .
+DOTA_Tooltip_modifier_guldan_shadow_path_effect: Shadow Path
+DOTA_Tooltip_modifier_guldan_shadow_path_effect_Description: 'Takes periodic damage, movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%'
+DOTA_Tooltip_modifier_guldan_shadow_path_effect_slow: DECELERATED

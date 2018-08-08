@@ -533,4 +533,30 @@
 		"AttackDamageMax"		"15"
 		"MagicalResistance"		"15"
 	}
+
+	"npc_arena_hero_guldan"
+	{
+		"base_hero" "npc_dota_hero_arena_base"
+		"SceneCamera" "custom_scene_hero_anakim"
+		"Model" "models/units/anakim/anakim.vmdl"
+		"ModelScale" "1"
+		"Ability1" "guldan_curse"
+		"Ability2" "guldan_saving_touch"
+		"Ability3" "guldan_death_impress"
+		"Ability4" "guldan_hatred"
+		"Ability5" "guldan_shadow_path"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttackRange"			"400"
+		"AttackRate"			"1.6"
+		"AttributeBaseStrength"	"22"
+		"AttributeBaseIntelligence"	"27"
+		"AttributeBaseAgility"	"20"
+		"AttributeStrengthGain"	"1.5"
+		"AttributeIntelligenceGain"	"2.4"
+		"AttributeAgilityGain"	"2.2"
+		"AttackDamageMin"		"33"
+		"AttackDamageMax"		"37"
+		"MagicalResistance"		"40"
+	}
 }

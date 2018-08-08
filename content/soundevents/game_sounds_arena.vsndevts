@@ -1195,6 +1195,141 @@
 	}
 }
 
+"Arena.Hero_Guldan.Curse.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/guldan/curse.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"15.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Guldan.SavingTouch.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/guldan/saving_touch.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"15.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Guldan.DeathImpress.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/guldan/death_impress.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"15.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Guldan.ShadowPath.Start"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/guldan/shadow_path_start.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"25.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Guldan.ShadowPath.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/guldan/shadow_path.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"20.000000" }
+				}
+			}
+		}
+	}
+}
+
 "Arena.Weather.Rain.Ambient"
 {
 	"operator_stacks"

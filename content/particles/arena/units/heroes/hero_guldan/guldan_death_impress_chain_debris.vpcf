@@ -1,0 +1,86 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf1:version{d47d07e6-072c-49cb-9718-5bfd8d6c3d21} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 48
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_bBlendFramesSeq0 = false
+			m_hTexture = resource:"materials/particle/impact/fleks3.vtex"
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 0.1
+			m_flStartTime = 0.5
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.1
+			m_Gravity = [ 0.0, 0.0, -500.0 ]
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateMinDegrees = 10
+			m_nSpinRateDegrees = 45
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.4
+			m_fLifetimeMax = 0.8
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_LocalCoordinateSystemSpeedMax = [ 0.0, 0.0, 264.0 ]
+			m_LocalCoordinateSystemSpeedMin = [ 0.0, 0.0, 132.0 ]
+			m_fSpeedMax = 250.0
+			m_fSpeedMin = 100.0
+			m_nControlPointNumber = 2
+			m_fRadiusMax = 5.0
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 4.0
+			m_flRadiusMax = 8.0
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax = [ 153, 207, 83, 255 ]
+			m_ColorMin = [ 97, 155, 87, 255 ]
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 5
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_flNoiseScaleLoc = 0.8
+			m_vecOutputMax = [ 100.0, 100.0, 300.0 ]
+			m_vecOutputMin = [ -100.0, -100.0, 0.0 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 32
+		},
+	]
+}

@@ -111,6 +111,10 @@
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_doppelganger.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_doppelganger.png" />
 
+			<Image src="file://{images}/heroes/npc_arena_hero_guldan.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_guldan.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_guldan.png" />
+
 			<!-- <Image src="file://{images}/heroes/npc_arena_hero_maka.png" />
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_maka.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_maka.png" /> -->
