@@ -1,56 +1,5 @@
 "DOTAHeroes"
 {
-//	"npc_arena_hero_arcueid"
-//	{
-//		"base_hero"	"npc_dota_hero_arena_base"
-//		"SceneCamera"	""
-//		"Model"	"models/units/arcueid/arcueid.vmdl"
-//		"ModelScale"	"1.7"
-//		"Ability1"	""
-//		"Ability2"	""
-//		"Ability3"	""
-//		"Ability4"	""
-//		"Enabled"		"0"
-//		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
-//		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-//		"AttackRange"			"150"
-//		"ProjectileModel"		""
-//	}
-//
-//	"npc_arena_hero_rin"
-//	{
-//		"base_hero"	"npc_dota_hero_arena_base"
-//		"SceneCamera"	""
-//		"Model"	"models/units/rin/rin.vmdl"
-//		"ModelScale"	"1.7"
-//		"Ability1"	""
-//		"Ability2"	""
-//		"Ability3"	""
-//		"Ability4"	""
-//		"Enabled"		"0"
-//		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
-//		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-//		"AttackRange"			"150"
-//		"ProjectileModel"		""
-//	}
-//
-//	"npc_arena_hero_rider"
-//	{
-//		"base_hero"	"npc_dota_hero_arena_base"
-//		"SceneCamera"	""
-//		"Model"	"models/units/rider/rider.vmdl"
-//		"ModelScale"	"1.7"
-//		"Ability1"	""
-//		"Ability2"	""
-//		"Ability3"	""
-//		"Ability4"	""
-//		"Enabled"		"0"
-//		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
-//		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-//		"AttackRange"			"150"
-//		"ProjectileModel"		""
-//	}
-
 	"npc_arena_hero_debug"
 	{
 		"base_hero"	"npc_dota_hero_sven"
