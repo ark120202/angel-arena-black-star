@@ -100,6 +100,7 @@ end
 function Illusions:_copyEverything(unit, illusion)
 	illusion:SetAbilityPoints(0)
 	Illusions:_copyAbilities(unit, illusion)
+	Illusions:_copyItems(unit, illusion)
 	Illusions:_copySpecialCustomFields(unit, illusion)
 	Illusions:_copyAppearance(unit, illusion)
 	illusion.UnitName = unit.UnitName
@@ -134,7 +135,6 @@ function Illusions:create(info)
 	illusion:SetForwardVector(unit:GetForwardVector())
 
 	Illusions:_copyLevel(unit, illusion)
-	Illusions:_copyItems(unit, illusion)
 
 	illusion:AddNewModifier(unit, ability, "modifier_illusion", {
 		duration = info.duration,
