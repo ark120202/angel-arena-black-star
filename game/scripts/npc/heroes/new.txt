@@ -101,6 +101,16 @@
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"	"28"
 		"AttackDamageMax"	"30"
+		"DamgeSubTypeResistance" 
+		{ 	
+			"DAMAGE_SUBTYPE_LIGHT"	"30"
+			"DAMAGE_SUBTYPE_DARK"	"30"
+			"DAMAGE_SUBTYPE_EARTH"	"30"
+			"DAMAGE_SUBTYPE_ICE"	"30"
+			"DAMAGE_SUBTYPE_FIRE"	"30"
+			"DAMAGE_SUBTYPE_WATER"	"30"
+			"DAMAGE_SUBTYPE_ENERGY"	"30"
+		}
 	}
 
 	"npc_arena_hero_cherub"
@@ -113,6 +123,11 @@
 		"Ability5"	"generic_hidden"
 		"Ability6"	"cherub_flower_garden"
 		"AttackRate"	"1.5"
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_FIRE" 		"0"
+			"DAMAGE_SUBTYPE_WATER" 	"50"
+		}
 	}
 
 	"npc_arena_hero_queenofblades"
@@ -169,6 +184,12 @@
 		"AttributeAgilityGain"	"1.5"
 		"AttackDamageMin"	"23"
 		"AttackDamageMax"	"27"
+		
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_DARK" 	"0"
+			"DAMAGE_SUBTYPE_LIGHT" 	"50"
+		}
 	}
 
 	"npc_arena_hero_shinobu"
@@ -220,6 +241,12 @@
 		"Ability6"	"zen_gehraz_superposition"
 		"AttackRate"	"1.5"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_DARK" 	"0"
+			"DAMAGE_SUBTYPE_LIGHT" 	"50"
+		}
 	}
 
 	"npc_arena_hero_stegius"
@@ -247,6 +274,12 @@
 		"AttributeAgilityGain"	"2.1"
 		"AttackDamageMin"	"20"
 		"AttackDamageMax"	"22"
+		
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_DARK" 	"0"
+			"DAMAGE_SUBTYPE_LIGHT" 	"50"
+		}
 	}
 
 	"npc_arena_hero_mirratie"
@@ -287,6 +320,13 @@
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"	"46"
 		"AttackDamageMax"	"50"
+		
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_WATER" 	"100"
+			"DAMAGE_SUBTYPE_ENERGY" "100"
+			"DAMAGE_SUBTYPE_FIRE" 	"100"
+		}
 	}
 
 	"npc_arena_hero_zaken"
@@ -313,6 +353,13 @@
 		"AttributeAgilityGain"	"3.0"
 		"AttackDamageMin"	"20"
 		"AttackDamageMax"	"30"
+		
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_EARTH" 	"100"
+			"DAMAGE_SUBTYPE_ENERGY" "100"
+			"DAMAGE_SUBTYPE_WATER"  "100"
+		}
 	}
 
 	"npc_arena_hero_poseidon"
@@ -343,6 +390,12 @@
 		"AttributeAgilityGain"	"1.5"
 		"AttackDamageMin"	"22"
 		"AttackDamageMax"	"25"
+		
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_ICE" 	"0"
+			"DAMAGE_SUBTYPE_FIRE" 	"50"
+		}
 	}
 
 	"npc_arena_hero_saber"
@@ -371,6 +424,11 @@
 		"MagicalResistance"		"45"
 		"AttackDamageMin"		"22"
 		"AttackDamageMax"		"32"
+		
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_DARK"	"100"
+		}
 	}
 
 	"npc_arena_hero_sara"
@@ -424,6 +482,11 @@
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"		"26"
 		"AttackDamageMax"		"28"
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_EARTH" "50"
+		}
+		
 	}
 
 	"npc_arena_hero_anakim"
@@ -450,6 +513,11 @@
 		"AttributeAgilityGain"	"1.5"
 		"AttackDamageMin"	"22"
 		"AttackDamageMax"	"26"
+		
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_DARK" "50"
+		}
 	}
 
 	"npc_arena_hero_sai"
@@ -477,6 +545,12 @@
 		"AttackDamageMin"		"30"
 		"AttackDamageMax"		"35"
 		"MovementSpeed"			"270"
+		
+		"DamgeSubTypeResistance" 
+		{ 
+			"DAMAGE_SUBTYPE_DARK" 	"-25"
+			"DAMAGE_SUBTYPE_LIGHT" 	"50"
+		}
 	}
 
 	"npc_arena_hero_saitama"
@@ -532,5 +606,16 @@
 		"AttackDamageMin"		"15"
 		"AttackDamageMax"		"15"
 		"MagicalResistance"		"15"
+		
+		"DamgeSubTypeResistance" 
+		{ 	
+			"DAMAGE_SUBTYPE_LIGHT"	"15"
+			"DAMAGE_SUBTYPE_DARK"	"15"
+			"DAMAGE_SUBTYPE_EARTH"	"15"
+			"DAMAGE_SUBTYPE_ICE"	"15"
+			"DAMAGE_SUBTYPE_FIRE"	"15"
+			"DAMAGE_SUBTYPE_WATER"	"15"
+			"DAMAGE_SUBTYPE_ENERGY"	"15"
+		}
 	}
 }

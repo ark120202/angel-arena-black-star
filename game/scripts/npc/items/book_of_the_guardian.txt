@@ -40,6 +40,7 @@
 		"AbilityCastRange"				"%aura_radius"
 		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"350"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ICE"
 
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"1"
@@ -132,6 +133,7 @@
 		"AbilityCastRange"				"%aura_radius"
 		"AbilityCooldown"				"22"
 		"AbilityManaCost"				"500"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ICE"
 
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"2"

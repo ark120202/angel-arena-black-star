@@ -86,6 +86,8 @@
 		"AbilityCastPoint"				"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_2"
 		"AbilityCastRange"				"%rot_radius"
+		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
 
 		"precache"
 		{
@@ -365,6 +367,8 @@
 
 		"AbilityCooldown"				"32 30 28 26 24 22 20"
 		"AbilityManaCost"				"100 130 170 200 230 270 300"
+		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
 
 		"AbilitySpecial"
 		{
