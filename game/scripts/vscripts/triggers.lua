@@ -10,7 +10,7 @@ function ArenaZoneOnEndTouch(trigger)
 
 	if not IsValidEntity(activator) then return end
 	if not activator.OnDuel then return end
-	if activator.IsWukongsSummon and activator:IsWukongsSummon() then return end
+	if activator:IsWukongsSummon() then return end
 
 	Timers:CreateTimer(function()
 		if not IsValidEntity(activator) then return end
