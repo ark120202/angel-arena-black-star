@@ -137,6 +137,7 @@ if IsServer() then
 		if IsValidEntity(self.reflect_stolen_ability) then
 			self.reflect_stolen_ability:RemoveSelf()
 		end
+		self:GetParent():ClearNetworkableEntityInfo()
 	end
 	function modifier_arena_hero:GetReflectSpell(keys)
 		local parent = self:GetParent()
