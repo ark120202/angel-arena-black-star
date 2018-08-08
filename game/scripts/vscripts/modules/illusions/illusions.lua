@@ -39,7 +39,7 @@ function Illusions:_copyItems(unit, illusion)
 		if item then
 			local illusionItem = CreateItem(item:GetName(), illusion, illusion)
 			illusionItem:SetCurrentCharges(item:GetCurrentCharges())
-			illusionItem.suggested_slot = slot
+			illusionItem.suggestedSlot = slot
 			illusion:AddItem(illusionItem)
 		end
 	end

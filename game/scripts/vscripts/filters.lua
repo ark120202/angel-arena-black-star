@@ -273,8 +273,8 @@ end
 
 function GameMode:ItemAddedToInventoryFilter(filterTable)
 	local item = EntIndexToHScript(filterTable.item_entindex_const)
-	if item.suggested_slot then
-		filterTable.suggested_slot = item.suggested_slot
+	if item.suggestedSlot then
+		filterTable.suggested_slot = item.suggestedSlot
 	end
 	return true
 end
