@@ -28,19 +28,19 @@ end
 
 function Illusions:_copyItems(unit, illusion)
 	for slot = 0, 5 do
-		local illusion_item = illusion:GetItemInSlot(slot)
-		if illusion_item then
-			illusion:RemoveItem(illusion_item)
+		local illusionItem = illusion:GetItemInSlot(slot)
+		if illusionItem then
+			illusion:RemoveItem(illusionItem)
 		end
 	end
-	
-	for slot = 0, 5 do		
+
+	for slot = 0, 5 do
 		local item = unit:GetItemInSlot(slot)
 		if item then
-			local newItem = CreateItem(item:GetName(), illusion, illusion)
-			newItem:SetCurrentCharges(item:GetCurrentCharges())
-			newItem.suggested_slot = slot
-			local illusion_item = illusion:AddItem(newItem)
+			local illusionItem = CreateItem(item:GetName(), illusion, illusion)
+			illusionItem:SetCurrentCharges(item:GetCurrentCharges())
+			illusionItem.suggested_slot = slot
+			illusion:AddItem(illusionItem)
 		end
 	end
 end
