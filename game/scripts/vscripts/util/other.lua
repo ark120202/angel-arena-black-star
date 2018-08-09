@@ -1,16 +1,3 @@
-function GetAllPlayers(bOnlyWithHeroes)
-	local Players = {}
-	for playerId = 0, DOTA_MAX_TEAM_PLAYERS-1  do
-		if PlayerResource:IsValidPlayerID(playerId) then
-			local player = PlayerResource:GetPlayer(playerId)
-			if player and ((bOnlyWithHeroes and player:GetAssignedHero()) or not bOnlyWithHeroes) then
-				table.insert(Players, player)
-			end
-		end
-	end
-	return Players
-end
-
 function CreateTeamNotificationSettings(team, bSecond)
 	local textColor = ColorTableToCss(Teams:GetColor(team))
 	return {text = Teams:GetName(team, bSecond), continue = true, style = {color = textColor}}
@@ -74,16 +61,6 @@ end
 
 function CreateGoldNotificationSettings(amount)
 	return {text=amount, continue=true, style={color="gold"}}, {text="#notifications_gold", continue=true, style={color="gold"}}
-end
-
-function GetEnemiesIds(heroteam)
-	local enemies = {}
-	for _,playerId in ipairs(GetAllPlayers(false)) do
-		if PlayerResource:GetTeam(playerId:GetPlayerID()) ~= heroteam then
-			table.insert(enemies, playerId)
-		end
-	end
-	return enemies
 end
 
 function GenerateAttackProjectile(unit, optAbility)

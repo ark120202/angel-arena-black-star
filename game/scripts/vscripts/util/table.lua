@@ -47,32 +47,6 @@ function table.allEqual(table, value)
 	return true
 end
 
-function table.areAllEqual(table)
-	for _,v in pairs(table) do
-		if value == nil then
-			value = v
-		end
-		if v ~= value then
-			return false
-		end
-	end
-	return true
-end
-
-function table.allEqualExpectOne(table, value)
-	local miss = false
-	for _,v in pairs(table) do
-		if v ~= value then
-			if miss then
-				return false
-			else
-				miss = true
-			end
-		end
-	end
-	return true
-end
-
 function table.iterate(inputTable)
 	local toutput = {}
 	for _,v in pairs(inputTable) do

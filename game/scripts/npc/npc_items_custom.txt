@@ -15,59 +15,6 @@
 
 "DOTAAbilities"
 {
-	"item_casino_coin"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityTextureName"			"item_arena/casino_coin"
-		"AbilityCastPoint"        		"0.6"
-		"AbilityCooldown"				"20.0"
-		"AbilityManaCost"				"100"
-		"AbilityCastRange"        		"192"
-
-		"ItemCost"						"1500"
-		"ItemShopTags"					"coin;casino"
-		"ItemQuality"					"rare"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-		"ItemPurchasableFilter"			"0"
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/item_casino_coin.lua"
-				"Function"		"CasinoCoinSlotMachine"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_slotmachine_in_work"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-
-				"States"
-				{
-					"MODIFIER_STATE_NIGHTMARED"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
 	"item_recipe_lucifers_claw"
 	{
 		"BaseClass"						"item_datadriven"
