@@ -41,6 +41,7 @@ function Illusions:_copyItems(unit, illusion)
 			illusion:CopyItemToSlot(item, slot)
 		end
 	end
+	illusion:RestoreOwners(0, 5)
 end
 
 function Illusions:_copyShards(unit, illusion)
