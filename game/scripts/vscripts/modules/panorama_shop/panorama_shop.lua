@@ -42,6 +42,21 @@ function PanoramaShop:GetItemStockCount(team, item)
 	return t ~= nil and t.current_stock
 end
 
+function PanoramaShop:AddItemStock(team, item, count)
+	local t = PanoramaShop.StocksTable[team][item]
+	local added_stocks = t.current_stock + count
+	if t then
+		if added_stocks > t.ItemStockMax then
+			added_stocks = t.ItemStockMax
+		end
+		t.current_stock = added_stocks
+		if (t.ItemStockMax == -1 or t.current_stock < t.ItemStockMax) then
+			PanoramaShop:StackStockableCooldown(team, item, t.ItemStockTime)
+		end
+		PanoramaShop:PushStockInfoToAllClients()
+	end
+end
+
 function PanoramaShop:IncreaseItemStock(team, item)
 	local t = PanoramaShop.StocksTable[team][item]
 	if t and (t.ItemStockMax == -1 or t.current_stock < t.ItemStockMax) then
@@ -245,6 +260,11 @@ function PanoramaShop:SellItem(playerId, unit, item)
 	end
 	if GameRules:GetGameTime() - item:GetPurchaseTime() > 10 then
 		cost = cost / 2
+	end
+	local itemName = item:GetAbilityName()
+	local team = PlayerResource:GetTeam(playerId)
+	if PanoramaShop.StocksTable[team][itemName] then
+		PanoramaShop:AddItemStock(team, itemName, item:GetCurrentCharges())
 	end
 	UTIL_Remove(item)
 	Gold:AddGoldWithMessage(unit, cost, playerId)
