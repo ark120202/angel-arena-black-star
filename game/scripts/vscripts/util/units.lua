@@ -192,7 +192,7 @@ function CDOTA_BaseNPC:SafeAddItem(item)
 	item:SetStacksWithOtherOwners(stacks)
 end
 
-function CDOTA_BaseNPC:AddItemToSlot(item, slot)
+function CDOTA_BaseNPC:CopyItemToSlot(item, slot)
 	local newItem = CreateItem(item:GetName(), self, self)
 	local owner = item:GetPurchaser()
 	if owner:GetPlayerID() == self:GetPlayerID() then
