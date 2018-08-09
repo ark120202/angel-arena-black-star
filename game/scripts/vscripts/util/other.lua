@@ -136,7 +136,7 @@ end
 
 function PrecacheDummyCasters(caster)
 	local dummyCasters = caster.dummyCasters
-	local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+	local dummy = CreateUnitByName("npc_dummy_caster", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
 	dummyCasters[#dummyCasters + 1] = dummy
 	dummy:SetControllableByPlayer(caster:GetPlayerID(), true)
 	dummy:AddNoDraw()
