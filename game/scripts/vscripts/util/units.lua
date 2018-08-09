@@ -207,7 +207,7 @@ end
 function CDOTA_BaseNPC:RestoreOwners(firstSlot, lastSlot)
 	for i = firstSlot, lastSlot do
 		local item = self:GetItemInSlot(i)
-		if item then
+		if item and item.owner then
 			item:SetPurchaser(item.owner)
 			item.owner = nil
 		end
