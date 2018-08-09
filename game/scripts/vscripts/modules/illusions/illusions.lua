@@ -37,10 +37,8 @@ function Illusions:_copyItems(unit, illusion)
 	for slot = 0, 5 do
 		local item = unit:GetItemInSlot(slot)
 		if item then
-			local illusionItem = CreateItem(item:GetName(), illusion, illusion)
-			illusionItem:SetCurrentCharges(item:GetCurrentCharges())
-			illusionItem.suggestedSlot = slot
-			illusion:AddItem(illusionItem)
+			--TODO - Tell dev illusions don't respect item ownership
+			illusion:CopyItemToSlot(item, slot)
 		end
 	end
 end
