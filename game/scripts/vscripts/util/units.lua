@@ -195,15 +195,10 @@ function CDOTA_BaseNPC:SafeAddItem(item)
 end
 
 function CDOTA_BaseNPC:CopyItemToSlot(item, slot)
-	local newItem = CreateItem(item:GetName(), self, self)
-	local owner = item:GetPurchaser()
-	if owner:GetPlayerID() == self:GetPlayerID() then
-		owner = nil
-	end
-	newItem:SetCurrentCharges(item:GetCurrentCharges())
+	local newItem = item:Copy(self)
 	newItem.suggested_slot = slot
 	self:SafeAddItem(newItem)
-	newItem:SetPurchaser(owner)
+	newItem:SetPurchaser(nil)
 end
 
 function CDOTA_BaseNPC:MakeItemsUnstackable(firstSlot, lastSlot)
