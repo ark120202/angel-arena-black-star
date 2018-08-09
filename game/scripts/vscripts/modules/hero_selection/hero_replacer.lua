@@ -128,19 +128,10 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			for i = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
 				local citem  = hero:GetItemInSlot(i)
 				if citem and citem ~= item then
-					local newItem = CreateItem(citem:GetName(), nil, nil)
-					if citem:GetPurchaser() ~= hero then
-						newItem.NotPurchasedByOwner = true
-						newItem:SetPurchaser(citem:GetPurchaser())
-					end
-					newItem:SetPurchaseTime(citem:GetPurchaseTime())
-					newItem:SetCurrentCharges(citem:GetCurrentCharges())
-					if citem:GetCooldownTimeRemaining() > 0 then
-						newItem.SavedCooldown = citem:GetCooldownTimeRemaining()
-					end
+					local newItem = citem:Copy(oldHero)
+					newItem.suggested_slot = i
+					newItem.purchasedByHero = newItem.owner == oldHero
 					table.insert(items, newItem)
-				else
-					table.insert(items, CreateItem("item_dummy", hero, hero))
 				end
 			end
 
@@ -161,20 +152,28 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			if keepExp then
 				newHero:AddExperience(xp, 0, true, true)
 			end
+			--Get rid of tp scroll
+			for i = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
+				local citem = newHero:GetItemInSlot(i)
+				if citem then
+					newHero:RemoveItem(citem)
+				end
+			end
 			for _,v in ipairs(items) do
 				v:SetOwner(newHero)
-				if not v.NotPurchasedByOwner then
-					v:SetPurchaser(newHero)
-					v.NotPurchasedByOwner = nil
+				if v.purchasedByHero then
+					v.owner = newHero
+					v.purchasedByHero = nil
 				end
 				if v.SavedCooldown then
 					v:StartCooldown(v.SavedCooldown)
 					v.SavedCooldown = nil
 				end
-				newHero:AddItem(v)
+				newHero:SafeAddItem(v)
+				v:SetPurchaser(nil)
 			end
-			ClearSlotsFromDummy(newHero)
-
+			newHero:RestoreOwners(DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6)
+			
 			for k,v in pairs(duelData) do
 				if k ~= "path" then
 					newHero[k] = v
