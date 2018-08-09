@@ -174,7 +174,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 				v:SetPurchaser(nil)
 			end
 			newHero:RestoreOwners(DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6)
-			
+
 			for k,v in pairs(duelData) do
 				if k ~= "path" then
 					newHero[k] = v
