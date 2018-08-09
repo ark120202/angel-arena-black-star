@@ -185,6 +185,44 @@ function CDOTA_BaseNPC:IsWukongsSummon()
 	)
 end
 
+function CDOTA_BaseNPC:SafeAddItem(item)
+	local stacks = item:StacksWithOtherOwners()
+	item:SetStacksWithOtherOwners(false)
+	self:AddItem(item)
+	item:SetStacksWithOtherOwners(stacks)
+end
+
+function CDOTA_BaseNPC:AddItemToSlot(item, slot)
+	local newItem = CreateItem(item:GetName(), self, self)
+	local owner = item:GetPurchaser()
+	if owner:GetPlayerID() == self:GetPlayerID() then
+		owner = nil
+	end
+	newItem:SetCurrentCharges(item:GetCurrentCharges())
+	newItem.suggested_slot = slot
+	self:SafeAddItem(newItem)
+	newItem:SetPurchaser(owner)
+end
+
+function CDOTA_BaseNPC:MakeItemsUnstackable(firstSlot, lastSlot)
+	for i = firstSlot, lastSlot do
+		local item = self:GetItemInSlot(i)
+		if item then
+			item.owner = item:GetPurchaser()
+			item:SetPurchaser(nil)
+		end
+	end
+end
+
+function CDOTA_BaseNPC:RestoreOwners(firstSlot, lastSlot)
+	for i = firstSlot, lastSlot do
+		local item = self:GetItemInSlot(i)
+		if item then
+			item:SetPurchaser(item.owner)
+			item.owner = nil
+		end
+	end
+end
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	if self.OnDuel then return 1 end
