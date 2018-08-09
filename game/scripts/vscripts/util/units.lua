@@ -177,6 +177,14 @@ function CDOTA_BaseNPC:AddNewAbility(ability_name, skipLinked)
 	return hAbility, linked
 end
 
+function CDOTA_BaseNPC:IsWukongsSummon()
+	return self:IsHero() and (
+		self:HasModifier("modifier_monkey_king_fur_army_soldier") or
+		self:HasModifier("modifier_monkey_king_fur_army_soldier_inactive") or
+		self:HasModifier("modifier_monkey_king_fur_army_soldier_hidden")
+	)
+end
+
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	if self.OnDuel then return 1 end
@@ -192,10 +200,6 @@ function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	end
 
 	return math.max(time, 3)
-end
-
-function CDOTA_BaseNPC_Hero:IsWukongsSummon()
-	return self:HasModifier("modifier_monkey_king_fur_army_soldier") or self:HasModifier("modifier_monkey_king_fur_army_soldier_inactive") or self:HasModifier("modifier_monkey_king_fur_army_soldier_hidden")
 end
 
 function CDOTA_BaseNPC_Hero:GetTotalHealthReduction()

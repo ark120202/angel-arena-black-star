@@ -193,11 +193,6 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			}
 		end
 	end,
-	modifier_soul_eater_demon_weapon_from = function(attacker, victim, inflictor)
-		if not inflictor then
-			return 0
-		end
-	end,
 }
 
 INCOMING_DAMAGE_MODIFIERS = {

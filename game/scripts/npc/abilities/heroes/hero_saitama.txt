@@ -52,11 +52,11 @@
 		}
 	}
 
-	"saitama_press"
+	"saitama_sit_ups"
 	{
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"arena/saitama_press"
-		"ScriptFile"					"heroes/hero_saitama/press.lua"
+		"AbilityTextureName"			"arena/saitama_sit_ups"
+		"ScriptFile"					"heroes/hero_saitama/sit_ups.lua"
 		"MaxLevel" 						"7"
 		"AbilityChannelTime"			"2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -113,10 +113,10 @@
 		}
 	}
 
-	"saitama_serios_punch"
+	"saitama_serious_punch"
 	{
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"arena/saitama_serios_punch"
+		"AbilityTextureName"			"arena/saitama_serious_punch"
 		"ScriptFile"					"heroes/hero_saitama/serious_punch.lua"
 		"MaxLevel" 						"1"
 		"IsGrantedByScepter"			"1"

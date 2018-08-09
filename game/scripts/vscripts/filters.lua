@@ -85,14 +85,6 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_boss")
 			return false
 		end
-		if PlayerResource:IsDisableHelpSetForPlayerID(UnitVarToPlayerID(target), UnitVarToPlayerID(unit)--[[playerId]]) and DISABLE_HELP_ABILITIES[abilityname] then
-			Containers:DisplayError(playerId, "#dota_hud_error_target_has_disable_help")
-			return false
-		end
-		if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then
-			filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
-			return true
-		end
 	end
 
 	return true
@@ -277,8 +269,9 @@ end
 
 function GameMode:ItemAddedToInventoryFilter(filterTable)
 	local item = EntIndexToHScript(filterTable.item_entindex_const)
-	if item.suggested_slot then
-		filterTable.suggested_slot = item.suggested_slot
+	if item.suggestedSlot then
+		filterTable.suggested_slot = item.suggestedSlot
+		item.suggestedSlot = nil
 	end
 	return true
 end

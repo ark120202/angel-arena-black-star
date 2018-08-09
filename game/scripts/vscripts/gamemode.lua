@@ -14,7 +14,6 @@ local requirements = {
 	"libraries/playertables",
 	"libraries/containers",
 	-- "libraries/pathgraph",
-	"libraries/selection",
 	"libraries/worldpanels",
 	"libraries/PopupNumbers",
 	"libraries/statcollection/init",

@@ -1,7 +1,7 @@
-saitama_serios_punch = class({})
+saitama_serious_punch = class({})
 
 if IsServer() then
-	function saitama_serios_punch:OnSpellStart()
+	function saitama_serious_punch:OnSpellStart()
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
 		if not target:TriggerSpellAbsorb(self) then
