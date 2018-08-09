@@ -4,6 +4,49 @@
 	{
 		// General
 		//
+		"BaseClass"	"npc_dota_base_additive"
+		"Model"	"models/development/invisiblebox.vmdl"
+
+		// Abilities
+		//----------------------------------------------------------------
+
+		"Ability1"	"dummy_unit"
+		"Ability2"	""
+		"Ability3"	""
+		"Ability4"	""
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageType"	"DAMAGE_TYPE_ArmorPhysical"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"				"0"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementTurnRate"	"1.0"	// Turning rate.
+		"FollowRange"	"250"	// Distance to keep when following
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"	"1"	// Base health.
+		"StatusMana"	"50000"	// Base mana.
+		"UnitRelationshipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"	"0"
+		"VisionNighttimeRange"	"0"
+	}
+
+	"npc_dummy_caster"
+	{
+		// General
+		//
 		"BaseClass"	"npc_dota_hero"
 		"Model"	"models/development/invisiblebox.vmdl"
 
@@ -33,8 +76,12 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"	"1"	// Base health.
-		"StatusMana"	"50000"	// Base mana.
+		"StatusHealth"				"200"
+		"StatusHealthRegen"			"1.5"
+		"StatusMana"				"75"
+		"StatusManaRegen"			"0.9"
+		"ArmorPhysical"				"-1"
+		"MagicalResistance"				"25"
 		"UnitRelationshipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 
 		// Vision
