@@ -77,3 +77,14 @@ function CDOTA_Item:SpendCharge(amount)
 		self:SetCurrentCharges(newCharges)
 	end
 end
+
+function CDOTA_Item:Copy(unit)
+	local newItem = CreateItem(self:GetName(), unit, unit)
+	newItem.owner = self:GetPurchaser()
+	newItem:SetCurrentCharges(self:GetCurrentCharges())
+	newItem:SetPurchaseTime(self:GetPurchaseTime())
+	if self:GetCooldownTimeRemaining() > 0 then
+		newItem.SavedCooldown = self:GetCooldownTimeRemaining()
+	end
+	return newItem
+end
