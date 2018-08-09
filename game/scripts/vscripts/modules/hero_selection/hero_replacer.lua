@@ -156,6 +156,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			for i = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
 				local citem = newHero:GetItemInSlot(i)
 				if citem then
+					citem:EndCooldown()
 					newHero:RemoveItem(citem)
 				end
 			end
