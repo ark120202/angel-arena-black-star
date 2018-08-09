@@ -189,7 +189,9 @@ function CDOTA_BaseNPC:SafeAddItem(item)
 	local stacks = item:StacksWithOtherOwners()
 	item:SetStacksWithOtherOwners(false)
 	self:AddItem(item)
-	item:SetStacksWithOtherOwners(stacks)
+	if not item:IsNull() then
+		item:SetStacksWithOtherOwners(stacks)
+	end
 end
 
 function CDOTA_BaseNPC:CopyItemToSlot(item, slot)
