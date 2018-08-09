@@ -191,7 +191,15 @@ function HookPanoramaPanels() {
 		var custom_entity_value = GameUI.CustomUIConfig().custom_entity_values[_unit];
 		var DOTAHUDDamageArmorTooltip = FindDotaHudElement('DOTAHUDDamageArmorTooltip');
 		if (DOTAHUDDamageArmorTooltip != null && custom_entity_value != null) {
-			DOTAHUDDamageArmorTooltip.SetDialogVariable('seconds_per_attack', '(' + (1/Entities.GetAttacksPerSecond(_unit)).toFixed(2) + 's)');
+			var attackRate = custom_entity_value.AttackRate != null ? custom_entity_value.AttackRate : Entities.GetBaseAttackTime(_unit);
+			var batModifier = attackRate / Entities.GetBaseAttackTime(_unit);
+			var secondsPerAttack = Entities.GetSecondsPerAttack(_unit) * batModifier;
+			DOTAHUDDamageArmorTooltip.SetDialogVariable('seconds_per_attack', '(' + secondsPerAttack.toFixed(2) + 's)');
+
+			// https://dota2.gamepedia.com/Attack_speed#Attack_speed_representation
+			var attackSpeedTooltip = Entities.GetAttackSpeed(_unit) * 100 * (1.7 / attackRate);
+			DOTAHUDDamageArmorTooltip.SetDialogVariableInt('base_attack_speed', Math.round(attackSpeedTooltip));
+
 			if (custom_entity_value.AttributeStrengthGain != null)
 				DOTAHUDDamageArmorTooltip.SetDialogVariable('strength_per_level', custom_entity_value.AttributeStrengthGain.toFixed(1));
 			if (custom_entity_value.AttributeAgilityGain != null)
@@ -242,7 +250,7 @@ function HookPanoramaPanels() {
 
 
 // On Death
-function OnDeath(data) {	
+function OnDeath(data) {
 	if (data.entindex_killed === SafeGetPlayerHeroEntityIndex(Game.GetLocalPlayerID())) {
 		var killerOwner = Entities.GetPlayerOwnerID(data.entindex_attacker);
 		var attacker = Players.IsValidPlayerID(killerOwner) ? SafeGetPlayerHeroEntityIndex(killerOwner) : data.entindex_attacker;
@@ -358,7 +366,7 @@ function CreateHeroElements(id) {
 
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe('entity_killed', OnDeath);
-	
+
 	GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
 
 	GameEvents.Subscribe('create_generic_panel', function(data) {

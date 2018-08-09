@@ -36,20 +36,6 @@ function SimpleAI:new( unit, profile, params )
 		ai.abilityCastCallback = params.abilityCastCallback
 	end
 
-	if profile == "tower" then
-		ai.stateThinks = {
-			[AI_STATE_IDLE] = 'IdleThink',
-			[AI_STATE_AGGRESSIVE] = 'AggressiveThink',
-			[AI_STATE_CASTING] = 'CastingThink',
-			[AI_STATE_ORDER] = 'OrderThink',
-		}
-
-		ai.spawnPos = params.spawnPos or unit:GetAbsOrigin()
-		ai.aggroRange = unit:GetAttackRange()
-		ai.leashRange = ai.aggroRange
-		ai.abilityCastCallback = params.abilityCastCallback
-	end
-
 	unit:AddNewModifier(unit, nil, "modifier_simple_ai", {})
 	Timers:CreateTimer( ai.GlobalThink, ai )
 	if unit.ai then
@@ -107,13 +93,14 @@ end
 
 	function SimpleAI:AggressiveThink()
 		local aggroTarget = self.aggroTarget
-		if (self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > self.leashRange
-											or not IsValidEntity(aggroTarget)
-											or not aggroTarget:IsAlive()
-											or (aggroTarget.IsInvisible and aggroTarget:IsInvisible())
-											or (aggroTarget.IsInvulnerable and aggroTarget:IsInvulnerable())
-											or (aggroTarget.IsAttackImmune and aggroTarget:IsAttackImmune())
-											or (self.profile == "tower" and (self.spawnPos - aggroTarget:GetAbsOrigin()):Length2D() > self.leashRange) then
+		if (
+			(self.spawnPos - self.unit:GetAbsOrigin()):Length2D() > self.leashRange or
+			not IsValidEntity(aggroTarget) or
+			not aggroTarget:IsAlive() or
+			(aggroTarget.IsInvisible and aggroTarget:IsInvisible()) or
+			(aggroTarget.IsInvulnerable and aggroTarget:IsInvulnerable()) or
+			(aggroTarget.IsAttackImmune and aggroTarget:IsAttackImmune())
+		) then
 			self:SwitchState(AI_STATE_RETURNING)
 			return
 		else

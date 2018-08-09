@@ -118,8 +118,6 @@ ABILITY_SHOP_SKIP_HEROES = {
 	npc_dota_hero_rubick = true,
 	npc_dota_hero_arena_base = true,
 	npc_arena_hero_sara = true,
-	npc_arena_hero_maka = true,
-	npc_arena_hero_soul_eater = true,
 }
 
 ABILITY_SHOP_SKIP_ABILITIES = {

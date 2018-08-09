@@ -3,6 +3,7 @@ Events:Register("activate", function ()
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, 'DamageFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, 'ModifyGoldFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetModifyExperienceFilter(Dynamic_Wrap(GameMode, 'ModifyExperienceFilter'), GameRules)
+	GameRules:GetGameModeEntity():SetItemAddedToInventoryFilter(Dynamic_Wrap(GameMode, 'ItemAddedToInventoryFilter'), GameRules)
 end)
 
 function GameMode:ExecuteOrderFilter(filterTable)
@@ -83,10 +84,6 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		if target:IsBoss() and BOSS_BANNED_ABILITIES[abilityname] then
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_boss")
 			return false
-		end
-		if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then
-			filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
-			return true
 		end
 	end
 
@@ -266,6 +263,15 @@ function GameMode:ModifyExperienceFilter(filterTable)
 	PLAYER_DATA[filterTable.player_id_const].AntiAFKLastXP = GameRules:GetGameTime() + PLAYER_ANTI_AFK_TIME
 	if Duel.IsFirstDuel and Duel:IsDuelOngoing() then
 		filterTable.experience = filterTable.experience * 0.1
+	end
+	return true
+end
+
+function GameMode:ItemAddedToInventoryFilter(filterTable)
+	local item = EntIndexToHScript(filterTable.item_entindex_const)
+	if item.suggestedSlot then
+		filterTable.suggested_slot = item.suggestedSlot
+		item.suggestedSlot = nil
 	end
 	return true
 end

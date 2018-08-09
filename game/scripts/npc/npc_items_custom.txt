@@ -15,59 +15,6 @@
 
 "DOTAAbilities"
 {
-	"item_casino_coin"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityTextureName"			"item_arena/casino_coin"
-		"AbilityCastPoint"        		"0.6"
-		"AbilityCooldown"				"20.0"
-		"AbilityManaCost"				"100"
-		"AbilityCastRange"        		"192"
-
-		"ItemCost"						"1500"
-		"ItemShopTags"					"coin;casino"
-		"ItemQuality"					"rare"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"			"1"
-		"ItemPurchasableFilter"			"0"
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/item_casino_coin.lua"
-				"Function"		"CasinoCoinSlotMachine"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SpendChargeRight"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_slotmachine_in_work"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-
-				"States"
-				{
-					"MODIFIER_STATE_NIGHTMARED"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-
 	"item_recipe_lucifers_claw"
 	{
 		"BaseClass"						"item_datadriven"
@@ -653,6 +600,7 @@
 		"ItemShopTags"					"damage;attack_speed;movespeed;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"sb;invis;shadow blade;hex;sheepstick;scythe of vyse"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ICE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilitySpecial"
@@ -2609,6 +2557,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_FIRE"
 
 		"AbilityCooldown"				"7.5 7 6.5 6 5.5 5"
 		"AbilityManaCost"				"50 75 100 125 150 175"
@@ -2728,6 +2677,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_FIRE"
 
 		"AbilityCooldown"				"7.5 7 6.5 6 5.5 5"
 		"AbilityManaCost"				"50 75 100 125 150 175"
@@ -2847,6 +2797,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_FIRE"
 
 		"AbilityCooldown"				"7.5 7 6.5 6 5.5 5"
 		"AbilityManaCost"				"50 75 100 125 150 175"
@@ -2966,6 +2917,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_FIRE"
 
 		"AbilityCooldown"				"7.5 7 6.5 6 5.5 5"
 		"AbilityManaCost"				"50 75 100 125 150 175"
@@ -3085,6 +3037,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_FIRE"
 
 		"AbilityCooldown"				"7.5 7 6.5 6 5.5 5"
 		"AbilityManaCost"				"50 75 100 125 150 175"
@@ -3204,6 +3157,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_FIRE"
 
 		"AbilityCooldown"				"7.5 7 6.5 6 5.5 5"
 		"AbilityManaCost"				"50 75 100 125 150 175"
@@ -3622,6 +3576,7 @@
 		"AbilityCastRange"				"350"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"20"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 
 		"AbilitySpecial"
 		{
@@ -4210,6 +4165,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"			"item_arena/urn_of_souls"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4767,6 +4723,7 @@
 		"AbilityTextureName"			"item_arena/thunder_musket"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ENERGY"
 		"AbilityCooldown"				"2.0"
 
 		"AbilitySpecial"
@@ -5489,6 +5446,7 @@
 		"AbilitySharedCooldown"			"ethereal"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 
 		"AbilityCooldown"				"20"
 		"AbilityCastRange"				"700"
@@ -7450,6 +7408,7 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"maelstrom"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ENERGY"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -8170,6 +8129,7 @@
 		"AbilitySharedCooldown"			"hex"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_LIGHT"
 		"AbilityDamage"					"800"
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"20"
@@ -8271,6 +8231,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 
 		"AbilitySharedCooldown"			"orchid"
 		"AbilityCastRange"				"900"
@@ -8749,6 +8710,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ENERGY"
 		"ItemStackable"					"0"
 		"IsTempestDoubleClonable"		"0"
 
