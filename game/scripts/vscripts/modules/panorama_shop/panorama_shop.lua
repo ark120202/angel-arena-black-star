@@ -264,7 +264,9 @@ function PanoramaShop:SellItem(playerId, unit, item)
 	local itemName = item:GetAbilityName()
 	local team = PlayerResource:GetTeam(playerId)
 	if PanoramaShop.StocksTable[team][itemName] then
-		PanoramaShop:AddItemStock(team, itemName, item:GetCurrentCharges())
+		local charges = item:GetCurrentCharges()
+		if charges == 0 then charges = 1 end
+		PanoramaShop:AddItemStock(team, itemName, charges)
 	end
 	UTIL_Remove(item)
 	Gold:AddGoldWithMessage(unit, cost, playerId)
