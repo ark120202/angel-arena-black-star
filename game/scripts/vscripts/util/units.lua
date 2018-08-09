@@ -204,7 +204,7 @@ end
 function CDOTA_BaseNPC:MakeItemsUnstackable(firstSlot, lastSlot)
 	for i = firstSlot, lastSlot do
 		local item = self:GetItemInSlot(i)
-		if item then
+		if item and item.owner then
 			item.owner = item:GetPurchaser()
 			item:SetPurchaser(nil)
 		end
