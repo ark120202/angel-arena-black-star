@@ -272,25 +272,9 @@ function PanoramaShop:PushToStash (playerId, item, itemName)
 
 	local unit = PlayerResource:GetSelectedHeroEntity(playerId)
 		
-	-- Stackable item abuse fix
-	local isStackable = item:IsStackable()
-	local sameStackableItemSlot = nil
-	local sameStackableItem = nil
-	
-	if isStackable then
-		for i = 0, DOTA_STASH_SLOT_1 - 1 do
-			local current_item = unit:GetItemInSlot(i)
-			if current_item and current_item:GetAbilityName() == itemName then
-				if not sameStackableItem then
-					sameStackableItemSlot = i
-					sameStackableItem = current_item
-					unit:DropItemAtPositionImmediate(sameStackableItem, unit:GetAbsOrigin())
-				else
-					sameStackableItem:SetCurrentCharges(current_item:GetCurrentCharges() + sameStackableItem:GetCurrentCharges())
-					unit:TakeItem(current_item)
-				end
-			end
-		end
+	-- Stackable item abuse fix	
+	if item:IsStackable() then
+		unit:MakeItemsUnstackable(0, DOTA_STASH_SLOT_1 - 1)
 	end
 	
 	SetAllItemSlotsLocked(unit, true, true)
@@ -301,14 +285,10 @@ function PanoramaShop:PushToStash (playerId, item, itemName)
 			UTIL_Remove(current_item)
 		end
 	end
-	unit:AddItem(item)
+	unit:SafeAddItem(item)
 	
 	--Stackable item abuse fix part 2
-	if(sameStackableItem) then
-		sameStackableItem.suggested_slot = sameStackableItemSlot
-		local container = sameStackableItem:GetContainer()
-		unit:PickupDroppedItem(container)
-	end
+	unit:RestoreOwners(0, DOTA_STASH_SLOT_1 - 1)
 	
 	ClearSlotsFromDummy(unit, false)
 	
