@@ -106,6 +106,7 @@ function GameMode:DamageFilter(filterTable)
 	if IsValidEntity(attacker) then
 		if IsValidEntity(inflictor) and inflictor.GetAbilityName then
 			local inflictorname = inflictor:GetAbilityName()
+			if victim.SpawnerType == "jungle" and not JUNGLE_ALLOWED_ABILITIES[inflictorname] then return false end
 
 			if SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS[inflictorname] and attacker:IsHero() then
 				filterTable.damage = GetNotScaledDamage(filterTable.damage, attacker)
@@ -272,6 +273,15 @@ function GameMode:ItemAddedToInventoryFilter(filterTable)
 	if item.suggestedSlot then
 		filterTable.suggested_slot = item.suggestedSlot
 		item.suggestedSlot = nil
+	end
+	return true
+end
+
+function GameMode:ModifierGainedFilter(filterTable)
+	local parent = EntIndexToHScript(filterTable.entindex_parent_const)
+	local ability = filterTable.entindex_ability_const and EntIndexToHScript(filterTable.entindex_ability_const)
+	if ability and parent.SpawnerType == "jungle" and not JUNGLE_ALLOWED_ABILITIES[ability:GetAbilityName()] then
+		return false
 	end
 	return true
 end
