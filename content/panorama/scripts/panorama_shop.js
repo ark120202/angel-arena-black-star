@@ -301,7 +301,7 @@ function UpdateSmallItem(panel, gold) {
 			panel.FindChildTraverse('SmallItemStock').text = stock;
 			if (stock === 0 && RemainingTime > 0) {
 				panel.FindChildTraverse('StockTimer').text = Math.round(RemainingTime);
-				panel.FindChildTraverse('StockOverlay').style.clip = "radial( 50.0% 50.0%, 0.0deg, " + - (RemainingTime / ItemStocks[panel.itemName].current_cooldown * 360) + "deg)"
+				panel.FindChildTraverse('StockOverlay').style.clip = "radial(50% 50%, 0deg, " + -(RemainingTime / ItemStocks[panel.itemName].current_cooldown * 360) + "deg)"
 				panel.FindChildTraverse('StockOverlay').style.width = '100%';
 			} else {
 				panel.FindChildTraverse('StockTimer').text = '';
