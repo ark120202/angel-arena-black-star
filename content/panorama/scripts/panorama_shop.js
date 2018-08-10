@@ -299,9 +299,9 @@ function UpdateSmallItem(panel, gold) {
 			var RemainingTime = ItemStocks[panel.itemName].current_cooldown - (CurrentTime - ItemStocks[panel.itemName].current_last_purchased_time);
 			var stock = ItemStocks[panel.itemName].current_stock;
 			panel.FindChildTraverse('SmallItemStock').text = stock;
+			var stockOverlayStyle = panel.FindChildTraverse('StockOverlay').style;
 			if (stock === 0 && RemainingTime > 0) {
 				panel.FindChildTraverse('StockTimer').text = Math.round(RemainingTime);
-				var stockOverlayStyle = panel.FindChildTraverse('StockOverlay').style;
 				stockOverlayStyle.clip = "radial(50% 50%, 0deg, " + -(RemainingTime / ItemStocks[panel.itemName].current_cooldown * 360) + "deg)";
 				stockOverlayStyle.visibility = "visible";
 			} else {
