@@ -306,6 +306,7 @@ function UpdateSmallItem(panel, gold) {
 				stockOverlayStyle.visibility = "visible";
 			} else {
 				panel.FindChildTraverse('StockTimer').text = '';
+				stockOverlayStyle.visibility = "collapse";
 			}
 		}
 	} catch (err) {
