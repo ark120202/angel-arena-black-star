@@ -99,7 +99,7 @@ function UpdatePanoramaHUD() {
 		$.Localize('DOTA_Chat_YouPaused'),
 		$.Localize('DOTA_Chat_CantUnpauseTeam')
 	];
-	var escaped = escapeRegExp(redirectedPhrases.map(function(x) {return $.Localize(x).replace(/%s\d/g, '.*');}).join('|'));
+	var escaped = _.escapeRegExp(redirectedPhrases.map(function(x) {return $.Localize(x).replace(/%s\d/g, '.*');}).join('|'));
 	var regexp = new RegExp('^(' + escaped + ')$');
 	for (var i = 0; i < ChatLinesPanel.GetChildCount(); i++) {
 		var child = ChatLinesPanel.GetChild(i);
@@ -343,7 +343,7 @@ function CreateCustomToast(data) {
 
 function CreateHeroElements(id) {
 	var playerColor = GetHEXPlayerColor(id);
-	return "<img src='" + TransformTextureToPath(GetPlayerHeroName(id), 'icon') + "' class='CombatEventHeroIcon'/> <font color='" + playerColor + "'>" + Players.GetPlayerName(id).encodeHTML() + '</font>';
+	return "<img src='" + TransformTextureToPath(GetPlayerHeroName(id), 'icon') + "' class='CombatEventHeroIcon'/> <font color='" + playerColor + "'>" + _.escape(Players.GetPlayerName(id)) + '</font>';
 }
 
 (function() {
