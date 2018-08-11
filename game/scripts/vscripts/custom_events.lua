@@ -33,7 +33,7 @@ function GameMode:ModifierClickedPurge(data)
 		if IsValidEntity(ent) and
 			ent:IsAlive() and
 			ent:GetPlayerOwner() == PlayerResource:GetPlayer(data.PlayerID) and
-			table.contains(ONCLICK_PURGABLE_MODIFIERS, data.modifier) and
+			table.includes(ONCLICK_PURGABLE_MODIFIERS, data.modifier) and
 			not ent:IsStunned() and
 			not ent:IsChanneling() then
 			ent:RemoveModifierByName(data.modifier)

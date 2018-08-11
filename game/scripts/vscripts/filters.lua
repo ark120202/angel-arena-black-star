@@ -210,7 +210,6 @@ function GameMode:DamageFilter(filterTable)
 		end
 		if BlockedDamage > 0 then
 			PopupDamageBlock(victim, math.round(BlockedDamage))
-			--print("Raw damage: " .. filterTable.damage .. ", after blocking: " .. filterTable.damage - BlockedDamage .. " (blocked: " .. BlockedDamage .. ")")
 			filterTable.damage = filterTable.damage - BlockedDamage
 		end
 		if LifestealPercentage > 0 then
@@ -218,18 +217,17 @@ function GameMode:DamageFilter(filterTable)
 			SafeHeal(attacker, lifesteal)
 			SendOverheadEventMessage(attacker:GetPlayerOwner(), OVERHEAD_ALERT_HEAL, attacker, lifesteal, attacker:GetPlayerOwner())
 			ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
-			--print("Lifestealing " .. lifesteal .. " health from " .. filterTable.damage .. " damage points (" .. LifestealPercentage .. "% lifesteal)")
 		end
 		if attacker.GetPlayerOwnerID then
-			local attackerpid = attacker:GetPlayerOwnerID()
-			if attackerpid > -1 then
+			local attackerPlayerId = attacker:GetPlayerOwnerID()
+			if attackerPlayerId > -1 then
 				if victim:IsRealHero() then
-					attacker:ModifyPlayerStat("heroDamage", filterTable.damage)
+					PlayerResource:ModifyPlayerStat(attackerPlayerId, "heroDamage", filterTable.damage)
 				end
 				if victim:IsBoss() then
-					attacker:ModifyPlayerStat("bossDamage", filterTable.damage)
+					PlayerResource:ModifyPlayerStat(attackerPlayerId, "bossDamage", filterTable.damage)
 					victim.DamageReceived = victim.DamageReceived or {}
-					victim.DamageReceived[attackerpid] = (victim.DamageReceived[attackerpid] or 0) + filterTable.damage
+					victim.DamageReceived[attackerPlayerId] = (victim.DamageReceived[attackerPlayerId] or 0) + filterTable.damage
 				end
 			end
 		end

@@ -66,7 +66,7 @@ ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
 	modifier_item_holy_knight_shield = function(attacker, victim, inflictor, damage) if inflictor then
 		local item = FindItemInInventoryByName(victim, "item_holy_knight_shield", false)
 		if item and RollPercentage(GetAbilitySpecial("item_holy_knight_shield", "buff_chance")) and victim:GetTeam() ~= attacker:GetTeam() then
-			if PreformAbilityPrecastActions(victim, item) then
+			if item:PerformPrecastActions() then
 				item:ApplyDataDrivenModifier(victim, victim, "modifier_item_holy_knight_shield_buff", {})
 			end
 		end

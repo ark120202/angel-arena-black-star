@@ -185,7 +185,7 @@ return {
 				CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerId))
 
 			local team = 2
-			if PlayerResource:GetTeam(optplayerId or playerId) == team and table.contains(args, "enemy") then
+			if PlayerResource:GetTeam(optplayerId or playerId) == team and table.includes(args, "enemy") then
 				team = 3
 			end
 			heroEntity:SetTeam(team)

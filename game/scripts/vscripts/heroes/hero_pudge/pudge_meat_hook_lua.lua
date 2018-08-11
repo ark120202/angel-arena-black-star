@@ -228,7 +228,7 @@ if IsServer() then
 		if hTarget.SpawnerType == "jungle" then return false end
 		if not hTarget:IsCreep() and not hTarget:IsConsideredHero() then return false end
 
-		if not proj.hVictim or not table.contains(proj.hVictim, hTarget) then
+		if not proj.hVictim or not table.includes(proj.hVictim, hTarget) then
 			hTarget:EmitSound("Hero_Pudge.AttackHookImpact")
 			self.projectile = proj
 			hTarget:AddNewModifier(caster, self, "modifier_meat_hook_lua", nil)

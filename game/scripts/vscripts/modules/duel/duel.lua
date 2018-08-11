@@ -70,7 +70,7 @@ end
 function Duel:StartDuel()
 	Duel.heroes_teams_for_duel = {}
 	for playerId = 0, DOTA_MAX_TEAM_PLAYERS - 1  do
-		if PlayerResource:IsValidPlayerID(playerId) and not IsPlayerAbandoned(playerId) then
+		if PlayerResource:IsValidPlayerID(playerId) and not PlayerResource:IsPlayerAbandoned(playerId) then
 			local team = PlayerResource:GetTeam(playerId)
 			local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 			if IsValidEntity(hero) then
@@ -178,14 +178,14 @@ function Duel:EndDuel()
 		for _,t in pairs(Duel.heroes_teams_for_duel) do
 			for _,v in ipairs(t) do
 				if IsValidEntity(v) then
-					v:ModifyPlayerStat("Duels_Played", 1)
+					PlayerResource:ModifyPlayerStat(v:GetPlayerID(), "Duels_Played", 1)
 				end
 			end
 		end
 		for _,v in ipairs(Duel.heroes_teams_for_duel[winner]) do
 			if IsValidEntity(v) then
 				Gold:ModifyGold(v, goldAmount)
-				v:ModifyPlayerStat("Duels_Won", 1)
+				PlayerResource:ModifyPlayerStat(v:GetPlayerID(), "Duels_Won", 1)
 			end
 		end
 		Duel.TimesTeamWins[winner] = (Duel.TimesTeamWins[winner] or 0) + 1
@@ -205,7 +205,7 @@ function Duel:GetWinner()
 				unit:IsAlive() and
 				not PlayerResource:IsPlayerAbandoned(unit:GetPlayerID())
 		 	) then
-				if not table.contains(teams, team) and unit.OnDuel then
+				if not table.includes(teams, team) and unit.OnDuel then
 					table.insert(teams, team)
 				end
 			end

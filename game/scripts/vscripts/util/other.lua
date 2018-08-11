@@ -3,12 +3,8 @@ function CreateTeamNotificationSettings(team, bSecond)
 	return {text = Teams:GetName(team, bSecond), continue = true, style = {color = textColor}}
 end
 
-function CreateItemNotificationSettings(sItemName)
-	return {text= "#DOTA_Tooltip_ability_" .. sItemName, duration=7.0, continue=true, style={color="orange"}}
-end
-
 function GetDOTATimeInMinutesFull()
-	return math.floor(GameRules:GetDOTATime(false, false)/60)
+	return math.floor(GameRules:GetDOTATime(false, false) / 60)
 end
 
 function CreatePortal(vLocation, vTarget, iRadius, sParticle, sDisabledParticle, bEnabled, fOptionalActOnTeleport, sOptionalName)
@@ -84,26 +80,6 @@ end
 
 function HasDamageFlag(damage_flags, flag)
 	return bit.band(damage_flags, flag) == flag
-end
-
-function GetLevelValue(value, level)
-	local split = {}
-	for i in string.gmatch(value, "%S+") do
-		table.insert(split, i)
-	end
-	if i[level+1] then
-		return split[level+1]
-	end
-end
-
-function PreformAbilityPrecastActions(unit, ability)
-	if ability:IsCooldownReady() and ability:IsOwnersManaEnough() then
-		ability:PayManaCost()
-		ability:AutoStartCooldown()
-		--ability:UseResources(true, true, true) -- not works with items?
-		return true
-	end
-	return false
 end
 
 function ReplaceAbilities(unit, oldAbility, newAbility, keepLevel, keepCooldown)
@@ -202,22 +178,6 @@ function CastAdditionalAbility(caster, ability, target)
 	end
 end
 
-function IsHeroInAbilityPhase(unit)
-	for i = 0, unit:GetAbilityCount()-1 do
-		local ability = unit:GetAbilityByIndex(i)
-		if ability and ability.IsInAbilityPhase and ability:IsInAbilityPhase() then
-			return true
-		end
-	end
-	for i = 0, 5 do
-		local item = unit:GetItemInSlot(i)
-		if item and item.IsInAbilityPhase and item:IsInAbilityPhase() then
-			return true
-		end
-	end
-	return false
-end
-
 function GetAllAbilitiesCooldowns(unit)
 	local cooldowns = {}
 	for i = 0, unit:GetAbilityCount()-1 do
@@ -264,23 +224,8 @@ function SafePerformAttack(unit, hTarget, bUseCastAttackOrb, bProcessProcs, bSki
 	unit.AttackFuncs = nil
 end
 
-function UniqueRandomInts(min, max, count)
-	local output = {}
-	while #output < count do
-		local r = RandomInt(min, max)
-		if not table.contains(output, r) then
-			table.insert(output, r)
-		end
-	end
-	return output
-end
-
 function ColorTableToCss(color)
 	return "rgb(" .. color[1] .. ',' .. color[2] .. ',' .. color[3] .. ')'
-end
-
-function IsPlayerAbandoned(playerId)
-	return PLAYER_DATA[playerId].IsAbandoned == true
 end
 
 function FindAllOwnedUnits(player)
@@ -313,17 +258,7 @@ end
 function GetTeamPlayerCount(iTeam)
 	local counter = 0
 	for i = 0, 23 do
-		if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) and PlayerResource:GetTeam(i) == iTeam then
-			counter = counter + 1
-		end
-	end
-	return counter
-end
-
-function GetTeamAbandonedPlayerCount(iTeam)
-	local counter = 0
-	for i = 0, 23 do
-		if PlayerResource:IsValidPlayerID(i) and IsPlayerAbandoned(i) and PlayerResource:GetTeam(i) == iTeam then
+		if PlayerResource:IsValidPlayerID(i) and not PlayerResource:IsPlayerAbandoned(i) and PlayerResource:GetTeam(i) == iTeam then
 			counter = counter + 1
 		end
 	end
@@ -346,7 +281,7 @@ function GetOneRemainingTeam()
 end
 
 function CopyItem(item)
-	local newItem = CreateItem(item:GetAbilityName(), caster, caster)
+	local newItem = CreateItem(item:GetAbilityName(), nil, nil)
 	newItem:SetPurchaseTime(item:GetPurchaseTime())
 	newItem:SetPurchaser(item:GetPurchaser())
 	newItem:SetOwner(item:GetOwner())
@@ -370,11 +305,6 @@ function SafeHeal(unit, flAmount, hInflictor, overhead)
 	end
 end
 
-function InvokeCheatCommand(s)
-	Convars:SetInt("sv_cheats", 1)
-	SendToServerConsole(s)
-end
-
 function UnitVarToPlayerID(unitvar)
 	if unitvar then
 		if type(unitvar) == "number" then
@@ -390,16 +320,6 @@ function UnitVarToPlayerID(unitvar)
 	return -1
 end
 
-function FindUnitsInBox(teamNumber, vStartPos, vEndPos, cacheUnit, teamFilter, typeFilter, flagFilter)
-	local hlen = (vEndPos.y-vStartPos.y) / 2
-	local cen = vStartPos.y+hlen
-	vStartPos.y = cen
-	vEndPos.y = cen
-	vStartPos.z = 0
-	vEndPos.z = 0
-	return FindUnitsInLine(teamNumber, vStartPos, vEndPos, cacheUnit, hlen, teamFilter, typeFilter, flagFilter)
-end
-
 function GetTrueItemCost(name)
 	local cost = GetItemCost(name)
 	if cost <= 0 then
@@ -412,18 +332,6 @@ function GetTrueItemCost(name)
 		end
 	end
 	return cost
-end
-
-function FindNearestEntity(vec3, units)
-	local unit
-	local range
-	for _,v in ipairs(units) do
-		if not range or (v:GetAbsOrigin()-vec3):Length2D() < range then
-			unit = v
-			range = (v:GetAbsOrigin()-vec3):Length2D()
-		end
-	end
-	return unit
 end
 
 function FindCourier(team)
@@ -570,12 +478,6 @@ function GetTeamAllPlayerCount(iTeam)
 	return counter
 end
 
-function Lifesteal(ability, unit, target, damage)
-	local target = keys.target
-	local lifesteal = keys.damage * keys.percent * 0.01
-	SafeHeal(caster, lifesteal, keys.ability, true)
-end
-
 function RecreateAbility(unit, ability)
 	local name = ability:GetAbilityName()
 	local level = ability:GetLevel()
@@ -626,11 +528,6 @@ function SimpleDamageReflect(victim, attacker, damage, flags, ability, damage_ty
 	return false
 end
 
-function GetLinkedHeroNames(hero)
-	local linked = GetKeyValue(hero, "LinkedHero")
-	return linked and string.split(linked, " | ") or {}
-end
-
 function IsModifierStrongest(unit, modifier, modifierList)
 	local ind = modifierList[modifier]
 	if not ind then return false end
@@ -656,10 +553,6 @@ end
 
 function pluralize(n, one, many)
 	return n == 1 and one or (many or one .. "s")
-end
-
-function iif(cond, yes, no)
-	if cond then return yes else return no end
 end
 
 function RemoveAllUnitsByName(name)

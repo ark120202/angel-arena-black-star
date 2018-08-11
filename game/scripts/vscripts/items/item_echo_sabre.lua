@@ -14,7 +14,7 @@ function DoubleAttack(keys)
 			end
 		end
 	end
-	if PreformAbilityPrecastActions(caster, ability) and not caster:IsIllusion() and (not caster:IsRangedUnit() or not (caster.AttackFuncs ~= nil and caster.AttackFuncs.bNoDoubleAttackMelee)) then
+	if ability:PerformPrecastActions() and not caster:IsIllusion() and (not caster:IsRangedUnit() or not (caster.AttackFuncs ~= nil and caster.AttackFuncs.bNoDoubleAttackMelee)) then
 		Timers:CreateTimer(ability:GetAbilitySpecial("attack_delay"), function()
 			if IsValidEntity(caster) and IsValidEntity(ability) then
 				local can = true
