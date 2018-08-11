@@ -122,7 +122,6 @@ ABILITY_SHOP_SKIP_HEROES = {
 
 ABILITY_SHOP_SKIP_ABILITIES = {
 	"broodmother_spin_web",
-	"morphling_morph",
 	"morphling_morph_agi",
 	"morphling_morph_str",
 	"morphling_replicate",
@@ -131,12 +130,10 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"doom_bringer_empty1",
 	"doom_bringer_empty2",
 	"phoenix_sun_ray",
-	"phoenix_sun_ray_toggle_move_empty",
 	"ogre_magi_unrefined_fireblast",
 	"keeper_of_the_light_spirit_form",
 	"mirratie_sixth_sense",
 	"wisp_spirits_in",
 	"wisp_spirits_out",
-	"wisp_tether_break",
 	"meepo_divided_we_stand",
 }
