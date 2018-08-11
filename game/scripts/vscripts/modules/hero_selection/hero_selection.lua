@@ -163,7 +163,7 @@ function HeroSelection:StartStateHeroPick()
 	--Banning
 	local notBanned = {}
 	for hero in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")) do
-		if not table.contains(notBanned, hero) then
+		if not table.includes(notBanned, hero) then
 			table.insert(notBanned, hero)
 		end
 	end

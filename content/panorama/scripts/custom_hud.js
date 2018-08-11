@@ -99,7 +99,7 @@ function UpdatePanoramaHUD() {
 		$.Localize('DOTA_Chat_YouPaused'),
 		$.Localize('DOTA_Chat_CantUnpauseTeam')
 	];
-	var escaped = escapeRegExp(redirectedPhrases.map(function(x) {return $.Localize(x).replace(/%s\d/g, '.*');}).join('|'));
+	var escaped = _.escapeRegExp(redirectedPhrases.map(function(x) {return $.Localize(x).replace(/%s\d/g, '.*');}).join('|'));
 	var regexp = new RegExp('^(' + escaped + ')$');
 	for (var i = 0; i < ChatLinesPanel.GetChildCount(); i++) {
 		var child = ChatLinesPanel.GetChild(i);
@@ -343,7 +343,7 @@ function CreateCustomToast(data) {
 
 function CreateHeroElements(id) {
 	var playerColor = GetHEXPlayerColor(id);
-	return "<img src='" + TransformTextureToPath(GetPlayerHeroName(id), 'icon') + "' class='CombatEventHeroIcon'/> <font color='" + playerColor + "'>" + Players.GetPlayerName(id).encodeHTML() + '</font>';
+	return "<img src='" + TransformTextureToPath(GetPlayerHeroName(id), 'icon') + "' class='CombatEventHeroIcon'/> <font color='" + playerColor + "'>" + _.escape(Players.GetPlayerName(id)) + '</font>';
 }
 
 (function() {
@@ -368,28 +368,4 @@ function CreateHeroElements(id) {
 	GameEvents.Subscribe('entity_killed', OnDeath);
 
 	GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
-
-	GameEvents.Subscribe('create_generic_panel', function(data) {
-		var random = getRandomInt(0, 100000);
-		var panel;
-		switch(data.type) {
-			case 'i':
-				panel = $.CreatePanel('Image', $.GetContextPanel(), random);
-				panel.SetImage(data.image);
-				break;
-			case 'v':
-				$.GetContextPanel().BCreateChildren('<Movie id="' + random + '" src="' + data.source.encodeHTML() + '" controls="none" repeat="true" autoplay="onload" />');
-				panel = $.GetContextPanel().FindChildTraverse(random);
-				break;
-			case 'h':
-				$.GetContextPanel().BCreateChildren('<HTML id="' + random + '" url="' + data.source.encodeHTML() + '" />');
-				panel = $.GetContextPanel().FindChildTraverse(random);
-				panel.style.height = '600px';
-				panel.style.width = '800px';
-				panel.SetPanelEvent('onactivate', function() {});
-				break;
-		}
-		panel.style.align = 'center center';
-		data.duration && panel.DeleteAsync(data.duration);
-	});
 })();

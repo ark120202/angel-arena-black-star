@@ -22,7 +22,7 @@ function ThunderstruckProc(keys)
 	local target = keys.target
 	local ability = keys.ability
 
-	if not caster:IsIllusion() and PreformAbilityPrecastActions(caster, ability) then
+	if not caster:IsIllusion() and ability:PerformPrecastActions() then
 		ApplyDamage({
 			victim = target,
 			attacker = caster,

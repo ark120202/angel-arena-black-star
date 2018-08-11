@@ -66,7 +66,7 @@ ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
 	modifier_item_holy_knight_shield = function(attacker, victim, inflictor, damage) if inflictor then
 		local item = FindItemInInventoryByName(victim, "item_holy_knight_shield", false)
 		if item and RollPercentage(GetAbilitySpecial("item_holy_knight_shield", "buff_chance")) and victim:GetTeam() ~= attacker:GetTeam() then
-			if PreformAbilityPrecastActions(victim, item) then
+			if item:PerformPrecastActions() then
 				item:ApplyDataDrivenModifier(victim, victim, "modifier_item_holy_knight_shield_buff", {})
 			end
 		end
@@ -224,7 +224,11 @@ INCOMING_DAMAGE_MODIFIERS = {
 			if not IsValidEntity(inflictor) and saber_instinct and victim:IsAlive() and not victim:PassivesDisabled() then
 				if attacker:IsRangedUnit() then
 					if RollPercentage(saber_instinct:GetAbilitySpecial("ranged_evasion_pct")) then
-						PopupEvadeMiss(victim, attacker)
+						local victimPlayer = victim:GetPlayerOwner()
+						local attackerPlayer = attacker:GetPlayerOwner()
+
+						SendOverheadEventMessage(victimPlayer, OVERHEAD_ALERT_EVADE, victim, damage, attackerPlayer)
+						SendOverheadEventMessage(attackerPlayer, OVERHEAD_ALERT_MISS, victim, damage, victimPlayer)
 						ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
 						return false
 					end

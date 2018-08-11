@@ -7,7 +7,7 @@ function CheckDeath(keys)
 		return
 	end
 	if target == caster then
-		if PreformAbilityPrecastActions(caster, ability) then
+		if ability:PerformPrecastActions() then
 			ability:ApplyDataDrivenModifier(caster, target, "modifier_skeleton_king_reincarnation_life_saver", {})
 			caster:SetHealth(1)
 			ability:ApplyDataDrivenModifier(caster, target, "modifier_skeleton_king_reincarnation_reincarnation", {duration = caster:HasTalent("talent_hero_skeleton_king_reincarnation_notime_stun") and 0.1 or ability:GetLevelSpecialValueFor("reincarnate_time", ability:GetLevel() - 1)})
