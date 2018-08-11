@@ -25,36 +25,6 @@
 		"VisionNighttimeRange"		"1500"
 	}
 
-	"npc_dota_casino_slotmachine"
-	{
-		"BaseClass"	"npc_dota_creature"
-		"Model"	"models/items/earthshaker/totem_dragon_wall/fissure_head.vmdl"
-		"ModelScale"			"1"
-		"Level"	"0"
-		"IsAncient"					"1"
-
-		"Ability1"	"slotmachine_passive"
-
-		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
-		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
-		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"	"0"
-		"MovementTurnRate"	"0"
-
-		"StatusHealth"	"1"
-		"StatusHealthRegen"	"0"
-		"StatusMana"	"0"
-		"StatusManaRegen"	"0"
-
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1" { "ItemDef" "459" }
-			}
-		}
-	}
-
 	"npc_arena_healer"
 	{
 		"BaseClass"					"npc_dota_healer"

@@ -100,6 +100,8 @@
 		"AbilityCastPoint"				"0.45 0.45 0.45 0.45 0.45 0.35 0.25"
 		"AbilityCooldown"				"5"
 		"AbilityManaCost"				"100"
+		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
 		"AbilitySpecial"
 		{
 			"01"
@@ -183,6 +185,8 @@
 		"AbilityChannelTime"			"1.1"
 		"AbilityCooldown"				"100 95 90 85 80 75 70"
 		"HasScepterUpgrade"				"1"
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
+		
 		"AbilitySpecial"
 		{
 			"01"

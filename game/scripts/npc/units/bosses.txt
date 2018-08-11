@@ -228,65 +228,6 @@
 		}
 	}
 
-	"npc_arena_boss_central"
-	{
-		//Bosses
-		"Bosses_GoldToAll"			"25000"
-		"Bosses_RespawnDuration"	"600"
-
-		// General
-		//
-		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/heroes/viper/viper.vmdl"
-		"ModelScale"				"2"
-		"Level"						"200"
-
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"boss_armor"
-		"Ability2"					"boss_central_passive"
-
-		"ArmorPhysical"				"160"
-		"MagicalResistance"			"80"
-
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"ProjectileModel"			"particles/units/heroes/hero_viper/viper_poison_attack.vpcf"
-		"ProjectileSpeed"			"1000"
-		"AttackDamageMin"			"10000"
-		"AttackDamageMax"			"12000"
-		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.3"
-		"AttackAnimationPoint"		"0.10"
-		"AttackAcquisitionRange"	"600"
-		"AttackRange"				"950"
-
-		"BountyXP"					"60000"
-
-		"HealthBarOffset"			"400"
-
-		"MovementSpeed"				"0"
-
-		"StatusHealth"				"1000000"
-		"StatusHealthRegen"			"999"
-		"StatusMana"				"50000"
-		"StatusManaRegen"			"100"
-
-		"MovementTurnRate"			"1.0"
-		"IsAncient"					"1"
-		"HasInventory"				"1"
-		"CanBeDominated"			"0"
-		"ConsideredHero"			"1"
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"VisionDaytimeRange"		"1800"
-		"VisionNighttimeRange"		"1800"
-		"Creature"
-		{
-			"DisableResistance"            "70"
-		}
-	}
-
 	"npc_arena_boss_freya"
 	{
 		//Bosses
@@ -553,5 +494,62 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"VisionDaytimeRange"		"1000"
 		"VisionNighttimeRange"		"1000"
+	}
+
+	"npc_arena_boss_cursed_zeld"
+	{
+		"Bosses_GoldToAll"			"250000"
+		"Bosses_RespawnDuration"	"900"
+
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/brewmaster/brewmaster_earthspirit.vmdl"
+		"ModelScale"				"2.5"
+		"Level"						"900"
+
+		"Ability1"					"boss_cursed_zeld_shadows_curse"
+		"Ability2"					"boss_cursed_zeld_mind_crack"
+		"Ability3"					"boss_cursed_zeld_mental_influence"
+		"Ability4"					"boss_cursed_zeld_three_cores"
+		"Ability5"					"boss_armor"
+
+		"ArmorPhysical"				"160"
+		"MagicalResistance"			"80"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"ProjectileModel"			"particles/base_attacks/generic_projectile.vpcf"
+		"ProjectileSpeed"			"600"
+		"AttackDamageMin"			"30000"
+		"AttackDamageMax"			"30000"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.3"
+		"AttackAnimationPoint"		"0.10"
+		"AttackAcquisitionRange"	"700"
+		"AttackRange"				"1000"
+
+		"BountyXP"					"10000"
+
+		"HealthBarOffset"			"400"
+
+		"MovementSpeed"				"500"
+
+		"StatusHealth"				"1000000"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"100"
+
+		"MovementTurnRate"			"1.0"
+		"IsAncient"					"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"Creature"
+		{
+			"DisableResistance"            "50"
+		}
 	}
 }

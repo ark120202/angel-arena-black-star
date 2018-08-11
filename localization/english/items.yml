@@ -5,9 +5,6 @@ Variables:
   item_yasha_note: Yasha-based movement speed bonuses from multiple items do not stack.
   item_kaya_note: Multiple instances of this item do not stack.
 
-DOTA_Tooltip_ability_item_casino_coin: Casino Coin
-DOTA_Tooltip_ability_item_casino_coin_Description: Can be used to play slotmachine or to pay for various services
-
 DOTA_Tooltip_ability_item_shard_level: Level Up Shard
 DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero by 1.'
 

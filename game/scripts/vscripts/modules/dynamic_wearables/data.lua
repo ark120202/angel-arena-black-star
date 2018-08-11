@@ -103,16 +103,6 @@ CUSTOM_WEARABLES = {
 			}
 		},
 	},
-	maka_scythe = {
-		heroes = {"npc_arena_hero_maka"},
-		default = true,
-		model = "models/units/maka/maka_scythe.vmdl",
-		strategy = WEARABLES_ATTACH_METHOD_BONE_MERGE,
-		OnCreated = function(self)
-			self:SetVisible(false)
-		end
-	},
-
 	shinobu_umbrella = {
 		heroes = {"npc_arena_hero_shinobu"},
 		model = "models/custom/umbrella_rainbow.vmdl",
