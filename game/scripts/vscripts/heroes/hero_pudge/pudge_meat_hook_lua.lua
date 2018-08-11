@@ -246,7 +246,6 @@ if IsServer() then
 					local hBuff = caster:FindModifierByName(self:GetIntrinsicModifierName())
 					if hBuff then
 						hBuff:IncrementStackCount()
-						PopupNumbers(caster, "damage", Vector(255, 0, 0), 1.2, 1, POPUP_SYMBOL_PRE_PLUS, POPUP_SYMBOL_POST_LIGHTNING)
 					end
 				end
 

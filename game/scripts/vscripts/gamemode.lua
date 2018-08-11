@@ -15,7 +15,6 @@ local requirements = {
 	"libraries/containers",
 	-- "libraries/pathgraph",
 	"libraries/worldpanels",
-	"libraries/PopupNumbers",
 	"libraries/statcollection/init",
 	--------------------------------------------------
 	"data/constants",

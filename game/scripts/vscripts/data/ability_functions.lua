@@ -224,7 +224,11 @@ INCOMING_DAMAGE_MODIFIERS = {
 			if not IsValidEntity(inflictor) and saber_instinct and victim:IsAlive() and not victim:PassivesDisabled() then
 				if attacker:IsRangedUnit() then
 					if RollPercentage(saber_instinct:GetAbilitySpecial("ranged_evasion_pct")) then
-						PopupEvadeMiss(victim, attacker)
+						local victimPlayer = victim:GetPlayerOwner()
+						local attackerPlayer = attacker:GetPlayerOwner()
+
+						SendOverheadEventMessage(victimPlayer, OVERHEAD_ALERT_EVADE, victim, damage, attackerPlayer)
+						SendOverheadEventMessage(attackerPlayer, OVERHEAD_ALERT_MISS, victim, damage, victimPlayer)
 						ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
 						return false
 					end

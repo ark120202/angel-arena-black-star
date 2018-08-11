@@ -209,13 +209,14 @@ function GameMode:DamageFilter(filterTable)
 			end
 		end
 		if BlockedDamage > 0 then
-			PopupDamageBlock(victim, math.round(BlockedDamage))
+			SendOverheadEventMessage(victim:GetPlayerOwner(), OVERHEAD_ALERT_BLOCK, victim, BlockedDamage, attacker:GetPlayerOwner())
+			SendOverheadEventMessage(attacker:GetPlayerOwner(), OVERHEAD_ALERT_BLOCK, victim, BlockedDamage, victim:GetPlayerOwner())
+
 			filterTable.damage = filterTable.damage - BlockedDamage
 		end
 		if LifestealPercentage > 0 then
 			local lifesteal = filterTable.damage * LifestealPercentage * 0.01
 			SafeHeal(attacker, lifesteal)
-			SendOverheadEventMessage(attacker:GetPlayerOwner(), OVERHEAD_ALERT_HEAL, attacker, lifesteal, attacker:GetPlayerOwner())
 			ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
 		end
 		if attacker.GetPlayerOwnerID then
