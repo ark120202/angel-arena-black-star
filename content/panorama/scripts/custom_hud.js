@@ -368,28 +368,4 @@ function CreateHeroElements(id) {
 	GameEvents.Subscribe('entity_killed', OnDeath);
 
 	GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
-
-	GameEvents.Subscribe('create_generic_panel', function(data) {
-		var random = getRandomInt(0, 100000);
-		var panel;
-		switch(data.type) {
-			case 'i':
-				panel = $.CreatePanel('Image', $.GetContextPanel(), random);
-				panel.SetImage(data.image);
-				break;
-			case 'v':
-				$.GetContextPanel().BCreateChildren('<Movie id="' + random + '" src="' + data.source.encodeHTML() + '" controls="none" repeat="true" autoplay="onload" />');
-				panel = $.GetContextPanel().FindChildTraverse(random);
-				break;
-			case 'h':
-				$.GetContextPanel().BCreateChildren('<HTML id="' + random + '" url="' + data.source.encodeHTML() + '" />');
-				panel = $.GetContextPanel().FindChildTraverse(random);
-				panel.style.height = '600px';
-				panel.style.width = '800px';
-				panel.SetPanelEvent('onactivate', function() {});
-				break;
-		}
-		panel.style.align = 'center center';
-		data.duration && panel.DeleteAsync(data.duration);
-	});
 })();
