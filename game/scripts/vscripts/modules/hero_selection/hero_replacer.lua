@@ -128,7 +128,11 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			for i = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
 				local citem  = hero:GetItemInSlot(i)
 				if citem and citem ~= item then
-					local newItem = citem:Copy(oldHero)
+					local newItem = CopyItem(citem)
+					if citem:GetCooldownTimeRemaining() > 0 then
+						newItem.SavedCooldown = citem:GetCooldownTimeRemaining()
+					end
+					newItem.owner = citem:GetPurchaser()
 					newItem.suggested_slot = i
 					newItem.purchasedByHero = newItem.owner == oldHero
 					table.insert(items, newItem)
