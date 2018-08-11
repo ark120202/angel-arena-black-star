@@ -7,54 +7,6 @@ function GetDOTATimeInMinutesFull()
 	return math.floor(GameRules:GetDOTATime(false, false) / 60)
 end
 
-function CreatePortal(vLocation, vTarget, iRadius, sParticle, sDisabledParticle, bEnabled, fOptionalActOnTeleport, sOptionalName)
-	local unit = CreateUnitByName("npc_dummy_unit", vLocation, false, nil, nil, DOTA_TEAM_NEUTRALS)
-	unit.Teleport_Radius = iRadius
-	unit.Teleport_Target = vTarget
-	unit.Teleport_ParticleName = sParticle
-	unit.Teleport_DisabledParticleName = sDisabledParticle
-	unit.Teleport_ActionOnTeleport = fOptionalActOnTeleport
-	unit.Teleport_Name = sOptionalName
-	unit.Teleport_Enabled = not bEnabled
-	unit:AddAbility("teleport_passive")
-	if bEnabled then
-		unit:EnablePortal()
-	else
-		unit:DisablePortal()
-	end
-	return unit
-end
-
-function CreateLoopedPortal(point1, point2, iRadius, sParticle, sDisabledParticle, bEnabled, fOptionalActOnTeleport, sOptionalName)
-	for i = 1, 2 do
-		local point
-		local target
-		if i == 1 then
-			point = point1
-			target = point2
-		else
-			point = point2
-			target = point1
-		end
-		local unit = CreateUnitByName("npc_dummy_unit", point, false, nil, nil, DOTA_TEAM_NEUTRALS)
-		unit.Teleport_Radius = iRadius
-		unit.Teleport_Target = target
-		unit.Teleport_ParticleName = sParticle
-		unit.Teleport_DisabledParticleName = sDisabledParticle
-		unit.Teleport_ActionOnTeleport = fOptionalActOnTeleport
-		unit.Teleport_Name = sOptionalName
-		unit.Teleport_Enabled = not bEnabled
-		unit.Teleport_Looped = true
-		unit:AddAbility("teleport_passive")
-		if bEnabled then
-			unit:EnablePortal()
-		else
-			unit:DisablePortal()
-		end
-	end
-	return unit
-end
-
 function CreateGoldNotificationSettings(amount)
 	return {text=amount, continue=true, style={color="gold"}}, {text="#notifications_gold", continue=true, style={color="gold"}}
 end
