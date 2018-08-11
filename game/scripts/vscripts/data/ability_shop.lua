@@ -125,6 +125,7 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"morphling_morph",
 	"morphling_morph_agi",
 	"morphling_morph_str",
+	"morphling_replicate",
 	"keeper_of_the_light_recall",
 	"keeper_of_the_light_blinding_light",
 	"doom_bringer_empty1",
