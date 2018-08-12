@@ -77,7 +77,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_champion")
 			return false
 		end
-		if target.SpawnerType == "jungle" and not JUNGLE_ALLOWED_ABILITIES[abilityname] then
+		if target.SpawnerType == "jungle" and JUNGLE_BANNED_ABILITIES[abilityname] then
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_jungle")
 			return false
 		end
