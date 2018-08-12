@@ -440,6 +440,12 @@ function ShowItemInShop(data) {
 }
 
 function UpdateShop() {
+	var IsHUDFlipped = FindDotaHudElement("Hud").BHasClass("HUDFlipped")
+	if (IsHUDFlipped)
+		$('#ShopBase').AddClass("HUDFlipped")
+	else 
+		$('#ShopBase').RemoveClass("HUDFlipped")
+	
 	SearchItems();
 	UpdateItembuildsForHero();
 	var gold = GetPlayerGold(Game.GetLocalPlayerID());
