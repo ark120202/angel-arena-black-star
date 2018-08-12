@@ -128,8 +128,8 @@ function RedirectMessage(label) {
 	*/
 }
 
-var twitchRegExp = new RegExp('\\b(' + _.escapeRegExp(Object.keys(twitchSmileMap).join('|')) + ')\\b', 'g');
-var bttvRegExp = new RegExp('\\b(' + _.escapeRegExp(Object.keys(bttvSmileMap).join('|')) + ')\\b', 'g');
+var twitchRegExp = new RegExp('\\b(' + Object.keys(twitchSmileMap).map(_.escapeRegExp).join('|') + ')\\b', 'g');
+var bttvRegExp = new RegExp('\\b(' + Object.keys(bttvSmileMap).map(_.escapeRegExp).join('|') + ')\\b', 'g');
 function AddSmiles(string) {
 	return string.replace(twitchRegExp, function(matched) {
 		return "<img src='" + twitchUrlMask.replace('{id}', twitchSmileMap[matched]) + "'/>";
