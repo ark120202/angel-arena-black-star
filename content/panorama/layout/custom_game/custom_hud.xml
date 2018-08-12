@@ -30,7 +30,6 @@
 			<!-- <Label class="PlayerControlsButton" text="?" onactivate="GameEvents.SendCustomGameEventToServer('hud_buttons_show_custom_game_info', {playerid: Game.GetLocalPlayerID()})"/> -->
 		</Panel>
 		<Panel id="DynamicMinimapRoot" hittest="false" hittestchildren="false" />
-		<Button id="SwitchDynamicMinimapButton" onactivate="SetDynamicMinimapVisible()"/>
 		<Panel id="CustomToastManager" hittest="false" hittestchildren="false" />
 		<Panel id="CustomModifiersList" />
 		<Panel id="AbandonedPanel">

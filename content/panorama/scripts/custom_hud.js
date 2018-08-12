@@ -58,9 +58,6 @@ function UpdatePanoramaHUD() {
 	var minimap = FindDotaHudElement('minimap_block');
 	$('#DynamicMinimapRoot').style.height = ((minimap.actuallayoutheight + 16) / sh * 100) + '%';
 	$('#DynamicMinimapRoot').style.width = ((minimap.actuallayoutwidth + 16) / sw * 100) + '%';
-	var glyphpos = FindDotaHudElement('RadarButton').GetPositionWithinWindow();
-	if (glyphpos != null && !isNaN(glyphpos.x) && !isNaN(glyphpos.y))
-		$('#SwitchDynamicMinimapButton').style.position = (glyphpos.x / sw * 100) + '% ' + (glyphpos.y / sh * 100) + '% 0';
 	var pcs = FindDotaHudElement('PortraitContainer').GetPositionWithinWindow();
 	if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
 		CustomModifiersList.style.position = (pcs.x / sw * 100) + '% ' + (pcs.y / sh * 100) + '% 0';
@@ -113,10 +110,6 @@ function UpdateGoldLabel(playerTeam, unit, label) {
 	}
 }
 
-function SetDynamicMinimapVisible(status) {
-	$('#DynamicMinimapRoot').visible = status || !$('#DynamicMinimapRoot').visible;
-}
-
 function AutoUpdatePanoramaHUD() {
 	$.Schedule(0.2, AutoUpdatePanoramaHUD);
 	UpdatePanoramaHUD();
@@ -125,7 +118,6 @@ function AutoUpdatePanoramaHUD() {
 function HookPanoramaPanels() {
 	FindDotaHudElement('QuickBuyRows').visible = false;
 	FindDotaHudElement('shop').visible = false;
-	FindDotaHudElement('RadarButton').style.opacity = 0.01;
 	FindDotaHudElement('HUDSkinMinimap').visible = false;
 	FindDotaHudElement('combat_events').visible = false;
 	FindDotaHudElement('ChatEmoticonButton').visible = false;
