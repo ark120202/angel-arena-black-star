@@ -108,8 +108,6 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 	}
 	panel.itemName = itemName;
 	panel.FindChildTraverse('SmallItemImage').itemname = itemName;
-	if (itemName.lastIndexOf('item_recipe', 0) === 0)
-		panel.FindChildTraverse('SmallItemImage').SetImage('raw://resource/flash3/images/items/recipe.png');
 	panel.SetPanelEvent('onactivate', function() {
 		if (!$.GetContextPanel().BHasClass('InSearchMode')) {
 			$('#ShopBase').SetFocus();
@@ -163,8 +161,6 @@ function SnippetCreate_SmallItem(panel, itemName, skipPush, onDragStart, onDragE
 				ItemHideTooltip(panel);
 				var displayPanel = $.CreatePanel('DOTAItemImage', panel, 'dragImage');
 				displayPanel.itemname = itemName;
-				if (itemName.lastIndexOf('item_recipe_', 0) === 0)
-					displayPanel.SetImage('raw://resource/flash3/images/items/recipe.png');
 
 				dragCallbacks.displayPanel = displayPanel;
 				dragCallbacks.offsetX = 0;
