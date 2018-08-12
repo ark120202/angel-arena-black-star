@@ -236,21 +236,21 @@ function HookPanoramaPanels() {
 	});
 }
 
-function OnUpdateQueryUnit(data) {
+function OnUpdateQueryUnit() {
 	var unitName = GetHeroName(Players.GetQueryUnit(Players.GetLocalPlayer()));
 	FindDotaHudElement('UnitName').text = $.Localize(unitName).toUpperCase();
 	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
-	OnUpdateSelectedUnit(data);
+	OnUpdateSelectedUnit();
 }
 
-function OnUpdateSelectedUnit(data) {
+function OnUpdateSelectedUnit() {
 	var unitName = GetHeroName(Players.GetLocalPlayerPortraitUnit());
 	FindDotaHudElement('UnitNameLabel').text = $.Localize(unitName).toUpperCase();
 	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
 	OnSkillPoint();
 }
 
-function OnSkillPoint(data) {
+function OnSkillPoint() {
 	var unit = Players.GetLocalPlayerPortraitUnit();
 	level_stats_frame = FindDotaHudElement('level_stats_frame');
 	level_stats_frame.visible = Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
