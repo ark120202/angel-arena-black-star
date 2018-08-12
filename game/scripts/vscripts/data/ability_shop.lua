@@ -118,26 +118,22 @@ ABILITY_SHOP_SKIP_HEROES = {
 	npc_dota_hero_rubick = true,
 	npc_dota_hero_arena_base = true,
 	npc_arena_hero_sara = true,
-	npc_arena_hero_maka = true,
-	npc_arena_hero_soul_eater = true,
 }
 
 ABILITY_SHOP_SKIP_ABILITIES = {
 	"broodmother_spin_web",
-	"morphling_morph",
 	"morphling_morph_agi",
 	"morphling_morph_str",
+	"morphling_replicate",
 	"keeper_of_the_light_recall",
 	"keeper_of_the_light_blinding_light",
 	"doom_bringer_empty1",
 	"doom_bringer_empty2",
 	"phoenix_sun_ray",
-	"phoenix_sun_ray_toggle_move_empty",
 	"ogre_magi_unrefined_fireblast",
 	"keeper_of_the_light_spirit_form",
 	"mirratie_sixth_sense",
 	"wisp_spirits_in",
 	"wisp_spirits_out",
-	"wisp_tether_break",
 	"meepo_divided_we_stand",
 }

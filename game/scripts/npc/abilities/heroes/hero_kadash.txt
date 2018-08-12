@@ -110,6 +110,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"50"
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
 
 		"AbilitySpecial"
 		{

@@ -10,7 +10,7 @@ function ArenaZoneOnEndTouch(trigger)
 
 	if not IsValidEntity(activator) then return end
 	if not activator.OnDuel then return end
-	if activator.IsWukongsSummon and activator:IsWukongsSummon() then return end
+	if activator:IsWukongsSummon() then return end
 
 	Timers:CreateTimer(function()
 		if not IsValidEntity(activator) then return end
@@ -55,20 +55,24 @@ function Fountain7OnStartTouch(trigger)
 	FountainOnStartTouch(trigger, DOTA_TEAM_CUSTOM_2)
 end
 
+function FountainOnEndTouch(trigger)
+	local activator = trigger.activator
+	if activator then
+		activator:RemoveModifierByName("modifier_fountain_aura_arena")
+		activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	end
+end
+
 -- TODO remove these team numbers
 function Fountain2OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end
 function Fountain3OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end
 function Fountain6OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end
 function Fountain7OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end

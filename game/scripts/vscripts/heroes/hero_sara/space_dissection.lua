@@ -36,7 +36,7 @@ if IsServer() then
 			(ability:GetAutoCastState() or parent:GetCurrentActiveAbility() == ability)
 		) then
 			local unit = keys.target
-			if PreformAbilityPrecastActions(parent, ability) then
+			if ability:PerformPrecastActions() then
 				local pfx = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sara/space_dissection.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
 				ParticleManager:SetParticleControlEnt(pfx, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetOrigin(), true)
 				ParticleManager:SetParticleControlEnt(pfx, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true)

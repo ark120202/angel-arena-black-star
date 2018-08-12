@@ -476,9 +476,9 @@ function SetItemStock(item, ItemStock) {
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP, true);
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, true);
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY, true);
-	Game.Events.F4Pressed.push(OpenCloseShop);
+	RegisterKeyBind('ShopToggle', OpenCloseShop);
 	GameEvents.Subscribe('panorama_shop_open_close', OpenCloseShop);
-	Game.Events.F5Pressed.push(function() {
+	RegisterKeyBind('PurchaseQuickbuy', function() {
 		if (QuickBuyTarget != null) {
 			var bought = false;
 			var QuickBuyPanelItems = $('#QuickBuyPanelItems');
@@ -504,7 +504,7 @@ function SetItemStock(item, ItemStock) {
 			}
 		}
 	});
-	Game.Events.F8Pressed.push(function() {
+	RegisterKeyBind('PurchaseSticky', function() {
 		SendItemBuyOrder($('#QuickBuyStickyButtonPanel').GetChild(0).itemName);
 	});
 	Game.MouseEvents.OnLeftPressed.push(function(ClickBehaviors, eventName, arg) {

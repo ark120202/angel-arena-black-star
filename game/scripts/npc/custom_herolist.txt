@@ -137,12 +137,6 @@
 		"npc_arena_hero_sai"							"1"
 		"npc_arena_hero_saitama"						"1"
 		"npc_arena_hero_doppelganger"					"1"
-
-		"npc_arena_hero_maka"							"0"
-		"npc_arena_hero_soul_eater"						"0"
-		"npc_arena_hero_say"							"0"
-		"npc_arena_hero_madoka"							"0"
-		"npc_arena_hero_arcueid"						"0"
 	}
 
 	"NoAbilities"
