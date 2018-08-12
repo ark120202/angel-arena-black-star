@@ -295,12 +295,14 @@ function UpdateSmallItem(panel, gold) {
 			var RemainingTime = ItemStocks[panel.itemName].current_cooldown - (CurrentTime - ItemStocks[panel.itemName].current_last_purchased_time);
 			var stock = ItemStocks[panel.itemName].current_stock;
 			panel.FindChildTraverse('SmallItemStock').text = stock;
+			var stockOverlay = panel.FindChildTraverse('StockOverlay');
 			if (stock === 0 && RemainingTime > 0) {
 				panel.FindChildTraverse('StockTimer').text = Math.round(RemainingTime);
-				panel.FindChildTraverse('StockOverlay').style.width = (RemainingTime / ItemStocks[panel.itemName].current_cooldown * 100) + '%';
+				stockOverlay.style.clip = "radial(50% 50%, 0deg, " + -(RemainingTime / ItemStocks[panel.itemName].current_cooldown * 360) + "deg)";
+				stockOverlay.visible = true;
 			} else {
 				panel.FindChildTraverse('StockTimer').text = '';
-				panel.FindChildTraverse('StockOverlay').style.width = 0;
+				stockOverlay.visible = false;
 			}
 		}
 	} catch (err) {
