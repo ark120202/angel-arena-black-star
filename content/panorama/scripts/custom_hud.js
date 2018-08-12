@@ -10,8 +10,6 @@ function UpdatePanoramaHUD() {
 	var unit = Players.GetLocalPlayerPortraitUnit();
 	var queryUnit = Players.GetQueryUnit(Players.GetLocalPlayer());
 	var unitName = GetHeroName(unit);
-	FindDotaHudElement('UnitNameLabel').text = $.Localize(unitName).toUpperCase();
-	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
 	var CustomModifiersList = $('#CustomModifiersList');
 	var VisibleModifiers = [];
 	for (var i = 0; i < Entities.GetNumBuffs(unit); ++i) {
@@ -49,8 +47,6 @@ function UpdatePanoramaHUD() {
 	_.each(CustomModifiersList.Children(), function(child) {
 		if (VisibleModifiers.indexOf(child.id) === -1) child.DeleteAsync(0);
 	});
-
-	FindDotaHudElement('level_stats_frame').visible = Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
 
 	var GoldLabel = FindDotaHudElement('ShopButton').FindChildTraverse('GoldLabel');
 	var QueryGoldLabel = FindDotaHudElement('QueryUnit').FindChildTraverse('GoldLabel');
@@ -257,6 +253,25 @@ function HookPanoramaPanels() {
 	});
 }
 
+function OnUpdateQueryUnit() {
+	var unitName = GetHeroName(Players.GetQueryUnit(Players.GetLocalPlayer()));
+	FindDotaHudElement('UnitName').text = $.Localize(unitName).toUpperCase();
+	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
+	OnUpdateSelectedUnit();
+}
+
+function OnUpdateSelectedUnit() {
+	var unitName = GetHeroName(Players.GetLocalPlayerPortraitUnit());
+	FindDotaHudElement('UnitNameLabel').text = $.Localize(unitName).toUpperCase();
+	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
+	OnSkillPoint();
+}
+
+function OnSkillPoint() {
+	var unit = Players.GetLocalPlayerPortraitUnit();
+	level_stats_frame = FindDotaHudElement('level_stats_frame');
+	level_stats_frame.visible = Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
+}
 
 // On Death
 function OnDeath(data) {
@@ -375,6 +390,11 @@ function CreateHeroElements(id) {
 
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe('entity_killed', OnDeath);
+	DynamicSubscribeNTListener('custom_entity_values', OnUpdateQueryUnit);
+	GameEvents.Subscribe('dota_player_update_selected_unit', OnUpdateSelectedUnit);
+	GameEvents.Subscribe('dota_player_update_query_unit', OnUpdateQueryUnit);
+	GameEvents.Subscribe('dota_player_gained_level', OnSkillPoint);
+	GameEvents.Subscribe('dota_player_learned_ability', OnSkillPoint);
 
 	GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
 })();
