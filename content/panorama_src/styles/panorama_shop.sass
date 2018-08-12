@@ -31,7 +31,29 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 	&.HUDFlipped
 		align: left bottom
 		flow-children: left
-		transform: translateX(-$fullPanelWidth);
+		transform: translateX(-$fullPanelWidth)
+
+		#ShopItemBasePanel #ShopItemList #ShopSearch
+			flow-children: left
+			#ShopSearchEntry
+				margin-left: 0px
+				margin-right: 4px
+				padding: 5px 3px 7px
+			#ShowHideItemguidesButton
+				margin-left: 0px 
+				margin-right: 4px
+				transform: scaleX(-1)
+
+#ShopItemBasePanel #ShopItemList #ShopSearch {
+	flow-children: left; }
+#ShopBase.HUDFlipped #ShopItemBasePanel #ShopItemList #ShopSearch #ShopSearchEntry {
+	margin-left: 0px; 
+	margin-right: 4px;
+	padding: 5px 3px 7px; }
+#ShopBase.HUDFlipped #ShopItemBasePanel #ShopItemList #ShopSearch #ShowHideItemguidesButton {
+	margin-left: 0px; 
+	margin-right: 4px;
+	transform: scaleX(-1); }
 
 
 #ShopItemBasePanel
