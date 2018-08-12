@@ -8,6 +8,7 @@ var CustomChatLinesPanel,
 
 function UpdatePanoramaHUD() {
 	var unit = Players.GetLocalPlayerPortraitUnit();
+	var queryUnit = Players.GetQueryUnit(Players.GetLocalPlayer());
 	var unitName = GetHeroName(unit);
 	FindDotaHudElement('UnitNameLabel').text = $.Localize(unitName).toUpperCase();
 	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
@@ -52,12 +53,10 @@ function UpdatePanoramaHUD() {
 	FindDotaHudElement('level_stats_frame').visible = Entities.GetAbilityPoints(unit) > 0 && Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
 
 	var GoldLabel = FindDotaHudElement('ShopButton').FindChildTraverse('GoldLabel');
-	if (Players.GetTeam(Game.GetLocalPlayerID()) === Entities.GetTeamNumber(unit)) {
-		var ownerId = Entities.GetPlayerOwnerID(unit);
-		GoldLabel.text = FormatGold(GetPlayerGold(ownerId === -1 ? Game.GetLocalPlayerID() : ownerId));
-	} else {
-		GoldLabel.text = '';
-	}
+	var QueryGoldLabel = FindDotaHudElement('QueryUnit').FindChildTraverse('GoldLabel');
+	var playerTeam = Players.GetTeam(Game.GetLocalPlayerID());
+	UpdateGoldLabel(playerTeam, unit, GoldLabel);
+	UpdateGoldLabel(playerTeam, queryUnit, QueryGoldLabel);
 	var sw = Game.GetScreenWidth();
 	var sh = Game.GetScreenHeight();
 	var minimap = FindDotaHudElement('minimap_block');
@@ -109,6 +108,15 @@ function UpdatePanoramaHUD() {
 	}
 }
 
+function UpdateGoldLabel(playerTeam, unit, label) {
+	if (playerTeam === Entities.GetTeamNumber(unit)) {
+		var ownerId = Entities.GetPlayerOwnerID(unit);
+		label.text = FormatGold(GetPlayerGold(ownerId === -1 ? Game.GetLocalPlayerID() : ownerId));
+	} else {
+		label.text = '';
+	}
+}
+
 function SetDynamicMinimapVisible(status) {
 	$('#DynamicMinimapRoot').visible = status || !$('#DynamicMinimapRoot').visible;
 }
@@ -137,6 +145,7 @@ function HookPanoramaPanels() {
 	var chat = FindDotaHudElement('ChatLinesWrapper');
 	var StatsLevelUpTab = level_stats_frame.FindChildTraverse('LevelUpTab');
 
+	FindDotaHudElement('QueryUnit').FindChildTraverse('BuybackContainer').visible = false;
 	shopbtn.FindChildTraverse('BuybackHeader').visible = false;
 	shopbtn.ClearPanelEvent('onactivate');
 	shopbtn.ClearPanelEvent('onmouseover');
