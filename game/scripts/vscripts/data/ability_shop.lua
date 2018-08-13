@@ -97,13 +97,13 @@ ABILITY_SHOP_DATA = {
 	["nevermore_shadowraze1"] = { cost = 2, },
 	["nevermore_shadowraze2"] = { cost = 2, },
 	["nevermore_shadowraze3"] = { cost = 2, },
-	["freya_strike_the_ice"] = { cost = 7, },
-	["freya_ice_cage"] = { cost = 8, },
+	["freya_strike_the_ice"] = { cost = 16, },
+	["freya_ice_cage"] = { cost = 20, },
 	["freya_pain_reflection"] = { cost = 24, },
-	["freya_frozen_strike"] = { cost = 12, },
+	["freya_frozen_strike"] = { cost = 26, },
 	["zaken_stitching_strikes"] = { cost = 12, },
-	["zaken_last_chance"] = { cost = 8, },
-	["zaken_summon_sailors"] = { cost = 8, },
+	["zaken_last_chance"] = { cost = 16, },
+	["zaken_summon_sailors"] = { cost = 10, },
 	["zaken_sword_control"] = { cost = 32, },
 	["shinobu_yumewatari_lua"] = { cost = 9, },
 	["saber_mana_burst"] = { cost = 4, },
@@ -122,6 +122,7 @@ ABILITY_SHOP_SKIP_HEROES = {
 	npc_dota_hero_rubick = true,
 	npc_dota_hero_arena_base = true,
 	npc_arena_hero_sara = true,
+	npc_arena_hero_doppelganger = true,
 }
 
 ABILITY_SHOP_SKIP_ABILITIES = {
@@ -141,4 +142,5 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"wisp_spirits_out",
 	"meepo_divided_we_stand",
 	"saitama_limiter",
+	"sai_release_of_forge",
 }

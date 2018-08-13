@@ -157,9 +157,10 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
-		multiplier = function(attacker, victim, _, damage)
+		multiplier = function(attacker, victim, _, damage, damagetype)
 			local anakim_wisps = attacker:FindAbilityByName("anakim_wisps")
 			if anakim_wisps then
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype)
 				local dt = {
 					victim = victim,
 					attacker = attacker,

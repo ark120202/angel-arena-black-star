@@ -73,6 +73,17 @@ REFRESH_LIST_IGNORE_REARM = {
 
 	destroyer_body_reconstruction = true,
 	stargazer_cosmic_countdown = true,
+	faceless_void_chronosphere = true,
+	zuus_thundergods_wrath = true,
+	enigma_black_hole = true,
+	freya_pain_reflection = true,
+	skeleton_king_reincarnation_arena = true,
+	dazzle_shallow_grave = true,
+	zuus_cloud = true,
+	ancient_apparition_ice_blast = true,
+	silencer_global_silence = true,
+	naga_siren_song_of_the_siren = true,
+	slark_shadow_dance = true,
 }
 
 COFFEE_BEAN_NOT_REFRESHABLE = {
