@@ -130,6 +130,7 @@ ABILITY_SHOP_SKIP_HEROES = {
 	npc_arena_hero_sara = true,
 	npc_arena_hero_maka = true,
 	npc_arena_hero_soul_eater = true,
+	npc_arena_hero_doppelganger = true,
 }
 
 ABILITY_SHOP_SKIP_ABILITIES = {
@@ -150,5 +151,4 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"meepo_divided_we_stand",
 	"saitama_limiter",
 	"sai_release_of_forge",
-	"doppelganger_mimic",
 }
