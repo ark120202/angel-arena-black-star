@@ -140,4 +140,5 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"wisp_spirits_in",
 	"wisp_spirits_out",
 	"meepo_divided_we_stand",
+	"saitama_limiter",
 }
