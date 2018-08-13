@@ -28,21 +28,21 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 		width: 0
 		opacity: 0
 
-	&.HUDFlipped
+	.HUDFlipped &
 		align: left bottom
 		flow-children: left
 		transform: translateX(-$fullPanelWidth)
 
-		#ShopItemBasePanel #ShopItemList #ShopSearch
+		#ShopSearch
 			flow-children: left
-			#ShopSearchEntry
-				margin-left: 0px
-				margin-right: 4px
-				padding: 5px 3px 7px
-			#ShowHideItemguidesButton
-				margin-left: 0px 
-				margin-right: 4px
-				transform: scaleX(-1)
+		#ShopSearchEntry
+			margin-left: 0px
+			margin-right: 4px
+			padding: 5px 3px 7px
+		#ShowHideItemguidesButton
+			margin-left: 0px 
+			margin-right: 4px
+			transform: scaleX(-1)
 
 #ShopItemBasePanel
 	width: $mainPanelWidth
