@@ -115,6 +115,10 @@ ABILITY_SHOP_DATA = {
 	["saber_mana_burst"] = { cost = 4, },
 	["saber_avalon"] = { cost = 5, },
 	["saber_excalibur"] = { cost = 12, },
+	["saitama_push_ups"] = { cost = 3, },
+	["saitama_sit_ups"] = { cost = 3, },
+	["saitama_squats"] = { cost = 3, },
+	["saitama_jogging"] = { cost = 3, },
 }
 
 ABILITY_SHOP_SKIP_HEROES = {
@@ -146,4 +150,5 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"wisp_spirits_out",
 	"wisp_tether_break",
 	"meepo_divided_we_stand",
+	"saitama_limiter",
 }
