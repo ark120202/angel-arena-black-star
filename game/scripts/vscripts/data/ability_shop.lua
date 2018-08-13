@@ -150,4 +150,5 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"meepo_divided_we_stand",
 	"saitama_limiter",
 	"sai_release_of_forge",
+	"doppelganger_mimic",
 }
