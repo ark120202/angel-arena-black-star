@@ -37,7 +37,6 @@ function Illusions:_copyItems(unit, illusion)
 	for slot = 0, 5 do
 		local item = unit:GetItemInSlot(slot)
 		if item then
-			--TODO - Tell dev illusions don't respect item ownership
 			illusion:CopyItemToSlot(item, slot)
 		end
 	end
