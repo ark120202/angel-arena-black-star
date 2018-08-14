@@ -23,7 +23,7 @@ if IsServer() then
 		local reflectedAbility = keys.ability
 		local reflectedCaster = reflectedAbility:GetCaster()
 
-		if PreformAbilityPrecastActions(parent, ability) then
+		if ability:PerformPrecastActions() then
 			self.isAbsorbed = true
 			ParticleManager:SetParticleControlEnt(ParticleManager:CreateParticle("particles/arena/items_fx/lotus_sphere.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent), 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
 			parent:EmitSound("Item.LotusOrb.Activate")

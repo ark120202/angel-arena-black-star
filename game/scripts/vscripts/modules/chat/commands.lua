@@ -185,7 +185,7 @@ return {
 				CreateHeroForPlayer(baseNewHero, PlayerResource:GetPlayer(playerId))
 
 			local team = 2
-			if PlayerResource:GetTeam(optplayerId or playerId) == team and table.contains(args, "enemy") then
+			if PlayerResource:GetTeam(optplayerId or playerId) == team and table.includes(args, "enemy") then
 				team = 3
 			end
 			heroEntity:SetTeam(team)
@@ -216,22 +216,6 @@ return {
 				if string.find(k, args[1]) then
 					print(k, v)
 				end
-			end
-		end
-	},
-	["ccreate"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
-		f = function(args)
-			local playerId = tonumber(args[1])
-			local pType = args[2]
-			local source = args[3]
-			local duration = tonumber(args[4])
-			if PlayerResource:IsValidPlayerID(playerId) and pType and source and (args[4] == nil or duration ~= nil) then
-				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerId), "create_generic_panel", {
-					type = pType,
-					source = source,
-					duration = duration
-				})
 			end
 		end
 	},

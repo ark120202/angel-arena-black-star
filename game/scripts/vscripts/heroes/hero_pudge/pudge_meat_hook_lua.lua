@@ -228,7 +228,7 @@ if IsServer() then
 		if hTarget.SpawnerType == "jungle" then return false end
 		if not hTarget:IsCreep() and not hTarget:IsConsideredHero() then return false end
 
-		if not proj.hVictim or not table.contains(proj.hVictim, hTarget) then
+		if not proj.hVictim or not table.includes(proj.hVictim, hTarget) then
 			hTarget:EmitSound("Hero_Pudge.AttackHookImpact")
 			self.projectile = proj
 			hTarget:AddNewModifier(caster, self, "modifier_meat_hook_lua", nil)
@@ -246,7 +246,6 @@ if IsServer() then
 					local hBuff = caster:FindModifierByName(self:GetIntrinsicModifierName())
 					if hBuff then
 						hBuff:IncrementStackCount()
-						PopupNumbers(caster, "damage", Vector(255, 0, 0), 1.2, 1, POPUP_SYMBOL_PRE_PLUS, POPUP_SYMBOL_POST_LIGHTNING)
 					end
 				end
 

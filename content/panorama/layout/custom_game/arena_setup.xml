@@ -6,6 +6,7 @@
 	<scripts>
 		<include src="file://{resources}/scripts/arena_util.js" />
 		<include src="file://{resources}/scripts/arena_setup.js" />
+		<include src="file://{resources}/scripts/hotkey_tracker.js" />
 	</scripts>
 	<snippets>
 		<snippet name="Team">

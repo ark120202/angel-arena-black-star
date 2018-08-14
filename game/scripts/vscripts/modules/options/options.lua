@@ -46,7 +46,7 @@ end
 
 function Options:OnVote(data)
 	local voteTable = Options.PreGameVotings[data.name]
-	if table.contains(voteTable.variants, data.vote) then
+	if table.includes(voteTable.variants, data.vote) then
 		voteTable.votes[data.PlayerID] = data.vote
 		CustomGameEventManager:Send_ServerToAllClients("option_votings_refresh", {name = data.name, data = voteTable})
 		--PlayerTables:SetTableValue("option_votings", data.name, table.deepcopy(voteTable))

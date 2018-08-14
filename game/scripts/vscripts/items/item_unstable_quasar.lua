@@ -45,7 +45,7 @@ if IsServer() then
 		if (
 			usedAbility:GetCooldown(usedAbility:GetLevel()) >= ability:GetSpecialValueFor("min_ability_cooldown") and
 			usedAbility:GetManaCost(usedAbility:GetLevel()) ~= 0 and
-			PreformAbilityPrecastActions(caster, ability)
+			ability:PerformPrecastActions()
 		) then
 			for _,v in ipairs(FindUnitsInRadius(team, pos, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
 				local enemyPos = v:GetAbsOrigin()
