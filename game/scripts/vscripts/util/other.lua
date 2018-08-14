@@ -345,10 +345,18 @@ function GetOneRemainingTeam()
 	return teamLeft
 end
 
-function CopyItem(item)
+function CopyItem(item, swap1, swap2)
 	local newItem = CreateItem(item:GetAbilityName(), caster, caster)
+	local purchaser = item:GetPurchaser()
+	if swap1 then
+		if purchaser:GetPlayerOwner() == swap1:GetPlayerOwner() then
+			purchaser = swap2
+		elseif purchaser:GetPlayerOwner() == swap2:GetPlayerOwner() then
+			purchaser = swap1
+		end
+	end
 	newItem:SetPurchaseTime(item:GetPurchaseTime())
-	newItem:SetPurchaser(item:GetPurchaser())
+	newItem:SetPurchaser(purchaser)
 	newItem:SetOwner(item:GetOwner())
 	newItem:SetCurrentCharges(item:GetCurrentCharges())
 	return newItem
