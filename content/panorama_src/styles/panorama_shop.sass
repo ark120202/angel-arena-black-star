@@ -28,21 +28,29 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 		width: 0
 		opacity: 0
 
-	.HUDFlipped &
+.HUDFlipped
+	#ShopBase
 		align: left bottom
 		flow-children: left
 		transform: translateX(-$fullPanelWidth)
-
-		#ShopSearch
-			flow-children: left
-		#ShopSearchEntry
-			margin-left: 0px
-			margin-right: 4px
-			padding: 5px 3px 7px
-		#ShowHideItemguidesButton
-			margin-left: 0px 
-			margin-right: 4px
-			transform: scaleX(-1)
+	#ShopBase #ShopSearch
+		flow-children: left
+	#ShopBase #ShopSearchEntry
+		margin-left: 0px
+		margin-right: 4px
+		padding: 5px 3px 7px
+	#ShopBase #ShowHideItemguidesButton
+		margin-left: 0px 
+		margin-right: 4px
+		transform: scaleX(-1)
+	#QuickBuyPanel #QuickBuyPanelItems
+		align: right center
+		margin-left: 0px
+		margin-right: 2px
+	#QuickBuyPanel #QuickBuyStickyButtonPanel
+		align: left top
+	#QuickBuyPanel #QuickBuyClearButtonPanel
+		align: left bottom
 
 #ShopItemBasePanel
 	width: $mainPanelWidth
@@ -467,7 +475,7 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 
 
 #QuickBuyPanelItems
-	width: 232px
+	width: 210px
 	height: 100%
 	margin-top: 2px
 	margin-left: 2px
