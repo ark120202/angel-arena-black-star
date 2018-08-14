@@ -92,6 +92,10 @@ if IsServer() then
 		end
 		if k.unit == parent then
 			parent:RemoveNoDraw()
+
+			if parent:IsIllusion() then
+				parent:ClearNetworkableEntityInfo()
+			end
 		end
 	end
 

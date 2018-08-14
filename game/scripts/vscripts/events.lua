@@ -163,6 +163,10 @@ function GameMode:OnEntityKilled(keys)
 			Spawner:OnCreepDeath(killedUnit)
 		end
 
+		if not killedUnit:UnitCanRespawn() then
+			killedUnit:ClearNetworkableEntityInfo()
+		end
+
 		if killerEntity then
 			for _, individual_hero in ipairs(HeroList:GetAllHeroes()) do
 				if individual_hero:IsAlive() and individual_hero:HasModifier("modifier_shinobu_hide_in_shadows_invisibility") then
