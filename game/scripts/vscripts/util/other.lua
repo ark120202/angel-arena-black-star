@@ -234,9 +234,8 @@ end
 
 function CopyItem(item)
 	local newItem = CreateItem(item:GetAbilityName(), nil, nil)
-	local purchaser = item:GetPurchaser()
 	newItem:SetPurchaseTime(item:GetPurchaseTime())
-	newItem:SetPurchaser(purchaser)
+	newItem:SetPurchaser(item:GetPurchaser())
 	newItem:SetOwner(item:GetOwner())
 	newItem:SetCurrentCharges(item:GetCurrentCharges())
 	return newItem
