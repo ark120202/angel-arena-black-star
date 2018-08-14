@@ -102,9 +102,9 @@ function Illusions:create(info)
 	if isOwned == nil then isOwned = true end
 
 	local source = unit
-	local replicate_modifier = unit:FindModifierByName("modifier_morphling_replicate")
-	if replicate_modifier then
-		source = replicate_modifier:GetCaster()
+	local replicateModifier = unit:FindModifierByName("modifier_morphling_replicate")
+	if replicateModifier then
+		source = replicateModifier:GetCaster()
 	end
 
 	local illusion = CreateUnitByName(
