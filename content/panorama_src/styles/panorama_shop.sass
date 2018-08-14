@@ -33,24 +33,25 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 		align: left bottom
 		flow-children: left
 		transform: translateX(-$fullPanelWidth)
-	#ShopBase #ShopSearch
-		flow-children: left
-	#ShopBase #ShopSearchEntry
-		margin-left: 0px
-		margin-right: 4px
-		padding: 5px 3px 7px
-	#ShopBase #ShowHideItemguidesButton
-		margin-left: 0px 
-		margin-right: 4px
-		transform: scaleX(-1)
-	#QuickBuyPanel #QuickBuyPanelItems
-		align: right center
-		margin-left: 0px
-		margin-right: 2px
-	#QuickBuyPanel #QuickBuyStickyButtonPanel
-		align: left top
-	#QuickBuyPanel #QuickBuyClearButtonPanel
-		align: left bottom
+		#ShopSearch
+			flow-children: left
+		#ShopSearchEntry
+			margin-left: 0px
+			margin-right: 4px
+			padding: 5px 3px 7px
+		#ShowHideItemguidesButton
+			margin-left: 0px
+			margin-right: 4px
+			transform: scaleX(-1)
+	#QuickBuyPanel
+		#QuickBuyPanelItems
+			align: right center
+			margin-left: 0px
+			margin-right: 2px
+		#QuickBuyStickyButtonPanel
+			align: left top
+		#QuickBuyClearButtonPanel
+			align: left bottom
 
 #ShopItemBasePanel
 	width: $mainPanelWidth
