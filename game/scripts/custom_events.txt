@@ -2,7 +2,6 @@
 {
 	"custom_talents_toggle_tree" {}
 	"panorama_shop_open_close"	{}
-	"dynamic_wearables_toggle_hud_panel"	{}
 	"panorama_shop_show_item"
 	{
 		"itemName"		"string"

@@ -18,9 +18,6 @@ TEAM_HEALER_MODELS = {
 }
 
 ShopsData = {
-	Secret = {
-		"item_casino_coin",
-	},
 	Duel = {
 		{ item = "item_dust", cost = 360 },
 		{ item = "item_ward_sentry", cost = 300 },

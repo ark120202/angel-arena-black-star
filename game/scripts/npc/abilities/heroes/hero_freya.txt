@@ -23,6 +23,8 @@
 
 		"AbilityManaCost"				"100 150 200 250 300 350 400"
 		"AOERadius"						"%radius"
+		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
 
 		"AbilitySpecial"
 		{
@@ -144,12 +146,12 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"arena/freya_ice_cage"
 		"MaxLevel"						"7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES_NO"
 
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
@@ -308,8 +310,8 @@
 			}
 			"03"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"2"
 			}
 		}
 	}
@@ -336,12 +338,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"base_crit_pct"		"250 275 300 325 350 375 400"
+				"base_crit_pct"		"150 175 200 225 250 275 300"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stat_to_crit_pct"	"6 7 8 9 10 11 12"
+				"stat_to_crit_pct"	"1"
 			}
 			"03"
 			{

@@ -161,44 +161,4 @@
 			}
 		}
 	}
-
-	"teleport_passive"
-	{
-		"BaseClass"						"ability_datadriven"
-		"MaxLevel"						"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"OnCreated"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SetMaxLevel"
-			}
-
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/structures/teleport.lua"
-				"Function"		"InitializeFunctions"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_teleport_passive"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"ThinkInterval"  ".1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/structures/teleport.lua"
-						"Function"		"Teleport"
-					}
-				}
-			}
-		}
-	}
 }

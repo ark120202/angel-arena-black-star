@@ -66,7 +66,7 @@ ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
 	modifier_item_holy_knight_shield = function(attacker, victim, inflictor, damage) if inflictor then
 		local item = FindItemInInventoryByName(victim, "item_holy_knight_shield", false)
 		if item and RollPercentage(GetAbilitySpecial("item_holy_knight_shield", "buff_chance")) and victim:GetTeam() ~= attacker:GetTeam() then
-			if PreformAbilityPrecastActions(victim, item) then
+			if item:PerformPrecastActions() then
 				item:ApplyDataDrivenModifier(victim, victim, "modifier_item_holy_knight_shield_buff", {})
 			end
 		end
@@ -157,9 +157,10 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
-		multiplier = function(attacker, victim, _, damage)
+		multiplier = function(attacker, victim, _, damage, damagetype)
 			local anakim_wisps = attacker:FindAbilityByName("anakim_wisps")
 			if anakim_wisps then
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype)
 				local dt = {
 					victim = victim,
 					attacker = attacker,
@@ -193,11 +194,6 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			}
 		end
 	end,
-	modifier_soul_eater_demon_weapon_from = function(attacker, victim, inflictor)
-		if not inflictor then
-			return 0
-		end
-	end,
 }
 
 INCOMING_DAMAGE_MODIFIERS = {
@@ -229,7 +225,11 @@ INCOMING_DAMAGE_MODIFIERS = {
 			if not IsValidEntity(inflictor) and saber_instinct and victim:IsAlive() and not victim:PassivesDisabled() then
 				if attacker:IsRangedUnit() then
 					if RollPercentage(saber_instinct:GetAbilitySpecial("ranged_evasion_pct")) then
-						PopupEvadeMiss(victim, attacker)
+						local victimPlayer = victim:GetPlayerOwner()
+						local attackerPlayer = attacker:GetPlayerOwner()
+
+						SendOverheadEventMessage(victimPlayer, OVERHEAD_ALERT_EVADE, victim, damage, attackerPlayer)
+						SendOverheadEventMessage(attackerPlayer, OVERHEAD_ALERT_MISS, victim, damage, victimPlayer)
 						ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
 						return false
 					end

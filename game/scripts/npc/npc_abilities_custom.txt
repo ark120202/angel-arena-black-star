@@ -4,6 +4,7 @@
 #base "abilities/thinkers.txt"
 
 #base "abilities/bosses/kel_thuzad.txt"
+#base "abilities/bosses/cursed_zeld.txt"
 
 #base "abilities/heroes/hero_stargazer.txt"
 #base "abilities/heroes/hero_cherub.txt"
@@ -24,9 +25,6 @@
 #base "abilities/heroes/hero_sai.txt"
 #base "abilities/heroes/hero_saitama.txt"
 #base "abilities/heroes/hero_doppelganger.txt"
-
-//#base "abilities/heroes/hero_maka.txt"
-//#base "abilities/heroes/hero_soul_eater.txt"
 
 #base "abilities/heroes/hero_pudge.txt"
 

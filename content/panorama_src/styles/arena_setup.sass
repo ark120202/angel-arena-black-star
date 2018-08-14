@@ -507,3 +507,51 @@ DOTAAvatarImage
 
 	#ErrorMessage
 		max-height: 300px
+
+.PlayButton
+	width: 330px
+	max-height: 49px
+	margin-bottom: 21px
+	margin-right: 58px
+	padding: 4px 12px 4px 12px
+
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(rgba(#5A615E, 204)), to(rgba(#879695, 204)))
+	background-image: url("s2r://panorama/images/backgrounds/background_play_button_2x_png.vtex")
+	background-size: 328px 50px
+
+	box-shadow: fill rgba(#002a66, 68) -4px -4px 8px 9px
+
+	border-top: 1px solid rgba(#ffffff, 68)
+	border-right: 1px solid rgba(#000000, 136)
+	border-left: 1px solid rgba(#ffffff, 68)
+	border-bottom: 1px solid rgba(#000000, 136)
+
+	opacity: 1
+
+	transition-property: box-shadow, background-color, opacity, transform
+	transition-delay: 0.0s
+	transition-duration: 0.2s
+	transition-timing-function: ease-in-out
+
+	&:hover
+		background-color: gradient(linear, 0% 0%, 0% 100%, from(#5A615E), to(#b7c6c5))
+		box-shadow: fill rgba(#414f4d, 170) -4px -4px 8px 8px
+
+	&:active
+		background-color: gradient(linear, 0% 0%, 0% 100%, from(#5A615E), to(#ffffff))
+
+	& Label
+		margin-top: 2px
+		horizontal-align: center
+		font-size: 28px
+		font-weight: bold
+		color: white
+		text-transform: uppercase
+		letter-spacing: 3px
+		text-align: center
+		height: 40px
+		text-overflow: shrink
+
+		transition-property: color
+		transition-delay: 0.0s
+		transition-duration: 0.2s
