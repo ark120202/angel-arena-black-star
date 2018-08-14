@@ -1,14 +1,25 @@
 function ArenaZoneOnStartTouch(trigger)
+	local activator = trigger.activator
+	if not IsValidEntity(activator) then return end
+
 	if Duel:IsDuelOngoing() then
-		HEROES_ON_DUEL[trigger.activator] = true
+		HEROES_ON_DUEL[activator] = true
+		return
 	end
+
+	local caller = trigger.caller
+	local origin = caller:GetAbsOrigin()
+	local min = origin + ExpandVector(caller:GetBoundingMins(), 96)
+	local max = origin + ExpandVector(caller:GetBoundingMaxs(), 96)
+	local clamped = VectorOnBoxPerimeter(activator:GetAbsOrigin(), min, max)
+	FindClearSpaceForUnit(activator, clamped, true)
 end
 
 function ArenaZoneOnEndTouch(trigger)
 	local activator = trigger.activator
+	if not IsValidEntity(activator) then return end
 	HEROES_ON_DUEL[activator] = nil
 
-	if not IsValidEntity(activator) then return end
 	if not activator.OnDuel then return end
 	if activator:IsWukongsSummon() then return end
 
@@ -19,8 +30,12 @@ function ArenaZoneOnEndTouch(trigger)
 		-- Teleports are also triggering OnEndTouch event
 		if HEROES_ON_DUEL[activator] then return end
 
-		local position = Entities:FindByName(nil, "target_mark_arena_team" .. activator:GetTeamNumber()):GetAbsOrigin()
-		activator:Teleport(position)
+		local caller = trigger.caller
+		local origin = caller:GetAbsOrigin()
+		local min = origin + ExpandVector(caller:GetBoundingMins(), -96)
+		local max = origin + ExpandVector(caller:GetBoundingMaxs(), -96)
+		local clamped = VectorOnBoxPerimeter(activator:GetAbsOrigin(), min, max)
+		activator:Teleport(clamped)
 	end)
 end
 

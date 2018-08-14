@@ -535,3 +535,16 @@ function ExpandVector(vec, by)
 		(math.abs(vec.z) + by) * math.sign(vec.z)
 	)
 end
+
+function VectorOnBoxPerimeter(vec, min, max)
+	local l, r, b, t = min.x, max.x, min.y, max.y
+	local x, y = math.clamp(vec.x, l, r), math.clamp(vec.y, b, t)
+
+	local dl, dr, db, dt = math.abs(x-l), math.abs(x-r), math.abs(y-b), math.abs(y-t)
+	local m = math.min(dl, dr, db, dt)
+
+	if m == dl then return Vector(l, y) end
+	if m == dr then return Vector(r, y) end
+	if m == db then return Vector(x, b) end
+	if m == dt then return Vector(x, t) end
+end

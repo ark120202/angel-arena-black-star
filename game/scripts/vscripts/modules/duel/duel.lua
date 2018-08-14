@@ -22,29 +22,6 @@ function Duel:CreateGlobalTimer()
 	Duel.DuelStatus = DOTA_DUEL_STATUS_WATING
 	Duel:SetDuelTimer(-GameRules:GetDOTATime(false, true))
 	Timers:CreateTimer(Dynamic_Wrap(Duel, 'GlobalThink'))
-
-	Duel:CreateBlocker()
-end
-
-function Duel:CreateBlocker()
-	local trigger = Entities:FindByName(nil, "trigger_arena_zone")
-	local origin = trigger:GetAbsOrigin()
-	local bounds = trigger:GetBounds()
-	local mins = origin + ExpandVector(bounds.Mins, 96)
-	local maxs = origin + ExpandVector(bounds.Maxs, 96)
-	Duel.BlockerBox = {mins, maxs}
-
-	Physics:RemoveCollider("collider_box_blocker_arena")
-	local collider = Physics:AddCollider("collider_box_blocker_arena", Physics:ColliderFromProfile("aaboxblocker"))
-	collider.box = {mins, maxs}
-	collider.findClearSpace = true
-	-- collider.draw = true
-	collider.test = function(self, unit)
-		if not IsPhysicsUnit(unit) and unit.IsConsideredHero and unit:IsConsideredHero() then
-			Physics:Unit(unit)
-		end
-		return IsPhysicsUnit(unit) and Duel.DuelStatus == DOTA_DUEL_STATUS_WATING and not unit.OnDuel
-	end
 end
 
 function Duel:GlobalThink()
