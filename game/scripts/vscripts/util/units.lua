@@ -194,8 +194,8 @@ function CDOTA_BaseNPC:SafeAddItem(item)
 	end
 end
 
-function CDOTA_BaseNPC:CopyItemToSlot(item, slot)
-	local newItem = CopyItem(item)
+function CDOTA_BaseNPC:CopyItemToSlot(item, slot, swap1, swap2)
+	local newItem = CopyItem(item, swap1, swap2)
 	newItem.suggested_slot = slot
 	newItem.owner = newItem:GetPurchaser()
 	self:SafeAddItem(newItem)
