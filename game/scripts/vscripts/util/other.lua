@@ -232,16 +232,9 @@ function GetOneRemainingTeam()
 	return teamLeft
 end
 
-function CopyItem(item, swap1, swap2)
+function CopyItem(item)
 	local newItem = CreateItem(item:GetAbilityName(), nil, nil)
 	local purchaser = item:GetPurchaser()
-	if swap1 then
-		if purchaser:GetPlayerOwner() == swap1:GetPlayerOwner() then
-			purchaser = swap2
-		elseif purchaser:GetPlayerOwner() == swap2:GetPlayerOwner() then
-			purchaser = swap1
-		end
-	end
 	newItem:SetPurchaseTime(item:GetPurchaseTime())
 	newItem:SetPurchaser(purchaser)
 	newItem:SetOwner(item:GetOwner())
