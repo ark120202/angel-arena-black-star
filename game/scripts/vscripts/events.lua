@@ -11,6 +11,7 @@ end
 -- An NPC has spawned somewhere in game.	This includes heroes
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
+	npc:ClearNetworkableEntityInfo()
 	if npc:IsHero() then
 		if HeroSelection:GetState() < HERO_SELECTION_PHASE_END then
 			--npc:AddNoDraw()
