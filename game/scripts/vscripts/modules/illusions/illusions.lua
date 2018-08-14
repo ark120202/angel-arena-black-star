@@ -40,6 +40,22 @@ function Illusions:_copyItems(unit, illusion)
 			illusion:CopyItemToSlot(item, slot)
 		end
 	end
+	
+	local unitOwner = unit:GetPlayerOwner()
+	local illusionOwner = illusion:GetPlayerOwner()
+	if unitOwner ~= illusionOwner then
+		for slot = 0, 5 do		
+			local item = illusion:GetItemInSlot(slot)
+			if item then
+				if item.owner:GetPlayerOwner() == unitOwner then
+					item.owner = illusion
+				elseif item.owner:GetPlayerOwner() == illusionOwner then
+					item.owner = unit
+				end
+			end
+		end
+	end
+	
 	illusion:RestoreOwners(0, 5)
 end
 
