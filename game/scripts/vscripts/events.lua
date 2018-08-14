@@ -16,6 +16,9 @@ function GameMode:OnNPCSpawned(keys)
 			--npc:AddNoDraw()
 			return
 		end
+		if npc:GetUnitName() == "npc_dota_hero" then
+			npc:SetUnitName("npc_dota_hero_arena_base")
+		end
 		Timers:CreateTimer(function()
 			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
 				Physics:Unit(npc)
