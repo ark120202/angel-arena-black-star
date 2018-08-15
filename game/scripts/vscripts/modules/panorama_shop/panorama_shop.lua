@@ -86,9 +86,15 @@ function PanoramaShop:StackStockableCooldown(team, item, time)
 	end
 	t.current_cooldown = time
 	t.current_last_purchased_time = GameRules:GetGameTime()
-	Timers:CreateTimer(time, function()
-		PanoramaShop:IncreaseItemStock(team, item)
-	end)
+	if not t.timer then
+		local timer = Timers:CreateTimer(time, function()
+			PanoramaShop:IncreaseItemStock(team, item)
+			t.timer = nil
+		end)
+		t.timer = Timers.timers[timer]
+	else
+		t.timer.endTime = t.current_last_purchased_time + time
+	end
 end
 
 function PanoramaShop:InitializeItemTable()
