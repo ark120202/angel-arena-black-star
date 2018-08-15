@@ -28,7 +28,7 @@ if IsServer() then
 		local target = self:GetCursorTarget()
 		local caster = self:GetCaster()
 		caster:EmitSound("Arena.Hero_Guldan.Curse.Cast")
-		local damage = self:GetAbilityDamage()+target:GetLevel()
+		local damage = self:GetAbilityDamage() + target:GetLevel()
 		ApplyDamage({
 			victim = target,
 			attacker = self:GetCaster(),

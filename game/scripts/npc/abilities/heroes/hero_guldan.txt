@@ -59,13 +59,13 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"		"3 4 5 6 7 8 9"
+				"var_type"			"FIELD_FLOAT"
+				"duration"		"2.0 2.5 3.0 3.2 3.4 3.6 3.8"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"5 8 11 14 17 20 23"
+				"bonus_armor"		"8 12 16 20 24 28 32"
 			}
 		}
 
@@ -100,7 +100,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"		"1.5 2 2.5 3.0 4.0 5.0"
+				"duration"		"1.5 2 2.5 3.0 4.0 5.0 5.5"
 			}
 			"02"
 			{
@@ -124,20 +124,18 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"MaxLevel" 						"7"
-		"RequiredLevel"					"1"
-		"LevelsBetweenUpgrades"			"1"
+		"MaxLevel" 						"1"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"600 700 800 900 1000 1100 1200"
+				"aura_radius"			"800"
 			}
 			"02"
 			{
 				"var_type" 				"FIELD_FLOAT"
-				"aura_percentage_health_regen"			"0.3% 0.6% 1% 1.5% 2.5% 3% 4%"
+				"aura_percentage_health_regen"			"1%"
 			}
 		}
 	}
@@ -172,7 +170,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"50 100 150 200 250 300 350"
+				"damage_per_second"		"50 100 150 200 225 250 300"
 			}
 			"03"
 			{
@@ -197,7 +195,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second_scepter"		"450"
+				"damage_per_second_scepter"		"400"
 			}
 			"08"
 			{

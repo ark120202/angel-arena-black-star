@@ -37,7 +37,5 @@ function modifier_guldan_saving_touch:GetModifierPhysicalArmorBonus()
 end
 
 function modifier_guldan_saving_touch:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-	}
+	return { MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS }
 end

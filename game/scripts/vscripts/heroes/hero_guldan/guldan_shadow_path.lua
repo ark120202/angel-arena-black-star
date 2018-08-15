@@ -7,10 +7,7 @@ guldan_shadow_path = class({
 })
 
 function guldan_shadow_path:GetCastRange()
-	if self:GetCaster():HasScepter() then
-	return self:GetSpecialValueFor("aura_radius_scepter")
-	else return self:GetSpecialValueFor("aura_radius")
-	end
+	return self:GetCaster():HasScepter() and self:GetSpecialValueFor("aura_radius_scepter") or self:GetSpecialValueFor("aura_radius")
 end
 
 modifier_guldan_shadow_path = class ({})
@@ -93,15 +90,11 @@ if IsServer() then
 end
 
 function modifier_guldan_shadow_path_effect:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,}
+	return { MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE }
 end
 
 function modifier_guldan_shadow_path_effect:GetModifierMoveSpeedBonus_Percentage()
-	if self:GetCaster():HasScepter() then
-		return self:GetAbility():GetSpecialValueFor('movement_speed_reduce_scepter')
-	else
-		return self:GetAbility():GetSpecialValueFor('movement_speed_reduce')
-	end
+	return self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor('movement_speed_reduce_scepter') or self:GetAbility():GetSpecialValueFor('movement_speed_reduce')
 end
 
 modifier_guldan_shadow_path_effect_slow = class({
@@ -109,13 +102,9 @@ modifier_guldan_shadow_path_effect_slow = class({
 })
 
 function modifier_guldan_shadow_path_effect_slow:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,}
+	return { MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE }
 end
 
 function modifier_guldan_shadow_path_effect_slow:GetModifierMoveSpeedBonus_Percentage()
-	if self:GetCaster():HasScepter() then
-		return self:GetAbility():GetSpecialValueFor('movement_speed_reduce_after_scepter')
-	else
-		return self:GetAbility():GetSpecialValueFor('movement_speed_reduce_after')
-	end
+	return self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor('movement_speed_reduce_after_scepter') or self:GetAbility():GetSpecialValueFor('movement_speed_reduce_after')
 end

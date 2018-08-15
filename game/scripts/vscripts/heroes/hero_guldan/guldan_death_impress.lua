@@ -27,7 +27,7 @@ function modifier_guldan_death_impress:CheckState()
 end
 
 function modifier_guldan_death_impress:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS}
+	return { MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS }
 end
 
 function modifier_guldan_death_impress:GetModifierMagicalResistanceBonus()
