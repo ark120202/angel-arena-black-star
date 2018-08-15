@@ -24,11 +24,15 @@ modifier_item_unstable_quasar_passive = class({
 function modifier_item_unstable_quasar_passive:DeclareFunctions()
 	return {
 		MODIFIER_EVENT_ON_ABILITY_EXECUTED,
+		MODIFIER_EVENT_ON_TAKEDAMAGE,
 		MODIFIER_PROPERTY_BONUS_DAY_VISION,
 		MODIFIER_PROPERTY_BONUS_NIGHT_VISION,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-		MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+		MODIFIER_PROPERTY_MANA_BONUS,
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_CAST_RANGE_BONUS,
 	}
 end
 
@@ -81,6 +85,27 @@ if IsServer() then
 			end
 		end
 	end
+
+	function modifier_item_unstable_quasar_passive:OnTakeDamage(keys)
+		local parent = self:GetParent()
+		local ability = self:GetAbility()
+		local damage = keys.original_damage
+		local caster = ability:GetCaster()
+		if caster:HasModifier("modifier_item_scythe_of_the_ancients_passive") then return end
+		Timers:CreateTimer(2, function()
+		if keys.attacker == parent and not keys.unit:IsMagicImmune() and keys.damage_type == 2 and damage > ability:GetSpecialValueFor("min_damage_to_pure") then
+			ApplyDamage({
+				attacker = parent,
+				victim = keys.unit,
+				damage = damage * ability:GetSpecialValueFor("magic_damage_to_pure_pct") * 0.01,
+				damage_type = DAMAGE_TYPE_PURE,
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+				ability = ability
+			})
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, keys.unit, damage * ability:GetSpecialValueFor("magic_damage_to_pure_pct") * 0.01, nil)
+			end
+		end)
+	end
 end
 
 function modifier_item_unstable_quasar_passive:GetBonusDayVision()
@@ -99,9 +124,22 @@ function modifier_item_unstable_quasar_passive:GetModifierSpellAmplify_Percentag
 	return self:GetAbility():GetSpecialValueFor("spell_amp_pct")
 end
 
-function modifier_item_unstable_quasar_passive:GetModifierTotalDamageOutgoing_Percentage()
-	return self:GetAbility():GetSpecialValueFor("increase_all_damage_pct")
+function modifier_item_unstable_quasar_passive:GetModifierManaBonus()
+	return self:GetAbility():GetSpecialValueFor("bonus_mana")
 end
+
+function modifier_item_unstable_quasar_passive:GetModifierCastRangeBonus()
+	return self:GetAbility():GetSpecialValueFor("cast_range_bonus")
+end
+
+function modifier_item_unstable_quasar_passive:GetModifierConstantHealthRegen()
+	return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
+end
+
+function modifier_item_unstable_quasar_passive:GetModifierConstantManaRegen()
+	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
+end
+
 
 function modifier_item_unstable_quasar_passive:GetModifierAura()
 	return "modifier_item_unstable_quasar_aura"

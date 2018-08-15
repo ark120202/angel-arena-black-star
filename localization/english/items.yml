@@ -1549,11 +1549,15 @@ DOTA_Tooltip_ability_item_unstable_quasar_Description: >-
   <h1>Passive: Decomposition Aura</h1> Grants the ability to see invisible units
   and wards and reduces Magical Damage Resistance of enemy uses by
   %aura_resist_debuff_pct%%%.
-
-
   Radius: %aura_radius%
+
+  <h1>Passive: The Weapon of Darkness</h1> All dealt magical damage also deals %magic_damage_to_pure_pct%%% as pure damage.
 DOTA_Tooltip_ability_item_unstable_quasar_Note0: Effects of multiple Unstable Quasar do not stack.
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_intellect: +$int
+DOTA_Tooltip_ability_item_unstable_quasar_bonus_mana: +$mana
+DOTA_Tooltip_ability_item_unstable_quasar_bonus_mana_regen: +$mana_regen
+DOTA_Tooltip_ability_item_unstable_quasar_bonus_health_regen: +$hp_regen
+DOTA_Tooltip_ability_item_unstable_quasar_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: +Day Vision
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +Night Vision
 DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%+$spell_amp'
@@ -1580,6 +1584,8 @@ DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Multiplier
 DOTA_Tooltip_ability_item_irresistable_star: Irresistable Star
 DOTA_Tooltip_ability_item_irresistable_star_Description: >-
   <h1>Passive: The Weapon of Darkness</h1> All dealt magical damage also deals %magic_damage_to_pure_pct%%% as pure damage.
+DOTA_Tooltip_ability_item_irresistable_star_Note0: Doesn`t interract with Unstable Quasar and Scythe Of Ancients
+DOTA_Tooltip_ability_item_irresistable_star_Note1: Minimal damage to trigger - %min_damage%
 DOTA_Tooltip_ability_item_irresistable_star_spell_amp_pct: '%+$spell_amp'
 DOTA_Tooltip_ability_item_irresistable_star_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_irresistable_star_bonus_mana: +$mana

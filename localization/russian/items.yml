@@ -1021,9 +1021,9 @@ DOTA_Tooltip_ability_item_unstable_quasar_Description: >-
   <h1>Пассивная: Decomposition Aura</h1> Дает возможность видеть невидимых
   существ и варды и снижает сопротивление магическому урону противников на
   %aura_resist_debuff_pct%%%.
-
-
   Радиус: %aura_radius%
+
+  <h1>Пассивная: The Weapon of Darkness</h1> При нанесении магического урона, также наносит бонусный чистый урон в размере %magic_damage_to_pure_pct%%% от него.
 DOTA_Tooltip_ability_item_unstable_quasar_Note0: Эффекты от нескольких Unstable Quasar не складываются.
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: +к радиусу обзора днем
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +к радиусу обзора ночью
@@ -1047,6 +1047,8 @@ DOTA_Tooltip_modifier_item_golden_arrow_counter: Множитель Golden Arrow
 DOTA_Tooltip_ability_item_irresistable_star: Irresistable Star
 DOTA_Tooltip_ability_item_irresistable_star_Description: >-
   <h1>Пассивная: The Weapon of Darkness</h1> При нанесении магического урона, также наносит бонусный чистый урон в размере %magic_damage_to_pure_pct%%% от него.
+DOTA_Tooltip_ability_item_irresistable_star_Note0: Не сочетается с Unstable Quasar и Scythe Of Ancients.
+DOTA_Tooltip_ability_item_irresistable_star_Note1: Минимальный урон для срабатывания - %min_damage%
 DOTA_Tooltip_ability_item_irresistable_star_spell_amp_pct: '%+$spell_amp'
 DOTA_Tooltip_ability_item_irresistable_star_cast_range_bonus: +$cast_range
 DOTA_Tooltip_ability_item_irresistable_star_bonus_mana: +$mana

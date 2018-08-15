@@ -8503,6 +8503,11 @@
 				"var_type"					"FIELD_FLOAT"
 				"delayed_damage_per_health"	"0.3"
 			}
+			"18"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_damage_to_pure"		"70"
+			}
 		}
 		"precache"
 		{
@@ -8535,6 +8540,7 @@
 		"ItemQuality"					"legendary"
 		"ItemAliases"					"irresistable star"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityCooldown"				"2"
 
 		"AbilitySpecial"
 		{
@@ -8566,13 +8572,22 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_damage_to_pure_pct"		"20"
+				"magic_damage_to_pure_pct"		"10"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"spell_amp_pct"			"15"
 			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_damage"			"70"
+			}
+		}
+		"precache"
+		{
+			"particle"	"particles/arena/items_fx/irresistable_star.vpcf"
 		}
 	}
 
@@ -8678,12 +8693,12 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"66666"
+		"ItemCost"						"15000"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_unstable_quasar"
 		"ItemRequirements"
 		{
-			"01"						"item_fallen_star;item_awakened_cursed_eye;"
+			"01"						"item_irresistable_star;item_aether_lens;item_awakened_cursed_eye"
 		}
 	}
 
@@ -8704,97 +8719,122 @@
 		"ItemQuality"					"legendary"
 		"ItemAliases"					"static"
 		"AOERadius"						"%damage_radius"
-
+		"AbilityCooldown"				"2.0"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_intellect"			"100"
+				"bonus_mana"			"1000"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_day_vision"			"500"
+				"bonus_mana_regen"			"35"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_night_vision"		"500"
+				"bonus_health_regen"		"35"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"spell_amp_pct"				"30"
+				"cast_range_bonus"			"450"
 			}
 			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intellect"			"100"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_day_vision"			"500"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_night_vision"		"500"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spell_amp_pct"				"30"
+			}
+			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"singularity_radius"			"800"
 				"CalculateSpellDamageTooltip" 	"0"
 			}
-			"06"
+			"10"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"base_damage"					"250"
 				"CalculateSpellDamageTooltip" 	"0"
 			}
-			"07"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"damage_pct"					"5.5"
-				"CalculateSpellDamageTooltip" 	"0"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"intelligence_damage_pct"		"11"
-				"CalculateSpellDamageTooltip" 	"0"
-			}
-			"09"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"min_ability_cooldown"			"1.6"
-			}
 			"11"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"slow_speed"					"100"
+				"var_type"						"FIELD_FLOAT"
+				"damage_pct"					"2.0"
+				"CalculateSpellDamageTooltip" 	"0"
 			}
 			"12"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"slow_duration"					"0.33"
+				"intelligence_damage_pct"		"4.0"
+				"CalculateSpellDamageTooltip" 	"0"
 			}
 			"13"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"offset_range"					"30"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"aura_radius"				"1400"
+				"var_type"						"FIELD_FLOAT"
+				"min_ability_cooldown"			"1.6"
 			}
 			"14"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"aura_resist_debuff_pct"		"20"
+				"slow_speed"					"100"
 			}
 			"15"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_duration"					"0.33"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"offset_range"					"30"
+			}
+			"17"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"1400"
+			}
+			"18"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aura_resist_debuff_pct"		"10"
+			}
+			"19"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"manacost"						"100"
 			}
-			"16"
+			"20"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"manacost_pct"					"10"
 			}
-			"17"
+			"21"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"increase_all_damage_pct"		"5"
+				"magic_damage_to_pure_pct"			"15"
+			}
+			"22"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_damage_to_pure"		"70"
 			}
 		}
 		"precache"
