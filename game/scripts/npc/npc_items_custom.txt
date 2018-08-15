@@ -8571,7 +8571,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_damage_to_pure_pct"		"20"
+				"magic_damage_to_pure_pct"		"10"
 			}
 			"07"
 			{

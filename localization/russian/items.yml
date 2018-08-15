@@ -997,7 +997,7 @@ DOTA_Tooltip_ability_item_lightning_rod_Description: '<h1>Использован
 
 DOTA_Tooltip_ability_item_scythe_of_the_ancients_Description: |-
   <h1>Активируемая: Invoke the Reaper</h1> Призывает Жнеца, выпуская мощный всплеск темной энергии во вражеского героя, нанося %cast_damage% + %cast_damage_pct%%% урона и оглушая на %stun_duration% секунд(ы). По окончанию оглушения Жнец нанесет удар, нанося %delayed_damage_per_health% ед. урона за каждую отсутствующую ед. здоровья.
-  <h1>Пассивная: The Weapon of Darkness</h1> При нанесении магического урона, также наносит бонусный чистый урон в размере %magic_damage_to_pure_pct%%% от него.
+  <h1>Пассивная: The Weapon of Darkness</h1> При нанесении магического урона большего чем %min_damage_to_pure%, также наносит бонусный чистый урон в размере %magic_damage_to_pure_pct%%% от него.
   <h1>Пассивная: Ultimate Upgrade</h1> Улучшает ульт, а также некоторые способности части героев.
 DOTA_Tooltip_ability_item_scythe_of_the_ancients_spell_amp_pct: '%ДОП. УРОН СПОСОБНОСТЕЙ:'
 DOTA_Tooltip_ability_item_scythe_of_the_ancients_cast_range_bonus: 'ДОП. ДАЛЬНОСТЬ СПОСОБНОСТЕЙ:'

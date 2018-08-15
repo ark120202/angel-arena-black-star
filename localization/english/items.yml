@@ -1480,7 +1480,7 @@ npc_arena_lightning_rod: Lightning Rod
 DOTA_Tooltip_ability_item_scythe_of_the_ancients: Scythe of the Ancients
 DOTA_Tooltip_ability_item_scythe_of_the_ancients_Description: |-
   <h1>Active: Invoke the Reaper</h1> Summons the Reaper, firing massive blast of dark energy into enemy hero, dealing %cast_damage% + %cast_damage_pct%%% damage and stunning it for %stun_duration% seconds, then Reaper strikes enemy, dealing %delayed_damage_per_health% for each missing health point.
-  <h1>Passive: The Weapon of Darkness</h1> All dealt magical damage also deals %magic_damage_to_pure_pct%%% as pure damage.
+  <h1>Passive: The Weapon of Darkness</h1> All dealt magical damage bigger than %min_damage_to_pure% also deals %magic_damage_to_pure_pct%%% as pure damage.
   <h1>Passive: Ultimate Upgrade</h1>Upgrades the ultimate, and some abilities, of certain heroes.
 DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_strength: +$str
 DOTA_Tooltip_ability_item_scythe_of_the_ancients_bonus_agility: +$agi
