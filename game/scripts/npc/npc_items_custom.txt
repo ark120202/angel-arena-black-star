@@ -8540,7 +8540,6 @@
 		"ItemQuality"					"legendary"
 		"ItemAliases"					"irresistable star"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilityCooldown"				"2"
 
 		"AbilitySpecial"
 		{
