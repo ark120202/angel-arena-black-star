@@ -1021,9 +1021,9 @@ DOTA_Tooltip_ability_item_unstable_quasar_Description: >-
   <h1>Пассивная: Decomposition Aura</h1> Дает возможность видеть невидимых
   существ и варды и снижает сопротивление магическому урону противников на
   %aura_resist_debuff_pct%%%.
-  Радиус: %aura_radius%
 
-  <h1>Пассивная: The Weapon of Darkness</h1> При нанесении магического урона, также наносит бонусный чистый урон в размере %magic_damage_to_pure_pct%%% от него.
+
+  Радиус: %aura_radius%
 DOTA_Tooltip_ability_item_unstable_quasar_Note0: Эффекты от нескольких Unstable Quasar не складываются.
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: +к радиусу обзора днем
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +к радиусу обзора ночью
