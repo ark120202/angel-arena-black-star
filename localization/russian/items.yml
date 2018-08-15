@@ -200,7 +200,7 @@ DOTA_Tooltip_modifier_item_diffusal_style_root_Description: Прикован к 
 DOTA_Tooltip_modifier_item_diffusal_style_slow: Очищение от Diffusal Style
 DOTA_Tooltip_modifier_item_diffusal_style_slow_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
 DOTA_Tooltip_modifier_item_diffusal_style_purge_cooldown: Diffusal Style Purge
-DOTA_Tooltip_modifier_item_diffusal_style_purge_cooldown_Description: Can`t purge.
+DOTA_Tooltip_modifier_item_diffusal_style_purge_cooldown_Description: Can't purge.
 DOTA_Tooltip_ability_item_dagon_arena: Dagon
 DOTA_Tooltip_ability_item_dagon_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_arena_damage: 'МГНОВЕННЫЙ УРОН:'

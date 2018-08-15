@@ -257,7 +257,7 @@ DOTA_Tooltip_modifier_item_diffusal_style_root_Description: You can't move.
 DOTA_Tooltip_modifier_item_diffusal_style_slow: Diffusal Style Purge
 DOTA_Tooltip_modifier_item_diffusal_style_slow_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
 DOTA_Tooltip_modifier_item_diffusal_style_purge_cooldown: Diffusal Style Purge
-DOTA_Tooltip_modifier_item_diffusal_style_purge_cooldown_Description: Can`t purge.
+DOTA_Tooltip_modifier_item_diffusal_style_purge_cooldown_Description: Can't purge.
 DOTA_Tooltip_ability_item_dagon_arena: Dagon
 DOTA_Tooltip_ability_item_dagon_arena_Description: '<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit.'
 DOTA_Tooltip_ability_item_dagon_arena_damage: 'BURST DAMAGE:'
