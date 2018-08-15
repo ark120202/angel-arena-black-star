@@ -19,12 +19,12 @@ if IsServer() then
 	function modifier_guldan_saving_touch:OnCreated()
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
-		pfx = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_guldan/guldan_saving_touch.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
-		ParticleManager:SetParticleControlEnt(pfx, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
+		self.pfx = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_guldan/guldan_saving_touch.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+		ParticleManager:SetParticleControlEnt(self.pfx, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
 	end
 
 	function modifier_guldan_saving_touch:OnDestroy()
-		ParticleManager:DestroyParticle(pfx, false)
+		ParticleManager:DestroyParticle(self.pfx, false)
 	end
 end
 

@@ -7,7 +7,7 @@ guldan_shadow_path = class({
 })
 
 function guldan_shadow_path:GetCastRange()
-	return self:GetCaster():HasScepter() and self:GetSpecialValueFor("aura_radius_scepter") or self:GetSpecialValueFor("aura_radius")
+	return self:GetSpecialValueFor(self:GetCaster():HasScepter()  and "aura_radius_scepter" or "aura_radius")
 end
 
 modifier_guldan_shadow_path = class ({})
@@ -16,7 +16,7 @@ if IsServer() then
 	function guldan_shadow_path:OnSpellStart()
 		local caster = self:GetCaster()
 		caster:EmitSound("Arena.Hero_Guldan.ShadowPath.Start")
-		local duration = (caster:HasScepter() and self:GetSpecialValueFor("duration_scepter") or self:GetSpecialValueFor("duration"))
+		local duration = self:GetSpecialValueFor(caster:HasScepter() and "duration_scepter" or "duration")
 
 		caster:AddNewModifier(caster, self, "modifier_guldan_shadow_path", {duration = duration})
 	end
@@ -32,7 +32,7 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local interval = self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor("interval_scepter") or self:GetAbility():GetSpecialValueFor("interval")
 		self:GetParent():EmitSound("Arena.Hero_Guldan.ShadowPath.Cast")
-		local radius = (self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor("aura_radius_scepter") or self:GetAbility():GetSpecialValueFor("aura_radius"))
+		local radius = self:GetAbility():GetSpecialValueFor(self:GetCaster():HasScepter() and "aura_radius_scepter" or "aura_radius")
 
 		for _,v in ipairs(FindUnitsInRadius(target:GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)) do
 			local modifier = v:FindModifierByNameAndCaster("modifier_guldan_shadow_path_effect", target)
@@ -68,7 +68,7 @@ if IsServer() then
 	function modifier_guldan_shadow_path_effect:OnIntervalThink()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-		local damage = self:GetCaster():HasScepter() and ability:GetSpecialValueFor('damage_per_second_scepter') or ability:GetSpecialValueFor('damage_per_second')
+		local damage = ability:GetSpecialValueFor(self:GetCaster():HasScepter() and 'damage_per_second_scepter' or 'damage_per_second')
 		local damagetype = self:GetCaster():HasScepter() and DAMAGE_TYPE_PURE or DAMAGE_TYPE_MAGICAL
 
 		ApplyDamage({
@@ -76,7 +76,7 @@ if IsServer() then
 			attacker = self:GetCaster(),
 			damage = damage,
 			damage_type = damagetype,
-			ability = self:GetAbility()
+			ability = ability
 		})
 	end
 
@@ -94,7 +94,7 @@ function modifier_guldan_shadow_path_effect:DeclareFunctions()
 end
 
 function modifier_guldan_shadow_path_effect:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor('movement_speed_reduce_scepter') or self:GetAbility():GetSpecialValueFor('movement_speed_reduce')
+	return self:GetAbility():GetSpecialValueFor(self:GetCaster():HasScepter() and 'movement_speed_reduce_scepter' or 'movement_speed_reduce')
 end
 
 modifier_guldan_shadow_path_effect_slow = class({
