@@ -8578,15 +8578,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"spell_amp_pct"			"15"
 			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"min_damage"			"70"
-			}
-		}
-		"precache"
-		{
-			"particle"	"particles/arena/items_fx/irresistable_star.vpcf"
 		}
 	}
 

@@ -61,7 +61,6 @@ function Precache(context)
 		"particles/econ/events/ti7/shivas_guard_slow.vpcf",
 		"particles/arena/items_fx/scythe_of_the_ancients_start.vpcf",
 		"particles/econ/events/ti4/dagon_beam_black_ti4.vpcf",
-		"particle/arena/items_fx/irresistable_star.vpcf",
 		-- Heroes
 		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf",
 		"particles/econ/items/legion/legion_fallen/legion_fallen_press_a.vpcf",

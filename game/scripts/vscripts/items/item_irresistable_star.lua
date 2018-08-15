@@ -51,21 +51,18 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local damage = keys.original_damage
 		local caster = ability:GetCaster()
-		local target = keys.unit
-		if caster:HasModifier("modifier_item_unstable_quasar_passive") or caster:HasModifier("modifier_item_scythe_of_the_ancients_passive") then return end
+		if caster:HasModifier("modifier_item_unstable_quasar_passive") then return end
 		Timers:CreateTimer(2, function()
-			if keys.attacker == parent and not target:IsMagicImmune() and keys.damage_type == 2 and damage > ability:GetSpecialValueFor("min_damage") then
-				self.particle = ParticleManager:CreateParticle("particles/arena/items_fx/irresistable_star_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
-				ParticleManager:SetParticleControlEnt(self.particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+			if keys.attacker == parent and not keys.unit:IsMagicImmune() and keys.damage_type == 2 then
 				ApplyDamage({
 					attacker = parent,
-					victim = target,
+					victim = keys.unit,
 					damage = damage * ability:GetSpecialValueFor("magic_damage_to_pure_pct") * 0.01,
 					damage_type = DAMAGE_TYPE_PURE,
 					damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 					ability = ability
 				})
-				SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, target, damage * ability:GetSpecialValueFor("magic_damage_to_pure_pct") * 0.01, nil)
+				SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, keys.unit, damage * ability:GetSpecialValueFor("magic_damage_to_pure_pct") * 0.01, nil)
 			end
 		end)
 	end
