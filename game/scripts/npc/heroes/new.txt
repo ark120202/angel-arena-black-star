@@ -1,74 +1,5 @@
 "DOTAHeroes"
 {
-//	"npc_arena_hero_arcueid"
-//	{
-//		"base_hero"	"npc_dota_hero_arena_base"
-//		"SceneCamera"	""
-//		"Model"	"models/units/arcueid/arcueid.vmdl"
-//		"ModelScale"	"1.7"
-//		"Ability1"	""
-//		"Ability2"	""
-//		"Ability3"	""
-//		"Ability4"	""
-//		"Enabled"		"0"
-//		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
-//		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-//		"AttackRange"			"150"
-//		"ProjectileModel"		""
-//	}
-//
-//	"npc_arena_hero_rin"
-//	{
-//		"base_hero"	"npc_dota_hero_arena_base"
-//		"SceneCamera"	""
-//		"Model"	"models/units/rin/rin.vmdl"
-//		"ModelScale"	"1.7"
-//		"Ability1"	""
-//		"Ability2"	""
-//		"Ability3"	""
-//		"Ability4"	""
-//		"Enabled"		"0"
-//		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
-//		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-//		"AttackRange"			"150"
-//		"ProjectileModel"		""
-//	}
-//
-//	"npc_arena_hero_rider"
-//	{
-//		"base_hero"	"npc_dota_hero_arena_base"
-//		"SceneCamera"	""
-//		"Model"	"models/units/rider/rider.vmdl"
-//		"ModelScale"	"1.7"
-//		"Ability1"	""
-//		"Ability2"	""
-//		"Ability3"	""
-//		"Ability4"	""
-//		"Enabled"		"0"
-//		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
-//		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-//		"AttackRange"			"150"
-//		"ProjectileModel"		""
-//	}
-//
-//	"npc_arena_hero_maka"
-//	{
-//		"base_hero"				"npc_dota_hero_arena_base"
-//		"LinkedHero"			"npc_arena_hero_soul_eater"
-//		"Model"					"models/units/maka/maka.vmdl"
-//		"ModelScale"			"0.96"
-//	}
-//
-//	"npc_arena_hero_soul_eater"
-//	{
-//		"base_hero"				"npc_dota_hero_arena_base"
-//		"LinkedHero"			"npc_arena_hero_maka"
-//		"Model"					"models/units/soul_eater/soul_eater.vmdl"
-//		"ModelScale"			"1.15"
-//		"Ability1"				"soul_eater_demon_weapon_from"
-//		"Ability2"				"soul_eater_human_form"
-//	}
-
 	"npc_arena_hero_debug"
 	{
 		"base_hero"	"npc_dota_hero_sven"
@@ -101,6 +32,16 @@
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"	"28"
 		"AttackDamageMax"	"30"
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_LIGHT"	"30"
+			"DAMAGE_SUBTYPE_DARK"	"30"
+			"DAMAGE_SUBTYPE_EARTH"	"30"
+			"DAMAGE_SUBTYPE_ICE"	"30"
+			"DAMAGE_SUBTYPE_FIRE"	"30"
+			"DAMAGE_SUBTYPE_WATER"	"30"
+			"DAMAGE_SUBTYPE_ENERGY"	"30"
+		}
 	}
 
 	"npc_arena_hero_cherub"
@@ -113,6 +54,11 @@
 		"Ability5"	"generic_hidden"
 		"Ability6"	"cherub_flower_garden"
 		"AttackRate"	"1.5"
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_FIRE" 		"0"
+			"DAMAGE_SUBTYPE_WATER" 	"50"
+		}
 	}
 
 	"npc_arena_hero_queenofblades"
@@ -155,7 +101,6 @@
 		"ArmorPhysical"	"-2"
 		"MovementSpeed"	"300"
 		"AttackRate"	"1.6"
-		"SceneCamera"	"custom_scene_hero_apocalypse"
 		"Model"	"models/units/apocalypse/apocalypse.vmdl"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
@@ -169,12 +114,17 @@
 		"AttributeAgilityGain"	"1.5"
 		"AttackDamageMin"	"23"
 		"AttackDamageMax"	"27"
+
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_DARK" 	"0"
+			"DAMAGE_SUBTYPE_LIGHT" 	"50"
+		}
 	}
 
 	"npc_arena_hero_shinobu"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_shinobu"
 		"Model"	"models/hero_shinobu/shinobu_01.vmdl"
 		"ModelScale"	"0.75"
 		"Ability1"	"shinobu_vampire_blood"
@@ -220,6 +170,12 @@
 		"Ability6"	"zen_gehraz_superposition"
 		"AttackRate"	"1.5"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_DARK" 	"0"
+			"DAMAGE_SUBTYPE_LIGHT" 	"50"
+		}
 	}
 
 	"npc_arena_hero_stegius"
@@ -233,7 +189,6 @@
 		"Ability6"	"stegius_desolating_touch"
 		"Model"		"models/units/stegius/stegius.vmdl"
 		"ModelScale"	"1.1"
-		"SceneCamera"	"custom_scene_hero_stegius"
 		"AttackRate"	"1.6"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
@@ -247,6 +202,12 @@
 		"AttributeAgilityGain"	"2.1"
 		"AttackDamageMin"	"20"
 		"AttackDamageMax"	"22"
+
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_DARK" 	"0"
+			"DAMAGE_SUBTYPE_LIGHT" 	"50"
+		}
 	}
 
 	"npc_arena_hero_mirratie"
@@ -272,7 +233,6 @@
 		"Ability5"	"generic_hidden"
 		"Ability6"	"freya_frozen_strike"
 		"Model"	"models/units/freya/freya.vmdl"
-		"SceneCamera"	"custom_scene_hero_freya"
 		"ModelScale"	"1.5"
 		"AttackRate"	"1.8"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -287,13 +247,19 @@
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"	"46"
 		"AttackDamageMax"	"50"
+
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_WATER" 	"100"
+			"DAMAGE_SUBTYPE_ENERGY" "100"
+			"DAMAGE_SUBTYPE_FIRE" 	"100"
+		}
 	}
 
 	"npc_arena_hero_zaken"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
 		"Model"	"models/units/zaken/zaken.vmdl"
-		"SceneCamera"	"custom_scene_hero_zaken"
 		"Ability1"		"zaken_stitching_strikes"
 		"Ability2"		"zaken_last_chance"
 		"Ability3"		"zaken_summon_sailors"
@@ -313,12 +279,18 @@
 		"AttributeAgilityGain"	"3.0"
 		"AttackDamageMin"	"20"
 		"AttackDamageMax"	"30"
+
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_EARTH" 	"100"
+			"DAMAGE_SUBTYPE_ENERGY" "100"
+			"DAMAGE_SUBTYPE_WATER"  "100"
+		}
 	}
 
 	"npc_arena_hero_poseidon"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_poseidon"
 		"Model"	"models/units/poseidon/poseidon.vmdl"
 		"ModelScale"	"1.4"
 		"Ability1"	"poseidon_wave"
@@ -343,12 +315,17 @@
 		"AttributeAgilityGain"	"1.5"
 		"AttackDamageMin"	"22"
 		"AttackDamageMax"	"25"
+
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_ICE" 	"0"
+			"DAMAGE_SUBTYPE_FIRE" 	"50"
+		}
 	}
 
 	"npc_arena_hero_saber"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_saber"
 		"Model"	"models/units/saber/saber.vmdl"
 		"ModelScale"	"1.1"
 		"Ability1"	"saber_mana_burst"
@@ -371,12 +348,16 @@
 		"MagicalResistance"		"45"
 		"AttackDamageMin"		"22"
 		"AttackDamageMax"		"32"
+
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_DARK"	"100"
+		}
 	}
 
 	"npc_arena_hero_sara"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_sara"
 		"Model"	"models/units/sara/sara.vmdl"
 		"ModelScale"	"1"
 		"Ability1"	"sara_evolution"
@@ -403,7 +384,6 @@
 	"npc_arena_hero_destroyer"
 	{
 		"base_hero"		"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_destroyer"
 		"Model"			"models/units/destroyer/destroyer.vmdl"
 		"ModelScale"	"1.2"
 		"Ability1"		"destroyer_armor_crush"
@@ -424,12 +404,16 @@
 		"AttributeAgilityGain"	"1.7"
 		"AttackDamageMin"		"26"
 		"AttackDamageMax"		"28"
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_EARTH" "50"
+		}
+
 	}
 
 	"npc_arena_hero_anakim"
 	{
 		"base_hero"		"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_anakim"
 		"Model"			"models/units/anakim/anakim.vmdl"
 		"ModelScale"	"0.9"
 		"Ability1"		"anakim_wisps"
@@ -450,12 +434,16 @@
 		"AttributeAgilityGain"	"1.5"
 		"AttackDamageMin"	"22"
 		"AttackDamageMax"	"26"
+
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_DARK" "50"
+		}
 	}
 
 	"npc_arena_hero_sai"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_sai"
 		"Model"	"models/units/sai/sai.vmdl"
 		"ModelScale"	"1.1"
 		"Ability1"	"sai_rage_of_pain"
@@ -477,13 +465,18 @@
 		"AttackDamageMin"		"30"
 		"AttackDamageMax"		"35"
 		"MovementSpeed"			"270"
+
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_DARK" 	"-25"
+			"DAMAGE_SUBTYPE_LIGHT" 	"50"
+		}
 	}
 
 	"npc_arena_hero_saitama"
 	{
 		"DisabledInRanked"	"1"
 		"base_hero"	"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_saitama"
 		"Model"	"models/units/saitama/saitama.vmdl"
 		"ModelScale"	"1"
 		"Ability1"	"saitama_push_ups"
@@ -510,7 +503,6 @@
 	"npc_arena_hero_doppelganger"
 	{
 		"base_hero"	"npc_dota_hero_arena_base"
-		"SceneCamera"	"custom_scene_hero_doppelganger"
 		"Model"	"models/units/doppelganger/doppelganger.vmdl"
 		"ModelScale"	"1"
 		"Ability1"	"generic_hidden"
@@ -532,5 +524,16 @@
 		"AttackDamageMin"		"15"
 		"AttackDamageMax"		"15"
 		"MagicalResistance"		"15"
+
+		"DamgeSubTypeResistance"
+		{
+			"DAMAGE_SUBTYPE_LIGHT"	"15"
+			"DAMAGE_SUBTYPE_DARK"	"15"
+			"DAMAGE_SUBTYPE_EARTH"	"15"
+			"DAMAGE_SUBTYPE_ICE"	"15"
+			"DAMAGE_SUBTYPE_FIRE"	"15"
+			"DAMAGE_SUBTYPE_WATER"	"15"
+			"DAMAGE_SUBTYPE_ENERGY"	"15"
+		}
 	}
 }

@@ -229,7 +229,7 @@ function CDOTA_BaseNPC:ApplyTalentEffects(name)
 		for _,v in ipairs(effect.abilities) do
 			local ability = self:FindAbilityByName(v) or self:AddNewAbility(v)
 			ability:SetLevel(self.talents[name].level)
-			if not table.contains(self.talents[name].abilities, ability) then
+			if not table.includes(self.talents[name].abilities, ability) then
 				table.insert(self.talents[name].abilities, ability)
 			end
 		end

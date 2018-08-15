@@ -1,11 +1,4 @@
 function Structures:CreateShops()
-	for _,v in ipairs(Entities:FindAllByName("target_mark_containers_shop_secret")) do
-		local SecretShop = CreateItemOnPositionSync(v:GetAbsOrigin(), nil)
-		SecretShop:SetModel("models/courier/smeevil_magic_carpet/smeevil_magic_carpet.vmdl")
-		SecretShop:SetForwardVector(Vector(0, -1, 0))
-		SecretShop:SetModelScale(2)
-		Structures:CreateShop(SecretShop, ShopsData.Secret, "#containers_shop_secret_name", 192)
-	end
 	for _,v in ipairs(Entities:FindAllByName("target_mark_containers_shop_duel")) do
 		local DuelShop = CreateItemOnPositionSync(v:GetAbsOrigin(), nil)
 		DuelShop:SetModel("models/heroes/shopkeeper/shopkeeper.vmdl")

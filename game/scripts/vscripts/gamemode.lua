@@ -14,9 +14,7 @@ local requirements = {
 	"libraries/playertables",
 	"libraries/containers",
 	-- "libraries/pathgraph",
-	"libraries/selection",
 	"libraries/worldpanels",
-	"libraries/PopupNumbers",
 	"libraries/statcollection/init",
 	--------------------------------------------------
 	"data/constants",
@@ -161,7 +159,7 @@ function GameMode:OnGameInProgress()
 end
 
 function GameMode:PrecacheUnitQueueed(name)
-	if not table.contains(RANDOM_OMG_PRECACHED_HEROES, name) then
+	if not table.includes(RANDOM_OMG_PRECACHED_HEROES, name) then
 		if not IS_PRECACHE_PROCESS_RUNNING then
 			IS_PRECACHE_PROCESS_RUNNING = true
 			table.insert(RANDOM_OMG_PRECACHED_HEROES, name)

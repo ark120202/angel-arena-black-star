@@ -28,16 +28,13 @@ npc_dota_neutral_medium_variant1: Крип Среднего Лагеря
 npc_dota_neutral_hard_variant1: Дракон
 npc_dota_neutral_hard_variant2: Кентавр
 npc_dota_neutral_hard_variant3: Тайдшан
+npc_dota_neutral_jungle_variant1: Мишка Косолапый
 
 npc_arena_fountain: Фонтан
-npc_dota_casino_slotmachine: Слотмашина
-npc_dota_casino_lina: Lina
 npc_dota_arena_statue: Статуя
 npc_dota_lucifers_claw_doomling: Думлинг
 npc_arena_healer: Святыня
 
-DOTA_Tooltip_modifier_casino_bitch_lina_effect: Эффект от Lina
-DOTA_Tooltip_modifier_casino_bitch_lina_effect_Description: 'Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, восстановление здоровья увеличена на %MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%.'
 DOTA_Tooltip_modifier_multicast_lua: Multicast
 DOTA_Tooltip_modifier_multicast_lua_Description: Даёт вам шанс использовать заклинания по нескольку раз за одно применение.
 DOTA_Tooltip_modifier_shadow_word_self_secondary: Shadow Word Self Secondary
@@ -57,12 +54,6 @@ DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown: Перезарядк
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown_Description: Reincarnation перезаряжается.
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow: Reincarnate
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow_Description: 'Под действием способности Reincarnation у Wraith King. Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%.'
-
-DOTA_Tooltip_ability_casino_bitch_passive: Casino Bitch
-DOTA_Tooltip_ability_casino_bitch_passive_Description: 'Даст вам бонусы, если вы за них заплатите.'
-DOTA_Tooltip_ability_casino_bitch_passive_lina_attack_speed: 'ДОП. СКОРОСТЬ АТАКИ:'
-DOTA_Tooltip_ability_casino_bitch_passive_lina_movement_speed_percent: '%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_casino_bitch_passive_lina_health_regen: 'ДОП. РЕГЕН ЗДОРОВЬЯ:'
 
 DOTA_Tooltip_ability_boss_armor: Boss Armor
 DOTA_Tooltip_ability_boss_armor_Description: |-

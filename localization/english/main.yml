@@ -38,23 +38,20 @@ npc_arena_boss_l1_v1: Cursed Demon
 npc_arena_boss_l1_v2: Fire Golem
 npc_arena_boss_l2_v1: Stone Statue
 npc_arena_boss_l2_v2: Ancient Beast
-npc_arena_boss_central: The Netherdrake
 npc_arena_boss_freya: Freya
 npc_arena_boss_zaken: Zaken
+npc_arena_boss_cursed_zeld: Cursed Zeld
 npc_dota_neutral_easy_variant1: Easy Camp Creep
 npc_dota_neutral_medium_variant1: Medium Camp Creep
 npc_dota_neutral_hard_variant1: Dragon
 npc_dota_neutral_hard_variant2: Centaur
 npc_dota_neutral_hard_variant3: Tideshan
+npc_dota_neutral_jungle_variant1: Jungle Bear
 npc_arena_fountain: Fountain
-npc_dota_casino_slotmachine: Slotmachine
-npc_dota_casino_lina: Lina
 npc_dota_arena_statue: Statue
 npc_dota_lucifers_claw_doomling: Lucifer's Doomling
 npc_arena_healer: Shrine
 
-DOTA_Tooltip_modifier_casino_bitch_lina_effect: Lina Buff
-DOTA_Tooltip_modifier_casino_bitch_lina_effect_Description: 'Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, health regeniration increased by %MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%.'
 DOTA_Tooltip_modifier_multicast_lua: Multicast
 DOTA_Tooltip_modifier_multicast_lua_Description: Gives you chance to cast your spells multiple times with each use.
 DOTA_Tooltip_modifier_shadow_word_self_secondary: Shadow Word Self Secondary
@@ -74,12 +71,6 @@ DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown: Reincarnation Cooldo
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown_Description: Reincarnation disabled.
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow: Reincarnate
 DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow_Description: Affected by Wraith King's Reincarnation. Move speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%.
-
-DOTA_Tooltip_ability_casino_bitch_passive: Casino Bitch
-DOTA_Tooltip_ability_casino_bitch_passive_Description: 'Gives you bonuses, if you''ll pay for them.'
-DOTA_Tooltip_ability_casino_bitch_passive_lina_attack_speed: 'BONUS ATTACK SPEED:'
-DOTA_Tooltip_ability_casino_bitch_passive_lina_movement_speed_percent: '%BONUS MOVEMENT SPEED:'
-DOTA_Tooltip_ability_casino_bitch_passive_lina_health_regen: 'BONUS HEALTH REGEN:'
 
 DOTA_Tooltip_ability_boss_armor: Boss Armor
 DOTA_Tooltip_ability_boss_armor_Description: |-

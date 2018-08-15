@@ -1,0 +1,132 @@
+""
+{
+	"boss_cursed_zeld_shadows_curse"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/bosses/cursed_zeld/shadows_curse.lua"
+		"AbilityTextureName"			"boss_cursed_zeld_shadows_curse"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health_threshold"	"250000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"clone_damage_armor_pct"	"50"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"clone_model_scale_reduction"	"0.5"
+			}
+		}
+	}
+
+	"boss_cursed_zeld_mind_crack"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/bosses/cursed_zeld/mind_crack.lua"
+		"AbilityTextureName"			"boss_cursed_zeld_mind_crack"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"60"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"clone_count"		"2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"clone_damage_pct"	"25"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"clone_health"		"50000"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"clone_model_scale"	"0.85"
+			}
+		}
+	}
+
+	"boss_cursed_zeld_mental_influence"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/bosses/cursed_zeld/mental_influence.lua"
+		"AbilityTextureName"			"boss_cursed_zeld_mental_influence"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"60"
+		"AbilityCastRange"				"1000"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"illusion_count"	"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"illusion_incoming_damage_pct"	"100"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"illusion_outgoing_damage_pct"	"40"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"illusion_duration"	"20"
+			}
+		}
+	}
+
+	"boss_cursed_zeld_three_cores"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/bosses/cursed_zeld/three_cores.lua"
+		"AbilityTextureName"			"boss_cursed_zeld_three_cores"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCooldown"				"8"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_pct"		"50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stun_duration"		"4"
+			}
+		}
+	}
+}

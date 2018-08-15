@@ -54,9 +54,9 @@ if IsServer() then
 		local radius = ability:GetSpecialValueFor("singularity_radius")
 
 		if (
-			PreformAbilityPrecastActions(caster, ability) and
 			usedAbility:GetCooldown(usedAbility:GetLevel()) >= ability:GetSpecialValueFor("min_ability_cooldown") and
-			usedAbility:GetManaCost(usedAbility:GetLevel()) ~= 0
+			usedAbility:GetManaCost(usedAbility:GetLevel()) ~= 0 and
+			ability:PerformPrecastActions()
 		) then
 			for _,v in ipairs(FindUnitsInRadius(team, pos, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
 				local enemyPos = v:GetAbsOrigin()
