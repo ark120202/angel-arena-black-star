@@ -50,9 +50,6 @@ function PanoramaShop:AddItemStock(team, item, count)
 			added_stocks = t.ItemStockMax
 		end
 		t.current_stock = added_stocks
-		if (t.ItemStockMax == -1 or t.current_stock < t.ItemStockMax) then
-			PanoramaShop:StackStockableCooldown(team, item, t.ItemStockTime)
-		end
 		PanoramaShop:PushStockInfoToAllClients()
 	end
 end
