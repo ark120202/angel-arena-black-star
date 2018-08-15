@@ -8718,7 +8718,7 @@
 		"ItemQuality"					"legendary"
 		"ItemAliases"					"static"
 		"AOERadius"						"%damage_radius"
-		"AbilityCooldown"				"2.0"
+		"AbilityCooldown"				"5"
 		"AbilitySpecial"
 		{
 			"01"
