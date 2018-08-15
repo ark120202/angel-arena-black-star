@@ -458,6 +458,7 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 	margin-left: 2px
 	align: left center
 	flow-children: right-wrap
+	overflow: squish clip
 
 .DropDownValidTarget
 	width: 100%
@@ -492,6 +493,8 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 	border-radius: 1px
 
 #StockOverlay
+	visibility: collapse
+	width: 100%
 	height: 100%
 	background-color: rgba(0, 0, 0, .86667)
 
@@ -501,6 +504,7 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 	text-shadow: 0 0 6px 6 rgb(0, 0, 0)
 	vertical-align: center
 	horizontal-align: center
+	z-index: 1
 
 .UnitItemlikeRecipePanel
 	width: 57.6px

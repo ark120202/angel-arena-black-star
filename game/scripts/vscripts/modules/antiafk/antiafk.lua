@@ -5,7 +5,7 @@ PLAYER_ANTI_AFK_NOTIFY_TIME = 60*4
 AntiAFK = AntiAFK or class({})
 
 function AntiAFK:Think(playerId)
-	if not IsPlayerAbandoned(playerId) then
+	if not PlayerResource:IsPlayerAbandoned(playerId) then
 		AntiAFK:ThinkPlayerInGame(playerId)
 	else
 		local gold = Gold:GetGold(playerId)
@@ -13,7 +13,7 @@ function AntiAFK:Think(playerId)
 		local goldPerAlly = math.floor(gold/allyCount)
 		Gold:RemoveGold(playerId, goldPerAlly * allyCount)
 		for ally = 0, 23 do
-			if PlayerResource:IsValidPlayerID(ally) and not IsPlayerAbandoned(ally) then
+			if PlayerResource:IsValidPlayerID(ally) and not PlayerResource:IsPlayerAbandoned(ally) then
 				if PlayerResource:GetTeam(ally) == PlayerResource:GetTeam(playerId) then
 					Gold:ModifyGold(ally, goldPerAlly)
 				end

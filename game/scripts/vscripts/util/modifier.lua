@@ -29,27 +29,6 @@ function RemoveStacks(ability, unit, modifier, stack_amount)
 	end
 end
 
-function ModifyStacksLua(ability, caster, unit, modifier, stack_amount, refresh, modifierTable)
-	if stack_amount > 0 then
-		AddStacksLua(ability, caster, unit, modifier, stack_amount, refresh, modifierTable)
-	elseif stack_amount < 0 then
-		RemoveStacks(ability, unit, modifier, stack_amount)
-	end
-end
-
-function AddStacksLua(ability, caster, unit, modifier, stack_amount, refresh, data)
-	local modifierTable = data or {}
-	if unit:HasModifier(modifier) then
-		if refresh then
-			unit:AddNewModifier(caster, ability, modifier, modifierTable)
-		end
-		unit:SetModifierStackCount(modifier, ability, unit:GetModifierStackCount(modifier, ability) + stack_amount)
-	else
-		unit:AddNewModifier(caster, ability, modifier, modifierTable)
-		unit:SetModifierStackCount(modifier, ability, stack_amount)
-	end
-end
-
 function CDOTA_BaseNPC:RemoveDeathPreventingModifiers()
 	for _,v in ipairs(MODIFIERS_DEATH_PREVENTING) do
 		self:RemoveModifierByName(v)

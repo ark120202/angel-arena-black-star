@@ -74,7 +74,7 @@ function CreateSnippet_Ability(panel, abilityname, heroname, cost) {
 function Search() {
 	var abLevels = GetLocalAbilityNamesInfo();
 	var SearchText = $('#SearchBar').text.toLowerCase();
-	if (SearchingFor !== SearchText || SearchingPurchasedChecked !== $('#PurchasedAbilitiesToggle').checked || _.isEqual(SearchingAbLevels, abLevels)) {
+	if (SearchingFor !== SearchText || SearchingPurchasedChecked !== $('#PurchasedAbilitiesToggle').checked || !_.isEqual(SearchingAbLevels, abLevels)) {
 		SearchingFor = SearchText;
 		SearchingPurchasedChecked = $('#PurchasedAbilitiesToggle').checked;
 		SearchingAbLevels = abLevels;

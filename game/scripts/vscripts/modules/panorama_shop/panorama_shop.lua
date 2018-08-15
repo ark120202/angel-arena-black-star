@@ -99,7 +99,7 @@ function PanoramaShop:InitializeItemTable()
 
 		if kv.ItemAliases then
 			for _,v in ipairs(string.split(kv.ItemAliases, ";")) do
-				if not table.contains(itemdata.names, v:lower()) then
+				if not table.includes(itemdata.names, v:lower()) then
 					table.insert(itemdata.names, v:lower())
 				end
 			end
@@ -115,7 +115,7 @@ function PanoramaShop:InitializeItemTable()
 			local recipeKv = KeyValues.ItemKV[RecipesToCheck[name]]
 
 			if not itemsBuldsInto[RecipesToCheck[name]] then itemsBuldsInto[RecipesToCheck[name]] = {} end
-			if not table.contains(itemsBuldsInto[RecipesToCheck[name]], name) then
+			if not table.includes(itemsBuldsInto[RecipesToCheck[name]], name) then
 				table.insert(itemsBuldsInto[RecipesToCheck[name]], name)
 			end
 			for key, ItemRequirements in pairsByKeys(recipeKv.ItemRequirements) do
@@ -123,7 +123,7 @@ function PanoramaShop:InitializeItemTable()
 				table.insert(recipedata.items, itemParts)
 				for _,v in ipairs(itemParts) do
 					if not itemsBuldsInto[v] then itemsBuldsInto[v] = {} end
-					if not table.contains(itemsBuldsInto[v], name) then
+					if not table.includes(itemsBuldsInto[v], name) then
 						table.insert(itemsBuldsInto[v], name)
 					end
 				end
@@ -358,7 +358,7 @@ function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName, baseItemName
 	if (childItemName == baseItemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
 		for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
 			local subitems, newCounter = PanoramaShop:GetAllPrimaryRecipeItems(unit, newchilditem, baseItemName)
-			table.add(primary_items, subitems)
+			table.concat(primary_items, subitems)
 			for k,v in pairs(newCounter) do
 				_tempItemCounter[k] = (_tempItemCounter[k] or 0) + v
 			end

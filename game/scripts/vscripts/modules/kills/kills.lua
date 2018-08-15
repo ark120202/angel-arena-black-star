@@ -70,7 +70,7 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 			local hadGold = {killerPlayerID}
 			for _,v in ipairs(assists) do
 				if v ~= killerEntity and v and v:IsMainHero() then
-					if not table.contains(hadGold) then
+					if not table.includes(hadGold) then
 						Kills:_GiveKillGold(v, killedUnit, assistGold)
 						table.insert(hadGold, v:GetPlayerID())
 					end

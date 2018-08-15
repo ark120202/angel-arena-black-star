@@ -22,10 +22,6 @@ DUEL_PURGED_MODIFIERS = {
 	"modifier_item_titanium_bar_active"
 }
 
-ABILITY_INVULNERABLE_UNITS = {
-	"npc_dota_casino_slotmachine",
-}
-
 MODIFIERS_TRUESIGHT = {
 	"modifier_item_dustofappearance",
 	"modifier_bounty_hunter_track",

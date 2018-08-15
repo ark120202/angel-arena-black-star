@@ -31,9 +31,13 @@ CHAMPIONS_BANNED_ABILITIES = {
 	enchantress_enchant = true,
 }
 
-JUNGLE_ALLOWED_ABILITIES = {
-	item_iron_talon = true,
-	item_lucifers_claw = true,
+JUNGLE_BANNED_ABILITIES = {
+	chen_holy_persuasion = true,
+	item_helm_of_the_dominator = true,
+	doom_bringer_devour_arena = true,
+	shinobu_eat_oddity = true,
+	clinkz_death_pact = true,
+	enchantress_enchant = true,
 }
 
 CREEP_UPGRADE_FUNCTIONS = {

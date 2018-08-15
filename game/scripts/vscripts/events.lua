@@ -16,6 +16,9 @@ function GameMode:OnNPCSpawned(keys)
 			--npc:AddNoDraw()
 			return
 		end
+		if npc:GetUnitName() == "npc_dota_hero" then
+			npc:SetUnitName("npc_dota_hero_arena_base")
+		end
 		Timers:CreateTimer(function()
 			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
 				Physics:Unit(npc)
@@ -148,7 +151,7 @@ function GameMode:OnEntityKilled(keys)
 			end
 		end
 
-		if killedUnit:IsBoss() and not killedUnit.IsDominatedBoss then
+		if killedUnit:IsBoss() and Bosses:IsLastBossEntity(killedUnit) then
 			local team = DOTA_TEAM_NEUTRALS
 			if killerEntity then
 				team = killerEntity:GetTeam()
@@ -158,6 +161,10 @@ function GameMode:OnEntityKilled(keys)
 
 		if killedUnit:IsRealCreep() then
 			Spawner:OnCreepDeath(killedUnit)
+		end
+
+		if not killedUnit:UnitCanRespawn() then
+			killedUnit:ClearNetworkableEntityInfo()
 		end
 
 		if killerEntity then

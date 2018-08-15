@@ -112,6 +112,7 @@
 		"AbilityDamage"					"150 225 300 375 450 525 600"
 		"AOERadius"						"%radius"
 		"LevelsBetweenUpgrades"	"3"
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
 
 		"AbilitySpecial"
 		{
