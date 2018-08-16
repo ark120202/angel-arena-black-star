@@ -137,16 +137,8 @@ function Options:LoadMapValues()
 
 	if gamemode == "custom_abilities" then
 		Options:SetValue("MainHeroList", "NoAbilities")
-		Options:SetPreGameVoting("custom_abilities", {"random_omg", "ability_shop"}, "ability_shop", {
-			calculationFunction = ">",
-			callback = function(value)
-				Options:SetValue("EnableAbilityShop", value == "ability_shop")
-				Options:SetValue("EnableRandomAbilities", value == "random_omg")
-				if value == "ability_shop" then
-					CustomAbilities:PostAbilityShopData()
-				end
-			end
-		})
+		Options:SetValue("EnableAbilityShop", true)
+		CustomAbilities:PostAbilityShopData()
 	elseif gamemode == "ranked" then
 		Options:SetValue("EnableRatingAffection", true)
 		Options:SetValue("BanningPhaseBannedPercentage", 80)

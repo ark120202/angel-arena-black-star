@@ -101,10 +101,6 @@ ABILITY_SHOP_DATA = {
 	["freya_ice_cage"] = { cost = 20, },
 	["freya_pain_reflection"] = { cost = 24, },
 	["freya_frozen_strike"] = { cost = 26, },
-	["zaken_stitching_strikes"] = { cost = 12, },
-	["zaken_last_chance"] = { cost = 16, },
-	["zaken_summon_sailors"] = { cost = 10, },
-	["zaken_sword_control"] = { cost = 32, },
 	["shinobu_yumewatari_lua"] = { cost = 9, },
 	["saber_mana_burst"] = { cost = 4, },
 	["saber_avalon"] = { cost = 5, },
@@ -113,6 +109,7 @@ ABILITY_SHOP_DATA = {
 	["saitama_sit_ups"] = { cost = 3, },
 	["saitama_squats"] = { cost = 3, },
 	["saitama_jogging"] = { cost = 3, },
+	["destroyer_body_reconstruction"] = { cost = 12, },
 }
 
 ABILITY_SHOP_SKIP_HEROES = {
@@ -123,6 +120,8 @@ ABILITY_SHOP_SKIP_HEROES = {
 	npc_dota_hero_arena_base = true,
 	npc_arena_hero_sara = true,
 	npc_arena_hero_doppelganger = true,
+	npc_dota_hero_phantom_lancer = true,
+	npc_arena_hero_zaken = true,
 }
 
 ABILITY_SHOP_SKIP_ABILITIES = {
