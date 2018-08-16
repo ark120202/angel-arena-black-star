@@ -6864,26 +6864,12 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/custom_gem.lua"
-						"Function"		"CreateGem"
-						"Aura_Radius"   "%radius"
-						"Aura_Teams"    "DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Aura_Types"    "DOTA_UNIT_TARGET_ALL"
-						"Aura_Flags"    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/custom_gem.lua"
-						"Function"		"DestroyGem"
-					}
-				}
+
+				"Aura"          	"modifier_truesight_reveal"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_ALL"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 			}
 
 			"modifier_item_cursed_eye_aura2"
@@ -6907,6 +6893,17 @@
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+
+			"modifier_truesight_reveal"
+			{
+				"IsHidden"			"1"
+				"Duration"			"0.5"
+				"Priority"			"MODIFIER_PRIORITY_HIGH"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_DISABLED"
+				}
 			}
 
 			"modifier_truemind_reveal"
@@ -7017,25 +7014,23 @@
 						"Function"		"IllusionModifierCleaner"
 						"modifier"		"modifier_shard_of_true_sight"
 					}
-					"RunScript"
-					{
-						"ScriptFile"	"items/custom_gem.lua"
-						"Function"		"CreateGem"
-						"Aura_Radius"   	"%radius"
-						"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Aura_Types"    	"DOTA_UNIT_TARGET_ALL"
-						"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-						"CasterVar"		"modifier_shard_of_true_sight"
-					}
 				}
-				"OnDestroy"
+
+				"Aura"          	"modifier_truesight_reveal"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_ALL"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+
+			"modifier_truesight_reveal"
+			{
+				"IsHidden"			"1"
+				"Duration"			"0.5"
+				"Priority"			"MODIFIER_PRIORITY_HIGH"
+				"States"
 				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/custom_gem.lua"
-						"Function"		"DestroyGem"
-						"CasterVar"		"modifier_shard_of_true_sight"
-					}
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_DISABLED"
 				}
 			}
 		}
