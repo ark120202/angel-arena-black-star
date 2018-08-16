@@ -170,6 +170,6 @@ if IsServer() then
 	end
 
 	function modifier_item_unstable_quasar_aura:OnDestroy()
-		self.truesight:Destroy()
+		if not self.truesight:IsNull() then self.truesight:Destroy() end
 	end
 end
