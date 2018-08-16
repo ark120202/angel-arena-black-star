@@ -9,25 +9,6 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 	height: 100%
 	align: right center
 
-#ShopBase
-	margin-right: 0
-	margin-bottom: 196px
-	opacity: 0
-	transform: translateX($fullPanelWidth)
-	transition-duration: .01s
-	transition-property: transform, opacity
-	transition-timing-function: ease-in
-	align: right bottom
-	flow-children: right
-
-	&.ShopBaseOpen
-		opacity: 1
-		transform: translateX(0)
-
-	&:not(.ShopBaseOpen) #ItembuildsPanel
-		width: 0
-		opacity: 0
-
 .HUDFlipped
 	#ShopBase
 		align: left bottom
@@ -52,6 +33,25 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 			align: left top
 		#QuickBuyClearButtonPanel
 			align: left bottom
+
+#ShopBase
+	margin-right: 0
+	margin-bottom: 196px
+	opacity: 0
+	transform: translateX($fullPanelWidth)
+	transition-duration: .01s
+	transition-property: transform, opacity
+	transition-timing-function: ease-in
+	align: right bottom
+	flow-children: right
+
+	&.ShopBaseOpen
+		opacity: 1
+		transform: translateX(0)
+
+	&:not(.ShopBaseOpen) #ItembuildsPanel
+		width: 0
+		opacity: 0
 
 #ShopItemBasePanel
 	width: $mainPanelWidth
