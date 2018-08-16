@@ -32,18 +32,7 @@ function modifier_item_unstable_quasar_passive:DeclareFunctions()
 	}
 end
 
-if IsServer() then
-	function modifier_item_unstable_quasar_passive:OnCreated()
-		local owner = self:GetParent()
-		local ability = self:GetAbility()
-		self.truesight = owner:AddNewModifier(owner, ability, "modifier_custom_gem", nil)
-	end
-
-	function modifier_item_unstable_quasar_passive:OnDestroy()
-		local owner = self:GetParent()
-		self.truesight:Destroy()
-	end
-	
+if IsServer() then	
 	function modifier_item_unstable_quasar_passive:OnAbilityExecuted(keys)
 		local caster = self:GetParent()
 		if caster ~= keys.unit then return end
@@ -170,4 +159,17 @@ modifier_item_unstable_quasar_aura = class({
 
 function modifier_item_unstable_quasar_aura:GetModifierMagicalResistanceBonus()
 	return -self:GetAbility():GetSpecialValueFor("aura_resist_debuff_pct")
+end
+
+if IsServer() then
+	function modifier_item_unstable_quasar_aura:OnCreated()
+		local owner = self:GetParent()
+		local caster = self:GetCaster()
+		local ability = self:GetAbility()
+		self.truesight = owner:AddNewModifier(caster, ability, "modifier_truesight", nil)
+	end
+
+	function modifier_item_unstable_quasar_aura:OnDestroy()
+		self.truesight:Destroy()
+	end
 end
