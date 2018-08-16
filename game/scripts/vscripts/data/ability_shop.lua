@@ -115,6 +115,7 @@ ABILITY_SHOP_DATA = {
 	["saitama_sit_ups"] = { cost = 3, },
 	["saitama_squats"] = { cost = 3, },
 	["saitama_jogging"] = { cost = 3, },
+	["destroyer_body_reconstruction"] = { cost = 12, },
 }
 
 ABILITY_SHOP_SKIP_HEROES = {
