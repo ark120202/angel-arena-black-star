@@ -32,7 +32,7 @@ function modifier_item_unstable_quasar_passive:DeclareFunctions()
 	}
 end
 
-if IsServer() then	
+if IsServer() then
 	function modifier_item_unstable_quasar_passive:OnAbilityExecuted(keys)
 		local caster = self:GetParent()
 		if caster ~= keys.unit then return end
