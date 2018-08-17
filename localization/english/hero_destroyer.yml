@@ -8,6 +8,8 @@ DOTA_Tooltip_ability_destroyer_armor_crush_Lore: Despite the size, the Collum of
 DOTA_Tooltip_ability_destroyer_armor_crush_damage: 'DAMAGE:'
 DOTA_Tooltip_ability_destroyer_armor_crush_armor_reduction: 'ARMOR REDUCTION:'
 DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'DURATION:'
+DOTA_Tooltip_modifier_destroyer_armor_crush: Armor Crush
+DOTA_Tooltip_modifier_destroyer_armor_crush_Description: Stunned, armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 
 DOTA_Tooltip_ability_destroyer_seal_of_limit: Seal of Limit
 DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: Destroyer imposes the seal of Ash Lagor upon himself, limiting his maximum health to %max_health_pct%%%, while at the same time increasing the speed of movement, attack speed, armor, magic damage resistance and health regeneration.
