@@ -1,8 +1,6 @@
 npc_arena_hero_doppelganger_bio: 'Лишь немногие знают почему Книга Тьмы так названа и какие темные секреты хранят её страницы. А те, кто знают, всё равно ничего не скажут; ибо когда Волшебник станет Доппельгангером, он не раскроет свои секреты.'
 
-DOTA_Tooltip_ability_doppelganger_mimic: Mimic
 DOTA_Tooltip_ability_doppelganger_mimic_Description: |-
   Копирует вражеского героя, получая всю его силу и мощь.
 
   При смене героя сбрасываются абсолютно все положительные и отрицательные эффекты.
-DOTA_Tooltip_modifier_doppelganger_mimic: Mimic
