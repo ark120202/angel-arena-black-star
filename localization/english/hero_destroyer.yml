@@ -9,6 +9,8 @@ DOTA_Tooltip_ability_destroyer_armor_crush_damage: 'DAMAGE:'
 DOTA_Tooltip_ability_destroyer_armor_crush_armor_reduction: 'ARMOR REDUCTION:'
 DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'DURATION:'
 
+DOTA_Tooltip_modifier_destroyer_armor_crush: 'Armor Crush'
+
 DOTA_Tooltip_ability_destroyer_seal_of_limit: Seal of Limit
 DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: Destroyer imposes the seal of Ash Lagor upon himself, limiting his maximum health to %max_health_pct%%%, while at the same time increasing the speed of movement, attack speed, armor, magic damage resistance and health regeneration.
 DOTA_Tooltip_ability_destroyer_seal_of_limit_Lore: Seal is fatal to all creatures from the flesh, but it has the opposite effect for the steel body of Kronshak.
