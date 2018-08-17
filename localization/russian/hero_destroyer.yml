@@ -7,6 +7,7 @@ DOTA_Tooltip_ability_destroyer_armor_crush_Lore: Не смотря на разм
 DOTA_Tooltip_ability_destroyer_armor_crush_damage: 'УРОН:'
 DOTA_Tooltip_ability_destroyer_armor_crush_armor_reduction: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_modifier_destroyer_armor_crush_Description: Оглушен, броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 
 DOTA_Tooltip_ability_destroyer_seal_of_limit: Seal of Limit
 DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: 'Разрушитель накладывает печать Аш-Лагора на себя, ограничивая своё максимальное здоровье до %max_health_pct%%%, в то же время увеличивая скорость передвижения, скорость атаки, броню, сопротивление магическому урону и регенерацию здоровья.'
