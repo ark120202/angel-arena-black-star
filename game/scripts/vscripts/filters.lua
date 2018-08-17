@@ -77,17 +77,13 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_champion")
 			return false
 		end
-		if target.SpawnerType == "jungle" and not JUNGLE_ALLOWED_ABILITIES[abilityname] then
+		if target.SpawnerType == "jungle" and JUNGLE_BANNED_ABILITIES[abilityname] then
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_jungle")
 			return false
 		end
 		if target:IsBoss() and BOSS_BANNED_ABILITIES[abilityname] then
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_boss")
 			return false
-		end
-		if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then
-			filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
-			return true
 		end
 	end
 
@@ -213,27 +209,26 @@ function GameMode:DamageFilter(filterTable)
 			end
 		end
 		if BlockedDamage > 0 then
-			PopupDamageBlock(victim, math.round(BlockedDamage))
-			--print("Raw damage: " .. filterTable.damage .. ", after blocking: " .. filterTable.damage - BlockedDamage .. " (blocked: " .. BlockedDamage .. ")")
+			SendOverheadEventMessage(victim:GetPlayerOwner(), OVERHEAD_ALERT_BLOCK, victim, BlockedDamage, attacker:GetPlayerOwner())
+			SendOverheadEventMessage(attacker:GetPlayerOwner(), OVERHEAD_ALERT_BLOCK, victim, BlockedDamage, victim:GetPlayerOwner())
+
 			filterTable.damage = filterTable.damage - BlockedDamage
 		end
 		if LifestealPercentage > 0 then
 			local lifesteal = filterTable.damage * LifestealPercentage * 0.01
 			SafeHeal(attacker, lifesteal)
-			SendOverheadEventMessage(attacker:GetPlayerOwner(), OVERHEAD_ALERT_HEAL, attacker, lifesteal, attacker:GetPlayerOwner())
 			ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
-			--print("Lifestealing " .. lifesteal .. " health from " .. filterTable.damage .. " damage points (" .. LifestealPercentage .. "% lifesteal)")
 		end
 		if attacker.GetPlayerOwnerID then
-			local attackerpid = attacker:GetPlayerOwnerID()
-			if attackerpid > -1 then
+			local attackerPlayerId = attacker:GetPlayerOwnerID()
+			if attackerPlayerId > -1 then
 				if victim:IsRealHero() then
-					attacker:ModifyPlayerStat("heroDamage", filterTable.damage)
+					PlayerResource:ModifyPlayerStat(attackerPlayerId, "heroDamage", filterTable.damage)
 				end
 				if victim:IsBoss() then
-					attacker:ModifyPlayerStat("bossDamage", filterTable.damage)
+					PlayerResource:ModifyPlayerStat(attackerPlayerId, "bossDamage", filterTable.damage)
 					victim.DamageReceived = victim.DamageReceived or {}
-					victim.DamageReceived[attackerpid] = (victim.DamageReceived[attackerpid] or 0) + filterTable.damage
+					victim.DamageReceived[attackerPlayerId] = (victim.DamageReceived[attackerPlayerId] or 0) + filterTable.damage
 				end
 			end
 		end
@@ -273,9 +268,16 @@ end
 
 function GameMode:ItemAddedToInventoryFilter(filterTable)
 	local item = EntIndexToHScript(filterTable.item_entindex_const)
+  
 	if item.RuneType then 
 		local unit = EntIndexToHScript(filterTable.inventory_parent_entindex_const)
 		CustomRunes:PickUpRune(unit, item)
 		return false
 	end
+  
+	if item.suggestedSlot then
+		filterTable.suggested_slot = item.suggestedSlot
+		item.suggestedSlot = nil
+	end
+	return true
 end

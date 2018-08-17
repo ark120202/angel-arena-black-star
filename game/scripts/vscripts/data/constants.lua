@@ -1,14 +1,3 @@
-CASINO_COLORTABLE = {
-	"red",
-	"darkviolet",
-	"magenta",
-	"turquoise",
-	"lightblue",
-	"yellow",
-	"palegoldenrod",
-	"gold"
-}
-
 HERO_ASSIST_RANGE = 1300
 COURIER_RESPAWN_TIME = 180
 MAX_MOVEMENT_SPEED = 550

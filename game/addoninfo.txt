@@ -1,7 +1,7 @@
 "AddonInfo"
 {
-	"version"		"1.19.3"
-	"maps"          "1v1 5v5_ranked war3_ranked 5v5 war3 4v4v4v4 5v5_custom_abilities 4v4v4v4_custom_abilities"
+	"version"		"1.19.7"
+	"maps"			"1v1 5v5_ranked war3_ranked 5v5 war3 4v4v4v4 5v5_custom_abilities war3_custom_abilities 4v4v4v4_custom_abilities"
 	"PenaltiesEnabled"	"1"
 	"CheckAFKPlayers"	"0"
 
@@ -35,6 +35,11 @@
 		"MaxPlayers"		"12"
 		"TeamCount"			"2"
 	}
+	"war3_custom_abilities"
+	{
+		"MaxPlayers"		"12"
+		"TeamCount"			"2"
+	}
 	"4v4v4v4"
 	{
 		"MaxPlayers"		"16"
@@ -44,27 +49,5 @@
 	{
 		"MaxPlayers"		"16"
 		"TeamCount"			"4"
-	}
-
-	"Default_Keys"
-	{
-		"01"
-		{
-			"Key" "F4"
-			"Command" "+F4Pressed"
-			"Name" "Toggle Shop"
-		}
-		"02"
-		{
-			"Key" "F5"
-			"Command" "+F5Pressed"
-			"Name" "Quickbuy"
-		}
-		"03"
-		{
-			"Key" "F8"
-			"Command" "+F8Pressed"
-			"Name" "Buy sticky item"
-		}
 	}
 }

@@ -23,6 +23,8 @@
 
 		"AbilityManaCost"				"100 150 200 250 300 350 400"
 		"AOERadius"						"%radius"
+		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
 
 		"AbilitySpecial"
 		{

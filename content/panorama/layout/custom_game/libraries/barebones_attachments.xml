@@ -1,12 +1,11 @@
-<root> 
+<root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
-		<include src="s2r://panorama/styles/hero_splash.vcss_c" />
 		<include src="s2r://panorama/styles/popups/settings_slider.vcss_c" />
 		<include src="file://{resources}/styles/libraries/barebones_attachments.css" />
 	</styles>
 	<scripts>
-		<include src="file://{resources}/scripts/libraries/barebones_attachments.js" /> 
+		<include src="file://{resources}/scripts/libraries/barebones_attachments.js" />
 	</scripts>
 	<Panel hittest="false" class="AttachmentsBase">
 		<Panel id="CosmeticsPanel" style="visibility:collapse;">
@@ -18,13 +17,13 @@
 		</Panel>
 		<Panel hittest="true" id="AttachmentsPanel" style="visibility:collapse;">
 			<Panel hittest="true" id="AttachmentsHeader" draggable="true" >
-				<Label text="Attachments Configuration"/> 
+				<Label text="Attachments Configuration"/>
 			</Panel>
 			<Panel hittest="false" id="AttachmentsBody">
 				<Panel class="ButtonRow">
 					<ToggleButton class="CheckBox" checked="checked" style="align: center center; margin-left:10px;" id="AttachCheckbox" text="Attach?"  onactivate="AttachCheckbox();" />
 					<Button id="Freeze" class="SplashButton SButton" onactivate="Freeze()">
-						<Label text="Freeze"/> 
+						<Label text="Freeze"/>
 					</Button>
 					<Button id="HideCosmetics" class="SplashButton SButton" style="width:150px;" onactivate="HideCosmetics()">
 						<Label text="Hide Cosmetics"/>
@@ -35,7 +34,7 @@
 					<Label style="align: center center; margin-right:5px;" text="+- Scale:"/>
 					<Panel style="width:150px; align:center center;">
 						<DropDown id="PlusMinusScale" style="align:center center;" oninputsubmit="PlusMinusScale()">
-							
+
 						</DropDown>
 					</Panel>
 				</Panel>
@@ -55,7 +54,7 @@
 				<TextEntry id="Model" class="LineEntry" tabindex="auto" ontabforward="SetInputFocus(Scale)" placeholder="path/to/model.vmdl" onblur="UpdateAttachment();" oninputsubmit="UpdateAttachment()"/>
 				<Panel class="ThreeEntry" style="margin-top:-10px;">
 					<Panel class="LabelEntry">
-						<Label text="Scale"/> 
+						<Label text="Scale"/>
 						<Panel style="flow-children:right;">
 							<TextEntry id="Scale" class="NumEntry" ontabbackward="SetInputFocus(Model)" ontabforward="SetInputFocus(XPos)" maxchars="16" placeholder="1.0" onblur="UpdateAttachment();" oninputsubmit="UpdateAttachment()"/>
 							<Panel class="PlusMinus">
@@ -83,7 +82,7 @@
 				</Panel>
 				<Panel class="ThreeEntry">
 					<Panel class="LabelEntry">
-						<Label text="X"/> 
+						<Label text="X"/>
 						<Panel style="flow-children:right;">
 							<TextEntry id="XPos" class="NumEntry" ontabbackward="SetInputFocus(Scale)" ontabforward="SetInputFocus(YPos)" maxchars="16" placeholder="0.0" onblur="UpdateAttachment();" oninputsubmit="UpdateAttachment()"/>
 							<Panel class="PlusMinus">
@@ -97,7 +96,7 @@
 						</Panel>
 					</Panel>
 					<Panel class="LabelEntry">
-						<Label text="Y"/> 
+						<Label text="Y"/>
 						<Panel style="flow-children:right;">
 							<TextEntry id="YPos" class="NumEntry" ontabbackward="SetInputFocus(XPos)" ontabforward="SetInputFocus(ZPos)" maxchars="16" placeholder="0.0" onblur="UpdateAttachment();" oninputsubmit="UpdateAttachment()"/>
 							<Panel class="PlusMinus">
@@ -111,7 +110,7 @@
 						</Panel>
 					</Panel>
 					<Panel class="LabelEntry">
-						<Label text="Z"/> 
+						<Label text="Z"/>
 						<Panel style="flow-children:right;">
 							<TextEntry id="ZPos" class="NumEntry" ontabbackward="SetInputFocus(YPos)" ontabforward="SetInputFocus(Pitch)" maxchars="16" placeholder="0.0" onblur="UpdateAttachment();" oninputsubmit="UpdateAttachment()"/>
 							<Panel class="PlusMinus">
@@ -127,7 +126,7 @@
 				</Panel>
 				<Panel class="ThreeEntry">
 					<Panel class="LabelEntry">
-						<Label text="Pitch"/> 
+						<Label text="Pitch"/>
 						<Panel style="flow-children:right;">
 							<TextEntry id="Pitch" class="NumEntry" ontabbackward="SetInputFocus(ZPos)" ontabforward="SetInputFocus(Yaw)" maxchars="16" placeholder="0.0" onblur="UpdateAttachment();" oninputsubmit="UpdateAttachment()"/>
 							<Panel class="PlusMinus">
@@ -141,7 +140,7 @@
 						</Panel>
 					</Panel>
 					<Panel class="LabelEntry">
-						<Label text="Yaw"/> 
+						<Label text="Yaw"/>
 						<Panel style="flow-children:right;">
 							<TextEntry id="Yaw" class="NumEntry" ontabbackward="SetInputFocus(Pitch)" ontabforward="SetInputFocus(Roll)" maxchars="16" placeholder="0.0" onblur="UpdateAttachment();" oninputsubmit="UpdateAttachment()"/>
 							<Panel class="PlusMinus">
@@ -155,7 +154,7 @@
 						</Panel>
 					</Panel>
 					<Panel class="LabelEntry">
-						<Label text="Roll"/> 
+						<Label text="Roll"/>
 						<Panel style="flow-children:right;">
 							<TextEntry id="Roll" class="NumEntry" ontabbackward="SetInputFocus(Yaw)" ontabforward="SetInputFocus(Attach)" maxchars="16" placeholder="0.0" onblur="UpdateAttachment();" oninputsubmit="UpdateAttachment()"/>
 							<Panel class="PlusMinus">
@@ -188,7 +187,7 @@
 
 		<Panel hittest="true" class="PopupPanel" style="visibility:collapse;">
 			<Label id="PopupLabel" class="PopupTitle" text="text here"/>
-			<Button id="Button0" class="PlayButton"> 
+			<Button id="Button0" class="PlayButton">
 				<Label text="BUTTON2"/>
 				<!-- class="PopupButton" -->
 			</Button>

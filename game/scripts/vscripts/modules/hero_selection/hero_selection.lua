@@ -75,9 +75,7 @@ function HeroSelection:PrepareTables()
 			local heroTable = GetHeroTableByName(name)
 			local tabIndex = heroTable.base_hero and 2 or 1
 			local heroData = {
-				model = heroTable.base_hero or name,
-				custom_scene_camera = heroTable.SceneCamera,
-				custom_scene_image = heroTable.SceneImage,
+				useCustomScene = heroTable.UseCustomScene == 1,
 				attributes = HeroSelection:ExtractHeroStats(heroTable),
 				tabIndex = tabIndex
 			}
@@ -163,7 +161,7 @@ function HeroSelection:StartStateHeroPick()
 	--Banning
 	local notBanned = {}
 	for hero in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")) do
-		if not table.contains(notBanned, hero) then
+		if not table.includes(notBanned, hero) then
 			table.insert(notBanned, hero)
 		end
 	end

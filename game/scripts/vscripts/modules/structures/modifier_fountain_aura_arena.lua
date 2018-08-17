@@ -31,7 +31,7 @@ if IsServer() then
 			parent:RemoveModifierByName("modifier_saber_mana_burst_active")
 		end
 
-		local isBossAlive = Bosses:IsAlive("central")
+		local isBossAlive = Bosses:IsAlive("cursed_zeld")
 		local hasMod = parent:HasModifier("modifier_fountain_aura_invulnerability")
 		if isBossAlive and not hasMod then
 			parent:AddNewModifier(parent, nil, "modifier_fountain_aura_invulnerability", nil)

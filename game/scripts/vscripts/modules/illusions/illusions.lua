@@ -28,17 +28,19 @@ end
 
 function Illusions:_copyItems(unit, illusion)
 	for slot = 0, 5 do
-		local illusion_item = illusion:GetItemInSlot(slot)
-		if illusion_item then
-			illusion:RemoveItem(illusion_item)
+		local illusionItem = illusion:GetItemInSlot(slot)
+		if illusionItem then
+			illusion:RemoveItem(illusionItem)
 		end
 	end
-	
-	for slot = 0, 5 do		
+
+	for slot = 0, 5 do
 		local item = unit:GetItemInSlot(slot)
 		if item then
-			local illusion_item = illusion:AddItem(CreateItem(item:GetName(), illusion, illusion))
-			illusion_item:SetCurrentCharges(item:GetCurrentCharges())
+			local illusionItem = CreateItem(item:GetName(), illusion, illusion)
+			illusionItem:SetCurrentCharges(item:GetCurrentCharges())
+			illusionItem.suggestedSlot = slot
+			illusion:AddItem(illusionItem)
 		end
 	end
 end
@@ -101,12 +103,18 @@ function Illusions:create(info)
 	local isOwned = info.isOwned
 	if isOwned == nil then isOwned = true end
 
+	local source = unit
+	local replicateModifier = unit:FindModifierByName("modifier_morphling_replicate")
+	if replicateModifier then
+		source = replicateModifier:GetCaster()
+	end
+
 	local illusion = CreateUnitByName(
-		unit:GetUnitName(),
+		source:GetUnitName(),
 		origin,
 		true,
 		isOwned and unit or nil,
-		isOwned and unit:GetPlayerOwner() or nil,
+		isOwned and source:GetPlayerOwner() or nil,
 		team
 	)
 	if isOwned then illusion:SetControllableByPlayer(unit:GetPlayerID(), true) end

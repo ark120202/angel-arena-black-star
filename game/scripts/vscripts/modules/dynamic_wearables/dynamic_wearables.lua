@@ -21,7 +21,7 @@ function DynamicWearables:GetDefaultItemsForHero(heroName)
 	local items = {}
 
 	for name, wearable in pairs(CUSTOM_WEARABLES) do
-		if wearable.default and table.contains(wearable.heroes or {}, heroName) then
+		if wearable.default and table.includes(wearable.heroes or {}, heroName) then
 			items[wearable.slot] = name
 		end
 	end
@@ -193,7 +193,7 @@ end
 
 function DynamicWearables:HasWearable(playerId, name)
 	if PLAYER_DATA[playerId].Inventory then
-		return table.contains(PLAYER_DATA[playerId].Inventory, name)
+		return table.includes(PLAYER_DATA[playerId].Inventory, name)
 	end
 	return false
 end
