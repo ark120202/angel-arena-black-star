@@ -50,7 +50,7 @@ function Duel:StartDuel()
 		if PlayerResource:IsValidPlayerID(playerId) and not PlayerResource:IsPlayerAbandoned(playerId) then
 			local team = PlayerResource:GetTeam(playerId)
 			local hero = PlayerResource:GetSelectedHeroEntity(playerId)
-			if IsValidEntity(hero) then
+			if IsValidEntity(hero) and hero:GetUnitName() ~= "npc_dota_hero_target_dummy" then
 				Duel.heroes_teams_for_duel[team] = Duel.heroes_teams_for_duel[team] or {}
 				table.insert(Duel.heroes_teams_for_duel[team], hero)
 			end
