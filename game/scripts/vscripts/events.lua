@@ -38,29 +38,31 @@ function GameMode:OnNPCSpawned(keys)
 			end
 		end
 		Timers:CreateTimer(function()
-			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
-				Physics:Unit(npc)
-				npc:SetAutoUnstuck(true)
-				DynamicWearables:AutoEquip(npc)
-				if npc.ModelOverride then
-					npc:SetModel(npc.ModelOverride)
-					npc:SetOriginalModel(npc.ModelOverride)
-				end
+			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() then
 				local illu_modifier = npc:FindModifierByName("modifier_illusion")
 				if illu_modifier then Illusions:_copyEverything(illu_modifier:GetCaster(), npc) end
-				if not npc:IsWukongsSummon() then
-					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
-					if npc:IsTrueHero() then
-						npc:ApplyDelayedTalents()
+				if npc:GetPlayerOwner() then
+					Physics:Unit(npc)
+					npc:SetAutoUnstuck(true)
+					DynamicWearables:AutoEquip(npc)
+					if npc.ModelOverride then
+						npc:SetModel(npc.ModelOverride)
+						npc:SetOriginalModel(npc.ModelOverride)
+					end
+					if not npc:IsWukongsSummon() then
+						npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
+						if npc:IsTrueHero() then
+							npc:ApplyDelayedTalents()
 
-						PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
-						CustomAbilities:RandomOMGRollAbilities(npc)
-						if IsValidEntity(npc.BloodstoneDummies) then
-							UTIL_Remove(npc.BloodstoneDummies)
-							npc.BloodstoneDummies = nil
-						end
-						if not npc.OnDuel and Duel:IsDuelOngoing() then
-							Duel:SetUpVisitor(npc)
+							PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
+							CustomAbilities:RandomOMGRollAbilities(npc)
+							if IsValidEntity(npc.BloodstoneDummies) then
+								UTIL_Remove(npc.BloodstoneDummies)
+								npc.BloodstoneDummies = nil
+							end
+							if not npc.OnDuel and Duel:IsDuelOngoing() then
+								Duel:SetUpVisitor(npc)
+							end
 						end
 					end
 				end
