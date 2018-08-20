@@ -2,7 +2,8 @@
 {
 	"kadash_assasins_skills"
 	{
-		"BaseClass"             		"ability_datadriven"
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"             		"heroes/hero_kadash/assasins_skills.lua"
 		"AbilityTextureName"			"arena/kadash_assasins_skills"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel" 						"7"
@@ -29,74 +30,6 @@
 		"precache"
 		{
 			"particle"				"particles/arena/units/heroes/hero_kadash/assasins_skills_weapon_blur_critical.vpcf"
-		}
-
-		"Modifiers"
-		{
-			"modifier_kadash_assasins_skills"
-			{
-				"Passive"   "1"
-				"IsHidden"  "1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%all_damage_bonus_pct"
-				}
-
-				"OnAttackStart"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName" 	"modifier_kadash_assasins_skills_crit"
-						"Target" 		"CASTER"
-					}
-
-					"Random"
-					{
-						"Chance" "%crit_chance"
-						"OnSuccess"
-						{
-							"ApplyModifier"
-							{
-								"ModifierName" 	"modifier_kadash_assasins_skills_crit"
-								"Target"    	"CASTER"
-							}
-						}
-					}
-				}
-			}
-
-			"modifier_kadash_assasins_skills_crit"
-			{
-				"IsHidden"  "1"
-				"IsHidden"  "1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_mult"
-				}
-
-				"OnAttackLanded"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Arena.Hero_Kadash.AssasinsSkills.Critical"
-						"Target"		"CASTER"
-					}
-
-					"FireEffect"
-					{
-						"EffectName" 		"particles/arena/units/heroes/hero_kadash/assasins_skills_weapon_blur_critical.vpcf"
-						"EffectAttachType"  "attach_attack1"
-						"Target"    		"CASTER"
-					}
-
-					"RemoveModifier"
-					{
-						"ModifierName"  "modifier_kadash_assasins_skills_crit"
-						"Target"   		"CASTER"
-					}
-				}
-			}
 		}
 	}
 
