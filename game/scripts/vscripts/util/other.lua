@@ -146,7 +146,7 @@ end
 function CastAdditionalAbility(caster, ability, target, delay)
 	local skill = ability
 	local unit = caster
-	local channelTime = ability:GetKeyValue("AbilityChannelTime")
+	local channelTime = ability:GetKeyValue("AbilityChannelTime") or 0
 	if channelTime > 0 then
 		if not caster.dummyCasters then
 			caster.dummyCasters = caster.dummyCasters or {}
