@@ -320,7 +320,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
+		"BaseClass"				"ability_lua"
+		"ScriptFile"					"heroes/hero_freya/frozen_strike.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -367,88 +368,6 @@
 			"particle"  "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
 			"particle"  "particles/arena/units/heroes/hero_freya/frozen_strike_critical.vpcf"
 			"particle"  "particles/units/heroes/hero_tusk/tusk_rubickpunch_status.vpcf"
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_freya/frozen_strike.lua"
-				"Function"		"CritProc"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_freya_frozen_strike_crit"
-			{
-				"IsPurgable"		"0"
-
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"        "particles/units/heroes/hero_tusk/tusk_rubickpunch_status.vpcf"
-						"EffectAttachType"  "point_follow"
-						"Target"            "CASTER"
-
-						"ControlPointEntities"
-						{
-							"CASTER"	"attach_weapon"
-						}
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Arena.Hero_Freya.FrozenStrike.Impact"
-						"Target" 		"CASTER"
-					}
-
-					"FireEffect"
-					{
-						"EffectName" 		"particles/arena/units/heroes/hero_freya/frozen_strike_critical.vpcf"
-						"EffectAttachType"  "attach_origin"
-						"Target"    		"CASTER"
-					}
-
-					"Knockback"
-					{
-						"Target"            "TARGET"
-						"Center" 	        "CASTER"
-						"Distance"	        "%knockback_range"
-						"Duration"	        "%knockback_duration"
-						"Height"	        "400"
-						"IsFixedDistance"	"1"
-						"ShouldStun"        "1"
-					}
-
-					"CleaveAttack"
-					{
-						"CleavePercent"         "100"
-						"CleaveRadius"          "%cleave_radius"
-						"CleaveEffect"          "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
-					}
-
-					"RemoveModifier"
-					{
-						"ModifierName"  "modifier_freya_frozen_strike_crit"
-						"Target"   		"CASTER"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "1"
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
 		}
 	}
 }
