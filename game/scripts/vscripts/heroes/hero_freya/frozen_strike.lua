@@ -55,7 +55,7 @@ if IsServer() then
 			})
 			
 			local cleaveRadius = self:GetAbility():GetSpecialValueFor("cleave_radius")
-			DoCleaveAttack(attacker, target, ability, attacker:GetAttackDamage() * self:GetStackCount(), 150, cleaveRadius, cleaveRadius, "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf")
+			DoCleaveAttack(attacker, target, ability, keys.damage, 150, cleaveRadius, cleaveRadius, "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf")
 			
 			self:Destroy()
 		end
