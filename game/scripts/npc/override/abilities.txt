@@ -129,8 +129,8 @@
 		"AbilityManaCost"			"75"
 		"AbilityCastRange"			"750"
 		"AbilityUnitDamageSubType" 	"DAMAGE_SUBTYPE_FIRE"
-		
-		"AbilitySpecial"	
+
+		"AbilitySpecial"
 		{
 			"01"
 			{
@@ -217,7 +217,7 @@
 		"AbilityManaCost"			"60 120 180 240 280 320 380"
 		"AbilityCastRange"			"150"
 		"AbilityUnitDamageSubType" 	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -292,7 +292,7 @@
 		"AbilityCastRange"	"600"
 		"AbilityCooldown"	"14 13.5 13 12.5 12 11.5 11"
 		"AbilityManaCost"	"70 100 130 160 190 210 230"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -332,7 +332,7 @@
 		"AbilityCooldown"	"100"
 		"AbilityManaCost"	"200 300 400 500 600 700 800"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -379,7 +379,7 @@
 		"AbilityDuration"	"4 4.5 5 5.5 6 6.5 7"
 		"AbilityDamage"		"20 25 30 35 40 45 50"
 		"AbilityManaCost"	"165"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -766,7 +766,7 @@
 		"AbilityDamage"		"110 160 210 260 310 360 410"
 		"AbilityManaCost"	"125 140 155 170 190 210 230"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -810,7 +810,7 @@
 		"AbilityCooldown"	"5"
 		"AbilityDuration"	"14"
 		"AbilityManaCost"	"20 30 40 50 60 70 80"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -853,7 +853,7 @@
 		"AbilityDuration"	"0.6 0.75 0.9 1.05 1.2 1.35 1.5"
 		"AbilityDamage"		"75 100 125 150 175 200 225"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -884,7 +884,7 @@
 		"AbilityDamage"		"160 210 270 330 390 450 510"
 		"AbilityManaCost"	"145 205 265 325 395 455 525"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -946,7 +946,7 @@
 		"AbilityCooldown"	"24 22 20 18 16 14 12"
 		"AbilityManaCost"	"120 110 100 90 80 70 60"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1081,7 +1081,7 @@
 		"AbilityCooldown"	"16 15 14 13 12 11 10"
 		"AbilityManaCost"	"90 100 110 120 130 140 150"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_WATER"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1232,7 +1232,7 @@
 		"AbilityDamage"		"400 500 600 700 800 900 1000"
 		"AbilityManaCost"	"125 175 225 275 325 375 425"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_WATER"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1315,7 +1315,7 @@
 		"AbilityDamage"		"85 160 235 310 385 460 535"
 		"AbilityManaCost"	"100 115 130 145 160 175 190"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1360,7 +1360,7 @@
 		"AbilityDuration"	"2.5"
 		"AbilityManaCost"	"100 110 120 130 140 150 160"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1440,7 +1440,7 @@
 		"AbilityCooldown"	"75 70 65 60 55 50 45"
 		"AbilityManaCost"	"280 420 680 880 1080 1200 1400"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1479,7 +1479,7 @@
 		"AbilityManaCost"	"100 120 140 160 200 240 280"
 		"AbilityDamage"		"80 140 200 260 320 400 480"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1584,7 +1584,7 @@
 		"AbilityCooldown"	"100 90 80 70 60 50 40"
 		"AbilityManaCost"	"200 420 650 870 1090 1310 1530"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1644,7 +1644,7 @@
 		"AbilityDamage"		"50 140 230 320 410 500 590"
 		"AbilityManaCost"	"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1787,7 +1787,7 @@
 		"AbilityDamage"		"75 125 155 200 245 295 345"
 		"AbilityManaCost"	"100 120 140 160 180 200 220"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1826,7 +1826,7 @@
 		"AbilityDamage"		"100 175 250 325 400 475 550"
 		"AbilityManaCost"	"140 155 160 165 170 175 180"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_WATER"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -2056,7 +2056,7 @@
 		"AbilityCooldown"	"14"
 		"AbilityManaCost"	"110"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -2107,7 +2107,7 @@
 		"AbilityCooldown"	"14"
 		"AbilityManaCost"	"110"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -2158,7 +2158,7 @@
 		"AbilityCooldown"	"14"
 		"AbilityManaCost"	"110"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -2274,7 +2274,7 @@
 		"AbilityDamage"		"80 120 160 200 240 280 320"
 		"AbilityManaCost"	"150 175 200 275 375 485 565"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -2602,7 +2602,7 @@
 		"AbilityDamage"		"70 140 210 280 350 420 490"
 		"AbilityManaCost"	"80 100 120 140 160 180 200"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -2660,7 +2660,7 @@
 		"AbilityDamage"		"100 160 220 280 340 400 460"
 		"AbilityManaCost"	"100 110 120 130 140 150 160"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -2709,7 +2709,7 @@
 		"AbilityCooldown"	"75.0 72.5 70.0 67.5 65.0 62.5 60.0"
 		"AbilityManaCost"	"100 150 200 250 300 350 400"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -2775,7 +2775,7 @@
 		"AbilityCooldown"	"8.0"
 		"AbilityManaCost"	"95 105 135 160 190 220 250"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -2850,7 +2850,7 @@
 		"AbilityCooldown"	"15"
 		"AbilityManaCost"	"140 150 160 170 180 200 220"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -2922,7 +2922,7 @@
 		"AbilityCooldown"	"14"
 		"AbilityManaCost"	"125"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -3024,7 +3024,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -3130,7 +3130,7 @@
 		"AbilityDamage"		"50 100 150 200 250 300 350"
 		"AbilityManaCost"	"140"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -3308,7 +3308,7 @@
 		"AbilityDamage"		"75 150 225 300 375 450 525"
 		"AbilityManaCost"	"105 120 140 165 190 215 240"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -3435,7 +3435,7 @@
 		"AbilityCooldown"	"0"
 		"AbilityManaCost"	"70 65 60 55 50 45 40"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -3560,7 +3560,7 @@
 		"AbilityDamage"		"100 175 250 325 400 475 550"
 		"AbilityManaCost"	"140 145 150 155 160 165 170"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -3708,7 +3708,7 @@
 		"AbilityDuration"	"12"
 		"AbilityManaCost"	"100 115 130 145 160 175 190"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -3802,7 +3802,7 @@
 		"AbilityDuration"	"0.6"
 		"AbilityDamage"		"40 60 80 100 120 140 160"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -3846,7 +3846,7 @@
 		"AbilityManaCost"	"30"
 		"AbilityDamage"		"8 16 24 32 40 48 56"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -3915,7 +3915,7 @@
 		"AbilityManaCost"	"110 120 130 140 150 160 170"
 		"AbilityDamage"		"100 160 220 280 340 400 460"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -3976,7 +3976,7 @@
 		"AbilityCooldown"		"27 24 21 18 15 12 10"
 		"AbilityManaCost"		"60 50 40 30 20 10 0"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4016,7 +4016,7 @@
 	{
 		"MaxLevel"		"7"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4073,7 +4073,7 @@
 		"AbilityChannelTime" "2.0 2.0 2.0 2.0 2.0 1.5 1.0"
 		"AbilityManaCost"	 "150 225 300 375 425 500 575"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4132,7 +4132,7 @@
 		"AbilityDuration"	"2.0"
 		"AbilityManaCost"	"120"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4188,7 +4188,7 @@
 		"AbilityCooldown"	"8"
 		"AbilityManaCost"	"90 100 120 130 140 150 160"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4318,7 +4318,7 @@
 		"AbilityCooldown"	"1.6"
 		"AbilityManaCost"	"65 70 75 80 85 90 95"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4360,7 +4360,7 @@
 		"AbilityCooldown"	"6"
 		"AbilityManaCost"	"75 95 115 135 150 165 190"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4436,7 +4436,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"1200"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4464,7 +4464,7 @@
 		"AbilityCooldown"	"90.0"
 		"AbilityManaCost"	"225 325 450 525 600 675 725"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4658,7 +4658,7 @@
 		"AbilityDuration"	"4.0"
 		"AbilityManaCost"	"90 100 110 120 130 140 150"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_WATER"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4786,7 +4786,7 @@
 		"AbilityDamage"		"200 290 380 470 560 650 740"
 		"AbilityManaCost"	"150 225 325 425 525 600 700"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_WATER"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4823,7 +4823,7 @@
 		"AbilityCooldown"	"15 14.5 14 13.5 13 12.5 12"
 		"AbilityManaCost"	"110 120 130 140 150 160 170"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4911,7 +4911,7 @@
 		"AbilityDamage"		"45 70 95 120 150 180 240"
 		"AbilityManaCost"	"40"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5006,7 +5006,7 @@
 		"AbilityCooldown"				"12 11 10 9 8 7 6"
 		"AbilityManaCost"				"100 120 140 160 170 180 190"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5051,7 +5051,7 @@
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"140 145 150 155 160 170 180"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5116,7 +5116,7 @@
 		"AbilityDuration"				"10.0"
 		"AbilityManaCost"				"200 400 600 800 1000 1200 1400"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5235,7 +5235,7 @@
 		"AbilityChannelTime"	"1.0"
 		"AbilityManaCost"		"90 100 110 120 130 140 150"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5384,7 +5384,7 @@
 		"AbilityDamage"		"50 75 100 125 150 175 200"
 		"AbilityManaCost"	"125 150 170 190 210 230 250"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5481,7 +5481,7 @@
 		"AbilityCooldown"	"80 75 70 65 60 55 50"
 		"AbilityManaCost"	"200 325 500 650 800 950 1050"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5563,7 +5563,7 @@
 		"AbilityDamage"		"75 100 125 150 175 200 225"
 		"AbilityManaCost"	"110 120 130 140 150 160 170"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5668,7 +5668,7 @@
 		"AbilityDamage"		"7 14 21 28 35 45 60"
 		"AbilityManaCost"	"105 110 115 120 125 130 135"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5796,7 +5796,7 @@
 		"AbilityCooldown"	"12 11 10 9 8 6 4"
 		"AbilityManaCost"	"50"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5898,7 +5898,7 @@
 		"AbilityCooldown"	"15.00"
 		"AbilityManaCost"	"110 130 150 160 170 180 190"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -6169,7 +6169,7 @@
 		"AbilityCooldown"	"20.0"
 		"AbilityManaCost"	"80 100 120 140 160 180 200"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -6216,7 +6216,7 @@
 		"AbilityDamage"		"16 24 32 40 48 56 64"
 		"AbilityManaCost"	"145 150 165 190 225 270 325"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -6275,7 +6275,7 @@
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityManaCost"	"50"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -6395,7 +6395,7 @@
 		"AbilityDamage"		"320 485 650 815 980 1145 1310"
 		"AbilityManaCost"	"175 275 375 475 575 675 775"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -6444,7 +6444,7 @@
 		"AbilityDamage"		"80 120 160 200 240 280 320"
 		"AbilityManaCost"	"125 145 165 185 205 225 250"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -6578,7 +6578,7 @@
 		"AbilityManaCost"	"175 340 500 750 900 1100 1300"
 		"AbilityCastRange"	"600"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -6652,7 +6652,7 @@
 		"AbilityManaCost"				"90 110 130 150 170 190 210"
 		"AbilityCastRange"				"525 600 675 750 775 800 825"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -6930,7 +6930,7 @@
 		"AbilityManaCost"	"150 175 200 225 250 275 300"
 		"AbilityCastRange"	"600"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7017,7 +7017,7 @@
 		"AbilityDuration"	"15.0"
 		"AbilityManaCost"	"110 115 120 125 130 135 140"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7096,7 +7096,7 @@
 		"AbilityDamage"		"75 150 225 300 375 450 550"
 		"AbilityManaCost"	"110 120 130 140 150 160 170"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7187,7 +7187,7 @@
 		"AbilityCooldown"	"21 20 19 18 17 16 15"
 		"AbilityManaCost"	"125"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7246,7 +7246,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7331,7 +7331,7 @@
 		"AbilityCooldown"	"100 95 90 85 80 75 70"
 		"AbilityManaCost"	"100 200 300 400 500 600 700"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7429,7 +7429,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7533,7 +7533,7 @@
 		"AbilityCooldown"	"5"
 		"AbilityManaCost"	"85 105 125 145 165 185 205"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7623,7 +7623,7 @@
 		"AbilityDuration"	"30"
 		"AbilityManaCost"	"80"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7667,7 +7667,7 @@
 		"AbilityCooldown"	"22"
 		"AbilityManaCost"	"125 175 225 275 325 375 425"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7942,7 +7942,7 @@
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityCooldown"	"11 10 9 8 7 6 5"
 		"AbilityManaCost"	"15"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8068,7 +8068,7 @@
 		"AbilityManaCost"	"40 35 30 25 20 15 10"
 		"AbilityCooldown"	"6.0 5.0 4.0 3.0 2.0 1.0 0.0"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8108,7 +8108,7 @@
 		"AbilityCooldown"				"30.0"
 		"AbilityManaCost"				"75"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8145,7 +8145,7 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8193,7 +8193,7 @@
 		"AbilityCooldown"	"60 55 50 45 40 35 30"
 		"AbilityManaCost"	"125 175 250 300 350 400 450"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8275,7 +8275,7 @@
 		"AbilityCooldown"	"6.0"
 		"AbilityManaCost"	"90 100 110 120 130 140 150"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8363,7 +8363,7 @@
 		"AbilityManaCost"	"150 200 250 300 350 400 450"
 		"AbilityCastRange"	"99999"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8439,7 +8439,7 @@
 		"AbilityDamage"					"90 170 240 300 360 420 480"
 		"AbilityManaCost"				"100 110 120 130 140 150 160"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8485,7 +8485,7 @@
 		"AbilityDamage"					"25 50 75 100 125 150 175"
 		"AbilityManaCost"				"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8808,7 +8808,7 @@
 		"AbilityManaCost"	"75"
 		"AbilityDamage"		"20 45 70 95 110 125 140"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8843,7 +8843,7 @@
 		"AbilityCooldown"	"15.0"
 		"AbilityManaCost"	"50 60 70 80 90 100 110"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8912,7 +8912,7 @@
 		"AbilityManaCost"	"50"
 		"AbilityDamage"		"80 120 160 200 260 320 380"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -8956,7 +8956,7 @@
 		"AbilityCooldown"	"70 65 60 55 50 45 40"
 		"AbilityManaCost"	"150 200 250 300 350 400 450"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -9021,7 +9021,7 @@
 		"AbilityDamage"		"120 180 240 300 340 380 420"
 		"AbilityDuration"	"2"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -9099,7 +9099,7 @@
 		"AbilityManaCost"	"90 100 110 120 130 140 150"
 		"AbilityDamage"		"50 100 150 200 250 300 350"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -9159,7 +9159,7 @@
 		"AbilityCooldown"	"1"
 		"AbilityManaCost"	"70 90 110 130 150 170 190"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -9295,7 +9295,7 @@
 		"AbilityCooldown"	"90 85 80 75 70 65 60"
 		"AbilityManaCost"	"175 225 275 325 400 475 525"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -9480,7 +9480,7 @@
 		"AbilityCooldown"	"30"
 		"AbilityManaCost"	"350"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -9571,7 +9571,7 @@
 		"AbilityCooldown"	"20"
 		"AbilityManaCost"	"100 130 160 190 230 250 280"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -9614,7 +9614,7 @@
 		"AbilityCooldown"	"9"
 		"AbilityManaCost"	"100 110 120 130 140 150 160"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -9673,7 +9673,7 @@
 		"AbilityCooldown"	"100 95 90 85 80 75 70"
 		"AbilityManaCost"	"125 250 375 475 550 660 800"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -10149,7 +10149,7 @@
 		"AbilityCastRange"	"550"
 		"AbilityDuration"	"5"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -10227,7 +10227,7 @@
 		"AbilityManaCost"	"90 100 110 120 130 140 150"
 		"AbilityDamage"		"90 160 255 335 405 485 570"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -10356,7 +10356,7 @@
 		"AbilityCooldown"	"10.0"
 		"AbilityManaCost"	"120"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -10564,7 +10564,7 @@
 		"AbilityCastRange"	"400"
 		"AbilityManaCost"	"120 130 140 150 160 170 180"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -10798,7 +10798,7 @@
 		"AbilityCooldown"	"9.0 8.5 8.0 7.5 7.0 6.5 6.0"
 		"AbilityManaCost"	"60"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -10886,7 +10886,7 @@
 		"AbilityCooldown"	"10"
 		"AbilityManaCost"	"135 140 155 170 185 200 215"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -10961,7 +10961,7 @@
 		"AbilityCooldown"	"10"
 		"AbilityManaCost"	"90"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -11004,7 +11004,7 @@
 		"AbilityDuration"	"5"
 		"AbilityCastRange"	"600"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -11046,7 +11046,7 @@
 		"AbilityCooldown"	"60"
 		"AbilityManaCost"	"220 330 440 550 660 770 880"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -11159,7 +11159,7 @@
 		"AbilityCooldown"	"17"
 		"AbilityManaCost"	"110 120 130 140 150 160 170"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -11240,7 +11240,7 @@
 		"AbilityCooldown"	"40.0"
 		"AbilityManaCost"	"100 105 110 115 120 125 130"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -11285,7 +11285,7 @@
 		"AbilityCastRange"	"100"
 		"AbilityCooldown"	"90 85 80 75 70 65 60"
 		"AbilityManaCost"	"225 250 275 300 325 350 375"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -11502,7 +11502,7 @@
 		"AbilityCooldown"	"12.0"
 		"AbilityManaCost"	"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -11692,7 +11692,7 @@
 		"AbilityCastRange"	"600"
 		"AbilityManaCost"	"60 65 70 75 80 85 90"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -11738,7 +11738,7 @@
 		"AbilityManaCost"	"50"
 		"AbilityCastRange"	"150"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -11831,7 +11831,7 @@
 		"AbilityDuration"	"4"
 		"AbilityManaCost"	"100 110 120 130 140 150 160"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -11923,7 +11923,7 @@
 		"AbilityDuration"	"20.0"
 		"AbilityManaCost"	"110 120 130 140 150 160 170"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -11963,7 +11963,7 @@
 		"AbilityManaCost"	"100 125 150 175 200 225 250"
 		"AbilityDamage"		"250 350 450 550 650 750 850"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -12127,7 +12127,7 @@
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"3"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -12199,7 +12199,7 @@
 		"AbilityCooldown"	"65 60 55 50 45 40 35"
 		"AbilityManaCost"	"125 150 175 200 225 250 275"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -12258,7 +12258,7 @@
 		"AbilityDamage"		"90 140 190 240 300 360 420"
 		"AbilityManaCost"	"75"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -12390,7 +12390,7 @@
 		"AbilityDuration"				"3"
 		"AbilityManaCost"				"90 85 80 75 70 65 60"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -12420,7 +12420,7 @@
 		"AbilityManaCost"				"120 "
 		"AbilityDamage"					"100 175 250 325 400 475 525"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -12494,7 +12494,7 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"30"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 
 		"AbilityManaCost"				"125"
 
@@ -12556,7 +12556,7 @@
 		"AbilityCooldown"	"22.0"
 		"AbilityManaCost"	"130 140 150 160 170 180 190"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -12601,7 +12601,7 @@
 		"AbilityCooldown"	"24"
 		"AbilityManaCost"	"120"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -12928,7 +12928,7 @@
 		"AbilityCooldown"	"20"
 		"AbilityManaCost"	"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -13025,7 +13025,7 @@
 		"AbilityCooldown"	"30"
 		"AbilityManaCost"	"150"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -13105,7 +13105,7 @@
 		"AbilityCooldown"	"30"
 		"AbilityManaCost"	"125"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -13187,7 +13187,7 @@
 		"AbilityCooldown"	"55"
 		"AbilityManaCost"	"200"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -13373,7 +13373,7 @@
 	"forged_spirit_melting_strike"
 	{
 		"MaxLevel"	"1"
-		"AbilityManaCost"	"40"	
+		"AbilityManaCost"	"40"
 		"AbilitySpecial"
 		{
 			"01"
@@ -13405,7 +13405,7 @@
 		"AbilityManaCost"	"175"
 		"AbilityCastPoint"	"0.05"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -13477,7 +13477,7 @@
 		"AbilityCooldown"	"40"
 		"AbilityManaCost"	"300"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -13549,7 +13549,7 @@
 		"AbilityCooldown"	"20 19 18 17 16 15 14"
 		"AbilityManaCost"	"75 95 115 135 155 175 195"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -13620,7 +13620,7 @@
 		"AbilityCooldown"	"24 22 20 18 16 14 12"
 		"AbilityManaCost"	"115 125 135 145 155 165 175"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -13719,7 +13719,7 @@
 		"AbilityCastPoint"	"0.25 0.25 0.25 0.25 0.25 0.15 0.1"
 		"AbilityManaCost"	"120 140 160 180 200 220 240"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -13824,7 +13824,7 @@
 		"AbilityCooldown"	"13"
 		"AbilityManaCost"	"120 140 160 180 200 220 240"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -13869,7 +13869,7 @@
 		"AbilityCooldown"	"120"
 		"AbilityManaCost"	"175 250 325 400 500 600 700"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -14296,7 +14296,7 @@
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
 		"AbilityManaCost"	"90 110 130 150 170 190 210"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -14435,7 +14435,7 @@
 		"AbilityCastPoint"	"0.25 0.25 0.25 0.25 0.25 0.2 0.15"
 		"AbilityManaCost"	"0"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -14569,7 +14569,7 @@
 	{
 		"MaxLevel"	"3"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -14702,7 +14702,7 @@
 		"AbilityManaCost"	"55"
 		"AbilityDamage"		"26 34 42 50 58 70 84"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -14760,7 +14760,7 @@
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.25 0.2"
 		"AbilityManaCost"	"200 250 300 350 400 450 550"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -14803,7 +14803,7 @@
 		"AbilityCooldown"	"10.0"
 		"AbilityManaCost"	"150"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -15019,7 +15019,7 @@
 		"AbilityCooldown"				"12 11 10 9 8 7 6"
 		"AbilityManaCost"				"80"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 
 		"AbilitySpecial"
 		{
@@ -15157,7 +15157,7 @@
 		"AbilityCooldown"	"15 14 13 11 9 8 7"
 		"AbilityManaCost"	"80 95 110 125 140 155 170"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -15316,7 +15316,7 @@
 		"AbilityCooldown"	"12"
 		"AbilityManaCost"	"75 85 95 105 115 125 135"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -15353,7 +15353,7 @@
 		"AbilityCooldown"	"6"
 		"AbilityDamage"		"600"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -15391,7 +15391,7 @@
 		"AbilityCooldown"	"15"
 		"AbilityManaCost"	"90"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -15543,8 +15543,8 @@
 		"AbilityCooldown"	"18 16 14 12 10 8 6"
 		"AbilityDuration"	"21 23 25 27 29 31 33"
 		"AbilityManaCost"	"100 110 120 130 140 150 160"
-		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"	
-		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -15601,7 +15601,7 @@
 		"AbilityManaCost"	"100 110 120 130 150 170 190"
 		"AbilityCastRange"	"750"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -15873,8 +15873,8 @@
 		"AbilityCooldown"	"16 15 14 12 11 10 9"
 		"AbilityManaCost"	"120 130 140 150 160 170 180"
 		"AbilityCastRange"	"800"
-		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"	
-		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -15987,7 +15987,7 @@
 		"AbilityCastRange"	"800"
 		"AbilityDamage"		"40 60 80 100 120 140 160"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -16082,8 +16082,8 @@
 		"AbilityCooldown"	"90 85 80 75 70 65 60"
 		"AbilityManaCost"	"125 175 225 275 325 375 425"
 		"AbilityCastRange"	"800"
-		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"	
-		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -16140,8 +16140,8 @@
 		"AbilityCooldown"	"15"
 		"AbilityManaCost"	"95 115 135 155 175 200 225"
 		"AbilityDamage"		"80 160 240 320 400 480 560"
-		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"	
-		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -16197,7 +16197,7 @@
 		"AbilityCooldown"	"30 25 20 18 15 10 8"
 		"AbilityManaCost"	"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -16471,7 +16471,7 @@
 	}
 
 	"naga_siren_rip_tide"
-	
+
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"	"0"
@@ -16479,7 +16479,7 @@
 		"AbilityManaCost"	"80 90 100 110 120 130 140"
 		"AbilityDamage"		"120 165 210 255 300 345 390"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_WATER"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -16575,7 +16575,7 @@
 		"AbilityCooldown"	"10.0"
 		"AbilityManaCost"	"150 160 170 180 190 200 210"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -16969,7 +16969,7 @@
 		"AbilityManaCost"	"170 160 150 140 130 120 110"
 		"AbilityCastRange"	"900"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -17202,7 +17202,7 @@
 		"AbilityDuration"				"19.0"
 		"AbilityManaCost"				"150"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -17337,7 +17337,7 @@
 		"AbilityCooldown"	"9.0 8.5 8.0 7.5 7.0 6.5 6.0"
 		"AbilityManaCost"	"50"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_WATER"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -17385,7 +17385,7 @@
 		"AbilityCooldown"	"13 12 11 10 9 8 7"
 		"AbilityManaCost"	"75"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_WATER"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -17763,7 +17763,7 @@
 		"AbilityCooldown"	"9"
 		"AbilityManaCost"	"50"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -17831,7 +17831,7 @@
 		"AbilityCooldown"	"9"
 		"AbilityManaCost"	"50"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -17939,7 +17939,7 @@
 		"AbilityCooldown"	"13.0"
 		"AbilityManaCost"	"130"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -17977,7 +17977,7 @@
 		"AbilityCastRange"	"150 150 150 150 150 175 200"
 		"AbilityCastPoint"	"0.5 0.5 0.5 0.5 0.5 0.4 0.3"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -18037,7 +18037,7 @@
 		"AbilityCooldown"	"60.0"
 		"AbilityManaCost"	"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -18108,7 +18108,7 @@
 		"AbilityDuration"	"0.6875"
 		"AbilityManaCost"	"90"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -18237,7 +18237,7 @@
 		"AbilityCooldown"	"25"
 		"AbilityManaCost"	"80"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -18300,7 +18300,7 @@
 		"AbilityManaCost"	"200 250 300 350 400 450 500"
 		"AbilityCastRange"	"400"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -18345,7 +18345,7 @@
 		"AbilityCooldown"	"6"
 		"AbilityManaCost"	"70"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -18828,7 +18828,7 @@
 		"AbilityCooldown"	"19 18 17 16 15 14 10"
 		"AbilityManaCost"	"100 105 110 115 120 125 130"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -18902,7 +18902,7 @@
 		"AbilityCooldown"	"21 20 19 18 17 16 15"
 		"AbilityManaCost"	"75"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -19068,7 +19068,7 @@
 		"AbilityCooldown"	"8"
 		"AbilityManaCost"	"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -19125,7 +19125,7 @@
 		"AbilityCooldown"	"5.0 4.5 4.0 3.5 3.0 2.5 2.0"
 		"AbilityManaCost"	"70"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -19181,7 +19181,7 @@
 		"AbilityCooldown"	"18 17 16 15 14 13 12"
 		"AbilityManaCost"	"95"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -19284,7 +19284,7 @@
 		"AbilityCooldown"	"50 45 40 35 30 25 20"
 		"AbilityManaCost"	"350 575 800 925 1050 1175 1300"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_LIGHT"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -19336,7 +19336,7 @@
 		"AbilityCooldown"	"4.5"
 		"AbilityManaCost"	"50 60 70 80 90 100 110"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -19375,7 +19375,7 @@
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
 		"AbilityCooldown"	"12 11 10 9 8 7 6"
 		"AbilityManaCost"	"115"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -19509,7 +19509,7 @@
 		"AbilityManaCost"		"100"
 		"AbilityCastRange"		"500"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -19571,7 +19571,7 @@
 		"AbilityChannelTime"	"1.3"
 		"AbilityCastRange"		"500"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -19621,7 +19621,7 @@
 		"AbilityCooldown"	"16.0"
 		"AbilityManaCost"	"80 90 100 110 120 130 140"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -19761,7 +19761,7 @@
 		"AbilityCooldown"	"100"
 		"AbilityManaCost"	"125 175 225 275 325 375 425"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -19861,7 +19861,7 @@
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityManaCost"	"100 110 120 130 140 150 160"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -20023,7 +20023,7 @@
 		"AbilityCooldown"	"14.0 13.0 12.0 11.0 10.0 9.0 8.0"
 		"AbilityManaCost"	"110"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -20110,7 +20110,7 @@
 		"AbilityCooldown"	"35.0"
 		"AbilityManaCost"	"80 90 100 110 120 130 140"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -20157,7 +20157,7 @@
 		"AbilityCooldown"	"0.0"
 		"AbilityManaCost"	"0"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -20265,7 +20265,7 @@
 		"AbilityCooldown"	"22 20 18 16 14 12 10"
 		"AbilityManaCost"	"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -20334,7 +20334,7 @@
 		"AbilityCooldown"	"16 14 12 10 8 6 4"
 		"AbilityManaCost"	"50"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -20404,7 +20404,7 @@
 		"AbilityCooldown"	"13"
 		"AbilityManaCost"	"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -20502,7 +20502,7 @@
 		"AbilityCooldown"	"45"
 		"AbilityManaCost"	"150"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -20541,7 +20541,7 @@
 		"AbilityCooldown"	"90 85 80 75 70 65 60"
 		"AbilityManaCost"	"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -20616,7 +20616,7 @@
 		"AbilityCooldown"	"12.0"
 		"AbilityManaCost"	"100 110 120 130 140 150 160"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -20687,7 +20687,7 @@
 		"AbilityCooldown"	"32 30 28 26 24 22 20"
 		"AbilityManaCost"	"100 115 130 145 160 175 190"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -20972,7 +20972,7 @@
 		"AbilityDuration"	"2.0"
 		"AbilityManaCost"	"0"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -21047,7 +21047,7 @@
 		"AbilityCooldown"	"30"
 		"AbilityManaCost"	"80 90 100 110 120 130 140"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -21108,7 +21108,7 @@
 		"AbilityCooldown"	"26"
 		"AbilityManaCost"	"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -21212,7 +21212,7 @@
 		"AbilityDuration"	"6.0"
 		"AbilityManaCost"	"200"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -21339,7 +21339,7 @@
 		"AbilityCooldown"	"15 13 11 9 8 7 6"
 		"AbilityManaCost"	"110"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -21421,7 +21421,7 @@
 		"AbilityCastRange"	"850"
 		"AbilityManaCost"	"80 85 90 95 100 105 110"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -21659,7 +21659,7 @@
 		"AbilityCooldown"	"19 18 17 16 15 14 13"
 		"AbilityManaCost"	"130"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -21831,7 +21831,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityManaCost"	"160 270 340 390 460 560 660"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -21941,7 +21941,7 @@
 		"AbilityCooldown"	"35"
 		"AbilityManaCost"	"100 125 150 175 200 225 250"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -21987,7 +21987,7 @@
 		"AbilityCooldown"	"10.0"
 		"AbilityManaCost"	"200 240 300 380 500 640 760"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_FIRE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -22137,7 +22137,7 @@
 		"AbilityCooldown"	"40 37 34 31 28 24 20"
 		"AbilityManaCost"	"200 180 160 140 120 100 80"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -22227,7 +22227,7 @@
 		"AbilityDamage"		"100 180 260 340 420 500 580"
 		"AbilityManaCost"	"120 130 140 150 160 170 180"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -22364,7 +22364,7 @@
 		"AbilityCooldown"	"18.0"
 		"AbilityManaCost"	"75"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -22459,7 +22459,7 @@
 		"AbilityCooldown"	"6.0"
 		"AbilityManaCost"	"100"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -22590,8 +22590,8 @@
 		"MaxLevel"						"7"
 		"AbilityCooldown"				"13.0"
 		"AbilityManaCost"				"90 100 110 120 130 140 150"
-		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"	
-		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -22675,8 +22675,8 @@
 		"AbilityDuration"				"8.0"
 		"AbilityManaCost"				"100"
 		"AbilityDamage"					"200 250 300 350 400 450 500"
-		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"	
-		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -22757,7 +22757,7 @@
 		"AbilityCooldown"				"40.0 37.5 35.0 32.5 30.0 27.5 25.0"
 		"AbilityManaCost"				"140 150 160 170 180 190 200"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -22814,7 +22814,7 @@
 		"AbilityCooldown"				"30 27 24 21 18 15 12"
 		"AbilityManaCost"				"70 80 90 100 110 120 130"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -22875,7 +22875,7 @@
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"100 150 200 250 300 350 400"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -22950,6 +22950,265 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"starting_height"		"300"
+			}
+		}
+	}
+
+	"grimstroke_dark_artistry"
+	{
+		"AbilityCastRange"				"1400"
+		"AbilityCastPoint"				"0.8"
+		"AbilityCooldown"				"11 9 7 5"
+		"AbilityManaCost"				"100 110 120 130"
+		"AbilityDamage"					"120 180 240 300"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"120"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"160"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"2400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow_pct"		"50 60 70 80"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"activation_delay"		"0.5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage_per_target"	"16 24 32 40"
+			}
+		}
+	}
+
+	"grimstroke_ink_creature"
+	{
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"32 28 24 20"
+		"AbilityManaCost"				"110 120 130 140"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"spawn_time"				"0.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"speed"						"750"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"latch_duration"			"4.0 4.5 5.0 5.5"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"destroy_attacks"			"6 6 9 9"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_per_tick"			"6 9 12 15"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dps_tooltip"				"12 18 24 30"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"enemy_vision_time"			"4"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tick_interval"				"0.5"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"infection_search_radius"	"1000"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"destroy_attacks_tooltip"	"2 2 3 3"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"pop_damage"				"120 200 280 360"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"return_projectile_speed"	"750"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"return_mana_gain"			"50 75 100 125"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"latched_unit_offset"		"130"
+			}
+			"15"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"latched_unit_offset_short"	"95"
+			}
+		}
+	}
+
+	"grimstroke_spirit_walk"
+	{
+		"AbilityCooldown"				"30 25 20 15"
+		"AbilityCastRange"				"400 500 600 700"
+		"AbilityCastPoint"				"0.15"
+		"AbilityManaCost"				"90 100 110 120"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"	"400 500 600 700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"3.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed_bonus_pct"	"28 32 36 40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"55 70 85 100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_damage_tooltip"	"220 280 340 400"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.55 0.7 0.85 1.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_stun_tooltip"		"2.2 2.8 3.4 4.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_tick"		"5 7 9 11"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_rate"				"0.2"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tick_dps_tooltip"		"25 35 45 55"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_bonus_multiplier"	"3.0"
+			}
+		}
+	}
+
+	"grimstroke_soul_chain"
+	{
+		"AbilityCooldown"				"80 65 50"
+		"AbilityCastRange"				"700 800 900"
+		"AbilityCastPoint"				"0.15"
+		"AbilityManaCost"				"150 200 250"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_duration"		"4.0 6.0 8.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chain_latch_radius"	"550"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chain_break_distance"	"700"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"leash_limit_multiplier"	"1.3"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"leash_radius_buffer"		"50"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"creep_duration_pct"		"50.0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow"				"15 30 45"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_tooltip"		"700 800 900"
 			}
 		}
 	}
