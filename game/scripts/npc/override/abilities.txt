@@ -1986,8 +1986,8 @@
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"morph_rate_tooltip"	"1"
+				"var_type"				"FIELD_FLOAT"
+				"morph_rate_tooltip"	"2 2.5 3.3 5 12 28.8 106.6"
 			}
 
 		}
@@ -2017,8 +2017,8 @@
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"morph_rate_tooltip"	"1"
+				"var_type"				"FIELD_FLOAT"
+				"morph_rate_tooltip"	"2 2.5 3.3 5 12 28.8 106.6"
 			}
 		}
 
