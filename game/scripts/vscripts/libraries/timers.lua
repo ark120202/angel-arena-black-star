@@ -2,6 +2,8 @@ TIMERS_VERSION = "1.05"
 
 --[[
 
+	Modified by Celireor to only make 2 comparisons per frame, 1 for each timer type.
+
 	-- A timer running every second that starts immediately on the next frame, respects pauses
 	Timers:CreateTimer(function()
 			print ("Hello. I'm running immediately and then every second thereafter.")
@@ -67,8 +69,6 @@ TIMERS_VERSION = "1.05"
 
 ]]
 
-
-
 TIMERS_THINK = 0.01
 
 if Timers == nil then
@@ -85,6 +85,9 @@ end
 function Timers:start()
 	Timers = self
 	self.timers = {}
+	self.realTimers = {} --use real time
+	self.gameTimers = {} --use game time
+	self.timersList = {self.realTimers, self.gameTimers} --internal thing to save some time traversing
 
 	--local ent = Entities:CreateByClassname("info_target") -- Entities:FindByClassname(nil, 'CWorld')
 	local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
@@ -100,71 +103,117 @@ function Timers:Think()
 	local now = GameRules:GetGameTime()
 
 	-- Process timers
-	for k,v in pairs(Timers.timers) do
-		local bUseGameTime = true
-		if v.useGameTime ~= nil and v.useGameTime == false then
-			bUseGameTime = false
-		end
-		local bOldStyle = false
-		if v.useOldStyle ~= nil and v.useOldStyle == true then
-			bOldStyle = true
-		end
-
-		local now = GameRules:GetGameTime()
-		if not bUseGameTime then
-			now = Time()
-		end
-
-		if v.endTime == nil then
-			v.endTime = now
-		end
-		-- Check if the timer has finished
-		if now >= v.endTime then
-			-- Remove from timers list
-			Timers.timers[k] = nil
-
-			Timers.runningTimer = k
-			Timers.removeSelf = false
-
-			-- Run the callback
-			local status, nextCall
-			if v.context then
-				status, nextCall = xpcall(function() return v.callback(v.context, v) end, function (msg)
-											return msg..'\n'..debug.traceback()..'\n'
-										end)
-			else
-				status, nextCall = xpcall(function() return v.callback(v) end, function (msg)
-											return msg..'\n'..debug.traceback()..'\n'
-										end)
+	for _,vList in pairs(Timers.timersList) do
+		local v = vList.next
+		if v then
+			
+			print("ATTEMPTING TO RESOLVE TIMER",v)
+			local k = v.name
+			
+			local bUseGameTime = true
+			if v.useGameTime ~= nil and v.useGameTime == false then
+				bUseGameTime = false
+			end
+			local bOldStyle = false
+			if v.useOldStyle ~= nil and v.useOldStyle == true then
+				bOldStyle = true
 			end
 
-			Timers.runningTimer = nil
+			local now = GameRules:GetGameTime()
+			if not bUseGameTime then
+				now = Time()
+			end
 
-			-- Make sure it worked
-			if status then
-				-- Check if it needs to loop
-				if nextCall and not Timers.removeSelf then
-					-- Change its end time
+			if v.endTime == nil then
+				v.endTime = now
+			end
+			-- Check if the timer has finished
+			--print(now >= v.endTime, now, v.endTime)
+			if now >= v.endTime then
+				-- Remove from timers list
+				Timers.timers[k] = nil
+				print("TIMER",v,"HAS BEEN RESOLVED. NEXT TIMER IS",v.next)
+				LinkedList:Remove(v)
 
-					if bOldStyle then
-						v.endTime = v.endTime + nextCall - now
-					else
-						v.endTime = v.endTime + nextCall
-					end
+				Timers.runningTimer = k
+				Timers.removeSelf = false
 
-					Timers.timers[k] = v
+				-- Run the callback
+				local status, nextCall
+				if v.context then
+					status, nextCall = xpcall(function() return v.callback(v.context, v) end, function (msg)
+												return msg..'\n'..debug.traceback()..'\n'
+											end)
+				else
+					status, nextCall = xpcall(function() return v.callback(v) end, function (msg)
+												return msg..'\n'..debug.traceback()..'\n'
+											end)
 				end
 
-				-- Update timer data
-				--self:UpdateTimerData()
-			else
-				-- Nope, handle the error
-				Timers:HandleEventError('Timer', k, nextCall)
+				Timers.runningTimer = nil
+				self:Think() --Process next timer on list, will NOT process the same timer twice in 1 tick
+
+				-- Make sure it worked
+				if status then
+					
+					-- Check if it needs to loop
+					if nextCall and not Timers.removeSelf then
+						-- Change its end time
+						if bOldStyle then
+							v.endTime = v.endTime + nextCall - now
+						else
+							v.endTime = v.endTime + nextCall
+						end
+
+						Timers:AddTimer(v, vList)
+					end
+					
+					break; --Do not re-process timers of other types
+
+					-- Update timer data
+					--self:UpdateTimerData()
+				else
+					-- Nope, handle the error
+					Timers:HandleEventError('Timer', k, nextCall)
+				end
 			end
 		end
 	end
 
 	return TIMERS_THINK
+end
+
+function Timers:AddTimer(timer, timerList)
+	local data = {
+		timer = timer,
+		list = timerList
+	}
+	--Optimization - If endtime <= now, just set the new one to now
+	local bUseGameTime = not (timer.useGameTime ~= nil and timer.useGameTime == false)
+	local now = GameRules:GetGameTime()
+	if not bUseGameTime then
+		now = Time()
+	end
+	if now + TIMERS_THINK >= timer.endTime or not LinkedList:Traverse(timerList, self.AddTimerCondition, data) then
+		print("ADDING TIMER", timer, "TO EMPTY LIST")
+		LinkedList:AppendAfter(timer, timerList)
+	end
+	Timers.timers[timer.name] = timer
+end
+
+function Timers.AddTimerCondition(item, index, data)
+	local timer = data.timer
+	print("ATTEMPTING TO ADD TIMER ", timer, timer.endTime, "TO", data.list, "AT", item, item.endTime, "TRIES: " .. index)
+	if timer.endTime <= item.endTime then
+		print("appending before")
+		LinkedList:AppendBefore(timer, data.list, item)
+		return true
+	elseif item.next == data.list then
+		LinkedList:AppendAfter(timer, data.list, item)
+		print("appending after")
+		return true
+	end
+	return false
 end
 
 function Timers:HandleEventError(name, event, err)
@@ -209,11 +258,12 @@ function Timers:CreateTimer(name, args, context)
 		print("Invalid timer created: "..name)
 		return
 	end
-
-
+	
+	local timerList = self.gameTimers
 	local now = GameRules:GetGameTime()
 	if args.useGameTime ~= nil and args.useGameTime == false then
 		now = Time()
+		timerList = self.realTimers
 	end
 
 	if args.endTime == nil then
@@ -223,8 +273,9 @@ function Timers:CreateTimer(name, args, context)
 	end
 
 	args.context = context
-
-	Timers.timers[name] = args
+	
+	args.name = name --pointer for removal purposes
+	Timers:AddTimer(args, timerList)
 
 	return name
 end
