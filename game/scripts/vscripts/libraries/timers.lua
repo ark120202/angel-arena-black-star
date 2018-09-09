@@ -168,7 +168,7 @@ function Timers:Think()
 						Timers:AddTimer(v, vList)
 					end
 					
-					break; --Do not re-process timers of other types
+					break --Do not re-process timers of other types
 
 					-- Update timer data
 					--self:UpdateTimerData()
