@@ -194,6 +194,7 @@ function Timers:AddTimer(timer, timerList)
 	if not bUseGameTime then
 		now = Time()
 	end
+	print(debug.traceback())
 	if now + TIMERS_THINK >= timer.endTime or not LinkedList:Traverse(timerList, self.AddTimerCondition, data) then
 		print("ADDING TIMER", timer, "TO EMPTY LIST")
 		LinkedList:AppendAfter(timer, timerList)
@@ -281,6 +282,7 @@ function Timers:CreateTimer(name, args, context)
 end
 
 function Timers:RemoveTimer(name)
+	LinkedList:Remove(Timers.timers[name])
 	Timers.timers[name] = nil
 	if Timers.runningTimer == name then
 		Timers.removeSelf = true
