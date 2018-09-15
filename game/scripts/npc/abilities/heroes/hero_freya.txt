@@ -168,12 +168,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"1.6"
+				"duration"			"1"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_second_pct"		"10"
+				"damage_per_second_pct"		"5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
@@ -292,7 +292,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityCastPoint"				"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-		"AbilityCooldown"				"18.0"
+		"AbilityCooldown"				"30.0"
 		"AbilityManaCost"				"150"
 
 		"AbilitySpecial"
@@ -330,7 +330,7 @@
 		"MaxLevel"						"7"
 		"AbilityCastPoint"				"0.6 0.5 0.4 0.3 0.2 0.1 0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCooldown"				"60.0 50.0 40.0 30.0 20.0 15.0 10.0"
+		"AbilityCooldown"				"90.0 80.0 70.0 60.0 50.0 40.0 30.0"
 		"AbilityManaCost"				"80 100 120 140 160 180 200"
 
 		"AbilitySpecial"
@@ -348,7 +348,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"cleave_radius"		"450"
+				"cleave_radius"		"200"
 			}
 			"04"
 			{
