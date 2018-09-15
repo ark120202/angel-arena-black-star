@@ -7787,7 +7787,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"130 160"
+				"quelling_bonus_damage_pct"	"30 60"
 			}
 			"06"
 			{
@@ -7857,7 +7857,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"130 160"
+				"quelling_bonus_damage_pct"	"30 60"
 			}
 			"06"
 			{
@@ -7972,7 +7972,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"85"
+				"quelling_bonus_damage_pct"	"80"
 			}
 			"13"
 			{
