@@ -232,7 +232,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_regen"			"120"
+				"health_regen"			"40"
 			}
 		}
 	}
