@@ -864,9 +864,7 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_riki_5 = {
 		group = 12,
 	},
-	special_bonus_unique_tusk = {
-		group = 10,
-	},
+	special_bonus_unique_tusk = false,
 	special_bonus_unique_tusk_2 = {
 		group = 5,
 	},
@@ -874,7 +872,7 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 7,
 	},
 	special_bonus_unique_tusk_4 = {
-		group = 11,
+		group = 10,
 	},
 	special_bonus_unique_tusk_5 = {
 		group = 6,
