@@ -5697,12 +5697,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen_per_stack"	"2.0"
+				"hp_regen_per_stack"	"1.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movespeed_per_stack"	"3"
+				"movespeed_per_stack"	"1"
 			}
 			"03"
 			{
@@ -5712,7 +5712,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"20.0"
+				"buff_duration"			"15.0"
 			}
 			"05"
 			{
