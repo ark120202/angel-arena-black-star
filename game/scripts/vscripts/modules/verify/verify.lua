@@ -125,6 +125,6 @@ function Verify:_GetAllAbilities()
 	return abilities
 end
 
-if IsInToolsMode() and not Verify.verified then
-	Verify:All()
-end
+-- if IsInToolsMode() and not Verify.verified then
+-- 	Verify:All()
+-- end

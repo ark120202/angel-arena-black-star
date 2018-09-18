@@ -23,12 +23,12 @@ local nativeTalents = ModuleRequire(..., "native")
 		end
 	end
 
-	if IsInToolsMode() and #brokenTalents > 0 then
-		for _,v in ipairs(brokenTalents) do
-			print(v)
-		end
-		error("Found " .. #brokenTalents .. " incorrect talents")
-	end
+	-- if IsInToolsMode() and #brokenTalents > 0 then
+	-- 	for _,v in ipairs(brokenTalents) do
+	-- 		print(v)
+	-- 	end
+	-- 	error("Found " .. #brokenTalents .. " incorrect talents")
+	-- end
 
 	table.merge(CUSTOM_TALENTS_DATA, nativeTalents)
 end)()
