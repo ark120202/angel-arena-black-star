@@ -11,7 +11,7 @@
 		"override_hero"	"npc_dota_hero_ogre_magi"
 		"Changed"	"1"
 		"Ability6"	"ogre_magi_multicast_arena"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.3"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.5"
 		"AttributeAgilityGain"	"2.5"
