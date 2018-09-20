@@ -11,7 +11,7 @@
 		"override_hero"	"npc_dota_hero_ogre_magi"
 		"Changed"	"1"
 		"Ability6"	"ogre_magi_multicast_arena"
-		"AttackRate"	"1.3"
+		"AttackRate"	"1.7"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.5"
 		"AttributeAgilityGain"	"2.5"
@@ -24,7 +24,7 @@
 		"override_hero"	"npc_dota_hero_skeleton_king"
 		"Changed"	"1"
 		"Ability6"	"skeleton_king_reincarnation_arena"
-		"AttackRate"	"1.8"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_doom_bringer"
