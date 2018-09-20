@@ -44,7 +44,7 @@
 	"npc_dota_hero_drow_ranger"
 	{
 		"override_hero"	"npc_dota_hero_drow_ranger"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_earthshaker"
@@ -61,7 +61,7 @@
 	"npc_dota_hero_juggernaut"
 	{
 		"override_hero"	"npc_dota_hero_juggernaut"
-		"AttackRate"	"1.3"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_mirana"
@@ -110,7 +110,7 @@
 	"npc_dota_hero_razor"
 	{
 		"override_hero"	"npc_dota_hero_razor"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.7"
 		"ArmorPhysical"	"2"
 		"AttributeStrengthGain"	"2.6"
 		"AttributeAgilityGain"	"2.8"
@@ -126,7 +126,7 @@
 	"npc_dota_hero_riki"
 	{
 		"override_hero"	"npc_dota_hero_riki"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_rubick"
@@ -160,7 +160,7 @@
 	"npc_dota_hero_sven"
 	{
 		"override_hero"	"npc_dota_hero_sven"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.8"
 		"AttributeAgilityGain"	"2.1"
@@ -197,7 +197,7 @@
 	"npc_dota_hero_windrunner"
 	{
 		"override_hero"	"npc_dota_hero_windrunner"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.6"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_AIR" 	"50"
@@ -285,7 +285,7 @@
 	"npc_dota_hero_tidehunter"
 	{
 		"override_hero"	"npc_dota_hero_tidehunter"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.9"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_ICE" 	"0"
@@ -371,7 +371,7 @@
 	"npc_dota_hero_phantom_assassin"
 	{
 		"override_hero"	"npc_dota_hero_phantom_assassin"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.5"
 	}
 
 	"npc_dota_hero_pugna"
@@ -565,7 +565,7 @@
 	"npc_dota_hero_ursa"
 	{
 		"override_hero"	"npc_dota_hero_ursa"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_spirit_breaker"
@@ -616,7 +616,7 @@
 	"npc_dota_hero_brewmaster"
 	{
 		"override_hero"	"npc_dota_hero_brewmaster"
-		"AttackRate"	"1.8"
+		"AttackRate"	"1.7"
 		"AttributeStrengthGain"	"2.6"
 		"AttributeAgilityGain"	"1.5"
 		"AttributeIntelligenceGain"	"1.0"
@@ -652,7 +652,7 @@
 	"npc_dota_hero_chaos_knight"
 	{
 		"override_hero"	"npc_dota_hero_chaos_knight"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.5"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.8"
 		"AttributeAgilityGain"	"2.4"
@@ -775,7 +775,7 @@
 	"npc_dota_hero_centaur"
 	{
 		"override_hero"	"npc_dota_hero_centaur"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_magnataur"
@@ -842,7 +842,7 @@
 	"npc_dota_hero_ember_spirit"
 	{
 		"override_hero"	"npc_dota_hero_ember_spirit"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.3"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.5"
 		"AttributeAgilityGain"	"2.8"
@@ -935,7 +935,7 @@
 	"npc_dota_hero_monkey_king"
 	{
 		"override_hero"	"npc_dota_hero_monkey_king"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.4"
 	}
 
 	"npc_dota_hero_pangolier"

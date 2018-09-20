@@ -184,7 +184,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_strength_pct"	"0.001 0.003 0.005 0.007 0.009 0.011 0.013"
+				"bonus_strength_pct"	"0.001 0.002 0.003 0.004 0.005 0.006 0.007"
 			}
 			"02"
 			{
@@ -194,12 +194,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"loss_stacks_pct"		"50"
+				"loss_stacks_pct"		"70"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stacks_for_kill"		"3"
+				"stacks_for_kill"		"10"
 			}
 			"05"
 			{

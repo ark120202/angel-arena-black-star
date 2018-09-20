@@ -1348,6 +1348,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"creep_damage_pct"			"70"
+				"CalculateSpellDamageTooltip" "0"
 			}
 		}
 	}
