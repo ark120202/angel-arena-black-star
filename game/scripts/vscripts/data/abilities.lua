@@ -130,6 +130,7 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	centaur_return = true,
 	huskar_life_break = true,
 	item_spirit_helix = true,
+	item_iron_talon = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
