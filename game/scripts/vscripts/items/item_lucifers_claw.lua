@@ -20,7 +20,6 @@ function OnSpellStart(keys)
 
 		target:SetMinimumGoldBounty(0)
 		target:SetMaximumGoldBounty(0)
-		target:SetDeathXP(0)
 		target:Kill(ability, caster)
 
 		local doomling = CreateUnitByName(
