@@ -86,7 +86,7 @@ RUNE_SETTINGS = {
 
 			local ability_goblins_greed = unit:FindAbilityByName("alchemist_goblins_greed")
 			if ability_goblins_greed and ability_goblins_greed:GetLevel() > 0 then
-				gold_multiplier = gold_multiplier + ability_goblins_greed:GetAbilitySpecial("bounty_multiplier_tooltip") - 1
+				gold_multiplier = gold_multiplier + ability_goblins_greed:GetAbilitySpecial("bounty_multiplier") - 1
 			end
 			if unit:HasModifier("modifier_item_blood_of_midas") then
 				gold_multiplier = gold_multiplier + GetAbilitySpecial("item_blood_of_midas", "gold_multiplier") - 1
