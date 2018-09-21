@@ -130,9 +130,6 @@ function GameMode:DamageFilter(filterTable)
 			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and victim:IsBoss() then
 				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
 			end
-			if inflictorname == "templar_assassin_psi_blades" and victim:IsRealCreep() then
-				filterTable.damage = damage * 0.5
-			end
 		end
 		if victim:IsBoss() and (attacker:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() > 950 then
 			filterTable.damage = filterTable.damage / 2
