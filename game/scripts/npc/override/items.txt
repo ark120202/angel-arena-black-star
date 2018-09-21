@@ -1519,7 +1519,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"ItemCost"						"500"
+		"ItemCost"						"2000"
 	}
 	"item_meteor_hammer"
 	{
