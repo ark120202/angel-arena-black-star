@@ -58,6 +58,7 @@ DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
   <h1>Passive: Quell</h1>Increases attack damage against non-hero units by %damage_bonus% for melee heroes, and %damage_bonus_ranged% for ranged.
 DOTA_Tooltip_ability_item_lucifers_claw_Note0: The Doomling is summoned Creep-Hero with unlimited duration. It therefore can be targeted by some more spells.
 DOTA_Tooltip_ability_item_lucifers_claw_Note1: Has a 4 second cooldown on Trees.
+DOTA_Tooltip_ability_item_lucifers_claw_Note2: Can't be used on Jungle Bears.
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_all: +$all
 

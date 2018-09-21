@@ -32,8 +32,10 @@ CHAMPIONS_BANNED_ABILITIES = {
 }
 
 JUNGLE_BANNED_ABILITIES = {
-	chen_holy_persuasion = true,
 	item_helm_of_the_dominator = true,
+	item_lucifers_claw = true,
+
+	chen_holy_persuasion = true,
 	doom_bringer_devour_arena = true,
 	shinobu_eat_oddity = true,
 	clinkz_death_pact = true,
