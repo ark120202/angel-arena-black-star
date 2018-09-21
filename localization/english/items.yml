@@ -57,7 +57,7 @@ DOTA_Tooltip_ability_item_shard_attackspeed_bonus_attackspeed: +$attack
 
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
-  <h1>Active: Unwilling Ritual</h1> Targets non-hero enemy unit. The target gets sacrificed for a Doomling. Doomling possesses the abilities of the sacrificed unit and and adds it's health, damage and mana to Doomling's stats. By default doomling has %doomling_health% health, %doomling_mana% mana, %doomling_damage_min%-%doomling_damage_max% damage, %doomling_health_regen% health regeneration, %doomling_mana_regen% mana regeneration. Gold bounty won't be granted for the target unit. Units killed by Doomling won't grant gold to hero.
+  <h1>Active: Unwilling Ritual</h1> Targets non-hero enemy unit. The target gets sacrificed for a Doomling. Doomling possesses the abilities of the sacrificed unit and and adds it's health, damage and mana to Doomling's stats. By default doomling has %doomling_health% health, %doomling_mana% mana, %doomling_damage_min%-%doomling_damage_max% damage, %doomling_health_regen% health regeneration, %doomling_mana_regen% mana regeneration. Normal XP and gold bounty is granted for the target unit.
   <h1>Passive: Quell</h1>Increases attack damage against non-hero units by %damage_bonus% for melee heroes, and %damage_bonus_ranged% for ranged.
 DOTA_Tooltip_ability_item_lucifers_claw_Note0: The Doomling is summoned Creep-Hero with unlimited duration. It therefore can be targeted by some more spells.
 DOTA_Tooltip_ability_item_lucifers_claw_Note1: Has a 4 second cooldown on Trees.
