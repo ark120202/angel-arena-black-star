@@ -72,6 +72,16 @@ function GameMode:ExecuteOrderFilter(filterTable)
 				return false
 			end
 		end
+		if abilityname == "morphling_replicate" then
+			if target:HasAbility("doppelganger_mimic") then
+				Containers:DisplayError(playerId, "#arena_hud_error_cant_replicate_hero")
+				return false
+			end
+			if target:GetFullName() == unit:GetFullName() then
+				Containers:DisplayError(playerId, "#arena_hud_error_cant_replicate_hero")
+				return false
+			end
+		end
 		if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
 			Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_champion")
 			return false
