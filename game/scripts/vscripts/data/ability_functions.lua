@@ -299,6 +299,11 @@ INCOMING_DAMAGE_MODIFIERS = {
 			end
 		end
 	},
+	modifier_arena_courier = {
+		damage = function ()
+			return 1
+		end
+	},
 	modifier_anakim_transfer_pain = {
 		multiplier = function(attacker, victim, inflictor, damage)
 			local anakim_transfer_pain = victim:FindAbilityByName("anakim_transfer_pain")
