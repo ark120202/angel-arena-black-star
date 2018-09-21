@@ -7782,7 +7782,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"20 40"
+				"cleave_damage_percent"	"10 40"
 			}
 			"05"
 			{
@@ -7852,7 +7852,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"20 40"
+				"cleave_damage_percent"	"10 40"
 			}
 			"05"
 			{
@@ -7972,7 +7972,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"65"
+				"quelling_bonus_damage_pct"	"70"
 			}
 			"13"
 			{
