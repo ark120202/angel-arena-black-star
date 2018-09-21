@@ -41,6 +41,7 @@ DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
   <h1>Пассивная: Quell</h1> Увеличивает урон от атак по существам, не являющимися героями, на %damage_bonus% для героев ближнего боя или на %damage_bonus_ranged% — для дальнего.
 DOTA_Tooltip_ability_item_lucifers_claw_Note0: Думлинг - крип-герой с бесконечным временем жизни. На него может быть направлено большинство способностей.
 DOTA_Tooltip_ability_item_lucifers_claw_Note1: 'Перезарядка при использовании на дереве: 4 секунды.'
+DOTA_Tooltip_ability_item_lucifers_claw_Note2: Не может быть использовано на Косолапых Мишек.
 
 DOTA_Tooltip_ability_item_homemade_cheese: Homemade Cheese
 DOTA_Tooltip_ability_item_homemade_cheese_Description: '<h1>Использование: Fondue</h1> Исчезает и мгновенно восстанавливает здоровье и ману. При использовании на союзниках длительность перезарядки составляет %alternative_cooldown% секунд.'
