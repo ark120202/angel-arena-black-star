@@ -19,6 +19,7 @@ arena_hud_error_cant_target_duel: Способность нельзя испол
 arena_hud_error_cant_mimic: Невозможно скопировать этого героя
 arena_hud_error_cant_change_hero: Смена героя сейчас невозможна
 arena_hud_error_cant_cast_on_fountain: Способность не может быть использована рядом с фонтаном
+arena_hud_error_cant_replicate_hero: Невозможно скопировать этого героя
 
 DOTA_Tooltip_modifier_neutral_champion: Чемпион
 DOTA_Tooltip_modifier_neutral_champion_Description: 'Этот нейтрал - чемпион, он в %dMODIFIER_PROPERTY_TOOLTIP% раз сильнее обычного, но награда за него также увеличена'
