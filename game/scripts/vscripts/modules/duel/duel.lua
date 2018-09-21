@@ -294,3 +294,17 @@ function Duel:EndIfFinished()
 		Duel:EndDuel()
 	end
 end
+
+
+local triggerBox
+function Duel:IsOnDuel(vector)
+	if not triggerBox then
+		local trigger = Entities:FindByName(nil, "trigger_arena_zone")
+		local origin = trigger:GetAbsOrigin()
+		triggerBox = {
+			origin + ExpandVector(trigger:GetBoundingMins(), 96),
+			origin + ExpandVector(trigger:GetBoundingMaxs(), 96),
+		}
+	end
+	return IsInBox(vector, triggerBox[1], triggerBox[2])
+end

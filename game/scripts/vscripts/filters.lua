@@ -57,7 +57,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 					return false
 				end
 			end
-			if IsInBox(orderVector, Duel.BlockerBox[1], Duel.BlockerBox[2]) then
+			if Duel:IsOnDuel(orderVector) then
 				Containers:DisplayError(playerId, "#arena_hud_error_cant_target_duel")
 				return false
 			end
