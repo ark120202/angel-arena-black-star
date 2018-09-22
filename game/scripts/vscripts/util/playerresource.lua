@@ -169,5 +169,5 @@ end
 
 function CDOTA_PlayerResource:GetRealSteamID(PlayerID)
 	local id = tostring(PlayerResource:GetSteamID(PlayerID))
-	return id == "0" and tostring(PlayerID) or id
+	return id == "0" and nil or id
 end
