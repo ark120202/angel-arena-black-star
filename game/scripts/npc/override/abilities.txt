@@ -21393,7 +21393,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"1 1.5 2 3 3.5 4 "
+				"duration"	"1 1.5 2 3 3.5 4 4.5"
 			}
 
 			"02"
