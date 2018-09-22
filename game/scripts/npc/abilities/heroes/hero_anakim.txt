@@ -208,6 +208,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityTextureName"			"arena/anakim_divine_gift"
 		"MaxLevel"	"7"
+		
+		"precache"
+		{
+			"model"     "models/untis/anakim_pet/anakim_pet.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
