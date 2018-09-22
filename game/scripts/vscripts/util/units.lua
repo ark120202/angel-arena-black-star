@@ -167,7 +167,6 @@ function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	local bloodstone = self:FindItemInInventory("item_bloodstone")
 	if bloodstone then
 		time = time - bloodstone:GetCurrentCharges() * bloodstone:GetSpecialValueFor("respawn_time_reduction")
-		print("Reduced by ", bloodstone:GetCurrentCharges() * bloodstone:GetSpecialValueFor("respawn_time_reduction"))
 	end
 
 	return math.max(time, 3)
