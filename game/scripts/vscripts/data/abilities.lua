@@ -156,3 +156,10 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 
 PERCENT_DAMAGE_MODIFIERS = {
 }
+
+-- https://dota2.gamepedia.com/Spell_Reflection#Not_reflected_abilities
+SPELL_REFLECT_IGNORED_ABILITIES = {
+	grimstroke_soul_chain = true,
+	morphling_replicate = true,
+	rubick_spell_steal = true,
+}
