@@ -4,6 +4,7 @@
 		<include src="file://{resources}/scripts/libraries/playertables_base.js" />
 		<include src="file://{resources}/scripts/arena_util.js" />
 		<include src="file://{resources}/scripts/options.js" />
+		<include src="file://{resources}/scripts/hotkey_tracker.js" />
 		<include src="file://{resources}/scripts/custom_ui_manifest.js" />
 	</scripts>
 	<Panel>
