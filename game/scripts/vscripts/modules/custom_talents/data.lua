@@ -849,6 +849,16 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_phantom_assassin_3 = {
 		group = 9,
 	},
+	special_bonus_unique_phantom_lancer = {
+		group = 3,
+	},
+	special_bonus_unique_phantom_lancer_2 = {
+		group = 1,
+	},
+	special_bonus_unique_phantom_lancer_3 = {
+		group = 5,
+	},
+	special_bonus_unique_phantom_lancer_4 = false,
 	special_bonus_unique_riki_1 = {
 		group = 10,
 	},
