@@ -78,6 +78,9 @@ end
 
 function CDOTA_BaseNPC:TrueKill(ability, killer)
 	self.IsMarkedForTrueKill = true
+	if self:HasAbility("skeleton_king_reincarnation") then
+		self:FindAbilityByName("skeleton_king_reincarnation"):StartCooldown(1/30)
+	end
 	self:Kill(ability, killer)
 	if IsValidEntity(self) and self:IsAlive() then
 		self:RemoveDeathPreventingModifiers()

@@ -58,8 +58,6 @@ custom_talents_talent_hero_arc_warden_double_spark: Double Spark Wraith
 custom_talents_talent_hero_arc_warden_double_spark_description: Each cast of Spark Wraith creates two sparks
 custom_talents_talent_hero_apocalypse_apocalypse_no_death: Protection from Apocalypse
 custom_talents_talent_hero_apocalypse_apocalypse_no_death_description: Apocalypse will not die when ultimate effect ends
-# custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun: Reincarnation
-# custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun_description: 'Removes respawn delay. When Skeleton King ressurects he stuns enemies, instead of slowing them'
 custom_talents_talent_movespeed_pct: Movement speed
 custom_talents_talent_movespeed_pct_description: '+{%movespeed_pct%} movement speed'
 custom_talents_talent_true_strike: True Strike

@@ -55,23 +55,6 @@ npc_arena_healer: Shrine
 
 DOTA_Tooltip_modifier_multicast_lua: Multicast
 DOTA_Tooltip_modifier_multicast_lua_Description: Gives you chance to cast your spells multiple times with each use.
-DOTA_Tooltip_modifier_shadow_word_self_secondary: Shadow Word Self Secondary
-DOTA_Tooltip_modifier_shadow_word_self_secondary_Description: Taking half of periodic heal.
-DOTA_Tooltip_modifier_shadow_word_self: Shadow Word Self
-DOTA_Tooltip_modifier_shadow_word_self_Description: Taking doubled periodic heal.
-DOTA_Tooltip_modifier_shadow_word_buff: Shadow Word Buff
-DOTA_Tooltip_modifier_shadow_word_buff_Description: Taking periodic heal.
-DOTA_Tooltip_modifier_shadow_word_debuff: Shadow Word Debuff
-DOTA_Tooltip_modifier_shadow_word_debuff_Description: 'Taking periodic damage, has chance to spawn Mini Golem.'
-DOTA_Tooltip_modifier_upheaval_arena_debuff: Upheaval
-DOTA_Tooltip_modifier_upheaval_arena_debuff_Description: Movement Speed reduced.
-
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally: Reincarnation Ally
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally_Description: 'If slain, will reincarnate.'
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown: Reincarnation Cooldown
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown_Description: Reincarnation disabled.
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow: Reincarnate
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow_Description: Affected by Wraith King's Reincarnation. Move speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%.
 
 DOTA_Tooltip_ability_boss_armor: Boss Armor
 DOTA_Tooltip_ability_boss_armor_Description: |-
@@ -106,20 +89,6 @@ DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: >-
   Adds the Unrefined Fireblast ability. Multicast can be used on allies to give
   them chance to multicast for some time. Multicast chance on ultimates is
   decreased by 50%
-
-
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena: Reincarnation
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_Description: 'Wraith King''s form regroups after death, allowing him to resurrect when killed in battle. While reincarnating you gain %vision_radius% vision around the location of death.  Upon death, enemy units in a %slow_radius% radius will be slowed.'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_description: 'Reincarnation becomes aura, that affects all nearby ally heroes. Each hero have his own reincarnation cooldown.'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_Note0: 'If Wraith King has an Aegis and Reincarnation off cooldown, Reincarnation will trigger first.'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_Note1: Revives with full HP and Mana.
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_reincarnate_time: 'REINCARNATION TIME:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_movespeed: '%MOVEMENT SLOW:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_attackslow_tooltip: 'ATTACK SPEED SLOW:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_slow_duration: 'SLOW DURATION:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_vision_radius: 'VISION RADIUS:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_radius_scepter: 'SCEPTER REINCARNATION RADIUS:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_ally_cooldown_scepter: 'COOLDOWN ON ALLIES:'
 
 DOTA_Tooltip_ability_ability_empty: Empty Ability Slot
 DOTA_Tooltip_ability_ability_empty_Description: ''

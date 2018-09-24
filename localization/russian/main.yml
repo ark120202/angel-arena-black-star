@@ -38,23 +38,6 @@ npc_arena_healer: Святыня
 
 DOTA_Tooltip_modifier_multicast_lua: Multicast
 DOTA_Tooltip_modifier_multicast_lua_Description: Даёт вам шанс использовать заклинания по нескольку раз за одно применение.
-DOTA_Tooltip_modifier_shadow_word_self_secondary: Shadow Word Self Secondary
-DOTA_Tooltip_modifier_shadow_word_self_secondary_Description: Вдвойне слабее исцеляется со временем.
-DOTA_Tooltip_modifier_shadow_word_self: Shadow Word Self
-DOTA_Tooltip_modifier_shadow_word_self_Description: Вдвойне сильнее исцеляется со временем.
-DOTA_Tooltip_modifier_shadow_word_buff: Shadow Word Buff
-DOTA_Tooltip_modifier_shadow_word_buff_Description: Исцеляется со временем.
-DOTA_Tooltip_modifier_shadow_word_debuff: Shadow Word Debuff
-DOTA_Tooltip_modifier_shadow_word_debuff_Description: 'Получает периодический урон, есть шанс на создание Mini Golem.'
-DOTA_Tooltip_modifier_upheaval_arena_debuff: Upheaval
-DOTA_Tooltip_modifier_upheaval_arena_debuff_Description: Скорость передвижения снижена.
-
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally: Skeleton King Reincarnation Ally
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_ally_Description: Реинкарнируется eсли погибнет
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown: Перезарядка Reincarnation
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_cooldown_Description: Reincarnation перезаряжается.
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow: Reincarnate
-DOTA_Tooltip_modifier_skeleton_king_reincarnation_slow_Description: 'Под действием способности Reincarnation у Wraith King. Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%.'
 
 DOTA_Tooltip_ability_boss_armor: Boss Armor
 DOTA_Tooltip_ability_boss_armor_Description: |-
@@ -80,19 +63,6 @@ DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: >-
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_2_times: '%ШАНС 2Х:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_3_times: '%ШАНС 3X:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_4_times: '%ШАНС 4Х:'
-
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena: Reincarnation
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_Description: 'После смерти тело Wraith King вновь собирается воедино, воскрешая его на поле боя. Во время реинкарнации вы видите в радиусе %vision_radius% вокруг точки смерти. При этом все враги в радиусе %slow_radius% замедляются.'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_description: 'Reincarnation становится аурой, воздействующей на всех союзных героев рядом. Перезарядка Reincarnation уникальна для каждого героя.'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_Note0: 'Если Wraith King имеет одновременно Aegis of the Immortal и готовую способность, то способность сработает первой.'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_aghanim_Note1: Возвращает к жизни с полным запасом здоровья и маны.
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_reincarnate_time: 'ВРЕМЯ ПЕРЕРОЖДЕНИЯ:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_movespeed: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_attackslow_tooltip: 'ЗАМЕДЛЕНИЕ СКОРОСТИ АТАКИ:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_slow_duration: 'ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_vision_radius: 'РАДИУС ВИДИМОСТИ:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_radius_scepter: 'РАДИУС РЕИНКАРНАЦИИ:'
-DOTA_Tooltip_ability_skeleton_king_reincarnation_arena_ally_cooldown_scepter: 'ПЕРЕЗАРЯДКА НА СОЮЗНИКАХ:'
 
 DOTA_Tooltip_ability_ability_empty: Слот для способности
 
