@@ -548,6 +548,16 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_luna_5 = {
 		group = 8,
 	},
+	special_bonus_unique_medusa = {
+		group = 5,
+	},
+	special_bonus_unique_medusa_2 = {
+		group = 10,
+	},
+	special_bonus_unique_medusa_3 = {
+		group = 2,
+	},
+	special_bonus_unique_medusa_4 = false,
 	special_bonus_unique_night_stalker = {
 		group = 7,
 	},
