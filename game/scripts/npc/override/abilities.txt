@@ -3489,7 +3489,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"spirits"	"16 24 32 40 48 54 70"
+				"spirits"	"12 16 22 26 32 36 57"
 				"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
 			}
 
@@ -3514,13 +3514,13 @@
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"min_damage"	"70 86 96 106 116 124 140"
+				"min_damage"	"54 70 86 96 106 116 124"
 			}
 
 			"07"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_damage"	"72 88 98 108 118 126 142"
+				"max_damage"	"56 72 88 98 108 118 126"
 			}
 
 			"08"
@@ -3876,7 +3876,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"ball_lightning_travel_cost_percent"	"2.3"
+				"ball_lightning_travel_cost_percent"	"2"
 			}
 
 			"07"
