@@ -180,6 +180,7 @@ function Duel:GetWinner()
 			if (
 				IsValidEntity(unit) and
 				unit:IsAlive() and
+				not unit:IsReincarnating() and
 				not PlayerResource:IsPlayerAbandoned(unit:GetPlayerID())
 		 	) then
 				if not table.includes(teams, team) and unit.OnDuel then

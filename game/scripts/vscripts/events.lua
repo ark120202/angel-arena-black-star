@@ -115,17 +115,17 @@ function GameMode:OnEntityKilled(keys)
 	if keys.entindex_attacker then
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
-	--[[local killerAbility
-	if keys.entindex_inflictor then
-		killerAbility = EntIndexToHScript( keys.entindex_inflictor )
-	end]]
 
 	if killedUnit then
+		local killedTeam = killedUnit:GetTeam()
 		if killedUnit:IsHero() then
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
-			if killedUnit:IsRealHero() then
-				local respawnTime = killedUnit:CalculateRespawnTime()
+			if killedUnit:IsRealHero() and not killedUnit:IsReincarnating() then
+				if killerEntity and killerEntity:GetTeam() ~= killedTeam and Teams:IsEnabled(killerTeam) then
+					Teams:ModifyScore(killerTeam, Teams:GetTeamKillWeight(killedTeam))
+				end
 
+				local respawnTime = killedUnit:CalculateRespawnTime()
 				local killedUnits = killedUnit:GetFullName() == "npc_dota_hero_meepo" and
 					MeepoFixes:FindMeepos(PlayerResource:GetSelectedHeroEntity(killedUnit:GetPlayerID()), true) or
 					{ killedUnit }
@@ -154,7 +154,7 @@ function GameMode:OnEntityKilled(keys)
 		if killedUnit:IsBoss() and Bosses:IsLastBossEntity(killedUnit) then
 			local team = DOTA_TEAM_NEUTRALS
 			if killerEntity then
-				team = killerEntity:GetTeam()
+				team = killerTeam
 			end
 			Bosses:RegisterKilledBoss(killedUnit, team)
 		end
@@ -178,7 +178,7 @@ function GameMode:OnEntityKilled(keys)
 				end
 			end
 
-			if killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then
+			if killerEntity:GetTeam() ~= killedTeam and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then
 				local plId = killerEntity.GetPlayerID ~= nil and killerEntity:GetPlayerID() or killerEntity:GetPlayerOwnerID()
 				if plId > -1 and not (killerEntity.HasModifier and killerEntity:HasModifier("modifier_item_golden_eagle_relic_enabled")) then
 					local gold = RandomInt(killedUnit:GetMinimumGoldBounty(), killedUnit:GetMaximumGoldBounty())

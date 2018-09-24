@@ -404,12 +404,6 @@ CUSTOM_TALENTS_DATA = {
 		group = 9,
 		requirement = "apocalypse_apocalypse",
 	},
-	talent_hero_skeleton_king_reincarnation_notime_stun = {
-		icon = "talents/heroes/skeleton_king_reincarnation_notime_stun",
-		cost = 1,
-		group = 9,
-		requirement = "skeleton_king_reincarnation_arena",
-	},
 	talent_hero_sai_release_of_forge_bonus_respawn_time_reduction = {
 		icon = "arena/sai_release_of_forge",
 		cost = 10,
@@ -444,10 +438,6 @@ CUSTOM_TALENTS_DATA = {
 -- Value should be a table, where irrelevant talents should have a `true` value
 PARTIALLY_CHANGED_HEROES = {
 	npc_dota_hero_ogre_magi = {},
-	npc_dota_hero_skeleton_king = {
-		special_bonus_unique_wraith_king_1 = true,
-		special_bonus_unique_wraith_king_4 = true,
-	},
 	npc_dota_hero_huskar = {
 		special_bonus_unique_huskar_2 = true,
 	},

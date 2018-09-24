@@ -19,14 +19,6 @@
 		"AttributeIntelligenceGain"	"2.5"
 	}
 
-	"npc_dota_hero_skeleton_king"
-	{
-		"override_hero"	"npc_dota_hero_skeleton_king"
-		"Changed"	"1"
-		"Ability6"	"skeleton_king_reincarnation_arena"
-		"AttackRate"	"1.6"
-	}
-
 	"npc_dota_hero_doom_bringer"
 	{
 		"override_hero"	"npc_dota_hero_doom_bringer"
