@@ -181,7 +181,7 @@ DOTA_Tooltip_modifier_fountain_aura_arena: Fountain Rejuvenation
 DOTA_Tooltip_modifier_fountain_aura_arena_Description: 'Heals %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% HP and %dMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% mana per second.'
 
 DOTA_Tooltip_modifier_fountain_aura_invulnerability: Fountain Invulnerability
-DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Takes no damage from any sources. Works only until The Netherdrake is alive. If it''s not, fountain won''t kill enemy units, but instead will apply on them ''Fountain Weakness'' debuff.'
+DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Takes no damage from any sources. Works only while Cursed Zeld is alive. If it''s not, fountain won''t kill enemy units, but instead will apply on them ''Fountain Weakness'' debuff.'
 
 DOTA_Tooltip_modifier_fountain_aura_enemy: Fountain Weakness
 DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'Each second takes %dMODIFIER_PROPERTY_TOOLTIP%%% of max health as damage. Prevents health from from going up. All outgoing damage reduced by %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%.'
