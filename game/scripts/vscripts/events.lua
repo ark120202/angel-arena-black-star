@@ -121,8 +121,11 @@ function GameMode:OnEntityKilled(keys)
 		if killedUnit:IsHero() then
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
 			if killedUnit:IsRealHero() and not killedUnit:IsReincarnating() then
-				if killerEntity and killerEntity:GetTeam() ~= killedTeam and Teams:IsEnabled(killerTeam) then
-					Teams:ModifyScore(killerTeam, Teams:GetTeamKillWeight(killedTeam))
+				if killerEntity then
+					local killerTeam = killerEntity:GetTeam()
+					if killerTeam ~= killedTeam and Teams:IsEnabled(killerTeam) then
+						Teams:ModifyScore(killerTeam, Teams:GetTeamKillWeight(killedTeam))
+					end
 				end
 
 				local respawnTime = killedUnit:CalculateRespawnTime()
