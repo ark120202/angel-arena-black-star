@@ -157,7 +157,7 @@ function GameMode:OnEntityKilled(keys)
 		if killedUnit:IsBoss() and Bosses:IsLastBossEntity(killedUnit) then
 			local team = DOTA_TEAM_NEUTRALS
 			if killerEntity then
-				team = killerTeam
+				team = killerEntity:GetTeam()
 			end
 			Bosses:RegisterKilledBoss(killedUnit, team)
 		end
