@@ -50,6 +50,7 @@ JUNGLE_BANNED_ABILITIES = {
 	batrider_flaming_lasso = true,
 	tusk_walrus_kick = true,
 	vengefulspirit_nether_swap = true,
+	life_stealer_infest = true,
 }
 
 CREEP_UPGRADE_FUNCTIONS = {
