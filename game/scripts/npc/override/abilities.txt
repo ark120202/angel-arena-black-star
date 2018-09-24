@@ -19079,7 +19079,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"push_length"	"1200"
+				"push_length"	"900"
 			}
 
 			"04"
