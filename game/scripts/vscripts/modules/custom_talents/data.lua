@@ -1594,11 +1594,21 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_batrider_3 = {
 		group = 7,
 	},
-	special_bonus_unique_wraith_king_2 = {
-		group = 9,
-	},
+	special_bonus_unique_wraith_king_2 = false,
 	special_bonus_unique_wraith_king_6 = {
 		group = 2,
+	},
+	special_bonus_unique_wraith_king_1 = {
+		group = 4,
+	},
+	special_bonus_unique_wraith_king_4 = {
+		group = 9,
+	},
+	special_bonus_unique_wraith_king_8 = {
+		group = 6,
+	},
+	special_bonus_unique_wraith_king_7 = {
+		group = 1,
 	},
 	special_bonus_unique_kunkka_5 = {
 		group = 9,
