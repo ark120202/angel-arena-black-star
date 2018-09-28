@@ -13,7 +13,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_per_hit"			"28 40 52 64 72 78 84"
+				"mana_per_hit"			"34 46 58 68 78 84 98"
 			}
 		}
 	}
@@ -7831,7 +7831,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"crit_bonus"	"200 230 260 290 320 350 400"
+				"crit_bonus"	"300 320 340 360 380 400 420"
 			}
 		}
 	}
