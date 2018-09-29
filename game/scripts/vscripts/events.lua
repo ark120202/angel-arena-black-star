@@ -38,8 +38,8 @@ function GameMode:OnNPCSpawned(keys)
 		end
 		Timers:CreateTimer(function()
 			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() then
-				local illu_modifier = npc:FindModifierByName("modifier_illusion")
-				if illu_modifier then Illusions:_copyEverything(illu_modifier:GetCaster(), npc) end
+				local illusionParent = npc:GetIllusionParent()
+				if illusionParent then Illusions:_copyEverything(illusionParent, npc) end
 				if npc:GetPlayerOwner() then
 					Physics:Unit(npc)
 					npc:SetAutoUnstuck(true)

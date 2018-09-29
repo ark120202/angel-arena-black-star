@@ -77,15 +77,6 @@ function Illusions:_copyLevel(unit, illusion)
 	end
 end
 
-function Illusions:_copySpecialCustomFields(unit, illusion)
-	if unit.GetEnergy and unit.GetMaxEnergy then
-		illusion.SavedEnergyStates = {
-			Energy = unit:GetEnergy(),
-			MaxEnergy = unit:GetMaxEnergy()
-		}
-	end
-end
-
 function Illusions:_copyAppearance(unit, illusion)
 	illusion:SetModelScale(unit:GetModelScale())
 	if unit:GetModelName() ~= illusion:GetModelName() then
@@ -103,13 +94,12 @@ function Illusions:_copyEverything(unit, illusion)
 	illusion:SetAbilityPoints(0)
 	Illusions:_copyAbilities(unit, illusion)
 	Illusions:_copyItems(unit, illusion)
-	Illusions:_copySpecialCustomFields(unit, illusion)
 	Illusions:_copyAppearance(unit, illusion)
-	illusion.UnitName = unit.UnitName
 	local heroName = unit:GetFullName()
 	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
 		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
 	end
+	illusion.UnitName = unit.UnitName
 	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
 	Illusions:_copyShards(unit, illusion)
 	illusion:SetHealth(unit:GetHealth())

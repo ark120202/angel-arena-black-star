@@ -159,6 +159,13 @@ function CDOTA_BaseNPC:IsWukongsSummon()
 	)
 end
 
+function CDOTA_BaseNPC:GetIllusionParent()
+	local modifier_illusion = self:FindModifierByName("modifier_illusion")
+	if modifier_illusion then
+		return modifier_illusion:GetCaster()
+	end
+end
+
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	if self.OnDuel then return 1 end
