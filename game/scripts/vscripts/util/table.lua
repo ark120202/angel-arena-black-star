@@ -19,7 +19,7 @@ function table.shuffle(array)
 	end
 end
 
-function table.contains(table, element)
+function table.includes(table, element)
 	if table then
 		for _, value in pairs(table) do
 			if value == element then
@@ -30,44 +30,10 @@ function table.contains(table, element)
 	return false
 end
 
-function table.firstNotNil(table)
-	for _,v in pairs(table) do
-		if v ~= nil then
-			return v
-		end
-	end
-end
-
 function table.allEqual(table, value)
 	for _,v in pairs(table) do
 		if v ~= value then
 			return false
-		end
-	end
-	return true
-end
-
-function table.areAllEqual(table)
-	for _,v in pairs(table) do
-		if value == nil then
-			value = v
-		end
-		if v ~= value then
-			return false
-		end
-	end
-	return true
-end
-
-function table.allEqualExpectOne(table, value)
-	local miss = false
-	for _,v in pairs(table) do
-		if v ~= value then
-			if miss then
-				return false
-			else
-				miss = true
-			end
 		end
 	end
 	return true
@@ -111,27 +77,9 @@ function table.highest(t)
 	return(t[#t])
 end
 
-function table.findIndex(t, value)
-	local values = {}
-	for i,v in ipairs(t) do
-		if v == value then
-			table.insert(values, i)
-		end
-	end
-	return values
-end
-
-function table.add(input1, input2)
+function table.concat(input1, input2)
 	for _,v in ipairs(input2) do
 		table.insert(input1, v)
-	end
-end
-
-function table.addExclusive(input1, input2)
-	for _,v in ipairs(input2) do
-		if not table.contains(input1, v) then
-			table.insert(input1, v)
-		end
 	end
 end
 
@@ -144,17 +92,6 @@ function table.nearest(table, number)
 		end
 	end
 	return table[smallestIndex], smallestIndex
-end
-
-function table.nearestKey(t, key)
-	if not t then return end
-	local selectedKey
-	for k,v in pairs(t) do
-		if not selectedKey or math.abs(k - key) < math.abs(selectedKey - key) then
-			selectedKey = k
-		end
-	end
-	return t[selectedKey]
 end
 
 function table.nearestOrLowerKey(t, key)
@@ -234,18 +171,14 @@ function table.average(t)
 	return sum/#t
 end
 
-function table.uniq(t)
-	local seen = {}
-	local o = {}
-
-	for _,v in ipairs(t) do
-		if not seen[v] then
-			seen[v] = true
-			table.insert(o, v)
+function table.filter(t, predicate)
+	local new = {}
+	for k, v in pairs(t) do
+		if predicate(v, k) then
+			table.insert(new, v)
 		end
 	end
-
-	return o
+	return new
 end
 
 function table.filterValues(t, predicate)

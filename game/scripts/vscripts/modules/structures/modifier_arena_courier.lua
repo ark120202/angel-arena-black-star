@@ -18,16 +18,8 @@ function modifier_arena_courier:GetModifierMoveSpeed_Absolute() return 800 end
 if IsServer() then
 	function modifier_arena_courier:OnCreated()
 		local courier = self:GetParent()
-		self:StartIntervalThink(60)
-		courier:SetBaseMaxHealth(COURIER_HEALTH_BASE)
-		courier:SetMaxHealth(COURIER_HEALTH_BASE)
-		courier:SetHealth(COURIER_HEALTH_BASE)
-	end
-
-	function modifier_arena_courier:OnIntervalThink()
-		local courier = self:GetParent()
-		courier:SetBaseMaxHealth(courier:GetBaseMaxHealth() + COURIER_HEALTH_GROWTH)
-		courier:SetMaxHealth(courier:GetMaxHealth() + COURIER_HEALTH_GROWTH)
-		courier:SetHealth(courier:GetHealth() + COURIER_HEALTH_GROWTH)
+		courier:SetBaseMaxHealth(COURIER_HEALTH)
+		courier:SetMaxHealth(COURIER_HEALTH)
+		courier:SetHealth(COURIER_HEALTH)
 	end
 end

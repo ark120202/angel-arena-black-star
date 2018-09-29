@@ -12,12 +12,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"all_damage_bonus_pct"	"3 5 7 9 12 15 17"
+				"all_damage_bonus_pct"	"3 5 7 9 12 15 20"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance"		"16 18 20 22 24 26 28"
+				"crit_chance"		"10 15 20 25 30 35 40"
 			}
 			"03"
 			{
@@ -110,6 +110,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"50"
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
 
 		"AbilitySpecial"
 		{

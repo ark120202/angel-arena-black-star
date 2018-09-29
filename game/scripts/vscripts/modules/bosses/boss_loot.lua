@@ -6,7 +6,7 @@ function Bosses:CreateBossLoot(unit, team)
 	local totalDamage = 0
 	local damageByPlayers = {}
 	for playerId, damage in pairs(unit.DamageReceived) do
-		if PlayerResource:IsValidPlayerID(playerId) and not IsPlayerAbandoned(playerId) and team == PlayerResource:GetTeam(playerId) then
+		if PlayerResource:IsValidPlayerID(playerId) and not PlayerResource:IsPlayerAbandoned(playerId) and team == PlayerResource:GetTeam(playerId) then
 			damageByPlayers[playerId] = (damageByPlayers[playerId] or 0) + damage
 		end
 		totalDamage = totalDamage + damage
