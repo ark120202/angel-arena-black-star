@@ -51,6 +51,7 @@ CUSTOM_WEARABLES = {
 		},
 	},
 	anakim_wisps = {
+		slot = "ambient",
 		heroes = {"npc_arena_hero_anakim"},
 		default = true,
 		particles = {
