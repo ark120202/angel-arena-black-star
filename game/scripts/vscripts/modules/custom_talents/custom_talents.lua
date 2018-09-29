@@ -23,11 +23,10 @@ local nativeTalents = ModuleRequire(..., "native")
 		end
 	end
 
-	if IsInToolsMode() and #brokenTalents > 0 then
+	if IsInToolsMode() then
 		for _,v in ipairs(brokenTalents) do
 			print(v)
 		end
-		error("Found " .. #brokenTalents .. " incorrect talents")
 	end
 
 	table.merge(CUSTOM_TALENTS_DATA, nativeTalents)
@@ -229,7 +228,7 @@ function CDOTA_BaseNPC:ApplyTalentEffects(name)
 		for _,v in ipairs(effect.abilities) do
 			local ability = self:FindAbilityByName(v) or self:AddNewAbility(v)
 			ability:SetLevel(self.talents[name].level)
-			if not table.contains(self.talents[name].abilities, ability) then
+			if not table.includes(self.talents[name].abilities, ability) then
 				table.insert(self.talents[name].abilities, ability)
 			end
 		end

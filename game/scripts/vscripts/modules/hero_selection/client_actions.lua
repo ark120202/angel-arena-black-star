@@ -34,7 +34,7 @@ function HeroSelection:OnHeroSelectHero(data)
 				end
 				for team,teamdata in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection")) do
 					for plyId,playerStatus in pairs(teamdata) do
-						if (table.contains(linked, playerStatus.hero) or hero == playerStatus.hero) and playerStatus.status == "locked" then
+						if (table.includes(linked, playerStatus.hero) or hero == playerStatus.hero) and playerStatus.status == "locked" then
 							HeroSelection:UpdateStatusForPlayer(plyId, "hover")
 						end
 					end
@@ -83,7 +83,7 @@ function HeroSelection:OnMinimapSetSpawnbox(data)
 	if HeroSelection:GetState() < HERO_SELECTION_PHASE_END then
 		local SpawnBoxes = tableData[data.PlayerID].SpawnBoxes or {}
 		local nd = (data.team or 2) .. "_" .. (data.level or 1) .. "_" .. (data.index or 0)
-		if not table.contains(SpawnBoxes, nd) then
+		if not table.includes(SpawnBoxes, nd) then
 			if #SpawnBoxes >= MAX_SPAWNBOXES_SELECTED then
 				table.remove(SpawnBoxes, 1)
 			end

@@ -14,7 +14,7 @@ function StatsClient:FetchPreGameData()
 		players = {},
 	}
 	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-		if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) then
+		if PlayerResource:IsValidPlayerID(i) and not PlayerResource:IsPlayerAbandoned(i) then
 			data.players[i] = PlayerResource:GetRealSteamID(i)
 		end
 	end
@@ -87,6 +87,7 @@ function StatsClient:OnGameEnd(winner)
 		local data = {
 			version = ARENA_VERSION,
 			matchID = matchID,
+			mapName = GetMapName(),
 			players = {},
 			killGoal = KILLS_TO_END_GAME_FOR_TEAM,
 			teamsInfo = {},
@@ -111,7 +112,7 @@ function StatsClient:OnGameEnd(winner)
 			if PlayerResource:IsValidPlayerID(i) then
 				local hero = PlayerResource:GetSelectedHeroEntity(i)
 				local playerInfo = {
-					abandoned = IsPlayerAbandoned(i),
+					abandoned = PlayerResource:IsPlayerAbandoned(i),
 					steamid = PlayerResource:GetRealSteamID(i),
 
 					heroDamage = PlayerResource:GetPlayerStat(i, "heroDamage"),

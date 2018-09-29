@@ -16,28 +16,52 @@ function GameMode:OnNPCSpawned(keys)
 			--npc:AddNoDraw()
 			return
 		end
+		local tempest_modifier = npc:FindModifierByName("modifier_arc_warden_tempest_double")
+		if tempest_modifier then
+			local caster = tempest_modifier:GetCaster()
+			if npc:GetUnitName() == "npc_dota_hero" then
+				npc:SetUnitName("npc_dota_hero_arena_base")
+				npc:AddNewModifier(unit, nil, "modifier_dragon_knight_dragon_form", {duration = 0})
+			end
+			if npc.tempestDoubleSecondSpawn then
+				--Tempest Double resets stats and stuff, so everything needs to be put back where they belong
+				Illusions:_copyAbilities(caster, npc)
+				npc:ModifyStrength(caster:GetStrength() - npc:GetStrength())
+				npc:ModifyIntellect(caster:GetIntellect() - npc:GetIntellect())
+				npc:ModifyAgility(caster:GetAgility() - npc:GetAgility())
+				npc:SetHealth(caster:GetHealth())
+				npc:SetMana(caster:GetMana())
+			else
+				Illusions:_copyEverything(caster, npc)
+				npc.tempestDoubleSecondSpawn = true
+			end
+		end
 		Timers:CreateTimer(function()
-			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
-				Physics:Unit(npc)
-				npc:SetAutoUnstuck(true)
-				DynamicWearables:AutoEquip(npc)
-				if npc.ModelOverride then
-					npc:SetModel(npc.ModelOverride)
-					npc:SetOriginalModel(npc.ModelOverride)
-				end
-				if not npc:IsWukongsSummon() then
-					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
-					if npc:IsTrueHero() then
-						npc:ApplyDelayedTalents()
+			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() then
+				local illu_modifier = npc:FindModifierByName("modifier_illusion")
+				if illu_modifier then Illusions:_copyEverything(illu_modifier:GetCaster(), npc) end
+				if npc:GetPlayerOwner() then
+					Physics:Unit(npc)
+					npc:SetAutoUnstuck(true)
+					DynamicWearables:AutoEquip(npc)
+					if npc.ModelOverride then
+						npc:SetModel(npc.ModelOverride)
+						npc:SetOriginalModel(npc.ModelOverride)
+					end
+					if not npc:IsWukongsSummon() then
+						npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
+						if npc:IsTrueHero() then
+							npc:ApplyDelayedTalents()
 
-						PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
-						CustomAbilities:RandomOMGRollAbilities(npc)
-						if IsValidEntity(npc.BloodstoneDummies) then
-							UTIL_Remove(npc.BloodstoneDummies)
-							npc.BloodstoneDummies = nil
-						end
-						if not npc.OnDuel and Duel:IsDuelOngoing() then
-							Duel:SetUpVisitor(npc)
+							PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
+							CustomAbilities:RandomOMGRollAbilities(npc)
+							if IsValidEntity(npc.BloodstoneDummies) then
+								UTIL_Remove(npc.BloodstoneDummies)
+								npc.BloodstoneDummies = nil
+							end
+							if not npc.OnDuel and Duel:IsDuelOngoing() then
+								Duel:SetUpVisitor(npc)
+							end
 						end
 					end
 				end
@@ -112,17 +136,20 @@ function GameMode:OnEntityKilled(keys)
 	if keys.entindex_attacker then
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
-	--[[local killerAbility
-	if keys.entindex_inflictor then
-		killerAbility = EntIndexToHScript( keys.entindex_inflictor )
-	end]]
 
 	if killedUnit then
+		local killedTeam = killedUnit:GetTeam()
 		if killedUnit:IsHero() then
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
-			if killedUnit:IsRealHero() then
-				local respawnTime = killedUnit:CalculateRespawnTime()
+			if killedUnit:IsRealHero() and not killedUnit:IsReincarnating() then
+				if killerEntity then
+					local killerTeam = killerEntity:GetTeam()
+					if killerTeam ~= killedTeam and Teams:IsEnabled(killerTeam) then
+						Teams:ModifyScore(killerTeam, Teams:GetTeamKillWeight(killedTeam))
+					end
+				end
 
+				local respawnTime = killedUnit:CalculateRespawnTime()
 				local killedUnits = killedUnit:GetFullName() == "npc_dota_hero_meepo" and
 					MeepoFixes:FindMeepos(PlayerResource:GetSelectedHeroEntity(killedUnit:GetPlayerID()), true) or
 					{ killedUnit }
@@ -148,7 +175,7 @@ function GameMode:OnEntityKilled(keys)
 			end
 		end
 
-		if killedUnit:IsBoss() and not killedUnit.IsDominatedBoss then
+		if killedUnit:IsBoss() and Bosses:IsLastBossEntity(killedUnit) then
 			local team = DOTA_TEAM_NEUTRALS
 			if killerEntity then
 				team = killerEntity:GetTeam()
@@ -158,6 +185,10 @@ function GameMode:OnEntityKilled(keys)
 
 		if killedUnit:IsRealCreep() then
 			Spawner:OnCreepDeath(killedUnit)
+		end
+
+		if not killedUnit:UnitCanRespawn() then
+			killedUnit:ClearNetworkableEntityInfo()
 		end
 
 		if killerEntity then
@@ -171,13 +202,9 @@ function GameMode:OnEntityKilled(keys)
 				end
 			end
 
-			if killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then
+			if killerEntity:GetTeam() ~= killedTeam and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then
 				local plId = killerEntity.GetPlayerID ~= nil and killerEntity:GetPlayerID() or killerEntity:GetPlayerOwnerID()
-				if (
-					plId > -1 and
-					not (killerEntity.HasModifier and killerEntity:HasModifier("modifier_item_golden_eagle_relic_enabled")) and
-					killerEntity:GetUnitName() ~= "npc_dota_lucifers_claw_doomling"
-				) then
+				if plId > -1 and not (killerEntity.HasModifier and killerEntity:HasModifier("modifier_item_golden_eagle_relic_enabled")) then
 					local gold = RandomInt(killedUnit:GetMinimumGoldBounty(), killedUnit:GetMaximumGoldBounty())
 					Gold:ModifyGold(plId, gold)
 					SendOverheadEventMessage(killerEntity:GetPlayerOwner(), OVERHEAD_ALERT_GOLD, killedUnit, gold, killerEntity:GetPlayerOwner())

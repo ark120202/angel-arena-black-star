@@ -17,23 +17,10 @@ function OnSpellStart(keys)
 		if caster.lucifers_claw_doomling_ent and not caster.lucifers_claw_doomling_ent:IsNull() and caster.lucifers_claw_doomling_ent:IsAlive() then
 			caster.lucifers_claw_doomling_ent:Kill(ability, caster)
 		end
-
-		target:SetMinimumGoldBounty(0)
-		target:SetMaximumGoldBounty(0)
-		target:SetDeathXP(0)
 		target:Kill(ability, caster)
-
-		local doomling = CreateUnitByName(
-			"npc_dota_lucifers_claw_doomling",
-			target:GetAbsOrigin(),
-			true,
-			caster,
-			caster:GetPlayerOwner(),
-			caster:GetTeamNumber()
-		)
+		local doomling = CreateUnitByName("npc_dota_lucifers_claw_doomling", target:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
 		doomling:SetControllableByPlayer(caster:GetPlayerID(), true)
 		doomling:SetOwner(caster)
-
 		for i = 0, target:GetAbilityCount()-1 do
 			local ability = target:GetAbilityByIndex(i)
 			if ability then

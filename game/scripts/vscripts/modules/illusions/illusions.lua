@@ -28,17 +28,19 @@ end
 
 function Illusions:_copyItems(unit, illusion)
 	for slot = 0, 5 do
-		local illusion_item = illusion:GetItemInSlot(slot)
-		if illusion_item then
-			illusion:RemoveItem(illusion_item)
+		local illusionItem = illusion:GetItemInSlot(slot)
+		if illusionItem then
+			illusion:RemoveItem(illusionItem)
 		end
 	end
-	
-	for slot = 0, 5 do		
+
+	for slot = 0, 5 do
 		local item = unit:GetItemInSlot(slot)
 		if item then
-			local illusion_item = illusion:AddItem(CreateItem(item:GetName(), illusion, illusion))
-			illusion_item:SetCurrentCharges(item:GetCurrentCharges())
+			local illusionItem = CreateItem(item:GetName(), illusion, illusion)
+			illusionItem:SetCurrentCharges(item:GetCurrentCharges())
+			illusionItem.suggestedSlot = slot
+			illusion:AddItem(illusionItem)
 		end
 	end
 end
@@ -46,12 +48,15 @@ end
 function Illusions:_copyShards(unit, illusion)
 	if unit.Additional_str then
 		illusion:ModifyStrength(unit.Additional_str)
+		illusion.Additional_str = unit.Additional_str
 	end
 	if unit.Additional_agi then
 		illusion:ModifyAgility(unit.Additional_agi)
+		illusion.Additional_agi = unit.Additional_agi
 	end
 	if unit.Additional_int then
 		illusion:ModifyIntellect(unit.Additional_int)
+		illusion.Additional_int = unit.Additional_int
 	end
 	if unit.Additional_attackspeed then
 		local modifier = illusion:FindModifierByName("modifier_item_shard_attackspeed_stack")
@@ -61,6 +66,7 @@ function Illusions:_copyShards(unit, illusion)
 		if modifier then
 			modifier:SetStackCount(unit.Additional_attackspeed)
 		end
+		illusion.Additional_attackspeed = unit.Additional_attackspeed
 	end
 end
 
@@ -93,6 +99,23 @@ function Illusions:_copyAppearance(unit, illusion)
 	end
 end
 
+function Illusions:_copyEverything(unit, illusion)
+	illusion:SetAbilityPoints(0)
+	Illusions:_copyAbilities(unit, illusion)
+	Illusions:_copyItems(unit, illusion)
+	Illusions:_copySpecialCustomFields(unit, illusion)
+	Illusions:_copyAppearance(unit, illusion)
+	illusion.UnitName = unit.UnitName
+	local heroName = unit:GetFullName()
+	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
+		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
+	end
+	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
+	Illusions:_copyShards(unit, illusion)
+	illusion:SetHealth(unit:GetHealth())
+	illusion:SetMana(unit:GetMana())
+end
+
 function Illusions:create(info)
 	local ability = info.ability
 	local unit = info.unit
@@ -101,15 +124,20 @@ function Illusions:create(info)
 	local isOwned = info.isOwned
 	if isOwned == nil then isOwned = true end
 
+	local source = unit
+	local replicateModifier = unit:FindModifierByName("modifier_morphling_replicate")
+	if replicateModifier then
+		source = replicateModifier:GetCaster()
+	end
+
 	local illusion = CreateUnitByName(
-		unit:GetUnitName(),
+		source:GetUnitName(),
 		origin,
 		true,
 		isOwned and unit or nil,
-		isOwned and unit:GetPlayerOwner() or nil,
+		isOwned and source:GetPlayerOwner() or nil,
 		team
 	)
-	illusion:MakeIllusion()
 	local heroName = unit:GetFullName()
 	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
 		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
@@ -119,24 +147,13 @@ function Illusions:create(info)
 	illusion:SetForwardVector(unit:GetForwardVector())
 
 	Illusions:_copyLevel(unit, illusion)
-	illusion:SetAbilityPoints(0)
-	Illusions:_copySpecialCustomFields(unit, illusion)
-	Illusions:_copyAbilities(unit, illusion)
-	Illusions:_copyItems(unit, illusion)
-	Illusions:_copyAppearance(unit, illusion)
 
 	illusion:AddNewModifier(unit, ability, "modifier_illusion", {
 		duration = info.duration,
 		outgoing_damage = info.damageOutgoing - 100,
 		incoming_damage = info.damageIncoming - 100,
 	})
-	illusion.UnitName = unit.UnitName
-	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
-	Illusions:_copyShards(unit, illusion)
-	
-	illusion:SetHealth(unit:GetHealth())
-	illusion:SetMana(unit:GetMana())
-	illusion.illusionSource = unit
+	illusion:MakeIllusion()
 
 	return illusion
 end

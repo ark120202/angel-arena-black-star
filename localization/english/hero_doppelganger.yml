@@ -2,7 +2,9 @@ npc_arena_hero_doppelganger: Doppelganger
 npc_arena_hero_doppelganger_hype: ''
 npc_arena_hero_doppelganger_bio: 'Few have any idea why the Book of Darkness is called so and what dark secrets its pages posses. Those who have such an idea, won''t say much about it anyway; for when a Sorcerer becomes a Doppelganger, he won''t give his secrets away.'
 
+DOTA_Tooltip_ability_doppelganger_mimic: Mimic
 DOTA_Tooltip_ability_doppelganger_mimic_Description: |-
   Copies enemy hero, gaining all it's power.
 
   Changing hero removes all positive and negative effects.
+DOTA_Tooltip_modifier_doppelganger_mimic: Mimic

@@ -28,9 +28,6 @@
 	<Panel class="AddonLoadingRoot">
 		<!-- Precache -->
 		<Panel hittest="false" style="visibility: collapse;">
-			<Image src="file://{images}/custom_game/scoreboard/scoreboard_ifd.png" />
-			<Image src="file://{images}/custom_game/scoreboard/scoreboard_if4.png" />
-
 			<Image src="file://{images}/heroes/npc_dota_hero_arena_base.png" />
 			<Image src="file://{images}/heroes/selection/npc_dota_hero_arena_base.png" />
 			<Image src="file://{images}/heroes/icons/npc_dota_hero_arena_base.png" />
@@ -110,16 +107,6 @@
 			<Image src="file://{images}/heroes/npc_arena_hero_doppelganger.png" />
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_doppelganger.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_doppelganger.png" />
-
-			<!-- <Image src="file://{images}/heroes/npc_arena_hero_maka.png" />
-			<Image src="file://{images}/heroes/selection/npc_arena_hero_maka.png" />
-			<Image src="file://{images}/heroes/icons/npc_arena_hero_maka.png" /> -->
-
-			<Image src="file://{images}/custom_game/units/npc_arena_boss_central.png" />
-			<Image src="file://{images}/custom_game/units/npc_arena_boss_l1_v1.png" />
-			<Image src="file://{images}/custom_game/units/npc_arena_boss_l1_v2.png" />
-			<Image src="file://{images}/custom_game/units/npc_arena_boss_l2_v1.png" />
-			<Image src="file://{images}/custom_game/units/npc_arena_boss_l2_v2.png" />
 		</Panel>
 		<Panel id="loading_base">
 			<Panel id="loading-angel-arena">

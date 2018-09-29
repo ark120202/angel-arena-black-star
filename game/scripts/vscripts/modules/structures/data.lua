@@ -1,5 +1,4 @@
-COURIER_HEALTH_BASE = 200
-COURIER_HEALTH_GROWTH = 50
+COURIER_HEALTH = 10
 
 HEALER_HEALTH_BASE = 50
 HEALER_HEALTH_GROWTH = 4
@@ -18,9 +17,6 @@ TEAM_HEALER_MODELS = {
 }
 
 ShopsData = {
-	Secret = {
-		"item_casino_coin",
-	},
 	Duel = {
 		{ item = "item_dust", cost = 360 },
 		{ item = "item_ward_sentry", cost = 300 },

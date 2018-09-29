@@ -326,7 +326,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"chance_to_kill"	"3"
+				"chance_to_kill"	"2"
 			}
 			"03"
 			{
