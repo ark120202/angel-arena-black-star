@@ -1195,6 +1195,18 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_dark_willow_2 = {
 		group = 9,
 	},
+	special_bonus_unique_grimstroke_1 = {
+		group = 3,
+	},
+	special_bonus_unique_grimstroke_2 = {
+		group = 5,
+	},
+	special_bonus_unique_grimstroke_3 = {
+		group = 6,
+	},
+	special_bonus_unique_grimstroke_4 = {
+		group = 2,
+	},
 	special_bonus_unique_clockwerk = {
 		group = 9,
 	},
