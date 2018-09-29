@@ -130,7 +130,7 @@ module.exports = {
 			//Third - applying custom rules
 			_.each(tokens, (value, key) => {
 				if (key.endsWith('_Description')) {
-					tokens[key] = value.replace(/\n(?!<h1)/g, '<br>');
+					tokens[key] = value.replace(/\n(?!<h1)/g, ' <br>');
 					//Has scepter description?
 					if (tokens[key.slice(0, -'Description'.length) + 'aghanim_description']) {
 						tokens[key] += '\n' + variables.ability_scepter_upgradable;
