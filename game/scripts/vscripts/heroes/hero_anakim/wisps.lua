@@ -17,8 +17,9 @@ if IsServer() then
 	end
 
 	function modifier_anakim_wisps:GetModifierPreAttack_CriticalStrike()
-		if RandomInt(0, 100) <= self:GetAbility():GetSpecialValueFor("critical_chance_pct") then
-			return self:GetAbility():GetSpecialValueFor("critical_damage_pct")
+		local ability = self:GetAbility()
+		if RollPercentage(ability:GetSpecialValueFor("critical_chance_pct")) then
+			return ability:GetSpecialValueFor("critical_damage_pct")
 		end
 	end
 end
