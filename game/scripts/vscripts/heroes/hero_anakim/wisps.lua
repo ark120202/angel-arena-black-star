@@ -1,13 +1,13 @@
 LinkLuaModifier("modifier_anakim_wisps", "heroes/hero_anakim/wisps.lua", LUA_MODIFIER_MOTION_NONE)
 
-anakim_wisps = class({GetIntrinsicModifierName = function() return "modifier_anakim_wisps" end})
+anakim_wisps = class({
+	GetIntrinsicModifierName = function() return "modifier_anakim_wisps" end,
+})
 
 modifier_anakim_wisps = class({
 	IsHidden = function() return true end,
 	IsPurgable = function() return false end,
-	DeclareFunctions = function() return {
-		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
-	} end
+	DeclareFunctions = function() return { MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE } end,
 })
 
 if IsServer() then
