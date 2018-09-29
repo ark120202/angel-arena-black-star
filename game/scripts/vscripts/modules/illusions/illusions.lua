@@ -138,10 +138,6 @@ function Illusions:create(info)
 		isOwned and source:GetPlayerOwner() or nil,
 		team
 	)
-	local heroName = unit:GetFullName()
-	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
-		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
-	end
 	if isOwned then illusion:SetControllableByPlayer(unit:GetPlayerID(), true) end
 	FindClearSpaceForUnit(illusion, origin, true)
 	illusion:SetForwardVector(unit:GetForwardVector())
