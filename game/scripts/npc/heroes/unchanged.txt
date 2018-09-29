@@ -160,7 +160,7 @@
 	"npc_dota_hero_sven"
 	{
 		"override_hero"	"npc_dota_hero_sven"
-		"AttackRate"	"1.8"
+		"AttackRate"	"1.9"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.8"
 		"AttributeAgilityGain"	"2.1"
@@ -758,7 +758,7 @@
 	"npc_dota_hero_slark"
 	{
 		"override_hero"	"npc_dota_hero_slark"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.5"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_ICE" 	"0"
@@ -820,7 +820,7 @@
 	"npc_dota_hero_abaddon"
 	{
 		"override_hero"	"npc_dota_hero_abaddon"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.5"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_LIGHT" 	"50"

@@ -12,17 +12,17 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"all_damage_bonus_pct"	"3 5 7 9 12 15 20"
+				"all_damage_bonus_pct"	"1 3 5 7 9 12 15"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance"		"10 15 20 25 30 35 40"
+				"crit_chance"		"10 12 14 16 18 20 22"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_mult"			"200"
+				"crit_mult"			"150"
 			}
 		}
 

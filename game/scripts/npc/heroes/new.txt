@@ -83,7 +83,7 @@
 		"Ability4"	"generic_hidden"
 		"Ability5"	"generic_hidden"
 		"Ability6"	"kadash_immortality"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.9"
 		"ArmorPhysical"	"2"
 		"MagicalResistance"	"10"
 		"RenderColor"	"165 0 255"
