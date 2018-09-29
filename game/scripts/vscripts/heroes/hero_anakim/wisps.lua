@@ -1,5 +1,4 @@
 LinkLuaModifier("modifier_anakim_wisps", "heroes/hero_anakim/wisps.lua", LUA_MODIFIER_MOTION_NONE)
-require("kv")
 
 anakim_wisps = class({GetIntrinsicModifierName = function() return "modifier_anakim_wisps" end})
 
@@ -13,7 +12,8 @@ modifier_anakim_wisps = class({
 
 if IsServer() then
 	function modifier_anakim_wisps:OnCreated()
-		SetMaxLevel({ability = self:GetAbility()})
+		local ability = self:GetAbility()
+		ability:SetLevel(ability:GetMaxLevel())
 	end
 
 	function modifier_anakim_wisps:GetModifierPreAttack_CriticalStrike()
