@@ -293,7 +293,7 @@ function FindCourier(team)
 end
 
 function GetNotScaledDamage(damage, unit)
-	return damage / (1 + Attributes:GetTotalPropValue(unit, "spell_amplify_pct") * 0.01)
+	return damage / (1 + unit:GetSpellAmplification(false))
 end
 
 function IsUltimateAbility(ability)
