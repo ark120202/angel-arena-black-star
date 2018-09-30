@@ -103,9 +103,7 @@ if IsServer() then
 		-- TODO: Check if still required
 		if k.unit == self:GetParent() and k.unit:GetUnitName() == "npc_dota_hero_crystal_maiden" then
 			k.unit:AddNoDraw()
-			Timers:CreateTimer(0.03, function()
-				k.unit:RemoveNoDraw()
-			end)
+			Timers:NextTick(function() k.unit:RemoveNoDraw() end)
 		end
 	end
 

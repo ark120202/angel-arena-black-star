@@ -119,7 +119,7 @@ function CastAdditionalAbility(caster, ability, target)
 			if not caster:IsChanneling() then
 				skill:EndChannel(true)
 				skill:OnChannelFinish(true)
-				Timers:CreateTimer(0.03, function()
+				Timers:NextTick(function()
 					if skill then UTIL_Remove(skill) end
 					if unit then UTIL_Remove(unit) end
 				end)

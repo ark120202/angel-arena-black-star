@@ -36,7 +36,7 @@ function GameMode:OnNPCSpawned(keys)
 				npc.tempestDoubleSecondSpawn = true
 			end
 		end
-		Timers:CreateTimer(function()
+		Timers:NextTick(function()
 			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() then
 				local illusionParent = npc:GetIllusionParent()
 				if illusionParent then Illusions:_copyEverything(illusionParent, npc) end
@@ -246,9 +246,7 @@ function GameMode:OnItemCombined(keys)
 					end
 					newItem:SetOwner(hero)
 
-					Timers:CreateTimer(function()
-						hero:AddItem(newItem)
-					end)
+					Timers:NextTick(function() hero:AddItem(newItem) end)
 				end
 			end
 		end

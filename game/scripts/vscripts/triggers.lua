@@ -23,7 +23,7 @@ function ArenaZoneOnEndTouch(trigger)
 	if not activator.OnDuel then return end
 	if activator:IsWukongsSummon() then return end
 
-	Timers:CreateTimer(function()
+	Timers:NextTick(function()
 		if not IsValidEntity(activator) then return end
 		if not Duel:IsDuelOngoing() then return end
 
