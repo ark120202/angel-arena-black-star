@@ -29,6 +29,9 @@ function GameMode:OnNPCSpawned(keys)
 				npc:ModifyStrength(caster:GetStrength() - npc:GetStrength())
 				npc:ModifyIntellect(caster:GetIntellect() - npc:GetIntellect())
 				npc:ModifyAgility(caster:GetAgility() - npc:GetAgility())
+				npc.Additional_str = caster.Additional_str
+				npc.Additional_int = caster.Additional_int
+				npc.Additional_agi = caster.Additional_agi
 				npc:SetHealth(caster:GetHealth())
 				npc:SetMana(caster:GetMana())
 			else
