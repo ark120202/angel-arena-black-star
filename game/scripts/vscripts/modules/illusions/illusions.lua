@@ -95,13 +95,13 @@ function Illusions:_copyEverything(unit, illusion)
 	Illusions:_copyAbilities(unit, illusion)
 	Illusions:_copyItems(unit, illusion)
 	Illusions:_copyAppearance(unit, illusion)
-	Illusions:_copyShards(unit, illusion)
+	illusion.UnitName = unit.UnitName
 	local heroName = unit:GetFullName()
 	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
 		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
 	end
 
-	illusion.UnitName = unit.UnitName
+	Illusions:_copyShards(unit, illusion)
 	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
 
 	illusion:SetHealth(unit:GetHealth())
