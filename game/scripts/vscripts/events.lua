@@ -26,9 +26,12 @@ function GameMode:OnNPCSpawned(keys)
 			if npc.tempestDoubleSecondSpawn then
 				--Tempest Double resets stats and stuff, so everything needs to be put back where they belong
 				Illusions:_copyAbilities(caster, npc)
-				npc:ModifyStrength(caster:GetStrength() - npc:GetStrength())
-				npc:ModifyIntellect(caster:GetIntellect() - npc:GetIntellect())
-				npc:ModifyAgility(caster:GetAgility() - npc:GetAgility())
+				npc:ModifyStrength(caster:GetBaseStrength() - npc:GetBaseStrength())
+				npc:ModifyIntellect(caster:GetBaseIntellect() - npc:GetBaseIntellect())
+				npc:ModifyAgility(caster:GetBaseAgility() - npc:GetBaseAgility())
+				npc.Additional_str = caster.Additional_str
+				npc.Additional_int = caster.Additional_int
+				npc.Additional_agi = caster.Additional_agi
 				npc:SetHealth(caster:GetHealth())
 				npc:SetMana(caster:GetMana())
 			else
