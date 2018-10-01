@@ -44,8 +44,8 @@ end
 
 function PanoramaShop:AddItemStock(team, item, count)
 	local t = PanoramaShop.StocksTable[team][item]
-	local added_stocks = t.current_stock + count
 	if t then
+		local added_stocks = t.current_stock + count
 		if added_stocks > t.ItemStockMax then
 			added_stocks = t.ItemStockMax
 		end
