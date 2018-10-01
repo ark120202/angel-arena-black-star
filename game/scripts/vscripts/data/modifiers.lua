@@ -8,7 +8,6 @@ MODIFIERS_DEATH_PREVENTING = {
 	"modifier_fountain_aura_arena",
 	"modifier_mana_shield_arena",
 	"modifier_saber_avalon_invulnerability",
-	"modifier_fountain_aura_invulnerability"
 }
 
 DUEL_PURGED_MODIFIERS = {
