@@ -11,62 +11,56 @@ end
 -- An NPC has spawned somewhere in game.	This includes heroes
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
-	if npc:IsHero() then
-		if HeroSelection:GetState() < HERO_SELECTION_PHASE_END then
-			--npc:AddNoDraw()
-			return
+	if not npc:IsHero() then return end
+	if HeroSelection:GetState() < HERO_SELECTION_PHASE_END then return end
+	local tempest_modifier = npc:FindModifierByName("modifier_arc_warden_tempest_double")
+	if tempest_modifier then
+		local caster = tempest_modifier:GetCaster()
+		if npc:GetUnitName() == "npc_dota_hero" then
+			npc:SetUnitName("npc_dota_hero_arena_base")
+			npc:AddNewModifier(unit, nil, "modifier_dragon_knight_dragon_form", {duration = 0})
 		end
-		local tempest_modifier = npc:FindModifierByName("modifier_arc_warden_tempest_double")
-		if tempest_modifier then
-			local caster = tempest_modifier:GetCaster()
-			if npc:GetUnitName() == "npc_dota_hero" then
-				npc:SetUnitName("npc_dota_hero_arena_base")
-				npc:AddNewModifier(unit, nil, "modifier_dragon_knight_dragon_form", {duration = 0})
-			end
-			if npc.tempestDoubleSecondSpawn then
-				--Tempest Double resets stats and stuff, so everything needs to be put back where they belong
-				Illusions:_copyAbilities(caster, npc)
-				npc:ModifyStrength(caster:GetBaseStrength() - npc:GetBaseStrength())
-				npc:ModifyIntellect(caster:GetBaseIntellect() - npc:GetBaseIntellect())
-				npc:ModifyAgility(caster:GetBaseAgility() - npc:GetBaseAgility())
-				npc.Additional_str = caster.Additional_str
-				npc.Additional_int = caster.Additional_int
-				npc.Additional_agi = caster.Additional_agi
-				npc:SetHealth(caster:GetHealth())
-				npc:SetMana(caster:GetMana())
-			else
-				Illusions:_copyEverything(caster, npc)
-				npc.tempestDoubleSecondSpawn = true
-			end
+		if npc.tempestDoubleSecondSpawn then
+			--Tempest Double resets stats and stuff, so everything needs to be put back where they belong
+			Illusions:_copyAbilities(caster, npc)
+			npc:ModifyStrength(caster:GetBaseStrength() - npc:GetBaseStrength())
+			npc:ModifyIntellect(caster:GetBaseIntellect() - npc:GetBaseIntellect())
+			npc:ModifyAgility(caster:GetBaseAgility() - npc:GetBaseAgility())
+			npc.Additional_str = caster.Additional_str
+			npc.Additional_int = caster.Additional_int
+			npc.Additional_agi = caster.Additional_agi
+			npc:SetHealth(caster:GetHealth())
+			npc:SetMana(caster:GetMana())
+		else
+			Illusions:_copyEverything(caster, npc)
+			npc.tempestDoubleSecondSpawn = true
 		end
-		Timers:NextTick(function()
-			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() then
-				local illusionParent = npc:GetIllusionParent()
-				if illusionParent then Illusions:_copyEverything(illusionParent, npc) end
-				if npc:GetPlayerOwner() then
-					Physics:Unit(npc)
-					npc:SetAutoUnstuck(true)
-					DynamicWearables:AutoEquip(npc)
-					if npc.ModelOverride then
-						npc:SetModel(npc.ModelOverride)
-						npc:SetOriginalModel(npc.ModelOverride)
-					end
-					if not npc:IsWukongsSummon() then
-						npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
-						if npc:IsTrueHero() then
-							npc:ApplyDelayedTalents()
+	end
+	Timers:NextTick(function()
+		if not IsValidEntity(npc) or not npc:IsAlive() then return end
+		local illusionParent = npc:GetIllusionParent()
+		if illusionParent then Illusions:_copyEverything(illusionParent, npc) end
 
-							PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
-							CustomAbilities:RandomOMGRollAbilities(npc)
-							if not npc.OnDuel and Duel:IsDuelOngoing() then
-								Duel:SetUpVisitor(npc)
-							end
-						end
-					end
+		Physics:Unit(npc)
+		npc:SetAutoUnstuck(true)
+		DynamicWearables:AutoEquip(npc)
+		if npc.ModelOverride then
+			npc:SetModel(npc.ModelOverride)
+			npc:SetOriginalModel(npc.ModelOverride)
+		end
+		if not npc:IsWukongsSummon() then
+			npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
+			if npc:IsTrueHero() then
+				npc:ApplyDelayedTalents()
+
+				PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
+				CustomAbilities:RandomOMGRollAbilities(npc)
+				if not npc.OnDuel and Duel:IsDuelOngoing() then
+					Duel:SetUpVisitor(npc)
 				end
 			end
-		end)
-	end
+		end
+	end)
 end
 
 -- An item was picked up off the ground
