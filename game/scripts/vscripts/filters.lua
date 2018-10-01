@@ -30,15 +30,25 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		return false
 	end
 
-	if unit:IsCourier() and (
-		order_type == DOTA_UNIT_ORDER_CAST_POSITION or
-		order_type == DOTA_UNIT_ORDER_CAST_TARGET or
-		order_type == DOTA_UNIT_ORDER_CAST_TARGET_TREE or
-		order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or
-		order_type == DOTA_UNIT_ORDER_CAST_TOGGLE
-	) and ability.IsItem and ability:IsItem() then
-		Containers:DisplayError(playerId, "dota_hud_error_courier_cant_use_item")
-		return false
+	if unit:IsCourier() then
+		if (
+			order_type == DOTA_UNIT_ORDER_CAST_POSITION or
+			order_type == DOTA_UNIT_ORDER_CAST_TARGET or
+			order_type == DOTA_UNIT_ORDER_CAST_TARGET_TREE or
+			order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or
+			order_type == DOTA_UNIT_ORDER_CAST_TOGGLE
+		) and ability and ability:IsItem() then
+			Containers:DisplayError(playerId, "dota_hud_error_courier_cant_use_item")
+			return false
+		end
+
+		if (order_type == DOTA_UNIT_ORDER_DROP_ITEM or order_type == DOTA_UNIT_ORDER_GIVE_ITEM) and ability and ability:IsItem() then
+			local purchaser = ability:GetPurchaser()
+			if purchaser and purchaser:GetPlayerID() ~= playerId then
+				Containers:DisplayError(playerId, "arena_hud_error_courier_cant_order_item")
+				return false
+			end
+		end
 	end
 
 	if not unit:IsConsideredHero() then return true end
