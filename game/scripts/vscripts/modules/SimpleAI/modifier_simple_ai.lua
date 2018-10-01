@@ -24,6 +24,7 @@ function modifier_simple_ai:OnTakeDamage(keys)
 	end
 end
 
-function modifier_simple_ai:OnOrder(keys)
-	self:GetParent().ai:OnOrder(keys)
+function modifier_simple_ai:OnOrder(keys
+	local ai = self:GetParent().ai
+	if ai then ai:OnOrder(keys) end
 end
