@@ -58,10 +58,6 @@ function GameMode:OnNPCSpawned(keys)
 
 							PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
 							CustomAbilities:RandomOMGRollAbilities(npc)
-							if IsValidEntity(npc.BloodstoneDummies) then
-								UTIL_Remove(npc.BloodstoneDummies)
-								npc.BloodstoneDummies = nil
-							end
 							if not npc.OnDuel and Duel:IsDuelOngoing() then
 								Duel:SetUpVisitor(npc)
 							end
