@@ -2,7 +2,8 @@
 {
 	"anakim_wisps"
 	{
-		"BaseClass"             		"ability_datadriven"
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"             		"heroes/hero_anakim/wisps.lua"
 		"AbilityTextureName"			"arena/anakim_wisps"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -34,65 +35,6 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"critical_chance_pct"	"33"
-			}
-		}
-
-		"OnCreated"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"kv.lua"
-				"Function"		"SetMaxLevel"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_anakim_wisps"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"OnAttackStart"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName" 	"modifier_anakim_wisps_crit"
-						"Target" 		"CASTER"
-					}
-
-					"Random"
-					{
-						"Chance"		"%critical_chance_pct"
-						"OnSuccess"
-						{
-							"ApplyModifier"
-							{
-								"ModifierName"	"modifier_anakim_wisps_crit"
-								"Target"    	"CASTER"
-							}
-						}
-					}
-				}
-			}
-
-			"modifier_anakim_wisps_crit"
-			{
-				"IsPurgable"		"0"
-				"IsHidden"			"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%critical_damage_pct"
-				}
-
-				"OnAttackLanded"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"			"modifier_anakim_wisps_crit"
-						"Target"				"CASTER"
-					}
-				}
 			}
 		}
 	}
@@ -208,6 +150,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityTextureName"			"arena/anakim_divine_gift"
 		"MaxLevel"	"7"
+		
+		"precache"
+		{
+			"model"     "models/untis/anakim_pet/anakim_pet.vmdl"
+		}
 
 		"AbilitySpecial"
 		{

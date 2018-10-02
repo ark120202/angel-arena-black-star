@@ -30,15 +30,25 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		return false
 	end
 
-	if unit:IsCourier() and (
-		order_type == DOTA_UNIT_ORDER_CAST_POSITION or
-		order_type == DOTA_UNIT_ORDER_CAST_TARGET or
-		order_type == DOTA_UNIT_ORDER_CAST_TARGET_TREE or
-		order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or
-		order_type == DOTA_UNIT_ORDER_CAST_TOGGLE
-	) and ability.IsItem and ability:IsItem() then
-		Containers:DisplayError(playerId, "dota_hud_error_courier_cant_use_item")
-		return false
+	if unit:IsCourier() then
+		if (
+			order_type == DOTA_UNIT_ORDER_CAST_POSITION or
+			order_type == DOTA_UNIT_ORDER_CAST_TARGET or
+			order_type == DOTA_UNIT_ORDER_CAST_TARGET_TREE or
+			order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or
+			order_type == DOTA_UNIT_ORDER_CAST_TOGGLE
+		) and ability and ability:IsItem() then
+			Containers:DisplayError(playerId, "dota_hud_error_courier_cant_use_item")
+			return false
+		end
+
+		if (order_type == DOTA_UNIT_ORDER_DROP_ITEM or order_type == DOTA_UNIT_ORDER_GIVE_ITEM) and ability and ability:IsItem() then
+			local purchaser = ability:GetPurchaser()
+			if purchaser and purchaser:GetPlayerID() ~= playerId then
+				Containers:DisplayError(playerId, "arena_hud_error_courier_cant_order_item")
+				return false
+			end
+		end
 	end
 
 	if not unit:IsConsideredHero() then return true end
@@ -57,7 +67,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 					return false
 				end
 			end
-			if IsInBox(orderVector, Duel.BlockerBox[1], Duel.BlockerBox[2]) then
+			if Duel:IsOnDuel(orderVector) then
 				Containers:DisplayError(playerId, "#arena_hud_error_cant_target_duel")
 				return false
 			end
@@ -73,6 +83,16 @@ function GameMode:ExecuteOrderFilter(filterTable)
 				return false
 			end
 		end
+		if abilityname == "morphling_replicate" then
+			if target:HasAbility("doppelganger_mimic") then
+				Containers:DisplayError(playerId, "#arena_hud_error_cant_replicate_hero")
+				return false
+			end
+			if target:GetFullName() == unit:GetFullName() then
+				Containers:DisplayError(playerId, "#arena_hud_error_cant_replicate_hero")
+				return false
+			end
+		end
 		if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_champion")
 			return false
@@ -84,6 +104,15 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		if target:IsBoss() and BOSS_BANNED_ABILITIES[abilityname] then
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_boss")
 			return false
+		end
+	elseif order_type == DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK then
+		local lockType = filterTable.entindex_target
+		if ability.auto_lock_order then
+			ability.auto_lock_order = false
+		elseif lockType == 0 then
+			ability.player_locked = false
+		else
+			ability.player_locked = true
 		end
 	end
 
@@ -119,9 +148,6 @@ function GameMode:DamageFilter(filterTable)
 			end
 			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and victim:IsBoss() then
 				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
-			end
-			if inflictorname == "templar_assassin_psi_blades" and victim:IsRealCreep() then
-				filterTable.damage = damage * 0.5
 			end
 		end
 		if victim:IsBoss() and (attacker:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() > 950 then

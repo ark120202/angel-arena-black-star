@@ -6,25 +6,25 @@ DOTA_Tooltip_ability_shinobu_vampire_blood: Vampire Blood
 DOTA_Tooltip_ability_shinobu_vampire_blood_Description: |-
   Kiss-Shot Acerola-Orion Heart-Under-Blade is a legendary vampire, she can't regenerate her health using any item or ability and hasn't passive regeneration, but instead she has lifesteal and bonuses based on her current health.
 
-  [LEVEL 1] (0% HP or more):
-  ~LIFESTEAL:%lifesteal_pct_lvl1%%
-  ~ATTACK SPEED: %bonus_attack_speed_lvl1%
-  ~MOVEMENT SPEED: %bonus_move_speed_lvl1%
+  0% HP or more:
+  LIFE STEAL: %lifesteal_pct_lvl1%%
+  ATTACK SPEED: %bonus_attack_speed_lvl1%
+  MOVEMENT SPEED: %bonus_move_speed_lvl1%
 
-  [LEVEL 2] (%hp_mark_pct_lvl2%%% HP or more):
-  ~LIFESTEAL:%lifesteal_pct_lvl2%%
-  ~ATTACK SPEED: %bonus_attack_speed_lvl2%
-  ~MOVEMENT SPEED: %bonus_move_speed_lvl2%
+  %hp_mark_pct_lvl2%%% HP or more:
+  LIFE STEAL: %lifesteal_pct_lvl2%%
+  ATTACK SPEED: %bonus_attack_speed_lvl2%
+  MOVEMENT SPEED: %bonus_move_speed_lvl2%
 
-  [LEVEL 3] (%hp_mark_pct_lvl3%%% HP or more):
-  ~LIFESTEAL:%lifesteal_pct_lvl3%%
-  ~ATTACK SPEED: %bonus_attack_speed_lvl3%
-  ~MOVEMENT SPEED: %bonus_move_speed_lvl3%
+  %hp_mark_pct_lvl3%%% HP or more:
+  LIFE STEAL: %lifesteal_pct_lvl3%%
+  ATTACK SPEED: %bonus_attack_speed_lvl3%
+  MOVEMENT SPEED: %bonus_move_speed_lvl3%
 
-  [LEVEL 4] (%hp_mark_pct_lvl4%%% HP or more):
-  ~LIFESTEAL:%lifesteal_pct_lvl4%%
-  ~ATTACK SPEED: %bonus_attack_speed_lvl4%
-  ~MOVEMENT SPEED: %bonus_move_speed_lvl4%
+  %hp_mark_pct_lvl4%%% HP or more:
+  LIFE STEAL: %lifesteal_pct_lvl4%%
+  ATTACK SPEED: %bonus_attack_speed_lvl4%
+  MOVEMENT SPEED: %bonus_move_speed_lvl4%
 DOTA_Tooltip_ability_shinobu_vampire_blood_Lore: Vampiric blood has its drawbacks, but there are many more advantages.
 DOTA_Tooltip_ability_shinobu_vampire_blood_Note0: Shinobu respawns with 50% health
 DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl1: Vampire Blood - Level 1

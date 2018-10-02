@@ -66,7 +66,7 @@ if IsServer() then
 				end
 			end
 
-			Bosses:MakeBossAI(clone, "cursed_zeld", { spawnPos = parent.ai.spawnPos })
+			Bosses:MakeBossAI(clone, "cursed_zeld", { spawnPos = parent.ai.spawnPos + direction * i })
 		end
 	end
 

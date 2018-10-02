@@ -17,13 +17,13 @@ function HeroSelection:SelectHero(playerId, heroName, beforeReplace, afterReplac
 
 						if beforeReplace then beforeReplace(oldhero) end
 						if oldhero then
-							Timers:CreateTimer(0.03, function()
+							Timers:NextTick(function()
 								oldhero:ClearNetworkableEntityInfo()
 								UTIL_Remove(oldhero)
 							end)
 							if oldhero:GetUnitName() == baseNewHero then -- Base unit equals, ReplaceHeroWith won't do anything
 								local temp = PlayerResource:ReplaceHeroWith(playerId, FORCE_PICKED_HERO, 0, 0)
-								Timers:CreateTimer(0.03, function()
+								Timers:NextTick(function()
 									temp:ClearNetworkableEntityInfo()
 									UTIL_Remove(temp)
 								end)

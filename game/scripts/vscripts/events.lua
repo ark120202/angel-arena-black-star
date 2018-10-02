@@ -11,39 +11,56 @@ end
 -- An NPC has spawned somewhere in game.	This includes heroes
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
-	if npc:IsHero() then
-		if HeroSelection:GetState() < HERO_SELECTION_PHASE_END then
-			--npc:AddNoDraw()
-			return
+	if not npc:IsHero() then return end
+	if HeroSelection:GetState() < HERO_SELECTION_PHASE_END then return end
+	local tempest_modifier = npc:FindModifierByName("modifier_arc_warden_tempest_double")
+	if tempest_modifier then
+		local caster = tempest_modifier:GetCaster()
+		if npc:GetUnitName() == "npc_dota_hero" then
+			npc:SetUnitName("npc_dota_hero_arena_base")
+			npc:AddNewModifier(unit, nil, "modifier_dragon_knight_dragon_form", {duration = 0})
 		end
-		Timers:CreateTimer(function()
-			if IsValidEntity(npc) and npc:IsAlive() and npc:IsHero() and npc:GetPlayerOwner() then
-				Physics:Unit(npc)
-				npc:SetAutoUnstuck(true)
-				DynamicWearables:AutoEquip(npc)
-				if npc.ModelOverride then
-					npc:SetModel(npc.ModelOverride)
-					npc:SetOriginalModel(npc.ModelOverride)
-				end
-				if not npc:IsWukongsSummon() then
-					npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
-					if npc:IsTrueHero() then
-						npc:ApplyDelayedTalents()
+		if npc.tempestDoubleSecondSpawn then
+			--Tempest Double resets stats and stuff, so everything needs to be put back where they belong
+			Illusions:_copyAbilities(caster, npc)
+			npc:ModifyStrength(caster:GetBaseStrength() - npc:GetBaseStrength())
+			npc:ModifyIntellect(caster:GetBaseIntellect() - npc:GetBaseIntellect())
+			npc:ModifyAgility(caster:GetBaseAgility() - npc:GetBaseAgility())
+			npc.Additional_str = caster.Additional_str
+			npc.Additional_int = caster.Additional_int
+			npc.Additional_agi = caster.Additional_agi
+			npc:SetHealth(caster:GetHealth())
+			npc:SetMana(caster:GetMana())
+		else
+			Illusions:_copyEverything(caster, npc)
+			npc.tempestDoubleSecondSpawn = true
+		end
+	end
+	Timers:NextTick(function()
+		if not IsValidEntity(npc) or not npc:IsAlive() then return end
+		local illusionParent = npc:GetIllusionParent()
+		if illusionParent then Illusions:_copyEverything(illusionParent, npc) end
 
-						PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
-						CustomAbilities:RandomOMGRollAbilities(npc)
-						if IsValidEntity(npc.BloodstoneDummies) then
-							UTIL_Remove(npc.BloodstoneDummies)
-							npc.BloodstoneDummies = nil
-						end
-						if not npc.OnDuel and Duel:IsDuelOngoing() then
-							Duel:SetUpVisitor(npc)
-						end
-					end
+		Physics:Unit(npc)
+		npc:SetAutoUnstuck(true)
+		DynamicWearables:AutoEquip(npc)
+		if npc.ModelOverride then
+			npc:SetModel(npc.ModelOverride)
+			npc:SetOriginalModel(npc.ModelOverride)
+		end
+		if not npc:IsWukongsSummon() then
+			npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
+			if npc:IsTrueHero() then
+				npc:ApplyDelayedTalents()
+
+				PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
+				CustomAbilities:RandomOMGRollAbilities(npc)
+				if not npc.OnDuel and Duel:IsDuelOngoing() then
+					Duel:SetUpVisitor(npc)
 				end
 			end
-		end)
-	end
+		end
+	end)
 end
 
 -- An item was picked up off the ground
@@ -112,17 +129,20 @@ function GameMode:OnEntityKilled(keys)
 	if keys.entindex_attacker then
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
-	--[[local killerAbility
-	if keys.entindex_inflictor then
-		killerAbility = EntIndexToHScript( keys.entindex_inflictor )
-	end]]
 
 	if killedUnit then
+		local killedTeam = killedUnit:GetTeam()
 		if killedUnit:IsHero() then
 			killedUnit:RemoveModifierByName("modifier_shard_of_true_sight") -- For some reason simple KV modifier not removes on death without this
-			if killedUnit:IsRealHero() then
-				local respawnTime = killedUnit:CalculateRespawnTime()
+			if killedUnit:IsRealHero() and not killedUnit:IsReincarnating() then
+				if killerEntity then
+					local killerTeam = killerEntity:GetTeam()
+					if killerTeam ~= killedTeam and Teams:IsEnabled(killerTeam) then
+						Teams:ModifyScore(killerTeam, Teams:GetTeamKillWeight(killedTeam))
+					end
+				end
 
+				local respawnTime = killedUnit:CalculateRespawnTime()
 				local killedUnits = killedUnit:GetFullName() == "npc_dota_hero_meepo" and
 					MeepoFixes:FindMeepos(PlayerResource:GetSelectedHeroEntity(killedUnit:GetPlayerID()), true) or
 					{ killedUnit }
@@ -160,6 +180,10 @@ function GameMode:OnEntityKilled(keys)
 			Spawner:OnCreepDeath(killedUnit)
 		end
 
+		if not killedUnit:UnitCanRespawn() then
+			killedUnit:ClearNetworkableEntityInfo()
+		end
+
 		if killerEntity then
 			for _, individual_hero in ipairs(HeroList:GetAllHeroes()) do
 				if individual_hero:IsAlive() and individual_hero:HasModifier("modifier_shinobu_hide_in_shadows_invisibility") then
@@ -171,13 +195,9 @@ function GameMode:OnEntityKilled(keys)
 				end
 			end
 
-			if killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then
+			if killerEntity:GetTeam() ~= killedTeam and (killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID) then
 				local plId = killerEntity.GetPlayerID ~= nil and killerEntity:GetPlayerID() or killerEntity:GetPlayerOwnerID()
-				if (
-					plId > -1 and
-					not (killerEntity.HasModifier and killerEntity:HasModifier("modifier_item_golden_eagle_relic_enabled")) and
-					killerEntity:GetUnitName() ~= "npc_dota_lucifers_claw_doomling"
-				) then
+				if plId > -1 and not (killerEntity.HasModifier and killerEntity:HasModifier("modifier_item_golden_eagle_relic_enabled")) then
 					local gold = RandomInt(killedUnit:GetMinimumGoldBounty(), killedUnit:GetMaximumGoldBounty())
 					Gold:ModifyGold(plId, gold)
 					SendOverheadEventMessage(killerEntity:GetPlayerOwner(), OVERHEAD_ALERT_GOLD, killedUnit, gold, killerEntity:GetPlayerOwner())
@@ -219,9 +239,7 @@ function GameMode:OnItemCombined(keys)
 					end
 					newItem:SetOwner(hero)
 
-					Timers:CreateTimer(function()
-						hero:AddItem(newItem)
-					end)
+					Timers:NextTick(function() hero:AddItem(newItem) end)
 				end
 			end
 		end

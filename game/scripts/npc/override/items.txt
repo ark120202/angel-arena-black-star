@@ -232,7 +232,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_regen"			"120"
+				"health_regen"			"40"
 			}
 		}
 	}
@@ -784,6 +784,29 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_crit_damage"	"100"
+			}
+		}
 	}
 	"item_recipe_basher"
 	{
@@ -1348,6 +1371,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"creep_damage_pct"			"70"
+				"CalculateSpellDamageTooltip" "0"
 			}
 		}
 	}
@@ -1518,7 +1542,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"ItemCost"						"500"
+		"ItemCost"						"2000"
 	}
 	"item_meteor_hammer"
 	{

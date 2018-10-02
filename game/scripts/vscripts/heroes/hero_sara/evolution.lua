@@ -49,10 +49,14 @@ if IsServer() then
 		self:SetDuration(60, true)
 		self.MaxEnergy = 100
 		self.Energy = self.MaxEnergy
+		local illusionParent = parent:GetIllusionParent()
 		if parent.SavedEnergyStates then
 			self.Energy = parent.SavedEnergyStates.Energy or self.Energy
 			self.MaxEnergy = parent.SavedEnergyStates.MaxEnergy or self.MaxEnergy
 			parent.SavedEnergyStates = nil
+		elseif IsValidEntity(illusionParent) and illusionParent.GetEnergy and illusionParent.GetMaxEnergy then
+			self.Energy = illusionParent:GetEnergy()
+			self.MaxEnergy = illusionParent:GetMaxEnergy()
 		end
 		parent:SetNetworkableEntityInfo("Energy", self.Energy)
 		parent:SetNetworkableEntityInfo("MaxEnergy", self.MaxEnergy)

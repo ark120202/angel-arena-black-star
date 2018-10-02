@@ -51,6 +51,7 @@ CUSTOM_WEARABLES = {
 		},
 	},
 	anakim_wisps = {
+		slot = "ambient",
 		heroes = {"npc_arena_hero_anakim"},
 		default = true,
 		particles = {
@@ -102,11 +103,5 @@ CUSTOM_WEARABLES = {
 				}
 			}
 		},
-	},
-	shinobu_umbrella = {
-		heroes = {"npc_arena_hero_shinobu"},
-		model = "models/custom/umbrella_rainbow.vmdl",
-		strategy = WEARABLES_ATTACH_METHOD_ATTACHMENTS,
-		attachment = "attach_hitloc",
 	},
 }

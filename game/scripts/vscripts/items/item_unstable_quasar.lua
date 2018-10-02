@@ -161,8 +161,15 @@ function modifier_item_unstable_quasar_aura:GetModifierMagicalResistanceBonus()
 	return -self:GetAbility():GetSpecialValueFor("aura_resist_debuff_pct")
 end
 
-function modifier_item_unstable_quasar_aura:CheckState()
-	return {
-		[MODIFIER_STATE_INVISIBLE] = false,
-	}
+if IsServer() then
+	function modifier_item_unstable_quasar_aura:OnCreated()
+		local owner = self:GetParent()
+		local caster = self:GetCaster()
+		local ability = self:GetAbility()
+		self.truesight = owner:AddNewModifier(caster, ability, "modifier_truesight", nil)
+	end
+
+	function modifier_item_unstable_quasar_aura:OnDestroy()
+		if not self.truesight:IsNull() then self.truesight:Destroy() end
+	end
 end

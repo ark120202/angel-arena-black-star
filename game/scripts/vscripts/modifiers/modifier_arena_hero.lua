@@ -92,6 +92,10 @@ if IsServer() then
 		end
 		if k.unit == parent then
 			parent:RemoveNoDraw()
+
+			if parent:IsIllusion() then
+				parent:ClearNetworkableEntityInfo()
+			end
 		end
 	end
 
@@ -99,9 +103,7 @@ if IsServer() then
 		-- TODO: Check if still required
 		if k.unit == self:GetParent() and k.unit:GetUnitName() == "npc_dota_hero_crystal_maiden" then
 			k.unit:AddNoDraw()
-			Timers:CreateTimer(0.03, function()
-				k.unit:RemoveNoDraw()
-			end)
+			Timers:NextTick(function() k.unit:RemoveNoDraw() end)
 		end
 	end
 
@@ -144,6 +146,7 @@ if IsServer() then
 		local originalAbility = keys.ability
 		self.absorb_without_check = false
 		if originalAbility:GetCaster():GetTeam() == parent:GetTeam() then return end
+		if SPELL_REFLECT_IGNORED_ABILITIES[originalAbility:GetAbilityName()] then return end
 
 		local item_lotus_sphere = FindItemInInventoryByName(parent, "item_lotus_sphere", false, false, true)
 
