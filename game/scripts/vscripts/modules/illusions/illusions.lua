@@ -136,6 +136,7 @@ function Illusions:create(info)
 
 	Illusions:_copyLevel(unit, illusion)
 
+	illusion.isCustomIllusion = true
 	illusion:AddNewModifier(unit, ability, "modifier_illusion", {
 		duration = info.duration,
 		outgoing_damage = info.damageOutgoing - 100,
