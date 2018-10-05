@@ -3126,7 +3126,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"525"
 		"AbilityCastPoint"	"0.35 0.35 0.35 0.35 0.35 0.25 0.15"
-		"AbilityCooldown"	"8.0"
+		"AbilityCooldown"	"15.0"
 		"AbilityDamage"		"50 100 150 200 250 300 350"
 		"AbilityManaCost"	"140"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
@@ -3211,7 +3211,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"9 10 11 12 13 14 15"
+				"crit_chance"				"10 12 14 16 18 20 25"
 			}
 			"03"
 			{
