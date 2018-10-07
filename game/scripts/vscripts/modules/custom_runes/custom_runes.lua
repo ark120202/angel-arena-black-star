@@ -102,7 +102,6 @@ function CustomRunes:CreateRune(position, runeType)
 	if settings.angles then
 		container:SetAngles(unpack(settings.angles))
 	end
-	local pfx = ParticleManager:CreateParticle(settings.particle, settings.particle_attach or PATTACH_ABSORIGIN_FOLLOW, container)
 	if settings.color then
 		container:SetRenderColor(unpack(settings.color))
 	end
