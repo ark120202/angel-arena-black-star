@@ -294,6 +294,13 @@ end
 
 function GameMode:ItemAddedToInventoryFilter(filterTable)
 	local item = EntIndexToHScript(filterTable.item_entindex_const)
+  
+	if item.RuneType then 
+		local unit = EntIndexToHScript(filterTable.inventory_parent_entindex_const)
+		CustomRunes:PickUpRune(unit, item)
+		return false
+	end
+  
 	if item.suggestedSlot then
 		filterTable.suggested_slot = item.suggestedSlot
 		item.suggestedSlot = nil

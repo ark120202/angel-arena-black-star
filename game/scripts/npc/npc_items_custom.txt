@@ -1,5 +1,6 @@
 #base "items/thinkers.txt"
 #base "items/shards.txt"
+#base "items/runes.txt"
 #base "items/dagon.txt"
 #base "items/diffusal_blade.txt"
 #base "items/boss_drop.txt"
