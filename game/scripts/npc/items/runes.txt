@@ -48,6 +48,12 @@
 		"Model"						"models/props_gameplay/rune_illusion01.vmdl"
 		"ItemPurchasable"				"0"
 	}
+	"item_custom_rune_vibration"
+	{
+		"BaseClass"					"item_datadriven"
+		"Model"						"models/props_gameplay/rune_invisibility01.vmdl"
+		"ItemPurchasable"				"0"
+	}
 	"item_custom_rune_acceleration"
 	{
 		"BaseClass"					"item_datadriven"
