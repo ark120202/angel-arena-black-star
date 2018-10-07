@@ -32,10 +32,3 @@ var Check = function() {
 	$.Schedule(0, Check);
 };
 Check();
-
-
-Game.MouseEvents.OnLeftPressed.push(function(ClickBehaviors, eventName, arg) {
-	if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE) {
-		if (CurrentEntityHoveredIndex) return true;
-	}
-});
