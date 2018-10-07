@@ -38,7 +38,7 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 	end
 	if rune_multiplier then
 		for k, v in pairs(settings) do
-			if type(v) == "number" and k ~= "interval" and k ~= "illusion_incoming_damage" and k ~= "movespeed" and k ~= "z_modify" then
+			if type(v) == "number" and k ~= "interval" and k ~= "illusion_incoming_damage" and k ~= "movespeed" then
 				settings[k] = v * rune_multiplier
 			end
 		end
@@ -95,12 +95,9 @@ end
 
 function CustomRunes:CreateRune(position, runeType)
 	local settings = RUNE_SETTINGS[runeType]
-	if settings.z_modify then
-		position.z = position.z + settings.z_modify
-	end
 	local entity = CreateItem(settings.item, nil, nil)
-	local container = CreateItemOnPositionSync(position, entity)
 	entity.RuneType = runeType
+	local container = CreateItemOnPositionSync(position, entity)
 	container:SetAbsOrigin(position)
 	if settings.angles then
 		container:SetAngles(unpack(settings.angles))
