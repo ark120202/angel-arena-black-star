@@ -127,12 +127,10 @@ RUNE_SETTINGS = {
 		duration = 45,
 		aura_radius = 1200,
 		damage_heal_pct = 30,
-		angles = {0, 270, 0},
 	},
 	[ARENA_RUNE_SPIKES] = {
 		item = "item_custom_rune_spikes",
 		duration = 25,
 		damage_reflection_pct = 50,
-		angles = {0, 270, 0},
 	}
 }

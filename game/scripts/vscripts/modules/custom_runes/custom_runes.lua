@@ -99,9 +99,6 @@ function CustomRunes:CreateRune(position, runeType)
 	entity.RuneType = runeType
 	local container = CreateItemOnPositionSync(position, entity)
 	container:SetAbsOrigin(position)
-	if settings.angles then
-		container:SetAngles(unpack(settings.angles))
-	end
 	if settings.color then
 		container:SetRenderColor(unpack(settings.color))
 	end
