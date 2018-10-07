@@ -7782,12 +7782,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"10 40"
+				"cleave_damage_percent"	"10 25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"10 60"
+				"quelling_bonus_damage_pct"	"10 25"
 			}
 			"06"
 			{
@@ -7852,12 +7852,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"10 40"
+				"cleave_damage_percent"	"10 25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"10 60"
+				"quelling_bonus_damage_pct"	"10 25"
 			}
 			"06"
 			{
@@ -7967,12 +7967,12 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"45"
+				"cleave_damage_percent"	"35"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"70"
+				"quelling_bonus_damage_pct"	"30"
 			}
 			"13"
 			{
