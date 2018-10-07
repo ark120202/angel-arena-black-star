@@ -105,7 +105,7 @@ RUNE_SETTINGS = {
 		spell_amplify = 50, --Tooltip
 	},
 	[ARENA_RUNE_FLAME] = {
-		item = "item_custom_rune_illusion",
+		item = "item_custom_rune_flame",
 		particle = "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf",
 		color = {255, 30, 0},
 		duration = 30,
@@ -113,7 +113,7 @@ RUNE_SETTINGS = {
 		radius = 350, --Tooltip
 	},
 	[ARENA_RUNE_ACCELERATION] = {
-		item = "item_custom_rune_bounty",
+		item = "item_custom_rune_acceleration",
 		particle = "particles/arena/generic_gameplay/rune_acceleration.vpcf",
 		color = {20, 20, 255},
 		duration = 35,
@@ -121,7 +121,7 @@ RUNE_SETTINGS = {
 		xp_multiplier = 2,
 	},
 	[ARENA_RUNE_VIBRATION] = {
-		item = "item_custom_rune_invisibility",
+		item = "item_custom_rune_vibration",
 		particle = "particles/arena/generic_gameplay/rune_vibration.vpcf",
 		color = {0, 0, 255},
 		duration = 20,
@@ -132,7 +132,7 @@ RUNE_SETTINGS = {
 		fullForce = 700,
 	},
 	[ARENA_RUNE_SOUL_STEAL] = {
-		item = "item_custom_rune_heart",
+		item = "item_custom_rune_soul_steal",
 		particle = "particles/neutral_fx/prowler_shaman_stomp_debuff_glow.vpcf",
 		color = {0, 0, 0},
 		duration = 45,
@@ -141,7 +141,7 @@ RUNE_SETTINGS = {
 		angles = {0, 270, 0},
 	},
 	[ARENA_RUNE_SPIKES] = {
-		item = "item_custom_rune_heart",
+		item = "item_custom_rune_spikes",
 		particle = "particles/items_fx/blademail.vpcf",
 		particle_attach = PATTACH_ABSORIGIN,
 		duration = 25,
