@@ -77,7 +77,7 @@ REFRESH_LIST_IGNORE_REARM = {
 	zuus_thundergods_wrath = true,
 	enigma_black_hole = true,
 	freya_pain_reflection = true,
-	skeleton_king_reincarnation_arena = true,
+	skeleton_king_reincarnation = true,
 	dazzle_shallow_grave = true,
 	zuus_cloud = true,
 	ancient_apparition_ice_blast = true,
@@ -134,6 +134,7 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	centaur_return = true,
 	huskar_life_break = true,
 	item_spirit_helix = true,
+	item_iron_talon = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
@@ -154,4 +155,11 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 }
 
 PERCENT_DAMAGE_MODIFIERS = {
+}
+
+-- https://dota2.gamepedia.com/Spell_Reflection#Not_reflected_abilities
+SPELL_REFLECT_IGNORED_ABILITIES = {
+	grimstroke_soul_chain = true,
+	morphling_replicate = true,
+	rubick_spell_steal = true,
 }

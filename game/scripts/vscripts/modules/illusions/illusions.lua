@@ -48,12 +48,15 @@ end
 function Illusions:_copyShards(unit, illusion)
 	if unit.Additional_str then
 		illusion:ModifyStrength(unit.Additional_str)
+		illusion.Additional_str = unit.Additional_str
 	end
 	if unit.Additional_agi then
 		illusion:ModifyAgility(unit.Additional_agi)
+		illusion.Additional_agi = unit.Additional_agi
 	end
 	if unit.Additional_int then
 		illusion:ModifyIntellect(unit.Additional_int)
+		illusion.Additional_int = unit.Additional_int
 	end
 	if unit.Additional_attackspeed then
 		local modifier = illusion:FindModifierByName("modifier_item_shard_attackspeed_stack")
@@ -63,6 +66,7 @@ function Illusions:_copyShards(unit, illusion)
 		if modifier then
 			modifier:SetStackCount(unit.Additional_attackspeed)
 		end
+		illusion.Additional_attackspeed = unit.Additional_attackspeed
 	end
 end
 
@@ -70,15 +74,6 @@ function Illusions:_copyLevel(unit, illusion)
 	local level = unit:GetLevel()
 	for i = 1, level - 1 do
 		illusion:HeroLevelUp(false)
-	end
-end
-
-function Illusions:_copySpecialCustomFields(unit, illusion)
-	if unit.GetEnergy and unit.GetMaxEnergy then
-		illusion.SavedEnergyStates = {
-			Energy = unit:GetEnergy(),
-			MaxEnergy = unit:GetMaxEnergy()
-		}
 	end
 end
 
@@ -93,6 +88,24 @@ function Illusions:_copyAppearance(unit, illusion)
 	if rc ~= Vector(255, 255, 255) then
 		illusion:SetRenderColor(rc.x, rc.y, rc.z)
 	end
+end
+
+function Illusions:_copyEverything(unit, illusion)
+	illusion:SetAbilityPoints(0)
+	Illusions:_copyAbilities(unit, illusion)
+	Illusions:_copyItems(unit, illusion)
+	Illusions:_copyAppearance(unit, illusion)
+	illusion.UnitName = unit.UnitName
+	local heroName = unit:GetFullName()
+	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
+		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
+	end
+
+	Illusions:_copyShards(unit, illusion)
+	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
+
+	illusion:SetHealth(unit:GetHealth())
+	illusion:SetMana(unit:GetMana())
 end
 
 function Illusions:create(info)
@@ -122,27 +135,14 @@ function Illusions:create(info)
 	illusion:SetForwardVector(unit:GetForwardVector())
 
 	Illusions:_copyLevel(unit, illusion)
-	illusion:SetAbilityPoints(0)
-	Illusions:_copySpecialCustomFields(unit, illusion)
-	Illusions:_copyAbilities(unit, illusion)
-	Illusions:_copyItems(unit, illusion)
-	Illusions:_copyAppearance(unit, illusion)
 
-	illusion:SetHealth(unit:GetHealth())
-	illusion:SetMana(unit:GetMana())
+	illusion.isCustomIllusion = true
 	illusion:AddNewModifier(unit, ability, "modifier_illusion", {
 		duration = info.duration,
 		outgoing_damage = info.damageOutgoing - 100,
 		incoming_damage = info.damageIncoming - 100,
 	})
 	illusion:MakeIllusion()
-	Illusions:_copyShards(unit, illusion)
-	illusion.UnitName = unit.UnitName
-	illusion:SetNetworkableEntityInfo("unit_name", illusion:GetFullName())
-	local heroName = unit:GetFullName()
-	if not NPC_HEROES[heroName] and NPC_HEROES_CUSTOM[heroName] then
-		TransformUnitClass(illusion, NPC_HEROES_CUSTOM[heroName], true)
-	end
 
 	return illusion
 end

@@ -1162,12 +1162,12 @@
 			"10"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming"			"200"
+				"illusion_damage_percent_incoming"			"250"
 			}
 			"11"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming_tooltip"	"300"
+				"illusion_damage_percent_incoming_tooltip"	"350"
 			}
 			"12"
 			{
@@ -1571,12 +1571,12 @@
 			"10"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming"					"250"
+				"illusion_damage_percent_incoming"					"200"
 			}
 			"11"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming_tooltip"			"350"
+				"illusion_damage_percent_incoming_tooltip"			"300"
 			}
 			"12"
 			{
@@ -5656,12 +5656,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen_per_stack"	"2.0"
+				"hp_regen_per_stack"	"1.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movespeed_per_stack"	"3"
+				"movespeed_per_stack"	"1"
 			}
 			"03"
 			{
@@ -5671,7 +5671,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"20.0"
+				"buff_duration"			"15.0"
 			}
 			"05"
 			{
@@ -7783,12 +7783,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"20 40"
+				"cleave_damage_percent"	"10 25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"130 160"
+				"quelling_bonus_damage_pct"	"10 25"
 			}
 			"06"
 			{
@@ -7853,12 +7853,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"20 40"
+				"cleave_damage_percent"	"10 25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"130 160"
+				"quelling_bonus_damage_pct"	"10 25"
 			}
 			"06"
 			{
@@ -7923,17 +7923,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"30"
+				"bonus_strength"		"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"30"
+				"bonus_agility"			"40"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"30"
+				"bonus_intellect"		"40"
 			}
 			"05"
 			{
@@ -7968,12 +7968,12 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"45"
+				"cleave_damage_percent"	"35"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"85"
+				"quelling_bonus_damage_pct"	"30"
 			}
 			"13"
 			{
@@ -8741,72 +8741,6 @@
 			"particle"							"particle/arena/items_fx/unstable_quasar.vpcf"
 			"particle"							"particles/items_fx/diffusal_slow.vpcf"
 			"sound"								"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
-		}
-	}
-
-	"item_recipe_golden_arrow"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_golden_arrow"
-		"ItemRequirements"
-		{
-			"01"						"item_blades_of_attack;item_boots"
-		}
-	}
-
-	"item_golden_arrow"
-	{
-		"BaseClass"						"item_lua"
-		"ScriptFile"					"items/item_golden_arrow.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/golden_arrow_attributes"
-
-		"ItemQuality"					"common"
-		"ItemAliases"					"golden arrow"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		"AbilityCastPoint"				"0.5"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_speed"			"55"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"gold_per_stack"		"60"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attributes_per_stack"	"-3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_stack"		"60"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_base"			"15"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_per_stack"	"7"
-			}
 		}
 	}
 }

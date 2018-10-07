@@ -54,10 +54,11 @@ DOTA_Tooltip_ability_item_shard_attackspeed_bonus_attackspeed: +$attack
 
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
-  <h1>Active: Unwilling Ritual</h1> Targets non-hero enemy unit. The target gets sacrificed for a Doomling. Doomling possesses the abilities of the sacrificed unit and and adds it's health, damage and mana to Doomling's stats. By default doomling has %doomling_health% health, %doomling_mana% mana, %doomling_damage_min%-%doomling_damage_max% damage, %doomling_health_regen% health regeneration, %doomling_mana_regen% mana regeneration. Bounty won't be granted for the target unit. Units killed by Doomling won't grant gold to hero.
+  <h1>Active: Unwilling Ritual</h1> Targets non-hero enemy unit. The target gets sacrificed for a Doomling. Doomling possesses the abilities of the sacrificed unit and and adds it's health, damage and mana to Doomling's stats. By default doomling has %doomling_health% health, %doomling_mana% mana, %doomling_damage_min%-%doomling_damage_max% damage, %doomling_health_regen% health regeneration, %doomling_mana_regen% mana regeneration. Normal XP and gold bounty is granted for the target unit.
   <h1>Passive: Quell</h1>Increases attack damage against non-hero units by %damage_bonus% for melee heroes, and %damage_bonus_ranged% for ranged.
 DOTA_Tooltip_ability_item_lucifers_claw_Note0: The Doomling is summoned Creep-Hero with unlimited duration. It therefore can be targeted by some more spells.
 DOTA_Tooltip_ability_item_lucifers_claw_Note1: Has a 4 second cooldown on Trees.
+DOTA_Tooltip_ability_item_lucifers_claw_Note2: Can't be used on Jungle Bears.
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_all: +$all
 
@@ -1558,21 +1559,3 @@ DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: +Day Vision
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +Night Vision
 DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%+$spell_amp'
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize the singularity.
-
-DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
-DOTA_Tooltip_ability_item_golden_arrow_Description: >-
-  <h1>Active: Golden Life</h1> Gives you %gold_per_stack% gold. If you have more
-  than %attributes_per_stack% of each attribute, this ability will decrease them
-  by %attributes_per_stack%. Otherwise, deals %damage_per_stack% damage to your
-  hero.
-
-
-  All values of this ability would be increased by 100% with each use. Each use
-  also increases it's cooldown by %cooldown_per_stack%, starting from
-  %cooldown_base%.
-DOTA_Tooltip_ability_item_golden_arrow_Note0: >-
-  You won't be able to use this ability, if the active ability should damage
-  you, Golden Arrow can't be used nearby the fountain.
-DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: +$move_speed
-DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Multiplier

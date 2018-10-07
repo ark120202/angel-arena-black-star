@@ -50,7 +50,7 @@ function Duel:StartDuel()
 		if PlayerResource:IsValidPlayerID(playerId) and not PlayerResource:IsPlayerAbandoned(playerId) then
 			local team = PlayerResource:GetTeam(playerId)
 			local hero = PlayerResource:GetSelectedHeroEntity(playerId)
-			if IsValidEntity(hero) then
+			if IsValidEntity(hero) and hero:GetUnitName() ~= "npc_dota_hero_target_dummy" then
 				Duel.heroes_teams_for_duel[team] = Duel.heroes_teams_for_duel[team] or {}
 				table.insert(Duel.heroes_teams_for_duel[team], hero)
 			end
@@ -180,6 +180,7 @@ function Duel:GetWinner()
 			if (
 				IsValidEntity(unit) and
 				unit:IsAlive() and
+				not unit:IsReincarnating() and
 				not PlayerResource:IsPlayerAbandoned(unit:GetPlayerID())
 		 	) then
 				if not table.includes(teams, team) and unit.OnDuel then
@@ -293,4 +294,18 @@ function Duel:EndIfFinished()
 	if Duel:IsDuelOngoing() and Duel:GetWinner() ~= nil then
 		Duel:EndDuel()
 	end
+end
+
+
+local triggerBox
+function Duel:IsOnDuel(vector)
+	if not triggerBox then
+		local trigger = Entities:FindByName(nil, "trigger_arena_zone")
+		local origin = trigger:GetAbsOrigin()
+		triggerBox = {
+			origin + ExpandVector(trigger:GetBoundingMins(), 96),
+			origin + ExpandVector(trigger:GetBoundingMaxs(), 96),
+		}
+	end
+	return IsInBox(vector, triggerBox[1], triggerBox[2])
 end

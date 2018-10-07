@@ -32,12 +32,25 @@ CHAMPIONS_BANNED_ABILITIES = {
 }
 
 JUNGLE_BANNED_ABILITIES = {
-	chen_holy_persuasion = true,
 	item_helm_of_the_dominator = true,
+	item_lucifers_claw = true,
+	item_hand_of_midas_arena = true,
+	item_hand_of_midas_2_arena = true,
+	item_hand_of_midas_3_arena = true,
+	item_blink_staff = true,
+	item_force_staff = true,
+	item_hurricane_pike = true,
+
+	chen_holy_persuasion = true,
 	doom_bringer_devour_arena = true,
 	shinobu_eat_oddity = true,
 	clinkz_death_pact = true,
 	enchantress_enchant = true,
+	earth_spirit_boulder_smash = true,
+	batrider_flaming_lasso = true,
+	tusk_walrus_kick = true,
+	vengefulspirit_nether_swap = true,
+	life_stealer_infest = true,
 }
 
 CREEP_UPGRADE_FUNCTIONS = {
