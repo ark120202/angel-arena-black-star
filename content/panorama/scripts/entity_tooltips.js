@@ -29,7 +29,6 @@ var Check = function() {
 			$.DispatchEvent('DOTAShowTitleTextTooltip', CurrentEntityHoveredPanel, CurrentTitle, CurrentText);
 		}
 	}
-	//Dota will NOT call Schedule more than once per frame. This is required to hide the rune tooltip completely.
 	$.Schedule(0, Check);
 };
 Check();
