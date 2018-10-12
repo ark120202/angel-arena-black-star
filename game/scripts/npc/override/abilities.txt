@@ -3211,7 +3211,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"10 12 14 16 18 20 25"
+				"crit_chance"				"2 4 6 8 10 12 14"
 			}
 			"03"
 			{
@@ -3666,7 +3666,7 @@
 		"RequiredLevel"			"6"
 		"LevelsBetweenUpgrades"	"6"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.25 0.2"
-		"AbilityCooldown"	"60"
+		"AbilityCooldown"	"145"
 		"AbilityDuration"	"25"
 		"AbilityManaCost"	"100 150 200 250 300 350 400"
 		"AbilitySpecial"
@@ -13968,7 +13968,7 @@
 	"lycan_shapeshift"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"90 85 80 75 70 65 60"
+		"AbilityCooldown"	"120 115 110 105 100 95 90"
 		"AbilityManaCost"	"100"
 		"AbilitySpecial"
 		{
