@@ -435,7 +435,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_increase_pct"	"25.0 27.5 30.0 32.5 35.0 37.5 40.0"
+				"damage_increase_pct"	"10.0 12.0 16.0 20.0 23.0 25.0 30.0"
 			}
 
 			"03"
@@ -3274,7 +3274,7 @@
 			"07"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"scepter_duration"	"6"
+				"scepter_duration"	"2"
 			}
 
 			"08"
@@ -3550,7 +3550,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"600"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
-		"AbilityCooldown"	"13.0"
+		"AbilityCooldown"	"17.0"
 		"AbilityDamage"		"100 175 250 325 400 475 550"
 		"AbilityManaCost"	"140 145 150 155 160 165 170"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
@@ -6319,7 +6319,7 @@
 			"08"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"charge_restore_time"	"55"
+				"charge_restore_time"	"35"
 			}
 			"99"
 			{
@@ -7906,7 +7906,7 @@
 	"templar_assassin_psi_blades"
 	{
 		"MaxLevel"	"7"
-		"RequiredLevel"	"3"
+		"RequiredLevel"	"4"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9459,7 +9459,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.4 0.5 0.6 0.7 0.8 0.9 10.0"
+				"damage_from_current_health_pct" "1 2 3 4 5 6 7"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -9871,14 +9871,14 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.35"
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"85"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5 6 7 8 9 10 12"
+				"duration"				"1 1.5 2 2.5 3 4 5"
 				"LinkedSpecialBonus"	"special_bonus_unique_omniknight_3"
 			}
 		}
@@ -12297,7 +12297,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_speed_bonus_pct"	"450"
+				"attack_speed_bonus_pct"	"250"
 			}
 
 			"03"
@@ -19142,7 +19142,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"int_multiplier"	"1.6"
+				"int_multiplier"	"1.3"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 
@@ -21002,7 +21002,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_second"	"10 30 50 70 90 110 130"
+				"damage_per_second"	"30 50 70 90 110 130 160"
 			}
 
 			"07"
