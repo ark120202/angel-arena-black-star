@@ -976,7 +976,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.4 0.5 0.6 0.7 0.8 0.9 1.0"
+				"damage_from_current_health_pct" "0.1 0.15 0.2 0.25 0.3 0.35 0.4"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -7839,14 +7839,14 @@
 	"templar_assassin_refraction"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"17.0"
+		"AbilityCooldown"	"23.0"
 		"AbilityManaCost"	"100 105 110 115 120 125 130"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"instances"	"3 4 5 6 7 8 9"
+				"instances"	"2 3 4 5 6 7 8"
 				"LinkedSpecialBonus"	"special_bonus_unique_templar_assassin"
 			}
 
@@ -7906,7 +7906,7 @@
 	"templar_assassin_psi_blades"
 	{
 		"MaxLevel"	"7"
-		"RequiredLevel"	"4"
+		"RequiredLevel"	"3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9620,7 +9620,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage_per_second"	"30 45 60 75 90 105 120"
+				"damage_per_second"	"15 30 45 60 75 85 100"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer"
 			}
 
@@ -10817,7 +10817,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"2"
+				"duration"	"3"
 			}
 			"99"
 			{
@@ -22529,7 +22529,7 @@
 	{
 		"MaxLevel"						"7"
 		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"13"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"70 80 90 100 110 120 130"
 		"AbilitySpecial"
 		{
@@ -22556,7 +22556,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"20 30 40 50 60 70 80"
+				"damage"				"5 10 15 20 25 30 80"
 				"LinkedSpecialBonus"	"special_bonus_unique_pangolier_3"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -22983,7 +22983,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_per_target"	"16 24 32 40 48 56 64"
+				"bonus_damage_per_target"	"8 16 24 32 40 48 54"
 				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_2"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
