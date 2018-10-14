@@ -26,6 +26,7 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = {
 	tinker_march_of_the_machines = 2000,
 	necrolyte_reapers_scythe = 7,
 	huskar_life_break = 15,
+	lich_chain_frost = 0,
 }
 
 local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
