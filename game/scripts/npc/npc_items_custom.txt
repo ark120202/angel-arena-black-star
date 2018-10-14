@@ -47,7 +47,6 @@
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"common"
 		"ItemAliases"					"quelling blade"
-		"AbilitySharedCooldown"			"item_quelling_blade"
 
 
 		// Special
@@ -1008,7 +1007,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/refresher_arena"
-		"AbilitySharedCooldown"			"item_refresher"
+		"AbilitySharedCooldown"			"refresher"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1777,7 +1776,7 @@
 		"ItemQuality"					"component"
 		"ItemAliases"					"blink staff"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySharedCooldown" 		"item_blink"
+		"AbilitySharedCooldown" 		"blink"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3415,7 +3414,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/refresher_core"
-		"AbilitySharedCooldown"			"item_refresher"
+		"AbilitySharedCooldown"			"refresher"
 		"ItemShopTags"					"boost_mana;mana_pool"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"mana;mb;octarine core"
@@ -4523,7 +4522,6 @@
 		"AbilityCastPoint"              "0"
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"0"
-		"AbilitySharedCooldown"			"ethereal"
 		"ItemShopTags"					"int;agi;str;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"ghost scepter;drums of endurance;ancient"
@@ -5444,7 +5442,6 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"AbilityTextureName"			"item_arena/blade_of_discord"
-		"AbilitySharedCooldown"			"ethereal"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
@@ -6082,7 +6079,7 @@
 
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"3.8"
-		"AbilitySharedCooldown"			"medallion;basher"
+		"AbilitySharedCooldown"			"medallion"
 
 
 		"ItemQuality"					"rare"

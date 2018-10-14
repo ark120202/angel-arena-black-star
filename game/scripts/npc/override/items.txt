@@ -4,6 +4,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySharedCooldown" 		"blink"
 	}
 	"item_dust"
 	{
@@ -680,6 +681,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySharedCooldown"			"black_king_bar"
 	}
 	"item_recipe_shivas_guard"
 	{
