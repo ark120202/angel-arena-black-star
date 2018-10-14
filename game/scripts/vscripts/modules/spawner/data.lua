@@ -40,6 +40,7 @@ JUNGLE_BANNED_ABILITIES = {
 	item_blink_staff = true,
 	item_force_staff = true,
 	item_hurricane_pike = true,
+	item_iron_talon = true,
 
 	chen_holy_persuasion = true,
 	doom_bringer_devour_arena = true,
