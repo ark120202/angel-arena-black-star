@@ -23,7 +23,6 @@ SPAWNER_CHAMPION_LEVELS = {
 
 CHAMPIONS_BANNED_ABILITIES = {
 	chen_holy_persuasion = true,
-	item_iron_talon = true,
 	item_helm_of_the_dominator = true,
 	doom_bringer_devour_arena = true,
 	shinobu_eat_oddity = true,
@@ -40,7 +39,6 @@ JUNGLE_BANNED_ABILITIES = {
 	item_blink_staff = true,
 	item_force_staff = true,
 	item_hurricane_pike = true,
-	item_iron_talon = true,
 
 	chen_holy_persuasion = true,
 	doom_bringer_devour_arena = true,

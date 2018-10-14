@@ -115,7 +115,6 @@ PANORAMA_SHOP_ITEMS = {
 		},
 		{
 			"item_ring_of_basilius",
-			"item_iron_talon",
 			"item_headdress",
 			"item_buckler",
 			"item_urn_of_shadows",

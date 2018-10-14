@@ -27,7 +27,7 @@
 		"ItemResult"					"item_lucifers_claw"
 		"ItemRequirements"
 		{
-			"01"						"item_iron_talon;item_helm_of_the_dominator"
+			"01"						"item_quelling_blade;item_ring_of_regen;item_helm_of_the_dominator"
 		}
 	}
 
@@ -47,7 +47,7 @@
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"common"
 		"ItemAliases"					"quelling blade"
-		"AbilitySharedCooldown"			"item_quelling_blade;item_iron_talon"
+		"AbilitySharedCooldown"			"item_quelling_blade"
 
 
 		// Special
