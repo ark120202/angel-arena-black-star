@@ -4,11 +4,11 @@ function HeroSelection:SelectHero(playerId, heroName, beforeReplace, afterReplac
 	end
 
 	Timers:CreateTimer(function()
-		local connectionState = PlayerResource:GetConnectionState(playerId)
+		local connectionState = GetConnectionState(playerId)
 		if connectionState == DOTA_CONNECTION_STATE_CONNECTED then
 			local function SpawnHero()
 				Timers:CreateTimer(function()
-					connectionState = PlayerResource:GetConnectionState(playerId)
+					connectionState = GetConnectionState(playerId)
 					if connectionState == DOTA_CONNECTION_STATE_CONNECTED then
 						local heroTableCustom = NPC_HEROES_CUSTOM[heroName] or NPC_HEROES[heroName]
 						local oldhero = PlayerResource:GetSelectedHeroEntity(playerId)
@@ -17,13 +17,13 @@ function HeroSelection:SelectHero(playerId, heroName, beforeReplace, afterReplac
 
 						if beforeReplace then beforeReplace(oldhero) end
 						if oldhero then
-							Timers:CreateTimer(0.03, function()
+							Timers:NextTick(function()
 								oldhero:ClearNetworkableEntityInfo()
 								UTIL_Remove(oldhero)
 							end)
 							if oldhero:GetUnitName() == baseNewHero then -- Base unit equals, ReplaceHeroWith won't do anything
 								local temp = PlayerResource:ReplaceHeroWith(playerId, FORCE_PICKED_HERO, 0, 0)
-								Timers:CreateTimer(0.03, function()
+								Timers:NextTick(function()
 									temp:ClearNetworkableEntityInfo()
 									UTIL_Remove(temp)
 								end)
@@ -109,18 +109,11 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 
 	hero.ChangingHeroProcessRunning = true
 	ProjectileManager:ProjectileDodge(hero)
-	if hero.PocketItem then
-		hero.PocketHostEntity = nil
-		UTIL_Remove(hero.PocketItem)
-		hero.PocketItem = nil
-	end
 	hero:DestroyAllModifiers()
 	hero:InterruptMotionControllers(false)
 	hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
 	local xp = hero:GetCurrentXP()
-	local fountatin = FindFountain(PlayerResource:GetTeam(playerId))
-	local location = hero:GetAbsOrigin()
-	if fountatin then location = location or fountatin:GetAbsOrigin() end
+	local location
 	RemoveAllOwnedUnits(playerId)
 
 	local startTime = GameRules:GetDOTATime(true, true)
@@ -128,6 +121,10 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 	local duelData = {}
 	Timers:CreateTimer(preDuration, function()
 		HeroSelection:SelectHero(playerId, newHeroName, function(oldHero)
+			location = hero:GetAbsOrigin()
+			local fountatin = FindFountain(PlayerResource:GetTeam(playerId))
+			if not location and fountatin then location = fountatin:GetAbsOrigin() end
+
 			for i = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
 				local citem  = hero:GetItemInSlot(i)
 				if citem and citem ~= item then

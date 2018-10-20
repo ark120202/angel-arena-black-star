@@ -252,6 +252,8 @@
 		"MaxLevel"						"7"
 		"AbilityChannelTime"			"2"
 		"AbilityDamage"					"200 300 400 500 600 700 800"
+		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
 
 		"AbilitySpecial"
 		{

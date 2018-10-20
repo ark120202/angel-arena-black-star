@@ -10,15 +10,15 @@ function CDOTA_PlayerResource:GetPlayerStat(PlayerID, key)
 end
 
 function CDOTA_PlayerResource:ModifyPlayerStat(PlayerID, key, value)
-	local v = self:GetPlayerStat(PlayerID, key) + value
-	self:SetPlayerStat(PlayerID, key, v)
+	local v = PlayerResource:GetPlayerStat(PlayerID, key) + value
+	PlayerResource:SetPlayerStat(PlayerID, key, v)
 	return v
 end
 
 function CDOTA_PlayerResource:SetPlayerTeam(playerId, newTeam)
-	local oldTeam = self:GetTeam(playerId)
-	local player = self:GetPlayer(playerId)
-	local hero = self:GetSelectedHeroEntity(playerId)
+	local oldTeam = PlayerResource:GetTeam(playerId)
+	local player = PlayerResource:GetPlayer(playerId)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	PlayerTables:RemovePlayerSubscription("dynamic_minimap_points_" .. oldTeam, playerId)
 	local playerPickData = {}
 	local tableData = PlayerTables:GetTableValue("hero_selection", oldTeam)
@@ -67,8 +67,6 @@ function CDOTA_PlayerResource:SetPlayerTeam(playerId, newTeam)
 	end
 
 	CustomGameEventManager:Send_ServerToPlayer(player, "arena_team_changed_update", {})
-	PlayerResource:RefreshSelection()
-
 	Teams:RecalculateKillWeight(oldTeam)
 	Teams:RecalculateKillWeight(newTeam)
 end
@@ -101,7 +99,7 @@ function CDOTA_PlayerResource:KickPlayer(nPlayerID)
 end
 
 function CDOTA_PlayerResource:IsPlayerAbandoned(playerId)
-	return IsPlayerAbandoned(playerId)
+	return PLAYER_DATA[playerId].IsAbandoned == true
 end
 
 function CDOTA_PlayerResource:IsBanned(playerId)
@@ -118,7 +116,7 @@ function CDOTA_PlayerResource:MakePlayerAbandoned(playerId)
 		Notifications:TopToAll({text=PlayerResource:GetPlayerName(playerId), continue=true, style={color=ColorTableToCss(PLAYER_DATA[playerId].Color or {0, 0, 0})}})
 		Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
 
-		for _,v in ipairs(GetLinkedHeroNames(heroname)) do
+		for _,v in ipairs(HeroSelection:GetLinkedHeroNames(heroname)) do
 			local linkedHeroOwner = HeroSelection:GetSelectedHeroPlayer(v)
 			if linkedHeroOwner then
 				HeroSelection:ForceChangePlayerHeroMenu(linkedHeroOwner)

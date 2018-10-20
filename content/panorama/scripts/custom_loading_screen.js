@@ -20,14 +20,24 @@ function FillTips() {
 	}
 }
 
+function shuffle(a) {
+	var j, x, i;
+	for (i = a.length; i; i--) {
+		j = Math.floor(Math.random() * i);
+		x = a[i - 1];
+		a[i - 1] = a[j];
+		a[j] = x;
+	}
+}
+
 function NextTip() {
 	if (ShuffledTipList.length === 0) {
-		ShuffledTipList = JSON.parse(JSON.stringify(TipList));
+		ShuffledTipList = TipList.slice();
 		shuffle(ShuffledTipList);
 	}
-	var shifted = ShuffledTipList.shift();
+	var tip = ShuffledTipList.shift();
 
-	$('#TipLabel').text = shifted.text;
+	$('#TipLabel').text = tip.text;
 }
 
 function Snippet_OptionVoting(voteName, voteData) {

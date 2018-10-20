@@ -42,6 +42,18 @@ function PanoramaShop:GetItemStockCount(team, item)
 	return t ~= nil and t.current_stock
 end
 
+function PanoramaShop:AddItemStock(team, item, count)
+	local t = PanoramaShop.StocksTable[team][item]
+	if t then
+		local added_stocks = t.current_stock + count
+		if added_stocks > t.ItemStockMax then
+			added_stocks = t.ItemStockMax
+		end
+		t.current_stock = added_stocks
+		PanoramaShop:PushStockInfoToAllClients()
+	end
+end
+
 function PanoramaShop:IncreaseItemStock(team, item)
 	local t = PanoramaShop.StocksTable[team][item]
 	if t and (t.ItemStockMax == -1 or t.current_stock < t.ItemStockMax) then
@@ -71,8 +83,12 @@ function PanoramaShop:StackStockableCooldown(team, item, time)
 	end
 	t.current_cooldown = time
 	t.current_last_purchased_time = GameRules:GetGameTime()
-	Timers:CreateTimer(time, function()
+	if t.timer then
+		Timers:RemoveTimer(t.timer)
+	end
+	t.timer = Timers:CreateTimer(time, function()
 		PanoramaShop:IncreaseItemStock(team, item)
+		t.timer = nil
 	end)
 end
 
@@ -99,7 +115,7 @@ function PanoramaShop:InitializeItemTable()
 
 		if kv.ItemAliases then
 			for _,v in ipairs(string.split(kv.ItemAliases, ";")) do
-				if not table.contains(itemdata.names, v:lower()) then
+				if not table.includes(itemdata.names, v:lower()) then
 					table.insert(itemdata.names, v:lower())
 				end
 			end
@@ -115,7 +131,7 @@ function PanoramaShop:InitializeItemTable()
 			local recipeKv = KeyValues.ItemKV[RecipesToCheck[name]]
 
 			if not itemsBuldsInto[RecipesToCheck[name]] then itemsBuldsInto[RecipesToCheck[name]] = {} end
-			if not table.contains(itemsBuldsInto[RecipesToCheck[name]], name) then
+			if not table.includes(itemsBuldsInto[RecipesToCheck[name]], name) then
 				table.insert(itemsBuldsInto[RecipesToCheck[name]], name)
 			end
 			for key, ItemRequirements in pairsByKeys(recipeKv.ItemRequirements) do
@@ -123,7 +139,7 @@ function PanoramaShop:InitializeItemTable()
 				table.insert(recipedata.items, itemParts)
 				for _,v in ipairs(itemParts) do
 					if not itemsBuldsInto[v] then itemsBuldsInto[v] = {} end
-					if not table.contains(itemsBuldsInto[v], name) then
+					if not table.includes(itemsBuldsInto[v], name) then
 						table.insert(itemsBuldsInto[v], name)
 					end
 				end
@@ -246,6 +262,13 @@ function PanoramaShop:SellItem(playerId, unit, item)
 	if GameRules:GetGameTime() - item:GetPurchaseTime() > 10 then
 		cost = cost / 2
 	end
+	local itemName = item:GetAbilityName()
+	local team = PlayerResource:GetTeam(playerId)
+	if PanoramaShop.StocksTable[team][itemName] then
+		local charges = item:GetCurrentCharges()
+		if charges == 0 then charges = 1 end
+		PanoramaShop:AddItemStock(team, itemName, charges)
+	end
 	UTIL_Remove(item)
 	Gold:AddGoldWithMessage(unit, cost, playerId)
 	GameMode:TrackInventory(unit)
@@ -358,7 +381,7 @@ function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName, baseItemName
 	if (childItemName == baseItemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
 		for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
 			local subitems, newCounter = PanoramaShop:GetAllPrimaryRecipeItems(unit, newchilditem, baseItemName)
-			table.add(primary_items, subitems)
+			table.concat(primary_items, subitems)
 			for k,v in pairs(newCounter) do
 				_tempItemCounter[k] = (_tempItemCounter[k] or 0) + v
 			end

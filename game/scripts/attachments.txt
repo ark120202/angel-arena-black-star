@@ -1,21 +1,5 @@
 "Attachments"
 {
-	"models/hero_shinobu/shinobu_01.vmdl"
-	{
-		"attach_hitloc"
-		{
-			"models/custom/umbrella_rainbow.vmdl"
-			{
-				"scale"		"1.5"
-				"pitch"		"0"
-				"roll"		"-14"
-				"ZPos"		"1"
-				"YPos"		"6"
-				"yaw"		"28"
-				"XPos"		"26"
-			}
-		}
-	}
 	"models/items/furion/treant_stump.vmdl"
 	{
 		"attach_attack1"

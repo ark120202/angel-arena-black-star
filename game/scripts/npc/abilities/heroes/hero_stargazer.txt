@@ -12,6 +12,8 @@
 		"AbilityManaCost"				"50 60 70 80 90 100 110"
 		"AbilityCastPoint"				"0.15"
 		"MaxLevel"						"7"
+		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
 
 		"AbilitySpecial"
 		{
@@ -138,7 +140,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"str_to_reflection_pct"		"0.6 0.7 0.8 0.9 1.0 1.1 1.2"
+				"str_to_reflection_pct"		"0.2 0.3 0.4 0.5 0.6 0.7 0.8"
 			}
 		}
 

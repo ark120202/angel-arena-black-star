@@ -3,6 +3,7 @@ Events:Register("activate", function ()
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, 'DamageFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, 'ModifyGoldFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetModifyExperienceFilter(Dynamic_Wrap(GameMode, 'ModifyExperienceFilter'), GameRules)
+	GameRules:GetGameModeEntity():SetItemAddedToInventoryFilter(Dynamic_Wrap(GameMode, 'ItemAddedToInventoryFilter'), GameRules)
 end)
 
 function GameMode:ExecuteOrderFilter(filterTable)
@@ -29,15 +30,25 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		return false
 	end
 
-	if unit:IsCourier() and (
-		order_type == DOTA_UNIT_ORDER_CAST_POSITION or
-		order_type == DOTA_UNIT_ORDER_CAST_TARGET or
-		order_type == DOTA_UNIT_ORDER_CAST_TARGET_TREE or
-		order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or
-		order_type == DOTA_UNIT_ORDER_CAST_TOGGLE
-	) and ability.IsItem and ability:IsItem() then
-		Containers:DisplayError(playerId, "dota_hud_error_courier_cant_use_item")
-		return false
+	if unit:IsCourier() then
+		if (
+			order_type == DOTA_UNIT_ORDER_CAST_POSITION or
+			order_type == DOTA_UNIT_ORDER_CAST_TARGET or
+			order_type == DOTA_UNIT_ORDER_CAST_TARGET_TREE or
+			order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or
+			order_type == DOTA_UNIT_ORDER_CAST_TOGGLE
+		) and ability and ability:IsItem() then
+			Containers:DisplayError(playerId, "dota_hud_error_courier_cant_use_item")
+			return false
+		end
+
+		if (order_type == DOTA_UNIT_ORDER_DROP_ITEM or order_type == DOTA_UNIT_ORDER_GIVE_ITEM) and ability and ability:IsItem() then
+			local purchaser = ability:GetPurchaser()
+			if purchaser and purchaser:GetPlayerID() ~= playerId then
+				Containers:DisplayError(playerId, "arena_hud_error_courier_cant_order_item")
+				return false
+			end
+		end
 	end
 
 	if not unit:IsConsideredHero() then return true end
@@ -56,7 +67,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 					return false
 				end
 			end
-			if IsInBox(orderVector, Duel.BlockerBox[1], Duel.BlockerBox[2]) then
+			if Duel:IsOnDuel(orderVector) then
 				Containers:DisplayError(playerId, "#arena_hud_error_cant_target_duel")
 				return false
 			end
@@ -72,11 +83,21 @@ function GameMode:ExecuteOrderFilter(filterTable)
 				return false
 			end
 		end
+		if abilityname == "morphling_replicate" then
+			if target:HasAbility("doppelganger_mimic") then
+				Containers:DisplayError(playerId, "#arena_hud_error_cant_replicate_hero")
+				return false
+			end
+			if target:GetFullName() == unit:GetFullName() then
+				Containers:DisplayError(playerId, "#arena_hud_error_cant_replicate_hero")
+				return false
+			end
+		end
 		if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_champion")
 			return false
 		end
-		if target.SpawnerType == "jungle" and not JUNGLE_ALLOWED_ABILITIES[abilityname] then
+		if target.SpawnerType == "jungle" and JUNGLE_BANNED_ABILITIES[abilityname] then
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_jungle")
 			return false
 		end
@@ -84,9 +105,14 @@ function GameMode:ExecuteOrderFilter(filterTable)
 			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_boss")
 			return false
 		end
-		if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then
-			filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
-			return true
+	elseif order_type == DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK then
+		local lockType = filterTable.entindex_target
+		if ability.auto_lock_order then
+			ability.auto_lock_order = false
+		elseif lockType == 0 then
+			ability.player_locked = false
+		else
+			ability.player_locked = true
 		end
 	end
 
@@ -122,9 +148,6 @@ function GameMode:DamageFilter(filterTable)
 			end
 			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and victim:IsBoss() then
 				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
-			end
-			if inflictorname == "templar_assassin_psi_blades" and victim:IsRealCreep() then
-				filterTable.damage = damage * 0.5
 			end
 		end
 		if victim:IsBoss() and (attacker:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() > 950 then
@@ -212,27 +235,26 @@ function GameMode:DamageFilter(filterTable)
 			end
 		end
 		if BlockedDamage > 0 then
-			PopupDamageBlock(victim, math.round(BlockedDamage))
-			--print("Raw damage: " .. filterTable.damage .. ", after blocking: " .. filterTable.damage - BlockedDamage .. " (blocked: " .. BlockedDamage .. ")")
+			SendOverheadEventMessage(victim:GetPlayerOwner(), OVERHEAD_ALERT_BLOCK, victim, BlockedDamage, attacker:GetPlayerOwner())
+			SendOverheadEventMessage(attacker:GetPlayerOwner(), OVERHEAD_ALERT_BLOCK, victim, BlockedDamage, victim:GetPlayerOwner())
+
 			filterTable.damage = filterTable.damage - BlockedDamage
 		end
 		if LifestealPercentage > 0 then
 			local lifesteal = filterTable.damage * LifestealPercentage * 0.01
 			SafeHeal(attacker, lifesteal)
-			SendOverheadEventMessage(attacker:GetPlayerOwner(), OVERHEAD_ALERT_HEAL, attacker, lifesteal, attacker:GetPlayerOwner())
 			ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
-			--print("Lifestealing " .. lifesteal .. " health from " .. filterTable.damage .. " damage points (" .. LifestealPercentage .. "% lifesteal)")
 		end
 		if attacker.GetPlayerOwnerID then
-			local attackerpid = attacker:GetPlayerOwnerID()
-			if attackerpid > -1 then
+			local attackerPlayerId = attacker:GetPlayerOwnerID()
+			if attackerPlayerId > -1 then
 				if victim:IsRealHero() then
-					attacker:ModifyPlayerStat("heroDamage", filterTable.damage)
+					PlayerResource:ModifyPlayerStat(attackerPlayerId, "heroDamage", filterTable.damage)
 				end
 				if victim:IsBoss() then
-					attacker:ModifyPlayerStat("bossDamage", filterTable.damage)
+					PlayerResource:ModifyPlayerStat(attackerPlayerId, "bossDamage", filterTable.damage)
 					victim.DamageReceived = victim.DamageReceived or {}
-					victim.DamageReceived[attackerpid] = (victim.DamageReceived[attackerpid] or 0) + filterTable.damage
+					victim.DamageReceived[attackerPlayerId] = (victim.DamageReceived[attackerPlayerId] or 0) + filterTable.damage
 				end
 			end
 		end
@@ -266,6 +288,22 @@ function GameMode:ModifyExperienceFilter(filterTable)
 	PLAYER_DATA[filterTable.player_id_const].AntiAFKLastXP = GameRules:GetGameTime() + PLAYER_ANTI_AFK_TIME
 	if Duel.IsFirstDuel and Duel:IsDuelOngoing() then
 		filterTable.experience = filterTable.experience * 0.1
+	end
+	return true
+end
+
+function GameMode:ItemAddedToInventoryFilter(filterTable)
+	local item = EntIndexToHScript(filterTable.item_entindex_const)
+  
+	if item.RuneType then 
+		local unit = EntIndexToHScript(filterTable.inventory_parent_entindex_const)
+		CustomRunes:PickUpRune(unit, item)
+		return false
+	end
+  
+	if item.suggestedSlot then
+		filterTable.suggested_slot = item.suggestedSlot
+		item.suggestedSlot = nil
 	end
 	return true
 end

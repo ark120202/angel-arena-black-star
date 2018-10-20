@@ -38,7 +38,7 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 	end
 	if rune_multiplier then
 		for k, v in pairs(settings) do
-			if type(v) == "number" and k ~= "interval" and k ~= "illusion_incoming_damage" and k ~= "movespeed" and k ~= "z_modify" then
+			if type(v) == "number" and k ~= "interval" and k ~= "illusion_incoming_damage" and k ~= "movespeed" then
 				settings[k] = v * rune_multiplier
 			end
 		end
@@ -95,26 +95,17 @@ end
 
 function CustomRunes:CreateRune(position, runeType)
 	local settings = RUNE_SETTINGS[runeType]
-	if settings.z_modify then
-		position.z = position.z + settings.z_modify
-	end
-	local entity = CreateUnitByName("npc_arena_rune", position, false, nil, nil, DOTA_TEAM_NEUTRALS)
+	local entity = CreateItem(settings.item, nil, nil)
 	entity.RuneType = runeType
-	entity:SetModel(settings.model)
-	entity:SetOriginalModel(settings.model)
-	StartAnimation(entity, {duration=-1, activity=ACT_DOTA_IDLE})
-	entity:SetAbsOrigin(position)
-	if settings.angles then
-		entity:SetAngles(unpack(settings.angles))
-	end
-	local pfx = ParticleManager:CreateParticle(settings.particle, settings.particle_attach or PATTACH_ABSORIGIN_FOLLOW, entity)
+	local container = CreateItemOnPositionSync(position, entity)
+	container:SetAbsOrigin(position)
 	if settings.color then
-		entity:SetRenderColor(unpack(settings.color))
+		container:SetRenderColor(unpack(settings.color))
 	end
 	if settings.oncreated then
 		settings.oncreated(entity)
 	end
-	entity:SetNetworkableEntityInfo("custom_tooltip", {
+	container:SetNetworkableEntityInfo("custom_tooltip", {
 		title = "#custom_runes_rune_" .. runeType .. "_title",
 		text = "#custom_runes_rune_" .. runeType .. "_text"
 	})
@@ -132,78 +123,51 @@ function CustomRunes:SpawnRunes()
 	local bountySpawner = RandomInt(1, #spawners)
 	for k,v in ipairs(spawners) do
 		if IsValidEntity(v.RuneEntity) then
-			v.RuneEntity:ClearNetworkableEntityInfo()
+			v.RuneEntity:GetContainer():ClearNetworkableEntityInfo()
+			v.RuneEntity:GetContainer():Destroy()
 			UTIL_Remove(v.RuneEntity)
 		end
 		v.RuneEntity = CustomRunes:CreateRune(v:GetAbsOrigin(), k == bountySpawner and ARENA_RUNE_BOUNTY or RandomInt(ARENA_RUNE_FIRST, ARENA_RUNE_LAST))
 	end
 end
 
-function CustomRunes:ExecuteOrderFilter(order)
-	if order.units["0"] and (order.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET or order.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET) then
-		local unit = EntIndexToHScript(order.units["0"])
-		local rune = EntIndexToHScript(order.entindex_target)
+function CustomRunes:PickUpRune(unit, rune)
+	if IsValidEntity(unit) and IsValidEntity(rune) then
+		local runeType = rune.RuneType
+		rune:GetContainer():ClearNetworkableEntityInfo()
+		UTIL_Remove(rune)
 
-		if IsValidEntity(unit) and IsValidEntity(rune) and rune:IsCustomRune() then
-			local pos = rune:GetAbsOrigin()
-			order.order_type = DOTA_UNIT_ORDER_MOVE_TO_POSITION
-			order.position_x = pos.x
-			order.position_y = pos.y
-			order.position_z = pos.z
-			if unit:IsRealHero() then
-				local issuerID = order.issuer_player_id_const
-				Containers.rangeActions[order.units["0"]] = {
-					unit = unit,
-					position = rune:GetAbsOrigin(),
-					range = 100,
-					playerID = issuerID,
-					action = function()
-						if IsValidEntity(unit) and IsValidEntity(rune) then
-							local runeType = rune.RuneType
-							rune:ClearNetworkableEntityInfo()
-							UTIL_Remove(rune)
-							unit:Stop()
-
-							local bottle
-							local runeKeeper
-							local runic_mekansm
-							for i = 0, 5 do
-								local item = unit:GetItemInSlot(i)
-								if item then
-									if not runeKeeper and item:GetAbilityName() == "item_rune_keeper" then
-										runeKeeper = item
-									elseif not bottle and item:GetAbilityName() == "item_bottle_arena" and not item.RuneStorage then
-										bottle = item
-									elseif not runic_mekansm and item:GetAbilityName() == "item_runic_mekansm" and not item.RuneStorage then
-										runic_mekansm = item
-									end
-								end
-							end
-
-							if runic_mekansm then
-								runic_mekansm:SetStorageRune(runeType)
-							elseif runeKeeper and runeKeeper.RuneContainer then
-								table.insert(runeKeeper.RuneContainer, {rune=runeType, expireGameTime = GameRules:GetGameTime() + runeKeeper:GetAbilitySpecial("store_duration")})
-								Notifications:Bottom(issuerID, {text="#item_rune_keeper_rune_picked_up", duration = 8})
-								Notifications:Bottom(issuerID, {text="#custom_runes_rune_" .. runeType .. "_title", continue=true})
-								Notifications:Bottom(issuerID, {text="#item_rune_keeper_rune_picked_up_cont", continue=true})
-								for i,v in ipairs(runeKeeper.RuneContainer) do
-									Notifications:Bottom(issuerID, {text="#custom_runes_rune_" .. v.rune .. "_title", continue=true})
-									Notifications:Bottom(issuerID, {text=" ,", continue=true})
-								end
-							elseif bottle then
-								bottle:SetStorageRune(runeType)
-							else
-								CustomRunes:ActivateRune(unit, runeType)
-							end
-						end
-					end,
-				}
+		local bottle
+		local runeKeeper
+		local runic_mekansm
+		for i = 0, 5 do
+			local item = unit:GetItemInSlot(i)
+			if item then
+				if not runeKeeper and item:GetAbilityName() == "item_rune_keeper" then
+					runeKeeper = item
+				elseif not bottle and item:GetAbilityName() == "item_bottle_arena" and not item.RuneStorage then
+					bottle = item
+				elseif not runic_mekansm and item:GetAbilityName() == "item_runic_mekansm" and not item.RuneStorage then
+					runic_mekansm = item
+				end
 			end
 		end
-	end
-end
 
-function CEntityInstance:IsCustomRune()
-	return self.GetUnitName and self:GetUnitName() == "npc_arena_rune"
+		if runic_mekansm then
+			runic_mekansm:SetStorageRune(runeType)
+		elseif runeKeeper and runeKeeper.RuneContainer then
+			table.insert(runeKeeper.RuneContainer, {rune=runeType, expireGameTime = GameRules:GetGameTime() + runeKeeper:GetAbilitySpecial("store_duration")})
+			Notifications:Bottom(issuerID, {text="#item_rune_keeper_rune_picked_up", duration = 8})
+			Notifications:Bottom(issuerID, {text="#custom_runes_rune_" .. runeType .. "_title", continue=true})
+			Notifications:Bottom(issuerID, {text="#item_rune_keeper_rune_picked_up_cont", continue=true})
+			for i,v in ipairs(runeKeeper.RuneContainer) do
+				Notifications:Bottom(issuerID, {text="#custom_runes_rune_" .. v.rune .. "_title", continue=true})
+				Notifications:Bottom(issuerID, {text=" ,", continue=true})
+			end
+		elseif bottle then
+			bottle:SetStorageRune(runeType)
+		else
+			CustomRunes:ActivateRune(unit, runeType)
+		end
+	end
 end

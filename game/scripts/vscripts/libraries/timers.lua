@@ -85,6 +85,7 @@ end
 function Timers:start()
 	Timers = self
 	self.timers = {}
+	self.nextTickCallbacks = {}
 
 	--local ent = Entities:CreateByClassname("info_target") -- Entities:FindByClassname(nil, 'CWorld')
 	local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
@@ -92,13 +93,16 @@ function Timers:start()
 end
 
 function Timers:Think()
-	--if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
-		--return
-	--end
+	local nextTickCallbacks = table.merge({}, Timers.nextTickCallbacks)
+	Timers.nextTickCallbacks = {}
+	for _, cb in ipairs(nextTickCallbacks) do
+		cb()
+	end
 
 	-- Track game time, since the dt passed in to think is actually wall-clock time not simulation time.
 	local now = GameRules:GetGameTime()
 
+	-- print(table.count(Timers.timers))
 	-- Process timers
 	for k,v in pairs(Timers.timers) do
 		local bUseGameTime = true
@@ -227,6 +231,10 @@ function Timers:CreateTimer(name, args, context)
 	Timers.timers[name] = args
 
 	return name
+end
+
+function Timers:NextTick(callback)
+	table.insert(Timers.nextTickCallbacks, callback)
 end
 
 function Timers:RemoveTimer(name)

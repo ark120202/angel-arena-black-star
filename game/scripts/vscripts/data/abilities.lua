@@ -73,6 +73,17 @@ REFRESH_LIST_IGNORE_REARM = {
 
 	destroyer_body_reconstruction = true,
 	stargazer_cosmic_countdown = true,
+	faceless_void_chronosphere = true,
+	zuus_thundergods_wrath = true,
+	enigma_black_hole = true,
+	freya_pain_reflection = true,
+	skeleton_king_reincarnation = true,
+	dazzle_shallow_grave = true,
+	zuus_cloud = true,
+	ancient_apparition_ice_blast = true,
+	silencer_global_silence = true,
+	naga_siren_song_of_the_siren = true,
+	slark_shadow_dance = true,
 }
 
 COFFEE_BEAN_NOT_REFRESHABLE = {
@@ -143,4 +154,11 @@ ARENA_NOT_CASTABLE_ABILITIES = {
 }
 
 PERCENT_DAMAGE_MODIFIERS = {
+}
+
+-- https://dota2.gamepedia.com/Spell_Reflection#Not_reflected_abilities
+SPELL_REFLECT_IGNORED_ABILITIES = {
+	grimstroke_soul_chain = true,
+	morphling_replicate = true,
+	rubick_spell_steal = true,
 }

@@ -2,6 +2,9 @@ npc_arena_hero_queenofblades: Queen of Blades
 npc_arena_hero_queenofblades_hype: ''
 npc_arena_hero_queenofblades_bio: 'Even in early childhood Sarah psi high-potential was discovered, and therefore, the girl took custody of soldiers from the Terran Confederation, for the study and development of her abilities. Because of hard and unusual childhood, Sarah had no chance for a normal life, constant severe grueling training did Sarah closed and inhospitable. Despite this insolubility Kerrigan proved their strength, agility, intelligence, and ability to adapt to any complex situations. While living in confiscation, she was a good tactician and soldier. However, at the confluence of many factors, Sarah became a man like creature with sharp claws and the blade is not less dangerous than she had wings. Sarah Kerrigan became the self-proclaimed Queen of Blades. It is free from any moral prohibitions was, at will burst the dark essence of her soul. Now it is dominated by cruel, treacherous, arrogant, thrift and bloodlust. It would seem that she will not be able to find a field of battle with a worthy opponent, because in the past she left behind only ashes, carrying the army of enemies, but the dark forces heard her request and brought her to the place of the battle, where she will meet the same strong an enemy. This will be her last fight where it either lose everything or will gain even more strength and power.'
 
+npc_queenofblades_alter_ego: Sarah Kerrigan
+npc_queenofblades_army_unit: Ultralisk
+
 DOTA_Tooltip_ability_queenofblades_army: Queen of Blades Army
 DOTA_Tooltip_ability_queenofblades_army_Description: 'Kerrigan summns her assistants, which have cleave.'
 DOTA_Tooltip_ability_queenofblades_army_summon_hp: 'HEALTH:'
@@ -31,13 +34,13 @@ DOTA_Tooltip_ability_queenofblades_harbinger_of_death_tooltip_range: 'CAST RANGE
 
 DOTA_Tooltip_ability_queenofblades_alter_ego: Alter Ego
 DOTA_Tooltip_ability_queenofblades_alter_ego_Description: 'Queen remembers who she was. Looking into the depths of his blackened soul, she summons Sarah Kerrigan - her previous incarnation, so she will fought on the side of the Queen. Sarah lives %duration% seconds and is controllabe to player. She also has two abilities - Chains and Discharge.'
-DOTA_Tooltip_ability_queenofblades_alter_ego_aghanim_description: 'Increases Sasah''s health and damage and adds a new ability to her - Soul Breaker, that allowing her to bring a huge amount of damage to target once, per her live.'
+DOTA_Tooltip_ability_queenofblades_alter_ego_aghanim_description: 'Increases Sarah''s health and damage and adds a new ability to her - Soul Breaker, that allowing her to bring a huge amount of damage to target once, per her live.'
 DOTA_Tooltip_ability_queenofblades_alter_ego_attack_damage: 'DAMAGE:'
 DOTA_Tooltip_ability_queenofblades_alter_ego_attack_damage_scepter: 'DAMAGE WITH SCEPTER:'
 DOTA_Tooltip_ability_queenofblades_alter_ego_hp: 'HEALTH:'
 DOTA_Tooltip_ability_queenofblades_alter_ego_hp_scepter: 'HEALTH WITH SCEPTER:'
 DOTA_Tooltip_ability_queenofblades_alter_ego_armor: 'ARMOR:'
-DOTA_Tooltip_ability_queenofblades_alter_ego_bat: 'ATTACK SPEED:'
+DOTA_Tooltip_ability_queenofblades_alter_ego_bat: 'BASE ATTACK TIME:'
 DOTA_Tooltip_ability_queenofblades_alter_ego_movespeed: 'MOVEMENT SPEED:'
 DOTA_Tooltip_ability_queenofblades_alter_ego_tooltip_soul_breaker_damage_scepter: 'SOUL BREAKER DAMAGE:'
 

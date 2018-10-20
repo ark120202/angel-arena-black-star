@@ -35,13 +35,16 @@ function SetAllItemSlotsLocked(unit, locked, bNoStash)
 	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if current_item then
-			ExecuteOrderFromTable({
-				UnitIndex = unit:GetEntityIndex(),
-				OrderType = DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK,
-				AbilityIndex = current_item:GetEntityIndex(),
-				TargetIndex = locked and 1 or 0,
-				Queue = false
-			})
+			if locked or not current_item.player_locked then
+				current_item.auto_lock_order = true
+				ExecuteOrderFromTable({
+					UnitIndex = unit:GetEntityIndex(),
+					OrderType = DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK,
+					AbilityIndex = current_item:GetEntityIndex(),
+					TargetIndex = locked and 1 or 0,
+					Queue = false
+				})
+			end
 		end
 	end
 end

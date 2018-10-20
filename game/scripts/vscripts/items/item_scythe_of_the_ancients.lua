@@ -136,7 +136,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		local damage = keys.original_damage
 		local ability = self:GetAbility()
-		if keys.attacker == parent and not keys.unit:IsMagicImmune() and keys.damage_type == 2 then
+		if keys.attacker == parent and not keys.unit:IsMagicImmune() and keys.damage_type == 2 and not (keys.inflictor and keys.inflictor:GetAbilityName() == "batrider_sticky_napalm") then
 			ApplyDamage({
 				attacker = parent,
 				victim = keys.unit,

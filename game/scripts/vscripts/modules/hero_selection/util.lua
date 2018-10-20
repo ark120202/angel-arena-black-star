@@ -113,13 +113,21 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			unit:SetBaseDamageMax(value)
 		elseif key == "AttackRate" then
 			unit:SetBaseAttackTime(value)
+			unit:SetNetworkableEntityInfo("AttackRate", value)
 		elseif key == "AttackAcquisitionRange" then
 			unit:SetAcquisitionRange(value)
 		elseif key == "ProjectileModel" then
 			unit:SetRangedProjectileName(value)
 		elseif key == "AttributePrimary" then
-			Timers:CreateTimer(0.1, function()
+			Timers:CreateTimer(2/30, function()
 				unit:SetPrimaryAttribute(_G[value])
+				unit:CalculateStatBonus()
+
+				local illusionParent = unit:GetIllusionParent()
+				if IsValidEntity(illusionParent) then
+					unit:SetHealth(illusionParent:GetHealth())
+					unit:SetMana(illusionParent:GetMana())
+				end
 			end)
 		elseif key == "AttributeBaseStrength" then
 			unit:SetBaseStrength(value)
@@ -199,7 +207,7 @@ function HeroSelection:ForceChangePlayerHeroMenu(playerId)
 		hero.ForcedHeroChange = true
 		Timers:CreateTimer(function()
 			local player = PlayerResource:GetPlayer(playerId)
-			if not IsPlayerAbandoned(playerId) and player and IsValidEntity(hero) and not hero.ChangingHeroProcessRunning then
+			if not PlayerResource:IsPlayerAbandoned(playerId) and player and IsValidEntity(hero) and not hero.ChangingHeroProcessRunning then
 				CustomGameEventManager:Send_ServerToPlayer(player, "metamorphosis_elixir_show_menu", {forced = true})
 				return 0.5
 			end
@@ -323,4 +331,9 @@ function HeroSelection:IsHeroPickAvaliable(hero)
 		not HeroSelection:IsHeroDisabledInRanked() and
 		not HeroSelection:IsHeroUnreleased() and
 		HeroSelection:VerifyHeroGroup(hero)
+end
+
+function HeroSelection:GetLinkedHeroNames(hero)
+	local linked = GetKeyValue(hero, "LinkedHero")
+	return linked and string.split(linked, " | ") or {}
 end
