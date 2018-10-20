@@ -185,6 +185,8 @@ function CDOTA_BaseNPC:RestoreOwners(firstSlot, lastSlot)
 			item:SetPurchaser(item.owner)
 			item.owner = nil
 		end
+	end
+end
 
 function CDOTA_BaseNPC:GetIllusionParent()
 	-- TODO: make a correct fix for standard illusions
