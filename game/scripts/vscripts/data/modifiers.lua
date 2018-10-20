@@ -4,13 +4,10 @@ MODIFIERS_DEATH_PREVENTING = {
 	"modifier_abaddon_aphotic_shield",
 	"modifier_abaddon_borrowed_time",
 	"modifier_nyx_assassin_spiked_carapace",
-	"modifier_skeleton_king_reincarnation_life_saver",
-	"modifier_skeleton_king_reincarnation_ally",
 	"modifier_item_titanium_bar_active",
 	"modifier_fountain_aura_arena",
 	"modifier_mana_shield_arena",
 	"modifier_saber_avalon_invulnerability",
-	"modifier_fountain_aura_invulnerability"
 }
 
 DUEL_PURGED_MODIFIERS = {

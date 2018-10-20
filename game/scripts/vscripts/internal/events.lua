@@ -40,25 +40,6 @@ function GameMode:_OnEntityKilled(keys)
 		return
 	end
 
-	-- The Unit that was Killed
-	local killedUnit = EntIndexToHScript( keys.entindex_killed )
-	-- The Killing entity
-	local killerEntity
-
-	if keys.entindex_attacker ~= nil then
-		killerEntity = EntIndexToHScript( keys.entindex_attacker )
-	end
-
-	if killedUnit:IsRealHero() then
-		if killerEntity then
-			local killerTeam = killerEntity:GetTeam()
-			local killedTeam = killedUnit:GetTeam()
-			if killerTeam ~= killedTeam and Teams:IsEnabled(killerTeam) then
-				Teams:ModifyScore(killerTeam, Teams:GetTeamKillWeight(killedTeam))
-			end
-		end
-	end
-
 	GameMode._reentrantCheck = true
 	DebugCallFunction(function()
 		GameMode:OnEntityKilled(keys)

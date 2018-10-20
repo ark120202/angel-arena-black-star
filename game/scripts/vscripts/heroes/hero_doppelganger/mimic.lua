@@ -158,7 +158,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		if not ChangeHero(parent, "npc_arena_hero_doppelganger") then
 			-- Can't change hero now
-			Timers:CreateTimer(function()
+			Timers:NextTick(function()
 				parent:AddNewModifier(parent, self, "modifier_doppelganger_mimic", nil)
 			end)
 		end

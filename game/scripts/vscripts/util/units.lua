@@ -22,10 +22,6 @@ function CDOTA_BaseNPC:IsRealCreep()
 	return self.SSpawner ~= nil and self.SpawnerType ~= nil
 end
 
-function GetFullHeroName(unit)
-	return unit.UnitName or unit:GetUnitName()
-end
-
 function CDOTA_BaseNPC:GetFullName()
 	return self.UnitName or (self.GetUnitName and self:GetUnitName()) or self:GetName()
 end
@@ -43,7 +39,7 @@ function CDOTA_BaseNPC:HasModelChanged()
 		return true
 	end
 	for _, modifier in ipairs(self:FindAllModifiers()) do
-		if modifier.DeclareFunctions and table.contains(modifier:DeclareFunctions(), MODIFIER_PROPERTY_MODEL_CHANGE) then
+		if modifier.DeclareFunctions and table.includes(modifier:DeclareFunctions(), MODIFIER_PROPERTY_MODEL_CHANGE) then
 			if modifier.GetModifierModelChange and modifier:GetModifierModelChange() then
 				return true
 			end
@@ -82,6 +78,9 @@ end
 
 function CDOTA_BaseNPC:TrueKill(ability, killer)
 	self.IsMarkedForTrueKill = true
+	if self:HasAbility("skeleton_king_reincarnation") then
+		self:FindAbilityByName("skeleton_king_reincarnation"):StartCooldown(1/30)
+	end
 	self:Kill(ability, killer)
 	if IsValidEntity(self) and self:IsAlive() then
 		self:RemoveDeathPreventingModifiers()
@@ -90,21 +89,8 @@ function CDOTA_BaseNPC:TrueKill(ability, killer)
 	self.IsMarkedForTrueKill = false
 end
 
-function CDOTA_BaseNPC:GetLinkedHeroEntities()
-	local linked = self:GetLinkedHeroNames()
-	local ents = {}
-	for _,v in ipairs(linked) do
-		local plid = HeroSelection:GetSelectedHeroPlayer(v)
-		if plid then
-			local ent = PlayerResource:GetSelectedHeroEntity(plid)
-			table.insert(ents, ent)
-		end
-	end
-	return ents
-end
-
 function CDOTA_BaseNPC:GetLinkedHeroNames()
-	return GetLinkedHeroNames(self:GetFullName())
+	return HeroSelection:GetLinkedHeroNames(self:GetFullName())
 end
 
 function CDOTA_BaseNPC:UpdateAttackProjectile()
@@ -131,18 +117,6 @@ function CDOTA_BaseNPC:UpdateAttackProjectile()
 	projectile = projectile or self:GetKeyValue("ProjectileModel")
 	self:SetRangedProjectileName(projectile)
 	return projectile
-end
-
-function CDOTA_BaseNPC:SetPlayerStat(key, value)
-	if self.GetPlayerOwnerID and self:GetPlayerOwnerID() > -1 then
-		PlayerResource:SetPlayerStat(self:GetPlayerOwnerID(), key, value)
-	end
-end
-
-function CDOTA_BaseNPC:GetPlayerStat(key)
-	if self.GetPlayerOwnerID and self:GetPlayerOwnerID() > -1 then
-		return PlayerResource:GetPlayerStat(self:GetPlayerOwnerID(), key)
-	end
 end
 
 function CDOTA_BaseNPC:ModifyPlayerStat(key, value)
@@ -211,6 +185,13 @@ function CDOTA_BaseNPC:RestoreOwners(firstSlot, lastSlot)
 			item:SetPurchaser(item.owner)
 			item.owner = nil
 		end
+
+function CDOTA_BaseNPC:GetIllusionParent()
+	-- TODO: make a correct fix for standard illusions
+	if not self.isCustomIllusion then return end
+	local modifier_illusion = self:FindModifierByName("modifier_illusion")
+	if modifier_illusion then
+		return modifier_illusion:GetCaster()
 	end
 end
 
@@ -225,7 +206,6 @@ function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	local bloodstone = self:FindItemInInventory("item_bloodstone")
 	if bloodstone then
 		time = time - bloodstone:GetCurrentCharges() * bloodstone:GetSpecialValueFor("respawn_time_reduction")
-		print("Reduced by ", bloodstone:GetCurrentCharges() * bloodstone:GetSpecialValueFor("respawn_time_reduction"))
 	end
 
 	return math.max(time, 3)

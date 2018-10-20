@@ -45,7 +45,7 @@ if IsServer() then
 		if (
 			usedAbility:GetCooldown(usedAbility:GetLevel()) >= ability:GetSpecialValueFor("min_ability_cooldown") and
 			usedAbility:GetManaCost(usedAbility:GetLevel()) ~= 0 and
-			PreformAbilityPrecastActions(caster, ability)
+			ability:PerformPrecastActions()
 		) then
 			for _,v in ipairs(FindUnitsInRadius(team, pos, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
 				local enemyPos = v:GetAbsOrigin()
@@ -161,8 +161,15 @@ function modifier_item_unstable_quasar_aura:GetModifierMagicalResistanceBonus()
 	return -self:GetAbility():GetSpecialValueFor("aura_resist_debuff_pct")
 end
 
-function modifier_item_unstable_quasar_aura:CheckState()
-	return {
-		[MODIFIER_STATE_INVISIBLE] = false,
-	}
+if IsServer() then
+	function modifier_item_unstable_quasar_aura:OnCreated()
+		local owner = self:GetParent()
+		local caster = self:GetCaster()
+		local ability = self:GetAbility()
+		self.truesight = owner:AddNewModifier(caster, ability, "modifier_truesight", nil)
+	end
+
+	function modifier_item_unstable_quasar_aura:OnDestroy()
+		if not self.truesight:IsNull() then self.truesight:Destroy() end
+	end
 end

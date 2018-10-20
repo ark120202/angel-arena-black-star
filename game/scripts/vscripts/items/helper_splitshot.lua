@@ -6,7 +6,7 @@ return function(lockModifierName, radiusSpecialName, projectileSpeedSpecialName)
 			local lockName = "_lock_" .. lockModifierName
 			if attacker[lockName] then return end
 			attacker[lockName] = true
-			Timers:CreateTimer(function() attacker[lockName] = false end)
+			Timers:NextTick(function() attacker[lockName] = false end)
 		end
 
 		local radius = ability:GetSpecialValueFor(radiusSpecialName)

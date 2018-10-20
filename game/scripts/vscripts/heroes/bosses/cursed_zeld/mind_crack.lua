@@ -24,6 +24,8 @@ if IsServer() then
 			clone:FindAbilityByName("boss_cursed_zeld_shadows_curse"):SetActivated(false)
 			clone:FindAbilityByName("boss_cursed_zeld_mind_crack"):SetActivated(false)
 			clone:FindAbilityByName("boss_cursed_zeld_mental_influence"):SetActivated(false)
+
+			Bosses:MakeBossAI(clone, "cursed_zeld", {})
 		end
 	end
 end

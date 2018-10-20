@@ -25,11 +25,11 @@ function RecieveMessage(data) {
 			if (SenderHero && SenderHero !== 'npc_dota_hero_target_dummy')
 				html = '<img src="' + TransformTextureToPath(SenderHero) + '" class="HeroIcon" style="vertical-align: top;"/> ';
 			html += data.teamonly === 1 ? '<font color="lime">[T]</font>' : '<font color="darkred">[A]</font>';
-			html += " <font color='" + playerColor + "'>" + Players.GetPlayerName(playerId).encodeHTML() + '</font>: ';
+			html += " <font color='" + playerColor + "'>" + _.escape(Players.GetPlayerName(playerId)) + '</font>: ';
 		}
 
 		if (data.text) {
-			html += AddSmiles(String(data.text).encodeHTML());
+			html += AddSmiles(_.escape(String(data.text)));
 		} else if (data.gold != null && data.player != null) {
 			html += "<img src='file://{images}/control_icons/chat_wheel_icon.png' class='ChatWheelIcon' />";
 			var localized = $.Localize(data.player === playerId ? 'chat_message_gold_self' : 'chat_message_gold_ally');
@@ -128,8 +128,8 @@ function RedirectMessage(label) {
 	*/
 }
 
-var twitchRegExp = new RegExp('\\b(' + escapeRegExp(Object.keys(twitchSmileMap).join('|')) + ')\\b', 'g');
-var bttvRegExp = new RegExp('\\b(' + escapeRegExp(Object.keys(bttvSmileMap).join('|')) + ')\\b', 'g');
+var twitchRegExp = new RegExp('\\b(' + Object.keys(twitchSmileMap).map(_.escapeRegExp).join('|') + ')\\b', 'g');
+var bttvRegExp = new RegExp('\\b(' + Object.keys(bttvSmileMap).map(_.escapeRegExp).join('|') + ')\\b', 'g');
 function AddSmiles(string) {
 	return string.replace(twitchRegExp, function(matched) {
 		return "<img src='" + twitchUrlMask.replace('{id}', twitchSmileMap[matched]) + "'/>";
