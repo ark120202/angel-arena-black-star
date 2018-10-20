@@ -141,7 +141,7 @@ end
 function Spawner:OnCreepDeath(unit)
 	Spawner.Creeps[unit.SSpawner] = Spawner.Creeps[unit.SSpawner] - 1
 	if unit.SpawnerType == "jungle" and Spawner.Creeps[unit.SSpawner] == 0 then
-		Timers:CreateTimer(0.5, function()
+		Timers:CreateTimer(0.2 + unit.SLevel * 0.008, function()
 			Spawner:SpawnJungleStacks(unit.SSpawner, unit.SpawnerIndex, unit.SpawnerType)
 		end)
 	end
@@ -196,7 +196,7 @@ function Spawner:UpgradeJungleCreep(unit, cycle, spawnerIndex)
 	unit:SetHealth(unit:GetMaxHealth() * cycle)
 	unit:SetBaseDamageMin(unit:GetBaseDamageMin() * cycle)
 	unit:SetBaseDamageMax(unit:GetBaseDamageMax() * cycle)
-	unit:SetBaseMoveSpeed(unit:GetBaseMoveSpeed() + 10 * cycle)
+	unit:SetBaseMoveSpeed(unit:GetBaseMoveSpeed() + 1 * cycle)
 	unit:SetPhysicalArmorBaseValue(unit:GetPhysicalArmorBaseValue() * cycle)
 	unit:AddNewModifier(unit, nil, "modifier_neutral_upgrade_attackspeed", {})
 	local modifier = unit:FindModifierByNameAndCaster("modifier_neutral_upgrade_attackspeed", unit)

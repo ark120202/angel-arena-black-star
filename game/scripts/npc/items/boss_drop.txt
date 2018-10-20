@@ -97,7 +97,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_winter_greevil_chewy"
+		"AbilityTextureName"			"item_arena/phantom_bone"
 		"ItemCost"						"2000"
 		"ItemQuality"					"legendary"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"

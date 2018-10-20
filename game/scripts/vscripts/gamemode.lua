@@ -135,7 +135,7 @@ function GameMode:OnHeroSelectionEnd()
 end
 
 function GameMode:OnHeroInGame(hero)
-	Timers:CreateTimer(function()
+	Timers:NextTick(function()
 		if IsValidEntity(hero) and hero:IsTrueHero() then
 			Teams:RecalculateKillWeight(hero:GetTeam())
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then

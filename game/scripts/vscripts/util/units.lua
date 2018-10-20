@@ -78,6 +78,9 @@ end
 
 function CDOTA_BaseNPC:TrueKill(ability, killer)
 	self.IsMarkedForTrueKill = true
+	if self:HasAbility("skeleton_king_reincarnation") then
+		self:FindAbilityByName("skeleton_king_reincarnation"):StartCooldown(1/30)
+	end
 	self:Kill(ability, killer)
 	if IsValidEntity(self) and self:IsAlive() then
 		self:RemoveDeathPreventingModifiers()
@@ -156,6 +159,15 @@ function CDOTA_BaseNPC:IsWukongsSummon()
 	)
 end
 
+function CDOTA_BaseNPC:GetIllusionParent()
+	-- TODO: make a correct fix for standard illusions
+	if not self.isCustomIllusion then return end
+	local modifier_illusion = self:FindModifierByName("modifier_illusion")
+	if modifier_illusion then
+		return modifier_illusion:GetCaster()
+	end
+end
+
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	if self.OnDuel then return 1 end
@@ -167,7 +179,6 @@ function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	local bloodstone = self:FindItemInInventory("item_bloodstone")
 	if bloodstone then
 		time = time - bloodstone:GetCurrentCharges() * bloodstone:GetSpecialValueFor("respawn_time_reduction")
-		print("Reduced by ", bloodstone:GetCurrentCharges() * bloodstone:GetSpecialValueFor("respawn_time_reduction"))
 	end
 
 	return math.max(time, 3)

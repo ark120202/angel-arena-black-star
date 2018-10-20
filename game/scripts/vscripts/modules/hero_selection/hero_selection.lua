@@ -75,9 +75,7 @@ function HeroSelection:PrepareTables()
 			local heroTable = GetHeroTableByName(name)
 			local tabIndex = heroTable.base_hero and 2 or 1
 			local heroData = {
-				model = heroTable.base_hero or name,
-				custom_scene_camera = heroTable.SceneCamera,
-				custom_scene_image = heroTable.SceneImage,
+				useCustomScene = heroTable.UseCustomScene == 1,
 				attributes = HeroSelection:ExtractHeroStats(heroTable),
 				tabIndex = tabIndex
 			}

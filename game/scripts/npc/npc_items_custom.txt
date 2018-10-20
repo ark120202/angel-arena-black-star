@@ -1,5 +1,6 @@
 #base "items/thinkers.txt"
 #base "items/shards.txt"
+#base "items/runes.txt"
 #base "items/dagon.txt"
 #base "items/diffusal_blade.txt"
 #base "items/boss_drop.txt"
@@ -26,7 +27,7 @@
 		"ItemResult"					"item_lucifers_claw"
 		"ItemRequirements"
 		{
-			"01"						"item_iron_talon;item_helm_of_the_dominator"
+			"01"						"item_quelling_blade;item_ring_of_regen;item_helm_of_the_dominator"
 		}
 	}
 
@@ -46,7 +47,6 @@
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"common"
 		"ItemAliases"					"quelling blade"
-		"AbilitySharedCooldown"			"item_quelling_blade;item_iron_talon"
 
 
 		// Special
@@ -1007,7 +1007,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/refresher_arena"
-		"AbilitySharedCooldown"			"item_refresher"
+		"AbilitySharedCooldown"			"refresher"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1161,12 +1161,12 @@
 			"10"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming"			"200"
+				"illusion_damage_percent_incoming"			"250"
 			}
 			"11"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming_tooltip"	"300"
+				"illusion_damage_percent_incoming_tooltip"	"350"
 			}
 			"12"
 			{
@@ -1570,12 +1570,12 @@
 			"10"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming"					"250"
+				"illusion_damage_percent_incoming"					"200"
 			}
 			"11"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"illusion_damage_percent_incoming_tooltip"			"350"
+				"illusion_damage_percent_incoming_tooltip"			"300"
 			}
 			"12"
 			{
@@ -1776,7 +1776,7 @@
 		"ItemQuality"					"component"
 		"ItemAliases"					"blink staff"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySharedCooldown" 		"item_blink"
+		"AbilitySharedCooldown" 		"blink"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3414,7 +3414,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/refresher_core"
-		"AbilitySharedCooldown"			"item_refresher"
+		"AbilitySharedCooldown"			"refresher"
 		"ItemShopTags"					"boost_mana;mana_pool"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"mana;mb;octarine core"
@@ -4522,7 +4522,6 @@
 		"AbilityCastPoint"              "0"
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"0"
-		"AbilitySharedCooldown"			"ethereal"
 		"ItemShopTags"					"int;agi;str;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"ghost scepter;drums of endurance;ancient"
@@ -5443,7 +5442,6 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"AbilityTextureName"			"item_arena/blade_of_discord"
-		"AbilitySharedCooldown"			"ethereal"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
@@ -5655,12 +5653,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen_per_stack"	"2.0"
+				"hp_regen_per_stack"	"1.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movespeed_per_stack"	"3"
+				"movespeed_per_stack"	"1"
 			}
 			"03"
 			{
@@ -5670,7 +5668,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"20.0"
+				"buff_duration"			"15.0"
 			}
 			"05"
 			{
@@ -6081,7 +6079,7 @@
 
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"3.8"
-		"AbilitySharedCooldown"			"medallion;basher"
+		"AbilitySharedCooldown"			"medallion"
 
 
 		"ItemQuality"					"rare"
@@ -7782,12 +7780,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"20 40"
+				"cleave_damage_percent"	"15 30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"130 160"
+				"quelling_bonus_damage_pct"	"15 30"
 			}
 			"06"
 			{
@@ -7852,12 +7850,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"20 40"
+				"cleave_damage_percent"	"15 30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"130 160"
+				"quelling_bonus_damage_pct"	"15 30"
 			}
 			"06"
 			{
@@ -7922,17 +7920,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"30"
+				"bonus_strength"		"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"30"
+				"bonus_agility"			"40"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"30"
+				"bonus_intellect"		"40"
 			}
 			"05"
 			{
@@ -7967,12 +7965,12 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"45"
+				"cleave_damage_percent"	"40"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"85"
+				"quelling_bonus_damage_pct"	"40"
 			}
 			"13"
 			{
@@ -8740,72 +8738,6 @@
 			"particle"							"particle/arena/items_fx/unstable_quasar.vpcf"
 			"particle"							"particles/items_fx/diffusal_slow.vpcf"
 			"sound"								"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
-		}
-	}
-
-	"item_recipe_golden_arrow"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_golden_arrow"
-		"ItemRequirements"
-		{
-			"01"						"item_blades_of_attack;item_boots"
-		}
-	}
-
-	"item_golden_arrow"
-	{
-		"BaseClass"						"item_lua"
-		"ScriptFile"					"items/item_golden_arrow.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_arena/golden_arrow_attributes"
-
-		"ItemQuality"					"common"
-		"ItemAliases"					"golden arrow"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		"AbilityCastPoint"				"0.5"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_speed"			"55"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"gold_per_stack"		"60"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attributes_per_stack"	"-3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_stack"		"60"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_base"			"15"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_per_stack"	"7"
-			}
 		}
 	}
 }

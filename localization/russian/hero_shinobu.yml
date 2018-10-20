@@ -4,25 +4,25 @@ npc_arena_hero_shinobu_bio: 'Шинобу Ошино - некогда могущ
 DOTA_Tooltip_ability_shinobu_vampire_blood_Description: |-
   Киссшот Ацеролаорион Хартандерблэйд - легендарный вампир, она не может восстанавливать здоровье любым способом и не имеет пассивной регенерации, но она имеет большой вампиризм и бонусы, основанные на текущем здоровье.
 
-  [УРОВЕНЬ 1] (0% и более здоровья):
-  ~LIFESTEAL:%lifesteal_pct_lvl1%%
-  ~СКОРОСТЬ АТАКИ: %bonus_attack_speed_lvl1%
-  ~СКОРОСТЬ ПЕРЕДВИЖЕНИЯ: %bonus_move_speed_lvl1%
+  0% и более здоровья:
+  ВАМПИРИЗМ: %lifesteal_pct_lvl1%%
+  СКОРОСТЬ АТАКИ: %bonus_attack_speed_lvl1%
+  СКОРОСТЬ ПЕРЕДВИЖЕНИЯ: %bonus_move_speed_lvl1%
 
-  [УРОВЕНЬ 2] (%hp_mark_pct_lvl2%%% и более здоровья):
-  ~LIFESTEAL:%lifesteal_pct_lvl2%%
-  ~СКОРОСТЬ АТАКИ: %bonus_attack_speed_lvl2%
-  ~СКОРОСТЬ ПЕРЕДВИЖЕНИЯ: %bonus_move_speed_lvl2%
+  %hp_mark_pct_lvl2%%% и более здоровья:
+  ВАМПИРИЗМ: %lifesteal_pct_lvl2%%
+  СКОРОСТЬ АТАКИ: %bonus_attack_speed_lvl2%
+  СКОРОСТЬ ПЕРЕДВИЖЕНИЯ: %bonus_move_speed_lvl2%
 
-  [УРОВЕНЬ 3] (%hp_mark_pct_lvl3%%% и более здоровья):
-  ~LIFESTEAL:%lifesteal_pct_lvl3%%
-  ~СКОРОСТЬ АТАКИ: %bonus_attack_speed_lvl3%
-  ~СКОРОСТЬ ПЕРЕДВИЖЕНИЯ: %bonus_move_speed_lvl3%
+  %hp_mark_pct_lvl3%%% и более здоровья:
+  ВАМПИРИЗМ: %lifesteal_pct_lvl3%%
+  СКОРОСТЬ АТАКИ: %bonus_attack_speed_lvl3%
+  СКОРОСТЬ ПЕРЕДВИЖЕНИЯ: %bonus_move_speed_lvl3%
 
-  [УРОВЕНЬ 4] (%hp_mark_pct_lvl4%%% и более здоровья):
-  ~LIFESTEAL:%lifesteal_pct_lvl4%%
-  ~СКОРОСТЬ АТАКИ: %bonus_attack_speed_lvl4%
-  ~СКОРОСТЬ ПЕРЕДВИЖЕНИЯ: %bonus_move_speed_lvl4%
+  %hp_mark_pct_lvl4%%% и более здоровья:
+  ВАМПИРИЗМ: %lifesteal_pct_lvl4%%
+  СКОРОСТЬ АТАКИ: %bonus_attack_speed_lvl4%
+  СКОРОСТЬ ПЕРЕДВИЖЕНИЯ: %bonus_move_speed_lvl4%
 DOTA_Tooltip_ability_shinobu_vampire_blood_Lore: Вампирская кровь имеет свои недостатки, но преимуществ гораздо больше.
 DOTA_Tooltip_ability_shinobu_vampire_blood_Note0: Shinobu воскресает с 50% здоровья
 DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl1: Vampire Blood - Уровень 1

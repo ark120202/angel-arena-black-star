@@ -162,12 +162,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_per_armor"	"120 125 130 135 140 145 150"
+				"damage_per_armor"	"60 70 80 90 100 110 120"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_reduction_pct" "25"
+				"armor_reduction_pct" "15"
 			}
 			"03"
 			{

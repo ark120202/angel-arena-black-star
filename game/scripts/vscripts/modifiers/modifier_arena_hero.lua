@@ -7,7 +7,6 @@ modifier_arena_hero = class({
 
 function modifier_arena_hero:DeclareFunctions()
 	return {
-		MODIFIER_EVENT_ON_ATTACK_START,
 		MODIFIER_EVENT_ON_ABILITY_EXECUTED,
 		MODIFIER_PROPERTY_REFLECT_SPELL,
 		MODIFIER_PROPERTY_ABSORB_SPELL,
@@ -92,6 +91,10 @@ if IsServer() then
 		end
 		if k.unit == parent then
 			parent:RemoveNoDraw()
+
+			if parent:IsIllusion() then
+				parent:ClearNetworkableEntityInfo()
+			end
 		end
 	end
 
@@ -99,23 +102,10 @@ if IsServer() then
 		-- TODO: Check if still required
 		if k.unit == self:GetParent() and k.unit:GetUnitName() == "npc_dota_hero_crystal_maiden" then
 			k.unit:AddNoDraw()
-			Timers:CreateTimer(0.03, function()
-				k.unit:RemoveNoDraw()
-			end)
+			Timers:NextTick(function() k.unit:RemoveNoDraw() end)
 		end
 	end
 
-	function modifier_arena_hero:OnAttackStart(keys)
-		local parent = self:GetParent()
-		if keys.attacker == parent and keys.target:IsCustomRune() then
-			parent:Stop()
-			ExecuteOrderFromTable({
-				UnitIndex = parent:GetEntityIndex(),
-				OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
-				Position = parent:GetAbsOrigin(),
-			})
-		end
-	end
 	function modifier_arena_hero:OnAbilityExecuted(keys)
 		if self:GetParent() == keys.unit then
 			local ability_cast = keys.ability
@@ -144,6 +134,7 @@ if IsServer() then
 		local originalAbility = keys.ability
 		self.absorb_without_check = false
 		if originalAbility:GetCaster():GetTeam() == parent:GetTeam() then return end
+		if SPELL_REFLECT_IGNORED_ABILITIES[originalAbility:GetAbilityName()] then return end
 
 		local item_lotus_sphere = FindItemInInventoryByName(parent, "item_lotus_sphere", false, false, true)
 

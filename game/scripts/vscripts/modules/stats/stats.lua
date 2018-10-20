@@ -87,6 +87,7 @@ function StatsClient:OnGameEnd(winner)
 		local data = {
 			version = ARENA_VERSION,
 			matchID = matchID,
+			mapName = GetMapName(),
 			players = {},
 			killGoal = KILLS_TO_END_GAME_FOR_TEAM,
 			teamsInfo = {},

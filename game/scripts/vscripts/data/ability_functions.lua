@@ -26,6 +26,7 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = {
 	tinker_march_of_the_machines = 2000,
 	necrolyte_reapers_scythe = 7,
 	huskar_life_break = 15,
+	lich_chain_frost = 0,
 }
 
 local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
@@ -157,9 +158,10 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
-		multiplier = function(attacker, victim, _, damage)
+		multiplier = function(attacker, victim, _, damage, damagetype)
 			local anakim_wisps = attacker:FindAbilityByName("anakim_wisps")
 			if anakim_wisps then
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype)
 				local dt = {
 					victim = victim,
 					attacker = attacker,
@@ -266,6 +268,11 @@ INCOMING_DAMAGE_MODIFIERS = {
 			if not inflictor or inflictor:GetAbilityName() ~= "item_meteor_hammer" then
 				return 1
 			end
+		end
+	},
+	modifier_arena_courier = {
+		damage = function ()
+			return 1
 		end
 	},
 	modifier_anakim_transfer_pain = {

@@ -7,3 +7,7 @@ function math.sign(x)
 		return 0
 	end
 end
+
+function math.clamp(x, min, max)
+	return math.max(min, math.min(max, x))
+end

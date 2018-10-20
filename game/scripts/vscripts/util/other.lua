@@ -119,7 +119,7 @@ function CastAdditionalAbility(caster, ability, target)
 			if not caster:IsChanneling() then
 				skill:EndChannel(true)
 				skill:OnChannelFinish(true)
-				Timers:CreateTimer(0.03, function()
+				Timers:NextTick(function()
 					if skill then UTIL_Remove(skill) end
 					if unit then UTIL_Remove(unit) end
 				end)
@@ -293,7 +293,7 @@ function FindCourier(team)
 end
 
 function GetNotScaledDamage(damage, unit)
-	return damage / (1 + Attributes:GetTotalPropValue(unit, "spell_amplify_pct") * 0.01)
+	return damage / (1 + unit:GetSpellAmplification(false))
 end
 
 function IsUltimateAbility(ability)
@@ -534,4 +534,17 @@ function ExpandVector(vec, by)
 		(math.abs(vec.y) + by) * math.sign(vec.y),
 		(math.abs(vec.z) + by) * math.sign(vec.z)
 	)
+end
+
+function VectorOnBoxPerimeter(vec, min, max)
+	local l, r, b, t = min.x, max.x, min.y, max.y
+	local x, y = math.clamp(vec.x, l, r), math.clamp(vec.y, b, t)
+
+	local dl, dr, db, dt = math.abs(x-l), math.abs(x-r), math.abs(y-b), math.abs(y-t)
+	local m = math.min(dl, dr, db, dt)
+
+	if m == dl then return Vector(l, y) end
+	if m == dr then return Vector(r, y) end
+	if m == db then return Vector(x, b) end
+	if m == dt then return Vector(x, t) end
 end

@@ -58,8 +58,6 @@ custom_talents_talent_hero_arc_warden_double_spark: Double Spark Wraith
 custom_talents_talent_hero_arc_warden_double_spark_description: Каждое применение Spark Wraith призывает две призрачные искры
 custom_talents_talent_hero_apocalypse_apocalypse_no_death: Protection from Apocalypse
 custom_talents_talent_hero_apocalypse_apocalypse_no_death_description: 'Apocalypse не погибнет, когда закончится время действия ультимативной способности'
-custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun: Reincarnation
-custom_talents_talent_hero_skeleton_king_reincarnation_notime_stun_description: 'Убирает задержку перед возрождением. При воскрешении оглушает противников, вместо замедления'
 custom_talents_talent_movespeed_pct: Скорость передвижения
 custom_talents_talent_movespeed_pct_description: '+{%movespeed_pct%} к скорости передвижения'
 custom_talents_talent_true_strike: True Strike

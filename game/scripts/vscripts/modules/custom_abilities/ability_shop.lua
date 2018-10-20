@@ -79,6 +79,10 @@ function CustomAbilities:OnAbilitySell(data)
 					hero:RemoveAbility(v)
 				end
 			end
+			if data.ability == "puck_illusory_orb" then
+				local etherealJaunt = hero:FindAbilityByName("puck_ethereal_jaunt")
+				if etherealJaunt then etherealJaunt:SetActivated(false) end
+			end
 			hero:AddAbility("ability_empty")
 		end
 	end
