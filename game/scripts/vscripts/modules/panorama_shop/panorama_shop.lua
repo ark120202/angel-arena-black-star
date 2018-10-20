@@ -280,7 +280,6 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 	local isInShop = unit:HasModifier("modifier_fountain_aura_arena") -- Works only while fontain area === shop area
 	item:SetPurchaseTime(GameRules:GetGameTime())
 	item:SetPurchaser(hero)
-	
 	--If unit is in shop
 	if isInShop and not bOnlyStash then
 		unit:AddItem(item)
@@ -292,9 +291,7 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 end
 
 function PanoramaShop:PushToStash (playerId, item, itemName)
-
 	local unit = PlayerResource:GetSelectedHeroEntity(playerId)
-		
 	-- Stackable item abuse fix	
 	if item:IsStackable() then
 		unit:MakeItemsUnstackable(0, DOTA_STASH_SLOT_1 - 1)
@@ -309,7 +306,6 @@ function PanoramaShop:PushToStash (playerId, item, itemName)
 		end
 	end
 	unit:SafeAddItem(item)
-	
 	--Stackable item abuse fix part 2
 	unit:RestoreOwners(0, DOTA_STASH_SLOT_1 - 1)
 	
