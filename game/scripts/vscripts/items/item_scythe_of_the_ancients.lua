@@ -138,7 +138,7 @@ if IsServer() then
 		local damage = keys.original_damage
 		local caster = ability:GetCaster()
 		local target = keys.unit
-		if keys.attacker == parent and not target:IsMagicImmune() and keys.damage_type == 2 and damage > ability:GetSpecialValueFor("min_damage_to_pure") then
+		if keys.attacker == parent and not target:IsMagicImmune() and keys.damage_type == 2 then
 			ApplyDamage({
 				attacker = parent,
 				victim = target,
