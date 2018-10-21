@@ -55,7 +55,7 @@ if IsServer() then
 			center_z = casterPos.z,
 			duration = knockbackDuration,
 			knockback_duration = knockbackDuration,
-			knockback_distance = 0, -- ability:GetSpecialValueFor("knockback_range"),
+			knockback_distance = ability:GetSpecialValueFor("knockback_range"),
 			knockback_height = 400
 		})
 
