@@ -4,10 +4,11 @@ freya_frozen_strike = class({})
 if IsServer() then
 	function freya_frozen_strike:OnSpellStart()
 		local caster = self:GetCaster()
-		local ability = self
-		caster:AddNewModifier(caster, ability, "modifier_freya_frozen_strike_crit", {})
-		local crit = ability:GetLevelSpecialValueFor("base_crit_pct", ability:GetLevel() - 1) + (ability:GetLevelSpecialValueFor("stat_to_crit_pct", ability:GetLevel() - 1) * caster:GetPrimaryStatValue() * 0.01)
-		caster:SetModifierStackCount("modifier_freya_frozen_strike_crit", caster, crit)
+		local modifier = caster:AddNewModifier(caster, self, "modifier_freya_frozen_strike_crit", nil)
+		local crit =
+			self:GetSpecialValueFor("base_crit_pct") +
+			(self:GetSpecialValueFor("stat_to_crit_pct") * caster:GetPrimaryStatValue() * 0.01)
+		modifier:SetStackCount(crit)
 		caster:EmitSound("Arena.Hero_Freya.FrozenStrike.Charge")
 	end
 end
@@ -36,32 +37,32 @@ if IsServer() then
 
 	function modifier_freya_frozen_strike_crit:OnAttackLanded(keys)
 		local attacker = keys.attacker
+		if attacker ~= self:GetCaster() then return end
+
 		local target = keys.target
-		if attacker == self:GetCaster() then
-			local ability = self:GetAbility()
+		local ability = self:GetAbility()
 
-			attacker:EmitSound("Arena.Hero_Freya.FrozenStrike.Impact")
-			local particle = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_freya/frozen_strike_critical.vpcf", PATTACH_ABSORIGIN, attacker)
-			ParticleManager:SetParticleControlEnt(particle, 0, attacker, PATTACH_POINT_FOLLOW, "attach_weapon", attacker:GetAbsOrigin(), true)
-			ParticleManager:ReleaseParticleIndex(particle)
+		attacker:EmitSound("Arena.Hero_Freya.FrozenStrike.Impact")
+		local particle = ParticleManager:CreateParticle("particles/arena/units/heroes/hero_freya/frozen_strike_critical.vpcf", PATTACH_ABSORIGIN, attacker)
+		ParticleManager:SetParticleControlEnt(particle, 0, attacker, PATTACH_POINT_FOLLOW, "attach_weapon", attacker:GetAbsOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(particle)
 
-			local casterPos = attacker:GetAbsOrigin()
-			local knockbackDuration = self:GetAbility():GetSpecialValueFor("knockback_duration")
-			target:AddNewModifier(target, ability, "modifier_knockback", {
-				center_x = casterPos.x,
-				center_y = casterPos.y,
-				center_z = casterPos.z,
-				duration = knockbackDuration,
-				knockback_duration = knockbackDuration,
-				knockback_distance = 0, --self:GetAbility():GetSpecialValueFor("knockback_range"),
-				knockback_height = 400
-			})
+		local casterPos = attacker:GetAbsOrigin()
+		local knockbackDuration = ability:GetSpecialValueFor("knockback_duration")
+		target:AddNewModifier(target, ability, "modifier_knockback", {
+			center_x = casterPos.x,
+			center_y = casterPos.y,
+			center_z = casterPos.z,
+			duration = knockbackDuration,
+			knockback_duration = knockbackDuration,
+			knockback_distance = 0, -- ability:GetSpecialValueFor("knockback_range"),
+			knockback_height = 400
+		})
 
-			local cleaveRadius = self:GetAbility():GetSpecialValueFor("cleave_radius")
-			DoCleaveAttack(attacker, target, ability, keys.damage, 150, cleaveRadius, cleaveRadius, "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf")
+		local cleaveRadius = ability:GetSpecialValueFor("cleave_radius")
+		DoCleaveAttack(attacker, target, ability, keys.damage, 150, cleaveRadius, cleaveRadius, "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf")
 
-			self:Destroy()
-		end
+		self:Destroy()
 	end
 
 	function modifier_freya_frozen_strike_crit:GetModifierPreAttack_CriticalStrike()
