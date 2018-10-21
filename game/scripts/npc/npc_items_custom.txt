@@ -4384,7 +4384,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_chance"			"75"
+				"bash_chance"			"25"
 			}
 			"03"
 			{
@@ -4394,7 +4394,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_stun"				"0"
+				"bash_stun"				"0.1"
 			}
 		}
 
@@ -7780,12 +7780,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"15 30"
+				"cleave_damage_percent"	"20 30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"15 30"
+				"quelling_bonus_damage_pct"	"20 30"
 			}
 			"06"
 			{
@@ -7850,12 +7850,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"15 30"
+				"cleave_damage_percent"	"20 30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"15 30"
+				"quelling_bonus_damage_pct"	"20 30"
 			}
 			"06"
 			{
@@ -7970,7 +7970,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"40"
+				"quelling_bonus_damage_pct"	"45"
 			}
 			"13"
 			{
