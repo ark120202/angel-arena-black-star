@@ -8313,6 +8313,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 
 				"OnDeath"
 				{
