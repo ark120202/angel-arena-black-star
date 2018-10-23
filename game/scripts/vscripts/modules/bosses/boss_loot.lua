@@ -5,15 +5,15 @@ function Bosses:CreateBossLoot(unit, team)
 
 	local totalDamage = 0
 	local damageByPlayers = {}
-	for pid, damage in pairs(unit.DamageReceived) do
-		if PlayerResource:IsValidPlayerID(pid) and not IsPlayerAbandoned(pid) and team == PlayerResource:GetTeam(pid) then
-			damageByPlayers[pid] = (damageByPlayers[pid] or 0) + damage
+	for playerId, damage in pairs(unit.DamageReceived) do
+		if PlayerResource:IsValidPlayerID(playerId) and not PlayerResource:IsPlayerAbandoned(playerId) and team == PlayerResource:GetTeam(playerId) then
+			damageByPlayers[playerId] = (damageByPlayers[playerId] or 0) + damage
 		end
 		totalDamage = totalDamage + damage
 	end
 	local damagePcts = {}
-	for pid, damage in pairs(damageByPlayers) do
-		damagePcts[pid] = damage/totalDamage*100
+	for playerId, damage in pairs(damageByPlayers) do
+		damagePcts[playerId] = damage/totalDamage*100
 	end
 
 	local t = {
@@ -59,15 +59,15 @@ function Bosses:CreateBossLoot(unit, team)
 			local selectedPlayers = {}
 			local bestPctLeft = -math.huge
 			-- Iterate over all voted players and select player with biggest priority points
-			for pid, s in pairs(entry.votes) do
-				damagePcts[pid] = damagePcts[pid] or 0
-				local totalPointsAfterReduction = damagePcts[pid] - entry.weight
-				if s and totalPointsAfterReduction >= bestPctLeft and not PlayerResource:IsPlayerAbandoned(pid) then
+			for playerId, s in pairs(entry.votes) do
+				damagePcts[playerId] = damagePcts[playerId] or 0
+				local totalPointsAfterReduction = damagePcts[playerId] - entry.weight
+				if s and totalPointsAfterReduction >= bestPctLeft and not PlayerResource:IsPlayerAbandoned(playerId) then
 					if totalPointsAfterReduction > bestPctLeft then
 						selectedPlayers = {}
 					end
-					table.insert(selectedPlayers, pid)
-					damagePcts[pid] = totalPointsAfterReduction
+					table.insert(selectedPlayers, playerId)
+					damagePcts[playerId] = totalPointsAfterReduction
 					bestPctLeft = totalPointsAfterReduction
 				end
 			end
@@ -89,16 +89,16 @@ end
 
 function Bosses:VoteForItem(data)
 	local splittedId = data.voteid:split("_")
-	local PlayerID = data.PlayerID
+	local playerId = data.PlayerID
 	local t = PlayerTables:GetTableValue("bosses_loot_drop_votes", data.voteid)
-	if t and not PlayerResource:IsPlayerAbandoned(PlayerID) and PlayerResource:GetTeam(PlayerID) == tonumber(splittedId[1]) then
+	if t and not PlayerResource:IsPlayerAbandoned(playerId) and PlayerResource:GetTeam(playerId) == tonumber(splittedId[1]) then
 		if t.rollableEntries and t.rollableEntries[tonumber(data.entryid)] then
-			t.rollableEntries[tonumber(data.entryid)].votes[PlayerID] = not t.rollableEntries[tonumber(data.entryid)].votes[PlayerID]
+			t.rollableEntries[tonumber(data.entryid)].votes[playerId] = not t.rollableEntries[tonumber(data.entryid)].votes[playerId]
 		else
 			-- -1
 			local entry = t[tonumber(data.entryid)]
 			if entry then
-				Bosses:GivePlayerSelectedDrop(PlayerID, entry)
+				Bosses:GivePlayerSelectedDrop(playerId, entry)
 				table.remove(t, tonumber(data.entryid))
 			end
 		end

@@ -26,6 +26,7 @@ BOSS_DAMAGE_ABILITY_MODIFIERS = {
 	tinker_march_of_the_machines = 2000,
 	necrolyte_reapers_scythe = 7,
 	huskar_life_break = 15,
+	lich_chain_frost = 0,
 }
 
 local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype_const, itemname, cooldownModifierName)
@@ -66,7 +67,7 @@ ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
 	modifier_item_holy_knight_shield = function(attacker, victim, inflictor, damage) if inflictor then
 		local item = FindItemInInventoryByName(victim, "item_holy_knight_shield", false)
 		if item and RollPercentage(GetAbilitySpecial("item_holy_knight_shield", "buff_chance")) and victim:GetTeam() ~= attacker:GetTeam() then
-			if PreformAbilityPrecastActions(victim, item) then
+			if item:PerformPrecastActions() then
 				item:ApplyDataDrivenModifier(victim, victim, "modifier_item_holy_knight_shield_buff", {})
 			end
 		end
@@ -157,9 +158,10 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
-		multiplier = function(attacker, victim, _, damage)
+		multiplier = function(attacker, victim, _, damage, damagetype)
 			local anakim_wisps = attacker:FindAbilityByName("anakim_wisps")
 			if anakim_wisps then
+				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype)
 				local dt = {
 					victim = victim,
 					attacker = attacker,
@@ -193,43 +195,9 @@ OUTGOING_DAMAGE_MODIFIERS = {
 			}
 		end
 	end,
-	modifier_soul_eater_demon_weapon_from = function(attacker, victim, inflictor)
-		if not inflictor then
-			return 0
-		end
-	end,
 }
 
 INCOMING_DAMAGE_MODIFIERS = {
-	modifier_mana_shield_arena = {
-		multiplier = function(attacker, victim, _, damage)
-			local medusa_mana_shield_arena = victim:FindAbilityByName("medusa_mana_shield_arena")
-			if medusa_mana_shield_arena and not victim:IsIllusion() and victim:IsAlive() and not victim:PassivesDisabled() then
-				local absorption_percent = medusa_mana_shield_arena:GetAbilitySpecial("absorption_tooltip") * 0.01
-				local ndamage = damage * absorption_percent
-				local mana_needed = ndamage / medusa_mana_shield_arena:GetAbilitySpecial("damage_per_mana")
-				if mana_needed <= victim:GetMana() then
-					victim:EmitSound("Hero_Medusa.ManaShield.Proc")
-
-					if RollPercentage(medusa_mana_shield_arena:GetAbilitySpecial("reflect_chance")) then
-						ApplyDamage({
-							attacker = victim,
-							victim = attacker,
-							ability = medusa_mana_shield_arena,
-							damage = ndamage,
-							damage_type = medusa_mana_shield_arena:GetAbilityDamageType(),
-						})
-					end
-					victim:SpendMana(mana_needed, medusa_mana_shield_arena)
-					local particleName = "particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
-					local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, victim)
-					ParticleManager:SetParticleControl(particle, 0, victim:GetAbsOrigin())
-					ParticleManager:SetParticleControl(particle, 1, Vector(mana_needed,0,0))
-					return 1 - absorption_percent
-				end
-			end
-		end
-	},
 	modifier_mirratie_sixth_sense = {
 		multiplier = function(_, victim)
 			local mirratie_sixth_sense = victim:FindAbilityByName("mirratie_sixth_sense")
@@ -258,7 +226,11 @@ INCOMING_DAMAGE_MODIFIERS = {
 			if not IsValidEntity(inflictor) and saber_instinct and victim:IsAlive() and not victim:PassivesDisabled() then
 				if attacker:IsRangedUnit() then
 					if RollPercentage(saber_instinct:GetAbilitySpecial("ranged_evasion_pct")) then
-						PopupEvadeMiss(victim, attacker)
+						local victimPlayer = victim:GetPlayerOwner()
+						local attackerPlayer = attacker:GetPlayerOwner()
+
+						SendOverheadEventMessage(victimPlayer, OVERHEAD_ALERT_EVADE, victim, damage, attackerPlayer)
+						SendOverheadEventMessage(attackerPlayer, OVERHEAD_ALERT_MISS, victim, damage, victimPlayer)
 						ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
 						return false
 					end
@@ -296,6 +268,11 @@ INCOMING_DAMAGE_MODIFIERS = {
 			if not inflictor or inflictor:GetAbilityName() ~= "item_meteor_hammer" then
 				return 1
 			end
+		end
+	},
+	modifier_arena_courier = {
+		damage = function ()
+			return 1
 		end
 	},
 	modifier_anakim_transfer_pain = {

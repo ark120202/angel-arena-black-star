@@ -25,13 +25,11 @@ if IsServer() then
 	function modifier_arena_wearable:OnIntervalThink()
 		if self:GetStackCount() > 100  then
 			if not self.notDrawing then
-				print("hide")
 				self:GetParent():AddNoDraw()
 				--self:GetParent():AddNewModifier(self:GetParent(), nil, "modifier_invisible", nil)
 				self.notDrawing = true
 			end
 		elseif self.notDrawing then
-				print("show")
 			self:GetParent():RemoveNoDraw()
 			self.notDrawing = false
 		end

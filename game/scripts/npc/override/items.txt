@@ -4,6 +4,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySharedCooldown" 		"blink"
 	}
 	"item_dust"
 	{
@@ -42,6 +43,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_AIR"
 	}
 	"item_mithril_hammer"
 	{
@@ -231,7 +233,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_regen"			"120"
+				"health_regen"			"40"
 			}
 		}
 	}
@@ -533,6 +535,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 
 		"AbilitySpecial"
 		{
@@ -573,7 +576,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"1.5"
+				"sheep_duration"		"3.0"
 			}
 		}
 	}
@@ -586,6 +589,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 	}
 	"item_recipe_cyclone"
 	{
@@ -677,6 +681,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySharedCooldown"			"black_king_bar"
 	}
 	"item_recipe_shivas_guard"
 	{
@@ -770,6 +775,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_EARTH"
 	}
 	"item_recipe_greater_crit"
 	{
@@ -780,6 +786,29 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_crit_damage"	"100"
+			}
+		}
 	}
 	"item_recipe_basher"
 	{
@@ -790,6 +819,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_EARTH"
 	}
 	"item_recipe_lesser_crit"
 	{
@@ -820,6 +850,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 	}
 	"item_recipe_satanic"
 	{
@@ -840,6 +871,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ENERGY"
 	}
 	"item_recipe_helm_of_the_dominator"
 	{
@@ -860,6 +892,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ENERGY"
 	}
 	"item_recipe_desolator"
 	{
@@ -915,6 +948,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 		"AbilitySpecial"
 		{
 			"01"
@@ -1031,24 +1065,30 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_EARTH"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"poison_damage"			"8.0"
+				"poison_damage_melee"			"5.0"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"poison_movement_speed_melee"		"-22"
+				"var_type"				"FIELD_FLOAT"
+				"poison_damage_range"		"3.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"poison_movement_speed_range"		"-10"
+				"poison_movement_speed_melee"		"-12"
 			}
 			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"poison_movement_speed_range"		"-4"
+			}
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"poison_duration"		"2.5"
@@ -1112,6 +1152,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_EARTH"
 	}
 	"item_recipe_heavens_halberd"
 	{
@@ -1127,12 +1168,12 @@
 			"10"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"disarm_range"	"1.5"
+				"disarm_range"	"3.0"
 			}
 			"11"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"disarm_melee"	"2.0"
+				"disarm_melee"	"3.0"
 			}
 		}
 	}
@@ -1249,6 +1290,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 	}
 	"item_recipe_solar_crest"
 	{
@@ -1285,55 +1327,6 @@
 		"SecretShop"					"0"
 		"SideShop"						"0"
 	}
-	"item_recipe_iron_talon"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-		"IsObsolete"					"0"
-		"ItemPurchasable"				"1"
-		"ItemResult"					"item_iron_talon"
-		"ItemRequirements"
-		{
-			"01"						"item_quelling_blade;item_ring_of_regen"
-		}
-	}
-	"item_iron_talon"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-		"AbilityCastRange"				"525"
-		"AbilityCooldown"				"10.0"
-		"IsObsolete"					"0"
-		"ItemPurchasable"				"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"quelling_range_tooltip"	"525"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_ward"			"500"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"creep_damage_pct"			"70"
-			}
-		}
-	}
 	"item_recipe_bloodthorn"
 	{
 		"SecretShop"					"0"
@@ -1343,6 +1336,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
 	}
 	"item_wind_lace"
 	{
@@ -1500,13 +1494,14 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-		"ItemCost"						"500"
+		"ItemCost"						"2000"
 	}
 	"item_meteor_hammer"
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
 		"ItemCost"						"0"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_FIRE"
 		"AbilitySpecial"
 		{
 			"05"

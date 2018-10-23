@@ -1,6 +1,4 @@
 npc_arena_hero_anakim: Anakim
-npc_arena_hero_maka: Maka Albarn
-npc_arena_hero_soul_eater: Soul Evans
 
 hero_selection_phase_0: Loading...
 hero_selection_phase_1: Hero Banning
@@ -20,18 +18,6 @@ duel_over_winner_none: The duel is over. At this time there is no winner.
 duel_over_winner_p1: "The duel is over.\_"
 duel_over_winner_p2: "\_is the winner. All it's heroes received\_"
 duel_no_heroes: In one or more teams not enough heroes for duel
-casino_slotmachine_roll_start: "Hero rolled the slot machine. Numbers:\_"
-casino_slotmachine_roll_result_streak000: You lost. Lost everything.
-casino_slotmachine_roll_result_streak00: "You lost\_"
-casino_slotmachine_roll_result_streakxxx: "Nice! You won\_"
-casino_slotmachine_roll_result_streakxx: "Not bad! You won\_"
-casino_slotmachine_roll_result_streak777: "Jackpot! You won\_"
-casino_slotmachine_roll_result_streak322: "All your enemies have got\_"
-casino_slotmachine_roll_result_streak322_enemies_p1: "You and your teammates have been granted with\_"
-casino_slotmachine_roll_result_streak322_enemies_p2: ", because enemy\_"
-casino_slotmachine_roll_result_streak322_enemies_p3: "\_ rolled 322."
-casino_slotmachine_roll_result_streak_no: You didn't win anything this time
-containers_shop_secret_name: Casino Shop
 containers_shop_duel_name: Duel Shop
 
 hero_selection_select_hero: Select Hero
@@ -116,15 +102,21 @@ abaddoned_panel_reason: Your hero was removed because you was disconnected for a
 abaddoned_panel_redistribution: All your items were sold and gold was redistributed among your allies
 abaddoned_panel_ranked: Your rating will be reduced highly
 
+banned_panel_title: You are banned
+banned_panel_reason: You are banned from playing Angel Arena Black Star as a result of excessive negative behavior
+banned_panel_description: Your hero is removed and your gold is redistributed among your allies. You are not allowed to use chat.
+banned_panel_ranked: Your rating won't be considered in the game result.
+banned_panel_unban: If you think it's a mistake, contact to
+
 ranked_top_players: Best Players
 ranked_top_more: Open Top 100...
 
 teams_kill_weight_tooltip: Killing heroes of that team gives {d:kill_weight} points
 
-structures_fountain_protection_weak_line1: The Netherdrake was killed
+structures_fountain_protection_weak_line1: Cursed Zeld was killed
 structures_fountain_protection_weak_line2: Fountain Protection became weaker
 
-structures_fountain_protection_strong_line1: The Netherdrake is up
+structures_fountain_protection_strong_line1: Cursed Zeld is up
 structures_fountain_protection_strong_line2: Fountain Protection became stronger
 
 arena_setup_party_warning: |-

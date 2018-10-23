@@ -222,6 +222,7 @@
 		"ItemShopTags"					"damage;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"desolator 4"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_EARTH"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		// Special
@@ -336,7 +337,7 @@
 		"ItemResult"					"item_desolator5"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator4;item_skadi_8;item_soul_of_titan;item_skadi_8"
+			"01"						"item_desolator4;item_soul_of_titan;item_skadi_8"
 		}
 	}
 
@@ -348,6 +349,7 @@
 		"ItemShopTags"					"damage;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"frozen desolator 5"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ICE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		// Special
@@ -510,6 +512,7 @@
 		"ItemShopTags"					"damage;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"ultimate desolator 6"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_LIGHT"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		// Special

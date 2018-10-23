@@ -5,9 +5,6 @@ Variables:
   item_yasha_note: Yasha-based movement speed bonuses from multiple items do not stack.
   item_kaya_note: Multiple instances of this item do not stack.
 
-DOTA_Tooltip_ability_item_casino_coin: Casino Coin
-DOTA_Tooltip_ability_item_casino_coin_Description: Can be used to play slotmachine or to pay for various services
-
 DOTA_Tooltip_ability_item_shard_level: Level Up Shard
 DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero by 1.'
 
@@ -57,10 +54,11 @@ DOTA_Tooltip_ability_item_shard_attackspeed_bonus_attackspeed: +$attack
 
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
-  <h1>Active: Unwilling Ritual</h1> Targets non-hero enemy unit. The target gets sacrificed for a Doomling. Doomling possesses the abilities of the sacrificed unit and and adds it's health, damage and mana to Doomling's stats. By default doomling has %doomling_health% health, %doomling_mana% mana, %doomling_damage_min%-%doomling_damage_max% damage, %doomling_health_regen% health regeneration, %doomling_mana_regen% mana regeneration. Bounty won't be granted for the target unit. Units killed by Doomling won't grant gold to hero.
+  <h1>Active: Unwilling Ritual</h1> Targets non-hero enemy unit. The target gets sacrificed for a Doomling. Doomling possesses the abilities of the sacrificed unit and and adds it's health, damage and mana to Doomling's stats. By default doomling has %doomling_health% health, %doomling_mana% mana, %doomling_damage_min%-%doomling_damage_max% damage, %doomling_health_regen% health regeneration, %doomling_mana_regen% mana regeneration. Normal XP and gold bounty is granted for the target unit.
   <h1>Passive: Quell</h1>Increases attack damage against non-hero units by %damage_bonus% for melee heroes, and %damage_bonus_ranged% for ranged.
 DOTA_Tooltip_ability_item_lucifers_claw_Note0: The Doomling is summoned Creep-Hero with unlimited duration. It therefore can be targeted by some more spells.
 DOTA_Tooltip_ability_item_lucifers_claw_Note1: Has a 4 second cooldown on Trees.
+DOTA_Tooltip_ability_item_lucifers_claw_Note2: Can't be used on Jungle Bears.
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_all: +$all
 
@@ -1381,9 +1379,8 @@ DOTA_Tooltip_ability_item_scythe_of_sun_bonus_evasion: '%+$evasion'
 DOTA_Tooltip_ability_item_scythe_of_sun_cast_range_bonus: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_scythe_of_sun_spell_amp_pct: '%SPELL DAMAGE AMP:'
 # DOTA_Tooltip_ability_item_scythe_of_sun_hex_duration: 'HEX DURATION:' # Too much specials
-DOTA_Tooltip_ability_item_scythe_of_sun_hex_damage_pct: '%HEX DAMAGE INCREASE:'
 DOTA_Tooltip_modifier_item_scythe_of_sun_hex: Sheeped
-DOTA_Tooltip_modifier_item_scythe_of_sun_hex_Description: You are a sheep. Cannot attack or cast spells. Incoming damage increased by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, movement speed is limited to %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%
+DOTA_Tooltip_modifier_item_scythe_of_sun_hex_Description: You are a sheep. Cannot attack or cast spells. Movement speed is limited to %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%
 
 DOTA_Tooltip_ability_item_book_of_the_guardian: Book of the Guardian
 DOTA_Tooltip_ability_item_book_of_the_guardian_Description: |-

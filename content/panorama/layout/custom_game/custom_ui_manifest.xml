@@ -1,12 +1,11 @@
 <root>
 	<scripts>
-		<include src="file://{resources}/scripts/libraries/playertables_base.js" />
 		<include src="file://{resources}/scripts/libraries/lodash.min.js" />
+		<include src="file://{resources}/scripts/libraries/playertables_base.js" />
 		<include src="file://{resources}/scripts/arena_util.js" />
 		<include src="file://{resources}/scripts/options.js" />
+		<include src="file://{resources}/scripts/hotkey_tracker.js" />
 		<include src="file://{resources}/scripts/custom_ui_manifest.js" />
-
-		<include src="file://{resources}/scripts/debug_panel.js" />
 	</scripts>
 	<Panel>
 		<CustomUIElement type="GameSetup" layoutfile="file://{resources}/layout/custom_game/arena_setup.xml" />

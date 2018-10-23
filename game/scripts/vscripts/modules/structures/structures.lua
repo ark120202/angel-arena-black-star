@@ -8,17 +8,21 @@ ModuleLinkLuaModifier(..., "modifier_fountain_aura_arena")
 ModuleLinkLuaModifier(..., "modifier_fountain_aura_invulnerability", "modifier_fountain_aura_arena")
 ModuleLinkLuaModifier(..., "modifier_fountain_aura_enemy")
 
-Events:Register("activate", "structures", function ()
+Events:Register("activate", function ()
+	local gameMode = GameRules:GetGameModeEntity()
+	gameMode:SetFountainConstantManaRegen(0)
+	gameMode:SetFountainPercentageHealthRegen(0)
+	gameMode:SetFountainPercentageManaRegen(0)
 	Structures:AddHealers()
 	Structures:CreateShops()
 end)
 
-Events:Register("bosses/kill/central", "fountain", function ()
+Events:Register("bosses/kill/cursed_zeld", function ()
 	Notifications:TopToAll({ text="#structures_fountain_protection_weak_line1", duration = 7 })
 	Notifications:TopToAll({ text="#structures_fountain_protection_weak_line2", duration = 7 })
 end)
 
-Events:Register("bosses/respawn/central", "fountain", function ()
+Events:Register("bosses/respawn/cursed_zeld", function ()
 	Notifications:TopToAll({ text="#structures_fountain_protection_strong_line1", duration = 7 })
 	Notifications:TopToAll({ text="#structures_fountain_protection_strong_line2", duration = 7 })
 end)
@@ -37,14 +41,14 @@ function Structures:AddHealers()
 end
 
 function Structures:GiveCourier(hero)
-	local pid = hero:GetPlayerID()
+	local playerId = hero:GetPlayerID()
 	local tn = hero:GetTeamNumber()
 	local cour_item = hero:AddItem(CreateItem("item_courier", hero, hero))
 	TEAMS_COURIERS[hero:GetTeamNumber()] = true
 	Timers:CreateTimer(0.03, function()
 		for _,courier in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
 			local owner = courier:GetOwner()
-			if IsValidEntity(owner) and owner:GetPlayerID() == pid then
+			if IsValidEntity(owner) and owner:GetPlayerID() == playerId then
 				courier:SetOwner(nil)
 				courier:UpgradeToFlyingCourier()
 

@@ -97,22 +97,6 @@ DOTAHud
 #CustomModifiersList
 	height: 32px
 
-#SwitchDynamicMinimapButton
-	width: 44px
-	height: 44px
-	background-image: url('file://{resources}/images/custom_game/hud/dynamic_minimap_switch.png')
-	background-size: 100% 100%
-	border-radius: 100%
-	transition-duration: .25s
-	transition-property: brightness
-
-	&:hover
-		brightness: 2
-
-	&:active
-		pre-transform-scale2d: .96
-		brightness: 1.5
-
 
 #CustomToastManager
 	height: 400px
@@ -277,7 +261,7 @@ DOTAHud
 		visibility: visible
 
 	> Label
-		margin-bottom: 6px;
+		margin-bottom: 6px
 		font-size: 20px
 		color: rgb(204, 217, 189)
 		text-align: center
@@ -302,3 +286,73 @@ DOTAHud
 		.ShowMMR &
 			margin-bottom: 12px
 			opacity: 1
+
+#BannedPanel
+	width: 700px
+	background-color: #151B27
+	border: 5px solid #8E4336
+	visibility: collapse
+	align: center center
+	flow-children: down
+
+	.LocalPlayerBanned &
+		visibility: visible
+
+	// Label
+	// 	margin-bottom: 6px
+	// 	font-size: 26px
+	// 	color: rgb(204, 217, 189)
+	// 	text-align: center
+	// 	horizontal-align: center
+	$textColor: #8F989C
+	$highlightColor: #fff
+
+	#BannedTitle
+		width: 100%
+		padding-left: 8px
+		background-color: #8E4336
+		color: $highlightColor
+		font-size: 24px
+		font-weight: bold
+
+	#BannedReason
+		margin: 5px
+		color: $highlightColor
+		font-size: 22px
+		font-weight: bold
+
+	#BannedDescription
+		margin: 0 5px
+		color: $textColor
+
+	#BannedRanked
+		margin: 0 5px
+		color: $textColor
+		visibility: collapse
+
+		.ShowMMR &
+			visibility: visible
+
+	#BannedUnban
+		margin-top: 32px
+		flow-children: right
+
+	#BannedUnbanText
+		margin: 0 5px
+		color: $textColor
+
+	#BannedUnbanContact
+		color: #67C1F5
+		&:hover
+			text-decoration: underline
+
+	#BannedOk
+		margin: 4px
+		padding: 4px 8px
+		padding-left: 10px
+		padding-bottom: 2px
+		background-color: #06111E
+
+		> Label
+			text-transform: uppercase
+			letter-spacing: 1px

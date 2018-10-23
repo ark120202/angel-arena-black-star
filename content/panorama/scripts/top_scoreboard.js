@@ -5,23 +5,23 @@ var players_abandoned = [];
 var DuelTimerEndTime;
 var teamColors = GameUI.CustomUIConfig().team_colors;
 
-function Snippet_TopBarPlayerSlot(pid) {
-	if (PlayerPanels[pid] == null) {
-		var team = Players.GetTeam(pid);
+function Snippet_TopBarPlayerSlot(playerId) {
+	if (PlayerPanels[playerId] == null) {
+		var team = Players.GetTeam(playerId);
 		if (team !== DOTA_TEAM_SPECTATOR) {
 			var teamPanel = Snippet_DotaTeamBar(team).FindChildTraverse('TopBarPlayersContainer');
 			var panel = $.CreatePanel('Panel', teamPanel, '');
 			panel.BLoadLayoutSnippet('TopBarPlayerSlot');
-			panel.playerId = pid;
+			panel.playerId = playerId;
 			panel.FindChildTraverse('HeroImage').SetPanelEvent('onactivate', function() {
-				Players.PlayerPortraitClicked(pid, GameUI.IsControlDown(), GameUI.IsAltDown());
+				Players.PlayerPortraitClicked(playerId, GameUI.IsControlDown(), GameUI.IsAltDown());
 			});
 			var TopBarUltIndicator = panel.FindChildTraverse('TopBarUltIndicator');
 			TopBarUltIndicator.SetPanelEvent('onmouseover', function() {
 				if (panel.ultimateCooldown != null && panel.ultimateCooldown > 0) {
 					$.DispatchEvent('UIShowTextTooltip', TopBarUltIndicator, panel.ultimateCooldown);
 				}
-				//$.DispatchEvent("UIShowTopBarUltimateTooltip ", panel, pid);
+				//$.DispatchEvent("UIShowTopBarUltimateTooltip ", panel, playerId);
 			});
 			panel.FindChildTraverse('TopBarUltIndicator').SetPanelEvent('onmouseout', function() {
 				$.DispatchEvent('UIHideTextTooltip', panel);
@@ -33,10 +33,10 @@ function Snippet_TopBarPlayerSlot(pid) {
 				});
 			};
 			panel.Resort();
-			PlayerPanels[pid] = panel;
+			PlayerPanels[playerId] = panel;
 		}
 	}
-	return PlayerPanels[pid];
+	return PlayerPanels[playerId];
 }
 
 function Snippet_TopBarPlayerSlot_Update(panel) {
@@ -116,8 +116,8 @@ function Update() {
 	$('#DayTime').visible = isDayTime;
 	$('#NightTime').visible = !isNSNight && !isDayTime;
 	$('#NightstalkerNight').visible = isNSNight;
-	_.each(Game.GetAllPlayerIDs(), function(pid) {
-		Snippet_TopBarPlayerSlot_Update(Snippet_TopBarPlayerSlot(pid));
+	_.each(Game.GetAllPlayerIDs(), function(playerId) {
+		Snippet_TopBarPlayerSlot_Update(Snippet_TopBarPlayerSlot(playerId));
 	});
 	for (var i in TeamPanels) {
 		Snippet_DotaTeamBar_Update(TeamPanels[i]);
@@ -139,10 +139,10 @@ function Update() {
 	GameEvents.Subscribe('time_nightstalker_darkness', (function(data) {
 		darknessEndTime = Game.GetDOTATime(false, false) + data.duration;
 	}));
+	Options.Subscribe('KillLimit', function(value) {
+		$.GetContextPanel().SetDialogVariableInt('kill_goal', Number(value));
+	})
 	DynamicSubscribePTListener('arena', function(tableName, changesObject, deletionsObject) {
-		if (changesObject.kill_goal != null) {
-			$.GetContextPanel().SetDialogVariableInt('kill_goal', Number(changesObject.kill_goal));
-		}
 		if (changesObject.duel_end_time != null) {
 			DuelTimerEndTime = Number(changesObject.duel_end_time);
 		}

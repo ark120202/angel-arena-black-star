@@ -10,7 +10,7 @@ function CreateLightningBlot(position)
 	end
 
 
-	local aoe = 200
+	local aoe = 125
 	CreateGlobalParticle("particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", function(particle)
 		local lightningSourcePosition = originalPosition and (originalPosition + Vector(0, 0, 1200)) or
 			(position + Vector(RandomInt(-250, 250), RandomInt(-250, 250), 1200))
@@ -78,8 +78,8 @@ WEATHER_EFFECTS = {
 		dummyModifier = "modifier_weather_rain",
 	},
 	storm = {
-		minDuration = 7,
-		maxDuration = 15,
+		minDuration = 120,
+		maxDuration = 180,
 		recipients = {"rain", "sunny"},
 
 		isCatastrophe = true,
@@ -91,10 +91,7 @@ WEATHER_EFFECTS = {
 		},
 		dummyModifier = "modifier_weather_rain",
 		Think = function()
-			local bolts = math.floor(Weather:GetPassedTime()) - 1
-			for _ =  1, bolts do
-				CreateLightningBlot(GetGroundPosition(Vector(RandomInt(-MAP_LENGTH, MAP_LENGTH), RandomInt(-MAP_LENGTH, MAP_LENGTH), 0), nil))
-			end
+			CreateLightningBlot(GetGroundPosition(Vector(RandomInt(-MAP_LENGTH, MAP_LENGTH), RandomInt(-MAP_LENGTH, MAP_LENGTH), 0), nil))
 		end,
 	},
 	snow = {

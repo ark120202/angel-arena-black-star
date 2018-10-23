@@ -1,13 +1,14 @@
-Events:Register("activate", "filters", function ()
+Events:Register("activate", function ()
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap(GameMode, 'ExecuteOrderFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, 'DamageFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, 'ModifyGoldFilter'), GameRules)
 	GameRules:GetGameModeEntity():SetModifyExperienceFilter(Dynamic_Wrap(GameMode, 'ModifyExperienceFilter'), GameRules)
+	GameRules:GetGameModeEntity():SetItemAddedToInventoryFilter(Dynamic_Wrap(GameMode, 'ItemAddedToInventoryFilter'), GameRules)
 end)
 
 function GameMode:ExecuteOrderFilter(filterTable)
 	local order_type = filterTable.order_type
-	local PlayerID = filterTable.issuer_player_id_const
+	local playerId = filterTable.issuer_player_id_const
 	if order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
 		return false
 	end
@@ -18,26 +19,36 @@ function GameMode:ExecuteOrderFilter(filterTable)
 		abilityname = ability:GetAbilityName()
 	end
 	if order_type == DOTA_UNIT_ORDER_TRAIN_ABILITY and Options:IsEquals("EnableAbilityShop") then
-		CustomAbilities:OnAbilityBuy(PlayerID, abilityname)
+		CustomAbilities:OnAbilityBuy(playerId, abilityname)
 		return false
 	end
 
 	local unit = EntIndexToHScript(filterTable.units["0"])
 
 	if unit and order_type == DOTA_UNIT_ORDER_SELL_ITEM and ability then
-		PanoramaShop:SellItem(PlayerID, unit, ability)
+		PanoramaShop:SellItem(playerId, unit, ability)
 		return false
 	end
 
-	if unit:IsCourier() and (
-		order_type == DOTA_UNIT_ORDER_CAST_POSITION or
-		order_type == DOTA_UNIT_ORDER_CAST_TARGET or
-		order_type == DOTA_UNIT_ORDER_CAST_TARGET_TREE or
-		order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or
-		order_type == DOTA_UNIT_ORDER_CAST_TOGGLE
-	) and ability.IsItem and ability:IsItem() then
-		Containers:DisplayError(PlayerID, "dota_hud_error_courier_cant_use_item")
-		return false
+	if unit:IsCourier() then
+		if (
+			order_type == DOTA_UNIT_ORDER_CAST_POSITION or
+			order_type == DOTA_UNIT_ORDER_CAST_TARGET or
+			order_type == DOTA_UNIT_ORDER_CAST_TARGET_TREE or
+			order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or
+			order_type == DOTA_UNIT_ORDER_CAST_TOGGLE
+		) and ability and ability:IsItem() then
+			Containers:DisplayError(playerId, "dota_hud_error_courier_cant_use_item")
+			return false
+		end
+
+		if (order_type == DOTA_UNIT_ORDER_DROP_ITEM or order_type == DOTA_UNIT_ORDER_GIVE_ITEM) and ability and ability:IsItem() then
+			local purchaser = ability:GetPurchaser()
+			if purchaser and purchaser:GetPlayerID() ~= playerId then
+				Containers:DisplayError(playerId, "arena_hud_error_courier_cant_order_item")
+				return false
+			end
+		end
 	end
 
 	if not unit:IsConsideredHero() then return true end
@@ -52,45 +63,56 @@ function GameMode:ExecuteOrderFilter(filterTable)
 				local ent1len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team2"):GetAbsOrigin()):Length2D()
 				local ent2len = (orderVector - Entities:FindByName(nil, "target_mark_arena_team3"):GetAbsOrigin()):Length2D()
 				if ent1len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 or ent2len <= ARENA_NOT_CASTABLE_ABILITIES[abilityname] + 200 then
-					Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
+					Containers:DisplayError(playerId, "#arena_hud_error_cant_target_duel")
 					return false
 				end
 			end
-			if IsInBox(orderVector, Entities:FindByName(nil, "target_mark_arena_blocker_1"):GetAbsOrigin(), Entities:FindByName(nil, "target_mark_arena_blocker_2"):GetAbsOrigin()) then
-				Containers:DisplayError(PlayerID, "#arena_hud_error_cant_target_duel")
+			if Duel:IsOnDuel(orderVector) then
+				Containers:DisplayError(playerId, "#arena_hud_error_cant_target_duel")
 				return false
 			end
 		end
 	elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
 		if abilityname == "rubick_spell_steal" then
 			if target == unit then
-				Containers:DisplayError(PlayerID, "#dota_hud_error_cant_cast_on_self")
+				Containers:DisplayError(playerId, "#dota_hud_error_cant_cast_on_self")
 				return false
 			end
 			if target:HasAbility("doppelganger_mimic") then
-				Containers:DisplayError(PlayerID, "#dota_hud_error_cant_steal_spell")
+				Containers:DisplayError(playerId, "#dota_hud_error_cant_steal_spell")
+				return false
+			end
+		end
+		if abilityname == "morphling_replicate" then
+			if target:HasAbility("doppelganger_mimic") then
+				Containers:DisplayError(playerId, "#arena_hud_error_cant_replicate_hero")
+				return false
+			end
+			if target:GetFullName() == unit:GetFullName() then
+				Containers:DisplayError(playerId, "#arena_hud_error_cant_replicate_hero")
 				return false
 			end
 		end
 		if target:IsChampion() and CHAMPIONS_BANNED_ABILITIES[abilityname] then
-			Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_champion")
+			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_champion")
 			return false
 		end
-		if target.SpawnerType == "jungle" and not JUNGLE_ALLOWED_ABILITIES[abilityname] then
-			Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_jungle")
+		if target.SpawnerType == "jungle" and JUNGLE_BANNED_ABILITIES[abilityname] then
+			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_jungle")
 			return false
 		end
 		if target:IsBoss() and BOSS_BANNED_ABILITIES[abilityname] then
-			Containers:DisplayError(PlayerID, "#dota_hud_error_ability_cant_target_boss")
+			Containers:DisplayError(playerId, "#dota_hud_error_ability_cant_target_boss")
 			return false
 		end
-		if PlayerResource:IsDisableHelpSetForPlayerID(UnitVarToPlayerID(target), UnitVarToPlayerID(unit)--[[PlayerID]]) and DISABLE_HELP_ABILITIES[abilityname] then
-			Containers:DisplayError(PlayerID, "#dota_hud_error_target_has_disable_help")
-			return false
-		end
-		if table.contains(ABILITY_INVULNERABLE_UNITS, target:GetUnitName()) and abilityname ~= "item_casino_coin" then
-			filterTable.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
-			return true
+	elseif order_type == DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK then
+		local lockType = filterTable.entindex_target
+		if ability.auto_lock_order then
+			ability.auto_lock_order = false
+		elseif lockType == 0 then
+			ability.player_locked = false
+		else
+			ability.player_locked = true
 		end
 	end
 
@@ -126,9 +148,6 @@ function GameMode:DamageFilter(filterTable)
 			end
 			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and victim:IsBoss() then
 				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
-			end
-			if inflictorname == "templar_assassin_psi_blades" and victim:IsRealCreep() then
-				filterTable.damage = damage * 0.5
 			end
 		end
 		if victim:IsBoss() and (attacker:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() > 950 then
@@ -216,27 +235,26 @@ function GameMode:DamageFilter(filterTable)
 			end
 		end
 		if BlockedDamage > 0 then
-			PopupDamageBlock(victim, math.round(BlockedDamage))
-			--print("Raw damage: " .. filterTable.damage .. ", after blocking: " .. filterTable.damage - BlockedDamage .. " (blocked: " .. BlockedDamage .. ")")
+			SendOverheadEventMessage(victim:GetPlayerOwner(), OVERHEAD_ALERT_BLOCK, victim, BlockedDamage, attacker:GetPlayerOwner())
+			SendOverheadEventMessage(attacker:GetPlayerOwner(), OVERHEAD_ALERT_BLOCK, victim, BlockedDamage, victim:GetPlayerOwner())
+
 			filterTable.damage = filterTable.damage - BlockedDamage
 		end
 		if LifestealPercentage > 0 then
 			local lifesteal = filterTable.damage * LifestealPercentage * 0.01
 			SafeHeal(attacker, lifesteal)
-			SendOverheadEventMessage(attacker:GetPlayerOwner(), OVERHEAD_ALERT_HEAL, attacker, lifesteal, attacker:GetPlayerOwner())
 			ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
-			--print("Lifestealing " .. lifesteal .. " health from " .. filterTable.damage .. " damage points (" .. LifestealPercentage .. "% lifesteal)")
 		end
 		if attacker.GetPlayerOwnerID then
-			local attackerpid = attacker:GetPlayerOwnerID()
-			if attackerpid > -1 then
+			local attackerPlayerId = attacker:GetPlayerOwnerID()
+			if attackerPlayerId > -1 then
 				if victim:IsRealHero() then
-					attacker:ModifyPlayerStat("heroDamage", filterTable.damage)
+					PlayerResource:ModifyPlayerStat(attackerPlayerId, "heroDamage", filterTable.damage)
 				end
 				if victim:IsBoss() then
-					attacker:ModifyPlayerStat("bossDamage", filterTable.damage)
+					PlayerResource:ModifyPlayerStat(attackerPlayerId, "bossDamage", filterTable.damage)
 					victim.DamageReceived = victim.DamageReceived or {}
-					victim.DamageReceived[attackerpid] = (victim.DamageReceived[attackerpid] or 0) + filterTable.damage
+					victim.DamageReceived[attackerPlayerId] = (victim.DamageReceived[attackerPlayerId] or 0) + filterTable.damage
 				end
 			end
 		end
@@ -274,25 +292,18 @@ function GameMode:ModifyExperienceFilter(filterTable)
 	return true
 end
 
-function GameMode:CustomChatFilter(playerID, teamonly, data)
-	if data.text and string.starts(data.text, "-") then
-		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-		local cmd = {}
-		for v in string.gmatch(string.sub(data.text, 2), "%S+") do table.insert(cmd, v) end
-
-		local command = table.remove(cmd, 1)
-		local data = CHAT_COMMANDS[command]
-		if data then
-			local isDev = DynamicWearables:HasWearable(playerID, "wearable_developer") or IsInToolsMode()
-			local isCheat = GameRules:IsCheatMode()
-			if data.level == CUSTOMCHAT_COMMAND_LEVEL_PUBLIC
-				or (data.level == CUSTOMCHAT_COMMAND_LEVEL_CHEAT and isCheat)
-				or (data.level == CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER and isDev)
-				or (data.level == CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER and (isCheat or isDev)) then
-				data.f(cmd, hero, playerID)
-			end
-		end
+function GameMode:ItemAddedToInventoryFilter(filterTable)
+	local item = EntIndexToHScript(filterTable.item_entindex_const)
+  
+	if item.RuneType then 
+		local unit = EntIndexToHScript(filterTable.inventory_parent_entindex_const)
+		CustomRunes:PickUpRune(unit, item)
 		return false
+	end
+  
+	if item.suggestedSlot then
+		filterTable.suggested_slot = item.suggestedSlot
+		item.suggestedSlot = nil
 	end
 	return true
 end

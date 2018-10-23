@@ -1,6 +1,3 @@
-DOTA_Tooltip_ability_item_casino_coin: Casino Coin
-DOTA_Tooltip_ability_item_casino_coin_Description: Может быть использовано в слотмашине или для оплаты различных услуг.
-
 DOTA_Tooltip_ability_item_shard_level: Level Up Shard
 DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Активируемая: Поглотить</h1> Поглощает предмет и увеличивает уровень вашего героя на 1.'
 
@@ -37,10 +34,11 @@ DOTA_Tooltip_ability_item_shard_attackspeed: Attackspeed Shard
 
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
-  <h1>Активируемая: Unwilling Ritual</h1> Используется на крипов. Цель приносится в жертву для Думлинга. Думлинг перенемает способности принесенного в жертву существа и добавляет его здоровье, урон и запас маны к характеристикам Думлинга. Изначальные характеристики Думлинга: %doomling_health% здоровья, %doomling_mana% маны, %doomling_damage_min%-%doomling_damage_max% урона, %doomling_health_regen% регенерации здоровья, %doomling_mana_regen% регенерации маны. Герой не получит награды за убийство жертвы. Юниты, убитые Думлингом не будут приносить герою золото.
+  <h1>Активируемая: Unwilling Ritual</h1> Используется на крипов. Цель приносится в жертву для Думлинга. Думлинг перенемает способности принесенного в жертву существа и добавляет его здоровье, урон и запас маны к характеристикам Думлинга. Изначальные характеристики Думлинга: %doomling_health% здоровья, %doomling_mana% маны, %doomling_damage_min%-%doomling_damage_max% урона, %doomling_health_regen% регенерации здоровья, %doomling_mana_regen% регенерации маны. Герой получает обычное золото и опыт за убийство жертвы.
   <h1>Пассивная: Quell</h1> Увеличивает урон от атак по существам, не являющимися героями, на %damage_bonus% для героев ближнего боя или на %damage_bonus_ranged% — для дальнего.
 DOTA_Tooltip_ability_item_lucifers_claw_Note0: Думлинг - крип-герой с бесконечным временем жизни. На него может быть направлено большинство способностей.
 DOTA_Tooltip_ability_item_lucifers_claw_Note1: 'Перезарядка при использовании на дереве: 4 секунды.'
+DOTA_Tooltip_ability_item_lucifers_claw_Note2: Не может быть использовано на Косолапых Мишек.
 
 DOTA_Tooltip_ability_item_homemade_cheese: Homemade Cheese
 DOTA_Tooltip_ability_item_homemade_cheese_Description: '<h1>Использование: Fondue</h1> Исчезает и мгновенно восстанавливает здоровье и ману. При использовании на союзниках длительность перезарядки составляет %alternative_cooldown% секунд.'

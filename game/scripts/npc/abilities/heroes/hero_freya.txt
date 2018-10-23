@@ -23,6 +23,8 @@
 
 		"AbilityManaCost"				"100 150 200 250 300 350 400"
 		"AOERadius"						"%radius"
+		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
 
 		"AbilitySpecial"
 		{
@@ -166,12 +168,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"1.6"
+				"duration"			"1"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_second_pct"		"10"
+				"damage_per_second_pct"		"5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
@@ -290,7 +292,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityCastPoint"				"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-		"AbilityCooldown"				"18.0"
+		"AbilityCooldown"				"30.0"
 		"AbilityManaCost"				"150"
 
 		"AbilitySpecial"
@@ -308,8 +310,8 @@
 			}
 			"03"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"2"
 			}
 		}
 	}
@@ -318,7 +320,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
+		"BaseClass"				"ability_lua"
+		"ScriptFile"					"heroes/hero_freya/frozen_strike.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -328,7 +331,7 @@
 		"MaxLevel"						"7"
 		"AbilityCastPoint"				"0.6 0.5 0.4 0.3 0.2 0.1 0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCooldown"				"60.0 50.0 40.0 30.0 20.0 15.0 10.0"
+		"AbilityCooldown"				"90.0 80.0 70.0 60.0 50.0 40.0 30.0"
 		"AbilityManaCost"				"80 100 120 140 160 180 200"
 
 		"AbilitySpecial"
@@ -336,17 +339,17 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"base_crit_pct"		"250 275 300 325 350 375 400"
+				"base_crit_pct"		"150 175 200 225 250 275 300"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stat_to_crit_pct"	"6 7 8 9 10 11 12"
+				"stat_to_crit_pct"	"1"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"cleave_radius"		"450"
+				"cleave_radius"		"200"
 			}
 			"04"
 			{
@@ -365,88 +368,6 @@
 			"particle"  "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
 			"particle"  "particles/arena/units/heroes/hero_freya/frozen_strike_critical.vpcf"
 			"particle"  "particles/units/heroes/hero_tusk/tusk_rubickpunch_status.vpcf"
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_freya/frozen_strike.lua"
-				"Function"		"CritProc"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_freya_frozen_strike_crit"
-			{
-				"IsPurgable"		"0"
-
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"        "particles/units/heroes/hero_tusk/tusk_rubickpunch_status.vpcf"
-						"EffectAttachType"  "point_follow"
-						"Target"            "CASTER"
-
-						"ControlPointEntities"
-						{
-							"CASTER"	"attach_weapon"
-						}
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Arena.Hero_Freya.FrozenStrike.Impact"
-						"Target" 		"CASTER"
-					}
-
-					"FireEffect"
-					{
-						"EffectName" 		"particles/arena/units/heroes/hero_freya/frozen_strike_critical.vpcf"
-						"EffectAttachType"  "attach_origin"
-						"Target"    		"CASTER"
-					}
-
-					"Knockback"
-					{
-						"Target"            "TARGET"
-						"Center" 	        "CASTER"
-						"Distance"	        "%knockback_range"
-						"Duration"	        "%knockback_duration"
-						"Height"	        "400"
-						"IsFixedDistance"	"1"
-						"ShouldStun"        "1"
-					}
-
-					"CleaveAttack"
-					{
-						"CleavePercent"         "100"
-						"CleaveRadius"          "%cleave_radius"
-						"CleaveEffect"          "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
-					}
-
-					"RemoveModifier"
-					{
-						"ModifierName"  "modifier_freya_frozen_strike_crit"
-						"Target"   		"CASTER"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "1"
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
 		}
 	}
 }

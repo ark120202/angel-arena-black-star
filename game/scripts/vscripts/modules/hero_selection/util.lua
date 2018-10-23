@@ -23,8 +23,8 @@ function HeroSelection:PreformRandomForNotPickedUnits()
 	end
 end
 
-function HeroSelection:GetSelectedHeroName(playerID)
-	local status = HeroSelection:GetPlayerStatus(playerID)
+function HeroSelection:GetSelectedHeroName(playerId)
+	local status = HeroSelection:GetPlayerStatus(playerId)
 	if status and status.status == "picked" then
 		return status.hero
 	end
@@ -113,13 +113,21 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			unit:SetBaseDamageMax(value)
 		elseif key == "AttackRate" then
 			unit:SetBaseAttackTime(value)
+			unit:SetNetworkableEntityInfo("AttackRate", value)
 		elseif key == "AttackAcquisitionRange" then
 			unit:SetAcquisitionRange(value)
 		elseif key == "ProjectileModel" then
 			unit:SetRangedProjectileName(value)
 		elseif key == "AttributePrimary" then
-			Timers:CreateTimer(0.1, function()
+			Timers:CreateTimer(2/30, function()
 				unit:SetPrimaryAttribute(_G[value])
+				unit:CalculateStatBonus()
+
+				local illusionParent = unit:GetIllusionParent()
+				if IsValidEntity(illusionParent) then
+					unit:SetHealth(illusionParent:GetHealth())
+					unit:SetMana(illusionParent:GetMana())
+				end
 			end)
 		elseif key == "AttributeBaseStrength" then
 			unit:SetBaseStrength(value)
@@ -190,16 +198,16 @@ function HeroSelection:InitializeHeroClass(unit, classTable)
 	end
 end
 
-function HeroSelection:ForceChangePlayerHeroMenu(playerID)
-	PlayerResource:ModifyPlayerStat(playerID, "ChangedHeroAmount", 1)
-	HeroSelection:ChangeHero(playerID, FORCE_PICKED_HERO, true, 0, nil, function(hero)
+function HeroSelection:ForceChangePlayerHeroMenu(playerId)
+	PlayerResource:ModifyPlayerStat(playerId, "ChangedHeroAmount", 1)
+	HeroSelection:ChangeHero(playerId, FORCE_PICKED_HERO, true, 0, nil, function(hero)
 		hero:AddNoDraw()
-		FindClearSpaceForUnit(hero, FindFountain(PlayerResource:GetTeam(playerID)):GetAbsOrigin(), true)
+		FindClearSpaceForUnit(hero, FindFountain(PlayerResource:GetTeam(playerId)):GetAbsOrigin(), true)
 		hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
 		hero.ForcedHeroChange = true
 		Timers:CreateTimer(function()
-			local player = PlayerResource:GetPlayer(playerID)
-			if not IsPlayerAbandoned(playerID) and player and IsValidEntity(hero) and not hero.ChangingHeroProcessRunning then
+			local player = PlayerResource:GetPlayer(playerId)
+			if not PlayerResource:IsPlayerAbandoned(playerId) and player and IsValidEntity(hero) and not hero.ChangingHeroProcessRunning then
 				CustomGameEventManager:Send_ServerToPlayer(player, "metamorphosis_elixir_show_menu", {forced = true})
 				return 0.5
 			end
@@ -277,14 +285,14 @@ function HeroSelection:PreformPlayerRandom(playerId)
 			not HeroSelection:IsHeroBanned(hero) and
 			not HeroSelection:IsHeroDisabledInRanked(hero) then
 			HeroSelection:UpdateStatusForPlayer(playerId, "picked", hero)
-			CustomChatSay(-1, PlayerResource:GetTeam(playerId), {
+			Chat:SendSystemMessage({
 				localizable = "DOTA_Chat_Random",
 				variables = {
 					["%s1"] = "{player}",
 					["%s2"] = hero
 				},
 				player = playerId
-			})
+			}, PlayerResource:GetTeam(playerId))
 			Gold:ModifyGold(playerId, CUSTOM_GOLD_FOR_RANDOM_TOTAL)
 			break
 		end
@@ -293,7 +301,7 @@ end
 
 function HeroSelection:NominateHeroForBan(playerId, hero)
 	if not HeroSelection:IsHeroBanned(hero) then
-		CustomChatSay(-1, -1, {
+		Chat:SendSystemMessage({
 			localizable = "DOTA_Chat_AD_NominatedBan",
 			variables = {
 				["%s1"] = hero
@@ -323,4 +331,9 @@ function HeroSelection:IsHeroPickAvaliable(hero)
 		not HeroSelection:IsHeroDisabledInRanked() and
 		not HeroSelection:IsHeroUnreleased() and
 		HeroSelection:VerifyHeroGroup(hero)
+end
+
+function HeroSelection:GetLinkedHeroNames(hero)
+	local linked = GetKeyValue(hero, "LinkedHero")
+	return linked and string.split(linked, " | ") or {}
 end

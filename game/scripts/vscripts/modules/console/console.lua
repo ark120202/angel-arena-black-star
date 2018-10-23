@@ -1,6 +1,6 @@
 Console = Console or {}
 
-Events:Register("activate", "console", function ()
+Events:Register("activate", function ()
 	CustomGameEventManager:RegisterListener("console-evaluate", Dynamic_Wrap(Console, "ConsoleEvaluate"))
 
 	Convars:RegisterCommand("arena_console", function()
@@ -15,12 +15,12 @@ function Console:SetVisible(player, value)
 	})
 end
 
-function Console:CanEvaluate(playerID)
-	return IsInToolsMode() or DynamicWearables:HasWearable(playerID, "wearable_developer")
+function Console:CanEvaluate(playerId)
+	return IsInToolsMode() or DynamicWearables:HasWearable(playerId, "wearable_developer")
 end
 
-function Console:SetStack(playerID, stack)
-	CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "console-stack", {
+function Console:SetStack(playerId, stack)
+	CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerId), "console-stack", {
 		stack = stack,
 	})
 end
@@ -44,14 +44,14 @@ function Console:SendJSToPlayer(target, code)
 	end
 end
 
-function Console:SendJSWithFilter(playerID, filter, code)
+function Console:SendJSWithFilter(playerId, filter, code)
 	local targets = {}
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
 			local includesI =
-				(filter == "everyone" and i ~= playerID) or
-				(filter == "enemies" and PlayerResource:GetTeam(i) ~= PlayerResource:GetTeam(playerID)) or
-				(filter == "allies" and i ~= playerID and PlayerResource:GetTeam(i) == PlayerResource:GetTeam(playerID))
+				(filter == "everyone" and i ~= playerId) or
+				(filter == "enemies" and PlayerResource:GetTeam(i) ~= PlayerResource:GetTeam(playerId)) or
+				(filter == "allies" and i ~= playerId and PlayerResource:GetTeam(i) == PlayerResource:GetTeam(playerId))
 			if includesI then
 				local status = false
 				local targetPlayer = PlayerResource:GetPlayer(i)
@@ -77,11 +77,11 @@ function Console:SendJSWithFilter(playerID, filter, code)
 end
 
 function Console:ConsoleEvaluate(event)
-	local playerID = event.PlayerID
-	local player = PlayerResource:GetPlayer(playerID)
+	local playerId = event.PlayerID
+	local player = PlayerResource:GetPlayer(playerId)
 
-	if not Console:CanEvaluate(playerID) then
-		return Console:SetStack(playerID, "PermissionError: you should be a developer to be able to use debug console outside of tools")
+	if not Console:CanEvaluate(playerId) then
+		return Console:SetStack(playerId, "PermissionError: you should be a developer to be able to use debug console outside of tools")
 	end
 
 	local evalType = event.type
@@ -89,16 +89,16 @@ function Console:ConsoleEvaluate(event)
 	local code = event.code
 
 	if evalType == "lua" then
-		Console:SetStack(playerID, Console:EvaluateLua(code))
+		Console:SetStack(playerId, Console:EvaluateLua(code))
 	elseif evalType == "js" then
 		if target == "everyone" or target == "enemies" or target == "allies" then
-			Console:SetStack(playerID, Console:SendJSWithFilter(playerID, target, code))
+			Console:SetStack(playerId, Console:SendJSWithFilter(playerId, target, code))
 		elseif tonumber(target) then
-			Console:SetStack(playerID, Console:SendJSToPlayer(target, code))
+			Console:SetStack(playerId, Console:SendJSToPlayer(target, code))
 		else
-			Console:SetStack(playerID, "Error: illegal target - \"" .. target .. "\"")
+			Console:SetStack(playerId, "Error: illegal target - \"" .. target .. "\"")
 		end
 	else
-		Console:SetStack(playerID, "Error: illegal event type - \"" .. evalType .. "\"")
+		Console:SetStack(playerId, "Error: illegal event type - \"" .. evalType .. "\"")
 	end
 end

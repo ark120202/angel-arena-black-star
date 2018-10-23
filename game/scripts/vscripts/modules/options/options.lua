@@ -46,7 +46,7 @@ end
 
 function Options:OnVote(data)
 	local voteTable = Options.PreGameVotings[data.name]
-	if table.contains(voteTable.variants, data.vote) then
+	if table.includes(voteTable.variants, data.vote) then
 		voteTable.votes[data.PlayerID] = data.vote
 		CustomGameEventManager:Send_ServerToAllClients("option_votings_refresh", {name = data.name, data = voteTable})
 		--PlayerTables:SetTableValue("option_votings", data.name, table.deepcopy(voteTable))
@@ -110,6 +110,9 @@ function Options:LoadDefaultValues()
 	Options:SetInitialValue("EnableRatingAffection", false)
 	Options:SetInitialValue("DynamicKillWeight", true)
 	Options:SetInitialValue("TeamSetupMode", "open")
+	Options:SetInitialValue("EnableBans", true)
+	Options:SetInitialValue("CustomTeamColors", false)
+	Options:SetInitialValue("KillLimit", 0)
 	--Options:SetInitialValue("MapLayout", "5v5")
 
 	Options:SetInitialValue("BanningPhaseBannedPercentage", 0)
@@ -121,7 +124,7 @@ function Options:LoadDefaultValues()
 	Options:SetPreGameVoting("kill_limit", {100, 125, 150, 175}, 150, {
 		calculationFunction = "/",
 		callback = function(value)
-			GameRules:SetKillGoal(math.round(value))
+			Options:SetValue("KillLimit", math.round(value))
 		end
 	})
 end
@@ -134,16 +137,8 @@ function Options:LoadMapValues()
 
 	if gamemode == "custom_abilities" then
 		Options:SetValue("MainHeroList", "NoAbilities")
-		Options:SetPreGameVoting("custom_abilities", {"random_omg", "ability_shop"}, "ability_shop", {
-			calculationFunction = ">",
-			callback = function(value)
-				Options:SetValue("EnableAbilityShop", value == "ability_shop")
-				Options:SetValue("EnableRandomAbilities", value == "random_omg")
-				if value == "ability_shop" then
-					CustomAbilities:PostAbilityShopData()
-				end
-			end
-		})
+		Options:SetValue("EnableAbilityShop", true)
+		CustomAbilities:PostAbilityShopData()
 	elseif gamemode == "ranked" then
 		Options:SetValue("EnableRatingAffection", true)
 		Options:SetValue("BanningPhaseBannedPercentage", 80)
@@ -184,17 +179,19 @@ function Options:LoadMapValues()
 	end
 	if landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216
-		USE_CUSTOM_TEAM_COLORS = true
+		Options:SetValue("CustomTeamColors", true)
 	end
 	if landscape == "1v1" then
 		MAP_LENGTH = 3840
 		Options:SetValue("DynamicKillWeight", false)
 		Options:SetPreGameVoting("kill_limit", {10, 15, 20, 25, 30, 35}, 25)
+		-- Would be pretty annoying for enemy
+		Options:SetValue("EnableBans", false)
 	end
 end
 
 function Options:LoadCheatValues()
-
+	Options:SetValue("EnableBans", false)
 end
 
 function Options:LoadToolsValues()

@@ -25,24 +25,17 @@ if IsServer() then
 		self:GetParent():RemoveModifierByName("modifier_fountain_aura_invulnerability")
 	end
 
-	local centralBossKilled = false
-	Events:Register("bosses/kill/central", "modifier_fountain_aura_arena", function ()
-		centralBossKilled = true
-	end)
-	Events:Register("bosses/respawn/central", "modifier_fountain_aura_arena", function ()
-		centralBossKilled = false
-	end)
-
 	function modifier_fountain_aura_arena:OnIntervalThink()
 		local parent = self:GetParent()
 		while parent:HasModifier("modifier_saber_mana_burst_active") do
 			parent:RemoveModifierByName("modifier_saber_mana_burst_active")
 		end
 
+		local isBossAlive = Bosses:IsAlive("cursed_zeld")
 		local hasMod = parent:HasModifier("modifier_fountain_aura_invulnerability")
-		if not centralBossKilled and not hasMod then
+		if isBossAlive and not hasMod then
 			parent:AddNewModifier(parent, nil, "modifier_fountain_aura_invulnerability", nil)
-		elseif centralBossKilled and hasMod then
+		elseif not isBossAlive and hasMod then
 			parent:RemoveModifierByName("modifier_fountain_aura_invulnerability")
 		end
 
@@ -58,7 +51,6 @@ end
 
 modifier_fountain_aura_invulnerability = class({
 	IsPurgable =                  function() return false end,
-	GetMinHealth =                function() return 1 end,
 	GetAbsoluteNoDamagePhysical = function() return 1 end,
 	GetAbsoluteNoDamageMagical =  function() return 1 end,
 	GetAbsoluteNoDamagePure =     function() return 1 end,
@@ -67,7 +59,6 @@ modifier_fountain_aura_invulnerability = class({
 
 function modifier_fountain_aura_invulnerability:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_MIN_HEALTH,
 		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
 		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
 		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,

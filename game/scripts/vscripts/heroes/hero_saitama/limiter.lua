@@ -48,7 +48,7 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local parent = self:GetParent()
 		if parent:IsAlive() then
-			if ability:GetAutoCastState() and parent:GetMana() >= ability:GetManaCost() and not parent:IsChanneling() and parent:GetModifierStackCount("modifier_saitama_limiter", parent) > 0 then
+			if ability:GetAutoCastState() and parent:GetMana() >= ability:GetManaCost() and not parent:IsChanneling() and not parent:IsInvisible() and not (parent:GetCurrentActiveAbility() and parent:GetCurrentActiveAbility():IsInAbilityPhase()) and parent:GetModifierStackCount("modifier_saitama_limiter", parent) > 0 then
 				parent:CastAbilityNoTarget(ability, parent:GetPlayerID())
 			end
 		end

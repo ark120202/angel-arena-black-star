@@ -14,9 +14,7 @@ local requirements = {
 	"libraries/playertables",
 	"libraries/containers",
 	-- "libraries/pathgraph",
-	"libraries/selection",
 	"libraries/worldpanels",
-	"libraries/PopupNumbers",
 	"libraries/statcollection/init",
 	--------------------------------------------------
 	"data/constants",
@@ -26,7 +24,6 @@ local requirements = {
 	"data/abilities",
 	"data/ability_functions",
 	"data/ability_shop",
-	"data/commands",
 	--------------------------------------------------
 	"internal/gamemode",
 	"internal/events",
@@ -65,6 +62,7 @@ end
 Options:Preload()
 
 function GameMode:InitGameMode()
+	GameMode:SetupRules()
 	GameMode = self
 	if GAMEMODE_INITIALIZATION_STATUS[2] then
 		return
@@ -81,10 +79,6 @@ function GameMode:InitGameMode()
 	PlayerTables:CreateTable("gold", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("weather", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
-end
-
-function GameMode:PostLoadPrecache()
-
 end
 
 function GameMode:OnFirstPlayerLoaded()
@@ -111,19 +105,26 @@ function GameMode:OnHeroSelectionStart()
 	Bosses:InitAllBosses()
 	CustomRunes:Init()
 	CustomTalents:Init()
+
+	Timers:CreateTimer(0.1, function()
+		for playerId, data in pairs(PLAYER_DATA) do
+			if PlayerResource:IsPlayerAbandoned(playerId) then
+				PlayerResource:RemoveAllUnits(playerId)
+			end
+		end
+	end)
 end
 
 function GameMode:OnHeroSelectionEnd()
 	Timers:CreateTimer(CUSTOM_GOLD_TICK_TIME, Dynamic_Wrap(GameMode, "GameModeThink"))
-	--Timers:CreateTimer(1/30, Dynamic_Wrap(GameMode, "QuickGameModeThink"))
 	PanoramaShop:StartItemStocks()
 	Duel:CreateGlobalTimer()
 	Weather:Init()
 
 	Timers:CreateTimer(10, function()
-		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-			if PlayerResource:IsValidPlayerID(playerID) and not PlayerResource:IsFakeClient(playerID) and GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
-				local heroName = HeroSelection:GetSelectedHeroName(playerID) or ""
+		for playerId = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+			if PlayerResource:IsValidPlayerID(playerId) and not PlayerResource:IsFakeClient(playerId) and GetConnectionState(playerId) == DOTA_CONNECTION_STATE_CONNECTED then
+				local heroName = HeroSelection:GetSelectedHeroName(playerId) or ""
 				if heroName == "" or heroName == FORCE_PICKED_HERO then
 					GameMode:BreakGame("arena_end_screen_error_broken")
 					return
@@ -134,7 +135,7 @@ function GameMode:OnHeroSelectionEnd()
 end
 
 function GameMode:OnHeroInGame(hero)
-	Timers:CreateTimer(function()
+	Timers:NextTick(function()
 		if IsValidEntity(hero) and hero:IsTrueHero() then
 			Teams:RecalculateKillWeight(hero:GetTeam())
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
@@ -156,17 +157,8 @@ function GameMode:OnGameInProgress()
 	end)
 end
 
-function CDOTAGamerules:SetKillGoal(iGoal)
-	KILLS_TO_END_GAME_FOR_TEAM = iGoal
-	PlayerTables:SetTableValue("arena", "kill_goal", KILLS_TO_END_GAME_FOR_TEAM)
-end
-
-function CDOTAGamerules:GetKillGoal()
-	return KILLS_TO_END_GAME_FOR_TEAM
-end
-
 function GameMode:PrecacheUnitQueueed(name)
-	if not table.contains(RANDOM_OMG_PRECACHED_HEROES, name) then
+	if not table.includes(RANDOM_OMG_PRECACHED_HEROES, name) then
 		if not IS_PRECACHE_PROCESS_RUNNING then
 			IS_PRECACHE_PROCESS_RUNNING = true
 			table.insert(RANDOM_OMG_PRECACHED_HEROES, name)
@@ -212,6 +204,22 @@ function GameMode:GameModeThink()
 		end
 	end
 	return CUSTOM_GOLD_TICK_TIME
+end
+
+function GameMode:SetupRules()
+	GameRules:SetCustomGameSetupAutoLaunchDelay(IsInToolsMode() and 3 or 15)
+	GameRules:LockCustomGameSetupTeamAssignment(false)
+	GameRules:EnableCustomGameSetupAutoLaunch(true)
+	GameRules:SetTreeRegrowTime(60)
+	GameRules:SetUseCustomHeroXPValues(true)
+
+	local gameMode = GameRules:GetGameModeEntity()
+	gameMode:SetBuybackEnabled(false)
+	gameMode:SetTopBarTeamValuesOverride(true)
+	gameMode:SetUseCustomHeroLevels(true)
+	gameMode:SetCustomXPRequiredToReachNextLevel(XP_PER_LEVEL_TABLE)
+	gameMode:SetMaximumAttackSpeed(750)
+	gameMode:SetMinimumAttackSpeed(60)
 end
 
 function GameMode:BreakGame(message)

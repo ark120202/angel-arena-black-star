@@ -11,28 +11,28 @@ function ChatSendMessage() {
 }
 
 function RecieveMessage(data) {
-	var playerID = data.playerId;
+	var playerId = data.playerId;
 	//data.shop_item_name = "item_rapier"
 	//data.text = null;
 	//data.gold = 123;
-	if (playerID != null && !Game.IsPlayerMuted(playerID)) {
+	if (playerId != null && !Game.IsPlayerMuted(playerId)) {
 		//var localPlayerId = Game.GetLocalPlayerID()
 		var rootPanel = CustomChatLinesPanel || $('#SelectionChatMessages');
 		var html = '';
-		if (playerID !== -1) {
-			var SenderHero = GetPlayerHeroName(playerID);
-			var playerColor = GetHEXPlayerColor(playerID);
+		if (playerId !== -1) {
+			var SenderHero = GetPlayerHeroName(playerId);
+			var playerColor = GetHEXPlayerColor(playerId);
 			if (SenderHero && SenderHero !== 'npc_dota_hero_target_dummy')
 				html = '<img src="' + TransformTextureToPath(SenderHero) + '" class="HeroIcon" style="vertical-align: top;"/> ';
 			html += data.teamonly === 1 ? '<font color="lime">[T]</font>' : '<font color="darkred">[A]</font>';
-			html += " <font color='" + playerColor + "'>" + Players.GetPlayerName(playerID).encodeHTML() + '</font>: ';
+			html += " <font color='" + playerColor + "'>" + _.escape(Players.GetPlayerName(playerId)) + '</font>: ';
 		}
 
 		if (data.text) {
-			html += AddSmiles(String(data.text).encodeHTML());
+			html += AddSmiles(_.escape(String(data.text)));
 		} else if (data.gold != null && data.player != null) {
 			html += "<img src='file://{images}/control_icons/chat_wheel_icon.png' class='ChatWheelIcon' />";
-			var localized = $.Localize(data.player === playerID ? 'chat_message_gold_self' : 'chat_message_gold_ally');
+			var localized = $.Localize(data.player === playerId ? 'chat_message_gold_self' : 'chat_message_gold_ally');
 			localized = localized.replace('{gold}', '<font color="gold">' + FormatGold(data.gold) + '</font>');
 			localized = localized.replace('{player}', '<font color="' + GetHEXPlayerColor(data.player) + '"">' + $.Localize(GetPlayerHeroName(data.player)) + '</font>');
 			html += localized;
@@ -40,7 +40,7 @@ function RecieveMessage(data) {
 			html += '<img src="file://{images}/control_icons/chat_wheel_icon.png" class="ChatWheelIcon" />';
 			var localized;
 			var cooldown = Abilities.GetCooldownTimeRemaining(data.ability);
-			if (Players.GetTeam(data.player) === Players.GetTeam(playerID)) {
+			if (Players.GetTeam(data.player) === Players.GetTeam(playerId)) {
 				if (Abilities.GetLevel(data.ability) === 0) {
 					localized = 'chat_message_ability_not_learned';
 				} else if (!Abilities.IsOwnersManaEnough(data.ability)) {
@@ -52,7 +52,7 @@ function RecieveMessage(data) {
 				} else {
 					localized = 'chat_message_ability_ready';
 				}
-				if (data.player !== playerID) {
+				if (data.player !== playerId) {
 					localized = localized.replace('chat_message_ability_', 'chat_message_ability_ally_');
 				}
 			} else {
@@ -80,7 +80,7 @@ function RecieveMessage(data) {
 		} else if (data.level) {
 			html += '<img src="file://{images}/control_icons/chat_wheel_icon.png" class="ChatWheelIcon" />';
 			var localized = ((data.xpToNextLevel == null && !data.isNeutral) ? 'chat_message_level_side_capped' : 'chat_message_level_side');
-			var unitSide = data.unit === Players.GetPlayerHeroEntityIndex(playerID) ? 'self' : Entities.GetTeamNumber(data.unit) === Players.GetTeam(playerID) ? 'ally' : 'enemy';
+			var unitSide = data.unit === Players.GetPlayerHeroEntityIndex(playerId) ? 'self' : Entities.GetTeamNumber(data.unit) === Players.GetTeam(playerId) ? 'ally' : 'enemy';
 			localized = localized.replace('side', unitSide);
 			localized = $.Localize(localized);
 
@@ -128,8 +128,8 @@ function RedirectMessage(label) {
 	*/
 }
 
-var twitchRegExp = new RegExp('\\b(' + escapeRegExp(Object.keys(twitchSmileMap).join('|')) + ')\\b', 'g');
-var bttvRegExp = new RegExp('\\b(' + escapeRegExp(Object.keys(bttvSmileMap).join('|')) + ')\\b', 'g');
+var twitchRegExp = new RegExp('\\b(' + Object.keys(twitchSmileMap).map(_.escapeRegExp).join('|') + ')\\b', 'g');
+var bttvRegExp = new RegExp('\\b(' + Object.keys(bttvSmileMap).map(_.escapeRegExp).join('|') + ')\\b', 'g');
 function AddSmiles(string) {
 	return string.replace(twitchRegExp, function(matched) {
 		return "<img src='" + twitchUrlMask.replace('{id}', twitchSmileMap[matched]) + "'/>";

@@ -9,12 +9,12 @@ TIMERS_VERSION = "1.05"
 		end
 	)
 
-	-- The same timer as above with a shorthand call 
+	-- The same timer as above with a shorthand call
 	Timers(function()
 		print ("Hello. I'm running immediately and then every second thereafter.")
 		return 1.0
 	end)
-	
+
 
 	-- A timer which calls a function with a table context
 	Timers:CreateTimer(GameMode.someFunction, GameMode)
@@ -85,20 +85,24 @@ end
 function Timers:start()
 	Timers = self
 	self.timers = {}
-	
+	self.nextTickCallbacks = {}
+
 	--local ent = Entities:CreateByClassname("info_target") -- Entities:FindByClassname(nil, 'CWorld')
 	local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
 	ent:SetThink("Think", self, "timers", TIMERS_THINK)
 end
 
 function Timers:Think()
-	--if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
-		--return
-	--end
+	local nextTickCallbacks = table.merge({}, Timers.nextTickCallbacks)
+	Timers.nextTickCallbacks = {}
+	for _, cb in ipairs(nextTickCallbacks) do
+		cb()
+	end
 
 	-- Track game time, since the dt passed in to think is actually wall-clock time not simulation time.
 	local now = GameRules:GetGameTime()
 
+	-- print(table.count(Timers.timers))
 	-- Process timers
 	for k,v in pairs(Timers.timers) do
 		local bUseGameTime = true
@@ -125,7 +129,7 @@ function Timers:Think()
 
 			Timers.runningTimer = k
 			Timers.removeSelf = false
-			
+
 			-- Run the callback
 			local status, nextCall
 			if v.context then
@@ -172,7 +176,6 @@ function Timers:HandleEventError(name, event, err)
 		print(err)
 	else
 		StatsClient:HandleError(err)
-		CPrint(err)
 	end
 
 	-- Ensure we have data
@@ -225,9 +228,13 @@ function Timers:CreateTimer(name, args, context)
 
 	args.context = context
 
-	Timers.timers[name] = args 
+	Timers.timers[name] = args
 
 	return name
+end
+
+function Timers:NextTick(callback)
+	table.insert(Timers.nextTickCallbacks, callback)
 end
 
 function Timers:RemoveTimer(name)

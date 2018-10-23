@@ -9,6 +9,37 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 	height: 100%
 	align: right center
 
+.HUDFlipped
+	#ShopBase
+		align: left bottom
+		flow-children: left
+		transform: translateX(-$fullPanelWidth)
+
+		#ShopSearch
+			flow-children: left
+
+		#ShopSearchEntry
+			margin-left: 0px
+			margin-right: 4px
+			padding: 5px 3px 7px
+
+		#ShowHideItemguidesButton
+			margin-left: 0px
+			margin-right: 4px
+			transform: scaleX(-1)
+
+	#QuickBuyPanel
+		#QuickBuyPanelItems
+			align: right center
+			margin-left: 0px
+			margin-right: 2px
+
+		#QuickBuyStickyButtonPanel
+			align: left top
+
+		#QuickBuyClearButtonPanel
+			align: left bottom
+
 #ShopBase
 	margin-right: 0
 	margin-bottom: 196px
@@ -452,12 +483,13 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 
 
 #QuickBuyPanelItems
-	width: 232px
+	width: 210px
 	height: 100%
 	margin-top: 2px
 	margin-left: 2px
 	align: left center
 	flow-children: right-wrap
+	overflow: squish clip
 
 .DropDownValidTarget
 	width: 100%
@@ -492,6 +524,8 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 	border-radius: 1px
 
 #StockOverlay
+	visibility: collapse
+	width: 100%
 	height: 100%
 	background-color: rgba(0, 0, 0, .86667)
 
@@ -501,6 +535,7 @@ $fullPanelWidth: $mainPanelWidth + $guidesPanelWidth
 	text-shadow: 0 0 6px 6 rgb(0, 0, 0)
 	vertical-align: center
 	horizontal-align: center
+	z-index: 1
 
 .UnitItemlikeRecipePanel
 	width: 57.6px

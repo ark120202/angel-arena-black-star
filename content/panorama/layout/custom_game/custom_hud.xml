@@ -30,7 +30,6 @@
 			<!-- <Label class="PlayerControlsButton" text="?" onactivate="GameEvents.SendCustomGameEventToServer('hud_buttons_show_custom_game_info', {playerid: Game.GetLocalPlayerID()})"/> -->
 		</Panel>
 		<Panel id="DynamicMinimapRoot" hittest="false" hittestchildren="false" />
-		<Button id="SwitchDynamicMinimapButton" onactivate="SetDynamicMinimapVisible()"/>
 		<Panel id="CustomToastManager" hittest="false" hittestchildren="false" />
 		<Panel id="CustomModifiersList" />
 		<Panel id="AbandonedPanel">
@@ -38,6 +37,18 @@
 			<Label id="AbandonedReason" text="#abaddoned_panel_reason" />
 			<Label id="AbandonedRedistribution" text="#abaddoned_panel_redistribution" />
 			<Label id="AbandonedRanked" text="#abaddoned_panel_ranked" />
+		</Panel>
+		<Panel id="BannedPanel">
+			<Label id="BannedTitle" text="#banned_panel_title" />
+			<Label id="BannedReason" text="#banned_panel_reason" />
+			<Label id="BannedDescription" text="#banned_panel_description" />
+			<Label id="BannedRanked" text="#banned_panel_ranked" />
+			<Panel id="BannedUnban">
+				<Label id="BannedUnbanText" text="#banned_panel_unban" />
+				<Label id="BannedUnbanContact" text="MurzikViskas" onactivate="ExternalBrowserGoToURL(https://vk.com/m.viskas)" />
+			</Panel>
+
+			<TextButton id="BannedOk" text="OK" onactivate="DOTAHUDGameDisconnect()" />
 		</Panel>
 	</Panel>
 </root>

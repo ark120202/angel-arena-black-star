@@ -117,8 +117,6 @@ function modifier_item_scythe_of_sun_hex:DeclareFunctions()
 		MODIFIER_PROPERTY_MOVESPEED_MAX, -- MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE
 		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
 		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
-
-		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
 	}
 end
 
@@ -136,8 +134,4 @@ end
 
 function modifier_item_scythe_of_sun_hex:GetModifierMoveSpeed_Absolute()
 	return self:GetAbility():GetSpecialValueFor("hex_movement_speed")
-end
-
-function modifier_item_scythe_of_sun_hex:GetModifierIncomingDamage_Percentage()
-	return self:GetAbility():GetSpecialValueFor("hex_damage_pct")
 end

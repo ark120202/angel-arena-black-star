@@ -2,6 +2,7 @@ if Bosses == nil then
 	Bosses = class({})
 	Bosses.MinimapPoints = {}
 	Bosses.NextVoteID = 0
+	Bosses.aliveStatus = {}
 end
 ModuleRequire(..., "data")
 ModuleRequire(..., "boss_loot")
@@ -17,9 +18,9 @@ function Bosses:InitAllBosses()
 	Bosses:SpawnStaticBoss("l1_v2")
 	Bosses:SpawnStaticBoss("l2_v1")
 	Bosses:SpawnStaticBoss("l2_v2")
-	Bosses:SpawnStaticBoss("central")
 	Bosses:SpawnStaticBoss("freya")
 	Bosses:SpawnStaticBoss("zaken")
+	Bosses:SpawnStaticBoss("cursed_zeld")
 end
 
 function Bosses:SpawnStaticBoss(name)
@@ -30,12 +31,34 @@ function Bosses:SpawnStaticBoss(name)
 end
 
 function Bosses:SpawnBossUnit(name, spawner)
+	Bosses.aliveStatus[name] = true
 	DynamicMinimap:SetVisibleGlobal(Bosses.MinimapPoints[spawner], true)
 	local boss = CreateUnitByName("npc_arena_boss_" .. name, spawner:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
 	boss.SpawnerEntity = spawner
-	Bosses:MakeBossAI(boss, name)
+	Bosses:MakeBossAI(boss, name, {})
 
 	return boss
+end
+
+function Bosses:IsLastBossEntity(unit)
+	if unit:GetUnitName() ~= "npc_arena_boss_cursed_zeld" then return true end
+	if not unit.isFinalClone then return false end
+
+	local zeld
+	while true do
+		zeld = Entities:FindByClassname(zeld, "npc_dota_creature")
+		if not zeld then break end
+		if (
+			zeld:GetUnitName() == "npc_arena_boss_cursed_zeld" and
+			not zeld.isMindCrackClone and
+			zeld:IsAlive() and
+			zeld ~= unit
+		) then
+			return false
+		end
+	end
+
+	return true
 end
 
 function Bosses:RegisterKilledBoss(unit, team)
@@ -57,6 +80,7 @@ function Bosses:RegisterKilledBoss(unit, team)
 		Gold:ModifyGold(v, amount)
 	end
 
+	Bosses.aliveStatus[bossname] = false
 	Events:Emit("bosses/kill/" .. bossname)
 	Timers:CreateTimer(unit:GetKeyValue("Bosses_RespawnDuration"), function()
 		Events:Emit("bosses/respawn/" .. bossname)
@@ -64,21 +88,18 @@ function Bosses:RegisterKilledBoss(unit, team)
 	end)
 end
 
-function Bosses:MakeBossAI(unit, name)
+function Bosses:MakeBossAI(unit, name, params)
 	unit:SetIdleAcquire(false)
-	local aiTable = {
-		leashRange = 1000,
-	}
-	local profile = "boss"
+	params.leashRange = params.leashRange or 1000
 	if name == "freya" then
 		local boss_freya_sharp_ice_shards = unit:FindAbilityByName("boss_freya_sharp_ice_shards")
-		aiTable["abilityCastCallback"] = function(self)
+		params.abilityCastCallback = function(self)
 			local unitsInRange = self:FindUnitsNearby(boss_freya_sharp_ice_shards:GetCastRange(unit:GetAbsOrigin(), nil) - 100, false, true, DOTA_UNIT_TARGET_HERO)
 			if #unitsInRange > 0 then
 				self:UseAbility(boss_freya_sharp_ice_shards)
 			end
 		end
-		--[[aiTable["abilityCastCallback"] = function(self)
+		--[[params.abilityCastCallback = function(self)
 			local unitsInRange = self:FindUnitsNearby(boss_roshan_spikes:GetAbilitySpecial("length") - 200, false, true, DOTA_UNIT_TARGET_HERO)
 			if #unitsInRange > 0 then
 				local spikesTarget
@@ -101,7 +122,7 @@ function Bosses:MakeBossAI(unit, name)
 		local boss_kel_thuzad_shadows = unit:FindAbilityByName("boss_kel_thuzad_shadows")
 		local boss_kel_thuzad_summon_undead = unit:FindAbilityByName("boss_kel_thuzad_summon_undead")
 		local boss_kel_thuzad_erebus = unit:FindAbilityByName("boss_kel_thuzad_erebus")
-		aiTable["abilityCastCallback"] = function(self)
+		params.abilityCastCallback = function(self)
 			if boss_kel_thuzad_invulnerability:IsFullyCastable() then
 				--self:UseAbility(boss_kel_thuzad_invulnerability)
 			end
@@ -131,8 +152,20 @@ function Bosses:MakeBossAI(unit, name)
 				end
 			end
 		end
-	elseif name == "central" then
-		profile = "tower"
+	elseif name == "cursed_zeld" then
+		local boss_cursed_zeld_mind_crack = unit:FindAbilityByName("boss_cursed_zeld_mind_crack")
+		params.abilityCastCallback = function(self)
+			if boss_cursed_zeld_mind_crack:IsFullyCastable() and boss_cursed_zeld_mind_crack:IsActivated() then
+				if self.state == AI_STATE_AGGRESSIVE then
+					self:UseAbility(boss_cursed_zeld_mind_crack)
+				end
+			end
+		end
 	end
-	local ai = SimpleAI:new(unit, profile, aiTable)
+
+	SimpleAI:new(unit, "boss", params)
+end
+
+function Bosses:IsAlive(name)
+	return Bosses.aliveStatus[name]
 end

@@ -20,14 +20,14 @@ function CustomAbilities:PrepareData()
 			ABILITY_SHOP_DATA[a].banned_with = {}
 		end
 		for _,suba in ipairs(vs) do
-			if not table.contains(ABILITY_SHOP_DATA[a].banned_with, suba) then table.insert(ABILITY_SHOP_DATA[a].banned_with, suba) end
+			if not table.includes(ABILITY_SHOP_DATA[a].banned_with, suba) then table.insert(ABILITY_SHOP_DATA[a].banned_with, suba) end
 			if not ABILITY_SHOP_DATA[suba] then
 				ABILITY_SHOP_DATA[suba] = {}
 			end
 			if not ABILITY_SHOP_DATA[suba].banned_with then
 				ABILITY_SHOP_DATA[suba].banned_with = {}
 			end
-			if not table.contains(ABILITY_SHOP_DATA[suba].banned_with, a) then table.insert(ABILITY_SHOP_DATA[suba].banned_with, a) end
+			if not table.includes(ABILITY_SHOP_DATA[suba].banned_with, a) then table.insert(ABILITY_SHOP_DATA[suba].banned_with, a) end
 		end
 	end
 	for _,group in pairs(ABILITY_SHOP_BANNED_GROUPS) do
@@ -39,7 +39,7 @@ function CustomAbilities:PrepareData()
 				ABILITY_SHOP_DATA[a].banned_with = {}
 			end
 			for _,suba in ipairs(group) do
-				if suba ~= a and not table.contains(ABILITY_SHOP_DATA[a].banned_with, suba) then
+				if suba ~= a and not table.includes(ABILITY_SHOP_DATA[a].banned_with, suba) then
 					table.insert(ABILITY_SHOP_DATA[a].banned_with, suba)
 				end
 			end
@@ -56,7 +56,7 @@ function CustomAbilities:PrepareData()
 					at ~= "" and
 					not string.starts(at, "special_bonus_") and
 					not AbilityHasBehaviorByName(at, "DOTA_ABILITY_BEHAVIOR_HIDDEN") and
-					not table.contains(ABILITY_SHOP_SKIP_ABILITIES, at) then
+					not table.includes(ABILITY_SHOP_SKIP_ABILITIES, at) then
 					local cost = 1
 					local banned_with = {}
 					local is_ultimate = IsUltimateAbilityKV(at)

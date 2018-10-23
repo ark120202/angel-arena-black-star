@@ -16,18 +16,6 @@ duel_over_winner_none: Дуэль окончена. В этот раз побе�
 duel_over_winner_p1: "Дуэль окончена.\_"
 duel_over_winner_p2: "\_победили. Все их герои получили\_"
 duel_no_heroes: В одной из команд недостаточно героев для дуэли.
-casino_slotmachine_roll_start: "Вы использовали Слот машину. Числа:\_"
-casino_slotmachine_roll_result_streak000: Вы проиграли. Проиграли всё.
-casino_slotmachine_roll_result_streak00: "Вы проиграли\_"
-casino_slotmachine_roll_result_streakxxx: "Отлично! Вы выиграли\_"
-casino_slotmachine_roll_result_streakxx: "Не плохо! Вы выиграли\_"
-casino_slotmachine_roll_result_streak777: "Джекпот! Вы выиграли\_"
-casino_slotmachine_roll_result_streak322: "Все ваши противники получили\_"
-casino_slotmachine_roll_result_streak322_enemies_p1: "Ваша команда получила\_"
-casino_slotmachine_roll_result_streak322_enemies_p2: ", потому что вражескому\_"
-casino_slotmachine_roll_result_streak322_enemies_p3: "\_ выпало 322 в Казино."
-casino_slotmachine_roll_result_streak_no: В этот раз вы ничего не выиграли
-containers_shop_secret_name: Магазин в Казино
 containers_shop_duel_name: Дуэльный Магазин
 
 hero_selection_select_hero: Выберите Героя
@@ -107,18 +95,24 @@ arena_end_screen_error_broken: Что-то пошло не так. Вероят�
 
 abaddoned_panel_title: Игра была покинута
 abaddoned_panel_reason: Герой был удален так как вы находились вне игры слишком долго
-abaddoned_panel_redistribution: Все предметы героя были проданы, а ваше золато было распределено между союзниками
+abaddoned_panel_redistribution: Все предметы героя были проданы, а ваше золото было распределено между союзниками
 abaddoned_panel_ranked: Ваш рейтинг будет сильно понижен
+
+banned_panel_title: Вы заблокированы
+banned_panel_reason: Вы получили блокировку в Angel Arena Black Star за крайне негативное поведение
+banned_panel_description: Ваш герой удален, а золото будет распределено между союзниками. Вы не можете использовать чат.
+banned_panel_ranked: Ваш рейтинг не повлияет на результат этого матча.
+banned_panel_unban: Если вы считаете это ошибкой, свяжитесь с
 
 ranked_top_players: Лучшие игроки
 ranked_top_more: Открыть топ 100...
 
 teams_kill_weight_tooltip: Убийство героев этой команды принесет {d:kill_weight} очков
 
-structures_fountain_protection_weak_line1: The Netherdrake был убит
+structures_fountain_protection_weak_line1: Cursed Zeld был убит
 structures_fountain_protection_weak_line2: Защита Фонтанов стала слабее
 
-structures_fountain_protection_strong_line1: The Netherdrake переродится
+structures_fountain_protection_strong_line1: Cursed Zeld переродится
 structures_fountain_protection_strong_line2: Защита Фонтанов стала сильнее
 
 arena_setup_party_warning: |-

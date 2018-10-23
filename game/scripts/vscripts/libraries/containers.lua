@@ -1019,7 +1019,6 @@ function Containers:OrderFilter(order)
 			return false
 		end
 	end
-	CustomRunes:ExecuteOrderFilter(order)
 	
 	return ret
 end

@@ -42,7 +42,6 @@ function SelectItembuild(build) {
 	if (build != null) {
 		$('#Itembuild_version').text = build.version || '';
 		UpdateSelectedItembuildAuthorData(build.steamID, build.title);
-		//MongoObjectIDToDate(build._id)
 		_.each(build.items, function(groupData) {
 			CreateItembuildGroup(groupsRoot, build.steamID === -1 ? $.Localize(groupData.title) : groupData.title, groupData.content);
 		});

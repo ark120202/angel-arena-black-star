@@ -48,7 +48,7 @@
 		"ItemResult"					"item_radiance_frozen"
 		"ItemRequirements"
 		{
-			"01"						"item_radiance_3;item_skadi_8;item_skadi_8"
+			"01"						"item_radiance_3;item_skadi_8"
 		}
 	}
 
@@ -61,6 +61,7 @@
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"radiance"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_FIRE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"MaxUpgradeLevel"				"3"
@@ -110,6 +111,7 @@
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"radiance 2"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_FIRE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"MaxUpgradeLevel"				"3"
@@ -159,6 +161,7 @@
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"radiance"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_FIRE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"MaxUpgradeLevel"				"3"
@@ -208,6 +211,7 @@
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"frozen radiance"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ICE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilitySpecial"

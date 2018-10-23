@@ -74,7 +74,7 @@ function CreateSnippet_Ability(panel, abilityname, heroname, cost) {
 function Search() {
 	var abLevels = GetLocalAbilityNamesInfo();
 	var SearchText = $('#SearchBar').text.toLowerCase();
-	if (SearchingFor !== SearchText || SearchingPurchasedChecked !== $('#PurchasedAbilitiesToggle').checked || _.isEqual(SearchingAbLevels, abLevels)) {
+	if (SearchingFor !== SearchText || SearchingPurchasedChecked !== $('#PurchasedAbilitiesToggle').checked || !_.isEqual(SearchingAbLevels, abLevels)) {
 		SearchingFor = SearchText;
 		SearchingPurchasedChecked = $('#PurchasedAbilitiesToggle').checked;
 		SearchingAbLevels = abLevels;
@@ -119,8 +119,6 @@ function CalculateDowngradeCost(abilityname, upgradecost) {
 }
 
 function UpdateAbilities() {
-	Search();
-	$('#ShiftStateLabel').text = $.Localize(GameUI.IsShiftDown() ? '#ability_shop_shift_yes' : '#ability_shop_shift_no');
 	var points = Entities.GetAbilityPoints(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()));
 	$('#InfoContainerPointsLabel').text = '+' + points;
 	var abLevels = GetLocalAbilityNamesInfo();
@@ -152,7 +150,6 @@ function UpdateAbilities() {
 			panel.RemoveClass('CanDelete');
 		panel.SetHasClass('Banned', banned_with.indexOf(abilityname) !== -1);
 	});
-	$.Schedule(0.1, UpdateAbilities);
 }
 
 function SwitchTab() {
@@ -185,6 +182,8 @@ function UpdateHeroAbilityList(hero, abilities) {
 	_.each(abilities, function(abilityInfo) {
 		AllAbilityPanels.push(CreateSnippet_Ability($.CreatePanel('Panel', abilitiesroot, ''), abilityInfo.ability, hero, abilityInfo.cost));
 	});
+
+	UpdateAbilities();
 }
 
 function Fill(heroesData, panel) {
@@ -228,7 +227,6 @@ function Fill(heroesData, panel) {
 }
 
 (function() {
-	UpdateAbilities();
 	DynamicSubscribePTListener('ability_shop_data', function(tableName, changesObject, deletionsObject) {
 		$('#AbilityShopBase').visible = true;
 		AbilityShopData = changesObject;
@@ -241,4 +239,11 @@ function Fill(heroesData, panel) {
 		SelectHeroTab(1);
 	});
 	Game.DisableWheelPanels.push($('#MainContainer'));
+
+	(function autoUpdate() {
+		Search();
+		UpdateAbilities();
+		$('#ShiftStateLabel').text = $.Localize(GameUI.IsShiftDown() ? '#ability_shop_shift_yes' : '#ability_shop_shift_no');
+		$.Schedule(0.15, autoUpdate);
+	})();
 })();

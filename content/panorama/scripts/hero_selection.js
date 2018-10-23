@@ -90,8 +90,8 @@ function UpdateTimer() {
 		}
 		$('#HeroSelectionTimer').text = Math.ceil(SelectionTimerRemainingTime);
 		SearchHero();
-		for (var pid in PlayerPanels) {
-			var panel = PlayerPanels[pid];
+		for (var playerId in PlayerPanels) {
+			var panel = PlayerPanels[playerId];
 			var playerInfo = Game.GetPlayerInfo(Number(PlayerPanels));
 			if (playerInfo != null) {
 				panel.SetHasClass('player_connection_abandoned', playerInfo.player_connection_state === DOTAConnectionState_t.DOTA_CONNECTION_STATE_ABANDONED);
@@ -110,16 +110,16 @@ function UpdateTimer() {
 	}
 }
 
-function Snippet_PlayerPanel(pid, rootPanel) {
-	if (PlayerPanels[pid] == null) {
+function Snippet_PlayerPanel(playerId, rootPanel) {
+	if (PlayerPanels[playerId] == null) {
 		var panel = $.CreatePanel('Panel', rootPanel, '');
 		panel.BLoadLayoutSnippet('PlayerPanel');
-		panel.SetDialogVariable('player_name', Players.GetPlayerName(pid));
-		var statsData = Players.GetStatsData(pid);
-		panel.FindChildTraverse('SlotColor').style.backgroundColor = GetHEXPlayerColor(pid);
-		PlayerPanels[pid] = panel;
+		panel.SetDialogVariable('player_name', Players.GetPlayerName(playerId));
+		var statsData = Players.GetStatsData(playerId);
+		panel.FindChildTraverse('SlotColor').style.backgroundColor = GetHEXPlayerColor(playerId);
+		PlayerPanels[playerId] = panel;
 	}
-	return PlayerPanels[pid];
+	return PlayerPanels[playerId];
 }
 
 
@@ -221,7 +221,10 @@ function OnLocalPlayerPicked() {
 	var hype = $.Localize(heroName + '_hype');
 	$('#HeroPreviewOverview').text = hype !== heroName + '_hype' ? hype : '';
 
-	var heroImageXML = localHeroData.custom_scene_camera != null ? "<DOTAScenePanel particleonly='false' allowrotation='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' map='custom_scenes_map' camera='" + localHeroData.custom_scene_camera + "'/>" : localHeroData.custom_scene_image != null ? "<Image src='" + localHeroData.custom_scene_image + "'/>" : "<DOTAScenePanel particleonly='false' allowrotation='true' yawmin='-15' yawmax='15' pitchmin='-3' pitchmax='3' unit='" + localHeroData.model + "'/>";
+	var heroImageXML = '<DOTAScenePanel particleonly="false" ' +
+		(localHeroData.useCustomScene
+			? 'map="scenes/heroes" camera="' + heroName + '" />'
+			: 'allowrotation="true" unit="' + heroName + '" />');
 	var ScenePanel = $('#HeroPreviewScene');
 	ScenePanel.RemoveAndDeleteChildren();
 	ScenePanel.BCreateChildren(heroImageXML);
@@ -361,9 +364,14 @@ function ShowHeroPreviewTab(tabID) {
 				$('#team_selection_panels_team' + teamNumber).SetDialogVariable('team_rating', changesObject[teamNumber]);
 			}
 		});
+
 		DynamicSubscribePTListener('stats_client', function(tableName, changesObject, deletionsObject) {
-			for (var playerID in changesObject) {
-				Snippet_PlayerPanel(+playerID).SetDialogVariable('player_mmr', changesObject[playerID].Rating || 'TBD');
+			for (var playerId in changesObject) {
+				Snippet_PlayerPanel(+playerId).SetDialogVariable('player_mmr', changesObject[playerId].Rating || 'TBD');
+			}
+
+			if (changesObject[localPlayerId] && changesObject[localPlayerId].isBanned) {
+				HeroSelectionEnd(true);
 			}
 		});
 		UpdateTimer();
