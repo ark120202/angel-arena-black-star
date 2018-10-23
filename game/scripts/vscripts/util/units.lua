@@ -159,6 +159,35 @@ function CDOTA_BaseNPC:IsWukongsSummon()
 	)
 end
 
+function CDOTA_BaseNPC:SafeAddItem(item)
+	local stacks = item:StacksWithOtherOwners()
+	item:SetStacksWithOtherOwners(false)
+	self:AddItem(item)
+	if not item:IsNull() then
+		item:SetStacksWithOtherOwners(stacks)
+	end
+end
+
+function CDOTA_BaseNPC:MakeItemsUnstackable(firstSlot, lastSlot)
+	for i = firstSlot, lastSlot do
+		local item = self:GetItemInSlot(i)
+		if item then
+			item.owner = item:GetPurchaser()
+			item:SetPurchaser(nil)
+		end
+	end
+end
+
+function CDOTA_BaseNPC:RestoreOwners(firstSlot, lastSlot)
+	for i = firstSlot, lastSlot do
+		local item = self:GetItemInSlot(i)
+		if item and item.owner then
+			item:SetPurchaser(item.owner)
+			item.owner = nil
+		end
+	end
+end
+
 function CDOTA_BaseNPC:GetIllusionParent()
 	-- TODO: make a correct fix for standard illusions
 	if not self.isCustomIllusion then return end
