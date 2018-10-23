@@ -4,6 +4,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySharedCooldown" 		"blink"
 	}
 	"item_dust"
 	{
@@ -680,6 +681,7 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
+		"AbilitySharedCooldown"			"black_king_bar"
 	}
 	"item_recipe_shivas_guard"
 	{
@@ -1324,56 +1326,6 @@
 	{
 		"SecretShop"					"0"
 		"SideShop"						"0"
-	}
-	"item_recipe_iron_talon"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-		"IsObsolete"					"0"
-		"ItemPurchasable"				"1"
-		"ItemResult"					"item_iron_talon"
-		"ItemRequirements"
-		{
-			"01"						"item_quelling_blade;item_ring_of_regen"
-		}
-	}
-	"item_iron_talon"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-		"AbilityCastRange"				"525"
-		"AbilityCooldown"				"10.0"
-		"IsObsolete"					"0"
-		"ItemPurchasable"				"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"quelling_range_tooltip"	"525"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_ward"			"500"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"creep_damage_pct"			"70"
-				"CalculateSpellDamageTooltip" "0"
-			}
-		}
 	}
 	"item_recipe_bloodthorn"
 	{

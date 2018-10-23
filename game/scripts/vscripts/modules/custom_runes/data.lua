@@ -39,23 +39,20 @@ Imitator:
 
 RUNE_SETTINGS = {
 	[ARENA_RUNE_TRIPLEDAMAGE] = {
-		model = "models/props_gameplay/rune_doubledamage01.vmdl",
-		particle = "particles/arena/generic_gameplay/rune_tripledamage.vpcf",
+		item = "item_custom_rune_tripledamage",
 		sound = "Rune.DD",
 		color = {255,125,0},
 		duration = 45,
 		damage_pct = 200,
 	},
 	[ARENA_RUNE_HASTE] = {
-		model = "models/props_gameplay/rune_haste01.vmdl",
-		particle = "particles/generic_gameplay/rune_haste.vpcf",
+		item = "item_custom_rune_haste",
 		sound = "Rune.Haste",
 		duration = 25,
 		movespeed = 625,
 	},
 	[ARENA_RUNE_ILLUSION] = {
-		model = "models/props_gameplay/rune_illusion01.vmdl",
-		particle = "particles/generic_gameplay/rune_illusion.vpcf",
+		item = "item_custom_rune_illusion",
 		sound = "Rune.Illusion",
 		duration = 75,
 		illusion_count = 2,
@@ -63,19 +60,16 @@ RUNE_SETTINGS = {
 		illusion_incoming_damage = 200,
 	},
 	[ARENA_RUNE_INVISIBILITY] = {
-		model = "models/props_gameplay/rune_invisibility01.vmdl",
-		particle = "particles/generic_gameplay/rune_invisibility.vpcf",
+		item = "item_custom_rune_invisibility",
 		sound = "Rune.Invis",
 		duration = 60
 	},
 	[ARENA_RUNE_REGENERATION] = {
-		model = "models/props_gameplay/rune_regeneration01.vmdl",
-		particle = "particles/generic_gameplay/rune_regeneration.vpcf",
+		item = "item_custom_rune_regeneration",
 		sound = "Rune.Regen"
 	},
 	[ARENA_RUNE_BOUNTY] = {
-		model = "models/props_gameplay/rune_goldxp.vmdl",
-		particle = "particles/generic_gameplay/rune_bounty.vpcf",
+		item = "item_custom_rune_bounty",
 		sound = "Rune.Bounty",
 		GetValues = function(unit)
 			local m = GetDOTATimeInMinutesFull()
@@ -97,32 +91,28 @@ RUNE_SETTINGS = {
 		special_value_multiplier = 1,
 	},
 	[ARENA_RUNE_ARCANE] = {
-		model = "models/props_gameplay/rune_arcane.vmdl",
-		particle = "particles/generic_gameplay/rune_arcane.vpcf",
+		item = "item_custom_rune_arcane",
 		sound = "Rune.Arcane",
 		duration = 50,
 		cooldown_reduction = 30, --Tooltip
 		spell_amplify = 50, --Tooltip
 	},
 	[ARENA_RUNE_FLAME] = {
-		model = "models/props_gameplay/rune_illusion01.vmdl",
-		particle = "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf",
+		item = "item_custom_rune_flame",
 		color = {255, 30, 0},
 		duration = 30,
 		damage_per_second_max_hp_pct = 4,
 		radius = 350, --Tooltip
 	},
 	[ARENA_RUNE_ACCELERATION] = {
-		model = "models/props_gameplay/rune_goldxp.vmdl",
-		particle = "particles/arena/generic_gameplay/rune_acceleration.vpcf",
+		item = "item_custom_rune_acceleration",
 		color = {20, 20, 255},
 		duration = 35,
 		attackspeed = 50, --Tooltip
 		xp_multiplier = 2,
 	},
 	[ARENA_RUNE_VIBRATION] = {
-		model = "models/props_gameplay/rune_invisibility01.vmdl",
-		particle = "particles/arena/generic_gameplay/rune_vibration.vpcf",
+		item = "item_custom_rune_vibration",
 		color = {0, 0, 255},
 		duration = 20,
 		interval = 0.8,
@@ -132,22 +122,15 @@ RUNE_SETTINGS = {
 		fullForce = 700,
 	},
 	[ARENA_RUNE_SOUL_STEAL] = {
-		model = "models/props_gameplay/heart001.vmdl",
-		particle = "particles/neutral_fx/prowler_shaman_stomp_debuff_glow.vpcf",
-		z_modify = 64,
+		item = "item_custom_rune_soul_steal",
 		color = {0, 0, 0},
 		duration = 45,
 		aura_radius = 1200,
 		damage_heal_pct = 30,
-		angles = {0, 270, 0},
 	},
 	[ARENA_RUNE_SPIKES] = {
-		model = "models/props_gameplay/heart001.vmdl",
-		particle = "particles/items_fx/blademail.vpcf",
-		particle_attach = PATTACH_ABSORIGIN,
-		z_modify = 64,
+		item = "item_custom_rune_spikes",
 		duration = 25,
 		damage_reflection_pct = 50,
-		angles = {0, 270, 0},
 	}
 }

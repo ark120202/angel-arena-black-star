@@ -249,14 +249,12 @@ function HookPanoramaPanels() {
 function OnUpdateQueryUnit() {
 	var unitName = GetHeroName(Players.GetQueryUnit(Players.GetLocalPlayer()));
 	FindDotaHudElement('UnitName').text = $.Localize(unitName).toUpperCase();
-	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
 	OnUpdateSelectedUnit();
 }
 
 function OnUpdateSelectedUnit() {
 	var unitName = GetHeroName(Players.GetLocalPlayerPortraitUnit());
 	FindDotaHudElement('UnitNameLabel').text = $.Localize(unitName).toUpperCase();
-	if (unitName === 'npc_arena_rune') GameUI.SelectUnit(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), false);
 	OnSkillPoint();
 }
 

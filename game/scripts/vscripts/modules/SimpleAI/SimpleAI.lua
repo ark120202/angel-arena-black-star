@@ -76,6 +76,14 @@ function SimpleAI:GlobalThink()
 end
 
 --Boss Thinkers
+	function SimpleAI:OnOrder(order)
+		if self.state == AI_STATE_RETURNING then
+			if order.order_type ~= 1 or new_pos ~= self.spawnPos then
+				self.unit:MoveToPosition(self.spawnPos)
+			end
+		end
+	end
+
 	function SimpleAI:IdleThink()
 		--local units = Dynamic_Wrap(SimpleAI, "FindUnitsNearby")(self, self.aggroRange, false, true)
 		local units = self:FindUnitsNearby(self.aggroRange, false, true, nil, DOTA_UNIT_TARGET_FLAG_NO_INVIS)

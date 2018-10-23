@@ -508,9 +508,8 @@
 
 		"Ability1"					"boss_cursed_zeld_shadows_curse"
 		"Ability2"					"boss_cursed_zeld_mind_crack"
-		"Ability3"					"boss_cursed_zeld_mental_influence"
-		"Ability4"					"boss_cursed_zeld_three_cores"
-		"Ability5"					"boss_armor"
+		"Ability3"					"boss_cursed_zeld_three_cores"
+		"Ability4"					"boss_armor"
 
 		"ArmorPhysical"				"160"
 		"MagicalResistance"			"80"

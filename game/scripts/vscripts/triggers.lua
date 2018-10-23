@@ -45,6 +45,7 @@ local OUT_OF_GAME_UNITS = {
 	npc_dummy_unit = true,
 	npc_dota_looping_sound = true,
 	npc_dota_invisible_vision_source = true,
+	npc_dota_wisp_spirit = true,
 }
 function FountainOnStartTouch(trigger, team)
 	local unit = trigger.activator

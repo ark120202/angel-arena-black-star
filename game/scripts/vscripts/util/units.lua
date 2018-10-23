@@ -207,6 +207,8 @@ function CDOTA_BaseNPC:RestoreOwners(firstSlot, lastSlot)
 end
 
 function CDOTA_BaseNPC:GetIllusionParent()
+	-- TODO: make a correct fix for standard illusions
+	if not self.isCustomIllusion then return end
 	local modifier_illusion = self:FindModifierByName("modifier_illusion")
 	if modifier_illusion then
 		return modifier_illusion:GetCaster()

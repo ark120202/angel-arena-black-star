@@ -1,5 +1,6 @@
 #base "items/thinkers.txt"
 #base "items/shards.txt"
+#base "items/runes.txt"
 #base "items/dagon.txt"
 #base "items/diffusal_blade.txt"
 #base "items/boss_drop.txt"
@@ -26,7 +27,7 @@
 		"ItemResult"					"item_lucifers_claw"
 		"ItemRequirements"
 		{
-			"01"						"item_iron_talon;item_helm_of_the_dominator"
+			"01"						"item_quelling_blade;item_ring_of_regen;item_helm_of_the_dominator"
 		}
 	}
 
@@ -46,7 +47,6 @@
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"common"
 		"ItemAliases"					"quelling blade"
-		"AbilitySharedCooldown"			"item_quelling_blade;item_iron_talon"
 
 
 		// Special
@@ -1007,7 +1007,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/refresher_arena"
-		"AbilitySharedCooldown"			"item_refresher"
+		"AbilitySharedCooldown"			"refresher"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1776,7 +1776,7 @@
 		"ItemQuality"					"component"
 		"ItemAliases"					"blink staff"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySharedCooldown" 		"item_blink"
+		"AbilitySharedCooldown" 		"blink"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3414,7 +3414,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_arena/refresher_core"
-		"AbilitySharedCooldown"			"item_refresher"
+		"AbilitySharedCooldown"			"refresher"
 		"ItemShopTags"					"boost_mana;mana_pool"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"mana;mb;octarine core"
@@ -4384,7 +4384,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_chance"			"75"
+				"bash_chance"			"25"
 			}
 			"03"
 			{
@@ -4394,7 +4394,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_stun"				"0"
+				"bash_stun"				"0.1"
 			}
 		}
 
@@ -4522,7 +4522,6 @@
 		"AbilityCastPoint"              "0"
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"0"
-		"AbilitySharedCooldown"			"ethereal"
 		"ItemShopTags"					"int;agi;str;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"ghost scepter;drums of endurance;ancient"
@@ -5443,7 +5442,6 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"AbilityTextureName"			"item_arena/blade_of_discord"
-		"AbilitySharedCooldown"			"ethereal"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
@@ -5729,7 +5727,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"7500"
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_piercing_blade"
 		"ItemRequirements"
@@ -6081,7 +6079,7 @@
 
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"3.8"
-		"AbilitySharedCooldown"			"medallion;basher"
+		"AbilitySharedCooldown"			"medallion"
 
 
 		"ItemQuality"					"rare"
@@ -7782,12 +7780,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"10 40"
+				"cleave_damage_percent"	"20 30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"10 60"
+				"quelling_bonus_damage_pct"	"20 30"
 			}
 			"06"
 			{
@@ -7852,12 +7850,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"10 40"
+				"cleave_damage_percent"	"20 30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"10 60"
+				"quelling_bonus_damage_pct"	"20 30"
 			}
 			"06"
 			{
@@ -7967,12 +7965,12 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"45"
+				"cleave_damage_percent"	"40"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"70"
+				"quelling_bonus_damage_pct"	"45"
 			}
 			"13"
 			{
@@ -8273,7 +8271,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"7500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_rapier_arena"
@@ -8315,6 +8313,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 
 				"OnDeath"
 				{
