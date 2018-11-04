@@ -96,7 +96,7 @@ function Timers:Think()
 	local nextTickCallbacks = table.merge({}, Timers.nextTickCallbacks)
 	Timers.nextTickCallbacks = {}
 	for _, cb in ipairs(nextTickCallbacks) do
-		cb()
+		DebugCallFunction(cb)
 	end
 
 	-- Track game time, since the dt passed in to think is actually wall-clock time not simulation time.
