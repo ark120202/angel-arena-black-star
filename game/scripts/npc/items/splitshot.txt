@@ -144,7 +144,7 @@
 			"15"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"split_damage_pct"				"80"
+				"split_damage_pct"				"60"
 			}
 			"16"
 			{
