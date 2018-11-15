@@ -5754,7 +5754,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"10"
+				"attack_damage_to_pure_pct"	"5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -5849,7 +5849,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"windwalk_movement_speed_pct"	"25"
+				"windwalk_movement_speed_pct"	"10"
 			}
 			"10"
 			{
