@@ -12,12 +12,17 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_PROPERTY_ABSORB_SPELL,
 		MODIFIER_EVENT_ON_DEATH,
 		MODIFIER_PROPERTY_ABILITY_LAYOUT,
-		MODIFIER_EVENT_ON_RESPAWN
+		MODIFIER_EVENT_ON_RESPAWN,
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 	}
 end
 
 function modifier_arena_hero:GetModifierAbilityLayout()
 	return self.VisibleAbilitiesCount or self:GetSharedKey("VisibleAbilitiesCount") or 4
+end
+
+function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
+	return self.resistanceDifference or self:GetSharedKey("resistanceDifference") or 0
 end
 
 if IsServer() then
@@ -50,6 +55,7 @@ if IsServer() then
 				parent:ModifyAgility((parent.CustomGain_Agility - parent:GetKeyValue("AttributeAgilityGain", nil, true)) * diff)
 			end
 		end
+
 		local VisibleAbilitiesCount = 0
 		for i = 0, parent:GetAbilityCount() - 1 do
 			local ability = parent:GetAbilityByIndex(i)
@@ -57,10 +63,18 @@ if IsServer() then
 				VisibleAbilitiesCount = VisibleAbilitiesCount + 1
 			end
 		end
-
 		if self.VisibleAbilitiesCount ~= VisibleAbilitiesCount then
 			self.VisibleAbilitiesCount = VisibleAbilitiesCount
 			self:SetSharedKey("VisibleAbilitiesCount", VisibleAbilitiesCount)
+		end
+
+		local isStrengthHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH
+		local strengthResistance = parent:GetStrength() * (isStrengthHero and 0.1 or 0.08) * 0.01
+		local baseFactor = 100 - parent:GetBaseMagicalResistanceValue()
+		local resistanceDifference = baseFactor / (strengthResistance - 1) + baseFactor
+		if self.resistanceDifference ~= resistanceDifference then
+			self.resistanceDifference = resistanceDifference
+			self:SetSharedKey("resistanceDifference", resistanceDifference)
 		end
 	end
 

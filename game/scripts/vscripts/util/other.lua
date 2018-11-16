@@ -548,3 +548,14 @@ function VectorOnBoxPerimeter(vec, min, max)
 	if m == db then return Vector(x, b) end
 	if m == dt then return Vector(x, t) end
 end
+
+function CalculateBaseArmor(arg)
+	local agility = arg.agility
+	local isPrimary = arg.isPrimary
+	if IsValidEntity(arg) then
+		agility = arg:GetAgility()
+		isPrimary = arg:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY
+	end
+
+	return agility * (isPrimary and 0.20 or 0.16)
+end

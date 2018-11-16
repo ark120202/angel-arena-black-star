@@ -189,6 +189,8 @@ function HookPanoramaPanels() {
 		var custom_entity_value = GameUI.CustomUIConfig().custom_entity_values[_unit];
 		var DOTAHUDDamageArmorTooltip = FindDotaHudElement('DOTAHUDDamageArmorTooltip');
 		if (DOTAHUDDamageArmorTooltip != null && custom_entity_value != null) {
+			DOTAHUDDamageArmorTooltip.SetDialogVariable('strength_magic_resistance', '0.0');
+
 			var attackRate = custom_entity_value.AttackRate != null ? custom_entity_value.AttackRate : Entities.GetBaseAttackTime(_unit);
 			var batModifier = attackRate / Entities.GetBaseAttackTime(_unit);
 			var secondsPerAttack = Entities.GetSecondsPerAttack(_unit) * batModifier;

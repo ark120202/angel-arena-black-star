@@ -183,28 +183,26 @@ function Spawner:SpawnJungleStacks(entid, SpawnerType, sName)
 end
 
 function Spawner:UpgradeJungleCreep(unit, cycle, spawnerIndex)
-	local modelScale = 1 + (0.0015 * cycle)
-	if cycle > 1 then
-		unit:CreatureLevelUp(cycle - 1)
-	end
+	if cycle > 1 then unit:CreatureLevelUp(cycle - 1) end
 
-	unit:SetDeathXP(unit:GetDeathXP() * cycle)
-	unit:SetMinimumGoldBounty(unit:GetMinimumGoldBounty() * cycle)
-	unit:SetMaximumGoldBounty(unit:GetMaximumGoldBounty() * cycle)
-	unit:SetMaxHealth(unit:GetMaxHealth() * cycle)
-	unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * cycle)
-	unit:SetHealth(unit:GetMaxHealth() * cycle)
-	unit:SetBaseDamageMin(unit:GetBaseDamageMin() * cycle)
-	unit:SetBaseDamageMax(unit:GetBaseDamageMax() * cycle)
-	unit:SetBaseMoveSpeed(unit:GetBaseMoveSpeed() + 1 * cycle)
-	unit:SetPhysicalArmorBaseValue(unit:GetPhysicalArmorBaseValue() * cycle)
+	local multiplier = 0.5 + cycle * 0.5
+	unit:SetDeathXP(unit:GetDeathXP() * multiplier)
+	unit:SetMinimumGoldBounty(unit:GetMinimumGoldBounty() * multiplier)
+	unit:SetMaximumGoldBounty(unit:GetMaximumGoldBounty() * multiplier)
+	unit:SetMaxHealth(unit:GetMaxHealth() * multiplier)
+	unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * multiplier)
+	unit:SetHealth(unit:GetMaxHealth() * multiplier)
+	unit:SetBaseDamageMin(unit:GetBaseDamageMin() * multiplier)
+	unit:SetBaseDamageMax(unit:GetBaseDamageMax() * multiplier)
+	unit:SetBaseMoveSpeed(unit:GetBaseMoveSpeed() + 1 * multiplier)
+	unit:SetPhysicalArmorBaseValue(unit:GetPhysicalArmorBaseValue() * multiplier)
 	unit:AddNewModifier(unit, nil, "modifier_neutral_upgrade_attackspeed", {})
 	local modifier = unit:FindModifierByNameAndCaster("modifier_neutral_upgrade_attackspeed", unit)
 	if modifier then
-		modifier:SetStackCount(cycle)
+		modifier:SetStackCount(math.round(multiplier))
 	end
 
-	unit:SetModelScale(modelScale)
+	unit:SetModelScale(1 + 0.0015 * cycle)
 	local model = table.nearestOrLowerKey(SPAWNER_SETTINGS.jungle.SpawnTypes[spawnerIndex][1], cycle)
 	if model then
 		unit:SetModel(model)

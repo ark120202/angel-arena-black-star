@@ -192,7 +192,7 @@ function FillAttributeUI(rootPanel, attributesData) {
 	}
 	rootPanel.FindChildTraverse('HeroAttributes_damage').text = attributesData.damage_min + ' - ' + attributesData.damage_max;
 	rootPanel.FindChildTraverse('HeroAttributes_speed').text = attributesData.movespeed;
-	rootPanel.FindChildTraverse('HeroAttributes_armor').text = attributesData.armor;
+	rootPanel.FindChildTraverse('HeroAttributes_armor').text = Number(attributesData.armor).toFixed(1);
 	rootPanel.FindChildTraverse('HeroAttributes_bat').text = Number(attributesData.attackrate).toFixed(1);
 }
 
