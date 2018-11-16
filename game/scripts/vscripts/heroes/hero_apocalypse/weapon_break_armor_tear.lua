@@ -9,7 +9,7 @@ function ApplyStacks(keys)
 	local ability = keys.ability
 	local stacks = target:GetPhysicalArmorBaseValue() * ability:GetAbilitySpecial("armor_cut_pct") * 0.01
 	if target.GetAgility then
-		stacks = stacks + (Attributes:GetTotalPropValue(target, "armor") * ability:GetAbilitySpecial("armor_cut_pct") * 0.01)
+		stacks = stacks + (CalculateBaseArmor(target) * ability:GetAbilitySpecial("armor_cut_pct") * 0.01)
 	end
 	local m = ability:ApplyDataDrivenModifier(keys.caster, target, "modifier_apocalypse_armor_tear", nil)
 	if m:GetStackCount() < stacks then
