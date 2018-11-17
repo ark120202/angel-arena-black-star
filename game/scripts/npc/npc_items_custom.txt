@@ -1610,12 +1610,12 @@
 			"18"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"feedback_mana_burn"								"120"
+				"feedback_mana_burn"								"100"
 			}
 			"19"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"feedback_mana_drain_pct"							"25"
+				"feedback_mana_drain_pct"							"10"
 			}
 			"20"
 			{
@@ -6454,7 +6454,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_negative_armor"	"-8"
+				"aura_negative_armor"	"-15"
 			}
 		}
 
