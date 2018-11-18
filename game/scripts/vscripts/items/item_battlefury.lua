@@ -69,7 +69,7 @@ if IsServer() then
 				ApplyDamage({
 					attacker = attacker,
 					victim = target,
-					damage = keys.damage * (ability:GetSpecialValueFor("quelling_bonus_damage_pct") * 0.01 - 1),
+					damage = keys.damage * ability:GetSpecialValueFor("quelling_bonus_damage_pct") * 0.01,
 					damage_type = DAMAGE_TYPE_PURE,
 					damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 					ability = ability

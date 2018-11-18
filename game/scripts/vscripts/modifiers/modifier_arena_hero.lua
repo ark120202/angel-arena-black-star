@@ -69,7 +69,25 @@ if IsServer() then
 		end
 
 		local isStrengthHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH
-		local strengthResistance = parent:GetStrength() * (isStrengthHero and 0.1 or 0.08) * 0.01
+		local function calculateResistanceFromStrength(str) return str * (isStrengthHero and 0.1 or 0.08) * 0.01 end
+		local strength = parent:GetStrength()
+		local strengthResistance = calculateResistanceFromStrength(strength)
+		if strengthResistance == 1 then
+			if not self.strengthBorrowed then
+				self.strengthBorrowed = true
+				parent:ModifyStrength(-1)
+				strength = strength - 1
+			else
+				self.strengthBorrowed = false
+				parent:ModifyStrength(1)
+				strength = strength + 1
+			end
+			strengthResistance = calculateResistanceFromStrength(strength)
+		elseif self.strengthBorrowed and calculateResistanceFromStrength(strength + 1) ~= 1 then
+			self.strengthBorrowed = false
+			parent:ModifyStrength(1)
+		end
+
 		local baseFactor = 100 - parent:GetBaseMagicalResistanceValue()
 		local resistanceDifference = baseFactor / (strengthResistance - 1) + baseFactor
 		if self.resistanceDifference ~= resistanceDifference then
