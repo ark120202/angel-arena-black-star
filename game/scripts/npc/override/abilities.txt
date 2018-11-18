@@ -4276,6 +4276,42 @@
 		}
 	}
 
+	"tiny_toss_tree"
+	{
+		"MaxLevel"						"7"
+		"AbilityCastRange"				"1300"
+		"AbilityCastPoint"				"0.2"
+		"LevelsBetweenUpgrades"			"3"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"900.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1300"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"25"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"splash_radius"				"275"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"splash_pct"				"150"
+			}
+		}
+	}
+
 	"tiny_grow"
 	{
 		"MaxLevel"	"3"
