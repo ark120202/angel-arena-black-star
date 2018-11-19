@@ -151,7 +151,7 @@ function Precache(context)
 	end
 
 	for _,v in pairs(WEATHER_EFFECTS) do
-		table.concat(particles, v.particles or {})
+		table.add(particles, v.particles or {})
 	end
 
 	for _,v in ipairs(particles) do

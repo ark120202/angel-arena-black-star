@@ -78,7 +78,7 @@ function table.highest(t)
 	return(t[#t])
 end
 
-function table.concat(input1, input2)
+function table.add(input1, input2)
 	for _,v in ipairs(input2) do
 		table.insert(input1, v)
 	end

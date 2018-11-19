@@ -381,7 +381,7 @@ function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName, baseItemName
 	if (childItemName == baseItemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
 		for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
 			local subitems, newCounter = PanoramaShop:GetAllPrimaryRecipeItems(unit, newchilditem, baseItemName)
-			table.concat(primary_items, subitems)
+			table.add(primary_items, subitems)
 			for k,v in pairs(newCounter) do
 				_tempItemCounter[k] = (_tempItemCounter[k] or 0) + v
 			end
