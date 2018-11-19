@@ -50,6 +50,6 @@ if IsServer() then
 	end
 
 	function modifier_max_attack_range:OnIntervalThink()
-		self.ParentAttackRange = self:GetParent():GetAttackRange() + self.AttackRangeChange
+		self.ParentAttackRange = self:GetParent():Script_GetAttackRange() + self.AttackRangeChange
 	end
 end
