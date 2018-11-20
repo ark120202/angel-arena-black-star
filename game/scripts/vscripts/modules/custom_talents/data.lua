@@ -447,7 +447,7 @@ PARTIALLY_CHANGED_HEROES = {
 	},
 }
 
-NATIVE_TALENTS_OVERRIDE = {
+NATIVE_TALENTS = {
 	special_bonus_unique_abaddon = {
 		group = 4,
 	},
@@ -1716,6 +1716,8 @@ NATIVE_TALENTS_OVERRIDE = {
 		group = 6,
 	},
 }
+
+table.merge(CUSTOM_TALENTS_DATA, ModuleRequire(..., "native"))
 
 TALENT_GROUP_TO_LEVEL = {
 	[1] = 10,
