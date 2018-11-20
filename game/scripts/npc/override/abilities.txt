@@ -276,13 +276,21 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"enfeeble_attack_reduction"	"10 30 60 100 120 150 180"
-				"LinkedSpecialBonus"		"special_bonus_unique_bane_1"
+				"var_type"						"FIELD_INTEGER"
+				"status_resistance_reduction"	"36 40 44 46 48 60 64"
 			}
-
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"attack_speed_reduction"		"10 30 60 100 120 150 180"
+				"LinkedSpecialBonus"			"special_bonus_unique_bane_1"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"duration"		"8"
+			}
 		}
-
 	}
 
 	"bane_brain_sap"
@@ -1590,38 +1598,32 @@
 				"damage_scepter"	"925 1075 1225 1375 1525 1675 1825"
 				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
 			}
-
 			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_per_kill"			"50"
+			}
+			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"mana_cost_scepter"	"200 420 620 700 800 1000 1200"
 			}
-
-			"04"
+			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_delay"	"0.20"
+				"damage_delay"	"0.25"
 			}
-
-			"05"
+			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"cooldown_scepter"	"80 70 60 50 40 30 20"
 			}
-
-			"06"
+			"07"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"splash_radius_scepter"	"400"
 			}
-			"99"
-			{
-				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "4.0 5.0 6.0 7.0 8.0 9.0 10.0"
-				"CalculateSpellDamageTooltip" "0"
-			}
 		}
-
 	}
 
 	"mirana_arrow"
@@ -4736,27 +4738,24 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"damage_reduction"	"-45.0 -47.5 -50.0 -52.5 -55.0 -57.5 -60.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_3"
+				"var_type"				"FIELD_INTEGER"
+				"attack_damage"			"45 70 90 110 135 180 270"
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"reduction_duration"	"6.0"
+				"var_type"				"FIELD_FLOAT"
+				"damage_reduction"		"-45.0 -47.5 -50.0 -52.5 -55.0 -57.5 -60.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_3"
 			}
-
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"375"
+				"var_type"				"FIELD_FLOAT"
+				"reduction_duration"	"6.0"
 			}
-			"99"
+			"04"
 			{
-				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.2 0.4 0.6 0.8 1.0 1.2 1.5"
-				"CalculateSpellDamageTooltip" "0"
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"375"
 			}
 		}
 	}
@@ -10073,24 +10072,20 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"maximum_attack_speed"	"220 260 300 340 380 420 500"
+				"var_type"						"FIELD_INTEGER"
+				"maximum_attack_speed"			"220 260 300 340 380 420 500"
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"maximum_resistance"	"20 30 40 50 60 70 80"
+				"var_type"						"FIELD_INTEGER"
+				"maximum_health_regen"			"20 30 40 50 60 70 80"
 			}
-
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"hp_threshold_max"	"10"
+				"var_type"						"FIELD_INTEGER"
+				"hp_threshold_max"				"10"
 			}
-
 		}
-
 	}
 
 	"huskar_life_break"
@@ -11286,28 +11281,24 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"8"
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8"
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"speed"	"2000"
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"2000"
 			}
-
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"bonus_movement_speed"	"-18 -21 -24 -27 -30 -33 -36"
 			}
-
 			"04"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"bonus_damage_taken"	"-18 -21 -24 -27 -30 -33 -36"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"30 45 60 75 90 105 120"
 			}
-
 		}
 
 	}
@@ -13605,33 +13596,26 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_FLOAT"
+				"var_type"				"FIELD_FLOAT"
 				"mana_pool_damage_pct"	"1.0 1.25 1.5 1.75 2.0 2.25 2.5"
-				"CalculateSpellDamageTooltip"	"0"
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"illusion_damage"	"100 200 300 400 500 600 700"
-				"CalculateSpellDamageTooltip"	"0"
+				"var_type"				"FIELD_INTEGER"
+				"int_steal"		"1 2 3 4 5 6 7"
 			}
-
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"int_steal"	"1 2 3 4 5 6 7"
-			}
-
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"int_steal_duration"	"60"
+				"var_type"				"FIELD_FLOAT"
+				"int_steal_duration"		"80"
 				"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer"
 			}
-
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"		"175"
+			}
 		}
-
 	}
 
 	"obsidian_destroyer_astral_imprisonment"
@@ -13892,19 +13876,16 @@
 				"duration"	"18"
 				"LinkedSpecialBonus"	"special_bonus_unique_lycan_1"
 			}
-
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"speed"	"650 650 650 650 650 700 750"
 			}
-
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"bonus_night_vision"	"1000"
 			}
-
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
@@ -13915,16 +13896,14 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"crit_chance"	"40"
+				"LinkedSpecialBonus"		"special_bonus_unique_lycan_5"
 			}
-
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"crit_multiplier"	"160 170 180 190 200 210 220"
 			}
-
 		}
-
 	}
 	"lone_druid_spirit_bear"
 	{
@@ -14559,8 +14538,8 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"bonus_damage_taken"	"10 15 20 25 30 35 40"
+				"var_type"				"FIELD_INTEGER"
+				"health_lost"			"20 25 30 35 40 45 50"
 			}
 
 			"02"
@@ -14572,7 +14551,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"tooltip_duration"	"12.0"
+				"duration"	"12.0"
 			}
 			"04"
 			{
@@ -14824,68 +14803,53 @@
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.3 0.2"
 		"AbilityCooldown"	"120"
 		"AbilityManaCost"	"125 200 275 300 375 425 500"
-		"AbilitySpecial"
+			"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"images_count"	"1 1 2 2 3 3 4"
+				"var_type"					"FIELD_INTEGER"
+				"images_count"				"1 2 2 3 3 4 4"
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"extra_phantasm_chance_pct_tooltip"	"50"
-			}
-
+				"var_type"					"FIELD_FLOAT"
+				"illusion_duration"			"30"
+			}	
 			"03"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"illusion_duration"	"42"
+				"var_type"					"FIELD_INTEGER"
+				"outgoing_damage"			"-60 -50 -40 -30 -20 -10 0"
 			}
-
 			"04"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"outgoing_damage"	"-10"
-			}
-
+				"var_type"					"FIELD_INTEGER"
+				"outgoing_damage_tooltip"		"30 40 50 70 80 90 100"
+			}	
 			"05"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"outgoing_damage_tooltip"	"90"
+				"var_type"					"FIELD_INTEGER"
+				"incoming_damage"			"160"
 			}
-
 			"06"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"incoming_damage"	"160"
-			}
-
+				"var_type"					"FIELD_INTEGER"
+				"incoming_damage_tooltip"			"260"
+			}		
 			"07"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"incoming_damage_tooltip"	"260"
+				"var_type"				"FIELD_FLOAT"
+				"invuln_duration"		"0.5"
 			}
-
 			"08"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"invuln_duration"	"0.5"
-			}
-
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"400"
+			}	
 			"09"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"vision_radius"	"400"
-			}
-
-			"10"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"cooldown_scepter"	"80"
-			}
-
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_scepter"		"110"
+			}		
 		}
 
 	}
@@ -14961,24 +14925,17 @@
 		"AbilityDamage"					"10 20 30 40 50 60 70"
 		"AbilityDuration"				"2"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
-
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow"					"-5.0 -7.5 -10.0 -12.5 -15.0 -17.5 -20.0"
+				"gold_steal"			"1 2 3 4 5 6 7"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_tooltip"		"2.0"
-			}
-			"99"
-			{
-				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.1"
-				"CalculateSpellDamageTooltip" "0"
+				"var_type"				"FIELD_INTEGER"
+				"hp_steal"				"6 9 12 18 24 32 40"
 			}
 		}
 	}
@@ -17843,18 +17800,30 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"trance_duration"	"5.0"
+				"var_type"			"FIELD_FLOAT"
+				"trance_duration"		"6.5"		
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"attack_speed"	"60 120 180 240 300 360 420"
+				"var_type"			"FIELD_INTEGER"
+				"lifesteal"			"20 25 30 35 40 45 50"
 			}
-
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_speed"			"80 100 120 140 150 170 200"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movement_speed"		"20 25 30 35 40 45 50"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"900"
+			}
 		}
-
 	}
 
 	"centaur_hoof_stomp"
@@ -18278,33 +18247,30 @@
 				"var_type"	"FIELD_INTEGER"
 				"whirling_damage"	"100 150 200 250 300 350 400"
 			}
-
 			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tree_damage_scale"			"10 14 18 22 26 30 34"
+			}
+			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"whirling_tick"	"0.3"
 			}
 
-			"04"
+			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"stat_loss_pct"	"15"
 				"LinkedSpecialBonus"	"special_bonus_unique_timbersaw"
 			}
 
-			"05"
+			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"duration"	"14.0"
 			}
-			"99"
-			{
-				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "0.5 1.0 1.5 2.0 2.5 3.0 3.5"
-				"CalculateSpellDamageTooltip" "0"
-			}
 		}
-
 	}
 
 	"shredder_timber_chain"
