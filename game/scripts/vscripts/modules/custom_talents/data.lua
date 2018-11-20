@@ -454,9 +454,6 @@ NATIVE_TALENTS = {
 	special_bonus_unique_abaddon_2 = {
 		group = 4,
 	},
-	special_bonus_unique_abaddon_3 = {
-		group = 6,
-	},
 	special_bonus_unique_alchemist = {
 		group = 5,
 	},
@@ -917,9 +914,6 @@ NATIVE_TALENTS = {
 	special_bonus_unique_drow_ranger_2 = {
 		group = 8,
 	},
-	special_bonus_unique_drow_ranger_3 = {
-		group = 11,
-	},
 	special_bonus_unique_drow_ranger_4 = {
 		group = 9,
 	},
@@ -1024,12 +1018,6 @@ NATIVE_TALENTS = {
 	special_bonus_unique_outworld_devourer = {
 		group = 9,
 	},
-	special_bonus_unique_outworld_devourer_2 = {
-		group = 8,
-	},
-	special_bonus_unique_outworld_devourer_3 = {
-		group = 10,
-	},
 	special_bonus_unique_keeper_of_the_light = {
 		group = 10,
 	},
@@ -1122,6 +1110,9 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_chen_4 = {
 		group = 6,
+	},
+	special_bonus_unique_lone_druid_2 = {
+		group = 2,
 	},
 	special_bonus_unique_lone_druid_4 = {
 		group = 9,
@@ -1252,6 +1243,12 @@ NATIVE_TALENTS = {
 	special_bonus_unique_necrophos_2 = {
 		group = 9,
 	},
+	special_bonus_unique_necrophos_3 = {
+		group = 3,
+	},
+	special_bonus_unique_necrophos_4 = {
+		group = 2,
+	},
 	special_bonus_unique_mirana_1 = {
 		group = 6,
 	},
@@ -1288,6 +1285,10 @@ NATIVE_TALENTS = {
 	special_bonus_unique_underlord_3 = {
 		group = 3,
 	},
+	special_bonus_unique_underlord_4 = {
+		group = 1,
+	},
+
 	special_bonus_unique_treant = {
 		group = 6,
 	},
@@ -1302,6 +1303,9 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_treant_5 = {
 		group = 8,
+	},
+	special_bonus_unique_treant_7 = {
+		group = 7,
 	},
 	special_bonus_unique_razor = {
 		group = 9,
@@ -1348,6 +1352,9 @@ NATIVE_TALENTS = {
 	special_bonus_unique_lich_3 = {
 		group = 7,
 	},
+	special_bonus_unique_lich_4 = {
+		group = 4,
+	},
 	special_bonus_unique_rubick = {
 		group = 8,
 	},
@@ -1371,6 +1378,9 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_sven_3 = {
 		group = 11,
+	},
+	special_bonus_unique_sven_4 = {
+		group = 15,
 	},
 	special_bonus_unique_dark_seer = {
 		group = 8,
@@ -1510,6 +1520,9 @@ NATIVE_TALENTS = {
 		group = 8,
 	},
 	special_bonus_unique_nevermore_3 = false,
+	special_bonus_unique_nevermore_5 = {
+		group = 1,
+	},
 	special_bonus_unique_templar_assassin = {
 		group = 11,
 	},
@@ -1521,9 +1534,6 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_templar_assassin_4 = {
 		group = 13,
-	},
-	special_bonus_unique_templar_assassin_5 = {
-		group = 12,
 	},
 	special_bonus_unique_doom_1 = {
 		group = 9,
@@ -1673,8 +1683,14 @@ NATIVE_TALENTS = {
 	special_bonus_unique_omniknight_1 = {
 		group = 3,
 	},
+	special_bonus_unique_omniknight_2 = {
+		group = 2,
+	},
 	special_bonus_unique_omniknight_3 = {
 		group = 7,
+	},
+	special_bonus_unique_omniknight_4 = {
+    	group = 1,
 	},
 	special_bonus_unique_wisp_6 = {
 		group = 7,
@@ -1697,8 +1713,14 @@ NATIVE_TALENTS = {
 	special_bonus_unique_crystal_maiden_1 = {
 		group = 2,
 	},
+	special_bonus_unique_warlock_1 = {
+		group = 5,
+	},
 	special_bonus_unique_warlock_2 = {
 		group = 2,
+	},
+	special_bonus_unique_warlock_3 = {
+		group = 9,
 	},
 	special_bonus_unique_warlock_4 = {
 		group = 3,
@@ -1706,14 +1728,20 @@ NATIVE_TALENTS = {
 	special_bonus_unique_warlock_5 = {
 		group = 4,
 	},
+	special_bonus_unique_warlock_6 = {
+		group = 3,
+	},
+	special_bonus_unique_antimage = {
+		group = 5,
+	},
 	special_bonus_unique_antimage_2 = {
-		group = 2,
+		group = 4,
 	},
 	special_bonus_unique_antimage_3 = {
 		group = 3,
 	},
-	special_bonus_unique_antimage_2 = {
-		group = 4,
+	special_bonus_unique_antimage_4 = {
+		group = 15,
 	},
 	special_bonus_unique_antimage_5 = {
 		group = 3,
