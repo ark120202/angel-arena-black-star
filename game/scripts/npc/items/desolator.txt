@@ -36,7 +36,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-10"
+				"corruption_armor"		"-15"
 			}
 			"03"
 			{
@@ -136,7 +136,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-19"
+				"corruption_armor"		"-24"
 			}
 			"03"
 			{
@@ -237,7 +237,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-31"
+				"corruption_armor"		"-40"
 			}
 			"03"
 			{
@@ -379,7 +379,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-45"
+				"corruption_armor"		"-55"
 			}
 			"06"
 			{
@@ -552,7 +552,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-70"
+				"corruption_armor"		"-90"
 			}
 			"08"
 			{

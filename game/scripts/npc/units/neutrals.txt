@@ -234,7 +234,7 @@
 		"ProjectileSpeed"	"0"
 		"RingRadius"	"80"
 		"HealthBarOffset"	"220"
-		"BountyXP"	"15"
+		"BountyXP"	"45"
 		"BountyGoldMin"	"30"
 		"BountyGoldMax"	"32"
 		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"

@@ -6944,7 +6944,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_attack_speed"	"20 30 40 50 60 75 90"
+				"bonus_attack_speed"	"10 20 30 40 50 60 70"
 				"LinkedSpecialBonus"		"special_bonus_unique_beastmaster_4"
 			}
 
@@ -15488,7 +15488,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"bonus_attack_speed"	"30 40 50 60 70 80 90"
+				"bonus_attack_speed"	"10 20 30 40 50 60 70"
 				"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi"
 			}
 			"04"
@@ -17309,12 +17309,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"40 50 60 70 80 90 100"
+				"bonus_attack_speed"		"10 20 30 40 50 60 70"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_pct"			"-5 -10 -15 -20 -25 -30 -35"
+				"bonus_damage_pct"			"-2 -5 -7 -10 -12 -15 -17"
 			}
 			"03"
 			{
@@ -19477,7 +19477,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_speed"	"10 20 30 40 50 60 70"
+				"attack_speed"	"30 40 50 60 70 80 90"
 			}
 
 		}
@@ -22593,7 +22593,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"5 10 15 20 25 30 80"
+				"damage"				"10 15 20 25 30 40 80"
 				"LinkedSpecialBonus"	"special_bonus_unique_pangolier_3"
 				"CalculateSpellDamageTooltip"	"0"
 			}

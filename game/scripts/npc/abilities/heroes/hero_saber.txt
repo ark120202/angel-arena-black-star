@@ -197,13 +197,13 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_mana"	"2.0"
+				"damage_per_mana"	"0.5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_mana_scepter"	"3.0"
+				"damage_per_mana_scepter"	"1.0"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"04"
