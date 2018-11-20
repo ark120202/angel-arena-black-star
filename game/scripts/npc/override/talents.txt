@@ -660,17 +660,6 @@
 			}
 		}
 	}
-	"special_bonus_unique_drow_ranger_3"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"120"
-			}
-		}
-	}
 	"special_bonus_unique_earth_spirit"
 	{
 		"AbilitySpecial"

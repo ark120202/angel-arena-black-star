@@ -454,9 +454,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_abaddon_2 = {
 		group = 4,
 	},
-	special_bonus_unique_abaddon_3 = {
-		group = 6,
-	},
 	special_bonus_unique_alchemist = {
 		group = 5,
 	},
@@ -917,9 +914,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	special_bonus_unique_drow_ranger_2 = {
 		group = 8,
 	},
-	special_bonus_unique_drow_ranger_3 = {
-		group = 11,
-	},
 	special_bonus_unique_drow_ranger_4 = {
 		group = 9,
 	},
@@ -1023,12 +1017,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_outworld_devourer = {
 		group = 9,
-	},
-	special_bonus_unique_outworld_devourer_2 = {
-		group = 8,
-	},
-	special_bonus_unique_outworld_devourer_3 = {
-		group = 10,
 	},
 	special_bonus_unique_keeper_of_the_light = {
 		group = 10,
@@ -1521,9 +1509,6 @@ NATIVE_TALENTS_OVERRIDE = {
 	},
 	special_bonus_unique_templar_assassin_4 = {
 		group = 13,
-	},
-	special_bonus_unique_templar_assassin_5 = {
-		group = 12,
 	},
 	special_bonus_unique_doom_1 = {
 		group = 9,
