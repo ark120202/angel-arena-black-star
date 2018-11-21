@@ -104,36 +104,18 @@ OUTGOING_DAMAGE_MODIFIERS = {
 	},
 	modifier_item_piercing_blade = {
 		condition = function(attacker, _, inflictor)
-			return not inflictor and not attacker:HasModifier("modifier_item_haganemushi")
+			return not inflictor and not attacker:HasModifier("modifier_item_soulcutter")
 		end,
-		multiplier = function(attacker, victim, _, damage, damagetype)
-			local pct = GetAbilitySpecial("item_piercing_blade", "attack_damage_to_pure_pct") * 0.01
-			ApplyDamage({
-				victim = victim,
-				attacker = attacker,
-				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
-				damage_type = _G[GetKeyValue("item_piercing_blade", "AbilityUnitDamageType")],
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				ability = FindItemInInventoryByName(attacker, "item_piercing_blade", false)
-			})
-			return 1 - pct
+		multiplier = function()
+			return 1 - GetAbilitySpecial("item_piercing_blade", "attack_damage_to_pure_pct") * 0.01
 		end
 	},
-	modifier_item_haganemushi = {
+	modifier_item_soulcutter = {
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
-		multiplier = function(attacker, victim, _, damage, damagetype)
-			local pct = GetAbilitySpecial("item_haganemushi", "attack_damage_to_pure_pct") * 0.01
-			ApplyDamage({
-				victim = victim,
-				attacker = attacker,
-				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
-				damage_type = _G[GetKeyValue("item_haganemushi", "AbilityUnitDamageType")],
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				ability = FindItemInInventoryByName(attacker, "item_haganemushi", false)
-			})
-			return 1 - pct
+		multiplier = function()
+			return 1 - GetAbilitySpecial("item_soulcutter", "attack_damage_to_pure_pct") * 0.01
 		end
 	},
 	modifier_sai_release_of_forge = {

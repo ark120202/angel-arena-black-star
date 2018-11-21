@@ -503,15 +503,14 @@ DOTA_Tooltip_modifier_item_vermillion_robe_delay: True Flame Delay от Vermilli
 DOTA_Tooltip_modifier_item_vermillion_robe_delay_Description: 'Когда закончится, нанесёт урон по площади.'
 DOTA_Tooltip_modifier_item_vermillion_robe_dust: Vermillion Dust
 DOTA_Tooltip_modifier_item_vermillion_robe_dust_Description: 'Регенерация маны увеличена на %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, скорость передвидения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'
-DOTA_Tooltip_ability_item_soul_of_titan: Soul of Titan
+
 DOTA_Tooltip_ability_item_soul_of_titan_Description: |-
-  <h1>Пассивная: Elder Aura</h1> Снижает броню всех противников, находящихся рядом.
+  <h1>Пассивная: Elder Aura</h1> Снижает броню на %armor_reduction% всем противников в радиусе %radius%.
 
   Этот предмет выпадает с боссов и не может быть куплен в лавке.
-DOTA_Tooltip_ability_item_soul_of_titan_armor_reduction: 'СНИЖЕНИЕ БРОНИ:'
-DOTA_Tooltip_ability_item_soul_of_titan_radius: 'РАДИУС:'
 DOTA_Tooltip_modifier_item_soul_of_titan_effect: Снижение брони от Soul of Titan
 DOTA_Tooltip_modifier_item_soul_of_titan_effect_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
+
 DOTA_Tooltip_ability_item_dark_flow: Dark Flow
 DOTA_Tooltip_ability_item_dark_flow_Description: '<h1>Пассивная: Armor Flow</h1> Каждая атака снижает броню противника.'
 DOTA_Tooltip_ability_item_dark_flow_armor_per_hit: 'СНИЖЕНИЕ БРОНИ ЗА УДАР:'
@@ -779,18 +778,13 @@ DOTA_Tooltip_modifier_item_fallhammer_valor_debuff: Fallhammer Valor
 DOTA_Tooltip_modifier_item_fallhammer_valor_debuff_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_dark_blade_Description: Этот предмет выпадает с боссов и не может быть куплен в лавке.
 
-DOTA_Tooltip_ability_item_haganemushi_Description: |-
-  <h1>Пассивная: Metal-Eater</h1> С каждой атакой этот легендарный меч снижает броню и урон противника. Этот эффект вечен, не снимается очищением и не работает на боссов.
-  <h1>Активируемая: Shadow Walk</h1> Делает вас невидимым на время действия или до момента вашей атаки или использования заклинания. Пока Shadow Walk активна, вы движетесь на %windwalk_movement_speed_pct%%% быстрее и можете проходить сквозь юнитов. Атака, раскрывающая невидимость, нанесет %windwalk_bonus_damage% дополнительного урона. Длится %windwalk_duration% секунд.
+DOTA_Tooltip_ability_item_soulcutter_Description: |-
+  <h1>Пассивная: Soul Corruption</h1> С каждой атакой снижает броню противника на %armor_per_hit_pct%%% на %duration% секунд.
   <h1>Пассивная: Soul Piercing</h1> %attack_damage_to_pure_pct%%% урона ваших атак будут наносить чистый урон, вместо физического.
-  <h1>Пассивная: Elder Aura</h1> Снижает броню всех противников, находящихся рядом.
-DOTA_Tooltip_ability_item_haganemushi_damage_per_hit: 'СНИЖЕНИЕ УРОНА:'
-DOTA_Tooltip_ability_item_haganemushi_armor_per_hit: 'СНИЖЕНИЕ БРОНИ:'
-DOTA_Tooltip_ability_item_haganemushi_attack_damage_to_pure_pct: '%ЧИСТЫЙ УРОН ОТ АТАК:'
-DOTA_Tooltip_ability_item_haganemushi_aura_armor_reduction: 'СНИЖЕНИЕ БРОНИ В АУРЕ:'
-DOTA_Tooltip_ability_item_haganemushi_aura_radius: 'РАДИУС АУРЫ:'
-DOTA_Tooltip_ability_item_haganemushi_windwalk_duration: 'ДЛИТЕЛЬНОСТЬ НЕВИДИМОСТИ:'
-DOTA_Tooltip_ability_item_haganemushi_windwalk_bonus_damage: 'УРОН ИЗ НЕВИДИМОСТИ:'
+  <h1>Пассивная: Elder Aura</h1> Снижает броню на %aura_armor_reduction% всем противников в радиусе %aura_radius%.
+DOTA_Tooltip_modifier_item_soulcutter_aura_effect_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
+DOTA_Tooltip_modifier_item_soulcutter_stack_Description: Броня уменьшена на %dMODIFIER_PROPERTY_TOOLTIP%%% (%fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%).
+
 DOTA_Tooltip_modifier_item_haganemushi_aura_effect: Снижение брони от Haganemushi
 DOTA_Tooltip_modifier_item_haganemushi_aura_effect_Description: Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_modifier_item_haganemushi_stack_Description: 'Урон уменьшен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%, броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.'

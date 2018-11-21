@@ -5738,7 +5738,8 @@
 
 	"item_piercing_blade"
 	{
-		"BaseClass"             		"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_piercing_blade"
 		"AbilityTextureName"			"item_arena/piercing_blade"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5758,47 +5759,29 @@
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
-
-		"Modifiers"
-		{
-			"modifier_item_piercing_blade"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			}
-		}
 	}
 
-	"item_recipe_haganemushi"
+	"item_recipe_soulcutter"
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"10000"	//50800 - Requirements Cost
+		"ItemCost"						"10000"
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_haganemushi"
+		"ItemResult"					"item_soulcutter"
 		"ItemRequirements"
 		{
-			"01"						"item_invis_sword;item_dark_flow;item_piercing_blade;item_dark_blade;item_soul_of_titan"
+			"01"						"item_piercing_blade;item_dark_flow;item_dark_blade;item_soul_of_titan"
 		}
 	}
 
-	"item_haganemushi"
+	"item_soulcutter"
 	{
-		"BaseClass"             		"item_datadriven"
-		"AbilityTextureName"			"item_arena/haganemushi"
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_soulcutter"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_arena/soulcutter"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilitySharedCooldown"			"shadow_blade"
-
-		"AbilityCooldown"				"25"
-		"AbilityManaCost"				"80"
 		"AbilityCastRange"				"800"
 
 		"AbilitySpecial"
@@ -5812,243 +5795,28 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"120"
+				"attack_damage_to_pure_pct"	"20"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_hit"		"-2"
-				"CalculateSpellDamageTooltip" "0"
+				"var_type"				"FIELD_FLOAT"
+				"armor_per_hit_pct"		"-2"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"armor_per_hit"			"-0.25"
+				"duration"				"3"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"20"
-				"CalculateSpellDamageTooltip"	"0"
+				"aura_armor_reduction"	"-20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_armor_reduction"	"-20"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"aura_radius"			"800"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"windwalk_duration"		"17"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"windwalk_movement_speed_pct"	"10"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"windwalk_fade_time"	"0.2"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"windwalk_bonus_damage"	"2000"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"EffectName"	"DOTA_Item.InvisibilitySword.Activate"
-				"Target" 		"CASTER"
-			}
-
-			"DelayedAction"
-			{
-				"Delay"     "%windwalk_fade_time"
-				"Action"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_item_haganemushi_active"
-						"Target" 		"CASTER"
-					}
-				}
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_haganemushi"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"Aura"          	"modifier_item_haganemushi_aura_effect"
-				"Aura_Radius"   	"%aura_radius"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
-				}
-			}
-
-			"modifier_item_haganemushi_aura_effect"
-			{
-				"IsPurgable"		"0"
-				"IsDebuff"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%aura_armor_reduction"
-				}
-			}
-
-			"modifier_item_haganemushi_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"AllowIllusionDuplicate"		"0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_haganemushi_unique"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IncreaseStacks"
-						"modifier"		"modifier_item_haganemushi_stack"
-						"NoBosses"		"1"
-					}
-
-					"FireEffect"
-					{
-						"EffectName"        "particles/arena/items_fx/dark_flow_explosion.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "TARGET"
-					}
-				}
-			}
-
-			"modifier_item_haganemushi_stack"
-			{
-				"IsDebuff"			"1"
-				"IsPurgable"		"0"
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%damage_per_hit"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_per_hit"
-				}
-			}
-
-			"modifier_item_haganemushi_active"
-			{
-				"IsBuff"			"1"
-				"Duration"			"%windwalk_duration"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%windwalk_movement_speed_pct"
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_INVISIBLE"					"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_UNIT_COLLISION"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_CANNOT_MISS"				"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"OnAttack"
-				{
-					"RemoveModifier"
-					{
-						"Target"			"CASTER"
-						"ModifierName"		"modifier_item_haganemushi_active"
-					}
-					"ApplyModifier"
-					{
-						"ModifierName"		"modifier_item_haganemushi_attack"
-						"Target" 			"CASTER"
-					}
-				}
-
-				"OnAbilityExecuted"
-				{
-					"RemoveModifier"
-					{
-						"Target"				"CASTER"
-						"ModifierName"			"modifier_item_haganemushi_active"
-					}
-				}
-
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-			}
-
-			"modifier_item_haganemushi_attack"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-
-				"States"
-				{
-					"MODIFIER_STATE_CANNOT_MISS"			"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"OnAttackLanded"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_PURE"
-						"Damage"		"%windwalk_bonus_damage"
-					}
-
-					"RemoveModifier"
-					{
-						"Target"			"CASTER"
-						"ModifierName"		"modifier_item_haganemushi_attack"
-					}
-				}
 			}
 		}
 	}

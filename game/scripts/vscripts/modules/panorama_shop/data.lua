@@ -246,7 +246,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_fallhammer",
 			"item_timelords_butterfly",
 			"item_diffusal_style",
-			"item_haganemushi",
+			"item_soulcutter",
 			"item_radiance_frozen",
 			"item_unstable_quasar",
 			"item_scythe_of_the_ancients",
