@@ -122,17 +122,9 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
-		multiplier = function(attacker, victim, _, damage, damagetype)
+		multiplier = function(attacker)
 			local ability = attacker:FindAbilityByName("sai_release_of_forge")
 			local pct = ability:GetSpecialValueFor("pure_damage_pct") * 0.01
-			ApplyDamage({
-				victim = victim,
-				attacker = attacker,
-				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
-				damage_type = ability:GetAbilityDamageType(),
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				ability = ability
-			})
 			return 1 - pct
 		end
 	},
