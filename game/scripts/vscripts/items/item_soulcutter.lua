@@ -20,7 +20,6 @@ function modifier_item_soulcutter:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-		MODIFIER_EVENT_ON_TAKEDAMAGE,
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
 	}
 end
@@ -34,30 +33,23 @@ function modifier_item_soulcutter:GetModifierAttackSpeedBonus_Constant()
 end
 
 if IsServer() then
-	function modifier_item_soulcutter:OnTakeDamage(keys)
+	function modifier_item_soulcutter:OnAttackLanded(keys)
 		local attacker = keys.attacker
 		if attacker ~= self:GetParent() then return end
-		if keys.damage_type ~= DAMAGE_TYPE_PHYSICAL or keys.inflictor then return end
-
 		local ability = self:GetAbility()
+		local target = keys.target
+
 		ApplyDamage({
-			victim = keys.unit,
+			victim = target,
 			attacker = attacker,
 			damage = keys.original_damage * ability:GetSpecialValueFor("attack_damage_to_pure_pct") * 0.01,
 			damage_type = ability:GetAbilityDamageType(),
 			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 		})
-	end
 
-	function modifier_item_soulcutter:OnAttackLanded(keys)
-		local attacker = keys.attacker
-		if attacker ~= self:GetParent() then return end
-		local target = keys.target
 		if target:IsBoss() then return end
-		local ability = self:GetAbility()
 
 		ParticleManager:CreateParticle("particles/arena/items_fx/dark_flow_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
-
 		target:AddNewModifier(
 			target,
 			ability,

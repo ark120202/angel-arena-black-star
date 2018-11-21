@@ -13,7 +13,7 @@ modifier_item_piercing_blade = {
 function modifier_item_piercing_blade:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-		MODIFIER_EVENT_ON_TAKEDAMAGE,
+		MODIFIER_EVENT_ON_ATTACK_LANDED,
 	}
 end
 
@@ -22,14 +22,13 @@ function modifier_item_piercing_blade:GetModifierPreAttack_BonusDamage()
 end
 
 if IsServer() then
-	function modifier_item_piercing_blade:OnTakeDamage(keys)
+	function modifier_item_piercing_blade:OnAttackLanded(keys)
 		local attacker = keys.attacker
 		if attacker ~= self:GetParent() then return end
-		if keys.damage_type ~= DAMAGE_TYPE_PHYSICAL or keys.inflictor then return end
-
 		local ability = self:GetAbility()
+
 		ApplyDamage({
-			victim = keys.unit,
+			victim = keys.target,
 			attacker = attacker,
 			damage = keys.original_damage * ability:GetSpecialValueFor("attack_damage_to_pure_pct") * 0.01,
 			damage_type = ability:GetAbilityDamageType(),
