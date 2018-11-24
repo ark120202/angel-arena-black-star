@@ -708,19 +708,24 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"split_count_scepter"			"0"
+				"bonus_damage"					"80 100 120 140 160 180 200"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"scepter_range"					"0"
+				"split_count_scepter"			"0"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_reduction_scepter"		"0"
+				"scepter_range"					"0"
 			}
 			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_reduction_scepter"		"0"
+			}
+			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"disable_range"		"400"
