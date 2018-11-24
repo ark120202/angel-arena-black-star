@@ -454,6 +454,9 @@ NATIVE_TALENTS = {
 	special_bonus_unique_abaddon_2 = {
 		group = 4,
 	},
+	special_bonus_unique_abaddon_4 = {
+		group = 3,
+	},
 	special_bonus_unique_alchemist = {
 		group = 5,
 	},
@@ -462,6 +465,9 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_alchemist_3 = {
 		group = 10,
+	},
+	special_bonus_unique_alchemist_4 ={
+		group = 8,
 	},
 	special_bonus_unique_axe = {
 		group = 6,
@@ -587,6 +593,9 @@ NATIVE_TALENTS = {
 	special_bonus_unique_ursa_5 = {
 		group = 5,
 	},
+	special_bonus_unique_ursa_6 = {
+		group = 8,
+	},
 	special_bonus_unique_chaos_knight = {
 		group = 10,
 	},
@@ -622,6 +631,9 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_windranger_4 = {
 		group = 10,
+	},
+	special_bonus_unique_windranger_6 = {
+		group = 3,
 	},
 	special_bonus_unique_slark = {
 		group = 9,
@@ -759,6 +771,9 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_elder_titan_3 = {
 		group = 8,
+	},
+	special_bonus_unique_elder_titan_4 = {
+		group = 7,
 	},
 	special_bonus_unique_ember_spirit_1 = {
 		group = 10,
@@ -929,6 +944,9 @@ NATIVE_TALENTS = {
 	special_bonus_unique_huskar = {
 		group = 9,
 	},
+	special_bonus_unique_huskar_5 = {
+		group = 7,
+	},
 	special_bonus_unique_naga_siren = {
 		group = 9,
 	},
@@ -937,6 +955,9 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_naga_siren_3 = {
 		group = 6,
+	},
+	special_bonus_unique_naga_siren_4 = {
+		group = 3,
 	},
 	special_bonus_unique_oracle = {
 		group = 9,
@@ -974,6 +995,12 @@ NATIVE_TALENTS = {
 	special_bonus_unique_shadow_demon_4 = {
 		group = 9,
 	},
+	special_bonus_unique_shadow_demon_6 = {
+		group = 7,
+	},
+	special_bonus_unique_shadow_demon_7 = {
+		group = 8,
+	},
 	special_bonus_unique_slardar = {
 		group = 8,
 	},
@@ -1002,6 +1029,9 @@ NATIVE_TALENTS = {
 	special_bonus_unique_ancient_apparition_5 = {
 		group = 9,
 	},
+	special_bonus_unique_ancient_apparition_6 = {
+		group = 8,
+	},
 	special_bonus_unique_disruptor = false,
 	special_bonus_unique_disruptor_2 = {
 		group = 9,
@@ -1015,8 +1045,14 @@ NATIVE_TALENTS = {
 	special_bonus_unique_disruptor_5 = {
 		group = 10,
 	},
+	special_bonus_unique_disruptor_5 = {
+		group = 10,
+	},
 	special_bonus_unique_outworld_devourer = {
 		group = 9,
+	},
+	special_bonus_unique_outworld_devourer_4 = {
+		group = 8,
 	},
 	special_bonus_unique_keeper_of_the_light = {
 		group = 10,
@@ -1141,11 +1177,20 @@ NATIVE_TALENTS = {
 	special_bonus_unique_arc_warden = {
 		group = 6,
 	},
+	special_bonus_unique_arc_warden_3 = {
+		group = 5,
+	},
+	special_bonus_unique_arc_warden_5 = {
+		group = 6,
+	},
 	special_bonus_unique_meepo = {
 		group = 10,
 	},
 	special_bonus_unique_meepo_2 = {
 		group = 9,
+	},
+	special_bonus_unique_meepo_3 = {
+		group = 5,
 	},
 	special_bonus_unique_monkey_king = {
 		group = 11,
@@ -1179,6 +1224,9 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_pangolier_5 = {
 		group = 8,
+	},
+	special_bonus_unique_pangolier_6 = {
+		group = 6,
 	},
 	special_bonus_unique_dark_willow_1 = {
 		group = 8,
@@ -1535,6 +1583,12 @@ NATIVE_TALENTS = {
 	special_bonus_unique_templar_assassin_4 = {
 		group = 13,
 	},
+	special_bonus_unique_templar_assassin_6 = {
+		group = 10,
+	},
+	special_bonus_unique_templar_assassin_7 = {
+		group = 8,
+	},
 	special_bonus_unique_doom_1 = {
 		group = 9,
 	},
@@ -1543,6 +1597,9 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_doom_5 = {
 		group = 6,
+	},
+	special_bonus_unique_doom_6 = {
+		group = 7,
 	},
 	special_bonus_unique_brewmaster = {
 		group = 9,
@@ -1678,8 +1735,17 @@ NATIVE_TALENTS = {
 	special_bonus_unique_gyrocopter_5 = {
 		group = 4,
 	},
+	special_bonus_unique_gyrocopter_6 = {
+		group = 7,
+	},
 	special_bonus_unique_underlord_4 = false,
 	special_bonus_unique_dragon_knight_2 = false,
+	special_bonus_unique_dragon_knight = {
+		group = 5,
+	},
+	special_bonus_unique_dragon_knight_3 = {
+		group = 7,
+	},
 	special_bonus_unique_omniknight_1 = {
 		group = 3,
 	},
@@ -1691,6 +1757,9 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_omniknight_4 = {
     	group = 1,
+	},
+	special_bonus_unique_wisp = {
+		group = 3,
 	},
 	special_bonus_unique_wisp_6 = {
 		group = 7,
