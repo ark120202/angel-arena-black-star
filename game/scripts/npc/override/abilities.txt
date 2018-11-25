@@ -16461,7 +16461,6 @@
 				"fixed_movement_speed"		"25"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 
 	"keeper_of_the_light_chakra_magic"
