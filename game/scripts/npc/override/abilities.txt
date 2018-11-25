@@ -16415,6 +16415,55 @@
 
 	}
 
+	"keeper_of_the_light_will_o_wisp"
+	{
+		"MaxLevel"	"7"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"120"
+		"AbilityManaCost"				"200 300 400 500 600 700 800"
+		"AbilityCastRange"				"900"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"on_count"					"3 4 4 5 5 6 7"
+				"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light_3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"650"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hit_count"					"4 5 6 7 8 9 10"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"off_duration"				"3.0"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"on_duration"				"0.7"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"off_duration_initial"		"1.0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"fixed_movement_speed"		"25"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
 	"keeper_of_the_light_chakra_magic"
 	{
 		"MaxLevel"	"7"
