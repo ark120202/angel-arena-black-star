@@ -22224,7 +22224,6 @@
 				"slow"			"40"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
 	"pangolier_gyroshell"
